@@ -1,2 +1,2 @@
-# 30-seconds-of-code
+# 30s of Code
 A collection of useful Javascript snippets.
