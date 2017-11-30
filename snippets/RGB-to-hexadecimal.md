@@ -1,4 +1,4 @@
-## RGB to hexadecimal
+### RGB to hexadecimal
 
 Convert each value to a hexadecimal string, using `toString(16)`, then `padStart(2,'0')` to get a 2-digit hexadecimal value.
 Combine values using `join('')`.

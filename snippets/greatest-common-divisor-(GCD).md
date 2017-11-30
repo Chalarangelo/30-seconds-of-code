@@ -1,4 +1,4 @@
-## Greatest common divisor (GCD)
+### Greatest common divisor (GCD)
 
 Use recursion.
 Base case is when `y` equals `0`. In this case, return `x`.
