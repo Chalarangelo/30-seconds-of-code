@@ -11,7 +11,7 @@
 * [Even or odd number](#even-or-odd-number)
 * [Fibonacci array generator](#fibonacci-array-generator)
 * [Greatest common divisor (GCD)](#greatest-common-divisor-gcd)
-* [Initialize array with value](#initialize-array-with-value)
+* [Initialize array with values](#initialize-array-with-values)
 * [Random number in range](#random-number-in-range)
 * [Randomize order of array](#randomize-order-of-array)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
@@ -54,7 +54,7 @@ var gcd = (x , y) => !y ? x : gcd(y, x % y);
 
 ### Initialize array with values
 
-Use `Array(n)` to create an array of the desired length, `fill(v)` to fill it with the desired value.
+Use `Array(n)` to create an array of the desired length, `fill(v)` to fill it with the desired values.
 You can omit `v` to use a default value of `0`.
 
 ```js
