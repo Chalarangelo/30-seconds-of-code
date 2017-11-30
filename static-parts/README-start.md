@@ -5,3 +5,5 @@
 
 - Use <kbd>Ctrl</kbd> + <kbd>F</kbd> or <kbd>command</kbd> + <kbd>F</kbd> to search for a snippet.
 - Contributions welcome, please read [contribution guide](contributing.md).
+
+## Contents
