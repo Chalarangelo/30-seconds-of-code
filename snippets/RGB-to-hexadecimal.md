@@ -5,5 +5,5 @@ Combine values using `join('')`.
 
 ```js
 var rgbToHex = (r, g, b) =>
-  [r.toString(16).padStart(2,'0') , g.toString(16).padStart(2,'0') , b.toString(16).padStart(2,'0')].join('');
+  [r,g,b].map( v => v.toString(16).padStart(2,'0')).join('');
 ```
