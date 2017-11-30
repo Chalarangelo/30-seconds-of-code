@@ -1,0 +1,33 @@
+{
+  "dependencies": {
+    "concurrently": "^3.5.1",
+    "fs-extra": "^4.0.2",
+    "live-server": "^1.2.0",
+    "markdown-it": "^8.4.0",
+    "nodemon": "^1.12.1"
+  },
+  "name": "30-seconds-of-code",
+  "description": "A collection of useful Javascript snippets.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "build-list": "node ./scripts/builder.js",
+    "start": "concurrently --kill-others \"nodemon -e js,md -i README.md -x \\\"npm run build-list\\\"\" \"live-server ./build\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chalarangelo/30-seconds-of-code.git"
+  },
+  "keywords": [
+    "javascript",
+    "snippets",
+    "list"
+  ],
+  "author": "Chalarangelo (chalarangelo@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Chalarangelo/30-seconds-of-code/issues"
+  },
+  "homepage": "https://github.com/Chalarangelo/30-seconds-of-code#readme"
+}
