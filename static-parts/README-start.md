@@ -1,4 +1,4 @@
-![Logo](/docs/logo.png)
+![Logo](/logo.png)
 
 # 30 seconds of code
 > Curated collection of useful Javascript snippets that you can understand in 30 seconds or less.
