@@ -9,8 +9,8 @@
 ## Contents
 
 * [Even or odd number](#even-or-odd-number)
-* [Greatest common divisor gcd](#greatest-common-divisor-gcd)
-* [RGB to hexadecimal](#RGB-to-hexadecimal)
+* [Greatest common divisor (GCD)](#greatest-common-divisor-gcd)
+* [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [Sort characters in string alphabetical](#sort-characters-in-string-alphabetical)
 * [Sum of array of numbers](#sum-of-array-of-numbers)
 * [Unique values of array](#unique-values-of-array)
