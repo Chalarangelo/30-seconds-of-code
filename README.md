@@ -11,6 +11,7 @@
 * [Even or odd number](#even-or-odd-number)
 * [Fibonacci array generator](#fibonacci-array-generator)
 * [Greatest common divisor (GCD)](#greatest-common-divisor-gcd)
+* [Initialize array with value](#initialize-array-with-value)
 * [Random number in range](#random-number-in-range)
 * [Randomize order of array](#randomize-order-of-array)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
@@ -49,6 +50,16 @@ Otherwise, return the GCD of `y` and the remainder of the division `x/y`.
 
 ```js
 var gcd = (x , y) => !y ? x : gcd(y, x % y);
+```
+
+### Initialize array with values
+
+Use `Array(n)` to create an array of the desired length, `fill(v)` to fill it with the desired value.
+You can omit `v` to use a default value of `0`.
+
+```js
+var initializeArray = (n, v = 0) =>
+  Array(n).fill(v);
 ```
 
 ### Random number in range
