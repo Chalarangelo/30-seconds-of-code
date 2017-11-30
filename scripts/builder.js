@@ -28,6 +28,9 @@ catch (err){
 try {
   output += `${startPart+'\n'}`;
   for(var snippet of Object.entries(snippets))
+    output += `* [${snippet[0][0].toUpperCase() + snippet[0].replace(/-/g,' ').slice(1,snippet[0].length-3)}](${snippet[0]})\n`
+  output += '\n';
+  for(var snippet of Object.entries(snippets))
     output += `${snippet[1]+'\n'}`;
   output += `${endPart+'\n'}`;
   fs.writeFileSync('README.md', output);
