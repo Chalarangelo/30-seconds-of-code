@@ -9,7 +9,10 @@
 ## Contents
 
 * [Even or odd number](#even-or-odd-number)
+* [Fibonacci array generator](#fibonacci-array-generator)
 * [Greatest common divisor (GCD)](#greatest-common-divisor-gcd)
+* [Random number in range](#random-number-in-range)
+* [Randomize order of array](#randomize-order-of-array)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [Sort characters in string alphabetical](#sort-characters-in-string-alphabetical)
 * [Sum of array of numbers](#sum-of-array-of-numbers)
@@ -24,7 +27,21 @@ Return `true` if the number is even, `false` if the number is odd.
 var isEven = num => Math.abs(num) % 2 === 0;
 ```
 
-## Greatest common divisor (GCD)
+### Fibonacci array generator
+
+Create an empty array of the specific length, initializing the first two values (`0` and `1`).
+Use `reduce()` to add values into the array, using the sum of the last two values, except for the first two.
+
+```js
+var fibonacci = n =>
+  Array.apply(null, [0,1].concat(Array(n-2))).reduce(
+    (acc, val, i) => {
+      acc.push( i>1 ? acc[i-1]+acc[i-2] : val);
+      return acc;
+    },[]);
+```
+
+### Greatest common divisor (GCD)
 
 Use recursion.
 Base case is when `y` equals `0`. In this case, return `x`.
@@ -34,7 +51,23 @@ Otherwise, return the GCD of `y` and the remainder of the division `x/y`.
 var gcd = (x , y) => !y ? x : gcd(y, x % y);
 ```
 
-## RGB to hexadecimal
+### Random number in range
+
+Use `Math.random()` to generate a random value, map it to the desired range using multiplication.
+
+```js
+var randomInRange = (min, max) => Math.random() * (max - min) + min;
+```
+
+### Randomize order of array
+
+Use `sort()` to reorder elements, utilizing `Math.random()` to randomize the sorting.
+
+```js
+var randomizeOrder = arr => arr.sort( (a,b) => Math.random() >= 0.5 ? -1 : 1)
+```
+
+### RGB to hexadecimal
 
 Convert each value to a hexadecimal string, using `toString(16)`, then `padStart(2,'0')` to get a 2-digit hexadecimal value.
 Combine values using `join('')`.
