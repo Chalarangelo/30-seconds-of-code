@@ -8,12 +8,12 @@
 
 ## Contents
 
-* [Even or odd number](even-or-odd-number.md)
-* [Greatest common divisor gcd](greatest-common-divisor-gcd.md)
-* [RGB to hexadecimal](RGB-to-hexadecimal.md)
-* [Sort characters in string alphabetical](sort-characters-in-string-alphabetical.md)
-* [Sum of array of numbers](sum-of-array-of-numbers.md)
-* [Unique values of array](unique-values-of-array.md)
+* [Even or odd number](#even-or-odd-number)
+* [Greatest common divisor gcd](#greatest-common-divisor-gcd)
+* [RGB to hexadecimal](#RGB-to-hexadecimal)
+* [Sort characters in string alphabetical](#sort-characters-in-string-alphabetical)
+* [Sum of array of numbers](#sum-of-array-of-numbers)
+* [Unique values of array](#unique-values-of-array)
 
 ### Even or odd number
 
