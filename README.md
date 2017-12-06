@@ -8,6 +8,8 @@
 
 ## Contents
 
+* [Anagrams of string (with duplicates)](#anagrams-of-string-with-duplicates)
+* [Count occurences of a value in array](#count-occurences-of-a-value-in-array)
 * [Even or odd number](#even-or-odd-number)
 * [Fibonacci array generator](#fibonacci-array-generator)
 * [Greatest common divisor (GCD)](#greatest-common-divisor-gcd)
@@ -15,9 +17,35 @@
 * [Random number in range](#random-number-in-range)
 * [Randomize order of array](#randomize-order-of-array)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
-* [Sort characters in string alphabetical](#sort-characters-in-string-alphabetical)
+* [Sort characters in string (alphabetical)](#sort-characters-in-string-alphabetical)
 * [Sum of array of numbers](#sum-of-array-of-numbers)
+* [Swap values of two variables](#swap-values-of-two-variables)
 * [Unique values of array](#unique-values-of-array)
+
+### Anagrams of string (with duplicates)
+
+Use recursion.
+For each letter in the given string, create all the partial anagrams for the rest of its letters.
+Use `map()` to combine the letter with each partial anagram, then `reduce()` to combine all anagrams in one array.
+Base cases are for string `length` equal to `2` or `1`.
+
+```js
+var anagrams = s => {
+  if(s.length <= 2)  return s.length === 2 ? [s, s[1] + s[0]] : [s];
+  return s.split('').reduce( (a,l,i) => {
+    anagrams(s.slice(0,i) + s.slice(i+1)).map( v => a.push(l+v) );
+    return a;
+  }, []);
+}
+```
+
+### Count occurences of a value in array
+
+Use `filter()` to create an array containing only the items with the specified value, count them using `length`.
+
+```js
+var countOccurences = (arr, value) => arr.filter(v => v === value).length;
+```
 
 ### Even or odd number
 
@@ -104,6 +132,14 @@ Use `reduce()` to add each value to an accumulator, initialized with a value of 
 ```js
 var sum = arr =>
   arr.reduce( (acc , val) => acc + val, 0);
+```
+
+### Swap values of two variables
+
+Use array destructuring to swap values between two variables.
+
+```js
+[varA, varB] = [varB, varA];
 ```
 
 ### Unique values of array
