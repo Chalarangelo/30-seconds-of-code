@@ -16,11 +16,13 @@
 * [Initialize array with values](#initialize-array-with-values)
 * [Random number in range](#random-number-in-range)
 * [Randomize order of array](#randomize-order-of-array)
+* [Redirect to url](#redirect-to-url)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [Sort characters in string (alphabetical)](#sort-characters-in-string-alphabetical)
 * [Sum of array of numbers](#sum-of-array-of-numbers)
 * [Swap values of two variables](#swap-values-of-two-variables)
 * [Unique values of array](#unique-values-of-array)
+* [UUID generator](#uuid-generator)
 
 ### Anagrams of string (with duplicates)
 
@@ -106,6 +108,16 @@ Use `sort()` to reorder elements, utilizing `Math.random()` to randomize the sor
 var randomizeOrder = arr => arr.sort( (a,b) => Math.random() >= 0.5 ? -1 : 1)
 ```
 
+### Redirect to URL
+
+Use `window.location.href` or `window.location.replace()` to redirect to `url`.
+Pass a second argument to simulate a link click (`true` - default) or an HTTP redirect (`false`).
+
+```js
+var redirect = (url, asLink = true) =>
+  asLink ? window.location.href = url : window.location.replace(url);
+```
+
 ### RGB to hexadecimal
 
 Convert each value to a hexadecimal string, using `toString(16)`, then `padStart(2,'0')` to get a 2-digit hexadecimal value.
@@ -154,6 +166,17 @@ var uniqueValues = arr =>
       acc.push(val);
       return acc;
   }, []);
+```
+
+### UUID generator
+
+Use `crypto` API to generate a UUID, compliant with [RFC4122](https://www.ietf.org/rfc/rfc4122.txt) version 4.
+
+```js
+var uuid = _ =>
+  ( [1e7]+-1e3+-4e3+-8e3+-1e11 ).replace( /[018]/g, c =>
+    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+  )
 ```
 
 ## Credits
