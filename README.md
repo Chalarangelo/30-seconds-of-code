@@ -9,7 +9,9 @@
 ## Contents
 
 * [Anagrams of string (with duplicates)](#anagrams-of-string-with-duplicates)
+* [Capitalize first letter](#capitalize-first-letter)
 * [Count occurences of a value in array](#count-occurences-of-a-value-in-array)
+* [Current URL](#current-url)
 * [Even or odd number](#even-or-odd-number)
 * [Fibonacci array generator](#fibonacci-array-generator)
 * [Greatest common divisor (GCD)](#greatest-common-divisor-gcd)
@@ -42,12 +44,28 @@ var anagrams = s => {
 }
 ```
 
+### Capitalize first letter
+
+Use `toUpperCase()` to capitalize first letter, `slice(1)` to get the rest of the string.
+
+```js
+var capitalize = str => str[0].toUpperCase() + str.slice(1);
+```
+
 ### Count occurences of a value in array
 
 Use `filter()` to create an array containing only the items with the specified value, count them using `length`.
 
 ```js
 var countOccurences = (arr, value) => arr.filter(v => v === value).length;
+```
+
+### Current URL
+
+Use `window.location.href` to get current URL.
+
+```js
+var currentUrl = _ => window.location.href;
 ```
 
 ### Even or odd number
