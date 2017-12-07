@@ -26,6 +26,7 @@
 * [Unique values of array](#unique-values-of-array)
 * [URL parameters](#url-parameters)
 * [UUID generator](#uuid-generator)
+* [Validate number](#validate-number)
 
 ### Anagrams of string (with duplicates)
 
@@ -207,6 +208,15 @@ var uuid = _ =>
   ( [1e7]+-1e3+-4e3+-8e3+-1e11 ).replace( /[018]/g, c =>
     (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
   )
+```
+
+### Validate number
+
+Use `!isNaN` in combination with `parseFloat()` to check if the argument is a number.
+Use `isFinite()` to check if the number is finite.
+
+```js
+var validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n);
 ```
 
 ## Credits
