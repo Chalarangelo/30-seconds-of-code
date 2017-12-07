@@ -14,12 +14,14 @@
 * [Count occurences of a value in array](#count-occurences-of-a-value-in-array)
 * [Current URL](#current-url)
 * [Even or odd number](#even-or-odd-number)
+* [Factorial](#factorial)
 * [Fibonacci array generator](#fibonacci-array-generator)
 * [Flatten array](#flatten-array)
 * [Greatest common divisor (GCD)](#greatest-common-divisor-gcd)
 * [Initialize array with range](#initialize-array-with-range)
 * [Initialize array with values](#initialize-array-with-values)
 * [Measure time taken by function](#measure-time-taken-by-function)
+* [Powerset](#powerset)
 * [Random number in range](#random-number-in-range)
 * [Randomize order of array](#randomize-order-of-array)
 * [Redirect to url](#redirect-to-url)
@@ -92,6 +94,15 @@ Return `true` if the number is even, `false` if the number is odd.
 var isEven = num => Math.abs(num) % 2 === 0;
 ```
 
+### Factorial
+
+Create an array of length `n+1`, use `reduce()` to get the product of every value in the given range, utilizing the index of each element.
+
+```js
+var factorial = n =>
+  Array.apply(null, [1].concat(Array(n))).reduce( (a, _, i) => a * i || 1 , 1);
+```
+
 ### Fibonacci array generator
 
 Create an empty array of the specific length, initializing the first two values (`0` and `1`).
@@ -157,6 +168,15 @@ var timeTaken = (f,...args) => {
   console.log({performance.now() - t0);
   return r;
 }
+```
+
+### Powerset
+
+Use `reduce()` combined with `map()` to iterate over elements and combine into an array containing all combinations. 
+
+```js
+var powerset = arr =>
+  arr.reduce( (a,v) => a.concat(a.map( r => [v].concat(r) )), [[]]);
 ```
 
 ### Random number in range
