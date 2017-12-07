@@ -9,6 +9,7 @@
 ## Contents
 
 * [Anagrams of string (with duplicates)](#anagrams-of-string-with-duplicates)
+* [Average of array of numbers](#average-of-array-of-numbers)
 * [Capitalize first letter](#capitalize-first-letter)
 * [Count occurences of a value in array](#count-occurences-of-a-value-in-array)
 * [Current URL](#current-url)
@@ -16,6 +17,7 @@
 * [Fibonacci array generator](#fibonacci-array-generator)
 * [Flatten array](#flatten-array)
 * [Greatest common divisor (GCD)](#greatest-common-divisor-gcd)
+* [Initialize array with range](#initialize-array-with-range)
 * [Initialize array with values](#initialize-array-with-values)
 * [Measure time taken by function](#measure-time-taken-by-function)
 * [Random number in range](#random-number-in-range)
@@ -46,6 +48,15 @@ var anagrams = s => {
     return a;
   }, []);
 }
+```
+
+### Average of array of numbers
+
+Use `reduce()` to add each value to an accumulator, initialized with a value of `0`, divide by the `length` of the array.
+
+```js
+var average = arr =>
+  arr.reduce( (acc , val) => acc + val, 0) / arr.length;
 ```
 
 ### Capitalize first letter
@@ -113,6 +124,16 @@ Otherwise, return the GCD of `y` and the remainder of the division `x/y`.
 
 ```js
 var gcd = (x , y) => !y ? x : gcd(y, x % y);
+```
+
+### Initialize array with range
+
+Use `Array(end-start)` to create an array of the desired length, `map()` to fill with the desired values in a range.
+You can omit `start` to use a default value of `0`.
+
+```js
+var initializeArrayRange = (end, start = 0) =>
+  Array.apply(null, Array(end-start)).map( (v,i) => i + start );
 ```
 
 ### Initialize array with values
