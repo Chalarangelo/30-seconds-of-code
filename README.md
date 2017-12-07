@@ -14,12 +14,15 @@
 * [Current URL](#current-url)
 * [Even or odd number](#even-or-odd-number)
 * [Fibonacci array generator](#fibonacci-array-generator)
+* [Flatten array](#flatten-array)
 * [Greatest common divisor (GCD)](#greatest-common-divisor-gcd)
 * [Initialize array with values](#initialize-array-with-values)
+* [Measure time taken by function](#measure-time-taken-by-function)
 * [Random number in range](#random-number-in-range)
 * [Randomize order of array](#randomize-order-of-array)
 * [Redirect to url](#redirect-to-url)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
+* [Scroll to top](#scroll-to-top)
 * [Sort characters in string (alphabetical)](#sort-characters-in-string-alphabetical)
 * [Sum of array of numbers](#sum-of-array-of-numbers)
 * [Swap values of two variables](#swap-values-of-two-variables)
@@ -92,6 +95,16 @@ var fibonacci = n =>
     },[]);
 ```
 
+### Flatten array
+
+Use recursion.
+Use `reduce()` to get all elements that are not arrays, flatten each element that is an array.
+
+```js
+var flatten = arr =>
+  arr.reduce( (a, v) => a.concat( Array.isArray(v) ? flatten(v) : v ), []);
+```
+
 ### Greatest common divisor (GCD)
 
 Use recursion.
@@ -110,6 +123,19 @@ You can omit `v` to use a default value of `0`.
 ```js
 var initializeArray = (n, v = 0) =>
   Array(n).fill(v);
+```
+
+### Measure time taken by function
+
+Use `performance.now()` to get start and end time for the function, `console.log()` the time taken.
+First argument is the function name, subsequent arguments are passed to the function.
+
+```js
+var timeTaken = (f,...args) => {
+  var t0 = performance.now(), r = f(...args);
+  console.log({performance.now() - t0);
+  return r;
+}
 ```
 
 ### Random number in range
@@ -146,6 +172,21 @@ Combine values using `join('')`.
 ```js
 var rgbToHex = (r, g, b) =>
   [r,g,b].map( v => v.toString(16).padStart(2,'0')).join('');
+```
+
+### Scroll to top
+
+Get distance from top using `document.documentElement.scrollTop` or `document.body.scrollTop`.
+Scroll by a fraction of the distance from top. Use `window.requestFrame()` to animate the scrolling.
+
+```js
+var scrollToTop = _ => {
+  var c = document.documentElement.scrollTop || document.body.scrollTop;
+  if(c > 0) {
+    window.requestAnimationFrame(scrollToTop);
+    window.scrollTo(0, c - c/8);
+  }
+}
 ```
 
 ### Sort characters in string (alphabetical)
