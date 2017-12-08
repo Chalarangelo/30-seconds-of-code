@@ -13,6 +13,7 @@
 * [Capitalize first letter](#capitalize-first-letter)
 * [Count occurences of a value in array](#count-occurences-of-a-value-in-array)
 * [Current URL](#current-url)
+* [Distance between two points](#distance-between-two-points)
 * [Even or odd number](#even-or-odd-number)
 * [Factorial](#factorial)
 * [Fibonacci array generator](#fibonacci-array-generator)
@@ -83,6 +84,15 @@ Use `window.location.href` to get current URL.
 
 ```js
 var currentUrl = _ => window.location.href;
+```
+
+### Distance between two points
+
+Use `Math.pow()` and `Math.sqrt()` to calculate the Euclidean distance between two points.
+
+```js
+var distance = x0, y0, x1, y1 =>
+  Math.sqrt(Math.pow(x1-x0, 2) + Math.pow(y1 - y0, 2))
 ```
 
 ### Even or odd number
