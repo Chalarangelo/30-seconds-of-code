@@ -13,6 +13,7 @@
 * [Capitalize first letter](#capitalize-first-letter)
 * [Count occurences of a value in array](#count-occurences-of-a-value-in-array)
 * [Current URL](#current-url)
+* [Difference between arrays](#difference-between-arrays)
 * [Distance between two points](#distance-between-two-points)
 * [Even or odd number](#even-or-odd-number)
 * [Factorial](#factorial)
@@ -84,6 +85,15 @@ Use `window.location.href` to get current URL.
 
 ```js
 var currentUrl = _ => window.location.href;
+```
+
+### Difference between arrays
+
+Use `filter()` to remove values that are not part of `values`, determined using `indexOf()`.
+
+```js
+var difference = (arr, values) =>
+  arr.filter(v => values.indexOf(v) === -1);
 ```
 
 ### Distance between two points
