@@ -22,8 +22,11 @@
 * [Fibonacci array generator](#fibonacci-array-generator)
 * [Flatten array](#flatten-array)
 * [Greatest common divisor (GCD)](#greatest-common-divisor-gcd)
+* [Head of list](#head-of-list)
+* [Initial of list](#initial-of-list)
 * [Initialize array with range](#initialize-array-with-range)
 * [Initialize array with values](#initialize-array-with-values)
+* [Last of list](#last-of-list)
 * [Measure time taken by function](#measure-time-taken-by-function)
 * [Object from key value pairs](#object-from-key-value-pairs)
 * [Powerset](#powerset)
@@ -36,6 +39,7 @@
 * [Sort characters in string (alphabetical)](#sort-characters-in-string-alphabetical)
 * [Sum of array of numbers](#sum-of-array-of-numbers)
 * [Swap values of two variables](#swap-values-of-two-variables)
+* [Tail of list](#tail-of-list)
 * [Unique values of array](#unique-values-of-array)
 * [URL parameters](#url-parameters)
 * [UUID generator](#uuid-generator)
@@ -98,7 +102,7 @@ If the number of provided arguments (`args`) is sufficient, call the passed func
 Otherwise return a curried function `f` that expects the rest of the arguments.
 
 ```js
-curry = f =>
+var curry = f =>
   (...args) =>
     args.length >= f.length ? f(...args) : (...otherArgs) => curry(f)(...args, ...otherArgs)
 ```
@@ -126,7 +130,7 @@ var distance = x0, y0, x1, y1 =>
 Use `replace()` to escape special characters.
 
 ```js
-escapeRegExp = s =>
+var escapeRegExp = s =>
   s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 ```
@@ -183,6 +187,24 @@ Otherwise, return the GCD of `y` and the remainder of the division `x/y`.
 var gcd = (x , y) => !y ? x : gcd(y, x % y);
 ```
 
+### Head of list
+
+Return `arr[0]`.
+
+```js
+var head = arr => arr[0];
+}
+```
+
+### Initial of list
+
+Return `arr.slice(0,-1)`.
+
+```js
+var initial = arr => arr.slice(0,-1);
+}
+```
+
 ### Initialize array with range
 
 Use `Array(end-start)` to create an array of the desired length, `map()` to fill with the desired values in a range.
@@ -201,6 +223,15 @@ You can omit `v` to use a default value of `0`.
 ```js
 var initializeArray = (n, v = 0) =>
   Array(n).fill(v);
+```
+
+### Last of list
+
+Return `arr.slice(-1)[0]`.
+
+```js
+var initial = arr => arr.slice(-1)[0];
+}
 ```
 
 ### Measure time taken by function
@@ -318,6 +349,15 @@ Use array destructuring to swap values between two variables.
 
 ```js
 [varA, varB] = [varB, varA];
+```
+
+### Tail of list
+
+Return `arr.slice(1)`.
+
+```js
+var tail = arr => arr.slice(1);
+}
 ```
 
 ### Unique values of array

@@ -5,7 +5,7 @@ If the number of provided arguments (`args`) is sufficient, call the passed func
 Otherwise return a curried function `f` that expects the rest of the arguments.
 
 ```js
-curry = f =>
+var curry = f =>
   (...args) =>
     args.length >= f.length ? f(...args) : (...otherArgs) => curry(f)(...args, ...otherArgs)
 ```
