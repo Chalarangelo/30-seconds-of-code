@@ -3,7 +3,7 @@
 Use `replace()` to escape special characters.
 
 ```js
-escapeRegExp = s =>
+var escapeRegExp = s =>
   s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 ```
