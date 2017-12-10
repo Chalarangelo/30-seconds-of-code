@@ -13,6 +13,7 @@
 * [Capitalize first letter](#capitalize-first-letter)
 * [Count occurences of a value in array](#count-occurences-of-a-value-in-array)
 * [Current URL](#current-url)
+* [Curry](#curry)
 * [Difference between arrays](#difference-between-arrays)
 * [Distance between two points](#distance-between-two-points)
 * [Even or odd number](#even-or-odd-number)
@@ -87,6 +88,18 @@ Use `window.location.href` to get current URL.
 
 ```js
 var currentUrl = _ => window.location.href;
+```
+
+### Curry
+
+Use recursion.
+If the number of provided arguments (`args`) is sufficient, call the passed function `f`.
+Otherwise return a curried function `f` that expects the rest of the arguments.
+
+```js
+curry = f =>
+  (...args) =>
+    args.length >= f.length ? f(...args) : (...otherArgs) => curry(f)(...args, ...otherArgs)
 ```
 
 ### Difference between arrays
