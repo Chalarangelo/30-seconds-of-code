@@ -1,6 +1,6 @@
 ### Difference between arrays
 
-Use `filter()` to remove values that are not part of `values`, determined using `indexOf()`.
+Use `filter()` to remove values that are part of `values`, determined using `indexOf()`.
 
 ```js
 var difference = (arr, values) =>
