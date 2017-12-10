@@ -23,12 +23,14 @@
 * [Initialize array with range](#initialize-array-with-range)
 * [Initialize array with values](#initialize-array-with-values)
 * [Measure time taken by function](#measure-time-taken-by-function)
+* [Object from key value pairs](#object-from-key-value-pairs)
 * [Powerset](#powerset)
 * [Random number in range](#random-number-in-range)
 * [Randomize order of array](#randomize-order-of-array)
 * [Redirect to url](#redirect-to-url)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [Scroll to top](#scroll-to-top)
+* [Similarity between arrays](#similarity-between-arrays)
 * [Sort characters in string (alphabetical)](#sort-characters-in-string-alphabetical)
 * [Sum of array of numbers](#sum-of-array-of-numbers)
 * [Swap values of two variables](#swap-values-of-two-variables)
@@ -89,7 +91,7 @@ var currentUrl = _ => window.location.href;
 
 ### Difference between arrays
 
-Use `filter()` to remove values that are not part of `values`, determined using `indexOf()`.
+Use `filter()` to remove values that are part of `values`, determined using `indexOf()`.
 
 ```js
 var difference = (arr, values) =>
@@ -190,6 +192,15 @@ var timeTaken = (f,...args) => {
 }
 ```
 
+### Object from key-value pairs
+
+Use `map()` to create objects for each key-value pair, combine with `Object.assign()`.
+
+```js
+var objectFromPairs = arr =>
+  Object.assign(...arr.map( v => {return {[v[0]] : v[1]};} ));
+```
+
 ### Powerset
 
 Use `reduce()` combined with `map()` to iterate over elements and combine into an array containing all combinations. 
@@ -248,6 +259,15 @@ var scrollToTop = _ => {
     window.scrollTo(0, c - c/8);
   }
 }
+```
+
+### Similarity between arrays
+
+Use `filter()` to remove values that are not part of `values`, determined using `indexOf()`.
+
+```js
+var difference = (arr, values) =>
+  arr.filter(v => values.indexOf(v) !== -1);
 ```
 
 ### Sort characters in string (alphabetical)
