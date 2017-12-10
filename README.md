@@ -193,7 +193,6 @@ Return `arr[0]`.
 
 ```js
 var head = arr => arr[0];
-}
 ```
 
 ### Initial of list
@@ -202,7 +201,6 @@ Return `arr.slice(0,-1)`.
 
 ```js
 var initial = arr => arr.slice(0,-1);
-}
 ```
 
 ### Initialize array with range
@@ -231,7 +229,6 @@ Return `arr.slice(-1)[0]`.
 
 ```js
 var initial = arr => arr.slice(-1)[0];
-}
 ```
 
 ### Measure time taken by function
@@ -357,7 +354,6 @@ Return `arr.slice(1)`.
 
 ```js
 var tail = arr => arr.slice(1);
-}
 ```
 
 ### Unique values of array
