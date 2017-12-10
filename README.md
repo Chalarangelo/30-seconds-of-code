@@ -16,6 +16,7 @@
 * [Curry](#curry)
 * [Difference between arrays](#difference-between-arrays)
 * [Distance between two points](#distance-between-two-points)
+* [Escape regular expression](#escape-regular-expression)
 * [Even or odd number](#even-or-odd-number)
 * [Factorial](#factorial)
 * [Fibonacci array generator](#fibonacci-array-generator)
@@ -118,6 +119,16 @@ Use `Math.pow()` and `Math.sqrt()` to calculate the Euclidean distance between t
 ```js
 var distance = x0, y0, x1, y1 =>
   Math.sqrt(Math.pow(x1-x0, 2) + Math.pow(y1 - y0, 2))
+```
+
+### Escape regular expression
+
+Use `replace()` to escape special characters.
+
+```js
+escapeRegExp = s =>
+  s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
 ```
 
 ### Even or odd number
