@@ -14,7 +14,8 @@
 * [Anagrams of string (with duplicates)](#anagrams-of-string-with-duplicates)
 * [Average of array of numbers](#average-of-array-of-numbers)
 * [Capitalize first letter](#capitalize-first-letter)
-* [Count occurrences of a value in array](#count-occurrences-of-a-value-in-array)
+* [Capitalize first letter of every word](#capitalize-first-letter-of-every-word)
+* [Count occurences of a value in array](#count-occurences-of-a-value-in-array)
 * [Current URL](#current-url)
 * [Curry](#curry)
 * [Difference between arrays](#difference-between-arrays)
@@ -111,7 +112,15 @@ Use `toUpperCase()` to capitalize first letter, `slice(1)` to get the rest of th
 var capitalize = str => str[0].toUpperCase() + str.slice(1);
 ```
 
-### Count occurrences of a value in array
+### Capitalize first letter of every word
+
+Use `replace()` to match the first character of each word and `toUpperCase()` to capitalize it.
+
+```js
+var capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperCase());
+```
+
+### Count occurences of a value in array
 
 Use `filter()` to create an array containing only the items with the specified value, count them using `length`.
 
@@ -287,7 +296,7 @@ var objectFromPairs = arr =>
 
 ### Powerset
 
-Use `reduce()` combined with `map()` to iterate over elements and combine into an array containing all combinations. 
+Use `reduce()` combined with `map()` to iterate over elements and combine into an array containing all combinations.
 
 ```js
 var powerset = arr =>
