@@ -13,24 +13,33 @@
 * [Capitalize first letter](#capitalize-first-letter)
 * [Count occurences of a value in array](#count-occurences-of-a-value-in-array)
 * [Current URL](#current-url)
+* [Curry](#curry)
+* [Difference between arrays](#difference-between-arrays)
 * [Distance between two points](#distance-between-two-points)
+* [Escape regular expression](#escape-regular-expression)
 * [Even or odd number](#even-or-odd-number)
 * [Factorial](#factorial)
 * [Fibonacci array generator](#fibonacci-array-generator)
 * [Flatten array](#flatten-array)
 * [Greatest common divisor (GCD)](#greatest-common-divisor-gcd)
+* [Head of list](#head-of-list)
+* [Initial of list](#initial-of-list)
 * [Initialize array with range](#initialize-array-with-range)
 * [Initialize array with values](#initialize-array-with-values)
+* [Last of list](#last-of-list)
 * [Measure time taken by function](#measure-time-taken-by-function)
+* [Object from key value pairs](#object-from-key-value-pairs)
 * [Powerset](#powerset)
 * [Random number in range](#random-number-in-range)
 * [Randomize order of array](#randomize-order-of-array)
 * [Redirect to url](#redirect-to-url)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [Scroll to top](#scroll-to-top)
+* [Similarity between arrays](#similarity-between-arrays)
 * [Sort characters in string (alphabetical)](#sort-characters-in-string-alphabetical)
 * [Sum of array of numbers](#sum-of-array-of-numbers)
 * [Swap values of two variables](#swap-values-of-two-variables)
+* [Tail of list](#tail-of-list)
 * [Unique values of array](#unique-values-of-array)
 * [URL parameters](#url-parameters)
 * [UUID generator](#uuid-generator)
@@ -86,6 +95,27 @@ Use `window.location.href` to get current URL.
 var currentUrl = _ => window.location.href;
 ```
 
+### Curry
+
+Use recursion.
+If the number of provided arguments (`args`) is sufficient, call the passed function `f`.
+Otherwise return a curried function `f` that expects the rest of the arguments.
+
+```js
+var curry = f =>
+  (...args) =>
+    args.length >= f.length ? f(...args) : (...otherArgs) => curry(f)(...args, ...otherArgs)
+```
+
+### Difference between arrays
+
+Use `filter()` to remove values that are part of `values`, determined using `indexOf()`.
+
+```js
+var difference = (arr, values) =>
+  arr.filter(v => values.indexOf(v) === -1);
+```
+
 ### Distance between two points
 
 Use `Math.pow()` and `Math.sqrt()` to calculate the Euclidean distance between two points.
@@ -93,6 +123,16 @@ Use `Math.pow()` and `Math.sqrt()` to calculate the Euclidean distance between t
 ```js
 var distance = x0, y0, x1, y1 =>
   Math.sqrt(Math.pow(x1-x0, 2) + Math.pow(y1 - y0, 2))
+```
+
+### Escape regular expression
+
+Use `replace()` to escape special characters.
+
+```js
+var escapeRegExp = s =>
+  s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
 ```
 
 ### Even or odd number
@@ -147,6 +187,22 @@ Otherwise, return the GCD of `y` and the remainder of the division `x/y`.
 var gcd = (x , y) => !y ? x : gcd(y, x % y);
 ```
 
+### Head of list
+
+Return `arr[0]`.
+
+```js
+var head = arr => arr[0];
+```
+
+### Initial of list
+
+Return `arr.slice(0,-1)`.
+
+```js
+var initial = arr => arr.slice(0,-1);
+```
+
 ### Initialize array with range
 
 Use `Array(end-start)` to create an array of the desired length, `map()` to fill with the desired values in a range.
@@ -167,6 +223,14 @@ var initializeArray = (n, v = 0) =>
   Array(n).fill(v);
 ```
 
+### Last of list
+
+Return `arr.slice(-1)[0]`.
+
+```js
+var initial = arr => arr.slice(-1)[0];
+```
+
 ### Measure time taken by function
 
 Use `performance.now()` to get start and end time for the function, `console.log()` the time taken.
@@ -178,6 +242,15 @@ var timeTaken = (f,...args) => {
   console.log({performance.now() - t0);
   return r;
 }
+```
+
+### Object from key-value pairs
+
+Use `map()` to create objects for each key-value pair, combine with `Object.assign()`.
+
+```js
+var objectFromPairs = arr =>
+  Object.assign(...arr.map( v => {return {[v[0]] : v[1]};} ));
 ```
 
 ### Powerset
@@ -240,6 +313,15 @@ var scrollToTop = _ => {
 }
 ```
 
+### Similarity between arrays
+
+Use `filter()` to remove values that are not part of `values`, determined using `indexOf()`.
+
+```js
+var difference = (arr, values) =>
+  arr.filter(v => values.indexOf(v) !== -1);
+```
+
 ### Sort characters in string (alphabetical)
 
 Split the string using `split('')`, `sort()` utilizing `localeCompare()`, recombine using `join('')`.
@@ -264,6 +346,14 @@ Use array destructuring to swap values between two variables.
 
 ```js
 [varA, varB] = [varB, varA];
+```
+
+### Tail of list
+
+Return `arr.slice(1)`.
+
+```js
+var tail = arr => arr.slice(1);
 ```
 
 ### Unique values of array
