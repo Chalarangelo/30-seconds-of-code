@@ -239,7 +239,7 @@ First argument is the function name, subsequent arguments are passed to the func
 ```js
 var timeTaken = (f,...args) => {
   var t0 = performance.now(), r = f(...args);
-  console.log({performance.now() - t0);
+  console.log(performance.now() - t0);
   return r;
 }
 ```
