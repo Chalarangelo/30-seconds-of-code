@@ -11,7 +11,7 @@
 * [Anagrams of string (with duplicates)](#anagrams-of-string-with-duplicates)
 * [Average of array of numbers](#average-of-array-of-numbers)
 * [Capitalize first letter](#capitalize-first-letter)
-* [Count occurences of a value in array](#count-occurences-of-a-value-in-array)
+* [Count occurrences of a value in array](#count-occurrences-of-a-value-in-array)
 * [Current URL](#current-url)
 * [Curry](#curry)
 * [Difference between arrays](#difference-between-arrays)
@@ -79,12 +79,12 @@ Use `toUpperCase()` to capitalize first letter, `slice(1)` to get the rest of th
 var capitalize = str => str[0].toUpperCase() + str.slice(1);
 ```
 
-### Count occurences of a value in array
+### Count occurrences of a value in array
 
 Use `filter()` to create an array containing only the items with the specified value, count them using `length`.
 
 ```js
-var countOccurences = (arr, value) => arr.filter(v => v === value).length;
+var countOccurrences = (arr, value) => arr.filter(v => v === value).length;
 ```
 
 ### Current URL
