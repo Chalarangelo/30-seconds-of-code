@@ -22,6 +22,7 @@
 * [Fibonacci array generator](#fibonacci-array-generator)
 * [Filter out non uniqe values in an array](#filter-out-non-uniqe-values-in-an-array)
 * [Flatten array](#flatten-array)
+* [Get scroll position](#get-scroll-position)
 * [Greatest common divisor (GCD)](#greatest-common-divisor-gcd)
 * [Head of list](#head-of-list)
 * [Initial of list](#initial-of-list)
@@ -187,6 +188,20 @@ var flatten = arr =>
   arr.reduce( (a, v) => a.concat( Array.isArray(v) ? flatten(v) : v ), []);
 ```
 
+## Get Scroll Position
+
+Get the current distance scrolled by `window` or `HTMLElement` as an {x,y} object
+
+```js
+const getScrollPos = (scroller = window) => {
+  let x = (scroller.pageXOffset !== undefined) ? scroller.pageXOffset : scroller.scrollLeft;
+  let y = (scroller.pageYOffset !== undefined) ? scroller.pageYOffset : scroller.scrollTop;
+
+  return {x, y}
+}
+
+// getScrollPos() -> {x: number, y: number}
+```
 ### Greatest common divisor (GCD)
 
 Use recursion.
