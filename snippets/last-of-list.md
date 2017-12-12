@@ -3,5 +3,5 @@
 Return `arr.slice(-1)[0]`.
 
 ```js
-var initial = arr => arr.slice(-1)[0];
+const last = arr => arr.slice(-1)[0];
 ```
