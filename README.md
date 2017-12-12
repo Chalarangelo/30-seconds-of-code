@@ -16,6 +16,7 @@
 * [Curry](#curry)
 * [Difference between arrays](#difference-between-arrays)
 * [Distance between two points](#distance-between-two-points)
+* [Divisible by number](#divisible-by-number)
 * [Escape regular expression](#escape-regular-expression)
 * [Even or odd number](#even-or-odd-number)
 * [Factorial](#factorial)
@@ -123,6 +124,16 @@ Use `Math.hypot()` to calculate the Euclidean distance between two points.
 
 ```js
 const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
+```
+
+### Divisible by number
+
+Using the module operator `%` we can check if the reminder is equal
+to zero. In this case the function returns `true`. We can use this
+function for checking if a number is even or odd passing 2 as `divisor`
+
+```js
+var isDivisible = (dividend, divisor) => dividend % divisor === 0;
 ```
 
 ### Escape regular expression
