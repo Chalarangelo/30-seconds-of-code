@@ -1,14 +1,11 @@
-## Get Scroll Position
+## Get scroll position
 
-Get the current distance scrolled by `window` or `HTMLElement` as an {x,y} object
+Use `pageXOffset` and `pageYOffset` if they are defined, otherwise `scrollLeft` and `scrollTop`.
+You can omit `el` to use a default value of `window`.
 
 ```js
-const getScrollPos = (scroller = window) => {
-  let x = (scroller.pageXOffset !== undefined) ? scroller.pageXOffset : scroller.scrollLeft;
-  let y = (scroller.pageYOffset !== undefined) ? scroller.pageYOffset : scroller.scrollTop;
-
-  return {x, y}
-}
-
-// getScrollPos() -> {x: number, y: number}
+const getScrollPos = (el = window) =>
+  ( {x: (el.pageXOffset !== undefined) ? el.pageXOffset : el.scrollLeft,
+   y: (el.pageYOffset !== undefined) ? el.pageYOffset : el.scrollTop} );
+// getScrollPos() -> {x: 0, y: 200}
 ```
