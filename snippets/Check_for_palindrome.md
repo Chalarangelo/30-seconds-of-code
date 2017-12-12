@@ -1,8 +1,7 @@
-### Check For Palindrome
+### Check for palindrome
 
-Steps :
-1. First Converted to form in which no non-alphanumeric character is present i.e. string which is to be compared
-2. Then Converted to palindrome form in which characters will be reversed and will be compared to non-alphanumeric string
+Convert string `toLowerCase()` and use `replace()` to remove non-alphanumeric characters from it.
+Then, `split('')` into individual characters, `reverse()`, `join('')` and compare to the original, unreversed string, after converting it `tolowerCase()`.
 
 ```
 palindrome = str => (str.toLowerCase().replace(/[\W_]/g,'').split('').reverse().join('')==str.toLowerCase().replace(/[\W_]/g,''));
