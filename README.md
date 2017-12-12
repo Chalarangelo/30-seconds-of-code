@@ -153,7 +153,7 @@ Use `reduce()` to get all elements that are not arrays, flatten each element tha
 
 ```js
 const deepFlatten = arr =>
-  arr.reduce((a, v) => a.concat(Array.isArray(v) ? deepFlatten(v) : v), []);
+  arr.reduce( (a, v) => a.concat( Array.isArray(v) ? deepFlatten(v) : v ), []);
 // deepFlatten([1,[2],[[3],4],5]) -> [1,2,3,4,5]
 ```
 
@@ -240,7 +240,7 @@ Use `reduce()` to get all elements inside the array and `concat()` to flatten th
 
 ```js
 const flatten = arr => arr.reduce( (a, v) => a.concat(v), []);
-// flatten([1,[2],3,4) -> [1,2,3,4]
+// flatten([1,[2],3,4]) -> [1,2,3,4]
 ```
 
 ### Get max value from array
