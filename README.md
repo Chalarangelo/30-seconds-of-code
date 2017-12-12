@@ -128,12 +128,10 @@ const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
 
 ### Divisible by number
 
-Using the module operator `%` we can check if the reminder is equal
-to zero. In this case the function returns `true`. We can use this
-function for checking if a number is even or odd passing 2 as `divisor`
+Use the modulo operator (`%`) to check if the remainder is equal to `0`.
 
 ```js
-var isDivisible = (dividend, divisor) => dividend % divisor === 0;
+const isDivisible = (dividend, divisor) => dividend % divisor === 0;
 ```
 
 ### Escape regular expression
