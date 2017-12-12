@@ -255,7 +255,7 @@ var objectFromPairs = arr =>
 
 ### Powerset
 
-Use `reduce()` combined with `map()` to iterate over elements and combine into an array containing all combinations. 
+Use `reduce()` combined with `map()` to iterate over elements and combine into an array containing all combinations.
 
 ```js
 var powerset = arr =>
@@ -286,6 +286,14 @@ Pass a second argument to simulate a link click (`true` - default) or an HTTP re
 ```js
 var redirect = (url, asLink = true) =>
   asLink ? window.location.href = url : window.location.replace(url);
+```
+
+### Reverse a string
+
+Use `reverse()` to reverse order of elements in `destructed` array. Combine elements to get a string using `join('')`.
+
+```js
+var reverseString = str => [...str].reverse().join('');
 ```
 
 ### RGB to hexadecimal
