@@ -1,4 +1,4 @@
-## Get scroll position
+### Get scroll position
 
 Use `pageXOffset` and `pageYOffset` if they are defined, otherwise `scrollLeft` and `scrollTop`.
 You can omit `el` to use a default value of `window`.

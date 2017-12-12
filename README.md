@@ -16,6 +16,7 @@
 * [Count occurrences of a value in array](#count-occurrences-of-a-value-in-array)
 * [Current URL](#current-url)
 * [Curry](#curry)
+* [Deep flatten array](#deep-flatten-array)
 * [Difference between arrays](#difference-between-arrays)
 * [Distance between two points](#distance-between-two-points)
 * [Divisible by number](#divisible-by-number)
@@ -34,6 +35,7 @@
 * [Last of list](#last-of-list)
 * [Measure time taken by function](#measure-time-taken-by-function)
 * [Object from key value pairs](#object-from-key-value-pairs)
+* [Pipe](#pipe)
 * [Powerset](#powerset)
 * [Random number in range](#random-number-in-range)
 * [Randomize order of array](#randomize-order-of-array)
@@ -115,7 +117,7 @@ const palindrome = str =>
 Use `reduce()` to increment a counter each time you encounter the specific value inside the array.
 
 ```js
-const countOccurrences = (arr, value) => arr.reduce((a, v) => v===value ? a + 1 : a + 0, 0);
+const countOccurrences = (arr, value) => arr.reduce((a, v) => v === value ? a + 1 : a + 0, 0);
 // countOccurrences([1,1,2,1,2,3], 1) -> 3
 ```
 
@@ -139,6 +141,17 @@ const curry = f =>
   (...args) =>
     args.length >= f.length ? f(...args) : (...otherArgs) => curry(f)(...args, ...otherArgs);
 // curry(Math.pow)(2)(10) -> 1024
+```
+
+### Deep flatten array
+
+Use recursion.
+Use `reduce()` to get all elements that are not arrays, flatten each element that is an array.
+
+```js
+const deepFlatten = arr =>
+  arr.reduce( (a, v) => a.concat( Array.isArray(v) ? flatten(v) : v ), []);
+// deepFlatten([1,[2],[[3],4],5]) -> [1,2,3,4,5]
 ```
 
 ### Difference between arrays
@@ -173,8 +186,7 @@ const isDivisible = (dividend, divisor) => dividend % divisor === 0;
 Use `replace()` to escape special characters.
 
 ```js
-const escapeRegExp = s =>
-  s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 // escapeRegExp('(test)') -> \\(test\\)
 ```
 
@@ -225,16 +237,14 @@ const unique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexOf(i));
 
 ### Flatten array
 
-Use recursion.
-Use `reduce()` to get all elements that are not arrays, flatten each element that is an array.
+Use `reduce()` to get all elements inside the array and `concat()` to flatten them.
 
 ```js
-const flatten = arr =>
-  arr.reduce( (a, v) => a.concat( Array.isArray(v) ? flatten(v) : v ), []);
-// flatten([1,[2],[[3],4],5]) -> [1,2,3,4,5]
+const flatten = arr => arr.reduce( (a, v) => a.concat(v), []);
+// flatten([1,[2],3,4) -> [1,2,3,4]
 ```
 
-## Get scroll position
+### Get scroll position
 
 Use `pageXOffset` and `pageYOffset` if they are defined, otherwise `scrollLeft` and `scrollTop`.
 You can omit `el` to use a default value of `window`.
@@ -289,10 +299,10 @@ const initializeArrayRange = (end, start = 0) =>
 ### Initialize array with values
 
 Use `Array(n)` to create an array of the desired length, `fill(v)` to fill it with the desired values.
-You can omit `v` to use a default value of `0`.
+You can omit `value` to use a default value of `0`.
 
 ```js
-const initializeArray = (n, v = 0) => Array(n).fill(v);
+const initializeArray = (n, value = 0) => Array(n).fill(value);
 // initializeArray(5, 2) -> [2,2,2,2,2]
 ```
 
@@ -311,8 +321,8 @@ Use `performance.now()` to get start and end time for the function, `console.log
 First argument is the function name, subsequent arguments are passed to the function.
 
 ```js
-const timeTaken = (f,...args) => {
-  var t0 = performance.now(), r = f(...args);
+const timeTaken = (func,...args) => {
+  var t0 = performance.now(), r = func(...args);
   console.log(performance.now() - t0);
   return r;
 }
@@ -324,8 +334,17 @@ const timeTaken = (f,...args) => {
 Use `Array.reduce()` to create and combine key-value pairs.
 
 ```js
-const objectFromPairs = arr => arr.reduce((a,b) => (a[b[0]] = b[1], a), {});
+const objectFromPairs = arr => arr.reduce((a,v) => (a[v[0]] = v[1], a), {});
 // objectFromPairs([['a',1],['b',2]]) -> {a: 1, b: 2}
+```
+
+### Pipe
+
+Use `Array.reduce()` to pass value through functions.
+
+```js
+const pipe = (...funcs) => arg => funcs.reduce((acc, func) => func(acc), arg);
+// pipe(btoa, x => x.toUpperCase())("Test") -> "VGVZDA=="
 ```
 
 ### Powerset
@@ -428,8 +447,7 @@ const sortCharactersInString = str =>
 Use `reduce()` to add each value to an accumulator, initialized with a value of `0`.
 
 ```js
-const sum = arr =>
-  arr.reduce( (acc , val) => acc + val, 0);
+const sum = arr => arr.reduce( (acc , val) => acc + val, 0);
 // sum([1,2,3,4]) -> 10
 ```
 

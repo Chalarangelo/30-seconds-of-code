@@ -3,7 +3,6 @@
 Use `replace()` to escape special characters.
 
 ```js
-const escapeRegExp = s =>
-  s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 // escapeRegExp('(test)') -> \\(test\\)
 ```
