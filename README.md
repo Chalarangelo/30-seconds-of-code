@@ -38,6 +38,8 @@
 * [Random number in range](#random-number-in-range)
 * [Randomize order of array](#randomize-order-of-array)
 * [Redirect to url](#redirect-to-url)
+* [Reverse a string](#reverse-a-string)
+* [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [Scroll to top](#scroll-to-top)
 * [Similarity between arrays](#similarity-between-arrays)
 * [Sort characters in string (alphabetical)](#sort-characters-in-string-alphabetical)
@@ -339,7 +341,8 @@ var redirect = (url, asLink = true) =>
 
 ### Reverse a string
 
-Use `reverse()` to reverse order of elements in `destructed` array. Combine elements to get a string using `join('')`.
+Use array destructuring and `Array.reverse()` to reverse the order of the characters in the string.
+Combine characters to get a string using `join('')`.
 
 ```js
 var reverseString = str => [...str].reverse().join('');
