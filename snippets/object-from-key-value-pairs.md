@@ -4,5 +4,5 @@ Use `map()` to create objects for each key-value pair, combine with `Object.assi
 
 ```js
 var objectFromPairs = arr =>
-  Object.assign(...arr.map( v => {return {[v[0]] : v[1]};} ));
+  Object.assign(...arr.map( v => ({ [v[0]] : v[1] })));
 ```
