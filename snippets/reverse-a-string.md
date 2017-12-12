@@ -4,5 +4,5 @@ Use array destructuring and `Array.reverse()` to reverse the order of the charac
 Combine characters to get a string using `join('')`.
 
 ```js
-var reverseString = str => [...str].reverse().join(''); 
+const reverseString = str => [...str].reverse().join('');
 ```

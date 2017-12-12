@@ -5,6 +5,6 @@ Combine all key-value pairs into a single object using `Object.assign()` and the
 Pass `location.search` as the argument to apply to the current `url`.
 
 ```js
-var getUrlParameters = url =>
+const getUrlParameters = url =>
   Object.assign(...url.match(/([^?=&]+)(=([^&]*))?/g).map(m => {[f,v] = m.split('='); return {[f]:v}}));
 ```
