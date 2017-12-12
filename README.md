@@ -8,6 +8,9 @@
 
 ## Contents
 
+* [RGB to hexadecimal](#rgb-to-hexadecimal)
+* [URL parameters](#url-parameters)
+* [UUID generator](#uuid-generator)
 * [Anagrams of string (with duplicates)](#anagrams-of-string-with-duplicates)
 * [Average of array of numbers](#average-of-array-of-numbers)
 * [Capitalize first letter](#capitalize-first-letter)
@@ -33,7 +36,6 @@
 * [Random number in range](#random-number-in-range)
 * [Randomize order of array](#randomize-order-of-array)
 * [Redirect to url](#redirect-to-url)
-* [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [Scroll to top](#scroll-to-top)
 * [Similarity between arrays](#similarity-between-arrays)
 * [Sort characters in string (alphabetical)](#sort-characters-in-string-alphabetical)
@@ -41,9 +43,39 @@
 * [Swap values of two variables](#swap-values-of-two-variables)
 * [Tail of list](#tail-of-list)
 * [Unique values of array](#unique-values-of-array)
-* [URL parameters](#url-parameters)
-* [UUID generator](#uuid-generator)
 * [Validate number](#validate-number)
+
+### RGB to hexadecimal
+
+Convert each value to a hexadecimal string, using `toString(16)`, then `padStart(2,'0')` to get a 2-digit hexadecimal value.
+Combine values using `join('')`.
+
+```js
+var rgbToHex = (r, g, b) =>
+  [r,g,b].map( v => v.toString(16).padStart(2,'0')).join('');
+```
+
+### URL parameters
+
+Use `match()` with an appropriate regular expression to get all key-value pairs, `map()` them appropriately.
+Combine all key-value pairs into a single object using `Object.assign()` and the spread operator (`...`).
+Pass `location.search` as the argument to apply to the current `url`.
+
+```js
+var getUrlParameters = url =>
+  Object.assign(...url.match(/([^?=&]+)(=([^&]*))?/g).map(m => {[f,v] = m.split('='); return {[f]:v}}));
+```
+
+### UUID generator
+
+Use `crypto` API to generate a UUID, compliant with [RFC4122](https://www.ietf.org/rfc/rfc4122.txt) version 4.
+
+```js
+var uuid = _ =>
+  ( [1e7]+-1e3+-4e3+-8e3+-1e11 ).replace( /[018]/g, c =>
+    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+  )
+```
 
 ### Anagrams of string (with duplicates)
 
@@ -250,7 +282,7 @@ Use `map()` to create objects for each key-value pair, combine with `Object.assi
 
 ```js
 var objectFromPairs = arr =>
-  Object.assign(...arr.map( v => {return {[v[0]] : v[1]};} ));
+  Object.assign(...arr.map( v => ({ [v[0]] : v[1] })));
 ```
 
 ### Powerset
@@ -286,16 +318,6 @@ Pass a second argument to simulate a link click (`true` - default) or an HTTP re
 ```js
 var redirect = (url, asLink = true) =>
   asLink ? window.location.href = url : window.location.replace(url);
-```
-
-### RGB to hexadecimal
-
-Convert each value to a hexadecimal string, using `toString(16)`, then `padStart(2,'0')` to get a 2-digit hexadecimal value.
-Combine values using `join('')`.
-
-```js
-var rgbToHex = (r, g, b) =>
-  [r,g,b].map( v => v.toString(16).padStart(2,'0')).join('');
 ```
 
 ### Scroll to top
@@ -368,28 +390,6 @@ var uniqueValues = arr =>
       acc.push(val);
       return acc;
   }, []);
-```
-
-### URL parameters
-
-Use `match()` with an appropriate regular expression to get all key-value pairs, `map()` them appropriately.
-Combine all key-value pairs into a single object using `Object.assign()` and the spread operator (`...`).
-Pass `location.search` as the argument to apply to the current `url`.
-
-```js
-var getUrlParameters = url =>
-  Object.assign(...url.match(/([^?=&]+)(=([^&]*))?/g).map(m => {[f,v] = m.split('='); return {[f]:v}}));
-```
-
-### UUID generator
-
-Use `crypto` API to generate a UUID, compliant with [RFC4122](https://www.ietf.org/rfc/rfc4122.txt) version 4.
-
-```js
-var uuid = _ =>
-  ( [1e7]+-1e3+-4e3+-8e3+-1e11 ).replace( /[018]/g, c =>
-    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
-  )
 ```
 
 ### Validate number
