@@ -12,7 +12,7 @@
 * [Average of array of numbers](#average-of-array-of-numbers)
 * [Capitalize first letter of every word](#capitalize-first-letter-of-every-word)
 * [Capitalize first letter](#capitalize-first-letter)
-* [Check_for_palindrome](#check_for_palindrome)
+* [Check for palindrome](#check-for-palindrome)
 * [Count occurrences of a value in array](#count-occurrences-of-a-value-in-array)
 * [Current URL](#current-url)
 * [Curry](#curry)
