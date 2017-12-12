@@ -3,5 +3,5 @@
 Use `Math.random()` to generate a random value, map it to the desired range using multiplication.
 
 ```js
-var randomInRange = (min, max) => Math.random() * (max - min) + min;
+const randomInRange = (min, max) => Math.random() * (max - min) + min;
 ```
