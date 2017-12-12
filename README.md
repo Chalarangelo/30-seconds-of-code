@@ -43,6 +43,7 @@
 * [Reverse a string](#reverse-a-string)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [Scroll to top](#scroll-to-top)
+* [Shuffle array values](#shuffle-array-values)
 * [Similarity between arrays](#similarity-between-arrays)
 * [Sort characters in string (alphabetical)](#sort-characters-in-string-alphabetical)
 * [Sum of array of numbers](#sum-of-array-of-numbers)
@@ -421,6 +422,19 @@ const scrollToTop = _ => {
   }
 }
 // scrollToTop()
+```
+
+### Shuffle array values
+
+Create an array of random values by using `Array.map()` and `Math.random()`.
+Use `Array.sort()` to sort the elements of the original array based on the random values.
+
+```js
+const shuffle = arr => {
+  let r = arr.map(Math.random);
+  return arr.sort((a,b) => r[a] - r[b]);
+}
+// shuffle([1,2,3]) -> [2, 1, 3]
 ```
 
 ### Similarity between arrays
