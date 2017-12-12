@@ -18,6 +18,7 @@
 * [Curry](#curry)
 * [Difference between arrays](#difference-between-arrays)
 * [Distance between two points](#distance-between-two-points)
+* [Divisible by number](#divisible-by-number)
 * [Escape regular expression](#escape-regular-expression)
 * [Even or odd number](#even-or-odd-number)
 * [Factorial](#factorial)
@@ -145,6 +146,14 @@ Use `Math.hypot()` to calculate the Euclidean distance between two points.
 
 ```js
 const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
+```
+
+### Divisible by number
+
+Use the modulo operator (`%`) to check if the remainder is equal to `0`.
+
+```js
+const isDivisible = (dividend, divisor) => dividend % divisor === 0;
 ```
 
 ### Escape regular expression
