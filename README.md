@@ -299,10 +299,10 @@ const initializeArrayRange = (end, start = 0) =>
 ### Initialize array with values
 
 Use `Array(n)` to create an array of the desired length, `fill(v)` to fill it with the desired values.
-You can omit `v` to use a default value of `0`.
+You can omit `value` to use a default value of `0`.
 
 ```js
-const initializeArray = (n, v = 0) => Array(n).fill(v);
+const initializeArray = (n, value = 0) => Array(n).fill(value);
 // initializeArray(5, 2) -> [2,2,2,2,2]
 ```
 
@@ -321,8 +321,8 @@ Use `performance.now()` to get start and end time for the function, `console.log
 First argument is the function name, subsequent arguments are passed to the function.
 
 ```js
-const timeTaken = (f,...args) => {
-  var t0 = performance.now(), r = f(...args);
+const timeTaken = (func,...args) => {
+  var t0 = performance.now(), r = func(...args);
   console.log(performance.now() - t0);
   return r;
 }
@@ -334,7 +334,7 @@ const timeTaken = (f,...args) => {
 Use `Array.reduce()` to create and combine key-value pairs.
 
 ```js
-const objectFromPairs = arr => arr.reduce((a,b) => (a[b[0]] = b[1], a), {});
+const objectFromPairs = arr => arr.reduce((a,v) => (a[v[0]] = v[1], a), {});
 // objectFromPairs([['a',1],['b',2]]) -> {a: 1, b: 2}
 ```
 
@@ -447,8 +447,7 @@ const sortCharactersInString = str =>
 Use `reduce()` to add each value to an accumulator, initialized with a value of `0`.
 
 ```js
-const sum = arr =>
-  arr.reduce( (acc , val) => acc + val, 0);
+const sum = arr => arr.reduce( (acc , val) => acc + val, 0);
 // sum([1,2,3,4]) -> 10
 ```
 
