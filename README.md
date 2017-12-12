@@ -19,6 +19,7 @@
 * [Count occurrences of a value in array](#count-occurrences-of-a-value-in-array)
 * [Current URL](#current-url)
 * [Curry](#curry)
+* [Deep flatten array](#deep-flatten-array)
 * [Difference between arrays](#difference-between-arrays)
 * [Distance between two points](#distance-between-two-points)
 * [Divisible by number](#divisible-by-number)
@@ -415,7 +416,7 @@ const palindrome = str =>
 Use `reduce()` to increment a counter each time you encounter the specific value inside the array.
 
 ```js
-const countOccurrences = (arr, value) => arr.reduce((a, v) => v===value ? a + 1 : a + 0, 0);
+const countOccurrences = (arr, value) => arr.reduce((a, v) => v === value ? a + 1 : a + 0, 0);
 // countOccurrences([1,1,2,1,2,3], 1) -> 3
 ```
 
@@ -439,6 +440,17 @@ const curry = f =>
   (...args) =>
     args.length >= f.length ? f(...args) : (...otherArgs) => curry(f)(...args, ...otherArgs);
 // curry(Math.pow)(2)(10) -> 1024
+```
+
+### Deep flatten array
+
+Use recursion.
+Use `reduce()` to get all elements that are not arrays, flatten each element that is an array.
+
+```js
+const deepFlatten = arr =>
+  arr.reduce( (a, v) => a.concat( Array.isArray(v) ? flatten(v) : v ), []);
+// deepFlatten([1,[2],[[3],4],5]) -> [1,2,3,4,5]
 ```
 
 ### Difference between arrays
@@ -473,8 +485,7 @@ const isDivisible = (dividend, divisor) => dividend % divisor === 0;
 Use `replace()` to escape special characters.
 
 ```js
-const escapeRegExp = s =>
-  s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 // escapeRegExp('(test)') -> \\(test\\)
 ```
 
@@ -525,13 +536,11 @@ const unique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexOf(i));
 
 ### Flatten array
 
-Use recursion.
-Use `reduce()` to get all elements that are not arrays, flatten each element that is an array.
+Use `reduce()` to get all elements inside the array and `concat()` to flatten them.
 
 ```js
-const flatten = arr =>
-  arr.reduce( (a, v) => a.concat( Array.isArray(v) ? flatten(v) : v ), []);
-// flatten([1,[2],[[3],4],5]) -> [1,2,3,4,5]
+const flatten = arr => arr.reduce( (a, v) => a.concat(v), []);
+// flatten([1,[2],3,4) -> [1,2,3,4]
 ```
 
 ## Get scroll position
