@@ -39,6 +39,7 @@
 * [Object from key value pairs](#object-from-key-value-pairs)
 * [Pipe](#pipe)
 * [Powerset](#powerset)
+* [Random integer in range](#random-integer-in-range)
 * [Random number in range](#random-number-in-range)
 * [Randomize order of array](#randomize-order-of-array)
 * [Redirect to url](#redirect-to-url)
@@ -372,6 +373,15 @@ Use `reduce()` combined with `map()` to iterate over elements and combine into a
 const powerset = arr =>
   arr.reduce( (a,v) => a.concat(a.map( r => [v].concat(r) )), [[]]);
 // powerset([1,2]) -> [[], [1], [2], [2,1]]
+```
+
+### Random integer in range
+
+Use `Math.random()` to generate a random number and map it to the desired range, using `Math.floor()` to make it an integer.
+
+```js
+const randomIntegerInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+// randomIntegerInRange(0, 5) -> 2
 ```
 
 ### Random number in range
