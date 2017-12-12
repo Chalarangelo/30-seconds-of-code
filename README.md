@@ -243,7 +243,7 @@ const flatten = arr => arr.reduce( (a, v) => a.concat(v), []);
 // flatten([1,[2],3,4) -> [1,2,3,4]
 ```
 
-## Get scroll position
+### Get scroll position
 
 Use `pageXOffset` and `pageYOffset` if they are defined, otherwise `scrollLeft` and `scrollTop`.
 You can omit `el` to use a default value of `window`.
