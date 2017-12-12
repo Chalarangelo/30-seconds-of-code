@@ -59,11 +59,11 @@ Use `map()` to combine the letter with each partial anagram, then `reduce()` to 
 Base cases are for string `length` equal to `2` or `1`.
 
 ```js
-const anagrams = s => {
-  if(s.length <= 2)  return s.length === 2 ? [s, s[1] + s[0]] : [s];
-  return s.split('').reduce( (a,l,i) => {
-    anagrams(s.slice(0,i) + s.slice(i+1)).map( v => a.push(l+v) );
-    return a;
+const anagrams = str => {
+  if(str.length <= 2)  return str.length === 2 ? [str, str[1] + str[0]] : [str];
+  return str.split('').reduce( (acc, letter, index) => {
+    anagrams(str.slice(0, index) + str.slice(index + 1)).map( value => acc.push(letter + value) );
+    return acc;
   }, []);
 }
 // anagrams('abc') -> ['abc','acb','bac','bca','cab','cba']
@@ -496,4 +496,3 @@ const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n);
 ## Credits
 
 *Icons made by [Smashicons](https://www.flaticon.com/authors/smashicons) from [www.flaticon.com](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).*
-
