@@ -20,6 +20,7 @@
 * [Even or odd number](#even-or-odd-number)
 * [Factorial](#factorial)
 * [Fibonacci array generator](#fibonacci-array-generator)
+* [Filter out non uniqe values in an array](#filter-out-non-uniqe-values-in-an-array)
 * [Flatten array](#flatten-array)
 * [Greatest common divisor (GCD)](#greatest-common-divisor-gcd)
 * [Head of list](#head-of-list)
@@ -164,6 +165,15 @@ var fibonacci = n =>
       acc.push( i>1 ? acc[i-1]+acc[i-2] : val);
       return acc;
     },[]);
+```
+
+### Filter out non-unique values in an array
+
+Use `Array.filter()` for an array containing only the unique values.
+
+```js
+const unique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexOf(i));
+// unique([1,2,2,3,4,4,5]) -> [1,3,5]
 ```
 
 ### Flatten array
@@ -357,16 +367,11 @@ var tail = arr => arr.slice(1);
 
 ### Unique values of array
 
-Use `reduce()` to accumulate all unique values in an array.
-Check if each value has already been added, using `indexOf()` on the accumulator array.
+Use ES6 `Set` and the `...rest` operator to discard all duplicated values.
 
 ```js
-var uniqueValues = arr =>
-  arr.reduce( (acc, val) => {
-    if(acc.indexOf(val) === -1)
-      acc.push(val);
-      return acc;
-  }, []);
+const unique = arr => [...new Set(arr)];
+// unique([1,2,2,3,4,4,5]) -> [1,2,3,4,5]
 ```
 
 ### URL parameters
