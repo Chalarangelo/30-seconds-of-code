@@ -110,11 +110,11 @@ var curry = f =>
 
 ### Difference between arrays
 
-Use `filter()` to remove values that are part of `values`, determined using `indexOf()`.
+Use `filter()` to remove values that are part of `values`, determined using `includes()`.
 
 ```js
 var difference = (arr, values) =>
-  arr.filter(v => values.indexOf(v) === -1);
+  arr.filter(v => !values.includes(v));
 ```
 
 ### Distance between two points
@@ -324,11 +324,11 @@ var scrollToTop = _ => {
 
 ### Similarity between arrays
 
-Use `filter()` to remove values that are not part of `values`, determined using `indexOf()`.
+Use `filter()` to remove values that are not part of `values`, determined using `includes()`.
 
 ```js
 var difference = (arr, values) =>
-  arr.filter(v => values.indexOf(v) !== -1);
+  arr.filter(v => values.includes(v));
 ```
 
 ### Sort characters in string (alphabetical)
@@ -366,6 +366,7 @@ var tail = arr => arr.slice(1);
 ```
 
 ### Unique values of array
+
 
 Use ES6 `Set` and the `...rest` operator to discard all duplicated values.
 
