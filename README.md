@@ -109,11 +109,11 @@ var curry = f =>
 
 ### Difference between arrays
 
-Use `filter()` to remove values that are part of `values`, determined using `indexOf()`.
+Use `filter()` to remove values that are part of `values`, determined using `includes()`.
 
 ```js
 var difference = (arr, values) =>
-  arr.filter(v => values.indexOf(v) === -1);
+  arr.filter(v => !values.includes(v));
 ```
 
 ### Distance between two points
@@ -315,11 +315,11 @@ var scrollToTop = _ => {
 
 ### Similarity between arrays
 
-Use `filter()` to remove values that are not part of `values`, determined using `indexOf()`.
+Use `filter()` to remove values that are not part of `values`, determined using `includes()`.
 
 ```js
 var difference = (arr, values) =>
-  arr.filter(v => values.indexOf(v) !== -1);
+  arr.filter(v => values.includes(v));
 ```
 
 ### Sort characters in string (alphabetical)
@@ -359,12 +359,12 @@ var tail = arr => arr.slice(1);
 ### Unique values of array
 
 Use `reduce()` to accumulate all unique values in an array.
-Check if each value has already been added, using `indexOf()` on the accumulator array.
+Check if each value has already been added, using `includes()` on the accumulator array.
 
 ```js
 var uniqueValues = arr =>
   arr.reduce( (acc, val) => {
-    if(acc.indexOf(val) === -1)
+    if(acc.indexOf(val))
       acc.push(val);
       return acc;
   }, []);
