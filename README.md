@@ -34,6 +34,7 @@
 * [Last of list](#last-of-list)
 * [Measure time taken by function](#measure-time-taken-by-function)
 * [Object from key value pairs](#object-from-key-value-pairs)
+* [Pipe](#pipe)
 * [Powerset](#powerset)
 * [Random number in range](#random-number-in-range)
 * [Randomize order of array](#randomize-order-of-array)
@@ -325,6 +326,15 @@ Use `Array.reduce()` to create and combine key-value pairs.
 ```js
 const objectFromPairs = arr => arr.reduce((a,b) => (a[b[0]] = b[1], a), {});
 // objectFromPairs([['a',1],['b',2]]) -> {a: 1, b: 2}
+```
+
+### Pipe
+
+Use `Array.reduce()` to pass value through functions.
+
+```js
+const pipe = (...funcs) => arg => funcs.reduce((acc, func) => func(acc), arg);
+// pipe(btoa, x => x.toUpperCase())("Test") -> "VGVZDA=="
 ```
 
 ### Powerset
