@@ -6,4 +6,5 @@ Otherwise, return the GCD of `y` and the remainder of the division `x/y`.
 
 ```js
 const gcd = (x , y) => !y ? x : gcd(y, x % y);
+// gcd (8, 36) -> 4
 ```

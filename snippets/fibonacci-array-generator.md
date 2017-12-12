@@ -10,4 +10,5 @@ const fibonacci = n =>
       acc.push( i>1 ? acc[i-1]+acc[i-2] : val);
       return acc;
     },[]);
+// fibonacci(5) -> [0,1,1,2,3]
 ```

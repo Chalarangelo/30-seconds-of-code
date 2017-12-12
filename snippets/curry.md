@@ -7,5 +7,6 @@ Otherwise return a curried function `f` that expects the rest of the arguments.
 ```js
 const curry = f =>
   (...args) =>
-    args.length >= f.length ? f(...args) : (...otherArgs) => curry(f)(...args, ...otherArgs)
+    args.length >= f.length ? f(...args) : (...otherArgs) => curry(f)(...args, ...otherArgs);
+// curry(Math.pow)(2)(10) -> 1024
 ```

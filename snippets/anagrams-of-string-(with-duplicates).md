@@ -13,4 +13,5 @@ const anagrams = s => {
     return a;
   }, []);
 }
+// anagrams('abc') -> ['abc','acb','bac','bca','cab','cba']
 ```
