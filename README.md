@@ -57,10 +57,10 @@ Base cases are for string `length` equal to `2` or `1`.
 
 ```js
 export const anagramsOf = s => (
-  (s.length <= 2) ? (
-    s.length === 2 ?
-      [s, s[1] + s[0]] :
-      [s] ) :
+  (s.length < 2) ? [s] :
+
+  (s.length === 2) ? (
+    [s, s[1] + s[0]] ) :
 
   s.split('').reduce( (a,l,i) => (
     a.concat(
