@@ -6,4 +6,5 @@ Combine values using `join('')`.
 ```js
 const rgbToHex = (r, g, b) =>
   [r,g,b].map( v => v.toString(16).padStart(2,'0')).join('');
+// rgbToHex(0, 127, 255) -> '007fff'
 ```

@@ -366,6 +366,7 @@ const anagrams = s => {
     return a;
   }, []);
 }
+// anagrams('abc') -> ['abc','acb','bac','bca','cab','cba']
 ```
 
 ### Average of array of numbers
@@ -375,6 +376,7 @@ Use `reduce()` to add each value to an accumulator, initialized with a value of 
 ```js
 const average = arr =>
   arr.reduce( (acc , val) => acc + val, 0) / arr.length;
+// average([1,2,3]) -> 2
 ```
 
 ### Capitalize first letter of every word
@@ -383,6 +385,7 @@ Use `replace()` to match the first character of each word and `toUpperCase()` to
 
 ```js
 const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperCase());
+// capitalizeEveryWord('hello world!') -> 'Hello World!'
 ```
 
 ### Capitalize first letter
@@ -393,6 +396,7 @@ Omit the `lowerRest` parameter to keep the rest of the string intact, or set it 
 ```js
 const capitalize = (str, lowerRest = false) =>
   str.slice(0, 1).toUpperCase() + (lowerRest? str.slice(1).toLowerCase() : str.slice(1));
+// capitalize('myName', true) -> 'Myname'
 ```
 
 ### Check for palindrome
@@ -401,7 +405,8 @@ Convert string `toLowerCase()` and use `replace()` to remove non-alphanumeric ch
 Then, `split('')` into individual characters, `reverse()`, `join('')` and compare to the original, unreversed string, after converting it `tolowerCase()`.
 
 ```js
-const palindrome = str => (str.toLowerCase().replace(/[\W_]/g,'').split('').reverse().join('')==str.toLowerCase().replace(/[\W_]/g,''));
+const palindrome = str => (str.toLowerCase().replace(/[\W_]/g,'').split('').reverse().join('') === str.toLowerCase().replace(/[\W_]/g,''));
+// palindrome('taco cat') -> true
  ```
 
 ### Count occurrences of a value in array
@@ -410,6 +415,7 @@ Use `reduce()` to increment a counter each time you encounter the specific value
 
 ```js
 const countOccurrences = (arr, value) => arr.reduce((a, v) => v===value ? a + 1 : a + 0, 0);
+// countOccurrences([1,1,2,1,2,3], 1) -> 3
 ```
 
 ### Current URL
@@ -418,6 +424,7 @@ Use `window.location.href` to get current URL.
 
 ```js
 const currentUrl = _ => window.location.href;
+// currentUrl() -> 'https://google.com'
 ```
 
 ### Curry
@@ -429,7 +436,8 @@ Otherwise return a curried function `f` that expects the rest of the arguments.
 ```js
 const curry = f =>
   (...args) =>
-    args.length >= f.length ? f(...args) : (...otherArgs) => curry(f)(...args, ...otherArgs)
+    args.length >= f.length ? f(...args) : (...otherArgs) => curry(f)(...args, ...otherArgs);
+// curry(Math.pow)(2)(10) -> 1024
 ```
 
 ### Difference between arrays
@@ -438,6 +446,7 @@ Use `filter()` to remove values that are part of `values`, determined using `inc
 
 ```js
 const difference = (arr, values) => arr.filter(v => !values.includes(v));
+// difference([1,2,3], [1,2]) -> [3]
 ```
 
 ### Distance between two points
@@ -446,6 +455,16 @@ Use `Math.hypot()` to calculate the Euclidean distance between two points.
 
 ```js
 const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
+// distance(1,1, 2,3) -> 2.23606797749979
+```
+
+### Divisible by number
+
+Use the modulo operator (`%`) to check if the remainder is equal to `0`.
+
+```js
+const isDivisible = (dividend, divisor) => dividend % divisor === 0;
+// isDivisible(6,3) -> true
 ```
 
 ### Escape regular expression
@@ -455,7 +474,7 @@ Use `replace()` to escape special characters.
 ```js
 const escapeRegExp = s =>
   s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
+// escapeRegExp('(test)') -> \\(test\\)
 ```
 
 ### Even or odd number
@@ -465,6 +484,7 @@ Return `true` if the number is even, `false` if the number is odd.
 
 ```js
 const isEven = num => Math.abs(num) % 2 === 0;
+// isEven(3) -> false
 ```
 
 ### Factorial
@@ -474,7 +494,8 @@ If `n` is less than or equal to `1`, return `1`.
 Otherwise, return the product of `n` and the factorial of `n - 1`.
 
 ```js
-const factorial = n => n <= 1 ? 1 : n * factorial(n - 1)
+const factorial = n => n <= 1 ? 1 : n * factorial(n - 1);
+// factorial(6) -> 720
 ```
 
 ### Fibonacci array generator
@@ -489,6 +510,7 @@ const fibonacci = n =>
       acc.push( i>1 ? acc[i-1]+acc[i-2] : val);
       return acc;
     },[]);
+// fibonacci(5) -> [0,1,1,2,3]
 ```
 
 ### Filter out non-unique values in an array
@@ -508,6 +530,7 @@ Use `reduce()` to get all elements that are not arrays, flatten each element tha
 ```js
 const flatten = arr =>
   arr.reduce( (a, v) => a.concat( Array.isArray(v) ? flatten(v) : v ), []);
+// flatten([1,[2],[[3],4],5]) -> [1,2,3,4,5]
 ```
 
 ## Get scroll position
@@ -530,6 +553,7 @@ Otherwise, return the GCD of `y` and the remainder of the division `x/y`.
 
 ```js
 const gcd = (x , y) => !y ? x : gcd(y, x % y);
+// gcd (8, 36) -> 4
 ```
 
 ### Head of list
@@ -538,6 +562,7 @@ Return `arr[0]`.
 
 ```js
 const head = arr => arr[0];
+// head([1,2,3]) -> 1
 ```
 
 ### Initial of list
@@ -546,6 +571,7 @@ Return `arr.slice(0,-1)`.
 
 ```js
 const initial = arr => arr.slice(0,-1);
+// initial([1,2,3]) -> [1,2]
 ```
 
 ### Initialize array with range
@@ -556,6 +582,7 @@ You can omit `start` to use a default value of `0`.
 ```js
 const initializeArrayRange = (end, start = 0) =>
   Array.apply(null, Array(end-start)).map( (v,i) => i + start );
+// initializeArrayRange(5) -> [0,1,2,3,4]
 ```
 
 ### Initialize array with values
@@ -564,8 +591,8 @@ Use `Array(n)` to create an array of the desired length, `fill(v)` to fill it wi
 You can omit `v` to use a default value of `0`.
 
 ```js
-const initializeArray = (n, v = 0) =>
-  Array(n).fill(v);
+const initializeArray = (n, v = 0) => Array(n).fill(v);
+// initializeArray(5, 2) -> [2,2,2,2,2]
 ```
 
 ### Last of list
@@ -574,6 +601,7 @@ Return `arr.slice(-1)[0]`.
 
 ```js
 const last = arr => arr.slice(-1)[0];
+// last([1,2,3]) -> 3
 ```
 
 ### Measure time taken by function
@@ -587,6 +615,7 @@ const timeTaken = (f,...args) => {
   console.log(performance.now() - t0);
   return r;
 }
+// timeTaken(Math.pow, 2, 10) -> 1024 (0.010000000009313226 logged in console)
 ```
 
 ### Object from key-value pairs
@@ -594,8 +623,8 @@ const timeTaken = (f,...args) => {
 Use `map()` to create objects for each key-value pair, combine with `Object.assign()`.
 
 ```js
-const objectFromPairs = arr =>
-  Object.assign(...arr.map( v => {return {[v[0]] : v[1]};} ));
+const objectFromPairs = arr => arr.reduce((a,b) => (a[b[0]] = b[1], a), {});
+// objectFromPairs([['a',1],['b',2]]) -> {a: 1, b: 2}
 ```
 
 ### Powerset
@@ -605,6 +634,7 @@ Use `reduce()` combined with `map()` to iterate over elements and combine into a
 ```js
 const powerset = arr =>
   arr.reduce( (a,v) => a.concat(a.map( r => [v].concat(r) )), [[]]);
+// powerset([1,2]) -> [[], [1], [2], [2,1]]
 ```
 
 ### Random number in range
@@ -613,6 +643,7 @@ Use `Math.random()` to generate a random value, map it to the desired range usin
 
 ```js
 const randomInRange = (min, max) => Math.random() * (max - min) + min;
+// randomInRange(2,10) -> 6.0211363285087005
 ```
 
 ### Randomize order of array
@@ -620,7 +651,8 @@ const randomInRange = (min, max) => Math.random() * (max - min) + min;
 Use `sort()` to reorder elements, utilizing `Math.random()` to randomize the sorting.
 
 ```js
-const randomizeOrder = arr => arr.sort( (a,b) => Math.random() >= 0.5 ? -1 : 1)
+const randomizeOrder = arr => arr.sort( (a,b) => Math.random() >= 0.5 ? -1 : 1);
+// randomizeOrder([1,2,3]) -> [1,3,2]
 ```
 
 ### Redirect to URL
@@ -631,6 +663,7 @@ Pass a second argument to simulate a link click (`true` - default) or an HTTP re
 ```js
 const redirect = (url, asLink = true) =>
   asLink ? window.location.href = url : window.location.replace(url);
+// redirect('https://google.com')
 ```
 
 ### Reverse a string
@@ -640,6 +673,7 @@ Combine characters to get a string using `join('')`.
 
 ```js
 const reverseString = str => [...str].reverse().join('');
+// reverseString('foobar') -> 'raboof'
 ```
 
 ### RGB to hexadecimal
@@ -650,6 +684,7 @@ Combine values using `join('')`.
 ```js
 const rgbToHex = (r, g, b) =>
   [r,g,b].map( v => v.toString(16).padStart(2,'0')).join('');
+// rgbToHex(0, 127, 255) -> '007fff'
 ```
 
 ### Scroll to top
@@ -665,6 +700,7 @@ const scrollToTop = _ => {
     window.scrollTo(0, c - c/8);
   }
 }
+// scrollToTop()
 ```
 
 ### Similarity between arrays
@@ -672,7 +708,8 @@ const scrollToTop = _ => {
 Use `filter()` to remove values that are not part of `values`, determined using `includes()`.
 
 ```js
-const difference = (arr, values) => arr.filter(v => values.includes(v));
+const similarity = (arr, values) => arr.filter(v => values.includes(v));
+// similarity([1,2,3], [1,2,4]) -> [1,2]
 ```
 
 ### Sort characters in string (alphabetical)
@@ -682,6 +719,7 @@ Split the string using `split('')`, `sort()` utilizing `localeCompare()`, recomb
 ```js
 const sortCharactersInString = str =>
   str.split('').sort( (a,b) => a.localeCompare(b) ).join('');
+// sortCharactersInString('cabbage') -> 'aabbceg'
 ```
 
 ### Sum of array of numbers
@@ -691,6 +729,7 @@ Use `reduce()` to add each value to an accumulator, initialized with a value of 
 ```js
 const sum = arr =>
   arr.reduce( (acc , val) => acc + val, 0);
+// sum([1,2,3,4]) -> 10
 ```
 
 ### Swap values of two variables
@@ -699,6 +738,7 @@ Use array destructuring to swap values between two variables.
 
 ```js
 [varA, varB] = [varB, varA];
+// [x, y] = [y, x]
 ```
 
 ### Tail of list
@@ -707,6 +747,7 @@ Return `arr.slice(1)`.
 
 ```js
 const tail = arr => arr.slice(1);
+// tail([1,2,3]) -> [2,3]
 ```
 
 ### Unique values of array
@@ -727,6 +768,7 @@ Pass `location.search` as the argument to apply to the current `url`.
 ```js
 const getUrlParameters = url =>
   Object.assign(...url.match(/([^?=&]+)(=([^&]*))?/g).map(m => {[f,v] = m.split('='); return {[f]:v}}));
+// getUrlParameters('http://url.com/page?name=Adam&surname=Smith') -> {name: 'Adam', surname: 'Smith'}
 ```
 
 ### UUID generator
@@ -737,7 +779,8 @@ Use `crypto` API to generate a UUID, compliant with [RFC4122](https://www.ietf.o
 const uuid = _ =>
   ( [1e7]+-1e3+-4e3+-8e3+-1e11 ).replace( /[018]/g, c =>
     (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
-  )
+  );
+// uuid() -> '7982fcfe-5721-4632-bede-6000885be57d'
 ```
 
 ### Validate number
@@ -747,6 +790,7 @@ Use `isFinite()` to check if the number is finite.
 
 ```js
 const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n);
+// validateNumber('10') -> true
 ```
 
 ## Credits

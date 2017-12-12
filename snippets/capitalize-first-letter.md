@@ -6,4 +6,5 @@ Omit the `lowerRest` parameter to keep the rest of the string intact, or set it 
 ```js
 const capitalize = (str, lowerRest = false) =>
   str.slice(0, 1).toUpperCase() + (lowerRest? str.slice(1).toLowerCase() : str.slice(1));
+// capitalize('myName', true) -> 'Myname'
 ```

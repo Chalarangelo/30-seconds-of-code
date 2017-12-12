@@ -9,4 +9,5 @@ const timeTaken = (f,...args) => {
   console.log(performance.now() - t0);
   return r;
 }
+// timeTaken(Math.pow, 2, 10) -> 1024 (0.010000000009313226 logged in console)
 ```

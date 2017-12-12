@@ -5,4 +5,5 @@ Return `true` if the number is even, `false` if the number is odd.
 
 ```js
 const isEven = num => Math.abs(num) % 2 === 0;
+// isEven(3) -> false
 ```
