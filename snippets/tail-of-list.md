@@ -3,5 +3,5 @@
 Return `arr.slice(1)`.
 
 ```js
-var tail = arr => arr.slice(1);
+const tail = arr => arr.slice(1);
 ```

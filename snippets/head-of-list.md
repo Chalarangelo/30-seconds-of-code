@@ -3,5 +3,5 @@
 Return `arr[0]`.
 
 ```js
-var head = arr => arr[0];
+const head = arr => arr[0];
 ```
