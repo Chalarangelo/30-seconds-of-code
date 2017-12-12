@@ -1,6 +1,6 @@
 ### Get min value from array
 
-Passing an array, it executes the Math.min method using the spread operator to fill its variadic arguments and returns the minimum value found in the array
+Use `Math.min()` combined with the spread operator (`...`) to get the minimum value in the array.
 
 ```js
 const getMinValue = arr => Math.min(...arr);
