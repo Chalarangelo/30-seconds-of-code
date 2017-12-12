@@ -26,6 +26,7 @@
 * [Fibonacci array generator](#fibonacci-array-generator)
 * [Filter out non uniqe values in an array](#filter-out-non-uniqe-values-in-an-array)
 * [Flatten array](#flatten-array)
+* [Get min value from array](#get-min-value-from-array)
 * [Get scroll position](#get-scroll-position)
 * [Greatest common divisor (GCD)](#greatest-common-divisor-gcd)
 * [Head of list](#head-of-list)
@@ -239,6 +240,15 @@ Use `reduce()` to get all elements inside the array and `concat()` to flatten th
 ```js
 const flatten = arr => arr.reduce( (a, v) => a.concat(v), []);
 // flatten([1,[2],3,4) -> [1,2,3,4]
+```
+
+### Get min value from array
+
+Use `Math.min()` combined with the spread operator (`...`) to get the minimum value in the array.
+
+```js
+const getMinValue = arr => Math.min(...arr);
+// getMinValue([10, 1, 5]) -> 1
 ```
 
 ### Get scroll position
