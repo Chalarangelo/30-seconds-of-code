@@ -4,6 +4,6 @@ Use `Array(end-start)` to create an array of the desired length, `map()` to fill
 You can omit `start` to use a default value of `0`.
 
 ```js
-var initializeArrayRange = (end, start = 0) =>
+const initializeArrayRange = (end, start = 0) =>
   Array.apply(null, Array(end-start)).map( (v,i) => i + start );
 ```
