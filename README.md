@@ -99,8 +99,8 @@ const capitalize = (str, lowerRest = false) =>
 Convert string `toLowerCase()` and use `replace()` to remove non-alphanumeric characters from it.
 Then, `split('')` into individual characters, `reverse()`, `join('')` and compare to the original, unreversed string, after converting it `tolowerCase()`.
 
-```
-palindrome = str => (str.toLowerCase().replace(/[\W_]/g,'').split('').reverse().join('')==str.toLowerCase().replace(/[\W_]/g,''));
+```js
+const palindrome = str => (str.toLowerCase().replace(/[\W_]/g,'').split('').reverse().join('')==str.toLowerCase().replace(/[\W_]/g,''));
  ```
 
 ### Count occurrences of a value in array
