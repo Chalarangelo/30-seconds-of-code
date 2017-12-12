@@ -7,7 +7,19 @@ var staticPartsPath = './static-parts';
 var snippets = {}, startPart = '', endPart = '', output = '';
 
 try {
-  for(var snippet of fs.readdirSync(snippetsPath)){
+  var snippetFilenames = fs.readdirSync(snippetsPath);
+  snippetFilenames.sort((a, b) => {
+    a = a.toLowerCase();
+    b = b.toLowerCase();
+    if (a < b) {
+      return -1;
+    }
+    if (a > b) {
+      return 1;
+    }
+    return 0;
+  });
+  for(var snippet of snippetFilenames){
     snippets[snippet] = fs.readFileSync(path.join(snippetsPath,snippet),'utf8');
   }
 }
