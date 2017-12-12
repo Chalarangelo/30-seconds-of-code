@@ -337,6 +337,24 @@ var redirect = (url, asLink = true) =>
   asLink ? window.location.href = url : window.location.replace(url);
 ```
 
+### Reverse a string
+
+Use `reverse()` to reverse order of elements in `destructed` array. Combine elements to get a string using `join('')`.
+
+```js
+var reverseString = str => [...str].reverse().join('');
+```
+
+### RGB to hexadecimal
+
+Convert each value to a hexadecimal string, using `toString(16)`, then `padStart(2,'0')` to get a 2-digit hexadecimal value.
+Combine values using `join('')`.
+
+```js
+var rgbToHex = (r, g, b) =>
+  [r,g,b].map( v => v.toString(16).padStart(2,'0')).join('');
+```
+
 ### Scroll to top
 
 Get distance from top using `document.documentElement.scrollTop` or `document.body.scrollTop`.
