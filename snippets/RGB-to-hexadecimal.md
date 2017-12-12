@@ -4,6 +4,6 @@ Convert each value to a hexadecimal string, using `toString(16)`, then `padStart
 Combine values using `join('')`.
 
 ```js
-var rgbToHex = (r, g, b) =>
+const rgbToHex = (r, g, b) =>
   [r,g,b].map( v => v.toString(16).padStart(2,'0')).join('');
 ```

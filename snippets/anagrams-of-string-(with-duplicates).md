@@ -6,7 +6,7 @@ Use `map()` to combine the letter with each partial anagram, then `reduce()` to 
 Base cases are for string `length` equal to `2` or `1`.
 
 ```js
-var anagrams = s => {
+const anagrams = s => {
   if(s.length <= 2)  return s.length === 2 ? [s, s[1] + s[0]] : [s];
   return s.split('').reduce( (a,l,i) => {
     anagrams(s.slice(0,i) + s.slice(i+1)).map( v => a.push(l+v) );
