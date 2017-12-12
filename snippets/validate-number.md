@@ -5,4 +5,5 @@ Use `isFinite()` to check if the number is finite.
 
 ```js
 const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n);
+// validateNumber('10') -> true
 ```
