@@ -3,6 +3,6 @@
 Use `reduce()` to add each value to an accumulator, initialized with a value of `0`.
 
 ```js
-var sum = arr =>
+const sum = arr =>
   arr.reduce( (acc , val) => acc + val, 0);
 ```
