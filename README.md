@@ -238,7 +238,7 @@ var initializeArray = (n, v = 0) =>
 Return `arr.slice(-1)[0]`.
 
 ```js
-var initial = arr => arr.slice(-1)[0];
+var last = arr => arr.slice(-1)[0];
 ```
 
 ### Measure time taken by function
