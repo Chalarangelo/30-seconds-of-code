@@ -125,10 +125,10 @@ var capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperCas
 
 ### Count occurences of a value in array
 
-Use `filter()` to create an array containing only the items with the specified value, count them using `length`.
+Use `reduce()` to increment a counter each time you encounter the specific value inside the array.
 
 ```js
-var countOccurrences = (arr, value) => arr.filter(v => v === value).length;
+var countOccurrences = (arr, value) => arr.reduce((a, v) => v===value ? a + 1 : a + 0, 0);
 ```
 
 ### Current URL
