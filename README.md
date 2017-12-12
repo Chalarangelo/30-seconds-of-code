@@ -95,11 +95,12 @@ const capitalize = (str, lowerRest = false) =>
 
 ### Count occurrences of a value in array
 
-Use `reduce()` to increment a counter each time you encounter the specific value inside the array.
+Use `filter()` to count the length of the filtered array.
 
 ```js
-const countOccurrences = (arr, value) => arr.reduce((a, v) => v===value ? a + 1 : a + 0, 0);
+const countOccurrences = (arr, value) => arr.filter(v => v === value).length;
 ```
+
 
 ### Current URL
 
