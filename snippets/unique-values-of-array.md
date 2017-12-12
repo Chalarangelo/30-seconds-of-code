@@ -1,13 +1,8 @@
 ### Unique values of array
 
-Use `reduce()` to accumulate all unique values in an array.
-Check if each value has already been added, using `indexOf()` on the accumulator array.
+Use ES6 `Set` and the `...rest` operator to discard all duplicated values.
 
 ```js
-var uniqueValues = arr =>
-  arr.reduce( (acc, val) => {
-    if(acc.indexOf(val) === -1)
-      acc.push(val);
-      return acc;
-  }, []);
+const unique = arr => [...new Set(arr)];
+// unique([1,2,2,3,4,4,5]) -> [1,2,3,4,5]
 ```
