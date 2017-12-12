@@ -1,10 +1,9 @@
 ### Check For Palindrome
 
+Steps :
+1. First Converted to form in which no non-alphanumeric character is present i.e. string which is to be compared
+2. Then Converted to palindrome form in which characters will be reversed and will be compared to non-alphanumeric string
+
 ```
-function palindrome(str) {
-  var rg =/[\W_]/g;
-  var low_rep=str.toLowerCase().replace(rg,'');
-  var final= low_rep.split('').reverse().join('');
-  return final == low_rep;
- }
+palindrome = str => (str.toLowerCase().replace(/[\W_]/g,'').split('').reverse().join('')==str.toLowerCase().replace(/[\W_]/g,''));
  ```
