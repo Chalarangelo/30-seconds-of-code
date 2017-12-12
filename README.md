@@ -364,7 +364,7 @@ Check if each value has already been added, using `includes()` on the accumulato
 ```js
 var uniqueValues = arr =>
   arr.reduce( (acc, val) => {
-    if(acc.indexOf(val))
+    if(!acc.includes(val))
       acc.push(val);
       return acc;
   }, []);
