@@ -433,7 +433,7 @@ Pass `location.search` as the argument to apply to the current `url`.
 
 ```js
 const getUrlParameters = url =>
-  Object.assign(...url.match(/([^?=&]+)(=([^&]*))?/g).map(m => {[f,v] = m.split('='); return {[f]:v}}));
+  Object.assign(...url.match(/([^?=&]+)(=([^&]*))?/g).map(m => {let [f,v] = m.split('='); return {[f]:v}}));
 ```
 
 ### UUID generator
