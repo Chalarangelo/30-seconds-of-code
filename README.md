@@ -154,8 +154,7 @@ var curry = f =>
 Use `filter()` to remove values that are part of `values`, determined using `includes()`.
 
 ```js
-var difference = (arr, values) =>
-  arr.filter(v => !values.includes(v));
+var difference = (arr, values) => arr.filter(v => !values.includes(v));
 ```
 
 ### Distance between two points
@@ -358,8 +357,7 @@ var scrollToTop = _ => {
 Use `filter()` to remove values that are not part of `values`, determined using `includes()`.
 
 ```js
-var difference = (arr, values) =>
-  arr.filter(v => values.includes(v));
+var difference = (arr, values) => arr.filter(v => values.includes(v));
 ```
 
 ### Sort characters in string (alphabetical)
