@@ -12,6 +12,7 @@
 * [Average of array of numbers](#average-of-array-of-numbers)
 * [Capitalize first letter of every word](#capitalize-first-letter-of-every-word)
 * [Capitalize first letter](#capitalize-first-letter)
+* [Check_for_palindrome](#check_for_palindrome)
 * [Count occurrences of a value in array](#count-occurrences-of-a-value-in-array)
 * [Current URL](#current-url)
 * [Curry](#curry)
@@ -92,6 +93,15 @@ Omit the `lowerRest` parameter to keep the rest of the string intact, or set it 
 const capitalize = (str, lowerRest = false) =>
   str.slice(0, 1).toUpperCase() + (lowerRest? str.slice(1).toLowerCase() : str.slice(1));
 ```
+
+### Check for palindrome
+
+Convert string `toLowerCase()` and use `replace()` to remove non-alphanumeric characters from it.
+Then, `split('')` into individual characters, `reverse()`, `join('')` and compare to the original, unreversed string, after converting it `tolowerCase()`.
+
+```
+palindrome = str => (str.toLowerCase().replace(/[\W_]/g,'').split('').reverse().join('')==str.toLowerCase().replace(/[\W_]/g,''));
+ ```
 
 ### Count occurrences of a value in array
 
