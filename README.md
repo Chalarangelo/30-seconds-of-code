@@ -11,6 +11,7 @@
 * [Anagrams of string (with duplicates)](#anagrams-of-string-with-duplicates)
 * [Average of array of numbers](#average-of-array-of-numbers)
 * [Capitalize first letter](#capitalize-first-letter)
+* [Capitalize first letter of every word](#capitalize-first-letter-of-every-word)
 * [Count occurrences of a value in array](#count-occurrences-of-a-value-in-array)
 * [Current URL](#current-url)
 * [Curry](#curry)
@@ -82,7 +83,15 @@ Use `slice(0,1)` and `toUpperCase()` to capitalize first letter, `slice(1)` to g
 const capitalize = str => str.slice(0, 1).toUpperCase() + str.slice(1);
 ```
 
+### Capitalize first letter of every word
+
+Use `replace()` to match the first character of each word and `toUpperCase()` to capitalize it.
+
+```js
+var capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperCase());
+```
 ### Count occurrences of a value in array
+
 
 Use `reduce()` to increment a counter each time you encounter the specific value inside the array.
 
