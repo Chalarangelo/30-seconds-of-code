@@ -4,5 +4,5 @@ Passing an array, it executes the Math.min method using the spread operator to f
 
 ```js
 const getMinValue = arr => Math.min(...arr);
-// getMinValue([10, 1, 5) -> 1
+// getMinValue([10, 1, 5]) -> 1
 ```
