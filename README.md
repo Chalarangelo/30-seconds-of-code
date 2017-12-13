@@ -73,7 +73,7 @@
 
 Use recursion.
 For each letter in the given string, create all the partial anagrams for the rest of its letters.
-Use `map()` to combine the letter with each partial anagram, then `reduce()` to combine all anagrams in one array.
+Use `Array.map()` to combine the letter with each partial anagram, then `Array.reduce()` to combine all anagrams in one array.
 Base cases are for string `length` equal to `2` or `1`.
 
 ```js
@@ -87,7 +87,7 @@ const anagrams = str => {
 
 ### Average of array of numbers
 
-Use `reduce()` to add each value to an accumulator, initialized with a value of `0`, divide by the `length` of the array.
+Use `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`, divide by the `length` of the array.
 
 ```js
 const average = arr =>
@@ -165,7 +165,7 @@ const chunk = (arr, size) =>
 
 ### Count occurrences of a value in array
 
-Use `reduce()` to increment a counter each time you encounter the specific value inside the array.
+Use `Array.reduce()` to increment a counter each time you encounter the specific value inside the array.
 
 ```js
 const countOccurrences = (arr, value) => arr.reduce((a, v) => v === value ? a + 1 : a + 0, 0);
@@ -203,7 +203,7 @@ const curry = (f, arity = f.length, next) =>
 ### Deep flatten array
 
 Use recursion.
-Use `reduce()` to get all elements that are not arrays, flatten each element that is an array.
+Use `Array.reduce()` to get all elements that are not arrays, flatten each element that is an array.
 
 ```js
 const deepFlatten = arr =>
@@ -290,7 +290,7 @@ const unique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexOf(i));
 
 ### Flatten array
 
-Use `reduce()` to get all elements inside the array and `concat()` to flatten them.
+Use `Array.reduce()` to get all elements inside the array and `concat()` to flatten them.
 
 ```js
 const flatten = arr => arr.reduce( (a, v) => a.concat(v), []);
@@ -379,7 +379,7 @@ const initial = arr => arr.slice(0,-1);
 
 ### Initialize array with range
 
-Use `Array(end-start)` to create an array of the desired length, `map()` to fill with the desired values in a range.
+Use `Array(end-start)` to create an array of the desired length, `Array.map()` to fill with the desired values in a range.
 You can omit `start` to use a default value of `0`.
 
 ```js
@@ -466,7 +466,7 @@ const pipe = (...funcs) => arg => funcs.reduce((acc, func) => func(acc), arg);
 
 ### Powerset
 
-Use `reduce()` combined with `map()` to iterate over elements and combine into an array containing all combinations.
+Use `Array.reduce()` combined with `Array.map()` to iterate over elements and combine into an array containing all combinations.
 
 ```js
 const powerset = arr =>
@@ -512,7 +512,7 @@ const randomInRange = (min, max) => Math.random() * (max - min) + min;
 
 ### Randomize order of array
 
-Use `sort()` to reorder elements, utilizing `Math.random()` to randomize the sorting.
+Use `Array.sort()` to reorder elements, utilizing `Math.random()` to randomize the sorting.
 
 ```js
 const randomizeOrder = arr => arr.sort( (a,b) => Math.random() >= 0.5 ? -1 : 1);
@@ -599,7 +599,7 @@ const similarity = (arr, values) => arr.filter(v => values.includes(v));
 
 ### Sort characters in string (alphabetical)
 
-Split the string using `split('')`, `sort()` utilizing `localeCompare()`, recombine using `join('')`.
+Split the string using `split('')`, `Array.sort()` utilizing `localeCompare()`, recombine using `join('')`.
 
 ```js
 const sortCharactersInString = str =>
@@ -609,7 +609,7 @@ const sortCharactersInString = str =>
 
 ### Sum of array of numbers
 
-Use `reduce()` to add each value to an accumulator, initialized with a value of `0`.
+Use `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`.
 
 ```js
 const sum = arr => arr.reduce( (acc , val) => acc + val, 0);
