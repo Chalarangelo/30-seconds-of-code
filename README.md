@@ -44,6 +44,7 @@
 * [Redirect to url](#redirect-to-url)
 * [Reverse a string](#reverse-a-string)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
+* [Run promises in series](#run-promises-in-series)
 * [Scroll to top](#scroll-to-top)
 * [Shuffle array values](#shuffle-array-values)
 * [Similarity between arrays](#similarity-between-arrays)
@@ -240,7 +241,7 @@ Use `reduce()` to get all elements inside the array and `concat()` to flatten th
 
 ```js
 const flatten = arr => arr.reduce( (a, v) => a.concat(v), []);
-// flatten([1,[2],3,4) -> [1,2,3,4]
+// flatten([1,[2],3,4]) -> [1,2,3,4]
 ```
 
 ### Get max value from array
@@ -420,6 +421,16 @@ Convert given RGB parameters to hexadecimal string using bitwise left-shift oper
 ```js
 const rgbToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
 // rgbToHex(255, 165, 1) -> 'ffa501'
+```
+
+### Run promises in series
+
+Run an array of promises in series using `Array.reduce()` by creating a promise chain, where each promise returns the next promise when resolved.
+
+```js
+var series = ps => ps.reduce((p, next) => p.then(next), Promise.resolve());
+// var delay = (d) => new Promise(r => setTimeout(r, d))
+// series([() => delay(1000), () => delay(2000)]) -> executes each promise sequentially, taking a total of 3 seconds to complete
 ```
 
 ### Scroll to top
