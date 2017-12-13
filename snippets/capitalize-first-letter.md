@@ -1,10 +1,9 @@
 ### Capitalize first letter
 
-Use `slice(0,1)` and `toUpperCase()` to capitalize first letter, `slice(1)` to get the rest of the string.
+Use `Array.from()` and `toUpperCase()` to capitalize first letter.
+
 Omit the `lowerRest` parameter to keep the rest of the string intact, or set it to `true` to convert to lower case.
 
 ```js
-const capitalize = (str, lowerRest = false) =>
-  str.slice(0, 1).toUpperCase() + (lowerRest? str.slice(1).toLowerCase() : str.slice(1));
-// capitalize('myName', true) -> 'Myname'
+const capitalize = (word, forceLowerCase = false) =>  Array.from(forceLowerCase ? word.toLowerCase() : word, (l,i) => i === 0 ? l.toUpperCase() : l).join("")
 ```
