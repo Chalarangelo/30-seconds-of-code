@@ -44,6 +44,7 @@
 * [Measure time taken by function](#measure-time-taken-by-function)
 * [Median of array of numbers](#median-of-array-of-numbers)
 * [Object from key value pairs](#object-from-key-value-pairs)
+* [Object to key value pairs](#object-to-key-value-pairs)
 * [Percentile](#percentile)
 * [Pipe](#pipe)
 * [Powerset](#powerset)
@@ -442,6 +443,13 @@ Use `Array.reduce()` to create and combine key-value pairs.
 ```js
 const objectFromPairs = arr => arr.reduce((a,v) => (a[v[0]] = v[1], a), {});
 // objectFromPairs([['a',1],['b',2]]) -> {a: 1, b: 2}
+```
+
+### Object to key-value pairs
+
+```js
+const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
+// objectToPairs({a: 1, b: 2}) -> [['a',1],['b',2]])
 ```
 
 ### Percentile
