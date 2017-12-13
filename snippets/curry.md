@@ -3,6 +3,7 @@
 Use recursion.
 If the number of provided arguments (`args`) is sufficient, call the passed function `f`.
 Otherwise return a curried function `f` that expects the rest of the arguments.
+If you want to curry a function that accepts a variable number of arguments (variadic function) like Math.min for example, you can optionally pass the number of arguments to the second parameter arity.
 
 ```js
 const curry = (f, arity = f.length, next) => 
