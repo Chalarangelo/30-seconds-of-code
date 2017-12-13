@@ -6,7 +6,7 @@ Use `Array.sort()` to sort the elements of the original array based on the rando
 ```js
 const shuffle = arr => {
   let r = arr.map(Math.random);
-  return arr.sort((a,b) => r[a] - r[b]);
-}
+  return arr.sort((a, b) => r[a] - r[b]);
+};
 // shuffle([1,2,3]) -> [2, 1, 3]
 ```

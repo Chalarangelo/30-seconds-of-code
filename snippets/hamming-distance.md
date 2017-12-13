@@ -5,6 +5,6 @@ Count and return the number of `1`s in the string, using `match(/1/g)`.
 
 ```js
 const hammingDistance = (num1, num2) =>
-  ((num1^num2).toString(2).match(/1/g) || '').length;
+  ((num1 ^ num2).toString(2).match(/1/g) || '').length;
 // hammingDistance(2,3) -> 1
 ```

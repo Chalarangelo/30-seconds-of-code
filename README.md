@@ -51,7 +51,7 @@
 * [Random integer in range](#random-integer-in-range)
 * [Random number in range](#random-number-in-range)
 * [Randomize order of array](#randomize-order-of-array)
-* [Redirect to url](#redirect-to-url)
+* [Redirect to URL](#redirect-to-url)
 * [Reverse a string](#reverse-a-string)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [Run promises in series](#run-promises-in-series)
@@ -78,10 +78,10 @@ Base cases are for string `length` equal to `2` or `1`.
 
 ```js
 const anagrams = str => {
-  if(str.length <= 2)  return str.length === 2 ? [str, str[1] + str[0]] : [str];
-  return str.split('').reduce( (acc, letter, i) =>
-    acc.concat(anagrams(str.slice(0, i) + str.slice(i + 1)).map( val => letter + val )), []);
-}
+  if (str.length <= 2) return str.length === 2 ? [str, str[1] + str[0]] : [str];
+  return str.split('').reduce((acc, letter, i) =>
+    acc.concat(anagrams(str.slice(0, i) + str.slice(i + 1)).map(val => letter + val)), []);
+};
 // anagrams('abc') -> ['abc','acb','bac','bca','cab','cba']
 ```
 
@@ -90,8 +90,7 @@ const anagrams = str => {
 Use `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`, divide by the `length` of the array.
 
 ```js
-const average = arr =>
-  arr.reduce( (acc , val) => acc + val, 0) / arr.length;
+const average = arr => arr.reduce((acc, val) => acc + val, 0) / arr.length;
 // average([1,2,3]) -> 2
 ```
 
@@ -100,7 +99,7 @@ const average = arr =>
 Use `scrollY`, `scrollHeight` and `clientHeight` to determine if the bottom of the page is visible.
 
 ```js
-const bottomVisible = _ => 
+const bottomVisible = _ =>
   document.documentElement.clientHeight + window.scrollY >= document.documentElement.scrollHeight || document.documentElement.clientHeight;
 // bottomVisible() -> true
 ```
@@ -121,7 +120,7 @@ Omit the `lowerRest` parameter to keep the rest of the string intact, or set it 
 
 ```js
 const capitalize = (str, lowerRest = false) =>
-  str.slice(0, 1).toUpperCase() + (lowerRest? str.slice(1).toLowerCase() : str.slice(1));
+  str.slice(0, 1).toUpperCase() + (lowerRest ? str.slice(1).toLowerCase() : str.slice(1));
 // capitalize('myName', true) -> 'Myname'
 ```
 
@@ -130,7 +129,7 @@ const capitalize = (str, lowerRest = false) =>
 Loop through an array of functions containing asynchronous events, calling `next` when each asynchronous event has completed.
 
 ```js
-const chainAsync = fns => { let curr = 0; const next = () => fns[curr++](next); next(); }
+const chainAsync = fns => { let curr = 0; const next = () => fns[curr++](next); next(); };
 /*
 chainAsync([
   next => { console.log('0 seconds'); setTimeout(next, 1000); },
@@ -159,7 +158,7 @@ If the original array can't be split evenly, the final chunk will contain the re
 
 ```js
 const chunk = (arr, size) =>
-  Array.apply(null, {length: Math.ceil(arr.length/size)}).map((v, i) => arr.slice(i*size, i*size+size));
+  Array.apply(null, {length: Math.ceil(arr.length / size)}).map((v, i) => arr.slice(i * size, i * size + size));
 // chunk([1,2,3,4,5], 2) -> [[1,2],[3,4],5]
 ```
 
@@ -207,7 +206,7 @@ Use `Array.reduce()` to get all elements that are not arrays, flatten each eleme
 
 ```js
 const deepFlatten = arr =>
-  arr.reduce( (a, v) => a.concat( Array.isArray(v) ? deepFlatten(v) : v ), []);
+  arr.reduce((a, v) => a.concat(Array.isArray(v) ? deepFlatten(v) : v), []);
 // deepFlatten([1,[2],[[3],4],5]) -> [1,2,3,4,5]
 ```
 
@@ -274,8 +273,8 @@ Create an empty array of the specific length, initializing the first two values 
 Use `Array.reduce()` to add values into the array, using the sum of the last two values, except for the first two.
 
 ```js
-const fibonacci = n => 
-  Array(n).fill(0).reduce((acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),[]);
+const fibonacci = n =>
+  Array(n).fill(0).reduce((acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i), []);
 // fibonacci(5) -> [0,1,1,2,3]
 ```
 
@@ -293,7 +292,7 @@ const filterNonUnique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexO
 Use `Array.reduce()` to get all elements inside the array and `concat()` to flatten them.
 
 ```js
-const flatten = arr => arr.reduce( (a, v) => a.concat(v), []);
+const flatten = arr => arr.reduce((a, v) => a.concat(v), []);
 // flatten([1,[2],3,4]) -> [1,2,3,4]
 ```
 
@@ -321,7 +320,7 @@ Returns lower-cased constructor name of value, "undefined" or "null" if value is
 
 ```js
 const getType = v =>
-  v === undefined ? "undefined" : v === null ? "null" : v.constructor.name.toLowerCase(); 
+  v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name.toLowerCase();
 // getType(new Set([1,2,3])) -> "set"
 ```
 
@@ -332,8 +331,8 @@ You can omit `el` to use a default value of `window`.
 
 ```js
 const getScrollPos = (el = window) =>
-  ( {x: (el.pageXOffset !== undefined) ? el.pageXOffset : el.scrollLeft,
-   y: (el.pageYOffset !== undefined) ? el.pageYOffset : el.scrollTop} );
+  ({x: (el.pageXOffset !== undefined) ? el.pageXOffset : el.scrollLeft,
+    y: (el.pageYOffset !== undefined) ? el.pageYOffset : el.scrollTop});
 // getScrollPos() -> {x: 0, y: 200}
 ```
 
@@ -344,7 +343,7 @@ Base case is when `y` equals `0`. In this case, return `x`.
 Otherwise, return the GCD of `y` and the remainder of the division `x/y`.
 
 ```js
-const gcd = (x , y) => !y ? x : gcd(y, x % y);
+const gcd = (x, y) => !y ? x : gcd(y, x % y);
 // gcd (8, 36) -> 4
 ```
 
@@ -355,7 +354,7 @@ Count and return the number of `1`s in the string, using `match(/1/g)`.
 
 ```js
 const hammingDistance = (num1, num2) =>
-  ((num1^num2).toString(2).match(/1/g) || '').length;
+  ((num1 ^ num2).toString(2).match(/1/g) || '').length;
 // hammingDistance(2,3) -> 1
 ```
 
@@ -373,7 +372,7 @@ const head = arr => arr[0];
 Return `arr.slice(0,-1)`.
 
 ```js
-const initial = arr => arr.slice(0,-1);
+const initial = arr => arr.slice(0, -1);
 // initial([1,2,3]) -> [1,2]
 ```
 
@@ -384,7 +383,7 @@ You can omit `start` to use a default value of `0`.
 
 ```js
 const initializeArrayRange = (end, start = 0) =>
-  Array.apply(null, Array(end-start)).map( (v,i) => i + start );
+  Array.apply(null, Array(end - start)).map((v, i) => i + start);
 // initializeArrayRange(5) -> [0,1,2,3,4]
 ```
 
@@ -417,7 +416,7 @@ const timeTaken = callback => {
   const t0 = performance.now(), r = callback();
   console.log(performance.now() - t0);
   return r;
-}
+};
 // timeTaken(() => Math.pow(2, 10)) -> 1024 (0.010000000009313226 logged in console)
 ```
 
@@ -428,9 +427,9 @@ Return the number at the midpoint if `length` is odd, otherwise the average of t
 
 ```js
 const median = arr => {
-  const mid = Math.floor(arr.length / 2), nums = arr.sort((a,b) => a - b);
+  const mid = Math.floor(arr.length / 2), nums = arr.sort((a, b) => a - b);
   return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
-}
+};
 // median([5,6,50,1,-5]) -> 5
 // median([0,10,-2,7]) -> 3.5
 ```
@@ -440,7 +439,7 @@ const median = arr => {
 Use `Array.reduce()` to create and combine key-value pairs.
 
 ```js
-const objectFromPairs = arr => arr.reduce((a,v) => (a[v[0]] = v[1], a), {});
+const objectFromPairs = arr => arr.reduce((a, v) => (a[v[0]] = v[1], a), {});
 // objectFromPairs([['a',1],['b',2]]) -> {a: 1, b: 2}
 ```
 
@@ -470,7 +469,7 @@ Use `Array.reduce()` combined with `Array.map()` to iterate over elements and co
 
 ```js
 const powerset = arr =>
-  arr.reduce( (a,v) => a.concat(a.map( r => [v].concat(r) )), [[]]);
+  arr.reduce((a, v) => a.concat(a.map(r => [v].concat(r))), [[]]);
 // powerset([1,2]) -> [[], [1], [2], [2,1]]
 ```
 
@@ -515,7 +514,7 @@ const randomInRange = (min, max) => Math.random() * (max - min) + min;
 Use `Array.sort()` to reorder elements, utilizing `Math.random()` to randomize the sorting.
 
 ```js
-const randomizeOrder = arr => arr.sort( (a,b) => Math.random() >= 0.5 ? -1 : 1);
+const randomizeOrder = arr => arr.sort((a, b) => Math.random() >= 0.5 ? -1 : 1);
 // randomizeOrder([1,2,3]) -> [1,3,2]
 ```
 
@@ -567,11 +566,11 @@ Scroll by a fraction of the distance from top. Use `window.requestAnimationFrame
 ```js
 const scrollToTop = _ => {
   const c = document.documentElement.scrollTop || document.body.scrollTop;
-  if(c > 0) {
+  if (c > 0) {
     window.requestAnimationFrame(scrollToTop);
-    window.scrollTo(0, c - c/8);
+    window.scrollTo(0, c - c / 8);
   }
-}
+};
 // scrollToTop()
 ```
 
@@ -583,8 +582,8 @@ Use `Array.sort()` to sort the elements of the original array based on the rando
 ```js
 const shuffle = arr => {
   let r = arr.map(Math.random);
-  return arr.sort((a,b) => r[a] - r[b]);
-}
+  return arr.sort((a, b) => r[a] - r[b]);
+};
 // shuffle([1,2,3]) -> [2, 1, 3]
 ```
 
@@ -603,7 +602,7 @@ Split the string using `split('')`, `Array.sort()` utilizing `localeCompare()`, 
 
 ```js
 const sortCharactersInString = str =>
-  str.split('').sort( (a,b) => a.localeCompare(b) ).join('');
+  str.split('').sort((a, b) => a.localeCompare(b)).join('');
 // sortCharactersInString('cabbage') -> 'aabbceg'
 ```
 
@@ -612,7 +611,7 @@ const sortCharactersInString = str =>
 Use `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`.
 
 ```js
-const sum = arr => arr.reduce( (acc , val) => acc + val, 0);
+const sum = arr => arr.reduce((acc, val) => acc + val, 0);
 // sum([1,2,3,4]) -> 10
 ```
 
@@ -642,7 +641,7 @@ Return the string truncated to the desired length, with `...` appended to the en
 
 ```js
 const truncate = (str, num) =>
-  str.length > num ? str.slice(0, num > 3 ? num-3 : num) + '...' : str;
+  str.length > num ? str.slice(0, num > 3 ? num - 3 : num) + '...' : str;
 // truncate('boomerang', 7) -> 'boom...'
 ```
 
@@ -663,7 +662,7 @@ Pass `location.search` as the argument to apply to the current `url`.
 ```js
 const getUrlParameters = url =>
   url.match(/([^?=&]+)(=([^&]*))?/g).reduce(
-    (a,v) => (a[v.slice(0,v.indexOf('='))] = v.slice(v.indexOf('=')+1), a), {}
+    (a, v) => (a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1), a), {}
   );
 // getUrlParameters('http://url.com/page?name=Adam&surname=Smith') -> {name: 'Adam', surname: 'Smith'}
 ```
@@ -674,7 +673,7 @@ Use `crypto` API to generate a UUID, compliant with [RFC4122](https://www.ietf.o
 
 ```js
 const uuid = _ =>
-  ( [1e7]+-1e3+-4e3+-8e3+-1e11 ).replace( /[018]/g, c =>
+  ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
     (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
   );
 // uuid() -> '7982fcfe-5721-4632-bede-6000885be57d'
