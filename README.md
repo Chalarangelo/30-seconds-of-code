@@ -195,7 +195,7 @@ const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 ### Even or odd number
 
-Checks whether number is odd or even using the modulo (`%`) operator.
+Checks whether a number is odd or even using the modulo (`%`) operator.
 Returns `true` if the number is even, `false` if the number is odd.
 
 ```js
