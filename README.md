@@ -57,6 +57,7 @@
 * [URL parameters](#url-parameters)
 * [UUID generator](#uuid-generator)
 * [Validate number](#validate-number)
+* [Value or default](#value-or-default)
 
 ### Anagrams of string (with duplicates)
 
@@ -559,6 +560,15 @@ Use `isFinite()` to check if the number is finite.
 ```js
 const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n);
 // validateNumber('10') -> true
+```
+
+### Value or default
+
+Returns value, or default value if passed value is `falsy`.
+
+```js
+const valueOrDefault = (value, d) => value || d;
+// valueOrDefault(NaN, 30) -> 30
 ```
 
 ## Credits
