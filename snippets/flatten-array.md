@@ -1,6 +1,6 @@
 ### Flatten array
 
-Use `reduce()` to get all elements inside the array and `concat()` to flatten them.
+Use `Array.reduce()` to get all elements inside the array and `concat()` to flatten them.
 
 ```js
 const flatten = arr => arr.reduce( (a, v) => a.concat(v), []);
