@@ -4,20 +4,14 @@ Use `split()` for splitting the URL by the `?`-prefix query parameter as well as
 Iterate through the additional parameters array returned by `query.split("&")` and split the array elements by `=` for seperating keys and values. Merge all pairs together to a string which is finally returned.
 
 ```js
-function getUrlParameters(URL) {
+const getUrlParameters = URL => {
     var query_string = {};
-    var usefulParam = URL.split("?")[1] || "";
-    var query = usefulParam || "";
-    var vars = query.split("&");
+    var vars = URL.split("?")[1].split("&");
     for (var i = 0; i < vars.length; i++) {
-        var pair = vars[i].split("=");
-        if (typeof query_string[pair[0]] === "undefined") {
-            query_string[pair[0]] = decodeURIComponent(pair[1]);
-        } else if (typeof query_string[pair[0]] === "string") {
-            var arr = [query_string[pair[0]], decodeURIComponent(pair[1])];
-            query_string[pair[0]] = arr;
+        if (typeof query_string[vars[i].split("=")[0]] === "undefined") {
+            query_string[vars[i].split("=")[0]] = decodeURIComponent(vars[i].split("=")[1]);
         } else {
-            query_string[pair[0]].push(decodeURIComponent(pair[1]));
+            query_string[vars[i].split("=")[0]].push(decodeURIComponent(vars[i].split("=")[1]));
         }
     }
     return query_string;
