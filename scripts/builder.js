@@ -6,6 +6,8 @@ var staticPartsPath = './static-parts';
 
 var snippets = {}, startPart = '', endPart = '', output = '';
 
+console.time('Builder');
+
 try {
   var snippetFilenames = fs.readdirSync(snippetsPath);
   snippetFilenames.sort((a, b) => {
@@ -51,3 +53,5 @@ catch (err){
   console.log('Error during README generation: '+err);
   process.exit(1);
 }
+
+console.timeEnd('Builder');

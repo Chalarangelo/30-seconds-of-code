@@ -5,6 +5,6 @@ Use `Array.reduce()` to get all elements that are not arrays, flatten each eleme
 
 ```js
 const deepFlatten = arr =>
-  arr.reduce( (a, v) => a.concat( Array.isArray(v) ? deepFlatten(v) : v ), []);
+  arr.reduce((a, v) => a.concat(Array.isArray(v) ? deepFlatten(v) : v), []);
 // deepFlatten([1,[2],[[3],4],5]) -> [1,2,3,4,5]
 ```
