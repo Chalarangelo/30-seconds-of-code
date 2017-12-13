@@ -7,7 +7,7 @@ NOTE: This is **population standard deviation**. Use `/ (arr.length - 1)` at the
 calculate **sample standard deviation**.
 
 ```js
-const standardDeviation = (arr, val) =>
+const standardDeviation = arr =>
   Math.sqrt(
     arr.reduce((acc, val) => acc.concat(Math.pow(val - arr.reduce((acc, val) => acc + val, 0) / arr.length, 2)), [])
        .reduce((acc, val) => acc + val, 0) 
