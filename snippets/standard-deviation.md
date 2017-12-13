@@ -13,4 +13,5 @@ const standardDeviation = (arr, val) =>
        .reduce((acc, val) => acc + val, 0) 
     / arr.length
   );
+// standardDeviation([10,2,38,23,38,23,21]) -> 12.298996142875
 ```
