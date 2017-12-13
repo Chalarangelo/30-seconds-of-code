@@ -50,13 +50,12 @@
 * [Promisify](#promisify)
 * [Random integer in range](#random-integer-in-range)
 * [Random number in range](#random-number-in-range)
-* [Randomize order of array](#randomize-order-of-array)
 * [Redirect to url](#redirect-to-url)
 * [Reverse a string](#reverse-a-string)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [Run promises in series](#run-promises-in-series)
 * [Scroll to top](#scroll-to-top)
-* [Shuffle array values](#shuffle-array-values)
+* [Shuffle array](#shuffle-array)
 * [Similarity between arrays](#similarity-between-arrays)
 * [Sort characters in string (alphabetical)](#sort-characters-in-string-alphabetical)
 * [Sum of array of numbers](#sum-of-array-of-numbers)
@@ -510,15 +509,6 @@ const randomInRange = (min, max) => Math.random() * (max - min) + min;
 // randomInRange(2,10) -> 6.0211363285087005
 ```
 
-### Randomize order of array
-
-Use `Array.sort()` to reorder elements, utilizing `Math.random()` to randomize the sorting.
-
-```js
-const randomizeOrder = arr => arr.sort( (a,b) => Math.random() >= 0.5 ? -1 : 1);
-// randomizeOrder([1,2,3]) -> [1,3,2]
-```
-
 ### Redirect to URL
 
 Use `window.location.href` or `window.location.replace()` to redirect to `url`.
@@ -575,17 +565,13 @@ const scrollToTop = _ => {
 // scrollToTop()
 ```
 
-### Shuffle array values
+### Shuffle array
 
-Create an array of random values by using `Array.map()` and `Math.random()`.
-Use `Array.sort()` to sort the elements of the original array based on the random values.
+Use `Array.sort()` to reorder elements, using `Math.random()` in the comparator.
 
 ```js
-const shuffle = arr => {
-  let r = arr.map(Math.random);
-  return arr.sort((a,b) => r[a] - r[b]);
-}
-// shuffle([1,2,3]) -> [2, 1, 3]
+const shuffle = arr => arr.sort(() => Math.random() - 0.5);
+// shuffle([1,2,3]) -> [2,3,1]
 ```
 
 ### Similarity between arrays
