@@ -8,9 +8,7 @@ const promisify = func =>
   (...args) =>
     new Promise((resolve, reject) =>
       func(...args, (err, result) =>
-        err
-        ? reject(err)
-        : resolve(result))
+        err ? reject(err) : resolve(result));
     )
 // const stat = promisify(fs.stat)
 // stat('foo.txt') -> Promise resolves if `foo.txt` exists, otherwise rejects
