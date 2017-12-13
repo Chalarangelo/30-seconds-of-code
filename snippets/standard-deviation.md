@@ -7,7 +7,7 @@ Since there are two types of standard deviation, population and sample, you can 
 
 ```js
 const standardDeviation = (arr, usePopulation) => {
-  const mean = arr.reduce((acc, val) => acc + val, 0);
+  const mean = arr.reduce((acc, val) => acc + val, 0) / arr.length;
   return Math.sqrt(
     arr.reduce((acc, val) => acc.concat(Math.pow(val - mean / arr.length, 2)), [])
        .reduce((acc, val) => acc + val, 0) 
