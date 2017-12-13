@@ -58,7 +58,7 @@
 * [Sum of array of numbers](#sum-of-array-of-numbers)
 * [Swap values of two variables](#swap-values-of-two-variables)
 * [Tail of list](#tail-of-list)
-* [Truncate_a_string](#truncate_a_string)
+* [Truncate a string](#truncate-a-string)
 * [Unique values of array](#unique-values-of-array)
 * [URL parameters](#url-parameters)
 * [UUID generator](#uuid-generator)
