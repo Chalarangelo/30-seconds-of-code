@@ -12,6 +12,7 @@
 * [Average of array of numbers](#average-of-array-of-numbers)
 * [Capitalize first letter of every word](#capitalize-first-letter-of-every-word)
 * [Capitalize first letter](#capitalize-first-letter)
+* [Chain asynchronous functions](#chain-asynchronous-functions)
 * [Check for palindrome](#check-for-palindrome)
 * [Chunk array](#chunk-array)
 * [Count occurrences of a value in array](#count-occurrences-of-a-value-in-array)
@@ -108,6 +109,21 @@ Omit the `lowerRest` parameter to keep the rest of the string intact, or set it 
 const capitalize = (str, lowerRest = false) =>
   str.slice(0, 1).toUpperCase() + (lowerRest? str.slice(1).toLowerCase() : str.slice(1));
 // capitalize('myName', true) -> 'Myname'
+```
+
+### Chain asynchronous functions
+
+Loop through an array of functions containing asynchronous events, calling `next` when each asynchronous event has completed.
+
+```js
+const chainAsync = fns => { let curr = 0; const next = () => fns[curr++](next); next(); }
+/*
+chainAsync([
+  next => { console.log('0 seconds'); setTimeout(next, 1000); },
+  next => { console.log('1 second');  setTimeout(next, 1000); },
+  next => { console.log('2 seconds'); }
+])
+*/
 ```
 
 ### Check for palindrome
