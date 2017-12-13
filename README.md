@@ -419,7 +419,7 @@ const powerset = arr =>
 
 ### Promisify
 
-Creates a promise version of the given callback-style function. In Node 8+, you
+Creates a promisified version of the given callback-style function. In Node 8+, you
 can use [`util.promisify`](https://nodejs.org/api/util.html#util_util_promisify_original)
 
 ```js
