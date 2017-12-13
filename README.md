@@ -42,6 +42,7 @@
 * [Object from key value pairs](#object-from-key-value-pairs)
 * [Pipe](#pipe)
 * [Powerset](#powerset)
+* [Promisify](#promisify)
 * [Random integer in range](#random-integer-in-range)
 * [Random number in range](#random-number-in-range)
 * [Randomize order of array](#randomize-order-of-array)
@@ -414,6 +415,24 @@ Use `reduce()` combined with `map()` to iterate over elements and combine into a
 const powerset = arr =>
   arr.reduce( (a,v) => a.concat(a.map( r => [v].concat(r) )), [[]]);
 // powerset([1,2]) -> [[], [1], [2], [2,1]]
+```
+
+### Promisify
+
+Creates a promise version of the given callback-style function. In Node 8+, you
+can use [`util.promisify`](https://nodejs.org/api/util.html#util_util_promisify_original)
+
+```js
+const promisify = func =>
+  (...args) =>
+    new Promise((resolve, reject) =>
+      func(...args, (err, result) =>
+        err
+        ? reject(err)
+        : resolve(result))
+    )
+// const stat = promisify(fs.stat)
+// When called, stat returns a promise
 ```
 
 ### Random integer in range
