@@ -11,6 +11,7 @@
 
 * [Anagrams of string (with duplicates)](#anagrams-of-string-with-duplicates)
 * [Average of array of numbers](#average-of-array-of-numbers)
+* [Bottom visible](#bottom-visible)
 * [Capitalize first letter of every word](#capitalize-first-letter-of-every-word)
 * [Capitalize first letter](#capitalize-first-letter)
 * [Chain asynchronous functions](#chain-asynchronous-functions)
@@ -90,6 +91,23 @@ Use `reduce()` to add each value to an accumulator, initialized with a value of 
 const average = arr =>
   arr.reduce( (acc , val) => acc + val, 0) / arr.length;
 // average([1,2,3]) -> 2
+```
+
+### Bottom visible
+
+Returns `true` if bottom of the page is visible. It adds `scrollY` to
+the height of the visible portion of the page (`clientHeight`) and
+compares it to `pageHeight` to see if bottom of the page is visible.
+
+```js
+const bottomVisible = () => {
+  const scrollY = window.scrollY;
+  const visibleHeight = document.documentElement.clientHeight;
+  const pageHeight = document.documentElement.scrollHeight;
+  const bottomOfPage = visibleHeight + scrollY >= pageHeight;
+
+  return bottomOfPage || pageHeight < visibleHeight;
+}
 ```
 
 ### Capitalize first letter of every word
