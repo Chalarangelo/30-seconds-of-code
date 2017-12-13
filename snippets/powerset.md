@@ -1,6 +1,6 @@
 ### Powerset
 
-Use `reduce()` combined with `map()` to iterate over elements and combine into an array containing all combinations.
+Use `Array.reduce()` combined with `Array.map()` to iterate over elements and combine into an array containing all combinations.
 
 ```js
 const powerset = arr =>
