@@ -1,7 +1,7 @@
 ### Deep flatten array
 
 Use recursion.
-Use `reduce()` to get all elements that are not arrays, flatten each element that is an array.
+Use `Array.reduce()` to get all elements that are not arrays, flatten each element that is an array.
 
 ```js
 const deepFlatten = arr =>

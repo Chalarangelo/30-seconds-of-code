@@ -2,7 +2,7 @@
 
 Use recursion.
 For each letter in the given string, create all the partial anagrams for the rest of its letters.
-Use `map()` to combine the letter with each partial anagram, then `reduce()` to combine all anagrams in one array.
+Use `Array.map()` to combine the letter with each partial anagram, then `Array.reduce()` to combine all anagrams in one array.
 Base cases are for string `length` equal to `2` or `1`.
 
 ```js
