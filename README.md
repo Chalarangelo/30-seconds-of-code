@@ -95,19 +95,12 @@ const average = arr =>
 
 ### Bottom visible
 
-Returns `true` if bottom of the page is visible. It adds `scrollY` to
-the height of the visible portion of the page (`clientHeight`) and
-compares it to `pageHeight` to see if bottom of the page is visible.
+Use `scrollY`, `scrollHeight` and `clientHeight` to determine if the bottom of the page is visible.
 
 ```js
-const bottomVisible = () => {
-  const scrollY = window.scrollY;
-  const visibleHeight = document.documentElement.clientHeight;
-  const pageHeight = document.documentElement.scrollHeight;
-  const bottomOfPage = visibleHeight + scrollY >= pageHeight;
-
-  return bottomOfPage || pageHeight < visibleHeight;
-}
+const bottomVisible = _ => 
+  document.documentElement.clientHeight + window.scrollY >= document.documentElement.scrollHeight || document.documentElement.clientHeight;
+// bottomVisible() -> true
 ```
 
 ### Capitalize first letter of every word
