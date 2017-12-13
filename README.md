@@ -35,6 +35,7 @@
 * [Get native type of value](#get-native-type-of-value)
 * [Get scroll position](#get-scroll-position)
 * [Greatest common divisor (GCD)](#greatest-common-divisor-gcd)
+* [Hamming distance](#hamming-distance)
 * [Head of list](#head-of-list)
 * [Initial of list](#initial-of-list)
 * [Initialize array with range](#initialize-array-with-range)
@@ -345,6 +346,17 @@ Otherwise, return the GCD of `y` and the remainder of the division `x/y`.
 ```js
 const gcd = (x , y) => !y ? x : gcd(y, x % y);
 // gcd (8, 36) -> 4
+```
+
+### Hamming distance
+
+Use XOR operator (`^`) to find the bit difference between the two numbers, convert to binary string using `toString(2)`.
+Count and return the number of `1`s in the string, using `match(/1/g)`.
+
+```js
+const hammingDistance = (num1, num2) =>
+  ((num1^num2).toString(2).match(/1/g) || '').length;
+// hammingDistance(2,3) -> 1
 ```
 
 ### Head of list
