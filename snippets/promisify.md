@@ -13,5 +13,5 @@ const promisify = func =>
         : resolve(result))
     )
 // const stat = promisify(fs.stat)
-// When called, stat returns a promise
+// stat('foo.txt') -> Promise resolves if `foo.txt` exists, otherwise rejects
 ```
