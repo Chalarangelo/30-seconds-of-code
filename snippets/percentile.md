@@ -1,6 +1,6 @@
 ### Percentile
 
-Use `Array.filter()` to calculate how many numbers are below the value and how many are the same value and
+Use `Array.reduce()` to calculate how many numbers are below the value and how many are the same value and
 apply the percentile formula.
 
 ```js
