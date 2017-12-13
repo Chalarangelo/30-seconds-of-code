@@ -26,7 +26,7 @@
 * [Even or odd number](#even-or-odd-number)
 * [Factorial](#factorial)
 * [Fibonacci array generator](#fibonacci-array-generator)
-* [Filter out non uniqe values in an array](#filter-out-non-uniqe-values-in-an-array)
+* [Filter out non unique values in an array](#filter-out-non-unique-values-in-an-array)
 * [Flatten array](#flatten-array)
 * [Get max value from array](#get-max-value-from-array)
 * [Get min value from array](#get-min-value-from-array)
