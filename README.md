@@ -45,6 +45,7 @@
 * [Median of array of numbers](#median-of-array-of-numbers)
 * [Object from key value pairs](#object-from-key-value-pairs)
 * [Percentile](#percentile)
+* [Pick](#pick)
 * [Pipe](#pipe)
 * [Powerset](#powerset)
 * [Promisify](#promisify)
@@ -455,6 +456,20 @@ const percentile = (arr, val) =>
 // percentile([1,2,3,4,5,6,7,8,9,10], 6) -> 55
  ```
 
+### Pick
+
+Use `.reduce()` to convert the filtered/picked keys back to a object with the corresponding key:value pair if the key exist in the obj.
+
+```js
+const pick = (obj, arr) => arr.reduce((acc, curr) => (curr in obj && (acc[curr] = obj[curr]), acc), {});
+
+// const object = { 'a': 1, 'b': '2', 'c': 3 };
+// pick(object, ['a', 'c']) -> { 'a': 1, 'c': 3 }
+
+// pick(object, ['a', 'c'])['a'] -> 1
+// pick(object, ['a', 'c'])['c'] -> 3
+
+```
 ### Pipe
 
 Use `Array.reduce()` to pass value through functions.
