@@ -10,6 +10,9 @@
 ## Contents
 
 * [Anagrams of string (with duplicates)](#anagrams-of-string-with-duplicates)
+* [Array difference](#array-difference)
+* [Array intersection](#array-intersection)
+* [Array union](#array-union)
 * [Average of array of numbers](#average-of-array-of-numbers)
 * [Bottom visible](#bottom-visible)
 * [Capitalize first letter of every word](#capitalize-first-letter-of-every-word)
@@ -21,7 +24,6 @@
 * [Current URL](#current-url)
 * [Curry](#curry)
 * [Deep flatten array](#deep-flatten-array)
-* [Difference between arrays](#difference-between-arrays)
 * [Distance between two points](#distance-between-two-points)
 * [Divisible by number](#divisible-by-number)
 * [Escape regular expression](#escape-regular-expression)
@@ -83,6 +85,33 @@ const anagrams = str => {
     acc.concat(anagrams(str.slice(0, i) + str.slice(i + 1)).map( val => letter + val )), []);
 }
 // anagrams('abc') -> ['abc','acb','bac','bca','cab','cba']
+```
+
+### Array difference (complement)
+
+Create a `Set` from `b`, then use `Array.filter()` on `a` to only keep values not contained in `b`.
+
+```js
+const difference = (a, b) => { const s = new Set(b); return a.filter(x => !s.has(x)); }
+// difference([1,2,3], [1,2]) -> [3]
+```
+
+### Array intersection (Common values between two arrays)
+
+Create a `Set` from `b`, then use `Array.filter()` on `a` to only keep values contained in `b`.
+
+```js
+const intersection = (a, b) => { const s = new Set(b); return a.filter(x => s.has(x)); }
+// intersection([1,2,3], [4,3,2]) -> [2,3]
+```
+
+### Array union
+
+Create a `Set` with all values of `a` and `b` and convert to an array.
+
+```js
+const union = (a, b) => Array.from(new Set([...a, ...b]))
+// union([1,2,3], [4,3,2]) -> [1,2,3,4]
 ```
 
 ### Average of array of numbers
@@ -209,15 +238,6 @@ Use `Array.reduce()` to get all elements that are not arrays, flatten each eleme
 const deepFlatten = arr =>
   arr.reduce( (a, v) => a.concat( Array.isArray(v) ? deepFlatten(v) : v ), []);
 // deepFlatten([1,[2],[[3],4],5]) -> [1,2,3,4,5]
-```
-
-### Difference between arrays
-
-Use `filter()` to remove values that are part of `values`, determined using `includes()`.
-
-```js
-const difference = (arr, values) => arr.filter(v => !values.includes(v));
-// difference([1,2,3], [1,2]) -> [3]
 ```
 
 ### Distance between two points
