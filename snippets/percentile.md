@@ -4,7 +4,7 @@ Use `Array.filter()` to calculate how many numbers are below the value and how m
 apply the percentile formula.
 
 ```js
-const percentile = (arr, val) =>
-  100 * (arr.filter(v => v < val).length + 0.5 * arr.filter(v => v === val).length) / arr.length;
+const percentile = (arr, val) => 
+  100 * arr.reduce((acc,v) => acc + (v < val ? 1 : 0) + (v === val ? 0.5 : 0), 0) / arr.length;
 // percentile([1,2,3,4,5,6,7,8,9,10], 6) -> 55
  ```
