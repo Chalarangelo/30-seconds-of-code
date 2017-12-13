@@ -62,6 +62,7 @@
 * [Scroll to top](#scroll-to-top)
 * [Shuffle array values](#shuffle-array-values)
 * [Similarity between arrays](#similarity-between-arrays)
+* [Sleep](#sleep)
 * [Sort characters in string (alphabetical)](#sort-characters-in-string-alphabetical)
 * [Sum of array of numbers](#sum-of-array-of-numbers)
 * [Swap values of two variables](#swap-values-of-two-variables)
@@ -638,6 +639,19 @@ Use `filter()` to remove values that are not part of `values`, determined using 
 ```js
 const similarity = (arr, values) => arr.filter(v => values.includes(v));
 // similarity([1,2,3], [1,2,4]) -> [1,2]
+```
+
+### Sleep
+
+Use a `while` loop to block execution thread for `ms` milliseconds.
+
+```js
+const sleep = ms => {
+  const end = Date.now() + ms;
+  while(Date.now() < end){}
+}
+// sleep(10); 
+// console.log('end') -> log 'end' after 10 milliseconds
 ```
 
 ### Sort characters in string (alphabetical)
