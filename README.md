@@ -221,7 +221,7 @@ Create an empty array of the specific length, initializing the first two values 
 Use `Array.reduce()` to add values into the array, using the sum of the last two values, except for the first two.
 
 ```js
-const fibonacci = n =>
+const fibonacci = n => 
   Array(n).fill(0).reduce((acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),[]);
 // fibonacci(5) -> [0,1,1,2,3]
 ```
@@ -553,3 +553,4 @@ const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n);
 ## Credits
 
 *Icons made by [Smashicons](https://www.flaticon.com/authors/smashicons) from [www.flaticon.com](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).*
+
