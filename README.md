@@ -37,6 +37,7 @@
 * [Initialize array with values](#initialize-array-with-values)
 * [Last of list](#last-of-list)
 * [Measure time taken by function](#measure-time-taken-by-function)
+* [Median of array of numbers](#median-of-array-of-numbers)
 * [Object from key value pairs](#object-from-key-value-pairs)
 * [Pipe](#pipe)
 * [Powerset](#powerset)
@@ -357,6 +358,20 @@ const timeTaken = (func,...args) => {
   return r;
 }
 // timeTaken(Math.pow, 2, 10) -> 1024 (0.010000000009313226 logged in console)
+```
+
+### Median of array of numbers
+
+Find the middle of the array, use `Array.sort()` to sort the values.
+Return the number at the midpoint if `length` is odd, otherwise the average of the two middle numbers.
+
+```js
+const median = arr => {
+  const mid = Math.floor(arr.length / 2), nums = arr.sort((a,b) => a - b);
+  return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
+}
+// median([5,6,50,1,-5]) -> 5
+// median([0,10,-2,7]) -> 3.5
 ```
 
 ### Object from key-value pairs
