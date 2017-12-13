@@ -60,14 +60,13 @@
 * [Promisify](#promisify)
 * [Random integer in range](#random-integer-in-range)
 * [Random number in range](#random-number-in-range)
-* [Randomize order of array](#randomize-order-of-array)
 * [Redirect to url](#redirect-to-url)
 * [Remove](#remove)
 * [Reverse a string](#reverse-a-string)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [Run promises in series](#run-promises-in-series)
 * [Scroll to top](#scroll-to-top)
-* [Shuffle array values](#shuffle-array-values)
+* [Shuffle array](#shuffle-array)
 * [Similarity between arrays](#similarity-between-arrays)
 * [Sort characters in string (alphabetical)](#sort-characters-in-string-alphabetical)
 * [Sum of array of numbers](#sum-of-array-of-numbers)
@@ -513,7 +512,7 @@ const compact = (arr) => arr.filter(v => v);
 Creates a new array concatenating array with any additional arrays and/or values `args` using `Array.concat()`.
 
 ```js
-const ArrayConcat = (arr, ...args) => arr.concat(...args); 
+const ArrayConcat = (arr, ...args) => arr.concat(...args);
 // ArrayConcat([1], [1, 2, 3, [4]]) -> [1, 2, 3, [4]]
 ```
 
@@ -969,10 +968,9 @@ const scrollToTop = _ => {
 // scrollToTop()
 ```
 
-### Shuffle array values
+### Shuffle array
 
-Create an array of random values by using `Array.map()` and `Math.random()`.
-Use `Array.sort()` to sort the elements of the original array based on the random values.
+Use `Array.sort()` to reorder elements, using `Math.random()` in the comparator.
 
 ```js
 const shuffle = arr => {
