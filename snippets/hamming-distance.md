@@ -1,10 +1,9 @@
 ### Hamming distance between two numbers
 
-Use XOR operator.
-Find the binary bit difference between two number using `^` operator.Convert the result to binary string using `toString(2)`.Get the difference by getting the number of 1's in the binary digit using `match(/1/g)`.
+Use XOR operator (`^`) to find the bit difference between the two numbers, convert to binary string using `toString(2)`.
+Count and return the number of `1`s in the string, using `match(/1/g)`.
 ```js
-const hammingDistance = (num1, num2) => {
-  return ((num1^num2).toString(2).match(/1/g) || '').length;
-}
+const hammingDistance = (num1, num2) => 
+  ((num1^num2).toString(2).match(/1/g) || '').length;
 //hammingDistance(2,3) -> 1
 ```
