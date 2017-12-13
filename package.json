@@ -10,10 +10,14 @@
   "description": "A collection of useful Javascript snippets.",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "tap-spec": "^4.1.1",
+    "tape": "^4.8.0"
+  },
   "scripts": {
     "build-list": "node ./scripts/builder.js",
-    "start": "concurrently --kill-others \"nodemon -e js,md -i README.md -x \\\"npm run build-list\\\"\" \"live-server ./build\""
+    "start": "concurrently --kill-others \"nodemon -e js,md -i README.md -x \\\"npm run build-list\\\"\" \"live-server ./build\"",
+    "test": "tape test/**/*.test.js | tap-spec"
   },
   "repository": {
     "type": "git",
