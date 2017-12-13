@@ -58,6 +58,7 @@
 * [Sum of array of numbers](#sum-of-array-of-numbers)
 * [Swap values of two variables](#swap-values-of-two-variables)
 * [Tail of list](#tail-of-list)
+* [Truncate_a_string](#truncate_a_string)
 * [Unique values of array](#unique-values-of-array)
 * [URL parameters](#url-parameters)
 * [UUID generator](#uuid-generator)
@@ -589,6 +590,17 @@ Return `arr.slice(1)` if the array's `length` is more than `1`, otherwise return
 const tail = arr => arr.length > 1 ? arr.slice(1) : arr;
 // tail([1,2,3]) -> [2,3]
 // tail([1]) -> [1]
+```
+
+### Truncate a String
+
+Determine if the string's `length` is greater than `num`. 
+Return the string truncated to the desired length, with `...` appended to the end or the original string.
+
+```
+const truncate = (str, num) =>
+  str.length > num ? str.slice(0, num > 3 ? num-3 : num) + '...' : str;
+// truncate('boomerang', 7) -> 'boom...'
 ```
 
 ### Unique values of array
