@@ -51,7 +51,7 @@
 * [Random integer in range](#random-integer-in-range)
 * [Random number in range](#random-number-in-range)
 * [Randomize order of array](#randomize-order-of-array)
-* [Redirect to URL](#redirect-to-url)
+* [Redirect to url](#redirect-to-url)
 * [Reverse a string](#reverse-a-string)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [Run promises in series](#run-promises-in-series)
@@ -164,10 +164,10 @@ const chunk = (arr, size) =>
 
 ### Count occurrences of a value in array
 
-Use `Array.reduce()` to increment a counter each time you encounter the specific value inside the array.
+Use `.filter()` to filter out values that don't exist inside the array.
 
 ```js
-const countOccurrences = (arr, value) => arr.reduce((a, v) => v === value ? a + 1 : a + 0, 0);
+const countOccurrences = (arr, val) => arr.filter(v => v === val).length;
 // countOccurrences([1,1,2,1,2,3], 1) -> 3
 ```
 
