@@ -1,7 +1,7 @@
 ### Measure time taken by function
 
 Use `performance.now()` to get start and end time for the function, `console.log()` the time taken.
-First argument is the function name, subsequent arguments are passed to the function.
+Pass a callback function as the argument.
 
 ```js
 const timeTaken = callback => {
