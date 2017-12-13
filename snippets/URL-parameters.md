@@ -6,6 +6,8 @@ Pass `location.search` as the argument to apply to the current `url`.
 
 ```js
 const getUrlParameters = url =>
-  Object.assign(...url.match(/([^?=&]+)(=([^&]*))?/g).map(m => {[f,v] = m.split('='); return {[f]:v}}));
+  url.match(/([^?=&]+)(=([^&]*))?/g).reduce(
+    (a,v) => (a[v.slice(0,v.indexOf('='))] = v.slice(v.indexOf('=')), a), {}
+  );
 // getUrlParameters('http://url.com/page?name=Adam&surname=Smith') -> {name: 'Adam', surname: 'Smith'}
 ```

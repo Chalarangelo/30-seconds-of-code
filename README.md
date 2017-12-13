@@ -11,6 +11,7 @@
 
 * [Anagrams of string (with duplicates)](#anagrams-of-string-with-duplicates)
 * [Average of array of numbers](#average-of-array-of-numbers)
+* [Bottom visible](#bottom-visible)
 * [Capitalize first letter of every word](#capitalize-first-letter-of-every-word)
 * [Capitalize first letter](#capitalize-first-letter)
 * [Chain asynchronous functions](#chain-asynchronous-functions)
@@ -45,6 +46,7 @@
 * [Percentile](#percentile)
 * [Pipe](#pipe)
 * [Powerset](#powerset)
+* [Promisify](#promisify)
 * [Random integer in range](#random-integer-in-range)
 * [Random number in range](#random-number-in-range)
 * [Randomize order of array](#randomize-order-of-array)
@@ -90,6 +92,16 @@ Use `reduce()` to add each value to an accumulator, initialized with a value of 
 const average = arr =>
   arr.reduce( (acc , val) => acc + val, 0) / arr.length;
 // average([1,2,3]) -> 2
+```
+
+### Bottom visible
+
+Use `scrollY`, `scrollHeight` and `clientHeight` to determine if the bottom of the page is visible.
+
+```js
+const bottomVisible = _ => 
+  document.documentElement.clientHeight + window.scrollY >= document.documentElement.scrollHeight || document.documentElement.clientHeight;
+// bottomVisible() -> true
 ```
 
 ### Capitalize first letter of every word
@@ -450,6 +462,24 @@ const powerset = arr =>
 // powerset([1,2]) -> [[], [1], [2], [2,1]]
 ```
 
+### Promisify
+
+Creates a promisified version of the given callback-style function. In Node 8+, you
+can use [`util.promisify`](https://nodejs.org/api/util.html#util_util_promisify_original)
+
+```js
+const promisify = func =>
+  (...args) =>
+    new Promise((resolve, reject) =>
+      func(...args, (err, result) =>
+        err
+        ? reject(err)
+        : resolve(result))
+    )
+// const stat = promisify(fs.stat)
+// stat('foo.txt') -> Promise resolves if `foo.txt` exists, otherwise rejects
+```
+
 ### Random integer in range
 
 Use `Math.random()` to generate a random number and map it to the desired range, using `Math.floor()` to make it an integer.
@@ -615,13 +645,14 @@ const unique = arr => [...new Set(arr)];
 
 ### URL parameters
 
-Use `match()` with an appropriate regular expression to get all key-value pairs, `map()` them appropriately.
-Combine all key-value pairs into a single object using `Object.assign()` and the spread operator (`...`).
+Use `match()` with an appropriate regular expression to get all key-value pairs, `Array.reduce()` to map and combine them into a single object.
 Pass `location.search` as the argument to apply to the current `url`.
 
 ```js
 const getUrlParameters = url =>
-  Object.assign(...url.match(/([^?=&]+)(=([^&]*))?/g).map(m => {[f,v] = m.split('='); return {[f]:v}}));
+  url.match(/([^?=&]+)(=([^&]*))?/g).reduce(
+    (a,v) => (a[v.slice(0,v.indexOf('='))] = v.slice(v.indexOf('=')), a), {}
+  );
 // getUrlParameters('http://url.com/page?name=Adam&surname=Smith') -> {name: 'Adam', surname: 'Smith'}
 ```
 
