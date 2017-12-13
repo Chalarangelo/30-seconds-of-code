@@ -28,6 +28,7 @@
 * [Flatten array](#flatten-array)
 * [Get max value from array](#get-max-value-from-array)
 * [Get min value from array](#get-min-value-from-array)
+* [Get native type of value](#get-native-type-of-value)
 * [Get scroll position](#get-scroll-position)
 * [Greatest common divisor (GCD)](#greatest-common-divisor-gcd)
 * [Head of list](#head-of-list)
@@ -267,7 +268,8 @@ const arrayMin = arr => Math.min(...arr);
 Returns lower-cased constructor name of value, "undefined" or "null" if value is undefined or null
 
 ```js
-const getType = v => v === undefined ? "undefined" : v === null ? "null" : v.constructor.name.toLowerCase();
+const getType = v =>
+  v === undefined ? "undefined" : v === null ? "null" : v.constructor.name.toLowerCase(); 
 // getType(new Set([1,2,3])) -> "set"
 ```
 
