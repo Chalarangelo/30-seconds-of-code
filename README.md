@@ -57,7 +57,7 @@
 * [Promisify](#promisify)
 * [Random integer in range](#random-integer-in-range)
 * [Random number in range](#random-number-in-range)
-* [Redirect to URL](#redirect-to-url)
+* [Redirect to url](#redirect-to-url)
 * [Reverse a string](#reverse-a-string)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [Run promises in series](#run-promises-in-series)
@@ -70,6 +70,7 @@
 * [Sum of array of numbers](#sum-of-array-of-numbers)
 * [Swap values of two variables](#swap-values-of-two-variables)
 * [Tail of list](#tail-of-list)
+* [Take](#take)
 * [Truncate a string](#truncate-a-string)
 * [Unique values of array](#unique-values-of-array)
 * [URL parameters](#url-parameters)
@@ -741,6 +742,17 @@ Return `arr.slice(1)` if the array's `length` is more than `1`, otherwise return
 const tail = arr => arr.length > 1 ? arr.slice(1) : arr;
 // tail([1,2,3]) -> [2,3]
 // tail([1]) -> [1]
+```
+
+### Take
+
+Use `.slice()` to create a slice of the array with n elements taken from the beginning.
+
+```js
+const take = (arr, n) => n === undefined ? arr.slice(0, 1) : arr.slice(0, n);
+
+// take([1, 2, 3], 5) -> [1, 2, 3]
+// take([1, 2, 3], 0) -> []
 ```
 
 ### Truncate a String
