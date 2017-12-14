@@ -1,16 +1,14 @@
 ### Group by
 
-Passing an array of values, a function or a property name thats going to be run against each value in the array,
-returns an object where the keys are the mapped results and the values is an array of the original values that generated the same results.
+Use `Array.map()` to map the values of an array to a function or property name.
+Use `Array.reduce()` to create an object, where the keys are produced from the mapped results.
 
 ```js
-const groupBy = (values, fn) => {
-  return (typeof fn === 'function' ? values.map(fn) : values.map((val) => val[fn]))
+const groupBy = (arr, func) => 
+  (typeof func === 'function' ? arr.map(func) : arr.map(val => val[func]))
     .reduce((acc, val, i) => {
-      acc[val] = acc[val] === undefined ? [values[i]] : acc[val].concat(values[i]);
-      return acc;
+      acc[val] = acc[val] === undefined ? [arr[i]] : acc[val].concat(arr[i]); return acc;
     }, {});
-}
 // groupBy([6.1, 4.2, 6.3], Math.floor) -> {4: [4.2], 6: [6.1, 6.3]}
 // groupBy(['one', 'two', 'three'], 'length') -> {3: ['one', 'two'], 5: ['three']}
 ```
