@@ -1,14 +1,9 @@
 ### Number to array of digits
 
-Convert the number to a string, split the string using `split()`. 
-use `parseInt()` to convert every element back to integer.
+Convert the number to a string, use `split()` to convert build an array.
+Use `Array.map()` and `parseInt()` to transform each value to an integer. 
 
 ```js
-const num2array = (n) =>{
-	return (''+n).split('').map((i) =>{
-		return parseInt(i);
-	})
-}
-
-// num2array(2334) -> [2, 3, 3, 4]
+const digitize = n => (''+n).split('').map(i => parseInt(i));
+// digitize(2334) -> [2, 3, 3, 4]
 ```
