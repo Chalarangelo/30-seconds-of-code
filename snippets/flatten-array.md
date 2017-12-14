@@ -1,9 +1,8 @@
 ### Flatten array
 
-Use recursion.
-Use `reduce()` to get all elements that are not arrays, flatten each element that is an array.
+Use `Array.reduce()` to get all elements inside the array and `concat()` to flatten them.
 
 ```js
-var flatten = arr =>
-  arr.reduce( (a, v) => a.concat( Array.isArray(v) ? flatten(v) : v ), []);
+const flatten = arr => arr.reduce((a, v) => a.concat(v), []);
+// flatten([1,[2],3,4]) -> [1,2,3,4]
 ```

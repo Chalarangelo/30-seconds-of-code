@@ -1,8 +1,8 @@
 ### Similarity between arrays
 
-Use `filter()` to remove values that are not part of `values`, determined using `indexOf()`.
+Use `filter()` to remove values that are not part of `values`, determined using `includes()`.
 
 ```js
-var difference = (arr, values) =>
-  arr.filter(v => values.indexOf(v) !== -1);
+const similarity = (arr, values) => arr.filter(v => values.includes(v));
+// similarity([1,2,3], [1,2,4]) -> [1,2]
 ```

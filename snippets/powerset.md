@@ -1,8 +1,9 @@
 ### Powerset
 
-Use `reduce()` combined with `map()` to iterate over elements and combine into an array containing all combinations. 
+Use `Array.reduce()` combined with `Array.map()` to iterate over elements and combine into an array containing all combinations.
 
 ```js
-var powerset = arr =>
-  arr.reduce( (a,v) => a.concat(a.map( r => [v].concat(r) )), [[]]);
+const powerset = arr =>
+  arr.reduce((a, v) => a.concat(a.map(r => [v].concat(r))), [[]]);
+// powerset([1,2]) -> [[], [1], [2], [2,1]]
 ```
