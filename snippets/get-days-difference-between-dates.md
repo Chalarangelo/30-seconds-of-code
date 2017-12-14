@@ -1,6 +1,6 @@
-### Get Days Difference Between Dates
+### Get days difference between dates
 
-Returns the number of days between two Dates.
+Calculate the difference (in days) between to `Date` objects.
 
 ```js
 const getDaysDiffBetweenDates = (dateInitial, dateFinal) => (dateFinal - dateInitial) / (1000 * 3600 * 24);
