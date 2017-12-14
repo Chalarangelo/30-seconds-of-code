@@ -1,6 +1,6 @@
 ### Shallow clone object
 
-Use the object spread operator to spread the properties of the target object into the clone.
+Use the object `...spread` operator to spread the properties of the target object into the clone.
 
 ```js
 const shallowClone = obj => ({ ...obj });
