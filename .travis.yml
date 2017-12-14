@@ -1,0 +1,4 @@
+before_script:
+  - npm install    
+  - npm install concurrently fs-extra live-server markdown-it nodemon
+script: npm run build-list
