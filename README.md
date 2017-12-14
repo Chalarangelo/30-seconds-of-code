@@ -21,6 +21,7 @@
 * [Check for palindrome](#check-for-palindrome)
 * [Chunk array](#chunk-array)
 * [Compact](#compact)
+* [Concat](#concat)
 * [Count occurrences of a value in array](#count-occurrences-of-a-value-in-array)
 * [Current URL](#current-url)
 * [Curry](#curry)
@@ -57,7 +58,7 @@
 * [Random integer in range](#random-integer-in-range)
 * [Random number in range](#random-number-in-range)
 * [Randomize order of array](#randomize-order-of-array)
-* [Redirect to URL](#redirect-to-url)
+* [Redirect to url](#redirect-to-url)
 * [Reverse a string](#reverse-a-string)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [Run promises in series](#run-promises-in-series)
@@ -204,6 +205,15 @@ Use `Array.filter()` to filter out falsey values (`false`, `null`, `0`, `""`, `u
 ```js
 const compact = (arr) => arr.filter(v => v);
 // compact([0, 1, false, 2, '', 3, 'a', 'e'*23, NaN, 's', 34]) -> [ 1, 2, 3, 'a', 's', 34 ]
+```
+
+### Concat
+
+Creates a new array concatenating array with any additional arrays and/or values `args` using `Array.concat()`.
+
+```js
+const ArrayConcat = (arr, ...args) => arr.concat(...args); 
+// ArrayConcat([1], [1, 2, 3, [4]]) -> [1, 2, 3, [4]]
 ```
 
 ### Count occurrences of a value in array
