@@ -30,7 +30,7 @@
 * [Fibonacci array generator](#fibonacci-array-generator)
 * [Filter out non unique values in an array](#filter-out-non-unique-values-in-an-array)
 * [Flatten array](#flatten-array)
-* [Get days diff between dates](#get-days-diff-between-dates)
+* [Get days difference between dates](#get-days-difference-between-dates)
 * [Get max value from array](#get-max-value-from-array)
 * [Get min value from array](#get-min-value-from-array)
 * [Get native type of value](#get-native-type-of-value)
