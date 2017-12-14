@@ -19,7 +19,6 @@
 * [Capitalize first letter of every word](#capitalize-first-letter-of-every-word)
 * [Capitalize first letter](#capitalize-first-letter)
 * [Chain asynchronous functions](#chain-asynchronous-functions)
-* [Check for boolean primitive values](#check-for-boolean-primitive-values)
 * [Check for palindrome](#check-for-palindrome)
 * [Chunk array](#chunk-array)
 * [Compact](#compact)
@@ -47,6 +46,11 @@
 * [Initial of list](#initial-of-list)
 * [Initialize array with range](#initialize-array-with-range)
 * [Initialize array with values](#initialize-array-with-values)
+* [Is boolean](#is-boolean)
+* [Is function](#is-function)
+* [Is number](#is-number)
+* [Is string](#is-string)
+* [Is symbol](#is-symbol)
 * [Last of list](#last-of-list)
 * [Measure time taken by function](#measure-time-taken-by-function)
 * [Median of array of numbers](#median-of-array-of-numbers)
@@ -186,15 +190,6 @@ chainAsync([
   next => { console.log('2 seconds'); }
 ])
 */
-```
-
-### Check for boolean primitive values
-
-Use `typeof` to check if a value is classified as a boolean primitive.
-
-```js
-const isBool = val => typeof val === 'boolean';
-// isBool(null) -> false
 ```
 
 ### Check for palindrome
@@ -483,6 +478,56 @@ You can omit `value` to use a default value of `0`.
 ```js
 const initializeArray = (n, value = 0) => Array(n).fill(value);
 // initializeArray(5, 2) -> [2,2,2,2,2]
+```
+
+### Is boolean
+
+Use `typeof` to check if a value is classified as a boolean primitive.
+
+```js
+const isBoolean = val => typeof val === 'boolean';
+// isBoolean(null) -> false
+// isBoolean(false) -> true
+```
+
+### Is boolean
+
+Use `typeof` to check if a value is classified as a function primitive.
+
+```js
+const isFunction = val => val && typeof val === 'function';
+// isFunction('x') -> false
+// isFunction(x => x) -> true
+```
+
+### Is number
+
+Use `typeof` to check if a value is classified as a number primitive.
+
+```js
+const isNumber = val => typeof val === 'number';
+// isNumber('1') -> false
+// isNumber(1) -> true
+```
+
+### Is string
+
+Use `typeof` to check if a value is classified as a string primitive.
+
+```js
+const isString = val => typeof val === 'string';
+// isString(10) -> false
+// isString('10') -> true
+```
+
+### Is symbol
+
+Use `typeof` to check if a value is classified as a symbol primitive.
+
+```js
+const isSymbol = val => typeof val === 'symbol';
+// isSymbol('x') -> false
+// isSymbol(Symbol('x')) -> true
 ```
 
 ### Last of list
