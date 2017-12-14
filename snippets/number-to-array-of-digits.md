@@ -5,12 +5,9 @@ use `Array.reverse()` to return the array in the same order as the number.
 
 ```js
 const num2array = (n) =>{
-	let arr = [];
-	while (n>0) { 
-		arr.push(n%10); 
-		n = parseInt(n/10); 
-	}
-	return arr.reverse();
+	return (''+n).split('').map((i) =>{
+		return parseInt(i);
+	})
 }
 
 // num2array(2334) -> [2, 3, 3, 4]
