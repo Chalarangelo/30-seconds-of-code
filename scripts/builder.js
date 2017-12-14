@@ -45,7 +45,7 @@ try {
     output += `* [${snippet[0][0].toUpperCase() + snippet[0].replace(/-/g,' ').slice(1,snippet[0].length-3)}](#${snippet[0].slice(0,snippet[0].length-3).replace(/\(/g,'').replace(/\)/g,'').toLowerCase()})\n`
   output += '\n';
   for(var snippet of Object.entries(snippets))
-    output += `${snippet[1]+'\n'}`;
+    output += `${snippet[1]+'\n[⬆ back to top](#table-of-contents)\n'}`;
   output += `${endPart+'\n'}`;
   fs.writeFileSync('README.md', output);
 }
