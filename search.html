@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+	<title>Search</title>
+</head>
+
+<style type="text/css">
+	
+
+</style>
+
+<body>
+
+	<div class="content-grid mdl-grid">
+		<div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			<input class="mdl-textfield__input" type="text" id="sample3" 
+			oninput="search(this.value)">
+			<label class="mdl-textfield__label" for="sample3">Search Snippets</label>
+		</div>
+		<ul class="mdl-cell mdl-cell--12-col demo-list-icon mdl-list" id="snip-list"></ul>
+	</div>
+
+</body>
+
+<script src="scripts/tracker.js"></script>
+<script type="text/javascript">
+	
+	function search(query){
+		let snipList = document.querySelector("#snip-list");
+		snipList.innerHTML = "";
+		snippets.map((snip) =>{
+			query.split(" ").map((word) =>{
+				if(snip.indexOf(word) != -1){
+					snipList.innerHTML += `
+						<li class="mdl-list__item">
+							<span class="mdl-list__item-primary-content">
+								<i class="material-icons mdl-list__item-icon">done</i>
+								${snip}
+							</span>
+						</li>
+					`; 
+				}
+			})
+		})
+	}
+
+	search("");
+
+</script>
+
+</html>
