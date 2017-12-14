@@ -4,7 +4,10 @@ var path = require('path');
 var snippetsPath = './snippets';
 var staticPartsPath = './static-parts';
 
-var snippets = {}, startPart = '', endPart = '', output = '';
+var snippets = {}, startPart = '', endPart = '', output = '', tagDbData = {};
+
+const objectFromPairs = arr => arr.reduce((a, v) => (a[v[0]] = v[1], a), {});
+const capitalize = (str, lowerRest = false) => str.slice(0, 1).toUpperCase() + (lowerRest ? str.slice(1).toLowerCase() : str.slice(1));
 
 console.time('Builder');
 
@@ -40,13 +43,27 @@ catch (err){
 }
 
 try {
+  tagDbData = objectFromPairs(fs.readFileSync('tag_database','utf8').split('\n').slice(0,-1).map(v => v.split(':').slice(0,2)));
+}
+catch (err){
+  console.log('Error during tag database loading: '+err);
+  process.exit(1);
+}
+
+try {
   output += `${startPart+'\n'}`;
-  for(var snippet of Object.entries(snippets))
-    output += `* [${snippet[0][0].toUpperCase() + snippet[0].replace(/-/g,' ').slice(1,snippet[0].length-3)}](#${snippet[0].slice(0,snippet[0].length-3).replace(/\(/g,'').replace(/\)/g,'').toLowerCase()})\n`
-  output += '\n';
-  for(var snippet of Object.entries(snippets))
-    output += `${snippet[1]+'\n[⬆ back to top](#table-of-contents)\n'}`;
-  output += `${endPart+'\n'}`;
+  for(var tag of [...new Set(Object.entries(tagDbData).map(t => t[1]))].sort((a,b) => a.localeCompare(b))){
+    output +=`### ${capitalize(tag, true)}\n`;
+    for(var taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag))
+      output += `* [${taggedSnippet[0][0].toUpperCase() + taggedSnippet[0].replace(/-/g,' ').slice(1)}](#${taggedSnippet[0].replace(/\(/g,'').replace(/\)/g,'').toLowerCase()})\n`
+    output += '\n';
+  }
+  for(var tag of [...new Set(Object.entries(tagDbData).map(t => t[1]))].sort((a,b) => a.localeCompare(b))){
+    output +=`## ${capitalize(tag, true)}\n`;
+    for(var taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag))
+      output += `\n${snippets[taggedSnippet[0]+'.md']+'\n[⬆ back to top](#table-of-contents)\n'}`;
+  }
+  output += `\n${endPart+'\n'}`;
   fs.writeFileSync('README.md', output);
 }
 catch (err){

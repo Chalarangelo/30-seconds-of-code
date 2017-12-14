@@ -35,11 +35,8 @@ catch (err){
 }
 
 try {
-  tagDbData = objectFromPairs(fs.readFileSync('tag_database','utf8').split('\n').map(v => v.split(':').slice(0,2)));
-  // for(var tag of [...new Set(Object.entries(tagDbData).map(x => x[1]))])
-  //   tagDbStats[tag] = Object.values(tagDbData).filter(v => v === tag);
-  // console.log(tagDbStats);
-  tagDbStats = Object.entries(tagDbData).reduce((acc, val) => {acc.hasOwnProperty(val[1]) ? acc[val[1]]++ : acc[val[1]] = 1; return acc;}, {});
+  tagDbData = objectFromPairs(fs.readFileSync('tag_database','utf8').split('\n').slice(0,-1).map(v => v.split(':').slice(0,2)));
+  tagDbStats = Object.entries(tagDbData).sort((a,b) => a[1].localeCompare(b[1])).reduce((acc, val) => {acc.hasOwnProperty(val[1]) ? acc[val[1]]++ : acc[val[1]] = 1; return acc;}, {});
 }
 catch (err){
   console.log('Error during tag database loading: '+err);
@@ -61,7 +58,7 @@ catch (err){
   console.log('Error during README generation: '+err);
   process.exit(1);
 }
-console.log(`\n===Tag database statistics===`)
+console.log(`\n=== TAG STATS ===`)
 for(var tagData of Object.entries(tagDbStats).filter(v => v[0] !== 'undefined')){
   console.log(`${chalk.green(tagData[0])}: ${tagData[1]} snippets`);
 }
