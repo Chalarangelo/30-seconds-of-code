@@ -56,7 +56,7 @@
 * [Random integer in range](#random-integer-in-range)
 * [Random number in range](#random-number-in-range)
 * [Randomize order of array](#randomize-order-of-array)
-* [Redirect to url](#redirect-to-url)
+* [Redirect to URL](#redirect-to-url)
 * [Reverse a string](#reverse-a-string)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [Run promises in series](#run-promises-in-series)
@@ -198,12 +198,13 @@ const chunk = (arr, size) =>
 
 ### Compact
 
-Use `.filter()` to filter falsey values. For example false, null, 0, "", undefined, and NaN are falsey.
+Use `Array.filter()` to filter out falsey values (`false`, `null`, `0`, `""`, `undefined`, and `NaN`).
 
 ```js
 const compact = (arr) => arr.filter(v => v);
 // compact([0, 1, false, 2, '', 3, 'a', 'e'*23, NaN, 's', 34]) -> [ 1, 2, 3, 'a', 's', 34 ]
 ```
+
 ### Count occurrences of a value in array
 
 Use `Array.reduce()` to increment a counter each time you encounter the specific value inside the array.
