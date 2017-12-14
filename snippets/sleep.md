@@ -1,6 +1,6 @@
 ### Sleep
 
-If you have an async function and you want to delay executing part of it. you can put your async function to sleep(in miliseconds).
+Delay executing part of an `async` function, by putting it to sleep, returning a `Promise`.
 
 ```js
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
