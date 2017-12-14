@@ -57,7 +57,7 @@
 * [Random integer in range](#random-integer-in-range)
 * [Random number in range](#random-number-in-range)
 * [Randomize order of array](#randomize-order-of-array)
-* [Redirect to url](#redirect-to-url)
+* [Redirect to URL](#redirect-to-url)
 * [Reverse a string](#reverse-a-string)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [Run promises in series](#run-promises-in-series)
