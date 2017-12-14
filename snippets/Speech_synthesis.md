@@ -7,8 +7,8 @@ To know more - https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisU
 
 ```
 speak = message => {
-  var msg = new SpeechSynthesisUtterance(message)
-  var voices = window.speechSynthesis.getVoices()
+  const msg = new SpeechSynthesisUtterance(message)
+  const voices = window.speechSynthesis.getVoices()
   msg.voice = voices[0]
   window.speechSynthesis.speak(msg)
  }
