@@ -102,7 +102,7 @@ Use `Array.concat()` to concatenate and array with any additional arrays and/or 
 
 ```js
 const arrayConcat = (arr, ...args) => arr.concat(...args);
-// arrayConcat([1], [1, 2, 3, [4]]) -> [1, 1, 2, 3, [4]]
+// arrayConcat([1], 2, [3], [[4]]) -> [1,2,3,[4]]
 ```
 
 ### Array difference
