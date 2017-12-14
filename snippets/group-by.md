@@ -4,7 +4,7 @@ Use `Array.map()` to map the values of an array to a function or property name.
 Use `Array.reduce()` to create an object, where the keys are produced from the mapped results.
 
 ```js
-const groupBy = (arr, func) => 
+const groupBy = (arr, func) =>
   (typeof func === 'function' ? arr.map(func) : arr.map(val => val[func]))
     .reduce((acc, val, i) => {
       acc[val] = acc[val] === undefined ? [arr[i]] : acc[val].concat(arr[i]); return acc;
