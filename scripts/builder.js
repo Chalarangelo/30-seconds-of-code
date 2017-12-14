@@ -52,13 +52,13 @@ catch (err){
 
 try {
   output += `${startPart+'\n'}`;
-  for(var tag of [...new Set(Object.entries(tagDbData).map(t => t[1]))].sort((a,b) => a.localeCompare(b))){
+  for(var tag of [...new Set(Object.entries(tagDbData).map(t => t[1]))].filter(v => v).sort((a,b) => a.localeCompare(b))){
     output +=`### ${capitalize(tag, true)}\n`;
     for(var taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag))
       output += `* [${taggedSnippet[0][0].toUpperCase() + taggedSnippet[0].replace(/-/g,' ').slice(1)}](#${taggedSnippet[0].replace(/\(/g,'').replace(/\)/g,'').toLowerCase()})\n`
     output += '\n';
   }
-  for(var tag of [...new Set(Object.entries(tagDbData).map(t => t[1]))].sort((a,b) => a.localeCompare(b))){
+  for(var tag of [...new Set(Object.entries(tagDbData).map(t => t[1]))].filter(v => v).sort((a,b) => a.localeCompare(b))){
     output +=`## ${capitalize(tag, true)}\n`;
     for(var taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag))
       output += `\n${snippets[taggedSnippet[0]+'.md']+'\n[⬆ back to top](#table-of-contents)\n'}`;
