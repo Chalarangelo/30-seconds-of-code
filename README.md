@@ -21,6 +21,7 @@
 * [Chain asynchronous functions](#chain-asynchronous-functions)
 * [Check for palindrome](#check-for-palindrome)
 * [Chunk array](#chunk-array)
+* [Collatz algorithm](#collatz-algorithm)
 * [Compact](#compact)
 * [Count occurrences of a value in array](#count-occurrences-of-a-value-in-array)
 * [Current URL](#current-url)
@@ -228,6 +229,17 @@ If the original array can't be split evenly, the final chunk will contain the re
 const chunk = (arr, size) =>
   Array.from({length: Math.ceil(arr.length / size)}, (v, i) => arr.slice(i * size, i * size + size));
 // chunk([1,2,3,4,5], 2) -> [[1,2],[3,4],5]
+```
+
+[⬆ back to top](#table-of-contents)
+### Collatz algorithm
+
+If `n` is even, return `n/2`. Otherwise  return `3n+1`.
+
+```js
+const collatz = n => (n % 2 == 0) ? (n/2) : (3*n+1); 
+// collatz(8) --> 4
+// collatz(5) --> 16
 ```
 
 [⬆ back to top](#table-of-contents)
