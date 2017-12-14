@@ -101,6 +101,8 @@
 * [Ordinal suffix of number](#ordinal-suffix-of-number)
 * [Random integer in range](#random-integer-in-range)
 * [Random number in range](#random-number-in-range)
+* [Redirect to URL](#redirect-to-url)
+* [Reverse a string](#reverse-a-string)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [Swap values of two variables](#swap-values-of-two-variables)
 * [URL parameters](#url-parameters)
