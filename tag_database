@@ -49,6 +49,7 @@ is-symbol:utility
 last-of-list:array
 measure-time-taken-by-function:utility
 median-of-array-of-numbers:array
+nth-element-of-array:array
 number-to-array-of-digits:utility
 object-from-key-value-pairs:object
 object-to-key-value-pairs:object
@@ -63,8 +64,10 @@ random-number-in-range:utility
 redirect-to-URL:browser
 reverse-a-string:string
 RGB-to-hexadecimal:utility
+round-number-to-n-digits:math
 run-promises-in-series:function
 scroll-to-top:browser
+shallow-clone-object:object
 shuffle-array:array
 similarity-between-arrays:array
 sleep:function
