@@ -4,6 +4,6 @@ Use `Array.reduce()` combined with `Array.map()` to iterate over elements and co
 
 ```js
 const powerset = arr =>
-  arr.reduce( (a,v) => a.concat(a.map( r => [v].concat(r) )), [[]]);
+  arr.reduce((a, v) => a.concat(a.map(r => [v].concat(r))), [[]]);
 // powerset([1,2]) -> [[], [1], [2], [2,1]]
 ```
