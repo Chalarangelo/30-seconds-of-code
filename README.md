@@ -20,6 +20,7 @@
 * [Chain asynchronous functions](#chain-asynchronous-functions)
 * [Check for palindrome](#check-for-palindrome)
 * [Chunk array](#chunk-array)
+* [Compact](#compact)
 * [Count occurrences of a value in array](#count-occurrences-of-a-value-in-array)
 * [Current URL](#current-url)
 * [Curry](#curry)
@@ -55,7 +56,7 @@
 * [Random integer in range](#random-integer-in-range)
 * [Random number in range](#random-number-in-range)
 * [Randomize order of array](#randomize-order-of-array)
-* [Redirect to URL](#redirect-to-url)
+* [Redirect to url](#redirect-to-url)
 * [Reverse a string](#reverse-a-string)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [Run promises in series](#run-promises-in-series)
@@ -195,6 +196,14 @@ const chunk = (arr, size) =>
 // chunk([1,2,3,4,5], 2) -> [[1,2],[3,4],5]
 ```
 
+### Compact
+
+Use `.filter()` to filter falsey values. For example false, null, 0, "", undefined, and NaN are falsey.
+
+```js
+const compact = (arr) => arr.filter( v => [0, null, false, '', undefined].indexOf(v) === -1 && v);
+// compact([0, 1, false, 2, '', 3, 'a', 'e'*23, NaN, 's', 34]) -> [ 1, 2, 3, 'a', 's', 34 ]
+```
 ### Count occurrences of a value in array
 
 Use `Array.reduce()` to increment a counter each time you encounter the specific value inside the array.
