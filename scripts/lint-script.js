@@ -3,7 +3,7 @@
   Run using `npm run linter`.
 */
 // Load modules
-const fs = require('fs-extra'), cp = require('child_process'), path = require('path');
+const fs = require('fs-extra'), cp = require('child_process'), path = require('path'), chalk = require('chalk');
 // Set variables for paths
 var snippetsPath = './snippets';
 // Read files, lint each one individually and update
@@ -32,7 +32,7 @@ try {
       fs.writeFile(path.join(snippetsPath,snippet), `${snippetData.slice(0, snippetData.indexOf('```js')+5)+lintedCode+'```\n'}`);
       fs.unlink(`${snippet}.temp.js`);
       // Log a success message
-      console.log(`${chalk.red('SUCCESS!')} Linted snippet: ${snippet}`);
+      console.log(`${chalk.green('SUCCESS!')} Linted snippet: ${snippet}`);
       // Log the time taken for the file
       console.timeEnd(`Linter (${snippet})`);
     });
