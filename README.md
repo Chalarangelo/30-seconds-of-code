@@ -96,7 +96,7 @@ var americanDate = "5/10/2004";
 var split = americanDate.split("/");
 var englishDate = split[1] +"/" +split[0] +"/" +split[2] ;
 ```
-
+[⬆ back to top](#table-of-contents)
 ### Anagrams of string (with duplicates)
 
 Use recursion.
