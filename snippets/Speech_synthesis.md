@@ -6,11 +6,11 @@ It contains the content the speech service should read and information about how
 To know more - https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance
 
 ```
-function speak (message) {
+speak = message => {
   var msg = new SpeechSynthesisUtterance(message)
   var voices = window.speechSynthesis.getVoices()
   msg.voice = voices[0]
   window.speechSynthesis.speak(msg)
-}
-speak('Hello, world')
+ }
+speak('Hello, World')
 ```
