@@ -19,6 +19,7 @@
 * [Capitalize first letter of every word](#capitalize-first-letter-of-every-word)
 * [Capitalize first letter](#capitalize-first-letter)
 * [Chain asynchronous functions](#chain-asynchronous-functions)
+* [Check for boolean primitive values](#check-for-boolean-primitive-values)
 * [Check for palindrome](#check-for-palindrome)
 * [Chunk array](#chunk-array)
 * [Compact](#compact)
@@ -28,6 +29,7 @@
 * [Deep flatten array](#deep-flatten-array)
 * [Distance between two points](#distance-between-two-points)
 * [Divisible by number](#divisible-by-number)
+* [Drop elements in array](#drop-elements-in-array)
 * [Escape regular expression](#escape-regular-expression)
 * [Even or odd number](#even-or-odd-number)
 * [Factorial](#factorial)
@@ -186,6 +188,15 @@ chainAsync([
 */
 ```
 
+### Check for boolean primitive values
+
+Use `typeof` to check if a value is classified as a boolean primitive.
+
+```js
+const isBool = val => typeof val === 'boolean';
+// isBool(null) -> false
+```
+
 ### Check for palindrome
 
 Convert string `toLowerCase()` and use `replace()` to remove non-alphanumeric characters from it.
@@ -284,6 +295,19 @@ Use the modulo operator (`%`) to check if the remainder is equal to `0`.
 ```js
 const isDivisible = (dividend, divisor) => dividend % divisor === 0;
 // isDivisible(6,3) -> true
+```
+
+### Drop elements in array
+
+Loop through the array, using `Array.shift()` to drop the first element of the array until the returned value from the function is `true`. 
+Returns the remaining elements.
+
+```js
+const dropElements = (arr,func) => {
+  while(arr.length > 0 && !func(arr[0])) arr.shift();
+  return arr;
+}
+// dropElements([1, 2, 3, 4], n => n >= 3) -> [3,4]
 ```
 
 ### Escape regular expression
