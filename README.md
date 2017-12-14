@@ -10,6 +10,7 @@
 ## Contents
 
 * [Anagrams of string (with duplicates)](#anagrams-of-string-with-duplicates)
+* [Array concatenation](#array-concatenation)
 * [Array difference](#array-difference)
 * [Array intersection](#array-intersection)
 * [Array union](#array-union)
@@ -93,6 +94,15 @@ const anagrams = str => {
     acc.concat(anagrams(str.slice(0, i) + str.slice(i + 1)).map(val => letter + val)), []);
 };
 // anagrams('abc') -> ['abc','acb','bac','bca','cab','cba']
+```
+
+### Array concatenation
+
+Use `Array.concat()` to concatenate and array with any additional arrays and/or values, specified in `args`.
+
+```js
+const ArrayConcat = (arr, ...args) => arr.concat(...args); 
+// ArrayConcat([1], [1, 2, 3, [4]]) -> [1, 2, 3, [4]]
 ```
 
 ### Array difference
