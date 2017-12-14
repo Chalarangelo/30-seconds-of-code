@@ -5,4 +5,5 @@ script:
   - npm run build-list
 after_success:
   - git update-index --add --chmod=+x push.sh  
+  - chmod +x push.sh
   - ./push.sh  
