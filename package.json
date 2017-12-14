@@ -15,9 +15,9 @@
     "chalk": "^2.3.0"
   },
   "scripts": {
-    "build-list": "node ./scripts/builder.js",
-    "lint": "node ./scripts/lintSnippet.js",
-    "tag": "node ./scripts/tagger.js",
+    "builder": "node ./scripts/build-script.js",
+    "linter": "node ./scripts/lint-script.js",
+    "tagger": "node ./scripts/tag-script.js",
     "start": "concurrently --kill-others \"nodemon -e js,md -i README.md -x \\\"npm run build-list\\\"\" \"live-server ./build\""
   },
   "repository": {

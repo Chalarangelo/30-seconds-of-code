@@ -7,7 +7,8 @@ Here's what you can do to help:
 - [Open issues](https://github.com/Chalarangelo/30-seconds-of-code/issues/new) for things you want to see added or modified.
 - Be part of the discussion by helping out with [existing issues](https://github.com/Chalarangelo/30-seconds-of-code/issues) or talking on our [gitter channel](https://gitter.im/30-seconds-of-code/Lobby).
 - Submit [pull requests](https://github.com/Chalarangelo/30-seconds-of-code/pulls) with snippets you have created (see below for guidelines).
-- Fix typos in existing snippets or run `npm run lint "snippet-name.md"` on unlinted snippets (yes, this is something we actually want help with).
+- Fix typos in existing snippets or run `npm run linter "snippet-name.md"` on unlinted snippets (yes, this is something we actually want help with).
+- Tag untagged snippets by running `npm run tagger` and adding the appropriate tag next to the script name in `tag_database`.
 
 ### Snippet submission and Pull request guidelines
 
