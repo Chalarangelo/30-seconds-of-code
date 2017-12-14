@@ -12,9 +12,9 @@ Here's what you can do to help:
 ### Snippet submission and Pull request guidelines
 
 - **DO NOT MODIFY THE README.md FILE!** Make changes to individual snippet files. You can optionally run `npm run build-list` to update the README.md file automatically, based on the changes you have made.
-- **Snippet filenames** must correspond to the title of the snippet. For example if your snippet is titled `### Awesome snippet` the filename should be `awesome-snippet.md`.
+- **Snippet filenames** must correspond to the title of the snippet. For example, if your snippet is titled `### Awesome snippet` the filename should be `awesome-snippet.md`.
   - Use `kebab-case`, not `snake_case`.
-  - Avoid capitalization of words, except if the whole word is capitalized (e.g `URL` should be capitalized in the filename and the snippet title).
+  - Avoid capitalization of words, except if the whole word is capitalized (e.g. `URL` should be capitalized in the filename and the snippet title).
   - If there are parentheses in the title, add them to the filename (e.g. `awesome-snippet-(extra-awesome).md` if your snippet's title is `Awesome snippet (extra awesome)`).
 - **Snippet titles** should have only the first letter of the first word capitalized. Certain words can be in capitals (e.g. `URL`, `RGB`), but this is on a per-snippet basis.
   - All snippet titles must be prefixed with `###` and be at the very first line of your snippet.
@@ -28,21 +28,21 @@ Here's what you can do to help:
   - Try to keep your snippets' code short and to the point. Use modern techniques and features. Make sure to test your code before submitting.
   - All snippets must be followed by one (more if necessary) test case after the code, on a new line, in the form of a comment, along with the expected output. The syntax for this is `myFunction('testInput') -> 'testOutput'`. Use multiline comments only if necessary.
   - Try to make your function name unique, so that it does not conflict with existing snippets.
-- Snippets should be short (usually below 10 lines). If your snippet is longer than that, you can still submit it and we can help you shorten it or figure out ways to improve it.
+- Snippets should be short (usually below 10 lines). If your snippet is longer than that, you can still submit it, and we can help you shorten it or figure out ways to improve it.
 - Snippets *should* solve real-world problems, no matter how simple.
 - Snippets *should* be abstract enough to be applied to different scenarios.
-- It is not mandatory, but highly appreciated if you provide **test cases** and/or performance tests (we recommend using [jsPerf](https://jsperf.com/)).
+- It is not mandatory but highly appreciated if you provide **test cases** and/or performance tests (we recommend using [jsPerf](https://jsperf.com/)).
 - You can start creating a new snippet, by using the [snippet template](snippet-template.md) to format your snippets.
 
 ### Additional guidelines and conventions regarding snippets
 
 - When describing snippets, refer to methods, using their full name. For example, use `Array.reduce()`, instead of `reduce()`.
-- If your snippet contains argument with default parameters, explain what happens if they are ommited when calling the function and what the default case is.
+- If your snippet contains argument with default parameters, explain what happens if they are omitted when calling the function and what the default case is.
 - If your snippet uses recursion, explain the base cases.
 - Always use `const functionName` for function definitions.
-- Use variables only when necessary. Prefer `const` when the values are not altered after assignment, otherwise use `let`. Avoid using `var`.
+- Use variables only when necessary. Prefer `const` when the values are not altered after assignment, otherwise, use `let`. Avoid using `var`.
 - Use `camelCase` for function and variable names if they consist of more than one word.
-- Try to give meaningful names to variables. For example use `letter`, instead of `lt`. Some exceptions by convention are:
+- Try to give meaningful names to variables. For example use `letter`, instead of `lt`. Some exceptions to convention are:
   - `arr` for arrays (usually as the snippet function's argument).
   - `str` for strings.
   - `n` for a numeric value (usually as the snippet function's argument).
@@ -54,7 +54,7 @@ Here's what you can do to help:
   - `func` for function arguments.
   - `nums` for arrays of numbers.
 - Use `_` if your function takes no arguments or if an argument inside some function (e.g. `Array.reduce()`) is not used anywhere in your code.
-- Specify default parameters for arguments, if necessary. It is preferred to put default parameters last, unless you have pretty good reason not to.
+- Specify default parameters for arguments, if necessary. It is preferred to put default parameters last unless you have pretty good reason not to.
 - If your snippet's function takes variadic arguments, use `..args` (although in certain cases, it might be needed to use a different name).
 - If your snippet function's body is a single statement, omit the `return` keyword and use an expression instead.
 - Always use soft tabs (2 spaces), never hard tabs.
@@ -72,5 +72,5 @@ Here's what you can do to help:
 - Use arrow functions as much as possible, except when you can't.
 - Use semicolons whenever necessary. If your snippet function's body is a single statement, return an expression and add a semicolon at the end.
 - Leave a single space after a comma (`,`) character.
-- Try to strike a balance between readability, brevity and performance.
+- Try to strike a balance between readability, brevity, and performance.
 - Never use `eval()`. Your snippet will be disqualified immediately.
