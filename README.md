@@ -38,6 +38,7 @@
 * [Get native type of value](#get-native-type-of-value)
 * [Get scroll position](#get-scroll-position)
 * [Greatest common divisor (GCD)](#greatest-common-divisor-gcd)
+* [Group by](#group-by)
 * [Hamming distance](#hamming-distance)
 * [Head of list](#head-of-list)
 * [Initial of list](#initial-of-list)
@@ -381,6 +382,21 @@ Otherwise, return the GCD of `y` and the remainder of the division `x/y`.
 ```js
 const gcd = (x, y) => !y ? x : gcd(y, x % y);
 // gcd (8, 36) -> 4
+```
+
+### Group by
+
+Use `Array.map()` to map the values of an array to a function or property name.
+Use `Array.reduce()` to create an object, where the keys are produced from the mapped results.
+
+```js
+const groupBy = (arr, func) =>
+  (typeof func === 'function' ? arr.map(func) : arr.map(val => val[func]))
+    .reduce((acc, val, i) => {
+      acc[val] = acc[val] === undefined ? [arr[i]] : acc[val].concat(arr[i]); return acc;
+    }, {});
+// groupBy([6.1, 4.2, 6.3], Math.floor) -> {4: [4.2], 6: [6.1, 6.3]}
+// groupBy(['one', 'two', 'three'], 'length') -> {3: ['one', 'two'], 5: ['three']}
 ```
 
 ### Hamming distance
