@@ -46,7 +46,7 @@
 * [Current URL](#current-url)
 * [Element is visible in viewport](#element-is-visible-in-viewport)
 * [Get scroll position](#get-scroll-position)
-* [Redirect to URL](#redirect-to-url)
+* [Redirect to url](#redirect-to-url)
 * [Scroll to top](#scroll-to-top)
 
 ### Function
@@ -528,7 +528,17 @@ const getScrollPos = (el = window) =>
 
 [⬆ back to top](#table-of-contents)
 
-undefined
+### Redirect to URL
+
+Use `window.location.href` or `window.location.replace()` to redirect to `url`.
+Pass a second argument to simulate a link click (`true` - default) or an HTTP redirect (`false`).
+
+```js
+const redirect = (url, asLink = true) =>
+  asLink ? window.location.href = url : window.location.replace(url);
+// redirect('https://google.com')
+```
+
 [⬆ back to top](#table-of-contents)
 
 ### Scroll to top
