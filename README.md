@@ -46,7 +46,7 @@
 * [Current URL](#current-url)
 * [Element is visible in viewport](#element-is-visible-in-viewport)
 * [Get scroll position](#get-scroll-position)
-* [Redirect to url](#redirect-to-url)
+* [Redirect to URL](#redirect-to-url)
 * [Scroll to top](#scroll-to-top)
 
 ### Function
