@@ -35,7 +35,9 @@
 * [Even or odd number](#even-or-odd-number)
 * [Factorial](#factorial)
 * [Fibonacci array generator](#fibonacci-array-generator)
+* [Fill array](#fill-array)
 * [Filter out non unique values in an array](#filter-out-non-unique-values-in-an-array)
+* [Flatten array up to depth](#flatten-array-up-to-depth)
 * [Flatten array](#flatten-array)
 * [Get max value from array](#get-max-value-from-array)
 * [Get min value from array](#get-min-value-from-array)
@@ -405,6 +407,18 @@ const fibonacci = n =>
 ```
 
 [⬆ back to top](#table-of-contents)
+### Fill array
+
+Use `Array.map()` to map values between `start` (inclusive) and `end` (exclusive) to `value`.
+Omit `start` to start at the first element and/or `end` to finish at the last.
+
+```js
+const fillArray = (arr, value, start = 0, end = arr.length) => 
+  arr.map((v,i) => i>=start && i<end ? value : v);
+// fillArray([1,2,3,4],'8',1,3) -> [1,'8','8',4]
+```
+
+[⬆ back to top](#table-of-contents)
 ### Filter out non-unique values in an array
 
 Use `Array.filter()` for an array containing only the unique values.
@@ -412,6 +426,21 @@ Use `Array.filter()` for an array containing only the unique values.
 ```js
 const filterNonUnique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexOf(i));
 // filterNonUnique([1,2,2,3,4,4,5]) -> [1,3,5]
+```
+
+[⬆ back to top](#table-of-contents)
+### Flatten array up to depth
+
+Use recursion, decrementing `depth` by 1 for each level of depth.
+Use `Array.reduce()` and `Array.concat()` to merge elements or arrays.
+Base case, for `depth` equal to `1` stops recursion.
+Omit the second element, `depth` to flatten only to a depth of `1` (single flatten).
+
+```js
+const flattenDepth = (arr, depth = 1) =>
+  depth != 1 ? arr.reduce((a, v) => a.concat(Array.isArray(v) ? flattenDepth (v, depth-1) : v), []) 
+  : arr.reduce((a,v) => a.concat(v),[]);
+// flattenDepth([1,[2],[[[3],4],5]], 2) -> [1,2,[3],4,5]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -488,10 +517,8 @@ Use `Array.reduce()` to create an object, where the keys are produced from the m
 
 ```js
 const groupBy = (arr, func) =>
-  (typeof func === 'function' ? arr.map(func) : arr.map(val => val[func]))
-    .reduce((acc, val, i) => {
-      acc[val] = acc[val] === undefined ? [arr[i]] : acc[val].concat(arr[i]); return acc;
-    }, {});
+  arr.map(typeof func === 'function' ? func : val => val[func])
+    .reduce((acc, val, i) => { acc[val] = (acc[val] || []).concat(arr[i]); return acc; }, {});
 // groupBy([6.1, 4.2, 6.3], Math.floor) -> {4: [4.2], 6: [6.1, 6.3]}
 // groupBy(['one', 'two', 'three'], 'length') -> {3: ['one', 'two'], 5: ['three']}
 ```
