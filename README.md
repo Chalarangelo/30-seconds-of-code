@@ -1097,16 +1097,17 @@ const isSymbol = val => typeof val === 'symbol';
 
 ### Measure time taken by function
 
-Use `performance.now()` to get start and end time for the function, `console.log()` the time taken.
-Pass a callback function as the argument.
+Use `console.time()` and `console.timeEnd()` to measure the difference between the start and end times to determine how long the callback took to execute.
 
 ```js
 const timeTaken = callback => {
-  const t0 = performance.now(), r = callback();
-  console.log(performance.now() - t0);
+  console.time('timeTaken');
+  const r = callback();
+  console.timeEnd('timeTaken');
   return r;
 };
-// timeTaken(() => Math.pow(2, 10)) -> 1024 (0.010000000009313226 logged in console)
+// timeTaken(() => Math.pow(2, 10)) -> 1024
+// (logged): timeTaken: 0.02099609375ms
 ```
 
 [⬆ back to top](#table-of-contents)
