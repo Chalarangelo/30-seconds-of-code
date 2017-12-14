@@ -21,7 +21,6 @@
 * [Check for palindrome](#check-for-palindrome)
 * [Chunk array](#chunk-array)
 * [Compact](#compact)
-* [Concat](#concat)
 * [Count occurrences of a value in array](#count-occurrences-of-a-value-in-array)
 * [Current URL](#current-url)
 * [Curry](#curry)
@@ -39,6 +38,7 @@
 * [Get native type of value](#get-native-type-of-value)
 * [Get scroll position](#get-scroll-position)
 * [Greatest common divisor (GCD)](#greatest-common-divisor-gcd)
+* [Group by](#group-by)
 * [Hamming distance](#hamming-distance)
 * [Head of list](#head-of-list)
 * [Initial of list](#initial-of-list)
@@ -57,22 +57,25 @@
 * [Promisify](#promisify)
 * [Random integer in range](#random-integer-in-range)
 * [Random number in range](#random-number-in-range)
-* [Randomize order of array](#randomize-order-of-array)
-* [Redirect to url](#redirect-to-url)
+* [Redirect to URL](#redirect-to-url)
 * [Reverse a string](#reverse-a-string)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [Run promises in series](#run-promises-in-series)
 * [Scroll to top](#scroll-to-top)
-* [Shuffle array values](#shuffle-array-values)
+* [Shuffle array](#shuffle-array)
 * [Similarity between arrays](#similarity-between-arrays)
+* [Sleep](#sleep)
 * [Sort characters in string (alphabetical)](#sort-characters-in-string-alphabetical)
+* [Standard deviation](#standard-deviation)
 * [Sum of array of numbers](#sum-of-array-of-numbers)
 * [Swap values of two variables](#swap-values-of-two-variables)
 * [Tail of list](#tail-of-list)
+* [Take](#take)
 * [Truncate a string](#truncate-a-string)
 * [Unique values of array](#unique-values-of-array)
 * [URL parameters](#url-parameters)
 * [UUID generator](#uuid-generator)
+* [Validate email](#validate-email)
 * [Validate number](#validate-number)
 * [Value or default](#value-or-default)
 
@@ -92,7 +95,7 @@ const anagrams = str => {
 // anagrams('abc') -> ['abc','acb','bac','bca','cab','cba']
 ```
 
-### Array difference (complement)
+### Array difference
 
 Create a `Set` from `b`, then use `Array.filter()` on `a` to only keep values not contained in `b`.
 
@@ -101,7 +104,7 @@ const difference = (a, b) => { const s = new Set(b); return a.filter(x => !s.has
 // difference([1,2,3], [1,2]) -> [3]
 ```
 
-### Array intersection (Common values between two arrays)
+### Array intersection
 
 Create a `Set` from `b`, then use `Array.filter()` on `a` to only keep values contained in `b`.
 
@@ -188,13 +191,13 @@ const palindrome = str => {
 
 ### Chunk array
 
-Use `Array.apply()` to create a new array, that fits the number of chunks that will be produced.
-Use `Array.map()` to map each element of the new array to a chunk the length of `size`.
+Use `Array.from()` to create a new array, that fits the number of chunks that will be produced.
+Use `Array.slice()` to map each element of the new array to a chunk the length of `size`.
 If the original array can't be split evenly, the final chunk will contain the remaining elements.
 
 ```js
 const chunk = (arr, size) =>
-  Array.apply(null, {length: Math.ceil(arr.length / size)}).map((v, i) => arr.slice(i * size, i * size + size));
+  Array.from({length: Math.ceil(arr.length / size)}, (v, i) => arr.slice(i * size, i * size + size));
 // chunk([1,2,3,4,5], 2) -> [[1,2],[3,4],5]
 ```
 
@@ -205,15 +208,6 @@ Use `Array.filter()` to filter out falsey values (`false`, `null`, `0`, `""`, `u
 ```js
 const compact = (arr) => arr.filter(v => v);
 // compact([0, 1, false, 2, '', 3, 'a', 'e'*23, NaN, 's', 34]) -> [ 1, 2, 3, 'a', 's', 34 ]
-```
-
-### Concat
-
-Creates a new array concatenating array with any additional arrays and/or values `args` using `Array.concat()`.
-
-```js
-const ArrayConcat = (arr, ...args) => arr.concat(...args); 
-// ArrayConcat([1], [1, 2, 3, [4]]) -> [1, 2, 3, [4]]
 ```
 
 ### Count occurrences of a value in array
@@ -392,6 +386,21 @@ const gcd = (x, y) => !y ? x : gcd(y, x % y);
 // gcd (8, 36) -> 4
 ```
 
+### Group by
+
+Use `Array.map()` to map the values of an array to a function or property name.
+Use `Array.reduce()` to create an object, where the keys are produced from the mapped results.
+
+```js
+const groupBy = (arr, func) =>
+  (typeof func === 'function' ? arr.map(func) : arr.map(val => val[func]))
+    .reduce((acc, val, i) => {
+      acc[val] = acc[val] === undefined ? [arr[i]] : acc[val].concat(arr[i]); return acc;
+    }, {});
+// groupBy([6.1, 4.2, 6.3], Math.floor) -> {4: [4.2], 6: [6.1, 6.3]}
+// groupBy(['one', 'two', 'three'], 'length') -> {3: ['one', 'two'], 5: ['three']}
+```
+
 ### Hamming distance
 
 Use XOR operator (`^`) to find the bit difference between the two numbers, convert to binary string using `toString(2)`.
@@ -405,7 +414,7 @@ const hammingDistance = (num1, num2) =>
 
 ### Head of list
 
-Return `arr[0]`.
+Use `arr[0]` to return the first element of the passed array.
 
 ```js
 const head = arr => arr[0];
@@ -414,7 +423,7 @@ const head = arr => arr[0];
 
 ### Initial of list
 
-Return `arr.slice(0,-1)`.
+Use `arr.slice(0,-1)`to return all but the last element of the array.
 
 ```js
 const initial = arr => arr.slice(0, -1);
@@ -444,7 +453,7 @@ const initializeArray = (n, value = 0) => Array(n).fill(value);
 
 ### Last of list
 
-Return `arr.slice(-1)[0]`.
+Use `arr.slice(-1)[0]` to get the last element of the given array.
 
 ```js
 const last = arr => arr.slice(-1)[0];
@@ -590,15 +599,6 @@ const randomInRange = (min, max) => Math.random() * (max - min) + min;
 // randomInRange(2,10) -> 6.0211363285087005
 ```
 
-### Randomize order of array
-
-Use `Array.sort()` to reorder elements, utilizing `Math.random()` to randomize the sorting.
-
-```js
-const randomizeOrder = arr => arr.sort((a, b) => Math.random() >= 0.5 ? -1 : 1);
-// randomizeOrder([1,2,3]) -> [1,3,2]
-```
-
 ### Redirect to URL
 
 Use `window.location.href` or `window.location.replace()` to redirect to `url`.
@@ -655,17 +655,13 @@ const scrollToTop = _ => {
 // scrollToTop()
 ```
 
-### Shuffle array values
+### Shuffle array
 
-Create an array of random values by using `Array.map()` and `Math.random()`.
-Use `Array.sort()` to sort the elements of the original array based on the random values.
+Use `Array.sort()` to reorder elements, using `Math.random()` in the comparator.
 
 ```js
-const shuffle = arr => {
-  let r = arr.map(Math.random);
-  return arr.sort((a, b) => r[a] - r[b]);
-};
-// shuffle([1,2,3]) -> [2, 1, 3]
+const shuffle = arr => arr.sort(() => Math.random() - 0.5);
+// shuffle([1,2,3]) -> [2,3,1]
 ```
 
 ### Similarity between arrays
@@ -677,6 +673,21 @@ const similarity = (arr, values) => arr.filter(v => values.includes(v));
 // similarity([1,2,3], [1,2,4]) -> [1,2]
 ```
 
+### Sleep
+
+Delay executing part of an `async` function, by putting it to sleep, returning a `Promise`.
+
+```js
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+/*
+async function sleepyWork() {
+  console.log('I\'m going to sleep for 1 second.');
+  await sleep(1000);
+  console.log('I woke up after 1 second.');
+}
+*/
+```
+
 ### Sort characters in string (alphabetical)
 
 Split the string using `split('')`, `Array.sort()` utilizing `localeCompare()`, recombine using `join('')`.
@@ -685,6 +696,24 @@ Split the string using `split('')`, `Array.sort()` utilizing `localeCompare()`, 
 const sortCharactersInString = str =>
   str.split('').sort((a, b) => a.localeCompare(b)).join('');
 // sortCharactersInString('cabbage') -> 'aabbceg'
+```
+
+### Standard deviation
+
+Use `Array.reduce()` to calculate the mean, variance and the sum of the variance of the values, the variance of the values, then
+determine the standard deviation.
+You can omit the second argument to get the sample standard deviation or set it to `true` to get the population standard deviation.
+
+```js
+const standardDeviation = (arr, usePopulation = false) => {
+  const mean = arr.reduce((acc, val) => acc + val, 0) / arr.length;
+  return Math.sqrt(
+    arr.reduce((acc, val) => acc.concat(Math.pow(val - mean, 2)), [])
+       .reduce((acc, val) => acc + val, 0) / (arr.length - (usePopulation ? 0 : 1))
+  );
+ }
+// standardDeviation([10,2,38,23,38,23,21]) -> 13.284434142114991 (sample)
+// standardDeviation([10,2,38,23,38,23,21], true) -> 12.29899614287479 (population)
 ```
 
 ### Sum of array of numbers
@@ -715,6 +744,17 @@ const tail = arr => arr.length > 1 ? arr.slice(1) : arr;
 // tail([1]) -> [1]
 ```
 
+### Take
+
+Use `Array.slice()` to create a slice of the array with `n` elements taken from the beginning.
+
+```js
+const take = (arr, n = 1) => arr.slice(0, n);
+
+// take([1, 2, 3], 5) -> [1, 2, 3]
+// take([1, 2, 3], 0) -> []
+```
+
 ### Truncate a String
 
 Determine if the string's `length` is greater than `num`.
@@ -742,7 +782,7 @@ Pass `location.search` as the argument to apply to the current `url`.
 
 ```js
 const getUrlParameters = url =>
-  url.match(/([^?=&]+)(=([^&]*))?/g).reduce(
+  url.match(/([^?=&]+)(=([^&]*))/g).reduce(
     (a, v) => (a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1), a), {}
   );
 // getUrlParameters('http://url.com/page?name=Adam&surname=Smith') -> {name: 'Adam', surname: 'Smith'}
@@ -758,6 +798,17 @@ const uuid = _ =>
     (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
   );
 // uuid() -> '7982fcfe-5721-4632-bede-6000885be57d'
+```
+
+### Validate email
+
+Use a regular experssion to check if the email is valid.
+Returns `true` if email is valid, `false` if not.
+
+```js
+const validateEmail = str =>
+  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(str);
+// validateEmail(mymail@gmail.com) -> true
 ```
 
 ### Validate number
