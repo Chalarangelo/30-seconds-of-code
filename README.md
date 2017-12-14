@@ -122,7 +122,7 @@ const arrayConcat = (arr, ...args) => arr.concat(...args);
 Create a `Set` from `b`, then use `Array.filter()` on `a` to only keep values not contained in `b`.
 
 ```js
-const difference = (a, b) => { const s = new Set(b); return a.filter(x => !s.has(x)); }
+const difference = (a, b) => { const s = new Set(b); return a.filter(x => !s.has(x)); };
 // difference([1,2,3], [1,2]) -> [3]
 ```
 
@@ -133,7 +133,7 @@ const difference = (a, b) => { const s = new Set(b); return a.filter(x => !s.has
 Create a `Set` from `b`, then use `Array.filter()` on `a` to only keep values contained in `b`.
 
 ```js
-const intersection = (a, b) => { const s = new Set(b); return a.filter(x => s.has(x)); }
+const intersection = (a, b) => { const s = new Set(b); return a.filter(x => s.has(x)); };
 // intersection([1,2,3], [4,3,2]) -> [2,3]
 ```
 
@@ -144,7 +144,7 @@ const intersection = (a, b) => { const s = new Set(b); return a.filter(x => s.ha
 Create a `Set` with all values of `a` and `b` and convert to an array.
 
 ```js
-const union = (a, b) => Array.from(new Set([...a, ...b]))
+const union = (a, b) => Array.from(new Set([...a, ...b]));
 // union([1,2,3], [4,3,2]) -> [1,2,3,4]
 ```
 
@@ -216,10 +216,10 @@ Loop through the array, using `Array.shift()` to drop the first element of the a
 Returns the remaining elements.
 
 ```js
-const dropElements = (arr,func) => {
-  while(arr.length > 0 && !func(arr[0])) arr.shift();
+const dropElements = (arr, func) => {
+  while (arr.length > 0 && !func(arr[0])) arr.shift();
   return arr;
-}
+};
 // dropElements([1, 2, 3, 4], n => n >= 3) -> [3,4]
 ```
 
@@ -231,8 +231,8 @@ Use `Array.map()` to map values between `start` (inclusive) and `end` (exclusive
 Omit `start` to start at the first element and/or `end` to finish at the last.
 
 ```js
-const fillArray = (arr, value, start = 0, end = arr.length) => 
-  arr.map((v,i) => i>=start && i<end ? value : v);
+const fillArray = (arr, value, start = 0, end = arr.length) =>
+  arr.map((v, i) => i >= start && i < end ? value : v);
 // fillArray([1,2,3,4],'8',1,3) -> [1,'8','8',4]
 ```
 
@@ -258,8 +258,8 @@ Omit the second element, `depth` to flatten only to a depth of `1` (single flatt
 
 ```js
 const flattenDepth = (arr, depth = 1) =>
-  depth != 1 ? arr.reduce((a, v) => a.concat(Array.isArray(v) ? flattenDepth (v, depth-1) : v), []) 
-  : arr.reduce((a,v) => a.concat(v),[]);
+  depth != 1 ? arr.reduce((a, v) => a.concat(Array.isArray(v) ? flattenDepth(v, depth - 1) : v), [])
+  : arr.reduce((a, v) => a.concat(v), []);
 // flattenDepth([1,[2],[[[3],4],5]], 2) -> [1,2,[3],4,5]
 ```
 
@@ -506,7 +506,7 @@ const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
     ? ((top > 0 && top < innerHeight) || (bottom > 0 && bottom < innerHeight)) &&
       ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
     : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
-}
+};
 // e.g. 100x100 viewport and a 10x10px element at position {top: -1, left: 0, bottom: 9, right: 10}
 // elementIsVisibleInViewport(el) -> false (not fully visible)
 // elementIsVisibleInViewport(el, true) -> true (partially visible)
@@ -664,7 +664,7 @@ async function sleepyWork() {
 If `n` is even, return `n/2`. Otherwise  return `3n+1`.
 
 ```js
-const collatz = n => (n % 2 == 0) ? (n/2) : (3*n+1); 
+const collatz = n => (n % 2 == 0) ? (n / 2) : (3 * n + 1);
 // collatz(8) --> 4
 // collatz(5) --> 16
 ```
@@ -795,7 +795,7 @@ const standardDeviation = (arr, usePopulation = false) => {
     arr.reduce((acc, val) => acc.concat(Math.pow(val - mean, 2)), [])
        .reduce((acc, val) => acc + val, 0) / (arr.length - (usePopulation ? 0 : 1))
   );
- }
+};
 // standardDeviation([10,2,38,23,38,23,21]) -> 13.284434142114991 (sample)
 // standardDeviation([10,2,38,23,38,23,21], true) -> 12.29899614287479 (population)
 ```
@@ -1041,10 +1041,10 @@ If digit is found in teens pattern, use teens ordinal.
 ```js
 const toOrdinalSuffix = num => {
   const int = parseInt(num), digits = [(int % 10), (int % 100)],
-    ordinals = ["st", "nd", "rd", "th"], oPattern = [1,2,3,4],
-    tPattern = [11, 12, 13, 14, 15, 16, 17, 18, 19]
-  return oPattern.includes(digits[0]) && !tPattern.includes(digits[1]) ? int + ordinals[digits[0]-1] : int + ordinals[3];
-}
+    ordinals = ['st', 'nd', 'rd', 'th'], oPattern = [1, 2, 3, 4],
+    tPattern = [11, 12, 13, 14, 15, 16, 17, 18, 19];
+  return oPattern.includes(digits[0]) && !tPattern.includes(digits[1]) ? int + ordinals[digits[0] - 1] : int + ordinals[3];
+};
 // toOrdinalSuffix("123") -> "123rd"
 ```
 
