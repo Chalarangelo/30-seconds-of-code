@@ -45,6 +45,8 @@ Here's what you can do to help:
 - Try to give meaningful names to variables. For example use `letter`, instead of `lt`. Some exceptions by convention are:
   - `arr` for arrays (usually as the snippet function's argument).
   - `str` for strings.
+  - `n` for a numeric value (usually as the snippet function's argument).
+  - `el` for DOM elements (usually as the snippet function's argument).
   - `val` or `v` for value (usually when iterating a list, mapping, sorting etc.).
   - `acc` for accumulators in `Array.reduce()`.
   - `(a,b)` for the two values compared when using `Array.sort()`.
