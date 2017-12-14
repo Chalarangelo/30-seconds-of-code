@@ -47,6 +47,7 @@
 * [Initial of list](#initial-of-list)
 * [Initialize array with range](#initialize-array-with-range)
 * [Initialize array with values](#initialize-array-with-values)
+* [Is array](#is-array)
 * [Is boolean](#is-boolean)
 * [Is function](#is-function)
 * [Is number](#is-number)
@@ -536,6 +537,17 @@ You can omit `value` to use a default value of `0`.
 ```js
 const initializeArray = (n, value = 0) => Array(n).fill(value);
 // initializeArray(5, 2) -> [2,2,2,2,2]
+```
+
+[⬆ back to top](#table-of-contents)
+### Is array
+
+Use `Array.isArray()` to check if a value is classified as an array.
+
+```js
+const isArray = val => val && Array.isArray(val);
+// isArray(null) -> false
+// isArray([1]) -> true
 ```
 
 [⬆ back to top](#table-of-contents)
