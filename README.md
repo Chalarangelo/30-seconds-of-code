@@ -69,7 +69,7 @@
 * [Promisify](#promisify)
 * [Random integer in range](#random-integer-in-range)
 * [Random number in range](#random-number-in-range)
-* [Redirect to URL](#redirect-to-url)
+* [Redirect to url](#redirect-to-url)
 * [Reverse a string](#reverse-a-string)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [Run promises in series](#run-promises-in-series)
@@ -110,7 +110,7 @@ const anagrams = str => {
 [⬆ back to top](#table-of-contents)
 ### Array concatenation
 
-Use `Array.concat()` to concatenate and array with any additional arrays and/or values, specified in `args`.
+Use `Array.concat()` to concatenate an array with any additional arrays and/or values, specified in `args`.
 
 ```js
 const arrayConcat = (arr, ...args) => arr.concat(...args);
