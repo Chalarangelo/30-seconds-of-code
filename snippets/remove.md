@@ -1,0 +1,12 @@
+### Remove
+
+Remove elements from `arr` that are returns truthy. Use `Array.filter()` to finding the matching elements and `Array.reduce()` to remove elements using `Array.splice()`.The `func` is invoked with three arguments: (value, index, array).
+
+```js
+const remove = (arr, func) =>
+    arr.filter(func).reduce((acc, val) => {
+        arr.splice(arr.indexOf(val), 1)
+        return acc.concat(val);
+    }, [])
+//remove([1, 2, 3, 4], n => n % 2 == 0) -> [2, 4]
+```
