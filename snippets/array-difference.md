@@ -1,4 +1,4 @@
-### Array difference (complement)
+### Array difference
 
 Create a `Set` from `b`, then use `Array.filter()` on `a` to only keep values not contained in `b`.
 
