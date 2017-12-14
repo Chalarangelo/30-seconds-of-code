@@ -58,7 +58,7 @@ powerset:math
 promisify:function
 random-integer-in-range:utility
 random-number-in-range:utility
-redirect-to-URL:browser
+redirect-to-url:browser
 reverse-a-string:string
 RGB-to-hexadecimal:utility
 run-promises-in-series:function
