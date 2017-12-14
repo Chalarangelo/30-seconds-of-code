@@ -7,4 +7,4 @@
 - Contributions welcome, please read the [contribution guide](CONTRIBUTING.md).
 - Snippets are written in ES6, use the [Babel transpiler](https://babeljs.io/) to ensure backwards-compatibility.
 
-## Contents
+## Table of Contents
