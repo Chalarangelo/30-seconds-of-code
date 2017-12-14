@@ -1,4 +1,4 @@
-### Number to array to digits
+### Number to array of digits
 
 use `parseInt()` to get only the integer part of the quotient.
 use `Array.reverse()` to return the array in the same order as the number. 
