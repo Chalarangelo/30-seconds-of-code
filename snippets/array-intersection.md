@@ -1,4 +1,4 @@
-### Array intersection (Common values between two arrays)
+### Array intersection
 
 Create a `Set` from `b`, then use `Array.filter()` on `a` to only keep values contained in `b`.
 
