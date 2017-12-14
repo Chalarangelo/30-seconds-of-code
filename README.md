@@ -54,6 +54,9 @@
 * [Redirect to URL](#redirect-to-url)
 * [Scroll to top](#scroll-to-top)
 
+### Date
+* [Get days difference between dates](#get-days-difference-between-dates)
+
 ### Function
 * [Chain asynchronous functions](#chain-asynchronous-functions)
 * [Curry](#curry)
@@ -1007,6 +1010,18 @@ const scrollToTop = _ => {
   }
 };
 // scrollToTop()
+```
+
+[⬆ back to top](#table-of-contents)
+## Date
+
+### Get days difference between dates
+
+Calculate the difference (in days) between to `Date` objects.
+
+```js
+const getDaysDiffBetweenDates = (dateInitial, dateFinal) => (dateFinal - dateInitial) / (1000 * 3600 * 24);
+//getDaysDiffBetweenDates(new Date("2017-12-13"), new Date("2017-12-22")) -> 9
 ```
 
 [⬆ back to top](#table-of-contents)

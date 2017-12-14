@@ -28,6 +28,7 @@ fill-array:array
 filter-out-non-unique-values-in-an-array:array
 flatten-array-up-to-depth:array
 flatten-array:array
+get-days-difference-between-dates:date
 get-max-value-from-array:array
 get-min-value-from-array:array
 get-native-type-of-value:utility
