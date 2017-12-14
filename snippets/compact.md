@@ -1,6 +1,6 @@
 ### Compact
 
-Use `.filter()` to filter falsey values. For example false, null, 0, "", undefined, and NaN are falsey.
+Use `Array.filter()` to filter out falsey values (`false`, `null`, `0`, `""`, `undefined`, and `NaN`).
 
 ```js
 const compact = (arr) => arr.filter(v => v);
