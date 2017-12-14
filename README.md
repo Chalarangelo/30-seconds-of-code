@@ -8,7 +8,7 @@
 - Snippets are written in ES6, use the [Babel transpiler](https://babeljs.io/) to ensure backwards-compatibility.
 
 ## Table of Contents
-
+* [American to english date](#American-to-english-date)
 * [Anagrams of string (with duplicates)](#anagrams-of-string-with-duplicates)
 * [Array concatenation](#array-concatenation)
 * [Array difference](#array-difference)
@@ -89,6 +89,15 @@
 * [Validate number](#validate-number)
 * [Value or default](#value-or-default)
 
+[⬆ back to top](#table-of-contents)
+### American to english date
+Take an American date and split the string re-arranging into english format.
+```js
+var americanDate = "5/10/2004";
+var split = americanDate.split("/");
+var englishDate = split[1] +"/" +split[0] +"/" +split[2] ;
+```
+[⬆ back to top](#table-of-contents)
 ### Anagrams of string (with duplicates)
 
 Use recursion.
@@ -327,7 +336,7 @@ const isDivisible = (dividend, divisor) => dividend % divisor === 0;
 [⬆ back to top](#table-of-contents)
 ### Drop elements in array
 
-Loop through the array, using `Array.shift()` to drop the first element of the array until the returned value from the function is `true`. 
+Loop through the array, using `Array.shift()` to drop the first element of the array until the returned value from the function is `true`.
 Returns the remaining elements.
 
 ```js
@@ -701,7 +710,7 @@ Use `Array.reduce()` to calculate how many numbers are below the value and how m
 apply the percentile formula.
 
 ```js
-const percentile = (arr, val) => 
+const percentile = (arr, val) =>
   100 * arr.reduce((acc,v) => acc + (v < val ? 1 : 0) + (v === val ? 0.5 : 0), 0) / arr.length;
 // percentile([1,2,3,4,5,6,7,8,9,10], 6) -> 55
  ```
@@ -742,8 +751,8 @@ const powerset = arr =>
 [⬆ back to top](#table-of-contents)
 ### Promisify
 
-Use currying to return a function returning a `Promise` that calls the original function. 
-Use the `...rest` operator to pass in all the parameters. 
+Use currying to return a function returning a `Promise` that calls the original function.
+Use the `...rest` operator to pass in all the parameters.
 
 *In Node 8+, you can use [`util.promisify`](https://nodejs.org/api/util.html#util_util_promisify_original)*
 
@@ -1035,4 +1044,3 @@ const valueOrDefault = (value, d) => value || d;
 ## Credits
 
 *Icons made by [Smashicons](https://www.flaticon.com/authors/smashicons) from [www.flaticon.com](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).*
-
