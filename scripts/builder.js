@@ -6,8 +6,22 @@ var staticPartsPath = './static-parts';
 
 var snippets = {}, startPart = '', endPart = '', output = '';
 
+console.time('Builder');
+
 try {
-  for(var snippet of fs.readdirSync(snippetsPath)){
+  var snippetFilenames = fs.readdirSync(snippetsPath);
+  snippetFilenames.sort((a, b) => {
+    a = a.toLowerCase();
+    b = b.toLowerCase();
+    if (a < b) {
+      return -1;
+    }
+    if (a > b) {
+      return 1;
+    }
+    return 0;
+  });
+  for(var snippet of snippetFilenames){
     snippets[snippet] = fs.readFileSync(path.join(snippetsPath,snippet),'utf8');
   }
 }
@@ -31,7 +45,7 @@ try {
     output += `* [${snippet[0][0].toUpperCase() + snippet[0].replace(/-/g,' ').slice(1,snippet[0].length-3)}](#${snippet[0].slice(0,snippet[0].length-3).replace(/\(/g,'').replace(/\)/g,'').toLowerCase()})\n`
   output += '\n';
   for(var snippet of Object.entries(snippets))
-    output += `${snippet[1]+'\n'}`;
+    output += `${snippet[1]+'\n[⬆ back to top](#table-of-contents)\n'}`;
   output += `${endPart+'\n'}`;
   fs.writeFileSync('README.md', output);
 }
@@ -39,3 +53,5 @@ catch (err){
   console.log('Error during README generation: '+err);
   process.exit(1);
 }
+
+console.timeEnd('Builder');

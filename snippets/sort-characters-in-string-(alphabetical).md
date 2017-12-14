@@ -1,8 +1,9 @@
 ### Sort characters in string (alphabetical)
 
-Split the string using `split('')`, `sort()` utilizing `localeCompare()`, recombine using `join('')`.
+Split the string using `split('')`, `Array.sort()` utilizing `localeCompare()`, recombine using `join('')`.
 
 ```js
-var sortCharactersInString = str =>
-  str.split('').sort( (a,b) => a.localeCompare(b) ).join('');
+const sortCharactersInString = str =>
+  str.split('').sort((a, b) => a.localeCompare(b)).join('');
+// sortCharactersInString('cabbage') -> 'aabbceg'
 ```

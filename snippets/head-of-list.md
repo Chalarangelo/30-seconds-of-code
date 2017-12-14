@@ -1,7 +1,8 @@
 ### Head of list
 
-Return `arr[0]`.
+Use `arr[0]` to return the first element of the passed array.
 
 ```js
-var head = arr => arr[0];
+const head = arr => arr[0];
+// head([1,2,3]) -> 1
 ```
