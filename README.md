@@ -562,7 +562,7 @@ const isBoolean = val => typeof val === 'boolean';
 ```
 
 [⬆ back to top](#table-of-contents)
-### Is boolean
+### Is function
 
 Use `typeof` to check if a value is classified as a function primitive.
 
