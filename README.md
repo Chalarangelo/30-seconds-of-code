@@ -59,6 +59,7 @@
 * [Random number in range](#random-number-in-range)
 * [Randomize order of array](#randomize-order-of-array)
 * [Redirect to url](#redirect-to-url)
+* [Remove](#remove)
 * [Reverse a string](#reverse-a-string)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [Run promises in series](#run-promises-in-series)
@@ -608,6 +609,19 @@ Pass a second argument to simulate a link click (`true` - default) or an HTTP re
 const redirect = (url, asLink = true) =>
   asLink ? window.location.href = url : window.location.replace(url);
 // redirect('https://google.com')
+```
+
+### Remove
+
+Remove elements from `arr` that are returns truthy. Use `Array.filter()` to finding the matching elements and `Array.reduce()` to remove elements using `Array.splice()`.The `func` is invoked with three arguments: (value, index, array).
+
+```js
+const remove = (arr, func) =>
+    arr.filter(func).reduce((acc, val) => {
+        arr.splice(arr.indexOf(val), 1)
+        return acc.concat(val);
+    }, [])
+//remove([1, 2, 3, 4], n => n % 2 == 0) -> [2, 4]
 ```
 
 ### Reverse a string
