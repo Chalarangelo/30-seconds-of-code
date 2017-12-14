@@ -1,6 +1,6 @@
 ### Last of list
 
-Return `arr.slice(-1)[0]`.
+Use `arr.slice(-1)[0]` to get the last element of the given array.
 
 ```js
 const last = arr => arr.slice(-1)[0];
