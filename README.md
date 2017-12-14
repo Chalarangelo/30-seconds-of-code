@@ -572,7 +572,7 @@ Calculate the difference (in days) between to `Date` objects.
 
 ```js
 const getDaysDiffBetweenDates = (dateInitial, dateFinal) => (dateFinal - dateInitial) / (1000 * 3600 * 24);
-//getDaysDiffBetweenDates(new Date("2017-12-13"), new Date("2017-12-22")) -> 9
+// getDaysDiffBetweenDates(new Date("2017-12-13"), new Date("2017-12-22")) -> 9
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -606,7 +606,7 @@ If you want to curry a function that accepts a variable number of arguments (a v
 const curry = (fn, arity = fn.length, ...args) =>
   arity <= args.length
     ? fn(...args)
-    : curry.bind(null, fn, arity, ...args)
+    : curry.bind(null, fn, arity, ...args);
 // curry(Math.pow)(2)(10) -> 1024
 // curry(Math.min, 3)(10)(50)(2) -> 2
 ```
@@ -830,7 +830,7 @@ const speak = message => {
   const msg = new SpeechSynthesisUtterance(message);
   msg.voice = window.speechSynthesis.getVoices()[0];
   window.speechSynthesis.speak(msg);
-}
+};
 // speak('Hello, World') -> plays the message
 ```
 
