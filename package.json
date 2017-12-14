@@ -11,10 +11,13 @@
   "description": "A collection of useful Javascript snippets.",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "chalk": "^2.3.0"
+  },
   "scripts": {
     "build-list": "node ./scripts/builder.js",
     "lint": "node ./scripts/lintSnippet.js",
+    "tag": "node ./scripts/tagger.js",
     "start": "concurrently --kill-others \"nodemon -e js,md -i README.md -x \\\"npm run build-list\\\"\" \"live-server ./build\""
   },
   "repository": {
