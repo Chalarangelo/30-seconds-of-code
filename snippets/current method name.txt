@@ -1,0 +1,3 @@
+###code to view name of current method
+
+String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
