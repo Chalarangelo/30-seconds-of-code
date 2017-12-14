@@ -33,6 +33,7 @@
 * [Initialize array with values](#initialize-array-with-values)
 * [Last of list](#last-of-list)
 * [Median of array of numbers](#median-of-array-of-numbers)
+* [Nth element of array](#nth-element-of-array)
 * [Pick](#pick)
 * [Shuffle array](#shuffle-array)
 * [Similarity between arrays](#similarity-between-arrays)
@@ -71,6 +72,7 @@
 * [Hamming distance](#hamming-distance)
 * [Percentile](#percentile)
 * [Powerset](#powerset)
+* [Round number to n digits](#round-number-to-n-digits)
 * [Standard deviation](#standard-deviation)
 
 ### Media
@@ -79,6 +81,7 @@
 ### Object
 * [Object from key value pairs](#object-from-key-value-pairs)
 * [Object to key value pairs](#object-to-key-value-pairs)
+* [Shallow clone object](#shallow-clone-object)
 
 ### String
 * [Anagrams of string (with duplicates)](#anagrams-of-string-with-duplicates)
@@ -390,6 +393,20 @@ const median = arr => {
 };
 // median([5,6,50,1,-5]) -> 5
 // median([0,10,-2,7]) -> 3.5
+```
+
+[⬆ back to top](#table-of-contents)
+
+### Nth element of array
+
+Use `Array.slice()` to get an array containing the nth element at the first place. 
+If the index is out of bounds, return `[]`.
+Omit the second argument, `n`, to get the first element of the array.
+
+```js
+const nth = (arr, n=0) => (n>0? arr.slice(n,n+1) : arr.slice(n))[0];
+// nth(['a','b','c'],1) -> 'b'
+// nth(['a','b','b']-2) -> 'a'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -798,6 +815,18 @@ const powerset = arr =>
 
 [⬆ back to top](#table-of-contents)
 
+### Round number to n digits
+
+Use `Math.round()` and template literals to round the number to the specified number of digits.
+Omit the second argument, `decimals` to round to an integer.
+
+```js
+const round = (n, decimals=0) => Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`);
+// round(1.005, 2) -> 1.01
+```
+
+[⬆ back to top](#table-of-contents)
+
 ### Standard deviation
 
 Use `Array.reduce()` to calculate the mean, variance and the sum of the variance of the values, the variance of the values, then
@@ -856,6 +885,21 @@ Use `Object.keys()` and `Array.map()` to iterate over the object's keys and prod
 ```js
 const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
 // objectToPairs({a: 1, b: 2}) -> [['a',1],['b',2]])
+```
+
+[⬆ back to top](#table-of-contents)
+
+### Shallow clone object
+
+Use the object `...spread` operator to spread the properties of the target object into the clone.
+
+```js
+const shallowClone = obj => ({ ...obj });
+/*
+const a = { x: true, y: 1 };
+const b = shallowClone(a);
+a === b -> false
+*/
 ```
 
 [⬆ back to top](#table-of-contents)
