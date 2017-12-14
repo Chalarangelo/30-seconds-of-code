@@ -705,7 +705,7 @@ const hammingDistance = (num1, num2) =>
 
 ### Head of list
 
-Return `arr[0]`.
+Use `arr[0]` to return the first element of the passed array.
 
 ```js
 const head = arr => arr[0];
