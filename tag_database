@@ -68,6 +68,7 @@ shuffle-array:array
 similarity-between-arrays:array
 sleep:function
 sort-characters-in-string-(alphabetical):string
+speech_synthesis-(experimental):media
 standard-deviation:math
 sum-of-array-of-numbers:array
 swap-values-of-two-variables:utility
