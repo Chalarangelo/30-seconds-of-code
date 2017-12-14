@@ -1,4 +1,4 @@
-### Concat
+### Array concatenation
 
 Use `Array.concat()` to concatenate and array with any additional arrays and/or values, specified in `args`.
 
