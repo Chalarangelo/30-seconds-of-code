@@ -58,7 +58,7 @@
 * [Random integer in range](#random-integer-in-range)
 * [Random number in range](#random-number-in-range)
 * [Randomize order of array](#randomize-order-of-array)
-* [Redirect to url](#redirect-to-url)
+* [Redirect to URL](#redirect-to-url)
 * [Reverse a string](#reverse-a-string)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [Run promises in series](#run-promises-in-series)
@@ -189,14 +189,14 @@ const palindrome = str => {
 
 ### Chunk array
 
-Use `Array.from(arrayLike[, mapFn[, thisArg]])` to create a new array, that fits the number of chunks that will be produced.
-Use `mapFn` to map each element of the new array to a chunk the length of `size`.
+Use `Array.from()` to create a new array, that fits the number of chunks that will be produced.
+Use `Array.slice()` to map each element of the new array to a chunk the length of `size`.
 If the original array can't be split evenly, the final chunk will contain the remaining elements.
 
 ```js
 const chunk = (arr, size) =>
   Array.from({length: Math.ceil(arr.length / size)}, (v, i) => arr.slice(i * size, i * size + size));
-  // chunk([1,2,3,4,5], 2) -> [[1,2],[3,4],5]
+// chunk([1,2,3,4,5], 2) -> [[1,2],[3,4],5]
 ```
 
 ### Compact
