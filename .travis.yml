@@ -1,4 +1,7 @@
 before_script:
   - npm install    
   - npm install concurrently fs-extra live-server markdown-it nodemon babel-polyfill
-script: npm run build-list
+script: 
+  - npm run build-list
+after_success:
+  - ./push.sh  
