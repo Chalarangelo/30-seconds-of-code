@@ -64,6 +64,7 @@
 * [Scroll to top](#scroll-to-top)
 * [Shuffle array values](#shuffle-array-values)
 * [Similarity between arrays](#similarity-between-arrays)
+* [Sleep](#sleep)
 * [Sort characters in string (alphabetical)](#sort-characters-in-string-alphabetical)
 * [Sum of array of numbers](#sum-of-array-of-numbers)
 * [Swap values of two variables](#swap-values-of-two-variables)
@@ -665,6 +666,21 @@ Use `filter()` to remove values that are not part of `values`, determined using 
 ```js
 const similarity = (arr, values) => arr.filter(v => values.includes(v));
 // similarity([1,2,3], [1,2,4]) -> [1,2]
+```
+
+### Sleep
+
+Delay executing part of an `async` function, by putting it to sleep, returning a `Promise`.
+
+```js
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+/*
+async function sleepyWork() {
+  console.log('I\'m going to sleep for 1 second.');
+  await sleep(1000);
+  console.log('I woke up after 1 second.');
+}
+*/
 ```
 
 ### Sort characters in string (alphabetical)
