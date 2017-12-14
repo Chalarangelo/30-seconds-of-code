@@ -5,6 +5,6 @@ Pass a second argument to simulate a link click (`true` - default) or an HTTP re
 
 ```js
 const redirect = (url, asLink = true) =>
-	asLink ? (window.location.href = url) : window.location.replace(url);
+  asLink ? window.location.href = url : window.location.replace(url);
 // redirect('https://google.com')
 ```
