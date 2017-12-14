@@ -58,7 +58,7 @@
 * [Random integer in range](#random-integer-in-range)
 * [Random number in range](#random-number-in-range)
 * [Randomize order of array](#randomize-order-of-array)
-* [Redirect to URL](#redirect-to-url)
+* [Redirect to url](#redirect-to-url)
 * [Reverse a string](#reverse-a-string)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [Run promises in series](#run-promises-in-series)
@@ -421,7 +421,7 @@ const head = arr => arr[0];
 
 ### Initial of list
 
-Return `arr.slice(0,-1)`.
+Use `arr.slice(0,-1)`to return all but the last element of the array.
 
 ```js
 const initial = arr => arr.slice(0, -1);
