@@ -57,13 +57,9 @@
 * [Promisify](#promisify)
 * [Random integer in range](#random-integer-in-range)
 * [Random number in range](#random-number-in-range)
-<<<<<<< HEAD
 * [Randomize order of array](#randomize-order-of-array)
 * [Redirect to url](#redirect-to-url)
 * [Remove](#remove)
-=======
-* [Redirect to URL](#redirect-to-url)
->>>>>>> 10ae7ad867aaa94d27da81180760d6a0fa84a3a8
 * [Reverse a string](#reverse-a-string)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [Run promises in series](#run-promises-in-series)
