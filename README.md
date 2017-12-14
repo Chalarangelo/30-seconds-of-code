@@ -329,8 +329,8 @@ const dropElements = (arr,func) => {
 [⬆ back to top](#table-of-contents)
 ### Element is visible in viewport
 
-Use `Element.getBoundingClientRect()` and the `window.inner(Width|Height)` values 
-to determine if a given element is visible in the viewport. 
+Use `Element.getBoundingClientRect()` and the `window.inner(Width|Height)` values
+to determine if a given element is visible in the viewport.
 Omit the second argument to determine if the element is entirely visible, or specify `true` to determine if
 it is partially visible.
 
@@ -343,8 +343,8 @@ const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
     : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
 }
 // e.g. 100x100 viewport and a 10x10px element at position {top: -1, left: 0, bottom: 9, right: 10}
-// elementIsInViewport(el) -> false (not fully visible)
-// elementIsInViewport(el, true) -> true (partially visible)
+// elementIsVisibleInViewport(el) -> false (not fully visible)
+// elementIsVisibleInViewport(el, true) -> true (partially visible)
 ```
 
 [⬆ back to top](#table-of-contents)
