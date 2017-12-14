@@ -12,7 +12,7 @@ const toOrdinalSuffix = int => {
 	var oPattern = [1,2,3,4];
 	var tPattern = [11, 12, 13, 14, 15, 16, 17, 18, 19]
 
-	return pattern.includes(digits[0]) && !teens.includes(digits[1]) ? int + suffix[digits[0]-1] : int + suffix[3];
+	return oPattern.includes(digits[0]) && !tPattern.includes(digits[1]) ? int + ordinals[digits[0]-1] : int + ordinals[3];
 }
 // toOrdinalSuffix("123") -> "123rd"
 ```
