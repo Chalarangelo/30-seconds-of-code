@@ -48,6 +48,7 @@
 * [Median of array of numbers](#median-of-array-of-numbers)
 * [Object from key value pairs](#object-from-key-value-pairs)
 * [Object to key value pairs](#object-to-key-value-pairs)
+* [Ordinal suffix of number](#ordinal-suffix-of-number)
 * [Percentile](#percentile)
 * [Pick](#pick)
 * [Pipe](#pipe)
@@ -484,6 +485,22 @@ Use `Object.keys()` and `Array.map()` to iterate over the object's keys and prod
 ```js
 const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
 // objectToPairs({a: 1, b: 2}) -> [['a',1],['b',2]])
+```
+
+### Ordinal suffix of number
+
+Use the modulo operator (`%`) to find values of single and tens digits.
+Find which ordinal pattern digits match.
+If digit is found in teens pattern, use teens ordinal.
+
+```js
+const toOrdinalSuffix = num => {
+  const int = parseInt(num), digits = [(int % 10), (int % 100)],
+    ordinals = ["st", "nd", "rd", "th"], oPattern = [1,2,3,4],
+    tPattern = [11, 12, 13, 14, 15, 16, 17, 18, 19]
+  return oPattern.includes(digits[0]) && !tPattern.includes(digits[1]) ? int + ordinals[digits[0]-1] : int + ordinals[3];
+}
+// toOrdinalSuffix("123") -> "123rd"
 ```
 
 ### Percentile
