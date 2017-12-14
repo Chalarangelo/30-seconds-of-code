@@ -1,6 +1,6 @@
 ### Initial of list
 
-Return `arr.slice(0,-1)`.
+Use `arr.slice(0,-1)`to return all but the last element of the array.
 
 ```js
 const initial = arr => arr.slice(0, -1);
