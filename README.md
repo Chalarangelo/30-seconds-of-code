@@ -55,7 +55,7 @@
 * [Random integer in range](#random-integer-in-range)
 * [Random number in range](#random-number-in-range)
 * [Randomize order of array](#randomize-order-of-array)
-* [Redirect to URL](#redirect-to-url)
+* [Redirect to url](#redirect-to-url)
 * [Reverse a string](#reverse-a-string)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [Run promises in series](#run-promises-in-series)
@@ -89,7 +89,7 @@ const anagrams = str => {
 // anagrams('abc') -> ['abc','acb','bac','bca','cab','cba']
 ```
 
-### Array difference (complement)
+### Array difference
 
 Create a `Set` from `b`, then use `Array.filter()` on `a` to only keep values not contained in `b`.
 
@@ -98,7 +98,7 @@ const difference = (a, b) => { const s = new Set(b); return a.filter(x => !s.has
 // difference([1,2,3], [1,2]) -> [3]
 ```
 
-### Array intersection (Common values between two arrays)
+### Array intersection
 
 Create a `Set` from `b`, then use `Array.filter()` on `a` to only keep values contained in `b`.
 
