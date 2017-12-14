@@ -40,6 +40,7 @@
 * [Fibonacci array generator](#fibonacci-array-generator)
 * [Filter out non unique values in an array](#filter-out-non-unique-values-in-an-array)
 * [Flatten array](#flatten-array)
+* [Get days difference between dates](#get-days-difference-between-dates)
 * [Get max value from array](#get-max-value-from-array)
 * [Get min value from array](#get-min-value-from-array)
 * [Get native type of value](#get-native-type-of-value)
@@ -714,6 +715,16 @@ Use `Array.reduce()` to get all elements inside the array and `concat()` to flat
 ```js
 const flatten = arr => arr.reduce((a, v) => a.concat(v), []);
 // flatten([1,[2],3,4]) -> [1,2,3,4]
+```
+
+[⬆ back to top](#table-of-contents)
+### Get Days Difference Between Dates
+
+Returns the number of days between two Dates.
+
+```js
+const getDaysDiffBetweenDates = (dateInitial, dateFinal) => (dateFinal - dateInitial) / (1000 * 3600 * 24);
+//getDaysDiffBetweenDates(new Date("2017-12-13"), new Date("2017-12-22")) -> 9
 ```
 
 [⬆ back to top](#table-of-contents)
