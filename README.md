@@ -57,7 +57,7 @@
 * [Random integer in range](#random-integer-in-range)
 * [Random number in range](#random-number-in-range)
 * [Randomize order of array](#randomize-order-of-array)
-* [Redirect to URL](#redirect-to-url)
+* [Redirect to url](#redirect-to-url)
 * [Reverse a string](#reverse-a-string)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [Run promises in series](#run-promises-in-series)
@@ -435,7 +435,7 @@ const initializeArray = (n, value = 0) => Array(n).fill(value);
 
 ### Last of list
 
-Return `arr.slice(-1)[0]`.
+Use `arr.slice(-1)[0]` to get the last element of the given array.
 
 ```js
 const last = arr => arr.slice(-1)[0];
