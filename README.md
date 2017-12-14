@@ -73,6 +73,7 @@
 * [Unique values of array](#unique-values-of-array)
 * [URL parameters](#url-parameters)
 * [UUID generator](#uuid-generator)
+* [Validate email](#validate-email)
 * [Validate number](#validate-number)
 * [Value or default](#value-or-default)
 
@@ -766,6 +767,17 @@ const uuid = _ =>
     (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
   );
 // uuid() -> '7982fcfe-5721-4632-bede-6000885be57d'
+```
+
+### Validate email
+
+Use a regular experssion to check if the email is valid.
+Returns `true` if email is valid, `false` if not.
+
+```js
+const validateEmail = str =>
+  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(str);
+// validateEmail(mymail@gmail.com) -> true
 ```
 
 ### Validate number
