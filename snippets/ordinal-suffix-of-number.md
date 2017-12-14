@@ -1,4 +1,4 @@
-### Get Ordinal Suffix of Number
+### Ordinal suffix of number
 
 Use the modulo operator (`%`) to find values of single and tens digits.
 Find which ordinal pattern digits match.
