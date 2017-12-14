@@ -57,7 +57,7 @@
 * [Random integer in range](#random-integer-in-range)
 * [Random number in range](#random-number-in-range)
 * [Randomize order of array](#randomize-order-of-array)
-* [Redirect to URL](#redirect-to-url)
+* [Redirect to url](#redirect-to-url)
 * [Reverse a string](#reverse-a-string)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [Run promises in series](#run-promises-in-series)
@@ -395,7 +395,7 @@ const hammingDistance = (num1, num2) =>
 
 ### Head of list
 
-Return `arr[0]`.
+Use `arr[0]` to return the first element of the passed array.
 
 ```js
 const head = arr => arr[0];
