@@ -1,6 +1,6 @@
 #!/bin/sh
 
-setup_git() {
+setup_git() { 
   git config --global user.email "leandro_franciscato@hotmail.com"
   git config --global user.name "Leandro Franciscato"
 }
