@@ -73,6 +73,9 @@
 * [Powerset](#powerset)
 * [Standard deviation](#standard-deviation)
 
+### Media
+* [Speech_synthesis (experimental)](#speech_synthesis-experimental)
+
 ### Object
 * [Object from key value pairs](#object-from-key-value-pairs)
 * [Object to key value pairs](#object-to-key-value-pairs)
@@ -810,6 +813,25 @@ const standardDeviation = (arr, usePopulation = false) => {
 };
 // standardDeviation([10,2,38,23,38,23,21]) -> 13.284434142114991 (sample)
 // standardDeviation([10,2,38,23,38,23,21], true) -> 12.29899614287479 (population)
+```
+
+[⬆ back to top](#table-of-contents)
+## Media
+
+### Speech synthesis (experimental)
+
+Use `SpeechSynthesisUtterance.voice` and `indow.speechSynthesis.getVoices()` to convert a message to speech.
+Use `window.speechSynthesis.speak()` to play the message.
+
+Learn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
+
+```js
+const speak = message => {
+  const msg = new SpeechSynthesisUtterance(message);
+  msg.voice = window.speechSynthesis.getVoices()[0];
+  window.speechSynthesis.speak(msg);
+}
+// speak('Hello, World') -> plays the message
 ```
 
 [⬆ back to top](#table-of-contents)
