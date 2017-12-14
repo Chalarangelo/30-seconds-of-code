@@ -49,6 +49,7 @@ is-symbol:utility
 last-of-list:array
 measure-time-taken-by-function:utility
 median-of-array-of-numbers:array
+number-to-array-of-digits:utility
 object-from-key-value-pairs:object
 object-to-key-value-pairs:object
 ordinal-suffix-of-number:utility
@@ -68,7 +69,7 @@ shuffle-array:array
 similarity-between-arrays:array
 sleep:function
 sort-characters-in-string-(alphabetical):string
-speech_synthesis-(experimental):media
+speech-synthesis-(experimental):media
 standard-deviation:math
 sum-of-array-of-numbers:array
 swap-values-of-two-variables:utility

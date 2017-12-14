@@ -74,7 +74,7 @@
 * [Standard deviation](#standard-deviation)
 
 ### Media
-* [Speech_synthesis (experimental)](#speech_synthesis-experimental)
+* [Speech synthesis (experimental)](#speech-synthesis-experimental)
 
 ### Object
 * [Object from key value pairs](#object-from-key-value-pairs)
@@ -99,6 +99,7 @@
 * [Is string](#is-string)
 * [Is symbol](#is-symbol)
 * [Measure time taken by function](#measure-time-taken-by-function)
+* [Number to array of digits](#number-to-array-of-digits)
 * [Ordinal suffix of number](#ordinal-suffix-of-number)
 * [Random integer in range](#random-integer-in-range)
 * [Random number in range](#random-number-in-range)
@@ -818,7 +819,22 @@ const standardDeviation = (arr, usePopulation = false) => {
 [⬆ back to top](#table-of-contents)
 ## Media
 
-undefined
+### Speech synthesis (experimental)
+
+Use `SpeechSynthesisUtterance.voice` and `indow.speechSynthesis.getVoices()` to convert a message to speech.
+Use `window.speechSynthesis.speak()` to play the message.
+
+Learn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
+
+```js
+const speak = message => {
+  const msg = new SpeechSynthesisUtterance(message);
+  msg.voice = window.speechSynthesis.getVoices()[0];
+  window.speechSynthesis.speak(msg);
+};
+// speak('Hello, World') -> plays the message
+```
+
 [⬆ back to top](#table-of-contents)
 ## Object
 
@@ -1047,6 +1063,18 @@ const timeTaken = callback => {
   return r;
 };
 // timeTaken(() => Math.pow(2, 10)) -> 1024 (0.010000000009313226 logged in console)
+```
+
+[⬆ back to top](#table-of-contents)
+
+### Number to array of digits
+
+Convert the number to a string, use `split()` to convert build an array.
+Use `Array.map()` and `parseInt()` to transform each value to an integer. 
+
+```js
+const digitize = n => (''+n).split('').map(i => parseInt(i));
+// digitize(2334) -> [2, 3, 3, 4]
 ```
 
 [⬆ back to top](#table-of-contents)
