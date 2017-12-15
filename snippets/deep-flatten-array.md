@@ -1,7 +1,8 @@
 ### Deep flatten array
 
 Use recursion.
-Use `[].concat()` and the spread operator `...` to flatten an array, and recursively flatten each element that is an array.
+Use `Array.concat()` with an empty array (`[]`) and the spread operator (`...`) to flatten an array.
+Rrecursively flatten each element that is an array.
 
 ```js
 const deepFlatten = arr => [].concat(...arr.map(v => Array.isArray(v) ? deepFlatten(v) : v));
