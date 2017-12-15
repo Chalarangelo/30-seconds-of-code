@@ -1,6 +1,7 @@
 anagrams-of-string-(with-duplicates):string
 array-concatenation:array
 array-difference:array
+array-includes:array
 array-intersection:array
 array-sample:array
 array-union:array
