@@ -4,9 +4,9 @@ Loop through the array, using `Array.shift()` to drop the first element of the a
 Returns the remaining elements.
 
 ```js
-const dropElements = (arr,func) => {
-  while(arr.length > 0 && !func(arr[0])) arr.shift();
+const dropElements = (arr, func) => {
+  while (arr.length > 0 && !func(arr[0])) arr.shift();
   return arr;
-}
+};
 // dropElements([1, 2, 3, 4], n => n >= 3) -> [3,4]
 ```
