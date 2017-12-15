@@ -1,6 +1,6 @@
 ### Shallow clone object
 
-Use `Object.assign()` and an empty object (`{}`) to create a shallo clone of the original.
+Use `Object.assign()` and an empty object (`{}`) to create a shallow clone of the original.
 
 ```js
 const shallowClone = obj => Object.assign({}, obj);

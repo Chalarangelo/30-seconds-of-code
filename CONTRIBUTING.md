@@ -64,7 +64,7 @@ Here's what you can do to help:
 - If your snippet's code is short enough (around 80 characters), you can make it a single-line function (although not mandatory). Otherwise, use multiple lines.
 - Prefer using `Array` methods whenever possible.
 - Prefer `Array.concat()` instead of `Array.push()` when working with `Array.reduce()`.
-- Use strict equality checking (`===` and `!==` instead of `==` and `!=`), unless you specificly have reason not to.
+- Use strict equality checking (`===` and `!==` instead of `==` and `!=`), unless you specifically have reason not to.
 - Prefer using the ternary operator (`condition ? trueResult : falseResult`) instead of `if else` statements whenever possible.
 - Avoid nesting ternary operators (but you can do it if you feel like you should).
 - You should define multiple variables on the same line (e.g. `const x = 0, y = 0`) on the same line whenever possible.
