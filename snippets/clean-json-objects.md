@@ -1,14 +1,14 @@
 ### Clean Json objects
 
-Use `Object.keys()` method to iter through given json object and deleting keys that are not `include`d in given array.
+Use `Object.keys()` method to loop over given json object and deleting keys that are not `include`d in given array.
 also if you give it a special key(`childIndicator`) it will search deeply inside it to apply function to inner objects too.
 
 ```js
-const cleanObj = (obj, keys = [], childIndicator) => {
+const cleanObj = (obj, keysToKeep = [], childIndicator) => {
   Object.keys(obj).forEach(key => {
     if (key === childIndicator) {
-      cleanObj(obj[key], keys, childIndicator)
-    } else if (!keys.includes(key)) {
+      cleanObj(obj[key], keysToKeep, childIndicator)
+    } else if (!keysToKeep.includes(key)) {
       delete obj[key]
     }
   })
