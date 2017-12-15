@@ -1,10 +1,9 @@
 ### Deep flatten array
 
 Use recursion.
-Use `Array.reduce()` to get all elements that are not arrays, flatten each element that is an array.
+Use `[].concat()` and the spread operator `...` to flatten an array, and recursively flatten each element that is an array.
 
 ```js
-const deepFlatten = arr =>
-  arr.reduce((a, v) => a.concat(Array.isArray(v) ? deepFlatten(v) : v), []);
+const deepFlatten = arr => [].concat(...arr.map(v => Array.isArray(v) ? deepFlatten(v) : v));
 // deepFlatten([1,[2],[[3],4],5]) -> [1,2,3,4,5]
 ```
