@@ -1,4 +1,4 @@
-### Remove
+### Array remove
 
 Use `Array.filter()` to find array elements that return truthy values and `Array.reduce()` to remove elements using `Array.splice()`.
 The `func` is invoked with three arguments (`value, index, array`).
