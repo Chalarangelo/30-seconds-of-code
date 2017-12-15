@@ -5,5 +5,5 @@ Use `fs.writeFile()`, template literals and `JSON.stringify()` to write a `json`
 ```js
 const fs = require('fs');
 const jsonToFile = (obj, filename) => fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2))
-// jsonToFile({test: "is passed"}, 'testJsonFile')
+// jsonToFile({test: "is passed"}, 'testJsonFile') -> writes the object to 'testJsonFile.json'
 ```
