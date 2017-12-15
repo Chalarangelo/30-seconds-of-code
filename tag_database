@@ -2,7 +2,10 @@ anagrams-of-string-(with-duplicates):string
 array-concatenation:array
 array-difference:array
 array-intersection:array
+array-sample:array
 array-union:array
+array-without:array
+array-zip:array
 average-of-array-of-numbers:array
 bottom-visible:browser
 capitalize-first-letter-of-every-word:string
@@ -77,8 +80,8 @@ standard-deviation:math
 sum-of-array-of-numbers:array
 swap-values-of-two-variables:utility
 tail-of-list:array
+take-right:array
 take:array
-takeRight:array
 truncate-a-string:string
 unique-values-of-array:array
 URL-parameters:utility
@@ -86,4 +89,3 @@ UUID-generator:utility
 validate-email:utility
 validate-number:utility
 value-or-default:utility
-without:array

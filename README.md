@@ -13,7 +13,10 @@
 * [Array concatenation](#array-concatenation)
 * [Array difference](#array-difference)
 * [Array intersection](#array-intersection)
+* [Array sample](#array-sample)
 * [Array union](#array-union)
+* [Array without](#array-without)
+* [Array zip](#array-zip)
 * [Average of array of numbers](#average-of-array-of-numbers)
 * [Chunk array](#chunk-array)
 * [Compact](#compact)
@@ -39,6 +42,7 @@
 * [Similarity between arrays](#similarity-between-arrays)
 * [Sum of array of numbers](#sum-of-array-of-numbers)
 * [Tail of list](#tail-of-list)
+* [Take right](#take-right)
 * [Take](#take)
 * [Unique values of array](#unique-values-of-array)
 
@@ -149,6 +153,18 @@ const intersection = (a, b) => { const s = new Set(b); return a.filter(x => s.ha
 
 [⬆ back to top](#table-of-contents)
 
+### Array sample
+
+Use `Math.random()` to generate a random number, multiply it with `length` and round it of to the nearest whole number using `Math.floor()`.
+This method also works with strings.
+
+```js
+const sample = arr => arr[Math.floor(Math.random() * arr.length)];
+// sample([3, 7, 9, 11]) -> 9
+```
+
+[⬆ back to top](#table-of-contents)
+
 ### Array union
 
 Create a `Set` with all values of `a` and `b` and convert to an array.
@@ -156,6 +172,37 @@ Create a `Set` with all values of `a` and `b` and convert to an array.
 ```js
 const union = (a, b) => Array.from(new Set([...a, ...b]));
 // union([1,2,3], [4,3,2]) -> [1,2,3,4]
+```
+
+[⬆ back to top](#table-of-contents)
+
+### Array without
+
+Use `Array.filter()` to create an array excluding all given values.
+
+```js
+const without = (arr, ...args) => arr.filter(v => args.indexOf(v) === -1);
+// without[2, 1, 2, 3], 1, 2) -> [3]
+// without([2, 1, 2, 3, 4, 5, 5, 5, 3, 2, 7, 7], 3, 1, 5, 2) -> [ 4, 7, 7 ]
+```
+
+[⬆ back to top](#table-of-contents)
+
+### Array zip
+
+Use `Math.max.apply()` to get the longest array in the arguments.
+Creates an array with that length as return value and use `Array.from()` with a map-function to create an array of grouped elements.
+If lengths of the argument-arrays vary, `undefined` is used where no value could be found.
+
+```js
+const zip = (...arrays) => {
+  const maxLength = Math.max.apply(null, arrays.map(a => a.length));
+  return Array.from({length: maxLength}).map((_, i) => {
+   return Array.from({length: arrays.length}, (_, k) => arrays[k][i]);
+  })
+}
+//zip(['a', 'b'], [1, 2], [true, false]); -> [['a', 1, true], ['b', 2, false]]
+//zip(['a'], [1, 2], [true, false]); -> [['a', 1, true], [undefined, 2, false]]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -180,7 +227,7 @@ If the original array can't be split evenly, the final chunk will contain the re
 ```js
 const chunk = (arr, size) =>
   Array.from({length: Math.ceil(arr.length / size)}, (v, i) => arr.slice(i * size, i * size + size));
-// chunk([1,2,3,4,5], 2) -> [[1,2],[3,4],5]
+// chunk([1,2,3,4,5], 2) -> [[1,2],[3,4],[5]]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -210,11 +257,11 @@ const countOccurrences = (arr, value) => arr.reduce((a, v) => v === value ? a + 
 ### Deep flatten array
 
 Use recursion.
-Use `Array.reduce()` to get all elements that are not arrays, flatten each element that is an array.
+Use `Array.concat()` with an empty array (`[]`) and the spread operator (`...`) to flatten an array.
+Rrecursively flatten each element that is an array.
 
 ```js
-const deepFlatten = arr =>
-  arr.reduce((a, v) => a.concat(Array.isArray(v) ? deepFlatten(v) : v), []);
+const deepFlatten = arr => [].concat(...arr.map(v => Array.isArray(v) ? deepFlatten(v) : v));
 // deepFlatten([1,[2],[[3],4],5]) -> [1,2,3,4,5]
 ```
 
@@ -469,6 +516,18 @@ const tail = arr => arr.length > 1 ? arr.slice(1) : arr;
 
 [⬆ back to top](#table-of-contents)
 
+### Take right
+
+Use `Array.slice()` to create a slice of the array with `n` elements taken from the end.
+
+```js
+const takeRight = (arr, n = 1) => arr.slice(arr.length - n, arr.length);
+// takeRight([1, 2, 3], 2) -> [ 2, 3 ]
+// takeRight([1, 2, 3]) -> [3]
+```
+
+[⬆ back to top](#table-of-contents)
+
 ### Take
 
 Use `Array.slice()` to create a slice of the array with `n` elements taken from the beginning.
@@ -633,11 +692,17 @@ const curry = (fn, arity = fn.length, ...args) =>
 
 ### Pipe
 
-Use `Array.reduce()` to pass value through functions.
+Use `Array.reduce()` to perform left-to-right function composition.
+The first (leftmost) function can accept one or more arguments; the remaining functions must be unary.
 
 ```js
-const pipe = (...funcs) => arg => funcs.reduce((acc, func) => func(acc), arg);
-// pipe(btoa, x => x.toUpperCase())("Test") -> "VGVZDA=="
+const pipe = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
+/*
+const add5 = x => x + 5
+const multiply = (x, y) => x * y
+const multiplyAndAdd5 = pipe(multiply, add5)
+multiplyAndAdd5(5, 2) -> 15
+*/
 ```
 
 [⬆ back to top](#table-of-contents)
