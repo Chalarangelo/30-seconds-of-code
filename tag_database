@@ -3,6 +3,7 @@ array-concatenation:array
 array-difference:array
 array-includes:array
 array-intersection:array
+array-remove:array
 array-sample:array
 array-union:array
 array-without:array
