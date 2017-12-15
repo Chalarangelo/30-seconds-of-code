@@ -14,7 +14,8 @@ const cleanObj = (obj, keys = [], childIndicator) => {
   })
 }
 /*
-  dirtyObj = { a: 1, b: 2, children: {a: 1, b :2}}
-  let cleaned = cleanObj(dirtyObj, [a]) // { a: 1, children : { a: 1}} 
- */
+  dirtyObj = {a: 1, b: 2, children: {a: 1, b: 2}}
+  cleanObj(dirtyObj, ["a"],"children")
+  console.log(dirtyObj)// { a: 1, children : { a: 1}}
+*/
 ```
