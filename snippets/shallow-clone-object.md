@@ -1,9 +1,9 @@
 ### Shallow clone object
 
-Use the object `...spread` operator to spread the properties of the target object into the clone.
+Use `Object.assign()` and an empty object (`{}`) to create a shallo clone of the original.
 
 ```js
-const shallowClone = obj => ({ ...obj });
+const shallowClone = obj => Object.assign({}, obj);
 /*
 const a = { x: true, y: 1 };
 const b = shallowClone(a);

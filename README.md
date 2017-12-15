@@ -83,6 +83,9 @@
 ### Media
 * [Speech synthesis (experimental)](#speech-synthesis-experimental)
 
+### Node
+* [Write json to file](#write-json-to-file)
+
 ### Object
 * [Object from key value pairs](#object-from-key-value-pairs)
 * [Object to key value pairs](#object-to-key-value-pairs)
@@ -944,6 +947,19 @@ const speak = message => {
 ```
 
 [⬆ back to top](#table-of-contents)
+## Node
+
+### Write a JSON to a file
+
+Use `fs.writeFile()`, template literals and `JSON.stringify()` to write a `json` object to a `.json` file.
+
+```js
+const fs = require('fs');
+const jsonToFile = (obj, filename) => fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2))
+// jsonToFile({test: "is passed"}, 'testJsonFile') -> writes the object to 'testJsonFile.json'
+```
+
+[⬆ back to top](#table-of-contents)
 ## Object
 
 ### Object from key-value pairs
@@ -970,10 +986,10 @@ const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
 
 ### Shallow clone object
 
-Use the object `...spread` operator to spread the properties of the target object into the clone.
+Use `Object.assign()` and an empty object (`{}`) to create a shallo clone of the original.
 
 ```js
-const shallowClone = obj => ({ ...obj });
+const shallowClone = obj => Object.assign({}, obj);
 /*
 const a = { x: true, y: 1 };
 const b = shallowClone(a);
