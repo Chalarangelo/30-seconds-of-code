@@ -14,6 +14,7 @@
 * [Array difference](#array-difference)
 * [Array includes](#array-includes)
 * [Array intersection](#array-intersection)
+* [Array remove](#array-remove)
 * [Array sample](#array-sample)
 * [Array union](#array-union)
 * [Array without](#array-without)
@@ -129,8 +130,8 @@
 Use `Array.concat()` to concatenate an array with any additional arrays and/or values, specified in `args`.
 
 ```js
-const arrayConcat = (arr, ...args) => arr.concat(...args);
-// arrayConcat([1], 2, [3], [[4]]) -> [1,2,3,[4]]
+const ArrayConcat = (arr, ...args) => [].concat(arr, ...args); 
+// ArrayConcat([1], [1, 2, 3, [4]]) -> [1, 2, 3, [4]]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -166,6 +167,22 @@ Create a `Set` from `b`, then use `Array.filter()` on `a` to only keep values co
 ```js
 const intersection = (a, b) => { const s = new Set(b); return a.filter(x => s.has(x)); };
 // intersection([1,2,3], [4,3,2]) -> [2,3]
+```
+
+[⬆ back to top](#table-of-contents)
+
+### Array remove
+
+Use `Array.filter()` to find array elements that return truthy values and `Array.reduce()` to remove elements using `Array.splice()`.
+The `func` is invoked with three arguments (`value, index, array`).
+
+```js
+const remove = (arr, func) =>
+  Array.isArray(arr) ? arr.filter(func).reduce((acc, val) => {
+    arr.splice(arr.indexOf(val), 1); return acc.concat(val);
+    }, [])
+  : [];
+//remove([1, 2, 3, 4], n => n % 2 == 0) -> [2, 4]
 ```
 
 [⬆ back to top](#table-of-contents)
