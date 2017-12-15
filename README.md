@@ -104,6 +104,7 @@
 ### Utility
 * [Escape regular expression](#escape-regular-expression)
 * [Get native type of value](#get-native-type-of-value)
+* [Hexcode to RGB](#hexcode-to-rgb)
 * [Is array](#is-array)
 * [Is boolean](#is-boolean)
 * [Is function](#is-function)
@@ -1132,6 +1133,17 @@ Returns lower-cased constructor name of value, "undefined" or "null" if value is
 const getType = v =>
   v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name.toLowerCase();
 // getType(new Set([1,2,3])) -> "set"
+```
+
+[⬆ back to top](#table-of-contents)
+
+### Hexcode to RGB
+
+Use `Array.slice()`, `Array.map()` and `match()` to convert a hexadecimal colorcode (prefixed with `#`) to a string with the RGB values.
+
+```js
+const hexToRgb = hex => `rgb(${hex.slice(1).match(/.{2}/g).map(x => parseInt(x, 16)).join()})`
+// hexToRgb('#27ae60') -> 'rgb(39,174,96)'
 ```
 
 [⬆ back to top](#table-of-contents)

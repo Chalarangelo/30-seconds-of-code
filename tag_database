@@ -42,6 +42,7 @@ greatest-common-divisor-(GCD):math
 group-by:array
 hamming-distance:math
 head-of-list:array
+hexcode-to-RGB:utility
 initial-of-list:array
 initialize-array-with-range:array
 initialize-array-with-values:array
