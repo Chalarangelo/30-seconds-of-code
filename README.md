@@ -292,7 +292,7 @@ const countOccurrences = (arr, value) => arr.reduce((a, v) => v === value ? a + 
 
 Use recursion.
 Use `Array.concat()` with an empty array (`[]`) and the spread operator (`...`) to flatten an array.
-Rrecursively flatten each element that is an array.
+Recursively flatten each element that is an array.
 
 ```js
 const deepFlatten = arr => [].concat(...arr.map(v => Array.isArray(v) ? deepFlatten(v) : v));
@@ -1003,7 +1003,7 @@ const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
 
 ### Shallow clone object
 
-Use `Object.assign()` and an empty object (`{}`) to create a shallo clone of the original.
+Use `Object.assign()` and an empty object (`{}`) to create a shallow clone of the original.
 
 ```js
 const shallowClone = obj => Object.assign({}, obj);
@@ -1330,7 +1330,7 @@ const uuid = _ =>
 
 ### Validate email
 
-Use a regular experssion to check if the email is valid.
+Use a regular expression to check if the email is valid.
 Returns `true` if email is valid, `false` if not.
 
 ```js
