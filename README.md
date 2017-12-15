@@ -142,7 +142,7 @@ const ArrayConcat = (arr, ...args) => [].concat(arr, ...args);
 Create a `Set` from `b`, then use `Array.filter()` on `a` to only keep values not contained in `b`.
 
 ```js
-const difference = (a, b) => { const s = new Set(b); return a.filter(x => !s.has(x)); };
+const difference = (a, b) => { if (b > a) [a, b] = [b, a]; const s = new Set(b); return a.filter(x => !s.has(x)); };
 // difference([1,2,3], [1,2]) -> [3]
 ```
 
