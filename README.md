@@ -13,6 +13,7 @@
 * [URL parameters](#url-parameters)
 * [UUID generator](#uuid-generator)
 * [Anagrams of string (with duplicates)](#anagrams-of-string-with-duplicates)
+* [Array concatenation](#array-concatenation)
 * [Array difference](#array-difference)
 * [Array intersection](#array-intersection)
 * [Array union](#array-union)
@@ -61,7 +62,6 @@
 * [Promisify](#promisify)
 * [Random integer in range](#random-integer-in-range)
 * [Random number in range](#random-number-in-range)
-* [Randomize order of array](#randomize-order-of-array)
 * [Redirect to url](#redirect-to-url)
 * [Remove](#remove)
 * [Reverse a string](#reverse-a-string)
@@ -398,6 +398,15 @@ const anagrams = s => {
   }, []);
 }
 // anagrams('abc') -> ['abc','acb','bac','bca','cab','cba']
+```
+
+### Array concatenation
+
+Use `Array.concat()` to concatenate and array with any additional arrays and/or values, specified in `args`.
+
+```js
+const ArrayConcat = (arr, ...args) => [].concat(arr, ...args); 
+// ArrayConcat([1], [1, 2, 3, [4]]) -> [1, 2, 3, [4]]
 ```
 
 ### Array difference
@@ -930,10 +939,12 @@ Remove elements from `arr` that are returns truthy. Use `Array.filter()` to find
 
 ```js
 const remove = (arr, func) =>
+    Array.isArray(arr) ?
     arr.filter(func).reduce((acc, val) => {
         arr.splice(arr.indexOf(val), 1)
         return acc.concat(val);
     }, [])
+    : [];
 //remove([1, 2, 3, 4], n => n % 2 == 0) -> [2, 4]
 ```
 
