@@ -78,6 +78,7 @@ sum-of-array-of-numbers:array
 swap-values-of-two-variables:utility
 tail-of-list:array
 take:array
+takeRight:array
 truncate-a-string:string
 unique-values-of-array:array
 URL-parameters:utility
