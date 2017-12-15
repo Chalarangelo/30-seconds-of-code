@@ -1,6 +1,6 @@
 ### Get max value from array
 
-Use `Math.max()` combined with the spread operator (`...`) to get the minimum value in the array.
+Use `Math.max()` combined with the spread operator (`...`) to get the maximum value in the array.
 
 ```js
 const arrayMax = arr => Math.max(...arr);
