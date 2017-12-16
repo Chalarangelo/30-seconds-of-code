@@ -128,7 +128,6 @@
 * [UUID generator](#uuid-generator)
 * [Validate email](#validate-email)
 * [Validate number](#validate-number)
-* [Value or default](#value-or-default)
 
 ## Array
 
@@ -1476,17 +1475,6 @@ Use `Number()` to check if the coercion holds.
 ```js
 const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
 // validateNumber('10') -> true
-```
-
-[⬆ back to top](#table-of-contents)
-
-### Value or default
-
-Returns value, or default value if passed value is `falsy`.
-
-```js
-const valueOrDefault = (value, d) => value || d;
-// valueOrDefault(NaN, 30) -> 30
 ```
 
 [⬆ back to top](#table-of-contents)
