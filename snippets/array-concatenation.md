@@ -4,5 +4,5 @@ Use `Array.concat()` to concatenate an array with any additional arrays and/or v
 
 ```js
 const ArrayConcat = (arr, ...args) => [].concat(arr, ...args); 
-// ArrayConcat([1], [1, 2, 3, [4]]) -> [1, 2, 3, [4]]
+// ArrayConcat([1], [1, 2, 3, [4]]) -> [1, 1, 2, 3, [4]]
 ```
