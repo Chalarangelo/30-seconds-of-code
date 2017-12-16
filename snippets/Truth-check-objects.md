@@ -8,7 +8,7 @@ Check if the predicate (second argument) is truthy on all elements of a collecti
  - Return true if it passes for every object. Otherwise, return false.
  - Also if the object is empty then it will return false
  
- ```
+ ```js
 truthCheck = (collection, pre) => (collection.every(obj => obj[pre]));
 
 truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, 
