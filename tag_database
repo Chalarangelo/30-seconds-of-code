@@ -10,6 +10,7 @@ array-without:array
 array-zip:array
 average-of-array-of-numbers:array
 bottom-visible:browser
+convert-string-to-camelcase:string
 capitalize-first-letter-of-every-word:string
 capitalize-first-letter:string
 chain-asynchronous-functions:function
@@ -22,6 +23,7 @@ compose-functions:function
 count-occurrences-of-a-value-in-array:array
 current-URL:browser
 curry:function
+convert-string-from-camelcase:string
 deep-flatten-array:array
 distance-between-two-points:math
 divisible-by-number:math
