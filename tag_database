@@ -67,6 +67,7 @@ powerset:math
 promisify:function
 random-integer-in-range:utility
 random-number-in-range:utility
+read-file-to-array:node
 redirect-to-URL:browser
 reverse-a-string:string
 RGB-to-hexadecimal:utility
