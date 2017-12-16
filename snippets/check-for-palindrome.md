@@ -5,8 +5,8 @@ Then, `split('')` into individual characters, `reverse()`, `join('')` and compar
 
 ```js
 const palindrome = str => {
-  const s = str.toLowerCase().replace(/[\W_]/g,'');
-  return s === s.split('').reverse().join('');
+  const s = str.toLowerCase().replace(/\s+/g, '');
+  return s === [...s].reverse().join('');
 }
 // palindrome('taco cat') -> true
  ```
