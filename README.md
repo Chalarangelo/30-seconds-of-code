@@ -44,6 +44,7 @@
 * [Similarity between arrays](#similarity-between-arrays)
 * [Sum of array of numbers](#sum-of-array-of-numbers)
 * [Tail of list](#tail-of-list)
+* [Take every nth element](#take-every-nth-element)
 * [Take right](#take-right)
 * [Take](#take)
 * [Unique values of array](#unique-values-of-array)
@@ -61,8 +62,9 @@
 
 ### Function
 * [Chain asynchronous functions](#chain-asynchronous-functions)
+* [Compose functions](#compose-functions)
 * [Curry](#curry)
-* [Pipe](#pipe)
+* [Pipe functions](#pipe-functions)
 * [Promisify](#promisify)
 * [Run promises in series](#run-promises-in-series)
 * [Sleep](#sleep)
@@ -85,9 +87,11 @@
 * [Speech synthesis (experimental)](#speech-synthesis-experimental)
 
 ### Node
-* [Write json to file](#write-json-to-file)
+* [Read file as array of lines](#read-file-as-array-of-lines)
+* [Write JSON to file](#write-json-to-file)
 
 ### Object
+* [Clean JSON object](#clean-json-object)
 * [Object from key value pairs](#object-from-key-value-pairs)
 * [Object to key value pairs](#object-to-key-value-pairs)
 * [Shallow clone object](#shallow-clone-object)
@@ -102,6 +106,7 @@
 * [Truncate a string](#truncate-a-string)
 
 ### Utility
+* [3 digit hexcode to 6 digit hexcode](#3-digit-hexcode-to-6-digit-hexcode)
 * [Escape regular expression](#escape-regular-expression)
 * [Get native type of value](#get-native-type-of-value)
 * [Hexcode to RGB](#hexcode-to-rgb)
@@ -117,7 +122,6 @@
 * [Random integer in range](#random-integer-in-range)
 * [Random number in range](#random-number-in-range)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
-* [Swap values of two variables](#swap-values-of-two-variables)
 * [URL parameters](#url-parameters)
 * [UUID generator](#uuid-generator)
 * [Validate email](#validate-email)
@@ -128,11 +132,11 @@
 
 ### Array concatenation
 
-Use `Array.concat()` to concatenate an array with any additional arrays and/or values, specified in `args`.
+Use Array spread operators (`...`) to concatenate an array with any additional arrays and/or values, specified in `args`.
 
 ```js
-const ArrayConcat = (arr, ...args) => [].concat(arr, ...args); 
-// ArrayConcat([1], [1, 2, 3, [4]]) -> [1, 2, 3, [4]]
+const ArrayConcat = (arr, ...args) => [...arr,...args]; 
+// ArrayConcat([1], [1, 2, 3, [4]]) -> [1, 1, 2, 3, [4]]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -213,11 +217,11 @@ const union = (a, b) => Array.from(new Set([...a, ...b]));
 
 ### Array without
 
-Use `Array.filter()` to create an array excluding all given values.
+Use `Array.filter()` to create an array excluding(using `!Array.includes()`) all given values.
 
 ```js
-const without = (arr, ...args) => arr.filter(v => args.indexOf(v) === -1);
-// without[2, 1, 2, 3], 1, 2) -> [3]
+const without = (arr, ...args) => arr.filter(v => !args.includes(v));
+// without([2, 1, 2, 3], 1, 2) -> [3]
 // without([2, 1, 2, 3, 4, 5, 5, 5, 3, 2, 7, 7], 3, 1, 5, 2) -> [ 4, 7, 7 ]
 ```
 
@@ -231,7 +235,7 @@ If lengths of the argument-arrays vary, `undefined` is used where no value could
 
 ```js
 const zip = (...arrays) => {
-  const maxLength = Math.max.apply(null, arrays.map(a => a.length));
+  const maxLength = Math.max(...arrays.map(x => x.length));
   return Array.from({length: maxLength}).map((_, i) => {
    return Array.from({length: arrays.length}, (_, k) => arrays[k][i]);
   })
@@ -434,7 +438,7 @@ You can omit `start` to use a default value of `0`.
 
 ```js
 const initializeArrayRange = (end, start = 0) =>
-  Array.apply(null, Array(end - start)).map((v, i) => i + start);
+  Array.from({ length: end - start }).map((v, i) => i + start);
 // initializeArrayRange(5) -> [0,1,2,3,4]
 ```
 
@@ -547,6 +551,17 @@ Return `arr.slice(1)` if the array's `length` is more than `1`, otherwise return
 const tail = arr => arr.length > 1 ? arr.slice(1) : arr;
 // tail([1,2,3]) -> [2,3]
 // tail([1]) -> [1]
+```
+
+[⬆ back to top](#table-of-contents)
+
+### Take every nth element
+
+Use `Array.filter()` to create a new array that contains every nth element of a given array.
+
+```js
+const everynth = (arr, nth) => arr.filter((e, i) => i % nth === 0);
+// everynth([1,2,3,4,5,6], 2) -> [ 1, 3, 5 ]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -707,6 +722,22 @@ chainAsync([
 
 [⬆ back to top](#table-of-contents)
 
+### Compose functions
+
+Use `Array.reduce()` to perform right-to-left function composition.
+The last (rightmost) function can accept one or more arguments; the remaining functions must be unary.
+
+```js
+const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));
+/*
+const add5 = x => x + 5
+const multiply = (x, y) => x * y
+const multiplyAndAdd5 = compose(add5, multiply)
+multiplyAndAdd5(5, 2) -> 15
+*/
+```
+[⬆ back to top](#table-of-contents)
+
 ### Curry
 
 Use recursion.
@@ -725,9 +756,9 @@ const curry = (fn, arity = fn.length, ...args) =>
 
 [⬆ back to top](#table-of-contents)
 
-### Pipe
+### Pipe functions
 
-Use `Array.reduce()` to perform left-to-right function composition.
+Use `Array.reduce()` with the spread operator (`...`) to perform left-to-right function composition.
 The first (leftmost) function can accept one or more arguments; the remaining functions must be unary.
 
 ```js
@@ -967,7 +998,29 @@ const speak = message => {
 [⬆ back to top](#table-of-contents)
 ## Node
 
-### Write a JSON to a file
+### Read file as array of lines
+
+Use `readFileSync` function in `fs` node package to create a `Buffer` from a file.
+convert buffer to string using `toString(encoding)` function.
+creating an array from contents of file by `split`ing file content line by line(each `\n`).
+
+  ```js
+const fs = require('fs');
+const readFileToArray = filename => fs.readFileSync(filename).toString('UTF8').split('\n');
+/*
+  contents of test.txt :
+    line1
+    line2
+    line3
+    ___________________________
+  let arr = readFileToArray('test.txt')
+  console.log(arr) // -> ['line1', 'line2', 'line3']
+ */
+```
+
+[⬆ back to top](#table-of-contents)
+
+### Write JSON to file
 
 Use `fs.writeFile()`, template literals and `JSON.stringify()` to write a `json` object to a `.json` file.
 
@@ -979,6 +1032,30 @@ const jsonToFile = (obj, filename) => fs.writeFile(`${filename}.json`, JSON.stri
 
 [⬆ back to top](#table-of-contents)
 ## Object
+
+### Clean JSON object
+
+Use `Object.keys()` method to loop over given json object and deleting keys that are not `include`d in given array.
+also if you give it a special key(`childIndicator`) it will search deeply inside it to apply function to inner objects too.
+
+```js
+const cleanObj = (obj, keysToKeep = [], childIndicator) => {
+  Object.keys(obj).forEach(key => {
+    if (key === childIndicator) {
+      cleanObj(obj[key], keysToKeep, childIndicator);
+    } else if (!keysToKeep.includes(key)) {
+      delete obj[key];
+    }
+  })
+}
+/*
+  testObj = {a: 1, b: 2, children: {a: 1, b: 2}}
+  cleanObj(testObj, ["a"],"children")
+  console.log(testObj)// { a: 1, children : { a: 1}}
+*/
+```
+
+[⬆ back to top](#table-of-contents)
 
 ### Object from key-value pairs
 
@@ -1113,6 +1190,20 @@ const truncate = (str, num) =>
 
 [⬆ back to top](#table-of-contents)
 ## Utility
+
+### 3-digit hexcode to 6-digit hexcode
+
+Use `Array.map()`, `split()` and `Array.join()` to join the mapped array for converting a three-digit RGB notated hexadecimal colorcode to the six-digit form.
+
+```js
+const convertHex = shortHex =>
+  shortHex[0] == '#' ? ('#' + shortHex.slice(1).split('').map(x => x+x).join('')) :
+    ('#' + shortHex.split('').map(x => x+x).join(''));
+// convertHex('#03f') -> '#0033ff'
+// convertHex('05a') -> '#0055aa'
+```
+
+[⬆ back to top](#table-of-contents)
 
 ### Escape regular expression
 
@@ -1296,17 +1387,6 @@ Convert given RGB parameters to hexadecimal string using bitwise left-shift oper
 ```js
 const rgbToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
 // rgbToHex(255, 165, 1) -> 'ffa501'
-```
-
-[⬆ back to top](#table-of-contents)
-
-### Swap values of two variables
-
-Use array destructuring to swap values between two variables.
-
-```js
-[varA, varB] = [varB, varA];
-// [x, y] = [y, x]
 ```
 
 [⬆ back to top](#table-of-contents)
