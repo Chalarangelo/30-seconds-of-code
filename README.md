@@ -116,6 +116,7 @@
 * [Is number](#is-number)
 * [Is string](#is-string)
 * [Is symbol](#is-symbol)
+* [JSON to date](#json-to-date)
 * [Measure time taken by function](#measure-time-taken-by-function)
 * [Number to array of digits](#number-to-array-of-digits)
 * [Ordinal suffix of number](#ordinal-suffix-of-number)
@@ -1307,6 +1308,20 @@ Use `typeof` to check if a value is classified as a symbol primitive.
 const isSymbol = val => typeof val === 'symbol';
 // isSymbol('x') -> false
 // isSymbol(Symbol('x')) -> true
+```
+
+[⬆ back to top](#table-of-contents)
+
+### JSON to date
+
+Use `Date()`, to convert dates in JSON format to readable format (`dd/mm/yyyy`).
+
+```js
+const jsonToDate = arr => {
+  const dt = new Date(parseInt(arr.toString().substr(6)));
+  return `${ dt.getDate() }/${ dt.getMonth() + 1 }/${ dt.getFullYear() }`
+};
+// jsonToDate(/Date(1489525200000)/) -> "14/3/2017"
 ```
 
 [⬆ back to top](#table-of-contents)
