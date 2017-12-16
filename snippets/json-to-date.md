@@ -1,7 +1,5 @@
-### Convert Json Date
+### JSON to date
  
-Convert dates coming from ajax as json to readable format
-Example: converts "/Date(1489525200000)/" to "15/2/2017"
  
  ```js
 cconst JsonToDate = arr =>
