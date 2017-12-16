@@ -1,6 +1,6 @@
 ### Validate email
 
-Use a regular experssion to check if the email is valid.
+Use a regular expression to check if the email is valid.
 Returns `true` if email is valid, `false` if not.
 
 ```js

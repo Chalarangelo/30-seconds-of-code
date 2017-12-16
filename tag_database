@@ -1,8 +1,13 @@
 anagrams-of-string-(with-duplicates):string
 array-concatenation:array
 array-difference:array
+array-includes:array
 array-intersection:array
+array-remove:array
+array-sample:array
 array-union:array
+array-without:array
+array-zip:array
 average-of-array-of-numbers:array
 bottom-visible:browser
 capitalize-first-letter-of-every-word:string
@@ -37,6 +42,7 @@ greatest-common-divisor-(GCD):math
 group-by:array
 hamming-distance:math
 head-of-list:array
+hexcode-to-RGB:utility
 initial-of-list:array
 initialize-array-with-range:array
 initialize-array-with-values:array
@@ -77,8 +83,8 @@ standard-deviation:math
 sum-of-array-of-numbers:array
 swap-values-of-two-variables:utility
 tail-of-list:array
+take-right:array
 take:array
-takeRight:array
 truncate-a-string:string
 unique-values-of-array:array
 URL-parameters:utility
@@ -86,4 +92,4 @@ UUID-generator:utility
 validate-email:utility
 validate-number:utility
 value-or-default:utility
-without:array
+write-json-to-file:node
