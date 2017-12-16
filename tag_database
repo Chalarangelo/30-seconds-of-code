@@ -97,5 +97,4 @@ URL-parameters:utility
 UUID-generator:utility
 validate-email:utility
 validate-number:utility
-value-or-default:utility
 write-JSON-to-file:node
