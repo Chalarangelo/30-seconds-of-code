@@ -49,6 +49,7 @@
 * [Similarity between arrays](#similarity-between-arrays)
 * [Sum of array of numbers](#sum-of-array-of-numbers)
 * [Tail of list](#tail-of-list)
+* [Take every nth element](#take-every-nth-element)
 * [Take right](#take-right)
 * [Take](#take)
 * [Unique values of array](#unique-values-of-array)
@@ -66,8 +67,9 @@
 
 ### Function
 * [Chain asynchronous functions](#chain-asynchronous-functions)
+* [Compose functions](#compose-functions)
 * [Curry](#curry)
-* [Pipe](#pipe)
+* [Pipe functions](#pipe-functions)
 * [Promisify](#promisify)
 * [Run promises in series](#run-promises-in-series)
 * [Sleep](#sleep)
@@ -90,6 +92,7 @@
 * [Speech synthesis (experimental)](#speech-synthesis-experimental)
 
 ### Node
+* [Read file as array of lines](#read-file-as-array-of-lines)
 * [Write JSON to file](#write-json-to-file)
 
 ### Object
@@ -107,6 +110,7 @@
 * [Truncate a string](#truncate-a-string)
 
 ### Utility
+* [3 digit hexcode to 6 digit hexcode](#3-digit-hexcode-to-6-digit-hexcode)
 * [Escape regular expression](#escape-regular-expression)
 * [Get native type of value](#get-native-type-of-value)
 * [Hexcode to RGB](#hexcode-to-rgb)
@@ -449,11 +453,11 @@ const anagrams = s => {
 [⬆ back to top](#table-of-contents)
 ### Array concatenation
 
-Use `Array.concat()` to concatenate an array with any additional arrays and/or values, specified in `args`.
+Use Array spread operators (`...`) to concatenate an array with any additional arrays and/or values, specified in `args`.
 
 ```js
-const ArrayConcat = (arr, ...args) => [].concat(arr, ...args); 
-// ArrayConcat([1], [1, 2, 3, [4]]) -> [1, 2, 3, [4]]
+const ArrayConcat = (arr, ...args) => [...arr,...args];
+// ArrayConcat([1], [1, 2, 3, [4]]) -> [1, 1, 2, 3, [4]]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -534,11 +538,11 @@ const union = (a, b) => Array.from(new Set([...a, ...b]));
 
 ### Array without
 
-Use `Array.filter()` to create an array excluding all given values.
+Use `Array.filter()` to create an array excluding(using `!Array.includes()`) all given values.
 
 ```js
-const without = (arr, ...args) => arr.filter(v => args.indexOf(v) === -1);
-// without[2, 1, 2, 3], 1, 2) -> [3]
+const without = (arr, ...args) => arr.filter(v => !args.includes(v));
+// without([2, 1, 2, 3], 1, 2) -> [3]
 // without([2, 1, 2, 3, 4, 5, 5, 5, 3, 2, 7, 7], 3, 1, 5, 2) -> [ 4, 7, 7 ]
 ```
 
@@ -552,7 +556,7 @@ If lengths of the argument-arrays vary, `undefined` is used where no value could
 
 ```js
 const zip = (...arrays) => {
-  const maxLength = Math.max.apply(null, arrays.map(a => a.length));
+  const maxLength = Math.max(...arrays.map(x => x.length));
   return Array.from({length: maxLength}).map((_, i) => {
    return Array.from({length: arrays.length}, (_, k) => arrays[k][i]);
   })
@@ -755,7 +759,7 @@ You can omit `start` to use a default value of `0`.
 
 ```js
 const initializeArrayRange = (end, start = 0) =>
-  Array.apply(null, Array(end - start)).map((v, i) => i + start);
+  Array.from({ length: end - start }).map((v, i) => i + start);
 // initializeArrayRange(5) -> [0,1,2,3,4]
 ```
 
@@ -802,7 +806,7 @@ const median = arr => {
 
 ### Nth element of array
 
-Use `Array.slice()` to get an array containing the nth element at the first place. 
+Use `Array.slice()` to get an array containing the nth element at the first place.
 If the index is out of bounds, return `[]`.
 Omit the second argument, `n`, to get the first element of the array.
 
@@ -868,6 +872,17 @@ Return `arr.slice(1)` if the array's `length` is more than `1`, otherwise return
 const tail = arr => arr.length > 1 ? arr.slice(1) : arr;
 // tail([1,2,3]) -> [2,3]
 // tail([1]) -> [1]
+```
+
+[⬆ back to top](#table-of-contents)
+
+### Take every nth element
+
+Use `Array.filter()` to create a new array that contains every nth element of a given array.
+
+```js
+const everynth = (arr, nth) => arr.filter((e, i) => i % nth === 0);
+// everynth([1,2,3,4,5,6], 2) -> [ 1, 3, 5 ]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1159,6 +1174,22 @@ chainAsync([
 
 [⬆ back to top](#table-of-contents)
 
+### Compose functions
+
+Use `Array.reduce()` to perform right-to-left function composition.
+The last (rightmost) function can accept one or more arguments; the remaining functions must be unary.
+
+```js
+const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));
+/*
+const add5 = x => x + 5
+const multiply = (x, y) => x * y
+const multiplyAndAdd5 = compose(add5, multiply)
+multiplyAndAdd5(5, 2) -> 15
+*/
+```
+[⬆ back to top](#table-of-contents)
+
 ### Curry
 
 Use recursion.
@@ -1177,243 +1208,9 @@ const curry = (fn, arity = fn.length, ...args) =>
 
 [⬆ back to top](#table-of-contents)
 
-Use `Array.map()` to map the values of an array to a function or property name.
-Use `Array.reduce()` to create an object, where the keys are produced from the mapped results.
+### Pipe functions
 
-```js
-const groupBy = (arr, func) =>
-  arr.map(typeof func === 'function' ? func : val => val[func])
-    .reduce((acc, val, i) => { acc[val] = (acc[val] || []).concat(arr[i]); return acc; }, {});
-// groupBy([6.1, 4.2, 6.3], Math.floor) -> {4: [4.2], 6: [6.1, 6.3]}
-// groupBy(['one', 'two', 'three'], 'length') -> {3: ['one', 'two'], 5: ['three']}
-```
-
-[⬆ back to top](#table-of-contents)
-### Hamming distance
-
-Use XOR operator (`^`) to find the bit difference between the two numbers, convert to binary string using `toString(2)`.
-Count and return the number of `1`s in the string, using `match(/1/g)`.
-
-```js
-const hammingDistance = (num1, num2) =>
-  ((num1 ^ num2).toString(2).match(/1/g) || '').length;
-// hammingDistance(2,3) -> 1
-```
-
-[⬆ back to top](#table-of-contents)
-### Head of list
-
-Use `arr[0]` to return the first element of the passed array.
-
-```js
-const head = arr => arr[0];
-// head([1,2,3]) -> 1
-```
-
-[⬆ back to top](#table-of-contents)
-### Initial of list
-
-Use `arr.slice(0,-1)`to return all but the last element of the array.
-
-```js
-const initial = arr => arr.slice(0, -1);
-// initial([1,2,3]) -> [1,2]
-```
-
-[⬆ back to top](#table-of-contents)
-### Initialize array with range
-
-Use `Array(end-start)` to create an array of the desired length, `Array.map()` to fill with the desired values in a range.
-You can omit `start` to use a default value of `0`.
-
-```js
-const initializeArrayRange = (end, start = 0) =>
-  Array.apply(null, Array(end - start)).map((v, i) => i + start);
-// initializeArrayRange(5) -> [0,1,2,3,4]
-```
-
-[⬆ back to top](#table-of-contents)
-### Initialize array with values
-
-Use `Array(n)` to create an array of the desired length, `fill(v)` to fill it with the desired values.
-You can omit `value` to use a default value of `0`.
-
-```js
-const initializeArray = (n, value = 0) => Array(n).fill(value);
-// initializeArray(5, 2) -> [2,2,2,2,2]
-```
-
-[⬆ back to top](#table-of-contents)
-### Is array
-
-Use `Array.isArray()` to check if a value is classified as an array.
-
-```js
-const isArray = val => val && Array.isArray(val);
-// isArray(null) -> false
-// isArray([1]) -> true
-```
-
-[⬆ back to top](#table-of-contents)
-### Is boolean
-
-Use `typeof` to check if a value is classified as a boolean primitive.
-
-```js
-const isBoolean = val => typeof val === 'boolean';
-// isBoolean(null) -> false
-// isBoolean(false) -> true
-```
-
-[⬆ back to top](#table-of-contents)
-### Is function
-
-Use `typeof` to check if a value is classified as a function primitive.
-
-```js
-const isFunction = val => val && typeof val === 'function';
-// isFunction('x') -> false
-// isFunction(x => x) -> true
-```
-
-[⬆ back to top](#table-of-contents)
-### Is number
-
-Use `typeof` to check if a value is classified as a number primitive.
-
-```js
-const isNumber = val => typeof val === 'number';
-// isNumber('1') -> false
-// isNumber(1) -> true
-```
-
-[⬆ back to top](#table-of-contents)
-### Is string
-
-Use `typeof` to check if a value is classified as a string primitive.
-
-```js
-const isString = val => typeof val === 'string';
-// isString(10) -> false
-// isString('10') -> true
-```
-
-[⬆ back to top](#table-of-contents)
-### Is symbol
-
-Use `typeof` to check if a value is classified as a symbol primitive.
-
-```js
-const isSymbol = val => typeof val === 'symbol';
-// isSymbol('x') -> false
-// isSymbol(Symbol('x')) -> true
-```
-
-[⬆ back to top](#table-of-contents)
-### Last of list
-
-Use `arr.slice(-1)[0]` to get the last element of the given array.
-
-```js
-const last = arr => arr.slice(-1)[0];
-// last([1,2,3]) -> 3
-```
-
-[⬆ back to top](#table-of-contents)
-### Measure time taken by function
-
-Use `performance.now()` to get start and end time for the function, `console.log()` the time taken.
-Pass a callback function as the argument.
-
-```js
-const timeTaken = callback => {
-  const t0 = performance.now(), r = callback();
-  console.log(performance.now() - t0);
-  return r;
-};
-// timeTaken(() => Math.pow(2, 10)) -> 1024 (0.010000000009313226 logged in console)
-```
-
-[⬆ back to top](#table-of-contents)
-### Median of array of numbers
-
-Find the middle of the array, use `Array.sort()` to sort the values.
-Return the number at the midpoint if `length` is odd, otherwise the average of the two middle numbers.
-
-```js
-const median = arr => {
-  const mid = Math.floor(arr.length / 2), nums = arr.sort((a, b) => a - b);
-  return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
-};
-// median([5,6,50,1,-5]) -> 5
-// median([0,10,-2,7]) -> 3.5
-```
-
-[⬆ back to top](#table-of-contents)
-### Object from key-value pairs
-
-Use `map()` to create objects for each key-value pair, combine with `Object.assign()`.
-
-```js
-const objectFromPairs = arr => arr.reduce((a, v) => (a[v[0]] = v[1], a), {});
-// objectFromPairs([['a',1],['b',2]]) -> {a: 1, b: 2}
-```
-
-[⬆ back to top](#table-of-contents)
-### Object to key-value pairs
-
-Use `Object.keys()` and `Array.map()` to iterate over the object's keys and produce an array with key-value pairs.
-
-```js
-const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
-// objectToPairs({a: 1, b: 2}) -> [['a',1],['b',2]])
-```
-
-[⬆ back to top](#table-of-contents)
-### Ordinal suffix of number
-
-Use the modulo operator (`%`) to find values of single and tens digits.
-Find which ordinal pattern digits match.
-If digit is found in teens pattern, use teens ordinal.
-
-```js
-const toOrdinalSuffix = num => {
-  const int = parseInt(num), digits = [(int % 10), (int % 100)],
-    ordinals = ["st", "nd", "rd", "th"], oPattern = [1,2,3,4],
-    tPattern = [11, 12, 13, 14, 15, 16, 17, 18, 19]
-  return oPattern.includes(digits[0]) && !tPattern.includes(digits[1]) ? int + ordinals[digits[0]-1] : int + ordinals[3];
-}
-// toOrdinalSuffix("123") -> "123rd"
-```
-
-[⬆ back to top](#table-of-contents)
-### Percentile
-
-Use `Array.reduce()` to calculate how many numbers are below the value and how many are the same value and
-apply the percentile formula.
-
-```js
-const percentile = (arr, val) =>
-  100 * arr.reduce((acc,v) => acc + (v < val ? 1 : 0) + (v === val ? 0.5 : 0), 0) / arr.length;
-// percentile([1,2,3,4,5,6,7,8,9,10], 6) -> 55
- ```
-
-[⬆ back to top](#table-of-contents)
-### Pick
-
-Use `Array.reduce()` to convert the filtered/picked keys back to a object with the corresponding key:value pair if the key exist in the obj.
-
-```js
-const pick = (obj, arr) =>
-  arr.reduce((acc, curr) => (curr in obj && (acc[curr] = obj[curr]), acc), {});
-// pick({ 'a': 1, 'b': '2', 'c': 3 }, ['a', 'c']) -> { 'a': 1, 'c': 3 }
-// pick(object, ['a', 'c'])['a'] -> 1
-```
-
-[⬆ back to top](#table-of-contents)
-### Pipe
-
-Use `Array.reduce()` to perform left-to-right function composition.
+Use `Array.reduce()` with the spread operator (`...`) to perform left-to-right function composition.
 The first (leftmost) function can accept one or more arguments; the remaining functions must be unary.
 
 ```js
@@ -1653,6 +1450,28 @@ const speak = message => {
 [⬆ back to top](#table-of-contents)
 ## Node
 
+### Read file as array of lines
+
+Use `readFileSync` function in `fs` node package to create a `Buffer` from a file.
+convert buffer to string using `toString(encoding)` function.
+creating an array from contents of file by `split`ing file content line by line(each `\n`).
+
+  ```js
+const fs = require('fs');
+const readFileToArray = filename => fs.readFileSync(filename).toString('UTF8').split('\n');
+/*
+  contents of test.txt :
+    line1
+    line2
+    line3
+    ___________________________
+  let arr = readFileToArray('test.txt')
+  console.log(arr) // -> ['line1', 'line2', 'line3']
+ */
+```
+
+[⬆ back to top](#table-of-contents)
+
 ### Write JSON to file
 
 Use `fs.writeFile()`, template literals and `JSON.stringify()` to write a `json` object to a `.json` file.
@@ -1800,6 +1619,20 @@ const truncate = (str, num) =>
 [⬆ back to top](#table-of-contents)
 ## Utility
 
+### 3-digit hexcode to 6-digit hexcode
+
+Use `Array.map()`, `split()` and `Array.join()` to join the mapped array for converting a three-digit RGB notated hexadecimal colorcode to the six-digit form.
+
+```js
+const convertHex = shortHex =>
+  shortHex[0] == '#' ? ('#' + shortHex.slice(1).split('').map(x => x+x).join('')) :
+    ('#' + shortHex.split('').map(x => x+x).join(''));
+// convertHex('#03f') -> '#0033ff'
+// convertHex('05a') -> '#0055aa'
+```
+
+[⬆ back to top](#table-of-contents)
+
 ### Escape regular expression
 
 Use `replace()` to escape special characters.
@@ -1926,7 +1759,7 @@ const timeTaken = callback => {
 ### Number to array of digits
 
 Convert the number to a string, use `split()` to convert build an array.
-Use `Array.map()` and `parseInt()` to transform each value to an integer. 
+Use `Array.map()` and `parseInt()` to transform each value to an integer.
 
 ```js
 const digitize = n => (''+n).split('').map(i => parseInt(i));

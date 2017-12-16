@@ -5,6 +5,6 @@ You can omit `start` to use a default value of `0`.
 
 ```js
 const initializeArrayRange = (end, start = 0) =>
-  Array.from({ length: end - start }).map((v, i) => i + start)
+  Array.from({ length: end - start }).map((v, i) => i + start);
 // initializeArrayRange(5) -> [0,1,2,3,4]
 ```
