@@ -101,6 +101,8 @@
 * [Capitalize first letter of every word](#capitalize-first-letter-of-every-word)
 * [Capitalize first letter](#capitalize-first-letter)
 * [Check for palindrome](#check-for-palindrome)
+* [Convert string from camelcase](#convert-string-from-camelcase)
+* [Convert string to camelcase](#convert-string-to-camelcase)
 * [Reverse a string](#reverse-a-string)
 * [Sort characters in string (alphabetical)](#sort-characters-in-string-alphabetical)
 * [Truncate a string](#truncate-a-string)
@@ -175,7 +177,7 @@ const remove = (arr, func) =>
     arr.splice(arr.indexOf(val), 1); return acc.concat(val);
     }, [])
   : [];
-//remove([1, 2, 3, 4], n => n % 2 == 0) -> [2, 4]
+// remove([1, 2, 3, 4], n => n % 2 == 0) -> [2, 4]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1149,6 +1151,37 @@ const palindrome = str => {
 }
 // palindrome('taco cat') -> true
  ```
+
+[⬆ back to top](#table-of-contents)
+
+### Convert string from camelcase
+
+Use `replace()` to remove underscores, hyphens and spaces and convert words to camelcase.
+Omit the scond argument to use a default separator of '_'.
+
+```js
+const fromCamelCase = (str, separator = '_') => 
+  str.replace(/([a-z\d])([A-Z])/g, '$1' + separator + '$2')
+    .replace(/([A-Z]+)([A-Z][a-z\d]+)/g, '$1' + separator + '$2').toLowerCase();
+// decamelize('someDatabaseFieldName', ' ') -> 'some database field name'
+// decamelize('someLabelThatNeedsToBeCamelized', '-') -> 'some-label-that-needs-to-be-camelized'
+// decamelize('someJavascriptProperty', '_') -> 'some_javascript_property'
+```
+
+[⬆ back to top](#table-of-contents)
+
+### Convert string to camelcase
+
+Use `replace()` to remove underscores, hyphens and spaces and convert words to camelcase.
+
+```js
+const toCamelCase = str => 
+  str.replace(/^([A-Z])|[\s-_]+(\w)/g, (match, p1, p2, offset) =>  p2 ? p2.toUpperCase() : p1.toLowerCase());
+// camelize("some_database_field_name") -> 'someDatabaseFieldName'
+// camelize("Some label that needs to be camelized") -> 'someLabelThatNeedsToBeCamelized'
+// camelize("some-javascript-property") -> 'someJavascriptProperty'
+// camelize("some-mixed_string with spaces_underscores-and-hyphens") -> 'someMixedStringWithSpacesUnderscoresAndHyphens'
+```
 
 [⬆ back to top](#table-of-contents)
 
