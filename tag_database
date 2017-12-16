@@ -67,6 +67,7 @@ powerset:math
 promisify:function
 random-integer-in-range:utility
 random-number-in-range:utility
+read-file-to-array:node
 redirect-to-URL:browser
 reverse-a-string:string
 RGB-to-hexadecimal:utility
@@ -85,6 +86,7 @@ swap-values-of-two-variables:utility
 tail-of-list:array
 take-right:array
 take:array
+take-every-nth-element:array
 truncate-a-string:string
 unique-values-of-array:array
 URL-parameters:utility
@@ -92,4 +94,4 @@ UUID-generator:utility
 validate-email:utility
 validate-number:utility
 value-or-default:utility
-write-json-to-file:node
+write-JSON-to-file:node
