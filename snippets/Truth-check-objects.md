@@ -9,10 +9,7 @@ Check if the predicate (second argument) is truthy on all elements of a collecti
  - Also if the object is empty then it will return false
  
  ```
- function truthCheck(collection, pre) {
-  // Is everyone being true?
-  return collection.every(obj => obj[pre]);
-}
+truthCheck = (collection, pre) => (collection.every(obj => obj[pre]));
 
 truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, 
 {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex"); 
