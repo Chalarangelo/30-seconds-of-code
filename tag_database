@@ -4,6 +4,7 @@ array-difference:array
 array-intersection:array
 array-remove:array
 array-sample:array
+array-symmetric-difference:array
 array-union:array
 array-without:array
 array-zip:array
