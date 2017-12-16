@@ -14,6 +14,7 @@
 * [Array intersection](#array-intersection)
 * [Array remove](#array-remove)
 * [Array sample](#array-sample)
+* [Array symmetric difference](#array-symmetric-difference)
 * [Array union](#array-union)
 * [Array without](#array-without)
 * [Array zip](#array-zip)
@@ -137,7 +138,7 @@ Create a `Set` from `b`, then use `Array.filter()` on `a` to only keep values no
 
 ```js
 const difference = (a, b) => { const s = new Set(b); return a.filter(x => !s.has(x)); };
-// difference([1,2,3], [1,2]) -> [3]
+// difference([1,2,3], [1,2,4]) -> [3]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -177,6 +178,20 @@ This method also works with strings.
 ```js
 const sample = arr => arr[Math.floor(Math.random() * arr.length)];
 // sample([3, 7, 9, 11]) -> 9
+```
+
+[⬆ back to top](#table-of-contents)
+
+### Array symmetric difference
+
+Create a `Set` from each array, then use `Array.filter()` on each of them to only keep values not contained in the other.
+
+```js
+const symmetricDifference = (a, b) => {
+  const sA = new Set(a), sB = new Set(b);
+  return [...a.filter(x => !sB.has(x)), ...b.filter(x => !sA.has(x))];
+}
+// symmetricDifference([1,2,3], [1,2,4]) -> [3,4]
 ```
 
 [⬆ back to top](#table-of-contents)
