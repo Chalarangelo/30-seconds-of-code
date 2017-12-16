@@ -1,15 +1,14 @@
 ### Compose functions
 
-Use the `...rest` operator to gather all function arguments into an array. Return a function which takes
-a single argument and uses `Array.reduceRight()` to return the result of applying each function.
+Use `Array.reduce()` to perform right-to-left function composition.
+The last (rightmost) function can accept one or more arguments; the remaining functions must be unary.
 
 ```js
-const compose = (...fns) => n => fns.reduceRight((acc, fn) => fn(acc), n);
+const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));
 /*
-const addOne = n => n + 1;
-const square = n => n * n;
-const double = n => n * 2;
-compose(addOne, square, double)(2) -> 17
-equivalent to: addOne(square(double(2)))
+const add5 = x => x + 5
+const multiply = (x, y) => x * y
+const multiplyAndAdd5 = compose(add5, multiply)
+multiplyAndAdd5(5, 2) -> 15
 */
 ```
