@@ -84,7 +84,6 @@ sort-characters-in-string-(alphabetical):string
 speech-synthesis-(experimental):media
 standard-deviation:math
 sum-of-array-of-numbers:array
-swap-values-of-two-variables:utility
 tail-of-list:array
 take-every-nth-element:array
 take-right:array

@@ -128,7 +128,6 @@
 * [Redirect to URL](#redirect-to-url)
 * [Reverse a string](#reverse-a-string)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
-* [Swap values of two variables](#swap-values-of-two-variables)
 * [URL parameters](#url-parameters)
 * [UUID generator](#uuid-generator)
 * [Validate email](#validate-email)
@@ -1815,17 +1814,6 @@ Convert given RGB parameters to hexadecimal string using bitwise left-shift oper
 ```js
 const rgbToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
 // rgbToHex(255, 165, 1) -> 'ffa501'
-```
-
-[⬆ back to top](#table-of-contents)
-
-### Swap values of two variables
-
-Use array destructuring to swap values between two variables.
-
-```js
-[varA, varB] = [varB, varA];
-// [x, y] = [y, x]
 ```
 
 [⬆ back to top](#table-of-contents)
