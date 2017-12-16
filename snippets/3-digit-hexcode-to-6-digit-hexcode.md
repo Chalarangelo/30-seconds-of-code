@@ -4,8 +4,7 @@ Use `Array.map()`, `split()` and `Array.join()` to join the mapped array for con
 
 ```js
 const convertHex = shortHex =>
-  shortHex[0] == '#' ? ('#' + shortHex.slice(1).split('').map(x => x+x).join('')) :
-    ('#' + shortHex.split('').map(x => x+x).join(''));
+  '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split().map(x => x+x).join()
 // convertHex('#03f') -> '#0033ff'
 // convertHex('05a') -> '#0055aa'
 ```
