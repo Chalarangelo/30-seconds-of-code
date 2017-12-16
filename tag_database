@@ -5,6 +5,7 @@ array-intersection:array
 array-union:array
 average-of-array-of-numbers:array
 bottom-visible:browser
+camelize:string
 capitalize-first-letter-of-every-word:string
 capitalize-first-letter:string
 chain-asynchronous-functions:function
@@ -15,6 +16,7 @@ compact:array
 count-occurrences-of-a-value-in-array:array
 current-URL:browser
 curry:function
+decamelize:string
 deep-flatten-array:array
 distance-between-two-points:math
 divisible-by-number:math
