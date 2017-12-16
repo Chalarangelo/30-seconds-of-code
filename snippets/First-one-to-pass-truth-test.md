@@ -3,9 +3,8 @@
 A function that looks through an array (first argument) and returns the first element in the array that passes a truth test (second argument).
 
 ```
-function findElement(arr, func) {
+findElement = (arr, func) => {
   filterArr = arr.filter(func); //filter array with the function provided
-
   return filterArr[0]; //return the first element that returns true, or undefined if no elements return true
 }
 
