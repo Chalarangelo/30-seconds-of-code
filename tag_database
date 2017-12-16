@@ -86,6 +86,7 @@ swap-values-of-two-variables:utility
 tail-of-list:array
 take-right:array
 take:array
+take-every-nth-element:array
 truncate-a-string:string
 unique-values-of-array:array
 URL-parameters:utility
