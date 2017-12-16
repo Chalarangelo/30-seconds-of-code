@@ -1,4 +1,4 @@
-### Read a file to an Array
+### Read file as array of lines
 
 Use `readFileSync` function in `fs` node package to create a `Buffer` from a file.
 convert buffer to string using `toString(encoding)` function.

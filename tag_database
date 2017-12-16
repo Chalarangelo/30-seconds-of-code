@@ -1,3 +1,4 @@
+3-digit-hexcode-to-6-digit-hexcode:utility
 anagrams-of-string-(with-duplicates):string
 array-concatenation:array
 array-difference:array
@@ -17,6 +18,7 @@ check-for-palindrome:string
 chunk-array:array
 collatz-algorithm:math
 compact:array
+compose-functions:function
 count-occurrences-of-a-value-in-array:array
 current-URL:browser
 curry:function
@@ -62,12 +64,12 @@ object-to-key-value-pairs:object
 ordinal-suffix-of-number:utility
 percentile:math
 pick:array
-pipe:function
+pipe-functions:function
 powerset:math
 promisify:function
 random-integer-in-range:utility
 random-number-in-range:utility
-read-file-to-array:node
+read-file-as-array-of-lines:node
 redirect-to-URL:browser
 reverse-a-string:string
 RGB-to-hexadecimal:utility
@@ -84,9 +86,9 @@ standard-deviation:math
 sum-of-array-of-numbers:array
 swap-values-of-two-variables:utility
 tail-of-list:array
+take-every-nth-element:array
 take-right:array
 take:array
-take-every-nth-element:array
 truncate-a-string:string
 unique-values-of-array:array
 URL-parameters:utility
