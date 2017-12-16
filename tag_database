@@ -92,4 +92,4 @@ UUID-generator:utility
 validate-email:utility
 validate-number:utility
 value-or-default:utility
-write-json-to-file:node
+write-JSON-to-file:node

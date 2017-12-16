@@ -85,7 +85,7 @@
 * [Speech synthesis (experimental)](#speech-synthesis-experimental)
 
 ### Node
-* [Write json to file](#write-a-json-to-a-file)
+* [Write JSON to file](#write-json-to-file)
 
 ### Object
 * [Object from key value pairs](#object-from-key-value-pairs)
