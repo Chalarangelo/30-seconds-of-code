@@ -56,6 +56,7 @@ is-string:utility
 is-symbol:utility
 JSON-to-date:utility
 last-of-list:array
+log-function-name:function
 measure-time-taken-by-function:utility
 median-of-array-of-numbers:array
 nth-element-of-array:array
