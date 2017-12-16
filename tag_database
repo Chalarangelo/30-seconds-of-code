@@ -55,6 +55,7 @@ is-function:utility
 is-number:utility
 is-string:utility
 is-symbol:utility
+JSON-to-date:utility
 last-of-list:array
 measure-time-taken-by-function:utility
 median-of-array-of-numbers:array
