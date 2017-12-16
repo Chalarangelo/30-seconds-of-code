@@ -12,8 +12,13 @@
 ### Array
 * [Array concatenation](#array-concatenation)
 * [Array difference](#array-difference)
+* [Array includes](#array-includes)
 * [Array intersection](#array-intersection)
+* [Array remove](#array-remove)
+* [Array sample](#array-sample)
 * [Array union](#array-union)
+* [Array without](#array-without)
+* [Array zip](#array-zip)
 * [Average of array of numbers](#average-of-array-of-numbers)
 * [Chunk array](#chunk-array)
 * [Compact](#compact)
@@ -39,6 +44,7 @@
 * [Similarity between arrays](#similarity-between-arrays)
 * [Sum of array of numbers](#sum-of-array-of-numbers)
 * [Tail of list](#tail-of-list)
+* [Take right](#take-right)
 * [Take](#take)
 * [Unique values of array](#unique-values-of-array)
 
@@ -78,6 +84,9 @@
 ### Media
 * [Speech synthesis (experimental)](#speech-synthesis-experimental)
 
+### Node
+* [Write json to file](#write-json-to-file)
+
 ### Object
 * [Object from key value pairs](#object-from-key-value-pairs)
 * [Object to key value pairs](#object-to-key-value-pairs)
@@ -95,6 +104,7 @@
 ### Utility
 * [Escape regular expression](#escape-regular-expression)
 * [Get native type of value](#get-native-type-of-value)
+* [Hexcode to RGB](#hexcode-to-rgb)
 * [Is array](#is-array)
 * [Is boolean](#is-boolean)
 * [Is function](#is-function)
@@ -121,8 +131,8 @@
 Use `Array.concat()` to concatenate an array with any additional arrays and/or values, specified in `args`.
 
 ```js
-const arrayConcat = (arr, ...args) => arr.concat(...args);
-// arrayConcat([1], 2, [3], [[4]]) -> [1,2,3,[4]]
+const ArrayConcat = (arr, ...args) => [].concat(arr, ...args); 
+// ArrayConcat([1], [1, 2, 3, [4]]) -> [1, 2, 3, [4]]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -138,6 +148,19 @@ const difference = (a, b) => { const s = new Set(b); return a.filter(x => !s.has
 
 [⬆ back to top](#table-of-contents)
 
+### Array includes
+
+Use `slice()` to offset the array/string and `indexOf()` to check if the value is included.
+Omit the last argument, `fromIndex`, to check the whole array/string.
+
+```js
+const includes = (collection, val, fromIndex=0) => collection.slice(fromIndex).indexOf(val) != -1;
+// includes("30-seconds-of-code", "code") -> true
+// includes([1, 2, 3, 4], [1, 2], 1) -> false
+```
+
+[⬆ back to top](#table-of-contents)
+
 ### Array intersection
 
 Create a `Set` from `b`, then use `Array.filter()` on `a` to only keep values contained in `b`.
@@ -149,6 +172,34 @@ const intersection = (a, b) => { const s = new Set(b); return a.filter(x => s.ha
 
 [⬆ back to top](#table-of-contents)
 
+### Array remove
+
+Use `Array.filter()` to find array elements that return truthy values and `Array.reduce()` to remove elements using `Array.splice()`.
+The `func` is invoked with three arguments (`value, index, array`).
+
+```js
+const remove = (arr, func) =>
+  Array.isArray(arr) ? arr.filter(func).reduce((acc, val) => {
+    arr.splice(arr.indexOf(val), 1); return acc.concat(val);
+    }, [])
+  : [];
+//remove([1, 2, 3, 4], n => n % 2 == 0) -> [2, 4]
+```
+
+[⬆ back to top](#table-of-contents)
+
+### Array sample
+
+Use `Math.random()` to generate a random number, multiply it with `length` and round it of to the nearest whole number using `Math.floor()`.
+This method also works with strings.
+
+```js
+const sample = arr => arr[Math.floor(Math.random() * arr.length)];
+// sample([3, 7, 9, 11]) -> 9
+```
+
+[⬆ back to top](#table-of-contents)
+
 ### Array union
 
 Create a `Set` with all values of `a` and `b` and convert to an array.
@@ -156,6 +207,37 @@ Create a `Set` with all values of `a` and `b` and convert to an array.
 ```js
 const union = (a, b) => Array.from(new Set([...a, ...b]));
 // union([1,2,3], [4,3,2]) -> [1,2,3,4]
+```
+
+[⬆ back to top](#table-of-contents)
+
+### Array without
+
+Use `Array.filter()` to create an array excluding all given values.
+
+```js
+const without = (arr, ...args) => arr.filter(v => args.indexOf(v) === -1);
+// without[2, 1, 2, 3], 1, 2) -> [3]
+// without([2, 1, 2, 3, 4, 5, 5, 5, 3, 2, 7, 7], 3, 1, 5, 2) -> [ 4, 7, 7 ]
+```
+
+[⬆ back to top](#table-of-contents)
+
+### Array zip
+
+Use `Math.max.apply()` to get the longest array in the arguments.
+Creates an array with that length as return value and use `Array.from()` with a map-function to create an array of grouped elements.
+If lengths of the argument-arrays vary, `undefined` is used where no value could be found.
+
+```js
+const zip = (...arrays) => {
+  const maxLength = Math.max.apply(null, arrays.map(a => a.length));
+  return Array.from({length: maxLength}).map((_, i) => {
+   return Array.from({length: arrays.length}, (_, k) => arrays[k][i]);
+  })
+}
+//zip(['a', 'b'], [1, 2], [true, false]); -> [['a', 1, true], ['b', 2, false]]
+//zip(['a'], [1, 2], [true, false]); -> [['a', 1, true], [undefined, 2, false]]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -180,7 +262,7 @@ If the original array can't be split evenly, the final chunk will contain the re
 ```js
 const chunk = (arr, size) =>
   Array.from({length: Math.ceil(arr.length / size)}, (v, i) => arr.slice(i * size, i * size + size));
-// chunk([1,2,3,4,5], 2) -> [[1,2],[3,4],5]
+// chunk([1,2,3,4,5], 2) -> [[1,2],[3,4],[5]]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -210,11 +292,11 @@ const countOccurrences = (arr, value) => arr.reduce((a, v) => v === value ? a + 
 ### Deep flatten array
 
 Use recursion.
-Use `Array.reduce()` to get all elements that are not arrays, flatten each element that is an array.
+Use `Array.concat()` with an empty array (`[]`) and the spread operator (`...`) to flatten an array.
+Recursively flatten each element that is an array.
 
 ```js
-const deepFlatten = arr =>
-  arr.reduce((a, v) => a.concat(Array.isArray(v) ? deepFlatten(v) : v), []);
+const deepFlatten = arr => [].concat(...arr.map(v => Array.isArray(v) ? deepFlatten(v) : v));
 // deepFlatten([1,[2],[[3],4],5]) -> [1,2,3,4,5]
 ```
 
@@ -469,6 +551,18 @@ const tail = arr => arr.length > 1 ? arr.slice(1) : arr;
 
 [⬆ back to top](#table-of-contents)
 
+### Take right
+
+Use `Array.slice()` to create a slice of the array with `n` elements taken from the end.
+
+```js
+const takeRight = (arr, n = 1) => arr.slice(arr.length - n, arr.length);
+// takeRight([1, 2, 3], 2) -> [ 2, 3 ]
+// takeRight([1, 2, 3]) -> [3]
+```
+
+[⬆ back to top](#table-of-contents)
+
 ### Take
 
 Use `Array.slice()` to create a slice of the array with `n` elements taken from the beginning.
@@ -633,11 +727,17 @@ const curry = (fn, arity = fn.length, ...args) =>
 
 ### Pipe
 
-Use `Array.reduce()` to pass value through functions.
+Use `Array.reduce()` to perform left-to-right function composition.
+The first (leftmost) function can accept one or more arguments; the remaining functions must be unary.
 
 ```js
-const pipe = (...funcs) => arg => funcs.reduce((acc, func) => func(acc), arg);
-// pipe(btoa, x => x.toUpperCase())("Test") -> "VGVZDA=="
+const pipe = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
+/*
+const add5 = x => x + 5
+const multiply = (x, y) => x * y
+const multiplyAndAdd5 = pipe(multiply, add5)
+multiplyAndAdd5(5, 2) -> 15
+*/
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -865,6 +965,19 @@ const speak = message => {
 ```
 
 [⬆ back to top](#table-of-contents)
+## Node
+
+### Write a JSON to a file
+
+Use `fs.writeFile()`, template literals and `JSON.stringify()` to write a `json` object to a `.json` file.
+
+```js
+const fs = require('fs');
+const jsonToFile = (obj, filename) => fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2))
+// jsonToFile({test: "is passed"}, 'testJsonFile') -> writes the object to 'testJsonFile.json'
+```
+
+[⬆ back to top](#table-of-contents)
 ## Object
 
 ### Object from key-value pairs
@@ -891,10 +1004,10 @@ const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
 
 ### Shallow clone object
 
-Use the object `...spread` operator to spread the properties of the target object into the clone.
+Use `Object.assign()` and an empty object (`{}`) to create a shallow clone of the original.
 
 ```js
-const shallowClone = obj => ({ ...obj });
+const shallowClone = obj => Object.assign({}, obj);
 /*
 const a = { x: true, y: 1 };
 const b = shallowClone(a);
@@ -936,12 +1049,13 @@ const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperC
 
 ### Capitalize first letter
 
-Use `slice(0,1)` and `toUpperCase()` to capitalize first letter, `slice(1)` to get the rest of the string.
+Use destructuring and `toUpperCase()` to capitalize first letter, `...rest` to get array of characters after first letter and then `Array.join('')` to make it a string again.
 Omit the `lowerRest` parameter to keep the rest of the string intact, or set it to `true` to convert to lower case.
 
 ```js
-const capitalize = (str, lowerRest = false) =>
-  str.slice(0, 1).toUpperCase() + (lowerRest ? str.slice(1).toLowerCase() : str.slice(1));
+const capitalize = ([first,...rest], lowerRest = false) =>
+  first.toUpperCase() + (lowerRest ? rest.join('').toLowerCase() : rest.join(''));
+// capitalize('myName') -> 'MyName'
 // capitalize('myName', true) -> 'Myname'
 ```
 
@@ -1019,6 +1133,17 @@ Returns lower-cased constructor name of value, "undefined" or "null" if value is
 const getType = v =>
   v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name.toLowerCase();
 // getType(new Set([1,2,3])) -> "set"
+```
+
+[⬆ back to top](#table-of-contents)
+
+### Hexcode to RGB
+
+Use `Array.slice()`, `Array.map()` and `match()` to convert a hexadecimal colorcode (prefixed with `#`) to a string with the RGB values.
+
+```js
+const hexToRgb = hex => `rgb(${hex.slice(1).match(/.{2}/g).map(x => parseInt(x, 16)).join()})`
+// hexToRgb('#27ae60') -> 'rgb(39,174,96)'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1217,7 +1342,7 @@ const uuid = _ =>
 
 ### Validate email
 
-Use a regular experssion to check if the email is valid.
+Use a regular expression to check if the email is valid.
 Returns `true` if email is valid, `false` if not.
 
 ```js
