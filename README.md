@@ -85,7 +85,7 @@
 * [Speech synthesis (experimental)](#speech-synthesis-experimental)
 
 ### Node
-* [Write json to file](#write-json-to-file)
+* [Write JSON to file](#write-json-to-file)
 
 ### Object
 * [Object from key value pairs](#object-from-key-value-pairs)
@@ -967,7 +967,7 @@ const speak = message => {
 [⬆ back to top](#table-of-contents)
 ## Node
 
-### Write a JSON to a file
+### Write JSON to file
 
 Use `fs.writeFile()`, template literals and `JSON.stringify()` to write a `json` object to a `.json` file.
 
