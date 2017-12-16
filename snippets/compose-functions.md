@@ -1,4 +1,4 @@
-### Compose
+### Compose functions
 
 Use `Array.reduce()` with the spread operator (`...`) to perform right-to-;eft function composition.
 The last (rightmost) function can accept one or more arguments; the remaining functions must be unary.
