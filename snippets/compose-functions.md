@@ -1,6 +1,6 @@
 ### Compose functions
 
-Use `Array.reduce()` with the spread operator (`...`) to perform right-to-;eft function composition.
+Use `Array.reduce()` to perform right-to-left function composition.
 The last (rightmost) function can accept one or more arguments; the remaining functions must be unary.
 
 ```js
