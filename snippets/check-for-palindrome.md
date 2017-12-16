@@ -1,7 +1,7 @@
 ### Check for palindrome
 
 Convert string `toLowerCase()` and use `replace()` to remove non-alphanumeric characters from it.
-Then, `split('')` into individual characters, `reverse()`, `join('')` and compare to the original, unreversed string, after converting it `tolowerCase()`.
+Then spread(`[...str]`) into individual characters array, `reverse()`, `join('')` and compare to the original, unreversed string.
 
 ```js
 const palindrome = str => {
