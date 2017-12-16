@@ -63,6 +63,7 @@
 * [Chain asynchronous functions](#chain-asynchronous-functions)
 * [Compose functions](#compose-functions)
 * [Curry](#curry)
+* [Log function name](#log-function-name)
 * [Pipe functions](#pipe-functions)
 * [Promisify](#promisify)
 * [Run promises in series](#run-promises-in-series)
@@ -739,6 +740,17 @@ const curry = (fn, arity = fn.length, ...args) =>
     : curry.bind(null, fn, arity, ...args);
 // curry(Math.pow)(2)(10) -> 1024
 // curry(Math.min, 3)(10)(50)(2) -> 2
+```
+
+[⬆ back to top](#table-of-contents)
+
+### Log function name
+
+Use `console.debug()` and the `name` property of the passed method to log the method's name to the `debug` channel of the console.
+
+```js
+const functionName = fn => (console.debug(fn.name), fn);
+// functionName(Math.max) -> max (logged in debug channel of console)
 ```
 
 [⬆ back to top](#table-of-contents)
