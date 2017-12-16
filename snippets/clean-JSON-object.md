@@ -1,4 +1,4 @@
-### Clean Json objects
+### Clean JSON object
 
 Use `Object.keys()` method to loop over given json object and deleting keys that are not `include`d in given array.
 also if you give it a special key(`childIndicator`) it will search deeply inside it to apply function to inner objects too.
@@ -7,9 +7,9 @@ also if you give it a special key(`childIndicator`) it will search deeply inside
 const cleanObj = (obj, keysToKeep = [], childIndicator) => {
   Object.keys(obj).forEach(key => {
     if (key === childIndicator) {
-      cleanObj(obj[key], keysToKeep, childIndicator)
+      cleanObj(obj[key], keysToKeep, childIndicator);
     } else if (!keysToKeep.includes(key)) {
-      delete obj[key]
+      delete obj[key];
     }
   })
 }

@@ -16,6 +16,7 @@ capitalize-first-letter:string
 chain-asynchronous-functions:function
 check-for-palindrome:string
 chunk-array:array
+clean-JSON-object:object
 collatz-algorithm:math
 compact:array
 compose-functions:function
