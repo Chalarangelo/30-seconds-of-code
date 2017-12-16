@@ -57,6 +57,7 @@
 
 ### Date
 * [Get days difference between dates](#get-days-difference-between-dates)
+* [JSON to date](#json-to-date)
 
 ### Function
 * [Chain asynchronous functions](#chain-asynchronous-functions)
@@ -79,6 +80,8 @@
 * [Hamming distance](#hamming-distance)
 * [Percentile](#percentile)
 * [Powerset](#powerset)
+* [Random integer in range](#random-integer-in-range)
+* [Random number in range](#random-number-in-range)
 * [Round number to n digits](#round-number-to-n-digits)
 * [Standard deviation](#standard-deviation)
 
@@ -117,12 +120,9 @@
 * [Is number](#is-number)
 * [Is string](#is-string)
 * [Is symbol](#is-symbol)
-* [JSON to date](#json-to-date)
 * [Measure time taken by function](#measure-time-taken-by-function)
 * [Number to array of digits](#number-to-array-of-digits)
 * [Ordinal suffix of number](#ordinal-suffix-of-number)
-* [Random integer in range](#random-integer-in-range)
-* [Random number in range](#random-number-in-range)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [URL parameters](#url-parameters)
 * [UUID generator](#uuid-generator)
@@ -681,6 +681,20 @@ const getDaysDiffBetweenDates = (dateInitial, dateFinal) => (dateFinal - dateIni
 ```
 
 [⬆ back to top](#table-of-contents)
+
+### JSON to date
+
+Use `Date()`, to convert dates in JSON format to readable format (`dd/mm/yyyy`).
+
+```js
+const jsonToDate = arr => {
+  const dt = new Date(parseInt(arr.toString().substr(6)));
+  return `${ dt.getDate() }/${ dt.getMonth() + 1 }/${ dt.getFullYear() }`
+};
+// jsonToDate(/Date(1489525200000)/) -> "14/3/2017"
+```
+
+[⬆ back to top](#table-of-contents)
 ## Function
 
 ### Chain asynchronous functions
@@ -931,6 +945,28 @@ Use `Array.reduce()` combined with `Array.map()` to iterate over elements and co
 const powerset = arr =>
   arr.reduce((a, v) => a.concat(a.map(r => [v].concat(r))), [[]]);
 // powerset([1,2]) -> [[], [1], [2], [2,1]]
+```
+
+[⬆ back to top](#table-of-contents)
+
+### Random integer in range
+
+Use `Math.random()` to generate a random number and map it to the desired range, using `Math.floor()` to make it an integer.
+
+```js
+const randomIntegerInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+// randomIntegerInRange(0, 5) -> 2
+```
+
+[⬆ back to top](#table-of-contents)
+
+### Random number in range
+
+Use `Math.random()` to generate a random value, map it to the desired range using multiplication.
+
+```js
+const randomInRange = (min, max) => Math.random() * (max - min) + min;
+// randomInRange(2,10) -> 6.0211363285087005
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1331,20 +1367,6 @@ const isSymbol = val => typeof val === 'symbol';
 
 [⬆ back to top](#table-of-contents)
 
-### JSON to date
-
-Use `Date()`, to convert dates in JSON format to readable format (`dd/mm/yyyy`).
-
-```js
-const jsonToDate = arr => {
-  const dt = new Date(parseInt(arr.toString().substr(6)));
-  return `${ dt.getDate() }/${ dt.getMonth() + 1 }/${ dt.getFullYear() }`
-};
-// jsonToDate(/Date(1489525200000)/) -> "14/3/2017"
-```
-
-[⬆ back to top](#table-of-contents)
-
 ### Measure time taken by function
 
 Use `console.time()` and `console.timeEnd()` to measure the difference between the start and end times to determine how long the callback took to execute.
@@ -1388,28 +1410,6 @@ const toOrdinalSuffix = num => {
   return oPattern.includes(digits[0]) && !tPattern.includes(digits[1]) ? int + ordinals[digits[0] - 1] : int + ordinals[3];
 };
 // toOrdinalSuffix("123") -> "123rd"
-```
-
-[⬆ back to top](#table-of-contents)
-
-### Random integer in range
-
-Use `Math.random()` to generate a random number and map it to the desired range, using `Math.floor()` to make it an integer.
-
-```js
-const randomIntegerInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-// randomIntegerInRange(0, 5) -> 2
-```
-
-[⬆ back to top](#table-of-contents)
-
-### Random number in range
-
-Use `Math.random()` to generate a random value, map it to the desired range using multiplication.
-
-```js
-const randomInRange = (min, max) => Math.random() * (max - min) + min;
-// randomInRange(2,10) -> 6.0211363285087005
 ```
 
 [⬆ back to top](#table-of-contents)
