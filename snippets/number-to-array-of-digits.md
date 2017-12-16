@@ -1,6 +1,6 @@
 ### Number to array of digits
 
-Convert the number to a string, use `split()` to convert build an array.
+Convert the number to a string, using spread operators in ES6(`[...string]`) build an array.
 Use `Array.map()` and `parseInt()` to transform each value to an integer. 
 
 ```js
