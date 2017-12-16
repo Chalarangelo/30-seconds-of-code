@@ -1,4 +1,4 @@
-### Take every nth element of an array
+### Take every nth element
 
 Use `Array.filter()` to create a new array that contains every nth element of a given array.
 
