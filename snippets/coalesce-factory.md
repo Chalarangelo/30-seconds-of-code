@@ -1,9 +1,11 @@
 ### Coalesce factory
 
-Returns a function which provides a customized coalesce function
+Returns a customized coalesce function that returns the first argument
+that returns true from the provided argument validation function.
 
 ```js
-const coalesceFactory = (excludes = [null, undefined]) => (...args) => args.find(_ => !excludes.includes(_))
-// const customCoalesce = coalesceFactory([null, undefined, "", NaN])
-// customCoalesce(undefined, null, NaN, "", "Waldo") -> "Waldo"
+const coalesceFactory = valid => (...args) => args.find(valid)
+
+// const customCoalesce = coalesceFactory(_ => ![null, undefined, "", NaN].includes(_))
+// customCoalesce(undefined, null, NaN, "", "Waldo") //-> "Waldo"
 ```
