@@ -1,4 +1,6 @@
-### Flatten array
+### flatten
+
+Flattens an array.
 
 Use `Array.reduce()` to get all elements inside the array and `concat()` to flatten them.
 

@@ -1,4 +1,6 @@
-### Compose functions
+### compose
+
+Performs right-to-left function composition.
 
 Use the `...rest` operator to gather all function arguments into an array. Return a function which takes
 a single argument and uses `Array.reduceRight()` to return the result of applying each function.

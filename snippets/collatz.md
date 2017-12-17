@@ -1,4 +1,6 @@
-### Collatz algorithm
+### collatz
+
+Applies the Collatz algorithm.
 
 If `n` is even, return `n/2`. Otherwise  return `3n+1`.
 
