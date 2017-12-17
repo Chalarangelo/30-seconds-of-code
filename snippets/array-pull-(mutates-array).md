@@ -5,7 +5,7 @@ Use `Array.length = 0` to mutate the passed in array by resetting it's length to
 
 ```js
 const pull = (arr, ...args) => {
-  let pulled = arr.filter((v, i) => args.includes(v));
+  let pulled = arr.filter((v, i) => !args.includes(v));
   arr.length = 0; pulled.forEach(v => arr.push(v));
 };
 // let myArray = ['a', 'b', 'c', 'a', 'b', 'c'];
