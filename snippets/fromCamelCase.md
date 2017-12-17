@@ -3,7 +3,7 @@
 Converts a string from camelcase.
 
 Use `replace()` to remove underscores, hyphens and spaces and convert words to camelcase.
-Omit the scond argument to use a default separator of `_`.
+Omit the second argument to use a default separator of `_`.
 
 ```js
 const fromCamelCase = (str, separator = '_') =>
