@@ -605,7 +605,7 @@ const unique = arr => [...new Set(arr)];
 Use `scrollY`, `scrollHeight` and `clientHeight` to determine if the bottom of the page is visible.
 
 ```js
-const bottomVisible = _ =>
+const bottomVisible = () =>
   document.documentElement.clientHeight + window.scrollY >= document.documentElement.scrollHeight || document.documentElement.clientHeight;
 // bottomVisible() -> true
 ```
@@ -617,7 +617,7 @@ const bottomVisible = _ =>
 Use `window.location.href` to get current URL.
 
 ```js
-const currentUrl = _ => window.location.href;
+const currentUrl = () => window.location.href;
 // currentUrl() -> 'https://google.com'
 ```
 
@@ -678,7 +678,7 @@ Get distance from top using `document.documentElement.scrollTop` or `document.bo
 Scroll by a fraction of the distance from top. Use `window.requestAnimationFrame()` to animate the scrolling.
 
 ```js
-const scrollToTop = _ => {
+const scrollToTop = () => {
   const c = document.documentElement.scrollTop || document.body.scrollTop;
   if (c > 0) {
     window.requestAnimationFrame(scrollToTop);
@@ -1499,7 +1499,7 @@ const getUrlParameters = url =>
 Use `crypto` API to generate a UUID, compliant with [RFC4122](https://www.ietf.org/rfc/rfc4122.txt) version 4.
 
 ```js
-const uuid = _ =>
+const uuid = () =>
   ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
     (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
   );
