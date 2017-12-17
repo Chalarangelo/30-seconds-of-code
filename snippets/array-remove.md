@@ -9,5 +9,5 @@ const remove = (arr, func) =>
     arr.splice(arr.indexOf(val), 1); return acc.concat(val);
     }, [])
   : [];
-//remove([1, 2, 3, 4], n => n % 2 == 0) -> [2, 4]
+// remove([1, 2, 3, 4], n => n % 2 == 0) -> [2, 4]
 ```

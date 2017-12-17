@@ -1,8 +1,8 @@
 ### Last of list
 
-Use `arr.slice(-1)[0]` to get the last element of the given array.
+Use `arr.length - 1` to compute index of the last element of the given array and returning it.
 
 ```js
-const last = arr => arr.slice(-1)[0];
+const last = arr => arr[arr.length - 1];
 // last([1,2,3]) -> 3
 ```
