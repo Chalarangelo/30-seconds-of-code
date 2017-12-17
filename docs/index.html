@@ -23,7 +23,7 @@
   </head>
   <body>
     <header>
-      <h1 class="logo" style="margin-top: -1rem; text-align:center;"><a style="text-decoration:none;color:black" href="https://github.com/Chalarangelo/30-seconds-of-code"><img src="favicon.png" style="height: 4rem;"/><span style="position:relative; top: -1rem;">&nbsp;30 seconds of code</span></a></h1>
+      <h1 class="logo" style="margin-top: -1rem; text-align:center;"><img src="favicon.png" style="height: 4rem;"/><span style="position:relative; top: -1rem;">&nbsp;30 seconds of code</span></h1>
       <label for="doc-drawer-checkbox" class="button drawer-toggle" style="position: absolute; right: 0; top: 0;"></label>
     </header>
     <div class="row" style="height: calc(100vh - 3.5625rem);overflow: hidden;">
@@ -934,12 +934,12 @@ Return the string truncated to the desired length, with <code>...</code> appende
 <p>Converts a colorcode to a <code>rgb()</code> string.</p>
 <p>Use bitwise right-shift operator and mask bits with <code>&amp;</code> (and) operator to convert a hexadecimal color code (prefixed with <code>#</code>) to a string with the RGB values. In case it's a 3-digit-colorcode, do the same with the 6-digit-colorcode extended by the extendHex() function (ref. <code>extendHex</code> snippet)</p>
 <pre><code class="language-js">const hexToRgb = hex =&gt; {
-  const extendHex = shortHex =&gt; 
+  const extendHex = shortHex =&gt;
     '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split('').map(x =&gt; x+x).join('');
-  return hex.slice(1).length==3 ? 
+  return hex.slice(1).length==3 ?
   `rgb(${parseInt(extendHex(hex).slice(1), 16) &gt;&gt; 16}, ${(parseInt(extendHex(hex).slice(1), 16) &amp; 0x00ff00) &gt;&gt; 8}, ${parseInt(extendHex(hex).slice(1), 16) &amp; 0x0000ff})`:
   `rgb(${parseInt(hex.slice(1), 16) &gt;&gt; 16}, ${(parseInt(hex.slice(1), 16) &amp; 0x00ff00) &gt;&gt; 8}, ${parseInt(hex.slice(1), 16) &amp; 0x0000ff})`;
-}   
+}
 // hexToRgb('#27ae60') -&gt; 'rgb(39, 174, 96)'
 // hexToRgb('#acd') -&gt; 'rgb(170, 204, 221)'
 </code></pre>
@@ -1042,8 +1042,7 @@ Use <code>Number()</code> to check if the coercion holds.</p>
 </div></div><br/>
         <footer><p><strong>30 seconds of code</strong> is licensed under the <a href="https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE">CC0-1.0</a> license.<br/>Icons made by <a href="https://www.flaticon.com/authors/smashicons">Smashicons</a> from <a href="https://www.flaticon.com/">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/">CC 3.0 BY</a>.</p></footer>
       </main>
-    </div>    
+    </div>
     <script src="prism.js"></script>
   </body>
 </html>
-
