@@ -34,7 +34,6 @@ escape-regular-expression:utility
 even-or-odd-number:math
 factorial:math
 fibonacci-array-generator:math
-fill-array:array
 filter-out-non-unique-values-in-an-array:array
 flatten-array-up-to-depth:array
 flatten-array:array
