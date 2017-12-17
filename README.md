@@ -10,12 +10,12 @@
 ## Table of Contents
 
 ### Array
-* [Array concatenation](#array-concatenation)
 * [Array difference](#array-difference)
-* [Array includes](#array-includes)
 * [Array intersection](#array-intersection)
+* [Array pull (mutates array)](#array-pull-mutates-array)
 * [Array remove](#array-remove)
 * [Array sample](#array-sample)
+* [Array symmetric difference](#array-symmetric-difference)
 * [Array union](#array-union)
 * [Array without](#array-without)
 * [Array zip](#array-zip)
@@ -25,7 +25,6 @@
 * [Count occurrences of a value in array](#count-occurrences-of-a-value-in-array)
 * [Deep flatten array](#deep-flatten-array)
 * [Drop elements in array](#drop-elements-in-array)
-* [Fill array](#fill-array)
 * [Filter out non unique values in an array](#filter-out-non-unique-values-in-an-array)
 * [Flatten array up to depth](#flatten-array-up-to-depth)
 * [Flatten array](#flatten-array)
@@ -58,12 +57,15 @@
 * [Scroll to top](#scroll-to-top)
 
 ### Date
+* [Convert to english date](#convert-to-english-date)
 * [Get days difference between dates](#get-days-difference-between-dates)
+* [JSON to date](#json-to-date)
 
 ### Function
 * [Chain asynchronous functions](#chain-asynchronous-functions)
 * [Compose functions](#compose-functions)
 * [Curry](#curry)
+* [Log function name](#log-function-name)
 * [Pipe functions](#pipe-functions)
 * [Promisify](#promisify)
 * [Run promises in series](#run-promises-in-series)
@@ -78,8 +80,11 @@
 * [Fibonacci array generator](#fibonacci-array-generator)
 * [Greatest common divisor (GCD)](#greatest-common-divisor-gcd)
 * [Hamming distance](#hamming-distance)
+* [Least common multiple (LCM)](#least-common-multiple-lcm)
 * [Percentile](#percentile)
 * [Powerset](#powerset)
+* [Random integer in range](#random-integer-in-range)
+* [Random number in range](#random-number-in-range)
 * [Round number to n digits](#round-number-to-n-digits)
 * [Standard deviation](#standard-deviation)
 
@@ -101,6 +106,8 @@
 * [Capitalize first letter of every word](#capitalize-first-letter-of-every-word)
 * [Capitalize first letter](#capitalize-first-letter)
 * [Check for palindrome](#check-for-palindrome)
+* [Convert string from camelcase](#convert-string-from-camelcase)
+* [Convert string to camelcase](#convert-string-to-camelcase)
 * [Reverse a string](#reverse-a-string)
 * [Sort characters in string (alphabetical)](#sort-characters-in-string-alphabetical)
 * [Truncate a string](#truncate-a-string)
@@ -119,27 +126,13 @@
 * [Measure time taken by function](#measure-time-taken-by-function)
 * [Number to array of digits](#number-to-array-of-digits)
 * [Ordinal suffix of number](#ordinal-suffix-of-number)
-* [Random integer in range](#random-integer-in-range)
-* [Random number in range](#random-number-in-range)
 * [RGB to hexadecimal](#rgb-to-hexadecimal)
 * [URL parameters](#url-parameters)
 * [UUID generator](#uuid-generator)
 * [Validate email](#validate-email)
 * [Validate number](#validate-number)
-* [Value or default](#value-or-default)
 
 ## Array
-
-### Array concatenation
-
-Use Array spread operators (`...`) to concatenate an array with any additional arrays and/or values, specified in `args`.
-
-```js
-const ArrayConcat = (arr, ...args) => [...arr,...args]; 
-// ArrayConcat([1], [1, 2, 3, [4]]) -> [1, 1, 2, 3, [4]]
-```
-
-[⬆ back to top](#table-of-contents)
 
 ### Array difference
 
@@ -147,20 +140,7 @@ Create a `Set` from `b`, then use `Array.filter()` on `a` to only keep values no
 
 ```js
 const difference = (a, b) => { const s = new Set(b); return a.filter(x => !s.has(x)); };
-// difference([1,2,3], [1,2]) -> [3]
-```
-
-[⬆ back to top](#table-of-contents)
-
-### Array includes
-
-Use `slice()` to offset the array/string and `indexOf()` to check if the value is included.
-Omit the last argument, `fromIndex`, to check the whole array/string.
-
-```js
-const includes = (collection, val, fromIndex=0) => collection.slice(fromIndex).indexOf(val) != -1;
-// includes("30-seconds-of-code", "code") -> true
-// includes([1, 2, 3, 4], [1, 2], 1) -> false
+// difference([1,2,3], [1,2,4]) -> [3]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -176,6 +156,23 @@ const intersection = (a, b) => { const s = new Set(b); return a.filter(x => s.ha
 
 [⬆ back to top](#table-of-contents)
 
+### Array pull (mutates array)
+
+Use `Array.filter()` and `Array.includes()` to pull out the values that are not needed. 
+Use `Array.length = 0` to mutate the passed in array by resetting it's length to zero and `Array.push()` to re-populate it with only the pulled values.
+
+```js
+const pull = (arr, ...args) => {
+  let pulled = arr.filter((v, i) => !args.includes(v));
+  arr.length = 0; pulled.forEach(v => arr.push(v));
+};
+// let myArray = ['a', 'b', 'c', 'a', 'b', 'c'];
+// pull(myArray, 'a', 'c');
+// console.log(myArray) -> [ 'b', 'b' ]
+```
+
+[⬆ back to top](#table-of-contents)
+
 ### Array remove
 
 Use `Array.filter()` to find array elements that return truthy values and `Array.reduce()` to remove elements using `Array.splice()`.
@@ -187,7 +184,7 @@ const remove = (arr, func) =>
     arr.splice(arr.indexOf(val), 1); return acc.concat(val);
     }, [])
   : [];
-//remove([1, 2, 3, 4], n => n % 2 == 0) -> [2, 4]
+// remove([1, 2, 3, 4], n => n % 2 == 0) -> [2, 4]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -200,6 +197,20 @@ This method also works with strings.
 ```js
 const sample = arr => arr[Math.floor(Math.random() * arr.length)];
 // sample([3, 7, 9, 11]) -> 9
+```
+
+[⬆ back to top](#table-of-contents)
+
+### Array symmetric difference
+
+Create a `Set` from each array, then use `Array.filter()` on each of them to only keep values not contained in the other.
+
+```js
+const symmetricDifference = (a, b) => {
+  const sA = new Set(a), sB = new Set(b);
+  return [...a.filter(x => !sB.has(x)), ...b.filter(x => !sA.has(x))];
+}
+// symmetricDifference([1,2,3], [1,2,4]) -> [3,4]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -276,7 +287,7 @@ const chunk = (arr, size) =>
 Use `Array.filter()` to filter out falsey values (`false`, `null`, `0`, `""`, `undefined`, and `NaN`).
 
 ```js
-const compact = (arr) => arr.filter(v => v);
+const compact = (arr) => arr.filter(Boolean);
 // compact([0, 1, false, 2, '', 3, 'a', 'e'*23, NaN, 's', 34]) -> [ 1, 2, 3, 'a', 's', 34 ]
 ```
 
@@ -317,19 +328,6 @@ const dropElements = (arr, func) => {
   return arr;
 };
 // dropElements([1, 2, 3, 4], n => n >= 3) -> [3,4]
-```
-
-[⬆ back to top](#table-of-contents)
-
-### Fill array
-
-Use `Array.map()` to map values between `start` (inclusive) and `end` (exclusive) to `value`.
-Omit `start` to start at the first element and/or `end` to finish at the last.
-
-```js
-const fillArray = (arr, value, start = 0, end = arr.length) =>
-  arr.map((v, i) => i >= start && i < end ? value : v);
-// fillArray([1,2,3,4],'8',1,3) -> [1,'8','8',4]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -458,10 +456,10 @@ const initializeArray = (n, value = 0) => Array(n).fill(value);
 
 ### Last of list
 
-Use `arr.slice(-1)[0]` to get the last element of the given array.
+Use `arr.length - 1` to compute index of the last element of the given array and returning it.
 
 ```js
-const last = arr => arr.slice(-1)[0];
+const last = arr => arr[arr.length - 1];
 // last([1,2,3]) -> 3
 ```
 
@@ -607,7 +605,7 @@ const unique = arr => [...new Set(arr)];
 Use `scrollY`, `scrollHeight` and `clientHeight` to determine if the bottom of the page is visible.
 
 ```js
-const bottomVisible = _ =>
+const bottomVisible = () =>
   document.documentElement.clientHeight + window.scrollY >= document.documentElement.scrollHeight || document.documentElement.clientHeight;
 // bottomVisible() -> true
 ```
@@ -619,7 +617,7 @@ const bottomVisible = _ =>
 Use `window.location.href` to get current URL.
 
 ```js
-const currentUrl = _ => window.location.href;
+const currentUrl = () => window.location.href;
 // currentUrl() -> 'https://google.com'
 ```
 
@@ -680,7 +678,7 @@ Get distance from top using `document.documentElement.scrollTop` or `document.bo
 Scroll by a fraction of the distance from top. Use `window.requestAnimationFrame()` to animate the scrolling.
 
 ```js
-const scrollToTop = _ => {
+const scrollToTop = () => {
   const c = document.documentElement.scrollTop || document.body.scrollTop;
   if (c > 0) {
     window.requestAnimationFrame(scrollToTop);
@@ -693,6 +691,19 @@ const scrollToTop = _ => {
 [⬆ back to top](#table-of-contents)
 ## Date
 
+### Convert to English date
+
+Use `Date.toISOString()`, `split('T')` and `replace()` to convert a date from American format to English format.
+Throws an error if the passed time cannot be converted to a date.
+
+```js
+const toEnglishDate  = (time) =>
+  {try{return new Date(time).toISOString().split('T')[0].replace(/-/g, '/')}catch(e){return}};
+// toEnglishDate('09/21/2010') -> '21/09/2010'
+```
+
+[⬆ back to top](#table-of-contents)
+
 ### Get days difference between dates
 
 Calculate the difference (in days) between to `Date` objects.
@@ -700,6 +711,20 @@ Calculate the difference (in days) between to `Date` objects.
 ```js
 const getDaysDiffBetweenDates = (dateInitial, dateFinal) => (dateFinal - dateInitial) / (1000 * 3600 * 24);
 // getDaysDiffBetweenDates(new Date("2017-12-13"), new Date("2017-12-22")) -> 9
+```
+
+[⬆ back to top](#table-of-contents)
+
+### JSON to date
+
+Use `Date()`, to convert dates in JSON format to readable format (`dd/mm/yyyy`).
+
+```js
+const jsonToDate = arr => {
+  const dt = new Date(parseInt(arr.toString().substr(6)));
+  return `${ dt.getDate() }/${ dt.getMonth() + 1 }/${ dt.getFullYear() }`
+};
+// jsonToDate(/Date(1489525200000)/) -> "14/3/2017"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -736,6 +761,7 @@ const multiplyAndAdd5 = compose(add5, multiply)
 multiplyAndAdd5(5, 2) -> 15
 */
 ```
+
 [⬆ back to top](#table-of-contents)
 
 ### Curry
@@ -752,6 +778,17 @@ const curry = (fn, arity = fn.length, ...args) =>
     : curry.bind(null, fn, arity, ...args);
 // curry(Math.pow)(2)(10) -> 1024
 // curry(Math.min, 3)(10)(50)(2) -> 2
+```
+
+[⬆ back to top](#table-of-contents)
+
+### Log function name
+
+Use `console.debug()` and the `name` property of the passed method to log the method's name to the `debug` channel of the console.
+
+```js
+const functionName = fn => (console.debug(fn.name), fn);
+// functionName(Math.max) -> max (logged in debug channel of console)
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -874,9 +911,12 @@ const isEven = num => num % 2 === 0;
 Use recursion.
 If `n` is less than or equal to `1`, return `1`.
 Otherwise, return the product of `n` and the factorial of `n - 1`.
+Throws an exception if `n` is a negative number.
 
 ```js
-const factorial = n => n <= 1 ? 1 : n * factorial(n - 1);
+const factorial = n =>
+  n < 0 ? (() => { throw new TypeError('Negative numbers are not allowed!') })()
+  : n <= 1 ? 1 : n * factorial(n - 1);
 // factorial(6) -> 720
 ```
 
@@ -921,6 +961,21 @@ const hammingDistance = (num1, num2) =>
 
 [⬆ back to top](#table-of-contents)
 
+### Least common multiple (LCM)
+
+Use the greatest common divisor (GCD) formula and `Math.abs()` to determine the least common multiple.
+The GCD formula uses recursion.
+
+```js
+const lcm = (x,y) => {
+  const gcd = (x, y) => !y ? x : gcd(y, x % y);
+  return Math.abs(x*y)/(gcd(x,y));
+};
+// lcm(12,7) -> 84
+```
+
+[⬆ back to top](#table-of-contents)
+
 ### Percentile
 
 Use `Array.reduce()` to calculate how many numbers are below the value and how many are the same value and
@@ -942,6 +997,28 @@ Use `Array.reduce()` combined with `Array.map()` to iterate over elements and co
 const powerset = arr =>
   arr.reduce((a, v) => a.concat(a.map(r => [v].concat(r))), [[]]);
 // powerset([1,2]) -> [[], [1], [2], [2,1]]
+```
+
+[⬆ back to top](#table-of-contents)
+
+### Random integer in range
+
+Use `Math.random()` to generate a random number and map it to the desired range, using `Math.floor()` to make it an integer.
+
+```js
+const randomIntegerInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+// randomIntegerInRange(0, 5) -> 2
+```
+
+[⬆ back to top](#table-of-contents)
+
+### Random number in range
+
+Use `Math.random()` to generate a random value, map it to the desired range using multiplication.
+
+```js
+const randomInRange = (min, max) => Math.random() * (max - min) + min;
+// randomInRange(2,10) -> 6.0211363285087005
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -981,7 +1058,7 @@ const standardDeviation = (arr, usePopulation = false) => {
 
 ### Speech synthesis (experimental)
 
-Use `SpeechSynthesisUtterance.voice` and `indow.speechSynthesis.getVoices()` to convert a message to speech.
+Use `SpeechSynthesisUtterance.voice` and `window.speechSynthesis.getVoices()` to convert a message to speech.
 Use `window.speechSynthesis.speak()` to play the message.
 
 Learn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
@@ -1153,6 +1230,37 @@ const palindrome = str => {
 
 [⬆ back to top](#table-of-contents)
 
+### Convert string from camelcase
+
+Use `replace()` to remove underscores, hyphens and spaces and convert words to camelcase.
+Omit the scond argument to use a default separator of '_'.
+
+```js
+const fromCamelCase = (str, separator = '_') => 
+  str.replace(/([a-z\d])([A-Z])/g, '$1' + separator + '$2')
+    .replace(/([A-Z]+)([A-Z][a-z\d]+)/g, '$1' + separator + '$2').toLowerCase();
+// fromCamelCase('someDatabaseFieldName', ' ') -> 'some database field name'
+// fromCamelCase('someLabelThatNeedsToBeCamelized', '-') -> 'some-label-that-needs-to-be-camelized'
+// fromCamelCase('someJavascriptProperty', '_') -> 'some_javascript_property'
+```
+
+[⬆ back to top](#table-of-contents)
+
+### Convert string to camelcase
+
+Use `replace()` to remove underscores, hyphens and spaces and convert words to camelcase.
+
+```js
+const toCamelCase = str => 
+  str.replace(/^([A-Z])|[\s-_]+(\w)/g, (match, p1, p2, offset) =>  p2 ? p2.toUpperCase() : p1.toLowerCase());
+// toCamelCase("some_database_field_name") -> 'someDatabaseFieldName'
+// toCamelCase("Some label that needs to be camelized") -> 'someLabelThatNeedsToBeCamelized'
+// toCamelCase("some-javascript-property") -> 'someJavascriptProperty'
+// toCamelCase("some-mixed_string with spaces_underscores-and-hyphens") -> 'someMixedStringWithSpacesUnderscoresAndHyphens'
+```
+
+[⬆ back to top](#table-of-contents)
+
 ### Reverse a string
 
 Use array destructuring and `Array.reverse()` to reverse the order of the characters in the string.
@@ -1193,12 +1301,11 @@ const truncate = (str, num) =>
 
 ### 3-digit hexcode to 6-digit hexcode
 
-Use `Array.map()`, `split()` and `Array.join()` to join the mapped array for converting a three-digit RGB notated hexadecimal colorcode to the six-digit form.
-
+Use `Array.map()`, `split()` and `Array.join()` to join the mapped array for converting a three-digit RGB notated hexadecimal color-code to the six-digit form.
+`Array.slice()` is used to remove `#` from string start since it's added once.
 ```js
 const convertHex = shortHex =>
-  shortHex[0] == '#' ? ('#' + shortHex.slice(1).split('').map(x => x+x).join('')) :
-    ('#' + shortHex.split('').map(x => x+x).join(''));
+  '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split().map(x => x+x).join()
 // convertHex('#03f') -> '#0033ff'
 // convertHex('05a') -> '#0055aa'
 ```
@@ -1230,11 +1337,14 @@ const getType = v =>
 
 ### Hexcode to RGB
 
-Use `Array.slice()`, `Array.map()` and `match()` to convert a hexadecimal colorcode (prefixed with `#`) to a string with the RGB values.
+Use bitwise right-shift operator and mask bits with `&` (and) operator to convert a hexadecimal color code (prefixed with `#`) to a string with the RGB values.
 
 ```js
-const hexToRgb = hex => `rgb(${hex.slice(1).match(/.{2}/g).map(x => parseInt(x, 16)).join()})`
-// hexToRgb('#27ae60') -> 'rgb(39,174,96)'
+const hexToRgb = hex => {
+  const h = parseInt(hex.slice(1), 16);
+  return `rgb(${h >> 16}, ${(h & 0x00ff00) >> 8}, ${h & 0x0000ff})`;
+}
+// hexToRgb('#27ae60') -> 'rgb(39, 174, 96)'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1330,11 +1440,11 @@ const timeTaken = callback => {
 
 ### Number to array of digits
 
-Convert the number to a string, use `split()` to convert build an array.
+Convert the number to a string, using spread operators in ES6(`[...string]`) build an array.
 Use `Array.map()` and `parseInt()` to transform each value to an integer. 
 
 ```js
-const digitize = n => (''+n).split('').map(i => parseInt(i));
+const digitize = n => [...''+n].map(i => parseInt(i));
 // digitize(2334) -> [2, 3, 3, 4]
 ```
 
@@ -1354,28 +1464,6 @@ const toOrdinalSuffix = num => {
   return oPattern.includes(digits[0]) && !tPattern.includes(digits[1]) ? int + ordinals[digits[0] - 1] : int + ordinals[3];
 };
 // toOrdinalSuffix("123") -> "123rd"
-```
-
-[⬆ back to top](#table-of-contents)
-
-### Random integer in range
-
-Use `Math.random()` to generate a random number and map it to the desired range, using `Math.floor()` to make it an integer.
-
-```js
-const randomIntegerInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-// randomIntegerInRange(0, 5) -> 2
-```
-
-[⬆ back to top](#table-of-contents)
-
-### Random number in range
-
-Use `Math.random()` to generate a random value, map it to the desired range using multiplication.
-
-```js
-const randomInRange = (min, max) => Math.random() * (max - min) + min;
-// randomInRange(2,10) -> 6.0211363285087005
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1411,7 +1499,7 @@ const getUrlParameters = url =>
 Use `crypto` API to generate a UUID, compliant with [RFC4122](https://www.ietf.org/rfc/rfc4122.txt) version 4.
 
 ```js
-const uuid = _ =>
+const uuid = () =>
   ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
     (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
   );
@@ -1442,17 +1530,6 @@ Use `Number()` to check if the coercion holds.
 ```js
 const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
 // validateNumber('10') -> true
-```
-
-[⬆ back to top](#table-of-contents)
-
-### Value or default
-
-Returns value, or default value if passed value is `falsy`.
-
-```js
-const valueOrDefault = (value, d) => value || d;
-// valueOrDefault(NaN, 30) -> 30
 ```
 
 [⬆ back to top](#table-of-contents)

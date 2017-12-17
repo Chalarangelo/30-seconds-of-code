@@ -1,6 +1,7 @@
 /*
   This is the linter script that lints snippets.
   Run using `npm run linter`.
+  You might have to run `npm i -g semistandard` for this script to run properly.
 */
 // Load modules
 const fs = require('fs-extra'), cp = require('child_process'), path = require('path'), chalk = require('chalk');

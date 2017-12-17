@@ -1,11 +1,11 @@
 3-digit-hexcode-to-6-digit-hexcode:utility
 anagrams-of-string-(with-duplicates):string
-array-concatenation:array
 array-difference:array
-array-includes:array
 array-intersection:array
+array-pull-(mutates-array):array
 array-remove:array
 array-sample:array
+array-symmetric-difference:array
 array-union:array
 array-without:array
 array-zip:array
@@ -20,6 +20,9 @@ clean-JSON-object:object
 collatz-algorithm:math
 compact:array
 compose-functions:function
+convert-string-from-camelcase:string
+convert-string-to-camelcase:string
+convert-to-english-date:date
 count-occurrences-of-a-value-in-array:array
 current-URL:browser
 curry:function
@@ -32,7 +35,6 @@ escape-regular-expression:utility
 even-or-odd-number:math
 factorial:math
 fibonacci-array-generator:math
-fill-array:array
 filter-out-non-unique-values-in-an-array:array
 flatten-array-up-to-depth:array
 flatten-array:array
@@ -55,7 +57,10 @@ is-function:utility
 is-number:utility
 is-string:utility
 is-symbol:utility
+JSON-to-date:date
 last-of-list:array
+least-common-multiple-(LCM):math
+log-function-name:function
 measure-time-taken-by-function:utility
 median-of-array-of-numbers:array
 nth-element-of-array:array
@@ -68,8 +73,8 @@ pick:array
 pipe-functions:function
 powerset:math
 promisify:function
-random-integer-in-range:utility
-random-number-in-range:utility
+random-integer-in-range:math
+random-number-in-range:math
 read-file-as-array-of-lines:node
 redirect-to-URL:browser
 reverse-a-string:string
@@ -95,5 +100,4 @@ URL-parameters:utility
 UUID-generator:utility
 validate-email:utility
 validate-number:utility
-value-or-default:utility
 write-JSON-to-file:node

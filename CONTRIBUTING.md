@@ -29,6 +29,7 @@ Here's what you can do to help:
   - Try to keep your snippets' code short and to the point. Use modern techniques and features. Make sure to test your code before submitting.
   - All snippets must be followed by one (more if necessary) test case after the code, on a new line, in the form of a comment, along with the expected output. The syntax for this is `myFunction('testInput') -> 'testOutput'`. Use multiline comments only if necessary.
   - Try to make your function name unique, so that it does not conflict with existing snippets.
+  - Snippet functions do not have to handle errors in input, unless it's necessary (e.g. a mathematical function that cannot be extended to negative numbers should handle negative input appropriately).
 - Snippets should be short (usually below 10 lines). If your snippet is longer than that, you can still submit it, and we can help you shorten it or figure out ways to improve it.
 - Snippets *should* solve real-world problems, no matter how simple.
 - Snippets *should* be abstract enough to be applied to different scenarios.
@@ -54,7 +55,8 @@ Here's what you can do to help:
   - `i` for indexes.
   - `func` for function arguments.
   - `nums` for arrays of numbers.
-- Use `_` if your function takes no arguments or if an argument inside some function (e.g. `Array.reduce()`) is not used anywhere in your code.
+- Use `()` if your function takes no arguments.
+- Use `_` if an argument inside some function (e.g. `Array.reduce()`) is not used anywhere in your code.
 - Specify default parameters for arguments, if necessary. It is preferred to put default parameters last unless you have pretty good reason not to.
 - If your snippet's function takes variadic arguments, use `..args` (although in certain cases, it might be needed to use a different name).
 - If your snippet function's body is a single statement, omit the `return` keyword and use an expression instead.
