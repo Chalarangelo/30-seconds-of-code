@@ -55,7 +55,8 @@ Here's what you can do to help:
   - `i` for indexes.
   - `func` for function arguments.
   - `nums` for arrays of numbers.
-- Use `()` if your function takes no arguments or if an argument inside some function (e.g. `Array.reduce()`) is not used anywhere in your code.
+- Use `()` if your function takes no arguments.
+- Use `_` if an argument inside some function (e.g. `Array.reduce()`) is not used anywhere in your code.
 - Specify default parameters for arguments, if necessary. It is preferred to put default parameters last unless you have pretty good reason not to.
 - If your snippet's function takes variadic arguments, use `..args` (although in certain cases, it might be needed to use a different name).
 - If your snippet function's body is a single statement, omit the `return` keyword and use an expression instead.
