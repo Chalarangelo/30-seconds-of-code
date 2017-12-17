@@ -1,8 +1,18 @@
 ### Array union
 
-Create a `Set` with all values of `a` and `b` and convert to an array.
+Create a new array with unique values
 
 ```js
-const union = (a, b) => Array.from(new Set([...a, ...b]));
-// union([1,2,3], [4,3,2]) -> [1,2,3,4]
+const union = function() {
+  const arr = [...arguments];
+  
+  return arr.length ? arr
+    .reduce((val, sum) => sum = [...val, ...sum])
+    .filter((val, i, arr) => arr.indexOf(val) === i) : [];
+}
+
+
+console.log(union([], [1,2,3,4], [1000], [3,4,5])); // [1,2,3,4,1000,5]
+console.log(union(10, 10, 100)); // [10, 100]
+console.log(union()); // []
 ```
