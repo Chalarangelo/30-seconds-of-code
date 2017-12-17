@@ -15,7 +15,7 @@ const readFileLines = filename => fs.readFileSync(filename).toString('UTF8').spl
     line2
     line3
     ___________________________
-  let arr = readFileToArray('test.txt')
+  let arr = readFileLines('test.txt')
   console.log(arr) // -> ['line1', 'line2', 'line3']
  */
 ```
