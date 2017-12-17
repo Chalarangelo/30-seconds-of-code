@@ -2,6 +2,7 @@
 anagrams-of-string-(with-duplicates):string
 array-difference:array
 array-intersection:array
+array-pull-(mutates-array):array
 array-remove:array
 array-sample:array
 array-symmetric-difference:array
@@ -56,8 +57,9 @@ is-function:utility
 is-number:utility
 is-string:utility
 is-symbol:utility
-json-to-date:
+JSON-to-date:date
 last-of-list:array
+least-common-multiple-(LCM):math
 log-function-name:function
 measure-time-taken-by-function:utility
 median-of-array-of-numbers:array
@@ -71,7 +73,6 @@ pick:array
 pipe-functions:function
 powerset:math
 promisify:function
-pull:array
 random-integer-in-range:math
 random-number-in-range:math
 read-file-as-array-of-lines:node
@@ -99,4 +100,4 @@ URL-parameters:utility
 UUID-generator:utility
 validate-email:utility
 validate-number:utility
-write-json-to-file:
+write-JSON-to-file:node
