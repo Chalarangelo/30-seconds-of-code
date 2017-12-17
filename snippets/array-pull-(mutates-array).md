@@ -1,8 +1,7 @@
 ### Array pull (mutates array)
 
-Use `Array.filter()` to pull out the values that are not needed. 
-Use `Array.length = 0` to mutate the passed in array by resetting it's length to zero.
-Use `Array.push()` to re-populate the original array to equal the pulled values
+Use `Array.filter()` and `Array.includes()` to pull out the values that are not needed. 
+Use `Array.length = 0` to mutate the passed in array by resetting it's length to zero and `Array.push()` to re-populate it with only the pulled values.
 
 ```js
 const pull = (arr, ...args) => {
