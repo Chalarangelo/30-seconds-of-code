@@ -1,8 +1,10 @@
-### Current URL
+### currentURL
+
+Returns the current URL.
 
 Use `window.location.href` to get current URL.
 
 ```js
-const currentUrl = () => window.location.href;
+const currentURL = () => window.location.href;
 // currentUrl() -> 'https://google.com'
 ```

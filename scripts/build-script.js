@@ -55,7 +55,7 @@ try {
   for(let tag of [...new Set(Object.entries(tagDbData).map(t => t[1]))].filter(v => v).sort((a,b) => a.localeCompare(b))){
     output +=`### ${capitalize(tag, true)}\n`;
     for(let taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag))
-      output += `* [${taggedSnippet[0][0].toUpperCase() + taggedSnippet[0].replace(/-/g,' ').slice(1)}](#${taggedSnippet[0].replace(/\(/g,'').replace(/\)/g,'').toLowerCase()})\n`
+      output += `* [\`${taggedSnippet[0]}\`](#${taggedSnippet[0].toLowerCase()})\n`
     output += '\n';
   }
   // Loop over tags and snippets to create the list of snippets

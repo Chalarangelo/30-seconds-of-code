@@ -1,4 +1,6 @@
-### Snippet title
+### functionName
+
+Explain briefly what the snippet does.
 
 Explain briefly how the snippet works.
 
