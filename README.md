@@ -238,7 +238,7 @@ Use ES6 `Set` and the `...rest` operator to discard all duplicated values.
 
 ```js
 const distinctValuesOfArray = arr => [...new Set(arr)];
-// unique([1,2,2,3,4,4,5]) -> [1,2,3,4,5]
+// distinctValuesOfArray([1,2,2,3,4,4,5]) -> [1,2,3,4,5]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -268,7 +268,7 @@ Use `Array.filter()` to create a new array that contains every nth element of a 
 
 ```js
 const everyNth = (arr, nth) => arr.filter((e, i) => i % nth === 0);
-// everynth([1,2,3,4,5,6], 2) -> [ 1, 3, 5 ]
+// everyNth([1,2,3,4,5,6], 2) -> [ 1, 3, 5 ]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -370,7 +370,7 @@ You can omit `start` to use a default value of `0`.
 ```js
 const initializeArrayWithRange = (end, start = 0) =>
   Array.from({ length: end - start }).map((v, i) => i + start);
-// initializeArrayRange(5) -> [0,1,2,3,4]
+// initializeArrayWithRange(5) -> [0,1,2,3,4]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -384,7 +384,7 @@ You can omit `value` to use a default value of `0`.
 
 ```js
 const initializeArrayWithValues = (n, value = 0) => Array(n).fill(value);
-// initializeArray(5, 2) -> [2,2,2,2,2]
+// initializeArrayWithValues(5, 2) -> [2,2,2,2,2]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -690,7 +690,7 @@ You can omit `el` to use a default value of `window`.
 const getScrollPosition = (el = window) =>
   ({x: (el.pageXOffset !== undefined) ? el.pageXOffset : el.scrollLeft,
     y: (el.pageYOffset !== undefined) ? el.pageYOffset : el.scrollTop});
-// getScrollPos() -> {x: 0, y: 200}
+// getScrollPosition() -> {x: 0, y: 200}
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -707,7 +707,7 @@ const getURLParameters = url =>
   url.match(/([^?=&]+)(=([^&]*))/g).reduce(
     (a, v) => (a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1), a), {}
   );
-// getUrlParameters('http://url.com/page?name=Adam&surname=Smith') -> {name: 'Adam', surname: 'Smith'}
+// getURLParameters('http://url.com/page?name=Adam&surname=Smith') -> {name: 'Adam', surname: 'Smith'}
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -772,7 +772,7 @@ const JSONToDate = arr => {
   const dt = new Date(parseInt(arr.toString().substr(6)));
   return `${ dt.getDate() }/${ dt.getMonth() + 1 }/${ dt.getFullYear() }`
 };
-// jsonToDate(/Date(1489525200000)/) -> "14/3/2017"
+// JSONToDate(/Date(1489525200000)/) -> "14/3/2017"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -876,7 +876,7 @@ const pipeFunctions = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)
 /*
 const add5 = x => x + 5
 const multiply = (x, y) => x * y
-const multiplyAndAdd5 = pipe(multiply, add5)
+const multiplyAndAdd5 = pipeFunctions(multiply, add5)
 multiplyAndAdd5(5, 2) -> 15
 */
 ```
@@ -914,7 +914,7 @@ Use `Array.reduce()` to create a promise chain, where each promise returns the n
 ```js
 const runPromisesInSeries = ps => ps.reduce((p, next) => p.then(next), Promise.resolve());
 // const delay = (d) => new Promise(r => setTimeout(r, d))
-// series([() => delay(1000), () => delay(2000)]) -> executes each promise sequentially, taking a total of 3 seconds to complete
+// runPromisesInSeries([() => delay(1000), () => delay(2000)]) -> executes each promise sequentially, taking a total of 3 seconds to complete
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -947,7 +947,7 @@ Use `Array.reduce()` to add each value to an accumulator, initialized with a val
 
 ```js
 const arrayAverage = arr => arr.reduce((acc, val) => acc + val, 0) / arr.length;
-// average([1,2,3]) -> 2
+// arrayAverage([1,2,3]) -> 2
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -960,7 +960,7 @@ Use `Array.reduce()` to add each value to an accumulator, initialized with a val
 
 ```js
 const arraySum = arr => arr.reduce((acc, val) => acc + val, 0);
-// sum([1,2,3,4]) -> 10
+// arraySum([1,2,3,4]) -> 10
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1197,7 +1197,7 @@ Use `Math.random()` to generate a random value, map it to the desired range usin
 
 ```js
 const randomNumberInRange = (min, max) => Math.random() * (max - min) + min;
-// randomInRange(2,10) -> 6.0211363285087005
+// randomNumberInRange(2,10) -> 6.0211363285087005
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1254,7 +1254,7 @@ const speechSynthesis = message => {
   msg.voice = window.speechSynthesis.getVoices()[0];
   window.speechSynthesis.speak(msg);
 };
-// speak('Hello, World') -> plays the message
+// speechSynthesis('Hello, World') -> plays the message
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1269,7 +1269,7 @@ Use `fs.writeFile()`, template literals and `JSON.stringify()` to write a `json`
 ```js
 const fs = require('fs');
 const JSONToFile = (obj, filename) => fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2))
-// jsonToFile({test: "is passed"}, 'testJsonFile') -> writes the object to 'testJsonFile.json'
+// JSONToFile({test: "is passed"}, 'testJsonFile') -> writes the object to 'testJsonFile.json'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1291,7 +1291,7 @@ const readFileLines = filename => fs.readFileSync(filename).toString('UTF8').spl
     line2
     line3
     ___________________________
-  let arr = readFileToArray('test.txt')
+  let arr = readFileLines('test.txt')
   console.log(arr) // -> ['line1', 'line2', 'line3']
  */
 ```
@@ -1317,7 +1317,7 @@ const cleanObj = (obj, keysToKeep = [], childIndicator) => {
   })
 }
 /*
-  testObj = {a: 1, b: 2, children: {a: 1, b: 2}}
+  const testObj = {a: 1, b: 2, children: {a: 1, b: 2}}
   cleanObj(testObj, ["a"],"children")
   console.log(testObj)// { a: 1, children : { a: 1}}
 */
@@ -1504,7 +1504,7 @@ Return the string truncated to the desired length, with `...` appended to the en
 ```js
 const truncateString = (str, num) =>
   str.length > num ? str.slice(0, num > 3 ? num - 3 : num) + '...' : str;
-// truncate('boomerang', 7) -> 'boom...'
+// truncateString('boomerang', 7) -> 'boom...'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1519,8 +1519,8 @@ Use `Array.map()`, `split()` and `Array.join()` to join the mapped array for con
 ```js
 const extendHex = shortHex =>
   '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split('').map(x => x+x).join('')
-// convertHex('#03f') -> '#0033ff'
-// convertHex('05a') -> '#0055aa'
+// extendHex('#03f') -> '#0033ff'
+// extendHex('05a') -> '#0055aa'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1651,7 +1651,7 @@ Convert given RGB parameters to hexadecimal string using bitwise left-shift oper
 
 ```js
 const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
-// rgbToHex(255, 165, 1) -> 'ffa501'
+// RGBToHex(255, 165, 1) -> 'ffa501'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1704,7 +1704,7 @@ const UUIDGenerator = () =>
   ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
     (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
   );
-// uuid() -> '7982fcfe-5721-4632-bede-6000885be57d'
+// UUIDGenerator() -> '7982fcfe-5721-4632-bede-6000885be57d'
 ```
 
 [⬆ back to top](#table-of-contents)
