@@ -6,5 +6,5 @@ Use `Array.reduce()` to add each value to an accumulator, initialized with a val
 
 ```js
 const arraySum = arr => arr.reduce((acc, val) => acc + val, 0);
-// sum([1,2,3,4]) -> 10
+// arraySum([1,2,3,4]) -> 10
 ```

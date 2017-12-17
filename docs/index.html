@@ -23,7 +23,7 @@
   </head>
   <body>
     <header>
-      <h1 class="logo" style="margin-top: -1rem; text-align:center;"><img src="favicon.png" style="height: 4rem;"/><span style="position:relative; top: -1rem;">&nbsp;30 seconds of code</span></h1>
+      <h1 class="logo" style="margin-top: -1rem; text-align:center;"><a style="text-decoration:none;color:black" href="https://github.com/Chalarangelo/30-seconds-of-code"><img src="favicon.png" style="height: 4rem;"/><span style="position:relative; top: -1rem;">&nbsp;30 seconds of code</span></a></h1>
       <label for="doc-drawer-checkbox" class="button drawer-toggle" style="position: absolute; right: 0; top: 0;"></label>
     </header>
     <div class="row" style="height: calc(100vh - 3.5625rem);overflow: hidden;">
@@ -207,7 +207,7 @@ Recursively flatten each element that is an array.</p>
 <p>Returns all the distinct values of an array.</p>
 <p>Use ES6 <code>Set</code> and the <code>...rest</code> operator to discard all duplicated values.</p>
 <pre><code class="language-js">const distinctValuesOfArray = arr =&gt; [...new Set(arr)];
-// unique([1,2,2,3,4,4,5]) -&gt; [1,2,3,4,5]
+// distinctValuesOfArray([1,2,2,3,4,4,5]) -&gt; [1,2,3,4,5]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="dropelements">dropElements</h3></div><div class="section double-padded">
 <p>Removes elements in an array until the passed function returns <code>true</code>. Returns the remaining elements in the array.</p>
@@ -223,7 +223,7 @@ Returns the remaining elements.</p>
 <p>Returns every nth element in an array.</p>
 <p>Use <code>Array.filter()</code> to create a new array that contains every nth element of a given array.</p>
 <pre><code class="language-js">const everyNth = (arr, nth) =&gt; arr.filter((e, i) =&gt; i % nth === 0);
-// everynth([1,2,3,4,5,6], 2) -&gt; [ 1, 3, 5 ]
+// everyNth([1,2,3,4,5,6], 2) -&gt; [ 1, 3, 5 ]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="filternonunique">filterNonUnique</h3></div><div class="section double-padded">
 <p>Filters out the non-unique values in an array.</p>
@@ -276,14 +276,14 @@ Use <code>Array.reduce()</code> to create an object, where the keys are produced
 You can omit <code>start</code> to use a default value of <code>0</code>.</p>
 <pre><code class="language-js">const initializeArrayWithRange = (end, start = 0) =&gt;
   Array.from({ length: end - start }).map((v, i) =&gt; i + start);
-// initializeArrayRange(5) -&gt; [0,1,2,3,4]
+// initializeArrayWithRange(5) -&gt; [0,1,2,3,4]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="initializearraywithvalues">initializeArrayWithValues</h3></div><div class="section double-padded">
 <p>Initializes and fills an array with the specified values.</p>
 <p>Use <code>Array(n)</code> to create an array of the desired length, <code>fill(v)</code> to fill it with the desired values.
 You can omit <code>value</code> to use a default value of <code>0</code>.</p>
 <pre><code class="language-js">const initializeArrayWithValues = (n, value = 0) =&gt; Array(n).fill(value);
-// initializeArray(5, 2) -&gt; [2,2,2,2,2]
+// initializeArrayWithValues(5, 2) -&gt; [2,2,2,2,2]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="intersection">intersection</h3></div><div class="section double-padded">
 <p>Returns a list of elements that exist in both arrays.</p>
@@ -449,7 +449,7 @@ You can omit <code>el</code> to use a default value of <code>window</code>.</p>
 <pre><code class="language-js">const getScrollPosition = (el = window) =&gt;
   ({x: (el.pageXOffset !== undefined) ? el.pageXOffset : el.scrollLeft,
     y: (el.pageYOffset !== undefined) ? el.pageYOffset : el.scrollTop});
-// getScrollPos() -&gt; {x: 0, y: 200}
+// getScrollPosition() -&gt; {x: 0, y: 200}
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="geturlparameters">getURLParameters</h3></div><div class="section double-padded">
 <p>Returns an object containing the parameters of the current URL.</p>
@@ -459,7 +459,7 @@ Pass <code>location.search</code> as the argument to apply to the current <code>
   url.match(/([^?=&amp;]+)(=([^&amp;]*))/g).reduce(
     (a, v) =&gt; (a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1), a), {}
   );
-// getUrlParameters('http://url.com/page?name=Adam&amp;surname=Smith') -&gt; {name: 'Adam', surname: 'Smith'}
+// getURLParameters('http://url.com/page?name=Adam&amp;surname=Smith') -&gt; {name: 'Adam', surname: 'Smith'}
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="redirect">redirect</h3></div><div class="section double-padded">
 <p>Redirects to a specified URL.</p>
@@ -496,7 +496,7 @@ Scroll by a fraction of the distance from top. Use <code>window.requestAnimation
   const dt = new Date(parseInt(arr.toString().substr(6)));
   return `${ dt.getDate() }/${ dt.getMonth() + 1 }/${ dt.getFullYear() }`
 };
-// jsonToDate(/Date(1489525200000)/) -&gt; &quot;14/3/2017&quot;
+// JSONToDate(/Date(1489525200000)/) -&gt; &quot;14/3/2017&quot;
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="toenglishdate">toEnglishDate</h3></div><div class="section double-padded">
 <p>Converts a date from American format to English format.</p>
@@ -558,7 +558,7 @@ The first (leftmost) function can accept one or more arguments; the remaining fu
 /*
 const add5 = x =&gt; x + 5
 const multiply = (x, y) =&gt; x * y
-const multiplyAndAdd5 = pipe(multiply, add5)
+const multiplyAndAdd5 = pipeFunctions(multiply, add5)
 multiplyAndAdd5(5, 2) -&gt; 15
 */
 </code></pre>
@@ -581,7 +581,7 @@ Use the <code>...rest</code> operator to pass in all the parameters.</p>
 <p>Use <code>Array.reduce()</code> to create a promise chain, where each promise returns the next promise when resolved.</p>
 <pre><code class="language-js">const runPromisesInSeries = ps =&gt; ps.reduce((p, next) =&gt; p.then(next), Promise.resolve());
 // const delay = (d) =&gt; new Promise(r =&gt; setTimeout(r, d))
-// series([() =&gt; delay(1000), () =&gt; delay(2000)]) -&gt; executes each promise sequentially, taking a total of 3 seconds to complete
+// runPromisesInSeries([() =&gt; delay(1000), () =&gt; delay(2000)]) -&gt; executes each promise sequentially, taking a total of 3 seconds to complete
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="sleep">sleep</h3></div><div class="section double-padded">
 <p>Delays the execution of an asynchronous function.</p>
@@ -600,13 +600,13 @@ async function sleepyWork() {
 <p>Returns the average of an array of numbers.</p>
 <p>Use <code>Array.reduce()</code> to add each value to an accumulator, initialized with a value of <code>0</code>, divide by the <code>length</code> of the array.</p>
 <pre><code class="language-js">const arrayAverage = arr =&gt; arr.reduce((acc, val) =&gt; acc + val, 0) / arr.length;
-// average([1,2,3]) -&gt; 2
+// arrayAverage([1,2,3]) -&gt; 2
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="arraysum">arraySum</h3></div><div class="section double-padded">
 <p>Returns the sum of an array of numbers.</p>
 <p>Use <code>Array.reduce()</code> to add each value to an accumulator, initialized with a value of <code>0</code>.</p>
 <pre><code class="language-js">const arraySum = arr =&gt; arr.reduce((acc, val) =&gt; acc + val, 0);
-// sum([1,2,3,4]) -&gt; 10
+// arraySum([1,2,3,4]) -&gt; 10
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="collatz">collatz</h3></div><div class="section double-padded">
 <p>Applies the Collatz algorithm.</p>
@@ -731,7 +731,7 @@ Then, <code>split('')</code> into individual characters, <code>reverse()</code>,
 <p>Returns a random number in the specified range.</p>
 <p>Use <code>Math.random()</code> to generate a random value, map it to the desired range using multiplication.</p>
 <pre><code class="language-js">const randomNumberInRange = (min, max) =&gt; Math.random() * (max - min) + min;
-// randomInRange(2,10) -&gt; 6.0211363285087005
+// randomNumberInRange(2,10) -&gt; 6.0211363285087005
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="round">round</h3></div><div class="section double-padded">
 <p>Rounds a number to a specified amount of digits.</p>
@@ -766,7 +766,7 @@ Use <code>window.speechSynthesis.speak()</code> to play the message.</p>
   msg.voice = window.speechSynthesis.getVoices()[0];
   window.speechSynthesis.speak(msg);
 };
-// speak('Hello, World') -&gt; plays the message
+// speechSynthesis('Hello, World') -&gt; plays the message
 </code></pre>
 </div></div><br/><h2 style="text-align:center;">Node</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="jsontofile">JSONToFile</h3></div><div class="section double-padded">
@@ -774,7 +774,7 @@ Use <code>window.speechSynthesis.speak()</code> to play the message.</p>
 <p>Use <code>fs.writeFile()</code>, template literals and <code>JSON.stringify()</code> to write a <code>json</code> object to a <code>.json</code> file.</p>
 <pre><code class="language-js">const fs = require('fs');
 const JSONToFile = (obj, filename) =&gt; fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2))
-// jsonToFile({test: &quot;is passed&quot;}, 'testJsonFile') -&gt; writes the object to 'testJsonFile.json'
+// JSONToFile({test: &quot;is passed&quot;}, 'testJsonFile') -&gt; writes the object to 'testJsonFile.json'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="readfilelines">readFileLines</h3></div><div class="section double-padded">
 <p>Returns an array of lines from the specified file.</p>
@@ -789,7 +789,7 @@ contents of test.txt :
   line2
   line3
   ___________________________
-let arr = readFileToArray('test.txt')
+let arr = readFileLines('test.txt')
 console.log(arr) // -&gt; ['line1', 'line2', 'line3']
 */
 </code></pre>
@@ -808,7 +808,7 @@ also if you give it a special key(<code>childIndicator</code>) it will search de
   })
 }
 /*
-  testObj = {a: 1, b: 2, children: {a: 1, b: 2}}
+  const testObj = {a: 1, b: 2, children: {a: 1, b: 2}}
   cleanObj(testObj, [&quot;a&quot;],&quot;children&quot;)
   console.log(testObj)// { a: 1, children : { a: 1}}
 */
@@ -911,7 +911,7 @@ Combine characters to get a string using <code>join('')</code>.</p>
 Return the string truncated to the desired length, with <code>...</code> appended to the end or the original string.</p>
 <pre><code class="language-js">const truncateString = (str, num) =&gt;
   str.length &gt; num ? str.slice(0, num &gt; 3 ? num - 3 : num) + '...' : str;
-// truncate('boomerang', 7) -&gt; 'boom...'
+// truncateString('boomerang', 7) -&gt; 'boom...'
 </code></pre>
 </div></div><br/><h2 style="text-align:center;">Utility</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="extendhex">extendHex</h3></div><div class="section double-padded">
@@ -920,8 +920,8 @@ Return the string truncated to the desired length, with <code>...</code> appende
 <code>Array.slice()</code> is used to remove <code>#</code> from string start since it's added once.</p>
 <pre><code class="language-js">const extendHex = shortHex =&gt;
   '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split('').map(x =&gt; x+x).join('')
-// convertHex('#03f') -&gt; '#0033ff'
-// convertHex('05a') -&gt; '#0055aa'
+// extendHex('#03f') -&gt; '#0033ff'
+// extendHex('05a') -&gt; '#0055aa'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="gettype">getType</h3></div><div class="section double-padded">
 <p>Returns the native type of a value.</p>
@@ -934,12 +934,12 @@ Return the string truncated to the desired length, with <code>...</code> appende
 <p>Converts a colorcode to a <code>rgb()</code> string.</p>
 <p>Use bitwise right-shift operator and mask bits with <code>&amp;</code> (and) operator to convert a hexadecimal color code (prefixed with <code>#</code>) to a string with the RGB values. In case it's a 3-digit-colorcode, do the same with the 6-digit-colorcode extended by the extendHex() function (ref. <code>extendHex</code> snippet)</p>
 <pre><code class="language-js">const hexToRgb = hex =&gt; {
-  const extendHex = shortHex =&gt;
+  const extendHex = shortHex =&gt; 
     '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split('').map(x =&gt; x+x).join('');
-  return hex.slice(1).length==3 ?
+  return hex.slice(1).length==3 ? 
   `rgb(${parseInt(extendHex(hex).slice(1), 16) &gt;&gt; 16}, ${(parseInt(extendHex(hex).slice(1), 16) &amp; 0x00ff00) &gt;&gt; 8}, ${parseInt(extendHex(hex).slice(1), 16) &amp; 0x0000ff})`:
   `rgb(${parseInt(hex.slice(1), 16) &gt;&gt; 16}, ${(parseInt(hex.slice(1), 16) &amp; 0x00ff00) &gt;&gt; 8}, ${parseInt(hex.slice(1), 16) &amp; 0x0000ff})`;
-}
+}   
 // hexToRgb('#27ae60') -&gt; 'rgb(39, 174, 96)'
 // hexToRgb('#acd') -&gt; 'rgb(170, 204, 221)'
 </code></pre>
@@ -989,7 +989,7 @@ Return the string truncated to the desired length, with <code>...</code> appende
 <p>Converts the values of RGB components to a colorcode.</p>
 <p>Convert given RGB parameters to hexadecimal string using bitwise left-shift operator (<code>&lt;&lt;</code>) and <code>toString(16)</code>, then <code>padStart(6,'0')</code> to get a 6-digit hexadecimal value.</p>
 <pre><code class="language-js">const RGBToHex = (r, g, b) =&gt; ((r &lt;&lt; 16) + (g &lt;&lt; 8) + b).toString(16).padStart(6, '0');
-// rgbToHex(255, 165, 1) -&gt; 'ffa501'
+// RGBToHex(255, 165, 1) -&gt; 'ffa501'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="timetaken">timeTaken</h3></div><div class="section double-padded">
 <p>Measures the time taken by a function to execute.</p>
@@ -1021,7 +1021,7 @@ If digit is found in teens pattern, use teens ordinal.</p>
   ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =&gt;
     (c ^ crypto.getRandomValues(new Uint8Array(1))[0] &amp; 15 &gt;&gt; c / 4).toString(16)
   );
-// uuid() -&gt; '7982fcfe-5721-4632-bede-6000885be57d'
+// UUIDGenerator() -&gt; '7982fcfe-5721-4632-bede-6000885be57d'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="validateemail">validateEmail</h3></div><div class="section double-padded">
 <p>Returns <code>true</code> if the given string is a valid  email, <code>false</code> otherwise.</p>
@@ -1042,7 +1042,8 @@ Use <code>Number()</code> to check if the coercion holds.</p>
 </div></div><br/>
         <footer><p><strong>30 seconds of code</strong> is licensed under the <a href="https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE">CC0-1.0</a> license.<br/>Icons made by <a href="https://www.flaticon.com/authors/smashicons">Smashicons</a> from <a href="https://www.flaticon.com/">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/">CC 3.0 BY</a>.</p></footer>
       </main>
-    </div>
+    </div>    
     <script src="prism.js"></script>
   </body>
 </html>
+
