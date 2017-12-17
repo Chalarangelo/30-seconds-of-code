@@ -6,7 +6,7 @@ Use `window.speechSynthesis.speak()` to play the message.
 Learn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
 
 ```js
-const speak = message => {
+const speechSynthesis = message => {
   const msg = new SpeechSynthesisUtterance(message);
   msg.voice = window.speechSynthesis.getVoices()[0];
   window.speechSynthesis.speak(msg);
