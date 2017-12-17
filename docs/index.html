@@ -163,7 +163,7 @@
 // arrayMax([10, 1, 5]) -&gt; 10
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="arraymin">arrayMin</h3></div><div class="section double-padded">
-<p>Returns the maximum value in an array.</p>
+<p>Returns the minimum value in an array.</p>
 <p>Use <code>Math.min()</code> combined with the spread operator (<code>...</code>) to get the minimum value in the array.</p>
 <pre><code class="language-js">const arrayMin = arr =&gt; Math.min(...arr);
 // arrayMin([10, 1, 5]) -&gt; 1
@@ -919,7 +919,7 @@ Return the string truncated to the desired length, with <code>...</code> appende
 <p>Use <code>Array.map()</code>, <code>split()</code> and <code>Array.join()</code> to join the mapped array for converting a 3-digit RGB notated hexadecimal color-code to the 6-digit form.
 <code>Array.slice()</code> is used to remove <code>#</code> from string start since it's added once.</p>
 <pre><code class="language-js">const extendHex = shortHex =&gt;
-  '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split().map(x =&gt; x+x).join()
+  '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split('').map(x =&gt; x+x).join('')
 // convertHex('#03f') -&gt; '#0033ff'
 // convertHex('05a') -&gt; '#0055aa'
 </code></pre>
@@ -932,12 +932,16 @@ Return the string truncated to the desired length, with <code>...</code> appende
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="hextorgb">hexToRGB</h3></div><div class="section double-padded">
 <p>Converts a colorcode to a <code>rgb()</code> string.</p>
-<p>Use bitwise right-shift operator and mask bits with <code>&amp;</code> (and) operator to convert a hexadecimal color code (prefixed with <code>#</code>) to a string with the RGB values.</p>
-<pre><code class="language-js">const hexToRGB = hex =&gt; {
-  const h = parseInt(hex.slice(1), 16);
-  return `rgb(${h &gt;&gt; 16}, ${(h &amp; 0x00ff00) &gt;&gt; 8}, ${h &amp; 0x0000ff})`;
-}
+<p>Use bitwise right-shift operator and mask bits with <code>&amp;</code> (and) operator to convert a hexadecimal color code (prefixed with <code>#</code>) to a string with the RGB values. In case it's a 3-digit-colorcode, do the same with the 6-digit-colorcode extended by the extendHex() function (ref. <code>extendHex</code> snippet)</p>
+<pre><code class="language-js">const hexToRgb = hex =&gt; {
+  const extendHex = shortHex =&gt; 
+    '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split('').map(x =&gt; x+x).join('');
+  return hex.slice(1).length==3 ? 
+  `rgb(${parseInt(extendHex(hex).slice(1), 16) &gt;&gt; 16}, ${(parseInt(extendHex(hex).slice(1), 16) &amp; 0x00ff00) &gt;&gt; 8}, ${parseInt(extendHex(hex).slice(1), 16) &amp; 0x0000ff})`:
+  `rgb(${parseInt(hex.slice(1), 16) &gt;&gt; 16}, ${(parseInt(hex.slice(1), 16) &amp; 0x00ff00) &gt;&gt; 8}, ${parseInt(hex.slice(1), 16) &amp; 0x0000ff})`;
+}   
 // hexToRgb('#27ae60') -&gt; 'rgb(39, 174, 96)'
+// hexToRgb('#acd') -&gt; 'rgb(170, 204, 221)'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isarray">isArray</h3></div><div class="section double-padded">
 <p>Checks if the given argument is an array.</p>
