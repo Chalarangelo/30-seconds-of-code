@@ -1,4 +1,6 @@
-### Take
+### take
+
+Returns an array with n elements removed from the beggining.
 
 Use `Array.slice()` to create a slice of the array with `n` elements taken from the beginning.
 

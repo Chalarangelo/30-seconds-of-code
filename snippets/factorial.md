@@ -1,4 +1,6 @@
-### Factorial
+### factorial
+
+Calculates the factorial of a number.
 
 Use recursion.
 If `n` is less than or equal to `1`, return `1`.
