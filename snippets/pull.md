@@ -1,6 +1,8 @@
-### Array pull (mutates array)
+### pull
 
-Use `Array.filter()` and `Array.includes()` to pull out the values that are not needed. 
+Mutates the original array to filter out the values specified.
+
+Use `Array.filter()` and `Array.includes()` to pull out the values that are not needed.
 Use `Array.length = 0` to mutate the passed in array by resetting it's length to zero and `Array.push()` to re-populate it with only the pulled values.
 
 ```js

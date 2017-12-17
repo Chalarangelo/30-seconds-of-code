@@ -1,4 +1,6 @@
-### Distance between two points
+### distance
+
+Returns the distance between two points.
 
 Use `Math.hypot()` to calculate the Euclidean distance between two points.
 

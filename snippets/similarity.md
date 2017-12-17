@@ -1,4 +1,6 @@
-### Similarity between arrays
+### similarity
+
+Returns an array of elements that appear in both arrays.
 
 Use `filter()` to remove values that are not part of `values`, determined using `includes()`.
 
