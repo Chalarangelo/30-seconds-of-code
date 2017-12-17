@@ -57,6 +57,7 @@
 * [Scroll to top](#scroll-to-top)
 
 ### Date
+* [Convert to english date](#convert-to-english-date)
 * [Get days difference between dates](#get-days-difference-between-dates)
 * [JSON to date](#json-to-date)
 
@@ -689,6 +690,19 @@ const scrollToTop = _ => {
 
 [⬆ back to top](#table-of-contents)
 ## Date
+
+### Convert to English date
+
+Use `Date.toISOString()`, `split('T')` and `replace()` to convert a date from American format to English format.
+Throws an error if the passed time cannot be converted to a date.
+
+```js
+const toEnglishDate  = (time) =>
+  {try{return new Date(time).toISOString().split('T')[0].replace(/-/g, '/')}catch(e){return}};
+// toEnglishDate('09/21/2010') -> '21/09/2010'
+```
+
+[⬆ back to top](#table-of-contents)
 
 ### Get days difference between dates
 
