@@ -56,7 +56,7 @@ is-function:utility
 is-number:utility
 is-string:utility
 is-symbol:utility
-JSON-to-date:date
+json-to-date:
 last-of-list:array
 log-function-name:function
 measure-time-taken-by-function:utility
@@ -71,6 +71,7 @@ pick:array
 pipe-functions:function
 powerset:math
 promisify:function
+pull:array
 random-integer-in-range:math
 random-number-in-range:math
 read-file-as-array-of-lines:node
@@ -98,4 +99,4 @@ URL-parameters:utility
 UUID-generator:utility
 validate-email:utility
 validate-number:utility
-write-JSON-to-file:node
+write-json-to-file:
