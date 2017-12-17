@@ -4,7 +4,7 @@ Get distance from top using `document.documentElement.scrollTop` or `document.bo
 Scroll by a fraction of the distance from top. Use `window.requestAnimationFrame()` to animate the scrolling.
 
 ```js
-const scrollToTop = _ => {
+const scrollToTop = () => {
   const c = document.documentElement.scrollTop || document.body.scrollTop;
   if (c > 0) {
     window.requestAnimationFrame(scrollToTop);
