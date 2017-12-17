@@ -6,5 +6,5 @@ Use `Array.filter()` to create a new array that contains every nth element of a 
 
 ```js
 const everyNth = (arr, nth) => arr.filter((e, i) => i % nth === 0);
-// everynth([1,2,3,4,5,6], 2) -> [ 1, 3, 5 ]
+// everyNth([1,2,3,4,5,6], 2) -> [ 1, 3, 5 ]
 ```
