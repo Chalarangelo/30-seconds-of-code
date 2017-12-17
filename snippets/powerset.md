@@ -1,4 +1,6 @@
-### Powerset
+### powerset
+
+Returns the powerset of a given array of numbers.
 
 Use `Array.reduce()` combined with `Array.map()` to iterate over elements and combine into an array containing all combinations.
 

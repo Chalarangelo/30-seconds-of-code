@@ -1,4 +1,6 @@
-### Curry
+### curry
+
+Curries a function.
 
 Use recursion.
 If the number of provided arguments (`args`) is sufficient, call the passed function `f`.

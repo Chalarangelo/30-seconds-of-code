@@ -13,15 +13,14 @@ Here's what you can do to help:
 ### Snippet submission and Pull request guidelines
 
 - **DO NOT MODIFY THE README.md FILE!** Make changes to individual snippet files. You can optionally run `npm run build-list` to update the README.md file automatically, based on the changes you have made.
-- **Snippet filenames** must correspond to the title of the snippet. For example, if your snippet is titled `### Awesome snippet` the filename should be `awesome-snippet.md`.
-  - Use `kebab-case`, not `snake_case`.
+- **Snippet filenames** must correspond to the title of the snippet. For example, if your snippet is titled `### awesomeSnippet` the filename should be `awesomeSnippet.md`.
+  - Use `camelCase`, not `kebab-case` or `snake_case`.
   - Avoid capitalization of words, except if the whole word is capitalized (e.g. `URL` should be capitalized in the filename and the snippet title).
-  - If there are parentheses in the title, add them to the filename (e.g. `awesome-snippet-(extra-awesome).md` if your snippet's title is `Awesome snippet (extra awesome)`).
-- **Snippet titles** should have only the first letter of the first word capitalized. Certain words can be in capitals (e.g. `URL`, `RGB`), but this is on a per-snippet basis.
+- **Snippet titles** should have be the same as the name of the function that is present in the snippet.
   - All snippet titles must be prefixed with `###` and be at the very first line of your snippet.
   - Snippet titles must be unique (although if you cannot find a better title, just add some placeholder at the end of the filename and title and we will figure it out).
   - Follow snippet titles with an empty line.
-- **Snippet descriptions** must be short and to the point. Try to explain *how* the snippet works and what Javascript features are used. Remember to include what functions you are using and why.
+- **Snippet descriptions** must be short and to the point. Try to explain *what* the snippet does and *how* the snippet works and what Javascript features are used. Remember to include what functions you are using and why.
   - Follow snippet descriptions with an empty line.
 - **Snippet code** must be enclosed inside ` ```js ` and ` ``` `.
   - Remember to start your snippet's code on a new line below the opening backticks.
