@@ -1,4 +1,6 @@
-### Anagrams of string (with duplicates)
+### anagrams
+
+Generates all anagrams of a string (contains duplicates).
 
 Use recursion.
 For each letter in the given string, create all the partial anagrams for the rest of its letters.

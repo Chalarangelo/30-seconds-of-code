@@ -1,4 +1,6 @@
-### Array difference
+### difference
+
+Returns the difference between two arrays.
 
 Create a `Set` from `b`, then use `Array.filter()` on `a` to only keep values not contained in `b`.
 
