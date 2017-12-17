@@ -25,7 +25,6 @@
 * [Count occurrences of a value in array](#count-occurrences-of-a-value-in-array)
 * [Deep flatten array](#deep-flatten-array)
 * [Drop elements in array](#drop-elements-in-array)
-* [Fill array](#fill-array)
 * [Filter out non unique values in an array](#filter-out-non-unique-values-in-an-array)
 * [Flatten array up to depth](#flatten-array-up-to-depth)
 * [Flatten array](#flatten-array)
@@ -287,7 +286,7 @@ const chunk = (arr, size) =>
 Use `Array.filter()` to filter out falsey values (`false`, `null`, `0`, `""`, `undefined`, and `NaN`).
 
 ```js
-const compact = (arr) => arr.filter(v => v);
+const compact = (arr) => arr.filter(Boolean);
 // compact([0, 1, false, 2, '', 3, 'a', 'e'*23, NaN, 's', 34]) -> [ 1, 2, 3, 'a', 's', 34 ]
 ```
 
@@ -328,19 +327,6 @@ const dropElements = (arr, func) => {
   return arr;
 };
 // dropElements([1, 2, 3, 4], n => n >= 3) -> [3,4]
-```
-
-[⬆ back to top](#table-of-contents)
-
-### Fill array
-
-Use `Array.map()` to map values between `start` (inclusive) and `end` (exclusive) to `value`.
-Omit `start` to start at the first element and/or `end` to finish at the last.
-
-```js
-const fillArray = (arr, value, start = 0, end = arr.length) =>
-  arr.map((v, i) => i >= start && i < end ? value : v);
-// fillArray([1,2,3,4],'8',1,3) -> [1,'8','8',4]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1337,11 +1323,14 @@ const getType = v =>
 
 ### Hexcode to RGB
 
-Use `Array.slice()`, `Array.map()` and `match()` to convert a hexadecimal colorcode (prefixed with `#`) to a string with the RGB values.
+Use bitwise right-shift operator and mask bits with `&` (and) operator to convert a hexadecimal color code (prefixed with `#`) to a string with the RGB values.
 
 ```js
-const hexToRgb = hex => `rgb(${hex.slice(1).match(/.{2}/g).map(x => parseInt(x, 16)).join()})`
-// hexToRgb('#27ae60') -> 'rgb(39,174,96)'
+const hexToRgb = hex => {
+  const h = parseInt(hex.slice(1), 16);
+  return `rgb(${h >> 16}, ${(h & 0x00ff00) >> 8}, ${h & 0x0000ff})`;
+}
+// hexToRgb('#27ae60') -> 'rgb(39, 174, 96)'
 ```
 
 [⬆ back to top](#table-of-contents)
