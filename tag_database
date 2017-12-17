@@ -22,6 +22,7 @@ compact:array
 compose-functions:function
 convert-string-from-camelcase:string
 convert-string-to-camelcase:string
+convert-to-english-date:date
 count-occurrences-of-a-value-in-array:array
 current-URL:browser
 curry:function
