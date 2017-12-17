@@ -3,7 +3,7 @@
   Run using `npm run builder`.
 */
 // Load modules
-const fs = require('fs-extra'), path = require('path'), chalk = require('chalk');
+const fs = require("fs-extra"), path = require('path'), chalk = require('chalk');
 // Set variables for paths
 const snippetsPath = './snippets',  staticPartsPath = './static-parts';
 // Set variables for script
