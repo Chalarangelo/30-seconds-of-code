@@ -1,4 +1,6 @@
-### Array intersection
+### intersection
+
+Returns a list of elements that exist in both arrays.
 
 Create a `Set` from `b`, then use `Array.filter()` on `a` to only keep values contained in `b`.
 
