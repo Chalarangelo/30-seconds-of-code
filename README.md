@@ -12,6 +12,7 @@
 ### Array
 * [Array difference](#array-difference)
 * [Array intersection](#array-intersection)
+* [Array pull (mutates array)](#array-pull-mutates-array)
 * [Array remove](#array-remove)
 * [Array sample](#array-sample)
 * [Array symmetric difference](#array-symmetric-difference)
@@ -79,6 +80,7 @@
 * [Fibonacci array generator](#fibonacci-array-generator)
 * [Greatest common divisor (GCD)](#greatest-common-divisor-gcd)
 * [Hamming distance](#hamming-distance)
+* [Least common multiple (LCM)](#least-common-multiple-lcm)
 * [Percentile](#percentile)
 * [Powerset](#powerset)
 * [Random integer in range](#random-integer-in-range)
@@ -150,6 +152,23 @@ Create a `Set` from `b`, then use `Array.filter()` on `a` to only keep values co
 ```js
 const intersection = (a, b) => { const s = new Set(b); return a.filter(x => s.has(x)); };
 // intersection([1,2,3], [4,3,2]) -> [2,3]
+```
+
+[⬆ back to top](#table-of-contents)
+
+### Array pull (mutates array)
+
+Use `Array.filter()` and `Array.includes()` to pull out the values that are not needed. 
+Use `Array.length = 0` to mutate the passed in array by resetting it's length to zero and `Array.push()` to re-populate it with only the pulled values.
+
+```js
+const pull = (arr, ...args) => {
+  let pulled = arr.filter((v, i) => args.includes(v));
+  arr.length = 0; pulled.forEach(v => arr.push(v));
+};
+// let myArray = ['a', 'b', 'c', 'a', 'b', 'c'];
+// pull(myArray, 'a', 'c');
+// console.log(myArray) -> [ 'b', 'b' ]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -450,10 +469,10 @@ const initializeArray = (n, value = 0) => Array(n).fill(value);
 
 ### Last of list
 
-Use `arr.slice(-1)[0]` to get the last element of the given array.
+Use `arr.length - 1` to compute index of the last element of the given array and returning it.
 
 ```js
-const last = arr => arr.slice(-1)[0];
+const last = arr => arr[arr.length - 1];
 // last([1,2,3]) -> 3
 ```
 
@@ -742,6 +761,7 @@ const multiplyAndAdd5 = compose(add5, multiply)
 multiplyAndAdd5(5, 2) -> 15
 */
 ```
+
 [⬆ back to top](#table-of-contents)
 
 ### Curry
@@ -937,6 +957,21 @@ Count and return the number of `1`s in the string, using `match(/1/g)`.
 const hammingDistance = (num1, num2) =>
   ((num1 ^ num2).toString(2).match(/1/g) || '').length;
 // hammingDistance(2,3) -> 1
+```
+
+[⬆ back to top](#table-of-contents)
+
+### Least common multiple (LCM)
+
+Use the greatest common divisor (GCD) formula and `Math.abs()` to determine the least common multiple.
+The GCD formula uses recursion.
+
+```js
+const lcm = (x,y) => {
+  const gcd = (x, y) => !y ? x : gcd(y, x % y);
+  return Math.abs(x*y)/(gcd(x,y));
+};
+// lcm(12,7) -> 84
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1266,12 +1301,11 @@ const truncate = (str, num) =>
 
 ### 3-digit hexcode to 6-digit hexcode
 
-Use `Array.map()`, `split()` and `Array.join()` to join the mapped array for converting a three-digit RGB notated hexadecimal colorcode to the six-digit form.
-
+Use `Array.map()`, `split()` and `Array.join()` to join the mapped array for converting a three-digit RGB notated hexadecimal color-code to the six-digit form.
+`Array.slice()` is used to remove `#` from string start since it's added once.
 ```js
 const convertHex = shortHex =>
-  shortHex[0] == '#' ? ('#' + shortHex.slice(1).split('').map(x => x+x).join('')) :
-    ('#' + shortHex.split('').map(x => x+x).join(''));
+  '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split().map(x => x+x).join()
 // convertHex('#03f') -> '#0033ff'
 // convertHex('05a') -> '#0055aa'
 ```
@@ -1403,11 +1437,11 @@ const timeTaken = callback => {
 
 ### Number to array of digits
 
-Convert the number to a string, use `split()` to convert build an array.
+Convert the number to a string, using spread operators in ES6(`[...string]`) build an array.
 Use `Array.map()` and `parseInt()` to transform each value to an integer. 
 
 ```js
-const digitize = n => (''+n).split('').map(i => parseInt(i));
+const digitize = n => [...''+n].map(i => parseInt(i));
 // digitize(2334) -> [2, 3, 3, 4]
 ```
 
