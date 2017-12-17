@@ -1,6 +1,6 @@
 ### arrayMin
 
-Returns the maximum value in an array.
+Returns the minimum value in an array.
 
 Use `Math.min()` combined with the spread operator (`...`) to get the minimum value in the array.
 
