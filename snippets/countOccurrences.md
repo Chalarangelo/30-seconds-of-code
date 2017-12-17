@@ -1,6 +1,6 @@
 ### countOccurrences
 
-Counts the occurences of a value in an array.
+Counts the occurrences of a value in an array.
 
 Use `Array.reduce()` to increment a counter each time you encounter the specific value inside the array.
 
