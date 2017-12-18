@@ -13,7 +13,7 @@ collatz:math
 compact:array
 compose:function
 countOccurrences:array
-current-URL:browser
+currentURL:browser
 curry:function
 deepFlatten:array
 difference:array
@@ -57,6 +57,7 @@ JSONToDate:date
 JSONToFile:node
 last:array
 lcm:math
+mapObject:array
 median:math
 nthElement:array
 objectFromPairs:object
