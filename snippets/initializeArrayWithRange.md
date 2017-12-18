@@ -1,6 +1,6 @@
 ### initializeArrayWithRange
 
-Initialized an array containing the numbers in the specified range.
+Initializes an array containing the numbers in the specified range.
 
 Use `Array(end-start)` to create an array of the desired length, `Array.map()` to fill with the desired values in a range.
 You can omit `start` to use a default value of `0`.

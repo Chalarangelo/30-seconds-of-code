@@ -3,7 +3,7 @@
 Removes any properties except the ones specified from a JSON object.
 
 Use `Object.keys()` method to loop over given json object and deleting keys that are not `include`d in given array.
-also if you give it a special key(`childIndicator`) it will search deeply inside it to apply function to inner objects too.
+Also if you give it a special key (`childIndicator`) it will search deeply inside it to apply function to inner objects too.
 
 ```js
 const cleanObj = (obj, keysToKeep = [], childIndicator) => {

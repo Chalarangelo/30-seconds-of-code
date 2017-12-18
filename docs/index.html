@@ -53,6 +53,7 @@
 <a class="sublink-1" href="#initializearraywithvalues">initializeArrayWithValues</a>
 <a class="sublink-1" href="#intersection">intersection</a>
 <a class="sublink-1" href="#last">last</a>
+<a class="sublink-1" href="#mapobject">mapObject</a>
 <a class="sublink-1" href="#nthelement">nthElement</a>
 <a class="sublink-1" href="#pick">pick</a>
 <a class="sublink-1" href="#pull">pull</a>
@@ -70,7 +71,7 @@
 
 <h3>Browser
 </h3><a class="sublink-1" href="#bottomvisible">bottomVisible</a>
-<a class="sublink-1" href="#current-url">current-URL</a>
+<a class="sublink-1" href="#currenturl">currentURL</a>
 <a class="sublink-1" href="#elementisvisibleinviewport">elementIsVisibleInViewport</a>
 <a class="sublink-1" href="#getscrollposition">getScrollPosition</a>
 <a class="sublink-1" href="#geturlparameters">getURLParameters</a>
@@ -126,6 +127,7 @@
 <a class="sublink-1" href="#objectfrompairs">objectFromPairs</a>
 <a class="sublink-1" href="#objecttopairs">objectToPairs</a>
 <a class="sublink-1" href="#shallowclone">shallowClone</a>
+<a class="sublink-1" href="#truthcheckcollection">truthCheckCollection</a>
 
 <h3>String
 </h3><a class="sublink-1" href="#anagrams">anagrams</a>
@@ -139,7 +141,9 @@
 <a class="sublink-1" href="#truncatestring">truncateString</a>
 
 <h3>Utility
-</h3><a class="sublink-1" href="#extendhex">extendHex</a>
+</h3><a class="sublink-1" href="#coalesce">coalesce</a>
+<a class="sublink-1" href="#coalescefactory">coalesceFactory</a>
+<a class="sublink-1" href="#extendhex">extendHex</a>
 <a class="sublink-1" href="#gettype">getType</a>
 <a class="sublink-1" href="#hextorgb">hexToRGB</a>
 <a class="sublink-1" href="#isarray">isArray</a>
@@ -184,7 +188,7 @@ If the original array can't be split evenly, the final chunk will contain the re
 // compact([0, 1, false, 2, '', 3, 'a', 'e'*23, NaN, 's', 34]) -&gt; [ 1, 2, 3, 'a', 's', 34 ]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="countoccurrences">countOccurrences</h3></div><div class="section double-padded">
-<p>Counts the occurences of a value in an array.</p>
+<p>Counts the occurrences of a value in an array.</p>
 <p>Use <code>Array.reduce()</code> to increment a counter each time you encounter the specific value inside the array.</p>
 <pre><code class="language-js">const countOccurrences = (arr, value) =&gt; arr.reduce((a, v) =&gt; v === value ? a + 1 : a + 0, 0);
 // countOccurrences([1,1,2,1,2,3], 1) -&gt; 3
@@ -271,7 +275,7 @@ Use <code>Array.reduce()</code> to create an object, where the keys are produced
 // initial([1,2,3]) -&gt; [1,2]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="initializearraywithrange">initializeArrayWithRange</h3></div><div class="section double-padded">
-<p>Initialized an array containing the numbers in the specified range.</p>
+<p>Initializes an array containing the numbers in the specified range.</p>
 <p>Use <code>Array(end-start)</code> to create an array of the desired length, <code>Array.map()</code> to fill with the desired values in a range.
 You can omit <code>start</code> to use a default value of <code>0</code>.</p>
 <pre><code class="language-js">const initializeArrayWithRange = (end, start = 0) =&gt;
@@ -296,6 +300,16 @@ You can omit <code>value</code> to use a default value of <code>0</code>.</p>
 <p>Use <code>arr.length - 1</code> to compute index of the last element of the given array and returning it.</p>
 <pre><code class="language-js">const last = arr =&gt; arr[arr.length - 1];
 // last([1,2,3]) -&gt; 3
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="mapobject">mapObject</h3></div><div class="section double-padded">
+<p>Maps the values of an array to an object using a function, where the key-value pairs consist of the original value as the key and the mapped value.</p>
+<p>Use an anonymous inner function scope to declare an undefined memory space, using closures to store a return value. Use a new <code>Array</code> to stor the array with a map of the function over its data set and a comma operator to return a second step, without needing to move from one context to another (due to closures and order of operations).</p>
+<pre><code class="language-js">const mapObject = (arr, fn) =&gt; 
+  (a =&gt; (a = [arr, arr.map(fn)], a[0].reduce( (acc,val,ind) =&gt; (acc[val] = a[1][ind], acc), {}) )) ( );
+/*
+const squareIt = arr =&gt; mapObject(arr, a =&gt; a*a)
+squareIt([1,2,3]) // { 1: 1, 2: 4, 3: 9 }
+*/
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="nthelement">nthElement</h3></div><div class="section double-padded">
 <p>Returns the nth element of an array.</p>
@@ -372,7 +386,7 @@ This method also works with strings.</p>
 // tail([1]) -&gt; [1]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="take">take</h3></div><div class="section double-padded">
-<p>Returns an array with n elements removed from the beggining.</p>
+<p>Returns an array with n elements removed from the beginning.</p>
 <p>Use <code>Array.slice()</code> to create a slice of the array with <code>n</code> elements taken from the beginning.</p>
 <pre><code class="language-js">const take = (arr, n = 1) =&gt; arr.slice(0, n);
 // take([1, 2, 3], 5) -&gt; [1, 2, 3]
@@ -419,7 +433,7 @@ If lengths of the argument-arrays vary, <code>undefined</code> is used where no 
   document.documentElement.clientHeight + window.scrollY &gt;= document.documentElement.scrollHeight || document.documentElement.clientHeight;
 // bottomVisible() -&gt; true
 </code></pre>
-</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="current-url">currentURL</h3></div><div class="section double-padded">
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="currenturl">currentURL</h3></div><div class="section double-padded">
 <p>Returns the current URL.</p>
 <p>Use <code>window.location.href</code> to get current URL.</p>
 <pre><code class="language-js">const currentURL = () =&gt; window.location.href;
@@ -780,7 +794,7 @@ const JSONToFile = (obj, filename) =&gt; fs.writeFile(`${filename}.json`, JSON.s
 <p>Returns an array of lines from the specified file.</p>
 <p>Use <code>readFileSync</code> function in <code>fs</code> node package to create a <code>Buffer</code> from a file.
 convert buffer to string using <code>toString(encoding)</code> function.
-creating an array from contents of file by <code>split</code>ing file content line by line(each <code>\n</code>).</p>
+creating an array from contents of file by <code>split</code>ing file content line by line (each <code>\n</code>).</p>
 <pre><code class="language-js">const fs = require('fs');
 const readFileLines = filename =&gt; fs.readFileSync(filename).toString('UTF8').split('\n');
 /*
@@ -797,7 +811,7 @@ console.log(arr) // -&gt; ['line1', 'line2', 'line3']
 <div class="card fluid"><div class="section double-padded"><h3 id="cleanobj">cleanObj</h3></div><div class="section double-padded">
 <p>Removes any properties except the ones specified from a JSON object.</p>
 <p>Use <code>Object.keys()</code> method to loop over given json object and deleting keys that are not <code>include</code>d in given array.
-also if you give it a special key(<code>childIndicator</code>) it will search deeply inside it to apply function to inner objects too.</p>
+Also if you give it a special key (<code>childIndicator</code>) it will search deeply inside it to apply function to inner objects too.</p>
 <pre><code class="language-js">const cleanObj = (obj, keysToKeep = [], childIndicator) =&gt; {
   Object.keys(obj).forEach(key =&gt; {
     if (key === childIndicator) {
@@ -835,6 +849,12 @@ const b = shallowClone(a);
 a === b -&gt; false
 */
 </code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="truthcheckcollection">truthCheckCollection</h3></div><div class="section double-padded">
+<p>Checks if the predicate (second argument) is truthy on all elements of a collection (first argument).</p>
+<p>Use <code>Array.every()</code> to check if each passed object has the specified property and if it returns a truthy value.</p>
+<pre><code class="language-js">truthCheckCollection = (collection, pre) =&gt; (collection.every(obj =&gt; obj[pre]));
+// truthCheckCollection([{&quot;user&quot;: &quot;Tinky-Winky&quot;, &quot;sex&quot;: &quot;male&quot;}, {&quot;user&quot;: &quot;Dipsy&quot;, &quot;sex&quot;: &quot;male&quot;}], &quot;sex&quot;) -&gt; true
+</code></pre>
 </div></div><br/><h2 style="text-align:center;">String</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="anagrams">anagrams</h3></div><div class="section double-padded">
 <p>Generates all anagrams of a string (contains duplicates).</p>
@@ -852,7 +872,7 @@ Base cases are for string <code>length</code> equal to <code>2</code> or <code>1
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="capitalize">Capitalize</h3></div><div class="section double-padded">
 <p>Capitalizes the first letter of a string.</p>
 <p>Use destructuring and <code>toUpperCase()</code> to capitalize first letter, <code>...rest</code> to get array of characters after first letter and then <code>Array.join('')</code> to make it a string again.
-Omit the <code>lowerRest</code> parameter to keep the rest of the string intact, or set it to <code>true</code> to convert to lower case.</p>
+Omit the <code>lowerRest</code> parameter to keep the rest of the string intact, or set it to <code>true</code> to convert to lowercase.</p>
 <pre><code class="language-js">const capitalize = ([first,...rest], lowerRest = false) =&gt;
   first.toUpperCase() + (lowerRest ? rest.join('').toLowerCase() : rest.join(''));
 // capitalize('myName') -&gt; 'MyName'
@@ -873,7 +893,7 @@ Omit the <code>lowerRest</code> parameter to keep the rest of the string intact,
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="fromcamelcase">fromCamelCase</h3></div><div class="section double-padded">
 <p>Converts a string from camelcase.</p>
 <p>Use <code>replace()</code> to remove underscores, hyphens and spaces and convert words to camelcase.
-Omit the scond argument to use a default separator of <code>_</code>.</p>
+Omit the second argument to use a default separator of <code>_</code>.</p>
 <pre><code class="language-js">const fromCamelCase = (str, separator = '_') =&gt;
   str.replace(/([a-z\d])([A-Z])/g, '$1' + separator + '$2')
     .replace(/([A-Z]+)([A-Z][a-z\d]+)/g, '$1' + separator + '$2').toLowerCase();
@@ -914,7 +934,20 @@ Return the string truncated to the desired length, with <code>...</code> appende
 // truncateString('boomerang', 7) -&gt; 'boom...'
 </code></pre>
 </div></div><br/><h2 style="text-align:center;">Utility</h2>
-<div class="card fluid"><div class="section double-padded"><h3 id="extendhex">extendHex</h3></div><div class="section double-padded">
+<div class="card fluid"><div class="section double-padded"><h3 id="coalesce">coalesce</h3></div><div class="section double-padded">
+<p>Returns the first non-null/undefined argument.</p>
+<p>Use <code>Array.find()</code> to return the first non <code>null</code>/<code>undefined</code> argument.</p>
+<pre><code class="language-js">const coalesce = (...args) =&gt; args.find(_ =&gt; ![undefined, null].includes(_))
+// coalesce(null,undefined,&quot;&quot;,NaN, &quot;Waldo&quot;) -&gt; &quot;&quot;
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="coalescefactory">coalesceFactory</h3></div><div class="section double-padded">
+<p>Returns a customized coalesce function that returns the first argument that returns <code>true</code> from the provided argument validation function.</p>
+<p>Use <code>Array.find()</code> to return the first argument that returns <code>true</code> from the provided argument validation function.</p>
+<pre><code class="language-js">const coalesceFactory = valid =&gt; (...args) =&gt; args.find(valid);
+// const customCoalesce = coalesceFactory(_ =&gt; ![null, undefined, &quot;&quot;, NaN].includes(_))
+// customCoalesce(undefined, null, NaN, &quot;&quot;, &quot;Waldo&quot;) //-&gt; &quot;Waldo&quot;
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="extendhex">extendHex</h3></div><div class="section double-padded">
 <p>Extends a 3-digit color code to a 6-digit color code.</p>
 <p>Use <code>Array.map()</code>, <code>split()</code> and <code>Array.join()</code> to join the mapped array for converting a 3-digit RGB notated hexadecimal color-code to the 6-digit form.
 <code>Array.slice()</code> is used to remove <code>#</code> from string start since it's added once.</p>
@@ -925,7 +958,7 @@ Return the string truncated to the desired length, with <code>...</code> appende
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="gettype">getType</h3></div><div class="section double-padded">
 <p>Returns the native type of a value.</p>
-<p>Returns lower-cased constructor name of value, &quot;undefined&quot; or &quot;null&quot; if value is undefined or null</p>
+<p>Returns lowercased constructor name of value, &quot;undefined&quot; or &quot;null&quot; if value is undefined or null</p>
 <pre><code class="language-js">const getType = v =&gt;
   v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name.toLowerCase();
 // getType(new Set([1,2,3])) -&gt; &quot;set&quot;
@@ -934,12 +967,11 @@ Return the string truncated to the desired length, with <code>...</code> appende
 <p>Converts a colorcode to a <code>rgb()</code> string.</p>
 <p>Use bitwise right-shift operator and mask bits with <code>&amp;</code> (and) operator to convert a hexadecimal color code (prefixed with <code>#</code>) to a string with the RGB values. In case it's a 3-digit-colorcode, do the same with the 6-digit-colorcode extended by the extendHex() function (ref. <code>extendHex</code> snippet)</p>
 <pre><code class="language-js">const hexToRgb = hex =&gt; {
-  const extendHex = shortHex =&gt; 
+  const extendHex = shortHex =&gt;
     '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split('').map(x =&gt; x+x).join('');
-  return hex.slice(1).length==3 ? 
-  `rgb(${parseInt(extendHex(hex).slice(1), 16) &gt;&gt; 16}, ${(parseInt(extendHex(hex).slice(1), 16) &amp; 0x00ff00) &gt;&gt; 8}, ${parseInt(extendHex(hex).slice(1), 16) &amp; 0x0000ff})`:
-  `rgb(${parseInt(hex.slice(1), 16) &gt;&gt; 16}, ${(parseInt(hex.slice(1), 16) &amp; 0x00ff00) &gt;&gt; 8}, ${parseInt(hex.slice(1), 16) &amp; 0x0000ff})`;
-}   
+  const extendedHex = hex.slice(hex.startsWith('#') ? 1 : 0).length === 3 ? extendHex(hex) : hex;
+  return `rgb(${parseInt(extendedHex.slice(1), 16) &gt;&gt; 16}, ${(parseInt(extendedHex.slice(1), 16) &amp; 0x00ff00) &gt;&gt; 8}, ${parseInt(extendedHex.slice(1), 16) &amp; 0x0000ff})`;
+}
 // hexToRgb('#27ae60') -&gt; 'rgb(39, 174, 96)'
 // hexToRgb('#acd') -&gt; 'rgb(170, 204, 221)'
 </code></pre>
