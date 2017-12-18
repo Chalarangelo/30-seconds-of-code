@@ -4,17 +4,7 @@
 <!--- In case it's a feature suggestion, otherwise delete this section -->
 <!--- Make sure there isn't already a snippet accomplishing your goal -->
 ## [FEATURE] _REPLACE THIS WITH A BRIEF SUMMARY OF THE SUGGESTED SNIPPET_
-**Category:**
-- [ ] Array
-- [ ] Browser
-- [ ] Date
-- [ ] Function
-- [ ] Math
-- [ ] Media
-- [ ] Node
-- [ ] Object
-- [ ] String
-- [ ] Utility
+**Category:** <!-- One of the existing categories preferrably -->
 ### Description <!-- IF NEEDED -->
 <!-- More detailed description of the snippet you want to be included in 30-seconds-of-code -->
 
