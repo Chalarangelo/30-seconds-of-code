@@ -9,11 +9,13 @@ capitalizeEveryWord:string
 chainAsync:function
 chunk:array
 cleanObj:object
+coalesce:utility
+coalesceFactory:utility
 collatz:math
 compact:array
 compose:function
 countOccurrences:array
-current-URL:browser
+currentURL:browser
 curry:function
 deepFlatten:array
 difference:array
@@ -57,6 +59,7 @@ JSONToDate:date
 JSONToFile:node
 last:array
 lcm:math
+mapObject:array
 median:math
 nthElement:array
 objectFromPairs:object
@@ -95,6 +98,7 @@ toCamelCase:string
 toEnglishDate:date
 toOrdinalSuffix:utility
 truncateString:string
+truthCheckCollection:object
 union:array
 UUIDGenerator:utility
 validateEmail:utility
