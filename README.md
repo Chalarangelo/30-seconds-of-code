@@ -104,6 +104,7 @@
 * [`objectFromPairs`](#objectfrompairs)
 * [`objectToPairs`](#objecttopairs)
 * [`shallowClone`](#shallowclone)
+* [`truthCheckCollection`](#truthcheckcollection)
 
 ### String
 * [`anagrams`](#anagrams)
@@ -117,6 +118,8 @@
 * [`truncateString`](#truncatestring)
 
 ### Utility
+* [`coalesce`](#coalesce)
+* [`coalesceFactory`](#coalescefactory)
 * [`extendHex`](#extendhex)
 * [`getType`](#gettype)
 * [`hexToRGB`](#hextorgb)
@@ -1385,6 +1388,19 @@ a === b -> false
 ```
 
 [⬆ back to top](#table-of-contents)
+
+### truthCheckCollection
+
+Checks if the predicate (second argument) is truthy on all elements of a collection (first argument).
+
+Use `Array.every()` to check if each passed object has the specified property and if it returns a truthy value.
+ 
+ ```js
+truthCheckCollection = (collection, pre) => (collection.every(obj => obj[pre]));
+// truthCheckCollection([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}], "sex") -> true
+```
+
+[⬆ back to top](#table-of-contents)
 ## String
 
 ### anagrams
@@ -1528,6 +1544,33 @@ const truncateString = (str, num) =>
 [⬆ back to top](#table-of-contents)
 ## Utility
 
+### coalesce
+
+Returns the first non-null/undefined argument.
+
+Use `Array.find()` to return the first non `null`/`undefined` argument.
+
+```js
+const coalesce = (...args) => args.find(_ => ![undefined, null].includes(_))
+// coalesce(null,undefined,"",NaN, "Waldo") -> ""
+```
+
+[⬆ back to top](#table-of-contents)
+
+### coalesceFactory
+
+Returns a customized coalesce function that returns the first argument that returns `true` from the provided argument validation function.
+
+Use `Array.find()` to return the first argument that returns `true` from the provided argument validation function.
+
+```js
+const coalesceFactory = valid => (...args) => args.find(valid);
+// const customCoalesce = coalesceFactory(_ => ![null, undefined, "", NaN].includes(_))
+// customCoalesce(undefined, null, NaN, "", "Waldo") //-> "Waldo"
+```
+
+[⬆ back to top](#table-of-contents)
+
 ### extendHex
 
 Extends a 3-digit color code to a 6-digit color code.
@@ -1565,12 +1608,11 @@ Use bitwise right-shift operator and mask bits with `&` (and) operator to conver
 
 ```js
 const hexToRgb = hex => {
-  const extendHex = shortHex => 
+  const extendHex = shortHex =>
     '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split('').map(x => x+x).join('');
-  return hex.slice(1).length==3 ? 
-  `rgb(${parseInt(extendHex(hex).slice(1), 16) >> 16}, ${(parseInt(extendHex(hex).slice(1), 16) & 0x00ff00) >> 8}, ${parseInt(extendHex(hex).slice(1), 16) & 0x0000ff})`:
-  `rgb(${parseInt(hex.slice(1), 16) >> 16}, ${(parseInt(hex.slice(1), 16) & 0x00ff00) >> 8}, ${parseInt(hex.slice(1), 16) & 0x0000ff})`;
-}   
+  const extendedHex = hex.slice(hex.startsWith('#') ? 1 : 0).length === 3 ? extendHex(hex) : hex;
+  return `rgb(${parseInt(extendedHex.slice(1), 16) >> 16}, ${(parseInt(extendedHex.slice(1), 16) & 0x00ff00) >> 8}, ${parseInt(extendedHex.slice(1), 16) & 0x0000ff})`;
+}
 // hexToRgb('#27ae60') -> 'rgb(39, 174, 96)'
 // hexToRgb('#acd') -> 'rgb(170, 204, 221)'
 ```

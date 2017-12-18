@@ -127,6 +127,7 @@
 <a class="sublink-1" href="#objectfrompairs">objectFromPairs</a>
 <a class="sublink-1" href="#objecttopairs">objectToPairs</a>
 <a class="sublink-1" href="#shallowclone">shallowClone</a>
+<a class="sublink-1" href="#truthcheckcollection">truthCheckCollection</a>
 
 <h3>String
 </h3><a class="sublink-1" href="#anagrams">anagrams</a>
@@ -140,7 +141,9 @@
 <a class="sublink-1" href="#truncatestring">truncateString</a>
 
 <h3>Utility
-</h3><a class="sublink-1" href="#extendhex">extendHex</a>
+</h3><a class="sublink-1" href="#coalesce">coalesce</a>
+<a class="sublink-1" href="#coalescefactory">coalesceFactory</a>
+<a class="sublink-1" href="#extendhex">extendHex</a>
 <a class="sublink-1" href="#gettype">getType</a>
 <a class="sublink-1" href="#hextorgb">hexToRGB</a>
 <a class="sublink-1" href="#isarray">isArray</a>
@@ -846,6 +849,12 @@ const b = shallowClone(a);
 a === b -&gt; false
 */
 </code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="truthcheckcollection">truthCheckCollection</h3></div><div class="section double-padded">
+<p>Checks if the predicate (second argument) is truthy on all elements of a collection (first argument).</p>
+<p>Use <code>Array.every()</code> to check if each passed object has the specified property and if it returns a truthy value.</p>
+<pre><code class="language-js">truthCheckCollection = (collection, pre) =&gt; (collection.every(obj =&gt; obj[pre]));
+// truthCheckCollection([{&quot;user&quot;: &quot;Tinky-Winky&quot;, &quot;sex&quot;: &quot;male&quot;}, {&quot;user&quot;: &quot;Dipsy&quot;, &quot;sex&quot;: &quot;male&quot;}], &quot;sex&quot;) -&gt; true
+</code></pre>
 </div></div><br/><h2 style="text-align:center;">String</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="anagrams">anagrams</h3></div><div class="section double-padded">
 <p>Generates all anagrams of a string (contains duplicates).</p>
@@ -925,7 +934,20 @@ Return the string truncated to the desired length, with <code>...</code> appende
 // truncateString('boomerang', 7) -&gt; 'boom...'
 </code></pre>
 </div></div><br/><h2 style="text-align:center;">Utility</h2>
-<div class="card fluid"><div class="section double-padded"><h3 id="extendhex">extendHex</h3></div><div class="section double-padded">
+<div class="card fluid"><div class="section double-padded"><h3 id="coalesce">coalesce</h3></div><div class="section double-padded">
+<p>Returns the first non-null/undefined argument.</p>
+<p>Use <code>Array.find()</code> to return the first non <code>null</code>/<code>undefined</code> argument.</p>
+<pre><code class="language-js">const coalesce = (...args) =&gt; args.find(_ =&gt; ![undefined, null].includes(_))
+// coalesce(null,undefined,&quot;&quot;,NaN, &quot;Waldo&quot;) -&gt; &quot;&quot;
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="coalescefactory">coalesceFactory</h3></div><div class="section double-padded">
+<p>Returns a customized coalesce function that returns the first argument that returns <code>true</code> from the provided argument validation function.</p>
+<p>Use <code>Array.find()</code> to return the first argument that returns <code>true</code> from the provided argument validation function.</p>
+<pre><code class="language-js">const coalesceFactory = valid =&gt; (...args) =&gt; args.find(valid);
+// const customCoalesce = coalesceFactory(_ =&gt; ![null, undefined, &quot;&quot;, NaN].includes(_))
+// customCoalesce(undefined, null, NaN, &quot;&quot;, &quot;Waldo&quot;) //-&gt; &quot;Waldo&quot;
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="extendhex">extendHex</h3></div><div class="section double-padded">
 <p>Extends a 3-digit color code to a 6-digit color code.</p>
 <p>Use <code>Array.map()</code>, <code>split()</code> and <code>Array.join()</code> to join the mapped array for converting a 3-digit RGB notated hexadecimal color-code to the 6-digit form.
 <code>Array.slice()</code> is used to remove <code>#</code> from string start since it's added once.</p>
@@ -945,12 +967,11 @@ Return the string truncated to the desired length, with <code>...</code> appende
 <p>Converts a colorcode to a <code>rgb()</code> string.</p>
 <p>Use bitwise right-shift operator and mask bits with <code>&amp;</code> (and) operator to convert a hexadecimal color code (prefixed with <code>#</code>) to a string with the RGB values. In case it's a 3-digit-colorcode, do the same with the 6-digit-colorcode extended by the extendHex() function (ref. <code>extendHex</code> snippet)</p>
 <pre><code class="language-js">const hexToRgb = hex =&gt; {
-  const extendHex = shortHex =&gt; 
+  const extendHex = shortHex =&gt;
     '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split('').map(x =&gt; x+x).join('');
-  return hex.slice(1).length==3 ? 
-  `rgb(${parseInt(extendHex(hex).slice(1), 16) &gt;&gt; 16}, ${(parseInt(extendHex(hex).slice(1), 16) &amp; 0x00ff00) &gt;&gt; 8}, ${parseInt(extendHex(hex).slice(1), 16) &amp; 0x0000ff})`:
-  `rgb(${parseInt(hex.slice(1), 16) &gt;&gt; 16}, ${(parseInt(hex.slice(1), 16) &amp; 0x00ff00) &gt;&gt; 8}, ${parseInt(hex.slice(1), 16) &amp; 0x0000ff})`;
-}   
+  const extendedHex = hex.slice(hex.startsWith('#') ? 1 : 0).length === 3 ? extendHex(hex) : hex;
+  return `rgb(${parseInt(extendedHex.slice(1), 16) &gt;&gt; 16}, ${(parseInt(extendedHex.slice(1), 16) &amp; 0x00ff00) &gt;&gt; 8}, ${parseInt(extendedHex.slice(1), 16) &amp; 0x0000ff})`;
+}
 // hexToRgb('#27ae60') -&gt; 'rgb(39, 174, 96)'
 // hexToRgb('#acd') -&gt; 'rgb(170, 204, 221)'
 </code></pre>
