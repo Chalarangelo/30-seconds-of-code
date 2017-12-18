@@ -15,6 +15,7 @@ collatz:math
 compact:array
 compose:function
 countOccurrences:array
+countVowels:string
 currentURL:browser
 curry:function
 deepFlatten:array
