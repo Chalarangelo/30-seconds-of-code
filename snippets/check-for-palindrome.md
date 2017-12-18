@@ -5,7 +5,7 @@ Then spread(`[...str]`) into individual characters array, `reverse()`, `join('')
 
 ```js
 const palindrome = str => {
-  const s = str.toLowerCase().replace(/\s+/g, '');
+  const s = str.toLowerCase().replace(/[\W_]/g, '');
   return s === [...s].reverse().join('');
 }
 // palindrome('taco cat') -> true
