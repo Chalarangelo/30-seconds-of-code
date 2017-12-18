@@ -9,6 +9,8 @@ capitalizeEveryWord:string
 chainAsync:function
 chunk:array
 cleanObj:object
+coalesce:utility
+coalesceFactory:utility
 collatz:math
 compact:array
 compose:function
@@ -96,6 +98,7 @@ toCamelCase:string
 toEnglishDate:date
 toOrdinalSuffix:utility
 truncateString:string
+truthCheckCollection:object
 union:array
 UUIDGenerator:utility
 validateEmail:utility
