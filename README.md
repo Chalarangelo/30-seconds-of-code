@@ -110,6 +110,7 @@
 * [`anagrams`](#anagrams)
 * [`capitalize`](#capitalize)
 * [`capitalizeEveryWord`](#capitalizeeveryword)
+* [`countVowels`](#countvowels)
 * [`escapeRegExp`](#escaperegexp)
 * [`fromCamelCase`](#fromcamelcase)
 * [`reverseString`](#reversestring)
@@ -1448,6 +1449,21 @@ Use `replace()` to match the first character of each word and `toUpperCase()` to
 ```js
 const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperCase());
 // capitalizeEveryWord('hello world!') -> 'Hello World!'
+```
+
+[⬆ back to top](#table-of-contents)
+
+### countVowels
+
+Retuns `number` of vowels in provided string.
+
+Use a regular expression to count number of vowels `(A, E, I, O, U)` in a `string`.
+
+```js
+const countVowels = str =>
+  return (str.match(/[aeiou]/ig) || []).length;
+// countVowels('foobar') -> 3
+// countVowels('gym') -> 0
 ```
 
 [⬆ back to top](#table-of-contents)
