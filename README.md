@@ -30,6 +30,7 @@
 * [`initializeArrayWithValues`](#initializearraywithvalues)
 * [`intersection`](#intersection)
 * [`last`](#last)
+* [`mapObject`](#mapobject)
 * [`nthElement`](#nthelement)
 * [`pick`](#pick)
 * [`pull`](#pull)
@@ -47,7 +48,7 @@
 
 ### Browser
 * [`bottomVisible`](#bottomvisible)
-* [`current-URL`](#current-url)
+* [`currentURL`](#currenturl)
 * [`elementIsVisibleInViewport`](#elementisvisibleinviewport)
 * [`getScrollPosition`](#getscrollposition)
 * [`getURLParameters`](#geturlparameters)
@@ -191,7 +192,7 @@ const compact = (arr) => arr.filter(Boolean);
 
 ### countOccurrences
 
-Counts the occurences of a value in an array.
+Counts the occurrences of a value in an array.
 
 Use `Array.reduce()` to increment a counter each time you encounter the specific value inside the array.
 
@@ -362,7 +363,7 @@ const initial = arr => arr.slice(0, -1);
 
 ### initializeArrayWithRange
 
-Initialized an array containing the numbers in the specified range.
+Initializes an array containing the numbers in the specified range.
 
 Use `Array(end-start)` to create an array of the desired length, `Array.map()` to fill with the desired values in a range.
 You can omit `start` to use a default value of `0`.
@@ -411,6 +412,23 @@ Use `arr.length - 1` to compute index of the last element of the given array and
 ```js
 const last = arr => arr[arr.length - 1];
 // last([1,2,3]) -> 3
+```
+
+[⬆ back to top](#table-of-contents)
+
+### mapObject
+
+Maps the values of an array to an object using a function, where the key-value pairs consist of the original value as the key and the mapped value.
+
+Use an anonymous inner function scope to declare an undefined memory space, using closures to store a return value. Use a new `Array` to stor the array with a map of the function over its data set and a comma operator to return a second step, without needing to move from one context to another (due to closures and order of operations).
+
+```js
+const mapObject = (arr, fn) => 
+  (a => (a = [arr, arr.map(fn)], a[0].reduce( (acc,val,ind) => (acc[val] = a[1][ind], acc), {}) )) ( );
+/*
+const squareIt = arr => mapObject(arr, a => a*a)
+squareIt([1,2,3]) // { 1: 1, 2: 4, 3: 9 }
+*/
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -554,7 +572,7 @@ const tail = arr => arr.length > 1 ? arr.slice(1) : arr;
 
 ### take
 
-Returns an array with n elements removed from the beggining.
+Returns an array with n elements removed from the beginning.
 
 Use `Array.slice()` to create a slice of the array with `n` elements taken from the beginning.
 
@@ -1280,7 +1298,7 @@ Returns an array of lines from the specified file.
 
 Use `readFileSync` function in `fs` node package to create a `Buffer` from a file.
 convert buffer to string using `toString(encoding)` function.
-creating an array from contents of file by `split`ing file content line by line(each `\n`).
+creating an array from contents of file by `split`ing file content line by line (each `\n`).
 
   ```js
 const fs = require('fs');
@@ -1304,7 +1322,7 @@ const readFileLines = filename => fs.readFileSync(filename).toString('UTF8').spl
 Removes any properties except the ones specified from a JSON object.
 
 Use `Object.keys()` method to loop over given json object and deleting keys that are not `include`d in given array.
-also if you give it a special key(`childIndicator`) it will search deeply inside it to apply function to inner objects too.
+Also if you give it a special key (`childIndicator`) it will search deeply inside it to apply function to inner objects too.
 
 ```js
 const cleanObj = (obj, keysToKeep = [], childIndicator) => {
@@ -1394,7 +1412,7 @@ const anagrams = str => {
 Capitalizes the first letter of a string.
 
 Use destructuring and `toUpperCase()` to capitalize first letter, `...rest` to get array of characters after first letter and then `Array.join('')` to make it a string again.
-Omit the `lowerRest` parameter to keep the rest of the string intact, or set it to `true` to convert to lower case.
+Omit the `lowerRest` parameter to keep the rest of the string intact, or set it to `true` to convert to lowercase.
 
 ```js
 const capitalize = ([first,...rest], lowerRest = false) =>
@@ -1436,7 +1454,7 @@ const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 Converts a string from camelcase.
 
 Use `replace()` to remove underscores, hyphens and spaces and convert words to camelcase.
-Omit the scond argument to use a default separator of `_`.
+Omit the second argument to use a default separator of `_`.
 
 ```js
 const fromCamelCase = (str, separator = '_') =>
@@ -1529,7 +1547,7 @@ const extendHex = shortHex =>
 
 Returns the native type of a value.
 
-Returns lower-cased constructor name of value, "undefined" or "null" if value is undefined or null
+Returns lowercased constructor name of value, "undefined" or "null" if value is undefined or null
 
 ```js
 const getType = v =>
