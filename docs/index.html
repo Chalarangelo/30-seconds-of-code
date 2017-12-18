@@ -317,8 +317,8 @@ squareIt([1,2,3]) // { 1: 1, 2: 4, 3: 9 }
 If the index is out of bounds, return <code>[]</code>.
 Omit the second argument, <code>n</code>, to get the first element of the array.</p>
 <pre><code class="language-js">const nthElement = (arr, n=0) =&gt; (n&gt;0? arr.slice(n,n+1) : arr.slice(n))[0];
-// nth(['a','b','c'],1) -&gt; 'b'
-// nth(['a','b','b']-2) -&gt; 'a'
+// nthElement(['a','b','c'],1) -&gt; 'b'
+// nthElement(['a','b','b'],-3) -&gt; 'a'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="pick">pick</h3></div><div class="section double-padded">
 <p>Picks the key-value pairs corresponding to the given keys from an object.</p>
