@@ -2,7 +2,7 @@
 
 Initializes an array containing the numbers in the specified range where `start` and `end` are inclusive.
 
-Use `Array(end-start)` to create an array of the desired length, `Array.map()` to fill with the desired values in a range.
+Use `Array((end + 1) - start)` to create an array of the desired length, `Array.map()` to fill with the desired values in a range.
 You can omit `start` to use a default value of `0`.
 
 ```js
