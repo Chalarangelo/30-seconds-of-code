@@ -22,11 +22,13 @@
     <link rel="stylesheet" href="prism.css">
   </head>
   <body>
-    <header>
-      <h1 class="logo" style="margin-top: -1rem; text-align:center;"><a style="text-decoration:none;color:black" href="https://github.com/Chalarangelo/30-seconds-of-code"><img src="favicon.png" style="height: 4rem;"/><span style="position:relative; top: -1rem;">&nbsp;30 seconds of code</span></a></h1>
+    <header style="height: 5.5rem;">
+      <h1 class="logo" style="margin-top: -0.8rem; text-align:center;"><a style="text-decoration:none;color:black" href="https://github.com/Chalarangelo/30-seconds-of-code"><img src="favicon.png" style="height: 4rem;"/><span style="position:relative; top: -1rem;">&nbsp;30 seconds of code</span></a>
+        <span style="display:block; font-size: 1rem; font-style: italic; color: grey; margin-top: -0.8rem">Curated collection of useful Javascript snippets that you can understand in 30 seconds or less.</span>
+      </h1>
       <label for="doc-drawer-checkbox" class="button drawer-toggle" style="position: absolute; right: 0; top: 0;"></label>
     </header>
-    <div class="row" style="height: calc(100vh - 3.5625rem);overflow: hidden;">
+    <div class="row" style="height: calc(100vh - 5.875rem);overflow: hidden;">
       <input id="doc-drawer-checkbox" class="drawer" value="on" type="checkbox">
         <nav class="col-md-4 col-lg-3" style="border-top: 0">
           <label for="doc-drawer-checkbox" class="button drawer-close"></label>
@@ -133,6 +135,7 @@
 </h3><a class="sublink-1" href="#anagrams">anagrams</a>
 <a class="sublink-1" href="#capitalize">capitalize</a>
 <a class="sublink-1" href="#capitalizeeveryword">capitalizeEveryWord</a>
+<a class="sublink-1" href="#countvowels">countVowels</a>
 <a class="sublink-1" href="#escaperegexp">escapeRegExp</a>
 <a class="sublink-1" href="#fromcamelcase">fromCamelCase</a>
 <a class="sublink-1" href="#reversestring">reverseString</a>
@@ -159,7 +162,7 @@
 <a class="sublink-1" href="#validateemail">validateEmail</a>
 <a class="sublink-1" href="#validatenumber">validateNumber</a>
 
-</nav><main class="col-sm-12 col-md-8 col-lg-9" style="height: 100%;overflow-y: auto; background: #eee;"><h2 style="text-align:center;">Array</h2>
+</nav><main class="col-sm-12 col-md-8 col-lg-9" style="height: 100%;overflow-y: auto; background: #eee;"><a id="top">&nbsp;</a><h2 style="text-align:center;">Array</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="arraymax">arrayMax</h3></div><div class="section double-padded">
 <p>Returns the maximum value in an array.</p>
 <p>Use <code>Math.max()</code> combined with the spread operator (<code>...</code>) to get the maximum value in the array.</p>
@@ -884,6 +887,14 @@ Omit the <code>lowerRest</code> parameter to keep the rest of the string intact,
 <pre><code class="language-js">const capitalizeEveryWord = str =&gt; str.replace(/\b[a-z]/g, char =&gt; char.toUpperCase());
 // capitalizeEveryWord('hello world!') -&gt; 'Hello World!'
 </code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="countvowels">countVowels</h3></div><div class="section double-padded">
+<p>Retuns <code>number</code> of vowels in provided string.</p>
+<p>Use a regular expression to count number of vowels <code>(A, E, I, O, U)</code> in a <code>string</code>.</p>
+<pre><code class="language-js">const countVowels = str =&gt;
+  return (str.match(/[aeiou]/ig) || []).length;
+// countVowels('foobar') -&gt; 3
+// countVowels('gym') -&gt; 0
+</code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="escaperegexp">escapeRegExp</h3></div><div class="section double-padded">
 <p>Escapes a string to use in a regular expression.</p>
 <p>Use <code>replace()</code> to escape special characters.</p>
@@ -1072,9 +1083,12 @@ Use <code>Number()</code> to check if the coercion holds.</p>
 // validateNumber('10') -&gt; true
 </code></pre>
 </div></div><br/>
-        <footer><p><strong>30 seconds of code</strong> is licensed under the <a href="https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE">CC0-1.0</a> license.<br/>Icons made by <a href="https://www.flaticon.com/authors/smashicons">Smashicons</a> from <a href="https://www.flaticon.com/">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/">CC 3.0 BY</a>.</p></footer>
+        <footer>
+          <p style="display: inline-block;"><strong>30 seconds of code</strong> is licensed under the <a href="https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE">CC0-1.0</a> license.<br/>Icons made by <a href="https://www.flaticon.com/authors/smashicons">Smashicons</a> from <a href="https://www.flaticon.com/">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/">CC 3.0 BY</a>.</p>
+          <a href="#top"><p style="display: inline-block;float: right;padding-right: 2em;">Back to top</p></a>
+        </footer>
       </main>
-    </div>    
+    </div>
     <script src="prism.js"></script>
   </body>
 </html>

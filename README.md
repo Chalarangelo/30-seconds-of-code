@@ -110,6 +110,7 @@
 * [`anagrams`](#anagrams)
 * [`capitalize`](#capitalize)
 * [`capitalizeEveryWord`](#capitalizeeveryword)
+* [`countVowels`](#countvowels)
 * [`escapeRegExp`](#escaperegexp)
 * [`fromCamelCase`](#fromcamelcase)
 * [`reverseString`](#reversestring)
@@ -251,12 +252,12 @@ const distinctValuesOfArray = arr => [...new Set(arr)];
 
 Removes elements in an array until the passed function returns `true`. Returns the remaining elements in the array.
 
-Loop through the array, using `Array.shift()` to drop the first element of the array until the returned value from the function is `true`.
+Loop through the array, using `Array.slice()` to drop the first element of the array until the returned value from the function is `true`.
 Returns the remaining elements.
 
 ```js
 const dropElements = (arr, func) => {
-  while (arr.length > 0 && !func(arr[0])) arr.shift();
+  while (arr.length > 0 && !func(arr[0])) arr = arr.slice(1);
   return arr;
 };
 // dropElements([1, 2, 3, 4], n => n >= 3) -> [3,4]
@@ -1448,6 +1449,21 @@ Use `replace()` to match the first character of each word and `toUpperCase()` to
 ```js
 const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperCase());
 // capitalizeEveryWord('hello world!') -> 'Hello World!'
+```
+
+[⬆ back to top](#table-of-contents)
+
+### countVowels
+
+Retuns `number` of vowels in provided string.
+
+Use a regular expression to count number of vowels `(A, E, I, O, U)` in a `string`.
+
+```js
+const countVowels = str =>
+  return (str.match(/[aeiou]/ig) || []).length;
+// countVowels('foobar') -> 3
+// countVowels('gym') -> 0
 ```
 
 [⬆ back to top](#table-of-contents)
