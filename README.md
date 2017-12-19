@@ -408,7 +408,7 @@ Use `Array((end + 1) - start)` to create an array of the desired length, `Array.
 You can omit `start` to use a default value of `0`.
 
 ```js
-const initializeArrayWithRange = (end, start = 0) =>
+const initializeArrayWithRange = (end, start = 0) => 
   Array.from({ length: (end + 1) - start }).map((v, i) => i + start);
 // initializeArrayWithRange(5) -> [0,1,2,3,4,5]
 // initializeArrayWithRange(7, 3) -> [3,4,5,6,7]
@@ -463,7 +463,7 @@ Maps the values of an array to an object using a function, where the key-value p
 Use an anonymous inner function scope to declare an undefined memory space, using closures to store a return value. Use a new `Array` to stor the array with a map of the function over its data set and a comma operator to return a second step, without needing to move from one context to another (due to closures and order of operations).
 
 ```js
-const mapObject = (arr, fn) =>
+const mapObject = (arr, fn) => 
   (a => (a = [arr, arr.map(fn)], a[0].reduce( (acc,val,ind) => (acc[val] = a[1][ind], acc), {}) )) ( );
 /*
 const squareIt = arr => mapObject(arr, a => a*a)
@@ -535,14 +535,14 @@ Mutates the original array to filter out the values at the specified indexes.
 
 Use `Array.filter()` and `Array.includes()` to pull out the values that are not needed.
 Use `Array.length = 0` to mutate the passed in array by resetting it's length to zero and `Array.push()` to re-populate it with only the pulled values.
-Use `Array.push()` to keep track of pulled values
+Use `Array.push()` to keep track of pulled values 
 
 ```js
 const pullAtIndex = (arr, pullArr) => {
   let removed = [];
   let pulled = arr.map((v, i) => pullArr.includes(i) ? removed.push(v) : v)
                   .filter((v, i) => !pullArr.includes(i))
-  arr.length = 0;
+  arr.length = 0; 
   pulled.forEach(v => arr.push(v));
   return removed;
 }
@@ -562,11 +562,11 @@ Mutates the original array to filter out the values specified. Returns the remov
 
 Use `Array.filter()` and `Array.includes()` to pull out the values that are not needed.
 Use `Array.length = 0` to mutate the passed in array by resetting it's length to zero and `Array.push()` to re-populate it with only the pulled values.
-Use `Array.push()` to keep track of pulled values
+Use `Array.push()` to keep track of pulled values 
 
 ```js
 const pullAtValue = (arr, pullArr) => {
-  let removed = [],
+  let removed = [], 
     pushToRemove = arr.forEach((v, i) => pullArr.includes(v) ? removed.push(v) : v),
     mutateTo = arr.filter((v, i) => !pullArr.includes(v));
   arr.length = 0;
@@ -1219,7 +1219,7 @@ const isEven = num => num % 2 === 0;
 
 ### isPrime
 
-Checks if the provided intiger is primer number.
+Checks if the provided intiger is prime number.
 
 Returns `false` if the provided number has positive divisors other than 1 and itself or if the number itself is less than 2.
 
@@ -1527,7 +1527,7 @@ a === b -> false
 Checks if the predicate (second argument) is truthy on all elements of a collection (first argument).
 
 Use `Array.every()` to check if each passed object has the specified property and if it returns a truthy value.
-
+ 
  ```js
 truthCheckCollection = (collection, pre) => (collection.every(obj => obj[pre]));
 // truthCheckCollection([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}], "sex") -> true
