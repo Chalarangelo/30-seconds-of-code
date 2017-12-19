@@ -72,6 +72,7 @@ pipe:function
 powerset:math
 promisify:function
 pull:array
+pullAtIndex:array
 pullAll:array
 randomIntegerInRange:math
 randomNumberInRange:math
