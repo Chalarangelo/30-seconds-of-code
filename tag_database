@@ -15,14 +15,17 @@ collatz:math
 compact:array
 compose:function
 countOccurrences:array
+countVowels:string
 currentURL:browser
 curry:function
 deepFlatten:array
 difference:array
+differenceWith:array
 digitize:math
 distance:math
 distinctValuesOfArray:array
 dropElements:array
+dropRight:array
 elementIsVisibleInViewport:browser
 escapeRegExp:string
 everyNth:array
@@ -71,6 +74,8 @@ pipe:function
 powerset:math
 promisify:function
 pull:array
+pullAll:array
+pullAtIndex:array
 randomIntegerInRange:math
 randomNumberInRange:math
 readFileLines:node
@@ -82,6 +87,7 @@ round:math
 runPromisesInSeries:function
 sample:array
 scrollToTop:browser
+select:object
 shallowClone:object
 shuffle:array
 similarity:array

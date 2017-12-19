@@ -31,7 +31,7 @@
       </h1>
       <label for="doc-drawer-checkbox" class="button drawer-toggle" style="position: absolute; right: 0; top: 0;"></label>
     </header>
-    <div class="row" style="height: calc(100vh - 3.5625rem);overflow: hidden;">
+    <div class="row" style="height: calc(100vh - 5.875rem);overflow: hidden;">
       <input id="doc-drawer-checkbox" class="drawer" value="on" type="checkbox">
         <nav class="col-md-4 col-lg-3" style="border-top: 0">
           <label for="doc-drawer-checkbox" class="button drawer-close"></label>
@@ -45,8 +45,10 @@
 <a class="sublink-1" href="#countoccurrences">countOccurrences</a>
 <a class="sublink-1" href="#deepflatten">deepFlatten</a>
 <a class="sublink-1" href="#difference">difference</a>
+<a class="sublink-1" href="#differencewith">differenceWith</a>
 <a class="sublink-1" href="#distinctvaluesofarray">distinctValuesOfArray</a>
 <a class="sublink-1" href="#dropelements">dropElements</a>
+<a class="sublink-1" href="#dropright">dropRight</a>
 <a class="sublink-1" href="#everynth">everyNth</a>
 <a class="sublink-1" href="#filternonunique">filterNonUnique</a>
 <a class="sublink-1" href="#flatten">flatten</a>
@@ -62,6 +64,8 @@
 <a class="sublink-1" href="#nthelement">nthElement</a>
 <a class="sublink-1" href="#pick">pick</a>
 <a class="sublink-1" href="#pull">pull</a>
+<a class="sublink-1" href="#pullall">pullAll</a>
+<a class="sublink-1" href="#pullatindex">pullAtIndex</a>
 <a class="sublink-1" href="#remove">remove</a>
 <a class="sublink-1" href="#sample">sample</a>
 <a class="sublink-1" href="#shuffle">shuffle</a>
@@ -131,6 +135,7 @@
 </h3><a class="sublink-1" href="#cleanobj">cleanObj</a>
 <a class="sublink-1" href="#objectfrompairs">objectFromPairs</a>
 <a class="sublink-1" href="#objecttopairs">objectToPairs</a>
+<a class="sublink-1" href="#select">select</a>
 <a class="sublink-1" href="#shallowclone">shallowClone</a>
 <a class="sublink-1" href="#truthcheckcollection">truthCheckCollection</a>
 
@@ -138,6 +143,7 @@
 </h3><a class="sublink-1" href="#anagrams">anagrams</a>
 <a class="sublink-1" href="#capitalize">capitalize</a>
 <a class="sublink-1" href="#capitalizeeveryword">capitalizeEveryWord</a>
+<a class="sublink-1" href="#countvowels">countVowels</a>
 <a class="sublink-1" href="#escaperegexp">escapeRegExp</a>
 <a class="sublink-1" href="#fromcamelcase">fromCamelCase</a>
 <a class="sublink-1" href="#reversestring">reverseString</a>
@@ -212,6 +218,12 @@ Recursively flatten each element that is an array.</p>
 <pre><code class="language-js">const difference = (a, b) =&gt; { const s = new Set(b); return a.filter(x =&gt; !s.has(x)); };
 // difference([1,2,3], [1,2,4]) -&gt; [3]
 </code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="differencewith">differenceWith</h3></div><div class="section double-padded">
+<p>Filters out all values from an array for which the comparator function does not return <code>true</code>.</p>
+<p>Use <code>Array.filter()</code> and <code>Array.find()</code> to find the appropriate values.</p>
+<pre><code class="language-js">const differenceWith = (arr, val, comp) =&gt; arr.filter(a =&gt; !val.find(b =&gt; comp(a, b)))
+// differenceWith([1, 1.2, 1.5, 3], [1.9, 3], (a,b) =&gt; Math.round(a) == Math.round(b)) -&gt; [1, 1.2]
+</code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="distinctvaluesofarray">distinctValuesOfArray</h3></div><div class="section double-padded">
 <p>Returns all the distinct values of an array.</p>
 <p>Use ES6 <code>Set</code> and the <code>...rest</code> operator to discard all duplicated values.</p>
@@ -220,13 +232,21 @@ Recursively flatten each element that is an array.</p>
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="dropelements">dropElements</h3></div><div class="section double-padded">
 <p>Removes elements in an array until the passed function returns <code>true</code>. Returns the remaining elements in the array.</p>
-<p>Loop through the array, using <code>Array.shift()</code> to drop the first element of the array until the returned value from the function is <code>true</code>.
+<p>Loop through the array, using <code>Array.slice()</code> to drop the first element of the array until the returned value from the function is <code>true</code>.
 Returns the remaining elements.</p>
 <pre><code class="language-js">const dropElements = (arr, func) =&gt; {
-  while (arr.length &gt; 0 &amp;&amp; !func(arr[0])) arr.shift();
+  while (arr.length &gt; 0 &amp;&amp; !func(arr[0])) arr = arr.slice(1);
   return arr;
 };
 // dropElements([1, 2, 3, 4], n =&gt; n &gt;= 3) -&gt; [3,4]
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="dropright">dropRight</h3></div><div class="section double-padded">
+<p>Returns a new array with <code>n</code> elements removed from the right</p>
+<p>Check if <code>n</code> is shorter than the given array and use <code>Array.slice()</code> to slice it accordingly or return an empty array.</p>
+<pre><code class="language-js">const dropRight = (arr, n = 1) =&gt; n &lt; arr.length ? arr.slice(0, arr.length - n) : []
+//dropRight([1,2,3]) -&gt; [1,2]
+//dropRight([1,2,3], 2) -&gt; [1]
+//dropRight([1,2,3], 42) -&gt; []
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="everynth">everyNth</h3></div><div class="section double-padded">
 <p>Returns every nth element in an array.</p>
@@ -280,12 +300,13 @@ Use <code>Array.reduce()</code> to create an object, where the keys are produced
 // initial([1,2,3]) -&gt; [1,2]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="initializearraywithrange">initializeArrayWithRange</h3></div><div class="section double-padded">
-<p>Initializes an array containing the numbers in the specified range.</p>
-<p>Use <code>Array(end-start)</code> to create an array of the desired length, <code>Array.map()</code> to fill with the desired values in a range.
+<p>Initializes an array containing the numbers in the specified range where <code>start</code> and <code>end</code> are inclusive.</p>
+<p>Use <code>Array((end + 1) - start)</code> to create an array of the desired length, <code>Array.map()</code> to fill with the desired values in a range.
 You can omit <code>start</code> to use a default value of <code>0</code>.</p>
-<pre><code class="language-js">const initializeArrayWithRange = (end, start = 0) =&gt;
-  Array.from({ length: end - start }).map((v, i) =&gt; i + start);
-// initializeArrayWithRange(5) -&gt; [0,1,2,3,4]
+<pre><code class="language-js">const initializeArrayWithRange = (end, start = 0) =&gt; 
+  Array.from({ length: (end + 1) - start }).map((v, i) =&gt; i + start);
+// initializeArrayWithRange(5) -&gt; [0,1,2,3,4,5]
+// initializeArrayWithRange(7, 3) -&gt; [3,4,5,6,7]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="initializearraywithvalues">initializeArrayWithValues</h3></div><div class="section double-padded">
 <p>Initializes and fills an array with the specified values.</p>
@@ -336,6 +357,7 @@ Omit the second argument, <code>n</code>, to get the first element of the array.
 <p>Mutates the original array to filter out the values specified.</p>
 <p>Use <code>Array.filter()</code> and <code>Array.includes()</code> to pull out the values that are not needed.
 Use <code>Array.length = 0</code> to mutate the passed in array by resetting it's length to zero and <code>Array.push()</code> to re-populate it with only the pulled values.</p>
+<p><em>(For a snippet that does not mutate the original array see <a href="#without"><code>without</code></a>)</em></p>
 <pre><code class="language-js">const pull = (arr, ...args) =&gt; {
   let pulled = arr.filter((v, i) =&gt; !args.includes(v));
   arr.length = 0; pulled.forEach(v =&gt; arr.push(v));
@@ -343,6 +365,38 @@ Use <code>Array.length = 0</code> to mutate the passed in array by resetting it'
 // let myArray = ['a', 'b', 'c', 'a', 'b', 'c'];
 // pull(myArray, 'a', 'c');
 // console.log(myArray) -&gt; [ 'b', 'b' ]
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="pullall">pullAll</h3></div><div class="section double-padded">
+<p>Mutates the original array to filter out the values specified (accepts an array of values).</p>
+<p>Use <code>Array.filter()</code> and <code>Array.includes()</code> to pull out the values that are not needed.
+Use <code>Array.length = 0</code> to mutate the passed in array by resetting it's length to zero and <code>Array.push()</code> to re-populate it with only the pulled values.</p>
+<pre><code class="language-js">const pullAll = (arr, pullArr) =&gt; {
+  let pulled = arr.filter((v, i) =&gt; !pullArr.includes(v));
+  arr.length = 0; pulled.forEach(v =&gt; arr.push(v));
+}
+// let myArray = ['a', 'b', 'c', 'a', 'b', 'c'];
+// pullAll(myArray, ['a', 'c']);
+// console.log(myArray) -&gt; [ 'b', 'b' ]
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="pullatindex">pullAtIndex</h3></div><div class="section double-padded">
+<p>Mutates the original array to filter out the values at the specified indexes.</p>
+<p>Use <code>Array.filter()</code> and <code>Array.includes()</code> to pull out the values that are not needed.
+Use <code>Array.length = 0</code> to mutate the passed in array by resetting it's length to zero and <code>Array.push()</code> to re-populate it with only the pulled values.
+Use <code>Array.push()</code> to keep track of pulled values</p>
+<pre><code class="language-js">const pullAtIndex = (arr, pullArr) =&gt; {
+  let removed = [];
+  let pulled = arr.map((v, i) =&gt; pullArr.includes(i) ? removed.push(v) : v)
+                  .filter((v, i) =&gt; !pullArr.includes(i))
+  arr.length = 0; 
+  pulled.forEach(v =&gt; arr.push(v));
+  return removed;
+}
+
+// let myArray = ['a', 'b', 'c', 'd'];
+// let pulled = pullAtIndex(myArray, [1, 3]);
+
+// console.log(myArray); -&gt; [ 'a', 'c' ]
+// console.log(pulled); -&gt; [ 'b', 'd' ]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="remove">remove</h3></div><div class="section double-padded">
 <p>Removes elements from an array for which the given function returns <code>false</code>.</p>
@@ -413,6 +467,7 @@ This method also works with strings.</p>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="without">without</h3></div><div class="section double-padded">
 <p>Filters out the elements of an array, that have one of the specified values.</p>
 <p>Use <code>Array.filter()</code> to create an array excluding(using <code>!Array.includes()</code>) all given values.</p>
+<p><em>(For a snippet that mutates the original array see <a href="#pull"><code>pull</code></a>)</em></p>
 <pre><code class="language-js">const without = (arr, ...args) =&gt; arr.filter(v =&gt; !args.includes(v));
 // without([2, 1, 2, 3], 1, 2) -&gt; [3]
 </code></pre>
@@ -435,7 +490,7 @@ If lengths of the argument-arrays vary, <code>undefined</code> is used where no 
 <p>Returns <code>true</code> if the bottom of the page is visible, <code>false</code> otherwise.</p>
 <p>Use <code>scrollY</code>, <code>scrollHeight</code> and <code>clientHeight</code> to determine if the bottom of the page is visible.</p>
 <pre><code class="language-js">const bottomVisible = () =&gt;
-  document.documentElement.clientHeight + window.scrollY &gt;= document.documentElement.scrollHeight || document.documentElement.clientHeight;
+  document.documentElement.clientHeight + window.scrollY &gt;= (document.documentElement.scrollHeight || document.documentElement.clientHeight);
 // bottomVisible() -&gt; true
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="currenturl">currentURL</h3></div><div class="section double-padded">
@@ -710,7 +765,7 @@ The GCD formula uses recursion.</p>
 <p>Find the middle of the array, use <code>Array.sort()</code> to sort the values.
 Return the number at the midpoint if <code>length</code> is odd, otherwise the average of the two middle numbers.</p>
 <pre><code class="language-js">const median = arr =&gt; {
-  const mid = Math.floor(arr.length / 2), nums = arr.sort((a, b) =&gt; a - b);
+  const mid = Math.floor(arr.length / 2), nums = [...arr].sort((a, b) =&gt; a - b);
   return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
 };
 // median([5,6,50,1,-5]) -&gt; 5
@@ -844,6 +899,15 @@ Also if you give it a special key (<code>childIndicator</code>) it will search d
 <pre><code class="language-js">const objectToPairs = obj =&gt; Object.keys(obj).map(k =&gt; [k, obj[k]]);
 // objectToPairs({a: 1, b: 2}) -&gt; [['a',1],['b',2]])
 </code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="select">select</h3></div><div class="section double-padded">
+<p>Retrieve a property that indicated by the selector from object.</p>
+<p>If property not exists returns <code>undefined</code>.</p>
+<pre><code class="language-js">const select = (from, selector) =&gt;
+  selector.split('.').reduce((prev, cur) =&gt; prev &amp;&amp; prev[cur], from);
+
+// const obj = {selector: {to: {val: 'val to select'}}};
+// select(obj, 'selector.to.val'); -&gt; 'val to select'
+</code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="shallowclone">shallowClone</h3></div><div class="section double-padded">
 <p>Creates a shallow clone of an object.</p>
 <p>Use <code>Object.assign()</code> and an empty object (<code>{}</code>) to create a shallow clone of the original.</p>
@@ -889,6 +953,13 @@ Omit the <code>lowerRest</code> parameter to keep the rest of the string intact,
 <pre><code class="language-js">const capitalizeEveryWord = str =&gt; str.replace(/\b[a-z]/g, char =&gt; char.toUpperCase());
 // capitalizeEveryWord('hello world!') -&gt; 'Hello World!'
 </code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="countvowels">countVowels</h3></div><div class="section double-padded">
+<p>Retuns <code>number</code> of vowels in provided string.</p>
+<p>Use a regular expression to count number of vowels <code>(A, E, I, O, U)</code> in a <code>string</code>.</p>
+<pre><code class="language-js">const countVowels = str =&gt; (str.match(/[aeiou]/ig) || []).length;
+// countVowels('foobar') -&gt; 3
+// countVowels('gym') -&gt; 0
+</code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="escaperegexp">escapeRegExp</h3></div><div class="section double-padded">
 <p>Escapes a string to use in a regular expression.</p>
 <p>Use <code>replace()</code> to escape special characters.</p>
@@ -908,9 +979,9 @@ Omit the second argument to use a default separator of <code>_</code>.</p>
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="reversestring">reverseString</h3></div><div class="section double-padded">
 <p>Reverses a string.</p>
-<p>Use array destructuring and <code>Array.reverse()</code> to reverse the order of the characters in the string.
+<p>Use <code>split('')</code> and <code>Array.reverse()</code> to reverse the order of the characters in the string.
 Combine characters to get a string using <code>join('')</code>.</p>
-<pre><code class="language-js">const reverseString = str =&gt; [...str].reverse().join('');
+<pre><code class="language-js">const reverseString = str =&gt; str.split('').reverse().join('');
 // reverseString('foobar') -&gt; 'raboof'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="sortcharactersinstring">sortCharactersInString</h3></div><div class="section double-padded">
