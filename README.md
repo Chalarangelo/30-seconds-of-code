@@ -17,8 +17,10 @@
 * [`countOccurrences`](#countoccurrences)
 * [`deepFlatten`](#deepflatten)
 * [`difference`](#difference)
+* [`differenceWith`](#differencewith)
 * [`distinctValuesOfArray`](#distinctvaluesofarray)
 * [`dropElements`](#dropelements)
+* [`dropRight`](#dropright)
 * [`everyNth`](#everynth)
 * [`filterNonUnique`](#filternonunique)
 * [`flatten`](#flatten)
@@ -34,6 +36,8 @@
 * [`nthElement`](#nthelement)
 * [`pick`](#pick)
 * [`pull`](#pull)
+* [`pullAll`](#pullall)
+* [`pullAtIndex`](#pullatindex)
 * [`remove`](#remove)
 * [`sample`](#sample)
 * [`shuffle`](#shuffle)
@@ -103,6 +107,7 @@
 * [`cleanObj`](#cleanobj)
 * [`objectFromPairs`](#objectfrompairs)
 * [`objectToPairs`](#objecttopairs)
+* [`select`](#select)
 * [`shallowClone`](#shallowclone)
 * [`truthCheckCollection`](#truthcheckcollection)
 
@@ -235,6 +240,19 @@ const difference = (a, b) => { const s = new Set(b); return a.filter(x => !s.has
 
 [⬆ back to top](#table-of-contents)
 
+### differenceWith
+
+Filters out all values from an array for which the comparator function does not return `true`.
+
+Use `Array.filter()` and `Array.find()` to find the appropriate values.
+
+```js
+const differenceWith = (arr, val, comp) => arr.filter(a => !val.find(b => comp(a, b)))
+// differenceWith([1, 1.2, 1.5, 3], [1.9, 3], (a,b) => Math.round(a) == Math.round(b)) -> [1, 1.2]
+```
+
+[⬆ back to top](#table-of-contents)
+
 ### distinctValuesOfArray
 
 Returns all the distinct values of an array.
@@ -261,6 +279,21 @@ const dropElements = (arr, func) => {
   return arr;
 };
 // dropElements([1, 2, 3, 4], n => n >= 3) -> [3,4]
+```
+
+[⬆ back to top](#table-of-contents)
+
+### dropRight
+
+Returns a new array with `n` elements removed from the right
+
+Check if `n` is shorter than the given array and use `Array.slice()` to slice it accordingly or return an empty array.
+
+```js
+const dropRight = (arr, n = 1) => n < arr.length ? arr.slice(0, arr.length - n) : []
+//dropRight([1,2,3]) -> [1,2]
+//dropRight([1,2,3], 2) -> [1]
+//dropRight([1,2,3], 42) -> []
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -367,15 +400,16 @@ const initial = arr => arr.slice(0, -1);
 
 ### initializeArrayWithRange
 
-Initializes an array containing the numbers in the specified range.
+Initializes an array containing the numbers in the specified range where `start` and `end` are inclusive.
 
-Use `Array(end-start)` to create an array of the desired length, `Array.map()` to fill with the desired values in a range.
+Use `Array((end + 1) - start)` to create an array of the desired length, `Array.map()` to fill with the desired values in a range.
 You can omit `start` to use a default value of `0`.
 
 ```js
-const initializeArrayWithRange = (end, start = 0) =>
-  Array.from({ length: end - start }).map((v, i) => i + start);
-// initializeArrayWithRange(5) -> [0,1,2,3,4]
+const initializeArrayWithRange = (end, start = 0) => 
+  Array.from({ length: (end + 1) - start }).map((v, i) => i + start);
+// initializeArrayWithRange(5) -> [0,1,2,3,4,5]
+// initializeArrayWithRange(7, 3) -> [3,4,5,6,7]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -474,6 +508,8 @@ Mutates the original array to filter out the values specified.
 Use `Array.filter()` and `Array.includes()` to pull out the values that are not needed.
 Use `Array.length = 0` to mutate the passed in array by resetting it's length to zero and `Array.push()` to re-populate it with only the pulled values.
 
+_(For a snippet that does not mutate the original array see [`without`](#without))_
+
 ```js
 const pull = (arr, ...args) => {
   let pulled = arr.filter((v, i) => !args.includes(v));
@@ -482,6 +518,52 @@ const pull = (arr, ...args) => {
 // let myArray = ['a', 'b', 'c', 'a', 'b', 'c'];
 // pull(myArray, 'a', 'c');
 // console.log(myArray) -> [ 'b', 'b' ]
+```
+
+[⬆ back to top](#table-of-contents)
+
+### pullAll
+
+Mutates the original array to filter out the values specified (accepts an array of values).
+
+Use `Array.filter()` and `Array.includes()` to pull out the values that are not needed.
+Use `Array.length = 0` to mutate the passed in array by resetting it's length to zero and `Array.push()` to re-populate it with only the pulled values.
+
+```js
+const pullAll = (arr, pullArr) => {
+  let pulled = arr.filter((v, i) => !pullArr.includes(v));
+  arr.length = 0; pulled.forEach(v => arr.push(v));
+}
+// let myArray = ['a', 'b', 'c', 'a', 'b', 'c'];
+// pullAll(myArray, ['a', 'c']);
+// console.log(myArray) -> [ 'b', 'b' ]
+```
+
+[⬆ back to top](#table-of-contents)
+
+### pullAtIndex
+
+Mutates the original array to filter out the values at the specified indexes.
+
+Use `Array.filter()` and `Array.includes()` to pull out the values that are not needed.
+Use `Array.length = 0` to mutate the passed in array by resetting it's length to zero and `Array.push()` to re-populate it with only the pulled values.
+Use `Array.push()` to keep track of pulled values 
+
+```js
+const pullAtIndex = (arr, pullArr) => {
+  let removed = [];
+  let pulled = arr.map((v, i) => pullArr.includes(i) ? removed.push(v) : v)
+                  .filter((v, i) => !pullArr.includes(i))
+  arr.length = 0; 
+  pulled.forEach(v => arr.push(v));
+  return removed;
+}
+
+// let myArray = ['a', 'b', 'c', 'd'];
+// let pulled = pullAtIndex(myArray, [1, 3]);
+
+// console.log(myArray); -> [ 'a', 'c' ]
+// console.log(pulled); -> [ 'b', 'd' ]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -621,6 +703,8 @@ Filters out the elements of an array, that have one of the specified values.
 
 Use `Array.filter()` to create an array excluding(using `!Array.includes()`) all given values.
 
+_(For a snippet that mutates the original array see [`pull`](#pull))_
+
 ```js
 const without = (arr, ...args) => arr.filter(v => !args.includes(v));
 // without([2, 1, 2, 3], 1, 2) -> [3]
@@ -658,7 +742,7 @@ Use `scrollY`, `scrollHeight` and `clientHeight` to determine if the bottom of t
 
 ```js
 const bottomVisible = () =>
-  document.documentElement.clientHeight + window.scrollY >= document.documentElement.scrollHeight || document.documentElement.clientHeight;
+  document.documentElement.clientHeight + window.scrollY >= (document.documentElement.scrollHeight || document.documentElement.clientHeight);
 // bottomVisible() -> true
 ```
 
@@ -1144,7 +1228,7 @@ Return the number at the midpoint if `length` is odd, otherwise the average of t
 
 ```js
 const median = arr => {
-  const mid = Math.floor(arr.length / 2), nums = arr.sort((a, b) => a - b);
+  const mid = Math.floor(arr.length / 2), nums = [...arr].sort((a, b) => a - b);
   return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
 };
 // median([5,6,50,1,-5]) -> 5
@@ -1373,6 +1457,22 @@ const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
 
 [⬆ back to top](#table-of-contents)
 
+### select
+
+Retrieve a property that indicated by the selector from object.
+
+If property not exists returns `undefined`.
+
+```js
+const select = (from, selector) =>
+  selector.split('.').reduce((prev, cur) => prev && prev[cur], from);
+
+// const obj = {selector: {to: {val: 'val to select'}}};
+// select(obj, 'selector.to.val'); -> 'val to select'
+```
+
+[⬆ back to top](#table-of-contents)
+
 ### shallowClone
 
 Creates a shallow clone of an object.
@@ -1460,8 +1560,7 @@ Retuns `number` of vowels in provided string.
 Use a regular expression to count number of vowels `(A, E, I, O, U)` in a `string`.
 
 ```js
-const countVowels = str =>
-  return (str.match(/[aeiou]/ig) || []).length;
+const countVowels = str => (str.match(/[aeiou]/ig) || []).length;
 // countVowels('foobar') -> 3
 // countVowels('gym') -> 0
 ```
@@ -1503,11 +1602,11 @@ const fromCamelCase = (str, separator = '_') =>
 
 Reverses a string.
 
-Use array destructuring and `Array.reverse()` to reverse the order of the characters in the string.
+Use `split('')` and `Array.reverse()` to reverse the order of the characters in the string.
 Combine characters to get a string using `join('')`.
 
 ```js
-const reverseString = str => [...str].reverse().join('');
+const reverseString = str => str.split('').reverse().join('');
 // reverseString('foobar') -> 'raboof'
 ```
 
