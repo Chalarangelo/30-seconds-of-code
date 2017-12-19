@@ -44,6 +44,24 @@
   </head>
   <script>
     document.addEventListener("load", alert("Attention! This site is only a fork of the original project demonstrating the newest changes made by myself. The original project can be found by clicking on the logo."));
+    function search() {
+        // Declare variables
+        var input, filter, ul, li, a, i;
+        input = document.getElementById('searchInput');
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("snippetList");
+        li = ul.getElementsByTagName('li');
+
+        // Loop through all list items, and hide those who don't match the search query
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
   </script>
   <body>
     <header style="height: 5.5rem;">
