@@ -60,6 +60,7 @@ try {
     output += '\n';
   }
   output += `</nav><main class="col-sm-12 col-md-8 col-lg-9" style="height: 100%;overflow-y: auto; background: #eee;">`;
+  output += `<a id="top">&nbsp;</a>`;
   // Loop over tags and snippets to create the list of snippets
   for(let tag of [...new Set(Object.entries(tagDbData).map(t => t[1]))].filter(v => v).sort((a,b) => a.localeCompare(b))){
     output +=md.render(`## ${capitalize(tag, true)}\n`).replace(/<h2>/g,'<h2 style="text-align:center;">');
