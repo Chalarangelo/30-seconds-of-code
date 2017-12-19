@@ -135,6 +135,7 @@
 </h3><a class="sublink-1" href="#anagrams">anagrams</a>
 <a class="sublink-1" href="#capitalize">capitalize</a>
 <a class="sublink-1" href="#capitalizeeveryword">capitalizeEveryWord</a>
+<a class="sublink-1" href="#countvowels">countVowels</a>
 <a class="sublink-1" href="#escaperegexp">escapeRegExp</a>
 <a class="sublink-1" href="#fromcamelcase">fromCamelCase</a>
 <a class="sublink-1" href="#reversestring">reverseString</a>
@@ -885,6 +886,14 @@ Omit the <code>lowerRest</code> parameter to keep the rest of the string intact,
 <p>Use <code>replace()</code> to match the first character of each word and <code>toUpperCase()</code> to capitalize it.</p>
 <pre><code class="language-js">const capitalizeEveryWord = str =&gt; str.replace(/\b[a-z]/g, char =&gt; char.toUpperCase());
 // capitalizeEveryWord('hello world!') -&gt; 'Hello World!'
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="countvowels">countVowels</h3></div><div class="section double-padded">
+<p>Retuns <code>number</code> of vowels in provided string.</p>
+<p>Use a regular expression to count number of vowels <code>(A, E, I, O, U)</code> in a <code>string</code>.</p>
+<pre><code class="language-js">const countVowels = str =&gt;
+  return (str.match(/[aeiou]/ig) || []).length;
+// countVowels('foobar') -&gt; 3
+// countVowels('gym') -&gt; 0
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="escaperegexp">escapeRegExp</h3></div><div class="section double-padded">
 <p>Escapes a string to use in a regular expression.</p>

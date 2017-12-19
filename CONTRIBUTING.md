@@ -24,7 +24,7 @@ Here's what you can do to help:
   - Follow snippet descriptions with an empty line.
 - **Snippet code** must be enclosed inside ` ```js ` and ` ``` `.
   - Remember to start your snippet's code on a new line below the opening backticks.
-  - Use ES6 notation to define your function. For example `const myFunction = arg1, arg2 => { }`.
+  - Use ES6 notation to define your function. For example `const myFunction = ( arg1, arg2 ) => { }`.
   - Try to keep your snippets' code short and to the point. Use modern techniques and features. Make sure to test your code before submitting.
   - All snippets must be followed by one (more if necessary) test case after the code, on a new line, in the form of a comment, along with the expected output. The syntax for this is `myFunction('testInput') -> 'testOutput'`. Use multiline comments only if necessary.
   - Try to make your function name unique, so that it does not conflict with existing snippets.
@@ -57,7 +57,7 @@ Here's what you can do to help:
 - Use `()` if your function takes no arguments.
 - Use `_` if an argument inside some function (e.g. `Array.reduce()`) is not used anywhere in your code.
 - Specify default parameters for arguments, if necessary. It is preferred to put default parameters last unless you have pretty good reason not to.
-- If your snippet's function takes variadic arguments, use `..args` (although in certain cases, it might be needed to use a different name).
+- If your snippet's function takes variadic arguments, use `...args` (although in certain cases, it might be needed to use a different name).
 - If your snippet function's body is a single statement, omit the `return` keyword and use an expression instead.
 - Always use soft tabs (2 spaces), never hard tabs.
 - Omit curly braces (`{` and `}`) whenever possible.
