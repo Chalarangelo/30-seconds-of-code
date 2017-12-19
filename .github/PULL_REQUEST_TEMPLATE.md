@@ -4,7 +4,7 @@
 
 ## Description
 <!--- Describe your changes in detail -->
-**Fix:** #(issue number) <!--- Delete if not a issue fix-->
+**Resolves** #(issue number) <!--- Delete if not a issue fix-->
 
 ## Types of changes
 - [ ] Bug fix (non-breaking change which fixes an issue)
