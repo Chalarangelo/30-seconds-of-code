@@ -112,6 +112,7 @@
 <a class="sublink-1" href="#hammingdistance">hammingDistance</a>
 <a class="sublink-1" href="#isdivisible">isDivisible</a>
 <a class="sublink-1" href="#iseven">isEven</a>
+<a class="sublink-1" href="#isprime">isPrime</a>
 <a class="sublink-1" href="#lcm">lcm</a>
 <a class="sublink-1" href="#median">median</a>
 <a class="sublink-1" href="#palindrome">palindrome</a>
@@ -301,7 +302,7 @@ Use <code>Array.reduce()</code> to create an object, where the keys are produced
 <p>Initializes an array containing the numbers in the specified range where <code>start</code> and <code>end</code> are inclusive.</p>
 <p>Use <code>Array((end + 1) - start)</code> to create an array of the desired length, <code>Array.map()</code> to fill with the desired values in a range.
 You can omit <code>start</code> to use a default value of <code>0</code>.</p>
-<pre><code class="language-js">const initializeArrayWithRange = (end, start = 0) =&gt; 
+<pre><code class="language-js">const initializeArrayWithRange = (end, start = 0) =&gt;
   Array.from({ length: (end + 1) - start }).map((v, i) =&gt; i + start);
 // initializeArrayWithRange(5) -&gt; [0,1,2,3,4,5]
 // initializeArrayWithRange(7, 3) -&gt; [3,4,5,6,7]
@@ -328,7 +329,7 @@ You can omit <code>value</code> to use a default value of <code>0</code>.</p>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="mapobject">mapObject</h3></div><div class="section double-padded">
 <p>Maps the values of an array to an object using a function, where the key-value pairs consist of the original value as the key and the mapped value.</p>
 <p>Use an anonymous inner function scope to declare an undefined memory space, using closures to store a return value. Use a new <code>Array</code> to stor the array with a map of the function over its data set and a comma operator to return a second step, without needing to move from one context to another (due to closures and order of operations).</p>
-<pre><code class="language-js">const mapObject = (arr, fn) =&gt; 
+<pre><code class="language-js">const mapObject = (arr, fn) =&gt;
   (a =&gt; (a = [arr, arr.map(fn)], a[0].reduce( (acc,val,ind) =&gt; (acc[val] = a[1][ind], acc), {}) )) ( );
 /*
 const squareIt = arr =&gt; mapObject(arr, a =&gt; a*a)
@@ -378,7 +379,7 @@ Use <code>Array.push()</code> to keep track of pulled values</p>
   let removed = [];
   let pulled = arr.map((v, i) =&gt; pullArr.includes(i) ? removed.push(v) : v)
                   .filter((v, i) =&gt; !pullArr.includes(i))
-  arr.length = 0; 
+  arr.length = 0;
   pulled.forEach(v =&gt; arr.push(v));
   return removed;
 }
@@ -395,7 +396,7 @@ Use <code>Array.push()</code> to keep track of pulled values</p>
 Use <code>Array.length = 0</code> to mutate the passed in array by resetting it's length to zero and <code>Array.push()</code> to re-populate it with only the pulled values.
 Use <code>Array.push()</code> to keep track of pulled values</p>
 <pre><code class="language-js">const pullAtValue = (arr, pullArr) =&gt; {
-  let removed = [], 
+  let removed = [],
     pushToRemove = arr.forEach((v, i) =&gt; pullArr.includes(v) ? removed.push(v) : v),
     mutateTo = arr.filter((v, i) =&gt; !pullArr.includes(v));
   arr.length = 0;
@@ -760,6 +761,16 @@ Count and return the number of <code>1</code>s in the string, using <code>match(
 Returns <code>true</code> if the number is even, <code>false</code> if the number is odd.</p>
 <pre><code class="language-js">const isEven = num =&gt; num % 2 === 0;
 // isEven(3) -&gt; false
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isprime">isPrime</h3></div><div class="section double-padded">
+<p>Checks if the provided intiger is primer number.</p>
+<p>Returns <code>false</code> if the provided number has positive divisors other than 1 and itself or if the number itself is less than 2.</p>
+<pre><code class="language-js">const isPrime = num =&gt;
+  for (var i = 2; i &lt; num; i++) if (num % i == 0) return false;
+  return num &gt;= 2;
+// isPrime(11) -&gt; true
+// isPrime(12) -&gt; false
+// isPrime(1) -&gt; false
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="lcm">lcm</h3></div><div class="section double-padded">
 <p>Returns the least common multiple of two numbers.</p>
