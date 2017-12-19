@@ -61,8 +61,8 @@
 <a class="sublink-1" href="#nthelement">nthElement</a>
 <a class="sublink-1" href="#pick">pick</a>
 <a class="sublink-1" href="#pull">pull</a>
-<a class="sublink-1" href="#pullall">pullAll</a>
 <a class="sublink-1" href="#pullatindex">pullAtIndex</a>
+<a class="sublink-1" href="#pullatvalue">pullAtValue</a>
 <a class="sublink-1" href="#remove">remove</a>
 <a class="sublink-1" href="#sample">sample</a>
 <a class="sublink-1" href="#shuffle">shuffle</a>
@@ -356,24 +356,17 @@ Omit the second argument, <code>n</code>, to get the first element of the array.
 Use <code>Array.length = 0</code> to mutate the passed in array by resetting it's length to zero and <code>Array.push()</code> to re-populate it with only the pulled values.</p>
 <p><em>(For a snippet that does not mutate the original array see <a href="#without"><code>without</code></a>)</em></p>
 <pre><code class="language-js">const pull = (arr, ...args) =&gt; {
-  let pulled = arr.filter((v, i) =&gt; !args.includes(v));
+  let pulled = arr.filter((v, i) =&gt; !args.toString().split(',').includes(v));
   arr.length = 0; pulled.forEach(v =&gt; arr.push(v));
 };
-// let myArray = ['a', 'b', 'c', 'a', 'b', 'c'];
-// pull(myArray, 'a', 'c');
-// console.log(myArray) -&gt; [ 'b', 'b' ]
-</code></pre>
-</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="pullall">pullAll</h3></div><div class="section double-padded">
-<p>Mutates the original array to filter out the values specified (accepts an array of values).</p>
-<p>Use <code>Array.filter()</code> and <code>Array.includes()</code> to pull out the values that are not needed.
-Use <code>Array.length = 0</code> to mutate the passed in array by resetting it's length to zero and <code>Array.push()</code> to re-populate it with only the pulled values.</p>
-<pre><code class="language-js">const pullAll = (arr, pullArr) =&gt; {
-  let pulled = arr.filter((v, i) =&gt; !pullArr.includes(v));
-  arr.length = 0; pulled.forEach(v =&gt; arr.push(v));
-}
-// let myArray = ['a', 'b', 'c', 'a', 'b', 'c'];
-// pullAll(myArray, ['a', 'c']);
-// console.log(myArray) -&gt; [ 'b', 'b' ]
+
+// let myArray1 = ['a', 'b', 'c', 'a', 'b', 'c'];
+// pull(myArray1, 'a', 'c');
+// console.log(myArray1) -&gt; [ 'b', 'b' ]
+
+// let myArray2 = ['a', 'b', 'c', 'a', 'b', 'c'];
+// pull(myArray2, ['a', 'c']);
+// console.log(myArray2) -&gt; [ 'b', 'b' ]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="pullatindex">pullAtIndex</h3></div><div class="section double-padded">
 <p>Mutates the original array to filter out the values at the specified indexes.</p>
@@ -394,6 +387,26 @@ Use <code>Array.push()</code> to keep track of pulled values</p>
 
 // console.log(myArray); -&gt; [ 'a', 'c' ]
 // console.log(pulled); -&gt; [ 'b', 'd' ]
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="pullatvalue">pullAtValue</h3></div><div class="section double-padded">
+<p>Mutates the original array to filter out the values specified. Returns the removed elements.</p>
+<p>Use <code>Array.filter()</code> and <code>Array.includes()</code> to pull out the values that are not needed.
+Use <code>Array.length = 0</code> to mutate the passed in array by resetting it's length to zero and <code>Array.push()</code> to re-populate it with only the pulled values.
+Use <code>Array.push()</code> to keep track of pulled values</p>
+<pre><code class="language-js">const pullAtValue = (arr, pullArr) =&gt; {
+  let removed = [], 
+    pushToRemove = arr.forEach((v, i) =&gt; pullArr.includes(v) ? removed.push(v) : v),
+    mutateTo = arr.filter((v, i) =&gt; !pullArr.includes(v));
+  arr.length = 0;
+  mutateTo.forEach(v =&gt; arr.push(v));
+  return removed;
+}
+/*
+let myArray = ['a', 'b', 'c', 'd'];
+let pulled = pullAtValue(myArray, ['b', 'd']);
+console.log(myArray); -&gt; [ 'a', 'c' ]
+console.log(pulled); -&gt; [ 'b', 'd' ]
+*/
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="remove">remove</h3></div><div class="section double-padded">
 <p>Removes elements from an array for which the given function returns <code>false</code>.</p>
@@ -1037,16 +1050,23 @@ Return the string truncated to the desired length, with <code>...</code> appende
 // getType(new Set([1,2,3])) -&gt; &quot;set&quot;
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="hextorgb">hexToRGB</h3></div><div class="section double-padded">
-<p>Converts a colorcode to a <code>rgb()</code> string.</p>
-<p>Use bitwise right-shift operator and mask bits with <code>&amp;</code> (and) operator to convert a hexadecimal color code (prefixed with <code>#</code>) to a string with the RGB values. In case it's a 3-digit-colorcode, do the same with the 6-digit-colorcode extended by the extendHex() function (ref. <code>extendHex</code> snippet)</p>
-<pre><code class="language-js">const hexToRgb = hex =&gt; {
-  const extendHex = shortHex =&gt;
-    '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split('').map(x =&gt; x+x).join('');
-  const extendedHex = hex.slice(hex.startsWith('#') ? 1 : 0).length === 3 ? extendHex(hex) : hex;
-  return `rgb(${parseInt(extendedHex.slice(1), 16) &gt;&gt; 16}, ${(parseInt(extendedHex.slice(1), 16) &amp; 0x00ff00) &gt;&gt; 8}, ${parseInt(extendedHex.slice(1), 16) &amp; 0x0000ff})`;
-}
-// hexToRgb('#27ae60') -&gt; 'rgb(39, 174, 96)'
-// hexToRgb('#acd') -&gt; 'rgb(170, 204, 221)'
+<p>Converts a color code to a <code>rgb()</code> or <code>rgba()</code> string if alpha value is provided.</p>
+<p>Use bitwise right-shift operator and mask bits with <code>&amp;</code> (and) operator to convert a hexadecimal color code (with or without prefixed with <code>#</code>) to a string with the RGB values. If it's 3-digit color code, first convert to 6-digit version. If any alpha value is provided alongside 6-digit hex, give <code>rgba()</code> string in return.</p>
+<pre><code class="language-js">const hexToRGB = hex =&gt; {
+  let alpha = false, h = hex.slice(hex.startsWith('#') ? 1 : 0);
+  if (h.length === 3) h = [...h].map(x =&gt; x + x).join('');
+  else if (h.length === 8) alpha = true;
+  h = parseInt(h, 16);
+  return 'rgb' + (alpha ? 'a' : '') + '('
+    + (h &gt;&gt;&gt; (alpha ? 24 : 16)) + ', '
+    + ((h &amp; (alpha ? 0x00ff0000 : 0x00ff00)) &gt;&gt;&gt; (alpha ? 16 : 8)) + ', '
+    + ((h &amp; (alpha ? 0x0000ff00 : 0x0000ff)) &gt;&gt;&gt; (alpha ? 8 : 0))
+    + (alpha ? `, ${(h &amp; 0x000000ff)}` : '') + ')';
+};
+// hexToRGB('#27ae60ff') -&gt; 'rgba(39, 174, 96, 255)'
+// hexToRGB('27ae60') -&gt; 'rgb(39, 174, 96)'
+// hexToRGB('#fff') -&gt; 'rgb(255, 255, 255)'
+
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isarray">isArray</h3></div><div class="section double-padded">
 <p>Checks if the given argument is an array.</p>
