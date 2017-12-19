@@ -71,6 +71,7 @@ pipe:function
 powerset:math
 promisify:function
 pull:array
+pullAtValue:array
 randomIntegerInRange:math
 randomNumberInRange:math
 readFileLines:node
