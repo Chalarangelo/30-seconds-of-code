@@ -1,5 +1,6 @@
 <!--- Provide a general summary of your changes in the Title above -->
-<!--- Add the prefix [FIX] or [FEATURE] to the Title -->
+
+<!--- Add the prefix [FIX: #(issue number)] or [FEATURE] to the Title -->
 
 ## Description
 <!--- Describe your changes in detail -->
