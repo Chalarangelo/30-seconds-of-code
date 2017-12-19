@@ -15,6 +15,7 @@ collatz:math
 compact:array
 compose:function
 countOccurrences:array
+countVowels:string
 currentURL:browser
 curry:function
 deepFlatten:array
@@ -72,6 +73,7 @@ powerset:math
 promisify:function
 pull:array
 pullAtIndex:array
+pullAll:array
 randomIntegerInRange:math
 randomNumberInRange:math
 readFileLines:node
