@@ -1,4 +1,4 @@
-### Array dropRight
+### dropRight
 
 Returns a new array with `n` elements removed from the right
 
