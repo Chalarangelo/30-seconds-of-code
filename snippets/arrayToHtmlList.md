@@ -1,6 +1,6 @@
 ### arrayToHtmlList
 
-Converts the given array elements into <li> tags and appends them to the list of the given id.
+Converts the given array elements into 'li' tags and appends them to the list of the given id.
 
 
 ```js
