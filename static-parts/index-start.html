@@ -17,16 +17,19 @@
       html, * { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, sans-serif; }
       code, pre, kbd, code *, pre *, kbd * { font-family: 'Inconsolata', Menlo, Consolas, monospace; }
       code, kbd { font-size: 1em; }
+      code { transform: scale(1); } /* Deals with the issue described in #243 */
       pre { font-size: 1rem; border: 0.0625rem solid var(--secondary-border-color); border-radius: var(--universal-border-radius);}
     </style>
     <link rel="stylesheet" href="prism.css">
   </head>
   <body>
-    <header>
-      <h1 class="logo" style="margin-top: -1rem; text-align:center;"><a style="text-decoration:none;color:black" href="https://github.com/Chalarangelo/30-seconds-of-code"><img src="favicon.png" style="height: 4rem;"/><span style="position:relative; top: -1rem;">&nbsp;30 seconds of code</span></a></h1>
+    <header style="height: 5.5rem;">
+      <h1 class="logo" style="margin-top: -0.8rem; text-align:center;"><a style="text-decoration:none;color:black" href="https://github.com/Chalarangelo/30-seconds-of-code"><img src="favicon.png" style="height: 4rem;"/><span style="position:relative; top: -1rem;">&nbsp;30 seconds of code</span></a>
+        <span style="display:block; font-size: 1rem; font-style: italic; color: grey; margin-top: -0.8rem">Curated collection of useful Javascript snippets that you can understand in 30 seconds or less.</span>
+      </h1>
       <label for="doc-drawer-checkbox" class="button drawer-toggle" style="position: absolute; right: 0; top: 0;"></label>
     </header>
-    <div class="row" style="height: calc(100vh - 3.5625rem);overflow: hidden;">
+    <div class="row" style="height: calc(100vh - 5.875rem);overflow: hidden;">
       <input id="doc-drawer-checkbox" class="drawer" value="on" type="checkbox">
         <nav class="col-md-4 col-lg-3" style="border-top: 0">
           <label for="doc-drawer-checkbox" class="button drawer-close"></label>

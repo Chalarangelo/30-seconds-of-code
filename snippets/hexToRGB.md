@@ -1,16 +1,23 @@
 ### hexToRGB
 
-Converts a colorcode to a `rgb()` string.
+Converts a color code to a `rgb()` or `rgba()` string if alpha value is provided.
 
-Use bitwise right-shift operator and mask bits with `&` (and) operator to convert a hexadecimal color code (prefixed with `#`) to a string with the RGB values. In case it's a 3-digit-colorcode, do the same with the 6-digit-colorcode extended by the extendHex() function (ref. `extendHex` snippet)
+Use bitwise right-shift operator and mask bits with `&` (and) operator to convert a hexadecimal color code (with or without prefixed with `#`) to a string with the RGB values. If it's 3-digit color code, first convert to 6-digit version. If any alpha value is provided alongside 6-digit hex, give `rgba()` string in return.
 
 ```js
-const hexToRgb = hex => {
-  const extendHex = shortHex =>
-    '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split('').map(x => x+x).join('');
-  const extendedHex = hex.slice(hex.startsWith('#') ? 1 : 0).length === 3 ? extendHex(hex) : hex;
-  return `rgb(${parseInt(extendedHex.slice(1), 16) >> 16}, ${(parseInt(extendedHex.slice(1), 16) & 0x00ff00) >> 8}, ${parseInt(extendedHex.slice(1), 16) & 0x0000ff})`;
-}
-// hexToRgb('#27ae60') -> 'rgb(39, 174, 96)'
-// hexToRgb('#acd') -> 'rgb(170, 204, 221)'
+const hexToRGB = hex => {
+  let alpha = false, h = hex.slice(hex.startsWith('#') ? 1 : 0);
+  if (h.length === 3) h = [...h].map(x => x + x).join('');
+  else if (h.length === 8) alpha = true;
+  h = parseInt(h, 16);
+  return 'rgb' + (alpha ? 'a' : '') + '('
+    + (h >>> (alpha ? 24 : 16)) + ', '
+    + ((h & (alpha ? 0x00ff0000 : 0x00ff00)) >>> (alpha ? 16 : 8)) + ', '
+    + ((h & (alpha ? 0x0000ff00 : 0x0000ff)) >>> (alpha ? 8 : 0))
+    + (alpha ? `, ${(h & 0x000000ff)}` : '') + ')';
+};
+// hexToRGB('#27ae60ff') -> 'rgba(39, 174, 96, 255)'
+// hexToRGB('27ae60') -> 'rgb(39, 174, 96)'
+// hexToRGB('#fff') -> 'rgb(255, 255, 255)'
+
 ```
