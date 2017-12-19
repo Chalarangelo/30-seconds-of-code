@@ -9,10 +9,15 @@ _(For a snippet that does not mutate the original array see [`without`](#without
 
 ```js
 const pull = (arr, ...args) => {
-  let pulled = arr.filter((v, i) => !args.includes(v));
+  let pulled = arr.filter((v, i) => !args.toString().split(',').includes(v));
   arr.length = 0; pulled.forEach(v => arr.push(v));
 };
-// let myArray = ['a', 'b', 'c', 'a', 'b', 'c'];
-// pull(myArray, 'a', 'c');
-// console.log(myArray) -> [ 'b', 'b' ]
+
+// let myArray1 = ['a', 'b', 'c', 'a', 'b', 'c'];
+// pull(myArray1, 'a', 'c');
+// console.log(myArray1) -> [ 'b', 'b' ]
+
+// let myArray2 = ['a', 'b', 'c', 'a', 'b', 'c'];
+// pull(myArray2, ['a', 'c']);
+// console.log(myArray2) -> [ 'b', 'b' ]
 ```
