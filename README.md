@@ -6,6 +6,7 @@
 - Use <kbd>Ctrl</kbd> + <kbd>F</kbd> or <kbd>command</kbd> + <kbd>F</kbd> to search for a snippet.
 - Contributions welcome, please read the [contribution guide](CONTRIBUTING.md).
 - Snippets are written in ES6, use the [Babel transpiler](https://babeljs.io/) to ensure backwards-compatibility.
+- You can import these snippets into Alfred 3, using [this file](https://github.com/lslvxy/30-seconds-of-code-alfredsnippets).
 
 ## Table of Contents
 
@@ -36,8 +37,8 @@
 * [`nthElement`](#nthelement)
 * [`pick`](#pick)
 * [`pull`](#pull)
-* [`pullAll`](#pullall)
 * [`pullAtIndex`](#pullatindex)
+* [`pullAtValue`](#pullatvalue)
 * [`remove`](#remove)
 * [`sample`](#sample)
 * [`shuffle`](#shuffle)
@@ -512,31 +513,17 @@ _(For a snippet that does not mutate the original array see [`without`](#without
 
 ```js
 const pull = (arr, ...args) => {
-  let pulled = arr.filter((v, i) => !args.includes(v));
+  let pulled = arr.filter((v, i) => !args.toString().split(',').includes(v));
   arr.length = 0; pulled.forEach(v => arr.push(v));
 };
-// let myArray = ['a', 'b', 'c', 'a', 'b', 'c'];
-// pull(myArray, 'a', 'c');
-// console.log(myArray) -> [ 'b', 'b' ]
-```
 
-[⬆ back to top](#table-of-contents)
+// let myArray1 = ['a', 'b', 'c', 'a', 'b', 'c'];
+// pull(myArray1, 'a', 'c');
+// console.log(myArray1) -> [ 'b', 'b' ]
 
-### pullAll
-
-Mutates the original array to filter out the values specified (accepts an array of values).
-
-Use `Array.filter()` and `Array.includes()` to pull out the values that are not needed.
-Use `Array.length = 0` to mutate the passed in array by resetting it's length to zero and `Array.push()` to re-populate it with only the pulled values.
-
-```js
-const pullAll = (arr, pullArr) => {
-  let pulled = arr.filter((v, i) => !pullArr.includes(v));
-  arr.length = 0; pulled.forEach(v => arr.push(v));
-}
-// let myArray = ['a', 'b', 'c', 'a', 'b', 'c'];
-// pullAll(myArray, ['a', 'c']);
-// console.log(myArray) -> [ 'b', 'b' ]
+// let myArray2 = ['a', 'b', 'c', 'a', 'b', 'c'];
+// pull(myArray2, ['a', 'c']);
+// console.log(myArray2) -> [ 'b', 'b' ]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -564,6 +551,33 @@ const pullAtIndex = (arr, pullArr) => {
 
 // console.log(myArray); -> [ 'a', 'c' ]
 // console.log(pulled); -> [ 'b', 'd' ]
+```
+
+[⬆ back to top](#table-of-contents)
+
+### pullAtValue
+
+Mutates the original array to filter out the values specified. Returns the removed elements.
+
+Use `Array.filter()` and `Array.includes()` to pull out the values that are not needed.
+Use `Array.length = 0` to mutate the passed in array by resetting it's length to zero and `Array.push()` to re-populate it with only the pulled values.
+Use `Array.push()` to keep track of pulled values 
+
+```js
+const pullAtValue = (arr, pullArr) => {
+  let removed = [], 
+    pushToRemove = arr.forEach((v, i) => pullArr.includes(v) ? removed.push(v) : v),
+    mutateTo = arr.filter((v, i) => !pullArr.includes(v));
+  arr.length = 0;
+  mutateTo.forEach(v => arr.push(v));
+  return removed;
+}
+/*
+let myArray = ['a', 'b', 'c', 'd'];
+let pulled = pullAtValue(myArray, ['b', 'd']);
+console.log(myArray); -> [ 'a', 'c' ]
+console.log(pulled); -> [ 'b', 'd' ]
+*/
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1717,19 +1731,26 @@ const getType = v =>
 
 ### hexToRGB
 
-Converts a colorcode to a `rgb()` string.
+Converts a color code to a `rgb()` or `rgba()` string if alpha value is provided.
 
-Use bitwise right-shift operator and mask bits with `&` (and) operator to convert a hexadecimal color code (prefixed with `#`) to a string with the RGB values. In case it's a 3-digit-colorcode, do the same with the 6-digit-colorcode extended by the extendHex() function (ref. `extendHex` snippet)
+Use bitwise right-shift operator and mask bits with `&` (and) operator to convert a hexadecimal color code (with or without prefixed with `#`) to a string with the RGB values. If it's 3-digit color code, first convert to 6-digit version. If any alpha value is provided alongside 6-digit hex, give `rgba()` string in return.
 
 ```js
-const hexToRgb = hex => {
-  const extendHex = shortHex =>
-    '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split('').map(x => x+x).join('');
-  const extendedHex = hex.slice(hex.startsWith('#') ? 1 : 0).length === 3 ? extendHex(hex) : hex;
-  return `rgb(${parseInt(extendedHex.slice(1), 16) >> 16}, ${(parseInt(extendedHex.slice(1), 16) & 0x00ff00) >> 8}, ${parseInt(extendedHex.slice(1), 16) & 0x0000ff})`;
-}
-// hexToRgb('#27ae60') -> 'rgb(39, 174, 96)'
-// hexToRgb('#acd') -> 'rgb(170, 204, 221)'
+const hexToRGB = hex => {
+  let alpha = false, h = hex.slice(hex.startsWith('#') ? 1 : 0);
+  if (h.length === 3) h = [...h].map(x => x + x).join('');
+  else if (h.length === 8) alpha = true;
+  h = parseInt(h, 16);
+  return 'rgb' + (alpha ? 'a' : '') + '('
+    + (h >>> (alpha ? 24 : 16)) + ', '
+    + ((h & (alpha ? 0x00ff0000 : 0x00ff00)) >>> (alpha ? 16 : 8)) + ', '
+    + ((h & (alpha ? 0x0000ff00 : 0x0000ff)) >>> (alpha ? 8 : 0))
+    + (alpha ? `, ${(h & 0x000000ff)}` : '') + ')';
+};
+// hexToRGB('#27ae60ff') -> 'rgba(39, 174, 96, 255)'
+// hexToRGB('27ae60') -> 'rgb(39, 174, 96)'
+// hexToRGB('#fff') -> 'rgb(255, 255, 255)'
+
 ```
 
 [⬆ back to top](#table-of-contents)
