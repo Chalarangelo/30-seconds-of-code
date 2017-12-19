@@ -1219,7 +1219,7 @@ const isEven = num => num % 2 === 0;
 
 ### isPrime
 
-Checks if the provided intiger is prime number.
+Checks if the provided integer is a prime number.
 
 Returns `false` if the provided number has positive divisors other than 1 and itself or if the number itself is less than 2.
 
