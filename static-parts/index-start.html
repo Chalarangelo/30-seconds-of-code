@@ -24,13 +24,9 @@
   </head>
   <script>
     document.addEventListener("load", alert("Attention! This site is only a fork of the original project demonstrating the newest changes made by myself. The original project can be found by clicking on the logo."));
-    function search() {
-        var input, filter, i;
-        input = document.querySelector('#searchInput');
-        filter = input.value.toUpperCase();
-        tags = Array.from(document.querySelector('#snippetListDrawer').getElementsByTagName('a'));
-
-        tags.forEach(x => {x.getAttribute("href").toUpperCase().indexOf(filter) > -1 ? x.style.display = "" : x.style.display = "none"});
+    function search(query) {
+        var tags = Array.from(document.querySelector('#snippetListDrawer').getElementsByTagName('a'));
+        tags.forEach(x => {x.getAttribute("href").toUpperCase().indexOf(query) > -1 ? x.style.display = "" : x.style.display = "none"});
     }
   </script>
   <body>
@@ -43,6 +39,6 @@
     <div class="row" style="height: calc(100vh - 5.875rem);overflow: hidden;">
       <input id="doc-drawer-checkbox" class="drawer" value="on" type="checkbox">
         <nav id="snippetListDrawer" class="col-md-4 col-lg-3" style="border-top: 0">
-          <input type="text" id="searchInput" onkeyup="search()" placeholder="Search for snippet..">
+          <input type="text" id="searchInput" onkeyup="search(this.value.toUpperCase())" placeholder="Search for snippet..">
           <label for="doc-drawer-checkbox" class="button drawer-close"></label>
           <!-- <div><input style="width: 100%; margin: 0px;" placeholder="Search..." id="search-bar" oninput="search()" type="search"></div> -->
