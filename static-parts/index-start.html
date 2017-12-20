@@ -25,12 +25,8 @@
   <script>
     const search = (node) => {
       Array.from(node.parentElement.getElementsByTagName('a')).forEach(x => x.style.display = x.getAttribute("href").toUpperCase().indexOf(node.value.toUpperCase()) + 1  ? '' : 'none');
-      var toConsider = false, remove = false;
-      var childs = Array.from(node.parentElement.children);
-      var toRemove = childs[0];
-      Array.from(node.parentElement.children).forEach(x => x.tagName == 'H3' ? (toRemove.style.display = (remove ? 'none' : ''),
-      toRemove = x,
-      remove = true) : (x.style.display == '' ? remove = false : remove=remove));
+      var remove = false, childs = Array.from(node.parentElement.children), toRemove = childs[0];
+      Array.from(node.parentElement.children).forEach(x => x.tagName == 'H3' ? (toRemove.style.display = (remove ? 'none' : ''), toRemove = x, remove = true) : (x.style.display == '' ? remove = false : remove=remove));
     }
   </script>
   <body>
