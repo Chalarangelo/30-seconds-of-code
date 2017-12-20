@@ -24,20 +24,20 @@
   </head>
   <script>
     function search() {
-        var input, filter, nav,a, i;
-        input = document.getElementById('searchInput');
+        var input, filter, i;
+        input = document.querySelector('#searchInput');
         filter = input.value.toUpperCase();
-        nav = document.getElementById("snippetListDrawer");
-        tags = nav.getElementsByTagName("a");
+        tags = Array.from(document.querySelector('#snippetListDrawer').getElementsByTagName('a'));
 
-        for(var i = 0; i < tags.length; i++) {
-            var snippetLink = tags[i].getAttribute("href");
-            if (snippetLink.toUpperCase().indexOf(filter) > -1) {
-                tags[i].style.display = "";
-            } else {
-                tags[i].style.display = "none";
-            }
-        }
+        tags.forEach(x => {x.getAttribute("href").toUpperCase().indexOf(filter) > -1 ? x.style.display = "" : x.style.display = "none"});
+        // for(var i = 0; i < tags.length; i++) {
+        //     var snippetLink = tags[i].getAttribute("href");
+        //     if (snippetLink.toUpperCase().indexOf(filter) > -1) {
+        //         tags[i].style.display = "";
+        //     } else {
+        //         tags[i].style.display = "none";
+        //     }
+        // }
     }
   </script>
   <body>
