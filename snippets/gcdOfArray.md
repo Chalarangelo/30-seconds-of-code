@@ -6,7 +6,8 @@ It finds the GCD of all the numbers in an array by using `array.reduce` and the 
 const gcdOfArray = arr =>
   {
   const gcd = (x, y) => !y ? x : gcd(y, x % y);
-  arr.reduce((a,b) => gcd(a,b))
+  return arr.reduce((a,b) => gcd(a,b))
   }
-// functionName(sampleInput) -> sampleOutput
+// gcdOfArray([1,2,3,4,5]) -> 1
+// gcdOfArray([4,8,12]) -> 4
 ```
