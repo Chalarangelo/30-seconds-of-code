@@ -1,0 +1,199 @@
+/*
+  Definitions for the grid system, cards and containers.
+*/
+// The grid system uses the flexbox module, meaning it might be incompatible with certain browsers.
+$_include-parent-layout:        true !default;        // [Hidden] Flag for rows defining column layouts (`true`/`false`).
+$grid-column-count:            12 !default;           // Number of columns in the grid (integer value only).
+$grid-container-name:          'container' !default;  // Class name for the grid system container.
+$grid-row-name:                'row' !default;        // Class name for the grid system rows.
+$grid-row-parent-layout-prefix:'cols' !default;       // Class name prefix for the grid's row parents.
+$grid-column-prefix:           'col' !default;        // Class name prefix for the grid's columns.
+$grid-column-offset-suffix:    'offset' !default;     // Class name suffix for the grid's offsets.
+$grid-order-normal-suffix:     'normal' !default;     // Class name suffix for grid columns with normal priority.
+$grid-order-first-suffix:      'first' !default;      // Class name suffix for grid columns with highest priority.
+$grid-order-last-suffix:       'last' !default;       // Class name suffix for grid columns with lowest priorty.
+$grid-small-prefix:            'sm' !default;         // Small screen class prefix for grid.
+$grid-medium-prefix:           'md' !default;         // Medium screen class prefix for grid.
+$grid-large-prefix:            'lg' !default;         // Large screen class prefix for grid.
+$grid-medium-breakpoint:       768px !default;        // Medium screen breakpoint for grid.
+$grid-large-breakpoint:        1280px !default;       // Large screen breakpoint for grid.
+$card-name:                    'card' !default;       // Class name for the cards.
+$card-section-name:            'section' !default;    // Class name for the cards' sections.
+$card-section-media-name:      'media' !default;      // Class name for the cards' sections (media cotent).
+$card-normal-width:            320px !default;        // Width for normal cards.
+$card-section-media-height:    200px !default;        // Height for cards' media sections.
+$card-fore-color:              #111 !default;         // Text color for the cards.
+$card-back-color:              #f8f8f8 !default;      // Background color for the cards.
+$card-border-color:            #ddd !default;         // Border color for the cards.
+// CSS variable name definitions [exercise caution if modifying these]
+$card-fore-color-var:          '--card-fore-color' !default;
+$card-back-color-var:          '--card-back-color' !default;
+$card-border-color-var:        '--card-border-color' !default;
+// == Uncomment below code if this module is used on its own ==
+//
+// $universal-margin:        0.5rem !default;      // Universal margin for the most elements
+// $universal-padding:       0.5rem !default;      // Universal padding for the most elements
+// $universal-border-radius: 0.125rem !default;    // Universal border-radius for most elements
+// $universal-box-shadow:    none !default;        // Universal box-shadow for most elements
+// $universal-margin-var:          '--universal-margin' !default;
+// $universal-padding-var:         '--universal-padding' !default;
+// $universal-border-radius-var:   '--universal-border-radius' !default;
+// $universal-box-shadow-var:      '--universal-box-shadow' !default;
+// :root {
+//  #{$universal-margin-var}: $universal-margin;
+//  #{$universal-padding-var}: $universal-padding;
+//  #{$universal-border-radius-var}: $universal-border-radius;
+//  @if $universal-box-shadow != none {
+//   #{$universal-box-shadow-var}: $universal-box-shadow;
+//  }
+// }
+//
+// ============================================================
+// Check the `_layout_mixins.scss` file to find this module's mixins.
+@import 'layout_mixins';
+// Fluid grid system container definition.
+.#{$grid-container-name} {
+  margin: 0 auto;
+  padding: 0 calc(1.5 * var(#{$universal-padding-var}));
+}
+// Grid row definition.
+.#{$grid-row-name} {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-flow: row wrap;
+}
+// Inline mixin, used to generate class definitions for each grid step.
+@mixin generate-grid-size ($size-prefix){
+  @if $_include-parent-layout {
+    .#{$grid-column-prefix}-#{$size-prefix},
+    [class^='#{$grid-column-prefix}-#{$size-prefix}-'],
+    [class^='#{$grid-column-prefix}-#{$size-prefix}-#{$grid-column-offset-suffix}-'],
+    .#{$grid-row-name}[class*='#{$grid-row-parent-layout-prefix}-#{$size-prefix}-'] > * {
+      box-sizing: border-box;
+      flex: 0 0 auto;
+      padding: 0 calc(var(#{$universal-padding-var}) / 2);
+    }
+    // Grid column specific definition for flexible column.
+    .#{$grid-column-prefix}-#{$size-prefix},
+    .#{$grid-row-name}.#{$grid-row-parent-layout-prefix}-#{$size-prefix} > *  {
+      max-width: 100%;
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+  }
+  @else {
+    // Grid column generic definitions.
+    .#{$grid-column-prefix}-#{$size-prefix},
+    [class^='#{$grid-column-prefix}-#{$size-prefix}-'],
+    [class^='#{$grid-column-prefix}-#{$size-prefix}-#{$grid-column-offset-suffix}-'] {
+      flex: 0 0 auto;
+      padding: 0 calc(var(#{$universal-padding-var}) / 2);
+    }
+    // Grid column specific definition for flexible column.
+    .#{$grid-column-prefix}-#{$size-prefix} {
+      max-width: 100%;
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+  }
+  // Grid column specific definitions for predefined columns.
+  @for $i from 1 through $grid-column-count {
+    @if $_include-parent-layout {
+      .#{$grid-column-prefix}-#{$size-prefix}-#{$i},
+      .#{$grid-row-name}.#{$grid-row-parent-layout-prefix}-#{$size-prefix}-#{$i} > * {
+        max-width: #{($i * 100% / $grid-column-count)};
+        flex-basis: #{($i * 100% / $grid-column-count)};
+      }
+    }
+    @else {
+      .#{$grid-column-prefix}-#{$size-prefix}-#{$i} {
+        max-width: #{($i * 100% / $grid-column-count)};
+        flex-basis: #{($i * 100% / $grid-column-count)};
+      }
+    }
+    // Offest definitions.
+    .#{$grid-column-prefix}-#{$size-prefix}-#{$grid-column-offset-suffix}-#{($i - 1)} {
+      @if ($i - 1) == 0 {
+        margin-left: 0;
+      }
+      @else {
+        margin-left: #{(($i - 1) * 100% / $grid-column-count)};
+      }
+    }
+  }
+  // Reordering definitions.
+  .#{$grid-column-prefix}-#{$size-prefix}-#{$grid-order-normal-suffix} {
+    order: initial;
+  }
+  .#{$grid-column-prefix}-#{$size-prefix}-#{$grid-order-first-suffix}  {
+    order: -999;
+  }
+  .#{$grid-column-prefix}-#{$size-prefix}-#{$grid-order-last-suffix} {
+    order: 999;
+  }
+}
+// Definitions for smaller screens.
+@include generate-grid-size($grid-small-prefix);
+// Definitions for medium screens.
+@media screen and (min-width: #{$grid-medium-breakpoint}){
+  @include generate-grid-size($grid-medium-prefix);
+}
+// Definitions for large screens.
+@media screen and (min-width: #{$grid-large-breakpoint}){
+  @include generate-grid-size($grid-large-prefix);
+}
+/* Card component CSS variable definitions */
+:root {
+  #{$card-back-color-var}: $card-back-color;
+  #{$card-fore-color-var}: $card-fore-color;
+  #{$card-border-color-var}: $card-border-color;
+}
+// Card styling
+.#{$card-name} {
+  // New syntax
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: center;
+  position: relative;
+  width: 100%;
+  // Actual styling for the cards
+  background: var(#{$card-back-color-var});
+  color: var(#{$card-fore-color-var});
+  border: $__1px solid var(#{$card-border-color-var});
+  border-radius: var(#{$universal-border-radius-var});
+  margin: var(#{$universal-margin-var});
+  @if $universal-box-shadow != none {
+    box-shadow: var(#{$universal-box-shadow-var});
+  }
+  overflow: hidden;   // Hide overflow from section borders
+  // Responsiveness (if the screen is larger than card, set max-width)
+  @media screen and (min-width: #{$card-normal-width}) {
+    max-width: $card-normal-width;
+  }
+  // Card sections
+  & > .#{$card-section-name} {
+    // Reapply background and foreground colors, so that mixins can be applied properly.
+    background: var(#{$card-back-color-var});
+    color: var(#{$card-fore-color-var});
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;        // Clean borders and radiuses for any element-based sections
+    border-radius: 0; // Clean borders and radiuses for any element-based sections
+    border-bottom: $__1px solid var(#{$card-border-color-var});
+    padding: var(#{$universal-padding-var});
+    width: 100%;
+    // Card media sections
+    &.#{$card-section-media-name} {
+      height: $card-section-media-height;
+      padding: 0;
+      -o-object-fit: cover;
+         object-fit: cover;
+    }
+  }
+  // Card sections - last
+  & > .#{$card-section-name}:last-child {
+    border-bottom: 0;  // Clean the extra border for last section
+  }
+}
