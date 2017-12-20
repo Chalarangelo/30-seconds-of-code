@@ -71,6 +71,7 @@
 <a class="sublink-1" href="#groupby">groupBy</a>
 <a class="sublink-1" href="#head">head</a>
 <a class="sublink-1" href="#initial">initial</a>
+<a class="sublink-1" href="#initialize2darray">initialize2DArray</a>
 <a class="sublink-1" href="#initializearraywithrange">initializeArrayWithRange</a>
 <a class="sublink-1" href="#initializearraywithvalues">initializeArrayWithValues</a>
 <a class="sublink-1" href="#intersection">intersection</a>
@@ -94,7 +95,8 @@
 <a class="sublink-1" href="#zip">zip</a>
 
 <h3>Browser
-</h3><a class="sublink-1" href="#bottomvisible">bottomVisible</a>
+</h3><a class="sublink-1" href="#arraytohtmllist">arrayToHtmlList</a>
+<a class="sublink-1" href="#bottomvisible">bottomVisible</a>
 <a class="sublink-1" href="#currenturl">currentURL</a>
 <a class="sublink-1" href="#elementisvisibleinviewport">elementIsVisibleInViewport</a>
 <a class="sublink-1" href="#getscrollposition">getScrollPosition</a>
@@ -127,6 +129,7 @@
 <a class="sublink-1" href="#fibonacci">fibonacci</a>
 <a class="sublink-1" href="#gcd">gcd</a>
 <a class="sublink-1" href="#hammingdistance">hammingDistance</a>
+<a class="sublink-1" href="#isarmstrongnumber">isArmstrongNumber</a>
 <a class="sublink-1" href="#isdivisible">isDivisible</a>
 <a class="sublink-1" href="#iseven">isEven</a>
 <a class="sublink-1" href="#isprime">isPrime</a>
@@ -164,6 +167,7 @@
 <a class="sublink-1" href="#fromcamelcase">fromCamelCase</a>
 <a class="sublink-1" href="#reversestring">reverseString</a>
 <a class="sublink-1" href="#sortcharactersinstring">sortCharactersInString</a>
+<a class="sublink-1" href="#stringtoarrayofwords">stringToArrayOfWords</a>
 <a class="sublink-1" href="#tocamelcase">toCamelCase</a>
 <a class="sublink-1" href="#truncatestring">truncateString</a>
 
@@ -314,6 +318,12 @@ Use <code>Array.reduce()</code> to create an object, where the keys are produced
 <p>Use <code>arr.slice(0,-1)</code>to return all but the last element of the array.</p>
 <pre><code class="language-js">const initial = arr =&gt; arr.slice(0, -1);
 // initial([1,2,3]) -&gt; [1,2]
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="initialize2darray">initialize2DArray</h3></div><div class="section double-padded">
+<p>Initializes an 2D array of given width and height and value.</p>
+<p>Use <code>Array.map()</code> to generate h rows where each is a new array of size w initialize with value. If value is not provided, default to <code>null</code>.</p>
+<pre><code class="language-js">const initialize2DArray = (w, h, val = null) =&gt; Array(h).fill().map(() =&gt; Array(w).fill(val));
+// initializeArrayWithRange(2, 2, 0) -&gt; [[0,0], [0,0]]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="initializearraywithrange">initializeArrayWithRange</h3></div><div class="section double-padded">
 <p>Initializes an array containing the numbers in the specified range where <code>start</code> and <code>end</code> are inclusive.</p>
@@ -515,7 +525,13 @@ If lengths of the argument-arrays vary, <code>undefined</code> is used where no 
 //zip(['a'], [1, 2], [true, false]); -&gt; [['a', 1, true], [undefined, 2, false]]
 </code></pre>
 </div></div><br/><h2 style="text-align:center;">Browser</h2>
-<div class="card fluid"><div class="section double-padded"><h3 id="bottomvisible">bottomVisible</h3></div><div class="section double-padded">
+<div class="card fluid"><div class="section double-padded"><h3 id="arraytohtmllist">arrayToHtmlList</h3></div><div class="section double-padded">
+<p>Converts the given array elements into '&lt;li&gt;' tags and appends them to the list of the given id.</p>
+<p>Use <code>Array.map()</code> and <code>document.querySelector()</code> to create a list of html tags.</p>
+<pre><code class="language-js">const arrayToHtmlList = (arr, listID) =&gt; arr.map(item =&gt; document.querySelector(&quot;#&quot;+listID).innerHTML+=`&lt;li&gt;${item}&lt;/li&gt;`);
+// arrayToHtmlList(['item 1', 'item 2'],'myListID')
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="bottomvisible">bottomVisible</h3></div><div class="section double-padded">
 <p>Returns <code>true</code> if the bottom of the page is visible, <code>false</code> otherwise.</p>
 <p>Use <code>scrollY</code>, <code>scrollHeight</code> and <code>clientHeight</code> to determine if the bottom of the page is visible.</p>
 <pre><code class="language-js">const bottomVisible = () =&gt;
@@ -766,6 +782,15 @@ Count and return the number of <code>1</code>s in the string, using <code>match(
   ((num1 ^ num2).toString(2).match(/1/g) || '').length;
 // hammingDistance(2,3) -&gt; 1
 </code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isarmstrongnumber">isArmstrongNumber</h3></div><div class="section double-padded">
+<p>Checks if the given number is an armstrong number or not.</p>
+<p>Convert the given number into array of digits. Use <code>Math.pow()</code> to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return <code>true</code> otherwise <code>false</code>.</p>
+<pre><code class="language-js">const isArmstrongNumber = digits =&gt; 
+  ( arr =&gt; arr.reduce( ( a, d ) =&gt; a + Math.pow( parseInt( d ), arr.length ), 0 ) == digits ? true : false )( ( digits+'' ).split( '' ) );
+// isArmstrongNumber(1634) -&gt; true
+// isArmstrongNumber(371) -&gt; true
+// isArmstrongNumber(56) -&gt; false
+</code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isdivisible">isDivisible</h3></div><div class="section double-padded">
 <p>Checks if the first numeric argument is divisible by the second one.</p>
 <p>Use the modulo operator (<code>%</code>) to check if the remainder is equal to <code>0</code>.</p>
@@ -961,7 +986,7 @@ a === b -&gt; false
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="truthcheckcollection">truthCheckCollection</h3></div><div class="section double-padded">
 <p>Checks if the predicate (second argument) is truthy on all elements of a collection (first argument).</p>
 <p>Use <code>Array.every()</code> to check if each passed object has the specified property and if it returns a truthy value.</p>
-<pre><code class="language-js">truthCheckCollection = (collection, pre) =&gt; (collection.every(obj =&gt; obj[pre]));
+<pre><code class="language-js">const truthCheckCollection = (collection, pre) =&gt; (collection.every(obj =&gt; obj[pre]));
 // truthCheckCollection([{&quot;user&quot;: &quot;Tinky-Winky&quot;, &quot;sex&quot;: &quot;male&quot;}, {&quot;user&quot;: &quot;Dipsy&quot;, &quot;sex&quot;: &quot;male&quot;}], &quot;sex&quot;) -&gt; true
 </code></pre>
 </div></div><br/><h2 style="text-align:center;">String</h2>
@@ -1030,6 +1055,14 @@ Combine characters to get a string using <code>join('')</code>.</p>
 <pre><code class="language-js">const sortCharactersInString = str =&gt;
   str.split('').sort((a, b) =&gt; a.localeCompare(b)).join('');
 // sortCharactersInString('cabbage') -&gt; 'aabbceg'
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="stringtoarrayofwords">stringToArrayOfWords</h3></div><div class="section double-padded">
+<p>Converts a given string into an array of words.</p>
+<p>Use <code>String.split()</code> with a supplied pattern (defaults to non alpha as a regex) to convert to an array of strings. Use <code>Array.filter()</code> to remove any empty strings.
+Omit the second argument to use the default regex.</p>
+<pre><code class="language-js">const stringToArrayOfWords = (str, pattern = /[^a-zA-Z-]+/) =&gt; str.split(pattern).filter(Boolean);
+// stringToArrayOfWords(&quot;I love javaScript!!&quot;) -&gt; [&quot;I&quot;, &quot;love&quot;, &quot;javaScript&quot;]
+// stringToArrayOfWords(&quot;python, javaScript &amp; coffee&quot;) -&gt; [&quot;python&quot;, &quot;javaScript&quot;, &quot;coffee&quot;]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="tocamelcase">toCamelCase</h3></div><div class="section double-padded">
 <p>Converts a string to camelcase.</p>
