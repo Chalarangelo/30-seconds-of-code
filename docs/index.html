@@ -527,7 +527,7 @@ If lengths of the argument-arrays vary, <code>undefined</code> is used where no 
 </code></pre>
 </div></div><br/><h2 style="text-align:center;">Browser</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="arraytohtmllist">arrayToHtmlList</h3></div><div class="section double-padded">
-<p>Converts the given array elements into '&lt;li&gt;' tags and appends them to the list of the given id.</p>
+<p>Converts the given array elements into <code>&lt;li&gt;</code> tags and appends them to the list of the given id.</p>
 <p>Use <code>Array.map()</code> and <code>document.querySelector()</code> to create a list of html tags.</p>
 <pre><code class="language-js">const arrayToHtmlList = (arr, listID) =&gt; arr.map(item =&gt; document.querySelector(&quot;#&quot;+listID).innerHTML+=`&lt;li&gt;${item}&lt;/li&gt;`);
 // arrayToHtmlList(['item 1', 'item 2'],'myListID')

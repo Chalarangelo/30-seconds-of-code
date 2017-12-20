@@ -1,6 +1,6 @@
 ### arrayToHtmlList
 
-Converts the given array elements into '<li>' tags and appends them to the list of the given id.
+Converts the given array elements into `<li>` tags and appends them to the list of the given id.
 
 Use `Array.map()` and `document.querySelector()` to create a list of html tags.
 
