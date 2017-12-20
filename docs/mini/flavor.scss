@@ -85,6 +85,9 @@ $button-large-padding: calc(1.5 * var(#{$universal-padding-var})) calc(2 * var(#
 $button-large-margin:  var(#{$universal-margin-var});
 @include make-button-alt-size ($button-large-name, $button-large-padding, $button-large-margin);
 
+
+$_drawer-right: false;
+
 @import 'navigation';
 @import 'contextual';
 
@@ -103,3 +106,50 @@ $mark-tag-name:                 'tag';       // Class name, padding and border r
 $mark-tag-padding:      calc(var(#{$universal-padding-var})/2) var(#{$universal-padding-var});
 $mark-tag-border-radius:        1em;
 @include make-mark-alt-size ($mark-tag-name, $mark-tag-padding, $mark-tag-border-radius);
+
+// Website-specific styles
+
+html, * { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, sans-serif; }
+code, pre, kbd, code *, pre *, kbd * { font-family: 'Inconsolata', Menlo, Consolas, monospace; }
+code, kbd { font-size: 1em; }
+code { transform: scale(1); } /* Deals with the issue described in #243 */
+pre { font-size: 1rem; border: 0.0625rem solid var(--secondary-border-color); border-radius: var(--universal-border-radius);}
+.group{position:relative;margin-top:2em;margin-bottom:-1em}
+.search{font-size:14px;margin-top:-.1em;display:block;width:100%;border:none;border-bottom:1px solid var(--nav-link-color)}
+.search:focus{outline:none}
+label#search-label{color:var(--nav-link-color);font-size:18px;font-weight:400;position:absolute;left:5px;top:10px}
+.search:focus ~ label#search-label,.search:valid ~ label#search-label{top:-20px;font-size:14px;color:var(--nav-link-color)}
+label#menu-toggle { width: 3.4375rem;}
+
+header h1.logo {
+  margin-top: -0.8rem;
+  text-align:center;
+  a {
+  text-decoration:none;
+  color: #111;
+  }
+}
+
+header #title {
+  position:relative;
+  top: -1rem;
+  @media screen and (max-width: 500px) { font-size: 1rem; display: block }
+}
+
+header h1 small {
+  display:block;
+  font-size: 0.875rem;
+  font-style: italic;
+  color: #888;
+  margin-top: -0.8rem;
+  @media screen and (max-width: 768px) { font-size: 0.75rem; }
+  @media screen and (max-width: 600px) { font-size: 0.625rem; }
+  @media screen and (max-width: 500px) { font-size: 0.5rem; margin-top: -1.2rem; }
+}
+
+label#menu-toggle {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+  width: 3.4375rem;
+}

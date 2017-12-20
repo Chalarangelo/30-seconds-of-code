@@ -5,6 +5,7 @@
     "html-minifier": "^3.5.7",
     "live-server": "^1.2.0",
     "markdown-it": "^8.4.0",
+    "node-sass": "^4.7.2",
     "nodemon": "^1.12.1",
     "semistandard": "^11.0.0"
   },
