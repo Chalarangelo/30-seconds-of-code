@@ -2,7 +2,7 @@
 
 Converts a given string into an array of words
 
-First create an array of dirt that you want to remove from the string. Then replace each dirt with an empty string. Use `String.split(' ')` to conver the string to an array with the space as a delimiter.
+First create an array of dirt that you want to remove from the string. Then replace each dirt with an empty string. Use `String.split(/[\W_]+/)` to convert the string to an array with the use of regex.
 
 ```js
 const stringToArrayOfWords = str => {
