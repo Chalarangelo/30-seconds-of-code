@@ -31,16 +31,6 @@
       Array.from(node.parentElement.children).forEach(x => x.tagName == 'H3' ? (toRemove.style.display = (remove ? 'none' : ''),
       toRemove = x,
       remove = true) : (x.style.display == '' ? remove = false : remove=remove));
-      // for(var i = 0; i < childs.length; i++) {
-      //   if(childs[i].tagName == 'H3') {
-      //     childs[toRemove].style.display = remove == true ? 'none' : '';
-      //     toRemove = i;
-      //     remove = true;
-      //   } else if(childs[i].style.display == '') {
-      //       remove = false;
-      //     //  console.log('non-empty element found:'+childs[i].innerText+'|h3:'+toRemove);
-      //   }
-      // }
     }
   </script>
   <body>
