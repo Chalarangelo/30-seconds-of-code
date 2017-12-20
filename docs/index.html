@@ -24,9 +24,10 @@
   </head>
   <script>
     document.addEventListener("load", alert("Attention! This site is only a fork of the original project demonstrating the newest changes made by myself. The original project can be found by clicking on the logo."));
-    function search(query) {
-        var tags = Array.from(document.querySelector('#snippetListDrawer').getElementsByTagName('a'));
-        tags.forEach(x => {x.getAttribute("href").toUpperCase().indexOf(query) > -1 ? x.style.display = "" : x.style.display = "none"});
+    const search = (node) => {
+      Array.from(node.parentElement.getElementsByTagName('a')).forEach(x => x.style.display = x.getAttribute("href").toUpperCase().indexOf(node.value.toUpperCase()) + 1  ? '' : 'none');
+      var remove = false, childs = Array.from(node.parentElement.children), toRemove = childs[0];
+      Array.from(node.parentElement.children).forEach(x => x.tagName == 'H3' ? (toRemove.style.display = (remove ? 'none' : ''), toRemove = x, remove = true) : (x.style.display == '' ? remove = false : remove=remove));
     }
   </script>
   <body>
@@ -38,10 +39,9 @@
     </header>
     <div class="row" style="height: calc(100vh - 5.875rem);overflow: hidden;">
       <input id="doc-drawer-checkbox" class="drawer" value="on" type="checkbox">
-        <nav id="snippetListDrawer" class="col-md-4 col-lg-3" style="border-top: 0">
-          <input type="text" id="searchInput" onkeyup="search(this.value.toUpperCase())" placeholder="Search for snippet..">
+        <nav class="col-md-4 col-lg-3" style="border-top: 0">
+          <input type="text" id="searchInput" onkeyup="search(this)" placeholder="Search for snippet..">
           <label for="doc-drawer-checkbox" class="button drawer-close"></label>
-          <!-- <div><input style="width: 100%; margin: 0px;" placeholder="Search..." id="search-bar" oninput="search()" type="search"></div> -->
 
 <h3>Array
 </h3><a class="sublink-1" href="#arraymax">arrayMax</a>
@@ -309,7 +309,7 @@ Use <code>Array.reduce()</code> to create an object, where the keys are produced
 <p>Initializes an array containing the numbers in the specified range where <code>start</code> and <code>end</code> are inclusive.</p>
 <p>Use <code>Array((end + 1) - start)</code> to create an array of the desired length, <code>Array.map()</code> to fill with the desired values in a range.
 You can omit <code>start</code> to use a default value of <code>0</code>.</p>
-<pre><code class="language-js">const initializeArrayWithRange = (end, start = 0) =&gt; 
+<pre><code class="language-js">const initializeArrayWithRange = (end, start = 0) =&gt;
   Array.from({ length: (end + 1) - start }).map((v, i) =&gt; i + start);
 // initializeArrayWithRange(5) -&gt; [0,1,2,3,4,5]
 // initializeArrayWithRange(7, 3) -&gt; [3,4,5,6,7]
@@ -336,7 +336,7 @@ You can omit <code>value</code> to use a default value of <code>0</code>.</p>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="mapobject">mapObject</h3></div><div class="section double-padded">
 <p>Maps the values of an array to an object using a function, where the key-value pairs consist of the original value as the key and the mapped value.</p>
 <p>Use an anonymous inner function scope to declare an undefined memory space, using closures to store a return value. Use a new <code>Array</code> to stor the array with a map of the function over its data set and a comma operator to return a second step, without needing to move from one context to another (due to closures and order of operations).</p>
-<pre><code class="language-js">const mapObject = (arr, fn) =&gt; 
+<pre><code class="language-js">const mapObject = (arr, fn) =&gt;
   (a =&gt; (a = [arr, arr.map(fn)], a[0].reduce( (acc,val,ind) =&gt; (acc[val] = a[1][ind], acc), {}) )) ( );
 /*
 const squareIt = arr =&gt; mapObject(arr, a =&gt; a*a)
@@ -386,7 +386,7 @@ Use <code>Array.push()</code> to keep track of pulled values</p>
   let removed = [];
   let pulled = arr.map((v, i) =&gt; pullArr.includes(i) ? removed.push(v) : v)
                   .filter((v, i) =&gt; !pullArr.includes(i))
-  arr.length = 0; 
+  arr.length = 0;
   pulled.forEach(v =&gt; arr.push(v));
   return removed;
 }
@@ -403,7 +403,7 @@ Use <code>Array.push()</code> to keep track of pulled values</p>
 Use <code>Array.length = 0</code> to mutate the passed in array by resetting it's length to zero and <code>Array.push()</code> to re-populate it with only the pulled values.
 Use <code>Array.push()</code> to keep track of pulled values</p>
 <pre><code class="language-js">const pullAtValue = (arr, pullArr) =&gt; {
-  let removed = [], 
+  let removed = [],
     pushToRemove = arr.forEach((v, i) =&gt; pullArr.includes(v) ? removed.push(v) : v),
     mutateTo = arr.filter((v, i) =&gt; !pullArr.includes(v));
   arr.length = 0;
@@ -1183,4 +1183,3 @@ Use <code>Number()</code> to check if the coercion holds.</p>
     <script src="prism.js"></script>
   </body>
 </html>
-
