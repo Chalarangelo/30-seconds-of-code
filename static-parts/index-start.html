@@ -19,46 +19,24 @@
       code, kbd { font-size: 1em; }
       code { transform: scale(1); } /* Deals with the issue described in #243 */
       pre { font-size: 1rem; border: 0.0625rem solid var(--secondary-border-color); border-radius: var(--universal-border-radius);}
-      #snippetList { /* Remove default list styling */
-          list-style-type: none;
-          padding: 0;
-          margin: 0;
-      }
-
-      #snippetList li a {
-          border: 1px solid #ddd; /* Add a border to all links */
-          margin-top: -1px; /* Prevent double borders */
-          background-color: #f6f6f6; /* Grey background color */
-          padding: 12px; /* Add some padding */
-          text-decoration: none; /* Remove default text underline */
-          font-size: 18px; /* Increase the font-size */
-          color: black; /* Add a black text color */
-          display: block; /* Make it into a block element to fill the whole list */
-      }
-
-      #snippetList li a:hover:not(.header) {
-          background-color: #eee; /* Add a hover effect to all links, except for headers */
-      }
     </style>
     <link rel="stylesheet" href="prism.css">
   </head>
   <script>
     document.addEventListener("load", alert("Attention! This site is only a fork of the original project demonstrating the newest changes made by myself. The original project can be found by clicking on the logo."));
     function search() {
-        // Declare variables
-        var input, filter, ul, li, a, i;
+        var input, filter, nav,a, i;
         input = document.getElementById('searchInput');
         filter = input.value.toUpperCase();
-        ul = document.getElementById("snippetList");
-        li = ul.getElementsByTagName('li');
+        nav = document.getElementById("snippetListDrawer");
+        tags = nav.getElementsByTagName("a");
 
-        // Loop through all list items, and hide those who don't match the search query
-        for (i = 0; i < li.length; i++) {
-            a = li[i].getElementsByTagName("a")[0];
-            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                li[i].style.display = "";
+        for(var i = 0; i < tags.length; i++) {
+            var snippetLink = tags[i].getAttribute("href");
+            if (snippetLink.toUpperCase().indexOf(filter) > -1) {
+                tags[i].style.display = "";
             } else {
-                li[i].style.display = "none";
+                tags[i].style.display = "none";
             }
         }
     }
@@ -71,19 +49,8 @@
       <label for="doc-drawer-checkbox" class="button drawer-toggle" style="position: absolute; right: 0; top: 0;"></label>
     </header>
     <input type="text" id="searchInput" onkeyup="search()" placeholder="Search for snippet..">
-    <ul id="snippetList">
-      <li><a href="#">arrayMax</a></li>
-      <li><a href="#">arrayMin</a></li>
-
-      <li><a href="#">chunk</a></li>
-      <li><a href="#">compact</a></li>
-
-      <li><a href="#">hexToRgb</a></li>
-      <li><a href="#">sleep</a></li>
-      <li><a href="#">validateEmail</a></li>
-    </ul>
     <div class="row" style="height: calc(100vh - 5.875rem);overflow: hidden;">
       <input id="doc-drawer-checkbox" class="drawer" value="on" type="checkbox">
-        <nav class="col-md-4 col-lg-3" style="border-top: 0">
+        <nav id="snippetListDrawer" class="col-md-4 col-lg-3" style="border-top: 0">
           <label for="doc-drawer-checkbox" class="button drawer-close"></label>
           <!-- <div><input style="width: 100%; margin: 0px;" placeholder="Search..." id="search-bar" oninput="search()" type="search"></div> -->
