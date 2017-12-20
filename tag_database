@@ -71,6 +71,7 @@ median:math
 nthElement:array
 objectFromPairs:object
 objectToPairs:object
+orderBy:object
 palindrome:math
 percentile:math
 pick:array
