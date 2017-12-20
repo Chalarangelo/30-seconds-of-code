@@ -23,14 +23,7 @@
     <link rel="stylesheet" href="prism.css">
   </head>
   <script>
-    function search() {
-        var input, filter, i;
-        input = document.querySelector('#searchInput');
-        filter = input.value.toUpperCase();
-        tags = Array.from(document.querySelector('#snippetListDrawer').getElementsByTagName('a'));
-
-        tags.forEach(x => {x.getAttribute("href").toUpperCase().indexOf(filter) > -1 ? x.style.display = "" : x.style.display = "none"});
-    }
+    const search = (node) => Array.from(node.parentElement.getElementsByTagName('a')).forEach(x =>x.style.display = x.getAttribute("href").toUpperCase().indexOf(node.value.toUpperCase()) + 1  ? '' : 'none');
   </script>
   <body>
     <header style="height: 5.5rem;">
@@ -42,7 +35,7 @@
     <div class="row" style="height: calc(100vh - 5.875rem);overflow: hidden;">
       <input id="doc-drawer-checkbox" class="drawer" value="on" type="checkbox">
         <nav id="snippetListDrawer" class="col-md-4 col-lg-3" style="border-top: 0">
-          <input type="text" id="searchInput" onkeyup="search()" placeholder="Search for snippet..">
+          <input type="text" id="searchInput" onkeyup="search(this)" placeholder="Search for snippet..">
           <label for="doc-drawer-checkbox" class="button drawer-close"></label>
           <!-- <div><input style="width: 100%; margin: 0px;" placeholder="Search..." id="search-bar" oninput="search()" type="search"></div> -->
 
