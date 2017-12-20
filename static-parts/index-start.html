@@ -19,70 +19,11 @@
       code, kbd { font-size: 1em; }
       code { transform: scale(1); } /* Deals with the issue described in #243 */
       pre { font-size: 1rem; border: 0.0625rem solid var(--secondary-border-color); border-radius: var(--universal-border-radius);}
-      .group {
-          position: relative;
-          margin-top: 2em;
-          margin-bottom: -1em;
-      }
-      .search {
-          font-size: 14px;
-          margin-top: -0.1em;
-          display: block;
-          width: 320px;
-          border: none;
-          border-bottom: 1px solid var(--nav-link-color);
-      }
-      .search:focus 		{ outline:none; }
-
-      /* LABEL ======================================= */
-      label 				 {
-        color: var(--nav-link-color);
-        font-size:18px;
-        font-weight:normal;
-        position:absolute;
-        pointer-events:none;
-        left:5px;
-        top:10px;
-        transition:0.2s ease all;
-        -moz-transition:0.2s ease all;
-        -webkit-transition:0.2s ease all;
-      }
-
-      /* active state */
-      .search:focus ~ label, .search:valid ~ label 		{
-        top:-20px;
-        font-size:14px;
-        color: var(--nav-link-color);
-      }
-
-      /* BOTTOM BARS ================================= */
-      .bar 	{ position:relative; display:block; width:inherit; }
-      .bar:before, .bar:after 	{
-        content:'';
-        height:2px;
-        width:0;
-        bottom:1px;
-        position:absolute;
-        background: var(--nav-link-color);
-      }
-      .bar:before {
-        left:50%;
-      }
-      .bar:after {
-        right:50%;
-      }
-
-      /* HIGHLIGHTER ================================== */
-      .highlight {
-        position:absolute;
-        height:60%;
-        width:100px;
-        top:25%;
-        left:0;
-        pointer-events:none;
-        opacity:0.5;
-      }
-
+      .group{position:relative;margin-top:2em;margin-bottom:-1em}
+      .search{font-size:14px;margin-top:-.1em;display:block;width:320px;border:none;border-bottom:1px solid var(--nav-link-color)}
+      .search:focus{outline:none}
+      label{color:var(--nav-link-color);font-size:18px;font-weight:400;position:absolute;pointer-events:none;left:5px;top:10px}
+      .search:focus ~ label,.search:valid ~ label{top:-20px;font-size:14px;color:var(--nav-link-color)}
     </style>
     <link rel="stylesheet" href="prism.css">
   </head>
