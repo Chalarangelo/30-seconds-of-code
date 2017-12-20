@@ -56,6 +56,7 @@ isDivisible:math
 isEven:math
 isFunction:utility
 isNumber:utility
+isPrime:math
 isString:utility
 isSymbol:utility
 JSONToDate:date

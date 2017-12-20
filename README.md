@@ -87,6 +87,7 @@
 * [`hammingDistance`](#hammingdistance)
 * [`isDivisible`](#isdivisible)
 * [`isEven`](#iseven)
+* [`isPrime`](#isprime)
 * [`lcm`](#lcm)
 * [`median`](#median)
 * [`palindrome`](#palindrome)
@@ -1212,6 +1213,24 @@ Returns `true` if the number is even, `false` if the number is odd.
 ```js
 const isEven = num => num % 2 === 0;
 // isEven(3) -> false
+```
+
+[⬆ back to top](#table-of-contents)
+
+### isPrime
+
+Checks if the provided integer is a prime number.
+
+Returns `false` if the provided number has positive divisors other than 1 and itself or if the number itself is less than 2.
+
+```js
+const isPrime = num => {
+  for (var i = 2; i < num; i++) if (num % i == 0) return false;
+  return num >= 2;
+}
+// isPrime(11) -> true
+// isPrime(12) -> false
+// isPrime(1) -> false
 ```
 
 [⬆ back to top](#table-of-contents)
