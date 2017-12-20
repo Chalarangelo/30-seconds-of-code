@@ -11,6 +11,7 @@
 ## Table of Contents
 
 ### Array
+* [`arrayGcd`](#arraygcd)
 * [`arrayMax`](#arraymax)
 * [`arrayMin`](#arraymin)
 * [`chunk`](#chunk)
@@ -150,6 +151,23 @@
 * [`validateNumber`](#validatenumber)
 
 ## Array
+
+### arrayGcd
+
+Calculates the greatest common denominator (gcd) of an array of numbers.
+
+Use `Array.reduce()` and the `gcd` formula (uses recursion) to calculate the greatest common denominator of an array of numbers.
+
+```js
+const arrayGcd = arr =>{
+  const gcd = (x, y) => !y ? x : gcd(y, x % y);
+  return arr.reduce((a,b) => gcd(a,b));
+}
+// arrayGcd([1,2,3,4,5]) -> 1
+// arrayGcd([4,8,12]) -> 4
+```
+
+[⬆ back to top](#table-of-contents)
 
 ### arrayMax
 
@@ -1549,7 +1567,7 @@ const orderBy = (arr, props, orders) =>
   arr.sort((a, b) =>
     props.reduce((acc, prop, i) => {
       if (acc === 0) {
-        const [p1, p2] = orders[i] === 'asc' ? [a[prop], b[prop]] : [b[prop], a[prop]];
+        const [p1, p2] = orders && orders[i] === 'desc' ? [b[prop], a[prop]] : [a[prop], b[prop]];
         acc = p1 > p2 ? 1 : p1 < p2 ? -1 : 0;
       }
       return acc;
