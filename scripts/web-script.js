@@ -1,10 +1,11 @@
 /*
-  This is the builder script that generates the README file.
-  Run using `npm run builder`.
+  This is the web builder script that generates the README file.
+  Run using `npm run webber`.
 */
 // Load modules
 const fs = require('fs-extra'), path = require('path'), chalk = require('chalk'),
   md = require('markdown-it')();
+// Compile the mini.css framework and custom CSS styles, using `node-sass`.
 const sass = require('node-sass');
   sass.render({
     file: path.join('docs','mini','flavor.scss'),
