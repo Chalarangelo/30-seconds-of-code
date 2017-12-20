@@ -24,7 +24,7 @@
 <!--- Provide a link to the method your trying to [ADD] or [UPDATE] in the Description above -->
 <!--- Add the prefix [UPDATE: `method.md`] or [ADD: `method.md`] to the Title & Desciption -->
 - [ ] I added the prefix [UPDATE: `method.md`] or [ADD: `method.md`]
-- [ ] I have reference the `method` to issue #100 accordingly.
+- [ ] I have referenced the `method` to the lodash backlog.
 
 ## Checklist:
 <!--- If you're unsure about any of these, don't hesitate to ask. We're here to help! -->
