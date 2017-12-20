@@ -42,7 +42,8 @@
           <label for="doc-drawer-checkbox" class="button drawer-close"></label>
 
 <h3>Array
-</h3><a class="sublink-1" href="#arraymax">arrayMax</a>
+</h3><a class="sublink-1" href="#arraygcd">arrayGcd</a>
+<a class="sublink-1" href="#arraymax">arrayMax</a>
 <a class="sublink-1" href="#arraymin">arrayMin</a>
 <a class="sublink-1" href="#chunk">chunk</a>
 <a class="sublink-1" href="#compact">compact</a>
@@ -181,7 +182,17 @@
 <a class="sublink-1" href="#validatenumber">validateNumber</a>
 
 </nav><main class="col-sm-12 col-md-8 col-lg-9" style="height: 100%;overflow-y: auto; background: #eceef2;"><a id="top">&nbsp;</a><h2 style="text-align:center;">Array</h2>
-<div class="card fluid"><div class="section double-padded"><h3 id="arraymax">arrayMax</h3></div><div class="section double-padded">
+<div class="card fluid"><div class="section double-padded"><h3 id="arraygcd">arrayGcd</h3></div><div class="section double-padded">
+<p>Calculates the greatest common denominator (gcd) of an array of numbers.</p>
+<p>Use <code>Array.reduce()</code> and the <code>gcd</code> formula (uses recursion) to calculate the greatest common denominator of an array of numbers.</p>
+<pre><code class="language-js">const arrayGcd = arr =&gt;{
+  const gcd = (x, y) =&gt; !y ? x : gcd(y, x % y);
+  return arr.reduce((a,b) =&gt; gcd(a,b));
+}
+// arrayGcd([1,2,3,4,5]) -&gt; 1
+// arrayGcd([4,8,12]) -&gt; 4
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="arraymax">arrayMax</h3></div><div class="section double-padded">
 <p>Returns the maximum value in an array.</p>
 <p>Use <code>Math.max()</code> combined with the spread operator (<code>...</code>) to get the maximum value in the array.</p>
 <pre><code class="language-js">const arrayMax = arr =&gt; Math.max(...arr);
@@ -962,7 +973,7 @@ If no orders array is passed it sort by 'asc' by default.</p>
   arr.sort((a, b) =&gt;
     props.reduce((acc, prop, i) =&gt; {
       if (acc === 0) {
-        const [p1, p2] = orders[i] === 'asc' ? [a[prop], b[prop]] : [b[prop], a[prop]];
+        const [p1, p2] = orders &amp;&amp; orders[i] === 'desc' ? [b[prop], a[prop]] : [a[prop], b[prop]];
         acc = p1 &gt; p2 ? 1 : p1 &lt; p2 ? -1 : 0;
       }
       return acc;
