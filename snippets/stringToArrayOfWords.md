@@ -2,7 +2,7 @@
 
 Converts a given string into an array of words
 
-Use `String.split(/[\W_]+/)` to convert the string to an array with the use of regex.
+Use `String.split` to convert the string to an array.
 
 ```js
 const stringToArrayOfWords = (str, pattern = /[\W_]+/) => str.split(pattern).filter(Boolean)
