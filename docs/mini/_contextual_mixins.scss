@@ -1,0 +1,27 @@
+// Contextual module's mixin definitions are here. For the module itself
+// check `_contextual.scss`.
+// Mark color variant mixin:
+//  $mark-alt-name: The name of the class used for the <mark> variant.
+//  $mark-alt-back-color: Background color for <mark> variant.
+//  $mark-alt-fore-color: Text color for <mark> variant.
+@mixin make-mark-alt-color ($mark-alt-name, $mark-alt-back-color : $mark-back-color,
+  $mark-alt-fore-color : $mark-fore-color) {
+  mark.#{$mark-alt-name} {
+    @if $mark-alt-back-color != $mark-back-color {
+      #{$mark-back-color-var}: $mark-alt-back-color;
+    }
+    @if $mark-alt-fore-color != $mark-fore-color{
+      #{$mark-fore-color-var}: $mark-alt-fore-color;
+    }
+  }
+}
+// Mark size variant mixin:
+//  $mark-alt-name: The name of the class used for the <mark> variant.
+//  $mark-alt-padding: The padding of the <mark> variant.
+//  $mark-alt-border-radius: The border radius of the <mark> variant.
+@mixin make-mark-alt-size ($mark-alt-name, $mark-alt-padding, $mark-alt-border-radius) {
+  mark.#{$mark-alt-name} {
+    padding: $mark-alt-padding;
+    border-radius: $mark-alt-border-radius;
+  }
+}

@@ -1,0 +1,315 @@
+/*
+  Definitions for navigation elements.
+*/
+// Different elements are styled based on the same set of rules.
+$header-height:     3.1875rem !default;      // Height of the header element.
+$header-back-color: #f8f8f8 !default;        // Background color for the header element.
+$header-hover-back-color: #f0f0f0 !default;  // Background color for the header element (hover).
+$header-fore-color:   #444 !default;         // Text color for the header element.
+$header-border-color: #ddd !default;         // Border color for the header element.
+$nav-back-color:      #f8f8f8 !default;      // Background color for the nav element.
+$nav-hover-back-color: #f0f0f0 !default;     // Background color for the nav element (hover).
+$nav-fore-color:      #444 !default;         // Text color for the nav element.
+$nav-border-color:    #ddd !default;         // Border color for the nav element.
+$nav-link-color:      #0277bd !default;      // Color for link in the nav element.
+$footer-fore-color:   #444 !default;         // Text color for the footer element.
+$footer-back-color:   #f8f8f8 !default;      // Background color for footer nav element.
+$footer-border-color: #ddd !default;         // Border color for the footer element.
+$footer-link-color:   #0277bd !default;      // Color for link in the footer element.
+$drawer-back-color:   #f8f8f8 !default;      // Background color for the drawer component.
+$drawer-border-color: #ddd !default;         // Border color for the drawer component.
+$drawer-hover-back-color: #f0f0f0 !default;  // Background color for the drawer component's close (hover).
+$drawer-close-color:  #444 !default;         // Color of the close element for the drawer component.
+$_header-only-bottom-border:  true !default; // [Hidden] Apply styling only to the bottom border of header? (boolean)
+$_header-links-uppercase:     true !default; // [Hidden] Should header links and buttons be uppercase? (boolean)
+$header-logo-name:    'logo' !default;       // Class name for the header logo element.
+$header-logo-font-size: 1.75rem !default;    // Font ize for the header logo element.
+$nav-sublink-prefix:   'sublink' !default;   // Prefix for the subcategory tabs in nav.
+$nav-sublink-depth:    2 !default;           // Amount of subcategory classes to add.
+$_footer-only-top-border:  true !default;    // [Hidden] Apply styling only to the top border of footer? (boolean)
+$footer-font-size:    0.875rem !default;     // Font size for text in footer element.
+$sticky-name:         'sticky' !default;     // Class name for sticky headers and footers.
+$drawer-name:         'drawer' !default;     // Class name for the drawer component.
+$drawer-toggle-name: 'drawer-toggle' !default; // Class name for the drawer component's toggle.
+$drawer-toggle-font-size: 1.5em !default;    // Font size for the drawer component's toggle. (prefer em units)
+$drawer-mobile-breakpoint: 768px !default;   // Mobile breakpoint for the drawer component.
+$_drawer-right:     true !default;           // [Hidden] Should the drawer appear on the right side of the screen?
+$drawer-persistent-name: 'persistent' !default; // Class name for the persisten variant of the drawer component.
+$drawer-width:      320px !default;          // Width of the drawer component.
+$drawer-close-name: 'drawer-close' !default; // Class name of the close element for the drawer component.
+$drawer-close-size: 2rem !default;           // Size of the close element for the drawer component.
+$drawer-icons-color:  #212121 !default;      // Color for the icons used in the drawer component.
+// CSS variable name definitions [exercise caution if modifying these]
+$header-fore-color-var:          '--header-fore-color' !default;
+$header-back-color-var:          '--header-back-color' !default;
+$header-hover-back-color-var:    '--header-hover-back-color' !default;
+$header-border-color-var:        '--header-border-color' !default;
+$nav-fore-color-var:             '--nav-fore-color' !default;
+$nav-back-color-var:             '--nav-back-color' !default;
+$nav-hover-back-color-var:       '--nav-hover-back-color' !default;
+$nav-border-color-var:           '--nav-border-color' !default;
+$nav-link-color-var:             '--nav-link-color' !default;
+$footer-fore-color-var:          '--footer-fore-color' !default;
+$footer-back-color-var:          '--footer-back-color' !default;
+$footer-border-color-var:        '--footer-border-color' !default;
+$footer-link-color-var:          '--footer-link-color' !default;
+$drawer-back-color-var:          '--drawer-back-color' !default;
+$drawer-border-color-var:        '--drawer-border-color' !default;
+$drawer-hover-back-color-var:    '--drawer-hover-back-color' !default;
+$drawer-close-color-var:         '--drawer-close-color' !default;
+// == Uncomment below code if this module is used on its own ==
+//
+// $universal-margin:        0.5rem !default;      // Universal margin for the most elements
+// $universal-padding:       0.5rem !default;      // Universal padding for the most elements
+// $universal-border-radius: 0.125rem !default;    // Universal border-radius for most elements
+// $universal-box-shadow:    none !default;        // Universal box-shadow for most elements
+// $universal-margin-var:          '--universal-margin' !default;
+// $universal-padding-var:         '--universal-padding' !default;
+// $universal-border-radius-var:   '--universal-border-radius' !default;
+// $universal-box-shadow-var:      '--universal-box-shadow' !default;
+// :root {
+//  #{$universal-margin-var}: $universal-margin;
+//  #{$universal-padding-var}: $universal-padding;
+//  #{$universal-border-radius-var}: $universal-border-radius;
+//  @if $universal-box-shadow != none {
+//   #{$universal-box-shadow-var}: $universal-box-shadow;
+//  }
+// }
+//
+// ============================================================
+/* Navigation module CSS variable definitions */
+:root {
+  #{$header-back-color-var}: $header-back-color;
+  #{$header-hover-back-color-var}: $header-hover-back-color;
+  #{$header-fore-color-var}: $header-fore-color;
+  #{$header-border-color-var}: $header-border-color;
+  #{$nav-back-color-var}: $nav-back-color;
+  #{$nav-hover-back-color-var}: $nav-hover-back-color;
+  #{$nav-fore-color-var}: $nav-fore-color;
+  #{$nav-border-color-var}: $nav-border-color;
+  #{$nav-link-color-var}: $nav-link-color;
+  #{$footer-fore-color-var}: $footer-fore-color;
+  #{$footer-back-color-var}: $footer-back-color;
+  #{$footer-border-color-var}: $footer-border-color;
+  #{$footer-link-color-var}: $footer-link-color;
+  #{$drawer-back-color-var}: $drawer-back-color;
+  #{$drawer-hover-back-color-var}: $drawer-hover-back-color;
+  #{$drawer-border-color-var}: $drawer-border-color;
+  #{$drawer-close-color-var}: $drawer-close-color;
+}
+// Header styling. - No box-shadow as it causes lots of weird bugs in Chrome. No margin as it shouldn't have any.
+header {
+  height: $header-height;
+  background: var(#{$header-back-color-var}); // Always apply background color to avoid shine through
+  color: var(#{$header-fore-color-var});
+  @if $_header-only-bottom-border {
+    border-bottom: $__1px solid var(#{$header-border-color-var});
+  }
+  @else {
+    border: $__1px solid var(#{$header-border-color-var});
+  }
+  padding: calc(var(#{$universal-padding-var}) / 4) 0;
+  // Responsiveness for smaller displays, scrolls horizontally.
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  // Fix for responsive header, using the grid system's row and column alignment.
+  &.#{$grid-row-name} {
+    box-sizing: content-box;
+  }
+  // Header logo styling.
+  .#{$header-logo-name} {
+    color: var(#{$header-fore-color-var});
+    font-size: $header-logo-font-size;
+    padding: var(#{$universal-padding-var}) calc(2 * var(#{$universal-padding-var}));
+    text-decoration: none;
+  }
+  // Link styling.
+  button, [type="button"], .#{$button-class-name}, [role="button"] {
+    box-sizing: border-box;
+    position: relative;
+    top: calc(0rem - var(#{$universal-padding-var}) / 4);  // Use universal-padding to offset the padding of the header.
+    height: calc(#{$header-height} + var(#{$universal-padding-var}) / 2);  // Fill header.
+    background: var(#{$header-back-color-var});        // Apply color regardless to override styling from other things.
+    line-height: calc(#{$header-height} - var(#{$universal-padding-var}) * 1.5);
+    text-align: center;
+    color: var(#{$header-fore-color-var});
+    border: 0;
+    border-radius: 0;
+    margin: 0;
+    @if $_header-links-uppercase {
+      text-transform: uppercase;
+    }
+    &:hover, &:focus {
+      background: var(#{$header-hover-back-color-var});
+    }
+  }
+}
+// Navigation sidebar styling.
+nav {
+  background: var(#{$nav-back-color-var});
+  color: var(#{$nav-fore-color-var});
+  border: $__1px solid var(#{$nav-border-color-var});
+  border-radius: var(#{$universal-border-radius-var});
+  margin: var(#{$universal-margin-var});
+  @if $universal-box-shadow != none {
+    box-shadow: var(#{$universal-box-shadow-var});
+  }
+  * {
+    padding: var(#{$universal-padding-var}) calc(1.5 * var(#{$universal-padding-var}));
+  }
+  a, a:visited {
+    display: block;
+    color: var(#{$nav-link-color-var});    // Apply regardless to de-stylize visited links.
+    border-radius: var(#{$universal-border-radius-var});
+    transition: background 0.3s;
+    &:hover, &:focus {
+      text-decoration: none;
+      background: var(#{$nav-hover-back-color-var});
+    }
+  }
+  // Subcategories in navigation.
+  @for $i from 1 through $nav-sublink-depth {
+    .#{$nav-sublink-prefix}-#{$i} {
+      position: relative;
+      margin-left: calc(#{$i * 2} * var(#{$universal-padding-var}));
+      &:before {
+        position: absolute;
+        left: calc(var(#{$universal-padding-var}) - #{1 + ($i - 1)*2} * var(#{$universal-padding-var}));
+        top: -#{$__1px};
+        content: '';
+        height: 100%;
+        border: $__1px solid var(#{$nav-border-color-var});
+        border-left: 0;
+      }
+    }
+  }
+}
+// Footer styling.
+footer {
+  background: var(#{$footer-back-color-var}); // Always apply background color to avoid shine through
+  color: var(#{$footer-fore-color-var});
+  @if $_footer-only-top-border {
+    border-top: $__1px solid var(#{$footer-border-color-var});
+  }
+  @else {
+    border: $__1px solid var(#{$footer-border-color-var});
+  }
+  // margin: $footer-margin;
+  padding: calc(2 * var(#{$universal-padding-var})) var(#{$universal-padding-var});
+  font-size: $footer-font-size;
+  a, a:visited {
+    color: var(#{$footer-link-color-var});
+  }
+}
+// Definitions for sticky headers and footers.
+header.#{$sticky-name} {
+  position: -webkit-sticky; // One of the rare instances where prefixes are necessary.
+  position: sticky;
+  z-index: 1101;  // Deals with certain problems when combined with cards and tables.
+  top: 0;
+}
+footer.#{$sticky-name} {
+  position: -webkit-sticky; // One of the rare instances where prefixes are necessary.
+  position: sticky;
+  z-index: 1101;  // Deals with certain problems when combined with cards and tables.
+  bottom: 0;
+}
+// Responsive drawer component.
+.#{$drawer-toggle-name} {
+  &:before {  // No color specified, should use the color of its surroundings!
+    display: inline-block;
+    position: relative;
+    vertical-align: bottom;
+    content: '\00a0\2261\00a0'; // Spaces ensure compatibility with buttons that have text and that textless buttons will have some extra padding.
+    font-family: sans-serif;
+    font-size: $drawer-toggle-font-size;   // Almost hardcoded, should be fully compatible with its surroundings.
+  }
+  @media screen and (min-width: #{$drawer-mobile-breakpoint}){
+    &:not(.#{$drawer-persistent-name}) {
+      display: none;
+    }
+  }
+}
+[type="checkbox"].#{$drawer-name} {
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  + * {
+    display: block;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    width: $drawer-width;
+    height: 100vh;
+    overflow-y: auto;
+    background: var(#{$drawer-back-color-var});
+    border: $__1px solid var(#{$drawer-border-color-var});
+    border-radius: 0; // Set to 0 to override the value from `nav`.
+    margin: 0;        // Set to 0 to override the value from `nav`.
+    @if $universal-box-shadow != none {
+      box-shadow: var(#{$universal-box-shadow-var});
+    }
+    z-index: 1110;
+    @if $_drawer-right {
+      right: -$drawer-width;
+      transition: right 0.3s;
+    }
+    @else {
+      left: -$drawer-width;
+      transition: left 0.3s;
+    }
+    & .#{$drawer-close-name} {
+      position: absolute;
+      top: var(#{$universal-margin-var});
+      right: var(#{$universal-margin-var});
+      z-index: 1111;
+      width: $drawer-close-size;
+      height: $drawer-close-size;
+      border-radius: var(#{$universal-border-radius-var});
+      padding: var(#{$universal-padding-var});
+      margin: 0; // Fixes the offset from label
+      cursor: pointer;
+      transition: background 0.3s;
+      &:before {    // Transparent background unless hovered over. Does not block text behind it.
+        display: block;
+        content: '\00D7';
+        color: var(#{$drawer-close-color-var});
+        position: relative;
+        font-family: sans-serif;
+        font-size: $drawer-close-size;
+        line-height: 1;   // Setting to 1 seems to center the 'X' properly.
+        text-align: center;
+      }
+      &:hover, &:focus {
+        background: var(#{$drawer-hover-back-color-var});
+      }
+    }
+    @media screen and (max-width: #{$drawer-width}) {
+      width: 100%;
+    }
+  }
+  &:checked + * {
+    @if $_drawer-right {
+      right: 0;
+    }
+    @else {
+      left: 0;
+    }
+  }
+  @media screen and (min-width: #{$drawer-mobile-breakpoint}){
+    &:not(.#{$drawer-persistent-name}) + * {
+      position: static;
+      height: 100%;
+      z-index: 1100;
+      & .#{$drawer-close-name} {
+        display: none;
+      }
+    }
+  }
+}
