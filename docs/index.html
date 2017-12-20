@@ -20,10 +20,11 @@
       code { transform: scale(1); } /* Deals with the issue described in #243 */
       pre { font-size: 1rem; border: 0.0625rem solid var(--secondary-border-color); border-radius: var(--universal-border-radius);}
       .group{position:relative;margin-top:2em;margin-bottom:-1em}
-      .search{font-size:14px;margin-top:-.1em;display:block;width:320px;border:none;border-bottom:1px solid var(--nav-link-color)}
+      .search{font-size:14px;margin-top:-.1em;display:block;width:100%;border:none;border-bottom:1px solid var(--nav-link-color)}
       .search:focus{outline:none}
-      label{color:var(--nav-link-color);font-size:18px;font-weight:400;position:absolute;pointer-events:none;left:5px;top:10px}
-      .search:focus ~ label,.search:valid ~ label{top:-20px;font-size:14px;color:var(--nav-link-color)}
+      label#search-label{color:var(--nav-link-color);font-size:18px;font-weight:400;position:absolute;left:5px;top:10px}
+      .search:focus ~ label#search-label,.search:valid ~ label#search-label{top:-20px;font-size:14px;color:var(--nav-link-color)}
+      label#menu-toggle { width: 3.4375rem;}
     </style>
     <link rel="stylesheet" href="prism.css">
   </head>
@@ -38,9 +39,9 @@
     <a href="https://github.com/Chalarangelo/30-seconds-of-code" class="github-corner" aria-label="View source on Github"><svg width="90" height="90" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header style="height: 5.5rem;">
       <h1 class="logo" style="margin-top: -0.8rem; text-align:center;"><a style="text-decoration:none;color:black" href="https://github.com/Chalarangelo/30-seconds-of-code"><img src="favicon.png" style="height: 4rem;"/><span style="position:relative; top: -1rem;">&nbsp;30 seconds of code</span></a>
-        <span style="display:block; font-size: 1rem; font-style: italic; color: grey; margin-top: -0.8rem">Curated collection of useful JavaScript snippets that you can understand in 30 seconds or less.</span>
+        <small style="display:block; font-size: 1rem; font-style: italic; color: grey; margin-top: -0.8rem">Curated collection of useful JavaScript snippets that you can understand in 30 seconds or less.</small>
       </h1>
-      <label for="doc-drawer-checkbox" class="button drawer-toggle" style="position: absolute; right: 0; top: 0;"></label>
+      <label for="doc-drawer-checkbox" class="button drawer-toggle" style="position: absolute; left: 0; top: 0;width: 3.4375rem;"></label>
     </header>
     <div class="row" style="height: calc(100vh - 5.875rem);overflow: hidden;">
       <input id="doc-drawer-checkbox" class="drawer" value="on" type="checkbox">
@@ -49,7 +50,7 @@
           <input class="search" type="text" id="searchInput" onkeyup="search(this)">
           <span class="highlight"></span>
           <span class="bar"></span>
-          <label>Search for snippet...</label>
+          <label id="search-label">Search for snippet...</label>
           </div>
           <label for="doc-drawer-checkbox" class="button drawer-close"></label>
 
@@ -155,6 +156,7 @@
 </h3><a class="sublink-1" href="#cleanobj">cleanObj</a>
 <a class="sublink-1" href="#objectfrompairs">objectFromPairs</a>
 <a class="sublink-1" href="#objecttopairs">objectToPairs</a>
+<a class="sublink-1" href="#orderby">orderBy</a>
 <a class="sublink-1" href="#select">select</a>
 <a class="sublink-1" href="#shallowclone">shallowClone</a>
 <a class="sublink-1" href="#truthcheckcollection">truthCheckCollection</a>
@@ -330,7 +332,7 @@ Use <code>Array.reduce()</code> to create an object, where the keys are produced
 <p>Initializes an array containing the numbers in the specified range where <code>start</code> and <code>end</code> are inclusive.</p>
 <p>Use <code>Array((end + 1) - start)</code> to create an array of the desired length, <code>Array.map()</code> to fill with the desired values in a range.
 You can omit <code>start</code> to use a default value of <code>0</code>.</p>
-<pre><code class="language-js">const initializeArrayWithRange = (end, start = 0) =&gt;
+<pre><code class="language-js">const initializeArrayWithRange = (end, start = 0) =&gt; 
   Array.from({ length: (end + 1) - start }).map((v, i) =&gt; i + start);
 // initializeArrayWithRange(5) -&gt; [0,1,2,3,4,5]
 // initializeArrayWithRange(7, 3) -&gt; [3,4,5,6,7]
@@ -357,7 +359,7 @@ You can omit <code>value</code> to use a default value of <code>0</code>.</p>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="mapobject">mapObject</h3></div><div class="section double-padded">
 <p>Maps the values of an array to an object using a function, where the key-value pairs consist of the original value as the key and the mapped value.</p>
 <p>Use an anonymous inner function scope to declare an undefined memory space, using closures to store a return value. Use a new <code>Array</code> to stor the array with a map of the function over its data set and a comma operator to return a second step, without needing to move from one context to another (due to closures and order of operations).</p>
-<pre><code class="language-js">const mapObject = (arr, fn) =&gt;
+<pre><code class="language-js">const mapObject = (arr, fn) =&gt; 
   (a =&gt; (a = [arr, arr.map(fn)], a[0].reduce( (acc,val,ind) =&gt; (acc[val] = a[1][ind], acc), {}) )) ( );
 /*
 const squareIt = arr =&gt; mapObject(arr, a =&gt; a*a)
@@ -407,7 +409,7 @@ Use <code>Array.push()</code> to keep track of pulled values</p>
   let removed = [];
   let pulled = arr.map((v, i) =&gt; pullArr.includes(i) ? removed.push(v) : v)
                   .filter((v, i) =&gt; !pullArr.includes(i))
-  arr.length = 0;
+  arr.length = 0; 
   pulled.forEach(v =&gt; arr.push(v));
   return removed;
 }
@@ -424,7 +426,7 @@ Use <code>Array.push()</code> to keep track of pulled values</p>
 Use <code>Array.length = 0</code> to mutate the passed in array by resetting it's length to zero and <code>Array.push()</code> to re-populate it with only the pulled values.
 Use <code>Array.push()</code> to keep track of pulled values</p>
 <pre><code class="language-js">const pullAtValue = (arr, pullArr) =&gt; {
-  let removed = [],
+  let removed = [], 
     pushToRemove = arr.forEach((v, i) =&gt; pullArr.includes(v) ? removed.push(v) : v),
     mutateTo = arr.filter((v, i) =&gt; !pullArr.includes(v));
   arr.length = 0;
@@ -527,7 +529,7 @@ If lengths of the argument-arrays vary, <code>undefined</code> is used where no 
 </code></pre>
 </div></div><br/><h2 style="text-align:center;">Browser</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="arraytohtmllist">arrayToHtmlList</h3></div><div class="section double-padded">
-<p>Converts the given array elements into '&lt;li&gt;' tags and appends them to the list of the given id.</p>
+<p>Converts the given array elements into <code>&lt;li&gt;</code> tags and appends them to the list of the given id.</p>
 <p>Use <code>Array.map()</code> and <code>document.querySelector()</code> to create a list of html tags.</p>
 <pre><code class="language-js">const arrayToHtmlList = (arr, listID) =&gt; arr.map(item =&gt; document.querySelector(&quot;#&quot;+listID).innerHTML+=`&lt;li&gt;${item}&lt;/li&gt;`);
 // arrayToHtmlList(['item 1', 'item 2'],'myListID')
@@ -786,7 +788,7 @@ Count and return the number of <code>1</code>s in the string, using <code>match(
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isarmstrongnumber">isArmstrongNumber</h3></div><div class="section double-padded">
 <p>Checks if the given number is an armstrong number or not.</p>
 <p>Convert the given number into array of digits. Use <code>Math.pow()</code> to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return <code>true</code> otherwise <code>false</code>.</p>
-<pre><code class="language-js">const isArmstrongNumber = digits =&gt;
+<pre><code class="language-js">const isArmstrongNumber = digits =&gt; 
   ( arr =&gt; arr.reduce( ( a, d ) =&gt; a + Math.pow( parseInt( d ), arr.length ), 0 ) == digits ? true : false )( ( digits+'' ).split( '' ) );
 // isArmstrongNumber(1634) -&gt; true
 // isArmstrongNumber(371) -&gt; true
@@ -964,6 +966,27 @@ Also if you give it a special key (<code>childIndicator</code>) it will search d
 <p>Use <code>Object.keys()</code> and <code>Array.map()</code> to iterate over the object's keys and produce an array with key-value pairs.</p>
 <pre><code class="language-js">const objectToPairs = obj =&gt; Object.keys(obj).map(k =&gt; [k, obj[k]]);
 // objectToPairs({a: 1, b: 2}) -&gt; [['a',1],['b',2]])
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="orderby">orderBy</h3></div><div class="section double-padded">
+<p>Returns a sorted array of objects ordered by properties and orders.</p>
+<p>Uses a custom implementation of sort, that reduces the props array argument with a default value of 0, it uses destructuring to swap the properties position depending on the order passed.
+If no orders array is passed it sort by 'asc' by default.</p>
+<pre><code class="language-js">const orderBy = (arr, props, orders) =&gt;
+  arr.sort((a, b) =&gt;
+    props.reduce((acc, prop, i) =&gt; {
+      if (acc === 0) {
+        const [p1, p2] = orders[i] === 'asc' ? [a[prop], b[prop]] : [b[prop], a[prop]];
+        acc = p1 &gt; p2 ? 1 : p1 &lt; p2 ? -1 : 0;
+      }
+      return acc;
+    }, 0)
+  );
+/*
+const users = [{ 'name': 'fred',   'age': 48 },{ 'name': 'barney', 'age': 36 },
+  { 'name': 'fred',   'age': 40 },{ 'name': 'barney', 'age': 34 }];
+orderby(users, ['name', 'age'], ['asc', 'desc']) -&gt; [{name: 'barney', age: 36}, {name: 'barney', age: 34}, {name: 'fred', age: 48}, {name: 'fred', age: 40}]
+orderby(users, ['name', 'age']) -&gt; [{name: 'barney', age: 34}, {name: 'barney', age: 36}, {name: 'fred', age: 40}, {name: 'fred', age: 48}]
+*/
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="select">select</h3></div><div class="section double-padded">
 <p>Retrieve a property that indicated by the selector from object.</p>
