@@ -23,7 +23,25 @@
     <link rel="stylesheet" href="prism.css">
   </head>
   <script>
-    const search = (node) => Array.from(node.parentElement.getElementsByTagName('a')).forEach(x =>x.style.display = x.getAttribute("href").toUpperCase().indexOf(node.value.toUpperCase()) + 1  ? '' : 'none');
+    const search = (node) => {
+      Array.from(node.parentElement.getElementsByTagName('a')).forEach(x => x.style.display = x.getAttribute("href").toUpperCase().indexOf(node.value.toUpperCase()) + 1  ? '' : 'none');
+      var toConsider = false, remove = false;
+      var childs = Array.from(node.parentElement.children);
+      var toRemove = childs[0];
+      Array.from(node.parentElement.children).forEach(x => x.tagName == 'H3' ? (toRemove.style.display = (remove ? 'none' : ''),
+      toRemove = x,
+      remove = true) : (x.style.display == '' ? remove = false : remove=remove));
+      // for(var i = 0; i < childs.length; i++) {
+      //   if(childs[i].tagName == 'H3') {
+      //     childs[toRemove].style.display = remove == true ? 'none' : '';
+      //     toRemove = i;
+      //     remove = true;
+      //   } else if(childs[i].style.display == '') {
+      //       remove = false;
+      //     //  console.log('non-empty element found:'+childs[i].innerText+'|h3:'+toRemove);
+      //   }
+      // }
+    }
   </script>
   <body>
     <header style="height: 5.5rem;">
@@ -37,4 +55,3 @@
         <nav class="col-md-4 col-lg-3" style="border-top: 0">
           <input type="text" id="searchInput" onkeyup="search(this)" placeholder="Search for snippet..">
           <label for="doc-drawer-checkbox" class="button drawer-close"></label>
-         
