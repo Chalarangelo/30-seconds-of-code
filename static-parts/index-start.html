@@ -23,14 +23,7 @@
     <link rel="stylesheet" href="prism.css">
   </head>
   <script>
-    function search() {
-        var input, filter, i;
-        input = document.querySelector('#searchInput');
-        filter = input.value.toUpperCase();
-        tags = Array.from(document.querySelector('#snippetListDrawer').getElementsByTagName('a'));
-
-        tags.forEach(x => {x.getAttribute("href").toUpperCase().indexOf(filter) > -1 ? x.style.display = "" : x.style.display = "none"});
-    }
+    const search = (input) => Array.from(node.parentElement.getElementsByTagName('a')).forEach(x =>x.style.display = x.getAttribute("href").toUpperCase().indexOf(query) + 1  ? '' : 'none');
   </script>
   <body>
     <header style="height: 5.5rem;">
