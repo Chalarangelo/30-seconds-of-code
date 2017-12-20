@@ -3,8 +3,12 @@
   Run using `npm run webber`.
 */
 // Load modules
-const fs = require('fs-extra'), path = require('path'), chalk = require('chalk'),
-  md = require('markdown-it')();
+const fs = require('fs-extra');
+const path = require('path');
+const chalk = require('chalk');
+const md = require('markdown-it')();
+const minify = require('html-minifier').minify;
+
 // Set variables for paths
 const snippetsPath = './snippets',  staticPartsPath = './static-parts', docsPath = './docs';
 // Set variables for script
@@ -70,6 +74,25 @@ try {
   // Add the ending static part
   output += `\n${endPart+'\n'}`;
   // Write to the index.html file
+
+  output = minify(output, {
+    collapseBooleanAttributes: true,
+    collapseWhitespace: true,
+    decodeEntities: true,
+    minifyCSS: true,
+    minifyJS: true,
+    html5: false,
+    processConditionalComments: true,
+    removeAttributeQuotes: true,
+    removeComments: true,
+    removeEmptyAttributes: true,
+    removeOptionalTags: true,
+    removeScriptTypeAttributes: true,
+    removeStyleLinkTypeAttributes: true,
+    trimCustomFragments: true,
+    useShortDoctype: true,
+  });
+
   fs.writeFileSync(path.join(docsPath,'index.html'), output);
 }
 catch (err){  // Handle errors (hopefully not!)
