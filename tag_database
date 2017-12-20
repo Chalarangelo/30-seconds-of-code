@@ -3,6 +3,7 @@ arrayAverage:math
 arrayMax:array
 arrayMin:array
 arraySum:math
+arrayToHtmlList:browser
 bottomVisible:browser
 capitalize:string
 capitalizeEveryWord:string
@@ -47,9 +48,11 @@ hammingDistance:math
 head:array
 hexToRGB:utility
 initial:array
+initialize2DArray:array
 initializeArrayWithRange:array
 initializeArrayWithValues:array
 intersection:array
+isArmstrongNumber:math
 isArray:utility
 isBoolean:utility
 isDivisible:math
@@ -96,6 +99,7 @@ sleep:function
 sortCharactersInString:string
 speechSynthesis:media
 standardDeviation:math
+stringToArrayOfWords:string
 symmetricDifference:array
 tail:array
 take:array

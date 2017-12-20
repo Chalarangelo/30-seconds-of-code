@@ -29,6 +29,7 @@
 * [`groupBy`](#groupby)
 * [`head`](#head)
 * [`initial`](#initial)
+* [`initialize2DArray`](#initialize2darray)
 * [`initializeArrayWithRange`](#initializearraywithrange)
 * [`initializeArrayWithValues`](#initializearraywithvalues)
 * [`intersection`](#intersection)
@@ -52,6 +53,7 @@
 * [`zip`](#zip)
 
 ### Browser
+* [`arrayToHtmlList`](#arraytohtmllist)
 * [`bottomVisible`](#bottomvisible)
 * [`currentURL`](#currenturl)
 * [`elementIsVisibleInViewport`](#elementisvisibleinviewport)
@@ -85,6 +87,7 @@
 * [`fibonacci`](#fibonacci)
 * [`gcd`](#gcd)
 * [`hammingDistance`](#hammingdistance)
+* [`isArmstrongNumber`](#isarmstrongnumber)
 * [`isDivisible`](#isdivisible)
 * [`isEven`](#iseven)
 * [`isPrime`](#isprime)
@@ -122,6 +125,7 @@
 * [`fromCamelCase`](#fromcamelcase)
 * [`reverseString`](#reversestring)
 * [`sortCharactersInString`](#sortcharactersinstring)
+* [`stringToArrayOfWords`](#stringtoarrayofwords)
 * [`toCamelCase`](#tocamelcase)
 * [`truncateString`](#truncatestring)
 
@@ -396,6 +400,19 @@ Use `arr.slice(0,-1)`to return all but the last element of the array.
 ```js
 const initial = arr => arr.slice(0, -1);
 // initial([1,2,3]) -> [1,2]
+```
+
+[⬆ back to top](#table-of-contents)
+
+### initialize2DArray
+
+Initializes an 2D array of given width and height and value.
+
+Use `Array.map()` to generate h rows where each is a new array of size w initialize with value. If value is not provided, default to `null`.
+
+```js
+const initialize2DArray = (w, h, val = null) => Array(h).fill().map(() => Array(w).fill(val));
+// initializeArrayWithRange(2, 2, 0) -> [[0,0], [0,0]]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -748,6 +765,19 @@ const zip = (...arrays) => {
 
 [⬆ back to top](#table-of-contents)
 ## Browser
+
+### arrayToHtmlList
+
+Converts the given array elements into '<li>' tags and appends them to the list of the given id.
+
+Use `Array.map()` and `document.querySelector()` to create a list of html tags.
+
+```js
+const arrayToHtmlList = (arr, listID) => arr.map(item => document.querySelector("#"+listID).innerHTML+=`<li>${item}</li>`);
+// arrayToHtmlList(['item 1', 'item 2'],'myListID')
+```
+
+[⬆ back to top](#table-of-contents)
 
 ### bottomVisible
 
@@ -1190,6 +1220,22 @@ const hammingDistance = (num1, num2) =>
 
 [⬆ back to top](#table-of-contents)
 
+### isArmstrongNumber
+
+Checks if the given number is an armstrong number or not.
+
+Convert the given number into array of digits. Use `Math.pow()` to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return `true` otherwise `false`.
+
+```js
+const isArmstrongNumber = digits => 
+  ( arr => arr.reduce( ( a, d ) => a + Math.pow( parseInt( d ), arr.length ), 0 ) == digits ? true : false )( ( digits+'' ).split( '' ) );
+// isArmstrongNumber(1634) -> true
+// isArmstrongNumber(371) -> true
+// isArmstrongNumber(56) -> false
+```
+
+[⬆ back to top](#table-of-contents)
+
 ### isDivisible
 
 Checks if the first numeric argument is divisible by the second one.
@@ -1530,7 +1576,7 @@ Checks if the predicate (second argument) is truthy on all elements of a collect
 Use `Array.every()` to check if each passed object has the specified property and if it returns a truthy value.
  
  ```js
-truthCheckCollection = (collection, pre) => (collection.every(obj => obj[pre]));
+const truthCheckCollection = (collection, pre) => (collection.every(obj => obj[pre]));
 // truthCheckCollection([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}], "sex") -> true
 ```
 
@@ -1655,6 +1701,21 @@ Split the string using `split('')`, `Array.sort()` utilizing `localeCompare()`, 
 const sortCharactersInString = str =>
   str.split('').sort((a, b) => a.localeCompare(b)).join('');
 // sortCharactersInString('cabbage') -> 'aabbceg'
+```
+
+[⬆ back to top](#table-of-contents)
+
+### stringToArrayOfWords
+
+Converts a given string into an array of words.
+
+Use `String.split()` with a supplied pattern (defaults to non alpha as a regex) to convert to an array of strings. Use `Array.filter()` to remove any empty strings.
+Omit the second argument to use the default regex.
+
+```js
+const stringToArrayOfWords = (str, pattern = /[^a-zA-Z-]+/) => str.split(pattern).filter(Boolean);
+// stringToArrayOfWords("I love javaScript!!") -> ["I", "love", "javaScript"]
+// stringToArrayOfWords("python, javaScript & coffee") -> ["python", "javaScript", "coffee"]
 ```
 
 [⬆ back to top](#table-of-contents)
