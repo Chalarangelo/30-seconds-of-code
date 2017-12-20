@@ -19,9 +19,21 @@
       code, kbd { font-size: 1em; }
       code { transform: scale(1); } /* Deals with the issue described in #243 */
       pre { font-size: 1rem; border: 0.0625rem solid var(--secondary-border-color); border-radius: var(--universal-border-radius);}
+      .group{position:relative;margin-top:2em;margin-bottom:-1em}
+      .search{font-size:14px;margin-top:-.1em;display:block;width:320px;border:none;border-bottom:1px solid var(--nav-link-color)}
+      .search:focus{outline:none}
+      label{color:var(--nav-link-color);font-size:18px;font-weight:400;position:absolute;pointer-events:none;left:5px;top:10px}
+      .search:focus ~ label,.search:valid ~ label{top:-20px;font-size:14px;color:var(--nav-link-color)}
     </style>
     <link rel="stylesheet" href="prism.css">
   </head>
+  <script>
+    const search = (node) => {
+      Array.from(node.parentElement.parentElement.getElementsByTagName('a')).forEach(x => x.style.display = x.getAttribute("href").toUpperCase().indexOf(node.value.toUpperCase()) + 1  ? '' : 'none');
+      var remove = false, childs = Array.from(node.parentElement.parentElement.children), toRemove = childs[0];
+      Array.from(node.parentElement.parentElement.children).forEach(x => x.tagName == 'H3' ? (toRemove.style.display = (remove ? 'none' : ''), toRemove = x, remove = true) : (x.style.display == '' ? remove = false : remove=remove));
+    }
+  </script>
   <body>
     <header style="height: 5.5rem;">
       <h1 class="logo" style="margin-top: -0.8rem; text-align:center;"><a style="text-decoration:none;color:black" href="https://github.com/Chalarangelo/30-seconds-of-code"><img src="favicon.png" style="height: 4rem;"/><span style="position:relative; top: -1rem;">&nbsp;30 seconds of code</span></a>
@@ -32,8 +44,13 @@
     <div class="row" style="height: calc(100vh - 5.875rem);overflow: hidden;">
       <input id="doc-drawer-checkbox" class="drawer" value="on" type="checkbox">
         <nav class="col-md-4 col-lg-3" style="border-top: 0">
+          <div class="group">
+          <input class="search" type="text" id="searchInput" onkeyup="search(this)">
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Search for snippet...</label>
+          </div>
           <label for="doc-drawer-checkbox" class="button drawer-close"></label>
-          <!-- <div><input style="width: 100%; margin: 0px;" placeholder="Search..." id="search-bar" oninput="search()" type="search"></div> -->
 
 <h3>Array
 </h3><a class="sublink-1" href="#arraymax">arrayMax</a>
