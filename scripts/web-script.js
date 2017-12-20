@@ -3,12 +3,24 @@
   Run using `npm run webber`.
 */
 // Load modules
-const fs = require('fs-extra');
-const path = require('path');
-const chalk = require('chalk');
-const md = require('markdown-it')();
-const minify = require('html-minifier').minify;
-
+const fs = require('fs-extra'), path = require('path'), chalk = require('chalk'),
+  md = require('markdown-it')();
+const sass = require('node-sass');
+  sass.render({
+    file: path.join('docs','mini','flavor.scss'),
+    outFile: path.join('docs','mini.css'),
+    outputStyle: 'compressed'
+  }, function(err, result) {
+    if(!err){
+      fs.writeFile(path.join('docs','mini.css'), result.css, function(err2){
+        if(!err2) console.log(`${chalk.green('SUCCESS!')} mini.css file generated!`);
+        else console.log(`${chalk.red('ERROR!')} During mini.css file generation: ${err}`);
+      });
+    }
+    else {
+      console.log(`${chalk.red('ERROR!')} During mini.css file generation: ${err}`);
+    }
+  });
 // Set variables for paths
 const snippetsPath = './snippets',  staticPartsPath = './static-parts', docsPath = './docs';
 // Set variables for script

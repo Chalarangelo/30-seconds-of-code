@@ -1,4 +1,35 @@
-<!DOCTYPE html><html lang=en><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.0-alpha.1/mini-default.min.css><link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Poppins:400,400i,500,700,700i&subset=latin-ext" rel=stylesheet><title>30 seconds of code</title><meta charset=utf-8><meta name=description content="Curated collection of useful Javascript snippets that you can understand in 30 seconds or less."><meta name=keywords content="javascript, snippets, code, programming"><meta name=author content="Angelos Chalaris (chalarangelo@gmail.com)"><meta name=viewport content="width=device-width,initial-scale=1"><meta property=og:title content="30 seconds of code"><meta property=og:description content="Curated collection of useful Javascript snippets that you can understand in 30 seconds or less."><meta property=og:type content=website><meta property=og:image content=favicon.png><link rel=icon type=image/png href=favicon.png><style>*,html{font-family:Poppins,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Helvetica,sans-serif}code,code *,kbd,kbd *,pre,pre *{font-family:Inconsolata,Menlo,Consolas,monospace}code,kbd{font-size:1em}code{transform:scale(1)}pre{font-size:1rem;border:.0625rem solid var(--secondary-border-color);border-radius:var(--universal-border-radius)}.group{position:relative;margin-top:2em;margin-bottom:-1em}.search{font-size:14px;margin-top:-.1em;display:block;width:100%;border:none;border-bottom:1px solid var(--nav-link-color)}.search:focus{outline:0}label#search-label{color:var(--nav-link-color);font-size:18px;font-weight:400;position:absolute;left:5px;top:10px}.search:focus~label#search-label,.search:valid~label#search-label{top:-20px;font-size:14px;color:var(--nav-link-color)}label#menu-toggle{width:3.4375rem}</style><link rel=stylesheet href=prism.css><script>const search = (node) => {
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./mini.css">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Poppins:400,400i,500,700,700i&amp;subset=latin-ext" rel="stylesheet">
+    <title>30 seconds of code</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Curated collection of useful Javascript snippets that you can understand in 30 seconds or less.">
+    <meta name="keywords" content="javascript, snippets, code, programming">
+    <meta name="author" content="Angelos Chalaris (chalarangelo@gmail.com)">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="30 seconds of code">
+    <meta property="og:description" content="Curated collection of useful Javascript snippets that you can understand in 30 seconds or less." />
+    <meta property="og:type" content="website" /><meta property="og:image" content="favicon.png">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+      html, * { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, sans-serif; }
+      code, pre, kbd, code *, pre *, kbd * { font-family: 'Inconsolata', Menlo, Consolas, monospace; }
+      code, kbd { font-size: 1em; }
+      code { transform: scale(1); } /* Deals with the issue described in #243 */
+      pre { font-size: 1rem; border: 0.0625rem solid var(--secondary-border-color); border-radius: var(--universal-border-radius);}
+      .group{position:relative;margin-top:2em;margin-bottom:-1em}
+      .search{font-size:14px;margin-top:-.1em;display:block;width:100%;border:none;border-bottom:1px solid var(--nav-link-color)}
+      .search:focus{outline:none}
+      label#search-label{color:var(--nav-link-color);font-size:18px;font-weight:400;position:absolute;left:5px;top:10px}
+      .search:focus ~ label#search-label,.search:valid ~ label#search-label{top:-20px;font-size:14px;color:var(--nav-link-color)}
+      label#menu-toggle { width: 3.4375rem;}
+    </style>
+    <link rel="stylesheet" href="prism.css">
+  </head>
+  <script>
+    const search = (node) => {
       Array.from(node.parentElement.parentElement.getElementsByTagName('a')).forEach(x => x.style.display = x.getAttribute("href").toUpperCase().indexOf(node.value.toUpperCase()) + 1  ? '' : 'none');
       var remove = false, childs = Array.from(node.parentElement.parentElement.children), toRemove = childs[0];
       Array.from(node.parentElement.parentElement.children).forEach(x => x.tagName == 'H3' ? (toRemove.style.display = (remove ? 'none' : ''), toRemove = x, remove = true) : (x.style.display == '' ? remove = false : remove=remove));
@@ -51,7 +82,7 @@
 // initial([1,2,3]) -> [1,2]
 </code></pre></div></div><br><div class="card fluid"><div class="section double-padded"><h3 id=initialize2darray>initialize2DArray</h3></div><div class="section double-padded"><p>Initializes an 2D array of given width and height and value.<p>Use <code>Array.map()</code> to generate h rows where each is a new array of size w initialize with value. If value is not provided, default to <code>null</code>.<pre><code class=language-js>const initialize2DArray = (w, h, val = null) => Array(h).fill().map(() => Array(w).fill(val));
 // initializeArrayWithRange(2, 2, 0) -> [[0,0], [0,0]]
-</code></pre></div></div><br><div class="card fluid"><div class="section double-padded"><h3 id=initializearraywithrange>initializeArrayWithRange</h3></div><div class="section double-padded"><p>Initializes an array containing the numbers in the specified range where <code>start</code> and <code>end</code> are inclusive.<p>Use <code>Array((end + 1) - start)</code> to create an array of the desired length, <code>Array.map()</code> to fill with the desired values in a range. You can omit <code>start</code> to use a default value of <code>0</code>.<pre><code class=language-js>const initializeArrayWithRange = (end, start = 0) => 
+</code></pre></div></div><br><div class="card fluid"><div class="section double-padded"><h3 id=initializearraywithrange>initializeArrayWithRange</h3></div><div class="section double-padded"><p>Initializes an array containing the numbers in the specified range where <code>start</code> and <code>end</code> are inclusive.<p>Use <code>Array((end + 1) - start)</code> to create an array of the desired length, <code>Array.map()</code> to fill with the desired values in a range. You can omit <code>start</code> to use a default value of <code>0</code>.<pre><code class=language-js>const initializeArrayWithRange = (end, start = 0) =>
   Array.from({ length: (end + 1) - start }).map((v, i) => i + start);
 // initializeArrayWithRange(5) -> [0,1,2,3,4,5]
 // initializeArrayWithRange(7, 3) -> [3,4,5,6,7]
@@ -61,7 +92,7 @@
 // intersection([1,2,3], [4,3,2]) -> [2,3]
 </code></pre></div></div><br><div class="card fluid"><div class="section double-padded"><h3 id=last>last</h3></div><div class="section double-padded"><p>Returns the last element in an array.<p>Use <code>arr.length - 1</code> to compute index of the last element of the given array and returning it.<pre><code class=language-js>const last = arr => arr[arr.length - 1];
 // last([1,2,3]) -> 3
-</code></pre></div></div><br><div class="card fluid"><div class="section double-padded"><h3 id=mapobject>mapObject</h3></div><div class="section double-padded"><p>Maps the values of an array to an object using a function, where the key-value pairs consist of the original value as the key and the mapped value.<p>Use an anonymous inner function scope to declare an undefined memory space, using closures to store a return value. Use a new <code>Array</code> to stor the array with a map of the function over its data set and a comma operator to return a second step, without needing to move from one context to another (due to closures and order of operations).<pre><code class=language-js>const mapObject = (arr, fn) => 
+</code></pre></div></div><br><div class="card fluid"><div class="section double-padded"><h3 id=mapobject>mapObject</h3></div><div class="section double-padded"><p>Maps the values of an array to an object using a function, where the key-value pairs consist of the original value as the key and the mapped value.<p>Use an anonymous inner function scope to declare an undefined memory space, using closures to store a return value. Use a new <code>Array</code> to stor the array with a map of the function over its data set and a comma operator to return a second step, without needing to move from one context to another (due to closures and order of operations).<pre><code class=language-js>const mapObject = (arr, fn) =>
   (a => (a = [arr, arr.map(fn)], a[0].reduce( (acc,val,ind) => (acc[val] = a[1][ind], acc), {}) )) ( );
 /*
 const squareIt = arr => mapObject(arr, a => a*a)
@@ -89,7 +120,7 @@ squareIt([1,2,3]) // { 1: 1, 2: 4, 3: 9 }
   let removed = [];
   let pulled = arr.map((v, i) => pullArr.includes(i) ? removed.push(v) : v)
                   .filter((v, i) => !pullArr.includes(i))
-  arr.length = 0; 
+  arr.length = 0;
   pulled.forEach(v => arr.push(v));
   return removed;
 }
@@ -100,7 +131,7 @@ squareIt([1,2,3]) // { 1: 1, 2: 4, 3: 9 }
 // console.log(myArray); -> [ 'a', 'c' ]
 // console.log(pulled); -> [ 'b', 'd' ]
 </code></pre></div></div><br><div class="card fluid"><div class="section double-padded"><h3 id=pullatvalue>pullAtValue</h3></div><div class="section double-padded"><p>Mutates the original array to filter out the values specified. Returns the removed elements.<p>Use <code>Array.filter()</code> and <code>Array.includes()</code> to pull out the values that are not needed. Use <code>Array.length = 0</code> to mutate the passed in array by resetting it's length to zero and <code>Array.push()</code> to re-populate it with only the pulled values. Use <code>Array.push()</code> to keep track of pulled values<pre><code class=language-js>const pullAtValue = (arr, pullArr) => {
-  let removed = [], 
+  let removed = [],
     pushToRemove = arr.forEach((v, i) => pullArr.includes(v) ? removed.push(v) : v),
     mutateTo = arr.filter((v, i) => !pullArr.includes(v));
   arr.length = 0;
@@ -270,7 +301,7 @@ async function sleepyWork() {
 </code></pre></div></div><br><div class="card fluid"><div class="section double-padded"><h3 id=hammingdistance>hammingDistance</h3></div><div class="section double-padded"><p>Calculates the Hamming distance between two values.<p>Use XOR operator (<code>^</code>) to find the bit difference between the two numbers, convert to binary string using <code>toString(2)</code>. Count and return the number of <code>1</code>s in the string, using <code>match(/1/g)</code>.<pre><code class=language-js>const hammingDistance = (num1, num2) =>
   ((num1 ^ num2).toString(2).match(/1/g) || '').length;
 // hammingDistance(2,3) -> 1
-</code></pre></div></div><br><div class="card fluid"><div class="section double-padded"><h3 id=isarmstrongnumber>isArmstrongNumber</h3></div><div class="section double-padded"><p>Checks if the given number is an armstrong number or not.<p>Convert the given number into array of digits. Use <code>Math.pow()</code> to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return <code>true</code> otherwise <code>false</code>.<pre><code class=language-js>const isArmstrongNumber = digits => 
+</code></pre></div></div><br><div class="card fluid"><div class="section double-padded"><h3 id=isarmstrongnumber>isArmstrongNumber</h3></div><div class="section double-padded"><p>Checks if the given number is an armstrong number or not.<p>Convert the given number into array of digits. Use <code>Math.pow()</code> to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return <code>true</code> otherwise <code>false</code>.<pre><code class=language-js>const isArmstrongNumber = digits =>
   ( arr => arr.reduce( ( a, d ) => a + Math.pow( parseInt( d ), arr.length ), 0 ) == digits ? true : false )( ( digits+'' ).split( '' ) );
 // isArmstrongNumber(1634) -> true
 // isArmstrongNumber(371) -> true
@@ -494,10 +525,32 @@ a === b -> false
   ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
     (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
   );
-// UUIDGenerator() -> '7982fcfe-5721-4632-bede-6000885be57d'
-</code></pre></div></div><br><div class="card fluid"><div class="section double-padded"><h3 id=validateemail>validateEmail</h3></div><div class="section double-padded"><p>Returns <code>true</code> if the given string is a valid email, <code>false</code> otherwise.<p>Use a regular expression to check if the email is valid. Returns <code>true</code> if email is valid, <code>false</code> if not.<pre><code class=language-js>const validateEmail = str =>
-  /^(([^&lt;>()\[\]\\.,;:\s@"]+(\.[^&lt;>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(str);
-// validateEmail(mymail@gmail.com) -> true
-</code></pre></div></div><br><div class="card fluid"><div class="section double-padded"><h3 id=validatenumber>validateNumber</h3></div><div class="section double-padded"><p>Returns <code>true</code> if the given value is a number, <code>false</code> otherwise.<p>Use <code>!isNaN</code> in combination with <code>parseFloat()</code> to check if the argument is a number. Use <code>isFinite()</code> to check if the number is finite. Use <code>Number()</code> to check if the coercion holds.<pre><code class=language-js>const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
-// validateNumber('10') -> true
-</code></pre></div></div><br><footer><p style=display:inline-block><strong>30 seconds of code</strong> is licensed under the <a href=https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE>CC0-1.0</a> license.<br>Icons made by <a href=https://www.flaticon.com/authors/smashicons>Smashicons</a> from <a href=https://www.flaticon.com/ >www.flaticon.com</a> is licensed by <a href=http://creativecommons.org/licenses/by/3.0/ >CC 3.0 BY</a>.<br>Ribbon made by <a href=https://github.com/tholman/github-corners>Tim Holman</a> is licensed by <a href=https://opensource.org/licenses/MIT>The MIT License</a></p><a href=#top></a><p style=display:inline-block;float:right;padding-right:2em>Back to top</footer></main></div><script src=prism.js></script>
+// UUIDGenerator() -&gt; '7982fcfe-5721-4632-bede-6000885be57d'
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="validateemail">validateEmail</h3></div><div class="section double-padded">
+<p>Returns <code>true</code> if the given string is a valid  email, <code>false</code> otherwise.</p>
+<p>Use a regular expression to check if the email is valid.
+Returns <code>true</code> if email is valid, <code>false</code> if not.</p>
+<pre><code class="language-js">const validateEmail = str =&gt;
+  /^(([^&lt;&gt;()\[\]\\.,;:\s@&quot;]+(\.[^&lt;&gt;()\[\]\\.,;:\s@&quot;]+)*)|(&quot;.+&quot;))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(str);
+// validateEmail(mymail@gmail.com) -&gt; true
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="validatenumber">validateNumber</h3></div><div class="section double-padded">
+<p>Returns <code>true</code> if the given value is a number, <code>false</code> otherwise.</p>
+<p>Use <code>!isNaN</code> in combination with <code>parseFloat()</code> to check if the argument is a number.
+Use <code>isFinite()</code> to check if the number is finite.
+Use <code>Number()</code> to check if the coercion holds.</p>
+<pre><code class="language-js">const validateNumber = n =&gt; !isNaN(parseFloat(n)) &amp;&amp; isFinite(n) &amp;&amp; Number(n) == n;
+// validateNumber('10') -&gt; true
+</code></pre>
+</div></div><br/>
+        <footer>
+          <p style="display: inline-block;"><strong>30 seconds of code</strong> is licensed under the <a href="https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE">CC0-1.0</a> license.<br/>Icons made by <a href="https://www.flaticon.com/authors/smashicons">Smashicons</a> from <a href="https://www.flaticon.com/">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/">CC 3.0 BY</a>.<br/>Ribbon made by <a href="https://github.com/tholman/github-corners">Tim Holman</a> is licensed by <a href="https://opensource.org/licenses/MIT">The MIT License</a><br/>Built with the <a href="https://minicss.org">mini.css framwork</a>.</p>
+          <a href="#top"><p style="display: inline-block;float: right;padding-right: 2em;">Back to top</p></a>
+        </footer>
+      </main>
+    </div>
+    <script src="prism.js"></script>
+  </body>
+</html>
+

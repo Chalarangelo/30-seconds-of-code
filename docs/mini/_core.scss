@@ -1,0 +1,304 @@
+/*
+  Browsers resets and base typography.
+*/
+
+// TODO: Add fluid type and test thoroughly
+$base-root-font-size:     16px !default;        // Root font sizing for all elements (`px` only)
+$_apply-defaults-to-all:  true !default;        // [Hidden] Apply defaults to all elements? (boolean)
+$__1px: (1px/$base-root-font-size) * 1rem !default;  // [Calculated] Calculated rem value of `1px`
+$base-font-family: '-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Ubuntu, \"Helvetica Neue\", Helvetica, sans-serif' !default;                           // Font stack for all elements
+$base-line-height:        1.5 !default;         // Line height for most elements
+$base-font-size:          1rem !default;        // Font sizing for all elements
+$_body-margin:            0 !default;           // [Hidden] Margin for body
+$fore-color:              #111 !default;        // Text & foreground color
+$secondary-fore-color:    #444 !default;        // Secondary text & foreground color
+$back-color:              #f8f8f8 !default;     // Background color
+$secondary-back-color:    #f0f0f0 !default;     // Secondary background color
+$blockquote-color:        #f57c00 !default;     // <blockquote> sidebar and quotation color
+$pre-color:               #1565c0 !default;     // <pre> sidebar color
+$border-color:            #aaa !default;        // Border color
+$secondary-border-color:  #ddd !default;        // Secondary border color
+$heading-line-height:     1.2 !default;         // Line height for headings
+$heading-ratio:           1.19 !default;        // Ratio for headings (strictly unitless)
+$subheading-font-size:    0.75em !default;      // Font sizing for <small> elements in headings
+$subheading-top-margin:   -0.25rem !default;    // Top margin of <small> elements in headings
+$universal-margin:        0.5rem !default;      // Universal margin for the most elements
+$universal-padding:       0.5rem !default;      // Universal padding for the most elements
+$universal-border-radius: 0.125rem !default;    // Universal border-radius for most elements
+$universal-box-shadow:    none !default;        // Universal box-shadow for most elements
+$small-font-size:         0.75em !default;      // Font sizing for <small> elements
+$heading-font-weight:     500 !default;         // Font weight for headings
+$bold-font-weight:        700 !default;         // Font weight for <b> and <strong>
+$horizontal-rule-line-height:  1.25em !default; // <hr> line height
+$blockquote-quotation-size:    3rem !default;   // Font size for the quotation of <blockquote>
+$blockquote-cite-size:         0.75em !default; // Font size for the [cite] of <blockquote>
+$code-font-family: 'Menlo, Consolas, monospace' !default; // Font stack for code elements
+$code-font-size:           0.85em;              // Font size for <code>, <kbd>
+$small-element-font-size:     0.75em !default;  // Font size for <small>, <sub>, <sup>
+$sup-top:                  -0.5em !default;     // <sup> top
+$sub-bottom:               -0.25em !default;    // <sub> bottom
+$a-link-color:             #0277bd !default;    // Color for <a>:link
+$a-visited-color:          #01579b !default;    // Color for <a>:visited
+// CSS variable name definitions [exercise caution if modifying these]
+$fore-color-var:                '--fore-color' !default;
+$secondary-fore-color-var:      '--secondary-fore-color' !default;
+$back-color-var:                '--back-color' !default;
+$secondary-back-color-var:      '--secondary-back-color' !default;
+$blockquote-color-var:          '--blockquote-color' !default;
+$pre-color-var:                 '--pre-color' !default;
+$border-color-var:              '--border-color' !default;
+$secondary-border-color-var:    '--secondary-border-color' !default;
+$heading-ratio-var:             '--heading-ratio' !default;
+$universal-margin-var:          '--universal-margin' !default;
+$universal-padding-var:         '--universal-padding' !default;
+$universal-border-radius-var:   '--universal-border-radius' !default;
+$universal-box-shadow-var:      '--universal-box-shadow' !default;
+$a-link-color-var:              '--a-link-color' !default;
+$a-visited-color-var:           '--a-visited-color' !default;
+/* Core module CSS variable definitions */
+:root {
+  #{$fore-color-var}: $fore-color;
+  #{$secondary-fore-color-var}: $secondary-fore-color;
+  #{$back-color-var}: $back-color;
+  #{$secondary-back-color-var}: $secondary-back-color;
+  #{$blockquote-color-var}: $blockquote-color;
+  #{$pre-color-var}: $pre-color;
+  #{$border-color-var}: $border-color;
+  #{$secondary-border-color-var}: $secondary-border-color;
+  #{$heading-ratio-var}: $heading-ratio;
+  #{$universal-margin-var}: $universal-margin;
+  #{$universal-padding-var}: $universal-padding;
+  #{$universal-border-radius-var}: $universal-border-radius;
+  #{$a-link-color-var} : $a-link-color;
+  #{$a-visited-color-var} : $a-visited-color;
+  @if $universal-box-shadow != none {
+    #{$universal-box-shadow-var}: $universal-box-shadow;
+  }
+}
+html {
+  font-size: $base-root-font-size;  // Set root's font sizing.
+}
+a, b, del, em, i, ins, q, span, strong, u {
+  font-size: 1em; // Fix for elements inside headings not displaying properly.
+}
+
+@if $_apply-defaults-to-all {
+  html, * {
+    font-family: #{$base-font-family};
+    line-height: $base-line-height;
+    // Prevent adjustments of font size after orientation changes in mobile.
+    -webkit-text-size-adjust: 100%;
+  }
+  * {
+    font-size: $base-font-size;
+  }
+}
+@else {
+  html {
+    font-family:  #{$base-font-family};
+    line-height: $base-line-height;
+    // Prevent adjustments of font size after orientation changes in mobile.
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+body {
+  margin: $_body-margin;
+  color: var(#{$fore-color-var});
+  background: var(#{$back-color-var});
+}
+
+// Correct display for Edge & Firefox.
+details {
+  display: block;
+}
+
+// Correct display in all browsers.
+summary {
+  display: list-item;
+}
+
+// Abbreviations
+abbr[title] {
+  border-bottom: none;           // Remove bottom border in Firefox 39-.
+  text-decoration: underline dotted;  // Opinionated style-fix for all browsers.
+}
+
+// Show overflow in Edge.
+input {
+  overflow: visible;
+}
+
+// Make images responsive by default.
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: $heading-line-height;
+  margin: calc(1.5 * var(#{$universal-margin-var})) var(#{$universal-margin-var});
+  font-weight: $heading-font-weight;
+  small {
+    color: var(#{$secondary-fore-color-var});
+    display: block;
+    @if $subheading-top-margin != 0 {
+      margin-top: $subheading-top-margin;
+    }
+    @if $subheading-font-size != $small-font-size {
+      font-size: $subheading-font-size;
+    }
+  }
+}
+
+h1 {
+  font-size: calc(1rem * var(#{$heading-ratio-var}) * var(#{$heading-ratio-var}) * var(#{$heading-ratio-var}) * var(#{$heading-ratio-var}));
+}
+h2 {
+  font-size: calc(1rem * var(#{$heading-ratio-var}) * var(#{$heading-ratio-var}) * var(#{$heading-ratio-var}));
+}
+h3 {
+  font-size: calc(1rem * var(#{$heading-ratio-var}) * var(#{$heading-ratio-var}));
+}
+h4 {
+  font-size: calc(1rem * var(#{$heading-ratio-var}));
+}
+h5 {
+  font-size: 1rem;
+}
+h6 {
+  font-size: calc(1rem / var(#{$heading-ratio-var}));
+}
+
+p {
+  margin: var(#{$universal-margin-var});
+}
+
+ol, ul {
+  margin: var(#{$universal-margin-var});
+  padding-left: calc(2 * var(#{$universal-margin-var}));
+}
+
+b, strong {
+  font-weight: $bold-font-weight;
+}
+
+hr {
+  // Fixes and defaults for styling
+  box-sizing: content-box;
+  border: 0;
+  // Actual styling using variables
+  line-height: $horizontal-rule-line-height;
+  margin: var(#{$universal-margin-var});
+  height: $__1px;
+  background: linear-gradient(to right, transparent, var(#{$border-color-var}) 20%, var(#{$border-color-var}) 80%, transparent);
+}
+
+blockquote {  // Doesn't have a back color by default, can be added manually.
+  display: block;
+  position: relative;
+  font-style: italic;
+  color: var(#{$secondary-fore-color-var});
+  margin: var(#{$universal-margin-var});
+  padding: calc(3 * var(#{$universal-padding-var}));
+  border: $__1px solid var(#{$secondary-border-color-var});
+  border-left: 6*$__1px solid var(#{$blockquote-color-var});
+  border-radius: 0 var(#{$universal-border-radius-var}) var(#{$universal-border-radius-var}) 0;
+  @if $universal-box-shadow != none {
+    box-shadow: var(#{$universal-box-shadow-var});
+  }
+  &:before {
+    position: absolute;
+    top: calc(0rem - var(#{$universal-padding-var}));
+    left: 0;
+    font-family: sans-serif;
+    font-size: $blockquote-quotation-size;
+    font-weight: 700;
+    content: "\201c";
+    color: var(#{$blockquote-color-var});
+  }
+  &[cite]:after{
+    font-style: normal;
+    font-size: $blockquote-cite-size;
+    font-weight: 700;
+    content: "\a—  " attr(cite);
+    white-space: pre;
+  }
+}
+
+code, kbd, pre, samp {
+  font-family: #{$code-font-family};     // Display fix should be applied manually!
+  font-size: $code-font-size;
+}
+
+code { // No border color by default and fore color is the default for text, can be altered manually.
+  background: var(#{$secondary-back-color-var});
+  border-radius: var(#{$universal-border-radius-var});
+  // This could be a bit counterintuitive and burden the codebase a bit, look into it again?
+  padding: calc(var(#{$universal-padding-var}) / 4) calc(var(#{$universal-padding-var}) / 2);
+  @if $universal-box-shadow != none {
+    box-shadow: var(#{$universal-box-shadow-var});
+  }
+}
+
+kbd { // No border color by default, can be altered manually.
+  background: var(#{$fore-color-var});
+  color: var(#{$back-color-var});
+  border-radius: var(#{$universal-border-radius-var});
+  // This could be a bit counterintuitive and burden the codebase a bit, look into it again?
+  padding: calc(var(#{$universal-padding-var}) / 4) calc(var(#{$universal-padding-var}) / 2);
+  @if $universal-box-shadow != none {
+    box-shadow: var(#{$universal-box-shadow-var});
+  }
+}
+
+pre { // Fore color is the default, can be altered manually.
+  overflow: auto; // Responsiveness
+  background: var(#{$secondary-back-color-var});
+  padding: calc(1.5 * var(#{$universal-padding-var}));
+  margin: var(#{$universal-margin-var});
+  border: $__1px solid var(#{$secondary-border-color-var});
+  border-left: 4*$__1px solid var(#{$pre-color-var});
+  border-radius: 0 var(#{$universal-border-radius-var}) var(#{$universal-border-radius-var}) 0;
+  @if $universal-box-shadow != none {
+    box-shadow: var(#{$universal-box-shadow-var});
+  }
+}
+
+// Prevent elements from affecting the line height in all browsers.
+sup, sub, code, kbd {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+small, sup, sub, figcaption {
+  font-size: $small-element-font-size;
+}
+
+sup {
+  top: $sup-top;
+}
+sub {
+  bottom: $sub-bottom;
+}
+
+figure {
+  margin: var(#{$universal-margin-var});
+}
+figcaption {
+    color: var(#{$secondary-fore-color-var});
+}
+
+a {
+  text-decoration: none;
+  &:link{
+    color: var(#{$a-link-color-var});
+  }
+  &:visited {
+    color: var(#{$a-visited-color-var});
+  }
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
+}
