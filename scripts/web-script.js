@@ -1,6 +1,6 @@
 /*
-  This is the builder script that generates the README file.
-  Run using `npm run builder`.
+  This is the builder script that generates the index.html file.
+  Run using `npm run webber`.
 */
 // Load modules
 const fs = require('fs-extra'), path = require('path'), chalk = require('chalk'),
