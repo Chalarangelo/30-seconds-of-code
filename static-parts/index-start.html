@@ -28,7 +28,6 @@
     <link rel="stylesheet" href="prism.css">
   </head>
   <script>
-    document.addEventListener("load", alert("Attention! This site is only a fork of the original project demonstrating the newest changes made by myself. The original project can be found by clicking on the logo."));
     const search = (node) => {
       Array.from(node.parentElement.parentElement.getElementsByTagName('a')).forEach(x => x.style.display = x.getAttribute("href").toUpperCase().indexOf(node.value.toUpperCase()) + 1  ? '' : 'none');
       var remove = false, childs = Array.from(node.parentElement.parentElement.children), toRemove = childs[0];
