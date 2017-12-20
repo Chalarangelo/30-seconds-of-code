@@ -112,6 +112,7 @@
 <a class="sublink-1" href="#hammingdistance">hammingDistance</a>
 <a class="sublink-1" href="#isdivisible">isDivisible</a>
 <a class="sublink-1" href="#iseven">isEven</a>
+<a class="sublink-1" href="#isprime">isPrime</a>
 <a class="sublink-1" href="#lcm">lcm</a>
 <a class="sublink-1" href="#median">median</a>
 <a class="sublink-1" href="#palindrome">palindrome</a>
@@ -760,6 +761,17 @@ Count and return the number of <code>1</code>s in the string, using <code>match(
 Returns <code>true</code> if the number is even, <code>false</code> if the number is odd.</p>
 <pre><code class="language-js">const isEven = num =&gt; num % 2 === 0;
 // isEven(3) -&gt; false
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isprime">isPrime</h3></div><div class="section double-padded">
+<p>Checks if the provided integer is a prime number.</p>
+<p>Returns <code>false</code> if the provided number has positive divisors other than 1 and itself or if the number itself is less than 2.</p>
+<pre><code class="language-js">const isPrime = num =&gt; {
+  for (var i = 2; i &lt; num; i++) if (num % i == 0) return false;
+  return num &gt;= 2;
+}
+// isPrime(11) -&gt; true
+// isPrime(12) -&gt; false
+// isPrime(1) -&gt; false
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="lcm">lcm</h3></div><div class="section double-padded">
 <p>Returns the least common multiple of two numbers.</p>
