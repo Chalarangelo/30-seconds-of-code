@@ -49,6 +49,7 @@ groupBy:array
 hammingDistance:math
 head:array
 hexToRGB:utility
+httpsRedirect:browser
 initial:array
 initialize2DArray:array
 initializeArrayWithRange:array
