@@ -43,6 +43,7 @@
 
 <h3>Array
 </h3><a class="sublink-1" href="#arraygcd">arrayGcd</a>
+<a class="sublink-1" href="#arraylcm">arrayLcm</a>
 <a class="sublink-1" href="#arraymax">arrayMax</a>
 <a class="sublink-1" href="#arraymin">arrayMin</a>
 <a class="sublink-1" href="#chunk">chunk</a>
@@ -181,6 +182,7 @@
 <a class="sublink-1" href="#issymbol">isSymbol</a>
 <a class="sublink-1" href="#rgbtohex">RGBToHex</a>
 <a class="sublink-1" href="#timetaken">timeTaken</a>
+<a class="sublink-1" href="#todecimalmark">toDecimalMark</a>
 <a class="sublink-1" href="#toordinalsuffix">toOrdinalSuffix</a>
 <a class="sublink-1" href="#uuidgenerator">UUIDGenerator</a>
 <a class="sublink-1" href="#validateemail">validateEmail</a>
@@ -196,6 +198,17 @@
 }
 // arrayGcd([1,2,3,4,5]) -&gt; 1
 // arrayGcd([4,8,12]) -&gt; 4
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="arraylcm">arrayLcm</h3></div><div class="section double-padded">
+<p>Calculates the lowest  common multiple  (lcm) of an array of numbers.</p>
+<p>Use <code>Array.reduce()</code> and the <code>lcm</code> formula (uses recursion) to calculate the lowest  common multiple  of an array of numbers.</p>
+<pre><code class="language-js">const arrayLcm = arr =&gt;{
+  const gcd = (x, y) =&gt; !y ? x : gcd(y, x % y);
+  const lcm = (x, y) =&gt; (x*y)/gcd(x, y) 
+  return arr.reduce((a,b) =&gt; lcm(a,b));
+}
+// arrayLcm([1,2,3,4,5]) -&gt; 60
+// arrayLcm([4,8,12]) -&gt; 24
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="arraymax">arrayMax</h3></div><div class="section double-padded">
 <p>Returns the maximum value in an array.</p>
@@ -1269,6 +1282,19 @@ Omit the second argument to use the default regex.</p>
 };
 // timeTaken(() =&gt; Math.pow(2, 10)) -&gt; 1024
 // (logged): timeTaken: 0.02099609375ms
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="todecimalmark">toDecimalMark</h3></div><div class="section double-padded">
+<p>Convert a float-point arithmetic to the <a href="https://en.wikipedia.org/wiki/Decimal_mark">Decimal mark</a> form.</p>
+<p>Use <code>toString()</code> to convert the float <code>num</code> to a string, then use regex to separate every three characters of the integer part with a comma.</p>
+<pre><code class="language-js">const toDecimalMark = (num) =&gt; {
+ let cleanNum = num.toString().split('').filter(n =&gt; '0123456789.'.includes(n)).join('') 
+ let wholeNum = cleanNum.split('.')[0].replace(/\B(?=(\d{3})+(?!\d))/g, &quot;,&quot;)
+ let decNum = `.${cleanNum.split('.')[1]}`
+ return wholeNum + decNum;
+}
+// toDecimalMark(12305030388.9087) //-&gt; '12,305,030,388.9087'
+// toDecimalMark(123.889087e2) //-&gt; '12,388.9087'
+// toDecimalMark('12305abc030388.9087') // -&gt; '12,305,030,388.9087'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="toordinalsuffix">toOrdinalSuffix</h3></div><div class="section double-padded">
 <p>Adds an ordinal suffix to a number.</p>
