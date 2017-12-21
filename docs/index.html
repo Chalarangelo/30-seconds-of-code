@@ -92,6 +92,7 @@
 <a class="sublink-1" href="#elementisvisibleinviewport">elementIsVisibleInViewport</a>
 <a class="sublink-1" href="#getscrollposition">getScrollPosition</a>
 <a class="sublink-1" href="#geturlparameters">getURLParameters</a>
+<a class="sublink-1" href="#httpsredirect">httpsRedirect</a>
 <a class="sublink-1" href="#redirect">redirect</a>
 <a class="sublink-1" href="#scrolltotop">scrollToTop</a>
 
@@ -131,6 +132,7 @@
 <a class="sublink-1" href="#palindrome">palindrome</a>
 <a class="sublink-1" href="#percentile">percentile</a>
 <a class="sublink-1" href="#powerset">powerset</a>
+<a class="sublink-1" href="#primes">primes</a>
 <a class="sublink-1" href="#randomintegerinrange">randomIntegerInRange</a>
 <a class="sublink-1" href="#randomnumberinrange">randomNumberInRange</a>
 <a class="sublink-1" href="#round">round</a>
@@ -593,6 +595,13 @@ Pass <code>location.search</code> as the argument to apply to the current <code>
   );
 // getURLParameters('http://url.com/page?name=Adam&amp;surname=Smith') -&gt; {name: 'Adam', surname: 'Smith'}
 </code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="httpsredirect">httpsRedirect</h3></div><div class="section double-padded">
+<p>Redirects the page to HTTPS if its currently in HTTP. Also, pressing the back button doesn't take it back to the HTTP page as its replaced in the history.</p>
+<p>Use <code>location.protocol</code> to get the protocol currently being used. If it's not HTTPS, use <code>location.replace()</code> to replace the existing page with the HTTPS version of the page. Use <code>location.href</code> to get the full address, split it with <code>String.split()</code> and remove the protocol part of the URL.</p>
+<pre><code class="language-js">const httpsRedirect = () =&gt; {
+  if(location.protocol !== &quot;https:&quot;) location.replace(&quot;https://&quot; + location.href.split(&quot;//&quot;)[1]);
+}
+</code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="redirect">redirect</h3></div><div class="section double-padded">
 <p>Redirects to a specified URL.</p>
 <p>Use <code>window.location.href</code> or <code>window.location.replace()</code> to redirect to <code>url</code>.
@@ -789,7 +798,7 @@ Throws an exception if <code>n</code> is a negative number.</p>
 <p>Create an empty array of the specific length, initializing the first two values (<code>0</code> and <code>1</code>).
 Use <code>Array.reduce()</code> to add values into the array, using the sum of the last two values, except for the first two.</p>
 <pre><code class="language-js">const fibonacci = n =&gt;
-  Array(n).fill(0).reduce((acc, val, i) =&gt; acc.concat(i &gt; 1 ? acc[i - 1] + acc[i - 2] : i), []);
+  Array.from({ length: n}).map(v =&gt; 0).reduce((acc, val, i) =&gt; acc.concat(i &gt; 1 ? acc[i - 1] + acc[i - 2] : i), []);
 // fibonacci(5) -&gt; [0,1,1,2,3]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="gcd">gcd</h3></div><div class="section double-padded">
@@ -898,6 +907,18 @@ Then, <code>split('')</code> into individual characters, <code>reverse()</code>,
 <pre><code class="language-js">const powerset = arr =&gt;
   arr.reduce((a, v) =&gt; a.concat(a.map(r =&gt; [v].concat(r))), [[]]);
 // powerset([1,2]) -&gt; [[], [1], [2], [2,1]]
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="primes">primes</h3></div><div class="section double-padded">
+<p>Generates primes up to a given number, using the Sieve of Eratosthenes.</p>
+<p>Generate an array from <code>2</code> to the given number. Use <code>Array.filter()</code> to filter out the values divisible by any number from <code>2</code> to the square root of the provided number.</p>
+<pre><code class="language-js">const primes = num =&gt; {
+  let arr =  Array.from({length:num-1}).map((x,i)=&gt; i+2), 
+    sqroot  = Math.floor(Math.sqrt(num)),
+    numsTillSqroot  = Array.from({length:sqroot-1}).map((x,i)=&gt; i+2);
+  numsTillSqroot.forEach(x =&gt; arr = arr.filter(y =&gt; ((y%x)!==0)||(y==x)));
+  return arr; 
+}
+// primes(10) -&gt; [2,3,5,7] 
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="randomintegerinrange">randomIntegerInRange</h3></div><div class="section double-padded">
 <p>Returns a random integer in the specified range.</p>
