@@ -185,7 +185,6 @@
 <a class="sublink-1" href="#todecimalmark">toDecimalMark</a>
 <a class="sublink-1" href="#toordinalsuffix">toOrdinalSuffix</a>
 <a class="sublink-1" href="#uuidgenerator">UUIDGenerator</a>
-<a class="sublink-1" href="#validateemail">validateEmail</a>
 <a class="sublink-1" href="#validatenumber">validateNumber</a>
 
 </nav><main class="col-sm-12 col-md-8 col-lg-9" style="height:100%;overflow-y:auto;background:#eceef2;padding:0"><a id="top">&nbsp;</a><h2 style="text-align:center">Array</h2>
@@ -290,8 +289,8 @@ Returns the remaining elements.</p>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="everynth">everyNth</h3></div><div class="section double-padded">
 <p>Returns every nth element in an array.</p>
 <p>Use <code>Array.filter()</code> to create a new array that contains every nth element of a given array.</p>
-<pre><code class="language-js">const everyNth = (arr, nth) =&gt; arr.filter((e, i) =&gt; i % nth === 0);
-// everyNth([1,2,3,4,5,6], 2) -&gt; [ 1, 3, 5 ]
+<pre><code class="language-js">const everyNth = (arr, nth) =&gt; arr.filter((e, i) =&gt; i % nth === nth - 1);
+// everyNth([1,2,3,4,5,6], 2) -&gt; [ 2, 4, 6 ]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="filternonunique">filterNonUnique</h3></div><div class="section double-padded">
 <p>Filters out the non-unique values in an array.</p>
@@ -1317,14 +1316,6 @@ If digit is found in teens pattern, use teens ordinal.</p>
     (c ^ crypto.getRandomValues(new Uint8Array(1))[0] &amp; 15 &gt;&gt; c / 4).toString(16)
   );
 // UUIDGenerator() -&gt; '7982fcfe-5721-4632-bede-6000885be57d'
-</code></pre>
-</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="validateemail">validateEmail</h3></div><div class="section double-padded">
-<p>Returns <code>true</code> if the given string is a valid  email, <code>false</code> otherwise.</p>
-<p>Use a regular expression to check if the email is valid.
-Returns <code>true</code> if email is valid, <code>false</code> if not.</p>
-<pre><code class="language-js">const validateEmail = str =&gt;
-  /^(([^&lt;&gt;()\[\]\\.,;:\s@&quot;]+(\.[^&lt;&gt;()\[\]\\.,;:\s@&quot;]+)*)|(&quot;.+&quot;))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(str);
-// validateEmail(mymail@gmail.com) -&gt; true
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="validatenumber">validateNumber</h3></div><div class="section double-padded">
 <p>Returns <code>true</code> if the given value is a number, <code>false</code> otherwise.</p>
