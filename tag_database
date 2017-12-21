@@ -118,3 +118,4 @@ validateEmail:utility
 validateNumber:utility
 without:array
 zip:array
+zipObject:array
