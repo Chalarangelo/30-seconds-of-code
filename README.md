@@ -132,9 +132,9 @@
 * [`fromCamelCase`](#fromcamelcase)
 * [`reverseString`](#reversestring)
 * [`sortCharactersInString`](#sortcharactersinstring)
-* [`stringToArrayOfWords`](#stringtoarrayofwords)
 * [`toCamelCase`](#tocamelcase)
 * [`truncateString`](#truncatestring)
+* [`words`](#words)
 
 ### Utility
 * [`coalesce`](#coalesce)
@@ -1847,21 +1847,6 @@ const sortCharactersInString = str =>
 
 [⬆ back to top](#table-of-contents)
 
-### stringToArrayOfWords
-
-Converts a given string into an array of words.
-
-Use `String.split()` with a supplied pattern (defaults to non alpha as a regex) to convert to an array of strings. Use `Array.filter()` to remove any empty strings.
-Omit the second argument to use the default regex.
-
-```js
-const stringToArrayOfWords = (str, pattern = /[^a-zA-Z-]+/) => str.split(pattern).filter(Boolean);
-// stringToArrayOfWords("I love javaScript!!") -> ["I", "love", "javaScript"]
-// stringToArrayOfWords("python, javaScript & coffee") -> ["python", "javaScript", "coffee"]
-```
-
-[⬆ back to top](#table-of-contents)
-
 ### toCamelCase
 
 Converts a string to camelcase.
@@ -1890,6 +1875,21 @@ Return the string truncated to the desired length, with `...` appended to the en
 const truncateString = (str, num) =>
   str.length > num ? str.slice(0, num > 3 ? num - 3 : num) + '...' : str;
 // truncateString('boomerang', 7) -> 'boom...'
+```
+
+[⬆ back to top](#table-of-contents)
+
+### words
+
+Converts a given string into an array of words.
+
+Use `String.split()` with a supplied pattern (defaults to non alpha as a regex) to convert to an array of strings. Use `Array.filter()` to remove any empty strings.
+Omit the second argument to use the default regex.
+
+```js
+const words = (str, pattern = /[^a-zA-Z-]+/) => str.split(pattern).filter(Boolean);
+// words("I love javaScript!!") -> ["I", "love", "javaScript"]
+// words("python, javaScript & coffee") -> ["python", "javaScript", "coffee"]
 ```
 
 [⬆ back to top](#table-of-contents)
