@@ -4,7 +4,7 @@
 */
 // Load modules
 const fs = require('fs-extra'), path = require('path'), chalk = require('chalk'),
-  md = require('markdown-it')();
+  md = require('markdown-it')(), minify = require('html-minifier').minify;
 // Compile the mini.css framework and custom CSS styles, using `node-sass`.
 const sass = require('node-sass');
   sass.render({
@@ -86,6 +86,24 @@ try {
   }
   // Add the ending static part
   output += `\n${endPart+'\n'}`;
+  // Minify output
+  output = minify(output, {
+    collapseBooleanAttributes: true,
+    collapseWhitespace: true,
+    decodeEntities: true,
+    minifyCSS: true,
+    minifyJS: true,
+    html5: false,
+    processConditionalComments: true,
+    removeAttributeQuotes: true,
+    removeComments: true,
+    removeEmptyAttributes: true,
+    removeOptionalTags: true,
+    removeScriptTypeAttributes: true,
+    removeStyleLinkTypeAttributes: true,
+    trimCustomFragments: true,
+    useShortDoctype: true,
+  });
   // Write to the index.html file
   fs.writeFileSync(path.join(docsPath,'index.html'), output);
 }
