@@ -90,20 +90,19 @@ try {
 
   output = minify(output, {
     collapseBooleanAttributes: true,
-    collapseWhitespace: true,
-    decodeEntities: true,
+    collapseWhitespace: false,
+    decodeEntities: false,
     minifyCSS: true,
     minifyJS: true,
-    html5: false,
+    keepClosingSlash: true,
     processConditionalComments: true,
-    removeAttributeQuotes: true,
+    removeAttributeQuotes: false,
     removeComments: true,
-    removeEmptyAttributes: true,
-    removeOptionalTags: true,
-    removeScriptTypeAttributes: true,
-    removeStyleLinkTypeAttributes: true,
+    removeEmptyAttributes: false,
+    removeOptionalTags: false,
+    removeScriptTypeAttributes: false,
+    removeStyleLinkTypeAttributes: false,
     trimCustomFragments: true,
-    useShortDoctype: true,
   });
 
   fs.writeFileSync(path.join(docsPath,'index.html'), output);
