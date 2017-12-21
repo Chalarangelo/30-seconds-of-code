@@ -1,7 +1,7 @@
 ![Logo](/logo.png)
 
 # 30 seconds of code [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/30-seconds-of-code/Lobby) [![Travis Build](https://travis-ci.org/Chalarangelo/30-seconds-of-code.svg?branch=master)](https://travis-ci.org/Chalarangelo/30-seconds-of-code)
-> Curated collection of useful Javascript snippets that you can understand in 30 seconds or less.
+> Curated collection of useful JavaScript snippets that you can understand in 30 seconds or less.
 
 - Use <kbd>Ctrl</kbd> + <kbd>F</kbd> or <kbd>command</kbd> + <kbd>F</kbd> to search for a snippet.
 - Contributions welcome, please read the [contribution guide](CONTRIBUTING.md).
@@ -154,7 +154,6 @@
 * [`toDecimalMark`](#todecimalmark)
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`UUIDGenerator`](#uuidgenerator)
-* [`validateEmail`](#validateemail)
 * [`validateNumber`](#validatenumber)
 
 ## Array
@@ -243,7 +242,7 @@ Removes falsey values from an array.
 Use `Array.filter()` to filter out falsey values (`false`, `null`, `0`, `""`, `undefined`, and `NaN`).
 
 ```js
-const compact = (arr) => arr.filter(Boolean);
+const compact = arr => arr.filter(Boolean);
 // compact([0, 1, false, 2, '', 3, 'a', 'e'*23, NaN, 's', 34]) -> [ 1, 2, 3, 'a', 's', 34 ]
 ```
 
@@ -355,8 +354,8 @@ Returns every nth element in an array.
 Use `Array.filter()` to create a new array that contains every nth element of a given array.
 
 ```js
-const everyNth = (arr, nth) => arr.filter((e, i) => i % nth === 0);
-// everyNth([1,2,3,4,5,6], 2) -> [ 1, 3, 5 ]
+const everyNth = (arr, nth) => arr.filter((e, i) => i % nth === nth - 1);
+// everyNth([1,2,3,4,5,6], 2) -> [ 2, 4, 6 ]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1385,12 +1384,11 @@ Returns `false` if the provided number has positive divisors other than 1 and it
 
 ```js
 const isPrime = num => {
-  for (var i = 2; i < num; i++) if (num % i == 0) return false;
+  for (var i = 2; i * i <= num; i++) if (num % i == 0) return false;
   return num >= 2;
-}
+};
 // isPrime(11) -> true
 // isPrime(12) -> false
-// isPrime(1) -> false
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2163,21 +2161,6 @@ const UUIDGenerator = () =>
     (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
   );
 // UUIDGenerator() -> '7982fcfe-5721-4632-bede-6000885be57d'
-```
-
-[⬆ back to top](#table-of-contents)
-
-### validateEmail
-
-Returns `true` if the given string is a valid  email, `false` otherwise.
-
-Use a regular expression to check if the email is valid.
-Returns `true` if email is valid, `false` if not.
-
-```js
-const validateEmail = str =>
-  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(str);
-// validateEmail(mymail@gmail.com) -> true
 ```
 
 [⬆ back to top](#table-of-contents)
