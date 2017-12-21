@@ -1,18 +1,18 @@
 language: node_js
 node_js:
-  - node
+- node
 before_install:
-  - npm install webber
-  - npm install builder
-  - npm install tagger
+- npm install webber
+- npm install builder
+- npm install tagger
 script:
-  - npm run tagger
-  - npm run builder
-  - npm run webber
+- npm run tagger
+- npm run builder
+- npm run webber
 after_success:
-  - chmod +x .travis/push.sh
-  - sudo .travis/push.sh
+- chmod +x .travis/push.sh
+- sudo .travis/push.sh
 group: deprecated-2017Q4
 env:
   global:
-    - secure: "HxC+FRqwGl9QPfqiyHLAMVRa1bHO/0stts+mYNKCUx48AfJwYQ1gOHZ7ROTAthN+L3JTZV4gq93IMBFeRSMtkQmMejr5iW7MnpXaE/AQAoLgDlU/+cYOZmzGqFCkI0seXuWjGqXP6XRKUmoB2Yk0AgjC/jgIWMqtJRkpz1VAkU7VHJ+t7y6vxGYWoJcjt9WhM7SAatmUHPMaALCRnHXwGhFFt7WAhMStYwkZ/GBgB6QoRzF+Bz8wyQoMoy5CRNUQWa61VnBzVl4fBMCXhrztC/ZYyfZnjD7Usy9EaVe0fpAVL6QXtqKTrBoZpJzhtH0uQdn04t0U2k7Ge3Fbimv6EHvPcPAvtXA7V/kuY9QZxVL4HF5tFHM06OREfLp5S99y4sgfCXgHL8ENyL5YTyYZOfHKdiUCzWO14crULwcyyfLbCunOTrVS7mh47nKMkU0BkdtNVI6CpdXBW9seu6xD/nEZSt8gIODp1sDkrnXymnuphP+3Q/xAitCeOrgmYIDYSCBWp+PybLB+8TO1BlLR6jo9JSrD4O8iI/SLxT0PQvTcm/Y9iq/r4fqzcz+uOMrKui+tkBPZUXODuCTXynu5UgDUWLhrWQX6uZ90hqJ3qtr0FZn7AKxp7HCrt/tK35zajw2n/73+/zI3tRT/Fz0dfVcM01SxG5QwwSSkGZX45zk="
+  - secure: RucoyHikFKD7yQq7FBHxOpwYSHSFYUO7QS/5VEXvU55AMnHwB97aI0DcQSMa+XHaSFVsqd4fR7nAP+5H6GMW/lUhIdeXIGzehgBTfuNeQmng2djGgS1lWY9fEOsn2XEL7JlXMi2P5YdZDpOAfiiLqT3W8EaCWDdV60tkizbSQhig2R3exI/649AjmGkIws+NqoYqrEfNpnTvgxJkp2jNuKfBkr0aaVdYuxdI6Kf2KnipEeuKsKJFds+tTjduEUKTg7I8lNSB+tQ9wIHNTDZffZrzODzE2esAZtnflxhkGQ6q7fW8DEj0rheuer+yD4WBWfph1CIxTL6B3VZgT6XQXCu09XzqgRUack0KIS6SBRKjRYJymH3eKNlxZGPpk4s90bX0Qo0a0vvcT4g/iejyVb917pcn2LjRZmmsFQUfJOcCJgU6EUvqNpfM9SWV8fJhaPOacvUnzDxFav3eRdDHaZYgXf0tzJfLAjsTv7rFbLZEnpqtvyKbHrXYLf9sICyPlHbCy4L5KAfguu735v0YPXko5Aabl6PvGcfafyLxVUb/0Y5ot3pLtGVJflfHeqYz8qbkoqp5RovSvTXntx/vVlx20TSE/rQP2l6JUNt98sGFJ+yOZ3SkMnyMdjE1YqeEngxZdzukec2SM3PtnaWxSbxV8Ue1XnM8D5nzhTf4UI8=
