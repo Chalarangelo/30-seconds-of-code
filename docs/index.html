@@ -83,6 +83,7 @@
 <a class="sublink-1" href="#union">union</a>
 <a class="sublink-1" href="#without">without</a>
 <a class="sublink-1" href="#zip">zip</a>
+<a class="sublink-1" href="#zipobject">zipObject</a>
 
 <h3>Browser
 </h3><a class="sublink-1" href="#arraytohtmllist">arrayToHtmlList</a>
@@ -112,6 +113,7 @@
 <h3>Math
 </h3><a class="sublink-1" href="#arrayaverage">arrayAverage</a>
 <a class="sublink-1" href="#arraysum">arraySum</a>
+<a class="sublink-1" href="#clampnumber">clampNumber</a>
 <a class="sublink-1" href="#collatz">collatz</a>
 <a class="sublink-1" href="#digitize">digitize</a>
 <a class="sublink-1" href="#distance">distance</a>
@@ -119,6 +121,7 @@
 <a class="sublink-1" href="#fibonacci">fibonacci</a>
 <a class="sublink-1" href="#gcd">gcd</a>
 <a class="sublink-1" href="#hammingdistance">hammingDistance</a>
+<a class="sublink-1" href="#inrange">inRange</a>
 <a class="sublink-1" href="#isarmstrongnumber">isArmstrongNumber</a>
 <a class="sublink-1" href="#isdivisible">isDivisible</a>
 <a class="sublink-1" href="#iseven">isEven</a>
@@ -525,6 +528,13 @@ If lengths of the argument-arrays vary, <code>undefined</code> is used where no 
 //zip(['a', 'b'], [1, 2], [true, false]); -&gt; [['a', 1, true], ['b', 2, false]]
 //zip(['a'], [1, 2], [true, false]); -&gt; [['a', 1, true], [undefined, 2, false]]
 </code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="zipobject">zipObject</h3></div><div class="section double-padded">
+<p>Given an array of valid property identifiers and an array of values, return an object associating the properties to the values.</p>
+<p>Since an object can have undefined values but not undefined property pointers, the array of properties is used to decide the structure of the resulting object using <code>Array.reduce()</code>.</p>
+<pre><code class="language-js">const zipObject = ( props, values ) =&gt; props.reduce( ( obj, prop, index ) =&gt; ( obj[prop] = values[index], obj ), {} )
+// zipObject(['a','b','c'], [1,2]) -&gt; {a: 1, b: 2, c: undefined}
+// zipObject(['a','b'], [1,2,3]) -&gt; {a: 1, b: 2}
+</code></pre>
 </div></div><br/><h2 style="text-align:center;">Browser</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="arraytohtmllist">arrayToHtmlList</h3></div><div class="section double-padded">
 <p>Converts the given array elements into <code>&lt;li&gt;</code> tags and appends them to the list of the given id.</p>
@@ -728,6 +738,19 @@ async function sleepyWork() {
 <pre><code class="language-js">const arraySum = arr =&gt; arr.reduce((acc, val) =&gt; acc + val, 0);
 // arraySum([1,2,3,4]) -&gt; 10
 </code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="clampnumber">clampNumber</h3></div><div class="section double-padded">
+<p>Clamps <code>num</code> within the inclusive <code>lower</code> and <code>upper</code> bounds.</p>
+<p>If <code>lower</code> is greater than <code>upper</code>, swap them.
+If <code>num</code> falls within the range, return <code>num</code>.
+Otherwise return the nearest number in the range.</p>
+<pre><code class="language-js">const clampNumber = (num, lower, upper) =&gt; {
+  if(lower &gt; upper) upper = [lower, lower = upper][0];
+  return (num&gt;=lower &amp;&amp; num&lt;=upper) ? num : ((num &lt; lower) ? lower : upper) 
+}
+// clampNumber(2, 3, 5) -&gt; 3
+// clampNumber(1, -1, -5) -&gt; -1
+// clampNumber(3, 2, 4) -&gt; 3
+</code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="collatz">collatz</h3></div><div class="section double-padded">
 <p>Applies the Collatz algorithm.</p>
 <p>If <code>n</code> is even, return <code>n/2</code>. Otherwise  return <code>3n+1</code>.</p>
@@ -782,6 +805,19 @@ Count and return the number of <code>1</code>s in the string, using <code>match(
 <pre><code class="language-js">const hammingDistance = (num1, num2) =&gt;
   ((num1 ^ num2).toString(2).match(/1/g) || '').length;
 // hammingDistance(2,3) -&gt; 1
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="inrange">inRange</h3></div><div class="section double-padded">
+<p>Checks if the given number falls in the given range.</p>
+<p>Use arithmetic comparison to check if the given number is in the specified range.
+If the second parameter, <code>end</code>, is not specified, the reange is considered to be from <code>0</code> to <code>start</code>.</p>
+<pre><code class="language-js">const inRange = (n, start, end=null) =&gt; {
+  if(end &amp;&amp; start &gt; end) end = [start, start=end][0];
+  return (end == null) ? (n&gt;=0 &amp;&amp; n&lt;start) : (n&gt;=start &amp;&amp; n&lt;end);
+}
+// inRange(3, 2, 5) -&gt; true
+// inRange(3, 4) -&gt; true
+// inRange(2, 3, 5) -&gt; false
+// inrange(3, 2) -&gt; false
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isarmstrongnumber">isArmstrongNumber</h3></div><div class="section double-padded">
 <p>Checks if the given number is an armstrong number or not.</p>
