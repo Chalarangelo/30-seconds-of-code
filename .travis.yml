@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+    - node
+before_install:
+    - npm install webber
+    - npm install builder
+    - npm install tagger
+script:
+    - npm run tagger
+    - npm run builder
+    - npm run webber
+after_success:
+    - .travis/push.sh
+env:
+  global: 
+  - secure: nwLmj3XjcE4+AQRlph+UWLXItNmPOdh7oVuXEO/rJYIXf9VOiWj6QK3VXX2BLLuDTmzgwvUz+kOB2rtFStoyD70oP255fD/54DhIXrW1br4XlYYHk5mXWF+tiW6iEh7xk7CpY9Tj1x1Y/DOKu5PmZ1CbGGlp5lgPsdBb/QQrkJk36yl/6tES0CBOxuSInde7Xs5sgpQyRa/4VIz0suTmNuGhAZKhdpaXQlPvi8uNr2JGACV7OAHLhySwGCqhuhzdnRXkB2nGhnnwxbY/OYzKDCHoBsA8KWqqyq3ptV3tWzJ2tZDusDG2kXz0DeQquFT5ysDsInSm41Q+7Pw92RPa7+Qjvx0tvjB7YqK0hXpDmgO/DVzbgzW6Wx+X/tUOqkM88CEKqoSisdLiOsCoABuhMojAnZ+TghfIYQ3cm/a5gmMiidbiVm96JPw/ghC5n2K0UlzGK3iBXFn+8+F8XFzGuJ16+z91Nz8ny7SvsCN3EVWRwGTuU9SmxbwpEcIx8c7bkQBElGA/MnzWOOBcJQ3sKeXKYD01Cc6CXXbOb0qckPwU4AM4/qa9pgs2m2xhIM0tHb/cVYOqsD3pIjbgiAG+ySyVJ7QJ5xLZh2zYqXTb1/VRyAXmRHSklEhnHDY8JRTaV4mUk3gEo+8jZJ2GMQxQVY+QwxN2uahPk8wa6nGEKl4=
