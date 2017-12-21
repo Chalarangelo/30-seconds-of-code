@@ -10,6 +10,7 @@ capitalize:string
 capitalizeEveryWord:string
 chainAsync:function
 chunk:array
+clampNumber:math
 cleanObj:object
 coalesce:utility
 coalesceFactory:utility
@@ -52,6 +53,7 @@ initial:array
 initialize2DArray:array
 initializeArrayWithRange:array
 initializeArrayWithValues:array
+inRange:math
 intersection:array
 isArmstrongNumber:math
 isArray:utility
