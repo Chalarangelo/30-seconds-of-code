@@ -1,6 +1,7 @@
 anagrams:string
 arrayAverage:math
 arrayGcd:array
+arrayLcm:
 arrayMax:array
 arrayMin:array
 arraySum:math
