@@ -105,7 +105,6 @@ sleep:function
 sortCharactersInString:string
 speechSynthesis:media
 standardDeviation:math
-stringToArrayOfWords:string
 symmetricDifference:array
 tail:array
 take:array
@@ -121,5 +120,6 @@ UUIDGenerator:utility
 validateEmail:utility
 validateNumber:utility
 without:array
+words:string
 zip:array
 zipObject:array
