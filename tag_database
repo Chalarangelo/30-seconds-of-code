@@ -105,3 +105,4 @@ validateEmail:utility
 validateNumber:utility
 without:array
 zip:array
+toThousands:utility
