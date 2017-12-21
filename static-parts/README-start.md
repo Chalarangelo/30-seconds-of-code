@@ -1,6 +1,6 @@
 ![Logo](/logo.png)
 
-# 30 seconds of code [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/30-seconds-of-code/Lobby)
+# 30 seconds of code [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/30-seconds-of-code/Lobby) [![Travis Build](https://travis-ci.org/Chalarangelo/30-seconds-of-code.svg?branch=master)](https://travis-ci.org/Chalarangelo/30-seconds-of-code)
 > Curated collection of useful Javascript snippets that you can understand in 30 seconds or less.
 
 - Use <kbd>Ctrl</kbd> + <kbd>F</kbd> or <kbd>command</kbd> + <kbd>F</kbd> to search for a snippet.

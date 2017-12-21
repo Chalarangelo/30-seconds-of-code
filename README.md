@@ -1,6 +1,6 @@
 ![Logo](/logo.png)
 
-# 30 seconds of code [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/30-seconds-of-code/Lobby)
+# 30 seconds of code [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/30-seconds-of-code/Lobby) [![Travis Build](https://travis-ci.org/Chalarangelo/30-seconds-of-code.svg?branch=master)](https://travis-ci.org/Chalarangelo/30-seconds-of-code)
 > Curated collection of useful Javascript snippets that you can understand in 30 seconds or less.
 
 - Use <kbd>Ctrl</kbd> + <kbd>F</kbd> or <kbd>command</kbd> + <kbd>F</kbd> to search for a snippet.
@@ -61,6 +61,7 @@
 * [`elementIsVisibleInViewport`](#elementisvisibleinviewport)
 * [`getScrollPosition`](#getscrollposition)
 * [`getURLParameters`](#geturlparameters)
+* [`httpsRedirect`](#httpsredirect)
 * [`redirect`](#redirect)
 * [`scrollToTop`](#scrolltotop)
 
@@ -100,6 +101,7 @@
 * [`palindrome`](#palindrome)
 * [`percentile`](#percentile)
 * [`powerset`](#powerset)
+* [`primes`](#primes)
 * [`randomIntegerInRange`](#randomintegerinrange)
 * [`randomNumberInRange`](#randomnumberinrange)
 * [`round`](#round)
@@ -130,9 +132,9 @@
 * [`fromCamelCase`](#fromcamelcase)
 * [`reverseString`](#reversestring)
 * [`sortCharactersInString`](#sortcharactersinstring)
-* [`stringToArrayOfWords`](#stringtoarrayofwords)
 * [`toCamelCase`](#tocamelcase)
 * [`truncateString`](#truncatestring)
+* [`words`](#words)
 
 ### Utility
 * [`coalesce`](#coalesce)
@@ -901,6 +903,20 @@ const getURLParameters = url =>
 
 [⬆ back to top](#table-of-contents)
 
+### httpsRedirect
+
+Redirects the page to HTTPS if its currently in HTTP. Also, pressing the back button doesn't take it back to the HTTP page as its replaced in the history.
+
+Use `location.protocol` to get the protocol currently being used. If it's not HTTPS, use `location.replace()` to replace the existing page with the HTTPS version of the page. Use `location.href` to get the full address, split it with `String.split()` and remove the protocol part of the URL.  
+
+```js
+const httpsRedirect = () => {
+  if(location.protocol !== "https:") location.replace("https://" + location.href.split("//")[1]);
+}
+```
+
+[⬆ back to top](#table-of-contents)
+
 ### redirect
 
 Redirects to a specified URL.
@@ -1242,7 +1258,7 @@ Use `Array.reduce()` to add values into the array, using the sum of the last two
 
 ```js
 const fibonacci = n =>
-  Array(n).fill(0).reduce((acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i), []);
+  Array.from({ length: n}).map(v => 0).reduce((acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i), []);
 // fibonacci(5) -> [0,1,1,2,3]
 ```
 
@@ -1435,6 +1451,25 @@ Use `Array.reduce()` combined with `Array.map()` to iterate over elements and co
 const powerset = arr =>
   arr.reduce((a, v) => a.concat(a.map(r => [v].concat(r))), [[]]);
 // powerset([1,2]) -> [[], [1], [2], [2,1]]
+```
+
+[⬆ back to top](#table-of-contents)
+
+### primes 
+
+Generates primes up to a given number, using the Sieve of Eratosthenes.
+
+Generate an array from `2` to the given number. Use `Array.filter()` to filter out the values divisible by any number from `2` to the square root of the provided number.
+
+```js
+const primes = num => {
+  let arr =  Array.from({length:num-1}).map((x,i)=> i+2), 
+    sqroot  = Math.floor(Math.sqrt(num)),
+    numsTillSqroot  = Array.from({length:sqroot-1}).map((x,i)=> i+2);
+  numsTillSqroot.forEach(x => arr = arr.filter(y => ((y%x)!==0)||(y==x)));
+  return arr; 
+}
+// primes(10) -> [2,3,5,7] 
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1812,21 +1847,6 @@ const sortCharactersInString = str =>
 
 [⬆ back to top](#table-of-contents)
 
-### stringToArrayOfWords
-
-Converts a given string into an array of words.
-
-Use `String.split()` with a supplied pattern (defaults to non alpha as a regex) to convert to an array of strings. Use `Array.filter()` to remove any empty strings.
-Omit the second argument to use the default regex.
-
-```js
-const stringToArrayOfWords = (str, pattern = /[^a-zA-Z-]+/) => str.split(pattern).filter(Boolean);
-// stringToArrayOfWords("I love javaScript!!") -> ["I", "love", "javaScript"]
-// stringToArrayOfWords("python, javaScript & coffee") -> ["python", "javaScript", "coffee"]
-```
-
-[⬆ back to top](#table-of-contents)
-
 ### toCamelCase
 
 Converts a string to camelcase.
@@ -1855,6 +1875,21 @@ Return the string truncated to the desired length, with `...` appended to the en
 const truncateString = (str, num) =>
   str.length > num ? str.slice(0, num > 3 ? num - 3 : num) + '...' : str;
 // truncateString('boomerang', 7) -> 'boom...'
+```
+
+[⬆ back to top](#table-of-contents)
+
+### words
+
+Converts a given string into an array of words.
+
+Use `String.split()` with a supplied pattern (defaults to non alpha as a regex) to convert to an array of strings. Use `Array.filter()` to remove any empty strings.
+Omit the second argument to use the default regex.
+
+```js
+const words = (str, pattern = /[^a-zA-Z-]+/) => str.split(pattern).filter(Boolean);
+// words("I love javaScript!!") -> ["I", "love", "javaScript"]
+// words("python, javaScript & coffee") -> ["python", "javaScript", "coffee"]
 ```
 
 [⬆ back to top](#table-of-contents)
