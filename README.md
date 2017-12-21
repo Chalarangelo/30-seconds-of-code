@@ -184,7 +184,7 @@ Use `Array.reduce()` and the `lcm` formula (uses recursion) to calculate the low
 ```js
 const arrayLcm = arr =>{
   const gcd = (x, y) => !y ? x : gcd(y, x % y);
-  const lcm = (x, y) => (x*y)/gcd(x, y)
+  const lcm = (x, y) => (x*y)/gcd(x, y) 
   return arr.reduce((a,b) => lcm(a,b));
 }
 // arrayLcm([1,2,3,4,5]) -> 60
@@ -468,7 +468,7 @@ Use `Array((end + 1) - start)` to create an array of the desired length, `Array.
 You can omit `start` to use a default value of `0`.
 
 ```js
-const initializeArrayWithRange = (end, start = 0) =>
+const initializeArrayWithRange = (end, start = 0) => 
   Array.from({ length: (end + 1) - start }).map((v, i) => i + start);
 // initializeArrayWithRange(5) -> [0,1,2,3,4,5]
 // initializeArrayWithRange(7, 3) -> [3,4,5,6,7]
@@ -523,7 +523,7 @@ Maps the values of an array to an object using a function, where the key-value p
 Use an anonymous inner function scope to declare an undefined memory space, using closures to store a return value. Use a new `Array` to stor the array with a map of the function over its data set and a comma operator to return a second step, without needing to move from one context to another (due to closures and order of operations).
 
 ```js
-const mapObject = (arr, fn) =>
+const mapObject = (arr, fn) => 
   (a => (a = [arr, arr.map(fn)], a[0].reduce( (acc,val,ind) => (acc[val] = a[1][ind], acc), {}) )) ( );
 /*
 const squareIt = arr => mapObject(arr, a => a*a)
@@ -576,7 +576,7 @@ _(For a snippet that does not mutate the original array see [`without`](#without
 const pull = (arr, ...args) => {
   let argState = Array.isArray(args[0]) ? args[0] : args;
   let pulled = arr.filter((v, i) => !argState.includes(v));
-  arr.length = 0;
+  arr.length = 0; 
   pulled.forEach(v => arr.push(v));
 };
 
@@ -597,14 +597,14 @@ Mutates the original array to filter out the values at the specified indexes.
 
 Use `Array.filter()` and `Array.includes()` to pull out the values that are not needed.
 Use `Array.length = 0` to mutate the passed in array by resetting it's length to zero and `Array.push()` to re-populate it with only the pulled values.
-Use `Array.push()` to keep track of pulled values
+Use `Array.push()` to keep track of pulled values 
 
 ```js
 const pullAtIndex = (arr, pullArr) => {
   let removed = [];
   let pulled = arr.map((v, i) => pullArr.includes(i) ? removed.push(v) : v)
                   .filter((v, i) => !pullArr.includes(i))
-  arr.length = 0;
+  arr.length = 0; 
   pulled.forEach(v => arr.push(v));
   return removed;
 }
@@ -624,11 +624,11 @@ Mutates the original array to filter out the values specified. Returns the remov
 
 Use `Array.filter()` and `Array.includes()` to pull out the values that are not needed.
 Use `Array.length = 0` to mutate the passed in array by resetting it's length to zero and `Array.push()` to re-populate it with only the pulled values.
-Use `Array.push()` to keep track of pulled values
+Use `Array.push()` to keep track of pulled values 
 
 ```js
 const pullAtValue = (arr, pullArr) => {
-  let removed = [],
+  let removed = [], 
     pushToRemove = arr.forEach((v, i) => pullArr.includes(v) ? removed.push(v) : v),
     mutateTo = arr.filter((v, i) => !pullArr.includes(v));
   arr.length = 0;
@@ -1193,14 +1193,14 @@ const arraySum = arr => arr.reduce((acc, val) => acc + val, 0);
 
 Clamps `num` within the inclusive `lower` and `upper` bounds.
 
-If `lower` is greater than `upper`, swap them.
-If `num` falls within the range, return `num`.
+If `lower` is greater than `upper`, swap them. 
+If `num` falls within the range, return `num`. 
 Otherwise return the nearest number in the range.
 
 ```js
 const clampNumber = (num, lower, upper) => {
   if(lower > upper) upper = [lower, lower = upper][0];
-  return (num>=lower && num<=upper) ? num : ((num < lower) ? lower : upper)
+  return (num>=lower && num<=upper) ? num : ((num < lower) ? lower : upper) 
 }
 // clampNumber(2, 3, 5) -> 3
 // clampNumber(1, -1, -5) -> -1
@@ -1315,7 +1315,7 @@ const hammingDistance = (num1, num2) =>
 
 ### inRange
 
-Checks if the given number falls in the given range.
+Checks if the given number falls in the given range. 
 
 Use arithmetic comparison to check if the given number is in the specified range.
 If the second parameter, `end`, is not specified, the reange is considered to be from `0` to `start`.
@@ -1340,7 +1340,7 @@ Checks if the given number is an armstrong number or not.
 Convert the given number into array of digits. Use `Math.pow()` to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return `true` otherwise `false`.
 
 ```js
-const isArmstrongNumber = digits =>
+const isArmstrongNumber = digits => 
   ( arr => arr.reduce( ( a, d ) => a + Math.pow( parseInt( d ), arr.length ), 0 ) == digits ? true : false )( ( digits+'' ).split( '' ) );
 // isArmstrongNumber(1634) -> true
 // isArmstrongNumber(371) -> true
@@ -1386,10 +1386,9 @@ Returns `false` if the provided number has positive divisors other than 1 and it
 const isPrime = num => {
   for (var i = 2; i * i <= num; i++) if (num % i == 0) return false;
   return num >= 2;
-}
+};
 // isPrime(11) -> true
 // isPrime(12) -> false
-// isPrime(1) -> false
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1474,7 +1473,7 @@ const powerset = arr =>
 
 [⬆ back to top](#table-of-contents)
 
-### primes
+### primes 
 
 Generates primes up to a given number, using the Sieve of Eratosthenes.
 
@@ -1482,13 +1481,13 @@ Generate an array from `2` to the given number. Use `Array.filter()` to filter o
 
 ```js
 const primes = num => {
-  let arr =  Array.from({length:num-1}).map((x,i)=> i+2),
+  let arr =  Array.from({length:num-1}).map((x,i)=> i+2), 
     sqroot  = Math.floor(Math.sqrt(num)),
     numsTillSqroot  = Array.from({length:sqroot-1}).map((x,i)=> i+2);
   numsTillSqroot.forEach(x => arr = arr.filter(y => ((y%x)!==0)||(y==x)));
-  return arr;
+  return arr; 
 }
-// primes(10) -> [2,3,5,7]
+// primes(10) -> [2,3,5,7] 
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1735,7 +1734,7 @@ a === b -> false
 Checks if the predicate (second argument) is truthy on all elements of a collection (first argument).
 
 Use `Array.every()` to check if each passed object has the specified property and if it returns a truthy value.
-
+ 
  ```js
 const truthCheckCollection = (collection, pre) => (collection.every(obj => obj[pre]));
 // truthCheckCollection([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}], "sex") -> true
@@ -2118,7 +2117,7 @@ Use `toString()` to convert the float `num` to a string, then use regex to separ
 
  ```js
 const toDecimalMark = (num) => {
-  let cleanNum = num.toString().split('').filter(n => '0123456789.'.includes(n)).join('')
+  let cleanNum = num.toString().split('').filter(n => '0123456789.'.includes(n)).join('') 
   let wholeNum = cleanNum.split('.')[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   let decNum = `.${cleanNum.split('.')[1]}`
   return wholeNum + decNum;
@@ -2184,3 +2183,4 @@ const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) ==
 ## Credits
 
 *Icons made by [Smashicons](https://www.flaticon.com/authors/smashicons) from [www.flaticon.com](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).*
+
