@@ -389,8 +389,10 @@ Omit the second argument, <code>n</code>, to get the first element of the array.
 Use <code>Array.length = 0</code> to mutate the passed in array by resetting it's length to zero and <code>Array.push()</code> to re-populate it with only the pulled values.</p>
 <p><em>(For a snippet that does not mutate the original array see <a href="#without"><code>without</code></a>)</em></p>
 <pre><code class="language-js">const pull = (arr, ...args) =&gt; {
-  let pulled = arr.filter((v, i) =&gt; !args.toString().split(',').includes(v));
-  arr.length = 0; pulled.forEach(v =&gt; arr.push(v));
+  let argState = Array.isArray(args[0]) ? args[0] : args;
+  let pulled = arr.filter((v, i) =&gt; !argState.includes(v));
+  arr.length = 0; 
+  pulled.forEach(v =&gt; arr.push(v));
 };
 
 // let myArray1 = ['a', 'b', 'c', 'a', 'b', 'c'];
