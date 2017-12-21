@@ -11,6 +11,7 @@
 ## Table of Contents
 
 ### Array
+* [`arrayGcd`](#arraygcd)
 * [`arrayMax`](#arraymax)
 * [`arrayMin`](#arraymin)
 * [`chunk`](#chunk)
@@ -51,6 +52,7 @@
 * [`union`](#union)
 * [`without`](#without)
 * [`zip`](#zip)
+* [`zipObject`](#zipobject)
 
 ### Browser
 * [`arrayToHtmlList`](#arraytohtmllist)
@@ -80,6 +82,7 @@
 ### Math
 * [`arrayAverage`](#arrayaverage)
 * [`arraySum`](#arraysum)
+* [`clampNumber`](#clampnumber)
 * [`collatz`](#collatz)
 * [`digitize`](#digitize)
 * [`distance`](#distance)
@@ -87,6 +90,7 @@
 * [`fibonacci`](#fibonacci)
 * [`gcd`](#gcd)
 * [`hammingDistance`](#hammingdistance)
+* [`inRange`](#inrange)
 * [`isArmstrongNumber`](#isarmstrongnumber)
 * [`isDivisible`](#isdivisible)
 * [`isEven`](#iseven)
@@ -150,6 +154,23 @@
 * [`validateNumber`](#validatenumber)
 
 ## Array
+
+### arrayGcd
+
+Calculates the greatest common denominator (gcd) of an array of numbers.
+
+Use `Array.reduce()` and the `gcd` formula (uses recursion) to calculate the greatest common denominator of an array of numbers.
+
+```js
+const arrayGcd = arr =>{
+  const gcd = (x, y) => !y ? x : gcd(y, x % y);
+  return arr.reduce((a,b) => gcd(a,b));
+}
+// arrayGcd([1,2,3,4,5]) -> 1
+// arrayGcd([4,8,12]) -> 4
+```
+
+[⬆ back to top](#table-of-contents)
 
 ### arrayMax
 
@@ -532,8 +553,10 @@ _(For a snippet that does not mutate the original array see [`without`](#without
 
 ```js
 const pull = (arr, ...args) => {
-  let pulled = arr.filter((v, i) => !args.toString().split(',').includes(v));
-  arr.length = 0; pulled.forEach(v => arr.push(v));
+  let argState = Array.isArray(args[0]) ? args[0] : args;
+  let pulled = arr.filter((v, i) => !argState.includes(v));
+  arr.length = 0; 
+  pulled.forEach(v => arr.push(v));
 };
 
 // let myArray1 = ['a', 'b', 'c', 'a', 'b', 'c'];
@@ -762,6 +785,20 @@ const zip = (...arrays) => {
 }
 //zip(['a', 'b'], [1, 2], [true, false]); -> [['a', 1, true], ['b', 2, false]]
 //zip(['a'], [1, 2], [true, false]); -> [['a', 1, true], [undefined, 2, false]]
+```
+
+[⬆ back to top](#table-of-contents)
+
+### zipObject
+
+Given an array of valid property identifiers and an array of values, return an object associating the properties to the values.
+
+Since an object can have undefined values but not undefined property pointers, the array of properties is used to decide the structure of the resulting object using `Array.reduce()`.
+
+```js
+const zipObject = ( props, values ) => props.reduce( ( obj, prop, index ) => ( obj[prop] = values[index], obj ), {} )
+// zipObject(['a','b','c'], [1,2]) -> {a: 1, b: 2, c: undefined}
+// zipObject(['a','b'], [1,2,3]) -> {a: 1, b: 2}
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1117,6 +1154,26 @@ const arraySum = arr => arr.reduce((acc, val) => acc + val, 0);
 
 [⬆ back to top](#table-of-contents)
 
+### clampNumber
+
+Clamps `num` within the inclusive `lower` and `upper` bounds.
+
+If `lower` is greater than `upper`, swap them. 
+If `num` falls within the range, return `num`. 
+Otherwise return the nearest number in the range.
+
+```js
+const clampNumber = (num, lower, upper) => {
+  if(lower > upper) upper = [lower, lower = upper][0];
+  return (num>=lower && num<=upper) ? num : ((num < lower) ? lower : upper) 
+}
+// clampNumber(2, 3, 5) -> 3
+// clampNumber(1, -1, -5) -> -1
+// clampNumber(3, 2, 4) -> 3
+```
+
+[⬆ back to top](#table-of-contents)
+
 ### collatz
 
 Applies the Collatz algorithm.
@@ -1217,6 +1274,26 @@ Count and return the number of `1`s in the string, using `match(/1/g)`.
 const hammingDistance = (num1, num2) =>
   ((num1 ^ num2).toString(2).match(/1/g) || '').length;
 // hammingDistance(2,3) -> 1
+```
+
+[⬆ back to top](#table-of-contents)
+
+### inRange
+
+Checks if the given number falls in the given range. 
+
+Use arithmetic comparison to check if the given number is in the specified range.
+If the second parameter, `end`, is not specified, the reange is considered to be from `0` to `start`.
+
+```js
+const inRange = (n, start, end=null) => {
+  if(end && start > end) end = [start, start=end][0];
+  return (end == null) ? (n>=0 && n<start) : (n>=start && n<end);
+}
+// inRange(3, 2, 5) -> true
+// inRange(3, 4) -> true
+// inRange(2, 3, 5) -> false
+// inrange(3, 2) -> false
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1549,7 +1626,7 @@ const orderBy = (arr, props, orders) =>
   arr.sort((a, b) =>
     props.reduce((acc, prop, i) => {
       if (acc === 0) {
-        const [p1, p2] = orders[i] === 'asc' ? [a[prop], b[prop]] : [b[prop], a[prop]];
+        const [p1, p2] = orders && orders[i] === 'desc' ? [b[prop], a[prop]] : [a[prop], b[prop]];
         acc = p1 > p2 ? 1 : p1 < p2 ? -1 : 0;
       }
       return acc;
