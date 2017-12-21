@@ -12,7 +12,7 @@ commit_website_files() {
 }
 
 upload_files() {
-  git push --force --quiet "https://${GH_TOKEN}@github.com/Chalarangelo/30-seconds-of-code.git" master > /dev/null 2>&1
+  git push --force "https://${GH_TOKEN}@github.com/Chalarangelo/30-seconds-of-code.git" master > /dev/null 2>&1
 }
 
 setup_git
