@@ -234,7 +234,7 @@ If the original array can't be split evenly, the final chunk will contain the re
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="compact">compact</h3></div><div class="section double-padded">
 <p>Removes falsey values from an array.</p>
 <p>Use <code>Array.filter()</code> to filter out falsey values (<code>false</code>, <code>null</code>, <code>0</code>, <code>&quot;&quot;</code>, <code>undefined</code>, and <code>NaN</code>).</p>
-<pre><code class="language-js">const compact = (arr) =&gt; arr.filter(Boolean);
+<pre><code class="language-js">const compact = arr =&gt; arr.filter(Boolean);
 // compact([0, 1, false, 2, '', 3, 'a', 'e'*23, NaN, 's', 34]) -&gt; [ 1, 2, 3, 'a', 's', 34 ]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="countoccurrences">countOccurrences</h3></div><div class="section double-padded">
