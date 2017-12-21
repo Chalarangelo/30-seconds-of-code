@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "builder": "^3.2.3",
     "concurrently": "^3.5.1",
     "fs-extra": "^4.0.2",
     "html-minifier": "^3.5.7",
@@ -7,7 +8,9 @@
     "markdown-it": "^8.4.0",
     "node-sass": "^4.7.2",
     "nodemon": "^1.12.1",
-    "semistandard": "^11.0.0"
+    "semistandard": "^11.0.0",
+    "tagger": "^0.1.2",
+    "webber": "0.0.1"
   },
   "name": "30-seconds-of-code",
   "description": "A collection of useful Javascript snippets.",
