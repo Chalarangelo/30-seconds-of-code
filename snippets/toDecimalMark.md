@@ -1,8 +1,8 @@
 ### toDecimalMark
 
-Use commas to separate digits。
+Convert a float-point arithmetic to the [Decimal mark](https://en.wikipedia.org/wiki/Decimal_mark) form.
 
-Use `toString()` to convert the number `num` to a string, then use `/\B(?=(\d{3})+(?!\d))/g` to separate every three characters with a comma,except word boundary。
+Use `toString()` to convert the float `num` to a string, then use regex to separate every three characters of the integer part with a comma.
 
  ```js
 const toDecimalMark = (num) => {
@@ -11,7 +11,6 @@ const toDecimalMark = (num) => {
   let decNum = `.${cleanNum.split('.')[1]}`
   return wholeNum + decNum;
 }
-
 // toDecimalMark(12305030388.9087) //-> '12,305,030,388.9087'
 // toDecimalMark(123.889087e2) //-> '12,388.9087'
 // toDecimalMark('12305abc030388.9087') // -> '12,305,030,388.9087'
