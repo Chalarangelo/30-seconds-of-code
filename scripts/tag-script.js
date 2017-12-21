@@ -45,9 +45,9 @@ try {
     if(tagDbData.hasOwnProperty(snippet[0].slice(0,-3)) && tagDbData[snippet[0].slice(0,-3)].trim())
       output += `${snippet[0].slice(0,-3)}:${tagDbData[snippet[0].slice(0,-3)].trim()}\n`;
     else {
-      output += `${snippet[0].slice(0,-3)}:\n`;
+      output += `${snippet[0].slice(0,-3)}:uncategorized\n`;
       missingTags++;
-      console.log(`${chalk.yellow('Tag missing:')} ${snippet[0].slice(0,-3)}`);
+      console.log(`${chalk.yellow('Tagged uncategorized:')} ${snippet[0].slice(0,-3)}`);
     }
   // Write to tag_database
   fs.writeFileSync('tag_database', output);
@@ -60,7 +60,7 @@ catch (err){  // Handle errors (hopefully not!)
 console.log(`\n${chalk.bgWhite(chalk.black('=== TAG STATS ==='))}`)
 for(let tagData of Object.entries(tagDbStats).filter(v => v[0] !== 'undefined'))
   console.log(`${chalk.green(tagData[0])}: ${tagData[1]} snippets`);
-console.log(`${chalk.blue('Untagged snippets:')} ${missingTags}\n`);
+console.log(`${chalk.blue('Uncategorized snippets:')} ${missingTags}\n`);
 // Log a success message
 console.log(`${chalk.green('SUCCESS!')} tag_database file updated!`);
 // Log the time taken
