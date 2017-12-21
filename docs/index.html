@@ -83,6 +83,7 @@
 <a class="sublink-1" href="#union">union</a>
 <a class="sublink-1" href="#without">without</a>
 <a class="sublink-1" href="#zip">zip</a>
+<a class="sublink-1" href="#zipobject">zipObject</a>
 
 <h3>Browser
 </h3><a class="sublink-1" href="#arraytohtmllist">arrayToHtmlList</a>
@@ -112,6 +113,7 @@
 <h3>Math
 </h3><a class="sublink-1" href="#arrayaverage">arrayAverage</a>
 <a class="sublink-1" href="#arraysum">arraySum</a>
+<a class="sublink-1" href="#clampnumber">clampNumber</a>
 <a class="sublink-1" href="#collatz">collatz</a>
 <a class="sublink-1" href="#digitize">digitize</a>
 <a class="sublink-1" href="#distance">distance</a>
@@ -119,6 +121,7 @@
 <a class="sublink-1" href="#fibonacci">fibonacci</a>
 <a class="sublink-1" href="#gcd">gcd</a>
 <a class="sublink-1" href="#hammingdistance">hammingDistance</a>
+<a class="sublink-1" href="#inrange">inRange</a>
 <a class="sublink-1" href="#isarmstrongnumber">isArmstrongNumber</a>
 <a class="sublink-1" href="#isdivisible">isDivisible</a>
 <a class="sublink-1" href="#iseven">isEven</a>
@@ -383,9 +386,21 @@ console.log(pulled); -> [ 'b', 'd' ]
    return Array.from({length: arrays.length}, (_, k) => arrays[k][i]);
   })
 }
-//zip(['a', 'b'], [1, 2], [true, false]); -> [['a', 1, true], ['b', 2, false]]
-//zip(['a'], [1, 2], [true, false]); -> [['a', 1, true], [undefined, 2, false]]
-</code></pre></div></div><br><h2 style=text-align:center>Browser</h2><div class="card fluid"><div class="section double-padded"><h3 id=arraytohtmllist>arrayToHtmlList</h3></div><div class="section double-padded"><p>Converts the given array elements into <code>&lt;li></code> tags and appends them to the list of the given id.<p>Use <code>Array.map()</code> and <code>document.querySelector()</code> to create a list of html tags.<pre><code class=language-js>const arrayToHtmlList = (arr, listID) => arr.map(item => document.querySelector("#"+listID).innerHTML+=`&lt;li>${item}&lt;/li>`);
+//zip(['a', 'b'], [1, 2], [true, false]); -&gt; [['a', 1, true], ['b', 2, false]]
+//zip(['a'], [1, 2], [true, false]); -&gt; [['a', 1, true], [undefined, 2, false]]
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="zipobject">zipObject</h3></div><div class="section double-padded">
+<p>Given an array of valid property identifiers and an array of values, return an object associating the properties to the values.</p>
+<p>Since an object can have undefined values but not undefined property pointers, the array of properties is used to decide the structure of the resulting object using <code>Array.reduce()</code>.</p>
+<pre><code class="language-js">const zipObject = ( props, values ) =&gt; props.reduce( ( obj, prop, index ) =&gt; ( obj[prop] = values[index], obj ), {} )
+// zipObject(['a','b','c'], [1,2]) -&gt; {a: 1, b: 2, c: undefined}
+// zipObject(['a','b'], [1,2,3]) -&gt; {a: 1, b: 2}
+</code></pre>
+</div></div><br/><h2 style="text-align:center;">Browser</h2>
+<div class="card fluid"><div class="section double-padded"><h3 id="arraytohtmllist">arrayToHtmlList</h3></div><div class="section double-padded">
+<p>Converts the given array elements into <code>&lt;li&gt;</code> tags and appends them to the list of the given id.</p>
+<p>Use <code>Array.map()</code> and <code>document.querySelector()</code> to create a list of html tags.</p>
+<pre><code class="language-js">const arrayToHtmlList = (arr, listID) =&gt; arr.map(item =&gt; document.querySelector(&quot;#&quot;+listID).innerHTML+=`&lt;li&gt;${item}&lt;/li&gt;`);
 // arrayToHtmlList(['item 1', 'item 2'],'myListID')
 </code></pre></div></div><br><div class="card fluid"><div class="section double-padded"><h3 id=bottomvisible>bottomVisible</h3></div><div class="section double-padded"><p>Returns <code>true</code> if the bottom of the page is visible, <code>false</code> otherwise.<p>Use <code>scrollY</code>, <code>scrollHeight</code> and <code>clientHeight</code> to determine if the bottom of the page is visible.<pre><code class=language-js>const bottomVisible = () =>
   document.documentElement.clientHeight + window.scrollY >= (document.documentElement.scrollHeight || document.documentElement.clientHeight);
@@ -481,19 +496,61 @@ async function sleepyWork() {
   console.log('I woke up after 1 second.');
 }
 */
-</code></pre></div></div><br><h2 style=text-align:center>Math</h2><div class="card fluid"><div class="section double-padded"><h3 id=arrayaverage>arrayAverage</h3></div><div class="section double-padded"><p>Returns the average of an array of numbers.<p>Use <code>Array.reduce()</code> to add each value to an accumulator, initialized with a value of <code>0</code>, divide by the <code>length</code> of the array.<pre><code class=language-js>const arrayAverage = arr => arr.reduce((acc, val) => acc + val, 0) / arr.length;
-// arrayAverage([1,2,3]) -> 2
-</code></pre></div></div><br><div class="card fluid"><div class="section double-padded"><h3 id=arraysum>arraySum</h3></div><div class="section double-padded"><p>Returns the sum of an array of numbers.<p>Use <code>Array.reduce()</code> to add each value to an accumulator, initialized with a value of <code>0</code>.<pre><code class=language-js>const arraySum = arr => arr.reduce((acc, val) => acc + val, 0);
-// arraySum([1,2,3,4]) -> 10
-</code></pre></div></div><br><div class="card fluid"><div class="section double-padded"><h3 id=collatz>collatz</h3></div><div class="section double-padded"><p>Applies the Collatz algorithm.<p>If <code>n</code> is even, return <code>n/2</code>. Otherwise return <code>3n+1</code>.<pre><code class=language-js>const collatz = n => (n % 2 == 0) ? (n / 2) : (3 * n + 1);
-// collatz(8) --> 4
-// collatz(5) --> 16
-</code></pre></div></div><br><div class="card fluid"><div class="section double-padded"><h3 id=digitize>digitize</h3></div><div class="section double-padded"><p>Converts a number to an array of digits.<p>Convert the number to a string, using spread operators in ES6(<code>[...string]</code>) build an array. Use <code>Array.map()</code> and <code>parseInt()</code> to transform each value to an integer.<pre><code class=language-js>const digitize = n => [...''+n].map(i => parseInt(i));
-// digitize(2334) -> [2, 3, 3, 4]
-</code></pre></div></div><br><div class="card fluid"><div class="section double-padded"><h3 id=distance>distance</h3></div><div class="section double-padded"><p>Returns the distance between two points.<p>Use <code>Math.hypot()</code> to calculate the Euclidean distance between two points.<pre><code class=language-js>const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
-// distance(1,1, 2,3) -> 2.23606797749979
-</code></pre></div></div><br><div class="card fluid"><div class="section double-padded"><h3 id=factorial>factorial</h3></div><div class="section double-padded"><p>Calculates the factorial of a number.<p>Use recursion. If <code>n</code> is less than or equal to <code>1</code>, return <code>1</code>. Otherwise, return the product of <code>n</code> and the factorial of <code>n - 1</code>. Throws an exception if <code>n</code> is a negative number.<pre><code class=language-js>const factorial = n =>
-  n &lt; 0 ? (() => { throw new TypeError('Negative numbers are not allowed!') })()
+</code></pre>
+</div></div><br/><h2 style="text-align:center;">Math</h2>
+<div class="card fluid"><div class="section double-padded"><h3 id="arrayaverage">arrayAverage</h3></div><div class="section double-padded">
+<p>Returns the average of an array of numbers.</p>
+<p>Use <code>Array.reduce()</code> to add each value to an accumulator, initialized with a value of <code>0</code>, divide by the <code>length</code> of the array.</p>
+<pre><code class="language-js">const arrayAverage = arr =&gt; arr.reduce((acc, val) =&gt; acc + val, 0) / arr.length;
+// arrayAverage([1,2,3]) -&gt; 2
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="arraysum">arraySum</h3></div><div class="section double-padded">
+<p>Returns the sum of an array of numbers.</p>
+<p>Use <code>Array.reduce()</code> to add each value to an accumulator, initialized with a value of <code>0</code>.</p>
+<pre><code class="language-js">const arraySum = arr =&gt; arr.reduce((acc, val) =&gt; acc + val, 0);
+// arraySum([1,2,3,4]) -&gt; 10
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="clampnumber">clampNumber</h3></div><div class="section double-padded">
+<p>Clamps <code>num</code> within the inclusive <code>lower</code> and <code>upper</code> bounds.</p>
+<p>If <code>lower</code> is greater than <code>upper</code>, swap them.
+If <code>num</code> falls within the range, return <code>num</code>.
+Otherwise return the nearest number in the range.</p>
+<pre><code class="language-js">const clampNumber = (num, lower, upper) =&gt; {
+  if(lower &gt; upper) upper = [lower, lower = upper][0];
+  return (num&gt;=lower &amp;&amp; num&lt;=upper) ? num : ((num &lt; lower) ? lower : upper)
+}
+// clampNumber(2, 3, 5) -&gt; 3
+// clampNumber(1, -1, -5) -&gt; -1
+// clampNumber(3, 2, 4) -&gt; 3
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="collatz">collatz</h3></div><div class="section double-padded">
+<p>Applies the Collatz algorithm.</p>
+<p>If <code>n</code> is even, return <code>n/2</code>. Otherwise  return <code>3n+1</code>.</p>
+<pre><code class="language-js">const collatz = n =&gt; (n % 2 == 0) ? (n / 2) : (3 * n + 1);
+// collatz(8) --&gt; 4
+// collatz(5) --&gt; 16
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="digitize">digitize</h3></div><div class="section double-padded">
+<p>Converts a number to an array of digits.</p>
+<p>Convert the number to a string, using spread operators in ES6(<code>[...string]</code>) build an array.
+Use <code>Array.map()</code> and <code>parseInt()</code> to transform each value to an integer.</p>
+<pre><code class="language-js">const digitize = n =&gt; [...''+n].map(i =&gt; parseInt(i));
+// digitize(2334) -&gt; [2, 3, 3, 4]
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="distance">distance</h3></div><div class="section double-padded">
+<p>Returns the distance between two points.</p>
+<p>Use <code>Math.hypot()</code> to calculate the Euclidean distance between two points.</p>
+<pre><code class="language-js">const distance = (x0, y0, x1, y1) =&gt; Math.hypot(x1 - x0, y1 - y0);
+// distance(1,1, 2,3) -&gt; 2.23606797749979
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="factorial">factorial</h3></div><div class="section double-padded">
+<p>Calculates the factorial of a number.</p>
+<p>Use recursion.
+If <code>n</code> is less than or equal to <code>1</code>, return <code>1</code>.
+Otherwise, return the product of <code>n</code> and the factorial of <code>n - 1</code>.
+Throws an exception if <code>n</code> is a negative number.</p>
+<pre><code class="language-js">const factorial = n =&gt;
+  n &lt; 0 ? (() =&gt; { throw new TypeError('Negative numbers are not allowed!') })()
   : n &lt;= 1 ? 1 : n * factorial(n - 1);
 // factorial(6) -> 720
 </code></pre></div></div><br><div class="card fluid"><div class="section double-padded"><h3 id=fibonacci>fibonacci</h3></div><div class="section double-padded"><p>Generates an array, containing the Fibonacci sequence, up until the nth term.<p>Create an empty array of the specific length, initializing the first two values (<code>0</code> and <code>1</code>). Use <code>Array.reduce()</code> to add values into the array, using the sum of the last two values, except for the first two.<pre><code class=language-js>const fibonacci = n =>
@@ -503,17 +560,47 @@ async function sleepyWork() {
 // gcd (8, 36) -> 4
 </code></pre></div></div><br><div class="card fluid"><div class="section double-padded"><h3 id=hammingdistance>hammingDistance</h3></div><div class="section double-padded"><p>Calculates the Hamming distance between two values.<p>Use XOR operator (<code>^</code>) to find the bit difference between the two numbers, convert to binary string using <code>toString(2)</code>. Count and return the number of <code>1</code>s in the string, using <code>match(/1/g)</code>.<pre><code class=language-js>const hammingDistance = (num1, num2) =>
   ((num1 ^ num2).toString(2).match(/1/g) || '').length;
-// hammingDistance(2,3) -> 1
-</code></pre></div></div><br><div class="card fluid"><div class="section double-padded"><h3 id=isarmstrongnumber>isArmstrongNumber</h3></div><div class="section double-padded"><p>Checks if the given number is an armstrong number or not.<p>Convert the given number into array of digits. Use <code>Math.pow()</code> to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return <code>true</code> otherwise <code>false</code>.<pre><code class=language-js>const isArmstrongNumber = digits =>
-  ( arr => arr.reduce( ( a, d ) => a + Math.pow( parseInt( d ), arr.length ), 0 ) == digits ? true : false )( ( digits+'' ).split( '' ) );
-// isArmstrongNumber(1634) -> true
-// isArmstrongNumber(371) -> true
-// isArmstrongNumber(56) -> false
-</code></pre></div></div><br><div class="card fluid"><div class="section double-padded"><h3 id=isdivisible>isDivisible</h3></div><div class="section double-padded"><p>Checks if the first numeric argument is divisible by the second one.<p>Use the modulo operator (<code>%</code>) to check if the remainder is equal to <code>0</code>.<pre><code class=language-js>const isDivisible = (dividend, divisor) => dividend % divisor === 0;
-// isDivisible(6,3) -> true
-</code></pre></div></div><br><div class="card fluid"><div class="section double-padded"><h3 id=iseven>isEven</h3></div><div class="section double-padded"><p>Returns <code>true</code> if the given number is even, <code>false</code> otherwise.<p>Checks whether a number is odd or even using the modulo (<code>%</code>) operator. Returns <code>true</code> if the number is even, <code>false</code> if the number is odd.<pre><code class=language-js>const isEven = num => num % 2 === 0;
-// isEven(3) -> false
-</code></pre></div></div><br><div class="card fluid"><div class="section double-padded"><h3 id=isprime>isPrime</h3></div><div class="section double-padded"><p>Checks if the provided integer is a prime number.<p>Returns <code>false</code> if the provided number has positive divisors other than 1 and itself or if the number itself is less than 2.<pre><code class=language-js>const isPrime = num => {
+// hammingDistance(2,3) -&gt; 1
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="inrange">inRange</h3></div><div class="section double-padded">
+<p>Checks if the given number falls in the given range.</p>
+<p>Use arithmetic comparison to check if the given number is in the specified range.
+If the second parameter, <code>end</code>, is not specified, the reange is considered to be from <code>0</code> to <code>start</code>.</p>
+<pre><code class="language-js">const inRange = (n, start, end=null) =&gt; {
+  if(end &amp;&amp; start &gt; end) end = [start, start=end][0];
+  return (end == null) ? (n&gt;=0 &amp;&amp; n&lt;start) : (n&gt;=start &amp;&amp; n&lt;end);
+}
+// inRange(3, 2, 5) -&gt; true
+// inRange(3, 4) -&gt; true
+// inRange(2, 3, 5) -&gt; false
+// inrange(3, 2) -&gt; false
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isarmstrongnumber">isArmstrongNumber</h3></div><div class="section double-padded">
+<p>Checks if the given number is an armstrong number or not.</p>
+<p>Convert the given number into array of digits. Use <code>Math.pow()</code> to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return <code>true</code> otherwise <code>false</code>.</p>
+<pre><code class="language-js">const isArmstrongNumber = digits =&gt;
+  ( arr =&gt; arr.reduce( ( a, d ) =&gt; a + Math.pow( parseInt( d ), arr.length ), 0 ) == digits ? true : false )( ( digits+'' ).split( '' ) );
+// isArmstrongNumber(1634) -&gt; true
+// isArmstrongNumber(371) -&gt; true
+// isArmstrongNumber(56) -&gt; false
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isdivisible">isDivisible</h3></div><div class="section double-padded">
+<p>Checks if the first numeric argument is divisible by the second one.</p>
+<p>Use the modulo operator (<code>%</code>) to check if the remainder is equal to <code>0</code>.</p>
+<pre><code class="language-js">const isDivisible = (dividend, divisor) =&gt; dividend % divisor === 0;
+// isDivisible(6,3) -&gt; true
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="iseven">isEven</h3></div><div class="section double-padded">
+<p>Returns <code>true</code> if the given number is even, <code>false</code> otherwise.</p>
+<p>Checks whether a number is odd or even using the modulo (<code>%</code>) operator.
+Returns <code>true</code> if the number is even, <code>false</code> if the number is odd.</p>
+<pre><code class="language-js">const isEven = num =&gt; num % 2 === 0;
+// isEven(3) -&gt; false
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isprime">isPrime</h3></div><div class="section double-padded">
+<p>Checks if the provided integer is a prime number.</p>
+<p>Returns <code>false</code> if the provided number has positive divisors other than 1 and itself or if the number itself is less than 2.</p>
+<pre><code class="language-js">const isPrime = num =&gt; {
   for (var i = 2; i &lt; num; i++) if (num % i == 0) return false;
   return num >= 2;
 }

@@ -52,6 +52,7 @@
 * [`union`](#union)
 * [`without`](#without)
 * [`zip`](#zip)
+* [`zipObject`](#zipobject)
 
 ### Browser
 * [`arrayToHtmlList`](#arraytohtmllist)
@@ -81,6 +82,7 @@
 ### Math
 * [`arrayAverage`](#arrayaverage)
 * [`arraySum`](#arraysum)
+* [`clampNumber`](#clampnumber)
 * [`collatz`](#collatz)
 * [`digitize`](#digitize)
 * [`distance`](#distance)
@@ -88,6 +90,7 @@
 * [`fibonacci`](#fibonacci)
 * [`gcd`](#gcd)
 * [`hammingDistance`](#hammingdistance)
+* [`inRange`](#inrange)
 * [`isArmstrongNumber`](#isarmstrongnumber)
 * [`isDivisible`](#isdivisible)
 * [`isEven`](#iseven)
@@ -783,6 +786,20 @@ const zip = (...arrays) => {
 ```
 
 [⬆ back to top](#table-of-contents)
+
+### zipObject
+
+Given an array of valid property identifiers and an array of values, return an object associating the properties to the values.
+
+Since an object can have undefined values but not undefined property pointers, the array of properties is used to decide the structure of the resulting object using `Array.reduce()`.
+
+```js
+const zipObject = ( props, values ) => props.reduce( ( obj, prop, index ) => ( obj[prop] = values[index], obj ), {} )
+// zipObject(['a','b','c'], [1,2]) -> {a: 1, b: 2, c: undefined}
+// zipObject(['a','b'], [1,2,3]) -> {a: 1, b: 2}
+```
+
+[⬆ back to top](#table-of-contents)
 ## Browser
 
 ### arrayToHtmlList
@@ -1135,6 +1152,26 @@ const arraySum = arr => arr.reduce((acc, val) => acc + val, 0);
 
 [⬆ back to top](#table-of-contents)
 
+### clampNumber
+
+Clamps `num` within the inclusive `lower` and `upper` bounds.
+
+If `lower` is greater than `upper`, swap them. 
+If `num` falls within the range, return `num`. 
+Otherwise return the nearest number in the range.
+
+```js
+const clampNumber = (num, lower, upper) => {
+  if(lower > upper) upper = [lower, lower = upper][0];
+  return (num>=lower && num<=upper) ? num : ((num < lower) ? lower : upper) 
+}
+// clampNumber(2, 3, 5) -> 3
+// clampNumber(1, -1, -5) -> -1
+// clampNumber(3, 2, 4) -> 3
+```
+
+[⬆ back to top](#table-of-contents)
+
 ### collatz
 
 Applies the Collatz algorithm.
@@ -1235,6 +1272,26 @@ Count and return the number of `1`s in the string, using `match(/1/g)`.
 const hammingDistance = (num1, num2) =>
   ((num1 ^ num2).toString(2).match(/1/g) || '').length;
 // hammingDistance(2,3) -> 1
+```
+
+[⬆ back to top](#table-of-contents)
+
+### inRange
+
+Checks if the given number falls in the given range. 
+
+Use arithmetic comparison to check if the given number is in the specified range.
+If the second parameter, `end`, is not specified, the reange is considered to be from `0` to `start`.
+
+```js
+const inRange = (n, start, end=null) => {
+  if(end && start > end) end = [start, start=end][0];
+  return (end == null) ? (n>=0 && n<start) : (n>=start && n<end);
+}
+// inRange(3, 2, 5) -> true
+// inRange(3, 4) -> true
+// inRange(2, 3, 5) -> false
+// inrange(3, 2) -> false
 ```
 
 [⬆ back to top](#table-of-contents)
