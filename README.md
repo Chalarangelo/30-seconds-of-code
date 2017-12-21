@@ -154,7 +154,6 @@
 * [`toDecimalMark`](#todecimalmark)
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`UUIDGenerator`](#uuidgenerator)
-* [`validateEmail`](#validateemail)
 * [`validateNumber`](#validatenumber)
 
 ## Array
@@ -355,8 +354,8 @@ Returns every nth element in an array.
 Use `Array.filter()` to create a new array that contains every nth element of a given array.
 
 ```js
-const everyNth = (arr, nth) => arr.filter((e, i) => i % nth === 0);
-// everyNth([1,2,3,4,5,6], 2) -> [ 1, 3, 5 ]
+const everyNth = (arr, nth) => arr.filter((e, i) => i % nth === nth - 1);
+// everyNth([1,2,3,4,5,6], 2) -> [ 2, 4, 6 ]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2163,21 +2162,6 @@ const UUIDGenerator = () =>
     (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
   );
 // UUIDGenerator() -> '7982fcfe-5721-4632-bede-6000885be57d'
-```
-
-[⬆ back to top](#table-of-contents)
-
-### validateEmail
-
-Returns `true` if the given string is a valid  email, `false` otherwise.
-
-Use a regular expression to check if the email is valid.
-Returns `true` if email is valid, `false` if not.
-
-```js
-const validateEmail = str =>
-  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(str);
-// validateEmail(mymail@gmail.com) -> true
 ```
 
 [⬆ back to top](#table-of-contents)
