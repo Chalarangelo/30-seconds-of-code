@@ -43,6 +43,7 @@
 
 <h3>Array
 </h3><a class="sublink-1" href="#arraygcd">arrayGcd</a>
+<a class="sublink-1" href="#arraylcm">arrayLcm</a>
 <a class="sublink-1" href="#arraymax">arrayMax</a>
 <a class="sublink-1" href="#arraymin">arrayMin</a>
 <a class="sublink-1" href="#chunk">chunk</a>
@@ -197,6 +198,17 @@
 }
 // arrayGcd([1,2,3,4,5]) -&gt; 1
 // arrayGcd([4,8,12]) -&gt; 4
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="arraylcm">arrayLcm</h3></div><div class="section double-padded">
+<p>Calculates the lowest  common multiple  (lcm) of an array of numbers.</p>
+<p>Use <code>Array.reduce()</code> and the <code>lcm</code> formula (uses recursion) to calculate the lowest  common multiple  of an array of numbers.</p>
+<pre><code class="language-js">const arrayLcm = arr =&gt;{
+  const gcd = (x, y) =&gt; !y ? x : gcd(y, x % y);
+  const lcm = (x, y) =&gt; (x*y)/gcd(x, y) 
+  return arr.reduce((a,b) =&gt; lcm(a,b));
+}
+// arrayLcm([1,2,3,4,5]) -&gt; 60
+// arrayLcm([4,8,12]) -&gt; 24
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="arraymax">arrayMax</h3></div><div class="section double-padded">
 <p>Returns the maximum value in an array.</p>
