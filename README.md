@@ -12,6 +12,7 @@
 
 ### Array
 * [`arrayGcd`](#arraygcd)
+* [`arrayLcm`](#arraylcm)
 * [`arrayMax`](#arraymax)
 * [`arrayMin`](#arraymin)
 * [`chunk`](#chunk)
@@ -150,6 +151,7 @@
 * [`isSymbol`](#issymbol)
 * [`RGBToHex`](#rgbtohex)
 * [`timeTaken`](#timetaken)
+* [`toDecimalMark`](#todecimalmark)
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`UUIDGenerator`](#uuidgenerator)
 * [`validateEmail`](#validateemail)
@@ -170,6 +172,24 @@ const arrayGcd = arr =>{
 }
 // arrayGcd([1,2,3,4,5]) -> 1
 // arrayGcd([4,8,12]) -> 4
+```
+
+[⬆ back to top](#table-of-contents)
+
+### arrayLcm
+
+Calculates the lowest  common multiple  (lcm) of an array of numbers.
+
+Use `Array.reduce()` and the `lcm` formula (uses recursion) to calculate the lowest  common multiple  of an array of numbers.
+
+```js
+const arrayLcm = arr =>{
+  const gcd = (x, y) => !y ? x : gcd(y, x % y);
+  const lcm = (x, y) => (x*y)/gcd(x, y) 
+  return arr.reduce((a,b) => lcm(a,b));
+}
+// arrayLcm([1,2,3,4,5]) -> 60
+// arrayLcm([4,8,12]) -> 24
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2087,6 +2107,26 @@ const timeTaken = callback => {
 };
 // timeTaken(() => Math.pow(2, 10)) -> 1024
 // (logged): timeTaken: 0.02099609375ms
+```
+
+[⬆ back to top](#table-of-contents)
+
+### toDecimalMark
+
+Convert a float-point arithmetic to the [Decimal mark](https://en.wikipedia.org/wiki/Decimal_mark) form.
+
+Use `toString()` to convert the float `num` to a string, then use regex to separate every three characters of the integer part with a comma.
+
+ ```js
+const toDecimalMark = (num) => {
+  let cleanNum = num.toString().split('').filter(n => '0123456789.'.includes(n)).join('') 
+  let wholeNum = cleanNum.split('.')[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+  let decNum = `.${cleanNum.split('.')[1]}`
+  return wholeNum + decNum;
+}
+// toDecimalMark(12305030388.9087) //-> '12,305,030,388.9087'
+// toDecimalMark(123.889087e2) //-> '12,388.9087'
+// toDecimalMark('12305abc030388.9087') // -> '12,305,030,388.9087'
 ```
 
 [⬆ back to top](#table-of-contents)
