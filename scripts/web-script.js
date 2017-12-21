@@ -1,10 +1,11 @@
 /*
-  This is the builder script that generates the README file.
-  Run using `npm run builder`.
+  This is the web builder script that generates the README file.
+  Run using `npm run webber`.
 */
 // Load modules
 const fs = require('fs-extra'), path = require('path'), chalk = require('chalk'),
-  md = require('markdown-it')();
+  md = require('markdown-it')(), minify = require('html-minifier').minify;
+// Compile the mini.css framework and custom CSS styles, using `node-sass`.
 const sass = require('node-sass');
   sass.render({
     file: path.join('docs','mini','flavor.scss'),
@@ -75,7 +76,7 @@ try {
       output += md.render(`[${taggedSnippet[0]}](#${taggedSnippet[0].toLowerCase()})\n`).replace(/<p>/g,'').replace(/<\/p>/g,'').replace(/<a/g,'<a class="sublink-1"');
     output += '\n';
   }
-  output += `</nav><main class="col-sm-12 col-md-8 col-lg-9" style="height: 100%;overflow-y: auto; background: #eee;">`;
+  output += `</nav><main class="col-sm-12 col-md-8 col-lg-9" style="height: 100%;overflow-y: auto; background: #eceef2;">`;
   output += `<a id="top">&nbsp;</a>`;
   // Loop over tags and snippets to create the list of snippets
   for(let tag of [...new Set(Object.entries(tagDbData).map(t => t[1]))].filter(v => v).sort((a,b) => a.localeCompare(b))){
@@ -85,6 +86,23 @@ try {
   }
   // Add the ending static part
   output += `\n${endPart+'\n'}`;
+  // Minify output
+  output = minify(output, {
+    collapseBooleanAttributes: true,
+    collapseWhitespace: false,
+    decodeEntities: false,
+    minifyCSS: true,
+    minifyJS: true,
+    keepClosingSlash: true,
+    processConditionalComments: true,
+    removeAttributeQuotes: false,
+    removeComments: true,
+    removeEmptyAttributes: false,
+    removeOptionalTags: false,
+    removeScriptTypeAttributes: false,
+    removeStyleLinkTypeAttributes: false,
+    trimCustomFragments: true,
+  });
   // Write to the index.html file
   fs.writeFileSync(path.join(docsPath,'index.html'), output);
 }

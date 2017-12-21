@@ -1,5 +1,6 @@
 anagrams:string
 arrayAverage:math
+arrayGcd:array
 arrayMax:array
 arrayMin:array
 arraySum:math
@@ -9,6 +10,7 @@ capitalize:string
 capitalizeEveryWord:string
 chainAsync:function
 chunk:array
+clampNumber:math
 cleanObj:object
 coalesce:utility
 coalesceFactory:utility
@@ -47,10 +49,12 @@ groupBy:array
 hammingDistance:math
 head:array
 hexToRGB:utility
+httpsRedirect:browser
 initial:array
 initialize2DArray:array
 initializeArrayWithRange:array
 initializeArrayWithValues:array
+inRange:math
 intersection:array
 isArmstrongNumber:math
 isArray:utility
@@ -77,6 +81,7 @@ percentile:math
 pick:array
 pipe:function
 powerset:math
+primes:math
 promisify:function
 pull:array
 pullAtIndex:array
@@ -117,3 +122,4 @@ validateEmail:utility
 validateNumber:utility
 without:array
 zip:array
+zipObject:array

@@ -1,0 +1,87 @@
+Command line:
+"travis encrypt --add"
+
+
+   ________                                 __
+  /        |                               /  |
+  ########/ ______    ______    __     __  ##/    _______
+     ## |  /      \  /      \  /  \   /  | /  |  /       |
+     ## | /######  | ######  | ##  \ /##/  ## | /#######/
+     ## | ## |  ##/  /    ## |  ##  /##/   ## | ##      \
+     ## | ## |      /####### |   ## ##/    ## |  ######  |
+     ## | ## |      ##    ## |    ###/     ## | /     ##/
+     ##/  ##/        #######/      #/      ##/  #######/
+
+     TRajectory Analyzer and VISualizer  -  Open-source freeware under GNU GPL v3
+
+     Copyright (c) Martin Brehm      (2009-2015)
+                   Martin Thomas     (2012-2015)
+                   Barbara Kirchner  (2009-2015)
+                   University of Leipzig / University of Bonn.
+
+     http://www.travis-analyzer.de
+
+     Please cite:
+     M. Brehm and B. Kirchner, J. Chem. Inf. Model. 2011, 51 (8), pp 2007-2023.
+
+     There is absolutely no warranty on any results obtained from TRAVIS.
+
+  #  Running on pl4gue at Thu Dec 21 11:44:39 2017 (PID 25714).
+  #  Running in /home/pl4gue/Programming/30-seconds-of-code
+  #  Source code version: Nov 07 2015.
+  #  Compiled at Nov 17 2015 23:12:21.
+  #  Compiler version: 5.2.1 20151028
+  #  Target platform: Linux
+  #  Compile flags: DEBUG_ARRAYS 
+  #  Machine: int=4b, long=8b, addr=8b, 0xA0B0C0D0=D0,C0,B0,A0.
+  #  User home: /home/pl4gue
+  #  Exe path: /usr/bin/travis
+  #  Input is redirected, Output to terminal
+
+ >>> Please use a color scheme with dark background or specify "-nocolor"! <<<
+
+    No configuration file found.
+    Writing default configuration to /home/pl4gue/.travis.conf ...
+
+Unknown parameter: "encrypt".
+
+    List of supported command line options:
+
+      -p <file>       Loads position data from the specified trajectory file.
+                      The file format may be *.xyz, *.pdb, *.lmp (Lammps), HISTORY (DLPOLY), or *.prmtop/*.mdcrd (Amber).
+      -i <file>       Reads input from the specified text file.
+
+      -config <file>  Load the specified configuration file.
+      -stream         Treats input trajectory as a stream (e.g. named pipe): No fseek, etc.
+      -showconf       Shows a tree structure of the configuration file.
+      -writeconf      Writes the default configuration file, including all defines values.
+
+      -verbose        Show detailed information about what's going on.
+      -nocolor        Executes TRAVIS in monochrome mode.
+      -dimcolor       Uses dim instead of bright colors.
+
+      -credits        Display a list of persons who contributed to TRAVIS.
+      -help, -?       Shows this help.
+
+    If only one argument is specified, it is assumed to be the name of a trajectory file.
+    If argument is specified at all, TRAVIS asks for the trajectory file to open.
+
+
+    Note: To show a list of all persons who contributed to TRAVIS,
+          please add "-credits" to your command line arguments, or set the
+          variable "SHOWCREDITS" to "TRUE" in your travis.conf file.
+
+    Source code from other projects used in TRAVIS:
+      - lmfit     from Joachim Wuttke
+      - kiss_fft  from Mark Borgerding
+      - voro++    from Chris Rycroft
+
+    http://www.travis-analyzer.de
+
+    Please cite:
+
+  * "TRAVIS - A Free Analyzer and Visualizer for Monte Carlo and Molecular Dynamics Trajectories",
+    M. Brehm, B. Kirchner; J. Chem. Inf. Model. 2011, 51 (8), pp 2007-2023.
+
+*** The End ***
+

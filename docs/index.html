@@ -8,24 +8,11 @@
     <meta name="description" content="Curated collection of useful Javascript snippets that you can understand in 30 seconds or less.">
     <meta name="keywords" content="javascript, snippets, code, programming">
     <meta name="author" content="Angelos Chalaris (chalarangelo@gmail.com)">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta property="og:title" content="30 seconds of code">
-    <meta property="og:description" content="Curated collection of useful Javascript snippets that you can understand in 30 seconds or less." />
-    <meta property="og:type" content="website" /><meta property="og:image" content="favicon.png">
+    <meta property="og:description" content="Curated collection of useful Javascript snippets that you can understand in 30 seconds or less."/>
+    <meta property="og:type" content="website"/><meta property="og:image" content="favicon.png">
     <link rel="icon" type="image/png" href="favicon.png">
-    <style>
-      html, * { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, sans-serif; }
-      code, pre, kbd, code *, pre *, kbd * { font-family: 'Inconsolata', Menlo, Consolas, monospace; }
-      code, kbd { font-size: 1em; }
-      code { transform: scale(1); } /* Deals with the issue described in #243 */
-      pre { font-size: 1rem; border: 0.0625rem solid var(--secondary-border-color); border-radius: var(--universal-border-radius);}
-      .group{position:relative;margin-top:2em;margin-bottom:-1em}
-      .search{font-size:14px;margin-top:-.1em;display:block;width:100%;border:none;border-bottom:1px solid var(--nav-link-color)}
-      .search:focus{outline:none}
-      label#search-label{color:var(--nav-link-color);font-size:18px;font-weight:400;position:absolute;left:5px;top:10px}
-      .search:focus ~ label#search-label,.search:valid ~ label#search-label{top:-20px;font-size:14px;color:var(--nav-link-color)}
-      label#menu-toggle { width: 3.4375rem;}
-    </style>
     <link rel="stylesheet" href="prism.css">
   </head>
   <script>
@@ -36,16 +23,16 @@
     }
   </script>
   <body>
-    <a href="https://github.com/Chalarangelo/30-seconds-of-code" class="github-corner" aria-label="View source on Github"><svg width="90" height="90" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
-    <header style="height: 5.5rem;">
-      <h1 class="logo" style="margin-top: -0.8rem; text-align:center;"><a style="text-decoration:none;color:black" href="https://github.com/Chalarangelo/30-seconds-of-code"><img src="favicon.png" style="height: 4rem;"/><span style="position:relative; top: -1rem;">&nbsp;30 seconds of code</span></a>
-        <small style="display:block; font-size: 1rem; font-style: italic; color: grey; margin-top: -0.8rem">Curated collection of useful JavaScript snippets that you can understand in 30 seconds or less.</small>
+    <a href="https://github.com/Chalarangelo/30-seconds-of-code" class="github-corner" aria-label="View source on Github"><svg width="90" height="90" viewBox="0 0 250 250" style="fill:#151513;color:#fff;position:absolute;top:0;border:0;right:0" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin:130px 106px" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header style="height:5.5rem">
+      <h1 class="logo" href="https://github.com/Chalarangelo/30-seconds-of-code"><img src="favicon.png" style="height:4rem"/><span id="title">&nbsp;30 seconds of code</span>
+        <small>Curated collection of useful JavaScript snippets that you can understand in 30 seconds or less.</small>
       </h1>
-      <label for="doc-drawer-checkbox" class="button drawer-toggle" style="position: absolute; left: 0; top: 0;width: 3.4375rem;"></label>
+      <label for="doc-drawer-checkbox" class="button drawer-toggle" id="menu-toggle"></label>
     </header>
-    <div class="row" style="height: calc(100vh - 5.875rem);overflow: hidden;">
+    <div class="row" style="height:calc(100vh - 5.875rem);overflow:hidden">
       <input id="doc-drawer-checkbox" class="drawer" value="on" type="checkbox">
-        <nav class="col-md-4 col-lg-3" style="border-top: 0">
+        <nav class="col-md-4 col-lg-3" style="border-top:0">
           <div class="group">
           <input class="search" type="text" id="searchInput" onkeyup="search(this)">
           <span class="highlight"></span>
@@ -55,7 +42,8 @@
           <label for="doc-drawer-checkbox" class="button drawer-close"></label>
 
 <h3>Array
-</h3><a class="sublink-1" href="#arraymax">arrayMax</a>
+</h3><a class="sublink-1" href="#arraygcd">arrayGcd</a>
+<a class="sublink-1" href="#arraymax">arrayMax</a>
 <a class="sublink-1" href="#arraymin">arrayMin</a>
 <a class="sublink-1" href="#chunk">chunk</a>
 <a class="sublink-1" href="#compact">compact</a>
@@ -95,6 +83,7 @@
 <a class="sublink-1" href="#union">union</a>
 <a class="sublink-1" href="#without">without</a>
 <a class="sublink-1" href="#zip">zip</a>
+<a class="sublink-1" href="#zipobject">zipObject</a>
 
 <h3>Browser
 </h3><a class="sublink-1" href="#arraytohtmllist">arrayToHtmlList</a>
@@ -103,6 +92,7 @@
 <a class="sublink-1" href="#elementisvisibleinviewport">elementIsVisibleInViewport</a>
 <a class="sublink-1" href="#getscrollposition">getScrollPosition</a>
 <a class="sublink-1" href="#geturlparameters">getURLParameters</a>
+<a class="sublink-1" href="#httpsredirect">httpsRedirect</a>
 <a class="sublink-1" href="#redirect">redirect</a>
 <a class="sublink-1" href="#scrolltotop">scrollToTop</a>
 
@@ -124,6 +114,7 @@
 <h3>Math
 </h3><a class="sublink-1" href="#arrayaverage">arrayAverage</a>
 <a class="sublink-1" href="#arraysum">arraySum</a>
+<a class="sublink-1" href="#clampnumber">clampNumber</a>
 <a class="sublink-1" href="#collatz">collatz</a>
 <a class="sublink-1" href="#digitize">digitize</a>
 <a class="sublink-1" href="#distance">distance</a>
@@ -131,6 +122,7 @@
 <a class="sublink-1" href="#fibonacci">fibonacci</a>
 <a class="sublink-1" href="#gcd">gcd</a>
 <a class="sublink-1" href="#hammingdistance">hammingDistance</a>
+<a class="sublink-1" href="#inrange">inRange</a>
 <a class="sublink-1" href="#isarmstrongnumber">isArmstrongNumber</a>
 <a class="sublink-1" href="#isdivisible">isDivisible</a>
 <a class="sublink-1" href="#iseven">isEven</a>
@@ -140,6 +132,7 @@
 <a class="sublink-1" href="#palindrome">palindrome</a>
 <a class="sublink-1" href="#percentile">percentile</a>
 <a class="sublink-1" href="#powerset">powerset</a>
+<a class="sublink-1" href="#primes">primes</a>
 <a class="sublink-1" href="#randomintegerinrange">randomIntegerInRange</a>
 <a class="sublink-1" href="#randomnumberinrange">randomNumberInRange</a>
 <a class="sublink-1" href="#round">round</a>
@@ -193,8 +186,18 @@
 <a class="sublink-1" href="#validateemail">validateEmail</a>
 <a class="sublink-1" href="#validatenumber">validateNumber</a>
 
-</nav><main class="col-sm-12 col-md-8 col-lg-9" style="height: 100%;overflow-y: auto; background: #eee;"><a id="top">&nbsp;</a><h2 style="text-align:center;">Array</h2>
-<div class="card fluid"><div class="section double-padded"><h3 id="arraymax">arrayMax</h3></div><div class="section double-padded">
+</nav><main class="col-sm-12 col-md-8 col-lg-9" style="height:100%;overflow-y:auto;background:#eceef2"><a id="top">&nbsp;</a><h2 style="text-align:center">Array</h2>
+<div class="card fluid"><div class="section double-padded"><h3 id="arraygcd">arrayGcd</h3></div><div class="section double-padded">
+<p>Calculates the greatest common denominator (gcd) of an array of numbers.</p>
+<p>Use <code>Array.reduce()</code> and the <code>gcd</code> formula (uses recursion) to calculate the greatest common denominator of an array of numbers.</p>
+<pre><code class="language-js">const arrayGcd = arr =&gt;{
+  const gcd = (x, y) =&gt; !y ? x : gcd(y, x % y);
+  return arr.reduce((a,b) =&gt; gcd(a,b));
+}
+// arrayGcd([1,2,3,4,5]) -&gt; 1
+// arrayGcd([4,8,12]) -&gt; 4
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="arraymax">arrayMax</h3></div><div class="section double-padded">
 <p>Returns the maximum value in an array.</p>
 <p>Use <code>Math.max()</code> combined with the spread operator (<code>...</code>) to get the maximum value in the array.</p>
 <pre><code class="language-js">const arrayMax = arr =&gt; Math.max(...arr);
@@ -388,8 +391,10 @@ Omit the second argument, <code>n</code>, to get the first element of the array.
 Use <code>Array.length = 0</code> to mutate the passed in array by resetting it's length to zero and <code>Array.push()</code> to re-populate it with only the pulled values.</p>
 <p><em>(For a snippet that does not mutate the original array see <a href="#without"><code>without</code></a>)</em></p>
 <pre><code class="language-js">const pull = (arr, ...args) =&gt; {
-  let pulled = arr.filter((v, i) =&gt; !args.toString().split(',').includes(v));
-  arr.length = 0; pulled.forEach(v =&gt; arr.push(v));
+  let argState = Array.isArray(args[0]) ? args[0] : args;
+  let pulled = arr.filter((v, i) =&gt; !argState.includes(v));
+  arr.length = 0; 
+  pulled.forEach(v =&gt; arr.push(v));
 };
 
 // let myArray1 = ['a', 'b', 'c', 'a', 'b', 'c'];
@@ -527,7 +532,14 @@ If lengths of the argument-arrays vary, <code>undefined</code> is used where no 
 //zip(['a', 'b'], [1, 2], [true, false]); -&gt; [['a', 1, true], ['b', 2, false]]
 //zip(['a'], [1, 2], [true, false]); -&gt; [['a', 1, true], [undefined, 2, false]]
 </code></pre>
-</div></div><br/><h2 style="text-align:center;">Browser</h2>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="zipobject">zipObject</h3></div><div class="section double-padded">
+<p>Given an array of valid property identifiers and an array of values, return an object associating the properties to the values.</p>
+<p>Since an object can have undefined values but not undefined property pointers, the array of properties is used to decide the structure of the resulting object using <code>Array.reduce()</code>.</p>
+<pre><code class="language-js">const zipObject = ( props, values ) =&gt; props.reduce( ( obj, prop, index ) =&gt; ( obj[prop] = values[index], obj ), {} )
+// zipObject(['a','b','c'], [1,2]) -&gt; {a: 1, b: 2, c: undefined}
+// zipObject(['a','b'], [1,2,3]) -&gt; {a: 1, b: 2}
+</code></pre>
+</div></div><br/><h2 style="text-align:center">Browser</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="arraytohtmllist">arrayToHtmlList</h3></div><div class="section double-padded">
 <p>Converts the given array elements into <code>&lt;li&gt;</code> tags and appends them to the list of the given id.</p>
 <p>Use <code>Array.map()</code> and <code>document.querySelector()</code> to create a list of html tags.</p>
@@ -583,6 +595,13 @@ Pass <code>location.search</code> as the argument to apply to the current <code>
   );
 // getURLParameters('http://url.com/page?name=Adam&amp;surname=Smith') -&gt; {name: 'Adam', surname: 'Smith'}
 </code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="httpsredirect">httpsRedirect</h3></div><div class="section double-padded">
+<p>Redirects the page to HTTPS if its currently in HTTP. Also, pressing the back button doesn't take it back to the HTTP page as its replaced in the history.</p>
+<p>Use <code>location.protocol</code> to get the protocol currently being used. If it's not HTTPS, use <code>location.replace()</code> to replace the existing page with the HTTPS version of the page. Use <code>location.href</code> to get the full address, split it with <code>String.split()</code> and remove the protocol part of the URL.</p>
+<pre><code class="language-js">const httpsRedirect = () =&gt; {
+  if(location.protocol !== &quot;https:&quot;) location.replace(&quot;https://&quot; + location.href.split(&quot;//&quot;)[1]);
+}
+</code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="redirect">redirect</h3></div><div class="section double-padded">
 <p>Redirects to a specified URL.</p>
 <p>Use <code>window.location.href</code> or <code>window.location.replace()</code> to redirect to <code>url</code>.
@@ -604,7 +623,7 @@ Scroll by a fraction of the distance from top. Use <code>window.requestAnimation
 };
 // scrollToTop()
 </code></pre>
-</div></div><br/><h2 style="text-align:center;">Date</h2>
+</div></div><br/><h2 style="text-align:center">Date</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="getdaysdiffbetweendates">getDaysDiffBetweenDates</h3></div><div class="section double-padded">
 <p>Returns the difference (in days) between two dates.</p>
 <p>Calculate the difference (in days) between to <code>Date</code> objects.</p>
@@ -628,7 +647,7 @@ Throws an error if the passed time cannot be converted to a date.</p>
   {try{return new Date(time).toISOString().split('T')[0].replace(/-/g, '/')}catch(e){return}};
 // toEnglishDate('09/21/2010') -&gt; '21/09/2010'
 </code></pre>
-</div></div><br/><h2 style="text-align:center;">Function</h2>
+</div></div><br/><h2 style="text-align:center">Function</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="chainasync">chainAsync</h3></div><div class="section double-padded">
 <p>Chains asynchronous functions.</p>
 <p>Loop through an array of functions containing asynchronous events, calling <code>next</code> when each asynchronous event has completed.</p>
@@ -717,7 +736,7 @@ async function sleepyWork() {
 }
 */
 </code></pre>
-</div></div><br/><h2 style="text-align:center;">Math</h2>
+</div></div><br/><h2 style="text-align:center">Math</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="arrayaverage">arrayAverage</h3></div><div class="section double-padded">
 <p>Returns the average of an array of numbers.</p>
 <p>Use <code>Array.reduce()</code> to add each value to an accumulator, initialized with a value of <code>0</code>, divide by the <code>length</code> of the array.</p>
@@ -729,6 +748,19 @@ async function sleepyWork() {
 <p>Use <code>Array.reduce()</code> to add each value to an accumulator, initialized with a value of <code>0</code>.</p>
 <pre><code class="language-js">const arraySum = arr =&gt; arr.reduce((acc, val) =&gt; acc + val, 0);
 // arraySum([1,2,3,4]) -&gt; 10
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="clampnumber">clampNumber</h3></div><div class="section double-padded">
+<p>Clamps <code>num</code> within the inclusive <code>lower</code> and <code>upper</code> bounds.</p>
+<p>If <code>lower</code> is greater than <code>upper</code>, swap them.
+If <code>num</code> falls within the range, return <code>num</code>.
+Otherwise return the nearest number in the range.</p>
+<pre><code class="language-js">const clampNumber = (num, lower, upper) =&gt; {
+  if(lower &gt; upper) upper = [lower, lower = upper][0];
+  return (num&gt;=lower &amp;&amp; num&lt;=upper) ? num : ((num &lt; lower) ? lower : upper) 
+}
+// clampNumber(2, 3, 5) -&gt; 3
+// clampNumber(1, -1, -5) -&gt; -1
+// clampNumber(3, 2, 4) -&gt; 3
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="collatz">collatz</h3></div><div class="section double-padded">
 <p>Applies the Collatz algorithm.</p>
@@ -766,7 +798,7 @@ Throws an exception if <code>n</code> is a negative number.</p>
 <p>Create an empty array of the specific length, initializing the first two values (<code>0</code> and <code>1</code>).
 Use <code>Array.reduce()</code> to add values into the array, using the sum of the last two values, except for the first two.</p>
 <pre><code class="language-js">const fibonacci = n =&gt;
-  Array(n).fill(0).reduce((acc, val, i) =&gt; acc.concat(i &gt; 1 ? acc[i - 1] + acc[i - 2] : i), []);
+  Array.from({ length: n}).map(v =&gt; 0).reduce((acc, val, i) =&gt; acc.concat(i &gt; 1 ? acc[i - 1] + acc[i - 2] : i), []);
 // fibonacci(5) -&gt; [0,1,1,2,3]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="gcd">gcd</h3></div><div class="section double-padded">
@@ -784,6 +816,19 @@ Count and return the number of <code>1</code>s in the string, using <code>match(
 <pre><code class="language-js">const hammingDistance = (num1, num2) =&gt;
   ((num1 ^ num2).toString(2).match(/1/g) || '').length;
 // hammingDistance(2,3) -&gt; 1
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="inrange">inRange</h3></div><div class="section double-padded">
+<p>Checks if the given number falls in the given range.</p>
+<p>Use arithmetic comparison to check if the given number is in the specified range.
+If the second parameter, <code>end</code>, is not specified, the reange is considered to be from <code>0</code> to <code>start</code>.</p>
+<pre><code class="language-js">const inRange = (n, start, end=null) =&gt; {
+  if(end &amp;&amp; start &gt; end) end = [start, start=end][0];
+  return (end == null) ? (n&gt;=0 &amp;&amp; n&lt;start) : (n&gt;=start &amp;&amp; n&lt;end);
+}
+// inRange(3, 2, 5) -&gt; true
+// inRange(3, 4) -&gt; true
+// inRange(2, 3, 5) -&gt; false
+// inrange(3, 2) -&gt; false
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isarmstrongnumber">isArmstrongNumber</h3></div><div class="section double-padded">
 <p>Checks if the given number is an armstrong number or not.</p>
@@ -863,6 +908,18 @@ Then, <code>split('')</code> into individual characters, <code>reverse()</code>,
   arr.reduce((a, v) =&gt; a.concat(a.map(r =&gt; [v].concat(r))), [[]]);
 // powerset([1,2]) -&gt; [[], [1], [2], [2,1]]
 </code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="primes">primes</h3></div><div class="section double-padded">
+<p>Generates primes up to a given number, using the Sieve of Eratosthenes.</p>
+<p>Generate an array from <code>2</code> to the given number. Use <code>Array.filter()</code> to filter out the values divisible by any number from <code>2</code> to the square root of the provided number.</p>
+<pre><code class="language-js">const primes = num =&gt; {
+  let arr =  Array.from({length:num-1}).map((x,i)=&gt; i+2), 
+    sqroot  = Math.floor(Math.sqrt(num)),
+    numsTillSqroot  = Array.from({length:sqroot-1}).map((x,i)=&gt; i+2);
+  numsTillSqroot.forEach(x =&gt; arr = arr.filter(y =&gt; ((y%x)!==0)||(y==x)));
+  return arr; 
+}
+// primes(10) -&gt; [2,3,5,7] 
+</code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="randomintegerinrange">randomIntegerInRange</h3></div><div class="section double-padded">
 <p>Returns a random integer in the specified range.</p>
 <p>Use <code>Math.random()</code> to generate a random number and map it to the desired range, using <code>Math.floor()</code> to make it an integer.</p>
@@ -897,7 +954,7 @@ You can omit the second argument to get the sample standard deviation or set it 
 // standardDeviation([10,2,38,23,38,23,21]) -&gt; 13.284434142114991 (sample)
 // standardDeviation([10,2,38,23,38,23,21], true) -&gt; 12.29899614287479 (population)
 </code></pre>
-</div></div><br/><h2 style="text-align:center;">Media</h2>
+</div></div><br/><h2 style="text-align:center">Media</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="speechsynthesis">speechSynthesis</h3></div><div class="section double-padded">
 <p>Performs speech synthesis (experimental).</p>
 <p>Use <code>SpeechSynthesisUtterance.voice</code> and <code>window.speechSynthesis.getVoices()</code> to convert a message to speech.
@@ -910,7 +967,7 @@ Use <code>window.speechSynthesis.speak()</code> to play the message.</p>
 };
 // speechSynthesis('Hello, World') -&gt; plays the message
 </code></pre>
-</div></div><br/><h2 style="text-align:center;">Node</h2>
+</div></div><br/><h2 style="text-align:center">Node</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="jsontofile">JSONToFile</h3></div><div class="section double-padded">
 <p>Writes a JSON object to a file.</p>
 <p>Use <code>fs.writeFile()</code>, template literals and <code>JSON.stringify()</code> to write a <code>json</code> object to a <code>.json</code> file.</p>
@@ -935,7 +992,7 @@ let arr = readFileLines('test.txt')
 console.log(arr) // -&gt; ['line1', 'line2', 'line3']
 */
 </code></pre>
-</div></div><br/><h2 style="text-align:center;">Object</h2>
+</div></div><br/><h2 style="text-align:center">Object</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="cleanobj">cleanObj</h3></div><div class="section double-padded">
 <p>Removes any properties except the ones specified from a JSON object.</p>
 <p>Use <code>Object.keys()</code> method to loop over given json object and deleting keys that are not <code>include</code>d in given array.
@@ -975,7 +1032,7 @@ If no orders array is passed it sort by 'asc' by default.</p>
   arr.sort((a, b) =&gt;
     props.reduce((acc, prop, i) =&gt; {
       if (acc === 0) {
-        const [p1, p2] = orders[i] === 'asc' ? [a[prop], b[prop]] : [b[prop], a[prop]];
+        const [p1, p2] = orders &amp;&amp; orders[i] === 'desc' ? [b[prop], a[prop]] : [a[prop], b[prop]];
         acc = p1 &gt; p2 ? 1 : p1 &lt; p2 ? -1 : 0;
       }
       return acc;
@@ -1013,7 +1070,7 @@ a === b -&gt; false
 <pre><code class="language-js">const truthCheckCollection = (collection, pre) =&gt; (collection.every(obj =&gt; obj[pre]));
 // truthCheckCollection([{&quot;user&quot;: &quot;Tinky-Winky&quot;, &quot;sex&quot;: &quot;male&quot;}, {&quot;user&quot;: &quot;Dipsy&quot;, &quot;sex&quot;: &quot;male&quot;}], &quot;sex&quot;) -&gt; true
 </code></pre>
-</div></div><br/><h2 style="text-align:center;">String</h2>
+</div></div><br/><h2 style="text-align:center">String</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="anagrams">anagrams</h3></div><div class="section double-padded">
 <p>Generates all anagrams of a string (contains duplicates).</p>
 <p>Use recursion.
@@ -1106,7 +1163,7 @@ Return the string truncated to the desired length, with <code>...</code> appende
   str.length &gt; num ? str.slice(0, num &gt; 3 ? num - 3 : num) + '...' : str;
 // truncateString('boomerang', 7) -&gt; 'boom...'
 </code></pre>
-</div></div><br/><h2 style="text-align:center;">Utility</h2>
+</div></div><br/><h2 style="text-align:center">Utility</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="coalesce">coalesce</h3></div><div class="section double-padded">
 <p>Returns the first non-null/undefined argument.</p>
 <p>Use <code>Array.find()</code> to return the first non <code>null</code>/<code>undefined</code> argument.</p>
@@ -1253,8 +1310,8 @@ Use <code>Number()</code> to check if the coercion holds.</p>
 </code></pre>
 </div></div><br/>
         <footer>
-          <p style="display: inline-block;"><strong>30 seconds of code</strong> is licensed under the <a href="https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE">CC0-1.0</a> license.<br/>Icons made by <a href="https://www.flaticon.com/authors/smashicons">Smashicons</a> from <a href="https://www.flaticon.com/">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/">CC 3.0 BY</a>.<br/>Ribbon made by <a href="https://github.com/tholman/github-corners">Tim Holman</a> is licensed by <a href="https://opensource.org/licenses/MIT">The MIT License</a><br/>Built with the <a href="https://minicss.org">mini.css framwork</a>.</p>
-          <a href="#top"><p style="display: inline-block;float: right;padding-right: 2em;">Back to top</p></a>
+          <p style="display:inline-block"><strong>30 seconds of code</strong> is licensed under the <a href="https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE">CC0-1.0</a> license.<br/>Icons made by <a href="https://www.flaticon.com/authors/smashicons">Smashicons</a> from <a href="https://www.flaticon.com/">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/">CC 3.0 BY</a>.<br/>Ribbon made by <a href="https://github.com/tholman/github-corners">Tim Holman</a> is licensed by <a href="https://opensource.org/licenses/MIT">The MIT License</a><br/>Built with the <a href="https://minicss.org">mini.css framework</a>.</p>
+          <a href="#top"><span style="display:inline-block;float:right;padding-right:2em">Back to top</span></a>
         </footer>
       </main>
     </div>
