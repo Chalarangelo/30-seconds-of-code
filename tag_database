@@ -111,6 +111,7 @@ take:array
 takeRight:array
 timeTaken:utility
 toCamelCase:string
+toDecimalMark:utility
 toEnglishDate:date
 toOrdinalSuffix:utility
 truncateString:string
@@ -123,4 +124,3 @@ without:array
 words:string
 zip:array
 zipObject:array
-numberWithCommas:utility
