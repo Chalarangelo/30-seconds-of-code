@@ -12,6 +12,7 @@ script:
 after_success:
   - chmod +x .travis/push.sh
   - sudo .travis/push.sh
+group: deprecated-2017Q4
 env:
   global:
     - secure: "HxC+FRqwGl9QPfqiyHLAMVRa1bHO/0stts+mYNKCUx48AfJwYQ1gOHZ7ROTAthN+L3JTZV4gq93IMBFeRSMtkQmMejr5iW7MnpXaE/AQAoLgDlU/+cYOZmzGqFCkI0seXuWjGqXP6XRKUmoB2Yk0AgjC/jgIWMqtJRkpz1VAkU7VHJ+t7y6vxGYWoJcjt9WhM7SAatmUHPMaALCRnHXwGhFFt7WAhMStYwkZ/GBgB6QoRzF+Bz8wyQoMoy5CRNUQWa61VnBzVl4fBMCXhrztC/ZYyfZnjD7Usy9EaVe0fpAVL6QXtqKTrBoZpJzhtH0uQdn04t0U2k7Ge3Fbimv6EHvPcPAvtXA7V/kuY9QZxVL4HF5tFHM06OREfLp5S99y4sgfCXgHL8ENyL5YTyYZOfHKdiUCzWO14crULwcyyfLbCunOTrVS7mh47nKMkU0BkdtNVI6CpdXBW9seu6xD/nEZSt8gIODp1sDkrnXymnuphP+3Q/xAitCeOrgmYIDYSCBWp+PybLB+8TO1BlLR6jo9JSrD4O8iI/SLxT0PQvTcm/Y9iq/r4fqzcz+uOMrKui+tkBPZUXODuCTXynu5UgDUWLhrWQX6uZ90hqJ3qtr0FZn7AKxp7HCrt/tK35zajw2n/73+/zI3tRT/Fz0dfVcM01SxG5QwwSSkGZX45zk="
