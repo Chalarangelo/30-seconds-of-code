@@ -12,6 +12,7 @@ commit_website_files() {
 }
 
 upload_files() {
+  echo "https://${GH_TOKEN}@github.com/Chalarangelo/30-seconds-of-code.git"
   git push --force "https://${GH_TOKEN}@github.com/Chalarangelo/30-seconds-of-code.git" master > /dev/null 2>&1
 }
 
