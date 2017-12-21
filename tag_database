@@ -119,7 +119,6 @@ truncateString:string
 truthCheckCollection:object
 union:array
 UUIDGenerator:utility
-validateEmail:utility
 validateNumber:utility
 without:array
 words:string
