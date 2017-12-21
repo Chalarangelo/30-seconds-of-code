@@ -10,6 +10,7 @@ script:
     - npm run builder
     - npm run webber
 after_success:
+    - chmod +x .travis/push.sh
     - sudo .travis/push.sh
 env:
   global: 
