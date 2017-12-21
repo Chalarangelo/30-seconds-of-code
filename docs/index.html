@@ -163,9 +163,9 @@
 <a class="sublink-1" href="#fromcamelcase">fromCamelCase</a>
 <a class="sublink-1" href="#reversestring">reverseString</a>
 <a class="sublink-1" href="#sortcharactersinstring">sortCharactersInString</a>
-<a class="sublink-1" href="#stringtoarrayofwords">stringToArrayOfWords</a>
 <a class="sublink-1" href="#tocamelcase">toCamelCase</a>
 <a class="sublink-1" href="#truncatestring">truncateString</a>
+<a class="sublink-1" href="#words">words</a>
 
 <h3>Utility
 </h3><a class="sublink-1" href="#coalesce">coalesce</a>
@@ -1137,14 +1137,6 @@ Combine characters to get a string using <code>join('')</code>.</p>
   str.split('').sort((a, b) =&gt; a.localeCompare(b)).join('');
 // sortCharactersInString('cabbage') -&gt; 'aabbceg'
 </code></pre>
-</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="stringtoarrayofwords">stringToArrayOfWords</h3></div><div class="section double-padded">
-<p>Converts a given string into an array of words.</p>
-<p>Use <code>String.split()</code> with a supplied pattern (defaults to non alpha as a regex) to convert to an array of strings. Use <code>Array.filter()</code> to remove any empty strings.
-Omit the second argument to use the default regex.</p>
-<pre><code class="language-js">const stringToArrayOfWords = (str, pattern = /[^a-zA-Z-]+/) =&gt; str.split(pattern).filter(Boolean);
-// stringToArrayOfWords(&quot;I love javaScript!!&quot;) -&gt; [&quot;I&quot;, &quot;love&quot;, &quot;javaScript&quot;]
-// stringToArrayOfWords(&quot;python, javaScript &amp; coffee&quot;) -&gt; [&quot;python&quot;, &quot;javaScript&quot;, &quot;coffee&quot;]
-</code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="tocamelcase">toCamelCase</h3></div><div class="section double-padded">
 <p>Converts a string to camelcase.</p>
 <p>Use <code>replace()</code> to remove underscores, hyphens and spaces and convert words to camelcase.</p>
@@ -1162,6 +1154,14 @@ Return the string truncated to the desired length, with <code>...</code> appende
 <pre><code class="language-js">const truncateString = (str, num) =&gt;
   str.length &gt; num ? str.slice(0, num &gt; 3 ? num - 3 : num) + '...' : str;
 // truncateString('boomerang', 7) -&gt; 'boom...'
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="words">words</h3></div><div class="section double-padded">
+<p>Converts a given string into an array of words.</p>
+<p>Use <code>String.split()</code> with a supplied pattern (defaults to non alpha as a regex) to convert to an array of strings. Use <code>Array.filter()</code> to remove any empty strings.
+Omit the second argument to use the default regex.</p>
+<pre><code class="language-js">const words = (str, pattern = /[^a-zA-Z-]+/) =&gt; str.split(pattern).filter(Boolean);
+// words(&quot;I love javaScript!!&quot;) -&gt; [&quot;I&quot;, &quot;love&quot;, &quot;javaScript&quot;]
+// words(&quot;python, javaScript &amp; coffee&quot;) -&gt; [&quot;python&quot;, &quot;javaScript&quot;, &quot;coffee&quot;]
 </code></pre>
 </div></div><br/><h2 style="text-align:center">Utility</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="coalesce">coalesce</h3></div><div class="section double-padded">
