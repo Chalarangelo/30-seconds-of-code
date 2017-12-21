@@ -12,7 +12,7 @@ commit_website_files() {
 }
 
 upload_files() {
-  git remote add origin https://${GH_TOKEN}@github.com/Pl4gue/30-seconds-of-code.git > /dev/null 2>&1
+  git remote add origin https://${GH_TOKEN}@$github.com/Pl4gue/30-seconds-of-code.git > /dev/null 2>&1
   git push --force --quiet --set-upstream origin master
 }
 
