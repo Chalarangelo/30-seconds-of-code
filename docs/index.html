@@ -42,7 +42,8 @@
           <label for="doc-drawer-checkbox" class="button drawer-close"></label>
 
 <h3>Adapter
-</h3><a class="sublink-1" href="#promisify">promisify</a>
+</h3><a class="sublink-1" href="#collectinto">collectInto</a>
+<a class="sublink-1" href="#promisify">promisify</a>
 <a class="sublink-1" href="#spreadover">spreadOver</a>
 
 <h3>Array
@@ -194,7 +195,19 @@
 </h3><a class="sublink-1" href="#flip">flip</a>
 
 </nav><main class="col-sm-12 col-md-8 col-lg-9" style="height:100%;overflow-y:auto;background:#eceef2;padding:0"><a id="top">&nbsp;</a><h2 style="text-align:center">Adapter</h2>
-<div class="card fluid"><div class="section double-padded"><h3 id="promisify">promisify</h3></div><div class="section double-padded">
+<div class="card fluid"><div class="section double-padded"><h3 id="collectinto">collectInto</h3></div><div class="section double-padded">
+<p>Changes a function that accepts an array into a variadic function.</p>
+<p>Given a function, return a closure that collects all inputs into an array-accepting function.</p>
+<pre><code class="language-js">const collectInto = fn =&gt; ( ...args ) =&gt; fn( args );
+/*
+const Pall = collectInto( Promise.all.bind(Promise) )
+let p1 = Promise.resolve(1)
+let p2 = Promise.resolve(2)
+let p3 = new Promise((resolve) =&gt; setTimeout(resolve,2000,3))
+Pall(p1, p2, p3).then(console.log)
+*/
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="promisify">promisify</h3></div><div class="section double-padded">
 <p>Converts an asynchronous function to return a promise.</p>
 <p>Use currying to return a function returning a <code>Promise</code> that calls the original function.
 Use the <code>...rest</code> operator to pass in all the parameters.</p>
