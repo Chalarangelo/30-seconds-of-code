@@ -1,6 +1,6 @@
 ### initialize2DArray
 
-Initializes an 2D array of given width and height and value.
+Initializes a 2D array of given width and height and value.
 
 Use `Array.map()` to generate h rows where each is a new array of size w initialize with value. If value is not provided, default to `null`.
 
