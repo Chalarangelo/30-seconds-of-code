@@ -8,10 +8,12 @@ Returning a closure that takes variadic inputs, and splices the last argument to
 const flip = fn => (...args) =>
   fn( args.pop(), ...args )
 /*
-var a = {}
-var b = {test:1}
-const mergeInto = flip(Object.assign)
-mergeInto(a, b) // == b
+var a = {name: "John Smith"}
+var b = {}
+const mergeFrom = flip(Object.assign)
+let mergePerson = mergeFrom.bind(a)
+mergePerson(b) // == b
+b = {}
 Object.assign(b,a) // == b
 */
 ```
