@@ -903,6 +903,7 @@ it is partially visible.
 ```js
 const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
   const { top, left, bottom, right } = el.getBoundingClientRect();
+  const { innerHeight, innerWidth } = window;
   return partiallyVisible
     ? ((top > 0 && top < innerHeight) || (bottom > 0 && bottom < innerHeight)) &&
       ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
@@ -1720,7 +1721,6 @@ orderby(users, ['name', 'age'], ['asc', 'desc']) -> [{name: 'barney', age: 36}, 
 orderby(users, ['name', 'age']) -> [{name: 'barney', age: 34}, {name: 'barney', age: 36}, {name: 'fred', age: 40}, {name: 'fred', age: 48}]
 */
 ```
-
 
 [⬆ back to top](#table-of-contents)
 
