@@ -32,7 +32,7 @@ const reducedFilter = (data, condition, outputProps) =>
     return (acc);
   }, []);
 ```
-###Usage Example available in :
+#### Usage Example available in :
 
 `https://codepen.io/myapos/pen/dJGByW?editors=0112`
 
