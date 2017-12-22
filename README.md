@@ -1381,11 +1381,13 @@ const isEven = num => num % 2 === 0;
 
 Checks if the provided integer is a prime number.
 
-Returns `false` if the provided number has positive divisors other than 1 and itself or if the number itself is less than 2.
+Check numbers from `2` to the square root of the given number. 
+Return `false` if any of them divides the given number, else return `true`, unless the number is less than `2`.
 
 ```js
 const isPrime = num => {
-  for (var i = 2; i * i <= num; i++) if (num % i == 0) return false;
+  const boundary = Math.floor(Math.sqrt(num));
+  for (var i = 2; i * i <= boundary; i++) if (num % i == 0) return false;
   return num >= 2;
 };
 // isPrime(11) -> true
