@@ -3,7 +3,6 @@
 Convert a float-point arithmetic to the [Decimal mark](https://en.wikipedia.org/wiki/Decimal_mark) form.
 
 Use `toString()` to convert the float `num` to a string, then use regex to separate every three characters of the integer part with a comma.
-
 Use [Ttemplate Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) to return joined parts.
 
  ```js
