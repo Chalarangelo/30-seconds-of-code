@@ -23,4 +23,3 @@ orderby(users, ['name', 'age'], ['asc', 'desc']) -> [{name: 'barney', age: 36}, 
 orderby(users, ['name', 'age']) -> [{name: 'barney', age: 34}, {name: 'barney', age: 36}, {name: 'fred', age: 40}, {name: 'fred', age: 48}]
 */
 ```
-
