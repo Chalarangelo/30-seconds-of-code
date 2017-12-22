@@ -84,7 +84,7 @@ pick:array
 pipe:function
 powerset:math
 primes:math
-promisify:function
+promisify:adapter
 pull:array
 pullAtIndex:array
 pullAtValue:array
