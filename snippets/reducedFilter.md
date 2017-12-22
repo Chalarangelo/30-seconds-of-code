@@ -10,7 +10,7 @@ Filter an array of objects based on condition and return array with reduced obje
 
 #### Output
 
-Filtered array with new objects. Properties of new objects are a subset of
+* Filtered array with new objects. Properties of new objects are a subset of
 properties of original objects 
 
 #### Info
