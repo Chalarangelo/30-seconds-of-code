@@ -1,11 +1,11 @@
-### Colect Into
+### collectInto
 
-Changes a function that accepts an array into a variadic function
+Changes a function that accepts an array into a variadic function.
 
-Given a funciton, return a closure that collects all inputs into an array accepting function
+Given a function, return a closure that collects all inputs into an array-accepting function.
 
 ```js
-const collectInto = fn => ( ...args ) => fn( args )
+const collectInto = fn => ( ...args ) => fn( args );
 /*
 const Pall = collectInto( Promise.all.bind(Promise) )
 var p1 = Promise.resolve(1)
