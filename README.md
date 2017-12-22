@@ -15,6 +15,7 @@
 
 ### Adapter
 * [`collectInto`](#collectinto)
+* [`flip`](#flip)
 * [`promisify`](#promisify)
 * [`spreadOver`](#spreadover)
 
@@ -163,9 +164,6 @@
 * [`UUIDGenerator`](#uuidgenerator)
 * [`validateNumber`](#validatenumber)
 
-### _Uncategorized_
-* [`flip`](#flip)
-
 ## Adapter
 
 ### collectInto
@@ -182,6 +180,27 @@ let p1 = Promise.resolve(1)
 let p2 = Promise.resolve(2)
 let p3 = new Promise((resolve) => setTimeout(resolve,2000,3))
 Pall(p1, p2, p3).then(console.log)
+*/
+```
+
+[⬆ back to top](#table-of-contents)
+
+### flip
+
+Flip takes a function as an argument, then makes the first argument the last
+
+Return a closure that takes variadic inputs, and splices the last argument to make it the first argument before applying the rest.
+
+```js
+const flip = fn => (...args) => fn(args.pop(), ...args)
+/*
+let a = {name: 'John Smith'}
+let b = {}
+const mergeFrom = flip(Object.assign)
+let mergePerson = mergeFrom.bind(a)
+mergePerson(b) // == b
+b = {}
+Object.assign(b, a) // == b
 */
 ```
 
@@ -2216,28 +2235,6 @@ Use `Number()` to check if the coercion holds.
 ```js
 const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
 // validateNumber('10') -> true
-```
-
-[⬆ back to top](#table-of-contents)
-## _Uncategorized_
-
-### flip
-
-Flip takes a function as an argument, then makes the first argument the last
-
-Return a closure that takes variadic inputs, and splices the last argument to make it the first argument before applying the rest.
-
-```js
-const flip = fn => (...args) => fn(args.pop(), ...args)
-/*
-let a = {name: 'John Smith'}
-let b = {}
-const mergeFrom = flip(Object.assign)
-let mergePerson = mergeFrom.bind(a)
-mergePerson(b) // == b
-b = {}
-Object.assign(b, a) // == b
-*/
 ```
 
 [⬆ back to top](#table-of-contents)
