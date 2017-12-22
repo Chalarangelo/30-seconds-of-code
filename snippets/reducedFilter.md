@@ -4,9 +4,9 @@ Filter an array of objects based on condition and return array with reduced obje
 
 #### Input
 
-* Data: the data to be filtered (array of objects) 
-* Condition: will be used for filtering (string) 
-* outputProps: an array of properties that will be used to contruct new array of objects 
+1. Data: the data to be filtered (array of objects) 
+1. Condition: will be used for filtering (string) 
+1. outputProps: an array of properties that will be used to contruct new array of objects 
 
 #### Output
 
