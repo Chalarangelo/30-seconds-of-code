@@ -3,7 +3,7 @@
 Smooth-scrolls to the top of the page.
 
 Get distance from top using `document.documentElement.scrollTop` or `document.body.scrollTop`.
-Scroll by a fraction of the distance from top. Use `window.requestAnimationFrame()` to animate the scrolling.
+Scroll by a fraction of the distance from the top. Use `window.requestAnimationFrame()` to animate the scrolling.
 
 ```js
 const scrollToTop = () => {

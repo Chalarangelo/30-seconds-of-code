@@ -1,6 +1,6 @@
 ### spreadOver
 
-Takes a veriadic function and returns a closure that accepts an array of arguments to map to the inputs of the function.
+Takes a variadic function and returns a closure that accepts an array of arguments to map to the inputs of the function.
 
 Use closures and the spread operator (`...`) to map the array of arguments to the inputs of the function.
 

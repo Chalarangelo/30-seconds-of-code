@@ -2,7 +2,7 @@
 
 Picks the key-value pairs corresponding to the given keys from an object.
 
-Use `Array.reduce()` to convert the filtered/picked keys back to a object with the corresponding key-value pair if the key exist in the obj.
+Use `Array.reduce()` to convert the filtered/picked keys back to an object with the corresponding key-value pair if the key exists in the obj.
 
 ```js
 const pick = (obj, arr) =>
