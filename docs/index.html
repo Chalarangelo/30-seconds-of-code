@@ -1302,14 +1302,9 @@ Omit the second argument to use the default regex.</p>
 // (logged): timeTaken: 0.02099609375ms
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="todecimalmark">toDecimalMark</h3></div><div class="section double-padded">
-<p>Convert a float-point arithmetic to the <a href="https://en.wikipedia.org/wiki/Decimal_mark">Decimal mark</a> form.</p>
-<p>Use <code>toString()</code> to convert the float <code>num</code> to a string, then use regex to separate every three characters of the integer part with a comma.
-Use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">Ttemplate Literals</a> to return joined parts.</p>
-<pre><code class="language-js">const toDecimalMark = (num) =&gt; {
- let numberParts = num.toString().split('.')
- return `${numberParts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',')}.${numberParts[1]}`
-}
-// toDecimalMark(12305030388.9087) //-&gt; '12,305,030,388.9087'
+<p>Use <code>toLocaleString()</code> to convert a float-point arithmetic to the <a href="https://en.wikipedia.org/wiki/Decimal_mark">Decimal mark</a> form. It makes a comma separated string from a number.</p>
+<pre><code class="language-js">const toDecimalMark = num =&gt; num.toLocaleString(&quot;en-US&quot;);
+// toDecimalMark(12305030388.9087) -&gt; &quot;12,305,030,388.9087&quot;
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="toordinalsuffix">toOrdinalSuffix</h3></div><div class="section double-padded">
 <p>Adds an ordinal suffix to a number.</p>
