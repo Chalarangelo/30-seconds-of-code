@@ -16,6 +16,7 @@ cleanObj:object
 coalesce:utility
 coalesceFactory:utility
 collatz:math
+collectInto:adapter
 compact:array
 compose:function
 countOccurrences:array
