@@ -105,6 +105,7 @@ similarity:array
 sleep:function
 sortCharactersInString:string
 speechSynthesis:media
+spreadOver:adapter
 standardDeviation:math
 symmetricDifference:array
 tail:array
