@@ -596,6 +596,7 @@ Omit the second argument to determine if the element is entirely visible, or spe
 it is partially visible.</p>
 <pre><code class="language-js">const elementIsVisibleInViewport = (el, partiallyVisible = false) =&gt; {
   const { top, left, bottom, right } = el.getBoundingClientRect();
+  const { innerHeight, innerWidth } = window;
   return partiallyVisible
     ? ((top &gt; 0 &amp;&amp; top &lt; innerHeight) || (bottom &gt; 0 &amp;&amp; bottom &lt; innerHeight)) &amp;&amp;
       ((left &gt; 0 &amp;&amp; left &lt; innerWidth) || (right &gt; 0 &amp;&amp; right &lt; innerWidth))
