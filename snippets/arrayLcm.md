@@ -1,8 +1,8 @@
 ### arrayLcm
 
-Calculates the lowest  common multiple  (lcm) of an array of numbers.
+Calculates the lowest common multiple (lcm) of an array of numbers.
 
-Use `Array.reduce()` and the `lcm` formula (uses recursion) to calculate the lowest  common multiple  of an array of numbers.
+Use `Array.reduce()` and the `lcm` formula (uses recursion) to calculate the lowest common multiple of an array of numbers.
 
 ```js
 const arrayLcm = arr =>{

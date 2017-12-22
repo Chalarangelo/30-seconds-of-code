@@ -4,7 +4,7 @@ Clamps `num` within the inclusive `lower` and `upper` bounds.
 
 If `lower` is greater than `upper`, swap them. 
 If `num` falls within the range, return `num`. 
-Otherwise return the nearest number in the range.
+Otherwise, return the nearest number in the range.
 
 ```js
 const clampNumber = (num, lower, upper) => {

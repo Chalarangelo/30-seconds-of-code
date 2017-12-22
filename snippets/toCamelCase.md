@@ -2,7 +2,7 @@
 
 Converts a string to camelcase.
 
-Use `replace()` to remove underscores, hyphens and spaces and convert words to camelcase.
+Use `replace()` to remove underscores, hyphens, and spaces and convert words to camelcase.
 
 ```js
 const toCamelCase = str =>
