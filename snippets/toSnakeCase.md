@@ -6,7 +6,7 @@ Use `replace()` to add underscores before capital letters, convert `toLowerCase(
 
 ```js
 const toSnakeCase = str =>
-  str.replace(/[A-Z]/g, (match, p1, p2, offset) => '_' + match).toLowerCase().replace(/[\s-]+/g,'_');
+  str.replace(/(\w)([A-Z])/g, '$1_$2').replace(/[\s-]/g, '_').toLowerCase();
 // toSnakeCase("camelCase") -> 'camel_case'
 // toSnakeCase("some text") -> 'some_text'
 // toSnakeCase("some-javascript-property") -> 'some_javascript_property'
