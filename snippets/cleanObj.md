@@ -2,7 +2,7 @@
 
 Removes any properties except the ones specified from a JSON object.
 
-Use `Object.keys()` method to loop over given json object and deleting keys that are not `include`d in given array.
+Use `Object.keys()` method to loop over given JSON object and deleting keys that are not `include`d in given array.
 Also if you give it a special key (`childIndicator`) it will search deeply inside it to apply function to inner objects too.
 
 ```js
