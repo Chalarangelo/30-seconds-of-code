@@ -41,6 +41,9 @@
           </div>
           <label for="doc-drawer-checkbox" class="button drawer-close"></label>
 
+<h3>Adapter
+</h3><a class="sublink-1" href="#spreadover">spreadOver</a>
+
 <h3>Array
 </h3><a class="sublink-1" href="#arraygcd">arrayGcd</a>
 <a class="sublink-1" href="#arraylcm">arrayLcm</a>
@@ -187,7 +190,18 @@
 <a class="sublink-1" href="#uuidgenerator">UUIDGenerator</a>
 <a class="sublink-1" href="#validatenumber">validateNumber</a>
 
-</nav><main class="col-sm-12 col-md-8 col-lg-9" style="height:100%;overflow-y:auto;background:#eceef2;padding:0"><a id="top">&nbsp;</a><h2 style="text-align:center">Array</h2>
+</nav><main class="col-sm-12 col-md-8 col-lg-9" style="height:100%;overflow-y:auto;background:#eceef2;padding:0"><a id="top">&nbsp;</a><h2 style="text-align:center">Adapter</h2>
+<div class="card fluid"><div class="section double-padded"><h3 id="spreadover">spreadOver</h3></div><div class="section double-padded">
+<p>Takes a veriadic function and returns a closure that accepts an array of arguments to map to the inputs of the function.</p>
+<p>Use closures and the spread operator (<code>...</code>) to map the array of arguments to the inputs of the function.</p>
+<pre><code class="language-js">const spreadOver = fn =&gt; argsArr =&gt; fn(...argsArr);
+/*
+const arrayMax = spreadOver(Math.max)
+arrayMax([1,2,3]) // -&gt; 3
+arrayMax([1,2,4]) // -&gt; 4
+*/
+</code></pre>
+</div></div><br/><h2 style="text-align:center">Array</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="arraygcd">arrayGcd</h3></div><div class="section double-padded">
 <p>Calculates the greatest common denominator (gcd) of an array of numbers.</p>
 <p>Use <code>Array.reduce()</code> and the <code>gcd</code> formula (uses recursion) to calculate the greatest common denominator of an array of numbers.</p>
