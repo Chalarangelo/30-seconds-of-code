@@ -125,3 +125,4 @@ without:array
 words:string
 zip:array
 zipObject:array
+flip:adapter
