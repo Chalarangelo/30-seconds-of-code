@@ -1,14 +1,8 @@
 ### toDecimalMark
 
-Convert a float-point arithmetic to the [Decimal mark](https://en.wikipedia.org/wiki/Decimal_mark) form.
-
-Use `toString()` to convert the float `num` to a string, then use regex to separate every three characters of the integer part with a comma.
-Use [Ttemplate Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) to return joined parts.
+Use `toLocaleString()` to convert a float-point arithmetic to the [Decimal mark](https://en.wikipedia.org/wiki/Decimal_mark) form. It makes a comma separated string from a number.
 
  ```js
-const toDecimalMark = (num) => {
-  let numberParts = num.toString().split('.')
-  return `${numberParts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',')}.${numberParts[1]}`
-}
-// toDecimalMark(12305030388.9087) //-> '12,305,030,388.9087'
+const toDecimalMark = num => num.toLocaleString("en-US");
+// toDecimalMark(12305030388.9087) -> "12,305,030,388.9087"
 ```
