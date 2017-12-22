@@ -1,4 +1,4 @@
-### Spread Over
+### spreadOver
 
 Takes a veriadic function and returns a closure that accepts an array of arguments to map to the inputs of the function.
 
