@@ -42,7 +42,8 @@
           <label for="doc-drawer-checkbox" class="button drawer-close"></label>
 
 <h3>Adapter
-</h3><a class="sublink-1" href="#collectinto">collectInto</a>
+</h3><a class="sublink-1" href="#call">call</a>
+<a class="sublink-1" href="#collectinto">collectInto</a>
 <a class="sublink-1" href="#flip">flip</a>
 <a class="sublink-1" href="#promisify">promisify</a>
 <a class="sublink-1" href="#spreadover">spreadOver</a>
@@ -193,7 +194,17 @@
 <a class="sublink-1" href="#validatenumber">validateNumber</a>
 
 </nav><main class="col-sm-12 col-md-8 col-lg-9" style="height:100%;overflow-y:auto;background:#eceef2;padding:0"><a id="top">&nbsp;</a><h2 style="text-align:center">Adapter</h2>
-<div class="card fluid"><div class="section double-padded"><h3 id="collectinto">collectInto</h3></div><div class="section double-padded">
+<div class="card fluid"><div class="section double-padded"><h3 id="call">call</h3></div><div class="section double-padded">
+<p>Given a key and a set of arguments, call them when given a context. Primarily useful in composition.</p>
+<p>Use a closure to call a stored key with stored arguments.</p>
+<pre><code class="language-js">const call = ( key, ...args ) =&gt; context =&gt; context[ key ]( ...args );
+/*
+Promise.resolve( [ 1, 2, 3 ] ).then( call('map', x =&gt; 2 * x ) ).then( console.log ) //[ 2, 4, 6 ]
+const map = call.bind(null, 'map')
+Promise.resolve( [ 1, 2, 3 ] ).then( map( x =&gt; 2 * x ) ).then( console.log ) //[ 2, 4, 6 ]
+*/
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="collectinto">collectInto</h3></div><div class="section double-padded">
 <p>Changes a function that accepts an array into a variadic function.</p>
 <p>Given a function, return a closure that collects all inputs into an array-accepting function.</p>
 <pre><code class="language-js">const collectInto = fn =&gt; ( ...args ) =&gt; fn( args );
