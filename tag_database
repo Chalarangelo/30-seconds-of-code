@@ -39,6 +39,7 @@ fibonacci:math
 filterNonUnique:array
 flatten:array
 flattenDepth:array
+flip:uncategorized
 fromCamelCase:string
 functionName:function
 gcd:math
@@ -125,4 +126,3 @@ without:array
 words:string
 zip:array
 zipObject:array
-flip:adapter

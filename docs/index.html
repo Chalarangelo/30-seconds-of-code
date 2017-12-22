@@ -190,6 +190,9 @@
 <a class="sublink-1" href="#uuidgenerator">UUIDGenerator</a>
 <a class="sublink-1" href="#validatenumber">validateNumber</a>
 
+<h3>Uncategorized
+</h3><a class="sublink-1" href="#flip">flip</a>
+
 </nav><main class="col-sm-12 col-md-8 col-lg-9" style="height:100%;overflow-y:auto;background:#eceef2;padding:0"><a id="top">&nbsp;</a><h2 style="text-align:center">Adapter</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="spreadover">spreadOver</h3></div><div class="section double-padded">
 <p>Takes a veriadic function and returns a closure that accepts an array of arguments to map to the inputs of the function.</p>
@@ -1339,6 +1342,21 @@ Use <code>isFinite()</code> to check if the number is finite.
 Use <code>Number()</code> to check if the coercion holds.</p>
 <pre><code class="language-js">const validateNumber = n =&gt; !isNaN(parseFloat(n)) &amp;&amp; isFinite(n) &amp;&amp; Number(n) == n;
 // validateNumber('10') -&gt; true
+</code></pre>
+</div></div><br/><h2 style="text-align:center">Uncategorized</h2>
+<div class="card fluid"><div class="section double-padded"><h3 id="flip">flip</h3></div><div class="section double-padded">
+<p>Flip takes a function as an argument, then makes the first argument the last</p>
+<p>Return a closure that takes variadic inputs, and splices the last argument to make it the first argument before applying the rest.</p>
+<pre><code class="language-js">const flip = fn =&gt; (...args) =&gt; fn(args.pop(), ...args)
+/*
+let a = {name: 'John Smith'}
+let b = {}
+const mergeFrom = flip(Object.assign)
+let mergePerson = mergeFrom.bind(a)
+mergePerson(b) // == b
+b = {}
+Object.assign(b, a) // == b
+*/
 </code></pre>
 </div></div><br/>
         <footer>
