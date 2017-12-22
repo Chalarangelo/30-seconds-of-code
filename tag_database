@@ -117,6 +117,7 @@ toCamelCase:string
 toDecimalMark:utility
 toEnglishDate:date
 toOrdinalSuffix:utility
+toSnakeCase:string
 truncateString:string
 truthCheckCollection:object
 union:array
