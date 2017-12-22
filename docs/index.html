@@ -168,6 +168,7 @@
 <a class="sublink-1" href="#reversestring">reverseString</a>
 <a class="sublink-1" href="#sortcharactersinstring">sortCharactersInString</a>
 <a class="sublink-1" href="#tocamelcase">toCamelCase</a>
+<a class="sublink-1" href="#tosnakecase">toSnakeCase</a>
 <a class="sublink-1" href="#truncatestring">truncateString</a>
 <a class="sublink-1" href="#words">words</a>
 
@@ -1177,6 +1178,16 @@ Combine characters to get a string using <code>join('')</code>.</p>
 // toCamelCase(&quot;Some label that needs to be camelized&quot;) -&gt; 'someLabelThatNeedsToBeCamelized'
 // toCamelCase(&quot;some-javascript-property&quot;) -&gt; 'someJavascriptProperty'
 // toCamelCase(&quot;some-mixed_string with spaces_underscores-and-hyphens&quot;) -&gt; 'someMixedStringWithSpacesUnderscoresAndHyphens'
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="tosnakecase">toSnakeCase</h3></div><div class="section double-padded">
+<p>Converts a string to snakecase.</p>
+<p>Use <code>replace()</code> to add underscores before capital letters, convert <code>toLowerCase()</code>, then <code>replace()</code> hyphens and spaces with underscores.</p>
+<pre><code class="language-js">const toSnakeCase = str =&gt;
+  str.replace(/[A-Z]/g, (match, p1, p2, offset) =&gt; '_' + match).toLowerCase().replace(/[\s-]+/g,'_');
+// toSnakeCase(&quot;camelCase&quot;) -&gt; 'camel_case'
+// toSnakeCase(&quot;some text&quot;) -&gt; 'some_text'
+// toSnakeCase(&quot;some-javascript-property&quot;) -&gt; 'some_javascript_property'
+// toSnakeCase(&quot;some-mixed_string With spaces_underscores-and-hyphens&quot;) -&gt; 'some_mixed_string_with_spaces_underscores_and_hyphens'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="truncatestring">truncateString</h3></div><div class="section double-padded">
 <p>Truncates a string up to a specified length.</p>
