@@ -17,9 +17,16 @@
   </head>
   <script>
     const search = (node) => {
-      Array.from(node.parentElement.parentElement.getElementsByTagName('a')).forEach(x => x.style.display = x.getAttribute("href").toUpperCase().indexOf(node.value.toUpperCase()) + 1  ? '' : 'none');
+      Array.from(node.parentElement.parentElement.getElementsByTagName('a')).forEach(x => {
+        x.style.display = x.getAttribute("href").toUpperCase().indexOf(node.value.toUpperCase()) + 1  ? '' : 'none'
+      });
       var remove = false, childs = Array.from(node.parentElement.parentElement.children), toRemove = childs[0];
-      Array.from(node.parentElement.parentElement.children).forEach(x => x.tagName == 'H3' ? (toRemove.style.display = (remove ? 'none' : ''), toRemove = x, remove = true) : (x.style.display == '' ? remove = false : remove=remove));
+      Array.from(node.parentElement.parentElement.children).forEach((x, idx) => {
+        idx === Array.from(node.parentElement.parentElement.children).length -1 ?
+          toRemove.style.display = (remove ? 'none' : '') : x.tagName == 'H3' ?
+            (toRemove.style.display = (remove ? 'none' : ''), toRemove = x, remove = true) :
+            (x.style.display == '' ? remove = false : remove=remove)
+      });
     }
   </script>
   <body>
