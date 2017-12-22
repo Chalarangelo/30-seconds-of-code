@@ -42,7 +42,8 @@
           <label for="doc-drawer-checkbox" class="button drawer-close"></label>
 
 <h3>Adapter
-</h3><a class="sublink-1" href="#spreadover">spreadOver</a>
+</h3><a class="sublink-1" href="#promisify">promisify</a>
+<a class="sublink-1" href="#spreadover">spreadOver</a>
 
 <h3>Array
 </h3><a class="sublink-1" href="#arraygcd">arrayGcd</a>
@@ -111,7 +112,6 @@
 <a class="sublink-1" href="#curry">curry</a>
 <a class="sublink-1" href="#functionname">functionName</a>
 <a class="sublink-1" href="#pipe">pipe</a>
-<a class="sublink-1" href="#promisify">promisify</a>
 <a class="sublink-1" href="#runpromisesinseries">runPromisesInSeries</a>
 <a class="sublink-1" href="#sleep">sleep</a>
 
@@ -194,7 +194,21 @@
 </h3><a class="sublink-1" href="#flip">flip</a>
 
 </nav><main class="col-sm-12 col-md-8 col-lg-9" style="height:100%;overflow-y:auto;background:#eceef2;padding:0"><a id="top">&nbsp;</a><h2 style="text-align:center">Adapter</h2>
-<div class="card fluid"><div class="section double-padded"><h3 id="spreadover">spreadOver</h3></div><div class="section double-padded">
+<div class="card fluid"><div class="section double-padded"><h3 id="promisify">promisify</h3></div><div class="section double-padded">
+<p>Converts an asynchronous function to return a promise.</p>
+<p>Use currying to return a function returning a <code>Promise</code> that calls the original function.
+Use the <code>...rest</code> operator to pass in all the parameters.</p>
+<p><em>In Node 8+, you can use <a href="https://nodejs.org/api/util.html#util_util_promisify_original"><code>util.promisify</code></a></em></p>
+<pre><code class="language-js">const promisify = func =&gt;
+  (...args) =&gt;
+    new Promise((resolve, reject) =&gt;
+      func(...args, (err, result) =&gt;
+        err ? reject(err) : resolve(result))
+    );
+// const delay = promisify((d, cb) =&gt; setTimeout(cb, d))
+// delay(2000).then(() =&gt; console.log('Hi!')) -&gt; Promise resolves after 2s
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="spreadover">spreadOver</h3></div><div class="section double-padded">
 <p>Takes a veriadic function and returns a closure that accepts an array of arguments to map to the inputs of the function.</p>
 <p>Use closures and the spread operator (<code>...</code>) to map the array of arguments to the inputs of the function.</p>
 <pre><code class="language-js">const spreadOver = fn =&gt; argsArr =&gt; fn(...argsArr);
@@ -732,20 +746,6 @@ const multiply = (x, y) =&gt; x * y
 const multiplyAndAdd5 = pipeFunctions(multiply, add5)
 multiplyAndAdd5(5, 2) -&gt; 15
 */
-</code></pre>
-</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="promisify">promisify</h3></div><div class="section double-padded">
-<p>Converts an asynchronous function to return a promise.</p>
-<p>Use currying to return a function returning a <code>Promise</code> that calls the original function.
-Use the <code>...rest</code> operator to pass in all the parameters.</p>
-<p><em>In Node 8+, you can use <a href="https://nodejs.org/api/util.html#util_util_promisify_original"><code>util.promisify</code></a></em></p>
-<pre><code class="language-js">const promisify = func =&gt;
-  (...args) =&gt;
-    new Promise((resolve, reject) =&gt;
-      func(...args, (err, result) =&gt;
-        err ? reject(err) : resolve(result))
-    );
-// const delay = promisify((d, cb) =&gt; setTimeout(cb, d))
-// delay(2000).then(() =&gt; console.log('Hi!')) -&gt; Promise resolves after 2s
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="runpromisesinseries">runPromisesInSeries</h3></div><div class="section double-padded">
 <p>Runs an array of promises in series.</p>
