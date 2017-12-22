@@ -40,7 +40,7 @@ fibonacci:math
 filterNonUnique:array
 flatten:array
 flattenDepth:array
-flip:uncategorized
+flip:adapter
 fromCamelCase:string
 functionName:function
 gcd:math
