@@ -1,8 +1,8 @@
 ### select
 
-Retrieve a property that indicated by the selector from object.
+Retrieve a property that indicated by the selector from an object.
 
-If property not exists returns `undefined`.
+If the property does not exists returns `undefined`.
 
 ```js
 const select = (from, selector) =>
