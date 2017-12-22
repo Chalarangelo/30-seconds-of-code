@@ -245,7 +245,7 @@ Use the <code>...rest</code> operator to pass in all the parameters.</p>
 // delay(2000).then(() =&gt; console.log('Hi!')) -&gt; Promise resolves after 2s
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="spreadover">spreadOver</h3></div><div class="section double-padded">
-<p>Takes a veriadic function and returns a closure that accepts an array of arguments to map to the inputs of the function.</p>
+<p>Takes a variadic function and returns a closure that accepts an array of arguments to map to the inputs of the function.</p>
 <p>Use closures and the spread operator (<code>...</code>) to map the array of arguments to the inputs of the function.</p>
 <pre><code class="language-js">const spreadOver = fn =&gt; argsArr =&gt; fn(...argsArr);
 /*
@@ -266,8 +266,8 @@ arrayMax([1,2,4]) // -&gt; 4
 // arrayGcd([4,8,12]) -&gt; 4
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="arraylcm">arrayLcm</h3></div><div class="section double-padded">
-<p>Calculates the lowest  common multiple  (lcm) of an array of numbers.</p>
-<p>Use <code>Array.reduce()</code> and the <code>lcm</code> formula (uses recursion) to calculate the lowest  common multiple  of an array of numbers.</p>
+<p>Calculates the lowest common multiple (lcm) of an array of numbers.</p>
+<p>Use <code>Array.reduce()</code> and the <code>lcm</code> formula (uses recursion) to calculate the lowest common multiple of an array of numbers.</p>
 <pre><code class="language-js">const arrayLcm = arr =&gt;{
   const gcd = (x, y) =&gt; !y ? x : gcd(y, x % y);
   const lcm = (x, y) =&gt; (x*y)/gcd(x, y) 
@@ -383,7 +383,7 @@ Omit the second element, <code>depth</code> to flatten only to a depth of <code>
 // flattenDepth([1,[2],[[[3],4],5]], 2) -&gt; [1,2,[3],4,5]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="groupby">groupBy</h3></div><div class="section double-padded">
-<p>Groups the element of an array based on the given function.</p>
+<p>Groups the elements of an array based on the given function.</p>
 <p>Use <code>Array.map()</code> to map the values of an array to a function or property name.
 Use <code>Array.reduce()</code> to create an object, where the keys are produced from the mapped results.</p>
 <pre><code class="language-js">const groupBy = (arr, func) =&gt;
@@ -400,13 +400,13 @@ Use <code>Array.reduce()</code> to create an object, where the keys are produced
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="initial">initial</h3></div><div class="section double-padded">
 <p>Returns all the elements of an array except the last one.</p>
-<p>Use <code>arr.slice(0,-1)</code>to return all but the last element of the array.</p>
+<p>Use <code>arr.slice(0,-1)</code> to return all but the last element of the array.</p>
 <pre><code class="language-js">const initial = arr =&gt; arr.slice(0, -1);
 // initial([1,2,3]) -&gt; [1,2]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="initialize2darray">initialize2DArray</h3></div><div class="section double-padded">
-<p>Initializes an 2D array of given width and height and value.</p>
-<p>Use <code>Array.map()</code> to generate h rows where each is a new array of size w initialize with value. If value is not provided, default to <code>null</code>.</p>
+<p>Initializes a 2D array of given width and height and value.</p>
+<p>Use <code>Array.map()</code> to generate h rows where each is a new array of size w initialize with value. If the value is not provided, default to <code>null</code>.</p>
 <pre><code class="language-js">const initialize2DArray = (w, h, val = null) =&gt; Array(h).fill().map(() =&gt; Array(w).fill(val));
 // initializeArrayWithRange(2, 2, 0) -&gt; [[0,0], [0,0]]
 </code></pre>
@@ -434,13 +434,13 @@ You can omit <code>value</code> to use a default value of <code>0</code>.</p>
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="last">last</h3></div><div class="section double-padded">
 <p>Returns the last element in an array.</p>
-<p>Use <code>arr.length - 1</code> to compute index of the last element of the given array and returning it.</p>
+<p>Use <code>arr.length - 1</code> to compute the index of the last element of the given array and returning it.</p>
 <pre><code class="language-js">const last = arr =&gt; arr[arr.length - 1];
 // last([1,2,3]) -&gt; 3
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="mapobject">mapObject</h3></div><div class="section double-padded">
 <p>Maps the values of an array to an object using a function, where the key-value pairs consist of the original value as the key and the mapped value.</p>
-<p>Use an anonymous inner function scope to declare an undefined memory space, using closures to store a return value. Use a new <code>Array</code> to stor the array with a map of the function over its data set and a comma operator to return a second step, without needing to move from one context to another (due to closures and order of operations).</p>
+<p>Use an anonymous inner function scope to declare an undefined memory space, using closures to store a return value. Use a new <code>Array</code> to store the array with a map of the function over its data set and a comma operator to return a second step, without needing to move from one context to another (due to closures and order of operations).</p>
 <pre><code class="language-js">const mapObject = (arr, fn) =&gt; 
   (a =&gt; (a = [arr, arr.map(fn)], a[0].reduce( (acc,val,ind) =&gt; (acc[val] = a[1][ind], acc), {}) )) ( );
 /*
@@ -459,7 +459,7 @@ Omit the second argument, <code>n</code>, to get the first element of the array.
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="pick">pick</h3></div><div class="section double-padded">
 <p>Picks the key-value pairs corresponding to the given keys from an object.</p>
-<p>Use <code>Array.reduce()</code> to convert the filtered/picked keys back to a object with the corresponding key-value pair if the key exist in the obj.</p>
+<p>Use <code>Array.reduce()</code> to convert the filtered/picked keys back to an object with the corresponding key-value pair if the key exists in the obj.</p>
 <pre><code class="language-js">const pick = (obj, arr) =&gt;
   arr.reduce((acc, curr) =&gt; (curr in obj &amp;&amp; (acc[curr] = obj[curr]), acc), {});
 // pick({ 'a': 1, 'b': '2', 'c': 3 }, ['a', 'c']) -&gt; { 'a': 1, 'c': 3 }
@@ -467,7 +467,7 @@ Omit the second argument, <code>n</code>, to get the first element of the array.
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="pull">pull</h3></div><div class="section double-padded">
 <p>Mutates the original array to filter out the values specified.</p>
 <p>Use <code>Array.filter()</code> and <code>Array.includes()</code> to pull out the values that are not needed.
-Use <code>Array.length = 0</code> to mutate the passed in array by resetting it's length to zero and <code>Array.push()</code> to re-populate it with only the pulled values.</p>
+Use <code>Array.length = 0</code> to mutate the passed in an array by resetting it's length to zero and <code>Array.push()</code> to re-populate it with only the pulled values.</p>
 <p><em>(For a snippet that does not mutate the original array see <a href="#without"><code>without</code></a>)</em></p>
 <pre><code class="language-js">const pull = (arr, ...args) =&gt; {
   let argState = Array.isArray(args[0]) ? args[0] : args;
@@ -487,7 +487,7 @@ Use <code>Array.length = 0</code> to mutate the passed in array by resetting it'
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="pullatindex">pullAtIndex</h3></div><div class="section double-padded">
 <p>Mutates the original array to filter out the values at the specified indexes.</p>
 <p>Use <code>Array.filter()</code> and <code>Array.includes()</code> to pull out the values that are not needed.
-Use <code>Array.length = 0</code> to mutate the passed in array by resetting it's length to zero and <code>Array.push()</code> to re-populate it with only the pulled values.
+Use <code>Array.length = 0</code> to mutate the passed in an array by resetting it's length to zero and <code>Array.push()</code> to re-populate it with only the pulled values.
 Use <code>Array.push()</code> to keep track of pulled values</p>
 <pre><code class="language-js">const pullAtIndex = (arr, pullArr) =&gt; {
   let removed = [];
@@ -507,7 +507,7 @@ Use <code>Array.push()</code> to keep track of pulled values</p>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="pullatvalue">pullAtValue</h3></div><div class="section double-padded">
 <p>Mutates the original array to filter out the values specified. Returns the removed elements.</p>
 <p>Use <code>Array.filter()</code> and <code>Array.includes()</code> to pull out the values that are not needed.
-Use <code>Array.length = 0</code> to mutate the passed in array by resetting it's length to zero and <code>Array.push()</code> to re-populate it with only the pulled values.
+Use <code>Array.length = 0</code> to mutate the passed in an array by resetting it's length to zero and <code>Array.push()</code> to re-populate it with only the pulled values.
 Use <code>Array.push()</code> to keep track of pulled values</p>
 <pre><code class="language-js">const pullAtValue = (arr, pullArr) =&gt; {
   let removed = [], 
@@ -537,7 +537,7 @@ The <code>func</code> is invoked with three arguments (<code>value, index, array
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="sample">sample</h3></div><div class="section double-padded">
 <p>Returns a random element from an array.</p>
-<p>Use <code>Math.random()</code> to generate a random number, multiply it with <code>length</code> and round it of to the nearest whole number using <code>Math.floor()</code>.
+<p>Use <code>Math.random()</code> to generate a random number, multiply it by <code>length</code> and round it of to the nearest whole number using <code>Math.floor()</code>.
 This method also works with strings.</p>
 <pre><code class="language-js">const sample = arr =&gt; arr[Math.floor(Math.random() * arr.length)];
 // sample([3, 7, 9, 11]) -&gt; 9
@@ -565,7 +565,7 @@ This method also works with strings.</p>
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="tail">tail</h3></div><div class="section double-padded">
 <p>Returns all elements in an array except for the first one.</p>
-<p>Return <code>arr.slice(1)</code> if the array's <code>length</code> is more than <code>1</code>, otherwise return the whole array.</p>
+<p>Return <code>arr.slice(1)</code> if the array's <code>length</code> is more than <code>1</code>, otherwise, return the whole array.</p>
 <pre><code class="language-js">const tail = arr =&gt; arr.length &gt; 1 ? arr.slice(1) : arr;
 // tail([1,2,3]) -&gt; [2,3]
 // tail([1]) -&gt; [1]
@@ -693,7 +693,7 @@ Pass a second argument to simulate a link click (<code>true</code> - default) or
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="scrolltotop">scrollToTop</h3></div><div class="section double-padded">
 <p>Smooth-scrolls to the top of the page.</p>
 <p>Get distance from top using <code>document.documentElement.scrollTop</code> or <code>document.body.scrollTop</code>.
-Scroll by a fraction of the distance from top. Use <code>window.requestAnimationFrame()</code> to animate the scrolling.</p>
+Scroll by a fraction of the distance from the top. Use <code>window.requestAnimationFrame()</code> to animate the scrolling.</p>
 <pre><code class="language-js">const scrollToTop = () =&gt; {
   const c = document.documentElement.scrollTop || document.body.scrollTop;
   if (c &gt; 0) {
@@ -706,7 +706,7 @@ Scroll by a fraction of the distance from top. Use <code>window.requestAnimation
 </div></div><br/><h2 style="text-align:center">Date</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="getdaysdiffbetweendates">getDaysDiffBetweenDates</h3></div><div class="section double-padded">
 <p>Returns the difference (in days) between two dates.</p>
-<p>Calculate the difference (in days) between to <code>Date</code> objects.</p>
+<p>Calculate the difference (in days) between two <code>Date</code> objects.</p>
 <pre><code class="language-js">const getDaysDiffBetweenDates = (dateInitial, dateFinal) =&gt; (dateFinal - dateInitial) / (1000 * 3600 * 24);
 // getDaysDiffBetweenDates(new Date(&quot;2017-12-13&quot;), new Date(&quot;2017-12-22&quot;)) -&gt; 9
 </code></pre>
@@ -721,7 +721,7 @@ Scroll by a fraction of the distance from top. Use <code>window.requestAnimation
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="toenglishdate">toEnglishDate</h3></div><div class="section double-padded">
 <p>Converts a date from American format to English format.</p>
-<p>Use <code>Date.toISOString()</code>, <code>split('T')</code> and <code>replace()</code> to convert a date from American format to English format.
+<p>Use <code>Date.toISOString()</code>, <code>split('T')</code> and <code>replace()</code> to convert a date from American format to the English format.
 Throws an error if the passed time cannot be converted to a date.</p>
 <pre><code class="language-js">const toEnglishDate  = (time) =&gt;
   {try{return new Date(time).toISOString().split('T')[0].replace(/-/g, '/')}catch(e){return}};
@@ -756,7 +756,7 @@ multiplyAndAdd5(5, 2) -&gt; 15
 <p>Curries a function.</p>
 <p>Use recursion.
 If the number of provided arguments (<code>args</code>) is sufficient, call the passed function <code>f</code>.
-Otherwise return a curried function <code>f</code> that expects the rest of the arguments.
+Otherwise, return a curried function <code>f</code> that expects the rest of the arguments.
 If you want to curry a function that accepts a variable number of arguments (a variadic function, e.g. <code>Math.min()</code>), you can optionally pass the number of arguments to the second parameter <code>arity</code>.</p>
 <pre><code class="language-js">const curry = (fn, arity = fn.length, ...args) =&gt;
   arity &lt;= args.length
@@ -819,7 +819,7 @@ async function sleepyWork() {
 <p>Clamps <code>num</code> within the inclusive <code>lower</code> and <code>upper</code> bounds.</p>
 <p>If <code>lower</code> is greater than <code>upper</code>, swap them.
 If <code>num</code> falls within the range, return <code>num</code>.
-Otherwise return the nearest number in the range.</p>
+Otherwise, return the nearest number in the range.</p>
 <pre><code class="language-js">const clampNumber = (num, lower, upper) =&gt; {
   if(lower &gt; upper) upper = [lower, lower = upper][0];
   return (num&gt;=lower &amp;&amp; num&lt;=upper) ? num : ((num &lt; lower) ? lower : upper) 
@@ -830,7 +830,7 @@ Otherwise return the nearest number in the range.</p>
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="collatz">collatz</h3></div><div class="section double-padded">
 <p>Applies the Collatz algorithm.</p>
-<p>If <code>n</code> is even, return <code>n/2</code>. Otherwise  return <code>3n+1</code>.</p>
+<p>If <code>n</code> is even, return <code>n/2</code>. Otherwise, return <code>3n+1</code>.</p>
 <pre><code class="language-js">const collatz = n =&gt; (n % 2 == 0) ? (n / 2) : (3 * n + 1);
 // collatz(8) --&gt; 4
 // collatz(5) --&gt; 16
@@ -877,16 +877,16 @@ Otherwise, return the GCD of <code>y</code> and the remainder of the division <c
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="hammingdistance">hammingDistance</h3></div><div class="section double-padded">
 <p>Calculates the Hamming distance between two values.</p>
-<p>Use XOR operator (<code>^</code>) to find the bit difference between the two numbers, convert to binary string using <code>toString(2)</code>.
+<p>Use XOR operator (<code>^</code>) to find the bit difference between the two numbers, convert to a binary string using <code>toString(2)</code>.
 Count and return the number of <code>1</code>s in the string, using <code>match(/1/g)</code>.</p>
 <pre><code class="language-js">const hammingDistance = (num1, num2) =&gt;
   ((num1 ^ num2).toString(2).match(/1/g) || '').length;
 // hammingDistance(2,3) -&gt; 1
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="inrange">inRange</h3></div><div class="section double-padded">
-<p>Checks if the given number falls in the given range.</p>
+<p>Checks if the given number falls within the given range.</p>
 <p>Use arithmetic comparison to check if the given number is in the specified range.
-If the second parameter, <code>end</code>, is not specified, the reange is considered to be from <code>0</code> to <code>start</code>.</p>
+If the second parameter, <code>end</code>, is not specified, the range is considered to be from <code>0</code> to <code>start</code>.</p>
 <pre><code class="language-js">const inRange = (n, start, end=null) =&gt; {
   if(end &amp;&amp; start &gt; end) end = [start, start=end][0];
   return (end == null) ? (n&gt;=0 &amp;&amp; n&lt;start) : (n&gt;=start &amp;&amp; n&lt;end);
@@ -897,8 +897,8 @@ If the second parameter, <code>end</code>, is not specified, the reange is consi
 // inrange(3, 2) -&gt; false
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isarmstrongnumber">isArmstrongNumber</h3></div><div class="section double-padded">
-<p>Checks if the given number is an armstrong number or not.</p>
-<p>Convert the given number into array of digits. Use <code>Math.pow()</code> to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return <code>true</code> otherwise <code>false</code>.</p>
+<p>Checks if the given number is an Armstrong number or not.</p>
+<p>Convert the given number into an array of digits. Use <code>Math.pow()</code> to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return <code>true</code> otherwise <code>false</code>.</p>
 <pre><code class="language-js">const isArmstrongNumber = digits =&gt; 
   ( arr =&gt; arr.reduce( ( a, d ) =&gt; a + Math.pow( parseInt( d ), arr.length ), 0 ) == digits ? true : false )( ( digits+'' ).split( '' ) );
 // isArmstrongNumber(1634) -&gt; true
@@ -1062,7 +1062,7 @@ console.log(arr) // -&gt; ['line1', 'line2', 'line3']
 </div></div><br/><h2 style="text-align:center">Object</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="cleanobj">cleanObj</h3></div><div class="section double-padded">
 <p>Removes any properties except the ones specified from a JSON object.</p>
-<p>Use <code>Object.keys()</code> method to loop over given json object and deleting keys that are not <code>include</code>d in given array.
+<p>Use <code>Object.keys()</code> method to loop over given JSON object and deleting keys that are not <code>include</code>d in given array.
 Also if you give it a special key (<code>childIndicator</code>) it will search deeply inside it to apply function to inner objects too.</p>
 <pre><code class="language-js">const cleanObj = (obj, keysToKeep = [], childIndicator) =&gt; {
   Object.keys(obj).forEach(key =&gt; {
@@ -1113,8 +1113,8 @@ orderby(users, ['name', 'age']) -&gt; [{name: 'barney', age: 34}, {name: 'barney
 */
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="select">select</h3></div><div class="section double-padded">
-<p>Retrieve a property that indicated by the selector from object.</p>
-<p>If property not exists returns <code>undefined</code>.</p>
+<p>Retrieve a property that indicated by the selector from an object.</p>
+<p>If the property does not exists returns <code>undefined</code>.</p>
 <pre><code class="language-js">const select = (from, selector) =&gt;
   selector.split('.').reduce((prev, cur) =&gt; prev &amp;&amp; prev[cur], from);
 
@@ -1168,7 +1168,7 @@ Omit the <code>lowerRest</code> parameter to keep the rest of the string intact,
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="countvowels">countVowels</h3></div><div class="section double-padded">
 <p>Retuns <code>number</code> of vowels in provided string.</p>
-<p>Use a regular expression to count number of vowels <code>(A, E, I, O, U)</code> in a <code>string</code>.</p>
+<p>Use a regular expression to count the number of vowels <code>(A, E, I, O, U)</code> in a <code>string</code>.</p>
 <pre><code class="language-js">const countVowels = str =&gt; (str.match(/[aeiou]/ig) || []).length;
 // countVowels('foobar') -&gt; 3
 // countVowels('gym') -&gt; 0
@@ -1181,7 +1181,7 @@ Omit the <code>lowerRest</code> parameter to keep the rest of the string intact,
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="fromcamelcase">fromCamelCase</h3></div><div class="section double-padded">
 <p>Converts a string from camelcase.</p>
-<p>Use <code>replace()</code> to remove underscores, hyphens and spaces and convert words to camelcase.
+<p>Use <code>replace()</code> to remove underscores, hyphens, and spaces and convert words to camelcase.
 Omit the second argument to use a default separator of <code>_</code>.</p>
 <pre><code class="language-js">const fromCamelCase = (str, separator = '_') =&gt;
   str.replace(/([a-z\d])([A-Z])/g, '$1' + separator + '$2')
@@ -1206,7 +1206,7 @@ Combine characters to get a string using <code>join('')</code>.</p>
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="tocamelcase">toCamelCase</h3></div><div class="section double-padded">
 <p>Converts a string to camelcase.</p>
-<p>Use <code>replace()</code> to remove underscores, hyphens and spaces and convert words to camelcase.</p>
+<p>Use <code>replace()</code> to remove underscores, hyphens, and spaces and convert words to camelcase.</p>
 <pre><code class="language-js">const toCamelCase = str =&gt;
   str.replace(/^([A-Z])|[\s-_]+(\w)/g, (match, p1, p2, offset) =&gt;  p2 ? p2.toUpperCase() : p1.toLowerCase());
 // toCamelCase(&quot;some_database_field_name&quot;) -&gt; 'someDatabaseFieldName'
@@ -1224,7 +1224,7 @@ Return the string truncated to the desired length, with <code>...</code> appende
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="words">words</h3></div><div class="section double-padded">
 <p>Converts a given string into an array of words.</p>
-<p>Use <code>String.split()</code> with a supplied pattern (defaults to non alpha as a regex) to convert to an array of strings. Use <code>Array.filter()</code> to remove any empty strings.
+<p>Use <code>String.split()</code> with a supplied pattern (defaults to non-alpha as a regex) to convert to an array of strings. Use <code>Array.filter()</code> to remove any empty strings.
 Omit the second argument to use the default regex.</p>
 <pre><code class="language-js">const words = (str, pattern = /[^a-zA-Z-]+/) =&gt; str.split(pattern).filter(Boolean);
 // words(&quot;I love javaScript!!&quot;) -&gt; [&quot;I&quot;, &quot;love&quot;, &quot;javaScript&quot;]
@@ -1262,7 +1262,7 @@ Omit the second argument to use the default regex.</p>
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="hextorgb">hexToRGB</h3></div><div class="section double-padded">
 <p>Converts a color code to a <code>rgb()</code> or <code>rgba()</code> string if alpha value is provided.</p>
-<p>Use bitwise right-shift operator and mask bits with <code>&amp;</code> (and) operator to convert a hexadecimal color code (with or without prefixed with <code>#</code>) to a string with the RGB values. If it's 3-digit color code, first convert to 6-digit version. If any alpha value is provided alongside 6-digit hex, give <code>rgba()</code> string in return.</p>
+<p>Use bitwise right-shift operator and mask bits with <code>&amp;</code> (and) operator to convert a hexadecimal color code (with or without prefixed with <code>#</code>) to a string with the RGB values. If it's 3-digit color code, first convert to 6-digit version. If an alpha value is provided alongside 6-digit hex, give <code>rgba()</code> string in return.</p>
 <pre><code class="language-js">const hexToRGB = hex =&gt; {
   let alpha = false, h = hex.slice(hex.startsWith('#') ? 1 : 0);
   if (h.length === 3) h = [...h].map(x =&gt; x + x).join('');
@@ -1322,7 +1322,7 @@ Omit the second argument to use the default regex.</p>
 // isSymbol(Symbol('x')) -&gt; true
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="rgbtohex">RGBToHex</h3></div><div class="section double-padded">
-<p>Converts the values of RGB components to a colorcode.</p>
+<p>Converts the values of RGB components to a color code.</p>
 <p>Convert given RGB parameters to hexadecimal string using bitwise left-shift operator (<code>&lt;&lt;</code>) and <code>toString(16)</code>, then <code>padStart(6,'0')</code> to get a 6-digit hexadecimal value.</p>
 <pre><code class="language-js">const RGBToHex = (r, g, b) =&gt; ((r &lt;&lt; 16) + (g &lt;&lt; 8) + b).toString(16).padStart(6, '0');
 // RGBToHex(255, 165, 1) -&gt; 'ffa501'
