@@ -810,7 +810,7 @@ Throws an exception if <code>n</code> is a negative number.</p>
 <p>Create an empty array of the specific length, initializing the first two values (<code>0</code> and <code>1</code>).
 Use <code>Array.reduce()</code> to add values into the array, using the sum of the last two values, except for the first two.</p>
 <pre><code class="language-js">const fibonacci = n =&gt;
-  Array.from({ length: n}).map(v =&gt; 0).reduce((acc, val, i) =&gt; acc.concat(i &gt; 1 ? acc[i - 1] + acc[i - 2] : i), []);
+  Array.from({ length: n}).reduce((acc, val, i) =&gt; acc.concat(i &gt; 1 ? acc[i - 1] + acc[i - 2] : i), []);
 // fibonacci(5) -&gt; [0,1,1,2,3]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="gcd">gcd</h3></div><div class="section double-padded">
