@@ -2,7 +2,7 @@
 
 Converts a date from American format to English format.
 
-Use `Date.toISOString()`, `split('T')` and `replace()` to convert a date from American format to English format.
+Use `Date.toISOString()`, `split('T')` and `replace()` to convert a date from American format to the English format.
 Throws an error if the passed time cannot be converted to a date.
 
 ```js
