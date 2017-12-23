@@ -23,8 +23,8 @@
       Array.from(node.parentElement.parentElement.children).forEach(x => x.tagName == 'H3' ? (toRemove.style.display = (remove ? 'none' : ''), toRemove = x, remove = true) : (x.style.display == '' ? remove = false : remove=remove));
     }
 
-    const pres = document.querySelectorAll("pre");
-    pres.forEach(element => {
+    const snippets = document.querySelectorAll("pre");
+    snippets.forEach(element => {
     const button = document.createElement("button");
     button.innerHTML = "Copy to clipboard";
     element.parentElement.appendChild(button);
@@ -32,8 +32,8 @@
     button.addEventListener ("click", function() {
         //The following regex removes all the comments from the snippet
         const text = element.textContent.replace(/\/\*(.|[\r\n])*?\*\//g, '').replace(/\/\/.*/gm, '');
-        // Apparently you can copy variable to clipboard so you need to create text input element,
-        // give it a value, copy it and then remove it
+        // Apparently you can't copy a variable to clipboard so you need to create text input element,
+        // give it a value, copy it and then remove it from DOM.
         const textArea = document.createElement("textarea");
         textArea.value = text;
         document.body.appendChild(textArea);
