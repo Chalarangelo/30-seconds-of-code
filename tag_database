@@ -123,6 +123,7 @@ toDecimalMark:utility
 toEnglishDate:date
 toKebabCase:string
 toOrdinalSuffix:utility
+toSnakeCase:string
 truncateString:string
 truthCheckCollection:object
 union:array
