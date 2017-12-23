@@ -367,8 +367,8 @@ Returns the remaining elements.</p>
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="flatten">flatten</h3></div><div class="section double-padded">
 <p>Flattens an array.</p>
-<p>Use <code>Array.reduce()</code> to get all elements inside the array and <code>concat()</code> to flatten them.</p>
-<pre><code class="language-js">const flatten = arr =&gt; arr.reduce((a, v) =&gt; a.concat(v), []);
+<p>Use a new array and concatenate it with the spread input array causing a shallow denesting of any contained arrays.</p>
+<pre><code class="language-js">const flatten = arr =&gt; [ ].concat( ...arr );
 // flatten([1,[2],3,4]) -&gt; [1,2,3,4]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="flattendepth">flattenDepth</h3></div><div class="section double-padded">
