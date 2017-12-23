@@ -110,7 +110,9 @@ $mark-tag-border-radius:        1em;
 // Website-specific styles
 
 html, * { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, sans-serif; }
-code, pre, kbd, code *, pre *, kbd * { font-family: 'Inconsolata', Menlo, Consolas, monospace; }
+code, pre, kbd, code *, pre *, kbd *, code[class*="language-"], pre[class*="language-"] {
+   font-family: 'Inconsolata', Menlo, Consolas, monospace !important;
+ }
 code, kbd { font-size: 1em; }
 code { transform: scale(1); } /* Deals with the issue described in #243 */
 pre { font-size: 1rem; border: 0.0625rem solid var(--secondary-border-color); border-radius: var(--universal-border-radius);}
