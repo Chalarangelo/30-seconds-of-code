@@ -38,6 +38,8 @@ everyNth:array
 extendHex:utility
 factorial:math
 fibonacci:math
+fibonacciCountUntilNum:math
+fibonacciUntilNum:math
 filterNonUnique:array
 flatten:array
 flattenDepth:array
