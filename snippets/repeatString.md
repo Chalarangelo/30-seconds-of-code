@@ -9,6 +9,5 @@ const repeatString = (str="",num=2) => {
     return num >= 0 ? str.repeat(num) : str;
 }
 // repeatString("abc",3) -> 'abcabcabc'
-// repeatString("abc",0) -> ''
 // repeatString("abc") -> 'abcabc'
 ```
