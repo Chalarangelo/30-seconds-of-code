@@ -181,9 +181,11 @@
 <a class="sublink-1" href="#countvowels">countVowels</a>
 <a class="sublink-1" href="#escaperegexp">escapeRegExp</a>
 <a class="sublink-1" href="#fromcamelcase">fromCamelCase</a>
+<a class="sublink-1" href="#repeatstring">repeatString</a>
 <a class="sublink-1" href="#reversestring">reverseString</a>
 <a class="sublink-1" href="#sortcharactersinstring">sortCharactersInString</a>
 <a class="sublink-1" href="#tocamelcase">toCamelCase</a>
+<a class="sublink-1" href="#tokebabcase">toKebabCase</a>
 <a class="sublink-1" href="#truncatestring">truncateString</a>
 <a class="sublink-1" href="#words">words</a>
 
@@ -205,10 +207,6 @@
 <a class="sublink-1" href="#toordinalsuffix">toOrdinalSuffix</a>
 <a class="sublink-1" href="#uuidgenerator">UUIDGenerator</a>
 <a class="sublink-1" href="#validatenumber">validateNumber</a>
-
-<h3>Uncategorized
-</h3><a class="sublink-1" href="#repeatstring">repeatString</a>
-<a class="sublink-1" href="#tokebabcase">toKebabCase</a>
 
 </nav><main class="col-sm-12 col-md-8 col-lg-9" style="height:100%;overflow-y:auto;background:#eceef2;padding:0"><a id="top">&nbsp;</a><h2 style="text-align:center">Adapter</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="call">call</h3></div><div class="section double-padded">
@@ -1225,6 +1223,15 @@ Omit the second argument to use a default separator of <code>_</code>.</p>
 // fromCamelCase('someLabelThatNeedsToBeCamelized', '-') -&gt; 'some-label-that-needs-to-be-camelized'
 // fromCamelCase('someJavascriptProperty', '_') -&gt; 'some_javascript_property'
 </code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="repeatstring">repeatString</h3></div><div class="section double-padded">
+<p>Repeats a string n times using <code>String.repeat()</code></p>
+<p>If no string is provided the default is <code>&quot;&quot;</code> and the default number of times is 2.</p>
+<pre><code class="language-js">const repeatString = (str=&quot;&quot;,num=2) =&gt; {
+    return num &gt;= 0 ? str.repeat(num) : str;
+}
+// repeatString(&quot;abc&quot;,3) -&gt; 'abcabcabc'
+// repeatString(&quot;abc&quot;) -&gt; 'abcabc'
+</code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="reversestring">reverseString</h3></div><div class="section double-padded">
 <p>Reverses a string.</p>
 <p>Use <code>split('')</code> and <code>Array.reverse()</code> to reverse the order of the characters in the string.
@@ -1248,6 +1255,19 @@ Combine characters to get a string using <code>join('')</code>.</p>
 // toCamelCase(&quot;Some label that needs to be camelized&quot;) -&gt; 'someLabelThatNeedsToBeCamelized'
 // toCamelCase(&quot;some-javascript-property&quot;) -&gt; 'someJavascriptProperty'
 // toCamelCase(&quot;some-mixed_string with spaces_underscores-and-hyphens&quot;) -&gt; 'someMixedStringWithSpacesUnderscoresAndHyphens'
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="tokebabcase">toKebabCase</h3></div><div class="section double-padded">
+<p>Converts a string to <a href="https://en.wikipedia.org/wiki/Letter_case#Special_case_styles">kebab case</a>.
+Use <code>replace()</code> to add spaces before capital letters, convert <code>toLowerCase()</code>, then <code>replace()</code> underscores and spaces with hyphens.
+Also check if a string starts with a hyphen and remove it if yes.</p>
+<pre><code class="language-js">const toKebabCase = str =&gt; {
+    str = str.replace(/([A-Z])/g,&quot; $1&quot;).toLowerCase().replace(/_/g,' ').replace(/-/g,' ').replace(/\s\s+/g, ' ').replace(/\s/g,'-');
+    return str.startsWith('-') ? str.slice(1,str.length) : str;
+}
+// toKebabCase(&quot;camelCase&quot;) -&gt; 'camel-case'
+// toKebabCase(&quot;some text&quot;) -&gt; 'some-text'
+// toKebabCase(&quot;some-mixed_string With spaces_underscores-and-hyphens&quot;) -&gt; 'some-mixed-string-with-spaces-underscores-and-hyphens'
+// toKebabCase(&quot;AllThe-small Things&quot;) -&gt; &quot;all-the-small-things&quot;
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="truncatestring">truncateString</h3></div><div class="section double-padded">
 <p>Truncates a string up to a specified length.</p>
@@ -1406,29 +1426,6 @@ Use <code>isFinite()</code> to check if the number is finite.
 Use <code>Number()</code> to check if the coercion holds.</p>
 <pre><code class="language-js">const validateNumber = n =&gt; !isNaN(parseFloat(n)) &amp;&amp; isFinite(n) &amp;&amp; Number(n) == n;
 // validateNumber('10') -&gt; true
-</code></pre>
-</div></div><br/><h2 style="text-align:center">Uncategorized</h2>
-<div class="card fluid"><div class="section double-padded"><h3 id="repeatstring">repeatString</h3></div><div class="section double-padded">
-<p>Repeats a string n times using <code>String.repeat()</code></p>
-<p>If no string is provided the default is <code>&quot;&quot;</code> and the default number of times is 2.</p>
-<pre><code class="language-js">const repeatString = (str=&quot;&quot;,num=2) =&gt; {
-    return num &gt;= 0 ? str.repeat(num) : str;
-}
-// repeatString(&quot;abc&quot;,3) -&gt; 'abcabcabc'
-// repeatString(&quot;abc&quot;) -&gt; 'abcabc'
-</code></pre>
-</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="tokebabcase">toKebabCase</h3></div><div class="section double-padded">
-<p>Converts a string to <a href="https://en.wikipedia.org/wiki/Letter_case#Special_case_styles">kebab case</a>.
-Use <code>replace()</code> to add spaces before capital letters, convert <code>toLowerCase()</code>, then <code>replace()</code> underscores and spaces with hyphens.
-Also check if a string starts with a hyphen and remove it if yes.</p>
-<pre><code class="language-js">const toKebabCase = str =&gt; {
-    str = str.replace(/([A-Z])/g,&quot; $1&quot;).toLowerCase().replace(/_/g,' ').replace(/-/g,' ').replace(/\s\s+/g, ' ').replace(/\s/g,'-');
-    return str.startsWith('-') ? str.slice(1,str.length) : str;
-}
-// toKebabCase(&quot;camelCase&quot;) -&gt; 'camel-case'
-// toKebabCase(&quot;some text&quot;) -&gt; 'some-text'
-// toKebabCase(&quot;some-mixed_string With spaces_underscores-and-hyphens&quot;) -&gt; 'some-mixed-string-with-spaces-underscores-and-hyphens'
-// toKebabCase(&quot;AllThe-small Things&quot;) -&gt; &quot;all-the-small-things&quot;
 </code></pre>
 </div></div><br/>
         <footer>
