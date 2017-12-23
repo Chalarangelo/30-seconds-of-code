@@ -16,7 +16,7 @@ properties of original objects
 #### Info
 
 Used ES6 Array.reduce() in order to filter an array with objects based on condition.
-If condition is met, then Array.reduce is used again to construct object with the predefined properties. Further more, in order to evaluate condition based in object properties item, must be passed through window to Function constructor. Finally, when new object is constructed then it is saved in the output array. 
+If condition is met, then Array.reduce is used again to construct object with the predefined properties. Further more, in order to dynamically evaluate condition based in object properties, item must be passed through window to Function constructor. Finally, when new object is constructed then it is saved in the output array. 
 
 ```js
 const safeEval = (condition) => new Function('return '+condition)();
