@@ -99,6 +99,8 @@
 * [`distance`](#distance)
 * [`factorial`](#factorial)
 * [`fibonacci`](#fibonacci)
+* [`fibonacciCountUntilNum`](#fibonaccicountuntilnum)
+* [`fibonacciUntilNum`](#fibonacciuntilnum)
 * [`gcd`](#gcd)
 * [`hammingDistance`](#hammingdistance)
 * [`inRange`](#inrange)
@@ -290,7 +292,7 @@ Use `Array.reduce()` and the `lcm` formula (uses recursion) to calculate the low
 ```js
 const arrayLcm = arr =>{
   const gcd = (x, y) => !y ? x : gcd(y, x % y);
-  const lcm = (x, y) => (x*y)/gcd(x, y) 
+  const lcm = (x, y) => (x*y)/gcd(x, y); 
   return arr.reduce((a,b) => lcm(a,b));
 }
 // arrayLcm([1,2,3,4,5]) -> 60
@@ -483,10 +485,10 @@ const filterNonUnique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexO
 
 Flattens an array.
 
-Use `Array.reduce()` to get all elements inside the array and `concat()` to flatten them.
+Use a new array and concatenate it with the spread input array causing a shallow denesting of any contained arrays.
 
 ```js
-const flatten = arr => arr.reduce((a, v) => a.concat(v), []);
+const flatten = arr => [ ].concat( ...arr );
 // flatten([1,[2],3,4]) -> [1,2,3,4]
 ```
 
@@ -1364,6 +1366,38 @@ Use `Array.reduce()` to add values into the array, using the sum of the last two
 const fibonacci = n =>
   Array.from({ length: n}).reduce((acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i), []);
 // fibonacci(5) -> [0,1,1,2,3]
+```
+
+[⬆ back to top](#table-of-contents)
+
+### fibonacciCountUntilNum
+
+Returns the number of fibonnacci numbers up to `num`(`0` and `num` inclusive).
+
+Use a mathematical formula to calculate the number of fibonacci numbers until `num`.
+
+```js
+const fibonacciCountUntilNum = num =>
+  Math.ceil(Math.log(num * Math.sqrt(5) + 1/2) / Math.log((Math.sqrt(5)+1)/2));
+// fibonacciCountUntilNum(10) -> 7
+```
+
+[⬆ back to top](#table-of-contents)
+
+### fibonacciUntilNum
+
+Generates an array, containing the Fibonacci sequence, up until the nth term.
+
+Create an empty array of the specific length, initializing the first two values (`0` and `1`).
+Use `Array.reduce()` to add values into the array, using the sum of the last two values, except for the first two.
+Uses a mathematical formula to calculate the length of the array required.
+
+```js
+const fibonacciUntilNum = num => {
+  let n = Math.ceil(Math.log(num * Math.sqrt(5) + 1/2) / Math.log((Math.sqrt(5)+1)/2));
+  return Array.from({ length: n}).reduce((acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i), []);
+}
+// fibonacciUntilNum(15) -> [0,1,1,2,3,5,8,13]
 ```
 
 [⬆ back to top](#table-of-contents)
