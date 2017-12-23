@@ -127,6 +127,8 @@
 <a class="sublink-1" href="#distance">distance</a>
 <a class="sublink-1" href="#factorial">factorial</a>
 <a class="sublink-1" href="#fibonacci">fibonacci</a>
+<a class="sublink-1" href="#fibonaccicountuntilnum">fibonacciCountUntilNum</a>
+<a class="sublink-1" href="#fibonacciuntilnum">fibonacciUntilNum</a>
 <a class="sublink-1" href="#gcd">gcd</a>
 <a class="sublink-1" href="#hammingdistance">hammingDistance</a>
 <a class="sublink-1" href="#inrange">inRange</a>
@@ -866,6 +868,24 @@ Use <code>Array.reduce()</code> to add values into the array, using the sum of t
 <pre><code class="language-js">const fibonacci = n =&gt;
   Array.from({ length: n}).reduce((acc, val, i) =&gt; acc.concat(i &gt; 1 ? acc[i - 1] + acc[i - 2] : i), []);
 // fibonacci(5) -&gt; [0,1,1,2,3]
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="fibonaccicountuntilnum">fibonacciCountUntilNum</h3></div><div class="section double-padded">
+<p>Returns the number of fibonnacci numbers up to <code>num</code>(<code>0</code> and <code>num</code> inclusive).</p>
+<p>Use a mathematical formula to calculate the number of fibonacci numbers until <code>num</code>.</p>
+<pre><code class="language-js">const fibonacciCountUntilNum = num =&gt;
+  Math.ceil(Math.log(num * Math.sqrt(5) + 1/2) / Math.log((Math.sqrt(5)+1)/2));
+// fibonacciCountUntilNum(10) -&gt; 7
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="fibonacciuntilnum">fibonacciUntilNum</h3></div><div class="section double-padded">
+<p>Generates an array, containing the Fibonacci sequence, up until the nth term.</p>
+<p>Create an empty array of the specific length, initializing the first two values (<code>0</code> and <code>1</code>).
+Use <code>Array.reduce()</code> to add values into the array, using the sum of the last two values, except for the first two.
+Uses a mathematical formula to calculate the length of the array required.</p>
+<pre><code class="language-js">const fibonacciUntilNum = num =&gt; {
+  let n = Math.ceil(Math.log(num * Math.sqrt(5) + 1/2) / Math.log((Math.sqrt(5)+1)/2));
+  return Array.from({ length: n}).reduce((acc, val, i) =&gt; acc.concat(i &gt; 1 ? acc[i - 1] + acc[i - 2] : i), []);
+}
+// fibonacciUntilNum(15) -&gt; [0,1,1,2,3,5,8,13]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="gcd">gcd</h3></div><div class="section double-padded">
 <p>Calculates the greatest common divisor between two numbers.</p>
