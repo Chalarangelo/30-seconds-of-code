@@ -17,9 +17,20 @@
   </head>
   <script>
     const search = (node) => {
-      Array.from(node.parentElement.parentElement.getElementsByTagName('a')).forEach(x => x.style.display = x.getAttribute("href").toUpperCase().indexOf(node.value.toUpperCase()) + 1  ? '' : 'none');
-      var remove = false, childs = Array.from(node.parentElement.parentElement.children), toRemove = childs[0];
-      Array.from(node.parentElement.parentElement.children).forEach(x => x.tagName == 'H3' ? (toRemove.style.display = (remove ? 'none' : ''), toRemove = x, remove = true) : (x.style.display == '' ? remove = false : remove=remove));
+      // Hide non-query-matching snippets 
+      Array.from(node.parentElement.parentElement.getElementsByTagName('a')).forEach(x => {
+        x.style.display = x.getAttribute("href").toUpperCase().indexOf(node.value.toUpperCase()) + 1  ? '' : 'none'
+      });
+      Array.from( node.parentElement.parentElement.children )
+      // Filter out the hidden links
+      .filter( x => !( x.tagName == 'A' && x.style.display == 'none' ) )
+      // set the display for each element based on if it's a H3
+      // If it's the last element and an H3, hide it
+      // Otherwise if it's and H3 and the next element is an H3, hide it
+      // Otherwise display it
+      .forEach( ( element, index, source) => {
+         element.style.display = (element.tagName == 'H3' && index + 1 == source.length ? 'none' : element.tagName == 'H3' && source[index + 1].tagName == 'H3' ? 'none'  : '')
+      })
     }
   </script>
   <body>
