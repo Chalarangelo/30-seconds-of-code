@@ -97,6 +97,7 @@ randomNumberInRange:math
 readFileLines:node
 redirect:browser
 remove:array
+repeatString:uncategorized
 reverseString:string
 RGBToHex:utility
 round:math
@@ -120,6 +121,7 @@ timeTaken:utility
 toCamelCase:string
 toDecimalMark:utility
 toEnglishDate:date
+toKebabCase:uncategorized
 toOrdinalSuffix:utility
 truncateString:string
 truthCheckCollection:object

@@ -167,6 +167,10 @@
 * [`UUIDGenerator`](#uuidgenerator)
 * [`validateNumber`](#validatenumber)
 
+### _Uncategorized_
+* [`repeatString`](#repeatstring)
+* [`toKebabCase`](#tokebabcase)
+
 ## Adapter
 
 ### call
@@ -2287,6 +2291,42 @@ Use `Number()` to check if the coercion holds.
 ```js
 const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
 // validateNumber('10') -> true
+```
+
+[⬆ back to top](#table-of-contents)
+## _Uncategorized_
+
+### repeatString
+
+Repeats a string n times using `String.repeat()`
+
+If no string is provided the default is `""` and the default number of times is 2.
+
+```js
+const repeatString = (str="",num=2) => {
+    return num >= 0 ? str.repeat(num) : str;
+}
+// repeatString("abc",3) -> 'abcabcabc'
+// repeatString("abc") -> 'abcabc'
+```
+
+[⬆ back to top](#table-of-contents)
+
+### toKebabCase
+
+Converts a string to [kebab case](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles).
+Use `replace()` to add spaces before capital letters, convert `toLowerCase()`, then `replace()` underscores and spaces with hyphens.
+Also check if a string starts with a hyphen and remove it if yes.
+
+```js
+const toKebabCase = str => {
+    str = str.replace(/([A-Z])/g," $1").toLowerCase().replace(/_/g,' ').replace(/-/g,' ').replace(/\s\s+/g, ' ').replace(/\s/g,'-');
+    return str.startsWith('-') ? str.slice(1,str.length) : str;
+}
+// toKebabCase("camelCase") -> 'camel-case'
+// toKebabCase("some text") -> 'some-text'
+// toKebabCase("some-mixed_string With spaces_underscores-and-hyphens") -> 'some-mixed-string-with-spaces-underscores-and-hyphens'
+// toKebabCase("AllThe-small Things") -> "all-the-small-things"
 ```
 
 [⬆ back to top](#table-of-contents)
