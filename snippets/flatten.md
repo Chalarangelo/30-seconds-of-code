@@ -2,7 +2,7 @@
 
 Flattens an array.
 
-Using a new array we concatinate it with the spread input array causing a shallow flatten
+Using a new array we concatinate it with the spread input array causing a shallow denesting of any contained arrays
 
 ```js
 const flatten = arr => [ ].concat( ...arr );
