@@ -2,9 +2,9 @@
 
 Flattens an array.
 
-Use `Array.reduce()` to get all elements inside the array and `concat()` to flatten them.
+Using a new array we concatinate it with the spread input array causing a shallow flatten
 
 ```js
-const flatten = arr => arr.reduce((a, v) => a.concat(v), []);
+const flatten = arr => [ ].concat( ...arr );
 // flatten([1,[2],3,4]) -> [1,2,3,4]
 ```
