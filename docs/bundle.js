@@ -5,6 +5,7 @@ s.forEach(element => {
     element.parentElement.appendChild(button);
 
     button.addEventListener ("click", function() {
-        console.log(element.textContent);
-      });
+        var text = element.textContent.replace(/\/\*(.|[\r\n])*?\*\//g, '').replace(/\/\/.*/gm, '');
+        console.log(text);
+    });
 });
