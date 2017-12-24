@@ -25,6 +25,7 @@ countVowels:string
 currentURL:browser
 curry:function
 deepFlatten:array
+detectDeviceType:uncategorized
 difference:array
 differenceWith:array
 digitize:math
@@ -78,6 +79,7 @@ last:array
 lcm:math
 mapObject:array
 median:math
+negate:uncategorized
 nthElement:array
 objectFromPairs:object
 objectToPairs:object

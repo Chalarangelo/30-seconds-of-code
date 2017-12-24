@@ -231,6 +231,10 @@
 <a class="sublink-1" href="#uuidgenerator">UUIDGenerator</a>
 <a class="sublink-1" href="#validatenumber">validateNumber</a>
 
+<h3>Uncategorized
+</h3><a class="sublink-1" href="#detectdevicetype">detectDeviceType</a>
+<a class="sublink-1" href="#negate">negate</a>
+
 </nav><main class="col-sm-12 col-md-8 col-lg-9" style="height:100%;overflow-y:auto;background:#eceef2;padding:0"><a id="top">&nbsp;</a><h2 style="text-align:center">Adapter</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="call">call</h3></div><div class="section double-padded">
 <p>Given a key and a set of arguments, call them when given a context. Primarily useful in composition.</p>
@@ -1335,7 +1339,7 @@ Omit the second argument to use the default regex.</p>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="extendhex">extendHex</h3></div><div class="section double-padded">
 <p>Extends a 3-digit color code to a 6-digit color code.</p>
 <p>Use <code>Array.map()</code>, <code>split()</code> and <code>Array.join()</code> to join the mapped array for converting a 3-digit RGB notated hexadecimal color-code to the 6-digit form.
-<code>Array.slice()</code> is used to remove <code>#</code> from string start since it's added once.</p>
+<code>String.slice()</code> is used to remove <code>#</code> from string start since it's added once.</p>
 <pre><code class="language-js">const extendHex = shortHex =&gt;
   '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split('').map(x =&gt; x+x).join('')
 // extendHex('#03f') -&gt; '#0033ff'
@@ -1459,6 +1463,21 @@ Use <code>isFinite()</code> to check if the number is finite.
 Use <code>Number()</code> to check if the coercion holds.</p>
 <pre><code class="language-js">const validateNumber = n =&gt; !isNaN(parseFloat(n)) &amp;&amp; isFinite(n) &amp;&amp; Number(n) == n;
 // validateNumber('10') -&gt; true
+</code></pre>
+</div></div><br/><h2 style="text-align:center">Uncategorized</h2>
+<div class="card fluid"><div class="section double-padded"><h3 id="detectdevicetype">detectDeviceType</h3></div><div class="section double-padded">
+<p>Detects wether the website is being opened in a mobile device or a desktop/laptop.</p>
+<p>Use a regular expression to test the <code>navigator.userAgent</code> property to figure out if the device is a mobile device or a desktop/laptop.</p>
+<pre><code class="language-js">const detectDeviceType = () =&gt; /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? &quot;Mobile&quot; : &quot;Desktop&quot;;
+// detectDeviceType() -&gt; &quot;Mobile&quot;
+// detectDeviceType() -&gt; &quot;Desktop&quot;
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="negate">negate</h3></div><div class="section double-padded">
+<p>Negates a predicate function.</p>
+<p>Take a predicate function and apply <code>not</code> to it with its arguments.</p>
+<pre><code class="language-js">const negate = func =&gt; (...args) =&gt; !fun(...args);
+// filter([1, 2, 3, 4, 5, 6], negate(isEven)) -&gt; [1, 3, 5]
+// negate(isOdd)(1) -&gt; false
 </code></pre>
 </div></div><br/>
         <footer>
