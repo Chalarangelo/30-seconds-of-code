@@ -10,7 +10,6 @@ const randomHexColorCode = () => {
 	  while(color.length < 7) color += '0123456789ABCDEF'[Math.floor(Math.random() * 16)];
 	  return color;
 }
-
 // randomHexColorCode() -> "#e34155"
 // randomHexColorCode() -> "#fd73a6"
 // randomHexColorCode() -> "#4144c6"
