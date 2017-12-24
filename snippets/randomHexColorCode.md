@@ -6,7 +6,7 @@ Use `Math.random` to generate a random number and limit that number to fall in b
 
 ```js
 const randomHexColorCode = () => {
-	  var color = '#';
+	  let color = '#';
 	  while(color.length < 7) color += '0123456789ABCDEF'[Math.floor(Math.random() * 16)];
 	  return color;
 }
