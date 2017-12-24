@@ -1291,30 +1291,27 @@ Combine characters to get a string using <code>join('')</code>.</p>
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="tocamelcase">toCamelCase</h3></div><div class="section double-padded">
 <p>Converts a string to camelcase.</p>
-<p>Use <code>replace()</code> to remove underscores, hyphens, and spaces and convert words to camelcase.</p>
-<pre><code class="language-js">const toCamelCase = str =&gt;
-  str.replace(/^([A-Z])|[\s-_]+(\w)/g, (match, p1, p2, offset) =&gt;  p2 ? p2.toUpperCase() : p1.toLowerCase());
+<p>Break the string into words and combine them capitalizing the first letter of each word.
+For more detailed explanation of this Regex, <a href="https://regex101.com/r/bMCgAB/1">visit this Site</a>.</p>
+<pre><code class="language-js">const toCamelCase = str =&gt; {
+  let s = str &amp;&amp; str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+    .map(x =&gt; x.slice(0,1).toUpperCase() + x.slice(1).toLowerCase())
+    .join('');
+  return s.slice(0,1).toLowerCase() + s.slice(1)
+  }
 // toCamelCase(&quot;some_database_field_name&quot;) -&gt; 'someDatabaseFieldName'
 // toCamelCase(&quot;Some label that needs to be camelized&quot;) -&gt; 'someLabelThatNeedsToBeCamelized'
 // toCamelCase(&quot;some-javascript-property&quot;) -&gt; 'someJavascriptProperty'
 // toCamelCase(&quot;some-mixed_string with spaces_underscores-and-hyphens&quot;) -&gt; 'someMixedStringWithSpacesUnderscoresAndHyphens'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="tokebabcase">toKebabCase</h3></div><div class="section double-padded">
-<p>Converts a string to <a href="https://en.wikipedia.org/wiki/Letter_case#Special_case_styles">kebab case</a>.
-Breaks the string into words.
-A word is defined as following:-
--&gt; Beginning with two or more capital letters, e.g. XML or FM
--&gt; Begin with a capital letter followed by lower case letters with optional trailing numbers, e.g. Hello or Http2
--&gt; Contain nothing but lower case letters with optional trailing numbers, e.g. hello or http2
--&gt; Individual upper letters, e.g T.M.N.T
--&gt; Groups of numbers, e.g. 555-555-5555</p>
-<p>For more detailed explanation of this Regex <a href="https://regex101.com/r/bMCgAB/1">Visit this Site</a></p>
-<pre><code class="language-js">const toKebabCase = str =&gt; {
-    let regex = rx = /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g;
-    return str.match(regex).map(x =&gt;{
-        return x.toLowerCase();
-    }).join('-');
-}
+<p>Converts a string to kebab case.</p>
+<p>Break the string into words and combine them using <code>-</code> as a separator.
+For more detailed explanation of this Regex, <a href="https://regex101.com/r/bMCgAB/1">visit this Site</a>.</p>
+<pre><code class="language-js">const toKebabCase = str =&gt;
+  str &amp;&amp; str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+    .map(x =&gt; x.toLowerCase())
+    .join('-');
 // toKebabCase(&quot;camelCase&quot;) -&gt; 'camel-case'
 // toKebabCase(&quot;some text&quot;) -&gt; 'some-text'
 // toKebabCase(&quot;some-mixed_string With spaces_underscores-and-hyphens&quot;) -&gt; 'some-mixed-string-with-spaces-underscores-and-hyphens'
@@ -1322,14 +1319,19 @@ A word is defined as following:-
 // toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') -&gt; &quot;i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-xml-and-html&quot;
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="tosnakecase">toSnakeCase</h3></div><div class="section double-padded">
-<p>Converts a string to snakecase.</p>
-<p>Use <code>replace()</code> to add underscores before capital letters, convert <code>toLowerCase()</code>, then <code>replace()</code> hyphens and spaces with underscores.</p>
-<pre><code class="language-js">const toSnakeCase = str =&gt;
-  str.replace(/(\w)([A-Z])/g, '$1_$2').replace(/[\s-_]+/g, '_').toLowerCase();
+<p>Converts a string to snake case.</p>
+<p>Break the string into words and combine them using <code>_</code> as a separator.
+For more detailed explanation of this Regex, <a href="https://regex101.com/r/bMCgAB/1">visit this Site</a>.</p>
+<pre><code class="language-js">const toSnakeCase = str =&gt;{
+  str &amp;&amp; str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+    .map(x =&gt; x.toLowerCase())
+    .join('_');
 // toSnakeCase(&quot;camelCase&quot;) -&gt; 'camel_case'
 // toSnakeCase(&quot;some text&quot;) -&gt; 'some_text'
 // toSnakeCase(&quot;some-javascript-property&quot;) -&gt; 'some_javascript_property'
 // toSnakeCase(&quot;some-mixed_string With spaces_underscores-and-hyphens&quot;) -&gt; 'some_mixed_string_with_spaces_underscores_and_hyphens'
+// toKebabCase(&quot;AllThe-small Things&quot;) -&gt; &quot;all_the_smal_things&quot;
+// toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') -&gt; &quot;i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html&quot;
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="truncatestring">truncateString</h3></div><div class="section double-padded">
 <p>Truncates a string up to a specified length.</p>
