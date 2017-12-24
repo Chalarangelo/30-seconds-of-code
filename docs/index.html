@@ -856,7 +856,7 @@ async function sleepyWork() {
 <div class="card fluid"><div class="section double-padded"><h3 id="negate">negate</h3></div><div class="section double-padded">
 <p>Negates a predicate function.</p>
 <p>Take a predicate function and apply <code>not</code> to it with its arguments.</p>
-<pre><code class="language-js">const negate = func =&gt; (...args) =&gt; !fun(...args);
+<pre><code class="language-js">const negate = func =&gt; (...args) =&gt; !func(...args);
 // filter([1, 2, 3, 4, 5, 6], negate(isEven)) -&gt; [1, 3, 5]
 // negate(isOdd)(1) -&gt; false
 </code></pre>
