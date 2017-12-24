@@ -228,15 +228,13 @@
 <a class="sublink-1" href="#isnumber">isNumber</a>
 <a class="sublink-1" href="#isstring">isString</a>
 <a class="sublink-1" href="#issymbol">isSymbol</a>
+<a class="sublink-1" href="#randomhexcolorcode">randomHexColorCode</a>
 <a class="sublink-1" href="#rgbtohex">RGBToHex</a>
 <a class="sublink-1" href="#timetaken">timeTaken</a>
 <a class="sublink-1" href="#todecimalmark">toDecimalMark</a>
 <a class="sublink-1" href="#toordinalsuffix">toOrdinalSuffix</a>
 <a class="sublink-1" href="#uuidgenerator">UUIDGenerator</a>
 <a class="sublink-1" href="#validatenumber">validateNumber</a>
-
-<h3>Uncategorized
-</h3><a class="sublink-1" href="#randomhexcolorcode">randomHexColorCode</a>
 
 </nav><main class="col-sm-12 col-md-8 col-lg-9" style="height:100%;overflow-y:auto;background:#eceef2;padding:0"><a id="top">&nbsp;</a><h2 style="text-align:center">Adapter</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="call">call</h3></div><div class="section double-padded">
@@ -1440,6 +1438,18 @@ Omit the second argument to use the default regex.</p>
 // isSymbol('x') -&gt; false
 // isSymbol(Symbol('x')) -&gt; true
 </code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="randomhexcolorcode">randomHexColorCode</h3></div><div class="section double-padded">
+<p>Generates a random hexadecimal color code.</p>
+<p>Use <code>Math.random</code> to generate a random number and limit that number to fall in between 0 and 16 using <code>Math.floor</code>. Use the generated random number as index to access a character from 0 to F. Append it to <code>color</code> till the length is not <code>7</code>.</p>
+<pre><code class="language-js">const randomHexColorCode = () =&gt; {
+	  let color = '#';
+	  while(color.length &lt; 7) color += '0123456789ABCDEF'[Math.floor(Math.random() * 16)];
+	  return color;
+}
+// randomHexColorCode() -&gt; &quot;#e34155&quot;
+// randomHexColorCode() -&gt; &quot;#fd73a6&quot;
+// randomHexColorCode() -&gt; &quot;#4144c6&quot;
+</code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="rgbtohex">RGBToHex</h3></div><div class="section double-padded">
 <p>Converts the values of RGB components to a color code.</p>
 <p>Convert given RGB parameters to hexadecimal string using bitwise left-shift operator (<code>&lt;&lt;</code>) and <code>toString(16)</code>, then <code>padStart(6,'0')</code> to get a 6-digit hexadecimal value.</p>
@@ -1490,19 +1500,6 @@ Use <code>isFinite()</code> to check if the number is finite.
 Use <code>Number()</code> to check if the coercion holds.</p>
 <pre><code class="language-js">const validateNumber = n =&gt; !isNaN(parseFloat(n)) &amp;&amp; isFinite(n) &amp;&amp; Number(n) == n;
 // validateNumber('10') -&gt; true
-</code></pre>
-</div></div><br/><h2 style="text-align:center">Uncategorized</h2>
-<div class="card fluid"><div class="section double-padded"><h3 id="randomhexcolorcode">randomHexColorCode</h3></div><div class="section double-padded">
-<p>Generates a random hexadecimal color code.</p>
-<p>Use <code>Math.random</code> to generate a random number and limit that number to fall in between 0 and 16 using <code>Math.floor</code>. Use the generated random number as index to access a character from 0 to F. Append it to <code>color</code> till the length is not <code>7</code>.</p>
-<pre><code class="language-js">const randomHexColorCode = () =&gt; {
-	  let color = '#';
-	  while(color.length &lt; 7) color += '0123456789ABCDEF'[Math.floor(Math.random() * 16)];
-	  return color;
-}
-// randomHexColorCode() -&gt; &quot;#e34155&quot;
-// randomHexColorCode() -&gt; &quot;#fd73a6&quot;
-// randomHexColorCode() -&gt; &quot;#4144c6&quot;
 </code></pre>
 </div></div><br/>
         <footer>
