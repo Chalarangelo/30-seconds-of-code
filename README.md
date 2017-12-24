@@ -2042,11 +2042,16 @@ const sortCharactersInString = str =>
 
 Converts a string to camelcase.
 
-Use `replace()` to remove underscores, hyphens, and spaces and convert words to camelcase.
+Break the string into words and combine them capitalizing the first letter of each word.
+For more detailed explanation of this Regex, [visit this Site](https://regex101.com/r/bMCgAB/1).
 
 ```js
-const toCamelCase = str =>
-  str.replace(/^([A-Z])|[\s-_]+(\w)/g, (match, p1, p2, offset) =>  p2 ? p2.toUpperCase() : p1.toLowerCase());
+const toCamelCase = str => {
+  let s = str && str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+    .map(x => x.slice(0,1).toUpperCase() + x.slice(1).toLowerCase())
+    .join('');
+  return s.slice(0,1).toLowerCase() + s.slice(1)
+  }
 // toCamelCase("some_database_field_name") -> 'someDatabaseFieldName'
 // toCamelCase("Some label that needs to be camelized") -> 'someLabelThatNeedsToBeCamelized'
 // toCamelCase("some-javascript-property") -> 'someJavascriptProperty'
@@ -2057,24 +2062,16 @@ const toCamelCase = str =>
 
 ### toKebabCase
 
-Converts a string to [kebab case](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles).
-Breaks the string into words.
-A word is defined as following:-
--> Beginning with two or more capital letters, e.g. XML or FM
--> Begin with a capital letter followed by lower case letters with optional trailing numbers, e.g. Hello or Http2
--> Contain nothing but lower case letters with optional trailing numbers, e.g. hello or http2
--> Individual upper letters, e.g T.M.N.T
--> Groups of numbers, e.g. 555-555-5555
+Converts a string to kebab case.
 
-For more detailed explanation of this Regex [Visit this Site](https://regex101.com/r/bMCgAB/1)
+Break the string into words and combine them using `-` as a separator.
+For more detailed explanation of this Regex, [visit this Site](https://regex101.com/r/bMCgAB/1).
 
 ```js
-const toKebabCase = str => {
-    let regex = rx = /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g;
-    return str.match(regex).map(x =>{
-        return x.toLowerCase();
-    }).join('-');
-}
+const toKebabCase = str =>
+  str && str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+    .map(x => x.toLowerCase())
+    .join('-');
 // toKebabCase("camelCase") -> 'camel-case'
 // toKebabCase("some text") -> 'some-text'
 // toKebabCase("some-mixed_string With spaces_underscores-and-hyphens") -> 'some-mixed-string-with-spaces-underscores-and-hyphens'
@@ -2086,17 +2083,22 @@ const toKebabCase = str => {
 
 ### toSnakeCase
 
-Converts a string to snakecase.
+Converts a string to snake case.
 
-Use `replace()` to add underscores before capital letters, convert `toLowerCase()`, then `replace()` hyphens and spaces with underscores.
+Break the string into words and combine them using `_` as a separator.
+For more detailed explanation of this Regex, [visit this Site](https://regex101.com/r/bMCgAB/1).
 
 ```js
-const toSnakeCase = str =>
-  str.replace(/(\w)([A-Z])/g, '$1_$2').replace(/[\s-_]+/g, '_').toLowerCase();
+const toSnakeCase = str =>{
+  str && str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+    .map(x => x.toLowerCase())
+    .join('_');
 // toSnakeCase("camelCase") -> 'camel_case'
 // toSnakeCase("some text") -> 'some_text'
 // toSnakeCase("some-javascript-property") -> 'some_javascript_property'
 // toSnakeCase("some-mixed_string With spaces_underscores-and-hyphens") -> 'some_mixed_string_with_spaces_underscores_and_hyphens'
+// toKebabCase("AllThe-small Things") -> "all_the_smal_things"
+// toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') -> "i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html"
 ```
 
 [⬆ back to top](#table-of-contents)
