@@ -170,6 +170,10 @@
 * [`UUIDGenerator`](#uuidgenerator)
 * [`validateNumber`](#validatenumber)
 
+### _Uncategorized_
+* [`detectDeviceType`](#detectdevicetype)
+* [`negate`](#negate)
+
 ## Adapter
 
 ### call
@@ -2120,7 +2124,7 @@ const coalesceFactory = valid => (...args) => args.find(valid);
 Extends a 3-digit color code to a 6-digit color code.
 
 Use `Array.map()`, `split()` and `Array.join()` to join the mapped array for converting a 3-digit RGB notated hexadecimal color-code to the 6-digit form.
-`Array.slice()` is used to remove `#` from string start since it's added once.
+`String.slice()` is used to remove `#` from string start since it's added once.
 ```js
 const extendHex = shortHex =>
   '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split('').map(x => x+x).join('')
@@ -2342,6 +2346,35 @@ Use `Number()` to check if the coercion holds.
 ```js
 const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
 // validateNumber('10') -> true
+```
+
+[⬆ back to top](#table-of-contents)
+## _Uncategorized_
+
+### detectDeviceType
+
+Detects wether the website is being opened in a mobile device or a desktop/laptop.
+
+Use a regular expression to test the `navigator.userAgent` property to figure out if the device is a mobile device or a desktop/laptop.
+
+```js
+const detectDeviceType = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? "Mobile" : "Desktop";
+// detectDeviceType() -> "Mobile"
+// detectDeviceType() -> "Desktop"
+```
+
+[⬆ back to top](#table-of-contents)
+
+### negate
+
+Negates a predicate function.
+
+Take a predicate function and apply `not` to it with its arguments.
+
+```js
+const negate = func => (...args) => !fun(...args);
+// filter([1, 2, 3, 4, 5, 6], negate(isEven)) -> [1, 3, 5]
+// negate(isOdd)(1) -> false
 ```
 
 [⬆ back to top](#table-of-contents)
