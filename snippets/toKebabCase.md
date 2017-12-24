@@ -14,11 +14,9 @@ For more detailed explanation of this Regex [Visit this Site](https://regex101.c
 ```js
 const toKebabCase = str => {
     let regex = rx = /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g;
-    let arr = str.match(regex);
-    arr = arr.forEach(x =>{
-        return s.toLowerCase();
-    });
-    return arr.join('-')
+    return str.match(regex).map(x =>{
+        return x.toLowerCase();
+    }).join('-');
 }
 // toKebabCase("camelCase") -> 'camel-case'
 // toKebabCase("some text") -> 'some-text'
