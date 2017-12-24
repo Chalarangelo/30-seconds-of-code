@@ -17,6 +17,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {
+    "ava": "^0.24.0",
     "chalk": "^2.3.0"
   },
   "scripts": {
@@ -24,6 +25,7 @@
     "linter": "node ./scripts/lint-script.js",
     "tagger": "node ./scripts/tag-script.js",
     "webber": "node ./scripts/web-script.js",
+    "tester": "node ./scripts/test-script.js && ava",
     "start": "concurrently --kill-others \"nodemon -e js,md -i README.md -x \\\"npm run build-list\\\"\" \"live-server ./build\""
   },
   "repository": {
