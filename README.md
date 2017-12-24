@@ -69,6 +69,7 @@
 * [`arrayToHtmlList`](#arraytohtmllist)
 * [`bottomVisible`](#bottomvisible)
 * [`currentURL`](#currenturl)
+* [`detectDeviceType`](#detectdevicetype)
 * [`elementIsVisibleInViewport`](#elementisvisibleinviewport)
 * [`getScrollPosition`](#getscrollposition)
 * [`getURLParameters`](#geturlparameters)
@@ -89,6 +90,9 @@
 * [`pipe`](#pipe)
 * [`runPromisesInSeries`](#runpromisesinseries)
 * [`sleep`](#sleep)
+
+### Logic
+* [`negate`](#negate)
 
 ### Math
 * [`arrayAverage`](#arrayaverage)
@@ -142,9 +146,12 @@
 * [`countVowels`](#countvowels)
 * [`escapeRegExp`](#escaperegexp)
 * [`fromCamelCase`](#fromcamelcase)
+* [`repeatString`](#repeatstring)
 * [`reverseString`](#reversestring)
 * [`sortCharactersInString`](#sortcharactersinstring)
 * [`toCamelCase`](#tocamelcase)
+* [`toKebabCase`](#tokebabcase)
+* [`toSnakeCase`](#tosnakecase)
 * [`truncateString`](#truncatestring)
 * [`words`](#words)
 
@@ -160,6 +167,7 @@
 * [`isNumber`](#isnumber)
 * [`isString`](#isstring)
 * [`isSymbol`](#issymbol)
+* [`randomHexColorCode`](#randomhexcolorcode)
 * [`RGBToHex`](#rgbtohex)
 * [`timeTaken`](#timetaken)
 * [`toDecimalMark`](#todecimalmark)
@@ -442,12 +450,12 @@ const dropElements = (arr, func) => {
 
 ### dropRight
 
-Returns a new array with `n` elements removed from the right
+Returns a new array with `n` elements removed from the right.
 
-Check if `n` is shorter than the given array and use `Array.slice()` to slice it accordingly or return an empty array.
+Use `Array.slice()` to slice the remove the specified number of elements from the right.
 
 ```js
-const dropRight = (arr, n = 1) => n < arr.length ? arr.slice(0, arr.length - n) : []
+const dropRight = (arr, n = 1) => arr.slice(0, -n);
 //dropRight([1,2,3]) -> [1,2]
 //dropRight([1,2,3], 2) -> [1]
 //dropRight([1,2,3], 42) -> []
@@ -973,6 +981,20 @@ const currentURL = () => window.location.href;
 
 [⬆ back to top](#table-of-contents)
 
+### detectDeviceType
+
+Detects wether the website is being opened in a mobile device or a desktop/laptop.
+
+Use a regular expression to test the `navigator.userAgent` property to figure out if the device is a mobile device or a desktop/laptop.
+
+```js
+const detectDeviceType = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? "Mobile" : "Desktop";
+// detectDeviceType() -> "Mobile"
+// detectDeviceType() -> "Desktop"
+```
+
+[⬆ back to top](#table-of-contents)
+
 ### elementIsVisibleInViewport
 
 Returns `true` if the element specified is visible in the viewport, `false` otherwise.
@@ -1245,6 +1267,21 @@ async function sleepyWork() {
   console.log('I woke up after 1 second.');
 }
 */
+```
+
+[⬆ back to top](#table-of-contents)
+## Logic
+
+### negate
+
+Negates a predicate function.
+
+Take a predicate function and apply `not` to it with its arguments.
+
+```js
+const negate = func => (...args) => !func(...args);
+// filter([1, 2, 3, 4, 5, 6], negate(isEven)) -> [1, 3, 5]
+// negate(isOdd)(1) -> false
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1957,6 +1994,22 @@ const fromCamelCase = (str, separator = '_') =>
 
 [⬆ back to top](#table-of-contents)
 
+### repeatString
+
+Repeats a string n times using `String.repeat()`
+
+If no string is provided the default is `""` and the default number of times is 2.
+
+```js
+const repeatString = (str="",num=2) => {
+    return num >= 0 ? str.repeat(num) : str;
+}
+// repeatString("abc",3) -> 'abcabcabc'
+// repeatString("abc") -> 'abcabc'
+```
+
+[⬆ back to top](#table-of-contents)
+
 ### reverseString
 
 Reverses a string.
@@ -1998,6 +2051,52 @@ const toCamelCase = str =>
 // toCamelCase("Some label that needs to be camelized") -> 'someLabelThatNeedsToBeCamelized'
 // toCamelCase("some-javascript-property") -> 'someJavascriptProperty'
 // toCamelCase("some-mixed_string with spaces_underscores-and-hyphens") -> 'someMixedStringWithSpacesUnderscoresAndHyphens'
+```
+
+[⬆ back to top](#table-of-contents)
+
+### toKebabCase
+
+Converts a string to [kebab case](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles).
+Breaks the string into words.
+A word is defined as following:-
+-> Beginning with two or more capital letters, e.g. XML or FM
+-> Begin with a capital letter followed by lower case letters with optional trailing numbers, e.g. Hello or Http2
+-> Contain nothing but lower case letters with optional trailing numbers, e.g. hello or http2
+-> Individual upper letters, e.g T.M.N.T
+-> Groups of numbers, e.g. 555-555-5555
+
+For more detailed explanation of this Regex [Visit this Site](https://regex101.com/r/bMCgAB/1)
+
+```js
+const toKebabCase = str => {
+    let regex = rx = /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g;
+    return str.match(regex).map(x =>{
+        return x.toLowerCase();
+    }).join('-');
+}
+// toKebabCase("camelCase") -> 'camel-case'
+// toKebabCase("some text") -> 'some-text'
+// toKebabCase("some-mixed_string With spaces_underscores-and-hyphens") -> 'some-mixed-string-with-spaces-underscores-and-hyphens'
+// toKebabCase("AllThe-small Things") -> "all-the-small-things"
+// toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') -> "i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-xml-and-html"
+```
+
+[⬆ back to top](#table-of-contents)
+
+### toSnakeCase
+
+Converts a string to snakecase.
+
+Use `replace()` to add underscores before capital letters, convert `toLowerCase()`, then `replace()` hyphens and spaces with underscores.
+
+```js
+const toSnakeCase = str =>
+  str.replace(/(\w)([A-Z])/g, '$1_$2').replace(/[\s-_]+/g, '_').toLowerCase();
+// toSnakeCase("camelCase") -> 'camel_case'
+// toSnakeCase("some text") -> 'some_text'
+// toSnakeCase("some-javascript-property") -> 'some_javascript_property'
+// toSnakeCase("some-mixed_string With spaces_underscores-and-hyphens") -> 'some_mixed_string_with_spaces_underscores_and_hyphens'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2065,7 +2164,7 @@ const coalesceFactory = valid => (...args) => args.find(valid);
 Extends a 3-digit color code to a 6-digit color code.
 
 Use `Array.map()`, `split()` and `Array.join()` to join the mapped array for converting a 3-digit RGB notated hexadecimal color-code to the 6-digit form.
-`Array.slice()` is used to remove `#` from string start since it's added once.
+`String.slice()` is used to remove `#` from string start since it's added once.
 ```js
 const extendHex = shortHex =>
   '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split('').map(x => x+x).join('')
@@ -2195,6 +2294,25 @@ Use `typeof` to check if a value is classified as a symbol primitive.
 const isSymbol = val => typeof val === 'symbol';
 // isSymbol('x') -> false
 // isSymbol(Symbol('x')) -> true
+```
+
+[⬆ back to top](#table-of-contents)
+
+### randomHexColorCode
+
+Generates a random hexadecimal color code.
+
+Use `Math.random` to generate a random number and limit that number to fall in between 0 and 16 using `Math.floor`. Use the generated random number as index to access a character from 0 to F. Append it to `color` till the length is not `7`.  
+
+```js
+const randomHexColorCode = () => {
+	  let color = '#';
+	  while(color.length < 7) color += '0123456789ABCDEF'[Math.floor(Math.random() * 16)];
+	  return color;
+}
+// randomHexColorCode() -> "#e34155"
+// randomHexColorCode() -> "#fd73a6"
+// randomHexColorCode() -> "#4144c6"
 ```
 
 [⬆ back to top](#table-of-contents)
