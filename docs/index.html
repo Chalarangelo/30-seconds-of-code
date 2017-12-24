@@ -130,6 +130,7 @@
 </h3><a class="sublink-1" href="#arraytohtmllist">arrayToHtmlList</a>
 <a class="sublink-1" href="#bottomvisible">bottomVisible</a>
 <a class="sublink-1" href="#currenturl">currentURL</a>
+<a class="sublink-1" href="#detectdevicetype">detectDeviceType</a>
 <a class="sublink-1" href="#elementisvisibleinviewport">elementIsVisibleInViewport</a>
 <a class="sublink-1" href="#getscrollposition">getScrollPosition</a>
 <a class="sublink-1" href="#geturlparameters">getURLParameters</a>
@@ -150,6 +151,9 @@
 <a class="sublink-1" href="#pipe">pipe</a>
 <a class="sublink-1" href="#runpromisesinseries">runPromisesInSeries</a>
 <a class="sublink-1" href="#sleep">sleep</a>
+
+<h3>Logic
+</h3><a class="sublink-1" href="#negate">negate</a>
 
 <h3>Math
 </h3><a class="sublink-1" href="#arrayaverage">arrayAverage</a>
@@ -230,10 +234,6 @@
 <a class="sublink-1" href="#toordinalsuffix">toOrdinalSuffix</a>
 <a class="sublink-1" href="#uuidgenerator">UUIDGenerator</a>
 <a class="sublink-1" href="#validatenumber">validateNumber</a>
-
-<h3>Uncategorized
-</h3><a class="sublink-1" href="#detectdevicetype">detectDeviceType</a>
-<a class="sublink-1" href="#negate">negate</a>
 
 </nav><main class="col-sm-12 col-md-8 col-lg-9" style="height:100%;overflow-y:auto;background:#eceef2;padding:0"><a id="top">&nbsp;</a><h2 style="text-align:center">Adapter</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="call">call</h3></div><div class="section double-padded">
@@ -388,9 +388,9 @@ Returns the remaining elements.</p>
 // dropElements([1, 2, 3, 4], n =&gt; n &gt;= 3) -&gt; [3,4]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="dropright">dropRight</h3></div><div class="section double-padded">
-<p>Returns a new array with <code>n</code> elements removed from the right</p>
-<p>Check if <code>n</code> is shorter than the given array and use <code>Array.slice()</code> to slice it accordingly or return an empty array.</p>
-<pre><code class="language-js">const dropRight = (arr, n = 1) =&gt; n &lt; arr.length ? arr.slice(0, arr.length - n) : []
+<p>Returns a new array with <code>n</code> elements removed from the right.</p>
+<p>Use <code>Array.slice()</code> to slice the remove the specified number of elements from the right.</p>
+<pre><code class="language-js">const dropRight = (arr, n = 1) =&gt; arr.slice(0, -n);
 //dropRight([1,2,3]) -&gt; [1,2]
 //dropRight([1,2,3], 2) -&gt; [1]
 //dropRight([1,2,3], 42) -&gt; []
@@ -680,6 +680,13 @@ If lengths of the argument-arrays vary, <code>undefined</code> is used where no 
 <pre><code class="language-js">const currentURL = () =&gt; window.location.href;
 // currentUrl() -&gt; 'https://google.com'
 </code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="detectdevicetype">detectDeviceType</h3></div><div class="section double-padded">
+<p>Detects wether the website is being opened in a mobile device or a desktop/laptop.</p>
+<p>Use a regular expression to test the <code>navigator.userAgent</code> property to figure out if the device is a mobile device or a desktop/laptop.</p>
+<pre><code class="language-js">const detectDeviceType = () =&gt; /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? &quot;Mobile&quot; : &quot;Desktop&quot;;
+// detectDeviceType() -&gt; &quot;Mobile&quot;
+// detectDeviceType() -&gt; &quot;Desktop&quot;
+</code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="elementisvisibleinviewport">elementIsVisibleInViewport</h3></div><div class="section double-padded">
 <p>Returns <code>true</code> if the element specified is visible in the viewport, <code>false</code> otherwise.</p>
 <p>Use <code>Element.getBoundingClientRect()</code> and the <code>window.inner(Width|Height)</code> values
@@ -843,6 +850,14 @@ async function sleepyWork() {
   console.log('I woke up after 1 second.');
 }
 */
+</code></pre>
+</div></div><br/><h2 style="text-align:center">Logic</h2>
+<div class="card fluid"><div class="section double-padded"><h3 id="negate">negate</h3></div><div class="section double-padded">
+<p>Negates a predicate function.</p>
+<p>Take a predicate function and apply <code>not</code> to it with its arguments.</p>
+<pre><code class="language-js">const negate = func =&gt; (...args) =&gt; !fun(...args);
+// filter([1, 2, 3, 4, 5, 6], negate(isEven)) -&gt; [1, 3, 5]
+// negate(isOdd)(1) -&gt; false
 </code></pre>
 </div></div><br/><h2 style="text-align:center">Math</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="arrayaverage">arrayAverage</h3></div><div class="section double-padded">
@@ -1463,21 +1478,6 @@ Use <code>isFinite()</code> to check if the number is finite.
 Use <code>Number()</code> to check if the coercion holds.</p>
 <pre><code class="language-js">const validateNumber = n =&gt; !isNaN(parseFloat(n)) &amp;&amp; isFinite(n) &amp;&amp; Number(n) == n;
 // validateNumber('10') -&gt; true
-</code></pre>
-</div></div><br/><h2 style="text-align:center">Uncategorized</h2>
-<div class="card fluid"><div class="section double-padded"><h3 id="detectdevicetype">detectDeviceType</h3></div><div class="section double-padded">
-<p>Detects wether the website is being opened in a mobile device or a desktop/laptop.</p>
-<p>Use a regular expression to test the <code>navigator.userAgent</code> property to figure out if the device is a mobile device or a desktop/laptop.</p>
-<pre><code class="language-js">const detectDeviceType = () =&gt; /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? &quot;Mobile&quot; : &quot;Desktop&quot;;
-// detectDeviceType() -&gt; &quot;Mobile&quot;
-// detectDeviceType() -&gt; &quot;Desktop&quot;
-</code></pre>
-</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="negate">negate</h3></div><div class="section double-padded">
-<p>Negates a predicate function.</p>
-<p>Take a predicate function and apply <code>not</code> to it with its arguments.</p>
-<pre><code class="language-js">const negate = func =&gt; (...args) =&gt; !fun(...args);
-// filter([1, 2, 3, 4, 5, 6], negate(isEven)) -&gt; [1, 3, 5]
-// negate(isOdd)(1) -&gt; false
 </code></pre>
 </div></div><br/>
         <footer>

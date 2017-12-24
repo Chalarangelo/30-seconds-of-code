@@ -69,6 +69,7 @@
 * [`arrayToHtmlList`](#arraytohtmllist)
 * [`bottomVisible`](#bottomvisible)
 * [`currentURL`](#currenturl)
+* [`detectDeviceType`](#detectdevicetype)
 * [`elementIsVisibleInViewport`](#elementisvisibleinviewport)
 * [`getScrollPosition`](#getscrollposition)
 * [`getURLParameters`](#geturlparameters)
@@ -89,6 +90,9 @@
 * [`pipe`](#pipe)
 * [`runPromisesInSeries`](#runpromisesinseries)
 * [`sleep`](#sleep)
+
+### Logic
+* [`negate`](#negate)
 
 ### Math
 * [`arrayAverage`](#arrayaverage)
@@ -169,10 +173,6 @@
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`UUIDGenerator`](#uuidgenerator)
 * [`validateNumber`](#validatenumber)
-
-### _Uncategorized_
-* [`detectDeviceType`](#detectdevicetype)
-* [`negate`](#negate)
 
 ## Adapter
 
@@ -449,12 +449,12 @@ const dropElements = (arr, func) => {
 
 ### dropRight
 
-Returns a new array with `n` elements removed from the right
+Returns a new array with `n` elements removed from the right.
 
-Check if `n` is shorter than the given array and use `Array.slice()` to slice it accordingly or return an empty array.
+Use `Array.slice()` to slice the remove the specified number of elements from the right.
 
 ```js
-const dropRight = (arr, n = 1) => n < arr.length ? arr.slice(0, arr.length - n) : []
+const dropRight = (arr, n = 1) => arr.slice(0, -n);
 //dropRight([1,2,3]) -> [1,2]
 //dropRight([1,2,3], 2) -> [1]
 //dropRight([1,2,3], 42) -> []
@@ -980,6 +980,20 @@ const currentURL = () => window.location.href;
 
 [⬆ back to top](#table-of-contents)
 
+### detectDeviceType
+
+Detects wether the website is being opened in a mobile device or a desktop/laptop.
+
+Use a regular expression to test the `navigator.userAgent` property to figure out if the device is a mobile device or a desktop/laptop.
+
+```js
+const detectDeviceType = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? "Mobile" : "Desktop";
+// detectDeviceType() -> "Mobile"
+// detectDeviceType() -> "Desktop"
+```
+
+[⬆ back to top](#table-of-contents)
+
 ### elementIsVisibleInViewport
 
 Returns `true` if the element specified is visible in the viewport, `false` otherwise.
@@ -1252,6 +1266,21 @@ async function sleepyWork() {
   console.log('I woke up after 1 second.');
 }
 */
+```
+
+[⬆ back to top](#table-of-contents)
+## Logic
+
+### negate
+
+Negates a predicate function.
+
+Take a predicate function and apply `not` to it with its arguments.
+
+```js
+const negate = func => (...args) => !fun(...args);
+// filter([1, 2, 3, 4, 5, 6], negate(isEven)) -> [1, 3, 5]
+// negate(isOdd)(1) -> false
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2346,35 +2375,6 @@ Use `Number()` to check if the coercion holds.
 ```js
 const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
 // validateNumber('10') -> true
-```
-
-[⬆ back to top](#table-of-contents)
-## _Uncategorized_
-
-### detectDeviceType
-
-Detects wether the website is being opened in a mobile device or a desktop/laptop.
-
-Use a regular expression to test the `navigator.userAgent` property to figure out if the device is a mobile device or a desktop/laptop.
-
-```js
-const detectDeviceType = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? "Mobile" : "Desktop";
-// detectDeviceType() -> "Mobile"
-// detectDeviceType() -> "Desktop"
-```
-
-[⬆ back to top](#table-of-contents)
-
-### negate
-
-Negates a predicate function.
-
-Take a predicate function and apply `not` to it with its arguments.
-
-```js
-const negate = func => (...args) => !fun(...args);
-// filter([1, 2, 3, 4, 5, 6], negate(isEven)) -> [1, 3, 5]
-// negate(isOdd)(1) -> false
 ```
 
 [⬆ back to top](#table-of-contents)
