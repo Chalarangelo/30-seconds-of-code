@@ -5,7 +5,7 @@ Calculates the factorial of a number.
 Use recursion.
 If `n` is less than or equal to `1`, return `1`.
 Otherwise, return the product of `n` and the factorial of `n - 1`.
-Throws an exception if `n` is a negative number.
+If `n` is negative, return positive or negative infinity, based on the evenness of the number.
 
 ```js
 const factorial = n => ( n = Math.round(n), n < 0 ? n % 2 == 0 ? Infinity : -Infinity : n == 0 ? 1 :  n * factorial(n-1) )
