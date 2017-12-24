@@ -1,6 +1,6 @@
 ### RGBToHex
 
-Converts the values of RGB components to a colorcode.
+Converts the values of RGB components to a color code.
 
 Convert given RGB parameters to hexadecimal string using bitwise left-shift operator (`<<`) and `toString(16)`, then `padStart(6,'0')` to get a 6-digit hexadecimal value.
 

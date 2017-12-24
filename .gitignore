@@ -3,3 +3,4 @@ currentSnippet\.js
 *.md.temp.js
 .idea
 test.sh
+dist/
