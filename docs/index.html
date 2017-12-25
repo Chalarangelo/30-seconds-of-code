@@ -805,8 +805,8 @@ multiplyAndAdd5(5, 2) -&gt; 15
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="curry">curry</h3></div><div class="section double-padded">
 <p>Curries a function.</p>
 <p>Use recursion.
-If the number of provided arguments (<code>args</code>) is sufficient, call the passed function <code>f</code>.
-Otherwise, return a curried function <code>f</code> that expects the rest of the arguments.
+If the number of provided arguments (<code>args</code>) is sufficient, call the passed function <code>fn</code>.
+Otherwise, return a curried function <code>fn</code> that expects the rest of the arguments.
 If you want to curry a function that accepts a variable number of arguments (a variadic function, e.g. <code>Math.min()</code>), you can optionally pass the number of arguments to the second parameter <code>arity</code>.</p>
 <pre><code class="language-js">const curry = (fn, arity = fn.length, ...args) =&gt;
   arity &lt;= args.length
