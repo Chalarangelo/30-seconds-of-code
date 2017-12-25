@@ -7,6 +7,9 @@ Use `Array.map()`, `split()` and `Array.join()` to join the mapped array for con
 ```js
 const extendHex = shortHex =>
   '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split('').map(x => x+x).join('')
-// extendHex('#03f') -> '#0033ff'
-// extendHex('05a') -> '#0055aa'
+```
+
+```js
+extendHex('#03f') -> '#0033ff'
+extendHex('05a') -> '#0055aa'
 ```
