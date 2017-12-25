@@ -16,7 +16,10 @@ const hexToRGB = hex => {
     ((h & (alpha ? 0x0000ff00 : 0x0000ff)) >>> (alpha ? 8 : 0)) +
     (alpha ? `, ${(h & 0x000000ff)}` : '') + ')';
 };
-// hexToRGB('#27ae60ff') -> 'rgba(39, 174, 96, 255)'
-// hexToRGB('27ae60') -> 'rgb(39, 174, 96)'
-// hexToRGB('#fff') -> 'rgb(255, 255, 255)'
+```
+
+```js
+hexToRGB('#27ae60ff') // 'rgba(39, 174, 96, 255)'
+hexToRGB('27ae60') // 'rgb(39, 174, 96)'
+hexToRGB('#fff') // 'rgb(255, 255, 255)'
 ```

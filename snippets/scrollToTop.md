@@ -13,5 +13,8 @@ const scrollToTop = () => {
     window.scrollTo(0, c - c / 8);
   }
 };
-// scrollToTop()
+```
+
+```js
+scrollToTop()
 ```
