@@ -225,7 +225,7 @@ const flip = fn => (...args) => fn(args.pop(), ...args)
 let a = {name: 'John Smith'}
 let b = {}
 const mergeFrom = flip(Object.assign)
-let mergePerson = mergeFrom.bind(a)
+let mergePerson = mergeFrom.bind(null, a)
 mergePerson(b) // == b
 b = {}
 Object.assign(b, a) // == b
@@ -1191,8 +1191,8 @@ multiplyAndAdd5(5, 2) -> 15
 Curries a function.
 
 Use recursion.
-If the number of provided arguments (`args`) is sufficient, call the passed function `f`.
-Otherwise, return a curried function `f` that expects the rest of the arguments.
+If the number of provided arguments (`args`) is sufficient, call the passed function `fn`.
+Otherwise, return a curried function `fn` that expects the rest of the arguments.
 If you want to curry a function that accepts a variable number of arguments (a variadic function, e.g. `Math.min()`), you can optionally pass the number of arguments to the second parameter `arity`.
 
 ```js
@@ -2042,11 +2042,16 @@ const sortCharactersInString = str =>
 
 Converts a string to camelcase.
 
-Use `replace()` to remove underscores, hyphens, and spaces and convert words to camelcase.
+Break the string into words and combine them capitalizing the first letter of each word.
+For more detailed explanation of this Regex, [visit this Site](https://regex101.com/r/bMCgAB/1).
 
 ```js
-const toCamelCase = str =>
-  str.replace(/^([A-Z])|[\s-_]+(\w)/g, (match, p1, p2, offset) =>  p2 ? p2.toUpperCase() : p1.toLowerCase());
+const toCamelCase = str => {
+  let s = str && str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+    .map(x => x.slice(0,1).toUpperCase() + x.slice(1).toLowerCase())
+    .join('');
+  return s.slice(0,1).toLowerCase() + s.slice(1)
+  }
 // toCamelCase("some_database_field_name") -> 'someDatabaseFieldName'
 // toCamelCase("Some label that needs to be camelized") -> 'someLabelThatNeedsToBeCamelized'
 // toCamelCase("some-javascript-property") -> 'someJavascriptProperty'
@@ -2057,24 +2062,16 @@ const toCamelCase = str =>
 
 ### toKebabCase
 
-Converts a string to [kebab case](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles).
-Breaks the string into words.
-A word is defined as following:-
--> Beginning with two or more capital letters, e.g. XML or FM
--> Begin with a capital letter followed by lower case letters with optional trailing numbers, e.g. Hello or Http2
--> Contain nothing but lower case letters with optional trailing numbers, e.g. hello or http2
--> Individual upper letters, e.g T.M.N.T
--> Groups of numbers, e.g. 555-555-5555
+Converts a string to kebab case.
 
-For more detailed explanation of this Regex [Visit this Site](https://regex101.com/r/bMCgAB/1)
+Break the string into words and combine them using `-` as a separator.
+For more detailed explanation of this Regex, [visit this Site](https://regex101.com/r/bMCgAB/1).
 
 ```js
-const toKebabCase = str => {
-    let regex = rx = /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g;
-    return str.match(regex).map(x =>{
-        return x.toLowerCase();
-    }).join('-');
-}
+const toKebabCase = str =>
+  str && str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+    .map(x => x.toLowerCase())
+    .join('-');
 // toKebabCase("camelCase") -> 'camel-case'
 // toKebabCase("some text") -> 'some-text'
 // toKebabCase("some-mixed_string With spaces_underscores-and-hyphens") -> 'some-mixed-string-with-spaces-underscores-and-hyphens'
@@ -2086,17 +2083,22 @@ const toKebabCase = str => {
 
 ### toSnakeCase
 
-Converts a string to snakecase.
+Converts a string to snake case.
 
-Use `replace()` to add underscores before capital letters, convert `toLowerCase()`, then `replace()` hyphens and spaces with underscores.
+Break the string into words and combine them using `_` as a separator.
+For more detailed explanation of this Regex, [visit this Site](https://regex101.com/r/bMCgAB/1).
 
 ```js
-const toSnakeCase = str =>
-  str.replace(/(\w)([A-Z])/g, '$1_$2').replace(/[\s-_]+/g, '_').toLowerCase();
+const toSnakeCase = str =>{
+  str && str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+    .map(x => x.toLowerCase())
+    .join('_');
 // toSnakeCase("camelCase") -> 'camel_case'
 // toSnakeCase("some text") -> 'some_text'
 // toSnakeCase("some-javascript-property") -> 'some_javascript_property'
 // toSnakeCase("some-mixed_string With spaces_underscores-and-hyphens") -> 'some_mixed_string_with_spaces_underscores_and_hyphens'
+// toKebabCase("AllThe-small Things") -> "all_the_smal_things"
+// toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') -> "i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2302,14 +2304,10 @@ const isSymbol = val => typeof val === 'symbol';
 
 Generates a random hexadecimal color code.
 
-Use `Math.random` to generate a random number and limit that number to fall in between 0 and 16 using `Math.floor`. Use the generated random number as index to access a character from 0 to F. Append it to `color` till the length is not `7`.  
+Use `Math.random` to generate a random 24-bit(6x4bits) hexadecimal number. Use bit shifting and then convert it to an hexadecimal String using `toString(16)`. 
 
 ```js
-const randomHexColorCode = () => {
-	  let color = '#';
-	  while(color.length < 7) color += '0123456789ABCDEF'[Math.floor(Math.random() * 16)];
-	  return color;
-}
+const randomHexColorCode = () => '#'+(Math.random()*0xFFFFFF<<0).toString(16);
 // randomHexColorCode() -> "#e34155"
 // randomHexColorCode() -> "#fd73a6"
 // randomHexColorCode() -> "#4144c6"
