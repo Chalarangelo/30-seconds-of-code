@@ -11,15 +11,17 @@ _(For a snippet that does not mutate the original array see [`without`](#without
 const pull = (arr, ...args) => {
   let argState = Array.isArray(args[0]) ? args[0] : args;
   let pulled = arr.filter((v, i) => !argState.includes(v));
-  arr.length = 0; 
+  arr.length = 0;
   pulled.forEach(v => arr.push(v));
 };
+```
 
-// let myArray1 = ['a', 'b', 'c', 'a', 'b', 'c'];
-// pull(myArray1, 'a', 'c');
-// console.log(myArray1) -> [ 'b', 'b' ]
+```js
+let myArray1 = ['a', 'b', 'c', 'a', 'b', 'c'];
+pull(myArray1, 'a', 'c');
+console.log(myArray1) -> [ 'b', 'b' ]
 
-// let myArray2 = ['a', 'b', 'c', 'a', 'b', 'c'];
-// pull(myArray2, ['a', 'c']);
-// console.log(myArray2) -> [ 'b', 'b' ]
+let myArray2 = ['a', 'b', 'c', 'a', 'b', 'c'];
+pull(myArray2, ['a', 'c']);
+console.log(myArray2) -> [ 'b', 'b' ]
 ```

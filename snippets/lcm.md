@@ -10,5 +10,8 @@ const lcm = (x,y) => {
   const gcd = (x, y) => !y ? x : gcd(y, x % y);
   return Math.abs(x*y)/(gcd(x,y));
 };
-// lcm(12,7) -> 84
+```
+
+```js
+lcm(12,7) -> 84
 ```
