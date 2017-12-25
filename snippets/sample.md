@@ -7,5 +7,8 @@ This method also works with strings.
 
 ```js
 const sample = arr => arr[Math.floor(Math.random() * arr.length)];
-// sample([3, 7, 9, 11]) -> 9
+```
+
+```js
+sample([3, 7, 9, 11]) -> 9
 ```

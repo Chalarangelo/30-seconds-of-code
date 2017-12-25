@@ -8,5 +8,8 @@ Throws an error if the passed time cannot be converted to a date.
 ```js
 const toEnglishDate  = (time) =>
   {try{return new Date(time).toISOString().split('T')[0].replace(/-/g, '/')}catch(e){return}};
-// toEnglishDate('09/21/2010') -> '21/09/2010'
+```
+
+```js
+toEnglishDate('09/21/2010') -> '21/09/2010'
 ```

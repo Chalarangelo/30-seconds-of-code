@@ -13,6 +13,9 @@ const zip = (...arrays) => {
    return Array.from({length: arrays.length}, (_, k) => arrays[k][i]);
   })
 }
-//zip(['a', 'b'], [1, 2], [true, false]); -> [['a', 1, true], ['b', 2, false]]
-//zip(['a'], [1, 2], [true, false]); -> [['a', 1, true], [undefined, 2, false]]
+```
+
+```js
+zip(['a', 'b'], [1, 2], [true, false]); -> [['a', 1, true], ['b', 2, false]]
+zip(['a'], [1, 2], [true, false]); -> [['a', 1, true], [undefined, 2, false]]
 ```
