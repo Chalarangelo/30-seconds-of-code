@@ -6,5 +6,8 @@ Use `Object.keys()` and `Array.map()` to iterate over the object's keys and prod
 
 ```js
 const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
-// objectToPairs({a: 1, b: 2}) -> [['a',1],['b',2]])
+```
+
+```js
+objectToPairs({a: 1, b: 2}) -> [['a',1],['b',2]])
 ```
