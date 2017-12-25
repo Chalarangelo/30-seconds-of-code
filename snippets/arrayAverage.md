@@ -6,5 +6,8 @@ Use `Array.reduce()` to add each value to an accumulator, initialized with a val
 
 ```js
 const arrayAverage = arr => arr.reduce((acc, val) => acc + val, 0) / arr.length;
-// arrayAverage([1,2,3]) -> 2
+```
+
+```js
+arrayAverage([1,2,3]) -> 2
 ```

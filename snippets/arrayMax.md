@@ -6,5 +6,8 @@ Use `Math.max()` combined with the spread operator (`...`) to get the maximum va
 
 ```js
 const arrayMax = arr => Math.max(...arr);
-// arrayMax([10, 1, 5]) -> 10
+```
+
+```js
+arrayMax([10, 1, 5]) -> 10
 ```
