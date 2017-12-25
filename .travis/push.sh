@@ -7,6 +7,11 @@ setup_git() {
 
 commit_website_files() {
   git checkout master
+  if [[ $(( $TRAVIS_BUILD_NUMBER % 5 )) == 0 ]]; then
+      n = $(( ($TRAVIS_BUILD_NUMBER-270)/5))
+      npm run linter
+      echo "Linting build:  $n"
+  fi
   git add *
   git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
 }
