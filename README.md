@@ -185,11 +185,12 @@ Use a closure to call a stored key with stored arguments.
 
 ```js
 const call = ( key, ...args ) => context => context[ key ]( ...args );
-/*
+```
+
+```js
 Promise.resolve( [ 1, 2, 3 ] ).then( call('map', x => 2 * x ) ).then( console.log ) //[ 2, 4, 6 ]
 const map = call.bind(null, 'map')
 Promise.resolve( [ 1, 2, 3 ] ).then( map( x => 2 * x ) ).then( console.log ) //[ 2, 4, 6 ]
-*/
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -202,13 +203,14 @@ Given a function, return a closure that collects all inputs into an array-accept
 
 ```js
 const collectInto = fn => ( ...args ) => fn( args );
-/*
+```
+
+```js
 const Pall = collectInto( Promise.all.bind(Promise) )
 let p1 = Promise.resolve(1)
 let p2 = Promise.resolve(2)
 let p3 = new Promise((resolve) => setTimeout(resolve,2000,3))
 Pall(p1, p2, p3).then(console.log)
-*/
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -221,7 +223,9 @@ Return a closure that takes variadic inputs, and splices the last argument to ma
 
 ```js
 const flip = fn => (...args) => fn(args.pop(), ...args)
-/*
+```
+
+```js
 let a = {name: 'John Smith'}
 let b = {}
 const mergeFrom = flip(Object.assign)
@@ -229,7 +233,6 @@ let mergePerson = mergeFrom.bind(null, a)
 mergePerson(b) // == b
 b = {}
 Object.assign(b, a) // == b
-*/
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -250,8 +253,11 @@ const promisify = func =>
       func(...args, (err, result) =>
         err ? reject(err) : resolve(result))
     );
-// const delay = promisify((d, cb) => setTimeout(cb, d))
-// delay(2000).then(() => console.log('Hi!')) -> Promise resolves after 2s
+```
+
+```js
+const delay = promisify((d, cb) => setTimeout(cb, d))
+delay(2000).then(() => console.log('Hi!')) -> // Promise resolves after 2s
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -264,11 +270,12 @@ Use closures and the spread operator (`...`) to map the array of arguments to th
 
 ```js
 const spreadOver = fn => argsArr => fn(...argsArr);
-/*
+```
+
+```js
 const arrayMax = spreadOver(Math.max)
-arrayMax([1,2,3]) // -> 3
-arrayMax([1,2,4]) // -> 4
-*/
+arrayMax([1,2,3]) -> 3
+arrayMax([1,2,4])  -> 4
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -285,8 +292,11 @@ const arrayGcd = arr =>{
   const gcd = (x, y) => !y ? x : gcd(y, x % y);
   return arr.reduce((a,b) => gcd(a,b));
 }
-// arrayGcd([1,2,3,4,5]) -> 1
-// arrayGcd([4,8,12]) -> 4
+```
+
+```js
+arrayGcd([1,2,3,4,5]) -> 1
+arrayGcd([4,8,12]) -> 4
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -300,11 +310,14 @@ Use `Array.reduce()` and the `lcm` formula (uses recursion) to calculate the low
 ```js
 const arrayLcm = arr =>{
   const gcd = (x, y) => !y ? x : gcd(y, x % y);
-  const lcm = (x, y) => (x*y)/gcd(x, y); 
+  const lcm = (x, y) => (x*y)/gcd(x, y);
   return arr.reduce((a,b) => lcm(a,b));
 }
-// arrayLcm([1,2,3,4,5]) -> 60
-// arrayLcm([4,8,12]) -> 24
+```
+
+```js
+arrayLcm([1,2,3,4,5]) -> 60
+arrayLcm([4,8,12]) -> 24
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -317,7 +330,10 @@ Use `Math.max()` combined with the spread operator (`...`) to get the maximum va
 
 ```js
 const arrayMax = arr => Math.max(...arr);
-// arrayMax([10, 1, 5]) -> 10
+```
+
+```js
+arrayMax([10, 1, 5]) -> 10
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -330,7 +346,10 @@ Use `Math.min()` combined with the spread operator (`...`) to get the minimum va
 
 ```js
 const arrayMin = arr => Math.min(...arr);
-// arrayMin([10, 1, 5]) -> 1
+```
+
+```js
+arrayMin([10, 1, 5]) -> 1
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -346,7 +365,10 @@ If the original array can't be split evenly, the final chunk will contain the re
 ```js
 const chunk = (arr, size) =>
   Array.from({length: Math.ceil(arr.length / size)}, (v, i) => arr.slice(i * size, i * size + size));
-// chunk([1,2,3,4,5], 2) -> [[1,2],[3,4],[5]]
+```
+
+```js
+chunk([1,2,3,4,5], 2) -> [[1,2],[3,4],[5]]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -359,7 +381,10 @@ Use `Array.filter()` to filter out falsey values (`false`, `null`, `0`, `""`, `u
 
 ```js
 const compact = arr => arr.filter(Boolean);
-// compact([0, 1, false, 2, '', 3, 'a', 'e'*23, NaN, 's', 34]) -> [ 1, 2, 3, 'a', 's', 34 ]
+```
+
+```js
+compact([0, 1, false, 2, '', 3, 'a', 'e'*23, NaN, 's', 34]) -> [ 1, 2, 3, 'a', 's', 34 ]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -372,7 +397,10 @@ Use `Array.reduce()` to increment a counter each time you encounter the specific
 
 ```js
 const countOccurrences = (arr, value) => arr.reduce((a, v) => v === value ? a + 1 : a + 0, 0);
-// countOccurrences([1,1,2,1,2,3], 1) -> 3
+```
+
+```js
+countOccurrences([1,1,2,1,2,3], 1) -> 3
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -387,7 +415,10 @@ Recursively flatten each element that is an array.
 
 ```js
 const deepFlatten = arr => [].concat(...arr.map(v => Array.isArray(v) ? deepFlatten(v) : v));
-// deepFlatten([1,[2],[[3],4],5]) -> [1,2,3,4,5]
+```
+
+```js
+deepFlatten([1,[2],[[3],4],5]) -> [1,2,3,4,5]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -400,7 +431,10 @@ Create a `Set` from `b`, then use `Array.filter()` on `a` to only keep values no
 
 ```js
 const difference = (a, b) => { const s = new Set(b); return a.filter(x => !s.has(x)); };
-// difference([1,2,3], [1,2,4]) -> [3]
+```
+
+```js
+difference([1,2,3], [1,2,4]) -> [3]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -413,7 +447,10 @@ Use `Array.filter()` and `Array.find()` to find the appropriate values.
 
 ```js
 const differenceWith = (arr, val, comp) => arr.filter(a => !val.find(b => comp(a, b)))
-// differenceWith([1, 1.2, 1.5, 3], [1.9, 3], (a,b) => Math.round(a) == Math.round(b)) -> [1, 1.2]
+```
+
+```js
+differenceWith([1, 1.2, 1.5, 3], [1.9, 3], (a,b) => Math.round(a) == Math.round(b)) -> [1, 1.2]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -426,7 +463,10 @@ Use ES6 `Set` and the `...rest` operator to discard all duplicated values.
 
 ```js
 const distinctValuesOfArray = arr => [...new Set(arr)];
-// distinctValuesOfArray([1,2,2,3,4,4,5]) -> [1,2,3,4,5]
+```
+
+```js
+distinctValuesOfArray([1,2,2,3,4,4,5]) -> [1,2,3,4,5]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -443,7 +483,10 @@ const dropElements = (arr, func) => {
   while (arr.length > 0 && !func(arr[0])) arr = arr.slice(1);
   return arr;
 };
-// dropElements([1, 2, 3, 4], n => n >= 3) -> [3,4]
+```
+
+```js
+dropElements([1, 2, 3, 4], n => n >= 3) -> [3,4]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -456,9 +499,12 @@ Use `Array.slice()` to slice the remove the specified number of elements from th
 
 ```js
 const dropRight = (arr, n = 1) => arr.slice(0, -n);
-//dropRight([1,2,3]) -> [1,2]
-//dropRight([1,2,3], 2) -> [1]
-//dropRight([1,2,3], 42) -> []
+```
+
+```js
+dropRight([1,2,3]) -> [1,2]
+dropRight([1,2,3], 2) -> [1]
+dropRight([1,2,3], 42) -> []
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -471,7 +517,10 @@ Use `Array.filter()` to create a new array that contains every nth element of a 
 
 ```js
 const everyNth = (arr, nth) => arr.filter((e, i) => i % nth === nth - 1);
-// everyNth([1,2,3,4,5,6], 2) -> [ 2, 4, 6 ]
+```
+
+```js
+everyNth([1,2,3,4,5,6], 2) -> [ 2, 4, 6 ]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -484,7 +533,10 @@ Use `Array.filter()` for an array containing only the unique values.
 
 ```js
 const filterNonUnique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexOf(i));
-// filterNonUnique([1,2,2,3,4,4,5]) -> [1,3,5]
+```
+
+```js
+filterNonUnique([1,2,2,3,4,4,5]) -> [1,3,5]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -497,7 +549,10 @@ Use a new array and concatenate it with the spread input array causing a shallow
 
 ```js
 const flatten = arr => [ ].concat( ...arr );
-// flatten([1,[2],3,4]) -> [1,2,3,4]
+```
+
+```js
+flatten([1,[2],3,4]) -> [1,2,3,4]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -515,7 +570,10 @@ Omit the second element, `depth` to flatten only to a depth of `1` (single flatt
 const flattenDepth = (arr, depth = 1) =>
   depth != 1 ? arr.reduce((a, v) => a.concat(Array.isArray(v) ? flattenDepth(v, depth - 1) : v), [])
   : arr.reduce((a, v) => a.concat(v), []);
-// flattenDepth([1,[2],[[[3],4],5]], 2) -> [1,2,[3],4,5]
+```
+
+```js
+flatten([1,[2],3,4]) -> [1,2,3,4]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -531,8 +589,11 @@ Use `Array.reduce()` to create an object, where the keys are produced from the m
 const groupBy = (arr, func) =>
   arr.map(typeof func === 'function' ? func : val => val[func])
     .reduce((acc, val, i) => { acc[val] = (acc[val] || []).concat(arr[i]); return acc; }, {});
-// groupBy([6.1, 4.2, 6.3], Math.floor) -> {4: [4.2], 6: [6.1, 6.3]}
-// groupBy(['one', 'two', 'three'], 'length') -> {3: ['one', 'two'], 5: ['three']}
+```
+
+```js
+groupBy([6.1, 4.2, 6.3], Math.floor) -> {4: [4.2], 6: [6.1, 6.3]}
+groupBy(['one', 'two', 'three'], 'length') -> {3: ['one', 'two'], 5: ['three']}
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -545,7 +606,10 @@ Use `arr[0]` to return the first element of the passed array.
 
 ```js
 const head = arr => arr[0];
-// head([1,2,3]) -> 1
+```
+
+```js
+head([1,2,3]) -> 1
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -558,7 +622,10 @@ Use `arr.slice(0,-1)` to return all but the last element of the array.
 
 ```js
 const initial = arr => arr.slice(0, -1);
-// initial([1,2,3]) -> [1,2]
+```
+
+```js
+initial([1,2,3]) -> [1,2]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -571,7 +638,10 @@ Use `Array.map()` to generate h rows where each is a new array of size w initial
 
 ```js
 const initialize2DArray = (w, h, val = null) => Array(h).fill().map(() => Array(w).fill(val));
-// initializeArrayWithRange(2, 2, 0) -> [[0,0], [0,0]]
+```
+
+```js
+initialize2DArray(2, 2, 0) -> [[0,0], [0,0]]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -584,10 +654,13 @@ Use `Array((end + 1) - start)` to create an array of the desired length, `Array.
 You can omit `start` to use a default value of `0`.
 
 ```js
-const initializeArrayWithRange = (end, start = 0) => 
+const initializeArrayWithRange = (end, start = 0) =>
   Array.from({ length: (end + 1) - start }).map((v, i) => i + start);
-// initializeArrayWithRange(5) -> [0,1,2,3,4,5]
-// initializeArrayWithRange(7, 3) -> [3,4,5,6,7]
+```
+
+```js
+initializeArrayWithRange(5) -> [0,1,2,3,4,5]
+initializeArrayWithRange(7, 3) -> [3,4,5,6,7]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -601,7 +674,10 @@ You can omit `value` to use a default value of `0`.
 
 ```js
 const initializeArrayWithValues = (n, value = 0) => Array(n).fill(value);
-// initializeArrayWithValues(5, 2) -> [2,2,2,2,2]
+```
+
+```js
+initializeArrayWithValues(5, 2) -> [2,2,2,2,2]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -614,7 +690,10 @@ Create a `Set` from `b`, then use `Array.filter()` on `a` to only keep values co
 
 ```js
 const intersection = (a, b) => { const s = new Set(b); return a.filter(x => s.has(x)); };
-// intersection([1,2,3], [4,3,2]) -> [2,3]
+```
+
+```js
+intersection([1,2,3], [4,3,2]) -> [2,3]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -627,7 +706,10 @@ Use `arr.length - 1` to compute the index of the last element of the given array
 
 ```js
 const last = arr => arr[arr.length - 1];
-// last([1,2,3]) -> 3
+```
+
+```js
+last([1,2,3]) -> 3
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -639,12 +721,13 @@ Maps the values of an array to an object using a function, where the key-value p
 Use an anonymous inner function scope to declare an undefined memory space, using closures to store a return value. Use a new `Array` to store the array with a map of the function over its data set and a comma operator to return a second step, without needing to move from one context to another (due to closures and order of operations).
 
 ```js
-const mapObject = (arr, fn) => 
+const mapObject = (arr, fn) =>
   (a => (a = [arr, arr.map(fn)], a[0].reduce( (acc,val,ind) => (acc[val] = a[1][ind], acc), {}) )) ( );
-/*
+```
+
+```js
 const squareIt = arr => mapObject(arr, a => a*a)
 squareIt([1,2,3]) // { 1: 1, 2: 4, 3: 9 }
-*/
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -659,8 +742,11 @@ Omit the second argument, `n`, to get the first element of the array.
 
 ```js
 const nthElement = (arr, n=0) => (n>0? arr.slice(n,n+1) : arr.slice(n))[0];
-// nthElement(['a','b','c'],1) -> 'b'
-// nthElement(['a','b','b'],-3) -> 'a'
+```
+
+```js
+nthElement(['a','b','c'],1) -> 'b'
+nthElement(['a','b','b'],-3) -> 'a'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -674,7 +760,10 @@ Use `Array.reduce()` to convert the filtered/picked keys back to an object with 
 ```js
 const pick = (obj, arr) =>
   arr.reduce((acc, curr) => (curr in obj && (acc[curr] = obj[curr]), acc), {});
-// pick({ 'a': 1, 'b': '2', 'c': 3 }, ['a', 'c']) -> { 'a': 1, 'c': 3 }
+```
+
+```js
+pick({ 'a': 1, 'b': '2', 'c': 3 }, ['a', 'c']) -> { 'a': 1, 'c': 3 }
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -692,17 +781,19 @@ _(For a snippet that does not mutate the original array see [`without`](#without
 const pull = (arr, ...args) => {
   let argState = Array.isArray(args[0]) ? args[0] : args;
   let pulled = arr.filter((v, i) => !argState.includes(v));
-  arr.length = 0; 
+  arr.length = 0;
   pulled.forEach(v => arr.push(v));
 };
+```
 
-// let myArray1 = ['a', 'b', 'c', 'a', 'b', 'c'];
-// pull(myArray1, 'a', 'c');
-// console.log(myArray1) -> [ 'b', 'b' ]
+```js
+let myArray1 = ['a', 'b', 'c', 'a', 'b', 'c'];
+pull(myArray1, 'a', 'c');
+console.log(myArray1) -> [ 'b', 'b' ]
 
-// let myArray2 = ['a', 'b', 'c', 'a', 'b', 'c'];
-// pull(myArray2, ['a', 'c']);
-// console.log(myArray2) -> [ 'b', 'b' ]
+let myArray2 = ['a', 'b', 'c', 'a', 'b', 'c'];
+pull(myArray2, ['a', 'c']);
+console.log(myArray2) -> [ 'b', 'b' ]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -713,23 +804,25 @@ Mutates the original array to filter out the values at the specified indexes.
 
 Use `Array.filter()` and `Array.includes()` to pull out the values that are not needed.
 Use `Array.length = 0` to mutate the passed in an array by resetting it's length to zero and `Array.push()` to re-populate it with only the pulled values.
-Use `Array.push()` to keep track of pulled values 
+Use `Array.push()` to keep track of pulled values
 
 ```js
 const pullAtIndex = (arr, pullArr) => {
   let removed = [];
   let pulled = arr.map((v, i) => pullArr.includes(i) ? removed.push(v) : v)
                   .filter((v, i) => !pullArr.includes(i))
-  arr.length = 0; 
+  arr.length = 0;
   pulled.forEach(v => arr.push(v));
   return removed;
 }
+```
 
-// let myArray = ['a', 'b', 'c', 'd'];
-// let pulled = pullAtIndex(myArray, [1, 3]);
+```js
+let myArray = ['a', 'b', 'c', 'd'];
+let pulled = pullAtIndex(myArray, [1, 3]);
 
-// console.log(myArray); -> [ 'a', 'c' ]
-// console.log(pulled); -> [ 'b', 'd' ]
+console.log(myArray); -> [ 'a', 'c' ]
+console.log(pulled); -> [ 'b', 'd' ]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -740,23 +833,24 @@ Mutates the original array to filter out the values specified. Returns the remov
 
 Use `Array.filter()` and `Array.includes()` to pull out the values that are not needed.
 Use `Array.length = 0` to mutate the passed in an array by resetting it's length to zero and `Array.push()` to re-populate it with only the pulled values.
-Use `Array.push()` to keep track of pulled values 
+Use `Array.push()` to keep track of pulled values
 
 ```js
 const pullAtValue = (arr, pullArr) => {
-  let removed = [], 
+  let removed = [],
     pushToRemove = arr.forEach((v, i) => pullArr.includes(v) ? removed.push(v) : v),
     mutateTo = arr.filter((v, i) => !pullArr.includes(v));
   arr.length = 0;
   mutateTo.forEach(v => arr.push(v));
   return removed;
 }
-/*
+```
+
+```js
 let myArray = ['a', 'b', 'c', 'd'];
 let pulled = pullAtValue(myArray, ['b', 'd']);
 console.log(myArray); -> [ 'a', 'c' ]
 console.log(pulled); -> [ 'b', 'd' ]
-*/
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -774,7 +868,10 @@ const remove = (arr, func) =>
     arr.splice(arr.indexOf(val), 1); return acc.concat(val);
     }, [])
   : [];
-// remove([1, 2, 3, 4], n => n % 2 == 0) -> [2, 4]
+```
+
+```js
+remove([1, 2, 3, 4], n => n % 2 == 0) -> [2, 4]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -788,7 +885,10 @@ This method also works with strings.
 
 ```js
 const sample = arr => arr[Math.floor(Math.random() * arr.length)];
-// sample([3, 7, 9, 11]) -> 9
+```
+
+```js
+sample([3, 7, 9, 11]) -> 9
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -801,7 +901,10 @@ Use `Array.sort()` to reorder elements, using `Math.random()` in the comparator.
 
 ```js
 const shuffle = arr => arr.sort(() => Math.random() - 0.5);
-// shuffle([1,2,3]) -> [2,3,1]
+```
+
+```js
+shuffle([1,2,3]) -> [2,3,1]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -814,7 +917,10 @@ Use `filter()` to remove values that are not part of `values`, determined using 
 
 ```js
 const similarity = (arr, values) => arr.filter(v => values.includes(v));
-// similarity([1,2,3], [1,2,4]) -> [1,2]
+```
+
+```js
+similarity([1,2,3], [1,2,4]) -> [1,2]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -830,7 +936,10 @@ const symmetricDifference = (a, b) => {
   const sA = new Set(a), sB = new Set(b);
   return [...a.filter(x => !sB.has(x)), ...b.filter(x => !sA.has(x))];
 }
-// symmetricDifference([1,2,3], [1,2,4]) -> [3,4]
+```
+
+```js
+symmetricDifference([1,2,3], [1,2,4]) -> [3,4]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -843,8 +952,11 @@ Return `arr.slice(1)` if the array's `length` is more than `1`, otherwise, retur
 
 ```js
 const tail = arr => arr.length > 1 ? arr.slice(1) : arr;
-// tail([1,2,3]) -> [2,3]
-// tail([1]) -> [1]
+```
+
+```js
+tail([1,2,3]) -> [2,3]
+tail([1]) -> [1]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -857,8 +969,11 @@ Use `Array.slice()` to create a slice of the array with `n` elements taken from 
 
 ```js
 const take = (arr, n = 1) => arr.slice(0, n);
-// take([1, 2, 3], 5) -> [1, 2, 3]
-// take([1, 2, 3], 0) -> []
+```
+
+```js
+take([1, 2, 3], 5) -> [1, 2, 3]
+take([1, 2, 3], 0) -> []
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -871,8 +986,11 @@ Use `Array.slice()` to create a slice of the array with `n` elements taken from 
 
 ```js
 const takeRight = (arr, n = 1) => arr.slice(arr.length - n, arr.length);
-// takeRight([1, 2, 3], 2) -> [ 2, 3 ]
-// takeRight([1, 2, 3]) -> [3]
+```
+
+```js
+takeRight([1, 2, 3], 2) -> [ 2, 3 ]
+takeRight([1, 2, 3]) -> [3]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -885,7 +1003,10 @@ Create a `Set` with all values of `a` and `b` and convert to an array.
 
 ```js
 const union = (a, b) => Array.from(new Set([...a, ...b]));
-// union([1,2,3], [4,3,2]) -> [1,2,3,4]
+```
+
+```js
+union([1,2,3], [4,3,2]) -> [1,2,3,4]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -900,7 +1021,10 @@ _(For a snippet that mutates the original array see [`pull`](#pull))_
 
 ```js
 const without = (arr, ...args) => arr.filter(v => !args.includes(v));
-// without([2, 1, 2, 3], 1, 2) -> [3]
+```
+
+```js
+without([2, 1, 2, 3], 1, 2) -> [3]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -920,8 +1044,11 @@ const zip = (...arrays) => {
    return Array.from({length: arrays.length}, (_, k) => arrays[k][i]);
   })
 }
-//zip(['a', 'b'], [1, 2], [true, false]); -> [['a', 1, true], ['b', 2, false]]
-//zip(['a'], [1, 2], [true, false]); -> [['a', 1, true], [undefined, 2, false]]
+```
+
+```js
+zip(['a', 'b'], [1, 2], [true, false]); -> [['a', 1, true], ['b', 2, false]]
+zip(['a'], [1, 2], [true, false]); -> [['a', 1, true], [undefined, 2, false]]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -934,8 +1061,11 @@ Since an object can have undefined values but not undefined property pointers, t
 
 ```js
 const zipObject = ( props, values ) => props.reduce( ( obj, prop, index ) => ( obj[prop] = values[index], obj ), {} )
-// zipObject(['a','b','c'], [1,2]) -> {a: 1, b: 2, c: undefined}
-// zipObject(['a','b'], [1,2,3]) -> {a: 1, b: 2}
+```
+
+```js
+zipObject(['a','b','c'], [1,2]) -> {a: 1, b: 2, c: undefined}
+zipObject(['a','b'], [1,2,3]) -> {a: 1, b: 2}
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -949,7 +1079,10 @@ Use `Array.map()` and `document.querySelector()` to create a list of html tags.
 
 ```js
 const arrayToHtmlList = (arr, listID) => arr.map(item => document.querySelector("#"+listID).innerHTML+=`<li>${item}</li>`);
-// arrayToHtmlList(['item 1', 'item 2'],'myListID')
+```
+
+```js
+arrayToHtmlList(['item 1', 'item 2'],'myListID')
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -963,6 +1096,9 @@ Use `scrollY`, `scrollHeight` and `clientHeight` to determine if the bottom of t
 ```js
 const bottomVisible = () =>
   document.documentElement.clientHeight + window.scrollY >= (document.documentElement.scrollHeight || document.documentElement.clientHeight);
+```
+
+```js
 // bottomVisible() -> true
 ```
 
@@ -976,7 +1112,10 @@ Use `window.location.href` to get current URL.
 
 ```js
 const currentURL = () => window.location.href;
-// currentUrl() -> 'https://google.com'
+```
+
+```js
+currentUrl() -> 'https://google.com'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -989,8 +1128,11 @@ Use a regular expression to test the `navigator.userAgent` property to figure ou
 
 ```js
 const detectDeviceType = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? "Mobile" : "Desktop";
-// detectDeviceType() -> "Mobile"
-// detectDeviceType() -> "Desktop"
+```
+
+```js
+detectDeviceType() -> "Mobile"
+detectDeviceType() -> "Desktop"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1013,9 +1155,12 @@ const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
       ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
     : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
 };
+```
+
+```js
 // e.g. 100x100 viewport and a 10x10px element at position {top: -1, left: 0, bottom: 9, right: 10}
-// elementIsVisibleInViewport(el) -> false (not fully visible)
-// elementIsVisibleInViewport(el, true) -> true (partially visible)
+elementIsVisibleInViewport(el) -> false // (not fully visible)
+elementIsVisibleInViewport(el, true) -> true // (partially visible)
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1031,7 +1176,10 @@ You can omit `el` to use a default value of `window`.
 const getScrollPosition = (el = window) =>
   ({x: (el.pageXOffset !== undefined) ? el.pageXOffset : el.scrollLeft,
     y: (el.pageYOffset !== undefined) ? el.pageYOffset : el.scrollTop});
-// getScrollPosition() -> {x: 0, y: 200}
+```
+
+```js
+getScrollPosition() -> {x: 0, y: 200}
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1048,7 +1196,10 @@ const getURLParameters = url =>
   url.match(/([^?=&]+)(=([^&]*))/g).reduce(
     (a, v) => (a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1), a), {}
   );
-// getURLParameters('http://url.com/page?name=Adam&surname=Smith') -> {name: 'Adam', surname: 'Smith'}
+```
+
+```js
+getURLParameters('http://url.com/page?name=Adam&surname=Smith') -> {name: 'Adam', surname: 'Smith'}
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1077,7 +1228,10 @@ Pass a second argument to simulate a link click (`true` - default) or an HTTP re
 ```js
 const redirect = (url, asLink = true) =>
   asLink ? window.location.href = url : window.location.replace(url);
-// redirect('https://google.com')
+```
+
+```js
+redirect('https://google.com')
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1097,7 +1251,10 @@ const scrollToTop = () => {
     window.scrollTo(0, c - c / 8);
   }
 };
-// scrollToTop()
+```
+
+```js
+scrollToTop()
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1111,7 +1268,10 @@ Calculate the difference (in days) between two `Date` objects.
 
 ```js
 const getDaysDiffBetweenDates = (dateInitial, dateFinal) => (dateFinal - dateInitial) / (1000 * 3600 * 24);
-// getDaysDiffBetweenDates(new Date("2017-12-13"), new Date("2017-12-22")) -> 9
+```
+
+```js
+getDaysDiffBetweenDates(new Date("2017-12-13"), new Date("2017-12-22")) -> 9
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1127,7 +1287,10 @@ const JSONToDate = arr => {
   const dt = new Date(parseInt(arr.toString().substr(6)));
   return `${ dt.getDate() }/${ dt.getMonth() + 1 }/${ dt.getFullYear() }`
 };
-// JSONToDate(/Date(1489525200000)/) -> "14/3/2017"
+```
+
+```js
+JSONToDate(/Date(1489525200000)/) -> "14/3/2017"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1142,7 +1305,10 @@ Throws an error if the passed time cannot be converted to a date.
 ```js
 const toEnglishDate  = (time) =>
   {try{return new Date(time).toISOString().split('T')[0].replace(/-/g, '/')}catch(e){return}};
-// toEnglishDate('09/21/2010') -> '21/09/2010'
+```
+
+```js
+toEnglishDate('09/21/2010') -> '21/09/2010'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1156,13 +1322,14 @@ Loop through an array of functions containing asynchronous events, calling `next
 
 ```js
 const chainAsync = fns => { let curr = 0; const next = () => fns[curr++](next); next(); };
-/*
+```
+
+```js
 chainAsync([
   next => { console.log('0 seconds'); setTimeout(next, 1000); },
   next => { console.log('1 second');  setTimeout(next, 1000); },
   next => { console.log('2 seconds'); }
 ])
-*/
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1176,12 +1343,13 @@ The last (rightmost) function can accept one or more arguments; the remaining fu
 
 ```js
 const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));
-/*
+```
+
+```js
 const add5 = x => x + 5
 const multiply = (x, y) => x * y
 const multiplyAndAdd5 = compose(add5, multiply)
 multiplyAndAdd5(5, 2) -> 15
-*/
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1200,8 +1368,11 @@ const curry = (fn, arity = fn.length, ...args) =>
   arity <= args.length
     ? fn(...args)
     : curry.bind(null, fn, arity, ...args);
-// curry(Math.pow)(2)(10) -> 1024
-// curry(Math.min, 3)(10)(50)(2) -> 2
+```
+
+```js
+curry(Math.pow)(2)(10) -> 1024
+curry(Math.min, 3)(10)(50)(2) -> 2
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1214,7 +1385,10 @@ Use `console.debug()` and the `name` property of the passed method to log the me
 
 ```js
 const functionName = fn => (console.debug(fn.name), fn);
-// functionName(Math.max) -> max (logged in debug channel of console)
+```
+
+```js
+functionName(Math.max) -> max (logged in debug channel of console)
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1228,12 +1402,13 @@ The first (leftmost) function can accept one or more arguments; the remaining fu
 
 ```js
 const pipeFunctions = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
-/*
+```
+
+```js
 const add5 = x => x + 5
 const multiply = (x, y) => x * y
 const multiplyAndAdd5 = pipeFunctions(multiply, add5)
 multiplyAndAdd5(5, 2) -> 15
-*/
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1246,8 +1421,11 @@ Use `Array.reduce()` to create a promise chain, where each promise returns the n
 
 ```js
 const runPromisesInSeries = ps => ps.reduce((p, next) => p.then(next), Promise.resolve());
-// const delay = (d) => new Promise(r => setTimeout(r, d))
-// runPromisesInSeries([() => delay(1000), () => delay(2000)]) -> executes each promise sequentially, taking a total of 3 seconds to complete
+```
+
+```js
+const delay = (d) => new Promise(r => setTimeout(r, d))
+runPromisesInSeries([() => delay(1000), () => delay(2000)]) -> //executes each promise sequentially, taking a total of 3 seconds to complete
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1260,13 +1438,14 @@ Delay executing part of an `async` function, by putting it to sleep, returning a
 
 ```js
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-/*
+```
+
+```js
 async function sleepyWork() {
   console.log('I\'m going to sleep for 1 second.');
   await sleep(1000);
   console.log('I woke up after 1 second.');
 }
-*/
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1280,8 +1459,11 @@ Take a predicate function and apply `not` to it with its arguments.
 
 ```js
 const negate = func => (...args) => !func(...args);
-// filter([1, 2, 3, 4, 5, 6], negate(isEven)) -> [1, 3, 5]
-// negate(isOdd)(1) -> false
+```
+
+```js
+filter([1, 2, 3, 4, 5, 6], negate(isEven)) -> [1, 3, 5]
+negate(isOdd)(1) -> false
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1295,7 +1477,10 @@ Use `Array.reduce()` to add each value to an accumulator, initialized with a val
 
 ```js
 const arrayAverage = arr => arr.reduce((acc, val) => acc + val, 0) / arr.length;
-// arrayAverage([1,2,3]) -> 2
+```
+
+```js
+arrayAverage([1,2,3]) -> 2
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1308,7 +1493,10 @@ Use `Array.reduce()` to add each value to an accumulator, initialized with a val
 
 ```js
 const arraySum = arr => arr.reduce((acc, val) => acc + val, 0);
-// arraySum([1,2,3,4]) -> 10
+```
+
+```js
+arraySum([1,2,3,4]) -> 10
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1317,18 +1505,21 @@ const arraySum = arr => arr.reduce((acc, val) => acc + val, 0);
 
 Clamps `num` within the inclusive `lower` and `upper` bounds.
 
-If `lower` is greater than `upper`, swap them. 
-If `num` falls within the range, return `num`. 
+If `lower` is greater than `upper`, swap them.
+If `num` falls within the range, return `num`.
 Otherwise, return the nearest number in the range.
 
 ```js
 const clampNumber = (num, lower, upper) => {
   if(lower > upper) upper = [lower, lower = upper][0];
-  return (num>=lower && num<=upper) ? num : ((num < lower) ? lower : upper) 
+  return (num>=lower && num<=upper) ? num : ((num < lower) ? lower : upper)
 }
-// clampNumber(2, 3, 5) -> 3
-// clampNumber(1, -1, -5) -> -1
-// clampNumber(3, 2, 4) -> 3
+```
+
+```js
+clampNumber(2, 3, 5) -> 3
+clampNumber(1, -1, -5) -> -1
+clampNumber(3, 2, 4) -> 3
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1341,8 +1532,11 @@ If `n` is even, return `n/2`. Otherwise, return `3n+1`.
 
 ```js
 const collatz = n => (n % 2 == 0) ? (n / 2) : (3 * n + 1);
-// collatz(8) --> 4
-// collatz(5) --> 16
+```
+
+```js
+collatz(8) -> 4
+collatz(5) -> 16
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1356,7 +1550,10 @@ Use `Array.map()` and `parseInt()` to transform each value to an integer.
 
 ```js
 const digitize = n => [...''+n].map(i => parseInt(i));
-// digitize(2334) -> [2, 3, 3, 4]
+```
+
+```js
+differenceWith([1, 1.2, 1.5, 3], [1.9, 3], (a,b) => Math.round(a) == Math.round(b)) -> [1, 1.2]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1369,7 +1566,10 @@ Use `Math.hypot()` to calculate the Euclidean distance between two points.
 
 ```js
 const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
-// distance(1,1, 2,3) -> 2.23606797749979
+```
+
+```js
+distance(1,1, 2,3) -> 2.23606797749979
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1387,7 +1587,10 @@ Throws an exception if `n` is a negative number.
 const factorial = n =>
   n < 0 ? (() => { throw new TypeError('Negative numbers are not allowed!') })()
   : n <= 1 ? 1 : n * factorial(n - 1);
-// factorial(6) -> 720
+```
+
+```js
+factorial(6) -> 720
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1402,7 +1605,10 @@ Use `Array.reduce()` to add values into the array, using the sum of the last two
 ```js
 const fibonacci = n =>
   Array.from({ length: n}).reduce((acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i), []);
-// fibonacci(5) -> [0,1,1,2,3]
+```
+
+```js
+factorial(6) -> 720
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1416,7 +1622,10 @@ Use a mathematical formula to calculate the number of fibonacci numbers until `n
 ```js
 const fibonacciCountUntilNum = num =>
   Math.ceil(Math.log(num * Math.sqrt(5) + 1/2) / Math.log((Math.sqrt(5)+1)/2));
-// fibonacciCountUntilNum(10) -> 7
+```
+
+```js
+fibonacciCountUntilNum(10) -> 7
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1434,7 +1643,10 @@ const fibonacciUntilNum = num => {
   let n = Math.ceil(Math.log(num * Math.sqrt(5) + 1/2) / Math.log((Math.sqrt(5)+1)/2));
   return Array.from({ length: n}).reduce((acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i), []);
 }
-// fibonacciUntilNum(15) -> [0,1,1,2,3,5,8,13]
+```
+
+```js
+fibonacciCountUntilNum(10) -> 7
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1449,7 +1661,10 @@ Otherwise, return the GCD of `y` and the remainder of the division `x/y`.
 
 ```js
 const gcd = (x, y) => !y ? x : gcd(y, x % y);
-// gcd (8, 36) -> 4
+```
+
+```js
+gcd (8, 36) -> 4
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1464,14 +1679,17 @@ Count and return the number of `1`s in the string, using `match(/1/g)`.
 ```js
 const hammingDistance = (num1, num2) =>
   ((num1 ^ num2).toString(2).match(/1/g) || '').length;
-// hammingDistance(2,3) -> 1
+```
+
+```js
+hammingDistance(2,3) -> 1
 ```
 
 [⬆ back to top](#table-of-contents)
 
 ### inRange
 
-Checks if the given number falls within the given range. 
+Checks if the given number falls within the given range.
 
 Use arithmetic comparison to check if the given number is in the specified range.
 If the second parameter, `end`, is not specified, the range is considered to be from `0` to `start`.
@@ -1481,10 +1699,13 @@ const inRange = (n, start, end=null) => {
   if(end && start > end) end = [start, start=end][0];
   return (end == null) ? (n>=0 && n<start) : (n>=start && n<end);
 }
-// inRange(3, 2, 5) -> true
-// inRange(3, 4) -> true
-// inRange(2, 3, 5) -> false
-// inrange(3, 2) -> false
+```
+
+```js
+inRange(3, 2, 5) -> true
+inRange(3, 4) -> true
+inRange(2, 3, 5) -> false
+inrange(3, 2) -> false
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1496,11 +1717,14 @@ Checks if the given number is an Armstrong number or not.
 Convert the given number into an array of digits. Use `Math.pow()` to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return `true` otherwise `false`.
 
 ```js
-const isArmstrongNumber = digits => 
+const isArmstrongNumber = digits =>
   ( arr => arr.reduce( ( a, d ) => a + Math.pow( parseInt( d ), arr.length ), 0 ) == digits ? true : false )( ( digits+'' ).split( '' ) );
-// isArmstrongNumber(1634) -> true
-// isArmstrongNumber(371) -> true
-// isArmstrongNumber(56) -> false
+```
+
+```js
+isArmstrongNumber(1634) -> true
+isArmstrongNumber(371) -> true
+isArmstrongNumber(56) -> false
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1513,7 +1737,10 @@ Use the modulo operator (`%`) to check if the remainder is equal to `0`.
 
 ```js
 const isDivisible = (dividend, divisor) => dividend % divisor === 0;
-// isDivisible(6,3) -> true
+```
+
+```js
+isDivisible(6,3) -> true
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1527,7 +1754,10 @@ Returns `true` if the number is even, `false` if the number is odd.
 
 ```js
 const isEven = num => num % 2 === 0;
-// isEven(3) -> false
+```
+
+```js
+isEven(3) -> false
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1536,7 +1766,7 @@ const isEven = num => num % 2 === 0;
 
 Checks if the provided integer is a prime number.
 
-Check numbers from `2` to the square root of the given number. 
+Check numbers from `2` to the square root of the given number.
 Return `false` if any of them divides the given number, else return `true`, unless the number is less than `2`.
 
 ```js
@@ -1545,8 +1775,11 @@ const isPrime = num => {
   for (var i = 2; i * i <= boundary; i++) if (num % i == 0) return false;
   return num >= 2;
 };
-// isPrime(11) -> true
-// isPrime(12) -> false
+```
+
+```js
+isPrime(11) -> true
+isPrime(12) -> false
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1563,7 +1796,10 @@ const lcm = (x,y) => {
   const gcd = (x, y) => !y ? x : gcd(y, x % y);
   return Math.abs(x*y)/(gcd(x,y));
 };
-// lcm(12,7) -> 84
+```
+
+```js
+lcm(12,7) -> 84
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1580,8 +1816,11 @@ const median = arr => {
   const mid = Math.floor(arr.length / 2), nums = [...arr].sort((a, b) => a - b);
   return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
 };
-// median([5,6,50,1,-5]) -> 5
-// median([0,10,-2,7]) -> 3.5
+```
+
+```js
+median([5,6,50,1,-5]) -> 5
+median([0,10,-2,7]) -> 3.5
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1598,8 +1837,11 @@ const palindrome = str => {
   const s = str.toLowerCase().replace(/[\W_]/g,'');
   return s === s.split('').reverse().join('');
 }
-// palindrome('taco cat') -> true
- ```
+```
+
+```js
+palindrome('taco cat') -> true
+```
 
 [⬆ back to top](#table-of-contents)
 
@@ -1612,8 +1854,11 @@ Use `Array.reduce()` to calculate how many numbers are below the value and how m
 ```js
 const percentile = (arr, val) =>
   100 * arr.reduce((acc,v) => acc + (v < val ? 1 : 0) + (v === val ? 0.5 : 0), 0) / arr.length;
-// percentile([1,2,3,4,5,6,7,8,9,10], 6) -> 55
- ```
+```
+
+```js
+percentile([1,2,3,4,5,6,7,8,9,10], 6) -> 55
+```
 
 [⬆ back to top](#table-of-contents)
 
@@ -1626,12 +1871,15 @@ Use `Array.reduce()` combined with `Array.map()` to iterate over elements and co
 ```js
 const powerset = arr =>
   arr.reduce((a, v) => a.concat(a.map(r => [v].concat(r))), [[]]);
-// powerset([1,2]) -> [[], [1], [2], [2,1]]
+```
+
+```js
+powerset([1,2]) -> [[], [1], [2], [2,1]]
 ```
 
 [⬆ back to top](#table-of-contents)
 
-### primes 
+### primes
 
 Generates primes up to a given number, using the Sieve of Eratosthenes.
 
@@ -1639,13 +1887,16 @@ Generate an array from `2` to the given number. Use `Array.filter()` to filter o
 
 ```js
 const primes = num => {
-  let arr =  Array.from({length:num-1}).map((x,i)=> i+2), 
+  let arr =  Array.from({length:num-1}).map((x,i)=> i+2),
     sqroot  = Math.floor(Math.sqrt(num)),
     numsTillSqroot  = Array.from({length:sqroot-1}).map((x,i)=> i+2);
   numsTillSqroot.forEach(x => arr = arr.filter(y => ((y%x)!==0)||(y==x)));
-  return arr; 
+  return arr;
 }
-// primes(10) -> [2,3,5,7] 
+```
+
+```js
+primes(10) -> [2,3,5,7]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1658,7 +1909,10 @@ Use `Math.random()` to generate a random number and map it to the desired range,
 
 ```js
 const randomIntegerInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-// randomIntegerInRange(0, 5) -> 2
+```
+
+```js
+randomIntegerInRange(0, 5) -> 2
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1671,7 +1925,10 @@ Use `Math.random()` to generate a random value, map it to the desired range usin
 
 ```js
 const randomNumberInRange = (min, max) => Math.random() * (max - min) + min;
-// randomNumberInRange(2,10) -> 6.0211363285087005
+```
+
+```js
+randomNumberInRange(2,10) -> 6.0211363285087005
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1685,7 +1942,10 @@ Omit the second argument, `decimals` to round to an integer.
 
 ```js
 const round = (n, decimals=0) => Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`);
-// round(1.005, 2) -> 1.01
+```
+
+```js
+round(1.005, 2) -> 1.01
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1706,8 +1966,11 @@ const standardDeviation = (arr, usePopulation = false) => {
        .reduce((acc, val) => acc + val, 0) / (arr.length - (usePopulation ? 0 : 1))
   );
 };
-// standardDeviation([10,2,38,23,38,23,21]) -> 13.284434142114991 (sample)
-// standardDeviation([10,2,38,23,38,23,21], true) -> 12.29899614287479 (population)
+```
+
+```js
+standardDeviation([10,2,38,23,38,23,21]) -> 13.284434142114991 (sample)
+standardDeviation([10,2,38,23,38,23,21], true) -> 12.29899614287479 (population)
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1728,7 +1991,10 @@ const speechSynthesis = message => {
   msg.voice = window.speechSynthesis.getVoices()[0];
   window.speechSynthesis.speak(msg);
 };
-// speechSynthesis('Hello, World') -> plays the message
+```
+
+```js
+speechSynthesis('Hello, World') -> // plays the message
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1743,7 +2009,10 @@ Use `fs.writeFile()`, template literals and `JSON.stringify()` to write a `json`
 ```js
 const fs = require('fs');
 const JSONToFile = (obj, filename) => fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2))
-// JSONToFile({test: "is passed"}, 'testJsonFile') -> writes the object to 'testJsonFile.json'
+```
+
+```js
+JSONToFile({test: "is passed"}, 'testJsonFile') -> writes the object to 'testJsonFile.json'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1759,15 +2028,16 @@ creating an array from contents of file by `split`ing file content line by line 
   ```js
 const fs = require('fs');
 const readFileLines = filename => fs.readFileSync(filename).toString('UTF8').split('\n');
-/*
-  contents of test.txt :
-    line1
-    line2
-    line3
-    ___________________________
-  let arr = readFileLines('test.txt')
-  console.log(arr) // -> ['line1', 'line2', 'line3']
- */
+```
+
+```js
+contents of test.txt :
+  line1
+  line2
+  line3
+  ___________________________
+let arr = readFileLines('test.txt')
+console.log(arr) // -> ['line1', 'line2', 'line3']
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1790,11 +2060,12 @@ const cleanObj = (obj, keysToKeep = [], childIndicator) => {
     }
   })
 }
-/*
-  const testObj = {a: 1, b: 2, children: {a: 1, b: 2}}
-  cleanObj(testObj, ["a"],"children")
-  console.log(testObj)// { a: 1, children : { a: 1}}
-*/
+```
+
+```js
+const testObj = {a: 1, b: 2, children: {a: 1, b: 2}}
+cleanObj(testObj, ["a"],"children")
+console.log(testObj) // { a: 1, children : { a: 1}}
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1807,7 +2078,10 @@ Use `Array.reduce()` to create and combine key-value pairs.
 
 ```js
 const objectFromPairs = arr => arr.reduce((a, v) => (a[v[0]] = v[1], a), {});
-// objectFromPairs([['a',1],['b',2]]) -> {a: 1, b: 2}
+```
+
+```js
+objectFromPairs([['a',1],['b',2]]) -> {a: 1, b: 2}
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1820,7 +2094,10 @@ Use `Object.keys()` and `Array.map()` to iterate over the object's keys and prod
 
 ```js
 const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
-// objectToPairs({a: 1, b: 2}) -> [['a',1],['b',2]])
+```
+
+```js
+objectToPairs({a: 1, b: 2}) -> [['a',1],['b',2]])
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1843,12 +2120,13 @@ const orderBy = (arr, props, orders) =>
       return acc;
     }, 0)
   );
-/*
+```
+
+```js
 const users = [{ 'name': 'fred',   'age': 48 },{ 'name': 'barney', 'age': 36 },
   { 'name': 'fred',   'age': 40 },{ 'name': 'barney', 'age': 34 }];
 orderby(users, ['name', 'age'], ['asc', 'desc']) -> [{name: 'barney', age: 36}, {name: 'barney', age: 34}, {name: 'fred', age: 48}, {name: 'fred', age: 40}]
 orderby(users, ['name', 'age']) -> [{name: 'barney', age: 34}, {name: 'barney', age: 36}, {name: 'fred', age: 40}, {name: 'fred', age: 48}]
-*/
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1862,9 +2140,11 @@ If the property does not exists returns `undefined`.
 ```js
 const select = (from, selector) =>
   selector.split('.').reduce((prev, cur) => prev && prev[cur], from);
+```
 
-// const obj = {selector: {to: {val: 'val to select'}}};
-// select(obj, 'selector.to.val'); -> 'val to select'
+```js
+const obj = {selector: {to: {val: 'val to select'}}};
+select(obj, 'selector.to.val'); -> 'val to select'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1877,11 +2157,12 @@ Use `Object.assign()` and an empty object (`{}`) to create a shallow clone of th
 
 ```js
 const shallowClone = obj => Object.assign({}, obj);
-/*
+```
+
+```js
 const a = { x: true, y: 1 };
 const b = shallowClone(a);
 a === b -> false
-*/
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1891,10 +2172,13 @@ a === b -> false
 Checks if the predicate (second argument) is truthy on all elements of a collection (first argument).
 
 Use `Array.every()` to check if each passed object has the specified property and if it returns a truthy value.
- 
+
  ```js
 const truthCheckCollection = (collection, pre) => (collection.every(obj => obj[pre]));
-// truthCheckCollection([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}], "sex") -> true
+```
+
+```js
+truthCheckCollection([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}], "sex") -> true
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1915,7 +2199,10 @@ const anagrams = str => {
   return str.split('').reduce((acc, letter, i) =>
     acc.concat(anagrams(str.slice(0, i) + str.slice(i + 1)).map(val => letter + val)), []);
 };
-// anagrams('abc') -> ['abc','acb','bac','bca','cab','cba']
+```
+
+```js
+anagrams('abc') -> ['abc','acb','bac','bca','cab','cba']
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1930,8 +2217,11 @@ Omit the `lowerRest` parameter to keep the rest of the string intact, or set it 
 ```js
 const capitalize = ([first,...rest], lowerRest = false) =>
   first.toUpperCase() + (lowerRest ? rest.join('').toLowerCase() : rest.join(''));
-// capitalize('myName') -> 'MyName'
-// capitalize('myName', true) -> 'Myname'
+```
+
+```js
+capitalize('fooBar') -> 'FooBar'
+capitalize('fooBar', true) -> 'Foobar'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1944,7 +2234,10 @@ Use `replace()` to match the first character of each word and `toUpperCase()` to
 
 ```js
 const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperCase());
-// capitalizeEveryWord('hello world!') -> 'Hello World!'
+```
+
+```js
+capitalizeEveryWord('hello world!') -> 'Hello World!'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1957,8 +2250,11 @@ Use a regular expression to count the number of vowels `(A, E, I, O, U)` in a `s
 
 ```js
 const countVowels = str => (str.match(/[aeiou]/ig) || []).length;
-// countVowels('foobar') -> 3
-// countVowels('gym') -> 0
+```
+
+```js
+countVowels('foobar') -> 3
+countVowels('gym') -> 0
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1971,7 +2267,10 @@ Use `replace()` to escape special characters.
 
 ```js
 const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-// escapeRegExp('(test)') -> \\(test\\)
+```
+
+```js
+escapeRegExp('(test)') -> \\(test\\)
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1987,9 +2286,12 @@ Omit the second argument to use a default separator of `_`.
 const fromCamelCase = (str, separator = '_') =>
   str.replace(/([a-z\d])([A-Z])/g, '$1' + separator + '$2')
     .replace(/([A-Z]+)([A-Z][a-z\d]+)/g, '$1' + separator + '$2').toLowerCase();
-// fromCamelCase('someDatabaseFieldName', ' ') -> 'some database field name'
-// fromCamelCase('someLabelThatNeedsToBeCamelized', '-') -> 'some-label-that-needs-to-be-camelized'
-// fromCamelCase('someJavascriptProperty', '_') -> 'some_javascript_property'
+```
+
+```js
+fromCamelCase('someDatabaseFieldName', ' ') -> 'some database field name'
+fromCamelCase('someLabelThatNeedsToBeCamelized', '-') -> 'some-label-that-needs-to-be-camelized'
+fromCamelCase('someJavascriptProperty', '_') -> 'some_javascript_property'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2004,8 +2306,11 @@ If no string is provided the default is `""` and the default number of times is 
 const repeatString = (str="",num=2) => {
     return num >= 0 ? str.repeat(num) : str;
 }
-// repeatString("abc",3) -> 'abcabcabc'
-// repeatString("abc") -> 'abcabc'
+```
+
+```js
+repeatString("abc",3) -> 'abcabcabc'
+repeatString("abc") -> 'abcabc'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2019,7 +2324,10 @@ Combine characters to get a string using `join('')`.
 
 ```js
 const reverseString = str => str.split('').reverse().join('');
-// reverseString('foobar') -> 'raboof'
+```
+
+```js
+reverseString('foobar') -> 'raboof'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2033,7 +2341,10 @@ Split the string using `split('')`, `Array.sort()` utilizing `localeCompare()`, 
 ```js
 const sortCharactersInString = str =>
   str.split('').sort((a, b) => a.localeCompare(b)).join('');
-// sortCharactersInString('cabbage') -> 'aabbceg'
+```
+
+```js
+sortCharactersInString('cabbage') -> 'aabbceg'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2052,10 +2363,13 @@ const toCamelCase = str => {
     .join('');
   return s.slice(0,1).toLowerCase() + s.slice(1)
   }
-// toCamelCase("some_database_field_name") -> 'someDatabaseFieldName'
-// toCamelCase("Some label that needs to be camelized") -> 'someLabelThatNeedsToBeCamelized'
-// toCamelCase("some-javascript-property") -> 'someJavascriptProperty'
-// toCamelCase("some-mixed_string with spaces_underscores-and-hyphens") -> 'someMixedStringWithSpacesUnderscoresAndHyphens'
+```
+
+```js
+toCamelCase("some_database_field_name") -> 'someDatabaseFieldName'
+toCamelCase("Some label that needs to be camelized") -> 'someLabelThatNeedsToBeCamelized'
+toCamelCase("some-javascript-property") -> 'someJavascriptProperty'
+toCamelCase("some-mixed_string with spaces_underscores-and-hyphens") -> 'someMixedStringWithSpacesUnderscoresAndHyphens'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2072,11 +2386,14 @@ const toKebabCase = str =>
   str && str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
     .map(x => x.toLowerCase())
     .join('-');
-// toKebabCase("camelCase") -> 'camel-case'
-// toKebabCase("some text") -> 'some-text'
-// toKebabCase("some-mixed_string With spaces_underscores-and-hyphens") -> 'some-mixed-string-with-spaces-underscores-and-hyphens'
-// toKebabCase("AllThe-small Things") -> "all-the-small-things"
-// toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') -> "i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-xml-and-html"
+```
+
+```js
+toKebabCase("camelCase") -> 'camel-case'
+toKebabCase("some text") -> 'some-text'
+toKebabCase("some-mixed_string With spaces_underscores-and-hyphens") -> 'some-mixed-string-with-spaces-underscores-and-hyphens'
+toKebabCase("AllThe-small Things") -> "all-the-small-things"
+toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') -> "i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-xml-and-html"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2093,12 +2410,15 @@ const toSnakeCase = str =>{
   str && str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
     .map(x => x.toLowerCase())
     .join('_');
-// toSnakeCase("camelCase") -> 'camel_case'
-// toSnakeCase("some text") -> 'some_text'
-// toSnakeCase("some-javascript-property") -> 'some_javascript_property'
-// toSnakeCase("some-mixed_string With spaces_underscores-and-hyphens") -> 'some_mixed_string_with_spaces_underscores_and_hyphens'
-// toKebabCase("AllThe-small Things") -> "all_the_smal_things"
-// toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') -> "i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html"
+```
+
+```js
+toSnakeCase("camelCase") -> 'camel_case'
+toSnakeCase("some text") -> 'some_text'
+toSnakeCase("some-javascript-property") -> 'some_javascript_property'
+toSnakeCase("some-mixed_string With spaces_underscores-and-hyphens") -> 'some_mixed_string_with_spaces_underscores_and_hyphens'
+toSnakeCase("AllThe-small Things") -> "all_the_smal_things"
+toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') -> "i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2113,7 +2433,10 @@ Return the string truncated to the desired length, with `...` appended to the en
 ```js
 const truncateString = (str, num) =>
   str.length > num ? str.slice(0, num > 3 ? num - 3 : num) + '...' : str;
-// truncateString('boomerang', 7) -> 'boom...'
+```
+
+```js
+truncateString('boomerang', 7) -> 'boom...'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2127,8 +2450,11 @@ Omit the second argument to use the default regex.
 
 ```js
 const words = (str, pattern = /[^a-zA-Z-]+/) => str.split(pattern).filter(Boolean);
-// words("I love javaScript!!") -> ["I", "love", "javaScript"]
-// words("python, javaScript & coffee") -> ["python", "javaScript", "coffee"]
+```
+
+```js
+words("I love javaScript!!") -> ["I", "love", "javaScript"]
+words("python, javaScript & coffee") -> ["python", "javaScript", "coffee"]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2142,7 +2468,10 @@ Use `Array.find()` to return the first non `null`/`undefined` argument.
 
 ```js
 const coalesce = (...args) => args.find(_ => ![undefined, null].includes(_))
-// coalesce(null,undefined,"",NaN, "Waldo") -> ""
+```
+
+```js
+coalesce(null,undefined,"",NaN, "Waldo") -> ""
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2155,8 +2484,11 @@ Use `Array.find()` to return the first argument that returns `true` from the pro
 
 ```js
 const coalesceFactory = valid => (...args) => args.find(valid);
-// const customCoalesce = coalesceFactory(_ => ![null, undefined, "", NaN].includes(_))
-// customCoalesce(undefined, null, NaN, "", "Waldo") //-> "Waldo"
+```
+
+```js
+const customCoalesce = coalesceFactory(_ => ![null, undefined, "", NaN].includes(_))
+customCoalesce(undefined, null, NaN, "", "Waldo") // "Waldo"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2170,8 +2502,11 @@ Use `Array.map()`, `split()` and `Array.join()` to join the mapped array for con
 ```js
 const extendHex = shortHex =>
   '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split('').map(x => x+x).join('')
-// extendHex('#03f') -> '#0033ff'
-// extendHex('05a') -> '#0055aa'
+```
+
+```js
+extendHex('#03f') -> '#0033ff'
+extendHex('05a') -> '#0055aa'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2185,7 +2520,10 @@ Returns lowercased constructor name of value, "undefined" or "null" if value is 
 ```js
 const getType = v =>
   v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name.toLowerCase();
-// getType(new Set([1,2,3])) -> "set"
+```
+
+```js
+getType(new Set([1,2,3])) -> "set"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2208,10 +2546,12 @@ const hexToRGB = hex => {
     + ((h & (alpha ? 0x0000ff00 : 0x0000ff)) >>> (alpha ? 8 : 0))
     + (alpha ? `, ${(h & 0x000000ff)}` : '') + ')';
 };
-// hexToRGB('#27ae60ff') -> 'rgba(39, 174, 96, 255)'
-// hexToRGB('27ae60') -> 'rgb(39, 174, 96)'
-// hexToRGB('#fff') -> 'rgb(255, 255, 255)'
+```
 
+```js
+hexToRGB('#27ae60ff') -> 'rgba(39, 174, 96, 255)'
+hexToRGB('27ae60') -> 'rgb(39, 174, 96)'
+hexToRGB('#fff') -> 'rgb(255, 255, 255)'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2224,8 +2564,11 @@ Use `Array.isArray()` to check if a value is classified as an array.
 
 ```js
 const isArray = val => !!val && Array.isArray(val);
-// isArray(null) -> false
-// isArray([1]) -> true
+```
+
+```js
+isArray(null) -> false
+isArray([1]) -> true
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2238,8 +2581,11 @@ Use `typeof` to check if a value is classified as a boolean primitive.
 
 ```js
 const isBoolean = val => typeof val === 'boolean';
-// isBoolean(null) -> false
-// isBoolean(false) -> true
+```
+
+```js
+isBoolean(null) -> false
+isBoolean(false) -> true
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2252,8 +2598,11 @@ Use `typeof` to check if a value is classified as a function primitive.
 
 ```js
 const isFunction = val => val && typeof val === 'function';
-// isFunction('x') -> false
-// isFunction(x => x) -> true
+```
+
+```js
+isFunction('x') -> false
+isFunction(x => x) -> true
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2266,10 +2615,12 @@ Use `typeof` to check if a value is classified as a number primitive.
 
 ```js
 const isNumber = val => typeof val === 'number';
-// isNumber('1') -> false
-// isNumber(1) -> true
 ```
 
+```js
+isNumber('1') -> false
+isNumber(1) -> true
+```
 [⬆ back to top](#table-of-contents)
 
 ### isString
@@ -2280,8 +2631,11 @@ Use `typeof` to check if a value is classified as a string primitive.
 
 ```js
 const isString = val => typeof val === 'string';
-// isString(10) -> false
-// isString('10') -> true
+```
+
+```js
+isString(10) -> false
+isString('10') -> true
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2294,8 +2648,11 @@ Use `typeof` to check if a value is classified as a symbol primitive.
 
 ```js
 const isSymbol = val => typeof val === 'symbol';
-// isSymbol('x') -> false
-// isSymbol(Symbol('x')) -> true
+```
+
+```js
+isSymbol('x') -> false
+isSymbol(Symbol('x')) -> true
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2304,13 +2661,16 @@ const isSymbol = val => typeof val === 'symbol';
 
 Generates a random hexadecimal color code.
 
-Use `Math.random` to generate a random 24-bit(6x4bits) hexadecimal number. Use bit shifting and then convert it to an hexadecimal String using `toString(16)`. 
+Use `Math.random` to generate a random 24-bit(6x4bits) hexadecimal number. Use bit shifting and then convert it to an hexadecimal String using `toString(16)`.
 
 ```js
 const randomHexColorCode = () => '#'+(Math.random()*0xFFFFFF<<0).toString(16);
-// randomHexColorCode() -> "#e34155"
-// randomHexColorCode() -> "#fd73a6"
-// randomHexColorCode() -> "#4144c6"
+```
+
+```js
+randomHexColorCode() -> "#e34155"
+randomHexColorCode() -> "#fd73a6"
+randomHexColorCode() -> "#4144c6"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2323,7 +2683,10 @@ Convert given RGB parameters to hexadecimal string using bitwise left-shift oper
 
 ```js
 const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
-// RGBToHex(255, 165, 1) -> 'ffa501'
+```
+
+```js
+RGBToHex(255, 165, 1) -> 'ffa501'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2339,8 +2702,11 @@ const timeTaken = callback => {
   console.time('timeTaken');  const r = callback();
   console.timeEnd('timeTaken');  return r;
 };
-// timeTaken(() => Math.pow(2, 10)) -> 1024
-// (logged): timeTaken: 0.02099609375ms
+```
+
+```js
+timeTaken(() => Math.pow(2, 10)) -> 1024
+(logged): timeTaken: 0.02099609375ms
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2351,7 +2717,10 @@ Use `toLocaleString()` to convert a float-point arithmetic to the [Decimal mark]
 
  ```js
 const toDecimalMark = num => num.toLocaleString("en-US");
-// toDecimalMark(12305030388.9087) -> "12,305,030,388.9087"
+```
+
+```js
+toDecimalMark(12305030388.9087) -> "12,305,030,388.9087"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2371,7 +2740,10 @@ const toOrdinalSuffix = num => {
     tPattern = [11, 12, 13, 14, 15, 16, 17, 18, 19];
   return oPattern.includes(digits[0]) && !tPattern.includes(digits[1]) ? int + ordinals[digits[0] - 1] : int + ordinals[3];
 };
-// toOrdinalSuffix("123") -> "123rd"
+```
+
+```js
+toOrdinalSuffix("123") -> "123rd"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2387,7 +2759,10 @@ const UUIDGenerator = () =>
   ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
     (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
   );
-// UUIDGenerator() -> '7982fcfe-5721-4632-bede-6000885be57d'
+```
+
+```js
+UUIDGenerator() -> '7982fcfe-5721-4632-bede-6000885be57d'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2402,7 +2777,10 @@ Use `Number()` to check if the coercion holds.
 
 ```js
 const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
-// validateNumber('10') -> true
+```
+
+```js
+validateNumber('10') -> true
 ```
 
 [⬆ back to top](#table-of-contents)
