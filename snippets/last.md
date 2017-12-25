@@ -6,5 +6,8 @@ Use `arr.length - 1` to compute the index of the last element of the given array
 
 ```js
 const last = arr => arr[arr.length - 1];
-// last([1,2,3]) -> 3
+```
+
+```js
+last([1,2,3]) -> 3
 ```
