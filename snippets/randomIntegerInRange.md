@@ -6,5 +6,8 @@ Use `Math.random()` to generate a random number and map it to the desired range,
 
 ```js
 const randomIntegerInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-// randomIntegerInRange(0, 5) -> 2
+```
+
+```js
+randomIntegerInRange(0, 5) -> 2
 ```
