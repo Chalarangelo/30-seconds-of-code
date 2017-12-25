@@ -7,6 +7,9 @@ Omit the second argument to use the default regex.
 
 ```js
 const words = (str, pattern = /[^a-zA-Z-]+/) => str.split(pattern).filter(Boolean);
-// words("I love javaScript!!") -> ["I", "love", "javaScript"]
-// words("python, javaScript & coffee") -> ["python", "javaScript", "coffee"]
+```
+
+```js
+words("I love javaScript!!") -> ["I", "love", "javaScript"]
+words("python, javaScript & coffee") -> ["python", "javaScript", "coffee"]
 ```

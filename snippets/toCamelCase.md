@@ -12,8 +12,11 @@ const toCamelCase = str => {
     .join('');
   return s.slice(0,1).toLowerCase() + s.slice(1)
   }
-// toCamelCase("some_database_field_name") -> 'someDatabaseFieldName'
-// toCamelCase("Some label that needs to be camelized") -> 'someLabelThatNeedsToBeCamelized'
-// toCamelCase("some-javascript-property") -> 'someJavascriptProperty'
-// toCamelCase("some-mixed_string with spaces_underscores-and-hyphens") -> 'someMixedStringWithSpacesUnderscoresAndHyphens'
+```
+
+```js
+toCamelCase("some_database_field_name") -> 'someDatabaseFieldName'
+toCamelCase("Some label that needs to be camelized") -> 'someLabelThatNeedsToBeCamelized'
+toCamelCase("some-javascript-property") -> 'someJavascriptProperty'
+toCamelCase("some-mixed_string with spaces_underscores-and-hyphens") -> 'someMixedStringWithSpacesUnderscoresAndHyphens'
 ```
