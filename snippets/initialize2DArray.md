@@ -6,5 +6,8 @@ Use `Array.map()` to generate h rows where each is a new array of size w initial
 
 ```js
 const initialize2DArray = (w, h, val = null) => Array(h).fill().map(() => Array(w).fill(val));
-// initializeArrayWithRange(2, 2, 0) -> [[0,0], [0,0]]
+```
+
+```js
+initializeArrayWithRange(2, 2, 0) -> [[0,0], [0,0]]
 ```
