@@ -6,6 +6,9 @@ Use a regular expression to test the `navigator.userAgent` property to figure ou
 
 ```js
 const detectDeviceType = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? "Mobile" : "Desktop";
-// detectDeviceType() -> "Mobile"
-// detectDeviceType() -> "Desktop"
+```
+
+```js
+detectDeviceType() -> "Mobile"
+detectDeviceType() -> "Desktop"
 ```
