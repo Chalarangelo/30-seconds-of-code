@@ -789,7 +789,7 @@ Throws an error if the passed time cannot be converted to a date.</p>
 <p>Results in a string representation of tomorrow's date.
 Use <code>new Date()</code> to get today's date, adding <code>86400000</code> of seconds to it(24 hours), using <code>toISOString</code> to convert Date object to string.</p>
 <pre><code class="language-js">const tomorrow = () =&gt; new Date(new Date().getTime() + 86400000).toISOString().split('T')[0];
-// tomorrow() -&gt; 2017-12-26
+// tomorrow() -&gt; 2017-12-27 (if current date is 2017-12-26)
 </code></pre>
 </div></div><br/><h2 style="text-align:center">Function</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="chainasync">chainAsync</h3></div><div class="section double-padded">
