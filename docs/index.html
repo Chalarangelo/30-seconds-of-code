@@ -1326,12 +1326,13 @@ For more detailed explanation of this Regex, <a href="https://regex101.com/r/bMC
   str &amp;&amp; str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
     .map(x =&gt; x.toLowerCase())
     .join('_');
+}
 // toSnakeCase(&quot;camelCase&quot;) -&gt; 'camel_case'
 // toSnakeCase(&quot;some text&quot;) -&gt; 'some_text'
 // toSnakeCase(&quot;some-javascript-property&quot;) -&gt; 'some_javascript_property'
 // toSnakeCase(&quot;some-mixed_string With spaces_underscores-and-hyphens&quot;) -&gt; 'some_mixed_string_with_spaces_underscores_and_hyphens'
-// toKebabCase(&quot;AllThe-small Things&quot;) -&gt; &quot;all_the_smal_things&quot;
-// toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') -&gt; &quot;i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html&quot;
+// toSnakeCase(&quot;AllThe-small Things&quot;) -&gt; &quot;all_the_small_things&quot;
+// toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') -&gt; &quot;i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html&quot;
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="truncatestring">truncateString</h3></div><div class="section double-padded">
 <p>Truncates a string up to a specified length.</p>
