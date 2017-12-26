@@ -13,8 +13,8 @@ const cleanObj = (obj, keysToKeep = [], childIndicator) => {
     } else if (!keysToKeep.includes(key)) {
       delete obj[key];
     }
-  })
-  return obj
+  });
+  return obj;
 }
 /*
   const testObj = {a: 1, b: 2, children: {a: 1, b: 2}}
