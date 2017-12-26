@@ -7,13 +7,14 @@ Also if you give it a special key (`childIndicator`) it will search deeply insid
 
 ```js
 const cleanObj = (obj, keysToKeep = [], childIndicator) => {
-  return Object.keys(obj).forEach(key => {
+  Object.keys(obj).forEach(key => {
     if (key === childIndicator) {
       cleanObj(obj[key], keysToKeep, childIndicator);
     } else if (!keysToKeep.includes(key)) {
       delete obj[key];
     }
-  }), obj
+  })
+  return obj
 }
 /*
   const testObj = {a: 1, b: 2, children: {a: 1, b: 2}}
