@@ -52,18 +52,35 @@ try {
   // Add the start static part
   output += `${startPart+'\n'}`;
   // Loop over tags and snippets to create the table of contents
+  let uncategorizedOutput = '';
   for(let tag of [...new Set(Object.entries(tagDbData).map(t => t[1]))].filter(v => v).sort((a,b) => a.localeCompare(b))){
-    output +=`### ${capitalize(tag, true)}\n`;
-    for(let taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag))
-      output += `* [\`${taggedSnippet[0]}\`](#${taggedSnippet[0].toLowerCase()})\n`
-    output += '\n';
+    if(capitalize(tag, true)=='Uncategorized') {
+      uncategorizedOutput +=`### _${capitalize(tag, true)}_\n`;
+      for(let taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag))
+        uncategorizedOutput += `* [\`${taggedSnippet[0]}\`](#${taggedSnippet[0].toLowerCase()})\n`
+      uncategorizedOutput += '\n';
+    } else {
+      output +=`### ${capitalize(tag, true)}\n`;
+      for(let taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag))
+        output += `* [\`${taggedSnippet[0]}\`](#${taggedSnippet[0].toLowerCase()})\n`
+      output += '\n';
+    }
   }
+  output += uncategorizedOutput;
+  uncategorizedOutput = '';
   // Loop over tags and snippets to create the list of snippets
   for(let tag of [...new Set(Object.entries(tagDbData).map(t => t[1]))].filter(v => v).sort((a,b) => a.localeCompare(b))){
-    output +=`## ${capitalize(tag, true)}\n`;
-    for(let taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag))
-      output += `\n${snippets[taggedSnippet[0]+'.md']+'\n[⬆ back to top](#table-of-contents)\n'}`;
+    if(capitalize(tag, true)=='Uncategorized') {
+      uncategorizedOutput +=`## _${capitalize(tag, true)}_\n`;
+      for(let taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag))
+        uncategorizedOutput += `\n${snippets[taggedSnippet[0]+'.md']+'\n[⬆ back to top](#table-of-contents)\n'}`;
+    } else {
+      output +=`## ${capitalize(tag, true)}\n`;
+      for(let taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag))
+        output += `\n${snippets[taggedSnippet[0]+'.md']+'\n[⬆ back to top](#table-of-contents)\n'}`;
+    }
   }
+  output += uncategorizedOutput;
   // Add the ending static part
   output += `\n${endPart+'\n'}`;
   // Write to the README file

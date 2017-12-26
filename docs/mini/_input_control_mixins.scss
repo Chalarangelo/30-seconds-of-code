@@ -1,0 +1,46 @@
+// Input_control module's mixin definitions are here. For the module itself
+// check `_input_control.scss`.
+// Button color variant mixin:
+//  $button-alt-name: The name of the class used for the button variant.
+//  $button-alt-back-color: Background color for button variant.
+//  $button-alt-hover-back-color: Background color for button variant (hover).
+//  $button-alt-fore-color: Text color for button variant.
+//  $button-alt-border-color: Border color for button variant.
+//  $button-alt-hover-border-color: Border color for button variant (hover).
+@mixin make-button-alt-color ($button-alt-name, $button-alt-back-color : $button-back-color,
+  $button-alt-hover-back-color : $button-hover-back-color, $button-alt-fore-color : $button-fore-color,
+  $button-alt-border-color : $button-border-color, $button-alt-hover-border-color : $button-hover-border-color) {
+    button, [type="button"], [type="submit"], [type="reset"], .#{$button-class-name}, [role="button"] {
+      &.#{$button-alt-name} {
+        @if $button-alt-back-color != $button-back-color {
+          #{$button-back-color-var}: $button-alt-back-color;
+        }
+        @if $button-alt-fore-color != $button-fore-color{
+          #{$button-fore-color-var}: $button-alt-fore-color;
+        }
+        @if $button-alt-border-color != $button-border-color{
+          #{$button-border-color-var}: $button-alt-border-color;
+        }
+        &:hover, &:focus {
+          @if $button-alt-hover-back-color != $button-hover-back-color{
+            #{$button-hover-back-color-var}: $button-alt-hover-back-color;
+          }
+          @if $button-alt-hover-border-color != $button-hover-border-color{
+            #{$button-hover-border-color-var}: $button-alt-hover-border-color;
+          }
+        }
+      }
+    }
+}
+// Button size variant mixin:
+//  $button-alt-name: The name of the class used for the button variant.
+//  $button-alt-padding: The padding of the button variant.
+//  $button-alt-margin The margin of the button variant.
+@mixin make-button-alt-size ($button-alt-name, $button-alt-padding, $button-alt-margin) {
+  button, [type="button"], [type="submit"], [type="reset"], .#{$button-class-name}, [role="button"] {
+    &.#{$button-alt-name} {
+      padding: $button-alt-padding;
+      margin: $button-alt-margin;
+    }
+  }
+}
