@@ -125,6 +125,7 @@ toCamelCase:string
 toDecimalMark:utility
 toEnglishDate:date
 toKebabCase:string
+tomorrow:date
 toOrdinalSuffix:utility
 toSnakeCase:string
 truncateString:string
