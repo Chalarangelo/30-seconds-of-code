@@ -1,4 +1,4 @@
-### randomHexColorCode
+### randomHexColor
 
 Generates a random hexadecimal color code.
 
