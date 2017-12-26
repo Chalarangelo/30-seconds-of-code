@@ -1,4 +1,4 @@
-### pipe
+### pipeFunctions
 
 Performs left-to-right function composition.
 
