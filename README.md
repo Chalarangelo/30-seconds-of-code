@@ -69,6 +69,7 @@
 * [`arrayToHtmlList`](#arraytohtmllist)
 * [`bottomVisible`](#bottomvisible)
 * [`currentURL`](#currenturl)
+* [`detectDeviceType`](#detectdevicetype)
 * [`elementIsVisibleInViewport`](#elementisvisibleinviewport)
 * [`getScrollPosition`](#getscrollposition)
 * [`getURLParameters`](#geturlparameters)
@@ -89,6 +90,9 @@
 * [`pipe`](#pipe)
 * [`runPromisesInSeries`](#runpromisesinseries)
 * [`sleep`](#sleep)
+
+### Logic
+* [`negate`](#negate)
 
 ### Math
 * [`arrayAverage`](#arrayaverage)
@@ -163,16 +167,13 @@
 * [`isNumber`](#isnumber)
 * [`isString`](#isstring)
 * [`isSymbol`](#issymbol)
+* [`randomHexColorCode`](#randomhexcolorcode)
 * [`RGBToHex`](#rgbtohex)
 * [`timeTaken`](#timetaken)
 * [`toDecimalMark`](#todecimalmark)
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`UUIDGenerator`](#uuidgenerator)
 * [`validateNumber`](#validatenumber)
-
-### _Uncategorized_
-* [`detectDeviceType`](#detectdevicetype)
-* [`negate`](#negate)
 
 ## Adapter
 
@@ -224,7 +225,7 @@ const flip = fn => (...args) => fn(args.pop(), ...args)
 let a = {name: 'John Smith'}
 let b = {}
 const mergeFrom = flip(Object.assign)
-let mergePerson = mergeFrom.bind(a)
+let mergePerson = mergeFrom.bind(null, a)
 mergePerson(b) // == b
 b = {}
 Object.assign(b, a) // == b
@@ -449,12 +450,12 @@ const dropElements = (arr, func) => {
 
 ### dropRight
 
-Returns a new array with `n` elements removed from the right
+Returns a new array with `n` elements removed from the right.
 
-Check if `n` is shorter than the given array and use `Array.slice()` to slice it accordingly or return an empty array.
+Use `Array.slice()` to slice the remove the specified number of elements from the right.
 
 ```js
-const dropRight = (arr, n = 1) => n < arr.length ? arr.slice(0, arr.length - n) : []
+const dropRight = (arr, n = 1) => arr.slice(0, -n);
 //dropRight([1,2,3]) -> [1,2]
 //dropRight([1,2,3], 2) -> [1]
 //dropRight([1,2,3], 42) -> []
@@ -980,6 +981,20 @@ const currentURL = () => window.location.href;
 
 [⬆ back to top](#table-of-contents)
 
+### detectDeviceType
+
+Detects wether the website is being opened in a mobile device or a desktop/laptop.
+
+Use a regular expression to test the `navigator.userAgent` property to figure out if the device is a mobile device or a desktop/laptop.
+
+```js
+const detectDeviceType = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? "Mobile" : "Desktop";
+// detectDeviceType() -> "Mobile"
+// detectDeviceType() -> "Desktop"
+```
+
+[⬆ back to top](#table-of-contents)
+
 ### elementIsVisibleInViewport
 
 Returns `true` if the element specified is visible in the viewport, `false` otherwise.
@@ -1176,8 +1191,8 @@ multiplyAndAdd5(5, 2) -> 15
 Curries a function.
 
 Use recursion.
-If the number of provided arguments (`args`) is sufficient, call the passed function `f`.
-Otherwise, return a curried function `f` that expects the rest of the arguments.
+If the number of provided arguments (`args`) is sufficient, call the passed function `fn`.
+Otherwise, return a curried function `fn` that expects the rest of the arguments.
 If you want to curry a function that accepts a variable number of arguments (a variadic function, e.g. `Math.min()`), you can optionally pass the number of arguments to the second parameter `arity`.
 
 ```js
@@ -1252,6 +1267,21 @@ async function sleepyWork() {
   console.log('I woke up after 1 second.');
 }
 */
+```
+
+[⬆ back to top](#table-of-contents)
+## Logic
+
+### negate
+
+Negates a predicate function.
+
+Take a predicate function and apply `not` to it with its arguments.
+
+```js
+const negate = func => (...args) => !func(...args);
+// filter([1, 2, 3, 4, 5, 6], negate(isEven)) -> [1, 3, 5]
+// negate(isOdd)(1) -> false
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2012,11 +2042,16 @@ const sortCharactersInString = str =>
 
 Converts a string to camelcase.
 
-Use `replace()` to remove underscores, hyphens, and spaces and convert words to camelcase.
+Break the string into words and combine them capitalizing the first letter of each word.
+For more detailed explanation of this Regex, [visit this Site](https://regex101.com/r/bMCgAB/1).
 
 ```js
-const toCamelCase = str =>
-  str.replace(/^([A-Z])|[\s-_]+(\w)/g, (match, p1, p2, offset) =>  p2 ? p2.toUpperCase() : p1.toLowerCase());
+const toCamelCase = str => {
+  let s = str && str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+    .map(x => x.slice(0,1).toUpperCase() + x.slice(1).toLowerCase())
+    .join('');
+  return s.slice(0,1).toLowerCase() + s.slice(1)
+  }
 // toCamelCase("some_database_field_name") -> 'someDatabaseFieldName'
 // toCamelCase("Some label that needs to be camelized") -> 'someLabelThatNeedsToBeCamelized'
 // toCamelCase("some-javascript-property") -> 'someJavascriptProperty'
@@ -2027,36 +2062,43 @@ const toCamelCase = str =>
 
 ### toKebabCase
 
-Converts a string to [kebab case](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles).
-Use `replace()` to add spaces before capital letters, convert `toLowerCase()`, then `replace()` underscores and spaces with hyphens.
-Also check if a string starts with a hyphen and remove it if yes.
+Converts a string to kebab case.
+
+Break the string into words and combine them using `-` as a separator.
+For more detailed explanation of this Regex, [visit this Site](https://regex101.com/r/bMCgAB/1).
 
 ```js
-const toKebabCase = str => {
-    str = str.replace(/([A-Z])/g," $1").toLowerCase().replace(/_/g,' ').replace(/-/g,' ').replace(/\s\s+/g, ' ').replace(/\s/g,'-');
-    return str.startsWith('-') ? str.slice(1,str.length) : str;
-}
+const toKebabCase = str =>
+  str && str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+    .map(x => x.toLowerCase())
+    .join('-');
 // toKebabCase("camelCase") -> 'camel-case'
 // toKebabCase("some text") -> 'some-text'
 // toKebabCase("some-mixed_string With spaces_underscores-and-hyphens") -> 'some-mixed-string-with-spaces-underscores-and-hyphens'
 // toKebabCase("AllThe-small Things") -> "all-the-small-things"
+// toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') -> "i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-xml-and-html"
 ```
 
 [⬆ back to top](#table-of-contents)
 
 ### toSnakeCase
 
-Converts a string to snakecase.
+Converts a string to snake case.
 
-Use `replace()` to add underscores before capital letters, convert `toLowerCase()`, then `replace()` hyphens and spaces with underscores.
+Break the string into words and combine them using `_` as a separator.
+For more detailed explanation of this Regex, [visit this Site](https://regex101.com/r/bMCgAB/1).
 
 ```js
-const toSnakeCase = str =>
-  str.replace(/(\w)([A-Z])/g, '$1_$2').replace(/[\s-_]+/g, '_').toLowerCase();
+const toSnakeCase = str =>{
+  str && str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+    .map(x => x.toLowerCase())
+    .join('_');
 // toSnakeCase("camelCase") -> 'camel_case'
 // toSnakeCase("some text") -> 'some_text'
 // toSnakeCase("some-javascript-property") -> 'some_javascript_property'
 // toSnakeCase("some-mixed_string With spaces_underscores-and-hyphens") -> 'some_mixed_string_with_spaces_underscores_and_hyphens'
+// toKebabCase("AllThe-small Things") -> "all_the_smal_things"
+// toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') -> "i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2258,6 +2300,25 @@ const isSymbol = val => typeof val === 'symbol';
 
 [⬆ back to top](#table-of-contents)
 
+### randomHexColorCode
+
+Generates a random hexadecimal color code.
+
+Use `Math.random` to generate a random 24-bit(6x4bits) hexadecimal number. Use bit shifting and then convert it to an hexadecimal String using `toString(16)`. 
+
+```js
+const randomHexColor = () => {
+    let n = (Math.random()*0xfffff|0).toString(16);
+    return '#' + (n.length !== 6
+        ? (Math.random()*0xf|0).toString(16) + n : n);
+}
+// randomHexColorCode() -> "#e34155"
+// randomHexColorCode() -> "#fd73a6"
+// randomHexColorCode() -> "#4144c6"
+```
+
+[⬆ back to top](#table-of-contents)
+
 ### RGBToHex
 
 Converts the values of RGB components to a color code.
@@ -2346,35 +2407,6 @@ Use `Number()` to check if the coercion holds.
 ```js
 const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
 // validateNumber('10') -> true
-```
-
-[⬆ back to top](#table-of-contents)
-## _Uncategorized_
-
-### detectDeviceType
-
-Detects wether the website is being opened in a mobile device or a desktop/laptop.
-
-Use a regular expression to test the `navigator.userAgent` property to figure out if the device is a mobile device or a desktop/laptop.
-
-```js
-const detectDeviceType = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? "Mobile" : "Desktop";
-// detectDeviceType() -> "Mobile"
-// detectDeviceType() -> "Desktop"
-```
-
-[⬆ back to top](#table-of-contents)
-
-### negate
-
-Negates a predicate function.
-
-Take a predicate function and apply `not` to it with its arguments.
-
-```js
-const negate = func => (...args) => !fun(...args);
-// filter([1, 2, 3, 4, 5, 6], negate(isEven)) -> [1, 3, 5]
-// negate(isOdd)(1) -> false
 ```
 
 [⬆ back to top](#table-of-contents)
