@@ -81,6 +81,7 @@
 * [`getDaysDiffBetweenDates`](#getdaysdiffbetweendates)
 * [`JSONToDate`](#jsontodate)
 * [`toEnglishDate`](#toenglishdate)
+* [`tomorrow`](#tomorrow)
 
 ### Function
 * [`chainAsync`](#chainasync)
@@ -1150,6 +1151,18 @@ Throws an error if the passed time cannot be converted to a date.
 const toEnglishDate  = (time) =>
   {try{return new Date(time).toISOString().split('T')[0].replace(/-/g, '/')}catch(e){return}};
 // toEnglishDate('09/21/2010') -> '21/09/2010'
+```
+
+[⬆ back to top](#table-of-contents)
+
+### tomorrow
+
+Results in a string representation of tomorrow's date.
+Use `new Date()` to get today's date, adding `86400000` of seconds to it(24 hours), using `toISOString` to convert Date object to string.
+
+```js
+const tomorrow = () => new Date(new Date() + 86400000).toISOString().split('T')[0];
+// tomorrow() -> 2017-12-26
 ```
 
 [⬆ back to top](#table-of-contents)
