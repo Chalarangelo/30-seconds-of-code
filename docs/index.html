@@ -149,7 +149,6 @@
 <a class="sublink-1" href="#compose">compose</a>
 <a class="sublink-1" href="#curry">curry</a>
 <a class="sublink-1" href="#functionname">functionName</a>
-<a class="sublink-1" href="#pipe">pipe</a>
 <a class="sublink-1" href="#runpromisesinseries">runPromisesInSeries</a>
 <a class="sublink-1" href="#sleep">sleep</a>
 
@@ -229,13 +228,16 @@
 <a class="sublink-1" href="#isnumber">isNumber</a>
 <a class="sublink-1" href="#isstring">isString</a>
 <a class="sublink-1" href="#issymbol">isSymbol</a>
-<a class="sublink-1" href="#randomhexcolorcode">randomHexColorCode</a>
 <a class="sublink-1" href="#rgbtohex">RGBToHex</a>
 <a class="sublink-1" href="#timetaken">timeTaken</a>
 <a class="sublink-1" href="#todecimalmark">toDecimalMark</a>
 <a class="sublink-1" href="#toordinalsuffix">toOrdinalSuffix</a>
 <a class="sublink-1" href="#uuidgenerator">UUIDGenerator</a>
 <a class="sublink-1" href="#validatenumber">validateNumber</a>
+
+<h3>Uncategorized
+</h3><a class="sublink-1" href="#pipefunctions">pipeFunctions</a>
+<a class="sublink-1" href="#randomhexcolor">randomHexColor</a>
 
 </nav><main class="col-sm-12 col-md-8 col-lg-9" style="height:100%;overflow-y:auto;background:#eceef2;padding:0"><a id="top">&nbsp;</a><h2 style="text-align:center">Adapter</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="call">call</h3></div><div class="section double-padded">
@@ -834,18 +836,6 @@ If you want to curry a function that accepts a variable number of arguments (a v
 <p>Use <code>console.debug()</code> and the <code>name</code> property of the passed method to log the method's name to the <code>debug</code> channel of the console.</p>
 <pre><code class="language-js">const functionName = fn =&gt; (console.debug(fn.name), fn);
 // functionName(Math.max) -&gt; max (logged in debug channel of console)
-</code></pre>
-</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="pipe">pipe</h3></div><div class="section double-padded">
-<p>Performs left-to-right function composition.</p>
-<p>Use <code>Array.reduce()</code> with the spread operator (<code>...</code>) to perform left-to-right function composition.
-The first (leftmost) function can accept one or more arguments; the remaining functions must be unary.</p>
-<pre><code class="language-js">const pipeFunctions = (...fns) =&gt; fns.reduce((f, g) =&gt; (...args) =&gt; g(f(...args)));
-/*
-const add5 = x =&gt; x + 5
-const multiply = (x, y) =&gt; x * y
-const multiplyAndAdd5 = pipeFunctions(multiply, add5)
-multiplyAndAdd5(5, 2) -&gt; 15
-*/
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="runpromisesinseries">runPromisesInSeries</h3></div><div class="section double-padded">
 <p>Runs an array of promises in series.</p>
@@ -1455,18 +1445,6 @@ Omit the second argument to use the default regex.</p>
 // isSymbol('x') -&gt; false
 // isSymbol(Symbol('x')) -&gt; true
 </code></pre>
-</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="randomhexcolorcode">randomHexColorCode</h3></div><div class="section double-padded">
-<p>Generates a random hexadecimal color code.</p>
-<p>Use <code>Math.random</code> to generate a random 24-bit(6x4bits) hexadecimal number. Use bit shifting and then convert it to an hexadecimal String using <code>toString(16)</code>.</p>
-<pre><code class="language-js">const randomHexColor = () =&gt; {
-    let n = (Math.random()*0xfffff|0).toString(16);
-    return '#' + (n.length !== 6
-        ? (Math.random()*0xf|0).toString(16) + n : n);
-}
-// randomHexColorCode() -&gt; &quot;#e34155&quot;
-// randomHexColorCode() -&gt; &quot;#fd73a6&quot;
-// randomHexColorCode() -&gt; &quot;#4144c6&quot;
-</code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="rgbtohex">RGBToHex</h3></div><div class="section double-padded">
 <p>Converts the values of RGB components to a color code.</p>
 <p>Convert given RGB parameters to hexadecimal string using bitwise left-shift operator (<code>&lt;&lt;</code>) and <code>toString(16)</code>, then <code>padStart(6,'0')</code> to get a 6-digit hexadecimal value.</p>
@@ -1517,6 +1495,31 @@ Use <code>isFinite()</code> to check if the number is finite.
 Use <code>Number()</code> to check if the coercion holds.</p>
 <pre><code class="language-js">const validateNumber = n =&gt; !isNaN(parseFloat(n)) &amp;&amp; isFinite(n) &amp;&amp; Number(n) == n;
 // validateNumber('10') -&gt; true
+</code></pre>
+</div></div><br/><h2 style="text-align:center">Uncategorized</h2>
+<div class="card fluid"><div class="section double-padded"><h3 id="pipefunctions">pipeFunctions</h3></div><div class="section double-padded">
+<p>Performs left-to-right function composition.</p>
+<p>Use <code>Array.reduce()</code> with the spread operator (<code>...</code>) to perform left-to-right function composition.
+The first (leftmost) function can accept one or more arguments; the remaining functions must be unary.</p>
+<pre><code class="language-js">const pipeFunctions = (...fns) =&gt; fns.reduce((f, g) =&gt; (...args) =&gt; g(f(...args)));
+/*
+const add5 = x =&gt; x + 5
+const multiply = (x, y) =&gt; x * y
+const multiplyAndAdd5 = pipeFunctions(multiply, add5)
+multiplyAndAdd5(5, 2) -&gt; 15
+*/
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="randomhexcolor">randomHexColor</h3></div><div class="section double-padded">
+<p>Generates a random hexadecimal color code.</p>
+<p>Use <code>Math.random</code> to generate a random 24-bit(6x4bits) hexadecimal number. Use bit shifting and then convert it to an hexadecimal String using <code>toString(16)</code>.</p>
+<pre><code class="language-js">const randomHexColor = () =&gt; {
+    let n = (Math.random()*0xfffff|0).toString(16);
+    return '#' + (n.length !== 6
+        ? (Math.random()*0xf|0).toString(16) + n : n);
+}
+// randomHexColorCode() -&gt; &quot;#e34155&quot;
+// randomHexColorCode() -&gt; &quot;#fd73a6&quot;
+// randomHexColorCode() -&gt; &quot;#4144c6&quot;
 </code></pre>
 </div></div><br/>
         <footer>
