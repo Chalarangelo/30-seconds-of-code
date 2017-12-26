@@ -88,7 +88,6 @@
 * [`compose`](#compose)
 * [`curry`](#curry)
 * [`functionName`](#functionname)
-* [`pipe`](#pipe)
 * [`runPromisesInSeries`](#runpromisesinseries)
 * [`sleep`](#sleep)
 
@@ -168,13 +167,16 @@
 * [`isNumber`](#isnumber)
 * [`isString`](#isstring)
 * [`isSymbol`](#issymbol)
-* [`randomHexColorCode`](#randomhexcolorcode)
 * [`RGBToHex`](#rgbtohex)
 * [`timeTaken`](#timetaken)
 * [`toDecimalMark`](#todecimalmark)
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`UUIDGenerator`](#uuidgenerator)
 * [`validateNumber`](#validatenumber)
+
+### _Uncategorized_
+* [`pipeFunctions`](#pipefunctions)
+* [`randomHexColor`](#randomhexcolor)
 
 ## Adapter
 
@@ -1235,25 +1237,6 @@ Use `console.debug()` and the `name` property of the passed method to log the me
 ```js
 const functionName = fn => (console.debug(fn.name), fn);
 // functionName(Math.max) -> max (logged in debug channel of console)
-```
-
-[⬆ back to top](#table-of-contents)
-
-### pipe
-
-Performs left-to-right function composition.
-
-Use `Array.reduce()` with the spread operator (`...`) to perform left-to-right function composition.
-The first (leftmost) function can accept one or more arguments; the remaining functions must be unary.
-
-```js
-const pipeFunctions = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
-/*
-const add5 = x => x + 5
-const multiply = (x, y) => x * y
-const multiplyAndAdd5 = pipeFunctions(multiply, add5)
-multiplyAndAdd5(5, 2) -> 15
-*/
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2321,25 +2304,6 @@ const isSymbol = val => typeof val === 'symbol';
 
 [⬆ back to top](#table-of-contents)
 
-### randomHexColorCode
-
-Generates a random hexadecimal color code.
-
-Use `Math.random` to generate a random 24-bit(6x4bits) hexadecimal number. Use bit shifting and then convert it to an hexadecimal String using `toString(16)`. 
-
-```js
-const randomHexColor = () => {
-    let n = (Math.random()*0xfffff|0).toString(16);
-    return '#' + (n.length !== 6
-        ? (Math.random()*0xf|0).toString(16) + n : n);
-}
-// randomHexColorCode() -> "#e34155"
-// randomHexColorCode() -> "#fd73a6"
-// randomHexColorCode() -> "#4144c6"
-```
-
-[⬆ back to top](#table-of-contents)
-
 ### RGBToHex
 
 Converts the values of RGB components to a color code.
@@ -2428,6 +2392,45 @@ Use `Number()` to check if the coercion holds.
 ```js
 const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
 // validateNumber('10') -> true
+```
+
+[⬆ back to top](#table-of-contents)
+## _Uncategorized_
+
+### pipeFunctions
+
+Performs left-to-right function composition.
+
+Use `Array.reduce()` with the spread operator (`...`) to perform left-to-right function composition.
+The first (leftmost) function can accept one or more arguments; the remaining functions must be unary.
+
+```js
+const pipeFunctions = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
+/*
+const add5 = x => x + 5
+const multiply = (x, y) => x * y
+const multiplyAndAdd5 = pipeFunctions(multiply, add5)
+multiplyAndAdd5(5, 2) -> 15
+*/
+```
+
+[⬆ back to top](#table-of-contents)
+
+### randomHexColor
+
+Generates a random hexadecimal color code.
+
+Use `Math.random` to generate a random 24-bit(6x4bits) hexadecimal number. Use bit shifting and then convert it to an hexadecimal String using `toString(16)`. 
+
+```js
+const randomHexColor = () => {
+    let n = (Math.random()*0xfffff|0).toString(16);
+    return '#' + (n.length !== 6
+        ? (Math.random()*0xf|0).toString(16) + n : n);
+}
+// randomHexColorCode() -> "#e34155"
+// randomHexColorCode() -> "#fd73a6"
+// randomHexColorCode() -> "#4144c6"
 ```
 
 [⬆ back to top](#table-of-contents)
