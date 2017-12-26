@@ -2,6 +2,7 @@ language: node_js
 node_js:
 - node
 before_install:
+- npm install semistandard
 - npm install webber
 - npm install builder
 - npm install tagger
