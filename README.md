@@ -795,12 +795,19 @@ const sample = arr => arr[Math.floor(Math.random() * arr.length)];
 
 ### shuffle
 
-Randomizes the order of the values of an array.
+Randomizes the order of the values of an array, in place.
 
-Use `Array.sort()` to reorder elements, using `Math.random()` in the comparator.
+Uses the Fisher-Yates algoritm to reorder the elements of the array, based on the [Lodash implimentation](https://github.com/lodash/lodash/blob/b2ea6b1cd251796dcb5f9700c4911a7b6223920b/shuffle.js)
 
 ```js
-const shuffle = arr => arr.sort(() => Math.random() - 0.5);
+const shuffle = ([...arr]) => {
+  let m = arr.length;
+  while (m) {
+    const i = Math.floor(Math.random() * m--);
+    [arr[m], arr[i]] = [arr[i], arr[m]];
+  }
+  return arr;
+};
 // shuffle([1,2,3]) -> [2,3,1]
 ```
 
@@ -2093,12 +2100,13 @@ const toSnakeCase = str =>{
   str && str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
     .map(x => x.toLowerCase())
     .join('_');
+}
 // toSnakeCase("camelCase") -> 'camel_case'
 // toSnakeCase("some text") -> 'some_text'
 // toSnakeCase("some-javascript-property") -> 'some_javascript_property'
 // toSnakeCase("some-mixed_string With spaces_underscores-and-hyphens") -> 'some_mixed_string_with_spaces_underscores_and_hyphens'
-// toKebabCase("AllThe-small Things") -> "all_the_smal_things"
-// toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') -> "i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html"
+// toSnakeCase("AllThe-small Things") -> "all_the_small_things"
+// toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') -> "i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html"
 ```
 
 [⬆ back to top](#table-of-contents)
