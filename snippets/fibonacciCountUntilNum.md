@@ -6,7 +6,7 @@ Use a mathematical formula to calculate the number of fibonacci numbers until `n
 
 ```js
 const fibonacciCountUntilNum = num =>
-  Math.ceil(Math.log(num * Math.sqrt(5) + 1/2) / Math.log((Math.sqrt(5)+1)/2));
+  Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));
 ```
 
 ```js

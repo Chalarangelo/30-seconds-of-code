@@ -5,7 +5,7 @@ Given a key and a set of arguments, call them when given a context. Primarily us
 Use a closure to call a stored key with stored arguments.
 
 ```js
-const call = ( key, ...args ) => context => context[ key ]( ...args );
+const call = (key, ...args) => context => context[ key ](...args);
 ```
 
 ```js
