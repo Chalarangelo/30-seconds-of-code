@@ -78,6 +78,7 @@
 </h3><a class="sublink-1" href="#call">call</a>
 <a class="sublink-1" href="#collectinto">collectInto</a>
 <a class="sublink-1" href="#flip">flip</a>
+<a class="sublink-1" href="#pipefunctions">pipeFunctions</a>
 <a class="sublink-1" href="#promisify">promisify</a>
 <a class="sublink-1" href="#spreadover">spreadOver</a>
 
@@ -182,6 +183,7 @@
 <a class="sublink-1" href="#randomintegerinrange">randomIntegerInRange</a>
 <a class="sublink-1" href="#randomnumberinrange">randomNumberInRange</a>
 <a class="sublink-1" href="#round">round</a>
+<a class="sublink-1" href="#sdbmhashalgorithm">sdbmHashAlgorithm</a>
 <a class="sublink-1" href="#standarddeviation">standardDeviation</a>
 
 <h3>Media
@@ -228,17 +230,13 @@
 <a class="sublink-1" href="#isnumber">isNumber</a>
 <a class="sublink-1" href="#isstring">isString</a>
 <a class="sublink-1" href="#issymbol">isSymbol</a>
+<a class="sublink-1" href="#randomhexcolor">randomHexColor</a>
 <a class="sublink-1" href="#rgbtohex">RGBToHex</a>
 <a class="sublink-1" href="#timetaken">timeTaken</a>
 <a class="sublink-1" href="#todecimalmark">toDecimalMark</a>
 <a class="sublink-1" href="#toordinalsuffix">toOrdinalSuffix</a>
 <a class="sublink-1" href="#uuidgenerator">UUIDGenerator</a>
 <a class="sublink-1" href="#validatenumber">validateNumber</a>
-
-<h3>Uncategorized
-</h3><a class="sublink-1" href="#pipefunctions">pipeFunctions</a>
-<a class="sublink-1" href="#randomhexcolor">randomHexColor</a>
-<a class="sublink-1" href="#sdbmhashalgorithm">sdbmHashAlgorithm</a>
 
 </nav><main class="col-sm-12 col-md-8 col-lg-9" style="height:100%;overflow-y:auto;background:#eceef2;padding:0"><a id="top">&nbsp;</a><h2 style="text-align:center">Adapter</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="call">call</h3></div><div class="section double-padded">
@@ -275,6 +273,18 @@ let mergePerson = mergeFrom.bind(null, a)
 mergePerson(b) // == b
 b = {}
 Object.assign(b, a) // == b
+*/
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="pipefunctions">pipeFunctions</h3></div><div class="section double-padded">
+<p>Performs left-to-right function composition.</p>
+<p>Use <code>Array.reduce()</code> with the spread operator (<code>...</code>) to perform left-to-right function composition.
+The first (leftmost) function can accept one or more arguments; the remaining functions must be unary.</p>
+<pre><code class="language-js">const pipeFunctions = (...fns) =&gt; fns.reduce((f, g) =&gt; (...args) =&gt; g(f(...args)));
+/*
+const add5 = x =&gt; x + 5
+const multiply = (x, y) =&gt; x * y
+const multiplyAndAdd5 = pipeFunctions(multiply, add5)
+multiplyAndAdd5(5, 2) -&gt; 15
 */
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="promisify">promisify</h3></div><div class="section double-padded">
@@ -1089,6 +1099,18 @@ Omit the second argument, <code>decimals</code> to round to an integer.</p>
 <pre><code class="language-js">const round = (n, decimals=0) =&gt; Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`);
 // round(1.005, 2) -&gt; 1.01
 </code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="sdbmhashalgorithm">sdbmHashAlgorithm</h3></div><div class="section double-padded">
+<p>This algorithm is a simple hash-algorithm that hashes it input string <code>s</code> into a whole number.</p>
+<p>Use <code>split('')</code> and <code>Array.reduce()</code> to create a hash of the input string, utilizing bit shifting.</p>
+<pre><code class="language-js">const sdbm = str =&gt; {
+  let arr = str.split('');
+  return arr.reduce((hashCode, currentVal) =&gt;
+    hashCode = currentVal.charCodeAt(0) + (hashCode &lt;&lt; 6) + (hashCode &lt;&lt; 16)  - hashCode
+  ,0)
+}
+// console.log(sdbm(&quot;name&quot;)) // -3521204949
+// console.log(sdbm(&quot;age&quot;)) // 808122783
+</code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="standarddeviation">standardDeviation</h3></div><div class="section double-padded">
 <p>Returns the standard deviation of an array of numbers.</p>
 <p>Use <code>Array.reduce()</code> to calculate the mean, variance and the sum of the variance of the values, the variance of the values, then
@@ -1154,12 +1176,12 @@ Also if you give it a special key (<code>childIndicator</code>) it will search d
     } else if (!keysToKeep.includes(key)) {
       delete obj[key];
     }
-  })
+  });
+  return obj;
 }
 /*
   const testObj = {a: 1, b: 2, children: {a: 1, b: 2}}
-  cleanObj(testObj, [&quot;a&quot;],&quot;children&quot;)
-  console.log(testObj)// { a: 1, children : { a: 1}}
+  cleanObj(testObj, [&quot;a&quot;],&quot;children&quot;) // { a: 1, children : { a: 1}}
 */
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="objectfrompairs">objectFromPairs</h3></div><div class="section double-padded">
@@ -1448,6 +1470,18 @@ Omit the second argument to use the default regex.</p>
 // isSymbol('x') -&gt; false
 // isSymbol(Symbol('x')) -&gt; true
 </code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="randomhexcolor">randomHexColor</h3></div><div class="section double-padded">
+<p>Generates a random hexadecimal color code.</p>
+<p>Use <code>Math.random</code> to generate a random 24-bit(6x4bits) hexadecimal number. Use bit shifting and then convert it to an hexadecimal String using <code>toString(16)</code>.</p>
+<pre><code class="language-js">const randomHexColor = () =&gt; {
+    let n = (Math.random()*0xfffff|0).toString(16);
+    return '#' + (n.length !== 6
+        ? (Math.random()*0xf|0).toString(16) + n : n);
+}
+// randomHexColorCode() -&gt; &quot;#e34155&quot;
+// randomHexColorCode() -&gt; &quot;#fd73a6&quot;
+// randomHexColorCode() -&gt; &quot;#4144c6&quot;
+</code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="rgbtohex">RGBToHex</h3></div><div class="section double-padded">
 <p>Converts the values of RGB components to a color code.</p>
 <p>Convert given RGB parameters to hexadecimal string using bitwise left-shift operator (<code>&lt;&lt;</code>) and <code>toString(16)</code>, then <code>padStart(6,'0')</code> to get a 6-digit hexadecimal value.</p>
@@ -1498,43 +1532,6 @@ Use <code>isFinite()</code> to check if the number is finite.
 Use <code>Number()</code> to check if the coercion holds.</p>
 <pre><code class="language-js">const validateNumber = n =&gt; !isNaN(parseFloat(n)) &amp;&amp; isFinite(n) &amp;&amp; Number(n) == n;
 // validateNumber('10') -&gt; true
-</code></pre>
-</div></div><br/><h2 style="text-align:center">Uncategorized</h2>
-<div class="card fluid"><div class="section double-padded"><h3 id="pipefunctions">pipeFunctions</h3></div><div class="section double-padded">
-<p>Performs left-to-right function composition.</p>
-<p>Use <code>Array.reduce()</code> with the spread operator (<code>...</code>) to perform left-to-right function composition.
-The first (leftmost) function can accept one or more arguments; the remaining functions must be unary.</p>
-<pre><code class="language-js">const pipeFunctions = (...fns) =&gt; fns.reduce((f, g) =&gt; (...args) =&gt; g(f(...args)));
-/*
-const add5 = x =&gt; x + 5
-const multiply = (x, y) =&gt; x * y
-const multiplyAndAdd5 = pipeFunctions(multiply, add5)
-multiplyAndAdd5(5, 2) -&gt; 15
-*/
-</code></pre>
-</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="randomhexcolor">randomHexColor</h3></div><div class="section double-padded">
-<p>Generates a random hexadecimal color code.</p>
-<p>Use <code>Math.random</code> to generate a random 24-bit(6x4bits) hexadecimal number. Use bit shifting and then convert it to an hexadecimal String using <code>toString(16)</code>.</p>
-<pre><code class="language-js">const randomHexColor = () =&gt; {
-    let n = (Math.random()*0xfffff|0).toString(16);
-    return '#' + (n.length !== 6
-        ? (Math.random()*0xf|0).toString(16) + n : n);
-}
-// randomHexColorCode() -&gt; &quot;#e34155&quot;
-// randomHexColorCode() -&gt; &quot;#fd73a6&quot;
-// randomHexColorCode() -&gt; &quot;#4144c6&quot;
-</code></pre>
-</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="sdbmhashalgorithm">sdbmHashAlgorithm</h3></div><div class="section double-padded">
-<p>This algorithm is a simple hash-algorithm that hashes it input string <code>s</code> into a whole number.</p>
-<p>Use <code>split('')</code> and <code>Array.reduce()</code> to create a hash of the input string, utilizing bit shifting.</p>
-<pre><code class="language-js">const sdbm = str =&gt; {
-  let arr = str.split('');
-  return arr.reduce((hashCode, currentVal) =&gt;
-    hashCode = currentVal.charCodeAt(0) + (hashCode &lt;&lt; 6) + (hashCode &lt;&lt; 16)  - hashCode
-  ,0)
-}
-// console.log(sdbm(&quot;name&quot;)) // -3521204949
-// console.log(sdbm(&quot;age&quot;)) // 808122783
 </code></pre>
 </div></div><br/>
         <footer>
