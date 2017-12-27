@@ -42,7 +42,7 @@ try {
     }
 
     snippet.code.forEach((str, i) => {
-      fs.writeFileSync(`${TEMP_PATH}/${snippet.tempNames[i]}.js`, `${snippet.code[i]}`);
+      fs.writeFileSync(`${TEMP_PATH}/${snippet.tempNames[i]}.js`, str);
     });
   }
 
@@ -62,14 +62,14 @@ try {
             singleQuote: true
           });
         } catch (e) {}
-        
+
         lintedCode.push(data);
         fs.unlink(`${TEMP_PATH}/${tempName}.js`);
       }
 
       // We replace each ```js ``` code block with the newly linted code
       let index = 0;
-      snippet.data = snippet.data.replace(codeRE, () => '```js\n' + lintedCode[index++] + '```')
+      snippet.data = snippet.data.replace(codeRE, () => '```js\n' + lintedCode[index++] + '```');
 
       fs.writeFileSync(path.join(SNIPPETS_PATH, snippet.name), snippet.data);
     }
