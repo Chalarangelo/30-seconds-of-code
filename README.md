@@ -122,7 +122,6 @@
 * [`randomIntegerInRange`](#randomintegerinrange)
 * [`randomNumberInRange`](#randomnumberinrange)
 * [`round`](#round)
-* [`sdbmHashAlgorithm`](#sdbmhashalgorithm)
 * [`standardDeviation`](#standarddeviation)
 
 ### Media
@@ -171,6 +170,7 @@
 * [`isSymbol`](#issymbol)
 * [`randomHexColor`](#randomhexcolor)
 * [`RGBToHex`](#rgbtohex)
+* [`sdbm`](#sdbm)
 * [`timeTaken`](#timetaken)
 * [`toDecimalMark`](#todecimalmark)
 * [`toOrdinalSuffix`](#toordinalsuffix)
