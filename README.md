@@ -186,7 +186,7 @@ Given a key and a set of arguments, call them when given a context. Primarily us
 Use a closure to call a stored key with stored arguments.
 
 ```js
-const call = ( key, ...args ) => context => context[ key ]( ...args );
+const call = (key, ...args) => context => context[ key ](...args);
 ```
 
 ```js
@@ -204,7 +204,7 @@ Changes a function that accepts an array into a variadic function.
 Given a function, return a closure that collects all inputs into an array-accepting function.
 
 ```js
-const collectInto = fn => ( ...args ) => fn( args );
+const collectInto = fn => (...args) => fn(args);
 ```
 
 ```js
@@ -312,8 +312,8 @@ Use `Array.reduce()` and the `gcd` formula (uses recursion) to calculate the gre
 ```js
 const arrayGcd = arr => {
   const gcd = (x, y) => !y ? x : gcd(y, x % y);
-  return arr.reduce((a,b) => gcd(a,b));
-}
+  return arr.reduce((a, b) => gcd(a, b));
+};
 ```
 
 ```js
@@ -332,9 +332,9 @@ Use `Array.reduce()` and the `lcm` formula (uses recursion) to calculate the low
 ```js
 const arrayLcm = arr => {
   const gcd = (x, y) => !y ? x : gcd(y, x % y);
-  const lcm = (x, y) => (x*y)/gcd(x, y);
-  return arr.reduce((a,b) => lcm(a,b));
-}
+  const lcm = (x, y) => (x * y) / gcd(x, y);
+  return arr.reduce((a, b) => lcm(a, b));
+};
 ```
 
 ```js
@@ -468,7 +468,7 @@ Filters out all values from an array for which the comparator function does not 
 Use `Array.filter()` and `Array.find()` to find the appropriate values.
 
 ```js
-const differenceWith = (arr, val, comp) => arr.filter(a => !val.find(b => comp(a, b)))
+const differenceWith = (arr, val, comp) => arr.filter(a => !val.find(b => comp(a, b)));
 ```
 
 ```js
@@ -570,7 +570,7 @@ Flattens an array.
 Use a new array and concatenate it with the spread input array causing a shallow denesting of any contained arrays.
 
 ```js
-const flatten = arr => [ ].concat( ...arr );
+const flatten = arr => [ ].concat(...arr);
 ```
 
 ```js
@@ -744,7 +744,7 @@ Use an anonymous inner function scope to declare an undefined memory space, usin
 
 ```js
 const mapObject = (arr, fn) =>
-  (a => (a = [arr, arr.map(fn)], a[0].reduce( (acc,val,ind) => (acc[val] = a[1][ind], acc), {}) )) ( );
+  (a => (a = [arr, arr.map(fn)], a[0].reduce((acc, val, ind) => (acc[val] = a[1][ind], acc), {})))();
 ```
 
 ```js
@@ -763,7 +763,7 @@ If the index is out of bounds, return `[]`.
 Omit the second argument, `n`, to get the first element of the array.
 
 ```js
-const nthElement = (arr, n=0) => (n>0? arr.slice(n,n+1) : arr.slice(n))[0];
+const nthElement = (arr, n = 0) => (n > 0 ? arr.slice(n, n + 1) : arr.slice(n))[0];
 ```
 
 ```js
@@ -832,11 +832,11 @@ Use `Array.push()` to keep track of pulled values
 const pullAtIndex = (arr, pullArr) => {
   let removed = [];
   let pulled = arr.map((v, i) => pullArr.includes(i) ? removed.push(v) : v)
-                  .filter((v, i) => !pullArr.includes(i))
+                  .filter((v, i) => !pullArr.includes(i));
   arr.length = 0;
   pulled.forEach(v => arr.push(v));
   return removed;
-}
+};
 ```
 
 ```js
@@ -865,7 +865,7 @@ const pullAtValue = (arr, pullArr) => {
   arr.length = 0;
   mutateTo.forEach(v => arr.push(v));
   return removed;
-}
+};
 ```
 
 ```js
@@ -966,7 +966,7 @@ Create a `Set` from each array, then use `Array.filter()` on each of them to onl
 const symmetricDifference = (a, b) => {
   const sA = new Set(a), sB = new Set(b);
   return [...a.filter(x => !sB.has(x)), ...b.filter(x => !sA.has(x))];
-}
+};
 ```
 
 ```js
@@ -1072,9 +1072,9 @@ If lengths of the argument-arrays vary, `undefined` is used where no value could
 const zip = (...arrays) => {
   const maxLength = Math.max(...arrays.map(x => x.length));
   return Array.from({length: maxLength}).map((_, i) => {
-   return Array.from({length: arrays.length}, (_, k) => arrays[k][i]);
-  })
-}
+    return Array.from({length: arrays.length}, (_, k) => arrays[k][i]);
+  });
+};
 ```
 
 ```js
@@ -1091,7 +1091,7 @@ Given an array of valid property identifiers and an array of values, return an o
 Since an object can have undefined values but not undefined property pointers, the array of properties is used to decide the structure of the resulting object using `Array.reduce()`.
 
 ```js
-const zipObject = ( props, values ) => props.reduce( ( obj, prop, index ) => ( obj[prop] = values[index], obj ), {} )
+const zipObject = (props, values) => props.reduce((obj, prop, index) => (obj[prop] = values[index], obj), {});
 ```
 
 ```js
@@ -1109,7 +1109,7 @@ Converts the given array elements into `<li>` tags and appends them to the list 
 Use `Array.map()` and `document.querySelector()` to create a list of html tags.
 
 ```js
-const arrayToHtmlList = (arr, listID) => arr.map(item => document.querySelector("#"+listID).innerHTML+=`<li>${item}</li>`);
+const arrayToHtmlList = (arr, listID) => arr.map(item => document.querySelector('#' + listID).innerHTML += `<li>${item}</li>`);
 ```
 
 ```js
@@ -1158,7 +1158,7 @@ Detects wether the website is being opened in a mobile device or a desktop/lapto
 Use a regular expression to test the `navigator.userAgent` property to figure out if the device is a mobile device or a desktop/laptop.
 
 ```js
-const detectDeviceType = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? "Mobile" : "Desktop";
+const detectDeviceType = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop';
 ```
 
 ```js
@@ -1534,7 +1534,7 @@ If `num` falls within the range, return `num`.
 Otherwise, return the nearest number in the range.
 
 ```js
-const clampNumber = (num, a, b) => Math.max(Math.min(num, Math.max(a,b)),Math.min(a,b));
+const clampNumber = (num, a, b) => Math.max(Math.min(num, Math.max(a, b)), Math.min(a, b));
 ```
 
 ```js
@@ -1570,7 +1570,7 @@ Convert the number to a string, using spread operators in ES6(`[...string]`) bui
 Use `Array.map()` and `parseInt()` to transform each value to an integer.
 
 ```js
-const digitize = n => [...''+n].map(i => parseInt(i));
+const digitize = n => [...'' + n].map(i => parseInt(i));
 ```
 
 ```js
@@ -1642,7 +1642,7 @@ Use a mathematical formula to calculate the number of fibonacci numbers until `n
 
 ```js
 const fibonacciCountUntilNum = num =>
-  Math.ceil(Math.log(num * Math.sqrt(5) + 1/2) / Math.log((Math.sqrt(5)+1)/2));
+  Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));
 ```
 
 ```js
@@ -1663,7 +1663,7 @@ Uses a mathematical formula to calculate the length of the array required.
 const fibonacciUntilNum = num => {
   let n = Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));
   return Array.from({ length: n}).reduce((acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i), []);
-}
+};
 ```
 
 ```js
@@ -1716,10 +1716,10 @@ Use arithmetic comparison to check if the given number is in the specified range
 If the second parameter, `end`, is not specified, the range is considered to be from `0` to `start`.
 
 ```js
-const inRange = (n, start, end=null) => {
-  if(end && start > end) end = [start, start=end][0];
-  return (end == null) ? (n>=0 && n<start) : (n>=start && n<end);
-}
+const inRange = (n, start, end = null) => {
+  if (end && start > end) end = [start, start = end][0];
+  return (end == null) ? (n >= 0 && n < start) : (n >= start && n < end);
+};
 ```
 
 ```js
@@ -1739,7 +1739,7 @@ Convert the given number into an array of digits. Use `Math.pow()` to get the ap
 
 ```js
 const isArmstrongNumber = digits =>
-  ( arr => arr.reduce( ( a, d ) => a + Math.pow( parseInt( d ), arr.length ), 0 ) == digits ? true : false )( ( digits+'' ).split( '' ) );
+  (arr => arr.reduce((a, d) => a + Math.pow(parseInt(d), arr.length), 0) == digits)((digits + '').split(''));
 ```
 
 ```js
@@ -1855,9 +1855,9 @@ Then, `split('')` into individual characters, `reverse()`, `join('')` and compar
 
 ```js
 const palindrome = str => {
-  const s = str.toLowerCase().replace(/[\W_]/g,'');
+  const s = str.toLowerCase().replace(/[\W_]/g, '');
   return s === s.split('').reverse().join('');
-}
+};
 ```
 
 ```js
@@ -1874,7 +1874,7 @@ Use `Array.reduce()` to calculate how many numbers are below the value and how m
 
 ```js
 const percentile = (arr, val) =>
-  100 * arr.reduce((acc,v) => acc + (v < val ? 1 : 0) + (v === val ? 0.5 : 0), 0) / arr.length;
+  100 * arr.reduce((acc, v) => acc + (v < val ? 1 : 0) + (v === val ? 0.5 : 0), 0) / arr.length;
 ```
 
 ```js
@@ -1908,12 +1908,12 @@ Generate an array from `2` to the given number. Use `Array.filter()` to filter o
 
 ```js
 const primes = num => {
-  let arr =  Array.from({length:num-1}).map((x,i)=> i+2),
-    sqroot  = Math.floor(Math.sqrt(num)),
-    numsTillSqroot  = Array.from({length:sqroot-1}).map((x,i)=> i+2);
-  numsTillSqroot.forEach(x => arr = arr.filter(y => ((y%x)!==0)||(y==x)));
+  let arr = Array.from({length: num - 1}).map((x, i) => i + 2),
+    sqroot = Math.floor(Math.sqrt(num)),
+    numsTillSqroot = Array.from({length: sqroot - 1}).map((x, i) => i + 2);
+  numsTillSqroot.forEach(x => arr = arr.filter(y => ((y % x) !== 0) || (y == x)));
   return arr;
-}
+};
 ```
 
 ```js
@@ -1962,7 +1962,7 @@ Use `Math.round()` and template literals to round the number to the specified nu
 Omit the second argument, `decimals` to round to an integer.
 
 ```js
-const round = (n, decimals=0) => Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`);
+const round = (n, decimals = 0) => Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`);
 ```
 
 ```js
@@ -2029,7 +2029,7 @@ Use `fs.writeFile()`, template literals and `JSON.stringify()` to write a `json`
 
 ```js
 const fs = require('fs');
-const JSONToFile = (obj, filename) => fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2))
+const JSONToFile = (obj, filename) => fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2));
 ```
 
 ```js
@@ -2327,9 +2327,9 @@ Repeats a string n times using `String.repeat()`
 If no string is provided the default is `""` and the default number of times is 2.
 
 ```js
-const repeatString = (str="",num=2) => {
-    return num >= 0 ? str.repeat(num) : str;
-}
+const repeatString = (str = '', num = 2) => {
+  return num >= 0 ? str.repeat(num) : str;
+};
 ```
 
 ```js
@@ -2385,8 +2385,8 @@ const toCamelCase = str => {
   let s = str && str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
     .map(x => x.slice(0, 1).toUpperCase() + x.slice(1).toLowerCase())
     .join('');
-  return s.slice(0,1).toLowerCase() + s.slice(1)
-  }
+  return s.slice(0, 1).toLowerCase() + s.slice(1);
+};
 ```
 
 ```js
@@ -2492,7 +2492,7 @@ Returns the first non-null/undefined argument.
 Use `Array.find()` to return the first non `null`/`undefined` argument.
 
 ```js
-const coalesce = (...args) => args.find(_ => ![undefined, null].includes(_))
+const coalesce = (...args) => args.find(_ => ![undefined, null].includes(_));
 ```
 
 ```js
@@ -2526,7 +2526,7 @@ Use `Array.map()`, `split()` and `Array.join()` to join the mapped array for con
 `String.slice()` is used to remove `#` from string start since it's added once.
 ```js
 const extendHex = shortHex =>
-  '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split('').map(x => x+x).join('')
+  '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split('').map(x => x + x).join('');
 ```
 
 ```js
@@ -2689,8 +2689,11 @@ Generates a random hexadecimal color code.
 Use `Math.random` to generate a random 24-bit(6x4bits) hexadecimal number. Use bit shifting and then convert it to an hexadecimal String using `toString(16)`.
 
 ```js
-const randomHexColorCode = () => '#'+(Math.random()*0xFFFFFF<<0).toString(16);
-};
+const randomHexColorCode = () => { 
+  let n = (Math.random() * 0xfffff | 0).toString(16); 
+  return '#' + (n.length !== 6 
+        ? (Math.random() * 0xf | 0).toString(16) + n : n); 
+}; 
 ```
 
 ```js
@@ -2764,7 +2767,7 @@ timeTaken(() => Math.pow(2, 10)) // 1024
 Use `toLocaleString()` to convert a float-point arithmetic to the [Decimal mark](https://en.wikipedia.org/wiki/Decimal_mark) form. It makes a comma separated string from a number.
 
  ```js
-const toDecimalMark = num => num.toLocaleString("en-US");
+const toDecimalMark = num => num.toLocaleString('en-US');
 ```
 
 ```js
