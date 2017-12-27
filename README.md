@@ -1759,9 +1759,9 @@ Use `readFileSync` function in `fs` node package to create a `Buffer` from a fil
 convert buffer to string using `toString(encoding)` function.
 creating an array from contents of file by `split`ing file content line by line (each `\n`).
 
-  ```js
+```js
 const fs = require('fs');
-const readFileLines = filename => fs.readFileSync(filename).toString('UTF8').split('\n');
+const readFileLines = filename => fs.readFileSync(filename).toString('UTF8').split(/\r?\n/);
 /*
   contents of test.txt :
     line1
