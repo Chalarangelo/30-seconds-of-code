@@ -10,5 +10,5 @@ const bottomVisible = () =>
 ```
 
 ```js
-// bottomVisible() // true
+bottomVisible() // true
 ```
