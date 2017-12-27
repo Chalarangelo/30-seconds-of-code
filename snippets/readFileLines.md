@@ -22,3 +22,13 @@ contents of test.txt :
 let arr = readFileLines('test.txt')
 console.log(arr) // ['line1', 'line2', 'line3']
 ```
+
+```js
+contents of test.txt :
+  line1
+  line2
+  line3
+  ___________________________
+let arr = readFileLines('test.txt')
+console.log(arr) // // ['line1', 'line2', 'line3']
+```
