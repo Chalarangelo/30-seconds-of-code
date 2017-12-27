@@ -33,7 +33,7 @@
       })
     }
     function clipboard() {
-      const snippets = document.querySelectorAll("pre");
+      const snippets = document.querySelectorAll(":not(pre) + pre");
       snippets.forEach(element => {
       const button = document.createElement("button");
       button.innerHTML = "Copy to clipboard";
