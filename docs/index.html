@@ -238,6 +238,7 @@
 <h3>Uncategorized
 </h3><a class="sublink-1" href="#pipefunctions">pipeFunctions</a>
 <a class="sublink-1" href="#randomhexcolor">randomHexColor</a>
+<a class="sublink-1" href="#sdbmhashalgorithm">sdbmHashAlgorithm</a>
 
 </nav><main class="col-sm-12 col-md-8 col-lg-9" style="height:100%;overflow-y:auto;background:#eceef2;padding:0"><a id="top">&nbsp;</a><h2 style="text-align:center">Adapter</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="call">call</h3></div><div class="section double-padded">
@@ -1522,6 +1523,18 @@ multiplyAndAdd5(5, 2) -&gt; 15
 // randomHexColorCode() -&gt; &quot;#e34155&quot;
 // randomHexColorCode() -&gt; &quot;#fd73a6&quot;
 // randomHexColorCode() -&gt; &quot;#4144c6&quot;
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="sdbmhashalgorithm">sdbmHashAlgorithm</h3></div><div class="section double-padded">
+<p>This algorithm is a simple hash-algorithm that hashes it input string <code>s</code> into a whole number.</p>
+<p>Use <code>split('')</code> and <code>Array.reduce()</code> to create a hash of the input string, utilizing bit shifting.</p>
+<pre><code class="language-js">const sdbm = str =&gt; {
+  let arr = str.split('');
+  return arr.reduce((hashCode, currentVal) =&gt;
+    hashCode = currentVal.charCodeAt(0) + (hashCode &lt;&lt; 6) + (hashCode &lt;&lt; 16)  - hashCode
+  ,0)
+}
+// console.log(sdbm(&quot;name&quot;)) // -3521204949
+// console.log(sdbm(&quot;age&quot;)) // 808122783
 </code></pre>
 </div></div><br/>
         <footer>
