@@ -94,7 +94,7 @@ promisify:adapter
 pull:array
 pullAtIndex:array
 pullAtValue:array
-randomHexColor:utility
+randomHexColorCode:utility
 randomIntegerInRange:math
 randomNumberInRange:math
 readFileLines:node
