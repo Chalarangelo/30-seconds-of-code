@@ -28,7 +28,7 @@ Here's what you can do to help:
   - Use ES6 notation to define your function. For example `const myFunction = ( arg1, arg2 ) => { }`.
   - Please use Javacript [Semi-Standard Style](https://github.com/Flet/semistandard).
   - Try to keep your snippets' code short and to the point. Use modern techniques and features. Make sure to test your code before submitting.
-  - All snippets must be followed by one (more if necessary) test case after the code, on a new line, in the form of a comment, along with the expected output. The syntax for this is `myFunction('testInput') -> 'testOutput'`. Use multiline comments only if necessary.
+  - All snippets must be followed by one (more if necessary) test case after the code, in a new block enclosed inside ` ```js ` and ` ``` `. The syntax for this is `myFunction('testInput') // 'testOutput'`. Use multiline examples only if necessary.
   - Try to make your function name unique, so that it does not conflict with existing snippets.
   - Snippet functions do not have to handle errors in input, unless it's necessary (e.g. a mathematical function that cannot be extended to negative numbers should handle negative input appropriately).
 - Snippets should be short (usually below 10 lines). If your snippet is longer than that, you can still submit it, and we can help you shorten it or figure out ways to improve it.
