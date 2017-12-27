@@ -11,6 +11,9 @@ const sdbm = str => {
     hashCode = currentVal.charCodeAt(0) + (hashCode << 6) + (hashCode << 16)  - hashCode
   ,0)
 }
-// console.log(sdbm("name")) // -3521204949
-// console.log(sdbm("age")) // 808122783
+```
+
+```js
+console.log(sdbm("name")) // -3521204949
+console.log(sdbm("age")) // 808122783
 ```
