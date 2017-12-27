@@ -12,7 +12,7 @@ const fromCamelCase = (str, separator = '_') =>
 ```
 
 ```js
-fromCamelCase('someDatabaseFieldName', ' ') -> 'some database field name'
-fromCamelCase('someLabelThatNeedsToBeCamelized', '-') -> 'some-label-that-needs-to-be-camelized'
-fromCamelCase('someJavascriptProperty', '_') -> 'some_javascript_property'
+fromCamelCase('someDatabaseFieldName', ' ') // 'some database field name'
+fromCamelCase('someLabelThatNeedsToBeCamelized', '-') // 'some-label-that-needs-to-be-camelized'
+fromCamelCase('someJavascriptProperty', '_') // 'some_javascript_property'
 ```

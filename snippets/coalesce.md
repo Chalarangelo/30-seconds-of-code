@@ -9,5 +9,5 @@ const coalesce = (...args) => args.find(_ => ![undefined, null].includes(_))
 ```
 
 ```js
-coalesce(null,undefined,"",NaN, "Waldo") -> ""
+coalesce(null,undefined,"",NaN, "Waldo") // ""
 ```

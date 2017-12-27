@@ -14,7 +14,7 @@ const clampNumber = (num, lower, upper) => {
 ```
 
 ```js
-clampNumber(2, 3, 5) -> 3
-clampNumber(1, -1, -5) -> -1
-clampNumber(3, 2, 4) -> 3
+clampNumber(2, 3, 5) // 3
+clampNumber(1, -1, -5) // -1
+clampNumber(3, 2, 4) // 3
 ```

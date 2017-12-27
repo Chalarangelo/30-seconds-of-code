@@ -10,6 +10,6 @@ const extendHex = shortHex =>
 ```
 
 ```js
-extendHex('#03f') -> '#0033ff'
-extendHex('05a') -> '#0055aa'
+extendHex('#03f') // '#0033ff'
+extendHex('05a') // '#0055aa'
 ```

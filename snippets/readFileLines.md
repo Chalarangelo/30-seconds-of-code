@@ -18,5 +18,5 @@ contents of test.txt :
   line3
   ___________________________
 let arr = readFileLines('test.txt')
-console.log(arr) // -> ['line1', 'line2', 'line3']
+console.log(arr) // // ['line1', 'line2', 'line3']
 ```

@@ -16,6 +16,6 @@ const zip = (...arrays) => {
 ```
 
 ```js
-zip(['a', 'b'], [1, 2], [true, false]); -> [['a', 1, true], ['b', 2, false]]
-zip(['a'], [1, 2], [true, false]); -> [['a', 1, true], [undefined, 2, false]]
+zip(['a', 'b'], [1, 2], [true, false]); // [['a', 1, true], ['b', 2, false]]
+zip(['a'], [1, 2], [true, false]); // [['a', 1, true], [undefined, 2, false]]
 ```

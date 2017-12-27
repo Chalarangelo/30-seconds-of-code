@@ -15,8 +15,8 @@ const toCamelCase = str => {
 ```
 
 ```js
-toCamelCase("some_database_field_name") -> 'someDatabaseFieldName'
-toCamelCase("Some label that needs to be camelized") -> 'someLabelThatNeedsToBeCamelized'
-toCamelCase("some-javascript-property") -> 'someJavascriptProperty'
-toCamelCase("some-mixed_string with spaces_underscores-and-hyphens") -> 'someMixedStringWithSpacesUnderscoresAndHyphens'
+toCamelCase("some_database_field_name") // 'someDatabaseFieldName'
+toCamelCase("Some label that needs to be camelized") // 'someLabelThatNeedsToBeCamelized'
+toCamelCase("some-javascript-property") // 'someJavascriptProperty'
+toCamelCase("some-mixed_string with spaces_underscores-and-hyphens") // 'someMixedStringWithSpacesUnderscoresAndHyphens'
 ```

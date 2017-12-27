@@ -11,6 +11,6 @@ const capitalize = ([first,...rest], lowerRest = false) =>
 ```
 
 ```js
-capitalize('fooBar') -> 'FooBar'
-capitalize('fooBar', true) -> 'Foobar'
+capitalize('fooBar') // 'FooBar'
+capitalize('fooBar', true) // 'Foobar'
 ```

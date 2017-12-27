@@ -9,5 +9,5 @@ const shuffle = arr => arr.sort(() => Math.random() - 0.5);
 ```
 
 ```js
-shuffle([1,2,3]) -> [2,3,1]
+shuffle([1,2,3]) // [2,3,1]
 ```

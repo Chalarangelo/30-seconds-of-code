@@ -11,5 +11,5 @@ const toEnglishDate  = (time) =>
 ```
 
 ```js
-toEnglishDate('09/21/2010') -> '21/09/2010'
+toEnglishDate('09/21/2010') // '21/09/2010'
 ```

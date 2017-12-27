@@ -15,6 +15,6 @@ const curry = (fn, arity = fn.length, ...args) =>
 ```
 
 ```js
-curry(Math.pow)(2)(10) -> 1024
-curry(Math.min, 3)(10)(50)(2) -> 2
+curry(Math.pow)(2)(10) // 1024
+curry(Math.min, 3)(10)(50)(2) // 2
 ```

@@ -19,7 +19,7 @@ const hexToRGB = hex => {
 ```
 
 ```js
-hexToRGB('#27ae60ff') -> 'rgba(39, 174, 96, 255)'
-hexToRGB('27ae60') -> 'rgb(39, 174, 96)'
-hexToRGB('#fff') -> 'rgb(255, 255, 255)'
+hexToRGB('#27ae60ff') // 'rgba(39, 174, 96, 255)'
+hexToRGB('27ae60') // 'rgb(39, 174, 96)'
+hexToRGB('#fff') // 'rgb(255, 255, 255)'
 ```

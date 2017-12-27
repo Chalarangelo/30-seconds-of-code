@@ -9,5 +9,5 @@ const initialize2DArray = (w, h, val = null) => Array(h).fill().map(() => Array(
 ```
 
 ```js
-initialize2DArray(2, 2, 0) -> [[0,0], [0,0]]
+initialize2DArray(2, 2, 0) // [[0,0], [0,0]]
 ```

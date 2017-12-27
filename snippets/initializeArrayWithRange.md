@@ -11,6 +11,6 @@ const initializeArrayWithRange = (end, start = 0) =>
 ```
 
 ```js
-initializeArrayWithRange(5) -> [0,1,2,3,4,5]
-initializeArrayWithRange(7, 3) -> [3,4,5,6,7]
+initializeArrayWithRange(5) // [0,1,2,3,4,5]
+initializeArrayWithRange(7, 3) // [3,4,5,6,7]
 ```

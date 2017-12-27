@@ -10,5 +10,5 @@ const JSONToFile = (obj, filename) => fs.writeFile(`${filename}.json`, JSON.stri
 ```
 
 ```js
-JSONToFile({test: "is passed"}, 'testJsonFile') -> writes the object to 'testJsonFile.json'
+JSONToFile({test: "is passed"}, 'testJsonFile') // writes the object to 'testJsonFile.json'
 ```

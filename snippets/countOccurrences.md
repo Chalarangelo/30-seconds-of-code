@@ -9,5 +9,5 @@ const countOccurrences = (arr, value) => arr.reduce((a, v) => v === value ? a + 
 ```
 
 ```js
-countOccurrences([1,1,2,1,2,3], 1) -> 3
+countOccurrences([1,1,2,1,2,3], 1) // 3
 ```

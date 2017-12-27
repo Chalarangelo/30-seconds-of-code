@@ -9,6 +9,6 @@ const isBoolean = val => typeof val === 'boolean';
 ```
 
 ```js
-isBoolean(null) -> false
-isBoolean(false) -> true
+isBoolean(null) // false
+isBoolean(false) // true
 ```
