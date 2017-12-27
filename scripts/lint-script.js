@@ -29,14 +29,15 @@ try {
     while(jobCounter >= 20){
       setTimeout(()=>{},5000);
     }
-    fs.writeFileSync(`${snippet}.temp.js`,`${originalCode}`);
+    const tempSnippet = snippet.replace('.md', '');
+    fs.writeFileSync(`${tempSnippet}.temp.js`,`${originalCode}`);
     // Run semistandard asynchronously (only way this manages to run), get linted code
     // and write back to the original snippet file. Remove temporary file
-    cp.exec(`semistandard "${snippet}.temp.js" --fix`,{},(error, stdOut, stdErr) => {
+    cp.exec(`semistandard "${tempSnippet}.temp.js" --fix`,{},(error, stdOut, stdErr) => {
       jobCounter += 1;
-      let lintedCode = fs.readFileSync(`${snippet}.temp.js`,'utf8');
+      let lintedCode = fs.readFileSync(`${tempSnippet}.temp.js`,'utf8');
       fs.writeFile(path.join(snippetsPath,snippet), `${snippetData.slice(0, snippetData.indexOf('```js')+5)+lintedCode+'```\n'}`);
-      fs.unlink(`${snippet}.temp.js`);
+      fs.unlink(`${tempSnippet}.temp.js`);
       // Log a success message
       console.log(`${chalk.green('SUCCESS!')} Linted snippet: ${snippet}`);
       // Log the time taken for the file
