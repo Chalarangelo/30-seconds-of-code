@@ -27,7 +27,7 @@ try {
     let snippetData = fs.readFileSync(path.join(snippetsPath,snippet),'utf8');
     let originalCode = snippetData.slice(snippetData.indexOf('```js')+5,snippetData.lastIndexOf('```'));
     while(jobCounter >= 20){
-      setTimeout(()=>{},5000);
+      setTimeout(()=>{},1000);
     }
     const tempSnippet = snippet.replace('.md', '');
     fs.writeFileSync(`${tempSnippet}.temp.js`,`${originalCode}`);
