@@ -13,6 +13,6 @@ const arrayLcm = arr => {
 ```
 
 ```js
-arrayLcm([1,2,3,4,5]) -> 60
-arrayLcm([4,8,12]) -> 24
+arrayLcm([1,2,3,4,5]) // 60
+arrayLcm([4,8,12]) // 24
 ```

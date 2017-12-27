@@ -9,6 +9,6 @@ const isArray = val => !!val && Array.isArray(val);
 ```
 
 ```js
-isArray(null) -> false
-isArray([1]) -> true
+isArray(null) // false
+isArray([1]) // true
 ```

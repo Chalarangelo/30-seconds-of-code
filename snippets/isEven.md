@@ -10,5 +10,5 @@ const isEven = num => num % 2 === 0;
 ```
 
 ```js
-isEven(3) -> false
+isEven(3) // false
 ```

@@ -9,5 +9,5 @@ const last = arr => arr[arr.length - 1];
 ```
 
 ```js
-last([1,2,3]) -> 3
+last([1,2,3]) // 3
 ```

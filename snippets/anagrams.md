@@ -16,5 +16,5 @@ const anagrams = str => {
 ```
 
 ```js
-anagrams('abc') -> ['abc','acb','bac','bca','cab','cba']
+anagrams('abc') // ['abc','acb','bac','bca','cab','cba']
 ```

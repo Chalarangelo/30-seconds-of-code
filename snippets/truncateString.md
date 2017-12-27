@@ -11,5 +11,5 @@ const truncateString = (str, num) =>
 ```
 
 ```js
-truncateString('boomerang', 7) -> 'boom...'
+truncateString('boomerang', 7) // 'boom...'
 ```

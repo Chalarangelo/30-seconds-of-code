@@ -10,5 +10,5 @@ const sortCharactersInString = str =>
 ```
 
 ```js
-sortCharactersInString('cabbage') -> 'aabbceg'
+sortCharactersInString('cabbage') // 'aabbceg'
 ```

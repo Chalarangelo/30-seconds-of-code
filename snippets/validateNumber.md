@@ -11,5 +11,5 @@ const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) ==
 ```
 
 ```js
-validateNumber('10') -> true
+validateNumber('10') // true
 ```
