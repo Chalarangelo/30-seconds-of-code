@@ -10,9 +10,9 @@ If lengths of the argument-arrays vary, `undefined` is used where no value could
 const zip = (...arrays) => {
   const maxLength = Math.max(...arrays.map(x => x.length));
   return Array.from({length: maxLength}).map((_, i) => {
-   return Array.from({length: arrays.length}, (_, k) => arrays[k][i]);
-  })
-}
+    return Array.from({length: arrays.length}, (_, k) => arrays[k][i]);
+  });
+};
 ```
 
 ```js
