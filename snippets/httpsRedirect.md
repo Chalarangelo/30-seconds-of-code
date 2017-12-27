@@ -6,6 +6,6 @@ Use `location.protocol` to get the protocol currently being used. If it's not HT
 
 ```js
 const httpsRedirect = () => {
-  if(location.protocol !== "https:") location.replace("https://" + location.href.split("//")[1]);
-}
+  if (location.protocol !== 'https:') location.replace('https://' + location.href.split('//')[1]);
+};
 ```
