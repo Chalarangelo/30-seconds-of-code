@@ -42,6 +42,8 @@ try {
 
     // Run semistandard asynchronously (only way this manages to run), get linted code
     // and write back to the original snippet file. Remove temporary file
+    // NOTE: adding `.temp` seems to not make it lint. Maybe because of .gitignore?
+    // It shows an invisible icon next to it
     cp.exec(`semistandard '${snippet}.js' --fix`, {}, (error, stdOut, stdErr) => {
       jobCounter += 1;
 
