@@ -13,5 +13,8 @@ const anagrams = str => {
   return str.split('').reduce((acc, letter, i) =>
     acc.concat(anagrams(str.slice(0, i) + str.slice(i + 1)).map(val => letter + val)), []);
 };
-// anagrams('abc') -> ['abc','acb','bac','bca','cab','cba']
+```
+
+```js
+anagrams('abc') // ['abc','acb','bac','bca','cab','cba']
 ```

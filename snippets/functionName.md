@@ -6,5 +6,8 @@ Use `console.debug()` and the `name` property of the passed method to log the me
 
 ```js
 const functionName = fn => (console.debug(fn.name), fn);
-// functionName(Math.max) -> max (logged in debug channel of console)
+```
+
+```js
+functionName(Math.max) // max (logged in debug channel of console)
 ```

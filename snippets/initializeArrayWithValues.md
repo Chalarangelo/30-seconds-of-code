@@ -7,5 +7,8 @@ You can omit `value` to use a default value of `0`.
 
 ```js
 const initializeArrayWithValues = (n, value = 0) => Array(n).fill(value);
-// initializeArrayWithValues(5, 2) -> [2,2,2,2,2]
+```
+
+```js
+initializeArrayWithValues(5, 2) // [2,2,2,2,2]
 ```

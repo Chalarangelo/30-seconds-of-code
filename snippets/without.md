@@ -8,5 +8,8 @@ _(For a snippet that mutates the original array see [`pull`](#pull))_
 
 ```js
 const without = (arr, ...args) => arr.filter(v => !args.includes(v));
-// without([2, 1, 2, 3], 1, 2) -> [3]
+```
+
+```js
+without([2, 1, 2, 3], 1, 2) // [3]
 ```

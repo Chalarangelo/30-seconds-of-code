@@ -10,6 +10,9 @@ const arrayLcm = arr => {
   const lcm = (x, y) => (x * y) / gcd(x, y);
   return arr.reduce((a, b) => lcm(a, b));
 };
-// arrayLcm([1,2,3,4,5]) -> 60
-// arrayLcm([4,8,12]) -> 24
+```
+
+```js
+arrayLcm([1,2,3,4,5]) // 60
+arrayLcm([4,8,12]) // 24
 ```

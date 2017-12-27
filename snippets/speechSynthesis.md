@@ -13,5 +13,8 @@ const speechSynthesis = message => {
   msg.voice = window.speechSynthesis.getVoices()[0];
   window.speechSynthesis.speak(msg);
 };
-// speechSynthesis('Hello, World') -> plays the message
+```
+
+```js
+speechSynthesis('Hello, World') // // plays the message
 ```

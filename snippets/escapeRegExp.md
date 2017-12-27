@@ -6,5 +6,8 @@ Use `replace()` to escape special characters.
 
 ```js
 const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-// escapeRegExp('(test)') -> \\(test\\)
+```
+
+```js
+escapeRegExp('(test)') // \\(test\\)
 ```

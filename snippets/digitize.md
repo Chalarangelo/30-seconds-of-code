@@ -7,5 +7,8 @@ Use `Array.map()` and `parseInt()` to transform each value to an integer.
 
 ```js
 const digitize = n => [...'' + n].map(i => parseInt(i));
-// digitize(2334) -> [2, 3, 3, 4]
+```
+
+```js
+differenceWith([1, 1.2, 1.5, 3], [1.9, 3], (a,b) => Math.round(a) == Math.round(b)) // [1, 1.2]
 ```

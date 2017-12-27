@@ -6,5 +6,8 @@ Use a new array and concatenate it with the spread input array causing a shallow
 
 ```js
 const flatten = arr => [ ].concat(...arr);
-// flatten([1,[2],3,4]) -> [1,2,3,4]
+```
+
+```js
+flatten([1,[2],3,4]) // [1,2,3,4]
 ```

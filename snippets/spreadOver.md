@@ -6,9 +6,10 @@ Use closures and the spread operator (`...`) to map the array of arguments to th
 
 ```js
 const spreadOver = fn => argsArr => fn(...argsArr);
-/*
+```
+
+```js
 const arrayMax = spreadOver(Math.max)
-arrayMax([1,2,3]) // -> 3
-arrayMax([1,2,4]) // -> 4
-*/
+arrayMax([1,2,3]) // 3
+arrayMax([1,2,4])  // 4
 ```
