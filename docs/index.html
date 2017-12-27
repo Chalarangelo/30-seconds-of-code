@@ -738,7 +738,7 @@ zipObject(['a','b'], [1,2,3]) // {a: 1, b: 2}
 <p>Use <code>window.location.href</code> to get current URL.</p>
 <pre><code class="language-js">const currentURL = () =&gt; window.location.href;
 </code></pre>
-<pre><code class="language-js">currentUrl() // 'https://google.com'
+<pre><code class="language-js">currentURL() // 'https://google.com'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="detectdevicetype">detectDeviceType</h3></div><div class="section double-padded">
 <p>Detects wether the website is being opened in a mobile device or a desktop/laptop.</p>
@@ -962,7 +962,7 @@ collatz(5) // 16
 Use <code>Array.map()</code> and <code>parseInt()</code> to transform each value to an integer.</p>
 <pre><code class="language-js">const digitize = n =&gt; [...'' + n].map(i =&gt; parseInt(i));
 </code></pre>
-<pre><code class="language-js">differenceWith([1, 1.2, 1.5, 3], [1.9, 3], (a,b) =&gt; Math.round(a) == Math.round(b)) // [1, 1.2]
+<pre><code class="language-js">digitize(123) // [1, 2, 3]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="distance">distance</h3></div><div class="section double-padded">
 <p>Returns the distance between two points.</p>
