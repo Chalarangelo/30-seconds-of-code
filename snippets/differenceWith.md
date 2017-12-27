@@ -5,7 +5,7 @@ Filters out all values from an array for which the comparator function does not 
 Use `Array.filter()` and `Array.find()` to find the appropriate values.
 
 ```js
-const differenceWith = (arr, val, comp) => arr.filter(a => !val.find(b => comp(a, b)))
+const differenceWith = (arr, val, comp) => arr.filter(a => !val.find(b => comp(a, b)));
 ```
 
 ```js
