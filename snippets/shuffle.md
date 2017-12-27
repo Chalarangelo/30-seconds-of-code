@@ -13,5 +13,7 @@ const shuffle = ([...arr]) => {
   }
   return arr;
 };
-// shuffle([1,2,3]) -> [2,3,1]
+// const foo = [1,2,3]
+// shuffle(foo) -> [2,3,1]
+// console.log(foo) -> [1,2,3]
 ```
