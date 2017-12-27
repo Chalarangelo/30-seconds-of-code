@@ -54,8 +54,7 @@ try {
       const lintedCode = [];
 
       for (const tempName of snippet.tempNames) {
-        let data = fs.readFileSync(`${TEMP_PATH}/${tempName}.js`,'utf8');
-
+        let data = fs.readFileSync(`${TEMP_PATH}/${tempName}.js`, 'utf8');
         // prettier sometimes throws an error..
         try {
           data = prettier.format(data, {
@@ -63,24 +62,19 @@ try {
             singleQuote: true
           });
         } catch (e) {}
-
+        
         lintedCode.push(data);
-
         fs.unlink(`${TEMP_PATH}/${tempName}.js`);
       }
 
       // We replace each ```js ``` code block with the newly linted code
-      let index = -1;
-      snippet.data = snippet.data.replace(codeRE, () => {
-        index++;
-        return '```js\n' + lintedCode[index] + '```';
-      });
+      let index = 0;
+      snippet.data = snippet.data.replace(codeRE, () => '```js\n' + lintedCode[index++] + '```')
 
       fs.writeFileSync(path.join(SNIPPETS_PATH, snippet.name), snippet.data);
     }
 
     fs.removeSync(TEMP_PATH);
-
     console.timeEnd('lint');
   });
 } catch (err) {
