@@ -9,5 +9,5 @@ const getDaysDiffBetweenDates = (dateInitial, dateFinal) => (dateFinal - dateIni
 ```
 
 ```js
-getDaysDiffBetweenDates(new Date("2017-12-13"), new Date("2017-12-22")) -> 9
+getDaysDiffBetweenDates(new Date("2017-12-13"), new Date("2017-12-22")) // 9
 ```

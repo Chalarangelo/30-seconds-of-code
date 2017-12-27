@@ -11,5 +11,5 @@ const without = (arr, ...args) => arr.filter(v => !args.includes(v));
 ```
 
 ```js
-without([2, 1, 2, 3], 1, 2) -> [3]
+without([2, 1, 2, 3], 1, 2) // [3]
 ```

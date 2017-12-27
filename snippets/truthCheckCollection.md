@@ -9,5 +9,5 @@ const truthCheckCollection = (collection, pre) => (collection.every(obj => obj[p
 ```
 
 ```js
-truthCheckCollection([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}], "sex") -> true
+truthCheckCollection([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}], "sex") // true
 ```

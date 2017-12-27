@@ -9,5 +9,5 @@ const randomIntegerInRange = (min, max) => Math.floor(Math.random() * (max - min
 ```
 
 ```js
-randomIntegerInRange(0, 5) -> 2
+randomIntegerInRange(0, 5) // 2
 ```

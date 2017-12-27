@@ -16,5 +16,5 @@ const speechSynthesis = message => {
 ```
 
 ```js
-speechSynthesis('Hello, World') -> // plays the message
+speechSynthesis('Hello, World') // // plays the message
 ```

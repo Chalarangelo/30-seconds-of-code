@@ -11,5 +11,5 @@ const shallowClone = obj => Object.assign({}, obj);
 ```js
 const a = { x: true, y: 1 };
 const b = shallowClone(a);
-a === b -> false
+a === b // false
 ```

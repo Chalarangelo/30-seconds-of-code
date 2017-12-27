@@ -10,5 +10,5 @@ const reverseString = str => str.split('').reverse().join('');
 ```
 
 ```js
-reverseString('foobar') -> 'raboof'
+reverseString('foobar') // 'raboof'
 ```

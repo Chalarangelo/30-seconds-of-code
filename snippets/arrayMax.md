@@ -9,5 +9,5 @@ const arrayMax = arr => Math.max(...arr);
 ```
 
 ```js
-arrayMax([10, 1, 5]) -> 10
+arrayMax([10, 1, 5]) // 10
 ```
