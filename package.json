@@ -8,6 +8,7 @@
     "markdown-it": "^8.4.0",
     "node-sass": "^4.7.2",
     "nodemon": "^1.12.1",
+    "prettier": "^1.9.2",
     "semistandard": "^11.0.0",
     "tagger": "^0.1.2",
     "webber": "0.0.1"
