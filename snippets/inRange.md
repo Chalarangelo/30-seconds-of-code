@@ -13,8 +13,8 @@ const inRange = (n, start, end=null) => {
 ```
 
 ```js
-inRange(3, 2, 5) -> true
-inRange(3, 4) -> true
-inRange(2, 3, 5) -> false
-inrange(3, 2) -> false
+inRange(3, 2, 5) // true
+inRange(3, 4) // true
+inRange(2, 3, 5) // false
+inrange(3, 2) // false
 ```

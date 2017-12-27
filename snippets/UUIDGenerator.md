@@ -12,5 +12,5 @@ const UUIDGenerator = () =>
 ```
 
 ```js
-UUIDGenerator() -> '7982fcfe-5721-4632-bede-6000885be57d'
+UUIDGenerator() // '7982fcfe-5721-4632-bede-6000885be57d'
 ```

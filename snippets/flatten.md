@@ -9,5 +9,5 @@ const flatten = arr => [ ].concat( ...arr );
 ```
 
 ```js
-flatten([1,[2],3,4]) -> [1,2,3,4]
+flatten([1,[2],3,4]) // [1,2,3,4]
 ```

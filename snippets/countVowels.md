@@ -9,6 +9,6 @@ const countVowels = str => (str.match(/[aeiou]/ig) || []).length;
 ```
 
 ```js
-countVowels('foobar') -> 3
-countVowels('gym') -> 0
+countVowels('foobar') // 3
+countVowels('gym') // 0
 ```

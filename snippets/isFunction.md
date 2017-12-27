@@ -9,6 +9,6 @@ const isFunction = val => val && typeof val === 'function';
 ```
 
 ```js
-isFunction('x') -> false
-isFunction(x => x) -> true
+isFunction('x') // false
+isFunction(x => x) // true
 ```

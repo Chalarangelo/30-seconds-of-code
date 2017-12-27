@@ -13,5 +13,5 @@ const palindrome = str => {
 ```
 
 ```js
-palindrome('taco cat') -> true
+palindrome('taco cat') // true
 ```

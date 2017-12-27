@@ -10,7 +10,7 @@ const isArmstrongNumber = digits =>
 ```
 
 ```js
-isArmstrongNumber(1634) -> true
-isArmstrongNumber(371) -> true
-isArmstrongNumber(56) -> false
+isArmstrongNumber(1634) // true
+isArmstrongNumber(371) // true
+isArmstrongNumber(56) // false
 ```

@@ -20,6 +20,6 @@ const pullAtValue = (arr, pullArr) => {
 ```js
 let myArray = ['a', 'b', 'c', 'd'];
 let pulled = pullAtValue(myArray, ['b', 'd']);
-console.log(myArray); -> [ 'a', 'c' ]
-console.log(pulled); -> [ 'b', 'd' ]
+console.log(myArray); // [ 'a', 'c' ]
+console.log(pulled); // [ 'b', 'd' ]
 ```

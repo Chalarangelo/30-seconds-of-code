@@ -11,5 +11,5 @@ const gcd = (x, y) => !y ? x : gcd(y, x % y);
 ```
 
 ```js
-gcd (8, 36) -> 4
+gcd (8, 36) // 4
 ```

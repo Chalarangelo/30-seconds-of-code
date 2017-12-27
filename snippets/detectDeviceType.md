@@ -9,6 +9,6 @@ const detectDeviceType = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobi
 ```
 
 ```js
-detectDeviceType() -> "Mobile"
-detectDeviceType() -> "Desktop"
+detectDeviceType() // "Mobile"
+detectDeviceType() // "Desktop"
 ```
