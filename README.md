@@ -168,7 +168,7 @@
 * [`isNumber`](#isnumber)
 * [`isString`](#isstring)
 * [`isSymbol`](#issymbol)
-* [`randomHexColor`](#randomhexcolor)
+* [`randomHexColorCode`](#randomhexcolorcode)
 * [`RGBToHex`](#rgbtohex)
 * [`sdbm`](#sdbm)
 * [`timeTaken`](#timetaken)
@@ -2682,17 +2682,14 @@ isSymbol(Symbol('x')) // true
 
 [⬆ back to top](#table-of-contents)
 
-### randomHexColor
+### randomHexColorCode
 
 Generates a random hexadecimal color code.
 
 Use `Math.random` to generate a random 24-bit(6x4bits) hexadecimal number. Use bit shifting and then convert it to an hexadecimal String using `toString(16)`.
 
 ```js
-const randomHexColor = () => {
-  let n = (Math.random() * 0xfffff | 0).toString(16);
-  return '#' + (n.length !== 6
-        ? (Math.random() * 0xf | 0).toString(16) + n : n);
+const randomHexColorCode = () => '#'+(Math.random()*0xFFFFFF<<0).toString(16);
 };
 ```
 
@@ -2720,7 +2717,7 @@ RGBToHex(255, 165, 1) // 'ffa501'
 
 [⬆ back to top](#table-of-contents)
 
-### sdbmHashAlgorithm
+### sbdm
 
 This algorithm is a simple hash-algorithm that hashes it input string `s` into a whole number.
 
