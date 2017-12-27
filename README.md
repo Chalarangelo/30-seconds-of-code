@@ -17,6 +17,7 @@
 * [`call`](#call)
 * [`collectInto`](#collectinto)
 * [`flip`](#flip)
+* [`pipeFunctions`](#pipefunctions)
 * [`promisify`](#promisify)
 * [`spreadOver`](#spreadover)
 
@@ -121,6 +122,7 @@
 * [`randomIntegerInRange`](#randomintegerinrange)
 * [`randomNumberInRange`](#randomnumberinrange)
 * [`round`](#round)
+* [`sdbmHashAlgorithm`](#sdbmhashalgorithm)
 * [`standardDeviation`](#standarddeviation)
 
 ### Media
@@ -167,17 +169,13 @@
 * [`isNumber`](#isnumber)
 * [`isString`](#isstring)
 * [`isSymbol`](#issymbol)
+* [`randomHexColor`](#randomhexcolor)
 * [`RGBToHex`](#rgbtohex)
 * [`timeTaken`](#timetaken)
 * [`toDecimalMark`](#todecimalmark)
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`UUIDGenerator`](#uuidgenerator)
 * [`validateNumber`](#validatenumber)
-
-### _Uncategorized_
-* [`pipeFunctions`](#pipefunctions)
-* [`randomHexColor`](#randomhexcolor)
-* [`sdbmHashAlgorithm`](#sdbmhashalgorithm)
 
 ## Adapter
 
@@ -233,6 +231,25 @@ let mergePerson = mergeFrom.bind(null, a)
 mergePerson(b) // == b
 b = {}
 Object.assign(b, a) // == b
+*/
+```
+
+[⬆ back to top](#table-of-contents)
+
+### pipeFunctions
+
+Performs left-to-right function composition.
+
+Use `Array.reduce()` with the spread operator (`...`) to perform left-to-right function composition.
+The first (leftmost) function can accept one or more arguments; the remaining functions must be unary.
+
+```js
+const pipeFunctions = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
+/*
+const add5 = x => x + 5
+const multiply = (x, y) => x * y
+const multiplyAndAdd5 = pipeFunctions(multiply, add5)
+multiplyAndAdd5(5, 2) -> 15
 */
 ```
 
@@ -1696,6 +1713,25 @@ const round = (n, decimals=0) => Number(`${Math.round(`${n}e${decimals}`)}e-${de
 
 [⬆ back to top](#table-of-contents)
 
+### sdbmHashAlgorithm
+
+This algorithm is a simple hash-algorithm that hashes it input string `s` into a whole number.
+
+Use `split('')` and `Array.reduce()` to create a hash of the input string, utilizing bit shifting.
+
+``` js
+const sdbm = str => {
+  let arr = str.split('');
+  return arr.reduce((hashCode, currentVal) =>
+    hashCode = currentVal.charCodeAt(0) + (hashCode << 6) + (hashCode << 16)  - hashCode
+  ,0)
+}
+// console.log(sdbm("name")) // -3521204949
+// console.log(sdbm("age")) // 808122783
+```
+
+[⬆ back to top](#table-of-contents)
+
 ### standardDeviation
 
 Returns the standard deviation of an array of numbers.
@@ -1794,12 +1830,12 @@ const cleanObj = (obj, keysToKeep = [], childIndicator) => {
     } else if (!keysToKeep.includes(key)) {
       delete obj[key];
     }
-  })
+  });
+  return obj;
 }
 /*
   const testObj = {a: 1, b: 2, children: {a: 1, b: 2}}
-  cleanObj(testObj, ["a"],"children")
-  console.log(testObj)// { a: 1, children : { a: 1}}
+  cleanObj(testObj, ["a"],"children") // { a: 1, children : { a: 1}}
 */
 ```
 
@@ -2307,6 +2343,25 @@ const isSymbol = val => typeof val === 'symbol';
 
 [⬆ back to top](#table-of-contents)
 
+### randomHexColor
+
+Generates a random hexadecimal color code.
+
+Use `Math.random` to generate a random 24-bit(6x4bits) hexadecimal number. Use bit shifting and then convert it to an hexadecimal String using `toString(16)`. 
+
+```js
+const randomHexColor = () => {
+    let n = (Math.random()*0xfffff|0).toString(16);
+    return '#' + (n.length !== 6
+        ? (Math.random()*0xf|0).toString(16) + n : n);
+}
+// randomHexColorCode() -> "#e34155"
+// randomHexColorCode() -> "#fd73a6"
+// randomHexColorCode() -> "#4144c6"
+```
+
+[⬆ back to top](#table-of-contents)
+
 ### RGBToHex
 
 Converts the values of RGB components to a color code.
@@ -2396,65 +2451,6 @@ Use `Number()` to check if the coercion holds.
 const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
 // validateNumber('10') -> true
 ```
-
-[⬆ back to top](#table-of-contents)
-## _Uncategorized_
-
-### pipeFunctions
-
-Performs left-to-right function composition.
-
-Use `Array.reduce()` with the spread operator (`...`) to perform left-to-right function composition.
-The first (leftmost) function can accept one or more arguments; the remaining functions must be unary.
-
-```js
-const pipeFunctions = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
-/*
-const add5 = x => x + 5
-const multiply = (x, y) => x * y
-const multiplyAndAdd5 = pipeFunctions(multiply, add5)
-multiplyAndAdd5(5, 2) -> 15
-*/
-```
-
-[⬆ back to top](#table-of-contents)
-
-### randomHexColor
-
-Generates a random hexadecimal color code.
-
-Use `Math.random` to generate a random 24-bit(6x4bits) hexadecimal number. Use bit shifting and then convert it to an hexadecimal String using `toString(16)`. 
-
-```js
-const randomHexColor = () => {
-    let n = (Math.random()*0xfffff|0).toString(16);
-    return '#' + (n.length !== 6
-        ? (Math.random()*0xf|0).toString(16) + n : n);
-}
-// randomHexColorCode() -> "#e34155"
-// randomHexColorCode() -> "#fd73a6"
-// randomHexColorCode() -> "#4144c6"
-```
-
-[⬆ back to top](#table-of-contents)
-
-### sdbmHashAlgorithm
-
-This algorithm is a simple hash-algorithm that hashes it input string `s` into a whole number.
-
-Use `split('')` and `Array.reduce()` to create a hash of the input string, utilizing bit shifting.
-
-``` js
-const sdbm = str => {
-  let arr = str.split('');
-  return arr.reduce((hashCode, currentVal) =>
-    hashCode = currentVal.charCodeAt(0) + (hashCode << 6) + (hashCode << 16)  - hashCode
-  ,0)
-}
-// console.log(sdbm("name")) // -3521204949
-// console.log(sdbm("age")) // 808122783
-```
-
 
 [⬆ back to top](#table-of-contents)
 
