@@ -168,7 +168,7 @@
 * [`isNumber`](#isnumber)
 * [`isString`](#isstring)
 * [`isSymbol`](#issymbol)
-* [`randomHexColor`](#randomhexcolor)
+* [`randomHexColorCode`](#randomhexcolorcode)
 * [`RGBToHex`](#rgbtohex)
 * [`sdbm`](#sdbm)
 * [`timeTaken`](#timetaken)
@@ -2707,17 +2707,14 @@ isSymbol(Symbol('x')) // true
 
 [⬆ back to top](#table-of-contents)
 
-### randomHexColor
+### randomHexColorCode
 
 Generates a random hexadecimal color code.
 
 Use `Math.random` to generate a random 24-bit(6x4bits) hexadecimal number. Use bit shifting and then convert it to an hexadecimal String using `toString(16)`.
 
 ```js
-const randomHexColor = () => {
-  let n = (Math.random() * 0xfffff | 0).toString(16);
-  return '#' + (n.length !== 6
-        ? (Math.random() * 0xf | 0).toString(16) + n : n);
+const randomHexColorCode = () => '#'+(Math.random()*0xFFFFFF<<0).toString(16);
 };
 ```
 
@@ -2741,6 +2738,28 @@ const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6
 
 ```js
 RGBToHex(255, 165, 1) // 'ffa501'
+```
+
+[⬆ back to top](#table-of-contents)
+
+### sbdm
+
+This algorithm is a simple hash-algorithm that hashes it input string `s` into a whole number.
+
+Use `split('')` and `Array.reduce()` to create a hash of the input string, utilizing bit shifting.
+
+``` js
+const sdbm = str => {
+  let arr = str.split('');
+  return arr.reduce((hashCode, currentVal) =>
+    hashCode = currentVal.charCodeAt(0) + (hashCode << 6) + (hashCode << 16)  - hashCode
+  ,0)
+}
+```
+
+```js
+console.log(sdbm("name")) // -3521204949
+console.log(sdbm("age")) // 808122783
 ```
 
 [⬆ back to top](#table-of-contents)
