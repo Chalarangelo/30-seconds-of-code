@@ -1,6 +1,6 @@
 ![Logo](/logo.png)
 
-# 30 seconds of code
+# 30 seconds of code 
 [![License](https://img.shields.io/badge/license-CC0--1.0-blue.svg)](https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE) [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/30-seconds-of-code/Lobby) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![Travis Build](https://travis-ci.org/Chalarangelo/30-seconds-of-code.svg?branch=master)](https://travis-ci.org/Chalarangelo/30-seconds-of-code) [![Insight.io](https://img.shields.io/badge/insight.io-Ready-brightgreen.svg)](https://insight.io/github.com/Chalarangelo/30-seconds-of-code/tree/master/?source=0) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/Flet/semistandard)
 
 > Curated collection of useful Javascript snippets that you can understand in 30 seconds or less.
@@ -224,7 +224,7 @@ Flip takes a function as an argument, then makes the first argument the last
 Return a closure that takes variadic inputs, and splices the last argument to make it the first argument before applying the rest.
 
 ```js
-const flip = fn => (...args) => fn(args.pop(), ...args)
+const flip = fn => (...args) => fn(args.pop(), ...args);
 ```
 
 ```js
@@ -235,6 +235,26 @@ let mergePerson = mergeFrom.bind(null, a)
 mergePerson(b) // == b
 b = {}
 Object.assign(b, a) // == b
+```
+
+[⬆ back to top](#table-of-contents)
+
+### pipeFunctions
+
+Performs left-to-right function composition.
+
+Use `Array.reduce()` with the spread operator (`...`) to perform left-to-right function composition.
+The first (leftmost) function can accept one or more arguments; the remaining functions must be unary.
+
+```js
+const pipeFunctions = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
+```
+
+```js
+const add5 = x => x + 5
+const multiply = (x, y) => x * y
+const multiplyAndAdd5 = pipeFunctions(multiply, add5)
+multiplyAndAdd5(5, 2) // 15
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -259,7 +279,7 @@ const promisify = func =>
 
 ```js
 const delay = promisify((d, cb) => setTimeout(cb, d))
-delay(2000).then(() => console.log('Hi!')) -> // Promise resolves after 2s
+delay(2000).then(() => console.log('Hi!')) // // Promise resolves after 2s
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -276,8 +296,8 @@ const spreadOver = fn => argsArr => fn(...argsArr);
 
 ```js
 const arrayMax = spreadOver(Math.max)
-arrayMax([1,2,3]) -> 3
-arrayMax([1,2,4])  -> 4
+arrayMax([1,2,3]) // 3
+arrayMax([1,2,4])  // 4
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -297,8 +317,8 @@ const arrayGcd = arr => {
 ```
 
 ```js
-arrayGcd([1,2,3,4,5]) -> 1
-arrayGcd([4,8,12]) -> 4
+arrayGcd([1,2,3,4,5]) // 1
+arrayGcd([4,8,12]) // 4
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -318,8 +338,8 @@ const arrayLcm = arr => {
 ```
 
 ```js
-arrayLcm([1,2,3,4,5]) -> 60
-arrayLcm([4,8,12]) -> 24
+arrayLcm([1,2,3,4,5]) // 60
+arrayLcm([4,8,12]) // 24
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -335,7 +355,7 @@ const arrayMax = arr => Math.max(...arr);
 ```
 
 ```js
-arrayMax([10, 1, 5]) -> 10
+arrayMax([10, 1, 5]) // 10
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -351,7 +371,7 @@ const arrayMin = arr => Math.min(...arr);
 ```
 
 ```js
-arrayMin([10, 1, 5]) -> 1
+arrayMin([10, 1, 5]) // 1
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -370,7 +390,7 @@ const chunk = (arr, size) =>
 ```
 
 ```js
-chunk([1,2,3,4,5], 2) -> [[1,2],[3,4],[5]]
+chunk([1,2,3,4,5], 2) // [[1,2],[3,4],[5]]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -386,7 +406,7 @@ const compact = arr => arr.filter(Boolean);
 ```
 
 ```js
-compact([0, 1, false, 2, '', 3, 'a', 'e'*23, NaN, 's', 34]) -> [ 1, 2, 3, 'a', 's', 34 ]
+compact([0, 1, false, 2, '', 3, 'a', 'e'*23, NaN, 's', 34]) // [ 1, 2, 3, 'a', 's', 34 ]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -402,7 +422,7 @@ const countOccurrences = (arr, value) => arr.reduce((a, v) => v === value ? a + 
 ```
 
 ```js
-countOccurrences([1,1,2,1,2,3], 1) -> 3
+countOccurrences([1,1,2,1,2,3], 1) // 3
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -420,7 +440,7 @@ const deepFlatten = arr => [].concat(...arr.map(v => Array.isArray(v) ? deepFlat
 ```
 
 ```js
-deepFlatten([1,[2],[[3],4],5]) -> [1,2,3,4,5]
+deepFlatten([1,[2],[[3],4],5]) // [1,2,3,4,5]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -436,7 +456,7 @@ const difference = (a, b) => { const s = new Set(b); return a.filter(x => !s.has
 ```
 
 ```js
-difference([1,2,3], [1,2,4]) -> [3]
+difference([1,2,3], [1,2,4]) // [3]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -452,7 +472,7 @@ const differenceWith = (arr, val, comp) => arr.filter(a => !val.find(b => comp(a
 ```
 
 ```js
-differenceWith([1, 1.2, 1.5, 3], [1.9, 3], (a,b) => Math.round(a) == Math.round(b)) -> [1, 1.2]
+differenceWith([1, 1.2, 1.5, 3], [1.9, 3], (a,b) => Math.round(a) == Math.round(b)) // [1, 1.2]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -468,7 +488,7 @@ const distinctValuesOfArray = arr => [...new Set(arr)];
 ```
 
 ```js
-distinctValuesOfArray([1,2,2,3,4,4,5]) -> [1,2,3,4,5]
+distinctValuesOfArray([1,2,2,3,4,4,5]) // [1,2,3,4,5]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -488,7 +508,7 @@ const dropElements = (arr, func) => {
 ```
 
 ```js
-dropElements([1, 2, 3, 4], n => n >= 3) -> [3,4]
+dropElements([1, 2, 3, 4], n => n >= 3) // [3,4]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -504,9 +524,9 @@ const dropRight = (arr, n = 1) => arr.slice(0, -n);
 ```
 
 ```js
-dropRight([1,2,3]) -> [1,2]
-dropRight([1,2,3], 2) -> [1]
-dropRight([1,2,3], 42) -> []
+dropRight([1,2,3]) // [1,2]
+dropRight([1,2,3], 2) // [1]
+dropRight([1,2,3], 42) // []
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -522,7 +542,7 @@ const everyNth = (arr, nth) => arr.filter((e, i) => i % nth === nth - 1);
 ```
 
 ```js
-everyNth([1,2,3,4,5,6], 2) -> [ 2, 4, 6 ]
+everyNth([1,2,3,4,5,6], 2) // [ 2, 4, 6 ]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -538,7 +558,7 @@ const filterNonUnique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexO
 ```
 
 ```js
-filterNonUnique([1,2,2,3,4,4,5]) -> [1,3,5]
+filterNonUnique([1,2,2,3,4,4,5]) // [1,3,5]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -554,7 +574,7 @@ const flatten = arr => [ ].concat( ...arr );
 ```
 
 ```js
-flatten([1,[2],3,4]) -> [1,2,3,4]
+flatten([1,[2],3,4]) // [1,2,3,4]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -575,7 +595,7 @@ const flattenDepth = (arr, depth = 1) =>
 ```
 
 ```js
-flatten([1,[2],3,4]) -> [1,2,3,4]
+flatten([1,[2],3,4]) // [1,2,3,4]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -594,8 +614,8 @@ const groupBy = (arr, func) =>
 ```
 
 ```js
-groupBy([6.1, 4.2, 6.3], Math.floor) -> {4: [4.2], 6: [6.1, 6.3]}
-groupBy(['one', 'two', 'three'], 'length') -> {3: ['one', 'two'], 5: ['three']}
+groupBy([6.1, 4.2, 6.3], Math.floor) // {4: [4.2], 6: [6.1, 6.3]}
+groupBy(['one', 'two', 'three'], 'length') // {3: ['one', 'two'], 5: ['three']}
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -611,7 +631,7 @@ const head = arr => arr[0];
 ```
 
 ```js
-head([1,2,3]) -> 1
+head([1,2,3]) // 1
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -627,7 +647,7 @@ const initial = arr => arr.slice(0, -1);
 ```
 
 ```js
-initial([1,2,3]) -> [1,2]
+initial([1,2,3]) // [1,2]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -643,7 +663,7 @@ const initialize2DArray = (w, h, val = null) => Array(h).fill().map(() => Array(
 ```
 
 ```js
-initialize2DArray(2, 2, 0) -> [[0,0], [0,0]]
+initialize2DArray(2, 2, 0) // [[0,0], [0,0]]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -661,8 +681,8 @@ const initializeArrayWithRange = (end, start = 0) =>
 ```
 
 ```js
-initializeArrayWithRange(5) -> [0,1,2,3,4,5]
-initializeArrayWithRange(7, 3) -> [3,4,5,6,7]
+initializeArrayWithRange(5) // [0,1,2,3,4,5]
+initializeArrayWithRange(7, 3) // [3,4,5,6,7]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -679,7 +699,7 @@ const initializeArrayWithValues = (n, value = 0) => Array(n).fill(value);
 ```
 
 ```js
-initializeArrayWithValues(5, 2) -> [2,2,2,2,2]
+initializeArrayWithValues(5, 2) // [2,2,2,2,2]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -695,7 +715,7 @@ const intersection = (a, b) => { const s = new Set(b); return a.filter(x => s.ha
 ```
 
 ```js
-intersection([1,2,3], [4,3,2]) -> [2,3]
+intersection([1,2,3], [4,3,2]) // [2,3]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -711,7 +731,7 @@ const last = arr => arr[arr.length - 1];
 ```
 
 ```js
-last([1,2,3]) -> 3
+last([1,2,3]) // 3
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -747,8 +767,8 @@ const nthElement = (arr, n=0) => (n>0? arr.slice(n,n+1) : arr.slice(n))[0];
 ```
 
 ```js
-nthElement(['a','b','c'],1) -> 'b'
-nthElement(['a','b','b'],-3) -> 'a'
+nthElement(['a','b','c'],1) // 'b'
+nthElement(['a','b','b'],-3) // 'a'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -765,7 +785,7 @@ const pick = (obj, arr) =>
 ```
 
 ```js
-pick({ 'a': 1, 'b': '2', 'c': 3 }, ['a', 'c']) -> { 'a': 1, 'c': 3 }
+pick({ 'a': 1, 'b': '2', 'c': 3 }, ['a', 'c']) // { 'a': 1, 'c': 3 }
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -791,11 +811,11 @@ const pull = (arr, ...args) => {
 ```js
 let myArray1 = ['a', 'b', 'c', 'a', 'b', 'c'];
 pull(myArray1, 'a', 'c');
-console.log(myArray1) -> [ 'b', 'b' ]
+console.log(myArray1) // [ 'b', 'b' ]
 
 let myArray2 = ['a', 'b', 'c', 'a', 'b', 'c'];
 pull(myArray2, ['a', 'c']);
-console.log(myArray2) -> [ 'b', 'b' ]
+console.log(myArray2) // [ 'b', 'b' ]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -823,8 +843,8 @@ const pullAtIndex = (arr, pullArr) => {
 let myArray = ['a', 'b', 'c', 'd'];
 let pulled = pullAtIndex(myArray, [1, 3]);
 
-console.log(myArray); -> [ 'a', 'c' ]
-console.log(pulled); -> [ 'b', 'd' ]
+console.log(myArray); // [ 'a', 'c' ]
+console.log(pulled); // [ 'b', 'd' ]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -851,8 +871,8 @@ const pullAtValue = (arr, pullArr) => {
 ```js
 let myArray = ['a', 'b', 'c', 'd'];
 let pulled = pullAtValue(myArray, ['b', 'd']);
-console.log(myArray); -> [ 'a', 'c' ]
-console.log(pulled); -> [ 'b', 'd' ]
+console.log(myArray); // [ 'a', 'c' ]
+console.log(pulled); // [ 'b', 'd' ]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -873,7 +893,7 @@ const remove = (arr, func) =>
 ```
 
 ```js
-remove([1, 2, 3, 4], n => n % 2 == 0) -> [2, 4]
+remove([1, 2, 3, 4], n => n % 2 == 0) // [2, 4]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -890,7 +910,7 @@ const sample = arr => arr[Math.floor(Math.random() * arr.length)];
 ```
 
 ```js
-sample([3, 7, 9, 11]) -> 9
+sample([3, 7, 9, 11]) // 9
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -902,11 +922,20 @@ Randomizes the order of the values of an array, returning a new array.
 Uses the Fisher-Yates algoritm to reorder the elements of the array, based on the [Lodash implementation](https://github.com/lodash/lodash/blob/b2ea6b1cd251796dcb5f9700c4911a7b6223920b/shuffle.js), but as a pure function.
 
 ```js
-const shuffle = arr => arr.sort(() => Math.random() - 0.5);
+const shuffle = ([...arr]) => {
+  let m = arr.length;
+  while (m) {
+    const i = Math.floor(Math.random() * m--);
+    [arr[m], arr[i]] = [arr[i], arr[m]];
+  }
+  return arr;
+};
 ```
 
 ```js
-shuffle([1,2,3]) -> [2,3,1]
+const foo = [1,2,3]
+shuffle(foo) // [2,3,1]
+console.log(foo) // [1,2,3]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -922,7 +951,7 @@ const similarity = (arr, values) => arr.filter(v => values.includes(v));
 ```
 
 ```js
-similarity([1,2,3], [1,2,4]) -> [1,2]
+similarity([1,2,3], [1,2,4]) // [1,2]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -941,7 +970,7 @@ const symmetricDifference = (a, b) => {
 ```
 
 ```js
-symmetricDifference([1,2,3], [1,2,4]) -> [3,4]
+symmetricDifference([1,2,3], [1,2,4]) // [3,4]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -957,8 +986,8 @@ const tail = arr => arr.length > 1 ? arr.slice(1) : arr;
 ```
 
 ```js
-tail([1,2,3]) -> [2,3]
-tail([1]) -> [1]
+tail([1,2,3]) // [2,3]
+tail([1]) // [1]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -974,8 +1003,8 @@ const take = (arr, n = 1) => arr.slice(0, n);
 ```
 
 ```js
-take([1, 2, 3], 5) -> [1, 2, 3]
-take([1, 2, 3], 0) -> []
+take([1, 2, 3], 5) // [1, 2, 3]
+take([1, 2, 3], 0) // []
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -991,8 +1020,8 @@ const takeRight = (arr, n = 1) => arr.slice(arr.length - n, arr.length);
 ```
 
 ```js
-takeRight([1, 2, 3], 2) -> [ 2, 3 ]
-takeRight([1, 2, 3]) -> [3]
+takeRight([1, 2, 3], 2) // [ 2, 3 ]
+takeRight([1, 2, 3]) // [3]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1008,7 +1037,7 @@ const union = (a, b) => Array.from(new Set([...a, ...b]));
 ```
 
 ```js
-union([1,2,3], [4,3,2]) -> [1,2,3,4]
+union([1,2,3], [4,3,2]) // [1,2,3,4]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1026,7 +1055,7 @@ const without = (arr, ...args) => arr.filter(v => !args.includes(v));
 ```
 
 ```js
-without([2, 1, 2, 3], 1, 2) -> [3]
+without([2, 1, 2, 3], 1, 2) // [3]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1049,8 +1078,8 @@ const zip = (...arrays) => {
 ```
 
 ```js
-zip(['a', 'b'], [1, 2], [true, false]); -> [['a', 1, true], ['b', 2, false]]
-zip(['a'], [1, 2], [true, false]); -> [['a', 1, true], [undefined, 2, false]]
+zip(['a', 'b'], [1, 2], [true, false]); // [['a', 1, true], ['b', 2, false]]
+zip(['a'], [1, 2], [true, false]); // [['a', 1, true], [undefined, 2, false]]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1066,8 +1095,8 @@ const zipObject = ( props, values ) => props.reduce( ( obj, prop, index ) => ( o
 ```
 
 ```js
-zipObject(['a','b','c'], [1,2]) -> {a: 1, b: 2, c: undefined}
-zipObject(['a','b'], [1,2,3]) -> {a: 1, b: 2}
+zipObject(['a','b','c'], [1,2]) // {a: 1, b: 2, c: undefined}
+zipObject(['a','b'], [1,2,3]) // {a: 1, b: 2}
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1101,7 +1130,7 @@ const bottomVisible = () =>
 ```
 
 ```js
-// bottomVisible() -> true
+// bottomVisible() // true
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1117,7 +1146,7 @@ const currentURL = () => window.location.href;
 ```
 
 ```js
-currentUrl() -> 'https://google.com'
+currentUrl() // 'https://google.com'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1133,8 +1162,8 @@ const detectDeviceType = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobi
 ```
 
 ```js
-detectDeviceType() -> "Mobile"
-detectDeviceType() -> "Desktop"
+detectDeviceType() // "Mobile"
+detectDeviceType() // "Desktop"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1161,8 +1190,8 @@ const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
 
 ```js
 // e.g. 100x100 viewport and a 10x10px element at position {top: -1, left: 0, bottom: 9, right: 10}
-elementIsVisibleInViewport(el) -> false // (not fully visible)
-elementIsVisibleInViewport(el, true) -> true // (partially visible)
+elementIsVisibleInViewport(el) // false // (not fully visible)
+elementIsVisibleInViewport(el, true) // true // (partially visible)
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1181,7 +1210,7 @@ const getScrollPosition = (el = window) =>
 ```
 
 ```js
-getScrollPosition() -> {x: 0, y: 200}
+getScrollPosition() // {x: 0, y: 200}
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1201,7 +1230,7 @@ const getURLParameters = url =>
 ```
 
 ```js
-getURLParameters('http://url.com/page?name=Adam&surname=Smith') -> {name: 'Adam', surname: 'Smith'}
+getURLParameters('http://url.com/page?name=Adam&surname=Smith') // {name: 'Adam', surname: 'Smith'}
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1273,7 +1302,7 @@ const getDaysDiffBetweenDates = (dateInitial, dateFinal) => (dateFinal - dateIni
 ```
 
 ```js
-getDaysDiffBetweenDates(new Date("2017-12-13"), new Date("2017-12-22")) -> 9
+getDaysDiffBetweenDates(new Date("2017-12-13"), new Date("2017-12-22")) // 9
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1292,7 +1321,7 @@ const JSONToDate = arr => {
 ```
 
 ```js
-JSONToDate(/Date(1489525200000)/) -> "14/3/2017"
+JSONToDate(/Date(1489525200000)/) // "14/3/2017"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1305,12 +1334,11 @@ Use `Date.toISOString()`, `split('T')` and `replace()` to convert a date from Am
 Throws an error if the passed time cannot be converted to a date.
 
 ```js
-const toEnglishDate  = (time) =>
-  {try{return new Date(time).toISOString().split('T')[0].replace(/-/g, '/')}catch(e){return}};
+const toEnglishDate = (time) => { try { return new Date(time).toISOString().split('T')[0].replace(/-/g, '/'); } catch (e) {} };
 ```
 
 ```js
-toEnglishDate('09/21/2010') -> '21/09/2010'
+toEnglishDate('09/21/2010') // '21/09/2010'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1363,7 +1391,7 @@ const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));
 const add5 = x => x + 5
 const multiply = (x, y) => x * y
 const multiplyAndAdd5 = compose(add5, multiply)
-multiplyAndAdd5(5, 2) -> 15
+multiplyAndAdd5(5, 2) // 15
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1385,8 +1413,8 @@ const curry = (fn, arity = fn.length, ...args) =>
 ```
 
 ```js
-curry(Math.pow)(2)(10) -> 1024
-curry(Math.min, 3)(10)(50)(2) -> 2
+curry(Math.pow)(2)(10) // 1024
+curry(Math.min, 3)(10)(50)(2) // 2
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1402,27 +1430,7 @@ const functionName = fn => (console.debug(fn.name), fn);
 ```
 
 ```js
-functionName(Math.max) -> max (logged in debug channel of console)
-```
-
-[⬆ back to top](#table-of-contents)
-
-### pipe
-
-Performs left-to-right function composition.
-
-Use `Array.reduce()` with the spread operator (`...`) to perform left-to-right function composition.
-The first (leftmost) function can accept one or more arguments; the remaining functions must be unary.
-
-```js
-const pipeFunctions = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
-```
-
-```js
-const add5 = x => x + 5
-const multiply = (x, y) => x * y
-const multiplyAndAdd5 = pipeFunctions(multiply, add5)
-multiplyAndAdd5(5, 2) -> 15
+functionName(Math.max) // max (logged in debug channel of console)
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1439,7 +1447,7 @@ const runPromisesInSeries = ps => ps.reduce((p, next) => p.then(next), Promise.r
 
 ```js
 const delay = (d) => new Promise(r => setTimeout(r, d))
-runPromisesInSeries([() => delay(1000), () => delay(2000)]) -> //executes each promise sequentially, taking a total of 3 seconds to complete
+runPromisesInSeries([() => delay(1000), () => delay(2000)]) // //executes each promise sequentially, taking a total of 3 seconds to complete
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1476,8 +1484,8 @@ const negate = func => (...args) => !func(...args);
 ```
 
 ```js
-filter([1, 2, 3, 4, 5, 6], negate(isEven)) -> [1, 3, 5]
-negate(isOdd)(1) -> false
+filter([1, 2, 3, 4, 5, 6], negate(isEven)) // [1, 3, 5]
+negate(isOdd)(1) // false
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1494,7 +1502,7 @@ const arrayAverage = arr => arr.reduce((acc, val) => acc + val, 0) / arr.length;
 ```
 
 ```js
-arrayAverage([1,2,3]) -> 2
+arrayAverage([1,2,3]) // 2
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1510,30 +1518,26 @@ const arraySum = arr => arr.reduce((acc, val) => acc + val, 0);
 ```
 
 ```js
-arraySum([1,2,3,4]) -> 10
+arraySum([1,2,3,4]) // 10
 ```
 
 [⬆ back to top](#table-of-contents)
 
 ### clampNumber
 
-Clamps `num` within the inclusive range specified by the boundary values `a` and `b`
+Clamps `num` within the inclusive range specified by the boundary values `a` and `b`.
 
-If `lower` is greater than `upper`, swap them.
 If `num` falls within the range, return `num`.
 Otherwise, return the nearest number in the range.
 
 ```js
-const clampNumber = (num, lower, upper) => {
-  if(lower > upper) upper = [lower, lower = upper][0];
-  return (num>=lower && num<=upper) ? num : ((num < lower) ? lower : upper)
-}
+const clampNumber = (num, a, b) => Math.max(Math.min(num, Math.max(a,b)),Math.min(a,b));
 ```
 
 ```js
-clampNumber(2, 3, 5) -> 3
-clampNumber(1, -1, -5) -> -1
-clampNumber(3, 2, 4) -> 3
+clampNumber(2, 3, 5) // 3
+clampNumber(1, -1, -5) // -1
+clampNumber(3, 2, 4) // 3
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1549,8 +1553,8 @@ const collatz = n => (n % 2 == 0) ? (n / 2) : (3 * n + 1);
 ```
 
 ```js
-collatz(8) -> 4
-collatz(5) -> 16
+collatz(8) // 4
+collatz(5) // 16
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1567,7 +1571,7 @@ const digitize = n => [...''+n].map(i => parseInt(i));
 ```
 
 ```js
-differenceWith([1, 1.2, 1.5, 3], [1.9, 3], (a,b) => Math.round(a) == Math.round(b)) -> [1, 1.2]
+differenceWith([1, 1.2, 1.5, 3], [1.9, 3], (a,b) => Math.round(a) == Math.round(b)) // [1, 1.2]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1583,7 +1587,7 @@ const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
 ```
 
 ```js
-distance(1,1, 2,3) -> 2.23606797749979
+distance(1,1, 2,3) // 2.23606797749979
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1604,7 +1608,7 @@ const factorial = n =>
 ```
 
 ```js
-factorial(6) -> 720
+factorial(6) // 720
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1622,7 +1626,7 @@ const fibonacci = n =>
 ```
 
 ```js
-factorial(6) -> 720
+factorial(6) // 720
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1639,7 +1643,7 @@ const fibonacciCountUntilNum = num =>
 ```
 
 ```js
-fibonacciCountUntilNum(10) -> 7
+fibonacciCountUntilNum(10) // 7
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1660,7 +1664,7 @@ const fibonacciUntilNum = num => {
 ```
 
 ```js
-fibonacciCountUntilNum(10) -> 7
+fibonacciCountUntilNum(10) // 7
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1678,7 +1682,7 @@ const gcd = (x, y) => !y ? x : gcd(y, x % y);
 ```
 
 ```js
-gcd (8, 36) -> 4
+gcd (8, 36) // 4
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1696,7 +1700,7 @@ const hammingDistance = (num1, num2) =>
 ```
 
 ```js
-hammingDistance(2,3) -> 1
+hammingDistance(2,3) // 1
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1716,10 +1720,10 @@ const inRange = (n, start, end=null) => {
 ```
 
 ```js
-inRange(3, 2, 5) -> true
-inRange(3, 4) -> true
-inRange(2, 3, 5) -> false
-inrange(3, 2) -> false
+inRange(3, 2, 5) // true
+inRange(3, 4) // true
+inRange(2, 3, 5) // false
+inrange(3, 2) // false
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1736,9 +1740,9 @@ const isArmstrongNumber = digits =>
 ```
 
 ```js
-isArmstrongNumber(1634) -> true
-isArmstrongNumber(371) -> true
-isArmstrongNumber(56) -> false
+isArmstrongNumber(1634) // true
+isArmstrongNumber(371) // true
+isArmstrongNumber(56) // false
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1754,7 +1758,7 @@ const isDivisible = (dividend, divisor) => dividend % divisor === 0;
 ```
 
 ```js
-isDivisible(6,3) -> true
+isDivisible(6,3) // true
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1771,7 +1775,7 @@ const isEven = num => num % 2 === 0;
 ```
 
 ```js
-isEven(3) -> false
+isEven(3) // false
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1792,8 +1796,8 @@ const isPrime = num => {
 ```
 
 ```js
-isPrime(11) -> true
-isPrime(12) -> false
+isPrime(11) // true
+isPrime(12) // false
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1813,7 +1817,7 @@ const lcm = (x, y) => {
 ```
 
 ```js
-lcm(12,7) -> 84
+lcm(12,7) // 84
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1833,8 +1837,8 @@ const median = arr => {
 ```
 
 ```js
-median([5,6,50,1,-5]) -> 5
-median([0,10,-2,7]) -> 3.5
+median([5,6,50,1,-5]) // 5
+median([0,10,-2,7]) // 3.5
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1854,7 +1858,7 @@ const palindrome = str => {
 ```
 
 ```js
-palindrome('taco cat') -> true
+palindrome('taco cat') // true
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1871,7 +1875,7 @@ const percentile = (arr, val) =>
 ```
 
 ```js
-percentile([1,2,3,4,5,6,7,8,9,10], 6) -> 55
+percentile([1,2,3,4,5,6,7,8,9,10], 6) // 55
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1888,7 +1892,7 @@ const powerset = arr =>
 ```
 
 ```js
-powerset([1,2]) -> [[], [1], [2], [2,1]]
+powerset([1,2]) // [[], [1], [2], [2,1]]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1910,7 +1914,7 @@ const primes = num => {
 ```
 
 ```js
-primes(10) -> [2,3,5,7]
+primes(10) // [2,3,5,7]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1926,7 +1930,7 @@ const randomIntegerInRange = (min, max) => Math.floor(Math.random() * (max - min
 ```
 
 ```js
-randomIntegerInRange(0, 5) -> 2
+randomIntegerInRange(0, 5) // 2
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1942,7 +1946,7 @@ const randomNumberInRange = (min, max) => Math.random() * (max - min) + min;
 ```
 
 ```js
-randomNumberInRange(2,10) -> 6.0211363285087005
+randomNumberInRange(2,10) // 6.0211363285087005
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1959,7 +1963,7 @@ const round = (n, decimals=0) => Number(`${Math.round(`${n}e${decimals}`)}e-${de
 ```
 
 ```js
-round(1.005, 2) -> 1.01
+round(1.005, 2) // 1.01
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2002,8 +2006,8 @@ const standardDeviation = (arr, usePopulation = false) => {
 ```
 
 ```js
-standardDeviation([10,2,38,23,38,23,21]) -> 13.284434142114991 (sample)
-standardDeviation([10,2,38,23,38,23,21], true) -> 12.29899614287479 (population)
+standardDeviation([10,2,38,23,38,23,21]) // 13.284434142114991 (sample)
+standardDeviation([10,2,38,23,38,23,21], true) // 12.29899614287479 (population)
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2027,7 +2031,7 @@ const speechSynthesis = message => {
 ```
 
 ```js
-speechSynthesis('Hello, World') -> // plays the message
+speechSynthesis('Hello, World') // // plays the message
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2045,7 +2049,7 @@ const JSONToFile = (obj, filename) => fs.writeFile(`${filename}.json`, JSON.stri
 ```
 
 ```js
-JSONToFile({test: "is passed"}, 'testJsonFile') -> writes the object to 'testJsonFile.json'
+JSONToFile({test: "is passed"}, 'testJsonFile') // writes the object to 'testJsonFile.json'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2064,13 +2068,25 @@ const readFileLines = filename => fs.readFileSync(filename).toString('UTF8').spl
 ```
 
 ```js
+/*
+contents of test.txt :
+  line1
+  line2
+  line3
+  ___________________________
+*/
+let arr = readFileLines('test.txt')
+console.log(arr) // ['line1', 'line2', 'line3']
+```
+
+```js
 contents of test.txt :
   line1
   line2
   line3
   ___________________________
 let arr = readFileLines('test.txt')
-console.log(arr) // -> ['line1', 'line2', 'line3']
+console.log(arr) // // ['line1', 'line2', 'line3']
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2091,14 +2107,14 @@ const cleanObj = (obj, keysToKeep = [], childIndicator) => {
     } else if (!keysToKeep.includes(key)) {
       delete obj[key];
     }
-  })
-}
+   });
+  return obj;
+};
 ```
 
 ```js
 const testObj = {a: 1, b: 2, children: {a: 1, b: 2}}
-cleanObj(testObj, ["a"],"children")
-console.log(testObj) // { a: 1, children : { a: 1}}
+cleanObj(testObj, ["a"],"children") // { a: 1, children : { a: 1}}
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2114,7 +2130,7 @@ const objectFromPairs = arr => arr.reduce((a, v) => (a[v[0]] = v[1], a), {});
 ```
 
 ```js
-objectFromPairs([['a',1],['b',2]]) -> {a: 1, b: 2}
+objectFromPairs([['a',1],['b',2]]) // {a: 1, b: 2}
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2130,7 +2146,7 @@ const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
 ```
 
 ```js
-objectToPairs({a: 1, b: 2}) -> [['a',1],['b',2]])
+objectToPairs({a: 1, b: 2}) // [['a',1],['b',2]])
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2158,8 +2174,8 @@ const orderBy = (arr, props, orders) =>
 ```js
 const users = [{ 'name': 'fred',   'age': 48 },{ 'name': 'barney', 'age': 36 },
   { 'name': 'fred',   'age': 40 },{ 'name': 'barney', 'age': 34 }];
-orderby(users, ['name', 'age'], ['asc', 'desc']) -> [{name: 'barney', age: 36}, {name: 'barney', age: 34}, {name: 'fred', age: 48}, {name: 'fred', age: 40}]
-orderby(users, ['name', 'age']) -> [{name: 'barney', age: 34}, {name: 'barney', age: 36}, {name: 'fred', age: 40}, {name: 'fred', age: 48}]
+orderby(users, ['name', 'age'], ['asc', 'desc']) // [{name: 'barney', age: 36}, {name: 'barney', age: 34}, {name: 'fred', age: 48}, {name: 'fred', age: 40}]
+orderby(users, ['name', 'age']) // [{name: 'barney', age: 34}, {name: 'barney', age: 36}, {name: 'fred', age: 40}, {name: 'fred', age: 48}]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2177,7 +2193,7 @@ const select = (from, selector) =>
 
 ```js
 const obj = {selector: {to: {val: 'val to select'}}};
-select(obj, 'selector.to.val'); -> 'val to select'
+select(obj, 'selector.to.val'); // 'val to select'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2195,7 +2211,7 @@ const shallowClone = obj => Object.assign({}, obj);
 ```js
 const a = { x: true, y: 1 };
 const b = shallowClone(a);
-a === b -> false
+a === b // false
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2211,7 +2227,7 @@ const truthCheckCollection = (collection, pre) => (collection.every(obj => obj[p
 ```
 
 ```js
-truthCheckCollection([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}], "sex") -> true
+truthCheckCollection([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}], "sex") // true
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2235,7 +2251,7 @@ const anagrams = str => {
 ```
 
 ```js
-anagrams('abc') -> ['abc','acb','bac','bca','cab','cba']
+anagrams('abc') // ['abc','acb','bac','bca','cab','cba']
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2253,8 +2269,8 @@ const capitalize = ([first, ...rest], lowerRest = false) =>
 ```
 
 ```js
-capitalize('fooBar') -> 'FooBar'
-capitalize('fooBar', true) -> 'Foobar'
+capitalize('fooBar') // 'FooBar'
+capitalize('fooBar', true) // 'Foobar'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2270,7 +2286,7 @@ const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperC
 ```
 
 ```js
-capitalizeEveryWord('hello world!') -> 'Hello World!'
+capitalizeEveryWord('hello world!') // 'Hello World!'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2286,8 +2302,8 @@ const countVowels = str => (str.match(/[aeiou]/ig) || []).length;
 ```
 
 ```js
-countVowels('foobar') -> 3
-countVowels('gym') -> 0
+countVowels('foobar') // 3
+countVowels('gym') // 0
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2303,7 +2319,7 @@ const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 ```
 
 ```js
-escapeRegExp('(test)') -> \\(test\\)
+escapeRegExp('(test)') // \\(test\\)
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2322,9 +2338,9 @@ const fromCamelCase = (str, separator = '_') =>
 ```
 
 ```js
-fromCamelCase('someDatabaseFieldName', ' ') -> 'some database field name'
-fromCamelCase('someLabelThatNeedsToBeCamelized', '-') -> 'some-label-that-needs-to-be-camelized'
-fromCamelCase('someJavascriptProperty', '_') -> 'some_javascript_property'
+fromCamelCase('someDatabaseFieldName', ' ') // 'some database field name'
+fromCamelCase('someLabelThatNeedsToBeCamelized', '-') // 'some-label-that-needs-to-be-camelized'
+fromCamelCase('someJavascriptProperty', '_') // 'some_javascript_property'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2342,8 +2358,8 @@ const repeatString = (str="",num=2) => {
 ```
 
 ```js
-repeatString("abc",3) -> 'abcabcabc'
-repeatString("abc") -> 'abcabc'
+repeatString("abc",3) // 'abcabcabc'
+repeatString("abc") // 'abcabc'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2360,7 +2376,7 @@ const reverseString = str => str.split('').reverse().join('');
 ```
 
 ```js
-reverseString('foobar') -> 'raboof'
+reverseString('foobar') // 'raboof'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2377,7 +2393,7 @@ const sortCharactersInString = str =>
 ```
 
 ```js
-sortCharactersInString('cabbage') -> 'aabbceg'
+sortCharactersInString('cabbage') // 'aabbceg'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2399,10 +2415,10 @@ const toCamelCase = str => {
 ```
 
 ```js
-toCamelCase("some_database_field_name") -> 'someDatabaseFieldName'
-toCamelCase("Some label that needs to be camelized") -> 'someLabelThatNeedsToBeCamelized'
-toCamelCase("some-javascript-property") -> 'someJavascriptProperty'
-toCamelCase("some-mixed_string with spaces_underscores-and-hyphens") -> 'someMixedStringWithSpacesUnderscoresAndHyphens'
+toCamelCase("some_database_field_name") // 'someDatabaseFieldName'
+toCamelCase("Some label that needs to be camelized") // 'someLabelThatNeedsToBeCamelized'
+toCamelCase("some-javascript-property") // 'someJavascriptProperty'
+toCamelCase("some-mixed_string with spaces_underscores-and-hyphens") // 'someMixedStringWithSpacesUnderscoresAndHyphens'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2422,11 +2438,11 @@ const toKebabCase = str =>
 ```
 
 ```js
-toKebabCase("camelCase") -> 'camel-case'
-toKebabCase("some text") -> 'some-text'
-toKebabCase("some-mixed_string With spaces_underscores-and-hyphens") -> 'some-mixed-string-with-spaces-underscores-and-hyphens'
-toKebabCase("AllThe-small Things") -> "all-the-small-things"
-toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') -> "i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-xml-and-html"
+toKebabCase("camelCase") // 'camel-case'
+toKebabCase("some text") // 'some-text'
+toKebabCase("some-mixed_string With spaces_underscores-and-hyphens") // 'some-mixed-string-with-spaces-underscores-and-hyphens'
+toKebabCase("AllThe-small Things") // "all-the-small-things"
+toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') // "i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-xml-and-html"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2443,15 +2459,16 @@ const toSnakeCase = str => {
   str && str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
     .map(x => x.toLowerCase())
     .join('_');
+};
 ```
 
 ```js
-toSnakeCase("camelCase") -> 'camel_case'
-toSnakeCase("some text") -> 'some_text'
-toSnakeCase("some-javascript-property") -> 'some_javascript_property'
-toSnakeCase("some-mixed_string With spaces_underscores-and-hyphens") -> 'some_mixed_string_with_spaces_underscores_and_hyphens'
-toSnakeCase("AllThe-small Things") -> "all_the_smal_things"
-toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') -> "i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html"
+toSnakeCase("camelCase") // 'camel_case'
+toSnakeCase("some text") // 'some_text'
+toSnakeCase("some-javascript-property") // 'some_javascript_property'
+toSnakeCase("some-mixed_string With spaces_underscores-and-hyphens") // 'some_mixed_string_with_spaces_underscores_and_hyphens'
+toSnakeCase("AllThe-small Things") // "all_the_smal_things"
+toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') // "i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2469,7 +2486,7 @@ const truncateString = (str, num) =>
 ```
 
 ```js
-truncateString('boomerang', 7) -> 'boom...'
+truncateString('boomerang', 7) // 'boom...'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2486,8 +2503,8 @@ const words = (str, pattern = /[^a-zA-Z-]+/) => str.split(pattern).filter(Boolea
 ```
 
 ```js
-words("I love javaScript!!") -> ["I", "love", "javaScript"]
-words("python, javaScript & coffee") -> ["python", "javaScript", "coffee"]
+words("I love javaScript!!") // ["I", "love", "javaScript"]
+words("python, javaScript & coffee") // ["python", "javaScript", "coffee"]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2504,7 +2521,7 @@ const coalesce = (...args) => args.find(_ => ![undefined, null].includes(_))
 ```
 
 ```js
-coalesce(null,undefined,"",NaN, "Waldo") -> ""
+coalesce(null,undefined,"",NaN, "Waldo") // ""
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2538,8 +2555,8 @@ const extendHex = shortHex =>
 ```
 
 ```js
-extendHex('#03f') -> '#0033ff'
-extendHex('05a') -> '#0055aa'
+extendHex('#03f') // '#0033ff'
+extendHex('05a') // '#0055aa'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2556,7 +2573,7 @@ const getType = v =>
 ```
 
 ```js
-getType(new Set([1,2,3])) -> "set"
+getType(new Set([1,2,3])) // "set"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2582,9 +2599,9 @@ const hexToRGB = hex => {
 ```
 
 ```js
-hexToRGB('#27ae60ff') -> 'rgba(39, 174, 96, 255)'
-hexToRGB('27ae60') -> 'rgb(39, 174, 96)'
-hexToRGB('#fff') -> 'rgb(255, 255, 255)'
+hexToRGB('#27ae60ff') // 'rgba(39, 174, 96, 255)'
+hexToRGB('27ae60') // 'rgb(39, 174, 96)'
+hexToRGB('#fff') // 'rgb(255, 255, 255)'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2600,8 +2617,8 @@ const isArray = val => !!val && Array.isArray(val);
 ```
 
 ```js
-isArray(null) -> false
-isArray([1]) -> true
+isArray(null) // false
+isArray([1]) // true
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2617,8 +2634,8 @@ const isBoolean = val => typeof val === 'boolean';
 ```
 
 ```js
-isBoolean(null) -> false
-isBoolean(false) -> true
+isBoolean(null) // false
+isBoolean(false) // true
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2634,8 +2651,8 @@ const isFunction = val => val && typeof val === 'function';
 ```
 
 ```js
-isFunction('x') -> false
-isFunction(x => x) -> true
+isFunction('x') // false
+isFunction(x => x) // true
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2651,8 +2668,8 @@ const isNumber = val => typeof val === 'number';
 ```
 
 ```js
-isNumber('1') -> false
-isNumber(1) -> true
+isNumber('1') // false
+isNumber(1) // true
 ```
 [⬆ back to top](#table-of-contents)
 
@@ -2667,8 +2684,8 @@ const isString = val => typeof val === 'string';
 ```
 
 ```js
-isString(10) -> false
-isString('10') -> true
+isString(10) // false
+isString('10') // true
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2684,8 +2701,8 @@ const isSymbol = val => typeof val === 'symbol';
 ```
 
 ```js
-isSymbol('x') -> false
-isSymbol(Symbol('x')) -> true
+isSymbol('x') // false
+isSymbol(Symbol('x')) // true
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2697,13 +2714,17 @@ Generates a random hexadecimal color code.
 Use `Math.random` to generate a random 24-bit(6x4bits) hexadecimal number. Use bit shifting and then convert it to an hexadecimal String using `toString(16)`.
 
 ```js
-const randomHexColorCode = () => '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+const randomHexColor = () => {
+  let n = (Math.random() * 0xfffff | 0).toString(16);
+  return '#' + (n.length !== 6
+        ? (Math.random() * 0xf | 0).toString(16) + n : n);
+};
 ```
 
 ```js
-randomHexColorCode() -> "#e34155"
-randomHexColorCode() -> "#fd73a6"
-randomHexColorCode() -> "#4144c6"
+randomHexColorCode() // "#e34155"
+randomHexColorCode() // "#fd73a6"
+randomHexColorCode() // "#4144c6"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2719,7 +2740,7 @@ const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6
 ```
 
 ```js
-RGBToHex(255, 165, 1) -> 'ffa501'
+RGBToHex(255, 165, 1) // 'ffa501'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2738,7 +2759,7 @@ const timeTaken = callback => {
 ```
 
 ```js
-timeTaken(() => Math.pow(2, 10)) -> 1024
+timeTaken(() => Math.pow(2, 10)) // 1024
 (logged): timeTaken: 0.02099609375ms
 ```
 
@@ -2753,7 +2774,7 @@ const toDecimalMark = num => num.toLocaleString("en-US");
 ```
 
 ```js
-toDecimalMark(12305030388.9087) -> "12,305,030,388.9087"
+toDecimalMark(12305030388.9087) // "12,305,030,388.9087"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2776,7 +2797,7 @@ const toOrdinalSuffix = num => {
 ```
 
 ```js
-toOrdinalSuffix("123") -> "123rd"
+toOrdinalSuffix("123") // "123rd"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2795,7 +2816,7 @@ const UUIDGenerator = () =>
 ```
 
 ```js
-UUIDGenerator() -> '7982fcfe-5721-4632-bede-6000885be57d'
+UUIDGenerator() // '7982fcfe-5721-4632-bede-6000885be57d'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2813,7 +2834,7 @@ const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) ==
 ```
 
 ```js
-validateNumber('10') -> true
+validateNumber('10') // true
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2821,3 +2842,4 @@ validateNumber('10') -> true
 ## Credits
 
 *Icons made by [Smashicons](https://www.flaticon.com/authors/smashicons) from [www.flaticon.com](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).*
+
