@@ -6,7 +6,7 @@ Use `Array.slice()` to slice the remove the specified number of elements from th
 
 ```js
 const dropRight = (arr, n = 1) => arr.slice(0, -n);
-//dropRight([1,2,3]) -> [1,2]
-//dropRight([1,2,3], 2) -> [1]
-//dropRight([1,2,3], 42) -> []
+// dropRight([1,2,3]) -> [1,2]
+// dropRight([1,2,3], 2) -> [1]
+// dropRight([1,2,3], 42) -> []
 ```
