@@ -57,7 +57,7 @@ try {
       // Replace everything between ```js and ``` with the newly linted code
       fs.writeFile(
         path.join(SNIPPETS_PATH, snippet),
-        snippetData.replace(/(```js[\r\n])([\S\s]*?)(```)/, `$1${lintedCode}$3`)
+        `${snippetData.slice(0, snippetData.indexOf('```js') + 5) + '\n' + lintedCode + '```\n'}`
       );
       fs.unlink(`${snippet}.js`);
 
