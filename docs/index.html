@@ -1131,16 +1131,16 @@ const JSONToFile = (obj, filename) =&gt; fs.writeFile(`${filename}.json`, JSON.s
 convert buffer to string using <code>toString(encoding)</code> function.
 creating an array from contents of file by <code>split</code>ing file content line by line (each <code>\n</code>).</p>
 <pre><code class="language-js">const fs = require('fs');
-const readFileLines = filename =&gt; fs.readFileSync(filename).toString('UTF8').split('\n');
+const readFileLines = filename =&gt; fs.readFileSync(filename).toString('UTF8').split(/\r?\n/);
 /*
-contents of test.txt :
-  line1
-  line2
-  line3
-  ___________________________
-let arr = readFileLines('test.txt')
-console.log(arr) // -&gt; ['line1', 'line2', 'line3']
-*/
+  contents of test.txt :
+    line1
+    line2
+    line3
+    ___________________________
+  let arr = readFileLines('test.txt')
+  console.log(arr) // -&gt; ['line1', 'line2', 'line3']
+ */
 </code></pre>
 </div></div><br/><h2 style="text-align:center">Object</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="cleanobj">cleanObj</h3></div><div class="section double-padded">
