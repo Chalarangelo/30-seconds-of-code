@@ -1,7 +1,9 @@
 /*
   This is the linter script that lints snippets.
   Run using `npm run linter`.
-  You might have to run `npm i -g semistandard` for this script to run properly.
+  You might have to run
+  `npm i -g semistandard && npm i -g prettier`
+  for this script to run properly.
 */
 const fs = require('fs-extra');
 const cp = require('child_process');
@@ -40,18 +42,22 @@ try {
 
     fs.writeFileSync(`${snippet}.js`,`${originalCode}`);
 
-    // Run semistandard asynchronously (only way this manages to run), get linted code
-    // and write back to the original snippet file. Remove temporary file
+    // Run semistandard and prettier asynchronously (only way this manages to run), get linted code
+    // and write back to the original snippet file. Remove temporary file.
     // NOTE: adding `.temp` seems to not make it lint. Maybe because of .gitignore?
     // It shows an invisible icon next to it
-    cp.exec(`semistandard '${snippet}.js' --fix`, {}, (error, stdOut, stdErr) => {
+    const cmd = `semistandard "${snippet}.js" --fix ` +
+      `& prettier "${snippet}.js" --single-quote --print-width=100 --write "${snippet}.js"`
+
+    cp.exec(cmd, {}, (error, stdOut, stdErr) => {
       jobCounter += 1;
 
       const lintedCode = fs.readFileSync(`${snippet}.js`, 'utf8');
 
+      // Replace everything between ```js and ``` with the newly linted code
       fs.writeFile(
         path.join(SNIPPETS_PATH, snippet),
-        `${snippetData.slice(0, snippetData.indexOf('```js') + 5) + lintedCode + '```\n'}`
+        snippetData.replace(/(```js[\r\n])([\S\s]*?)(```)/, `$1${lintedCode}$3`)
       );
       fs.unlink(`${snippet}.js`);
 
