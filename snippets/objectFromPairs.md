@@ -9,5 +9,5 @@ const objectFromPairs = arr => arr.reduce((a, v) => (a[v[0]] = v[1], a), {});
 ```
 
 ```js
-objectFromPairs([['a',1],['b',2]]) -> {a: 1, b: 2}
+objectFromPairs([['a',1],['b',2]]) // {a: 1, b: 2}
 ```

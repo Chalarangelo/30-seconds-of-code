@@ -13,5 +13,5 @@ const getURLParameters = url =>
 ```
 
 ```js
-getURLParameters('http://url.com/page?name=Adam&surname=Smith') -> {name: 'Adam', surname: 'Smith'}
+getURLParameters('http://url.com/page?name=Adam&surname=Smith') // {name: 'Adam', surname: 'Smith'}
 ```

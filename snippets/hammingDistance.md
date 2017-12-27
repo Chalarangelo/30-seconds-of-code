@@ -11,5 +11,5 @@ const hammingDistance = (num1, num2) =>
 ```
 
 ```js
-hammingDistance(2,3) -> 1
+hammingDistance(2,3) // 1
 ```

@@ -10,5 +10,5 @@ const fibonacciCountUntilNum = num =>
 ```
 
 ```js
-fibonacciCountUntilNum(10) -> 7
+fibonacciCountUntilNum(10) // 7
 ```

@@ -12,5 +12,5 @@ const getScrollPosition = (el = window) =>
 ```
 
 ```js
-getScrollPosition() -> {x: 0, y: 200}
+getScrollPosition() // {x: 0, y: 200}
 ```

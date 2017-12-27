@@ -18,5 +18,5 @@ const promisify = func =>
 
 ```js
 const delay = promisify((d, cb) => setTimeout(cb, d))
-delay(2000).then(() => console.log('Hi!')) -> // Promise resolves after 2s
+delay(2000).then(() => console.log('Hi!')) // // Promise resolves after 2s
 ```

@@ -11,5 +11,5 @@ const fibonacci = n =>
 ```
 
 ```js
-factorial(6) -> 720
+factorial(6) // 720
 ```

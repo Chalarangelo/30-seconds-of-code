@@ -9,5 +9,5 @@ const functionName = fn => (console.debug(fn.name), fn);
 ```
 
 ```js
-functionName(Math.max) -> max (logged in debug channel of console)
+functionName(Math.max) // max (logged in debug channel of console)
 ```
