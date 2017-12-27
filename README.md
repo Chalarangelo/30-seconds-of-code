@@ -1337,17 +1337,13 @@ const arraySum = arr => arr.reduce((acc, val) => acc + val, 0);
 
 ### clampNumber
 
-Clamps `num` within the inclusive `lower` and `upper` bounds.
+Clamps `num` within the inclusive range specified by the boundary values `a` and `b`
 
-If `lower` is greater than `upper`, swap them. 
 If `num` falls within the range, return `num`. 
 Otherwise, return the nearest number in the range.
 
 ```js
-const clampNumber = (num, lower, upper) => {
-  if (lower > upper) upper = [lower, lower = upper][0];
-  return (num >= lower && num <= upper) ? num : ((num < lower) ? lower : upper);
-};
+const clampNumber = (num, a, b) => Math.max(Math.min(num, Math.max(a,b)),Math.min(a,b));
 // clampNumber(2, 3, 5) -> 3
 // clampNumber(1, -1, -5) -> -1
 // clampNumber(3, 2, 4) -> 3
