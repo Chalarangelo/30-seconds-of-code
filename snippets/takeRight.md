@@ -6,6 +6,9 @@ Use `Array.slice()` to create a slice of the array with `n` elements taken from 
 
 ```js
 const takeRight = (arr, n = 1) => arr.slice(arr.length - n, arr.length);
-// takeRight([1, 2, 3], 2) -> [ 2, 3 ]
-// takeRight([1, 2, 3]) -> [3]
+```
+
+```js
+takeRight([1, 2, 3], 2) // [ 2, 3 ]
+takeRight([1, 2, 3]) // [3]
 ```

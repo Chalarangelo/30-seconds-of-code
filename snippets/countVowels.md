@@ -6,6 +6,9 @@ Use a regular expression to count the number of vowels `(A, E, I, O, U)` in a `s
 
 ```js
 const countVowels = str => (str.match(/[aeiou]/ig) || []).length;
-// countVowels('foobar') -> 3
-// countVowels('gym') -> 0
+```
+
+```js
+countVowels('foobar') // 3
+countVowels('gym') // 0
 ```

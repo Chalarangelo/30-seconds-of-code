@@ -25,7 +25,8 @@ try {
     console.time(`Linter (${snippet})`);
     // Synchronously read data from the snippet, get the code, write it to a temporary file
     let snippetData = fs.readFileSync(path.join(snippetsPath,snippet),'utf8');
-    let originalCode = snippetData.slice(snippetData.indexOf('```js')+5,snippetData.lastIndexOf('```'));
+    let codeStart = snippetData.indexOf('```js'), codeEnd = snippetData.search(/```[\n\r\s]+```js/g);
+    let originalCode = snippetData.slice(codeStart+5,codeEnd);
     while(jobCounter >= 20){
       setTimeout(()=>{},1000);
     }
@@ -36,7 +37,7 @@ try {
     cp.exec(`semistandard "${tempSnippet}.temp.js" --fix`,{},(error, stdOut, stdErr) => {
       jobCounter += 1;
       let lintedCode = fs.readFileSync(`${tempSnippet}.temp.js`,'utf8');
-      fs.writeFile(path.join(snippetsPath,snippet), `${snippetData.slice(0, snippetData.indexOf('```js')+5)+lintedCode+'```\n'}`);
+      fs.writeFile(path.join(snippetsPath,snippet), `${snippetData.slice(0, codeStart+5)+lintedCode+snippetData.slice(codeEnd)}`);
       fs.unlink(`${tempSnippet}.temp.js`);
       // Log a success message
       console.log(`${chalk.green('SUCCESS!')} Linted snippet: ${snippet}`);

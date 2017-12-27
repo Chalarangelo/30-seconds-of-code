@@ -33,7 +33,7 @@
       })
     }
     function clipboard() {
-      const snippets = document.querySelectorAll("pre");
+      const snippets = document.querySelectorAll(":not(pre) + pre");
       snippets.forEach(element => {
       const button = document.createElement("button");
       button.innerHTML = "Copy to clipboard";
@@ -242,50 +242,46 @@
 <div class="card fluid"><div class="section double-padded"><h3 id="call">call</h3></div><div class="section double-padded">
 <p>Given a key and a set of arguments, call them when given a context. Primarily useful in composition.</p>
 <p>Use a closure to call a stored key with stored arguments.</p>
-<pre><code class="language-js">const call = (key, ...args) =&gt; context =&gt; context[ key ](...args);
-/*
-Promise.resolve( [ 1, 2, 3 ] ).then( call('map', x =&gt; 2 * x ) ).then( console.log ) //[ 2, 4, 6 ]
+<pre><code class="language-js">const call = ( key, ...args ) =&gt; context =&gt; context[ key ]( ...args );
+</code></pre>
+<pre><code class="language-js">Promise.resolve( [ 1, 2, 3 ] ).then( call('map', x =&gt; 2 * x ) ).then( console.log ) //[ 2, 4, 6 ]
 const map = call.bind(null, 'map')
 Promise.resolve( [ 1, 2, 3 ] ).then( map( x =&gt; 2 * x ) ).then( console.log ) //[ 2, 4, 6 ]
-*/
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="collectinto">collectInto</h3></div><div class="section double-padded">
 <p>Changes a function that accepts an array into a variadic function.</p>
 <p>Given a function, return a closure that collects all inputs into an array-accepting function.</p>
-<pre><code class="language-js">const collectInto = fn =&gt; (...args) =&gt; fn(args);
-/*
-const Pall = collectInto( Promise.all.bind(Promise) )
+<pre><code class="language-js">const collectInto = fn =&gt; ( ...args ) =&gt; fn( args );
+</code></pre>
+<pre><code class="language-js">const Pall = collectInto( Promise.all.bind(Promise) )
 let p1 = Promise.resolve(1)
 let p2 = Promise.resolve(2)
 let p3 = new Promise((resolve) =&gt; setTimeout(resolve,2000,3))
 Pall(p1, p2, p3).then(console.log)
-*/
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="flip">flip</h3></div><div class="section double-padded">
 <p>Flip takes a function as an argument, then makes the first argument the last</p>
 <p>Return a closure that takes variadic inputs, and splices the last argument to make it the first argument before applying the rest.</p>
 <pre><code class="language-js">const flip = fn =&gt; (...args) =&gt; fn(args.pop(), ...args);
-/*
-let a = {name: 'John Smith'}
+</code></pre>
+<pre><code class="language-js">let a = {name: 'John Smith'}
 let b = {}
 const mergeFrom = flip(Object.assign)
 let mergePerson = mergeFrom.bind(null, a)
 mergePerson(b) // == b
 b = {}
 Object.assign(b, a) // == b
-*/
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="pipefunctions">pipeFunctions</h3></div><div class="section double-padded">
 <p>Performs left-to-right function composition.</p>
 <p>Use <code>Array.reduce()</code> with the spread operator (<code>...</code>) to perform left-to-right function composition.
 The first (leftmost) function can accept one or more arguments; the remaining functions must be unary.</p>
 <pre><code class="language-js">const pipeFunctions = (...fns) =&gt; fns.reduce((f, g) =&gt; (...args) =&gt; g(f(...args)));
-/*
-const add5 = x =&gt; x + 5
+</code></pre>
+<pre><code class="language-js">const add5 = x =&gt; x + 5
 const multiply = (x, y) =&gt; x * y
 const multiplyAndAdd5 = pipeFunctions(multiply, add5)
-multiplyAndAdd5(5, 2) -&gt; 15
-*/
+multiplyAndAdd5(5, 2) // 15
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="promisify">promisify</h3></div><div class="section double-padded">
 <p>Converts an asynchronous function to return a promise.</p>
@@ -298,18 +294,18 @@ Use the <code>...rest</code> operator to pass in all the parameters.</p>
       func(...args, (err, result) =&gt;
         err ? reject(err) : resolve(result))
     );
-// const delay = promisify((d, cb) =&gt; setTimeout(cb, d))
-// delay(2000).then(() =&gt; console.log('Hi!')) -&gt; Promise resolves after 2s
+</code></pre>
+<pre><code class="language-js">const delay = promisify((d, cb) =&gt; setTimeout(cb, d))
+delay(2000).then(() =&gt; console.log('Hi!')) // // Promise resolves after 2s
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="spreadover">spreadOver</h3></div><div class="section double-padded">
 <p>Takes a variadic function and returns a closure that accepts an array of arguments to map to the inputs of the function.</p>
 <p>Use closures and the spread operator (<code>...</code>) to map the array of arguments to the inputs of the function.</p>
 <pre><code class="language-js">const spreadOver = fn =&gt; argsArr =&gt; fn(...argsArr);
-/*
-const arrayMax = spreadOver(Math.max)
-arrayMax([1,2,3]) // -&gt; 3
-arrayMax([1,2,4]) // -&gt; 4
-*/
+</code></pre>
+<pre><code class="language-js">const arrayMax = spreadOver(Math.max)
+arrayMax([1,2,3]) // 3
+arrayMax([1,2,4])  // 4
 </code></pre>
 </div></div><br/><h2 style="text-align:center">Array</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="arraygcd">arrayGcd</h3></div><div class="section double-padded">
@@ -317,33 +313,37 @@ arrayMax([1,2,4]) // -&gt; 4
 <p>Use <code>Array.reduce()</code> and the <code>gcd</code> formula (uses recursion) to calculate the greatest common denominator of an array of numbers.</p>
 <pre><code class="language-js">const arrayGcd = arr =&gt; {
   const gcd = (x, y) =&gt; !y ? x : gcd(y, x % y);
-  return arr.reduce((a, b) =&gt; gcd(a, b));
-};
-// arrayGcd([1,2,3,4,5]) -&gt; 1
-// arrayGcd([4,8,12]) -&gt; 4
+  return arr.reduce((a,b) =&gt; gcd(a,b));
+}
+</code></pre>
+<pre><code class="language-js">arrayGcd([1,2,3,4,5]) // 1
+arrayGcd([4,8,12]) // 4
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="arraylcm">arrayLcm</h3></div><div class="section double-padded">
 <p>Calculates the lowest common multiple (lcm) of an array of numbers.</p>
 <p>Use <code>Array.reduce()</code> and the <code>lcm</code> formula (uses recursion) to calculate the lowest common multiple of an array of numbers.</p>
 <pre><code class="language-js">const arrayLcm = arr =&gt; {
   const gcd = (x, y) =&gt; !y ? x : gcd(y, x % y);
-  const lcm = (x, y) =&gt; (x * y) / gcd(x, y);
-  return arr.reduce((a, b) =&gt; lcm(a, b));
-};
-// arrayLcm([1,2,3,4,5]) -&gt; 60
-// arrayLcm([4,8,12]) -&gt; 24
+  const lcm = (x, y) =&gt; (x*y)/gcd(x, y);
+  return arr.reduce((a,b) =&gt; lcm(a,b));
+}
+</code></pre>
+<pre><code class="language-js">arrayLcm([1,2,3,4,5]) // 60
+arrayLcm([4,8,12]) // 24
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="arraymax">arrayMax</h3></div><div class="section double-padded">
 <p>Returns the maximum value in an array.</p>
 <p>Use <code>Math.max()</code> combined with the spread operator (<code>...</code>) to get the maximum value in the array.</p>
 <pre><code class="language-js">const arrayMax = arr =&gt; Math.max(...arr);
-// arrayMax([10, 1, 5]) -&gt; 10
+</code></pre>
+<pre><code class="language-js">arrayMax([10, 1, 5]) // 10
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="arraymin">arrayMin</h3></div><div class="section double-padded">
 <p>Returns the minimum value in an array.</p>
 <p>Use <code>Math.min()</code> combined with the spread operator (<code>...</code>) to get the minimum value in the array.</p>
 <pre><code class="language-js">const arrayMin = arr =&gt; Math.min(...arr);
-// arrayMin([10, 1, 5]) -&gt; 1
+</code></pre>
+<pre><code class="language-js">arrayMin([10, 1, 5]) // 1
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="chunk">chunk</h3></div><div class="section double-padded">
 <p>Chunks an array into smaller arrays of a specified size.</p>
@@ -352,19 +352,22 @@ Use <code>Array.slice()</code> to map each element of the new array to a chunk t
 If the original array can't be split evenly, the final chunk will contain the remaining elements.</p>
 <pre><code class="language-js">const chunk = (arr, size) =&gt;
   Array.from({length: Math.ceil(arr.length / size)}, (v, i) =&gt; arr.slice(i * size, i * size + size));
-// chunk([1,2,3,4,5], 2) -&gt; [[1,2],[3,4],[5]]
+</code></pre>
+<pre><code class="language-js">chunk([1,2,3,4,5], 2) // [[1,2],[3,4],[5]]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="compact">compact</h3></div><div class="section double-padded">
 <p>Removes falsey values from an array.</p>
 <p>Use <code>Array.filter()</code> to filter out falsey values (<code>false</code>, <code>null</code>, <code>0</code>, <code>&quot;&quot;</code>, <code>undefined</code>, and <code>NaN</code>).</p>
 <pre><code class="language-js">const compact = arr =&gt; arr.filter(Boolean);
-// compact([0, 1, false, 2, '', 3, 'a', 'e'*23, NaN, 's', 34]) -&gt; [ 1, 2, 3, 'a', 's', 34 ]
+</code></pre>
+<pre><code class="language-js">compact([0, 1, false, 2, '', 3, 'a', 'e'*23, NaN, 's', 34]) // [ 1, 2, 3, 'a', 's', 34 ]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="countoccurrences">countOccurrences</h3></div><div class="section double-padded">
 <p>Counts the occurrences of a value in an array.</p>
 <p>Use <code>Array.reduce()</code> to increment a counter each time you encounter the specific value inside the array.</p>
 <pre><code class="language-js">const countOccurrences = (arr, value) =&gt; arr.reduce((a, v) =&gt; v === value ? a + 1 : a + 0, 0);
-// countOccurrences([1,1,2,1,2,3], 1) -&gt; 3
+</code></pre>
+<pre><code class="language-js">countOccurrences([1,1,2,1,2,3], 1) // 3
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="deepflatten">deepFlatten</h3></div><div class="section double-padded">
 <p>Deep flattens an array.</p>
@@ -372,25 +375,29 @@ If the original array can't be split evenly, the final chunk will contain the re
 Use <code>Array.concat()</code> with an empty array (<code>[]</code>) and the spread operator (<code>...</code>) to flatten an array.
 Recursively flatten each element that is an array.</p>
 <pre><code class="language-js">const deepFlatten = arr =&gt; [].concat(...arr.map(v =&gt; Array.isArray(v) ? deepFlatten(v) : v));
-// deepFlatten([1,[2],[[3],4],5]) -&gt; [1,2,3,4,5]
+</code></pre>
+<pre><code class="language-js">deepFlatten([1,[2],[[3],4],5]) // [1,2,3,4,5]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="difference">difference</h3></div><div class="section double-padded">
 <p>Returns the difference between two arrays.</p>
 <p>Create a <code>Set</code> from <code>b</code>, then use <code>Array.filter()</code> on <code>a</code> to only keep values not contained in <code>b</code>.</p>
 <pre><code class="language-js">const difference = (a, b) =&gt; { const s = new Set(b); return a.filter(x =&gt; !s.has(x)); };
-// difference([1,2,3], [1,2,4]) -&gt; [3]
+</code></pre>
+<pre><code class="language-js">difference([1,2,3], [1,2,4]) // [3]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="differencewith">differenceWith</h3></div><div class="section double-padded">
 <p>Filters out all values from an array for which the comparator function does not return <code>true</code>.</p>
 <p>Use <code>Array.filter()</code> and <code>Array.find()</code> to find the appropriate values.</p>
-<pre><code class="language-js">const differenceWith = (arr, val, comp) =&gt; arr.filter(a =&gt; !val.find(b =&gt; comp(a, b)));
-// differenceWith([1, 1.2, 1.5, 3], [1.9, 3], (a,b) =&gt; Math.round(a) == Math.round(b)) -&gt; [1, 1.2]
+<pre><code class="language-js">const differenceWith = (arr, val, comp) =&gt; arr.filter(a =&gt; !val.find(b =&gt; comp(a, b)))
+</code></pre>
+<pre><code class="language-js">differenceWith([1, 1.2, 1.5, 3], [1.9, 3], (a,b) =&gt; Math.round(a) == Math.round(b)) // [1, 1.2]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="distinctvaluesofarray">distinctValuesOfArray</h3></div><div class="section double-padded">
 <p>Returns all the distinct values of an array.</p>
 <p>Use ES6 <code>Set</code> and the <code>...rest</code> operator to discard all duplicated values.</p>
 <pre><code class="language-js">const distinctValuesOfArray = arr =&gt; [...new Set(arr)];
-// distinctValuesOfArray([1,2,2,3,4,4,5]) -&gt; [1,2,3,4,5]
+</code></pre>
+<pre><code class="language-js">distinctValuesOfArray([1,2,2,3,4,4,5]) // [1,2,3,4,5]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="dropelements">dropElements</h3></div><div class="section double-padded">
 <p>Removes elements in an array until the passed function returns <code>true</code>. Returns the remaining elements in the array.</p>
@@ -400,33 +407,38 @@ Returns the remaining elements.</p>
   while (arr.length &gt; 0 &amp;&amp; !func(arr[0])) arr = arr.slice(1);
   return arr;
 };
-// dropElements([1, 2, 3, 4], n =&gt; n &gt;= 3) -&gt; [3,4]
+</code></pre>
+<pre><code class="language-js">dropElements([1, 2, 3, 4], n =&gt; n &gt;= 3) // [3,4]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="dropright">dropRight</h3></div><div class="section double-padded">
 <p>Returns a new array with <code>n</code> elements removed from the right.</p>
 <p>Use <code>Array.slice()</code> to slice the remove the specified number of elements from the right.</p>
 <pre><code class="language-js">const dropRight = (arr, n = 1) =&gt; arr.slice(0, -n);
-// dropRight([1,2,3]) -&gt; [1,2]
-// dropRight([1,2,3], 2) -&gt; [1]
-// dropRight([1,2,3], 42) -&gt; []
+</code></pre>
+<pre><code class="language-js">dropRight([1,2,3]) // [1,2]
+dropRight([1,2,3], 2) // [1]
+dropRight([1,2,3], 42) // []
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="everynth">everyNth</h3></div><div class="section double-padded">
 <p>Returns every nth element in an array.</p>
 <p>Use <code>Array.filter()</code> to create a new array that contains every nth element of a given array.</p>
 <pre><code class="language-js">const everyNth = (arr, nth) =&gt; arr.filter((e, i) =&gt; i % nth === nth - 1);
-// everyNth([1,2,3,4,5,6], 2) -&gt; [ 2, 4, 6 ]
+</code></pre>
+<pre><code class="language-js">everyNth([1,2,3,4,5,6], 2) // [ 2, 4, 6 ]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="filternonunique">filterNonUnique</h3></div><div class="section double-padded">
 <p>Filters out the non-unique values in an array.</p>
 <p>Use <code>Array.filter()</code> for an array containing only the unique values.</p>
 <pre><code class="language-js">const filterNonUnique = arr =&gt; arr.filter(i =&gt; arr.indexOf(i) === arr.lastIndexOf(i));
-// filterNonUnique([1,2,2,3,4,4,5]) -&gt; [1,3,5]
+</code></pre>
+<pre><code class="language-js">filterNonUnique([1,2,2,3,4,4,5]) // [1,3,5]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="flatten">flatten</h3></div><div class="section double-padded">
 <p>Flattens an array.</p>
 <p>Use a new array and concatenate it with the spread input array causing a shallow denesting of any contained arrays.</p>
-<pre><code class="language-js">const flatten = arr =&gt; [ ].concat(...arr);
-// flatten([1,[2],3,4]) -&gt; [1,2,3,4]
+<pre><code class="language-js">const flatten = arr =&gt; [ ].concat( ...arr );
+</code></pre>
+<pre><code class="language-js">flatten([1,[2],3,4]) // [1,2,3,4]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="flattendepth">flattenDepth</h3></div><div class="section double-padded">
 <p>Flattens an array up to the specified depth.</p>
@@ -437,7 +449,8 @@ Omit the second element, <code>depth</code> to flatten only to a depth of <code>
 <pre><code class="language-js">const flattenDepth = (arr, depth = 1) =&gt;
   depth != 1 ? arr.reduce((a, v) =&gt; a.concat(Array.isArray(v) ? flattenDepth(v, depth - 1) : v), [])
   : arr.reduce((a, v) =&gt; a.concat(v), []);
-// flattenDepth([1,[2],[[[3],4],5]], 2) -&gt; [1,2,[3],4,5]
+</code></pre>
+<pre><code class="language-js">flatten([1,[2],3,4]) // [1,2,3,4]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="groupby">groupBy</h3></div><div class="section double-padded">
 <p>Groups the elements of an array based on the given function.</p>
@@ -446,26 +459,30 @@ Use <code>Array.reduce()</code> to create an object, where the keys are produced
 <pre><code class="language-js">const groupBy = (arr, func) =&gt;
   arr.map(typeof func === 'function' ? func : val =&gt; val[func])
     .reduce((acc, val, i) =&gt; { acc[val] = (acc[val] || []).concat(arr[i]); return acc; }, {});
-// groupBy([6.1, 4.2, 6.3], Math.floor) -&gt; {4: [4.2], 6: [6.1, 6.3]}
-// groupBy(['one', 'two', 'three'], 'length') -&gt; {3: ['one', 'two'], 5: ['three']}
+</code></pre>
+<pre><code class="language-js">groupBy([6.1, 4.2, 6.3], Math.floor) // {4: [4.2], 6: [6.1, 6.3]}
+groupBy(['one', 'two', 'three'], 'length') // {3: ['one', 'two'], 5: ['three']}
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="head">head</h3></div><div class="section double-padded">
 <p>Returns the head of a list.</p>
 <p>Use <code>arr[0]</code> to return the first element of the passed array.</p>
 <pre><code class="language-js">const head = arr =&gt; arr[0];
-// head([1,2,3]) -&gt; 1
+</code></pre>
+<pre><code class="language-js">head([1,2,3]) // 1
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="initial">initial</h3></div><div class="section double-padded">
 <p>Returns all the elements of an array except the last one.</p>
 <p>Use <code>arr.slice(0,-1)</code> to return all but the last element of the array.</p>
 <pre><code class="language-js">const initial = arr =&gt; arr.slice(0, -1);
-// initial([1,2,3]) -&gt; [1,2]
+</code></pre>
+<pre><code class="language-js">initial([1,2,3]) // [1,2]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="initialize2darray">initialize2DArray</h3></div><div class="section double-padded">
 <p>Initializes a 2D array of given width and height and value.</p>
 <p>Use <code>Array.map()</code> to generate h rows where each is a new array of size w initialize with value. If the value is not provided, default to <code>null</code>.</p>
 <pre><code class="language-js">const initialize2DArray = (w, h, val = null) =&gt; Array(h).fill().map(() =&gt; Array(w).fill(val));
-// initializeArrayWithRange(2, 2, 0) -&gt; [[0,0], [0,0]]
+</code></pre>
+<pre><code class="language-js">initialize2DArray(2, 2, 0) // [[0,0], [0,0]]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="initializearraywithrange">initializeArrayWithRange</h3></div><div class="section double-padded">
 <p>Initializes an array containing the numbers in the specified range where <code>start</code> and <code>end</code> are inclusive.</p>
@@ -473,53 +490,58 @@ Use <code>Array.reduce()</code> to create an object, where the keys are produced
 You can omit <code>start</code> to use a default value of <code>0</code>.</p>
 <pre><code class="language-js">const initializeArrayWithRange = (end, start = 0) =&gt;
   Array.from({ length: (end + 1) - start }).map((v, i) =&gt; i + start);
-// initializeArrayWithRange(5) -&gt; [0,1,2,3,4,5]
-// initializeArrayWithRange(7, 3) -&gt; [3,4,5,6,7]
+</code></pre>
+<pre><code class="language-js">initializeArrayWithRange(5) // [0,1,2,3,4,5]
+initializeArrayWithRange(7, 3) // [3,4,5,6,7]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="initializearraywithvalues">initializeArrayWithValues</h3></div><div class="section double-padded">
 <p>Initializes and fills an array with the specified values.</p>
 <p>Use <code>Array(n)</code> to create an array of the desired length, <code>fill(v)</code> to fill it with the desired values.
 You can omit <code>value</code> to use a default value of <code>0</code>.</p>
 <pre><code class="language-js">const initializeArrayWithValues = (n, value = 0) =&gt; Array(n).fill(value);
-// initializeArrayWithValues(5, 2) -&gt; [2,2,2,2,2]
+</code></pre>
+<pre><code class="language-js">initializeArrayWithValues(5, 2) // [2,2,2,2,2]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="intersection">intersection</h3></div><div class="section double-padded">
 <p>Returns a list of elements that exist in both arrays.</p>
 <p>Create a <code>Set</code> from <code>b</code>, then use <code>Array.filter()</code> on <code>a</code> to only keep values contained in <code>b</code>.</p>
 <pre><code class="language-js">const intersection = (a, b) =&gt; { const s = new Set(b); return a.filter(x =&gt; s.has(x)); };
-// intersection([1,2,3], [4,3,2]) -&gt; [2,3]
+</code></pre>
+<pre><code class="language-js">intersection([1,2,3], [4,3,2]) // [2,3]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="last">last</h3></div><div class="section double-padded">
 <p>Returns the last element in an array.</p>
 <p>Use <code>arr.length - 1</code> to compute the index of the last element of the given array and returning it.</p>
 <pre><code class="language-js">const last = arr =&gt; arr[arr.length - 1];
-// last([1,2,3]) -&gt; 3
+</code></pre>
+<pre><code class="language-js">last([1,2,3]) // 3
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="mapobject">mapObject</h3></div><div class="section double-padded">
 <p>Maps the values of an array to an object using a function, where the key-value pairs consist of the original value as the key and the mapped value.</p>
 <p>Use an anonymous inner function scope to declare an undefined memory space, using closures to store a return value. Use a new <code>Array</code> to store the array with a map of the function over its data set and a comma operator to return a second step, without needing to move from one context to another (due to closures and order of operations).</p>
 <pre><code class="language-js">const mapObject = (arr, fn) =&gt;
-  (a =&gt; (a = [arr, arr.map(fn)], a[0].reduce((acc, val, ind) =&gt; (acc[val] = a[1][ind], acc), {})))();
-/*
-const squareIt = arr =&gt; mapObject(arr, a =&gt; a*a)
+  (a =&gt; (a = [arr, arr.map(fn)], a[0].reduce( (acc,val,ind) =&gt; (acc[val] = a[1][ind], acc), {}) )) ( );
+</code></pre>
+<pre><code class="language-js">const squareIt = arr =&gt; mapObject(arr, a =&gt; a*a)
 squareIt([1,2,3]) // { 1: 1, 2: 4, 3: 9 }
-*/
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="nthelement">nthElement</h3></div><div class="section double-padded">
 <p>Returns the nth element of an array.</p>
 <p>Use <code>Array.slice()</code> to get an array containing the nth element at the first place.
 If the index is out of bounds, return <code>[]</code>.
 Omit the second argument, <code>n</code>, to get the first element of the array.</p>
-<pre><code class="language-js">const nthElement = (arr, n = 0) =&gt; (n &gt; 0 ? arr.slice(n, n + 1) : arr.slice(n))[0];
-// nthElement(['a','b','c'],1) -&gt; 'b'
-// nthElement(['a','b','b'],-3) -&gt; 'a'
+<pre><code class="language-js">const nthElement = (arr, n=0) =&gt; (n&gt;0? arr.slice(n,n+1) : arr.slice(n))[0];
+</code></pre>
+<pre><code class="language-js">nthElement(['a','b','c'],1) // 'b'
+nthElement(['a','b','b'],-3) // 'a'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="pick">pick</h3></div><div class="section double-padded">
 <p>Picks the key-value pairs corresponding to the given keys from an object.</p>
 <p>Use <code>Array.reduce()</code> to convert the filtered/picked keys back to an object with the corresponding key-value pair if the key exists in the obj.</p>
 <pre><code class="language-js">const pick = (obj, arr) =&gt;
   arr.reduce((acc, curr) =&gt; (curr in obj &amp;&amp; (acc[curr] = obj[curr]), acc), {});
-// pick({ 'a': 1, 'b': '2', 'c': 3 }, ['a', 'c']) -&gt; { 'a': 1, 'c': 3 }
+</code></pre>
+<pre><code class="language-js">pick({ 'a': 1, 'b': '2', 'c': 3 }, ['a', 'c']) // { 'a': 1, 'c': 3 }
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="pull">pull</h3></div><div class="section double-padded">
 <p>Mutates the original array to filter out the values specified.</p>
@@ -532,14 +554,14 @@ Use <code>Array.length = 0</code> to mutate the passed in an array by resetting 
   arr.length = 0;
   pulled.forEach(v =&gt; arr.push(v));
 };
+</code></pre>
+<pre><code class="language-js">let myArray1 = ['a', 'b', 'c', 'a', 'b', 'c'];
+pull(myArray1, 'a', 'c');
+console.log(myArray1) // [ 'b', 'b' ]
 
-// let myArray1 = ['a', 'b', 'c', 'a', 'b', 'c'];
-// pull(myArray1, 'a', 'c');
-// console.log(myArray1) -&gt; [ 'b', 'b' ]
-
-// let myArray2 = ['a', 'b', 'c', 'a', 'b', 'c'];
-// pull(myArray2, ['a', 'c']);
-// console.log(myArray2) -&gt; [ 'b', 'b' ]
+let myArray2 = ['a', 'b', 'c', 'a', 'b', 'c'];
+pull(myArray2, ['a', 'c']);
+console.log(myArray2) // [ 'b', 'b' ]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="pullatindex">pullAtIndex</h3></div><div class="section double-padded">
 <p>Mutates the original array to filter out the values at the specified indexes.</p>
@@ -549,17 +571,17 @@ Use <code>Array.push()</code> to keep track of pulled values</p>
 <pre><code class="language-js">const pullAtIndex = (arr, pullArr) =&gt; {
   let removed = [];
   let pulled = arr.map((v, i) =&gt; pullArr.includes(i) ? removed.push(v) : v)
-                  .filter((v, i) =&gt; !pullArr.includes(i));
+                  .filter((v, i) =&gt; !pullArr.includes(i))
   arr.length = 0;
   pulled.forEach(v =&gt; arr.push(v));
   return removed;
-};
+}
+</code></pre>
+<pre><code class="language-js">let myArray = ['a', 'b', 'c', 'd'];
+let pulled = pullAtIndex(myArray, [1, 3]);
 
-// let myArray = ['a', 'b', 'c', 'd'];
-// let pulled = pullAtIndex(myArray, [1, 3]);
-
-// console.log(myArray); -&gt; [ 'a', 'c' ]
-// console.log(pulled); -&gt; [ 'b', 'd' ]
+console.log(myArray); // [ 'a', 'c' ]
+console.log(pulled); // [ 'b', 'd' ]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="pullatvalue">pullAtValue</h3></div><div class="section double-padded">
 <p>Mutates the original array to filter out the values specified. Returns the removed elements.</p>
@@ -573,13 +595,12 @@ Use <code>Array.push()</code> to keep track of pulled values</p>
   arr.length = 0;
   mutateTo.forEach(v =&gt; arr.push(v));
   return removed;
-};
-/*
-let myArray = ['a', 'b', 'c', 'd'];
+}
+</code></pre>
+<pre><code class="language-js">let myArray = ['a', 'b', 'c', 'd'];
 let pulled = pullAtValue(myArray, ['b', 'd']);
-console.log(myArray); -&gt; [ 'a', 'c' ]
-console.log(pulled); -&gt; [ 'b', 'd' ]
-*/
+console.log(myArray); // [ 'a', 'c' ]
+console.log(pulled); // [ 'b', 'd' ]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="remove">remove</h3></div><div class="section double-padded">
 <p>Removes elements from an array for which the given function returns <code>false</code>.</p>
@@ -590,14 +611,16 @@ The <code>func</code> is invoked with three arguments (<code>value, index, array
     arr.splice(arr.indexOf(val), 1); return acc.concat(val);
   }, [])
   : [];
-// remove([1, 2, 3, 4], n =&gt; n % 2 == 0) -&gt; [2, 4]
+</code></pre>
+<pre><code class="language-js">remove([1, 2, 3, 4], n =&gt; n % 2 == 0) // [2, 4]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="sample">sample</h3></div><div class="section double-padded">
 <p>Returns a random element from an array.</p>
 <p>Use <code>Math.random()</code> to generate a random number, multiply it by <code>length</code> and round it of to the nearest whole number using <code>Math.floor()</code>.
 This method also works with strings.</p>
 <pre><code class="language-js">const sample = arr =&gt; arr[Math.floor(Math.random() * arr.length)];
-// sample([3, 7, 9, 11]) -&gt; 9
+</code></pre>
+<pre><code class="language-js">sample([3, 7, 9, 11]) // 9
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="shuffle">shuffle</h3></div><div class="section double-padded">
 <p>Randomizes the order of the values of an array, returning a new array.</p>
@@ -610,15 +633,17 @@ This method also works with strings.</p>
   }
   return arr;
 };
-// const foo = [1,2,3]
-// shuffle(foo) -&gt; [2,3,1]
-// console.log(foo) -&gt; [1,2,3]
+</code></pre>
+<pre><code class="language-js">const foo = [1,2,3]
+shuffle(foo) // [2,3,1]
+console.log(foo) // [1,2,3]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="similarity">similarity</h3></div><div class="section double-padded">
 <p>Returns an array of elements that appear in both arrays.</p>
 <p>Use <code>filter()</code> to remove values that are not part of <code>values</code>, determined using <code>includes()</code>.</p>
 <pre><code class="language-js">const similarity = (arr, values) =&gt; arr.filter(v =&gt; values.includes(v));
-// similarity([1,2,3], [1,2,4]) -&gt; [1,2]
+</code></pre>
+<pre><code class="language-js">similarity([1,2,3], [1,2,4]) // [1,2]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="symmetricdifference">symmetricDifference</h3></div><div class="section double-padded">
 <p>Returns the symmetric difference between two arrays.</p>
@@ -626,42 +651,48 @@ This method also works with strings.</p>
 <pre><code class="language-js">const symmetricDifference = (a, b) =&gt; {
   const sA = new Set(a), sB = new Set(b);
   return [...a.filter(x =&gt; !sB.has(x)), ...b.filter(x =&gt; !sA.has(x))];
-};
-// symmetricDifference([1,2,3], [1,2,4]) -&gt; [3,4]
+}
+</code></pre>
+<pre><code class="language-js">symmetricDifference([1,2,3], [1,2,4]) // [3,4]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="tail">tail</h3></div><div class="section double-padded">
 <p>Returns all elements in an array except for the first one.</p>
 <p>Return <code>arr.slice(1)</code> if the array's <code>length</code> is more than <code>1</code>, otherwise, return the whole array.</p>
 <pre><code class="language-js">const tail = arr =&gt; arr.length &gt; 1 ? arr.slice(1) : arr;
-// tail([1,2,3]) -&gt; [2,3]
-// tail([1]) -&gt; [1]
+</code></pre>
+<pre><code class="language-js">tail([1,2,3]) // [2,3]
+tail([1]) // [1]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="take">take</h3></div><div class="section double-padded">
 <p>Returns an array with n elements removed from the beginning.</p>
 <p>Use <code>Array.slice()</code> to create a slice of the array with <code>n</code> elements taken from the beginning.</p>
 <pre><code class="language-js">const take = (arr, n = 1) =&gt; arr.slice(0, n);
-// take([1, 2, 3], 5) -&gt; [1, 2, 3]
-// take([1, 2, 3], 0) -&gt; []
+</code></pre>
+<pre><code class="language-js">take([1, 2, 3], 5) // [1, 2, 3]
+take([1, 2, 3], 0) // []
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="takeright">takeRight</h3></div><div class="section double-padded">
 <p>Returns an array with n elements removed from the end.</p>
 <p>Use <code>Array.slice()</code> to create a slice of the array with <code>n</code> elements taken from the end.</p>
 <pre><code class="language-js">const takeRight = (arr, n = 1) =&gt; arr.slice(arr.length - n, arr.length);
-// takeRight([1, 2, 3], 2) -&gt; [ 2, 3 ]
-// takeRight([1, 2, 3]) -&gt; [3]
+</code></pre>
+<pre><code class="language-js">takeRight([1, 2, 3], 2) // [ 2, 3 ]
+takeRight([1, 2, 3]) // [3]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="union">union</h3></div><div class="section double-padded">
 <p>Returns every element that exists in any of the two arrays once.</p>
 <p>Create a <code>Set</code> with all values of <code>a</code> and <code>b</code> and convert to an array.</p>
 <pre><code class="language-js">const union = (a, b) =&gt; Array.from(new Set([...a, ...b]));
-// union([1,2,3], [4,3,2]) -&gt; [1,2,3,4]
+</code></pre>
+<pre><code class="language-js">union([1,2,3], [4,3,2]) // [1,2,3,4]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="without">without</h3></div><div class="section double-padded">
 <p>Filters out the elements of an array, that have one of the specified values.</p>
 <p>Use <code>Array.filter()</code> to create an array excluding(using <code>!Array.includes()</code>) all given values.</p>
 <p><em>(For a snippet that mutates the original array see <a href="#pull"><code>pull</code></a>)</em></p>
 <pre><code class="language-js">const without = (arr, ...args) =&gt; arr.filter(v =&gt; !args.includes(v));
-// without([2, 1, 2, 3], 1, 2) -&gt; [3]
+</code></pre>
+<pre><code class="language-js">without([2, 1, 2, 3], 1, 2) // [3]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="zip">zip</h3></div><div class="section double-padded">
 <p>Creates an array of elements, grouped based on the position in the original arrays.</p>
@@ -671,45 +702,51 @@ If lengths of the argument-arrays vary, <code>undefined</code> is used where no 
 <pre><code class="language-js">const zip = (...arrays) =&gt; {
   const maxLength = Math.max(...arrays.map(x =&gt; x.length));
   return Array.from({length: maxLength}).map((_, i) =&gt; {
-    return Array.from({length: arrays.length}, (_, k) =&gt; arrays[k][i]);
-  });
-};
-// zip(['a', 'b'], [1, 2], [true, false]); -&gt; [['a', 1, true], ['b', 2, false]]
-// zip(['a'], [1, 2], [true, false]); -&gt; [['a', 1, true], [undefined, 2, false]]
+   return Array.from({length: arrays.length}, (_, k) =&gt; arrays[k][i]);
+  })
+}
+</code></pre>
+<pre><code class="language-js">zip(['a', 'b'], [1, 2], [true, false]); // [['a', 1, true], ['b', 2, false]]
+zip(['a'], [1, 2], [true, false]); // [['a', 1, true], [undefined, 2, false]]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="zipobject">zipObject</h3></div><div class="section double-padded">
 <p>Given an array of valid property identifiers and an array of values, return an object associating the properties to the values.</p>
 <p>Since an object can have undefined values but not undefined property pointers, the array of properties is used to decide the structure of the resulting object using <code>Array.reduce()</code>.</p>
-<pre><code class="language-js">const zipObject = (props, values) =&gt; props.reduce((obj, prop, index) =&gt; (obj[prop] = values[index], obj), {});
-// zipObject(['a','b','c'], [1,2]) -&gt; {a: 1, b: 2, c: undefined}
-// zipObject(['a','b'], [1,2,3]) -&gt; {a: 1, b: 2}
+<pre><code class="language-js">const zipObject = ( props, values ) =&gt; props.reduce( ( obj, prop, index ) =&gt; ( obj[prop] = values[index], obj ), {} )
+</code></pre>
+<pre><code class="language-js">zipObject(['a','b','c'], [1,2]) // {a: 1, b: 2, c: undefined}
+zipObject(['a','b'], [1,2,3]) // {a: 1, b: 2}
 </code></pre>
 </div></div><br/><h2 style="text-align:center">Browser</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="arraytohtmllist">arrayToHtmlList</h3></div><div class="section double-padded">
 <p>Converts the given array elements into <code>&lt;li&gt;</code> tags and appends them to the list of the given id.</p>
 <p>Use <code>Array.map()</code> and <code>document.querySelector()</code> to create a list of html tags.</p>
-<pre><code class="language-js">const arrayToHtmlList = (arr, listID) =&gt; arr.map(item =&gt; document.querySelector('#' + listID).innerHTML += `&lt;li&gt;${item}&lt;/li&gt;`);
-// arrayToHtmlList(['item 1', 'item 2'],'myListID')
+<pre><code class="language-js">const arrayToHtmlList = (arr, listID) =&gt; arr.map(item =&gt; document.querySelector(&quot;#&quot;+listID).innerHTML+=`&lt;li&gt;${item}&lt;/li&gt;`);
+</code></pre>
+<pre><code class="language-js">arrayToHtmlList(['item 1', 'item 2'],'myListID')
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="bottomvisible">bottomVisible</h3></div><div class="section double-padded">
 <p>Returns <code>true</code> if the bottom of the page is visible, <code>false</code> otherwise.</p>
 <p>Use <code>scrollY</code>, <code>scrollHeight</code> and <code>clientHeight</code> to determine if the bottom of the page is visible.</p>
 <pre><code class="language-js">const bottomVisible = () =&gt;
   document.documentElement.clientHeight + window.scrollY &gt;= (document.documentElement.scrollHeight || document.documentElement.clientHeight);
-// bottomVisible() -&gt; true
+</code></pre>
+<pre><code class="language-js">// bottomVisible() // true
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="currenturl">currentURL</h3></div><div class="section double-padded">
 <p>Returns the current URL.</p>
 <p>Use <code>window.location.href</code> to get current URL.</p>
 <pre><code class="language-js">const currentURL = () =&gt; window.location.href;
-// currentUrl() -&gt; 'https://google.com'
+</code></pre>
+<pre><code class="language-js">currentUrl() // 'https://google.com'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="detectdevicetype">detectDeviceType</h3></div><div class="section double-padded">
 <p>Detects wether the website is being opened in a mobile device or a desktop/laptop.</p>
 <p>Use a regular expression to test the <code>navigator.userAgent</code> property to figure out if the device is a mobile device or a desktop/laptop.</p>
-<pre><code class="language-js">const detectDeviceType = () =&gt; /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop';
-// detectDeviceType() -&gt; &quot;Mobile&quot;
-// detectDeviceType() -&gt; &quot;Desktop&quot;
+<pre><code class="language-js">const detectDeviceType = () =&gt; /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? &quot;Mobile&quot; : &quot;Desktop&quot;;
+</code></pre>
+<pre><code class="language-js">detectDeviceType() // &quot;Mobile&quot;
+detectDeviceType() // &quot;Desktop&quot;
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="elementisvisibleinviewport">elementIsVisibleInViewport</h3></div><div class="section double-padded">
 <p>Returns <code>true</code> if the element specified is visible in the viewport, <code>false</code> otherwise.</p>
@@ -725,9 +762,10 @@ it is partially visible.</p>
       ((left &gt; 0 &amp;&amp; left &lt; innerWidth) || (right &gt; 0 &amp;&amp; right &lt; innerWidth))
     : top &gt;= 0 &amp;&amp; left &gt;= 0 &amp;&amp; bottom &lt;= innerHeight &amp;&amp; right &lt;= innerWidth;
 };
-// e.g. 100x100 viewport and a 10x10px element at position {top: -1, left: 0, bottom: 9, right: 10}
-// elementIsVisibleInViewport(el) -&gt; false (not fully visible)
-// elementIsVisibleInViewport(el, true) -&gt; true (partially visible)
+</code></pre>
+<pre><code class="language-js">// e.g. 100x100 viewport and a 10x10px element at position {top: -1, left: 0, bottom: 9, right: 10}
+elementIsVisibleInViewport(el) // false // (not fully visible)
+elementIsVisibleInViewport(el, true) // true // (partially visible)
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="getscrollposition">getScrollPosition</h3></div><div class="section double-padded">
 <p>Returns the scroll position of the current page.</p>
@@ -736,7 +774,8 @@ You can omit <code>el</code> to use a default value of <code>window</code>.</p>
 <pre><code class="language-js">const getScrollPosition = (el = window) =&gt;
   ({x: (el.pageXOffset !== undefined) ? el.pageXOffset : el.scrollLeft,
     y: (el.pageYOffset !== undefined) ? el.pageYOffset : el.scrollTop});
-// getScrollPosition() -&gt; {x: 0, y: 200}
+</code></pre>
+<pre><code class="language-js">getScrollPosition() // {x: 0, y: 200}
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="geturlparameters">getURLParameters</h3></div><div class="section double-padded">
 <p>Returns an object containing the parameters of the current URL.</p>
@@ -746,7 +785,8 @@ Pass <code>location.search</code> as the argument to apply to the current <code>
   url.match(/([^?=&amp;]+)(=([^&amp;]*))/g).reduce(
     (a, v) =&gt; (a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1), a), {}
   );
-// getURLParameters('http://url.com/page?name=Adam&amp;surname=Smith') -&gt; {name: 'Adam', surname: 'Smith'}
+</code></pre>
+<pre><code class="language-js">getURLParameters('http://url.com/page?name=Adam&amp;surname=Smith') // {name: 'Adam', surname: 'Smith'}
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="httpsredirect">httpsRedirect</h3></div><div class="section double-padded">
 <p>Redirects the page to HTTPS if its currently in HTTP. Also, pressing the back button doesn't take it back to the HTTP page as its replaced in the history.</p>
@@ -761,7 +801,8 @@ Pass <code>location.search</code> as the argument to apply to the current <code>
 Pass a second argument to simulate a link click (<code>true</code> - default) or an HTTP redirect (<code>false</code>).</p>
 <pre><code class="language-js">const redirect = (url, asLink = true) =&gt;
   asLink ? window.location.href = url : window.location.replace(url);
-// redirect('https://google.com')
+</code></pre>
+<pre><code class="language-js">redirect('https://google.com')
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="scrolltotop">scrollToTop</h3></div><div class="section double-padded">
 <p>Smooth-scrolls to the top of the page.</p>
@@ -774,14 +815,16 @@ Scroll by a fraction of the distance from the top. Use <code>window.requestAnima
     window.scrollTo(0, c - c / 8);
   }
 };
-// scrollToTop()
+</code></pre>
+<pre><code class="language-js">scrollToTop()
 </code></pre>
 </div></div><br/><h2 style="text-align:center">Date</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="getdaysdiffbetweendates">getDaysDiffBetweenDates</h3></div><div class="section double-padded">
 <p>Returns the difference (in days) between two dates.</p>
 <p>Calculate the difference (in days) between two <code>Date</code> objects.</p>
 <pre><code class="language-js">const getDaysDiffBetweenDates = (dateInitial, dateFinal) =&gt; (dateFinal - dateInitial) / (1000 * 3600 * 24);
-// getDaysDiffBetweenDates(new Date(&quot;2017-12-13&quot;), new Date(&quot;2017-12-22&quot;)) -&gt; 9
+</code></pre>
+<pre><code class="language-js">getDaysDiffBetweenDates(new Date(&quot;2017-12-13&quot;), new Date(&quot;2017-12-22&quot;)) // 9
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="jsontodate">JSONToDate</h3></div><div class="section double-padded">
 <p>Converts a JSON object to a date.</p>
@@ -790,14 +833,16 @@ Scroll by a fraction of the distance from the top. Use <code>window.requestAnima
   const dt = new Date(parseInt(arr.toString().substr(6)));
   return `${dt.getDate()}/${dt.getMonth() + 1}/${dt.getFullYear()}`;
 };
-// JSONToDate(/Date(1489525200000)/) -&gt; &quot;14/3/2017&quot;
+</code></pre>
+<pre><code class="language-js">JSONToDate(/Date(1489525200000)/) // &quot;14/3/2017&quot;
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="toenglishdate">toEnglishDate</h3></div><div class="section double-padded">
 <p>Converts a date from American format to English format.</p>
 <p>Use <code>Date.toISOString()</code>, <code>split('T')</code> and <code>replace()</code> to convert a date from American format to the English format.
 Throws an error if the passed time cannot be converted to a date.</p>
 <pre><code class="language-js">const toEnglishDate = (time) =&gt; { try { return new Date(time).toISOString().split('T')[0].replace(/-/g, '/'); } catch (e) {} };
-// toEnglishDate('09/21/2010') -&gt; '21/09/2010'
+</code></pre>
+<pre><code class="language-js">toEnglishDate('09/21/2010') // '21/09/2010'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="tomorrow">tomorrow</h3></div><div class="section double-padded">
 <p>Results in a string representation of tomorrow's date.
@@ -810,25 +855,23 @@ Use <code>new Date()</code> to get today's date, adding <code>86400000</code> of
 <p>Chains asynchronous functions.</p>
 <p>Loop through an array of functions containing asynchronous events, calling <code>next</code> when each asynchronous event has completed.</p>
 <pre><code class="language-js">const chainAsync = fns =&gt; { let curr = 0; const next = () =&gt; fns[curr++](next); next(); };
-/*
-chainAsync([
+</code></pre>
+<pre><code class="language-js">chainAsync([
   next =&gt; { console.log('0 seconds'); setTimeout(next, 1000); },
   next =&gt; { console.log('1 second');  setTimeout(next, 1000); },
   next =&gt; { console.log('2 seconds'); }
 ])
-*/
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="compose">compose</h3></div><div class="section double-padded">
 <p>Performs right-to-left function composition.</p>
 <p>Use <code>Array.reduce()</code> to perform right-to-left function composition.
 The last (rightmost) function can accept one or more arguments; the remaining functions must be unary.</p>
 <pre><code class="language-js">const compose = (...fns) =&gt; fns.reduce((f, g) =&gt; (...args) =&gt; f(g(...args)));
-/*
-const add5 = x =&gt; x + 5
+</code></pre>
+<pre><code class="language-js">const add5 = x =&gt; x + 5
 const multiply = (x, y) =&gt; x * y
 const multiplyAndAdd5 = compose(add5, multiply)
-multiplyAndAdd5(5, 2) -&gt; 15
-*/
+multiplyAndAdd5(5, 2) // 15
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="curry">curry</h3></div><div class="section double-padded">
 <p>Curries a function.</p>
@@ -840,83 +883,92 @@ If you want to curry a function that accepts a variable number of arguments (a v
   arity &lt;= args.length
     ? fn(...args)
     : curry.bind(null, fn, arity, ...args);
-// curry(Math.pow)(2)(10) -&gt; 1024
-// curry(Math.min, 3)(10)(50)(2) -&gt; 2
+</code></pre>
+<pre><code class="language-js">curry(Math.pow)(2)(10) // 1024
+curry(Math.min, 3)(10)(50)(2) // 2
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="functionname">functionName</h3></div><div class="section double-padded">
 <p>Logs the name of a function.</p>
 <p>Use <code>console.debug()</code> and the <code>name</code> property of the passed method to log the method's name to the <code>debug</code> channel of the console.</p>
 <pre><code class="language-js">const functionName = fn =&gt; (console.debug(fn.name), fn);
-// functionName(Math.max) -&gt; max (logged in debug channel of console)
+</code></pre>
+<pre><code class="language-js">functionName(Math.max) // max (logged in debug channel of console)
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="runpromisesinseries">runPromisesInSeries</h3></div><div class="section double-padded">
 <p>Runs an array of promises in series.</p>
 <p>Use <code>Array.reduce()</code> to create a promise chain, where each promise returns the next promise when resolved.</p>
 <pre><code class="language-js">const runPromisesInSeries = ps =&gt; ps.reduce((p, next) =&gt; p.then(next), Promise.resolve());
-// const delay = (d) =&gt; new Promise(r =&gt; setTimeout(r, d))
-// runPromisesInSeries([() =&gt; delay(1000), () =&gt; delay(2000)]) -&gt; executes each promise sequentially, taking a total of 3 seconds to complete
+</code></pre>
+<pre><code class="language-js">const delay = (d) =&gt; new Promise(r =&gt; setTimeout(r, d))
+runPromisesInSeries([() =&gt; delay(1000), () =&gt; delay(2000)]) // //executes each promise sequentially, taking a total of 3 seconds to complete
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="sleep">sleep</h3></div><div class="section double-padded">
 <p>Delays the execution of an asynchronous function.</p>
 <p>Delay executing part of an <code>async</code> function, by putting it to sleep, returning a <code>Promise</code>.</p>
 <pre><code class="language-js">const sleep = ms =&gt; new Promise(resolve =&gt; setTimeout(resolve, ms));
-/*
-async function sleepyWork() {
+</code></pre>
+<pre><code class="language-js">async function sleepyWork() {
   console.log('I\'m going to sleep for 1 second.');
   await sleep(1000);
   console.log('I woke up after 1 second.');
 }
-*/
 </code></pre>
 </div></div><br/><h2 style="text-align:center">Logic</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="negate">negate</h3></div><div class="section double-padded">
 <p>Negates a predicate function.</p>
 <p>Take a predicate function and apply <code>not</code> to it with its arguments.</p>
 <pre><code class="language-js">const negate = func =&gt; (...args) =&gt; !func(...args);
-// filter([1, 2, 3, 4, 5, 6], negate(isEven)) -&gt; [1, 3, 5]
-// negate(isOdd)(1) -&gt; false
+</code></pre>
+<pre><code class="language-js">filter([1, 2, 3, 4, 5, 6], negate(isEven)) // [1, 3, 5]
+negate(isOdd)(1) // false
 </code></pre>
 </div></div><br/><h2 style="text-align:center">Math</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="arrayaverage">arrayAverage</h3></div><div class="section double-padded">
 <p>Returns the average of an array of numbers.</p>
 <p>Use <code>Array.reduce()</code> to add each value to an accumulator, initialized with a value of <code>0</code>, divide by the <code>length</code> of the array.</p>
 <pre><code class="language-js">const arrayAverage = arr =&gt; arr.reduce((acc, val) =&gt; acc + val, 0) / arr.length;
-// arrayAverage([1,2,3]) -&gt; 2
+</code></pre>
+<pre><code class="language-js">arrayAverage([1,2,3]) // 2
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="arraysum">arraySum</h3></div><div class="section double-padded">
 <p>Returns the sum of an array of numbers.</p>
 <p>Use <code>Array.reduce()</code> to add each value to an accumulator, initialized with a value of <code>0</code>.</p>
 <pre><code class="language-js">const arraySum = arr =&gt; arr.reduce((acc, val) =&gt; acc + val, 0);
-// arraySum([1,2,3,4]) -&gt; 10
+</code></pre>
+<pre><code class="language-js">arraySum([1,2,3,4]) // 10
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="clampnumber">clampNumber</h3></div><div class="section double-padded">
-<p>Clamps <code>num</code> within the inclusive range specified by the boundary values <code>a</code> and <code>b</code></p>
+<p>Clamps <code>num</code> within the inclusive range specified by the boundary values <code>a</code> and <code>b</code>.</p>
 <p>If <code>num</code> falls within the range, return <code>num</code>.
 Otherwise, return the nearest number in the range.</p>
 <pre><code class="language-js">const clampNumber = (num, a, b) =&gt; Math.max(Math.min(num, Math.max(a,b)),Math.min(a,b));
-// clampNumber(2, 3, 5) -&gt; 3
-// clampNumber(1, -1, -5) -&gt; -1
-// clampNumber(3, 2, 4) -&gt; 3
+</code></pre>
+<pre><code class="language-js">clampNumber(2, 3, 5) // 3
+clampNumber(1, -1, -5) // -1
+clampNumber(3, 2, 4) // 3
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="collatz">collatz</h3></div><div class="section double-padded">
 <p>Applies the Collatz algorithm.</p>
 <p>If <code>n</code> is even, return <code>n/2</code>. Otherwise, return <code>3n+1</code>.</p>
 <pre><code class="language-js">const collatz = n =&gt; (n % 2 == 0) ? (n / 2) : (3 * n + 1);
-// collatz(8) --&gt; 4
-// collatz(5) --&gt; 16
+</code></pre>
+<pre><code class="language-js">collatz(8) // 4
+collatz(5) // 16
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="digitize">digitize</h3></div><div class="section double-padded">
 <p>Converts a number to an array of digits.</p>
 <p>Convert the number to a string, using spread operators in ES6(<code>[...string]</code>) build an array.
 Use <code>Array.map()</code> and <code>parseInt()</code> to transform each value to an integer.</p>
-<pre><code class="language-js">const digitize = n =&gt; [...'' + n].map(i =&gt; parseInt(i));
-// digitize(2334) -&gt; [2, 3, 3, 4]
+<pre><code class="language-js">const digitize = n =&gt; [...''+n].map(i =&gt; parseInt(i));
+</code></pre>
+<pre><code class="language-js">differenceWith([1, 1.2, 1.5, 3], [1.9, 3], (a,b) =&gt; Math.round(a) == Math.round(b)) // [1, 1.2]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="distance">distance</h3></div><div class="section double-padded">
 <p>Returns the distance between two points.</p>
 <p>Use <code>Math.hypot()</code> to calculate the Euclidean distance between two points.</p>
 <pre><code class="language-js">const distance = (x0, y0, x1, y1) =&gt; Math.hypot(x1 - x0, y1 - y0);
-// distance(1,1, 2,3) -&gt; 2.23606797749979
+</code></pre>
+<pre><code class="language-js">distance(1,1, 2,3) // 2.23606797749979
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="factorial">factorial</h3></div><div class="section double-padded">
 <p>Calculates the factorial of a number.</p>
@@ -927,7 +979,8 @@ Throws an exception if <code>n</code> is a negative number.</p>
 <pre><code class="language-js">const factorial = n =&gt;
   n &lt; 0 ? (() =&gt; { throw new TypeError('Negative numbers are not allowed!'); })()
   : n &lt;= 1 ? 1 : n * factorial(n - 1);
-// factorial(6) -&gt; 720
+</code></pre>
+<pre><code class="language-js">factorial(6) // 720
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="fibonacci">fibonacci</h3></div><div class="section double-padded">
 <p>Generates an array, containing the Fibonacci sequence, up until the nth term.</p>
@@ -935,14 +988,16 @@ Throws an exception if <code>n</code> is a negative number.</p>
 Use <code>Array.reduce()</code> to add values into the array, using the sum of the last two values, except for the first two.</p>
 <pre><code class="language-js">const fibonacci = n =&gt;
   Array.from({ length: n}).reduce((acc, val, i) =&gt; acc.concat(i &gt; 1 ? acc[i - 1] + acc[i - 2] : i), []);
-// fibonacci(5) -&gt; [0,1,1,2,3]
+</code></pre>
+<pre><code class="language-js">factorial(6) // 720
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="fibonaccicountuntilnum">fibonacciCountUntilNum</h3></div><div class="section double-padded">
 <p>Returns the number of fibonnacci numbers up to <code>num</code>(<code>0</code> and <code>num</code> inclusive).</p>
 <p>Use a mathematical formula to calculate the number of fibonacci numbers until <code>num</code>.</p>
 <pre><code class="language-js">const fibonacciCountUntilNum = num =&gt;
-  Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));
-// fibonacciCountUntilNum(10) -&gt; 7
+  Math.ceil(Math.log(num * Math.sqrt(5) + 1/2) / Math.log((Math.sqrt(5)+1)/2));
+</code></pre>
+<pre><code class="language-js">fibonacciCountUntilNum(10) // 7
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="fibonacciuntilnum">fibonacciUntilNum</h3></div><div class="section double-padded">
 <p>Generates an array, containing the Fibonacci sequence, up until the nth term.</p>
@@ -952,8 +1007,9 @@ Uses a mathematical formula to calculate the length of the array required.</p>
 <pre><code class="language-js">const fibonacciUntilNum = num =&gt; {
   let n = Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));
   return Array.from({ length: n}).reduce((acc, val, i) =&gt; acc.concat(i &gt; 1 ? acc[i - 1] + acc[i - 2] : i), []);
-};
-// fibonacciUntilNum(15) -&gt; [0,1,1,2,3,5,8,13]
+}
+</code></pre>
+<pre><code class="language-js">fibonacciCountUntilNum(10) // 7
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="gcd">gcd</h3></div><div class="section double-padded">
 <p>Calculates the greatest common divisor between two numbers.</p>
@@ -961,7 +1017,8 @@ Uses a mathematical formula to calculate the length of the array required.</p>
 Base case is when <code>y</code> equals <code>0</code>. In this case, return <code>x</code>.
 Otherwise, return the GCD of <code>y</code> and the remainder of the division <code>x/y</code>.</p>
 <pre><code class="language-js">const gcd = (x, y) =&gt; !y ? x : gcd(y, x % y);
-// gcd (8, 36) -&gt; 4
+</code></pre>
+<pre><code class="language-js">gcd (8, 36) // 4
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="hammingdistance">hammingDistance</h3></div><div class="section double-padded">
 <p>Calculates the Hamming distance between two values.</p>
@@ -969,42 +1026,47 @@ Otherwise, return the GCD of <code>y</code> and the remainder of the division <c
 Count and return the number of <code>1</code>s in the string, using <code>match(/1/g)</code>.</p>
 <pre><code class="language-js">const hammingDistance = (num1, num2) =&gt;
   ((num1 ^ num2).toString(2).match(/1/g) || '').length;
-// hammingDistance(2,3) -&gt; 1
+</code></pre>
+<pre><code class="language-js">hammingDistance(2,3) // 1
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="inrange">inRange</h3></div><div class="section double-padded">
 <p>Checks if the given number falls within the given range.</p>
 <p>Use arithmetic comparison to check if the given number is in the specified range.
 If the second parameter, <code>end</code>, is not specified, the range is considered to be from <code>0</code> to <code>start</code>.</p>
-<pre><code class="language-js">const inRange = (n, start, end = null) =&gt; {
-  if (end &amp;&amp; start &gt; end) end = [start, start = end][0];
-  return (end == null) ? (n &gt;= 0 &amp;&amp; n &lt; start) : (n &gt;= start &amp;&amp; n &lt; end);
-};
-// inRange(3, 2, 5) -&gt; true
-// inRange(3, 4) -&gt; true
-// inRange(2, 3, 5) -&gt; false
-// inrange(3, 2) -&gt; false
+<pre><code class="language-js">const inRange = (n, start, end=null) =&gt; {
+  if(end &amp;&amp; start &gt; end) end = [start, start=end][0];
+  return (end == null) ? (n&gt;=0 &amp;&amp; n&lt;start) : (n&gt;=start &amp;&amp; n&lt;end);
+}
+</code></pre>
+<pre><code class="language-js">inRange(3, 2, 5) // true
+inRange(3, 4) // true
+inRange(2, 3, 5) // false
+inrange(3, 2) // false
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isarmstrongnumber">isArmstrongNumber</h3></div><div class="section double-padded">
 <p>Checks if the given number is an Armstrong number or not.</p>
 <p>Convert the given number into an array of digits. Use <code>Math.pow()</code> to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return <code>true</code> otherwise <code>false</code>.</p>
 <pre><code class="language-js">const isArmstrongNumber = digits =&gt;
-  (arr =&gt; arr.reduce((a, d) =&gt; a + Math.pow(parseInt(d), arr.length), 0) == digits)((digits + '').split(''));
-// isArmstrongNumber(1634) -&gt; true
-// isArmstrongNumber(371) -&gt; true
-// isArmstrongNumber(56) -&gt; false
+  ( arr =&gt; arr.reduce( ( a, d ) =&gt; a + Math.pow( parseInt( d ), arr.length ), 0 ) == digits ? true : false )( ( digits+'' ).split( '' ) );
+</code></pre>
+<pre><code class="language-js">isArmstrongNumber(1634) // true
+isArmstrongNumber(371) // true
+isArmstrongNumber(56) // false
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isdivisible">isDivisible</h3></div><div class="section double-padded">
 <p>Checks if the first numeric argument is divisible by the second one.</p>
 <p>Use the modulo operator (<code>%</code>) to check if the remainder is equal to <code>0</code>.</p>
 <pre><code class="language-js">const isDivisible = (dividend, divisor) =&gt; dividend % divisor === 0;
-// isDivisible(6,3) -&gt; true
+</code></pre>
+<pre><code class="language-js">isDivisible(6,3) // true
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="iseven">isEven</h3></div><div class="section double-padded">
 <p>Returns <code>true</code> if the given number is even, <code>false</code> otherwise.</p>
 <p>Checks whether a number is odd or even using the modulo (<code>%</code>) operator.
 Returns <code>true</code> if the number is even, <code>false</code> if the number is odd.</p>
 <pre><code class="language-js">const isEven = num =&gt; num % 2 === 0;
-// isEven(3) -&gt; false
+</code></pre>
+<pre><code class="language-js">isEven(3) // false
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isprime">isPrime</h3></div><div class="section double-padded">
 <p>Checks if the provided integer is a prime number.</p>
@@ -1015,8 +1077,9 @@ Return <code>false</code> if any of them divides the given number, else return <
   for (var i = 2; i * i &lt;= boundary; i++) if (num % i == 0) return false;
   return num &gt;= 2;
 };
-// isPrime(11) -&gt; true
-// isPrime(12) -&gt; false
+</code></pre>
+<pre><code class="language-js">isPrime(11) // true
+isPrime(12) // false
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="lcm">lcm</h3></div><div class="section double-padded">
 <p>Returns the least common multiple of two numbers.</p>
@@ -1026,7 +1089,8 @@ The GCD formula uses recursion.</p>
   const gcd = (x, y) =&gt; !y ? x : gcd(y, x % y);
   return Math.abs(x * y) / (gcd(x, y));
 };
-// lcm(12,7) -&gt; 84
+</code></pre>
+<pre><code class="language-js">lcm(12,7) // 84
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="median">median</h3></div><div class="section double-padded">
 <p>Returns the median of an array of numbers.</p>
@@ -1036,8 +1100,9 @@ Return the number at the midpoint if <code>length</code> is odd, otherwise the a
   const mid = Math.floor(arr.length / 2), nums = [...arr].sort((a, b) =&gt; a - b);
   return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
 };
-// median([5,6,50,1,-5]) -&gt; 5
-// median([0,10,-2,7]) -&gt; 3.5
+</code></pre>
+<pre><code class="language-js">median([5,6,50,1,-5]) // 5
+median([0,10,-2,7]) // 3.5
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="palindrome">palindrome</h3></div><div class="section double-padded">
 <p>Returns <code>true</code> if the given string is a palindrome, <code>false</code> otherwise.</p>
@@ -1047,52 +1112,59 @@ Then, <code>split('')</code> into individual characters, <code>reverse()</code>,
   const s = str.toLowerCase().replace(/[\W_]/g,'');
   return s === s.split('').reverse().join('');
 }
-// palindrome('taco cat') -&gt; true
+</code></pre>
+<pre><code class="language-js">palindrome('taco cat') // true
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="percentile">percentile</h3></div><div class="section double-padded">
 <p>Uses the percentile formula to calculate how many numbers in the given array are less or equal to the given value.</p>
 <p>Use <code>Array.reduce()</code> to calculate how many numbers are below the value and how many are the same value and apply the percentile formula.</p>
 <pre><code class="language-js">const percentile = (arr, val) =&gt;
   100 * arr.reduce((acc,v) =&gt; acc + (v &lt; val ? 1 : 0) + (v === val ? 0.5 : 0), 0) / arr.length;
-// percentile([1,2,3,4,5,6,7,8,9,10], 6) -&gt; 55
+</code></pre>
+<pre><code class="language-js">percentile([1,2,3,4,5,6,7,8,9,10], 6) // 55
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="powerset">powerset</h3></div><div class="section double-padded">
 <p>Returns the powerset of a given array of numbers.</p>
 <p>Use <code>Array.reduce()</code> combined with <code>Array.map()</code> to iterate over elements and combine into an array containing all combinations.</p>
 <pre><code class="language-js">const powerset = arr =&gt;
   arr.reduce((a, v) =&gt; a.concat(a.map(r =&gt; [v].concat(r))), [[]]);
-// powerset([1,2]) -&gt; [[], [1], [2], [2,1]]
+</code></pre>
+<pre><code class="language-js">powerset([1,2]) // [[], [1], [2], [2,1]]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="primes">primes</h3></div><div class="section double-padded">
 <p>Generates primes up to a given number, using the Sieve of Eratosthenes.</p>
 <p>Generate an array from <code>2</code> to the given number. Use <code>Array.filter()</code> to filter out the values divisible by any number from <code>2</code> to the square root of the provided number.</p>
 <pre><code class="language-js">const primes = num =&gt; {
-  let arr = Array.from({length: num - 1}).map((x, i) =&gt; i + 2),
-    sqroot = Math.floor(Math.sqrt(num)),
-    numsTillSqroot = Array.from({length: sqroot - 1}).map((x, i) =&gt; i + 2);
-  numsTillSqroot.forEach(x =&gt; arr = arr.filter(y =&gt; ((y % x) !== 0) || (y == x)));
+  let arr =  Array.from({length:num-1}).map((x,i)=&gt; i+2),
+    sqroot  = Math.floor(Math.sqrt(num)),
+    numsTillSqroot  = Array.from({length:sqroot-1}).map((x,i)=&gt; i+2);
+  numsTillSqroot.forEach(x =&gt; arr = arr.filter(y =&gt; ((y%x)!==0)||(y==x)));
   return arr;
-};
-// primes(10) -&gt; [2,3,5,7]
+}
+</code></pre>
+<pre><code class="language-js">primes(10) // [2,3,5,7]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="randomintegerinrange">randomIntegerInRange</h3></div><div class="section double-padded">
 <p>Returns a random integer in the specified range.</p>
 <p>Use <code>Math.random()</code> to generate a random number and map it to the desired range, using <code>Math.floor()</code> to make it an integer.</p>
 <pre><code class="language-js">const randomIntegerInRange = (min, max) =&gt; Math.floor(Math.random() * (max - min + 1)) + min;
-// randomIntegerInRange(0, 5) -&gt; 2
+</code></pre>
+<pre><code class="language-js">randomIntegerInRange(0, 5) // 2
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="randomnumberinrange">randomNumberInRange</h3></div><div class="section double-padded">
 <p>Returns a random number in the specified range.</p>
 <p>Use <code>Math.random()</code> to generate a random value, map it to the desired range using multiplication.</p>
 <pre><code class="language-js">const randomNumberInRange = (min, max) =&gt; Math.random() * (max - min) + min;
-// randomNumberInRange(2,10) -&gt; 6.0211363285087005
+</code></pre>
+<pre><code class="language-js">randomNumberInRange(2,10) // 6.0211363285087005
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="round">round</h3></div><div class="section double-padded">
 <p>Rounds a number to a specified amount of digits.</p>
 <p>Use <code>Math.round()</code> and template literals to round the number to the specified number of digits.
 Omit the second argument, <code>decimals</code> to round to an integer.</p>
-<pre><code class="language-js">const round = (n, decimals = 0) =&gt; Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`);
-// round(1.005, 2) -&gt; 1.01
+<pre><code class="language-js">const round = (n, decimals=0) =&gt; Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`);
+</code></pre>
+<pre><code class="language-js">round(1.005, 2) // 1.01
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="sdbmhashalgorithm">sdbmHashAlgorithm</h3></div><div class="section double-padded">
 <p>This algorithm is a simple hash-algorithm that hashes it input string <code>s</code> into a whole number.</p>
@@ -1118,8 +1190,9 @@ You can omit the second argument to get the sample standard deviation or set it 
        .reduce((acc, val) =&gt; acc + val, 0) / (arr.length - (usePopulation ? 0 : 1))
   );
 };
-// standardDeviation([10,2,38,23,38,23,21]) -&gt; 13.284434142114991 (sample)
-// standardDeviation([10,2,38,23,38,23,21], true) -&gt; 12.29899614287479 (population)
+</code></pre>
+<pre><code class="language-js">standardDeviation([10,2,38,23,38,23,21]) // 13.284434142114991 (sample)
+standardDeviation([10,2,38,23,38,23,21], true) // 12.29899614287479 (population)
 </code></pre>
 </div></div><br/><h2 style="text-align:center">Media</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="speechsynthesis">speechSynthesis</h3></div><div class="section double-padded">
@@ -1132,15 +1205,17 @@ Use <code>window.speechSynthesis.speak()</code> to play the message.</p>
   msg.voice = window.speechSynthesis.getVoices()[0];
   window.speechSynthesis.speak(msg);
 };
-// speechSynthesis('Hello, World') -&gt; plays the message
+</code></pre>
+<pre><code class="language-js">speechSynthesis('Hello, World') // // plays the message
 </code></pre>
 </div></div><br/><h2 style="text-align:center">Node</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="jsontofile">JSONToFile</h3></div><div class="section double-padded">
 <p>Writes a JSON object to a file.</p>
 <p>Use <code>fs.writeFile()</code>, template literals and <code>JSON.stringify()</code> to write a <code>json</code> object to a <code>.json</code> file.</p>
 <pre><code class="language-js">const fs = require('fs');
-const JSONToFile = (obj, filename) =&gt; fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2));
-// JSONToFile({test: &quot;is passed&quot;}, 'testJsonFile') -&gt; writes the object to 'testJsonFile.json'
+const JSONToFile = (obj, filename) =&gt; fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2))
+</code></pre>
+<pre><code class="language-js">JSONToFile({test: &quot;is passed&quot;}, 'testJsonFile') // writes the object to 'testJsonFile.json'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="readfilelines">readFileLines</h3></div><div class="section double-padded">
 <p>Returns an array of lines from the specified file.</p>
@@ -1148,16 +1223,25 @@ const JSONToFile = (obj, filename) =&gt; fs.writeFile(`${filename}.json`, JSON.s
 convert buffer to string using <code>toString(encoding)</code> function.
 creating an array from contents of file by <code>split</code>ing file content line by line (each <code>\n</code>).</p>
 <pre><code class="language-js">const fs = require('fs');
-const readFileLines = filename =&gt; fs.readFileSync(filename).toString('UTF8').split(/\r?\n/);
-/*
-  contents of test.txt :
-    line1
-    line2
-    line3
-    ___________________________
-  let arr = readFileLines('test.txt')
-  console.log(arr) // -&gt; ['line1', 'line2', 'line3']
- */
+const readFileLines = filename =&gt; fs.readFileSync(filename).toString('UTF8').split('\n');
+</code></pre>
+<pre><code class="language-js">/*
+contents of test.txt :
+  line1
+  line2
+  line3
+  ___________________________
+*/
+let arr = readFileLines('test.txt')
+console.log(arr) // ['line1', 'line2', 'line3']
+</code></pre>
+<pre><code class="language-js">contents of test.txt :
+  line1
+  line2
+  line3
+  ___________________________
+let arr = readFileLines('test.txt')
+console.log(arr) // // ['line1', 'line2', 'line3']
 </code></pre>
 </div></div><br/><h2 style="text-align:center">Object</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="cleanobj">cleanObj</h3></div><div class="section double-padded">
@@ -1174,22 +1258,23 @@ Also if you give it a special key (<code>childIndicator</code>) it will search d
    });
   return obj;
 };
-/*
-  const testObj = {a: 1, b: 2, children: {a: 1, b: 2}}
-  cleanObj(testObj, [&quot;a&quot;],&quot;children&quot;) // { a: 1, children : { a: 1}}
-*/
+</code></pre>
+<pre><code class="language-js">const testObj = {a: 1, b: 2, children: {a: 1, b: 2}}
+cleanObj(testObj, [&quot;a&quot;],&quot;children&quot;) // { a: 1, children : { a: 1}}
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="objectfrompairs">objectFromPairs</h3></div><div class="section double-padded">
 <p>Creates an object from the given key-value pairs.</p>
 <p>Use <code>Array.reduce()</code> to create and combine key-value pairs.</p>
 <pre><code class="language-js">const objectFromPairs = arr =&gt; arr.reduce((a, v) =&gt; (a[v[0]] = v[1], a), {});
-// objectFromPairs([['a',1],['b',2]]) -&gt; {a: 1, b: 2}
+</code></pre>
+<pre><code class="language-js">objectFromPairs([['a',1],['b',2]]) // {a: 1, b: 2}
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="objecttopairs">objectToPairs</h3></div><div class="section double-padded">
 <p>Creates an array of key-value pair arrays from an object.</p>
 <p>Use <code>Object.keys()</code> and <code>Array.map()</code> to iterate over the object's keys and produce an array with key-value pairs.</p>
 <pre><code class="language-js">const objectToPairs = obj =&gt; Object.keys(obj).map(k =&gt; [k, obj[k]]);
-// objectToPairs({a: 1, b: 2}) -&gt; [['a',1],['b',2]])
+</code></pre>
+<pre><code class="language-js">objectToPairs({a: 1, b: 2}) // [['a',1],['b',2]])
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="orderby">orderBy</h3></div><div class="section double-padded">
 <p>Returns a sorted array of objects ordered by properties and orders.</p>
@@ -1205,37 +1290,36 @@ If no orders array is passed it sort by 'asc' by default.</p>
       return acc;
     }, 0)
   );
-/*
-const users = [{ 'name': 'fred',   'age': 48 },{ 'name': 'barney', 'age': 36 },
+</code></pre>
+<pre><code class="language-js">const users = [{ 'name': 'fred',   'age': 48 },{ 'name': 'barney', 'age': 36 },
   { 'name': 'fred',   'age': 40 },{ 'name': 'barney', 'age': 34 }];
-orderby(users, ['name', 'age'], ['asc', 'desc']) -&gt; [{name: 'barney', age: 36}, {name: 'barney', age: 34}, {name: 'fred', age: 48}, {name: 'fred', age: 40}]
-orderby(users, ['name', 'age']) -&gt; [{name: 'barney', age: 34}, {name: 'barney', age: 36}, {name: 'fred', age: 40}, {name: 'fred', age: 48}]
-*/
+orderby(users, ['name', 'age'], ['asc', 'desc']) // [{name: 'barney', age: 36}, {name: 'barney', age: 34}, {name: 'fred', age: 48}, {name: 'fred', age: 40}]
+orderby(users, ['name', 'age']) // [{name: 'barney', age: 34}, {name: 'barney', age: 36}, {name: 'fred', age: 40}, {name: 'fred', age: 48}]
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="select">select</h3></div><div class="section double-padded">
 <p>Retrieve a property that indicated by the selector from an object.</p>
 <p>If the property does not exists returns <code>undefined</code>.</p>
 <pre><code class="language-js">const select = (from, selector) =&gt;
   selector.split('.').reduce((prev, cur) =&gt; prev &amp;&amp; prev[cur], from);
-
-// const obj = {selector: {to: {val: 'val to select'}}};
-// select(obj, 'selector.to.val'); -&gt; 'val to select'
+</code></pre>
+<pre><code class="language-js">const obj = {selector: {to: {val: 'val to select'}}};
+select(obj, 'selector.to.val'); // 'val to select'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="shallowclone">shallowClone</h3></div><div class="section double-padded">
 <p>Creates a shallow clone of an object.</p>
 <p>Use <code>Object.assign()</code> and an empty object (<code>{}</code>) to create a shallow clone of the original.</p>
 <pre><code class="language-js">const shallowClone = obj =&gt; Object.assign({}, obj);
-/*
-const a = { x: true, y: 1 };
+</code></pre>
+<pre><code class="language-js">const a = { x: true, y: 1 };
 const b = shallowClone(a);
-a === b -&gt; false
-*/
+a === b // false
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="truthcheckcollection">truthCheckCollection</h3></div><div class="section double-padded">
 <p>Checks if the predicate (second argument) is truthy on all elements of a collection (first argument).</p>
 <p>Use <code>Array.every()</code> to check if each passed object has the specified property and if it returns a truthy value.</p>
 <pre><code class="language-js">const truthCheckCollection = (collection, pre) =&gt; (collection.every(obj =&gt; obj[pre]));
-// truthCheckCollection([{&quot;user&quot;: &quot;Tinky-Winky&quot;, &quot;sex&quot;: &quot;male&quot;}, {&quot;user&quot;: &quot;Dipsy&quot;, &quot;sex&quot;: &quot;male&quot;}], &quot;sex&quot;) -&gt; true
+</code></pre>
+<pre><code class="language-js">truthCheckCollection([{&quot;user&quot;: &quot;Tinky-Winky&quot;, &quot;sex&quot;: &quot;male&quot;}, {&quot;user&quot;: &quot;Dipsy&quot;, &quot;sex&quot;: &quot;male&quot;}], &quot;sex&quot;) // true
 </code></pre>
 </div></div><br/><h2 style="text-align:center">String</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="anagrams">anagrams</h3></div><div class="section double-padded">
@@ -1249,7 +1333,8 @@ Base cases are for string <code>length</code> equal to <code>2</code> or <code>1
   return str.split('').reduce((acc, letter, i) =&gt;
     acc.concat(anagrams(str.slice(0, i) + str.slice(i + 1)).map(val =&gt; letter + val)), []);
 };
-// anagrams('abc') -&gt; ['abc','acb','bac','bca','cab','cba']
+</code></pre>
+<pre><code class="language-js">anagrams('abc') // ['abc','acb','bac','bca','cab','cba']
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="capitalize">Capitalize</h3></div><div class="section double-padded">
 <p>Capitalizes the first letter of a string.</p>
@@ -1257,27 +1342,31 @@ Base cases are for string <code>length</code> equal to <code>2</code> or <code>1
 Omit the <code>lowerRest</code> parameter to keep the rest of the string intact, or set it to <code>true</code> to convert to lowercase.</p>
 <pre><code class="language-js">const capitalize = ([first, ...rest], lowerRest = false) =&gt;
   first.toUpperCase() + (lowerRest ? rest.join('').toLowerCase() : rest.join(''));
-// capitalize('myName') -&gt; 'MyName'
-// capitalize('myName', true) -&gt; 'Myname'
+</code></pre>
+<pre><code class="language-js">capitalize('fooBar') // 'FooBar'
+capitalize('fooBar', true) // 'Foobar'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="capitalizeeveryword">capitalizeEveryWord</h3></div><div class="section double-padded">
 <p>Capitalizes the first letter of every word in a string.</p>
 <p>Use <code>replace()</code> to match the first character of each word and <code>toUpperCase()</code> to capitalize it.</p>
 <pre><code class="language-js">const capitalizeEveryWord = str =&gt; str.replace(/\b[a-z]/g, char =&gt; char.toUpperCase());
-// capitalizeEveryWord('hello world!') -&gt; 'Hello World!'
+</code></pre>
+<pre><code class="language-js">capitalizeEveryWord('hello world!') // 'Hello World!'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="countvowels">countVowels</h3></div><div class="section double-padded">
 <p>Retuns <code>number</code> of vowels in provided string.</p>
 <p>Use a regular expression to count the number of vowels <code>(A, E, I, O, U)</code> in a <code>string</code>.</p>
 <pre><code class="language-js">const countVowels = str =&gt; (str.match(/[aeiou]/ig) || []).length;
-// countVowels('foobar') -&gt; 3
-// countVowels('gym') -&gt; 0
+</code></pre>
+<pre><code class="language-js">countVowels('foobar') // 3
+countVowels('gym') // 0
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="escaperegexp">escapeRegExp</h3></div><div class="section double-padded">
 <p>Escapes a string to use in a regular expression.</p>
 <p>Use <code>replace()</code> to escape special characters.</p>
 <pre><code class="language-js">const escapeRegExp = str =&gt; str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&amp;');
-// escapeRegExp('(test)') -&gt; \\(test\\)
+</code></pre>
+<pre><code class="language-js">escapeRegExp('(test)') // \\(test\\)
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="fromcamelcase">fromCamelCase</h3></div><div class="section double-padded">
 <p>Converts a string from camelcase.</p>
@@ -1286,32 +1375,36 @@ Omit the second argument to use a default separator of <code>_</code>.</p>
 <pre><code class="language-js">const fromCamelCase = (str, separator = '_') =&gt;
   str.replace(/([a-z\d])([A-Z])/g, '$1' + separator + '$2')
     .replace(/([A-Z]+)([A-Z][a-z\d]+)/g, '$1' + separator + '$2').toLowerCase();
-// fromCamelCase('someDatabaseFieldName', ' ') -&gt; 'some database field name'
-// fromCamelCase('someLabelThatNeedsToBeCamelized', '-') -&gt; 'some-label-that-needs-to-be-camelized'
-// fromCamelCase('someJavascriptProperty', '_') -&gt; 'some_javascript_property'
+</code></pre>
+<pre><code class="language-js">fromCamelCase('someDatabaseFieldName', ' ') // 'some database field name'
+fromCamelCase('someLabelThatNeedsToBeCamelized', '-') // 'some-label-that-needs-to-be-camelized'
+fromCamelCase('someJavascriptProperty', '_') // 'some_javascript_property'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="repeatstring">repeatString</h3></div><div class="section double-padded">
 <p>Repeats a string n times using <code>String.repeat()</code></p>
 <p>If no string is provided the default is <code>&quot;&quot;</code> and the default number of times is 2.</p>
-<pre><code class="language-js">const repeatString = (str = '', num = 2) =&gt; {
-  return num &gt;= 0 ? str.repeat(num) : str;
-};
-// repeatString(&quot;abc&quot;,3) -&gt; 'abcabcabc'
-// repeatString(&quot;abc&quot;) -&gt; 'abcabc'
+<pre><code class="language-js">const repeatString = (str=&quot;&quot;,num=2) =&gt; {
+    return num &gt;= 0 ? str.repeat(num) : str;
+}
+</code></pre>
+<pre><code class="language-js">repeatString(&quot;abc&quot;,3) // 'abcabcabc'
+repeatString(&quot;abc&quot;) // 'abcabc'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="reversestring">reverseString</h3></div><div class="section double-padded">
 <p>Reverses a string.</p>
 <p>Use <code>split('')</code> and <code>Array.reverse()</code> to reverse the order of the characters in the string.
 Combine characters to get a string using <code>join('')</code>.</p>
 <pre><code class="language-js">const reverseString = str =&gt; str.split('').reverse().join('');
-// reverseString('foobar') -&gt; 'raboof'
+</code></pre>
+<pre><code class="language-js">reverseString('foobar') // 'raboof'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="sortcharactersinstring">sortCharactersInString</h3></div><div class="section double-padded">
 <p>Alphabetically sorts the characters in a string.</p>
 <p>Split the string using <code>split('')</code>, <code>Array.sort()</code> utilizing <code>localeCompare()</code>, recombine using <code>join('')</code>.</p>
 <pre><code class="language-js">const sortCharactersInString = str =&gt;
   str.split('').sort((a, b) =&gt; a.localeCompare(b)).join('');
-// sortCharactersInString('cabbage') -&gt; 'aabbceg'
+</code></pre>
+<pre><code class="language-js">sortCharactersInString('cabbage') // 'aabbceg'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="tocamelcase">toCamelCase</h3></div><div class="section double-padded">
 <p>Converts a string to camelcase.</p>
@@ -1321,12 +1414,13 @@ For more detailed explanation of this Regex, <a href="https://regex101.com/r/bMC
   let s = str &amp;&amp; str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
     .map(x =&gt; x.slice(0, 1).toUpperCase() + x.slice(1).toLowerCase())
     .join('');
-  return s.slice(0, 1).toLowerCase() + s.slice(1);
-};
-// toCamelCase(&quot;some_database_field_name&quot;) -&gt; 'someDatabaseFieldName'
-// toCamelCase(&quot;Some label that needs to be camelized&quot;) -&gt; 'someLabelThatNeedsToBeCamelized'
-// toCamelCase(&quot;some-javascript-property&quot;) -&gt; 'someJavascriptProperty'
-// toCamelCase(&quot;some-mixed_string with spaces_underscores-and-hyphens&quot;) -&gt; 'someMixedStringWithSpacesUnderscoresAndHyphens'
+  return s.slice(0,1).toLowerCase() + s.slice(1)
+  }
+</code></pre>
+<pre><code class="language-js">toCamelCase(&quot;some_database_field_name&quot;) // 'someDatabaseFieldName'
+toCamelCase(&quot;Some label that needs to be camelized&quot;) // 'someLabelThatNeedsToBeCamelized'
+toCamelCase(&quot;some-javascript-property&quot;) // 'someJavascriptProperty'
+toCamelCase(&quot;some-mixed_string with spaces_underscores-and-hyphens&quot;) // 'someMixedStringWithSpacesUnderscoresAndHyphens'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="tokebabcase">toKebabCase</h3></div><div class="section double-padded">
 <p>Converts a string to kebab case.</p>
@@ -1336,11 +1430,12 @@ For more detailed explanation of this Regex, <a href="https://regex101.com/r/bMC
   str &amp;&amp; str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
     .map(x =&gt; x.toLowerCase())
     .join('-');
-// toKebabCase(&quot;camelCase&quot;) -&gt; 'camel-case'
-// toKebabCase(&quot;some text&quot;) -&gt; 'some-text'
-// toKebabCase(&quot;some-mixed_string With spaces_underscores-and-hyphens&quot;) -&gt; 'some-mixed-string-with-spaces-underscores-and-hyphens'
-// toKebabCase(&quot;AllThe-small Things&quot;) -&gt; &quot;all-the-small-things&quot;
-// toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') -&gt; &quot;i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-xml-and-html&quot;
+</code></pre>
+<pre><code class="language-js">toKebabCase(&quot;camelCase&quot;) // 'camel-case'
+toKebabCase(&quot;some text&quot;) // 'some-text'
+toKebabCase(&quot;some-mixed_string With spaces_underscores-and-hyphens&quot;) // 'some-mixed-string-with-spaces-underscores-and-hyphens'
+toKebabCase(&quot;AllThe-small Things&quot;) // &quot;all-the-small-things&quot;
+toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') // &quot;i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-xml-and-html&quot;
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="tosnakecase">toSnakeCase</h3></div><div class="section double-padded">
 <p>Converts a string to snake case.</p>
@@ -1351,12 +1446,13 @@ For more detailed explanation of this Regex, <a href="https://regex101.com/r/bMC
     .map(x =&gt; x.toLowerCase())
     .join('_');
 };
-// toSnakeCase(&quot;camelCase&quot;) -&gt; 'camel_case'
-// toSnakeCase(&quot;some text&quot;) -&gt; 'some_text'
-// toSnakeCase(&quot;some-javascript-property&quot;) -&gt; 'some_javascript_property'
-// toSnakeCase(&quot;some-mixed_string With spaces_underscores-and-hyphens&quot;) -&gt; 'some_mixed_string_with_spaces_underscores_and_hyphens'
-// toSnakeCase(&quot;AllThe-small Things&quot;) -&gt; &quot;all_the_small_things&quot;
-// toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') -&gt; &quot;i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html&quot;
+</code></pre>
+<pre><code class="language-js">toSnakeCase(&quot;camelCase&quot;) // 'camel_case'
+toSnakeCase(&quot;some text&quot;) // 'some_text'
+toSnakeCase(&quot;some-javascript-property&quot;) // 'some_javascript_property'
+toSnakeCase(&quot;some-mixed_string With spaces_underscores-and-hyphens&quot;) // 'some_mixed_string_with_spaces_underscores_and_hyphens'
+toSnakeCase(&quot;AllThe-small Things&quot;) // &quot;all_the_smal_things&quot;
+toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') // &quot;i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html&quot;
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="truncatestring">truncateString</h3></div><div class="section double-padded">
 <p>Truncates a string up to a specified length.</p>
@@ -1364,45 +1460,51 @@ For more detailed explanation of this Regex, <a href="https://regex101.com/r/bMC
 Return the string truncated to the desired length, with <code>...</code> appended to the end or the original string.</p>
 <pre><code class="language-js">const truncateString = (str, num) =&gt;
   str.length &gt; num ? str.slice(0, num &gt; 3 ? num - 3 : num) + '...' : str;
-// truncateString('boomerang', 7) -&gt; 'boom...'
+</code></pre>
+<pre><code class="language-js">truncateString('boomerang', 7) // 'boom...'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="words">words</h3></div><div class="section double-padded">
 <p>Converts a given string into an array of words.</p>
 <p>Use <code>String.split()</code> with a supplied pattern (defaults to non-alpha as a regex) to convert to an array of strings. Use <code>Array.filter()</code> to remove any empty strings.
 Omit the second argument to use the default regex.</p>
 <pre><code class="language-js">const words = (str, pattern = /[^a-zA-Z-]+/) =&gt; str.split(pattern).filter(Boolean);
-// words(&quot;I love javaScript!!&quot;) -&gt; [&quot;I&quot;, &quot;love&quot;, &quot;javaScript&quot;]
-// words(&quot;python, javaScript &amp; coffee&quot;) -&gt; [&quot;python&quot;, &quot;javaScript&quot;, &quot;coffee&quot;]
+</code></pre>
+<pre><code class="language-js">words(&quot;I love javaScript!!&quot;) // [&quot;I&quot;, &quot;love&quot;, &quot;javaScript&quot;]
+words(&quot;python, javaScript &amp; coffee&quot;) // [&quot;python&quot;, &quot;javaScript&quot;, &quot;coffee&quot;]
 </code></pre>
 </div></div><br/><h2 style="text-align:center">Utility</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="coalesce">coalesce</h3></div><div class="section double-padded">
 <p>Returns the first non-null/undefined argument.</p>
 <p>Use <code>Array.find()</code> to return the first non <code>null</code>/<code>undefined</code> argument.</p>
-<pre><code class="language-js">const coalesce = (...args) =&gt; args.find(_ =&gt; ![undefined, null].includes(_));
-// coalesce(null,undefined,&quot;&quot;,NaN, &quot;Waldo&quot;) -&gt; &quot;&quot;
+<pre><code class="language-js">const coalesce = (...args) =&gt; args.find(_ =&gt; ![undefined, null].includes(_))
+</code></pre>
+<pre><code class="language-js">coalesce(null,undefined,&quot;&quot;,NaN, &quot;Waldo&quot;) // &quot;&quot;
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="coalescefactory">coalesceFactory</h3></div><div class="section double-padded">
 <p>Returns a customized coalesce function that returns the first argument that returns <code>true</code> from the provided argument validation function.</p>
 <p>Use <code>Array.find()</code> to return the first argument that returns <code>true</code> from the provided argument validation function.</p>
 <pre><code class="language-js">const coalesceFactory = valid =&gt; (...args) =&gt; args.find(valid);
-// const customCoalesce = coalesceFactory(_ =&gt; ![null, undefined, &quot;&quot;, NaN].includes(_))
-// customCoalesce(undefined, null, NaN, &quot;&quot;, &quot;Waldo&quot;) //-&gt; &quot;Waldo&quot;
+</code></pre>
+<pre><code class="language-js">const customCoalesce = coalesceFactory(_ =&gt; ![null, undefined, &quot;&quot;, NaN].includes(_))
+customCoalesce(undefined, null, NaN, &quot;&quot;, &quot;Waldo&quot;) // &quot;Waldo&quot;
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="extendhex">extendHex</h3></div><div class="section double-padded">
 <p>Extends a 3-digit color code to a 6-digit color code.</p>
 <p>Use <code>Array.map()</code>, <code>split()</code> and <code>Array.join()</code> to join the mapped array for converting a 3-digit RGB notated hexadecimal color-code to the 6-digit form.
 <code>String.slice()</code> is used to remove <code>#</code> from string start since it's added once.</p>
 <pre><code class="language-js">const extendHex = shortHex =&gt;
-  '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split('').map(x =&gt; x + x).join('');
-// extendHex('#03f') -&gt; '#0033ff'
-// extendHex('05a') -&gt; '#0055aa'
+  '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split('').map(x =&gt; x+x).join('')
+</code></pre>
+<pre><code class="language-js">extendHex('#03f') // '#0033ff'
+extendHex('05a') // '#0055aa'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="gettype">getType</h3></div><div class="section double-padded">
 <p>Returns the native type of a value.</p>
 <p>Returns lowercased constructor name of value, &quot;undefined&quot; or &quot;null&quot; if value is undefined or null</p>
 <pre><code class="language-js">const getType = v =&gt;
   v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name.toLowerCase();
-// getType(new Set([1,2,3])) -&gt; &quot;set&quot;
+</code></pre>
+<pre><code class="language-js">getType(new Set([1,2,3])) // &quot;set&quot;
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="hextorgb">hexToRGB</h3></div><div class="section double-padded">
 <p>Converts a color code to a <code>rgb()</code> or <code>rgba()</code> string if alpha value is provided.</p>
@@ -1418,51 +1520,58 @@ Omit the second argument to use the default regex.</p>
     ((h &amp; (alpha ? 0x0000ff00 : 0x0000ff)) &gt;&gt;&gt; (alpha ? 8 : 0)) +
     (alpha ? `, ${(h &amp; 0x000000ff)}` : '') + ')';
 };
-// hexToRGB('#27ae60ff') -&gt; 'rgba(39, 174, 96, 255)'
-// hexToRGB('27ae60') -&gt; 'rgb(39, 174, 96)'
-// hexToRGB('#fff') -&gt; 'rgb(255, 255, 255)'
+</code></pre>
+<pre><code class="language-js">hexToRGB('#27ae60ff') // 'rgba(39, 174, 96, 255)'
+hexToRGB('27ae60') // 'rgb(39, 174, 96)'
+hexToRGB('#fff') // 'rgb(255, 255, 255)'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isarray">isArray</h3></div><div class="section double-padded">
 <p>Checks if the given argument is an array.</p>
 <p>Use <code>Array.isArray()</code> to check if a value is classified as an array.</p>
 <pre><code class="language-js">const isArray = val =&gt; !!val &amp;&amp; Array.isArray(val);
-// isArray(null) -&gt; false
-// isArray([1]) -&gt; true
+</code></pre>
+<pre><code class="language-js">isArray(null) // false
+isArray([1]) // true
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isboolean">isBoolean</h3></div><div class="section double-padded">
 <p>Checks if the given argument is a native boolean element.</p>
 <p>Use <code>typeof</code> to check if a value is classified as a boolean primitive.</p>
 <pre><code class="language-js">const isBoolean = val =&gt; typeof val === 'boolean';
-// isBoolean(null) -&gt; false
-// isBoolean(false) -&gt; true
+</code></pre>
+<pre><code class="language-js">isBoolean(null) // false
+isBoolean(false) // true
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isfunction">isFunction</h3></div><div class="section double-padded">
 <p>Checks if the given argument is a function.</p>
 <p>Use <code>typeof</code> to check if a value is classified as a function primitive.</p>
 <pre><code class="language-js">const isFunction = val =&gt; val &amp;&amp; typeof val === 'function';
-// isFunction('x') -&gt; false
-// isFunction(x =&gt; x) -&gt; true
+</code></pre>
+<pre><code class="language-js">isFunction('x') // false
+isFunction(x =&gt; x) // true
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isnumber">isNumber</h3></div><div class="section double-padded">
 <p>Checks if the given argument is a number.</p>
 <p>Use <code>typeof</code> to check if a value is classified as a number primitive.</p>
 <pre><code class="language-js">const isNumber = val =&gt; typeof val === 'number';
-// isNumber('1') -&gt; false
-// isNumber(1) -&gt; true
+</code></pre>
+<pre><code class="language-js">isNumber('1') // false
+isNumber(1) // true
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isstring">isString</h3></div><div class="section double-padded">
 <p>Checks if the given argument is a string.</p>
 <p>Use <code>typeof</code> to check if a value is classified as a string primitive.</p>
 <pre><code class="language-js">const isString = val =&gt; typeof val === 'string';
-// isString(10) -&gt; false
-// isString('10') -&gt; true
+</code></pre>
+<pre><code class="language-js">isString(10) // false
+isString('10') // true
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="issymbol">isSymbol</h3></div><div class="section double-padded">
 <p>Checks if the given argument is a symbol.</p>
 <p>Use <code>typeof</code> to check if a value is classified as a symbol primitive.</p>
 <pre><code class="language-js">const isSymbol = val =&gt; typeof val === 'symbol';
-// isSymbol('x') -&gt; false
-// isSymbol(Symbol('x')) -&gt; true
+</code></pre>
+<pre><code class="language-js">isSymbol('x') // false
+isSymbol(Symbol('x')) // true
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="randomhexcolor">randomHexColor</h3></div><div class="section double-padded">
 <p>Generates a random hexadecimal color code.</p>
@@ -1472,15 +1581,17 @@ Omit the second argument to use the default regex.</p>
   return '#' + (n.length !== 6
         ? (Math.random() * 0xf | 0).toString(16) + n : n);
 };
-// randomHexColorCode() -&gt; &quot;#e34155&quot;
-// randomHexColorCode() -&gt; &quot;#fd73a6&quot;
-// randomHexColorCode() -&gt; &quot;#4144c6&quot;
+</code></pre>
+<pre><code class="language-js">randomHexColorCode() // &quot;#e34155&quot;
+randomHexColorCode() // &quot;#fd73a6&quot;
+randomHexColorCode() // &quot;#4144c6&quot;
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="rgbtohex">RGBToHex</h3></div><div class="section double-padded">
 <p>Converts the values of RGB components to a color code.</p>
 <p>Convert given RGB parameters to hexadecimal string using bitwise left-shift operator (<code>&lt;&lt;</code>) and <code>toString(16)</code>, then <code>padStart(6,'0')</code> to get a 6-digit hexadecimal value.</p>
 <pre><code class="language-js">const RGBToHex = (r, g, b) =&gt; ((r &lt;&lt; 16) + (g &lt;&lt; 8) + b).toString(16).padStart(6, '0');
-// RGBToHex(255, 165, 1) -&gt; 'ffa501'
+</code></pre>
+<pre><code class="language-js">RGBToHex(255, 165, 1) // 'ffa501'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="timetaken">timeTaken</h3></div><div class="section double-padded">
 <p>Measures the time taken by a function to execute.</p>
@@ -1489,13 +1600,15 @@ Omit the second argument to use the default regex.</p>
   console.time('timeTaken'); const r = callback();
   console.timeEnd('timeTaken'); return r;
 };
-// timeTaken(() =&gt; Math.pow(2, 10)) -&gt; 1024
-// (logged): timeTaken: 0.02099609375ms
+</code></pre>
+<pre><code class="language-js">timeTaken(() =&gt; Math.pow(2, 10)) // 1024
+(logged): timeTaken: 0.02099609375ms
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="todecimalmark">toDecimalMark</h3></div><div class="section double-padded">
 <p>Use <code>toLocaleString()</code> to convert a float-point arithmetic to the <a href="https://en.wikipedia.org/wiki/Decimal_mark">Decimal mark</a> form. It makes a comma separated string from a number.</p>
-<pre><code class="language-js">const toDecimalMark = num =&gt; num.toLocaleString('en-US');
-// toDecimalMark(12305030388.9087) -&gt; &quot;12,305,030,388.9087&quot;
+<pre><code class="language-js">const toDecimalMark = num =&gt; num.toLocaleString(&quot;en-US&quot;);
+</code></pre>
+<pre><code class="language-js">toDecimalMark(12305030388.9087) // &quot;12,305,030,388.9087&quot;
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="toordinalsuffix">toOrdinalSuffix</h3></div><div class="section double-padded">
 <p>Adds an ordinal suffix to a number.</p>
@@ -1508,7 +1621,8 @@ If digit is found in teens pattern, use teens ordinal.</p>
     tPattern = [11, 12, 13, 14, 15, 16, 17, 18, 19];
   return oPattern.includes(digits[0]) &amp;&amp; !tPattern.includes(digits[1]) ? int + ordinals[digits[0] - 1] : int + ordinals[3];
 };
-// toOrdinalSuffix(&quot;123&quot;) -&gt; &quot;123rd&quot;
+</code></pre>
+<pre><code class="language-js">toOrdinalSuffix(&quot;123&quot;) // &quot;123rd&quot;
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="uuidgenerator">UUIDGenerator</h3></div><div class="section double-padded">
 <p>Generates a UUID.</p>
@@ -1517,7 +1631,8 @@ If digit is found in teens pattern, use teens ordinal.</p>
   ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =&gt;
     (c ^ crypto.getRandomValues(new Uint8Array(1))[0] &amp; 15 &gt;&gt; c / 4).toString(16)
   );
-// UUIDGenerator() -&gt; '7982fcfe-5721-4632-bede-6000885be57d'
+</code></pre>
+<pre><code class="language-js">UUIDGenerator() // '7982fcfe-5721-4632-bede-6000885be57d'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="validatenumber">validateNumber</h3></div><div class="section double-padded">
 <p>Returns <code>true</code> if the given value is a number, <code>false</code> otherwise.</p>
@@ -1525,7 +1640,8 @@ If digit is found in teens pattern, use teens ordinal.</p>
 Use <code>isFinite()</code> to check if the number is finite.
 Use <code>Number()</code> to check if the coercion holds.</p>
 <pre><code class="language-js">const validateNumber = n =&gt; !isNaN(parseFloat(n)) &amp;&amp; isFinite(n) &amp;&amp; Number(n) == n;
-// validateNumber('10') -&gt; true
+</code></pre>
+<pre><code class="language-js">validateNumber('10') // true
 </code></pre>
 </div></div><br/>
         <footer>

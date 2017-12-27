@@ -7,5 +7,8 @@ Combine characters to get a string using `join('')`.
 
 ```js
 const reverseString = str => str.split('').reverse().join('');
-// reverseString('foobar') -> 'raboof'
+```
+
+```js
+reverseString('foobar') // 'raboof'
 ```

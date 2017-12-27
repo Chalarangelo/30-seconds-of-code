@@ -13,5 +13,8 @@ const toOrdinalSuffix = num => {
     tPattern = [11, 12, 13, 14, 15, 16, 17, 18, 19];
   return oPattern.includes(digits[0]) && !tPattern.includes(digits[1]) ? int + ordinals[digits[0] - 1] : int + ordinals[3];
 };
-// toOrdinalSuffix("123") -> "123rd"
+```
+
+```js
+toOrdinalSuffix("123") // "123rd"
 ```

@@ -8,5 +8,8 @@ Use `Number()` to check if the coercion holds.
 
 ```js
 const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
-// validateNumber('10') -> true
+```
+
+```js
+validateNumber('10') // true
 ```

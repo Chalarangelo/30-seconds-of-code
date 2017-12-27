@@ -8,6 +8,9 @@ Omit the `lowerRest` parameter to keep the rest of the string intact, or set it 
 ```js
 const capitalize = ([first, ...rest], lowerRest = false) =>
   first.toUpperCase() + (lowerRest ? rest.join('').toLowerCase() : rest.join(''));
-// capitalize('myName') -> 'MyName'
-// capitalize('myName', true) -> 'Myname'
+```
+
+```js
+capitalize('fooBar') // 'FooBar'
+capitalize('fooBar', true) // 'Foobar'
 ```
