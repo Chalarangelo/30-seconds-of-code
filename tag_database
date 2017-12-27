@@ -87,14 +87,14 @@ orderBy:object
 palindrome:math
 percentile:math
 pick:array
-pipeFunctions:uncategorized
+pipeFunctions:adapter
 powerset:math
 primes:math
 promisify:adapter
 pull:array
 pullAtIndex:array
 pullAtValue:array
-randomHexColor:uncategorized
+randomHexColor:utility
 randomIntegerInRange:math
 randomNumberInRange:math
 readFileLines:node
@@ -107,7 +107,7 @@ round:math
 runPromisesInSeries:function
 sample:array
 scrollToTop:browser
-sdbmHashAlgorithm:uncategorized
+sdbmHashAlgorithm:math
 select:object
 shallowClone:object
 shuffle:array
