@@ -1,4 +1,4 @@
-### sdbmHashAlgorithm
+### sbdm
 
 This algorithm is a simple hash-algorithm that hashes it input string `s` into a whole number.
 

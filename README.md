@@ -122,7 +122,6 @@
 * [`randomIntegerInRange`](#randomintegerinrange)
 * [`randomNumberInRange`](#randomnumberinrange)
 * [`round`](#round)
-* [`sdbmHashAlgorithm`](#sdbmhashalgorithm)
 * [`standardDeviation`](#standarddeviation)
 
 ### Media
@@ -171,6 +170,7 @@
 * [`isSymbol`](#issymbol)
 * [`randomHexColor`](#randomhexcolor)
 * [`RGBToHex`](#rgbtohex)
+* [`sdbm`](#sdbm)
 * [`timeTaken`](#timetaken)
 * [`toDecimalMark`](#todecimalmark)
 * [`toOrdinalSuffix`](#toordinalsuffix)
@@ -595,7 +595,7 @@ const flattenDepth = (arr, depth = 1) =>
 ```
 
 ```js
-flatten([1,[2],3,4]) // [1,2,3,4]
+flattenDepth([1,[2],3,4]) // [1,2,3,4]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1130,7 +1130,7 @@ const bottomVisible = () =>
 ```
 
 ```js
-// bottomVisible() // true
+bottomVisible() // true
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1350,7 +1350,10 @@ Use `new Date()` to get today's date, adding `86400000` of seconds to it(24 hour
 
 ```js
 const tomorrow = () => new Date(new Date().getTime() + 86400000).toISOString().split('T')[0];
-// tomorrow() -> 2017-12-27 (if current date is 2017-12-26)
+```
+
+```js
+tomorrow() // 2017-12-27 (if current date is 2017-12-26)
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1626,7 +1629,7 @@ const fibonacci = n =>
 ```
 
 ```js
-factorial(6) // 720
+fibonacci(6) // 720
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1968,25 +1971,6 @@ round(1.005, 2) // 1.01
 
 [⬆ back to top](#table-of-contents)
 
-### sdbmHashAlgorithm
-
-This algorithm is a simple hash-algorithm that hashes it input string `s` into a whole number.
-
-Use `split('')` and `Array.reduce()` to create a hash of the input string, utilizing bit shifting.
-
-``` js
-const sdbm = str => {
-  let arr = str.split('');
-  return arr.reduce((hashCode, currentVal) =>
-    hashCode = currentVal.charCodeAt(0) + (hashCode << 6) + (hashCode << 16)  - hashCode
-  ,0)
-}
-// console.log(sdbm("name")) // -3521204949
-// console.log(sdbm("age")) // 808122783
-```
-
-[⬆ back to top](#table-of-contents)
-
 ### standardDeviation
 
 Returns the standard deviation of an array of numbers.
@@ -2079,15 +2063,6 @@ let arr = readFileLines('test.txt')
 console.log(arr) // ['line1', 'line2', 'line3']
 ```
 
-```js
-contents of test.txt :
-  line1
-  line2
-  line3
-  ___________________________
-let arr = readFileLines('test.txt')
-console.log(arr) // // ['line1', 'line2', 'line3']
-```
 
 [⬆ back to top](#table-of-contents)
 ## Object
@@ -2745,6 +2720,28 @@ RGBToHex(255, 165, 1) // 'ffa501'
 
 [⬆ back to top](#table-of-contents)
 
+### sdbmHashAlgorithm
+
+This algorithm is a simple hash-algorithm that hashes it input string `s` into a whole number.
+
+Use `split('')` and `Array.reduce()` to create a hash of the input string, utilizing bit shifting.
+
+``` js
+const sdbm = str => {
+  let arr = str.split('');
+  return arr.reduce((hashCode, currentVal) =>
+    hashCode = currentVal.charCodeAt(0) + (hashCode << 6) + (hashCode << 16)  - hashCode
+  ,0)
+}
+```
+
+```js
+console.log(sdbm("name")) // -3521204949
+console.log(sdbm("age")) // 808122783
+```
+
+[⬆ back to top](#table-of-contents)
+
 ### timeTaken
 
 Measures the time taken by a function to execute.
@@ -2760,7 +2757,7 @@ const timeTaken = callback => {
 
 ```js
 timeTaken(() => Math.pow(2, 10)) // 1024
-(logged): timeTaken: 0.02099609375ms
+// (logged): timeTaken: 0.02099609375ms
 ```
 
 [⬆ back to top](#table-of-contents)
