@@ -114,7 +114,10 @@ code, pre, kbd, code *, pre *, kbd *, code[class*="language-"], pre[class*="lang
    font-family: 'Inconsolata', Menlo, Consolas, monospace !important;
  }
 code, kbd { font-size: 1em; }
-code { transform: scale(1); } /* Deals with the issue described in #243 */
+code {
+  padding: 0; // Should make the first line's left padding the same as all other lines and avoid that annoying little step.
+  transform: scale(1);  /* Deals with the issue described in #243 */
+}
 pre { font-size: 1rem; border: 0.0625rem solid var(--secondary-border-color); border-radius: var(--universal-border-radius);}
 .group{position:relative;margin-top:2em;margin-bottom:-1em}
 .search{font-size:14px;margin-top:-.1em;display:block;width:100%;border:none;border-bottom:1px solid var(--nav-link-color)}
