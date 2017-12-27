@@ -107,7 +107,7 @@ round:math
 runPromisesInSeries:function
 sample:array
 scrollToTop:browser
-sdbmHashAlgorithm:math
+sdbm:utility
 select:object
 shallowClone:object
 shuffle:array

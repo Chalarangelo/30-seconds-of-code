@@ -14,5 +14,5 @@ const flattenDepth = (arr, depth = 1) =>
 ```
 
 ```js
-flatten([1,[2],3,4]) // [1,2,3,4]
+flattenDepth([1,[2],3,4]) // [1,2,3,4]
 ```
