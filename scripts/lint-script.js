@@ -15,7 +15,7 @@ const TEMP_PATH = './temp';
 
 const codeRE = /```\s*js([\s\S]*?)```/g;
 
-console.time('lint');
+console.time('Linter');
 
 try {
   const snippets = fs.readdirSync(SNIPPETS_PATH)
@@ -68,7 +68,8 @@ try {
     }
 
     fs.removeSync(TEMP_PATH);
-    console.timeEnd('lint');
+    console.log(`${chalk.green('SUCCESS!')} Snippet files linted!`);
+    console.timeEnd('Linter');
   });
 } catch (err) {
   console.log(`${chalk.red('ERROR!')} During linting: ${err}`);
