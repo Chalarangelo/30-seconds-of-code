@@ -7,7 +7,6 @@ before_install:
 - npm install webber
 - npm install builder
 - npm install tagger
-- npm install linter
 script:
 - npm run tagger
 - npm run linter
