@@ -1232,8 +1232,8 @@ console.log(pulled); // [ 'b', 'd' ]
 
 QuickSort an Array (ascending sort by default).
 
-Use recursion. 
-Use `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it. 
+Use recursion.
+Use `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it.
 If the parameter `desc` is truthy, return array sorts in descending order.
 
 ```js
@@ -1766,7 +1766,7 @@ getURLParameters('http://url.com/page?name=Adam&surname=Smith'); // {name: 'Adam
 
 Redirects the page to HTTPS if its currently in HTTP. Also, pressing the back button doesn't take it back to the HTTP page as its replaced in the history.
 
-Use `location.protocol` to get the protocol currently being used. If it's not HTTPS, use `location.replace()` to replace the existing page with the HTTPS version of the page. Use `location.href` to get the full address, split it with `String.split()` and remove the protocol part of the URL.  
+Use `location.protocol` to get the protocol currently being used. If it's not HTTPS, use `location.replace()` to replace the existing page with the HTTPS version of the page. Use `location.href` to get the full address, split it with `String.split()` and remove the protocol part of the URL.
 
 <details>
 <summary>Examples</summary>
@@ -3993,17 +3993,28 @@ Generates a UUID.
 Use `crypto` API to generate a UUID, compliant with [RFC4122](https://www.ietf.org/rfc/rfc4122.txt) version 4.
 
 ```js
+const crypto = require("crypto");
+
 const UUIDGenerator = () =>
   ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
-    (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)
+    (c ^ (crypto.randomBytes(1)[0] & (15 >> (c / 4)))).toString(16)
   );
+```
+
+If you'd like a dependency-less UUID Generator that will work in both browsers and Node.JS, you should choose this one instead.
+
+```js
+const UUIDGenerator2 = a =>
+	a ? ((a ^ Math.random() * 16) >> a / 4).toString(16) :
+		([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, UUIDGenerator2);
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```js
-UUIDGenerator(); // '7982fcfe-5721-4632-bede-6000885be57d'
+UUIDGenerator();  // '7982fcfe-5721-4632-bede-6000885be57d'
+UUIDGenerator2(); // '777c85e1-6fdf-47f4-8c65-2842487453bb'
 ```
 
 </details>
