@@ -17,7 +17,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {
-    "chalk": "^2.3.0"
+    "chalk": "^2.3.0",
+    "tape": "^4.8.0"
   },
   "scripts": {
     "builder": "node ./scripts/build-script.js",
