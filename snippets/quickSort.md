@@ -1,4 +1,4 @@
-### ArrayQuickSort
+### quickSort
 
 QuickSort an Array (ascending sort by default).
 
