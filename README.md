@@ -91,11 +91,11 @@
 * [`elementIsVisibleInViewport`](#elementisvisibleinviewport)
 * [`getScrollPosition`](#getscrollposition)
 * [`getURLParameters`](#geturlparameters)
-* [`hasClass`](#hasclass)
+* [`hide`](#hide)
 * [`httpsRedirect`](#httpsredirect)
 * [`redirect`](#redirect)
 * [`scrollToTop`](#scrolltotop)
-* [`toggleClass`](#toggleclass)
+* [`show`](#show)
 
 </details>
 
@@ -254,12 +254,6 @@
 
 ## Adapter
 
-### call
-
-Given a key and a set of arguments, call them when given a context. Primarily useful in composition.
-
-Use a closure to call a stored key with stored arguments.
-
 ```js
 const call = (key, ...args) => context => context[key](...args);
 ```
@@ -357,6 +351,33 @@ multiplyAndAdd5(5, 2); // 15
 [⬆ Back to top](#table-of-contents)
 
 
+### pipeFunctions
+
+Performs left-to-right function composition.
+
+Use `Array.reduce()` with the spread operator (`...`) to perform left-to-right function composition.
+The first (leftmost) function can accept one or more arguments; the remaining functions must be unary.
+
+```js
+const pipeFunctions = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const add5 = x => x + 5;
+const multiply = (x, y) => x * y;
+const multiplyAndAdd5 = pipeFunctions(multiply, add5);
+multiplyAndAdd5(5, 2); // 15
+```
+
+</details>
+
+
+[⬆ Back to top](#table-of-contents)
+
+
 ### promisify
 
 Converts an asynchronous function to return a promise.
@@ -380,16 +401,6 @@ const promisify = func => (...args) =>
 const delay = promisify((d, cb) => setTimeout(cb, d));
 delay(2000).then(() => console.log('Hi!')); // // Promise resolves after 2s
 ```
-
-</details>
-
-
-[⬆ Back to top](#table-of-contents)
-
-
-### spreadOver
-
-Takes a variadic function and returns a closure that accepts an array of arguments to map to the inputs of the function.
 
 Use closures and the spread operator (`...`) to map the array of arguments to the inputs of the function.
 
@@ -1775,6 +1786,29 @@ hasClass(document.querySelector('p.special'), 'special'); // true
 [⬆ Back to top](#table-of-contents)
 
 
+### hide
+
+Hides all the elements specified.
+
+Use the spread operator (`...`) and `Array.forEach()` to apply `display: none` to each element specified.
+
+```js
+const hide = (...el) => [...el].forEach(e => (e.style.display = 'none'));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+hide(document.querySelectorAll('img')); // Hides all <img> elements on the page
+```
+
+Use `location.protocol` to get the protocol currently being used. If it's not HTTPS, use `location.replace()` to replace the existing page with the HTTPS version of the page. Use `location.href` to get the full address, split it with `String.split()` and remove the protocol part of the URL.
+
+
+[⬆ Back to top](#table-of-contents)
+
+
 ### httpsRedirect
 
 Redirects the page to HTTPS if its currently in HTTP. Also, pressing the back button doesn't take it back to the HTTP page as its replaced in the history.
@@ -1850,6 +1884,41 @@ scrollToTop();
 
 [⬆ Back to top](#table-of-contents)
 
+
+### show
+
+Shows all the elements specified.
+
+Use the spread operator (`...`) and `Array.forEach()` to clear the `display` property for each element specified.
+
+```js
+const show = (...el) => [...el].forEach(e => (e.style.display = ''));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+show(document.querySelectorAll('img')); // Shows all <img> elements on the page
+```
+
+</details>
+
+
+[⬆ Back to top](#table-of-contents)
+
+## Date
+
+### getDaysDiffBetweenDates
+
+Returns the difference (in days) between two dates.
+
+Calculate the difference (in days) between two `Date` objects.
+
+```js
+const getDaysDiffBetweenDates = (dateInitial, dateFinal) =>
+  (dateFinal - dateInitial) / (1000 * 3600 * 24);
+```
 
 ### toggleClass
 
@@ -1955,6 +2024,21 @@ toEnglishDate('09/21/2010'); // '21/09/2010'
 
 [⬆ Back to top](#table-of-contents)
 
+## Function
+
+### chainAsync
+
+Chains asynchronous functions.
+
+Loop through an array of functions containing asynchronous events, calling `next` when each asynchronous event has completed.
+
+```js
+const chainAsync = fns => {
+  let curr = 0;
+  const next = () => fns[curr++](next);
+  next();
+};
+```
 
 ### tomorrow
 
@@ -2119,6 +2203,17 @@ runPromisesInSeries([() => delay(1000), () => delay(2000)]); // //executes each 
 
 [⬆ Back to top](#table-of-contents)
 
+## Logic
+
+### negate
+
+Negates a predicate function.
+
+Take a predicate function and apply `not` to it with its arguments.
+
+```js
+const negate = func => (...args) => !func(...args);
+```
 
 ### sleep
 
@@ -2847,6 +2942,7 @@ round(1.005, 2); // 1.01
 
 [⬆ Back to top](#table-of-contents)
 
+## Media
 
 ### standardDeviation
 
@@ -2876,10 +2972,18 @@ standardDeviation([10, 2, 38, 23, 38, 23, 21]); // 13.284434142114991 (sample)
 standardDeviation([10, 2, 38, 23, 38, 23, 21], true); // 12.29899614287479 (population)
 ```
 
-</details>
+Use `SpeechSynthesisUtterance.voice` and `window.speechSynthesis.getVoices()` to convert a message to speech.
+Use `window.speechSynthesis.speak()` to play the message.
 
+Learn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
 
-[⬆ Back to top](#table-of-contents)
+```js
+const speechSynthesis = message => {
+  const msg = new SpeechSynthesisUtterance(message);
+  msg.voice = window.speechSynthesis.getVoices()[0];
+  window.speechSynthesis.speak(msg);
+};
+```
 
 ## Media
 
@@ -4074,6 +4178,8 @@ validateNumber('10'); // true
 
 
 ## Credits
+
+*Icons made by [Smashicons](https://www.flaticon.com/authors/smashicons) from [www.flaticon.com](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).*
 
 *Icons made by [Smashicons](https://www.flaticon.com/authors/smashicons) from [www.flaticon.com](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).*
 
