@@ -76,8 +76,11 @@ try {
         uncategorizedOutput += `\n${snippets[taggedSnippet[0]+'.md']+'\n[⬆ back to top](#table-of-contents)\n'}`;
     } else {
       output +=`## ${capitalize(tag, true)}\n`;
-      for(let taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag))
-        output += `\n${snippets[taggedSnippet[0]+'.md']+'\n[⬆ back to top](#table-of-contents)\n'}`;
+      for(let taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag)){
+        let data = snippets[taggedSnippet[0]+'.md'];
+        data = data.slice(0,data.lastIndexOf('```js')) + '<details>\n<summary>Examples</summary>\n\n' + data.slice(data.lastIndexOf('```js'),data.lastIndexOf('```')) + data.slice(data.lastIndexOf('```')) + '\n</details>\n';
+        output += `\n${data+'\n[⬆ back to top](#table-of-contents)\n'}`;
+      }
     }
   }
   output += uncategorizedOutput;
