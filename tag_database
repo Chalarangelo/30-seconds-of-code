@@ -57,6 +57,7 @@ hammingDistance:math
 hasClass:browser
 head:array
 hexToRGB:utility
+hide:browser
 httpsRedirect:browser
 initial:array
 initialize2DArray:array
@@ -112,6 +113,7 @@ scrollToTop:browser
 sdbm:utility
 select:object
 shallowClone:object
+show:browser
 shuffle:array
 similarity:array
 sleep:function
