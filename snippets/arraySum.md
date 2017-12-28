@@ -9,5 +9,5 @@ const arraySum = arr => arr.reduce((acc, val) => acc + val, 0);
 ```
 
 ```js
-arraySum([1,2,3,4]) // 10
+arraySum([1, 2, 3, 4]); // 10
 ```

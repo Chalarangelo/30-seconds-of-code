@@ -9,5 +9,5 @@ const randomNumberInRange = (min, max) => Math.random() * (max - min) + min;
 ```
 
 ```js
-randomNumberInRange(2,10) // 6.0211363285087005
+randomNumberInRange(2, 10); // 6.0211363285087005
 ```

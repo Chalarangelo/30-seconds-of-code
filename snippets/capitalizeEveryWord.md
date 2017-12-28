@@ -9,5 +9,5 @@ const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperC
 ```
 
 ```js
-capitalizeEveryWord('hello world!') // 'Hello World!'
+capitalizeEveryWord('hello world!'); // 'Hello World!'
 ```

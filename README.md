@@ -186,13 +186,17 @@ Given a key and a set of arguments, call them when given a context. Primarily us
 Use a closure to call a stored key with stored arguments.
 
 ```js
-const call = (key, ...args) => context => context[ key ](...args);
+const call = (key, ...args) => context => context[key](...args);
 ```
 
 ```js
-Promise.resolve( [ 1, 2, 3 ] ).then( call('map', x => 2 * x ) ).then( console.log ) //[ 2, 4, 6 ]
-const map = call.bind(null, 'map')
-Promise.resolve( [ 1, 2, 3 ] ).then( map( x => 2 * x ) ).then( console.log ) //[ 2, 4, 6 ]
+Promise.resolve([1, 2, 3])
+  .then(call('map', x => 2 * x))
+  .then(console.log); //[ 2, 4, 6 ]
+const map = call.bind(null, 'map');
+Promise.resolve([1, 2, 3])
+  .then(map(x => 2 * x))
+  .then(console.log); //[ 2, 4, 6 ]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -208,11 +212,11 @@ const collectInto = fn => (...args) => fn(args);
 ```
 
 ```js
-const Pall = collectInto( Promise.all.bind(Promise) )
-let p1 = Promise.resolve(1)
-let p2 = Promise.resolve(2)
-let p3 = new Promise((resolve) => setTimeout(resolve,2000,3))
-Pall(p1, p2, p3).then(console.log)
+const Pall = collectInto(Promise.all.bind(Promise));
+let p1 = Promise.resolve(1);
+let p2 = Promise.resolve(2);
+let p3 = new Promise(resolve => setTimeout(resolve, 2000, 3));
+Pall(p1, p2, p3).then(console.log);
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -228,13 +232,13 @@ const flip = fn => (...args) => fn(args.pop(), ...args);
 ```
 
 ```js
-let a = {name: 'John Smith'}
-let b = {}
-const mergeFrom = flip(Object.assign)
-let mergePerson = mergeFrom.bind(null, a)
-mergePerson(b) // == b
-b = {}
-Object.assign(b, a) // == b
+let a = { name: 'John Smith' };
+let b = {};
+const mergeFrom = flip(Object.assign);
+let mergePerson = mergeFrom.bind(null, a);
+mergePerson(b); // == b
+b = {};
+Object.assign(b, a); // == b
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -251,10 +255,10 @@ const pipeFunctions = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)
 ```
 
 ```js
-const add5 = x => x + 5
-const multiply = (x, y) => x * y
-const multiplyAndAdd5 = pipeFunctions(multiply, add5)
-multiplyAndAdd5(5, 2) // 15
+const add5 = x => x + 5;
+const multiply = (x, y) => x * y;
+const multiplyAndAdd5 = pipeFunctions(multiply, add5);
+multiplyAndAdd5(5, 2); // 15
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -269,17 +273,15 @@ Use the `...rest` operator to pass in all the parameters.
 *In Node 8+, you can use [`util.promisify`](https://nodejs.org/api/util.html#util_util_promisify_original)*
 
 ```js
-const promisify = func =>
-  (...args) =>
-    new Promise((resolve, reject) =>
-      func(...args, (err, result) =>
-        err ? reject(err) : resolve(result))
-    );
+const promisify = func => (...args) =>
+  new Promise((resolve, reject) =>
+    func(...args, (err, result) => (err ? reject(err) : resolve(result)))
+  );
 ```
 
 ```js
-const delay = promisify((d, cb) => setTimeout(cb, d))
-delay(2000).then(() => console.log('Hi!')) // // Promise resolves after 2s
+const delay = promisify((d, cb) => setTimeout(cb, d));
+delay(2000).then(() => console.log('Hi!')); // // Promise resolves after 2s
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -295,9 +297,9 @@ const spreadOver = fn => argsArr => fn(...argsArr);
 ```
 
 ```js
-const arrayMax = spreadOver(Math.max)
-arrayMax([1,2,3]) // 3
-arrayMax([1,2,4])  // 4
+const arrayMax = spreadOver(Math.max);
+arrayMax([1, 2, 3]); // 3
+arrayMax([1, 2, 4]); // 4
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -311,14 +313,14 @@ Use `Array.reduce()` and the `gcd` formula (uses recursion) to calculate the gre
 
 ```js
 const arrayGcd = arr => {
-  const gcd = (x, y) => !y ? x : gcd(y, x % y);
+  const gcd = (x, y) => (!y ? x : gcd(y, x % y));
   return arr.reduce((a, b) => gcd(a, b));
 };
 ```
 
 ```js
-arrayGcd([1,2,3,4,5]) // 1
-arrayGcd([4,8,12]) // 4
+arrayGcd([1, 2, 3, 4, 5]); // 1
+arrayGcd([4, 8, 12]); // 4
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -331,15 +333,15 @@ Use `Array.reduce()` and the `lcm` formula (uses recursion) to calculate the low
 
 ```js
 const arrayLcm = arr => {
-  const gcd = (x, y) => !y ? x : gcd(y, x % y);
-  const lcm = (x, y) => (x * y) / gcd(x, y);
+  const gcd = (x, y) => (!y ? x : gcd(y, x % y));
+  const lcm = (x, y) => x * y / gcd(x, y);
   return arr.reduce((a, b) => lcm(a, b));
 };
 ```
 
 ```js
-arrayLcm([1,2,3,4,5]) // 60
-arrayLcm([4,8,12]) // 24
+arrayLcm([1, 2, 3, 4, 5]); // 60
+arrayLcm([4, 8, 12]); // 24
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -355,7 +357,7 @@ const arrayMax = arr => Math.max(...arr);
 ```
 
 ```js
-arrayMax([10, 1, 5]) // 10
+arrayMax([10, 1, 5]); // 10
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -371,7 +373,7 @@ const arrayMin = arr => Math.min(...arr);
 ```
 
 ```js
-arrayMin([10, 1, 5]) // 1
+arrayMin([10, 1, 5]); // 1
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -386,11 +388,13 @@ If the original array can't be split evenly, the final chunk will contain the re
 
 ```js
 const chunk = (arr, size) =>
-  Array.from({length: Math.ceil(arr.length / size)}, (v, i) => arr.slice(i * size, i * size + size));
+  Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
+    arr.slice(i * size, i * size + size)
+  );
 ```
 
 ```js
-chunk([1,2,3,4,5], 2) // [[1,2],[3,4],[5]]
+chunk([1, 2, 3, 4, 5], 2); // [[1,2],[3,4],[5]]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -406,7 +410,7 @@ const compact = arr => arr.filter(Boolean);
 ```
 
 ```js
-compact([0, 1, false, 2, '', 3, 'a', 'e'*23, NaN, 's', 34]) // [ 1, 2, 3, 'a', 's', 34 ]
+compact([0, 1, false, 2, '', 3, 'a', 'e' * 23, NaN, 's', 34]); // [ 1, 2, 3, 'a', 's', 34 ]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -418,11 +422,11 @@ Counts the occurrences of a value in an array.
 Use `Array.reduce()` to increment a counter each time you encounter the specific value inside the array.
 
 ```js
-const countOccurrences = (arr, value) => arr.reduce((a, v) => v === value ? a + 1 : a + 0, 0);
+const countOccurrences = (arr, value) => arr.reduce((a, v) => (v === value ? a + 1 : a + 0), 0);
 ```
 
 ```js
-countOccurrences([1,1,2,1,2,3], 1) // 3
+countOccurrences([1, 1, 2, 1, 2, 3], 1); // 3
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -436,11 +440,11 @@ Use `Array.concat()` with an empty array (`[]`) and the spread operator (`...`) 
 Recursively flatten each element that is an array.
 
 ```js
-const deepFlatten = arr => [].concat(...arr.map(v => Array.isArray(v) ? deepFlatten(v) : v));
+const deepFlatten = arr => [].concat(...arr.map(v => (Array.isArray(v) ? deepFlatten(v) : v)));
 ```
 
 ```js
-deepFlatten([1,[2],[[3],4],5]) // [1,2,3,4,5]
+deepFlatten([1, [2], [[3], 4], 5]); // [1,2,3,4,5]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -452,11 +456,14 @@ Returns the difference between two arrays.
 Create a `Set` from `b`, then use `Array.filter()` on `a` to only keep values not contained in `b`.
 
 ```js
-const difference = (a, b) => { const s = new Set(b); return a.filter(x => !s.has(x)); };
+const difference = (a, b) => {
+  const s = new Set(b);
+  return a.filter(x => !s.has(x));
+};
 ```
 
 ```js
-difference([1,2,3], [1,2,4]) // [3]
+difference([1, 2, 3], [1, 2, 4]); // [3]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -472,7 +479,7 @@ const differenceWith = (arr, val, comp) => arr.filter(a => !val.find(b => comp(a
 ```
 
 ```js
-differenceWith([1, 1.2, 1.5, 3], [1.9, 3], (a,b) => Math.round(a) == Math.round(b)) // [1, 1.2]
+differenceWith([1, 1.2, 1.5, 3], [1.9, 3], (a, b) => Math.round(a) == Math.round(b)); // [1, 1.2]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -488,7 +495,7 @@ const distinctValuesOfArray = arr => [...new Set(arr)];
 ```
 
 ```js
-distinctValuesOfArray([1,2,2,3,4,4,5]) // [1,2,3,4,5]
+distinctValuesOfArray([1, 2, 2, 3, 4, 4, 5]); // [1,2,3,4,5]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -508,7 +515,7 @@ const dropElements = (arr, func) => {
 ```
 
 ```js
-dropElements([1, 2, 3, 4], n => n >= 3) // [3,4]
+dropElements([1, 2, 3, 4], n => n >= 3); // [3,4]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -524,9 +531,9 @@ const dropRight = (arr, n = 1) => arr.slice(0, -n);
 ```
 
 ```js
-dropRight([1,2,3]) // [1,2]
-dropRight([1,2,3], 2) // [1]
-dropRight([1,2,3], 42) // []
+dropRight([1, 2, 3]); // [1,2]
+dropRight([1, 2, 3], 2); // [1]
+dropRight([1, 2, 3], 42); // []
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -542,7 +549,7 @@ const everyNth = (arr, nth) => arr.filter((e, i) => i % nth === nth - 1);
 ```
 
 ```js
-everyNth([1,2,3,4,5,6], 2) // [ 2, 4, 6 ]
+everyNth([1, 2, 3, 4, 5, 6], 2); // [ 2, 4, 6 ]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -558,7 +565,7 @@ const filterNonUnique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexO
 ```
 
 ```js
-filterNonUnique([1,2,2,3,4,4,5]) // [1,3,5]
+filterNonUnique([1, 2, 2, 3, 4, 4, 5]); // [1,3,5]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -570,11 +577,11 @@ Flattens an array.
 Use a new array and concatenate it with the spread input array causing a shallow denesting of any contained arrays.
 
 ```js
-const flatten = arr => [ ].concat(...arr);
+const flatten = arr => [].concat(...arr);
 ```
 
 ```js
-flatten([1,[2],3,4]) // [1,2,3,4]
+flatten([1, [2], 3, 4]); // [1,2,3,4]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -590,12 +597,13 @@ Omit the second element, `depth` to flatten only to a depth of `1` (single flatt
 
 ```js
 const flattenDepth = (arr, depth = 1) =>
-  depth != 1 ? arr.reduce((a, v) => a.concat(Array.isArray(v) ? flattenDepth(v, depth - 1) : v), [])
-  : arr.reduce((a, v) => a.concat(v), []);
+  depth != 1
+    ? arr.reduce((a, v) => a.concat(Array.isArray(v) ? flattenDepth(v, depth - 1) : v), [])
+    : arr.reduce((a, v) => a.concat(v), []);
 ```
 
 ```js
-flattenDepth([1,[2],3,4]) // [1,2,3,4]
+flattenDepth([1, [2], 3, 4]); // [1,2,3,4]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -609,13 +617,15 @@ Use `Array.reduce()` to create an object, where the keys are produced from the m
 
 ```js
 const groupBy = (arr, func) =>
-  arr.map(typeof func === 'function' ? func : val => val[func])
-    .reduce((acc, val, i) => { acc[val] = (acc[val] || []).concat(arr[i]); return acc; }, {});
+  arr.map(typeof func === 'function' ? func : val => val[func]).reduce((acc, val, i) => {
+    acc[val] = (acc[val] || []).concat(arr[i]);
+    return acc;
+  }, {});
 ```
 
 ```js
-groupBy([6.1, 4.2, 6.3], Math.floor) // {4: [4.2], 6: [6.1, 6.3]}
-groupBy(['one', 'two', 'three'], 'length') // {3: ['one', 'two'], 5: ['three']}
+groupBy([6.1, 4.2, 6.3], Math.floor); // {4: [4.2], 6: [6.1, 6.3]}
+groupBy(['one', 'two', 'three'], 'length'); // {3: ['one', 'two'], 5: ['three']}
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -631,7 +641,7 @@ const head = arr => arr[0];
 ```
 
 ```js
-head([1,2,3]) // 1
+head([1, 2, 3]); // 1
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -647,7 +657,7 @@ const initial = arr => arr.slice(0, -1);
 ```
 
 ```js
-initial([1,2,3]) // [1,2]
+initial([1, 2, 3]); // [1,2]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -659,11 +669,14 @@ Initializes a 2D array of given width and height and value.
 Use `Array.map()` to generate h rows where each is a new array of size w initialize with value. If the value is not provided, default to `null`.
 
 ```js
-const initialize2DArray = (w, h, val = null) => Array(h).fill().map(() => Array(w).fill(val));
+const initialize2DArray = (w, h, val = null) =>
+  Array(h)
+    .fill()
+    .map(() => Array(w).fill(val));
 ```
 
 ```js
-initialize2DArray(2, 2, 0) // [[0,0], [0,0]]
+initialize2DArray(2, 2, 0); // [[0,0], [0,0]]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -677,12 +690,12 @@ You can omit `start` to use a default value of `0`.
 
 ```js
 const initializeArrayWithRange = (end, start = 0) =>
-  Array.from({ length: (end + 1) - start }).map((v, i) => i + start);
+  Array.from({ length: end + 1 - start }).map((v, i) => i + start);
 ```
 
 ```js
-initializeArrayWithRange(5) // [0,1,2,3,4,5]
-initializeArrayWithRange(7, 3) // [3,4,5,6,7]
+initializeArrayWithRange(5); // [0,1,2,3,4,5]
+initializeArrayWithRange(7, 3); // [3,4,5,6,7]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -699,7 +712,7 @@ const initializeArrayWithValues = (n, value = 0) => Array(n).fill(value);
 ```
 
 ```js
-initializeArrayWithValues(5, 2) // [2,2,2,2,2]
+initializeArrayWithValues(5, 2); // [2,2,2,2,2]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -711,11 +724,14 @@ Returns a list of elements that exist in both arrays.
 Create a `Set` from `b`, then use `Array.filter()` on `a` to only keep values contained in `b`.
 
 ```js
-const intersection = (a, b) => { const s = new Set(b); return a.filter(x => s.has(x)); };
+const intersection = (a, b) => {
+  const s = new Set(b);
+  return a.filter(x => s.has(x));
+};
 ```
 
 ```js
-intersection([1,2,3], [4,3,2]) // [2,3]
+intersection([1, 2, 3], [4, 3, 2]); // [2,3]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -731,7 +747,7 @@ const last = arr => arr[arr.length - 1];
 ```
 
 ```js
-last([1,2,3]) // 3
+last([1, 2, 3]); // 3
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -744,12 +760,14 @@ Use an anonymous inner function scope to declare an undefined memory space, usin
 
 ```js
 const mapObject = (arr, fn) =>
-  (a => (a = [arr, arr.map(fn)], a[0].reduce((acc, val, ind) => (acc[val] = a[1][ind], acc), {})))();
+  (a => (
+    (a = [arr, arr.map(fn)]), a[0].reduce((acc, val, ind) => ((acc[val] = a[1][ind]), acc), {})
+  ))();
 ```
 
 ```js
-const squareIt = arr => mapObject(arr, a => a*a)
-squareIt([1,2,3]) // { 1: 1, 2: 4, 3: 9 }
+const squareIt = arr => mapObject(arr, a => a * a);
+squareIt([1, 2, 3]); // { 1: 1, 2: 4, 3: 9 }
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -767,8 +785,8 @@ const nthElement = (arr, n = 0) => (n > 0 ? arr.slice(n, n + 1) : arr.slice(n))[
 ```
 
 ```js
-nthElement(['a','b','c'],1) // 'b'
-nthElement(['a','b','b'],-3) // 'a'
+nthElement(['a', 'b', 'c'], 1); // 'b'
+nthElement(['a', 'b', 'b'], -3); // 'a'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -785,7 +803,7 @@ const pick = (obj, arr) =>
 ```
 
 ```js
-pick({ 'a': 1, 'b': '2', 'c': 3 }, ['a', 'c']) // { 'a': 1, 'c': 3 }
+pick({ a: 1, b: '2', c: 3 }, ['a', 'c']); // { 'a': 1, 'c': 3 }
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -811,11 +829,11 @@ const pull = (arr, ...args) => {
 ```js
 let myArray1 = ['a', 'b', 'c', 'a', 'b', 'c'];
 pull(myArray1, 'a', 'c');
-console.log(myArray1) // [ 'b', 'b' ]
+console.log(myArray1); // [ 'b', 'b' ]
 
 let myArray2 = ['a', 'b', 'c', 'a', 'b', 'c'];
 pull(myArray2, ['a', 'c']);
-console.log(myArray2) // [ 'b', 'b' ]
+console.log(myArray2); // [ 'b', 'b' ]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -831,8 +849,9 @@ Use `Array.push()` to keep track of pulled values
 ```js
 const pullAtIndex = (arr, pullArr) => {
   let removed = [];
-  let pulled = arr.map((v, i) => pullArr.includes(i) ? removed.push(v) : v)
-                  .filter((v, i) => !pullArr.includes(i));
+  let pulled = arr
+    .map((v, i) => (pullArr.includes(i) ? removed.push(v) : v))
+    .filter((v, i) => !pullArr.includes(i));
   arr.length = 0;
   pulled.forEach(v => arr.push(v));
   return removed;
@@ -860,7 +879,7 @@ Use `Array.push()` to keep track of pulled values
 ```js
 const pullAtValue = (arr, pullArr) => {
   let removed = [],
-    pushToRemove = arr.forEach((v, i) => pullArr.includes(v) ? removed.push(v) : v),
+    pushToRemove = arr.forEach((v, i) => (pullArr.includes(v) ? removed.push(v) : v)),
     mutateTo = arr.filter((v, i) => !pullArr.includes(v));
   arr.length = 0;
   mutateTo.forEach(v => arr.push(v));
@@ -886,14 +905,16 @@ The `func` is invoked with three arguments (`value, index, array`).
 
 ```js
 const remove = (arr, func) =>
-  Array.isArray(arr) ? arr.filter(func).reduce((acc, val) => {
-    arr.splice(arr.indexOf(val), 1); return acc.concat(val);
-  }, [])
-  : [];
+  Array.isArray(arr)
+    ? arr.filter(func).reduce((acc, val) => {
+        arr.splice(arr.indexOf(val), 1);
+        return acc.concat(val);
+      }, [])
+    : [];
 ```
 
 ```js
-remove([1, 2, 3, 4], n => n % 2 == 0) // [2, 4]
+remove([1, 2, 3, 4], n => n % 2 == 0); // [2, 4]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -910,7 +931,7 @@ const sample = arr => arr[Math.floor(Math.random() * arr.length)];
 ```
 
 ```js
-sample([3, 7, 9, 11]) // 9
+sample([3, 7, 9, 11]); // 9
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -933,9 +954,9 @@ const shuffle = ([...arr]) => {
 ```
 
 ```js
-const foo = [1,2,3]
-shuffle(foo) // [2,3,1]
-console.log(foo) // [1,2,3]
+const foo = [1, 2, 3];
+shuffle(foo); // [2,3,1]
+console.log(foo); // [1,2,3]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -951,7 +972,7 @@ const similarity = (arr, values) => arr.filter(v => values.includes(v));
 ```
 
 ```js
-similarity([1,2,3], [1,2,4]) // [1,2]
+similarity([1, 2, 3], [1, 2, 4]); // [1,2]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -964,13 +985,14 @@ Create a `Set` from each array, then use `Array.filter()` on each of them to onl
 
 ```js
 const symmetricDifference = (a, b) => {
-  const sA = new Set(a), sB = new Set(b);
+  const sA = new Set(a),
+    sB = new Set(b);
   return [...a.filter(x => !sB.has(x)), ...b.filter(x => !sA.has(x))];
 };
 ```
 
 ```js
-symmetricDifference([1,2,3], [1,2,4]) // [3,4]
+symmetricDifference([1, 2, 3], [1, 2, 4]); // [3,4]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -982,12 +1004,12 @@ Returns all elements in an array except for the first one.
 Return `arr.slice(1)` if the array's `length` is more than `1`, otherwise, return the whole array.
 
 ```js
-const tail = arr => arr.length > 1 ? arr.slice(1) : arr;
+const tail = arr => (arr.length > 1 ? arr.slice(1) : arr);
 ```
 
 ```js
-tail([1,2,3]) // [2,3]
-tail([1]) // [1]
+tail([1, 2, 3]); // [2,3]
+tail([1]); // [1]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1003,8 +1025,8 @@ const take = (arr, n = 1) => arr.slice(0, n);
 ```
 
 ```js
-take([1, 2, 3], 5) // [1, 2, 3]
-take([1, 2, 3], 0) // []
+take([1, 2, 3], 5); // [1, 2, 3]
+take([1, 2, 3], 0); // []
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1020,8 +1042,8 @@ const takeRight = (arr, n = 1) => arr.slice(arr.length - n, arr.length);
 ```
 
 ```js
-takeRight([1, 2, 3], 2) // [ 2, 3 ]
-takeRight([1, 2, 3]) // [3]
+takeRight([1, 2, 3], 2); // [ 2, 3 ]
+takeRight([1, 2, 3]); // [3]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1037,7 +1059,7 @@ const union = (a, b) => Array.from(new Set([...a, ...b]));
 ```
 
 ```js
-union([1,2,3], [4,3,2]) // [1,2,3,4]
+union([1, 2, 3], [4, 3, 2]); // [1,2,3,4]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1055,7 +1077,7 @@ const without = (arr, ...args) => arr.filter(v => !args.includes(v));
 ```
 
 ```js
-without([2, 1, 2, 3], 1, 2) // [3]
+without([2, 1, 2, 3], 1, 2); // [3]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1071,8 +1093,8 @@ If lengths of the argument-arrays vary, `undefined` is used where no value could
 ```js
 const zip = (...arrays) => {
   const maxLength = Math.max(...arrays.map(x => x.length));
-  return Array.from({length: maxLength}).map((_, i) => {
-    return Array.from({length: arrays.length}, (_, k) => arrays[k][i]);
+  return Array.from({ length: maxLength }).map((_, i) => {
+    return Array.from({ length: arrays.length }, (_, k) => arrays[k][i]);
   });
 };
 ```
@@ -1091,12 +1113,13 @@ Given an array of valid property identifiers and an array of values, return an o
 Since an object can have undefined values but not undefined property pointers, the array of properties is used to decide the structure of the resulting object using `Array.reduce()`.
 
 ```js
-const zipObject = (props, values) => props.reduce((obj, prop, index) => (obj[prop] = values[index], obj), {});
+const zipObject = (props, values) =>
+  props.reduce((obj, prop, index) => ((obj[prop] = values[index]), obj), {});
 ```
 
 ```js
-zipObject(['a','b','c'], [1,2]) // {a: 1, b: 2, c: undefined}
-zipObject(['a','b'], [1,2,3]) // {a: 1, b: 2}
+zipObject(['a', 'b', 'c'], [1, 2]); // {a: 1, b: 2, c: undefined}
+zipObject(['a', 'b'], [1, 2, 3]); // {a: 1, b: 2}
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1109,11 +1132,12 @@ Converts the given array elements into `<li>` tags and appends them to the list 
 Use `Array.map()` and `document.querySelector()` to create a list of html tags.
 
 ```js
-const arrayToHtmlList = (arr, listID) => arr.map(item => document.querySelector('#' + listID).innerHTML += `<li>${item}</li>`);
+const arrayToHtmlList = (arr, listID) =>
+  arr.map(item => (document.querySelector('#' + listID).innerHTML += `<li>${item}</li>`));
 ```
 
 ```js
-arrayToHtmlList(['item 1', 'item 2'],'myListID')
+arrayToHtmlList(['item 1', 'item 2'], 'myListID');
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1126,11 +1150,12 @@ Use `scrollY`, `scrollHeight` and `clientHeight` to determine if the bottom of t
 
 ```js
 const bottomVisible = () =>
-  document.documentElement.clientHeight + window.scrollY >= (document.documentElement.scrollHeight || document.documentElement.clientHeight);
+  document.documentElement.clientHeight + window.scrollY >=
+  (document.documentElement.scrollHeight || document.documentElement.clientHeight);
 ```
 
 ```js
-bottomVisible() // true
+bottomVisible(); // true
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1146,7 +1171,7 @@ const currentURL = () => window.location.href;
 ```
 
 ```js
-currentURL() // 'https://google.com'
+currentURL(); // 'https://google.com'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1158,12 +1183,15 @@ Detects wether the website is being opened in a mobile device or a desktop/lapto
 Use a regular expression to test the `navigator.userAgent` property to figure out if the device is a mobile device or a desktop/laptop.
 
 ```js
-const detectDeviceType = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop';
+const detectDeviceType = () =>
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    ? 'Mobile'
+    : 'Desktop';
 ```
 
 ```js
-detectDeviceType() // "Mobile"
-detectDeviceType() // "Desktop"
+detectDeviceType(); // "Mobile"
+detectDeviceType(); // "Desktop"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1183,15 +1211,15 @@ const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
   const { innerHeight, innerWidth } = window;
   return partiallyVisible
     ? ((top > 0 && top < innerHeight) || (bottom > 0 && bottom < innerHeight)) &&
-      ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
+        ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
     : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
 };
 ```
 
 ```js
 // e.g. 100x100 viewport and a 10x10px element at position {top: -1, left: 0, bottom: 9, right: 10}
-elementIsVisibleInViewport(el) // false // (not fully visible)
-elementIsVisibleInViewport(el, true) // true // (partially visible)
+elementIsVisibleInViewport(el); // false // (not fully visible)
+elementIsVisibleInViewport(el, true); // true // (partially visible)
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1204,13 +1232,14 @@ Use `pageXOffset` and `pageYOffset` if they are defined, otherwise `scrollLeft` 
 You can omit `el` to use a default value of `window`.
 
 ```js
-const getScrollPosition = (el = window) =>
-  ({x: (el.pageXOffset !== undefined) ? el.pageXOffset : el.scrollLeft,
-    y: (el.pageYOffset !== undefined) ? el.pageYOffset : el.scrollTop});
+const getScrollPosition = (el = window) => ({
+  x: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,
+  y: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop
+});
 ```
 
 ```js
-getScrollPosition() // {x: 0, y: 200}
+getScrollPosition(); // {x: 0, y: 200}
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1224,13 +1253,13 @@ Pass `location.search` as the argument to apply to the current `url`.
 
 ```js
 const getURLParameters = url =>
-  url.match(/([^?=&]+)(=([^&]*))/g).reduce(
-    (a, v) => (a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1), a), {}
-  );
+  url
+    .match(/([^?=&]+)(=([^&]*))/g)
+    .reduce((a, v) => ((a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a), {});
 ```
 
 ```js
-getURLParameters('http://url.com/page?name=Adam&surname=Smith') // {name: 'Adam', surname: 'Smith'}
+getURLParameters('http://url.com/page?name=Adam&surname=Smith'); // {name: 'Adam', surname: 'Smith'}
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1258,11 +1287,11 @@ Pass a second argument to simulate a link click (`true` - default) or an HTTP re
 
 ```js
 const redirect = (url, asLink = true) =>
-  asLink ? window.location.href = url : window.location.replace(url);
+  asLink ? (window.location.href = url) : window.location.replace(url);
 ```
 
 ```js
-redirect('https://google.com')
+redirect('https://google.com');
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1285,7 +1314,7 @@ const scrollToTop = () => {
 ```
 
 ```js
-scrollToTop()
+scrollToTop();
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1298,11 +1327,12 @@ Returns the difference (in days) between two dates.
 Calculate the difference (in days) between two `Date` objects.
 
 ```js
-const getDaysDiffBetweenDates = (dateInitial, dateFinal) => (dateFinal - dateInitial) / (1000 * 3600 * 24);
+const getDaysDiffBetweenDates = (dateInitial, dateFinal) =>
+  (dateFinal - dateInitial) / (1000 * 3600 * 24);
 ```
 
 ```js
-getDaysDiffBetweenDates(new Date("2017-12-13"), new Date("2017-12-22")) // 9
+getDaysDiffBetweenDates(new Date('2017-12-13'), new Date('2017-12-22')); // 9
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1321,7 +1351,7 @@ const JSONToDate = arr => {
 ```
 
 ```js
-JSONToDate(/Date(1489525200000)/) // "14/3/2017"
+JSONToDate(/Date(1489525200000)/); // "14/3/2017"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1334,11 +1364,18 @@ Use `Date.toISOString()`, `split('T')` and `replace()` to convert a date from Am
 Throws an error if the passed time cannot be converted to a date.
 
 ```js
-const toEnglishDate = (time) => { try { return new Date(time).toISOString().split('T')[0].replace(/-/g, '/'); } catch (e) {} };
+const toEnglishDate = time => {
+  try {
+    return new Date(time)
+      .toISOString()
+      .split('T')[0]
+      .replace(/-/g, '/');
+  } catch (e) {}
+};
 ```
 
 ```js
-toEnglishDate('09/21/2010') // '21/09/2010'
+toEnglishDate('09/21/2010'); // '21/09/2010'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1353,7 +1390,7 @@ const tomorrow = () => new Date(new Date().getTime() + 86400000).toISOString().s
 ```
 
 ```js
-tomorrow() // 2017-12-27 (if current date is 2017-12-26)
+tomorrow(); // 2017-12-27 (if current date is 2017-12-26)
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1366,15 +1403,27 @@ Chains asynchronous functions.
 Loop through an array of functions containing asynchronous events, calling `next` when each asynchronous event has completed.
 
 ```js
-const chainAsync = fns => { let curr = 0; const next = () => fns[curr++](next); next(); };
+const chainAsync = fns => {
+  let curr = 0;
+  const next = () => fns[curr++](next);
+  next();
+};
 ```
 
 ```js
 chainAsync([
-  next => { console.log('0 seconds'); setTimeout(next, 1000); },
-  next => { console.log('1 second');  setTimeout(next, 1000); },
-  next => { console.log('2 seconds'); }
-])
+  next => {
+    console.log('0 seconds');
+    setTimeout(next, 1000);
+  },
+  next => {
+    console.log('1 second');
+    setTimeout(next, 1000);
+  },
+  next => {
+    console.log('2 seconds');
+  }
+]);
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1391,10 +1440,10 @@ const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));
 ```
 
 ```js
-const add5 = x => x + 5
-const multiply = (x, y) => x * y
-const multiplyAndAdd5 = compose(add5, multiply)
-multiplyAndAdd5(5, 2) // 15
+const add5 = x => x + 5;
+const multiply = (x, y) => x * y;
+const multiplyAndAdd5 = compose(add5, multiply);
+multiplyAndAdd5(5, 2); // 15
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1410,14 +1459,12 @@ If you want to curry a function that accepts a variable number of arguments (a v
 
 ```js
 const curry = (fn, arity = fn.length, ...args) =>
-  arity <= args.length
-    ? fn(...args)
-    : curry.bind(null, fn, arity, ...args);
+  arity <= args.length ? fn(...args) : curry.bind(null, fn, arity, ...args);
 ```
 
 ```js
-curry(Math.pow)(2)(10) // 1024
-curry(Math.min, 3)(10)(50)(2) // 2
+curry(Math.pow)(2)(10); // 1024
+curry(Math.min, 3)(10)(50)(2); // 2
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1433,7 +1480,7 @@ const functionName = fn => (console.debug(fn.name), fn);
 ```
 
 ```js
-functionName(Math.max) // max (logged in debug channel of console)
+functionName(Math.max); // max (logged in debug channel of console)
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1449,8 +1496,8 @@ const runPromisesInSeries = ps => ps.reduce((p, next) => p.then(next), Promise.r
 ```
 
 ```js
-const delay = (d) => new Promise(r => setTimeout(r, d))
-runPromisesInSeries([() => delay(1000), () => delay(2000)]) // //executes each promise sequentially, taking a total of 3 seconds to complete
+const delay = d => new Promise(r => setTimeout(r, d));
+runPromisesInSeries([() => delay(1000), () => delay(2000)]); // //executes each promise sequentially, taking a total of 3 seconds to complete
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1467,7 +1514,7 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 ```js
 async function sleepyWork() {
-  console.log('I\'m going to sleep for 1 second.');
+  console.log("I'm going to sleep for 1 second.");
   await sleep(1000);
   console.log('I woke up after 1 second.');
 }
@@ -1487,8 +1534,8 @@ const negate = func => (...args) => !func(...args);
 ```
 
 ```js
-filter([1, 2, 3, 4, 5, 6], negate(isEven)) // [1, 3, 5]
-negate(isOdd)(1) // false
+filter([1, 2, 3, 4, 5, 6], negate(isEven)); // [1, 3, 5]
+negate(isOdd)(1); // false
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1505,7 +1552,7 @@ const arrayAverage = arr => arr.reduce((acc, val) => acc + val, 0) / arr.length;
 ```
 
 ```js
-arrayAverage([1,2,3]) // 2
+arrayAverage([1, 2, 3]); // 2
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1521,7 +1568,7 @@ const arraySum = arr => arr.reduce((acc, val) => acc + val, 0);
 ```
 
 ```js
-arraySum([1,2,3,4]) // 10
+arraySum([1, 2, 3, 4]); // 10
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1538,9 +1585,9 @@ const clampNumber = (num, a, b) => Math.max(Math.min(num, Math.max(a, b)), Math.
 ```
 
 ```js
-clampNumber(2, 3, 5) // 3
-clampNumber(1, -1, -5) // -1
-clampNumber(3, 2, 4) // 3
+clampNumber(2, 3, 5); // 3
+clampNumber(1, -1, -5); // -1
+clampNumber(3, 2, 4); // 3
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1552,12 +1599,12 @@ Applies the Collatz algorithm.
 If `n` is even, return `n/2`. Otherwise, return `3n+1`.
 
 ```js
-const collatz = n => (n % 2 == 0) ? (n / 2) : (3 * n + 1);
+const collatz = n => (n % 2 == 0 ? n / 2 : 3 * n + 1);
 ```
 
 ```js
-collatz(8) // 4
-collatz(5) // 16
+collatz(8); // 4
+collatz(5); // 16
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1570,11 +1617,11 @@ Convert the number to a string, using spread operators in ES6(`[...string]`) bui
 Use `Array.map()` and `parseInt()` to transform each value to an integer.
 
 ```js
-const digitize = n => [...'' + n].map(i => parseInt(i));
+const digitize = n => [...('' + n)].map(i => parseInt(i));
 ```
 
 ```js
-digitize(123) // [1, 2, 3]
+digitize(123); // [1, 2, 3]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1590,7 +1637,7 @@ const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
 ```
 
 ```js
-distance(1,1, 2,3) // 2.23606797749979
+distance(1, 1, 2, 3); // 2.23606797749979
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1606,12 +1653,15 @@ Throws an exception if `n` is a negative number.
 
 ```js
 const factorial = n =>
-  n < 0 ? (() => { throw new TypeError('Negative numbers are not allowed!'); })()
-  : n <= 1 ? 1 : n * factorial(n - 1);
+  n < 0
+    ? (() => {
+        throw new TypeError('Negative numbers are not allowed!');
+      })()
+    : n <= 1 ? 1 : n * factorial(n - 1);
 ```
 
 ```js
-factorial(6) // 720
+factorial(6); // 720
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1625,11 +1675,14 @@ Use `Array.reduce()` to add values into the array, using the sum of the last two
 
 ```js
 const fibonacci = n =>
-  Array.from({ length: n}).reduce((acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i), []);
+  Array.from({ length: n }).reduce(
+    (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),
+    []
+  );
 ```
 
 ```js
-fibonacci(6) // 720
+fibonacci(6); // 720
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1646,7 +1699,7 @@ const fibonacciCountUntilNum = num =>
 ```
 
 ```js
-fibonacciCountUntilNum(10) // 7
+fibonacciCountUntilNum(10); // 7
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1662,12 +1715,15 @@ Uses a mathematical formula to calculate the length of the array required.
 ```js
 const fibonacciUntilNum = num => {
   let n = Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));
-  return Array.from({ length: n}).reduce((acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i), []);
+  return Array.from({ length: n }).reduce(
+    (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),
+    []
+  );
 };
 ```
 
 ```js
-fibonacciCountUntilNum(10) // 7
+fibonacciCountUntilNum(10); // 7
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1681,11 +1737,11 @@ Base case is when `y` equals `0`. In this case, return `x`.
 Otherwise, return the GCD of `y` and the remainder of the division `x/y`.
 
 ```js
-const gcd = (x, y) => !y ? x : gcd(y, x % y);
+const gcd = (x, y) => (!y ? x : gcd(y, x % y));
 ```
 
 ```js
-gcd (8, 36) // 4
+gcd(8, 36); // 4
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1698,12 +1754,11 @@ Use XOR operator (`^`) to find the bit difference between the two numbers, conve
 Count and return the number of `1`s in the string, using `match(/1/g)`.
 
 ```js
-const hammingDistance = (num1, num2) =>
-  ((num1 ^ num2).toString(2).match(/1/g) || '').length;
+const hammingDistance = (num1, num2) => ((num1 ^ num2).toString(2).match(/1/g) || '').length;
 ```
 
 ```js
-hammingDistance(2,3) // 1
+hammingDistance(2, 3); // 1
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1717,16 +1772,16 @@ If the second parameter, `end`, is not specified, the range is considered to be 
 
 ```js
 const inRange = (n, start, end = null) => {
-  if (end && start > end) end = [start, start = end][0];
-  return (end == null) ? (n >= 0 && n < start) : (n >= start && n < end);
+  if (end && start > end) end = [start, (start = end)][0];
+  return end == null ? n >= 0 && n < start : n >= start && n < end;
 };
 ```
 
 ```js
-inRange(3, 2, 5) // true
-inRange(3, 4) // true
-inRange(2, 3, 5) // false
-inrange(3, 2) // false
+inRange(3, 2, 5); // true
+inRange(3, 4); // true
+inRange(2, 3, 5); // false
+inrange(3, 2); // false
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1739,13 +1794,15 @@ Convert the given number into an array of digits. Use `Math.pow()` to get the ap
 
 ```js
 const isArmstrongNumber = digits =>
-  (arr => arr.reduce((a, d) => a + Math.pow(parseInt(d), arr.length), 0) == digits)((digits + '').split(''));
+  (arr => arr.reduce((a, d) => a + Math.pow(parseInt(d), arr.length), 0) == digits)(
+    (digits + '').split('')
+  );
 ```
 
 ```js
-isArmstrongNumber(1634) // true
-isArmstrongNumber(371) // true
-isArmstrongNumber(56) // false
+isArmstrongNumber(1634); // true
+isArmstrongNumber(371); // true
+isArmstrongNumber(56); // false
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1761,7 +1818,7 @@ const isDivisible = (dividend, divisor) => dividend % divisor === 0;
 ```
 
 ```js
-isDivisible(6,3) // true
+isDivisible(6, 3); // true
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1778,7 +1835,7 @@ const isEven = num => num % 2 === 0;
 ```
 
 ```js
-isEven(3) // false
+isEven(3); // false
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1799,8 +1856,8 @@ const isPrime = num => {
 ```
 
 ```js
-isPrime(11) // true
-isPrime(12) // false
+isPrime(11); // true
+isPrime(12); // false
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1814,13 +1871,13 @@ The GCD formula uses recursion.
 
 ```js
 const lcm = (x, y) => {
-  const gcd = (x, y) => !y ? x : gcd(y, x % y);
-  return Math.abs(x * y) / (gcd(x, y));
+  const gcd = (x, y) => (!y ? x : gcd(y, x % y));
+  return Math.abs(x * y) / gcd(x, y);
 };
 ```
 
 ```js
-lcm(12,7) // 84
+lcm(12, 7); // 84
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1834,14 +1891,15 @@ Return the number at the midpoint if `length` is odd, otherwise the average of t
 
 ```js
 const median = arr => {
-  const mid = Math.floor(arr.length / 2), nums = [...arr].sort((a, b) => a - b);
+  const mid = Math.floor(arr.length / 2),
+    nums = [...arr].sort((a, b) => a - b);
   return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
 };
 ```
 
 ```js
-median([5,6,50,1,-5]) // 5
-median([0,10,-2,7]) // 3.5
+median([5, 6, 50, 1, -5]); // 5
+median([0, 10, -2, 7]); // 3.5
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1856,12 +1914,18 @@ Then, `split('')` into individual characters, `reverse()`, `join('')` and compar
 ```js
 const palindrome = str => {
   const s = str.toLowerCase().replace(/[\W_]/g, '');
-  return s === s.split('').reverse().join('');
+  return (
+    s ===
+    s
+      .split('')
+      .reverse()
+      .join('')
+  );
 };
 ```
 
 ```js
-palindrome('taco cat') // true
+palindrome('taco cat'); // true
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1878,7 +1942,7 @@ const percentile = (arr, val) =>
 ```
 
 ```js
-percentile([1,2,3,4,5,6,7,8,9,10], 6) // 55
+percentile([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 6); // 55
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1890,12 +1954,11 @@ Returns the powerset of a given array of numbers.
 Use `Array.reduce()` combined with `Array.map()` to iterate over elements and combine into an array containing all combinations.
 
 ```js
-const powerset = arr =>
-  arr.reduce((a, v) => a.concat(a.map(r => [v].concat(r))), [[]]);
+const powerset = arr => arr.reduce((a, v) => a.concat(a.map(r => [v].concat(r))), [[]]);
 ```
 
 ```js
-powerset([1,2]) // [[], [1], [2], [2,1]]
+powerset([1, 2]); // [[], [1], [2], [2,1]]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1908,16 +1971,16 @@ Generate an array from `2` to the given number. Use `Array.filter()` to filter o
 
 ```js
 const primes = num => {
-  let arr = Array.from({length: num - 1}).map((x, i) => i + 2),
+  let arr = Array.from({ length: num - 1 }).map((x, i) => i + 2),
     sqroot = Math.floor(Math.sqrt(num)),
-    numsTillSqroot = Array.from({length: sqroot - 1}).map((x, i) => i + 2);
-  numsTillSqroot.forEach(x => arr = arr.filter(y => ((y % x) !== 0) || (y == x)));
+    numsTillSqroot = Array.from({ length: sqroot - 1 }).map((x, i) => i + 2);
+  numsTillSqroot.forEach(x => (arr = arr.filter(y => y % x !== 0 || y == x)));
   return arr;
 };
 ```
 
 ```js
-primes(10) // [2,3,5,7]
+primes(10); // [2,3,5,7]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1933,7 +1996,7 @@ const randomIntegerInRange = (min, max) => Math.floor(Math.random() * (max - min
 ```
 
 ```js
-randomIntegerInRange(0, 5) // 2
+randomIntegerInRange(0, 5); // 2
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1949,7 +2012,7 @@ const randomNumberInRange = (min, max) => Math.random() * (max - min) + min;
 ```
 
 ```js
-randomNumberInRange(2,10) // 6.0211363285087005
+randomNumberInRange(2, 10); // 6.0211363285087005
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1966,7 +2029,7 @@ const round = (n, decimals = 0) => Number(`${Math.round(`${n}e${decimals}`)}e-${
 ```
 
 ```js
-round(1.005, 2) // 1.01
+round(1.005, 2); // 1.01
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -1983,15 +2046,17 @@ You can omit the second argument to get the sample standard deviation or set it 
 const standardDeviation = (arr, usePopulation = false) => {
   const mean = arr.reduce((acc, val) => acc + val, 0) / arr.length;
   return Math.sqrt(
-    arr.reduce((acc, val) => acc.concat(Math.pow(val - mean, 2)), [])
-       .reduce((acc, val) => acc + val, 0) / (arr.length - (usePopulation ? 0 : 1))
+    arr
+      .reduce((acc, val) => acc.concat(Math.pow(val - mean, 2)), [])
+      .reduce((acc, val) => acc + val, 0) /
+      (arr.length - (usePopulation ? 0 : 1))
   );
 };
 ```
 
 ```js
-standardDeviation([10,2,38,23,38,23,21]) // 13.284434142114991 (sample)
-standardDeviation([10,2,38,23,38,23,21], true) // 12.29899614287479 (population)
+standardDeviation([10, 2, 38, 23, 38, 23, 21]); // 13.284434142114991 (sample)
+standardDeviation([10, 2, 38, 23, 38, 23, 21], true); // 12.29899614287479 (population)
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2015,7 +2080,7 @@ const speechSynthesis = message => {
 ```
 
 ```js
-speechSynthesis('Hello, World') // // plays the message
+speechSynthesis('Hello, World'); // // plays the message
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2029,11 +2094,12 @@ Use `fs.writeFile()`, template literals and `JSON.stringify()` to write a `json`
 
 ```js
 const fs = require('fs');
-const JSONToFile = (obj, filename) => fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2));
+const JSONToFile = (obj, filename) =>
+  fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2));
 ```
 
 ```js
-JSONToFile({test: "is passed"}, 'testJsonFile') // writes the object to 'testJsonFile.json'
+JSONToFile({ test: 'is passed' }, 'testJsonFile'); // writes the object to 'testJsonFile.json'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2048,7 +2114,11 @@ creating an array from contents of file by `split`ing file content line by line 
 
 ```js
 const fs = require('fs');
-const readFileLines = filename => fs.readFileSync(filename).toString('UTF8').split('\n');
+const readFileLines = filename =>
+  fs
+    .readFileSync(filename)
+    .toString('UTF8')
+    .split('\n');
 ```
 
 ```js
@@ -2059,8 +2129,8 @@ contents of test.txt :
   line3
   ___________________________
 */
-let arr = readFileLines('test.txt')
-console.log(arr) // ['line1', 'line2', 'line3']
+let arr = readFileLines('test.txt');
+console.log(arr); // ['line1', 'line2', 'line3']
 ```
 
 
@@ -2082,14 +2152,14 @@ const cleanObj = (obj, keysToKeep = [], childIndicator) => {
     } else if (!keysToKeep.includes(key)) {
       delete obj[key];
     }
-   });
+  });
   return obj;
 };
 ```
 
 ```js
-const testObj = {a: 1, b: 2, children: {a: 1, b: 2}}
-cleanObj(testObj, ["a"],"children") // { a: 1, children : { a: 1}}
+const testObj = { a: 1, b: 2, children: { a: 1, b: 2 } };
+cleanObj(testObj, ['a'], 'children'); // { a: 1, children : { a: 1}}
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2101,11 +2171,11 @@ Creates an object from the given key-value pairs.
 Use `Array.reduce()` to create and combine key-value pairs.
 
 ```js
-const objectFromPairs = arr => arr.reduce((a, v) => (a[v[0]] = v[1], a), {});
+const objectFromPairs = arr => arr.reduce((a, v) => ((a[v[0]] = v[1]), a), {});
 ```
 
 ```js
-objectFromPairs([['a',1],['b',2]]) // {a: 1, b: 2}
+objectFromPairs([['a', 1], ['b', 2]]); // {a: 1, b: 2}
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2121,7 +2191,7 @@ const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
 ```
 
 ```js
-objectToPairs({a: 1, b: 2}) // [['a',1],['b',2]])
+objectToPairs({ a: 1, b: 2 }); // [['a',1],['b',2]])
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2147,10 +2217,14 @@ const orderBy = (arr, props, orders) =>
 ```
 
 ```js
-const users = [{ 'name': 'fred',   'age': 48 },{ 'name': 'barney', 'age': 36 },
-  { 'name': 'fred',   'age': 40 },{ 'name': 'barney', 'age': 34 }];
-orderby(users, ['name', 'age'], ['asc', 'desc']) // [{name: 'barney', age: 36}, {name: 'barney', age: 34}, {name: 'fred', age: 48}, {name: 'fred', age: 40}]
-orderby(users, ['name', 'age']) // [{name: 'barney', age: 34}, {name: 'barney', age: 36}, {name: 'fred', age: 40}, {name: 'fred', age: 48}]
+const users = [
+  { name: 'fred', age: 48 },
+  { name: 'barney', age: 36 },
+  { name: 'fred', age: 40 },
+  { name: 'barney', age: 34 }
+];
+orderby(users, ['name', 'age'], ['asc', 'desc']); // [{name: 'barney', age: 36}, {name: 'barney', age: 34}, {name: 'fred', age: 48}, {name: 'fred', age: 40}]
+orderby(users, ['name', 'age']); // [{name: 'barney', age: 34}, {name: 'barney', age: 36}, {name: 'fred', age: 40}, {name: 'fred', age: 48}]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2167,7 +2241,7 @@ const select = (from, selector) =>
 ```
 
 ```js
-const obj = {selector: {to: {val: 'val to select'}}};
+const obj = { selector: { to: { val: 'val to select' } } };
 select(obj, 'selector.to.val'); // 'val to select'
 ```
 
@@ -2186,7 +2260,7 @@ const shallowClone = obj => Object.assign({}, obj);
 ```js
 const a = { x: true, y: 1 };
 const b = shallowClone(a);
-a === b // false
+a === b; // false
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2198,11 +2272,11 @@ Checks if the predicate (second argument) is truthy on all elements of a collect
 Use `Array.every()` to check if each passed object has the specified property and if it returns a truthy value.
 
  ```js
-const truthCheckCollection = (collection, pre) => (collection.every(obj => obj[pre]));
+const truthCheckCollection = (collection, pre) => collection.every(obj => obj[pre]);
 ```
 
 ```js
-truthCheckCollection([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}], "sex") // true
+truthCheckCollection([{ user: 'Tinky-Winky', sex: 'male' }, { user: 'Dipsy', sex: 'male' }], 'sex'); // true
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2220,13 +2294,18 @@ Base cases are for string `length` equal to `2` or `1`.
 ```js
 const anagrams = str => {
   if (str.length <= 2) return str.length === 2 ? [str, str[1] + str[0]] : [str];
-  return str.split('').reduce((acc, letter, i) =>
-    acc.concat(anagrams(str.slice(0, i) + str.slice(i + 1)).map(val => letter + val)), []);
+  return str
+    .split('')
+    .reduce(
+      (acc, letter, i) =>
+        acc.concat(anagrams(str.slice(0, i) + str.slice(i + 1)).map(val => letter + val)),
+      []
+    );
 };
 ```
 
 ```js
-anagrams('abc') // ['abc','acb','bac','bca','cab','cba']
+anagrams('abc'); // ['abc','acb','bac','bca','cab','cba']
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2244,8 +2323,8 @@ const capitalize = ([first, ...rest], lowerRest = false) =>
 ```
 
 ```js
-capitalize('fooBar') // 'FooBar'
-capitalize('fooBar', true) // 'Foobar'
+capitalize('fooBar'); // 'FooBar'
+capitalize('fooBar', true); // 'Foobar'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2261,7 +2340,7 @@ const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperC
 ```
 
 ```js
-capitalizeEveryWord('hello world!') // 'Hello World!'
+capitalizeEveryWord('hello world!'); // 'Hello World!'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2273,12 +2352,12 @@ Retuns `number` of vowels in provided string.
 Use a regular expression to count the number of vowels `(A, E, I, O, U)` in a `string`.
 
 ```js
-const countVowels = str => (str.match(/[aeiou]/ig) || []).length;
+const countVowels = str => (str.match(/[aeiou]/gi) || []).length;
 ```
 
 ```js
-countVowels('foobar') // 3
-countVowels('gym') // 0
+countVowels('foobar'); // 3
+countVowels('gym'); // 0
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2294,7 +2373,7 @@ const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 ```
 
 ```js
-escapeRegExp('(test)') // \\(test\\)
+escapeRegExp('(test)'); // \\(test\\)
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2308,14 +2387,16 @@ Omit the second argument to use a default separator of `_`.
 
 ```js
 const fromCamelCase = (str, separator = '_') =>
-  str.replace(/([a-z\d])([A-Z])/g, '$1' + separator + '$2')
-    .replace(/([A-Z]+)([A-Z][a-z\d]+)/g, '$1' + separator + '$2').toLowerCase();
+  str
+    .replace(/([a-z\d])([A-Z])/g, '$1' + separator + '$2')
+    .replace(/([A-Z]+)([A-Z][a-z\d]+)/g, '$1' + separator + '$2')
+    .toLowerCase();
 ```
 
 ```js
-fromCamelCase('someDatabaseFieldName', ' ') // 'some database field name'
-fromCamelCase('someLabelThatNeedsToBeCamelized', '-') // 'some-label-that-needs-to-be-camelized'
-fromCamelCase('someJavascriptProperty', '_') // 'some_javascript_property'
+fromCamelCase('someDatabaseFieldName', ' '); // 'some database field name'
+fromCamelCase('someLabelThatNeedsToBeCamelized', '-'); // 'some-label-that-needs-to-be-camelized'
+fromCamelCase('someJavascriptProperty', '_'); // 'some_javascript_property'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2333,8 +2414,8 @@ const repeatString = (str = '', num = 2) => {
 ```
 
 ```js
-repeatString("abc",3) // 'abcabcabc'
-repeatString("abc") // 'abcabc'
+repeatString('abc', 3); // 'abcabcabc'
+repeatString('abc'); // 'abcabc'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2347,11 +2428,15 @@ Use `split('')` and `Array.reverse()` to reverse the order of the characters in 
 Combine characters to get a string using `join('')`.
 
 ```js
-const reverseString = str => str.split('').reverse().join('');
+const reverseString = str =>
+  str
+    .split('')
+    .reverse()
+    .join('');
 ```
 
 ```js
-reverseString('foobar') // 'raboof'
+reverseString('foobar'); // 'raboof'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2364,11 +2449,14 @@ Split the string using `split('')`, `Array.sort()` utilizing `localeCompare()`, 
 
 ```js
 const sortCharactersInString = str =>
-  str.split('').sort((a, b) => a.localeCompare(b)).join('');
+  str
+    .split('')
+    .sort((a, b) => a.localeCompare(b))
+    .join('');
 ```
 
 ```js
-sortCharactersInString('cabbage') // 'aabbceg'
+sortCharactersInString('cabbage'); // 'aabbceg'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2382,18 +2470,21 @@ For more detailed explanation of this Regex, [visit this Site](https://regex101.
 
 ```js
 const toCamelCase = str => {
-  let s = str && str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
-    .map(x => x.slice(0, 1).toUpperCase() + x.slice(1).toLowerCase())
-    .join('');
+  let s =
+    str &&
+    str
+      .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+      .map(x => x.slice(0, 1).toUpperCase() + x.slice(1).toLowerCase())
+      .join('');
   return s.slice(0, 1).toLowerCase() + s.slice(1);
 };
 ```
 
 ```js
-toCamelCase("some_database_field_name") // 'someDatabaseFieldName'
-toCamelCase("Some label that needs to be camelized") // 'someLabelThatNeedsToBeCamelized'
-toCamelCase("some-javascript-property") // 'someJavascriptProperty'
-toCamelCase("some-mixed_string with spaces_underscores-and-hyphens") // 'someMixedStringWithSpacesUnderscoresAndHyphens'
+toCamelCase('some_database_field_name'); // 'someDatabaseFieldName'
+toCamelCase('Some label that needs to be camelized'); // 'someLabelThatNeedsToBeCamelized'
+toCamelCase('some-javascript-property'); // 'someJavascriptProperty'
+toCamelCase('some-mixed_string with spaces_underscores-and-hyphens'); // 'someMixedStringWithSpacesUnderscoresAndHyphens'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2407,17 +2498,19 @@ For more detailed explanation of this Regex, [visit this Site](https://regex101.
 
 ```js
 const toKebabCase = str =>
-  str && str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+  str &&
+  str
+    .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
     .map(x => x.toLowerCase())
     .join('-');
 ```
 
 ```js
-toKebabCase("camelCase") // 'camel-case'
-toKebabCase("some text") // 'some-text'
-toKebabCase("some-mixed_string With spaces_underscores-and-hyphens") // 'some-mixed-string-with-spaces-underscores-and-hyphens'
-toKebabCase("AllThe-small Things") // "all-the-small-things"
-toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') // "i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-xml-and-html"
+toKebabCase('camelCase'); // 'camel-case'
+toKebabCase('some text'); // 'some-text'
+toKebabCase('some-mixed_string With spaces_underscores-and-hyphens'); // 'some-mixed-string-with-spaces-underscores-and-hyphens'
+toKebabCase('AllThe-small Things'); // "all-the-small-things"
+toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'); // "i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-xml-and-html"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2431,19 +2524,21 @@ For more detailed explanation of this Regex, [visit this Site](https://regex101.
 
 ```js
 const toSnakeCase = str => {
-  str && str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
-    .map(x => x.toLowerCase())
-    .join('_');
+  str &&
+    str
+      .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+      .map(x => x.toLowerCase())
+      .join('_');
 };
 ```
 
 ```js
-toSnakeCase("camelCase") // 'camel_case'
-toSnakeCase("some text") // 'some_text'
-toSnakeCase("some-javascript-property") // 'some_javascript_property'
-toSnakeCase("some-mixed_string With spaces_underscores-and-hyphens") // 'some_mixed_string_with_spaces_underscores_and_hyphens'
-toSnakeCase("AllThe-small Things") // "all_the_smal_things"
-toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') // "i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html"
+toSnakeCase('camelCase'); // 'camel_case'
+toSnakeCase('some text'); // 'some_text'
+toSnakeCase('some-javascript-property'); // 'some_javascript_property'
+toSnakeCase('some-mixed_string With spaces_underscores-and-hyphens'); // 'some_mixed_string_with_spaces_underscores_and_hyphens'
+toSnakeCase('AllThe-small Things'); // "all_the_smal_things"
+toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'); // "i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2461,7 +2556,7 @@ const truncateString = (str, num) =>
 ```
 
 ```js
-truncateString('boomerang', 7) // 'boom...'
+truncateString('boomerang', 7); // 'boom...'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2478,8 +2573,8 @@ const words = (str, pattern = /[^a-zA-Z-]+/) => str.split(pattern).filter(Boolea
 ```
 
 ```js
-words("I love javaScript!!") // ["I", "love", "javaScript"]
-words("python, javaScript & coffee") // ["python", "javaScript", "coffee"]
+words('I love javaScript!!'); // ["I", "love", "javaScript"]
+words('python, javaScript & coffee'); // ["python", "javaScript", "coffee"]
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2496,7 +2591,7 @@ const coalesce = (...args) => args.find(_ => ![undefined, null].includes(_));
 ```
 
 ```js
-coalesce(null,undefined,"",NaN, "Waldo") // ""
+coalesce(null, undefined, '', NaN, 'Waldo'); // ""
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2512,8 +2607,8 @@ const coalesceFactory = valid => (...args) => args.find(valid);
 ```
 
 ```js
-const customCoalesce = coalesceFactory(_ => ![null, undefined, "", NaN].includes(_))
-customCoalesce(undefined, null, NaN, "", "Waldo") // "Waldo"
+const customCoalesce = coalesceFactory(_ => ![null, undefined, '', NaN].includes(_));
+customCoalesce(undefined, null, NaN, '', 'Waldo'); // "Waldo"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2526,12 +2621,17 @@ Use `Array.map()`, `split()` and `Array.join()` to join the mapped array for con
 `String.slice()` is used to remove `#` from string start since it's added once.
 ```js
 const extendHex = shortHex =>
-  '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split('').map(x => x + x).join('');
+  '#' +
+  shortHex
+    .slice(shortHex.startsWith('#') ? 1 : 0)
+    .split('')
+    .map(x => x + x)
+    .join('');
 ```
 
 ```js
-extendHex('#03f') // '#0033ff'
-extendHex('05a') // '#0055aa'
+extendHex('#03f'); // '#0033ff'
+extendHex('05a'); // '#0055aa'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2548,7 +2648,7 @@ const getType = v =>
 ```
 
 ```js
-getType(new Set([1,2,3])) // "set"
+getType(new Set([1, 2, 3])); // "set"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2561,22 +2661,30 @@ Use bitwise right-shift operator and mask bits with `&` (and) operator to conver
 
 ```js
 const hexToRGB = hex => {
-  let alpha = false, h = hex.slice(hex.startsWith('#') ? 1 : 0);
+  let alpha = false,
+    h = hex.slice(hex.startsWith('#') ? 1 : 0);
   if (h.length === 3) h = [...h].map(x => x + x).join('');
   else if (h.length === 8) alpha = true;
   h = parseInt(h, 16);
-  return 'rgb' + (alpha ? 'a' : '') + '(' +
-    (h >>> (alpha ? 24 : 16)) + ', ' +
-    ((h & (alpha ? 0x00ff0000 : 0x00ff00)) >>> (alpha ? 16 : 8)) + ', ' +
+  return (
+    'rgb' +
+    (alpha ? 'a' : '') +
+    '(' +
+    (h >>> (alpha ? 24 : 16)) +
+    ', ' +
+    ((h & (alpha ? 0x00ff0000 : 0x00ff00)) >>> (alpha ? 16 : 8)) +
+    ', ' +
     ((h & (alpha ? 0x0000ff00 : 0x0000ff)) >>> (alpha ? 8 : 0)) +
-    (alpha ? `, ${(h & 0x000000ff)}` : '') + ')';
+    (alpha ? `, ${h & 0x000000ff}` : '') +
+    ')'
+  );
 };
 ```
 
 ```js
-hexToRGB('#27ae60ff') // 'rgba(39, 174, 96, 255)'
-hexToRGB('27ae60') // 'rgb(39, 174, 96)'
-hexToRGB('#fff') // 'rgb(255, 255, 255)'
+hexToRGB('#27ae60ff'); // 'rgba(39, 174, 96, 255)'
+hexToRGB('27ae60'); // 'rgb(39, 174, 96)'
+hexToRGB('#fff'); // 'rgb(255, 255, 255)'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2592,8 +2700,8 @@ const isArray = val => !!val && Array.isArray(val);
 ```
 
 ```js
-isArray(null) // false
-isArray([1]) // true
+isArray(null); // false
+isArray([1]); // true
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2609,8 +2717,8 @@ const isBoolean = val => typeof val === 'boolean';
 ```
 
 ```js
-isBoolean(null) // false
-isBoolean(false) // true
+isBoolean(null); // false
+isBoolean(false); // true
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2626,8 +2734,8 @@ const isFunction = val => val && typeof val === 'function';
 ```
 
 ```js
-isFunction('x') // false
-isFunction(x => x) // true
+isFunction('x'); // false
+isFunction(x => x); // true
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2643,8 +2751,8 @@ const isNumber = val => typeof val === 'number';
 ```
 
 ```js
-isNumber('1') // false
-isNumber(1) // true
+isNumber('1'); // false
+isNumber(1); // true
 ```
 [⬆ back to top](#table-of-contents)
 
@@ -2659,8 +2767,8 @@ const isString = val => typeof val === 'string';
 ```
 
 ```js
-isString(10) // false
-isString('10') // true
+isString(10); // false
+isString('10'); // true
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2676,8 +2784,8 @@ const isSymbol = val => typeof val === 'symbol';
 ```
 
 ```js
-isSymbol('x') // false
-isSymbol(Symbol('x')) // true
+isSymbol('x'); // false
+isSymbol(Symbol('x')); // true
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2689,17 +2797,16 @@ Generates a random hexadecimal color code.
 Use `Math.random` to generate a random 24-bit(6x4bits) hexadecimal number. Use bit shifting and then convert it to an hexadecimal String using `toString(16)`.
 
 ```js
-const randomHexColorCode = () => { 
-  let n = (Math.random() * 0xfffff | 0).toString(16); 
-  return '#' + (n.length !== 6 
-        ? (Math.random() * 0xf | 0).toString(16) + n : n); 
-}; 
+const randomHexColorCode = () => {
+  let n = ((Math.random() * 0xfffff) | 0).toString(16);
+  return '#' + (n.length !== 6 ? ((Math.random() * 0xf) | 0).toString(16) + n : n);
+};
 ```
 
 ```js
-randomHexColorCode() // "#e34155"
-randomHexColorCode() // "#fd73a6"
-randomHexColorCode() // "#4144c6"
+randomHexColorCode(); // "#e34155"
+randomHexColorCode(); // "#fd73a6"
+randomHexColorCode(); // "#4144c6"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2715,7 +2822,7 @@ const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6
 ```
 
 ```js
-RGBToHex(255, 165, 1) // 'ffa501'
+RGBToHex(255, 165, 1); // 'ffa501'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2726,18 +2833,20 @@ This algorithm is a simple hash-algorithm that hashes it input string `s` into a
 
 Use `split('')` and `Array.reduce()` to create a hash of the input string, utilizing bit shifting.
 
-``` js
+```js
 const sdbm = str => {
   let arr = str.split('');
-  return arr.reduce((hashCode, currentVal) =>
-    hashCode = currentVal.charCodeAt(0) + (hashCode << 6) + (hashCode << 16)  - hashCode
-  ,0)
-}
+  return arr.reduce(
+    (hashCode, currentVal) =>
+      (hashCode = currentVal.charCodeAt(0) + (hashCode << 6) + (hashCode << 16) - hashCode),
+    0
+  );
+};
 ```
 
 ```js
-console.log(sdbm("name")) // -3521204949
-console.log(sdbm("age")) // 808122783
+console.log(sdbm('name')); // -3521204949
+console.log(sdbm('age')); // 808122783
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2750,13 +2859,15 @@ Use `console.time()` and `console.timeEnd()` to measure the difference between t
 
 ```js
 const timeTaken = callback => {
-  console.time('timeTaken'); const r = callback();
-  console.timeEnd('timeTaken'); return r;
+  console.time('timeTaken');
+  const r = callback();
+  console.timeEnd('timeTaken');
+  return r;
 };
 ```
 
 ```js
-timeTaken(() => Math.pow(2, 10)) // 1024
+timeTaken(() => Math.pow(2, 10)); // 1024
 // (logged): timeTaken: 0.02099609375ms
 ```
 
@@ -2771,7 +2882,7 @@ const toDecimalMark = num => num.toLocaleString('en-US');
 ```
 
 ```js
-toDecimalMark(12305030388.9087) // "12,305,030,388.9087"
+toDecimalMark(12305030388.9087); // "12,305,030,388.9087"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2786,15 +2897,19 @@ If digit is found in teens pattern, use teens ordinal.
 
 ```js
 const toOrdinalSuffix = num => {
-  const int = parseInt(num), digits = [(int % 10), (int % 100)],
-    ordinals = ['st', 'nd', 'rd', 'th'], oPattern = [1, 2, 3, 4],
+  const int = parseInt(num),
+    digits = [int % 10, int % 100],
+    ordinals = ['st', 'nd', 'rd', 'th'],
+    oPattern = [1, 2, 3, 4],
     tPattern = [11, 12, 13, 14, 15, 16, 17, 18, 19];
-  return oPattern.includes(digits[0]) && !tPattern.includes(digits[1]) ? int + ordinals[digits[0] - 1] : int + ordinals[3];
+  return oPattern.includes(digits[0]) && !tPattern.includes(digits[1])
+    ? int + ordinals[digits[0] - 1]
+    : int + ordinals[3];
 };
 ```
 
 ```js
-toOrdinalSuffix("123") // "123rd"
+toOrdinalSuffix('123'); // "123rd"
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2808,12 +2923,12 @@ Use `crypto` API to generate a UUID, compliant with [RFC4122](https://www.ietf.o
 ```js
 const UUIDGenerator = () =>
   ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
-    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+    (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)
   );
 ```
 
 ```js
-UUIDGenerator() // '7982fcfe-5721-4632-bede-6000885be57d'
+UUIDGenerator(); // '7982fcfe-5721-4632-bede-6000885be57d'
 ```
 
 [⬆ back to top](#table-of-contents)
@@ -2831,7 +2946,7 @@ const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) ==
 ```
 
 ```js
-validateNumber('10') // true
+validateNumber('10'); // true
 ```
 
 [⬆ back to top](#table-of-contents)

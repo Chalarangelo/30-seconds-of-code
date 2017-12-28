@@ -11,6 +11,6 @@ const repeatString = (str = '', num = 2) => {
 ```
 
 ```js
-repeatString("abc",3) // 'abcabcabc'
-repeatString("abc") // 'abcabc'
+repeatString('abc', 3); // 'abcabcabc'
+repeatString('abc'); // 'abcabc'
 ```

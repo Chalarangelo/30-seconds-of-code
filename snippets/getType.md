@@ -10,5 +10,5 @@ const getType = v =>
 ```
 
 ```js
-getType(new Set([1,2,3])) // "set"
+getType(new Set([1, 2, 3])); // "set"
 ```
