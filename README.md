@@ -63,6 +63,7 @@
 * [`pull`](#pull)
 * [`pullAtIndex`](#pullatindex)
 * [`pullAtValue`](#pullatvalue)
+* [`quickSort`](#quicksort)
 * [`remove`](#remove)
 * [`sample`](#sample)
 * [`shuffle`](#shuffle)
@@ -246,15 +247,6 @@
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`UUIDGenerator`](#uuidgenerator)
 * [`validateNumber`](#validatenumber)
-
-</details>
-
-### _Uncategorized_
-
-<details>
-<summary>View contents</summary>
-
-* [`quickSort`](#quicksort)
 
 </details>
 
@@ -1228,6 +1220,39 @@ let myArray = ['a', 'b', 'c', 'd'];
 let pulled = pullAtValue(myArray, ['b', 'd']);
 console.log(myArray); // [ 'a', 'c' ]
 console.log(pulled); // [ 'b', 'd' ]
+```
+
+</details>
+
+
+[⬆ Back to top](#table-of-contents)
+
+
+### quickSort
+
+QuickSort an Array (ascending sort by default).
+
+Use recursion. 
+Use `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it. 
+If the parameter `desc` is truthy, return array sorts in descending order.
+
+```js
+const quickSort = ([n, ...nums], desc) =>
+  isNaN(n)
+    ? []
+    : [
+        ...quickSort(nums.filter(v => (desc ? v > n : v <= n)), desc),
+        n,
+        ...quickSort(nums.filter(v => (!desc ? v > n : v <= n)), desc)
+      ];
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+quickSort([4, 1, 3, 2]); // [1,2,3,4]
+quickSort([4, 1, 3, 2], true); // [4,3,2,1]
 ```
 
 </details>
@@ -4011,33 +4036,6 @@ validateNumber('10'); // true
 
 [⬆ Back to top](#table-of-contents)
 
-## _Uncategorized_
-
-### quickSort
-
-QuickSort an Array (ascending sort by default).
-
-Use recursion. 
-Use `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it. 
-If the parameter `desc` is truthy, return array sorts in descending order.
-
-```js
-const quickSort = ([n, ...nums], desc) =>
-  isNaN(n)
-    ? []
-    : [
-        ...quickSort(nums.filter(v => (desc ? v > n : v <= n)), desc),
-        n,
-        ...quickSort(nums.filter(v => (!desc ? v > n : v <= n)), desc)
-      ];
-```
-
-```js
-quickSort([4, 1, 3, 2]); // [1,2,3,4]
-quickSort([4, 1, 3, 2], true); // [4,3,2,1]
-```
-
-[⬆ back to top](#table-of-contents)
 
 ## Credits
 
