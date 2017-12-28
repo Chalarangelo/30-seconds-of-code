@@ -9,5 +9,5 @@ const toggleClass = (el, className) => el.classList.toggle(className);
 ```
 
 ```js
-toggleClass(document.querySelector('p.special'),'special') // The paragraph will not have the 'special' class anymore
+toggleClass(document.querySelector('p.special'), 'special'); // The paragraph will not have the 'special' class anymore
 ```
