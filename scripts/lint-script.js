@@ -35,9 +35,8 @@ try {
     let counter = 0;
     while (match) {
       snippet.code.push(match[1]); // capture group
-      snippet.tempNames.push(snippet.name.replace('.md', counter));
+      snippet.tempNames.push(snippet.name.replace('.md', counter++));
       match = codeRE.exec(snippet.data);
-      counter++;
     }
 
     snippet.code.forEach((str, i) => {
@@ -46,11 +45,10 @@ try {
   }
 
   const cmd = `semistandard "${TEMP_PATH}" --fix & ` +
-    `prettier "${TEMP_PATH}/*.js" --single-quote --print-width=100 --write`
+    `prettier "${TEMP_PATH}/*.js" --single-quote --print-width=100 --write`;
 
   cp.exec(cmd, {}, (err, stdout, stderr) => {
-    // Loop through each snippet now that semistandard has done its job,
-    // run prettier and write to the files
+    // Loop through each snippet now that semistandard and prettier did their job,
     for (const snippet of snippets) {
       // an array to store each linted code block (definition + example)
       const lintedCode = [];
