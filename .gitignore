@@ -4,3 +4,4 @@ currentSnippet\.js
 .idea
 test.sh
 dist/
+test/
