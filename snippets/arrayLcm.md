@@ -6,13 +6,13 @@ Use `Array.reduce()` and the `lcm` formula (uses recursion) to calculate the low
 
 ```js
 const arrayLcm = arr => {
-  const gcd = (x, y) => !y ? x : gcd(y, x % y);
-  const lcm = (x, y) => (x * y) / gcd(x, y);
+  const gcd = (x, y) => (!y ? x : gcd(y, x % y));
+  const lcm = (x, y) => x * y / gcd(x, y);
   return arr.reduce((a, b) => lcm(a, b));
 };
 ```
 
 ```js
-arrayLcm([1,2,3,4,5]) // 60
-arrayLcm([4,8,12]) // 24
+arrayLcm([1, 2, 3, 4, 5]); // 60
+arrayLcm([4, 8, 12]); // 24
 ```

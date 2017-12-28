@@ -9,5 +9,5 @@ const arrayMin = arr => Math.min(...arr);
 ```
 
 ```js
-arrayMin([10, 1, 5]) // 1
+arrayMin([10, 1, 5]); // 1
 ```

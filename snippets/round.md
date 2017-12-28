@@ -10,5 +10,5 @@ const round = (n, decimals = 0) => Number(`${Math.round(`${n}e${decimals}`)}e-${
 ```
 
 ```js
-round(1.005, 2) // 1.01
+round(1.005, 2); // 1.01
 ```

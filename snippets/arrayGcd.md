@@ -6,12 +6,12 @@ Use `Array.reduce()` and the `gcd` formula (uses recursion) to calculate the gre
 
 ```js
 const arrayGcd = arr => {
-  const gcd = (x, y) => !y ? x : gcd(y, x % y);
+  const gcd = (x, y) => (!y ? x : gcd(y, x % y));
   return arr.reduce((a, b) => gcd(a, b));
 };
 ```
 
 ```js
-arrayGcd([1,2,3,4,5]) // 1
-arrayGcd([4,8,12]) // 4
+arrayGcd([1, 2, 3, 4, 5]); // 1
+arrayGcd([4, 8, 12]); // 4
 ```

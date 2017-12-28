@@ -6,9 +6,9 @@ Convert the number to a string, using spread operators in ES6(`[...string]`) bui
 Use `Array.map()` and `parseInt()` to transform each value to an integer.
 
 ```js
-const digitize = n => [...'' + n].map(i => parseInt(i));
+const digitize = n => [...('' + n)].map(i => parseInt(i));
 ```
 
 ```js
-digitize(123) // [1, 2, 3]
+digitize(123); // [1, 2, 3]
 ```

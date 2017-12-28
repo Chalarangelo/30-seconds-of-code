@@ -9,6 +9,6 @@ const isSymbol = val => typeof val === 'symbol';
 ```
 
 ```js
-isSymbol('x') // false
-isSymbol(Symbol('x')) // true
+isSymbol('x'); // false
+isSymbol(Symbol('x')); // true
 ```

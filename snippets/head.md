@@ -9,5 +9,5 @@ const head = arr => arr[0];
 ```
 
 ```js
-head([1,2,3]) // 1
+head([1, 2, 3]); // 1
 ```

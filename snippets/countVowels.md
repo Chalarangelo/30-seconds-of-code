@@ -5,10 +5,10 @@ Retuns `number` of vowels in provided string.
 Use a regular expression to count the number of vowels `(A, E, I, O, U)` in a `string`.
 
 ```js
-const countVowels = str => (str.match(/[aeiou]/ig) || []).length;
+const countVowels = str => (str.match(/[aeiou]/gi) || []).length;
 ```
 
 ```js
-countVowels('foobar') // 3
-countVowels('gym') // 0
+countVowels('foobar'); // 3
+countVowels('gym'); // 0
 ```
