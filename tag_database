@@ -50,6 +50,7 @@ functionName:function
 gcd:math
 getDaysDiffBetweenDates:date
 getScrollPosition:browser
+getStyle:browser
 getType:utility
 getURLParameters:browser
 groupBy:array
@@ -111,6 +112,7 @@ sample:array
 scrollToTop:browser
 sdbm:utility
 select:object
+setStyle:browser
 shallowClone:object
 shuffle:array
 similarity:array
