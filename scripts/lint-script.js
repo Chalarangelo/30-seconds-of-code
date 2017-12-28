@@ -1,7 +1,9 @@
 /*
   This is the linter script that lints snippets.
   Run using `npm run linter`.
-  You might have to run `npm i -g semistandard` for this script to run properly.
+  You might have to run
+  `npm i -g semistandard && npm i -g prettier`
+  for this script to run properly.
 */
 const fs = require('fs-extra');
 const cp = require('child_process');
@@ -31,7 +33,7 @@ try {
     snippet.code = [];
 
     let match = codeRE.exec(snippet.data);
-    // make a counter so we write the definition + example code blocks to a different file
+    // make a counter so we write the definition + example code blocks to different files
     let counter = 0;
     while (match) {
       snippet.code.push(match[1]); // capture group
@@ -48,7 +50,7 @@ try {
     `prettier "${TEMP_PATH}/*.js" --single-quote --print-width=100 --write`;
 
   cp.exec(cmd, {}, (err, stdout, stderr) => {
-    // Loop through each snippet now that semistandard and prettier did their job,
+    // Loop through each snippet now that semistandard and prettier did their job
     for (const snippet of snippets) {
       // an array to store each linted code block (definition + example)
       const lintedCode = [];
