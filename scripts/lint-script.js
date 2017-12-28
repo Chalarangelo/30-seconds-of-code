@@ -12,7 +12,7 @@ const prettier = require('prettier');
 const SNIPPETS_PATH = './snippets';
 const TEMP_PATH = './temp';
 
-const codeRE = /```js([\s\S]*?)```/g;
+const codeRE = /```\s*js([\s\S]*?)```/g;
 
 console.time('lint');
 
