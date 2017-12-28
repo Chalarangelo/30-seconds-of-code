@@ -6,6 +6,8 @@ const TEST_PATH = './test';
 const snippetFiles = fs.readdirSync(SNIPPETS_PATH, 'utf8')
                        .map(fileName => fileName.slice(0, -3));
 
+fs.removeSync(TEST_PATH);
+
 snippetFiles
   .map(fileName => { fs.ensureDirSync(`${TEST_PATH}/${fileName}`); return fileName})
   .map(fileName => { 
