@@ -14,7 +14,7 @@ snippetFiles
     const blockMarkers = fileCode.split('\n').map((line, lineIndex) => line.slice(0, 3) === '```' ? lineIndex : '//CLEAR//').filter(x => !(x === '//CLEAR//'))
     const fileFunction = fileCode.split('\n').map(line => line.trim()).filter((_, i) => blockMarkers[0] < i && i < blockMarkers[1]);
     const fileExample = fileCode.split('\n').map(line => line.trim()).filter((_, i) => blockMarkers[2] < i && i < blockMarkers[3]);
-    const exportFile = `module.exports = ${fileFunction.join('\n')}`;
+    const exportFile = `module.exports = ${fileFunction.join('\n').slice(17)}`;
 
     fs.writeFileSync(`${TEST_PATH}/${fileName}/${fileName}.js`, exportFile);
 
