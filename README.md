@@ -1232,8 +1232,8 @@ console.log(pulled); // [ 'b', 'd' ]
 
 QuickSort an Array (ascending sort by default).
 
-Use recursion.
-Use `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it.
+Use recursion. 
+Use `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it. 
 If the parameter `desc` is truthy, return array sorts in descending order.
 
 ```js
@@ -1766,7 +1766,7 @@ getURLParameters('http://url.com/page?name=Adam&surname=Smith'); // {name: 'Adam
 
 Redirects the page to HTTPS if its currently in HTTP. Also, pressing the back button doesn't take it back to the HTTP page as its replaced in the history.
 
-Use `location.protocol` to get the protocol currently being used. If it's not HTTPS, use `location.replace()` to replace the existing page with the HTTPS version of the page. Use `location.href` to get the full address, split it with `String.split()` and remove the protocol part of the URL.
+Use `location.protocol` to get the protocol currently being used. If it's not HTTPS, use `location.replace()` to replace the existing page with the HTTPS version of the page. Use `location.href` to get the full address, split it with `String.split()` and remove the protocol part of the URL.  
 
 <details>
 <summary>Examples</summary>
@@ -3991,6 +3991,8 @@ toOrdinalSuffix('123'); // "123rd"
 Generates a UUID.
 
 Use `crypto` API to generate a UUID, compliant with [RFC4122](https://www.ietf.org/rfc/rfc4122.txt) version 4.
+
+Please note that this version will only work in **Node.JS** environments!
 
 ```js
 const crypto = require("crypto");
