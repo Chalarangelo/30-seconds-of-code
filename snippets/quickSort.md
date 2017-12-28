@@ -11,13 +11,13 @@ const quickSort = ([n, ...nums], desc) =>
   isNaN(n)
     ? []
     : [
-      	...quickSort(nums.filter(v => desc ? v > n : v <= n), desc),
+        ...quickSort(nums.filter(v => (desc ? v > n : v <= n)), desc),
         n,
-        ...quickSort(nums.filter(v =>!desc ? v > n : v <= n), desc)
-      ]
+        ...quickSort(nums.filter(v => (!desc ? v > n : v <= n)), desc)
+      ];
 ```
 
 ```js
-quickSort([4,1,3,2,]); // [1,2,3,4]
-quickSort([4,1,3,2,],true); // [4,3,2,1]
+quickSort([4, 1, 3, 2]); // [1,2,3,4]
+quickSort([4, 1, 3, 2], true); // [4,3,2,1]
 ```

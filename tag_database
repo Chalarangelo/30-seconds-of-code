@@ -94,6 +94,7 @@ promisify:adapter
 pull:array
 pullAtIndex:array
 pullAtValue:array
+quickSort:uncategorized
 randomHexColorCode:utility
 randomIntegerInRange:math
 randomNumberInRange:math
