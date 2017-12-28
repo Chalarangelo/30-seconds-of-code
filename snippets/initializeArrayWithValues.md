@@ -10,5 +10,5 @@ const initializeArrayWithValues = (n, value = 0) => Array(n).fill(value);
 ```
 
 ```js
-initializeArrayWithValues(5, 2) // [2,2,2,2,2]
+initializeArrayWithValues(5, 2); // [2,2,2,2,2]
 ```

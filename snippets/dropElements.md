@@ -13,5 +13,5 @@ const dropElements = (arr, func) => {
 ```
 
 ```js
-dropElements([1, 2, 3, 4], n => n >= 3) // [3,4]
+dropElements([1, 2, 3, 4], n => n >= 3); // [3,4]
 ```

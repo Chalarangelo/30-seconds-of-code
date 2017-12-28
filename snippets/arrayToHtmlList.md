@@ -5,9 +5,10 @@ Converts the given array elements into `<li>` tags and appends them to the list 
 Use `Array.map()` and `document.querySelector()` to create a list of html tags.
 
 ```js
-const arrayToHtmlList = (arr, listID) => arr.map(item => document.querySelector('#' + listID).innerHTML += `<li>${item}</li>`);
+const arrayToHtmlList = (arr, listID) =>
+  arr.map(item => (document.querySelector('#' + listID).innerHTML += `<li>${item}</li>`));
 ```
 
 ```js
-arrayToHtmlList(['item 1', 'item 2'],'myListID')
+arrayToHtmlList(['item 1', 'item 2'], 'myListID');
 ```

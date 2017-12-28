@@ -6,10 +6,12 @@ Use an anonymous inner function scope to declare an undefined memory space, usin
 
 ```js
 const mapObject = (arr, fn) =>
-  (a => (a = [arr, arr.map(fn)], a[0].reduce((acc, val, ind) => (acc[val] = a[1][ind], acc), {})))();
+  (a => (
+    (a = [arr, arr.map(fn)]), a[0].reduce((acc, val, ind) => ((acc[val] = a[1][ind]), acc), {})
+  ))();
 ```
 
 ```js
-const squareIt = arr => mapObject(arr, a => a*a)
-squareIt([1,2,3]) // { 1: 1, 2: 4, 3: 9 }
+const squareIt = arr => mapObject(arr, a => a * a);
+squareIt([1, 2, 3]); // { 1: 1, 2: 4, 3: 9 }
 ```

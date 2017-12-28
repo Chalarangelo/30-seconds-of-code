@@ -11,6 +11,6 @@ const nthElement = (arr, n = 0) => (n > 0 ? arr.slice(n, n + 1) : arr.slice(n))[
 ```
 
 ```js
-nthElement(['a','b','c'],1) // 'b'
-nthElement(['a','b','b'],-3) // 'a'
+nthElement(['a', 'b', 'c'], 1); // 'b'
+nthElement(['a', 'b', 'b'], -3); // 'a'
 ```

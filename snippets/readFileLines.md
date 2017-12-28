@@ -8,7 +8,11 @@ creating an array from contents of file by `split`ing file content line by line 
 
 ```js
 const fs = require('fs');
-const readFileLines = filename => fs.readFileSync(filename).toString('UTF8').split('\n');
+const readFileLines = filename =>
+  fs
+    .readFileSync(filename)
+    .toString('UTF8')
+    .split('\n');
 ```
 
 ```js
@@ -19,7 +23,7 @@ contents of test.txt :
   line3
   ___________________________
 */
-let arr = readFileLines('test.txt')
-console.log(arr) // ['line1', 'line2', 'line3']
+let arr = readFileLines('test.txt');
+console.log(arr); // ['line1', 'line2', 'line3']
 ```
 

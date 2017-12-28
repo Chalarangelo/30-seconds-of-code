@@ -9,5 +9,5 @@ const currentURL = () => window.location.href;
 ```
 
 ```js
-currentURL() // 'https://google.com'
+currentURL(); // 'https://google.com'
 ```

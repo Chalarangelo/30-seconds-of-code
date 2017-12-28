@@ -12,5 +12,5 @@ const JSONToDate = arr => {
 ```
 
 ```js
-JSONToDate(/Date(1489525200000)/) // "14/3/2017"
+JSONToDate(/Date(1489525200000)/); // "14/3/2017"
 ```

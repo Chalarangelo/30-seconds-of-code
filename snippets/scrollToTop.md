@@ -16,5 +16,5 @@ const scrollToTop = () => {
 ```
 
 ```js
-scrollToTop()
+scrollToTop();
 ```

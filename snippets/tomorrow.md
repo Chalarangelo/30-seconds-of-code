@@ -8,5 +8,5 @@ const tomorrow = () => new Date(new Date().getTime() + 86400000).toISOString().s
 ```
 
 ```js
-tomorrow() // 2017-12-27 (if current date is 2017-12-26)
+tomorrow(); // 2017-12-27 (if current date is 2017-12-26)
 ```
