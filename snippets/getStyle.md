@@ -9,5 +9,5 @@ const getStyle = (el, ruleName) => getComputedStyle(el)[ruleName];
 ```
 
 ```js
-getStyle(document.querySelector('p'), 'font-size') // '16px'
+getStyle(document.querySelector('p'), 'font-size'); // '16px'
 ```
