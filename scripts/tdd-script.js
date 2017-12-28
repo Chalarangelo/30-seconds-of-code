@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 
-const SNIPPETS_PATH = '../snippets';
-const TEST_PATH = '../test';
+const SNIPPETS_PATH = './snippets';
+const TEST_PATH = './test';
 
 const snippetFiles = fs.readdirSync(SNIPPETS_PATH, 'utf8')
                        .map(fileName => fileName.slice(0, -3));
