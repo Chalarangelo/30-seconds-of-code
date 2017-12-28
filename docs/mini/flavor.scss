@@ -176,3 +176,27 @@ main {
 .style .token.string {
   background: none !important;
 }
+
+div.collapse {
+  > label {
+    border-top-left-radius: var(--universal-border-radius) !important;
+    border-top-right-radius: var(--universal-border-radius) !important;
+  }
+  margin: 0;
+  width: 100%;
+  > div {
+    padding: 0 !important;
+    > pre {
+      margin: 0;
+      border: 0;
+    }
+  }
+}
+
+button.primary.clipboard-copy {
+  width: 100%;
+  margin-left: 0;
+  > svg {
+    vertical-align: bottom;
+  }
+}
