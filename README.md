@@ -1,7 +1,7 @@
 ![Logo](/logo.png)
 
 # 30 seconds of code
-[![License](https://img.shields.io/badge/license-CC0--1.0-blue.svg)](https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE) [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/30-seconds-of-code/Lobby) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![Travis Build](https://travis-ci.org/Chalarangelo/30-seconds-of-code.svg?branch=master)](https://travis-ci.org/Chalarangelo/30-seconds-of-code) [![Insight.io](https://img.shields.io/badge/insight.io-Ready-brightgreen.svg)](https://insight.io/github.com/Chalarangelo/30-seconds-of-code/tree/master/?source=0) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/Flet/semistandard)
+[![License](https://img.shields.io/badge/license-CC0--1.0-blue.svg)](https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE) [![Gitter chat](https://img.shields.io/badge/chat-on%20gitter-4FB999.svg)](https://gitter.im/30-seconds-of-code/Lobby) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Travis Build](https://travis-ci.org/Chalarangelo/30-seconds-of-code.svg?branch=master)](https://travis-ci.org/Chalarangelo/30-seconds-of-code) [![Insight.io](https://img.shields.io/badge/insight.io-Ready-brightgreen.svg)](https://insight.io/github.com/Chalarangelo/30-seconds-of-code/tree/master/?source=0) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard)
 
 > Curated collection of useful Javascript snippets that you can understand in 30 seconds or less.
 
@@ -201,8 +201,9 @@ Promise.resolve([1, 2, 3])
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### collectInto
 
@@ -224,8 +225,9 @@ Pall(p1, p2, p3).then(console.log);
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### flip
 
@@ -249,8 +251,9 @@ Object.assign(b, a) // == b
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### pipeFunctions
 
@@ -275,8 +278,9 @@ multiplyAndAdd5(5, 2); // 15
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### promisify
 
@@ -304,8 +308,9 @@ delay(2000).then(() => console.log('Hi!')); // // Promise resolves after 2s
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### spreadOver
 
@@ -325,8 +330,9 @@ arrayMax([1, 2, 4]); // 4
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 ## Array
 
 ### arrayGcd
@@ -352,8 +358,9 @@ arrayGcd([4, 8, 12]); // 4
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### arrayLcm
 
@@ -379,8 +386,9 @@ arrayLcm([4, 8, 12]); // 24
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### arrayMax
 
@@ -401,8 +409,9 @@ arrayMax([10, 1, 5]); // 10
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### arrayMin
 
@@ -423,8 +432,9 @@ arrayMin([10, 1, 5]); // 1
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### chunk
 
@@ -450,8 +460,9 @@ chunk([1, 2, 3, 4, 5], 2); // [[1,2],[3,4],[5]]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### compact
 
@@ -472,8 +483,9 @@ compact([0, 1, false, 2, '', 3, 'a', 'e' * 23, NaN, 's', 34]); // [ 1, 2, 3, 'a'
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### countOccurrences
 
@@ -494,8 +506,9 @@ countOccurrences([1, 1, 2, 1, 2, 3], 1); // 3
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### deepFlatten
 
@@ -518,8 +531,9 @@ deepFlatten([1, [2], [[3], 4], 5]); // [1,2,3,4,5]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### difference
 
@@ -543,8 +557,9 @@ difference([1, 2, 3], [1, 2, 4]); // [3]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### differenceWith
 
@@ -565,8 +580,9 @@ differenceWith([1, 1.2, 1.5, 3], [1.9, 3], (a, b) => Math.round(a) == Math.round
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### distinctValuesOfArray
 
@@ -587,8 +603,9 @@ distinctValuesOfArray([1, 2, 2, 3, 4, 4, 5]); // [1,2,3,4,5]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### dropElements
 
@@ -613,8 +630,9 @@ dropElements([1, 2, 3, 4], n => n >= 3); // [3,4]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### dropRight
 
@@ -637,8 +655,9 @@ dropRight([1, 2, 3], 42); // []
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### everyNth
 
@@ -659,8 +678,9 @@ everyNth([1, 2, 3, 4, 5, 6], 2); // [ 2, 4, 6 ]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### filterNonUnique
 
@@ -681,8 +701,9 @@ filterNonUnique([1, 2, 2, 3, 4, 4, 5]); // [1,3,5]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### flatten
 
@@ -703,8 +724,9 @@ flatten([1, [2], 3, 4]); // [1,2,3,4]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### flattenDepth
 
@@ -726,13 +748,14 @@ const flattenDepth = (arr, depth = 1) =>
 <summary>Examples</summary>
 
 ```js
-flatten([1,[2],3,4]) // [1,2,3,4]
+flattenDepth([1, [2], 3, 4]); // [1,2,3,4]
 ```
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### groupBy
 
@@ -759,8 +782,9 @@ groupBy(['one', 'two', 'three'], 'length'); // {3: ['one', 'two'], 5: ['three']}
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### head
 
@@ -781,8 +805,9 @@ head([1, 2, 3]); // 1
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### initial
 
@@ -803,8 +828,9 @@ initial([1, 2, 3]); // [1,2]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### initialize2DArray
 
@@ -828,8 +854,9 @@ initialize2DArray(2, 2, 0); // [[0,0], [0,0]]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### initializeArrayWithRange
 
@@ -853,8 +880,9 @@ initializeArrayWithRange(7, 3); // [3,4,5,6,7]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### initializeArrayWithValues
 
@@ -876,8 +904,9 @@ initializeArrayWithValues(5, 2); // [2,2,2,2,2]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### intersection
 
@@ -901,8 +930,9 @@ intersection([1, 2, 3], [4, 3, 2]); // [2,3]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### last
 
@@ -923,8 +953,9 @@ last([1, 2, 3]); // 3
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### mapObject
 
@@ -949,8 +980,9 @@ squareIt([1, 2, 3]); // { 1: 1, 2: 4, 3: 9 }
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### nthElement
 
@@ -974,8 +1006,9 @@ nthElement(['a', 'b', 'b'], -3); // 'a'
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### pick
 
@@ -997,8 +1030,9 @@ pick({ a: 1, b: '2', c: 3 }, ['a', 'c']); // { 'a': 1, 'c': 3 }
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### pull
 
@@ -1033,8 +1067,9 @@ console.log(myArray2); // [ 'b', 'b' ]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### pullAtIndex
 
@@ -1069,8 +1104,9 @@ console.log(pulled); // [ 'b', 'd' ]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### pullAtValue
 
@@ -1103,8 +1139,9 @@ console.log(pulled); // [ 'b', 'd' ]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### remove
 
@@ -1132,8 +1169,9 @@ remove([1, 2, 3, 4], n => n % 2 == 0); // [2, 4]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### sample
 
@@ -1155,8 +1193,9 @@ sample([3, 7, 9, 11]); // 9
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### shuffle
 
@@ -1186,8 +1225,9 @@ console.log(foo); // [1,2,3]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### similarity
 
@@ -1208,8 +1248,9 @@ similarity([1, 2, 3], [1, 2, 4]); // [1,2]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### symmetricDifference
 
@@ -1234,8 +1275,9 @@ symmetricDifference([1, 2, 3], [1, 2, 4]); // [3,4]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### tail
 
@@ -1257,8 +1299,9 @@ tail([1]); // [1]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### take
 
@@ -1280,8 +1323,9 @@ take([1, 2, 3], 0); // []
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### takeRight
 
@@ -1303,8 +1347,9 @@ takeRight([1, 2, 3]); // [3]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### union
 
@@ -1325,8 +1370,9 @@ union([1, 2, 3], [4, 3, 2]); // [1,2,3,4]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### without
 
@@ -1349,8 +1395,9 @@ without([2, 1, 2, 3], 1, 2); // [3]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### zip
 
@@ -1379,8 +1426,9 @@ zip(['a'], [1, 2], [true, false]); // [['a', 1, true], [undefined, 2, false]]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### zipObject
 
@@ -1403,8 +1451,9 @@ zipObject(['a', 'b'], [1, 2, 3]); // {a: 1, b: 2}
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 ## Browser
 
 ### arrayToHtmlList
@@ -1427,8 +1476,9 @@ arrayToHtmlList(['item 1', 'item 2'], 'myListID');
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### bottomVisible
 
@@ -1446,13 +1496,14 @@ const bottomVisible = () =>
 <summary>Examples</summary>
 
 ```js
-// bottomVisible() // true
+bottomVisible(); // true
 ```
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### currentURL
 
@@ -1473,8 +1524,9 @@ currentURL(); // 'https://google.com'
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### detectDeviceType
 
@@ -1499,8 +1551,9 @@ detectDeviceType(); // "Desktop"
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### elementIsVisibleInViewport
 
@@ -1533,8 +1586,9 @@ elementIsVisibleInViewport(el, true); // true // (partially visible)
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### getScrollPosition
 
@@ -1559,8 +1613,9 @@ getScrollPosition(); // {x: 0, y: 200}
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### getURLParameters
 
@@ -1585,8 +1640,9 @@ getURLParameters('http://url.com/page?name=Adam&surname=Smith'); // {name: 'Adam
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### httpsRedirect
 
@@ -1605,8 +1661,9 @@ const httpsRedirect = () => {
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### redirect
 
@@ -1629,8 +1686,9 @@ redirect('https://google.com');
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### scrollToTop
 
@@ -1658,8 +1716,9 @@ scrollToTop();
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 ## Date
 
 ### getDaysDiffBetweenDates
@@ -1682,8 +1741,9 @@ getDaysDiffBetweenDates(new Date('2017-12-13'), new Date('2017-12-22')); // 9
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### JSONToDate
 
@@ -1707,8 +1767,9 @@ JSONToDate(/Date(1489525200000)/); // "14/3/2017"
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### toEnglishDate
 
@@ -1737,8 +1798,9 @@ toEnglishDate('09/21/2010'); // '21/09/2010'
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### tomorrow
 
@@ -1747,13 +1809,20 @@ Use `new Date()` to get today's date, adding `86400000` of seconds to it(24 hour
 
 ```js
 const tomorrow = () => new Date(new Date().getTime() + 86400000).toISOString().split('T')[0];
-// tomorrow() -> 2017-12-27 (if current date is 2017-12-26)
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+tomorrow(); // 2017-12-27 (if current date is 2017-12-26)
 ```
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 ## Function
 
 ### chainAsync
@@ -1791,8 +1860,9 @@ chainAsync([
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### compose
 
@@ -1817,8 +1887,9 @@ multiplyAndAdd5(5, 2); // 15
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### curry
 
@@ -1844,8 +1915,9 @@ curry(Math.min, 3)(10)(50)(2); // 2
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### functionName
 
@@ -1866,8 +1938,9 @@ functionName(Math.max); // max (logged in debug channel of console)
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### runPromisesInSeries
 
@@ -1889,8 +1962,9 @@ runPromisesInSeries([() => delay(1000), () => delay(2000)]); // //executes each 
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### sleep
 
@@ -1915,8 +1989,9 @@ async function sleepyWork() {
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 ## Logic
 
 ### negate
@@ -1939,8 +2014,9 @@ negate(isOdd)(1); // false
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 ## Math
 
 ### arrayAverage
@@ -1962,8 +2038,9 @@ arrayAverage([1, 2, 3]); // 2
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### arraySum
 
@@ -1984,8 +2061,9 @@ arraySum([1, 2, 3, 4]); // 10
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### clampNumber
 
@@ -2009,8 +2087,9 @@ clampNumber(3, 2, 4); // 3
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### collatz
 
@@ -2032,8 +2111,9 @@ collatz(5); // 16
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### digitize
 
@@ -2055,8 +2135,9 @@ digitize(123); // [1, 2, 3]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### distance
 
@@ -2077,8 +2158,9 @@ distance(1, 1, 2, 3); // 2.23606797749979
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### factorial
 
@@ -2107,8 +2189,9 @@ factorial(6); // 720
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### fibonacci
 
@@ -2129,13 +2212,14 @@ const fibonacci = n =>
 <summary>Examples</summary>
 
 ```js
-factorial(6) // 720
+fibonacci(6); // 720
 ```
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### fibonacciCountUntilNum
 
@@ -2157,8 +2241,9 @@ fibonacciCountUntilNum(10); // 7
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### fibonacciUntilNum
 
@@ -2187,8 +2272,9 @@ fibonacciCountUntilNum(10); // 7
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### gcd
 
@@ -2211,8 +2297,9 @@ gcd(8, 36); // 4
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### hammingDistance
 
@@ -2234,8 +2321,9 @@ hammingDistance(2, 3); // 1
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### inRange
 
@@ -2263,8 +2351,9 @@ inrange(3, 2); // false
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### isArmstrongNumber
 
@@ -2290,8 +2379,9 @@ isArmstrongNumber(56); // false
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### isDivisible
 
@@ -2312,8 +2402,9 @@ isDivisible(6, 3); // true
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### isEven
 
@@ -2335,8 +2426,9 @@ isEven(3); // false
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### isPrime
 
@@ -2363,8 +2455,9 @@ isPrime(12); // false
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### lcm
 
@@ -2389,8 +2482,9 @@ lcm(12, 7); // 84
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### median
 
@@ -2417,8 +2511,9 @@ median([0, 10, -2, 7]); // 3.5
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### palindrome
 
@@ -2449,8 +2544,9 @@ palindrome('taco cat'); // true
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### percentile
 
@@ -2472,8 +2568,9 @@ percentile([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 6); // 55
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### powerset
 
@@ -2494,8 +2591,9 @@ powerset([1, 2]); // [[], [1], [2], [2,1]]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### primes
 
@@ -2522,8 +2620,9 @@ primes(10); // [2,3,5,7]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### randomIntegerInRange
 
@@ -2544,8 +2643,9 @@ randomIntegerInRange(0, 5); // 2
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### randomNumberInRange
 
@@ -2566,8 +2666,9 @@ randomNumberInRange(2, 10); // 6.0211363285087005
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### round
 
@@ -2589,27 +2690,9 @@ round(1.005, 2); // 1.01
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
-
-### sdbmHashAlgorithm
-
-This algorithm is a simple hash-algorithm that hashes it input string `s` into a whole number.
-
-Use `split('')` and `Array.reduce()` to create a hash of the input string, utilizing bit shifting.
-
-``` js
-const sdbm = str => {
-  let arr = str.split('');
-  return arr.reduce((hashCode, currentVal) =>
-    hashCode = currentVal.charCodeAt(0) + (hashCode << 6) + (hashCode << 16)  - hashCode
-  ,0)
-}
-// console.log(sdbm("name")) // -3521204949
-// console.log(sdbm("age")) // 808122783
-```
-
-[⬆ back to top](#table-of-contents)
+---
 
 ### standardDeviation
 
@@ -2641,8 +2724,9 @@ standardDeviation([10, 2, 38, 23, 38, 23, 21], true); // 12.29899614287479 (popu
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 ## Media
 
 ### speechSynthesis
@@ -2671,8 +2755,9 @@ speechSynthesis('Hello, World'); // // plays the message
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 ## Node
 
 ### JSONToFile
@@ -2696,8 +2781,9 @@ JSONToFile({ test: 'is passed' }, 'testJsonFile'); // writes the object to 'test
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### readFileLines
 
@@ -2731,20 +2817,12 @@ let arr = readFileLines('test.txt');
 console.log(arr); // ['line1', 'line2', 'line3']
 ```
 
-```js
-contents of test.txt :
-  line1
-  line2
-  line3
-  ___________________________
-let arr = readFileLines('test.txt')
-console.log(arr) // // ['line1', 'line2', 'line3']
-```
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 ## Object
 
 ### cleanObj
@@ -2777,8 +2855,9 @@ cleanObj(testObj, ['a'], 'children'); // { a: 1, children : { a: 1}}
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### objectFromPairs
 
@@ -2799,8 +2878,9 @@ objectFromPairs([['a', 1], ['b', 2]]); // {a: 1, b: 2}
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### objectToPairs
 
@@ -2821,8 +2901,9 @@ objectToPairs({ a: 1, b: 2 }); // [['a',1],['b',2]])
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### orderBy
 
@@ -2860,8 +2941,9 @@ orderBy(users, ['name', 'age']); // [{name: 'barney', age: 34}, {name: 'barney',
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### select
 
@@ -2884,8 +2966,9 @@ select(obj, 'selector.to.val'); // 'val to select'
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### shallowClone
 
@@ -2908,8 +2991,9 @@ a === b; // false
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### truthCheckCollection
 
@@ -2930,8 +3014,9 @@ truthCheckCollection([{ user: 'Tinky-Winky', sex: 'male' }, { user: 'Dipsy', sex
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 ## String
 
 ### anagrams
@@ -2965,8 +3050,9 @@ anagrams('abc'); // ['abc','acb','bac','bca','cab','cba']
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### Capitalize
 
@@ -2990,8 +3076,9 @@ capitalize('fooBar', true); // 'Foobar'
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### capitalizeEveryWord
 
@@ -3012,8 +3099,9 @@ capitalizeEveryWord('hello world!'); // 'Hello World!'
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### countVowels
 
@@ -3035,8 +3123,9 @@ countVowels('gym'); // 0
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### escapeRegExp
 
@@ -3057,8 +3146,9 @@ escapeRegExp('(test)'); // \\(test\\)
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### fromCamelCase
 
@@ -3086,8 +3176,9 @@ fromCamelCase('someJavascriptProperty', '_'); // 'some_javascript_property'
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### repeatString
 
@@ -3111,8 +3202,9 @@ repeatString('abc'); // 'abcabc'
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### reverseString
 
@@ -3138,8 +3230,9 @@ reverseString('foobar'); // 'raboof'
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### sortCharactersInString
 
@@ -3164,8 +3257,9 @@ sortCharactersInString('cabbage'); // 'aabbceg'
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### toCamelCase
 
@@ -3198,8 +3292,9 @@ toCamelCase('some-mixed_string with spaces_underscores-and-hyphens'); // 'someMi
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### toKebabCase
 
@@ -3230,8 +3325,9 @@ toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSo
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### toSnakeCase
 
@@ -3264,8 +3360,9 @@ toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSo
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### truncateString
 
@@ -3288,8 +3385,9 @@ truncateString('boomerang', 7); // 'boom...'
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### words
 
@@ -3312,8 +3410,9 @@ words('python, javaScript & coffee'); // ["python", "javaScript", "coffee"]
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 ## Utility
 
 ### coalesce
@@ -3335,8 +3434,9 @@ coalesce(null, undefined, '', NaN, 'Waldo'); // ""
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### coalesceFactory
 
@@ -3358,8 +3458,9 @@ customCoalesce(undefined, null, NaN, '', 'Waldo'); // "Waldo"
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### extendHex
 
@@ -3387,8 +3488,9 @@ extendHex('05a'); // '#0055aa'
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### getType
 
@@ -3410,8 +3512,9 @@ getType(new Set([1, 2, 3])); // "set"
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### hexToRGB
 
@@ -3452,8 +3555,9 @@ hexToRGB('#fff'); // 'rgb(255, 255, 255)'
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### isArray
 
@@ -3475,8 +3579,9 @@ isArray([1]); // true
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### isBoolean
 
@@ -3498,8 +3603,9 @@ isBoolean(false); // true
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### isFunction
 
@@ -3521,8 +3627,9 @@ isFunction(x => x); // true
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### isNumber
 
@@ -3543,8 +3650,9 @@ isNumber(1); // true
 ```
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### isString
 
@@ -3566,8 +3674,9 @@ isString('10'); // true
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### isSymbol
 
@@ -3589,8 +3698,9 @@ isSymbol(Symbol('x')); // true
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### randomHexColorCode
 
@@ -3600,9 +3710,8 @@ Use `Math.random` to generate a random 24-bit(6x4bits) hexadecimal number. Use b
 
 ```js
 const randomHexColorCode = () => {
-  let n = (Math.random() * 0xfffff | 0).toString(16);
-  return '#' + (n.length !== 6
-        ? (Math.random() * 0xf | 0).toString(16) + n : n);
+  let n = ((Math.random() * 0xfffff) | 0).toString(16);
+  return '#' + (n.length !== 6 ? ((Math.random() * 0xf) | 0).toString(16) + n : n);
 };
 ```
 
@@ -3617,8 +3726,9 @@ randomHexColorCode(); // "#4144c6"
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### RGBToHex
 
@@ -3639,8 +3749,9 @@ RGBToHex(255, 165, 1); // 'ffa501'
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### sbdm
 
@@ -3669,8 +3780,9 @@ console.log(sdbm('age')); // 808122783
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### timeTaken
 
@@ -3691,14 +3803,15 @@ const timeTaken = callback => {
 <summary>Examples</summary>
 
 ```js
-timeTaken(() => Math.pow(2, 10)) // 1024
-(logged): timeTaken: 0.02099609375ms
+timeTaken(() => Math.pow(2, 10)); // 1024
+// (logged): timeTaken: 0.02099609375ms
 ```
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### toDecimalMark
 
@@ -3717,8 +3830,9 @@ toDecimalMark(12305030388.9087); // "12,305,030,388.9087"
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### toOrdinalSuffix
 
@@ -3750,8 +3864,9 @@ toOrdinalSuffix('123'); // "123rd"
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### UUIDGenerator
 
@@ -3775,8 +3890,9 @@ UUIDGenerator(); // '7982fcfe-5721-4632-bede-6000885be57d'
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ### validateNumber
 
@@ -3799,8 +3915,9 @@ validateNumber('10'); // true
 
 </details>
 
-
+<br>
 [⬆ Back to top](#table-of-contents)
+---
 
 ## Credits
 
