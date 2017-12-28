@@ -90,12 +90,14 @@
 * [`detectDeviceType`](#detectdevicetype)
 * [`elementIsVisibleInViewport`](#elementisvisibleinviewport)
 * [`getScrollPosition`](#getscrollposition)
+* [`getStyle`](#getstyle)
 * [`getURLParameters`](#geturlparameters)
 * [`hasClass`](#hasclass)
 * [`hide`](#hide)
 * [`httpsRedirect`](#httpsredirect)
 * [`redirect`](#redirect)
 * [`scrollToTop`](#scrolltotop)
+* [`setStyle`](#setstyle)
 * [`show`](#show)
 * [`toggleClass`](#toggleclass)
 
@@ -1739,6 +1741,29 @@ getScrollPosition(); // {x: 0, y: 200}
 [⬆ Back to top](#table-of-contents)
 
 
+### getStyle
+
+Returns the value of a CSS rule for the specified element.
+
+Use `Window.getComputedStyle()` to get the value of the CSS rule for the specified element.
+
+```js
+const getStyle = (el, ruleName) => getComputedStyle(el)[ruleName];
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+getStyle(document.querySelector('p'), 'font-size'); // '16px'
+```
+
+</details>
+
+
+[⬆ Back to top](#table-of-contents)
+
+
 ### getURLParameters
 
 Returns an object containing the parameters of the current URL.
@@ -1880,6 +1905,29 @@ const scrollToTop = () => {
 
 ```js
 scrollToTop();
+```
+
+</details>
+
+
+[⬆ Back to top](#table-of-contents)
+
+
+### setStyle
+
+Sets the value of a CSS rule for the specified element.
+
+Use `element.style` to set the value of the CSS rule for the specified element to `value`.
+
+```js
+const setStyle = (el, ruleName, value) => (el.style[ruleName] = value);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+setStyle(document.querySelector('p'), 'font-size', '20px'); // The first <p> element on the page will have a font-size of 20px
 ```
 
 </details>

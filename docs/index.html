@@ -159,12 +159,14 @@
 <a class="sublink-1" href="#detectdevicetype">detectDeviceType</a>
 <a class="sublink-1" href="#elementisvisibleinviewport">elementIsVisibleInViewport</a>
 <a class="sublink-1" href="#getscrollposition">getScrollPosition</a>
+<a class="sublink-1" href="#getstyle">getStyle</a>
 <a class="sublink-1" href="#geturlparameters">getURLParameters</a>
 <a class="sublink-1" href="#hasclass">hasClass</a>
 <a class="sublink-1" href="#hide">hide</a>
 <a class="sublink-1" href="#httpsredirect">httpsRedirect</a>
 <a class="sublink-1" href="#redirect">redirect</a>
 <a class="sublink-1" href="#scrolltotop">scrollToTop</a>
+<a class="sublink-1" href="#setstyle">setStyle</a>
 <a class="sublink-1" href="#show">show</a>
 <a class="sublink-1" href="#toggleclass">toggleClass</a>
 
@@ -852,6 +854,13 @@ You can omit <code>el</code> to use a default value of <code>window</code>.</p>
 </code></pre>
 <pre><code class="language-js">getScrollPosition(); // {x: 0, y: 200}
 </code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="getstyle">getStyle</h3></div><div class="section double-padded">
+<p>Returns the value of a CSS rule for the specified element.</p>
+<p>Use <code>Window.getComputedStyle()</code> to get the value of the CSS rule for the specified element.</p>
+<pre><code class="language-js">const getStyle = (el, ruleName) =&gt; getComputedStyle(el)[ruleName];
+</code></pre>
+<pre><code class="language-js">getStyle(document.querySelector('p'), 'font-size'); // '16px'
+</code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="geturlparameters">getURLParameters</h3></div><div class="section double-padded">
 <p>Returns an object containing the parameters of the current URL.</p>
 <p>Use <code>match()</code> with an appropriate regular expression to get all key-value pairs, <code>Array.reduce()</code> to map and combine them into a single object.
@@ -906,6 +915,13 @@ Scroll by a fraction of the distance from the top. Use <code>window.requestAnima
 };
 </code></pre>
 <pre><code class="language-js">scrollToTop();
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="setstyle">setStyle</h3></div><div class="section double-padded">
+<p>Sets the value of a CSS rule for the specified element.</p>
+<p>Use <code>element.style</code> to set the value of the CSS rule for the specified element to <code>value</code>.</p>
+<pre><code class="language-js">const setStyle = (el, ruleName, value) =&gt; (el.style[ruleName] = value);
+</code></pre>
+<pre><code class="language-js">setStyle(document.querySelector('p'), 'font-size', '20px'); // The first &lt;p&gt; element on the page will have a font-size of 20px
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="show">show</h3></div><div class="section double-padded">
 <p>Shows all the elements specified.</p>
