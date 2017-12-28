@@ -2,12 +2,14 @@ language: node_js
 node_js:
 - node
 before_install:
-- npm install semistandard
+- npm install -g semistandard
+- npm install -g prettier
 - npm install webber
 - npm install builder
 - npm install tagger
 script:
 - npm run tagger
+- npm run linter
 - npm run builder
 - npm run webber
 after_success:
