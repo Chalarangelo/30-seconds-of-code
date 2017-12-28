@@ -160,9 +160,11 @@
 <a class="sublink-1" href="#elementisvisibleinviewport">elementIsVisibleInViewport</a>
 <a class="sublink-1" href="#getscrollposition">getScrollPosition</a>
 <a class="sublink-1" href="#geturlparameters">getURLParameters</a>
+<a class="sublink-1" href="#hasclass">hasClass</a>
 <a class="sublink-1" href="#httpsredirect">httpsRedirect</a>
 <a class="sublink-1" href="#redirect">redirect</a>
 <a class="sublink-1" href="#scrolltotop">scrollToTop</a>
+<a class="sublink-1" href="#toggleclass">toggleClass</a>
 
 <h3>Date
 </h3><a class="sublink-1" href="#getdaysdiffbetweendates">getDaysDiffBetweenDates</a>
@@ -859,6 +861,13 @@ Pass <code>location.search</code> as the argument to apply to the current <code>
 </code></pre>
 <pre><code class="language-js">getURLParameters('http://url.com/page?name=Adam&amp;surname=Smith'); // {name: 'Adam', surname: 'Smith'}
 </code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="hasclass">hasClass</h3></div><div class="section double-padded">
+<p>Returns <code>true</code> if the element has the specified class, <code>false</code> otherwise.</p>
+<p>Use <code>element.classList.contains()</code> to check if the element has the specified class.</p>
+<pre><code class="language-js">const hasClass = (el, className) =&gt; el.classList.contains(className);
+</code></pre>
+<pre><code class="language-js">hasClass(document.querySelector('p.special'), 'special'); // true
+</code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="httpsredirect">httpsRedirect</h3></div><div class="section double-padded">
 <p>Redirects the page to HTTPS if its currently in HTTP. Also, pressing the back button doesn't take it back to the HTTP page as its replaced in the history.</p>
 <p>Use <code>location.protocol</code> to get the protocol currently being used. If it's not HTTPS, use <code>location.replace()</code> to replace the existing page with the HTTPS version of the page. Use <code>location.href</code> to get the full address, split it with <code>String.split()</code> and remove the protocol part of the URL.</p>
@@ -888,6 +897,13 @@ Scroll by a fraction of the distance from the top. Use <code>window.requestAnima
 };
 </code></pre>
 <pre><code class="language-js">scrollToTop();
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="toggleclass">toggleClass</h3></div><div class="section double-padded">
+<p>Toggle a class for an element.</p>
+<p>Use <code>element.classList.toggle()</code> to toggle the specified class for the element.</p>
+<pre><code class="language-js">const toggleClass = (el, className) =&gt; el.classList.toggle(className);
+</code></pre>
+<pre><code class="language-js">toggleClass(document.querySelector('p.special'), 'special'); // The paragraph will not have the 'special' class anymore
 </code></pre>
 </div></div><br/><h2 style="text-align:center">Date</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="getdaysdiffbetweendates">getDaysDiffBetweenDates</h3></div><div class="section double-padded">

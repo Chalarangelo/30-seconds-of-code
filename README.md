@@ -91,9 +91,11 @@
 * [`elementIsVisibleInViewport`](#elementisvisibleinviewport)
 * [`getScrollPosition`](#getscrollposition)
 * [`getURLParameters`](#geturlparameters)
+* [`hasClass`](#hasclass)
 * [`httpsRedirect`](#httpsredirect)
 * [`redirect`](#redirect)
 * [`scrollToTop`](#scrolltotop)
+* [`toggleClass`](#toggleclass)
 
 </details>
 
@@ -1762,6 +1764,29 @@ getURLParameters('http://url.com/page?name=Adam&surname=Smith'); // {name: 'Adam
 [⬆ Back to top](#table-of-contents)
 
 
+### hasClass
+
+Returns `true` if the element has the specified class, `false` otherwise.
+
+Use `element.classList.contains()` to check if the element has the specified class.
+
+```js
+const hasClass = (el, className) => el.classList.contains(className);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+hasClass(document.querySelector('p.special'), 'special'); // true
+```
+
+</details>
+
+
+[⬆ Back to top](#table-of-contents)
+
+
 ### httpsRedirect
 
 Redirects the page to HTTPS if its currently in HTTP. Also, pressing the back button doesn't take it back to the HTTP page as its replaced in the history.
@@ -1830,6 +1855,29 @@ const scrollToTop = () => {
 
 ```js
 scrollToTop();
+```
+
+</details>
+
+
+[⬆ Back to top](#table-of-contents)
+
+
+### toggleClass
+
+Toggle a class for an element.
+
+Use `element.classList.toggle()` to toggle the specified class for the element.
+
+```js
+const toggleClass = (el, className) => el.classList.toggle(className);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+toggleClass(document.querySelector('p.special'), 'special'); // The paragraph will not have the 'special' class anymore
 ```
 
 </details>
