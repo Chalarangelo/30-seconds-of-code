@@ -54,6 +54,7 @@ getType:utility
 getURLParameters:browser
 groupBy:array
 hammingDistance:math
+hasClass:browser
 head:array
 hexToRGB:utility
 httpsRedirect:browser
@@ -126,6 +127,7 @@ timeTaken:utility
 toCamelCase:string
 toDecimalMark:utility
 toEnglishDate:date
+toggleClass:browser
 toKebabCase:string
 tomorrow:date
 toOrdinalSuffix:utility
