@@ -79,7 +79,7 @@ try {
       for(let taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag)){
         let data = snippets[taggedSnippet[0]+'.md'];
         data = data.slice(0,data.lastIndexOf('```js')) + '<details>\n<summary>Examples</summary>\n\n' + data.slice(data.lastIndexOf('```js'),data.lastIndexOf('```')) + data.slice(data.lastIndexOf('```')) + '\n</details>\n';
-        output += `\n${data+'\n\n[⬆ Back to top](#table-of-contents)\n'}`;
+        output += `\n${data+'\n<br>\n[⬆ Back to top](#table-of-contents)\n---\n'}`;
       }
     }
   }
