@@ -91,9 +91,11 @@
 * [`elementIsVisibleInViewport`](#elementisvisibleinviewport)
 * [`getScrollPosition`](#getscrollposition)
 * [`getURLParameters`](#geturlparameters)
+* [`hide`](#hide)
 * [`httpsRedirect`](#httpsredirect)
 * [`redirect`](#redirect)
 * [`scrollToTop`](#scrolltotop)
+* [`show`](#show)
 
 </details>
 
@@ -1762,6 +1764,29 @@ getURLParameters('http://url.com/page?name=Adam&surname=Smith'); // {name: 'Adam
 [⬆ Back to top](#table-of-contents)
 
 
+### hide
+
+Hides all the elements specified.
+
+Use the spread operator (`...`) and `Array.forEach()` to apply `display: none` to each element specified.
+
+```js
+const hide = (...el) => [...el].forEach(e => (e.style.display = 'none'));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+hide(document.querySelectorAll('img')); // Hides all <img> elements on the page
+```
+
+</details>
+
+
+[⬆ Back to top](#table-of-contents)
+
+
 ### httpsRedirect
 
 Redirects the page to HTTPS if its currently in HTTP. Also, pressing the back button doesn't take it back to the HTTP page as its replaced in the history.
@@ -1830,6 +1855,29 @@ const scrollToTop = () => {
 
 ```js
 scrollToTop();
+```
+
+</details>
+
+
+[⬆ Back to top](#table-of-contents)
+
+
+### show
+
+Shows all the elements specified.
+
+Use the spread operator (`...`) and `Array.forEach()` to clear the `display` property for each element specified.
+
+```js
+const show = (...el) => [...el].forEach(e => (e.style.display = ''));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+show(document.querySelectorAll('img')); // Shows all <img> elements on the page
 ```
 
 </details>
