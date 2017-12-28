@@ -55,15 +55,15 @@ try {
   let uncategorizedOutput = '';
   for(let tag of [...new Set(Object.entries(tagDbData).map(t => t[1]))].filter(v => v).sort((a,b) => a.localeCompare(b))){
     if(capitalize(tag, true)=='Uncategorized') {
-      uncategorizedOutput +=`### _${capitalize(tag, true)}_\n`;
+      uncategorizedOutput +=`### _${capitalize(tag, true)}_\n\n<details>\n<summary>View contents</summary>\n\n`;
       for(let taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag))
         uncategorizedOutput += `* [\`${taggedSnippet[0]}\`](#${taggedSnippet[0].toLowerCase()})\n`
-      uncategorizedOutput += '\n';
+      uncategorizedOutput += '\n</details>\n\n';
     } else {
-      output +=`### ${capitalize(tag, true)}\n`;
+      output +=`### ${capitalize(tag, true)}\n\n<details>\n<summary>View contents</summary>\n\n`;
       for(let taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag))
         output += `* [\`${taggedSnippet[0]}\`](#${taggedSnippet[0].toLowerCase()})\n`
-      output += '\n';
+      output += '\n</details>\n\n';
     }
   }
   output += uncategorizedOutput;
@@ -79,7 +79,7 @@ try {
       for(let taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag)){
         let data = snippets[taggedSnippet[0]+'.md'];
         data = data.slice(0,data.lastIndexOf('```js')) + '<details>\n<summary>Examples</summary>\n\n' + data.slice(data.lastIndexOf('```js'),data.lastIndexOf('```')) + data.slice(data.lastIndexOf('```')) + '\n</details>\n';
-        output += `\n${data+'\n\n[⬆ Back to top](#table-of-contents)\n\n---\n'}`;
+        output += `\n${data+'\n\n[⬆ Back to top](#table-of-contents)\n\n'}`;
       }
     }
   }
