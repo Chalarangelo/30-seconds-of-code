@@ -9,5 +9,5 @@ const arrayAverage = arr => arr.reduce((acc, val) => acc + val, 0) / arr.length;
 ```
 
 ```js
-arrayAverage([1,2,3]) // 2
+arrayAverage([1, 2, 3]); // 2
 ```

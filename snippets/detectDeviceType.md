@@ -5,10 +5,13 @@ Detects wether the website is being opened in a mobile device or a desktop/lapto
 Use a regular expression to test the `navigator.userAgent` property to figure out if the device is a mobile device or a desktop/laptop.
 
 ```js
-const detectDeviceType = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop';
+const detectDeviceType = () =>
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    ? 'Mobile'
+    : 'Desktop';
 ```
 
 ```js
-detectDeviceType() // "Mobile"
-detectDeviceType() // "Desktop"
+detectDeviceType(); // "Mobile"
+detectDeviceType(); // "Desktop"
 ```

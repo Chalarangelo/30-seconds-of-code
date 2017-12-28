@@ -9,5 +9,5 @@ const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 ```
 
 ```js
-escapeRegExp('(test)') // \\(test\\)
+escapeRegExp('(test)'); // \\(test\\)
 ```
