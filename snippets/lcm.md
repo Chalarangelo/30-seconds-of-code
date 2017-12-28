@@ -7,11 +7,11 @@ The GCD formula uses recursion.
 
 ```js
 const lcm = (x, y) => {
-  const gcd = (x, y) => !y ? x : gcd(y, x % y);
-  return Math.abs(x * y) / (gcd(x, y));
+  const gcd = (x, y) => (!y ? x : gcd(y, x % y));
+  return Math.abs(x * y) / gcd(x, y);
 };
 ```
 
 ```js
-lcm(12,7) // 84
+lcm(12, 7); // 84
 ```

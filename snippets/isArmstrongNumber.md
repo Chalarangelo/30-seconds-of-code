@@ -6,11 +6,13 @@ Convert the given number into an array of digits. Use `Math.pow()` to get the ap
 
 ```js
 const isArmstrongNumber = digits =>
-  (arr => arr.reduce((a, d) => a + Math.pow(parseInt(d), arr.length), 0) == digits)((digits + '').split(''));
+  (arr => arr.reduce((a, d) => a + Math.pow(parseInt(d), arr.length), 0) == digits)(
+    (digits + '').split('')
+  );
 ```
 
 ```js
-isArmstrongNumber(1634) // true
-isArmstrongNumber(371) // true
-isArmstrongNumber(56) // false
+isArmstrongNumber(1634); // true
+isArmstrongNumber(371); // true
+isArmstrongNumber(56); // false
 ```

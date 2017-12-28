@@ -6,10 +6,15 @@ Use `Array.map()`, `split()` and `Array.join()` to join the mapped array for con
 `String.slice()` is used to remove `#` from string start since it's added once.
 ```js
 const extendHex = shortHex =>
-  '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split('').map(x => x + x).join('');
+  '#' +
+  shortHex
+    .slice(shortHex.startsWith('#') ? 1 : 0)
+    .split('')
+    .map(x => x + x)
+    .join('');
 ```
 
 ```js
-extendHex('#03f') // '#0033ff'
-extendHex('05a') // '#0055aa'
+extendHex('#03f'); // '#0033ff'
+extendHex('05a'); // '#0055aa'
 ```

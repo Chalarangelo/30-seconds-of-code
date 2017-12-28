@@ -9,6 +9,6 @@ const isNumber = val => typeof val === 'number';
 ```
 
 ```js
-isNumber('1') // false
-isNumber(1) // true
+isNumber('1'); // false
+isNumber(1); // true
 ```

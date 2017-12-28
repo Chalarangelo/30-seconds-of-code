@@ -9,7 +9,7 @@ const spreadOver = fn => argsArr => fn(...argsArr);
 ```
 
 ```js
-const arrayMax = spreadOver(Math.max)
-arrayMax([1,2,3]) // 3
-arrayMax([1,2,4])  // 4
+const arrayMax = spreadOver(Math.max);
+arrayMax([1, 2, 3]); // 3
+arrayMax([1, 2, 4]); // 4
 ```

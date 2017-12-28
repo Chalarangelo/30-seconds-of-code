@@ -10,6 +10,6 @@ const select = (from, selector) =>
 ```
 
 ```js
-const obj = {selector: {to: {val: 'val to select'}}};
+const obj = { selector: { to: { val: 'val to select' } } };
 select(obj, 'selector.to.val'); // 'val to select'
 ```
