@@ -204,7 +204,8 @@ Promise.resolve([1, 2, 3])
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### collectInto
 
@@ -229,7 +230,8 @@ Pall(p1, p2, p3).then(console.log);
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### flip
 
@@ -256,7 +258,8 @@ Object.assign(b, a); // == b
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### pipeFunctions
 
@@ -281,7 +284,8 @@ multiplyAndAdd5(5, 2); // 15
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### promisify
 
@@ -309,7 +313,8 @@ delay(2000).then(() => console.log('Hi!')); // // Promise resolves after 2s
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### spreadOver
 
@@ -332,7 +337,8 @@ arrayMax([1, 2, 4]); // 4
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 ## Array
 
 ### arrayGcd
@@ -358,7 +364,8 @@ arrayGcd([4, 8, 12]); // 4
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### arrayLcm
 
@@ -384,7 +391,8 @@ arrayLcm([4, 8, 12]); // 24
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### arrayMax
 
@@ -405,7 +413,8 @@ arrayMax([10, 1, 5]); // 10
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### arrayMin
 
@@ -426,7 +435,8 @@ arrayMin([10, 1, 5]); // 1
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### chunk
 
@@ -452,7 +462,8 @@ chunk([1, 2, 3, 4, 5], 2); // [[1,2],[3,4],[5]]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### compact
 
@@ -473,7 +484,8 @@ compact([0, 1, false, 2, '', 3, 'a', 'e' * 23, NaN, 's', 34]); // [ 1, 2, 3, 'a'
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### countOccurrences
 
@@ -494,7 +506,8 @@ countOccurrences([1, 1, 2, 1, 2, 3], 1); // 3
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### deepFlatten
 
@@ -517,7 +530,8 @@ deepFlatten([1, [2], [[3], 4], 5]); // [1,2,3,4,5]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### difference
 
@@ -541,7 +555,8 @@ difference([1, 2, 3], [1, 2, 4]); // [3]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### differenceWith
 
@@ -562,7 +577,8 @@ differenceWith([1, 1.2, 1.5, 3], [1.9, 3], (a, b) => Math.round(a) == Math.round
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### distinctValuesOfArray
 
@@ -583,7 +599,8 @@ distinctValuesOfArray([1, 2, 2, 3, 4, 4, 5]); // [1,2,3,4,5]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### dropElements
 
@@ -608,7 +625,8 @@ dropElements([1, 2, 3, 4], n => n >= 3); // [3,4]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### dropRight
 
@@ -631,7 +649,8 @@ dropRight([1, 2, 3], 42); // []
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### everyNth
 
@@ -652,7 +671,8 @@ everyNth([1, 2, 3, 4, 5, 6], 2); // [ 2, 4, 6 ]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### filterNonUnique
 
@@ -673,7 +693,8 @@ filterNonUnique([1, 2, 2, 3, 4, 4, 5]); // [1,3,5]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### flatten
 
@@ -694,7 +715,8 @@ flatten([1, [2], 3, 4]); // [1,2,3,4]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### flattenDepth
 
@@ -721,7 +743,8 @@ flattenDepth([1, [2], 3, 4]); // [1,2,3,4]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### groupBy
 
@@ -748,7 +771,8 @@ groupBy(['one', 'two', 'three'], 'length'); // {3: ['one', 'two'], 5: ['three']}
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### head
 
@@ -769,7 +793,8 @@ head([1, 2, 3]); // 1
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### initial
 
@@ -790,7 +815,8 @@ initial([1, 2, 3]); // [1,2]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### initialize2DArray
 
@@ -814,7 +840,8 @@ initialize2DArray(2, 2, 0); // [[0,0], [0,0]]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### initializeArrayWithRange
 
@@ -838,7 +865,8 @@ initializeArrayWithRange(7, 3); // [3,4,5,6,7]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### initializeArrayWithValues
 
@@ -860,7 +888,8 @@ initializeArrayWithValues(5, 2); // [2,2,2,2,2]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### intersection
 
@@ -884,7 +913,8 @@ intersection([1, 2, 3], [4, 3, 2]); // [2,3]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### last
 
@@ -905,7 +935,8 @@ last([1, 2, 3]); // 3
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### mapObject
 
@@ -930,7 +961,8 @@ squareIt([1, 2, 3]); // { 1: 1, 2: 4, 3: 9 }
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### nthElement
 
@@ -954,7 +986,8 @@ nthElement(['a', 'b', 'b'], -3); // 'a'
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### pick
 
@@ -976,7 +1009,8 @@ pick({ a: 1, b: '2', c: 3 }, ['a', 'c']); // { 'a': 1, 'c': 3 }
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### pull
 
@@ -1011,7 +1045,8 @@ console.log(myArray2); // [ 'b', 'b' ]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### pullAtIndex
 
@@ -1046,7 +1081,8 @@ console.log(pulled); // [ 'b', 'd' ]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### pullAtValue
 
@@ -1079,7 +1115,8 @@ console.log(pulled); // [ 'b', 'd' ]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### remove
 
@@ -1107,7 +1144,8 @@ remove([1, 2, 3, 4], n => n % 2 == 0); // [2, 4]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### sample
 
@@ -1129,7 +1167,8 @@ sample([3, 7, 9, 11]); // 9
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### shuffle
 
@@ -1159,7 +1198,8 @@ console.log(foo); // [1,2,3]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### similarity
 
@@ -1180,7 +1220,8 @@ similarity([1, 2, 3], [1, 2, 4]); // [1,2]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### symmetricDifference
 
@@ -1205,7 +1246,8 @@ symmetricDifference([1, 2, 3], [1, 2, 4]); // [3,4]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### tail
 
@@ -1227,7 +1269,8 @@ tail([1]); // [1]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### take
 
@@ -1249,7 +1292,8 @@ take([1, 2, 3], 0); // []
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### takeRight
 
@@ -1271,7 +1315,8 @@ takeRight([1, 2, 3]); // [3]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### union
 
@@ -1292,7 +1337,8 @@ union([1, 2, 3], [4, 3, 2]); // [1,2,3,4]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### without
 
@@ -1315,7 +1361,8 @@ without([2, 1, 2, 3], 1, 2); // [3]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### zip
 
@@ -1344,7 +1391,8 @@ zip(['a'], [1, 2], [true, false]); // [['a', 1, true], [undefined, 2, false]]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### zipObject
 
@@ -1367,7 +1415,8 @@ zipObject(['a', 'b'], [1, 2, 3]); // {a: 1, b: 2}
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 ## Browser
 
 ### arrayToHtmlList
@@ -1390,7 +1439,8 @@ arrayToHtmlList(['item 1', 'item 2'], 'myListID');
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### bottomVisible
 
@@ -1413,7 +1463,8 @@ bottomVisible(); // true
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### currentURL
 
@@ -1434,7 +1485,8 @@ currentURL(); // 'https://google.com'
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### detectDeviceType
 
@@ -1459,7 +1511,8 @@ detectDeviceType(); // "Desktop"
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### elementIsVisibleInViewport
 
@@ -1492,7 +1545,8 @@ elementIsVisibleInViewport(el, true); // true // (partially visible)
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### getScrollPosition
 
@@ -1517,7 +1571,8 @@ getScrollPosition(); // {x: 0, y: 200}
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### getURLParameters
 
@@ -1542,7 +1597,8 @@ getURLParameters('http://url.com/page?name=Adam&surname=Smith'); // {name: 'Adam
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### httpsRedirect
 
@@ -1561,7 +1617,8 @@ const httpsRedirect = () => {
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### redirect
 
@@ -1584,7 +1641,8 @@ redirect('https://google.com');
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### scrollToTop
 
@@ -1612,7 +1670,8 @@ scrollToTop();
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 ## Date
 
 ### getDaysDiffBetweenDates
@@ -1635,7 +1694,8 @@ getDaysDiffBetweenDates(new Date('2017-12-13'), new Date('2017-12-22')); // 9
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### JSONToDate
 
@@ -1659,7 +1719,8 @@ JSONToDate(/Date(1489525200000)/); // "14/3/2017"
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### toEnglishDate
 
@@ -1688,7 +1749,8 @@ toEnglishDate('09/21/2010'); // '21/09/2010'
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### tomorrow
 
@@ -1708,7 +1770,8 @@ tomorrow(); // 2017-12-27 (if current date is 2017-12-26)
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 ## Function
 
 ### chainAsync
@@ -1746,7 +1809,8 @@ chainAsync([
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### compose
 
@@ -1771,7 +1835,8 @@ multiplyAndAdd5(5, 2); // 15
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### curry
 
@@ -1797,7 +1862,8 @@ curry(Math.min, 3)(10)(50)(2); // 2
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### functionName
 
@@ -1818,7 +1884,8 @@ functionName(Math.max); // max (logged in debug channel of console)
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### runPromisesInSeries
 
@@ -1840,7 +1907,8 @@ runPromisesInSeries([() => delay(1000), () => delay(2000)]); // //executes each 
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### sleep
 
@@ -1865,7 +1933,8 @@ async function sleepyWork() {
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 ## Logic
 
 ### negate
@@ -1888,7 +1957,8 @@ negate(isOdd)(1); // false
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 ## Math
 
 ### arrayAverage
@@ -1910,7 +1980,8 @@ arrayAverage([1, 2, 3]); // 2
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### arraySum
 
@@ -1931,7 +2002,8 @@ arraySum([1, 2, 3, 4]); // 10
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### clampNumber
 
@@ -1955,7 +2027,8 @@ clampNumber(3, 2, 4); // 3
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### collatz
 
@@ -1977,7 +2050,8 @@ collatz(5); // 16
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### digitize
 
@@ -1999,7 +2073,8 @@ digitize(123); // [1, 2, 3]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### distance
 
@@ -2020,7 +2095,8 @@ distance(1, 1, 2, 3); // 2.23606797749979
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### factorial
 
@@ -2049,7 +2125,8 @@ factorial(6); // 720
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### fibonacci
 
@@ -2075,7 +2152,8 @@ fibonacci(6); // 720
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### fibonacciCountUntilNum
 
@@ -2097,7 +2175,8 @@ fibonacciCountUntilNum(10); // 7
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### fibonacciUntilNum
 
@@ -2126,7 +2205,8 @@ fibonacciCountUntilNum(10); // 7
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### gcd
 
@@ -2149,7 +2229,8 @@ gcd(8, 36); // 4
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### hammingDistance
 
@@ -2171,7 +2252,8 @@ hammingDistance(2, 3); // 1
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### inRange
 
@@ -2199,7 +2281,8 @@ inrange(3, 2); // false
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### isArmstrongNumber
 
@@ -2225,7 +2308,8 @@ isArmstrongNumber(56); // false
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### isDivisible
 
@@ -2246,7 +2330,8 @@ isDivisible(6, 3); // true
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### isEven
 
@@ -2268,7 +2353,8 @@ isEven(3); // false
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### isPrime
 
@@ -2295,7 +2381,8 @@ isPrime(12); // false
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### lcm
 
@@ -2320,7 +2407,8 @@ lcm(12, 7); // 84
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### median
 
@@ -2347,7 +2435,8 @@ median([0, 10, -2, 7]); // 3.5
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### palindrome
 
@@ -2378,7 +2467,8 @@ palindrome('taco cat'); // true
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### percentile
 
@@ -2400,7 +2490,8 @@ percentile([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 6); // 55
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### powerset
 
@@ -2421,7 +2512,8 @@ powerset([1, 2]); // [[], [1], [2], [2,1]]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### primes
 
@@ -2448,7 +2540,8 @@ primes(10); // [2,3,5,7]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### randomIntegerInRange
 
@@ -2469,7 +2562,8 @@ randomIntegerInRange(0, 5); // 2
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### randomNumberInRange
 
@@ -2490,7 +2584,8 @@ randomNumberInRange(2, 10); // 6.0211363285087005
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### round
 
@@ -2512,7 +2607,8 @@ round(1.005, 2); // 1.01
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### standardDeviation
 
@@ -2544,7 +2640,8 @@ standardDeviation([10, 2, 38, 23, 38, 23, 21], true); // 12.29899614287479 (popu
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 ## Media
 
 ### speechSynthesis
@@ -2573,7 +2670,8 @@ speechSynthesis('Hello, World'); // // plays the message
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 ## Node
 
 ### JSONToFile
@@ -2597,7 +2695,8 @@ JSONToFile({ test: 'is passed' }, 'testJsonFile'); // writes the object to 'test
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### readFileLines
 
@@ -2634,7 +2733,8 @@ console.log(arr); // ['line1', 'line2', 'line3']
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 ## Object
 
 ### cleanObj
@@ -2667,7 +2767,8 @@ cleanObj(testObj, ['a'], 'children'); // { a: 1, children : { a: 1}}
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### objectFromPairs
 
@@ -2688,7 +2789,8 @@ objectFromPairs([['a', 1], ['b', 2]]); // {a: 1, b: 2}
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### objectToPairs
 
@@ -2709,7 +2811,8 @@ objectToPairs({ a: 1, b: 2 }); // [['a',1],['b',2]])
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### orderBy
 
@@ -2747,7 +2850,8 @@ orderBy(users, ['name', 'age']); // [{name: 'barney', age: 34}, {name: 'barney',
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### select
 
@@ -2770,7 +2874,8 @@ select(obj, 'selector.to.val'); // 'val to select'
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### shallowClone
 
@@ -2793,7 +2898,8 @@ a === b; // false
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### truthCheckCollection
 
@@ -2814,7 +2920,8 @@ truthCheckCollection([{ user: 'Tinky-Winky', sex: 'male' }, { user: 'Dipsy', sex
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 ## String
 
 ### anagrams
@@ -2848,7 +2955,8 @@ anagrams('abc'); // ['abc','acb','bac','bca','cab','cba']
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### Capitalize
 
@@ -2872,7 +2980,8 @@ capitalize('fooBar', true); // 'Foobar'
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### capitalizeEveryWord
 
@@ -2893,7 +3002,8 @@ capitalizeEveryWord('hello world!'); // 'Hello World!'
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### countVowels
 
@@ -2915,7 +3025,8 @@ countVowels('gym'); // 0
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### escapeRegExp
 
@@ -2936,7 +3047,8 @@ escapeRegExp('(test)'); // \\(test\\)
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### fromCamelCase
 
@@ -2964,7 +3076,8 @@ fromCamelCase('someJavascriptProperty', '_'); // 'some_javascript_property'
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### repeatString
 
@@ -2988,7 +3101,8 @@ repeatString('abc'); // 'abcabc'
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### reverseString
 
@@ -3014,7 +3128,8 @@ reverseString('foobar'); // 'raboof'
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### sortCharactersInString
 
@@ -3039,7 +3154,8 @@ sortCharactersInString('cabbage'); // 'aabbceg'
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### toCamelCase
 
@@ -3072,7 +3188,8 @@ toCamelCase('some-mixed_string with spaces_underscores-and-hyphens'); // 'someMi
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### toKebabCase
 
@@ -3103,7 +3220,8 @@ toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSo
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### toSnakeCase
 
@@ -3136,7 +3254,8 @@ toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSo
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### truncateString
 
@@ -3159,7 +3278,8 @@ truncateString('boomerang', 7); // 'boom...'
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### words
 
@@ -3182,7 +3302,8 @@ words('python, javaScript & coffee'); // ["python", "javaScript", "coffee"]
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 ## Utility
 
 ### coalesce
@@ -3204,7 +3325,8 @@ coalesce(null, undefined, '', NaN, 'Waldo'); // ""
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### coalesceFactory
 
@@ -3226,7 +3348,8 @@ customCoalesce(undefined, null, NaN, '', 'Waldo'); // "Waldo"
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### extendHex
 
@@ -3254,7 +3377,8 @@ extendHex('05a'); // '#0055aa'
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### getType
 
@@ -3276,7 +3400,8 @@ getType(new Set([1, 2, 3])); // "set"
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### hexToRGB
 
@@ -3317,7 +3442,8 @@ hexToRGB('#fff'); // 'rgb(255, 255, 255)'
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### isArray
 
@@ -3339,7 +3465,8 @@ isArray([1]); // true
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### isBoolean
 
@@ -3361,7 +3488,8 @@ isBoolean(false); // true
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### isFunction
 
@@ -3383,7 +3511,8 @@ isFunction(x => x); // true
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### isNumber
 
@@ -3404,7 +3533,8 @@ isNumber(1); // true
 ```
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### isString
 
@@ -3426,7 +3556,8 @@ isString('10'); // true
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### isSymbol
 
@@ -3448,7 +3579,8 @@ isSymbol(Symbol('x')); // true
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### randomHexColorCode
 
@@ -3474,7 +3606,8 @@ randomHexColorCode(); // "#4144c6"
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### RGBToHex
 
@@ -3495,7 +3628,8 @@ RGBToHex(255, 165, 1); // 'ffa501'
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### sbdm
 
@@ -3524,7 +3658,8 @@ console.log(sdbm('age')); // 808122783
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### timeTaken
 
@@ -3551,7 +3686,8 @@ timeTaken(() => Math.pow(2, 10)); // 1024
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### toDecimalMark
 
@@ -3570,7 +3706,8 @@ toDecimalMark(12305030388.9087); // "12,305,030,388.9087"
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### toOrdinalSuffix
 
@@ -3602,7 +3739,8 @@ toOrdinalSuffix('123'); // "123rd"
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### UUIDGenerator
 
@@ -3626,7 +3764,8 @@ UUIDGenerator(); // '7982fcfe-5721-4632-bede-6000885be57d'
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ### validateNumber
 
@@ -3649,7 +3788,8 @@ validateNumber('10'); // true
 
 </details>
 
-[⬆ back to top](#table-of-contents)
+
+[⬆ Back to top](#table-of-contents)
 
 ## Credits
 
