@@ -7,7 +7,6 @@ const fs = require('fs-extra');
 const cp = require('child_process');
 const path = require('path');
 const chalk = require('chalk');
-const prettier = require('prettier');
 
 const SNIPPETS_PATH = './snippets';
 const TEMP_PATH = './temp';
@@ -46,7 +45,10 @@ try {
     });
   }
 
-  cp.exec(`semistandard "${TEMP_PATH}" --fix`, {}, (err, stdout, stderr) => {
+  const cmd = `semistandard "${TEMP_PATH}" --fix & ` +
+    `prettier "${TEMP_PATH}/*.js" --single-quote --print-width=100 --write`
+
+  cp.exec(cmd, {}, (err, stdout, stderr) => {
     // Loop through each snippet now that semistandard has done its job,
     // run prettier and write to the files
     for (const snippet of snippets) {
@@ -54,16 +56,7 @@ try {
       const lintedCode = [];
 
       for (const tempName of snippet.tempNames) {
-        let data = fs.readFileSync(`${TEMP_PATH}/${tempName}.js`, 'utf8');
-        // prettier sometimes throws an error..
-        try {
-          data = prettier.format(data, {
-            printWidth: 100,
-            singleQuote: true
-          });
-        } catch (e) {}
-
-        lintedCode.push(data);
+        lintedCode.push(fs.readFileSync(`${TEMP_PATH}/${tempName}.js`, 'utf8'));
         fs.unlink(`${TEMP_PATH}/${tempName}.js`);
       }
 
