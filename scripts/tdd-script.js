@@ -16,7 +16,7 @@ snippetFiles
     const fileExample = fileCode.split('\n').map(line => line.trim()).filter((_, i) => blockMarkers[2] < i && i < blockMarkers[3]);
     const exportFile = `module.exports = ${fileFunction.join('\n')}`;
 
-    fs.writeFileSync(`${TEST_PATH}/${fileName}/${fileName}.test.js`, exportFile);
+    fs.writeFileSync(`${TEST_PATH}/${fileName}/${fileName}.js`, exportFile);
 
     return fileName; 
   })
