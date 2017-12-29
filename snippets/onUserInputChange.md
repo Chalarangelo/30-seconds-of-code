@@ -24,14 +24,14 @@ const onUserInputChange = callback => {
         document.removeEventListener('mousemove', mousemoveHandler);
       }
       lastTime = now;
-    }
+    };
   })();
 
   document.addEventListener('touchstart', () => {
     if (type === 'touch') return;
     type = 'touch';
     callback(type);
-    document.addEventListener('mousemove', mousemoveHandler)
+    document.addEventListener('mousemove', mousemoveHandler);
   });
 };
 ```
