@@ -107,7 +107,7 @@ try {
 
   output = minify(output, {
     collapseBooleanAttributes: true,
-    collapseWhitespace: false,
+    collapseWhitespace: true,
     decodeEntities: false,
     minifyCSS: true,
     minifyJS: true,
