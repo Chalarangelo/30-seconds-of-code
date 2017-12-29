@@ -11,7 +11,7 @@ const gcd = (...arr) => {
   let data = [].concat(...arr);
   const helperGcd = (x, y) => (!y ? x : gcd(y, x % y));
   return data.reduce((a, b) => helperGcd(a, b));
-}
+};
 ```
 
 ```js
