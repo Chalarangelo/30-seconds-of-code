@@ -29,8 +29,8 @@ distinctValuesOfArray:array
 dropElements:array
 dropRight:array
 elementIsVisibleInViewport:browser
-escapeRegExp:string
 escapeHTML:string
+escapeRegExp:string
 everyNth:array
 extendHex:utility
 factorial:math
