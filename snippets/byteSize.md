@@ -3,9 +3,7 @@
 Returns the length of string.
 
 ```js
-const byteSize = (str) => {
-  return new Blob([str]).size;
-}
+const byteSize = str => new Blob([str]).size;
 ```
 
 ```js
