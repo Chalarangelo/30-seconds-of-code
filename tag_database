@@ -78,6 +78,7 @@ JSONToDate:date
 JSONToFile:node
 last:array
 lcm:math
+lowercaseKeys:object
 mapObject:array
 median:math
 negate:logic
