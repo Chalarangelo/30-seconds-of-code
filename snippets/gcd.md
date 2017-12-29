@@ -8,9 +8,9 @@ Otherwise, return the GCD of `y` and the remainder of the division `x/y`.
 
 ```js
 const gcm = (...arr) => {
- arr = [].concat(...arr)
+let data = [].concat(...arr)
 const helperGcd = (x, y) => (!y ? x : gcd(y, x % y));
-return arr.reduce((a, b) => helperGcd(a, b))
+return data.reduce((a, b) => helperGcd(a, b))
 }
 ```
 
