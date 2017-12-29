@@ -7,10 +7,10 @@ The GCD formula uses recursion.
 
 ```js
 const lcm = (...arr) => {
-let data = [].concat(...arr)
-const gcd = (x, y) => (!y ? x : gcd(y, x % y));
-const helperLcm = (x, y) => x * y / gcd(x, y);
-return arr.reduce((a, b) => helperLcm(a, b))
+  let data = [].concat(...arr);
+  const gcd = (x, y) => (!y ? x : gcd(y, x % y));
+  const helperLcm = (x, y) => x * y / gcd(x, y);
+  return arr.reduce((a, b) => helperLcm(a, b))
 }
 ```
 
