@@ -139,7 +139,8 @@ toSnakeCase:string
 truncateString:string
 truthCheckCollection:object
 union:array
-UUIDGenerator:utility
+UUIDGeneratorBrowser:browser
+UUIDGeneratorNode:node
 validateNumber:utility
 without:array
 words:string
