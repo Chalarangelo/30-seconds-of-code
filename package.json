@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "builder": "^3.2.3",
+    "chalk": "^2.3.0",
     "fs-extra": "^4.0.2",
     "html-minifier": "^3.5.7",
     "markdown-it": "^8.4.0",
@@ -8,9 +9,8 @@
     "prettier": "^1.9.2",
     "semistandard": "^11.0.0",
     "tagger": "^0.1.2",
-    "webber": "0.0.1",
-    "chalk": "^2.3.0",
-    "tape": "^4.8.0"
+    "tape": "^4.8.0",
+    "webber": "0.0.1"
   },
   "name": "30-seconds-of-code",
   "description": "A collection of useful Javascript snippets.",
