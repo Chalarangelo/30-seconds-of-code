@@ -4135,7 +4135,8 @@ const average = (...arr) => [].concat(...arr).reduce((acc, val) => acc + val, 0)
 average([1, 2, 3]); // 2
 ```
 
-[⬆ back to top](#table-of-contents)
+<br>[⬆ back to top](#table-of-contents)
+
 
 ### max
 
@@ -4150,6 +4151,27 @@ Use `Math.max()` combined with the spread operator (`...`) to get the maximum va
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const max = (...arr) => Math.max(...[].concat(...arr);
 ```
 
@@ -4157,7 +4179,8 @@ const max = (...arr) => Math.max(...[].concat(...arr);
 max([10, 1, 5]); // 10
 ```
 
-[⬆ back to top](#table-of-contents)
+<br>[⬆ back to top](#table-of-contents)
+
 
 ### min
 
@@ -4173,7 +4196,8 @@ const min = arr => Math.min(...[].concat(...arr));
 min([10, 1, 5]); // 1
 ```
 
-[⬆ back to top](#table-of-contents)
+<br>[⬆ back to top](#table-of-contents)
+
 
 ### sum
 
@@ -4189,7 +4213,8 @@ const sum = (...arr) => [].concat(...arr).reduce((acc, val) => acc + val, 0);
 sum([1, 2, 3, 4]); // 10
 ```
 
-[⬆ back to top](#table-of-contents)
+<br>[⬆ back to top](#table-of-contents)
+
 
 ## Credits
 
