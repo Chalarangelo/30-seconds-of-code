@@ -10,25 +10,21 @@
     "tape": "^4.8.0"
   },
   "name": "30-seconds-of-code",
-  "description": "A collection of useful Javascript snippets.",
+  "description": "A collection of useful JavaScript snippets.",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "builder": "node ./scripts/build-script.js",
-    "linter": "node ./scripts/lint-script.js",
-    "tagger": "node ./scripts/tag-script.js",
-    "webber": "node ./scripts/web-script.js",
-    "tdd": "node ./scripts/tdd-script.js"
+    "builder": "node ./scripts/build.js",
+    "linter": "node ./scripts/lint.js",
+    "tagger": "node ./scripts/tag.js",
+    "webber": "node ./scripts/web.js",
+    "tdd": "node ./scripts/tdd.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Chalarangelo/30-seconds-of-code.git"
   },
-  "keywords": [
-    "javascript",
-    "snippets",
-    "list"
-  ],
+  "keywords": ["javascript", "snippets", "list"],
   "author": "Chalarangelo (chalarangelo@gmail.com)",
   "license": "MIT",
   "bugs": {
