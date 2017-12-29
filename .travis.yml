@@ -1,4 +1,7 @@
 language: node_js
+cache:
+  directories:
+    node_modules
 node_js:
 - node
 before_install:
