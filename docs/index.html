@@ -407,8 +407,12 @@ runPromisesInSeries([() =&gt; delay(1000), () =&gt; delay(2000)]); // //executes
 </code></pre></div></div><br/><h2 style="text-align:center">Logic</h2><div class="card fluid"><div class="section double-padded"><h3 id="negate">negate</h3></div><div class="section double-padded"><p>Negates a predicate function.</p><p>Take a predicate function and apply <code>not</code> to it with its arguments.</p><pre><code class="language-js">const negate = func =&gt; (...args) =&gt; !func(...args);
 </code></pre><pre><code class="language-js">filter([1, 2, 3, 4, 5, 6], negate(isEven)); // [1, 3, 5]
 negate(isOdd)(1); // false
-</code></pre></div></div><br/><h2 style="text-align:center">Math</h2><div class="card fluid"><div class="section double-padded"><h3 id="average">average</h3></div><div class="section double-padded"><p>Returns the average of an of two or more numbers/arrays.</p><p>Use <code>Array.reduce()</code> to add each value to an accumulator, initialized with a value of <code>0</code>, divide by the <code>length</code> of the array.</p><pre><code class="language-js">const average = (...arr) =&gt; [].concat(...arr).reduce((acc, val) =&gt; acc + val, 0) / arr.length;
+</code></pre></div></div><br/><h2 style="text-align:center">Math</h2><div class="card fluid"><div class="section double-padded"><h3 id="average">average</h3></div><div class="section double-padded"><p>Returns the average of an of two or more numbers/arrays.</p><p>Use <code>Array.reduce()</code> to add each value to an accumulator, initialized with a value of <code>0</code>, divide by the <code>length</code> of the array.</p><pre><code class="language-js">const average = (...arr) =&gt; {
+  const nums = [].concat(...arr);
+  return nums.reduce((acc, val) =&gt; acc + val, 0) / nums.length;
+};
 </code></pre><pre><code class="language-js">average([1, 2, 3]); // 2
+average(1, 2, 3); // 2
 </code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="clampnumber">clampNumber</h3></div><div class="section double-padded"><p>Clamps <code>num</code> within the inclusive range specified by the boundary values <code>a</code> and <code>b</code>.</p><p>If <code>num</code> falls within the range, return <code>num</code>. Otherwise, return the nearest number in the range.</p><pre><code class="language-js">const clampNumber = (num, a, b) =&gt; Math.max(Math.min(num, Math.max(a, b)), Math.min(a, b));
 </code></pre><pre><code class="language-js">clampNumber(2, 3, 5); // 3
 clampNumber(1, -1, -5); // -1
