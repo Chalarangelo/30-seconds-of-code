@@ -1,13 +1,17 @@
 ### gcd
 
-Calculates the greatest common divisor between two numbers.
+Calculates the greatest common divisor between two or more numbers/arrays.
 
-Use recursion.
+The helperGcd function uses recursion.
 Base case is when `y` equals `0`. In this case, return `x`.
 Otherwise, return the GCD of `y` and the remainder of the division `x/y`.
 
 ```js
-const gcd = (x, y) => (!y ? x : gcd(y, x % y));
+const gcm = (...arr) => {
+ arr = [].concat(...arr)
+const helperGcd = (x, y) => (!y ? x : gcd(y, x % y));
+return arr.reduce((a, b) => helperGcd(a, b))
+}
 ```
 
 ```js
