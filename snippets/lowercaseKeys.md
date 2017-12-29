@@ -11,8 +11,6 @@ const lowercaseKeys = obj =>
 ```
 
 ```js
-let myObj = {Name: 'Adam', sUrnAME: 'Smith'};
-let myObjLower = lowercaseKeys(myObj);
-console.log(myObj); // {Name: 'Adam', sUrnAME: 'Smith'};
-console.log(myObjLower); // {name: 'Adam', surname: 'Smith'};
+const myObj = {Name: 'Adam', sUrnAME: 'Smith'};
+const myObjLower = lowercaseKeys(myObj); // {name: 'Adam', surname: 'Smith'};
 ```
