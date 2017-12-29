@@ -118,6 +118,7 @@ similarity:array
 sleep:function
 sortCharactersInString:string
 speechSynthesis:media
+splitLines:string
 spreadOver:adapter
 standardDeviation:math
 sum:math
