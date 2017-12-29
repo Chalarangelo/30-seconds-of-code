@@ -198,6 +198,7 @@
 <summary>View contents</summary>
 
 * [`cleanObj`](#cleanobj)
+* [`lowercaseKeys`](#lowercasekeys)
 * [`objectFromPairs`](#objectfrompairs)
 * [`objectToPairs`](#objecttopairs)
 * [`orderBy`](#orderby)
@@ -3013,6 +3014,34 @@ const cleanObj = (obj, keysToKeep = [], childIndicator) => {
 ```js
 const testObj = { a: 1, b: 2, children: { a: 1, b: 2 } };
 cleanObj(testObj, ['a'], 'children'); // { a: 1, children : { a: 1}}
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### lowercaseKeys
+
+Creates a new object from the specified object, where all the keys are in lowercase.
+
+Use `Object.keys()` and `Array.reduce()` to create a new object from the specified object.
+Convert each key in the original object to lowercase, using `String.toLowerCase()`.
+
+```js
+const lowercaseKeys = obj =>
+  Object.keys(obj).reduce((acc, key) => {
+    acc[key.toLowerCase()] = obj[key];
+    return acc;
+  }, {});
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const myObj = { Name: 'Adam', sUrnAME: 'Smith' };
+const myObjLower = lowercaseKeys(myObj); // {name: 'Adam', surname: 'Smith'};
 ```
 
 </details>

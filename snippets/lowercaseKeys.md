@@ -7,10 +7,13 @@ Convert each key in the original object to lowercase, using `String.toLowerCase(
 
 ```js
 const lowercaseKeys = obj =>
-  Object.keys(obj).reduce((acc,key) => {acc[key.toLowerCase()] = obj[key]; return acc;},{});
+  Object.keys(obj).reduce((acc, key) => {
+    acc[key.toLowerCase()] = obj[key];
+    return acc;
+  }, {});
 ```
 
 ```js
-const myObj = {Name: 'Adam', sUrnAME: 'Smith'};
+const myObj = { Name: 'Adam', sUrnAME: 'Smith' };
 const myObjLower = lowercaseKeys(myObj); // {name: 'Adam', surname: 'Smith'};
 ```

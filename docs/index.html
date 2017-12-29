@@ -225,6 +225,7 @@
 
 <h3>Object
 </h3><a class="sublink-1" href="#cleanobj">cleanObj</a>
+<a class="sublink-1" href="#lowercasekeys">lowercaseKeys</a>
 <a class="sublink-1" href="#objectfrompairs">objectFromPairs</a>
 <a class="sublink-1" href="#objecttopairs">objectToPairs</a>
 <a class="sublink-1" href="#orderby">orderBy</a>
@@ -1409,6 +1410,19 @@ Also if you give it a special key (<code>childIndicator</code>) it will search d
 </code></pre>
 <pre><code class="language-js">const testObj = { a: 1, b: 2, children: { a: 1, b: 2 } };
 cleanObj(testObj, ['a'], 'children'); // { a: 1, children : { a: 1}}
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="lowercasekeys">lowercaseKeys</h3></div><div class="section double-padded">
+<p>Creates a new object from the specified object, where all the keys are in lowercase.</p>
+<p>Use <code>Object.keys()</code> and <code>Array.reduce()</code> to create a new object from the specified object.
+Convert each key in the original object to lowercase, using <code>String.toLowerCase()</code>.</p>
+<pre><code class="language-js">const lowercaseKeys = obj =&gt;
+  Object.keys(obj).reduce((acc, key) =&gt; {
+    acc[key.toLowerCase()] = obj[key];
+    return acc;
+  }, {});
+</code></pre>
+<pre><code class="language-js">const myObj = { Name: 'Adam', sUrnAME: 'Smith' };
+const myObjLower = lowercaseKeys(myObj); // {name: 'Adam', surname: 'Smith'};
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="objectfrompairs">objectFromPairs</h3></div><div class="section double-padded">
 <p>Creates an object from the given key-value pairs.</p>
