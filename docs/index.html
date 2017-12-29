@@ -107,9 +107,7 @@
 <a class="sublink-1" href="#spreadover">spreadOver</a>
 
 <h3>Array
-</h3><a class="sublink-1" href="#arraymax">arrayMax</a>
-<a class="sublink-1" href="#arraymin">arrayMin</a>
-<a class="sublink-1" href="#chunk">chunk</a>
+</h3><a class="sublink-1" href="#chunk">chunk</a>
 <a class="sublink-1" href="#compact">compact</a>
 <a class="sublink-1" href="#countoccurrences">countOccurrences</a>
 <a class="sublink-1" href="#deepflatten">deepFlatten</a>
@@ -187,9 +185,7 @@
 </h3><a class="sublink-1" href="#negate">negate</a>
 
 <h3>Math
-</h3><a class="sublink-1" href="#arrayaverage">arrayAverage</a>
-<a class="sublink-1" href="#arraysum">arraySum</a>
-<a class="sublink-1" href="#clampnumber">clampNumber</a>
+</h3><a class="sublink-1" href="#clampnumber">clampNumber</a>
 <a class="sublink-1" href="#collatz">collatz</a>
 <a class="sublink-1" href="#digitize">digitize</a>
 <a class="sublink-1" href="#distance">distance</a>
@@ -268,6 +264,12 @@
 <a class="sublink-1" href="#toordinalsuffix">toOrdinalSuffix</a>
 <a class="sublink-1" href="#validatenumber">validateNumber</a>
 
+<h3>Uncategorized
+</h3><a class="sublink-1" href="#average">average</a>
+<a class="sublink-1" href="#max">max</a>
+<a class="sublink-1" href="#min">min</a>
+<a class="sublink-1" href="#sum">sum</a>
+
 </nav><main class="col-sm-12 col-md-8 col-lg-9" style="height:100%;overflow-y:auto;background:#eceef2;padding:0"><a id="top">&nbsp;</a><h2 style="text-align:center">Adapter</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="call">call</h3></div><div class="section double-padded">
 <p>Given a key and a set of arguments, call them when given a context. Primarily useful in composition.</p>
@@ -340,21 +342,7 @@ arrayMax([1, 2, 3]); // 3
 arrayMax([1, 2, 4]); // 4
 </code></pre>
 </div></div><br/><h2 style="text-align:center">Array</h2>
-<div class="card fluid"><div class="section double-padded"><h3 id="arraymax">arrayMax</h3></div><div class="section double-padded">
-<p>Returns the maximum value in an array.</p>
-<p>Use <code>Math.max()</code> combined with the spread operator (<code>...</code>) to get the maximum value in the array.</p>
-<pre><code class="language-js">const arrayMax = arr =&gt; Math.max(...arr);
-</code></pre>
-<pre><code class="language-js">arrayMax([10, 1, 5]); // 10
-</code></pre>
-</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="arraymin">arrayMin</h3></div><div class="section double-padded">
-<p>Returns the minimum value in an array.</p>
-<p>Use <code>Math.min()</code> combined with the spread operator (<code>...</code>) to get the minimum value in the array.</p>
-<pre><code class="language-js">const arrayMin = arr =&gt; Math.min(...arr);
-</code></pre>
-<pre><code class="language-js">arrayMin([10, 1, 5]); // 1
-</code></pre>
-</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="chunk">chunk</h3></div><div class="section double-padded">
+<div class="card fluid"><div class="section double-padded"><h3 id="chunk">chunk</h3></div><div class="section double-padded">
 <p>Chunks an array into smaller arrays of a specified size.</p>
 <p>Use <code>Array.from()</code> to create a new array, that fits the number of chunks that will be produced.
 Use <code>Array.slice()</code> to map each element of the new array to a chunk the length of <code>size</code>.
@@ -1047,21 +1035,7 @@ runPromisesInSeries([() =&gt; delay(1000), () =&gt; delay(2000)]); // //executes
 negate(isOdd)(1); // false
 </code></pre>
 </div></div><br/><h2 style="text-align:center">Math</h2>
-<div class="card fluid"><div class="section double-padded"><h3 id="arrayaverage">arrayAverage</h3></div><div class="section double-padded">
-<p>Returns the average of an array of numbers.</p>
-<p>Use <code>Array.reduce()</code> to add each value to an accumulator, initialized with a value of <code>0</code>, divide by the <code>length</code> of the array.</p>
-<pre><code class="language-js">const arrayAverage = arr =&gt; arr.reduce((acc, val) =&gt; acc + val, 0) / arr.length;
-</code></pre>
-<pre><code class="language-js">arrayAverage([1, 2, 3]); // 2
-</code></pre>
-</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="arraysum">arraySum</h3></div><div class="section double-padded">
-<p>Returns the sum of an array of numbers.</p>
-<p>Use <code>Array.reduce()</code> to add each value to an accumulator, initialized with a value of <code>0</code>.</p>
-<pre><code class="language-js">const arraySum = arr =&gt; arr.reduce((acc, val) =&gt; acc + val, 0);
-</code></pre>
-<pre><code class="language-js">arraySum([1, 2, 3, 4]); // 10
-</code></pre>
-</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="clampnumber">clampNumber</h3></div><div class="section double-padded">
+<div class="card fluid"><div class="section double-padded"><h3 id="clampnumber">clampNumber</h3></div><div class="section double-padded">
 <p>Clamps <code>num</code> within the inclusive range specified by the boundary values <code>a</code> and <code>b</code>.</p>
 <p>If <code>num</code> falls within the range, return <code>num</code>.
 Otherwise, return the nearest number in the range.</p>
@@ -1835,6 +1809,36 @@ Use <code>Number()</code> to check if the coercion holds.</p>
 <pre><code class="language-js">const validateNumber = n =&gt; !isNaN(parseFloat(n)) &amp;&amp; isFinite(n) &amp;&amp; Number(n) == n;
 </code></pre>
 <pre><code class="language-js">validateNumber('10'); // true
+</code></pre>
+</div></div><br/><h2 style="text-align:center">Uncategorized</h2>
+<div class="card fluid"><div class="section double-padded"><h3 id="average">average</h3></div><div class="section double-padded">
+<p>Returns the average of an of two or more numbers/arrays.</p>
+<p>Use <code>Array.reduce()</code> to add each value to an accumulator, initialized with a value of <code>0</code>, divide by the <code>length</code> of the array.</p>
+<pre><code class="language-js">const average = (...arr) =&gt; [].concat(...arr).reduce((acc, val) =&gt; acc + val, 0) / arr.length;
+</code></pre>
+<pre><code class="language-js">average([1, 2, 3]); // 2
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="max">max</h3></div><div class="section double-padded">
+<p>Returns the maximum value out of two or more numbers/arrays.</p>
+<p>Use <code>Math.max()</code> combined with the spread operator (<code>...</code>) to get the maximum value in the array.</p>
+<pre><code class="language-js">
+const max = (...arr) =&gt; Math.max(...[].concat(...arr);
+</code></pre>
+<pre><code class="language-js">max([10, 1, 5]); // 10
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="min">min</h3></div><div class="section double-padded">
+<p>Returns the minimum value in an array.</p>
+<p>Use <code>Math.min()</code> combined with the spread operator (<code>...</code>) to get the minimum value in the array.</p>
+<pre><code class="language-js">const min = arr =&gt; Math.min(...[].concat(...arr));
+</code></pre>
+<pre><code class="language-js">min([10, 1, 5]); // 1
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="sum">sum</h3></div><div class="section double-padded">
+<p>Returns the sum of an of two or more numbers/arrays.</p>
+<p>Use <code>Array.reduce()</code> to add each value to an accumulator, initialized with a value of <code>0</code>.</p>
+<pre><code class="language-js">const sum = (...arr) =&gt; [].concat(...arr).reduce((acc, val) =&gt; acc + val, 0);
+</code></pre>
+<pre><code class="language-js">sum([1, 2, 3, 4]); // 10
 </code></pre>
 </div></div><br/>
         <footer>

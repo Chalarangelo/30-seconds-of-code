@@ -1,9 +1,6 @@
 anagrams:string
-arrayAverage:math
-arrayMax:array
-arrayMin:array
-arraySum:math
 arrayToHtmlList:browser
+average:uncategorized
 bottomVisible:browser
 call:adapter
 capitalize:string
@@ -79,7 +76,9 @@ JSONToFile:node
 last:array
 lcm:math
 mapObject:array
+max:uncategorized
 median:math
+min:uncategorized
 negate:logic
 nthElement:array
 objectFromPairs:object
@@ -121,6 +120,7 @@ sortCharactersInString:string
 speechSynthesis:media
 spreadOver:adapter
 standardDeviation:math
+sum:uncategorized
 symmetricDifference:array
 tail:array
 take:array
