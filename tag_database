@@ -1,6 +1,6 @@
 anagrams:string
 arrayToHtmlList:browser
-average:uncategorized
+average:math
 bottomVisible:browser
 call:adapter
 capitalize:string
@@ -30,6 +30,7 @@ dropElements:array
 dropRight:array
 elementIsVisibleInViewport:browser
 escapeRegExp:string
+escapeString:string
 everyNth:array
 extendHex:utility
 factorial:math
@@ -76,9 +77,9 @@ JSONToFile:node
 last:array
 lcm:math
 mapObject:array
-max:uncategorized
+max:math
 median:math
-min:uncategorized
+min:math
 negate:logic
 nthElement:array
 objectFromPairs:object
@@ -120,7 +121,7 @@ sortCharactersInString:string
 speechSynthesis:media
 spreadOver:adapter
 standardDeviation:math
-sum:uncategorized
+sum:math
 symmetricDifference:array
 tail:array
 take:array
@@ -136,6 +137,7 @@ toOrdinalSuffix:utility
 toSnakeCase:string
 truncateString:string
 truthCheckCollection:object
+unescapeString:string
 union:array
 UUIDGeneratorBrowser:browser
 UUIDGeneratorNode:node
