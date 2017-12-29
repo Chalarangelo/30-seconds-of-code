@@ -100,6 +100,7 @@
 * [`setStyle`](#setstyle)
 * [`show`](#show)
 * [`toggleClass`](#toggleclass)
+* [`UUIDGeneratorBrowser`](#uuidgeneratorbrowser)
 
 </details>
 
@@ -189,6 +190,7 @@
 
 * [`JSONToFile`](#jsontofile)
 * [`readFileLines`](#readfilelines)
+* [`UUIDGeneratorNode`](#uuidgeneratornode)
 
 </details>
 
@@ -251,7 +253,6 @@
 * [`timeTaken`](#timetaken)
 * [`toDecimalMark`](#todecimalmark)
 * [`toOrdinalSuffix`](#toordinalsuffix)
-* [`UUIDGenerator`](#uuidgenerator)
 * [`validateNumber`](#validatenumber)
 
 </details>
@@ -1981,6 +1982,32 @@ toggleClass(document.querySelector('p.special'), 'special'); // The paragraph wi
 
 [⬆ Back to top](#table-of-contents)
 
+
+### UUIDGeneratorBrowser
+
+Generates a UUID in a browser.
+
+Use `crypto` API to generate a UUID, compliant with [RFC4122](https://www.ietf.org/rfc/rfc4122.txt) version 4.
+
+```js
+const UUIDGeneratorBrowser = () =>
+  ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+    (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+UUIDGeneratorBrowser(); // '7982fcfe-5721-4632-bede-6000885be57d'
+```
+
+</details>
+
+
+[⬆ Back to top](#table-of-contents)
+
 ## Date
 
 ### getDaysDiffBetweenDates
@@ -3085,6 +3112,33 @@ console.log(arr); // ['line1', 'line2', 'line3']
 
 [⬆ Back to top](#table-of-contents)
 
+
+### UUIDGeneratorNode
+
+Generates a UUID in Node.JS.
+
+Use `crypto` API to generate a UUID, compliant with [RFC4122](https://www.ietf.org/rfc/rfc4122.txt) version 4.
+
+```js
+const crypto = require('crypto');
+const UUIDGeneratorNode = () =>
+  ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+    (c ^ (crypto.randomBytes(1)[0] & (15 >> (c / 4)))).toString(16)
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+UUIDGeneratorNode(); // '79c7c136-60ee-40a2-beb2-856f1feabefc'
+```
+
+</details>
+
+
+[⬆ Back to top](#table-of-contents)
+
 ## Object
 
 ### cleanObj
@@ -4122,32 +4176,6 @@ const toOrdinalSuffix = num => {
 
 ```js
 toOrdinalSuffix('123'); // "123rd"
-```
-
-</details>
-
-
-[⬆ Back to top](#table-of-contents)
-
-
-### UUIDGenerator
-
-Generates a UUID.
-
-Use `crypto` API to generate a UUID, compliant with [RFC4122](https://www.ietf.org/rfc/rfc4122.txt) version 4.
-
-```js
-const UUIDGenerator = () =>
-  ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
-    (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)
-  );
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-UUIDGenerator(); // '7982fcfe-5721-4632-bede-6000885be57d'
 ```
 
 </details>
