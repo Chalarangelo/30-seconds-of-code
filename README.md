@@ -223,6 +223,7 @@
 * [`repeatString`](#repeatstring)
 * [`reverseString`](#reversestring)
 * [`sortCharactersInString`](#sortcharactersinstring)
+* [`splitLines`](#splitlines)
 * [`toCamelCase`](#tocamelcase)
 * [`toKebabCase`](#tokebabcase)
 * [`toSnakeCase`](#tosnakecase)
@@ -3569,6 +3570,29 @@ const sortCharactersInString = str =>
 
 ```js
 sortCharactersInString('cabbage'); // 'aabbceg'
+```
+
+</details>
+
+
+[⬆ Back to top](#table-of-contents)
+
+
+### splitLines
+
+Splits a multiline string into an array of lines.
+
+Use `String.split()` and a regular expression to match line breaks and create an array.
+
+```js
+const splitLines = str => str.split(/\r?\n/);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+splitLines('This\nis a\nmultiline\nstring.\n'); // ['This', 'is a', 'multiline', 'string' , '']
 ```
 
 </details>
