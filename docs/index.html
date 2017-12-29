@@ -244,6 +244,7 @@
 <a class="sublink-1" href="#repeatstring">repeatString</a>
 <a class="sublink-1" href="#reversestring">reverseString</a>
 <a class="sublink-1" href="#sortcharactersinstring">sortCharactersInString</a>
+<a class="sublink-1" href="#splitlines">splitLines</a>
 <a class="sublink-1" href="#tocamelcase">toCamelCase</a>
 <a class="sublink-1" href="#tokebabcase">toKebabCase</a>
 <a class="sublink-1" href="#tosnakecase">toSnakeCase</a>
@@ -1586,6 +1587,13 @@ Combine characters to get a string using <code>join('')</code>.</p>
     .join('');
 </code></pre>
 <pre><code class="language-js">sortCharactersInString('cabbage'); // 'aabbceg'
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="splitlines">splitLines</h3></div><div class="section double-padded">
+<p>Splits a multiline string into an array of lines.</p>
+<p>Use <code>String.split()</code> and a regular expression to match line breaks and create an array.</p>
+<pre><code class="language-js">const splitLines = str =&gt; str.split(/\r?\n/);
+</code></pre>
+<pre><code class="language-js">splitLines('This\nis a\nmultiline\nstring.\n'); // ['This', 'is a', 'multiline', 'string' , '']
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="tocamelcase">toCamelCase</h3></div><div class="section double-padded">
 <p>Converts a string to camelcase.</p>
