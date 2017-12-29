@@ -30,7 +30,7 @@ dropElements:array
 dropRight:array
 elementIsVisibleInViewport:browser
 escapeRegExp:string
-escapeString:string
+escapeHTML:string
 everyNth:array
 extendHex:utility
 factorial:math
@@ -137,7 +137,7 @@ toOrdinalSuffix:utility
 toSnakeCase:string
 truncateString:string
 truthCheckCollection:object
-unescapeString:string
+unescapeHTML:string
 union:array
 UUIDGeneratorBrowser:browser
 UUIDGeneratorNode:node
