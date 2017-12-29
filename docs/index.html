@@ -237,6 +237,7 @@
 <a class="sublink-1" href="#capitalize">capitalize</a>
 <a class="sublink-1" href="#capitalizeeveryword">capitalizeEveryWord</a>
 <a class="sublink-1" href="#countvowels">countVowels</a>
+<a class="sublink-1" href="#escapehtml">escapeHTML</a>
 <a class="sublink-1" href="#escaperegexp">escapeRegExp</a>
 <a class="sublink-1" href="#fromcamelcase">fromCamelCase</a>
 <a class="sublink-1" href="#repeatstring">repeatString</a>
@@ -247,6 +248,7 @@
 <a class="sublink-1" href="#tokebabcase">toKebabCase</a>
 <a class="sublink-1" href="#tosnakecase">toSnakeCase</a>
 <a class="sublink-1" href="#truncatestring">truncateString</a>
+<a class="sublink-1" href="#unescapehtml">unescapeHTML</a>
 <a class="sublink-1" href="#words">words</a>
 
 <h3>Utility
@@ -1516,6 +1518,24 @@ capitalize('fooBar', true); // 'Foobar'
 <pre><code class="language-js">countVowels('foobar'); // 3
 countVowels('gym'); // 0
 </code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="escapehtml">escapeHTML</h3></div><div class="section double-padded">
+<p>Escapes a string for use in HTML.</p>
+<p>Use <code>String.replace()</code> with a regex that matches the characters that need to be escaped, using a callback function to replace each character instance with its associated escaped character using a dictionary (object).</p>
+<pre><code class="language-js">const escapeHTML = str =&gt;
+  str.replace(
+    /[&amp;&lt;&gt;'&quot;]/g,
+    tag =&gt;
+      ({
+        '&amp;': '&amp;amp;',
+        '&lt;': '&amp;lt;',
+        '&gt;': '&amp;gt;',
+        &quot;'&quot;: '&amp;#39;',
+        '&quot;': '&amp;quot;'
+      }[tag] || tag)
+  );
+</code></pre>
+<pre><code class="language-js">escapeHTML('&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;'); // '&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;Me &amp;amp; you&amp;lt;/a&amp;gt;'
+</code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="escaperegexp">escapeRegExp</h3></div><div class="section double-padded">
 <p>Escapes a string to use in a regular expression.</p>
 <p>Use <code>replace()</code> to escape special characters.</p>
@@ -1640,6 +1660,24 @@ Return the string truncated to the desired length, with <code>...</code> appende
   str.length &gt; num ? str.slice(0, num &gt; 3 ? num - 3 : num) + '...' : str;
 </code></pre>
 <pre><code class="language-js">truncateString('boomerang', 7); // 'boom...'
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="unescapehtml">unescapeHTML</h3></div><div class="section double-padded">
+<p>Unescapes escaped HTML characters.</p>
+<p>Use <code>String.replace()</code> with a regex that matches the characters that need to be escaped, using a callback function to replace each escaped character instance with its associated unescaped character using a dictionary (object).</p>
+<pre><code class="language-js">const unescapeHTML = str =&gt;
+  str.replace(
+    /&amp;amp;|&amp;lt;|&amp;gt;|&amp;#39;|&amp;quot;/g,
+    tag =&gt;
+      ({
+        '&amp;amp;': '&amp;',
+        '&amp;lt;': '&lt;',
+        '&amp;gt;': '&gt;',
+        '&amp;#39;': &quot;'&quot;,
+        '&amp;quot;': '&quot;'
+      }[tag] || tag)
+  );
+</code></pre>
+<pre><code class="language-js">unescapeHTML('&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;Me &amp;amp; you&amp;lt;/a&amp;gt;'); // '&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;'
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="words">words</h3></div><div class="section double-padded">
 <p>Converts a given string into an array of words.</p>

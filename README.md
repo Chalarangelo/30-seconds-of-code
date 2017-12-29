@@ -216,6 +216,7 @@
 * [`capitalize`](#capitalize)
 * [`capitalizeEveryWord`](#capitalizeeveryword)
 * [`countVowels`](#countvowels)
+* [`escapeHTML`](#escapehtml)
 * [`escapeRegExp`](#escaperegexp)
 * [`fromCamelCase`](#fromcamelcase)
 * [`repeatString`](#repeatstring)
@@ -226,6 +227,7 @@
 * [`toKebabCase`](#tokebabcase)
 * [`toSnakeCase`](#tosnakecase)
 * [`truncateString`](#truncatestring)
+* [`unescapeHTML`](#unescapehtml)
 * [`words`](#words)
 
 </details>
@@ -3276,6 +3278,39 @@ countVowels('gym'); // 0
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### escapeHTML
+
+Escapes a string for use in HTML.
+
+Use `String.replace()` with a regex that matches the characters that need to be escaped, using a callback function to replace each character instance with its associated escaped character using a dictionary (object).
+
+```js
+const escapeHTML = str =>
+  str.replace(
+    /[&<>'"]/g,
+    tag =>
+      ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        "'": '&#39;',
+        '"': '&quot;'
+      }[tag] || tag)
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+escapeHTML('<a href="#">Me & you</a>'); // '&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### escapeRegExp
 
 Escapes a string to use in a regular expression.
@@ -3544,6 +3579,38 @@ const truncateString = (str, num) =>
 
 ```js
 truncateString('boomerang', 7); // 'boom...'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### unescapeHTML
+
+Unescapes escaped HTML characters.
+
+Use `String.replace()` with a regex that matches the characters that need to be escaped, using a callback function to replace each escaped character instance with its associated unescaped character using a dictionary (object).
+
+```js
+const unescapeHTML = str =>
+  str.replace(
+    /&amp;|&lt;|&gt;|&#39;|&quot;/g,
+    tag =>
+      ({
+        '&amp;': '&',
+        '&lt;': '<',
+        '&gt;': '>',
+        '&#39;': "'",
+        '&quot;': '"'
+      }[tag] || tag)
+  );
+```
+<details>
+<summary>Examples</summary>
+
+```js
+unescapeHTML('&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;'); // '<a href="#">Me & you</a>'
 ```
 
 </details>
