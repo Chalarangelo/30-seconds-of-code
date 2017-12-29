@@ -73,7 +73,7 @@ try {
     if(capitalize(tag, true)=='Uncategorized') {
       uncategorizedOutput +=`## _${capitalize(tag, true)}_\n`;
       for(let taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag))
-        uncategorizedOutput += `\n${snippets[taggedSnippet[0]+'.md']+'\n[⬆ back to top](#table-of-contents)\n'}`;
+        uncategorizedOutput += `\n${snippets[taggedSnippet[0]+'.md']+'\n<br>[⬆ back to top](#table-of-contents)\n\n'}`;
     } else {
       output +=`## ${capitalize(tag, true)}\n`;
       for(let taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag)){
