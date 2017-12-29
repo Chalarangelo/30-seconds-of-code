@@ -32,8 +32,6 @@
 <details>
 <summary>View contents</summary>
 
-* [`arrayMax`](#arraymax)
-* [`arrayMin`](#arraymin)
 * [`chunk`](#chunk)
 * [`compact`](#compact)
 * [`countOccurrences`](#countoccurrences)
@@ -142,8 +140,6 @@
 <details>
 <summary>View contents</summary>
 
-* [`arrayAverage`](#arrayaverage)
-* [`arraySum`](#arraysum)
 * [`clampNumber`](#clampnumber)
 * [`collatz`](#collatz)
 * [`digitize`](#digitize)
@@ -252,6 +248,18 @@
 * [`toDecimalMark`](#todecimalmark)
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`validateNumber`](#validatenumber)
+
+</details>
+
+### _Uncategorized_
+
+<details>
+<summary>View contents</summary>
+
+* [`average`](#average)
+* [`max`](#max)
+* [`min`](#min)
+* [`sum`](#sum)
 
 </details>
 
@@ -424,52 +432,6 @@ arrayMax([1, 2, 4]); // 4
 [⬆ Back to top](#table-of-contents)
 
 ## Array
-
-### arrayMax
-
-Returns the maximum value in an array.
-
-Use `Math.max()` combined with the spread operator (`...`) to get the maximum value in the array.
-
-```js
-const arrayMax = arr => Math.max(...arr);
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-arrayMax([10, 1, 5]); // 10
-```
-
-</details>
-
-
-[⬆ Back to top](#table-of-contents)
-
-
-### arrayMin
-
-Returns the minimum value in an array.
-
-Use `Math.min()` combined with the spread operator (`...`) to get the minimum value in the array.
-
-```js
-const arrayMin = arr => Math.min(...arr);
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-arrayMin([10, 1, 5]); // 1
-```
-
-</details>
-
-
-[⬆ Back to top](#table-of-contents)
-
 
 ### chunk
 
@@ -2250,52 +2212,6 @@ negate(isOdd)(1); // false
 [⬆ Back to top](#table-of-contents)
 
 ## Math
-
-### arrayAverage
-
-Returns the average of an array of numbers.
-
-Use `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`, divide by the `length` of the array.
-
-```js
-const arrayAverage = arr => arr.reduce((acc, val) => acc + val, 0) / arr.length;
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-arrayAverage([1, 2, 3]); // 2
-```
-
-</details>
-
-
-[⬆ Back to top](#table-of-contents)
-
-
-### arraySum
-
-Returns the sum of an array of numbers.
-
-Use `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`.
-
-```js
-const arraySum = arr => arr.reduce((acc, val) => acc + val, 0);
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-arraySum([1, 2, 3, 4]); // 10
-```
-
-</details>
-
-
-[⬆ Back to top](#table-of-contents)
-
 
 ### clampNumber
 
@@ -4158,6 +4074,72 @@ validateNumber('10'); // true
 
 [⬆ Back to top](#table-of-contents)
 
+## _Uncategorized_
+
+### average
+
+Returns the average of an of two or more numbers/arrays.
+
+Use `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`, divide by the `length` of the array.
+
+```js
+const average = (...arr) => [].concat(...arr).reduce((acc, val) => acc + val, 0) / arr.length;
+```
+
+```js
+average([1, 2, 3]); // 2
+```
+
+[⬆ back to top](#table-of-contents)
+
+### max
+
+Returns the maximum value out of two or more numbers/arrays.
+
+Use `Math.max()` combined with the spread operator (`...`) to get the maximum value in the array.
+
+```js
+
+const max = (...arr) => Math.max(...[].concat(...arr);
+```
+
+```js
+max([10, 1, 5]); // 10
+```
+
+[⬆ back to top](#table-of-contents)
+
+### min
+
+Returns the minimum value in an array.
+
+Use `Math.min()` combined with the spread operator (`...`) to get the minimum value in the array.
+
+```js
+const min = arr => Math.min(...[].concat(...arr));
+```
+
+```js
+min([10, 1, 5]); // 1
+```
+
+[⬆ back to top](#table-of-contents)
+
+### sum
+
+Returns the sum of an of two or more numbers/arrays.
+
+Use `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`.
+
+```js
+const sum = (...arr) => [].concat(...arr).reduce((acc, val) => acc + val, 0);
+```
+
+```js
+sum([1, 2, 3, 4]); // 10
+```
+
+[⬆ back to top](#table-of-contents)
 
 ## Credits
 
