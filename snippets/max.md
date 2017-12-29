@@ -38,6 +38,24 @@ Use `Math.max()` combined with the spread operator (`...`) to get the maximum va
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const max = (...arr) => Math.max(...[].concat(...arr);
 ```
 
