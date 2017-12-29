@@ -139,6 +139,7 @@
 <details>
 <summary>View contents</summary>
 
+* [`average`](#average)
 * [`clampNumber`](#clampnumber)
 * [`collatz`](#collatz)
 * [`digitize`](#digitize)
@@ -155,7 +156,9 @@
 * [`isEven`](#iseven)
 * [`isPrime`](#isprime)
 * [`lcm`](#lcm)
+* [`max`](#max)
 * [`median`](#median)
+* [`min`](#min)
 * [`palindrome`](#palindrome)
 * [`percentile`](#percentile)
 * [`powerset`](#powerset)
@@ -164,6 +167,7 @@
 * [`randomNumberInRange`](#randomnumberinrange)
 * [`round`](#round)
 * [`standardDeviation`](#standarddeviation)
+* [`sum`](#sum)
 
 </details>
 
@@ -247,18 +251,6 @@
 * [`toDecimalMark`](#todecimalmark)
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`validateNumber`](#validatenumber)
-
-</details>
-
-### _Uncategorized_
-
-<details>
-<summary>View contents</summary>
-
-* [`average`](#average)
-* [`max`](#max)
-* [`min`](#min)
-* [`sum`](#sum)
 
 </details>
 
@@ -2249,6 +2241,29 @@ negate(isOdd)(1); // false
 
 ## Math
 
+### average
+
+Returns the average of an of two or more numbers/arrays.
+
+Use `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`, divide by the `length` of the array.
+
+```js
+const average = (...arr) => [].concat(...arr).reduce((acc, val) => acc + val, 0) / arr.length;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+average([1, 2, 3]); // 2
+```
+
+</details>
+
+
+[⬆ Back to top](#table-of-contents)
+
+
 ### clampNumber
 
 Clamps `num` within the inclusive range specified by the boundary values `a` and `b`.
@@ -2677,6 +2692,62 @@ lcm([1, 3, 4], 5); // 60
 [⬆ Back to top](#table-of-contents)
 
 
+### max
+
+Returns the maximum value out of two or more numbers/arrays.
+
+Use `Math.max()` combined with the spread operator (`...`) to get the maximum value in the array.
+
+```js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const max = (...arr) => Math.max(...[].concat(...arr);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+max([10, 1, 5]); // 10
+```
+
+</details>
+
+
+[⬆ Back to top](#table-of-contents)
+
+
 ### median
 
 Returns the median of an array of numbers.
@@ -2698,6 +2769,29 @@ const median = arr => {
 ```js
 median([5, 6, 50, 1, -5]); // 5
 median([0, 10, -2, 7]); // 3.5
+```
+
+</details>
+
+
+[⬆ Back to top](#table-of-contents)
+
+
+### min
+
+Returns the minimum value in an array.
+
+Use `Math.min()` combined with the spread operator (`...`) to get the minimum value in the array.
+
+```js
+const min = arr => Math.min(...[].concat(...arr));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+min([10, 1, 5]); // 1
 ```
 
 </details>
@@ -2926,6 +3020,29 @@ const speechSynthesis = message => {
   window.speechSynthesis.speak(msg);
 };
 ```
+
+
+### sum
+
+Returns the sum of an of two or more numbers/arrays.
+
+Use `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`.
+
+```js
+const sum = (...arr) => [].concat(...arr).reduce((acc, val) => acc + val, 0);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+sum([1, 2, 3, 4]); // 10
+```
+
+</details>
+
+
+[⬆ Back to top](#table-of-contents)
 
 ## Media
 
@@ -4118,102 +4235,6 @@ validateNumber('10'); // true
 
 
 [⬆ Back to top](#table-of-contents)
-
-## _Uncategorized_
-
-### average
-
-Returns the average of an of two or more numbers/arrays.
-
-Use `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`, divide by the `length` of the array.
-
-```js
-const average = (...arr) => [].concat(...arr).reduce((acc, val) => acc + val, 0) / arr.length;
-```
-
-```js
-average([1, 2, 3]); // 2
-```
-
-<br>[⬆ back to top](#table-of-contents)
-
-
-### max
-
-Returns the maximum value out of two or more numbers/arrays.
-
-Use `Math.max()` combined with the spread operator (`...`) to get the maximum value in the array.
-
-```js
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const max = (...arr) => Math.max(...[].concat(...arr);
-```
-
-```js
-max([10, 1, 5]); // 10
-```
-
-<br>[⬆ back to top](#table-of-contents)
-
-
-### min
-
-Returns the minimum value in an array.
-
-Use `Math.min()` combined with the spread operator (`...`) to get the minimum value in the array.
-
-```js
-const min = arr => Math.min(...[].concat(...arr));
-```
-
-```js
-min([10, 1, 5]); // 1
-```
-
-<br>[⬆ back to top](#table-of-contents)
-
-
-### sum
-
-Returns the sum of an of two or more numbers/arrays.
-
-Use `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`.
-
-```js
-const sum = (...arr) => [].concat(...arr).reduce((acc, val) => acc + val, 0);
-```
-
-```js
-sum([1, 2, 3, 4]); // 10
-```
-
-<br>[⬆ back to top](#table-of-contents)
 
 
 ## Credits
