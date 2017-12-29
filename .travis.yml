@@ -4,9 +4,6 @@ node_js:
 before_install:
 - npm install -g semistandard
 - npm install -g prettier
-- npm install webber
-- npm install builder
-- npm install tagger
 script:
 - npm run tagger
 - npm run linter
