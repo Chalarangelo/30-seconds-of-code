@@ -32,10 +32,6 @@
 <details>
 <summary>View contents</summary>
 
-* [`arrayGcd`](#arraygcd)
-* [`arrayLcm`](#arraylcm)
-* [`arrayMax`](#arraymax)
-* [`arrayMin`](#arraymin)
 * [`chunk`](#chunk)
 * [`compact`](#compact)
 * [`countOccurrences`](#countoccurrences)
@@ -144,8 +140,7 @@
 <details>
 <summary>View contents</summary>
 
-* [`arrayAverage`](#arrayaverage)
-* [`arraySum`](#arraysum)
+* [`average`](#average)
 * [`clampNumber`](#clampnumber)
 * [`collatz`](#collatz)
 * [`digitize`](#digitize)
@@ -162,7 +157,9 @@
 * [`isEven`](#iseven)
 * [`isPrime`](#isprime)
 * [`lcm`](#lcm)
+* [`max`](#max)
 * [`median`](#median)
+* [`min`](#min)
 * [`palindrome`](#palindrome)
 * [`percentile`](#percentile)
 * [`powerset`](#powerset)
@@ -171,6 +168,7 @@
 * [`randomNumberInRange`](#randomnumberinrange)
 * [`round`](#round)
 * [`standardDeviation`](#standarddeviation)
+* [`sum`](#sum)
 
 </details>
 
@@ -426,107 +424,6 @@ arrayMax([1, 2, 4]); // 4
 [⬆ Back to top](#table-of-contents)
 
 ## Array
-
-### arrayGcd
-
-Calculates the greatest common denominator (gcd) of an array of numbers.
-
-Use `Array.reduce()` and the `gcd` formula (uses recursion) to calculate the greatest common denominator of an array of numbers.
-
-```js
-const arrayGcd = arr => {
-  const gcd = (x, y) => (!y ? x : gcd(y, x % y));
-  return arr.reduce((a, b) => gcd(a, b));
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-arrayGcd([1, 2, 3, 4, 5]); // 1
-arrayGcd([4, 8, 12]); // 4
-```
-
-</details>
-
-
-[⬆ Back to top](#table-of-contents)
-
-
-### arrayLcm
-
-Calculates the lowest common multiple (lcm) of an array of numbers.
-
-Use `Array.reduce()` and the `lcm` formula (uses recursion) to calculate the lowest common multiple of an array of numbers.
-
-```js
-const arrayLcm = arr => {
-  const gcd = (x, y) => (!y ? x : gcd(y, x % y));
-  const lcm = (x, y) => x * y / gcd(x, y);
-  return arr.reduce((a, b) => lcm(a, b));
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-arrayLcm([1, 2, 3, 4, 5]); // 60
-arrayLcm([4, 8, 12]); // 24
-```
-
-</details>
-
-
-[⬆ Back to top](#table-of-contents)
-
-
-### arrayMax
-
-Returns the maximum value in an array.
-
-Use `Math.max()` combined with the spread operator (`...`) to get the maximum value in the array.
-
-```js
-const arrayMax = arr => Math.max(...arr);
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-arrayMax([10, 1, 5]); // 10
-```
-
-</details>
-
-
-[⬆ Back to top](#table-of-contents)
-
-
-### arrayMin
-
-Returns the minimum value in an array.
-
-Use `Math.min()` combined with the spread operator (`...`) to get the minimum value in the array.
-
-```js
-const arrayMin = arr => Math.min(...arr);
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-arrayMin([10, 1, 5]); // 1
-```
-
-</details>
-
-
-[⬆ Back to top](#table-of-contents)
-
 
 ### chunk
 
@@ -2308,44 +2205,21 @@ negate(isOdd)(1); // false
 
 ## Math
 
-### arrayAverage
+### average
 
-Returns the average of an array of numbers.
+Returns the average of an of two or more numbers/arrays.
 
 Use `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`, divide by the `length` of the array.
 
 ```js
-const arrayAverage = arr => arr.reduce((acc, val) => acc + val, 0) / arr.length;
+const average = (...arr) => [].concat(...arr).reduce((acc, val) => acc + val, 0) / arr.length;
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```js
-arrayAverage([1, 2, 3]); // 2
-```
-
-</details>
-
-
-[⬆ Back to top](#table-of-contents)
-
-
-### arraySum
-
-Returns the sum of an array of numbers.
-
-Use `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`.
-
-```js
-const arraySum = arr => arr.reduce((acc, val) => acc + val, 0);
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-arraySum([1, 2, 3, 4]); // 10
+average([1, 2, 3]); // 2
 ```
 
 </details>
@@ -2567,14 +2441,18 @@ fibonacciCountUntilNum(10); // 7
 
 ### gcd
 
-Calculates the greatest common divisor between two numbers.
+Calculates the greatest common divisor between two or more numbers/arrays.
 
-Use recursion.
+The `helperGcd `function uses recursion.
 Base case is when `y` equals `0`. In this case, return `x`.
 Otherwise, return the GCD of `y` and the remainder of the division `x/y`.
 
 ```js
-const gcd = (x, y) => (!y ? x : gcd(y, x % y));
+const gcd = (...arr) => {
+  let data = [].concat(...arr);
+  const helperGcd = (x, y) => (!y ? x : gcd(y, x % y));
+  return data.reduce((a, b) => helperGcd(a, b));
+};
 ```
 
 <details>
@@ -2750,15 +2628,17 @@ isPrime(12); // false
 
 ### lcm
 
-Returns the least common multiple of two numbers.
+Returns the least common multiple of two or numbers/arrays.
 
 Use the greatest common divisor (GCD) formula and `Math.abs()` to determine the least common multiple.
 The GCD formula uses recursion.
 
 ```js
-const lcm = (x, y) => {
+const lcm = (...arr) => {
+  let data = [].concat(...arr);
   const gcd = (x, y) => (!y ? x : gcd(y, x % y));
-  return Math.abs(x * y) / gcd(x, y);
+  const helperLcm = (x, y) => x * y / gcd(x, y);
+  return arr.reduce((a, b) => helperLcm(a, b));
 };
 ```
 
@@ -2767,6 +2647,61 @@ const lcm = (x, y) => {
 
 ```js
 lcm(12, 7); // 84
+lcm([1, 3, 4], 5); // 60
+```
+
+</details>
+
+
+[⬆ Back to top](#table-of-contents)
+
+
+### max
+
+Returns the maximum value out of two or more numbers/arrays.
+
+Use `Math.max()` combined with the spread operator (`...`) to get the maximum value in the array.
+
+```js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const max = (...arr) => Math.max(...[].concat(...arr);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+max([10, 1, 5]); // 10
 ```
 
 </details>
@@ -2796,6 +2731,29 @@ const median = arr => {
 ```js
 median([5, 6, 50, 1, -5]); // 5
 median([0, 10, -2, 7]); // 3.5
+```
+
+</details>
+
+
+[⬆ Back to top](#table-of-contents)
+
+
+### min
+
+Returns the minimum value in an array.
+
+Use `Math.min()` combined with the spread operator (`...`) to get the minimum value in the array.
+
+```js
+const min = arr => Math.min(...[].concat(...arr));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+min([10, 1, 5]); // 1
 ```
 
 </details>
@@ -3009,6 +2967,29 @@ const standardDeviation = (arr, usePopulation = false) => {
 ```js
 standardDeviation([10, 2, 38, 23, 38, 23, 21]); // 13.284434142114991 (sample)
 standardDeviation([10, 2, 38, 23, 38, 23, 21], true); // 12.29899614287479 (population)
+```
+
+</details>
+
+
+[⬆ Back to top](#table-of-contents)
+
+
+### sum
+
+Returns the sum of an of two or more numbers/arrays.
+
+Use `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`.
+
+```js
+const sum = (...arr) => [].concat(...arr).reduce((acc, val) => acc + val, 0);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+sum([1, 2, 3, 4]); // 10
 ```
 
 </details>

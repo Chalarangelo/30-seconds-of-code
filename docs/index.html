@@ -107,11 +107,7 @@
 <a class="sublink-1" href="#spreadover">spreadOver</a>
 
 <h3>Array
-</h3><a class="sublink-1" href="#arraygcd">arrayGcd</a>
-<a class="sublink-1" href="#arraylcm">arrayLcm</a>
-<a class="sublink-1" href="#arraymax">arrayMax</a>
-<a class="sublink-1" href="#arraymin">arrayMin</a>
-<a class="sublink-1" href="#chunk">chunk</a>
+</h3><a class="sublink-1" href="#chunk">chunk</a>
 <a class="sublink-1" href="#compact">compact</a>
 <a class="sublink-1" href="#countoccurrences">countOccurrences</a>
 <a class="sublink-1" href="#deepflatten">deepFlatten</a>
@@ -189,8 +185,7 @@
 </h3><a class="sublink-1" href="#negate">negate</a>
 
 <h3>Math
-</h3><a class="sublink-1" href="#arrayaverage">arrayAverage</a>
-<a class="sublink-1" href="#arraysum">arraySum</a>
+</h3><a class="sublink-1" href="#average">average</a>
 <a class="sublink-1" href="#clampnumber">clampNumber</a>
 <a class="sublink-1" href="#collatz">collatz</a>
 <a class="sublink-1" href="#digitize">digitize</a>
@@ -207,7 +202,9 @@
 <a class="sublink-1" href="#iseven">isEven</a>
 <a class="sublink-1" href="#isprime">isPrime</a>
 <a class="sublink-1" href="#lcm">lcm</a>
+<a class="sublink-1" href="#max">max</a>
 <a class="sublink-1" href="#median">median</a>
+<a class="sublink-1" href="#min">min</a>
 <a class="sublink-1" href="#palindrome">palindrome</a>
 <a class="sublink-1" href="#percentile">percentile</a>
 <a class="sublink-1" href="#powerset">powerset</a>
@@ -216,6 +213,7 @@
 <a class="sublink-1" href="#randomnumberinrange">randomNumberInRange</a>
 <a class="sublink-1" href="#round">round</a>
 <a class="sublink-1" href="#standarddeviation">standardDeviation</a>
+<a class="sublink-1" href="#sum">sum</a>
 
 <h3>Media
 </h3><a class="sublink-1" href="#speechsynthesis">speechSynthesis</a>
@@ -342,44 +340,7 @@ arrayMax([1, 2, 3]); // 3
 arrayMax([1, 2, 4]); // 4
 </code></pre>
 </div></div><br/><h2 style="text-align:center">Array</h2>
-<div class="card fluid"><div class="section double-padded"><h3 id="arraygcd">arrayGcd</h3></div><div class="section double-padded">
-<p>Calculates the greatest common denominator (gcd) of an array of numbers.</p>
-<p>Use <code>Array.reduce()</code> and the <code>gcd</code> formula (uses recursion) to calculate the greatest common denominator of an array of numbers.</p>
-<pre><code class="language-js">const arrayGcd = arr =&gt; {
-  const gcd = (x, y) =&gt; (!y ? x : gcd(y, x % y));
-  return arr.reduce((a, b) =&gt; gcd(a, b));
-};
-</code></pre>
-<pre><code class="language-js">arrayGcd([1, 2, 3, 4, 5]); // 1
-arrayGcd([4, 8, 12]); // 4
-</code></pre>
-</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="arraylcm">arrayLcm</h3></div><div class="section double-padded">
-<p>Calculates the lowest common multiple (lcm) of an array of numbers.</p>
-<p>Use <code>Array.reduce()</code> and the <code>lcm</code> formula (uses recursion) to calculate the lowest common multiple of an array of numbers.</p>
-<pre><code class="language-js">const arrayLcm = arr =&gt; {
-  const gcd = (x, y) =&gt; (!y ? x : gcd(y, x % y));
-  const lcm = (x, y) =&gt; x * y / gcd(x, y);
-  return arr.reduce((a, b) =&gt; lcm(a, b));
-};
-</code></pre>
-<pre><code class="language-js">arrayLcm([1, 2, 3, 4, 5]); // 60
-arrayLcm([4, 8, 12]); // 24
-</code></pre>
-</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="arraymax">arrayMax</h3></div><div class="section double-padded">
-<p>Returns the maximum value in an array.</p>
-<p>Use <code>Math.max()</code> combined with the spread operator (<code>...</code>) to get the maximum value in the array.</p>
-<pre><code class="language-js">const arrayMax = arr =&gt; Math.max(...arr);
-</code></pre>
-<pre><code class="language-js">arrayMax([10, 1, 5]); // 10
-</code></pre>
-</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="arraymin">arrayMin</h3></div><div class="section double-padded">
-<p>Returns the minimum value in an array.</p>
-<p>Use <code>Math.min()</code> combined with the spread operator (<code>...</code>) to get the minimum value in the array.</p>
-<pre><code class="language-js">const arrayMin = arr =&gt; Math.min(...arr);
-</code></pre>
-<pre><code class="language-js">arrayMin([10, 1, 5]); // 1
-</code></pre>
-</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="chunk">chunk</h3></div><div class="section double-padded">
+<div class="card fluid"><div class="section double-padded"><h3 id="chunk">chunk</h3></div><div class="section double-padded">
 <p>Chunks an array into smaller arrays of a specified size.</p>
 <p>Use <code>Array.from()</code> to create a new array, that fits the number of chunks that will be produced.
 Use <code>Array.slice()</code> to map each element of the new array to a chunk the length of <code>size</code>.
@@ -1072,19 +1033,12 @@ runPromisesInSeries([() =&gt; delay(1000), () =&gt; delay(2000)]); // //executes
 negate(isOdd)(1); // false
 </code></pre>
 </div></div><br/><h2 style="text-align:center">Math</h2>
-<div class="card fluid"><div class="section double-padded"><h3 id="arrayaverage">arrayAverage</h3></div><div class="section double-padded">
-<p>Returns the average of an array of numbers.</p>
+<div class="card fluid"><div class="section double-padded"><h3 id="average">average</h3></div><div class="section double-padded">
+<p>Returns the average of an of two or more numbers/arrays.</p>
 <p>Use <code>Array.reduce()</code> to add each value to an accumulator, initialized with a value of <code>0</code>, divide by the <code>length</code> of the array.</p>
-<pre><code class="language-js">const arrayAverage = arr =&gt; arr.reduce((acc, val) =&gt; acc + val, 0) / arr.length;
+<pre><code class="language-js">const average = (...arr) =&gt; [].concat(...arr).reduce((acc, val) =&gt; acc + val, 0) / arr.length;
 </code></pre>
-<pre><code class="language-js">arrayAverage([1, 2, 3]); // 2
-</code></pre>
-</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="arraysum">arraySum</h3></div><div class="section double-padded">
-<p>Returns the sum of an array of numbers.</p>
-<p>Use <code>Array.reduce()</code> to add each value to an accumulator, initialized with a value of <code>0</code>.</p>
-<pre><code class="language-js">const arraySum = arr =&gt; arr.reduce((acc, val) =&gt; acc + val, 0);
-</code></pre>
-<pre><code class="language-js">arraySum([1, 2, 3, 4]); // 10
+<pre><code class="language-js">average([1, 2, 3]); // 2
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="clampnumber">clampNumber</h3></div><div class="section double-padded">
 <p>Clamps <code>num</code> within the inclusive range specified by the boundary values <code>a</code> and <code>b</code>.</p>
@@ -1170,11 +1124,15 @@ Uses a mathematical formula to calculate the length of the array required.</p>
 <pre><code class="language-js">fibonacciCountUntilNum(10); // 7
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="gcd">gcd</h3></div><div class="section double-padded">
-<p>Calculates the greatest common divisor between two numbers.</p>
-<p>Use recursion.
+<p>Calculates the greatest common divisor between two or more numbers/arrays.</p>
+<p>The <code>helperGcd</code>function uses recursion.
 Base case is when <code>y</code> equals <code>0</code>. In this case, return <code>x</code>.
 Otherwise, return the GCD of <code>y</code> and the remainder of the division <code>x/y</code>.</p>
-<pre><code class="language-js">const gcd = (x, y) =&gt; (!y ? x : gcd(y, x % y));
+<pre><code class="language-js">const gcd = (...arr) =&gt; {
+  let data = [].concat(...arr);
+  const helperGcd = (x, y) =&gt; (!y ? x : gcd(y, x % y));
+  return data.reduce((a, b) =&gt; helperGcd(a, b));
+};
 </code></pre>
 <pre><code class="language-js">gcd(8, 36); // 4
 </code></pre>
@@ -1241,15 +1199,56 @@ Return <code>false</code> if any of them divides the given number, else return <
 isPrime(12); // false
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="lcm">lcm</h3></div><div class="section double-padded">
-<p>Returns the least common multiple of two numbers.</p>
+<p>Returns the least common multiple of two or numbers/arrays.</p>
 <p>Use the greatest common divisor (GCD) formula and <code>Math.abs()</code> to determine the least common multiple.
 The GCD formula uses recursion.</p>
-<pre><code class="language-js">const lcm = (x, y) =&gt; {
+<pre><code class="language-js">const lcm = (...arr) =&gt; {
+  let data = [].concat(...arr);
   const gcd = (x, y) =&gt; (!y ? x : gcd(y, x % y));
-  return Math.abs(x * y) / gcd(x, y);
+  const helperLcm = (x, y) =&gt; x * y / gcd(x, y);
+  return arr.reduce((a, b) =&gt; helperLcm(a, b));
 };
 </code></pre>
 <pre><code class="language-js">lcm(12, 7); // 84
+lcm([1, 3, 4], 5); // 60
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="max">max</h3></div><div class="section double-padded">
+<p>Returns the maximum value out of two or more numbers/arrays.</p>
+<p>Use <code>Math.max()</code> combined with the spread operator (<code>...</code>) to get the maximum value in the array.</p>
+<pre><code class="language-js">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const max = (...arr) =&gt; Math.max(...[].concat(...arr);
+</code></pre>
+<pre><code class="language-js">max([10, 1, 5]); // 10
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="median">median</h3></div><div class="section double-padded">
 <p>Returns the median of an array of numbers.</p>
@@ -1263,6 +1262,13 @@ Return the number at the midpoint if <code>length</code> is odd, otherwise the a
 </code></pre>
 <pre><code class="language-js">median([5, 6, 50, 1, -5]); // 5
 median([0, 10, -2, 7]); // 3.5
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="min">min</h3></div><div class="section double-padded">
+<p>Returns the minimum value in an array.</p>
+<p>Use <code>Math.min()</code> combined with the spread operator (<code>...</code>) to get the minimum value in the array.</p>
+<pre><code class="language-js">const min = arr =&gt; Math.min(...[].concat(...arr));
+</code></pre>
+<pre><code class="language-js">min([10, 1, 5]); // 1
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="palindrome">palindrome</h3></div><div class="section double-padded">
 <p>Returns <code>true</code> if the given string is a palindrome, <code>false</code> otherwise.</p>
@@ -1348,6 +1354,13 @@ You can omit the second argument to get the sample standard deviation or set it 
 </code></pre>
 <pre><code class="language-js">standardDeviation([10, 2, 38, 23, 38, 23, 21]); // 13.284434142114991 (sample)
 standardDeviation([10, 2, 38, 23, 38, 23, 21], true); // 12.29899614287479 (population)
+</code></pre>
+</div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="sum">sum</h3></div><div class="section double-padded">
+<p>Returns the sum of an of two or more numbers/arrays.</p>
+<p>Use <code>Array.reduce()</code> to add each value to an accumulator, initialized with a value of <code>0</code>.</p>
+<pre><code class="language-js">const sum = (...arr) =&gt; [].concat(...arr).reduce((acc, val) =&gt; acc + val, 0);
+</code></pre>
+<pre><code class="language-js">sum([1, 2, 3, 4]); // 10
 </code></pre>
 </div></div><br/><h2 style="text-align:center">Media</h2>
 <div class="card fluid"><div class="section double-padded"><h3 id="speechsynthesis">speechSynthesis</h3></div><div class="section double-padded">
