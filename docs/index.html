@@ -1663,7 +1663,7 @@ Return the string truncated to the desired length, with <code>...</code> appende
 </code></pre>
 </div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="unescapehtml">unescapeHTML</h3></div><div class="section double-padded">
 <p>Unescapes escaped HTML characters.</p>
-<p>Use <code>String.replace()</code> with a regex that matches the characters that need to be escaped, using a callback function to replace each escaped character instance with its associated unescaped character using a dictionary (object).</p>
+<p>Use <code>String.replace()</code> with a regex that matches the characters that need to be unescaped, using a callback function to replace each escaped character instance with its associated unescaped character using a dictionary (object).</p>
 <pre><code class="language-js">const unescapeHTML = str =&gt;
   str.replace(
     /&amp;amp;|&amp;lt;|&amp;gt;|&amp;#39;|&amp;quot;/g,
