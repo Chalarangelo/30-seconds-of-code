@@ -18,13 +18,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {
-    "chalk": "^2.3.0"
+    "chalk": "^2.3.0",
+    "tape": "^4.8.0"
   },
   "scripts": {
     "builder": "node ./scripts/build-script.js",
     "linter": "node ./scripts/lint-script.js",
     "tagger": "node ./scripts/tag-script.js",
     "webber": "node ./scripts/web-script.js",
+    "tdd": "node ./scripts/tdd-script.js",
     "start": "concurrently --kill-others \"nodemon -e js,md -i README.md -x \\\"npm run build-list\\\"\" \"live-server ./build\""
   },
   "repository": {
