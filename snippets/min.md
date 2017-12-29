@@ -1,13 +1,13 @@
-### arrayMin
+### min
 
 Returns the minimum value in an array.
 
 Use `Math.min()` combined with the spread operator (`...`) to get the minimum value in the array.
 
 ```js
-const arrayMin = arr => Math.min(...arr);
+const min = arr => Math.min(...[].concat(...arr));
 ```
 
 ```js
-arrayMin([10, 1, 5]); // 1
+min([10, 1, 5]); // 1
 ```
