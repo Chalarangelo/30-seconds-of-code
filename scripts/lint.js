@@ -18,7 +18,8 @@ const codeRE = /```\s*js([\s\S]*?)```/g;
 console.time('Linter');
 
 try {
-  const snippets = fs.readdirSync(SNIPPETS_PATH)
+  const snippets = fs
+    .readdirSync(SNIPPETS_PATH)
     .sort((a, b) => a.toLowerCase() - b.toLowerCase())
     // turn it into an object so we can add data to it to be used in a different scope
     .map(name => ({ name }));
@@ -46,7 +47,8 @@ try {
     });
   }
 
-  const cmd = `semistandard "${TEMP_PATH}" --fix & ` +
+  const cmd =
+    `semistandard "${TEMP_PATH}" --fix & ` +
     `prettier "${TEMP_PATH}/*.js" --single-quote --print-width=100 --write`;
 
   cp.exec(cmd, {}, (err, stdout, stderr) => {
