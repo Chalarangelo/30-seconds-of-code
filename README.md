@@ -213,6 +213,7 @@
 <summary>View contents</summary>
 
 * [`anagrams`](#anagrams)
+* [`byteSize`](#bytesize)
 * [`capitalize`](#capitalize)
 * [`capitalizeEveryWord`](#capitalizeeveryword)
 * [`countVowels`](#countvowels)
@@ -255,15 +256,6 @@
 * [`toDecimalMark`](#todecimalmark)
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`validateNumber`](#validatenumber)
-
-</details>
-
-### _Uncategorized_
-
-<details>
-<summary>View contents</summary>
-
-* [`byteSize`](#bytesize)
 
 </details>
 
@@ -3297,6 +3289,29 @@ anagrams('abc'); // ['abc','acb','bac','bca','cab','cba']
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### byteSize
+
+Returns the length of string.
+
+Convert a given string to a [`Blob` Object](https://developer.mozilla.org/en-US/docs/Web/API/Blob) and find its `size`.
+
+```js
+const byteSize = str => new Blob([str]).size;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+byteSize('😀'); // 4
+byteSize('Hello World'); // 11
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### Capitalize
 
 Capitalizes the first letter of a string.
@@ -4190,25 +4205,6 @@ validateNumber('10'); // true
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
-
-## _Uncategorized_
-
-### byteSize
-
-Returns the length of string.
-
-Convert a given string to a [`Blob` Object](https://developer.mozilla.org/en-US/docs/Web/API/Blob) and find its `size`.
-
-```js
-const byteSize = str => new Blob([str]).size;
-```
-
-```js
-byteSize('😀'); // 4
-byteSize('Hello World'); // 11
-```
-
-<br>[⬆ back to top](#table-of-contents)
 
 
 ## Credits
