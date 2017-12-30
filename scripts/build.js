@@ -102,7 +102,7 @@ try {
       uncategorizedOutput += '\n</details>\n\n';
     } else {
       output += `### ${
-        emojis[tag]
+        emojis[tag] || ''
       } ${capitalizedTag}\n\n<details>\n<summary>View contents</summary>\n\n`;
       for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag)) {
         output += `* [\`${taggedSnippet[0]}\`](#${taggedSnippet[0].toLowerCase()})\n`;
@@ -125,7 +125,7 @@ try {
           '\n<br>[⬆ back to top](#table-of-contents)\n\n'}`;
       }
     } else {
-      output += `---\n ## ${emojis[tag]} ${capitalizedTag}\n`;
+      output += `---\n ## ${emojis[tag] || ''} ${capitalizedTag}\n`;
       for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag)) {
         let data = snippets[taggedSnippet[0] + '.md'];
         data =
