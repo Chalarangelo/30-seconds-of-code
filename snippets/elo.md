@@ -12,9 +12,8 @@ and compute the change in rating for each. Omit the second argument to use the d
 const elo = ([a, b], kFactor = 32) => {
   const expectedScore = (self, opponent) => 1 / (1 + Math.pow(10, (opponent - self) / 400));
   const [eA, eB] = [expectedScore(a, b), expectedScore(b, a)];
-  const newRating = (rating, index) =>
-    rating + kFactor * ((index === 0 ? 1 : 0) - (index === 0 ? eA : eB));
-  return [newRating(a, 0), newRating(b, 1)];
+  const newRating = (rating, index) => rating + kFactor * (index - (index ? eA : eB));
+  return [newRating(a, 1), newRating(b, 0)];
 };
 ```
 
