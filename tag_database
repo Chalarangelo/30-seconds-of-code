@@ -31,6 +31,7 @@ distinctValuesOfArray:array
 dropElements:array
 dropRight:array
 elementIsVisibleInViewport:browser
+elo:math
 escapeHTML:string
 escapeRegExp:string
 everyNth:array
