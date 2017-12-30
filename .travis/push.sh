@@ -9,7 +9,7 @@ commit_website_files() {
       echo "Commiting to master branch..."
       git checkout master
       git add *
-      git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
+      git commit --message "Travis build: $TRAVIS_BUILD_NUMBER [ci skip]"
     fi
   fi
 }
