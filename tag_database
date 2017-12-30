@@ -148,5 +148,6 @@ UUIDGeneratorNode:node
 validateNumber:utility
 without:array
 words:string
+yesNo:utility
 zip:array
 zipObject:array
