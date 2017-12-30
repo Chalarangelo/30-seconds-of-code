@@ -436,7 +436,7 @@ collatz(5); // 16
     (acc, val, i) =&gt; acc.concat(i &gt; 1 ? acc[i - 1] + acc[i - 2] : i),
     []
   );
-</code></pre><pre><code class="language-js">fibonacci(6); // 720
+</code></pre><pre><code class="language-js">fibonacci(6); // [0, 1, 1, 2, 3, 5]
 </code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="fibonaccicountuntilnum">fibonacciCountUntilNum</h3></div><div class="section double-padded"><p>Returns the number of fibonnacci numbers up to <code>num</code>(<code>0</code> and <code>num</code> inclusive).</p><p>Use a mathematical formula to calculate the number of fibonacci numbers until <code>num</code>.</p><pre><code class="language-js">const fibonacciCountUntilNum = num =&gt;
   Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));
 </code></pre><pre><code class="language-js">fibonacciCountUntilNum(10); // 7
