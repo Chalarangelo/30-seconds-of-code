@@ -4,7 +4,7 @@ import minify from 'rollup-plugin-babel-minify';
 export default {
   input: './imports.js',
   output: {
-    file: './lib/TSOC.js',
+    file: './module/TSOC.js',
     format: 'umd',
     name: 'TSOC'
   },
