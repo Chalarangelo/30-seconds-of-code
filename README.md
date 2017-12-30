@@ -161,7 +161,6 @@
 * [`max`](#max)
 * [`median`](#median)
 * [`min`](#min)
-* [`palindrome`](#palindrome)
 * [`percentile`](#percentile)
 * [`powerset`](#powerset)
 * [`primes`](#primes)
@@ -222,6 +221,7 @@
 * [`escapeHTML`](#escapehtml)
 * [`escapeRegExp`](#escaperegexp)
 * [`fromCamelCase`](#fromcamelcase)
+* [`palindrome`](#palindrome)
 * [`repeatString`](#repeatstring)
 * [`reverseString`](#reversestring)
 * [`sortCharactersInString`](#sortcharactersinstring)
@@ -2685,38 +2685,6 @@ min([10, 1, 5]); // 1
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### palindrome
-
-Returns `true` if the given string is a palindrome, `false` otherwise.
-
-Convert string `toLowerCase()` and use `replace()` to remove non-alphanumeric characters from it.
-Then, `split('')` into individual characters, `reverse()`, `join('')` and compare to the original, unreversed string, after converting it `tolowerCase()`.
-
-```js
-const palindrome = str => {
-  const s = str.toLowerCase().replace(/[\W_]/g, '');
-  return (
-    s ===
-    s
-      .split('')
-      .reverse()
-      .join('')
-  );
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-palindrome('taco cat'); // true
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
 ### percentile
 
 Uses the percentile formula to calculate how many numbers in the given array are less or equal to the given value.
@@ -3451,6 +3419,38 @@ const fromCamelCase = (str, separator = '_') =>
 fromCamelCase('someDatabaseFieldName', ' '); // 'some database field name'
 fromCamelCase('someLabelThatNeedsToBeCamelized', '-'); // 'some-label-that-needs-to-be-camelized'
 fromCamelCase('someJavascriptProperty', '_'); // 'some_javascript_property'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### palindrome
+
+Returns `true` if the given string is a palindrome, `false` otherwise.
+
+Convert string `toLowerCase()` and use `replace()` to remove non-alphanumeric characters from it.
+Then, `split('')` into individual characters, `reverse()`, `join('')` and compare to the original, unreversed string, after converting it `tolowerCase()`.
+
+```js
+const palindrome = str => {
+  const s = str.toLowerCase().replace(/[\W_]/g, '');
+  return (
+    s ===
+    s
+      .split('')
+      .reverse()
+      .join('')
+  );
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+palindrome('taco cat'); // true
 ```
 
 </details>
