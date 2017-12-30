@@ -2,7 +2,7 @@ anagrams:string
 arrayToHtmlList:browser
 average:math
 bottomVisible:browser
-byteSize:uncategorized
+byteSize:string
 call:adapter
 capitalize:string
 capitalizeEveryWord:string
