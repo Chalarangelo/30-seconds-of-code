@@ -86,6 +86,7 @@ negate:logic
 nthElement:array
 objectFromPairs:object
 objectToPairs:object
+onUserInputChange:browser
 orderBy:object
 palindrome:math
 percentile:math
