@@ -97,6 +97,7 @@
 * [`scrollToTop`](#scrolltotop)
 * [`setStyle`](#setstyle)
 * [`show`](#show)
+* [`speechSynthesis`](#speechsynthesis)
 * [`toggleClass`](#toggleclass)
 * [`UUIDGeneratorBrowser`](#uuidgeneratorbrowser)
 
@@ -170,15 +171,6 @@
 * [`round`](#round)
 * [`standardDeviation`](#standarddeviation)
 * [`sum`](#sum)
-
-</details>
-
-### Media
-
-<details>
-<summary>View contents</summary>
-
-* [`speechSynthesis`](#speechsynthesis)
 
 </details>
 
@@ -1842,6 +1834,35 @@ show(document.querySelectorAll('img')); // Shows all <img> elements on the page
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### speechSynthesis
+
+Performs speech synthesis (experimental).
+
+Use `SpeechSynthesisUtterance.voice` and `window.speechSynthesis.getVoices()` to convert a message to speech.
+Use `window.speechSynthesis.speak()` to play the message.
+
+Learn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
+
+```js
+const speechSynthesis = message => {
+  const msg = new SpeechSynthesisUtterance(message);
+  msg.voice = window.speechSynthesis.getVoices()[0];
+  window.speechSynthesis.speak(msg);
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+speechSynthesis('Hello, World'); // // plays the message
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### toggleClass
 
 Toggle a class for an element.
@@ -2874,36 +2895,6 @@ const sum = (...arr) => [].concat(...arr).reduce((acc, val) => acc + val, 0);
 
 ```js
 sum([1, 2, 3, 4]); // 10
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-## Media
-
-### speechSynthesis
-
-Performs speech synthesis (experimental).
-
-Use `SpeechSynthesisUtterance.voice` and `window.speechSynthesis.getVoices()` to convert a message to speech.
-Use `window.speechSynthesis.speak()` to play the message.
-
-Learn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
-
-```js
-const speechSynthesis = message => {
-  const msg = new SpeechSynthesisUtterance(message);
-  msg.voice = window.speechSynthesis.getVoices()[0];
-  window.speechSynthesis.speak(msg);
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-speechSynthesis('Hello, World'); // // plays the message
 ```
 
 </details>
