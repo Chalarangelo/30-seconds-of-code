@@ -12,11 +12,10 @@ const IMPORTS = './imports.js';
 
 const codeRE = /```\s*js([\s\S]*?)```/;
 
-const tagDatabase = fs.readFileSync('tag_database', 'utf8');
-
 console.time('Module');
 
 try {
+  const tagDatabase = fs.readFileSync('tag_database', 'utf8');
   const snippets = fs.readdirSync(SNIPPETS_PATH);
 
   if (!fs.existsSync(TEMP_PATH)) {
