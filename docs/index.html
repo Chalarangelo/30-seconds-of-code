@@ -731,13 +731,12 @@ toKebabCase('some text'); // 'some-text'
 toKebabCase('some-mixed_string With spaces_underscores-and-hyphens'); // 'some-mixed-string-with-spaces-underscores-and-hyphens'
 toKebabCase('AllThe-small Things'); // &quot;all-the-small-things&quot;
 toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'); // &quot;i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-xml-and-html&quot;
-</code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="tosnakecase">toSnakeCase</h3></div><div class="section double-padded"><p>Converts a string to snake case.</p><p>Break the string into words and combine them using <code>_</code> as a separator. For more detailed explanation of this Regex, <a href="https://regex101.com/r/bMCgAB/1">visit this Site</a>.</p><pre><code class="language-js">const toSnakeCase = str =&gt; {
+</code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="tosnakecase">toSnakeCase</h3></div><div class="section double-padded"><p>Converts a string to snake case.</p><p>Break the string into words and combine them using <code>_</code> as a separator. For more detailed explanation of this Regex, <a href="https://regex101.com/r/bMCgAB/1">visit this Site</a>.</p><pre><code class="language-js">const toSnakeCase = str =&gt;
   str &amp;&amp;
-    str
-      .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
-      .map(x =&gt; x.toLowerCase())
-      .join('_');
-};
+  str
+    .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+    .map(x =&gt; x.toLowerCase())
+    .join('_');
 </code></pre><pre><code class="language-js">toSnakeCase('camelCase'); // 'camel_case'
 toSnakeCase('some text'); // 'some_text'
 toSnakeCase('some-javascript-property'); // 'some_javascript_property'
