@@ -2,6 +2,7 @@ anagrams:string
 arrayToHtmlList:browser
 average:math
 bottomVisible:browser
+byteSize:string
 call:adapter
 capitalize:string
 capitalizeEveryWord:string
@@ -29,6 +30,7 @@ distinctValuesOfArray:array
 dropElements:array
 dropRight:array
 elementIsVisibleInViewport:browser
+escapeHTML:string
 escapeRegExp:string
 everyNth:array
 extendHex:utility
@@ -75,6 +77,7 @@ JSONToDate:date
 JSONToFile:node
 last:array
 lcm:math
+lowercaseKeys:object
 mapObject:array
 max:math
 median:math
@@ -83,8 +86,9 @@ negate:logic
 nthElement:array
 objectFromPairs:object
 objectToPairs:object
+onUserInputChange:browser
 orderBy:object
-palindrome:math
+palindrome:string
 percentile:math
 pick:array
 pipeFunctions:adapter
@@ -118,6 +122,7 @@ similarity:array
 sleep:function
 sortCharactersInString:string
 speechSynthesis:media
+splitLines:string
 spreadOver:adapter
 standardDeviation:math
 sum:math
@@ -136,6 +141,7 @@ toOrdinalSuffix:utility
 toSnakeCase:string
 truncateString:string
 truthCheckCollection:object
+unescapeHTML:string
 union:array
 UUIDGeneratorBrowser:browser
 UUIDGeneratorNode:node
