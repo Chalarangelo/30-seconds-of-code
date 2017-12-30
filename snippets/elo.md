@@ -1,7 +1,8 @@
 ### elo
 
-Computes the new ratings between two opponents using the Elo rating formula. It takes an array
-of two pre-ratings and returns an array containing two post-ratings. The winner's rating is be the first element of the array.
+Computes the new ratings between two opponents using the [Elo rating system](https://en.wikipedia.org/wiki/Elo_rating_system). It takes an array
+of two pre-ratings and returns an array containing two post-ratings.
+The winner's rating is be the first element of the array.
 
 Use `Math.pow()` and math operators to compute the expected score (chance of winning) of each opponent
 and compute the change in rating for each. Omit the second argument to use the default K-factor of
