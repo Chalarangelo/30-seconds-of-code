@@ -121,7 +121,7 @@ shuffle:array
 similarity:array
 sleep:function
 sortCharactersInString:string
-speechSynthesis:media
+speechSynthesis:browser
 splitLines:string
 spreadOver:adapter
 standardDeviation:math
