@@ -14,5 +14,5 @@ const fibonacci = n =>
 ```
 
 ```js
-fibonacci(6); // 720
+fibonacci(6); // [0, 1, 1, 2, 3, 5]
 ```
