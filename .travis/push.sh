@@ -4,6 +4,7 @@ setup_git() {
 }
 
 commit_website_files() {
+  echo "$TRAVIS_EVENT_TYPE $TRAVIS_BRANCH"
   if [[ $(( $TRAVIS_EVENT_TYPE )) != 'pull_request' ]]; then
     if [[ $(( $TRAVIS_BRANCH )) == 'master' ]]; then
       echo "Commiting to master branch..."
