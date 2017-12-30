@@ -258,6 +258,15 @@
 
 </details>
 
+### _Uncategorized_
+
+<details>
+<summary>View contents</summary>
+
+* [`byteSize`](#bytesize)
+
+</details>
+
 ## Adapter
 
 ```js
@@ -4181,6 +4190,25 @@ validateNumber('10'); // true
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
+
+## _Uncategorized_
+
+### byteSize
+
+Returns the length of string.
+
+Convert a given string to a [`Blob` Object](https://developer.mozilla.org/en-US/docs/Web/API/Blob) and find its `size`.
+
+```js
+const byteSize = str => new Blob([str]).size;
+```
+
+```js
+byteSize('😀'); // 4
+byteSize('Hello World'); // 11
+```
+
+<br>[⬆ back to top](#table-of-contents)
 
 
 ## Credits
