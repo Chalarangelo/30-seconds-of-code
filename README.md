@@ -14,7 +14,7 @@
 
 ## Table of Contents
 
-### Adapter
+### 🔌 Adapter
 
 <details>
 <summary>View contents</summary>
@@ -28,7 +28,7 @@
 
 </details>
 
-### Array
+### 📚 Array
 
 <details>
 <summary>View contents</summary>
@@ -76,7 +76,7 @@
 
 </details>
 
-### Browser
+### 🖥️ Browser
 
 <details>
 <summary>View contents</summary>
@@ -103,7 +103,7 @@
 
 </details>
 
-### Date
+### ⏱️ Date
 
 <details>
 <summary>View contents</summary>
@@ -115,7 +115,7 @@
 
 </details>
 
-### Function
+### 🎛️ Function
 
 <details>
 <summary>View contents</summary>
@@ -129,7 +129,7 @@
 
 </details>
 
-### Logic
+### 🔮 Logic
 
 <details>
 <summary>View contents</summary>
@@ -138,7 +138,7 @@
 
 </details>
 
-### Math
+### ➗ Math
 
 <details>
 <summary>View contents</summary>
@@ -174,7 +174,7 @@
 
 </details>
 
-### Node
+### 📦 Node
 
 <details>
 <summary>View contents</summary>
@@ -185,7 +185,7 @@
 
 </details>
 
-### Object
+### 🗃️ Object
 
 <details>
 <summary>View contents</summary>
@@ -201,7 +201,7 @@
 
 </details>
 
-### String
+### 📜 String
 
 <details>
 <summary>View contents</summary>
@@ -228,7 +228,7 @@
 
 </details>
 
-### Utility
+### 💎 Utility
 
 <details>
 <summary>View contents</summary>
@@ -254,7 +254,8 @@
 
 </details>
 
-## Adapter
+---
+ ## 🔌 Adapter
 
 ### call
 
@@ -416,7 +417,8 @@ arrayMax([1, 2, 4]); // 4
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Array
+---
+ ## 📚 Array
 
 ### chunk
 
@@ -1102,8 +1104,8 @@ console.log(pulled); // [ 'b', 'd' ]
 
 QuickSort an Array (ascending sort by default).
 
-Use recursion.
-Use `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it.
+Use recursion. 
+Use `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it. 
 If the parameter `desc` is truthy, return array sorts in descending order.
 
 ```js
@@ -1429,7 +1431,8 @@ zipObject(['a', 'b'], [1, 2, 3]); // {a: 1, b: 2}
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Browser
+---
+ ## 🖥️ Browser
 
 ### arrayToHtmlList
 
@@ -1702,7 +1705,7 @@ const httpsRedirect = () => {
 
 Run the callback whenever the user input type changes (`mouse` or `touch`). Useful for enabling/disabling code depending on the input device. This process is dynamic and works with hybrid devices (e.g. touchscreen laptops).
 
-Use two event listeners. Assume `mouse` input initially and bind a `touchstart` event listener to the document.
+Use two event listeners. Assume `mouse` input initially and bind a `touchstart` event listener to the document. 
 On `touchstart`, add a `mousemove` event listener to listen for two consecutive `mousemove` events firing within 20ms, using `performance.now()`.
 Run the callback with the input type as an argument in either of these situations.
 
@@ -1909,7 +1912,8 @@ UUIDGeneratorBrowser(); // '7982fcfe-5721-4632-bede-6000885be57d'
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Date
+---
+ ## ⏱️ Date
 
 ### getDaysDiffBetweenDates
 
@@ -2009,7 +2013,8 @@ tomorrow(); // 2017-12-27 (if current date is 2017-12-26)
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Function
+---
+ ## 🎛️ Function
 
 ### chainAsync
 
@@ -2172,7 +2177,8 @@ async function sleepyWork() {
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Logic
+---
+ ## 🔮 Logic
 
 ### negate
 
@@ -2196,7 +2202,8 @@ negate(isOdd)(1); // false
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Math
+---
+ ## ➗ Math
 
 ### average
 
@@ -2901,7 +2908,8 @@ sum([1, 2, 3, 4]); // 10
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Node
+---
+ ## 📦 Node
 
 ### JSONToFile
 
@@ -2990,7 +2998,8 @@ UUIDGeneratorNode(); // '79c7c136-60ee-40a2-beb2-856f1feabefc'
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Object
+---
+ ## 🗃️ Object
 
 ### cleanObj
 
@@ -3205,7 +3214,8 @@ truthCheckCollection([{ user: 'Tinky-Winky', sex: 'male' }, { user: 'Dipsy', sex
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## String
+---
+ ## 📜 String
 
 ### anagrams
 
@@ -3729,7 +3739,8 @@ words('python, javaScript & coffee'); // ["python", "javaScript", "coffee"]
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Utility
+---
+ ## 💎 Utility
 
 ### coalesce
 
@@ -4194,3 +4205,4 @@ validateNumber('10'); // true
 ## Credits
 
 *Icons made by [Smashicons](https://www.flaticon.com/authors/smashicons) from [www.flaticon.com](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).*
+
