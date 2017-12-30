@@ -1102,8 +1102,8 @@ console.log(pulled); // [ 'b', 'd' ]
 
 QuickSort an Array (ascending sort by default).
 
-Use recursion. 
-Use `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it. 
+Use recursion.
+Use `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it.
 If the parameter `desc` is truthy, return array sorts in descending order.
 
 ```js
@@ -1702,7 +1702,7 @@ const httpsRedirect = () => {
 
 Run the callback whenever the user input type changes (`mouse` or `touch`). Useful for enabling/disabling code depending on the input device. This process is dynamic and works with hybrid devices (e.g. touchscreen laptops).
 
-Use two event listeners. Assume `mouse` input initially and bind a `touchstart` event listener to the document. 
+Use two event listeners. Assume `mouse` input initially and bind a `touchstart` event listener to the document.
 On `touchstart`, add a `mousemove` event listener to listen for two consecutive `mousemove` events firing within 20ms, using `performance.now()`.
 Run the callback with the input type as an argument in either of these situations.
 
@@ -4194,4 +4194,3 @@ validateNumber('10'); // true
 ## Credits
 
 *Icons made by [Smashicons](https://www.flaticon.com/authors/smashicons) from [www.flaticon.com](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).*
-
