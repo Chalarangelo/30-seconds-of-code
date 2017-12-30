@@ -1107,8 +1107,8 @@ console.log(pulled); // [ 'b', 'd' ]
 
 QuickSort an Array (ascending sort by default).
 
-Use recursion. 
-Use `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it. 
+Use recursion.
+Use `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it.
 If the parameter `desc` is truthy, return array sorts in descending order.
 
 ```js
@@ -2276,7 +2276,7 @@ const factorial = n =>
 <summary>Examples</summary>
 
 ```js
-factorial(6); // 720
+factorial(6); // [0, 1, 1, 2, 3, 5]
 ```
 
 </details>
@@ -4138,4 +4138,3 @@ validateNumber('10'); // true
 ## Credits
 
 *Icons made by [Smashicons](https://www.flaticon.com/authors/smashicons) from [www.flaticon.com](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).*
-
