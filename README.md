@@ -253,7 +253,8 @@
 
 </details>
 
-## Adapter
+---
+ ## Adapter
 
 ```js
 const call = (key, ...args) => context => context[key](...args);
@@ -424,7 +425,8 @@ arrayMax([1, 2, 4]); // 4
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Array
+---
+ ## Array
 
 ### chunk
 
@@ -1110,8 +1112,8 @@ console.log(pulled); // [ 'b', 'd' ]
 
 QuickSort an Array (ascending sort by default).
 
-Use recursion. 
-Use `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it. 
+Use recursion.
+Use `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it.
 If the parameter `desc` is truthy, return array sorts in descending order.
 
 ```js
@@ -1437,7 +1439,8 @@ zipObject(['a', 'b'], [1, 2, 3]); // {a: 1, b: 2}
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Browser
+---
+ ## Browser
 
 ### arrayToHtmlList
 
@@ -1710,7 +1713,7 @@ const httpsRedirect = () => {
 
 Run the callback whenever the user input type changes (`mouse` or `touch`). Useful for enabling/disabling code depending on the input device. This process is dynamic and works with hybrid devices (e.g. touchscreen laptops).
 
-Use two event listeners. Assume `mouse` input initially and bind a `touchstart` event listener to the document. 
+Use two event listeners. Assume `mouse` input initially and bind a `touchstart` event listener to the document.
 On `touchstart`, add a `mousemove` event listener to listen for two consecutive `mousemove` events firing within 20ms, using `performance.now()`.
 Run the callback with the input type as an argument in either of these situations.
 
@@ -1929,7 +1932,8 @@ UUIDGeneratorBrowser(); // '7982fcfe-5721-4632-bede-6000885be57d'
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Date
+---
+ ## Date
 
 ### getDaysDiffBetweenDates
 
@@ -2044,7 +2048,8 @@ tomorrow(); // 2017-12-27 (if current date is 2017-12-26)
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Function
+---
+ ## Function
 
 ### chainAsync
 
@@ -2218,7 +2223,8 @@ async function sleepyWork() {
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Logic
+---
+ ## Logic
 
 ### negate
 
@@ -2242,7 +2248,8 @@ negate(isOdd)(1); // false
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Math
+---
+ ## Math
 
 ### average
 
@@ -2949,7 +2956,39 @@ sum([1, 2, 3, 4]); // 10
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Node
+---
+ ## Media
+
+### speechSynthesis
+
+Performs speech synthesis (experimental).
+
+Use `SpeechSynthesisUtterance.voice` and `window.speechSynthesis.getVoices()` to convert a message to speech.
+Use `window.speechSynthesis.speak()` to play the message.
+
+Learn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
+
+```js
+const speechSynthesis = message => {
+  const msg = new SpeechSynthesisUtterance(message);
+  msg.voice = window.speechSynthesis.getVoices()[0];
+  window.speechSynthesis.speak(msg);
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+speechSynthesis('Hello, World'); // // plays the message
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+---
+ ## Node
 
 ### JSONToFile
 
@@ -3038,7 +3077,8 @@ UUIDGeneratorNode(); // '79c7c136-60ee-40a2-beb2-856f1feabefc'
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Object
+---
+ ## Object
 
 ### cleanObj
 
@@ -3253,7 +3293,8 @@ truthCheckCollection([{ user: 'Tinky-Winky', sex: 'male' }, { user: 'Dipsy', sex
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## String
+---
+ ## String
 
 ### anagrams
 
@@ -3777,7 +3818,8 @@ words('python, javaScript & coffee'); // ["python", "javaScript", "coffee"]
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Utility
+---
+ ## Utility
 
 ### coalesce
 
