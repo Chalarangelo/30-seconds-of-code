@@ -91,6 +91,7 @@
 * [`hasClass`](#hasclass)
 * [`hide`](#hide)
 * [`httpsRedirect`](#httpsredirect)
+* [`onUserInputChange`](#onuserinputchange)
 * [`redirect`](#redirect)
 * [`scrollToTop`](#scrolltotop)
 * [`setStyle`](#setstyle)
@@ -160,7 +161,6 @@
 * [`max`](#max)
 * [`median`](#median)
 * [`min`](#min)
-* [`palindrome`](#palindrome)
 * [`percentile`](#percentile)
 * [`powerset`](#powerset)
 * [`primes`](#primes)
@@ -198,6 +198,7 @@
 <summary>View contents</summary>
 
 * [`cleanObj`](#cleanobj)
+* [`lowercaseKeys`](#lowercasekeys)
 * [`objectFromPairs`](#objectfrompairs)
 * [`objectToPairs`](#objecttopairs)
 * [`orderBy`](#orderby)
@@ -213,18 +214,23 @@
 <summary>View contents</summary>
 
 * [`anagrams`](#anagrams)
+* [`byteSize`](#bytesize)
 * [`capitalize`](#capitalize)
 * [`capitalizeEveryWord`](#capitalizeeveryword)
 * [`countVowels`](#countvowels)
+* [`escapeHTML`](#escapehtml)
 * [`escapeRegExp`](#escaperegexp)
 * [`fromCamelCase`](#fromcamelcase)
+* [`palindrome`](#palindrome)
 * [`repeatString`](#repeatstring)
 * [`reverseString`](#reversestring)
 * [`sortCharactersInString`](#sortcharactersinstring)
+* [`splitLines`](#splitlines)
 * [`toCamelCase`](#tocamelcase)
 * [`toKebabCase`](#tokebabcase)
 * [`toSnakeCase`](#tosnakecase)
 * [`truncateString`](#truncatestring)
+* [`unescapeHTML`](#unescapehtml)
 * [`words`](#words)
 
 </details>
@@ -282,8 +288,7 @@ Promise.resolve([1, 2, 3])
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### collectInto
@@ -309,8 +314,7 @@ Pall(p1, p2, p3).then(console.log);
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### flip
@@ -338,8 +342,7 @@ Object.assign(b, a); // == b
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### pipeFunctions
@@ -365,8 +368,7 @@ multiplyAndAdd5(5, 2); // 15
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### promisify
@@ -395,8 +397,7 @@ delay(2000).then(() => console.log('Hi!')); // // Promise resolves after 2s
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### spreadOver
@@ -420,8 +421,7 @@ arrayMax([1, 2, 4]); // 4
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 ## Array
 
@@ -449,8 +449,7 @@ chunk([1, 2, 3, 4, 5], 2); // [[1,2],[3,4],[5]]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### compact
@@ -472,8 +471,7 @@ compact([0, 1, false, 2, '', 3, 'a', 'e' * 23, NaN, 's', 34]); // [ 1, 2, 3, 'a'
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### countOccurrences
@@ -495,8 +493,7 @@ countOccurrences([1, 1, 2, 1, 2, 3], 1); // 3
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### deepFlatten
@@ -520,8 +517,7 @@ deepFlatten([1, [2], [[3], 4], 5]); // [1,2,3,4,5]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### difference
@@ -546,8 +542,7 @@ difference([1, 2, 3], [1, 2, 4]); // [3]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### differenceWith
@@ -569,8 +564,7 @@ differenceWith([1, 1.2, 1.5, 3], [1.9, 3], (a, b) => Math.round(a) == Math.round
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### distinctValuesOfArray
@@ -592,8 +586,7 @@ distinctValuesOfArray([1, 2, 2, 3, 4, 4, 5]); // [1,2,3,4,5]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### dropElements
@@ -619,8 +612,7 @@ dropElements([1, 2, 3, 4], n => n >= 3); // [3,4]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### dropRight
@@ -644,8 +636,7 @@ dropRight([1, 2, 3], 42); // []
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### everyNth
@@ -667,8 +658,7 @@ everyNth([1, 2, 3, 4, 5, 6], 2); // [ 2, 4, 6 ]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### filterNonUnique
@@ -690,8 +680,7 @@ filterNonUnique([1, 2, 2, 3, 4, 4, 5]); // [1,3,5]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### flatten
@@ -713,8 +702,7 @@ flatten([1, [2], 3, 4]); // [1,2,3,4]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### flattenDepth
@@ -742,8 +730,7 @@ flattenDepth([1, [2], 3, 4]); // [1,2,3,4]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### groupBy
@@ -771,8 +758,7 @@ groupBy(['one', 'two', 'three'], 'length'); // {3: ['one', 'two'], 5: ['three']}
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### head
@@ -794,8 +780,7 @@ head([1, 2, 3]); // 1
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### initial
@@ -817,8 +802,7 @@ initial([1, 2, 3]); // [1,2]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### initialize2DArray
@@ -843,8 +827,7 @@ initialize2DArray(2, 2, 0); // [[0,0], [0,0]]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### initializeArrayWithRange
@@ -869,8 +852,7 @@ initializeArrayWithRange(7, 3); // [3,4,5,6,7]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### initializeArrayWithValues
@@ -893,8 +875,7 @@ initializeArrayWithValues(5, 2); // [2,2,2,2,2]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### intersection
@@ -919,8 +900,7 @@ intersection([1, 2, 3], [4, 3, 2]); // [2,3]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### last
@@ -942,8 +922,7 @@ last([1, 2, 3]); // 3
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### mapObject
@@ -969,8 +948,7 @@ squareIt([1, 2, 3]); // { 1: 1, 2: 4, 3: 9 }
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### nthElement
@@ -995,8 +973,7 @@ nthElement(['a', 'b', 'b'], -3); // 'a'
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### pick
@@ -1019,8 +996,7 @@ pick({ a: 1, b: '2', c: 3 }, ['a', 'c']); // { 'a': 1, 'c': 3 }
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### pull
@@ -1056,8 +1032,7 @@ console.log(myArray2); // [ 'b', 'b' ]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### pullAtIndex
@@ -1093,8 +1068,7 @@ console.log(pulled); // [ 'b', 'd' ]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### pullAtValue
@@ -1128,8 +1102,7 @@ console.log(pulled); // [ 'b', 'd' ]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### quickSort
@@ -1161,8 +1134,7 @@ quickSort([4, 1, 3, 2], true); // [4,3,2,1]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### remove
@@ -1191,8 +1163,7 @@ remove([1, 2, 3, 4], n => n % 2 == 0); // [2, 4]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### sample
@@ -1215,8 +1186,7 @@ sample([3, 7, 9, 11]); // 9
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### shuffle
@@ -1247,8 +1217,7 @@ console.log(foo); // [1,2,3]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### similarity
@@ -1270,8 +1239,7 @@ similarity([1, 2, 3], [1, 2, 4]); // [1,2]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### symmetricDifference
@@ -1297,8 +1265,7 @@ symmetricDifference([1, 2, 3], [1, 2, 4]); // [3,4]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### tail
@@ -1321,8 +1288,7 @@ tail([1]); // [1]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### take
@@ -1345,8 +1311,7 @@ take([1, 2, 3], 0); // []
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### takeRight
@@ -1369,8 +1334,7 @@ takeRight([1, 2, 3]); // [3]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### union
@@ -1392,8 +1356,7 @@ union([1, 2, 3], [4, 3, 2]); // [1,2,3,4]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### without
@@ -1417,8 +1380,7 @@ without([2, 1, 2, 3], 1, 2); // [3]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### zip
@@ -1448,8 +1410,7 @@ zip(['a'], [1, 2], [true, false]); // [['a', 1, true], [undefined, 2, false]]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### zipObject
@@ -1473,8 +1434,7 @@ zipObject(['a', 'b'], [1, 2, 3]); // {a: 1, b: 2}
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 ## Browser
 
@@ -1498,8 +1458,7 @@ arrayToHtmlList(['item 1', 'item 2'], 'myListID');
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### bottomVisible
@@ -1523,8 +1482,7 @@ bottomVisible(); // true
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### currentURL
@@ -1546,8 +1504,7 @@ currentURL(); // 'https://google.com'
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### detectDeviceType
@@ -1573,8 +1530,7 @@ detectDeviceType(); // "Desktop"
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### elementIsVisibleInViewport
@@ -1608,8 +1564,7 @@ elementIsVisibleInViewport(el, true); // true // (partially visible)
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### getScrollPosition
@@ -1635,8 +1590,7 @@ getScrollPosition(); // {x: 0, y: 200}
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### getStyle
@@ -1658,8 +1612,7 @@ getStyle(document.querySelector('p'), 'font-size'); // '16px'
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### getURLParameters
@@ -1685,8 +1638,7 @@ getURLParameters('http://url.com/page?name=Adam&surname=Smith'); // {name: 'Adam
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### hasClass
@@ -1708,8 +1660,7 @@ hasClass(document.querySelector('p.special'), 'special'); // true
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### hide
@@ -1731,8 +1682,7 @@ hide(document.querySelectorAll('img')); // Hides all <img> elements on the page
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### httpsRedirect
@@ -1752,8 +1702,46 @@ const httpsRedirect = () => {
 
 </details>
 
+<br>[⬆ Back to top](#table-of-contents)
 
-[⬆ Back to top](#table-of-contents)
+
+### onUserInputChange
+
+Run the callback whenever the user input type changes (`mouse` or `touch`). Useful for enabling/disabling code depending on the input device. This process is dynamic and works with hybrid devices (e.g. touchscreen laptops).
+
+Use two event listeners. Assume `mouse` input initially and bind a `touchstart` event listener to the document. 
+On `touchstart`, add a `mousemove` event listener to listen for two consecutive `mousemove` events firing within 20ms, using `performance.now()`.
+Run the callback with the input type as an argument in either of these situations.
+
+```js
+const onUserInputChange = callback => {
+  let type = 'mouse',
+    lastTime = 0;
+  const mousemoveHandler = () => {
+    const now = performance.now();
+    if (now - lastTime < 20)
+      (type = 'mouse'), callback(type), document.removeEventListener('mousemove', mousemoveHandler);
+    lastTime = now;
+  };
+  document.addEventListener('touchstart', () => {
+    if (type === 'touch') return;
+    (type = 'touch'), callback(type), document.addEventListener('mousemove', mousemoveHandler);
+  });
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+onUserInputChange(type => {
+  console.log('The user is now using', type, 'as an input method.');
+});
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### redirect
@@ -1777,8 +1765,7 @@ redirect('https://google.com');
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### scrollToTop
@@ -1807,8 +1794,7 @@ scrollToTop();
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### setStyle
@@ -1830,8 +1816,7 @@ setStyle(document.querySelector('p'), 'font-size', '20px'); // The first <p> ele
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### show
@@ -1853,8 +1838,7 @@ show(document.querySelectorAll('img')); // Shows all <img> elements on the page
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### toggleClass
@@ -1876,8 +1860,7 @@ toggleClass(document.querySelector('p.special'), 'special'); // The paragraph wi
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### UUIDGeneratorBrowser
@@ -1902,8 +1885,7 @@ UUIDGeneratorBrowser(); // '7982fcfe-5721-4632-bede-6000885be57d'
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 ## Date
 
@@ -1927,8 +1909,7 @@ getDaysDiffBetweenDates(new Date('2017-12-13'), new Date('2017-12-22')); // 9
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### JSONToDate
@@ -1953,8 +1934,7 @@ JSONToDate(/Date(1489525200000)/); // "14/3/2017"
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### toEnglishDate
@@ -1984,8 +1964,7 @@ toEnglishDate('09/21/2010'); // '21/09/2010'
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### tomorrow
@@ -2006,8 +1985,7 @@ tomorrow(); // 2017-12-27 (if current date is 2017-12-26)
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 ## Function
 
@@ -2046,8 +2024,7 @@ chainAsync([
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### compose
@@ -2073,8 +2050,7 @@ multiplyAndAdd5(5, 2); // 15
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### curry
@@ -2101,8 +2077,7 @@ curry(Math.min, 3)(10)(50)(2); // 2
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### functionName
@@ -2124,8 +2099,7 @@ functionName(Math.max); // max (logged in debug channel of console)
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### runPromisesInSeries
@@ -2148,8 +2122,7 @@ runPromisesInSeries([() => delay(1000), () => delay(2000)]); // //executes each 
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### sleep
@@ -2175,8 +2148,7 @@ async function sleepyWork() {
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 ## Logic
 
@@ -2200,8 +2172,7 @@ negate(isOdd)(1); // false
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 ## Math
 
@@ -2212,7 +2183,10 @@ Returns the average of an of two or more numbers/arrays.
 Use `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`, divide by the `length` of the array.
 
 ```js
-const average = (...arr) => [].concat(...arr).reduce((acc, val) => acc + val, 0) / arr.length;
+const average = (...arr) => {
+  const nums = [].concat(...arr);
+  return nums.reduce((acc, val) => acc + val, 0) / nums.length;
+};
 ```
 
 <details>
@@ -2220,12 +2194,12 @@ const average = (...arr) => [].concat(...arr).reduce((acc, val) => acc + val, 0)
 
 ```js
 average([1, 2, 3]); // 2
+average(1, 2, 3); // 2
 ```
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### clampNumber
@@ -2250,8 +2224,7 @@ clampNumber(3, 2, 4); // 3
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### collatz
@@ -2274,8 +2247,7 @@ collatz(5); // 16
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### digitize
@@ -2298,8 +2270,7 @@ digitize(123); // [1, 2, 3]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### distance
@@ -2321,8 +2292,7 @@ distance(1, 1, 2, 3); // 2.23606797749979
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### factorial
@@ -2352,8 +2322,7 @@ factorial(6); // 720
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### fibonacci
@@ -2375,13 +2344,12 @@ const fibonacci = n =>
 <summary>Examples</summary>
 
 ```js
-fibonacci(6); // 720
+fibonacci(6); // [0, 1, 1, 2, 3, 5]
 ```
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### fibonacciCountUntilNum
@@ -2404,8 +2372,7 @@ fibonacciCountUntilNum(10); // 7
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### fibonacciUntilNum
@@ -2435,8 +2402,7 @@ fibonacciCountUntilNum(10); // 7
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### gcd
@@ -2464,8 +2430,7 @@ gcd(8, 36); // 4
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### hammingDistance
@@ -2488,8 +2453,7 @@ hammingDistance(2, 3); // 1
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### inRange
@@ -2518,8 +2482,7 @@ inrange(3, 2); // false
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### isArmstrongNumber
@@ -2546,8 +2509,7 @@ isArmstrongNumber(56); // false
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### isDivisible
@@ -2569,8 +2531,7 @@ isDivisible(6, 3); // true
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### isEven
@@ -2593,8 +2554,7 @@ isEven(3); // false
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### isPrime
@@ -2622,23 +2582,21 @@ isPrime(12); // false
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### lcm
 
-Returns the least common multiple of two or numbers/arrays.
+Returns the least common multiple of two or more numbers/arrays.
 
 Use the greatest common divisor (GCD) formula and `Math.abs()` to determine the least common multiple.
 The GCD formula uses recursion.
 
 ```js
 const lcm = (...arr) => {
-  let data = [].concat(...arr);
   const gcd = (x, y) => (!y ? x : gcd(y, x % y));
-  const helperLcm = (x, y) => x * y / gcd(x, y);
-  return arr.reduce((a, b) => helperLcm(a, b));
+  const _lcm = (x, y) => x * y / gcd(x, y);
+  return [].concat(...arr).reduce((a, b) => _lcm(a, b));
 };
 ```
 
@@ -2652,8 +2610,7 @@ lcm([1, 3, 4], 5); // 60
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### max
@@ -2663,38 +2620,7 @@ Returns the maximum value out of two or more numbers/arrays.
 Use `Math.max()` combined with the spread operator (`...`) to get the maximum value in the array.
 
 ```js
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const max = (...arr) => Math.max(...[].concat(...arr);
+const max = (...arr) => Math.max(...[].concat(...arr));
 ```
 
 <details>
@@ -2706,8 +2632,7 @@ max([10, 1, 5]); // 10
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### median
@@ -2735,8 +2660,7 @@ median([0, 10, -2, 7]); // 3.5
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### min
@@ -2758,41 +2682,7 @@ min([10, 1, 5]); // 1
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
-
-
-### palindrome
-
-Returns `true` if the given string is a palindrome, `false` otherwise.
-
-Convert string `toLowerCase()` and use `replace()` to remove non-alphanumeric characters from it.
-Then, `split('')` into individual characters, `reverse()`, `join('')` and compare to the original, unreversed string, after converting it `tolowerCase()`.
-
-```js
-const palindrome = str => {
-  const s = str.toLowerCase().replace(/[\W_]/g, '');
-  return (
-    s ===
-    s
-      .split('')
-      .reverse()
-      .join('')
-  );
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-palindrome('taco cat'); // true
-```
-
-</details>
-
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### percentile
@@ -2815,8 +2705,7 @@ percentile([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 6); // 55
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### powerset
@@ -2838,8 +2727,7 @@ powerset([1, 2]); // [[], [1], [2], [2,1]]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### primes
@@ -2867,8 +2755,7 @@ primes(10); // [2,3,5,7]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### randomIntegerInRange
@@ -2890,8 +2777,7 @@ randomIntegerInRange(0, 5); // 2
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### randomNumberInRange
@@ -2913,8 +2799,7 @@ randomNumberInRange(2, 10); // 6.0211363285087005
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### round
@@ -2937,8 +2822,7 @@ round(1.005, 2); // 1.01
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### standardDeviation
@@ -2971,8 +2855,7 @@ standardDeviation([10, 2, 38, 23, 38, 23, 21], true); // 12.29899614287479 (popu
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### sum
@@ -2994,8 +2877,7 @@ sum([1, 2, 3, 4]); // 10
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 ## Media
 
@@ -3025,8 +2907,7 @@ speechSynthesis('Hello, World'); // // plays the message
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 ## Node
 
@@ -3051,8 +2932,7 @@ JSONToFile({ test: 'is passed' }, 'testJsonFile'); // writes the object to 'test
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### readFileLines
@@ -3090,8 +2970,7 @@ console.log(arr); // ['line1', 'line2', 'line3']
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### UUIDGeneratorNode
@@ -3117,8 +2996,7 @@ UUIDGeneratorNode(); // '79c7c136-60ee-40a2-beb2-856f1feabefc'
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 ## Object
 
@@ -3152,8 +3030,35 @@ cleanObj(testObj, ['a'], 'children'); // { a: 1, children : { a: 1}}
 
 </details>
 
+<br>[⬆ Back to top](#table-of-contents)
 
-[⬆ Back to top](#table-of-contents)
+
+### lowercaseKeys
+
+Creates a new object from the specified object, where all the keys are in lowercase.
+
+Use `Object.keys()` and `Array.reduce()` to create a new object from the specified object.
+Convert each key in the original object to lowercase, using `String.toLowerCase()`.
+
+```js
+const lowercaseKeys = obj =>
+  Object.keys(obj).reduce((acc, key) => {
+    acc[key.toLowerCase()] = obj[key];
+    return acc;
+  }, {});
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const myObj = { Name: 'Adam', sUrnAME: 'Smith' };
+const myObjLower = lowercaseKeys(myObj); // {name: 'Adam', surname: 'Smith'};
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### objectFromPairs
@@ -3175,8 +3080,7 @@ objectFromPairs([['a', 1], ['b', 2]]); // {a: 1, b: 2}
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### objectToPairs
@@ -3198,8 +3102,7 @@ objectToPairs({ a: 1, b: 2 }); // [['a',1],['b',2]])
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### orderBy
@@ -3238,8 +3141,7 @@ orderBy(users, ['name', 'age']); // [{name: 'barney', age: 34}, {name: 'barney',
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### select
@@ -3263,8 +3165,7 @@ select(obj, 'selector.to.val'); // 'val to select'
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### shallowClone
@@ -3288,8 +3189,7 @@ a === b; // false
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### truthCheckCollection
@@ -3311,8 +3211,7 @@ truthCheckCollection([{ user: 'Tinky-Winky', sex: 'male' }, { user: 'Dipsy', sex
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 ## String
 
@@ -3347,8 +3246,30 @@ anagrams('abc'); // ['abc','acb','bac','bca','cab','cba']
 
 </details>
 
+<br>[⬆ Back to top](#table-of-contents)
 
-[⬆ Back to top](#table-of-contents)
+
+### byteSize
+
+Returns the length of string.
+
+Convert a given string to a [`Blob` Object](https://developer.mozilla.org/en-US/docs/Web/API/Blob) and find its `size`.
+
+```js
+const byteSize = str => new Blob([str]).size;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+byteSize('😀'); // 4
+byteSize('Hello World'); // 11
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### Capitalize
@@ -3373,8 +3294,7 @@ capitalize('fooBar', true); // 'Foobar'
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### capitalizeEveryWord
@@ -3396,8 +3316,7 @@ capitalizeEveryWord('hello world!'); // 'Hello World!'
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### countVowels
@@ -3420,8 +3339,40 @@ countVowels('gym'); // 0
 
 </details>
 
+<br>[⬆ Back to top](#table-of-contents)
 
-[⬆ Back to top](#table-of-contents)
+
+### escapeHTML
+
+Escapes a string for use in HTML.
+
+Use `String.replace()` with a regex that matches the characters that need to be escaped, using a callback function to replace each character instance with its associated escaped character using a dictionary (object).
+
+```js
+const escapeHTML = str =>
+  str.replace(
+    /[&<>'"]/g,
+    tag =>
+      ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        "'": '&#39;',
+        '"': '&quot;'
+      }[tag] || tag)
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+escapeHTML('<a href="#">Me & you</a>'); // '&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### escapeRegExp
@@ -3443,8 +3394,7 @@ escapeRegExp('(test)'); // \\(test\\)
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### fromCamelCase
@@ -3473,8 +3423,39 @@ fromCamelCase('someJavascriptProperty', '_'); // 'some_javascript_property'
 
 </details>
 
+<br>[⬆ Back to top](#table-of-contents)
 
-[⬆ Back to top](#table-of-contents)
+
+### palindrome
+
+Returns `true` if the given string is a palindrome, `false` otherwise.
+
+Convert string `toLowerCase()` and use `replace()` to remove non-alphanumeric characters from it.
+Then, `split('')` into individual characters, `reverse()`, `join('')` and compare to the original, unreversed string, after converting it `tolowerCase()`.
+
+```js
+const palindrome = str => {
+  const s = str.toLowerCase().replace(/[\W_]/g, '');
+  return (
+    s ===
+    s
+      .split('')
+      .reverse()
+      .join('')
+  );
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+palindrome('taco cat'); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### repeatString
@@ -3499,8 +3480,7 @@ repeatString('abc'); // 'abcabc'
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### reverseString
@@ -3527,8 +3507,7 @@ reverseString('foobar'); // 'raboof'
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### sortCharactersInString
@@ -3554,8 +3533,29 @@ sortCharactersInString('cabbage'); // 'aabbceg'
 
 </details>
 
+<br>[⬆ Back to top](#table-of-contents)
 
-[⬆ Back to top](#table-of-contents)
+
+### splitLines
+
+Splits a multiline string into an array of lines.
+
+Use `String.split()` and a regular expression to match line breaks and create an array.
+
+```js
+const splitLines = str => str.split(/\r?\n/);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+splitLines('This\nis a\nmultiline\nstring.\n'); // ['This', 'is a', 'multiline', 'string' , '']
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### toCamelCase
@@ -3589,8 +3589,7 @@ toCamelCase('some-mixed_string with spaces_underscores-and-hyphens'); // 'someMi
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### toKebabCase
@@ -3622,8 +3621,7 @@ toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSo
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### toSnakeCase
@@ -3657,8 +3655,7 @@ toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSo
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### truncateString
@@ -3682,8 +3679,39 @@ truncateString('boomerang', 7); // 'boom...'
 
 </details>
 
+<br>[⬆ Back to top](#table-of-contents)
 
-[⬆ Back to top](#table-of-contents)
+
+### unescapeHTML
+
+Unescapes escaped HTML characters.
+
+Use `String.replace()` with a regex that matches the characters that need to be unescaped, using a callback function to replace each escaped character instance with its associated unescaped character using a dictionary (object).
+
+```js
+const unescapeHTML = str =>
+  str.replace(
+    /&amp;|&lt;|&gt;|&#39;|&quot;/g,
+    tag =>
+      ({
+        '&amp;': '&',
+        '&lt;': '<',
+        '&gt;': '>',
+        '&#39;': "'",
+        '&quot;': '"'
+      }[tag] || tag)
+  );
+```
+<details>
+<summary>Examples</summary>
+
+```js
+unescapeHTML('&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;'); // '<a href="#">Me & you</a>'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### words
@@ -3707,8 +3735,7 @@ words('python, javaScript & coffee'); // ["python", "javaScript", "coffee"]
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 ## Utility
 
@@ -3731,8 +3758,7 @@ coalesce(null, undefined, '', NaN, 'Waldo'); // ""
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### coalesceFactory
@@ -3755,8 +3781,7 @@ customCoalesce(undefined, null, NaN, '', 'Waldo'); // "Waldo"
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### extendHex
@@ -3785,8 +3810,7 @@ extendHex('05a'); // '#0055aa'
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### getType
@@ -3809,8 +3833,7 @@ getType(new Set([1, 2, 3])); // "set"
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### hexToRGB
@@ -3852,8 +3875,7 @@ hexToRGB('#fff'); // 'rgb(255, 255, 255)'
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### isArray
@@ -3876,8 +3898,7 @@ isArray([1]); // true
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### isBoolean
@@ -3900,8 +3921,7 @@ isBoolean(false); // true
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### isFunction
@@ -3924,8 +3944,7 @@ isFunction(x => x); // true
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### isNumber
@@ -3947,8 +3966,7 @@ isNumber(1); // true
 ```
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### isString
@@ -3971,8 +3989,7 @@ isString('10'); // true
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### isSymbol
@@ -3995,8 +4012,7 @@ isSymbol(Symbol('x')); // true
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### randomHexColorCode
@@ -4023,8 +4039,7 @@ randomHexColorCode(); // "#4144c6"
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### RGBToHex
@@ -4046,8 +4061,7 @@ RGBToHex(255, 165, 1); // 'ffa501'
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### sbdm
@@ -4077,8 +4091,7 @@ console.log(sdbm('age')); // 808122783
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### timeTaken
@@ -4106,8 +4119,7 @@ timeTaken(() => Math.pow(2, 10)); // 1024
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### toDecimalMark
@@ -4127,8 +4139,7 @@ toDecimalMark(12305030388.9087); // "12,305,030,388.9087"
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### toOrdinalSuffix
@@ -4161,8 +4172,7 @@ toOrdinalSuffix('123'); // "123rd"
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ### validateNumber
@@ -4186,8 +4196,7 @@ validateNumber('10'); // true
 
 </details>
 
-
-[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#table-of-contents)
 
 
 ## Credits
