@@ -14,7 +14,7 @@
 
 ## Table of Contents
 
-### 🔌 Adapter
+### Adapter
 
 <details>
 <summary>View contents</summary>
@@ -28,7 +28,7 @@
 
 </details>
 
-### 📚 Array
+### Array
 
 <details>
 <summary>View contents</summary>
@@ -76,7 +76,7 @@
 
 </details>
 
-### 🖥️ Browser
+### Browser
 
 <details>
 <summary>View contents</summary>
@@ -102,7 +102,7 @@
 
 </details>
 
-### ⏱️ Date
+### Date
 
 <details>
 <summary>View contents</summary>
@@ -114,7 +114,7 @@
 
 </details>
 
-### 🎛️ Function
+### Function
 
 <details>
 <summary>View contents</summary>
@@ -128,7 +128,7 @@
 
 </details>
 
-### 🔮 Logic
+### Logic
 
 <details>
 <summary>View contents</summary>
@@ -137,7 +137,7 @@
 
 </details>
 
-### ➗ Math
+### Math
 
 <details>
 <summary>View contents</summary>
@@ -173,7 +173,7 @@
 
 </details>
 
-### 📺 Media
+### Media
 
 <details>
 <summary>View contents</summary>
@@ -182,7 +182,7 @@
 
 </details>
 
-### 📦 Node
+### Node
 
 <details>
 <summary>View contents</summary>
@@ -193,7 +193,7 @@
 
 </details>
 
-### 🗃️ Object
+### Object
 
 <details>
 <summary>View contents</summary>
@@ -209,7 +209,7 @@
 
 </details>
 
-### 📜 String
+### String
 
 <details>
 <summary>View contents</summary>
@@ -236,7 +236,7 @@
 
 </details>
 
-### 💎 Utility
+### Utility
 
 <details>
 <summary>View contents</summary>
@@ -262,12 +262,20 @@
 
 </details>
 
----
- ## 🔌 Adapter
+## Adapter
+
+### call
+
+Given a key and a set of arguments, call them when given a context. Primarily useful in composition.
+
+Use a closure to call a stored key with stored arguments.
 
 ```js
 const call = (key, ...args) => context => context[key](...args);
 ```
+
+<details>
+<summary>Examples</summary>
 
 ```js
 Promise.resolve([1, 2, 3])
@@ -294,6 +302,9 @@ Given a function, return a closure that collects all inputs into an array-accept
 const collectInto = fn => (...args) => fn(args);
 ```
 
+<details>
+<summary>Examples</summary>
+
 ```js
 const Pall = collectInto(Promise.all.bind(Promise));
 let p1 = Promise.resolve(1);
@@ -314,44 +325,20 @@ Flip takes a function as an argument, then makes the first argument the last
 Return a closure that takes variadic inputs, and splices the last argument to make it the first argument before applying the rest.
 
 ```js
-const flip = fn => (...args) => fn(args.pop(), ...args)
-```
-
-```js
-let a = {name: 'John Smith'}
-let b = {}
-const mergeFrom = flip(Object.assign)
-let mergePerson = mergeFrom.bind(null, a)
-mergePerson(b) // == b
-b = {}
-Object.assign(b, a) // == b
-```
-
-</details>
-
-
-[⬆ Back to top](#table-of-contents)
-
-
-### pipeFunctions
-
-Performs left-to-right function composition.
-
-Use `Array.reduce()` with the spread operator (`...`) to perform left-to-right function composition.
-The first (leftmost) function can accept one or more arguments; the remaining functions must be unary.
-
-```js
-const pipeFunctions = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
+const flip = fn => (...args) => fn(args.pop(), ...args);
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```js
-const add5 = x => x + 5;
-const multiply = (x, y) => x * y;
-const multiplyAndAdd5 = pipeFunctions(multiply, add5);
-multiplyAndAdd5(5, 2); // 15
+let a = { name: 'John Smith' };
+let b = {};
+const mergeFrom = flip(Object.assign);
+let mergePerson = mergeFrom.bind(null, a);
+mergePerson(b); // == b
+b = {};
+Object.assign(b, a); // == b
 ```
 
 </details>
@@ -424,6 +411,9 @@ Use closures and the spread operator (`...`) to map the array of arguments to th
 const spreadOver = fn => argsArr => fn(...argsArr);
 ```
 
+<details>
+<summary>Examples</summary>
+
 ```js
 const arrayMax = spreadOver(Math.max);
 arrayMax([1, 2, 3]); // 3
@@ -434,8 +424,7 @@ arrayMax([1, 2, 4]); // 4
 
 <br>[⬆ Back to top](#table-of-contents)
 
----
- ## 📚 Array
+## Array
 
 ### chunk
 
@@ -1448,8 +1437,7 @@ zipObject(['a', 'b'], [1, 2, 3]); // {a: 1, b: 2}
 
 <br>[⬆ Back to top](#table-of-contents)
 
----
- ## 🖥️ Browser
+## Browser
 
 ### arrayToHtmlList
 
@@ -1941,8 +1929,7 @@ UUIDGeneratorBrowser(); // '7982fcfe-5721-4632-bede-6000885be57d'
 
 <br>[⬆ Back to top](#table-of-contents)
 
----
- ## ⏱️ Date
+## Date
 
 ### getDaysDiffBetweenDates
 
@@ -2057,8 +2044,7 @@ tomorrow(); // 2017-12-27 (if current date is 2017-12-26)
 
 <br>[⬆ Back to top](#table-of-contents)
 
----
- ## 🎛️ Function
+## Function
 
 ### chainAsync
 
@@ -2232,8 +2218,7 @@ async function sleepyWork() {
 
 <br>[⬆ Back to top](#table-of-contents)
 
----
- ## 🔮 Logic
+## Logic
 
 ### negate
 
@@ -2257,8 +2242,7 @@ negate(isOdd)(1); // false
 
 <br>[⬆ Back to top](#table-of-contents)
 
----
- ## ➗ Math
+## Math
 
 ### average
 
@@ -2965,8 +2949,7 @@ sum([1, 2, 3, 4]); // 10
 
 <br>[⬆ Back to top](#table-of-contents)
 
----
- ## 📺 Media
+## Media
 
 ### speechSynthesis
 
@@ -2996,8 +2979,7 @@ speechSynthesis('Hello, World'); // // plays the message
 
 <br>[⬆ Back to top](#table-of-contents)
 
----
- ## 📦 Node
+## Node
 
 ### JSONToFile
 
@@ -3086,8 +3068,7 @@ UUIDGeneratorNode(); // '79c7c136-60ee-40a2-beb2-856f1feabefc'
 
 <br>[⬆ Back to top](#table-of-contents)
 
----
- ## 🗃️ Object
+## Object
 
 ### cleanObj
 
@@ -3302,8 +3283,7 @@ truthCheckCollection([{ user: 'Tinky-Winky', sex: 'male' }, { user: 'Dipsy', sex
 
 <br>[⬆ Back to top](#table-of-contents)
 
----
- ## 📜 String
+## String
 
 ### anagrams
 
@@ -3827,8 +3807,7 @@ words('python, javaScript & coffee'); // ["python", "javaScript", "coffee"]
 
 <br>[⬆ Back to top](#table-of-contents)
 
----
- ## 💎 Utility
+## Utility
 
 ### coalesce
 
@@ -4293,4 +4272,3 @@ validateNumber('10'); // true
 ## Credits
 
 *Icons made by [Smashicons](https://www.flaticon.com/authors/smashicons) from [www.flaticon.com](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).*
-
