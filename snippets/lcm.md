@@ -1,14 +1,19 @@
 ### lcm
 
-Returns the least common multiple of two numbers.
+Returns the least common multiple of two or more numbers/arrays.
 
 Use the greatest common divisor (GCD) formula and `Math.abs()` to determine the least common multiple.
 The GCD formula uses recursion.
 
 ```js
-const lcm = (x,y) => {
-  const gcd = (x, y) => !y ? x : gcd(y, x % y);
-  return Math.abs(x*y)/(gcd(x,y));
+const lcm = (...arr) => {
+  const gcd = (x, y) => (!y ? x : gcd(y, x % y));
+  const _lcm = (x, y) => x * y / gcd(x, y);
+  return [].concat(...arr).reduce((a, b) => _lcm(a, b));
 };
-// lcm(12,7) -> 84
+```
+
+```js
+lcm(12, 7); // 84
+lcm([1, 3, 4], 5); // 60
 ```

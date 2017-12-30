@@ -7,12 +7,13 @@ Here's what you can do to help:
 - [Open issues](https://github.com/Chalarangelo/30-seconds-of-code/issues/new) for things you want to see added or modified.
 - Be part of the discussion by helping out with [existing issues](https://github.com/Chalarangelo/30-seconds-of-code/issues) or talking on our [gitter channel](https://gitter.im/30-seconds-of-code/Lobby).
 - Submit [pull requests](https://github.com/Chalarangelo/30-seconds-of-code/pulls) with snippets you have created (see below for guidelines).
-- Tag untagged snippets by running `npm run tagger` and adding the appropriate tag next to the script name in `tag_database`.
-- Fix typos in existing snippets or run `npm run linter` to lint unlinted snippets (yes, this is something we actually want help with, as this can take quite a while to run).
+- Tag uncategorized snippets by running `npm run tagger` and adding the appropriate tag next to the script name in `tag_database`.
+- Fix typos in existing snippets, improve snippet descriptions and explanations or provide better examples.
 
 ### Snippet submission and Pull request guidelines
 
 - **DO NOT MODIFY THE README.md FILE!** Make changes to individual snippet files. You can optionally run `npm run builder` to update the README.md file automatically, based on the changes you have made.
+- **DO NOT MODIFY THE index.html FILE!** Make changes to individual snippet files. You can optionally run `npm run webber` to update the index.md file automatically, based on the changes you have made.
 - **Snippet filenames** must correspond to the title of the snippet. For example, if your snippet is titled `### awesomeSnippet` the filename should be `awesomeSnippet.md`.
   - Use `camelCase`, not `kebab-case` or `snake_case`.
   - Avoid capitalization of words, except if the whole word is capitalized (e.g. `URL` should be capitalized in the filename and the snippet title).
@@ -27,7 +28,7 @@ Here's what you can do to help:
   - Use ES6 notation to define your function. For example `const myFunction = ( arg1, arg2 ) => { }`.
   - Please use Javacript [Semi-Standard Style](https://github.com/Flet/semistandard).
   - Try to keep your snippets' code short and to the point. Use modern techniques and features. Make sure to test your code before submitting.
-  - All snippets must be followed by one (more if necessary) test case after the code, on a new line, in the form of a comment, along with the expected output. The syntax for this is `myFunction('testInput') -> 'testOutput'`. Use multiline comments only if necessary.
+  - All snippets must be followed by one (more if necessary) test case after the code, in a new block enclosed inside ` ```js ` and ` ``` `. The syntax for this is `myFunction('testInput') // 'testOutput'`. Use multiline examples only if necessary.
   - Try to make your function name unique, so that it does not conflict with existing snippets.
   - Snippet functions do not have to handle errors in input, unless it's necessary (e.g. a mathematical function that cannot be extended to negative numbers should handle negative input appropriately).
 - Snippets should be short (usually below 10 lines). If your snippet is longer than that, you can still submit it, and we can help you shorten it or figure out ways to improve it.
@@ -35,6 +36,7 @@ Here's what you can do to help:
 - Snippets *should* be abstract enough to be applied to different scenarios.
 - It is not mandatory but highly appreciated if you provide **test cases** and/or performance tests (we recommend using [jsPerf](https://jsperf.com/)).
 - You can start creating a new snippet, by using the [snippet template](snippet-template.md) to format your snippets.
+- Updating the index.html or README.md files should only be done by altering the scripts in the **scripts** folder or altering their relative static parts in the **static-parts** folder.
 
 ### Additional guidelines and conventions regarding snippets
 

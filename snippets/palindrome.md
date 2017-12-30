@@ -7,8 +7,17 @@ Then, `split('')` into individual characters, `reverse()`, `join('')` and compar
 
 ```js
 const palindrome = str => {
-  const s = str.toLowerCase().replace(/[\W_]/g,'');
-  return s === s.split('').reverse().join('');
-}
-// palindrome('taco cat') -> true
- ```
+  const s = str.toLowerCase().replace(/[\W_]/g, '');
+  return (
+    s ===
+    s
+      .split('')
+      .reverse()
+      .join('')
+  );
+};
+```
+
+```js
+palindrome('taco cat'); // true
+```

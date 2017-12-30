@@ -6,6 +6,10 @@ Use `scrollY`, `scrollHeight` and `clientHeight` to determine if the bottom of t
 
 ```js
 const bottomVisible = () =>
-  document.documentElement.clientHeight + window.scrollY >= (document.documentElement.scrollHeight || document.documentElement.clientHeight);
-// bottomVisible() -> true
+  document.documentElement.clientHeight + window.scrollY >=
+  (document.documentElement.scrollHeight || document.documentElement.clientHeight);
+```
+
+```js
+bottomVisible(); // true
 ```

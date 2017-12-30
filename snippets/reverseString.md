@@ -6,6 +6,13 @@ Use `split('')` and `Array.reverse()` to reverse the order of the characters in 
 Combine characters to get a string using `join('')`.
 
 ```js
-const reverseString = str => str.split('').reverse().join('');
-// reverseString('foobar') -> 'raboof'
+const reverseString = str =>
+  str
+    .split('')
+    .reverse()
+    .join('');
+```
+
+```js
+reverseString('foobar'); // 'raboof'
 ```

@@ -6,6 +6,12 @@ Split the string using `split('')`, `Array.sort()` utilizing `localeCompare()`, 
 
 ```js
 const sortCharactersInString = str =>
-  str.split('').sort((a, b) => a.localeCompare(b)).join('');
-// sortCharactersInString('cabbage') -> 'aabbceg'
+  str
+    .split('')
+    .sort((a, b) => a.localeCompare(b))
+    .join('');
+```
+
+```js
+sortCharactersInString('cabbage'); // 'aabbceg'
 ```

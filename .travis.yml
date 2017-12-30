@@ -1,12 +1,15 @@
 language: node_js
+cache:
+  directories:
+    - node_modules
 node_js:
 - node
 before_install:
-- npm install webber
-- npm install builder
-- npm install tagger
+- npm install -g semistandard
+- npm install -g prettier
 script:
 - npm run tagger
+- npm run linter
 - npm run builder
 - npm run webber
 after_success:

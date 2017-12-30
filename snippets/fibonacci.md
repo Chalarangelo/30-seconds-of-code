@@ -7,6 +7,12 @@ Use `Array.reduce()` to add values into the array, using the sum of the last two
 
 ```js
 const fibonacci = n =>
-  Array.from({ length: n}).reduce((acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i), []);
-// fibonacci(5) -> [0,1,1,2,3]
+  Array.from({ length: n }).reduce(
+    (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),
+    []
+  );
+```
+
+```js
+fibonacci(6); // [0, 1, 1, 2, 3, 5]
 ```
