@@ -19,7 +19,7 @@
     "tagger": "node ./scripts/tag.js",
     "webber": "node ./scripts/web.js",
     "tdd": "node ./scripts/tdd.js",
-    "module": "node .scripts/module.js"
+    "module": "node ./scripts/module.js"
   },
   "repository": {
     "type": "git",
