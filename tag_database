@@ -16,6 +16,7 @@ collatz:math
 collectInto:adapter
 compact:array
 compose:function
+copyToClipboard:browser
 countOccurrences:array
 countVowels:string
 currentURL:browser
@@ -63,17 +64,22 @@ initializeArrayWithRange:array
 initializeArrayWithValues:array
 inRange:math
 intersection:array
+isAbsoluteURL:string
 isArmstrongNumber:math
 isArray:utility
+isArrayLike:utility
 isBoolean:utility
 isDivisible:math
 isEven:math
 isFunction:utility
+isNull:utility
 isNumber:utility
 isPrime:math
 isPrimitive:utility
+isPromiseLike:utility
 isString:utility
 isSymbol:utility
+isValidJSON:utility
 JSONToDate:date
 JSONToFile:node
 last:array
@@ -82,6 +88,7 @@ lowercaseKeys:object
 mapObject:array
 max:math
 median:math
+memoize:function
 min:math
 negate:logic
 nthElement:array
@@ -112,6 +119,7 @@ RGBToHex:utility
 round:math
 runPromisesInSeries:function
 sample:array
+sampleSize:array
 scrollToTop:browser
 sdbm:utility
 select:object
@@ -120,9 +128,11 @@ shallowClone:object
 show:browser
 shuffle:array
 similarity:array
+size:object
 sleep:function
 sortCharactersInString:string
-speechSynthesis:media
+sortedIndex:uncategorized
+speechSynthesis:browser
 splitLines:string
 spreadOver:adapter
 standardDeviation:math
@@ -149,5 +159,6 @@ UUIDGeneratorNode:node
 validateNumber:utility
 without:array
 words:string
+yesNo:utility
 zip:array
 zipObject:array

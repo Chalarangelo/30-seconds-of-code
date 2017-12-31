@@ -121,7 +121,7 @@ code {
   transform: scale(1);  /* Deals with the issue described in #243 */
 }
 pre { font-size: 1rem; border: 0.0625rem solid var(--secondary-border-color); border-radius: var(--universal-border-radius);}
-.group{position:relative;margin-top:2em;margin-bottom:-1em}
+.group{position:relative;margin-top:2em;margin-bottom:1em}
 .search{font-size:14px;margin-top:-.1em;display:block;width:100%;border:none;border-bottom:1px solid var(--nav-link-color)}
 .search:focus{outline:none}
 label#search-label{color:var(--nav-link-color);font-size:18px;font-weight:400;position:absolute;left:5px;top:10px}
