@@ -250,6 +250,7 @@
 * [`isFunction`](#isfunction)
 * [`isNull`](#isnull)
 * [`isNumber`](#isnumber)
+* [`isPrimitive`](#isprimitive)
 * [`isPromiseLike`](#ispromiselike)
 * [`isString`](#isstring)
 * [`isSymbol`](#issymbol)
@@ -4199,6 +4200,37 @@ const isNumber = val => typeof val === 'number';
 isNumber('1'); // false
 isNumber(1); // true
 ```
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isPrimitive
+
+Returns a boolean determining if the supplied value is primitive or not.
+
+Use `Array.includes()` on an array of type strings which are not primitive,
+supplying the type using `typeof`.
+Since `typeof null` evaluates to `'object'`, it needs to be directly compared.
+
+```js
+const isPrimitive = val => !['object', 'function'].includes(typeof val) || val === null;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isPrimitive(window.someNonExistentProperty); // true
+isPrimitive(null); // true
+isPrimitive(50); // true
+isPrimitive('Hello!'); // true
+isPrimitive(false); // true
+isPrimitive(Symbol()); // true
+isPrimitive([]); // false
+isPrimitive(new String('Hello!')); // false
+```
+
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
