@@ -84,6 +84,7 @@ lowercaseKeys:object
 mapObject:array
 max:math
 median:math
+memoize:function
 min:math
 negate:logic
 nthElement:array
