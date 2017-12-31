@@ -130,6 +130,7 @@ similarity:array
 size:object
 sleep:function
 sortCharactersInString:string
+sortedIndex:uncategorized
 speechSynthesis:browser
 splitLines:string
 spreadOver:adapter
