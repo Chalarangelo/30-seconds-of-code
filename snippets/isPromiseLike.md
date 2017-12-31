@@ -6,11 +6,17 @@ Check if the object is not `null`, its `typeof` matches either `object` or `func
 
 ```js
 const isPromiseLike = obj =>
-  obj !== null && (typeof obj === 'object' || typeof obj === 'function') && typeof obj.then === 'function';
+  obj !== null &&
+  (typeof obj === 'object' || typeof obj === 'function') &&
+  typeof obj.then === 'function';
 ```
 
 ```js
-isPromiseLike({then:function () {return ''}}); // true
+isPromiseLike({
+  then: function() {
+    return '';
+  }
+}); // true
 isPromiseLike(null); // false
 isPromiseLike({}); // false
 ```
