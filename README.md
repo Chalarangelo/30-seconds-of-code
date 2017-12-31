@@ -9,12 +9,13 @@
 - Use <kbd>Ctrl</kbd> + <kbd>F</kbd> or <kbd>command</kbd> + <kbd>F</kbd> to search for a snippet.
 - Contributions welcome, please read the [contribution guide](CONTRIBUTING.md).
 - Snippets are written in ES6, use the [Babel transpiler](https://babeljs.io/) to ensure backwards-compatibility.
+- You can import these snippets into your text editor of choice (VSCode, Atom, Sublime) using the files found in [this repo](https://github.com/Rob-Rychs/30-seconds-of-code-texteditorsnippets).
 - You can import these snippets into Alfred 3, using [this file](https://github.com/lslvxy/30-seconds-of-code-alfredsnippets).
 - You can find a package with all the snippets on [npm](https://www.npmjs.com/package/tsoc). Bear in mind that most of these snippets are not production-ready.
 
 ## Table of Contents
 
-### Adapter
+### 🔌 Adapter
 
 <details>
 <summary>View contents</summary>
@@ -28,7 +29,7 @@
 
 </details>
 
-### Array
+### 📚 Array
 
 <details>
 <summary>View contents</summary>
@@ -63,6 +64,7 @@
 * [`quickSort`](#quicksort)
 * [`remove`](#remove)
 * [`sample`](#sample)
+* [`sampleSize`](#samplesize)
 * [`shuffle`](#shuffle)
 * [`similarity`](#similarity)
 * [`symmetricDifference`](#symmetricdifference)
@@ -76,13 +78,14 @@
 
 </details>
 
-### Browser
+### 🌐 Browser
 
 <details>
 <summary>View contents</summary>
 
 * [`arrayToHtmlList`](#arraytohtmllist)
 * [`bottomVisible`](#bottomvisible)
+* [`copyToClipboard`](#copytoclipboard)
 * [`currentURL`](#currenturl)
 * [`detectDeviceType`](#detectdevicetype)
 * [`elementIsVisibleInViewport`](#elementisvisibleinviewport)
@@ -97,12 +100,13 @@
 * [`scrollToTop`](#scrolltotop)
 * [`setStyle`](#setstyle)
 * [`show`](#show)
+* [`speechSynthesis`](#speechsynthesis)
 * [`toggleClass`](#toggleclass)
 * [`UUIDGeneratorBrowser`](#uuidgeneratorbrowser)
 
 </details>
 
-### Date
+### ⏱️ Date
 
 <details>
 <summary>View contents</summary>
@@ -114,7 +118,7 @@
 
 </details>
 
-### Function
+### 🎛️ Function
 
 <details>
 <summary>View contents</summary>
@@ -123,12 +127,13 @@
 * [`compose`](#compose)
 * [`curry`](#curry)
 * [`functionName`](#functionname)
+* [`memoize`](#memoize)
 * [`runPromisesInSeries`](#runpromisesinseries)
 * [`sleep`](#sleep)
 
 </details>
 
-### Logic
+### 🔮 Logic
 
 <details>
 <summary>View contents</summary>
@@ -137,7 +142,7 @@
 
 </details>
 
-### Math
+### ➗ Math
 
 <details>
 <summary>View contents</summary>
@@ -173,16 +178,7 @@
 
 </details>
 
-### Media
-
-<details>
-<summary>View contents</summary>
-
-* [`speechSynthesis`](#speechsynthesis)
-
-</details>
-
-### Node
+### 📦 Node
 
 <details>
 <summary>View contents</summary>
@@ -193,7 +189,7 @@
 
 </details>
 
-### Object
+### 🗃️ Object
 
 <details>
 <summary>View contents</summary>
@@ -205,11 +201,12 @@
 * [`orderBy`](#orderby)
 * [`select`](#select)
 * [`shallowClone`](#shallowclone)
+* [`size`](#size)
 * [`truthCheckCollection`](#truthcheckcollection)
 
 </details>
 
-### String
+### 📜 String
 
 <details>
 <summary>View contents</summary>
@@ -222,6 +219,7 @@
 * [`escapeHTML`](#escapehtml)
 * [`escapeRegExp`](#escaperegexp)
 * [`fromCamelCase`](#fromcamelcase)
+* [`isAbsoluteURL`](#isabsoluteurl)
 * [`palindrome`](#palindrome)
 * [`repeatString`](#repeatstring)
 * [`reverseString`](#reversestring)
@@ -236,7 +234,7 @@
 
 </details>
 
-### Utility
+### 💎 Utility
 
 <details>
 <summary>View contents</summary>
@@ -247,11 +245,15 @@
 * [`getType`](#gettype)
 * [`hexToRGB`](#hextorgb)
 * [`isArray`](#isarray)
+* [`isArrayLike`](#isarraylike)
 * [`isBoolean`](#isboolean)
 * [`isFunction`](#isfunction)
+* [`isNull`](#isnull)
 * [`isNumber`](#isnumber)
+* [`isPromiseLike`](#ispromiselike)
 * [`isString`](#isstring)
 * [`isSymbol`](#issymbol)
+* [`isValidJSON`](#isvalidjson)
 * [`randomHexColorCode`](#randomhexcolorcode)
 * [`RGBToHex`](#rgbtohex)
 * [`sdbm`](#sdbm)
@@ -259,10 +261,21 @@
 * [`toDecimalMark`](#todecimalmark)
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`validateNumber`](#validatenumber)
+* [`yesNo`](#yesno)
 
 </details>
 
-## Adapter
+### _Uncategorized_
+
+<details>
+<summary>View contents</summary>
+
+* [`sortedIndex`](#sortedindex)
+
+</details>
+
+---
+ ## 🔌 Adapter
 
 ### call
 
@@ -424,7 +437,8 @@ arrayMax([1, 2, 4]); // 4
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Array
+---
+ ## 📚 Array
 
 ### chunk
 
@@ -1190,6 +1204,38 @@ sample([3, 7, 9, 11]); // 9
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### sampleSize
+
+Gets `n` random elements at unique keys from `array` up to the size of `array`.
+
+Shuffle the array using the [Fisher-Yates algorithm](https://github.com/chalarangelo/30-seconds-of-code#shuffle).
+Use `Array.slice()` to get the first `n` elements.
+Omit the second argument, `n` to get only one element at random from the array.
+
+```js
+const sampleSize = ([...arr], n = 1) => {
+  let m = arr.length;
+  while (m) {
+    const i = Math.floor(Math.random() * m--);
+    [arr[m], arr[i]] = [arr[i], arr[m]];
+  }
+  return arr.slice(0, n);
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+sampleSize([1, 2, 3], 2); // [3,1]
+sampleSize([1, 2, 3], 4); // [2,3,1]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### shuffle
 
 Randomizes the order of the values of an array, returning a new array.
@@ -1437,7 +1483,8 @@ zipObject(['a', 'b'], [1, 2, 3]); // {a: 1, b: 2}
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Browser
+---
+ ## 🌐 Browser
 
 ### arrayToHtmlList
 
@@ -1479,6 +1526,48 @@ const bottomVisible = () =>
 
 ```js
 bottomVisible(); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### copyToClipboard
+
+Copy a string to the clipboard. Only works as a result of user action (i.e. inside a `click` event listener).
+
+Create a new `<textarea>` element, fill it with the supplied data and add it to the HTML document.
+Use `Selection.getRangeAt()`to store the selected range (if any).
+Use `document.execCommand('copy')` to copy to the clipboard.
+Remove the `<textarea>` element from the HTML document.
+Finally, use `Selection().addRange()` to recover the original selected range (if any).
+
+```js
+const copyToClipboard = str => {
+  const el = document.createElement('textarea');
+  el.value = str;
+  el.setAttribute('readonly', '');
+  el.style.position = 'absolute';
+  el.style.left = '-9999px';
+  document.body.appendChild(el);
+  const selected =
+    document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false;
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+  if (selected) {
+    document.getSelection().removeAllRanges();
+    document.getSelection().addRange(selected);
+  }
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+copyToClipboard('Lorem ipsum'); // 'Lorem ipsum' copied to clipboard.
 ```
 
 </details>
@@ -1842,6 +1931,35 @@ show(document.querySelectorAll('img')); // Shows all <img> elements on the page
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### speechSynthesis
+
+Performs speech synthesis (experimental).
+
+Use `SpeechSynthesisUtterance.voice` and `window.speechSynthesis.getVoices()` to convert a message to speech.
+Use `window.speechSynthesis.speak()` to play the message.
+
+Learn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
+
+```js
+const speechSynthesis = message => {
+  const msg = new SpeechSynthesisUtterance(message);
+  msg.voice = window.speechSynthesis.getVoices()[0];
+  window.speechSynthesis.speak(msg);
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+speechSynthesis('Hello, World'); // // plays the message
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### toggleClass
 
 Toggle a class for an element.
@@ -1888,7 +2006,8 @@ UUIDGeneratorBrowser(); // '7982fcfe-5721-4632-bede-6000885be57d'
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Date
+---
+ ## ⏱️ Date
 
 ### getDaysDiffBetweenDates
 
@@ -1988,7 +2107,8 @@ tomorrow(); // 2017-12-27 (if current date is 2017-12-26)
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Function
+---
+ ## 🎛️ Function
 
 ### chainAsync
 
@@ -2103,6 +2223,35 @@ functionName(Math.max); // max (logged in debug channel of console)
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### memoize
+
+Returns the memoized (cached) function.
+
+Use `Object.create(null)` to create an empty object without `Object.prototype` (so that those properties are not resolved if the input value is something like `'hasOwnProperty'`).
+Return a function which takes a single argument to be supplied to the memoized function by first checking if the function's output for that specific input value is already cached, or store and return it if not.
+
+```js
+const memoize = fn => {
+  const cache = Object.create(null);
+  return value => cache[value] || (cache[value] = fn(value));
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+// See the `anagrams` snippet.
+const anagramsCached = memoize(anagrams);
+anagramsCached('javascript'); // takes a long time
+anagramsCached('javascript'); // returns virtually instantly since it's now cached
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### runPromisesInSeries
 
 Runs an array of promises in series.
@@ -2151,7 +2300,8 @@ async function sleepyWork() {
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Logic
+---
+ ## 🔮 Logic
 
 ### negate
 
@@ -2175,7 +2325,8 @@ negate(isOdd)(1); // false
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Math
+---
+ ## ➗ Math
 
 ### average
 
@@ -2398,7 +2549,7 @@ const fibonacciUntilNum = num => {
 <summary>Examples</summary>
 
 ```js
-fibonacciCountUntilNum(10); // 7
+fibonacciUntilNum(10); // [ 0, 1, 1, 2, 3, 5, 8 ]
 ```
 
 </details>
@@ -2568,7 +2719,7 @@ Return `false` if any of them divides the given number, else return `true`, unle
 ```js
 const isPrime = num => {
   const boundary = Math.floor(Math.sqrt(num));
-  for (var i = 2; i * i <= boundary; i++) if (num % i == 0) return false;
+  for (var i = 2; i <= boundary; i++) if (num % i == 0) return false;
   return num >= 2;
 };
 ```
@@ -2880,37 +3031,8 @@ sum([1, 2, 3, 4]); // 10
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Media
-
-### speechSynthesis
-
-Performs speech synthesis (experimental).
-
-Use `SpeechSynthesisUtterance.voice` and `window.speechSynthesis.getVoices()` to convert a message to speech.
-Use `window.speechSynthesis.speak()` to play the message.
-
-Learn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
-
-```js
-const speechSynthesis = message => {
-  const msg = new SpeechSynthesisUtterance(message);
-  msg.voice = window.speechSynthesis.getVoices()[0];
-  window.speechSynthesis.speak(msg);
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-speechSynthesis('Hello, World'); // // plays the message
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-## Node
+---
+ ## 📦 Node
 
 ### JSONToFile
 
@@ -2999,7 +3121,8 @@ UUIDGeneratorNode(); // '79c7c136-60ee-40a2-beb2-856f1feabefc'
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Object
+---
+ ## 🗃️ Object
 
 ### cleanObj
 
@@ -3193,6 +3316,40 @@ a === b; // false
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### size
+
+Get size of arrays, objects or strings.
+
+Get type of `value` (`array`, `object` or `string`). 
+Use `length` property for arrays. 
+Use `length` or `size` value if available or number of keys for objects. 
+Use `size` of a [`Blob` object](https://developer.mozilla.org/en-US/docs/Web/API/Blob) created from `value` for strings.
+
+Split strings into array of characters with `split('')` and return its length.
+
+```js
+const size = value =>
+  Array.isArray(value)
+    ? value.length
+    : value && typeof value === 'object'
+      ? value.size || value.length || Object.keys(value).length
+      : typeof value === 'string' ? new Blob([value]).size : 0;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+size([1, 2, 3, 4, 5]); // 5
+size('size'); // 4
+size({ one: 1, two: 2, three: 3 }); // 3
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### truthCheckCollection
 
 Checks if the predicate (second argument) is truthy on all elements of a collection (first argument).
@@ -3214,7 +3371,8 @@ truthCheckCollection([{ user: 'Tinky-Winky', sex: 'male' }, { user: 'Dipsy', sex
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## String
+---
+ ## 📜 String
 
 ### anagrams
 
@@ -3273,7 +3431,7 @@ byteSize('Hello World'); // 11
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### Capitalize
+### capitalize
 
 Capitalizes the first letter of a string.
 
@@ -3420,6 +3578,30 @@ const fromCamelCase = (str, separator = '_') =>
 fromCamelCase('someDatabaseFieldName', ' '); // 'some database field name'
 fromCamelCase('someLabelThatNeedsToBeCamelized', '-'); // 'some-label-that-needs-to-be-camelized'
 fromCamelCase('someJavascriptProperty', '_'); // 'some_javascript_property'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isAbsoluteURL
+
+Returns `true` if the given string is an absolute URL, `false` otherwise.
+
+Use a regular expression to test if the string is an absolute URL.
+
+```js
+const isAbsoluteURL = str => /^[a-z][a-z0-9+.-]*:/.test(str);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isAbsoluteURL('https://google.com'); // true
+isAbsoluteURL('ftp://www.myserver.net'); // true
+isAbsoluteURL('/foo/bar'); // false
 ```
 
 </details>
@@ -3633,13 +3815,12 @@ Break the string into words and combine them using `_` as a separator.
 For more detailed explanation of this Regex, [visit this Site](https://regex101.com/r/bMCgAB/1).
 
 ```js
-const toSnakeCase = str => {
+const toSnakeCase = str =>
   str &&
-    str
-      .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
-      .map(x => x.toLowerCase())
-      .join('_');
-};
+  str
+    .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+    .map(x => x.toLowerCase())
+    .join('_');
 ```
 
 <details>
@@ -3738,7 +3919,8 @@ words('python, javaScript & coffee'); // ["python", "javaScript", "coffee"]
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Utility
+---
+ ## 💎 Utility
 
 ### coalesce
 
@@ -3902,6 +4084,35 @@ isArray([1]); // true
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### isArrayLike
+
+Checks if the provided argument is array-like (i.e. is iterable).
+
+Check that the object is not a function or `null` and that its `length` property is a non-negative integer below `Number.MAX_SAFE_INTEGER`.
+
+```js
+const isArrayLike = val =>
+  val != null &&
+  typeof val != 'function' &&
+  val.length > -1 &&
+  val.length % 1 == 0 &&
+  val.length <= Number.MAX_SAFE_INTEGER;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isArrayLike(document.querySelectorAll('.className')); // true
+isArrayLike('abc'); // true
+isArrayLike(null); // false
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### isBoolean
 
 Checks if the given argument is a native boolean element.
@@ -3948,6 +4159,29 @@ isFunction(x => x); // true
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### isNull
+
+Returns `true` if the specified value is `null`, `false` otherwise.
+
+Use the strict equality operator to check if the value and of `val` are equal to `null`. 
+
+```js
+const isNull = val => val === null;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isNull(null); // true
+isNull('null'); // false
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### isNumber
 
 Checks if the given argument is a number.
@@ -3965,6 +4199,37 @@ const isNumber = val => typeof val === 'number';
 isNumber('1'); // false
 isNumber(1); // true
 ```
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isPromiseLike
+
+Returns `true` if an object looks like a [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), `false` otherwise.
+
+Check if the object is not `null`, its `typeof` matches either `object` or `function` and if it has a `.then` property, which is also a `function`.
+
+```js
+const isPromiseLike = obj =>
+  obj !== null &&
+  (typeof obj === 'object' || typeof obj === 'function') &&
+  typeof obj.then === 'function';
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isPromiseLike({
+  then: function() {
+    return '';
+  }
+}); // true
+isPromiseLike(null); // false
+isPromiseLike({}); // false
+```
+
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -4009,6 +4274,37 @@ const isSymbol = val => typeof val === 'symbol';
 ```js
 isSymbol('x'); // false
 isSymbol(Symbol('x')); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isValidJSON
+
+Checks if the provided argument is a valid JSON.
+
+Use `JSON.parse()` and a `try... catch` block to check if the provided argument is a valid JSON.
+
+```js
+const isValidJSON = obj => {
+  try {
+    JSON.parse(obj);
+    return true;
+  } catch (e) {
+    return false;
+  }
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isValidJSON('{"name":"Adam","age":20}'); // true
+isValidJSON('{"name":"Adam",age:"20"}'); // false
+isValidJSON(null); // true
 ```
 
 </details>
@@ -4198,6 +4494,65 @@ validateNumber('10'); // true
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
+
+
+### yesNo
+
+Returns `true` if the string is `y`/`yes` or `false` if the string is `n`/`no`.
+
+Use `RegExp.test()` to check if the string evaluates to `y/yes` or `n/no`.
+Omit the second argument, `def` to set the default answer as `no`.
+
+```js
+const yesNo = (val, def = false) =>
+  /^(y|yes)$/i.test(val) ? true : /^(n|no)$/i.test(val) ? false : def;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+yesNo('Y'); // true
+yesNo('yes'); // true
+yesNo('No'); // false
+yesNo('Foo', true); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+---
+ ## _Uncategorized_
+
+### sortedIndex
+
+Returns the lowest index at which value should be inserted into array in order to maintain its sort order.
+
+Check if the array is sorted in descending order (loosely).
+Use `Array.findIndex()` to find the appropriate index where the element should be inserted.
+
+```js
+const sortedIndex = (arr, n) => {
+  const isDescending = arr[0] > arr[arr.length - 1];
+  const index = arr.findIndex(el => (isDescending ? n >= el : n <= el));
+  return index === -1 ? arr.length : index;
+};
+```
+
+```js
+sortedIndex([5, 3, 2, 1], 4); // 1
+sortedIndex([30, 50], 40); // 1
+```
+
+<br>[⬆ back to top](#table-of-contents)
+
+
+## Collaborators
+
+| [<img src="https://github.com/Chalarangelo.png" width="100px;"/>](https://github.com/Chalarangelo)<br/> [<sub>Angelos Chalaris</sub>](https://github.com/Chalarangelo) | [<img src="https://github.com/Pl4gue.png" width="100px;"/>](https://github.com/Pl4gue)<br/> [<sub>David Wu</sub>](https://github.com/Pl4gue) | [<img src="https://github.com/fejes713.png" width="100px;"/>](https://github.com/fejes713)<br/> [<sub>Stefan Feješ</sub>](https://github.com/fejes713)  | [<img src="https://github.com/kingdavidmartins.png" width="100px;"/>](https://github.com/kingdavidmartins)<br/> [<sub>King David Martins</sub>](https://github.com/iamsoorena) | [<img src="https://github.com/iamsoorena.png" width="100px;"/>](https://github.com/iamsoorena)<br/> [<sub>Soorena Soleimani</sub>](https://github.com/iamsoorena) |
+| --- | --- | --- | --- | --- |
+| [<img src="https://github.com/elderhsouza.png" width="100px;"/>](https://github.com/elderhsouza)<br/> [<sub>Elder Henrique Souza</sub>](https://github.com/elderhsouza) | [<img src="https://github.com/skatcat31.png" width="100px;"/>](https://github.com/skatcat31)<br/> [<sub>Robert Mennell</sub>](https://github.com/skatcat31) | [<img src="https://github.com/atomiks.png" width="100px;"/>](https://github.com/atomiks)<br/> [<sub>atomiks</sub>](https://github.com/atomiks)  |
 
 
 ## Credits
