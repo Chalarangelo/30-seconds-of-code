@@ -8,8 +8,10 @@ Use `JSON.parse()` and a `try... catch` block to check if the provided argument 
 const isValidJSON = obj => {
   try {
     JSON.parse(obj);
-    return true;
-  } catch (e) {
+    if (o && typeof o === "object") {
+            return true;
+        }
+} catch (e) {
     return false;
   }
 };
