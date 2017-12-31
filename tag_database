@@ -66,7 +66,7 @@ inRange:math
 intersection:array
 isArmstrongNumber:math
 isArray:utility
-isArrayLike:uncategorized
+isArrayLike:utility
 isBoolean:utility
 isDivisible:math
 isEven:math
@@ -77,7 +77,7 @@ isPrime:math
 isPrimitive:utility
 isString:utility
 isSymbol:utility
-isValidJSON:uncategorized
+isValidJSON:utility
 JSONToDate:date
 JSONToFile:node
 last:array
