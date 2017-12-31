@@ -518,7 +518,7 @@ isArmstrongNumber(56); // false
 </code></pre><pre><code class="language-js">isEven(3); // false
 </code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isprime">isPrime</h3></div><div class="section double-padded"><p>Checks if the provided integer is a prime number.</p><p>Check numbers from <code>2</code> to the square root of the given number. Return <code>false</code> if any of them divides the given number, else return <code>true</code>, unless the number is less than <code>2</code>.</p><pre><code class="language-js">const isPrime = num =&gt; {
   const boundary = Math.floor(Math.sqrt(num));
-  for (var i = 2; i * i &lt;= boundary; i++) if (num % i == 0) return false;
+  for (var i = 2; i &lt;= boundary; i++) if (num % i == 0) return false;
   return num &gt;= 2;
 };
 </code></pre><pre><code class="language-js">isPrime(11); // true
