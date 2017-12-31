@@ -4285,13 +4285,13 @@ isSymbol(Symbol('x')); // true
 
 Checks if the provided argument is a valid JSON.
 
-Use `JSON.parse()` and a `try... catch` block to check if the provided argument is a valid JSON and non-null.
+Use `JSON.parse()` and a `try... catch` block to check if the provided argument is a valid JSON.
 
 ```js
 const isValidJSON = obj => {
   try {
     JSON.parse(obj);
-    return !!obj;
+    return true;
   } catch (e) {
     return false;
   }
@@ -4304,6 +4304,7 @@ const isValidJSON = obj => {
 ```js
 isValidJSON('{"name":"Adam","age":20}'); // true
 isValidJSON('{"name":"Adam",age:"20"}'); // false
+isValidJSON(null); // true
 ```
 
 </details>

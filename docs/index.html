@@ -882,16 +882,17 @@ isString('10'); // true
 </code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="issymbol">isSymbol</h3></div><div class="section double-padded"><p>Checks if the given argument is a symbol.</p><p>Use <code>typeof</code> to check if a value is classified as a symbol primitive.</p><pre><code class="language-js">const isSymbol = val =&gt; typeof val === 'symbol';
 </code></pre><pre><code class="language-js">isSymbol('x'); // false
 isSymbol(Symbol('x')); // true
-</code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isvalidjson">isValidJSON</h3></div><div class="section double-padded"><p>Checks if the provided argument is a valid JSON.</p><p>Use <code>JSON.parse()</code> and a <code>try... catch</code> block to check if the provided argument is a valid JSON and non-null.</p><pre><code class="language-js">const isValidJSON = obj =&gt; {
+</code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isvalidjson">isValidJSON</h3></div><div class="section double-padded"><p>Checks if the provided argument is a valid JSON.</p><p>Use <code>JSON.parse()</code> and a <code>try... catch</code> block to check if the provided argument is a valid JSON.</p><pre><code class="language-js">const isValidJSON = obj =&gt; {
   try {
     JSON.parse(obj);
-    return !!obj;
+    return true;
   } catch (e) {
     return false;
   }
 };
 </code></pre><pre><code class="language-js">isValidJSON('{&quot;name&quot;:&quot;Adam&quot;,&quot;age&quot;:20}'); // true
 isValidJSON('{&quot;name&quot;:&quot;Adam&quot;,age:&quot;20&quot;}'); // false
+isValidJSON(null); // true
 </code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="randomhexcolorcode">randomHexColorCode</h3></div><div class="section double-padded"><p>Generates a random hexadecimal color code.</p><p>Use <code>Math.random</code> to generate a random 24-bit(6x4bits) hexadecimal number. Use bit shifting and then convert it to an hexadecimal String using <code>toString(16)</code>.</p><pre><code class="language-js">const randomHexColorCode = () =&gt; {
   let n = ((Math.random() * 0xfffff) | 0).toString(16);
   return '#' + (n.length !== 6 ? ((Math.random() * 0xf) | 0).toString(16) + n : n);
