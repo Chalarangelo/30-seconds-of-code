@@ -6,7 +6,7 @@ Convert the given number into an array of digits. Use `Math.pow()` to get the ap
 
 ```js
 const isArmstrongNumber = digits =>
-  (arr => arr.reduce((a, d) => a + Math.pow(parseInt(d), arr.length), 0) == digits)(
+  (arr => arr.reduce((a, d) => a + parseInt(d) ** arr.length, 0) == digits)(
     (digits + '').split('')
   );
 ```
