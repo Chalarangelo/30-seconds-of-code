@@ -1,6 +1,6 @@
 ### copyToClipboard
 
-Copy a string to the clipboard.
+Copy a string to the clipboard. Only works as a result of user action (i.e. inside a `click` event listener).
 
 Create a new `<textarea>` element, fill it with the supplied data and add it to the HTML document.
 Use `document.execCommand('copy')` to copy to the clipboard.
