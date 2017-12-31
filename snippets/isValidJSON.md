@@ -2,15 +2,13 @@
 
 Checks if the provided argument is a valid JSON.
 
-Use `JSON.parse()` and a `try... catch` block to check if the provided argument is a valid JSON.
+Use `JSON.parse()` and a `try... catch` block to check if the provided argument is a valid JSON and non-null.
 
 ```js
 const isValidJSON = obj => {
   try {
     JSON.parse(obj);
-    if (o && typeof o === "object") {
-            return true;
-        }
+    return !!obj;
 } catch (e) {
     return false;
   }
