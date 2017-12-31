@@ -71,6 +71,7 @@ isEven:math
 isFunction:utility
 isNumber:utility
 isPrime:math
+isPrimitive:utility
 isString:utility
 isSymbol:utility
 JSONToDate:date
