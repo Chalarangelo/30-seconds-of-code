@@ -75,6 +75,7 @@ isFunction:utility
 isNull:utility
 isNumber:utility
 isPrime:math
+isPrimitive:utility
 isPromiseLike:utility
 isString:utility
 isSymbol:utility
