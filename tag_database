@@ -16,6 +16,7 @@ collatz:math
 collectInto:adapter
 compact:array
 compose:function
+copyToClipboard:browser
 countOccurrences:array
 countVowels:string
 currentURL:browser
