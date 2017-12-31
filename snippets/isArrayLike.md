@@ -10,7 +10,7 @@ const isArrayLike = val =>
 ```
 
 ```js
-isArrayLike(document.querySelector('.className')); // true
+isArrayLike(document.querySelectorAll('.className')); // true
 isArrayLike('abc'); // true
 isArrayLike(null); // false
 ```
