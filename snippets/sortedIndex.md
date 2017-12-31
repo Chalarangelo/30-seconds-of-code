@@ -1,14 +1,12 @@
 ### sortedIndex
 
-Returns the lowest index at which value should be inserted into array in order to maintain its sort order
+Returns the lowest index at which value should be inserted into array in order to maintain its sort order.
 
 ```js
 const sortedIndex = (arr,n) => {
-    arr[0] > arr[1] ? (anarray = arr.reverse(),isReversed = true) : (anarray = arr,isReversed = false);  
-	val = anarray.findIndex( el => {
-	return n <= el
-    })
-	return val === -1 ? arr.length : isReversed ? arr.length - val : val
+  let [anarray, isReversed] = arr[0] > arr[1] ? [arr.reverse(), true] : [arr, false]; 
+  let val = anarray.findIndex(el => n <= el);
+  return val === -1 ? arr.length : isReversed ? arr.length - val : val
 }
 ```
 
