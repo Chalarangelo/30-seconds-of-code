@@ -125,6 +125,7 @@
 * [`compose`](#compose)
 * [`curry`](#curry)
 * [`functionName`](#functionname)
+* [`memoize`](#memoize)
 * [`runPromisesInSeries`](#runpromisesinseries)
 * [`sleep`](#sleep)
 
@@ -255,6 +256,15 @@
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`validateNumber`](#validatenumber)
 * [`yesNo`](#yesno)
+
+</details>
+
+### _Uncategorized_
+
+<details>
+<summary>View contents</summary>
+
+* [`sampleSize`](#samplesize)
 
 </details>
 
@@ -2195,6 +2205,35 @@ const functionName = fn => (console.debug(fn.name), fn);
 
 ```js
 functionName(Math.max); // max (logged in debug channel of console)
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### memoize
+
+Returns the memoized (cached) function.
+
+Use `Object.create(null)` to create an empty object without `Object.prototype` (so that those properties are not resolved if the input value is something like `'hasOwnProperty'`).
+Return a function which takes a single argument to be supplied to the memoized function by first checking if the function's output for that specific input value is already cached, or store and return it if not.
+
+```js
+const memoize = fn => {
+  const cache = Object.create(null);
+  return value => cache[value] || (cache[value] = fn(value));
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+// See the `anagrams` snippet.
+const anagramsCached = memoize(anagrams);
+anagramsCached('javascript'); // takes a long time
+anagramsCached('javascript'); // returns virtually instantly since it's now cached
 ```
 
 </details>
@@ -4369,6 +4408,35 @@ yesNo('Foo', true); // true
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
+
+---
+ ## _Uncategorized_
+
+### sampleSize
+
+Gets `n` random elements at unique keys from `array` up to the size of `array`.
+
+Shuffle the array using the [Fisher-Yates algorithm](https://github.com/chalarangelo/30-seconds-of-code#shuffle).
+Use `Array.slice()` to get the first `n` elements.
+Omit the second argument, `n` to get only one element at random from the array.
+
+```js
+const sampleSize = ([...arr], n = 1) => {
+  let m = arr.length;
+  while (m) {
+    const i = Math.floor(Math.random() * m--);
+    [arr[m], arr[i]] = [arr[i], arr[m]];
+  }
+  return arr.slice(0, n);
+};
+```
+
+```js
+sampleSize([1, 2, 3], 2); // [3,1]
+sampleSize([1, 2, 3], 4); // [2,3,1]
+```
+
+<br>[⬆ back to top](#table-of-contents)
 
 
 ## Collaborators
