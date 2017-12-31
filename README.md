@@ -199,6 +199,7 @@
 * [`orderBy`](#orderby)
 * [`select`](#select)
 * [`shallowClone`](#shallowclone)
+* [`size`](#size)
 * [`truthCheckCollection`](#truthcheckcollection)
 
 </details>
@@ -255,15 +256,6 @@
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`validateNumber`](#validatenumber)
 * [`yesNo`](#yesno)
-
-</details>
-
-### _Uncategorized_
-
-<details>
-<summary>View contents</summary>
-
-* [`size`](#size)
 
 </details>
 
@@ -3248,6 +3240,40 @@ a === b; // false
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### size
+
+Get size of arrays, objects or strings.
+
+Get type of `value` (`array`, `object` or `string`). 
+Use `length` property for arrays. 
+Use `length` or `size` value if available or number of keys for objects. 
+Use `size` of a [`Blob` object](https://developer.mozilla.org/en-US/docs/Web/API/Blob) created from `value` for strings.
+
+Split strings into array of characters with `split('')` and return its length.
+
+```js
+const size = value =>
+  Array.isArray(value)
+    ? value.length
+    : value && typeof value === 'object'
+      ? value.size || value.length || Object.keys(value).length
+      : typeof value === 'string' ? new Blob([value]).size : 0;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+size([1, 2, 3, 4, 5]); // 5
+size('size'); // 4
+size({ one: 1, two: 2, three: 3 }); // 3
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### truthCheckCollection
 
 Checks if the predicate (second argument) is truthy on all elements of a collection (first argument).
@@ -4304,37 +4330,6 @@ yesNo('Foo', true); // true
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
-
----
- ## _Uncategorized_
-
-### size
-
-Get size of arrays, objects or strings.
-
-Get type of `value` (`array`, `object` or `string`). 
-Use `length` property for arrays. 
-Use `length` or `size` value if available or number of keys for objects. 
-Use `size` of a [`Blob` object](https://developer.mozilla.org/en-US/docs/Web/API/Blob) created from `value` for strings.
-
-Split strings into array of characters with `split('')` and return its length.
-
-```js
-const size = value =>
-  Array.isArray(value)
-    ? value.length
-    : value && typeof value === 'object'
-      ? value.size || value.length || Object.keys(value).length
-      : typeof value === 'string' ? new Blob([value]).size : 0;
-```
-
-```js
-size([1, 2, 3, 4, 5]); // 5
-size('size'); // 4
-size({ one: 1, two: 2, three: 3 }); // 3
-```
-
-<br>[⬆ back to top](#table-of-contents)
 
 
 ## Credits
