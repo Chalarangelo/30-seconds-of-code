@@ -11,8 +11,7 @@ and compute the new rating for each. Omit the second argument to use the default
 ```js
 const elo = ([a, b], kFactor = 32) => {
   const expectedScore = (self, opponent) => 1 / (1 + Math.pow(10, (opponent - self) / 400));
-  const newRating = (rating, i) =>
-    rating + kFactor * (i - (i ? expectedScore(a, b) : expectedScore(b, a)));
+  const newRating = (rating, i) => rating + kFactor * (i - expectedScore(i ? a : b, i ? b : a));
   return [newRating(a, 1), newRating(b, 0)];
 };
 ```
