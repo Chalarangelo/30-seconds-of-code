@@ -73,6 +73,7 @@ isFunction:utility
 isNull:utility
 isNumber:utility
 isPrime:math
+isPromise:utility
 isString:utility
 isSymbol:utility
 JSONToDate:date
