@@ -470,7 +470,7 @@ collatz(5); // 16
     []
   );
 };
-</code></pre><pre><code class="language-js">fibonacciCountUntilNum(10); // 7
+</code></pre><pre><code class="language-js">fibonacciUntilNum(10); // [ 0, 1, 1, 2, 3, 5, 8 ]
 </code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="gcd">gcd</h3></div><div class="section double-padded"><p>Calculates the greatest common divisor between two or more numbers/arrays.</p><p>The <code>helperGcd</code>function uses recursion. Base case is when <code>y</code> equals <code>0</code>. In this case, return <code>x</code>. Otherwise, return the GCD of <code>y</code> and the remainder of the division <code>x/y</code>.</p><pre><code class="language-js">const gcd = (...arr) =&gt; {
   let data = [].concat(...arr);
   const helperGcd = (x, y) =&gt; (!y ? x : gcd(y, x % y));
