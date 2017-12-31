@@ -18,5 +18,5 @@ const isValidJSON = obj => {
 ```js
 isValidJSON('{"name":"Adam","age":20}'); // true
 isValidJSON('{"name":"Adam",age:"20"}'); // false
-isValidJSON(null) // true
+isValidJSON(null); // true
 ```
