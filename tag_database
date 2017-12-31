@@ -114,7 +114,7 @@ RGBToHex:utility
 round:math
 runPromisesInSeries:function
 sample:array
-sampleSize:uncategorized
+sampleSize:array
 scrollToTop:browser
 sdbm:utility
 select:object
