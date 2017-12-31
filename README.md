@@ -3418,7 +3418,7 @@ byteSize('Hello World'); // 11
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### Capitalize
+### capitalize
 
 Capitalizes the first letter of a string.
 
