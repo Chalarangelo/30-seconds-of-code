@@ -853,15 +853,13 @@ hexToRGB('#fff'); // 'rgb(255, 255, 255)'
 </code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isarray">isArray</h3></div><div class="section double-padded"><p>Checks if the given argument is an array.</p><p>Use <code>Array.isArray()</code> to check if a value is classified as an array.</p><pre><code class="language-js">const isArray = val =&gt; !!val &amp;&amp; Array.isArray(val);
 </code></pre><pre><code class="language-js">isArray(null); // false
 isArray([1]); // true
-</code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isarraylike">isArrayLike</h3></div><div class="section double-padded"><p>Checks if the provided argument is array-like (i.e. is iterable).</p><p>Use <code>Array.from()</code> and a <code>try... catch</code> block to check if the provided argument is array-like.</p><pre><code class="language-js">const isArrayLike = arr =&gt; {
-  try {
-    Array.from(arr);
-    return true;
-  } catch (e) {
-    return false;
-  }
-};
-</code></pre><pre><code class="language-js">isArrayLike(document.querySelector('.className')); // true
+</code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isarraylike">isArrayLike</h3></div><div class="section double-padded"><p>Checks if the provided argument is array-like (i.e. is iterable).</p><p>Check that the object is not a function or <code>null</code> and that its <code>length</code> property is a non-negative integer below <code>Number.MAX_SAFE_INTEGER</code>.</p><pre><code class="language-js">const isArrayLike = val =&gt;
+  val != null &amp;&amp;
+  typeof val != 'function' &amp;&amp;
+  val.length &gt; -1 &amp;&amp;
+  val.length % 1 == 0 &amp;&amp;
+  val.length &lt;= Number.MAX_SAFE_INTEGER;
+</code></pre><pre><code class="language-js">isArrayLike(document.querySelectorAll('.className')); // true
 isArrayLike('abc'); // true
 isArrayLike(null); // false
 </code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isboolean">isBoolean</h3></div><div class="section double-padded"><p>Checks if the given argument is a native boolean element.</p><p>Use <code>typeof</code> to check if a value is classified as a boolean primitive.</p><pre><code class="language-js">const isBoolean = val =&gt; typeof val === 'boolean';
