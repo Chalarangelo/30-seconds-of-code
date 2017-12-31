@@ -9,6 +9,6 @@ const isNull = val => val === null;
 ```
 
 ```js
-isNull(null) // true
-isNull('null') // false
+isNull(null); // true
+isNull('null'); // false
 ```

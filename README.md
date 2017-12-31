@@ -243,6 +243,7 @@
 * [`isArray`](#isarray)
 * [`isBoolean`](#isboolean)
 * [`isFunction`](#isfunction)
+* [`isNull`](#isnull)
 * [`isNumber`](#isnumber)
 * [`isString`](#isstring)
 * [`isSymbol`](#issymbol)
@@ -3987,6 +3988,29 @@ const isFunction = val => val && typeof val === 'function';
 ```js
 isFunction('x'); // false
 isFunction(x => x); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isNull
+
+Returns `true` if the specified value is `null`, `false` otherwise.
+
+Use the strict equality operator to check if the value and of `val` are equal to `null`. 
+
+```js
+const isNull = val => val === null;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isNull(null); // true
+isNull('null'); // false
 ```
 
 </details>
