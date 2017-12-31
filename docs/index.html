@@ -532,8 +532,8 @@ elo([1200, 1200], 64); // [1232, 1168]
 inRange(3, 4); // true
 inRange(2, 3, 5); // false
 inrange(3, 2); // false
-</code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isarmstrongnumber">isArmstrongNumber</h3></div><div class="section double-padded"><p>Checks if the given number is an Armstrong number or not.</p><p>Convert the given number into an array of digits. Use <code>Math.pow()</code> to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return <code>true</code> otherwise <code>false</code>.</p><pre><code class="language-js">const isArmstrongNumber = digits =&gt;
-  (arr =&gt; arr.reduce((a, d) =&gt; a + Math.pow(parseInt(d), arr.length), 0) == digits)(
+</code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isarmstrongnumber">isArmstrongNumber</h3></div><div class="section double-padded"><p>Checks if the given number is an Armstrong number or not.</p><p>Convert the given number into an array of digits. Use the exponent operator (<code>**</code>) to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return <code>true</code> otherwise <code>false</code>.</p><pre><code class="language-js">const isArmstrongNumber = digits =&gt;
+  (arr =&gt; arr.reduce((a, d) =&gt; a + parseInt(d) ** arr.length, 0) == digits)(
     (digits + '').split('')
   );
 </code></pre><pre><code class="language-js">isArmstrongNumber(1634); // true
@@ -590,9 +590,7 @@ median([0, 10, -2, 7]); // 3.5
 </code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="standarddeviation">standardDeviation</h3></div><div class="section double-padded"><p>Returns the standard deviation of an array of numbers.</p><p>Use <code>Array.reduce()</code> to calculate the mean, variance and the sum of the variance of the values, the variance of the values, then determine the standard deviation. You can omit the second argument to get the sample standard deviation or set it to <code>true</code> to get the population standard deviation.</p><pre><code class="language-js">const standardDeviation = (arr, usePopulation = false) =&gt; {
   const mean = arr.reduce((acc, val) =&gt; acc + val, 0) / arr.length;
   return Math.sqrt(
-    arr
-      .reduce((acc, val) =&gt; acc.concat(Math.pow(val - mean, 2)), [])
-      .reduce((acc, val) =&gt; acc + val, 0) /
+    arr.reduce((acc, val) =&gt; acc.concat((val - mean) ** 2), []).reduce((acc, val) =&gt; acc + val, 0) /
       (arr.length - (usePopulation ? 0 : 1))
   );
 };

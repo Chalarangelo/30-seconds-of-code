@@ -2676,11 +2676,11 @@ inrange(3, 2); // false
 
 Checks if the given number is an Armstrong number or not.
 
-Convert the given number into an array of digits. Use `Math.pow()` to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return `true` otherwise `false`.
+Convert the given number into an array of digits. Use the exponent operator (`**`) to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return `true` otherwise `false`.
 
 ```js
 const isArmstrongNumber = digits =>
-  (arr => arr.reduce((a, d) => a + Math.pow(parseInt(d), arr.length), 0) == digits)(
+  (arr => arr.reduce((a, d) => a + parseInt(d) ** arr.length, 0) == digits)(
     (digits + '').split('')
   );
 ```
@@ -3024,9 +3024,7 @@ You can omit the second argument to get the sample standard deviation or set it 
 const standardDeviation = (arr, usePopulation = false) => {
   const mean = arr.reduce((acc, val) => acc + val, 0) / arr.length;
   return Math.sqrt(
-    arr
-      .reduce((acc, val) => acc.concat(Math.pow(val - mean, 2)), [])
-      .reduce((acc, val) => acc + val, 0) /
+    arr.reduce((acc, val) => acc.concat((val - mean) ** 2), []).reduce((acc, val) => acc + val, 0) /
       (arr.length - (usePopulation ? 0 : 1))
   );
 };
