@@ -243,12 +243,14 @@
 * [`getType`](#gettype)
 * [`hexToRGB`](#hextorgb)
 * [`isArray`](#isarray)
+* [`isArrayLike`](#isarraylike)
 * [`isBoolean`](#isboolean)
 * [`isFunction`](#isfunction)
 * [`isNull`](#isnull)
 * [`isNumber`](#isnumber)
 * [`isString`](#isstring)
 * [`isSymbol`](#issymbol)
+* [`isValidJSON`](#isvalidjson)
 * [`randomHexColorCode`](#randomhexcolorcode)
 * [`RGBToHex`](#rgbtohex)
 * [`sdbm`](#sdbm)
@@ -257,16 +259,6 @@
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`validateNumber`](#validatenumber)
 * [`yesNo`](#yesno)
-
-</details>
-
-### _Uncategorized_
-
-<details>
-<summary>View contents</summary>
-
-* [`isArrayLike`](#isarraylike)
-* [`isValidJSON`](#isvalidjson)
 
 </details>
 
@@ -4096,6 +4088,37 @@ isArray([1]); // true
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### isArrayLike
+
+Checks if the provided argument is array-like (i.e. is iterable).
+
+Use `Array.from()` and a `try... catch` block to check if the provided argument is array-like.
+
+```js
+const isArrayLike = arr => {
+  try {
+    Array.from(arr);
+    return true;
+  } catch (e) {
+    return false;
+  }
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isArrayLike(document.querySelector('.className')); // true
+isArrayLike('abc'); // true
+isArrayLike(null); // false
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### isBoolean
 
 Checks if the given argument is a native boolean element.
@@ -4226,6 +4249,36 @@ const isSymbol = val => typeof val === 'symbol';
 ```js
 isSymbol('x'); // false
 isSymbol(Symbol('x')); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isValidJSON
+
+Checks if the provided argument is a valid JSON.
+
+Use `JSON.parse()` and a `try... catch` block to check if the provided argument is a valid JSON.
+
+```js
+const isValidJSON = obj => {
+  try {
+    JSON.parse(obj);
+    return true;
+  } catch (e) {
+    return false;
+  }
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isValidJSON('{"name":"Adam","age":20}'); // true
+isValidJSON('{"name":"Adam",age:"20"}'); // false
 ```
 
 </details>
@@ -4442,59 +4495,6 @@ yesNo('Foo', true); // true
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
-
----
- ## _Uncategorized_
-
-### isArrayLike
-
-Checks if the provided argument is array-like (i.e. is iterable).
-
-Use `Array.from()` and a `try... catch` block to check if the provided argument is array-like.
-
-```js
-const isArrayLike = arr => {
-  try {
-    Array.from(arr);
-    return true;
-  } catch (e) {
-    return false;
-  }
-};
-```
-
-```js
-isArrayLike(document.querySelector('.className')); // true
-isArrayLike('abc'); // true
-isArrayLike(null); // false
-```
-
-<br>[⬆ back to top](#table-of-contents)
-
-
-### isValidJSON
-
-Checks if the provided argument is a valid JSON.
-
-Use `JSON.parse()` and a `try... catch` block to check if the provided argument is a valid JSON.
-
-```js
-const isValidJSON = obj => {
-  try {
-    JSON.parse(obj);
-    return true;
-  } catch (e) {
-    return false;
-  }
-};
-```
-
-```js
-isValidJSON('{"name":"Adam","age":20}'); // true
-isValidJSON('{"name":"Adam",age:"20"}'); // false
-```
-
-<br>[⬆ back to top](#table-of-contents)
 
 
 ## Collaborators
