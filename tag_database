@@ -121,6 +121,7 @@ shallowClone:object
 show:browser
 shuffle:array
 similarity:array
+size:uncategorized
 sleep:function
 sortCharactersInString:string
 speechSynthesis:browser
