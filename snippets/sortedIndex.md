@@ -1,6 +1,9 @@
 ### sortedIndex
 
-Returns the lowest index at which value should be inserted into array in order to maintain its sort order
+Returns the lowest index at which value should be inserted into array in order to maintain its sort order.
+
+Check if the array is sorted in descending order (loosely).
+Use `Array.findIndex()` to find the appropriate index where the element should be inserted.
 
 ```js
 const sortedIndex = (arr, n) => {
