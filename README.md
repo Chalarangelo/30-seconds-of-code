@@ -2428,7 +2428,7 @@ const fibonacciUntilNum = num => {
 <summary>Examples</summary>
 
 ```js
-fibonacciCountUntilNum(10); // 7
+fibonacciUntilNum(10); // [ 0, 1, 1, 2, 3, 5, 8 ]
 ```
 
 </details>
