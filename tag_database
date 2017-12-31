@@ -70,6 +70,7 @@ isBoolean:utility
 isDivisible:math
 isEven:math
 isFunction:utility
+isNull:utility
 isNumber:utility
 isPrime:math
 isString:utility
