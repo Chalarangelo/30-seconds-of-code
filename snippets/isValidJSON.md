@@ -1,11 +1,11 @@
 ### isValidJSON
 
-Checks if the provided argument is an valid JSON.
+Checks if the provided argument is a valid JSON.
 
-
+Use `JSON.parse()` and a `try... catch` block to check if the provided argument is a valid JSON.
 
 ```js
-const arr = (obj) => {
+const isValidJSON = obj => {
   try{
     JSON.parse(obj);
     return true;
@@ -17,5 +17,6 @@ const arr = (obj) => {
 ```
 
 ```js
-
+isValidJSON('{"name":"Adam","age":20}'); // true
+isValidJSON('{"name":"Adam",age:"20"}'); // false
 ```
