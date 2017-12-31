@@ -8,6 +8,9 @@ Use `Array.from()` and a `try... catch` block to check if the provided argument 
 const isArrayLike = arr => {
   try {
     Array.from(arr);
+    if(typeof arr == 'number'){
+        return false;
+        }
     return true;
   } catch (e) {
     return false;
