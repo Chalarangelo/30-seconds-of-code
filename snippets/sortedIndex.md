@@ -1,8 +1,6 @@
-### isValidJSON
+### sortedIndex
 
-Checks if the provided argument is an valid JSON.
-
-
+Returns the lowest index at which value should be inserted into array in order to maintain its sort order
 
 ```js
 const sortedIndex = (arr,n) => {
@@ -15,5 +13,6 @@ const sortedIndex = (arr,n) => {
 ```
 
 ```js
-
+sortedIndex([5,3,2,1], 4); // 1
+sortedIndex([30,50],40); // 1
 ```
