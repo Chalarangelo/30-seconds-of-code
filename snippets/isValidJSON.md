@@ -9,7 +9,7 @@ const isValidJSON = obj => {
   try {
     JSON.parse(obj);
     return !!obj;
-} catch (e) {
+  } catch (e) {
     return false;
   }
 };
