@@ -3,13 +3,11 @@
 Returns the lowest index at which value should be inserted into array in order to maintain its sort order
 
 ```js
-const sortedIndex = (arr,n) => {
-    arr[0] > arr[1] ? (let anarray = arr.reverse(),let isReversed = true) : (let anarray = arr, let isReversed = false);  
-	val = anarray.findIndex( el => {
-	return n <= el
-    })
-	return val === -1 ? arr.length : isReversed ? arr.length - val : val
-}
+const sortedIndex = (arr, n) => {
+  const isDescending = arr[0] > arr[arr.length - 1];
+  const index = arr.findIndex(el => isDescending ? n >= el : n <= el);
+  return index === -1 ? arr.length : index;
+};
 ```
 
 ```js
