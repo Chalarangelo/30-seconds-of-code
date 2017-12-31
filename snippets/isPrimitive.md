@@ -2,12 +2,12 @@
 
 Returns a boolean determining if the supplied value is primitive or not.
 
-Use `Array.includes()` on an array of type strings, supplying the type using `typeof`.
+Use `Array.includes()` on an array of type strings which are not primitive,
+supplying the type using `typeof`.
 Since `typeof null` evaluates to `'object'`, it needs to be directly compared.
 
 ```js
-const isPrimitive = value =>
-  ['string', 'number', 'symbol', 'boolean', 'undefined'].includes(typeof value) || value === null;
+const isPrimitive = val => !['object', 'function'].includes(typeof val) || val === null;
 ```
 
 ```js
