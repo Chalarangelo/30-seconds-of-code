@@ -219,6 +219,7 @@
 * [`escapeHTML`](#escapehtml)
 * [`escapeRegExp`](#escaperegexp)
 * [`fromCamelCase`](#fromcamelcase)
+* [`isAbsoluteURL`](#isabsoluteurl)
 * [`palindrome`](#palindrome)
 * [`repeatString`](#repeatstring)
 * [`reverseString`](#reversestring)
@@ -3574,6 +3575,30 @@ fromCamelCase('someJavascriptProperty', '_'); // 'some_javascript_property'
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### isAbsoluteURL
+
+Returns `true` if the given string is an absolute URL, `false` otherwise.
+
+Use a regular expression to test if the string is an absolute URL.
+
+```js
+const isAbsoluteURL = str => /^[a-z][a-z0-9+.-]*:/.test(str);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isAbsoluteURL('https://google.com'); // true
+isAbsoluteURL('ftp://www.myserver.net'); // true
+isAbsoluteURL('/foo/bar'); // false
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### palindrome
 
 Returns `true` if the given string is a palindrome, `false` otherwise.
@@ -4221,13 +4246,13 @@ isSymbol(Symbol('x')); // true
 
 Checks if the provided argument is a valid JSON.
 
-Use `JSON.parse()` and a `try... catch` block to check if the provided argument is a valid JSON.
+Use `JSON.parse()` and a `try... catch` block to check if the provided argument is a valid JSON and non-null.
 
 ```js
 const isValidJSON = obj => {
   try {
     JSON.parse(obj);
-    return true;
+    return !!obj;
   } catch (e) {
     return false;
   }
