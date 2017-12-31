@@ -4088,24 +4088,22 @@ isArray([1]); // true
 
 Checks if the provided argument is array-like (i.e. is iterable).
 
-Use `Array.from()` and a `try... catch` block to check if the provided argument is array-like.
+Check that the object is not a function or `null` and that its `length` property is a non-negative integer below `Number.MAX_SAFE_INTEGER`.
 
 ```js
-const isArrayLike = arr => {
-  try {
-    Array.from(arr);
-    return true;
-  } catch (e) {
-    return false;
-  }
-};
+const isArrayLike = val =>
+  val != null &&
+  typeof val != 'function' &&
+  val.length > -1 &&
+  val.length % 1 == 0 &&
+  val.length <= Number.MAX_SAFE_INTEGER;
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```js
-isArrayLike(document.querySelector('.className')); // true
+isArrayLike(document.querySelectorAll('.className')); // true
 isArrayLike('abc'); // true
 isArrayLike(null); // false
 ```
