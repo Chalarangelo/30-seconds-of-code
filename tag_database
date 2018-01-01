@@ -55,6 +55,7 @@ getURLParameters:utility
 groupBy:array
 hammingDistance:math
 hasClass:browser
+hasFlags:node
 head:array
 hexToRGB:utility
 hide:browser
