@@ -88,6 +88,7 @@ last:array
 lcm:math
 lowercaseKeys:object
 mapObject:array
+mask:uncategorized
 max:math
 median:math
 memoize:function
