@@ -91,7 +91,7 @@
 * [`elementIsVisibleInViewport`](#elementisvisibleinviewport)
 * [`getScrollPosition`](#getscrollposition)
 * [`getStyle`](#getstyle)
-* [`getURLParameters`](#geturlparameters)
+* [`hasClass`](#hasclass)
 * [`hide`](#hide)
 * [`httpsRedirect`](#httpsredirect)
 * [`onUserInputChange`](#onuserinputchange)
@@ -243,6 +243,7 @@
 * [`coalesceFactory`](#coalescefactory)
 * [`extendHex`](#extendhex)
 * [`getType`](#gettype)
+* [`getURLParameters`](#geturlparameters)
 * [`hexToRGB`](#hextorgb)
 * [`isArray`](#isarray)
 * [`isArrayLike`](#isarraylike)
@@ -271,6 +272,7 @@
 <details>
 <summary>View contents</summary>
 
+* [`join`](#join)
 * [`sortedIndex`](#sortedindex)
 
 </details>
@@ -1699,32 +1701,6 @@ const getStyle = (el, ruleName) => getComputedStyle(el)[ruleName];
 
 ```js
 getStyle(document.querySelector('p'), 'font-size'); // '16px'
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### getURLParameters
-
-Returns an object containing the parameters of the current URL.
-
-Use `match()` with an appropriate regular expression to get all key-value pairs, `Array.reduce()` to map and combine them into a single object.
-Pass `location.search` as the argument to apply to the current `url`.
-
-```js
-const getURLParameters = url =>
-  url
-    .match(/([^?=&]+)(=([^&]*))/g)
-    .reduce((a, v) => ((a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a), {});
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-getURLParameters('http://url.com/page?name=Adam&surname=Smith'); // {name: 'Adam', surname: 'Smith'}
 ```
 
 </details>
@@ -3392,9 +3368,9 @@ a === b; // false
 
 Get size of arrays, objects or strings.
 
-Get type of `value` (`array`, `object` or `string`). 
-Use `length` property for arrays. 
-Use `length` or `size` value if available or number of keys for objects. 
+Get type of `value` (`array`, `object` or `string`).
+Use `length` property for arrays.
+Use `length` or `size` value if available or number of keys for objects.
 Use `size` of a [`Blob` object](https://developer.mozilla.org/en-US/docs/Web/API/Blob) created from `value` for strings.
 
 Split strings into array of characters with `split('')` and return its length.
@@ -4091,6 +4067,32 @@ getType(new Set([1, 2, 3])); // "set"
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### getURLParameters
+
+Returns an object containing the parameters of the current URL.
+
+Use `match()` with an appropriate regular expression to get all key-value pairs, `Array.reduce()` to map and combine them into a single object.
+Pass `location.search` as the argument to apply to the current `url`.
+
+```js
+const getURLParameters = url =>
+  url
+    .match(/([^?=&]+)(=([^&]*))/g)
+    .reduce((a, v) => ((a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a), {});
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+getURLParameters('http://url.com/page?name=Adam&surname=Smith'); // {name: 'Adam', surname: 'Smith'}
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### hexToRGB
 
 Converts a color code to a `rgb()` or `rgba()` string if alpha value is provided.
@@ -4235,7 +4237,7 @@ isFunction(x => x); // true
 
 Returns `true` if the specified value is `null`, `false` otherwise.
 
-Use the strict equality operator to check if the value and of `val` are equal to `null`. 
+Use the strict equality operator to check if the value and of `val` are equal to `null`.
 
 ```js
 const isNull = val => val === null;
@@ -4627,6 +4629,35 @@ yesNo('Foo', true); // true
 
 ---
  ## _Uncategorized_
+
+### join
+
+Joins all elements of an array into a string and returns this string. Uses a separator and an end separator.
+
+Use `Array.reduce()` to combine elements into a string.
+Omit the second argument, `separator`, to use a default separator of `','`.
+Omit the third argument, `end`, to use the same value as `separator` by default.
+
+```js
+const join = (arr, separator = ',', end = separator) =>
+  arr.reduce(
+    (acc, val, i) =>
+      i == arr.length - 2
+        ? acc + val + end
+        : i == arr.length - 1 ? acc + val : acc + val + separator,
+    ''
+  );
+```
+
+```js
+join(); // ''
+join(['pen', 'pineapple', 'apple', 'pen'], ',', '&'); //"pen,pineapple,apple&pen"
+join(['pen', 'pineapple', 'apple', 'pen'], ','); //"pen,pineapple,apple,pen"
+join(['pen', 'pineapple', 'apple', 'pen']); //"pen,pineapple,apple,pen"
+```
+
+<br>[⬆ back to top](#table-of-contents)
+
 
 ### sortedIndex
 
