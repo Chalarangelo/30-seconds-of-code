@@ -8,15 +8,15 @@ Return the prettified string by building it up, taking into account the supplied
 negative or not.
 
 ```js
-const prettyBytes = (num,  precision = 3, addSpace = true) {
+const prettyBytes = (num,  precision = 3, addSpace = true) => {
   const UNITS = ['B','KB','MB','GB','TB','PB','EB','ZB','YB'];
-  if (num < 1) return (num < 0 ? '-' : '') + num + ' B';
+  if (Math.abs(num) < 1) return num + ' B';
   const exponent = Math.min(Math.floor(Math.log10(num < 0 ? -num : num) / 3), UNITS.length - 1);
-  const n = Number(((num < 0 ? -num : num) / 1000 ** exponent).toPrecision(options.precision));
+  const n = Number(((num < 0 ? -num : num) / 1000 ** exponent).toPrecision(precision));
   return (
     (num < 0 ? '-' : '') +
     n +
-    (options.addSpace ? ' ' : '') + UNITS[exponent]
+    (addSpace ? ' ' : '') + UNITS[exponent]
   );
 };
 ```
