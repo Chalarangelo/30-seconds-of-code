@@ -6,17 +6,17 @@ Use `JSON.parse()` and a `try... catch` block to check if the provided argument 
 
 ```js
 const isValidJSON = obj => {
-  try{
+  try {
     JSON.parse(obj);
     return true;
-  }
-  catch(e){
+  } catch (e) {
     return false;
   }
-}
+};
 ```
 
 ```js
 isValidJSON('{"name":"Adam","age":20}'); // true
 isValidJSON('{"name":"Adam",age:"20"}'); // false
+isValidJSON(null); // true
 ```
