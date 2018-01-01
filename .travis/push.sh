@@ -4,14 +4,23 @@ setup_git() {
 }
 
 commit_website_files() {
-  git checkout master
-  git add *
-  git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
+  if [ $TRAVIS_EVENT_TYPE != "pull_request" ]; then
+    if [ $TRAVIS_BRANCH == "master" ]; then
+      echo "Commiting to master branch..."
+      git checkout master
+      git add *
+      git commit --message "Travis build: $TRAVIS_BUILD_NUMBER [ci skip]"
+    fi
+  fi
 }
 
 upload_files() {
-  echo "https://${GH_TOKEN}@github.com/Chalarangelo/30-seconds-of-code.git"
-  git push --force "https://${GH_TOKEN}@github.com/Chalarangelo/30-seconds-of-code.git" master > /dev/null 2>&1
+  if [ $TRAVIS_EVENT_TYPE != "pull_request" ]; then
+    if [ $TRAVIS_BRANCH == "master" ]; then
+      echo "Pushing to master branch..."
+      git push --force --quiet "https://${GH_TOKEN}@github.com/Chalarangelo/30-seconds-of-code.git" master > /dev/null 2>&1
+    fi
+  fi
 }
 
 setup_git

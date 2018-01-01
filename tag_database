@@ -16,6 +16,7 @@ collatz:math
 collectInto:adapter
 compact:array
 compose:function
+copyToClipboard:browser
 countOccurrences:array
 countVowels:string
 currentURL:browser
@@ -69,6 +70,7 @@ isBoolean:utility
 isDivisible:math
 isEven:math
 isFunction:utility
+isNull:utility
 isNumber:utility
 isPrime:math
 isString:utility
@@ -119,9 +121,10 @@ shallowClone:object
 show:browser
 shuffle:array
 similarity:array
+size:object
 sleep:function
 sortCharactersInString:string
-speechSynthesis:media
+speechSynthesis:browser
 splitLines:string
 spreadOver:adapter
 standardDeviation:math
@@ -148,5 +151,6 @@ UUIDGeneratorNode:node
 validateNumber:utility
 without:array
 words:string
+yesNo:utility
 zip:array
 zipObject:array
