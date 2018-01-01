@@ -4,7 +4,7 @@ Replaces all but the last `num` of characters with the specified mask character.
 
 Use `String.slice()` to grab the portion of the characters that need to be masked and use `String.replace()` with a regex to replace every character with the mask character. 
 Concatenate the masked characters with the remaining unmasked portion of the string.
-Omit the second argument, `num`, to keep a default of `4` characters unmasked.
+Omit the second argument, `num`, to keep a default of `4` characters unmasked. If `num` is negative, the unmasked characters will be at the start of the string.
 Omit the third argument, `mask`, to use a default character of `'*'` for the mask.
 
 ```js
