@@ -22,6 +22,7 @@ countVowels:string
 currentURL:browser
 curry:function
 deepFlatten:array
+defer:function
 detectDeviceType:browser
 difference:array
 differenceWith:array
