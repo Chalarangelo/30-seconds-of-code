@@ -55,6 +55,7 @@ getURLParameters:utility
 groupBy:array
 hammingDistance:math
 hasClass:browser
+hasFlags:node
 head:array
 hexToRGB:utility
 hide:browser
@@ -65,6 +66,7 @@ initializeArrayWithRange:array
 initializeArrayWithValues:array
 inRange:math
 intersection:array
+invertKeyValues:object
 isAbsoluteURL:string
 isArmstrongNumber:math
 isArray:utility
@@ -80,6 +82,7 @@ isPrimitive:utility
 isPromiseLike:utility
 isString:utility
 isSymbol:utility
+isTravisCI:node
 isValidJSON:utility
 join:array
 JSONToDate:date
@@ -159,6 +162,7 @@ truncateString:string
 truthCheckCollection:object
 unescapeHTML:string
 union:array
+untildify:node
 UUIDGeneratorBrowser:browser
 UUIDGeneratorNode:node
 validateNumber:utility
