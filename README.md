@@ -91,7 +91,6 @@
 * [`elementIsVisibleInViewport`](#elementisvisibleinviewport)
 * [`getScrollPosition`](#getscrollposition)
 * [`getStyle`](#getstyle)
-* [`getURLParameters`](#geturlparameters)
 * [`hasClass`](#hasclass)
 * [`hide`](#hide)
 * [`httpsRedirect`](#httpsredirect)
@@ -244,6 +243,7 @@
 * [`coalesceFactory`](#coalescefactory)
 * [`extendHex`](#extendhex)
 * [`getType`](#gettype)
+* [`getURLParameters`](#geturlparameters)
 * [`hexToRGB`](#hextorgb)
 * [`isArray`](#isarray)
 * [`isArrayLike`](#isarraylike)
@@ -1700,32 +1700,6 @@ const getStyle = (el, ruleName) => getComputedStyle(el)[ruleName];
 
 ```js
 getStyle(document.querySelector('p'), 'font-size'); // '16px'
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### getURLParameters
-
-Returns an object containing the parameters of the current URL.
-
-Use `match()` with an appropriate regular expression to get all key-value pairs, `Array.reduce()` to map and combine them into a single object.
-Pass `location.search` as the argument to apply to the current `url`.
-
-```js
-const getURLParameters = url =>
-  url
-    .match(/([^?=&]+)(=([^&]*))/g)
-    .reduce((a, v) => ((a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a), {});
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-getURLParameters('http://url.com/page?name=Adam&surname=Smith'); // {name: 'Adam', surname: 'Smith'}
 ```
 
 </details>
@@ -4045,6 +4019,32 @@ const getType = v =>
 
 ```js
 getType(new Set([1, 2, 3])); // "set"
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### getURLParameters
+
+Returns an object containing the parameters of the current URL.
+
+Use `match()` with an appropriate regular expression to get all key-value pairs, `Array.reduce()` to map and combine them into a single object.
+Pass `location.search` as the argument to apply to the current `url`.
+
+```js
+const getURLParameters = url =>
+  url
+    .match(/([^?=&]+)(=([^&]*))/g)
+    .reduce((a, v) => ((a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a), {});
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+getURLParameters('http://url.com/page?name=Adam&surname=Smith'); // {name: 'Adam', surname: 'Smith'}
 ```
 
 </details>
