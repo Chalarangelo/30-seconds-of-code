@@ -160,6 +160,7 @@ truncateString:string
 truthCheckCollection:object
 unescapeHTML:string
 union:array
+untildify:node
 UUIDGeneratorBrowser:browser
 UUIDGeneratorNode:node
 validateNumber:utility
