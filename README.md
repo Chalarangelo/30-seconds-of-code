@@ -9,11 +9,13 @@
 - Use <kbd>Ctrl</kbd> + <kbd>F</kbd> or <kbd>command</kbd> + <kbd>F</kbd> to search for a snippet.
 - Contributions welcome, please read the [contribution guide](CONTRIBUTING.md).
 - Snippets are written in ES6, use the [Babel transpiler](https://babeljs.io/) to ensure backwards-compatibility.
+- You can import these snippets into your text editor of choice (VSCode, Atom, Sublime) using the files found in [this repo](https://github.com/Rob-Rychs/30-seconds-of-code-texteditorsnippets).
 - You can import these snippets into Alfred 3, using [this file](https://github.com/lslvxy/30-seconds-of-code-alfredsnippets).
+- You can find a package with all the snippets on [npm](https://www.npmjs.com/package/tsoc). Bear in mind that most of these snippets are not production-ready.
 
 ## Table of Contents
 
-### Adapter
+### 🔌 Adapter
 
 <details>
 <summary>View contents</summary>
@@ -27,7 +29,7 @@
 
 </details>
 
-### Array
+### 📚 Array
 
 <details>
 <summary>View contents</summary>
@@ -75,13 +77,14 @@
 
 </details>
 
-### Browser
+### 🖥️ Browser
 
 <details>
 <summary>View contents</summary>
 
 * [`arrayToHtmlList`](#arraytohtmllist)
 * [`bottomVisible`](#bottomvisible)
+* [`copyToClipboard`](#copytoclipboard)
 * [`currentURL`](#currenturl)
 * [`detectDeviceType`](#detectdevicetype)
 * [`elementIsVisibleInViewport`](#elementisvisibleinviewport)
@@ -96,12 +99,13 @@
 * [`scrollToTop`](#scrolltotop)
 * [`setStyle`](#setstyle)
 * [`show`](#show)
+* [`speechSynthesis`](#speechsynthesis)
 * [`toggleClass`](#toggleclass)
 * [`UUIDGeneratorBrowser`](#uuidgeneratorbrowser)
 
 </details>
 
-### Date
+### ⏱️ Date
 
 <details>
 <summary>View contents</summary>
@@ -113,7 +117,7 @@
 
 </details>
 
-### Function
+### 🎛️ Function
 
 <details>
 <summary>View contents</summary>
@@ -127,7 +131,7 @@
 
 </details>
 
-### Logic
+### 🔮 Logic
 
 <details>
 <summary>View contents</summary>
@@ -136,7 +140,7 @@
 
 </details>
 
-### Math
+### ➗ Math
 
 <details>
 <summary>View contents</summary>
@@ -172,16 +176,7 @@
 
 </details>
 
-### Media
-
-<details>
-<summary>View contents</summary>
-
-* [`speechSynthesis`](#speechsynthesis)
-
-</details>
-
-### Node
+### 📦 Node
 
 <details>
 <summary>View contents</summary>
@@ -192,7 +187,7 @@
 
 </details>
 
-### Object
+### 🗃️ Object
 
 <details>
 <summary>View contents</summary>
@@ -204,11 +199,12 @@
 * [`orderBy`](#orderby)
 * [`select`](#select)
 * [`shallowClone`](#shallowclone)
+* [`size`](#size)
 * [`truthCheckCollection`](#truthcheckcollection)
 
 </details>
 
-### String
+### 📜 String
 
 <details>
 <summary>View contents</summary>
@@ -235,7 +231,7 @@
 
 </details>
 
-### Utility
+### 💎 Utility
 
 <details>
 <summary>View contents</summary>
@@ -248,6 +244,7 @@
 * [`isArray`](#isarray)
 * [`isBoolean`](#isboolean)
 * [`isFunction`](#isfunction)
+* [`isNull`](#isnull)
 * [`isNumber`](#isnumber)
 * [`isString`](#isstring)
 * [`isSymbol`](#issymbol)
@@ -258,10 +255,12 @@
 * [`toDecimalMark`](#todecimalmark)
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`validateNumber`](#validatenumber)
+* [`yesNo`](#yesno)
 
 </details>
 
-## Adapter
+---
+ ## 🔌 Adapter
 
 ### call
 
@@ -423,7 +422,8 @@ arrayMax([1, 2, 4]); // 4
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Array
+---
+ ## 📚 Array
 
 ### chunk
 
@@ -1436,7 +1436,8 @@ zipObject(['a', 'b'], [1, 2, 3]); // {a: 1, b: 2}
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Browser
+---
+ ## 🖥️ Browser
 
 ### arrayToHtmlList
 
@@ -1478,6 +1479,48 @@ const bottomVisible = () =>
 
 ```js
 bottomVisible(); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### copyToClipboard
+
+Copy a string to the clipboard. Only works as a result of user action (i.e. inside a `click` event listener).
+
+Create a new `<textarea>` element, fill it with the supplied data and add it to the HTML document.
+Use `Selection.getRangeAt()`to store the selected range (if any).
+Use `document.execCommand('copy')` to copy to the clipboard.
+Remove the `<textarea>` element from the HTML document.
+Finally, use `Selection().addRange()` to recover the original selected range (if any).
+
+```js
+const copyToClipboard = str => {
+  const el = document.createElement('textarea');
+  el.value = str;
+  el.setAttribute('readonly', '');
+  el.style.position = 'absolute';
+  el.style.left = '-9999px';
+  document.body.appendChild(el);
+  const selected =
+    document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false;
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+  if (selected) {
+    document.getSelection().removeAllRanges();
+    document.getSelection().addRange(selected);
+  }
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+copyToClipboard('Lorem ipsum'); // 'Lorem ipsum' copied to clipboard.
 ```
 
 </details>
@@ -1841,6 +1884,35 @@ show(document.querySelectorAll('img')); // Shows all <img> elements on the page
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### speechSynthesis
+
+Performs speech synthesis (experimental).
+
+Use `SpeechSynthesisUtterance.voice` and `window.speechSynthesis.getVoices()` to convert a message to speech.
+Use `window.speechSynthesis.speak()` to play the message.
+
+Learn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
+
+```js
+const speechSynthesis = message => {
+  const msg = new SpeechSynthesisUtterance(message);
+  msg.voice = window.speechSynthesis.getVoices()[0];
+  window.speechSynthesis.speak(msg);
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+speechSynthesis('Hello, World'); // // plays the message
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### toggleClass
 
 Toggle a class for an element.
@@ -1887,7 +1959,8 @@ UUIDGeneratorBrowser(); // '7982fcfe-5721-4632-bede-6000885be57d'
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Date
+---
+ ## ⏱️ Date
 
 ### getDaysDiffBetweenDates
 
@@ -1987,7 +2060,8 @@ tomorrow(); // 2017-12-27 (if current date is 2017-12-26)
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Function
+---
+ ## 🎛️ Function
 
 ### chainAsync
 
@@ -2150,7 +2224,8 @@ async function sleepyWork() {
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Logic
+---
+ ## 🔮 Logic
 
 ### negate
 
@@ -2174,7 +2249,8 @@ negate(isOdd)(1); // false
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Math
+---
+ ## ➗ Math
 
 ### average
 
@@ -2397,7 +2473,7 @@ const fibonacciUntilNum = num => {
 <summary>Examples</summary>
 
 ```js
-fibonacciCountUntilNum(10); // 7
+fibonacciUntilNum(10); // [ 0, 1, 1, 2, 3, 5, 8 ]
 ```
 
 </details>
@@ -2567,7 +2643,7 @@ Return `false` if any of them divides the given number, else return `true`, unle
 ```js
 const isPrime = num => {
   const boundary = Math.floor(Math.sqrt(num));
-  for (var i = 2; i * i <= boundary; i++) if (num % i == 0) return false;
+  for (var i = 2; i <= boundary; i++) if (num % i == 0) return false;
   return num >= 2;
 };
 ```
@@ -2879,37 +2955,8 @@ sum([1, 2, 3, 4]); // 10
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Media
-
-### speechSynthesis
-
-Performs speech synthesis (experimental).
-
-Use `SpeechSynthesisUtterance.voice` and `window.speechSynthesis.getVoices()` to convert a message to speech.
-Use `window.speechSynthesis.speak()` to play the message.
-
-Learn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
-
-```js
-const speechSynthesis = message => {
-  const msg = new SpeechSynthesisUtterance(message);
-  msg.voice = window.speechSynthesis.getVoices()[0];
-  window.speechSynthesis.speak(msg);
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-speechSynthesis('Hello, World'); // // plays the message
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-## Node
+---
+ ## 📦 Node
 
 ### JSONToFile
 
@@ -2998,7 +3045,8 @@ UUIDGeneratorNode(); // '79c7c136-60ee-40a2-beb2-856f1feabefc'
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Object
+---
+ ## 🗃️ Object
 
 ### cleanObj
 
@@ -3192,6 +3240,40 @@ a === b; // false
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### size
+
+Get size of arrays, objects or strings.
+
+Get type of `value` (`array`, `object` or `string`). 
+Use `length` property for arrays. 
+Use `length` or `size` value if available or number of keys for objects. 
+Use `size` of a [`Blob` object](https://developer.mozilla.org/en-US/docs/Web/API/Blob) created from `value` for strings.
+
+Split strings into array of characters with `split('')` and return its length.
+
+```js
+const size = value =>
+  Array.isArray(value)
+    ? value.length
+    : value && typeof value === 'object'
+      ? value.size || value.length || Object.keys(value).length
+      : typeof value === 'string' ? new Blob([value]).size : 0;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+size([1, 2, 3, 4, 5]); // 5
+size('size'); // 4
+size({ one: 1, two: 2, three: 3 }); // 3
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### truthCheckCollection
 
 Checks if the predicate (second argument) is truthy on all elements of a collection (first argument).
@@ -3213,7 +3295,8 @@ truthCheckCollection([{ user: 'Tinky-Winky', sex: 'male' }, { user: 'Dipsy', sex
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## String
+---
+ ## 📜 String
 
 ### anagrams
 
@@ -3632,13 +3715,12 @@ Break the string into words and combine them using `_` as a separator.
 For more detailed explanation of this Regex, [visit this Site](https://regex101.com/r/bMCgAB/1).
 
 ```js
-const toSnakeCase = str => {
+const toSnakeCase = str =>
   str &&
-    str
-      .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
-      .map(x => x.toLowerCase())
-      .join('_');
-};
+  str
+    .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+    .map(x => x.toLowerCase())
+    .join('_');
 ```
 
 <details>
@@ -3737,7 +3819,8 @@ words('python, javaScript & coffee'); // ["python", "javaScript", "coffee"]
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Utility
+---
+ ## 💎 Utility
 
 ### coalesce
 
@@ -3940,6 +4023,29 @@ const isFunction = val => val && typeof val === 'function';
 ```js
 isFunction('x'); // false
 isFunction(x => x); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isNull
+
+Returns `true` if the specified value is `null`, `false` otherwise.
+
+Use the strict equality operator to check if the value and of `val` are equal to `null`. 
+
+```js
+const isNull = val => val === null;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isNull(null); // true
+isNull('null'); // false
 ```
 
 </details>
@@ -4192,6 +4298,33 @@ const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) ==
 
 ```js
 validateNumber('10'); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### yesNo
+
+Returns `true` if the string is `y`/`yes` or `false` if the string is `n`/`no`.
+
+Use `RegExp.test()` to check if the string evaluates to `y/yes` or `n/no`.
+Omit the second argument, `def` to set the default answer as `no`.
+
+```js
+const yesNo = (val, def = false) =>
+  /^(y|yes)$/i.test(val) ? true : /^(n|no)$/i.test(val) ? false : def;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+yesNo('Y'); // true
+yesNo('yes'); // true
+yesNo('No'); // false
+yesNo('Foo', true); // true
 ```
 
 </details>
