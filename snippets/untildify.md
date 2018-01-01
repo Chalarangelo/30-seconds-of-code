@@ -9,5 +9,5 @@ const untildify = str => str.replace(/^~($|\/|\\)/, `${require('os').homedir()}$
 ```
 
 ```js
-untildify('~/node') // '/Users/aUser/node'
+untildify('~/node'); // '/Users/aUser/node'
 ```
