@@ -71,6 +71,7 @@ isAbsoluteURL:string
 isArmstrongNumber:math
 isArray:utility
 isArrayLike:utility
+isArraySorted:array
 isBoolean:utility
 isDivisible:math
 isEven:math
