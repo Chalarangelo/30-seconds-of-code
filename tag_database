@@ -137,7 +137,7 @@ shuffle:array
 similarity:array
 size:object
 sleep:function
-solveRPN:uncategorized
+solveRPN:math
 sortCharactersInString:string
 sortedIndex:array
 speechSynthesis:browser
