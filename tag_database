@@ -140,6 +140,7 @@ splitLines:string
 spreadOver:adapter
 standardDeviation:math
 sum:math
+sumPower:math
 symmetricDifference:array
 tail:array
 take:array
