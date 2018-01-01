@@ -8,13 +8,13 @@ Omit the second argument, `num`, to keep a default of `4` characters unmasked.
 Omit the third argument, `mask`, to use a default character of `'*'` for the mask.
 
 ```js
-const mask = (cc,num = 4,mask = '*') =>
-   ('' + cc).slice(0, -num).replace(/./g, mask) + ('' + cc).slice(-num);
+const mask = (cc, num = 4, mask = '*') =>
+  ('' + cc).slice(0, -num).replace(/./g, mask) + ('' + cc).slice(-num);
 ```
 
 ```js
-mask(1234567890) // '******7890'
-mask(1234567890,3) // '*******890'
-mask(1234567890,4,'$') // '$$$$$$7890'
-mask(1234567890,-4,'$') // '1234$$$$$$'
+mask(1234567890); // '******7890'
+mask(1234567890, 3); // '*******890'
+mask(1234567890, 4, '$'); // '$$$$$$7890'
+mask(1234567890, -4, '$'); // '1234$$$$$$'
 ```
