@@ -54,6 +54,7 @@
 * [`initializeArrayWithRange`](#initializearraywithrange)
 * [`initializeArrayWithValues`](#initializearraywithvalues)
 * [`intersection`](#intersection)
+* [`isArraySorted`](#isarraysorted)
 * [`join`](#join)
 * [`last`](#last)
 * [`mapObject`](#mapobject)
@@ -914,6 +915,38 @@ const intersection = (a, b) => {
 
 ```js
 intersection([1, 2, 3], [4, 3, 2]); // [2,3]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### functionName
+
+Returns `1` if the array is sorted in ascending order, `-1` if it is sorted in descending order or `0` if it is not sorted.
+
+Calculate the ordering `direction` for the first two elements.
+Use `Object.entries()` to loop over array objects and compare them in pairs.
+Return `0` if the `direction` changes or the `direction` if the last element is reached.
+
+```js
+const isArraySorted = arr => {
+  const direction = arr[0] > arr[1] ? -1 : 1;
+  for (let [i, val] of arr.entries())
+    if (i === arr.length - 1) return direction;
+    else if ((val - arr[i + 1]) * direction > 0) return 0;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isArraySorted([0, 1, 2, 3]); // 1
+isArraySorted([0, 1, 2, 2]); // 1
+isArraySorted([4, 3, 2]); // -1
+isArraySorted([4, 3, 5]); // 0
 ```
 
 </details>
