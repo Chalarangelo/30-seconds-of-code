@@ -9,16 +9,16 @@ const DIST = './dist';
 
 if (!fs.existsSync(DIST)) fs.mkdirSync(DIST);
 
-const es5 = () => babel({ presets: [['env', { modules: false }]] });
-const min = () => minify({ comments: false });
+const es5 = babel({ presets: [['env', { modules: false }]] });
+const min = minify({ comments: false });
 
 (async () => {
   const bundle = await rollup({ input: INPUT_FILE });
-  const bundleES5 = await rollup({ input: INPUT_FILE, plugins: [es5()] });
-  const bundleMin = await rollup({ input: INPUT_FILE, plugins: [min()] });
+  const bundleES5 = await rollup({ input: INPUT_FILE, plugins: [es5] });
+  const bundleMin = await rollup({ input: INPUT_FILE, plugins: [min] });
   const bundleES5Min = await rollup({
     input: INPUT_FILE,
-    plugins: [es5(), min()]
+    plugins: [es5, min]
   });
 
   // UMD ES2017
