@@ -31,6 +31,7 @@ distinctValuesOfArray:array
 dropElements:array
 dropRight:array
 elementIsVisibleInViewport:browser
+elo:math
 escapeHTML:string
 escapeRegExp:string
 everyNth:array
@@ -50,7 +51,7 @@ getDaysDiffBetweenDates:date
 getScrollPosition:browser
 getStyle:browser
 getType:utility
-getURLParameters:browser
+getURLParameters:utility
 groupBy:array
 hammingDistance:math
 hasClass:browser
@@ -64,8 +65,10 @@ initializeArrayWithRange:array
 initializeArrayWithValues:array
 inRange:math
 intersection:array
+isAbsoluteURL:string
 isArmstrongNumber:math
 isArray:utility
+isArrayLike:utility
 isBoolean:utility
 isDivisible:math
 isEven:math
@@ -73,16 +76,22 @@ isFunction:utility
 isNull:utility
 isNumber:utility
 isPrime:math
+isPrimitive:utility
+isPromiseLike:utility
 isString:utility
 isSymbol:utility
+isValidJSON:utility
+join:array
 JSONToDate:date
 JSONToFile:node
 last:array
 lcm:math
 lowercaseKeys:object
 mapObject:array
+mask:string
 max:math
 median:math
+memoize:function
 min:math
 negate:logic
 nthElement:array
@@ -113,6 +122,7 @@ RGBToHex:utility
 round:math
 runPromisesInSeries:function
 sample:array
+sampleSize:array
 scrollToTop:browser
 sdbm:utility
 select:object
@@ -124,6 +134,7 @@ similarity:array
 size:object
 sleep:function
 sortCharactersInString:string
+sortedIndex:array
 speechSynthesis:browser
 splitLines:string
 spreadOver:adapter

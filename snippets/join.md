@@ -15,12 +15,11 @@ const join = (arr, separator = ',', end = separator) =>
         : i == arr.length - 1 ? acc + val : acc + val + separator,
     ''
   );
-
 ```
 
 ```js
 join(); // ''
-join(['pen','pineapple','apple','pen'],',','&'); //"pen,pineapple,apple&pen"
-join(['pen','pineapple','apple','pen'],','); //"pen,pineapple,apple,pen"
-join(['pen','pineapple','apple','pen']); //"pen,pineapple,apple,pen"
+join(['pen', 'pineapple', 'apple', 'pen'], ',', '&'); //"pen,pineapple,apple&pen"
+join(['pen', 'pineapple', 'apple', 'pen'], ','); //"pen,pineapple,apple,pen"
+join(['pen', 'pineapple', 'apple', 'pen']); //"pen,pineapple,apple,pen"
 ```

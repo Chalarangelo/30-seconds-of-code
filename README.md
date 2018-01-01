@@ -54,6 +54,7 @@
 * [`initializeArrayWithRange`](#initializearraywithrange)
 * [`initializeArrayWithValues`](#initializearraywithvalues)
 * [`intersection`](#intersection)
+* [`join`](#join)
 * [`last`](#last)
 * [`mapObject`](#mapobject)
 * [`nthElement`](#nthelement)
@@ -64,8 +65,10 @@
 * [`quickSort`](#quicksort)
 * [`remove`](#remove)
 * [`sample`](#sample)
+* [`sampleSize`](#samplesize)
 * [`shuffle`](#shuffle)
 * [`similarity`](#similarity)
+* [`sortedIndex`](#sortedindex)
 * [`symmetricDifference`](#symmetricdifference)
 * [`tail`](#tail)
 * [`take`](#take)
@@ -77,7 +80,7 @@
 
 </details>
 
-### 🖥️ Browser
+### 🌐 Browser
 
 <details>
 <summary>View contents</summary>
@@ -90,7 +93,6 @@
 * [`elementIsVisibleInViewport`](#elementisvisibleinviewport)
 * [`getScrollPosition`](#getscrollposition)
 * [`getStyle`](#getstyle)
-* [`getURLParameters`](#geturlparameters)
 * [`hasClass`](#hasclass)
 * [`hide`](#hide)
 * [`httpsRedirect`](#httpsredirect)
@@ -126,6 +128,7 @@
 * [`compose`](#compose)
 * [`curry`](#curry)
 * [`functionName`](#functionname)
+* [`memoize`](#memoize)
 * [`runPromisesInSeries`](#runpromisesinseries)
 * [`sleep`](#sleep)
 
@@ -150,6 +153,7 @@
 * [`collatz`](#collatz)
 * [`digitize`](#digitize)
 * [`distance`](#distance)
+* [`elo`](#elo)
 * [`factorial`](#factorial)
 * [`fibonacci`](#fibonacci)
 * [`fibonacciCountUntilNum`](#fibonaccicountuntilnum)
@@ -217,6 +221,8 @@
 * [`escapeHTML`](#escapehtml)
 * [`escapeRegExp`](#escaperegexp)
 * [`fromCamelCase`](#fromcamelcase)
+* [`isAbsoluteURL`](#isabsoluteurl)
+* [`mask`](#mask)
 * [`palindrome`](#palindrome)
 * [`repeatString`](#repeatstring)
 * [`reverseString`](#reversestring)
@@ -240,14 +246,19 @@
 * [`coalesceFactory`](#coalescefactory)
 * [`extendHex`](#extendhex)
 * [`getType`](#gettype)
+* [`getURLParameters`](#geturlparameters)
 * [`hexToRGB`](#hextorgb)
 * [`isArray`](#isarray)
+* [`isArrayLike`](#isarraylike)
 * [`isBoolean`](#isboolean)
 * [`isFunction`](#isfunction)
 * [`isNull`](#isnull)
 * [`isNumber`](#isnumber)
+* [`isPrimitive`](#isprimitive)
+* [`isPromiseLike`](#ispromiselike)
 * [`isString`](#isstring)
 * [`isSymbol`](#issymbol)
+* [`isValidJSON`](#isvalidjson)
 * [`randomHexColorCode`](#randomhexcolorcode)
 * [`RGBToHex`](#rgbtohex)
 * [`sdbm`](#sdbm)
@@ -903,6 +914,40 @@ intersection([1, 2, 3], [4, 3, 2]); // [2,3]
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### join
+
+Joins all elements of an array into a string and returns this string. Uses a separator and an end separator.
+
+Use `Array.reduce()` to combine elements into a string.
+Omit the second argument, `separator`, to use a default separator of `','`.
+Omit the third argument, `end`, to use the same value as `separator` by default.
+
+```js
+const join = (arr, separator = ',', end = separator) =>
+  arr.reduce(
+    (acc, val, i) =>
+      i == arr.length - 2
+        ? acc + val + end
+        : i == arr.length - 1 ? acc + val : acc + val + separator,
+    ''
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+join(); // ''
+join(['pen', 'pineapple', 'apple', 'pen'], ',', '&'); //"pen,pineapple,apple&pen"
+join(['pen', 'pineapple', 'apple', 'pen'], ','); //"pen,pineapple,apple,pen"
+join(['pen', 'pineapple', 'apple', 'pen']); //"pen,pineapple,apple,pen"
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### last
 
 Returns the last element in an array.
@@ -1189,6 +1234,38 @@ sample([3, 7, 9, 11]); // 9
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### sampleSize
+
+Gets `n` random elements at unique keys from `array` up to the size of `array`.
+
+Shuffle the array using the [Fisher-Yates algorithm](https://github.com/chalarangelo/30-seconds-of-code#shuffle).
+Use `Array.slice()` to get the first `n` elements.
+Omit the second argument, `n` to get only one element at random from the array.
+
+```js
+const sampleSize = ([...arr], n = 1) => {
+  let m = arr.length;
+  while (m) {
+    const i = Math.floor(Math.random() * m--);
+    [arr[m], arr[i]] = [arr[i], arr[m]];
+  }
+  return arr.slice(0, n);
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+sampleSize([1, 2, 3], 2); // [3,1]
+sampleSize([1, 2, 3], 4); // [2,3,1]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### shuffle
 
 Randomizes the order of the values of an array, returning a new array.
@@ -1235,6 +1312,34 @@ const similarity = (arr, values) => arr.filter(v => values.includes(v));
 
 ```js
 similarity([1, 2, 3], [1, 2, 4]); // [1,2]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### sortedIndex
+
+Returns the lowest index at which value should be inserted into array in order to maintain its sort order.
+
+Check if the array is sorted in descending order (loosely).
+Use `Array.findIndex()` to find the appropriate index where the element should be inserted.
+
+```js
+const sortedIndex = (arr, n) => {
+  const isDescending = arr[0] > arr[arr.length - 1];
+  const index = arr.findIndex(el => (isDescending ? n >= el : n <= el));
+  return index === -1 ? arr.length : index;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+sortedIndex([5, 3, 2, 1], 4); // 1
+sortedIndex([30, 50], 40); // 1
 ```
 
 </details>
@@ -1437,7 +1542,7 @@ zipObject(['a', 'b'], [1, 2, 3]); // {a: 1, b: 2}
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ## 🖥️ Browser
+ ## 🌐 Browser
 
 ### arrayToHtmlList
 
@@ -1651,32 +1756,6 @@ const getStyle = (el, ruleName) => getComputedStyle(el)[ruleName];
 
 ```js
 getStyle(document.querySelector('p'), 'font-size'); // '16px'
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### getURLParameters
-
-Returns an object containing the parameters of the current URL.
-
-Use `match()` with an appropriate regular expression to get all key-value pairs, `Array.reduce()` to map and combine them into a single object.
-Pass `location.search` as the argument to apply to the current `url`.
-
-```js
-const getURLParameters = url =>
-  url
-    .match(/([^?=&]+)(=([^&]*))/g)
-    .reduce((a, v) => ((a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a), {});
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-getURLParameters('http://url.com/page?name=Adam&surname=Smith'); // {name: 'Adam', surname: 'Smith'}
 ```
 
 </details>
@@ -2176,6 +2255,35 @@ functionName(Math.max); // max (logged in debug channel of console)
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### memoize
+
+Returns the memoized (cached) function.
+
+Use `Object.create(null)` to create an empty object without `Object.prototype` (so that those properties are not resolved if the input value is something like `'hasOwnProperty'`).
+Return a function which takes a single argument to be supplied to the memoized function by first checking if the function's output for that specific input value is already cached, or store and return it if not.
+
+```js
+const memoize = fn => {
+  const cache = Object.create(null);
+  return value => cache[value] || (cache[value] = fn(value));
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+// See the `anagrams` snippet.
+const anagramsCached = memoize(anagrams);
+anagramsCached('javascript'); // takes a long time
+anagramsCached('javascript'); // returns virtually instantly since it's now cached
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### runPromisesInSeries
 
 Runs an array of promises in series.
@@ -2364,6 +2472,39 @@ const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
 
 ```js
 distance(1, 1, 2, 3); // 2.23606797749979
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### elo
+
+Computes the new ratings between two opponents using the [Elo rating system](https://en.wikipedia.org/wiki/Elo_rating_system). It takes an array
+of two pre-ratings and returns an array containing two post-ratings.
+The winner's rating is the first element of the array.
+
+Use the exponent `**` operator and math operators to compute the expected score (chance of winning)
+of each opponent and compute the new rating for each. Omit the second argument to use the default
+K-factor of 32, or supply a custom K-factor value.
+
+```js
+const elo = ([a, b], kFactor = 32) => {
+  const expectedScore = (self, opponent) => 1 / (1 + 10 ** ((opponent - self) / 400));
+  const newRating = (rating, i) => rating + kFactor * (i - expectedScore(i ? a : b, i ? b : a));
+  return [newRating(a, 1), newRating(b, 0)];
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+elo([1200, 1200]); // [1216, 1184]
+elo([1000, 2000]); // [1031.8991261061358, 1968.1008738938642]
+elo([1500, 1000]); // [1501.7036868864648, 998.2963131135352]
+elo([1200, 1200], 64); // [1232, 1168]
 ```
 
 </details>
@@ -2565,11 +2706,11 @@ inrange(3, 2); // false
 
 Checks if the given number is an Armstrong number or not.
 
-Convert the given number into an array of digits. Use `Math.pow()` to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return `true` otherwise `false`.
+Convert the given number into an array of digits. Use the exponent operator (`**`) to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return `true` otherwise `false`.
 
 ```js
 const isArmstrongNumber = digits =>
-  (arr => arr.reduce((a, d) => a + Math.pow(parseInt(d), arr.length), 0) == digits)(
+  (arr => arr.reduce((a, d) => a + parseInt(d) ** arr.length, 0) == digits)(
     (digits + '').split('')
   );
 ```
@@ -2913,9 +3054,7 @@ You can omit the second argument to get the sample standard deviation or set it 
 const standardDeviation = (arr, usePopulation = false) => {
   const mean = arr.reduce((acc, val) => acc + val, 0) / arr.length;
   return Math.sqrt(
-    arr
-      .reduce((acc, val) => acc.concat(Math.pow(val - mean, 2)), [])
-      .reduce((acc, val) => acc + val, 0) /
+    arr.reduce((acc, val) => acc.concat((val - mean) ** 2), []).reduce((acc, val) => acc + val, 0) /
       (arr.length - (usePopulation ? 0 : 1))
   );
 };
@@ -3355,7 +3494,7 @@ byteSize('Hello World'); // 11
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### Capitalize
+### capitalize
 
 Capitalizes the first letter of a string.
 
@@ -3502,6 +3641,59 @@ const fromCamelCase = (str, separator = '_') =>
 fromCamelCase('someDatabaseFieldName', ' '); // 'some database field name'
 fromCamelCase('someLabelThatNeedsToBeCamelized', '-'); // 'some-label-that-needs-to-be-camelized'
 fromCamelCase('someJavascriptProperty', '_'); // 'some_javascript_property'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isAbsoluteURL
+
+Returns `true` if the given string is an absolute URL, `false` otherwise.
+
+Use a regular expression to test if the string is an absolute URL.
+
+```js
+const isAbsoluteURL = str => /^[a-z][a-z0-9+.-]*:/.test(str);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isAbsoluteURL('https://google.com'); // true
+isAbsoluteURL('ftp://www.myserver.net'); // true
+isAbsoluteURL('/foo/bar'); // false
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### mask
+
+Replaces all but the last `num` of characters with the specified mask character.
+
+Use `String.slice()` to grab the portion of the characters that need to be masked and use `String.replace()` with a regex to replace every character with the mask character. 
+Concatenate the masked characters with the remaining unmasked portion of the string.
+Omit the second argument, `num`, to keep a default of `4` characters unmasked. If `num` is negative, the unmasked characters will be at the start of the string.
+Omit the third argument, `mask`, to use a default character of `'*'` for the mask.
+
+```js
+const mask = (cc, num = 4, mask = '*') =>
+  ('' + cc).slice(0, -num).replace(/./g, mask) + ('' + cc).slice(-num);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+mask(1234567890); // '******7890'
+mask(1234567890, 3); // '*******890'
+mask(1234567890, 4, '$'); // '$$$$$$7890'
+mask(1234567890, -4, '$'); // '1234$$$$$$'
 ```
 
 </details>
@@ -3919,6 +4111,32 @@ getType(new Set([1, 2, 3])); // "set"
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### getURLParameters
+
+Returns an object containing the parameters of the current URL.
+
+Use `match()` with an appropriate regular expression to get all key-value pairs, `Array.reduce()` to map and combine them into a single object.
+Pass `location.search` as the argument to apply to the current `url`.
+
+```js
+const getURLParameters = url =>
+  url
+    .match(/([^?=&]+)(=([^&]*))/g)
+    .reduce((a, v) => ((a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a), {});
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+getURLParameters('http://url.com/page?name=Adam&surname=Smith'); // {name: 'Adam', surname: 'Smith'}
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### hexToRGB
 
 Converts a color code to a `rgb()` or `rgba()` string if alpha value is provided.
@@ -3977,6 +4195,35 @@ const isArray = val => !!val && Array.isArray(val);
 ```js
 isArray(null); // false
 isArray([1]); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isArrayLike
+
+Checks if the provided argument is array-like (i.e. is iterable).
+
+Use the spread operator (`...`) to check if the provided argument is iterable inside a `try... catch` block and the comma operator (`,`) to return the appropriate value.
+
+```js
+
+
+const isArrayLike = val =>
+  try {return [...val], true; }
+  catch (e)  { return false; }
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isArrayLike(document.querySelectorAll('.className')); // true
+isArrayLike('abc'); // true
+isArrayLike(null); // false
 ```
 
 </details>
@@ -4075,6 +4322,68 @@ isNumber(1); // true
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### isPrimitive
+
+Returns a boolean determining if the supplied value is primitive or not.
+
+Use `Array.includes()` on an array of type strings which are not primitive,
+supplying the type using `typeof`.
+Since `typeof null` evaluates to `'object'`, it needs to be directly compared.
+
+```js
+const isPrimitive = val => !['object', 'function'].includes(typeof val) || val === null;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isPrimitive(window.someNonExistentProperty); // true
+isPrimitive(null); // true
+isPrimitive(50); // true
+isPrimitive('Hello!'); // true
+isPrimitive(false); // true
+isPrimitive(Symbol()); // true
+isPrimitive([]); // false
+isPrimitive(new String('Hello!')); // false
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isPromiseLike
+
+Returns `true` if an object looks like a [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), `false` otherwise.
+
+Check if the object is not `null`, its `typeof` matches either `object` or `function` and if it has a `.then` property, which is also a `function`.
+
+```js
+const isPromiseLike = obj =>
+  obj !== null &&
+  (typeof obj === 'object' || typeof obj === 'function') &&
+  typeof obj.then === 'function';
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isPromiseLike({
+  then: function() {
+    return '';
+  }
+}); // true
+isPromiseLike(null); // false
+isPromiseLike({}); // false
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### isString
 
 Checks if the given argument is a string.
@@ -4114,6 +4423,37 @@ const isSymbol = val => typeof val === 'symbol';
 ```js
 isSymbol('x'); // false
 isSymbol(Symbol('x')); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isValidJSON
+
+Checks if the provided argument is a valid JSON.
+
+Use `JSON.parse()` and a `try... catch` block to check if the provided argument is a valid JSON.
+
+```js
+const isValidJSON = obj => {
+  try {
+    JSON.parse(obj);
+    return true;
+  } catch (e) {
+    return false;
+  }
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isValidJSON('{"name":"Adam","age":20}'); // true
+isValidJSON('{"name":"Adam",age:"20"}'); // false
+isValidJSON(null); // true
 ```
 
 </details>
@@ -4330,6 +4670,13 @@ yesNo('Foo', true); // true
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
+
+
+## Collaborators
+
+| [<img src="https://github.com/Chalarangelo.png" width="100px;"/>](https://github.com/Chalarangelo)<br/> [<sub>Angelos Chalaris</sub>](https://github.com/Chalarangelo) | [<img src="https://github.com/Pl4gue.png" width="100px;"/>](https://github.com/Pl4gue)<br/> [<sub>David Wu</sub>](https://github.com/Pl4gue) | [<img src="https://github.com/fejes713.png" width="100px;"/>](https://github.com/fejes713)<br/> [<sub>Stefan Feješ</sub>](https://github.com/fejes713)  | [<img src="https://github.com/kingdavidmartins.png" width="100px;"/>](https://github.com/kingdavidmartins)<br/> [<sub>King David Martins</sub>](https://github.com/iamsoorena) | [<img src="https://github.com/iamsoorena.png" width="100px;"/>](https://github.com/iamsoorena)<br/> [<sub>Soorena Soleimani</sub>](https://github.com/iamsoorena) |
+| --- | --- | --- | --- | --- |
+| [<img src="https://github.com/elderhsouza.png" width="100px;"/>](https://github.com/elderhsouza)<br/> [<sub>Elder Henrique Souza</sub>](https://github.com/elderhsouza) | [<img src="https://github.com/skatcat31.png" width="100px;"/>](https://github.com/skatcat31)<br/> [<sub>Robert Mennell</sub>](https://github.com/skatcat31) | [<img src="https://github.com/atomiks.png" width="100px;"/>](https://github.com/atomiks)<br/> [<sub>atomiks</sub>](https://github.com/atomiks)  |
 
 
 ## Credits
