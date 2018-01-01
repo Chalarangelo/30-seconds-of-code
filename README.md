@@ -54,6 +54,7 @@
 * [`initializeArrayWithRange`](#initializearraywithrange)
 * [`initializeArrayWithValues`](#initializearraywithvalues)
 * [`intersection`](#intersection)
+* [`join`](#join)
 * [`last`](#last)
 * [`mapObject`](#mapobject)
 * [`nthElement`](#nthelement)
@@ -220,6 +221,7 @@
 * [`escapeRegExp`](#escaperegexp)
 * [`fromCamelCase`](#fromcamelcase)
 * [`isAbsoluteURL`](#isabsoluteurl)
+* [`mask`](#mask)
 * [`palindrome`](#palindrome)
 * [`repeatString`](#repeatstring)
 * [`reverseString`](#reversestring)
@@ -272,8 +274,6 @@
 <details>
 <summary>View contents</summary>
 
-* [`join`](#join)
-* [`mask`](#mask)
 * [`sortedIndex`](#sortedindex)
 
 </details>
@@ -915,6 +915,40 @@ const intersection = (a, b) => {
 
 ```js
 intersection([1, 2, 3], [4, 3, 2]); // [2,3]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### join
+
+Joins all elements of an array into a string and returns this string. Uses a separator and an end separator.
+
+Use `Array.reduce()` to combine elements into a string.
+Omit the second argument, `separator`, to use a default separator of `','`.
+Omit the third argument, `end`, to use the same value as `separator` by default.
+
+```js
+const join = (arr, separator = ',', end = separator) =>
+  arr.reduce(
+    (acc, val, i) =>
+      i == arr.length - 2
+        ? acc + val + end
+        : i == arr.length - 1 ? acc + val : acc + val + separator,
+    ''
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+join(); // ''
+join(['pen', 'pineapple', 'apple', 'pen'], ',', '&'); //"pen,pineapple,apple&pen"
+join(['pen', 'pineapple', 'apple', 'pen'], ','); //"pen,pineapple,apple,pen"
+join(['pen', 'pineapple', 'apple', 'pen']); //"pen,pineapple,apple,pen"
 ```
 
 </details>
@@ -3618,6 +3652,35 @@ isAbsoluteURL('/foo/bar'); // false
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### mask
+
+Replaces all but the last `num` of characters with the specified mask character.
+
+Use `String.slice()` to grab the portion of the characters that need to be masked and use `String.replace()` with a regex to replace every character with the mask character. 
+Concatenate the masked characters with the remaining unmasked portion of the string.
+Omit the second argument, `num`, to keep a default of `4` characters unmasked.
+Omit the third argument, `mask`, to use a default character of `'*'` for the mask.
+
+```js
+const mask = (cc, num = 4, mask = '*') =>
+  ('' + cc).slice(0, -num).replace(/./g, mask) + ('' + cc).slice(-num);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+mask(1234567890); // '******7890'
+mask(1234567890, 3); // '*******890'
+mask(1234567890, 4, '$'); // '$$$$$$7890'
+mask(1234567890, -4, '$'); // '1234$$$$$$'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### palindrome
 
 Returns `true` if the given string is a palindrome, `false` otherwise.
@@ -4590,59 +4653,6 @@ yesNo('Foo', true); // true
 
 ---
  ## _Uncategorized_
-
-### join
-
-Joins all elements of an array into a string and returns this string. Uses a separator and an end separator.
-
-Use `Array.reduce()` to combine elements into a string.
-Omit the second argument, `separator`, to use a default separator of `','`.
-Omit the third argument, `end`, to use the same value as `separator` by default.
-
-```js
-const join = (arr, separator = ',', end = separator) =>
-  arr.reduce(
-    (acc, val, i) =>
-      i == arr.length - 2
-        ? acc + val + end
-        : i == arr.length - 1 ? acc + val : acc + val + separator,
-    ''
-  );
-```
-
-```js
-join(); // ''
-join(['pen', 'pineapple', 'apple', 'pen'], ',', '&'); //"pen,pineapple,apple&pen"
-join(['pen', 'pineapple', 'apple', 'pen'], ','); //"pen,pineapple,apple,pen"
-join(['pen', 'pineapple', 'apple', 'pen']); //"pen,pineapple,apple,pen"
-```
-
-<br>[⬆ back to top](#table-of-contents)
-
-
-### mask
-
-Replaces all but the last `num` of characters with the specified mask character.
-
-Use `String.slice()` to grab the portion of the characters that need to be masked and use `String.replace()` with a regex to replace every character with the mask character. 
-Concatenate the masked characters with the remaining unmasked portion of the string.
-Omit the second argument, `num`, to keep a default of `4` characters unmasked.
-Omit the third argument, `mask`, to use a default character of `'*'` for the mask.
-
-```js
-const mask = (cc, num = 4, mask = '*') =>
-  ('' + cc).slice(0, -num).replace(/./g, mask) + ('' + cc).slice(-num);
-```
-
-```js
-mask(1234567890); // '******7890'
-mask(1234567890, 3); // '*******890'
-mask(1234567890, 4, '$'); // '$$$$$$7890'
-mask(1234567890, -4, '$'); // '1234$$$$$$'
-```
-
-<br>[⬆ back to top](#table-of-contents)
-
 
 ### sortedIndex
 
