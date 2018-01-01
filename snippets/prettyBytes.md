@@ -23,9 +23,7 @@ const prettyBytes = (num, options) => {
   if (num < 0) num = -num;
   if (num < 1) return (num < 0 ? '-' : '') + num + ' B';
   const exponent = Math.min(Math.floor(Math.log10(num) / 3), UNITS.length - 1);
-  const n = Number(
-    (num / Math.pow(1000, exponent)).toPrecision(options.precision)
-  );
+  const n = Number((num / 1000 ** exponent).toPrecision(options.precision));
   return (
     (num < 0 ? '-' : '') +
     n +
