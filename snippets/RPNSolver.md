@@ -20,5 +20,7 @@ const RPNSolver = RPN => {
 ```
 
 ```js
-
+RPNSolver('15 7 1 1 + - / 3 * 2 1 1 + + -'); // 5
+RPNSolver('3 5 6 + *'); //33
+RPNSolver('2 4 / 5 6 - *'); //-0.5
 ```
