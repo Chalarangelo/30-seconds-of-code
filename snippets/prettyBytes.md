@@ -9,29 +9,15 @@ negative or not.
 
 ```js
 const prettyBytes = (num, options) => {
-  options = { precision: 3, addSpace: true, wholeWord: false, ...options };
-  const UNITS = [
-    ['B', 'Byte'],
-    ['KB', 'Kilo'],
-    ['MB', 'Mega'],
-    ['GB', 'Giga'],
-    ['TB', 'Tera'],
-    ['PB', 'Peta'],
-    ['EB', 'Exa'],
-    ['ZB', 'Zetta'],
-    ['YB', 'Yotta']
-  ];
-  if (num < 0) num = -num;
+  options = { precision: 3, addSpace: true, ...options };
+  const UNITS = ['B','KB','MB','GB','TB','PB','EB','ZB','YB'];
   if (num < 1) return (num < 0 ? '-' : '') + num + ' B';
-  const exponent = Math.min(Math.floor(Math.log10(num) / 3), UNITS.length - 1);
-  const n = Number((num / 1000 ** exponent).toPrecision(options.precision));
+  const exponent = Math.min(Math.floor(Math.log10(num < 0 ? -num : num) / 3), UNITS.length - 1);
+  const n = Number(((num < 0 ? -num : num) / 1000 ** exponent).toPrecision(options.precision));
   return (
     (num < 0 ? '-' : '') +
     n +
-    (options.addSpace ? ' ' : '') +
-    UNITS[exponent][options.wholeWord ? 1 : 0] +
-    (options.wholeWord && exponent > 0 ? 'byte' : '') +
-    (options.wholeWord && n !== 1 ? 's' : '')
+    (options.addSpace ? ' ' : '') + UNITS[exponent]
   );
 };
 ```
