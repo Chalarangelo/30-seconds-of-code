@@ -80,6 +80,7 @@ isPrimitive:utility
 isPromiseLike:utility
 isString:utility
 isSymbol:utility
+isTravisCI:node
 isValidJSON:utility
 join:array
 JSONToDate:date
