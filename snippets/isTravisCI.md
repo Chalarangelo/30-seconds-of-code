@@ -6,7 +6,7 @@ Checks if the current environment has the `TRAVIS` and `CI` environment variable
 
 ```js
 
-const isTravisCI = ()) => 'TRAVIS' in process.env && 'CI' in process.env;
+const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
 ```
 
 ```js
