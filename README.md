@@ -187,8 +187,11 @@
 <details>
 <summary>View contents</summary>
 
+* [`hasFlags`](#hasflags)
+* [`isTravisCI`](#istravisci)
 * [`JSONToFile`](#jsontofile)
 * [`readFileLines`](#readfilelines)
+* [`untildify`](#untildify)
 * [`UUIDGeneratorNode`](#uuidgeneratornode)
 
 </details>
@@ -199,6 +202,7 @@
 <summary>View contents</summary>
 
 * [`cleanObj`](#cleanobj)
+* [`invertKeyValues`](#invertkeyvalues)
 * [`lowercaseKeys`](#lowercasekeys)
 * [`objectFromPairs`](#objectfrompairs)
 * [`objectToPairs`](#objecttopairs)
@@ -3171,6 +3175,57 @@ sumPower(10, 3, 5); //2925
 ---
  ## 📦 Node
 
+### hasFlags
+
+Check if the current process's arguments contain the specified flags.
+
+Use `Array.every()` and `Array.includes()` to check if `process.argv` contains all the specified flags.
+Use a regular expression to test if the specified flags are prefixed with `-` or `--` and prefix them accordingly.
+
+```js
+const hasFlags = (...flags) =>
+  flags.every(flag => process.argv.includes(/^-{1,2}/.test(flag) ? flag : '--' + flag));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+// node myScript.js -s --test --cool=true
+hasFlags('-s'); // true
+hasFlags('test', 'cool=true'); // true
+hasFlags('--test', 'cool=true', '-s'); // true
+hasFlags('special'); // false
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isTravisCI
+
+Checks if the current environment is [Travis CI](https://travis-ci.org/).
+
+Checks if the current environment has the `TRAVIS` and `CI` environment variables ([reference](https://docs.travis-ci.com/user/environment-variables/#Default-Environment-Variables)).
+
+```js
+
+const isTravisCI = ()) => 'TRAVIS' in process.env && 'CI' in process.env;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isTravisCI(); // true (if code is running on Travis CI)
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### JSONToFile
 
 Writes a JSON object to a file.
@@ -3233,6 +3288,28 @@ console.log(arr); // ['line1', 'line2', 'line3']
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### untildify
+
+Converts a tilde path to an absolute path.
+
+Use `String.replace()` with a regular expression and `OS.homedir()` to replace the `~` in the start of the path with the home directory.
+
+```js
+const untildify = str => str.replace(/^~($|\/|\\)/, `${require('os').homedir()}$1`);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+untildify('~/node'); // '/Users/aUser/node'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### UUIDGeneratorNode
 
 Generates a UUID in Node.JS.
@@ -3287,6 +3364,32 @@ const cleanObj = (obj, keysToKeep = [], childIndicator) => {
 ```js
 const testObj = { a: 1, b: 2, children: { a: 1, b: 2 } };
 cleanObj(testObj, ['a'], 'children'); // { a: 1, children : { a: 1}}
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### invertKeyValues
+
+Inverts the key-value pairs of an object, without mutating it.
+
+Use `Object.keys()` and `Array.reduce()` to invert the key-value pairs of an object.
+
+```js
+const invertKeyValues = obj =>
+  Object.keys(obj).reduce((acc, key) => {
+    acc[obj[key]] = key;
+    return acc;
+  }, {});
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+invertKeyValues({ name: 'John', age: 20 }); // { 20: 'age', John: 'name' }
 ```
 
 </details>

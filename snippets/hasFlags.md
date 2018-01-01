@@ -7,9 +7,7 @@ Use a regular expression to test if the specified flags are prefixed with `-` or
 
 ```js
 const hasFlags = (...flags) =>
-  flags.every(flag => process.argv.includes(
-    /^-{1,2}/.test(flag) ? flag : '--' + flag
-  ));
+  flags.every(flag => process.argv.includes(/^-{1,2}/.test(flag) ? flag : '--' + flag));
 ```
 
 ```js
