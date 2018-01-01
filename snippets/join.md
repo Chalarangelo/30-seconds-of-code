@@ -1,9 +1,13 @@
 ### join
 
-Is like `Array.join()` but with an additional argument of `end`(is equal to `separator` by default) which is used to separate the second to last and last items in the array. Returns `""` when the array is empty and the first item when the length of array is 1.
+Joins all elements of an array into a string and returns this string. Uses a separator and an end separator.
+
+Use `Array.reduce()` to combine elements into a string.
+Omit the second argument, `separator`, to use a default separator of `','`.
+Omit the third argument, `end`, to use the same value as `separator` by default.
 
 ```js
-const join = (arr = [], separator = ',', end = separator) =>
+const join = (arr, separator = ',', end = separator) =>
   arr.reduce(
     (acc, val, i) =>
       i == arr.length - 2
