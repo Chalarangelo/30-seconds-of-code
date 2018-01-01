@@ -1,6 +1,6 @@
 ### mask
 
-It replace all but the last(first if `num` is negative) `num` (by default it is 4) characters by the provided mask(`'*'` by default).
+It replace all but the last `num` (first if `num` is negative, by default `4`) characters by the provided masking character (`'*'` by default).
 
 ```js
 const mask = (cc,num = 4,mask = '*') =>
