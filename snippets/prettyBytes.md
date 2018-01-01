@@ -3,7 +3,7 @@
 Converts a number in bytes to a human-readable string.
 
 Use an array dictionary of units to be accessed based on the exponent. Return the prettified
-string by building it up taking into account whether the supplied options and whether it is
+string by building it up taking into account the supplied options and whether it is
 negative or not.
 
 ```js
