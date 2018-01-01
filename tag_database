@@ -81,6 +81,7 @@ isPromiseLike:utility
 isString:utility
 isSymbol:utility
 isValidJSON:utility
+join:uncategorized
 JSONToDate:date
 JSONToFile:node
 last:array
