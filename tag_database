@@ -81,14 +81,14 @@ isPromiseLike:utility
 isString:utility
 isSymbol:utility
 isValidJSON:utility
-join:uncategorized
+join:array
 JSONToDate:date
 JSONToFile:node
 last:array
 lcm:math
 lowercaseKeys:object
 mapObject:array
-mask:uncategorized
+mask:string
 max:math
 median:math
 memoize:function
