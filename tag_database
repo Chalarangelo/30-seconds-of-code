@@ -10,6 +10,7 @@ chainAsync:function
 chunk:array
 clampNumber:math
 cleanObj:object
+cloneRegExp:utility
 coalesce:utility
 coalesceFactory:utility
 collatz:math
