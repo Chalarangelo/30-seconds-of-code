@@ -23,7 +23,7 @@ const EMOJIS = {
   node: '📦',
   object: '🗃️',
   string: '📜',
-  utility: '💎'
+  utility: '🔧'
 };
 
 let startPart = '',
