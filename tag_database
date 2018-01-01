@@ -79,6 +79,7 @@ isPrime:math
 isPromiseLike:utility
 isString:utility
 isSymbol:utility
+isTravisCI:node
 isValidJSON:utility
 join:array
 JSONToDate:date
