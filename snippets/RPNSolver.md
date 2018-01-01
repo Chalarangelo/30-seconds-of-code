@@ -1,32 +1,21 @@
 ### RPNSolver
 
 Solves the given reverse polish notation
-```js
+
+``` js
 const RPNSolver = RPN => {
-  const isNumeric = str => !isNaN(parseFloat(str)) && isFinite(str);
-  const isOperator = str => ['*','-','+','/','**'].includes(str)
-  let stack = [];
-  let solve  = RPN.replace(/\^/g,'**').split(/\s+/g);
+  const operators = {'*' : (a,b) => a * b, '+' : (a,b) => a + b, '-' : (a,b) => a - b, '/' : (a,b) => a / b, '**': (a,b) => a ** b}
+  let [stack,solve] = [[],RPN.replace(/\^/g,'**').split(/\s+/g).filter(el => !/\s+/.test(el) && el !== '')]
   solve.forEach(symbol => {
-    if(isNumeric(symbol)) {stack.push(symbol)}
-          else if (isOperator(symbol)){
-          a = stack.pop();
-          b = stack.pop();
-          if(symbol === "+") {
-                    stack.push(parseFloat(a) + parseFloat(b));
-                } else if(symbol === "-") {
-                    stack.push(parseFloat(b) - parseFloat(a));
-                } else if(symbol === "*") {
-                    stack.push(parseFloat(a) * parseFloat(b));
-                } else if(symbol === "/") {
-                    stack.push(parseFloat(b) / parseFloat(a));
-                } else if(symbol === "**") {
-                    stack.push(parseFloat(a) ** parseFloat(b));
-                }
-        } else { console.log('Wrong RPN')}
+    if(!isNaN(parseFloat(symbol)) && isFinite(symbol)) {stack.push(symbol)}
+          else if (Object.keys(operators).includes(symbol)) {
+          let [a,b] = [stack.pop(),stack.pop()]
+          stack.push(operators[symbol](parseFloat(b),parseFloat(a)))
+        } else { throw `${symbol} is not a recognized symbol` }
   }
 )
-return stack.length === 1 ? stack.pop : console.log("error")
+ if(stack.length === 1)  return stack.pop()
+  else  throw `${RPN} is not a proper RPN. Please check it and try again`
 }
 ```
 
