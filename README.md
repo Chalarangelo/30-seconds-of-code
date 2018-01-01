@@ -177,6 +177,7 @@
 * [`round`](#round)
 * [`standardDeviation`](#standarddeviation)
 * [`sum`](#sum)
+* [`sumPower`](#sumpower)
 
 </details>
 
@@ -237,7 +238,7 @@
 
 </details>
 
-### 💎 Utility
+### 🔧 Utility
 
 <details>
 <summary>View contents</summary>
@@ -3094,6 +3095,36 @@ sum([1, 2, 3, 4]); // 10
 
 <br>[⬆ Back to top](#table-of-contents)
 
+
+### sumPower
+
+Returns the sum of the powers of all the numbers from `start` to `end` (both inclusive).
+
+Use `Array.fill()` to create an array of all the numbers in the target range, `Array.map()` and the exponent operator (`**`) to raise them to `power` and `Array.reduce()` to add them together.
+Omit the second argument, `power`, to use a default power of `2`.
+Omit the third argument, `start`, to use a default starting value of `1`.
+
+```js
+const sumPower = (end, power = 2, start = 1) =>
+  Array(end + 1 - start)
+    .fill(0)
+    .map((x, i) => (i + start) ** power)
+    .reduce((a, b) => a + b, 0);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+sumPower(10); // 385
+sumPower(10, 3); //3025
+sumPower(10, 3, 5); //2925
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 ---
  ## 📦 Node
 
@@ -4012,7 +4043,7 @@ words('python, javaScript & coffee'); // ["python", "javaScript", "coffee"]
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ## 💎 Utility
+ ## 🔧 Utility
 
 ### coalesce
 
@@ -4209,6 +4240,7 @@ Checks if the provided argument is array-like (i.e. is iterable).
 Use the spread operator (`...`) to check if the provided argument is iterable inside a `try... catch` block and the comma operator (`,`) to return the appropriate value.
 
 ```js
+
 
 
 const isArrayLike = val =>
