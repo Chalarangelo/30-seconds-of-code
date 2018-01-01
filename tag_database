@@ -51,7 +51,7 @@ getDaysDiffBetweenDates:date
 getScrollPosition:browser
 getStyle:browser
 getType:utility
-getURLParameters:browser
+getURLParameters:utility
 groupBy:array
 hammingDistance:math
 hasClass:browser
