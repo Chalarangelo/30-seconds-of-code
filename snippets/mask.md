@@ -9,7 +9,7 @@ Omit the third argument, `mask`, to use a default character of `'*'` for the mas
 
 ```js
 const mask = (cc,num = 4,mask = '*') =>
-   cc.slice(0, -num).replace(/./g, mask) + cc.slice(-num);
+   ('' + cc).slice(0, -num).replace(/./g, mask) + ('' + cc).slice(-num);
 ```
 
 ```js
