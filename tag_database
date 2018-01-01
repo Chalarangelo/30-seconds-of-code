@@ -71,7 +71,6 @@ isAbsoluteURL:string
 isArmstrongNumber:math
 isArray:utility
 isArrayLike:utility
-isSorted:array
 isBoolean:utility
 isDivisible:math
 isEven:math
@@ -81,6 +80,7 @@ isNumber:utility
 isPrime:math
 isPrimitive:utility
 isPromiseLike:utility
+isSorted:array
 isString:utility
 isSymbol:utility
 isTravisCI:node
