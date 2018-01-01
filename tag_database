@@ -115,6 +115,7 @@ randomIntegerInRange:math
 randomNumberInRange:math
 readFileLines:node
 redirect:browser
+reducedFilter:uncategorized
 remove:array
 repeatString:string
 reverseString:string
