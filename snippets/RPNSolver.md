@@ -26,7 +26,7 @@ const RPNSolver = RPN => {
         } else { console.log('Wrong RPN')}
   }
 )
-return stack.length === 1 ? stack.pop : console.log("error")
+return stack.length === 1 ? stack.pop() : console.log("error")
 }
 ```
 
