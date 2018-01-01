@@ -22,18 +22,10 @@ const prettyBytes = (num,  precision = 3, addSpace = true) {
 ```
 
 ```js
-/*
-Default options: {
-  precision: 3, // number of digits
-  addSpace: true, // add a space between the unit and number?
-  wholeWord: false // use the whole word or two letters?
-}
-*/
 prettyBytes(1000); // 1 KB
 prettyBytes(123456789); // 123 MB
 prettyBytes(-50); // -50 B
 prettyBytes(27145424323.5821); // 27.1 GB
-prettyBytes(27145424323.5821, { precision: 5 }); // 27.145 GB
-prettyBytes(5500, { wholeWord: true }); // 5.5 Kilobytes
-prettyBytes(5500, { addSpace: false }); // 5.5KB
+prettyBytes(27145424323.5821, 5 ); // 27.145 GB
+prettyBytes(5500, 3, false); // 5.5KB
 ```
