@@ -648,8 +648,7 @@ hasFlags('-s'); // true
 hasFlags('test', 'cool=true'); // true
 hasFlags('--test', 'cool=true', '-s'); // true
 hasFlags('special'); // false
-</code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="istravisci">isTravisCI</h3></div><div class="section double-padded"><p>Checks if the current environment is <a href="https://travis-ci.org/">Travis CI</a>.</p><p>Checks if the current environment has the <code>TRAVIS</code> and <code>CI</code> environment variables (<a href="https://docs.travis-ci.com/user/environment-variables/#Default-Environment-Variables">reference</a>).</p><pre><code class="language-js">
-const isTravisCI = ()) =&gt; 'TRAVIS' in process.env &amp;&amp; 'CI' in process.env;
+</code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="istravisci">isTravisCI</h3></div><div class="section double-padded"><p>Checks if the current environment is <a href="https://travis-ci.org/">Travis CI</a>.</p><p>Checks if the current environment has the <code>TRAVIS</code> and <code>CI</code> environment variables (<a href="https://docs.travis-ci.com/user/environment-variables/#Default-Environment-Variables">reference</a>).</p><pre><code class="language-js">const isTravisCI = () =&gt; 'TRAVIS' in process.env &amp;&amp; 'CI' in process.env;
 </code></pre><pre><code class="language-js">isTravisCI(); // true (if code is running on Travis CI)
 </code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="jsontofile">JSONToFile</h3></div><div class="section double-padded"><p>Writes a JSON object to a file.</p><p>Use <code>fs.writeFile()</code>, template literals and <code>JSON.stringify()</code> to write a <code>json</code> object to a <code>.json</code> file.</p><pre><code class="language-js">const fs = require('fs');
 const JSONToFile = (obj, filename) =&gt;
