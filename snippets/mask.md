@@ -1,6 +1,8 @@
 ### mask
 
-It replace all but the last `num` (first if `num` is negative, by default `4`) characters by the provided masking character (`'*'` by default).
+Replaces all but the last `num` of characters (first if `num` is negative, by default `4`) with the provided mask character (`'*'` by default).
+
+Use `Array.slice()` to grab the portion of the characters that need to be masked and use `Array.replace()` with a regex to replace every character with the mask character. Concatenate the masked characters with the remaining unmasked portion of the string.
 
 ```js
 const mask = (cc,num = 4,mask = '*') =>
