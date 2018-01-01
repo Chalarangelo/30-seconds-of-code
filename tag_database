@@ -108,6 +108,7 @@ percentile:math
 pick:array
 pipeFunctions:adapter
 powerset:math
+prettyBytes:uncategorized
 primes:math
 promisify:adapter
 pull:array
