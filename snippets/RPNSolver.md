@@ -8,14 +8,25 @@ const RPNSolver = RPN => {
   let stack = [];
   let solve  = RPN.replace(/\^/g,'**').split(/\s+/g);
   solve.forEach(symbol => {
-    isNumeric(symbol) ? stack.push(symbol) :
-          isOperator(symbol) ?
-          (a = stack.pop(),
-          b = stack.pop(),
-          stack.push(eval(a + symbol + b))) : Console.log('Wrong RPN')
+    if(isNumeric(symbol)) {stack.push(symbol)}
+          else if (isOperator(symbol)){
+          a = stack.pop();
+          b = stack.pop();
+          if(symbol === "+") {
+                    stack.push(parseFloat(a) + parseFloat(b));
+                } else if(symbol === "-") {
+                    stack.push(parseFloat(b) - parseFloat(a));
+                } else if(symbol === "*") {
+                    stack.push(parseFloat(a) * parseFloat(b));
+                } else if(symbol === "/") {
+                    stack.push(parseFloat(b) / parseFloat(a));
+                } else if(symbol === "**") {
+                    stack.push(parseFloat(a) ** parseFloat(b));
+                }
+        } else { console.log('Wrong RPN')}
   }
 )
-return stack.pop()
+return stack.length === 1 ? stack.pop : console.log("error")
 }
 ```
 
