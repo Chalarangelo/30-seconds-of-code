@@ -7,7 +7,7 @@ Omit the second argument, `power`, to use a default power of `2`.
 Omit the third argument, `start`, to use a default starting value of `1`.
 
 ```js
-const sumPower = (end,power = 2,start = 1)
+const sumPower = (end,power = 2,start = 1) =>
   Array(end - start).fill(0).map((x,i) => (i+start) ** power).reduce((a,b) => a+b,0)
 ```
 
