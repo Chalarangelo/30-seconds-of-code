@@ -68,6 +68,7 @@
 * [`sampleSize`](#samplesize)
 * [`shuffle`](#shuffle)
 * [`similarity`](#similarity)
+* [`sortedIndex`](#sortedindex)
 * [`symmetricDifference`](#symmetricdifference)
 * [`tail`](#tail)
 * [`take`](#take)
@@ -266,15 +267,6 @@
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`validateNumber`](#validatenumber)
 * [`yesNo`](#yesno)
-
-</details>
-
-### _Uncategorized_
-
-<details>
-<summary>View contents</summary>
-
-* [`sortedIndex`](#sortedindex)
 
 </details>
 
@@ -1320,6 +1312,34 @@ const similarity = (arr, values) => arr.filter(v => values.includes(v));
 
 ```js
 similarity([1, 2, 3], [1, 2, 4]); // [1,2]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### sortedIndex
+
+Returns the lowest index at which value should be inserted into array in order to maintain its sort order.
+
+Check if the array is sorted in descending order (loosely).
+Use `Array.findIndex()` to find the appropriate index where the element should be inserted.
+
+```js
+const sortedIndex = (arr, n) => {
+  const isDescending = arr[0] > arr[arr.length - 1];
+  const index = arr.findIndex(el => (isDescending ? n >= el : n <= el));
+  return index === -1 ? arr.length : index;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+sortedIndex([5, 3, 2, 1], 4); // 1
+sortedIndex([30, 50], 40); // 1
 ```
 
 </details>
@@ -4190,6 +4210,7 @@ Use the spread operator (`...`) to check if the provided argument is iterable in
 
 ```js
 
+
 const isArrayLike = val =>
   try {return [...val], true; }
   catch (e)  { return false; }
@@ -4649,31 +4670,6 @@ yesNo('Foo', true); // true
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
-
----
- ## _Uncategorized_
-
-### sortedIndex
-
-Returns the lowest index at which value should be inserted into array in order to maintain its sort order.
-
-Check if the array is sorted in descending order (loosely).
-Use `Array.findIndex()` to find the appropriate index where the element should be inserted.
-
-```js
-const sortedIndex = (arr, n) => {
-  const isDescending = arr[0] > arr[arr.length - 1];
-  const index = arr.findIndex(el => (isDescending ? n >= el : n <= el));
-  return index === -1 ? arr.length : index;
-};
-```
-
-```js
-sortedIndex([5, 3, 2, 1], 4); // 1
-sortedIndex([30, 50], 40); // 1
-```
-
-<br>[⬆ back to top](#table-of-contents)
 
 
 ## Collaborators
