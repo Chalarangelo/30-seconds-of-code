@@ -176,6 +176,7 @@
 * [`randomIntegerInRange`](#randomintegerinrange)
 * [`randomNumberInRange`](#randomnumberinrange)
 * [`round`](#round)
+* [`solveRPN`](#solverpn)
 * [`standardDeviation`](#standarddeviation)
 * [`sum`](#sum)
 * [`sumPower`](#sumpower)
@@ -273,15 +274,6 @@
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`validateNumber`](#validatenumber)
 * [`yesNo`](#yesno)
-
-</details>
-
-### _Uncategorized_
-
-<details>
-<summary>View contents</summary>
-
-* [`solveRPN`](#solverpn)
 
 </details>
 
@@ -3099,6 +3091,63 @@ round(1.005, 2); // 1.01
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### solveRPN
+
+Solves the given mathematical expression in [reverse polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation).
+Throws appropriate errors if there are unrecognized symbols or the expression is wrong.
+
+Use a dictionary, `OPERATORS` to specify each operator's matching mathematical operation.
+Use `String.replace()` with a regular expression to replace `^` with `**`, `String.split()` to tokenize the string and `Array.filter()` to remove empty tokens.
+Use `Array.forEach()` to parse each `symbol`, evaluate it as a numeric value or operator and solve the mathematical expression.
+Numeric values are converted to floating point numbers and pushed to a `stack`, while operators are evaluated using the `OPERATORS` dictionary and pop elements from the `stack` to apply operations.
+
+```js
+const solveRPN = rpn => {
+  const OPERATORS = {
+    '*': (a, b) => a * b,
+    '+': (a, b) => a + b,
+    '-': (a, b) => a - b,
+    '/': (a, b) => a / b,
+    '**': (a, b) => a ** b
+  };
+  const [stack, solve] = [
+    [],
+    rpn
+      .replace(/\^/g, '**')
+      .split(/\s+/g)
+      .filter(el => !/\s+/.test(el) && el !== '')
+  ];
+  solve.forEach(symbol => {
+    if (!isNaN(parseFloat(symbol)) && isFinite(symbol)) {
+      stack.push(symbol);
+    } else if (Object.keys(OPERATORS).includes(symbol)) {
+      const [a, b] = [stack.pop(), stack.pop()];
+      stack.push(OPERATORS[symbol](parseFloat(b), parseFloat(a)));
+    } else {
+      throw `${symbol} is not a recognized symbol`;
+    }
+  });
+  if (stack.length === 1) return stack.pop();
+  else throw `${rpn} is not a proper RPN. Please check it and try again`;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+solveRPN('15 7 1 1 + - / 3 * 2 1 1 + + -'); // 5
+solveRPN('3 5 6 + *'); //33
+solveRPN('2 4 / 5 6 - *'); //-0.5
+solveRPN('2 3 ^'); //8
+solveRPN('2 3 ^'); //8
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### standardDeviation
 
 Returns the standard deviation of an array of numbers.
@@ -4858,60 +4907,6 @@ yesNo('Foo', true); // true
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
-
----
- ## _Uncategorized_
-
-### solveRPN
-
-Solves the given mathematical expression in [reverse polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation).
-Throws appropriate errors if there are unrecognized symbols or the expression is wrong.
-
-Use a dictionary, `OPERATORS` to specify each operator's matching mathematical operation.
-Use `String.replace()` with a regular expression to replace `^` with `**`, `String.split()` to tokenize the string and `Array.filter()` to remove empty tokens.
-Use `Array.forEach()` to parse each `symbol`, evaluate it as a numeric value or operator and solve the mathematical expression.
-Numeric values are converted to floating point numbers and pushed to a `stack`, while operators are evaluated using the `OPERATORS` dictionary and pop elements from the `stack` to apply operations.
-
-```js
-const solveRPN = rpn => {
-  const OPERATORS = {
-    '*': (a, b) => a * b,
-    '+': (a, b) => a + b,
-    '-': (a, b) => a - b,
-    '/': (a, b) => a / b,
-    '**': (a, b) => a ** b
-  };
-  const [stack, solve] = [
-    [],
-    rpn
-      .replace(/\^/g, '**')
-      .split(/\s+/g)
-      .filter(el => !/\s+/.test(el) && el !== '')
-  ];
-  solve.forEach(symbol => {
-    if (!isNaN(parseFloat(symbol)) && isFinite(symbol)) {
-      stack.push(symbol);
-    } else if (Object.keys(OPERATORS).includes(symbol)) {
-      const [a, b] = [stack.pop(), stack.pop()];
-      stack.push(OPERATORS[symbol](parseFloat(b), parseFloat(a)));
-    } else {
-      throw `${symbol} is not a recognized symbol`;
-    }
-  });
-  if (stack.length === 1) return stack.pop();
-  else throw `${rpn} is not a proper RPN. Please check it and try again`;
-};
-```
-
-```js
-solveRPN('15 7 1 1 + - / 3 * 2 1 1 + + -'); // 5
-solveRPN('3 5 6 + *'); //33
-solveRPN('2 4 / 5 6 - *'); //-0.5
-solveRPN('2 3 ^'); //8
-solveRPN('2 3 ^'); //8
-```
-
-<br>[⬆ back to top](#table-of-contents)
 
 
 ## Collaborators
