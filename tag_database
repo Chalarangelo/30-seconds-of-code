@@ -65,6 +65,7 @@ initializeArrayWithRange:array
 initializeArrayWithValues:array
 inRange:math
 intersection:array
+invertKeyValues:object
 isAbsoluteURL:string
 isArmstrongNumber:math
 isArray:utility
