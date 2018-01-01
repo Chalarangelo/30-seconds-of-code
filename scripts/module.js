@@ -1,5 +1,5 @@
 /*
-  Builds the `Snippet` module.
+  Builds the `_30s` module.
 */
 const fs = require('fs-extra');
 const cp = require('child_process');
@@ -27,7 +27,10 @@ try {
   let exportStr = 'export default {';
 
   for (const snippet of snippets) {
-    const snippetData = fs.readFileSync(path.join(SNIPPETS_PATH, snippet), 'utf8');
+    const snippetData = fs.readFileSync(
+      path.join(SNIPPETS_PATH, snippet),
+      'utf8'
+    );
     const snippetName = snippet.replace('.md', '');
 
     const isNodeSnippet = tagDatabase
@@ -35,27 +38,30 @@ try {
       .split('\n')[0]
       .includes('node');
 
-    if (!isNodeSnippet) {
-      const importData = fs.readFileSync(IMPORTS);
-      fs.writeFileSync(
-        IMPORTS,
-        importData + `\nimport { ${snippetName} } from './temp/${snippetName}.js'`
-      );
-      exportStr += `${snippetName},`;
+    const importData = fs.readFileSync(IMPORTS);
+    fs.writeFileSync(
+      IMPORTS,
+      importData + `\nimport { ${snippetName} } from './temp/${snippetName}.js'`
+    );
+    exportStr += `${snippetName},`;
 
-      fs.writeFileSync(
-        `${TEMP_PATH}/${snippetName}.js`,
-        'export ' + snippetData.match(codeRE)[1].replace('\n', '')
-      );
-    }
+    const code = snippetData.match(codeRE)[1].replace('\n', '');
+
+    const toWrite = isNodeSnippet
+      ? `${code
+          .replace('const ' + snippetName, 'export const ' + snippetName)
+          // Prevents errors from being thrown in browser environment
+          .replace('require(', 'typeof require !== "undefined" && require(')}`
+      : `export ${code}`;
+
+    fs.writeFileSync(`${TEMP_PATH}/${snippetName}.js`, toWrite);
   }
 
   exportStr += '}';
 
-  const importData = fs.readFileSync(IMPORTS);
-  fs.writeFileSync(IMPORTS, importData + `\n${exportStr}`);
+  fs.appendFileSync(IMPORTS, `\n${exportStr}`);
 
-  cp.execSync('rollup -c scripts/rollup.js');
+  cp.execSync('node ./scripts/rollup.js');
 
   fs.removeSync(TEMP_PATH);
   fs.unlink(IMPORTS);
