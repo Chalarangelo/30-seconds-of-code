@@ -6,8 +6,11 @@ Use the spread operator (`...`) to check if the provided argument is iterable in
 
 ```js
 const isArrayLike = val => {
-  try {return [...val], true; }
-  catch (e)  { return false; }
+  try {
+    return [...val], true;
+  } catch (e) {
+    return false;
+  }
 };
 ```
 
