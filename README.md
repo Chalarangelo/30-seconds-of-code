@@ -3624,6 +3624,8 @@ truthCheckCollection([{ user: 'Tinky-Winky', sex: 'male' }, { user: 'Dipsy', sex
 
 ### anagrams
 
+⚠️ **WARNING**: This function's execution time increases exponentially with each character. Anything more than 8 to 10 characters will cause your browser to hang as it tries to solve all the different combinations.
+
 Generates all anagrams of a string (contains duplicates).
 
 Use recursion.
