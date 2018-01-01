@@ -740,7 +740,7 @@ fromCamelCase('someJavascriptProperty', '_'); // 'some_javascript_property'
 </code></pre><pre><code class="language-js">isAbsoluteURL('https://google.com'); // true
 isAbsoluteURL('ftp://www.myserver.net'); // true
 isAbsoluteURL('/foo/bar'); // false
-</code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="mask">mask</h3></div><div class="section double-padded"><p>Replaces all but the last <code>num</code> of characters with the specified mask character.</p><p>Use <code>String.slice()</code> to grab the portion of the characters that need to be masked and use <code>String.replace()</code> with a regex to replace every character with the mask character. Concatenate the masked characters with the remaining unmasked portion of the string. Omit the second argument, <code>num</code>, to keep a default of <code>4</code> characters unmasked. Omit the third argument, <code>mask</code>, to use a default character of <code>'*'</code> for the mask.</p><pre><code class="language-js">const mask = (cc, num = 4, mask = '*') =&gt;
+</code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="mask">mask</h3></div><div class="section double-padded"><p>Replaces all but the last <code>num</code> of characters with the specified mask character.</p><p>Use <code>String.slice()</code> to grab the portion of the characters that need to be masked and use <code>String.replace()</code> with a regex to replace every character with the mask character. Concatenate the masked characters with the remaining unmasked portion of the string. Omit the second argument, <code>num</code>, to keep a default of <code>4</code> characters unmasked. If <code>num</code> is negative, the unmasked characters will be at the start of the string. Omit the third argument, <code>mask</code>, to use a default character of <code>'*'</code> for the mask.</p><pre><code class="language-js">const mask = (cc, num = 4, mask = '*') =&gt;
   ('' + cc).slice(0, -num).replace(/./g, mask) + ('' + cc).slice(-num);
 </code></pre><pre><code class="language-js">mask(1234567890); // '******7890'
 mask(1234567890, 3); // '*******890'
@@ -878,12 +878,11 @@ hexToRGB('#fff'); // 'rgb(255, 255, 255)'
 </code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isarray">isArray</h3></div><div class="section double-padded"><p>Checks if the given argument is an array.</p><p>Use <code>Array.isArray()</code> to check if a value is classified as an array.</p><pre><code class="language-js">const isArray = val =&gt; !!val &amp;&amp; Array.isArray(val);
 </code></pre><pre><code class="language-js">isArray(null); // false
 isArray([1]); // true
-</code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isarraylike">isArrayLike</h3></div><div class="section double-padded"><p>Checks if the provided argument is array-like (i.e. is iterable).</p><p>Check that the object is not a function or <code>null</code> and that its <code>length</code> property is a non-negative integer below <code>Number.MAX_SAFE_INTEGER</code>.</p><pre><code class="language-js">const isArrayLike = val =&gt;
-  val != null &amp;&amp;
-  typeof val != 'function' &amp;&amp;
-  val.length &gt; -1 &amp;&amp;
-  val.length % 1 == 0 &amp;&amp;
-  val.length &lt;= Number.MAX_SAFE_INTEGER;
+</code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="isarraylike">isArrayLike</h3></div><div class="section double-padded"><p>Checks if the provided argument is array-like (i.e. is iterable).</p><p>Use the spread operator (<code>...</code>) to check if the provided argument is iterable inside a <code>try... catch</code> block and the comma operator (<code>,</code>) to return the appropriate value.</p><pre><code class="language-js">
+const isArrayLike = val =&gt;
+  try {return [...val], true; }
+  catch (e)  { return false; }
+};
 </code></pre><pre><code class="language-js">isArrayLike(document.querySelectorAll('.className')); // true
 isArrayLike('abc'); // true
 isArrayLike(null); // false
