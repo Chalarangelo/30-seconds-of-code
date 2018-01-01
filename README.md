@@ -63,6 +63,7 @@
 * [`pullAtIndex`](#pullatindex)
 * [`pullAtValue`](#pullatvalue)
 * [`quickSort`](#quicksort)
+* [`reducedFilter`](#reducedfilter)
 * [`remove`](#remove)
 * [`sample`](#sample)
 * [`sampleSize`](#samplesize)
@@ -268,15 +269,6 @@
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`validateNumber`](#validatenumber)
 * [`yesNo`](#yesno)
-
-</details>
-
-### _Uncategorized_
-
-<details>
-<summary>View contents</summary>
-
-* [`reducedFilter`](#reducedfilter)
 
 </details>
 
@@ -1185,6 +1177,48 @@ const quickSort = ([n, ...nums], desc) =>
 ```js
 quickSort([4, 1, 3, 2]); // [1,2,3,4]
 quickSort([4, 1, 3, 2], true); // [4,3,2,1]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### reducedFilter
+
+Filter an array of objects based on a condition while also filtering out unspecified keys.
+
+Use `Array.filter()` to filter the array based on the predicate `fn` so that it returns the objects for which the condition returned a truthy value. 
+On the filtered array, use `Array.map()` to return the new object using `Array.reduce()` to filter out the keys which were not supplied as the `keys` argument.
+
+```js
+const reducedFilter = (data, keys, fn) =>
+  data.filter(fn).map(el =>
+    keys.reduce((acc, key) => {
+      acc[key] = el[key];
+      return acc;
+    }, {})
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const data = [
+  {
+    id: 1,
+    name: 'john',
+    age: 24
+  },
+  {
+    id: 2,
+    name: 'mike',
+    age: 50
+  }
+];
+
+reducedFilter(data, ['id', 'name'], item => item.age > 24); // [{ id: 2, name: 'mike'}]
 ```
 
 </details>
@@ -4249,13 +4283,12 @@ Checks if the provided argument is array-like (i.e. is iterable).
 Use the spread operator (`...`) to check if the provided argument is iterable inside a `try... catch` block and the comma operator (`,`) to return the appropriate value.
 
 ```js
-
-
-
-
-const isArrayLike = val =>
-  try {return [...val], true; }
-  catch (e)  { return false; }
+const isArrayLike = val => {
+  try {
+    return [...val], true;
+  } catch (e) {
+    return false;
+  }
 };
 ```
 
@@ -4712,45 +4745,6 @@ yesNo('Foo', true); // true
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
-
----
- ## _Uncategorized_
-
-### reducedFilter
-
-Filter an array of objects based on a condition while also filtering out unspecified keys.
-
-Use `Array.filter()` to filter the array based on the predicate `fn` so that it returns the objects for which the condition returned a truthy value. 
-On the filtered array, use `Array.map()` to return the new object using `Array.reduce()` to filter out the keys which were not supplied as the `keys` argument.
-
-```js
-const reducedFilter = (data, keys, fn) =>
-  data.filter(fn).map(el =>
-    keys.reduce((acc, key) => {
-      acc[key] = el[key];
-      return acc;
-    }, {})
-  );
-```
-
-```js
-const data = [
-  {
-    id: 1,
-    name: 'john',
-    age: 24
-  },
-  {
-    id: 2,
-    name: 'mike',
-    age: 50
-  }
-];
-
-reducedFilter(data, ['id', 'name'], item => item.age > 24); // [{ id: 2, name: 'mike'}]
-```
-
-<br>[⬆ back to top](#table-of-contents)
 
 
 ## Collaborators
