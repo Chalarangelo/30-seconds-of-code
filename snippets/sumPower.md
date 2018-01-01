@@ -1,6 +1,10 @@
 ### sumPower
 
-Returns the sum of the powers of all the numbers from `start`(default to 1) to `end`
+Returns the sum of the powers of all the numbers from `start` to `end`.
+
+Use `Array.fill()` to create an array of all the numbers in the target range, `Array.map()` and the exponent operator (`**`) to raise them to `power` and `Array.reduce()` to add them together.
+Omit the second argument, `power`, to use a default power of `2`.
+Omit the third argument, `start`, to use a default starting value of `1`.
 
 ```js
 const sumPower = (end,power = 2,start = 1)
