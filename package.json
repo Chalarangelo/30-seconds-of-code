@@ -19,17 +19,24 @@
     "tagger": "node ./scripts/tag.js",
     "webber": "node ./scripts/web.js",
     "tdd": "node ./scripts/tdd.js",
-    "test": "tape test/**/*.test.js"
+    "test": "tape test/**/*.test.js | tap-spec"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Chalarangelo/30-seconds-of-code.git"
   },
-  "keywords": ["javascript", "snippets", "list"],
+  "keywords": [
+    "javascript",
+    "snippets",
+    "list"
+  ],
   "author": "Chalarangelo (chalarangelo@gmail.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Chalarangelo/30-seconds-of-code/issues"
   },
-  "homepage": "https://github.com/Chalarangelo/30-seconds-of-code#readme"
+  "homepage": "https://github.com/Chalarangelo/30-seconds-of-code#readme",
+  "devDependencies": {
+    "tap-spec": "^4.1.1"
+  }
 }
