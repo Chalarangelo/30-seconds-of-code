@@ -1,17 +1,21 @@
+/*
+  Part of the process for building the `_30s` module.
+*/
+// Load modules
 const fs = require('fs-extra');
 const { rollup } = require('rollup');
 const babel = require('rollup-plugin-babel');
 const minify = require('rollup-plugin-babel-minify');
-
+// Set variables for paths
 const INPUT_FILE = './imports.js';
 const MODULE_NAME = '_30s';
 const DIST = './dist';
-
+// Create `dist` folder if not existing
 if (!fs.existsSync(DIST)) fs.mkdirSync(DIST);
-
+// Setup babel and minification
 const es5 = babel({ presets: [['env', { modules: false }]] });
 const min = minify({ comments: false });
-
+// Create the bundles
 (async () => {
   const bundle = await rollup({ input: INPUT_FILE });
   const bundleES5 = await rollup({ input: INPUT_FILE, plugins: [es5] });
