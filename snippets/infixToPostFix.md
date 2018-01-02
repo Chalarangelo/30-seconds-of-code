@@ -1,6 +1,6 @@
 ### infixToPostfix
 
-Works perfectly! 
+Works perfectly!
 
 ```js
 const infixToPostfix  = expr => {
