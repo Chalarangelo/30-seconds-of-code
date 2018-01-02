@@ -8,8 +8,7 @@ const path = require('path');
 const chalk = require('chalk');
 // Load helper functions (these are from existing snippets in 30 seconds of code!)
 const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
-// Check if on Travis and, if not a cron job, terminate.
-if(isTravisCI && process.env['TRAVIS_EVENT_TYPE'] !== 'cron') {
+if(isTravisCI() && process.env['TRAVIS_EVENT_TYPE'] !== 'cron') {
   console.log(`${chalk.green('NOBUILD')} Build terminated, not a cron job!`);
   process.exit(0);
 }
