@@ -1,6 +1,11 @@
 /*
   Builds the `_30s` module.
 */
+const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
+if(isTravisCI && process.env['TRAVIS_EVENT_TYPE'] !== 'cron') {
+  console.log(`${chalk.green('NOBUILD')} Build terminated, not a cron job!`);
+  process.exit(0);
+}
 // Load modules
 const fs = require('fs-extra');
 const cp = require('child_process');
