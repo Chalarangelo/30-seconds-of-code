@@ -6,15 +6,7 @@ Utilizing a closure, use a flag, `called`, and set it to `true` once the functio
 Allow the function to be supplied with an arbitrary number of arguments using the spread (`...`) operator.
 
 ```js
-const once = fn => {
-  let called = false;
-  return (...args) => {
-    if (!called) {
-      fn(...args);
-      called = true;
-    }
-  };
-};
+const once = fn => (called => (...args) => !called ? (called = true, fn(...args)) : undefined)()
 ```
 
 ```js
