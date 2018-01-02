@@ -10,7 +10,7 @@ const fs = require('fs-extra'),
   minify = require('html-minifier').minify;
   // Load helper functions (these are from existing snippets in 30 seconds of code!)
 const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
-if(isTravisCI() && (/^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
+if(isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
   console.log(`${chalk.green('NOBUILD')} index build terminated, parent commit is a Travis build!`);
   process.exit(0);
 }
