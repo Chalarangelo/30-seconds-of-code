@@ -1357,7 +1357,7 @@ sampleSize([1, 2, 3], 4); // [2,3,1]
 
 Randomizes the order of the values of an array, returning a new array.
 
-Uses the Fisher-Yates algoritm to reorder the elements of the array, based on the [Lodash implementation](https://github.com/lodash/lodash/blob/b2ea6b1cd251796dcb5f9700c4911a7b6223920b/shuffle.js), but as a pure function.
+Uses the Fisher-Yates algorithm to reorder the elements of the array, based on the [Lodash implementation](https://github.com/lodash/lodash/blob/b2ea6b1cd251796dcb5f9700c4911a7b6223920b/shuffle.js), but as a pure function.
 
 ```js
 const shuffle = ([...arr]) => {
@@ -2463,23 +2463,28 @@ anagramsCached('javascript'); // returns virtually instantly since it's now cach
 
 Ensures a function is called only once.
 
-Utilizing a closure, use a flag, `called`, and set it to `true` once the function is called for the first time, preventing it from being called again. 
-Allow the function to be supplied with an arbitrary number of arguments using the spread (`...`) operator.
+Utilizing a closure, use a flag, `called`, and set it to `true` once the function is called for the first time, preventing it from being called again. In order to allow the function to have its `this` context changed (such as in an event listener), the `function` keyword must be used, and the supplied function must have the context applied.
+Allow the function to be supplied with an arbitrary number of arguments using the rest/spread (`...`) operator.
 
 ```js
-const once = fn =>
-  (called => (...args) => (!called ? ((called = true), fn(...args)) : undefined))();
+const once = fn => {
+  let called = false;
+  return function(...args) {
+    if (called) return;
+    called = true;
+    return fn.apply(this, args);
+  };
+};
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```js
-const startApp = event => {
-  // initializes the app
-  console.log(event); // access to any arguments supplied
+const startApp = function(event) {
+  console.log(this, event); // document.body, MouseEvent
 };
-document.addEventListener('click', once(startApp)); // only runs `startApp` once upon click
+document.body.addEventListener('click', once(startApp)); // only runs `startApp` once upon click
 ```
 
 </details>
