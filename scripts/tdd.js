@@ -5,8 +5,6 @@ const TEST_PATH = './test';
 
 const snippetFiles = fs.readdirSync(SNIPPETS_PATH, 'utf8').map(fileName => fileName.slice(0, -3));
 
-fs.removeSync(TEST_PATH);
-
 const errSnippets = ['JSONToFile', 'readFileLines', 'UUIDGeneratorNode'];
 
 snippetFiles
@@ -47,7 +45,11 @@ snippetFiles
     ].join('\n');
 
     fs.writeFileSync(`${TEST_PATH}/${fileName}/${fileName}.js`, exportFile);
-    fs.writeFileSync(`${TEST_PATH}/${fileName}/${fileName}.test.js`, exportTest);
+
+    if ( !fs.existsSync(`${TEST_PATH}/${fileName}/${fileName}.test.js`) ) {
+      fs.writeFileSync(`${TEST_PATH}/${fileName}/${fileName}.test.js`, exportTest);
+    }
 
     return fileName;
   });
+  
