@@ -37,10 +37,10 @@ snippetFiles
       `const ${fileName} = require('./${fileName}.js');`,
       `test('Testing ${fileName}', (t) => {`,
       `//For more information on all the methods supported by tape\n//Please go to https://github.com/substack/tape`,
+      `t.true(typeof ${fileName} === 'function', '${fileName} is a Function');`,   
       `//t.deepEqual(${fileName}(args..), 'Expected');`,
       `//t.equal(${fileName}(args..), 'Expected');`,
       `//t.false(${fileName}(args..), 'Expected');`,
-      `//t.true(${fileName}(args..), 'Expected');`,
       `//t.throws(${fileName}(args..), 'Expected');`,
       `t.end();`,
       `});`
