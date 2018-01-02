@@ -1,4 +1,9 @@
-const postFix = RPN => {
+### postfixToInfix
+
+ This one has few errors and does not work properply
+
+```js
+const postfixToInfix = RPN => {
   let convert = RPN.replace(/\^/g,'**').split(/\s+/g).filter(el => !/\s+/.test(el) && el !== '')
   let stack = []
   let result = []
@@ -27,3 +32,7 @@ const postFix = RPN => {
   if(result.length === 1) return result.pop()
   else throw `${RPN} is not a correct RPN`
 }
+```
+```js
+
+```
