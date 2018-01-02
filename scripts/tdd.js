@@ -28,7 +28,7 @@ snippetFiles
       .map(line => line.trim())
       .filter((_, i) => blockMarkers[2] < i && i < blockMarkers[3]);
 
-    const exportFile = `module.exports = ${fileFunction.join('\n').slice(17)}`;
+    const exportFile = `module.exports = ${fileFunction.join('\n').slice(9 + fileName.length)}`;
     const exportTest = [
       `const test = require('tape');`,
       `const ${fileName} = require('./${fileName}.js');`,
