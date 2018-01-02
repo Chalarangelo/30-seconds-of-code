@@ -1,7 +1,6 @@
 ### infixToPostfix
 
-Works perfectly!
-
+(WARNING)! :- Does not handles `unary` operator
 ```js
 const infixToPostfix  = expr => {
   let rpn = ''
