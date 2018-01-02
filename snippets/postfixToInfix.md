@@ -1,5 +1,6 @@
 ### postfixToInfix
 
+(WARNING) :- Does not handles `unary` operator well.
 
 ``` js
 const postfixToInfix = RPN => {
