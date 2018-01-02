@@ -11,7 +11,7 @@
 - Snippets are written in ES6, use the [Babel transpiler](https://babeljs.io/) to ensure backwards-compatibility.
 - You can import these snippets into your text editor of choice (VSCode, Atom, Sublime) using the files found in [this repo](https://github.com/Rob-Rychs/30-seconds-of-code-texteditorsnippets).
 - You can import these snippets into Alfred 3, using [this file](https://github.com/lslvxy/30-seconds-of-code-alfredsnippets).
-- You can find a package with all the snippets on [npm](https://www.npmjs.com/package/tsoc). Bear in mind that most of these snippets are not production-ready.
+- You can find a package with all the snippets on [npm](https://www.npmjs.com/package/30-seconds-of-code). Bear in mind that most of these snippets are not production-ready.
 
 ## Table of Contents
 
