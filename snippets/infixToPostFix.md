@@ -1,4 +1,9 @@
-const infix  = expr => {
+### infixToPostfix
+
+Works perfectly! 
+
+```js
+const infixToPostfix  = expr => {
   let rpn = ''
   let solve = expr.replace(/\^/g,'**').match(/([0-9]+|[\+\(\)\/\-]|\*+)/g).filter(el => !/\s+/.test(el) && el !== '')
   let stack = []
@@ -22,3 +27,7 @@ const infix  = expr => {
   }
   return rpn
 }
+```
+```js
+
+```
