@@ -10,9 +10,9 @@ commit_website_files() {
       git checkout master
       git add *
       if [ $TRAVIS_EVENT_TYPE == "cron" ]; then
-        git commit --message "[cron] Travis build: $TRAVIS_BUILD_NUMBER [ci skip]"
+        git commit --message "Travis build: $TRAVIS_BUILD_NUMBER [cron]"
       else
-        git commit --message "Travis build: $TRAVIS_BUILD_NUMBER [ci skip]"
+        git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
       fi
     fi
   fi

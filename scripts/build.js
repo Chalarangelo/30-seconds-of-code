@@ -6,7 +6,12 @@
 const fs = require('fs-extra');
 const path = require('path');
 const chalk = require('chalk');
-
+// Load helper functions (these are from existing snippets in 30 seconds of code!)
+const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
+if(isTravisCI() && (/^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
+  console.log(`${chalk.green('NOBUILD')} README build terminated, parent commit is a Travis build!`);
+  process.exit(0);
+}
 const SNIPPETS_PATH = './snippets';
 const STATIC_PARTS_PATH = './static-parts';
 
