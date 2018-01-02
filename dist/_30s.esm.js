@@ -1,25 +1,3 @@
-const JSONToDate = arr => {
-  const dt = new Date(parseInt(arr.toString().substr(6)));
-  return `${dt.getDate()}/${dt.getMonth() + 1}/${dt.getFullYear()}`;
-};
-
-const fs = typeof require !== "undefined" && require('fs');
-const JSONToFile = (obj, filename) =>
-  fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2));
-
-const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
-
-const UUIDGeneratorBrowser = () =>
-  ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
-    (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)
-  );
-
-const crypto$1 = typeof require !== "undefined" && require('crypto');
-const UUIDGeneratorNode = () =>
-  ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
-    (c ^ (crypto$1.randomBytes(1)[0] & (15 >> (c / 4)))).toString(16)
-  );
-
 const anagrams = str => {
   if (str.length <= 2) return str.length === 2 ? [str, str[1] + str[0]] : [str];
   return str
@@ -294,11 +272,6 @@ const httpsRedirect = () => {
   if (location.protocol !== 'https:') location.replace('https://' + location.href.split('//')[1]);
 };
 
-const inRange = (n, start, end = null) => {
-  if (end && start > end) end = [start, (start = end)][0];
-  return end == null ? n >= 0 && n < start : n >= start && n < end;
-};
-
 const initial = arr => arr.slice(0, -1);
 
 const initialize2DArray = (w, h, val = null) =>
@@ -310,6 +283,11 @@ const initializeArrayWithRange = (end, start = 0) =>
   Array.from({ length: end + 1 - start }).map((v, i) => i + start);
 
 const initializeArrayWithValues = (n, value = 0) => Array(n).fill(value);
+
+const inRange = (n, start, end = null) => {
+  if (end && start > end) end = [start, (start = end)][0];
+  return end == null ? n >= 0 && n < start : n >= start && n < end;
+};
 
 const intersection = (a, b) => {
   const s = new Set(b);
@@ -395,6 +373,15 @@ const join = (arr, separator = ',', end = separator) =>
     ''
   );
 
+const JSONToDate = arr => {
+  const dt = new Date(parseInt(arr.toString().substr(6)));
+  return `${dt.getDate()}/${dt.getMonth() + 1}/${dt.getFullYear()}`;
+};
+
+const fs = typeof require !== "undefined" && require('fs');
+const JSONToFile = (obj, filename) =>
+  fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2));
+
 const last = arr => arr[arr.length - 1];
 
 const lcm = (...arr) => {
@@ -439,6 +426,15 @@ const objectFromPairs = arr => arr.reduce((a, v) => (a[v[0]] = v[1], a), {});
 
 const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
 
+const once = fn => {
+  let called = false;
+  return function(...args) {
+    if (called) return;
+    called = true;
+    return fn.apply(this, args);
+  };
+};
+
 const onUserInputChange = callback => {
   let type = 'mouse',
     lastTime = 0;
@@ -452,15 +448,6 @@ const onUserInputChange = callback => {
     if (type === 'touch') return;
     type = 'touch', callback(type), document.addEventListener('mousemove', mousemoveHandler);
   });
-};
-
-const once = fn => {
-  let called = false;
-  return function(...args) {
-    if (called) return;
-    called = true;
-    return fn.apply(this, args);
-  };
 };
 
 const orderBy = (arr, props, orders) =>
@@ -595,6 +582,8 @@ const reverseString = str =>
     .split('')
     .reverse()
     .join('');
+
+const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
 
 const round = (n, decimals = 0) => Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`);
 
@@ -784,12 +773,16 @@ const toEnglishDate = time => {
   } catch (e) {}
 };
 
+const toggleClass = (el, className) => el.classList.toggle(className);
+
 const toKebabCase = str =>
   str &&
   str
     .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
     .map(x => x.toLowerCase())
     .join('-');
+
+const tomorrow = () => new Date(new Date().getTime() + 86400000).toISOString().split('T')[0];
 
 const toOrdinalSuffix = num => {
   const int = parseInt(num),
@@ -808,10 +801,6 @@ const toSnakeCase = str =>
     .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
     .map(x => x.toLowerCase())
     .join('_');
-
-const toggleClass = (el, className) => el.classList.toggle(className);
-
-const tomorrow = () => new Date(new Date().getTime() + 86400000).toISOString().split('T')[0];
 
 const truncateString = (str, num) =>
   str.length > num ? str.slice(0, num > 3 ? num - 3 : num) + '...' : str;
@@ -835,6 +824,17 @@ const union = (a, b) => Array.from(new Set([...a, ...b]));
 
 const untildify = str => str.replace(/^~($|\/|\\)/, `${typeof require !== "undefined" && require('os').homedir()}$1`);
 
+const UUIDGeneratorBrowser = () =>
+  ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+    (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)
+  );
+
+const crypto$1 = typeof require !== "undefined" && require('crypto');
+const UUIDGeneratorNode = () =>
+  ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+    (c ^ (crypto$1.randomBytes(1)[0] & (15 >> (c / 4)))).toString(16)
+  );
+
 const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
 
 const without = (arr, ...args) => arr.filter(v => !args.includes(v));
@@ -854,6 +854,6 @@ const zip = (...arrays) => {
 const zipObject = (props, values) =>
   props.reduce((obj, prop, index) => (obj[prop] = values[index], obj), {});
 
-var imports = {JSONToDate,JSONToFile,RGBToHex,UUIDGeneratorBrowser,UUIDGeneratorNode,anagrams,arrayToHtmlList,average,bottomVisible,byteSize,call,capitalize,capitalizeEveryWord,chainAsync,chunk,clampNumber,cleanObj,cloneRegExp,coalesce,coalesceFactory,collatz,collectInto,compact,compose,copyToClipboard,countOccurrences,countVowels,currentURL,curry,deepFlatten,defer,detectDeviceType,difference,differenceWith,digitize,distance,distinctValuesOfArray,dropElements,dropRight,elementIsVisibleInViewport,elo,escapeHTML,escapeRegExp,everyNth,extendHex,factorial,fibonacci,fibonacciCountUntilNum,fibonacciUntilNum,filterNonUnique,flatten,flattenDepth,flip,fromCamelCase,functionName,gcd,getDaysDiffBetweenDates,getScrollPosition,getStyle,getType,getURLParameters,groupBy,hammingDistance,hasClass,hasFlags,head,hexToRGB,hide,httpsRedirect,inRange,initial,initialize2DArray,initializeArrayWithRange,initializeArrayWithValues,intersection,invertKeyValues,isAbsoluteURL,isArmstrongNumber,isArray,isArrayLike,isBoolean,isDivisible,isEven,isFunction,isNull,isNumber,isPrime,isPrimitive,isPromiseLike,isSorted,isString,isSymbol,isTravisCI,isValidJSON,join,last,lcm,lowercaseKeys,mapObject,mask,max,median,memoize,min,negate,nthElement,objectFromPairs,objectToPairs,onUserInputChange,once,orderBy,palindrome,percentile,pick,pipeFunctions,powerset,prettyBytes,primes,promisify,pull,pullAtIndex,pullAtValue,quickSort,randomHexColorCode,randomIntegerInRange,randomNumberInRange,readFileLines,redirect,reducedFilter,remove,repeatString,reverseString,round,runAsync,runPromisesInSeries,sample,sampleSize,scrollToTop,sdbm,select,setStyle,shallowClone,show,shuffle,similarity,size,sleep,solveRPN,sortCharactersInString,sortedIndex,speechSynthesis,splitLines,spreadOver,standardDeviation,sum,sumPower,symmetricDifference,tail,take,takeRight,timeTaken,toCamelCase,toDecimalMark,toEnglishDate,toKebabCase,toOrdinalSuffix,toSnakeCase,toggleClass,tomorrow,truncateString,truthCheckCollection,unescapeHTML,union,untildify,validateNumber,without,words,yesNo,zip,zipObject,}
+var imports = {anagrams,arrayToHtmlList,average,bottomVisible,byteSize,call,capitalize,capitalizeEveryWord,chainAsync,chunk,clampNumber,cleanObj,cloneRegExp,coalesce,coalesceFactory,collatz,collectInto,compact,compose,copyToClipboard,countOccurrences,countVowels,currentURL,curry,deepFlatten,defer,detectDeviceType,difference,differenceWith,digitize,distance,distinctValuesOfArray,dropElements,dropRight,elementIsVisibleInViewport,elo,escapeHTML,escapeRegExp,everyNth,extendHex,factorial,fibonacci,fibonacciCountUntilNum,fibonacciUntilNum,filterNonUnique,flatten,flattenDepth,flip,fromCamelCase,functionName,gcd,getDaysDiffBetweenDates,getScrollPosition,getStyle,getType,getURLParameters,groupBy,hammingDistance,hasClass,hasFlags,head,hexToRGB,hide,httpsRedirect,initial,initialize2DArray,initializeArrayWithRange,initializeArrayWithValues,inRange,intersection,invertKeyValues,isAbsoluteURL,isArmstrongNumber,isArray,isArrayLike,isBoolean,isDivisible,isEven,isFunction,isNull,isNumber,isPrime,isPrimitive,isPromiseLike,isSorted,isString,isSymbol,isTravisCI,isValidJSON,join,JSONToDate,JSONToFile,last,lcm,lowercaseKeys,mapObject,mask,max,median,memoize,min,negate,nthElement,objectFromPairs,objectToPairs,once,onUserInputChange,orderBy,palindrome,percentile,pick,pipeFunctions,powerset,prettyBytes,primes,promisify,pull,pullAtIndex,pullAtValue,quickSort,randomHexColorCode,randomIntegerInRange,randomNumberInRange,readFileLines,redirect,reducedFilter,remove,repeatString,reverseString,RGBToHex,round,runAsync,runPromisesInSeries,sample,sampleSize,scrollToTop,sdbm,select,setStyle,shallowClone,show,shuffle,similarity,size,sleep,solveRPN,sortCharactersInString,sortedIndex,speechSynthesis,splitLines,spreadOver,standardDeviation,sum,sumPower,symmetricDifference,tail,take,takeRight,timeTaken,toCamelCase,toDecimalMark,toEnglishDate,toggleClass,toKebabCase,tomorrow,toOrdinalSuffix,toSnakeCase,truncateString,truthCheckCollection,unescapeHTML,union,untildify,UUIDGeneratorBrowser,UUIDGeneratorNode,validateNumber,without,words,yesNo,zip,zipObject,}
 
 export default imports;

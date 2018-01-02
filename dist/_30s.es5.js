@@ -4,33 +4,6 @@
 	(global._30s = factory());
 }(this, (function () { 'use strict';
 
-var JSONToDate = function JSONToDate(arr) {
-  var dt = new Date(parseInt(arr.toString().substr(6)));
-  return dt.getDate() + "/" + (dt.getMonth() + 1) + "/" + dt.getFullYear();
-};
-
-var fs = typeof require !== "undefined" && require('fs');
-var JSONToFile = function JSONToFile(obj, filename) {
-  return fs.writeFile(filename + ".json", JSON.stringify(obj, null, 2));
-};
-
-var RGBToHex = function RGBToHex(r, g, b) {
-  return ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
-};
-
-var UUIDGeneratorBrowser = function UUIDGeneratorBrowser() {
-  return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, function (c) {
-    return (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16);
-  });
-};
-
-var crypto$1 = typeof require !== "undefined" && require('crypto');
-var UUIDGeneratorNode = function UUIDGeneratorNode() {
-  return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, function (c) {
-    return (c ^ crypto$1.randomBytes(1)[0] & 15 >> c / 4).toString(16);
-  });
-};
-
 var anagrams = function anagrams(str) {
   if (str.length <= 2) return str.length === 2 ? [str, str[1] + str[0]] : [str];
   return str.split('').reduce(function (acc, letter, i) {
@@ -505,13 +478,6 @@ var httpsRedirect = function httpsRedirect() {
   if (location.protocol !== 'https:') location.replace('https://' + location.href.split('//')[1]);
 };
 
-var inRange = function inRange(n, start) {
-  var end = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
-
-  if (end && start > end) end = [start, start = end][0];
-  return end == null ? n >= 0 && n < start : n >= start && n < end;
-};
-
 var initial = function initial(arr) {
   return arr.slice(0, -1);
 };
@@ -533,6 +499,13 @@ var initializeArrayWithRange = function initializeArrayWithRange(end) {
 var initializeArrayWithValues = function initializeArrayWithValues(n) {
   var value = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
   return Array(n).fill(value);
+};
+
+var inRange = function inRange(n, start) {
+  var end = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+
+  if (end && start > end) end = [start, start = end][0];
+  return end == null ? n >= 0 && n < start : n >= start && n < end;
 };
 
 var intersection = function intersection(a, b) {
@@ -685,6 +658,16 @@ var join = function join(arr) {
   }, '');
 };
 
+var JSONToDate = function JSONToDate(arr) {
+  var dt = new Date(parseInt(arr.toString().substr(6)));
+  return dt.getDate() + "/" + (dt.getMonth() + 1) + "/" + dt.getFullYear();
+};
+
+var fs = typeof require !== "undefined" && require('fs');
+var JSONToFile = function JSONToFile(obj, filename) {
+  return fs.writeFile(filename + ".json", JSON.stringify(obj, null, 2));
+};
+
 var last = function last(arr) {
   return arr[arr.length - 1];
 };
@@ -780,20 +763,6 @@ var objectToPairs = function objectToPairs(obj) {
   });
 };
 
-var onUserInputChange = function onUserInputChange(callback) {
-  var type = 'mouse',
-      lastTime = 0;
-  var mousemoveHandler = function mousemoveHandler() {
-    var now = performance.now();
-    if (now - lastTime < 20) type = 'mouse', callback(type), document.removeEventListener('mousemove', mousemoveHandler);
-    lastTime = now;
-  };
-  document.addEventListener('touchstart', function () {
-    if (type === 'touch') return;
-    type = 'touch', callback(type), document.addEventListener('mousemove', mousemoveHandler);
-  });
-};
-
 var once = function once(fn) {
   var called = false;
   return function () {
@@ -806,6 +775,20 @@ var once = function once(fn) {
 
     return fn.apply(this, args);
   };
+};
+
+var onUserInputChange = function onUserInputChange(callback) {
+  var type = 'mouse',
+      lastTime = 0;
+  var mousemoveHandler = function mousemoveHandler() {
+    var now = performance.now();
+    if (now - lastTime < 20) type = 'mouse', callback(type), document.removeEventListener('mousemove', mousemoveHandler);
+    lastTime = now;
+  };
+  document.addEventListener('touchstart', function () {
+    if (type === 'touch') return;
+    type = 'touch', callback(type), document.addEventListener('mousemove', mousemoveHandler);
+  });
 };
 
 var _slicedToArray$2 = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
@@ -1014,6 +997,10 @@ var repeatString = function repeatString() {
 
 var reverseString = function reverseString(str) {
   return str.split('').reverse().join('');
+};
+
+var RGBToHex = function RGBToHex(r, g, b) {
+  return ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
 };
 
 var round = function round(n) {
@@ -1292,10 +1279,18 @@ var toEnglishDate = function toEnglishDate(time) {
   } catch (e) {}
 };
 
+var toggleClass = function toggleClass(el, className) {
+  return el.classList.toggle(className);
+};
+
 var toKebabCase = function toKebabCase(str) {
   return str && str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g).map(function (x) {
     return x.toLowerCase();
   }).join('-');
+};
+
+var tomorrow = function tomorrow() {
+  return new Date(new Date().getTime() + 86400000).toISOString().split('T')[0];
 };
 
 var toOrdinalSuffix = function toOrdinalSuffix(num) {
@@ -1311,14 +1306,6 @@ var toSnakeCase = function toSnakeCase(str) {
   return str && str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g).map(function (x) {
     return x.toLowerCase();
   }).join('_');
-};
-
-var toggleClass = function toggleClass(el, className) {
-  return el.classList.toggle(className);
-};
-
-var tomorrow = function tomorrow() {
-  return new Date(new Date().getTime() + 86400000).toISOString().split('T')[0];
 };
 
 var truncateString = function truncateString(str, num) {
@@ -1351,6 +1338,19 @@ var union = function union(a, b) {
 
 var untildify = function untildify(str) {
   return str.replace(/^~($|\/|\\)/, (typeof require !== "undefined" && require('os').homedir()) + "$1");
+};
+
+var UUIDGeneratorBrowser = function UUIDGeneratorBrowser() {
+  return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, function (c) {
+    return (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16);
+  });
+};
+
+var crypto$1 = typeof require !== "undefined" && require('crypto');
+var UUIDGeneratorNode = function UUIDGeneratorNode() {
+  return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, function (c) {
+    return (c ^ crypto$1.randomBytes(1)[0] & 15 >> c / 4).toString(16);
+  });
 };
 
 var validateNumber = function validateNumber(n) {
@@ -1401,7 +1401,7 @@ var zipObject = function zipObject(props, values) {
   }, {});
 };
 
-var imports = { JSONToDate: JSONToDate, JSONToFile: JSONToFile, RGBToHex: RGBToHex, UUIDGeneratorBrowser: UUIDGeneratorBrowser, UUIDGeneratorNode: UUIDGeneratorNode, anagrams: anagrams, arrayToHtmlList: arrayToHtmlList, average: average, bottomVisible: bottomVisible, byteSize: byteSize, call: call, capitalize: capitalize, capitalizeEveryWord: capitalizeEveryWord, chainAsync: chainAsync, chunk: chunk, clampNumber: clampNumber, cleanObj: cleanObj, cloneRegExp: cloneRegExp, coalesce: coalesce, coalesceFactory: coalesceFactory, collatz: collatz, collectInto: collectInto, compact: compact, compose: compose, copyToClipboard: copyToClipboard, countOccurrences: countOccurrences, countVowels: countVowels, currentURL: currentURL, curry: curry, deepFlatten: deepFlatten, defer: defer, detectDeviceType: detectDeviceType, difference: difference, differenceWith: differenceWith, digitize: digitize, distance: distance, distinctValuesOfArray: distinctValuesOfArray, dropElements: dropElements, dropRight: dropRight, elementIsVisibleInViewport: elementIsVisibleInViewport, elo: elo, escapeHTML: escapeHTML, escapeRegExp: escapeRegExp, everyNth: everyNth, extendHex: extendHex, factorial: factorial, fibonacci: fibonacci, fibonacciCountUntilNum: fibonacciCountUntilNum, fibonacciUntilNum: fibonacciUntilNum, filterNonUnique: filterNonUnique, flatten: flatten, flattenDepth: flattenDepth, flip: flip, fromCamelCase: fromCamelCase, functionName: functionName, gcd: gcd, getDaysDiffBetweenDates: getDaysDiffBetweenDates, getScrollPosition: getScrollPosition, getStyle: getStyle, getType: getType, getURLParameters: getURLParameters, groupBy: groupBy, hammingDistance: hammingDistance, hasClass: hasClass, hasFlags: hasFlags, head: head, hexToRGB: hexToRGB, hide: hide, httpsRedirect: httpsRedirect, inRange: inRange, initial: initial, initialize2DArray: initialize2DArray, initializeArrayWithRange: initializeArrayWithRange, initializeArrayWithValues: initializeArrayWithValues, intersection: intersection, invertKeyValues: invertKeyValues, isAbsoluteURL: isAbsoluteURL, isArmstrongNumber: isArmstrongNumber, isArray: isArray, isArrayLike: isArrayLike, isBoolean: isBoolean, isDivisible: isDivisible, isEven: isEven, isFunction: isFunction, isNull: isNull, isNumber: isNumber, isPrime: isPrime, isPrimitive: isPrimitive, isPromiseLike: isPromiseLike, isSorted: isSorted, isString: isString, isSymbol: isSymbol, isTravisCI: isTravisCI, isValidJSON: isValidJSON, join: join, last: last, lcm: lcm, lowercaseKeys: lowercaseKeys, mapObject: mapObject, mask: mask, max: max, median: median, memoize: memoize, min: min, negate: negate, nthElement: nthElement, objectFromPairs: objectFromPairs, objectToPairs: objectToPairs, onUserInputChange: onUserInputChange, once: once, orderBy: orderBy, palindrome: palindrome, percentile: percentile, pick: pick, pipeFunctions: pipeFunctions, powerset: powerset, prettyBytes: prettyBytes, primes: primes, promisify: promisify, pull: pull, pullAtIndex: pullAtIndex, pullAtValue: pullAtValue, quickSort: quickSort, randomHexColorCode: randomHexColorCode, randomIntegerInRange: randomIntegerInRange, randomNumberInRange: randomNumberInRange, readFileLines: readFileLines, redirect: redirect, reducedFilter: reducedFilter, remove: remove, repeatString: repeatString, reverseString: reverseString, round: round, runAsync: runAsync, runPromisesInSeries: runPromisesInSeries, sample: sample, sampleSize: sampleSize, scrollToTop: scrollToTop, sdbm: sdbm, select: select, setStyle: setStyle, shallowClone: shallowClone, show: show, shuffle: shuffle, similarity: similarity, size: size, sleep: sleep, solveRPN: solveRPN, sortCharactersInString: sortCharactersInString, sortedIndex: sortedIndex, speechSynthesis: speechSynthesis, splitLines: splitLines, spreadOver: spreadOver, standardDeviation: standardDeviation, sum: sum, sumPower: sumPower, symmetricDifference: symmetricDifference, tail: tail, take: take, takeRight: takeRight, timeTaken: timeTaken, toCamelCase: toCamelCase, toDecimalMark: toDecimalMark, toEnglishDate: toEnglishDate, toKebabCase: toKebabCase, toOrdinalSuffix: toOrdinalSuffix, toSnakeCase: toSnakeCase, toggleClass: toggleClass, tomorrow: tomorrow, truncateString: truncateString, truthCheckCollection: truthCheckCollection, unescapeHTML: unescapeHTML, union: union, untildify: untildify, validateNumber: validateNumber, without: without, words: words, yesNo: yesNo, zip: zip, zipObject: zipObject };
+var imports = { anagrams: anagrams, arrayToHtmlList: arrayToHtmlList, average: average, bottomVisible: bottomVisible, byteSize: byteSize, call: call, capitalize: capitalize, capitalizeEveryWord: capitalizeEveryWord, chainAsync: chainAsync, chunk: chunk, clampNumber: clampNumber, cleanObj: cleanObj, cloneRegExp: cloneRegExp, coalesce: coalesce, coalesceFactory: coalesceFactory, collatz: collatz, collectInto: collectInto, compact: compact, compose: compose, copyToClipboard: copyToClipboard, countOccurrences: countOccurrences, countVowels: countVowels, currentURL: currentURL, curry: curry, deepFlatten: deepFlatten, defer: defer, detectDeviceType: detectDeviceType, difference: difference, differenceWith: differenceWith, digitize: digitize, distance: distance, distinctValuesOfArray: distinctValuesOfArray, dropElements: dropElements, dropRight: dropRight, elementIsVisibleInViewport: elementIsVisibleInViewport, elo: elo, escapeHTML: escapeHTML, escapeRegExp: escapeRegExp, everyNth: everyNth, extendHex: extendHex, factorial: factorial, fibonacci: fibonacci, fibonacciCountUntilNum: fibonacciCountUntilNum, fibonacciUntilNum: fibonacciUntilNum, filterNonUnique: filterNonUnique, flatten: flatten, flattenDepth: flattenDepth, flip: flip, fromCamelCase: fromCamelCase, functionName: functionName, gcd: gcd, getDaysDiffBetweenDates: getDaysDiffBetweenDates, getScrollPosition: getScrollPosition, getStyle: getStyle, getType: getType, getURLParameters: getURLParameters, groupBy: groupBy, hammingDistance: hammingDistance, hasClass: hasClass, hasFlags: hasFlags, head: head, hexToRGB: hexToRGB, hide: hide, httpsRedirect: httpsRedirect, initial: initial, initialize2DArray: initialize2DArray, initializeArrayWithRange: initializeArrayWithRange, initializeArrayWithValues: initializeArrayWithValues, inRange: inRange, intersection: intersection, invertKeyValues: invertKeyValues, isAbsoluteURL: isAbsoluteURL, isArmstrongNumber: isArmstrongNumber, isArray: isArray, isArrayLike: isArrayLike, isBoolean: isBoolean, isDivisible: isDivisible, isEven: isEven, isFunction: isFunction, isNull: isNull, isNumber: isNumber, isPrime: isPrime, isPrimitive: isPrimitive, isPromiseLike: isPromiseLike, isSorted: isSorted, isString: isString, isSymbol: isSymbol, isTravisCI: isTravisCI, isValidJSON: isValidJSON, join: join, JSONToDate: JSONToDate, JSONToFile: JSONToFile, last: last, lcm: lcm, lowercaseKeys: lowercaseKeys, mapObject: mapObject, mask: mask, max: max, median: median, memoize: memoize, min: min, negate: negate, nthElement: nthElement, objectFromPairs: objectFromPairs, objectToPairs: objectToPairs, once: once, onUserInputChange: onUserInputChange, orderBy: orderBy, palindrome: palindrome, percentile: percentile, pick: pick, pipeFunctions: pipeFunctions, powerset: powerset, prettyBytes: prettyBytes, primes: primes, promisify: promisify, pull: pull, pullAtIndex: pullAtIndex, pullAtValue: pullAtValue, quickSort: quickSort, randomHexColorCode: randomHexColorCode, randomIntegerInRange: randomIntegerInRange, randomNumberInRange: randomNumberInRange, readFileLines: readFileLines, redirect: redirect, reducedFilter: reducedFilter, remove: remove, repeatString: repeatString, reverseString: reverseString, RGBToHex: RGBToHex, round: round, runAsync: runAsync, runPromisesInSeries: runPromisesInSeries, sample: sample, sampleSize: sampleSize, scrollToTop: scrollToTop, sdbm: sdbm, select: select, setStyle: setStyle, shallowClone: shallowClone, show: show, shuffle: shuffle, similarity: similarity, size: size, sleep: sleep, solveRPN: solveRPN, sortCharactersInString: sortCharactersInString, sortedIndex: sortedIndex, speechSynthesis: speechSynthesis, splitLines: splitLines, spreadOver: spreadOver, standardDeviation: standardDeviation, sum: sum, sumPower: sumPower, symmetricDifference: symmetricDifference, tail: tail, take: take, takeRight: takeRight, timeTaken: timeTaken, toCamelCase: toCamelCase, toDecimalMark: toDecimalMark, toEnglishDate: toEnglishDate, toggleClass: toggleClass, toKebabCase: toKebabCase, tomorrow: tomorrow, toOrdinalSuffix: toOrdinalSuffix, toSnakeCase: toSnakeCase, truncateString: truncateString, truthCheckCollection: truthCheckCollection, unescapeHTML: unescapeHTML, union: union, untildify: untildify, UUIDGeneratorBrowser: UUIDGeneratorBrowser, UUIDGeneratorNode: UUIDGeneratorNode, validateNumber: validateNumber, without: without, words: words, yesNo: yesNo, zip: zip, zipObject: zipObject };
 
 return imports;
 

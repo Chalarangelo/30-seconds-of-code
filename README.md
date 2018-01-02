@@ -1231,7 +1231,7 @@ quickSort([4, 1, 3, 2], true); // [4,3,2,1]
 
 Filter an array of objects based on a condition while also filtering out unspecified keys.
 
-Use `Array.filter()` to filter the array based on the predicate `fn` so that it returns the objects for which the condition returned a truthy value. 
+Use `Array.filter()` to filter the array based on the predicate `fn` so that it returns the objects for which the condition returned a truthy value.
 On the filtered array, use `Array.map()` to return the new object using `Array.reduce()` to filter out the keys which were not supplied as the `keys` argument.
 
 ```js
@@ -1981,8 +1981,8 @@ redirect('https://google.com');
 
 Runs a function in a separate thread by using a [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), allowing long running functions to not block the UI.
 
-Create a new `Worker` using a `Blob` object URL, the contents of which should be the stringified version of the supplied function. 
-Immediately post the return value of calling the function back. 
+Create a new `Worker` using a `Blob` object URL, the contents of which should be the stringified version of the supplied function.
+Immediately post the return value of calling the function back.
 Return a promise, listening for `onmessage` and `onerror` events and resolving the data posted back from the worker, or throwing an error.
 
 ```js
@@ -4111,7 +4111,7 @@ isAbsoluteURL('/foo/bar'); // false
 
 Replaces all but the last `num` of characters with the specified mask character.
 
-Use `String.slice()` to grab the portion of the characters that need to be masked and use `String.replace()` with a regex to replace every character with the mask character. 
+Use `String.slice()` to grab the portion of the characters that need to be masked and use `String.replace()` with a regex to replace every character with the mask character.
 Concatenate the masked characters with the remaining unmasked portion of the string.
 Omit the second argument, `num`, to keep a default of `4` characters unmasked. If `num` is negative, the unmasked characters will be at the start of the string.
 Omit the third argument, `mask`, to use a default character of `'*'` for the mask.
@@ -4924,8 +4924,8 @@ isValidJSON(null); // true
 
 Converts a number in bytes to a human-readable string.
 
-Use an array dictionary of units to be accessed based on the exponent. 
-Use `Number.toPrecision()` to truncate the number to a certain number of digits. 
+Use an array dictionary of units to be accessed based on the exponent.
+Use `Number.toPrecision()` to truncate the number to a certain number of digits.
 Return the prettified string by building it up, taking into account the supplied options and whether it is negative or not.
 Omit the second argument, `precision`, to use a default precision of `3` digits.
 Omit the third argument, `addSpace`, to add space between the number and unit by default.
