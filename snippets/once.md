@@ -2,9 +2,8 @@
 
 Ensures a function is called only once.
 
-Utilizing a closure, use a variable flag and set it to true once the function is called
-for the first time, preventing it from being called again. Allow the function to be supplied
-with an arbitrary number of arguments using the spread/rest (`...`) operator.
+Utilizing a closure, use a flag, `called`, and set it to `true` once the function is called for the first time, preventing it from being called again. 
+Allow the function to be supplied with an arbitrary number of arguments using the spread (`...`) operator.
 
 ```js
 const once = fn => {
