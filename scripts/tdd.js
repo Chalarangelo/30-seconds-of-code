@@ -7,7 +7,10 @@ const snippetFiles = fs.readdirSync(SNIPPETS_PATH, 'utf8').map(fileName => fileN
 
 fs.removeSync(TEST_PATH);
 
+const errSnippets = ['JSONToFile', 'readFileLines', 'UUIDGeneratorNode'];
+
 snippetFiles
+  .filter(fileName => !errSnippets.includes(fileName))
   .map(fileName => {
     fs.ensureDirSync(`${TEST_PATH}/${fileName}`);
     return fileName;
