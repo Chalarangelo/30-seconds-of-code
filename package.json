@@ -18,7 +18,8 @@
     "linter": "node ./scripts/lint.js",
     "tagger": "node ./scripts/tag.js",
     "webber": "node ./scripts/web.js",
-    "tdd": "node ./scripts/tdd.js"
+    "tdd": "node ./scripts/tdd.js",
+    "test": "tape test/**/*.test.js"
   },
   "repository": {
     "type": "git",
