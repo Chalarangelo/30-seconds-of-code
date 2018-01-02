@@ -118,6 +118,7 @@ repeatString:string
 reverseString:string
 RGBToHex:utility
 round:math
+runAsync:browser
 runPromisesInSeries:function
 sample:array
 sampleSize:array
