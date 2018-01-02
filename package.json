@@ -40,5 +40,8 @@
   "bugs": {
     "url": "https://github.com/Chalarangelo/30-seconds-of-code/issues"
   },
-  "homepage": "https://github.com/Chalarangelo/30-seconds-of-code#readme"
+  "homepage": "https://github.com/Chalarangelo/30-seconds-of-code#readme",
+  "devDependencies": {
+    "tap-spec": "^4.1.1"
+  }
 }
