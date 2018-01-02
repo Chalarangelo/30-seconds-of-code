@@ -9,7 +9,11 @@ commit_website_files() {
       echo "Committing to master branch..."
       git checkout master
       git add *
-      git commit --message "Travis build: $TRAVIS_BUILD_NUMBER [ci skip]"
+      if [ $TRAVIS_EVENT_TYPE == "cron" ]; then
+        git commit --message "[cron] Travis build: $TRAVIS_BUILD_NUMBER [ci skip]"
+      else
+        git commit --message "Travis build: $TRAVIS_BUILD_NUMBER [ci skip]"
+      fi
     fi
   fi
 }
