@@ -33,14 +33,14 @@ snippetFiles
     const exportTest = [
       `const test = require('tape');`,
       `const ${fileName} = require('./${fileName}.js');`,
-      `test('Testing ${fileName}', (t) => {`,
-      `//For more information on all the methods supported by tape\n//Please go to https://github.com/substack/tape`,
-      `t.true(typeof ${fileName} === 'function', '${fileName} is a Function');`,   
-      `//t.deepEqual(${fileName}(args..), 'Expected');`,
-      `//t.equal(${fileName}(args..), 'Expected');`,
-      `//t.false(${fileName}(args..), 'Expected');`,
-      `//t.throws(${fileName}(args..), 'Expected');`,
-      `t.end();`,
+      `\ntest('Testing ${fileName}', (t) => {`,
+      `\t//For more information on all the methods supported by tape\n\t//Please go to https://github.com/substack/tape`,
+      `\tt.true(typeof ${fileName} === 'function', '${fileName} is a Function');`,   
+      `\t//t.deepEqual(${fileName}(args..), 'Expected');`,
+      `\t//t.equal(${fileName}(args..), 'Expected');`,
+      `\t//t.false(${fileName}(args..), 'Expected');`,
+      `\t//t.throws(${fileName}(args..), 'Expected');`,
+      `\tt.end();`,
       `});`
     ].join('\n');
 
