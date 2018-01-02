@@ -545,13 +545,18 @@ defer(longRunningFunction); // the browser will update the HTML then run the fun
 const anagramsCached = memoize(anagrams);
 anagramsCached('javascript'); // takes a long time
 anagramsCached('javascript'); // returns virtually instantly since it's now cached
-</code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="once">once</h3></div><div class="section double-padded"><p>Ensures a function is called only once.</p><p>Utilizing a closure, use a flag, <code>called</code>, and set it to <code>true</code> once the function is called for the first time, preventing it from being called again. Allow the function to be supplied with an arbitrary number of arguments using the spread (<code>...</code>) operator.</p><pre><code class="language-js">const once = fn =&gt;
-  (called =&gt; (...args) =&gt; (!called ? ((called = true), fn(...args)) : undefined))();
-</code></pre><pre><code class="language-js">const startApp = event =&gt; {
-  // initializes the app
-  console.log(event); // access to any arguments supplied
+</code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="once">once</h3></div><div class="section double-padded"><p>Ensures a function is called only once.</p><p>Utilizing a closure, use a flag, <code>called</code>, and set it to <code>true</code> once the function is called for the first time, preventing it from being called again. In order to allow the function to have its <code>this</code> context changed (such as in an event listener), the <code>function</code> keyword must be used, and the supplied function must have the context applied. Allow the function to be supplied with an arbitrary number of arguments using the rest/spread (<code>...</code>) operator.</p><pre><code class="language-js">const once = fn =&gt; {
+  let called = false;
+  return function(...args) {
+    if (called) return;
+    called = true;
+    return fn.apply(this, args);
+  };
 };
-document.addEventListener('click', once(startApp)); // only runs `startApp` once upon click
+</code></pre><pre><code class="language-js">const startApp = function(event) {
+  console.log(this, event); // document.body, MouseEvent
+};
+document.body.addEventListener('click', once(startApp)); // only runs `startApp` once upon click
 </code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="runpromisesinseries">runPromisesInSeries</h3></div><div class="section double-padded"><p>Runs an array of promises in series.</p><p>Use <code>Array.reduce()</code> to create a promise chain, where each promise returns the next promise when resolved.</p><pre><code class="language-js">const runPromisesInSeries = ps =&gt; ps.reduce((p, next) =&gt; p.then(next), Promise.resolve());
 </code></pre><pre><code class="language-js">const delay = d =&gt; new Promise(r =&gt; setTimeout(r, d));
 runPromisesInSeries([() =&gt; delay(1000), () =&gt; delay(2000)]); // //executes each promise sequentially, taking a total of 3 seconds to complete
