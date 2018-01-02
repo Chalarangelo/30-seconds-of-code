@@ -2131,6 +2131,15 @@ Use `window.speechSynthesis.speak()` to play the message.
 
 Learn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
 
+### speechSynthesis
+
+Performs speech synthesis (experimental).
+
+Use `SpeechSynthesisUtterance.voice` and `window.speechSynthesis.getVoices()` to convert a message to speech.
+Use `window.speechSynthesis.speak()` to play the message.
+
+Learn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
+
 ```js
 const speechSynthesis = message => {
   const msg = new SpeechSynthesisUtterance(message);
@@ -2292,6 +2301,11 @@ const chainAsync = fns => {
   next();
 };
 ```
+
+### tomorrow
+
+Results in a string representation of tomorrow's date.
+Use `new Date()` to get today's date, adding `86400000` of seconds to it(24 hours), using `toISOString` to convert Date object to string.
 
 ### tomorrow
 
@@ -2552,6 +2566,12 @@ Take a predicate function and apply `not` to it with its arguments.
 ```js
 const negate = func => (...args) => !func(...args);
 ```
+
+### sleep
+
+Delays the execution of an asynchronous function.
+
+Delay executing part of an `async` function, by putting it to sleep, returning a `Promise`.
 
 ### sleep
 
@@ -3288,6 +3308,16 @@ round(1.005, 2); // 1.01
 <br>[⬆ Back to top](#table-of-contents)
 
 ## Media
+
+### solveRPN
+
+Solves the given mathematical expression in [reverse polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation).
+Throws appropriate errors if there are unrecognized symbols or the expression is wrong.
+
+Use a dictionary, `OPERATORS` to specify each operator's matching mathematical operation.
+Use `String.replace()` with a regular expression to replace `^` with `**`, `String.split()` to tokenize the string and `Array.filter()` to remove empty tokens.
+Use `Array.forEach()` to parse each `symbol`, evaluate it as a numeric value or operator and solve the mathematical expression.
+Numeric values are converted to floating point numbers and pushed to a `stack`, while operators are evaluated using the `OPERATORS` dictionary and pop elements from the `stack` to apply operations.
 
 ### solveRPN
 
