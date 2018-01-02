@@ -1,3 +1,25 @@
+const JSONToDate = arr => {
+  const dt = new Date(parseInt(arr.toString().substr(6)));
+  return `${dt.getDate()}/${dt.getMonth() + 1}/${dt.getFullYear()}`;
+};
+
+const fs = typeof require !== "undefined" && require('fs');
+const JSONToFile = (obj, filename) =>
+  fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2));
+
+const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
+
+const UUIDGeneratorBrowser = () =>
+  ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+    (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)
+  );
+
+const crypto$1 = typeof require !== "undefined" && require('crypto');
+const UUIDGeneratorNode = () =>
+  ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+    (c ^ (crypto$1.randomBytes(1)[0] & (15 >> (c / 4)))).toString(16)
+  );
+
 const anagrams = str => {
   if (str.length <= 2) return str.length === 2 ? [str, str[1] + str[0]] : [str];
   return str
@@ -54,6 +76,8 @@ const cleanObj = (obj, keysToKeep = [], childIndicator) => {
   return obj;
 };
 
+const cloneRegExp = regExp => new RegExp(regExp.source, regExp.flags);
+
 const coalesce = (...args) => args.find(_ => ![undefined, null].includes(_));
 
 const coalesceFactory = valid => (...args) => args.find(valid);
@@ -66,6 +90,24 @@ const compact = arr => arr.filter(Boolean);
 
 const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));
 
+const copyToClipboard = str => {
+  const el = document.createElement('textarea');
+  el.value = str;
+  el.setAttribute('readonly', '');
+  el.style.position = 'absolute';
+  el.style.left = '-9999px';
+  document.body.appendChild(el);
+  const selected =
+    document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false;
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+  if (selected) {
+    document.getSelection().removeAllRanges();
+    document.getSelection().addRange(selected);
+  }
+};
+
 const countOccurrences = (arr, value) => arr.reduce((a, v) => (v === value ? a + 1 : a + 0), 0);
 
 const countVowels = str => (str.match(/[aeiou]/gi) || []).length;
@@ -76,6 +118,8 @@ const curry = (fn, arity = fn.length, ...args) =>
   arity <= args.length ? fn(...args) : curry.bind(null, fn, arity, ...args);
 
 const deepFlatten = arr => [].concat(...arr.map(v => (Array.isArray(v) ? deepFlatten(v) : v)));
+
+const defer = (fn, ...args) => setTimeout(fn, 1, ...args);
 
 const detectDeviceType = () =>
   /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
@@ -109,6 +153,12 @@ const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
     ? ((top > 0 && top < innerHeight) || (bottom > 0 && bottom < innerHeight)) &&
         ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
     : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
+};
+
+const elo = ([a, b], kFactor = 32) => {
+  const expectedScore = (self, opponent) => 1 / (1 + 10 ** ((opponent - self) / 400));
+  const newRating = (rating, i) => rating + kFactor * (i - expectedScore(i ? a : b, i ? b : a));
+  return [newRating(a, 1), newRating(b, 0)];
 };
 
 const escapeHTML = str =>
@@ -213,6 +263,9 @@ const hammingDistance = (num1, num2) => ((num1 ^ num2).toString(2).match(/1/g) |
 
 const hasClass = (el, className) => el.classList.contains(className);
 
+const hasFlags = (...flags) =>
+  flags.every(flag => process.argv.includes(/^-{1,2}/.test(flag) ? flag : '--' + flag));
+
 const head = arr => arr[0];
 
 const hexToRGB = hex => {
@@ -241,6 +294,11 @@ const httpsRedirect = () => {
   if (location.protocol !== 'https:') location.replace('https://' + location.href.split('//')[1]);
 };
 
+const inRange = (n, start, end = null) => {
+  if (end && start > end) end = [start, (start = end)][0];
+  return end == null ? n >= 0 && n < start : n >= start && n < end;
+};
+
 const initial = arr => arr.slice(0, -1);
 
 const initialize2DArray = (w, h, val = null) =>
@@ -253,22 +311,33 @@ const initializeArrayWithRange = (end, start = 0) =>
 
 const initializeArrayWithValues = (n, value = 0) => Array(n).fill(value);
 
-const inRange = (n, start, end = null) => {
-  if (end && start > end) end = [start, (start = end)][0];
-  return end == null ? n >= 0 && n < start : n >= start && n < end;
-};
-
 const intersection = (a, b) => {
   const s = new Set(b);
   return a.filter(x => s.has(x));
 };
 
+const invertKeyValues = obj =>
+  Object.keys(obj).reduce((acc, key) => {
+    acc[obj[key]] = key;
+    return acc;
+  }, {});
+
+const isAbsoluteURL = str => /^[a-z][a-z0-9+.-]*:/.test(str);
+
 const isArmstrongNumber = digits =>
-  (arr => arr.reduce((a, d) => a + Math.pow(parseInt(d), arr.length), 0) == digits)(
+  (arr => arr.reduce((a, d) => a + parseInt(d) ** arr.length, 0) == digits)(
     (digits + '').split('')
   );
 
 const isArray = val => !!val && Array.isArray(val);
+
+const isArrayLike = val => {
+  try {
+    return [...val], true;
+  } catch (e) {
+    return false;
+  }
+};
 
 const isBoolean = val => typeof val === 'boolean';
 
@@ -278,26 +347,53 @@ const isEven = num => num % 2 === 0;
 
 const isFunction = val => val && typeof val === 'function';
 
+const isNull = val => val === null;
+
 const isNumber = val => typeof val === 'number';
 
 const isPrime = num => {
   const boundary = Math.floor(Math.sqrt(num));
-  for (var i = 2; i * i <= boundary; i++) if (num % i == 0) return false;
+  for (var i = 2; i <= boundary; i++) if (num % i == 0) return false;
   return num >= 2;
+};
+
+const isPrimitive = val => !['object', 'function'].includes(typeof val) || val === null;
+
+const isPromiseLike = obj =>
+  obj !== null &&
+  (typeof obj === 'object' || typeof obj === 'function') &&
+  typeof obj.then === 'function';
+
+const isSorted = arr => {
+  const direction = arr[0] > arr[1] ? -1 : 1;
+  for (let [i, val] of arr.entries())
+    if (i === arr.length - 1) return direction;
+    else if ((val - arr[i + 1]) * direction > 0) return 0;
 };
 
 const isString = val => typeof val === 'string';
 
 const isSymbol = val => typeof val === 'symbol';
 
-const JSONToDate = arr => {
-  const dt = new Date(parseInt(arr.toString().substr(6)));
-  return `${dt.getDate()}/${dt.getMonth() + 1}/${dt.getFullYear()}`;
+const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
+
+const isValidJSON = obj => {
+  try {
+    JSON.parse(obj);
+    return true;
+  } catch (e) {
+    return false;
+  }
 };
 
-const fs = typeof require !== "undefined" && require('fs');
-const JSONToFile = (obj, filename) =>
-  fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2));
+const join = (arr, separator = ',', end = separator) =>
+  arr.reduce(
+    (acc, val, i) =>
+      i == arr.length - 2
+        ? acc + val + end
+        : i == arr.length - 1 ? acc + val : acc + val + separator,
+    ''
+  );
 
 const last = arr => arr[arr.length - 1];
 
@@ -317,12 +413,20 @@ const mapObject = (arr, fn) =>
   (a => (
     a = [arr, arr.map(fn)], a[0].reduce((acc, val, ind) => (acc[val] = a[1][ind], acc), {})))();
 
+const mask = (cc, num = 4, mask = '*') =>
+  ('' + cc).slice(0, -num).replace(/./g, mask) + ('' + cc).slice(-num);
+
 const max = (...arr) => Math.max(...[].concat(...arr));
 
 const median = arr => {
   const mid = Math.floor(arr.length / 2),
     nums = [...arr].sort((a, b) => a - b);
   return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
+};
+
+const memoize = fn => {
+  const cache = Object.create(null);
+  return value => cache[value] || (cache[value] = fn(value));
 };
 
 const min = arr => Math.min(...[].concat(...arr));
@@ -348,6 +452,15 @@ const onUserInputChange = callback => {
     if (type === 'touch') return;
     type = 'touch', callback(type), document.addEventListener('mousemove', mousemoveHandler);
   });
+};
+
+const once = fn => {
+  let called = false;
+  return function(...args) {
+    if (called) return;
+    called = true;
+    return fn.apply(this, args);
+  };
 };
 
 const orderBy = (arr, props, orders) =>
@@ -381,6 +494,14 @@ const pick = (obj, arr) =>
 const pipeFunctions = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
 
 const powerset = arr => arr.reduce((a, v) => a.concat(a.map(r => [v].concat(r))), [[]]);
+
+const prettyBytes = (num, precision = 3, addSpace = true) => {
+  const UNITS = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+  if (Math.abs(num) < 1) return num + (addSpace ? ' ' : '') + UNITS[0];
+  const exponent = Math.min(Math.floor(Math.log10(num < 0 ? -num : num) / 3), UNITS.length - 1);
+  const n = Number(((num < 0 ? -num : num) / 1000 ** exponent).toPrecision(precision));
+  return (num < 0 ? '-' : '') + n + (addSpace ? ' ' : '') + UNITS[exponent];
+};
 
 const primes = num => {
   let arr = Array.from({ length: num - 1 }).map((x, i) => i + 2),
@@ -449,6 +570,14 @@ const readFileLines = filename =>
 const redirect = (url, asLink = true) =>
   asLink ? (window.location.href = url) : window.location.replace(url);
 
+const reducedFilter = (data, keys, fn) =>
+  data.filter(fn).map(el =>
+    keys.reduce((acc, key) => {
+      acc[key] = el[key];
+      return acc;
+    }, {})
+  );
+
 const remove = (arr, func) =>
   Array.isArray(arr)
     ? arr.filter(func).reduce((acc, val) => {
@@ -467,13 +596,40 @@ const reverseString = str =>
     .reverse()
     .join('');
 
-const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
-
 const round = (n, decimals = 0) => Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`);
+
+const runAsync = fn => {
+  const blob = `
+    var fn = ${fn.toString()};
+    this.postMessage(fn());
+  `;
+  const worker = new Worker(
+    URL.createObjectURL(new Blob([blob]), {
+      type: 'application/javascript; charset=utf-8'
+    })
+  );
+  return new Promise((res, rej) => {
+    worker.onmessage = ({ data }) => {
+      res(data), worker.terminate();
+    };
+    worker.onerror = err => {
+      rej(err), worker.terminate();
+    };
+  });
+};
 
 const runPromisesInSeries = ps => ps.reduce((p, next) => p.then(next), Promise.resolve());
 
 const sample = arr => arr[Math.floor(Math.random() * arr.length)];
+
+const sampleSize = ([...arr], n = 1) => {
+  let m = arr.length;
+  while (m) {
+    const i = Math.floor(Math.random() * m--);
+    [arr[m], arr[i]] = [arr[i], arr[m]];
+  }
+  return arr.slice(0, n);
+};
 
 const scrollToTop = () => {
   const c = document.documentElement.scrollTop || document.body.scrollTop;
@@ -512,13 +668,55 @@ const shuffle = ([...arr]) => {
 
 const similarity = (arr, values) => arr.filter(v => values.includes(v));
 
+const size = value =>
+  Array.isArray(value)
+    ? value.length
+    : value && typeof value === 'object'
+      ? value.size || value.length || Object.keys(value).length
+      : typeof value === 'string' ? new Blob([value]).size : 0;
+
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+const solveRPN = rpn => {
+  const OPERATORS = {
+    '*': (a, b) => a * b,
+    '+': (a, b) => a + b,
+    '-': (a, b) => a - b,
+    '/': (a, b) => a / b,
+    '**': (a, b) => a ** b
+  };
+  const [stack, solve] = [
+    [],
+    rpn
+      .replace(/\^/g, '**')
+      .split(/\s+/g)
+      .filter(el => !/\s+/.test(el) && el !== '')
+  ];
+  solve.forEach(symbol => {
+    if (!isNaN(parseFloat(symbol)) && isFinite(symbol)) {
+      stack.push(symbol);
+    } else if (Object.keys(OPERATORS).includes(symbol)) {
+      const [a, b] = [stack.pop(), stack.pop()];
+      stack.push(OPERATORS[symbol](parseFloat(b), parseFloat(a)));
+    } else {
+      throw `${symbol} is not a recognized symbol`;
+    }
+  });
+  if (stack.length === 1) return stack.pop();
+  else throw `${rpn} is not a proper RPN. Please check it and try again`;
+};
 
 const sortCharactersInString = str =>
   str
     .split('')
     .sort((a, b) => a.localeCompare(b))
     .join('');
+
+const sortedIndex = (arr, n) => {
+  const isDescending = arr[0] > arr[arr.length - 1];
+  const index = arr.findIndex(el => (isDescending ? n >= el : n <= el));
+  return index === -1 ? arr.length : index;
+};
 
 const speechSynthesis = message => {
   const msg = new SpeechSynthesisUtterance(message);
@@ -533,14 +731,18 @@ const spreadOver = fn => argsArr => fn(...argsArr);
 const standardDeviation = (arr, usePopulation = false) => {
   const mean = arr.reduce((acc, val) => acc + val, 0) / arr.length;
   return Math.sqrt(
-    arr
-      .reduce((acc, val) => acc.concat(Math.pow(val - mean, 2)), [])
-      .reduce((acc, val) => acc + val, 0) /
+    arr.reduce((acc, val) => acc.concat((val - mean) ** 2), []).reduce((acc, val) => acc + val, 0) /
       (arr.length - (usePopulation ? 0 : 1))
   );
 };
 
 const sum = (...arr) => [].concat(...arr).reduce((acc, val) => acc + val, 0);
+
+const sumPower = (end, power = 2, start = 1) =>
+  Array(end + 1 - start)
+    .fill(0)
+    .map((x, i) => (i + start) ** power)
+    .reduce((a, b) => a + b, 0);
 
 const symmetricDifference = (a, b) => {
   const sA = new Set(a),
@@ -582,16 +784,12 @@ const toEnglishDate = time => {
   } catch (e) {}
 };
 
-const toggleClass = (el, className) => el.classList.toggle(className);
-
 const toKebabCase = str =>
   str &&
   str
     .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
     .map(x => x.toLowerCase())
     .join('-');
-
-const tomorrow = () => new Date(new Date().getTime() + 86400000).toISOString().split('T')[0];
 
 const toOrdinalSuffix = num => {
   const int = parseInt(num),
@@ -604,13 +802,16 @@ const toOrdinalSuffix = num => {
     : int + ordinals[3];
 };
 
-const toSnakeCase = str => {
+const toSnakeCase = str =>
   str &&
-    str
-      .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
-      .map(x => x.toLowerCase())
-      .join('_');
-};
+  str
+    .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+    .map(x => x.toLowerCase())
+    .join('_');
+
+const toggleClass = (el, className) => el.classList.toggle(className);
+
+const tomorrow = () => new Date(new Date().getTime() + 86400000).toISOString().split('T')[0];
 
 const truncateString = (str, num) =>
   str.length > num ? str.slice(0, num > 3 ? num - 3 : num) + '...' : str;
@@ -632,22 +833,16 @@ const unescapeHTML = str =>
 
 const union = (a, b) => Array.from(new Set([...a, ...b]));
 
-const UUIDGeneratorBrowser = () =>
-  ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
-    (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)
-  );
-
-const crypto$1 = typeof require !== "undefined" && require('crypto');
-const UUIDGeneratorNode = () =>
-  ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
-    (c ^ (crypto$1.randomBytes(1)[0] & (15 >> (c / 4)))).toString(16)
-  );
+const untildify = str => str.replace(/^~($|\/|\\)/, `${typeof require !== "undefined" && require('os').homedir()}$1`);
 
 const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
 
 const without = (arr, ...args) => arr.filter(v => !args.includes(v));
 
 const words = (str, pattern = /[^a-zA-Z-]+/) => str.split(pattern).filter(Boolean);
+
+const yesNo = (val, def = false) =>
+  /^(y|yes)$/i.test(val) ? true : /^(n|no)$/i.test(val) ? false : def;
 
 const zip = (...arrays) => {
   const maxLength = Math.max(...arrays.map(x => x.length));
@@ -659,6 +854,6 @@ const zip = (...arrays) => {
 const zipObject = (props, values) =>
   props.reduce((obj, prop, index) => (obj[prop] = values[index], obj), {});
 
-var imports = {anagrams,arrayToHtmlList,average,bottomVisible,byteSize,call,capitalize,capitalizeEveryWord,chainAsync,chunk,clampNumber,cleanObj,coalesce,coalesceFactory,collatz,collectInto,compact,compose,countOccurrences,countVowels,currentURL,curry,deepFlatten,detectDeviceType,difference,differenceWith,digitize,distance,distinctValuesOfArray,dropElements,dropRight,elementIsVisibleInViewport,escapeHTML,escapeRegExp,everyNth,extendHex,factorial,fibonacci,fibonacciCountUntilNum,fibonacciUntilNum,filterNonUnique,flatten,flattenDepth,flip,fromCamelCase,functionName,gcd,getDaysDiffBetweenDates,getScrollPosition,getStyle,getType,getURLParameters,groupBy,hammingDistance,hasClass,head,hexToRGB,hide,httpsRedirect,initial,initialize2DArray,initializeArrayWithRange,initializeArrayWithValues,inRange,intersection,isArmstrongNumber,isArray,isBoolean,isDivisible,isEven,isFunction,isNumber,isPrime,isString,isSymbol,JSONToDate,JSONToFile,last,lcm,lowercaseKeys,mapObject,max,median,min,negate,nthElement,objectFromPairs,objectToPairs,onUserInputChange,orderBy,palindrome,percentile,pick,pipeFunctions,powerset,primes,promisify,pull,pullAtIndex,pullAtValue,quickSort,randomHexColorCode,randomIntegerInRange,randomNumberInRange,readFileLines,redirect,remove,repeatString,reverseString,RGBToHex,round,runPromisesInSeries,sample,scrollToTop,sdbm,select,setStyle,shallowClone,show,shuffle,similarity,sleep,sortCharactersInString,speechSynthesis,splitLines,spreadOver,standardDeviation,sum,symmetricDifference,tail,take,takeRight,timeTaken,toCamelCase,toDecimalMark,toEnglishDate,toggleClass,toKebabCase,tomorrow,toOrdinalSuffix,toSnakeCase,truncateString,truthCheckCollection,unescapeHTML,union,UUIDGeneratorBrowser,UUIDGeneratorNode,validateNumber,without,words,zip,zipObject,}
+var imports = {JSONToDate,JSONToFile,RGBToHex,UUIDGeneratorBrowser,UUIDGeneratorNode,anagrams,arrayToHtmlList,average,bottomVisible,byteSize,call,capitalize,capitalizeEveryWord,chainAsync,chunk,clampNumber,cleanObj,cloneRegExp,coalesce,coalesceFactory,collatz,collectInto,compact,compose,copyToClipboard,countOccurrences,countVowels,currentURL,curry,deepFlatten,defer,detectDeviceType,difference,differenceWith,digitize,distance,distinctValuesOfArray,dropElements,dropRight,elementIsVisibleInViewport,elo,escapeHTML,escapeRegExp,everyNth,extendHex,factorial,fibonacci,fibonacciCountUntilNum,fibonacciUntilNum,filterNonUnique,flatten,flattenDepth,flip,fromCamelCase,functionName,gcd,getDaysDiffBetweenDates,getScrollPosition,getStyle,getType,getURLParameters,groupBy,hammingDistance,hasClass,hasFlags,head,hexToRGB,hide,httpsRedirect,inRange,initial,initialize2DArray,initializeArrayWithRange,initializeArrayWithValues,intersection,invertKeyValues,isAbsoluteURL,isArmstrongNumber,isArray,isArrayLike,isBoolean,isDivisible,isEven,isFunction,isNull,isNumber,isPrime,isPrimitive,isPromiseLike,isSorted,isString,isSymbol,isTravisCI,isValidJSON,join,last,lcm,lowercaseKeys,mapObject,mask,max,median,memoize,min,negate,nthElement,objectFromPairs,objectToPairs,onUserInputChange,once,orderBy,palindrome,percentile,pick,pipeFunctions,powerset,prettyBytes,primes,promisify,pull,pullAtIndex,pullAtValue,quickSort,randomHexColorCode,randomIntegerInRange,randomNumberInRange,readFileLines,redirect,reducedFilter,remove,repeatString,reverseString,round,runAsync,runPromisesInSeries,sample,sampleSize,scrollToTop,sdbm,select,setStyle,shallowClone,show,shuffle,similarity,size,sleep,solveRPN,sortCharactersInString,sortedIndex,speechSynthesis,splitLines,spreadOver,standardDeviation,sum,sumPower,symmetricDifference,tail,take,takeRight,timeTaken,toCamelCase,toDecimalMark,toEnglishDate,toKebabCase,toOrdinalSuffix,toSnakeCase,toggleClass,tomorrow,truncateString,truthCheckCollection,unescapeHTML,union,untildify,validateNumber,without,words,yesNo,zip,zipObject,}
 
 export default imports;
