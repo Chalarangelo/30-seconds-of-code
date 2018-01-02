@@ -289,7 +289,7 @@ reducedFilter(data, ['id', 'name'], item =&gt; item.age &gt; 24); // [{ id: 2, n
 };
 </code></pre><pre><code class="language-js">sampleSize([1, 2, 3], 2); // [3,1]
 sampleSize([1, 2, 3], 4); // [2,3,1]
-</code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="shuffle">shuffle</h3></div><div class="section double-padded"><p>Randomizes the order of the values of an array, returning a new array.</p><p>Uses the Fisher-Yates algoritm to reorder the elements of the array, based on the <a href="https://github.com/lodash/lodash/blob/b2ea6b1cd251796dcb5f9700c4911a7b6223920b/shuffle.js">Lodash implementation</a>, but as a pure function.</p><pre><code class="language-js">const shuffle = ([...arr]) =&gt; {
+</code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="shuffle">shuffle</h3></div><div class="section double-padded"><p>Randomizes the order of the values of an array, returning a new array.</p><p>Uses the Fisher-Yates algorithm to reorder the elements of the array, based on the <a href="https://github.com/lodash/lodash/blob/b2ea6b1cd251796dcb5f9700c4911a7b6223920b/shuffle.js">Lodash implementation</a>, but as a pure function.</p><pre><code class="language-js">const shuffle = ([...arr]) =&gt; {
   let m = arr.length;
   while (m) {
     const i = Math.floor(Math.random() * m--);
