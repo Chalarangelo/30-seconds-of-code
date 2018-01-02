@@ -4,9 +4,7 @@
 ``` js
 const postfixToInfix = RPN => {
   let convert = RPN.replace(/\^/g,'**').split(/\s+/g).filter(el => !/\s+/.test(el) && el !== '')
-  let stack = []
-  let result = []
-  let precedence = {null : 4 ,'**':3 ,'/' : 2,'*': 2,'+':1,'-':1 }
+  let [stack,result,precedence] = [[],[],{null : 4 ,'**':3 ,'/' : 2,'*': 2,'+':1,'-':1 }]
   convert.forEach(symbol => {
     let stra,strb
     if(!isNaN(parseFloat(symbol)) && isFinite(symbol)){
