@@ -788,10 +788,12 @@ var median = function median(arr) {
 };
 
 var memoize = function memoize(fn) {
-  var cache = Object.create(null);
-  return function (value) {
-    return cache[value] || (cache[value] = fn(value));
+  var cache = new Map();
+  var cached = function cached(val) {
+    return cache.has(val) ? cache.get(val) : cache.set(val, fn.call(this, val)) && cache.get(val);
   };
+  cached.cache = cache;
+  return cached;
 };
 
 function _toConsumableArray$8(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
@@ -1075,7 +1077,7 @@ var round = function round(n) {
 };
 
 var runAsync = function runAsync(fn) {
-  var blob = '\n    var fn = ' + fn.toString() + ';\n    this.postMessage(fn());\n  ';
+  var blob = 'var fn = ' + fn.toString() + '; postMessage(fn());';
   var worker = new Worker(URL.createObjectURL(new Blob([blob]), {
     type: 'application/javascript; charset=utf-8'
   }));
