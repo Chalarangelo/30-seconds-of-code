@@ -1,3 +1,11 @@
+/*
+===============================================================================
+    WE ARE ONLY KEEPING THIS AS A REFERENCE, PLEASE REFER TO FLAVOR FOR
+    OUR ACTUAL HIGHLIGHTING STYLES.
+===============================================================================
+*/
+
+
 /* PrismJS 1.9.0
 http://prismjs.com/download.html?themes=prism&languages=clike+javascript */
 /**
@@ -137,4 +145,3 @@ pre[class*="language-"] {
 .token.entity {
 	cursor: help;
 }
-

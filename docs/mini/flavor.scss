@@ -67,25 +67,57 @@ $mark-tag-border-radius:        1em;
 // Website-specific styles
 
 html, * {
-  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, sans-serif;
 }
 code, pre, kbd, code *, pre *, kbd *, code[class*="language-"], pre[class*="language-"] {
-  font-family: 'Roboto Mono', Menlo, Consolas, monospace !important;
+  font-family: Menlo, Consolas, monospace !important;
 }
-code, kbd { font-size: 0.8125em; }
+code, kbd {
+  font-size: 0.8125em;
+}
 pre code {
   padding: 0; // Should make the first line's left padding the same as all other lines and avoid that annoying little step.
 }
 code {
   transform: scale(1);  /* Deals with the issue described in #243 */
 }
-pre { font-size: 1rem; border: 0.0625rem solid var(--secondary-border-color); border-radius: var(--universal-border-radius);}
-.group{position:relative;margin-top:2em;margin-bottom:1em}
-.search{font-size:14px;margin-top:-.1em;display:block;width:100%;border:none;border-bottom:1px solid var(--nav-link-color)}
-.search:focus{outline:none}
-label#search-label{color:var(--nav-link-color);font-size:18px;font-weight:400;position:absolute;left:5px;top:10px}
-.search:focus ~ label#search-label,.search:valid ~ label#search-label{top:-20px;font-size:14px;color:var(--nav-link-color)}
-label#menu-toggle { width: 3.4375rem;}
+pre {
+  font-size: 1rem;
+  border: 0.0625rem solid var(--secondary-border-color);
+  border-radius: var(--universal-border-radius);
+}
+.group{
+  position:relative;
+  margin-top:2em;
+  margin-bottom:1em
+}
+.search{
+  font-size:14px;
+  margin-top:-.1em;
+  display:block;
+  width:100%;
+  border:none;
+  border-bottom:1px solid var(--nav-link-color);
+}
+.search:focus{
+  outline:none
+}
+label#search-label{
+  color:var(--nav-link-color);
+  font-size:18px;
+  font-weight:400;
+  position:absolute;
+  left:5px;
+  top:10px;
+}
+.search:focus ~ label#search-label,.search:valid ~ label#search-label{
+  top:-20px;
+  font-size:14px;
+  color:var(--nav-link-color);
+}
+label#menu-toggle {
+  width: 3.4375rem;
+}
 
 header h1.logo {
   margin-top: -0.8rem;
@@ -126,14 +158,6 @@ label#menu-toggle {
 
 main {
   padding: 0;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-  background: none !important;
 }
 
 :root {
@@ -188,30 +212,128 @@ label.#{$collapse-name} {
   }
 }
 
-div.collapse {
-  > label {
-    border-top-left-radius: var(--universal-border-radius) !important;
-    border-top-right-radius: var(--universal-border-radius) !important;
-  }
-  :checked + label {
-    border-bottom-left-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
-  }
-  margin: 0;
-  width: 100%;
-  > div {
-    padding: 0 !important;
-    > pre {
-      margin: 0;
-      border: 0;
-    }
-  }
-}
-
 button.primary.clipboard-copy {
   width: 100%;
   margin-left: 0;
   > svg {
     vertical-align: bottom;
   }
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: black;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+
+  -webkit-hypens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+  background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+  background: #b3d4fc;
+}
+
+pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: slategray;
+}
+
+.token.punctuation {
+  color: #999;
+}
+
+.namespace {
+  opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #a67f59;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #e90;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
 }
