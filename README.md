@@ -3340,7 +3340,7 @@ standardDeviation([10, 2, 38, 23, 38, 23, 21], true); // 12.29899614287479 (popu
 
 ### sum
 
-Returns the sum of an of two or more numbers/arrays.
+Returns the sum of two or more numbers/arrays.
 
 Use `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`.
 
