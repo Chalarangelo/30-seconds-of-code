@@ -291,6 +291,9 @@
 <summary>View contents</summary>
 
 * [`geometricProgression`](#geometricprogression)
+* [`maxN`](#maxn)
+* [`minN`](#minn)
+* [`pluralize`](#pluralize)
 
 </details>
 
@@ -5239,6 +5242,72 @@ geometricProgression(256); // [1, 2, 4, 8, 16, 32, 64, 128, 256]
 geometricProgression(256, 3); //[3, 6, 12, 24, 48, 96, 192]
 geometricProgression(256, 1, 4); //[1, 4, 16, 64, 256]
 geometricProgression(256, 2, 1); //Gives error
+```
+
+<br>[⬆ back to top](#table-of-contents)
+
+
+### maxN
+
+Returns the `n` maximum elements from the provided array. If `n` is greater than or equal to the provided array's length than return the original array(sorted in descending order).
+
+Sort's the array's shallow copy in descending order and returns the first n elements
+
+Skip the second argument to get a single element(in the form of a array)
+```js
+const maxN = (arr, n = 1) => [...arr].sort((a, b) => b - a).slice(0, n);
+```
+
+```js
+maxN([1, 2, 3]); // [3]
+maxN([1, 2, 3], 2); // [3,2]
+maxN([1, 2, 3], 4); // [3,2,1]
+```
+
+<br>[⬆ back to top](#table-of-contents)
+
+
+### minN
+
+Returns the `n` minimum elements from the provided array. If `n` is greater than or equal to the provided array's length than return the original array(sorted in ascending order).
+
+Sort's the array's shallow copy in ascending order and returns the first n elements
+
+Skip the second argument to get a single element(in the form of a array)
+```js
+const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
+```
+```js
+minN([1, 2, 3]); // [1]
+minN([1, 2, 3], 2); // [1,2]
+minN([1, 2, 3], 4); // [1,2,3]
+```
+
+<br>[⬆ back to top](#table-of-contents)
+
+
+# pluralize
+
+If `num` is greater than `1` returns the plural form of the given string, else return the singular form.
+
+Check if `num` is positive. Throw an appropriate `Error` if not, return the appropriate string otherwise.
+Omit the third argument, `items`, to use a default plural form same as `item` suffixed with a single `'s'`.
+
+```js
+const pluralize = (num, item, items = item + 's') =>
+  num <= 0
+    ? (() => {
+        throw new Error(`'num' should be >= 1. Value povided was ${num}.`);
+      })()
+    : num === 1 ? item : items;
+```
+
+```js
+pluralize(1, 'apple', 'apples'); // 'apple'
+pluralize(3, 'apple', 'apples'); // 'apples'
+pluralize(2, 'apple'); // 'apples'
+pluralize(0, 'apple', 'apples'); // Gives error
+pluralize(-3, 'apple', 'apples'); // Gives error
 ```
 
 <br>[⬆ back to top](#table-of-contents)
