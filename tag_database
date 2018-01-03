@@ -20,7 +20,7 @@ compose:function
 copyToClipboard:browser
 countOccurrences:array
 countVowels:string
-createBST:bst
+createBST:binarySearchTree
 currentURL:browser
 curry:function
 deepFlatten:array
@@ -70,6 +70,7 @@ initialize2DArray:array
 initializeArrayWithRange:array
 initializeArrayWithValues:array
 inRange:math
+insertIntoBST:binarySearchTree
 intersection:array
 invertKeyValues:object
 isAbsoluteURL:string

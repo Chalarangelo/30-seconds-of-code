@@ -86,6 +86,16 @@
 
 </details>
 
+###  Binarysearchtree
+
+<details>
+<summary>View contents</summary>
+
+* [`createBST`](#createbst)
+* [`insertIntoBST`](#insertintobst)
+
+</details>
+
 ### 🌐 Browser
 
 <details>
@@ -111,15 +121,6 @@
 * [`speechSynthesis`](#speechsynthesis)
 * [`toggleClass`](#toggleclass)
 * [`UUIDGeneratorBrowser`](#uuidgeneratorbrowser)
-
-</details>
-
-###  Bst
-
-<details>
-<summary>View contents</summary>
-
-* [`createBST`](#createbst)
 
 </details>
 
@@ -1696,6 +1697,63 @@ zipObject(['a', 'b'], [1, 2, 3]); // {a: 1, b: 2}
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
+ ##  Binarysearchtree
+
+### createBST
+
+Returns an object which represents a binary search tree.
+
+Creates a new binary tree based on the passed argument which represents the root of a tree.
+
+```js
+const createBST = value => ({value: value, right: null, left: null});
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+createBST(8) // 'creates a BST'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### insertIntoBST
+
+Inserts a new node into binary tree.
+
+Creates and inserts new node into existing tree With the help of `createBST` function.
+
+```js
+const createBST = value => ({value: value, right: null, left: null});
+const insertIntoBST = (tree, value) => {
+  if (value <= tree.value) {
+    if(!tree.left) tree.left = createBST(value)
+    else tree.left.insert(value);
+  }
+  else if (value > tree.value) {
+    if(!tree.right) tree.right = createBST(value)
+    else tree.right.insert(value);
+  }
+}
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const tree = createBST(8);
+insertIntoBST(tree, 3); // 'Creates and inserts new node with a value of 3 to the existing tree with root 8 '
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+---
  ## 🌐 Browser
 
 ### arrayToHtmlList
@@ -2246,30 +2304,6 @@ const UUIDGeneratorBrowser = () =>
 
 ```js
 UUIDGeneratorBrowser(); // '7982fcfe-5721-4632-bede-6000885be57d'
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
----
- ##  Bst
-
-### createBST
-
-Returns an object which represents a binary search tree.
-
-Creates a new binary tree based on the passed argument which represents the root of a tree.
-
-```js
-const createBST = value => ({value: value, right: null, left: null});
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-createBST(8) // 'creates a BST'
 ```
 
 </details>
