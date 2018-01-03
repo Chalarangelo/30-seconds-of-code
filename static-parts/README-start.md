@@ -24,6 +24,8 @@ npm install 30-seconds-of-code
 
 ⚠️ **WARNING:** Snippets are not production ready.
 
+<details>
+  
 To import the whole module:
 
 ```js
@@ -47,5 +49,6 @@ average(1, 2, 3);
 import { average } from '30-seconds-of-code';
 average(1, 2, 3);
 ```
+</details>
 
 ## Table of Contents
