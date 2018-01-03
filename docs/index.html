@@ -717,6 +717,10 @@ isPrime(12); // false
 };
 </code></pre><pre><code class="language-js">lcm(12, 7); // 84
 lcm([1, 3, 4], 5); // 60
+</code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="maxn">maxN</h3></div><div class="section double-padded"><p>Returns the <code>n</code> maximum elements from the provided array. If <code>n</code> is greater than or equal to the provided array's length than return the original array(sorted in descending order).</p><p>Sort's the array's shallow copy in descending order and returns the first n elements</p><p>Skip the second argument to get a single element(in the form of a array)</p><pre><code class="language-js">const maxN = (arr, n = 1) =&gt; [...arr].sort((a, b) =&gt; b - a).slice(0, n);
+</code></pre><pre><code class="language-js">maxN([1, 2, 3]); // [3]
+maxN([1, 2, 3], 2); // [3,2]
+maxN([1, 2, 3], 4); // [3,2,1]
 </code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="median">median</h3></div><div class="section double-padded"><p>Returns the median of an array of numbers.</p><p>Find the middle of the array, use <code>Array.sort()</code> to sort the values. Return the number at the midpoint if <code>length</code> is odd, otherwise the average of the two middle numbers.</p><pre><code class="language-js">const median = arr =&gt; {
   const mid = Math.floor(arr.length / 2),
     nums = [...arr].sort((a, b) =&gt; a - b);
@@ -724,6 +728,10 @@ lcm([1, 3, 4], 5); // 60
 };
 </code></pre><pre><code class="language-js">median([5, 6, 50, 1, -5]); // 5
 median([0, 10, -2, 7]); // 3.5
+</code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="minn">minN</h3></div><div class="section double-padded"><p>Returns the <code>n</code> minimum elements from the provided array. If <code>n</code> is greater than or equal to the provided array's length than return the original array(sorted in ascending order).</p><p>Sort's the array's shallow copy in ascending order and returns the first n elements</p><p>Skip the second argument to get a single element(in the form of a array)</p><pre><code class="language-js">const minN = (arr, n = 1) =&gt; [...arr].sort((a, b) =&gt; a - b).slice(0, n);
+</code></pre><pre><code class="language-js">minN([1, 2, 3]); // [1]
+minN([1, 2, 3], 2); // [1,2]
+minN([1, 2, 3], 4); // [1,2,3]
 </code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="percentile">percentile</h3></div><div class="section double-padded"><p>Uses the percentile formula to calculate how many numbers in the given array are less or equal to the given value.</p><p>Use <code>Array.reduce()</code> to calculate how many numbers are below the value and how many are the same value and apply the percentile formula.</p><pre><code class="language-js">const percentile = (arr, val) =&gt;
   100 * arr.reduce((acc, v) =&gt; acc + (v &lt; val ? 1 : 0) + (v === val ? 0.5 : 0), 0) / arr.length;
 </code></pre><pre><code class="language-js">percentile([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 6); // 55
