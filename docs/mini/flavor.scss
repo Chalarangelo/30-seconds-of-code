@@ -34,6 +34,10 @@ $card-section-double-padded-padding:  calc(1.5 * var(#{$universal-padding-var}))
   margin: var(#{$universal-margin-var}) calc(var(#{$universal-margin-var}) / 2);
 }
 
+.#{$card-name} + .#{$card-name} {
+  margin-top: calc(5 * var(#{$universal-margin-var}));
+}
+
 @import 'input_control';
 
 /*
@@ -85,7 +89,7 @@ code {
   transform: scale(1);  /* Deals with the issue described in #243 */
 }
 pre {
-  font-size: 1rem;
+  font-size: 0.8125rem;
   border: 0.0625rem solid var(--secondary-border-color);
   border-radius: var(--universal-border-radius);
 }
@@ -140,7 +144,6 @@ header #title {
 header h1 small {
   display:block;
   font-size: 0.875rem;
-  font-style: italic;
   color: #888;
   margin-top: -0.8rem;
   @media screen and (max-width: 768px) { font-size: 0.75rem; }
@@ -188,7 +191,7 @@ label.#{$collapse-name} {
   }
   + pre {
     box-sizing: border-box;
-    height: 1px;
+    height: 0;
     max-height: 1px;
     overflow: auto;
     margin: 0;
@@ -231,7 +234,7 @@ pre[class*="language-"] {
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  line-height: 1.5;
+  line-height: 1.8;
 
   -moz-tab-size: 2;
   -o-tab-size: 2;
@@ -290,11 +293,16 @@ pre[class*="language-"] {
 .token.property,
 .token.tag,
 .token.boolean,
-.token.number,
 .token.constant,
 .token.symbol,
-.token.deleted {
+.token.deleted,
+.token.function {
   color: #005cc5;
+}
+
+
+.token.number{
+  color: #8132b5;
 }
 
 .token.selector,
@@ -310,21 +318,16 @@ pre[class*="language-"] {
 .token.entity,
 .token.url,
 .language-css .token.string,
-.style .token.string {
-  color: #d73a49;
-}
-
+.style .token.string,
 .token.atrule,
 .token.attr-value,
 .token.keyword {
   color: #d73a49;
 }
 
-.token.function {
-	color: #005cc5;
+.token.regex {
+  color: #007972;
 }
-
-.token.regex,
 .token.important,
 .token.variable {
   color: #e90;

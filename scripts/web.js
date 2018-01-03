@@ -8,8 +8,21 @@ const fs = require('fs-extra'),
   chalk = require('chalk'),
   md = require('markdown-it')(),
   minify = require('html-minifier').minify;
+var Prism = require('prismjs');
   // Load helper functions (these are from existing snippets in 30 seconds of code!)
 const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
+const unescapeHTML = str =>
+  str.replace(
+    /&amp;|&lt;|&gt;|&#39;|&quot;/g,
+    tag =>
+      ({
+        '&amp;': '&',
+        '&lt;': '<',
+        '&gt;': '>',
+        '&#39;': "'",
+        '&quot;': '"'
+      }[tag] || tag)
+  );
 if(isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
   console.log(`${chalk.green('NOBUILD')} index build terminated, parent commit is a Travis build!`);
   process.exit(0);
@@ -149,8 +162,10 @@ try {
           md
             .render(`\n${snippets[taggedSnippet[0] + '.md']}`)
             .replace(/<h3/g, `<h3 id="${taggedSnippet[0].toLowerCase()}" class="section double-padded"`)
-            .replace(/<\/h3>/g, '</h3><div class="section double-padded">') +
-          '</div></div><br/>';
+            .replace(/<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm, (match, p1) => `<pre class="language-js">${Prism.highlight(unescapeHTML(p1), Prism.languages.javascript)}</pre>`)
+            .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
+          '<button class="primary clipboard-copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>&nbsp;Copy to clipboard</button>' +
+          '</div></div>';
     } else {
       output += md
         .render(`## ${capitalize(tag, true)}\n`)
@@ -162,14 +177,49 @@ try {
             .render(`\n${snippets[taggedSnippet[0] + '.md']}`)
             .replace(/<h3/g, `<h3 id="${taggedSnippet[0].toLowerCase()}" class="section double-padded"`)
             .replace(/<\/h3>/g, '</h3><div class="section double-padded">')
-            .replace(/<\/pre>\s+<pre>/g, '</pre><label class="collapse">Show examples</label><pre>') +
+            .replace(/<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm, (match, p1) => `<pre class="language-js">${Prism.highlight(unescapeHTML(p1), Prism.languages.javascript)}</pre>`)
+            .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
           '<button class="primary clipboard-copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>&nbsp;Copy to clipboard</button>' +
-          '</div></div><br/>';
+          '</div></div>';
     }
   }
   output += uncategorizedOutput;
   // Add the ending static part
   output += `\n${endPart + '\n'}`;
+  // Optimize punctuation nodes
+  let count = 0;
+  do {
+    const punctuationRegex = /<span class="token punctuation">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token punctuation">([^\0]*?)<\/span>/gm;
+    output = output.replace(punctuationRegex,
+      (match, p1, p2, p3)  => `<span class="token punctuation">${p1}${p2}${p3}</span>`
+    );
+    count = 0;
+    while (punctuationRegex.exec(output) !== null) {
+      ++count;
+    }
+  } while (count > 0);
+  // Optimize operator nodes
+  do {
+    const operatorRegex = /<span class="token operator">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token operator">([^\0]*?)<\/span>/gm;
+    output = output.replace(operatorRegex,
+      (match, p1, p2, p3)  => `<span class="token operator">${p1}${p2}${p3}</span>`
+    );
+    count = 0;
+    while (operatorRegex.exec(output) !== null) {
+      ++count;
+    }
+  } while (count > 0);
+  // Optimize keyword nodes
+  do {
+    const keyWordRegex = /<span class="token keyword">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token keyword">([^\0]*?)<\/span>/gm;
+    output = output.replace(keyWordRegex,
+      (match, p1, p2, p3)  => `<span class="token keyword">${p1}${p2}${p3}</span>`
+    );
+    count = 0;
+    while (keyWordRegex.exec(output) !== null) {
+      ++count;
+    }
+  } while (count > 0);
   // Minify output
   output = minify(output, {
     collapseBooleanAttributes: true,
