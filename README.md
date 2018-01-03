@@ -13,7 +13,43 @@
 - Snippets are written in ES6, use the [Babel transpiler](https://babeljs.io/) to ensure backwards-compatibility.
 - You can import these snippets into your text editor of choice (VSCode, Atom, Sublime) using the files found in [this repo](https://github.com/Rob-Rychs/30-seconds-of-code-texteditorsnippets).
 - You can import these snippets into Alfred 3, using [this file](https://github.com/lslvxy/30-seconds-of-code-alfredsnippets).
-- You can find a package with all the snippets on [npm](https://www.npmjs.com/package/30-seconds-of-code). Bear in mind that most of these snippets are not production-ready.
+
+#### Package
+
+You can find a package with all the snippets on [npm](https://www.npmjs.com/package/30-seconds-of-code). 
+
+```
+npm install 30-seconds-of-code
+```
+
+⚠️ **WARNING:** Snippets are not production ready.
+
+<details>
+  
+To import the whole module:
+
+```js
+// CommonJS
+const _30s = require('30-seconds-of-code');
+_30s.average(1, 2, 3);
+
+// ES Modules
+import _30s from '30-seconds-of-code';
+_30s.average(1, 2, 3);
+```
+
+To import snippets directly:
+
+```js
+// CommonJS
+const { average } = require('30-seconds-of-code');
+average(1, 2, 3);
+
+// ES Modules
+import { average } from '30-seconds-of-code';
+average(1, 2, 3);
+```
+</details>
 
 ## Table of Contents
 
