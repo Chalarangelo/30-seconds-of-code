@@ -23,6 +23,7 @@ countVowels:string
 currentURL:browser
 curry:function
 deepFlatten:array
+defer:function
 detectDeviceType:browser
 difference:array
 differenceWith:array
@@ -48,6 +49,7 @@ flip:adapter
 fromCamelCase:string
 functionName:function
 gcd:math
+geometricProgression:uncategorized
 getDaysDiffBetweenDates:date
 getScrollPosition:browser
 getStyle:browser
@@ -94,14 +96,15 @@ lcm:math
 lowercaseKeys:object
 mapObject:array
 mask:string
-max:math
+maxN:uncategorized
 median:math
 memoize:function
-min:math
+minN:uncategorized
 negate:logic
 nthElement:array
 objectFromPairs:object
 objectToPairs:object
+once:function
 onUserInputChange:browser
 orderBy:object
 palindrome:string
@@ -127,6 +130,7 @@ repeatString:string
 reverseString:string
 RGBToHex:utility
 round:math
+runAsync:browser
 runPromisesInSeries:function
 sample:array
 sampleSize:array
