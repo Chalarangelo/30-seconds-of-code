@@ -39,7 +39,7 @@ escapeRegExp:string
 everyNth:array
 extendHex:utility
 factorial:math
-factors:uncategorized
+factors:math
 fibonacci:math
 fibonacciCountUntilNum:math
 fibonacciUntilNum:math
