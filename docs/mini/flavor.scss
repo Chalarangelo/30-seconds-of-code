@@ -263,12 +263,6 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
   background: #b3d4fc;
 }
 
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-  background: #f5f2f0;
-}
-
 :not(pre) > code[class*="language-"] {
   padding: .1em;
   border-radius: .3em;
