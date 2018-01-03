@@ -1713,7 +1713,7 @@ const createBST = value => ({value: value, right: null, left: null});
 <summary>Examples</summary>
 
 ```js
-createBST(8) // 'creates a BST'
+createBST(8); // 'creates a BST'
 ```
 
 </details>
@@ -1738,7 +1738,7 @@ const insertIntoBST = (tree, value) => {
     if(!tree.right) tree.right = createBST(value)
     else tree.right.insert(value);
   }
-}
+};
 ```
 
 <details>
@@ -1746,7 +1746,7 @@ const insertIntoBST = (tree, value) => {
 
 ```js
 const tree = createBST(8);
-insertIntoBST(tree, 3); // 'Creates and inserts new node with a value of 3 to the existing tree with root 8 '
+insertIntoBST(tree, 3); // 'Creates and inserts new node with a value of 3 to the existing tree'
 ```
 
 </details>

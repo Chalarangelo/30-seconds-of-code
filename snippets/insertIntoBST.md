@@ -15,7 +15,7 @@ const insertIntoBST = (tree, value) => {
     if(!tree.right) tree.right = createBST(value)
     else tree.right.insert(value);
   }
-}
+};
 ```
 
 ```js

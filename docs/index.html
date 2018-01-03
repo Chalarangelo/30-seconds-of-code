@@ -350,7 +350,7 @@ zip(['a'], [1, 2], [true, false]); // [['a', 1, true], [undefined, 2, false]]
 </code></pre><pre><code class="language-js">zipObject(['a', 'b', 'c'], [1, 2]); // {a: 1, b: 2, c: undefined}
 zipObject(['a', 'b'], [1, 2, 3]); // {a: 1, b: 2}
 </code></pre></div></div><br/><h2 style="text-align:center">Binarysearchtree</h2><div class="card fluid"><div class="section double-padded"><h3 id="createbst">createBST</h3></div><div class="section double-padded"><p>Returns an object which represents a binary search tree.</p><p>Creates a new binary tree based on the passed argument which represents the root of a tree.</p><pre><code class="language-js">const createBST = value =&gt; ({value: value, right: null, left: null});
-</code></pre><pre><code class="language-js">createBST(8) // 'creates a BST'
+</code></pre><pre><code class="language-js">createBST(8); // 'creates a BST'
 </code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h3 id="insertintobst">insertIntoBST</h3></div><div class="section double-padded"><p>Inserts a new node into binary tree.</p><p>Creates and inserts new node into existing tree With the help of <code>createBST</code> function.</p><pre><code class="language-js">const createBST = value =&gt; ({value: value, right: null, left: null});
 const insertIntoBST = (tree, value) =&gt; {
   if (value &lt;= tree.value) {
@@ -361,9 +361,9 @@ const insertIntoBST = (tree, value) =&gt; {
     if(!tree.right) tree.right = createBST(value)
     else tree.right.insert(value);
   }
-}
+};
 </code></pre><pre><code class="language-js">const tree = createBST(8);
-insertIntoBST(tree, 3); // 'Creates and inserts new node with a value of 3 to the existing tree with root 8 '
+insertIntoBST(tree, 3); // 'Creates and inserts new node with a value of 3 to the existing tree'
 </code></pre></div></div><br/><h2 style="text-align:center">Browser</h2><div class="card fluid"><div class="section double-padded"><h3 id="arraytohtmllist">arrayToHtmlList</h3></div><div class="section double-padded"><p>Converts the given array elements into <code>&lt;li&gt;</code> tags and appends them to the list of the given id.</p><p>Use <code>Array.map()</code> and <code>document.querySelector()</code> to create a list of html tags.</p><pre><code class="language-js">const arrayToHtmlList = (arr, listID) =&gt;
   arr.map(item =&gt; (document.querySelector('#' + listID).innerHTML += `&lt;li&gt;${item}&lt;/li&gt;`));
 </code></pre><pre><code class="language-js">arrayToHtmlList(['item 1', 'item 2'], 'myListID');
