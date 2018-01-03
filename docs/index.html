@@ -422,10 +422,7 @@ elementIsVisibleInViewport(el, true); // true // (partially visible)
   asLink ? (window.location.href = url) : window.location.replace(url);
 </code></pre><pre><code class="language-js">redirect('https://google.com');
 </code></pre></div></div><br/><div class="card fluid"><h3 id="runasync" class="section double-padded">runAsync</h3><div class="section double-padded"><p>Runs a function in a separate thread by using a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers">Web Worker</a>, allowing long running functions to not block the UI.</p><p>Create a new <code>Worker</code> using a <code>Blob</code> object URL, the contents of which should be the stringified version of the supplied function. Immediately post the return value of calling the function back. Return a promise, listening for <code>onmessage</code> and <code>onerror</code> events and resolving the data posted back from the worker, or throwing an error.</p><pre><code class="language-js">const runAsync = fn =&gt; {
-  const blob = `
-    var fn = ${fn.toString()};
-    this.postMessage(fn());
-  `;
+  const blob = `var fn = ${fn.toString()}; postMessage(fn());`;
   const worker = new Worker(
     URL.createObjectURL(new Blob([blob]), {
       type: 'application/javascript; charset=utf-8'
@@ -442,9 +439,9 @@ elementIsVisibleInViewport(el, true); // true // (partially visible)
 };
 </code></pre><pre><code class="language-js">const longRunningFunction = () =&gt; {
   let result = 0;
-  for (var i = 0; i &lt; 1000; i++) {
-    for (var j = 0; j &lt; 700; j++) {
-      for (var k = 0; k &lt; 300; k++) {
+  for (let i = 0; i &lt; 1000; i++) {
+    for (let j = 0; j &lt; 700; j++) {
+      for (let k = 0; k &lt; 300; k++) {
         result = result + i + j + k;
       }
     }
