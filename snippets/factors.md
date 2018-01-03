@@ -12,24 +12,31 @@ Omit the second argument, `primes`, to return prime and non-prime factors by def
 
 **Note**:- _Negative numbers are not considered prime._
 
-``` js
+```js
 const factors = (num, primes = false) => {
   const isPrime = num => {
     const boundary = Math.floor(Math.sqrt(num));
     for (var i = 2; i <= boundary; i++) if (num % i === 0) return false;
     return num >= 2;
-  }
+  };
   const isNeg = num < 0;
   num = isNeg ? -num : num;
-  let array = Array.from({length: num - 1}).map((val,i) => num % (i+2) === 0 ? (i+2) : false).filter(val => val);
-  if(isNeg) array = array.reduce((acc,val) => {acc.push(val); acc.push(-val); return acc}, []);
+  let array = Array.from({ length: num - 1 })
+    .map((val, i) => (num % (i + 2) === 0 ? i + 2 : false))
+    .filter(val => val);
+  if (isNeg)
+    array = array.reduce((acc, val) => {
+      acc.push(val);
+      acc.push(-val);
+      return acc;
+    }, []);
   return primes ? array.filter(isPrime) : array;
-}
+};
 ```
 
 ```js
 factors(12); // [2,3,4,6,12]
-factors(12,true); // [2,3]
+factors(12, true); // [2,3]
 factors(-12); // [2, -2, 3, -3, 4, -4, 6, -6, 12, -12]
 factors(-12, true); // [2,3]
 ```
