@@ -10,9 +10,7 @@ Allow access to the `cache` by setting it as a property on the returned function
 const memoize = fn => {
   const cache = new Map();
   const cached = function(val) {
-    return cache.has(val)
-      ? cache.get(val)
-      : cache.set(val, fn.call(this, val)) && cache.get(val);
+    return cache.has(val) ? cache.get(val) : cache.set(val, fn.call(this, val)) && cache.get(val);
   };
   cached.cache = cache;
   return cached;
