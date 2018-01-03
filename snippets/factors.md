@@ -18,21 +18,18 @@ const factors = (int,prime = false,powers = false) => {
   }
   const isPrime = num => {
   const boundary = Math.floor(Math.sqrt(num));
-  for (var i = 2; i <= boundary; i++) if (num % i == 0) return false;
+  for (var i = 2; i <= boundary; i++) if (num % i === 0) return false;
   return num >= 2 
   }
-  let array = []
-  const posFactor = num => {
-  let arr = []
-  for (let i = 2; i <= num; i++) if (num % i === 0) arr.push(i)
-  return arr
-  }
-  if (int >= 0) array = posFactor(int)
-  else {posFactor(-int).forEach(el => array.push(el,-el))}
+  let isNeg = int < 0;
+  int = isNeg ? -int : int;
+  let array = Array.from({length: int - 1}).map((val,i) => int % (i+2) === 0 ? (i+2) : false).filter(val => val);
+  if(isNeg) array = array.reduce((acc,val) => {acc.push(val); acc.push(-val); return acc}, []);
   array =  prime ? array.filter(el => isPrime(el)) : array;
   return powers ? array.map(x => [x,howManyTimes(int,x)]) : array
-};
+}
 ```
+
 ```js
 factors(12); //[2,3,4,6,12]
 factors(12,true); //[2,3]
