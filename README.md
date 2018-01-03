@@ -1,7 +1,9 @@
 ![Logo](/logo.png)
 
 # 30 seconds of code
-[![License](https://img.shields.io/badge/license-CC0--1.0-blue.svg)](https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE) [![Gitter chat](https://img.shields.io/badge/chat-on%20gitter-4FB999.svg)](https://gitter.im/30-seconds-of-code/Lobby) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Travis Build](https://travis-ci.org/Chalarangelo/30-seconds-of-code.svg?branch=master)](https://travis-ci.org/Chalarangelo/30-seconds-of-code) [![Insight.io](https://img.shields.io/badge/insight.io-Ready-brightgreen.svg)](https://insight.io/github.com/Chalarangelo/30-seconds-of-code/tree/master/?source=0) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard)
+
+[![License](https://img.shields.io/badge/license-CC0--1.0-blue.svg)](https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE) [![Gitter chat](https://img.shields.io/badge/chat-on%20gitter-4FB999.svg)](https://gitter.im/30-seconds-of-code/Lobby) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Travis Build](https://travis-ci.org/Chalarangelo/30-seconds-of-code.svg?branch=master)](https://travis-ci.org/Chalarangelo/30-seconds-of-code) [![Insight.io](https://img.shields.io/badge/insight.io-Ready-brightgreen.svg)](https://insight.io/github.com/Chalarangelo/30-seconds-of-code/tree/master/?source=0) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard) [![ProductHunt](https://img.shields.io/badge/producthunt-vote-orange.svg)](https://www.producthunt.com/posts/30-seconds-of-code)
+
 
 > Curated collection of useful Javascript snippets that you can understand in 30 seconds or less.
 
@@ -280,6 +282,16 @@
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`validateNumber`](#validatenumber)
 * [`yesNo`](#yesno)
+
+</details>
+
+### _Uncategorized_
+
+<details>
+<summary>View contents</summary>
+
+* [`maxN`](#maxn)
+* [`minN`](#minn)
 
 </details>
 
@@ -3253,7 +3265,7 @@ round(1.005, 2); // 1.01
 ### solveRPN
 
 Solves the given mathematical expression in [reverse polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation).
-Throws appropriate errors if there are unrecognized symbols or the expression is wrong.
+Throws appropriate errors if there are unrecognized symbols or the expression is wrong. The valid operators are :- `+`,`-`,`*`,`/`,`^`,`**` (`^`&`**` are the exponential symbols and are same). This snippet does not supports any unary operators.
 
 Use a dictionary, `OPERATORS` to specify each operator's matching mathematical operation.
 Use `String.replace()` with a regular expression to replace `^` with `**`, `String.split()` to tokenize the string and `Array.filter()` to remove empty tokens.
@@ -3340,7 +3352,7 @@ standardDeviation([10, 2, 38, 23, 38, 23, 21], true); // 12.29899614287479 (popu
 
 ### sum
 
-Returns the sum of an of two or more numbers/arrays.
+Returns the sum of two or more numbers/arrays.
 
 Use `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`.
 
@@ -5126,6 +5138,47 @@ yesNo('Foo', true); // true
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
+
+---
+ ## _Uncategorized_
+
+### maxN
+
+Returns the `n` maximum elements from the provided array. If `n` is greater than or equal to the provided array's length than return the original array(sorted in descending order).
+
+Sort's the array's shallow copy in descending order and returns the first n elements
+
+Skip the second argument to get a single element(in the form of a array)
+```js
+const maxN = (arr, n = 1) => [...arr].sort((a, b) => b - a).slice(0, n);
+```
+
+```js
+maxN([1, 2, 3]); // [3]
+maxN([1, 2, 3], 2); // [3,2]
+maxN([1, 2, 3], 4); // [3,2,1]
+```
+
+<br>[⬆ back to top](#table-of-contents)
+
+
+### minN
+
+Returns the `n` minimum elements from the provided array. If `n` is greater than or equal to the provided array's length than return the original array(sorted in ascending order).
+
+Sort's the array's shallow copy in ascending order and returns the first n elements
+
+Skip the second argument to get a single element(in the form of a array)
+```js
+const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
+```
+```js
+minN([1, 2, 3]); // [1]
+minN([1, 2, 3], 2); // [1,2]
+minN([1, 2, 3], 4); // [1,2,3]
+```
+
+<br>[⬆ back to top](#table-of-contents)
 
 
 ## Collaborators
