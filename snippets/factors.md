@@ -32,3 +32,14 @@ const factors = (int,prime = false,powers = false) => {
   array =  prime ? array.filter(el => isPrime(el)) : array;
   return powers ? array.map(x => [x,howManyTimes(int,x)]) : array
 };
+```
+```js
+factors(12); //[2,3,4,6,12]
+factors(12,true); //[2,3]
+factors(12,true,true); //[[2,2], [3,1]]
+factors(12,false,true); //[[2,2], [3,1], [4,1], [6,1], [12,1]]
+factors(-12); //[2, -2, 3, -3, 4, -4, 6, -6, 12, -12]
+factors(12,true); //[2,3]
+factors(12,true,true); //[[2,2], [3,1]]
+factors(12,false,true); //[[2,2], [-2,2], [3,1], [-3,1], [4,1], [-4,1], [6,1], [-6,1], [12,1], [-12,1]]
+```
