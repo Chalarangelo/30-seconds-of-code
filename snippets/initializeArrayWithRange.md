@@ -8,7 +8,7 @@ You can omit `step` to use a default value of `1`.
  
 ```js
 const initializeArrayWithRange = (end, start = 0,step = 1) =>
-  Array(Math.ceil((end + 1 - start)/2)).fill(0).map((v, i) => (i * step) + start);
+  Array.from({length:Math.ceil((end + 1 - start)/2))}).map((v, i) => (i * step) + start);
 ```
 
 ```js
