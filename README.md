@@ -173,7 +173,9 @@
 * [`isEven`](#iseven)
 * [`isPrime`](#isprime)
 * [`lcm`](#lcm)
+* [`maxN`](#maxn)
 * [`median`](#median)
+* [`minN`](#minn)
 * [`percentile`](#percentile)
 * [`powerset`](#powerset)
 * [`primes`](#primes)
@@ -288,8 +290,7 @@
 <details>
 <summary>View contents</summary>
 
-* [`maxN`](#maxn)
-* [`minN`](#minn)
+* [`geometricProgression`](#geometricprogression)
 
 </details>
 
@@ -3050,6 +3051,31 @@ lcm([1, 3, 4], 5); // 60
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### maxN
+
+Returns the `n` maximum elements from the provided array. If `n` is greater than or equal to the provided array's length than return the original array(sorted in descending order).
+
+Sort's the array's shallow copy in descending order and returns the first n elements
+
+Skip the second argument to get a single element(in the form of a array)
+```js
+const maxN = (arr, n = 1) => [...arr].sort((a, b) => b - a).slice(0, n);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+maxN([1, 2, 3]); // [3]
+maxN([1, 2, 3], 2); // [3,2]
+maxN([1, 2, 3], 4); // [3,2,1]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### median
 
 Returns the median of an array of numbers.
@@ -3071,6 +3097,30 @@ const median = arr => {
 ```js
 median([5, 6, 50, 1, -5]); // 5
 median([0, 10, -2, 7]); // 3.5
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### minN
+
+Returns the `n` minimum elements from the provided array. If `n` is greater than or equal to the provided array's length than return the original array(sorted in ascending order).
+
+Sort's the array's shallow copy in ascending order and returns the first n elements
+
+Skip the second argument to get a single element(in the form of a array)
+```js
+const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
+```
+<details>
+<summary>Examples</summary>
+
+```js
+minN([1, 2, 3]); // [1]
+minN([1, 2, 3], 2); // [1,2]
+minN([1, 2, 3], 4); // [1,2,3]
 ```
 
 </details>
@@ -5098,40 +5148,27 @@ yesNo('Foo', true); // true
 ---
  ## _Uncategorized_
 
-### maxN
+### geometricProgression
 
-Returns the `n` maximum elements from the provided array. If `n` is greater than or equal to the provided array's length than return the original array(sorted in descending order).
+Initializes an array containing the numbers in the specified range where `start` and `end` are inclusive and the ratio between two terms is `step`. 
+Returns an error if `step` equals `1`.
 
-Sort's the array's shallow copy in descending order and returns the first n elements
+Use `Array.from()`, `Math.log()` and `Math.floor()` to create an array of the desired length, `Array.map()` to fill with the desired values in a range. 
+Omit the second argument, `start`, to use a default value of `1`.
+Omit the third argument, `step`, to use a default value of `2`.
 
-Skip the second argument to get a single element(in the form of a array)
 ```js
-const maxN = (arr, n = 1) => [...arr].sort((a, b) => b - a).slice(0, n);
+const geometricProgression = (end, start = 1, step = 2) =>
+  Array.from({ length: Math.floor(Math.log(end / start) / Math.log(step)) + 1 }).map(
+    (v, i) => start * step ** i
+  );
 ```
 
 ```js
-maxN([1, 2, 3]); // [3]
-maxN([1, 2, 3], 2); // [3,2]
-maxN([1, 2, 3], 4); // [3,2,1]
-```
-
-<br>[⬆ back to top](#table-of-contents)
-
-
-### minN
-
-Returns the `n` minimum elements from the provided array. If `n` is greater than or equal to the provided array's length than return the original array(sorted in ascending order).
-
-Sort's the array's shallow copy in ascending order and returns the first n elements
-
-Skip the second argument to get a single element(in the form of a array)
-```js
-const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
-```
-```js
-minN([1, 2, 3]); // [1]
-minN([1, 2, 3], 2); // [1,2]
-minN([1, 2, 3], 4); // [1,2,3]
+geometricProgression(256); // [1, 2, 4, 8, 16, 32, 64, 128, 256]
+geometricProgression(256, 3); //[3, 6, 12, 24, 48, 96, 192]
+geometricProgression(256, 1, 4); //[1, 4, 16, 64, 256]
+geometricProgression(256, 2, 1); //Gives error
 ```
 
 <br>[⬆ back to top](#table-of-contents)
