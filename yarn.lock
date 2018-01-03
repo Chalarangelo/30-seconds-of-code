@@ -2074,6 +2074,10 @@ mime-types@^2.1.12, mime-types@~2.1.17, mime-types@~2.1.7:
   dependencies:
     mime-db "~1.30.0"
 
+mini.css@^2.3.7:
+  version "2.3.7"
+  resolved "https://registry.yarnpkg.com/mini.css/-/mini.css-2.3.7.tgz#1fd033797ee456c8075fe8048271f35fb202abe5"
+
 "minimatch@2 || 3", minimatch@^3.0.2, minimatch@^3.0.3, minimatch@^3.0.4, minimatch@~3.0.2:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
