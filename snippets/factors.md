@@ -7,13 +7,13 @@ If `num` is less than `0` returns all the factors of `-int` together with their 
 
 Use `Array.from()`, `Array.map()` and `Array.filter()` to find all the factors of `num`.
 If given `num` is negative, use `Array.reduce()` to add the additive inverses to the array.
-Return all results if `primes` is `false`, else determine and return only the prime factors using `isPrime` and `Array.filter()`.
+Return all results if `primes` is `0`, only prime factors if `primes` is `1` & only the non-prime factors if `primes` is `-1`
 Omit the second argument, `primes`, to return prime and non-prime factors by default.
 
 **Note**:- _Negative numbers are not considered prime._
 
 ```js
-const factors = (num, primes = false) => {
+const factors = (num, primes = 0) => {
   const isPrime = num => {
     const boundary = Math.floor(Math.sqrt(num));
     for (var i = 2; i <= boundary; i++) if (num % i === 0) return false;
