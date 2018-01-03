@@ -173,9 +173,7 @@
 * [`isEven`](#iseven)
 * [`isPrime`](#isprime)
 * [`lcm`](#lcm)
-* [`max`](#max)
 * [`median`](#median)
-* [`min`](#min)
 * [`percentile`](#percentile)
 * [`powerset`](#powerset)
 * [`primes`](#primes)
@@ -3052,28 +3050,6 @@ lcm([1, 3, 4], 5); // 60
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### max
-
-Returns the maximum value out of two or more numbers/arrays.
-
-Use `Math.max()` combined with the spread operator (`...`) to get the maximum value in the array.
-
-```js
-const max = (...arr) => Math.max(...[].concat(...arr));
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-max([10, 1, 5]); // 10
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
 ### median
 
 Returns the median of an array of numbers.
@@ -3095,28 +3071,6 @@ const median = arr => {
 ```js
 median([5, 6, 50, 1, -5]); // 5
 median([0, 10, -2, 7]); // 3.5
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### min
-
-Returns the minimum value in an array.
-
-Use `Math.min()` combined with the spread operator (`...`) to get the minimum value in the array.
-
-```js
-const min = arr => Math.min(...[].concat(...arr));
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-min([10, 1, 5]); // 1
 ```
 
 </details>
