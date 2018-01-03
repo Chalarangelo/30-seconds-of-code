@@ -1,6 +1,6 @@
 ### factors
 
-Returns the array of factors of the given `num`. 
+Returns the array of factors of the given `num`.
 If the second argument is set to `true` returns only the prime factors of `num`.
 If `num` is `1` or `0` returns an empty array.
 If `num` is less than `0` returns all the factors of `-int` together with their additive inverses.
@@ -30,7 +30,10 @@ const factors = (num, primes = false) => {
       acc.push(-val);
       return acc;
     }, []);
-  return primes ? array.filter(isPrime) : array;
+    if(primes === 0) return array
+    else if(primes === 1) return array.filter(el => isPrime(el))
+    else if(primes === -1) return array.filter(el => !isPrime(el))
+     else throw `${primes} is not a valid value of primes`
 };
 ```
 
