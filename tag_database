@@ -95,12 +95,8 @@ lcm:math
 lowercaseKeys:object
 mapObject:array
 mask:string
-max:math
-maxN:uncategorized
 median:math
 memoize:function
-min:math
-minN:uncategorized
 negate:logic
 nthElement:array
 objectFromPairs:object
