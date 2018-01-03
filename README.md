@@ -114,6 +114,15 @@
 
 </details>
 
+###  Bst
+
+<details>
+<summary>View contents</summary>
+
+* [`createBST`](#createbst)
+
+</details>
+
 ### ⏱️ Date
 
 <details>
@@ -2237,6 +2246,30 @@ const UUIDGeneratorBrowser = () =>
 
 ```js
 UUIDGeneratorBrowser(); // '7982fcfe-5721-4632-bede-6000885be57d'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+---
+ ##  Bst
+
+### createBST
+
+Returns an object which represents a binary search tree.
+
+Creates a new binary tree based on the passed argument which represents the root of a tree.
+
+```js
+const createBST = value => ({value: value, right: null, left: null});
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+createBST(8) // 'creates a BST'
 ```
 
 </details>
