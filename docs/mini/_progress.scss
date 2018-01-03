@@ -1,0 +1,113 @@
+/*
+  Definitions for progress elements and spinners.
+*/
+$progress-back-color:     #ddd !default;           // Background color of <progress>.
+$progress-fore-color:     #555 !default;           // Foreground color of <progress>.
+$progress-height:         0.75rem !default;        // Height of <progress>.
+$progress-max-value:      1000 !default;           // Arithmetic max value of <progress> - use integer values.
+$progress-inline-name:    'inline' !default;       // Class name for inline <progress> elements.
+$progress-inline-width:   60% !default;            // Width of inline <progress> elements.
+$_include-spinner-donut:  true !default;           // [Hidden] Should spinner donuts be included? (boolean)
+$spinner-donut-name:      'spinner' !default;      // Class name for spinner donuts
+$spinner-donut-size:      1.25rem !default;        // Size of the spinner donuts
+$spinner-donut-border-thickness: 0.25rem !default; // Border thickness for spinner donuts
+$spinner-donut-back-color:     #ddd !default;      // Background color for spinner donuts
+$spinner-donut-fore-color:     #555 !default;      // Foreground color for spinner donuts
+// CSS variable name definitions [exercise caution if modifying these]
+$progress-back-color-var: '--progress-back-color' !default;
+$progress-fore-color-var: '--progress-fore-color' !default;
+$spinner-donut-back-color-var: '--spinner-back-color' !default;
+$spinner-donut-fore-color-var: '--spinner-fore-color' !default;
+// == Uncomment below code if this module is used on its own ==
+//
+// $universal-margin:        0.5rem !default;      // Universal margin for the most elements
+// $universal-border-radius: 0.125rem !default;    // Universal border-radius for most elements
+// $universal-box-shadow:    none !default;        // Universal box-shadow for most elements
+// $universal-margin-var:          '--universal-margin' !default;
+// $universal-border-radius-var:   '--universal-border-radius' !default;
+// $universal-box-shadow-var:      '--universal-box-shadow' !default;
+// :root {
+//  #{$universal-margin-var}: $universal-margin;
+//  #{$universal-border-radius-var}: $universal-border-radius;
+//  @if $universal-box-shadow != none {
+//   #{$universal-box-shadow-var}: $universal-box-shadow;
+//  }
+// }
+//
+// ============================================================
+// Check the `_progress_mixins.scss` file to find this module's mixins.
+@import '_progress_mixins';
+/* Progess module CSS variable definitions */
+:root {
+  #{$progress-back-color-var}: $progress-back-color;
+  #{$progress-fore-color-var}: $progress-fore-color;
+}
+// Default styling for progress. Use mixins for alternate styles
+progress {
+  display: block;
+  vertical-align: baseline; // Correct vertical alignment in some browsers.
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: $progress-height;
+  width: calc(100% - 2 * var(#{$universal-margin-var}));
+  margin: var(#{$universal-margin-var});
+  border: 0; // Removes default border
+  border-radius: calc(2 * var(#{$universal-border-radius-var}));
+  @if $universal-box-shadow != none {
+    box-shadow: var(#{$universal-box-shadow-var});
+  }
+  background: var(#{$progress-back-color-var});
+  color: var(#{$progress-fore-color-var});
+  // Foreground color on webkit browsers
+  &::-webkit-progress-value {
+    background: var(#{$progress-fore-color-var});
+    border-top-left-radius: calc(2 * var(#{$universal-border-radius-var}));
+    border-bottom-left-radius: calc(2 * var(#{$universal-border-radius-var}));
+  }
+  // Background color on webkit browser
+  &::-webkit-progress-bar {
+    background: var(#{$progress-back-color});
+  }
+  // Foreground color on Firefox
+  &::-moz-progress-bar {
+    background: var(#{$progress-fore-color-var});
+    border-top-left-radius: calc(2 * var(#{$universal-border-radius-var}));
+    border-bottom-left-radius: calc(2 * var(#{$universal-border-radius-var}));
+  }
+  &[value="#{$progress-max-value}"] {
+    &::-webkit-progress-value {
+      border-radius: calc(2 * var(#{$universal-border-radius-var}));
+    }
+    &::-moz-progress-bar {
+      border-radius: calc(2 * var(#{$universal-border-radius-var}));
+    }
+  }
+  &.#{$progress-inline-name} {
+    display: inline-block;
+    vertical-align: middle;   // Align progress bar vertically to look better with text next to it.
+    width: $progress-inline-width;
+  }
+}
+// Style for donut spinner
+@if $_include-spinner-donut {
+  :root {
+    #{$spinner-donut-back-color-var}: $spinner-donut-back-color;
+    #{$spinner-donut-fore-color-var}: $spinner-donut-fore-color;
+  }
+  // Donut spinner animation
+  @keyframes spinner-donut-anim {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg);}
+  }
+  .#{$spinner-donut-name} {
+    display: inline-block;
+    margin: var(#{$universal-margin-var});
+    border: $spinner-donut-border-thickness solid var(#{$spinner-donut-back-color-var});
+    border-left: $spinner-donut-border-thickness solid var(#{$spinner-donut-fore-color-var});
+    border-radius: 50%;
+    width: $spinner-donut-size;
+    height: $spinner-donut-size;
+    animation: spinner-donut-anim 1.2s linear infinite;
+  }
+}

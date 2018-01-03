@@ -1,0 +1,321 @@
+/*
+  Definitions for the responsive table component.
+*/
+// The tables use the common table elements and syntax.
+/*
+$table-mobile-breakpoint:     767px !default;       // Breakpoint for table mobile view.
+$table-mobile-card-spacing:   10px !default;        // Space between <tr> cards - mobile view.
+$table-mobile-card-label:     'data-label' !default;// Attribute used to replace column headers in mobile view.
+$table-not-responsive-name:   'preset' !default;    // Class name for table non-responsive view.
+$include-horizontal-table:    true !default;        // Should horizontal tables be included? (`true`/`false`)
+$table-horizontal-name:       'horizontal' !default;// Class name for table horizontal view.
+$include-scrollable-table:    true !default;        // Should scrollable tables be included? (`true`/`false`)
+$table-scrollable-name:       'scrollable' !default;// Class name for table scrollable view.
+$table-scrollable-height:     400px !default;       // Height for table scrollable view.
+$include-striped-table:       true !default;        // [Hidden flag] Should striped tables be included? (`true`/`false`)
+$table-striped-name:         'striped' !default;    // Class name for striped table.
+// External variables' defaults are used only if you import this module on its own, without the rest of the framework.
+$back-color:              white !default;           // [External variable - core] Background color for everything.
+$fore-color:              black !default;           // [External variable - core] Foreground color for everything.
+*/
+$table-mobile-breakpoint:     768px !default;
+$table-max-height: 400px !default;
+$table-caption-font-size: 1.5rem !default;
+$table-mobile-card-label: 'data-label' !default;
+$table-mobile-label-font-weight: 600 !default;
+
+$table-border-color: #aaa !default;
+$table-border-separator-color: #666 !default;
+
+$_include-horizontal-table: true !default;
+$table-horizontal-name: 'horizontal' !default;
+
+// CSS variable name definitions [exercise caution if modifying these]
+$table-border-color-var: '--table-border-color' !default;
+$table-border-separator-color-var: '--table-border-separator-color' !default;
+// == Uncomment below code if this module is used on its own ==
+//
+// $universal-margin:        0.5rem !default;      // Universal margin for the most elements
+// $universal-padding:       0.5rem !default;      // Universal padding for the most elements
+// $universal-border-radius: 0.125rem !default;    // Universal border-radius for most elements
+// $universal-box-shadow:    none !default;        // Universal box-shadow for most elements
+// $universal-margin-var:          '--universal-margin' !default;
+// $universal-padding-var:         '--universal-padding' !default;
+// $universal-border-radius-var:   '--universal-border-radius' !default;
+// $universal-box-shadow-var:      '--universal-box-shadow' !default;
+// :root {
+//  #{$universal-margin-var}: $universal-margin;
+//  #{$universal-padding-var}: $universal-padding;
+//  #{$universal-border-radius-var}: $universal-border-radius;
+//  @if $universal-box-shadow != none {
+//   #{$universal-box-shadow-var}: $universal-box-shadow;
+//  }
+// }
+//
+// ============================================================
+/* Table module CSS variable definitions. */
+:root {
+  #{$table-border-color-var}: $table-border-color;
+  #{$table-border-separator-color-var}: $table-border-separator-color;
+}
+// Desktop view.
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 0;
+  display: flex;
+  flex: 0 1 auto;
+  flex-flow: row wrap;
+  padding: var(#{$universal-padding-var});
+  padding-top: 0;
+  @if not($_include-horizontal-table) {
+    overflow: auto;
+    max-height: $table-max-height;
+  }
+  caption {
+    font-size: $table-caption-font-size;
+    margin: calc(2 * var(#{$universal-margin-var})) 0;
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+  thead, tbody {
+    display: flex;
+    flex-flow: row wrap;
+    border: $__1px solid var(#{$table-border-color-var});
+    @if not($_include-horizontal-table) {
+      max-width: 100%;
+      flex: 0 0 100%;
+    }
+  }
+  thead {
+    z-index: 999;  // Fixes the visibility of the element.
+    border-radius: var(#{$universal-border-radius-var}) var(#{$universal-border-radius-var}) 0 0;
+    border-bottom: $__1px solid var(#{$table-border-separator-color-var}); // var This
+    @if not($_include-horizontal-table) {
+      position: sticky;
+      top: 0;
+    }
+  }
+  tbody {
+    border-top: 0;
+    margin-top: calc(0 - var(#{$universal-margin-var})); // might be useless
+    border-radius: 0 0 var(--universal-border-radius) var(--universal-border-radius);
+  }
+  tr {
+    display: flex;
+    padding: 0; // Apply always to overwrite default.
+    @if not($_include-horizontal-table) {
+      flex-flow: row wrap;
+      flex: 0 0 100%;
+    }
+  }
+  th, td {
+    padding: calc(2 * var(#{$universal-padding-var}));    // Apply always to overwrite default.
+    @if not($_include-horizontal-table) {
+      flex: 1 0 0%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  th {
+    text-align: left;
+    background: #e6e6e6;        // use vars
+    color: #111;          // vars
+  }
+  td {
+    background: #fafafa;     // use variables, this is a test (body)
+    border-top: $__1px solid var(#{$table-border-color-var});
+  }
+  @if not($_include-horizontal-table) {
+    tbody tr:first-child td {
+      border-top: 0;
+    }
+  }
+}
+// Styling for horizntal tables
+@if $_include-horizontal-table {
+  table:not(.#{$table-horizontal-name}) {
+    overflow: auto;
+    max-height: $table-max-height;
+    thead, tbody {
+      max-width: 100%;
+      flex: 0 0 100%;
+    }
+    tr {
+      flex-flow: row wrap;
+      flex: 0 0 100%;
+    }
+    th, td {
+      flex: 1 0 0%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    thead {
+      position: sticky;
+      top: 0;
+    }
+    tbody tr:first-child td {
+      border-top: 0;
+    }
+  }
+  table.#{$table-horizontal-name} {
+    border: 0;
+    thead, tbody {
+      border: 0;
+      flex-flow: row nowrap;
+    }
+    tbody {
+      overflow: auto;
+      justify-content: space-between;
+      flex: 1 0 0;
+      margin-left: calc( 4 * var(#{$universal-margin-var}));
+      padding-bottom: calc(var(#{$universal-padding-var}) / 4);
+    }
+    tr {
+      flex-direction: column;
+      flex: 1 0 auto;
+    }
+    th, td {
+      width: 100%;
+      border: 0;
+      border-bottom: $__1px solid var(#{$table-border-color-var});
+      &:not(:first-child){
+        border-top: 0;
+      }
+    }
+    th {
+      text-align: right;
+      border-left: $__1px solid var(#{$table-border-color-var});
+      border-right: $__1px solid var(#{$table-border-separator-color-var});
+    }
+    thead {
+      tr:first-child {
+        padding-left: 0;
+      }
+    }
+    th:first-child, td:first-child {
+      border-top: $__1px solid var(#{$table-border-color-var});
+    }
+    tbody tr:last-child td {
+      border-right: 1px solid #aaa;
+      &:first-child{
+        border-top-right-radius: 0.25rem;
+      }
+      &:last-child{
+        border-bottom-right-radius: 0.25rem;
+      }
+    }
+    thead tr:first-child th {
+      &:first-child{
+        border-top-left-radius: 0.25rem;
+      }
+      &:last-child{
+        border-bottom-left-radius: 0.25rem;
+      }
+    }
+  }
+}
+// Mobile
+@media screen and (max-width: #{$table-mobile-breakpoint - 1px}){
+  @if $_include-horizontal-table {
+    table, table.#{$table-horizontal-name} {
+      border-collapse: collapse;
+      border: 0;
+      width: 100%;
+      display: table;
+      // Accessibility (element is not visible, but screen readers read it normally)
+      thead, th {
+        border: 0;
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        clip: rect(0 0 0 0);
+        -webkit-clip-path: inset(100%);
+        clip-path: inset(100%);
+      }
+      tbody {
+        display: table-row-group;
+      }
+      tr {
+        display: block;
+        border: $__1px solid var(#{$table-border-color-var});
+        border-radius: var(#{$universal-border-radius-var});
+        @if $universal-box-shadow != none {
+          box-shadow: var(#{$universal-box-shadow-var});
+        }
+        background: #fafafa;     // use variables, this is a test (body)
+        padding: var(#{$universal-padding-var});
+        margin: var(#{$universal-margin-var});
+        margin-bottom: calc(2 * var(#{$universal-margin-var}));
+      }
+      th, td {
+        width: auto;
+      }
+      td {
+        display: block;
+        border: 0;
+        text-align: right;
+      }
+      td:before {
+        content: attr(#{$table-mobile-card-label});
+        float: left;
+        font-weight: $table-mobile-label-font-weight;
+      }
+      th:first-child, td:first-child {
+        border-top: 0;
+      }
+      tbody tr:last-child td {
+        border-right: 0;
+      }
+    }
+  }
+  @else {
+    table {
+      border-collapse: collapse;
+      border: 0;
+      width: 100%;
+      display: table;
+      // Accessibility (element is not visible, but screen readers read it normally)
+      thead, th {
+        border: 0;
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        clip: rect(0 0 0 0);
+        -webkit-clip-path: inset(100%);
+        clip-path: inset(100%);
+      }
+      tbody {
+        display: table-row-group;
+      }
+      tr {
+        display: block;
+        border: $__1px solid var(#{$table-border-color-var});
+        border-radius: var(#{$universal-border-radius-var});
+        @if $universal-box-shadow != none {
+          box-shadow: var(#{$universal-box-shadow-var});
+        }
+        background: #fafafa;     // use variables, this is a test (body)
+        padding: var(#{$universal-padding-var});
+        margin: var(#{$universal-margin-var});
+        margin-bottom: calc(2 * var(#{$universal-margin-var}));
+      }
+      td {
+        display: block;
+        border: 0;
+        text-align: right;
+      }
+      td:before {
+        content: attr(#{$table-mobile-card-label});
+        float: left;
+        font-weight: $table-mobile-label-font-weight;
+      }
+    }
+  }
+}
