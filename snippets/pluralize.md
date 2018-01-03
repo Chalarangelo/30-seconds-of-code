@@ -1,23 +1,29 @@
-# pluralize
+### pluralize
 
-If `num` is greater than `1` returns the plural form of the given string, else return the singular form.
+Returns the singular or plural form of the word based on the input number. If the first argument is an `object`, it will use a closure by returning a function that can auto-pluralize plurals that don't simply end in `s` if the supplied dictionary contains the word.
 
-Check if `num` is greater than `0`. Throw an appropriate `Error` if not, return the appropriate string otherwise.
-Omit the third argument, `items`, to use a default plural form same as `item` suffixed with a single `'s'`.
+If `num` is either `-1` or `1`, return the singular form of the word. If `num` is any other number, return the plural form. Omit the third argument to use the default of the singular word + `s`, or supply a custom pluralized word when necessary. If the first argument is an `object`, utilize a closure by returning a function which can use the supplied dictionary to resolve the correct plural form of the word.
 
 ```js
-const pluralize = (num, item, items = item + 's') =>
-  num <= 0
-    ? (() => {
-        throw new Error(`'num' should be >= 1. Value povided was ${num}.`);
-      })()
-    : num === 1 ? item : items;
+const pluralize = (val, word, plural = word + 's') => {
+  const _pluralize = (num, word, plural = word + 's') =>
+    [1, -1].includes(Number(num)) ? word : plural;
+  if (typeof val === 'object') return (num, word) => _pluralize(num, word, val[word]);
+  return _pluralize(val, word, plural);
+};
 ```
 
 ```js
-pluralize(1, 'apple', 'apples'); // 'apple'
-pluralize(3, 'apple', 'apples'); // 'apples'
+pluralize(0, 'apple'); // 'apples'
+pluralize(1, 'apple'); // 'apple'
 pluralize(2, 'apple'); // 'apples'
-pluralize(0, 'apple', 'apples'); // Gives error
-pluralize(-3, 'apple', 'apples'); // Gives error
+pluralize(1, 'person'); // 'person'
+pluralize(2, 'person', 'people'); // people
+
+const PLURALS = {
+  person: 'people',
+  radius: 'radii'
+};
+const autoPluralize = pluralize(PLURALS);
+autoPluralize(2, 'person'); // people
 ```
