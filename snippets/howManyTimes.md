@@ -1,6 +1,6 @@
 ### howManyTimes
 
-Returns the number of times `num` can be divided by `divisor` without getting a fractional answer. Works for both negative and positive integers.`divisor` can be positive too.
+Returns the number of times `num` can be divided by `divisor` without getting a fractional answer. Works for both negative and positive integers.`divisor` can be fractional too.
 If `divisor` is `-1` or `1` returns `Infinity`.
 If `divisor` is `-0` or `0` returns `0`.
 ``` js
