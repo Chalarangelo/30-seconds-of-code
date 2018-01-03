@@ -49,6 +49,7 @@ flip:adapter
 fromCamelCase:string
 functionName:function
 gcd:math
+geometricProgression:uncategorized
 getDaysDiffBetweenDates:date
 getScrollPosition:browser
 getStyle:browser
