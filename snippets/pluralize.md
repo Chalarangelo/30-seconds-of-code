@@ -2,7 +2,7 @@
 
 If `num` is greater than `1` returns the plural form of the given string, else return the singular form.
 
-Check if `num` is positive. Throw an appropriate `Error` if not, return the appropriate string otherwise.
+Check if `num` is greater than `0`. Throw an appropriate `Error` if not, return the appropriate string otherwise.
 Omit the third argument, `items`, to use a default plural form same as `item` suffixed with a single `'s'`.
 
 ```js
