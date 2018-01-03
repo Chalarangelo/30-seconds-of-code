@@ -95,10 +95,10 @@ lcm:math
 lowercaseKeys:object
 mapObject:array
 mask:string
-maxN:uncategorized
+maxN:math
 median:math
 memoize:function
-minN:uncategorized
+minN:math
 negate:logic
 nthElement:array
 objectFromPairs:object
