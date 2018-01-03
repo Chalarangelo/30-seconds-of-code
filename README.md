@@ -229,9 +229,7 @@ average(1, 2, 3);
 * [`isEven`](#iseven)
 * [`isPrime`](#isprime)
 * [`lcm`](#lcm)
-* [`maxN`](#maxn)
 * [`median`](#median)
-* [`minN`](#minn)
 * [`percentile`](#percentile)
 * [`powerset`](#powerset)
 * [`primes`](#primes)
@@ -339,16 +337,6 @@ average(1, 2, 3);
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`validateNumber`](#validatenumber)
 * [`yesNo`](#yesno)
-
-</details>
-
-### _Uncategorized_
-
-<details>
-<summary>View contents</summary>
-
-* [`maxN`](#maxn)
-* [`minN`](#minn)
 
 </details>
 
@@ -2556,13 +2544,18 @@ functionName(Math.max); // max (logged in debug channel of console)
 
 Returns the memoized (cached) function.
 
-Use `Object.create(null)` to create an empty object without `Object.prototype` (so that those properties are not resolved if the input value is something like `'hasOwnProperty'`).
-Return a function which takes a single argument to be supplied to the memoized function by first checking if the function's output for that specific input value is already cached, or store and return it if not.
+Create an empty cache by instantiating a new `Map` object.
+Return a function which takes a single argument to be supplied to the memoized function by first checking if the function's output for that specific input value is already cached, or store and return it if not. The `function` keyword must be used in order to allow the memoized function to have its `this` context changed if necessary.
+Allow access to the `cache` by setting it as a property on the returned function.
 
 ```js
 const memoize = fn => {
-  const cache = Object.create(null);
-  return value => cache[value] || (cache[value] = fn(value));
+  const cache = new Map();
+  const cached = function(val) {
+    return cache.has(val) ? cache.get(val) : cache.set(val, fn.call(this, val)) && cache.get(val);
+  };
+  cached.cache = cache;
+  return cached;
 };
 ```
 
@@ -2574,6 +2567,7 @@ const memoize = fn => {
 const anagramsCached = memoize(anagrams);
 anagramsCached('javascript'); // takes a long time
 anagramsCached('javascript'); // returns virtually instantly since it's now cached
+console.log(anagramsCached.cache); // Map
 ```
 
 </details>
@@ -3283,31 +3277,6 @@ lcm([1, 3, 4], 5); // 60
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### maxN
-
-Returns the `n` maximum elements from the provided array. If `n` is greater than or equal to the provided array's length than return the original array(sorted in descending order).
-
-Sort's the array's shallow copy in descending order and returns the first n elements
-
-Skip the second argument to get a single element(in the form of a array)
-```js
-const maxN = (arr, n = 1) => [...arr].sort((a, b) => b - a).slice(0, n);
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-maxN([1, 2, 3]); // [3]
-maxN([1, 2, 3], 2); // [3,2]
-maxN([1, 2, 3], 4); // [3,2,1]
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
 ### median
 
 Returns the median of an array of numbers.
@@ -3329,30 +3298,6 @@ const median = arr => {
 ```js
 median([5, 6, 50, 1, -5]); // 5
 median([0, 10, -2, 7]); // 3.5
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### minN
-
-Returns the `n` minimum elements from the provided array. If `n` is greater than or equal to the provided array's length than return the original array(sorted in ascending order).
-
-Sort's the array's shallow copy in ascending order and returns the first n elements
-
-Skip the second argument to get a single element(in the form of a array)
-```js
-const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
-```
-<details>
-<summary>Examples</summary>
-
-```js
-minN([1, 2, 3]); // [1]
-minN([1, 2, 3], 2); // [1,2]
-minN([1, 2, 3], 4); // [1,2,3]
 ```
 
 </details>
@@ -5408,45 +5353,6 @@ yesNo('Foo', true); // true
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
-
-
-### maxN
-
-Returns the `n` maximum elements from the provided array. If `n` is greater than or equal to the provided array's length than return the original array(sorted in descending order).
-
-Sort's the array's shallow copy in descending order and returns the first n elements
-
-Skip the second argument to get a single element(in the form of a array)
-```js
-const maxN = (arr, n = 1) => [...arr].sort((a, b) => b - a).slice(0, n);
-```
-
-```js
-maxN([1, 2, 3]); // [3]
-maxN([1, 2, 3], 2); // [3,2]
-maxN([1, 2, 3], 4); // [3,2,1]
-```
-
-<br>[⬆ back to top](#table-of-contents)
-
-
-### minN
-
-Returns the `n` minimum elements from the provided array. If `n` is greater than or equal to the provided array's length than return the original array(sorted in ascending order).
-
-Sort's the array's shallow copy in ascending order and returns the first n elements
-
-Skip the second argument to get a single element(in the form of a array)
-```js
-const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
-```
-```js
-minN([1, 2, 3]); // [1]
-minN([1, 2, 3], 2); // [1,2]
-minN([1, 2, 3], 4); // [1,2,3]
-```
-
-<br>[⬆ back to top](#table-of-contents)
 
 
 ## Collaborators
