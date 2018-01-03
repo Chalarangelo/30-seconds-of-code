@@ -461,8 +461,12 @@ const median = arr => {
 };
 
 const memoize = fn => {
-  const cache = Object.create(null);
-  return value => cache[value] || (cache[value] = fn(value));
+  const cache = new Map();
+  const cached = function(val) {
+    return cache.has(val) ? cache.get(val) : cache.set(val, fn.call(this, val)) && cache.get(val);
+  };
+  cached.cache = cache;
+  return cached;
 };
 
 const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
@@ -642,10 +646,7 @@ const reverseString = str =>
 const round = (n, decimals = 0) => Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`);
 
 const runAsync = fn => {
-  const blob = `
-    var fn = ${fn.toString()};
-    this.postMessage(fn());
-  `;
+  const blob = `var fn = ${fn.toString()}; postMessage(fn());`;
   const worker = new Worker(
     URL.createObjectURL(new Blob([blob]), {
       type: 'application/javascript; charset=utf-8'
