@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/license-CC0--1.0-blue.svg)](https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE) [![Gitter chat](https://img.shields.io/badge/chat-on%20gitter-4FB999.svg)](https://gitter.im/30-seconds-of-code/Lobby) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Travis Build](https://travis-ci.org/Chalarangelo/30-seconds-of-code.svg?branch=master)](https://travis-ci.org/Chalarangelo/30-seconds-of-code) [![Insight.io](https://img.shields.io/badge/insight.io-Ready-brightgreen.svg)](https://insight.io/github.com/Chalarangelo/30-seconds-of-code/tree/master/?source=0) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard) [![ProductHunt](https://img.shields.io/badge/producthunt-vote-orange.svg)](https://www.producthunt.com/posts/30-seconds-of-code)
 
 
-> Curated collection of useful Javascript snippets that you can understand in 30 seconds or less.
+> Curated collection of useful JavaScript snippets that you can understand in 30 seconds or less.
 
 
 - Use <kbd>Ctrl</kbd> + <kbd>F</kbd> or <kbd>command</kbd> + <kbd>F</kbd> to search for a snippet.
@@ -16,17 +16,32 @@
 
 #### Package
 
+⚠️ **WARNING:** Snippets are not production ready.
+
 You can find a package with all the snippets on [npm](https://www.npmjs.com/package/30-seconds-of-code). 
 
 ```
 npm install 30-seconds-of-code
 ```
 
-⚠️ **WARNING:** Snippets are not production ready.
+CDN links
+- [ES2017 Full (UMD)](https://unpkg.com/30-seconds-of-code)
+- [ES5 Minified (UMD)](https://unpkg.com/30-seconds-of-code/dist/_30s.es5.min.js)
 
 <details>
-  
-To import the whole module:
+
+**Browser**
+
+> IMPORTANT: replace the `src` with the full version link and desired target spec (such as ES5 minified)):
+
+```html
+<script src="https://unpkg.com/30-seconds-of-code"></script>
+<script>
+  _30s.average(1, 2, 3);
+</script>
+```
+
+**Node**
 
 ```js
 // CommonJS
@@ -214,9 +229,7 @@ average(1, 2, 3);
 * [`isEven`](#iseven)
 * [`isPrime`](#isprime)
 * [`lcm`](#lcm)
-* [`maxN`](#maxn)
 * [`median`](#median)
-* [`minN`](#minn)
 * [`percentile`](#percentile)
 * [`powerset`](#powerset)
 * [`primes`](#primes)
@@ -2572,13 +2585,18 @@ functionName(Math.max); // max (logged in debug channel of console)
 
 Returns the memoized (cached) function.
 
-Use `Object.create(null)` to create an empty object without `Object.prototype` (so that those properties are not resolved if the input value is something like `'hasOwnProperty'`).
-Return a function which takes a single argument to be supplied to the memoized function by first checking if the function's output for that specific input value is already cached, or store and return it if not.
+Create an empty cache by instantiating a new `Map` object.
+Return a function which takes a single argument to be supplied to the memoized function by first checking if the function's output for that specific input value is already cached, or store and return it if not. The `function` keyword must be used in order to allow the memoized function to have its `this` context changed if necessary.
+Allow access to the `cache` by setting it as a property on the returned function.
 
 ```js
 const memoize = fn => {
-  const cache = Object.create(null);
-  return value => cache[value] || (cache[value] = fn(value));
+  const cache = new Map();
+  const cached = function(val) {
+    return cache.has(val) ? cache.get(val) : cache.set(val, fn.call(this, val)) && cache.get(val);
+  };
+  cached.cache = cache;
+  return cached;
 };
 ```
 
@@ -2590,6 +2608,7 @@ const memoize = fn => {
 const anagramsCached = memoize(anagrams);
 anagramsCached('javascript'); // takes a long time
 anagramsCached('javascript'); // returns virtually instantly since it's now cached
+console.log(anagramsCached.cache); // Map
 ```
 
 </details>
@@ -3316,31 +3335,6 @@ lcm([1, 3, 4], 5); // 60
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### maxN
-
-Returns the `n` maximum elements from the provided array. If `n` is greater than or equal to the provided array's length than return the original array(sorted in descending order).
-
-Sort's the array's shallow copy in descending order and returns the first n elements
-
-Skip the second argument to get a single element(in the form of a array)
-```js
-const maxN = (arr, n = 1) => [...arr].sort((a, b) => b - a).slice(0, n);
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-maxN([1, 2, 3]); // [3]
-maxN([1, 2, 3], 2); // [3,2]
-maxN([1, 2, 3], 4); // [3,2,1]
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
 ### median
 
 Returns the median of an array of numbers.
@@ -3362,30 +3356,6 @@ const median = arr => {
 ```js
 median([5, 6, 50, 1, -5]); // 5
 median([0, 10, -2, 7]); // 3.5
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### minN
-
-Returns the `n` minimum elements from the provided array. If `n` is greater than or equal to the provided array's length than return the original array(sorted in ascending order).
-
-Sort's the array's shallow copy in ascending order and returns the first n elements
-
-Skip the second argument to get a single element(in the form of a array)
-```js
-const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
-```
-<details>
-<summary>Examples</summary>
-
-```js
-minN([1, 2, 3]); // [1]
-minN([1, 2, 3], 2); // [1,2]
-minN([1, 2, 3], 4); // [1,2,3]
 ```
 
 </details>
