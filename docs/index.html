@@ -924,7 +924,7 @@ mask(1234567890, -4, '$'); // '1234$$$$$$'
   );
 };
 </code></pre><pre><code class="language-js">palindrome('taco cat'); // true
-</code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h1>pluralize</h1><p>If <code>num</code> is greater than <code>1</code> returns the plural form of the given string, else return the singular form.</p><p>Check if <code>num</code> is positive. Throw an appropriate <code>Error</code> if not, return the appropriate string otherwise. Omit the third argument, <code>items</code>, to use a default plural form same as <code>item</code> suffixed with a single <code>'s'</code>.</p><pre><code class="language-js">const pluralize = (num, item, items = item + 's') =&gt;
+</code></pre></div></div><br/><div class="card fluid"><div class="section double-padded"><h1>pluralize</h1><p>If <code>num</code> is greater than <code>1</code> returns the plural form of the given string, else return the singular form.</p><p>Check if <code>num</code> is greater than <code>0</code>. Throw an appropriate <code>Error</code> if not, return the appropriate string otherwise. Omit the third argument, <code>items</code>, to use a default plural form same as <code>item</code> suffixed with a single <code>'s'</code>.</p><pre><code class="language-js">const pluralize = (num, item, items = item + 's') =&gt;
   num &lt;= 0
     ? (() =&gt; {
         throw new Error(`'num' should be &gt;= 1. Value povided was ${num}.`);
