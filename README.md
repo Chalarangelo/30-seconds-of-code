@@ -872,7 +872,7 @@ Initializes an array containing the numbers in the specified range where `start`
 Use `Array(Math.ceil((end+1-start)/step)` to create an array of the desired length(the amounts of elements is equal to `(end-start)/step` or `(end+1-start)/step` for inclusive end), `Array.map()` to fill with the desired values in a range.
 You can omit `start` to use a default value of `0`.
 You can omit `step` to use a default value of `1`.
- 
+
 ```js
 const initializeArrayWithRange = (end, start = 0, step = 1) =>
   Array.from({ length: Math.ceil((end + 1 - start) / step) }).map((v, i) => i * step + start);
@@ -5220,10 +5220,10 @@ yesNo('Foo', true); // true
 
 ### geometricProgression
 
-Initializes an array containing the numbers in the specified range where `start` and `end` are inclusive and the ratio between two terms is `step`. 
+Initializes an array containing the numbers in the specified range where `start` and `end` are inclusive and the ratio between two terms is `step`.
 Returns an error if `step` equals `1`.
 
-Use `Array.from()`, `Math.log()` and `Math.floor()` to create an array of the desired length, `Array.map()` to fill with the desired values in a range. 
+Use `Array.from()`, `Math.log()` and `Math.floor()` to create an array of the desired length, `Array.map()` to fill with the desired values in a range.
 Omit the second argument, `start`, to use a default value of `1`.
 Omit the third argument, `step`, to use a default value of `2`.
 
