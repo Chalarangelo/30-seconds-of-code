@@ -18,7 +18,7 @@ pluralize(0, 'apple'); // 'apples'
 pluralize(1, 'apple'); // 'apple'
 pluralize(2, 'apple'); // 'apples'
 pluralize(1, 'person'); // 'person'
-pluralize(2, 'person', 'people'); // people
+pluralize(2, 'person', 'people'); // 'people'
 
 const PLURALS = {
   person: 'people',
