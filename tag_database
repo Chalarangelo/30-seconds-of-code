@@ -49,7 +49,7 @@ flip:adapter
 fromCamelCase:string
 functionName:function
 gcd:math
-geometricProgression:uncategorized
+geometricProgression:math
 getDaysDiffBetweenDates:date
 getScrollPosition:browser
 getStyle:browser
@@ -96,10 +96,10 @@ lcm:math
 lowercaseKeys:object
 mapObject:array
 mask:string
-maxN:uncategorized
+maxN:array
 median:math
 memoize:function
-minN:uncategorized
+minN:array
 negate:logic
 nthElement:array
 objectFromPairs:object
@@ -111,7 +111,7 @@ palindrome:string
 percentile:math
 pick:array
 pipeFunctions:adapter
-pluralize:uncategorized
+pluralize:string
 powerset:math
 prettyBytes:utility
 primes:math
