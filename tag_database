@@ -111,6 +111,7 @@ palindrome:string
 percentile:math
 pick:array
 pipeFunctions:adapter
+pluralize:uncategorized
 powerset:math
 prettyBytes:utility
 primes:math
