@@ -1,25 +1,31 @@
 {
-  "dependencies": {
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "chalk": "^2.3.0",
     "fs-extra": "^4.0.2",
     "html-minifier": "^3.5.7",
     "markdown-it": "^8.4.0",
     "node-sass": "^4.7.2",
     "prettier": "^1.9.2",
+    "rollup": "^0.53.2",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-babel-minify": "^3.1.2",
     "semistandard": "^11.0.0",
-    "chalk": "^2.3.0",
     "tape": "^4.8.0"
   },
   "name": "30-seconds-of-code",
   "description": "A collection of useful JavaScript snippets.",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "0.0.1",
+  "main": "dist/_30s.js",
+  "module": "dist/_30s.esm.js",
   "scripts": {
     "builder": "node ./scripts/build.js",
     "linter": "node ./scripts/lint.js",
     "tagger": "node ./scripts/tag.js",
     "webber": "node ./scripts/web.js",
     "tdd": "node ./scripts/tdd.js",
-    "test": "tape test/**/*.test.js | tap-spec"
+    "test": "tape test/**/*.test.js | tap-spec",
+    "module": "node ./scripts/module.js"
   },
   "repository": {
     "type": "git",
