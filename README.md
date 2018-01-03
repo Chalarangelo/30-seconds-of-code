@@ -4393,7 +4393,7 @@ palindrome('taco cat'); // true
 <br>[⬆ Back to top](#table-of-contents)
 
 
-# pluralize
+### pluralize
 
 If `num` is greater than `1` returns the plural form of the given string, else return the singular form.
 
