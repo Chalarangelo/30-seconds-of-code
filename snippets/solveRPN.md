@@ -1,7 +1,7 @@
 ### solveRPN
 
 Solves the given mathematical expression in [reverse polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation).
-Throws appropriate errors if there are unrecognized symbols or the expression is wrong.
+Throws appropriate errors if there are unrecognized symbols or the expression is wrong. The valid operators are :- `+`,`-`,`*`,`/`,`^`,`**` (`^`&`**` are the exponential symbols and are same). This snippet does not supports any unary operators.
 
 Use a dictionary, `OPERATORS` to specify each operator's matching mathematical operation.
 Use `String.replace()` with a regular expression to replace `^` with `**`, `String.split()` to tokenize the string and `Array.filter()` to remove empty tokens.
