@@ -6,10 +6,7 @@ Sort's the array's shallow copy in descending order and returns the first n elem
 
 Skip the second argument to get a single element(in the form of a array)
 ``` js
-const maxN = (arr,n = 1) => {
-  let rra = [...arr].sort((a,b) => b-a)
-  return rra.splice(0,n)
-}
+const maxN = (arr, n = 1) => [...arr].sort((a, b) => b - a).slice(0, n);
 ```
 
 ``` js
