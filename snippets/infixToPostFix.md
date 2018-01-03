@@ -4,7 +4,7 @@
 ```js
 const infixToPostfix  = expr => {
   let rpn = ''
-  let solve = expr.replace(/\^/g,'**').match(/([0-9]+|[\+\(\)\/\-]|\*+)/g).filter(el => !/\s+/.test(el) && el !== '')
+  let solve = expr.replace(/\^/g,'**')str.replace(/([^\d])\.(\d+)/g, '$10.$2').match(/((\d\.?)+|[\+\(\)\/\-]|\*+)/g).filter(el => !/\s+/.test(el) && el !== '')
   let stack = []
   let precedence = {'**':5,'/':4,'*':4,'+':3,'-':3}
   solve.forEach(symbol => {
