@@ -39,7 +39,8 @@ const factors = (num, primes = false) => {
 
 ```js
 factors(12); // [2,3,4,6,12]
-factors(12, true); // [2,3]
+factors(12, 1); // [2,3]
+factors(12, -1); //[4,6,12]
 factors(-12); // [2, -2, 3, -3, 4, -4, 6, -6, 12, -12]
-factors(-12, true); // [2,3]
+factors(-12, 1); // [2,3]
 ```
