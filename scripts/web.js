@@ -8,6 +8,12 @@ const fs = require('fs-extra'),
   chalk = require('chalk'),
   md = require('markdown-it')(),
   minify = require('html-minifier').minify;
+  // Load helper functions (these are from existing snippets in 30 seconds of code!)
+const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
+if(isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
+  console.log(`${chalk.green('NOBUILD')} index build terminated, parent commit is a Travis build!`);
+  process.exit(0);
+}
 // Compile the mini.css framework and custom CSS styles, using `node-sass`.
 const sass = require('node-sass');
 sass.render(

@@ -6,10 +6,16 @@ setup_git() {
 commit_website_files() {
   if [ $TRAVIS_EVENT_TYPE != "pull_request" ]; then
     if [ $TRAVIS_BRANCH == "master" ]; then
-      echo "Commiting to master branch..."
+      echo "Committing to master branch..."
       git checkout master
       git add *
-      git commit --message "Travis build: $TRAVIS_BUILD_NUMBER [ci skip]"
+      if [ $TRAVIS_EVENT_TYPE == "cron" ]; then
+        git commit --message "Travis build: $TRAVIS_BUILD_NUMBER [cron]"
+      elif [ $TRAVIS_EVENT_TYPE == "api" ]; then
+        git commit --message "Travis build: $TRAVIS_BUILD_NUMBER [custom]"
+      else
+        git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
+      fi
     fi
   fi
 }
