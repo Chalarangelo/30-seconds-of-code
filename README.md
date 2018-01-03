@@ -229,7 +229,9 @@ average(1, 2, 3);
 * [`isEven`](#iseven)
 * [`isPrime`](#isprime)
 * [`lcm`](#lcm)
+* [`maxN`](#maxn)
 * [`median`](#median)
+* [`minN`](#minn)
 * [`percentile`](#percentile)
 * [`powerset`](#powerset)
 * [`primes`](#primes)
@@ -337,6 +339,16 @@ average(1, 2, 3);
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`validateNumber`](#validatenumber)
 * [`yesNo`](#yesno)
+
+</details>
+
+### _Uncategorized_
+
+<details>
+<summary>View contents</summary>
+
+* [`maxN`](#maxn)
+* [`minN`](#minn)
 
 </details>
 
@@ -3271,6 +3283,31 @@ lcm([1, 3, 4], 5); // 60
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### maxN
+
+Returns the `n` maximum elements from the provided array. If `n` is greater than or equal to the provided array's length than return the original array(sorted in descending order).
+
+Sort's the array's shallow copy in descending order and returns the first n elements
+
+Skip the second argument to get a single element(in the form of a array)
+```js
+const maxN = (arr, n = 1) => [...arr].sort((a, b) => b - a).slice(0, n);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+maxN([1, 2, 3]); // [3]
+maxN([1, 2, 3], 2); // [3,2]
+maxN([1, 2, 3], 4); // [3,2,1]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### median
 
 Returns the median of an array of numbers.
@@ -3292,6 +3329,30 @@ const median = arr => {
 ```js
 median([5, 6, 50, 1, -5]); // 5
 median([0, 10, -2, 7]); // 3.5
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### minN
+
+Returns the `n` minimum elements from the provided array. If `n` is greater than or equal to the provided array's length than return the original array(sorted in ascending order).
+
+Sort's the array's shallow copy in ascending order and returns the first n elements
+
+Skip the second argument to get a single element(in the form of a array)
+```js
+const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
+```
+<details>
+<summary>Examples</summary>
+
+```js
+minN([1, 2, 3]); // [1]
+minN([1, 2, 3], 2); // [1,2]
+minN([1, 2, 3], 4); // [1,2,3]
 ```
 
 </details>
@@ -5347,6 +5408,45 @@ yesNo('Foo', true); // true
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
+
+
+### maxN
+
+Returns the `n` maximum elements from the provided array. If `n` is greater than or equal to the provided array's length than return the original array(sorted in descending order).
+
+Sort's the array's shallow copy in descending order and returns the first n elements
+
+Skip the second argument to get a single element(in the form of a array)
+```js
+const maxN = (arr, n = 1) => [...arr].sort((a, b) => b - a).slice(0, n);
+```
+
+```js
+maxN([1, 2, 3]); // [3]
+maxN([1, 2, 3], 2); // [3,2]
+maxN([1, 2, 3], 4); // [3,2,1]
+```
+
+<br>[⬆ back to top](#table-of-contents)
+
+
+### minN
+
+Returns the `n` minimum elements from the provided array. If `n` is greater than or equal to the provided array's length than return the original array(sorted in ascending order).
+
+Sort's the array's shallow copy in ascending order and returns the first n elements
+
+Skip the second argument to get a single element(in the form of a array)
+```js
+const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
+```
+```js
+minN([1, 2, 3]); // [1]
+minN([1, 2, 3], 2); // [1,2]
+minN([1, 2, 3], 4); // [1,2,3]
+```
+
+<br>[⬆ back to top](#table-of-contents)
 
 
 ## Collaborators
