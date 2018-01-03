@@ -5,12 +5,11 @@ Returns the `n` minimum elements from the provided array. If `n` is greater than
 Sort's the array's shallow copy in ascending order and returns the first n elements
 
 Skip the second argument to get a single element(in the form of a array)
-``` js
+```js
 const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
-
 ```
-``` js
-minN([1,2,3]); // [1]
-minN([1,2,3],2); // [1,2]
-minN([1,2,3],4); // [1,2,3]
+```js
+minN([1, 2, 3]); // [1]
+minN([1, 2, 3], 2); // [1,2]
+minN([1, 2, 3], 4); // [1,2,3]
 ```
