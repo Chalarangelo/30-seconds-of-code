@@ -145,11 +145,11 @@ try {
         .replace(/<h2>/g, '<h2 style="text-align:center;">');
       for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag))
         uncategorizedOutput +=
-          '<div class="card fluid"><div class="section double-padded">' +
+          '<div class="card fluid">' +
           md
             .render(`\n${snippets[taggedSnippet[0] + '.md']}`)
-            .replace(/<h3/g, `<h3 id="${taggedSnippet[0].toLowerCase()}"`)
-            .replace(/<\/h3>/g, '</h3></div><div class="section double-padded">') +
+            .replace(/<h3/g, `<h3 id="${taggedSnippet[0].toLowerCase()}" class="section double-padded"`)
+            .replace(/<\/h3>/g, '</h3><div class="section double-padded">') +
           '</div></div><br/>';
     } else {
       output += md
@@ -157,11 +157,11 @@ try {
         .replace(/<h2>/g, '<h2 style="text-align:center;">');
       for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag))
         output +=
-          '<div class="card fluid"><div class="section double-padded">' +
+          '<div class="card fluid">' +
           md
             .render(`\n${snippets[taggedSnippet[0] + '.md']}`)
-            .replace(/<h3/g, `<h3 id="${taggedSnippet[0].toLowerCase()}"`)
-            .replace(/<\/h3>/g, '</h3></div><div class="section double-padded">') +
+            .replace(/<h3/g, `<h3 id="${taggedSnippet[0].toLowerCase()}" class="section double-padded"`)
+            .replace(/<\/h3>/g, '</h3><div class="section double-padded">') +
           '</div></div><br/>';
     }
   }
