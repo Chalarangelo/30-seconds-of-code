@@ -60,6 +60,8 @@
 * [`join`](#join)
 * [`last`](#last)
 * [`mapObject`](#mapobject)
+* [`maxN`](#maxn)
+* [`minN`](#minn)
 * [`nthElement`](#nthelement)
 * [`pick`](#pick)
 * [`pull`](#pull)
@@ -166,6 +168,7 @@
 * [`fibonacciCountUntilNum`](#fibonaccicountuntilnum)
 * [`fibonacciUntilNum`](#fibonacciuntilnum)
 * [`gcd`](#gcd)
+* [`geometricProgression`](#geometricprogression)
 * [`hammingDistance`](#hammingdistance)
 * [`inRange`](#inrange)
 * [`isArmstrongNumber`](#isarmstrongnumber)
@@ -235,6 +238,7 @@
 * [`isAbsoluteURL`](#isabsoluteurl)
 * [`mask`](#mask)
 * [`palindrome`](#palindrome)
+* [`pluralize`](#pluralize)
 * [`repeatString`](#repeatstring)
 * [`reverseString`](#reversestring)
 * [`sortCharactersInString`](#sortcharactersinstring)
@@ -280,18 +284,6 @@
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`validateNumber`](#validatenumber)
 * [`yesNo`](#yesno)
-
-</details>
-
-### _Uncategorized_
-
-<details>
-<summary>View contents</summary>
-
-* [`geometricProgression`](#geometricprogression)
-* [`maxN`](#maxn)
-* [`minN`](#minn)
-* [`pluralize`](#pluralize)
 
 </details>
 
@@ -1048,6 +1040,57 @@ const mapObject = (arr, fn) =>
 ```js
 const squareIt = arr => mapObject(arr, a => a * a);
 squareIt([1, 2, 3]); // { 1: 1, 2: 4, 3: 9 }
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### maxN
+
+Returns the `n` maximum elements from the provided array. If `n` is greater than or equal to the provided array's length, then return the original array(sorted in descending order).
+
+Use `Array.sort()` combined with the spread operator (`...`) to create a shallow clone of the array and sort it in descending order. 
+Use `Array.slice()` to get the specified number of elements.
+Omit the second argument, `n`, to get a one-element array.
+
+```js
+const maxN = (arr, n = 1) => [...arr].sort((a, b) => b - a).slice(0, n);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+maxN([1, 2, 3]); // [3]
+maxN([1, 2, 3], 2); // [3,2]
+maxN([1, 2, 3], 4); // [3,2,1]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### minN
+
+Returns the `n` minimum elements from the provided array. If `n` is greater than or equal to the provided array's length, then return the original array(sorted in ascending order).
+
+Use `Array.sort()` combined with the spread operator (`...`) to create a shallow clone of the array and sort it in ascending order.
+Use `Array.slice()` to get the specified number of elements.
+Omit the second argument, `n`, to get a one-element array.
+
+```js
+const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
+```
+<details>
+<summary>Examples</summary>
+
+```js
+minN([1, 2, 3]); // [1]
+minN([1, 2, 3], 2); // [1,2]
+minN([1, 2, 3], 4); // [1,2,3]
 ```
 
 </details>
@@ -2872,6 +2915,37 @@ gcd(8, 36); // 4
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### geometricProgression
+
+Initializes an array containing the numbers in the specified range where `start` and `end` are inclusive and the ratio between two terms is `step`. 
+Returns an error if `step` equals `1`.
+
+Use `Array.from()`, `Math.log()` and `Math.floor()` to create an array of the desired length, `Array.map()` to fill with the desired values in a range. 
+Omit the second argument, `start`, to use a default value of `1`.
+Omit the third argument, `step`, to use a default value of `2`.
+
+```js
+const geometricProgression = (end, start = 1, step = 2) =>
+  Array.from({ length: Math.floor(Math.log(end / start) / Math.log(step)) + 1 }).map(
+    (v, i) => start * step ** i
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+geometricProgression(256); // [1, 2, 4, 8, 16, 32, 64, 128, 256]
+geometricProgression(256, 3); //[3, 6, 12, 24, 48, 96, 192]
+geometricProgression(256, 1, 4); //[1, 4, 16, 64, 256]
+geometricProgression(256, 2, 1); //Gives error
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### hammingDistance
 
 Calculates the Hamming distance between two values.
@@ -4098,6 +4172,38 @@ palindrome('taco cat'); // true
 <br>[⬆ Back to top](#table-of-contents)
 
 
+# pluralize
+
+If `num` is greater than `1` returns the plural form of the given string, else return the singular form.
+
+Check if `num` is positive. Throw an appropriate `Error` if not, return the appropriate string otherwise.
+Omit the third argument, `items`, to use a default plural form same as `item` suffixed with a single `'s'`.
+
+```js
+const pluralize = (num, item, items = item + 's') =>
+  num <= 0
+    ? (() => {
+        throw new Error(`'num' should be >= 1. Value povided was ${num}.`);
+      })()
+    : num === 1 ? item : items;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+pluralize(1, 'apple', 'apples'); // 'apple'
+pluralize(3, 'apple', 'apples'); // 'apples'
+pluralize(2, 'apple'); // 'apples'
+pluralize(0, 'apple', 'apples'); // Gives error
+pluralize(-3, 'apple', 'apples'); // Gives error
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### repeatString
 
 Repeats a string n times using `String.repeat()`
@@ -5096,100 +5202,6 @@ yesNo('Foo', true); // true
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
-
----
- ## _Uncategorized_
-
-### geometricProgression
-
-Initializes an array containing the numbers in the specified range where `start` and `end` are inclusive and the ratio between two terms is `step`. 
-Returns an error if `step` equals `1`.
-
-Use `Array.from()`, `Math.log()` and `Math.floor()` to create an array of the desired length, `Array.map()` to fill with the desired values in a range. 
-Omit the second argument, `start`, to use a default value of `1`.
-Omit the third argument, `step`, to use a default value of `2`.
-
-```js
-const geometricProgression = (end, start = 1, step = 2) =>
-  Array.from({ length: Math.floor(Math.log(end / start) / Math.log(step)) + 1 }).map(
-    (v, i) => start * step ** i
-  );
-```
-
-```js
-geometricProgression(256); // [1, 2, 4, 8, 16, 32, 64, 128, 256]
-geometricProgression(256, 3); //[3, 6, 12, 24, 48, 96, 192]
-geometricProgression(256, 1, 4); //[1, 4, 16, 64, 256]
-geometricProgression(256, 2, 1); //Gives error
-```
-
-<br>[⬆ back to top](#table-of-contents)
-
-
-### maxN
-
-Returns the `n` maximum elements from the provided array. If `n` is greater than or equal to the provided array's length than return the original array(sorted in descending order).
-
-Sort's the array's shallow copy in descending order and returns the first n elements
-
-Skip the second argument to get a single element(in the form of a array)
-```js
-const maxN = (arr, n = 1) => [...arr].sort((a, b) => b - a).slice(0, n);
-```
-
-```js
-maxN([1, 2, 3]); // [3]
-maxN([1, 2, 3], 2); // [3,2]
-maxN([1, 2, 3], 4); // [3,2,1]
-```
-
-<br>[⬆ back to top](#table-of-contents)
-
-
-### minN
-
-Returns the `n` minimum elements from the provided array. If `n` is greater than or equal to the provided array's length than return the original array(sorted in ascending order).
-
-Sort's the array's shallow copy in ascending order and returns the first n elements
-
-Skip the second argument to get a single element(in the form of a array)
-```js
-const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
-```
-```js
-minN([1, 2, 3]); // [1]
-minN([1, 2, 3], 2); // [1,2]
-minN([1, 2, 3], 4); // [1,2,3]
-```
-
-<br>[⬆ back to top](#table-of-contents)
-
-
-# pluralize
-
-If `num` is greater than `1` returns the plural form of the given string, else return the singular form.
-
-Check if `num` is positive. Throw an appropriate `Error` if not, return the appropriate string otherwise.
-Omit the third argument, `items`, to use a default plural form same as `item` suffixed with a single `'s'`.
-
-```js
-const pluralize = (num, item, items = item + 's') =>
-  num <= 0
-    ? (() => {
-        throw new Error(`'num' should be >= 1. Value povided was ${num}.`);
-      })()
-    : num === 1 ? item : items;
-```
-
-```js
-pluralize(1, 'apple', 'apples'); // 'apple'
-pluralize(3, 'apple', 'apples'); // 'apples'
-pluralize(2, 'apple'); // 'apples'
-pluralize(0, 'apple', 'apples'); // Gives error
-pluralize(-3, 'apple', 'apples'); // Gives error
-```
-
-<br>[⬆ back to top](#table-of-contents)
 
 
 ## Collaborators
