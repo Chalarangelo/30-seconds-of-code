@@ -6,7 +6,7 @@ Works with numbers and strings alike
 const luhnCheck = num => { 
     let arr = (num+'').split('').reverse()
     let lastDigit = arr.splice(0,1)
-    let sum = arr.reduce((acc,val,i) =>  (acc,val,i) => i%2!==0 ? acc + parseInt(val) : acc + (parseInt(val) * 2)%9 || 9,0)
+    let sum = arr.reduce((acc,val,i) => i%2!==0 ? acc + parseInt(val) : acc + (parseInt(val) * 2)%9 || 9,0)
      sum += parseInt(lastDigit)
      return sum%10 === 0
  }
