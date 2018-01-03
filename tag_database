@@ -39,6 +39,7 @@ escapeRegExp:string
 everyNth:array
 extendHex:utility
 factorial:math
+factors:math
 fibonacci:math
 fibonacciCountUntilNum:math
 fibonacciUntilNum:math
@@ -49,7 +50,7 @@ flip:adapter
 fromCamelCase:string
 functionName:function
 gcd:math
-geometricProgression:uncategorized
+geometricProgression:math
 getDaysDiffBetweenDates:date
 getScrollPosition:browser
 getStyle:browser
@@ -62,6 +63,7 @@ hasFlags:node
 head:array
 hexToRGB:utility
 hide:browser
+howManyTimes:math
 httpsRedirect:browser
 initial:array
 initialize2DArray:array
@@ -96,10 +98,10 @@ lcm:math
 lowercaseKeys:object
 mapObject:array
 mask:string
-maxN:math
+maxN:array
 median:math
 memoize:function
-minN:math
+minN:array
 negate:logic
 nthElement:array
 objectFromPairs:object
@@ -111,6 +113,7 @@ palindrome:string
 percentile:math
 pick:array
 pipeFunctions:adapter
+pluralize:string
 powerset:math
 prettyBytes:utility
 primes:math

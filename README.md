@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/license-CC0--1.0-blue.svg)](https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE) [![Gitter chat](https://img.shields.io/badge/chat-on%20gitter-4FB999.svg)](https://gitter.im/30-seconds-of-code/Lobby) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Travis Build](https://travis-ci.org/Chalarangelo/30-seconds-of-code.svg?branch=master)](https://travis-ci.org/Chalarangelo/30-seconds-of-code) [![Insight.io](https://img.shields.io/badge/insight.io-Ready-brightgreen.svg)](https://insight.io/github.com/Chalarangelo/30-seconds-of-code/tree/master/?source=0) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard) [![ProductHunt](https://img.shields.io/badge/producthunt-vote-orange.svg)](https://www.producthunt.com/posts/30-seconds-of-code)
 
 
-> Curated collection of useful Javascript snippets that you can understand in 30 seconds or less.
+> Curated collection of useful JavaScript snippets that you can understand in 30 seconds or less.
 
 
 - Use <kbd>Ctrl</kbd> + <kbd>F</kbd> or <kbd>command</kbd> + <kbd>F</kbd> to search for a snippet.
@@ -13,7 +13,58 @@
 - Snippets are written in ES6, use the [Babel transpiler](https://babeljs.io/) to ensure backwards-compatibility.
 - You can import these snippets into your text editor of choice (VSCode, Atom, Sublime) using the files found in [this repo](https://github.com/Rob-Rychs/30-seconds-of-code-texteditorsnippets).
 - You can import these snippets into Alfred 3, using [this file](https://github.com/lslvxy/30-seconds-of-code-alfredsnippets).
-- You can find a package with all the snippets on [npm](https://www.npmjs.com/package/30-seconds-of-code). Bear in mind that most of these snippets are not production-ready.
+
+#### Package
+
+⚠️ **WARNING:** Snippets are not production ready.
+
+You can find a package with all the snippets on [npm](https://www.npmjs.com/package/30-seconds-of-code). 
+
+```
+npm install 30-seconds-of-code
+```
+
+CDN links
+- [ES2017 Full (UMD)](https://unpkg.com/30-seconds-of-code)
+- [ES5 Minified (UMD)](https://unpkg.com/30-seconds-of-code/dist/_30s.es5.min.js)
+
+<details>
+
+**Browser**
+
+> IMPORTANT: replace the `src` with the full version link and desired target spec (such as ES5 minified)):
+
+```html
+<script src="https://unpkg.com/30-seconds-of-code"></script>
+<script>
+  _30s.average(1, 2, 3);
+</script>
+```
+
+**Node**
+
+```js
+// CommonJS
+const _30s = require('30-seconds-of-code');
+_30s.average(1, 2, 3);
+
+// ES Modules
+import _30s from '30-seconds-of-code';
+_30s.average(1, 2, 3);
+```
+
+To import snippets directly:
+
+```js
+// CommonJS
+const { average } = require('30-seconds-of-code');
+average(1, 2, 3);
+
+// ES Modules
+import { average } from '30-seconds-of-code';
+average(1, 2, 3);
+```
+</details>
 
 ## Table of Contents
 
@@ -60,6 +111,8 @@
 * [`join`](#join)
 * [`last`](#last)
 * [`mapObject`](#mapobject)
+* [`maxN`](#maxn)
+* [`minN`](#minn)
 * [`nthElement`](#nthelement)
 * [`pick`](#pick)
 * [`pull`](#pull)
@@ -162,11 +215,14 @@
 * [`distance`](#distance)
 * [`elo`](#elo)
 * [`factorial`](#factorial)
+* [`factors`](#factors)
 * [`fibonacci`](#fibonacci)
 * [`fibonacciCountUntilNum`](#fibonaccicountuntilnum)
 * [`fibonacciUntilNum`](#fibonacciuntilnum)
 * [`gcd`](#gcd)
+* [`geometricProgression`](#geometricprogression)
 * [`hammingDistance`](#hammingdistance)
+* [`howManyTimes`](#howmanytimes)
 * [`inRange`](#inrange)
 * [`isArmstrongNumber`](#isarmstrongnumber)
 * [`isDivisible`](#isdivisible)
@@ -237,6 +293,7 @@
 * [`isAbsoluteURL`](#isabsoluteurl)
 * [`mask`](#mask)
 * [`palindrome`](#palindrome)
+* [`pluralize`](#pluralize)
 * [`repeatString`](#repeatstring)
 * [`reverseString`](#reversestring)
 * [`sortCharactersInString`](#sortcharactersinstring)
@@ -290,7 +347,8 @@
 <details>
 <summary>View contents</summary>
 
-* [`geometricProgression`](#geometricprogression)
+* [`maxN`](#maxn)
+* [`minN`](#minn)
 
 </details>
 
@@ -1047,6 +1105,57 @@ const mapObject = (arr, fn) =>
 ```js
 const squareIt = arr => mapObject(arr, a => a * a);
 squareIt([1, 2, 3]); // { 1: 1, 2: 4, 3: 9 }
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### maxN
+
+Returns the `n` maximum elements from the provided array. If `n` is greater than or equal to the provided array's length, then return the original array(sorted in descending order).
+
+Use `Array.sort()` combined with the spread operator (`...`) to create a shallow clone of the array and sort it in descending order. 
+Use `Array.slice()` to get the specified number of elements.
+Omit the second argument, `n`, to get a one-element array.
+
+```js
+const maxN = (arr, n = 1) => [...arr].sort((a, b) => b - a).slice(0, n);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+maxN([1, 2, 3]); // [3]
+maxN([1, 2, 3], 2); // [3,2]
+maxN([1, 2, 3], 4); // [3,2,1]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### minN
+
+Returns the `n` minimum elements from the provided array. If `n` is greater than or equal to the provided array's length, then return the original array(sorted in ascending order).
+
+Use `Array.sort()` combined with the spread operator (`...`) to create a shallow clone of the array and sort it in ascending order.
+Use `Array.slice()` to get the specified number of elements.
+Omit the second argument, `n`, to get a one-element array.
+
+```js
+const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
+```
+<details>
+<summary>Examples</summary>
+
+```js
+minN([1, 2, 3]); // [1]
+minN([1, 2, 3], 2); // [1,2]
+minN([1, 2, 3], 4); // [1,2,3]
 ```
 
 </details>
@@ -2763,6 +2872,57 @@ factorial(6); // 720
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### factors
+
+Returns the array of factors of the given `num`. 
+If the second argument is set to `true` returns only the prime factors of `num`.
+If `num` is `1` or `0` returns an empty array.
+If `num` is less than `0` returns all the factors of `-int` together with their additive inverses.
+
+Use `Array.from()`, `Array.map()` and `Array.filter()` to find all the factors of `num`.
+If given `num` is negative, use `Array.reduce()` to add the additive inverses to the array.
+Return all results if `primes` is `false`, else determine and return only the prime factors using `isPrime` and `Array.filter()`.
+Omit the second argument, `primes`, to return prime and non-prime factors by default.
+
+**Note**:- _Negative numbers are not considered prime._
+
+```js
+const factors = (num, primes = false) => {
+  const isPrime = num => {
+    const boundary = Math.floor(Math.sqrt(num));
+    for (var i = 2; i <= boundary; i++) if (num % i === 0) return false;
+    return num >= 2;
+  };
+  const isNeg = num < 0;
+  num = isNeg ? -num : num;
+  let array = Array.from({ length: num - 1 })
+    .map((val, i) => (num % (i + 2) === 0 ? i + 2 : false))
+    .filter(val => val);
+  if (isNeg)
+    array = array.reduce((acc, val) => {
+      acc.push(val);
+      acc.push(-val);
+      return acc;
+    }, []);
+  return primes ? array.filter(isPrime) : array;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+factors(12); // [2,3,4,6,12]
+factors(12, true); // [2,3]
+factors(-12); // [2, -2, 3, -3, 4, -4, 6, -6, 12, -12]
+factors(-12, true); // [2,3]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### fibonacci
 
 Generates an array, containing the Fibonacci sequence, up until the nth term.
@@ -2871,6 +3031,37 @@ gcd(8, 36); // 4
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### geometricProgression
+
+Initializes an array containing the numbers in the specified range where `start` and `end` are inclusive and the ratio between two terms is `step`. 
+Returns an error if `step` equals `1`.
+
+Use `Array.from()`, `Math.log()` and `Math.floor()` to create an array of the desired length, `Array.map()` to fill with the desired values in a range. 
+Omit the second argument, `start`, to use a default value of `1`.
+Omit the third argument, `step`, to use a default value of `2`.
+
+```js
+const geometricProgression = (end, start = 1, step = 2) =>
+  Array.from({ length: Math.floor(Math.log(end / start) / Math.log(step)) + 1 }).map(
+    (v, i) => start * step ** i
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+geometricProgression(256); // [1, 2, 4, 8, 16, 32, 64, 128, 256]
+geometricProgression(256, 3); //[3, 6, 12, 24, 48, 96, 192]
+geometricProgression(256, 1, 4); //[1, 4, 16, 64, 256]
+geometricProgression(256, 2, 1); //Gives error
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### hammingDistance
 
 Calculates the Hamming distance between two values.
@@ -2887,6 +3078,47 @@ const hammingDistance = (num1, num2) => ((num1 ^ num2).toString(2).match(/1/g) |
 
 ```js
 hammingDistance(2, 3); // 1
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### howManyTimes
+
+Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer. 
+Works for both negative and positive integers.
+
+If `divisor` is `-1` or `1` return `Infinity`.
+If `divisor` is `-0` or `0` return `0`.
+Otherwise, keep dividing `num` with `divisor` and incrementing `i`, while the result is an integer.
+Return the number of times the loop was executed, `i`.
+
+```js
+const howManyTimes = (num, divisor) => {
+  if (divisor === 1 || divisor === -1) return Infinity;
+  if (divisor === 0) return 0;
+  let i = 0;
+  while (Number.isInteger(num / divisor)) {
+    i++;
+    num = num / divisor;
+  }
+  return i;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+howManyTimes(100, 2); //2
+howManyTimes(100, -2); //2
+howManyTimes(100, 2.5); //2
+howManyTimes(100, 3); //0
+howManyTimes(100, 0); //0
+howManyTimes(100, 1); //Infinity
+howManyTimes(100, -1); //Infinity
 ```
 
 </details>
@@ -4146,6 +4378,38 @@ palindrome('taco cat'); // true
 <br>[⬆ Back to top](#table-of-contents)
 
 
+# pluralize
+
+If `num` is greater than `1` returns the plural form of the given string, else return the singular form.
+
+Check if `num` is greater than `0`. Throw an appropriate `Error` if not, return the appropriate string otherwise.
+Omit the third argument, `items`, to use a default plural form same as `item` suffixed with a single `'s'`.
+
+```js
+const pluralize = (num, item, items = item + 's') =>
+  num <= 0
+    ? (() => {
+        throw new Error(`'num' should be >= 1. Value povided was ${num}.`);
+      })()
+    : num === 1 ? item : items;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+pluralize(1, 'apple', 'apples'); // 'apple'
+pluralize(3, 'apple', 'apples'); // 'apples'
+pluralize(2, 'apple'); // 'apples'
+pluralize(0, 'apple', 'apples'); // Gives error
+pluralize(-3, 'apple', 'apples'); // Gives error
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### repeatString
 
 Repeats a string n times using `String.repeat()`
@@ -5145,30 +5409,41 @@ yesNo('Foo', true); // true
 
 <br>[⬆ Back to top](#table-of-contents)
 
----
- ## _Uncategorized_
 
-### geometricProgression
+### maxN
 
-Initializes an array containing the numbers in the specified range where `start` and `end` are inclusive and the ratio between two terms is `step`. 
-Returns an error if `step` equals `1`.
+Returns the `n` maximum elements from the provided array. If `n` is greater than or equal to the provided array's length than return the original array(sorted in descending order).
 
-Use `Array.from()`, `Math.log()` and `Math.floor()` to create an array of the desired length, `Array.map()` to fill with the desired values in a range. 
-Omit the second argument, `start`, to use a default value of `1`.
-Omit the third argument, `step`, to use a default value of `2`.
+Sort's the array's shallow copy in descending order and returns the first n elements
 
+Skip the second argument to get a single element(in the form of a array)
 ```js
-const geometricProgression = (end, start = 1, step = 2) =>
-  Array.from({ length: Math.floor(Math.log(end / start) / Math.log(step)) + 1 }).map(
-    (v, i) => start * step ** i
-  );
+const maxN = (arr, n = 1) => [...arr].sort((a, b) => b - a).slice(0, n);
 ```
 
 ```js
-geometricProgression(256); // [1, 2, 4, 8, 16, 32, 64, 128, 256]
-geometricProgression(256, 3); //[3, 6, 12, 24, 48, 96, 192]
-geometricProgression(256, 1, 4); //[1, 4, 16, 64, 256]
-geometricProgression(256, 2, 1); //Gives error
+maxN([1, 2, 3]); // [3]
+maxN([1, 2, 3], 2); // [3,2]
+maxN([1, 2, 3], 4); // [3,2,1]
+```
+
+<br>[⬆ back to top](#table-of-contents)
+
+
+### minN
+
+Returns the `n` minimum elements from the provided array. If `n` is greater than or equal to the provided array's length than return the original array(sorted in ascending order).
+
+Sort's the array's shallow copy in ascending order and returns the first n elements
+
+Skip the second argument to get a single element(in the form of a array)
+```js
+const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
+```
+```js
+minN([1, 2, 3]); // [1]
+minN([1, 2, 3], 2); // [1,2]
+minN([1, 2, 3], 4); // [1,2,3]
 ```
 
 <br>[⬆ back to top](#table-of-contents)
