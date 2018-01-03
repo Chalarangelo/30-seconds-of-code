@@ -20,5 +20,5 @@ const insertIntoBST = (tree, value) => {
 
 ```js
 const tree = createBST(8);
-insertIntoBST(tree, 3); // 'Creates and inserts new node with a value of 3 to the existing tree with root 8 '
+insertIntoBST(tree, 3); // 'Creates and inserts new node with a value of 3 to the existing tree'
 ```

@@ -9,5 +9,5 @@ const createBST = value => ({value: value, right: null, left: null});
 ```
 
 ```js
-createBST(8) // 'creates a BST'
+createBST(8); // 'creates a BST'
 ```

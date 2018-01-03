@@ -86,7 +86,7 @@
 
 </details>
 
-###  Binarysearchtree
+### 🌲 Binarysearchtree
 
 <details>
 <summary>View contents</summary>
@@ -1697,7 +1697,7 @@ zipObject(['a', 'b'], [1, 2, 3]); // {a: 1, b: 2}
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ##  Binarysearchtree
+ ## 🌲 Binarysearchtree
 
 ### createBST
 

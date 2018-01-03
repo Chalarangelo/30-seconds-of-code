@@ -19,6 +19,7 @@ const snippets = {};
 const EMOJIS = {
   adapter: '🔌',
   array: '📚',
+  binarySearchTree: '🌲',
   browser: '🌐',
   date: '⏱️',
   function: '🎛️',
