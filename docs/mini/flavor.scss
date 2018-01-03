@@ -30,6 +30,9 @@ $card-section-double-padded-padding:  calc(1.5 * var(#{$universal-padding-var}))
   padding: calc(3 * var(#{$universal-padding-var}));
 }
 
+.#{$card-name} > .#{$card-section-name}.#{$card-section-double-padded-name} > p {
+  margin: var(#{$universal-margin-var}) calc(var(#{$universal-margin-var}) / 2);
+}
 
 @import 'input_control';
 
@@ -240,6 +243,13 @@ pre[class*="language-"] {
   hyphens: none;
 }
 
+pre[class*="language-"] {
+  padding: calc(2 * var(#{$universal-padding-var}));
+  overflow: auto;
+  margin: var(#{$universal-margin-var}) 0;
+}
+
+
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
   background: #b3d4fc;
@@ -250,18 +260,12 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
   background: #b3d4fc;
 }
 
-pre[class*="language-"] {
-  padding: 1em;
-  margin: .5em 0;
-  overflow: auto;
-}
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
   background: #f5f2f0;
 }
 
-/* Inline code */
 :not(pre) > code[class*="language-"] {
   padding: .1em;
   border-radius: .3em;
@@ -272,11 +276,11 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: slategray;
+  color: #7a8490;
 }
 
 .token.punctuation {
-  color: #999;
+  color: #666;
 }
 
 .namespace {
@@ -290,7 +294,7 @@ pre[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-  color: #905;
+  color: #005cc5;
 }
 
 .token.selector,
@@ -299,7 +303,7 @@ pre[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-  color: #690;
+  color: #007e5d;
 }
 
 .token.operator,
@@ -307,17 +311,17 @@ pre[class*="language-"] {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-  color: #a67f59;
+  color: #d73a49;
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-  color: #07a;
+  color: #d73a49;
 }
 
 .token.function {
-	color: #DD4A68;
+	color: #005cc5;
 }
 
 .token.regex,
