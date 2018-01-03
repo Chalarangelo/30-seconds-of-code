@@ -5,7 +5,13 @@
 
 // Load modules
 const fs = require('fs-extra');
-
+const chalk = require('chalk');
+// Load helper functions (these are from existing snippets in 30 seconds of code!)
+const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
+if(isTravisCI() && process.env['TRAVIS_EVENT_TYPE'] !== 'cron' && process.env['TRAVIS_EVENT_TYPE'] !== 'api') {
+  console.log(`${chalk.green('NOBUILD')} Testing terminated, not a cron job or a custom build!`);
+  process.exit(0);
+}
 // Declare paths
 const SNIPPETS_PATH = './snippets';
 const TEST_PATH = './test';
