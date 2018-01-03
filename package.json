@@ -13,7 +13,8 @@
     "semistandard": "^11.0.0",
     "tape": "^4.8.0",
     "tap-spec": "^4.1.1",
-    "mini.css": "^2.3.7"
+    "mini.css": "^2.3.7",
+    "prismjs": "^1.9.0"
   },
   "name": "30-seconds-of-code",
   "description": "A collection of useful JavaScript snippets.",
