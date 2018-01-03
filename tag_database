@@ -63,7 +63,7 @@ hasFlags:node
 head:array
 hexToRGB:utility
 hide:browser
-howManyTimes:uncategorized
+howManyTimes:math
 httpsRedirect:browser
 initial:array
 initialize2DArray:array
