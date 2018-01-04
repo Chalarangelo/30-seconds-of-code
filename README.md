@@ -2012,13 +2012,17 @@ Redirects the page to HTTPS if its currently in HTTP. Also, pressing the back bu
 
 Use `location.protocol` to get the protocol currently being used. If it's not HTTPS, use `location.replace()` to replace the existing page with the HTTPS version of the page. Use `location.href` to get the full address, split it with `String.split()` and remove the protocol part of the URL.
 
-<details>
-<summary>Examples</summary>
-
 ```js
 const httpsRedirect = () => {
   if (location.protocol !== 'https:') location.replace('https://' + location.href.split('//')[1]);
 };
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+httpsRedirect(); // If you are on http://mydomain.com, you are redirected to https://mydomain.com
 ```
 
 </details>
