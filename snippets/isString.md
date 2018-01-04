@@ -9,6 +9,5 @@ const isString = val => typeof val === 'string';
 ```
 
 ```js
-isString(10); // false
 isString('10'); // true
 ```

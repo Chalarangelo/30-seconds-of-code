@@ -17,11 +17,6 @@ const pull = (arr, ...args) => {
 ```
 
 ```js
-let myArray1 = ['a', 'b', 'c', 'a', 'b', 'c'];
-pull(myArray1, 'a', 'c');
-console.log(myArray1); // [ 'b', 'b' ]
-
-let myArray2 = ['a', 'b', 'c', 'a', 'b', 'c'];
-pull(myArray2, ['a', 'c']);
-console.log(myArray2); // [ 'b', 'b' ]
+let myArray = ['a', 'b', 'c', 'a', 'b', 'c'];
+pull(myArray, 'a', 'c'); // myArray = [ 'b', 'b' ]
 ```

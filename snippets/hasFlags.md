@@ -13,7 +13,6 @@ const hasFlags = (...flags) =>
 ```js
 // node myScript.js -s --test --cool=true
 hasFlags('-s'); // true
-hasFlags('test', 'cool=true'); // true
 hasFlags('--test', 'cool=true', '-s'); // true
 hasFlags('special'); // false
 ```

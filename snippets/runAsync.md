@@ -2,8 +2,8 @@
 
 Runs a function in a separate thread by using a [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), allowing long running functions to not block the UI.
 
-Create a new `Worker` using a `Blob` object URL, the contents of which should be the stringified version of the supplied function. 
-Immediately post the return value of calling the function back. 
+Create a new `Worker` using a `Blob` object URL, the contents of which should be the stringified version of the supplied function.
+Immediately post the return value of calling the function back.
 Return a promise, listening for `onmessage` and `onerror` events and resolving the data posted back from the worker, or throwing an error.
 
 ```js
@@ -37,10 +37,11 @@ const longRunningFunction = () => {
   }
   return result;
 };
-
-// NOTE: Since the function is running in a different context, closures are not supported.
-// The function supplied to `runAsync` gets stringified, so everything becomes literal.
-// All variables and functions must be defined inside.
+/*
+  NOTE: Since the function is running in a different context, closures are not supported.
+  The function supplied to `runAsync` gets stringified, so everything becomes literal.
+  All variables and functions must be defined inside.
+*/
 runAsync(longRunningFunction).then(console.log); // 209685000000
 runAsync(() => 10 ** 3).then(console.log); // 1000
 let outsideVariable = 50;

@@ -20,10 +20,6 @@ chainAsync([
   },
   next => {
     console.log('1 second');
-    setTimeout(next, 1000);
-  },
-  next => {
-    console.log('2 seconds');
   }
 ]);
 ```

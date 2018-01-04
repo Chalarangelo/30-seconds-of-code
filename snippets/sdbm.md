@@ -17,5 +17,4 @@ const sdbm = str => {
 
 ```js
 console.log(sdbm('name')); // -3521204949
-console.log(sdbm('age')); // 808122783
 ```

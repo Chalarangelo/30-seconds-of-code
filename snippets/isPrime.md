@@ -15,5 +15,4 @@ const isPrime = num => {
 
 ```js
 isPrime(11); // true
-isPrime(12); // false
 ```
