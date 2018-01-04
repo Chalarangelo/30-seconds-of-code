@@ -7,11 +7,45 @@
   Maintainers: Angelos Chalaris
   mini.css version: v3.0.0-alpha.2
 */
-$_include-modal: false;
-$_include-tooltip: false;
-$_include-collapse: false;
+
+$fore-color-var:                '--f-col';
+$secondary-fore-color-var:      '--f-col2';
+$back-color-var:                '--b-col';
+$secondary-back-color-var:      '--b-col2';
+$blockquote-color-var:          '--blq-col';
+$pre-color-var:                 '--pre-col';
+$border-color-var:              '--br-col';
+$secondary-border-color-var:    '--br-col2';
+$heading-ratio-var:             '--h-ratio';
+$universal-margin-var:          '--u-m';
+$universal-padding-var:         '--u-p';
+$universal-border-radius-var:   '--u-br-r';
+$universal-box-shadow-var:      '--u-bx-shd';
+$a-link-color-var:              '--a-l-col';
+$a-visited-color-var:           '--a-v-col';
+
+$code-font-size:  0.8125em;
 
 @import 'core';
+
+$grid-container-name:          'container';
+$grid-row-name:                'row';
+$grid-row-parent-layout-prefix:'cols';
+$grid-column-prefix:           'col';
+$grid-column-offset-suffix:    'o';
+$grid-order-normal-suffix:     'n';
+$grid-order-first-suffix:      'f';
+$grid-order-last-suffix:       'l';
+$grid-small-prefix:            'sm';
+$grid-medium-prefix:           'md';
+$grid-large-prefix:            'lg';
+
+$card-fore-color-var:          '--cd-f-col';
+$card-back-color-var:          '--cd-b-col';
+$card-border-color-var:        '--cd-br-col';
+
+$_include-parent-layout: false;
+
 @import 'layout';
 
 /*
@@ -26,6 +60,10 @@ $card-section-double-padded-name:    'double-padded';   // Class name for card d
 $card-section-double-padded-padding:  calc(1.5 * var(#{$universal-padding-var}));  // Padding for card sectiondouble-padded section variant.
 @include make-card-section-alt-style($card-section-double-padded-name, $card-section-double-padded-padding);
 
+.#{$card-name} {
+  box-shadow: 0 1.25rem 2.5rem -0.625rem rgba(0, 32, 64, 0.1);
+}
+
 .#{$card-name} > h3.#{$card-section-name}.#{$card-section-double-padded-name} {
   padding: calc(3 * var(#{$universal-padding-var}));
 }
@@ -37,6 +75,24 @@ $card-section-double-padded-padding:  calc(1.5 * var(#{$universal-padding-var}))
 .#{$card-name} + .#{$card-name} {
   margin-top: calc(5 * var(#{$universal-margin-var}));
 }
+
+$form-back-color-var:         '--frm-b-col';
+$form-fore-color-var:         '--frm-f-col';
+$form-border-color-var:       '--frm-br-col';
+$input-back-color-var:        '--in-b-col';
+$input-fore-color-var:        '--in-f-col';
+$input-border-color-var:      '--in-br-col';
+$input-focus-color-var:       '--in-fc-col';
+$input-invalid-color-var:     '--in-inv-col';
+$button-back-color-var:       '--btn-b-col';
+$button-hover-back-color-var: '--btn-h-b-col';
+$button-fore-color-var:       '--btn-f-col';
+$button-border-color-var:       '--btn-br-col';
+$button-hover-border-color-var: '--btn-h-br-col';
+$button-group-border-color-var: '--btn-grp-br-col';
+
+
+$_include-fluid-input-group: false;
 
 @import 'input_control';
 
@@ -50,9 +106,52 @@ $button-primary-fore-color:      #f8f8f8;     // Text color for primary button c
 @include make-button-alt-color ($button-primary-name, $button-primary-back-color, $button-primary-hover-back-color, $button-primary-fore-color);
 
 
+$header-fore-color-var:          '--hd-f-col';
+$header-back-color-var:          '--hd-b-col';
+$header-hover-back-color-var:    '--hd-hv-b-col';
+$header-border-color-var:        '--hd-br-col';
+$nav-fore-color-var:             '--nv-f-col';
+$nav-back-color-var:             '--nv-b-col';
+$nav-hover-back-color-var:       '--nv-hv-b-col';
+$nav-border-color-var:           '--nv-br-col';
+$nav-link-color-var:             '--nv-ln-col';
+$footer-fore-color-var:          '--ft-f-col';
+$footer-back-color-var:          '--ft-b-col';
+$footer-border-color-var:        '--ft-br-col';
+$footer-link-color-var:          '--ft-ln-col';
+$drawer-back-color-var:          '--dr-b-col';
+$drawer-border-color-var:        '--dr-br-col';
+$drawer-hover-back-color-var:    '--dr-hv-b-col';
+$drawer-close-color-var:         '--dr-cl-col';
+
+
+$nav-sublink-depth:    1;
+
 $_drawer-right: false;
 
 @import 'navigation';
+
+$mark-back-color-var:         '--mrk-b-col';
+$mark-fore-color-var:         '--mrk-f-col';
+$toast-back-color-var:        '--tst-b-col';
+$toast-fore-color-var:        '--tst-f-col';
+$tooltip-back-color-var:      '--tltp-b-col';
+$tooltip-fore-color-var:      '--tltp-f-col';
+$modal-overlay-color-var:     '--mdl-ov-col';
+$modal-close-color-var:       '--mdl-cl-col';
+$modal-close-hover-back-color-var: '--mdl-cl-h-col';
+$collapse-label-back-color-var:    '--clps-lbl-b-col';
+$collapse-label-fore-color-var:    '--clps-lbl-f-col';
+$collapse-label-hover-back-color-var:    '--clps-lbl-h-b-col';
+$collapse-selected-label-back-color-var: '--clps-sel-lbl-b-col';
+$collapse-border-color-var:        '--clps-br-col';
+$collapse-content-back-color-var:  '--clps-cnt-b-col';
+$collapse-selected-label-border-color-var: '--clps-sel-lbl-br-col';
+
+$_include-modal: false;
+$_include-tooltip: false;
+$_include-collapse: false;
+
 @import 'contextual';
 
 /*
@@ -72,55 +171,41 @@ $mark-tag-border-radius:        1em;
 @include make-mark-alt-size ($mark-tag-name, $mark-tag-padding, $mark-tag-border-radius);
 
 // Website-specific styles
-
-html, * {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, sans-serif;
-}
 code, pre, kbd, code *, pre *, kbd *, code[class*="language-"], pre[class*="language-"] {
   font-family: Menlo, Consolas, monospace !important;
 }
-code, kbd {
-  font-size: 0.8125em;
-}
-pre code {
-  padding: 0; // Should make the first line's left padding the same as all other lines and avoid that annoying little step.
-}
-code {
-  transform: scale(1);  /* Deals with the issue described in #243 */
-}
 pre {
-  font-size: 0.8125rem;
-  border: 0.0625rem solid var(--secondary-border-color);
-  border-radius: var(--universal-border-radius);
+  border: 0.0625rem solid var(#{$secondary-border-color-var});
+  border-radius: var(#{$universal-border-radius-var});
 }
 .group{
   position:relative;
-  margin-top:2em;
-  margin-bottom:1em
+  margin-top: 2em;
+  margin-bottom: 1em
 }
 .search{
-  font-size:14px;
-  margin-top:-.1em;
+  font-size: 0.875rem;
+  margin-top: -0.1em;
   display:block;
   width:100%;
   border:none;
-  border-bottom:1px solid var(--nav-link-color);
+  border-bottom: $__1px solid var(#{$nav-link-color-var});
 }
 .search:focus{
   outline:none
 }
 label#search-label{
-  color:var(--nav-link-color);
-  font-size:18px;
+  color:var(#{$nav-link-color-var});
+  font-size: 1.125rem;
   font-weight:400;
   position:absolute;
-  left:5px;
-  top:10px;
+  left: 0.3125rem;
+  top: 0.625rem;
 }
 .search:focus ~ label#search-label,.search:valid ~ label#search-label{
-  top:-20px;
-  font-size:14px;
-  color:var(--nav-link-color);
+  top: -1.25rem;
+  font-size: 0.875rem;
+  color:var(#{$nav-link-color-var});
 }
 label#menu-toggle {
   width: 3.4375rem;
@@ -156,10 +241,6 @@ label#menu-toggle {
   left: 0.5rem;
   top: 0.5rem;
   width: 3.4375rem;
-}
-
-.card {
-  box-shadow: 0 1.25rem 2.5rem -0.625rem rgba(0, 32, 64, 0.1);
 }
 
 main {
