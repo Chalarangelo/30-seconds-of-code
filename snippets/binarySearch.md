@@ -1,6 +1,6 @@
 ### binarySearch
 
-Use recursion to perform a logarithmic search that finds the index of a value within an array. The two differences being 
+Use recursion to perform a logarithmic search similar to `.indexOf()` that finds the index of a value within an array. The two differences being 
 1. Opperation only works with sorted arrays
 2. Offers a major performance boost when compared liner search or `.indexOf()` 
 
