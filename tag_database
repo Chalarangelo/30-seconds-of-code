@@ -47,7 +47,7 @@ filterNonUnique:array
 flatten:array
 flattenDepth:array
 flip:adapter
-formatDuration:uncategorized
+formatDuration:date
 fromCamelCase:string
 functionName:function
 gcd:math
@@ -96,7 +96,7 @@ JSONToFile:node
 last:array
 lcm:math
 lowercaseKeys:object
-luhnCheck:uncategorized
+luhnCheck:math
 mapObject:array
 mask:string
 maxN:array
