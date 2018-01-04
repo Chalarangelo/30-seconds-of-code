@@ -2,7 +2,7 @@
 
 # 30 seconds of code
 
-[![License](https://img.shields.io/badge/license-CC0--1.0-blue.svg)](https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE) [![Gitter chat](https://img.shields.io/badge/chat-on%20gitter-4FB999.svg)](https://gitter.im/30-seconds-of-code/Lobby) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Travis Build](https://travis-ci.org/Chalarangelo/30-seconds-of-code.svg?branch=master)](https://travis-ci.org/Chalarangelo/30-seconds-of-code) [![Insight.io](https://img.shields.io/badge/insight.io-Ready-brightgreen.svg)](https://insight.io/github.com/Chalarangelo/30-seconds-of-code/tree/master/?source=0) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard) [![ProductHunt](https://img.shields.io/badge/producthunt-vote-orange.svg)](https://www.producthunt.com/posts/30-seconds-of-code)
+[![License](https://img.shields.io/badge/license-CC0--1.0-blue.svg)](https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE) [![npm Downloads](https://img.shields.io/npm/dt/30-seconds-of-code.svg)](https://www.npmjs.com/package/30-seconds-of-code) [![npm Version](https://img.shields.io/npm/v/30-seconds-of-code.svg)](https://www.npmjs.com/package/30-seconds-of-code) [![Gitter chat](https://img.shields.io/badge/chat-on%20gitter-4FB999.svg)](https://gitter.im/30-seconds-of-code/Lobby) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Travis Build](https://travis-ci.org/Chalarangelo/30-seconds-of-code.svg?branch=master)](https://travis-ci.org/Chalarangelo/30-seconds-of-code) [![Insight.io](https://img.shields.io/badge/insight.io-Ready-brightgreen.svg)](https://insight.io/github.com/Chalarangelo/30-seconds-of-code/tree/master/?source=0) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard) [![ProductHunt](https://img.shields.io/badge/producthunt-vote-orange.svg)](https://www.producthunt.com/posts/30-seconds-of-code)
 
 
 > Curated collection of useful JavaScript snippets that you can understand in 30 seconds or less.
@@ -2097,10 +2097,7 @@ Return a promise, listening for `onmessage` and `onerror` events and resolving t
 
 ```js
 const runAsync = fn => {
-  const blob = `
-    var fn = ${fn.toString()};
-    this.postMessage(fn());
-  `;
+  const blob = `var fn = ${fn.toString()}; postMessage(fn());`;
   const worker = new Worker(
     URL.createObjectURL(new Blob([blob]), {
       type: 'application/javascript; charset=utf-8'
@@ -2123,9 +2120,9 @@ const runAsync = fn => {
 ```js
 const longRunningFunction = () => {
   let result = 0;
-  for (var i = 0; i < 1000; i++) {
-    for (var j = 0; j < 700; j++) {
-      for (var k = 0; k < 300; k++) {
+  for (let i = 0; i < 1000; i++) {
+    for (let j = 0; j < 700; j++) {
+      for (let k = 0; k < 300; k++) {
         result = result + i + j + k;
       }
     }
@@ -4323,7 +4320,7 @@ palindrome('taco cat'); // true
 <br>[⬆ Back to top](#table-of-contents)
 
 
-# pluralize
+### pluralize
 
 If `num` is greater than `1` returns the plural form of the given string, else return the singular form.
 
@@ -4907,13 +4904,14 @@ Checks if the given argument is a function.
 Use `typeof` to check if a value is classified as a function primitive.
 
 ```js
-const isFunction = val => val && typeof val === 'function';
+const isFunction = val => typeof val === 'function';
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```js
+isFunction(null); // false
 isFunction('x'); // false
 isFunction(x => x); // true
 ```

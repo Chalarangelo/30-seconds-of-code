@@ -7,44 +7,36 @@
   Maintainers: Angelos Chalaris
   mini.css version: v3.0.0-alpha.2
 */
+$_include-modal: false;
+$_include-tooltip: false;
+$_include-collapse: false;
+
 @import 'core';
 @import 'layout';
 
 /*
   Custom elements for card elements.
 */
-$card-small-name:              'small';            // Class name for small cards.
-$card-small-width:             240px;              // Width for small cards.
-@include make-card-alt-size ($card-small-name, $card-small-width);
-
-$card-large-name:              'large';            // Class name for large cards.
-$card-large-width:             480px;              // Width for large cards.
-@include make-card-alt-size ($card-large-name, $card-large-width);
 
 $card-fluid-name:              'fluid';            // Class name for fluid cards.
 $card-fluid-width:             100%;               // Width for fluid cards.
 @include make-card-alt-size ($card-fluid-name, $card-fluid-width);
 
-$card-warning-name:            'warning';          // Class name for card warnging color variant.
-$card-warning-back-color:      #ffca28;            // Background color for card warnging color variant.
-$card-warning-fore-color:      #111;               // Text color for card warnging color variant.
-$card-warning-border-color:    #e8b825;            // Border style for card warnging color variant.
-@include make-card-alt-color ($card-warning-name, $card-warning-back-color, $card-warning-fore-color, $card-warning-border-color);
-
-$card-error-name:              'error';            // Class name for card error color variant.
-$card-error-back-color:        #b71c1c;            // Background color for card error color variant.
-$card-error-fore-color:        #f8f8f8;            // Text color for card error color variant.
-$card-error-border-color:      #a71a1a;            // Border style for card error color variant.
-@include make-card-alt-color ($card-error-name, $card-error-back-color, $card-error-fore-color, $card-error-border-color);
-
-$card-section-dark-name:        'dark';            // Class name for card dark section variant.
-$card-section-dark-back-color:  #e0e0e0;           // Background color for card dark section variant.
-$card-section-dark-fore-color:  #111;              // Text color for card dark section variant.
-@include make-card-section-alt-color ($card-section-dark-name, $card-section-dark-back-color, $card-section-dark-fore-color);
-
 $card-section-double-padded-name:    'double-padded';   // Class name for card double-padded section variant.
 $card-section-double-padded-padding:  calc(1.5 * var(#{$universal-padding-var}));  // Padding for card sectiondouble-padded section variant.
-@include make-card-section-alt-style ($card-section-double-padded-name, $card-section-double-padded-padding);
+@include make-card-section-alt-style($card-section-double-padded-name, $card-section-double-padded-padding);
+
+.#{$card-name} > h3.#{$card-section-name}.#{$card-section-double-padded-name} {
+  padding: calc(3 * var(#{$universal-padding-var}));
+}
+
+.#{$card-name} > .#{$card-section-name}.#{$card-section-double-padded-name} > p {
+  margin: var(#{$universal-margin-var}) calc(var(#{$universal-margin-var}) / 2);
+}
+
+.#{$card-name} + .#{$card-name} {
+  margin-top: calc(5 * var(#{$universal-margin-var}));
+}
 
 @import 'input_control';
 
@@ -56,34 +48,6 @@ $button-primary-back-color:      #1976d2;     // Background color for primary bu
 $button-primary-hover-back-color:#1565c0;     // Background color for primary button color variant (hover).
 $button-primary-fore-color:      #f8f8f8;     // Text color for primary button color variant.
 @include make-button-alt-color ($button-primary-name, $button-primary-back-color, $button-primary-hover-back-color, $button-primary-fore-color);
-
-$button-secondary-name:            'secondary'; // Class name for secondary button color variant.
-$button-secondary-back-color:      #d32f2f;     // Background color for secondary button color variant.
-$button-secondary-hover-back-color:#c62828;     // Background color for secondary button color variant (hover).
-$button-secondary-fore-color:      #f8f8f8;     // Text color for secondary button color variant.
-@include make-button-alt-color ($button-secondary-name, $button-secondary-back-color, $button-secondary-hover-back-color, $button-secondary-fore-color);
-
-$button-tertiary-name:            'tertiary';  // Class name for tertiary button color variant.
-$button-tertiary-back-color:      #308732;     // Background color for tertiary button color variant.
-$button-tertiary-hover-back-color:#277529;     // Background color for tertiary button color variant (hover).
-$button-tertiary-fore-color:      #f8f8f8;     // Text color for tertiary button color variant.
-@include make-button-alt-color ($button-tertiary-name, $button-tertiary-back-color, $button-tertiary-hover-back-color, $button-tertiary-fore-color);
-
-$button-inverse-name:            'inverse';   // Class name for inverse button color variant.
-$button-inverse-back-color:      #212121;     // Background color for inverse button color variant.
-$button-inverse-hover-back-color:#111;        // Background color for inverse button color variant (hover).
-$button-inverse-fore-color:      #f8f8f8;     // Text color for inverse button color variant.
-@include make-button-alt-color ($button-inverse-name, $button-inverse-back-color, $button-inverse-hover-back-color, $button-inverse-fore-color);
-
-$button-small-name:    'small';              // Class name, padding and margin for small button size variant.
-$button-small-padding: calc(0.5 * var(#{$universal-padding-var})) calc(0.75 * var(#{$universal-padding-var}));
-$button-small-margin:  var(#{$universal-margin-var});
-@include make-button-alt-size ($button-small-name, $button-small-padding, $button-small-margin);
-
-$button-large-name:    'large';              // Class name, padding and margin for large button size variant.
-$button-large-padding: calc(1.5 * var(#{$universal-padding-var})) calc(2 * var(#{$universal-padding-var}));
-$button-large-margin:  var(#{$universal-margin-var});
-@include make-button-alt-size ($button-large-name, $button-large-padding, $button-large-margin);
 
 
 $_drawer-right: false;
@@ -109,24 +73,58 @@ $mark-tag-border-radius:        1em;
 
 // Website-specific styles
 
-html, * { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, sans-serif; }
+html, * {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, sans-serif;
+}
 code, pre, kbd, code *, pre *, kbd *, code[class*="language-"], pre[class*="language-"] {
-   font-family: 'Inconsolata', Menlo, Consolas, monospace !important;
- }
-code, kbd { font-size: 1em; }
+  font-family: Menlo, Consolas, monospace !important;
+}
+code, kbd {
+  font-size: 0.8125em;
+}
 pre code {
   padding: 0; // Should make the first line's left padding the same as all other lines and avoid that annoying little step.
 }
 code {
   transform: scale(1);  /* Deals with the issue described in #243 */
 }
-pre { font-size: 1rem; border: 0.0625rem solid var(--secondary-border-color); border-radius: var(--universal-border-radius);}
-.group{position:relative;margin-top:2em;margin-bottom:1em}
-.search{font-size:14px;margin-top:-.1em;display:block;width:100%;border:none;border-bottom:1px solid var(--nav-link-color)}
-.search:focus{outline:none}
-label#search-label{color:var(--nav-link-color);font-size:18px;font-weight:400;position:absolute;left:5px;top:10px}
-.search:focus ~ label#search-label,.search:valid ~ label#search-label{top:-20px;font-size:14px;color:var(--nav-link-color)}
-label#menu-toggle { width: 3.4375rem;}
+pre {
+  font-size: 0.8125rem;
+  border: 0.0625rem solid var(--secondary-border-color);
+  border-radius: var(--universal-border-radius);
+}
+.group{
+  position:relative;
+  margin-top:2em;
+  margin-bottom:1em
+}
+.search{
+  font-size:14px;
+  margin-top:-.1em;
+  display:block;
+  width:100%;
+  border:none;
+  border-bottom:1px solid var(--nav-link-color);
+}
+.search:focus{
+  outline:none
+}
+label#search-label{
+  color:var(--nav-link-color);
+  font-size:18px;
+  font-weight:400;
+  position:absolute;
+  left:5px;
+  top:10px;
+}
+.search:focus ~ label#search-label,.search:valid ~ label#search-label{
+  top:-20px;
+  font-size:14px;
+  color:var(--nav-link-color);
+}
+label#menu-toggle {
+  width: 3.4375rem;
+}
 
 header h1.logo {
   margin-top: -0.8rem;
@@ -146,7 +144,6 @@ header #title {
 header h1 small {
   display:block;
   font-size: 0.875rem;
-  font-style: italic;
   color: #888;
   margin-top: -0.8rem;
   @media screen and (max-width: 768px) { font-size: 0.75rem; }
@@ -162,33 +159,61 @@ label#menu-toggle {
 }
 
 .card {
-  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.125), 0 0.125rem 0.125rem -0.125rem rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1.25rem 2.5rem -0.625rem rgba(0, 32, 64, 0.1);
 }
 
 main {
   padding: 0;
 }
 
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-  background: none !important;
+:root {
+  #{$collapse-label-back-color-var}:  $collapse-label-back-color;
+  #{$collapse-label-fore-color-var}:  $collapse-label-fore-color;
+  #{$collapse-label-hover-back-color-var}:  $collapse-label-hover-back-color;
+  #{$collapse-selected-label-back-color-var}: $collapse-selected-label-back-color;
+  #{$collapse-border-color-var}: $collapse-border-color;
+  #{$collapse-content-back-color-var} : $collapse-content-back-color;
+  #{$collapse-selected-label-border-color-var}: $collapse-selected-label-border-color;
 }
-
-div.collapse {
-  > label {
-    border-top-left-radius: var(--universal-border-radius) !important;
-    border-top-right-radius: var(--universal-border-radius) !important;
-  }
-  margin: 0;
+label.#{$collapse-name} {
   width: 100%;
-  > div {
-    padding: 0 !important;
-    > pre {
-      margin: 0;
-      border: 0;
+  display: inline-block;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background 0.3s;
+  color: var(#{$collapse-label-fore-color-var});
+  background: var(#{$collapse-label-back-color-var});
+  border: $__1px solid var(#{$collapse-border-color-var});
+  padding: calc(1.5 * var(#{$universal-padding-var}));
+  border-radius: var(#{$universal-border-radius-var});
+  &:hover, &:focus {
+    background: var(#{$collapse-label-hover-back-color-var});
+  }
+  + pre {
+    box-sizing: border-box;
+    height: 0;
+    max-height: 1px;
+    overflow: auto;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    transition: max-height 0.3s;
+  }
+  &.toggled {
+    background: var(#{$collapse-selected-label-back-color-var});
+    border-bottom-color: var(#{$collapse-selected-label-border-color-var});
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    + pre {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      position: relative;
+      width: 100%;
+      height: auto;
+      border: $__1px solid var(#{$collapse-border-color-var});
+      border-top: 0;
+      padding: calc(2 * var(#{$universal-padding-var}));
+      max-height: $collapse-content-max-height;
     }
   }
 }
@@ -196,7 +221,120 @@ div.collapse {
 button.primary.clipboard-copy {
   width: 100%;
   margin-left: 0;
-  > svg {
+  > img {
     vertical-align: bottom;
   }
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: black;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.8;
+
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+
+  -webkit-hypens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre[class*="language-"] {
+  padding: calc(2 * var(#{$universal-padding-var}));
+  overflow: auto;
+  margin: var(#{$universal-margin-var}) 0;
+}
+
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+  background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+  background: #b3d4fc;
+}
+
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #7a8490;
+}
+
+.token.punctuation {
+  color: #666;
+}
+
+.namespace {
+  opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.constant,
+.token.symbol,
+.token.deleted,
+.token.function {
+  color: #005cc5;
+}
+
+
+.token.number{
+  color: #8132b5;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #007e5d;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #d73a49;
+}
+
+.token.regex {
+  color: #007972;
+}
+.token.important,
+.token.variable {
+  color: #e90;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
 }

@@ -1,0 +1,32 @@
+// Progress module's mixin definitions are here. For the module itself
+// check `progress.scss`.
+// Progress color variant mixin:
+//  $progress-alt-name: The name of the class used for the <progress> variant.
+//  $progress-alt-fore-color: Foregound color for <progress> variant.
+//  $progress-alt-back-color: Background color for <progress> variant.
+@mixin make-progress-alt-color ($progress-alt-name, $progress-alt-fore-color : $progress-fore-color,
+  $progress-alt-back-color : $progress-back-color) {
+  progress.#{$progress-alt-name} {
+    @if $progress-alt-fore-color != $progress-fore-color{
+      #{$progress-fore-color-var}: $progress-alt-fore-color;
+    }
+    @if $progress-alt-back-color != $progress-back-color {
+      #{$progress-back-color-var}: $progress-alt-back-color;
+    }
+  }
+}
+// Spinner donut color variant mixin:
+//  $spinner-donut-alt-name: The name of the class used for the spinner donut variant.
+//  $spinner-donut-alt-fore-color: Text color for spinner donut variant.
+//  $spinner-donut-alt-back-color: Background color for spinner donut variant.
+@mixin make-spinner-donut-alt-color ($spinner-donut-alt-name, $spinner-donut-alt-fore-color : $spinner-donut-fore-color,
+  $spinner-donut-alt-back-color : $spinner-donut-back-color) {
+  .#{$spinner-donut-name}.#{$spinner-donut-alt-name} {
+    @if $spinner-donut-alt-fore-color != $spinner-donut-fore-color{
+      #{$spinner-donut-fore-color-var}: $spinner-donut-alt-fore-color;
+    }
+    @if $spinner-donut-alt-back-color != $spinner-donut-back-color {
+      #{$spinner-donut-back-color-var}: $spinner-donut-alt-back-color;
+    }
+  }
+}
