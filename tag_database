@@ -1,6 +1,7 @@
 anagrams:string
 arrayToHtmlList:browser
 average:math
+binarySearch:array
 bottomVisible:browser
 byteSize:string
 call:adapter
