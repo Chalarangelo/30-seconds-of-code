@@ -1,30 +1,31 @@
 ### formatDuration
 
-Returns the human readable format of the given number of milliseconds. If milliseconds is equal to `0` return `'now'` .
+Returns the human readable format of the given number of milliseconds.
+
+Divide `ms` with the appropriate values to obtain the appropriate values for `day`, `hour`, `minute`, `second` and `millisecond`.
+Use `Object.entries()` with `Array.filter()` to keep only non-zero values.
+Use `Array.map()` to create the string for each value, pluralizing appropriately.
+Use `String.join(', ')` to combine the values into a string.
 
 ``` js
-const formatDuration = milliseconds => {
-if(milliseconds === 0) return 'now'
-if(milliseconds < 0) milliseconds = -milliseconds
-const join = (arr, separator = ',', end = separator) =>
-  arr.reduce(
-    (acc, val, i) =>
-      i == arr.length - 2
-        ? acc + val + end
-        : i == arr.length - 1 ? acc + val : acc + val + separator,
-    ''
-  );
-const pluralize = (num, word, plural = word + 's') =>
-    Number(num) === 1 ? word : plural;
-  let date = new Date(milliseconds)
-  let array = [date.getUTCMilliseconds(),date.getUTCSeconds(),date.getUTCMinutes(),date.getUTCHours(),date.getUTCDate()-1,date.getUTCMonth(),date.getUTCFullYear()-1970]
-  let time = ["millisecond","second","minute","hour","day","month","year"]
-  array = array.map((el,i) => [el,time[i]]).filter(el => el[0] !== 0).map(el => [el[0],pluralize(el[0],el[1])]).map(el => el[0] + ' ' + el[1])
-  return join(array.reverse(),', ',' and ')
-}
+const formatDuration = ms => {
+  if (ms < 0) ms = -ms;
+  const time = {
+    day: Math.floor(ms / 86400000),
+    hour: Math.floor(ms / 3600000) % 24,
+    minute: Math.floor(ms / 60000) % 60,
+    second: Math.floor(ms / 1000) % 60,
+    millisecond: Math.floor(ms) % 1000,
+  };
+  return Object.entries(time)
+    .filter(val => val[1] !== 0)
+    .map(val => val[1] + ' ' + (val[1] !== 1 ? val[0] + 's' : val[0]))
+    .join(', ');
+};
 ```
+
 ```js
-formatDuration(1001); //"1 second and 1 millisecond"
-formatDuration(343250555); //"3 days, 23 hours, 20 minutes, 50 seconds and 555 milliseconds"
-formatDuration(34325055574); //"1 year, 1 month, 1 day, 6 hours, 44 minutes, 15 seconds and 574 milliseconds"
+formatDuration(1001); // "1 second, 1 millisecond"
+formatDuration(343250555); // "3 days, 23 hours, 20 minutes, 50 seconds, 555 milliseconds"
+formatDuration(34325055574); // "397 days, 6 hours, 44 minutes, 15 seconds, 574 milliseconds"
 ```
