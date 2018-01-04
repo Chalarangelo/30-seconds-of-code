@@ -1,4 +1,4 @@
-###formatDuration
+### formatDuration
 
 Returns the human readable format of the given number of milliseconds. If milliseconds is equal to `0` return `'now'` .
 
@@ -22,4 +22,9 @@ const pluralize = (num, word, plural = word + 's') =>
   array = array.map((el,i) => [el,time[i]]).filter(el => el[0] !== 0).map(el => [el[0],pluralize(el[0],el[1])]).map(el => el[0] + ' ' + el[1])
   return join(array.reverse(),', ',' and ')
 }
+```
+```js
+formatDuration(1001); //"1 second and 1 millisecond"
+formatDuration(343250555); //"3 days, 23 hours, 20 minutes, 50 seconds and 555 milliseconds"
+formatDuration(34325055574); //"1 year, 1 month, 1 day, 6 hours, 44 minutes, 15 seconds and 574 milliseconds"
 ```
