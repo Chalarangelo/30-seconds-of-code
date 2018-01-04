@@ -17,7 +17,6 @@ const pluralize = (val, word, plural = word + 's') => {
 pluralize(0, 'apple'); // 'apples'
 pluralize(1, 'apple'); // 'apple'
 pluralize(2, 'apple'); // 'apples'
-pluralize(1, 'person'); // 'person'
 pluralize(2, 'person', 'people'); // 'people'
 
 const PLURALS = {

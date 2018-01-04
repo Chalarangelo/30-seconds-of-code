@@ -25,7 +25,6 @@ const formatDuration = ms => {
 ```
 
 ```js
-formatDuration(1001); // "1 second, 1 millisecond"
-formatDuration(343250555); // "3 days, 23 hours, 20 minutes, 50 seconds, 555 milliseconds"
-formatDuration(34325055574); // "397 days, 6 hours, 44 minutes, 15 seconds, 574 milliseconds"
+formatDuration(1001); // '1 second, 1 millisecond'
+formatDuration(34325055574); // '397 days, 6 hours, 44 minutes, 15 seconds, 574 milliseconds'
 ```

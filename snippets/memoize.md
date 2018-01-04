@@ -22,5 +22,5 @@ const memoize = fn => {
 const anagramsCached = memoize(anagrams);
 anagramsCached('javascript'); // takes a long time
 anagramsCached('javascript'); // returns virtually instantly since it's now cached
-console.log(anagramsCached.cache); // Map
+console.log(anagramsCached.cache); // The cached anagrams map
 ```

@@ -1,6 +1,6 @@
 ### howManyTimes
 
-Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer. 
+Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.
 Works for both negative and positive integers.
 
 If `divisor` is `-1` or `1` return `Infinity`.
@@ -22,11 +22,8 @@ const howManyTimes = (num, divisor) => {
 ```
 
 ```js
-howManyTimes(100, 2); //2
-howManyTimes(100, -2); //2
-howManyTimes(100, 2.5); //2
-howManyTimes(100, 3); //0
-howManyTimes(100, 0); //0
-howManyTimes(100, 1); //Infinity
-howManyTimes(100, -1); //Infinity
+howManyTimes(100, 2); // 2
+howManyTimes(100, 2.5); // 2
+howManyTimes(100, 0); // 0
+howManyTimes(100, -1); // Infinity
 ```

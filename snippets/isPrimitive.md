@@ -11,12 +11,10 @@ const isPrimitive = val => !['object', 'function'].includes(typeof val) || val =
 ```
 
 ```js
-isPrimitive(window.someNonExistentProperty); // true
 isPrimitive(null); // true
 isPrimitive(50); // true
 isPrimitive('Hello!'); // true
 isPrimitive(false); // true
 isPrimitive(Symbol()); // true
 isPrimitive([]); // false
-isPrimitive(new String('Hello!')); // false
 ```
