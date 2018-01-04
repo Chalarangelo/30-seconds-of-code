@@ -68,7 +68,7 @@ average(1, 2, 3);
 
 ## Table of Contents
 
-### 🔌 Adapter
+###  Adapter
 
 <details>
 <summary>View contents</summary>
@@ -82,7 +82,7 @@ average(1, 2, 3);
 
 </details>
 
-### 📚 Array
+###  Array
 
 <details>
 <summary>View contents</summary>
@@ -137,7 +137,7 @@ average(1, 2, 3);
 
 </details>
 
-### 🌐 Browser
+###  Browser
 
 <details>
 <summary>View contents</summary>
@@ -165,7 +165,7 @@ average(1, 2, 3);
 
 </details>
 
-### ⏱️ Date
+###  Date
 
 <details>
 <summary>View contents</summary>
@@ -178,7 +178,7 @@ average(1, 2, 3);
 
 </details>
 
-### 🎛️ Function
+###  Function
 
 <details>
 <summary>View contents</summary>
@@ -195,7 +195,7 @@ average(1, 2, 3);
 
 </details>
 
-### 🔮 Logic
+###  Logic
 
 <details>
 <summary>View contents</summary>
@@ -204,7 +204,7 @@ average(1, 2, 3);
 
 </details>
 
-### ➗ Math
+###  Math
 
 <details>
 <summary>View contents</summary>
@@ -245,7 +245,7 @@ average(1, 2, 3);
 
 </details>
 
-### 📦 Node
+###  Node
 
 <details>
 <summary>View contents</summary>
@@ -259,7 +259,7 @@ average(1, 2, 3);
 
 </details>
 
-### 🗃️ Object
+###  Object
 
 <details>
 <summary>View contents</summary>
@@ -277,7 +277,7 @@ average(1, 2, 3);
 
 </details>
 
-### 📜 String
+###  String
 
 <details>
 <summary>View contents</summary>
@@ -307,7 +307,7 @@ average(1, 2, 3);
 
 </details>
 
-### 🔧 Utility
+###  Utility
 
 <details>
 <summary>View contents</summary>
@@ -343,7 +343,7 @@ average(1, 2, 3);
 </details>
 
 ---
- ## 🔌 Adapter
+ ##  Adapter
 
 ### call
 
@@ -505,7 +505,7 @@ arrayMax([1, 2, 3]); // 3
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ## 📚 Array
+ ##  Array
 
 ### chunk
 
@@ -1725,7 +1725,7 @@ zipObject(['a', 'b'], [1, 2, 3]); // {a: 1, b: 2}
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ## 🌐 Browser
+ ##  Browser
 
 ### arrayToHtmlList
 
@@ -2283,7 +2283,7 @@ UUIDGeneratorBrowser(); // '7982fcfe-5721-4632-bede-6000885be57d'
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ## ⏱️ Date
+ ##  Date
 
 ### formatDuration
 
@@ -2423,7 +2423,7 @@ tomorrow(); // 2017-12-27 (if current date is 2017-12-26)
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ## 🎛️ Function
+ ##  Function
 
 ### chainAsync
 
@@ -2679,7 +2679,7 @@ async function sleepyWork() {
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ## 🔮 Logic
+ ##  Logic
 
 ### negate
 
@@ -2704,7 +2704,7 @@ negate(isOdd)(1); // false
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ## ➗ Math
+ ##  Math
 
 ### average
 
@@ -3649,7 +3649,7 @@ sumPower(10, 3, 5); //2925
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ## 📦 Node
+ ##  Node
 
 ### hasFlags
 
@@ -3810,7 +3810,7 @@ UUIDGeneratorNode(); // '79c7c136-60ee-40a2-beb2-856f1feabefc'
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ## 🗃️ Object
+ ##  Object
 
 ### cleanObj
 
@@ -4080,7 +4080,7 @@ truthCheckCollection([{ user: 'Tinky-Winky', sex: 'male' }, { user: 'Dipsy', sex
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ## 📜 String
+ ##  String
 
 ### anagrams
 
@@ -4695,7 +4695,7 @@ words('python, javaScript & coffee'); // ["python", "javaScript", "coffee"]
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ## 🔧 Utility
+ ##  Utility
 
 ### cloneRegExp
 
