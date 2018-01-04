@@ -96,6 +96,7 @@ JSONToFile:node
 last:array
 lcm:math
 lowercaseKeys:object
+luhnCheck:uncategorized
 mapObject:array
 mask:string
 maxN:array

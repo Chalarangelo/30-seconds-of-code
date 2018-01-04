@@ -8,18 +8,21 @@ Use `Array.reduce()` to implement the Luhn Algorithm.
 Return `true` if `sum` is divisible by `10`, `false` otherwise.
 
 
-``` js 
-const luhnCheck = num => { 
-  let arr = (num+'').split('').reverse().map(x => parseInt(x));
-  let lastDigit = arr.splice(0,1)[0];
-  let sum = arr.reduce((acc,val,i) => i%2!==0 ? acc + val : acc + (val * 2) % 9 || 9,0);
+```js
+const luhnCheck = num => {
+  let arr = (num + '')
+    .split('')
+    .reverse()
+    .map(x => parseInt(x));
+  let lastDigit = arr.splice(0, 1)[0];
+  let sum = arr.reduce((acc, val, i) => (i % 2 !== 0 ? acc + val : acc + (val * 2) % 9 || 9), 0);
   sum += lastDigit;
-  return sum%10 === 0;
-}
+  return sum % 10 === 0;
+};
 ```
 
 ```js
-luhnCheck("4485275742308327"); // true
+luhnCheck('4485275742308327'); // true
 luhnCheck(6011329933655299); //  true
 luhnCheck(123456789); // false
 ```
