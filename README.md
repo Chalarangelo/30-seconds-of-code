@@ -170,6 +170,7 @@ average(1, 2, 3);
 <details>
 <summary>View contents</summary>
 
+* [`formatDuration`](#formatduration)
 * [`getDaysDiffBetweenDates`](#getdaysdiffbetweendates)
 * [`JSONToDate`](#jsontodate)
 * [`toEnglishDate`](#toenglishdate)
@@ -229,6 +230,7 @@ average(1, 2, 3);
 * [`isEven`](#iseven)
 * [`isPrime`](#isprime)
 * [`lcm`](#lcm)
+* [`luhnCheck`](#luhncheck)
 * [`median`](#median)
 * [`percentile`](#percentile)
 * [`powerset`](#powerset)
@@ -337,16 +339,6 @@ average(1, 2, 3);
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`validateNumber`](#validatenumber)
 * [`yesNo`](#yesno)
-
-</details>
-
-### _Uncategorized_
-
-<details>
-<summary>View contents</summary>
-
-* [`formatDuration`](#formatduration)
-* [`luhnCheck`](#luhncheck)
 
 </details>
 
@@ -2305,6 +2297,46 @@ UUIDGeneratorBrowser(); // '7982fcfe-5721-4632-bede-6000885be57d'
 ---
  ## ⏱️ Date
 
+### formatDuration
+
+Returns the human readable format of the given number of milliseconds.
+
+Divide `ms` with the appropriate values to obtain the appropriate values for `day`, `hour`, `minute`, `second` and `millisecond`.
+Use `Object.entries()` with `Array.filter()` to keep only non-zero values.
+Use `Array.map()` to create the string for each value, pluralizing appropriately.
+Use `String.join(', ')` to combine the values into a string.
+
+```js
+const formatDuration = ms => {
+  if (ms < 0) ms = -ms;
+  const time = {
+    day: Math.floor(ms / 86400000),
+    hour: Math.floor(ms / 3600000) % 24,
+    minute: Math.floor(ms / 60000) % 60,
+    second: Math.floor(ms / 1000) % 60,
+    millisecond: Math.floor(ms) % 1000
+  };
+  return Object.entries(time)
+    .filter(val => val[1] !== 0)
+    .map(val => val[1] + ' ' + (val[1] !== 1 ? val[0] + 's' : val[0]))
+    .join(', ');
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+formatDuration(1001); // "1 second, 1 millisecond"
+formatDuration(343250555); // "3 days, 23 hours, 20 minutes, 50 seconds, 555 milliseconds"
+formatDuration(34325055574); // "397 days, 6 hours, 44 minutes, 15 seconds, 574 milliseconds"
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### getDaysDiffBetweenDates
 
 Returns the difference (in days) between two dates.
@@ -3277,6 +3309,43 @@ const lcm = (...arr) => {
 ```js
 lcm(12, 7); // 84
 lcm([1, 3, 4], 5); // 60
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### luhnCheck
+
+Implementation of the [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) used to validate a variety of identification numbers, such as credit card numbers, IMEI numbers, National Provider Identifier numbers etc.
+
+Use `String.split('')`, `Array.reverse()` and `Array.map()` in combination with `parseInt()` to obtain an array of digits.
+Use `Array.splice(0,1)` to obtain the last digit.
+Use `Array.reduce()` to implement the Luhn Algorithm.
+Return `true` if `sum` is divisible by `10`, `false` otherwise.
+
+
+```js
+const luhnCheck = num => {
+  let arr = (num + '')
+    .split('')
+    .reverse()
+    .map(x => parseInt(x));
+  let lastDigit = arr.splice(0, 1)[0];
+  let sum = arr.reduce((acc, val, i) => (i % 2 !== 0 ? acc + val : acc + (val * 2) % 9 || 9), 0);
+  sum += lastDigit;
+  return sum % 10 === 0;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+luhnCheck('4485275742308327'); // true
+luhnCheck(6011329933655299); //  true
+luhnCheck(123456789); // false
 ```
 
 </details>
@@ -5367,75 +5436,6 @@ yesNo('Foo', true); // true
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
-
----
- ## _Uncategorized_
-
-### formatDuration
-
-Returns the human readable format of the given number of milliseconds.
-
-Divide `ms` with the appropriate values to obtain the appropriate values for `day`, `hour`, `minute`, `second` and `millisecond`.
-Use `Object.entries()` with `Array.filter()` to keep only non-zero values.
-Use `Array.map()` to create the string for each value, pluralizing appropriately.
-Use `String.join(', ')` to combine the values into a string.
-
-```js
-const formatDuration = ms => {
-  if (ms < 0) ms = -ms;
-  const time = {
-    day: Math.floor(ms / 86400000),
-    hour: Math.floor(ms / 3600000) % 24,
-    minute: Math.floor(ms / 60000) % 60,
-    second: Math.floor(ms / 1000) % 60,
-    millisecond: Math.floor(ms) % 1000
-  };
-  return Object.entries(time)
-    .filter(val => val[1] !== 0)
-    .map(val => val[1] + ' ' + (val[1] !== 1 ? val[0] + 's' : val[0]))
-    .join(', ');
-};
-```
-
-```js
-formatDuration(1001); // "1 second, 1 millisecond"
-formatDuration(343250555); // "3 days, 23 hours, 20 minutes, 50 seconds, 555 milliseconds"
-formatDuration(34325055574); // "397 days, 6 hours, 44 minutes, 15 seconds, 574 milliseconds"
-```
-
-<br>[⬆ back to top](#table-of-contents)
-
-
-### luhnCheck
-
-Implementation of the [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) used to validate a variety of identification numbers, such as credit card numbers, IMEI numbers, National Provider Identifier numbers etc.
-
-Use `String.split('')`, `Array.reverse()` and `Array.map()` in combination with `parseInt()` to obtain an array of digits.
-Use `Array.splice(0,1)` to obtain the last digit.
-Use `Array.reduce()` to implement the Luhn Algorithm.
-Return `true` if `sum` is divisible by `10`, `false` otherwise.
-
-
-```js
-const luhnCheck = num => {
-  let arr = (num + '')
-    .split('')
-    .reverse()
-    .map(x => parseInt(x));
-  let lastDigit = arr.splice(0, 1)[0];
-  let sum = arr.reduce((acc, val, i) => (i % 2 !== 0 ? acc + val : acc + (val * 2) % 9 || 9), 0);
-  sum += lastDigit;
-  return sum % 10 === 0;
-};
-```
-
-```js
-luhnCheck('4485275742308327'); // true
-luhnCheck(6011329933655299); //  true
-luhnCheck(123456789); // false
-```
-
-<br>[⬆ back to top](#table-of-contents)
 
 
 ## Collaborators
