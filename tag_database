@@ -47,6 +47,7 @@ filterNonUnique:array
 flatten:array
 flattenDepth:array
 flip:adapter
+formatDuration:uncategorized
 fromCamelCase:string
 functionName:function
 gcd:math
