@@ -498,7 +498,6 @@ const spreadOver = fn => argsArr => fn(...argsArr);
 ```js
 const arrayMax = spreadOver(Math.max);
 arrayMax([1, 2, 3]); // 3
-arrayMax([1, 2, 4]); // 4
 ```
 
 </details>
@@ -932,7 +931,7 @@ const initializeArrayWithRange = (end, start = 0, step = 1) =>
 ```js
 initializeArrayWithRange(5); // [0,1,2,3,4,5]
 initializeArrayWithRange(7, 3); // [3,4,5,6,7]
-initializeArrayWithRange(9, 0, 2); //[0,2,4,6,8]
+initializeArrayWithRange(9, 0, 2); // [0,2,4,6,8]
 ```
 
 </details>
@@ -1009,7 +1008,6 @@ const isSorted = arr => {
 <summary>Examples</summary>
 
 ```js
-isSorted([0, 1, 2, 3]); // 1
 isSorted([0, 1, 2, 2]); // 1
 isSorted([4, 3, 2]); // -1
 isSorted([4, 3, 5]); // 0
@@ -1043,10 +1041,9 @@ const join = (arr, separator = ',', end = separator) =>
 <summary>Examples</summary>
 
 ```js
-join(); // ''
-join(['pen', 'pineapple', 'apple', 'pen'], ',', '&'); //"pen,pineapple,apple&pen"
-join(['pen', 'pineapple', 'apple', 'pen'], ','); //"pen,pineapple,apple,pen"
-join(['pen', 'pineapple', 'apple', 'pen']); //"pen,pineapple,apple,pen"
+join(['pen', 'pineapple', 'apple', 'pen'], ',', '&'); // "pen,pineapple,apple&pen"
+join(['pen', 'pineapple', 'apple', 'pen'], ','); // "pen,pineapple,apple,pen"
+join(['pen', 'pineapple', 'apple', 'pen']); // "pen,pineapple,apple,pen"
 ```
 
 </details>
@@ -1120,7 +1117,6 @@ const maxN = (arr, n = 1) => [...arr].sort((a, b) => b - a).slice(0, n);
 ```js
 maxN([1, 2, 3]); // [3]
 maxN([1, 2, 3], 2); // [3,2]
-maxN([1, 2, 3], 4); // [3,2,1]
 ```
 
 </details>
@@ -1145,7 +1141,6 @@ const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
 ```js
 minN([1, 2, 3]); // [1]
 minN([1, 2, 3], 2); // [1,2]
-minN([1, 2, 3], 4); // [1,2,3]
 ```
 
 </details>
@@ -1223,13 +1218,8 @@ const pull = (arr, ...args) => {
 <summary>Examples</summary>
 
 ```js
-let myArray1 = ['a', 'b', 'c', 'a', 'b', 'c'];
-pull(myArray1, 'a', 'c');
-console.log(myArray1); // [ 'b', 'b' ]
-
-let myArray2 = ['a', 'b', 'c', 'a', 'b', 'c'];
-pull(myArray2, ['a', 'c']);
-console.log(myArray2); // [ 'b', 'b' ]
+let myArray = ['a', 'b', 'c', 'a', 'b', 'c'];
+pull(myArray, 'a', 'c'); // myArray = [ 'b', 'b' ]
 ```
 
 </details>
@@ -1262,10 +1252,7 @@ const pullAtIndex = (arr, pullArr) => {
 
 ```js
 let myArray = ['a', 'b', 'c', 'd'];
-let pulled = pullAtIndex(myArray, [1, 3]);
-
-console.log(myArray); // [ 'a', 'c' ]
-console.log(pulled); // [ 'b', 'd' ]
+let pulled = pullAtIndex(myArray, [1, 3]); // myArray = [ 'a', 'c' ] , pulled = [ 'b', 'd' ]
 ```
 
 </details>
@@ -1297,9 +1284,7 @@ const pullAtValue = (arr, pullArr) => {
 
 ```js
 let myArray = ['a', 'b', 'c', 'd'];
-let pulled = pullAtValue(myArray, ['b', 'd']);
-console.log(myArray); // [ 'a', 'c' ]
-console.log(pulled); // [ 'b', 'd' ]
+let pulled = pullAtValue(myArray, ['b', 'd']); // myArray = [ 'a', 'c' ] , pulled = [ 'b', 'd' ]
 ```
 
 </details>
@@ -1487,8 +1472,7 @@ const shuffle = ([...arr]) => {
 
 ```js
 const foo = [1, 2, 3];
-shuffle(foo); // [2,3,1]
-console.log(foo); // [1,2,3]
+shuffle(foo); // [2,3,1], foo = [1,2,3]
 ```
 
 </details>
@@ -1871,8 +1855,7 @@ const detectDeviceType = () =>
 <summary>Examples</summary>
 
 ```js
-detectDeviceType(); // "Mobile"
-detectDeviceType(); // "Desktop"
+detectDeviceType(); // "Mobile" or "Desktop"
 ```
 
 </details>
@@ -1905,8 +1888,8 @@ const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
 
 ```js
 // e.g. 100x100 viewport and a 10x10px element at position {top: -1, left: 0, bottom: 9, right: 10}
-elementIsVisibleInViewport(el); // false // (not fully visible)
-elementIsVisibleInViewport(el, true); // true // (partially visible)
+elementIsVisibleInViewport(el); // false - (not fully visible)
+elementIsVisibleInViewport(el, true); // true - (partially visible)
 ```
 
 </details>
@@ -2135,10 +2118,11 @@ const longRunningFunction = () => {
   }
   return result;
 };
-
-// NOTE: Since the function is running in a different context, closures are not supported.
-// The function supplied to `runAsync` gets stringified, so everything becomes literal.
-// All variables and functions must be defined inside.
+/*
+  NOTE: Since the function is running in a different context, closures are not supported.
+  The function supplied to `runAsync` gets stringified, so everything becomes literal.
+  All variables and functions must be defined inside.
+*/
 runAsync(longRunningFunction).then(console.log); // 209685000000
 runAsync(() => 10 ** 3).then(console.log); // 1000
 let outsideVariable = 50;
@@ -2352,9 +2336,8 @@ const formatDuration = ms => {
 <summary>Examples</summary>
 
 ```js
-formatDuration(1001); // "1 second, 1 millisecond"
-formatDuration(343250555); // "3 days, 23 hours, 20 minutes, 50 seconds, 555 milliseconds"
-formatDuration(34325055574); // "397 days, 6 hours, 44 minutes, 15 seconds, 574 milliseconds"
+formatDuration(1001); // '1 second, 1 millisecond'
+formatDuration(34325055574); // '397 days, 6 hours, 44 minutes, 15 seconds, 574 milliseconds'
 ```
 
 </details>
@@ -2508,10 +2491,6 @@ chainAsync([
   },
   next => {
     console.log('1 second');
-    setTimeout(next, 1000);
-  },
-  next => {
-    console.log('2 seconds');
   }
 ]);
 ```
@@ -2593,8 +2572,8 @@ defer(console.log, 'a'), console.log('b'); // logs 'b' then 'a'
 
 // Example B:
 document.querySelector('#someElement').innerHTML = 'Hello';
-longRunningFunction(); // the browser will not update the HTML until this has finished
-defer(longRunningFunction); // the browser will update the HTML then run the function
+longRunningFunction(); //Browser will not update the HTML until this has finished
+defer(longRunningFunction); // Browser will update the HTML then run the function
 ```
 
 </details>
@@ -2651,7 +2630,7 @@ const memoize = fn => {
 const anagramsCached = memoize(anagrams);
 anagramsCached('javascript'); // takes a long time
 anagramsCached('javascript'); // returns virtually instantly since it's now cached
-console.log(anagramsCached.cache); // Map
+console.log(anagramsCached.cache); // The cached anagrams map
 ```
 
 </details>
@@ -2707,7 +2686,7 @@ const runPromisesInSeries = ps => ps.reduce((p, next) => p.then(next), Promise.r
 
 ```js
 const delay = d => new Promise(r => setTimeout(r, d));
-runPromisesInSeries([() => delay(1000), () => delay(2000)]); // //executes each promise sequentially, taking a total of 3 seconds to complete
+runPromisesInSeries([() => delay(1000), () => delay(2000)]); // Executes each promise sequentially, taking a total of 3 seconds to complete
 ```
 
 </details>
@@ -2828,7 +2807,6 @@ const clampNumber = (num, a, b) => Math.max(Math.min(num, Math.max(a, b)), Math.
 ```js
 clampNumber(2, 3, 5); // 3
 clampNumber(1, -1, -5); // -1
-clampNumber(3, 2, 4); // 3
 ```
 
 </details>
@@ -2851,7 +2829,6 @@ const collatz = n => (n % 2 == 0 ? n / 2 : 3 * n + 1);
 
 ```js
 collatz(8); // 4
-collatz(5); // 16
 ```
 
 </details>
@@ -2927,8 +2904,6 @@ const elo = ([a, b], kFactor = 32) => {
 
 ```js
 elo([1200, 1200]); // [1216, 1184]
-elo([1000, 2000]); // [1031.8991261061358, 1968.1008738938642]
-elo([1500, 1000]); // [1501.7036868864648, 998.2963131135352]
 elo([1200, 1200], 64); // [1232, 1168]
 ```
 
@@ -3147,9 +3122,8 @@ const geometricProgression = (end, start = 1, step = 2) =>
 
 ```js
 geometricProgression(256); // [1, 2, 4, 8, 16, 32, 64, 128, 256]
-geometricProgression(256, 3); //[3, 6, 12, 24, 48, 96, 192]
-geometricProgression(256, 1, 4); //[1, 4, 16, 64, 256]
-geometricProgression(256, 2, 1); //Gives error
+geometricProgression(256, 3); // [3, 6, 12, 24, 48, 96, 192]
+geometricProgression(256, 1, 4); // [1, 4, 16, 64, 256]
 ```
 
 </details>
@@ -3182,7 +3156,7 @@ hammingDistance(2, 3); // 1
 
 ### howManyTimes
 
-Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer. 
+Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.
 Works for both negative and positive integers.
 
 If `divisor` is `-1` or `1` return `Infinity`.
@@ -3207,13 +3181,10 @@ const howManyTimes = (num, divisor) => {
 <summary>Examples</summary>
 
 ```js
-howManyTimes(100, 2); //2
-howManyTimes(100, -2); //2
-howManyTimes(100, 2.5); //2
-howManyTimes(100, 3); //0
-howManyTimes(100, 0); //0
-howManyTimes(100, 1); //Infinity
-howManyTimes(100, -1); //Infinity
+howManyTimes(100, 2); // 2
+howManyTimes(100, 2.5); // 2
+howManyTimes(100, 0); // 0
+howManyTimes(100, -1); // Infinity
 ```
 
 </details>
@@ -3268,7 +3239,6 @@ const isArmstrongNumber = digits =>
 
 ```js
 isArmstrongNumber(1634); // true
-isArmstrongNumber(371); // true
 isArmstrongNumber(56); // false
 ```
 
@@ -3342,7 +3312,6 @@ const isPrime = num => {
 
 ```js
 isPrime(11); // true
-isPrime(12); // false
 ```
 
 </details>
@@ -3435,7 +3404,6 @@ const median = arr => {
 
 ```js
 median([5, 6, 50, 1, -5]); // 5
-median([0, 10, -2, 7]); // 3.5
 ```
 
 </details>
@@ -3640,10 +3608,7 @@ const solveRPN = rpn => {
 
 ```js
 solveRPN('15 7 1 1 + - / 3 * 2 1 1 + + -'); // 5
-solveRPN('3 5 6 + *'); //33
-solveRPN('2 4 / 5 6 - *'); //-0.5
-solveRPN('2 3 ^'); //8
-solveRPN('2 3 ^'); //8
+solveRPN('2 3 ^'); // 8
 ```
 
 </details>
@@ -3755,7 +3720,6 @@ const hasFlags = (...flags) =>
 ```js
 // node myScript.js -s --test --cool=true
 hasFlags('-s'); // true
-hasFlags('test', 'cool=true'); // true
 hasFlags('--test', 'cool=true', '-s'); // true
 hasFlags('special'); // false
 ```
@@ -4054,14 +4018,9 @@ const orderBy = (arr, props, orders) =>
 <summary>Examples</summary>
 
 ```js
-const users = [
-  { name: 'fred', age: 48 },
-  { name: 'barney', age: 36 },
-  { name: 'fred', age: 40 },
-  { name: 'barney', age: 34 }
-];
-orderBy(users, ['name', 'age'], ['asc', 'desc']); // [{name: 'barney', age: 36}, {name: 'barney', age: 34}, {name: 'fred', age: 48}, {name: 'fred', age: 40}]
-orderBy(users, ['name', 'age']); // [{name: 'barney', age: 34}, {name: 'barney', age: 36}, {name: 'fred', age: 40}, {name: 'fred', age: 48}]
+const users = [{ name: 'fred', age: 48 }, { name: 'barney', age: 36 }, { name: 'fred', age: 40 }];
+orderBy(users, ['name', 'age'], ['asc', 'desc']); // [{name: 'barney', age: 36}, {name: 'fred', age: 48}, {name: 'fred', age: 40}]
+orderBy(users, ['name', 'age']); // [{name: 'barney', age: 36}, {name: 'fred', age: 40}, {name: 'fred', age: 48}]
 ```
 
 </details>
@@ -4108,8 +4067,7 @@ const shallowClone = obj => Object.assign({}, obj);
 
 ```js
 const a = { x: true, y: 1 };
-const b = shallowClone(a);
-a === b; // false
+const b = shallowClone(a); // a !== b
 ```
 
 </details>
@@ -4157,7 +4115,7 @@ Checks if the predicate (second argument) is truthy on all elements of a collect
 
 Use `Array.every()` to check if each passed object has the specified property and if it returns a truthy value.
 
- ```js
+```js
 const truthCheckCollection = (collection, pre) => collection.every(obj => obj[pre]);
 ```
 
@@ -4432,7 +4390,6 @@ const mask = (cc, num = 4, mask = '*') =>
 ```js
 mask(1234567890); // '******7890'
 mask(1234567890, 3); // '*******890'
-mask(1234567890, 4, '$'); // '$$$$$$7890'
 mask(1234567890, -4, '$'); // '1234$$$$$$'
 ```
 
@@ -4495,7 +4452,6 @@ const pluralize = (val, word, plural = word + 's') => {
 pluralize(0, 'apple'); // 'apples'
 pluralize(1, 'apple'); // 'apple'
 pluralize(2, 'apple'); // 'apples'
-pluralize(1, 'person'); // 'person'
 pluralize(2, 'person', 'people'); // 'people'
 
 const PLURALS = {
@@ -4699,7 +4655,6 @@ const toSnakeCase = str =>
 ```js
 toSnakeCase('camelCase'); // 'camel_case'
 toSnakeCase('some text'); // 'some_text'
-toSnakeCase('some-javascript-property'); // 'some_javascript_property'
 toSnakeCase('some-mixed_string With spaces_underscores-and-hyphens'); // 'some_mixed_string_with_spaces_underscores_and_hyphens'
 toSnakeCase('AllThe-small Things'); // "all_the_smal_things"
 toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'); // "i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html"
@@ -4754,6 +4709,7 @@ const unescapeHTML = str =>
       }[tag] || tag)
   );
 ```
+
 <details>
 <summary>Examples</summary>
 
@@ -4904,7 +4860,7 @@ const getType = v =>
 <summary>Examples</summary>
 
 ```js
-getType(new Set([1, 2, 3])); // "set"
+getType(new Set([1, 2, 3])); // 'Set'
 ```
 
 </details>
@@ -5095,7 +5051,6 @@ const isNull = val => val === null;
 
 ```js
 isNull(null); // true
-isNull('null'); // false
 ```
 
 </details>
@@ -5120,6 +5075,7 @@ const isNumber = val => typeof val === 'number';
 isNumber('1'); // false
 isNumber(1); // true
 ```
+
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -5141,14 +5097,12 @@ const isPrimitive = val => !['object', 'function'].includes(typeof val) || val =
 <summary>Examples</summary>
 
 ```js
-isPrimitive(window.someNonExistentProperty); // true
 isPrimitive(null); // true
 isPrimitive(50); // true
 isPrimitive('Hello!'); // true
 isPrimitive(false); // true
 isPrimitive(Symbol()); // true
 isPrimitive([]); // false
-isPrimitive(new String('Hello!')); // false
 ```
 
 </details>
@@ -5201,7 +5155,6 @@ const isString = val => typeof val === 'string';
 <summary>Examples</summary>
 
 ```js
-isString(10); // false
 isString('10'); // true
 ```
 
@@ -5224,7 +5177,6 @@ const isSymbol = val => typeof val === 'symbol';
 <summary>Examples</summary>
 
 ```js
-isSymbol('x'); // false
 isSymbol(Symbol('x')); // true
 ```
 
@@ -5289,11 +5241,8 @@ const prettyBytes = (num, precision = 3, addSpace = true) => {
 
 ```js
 prettyBytes(1000); // 1 KB
-prettyBytes(123456789); // 123 MB
-prettyBytes(-50); // -50 B
-prettyBytes(27145424323.5821); // 27.1 GB
-prettyBytes(27145424323.5821, 5); // 27.145 GB
-prettyBytes(5500, 3, false); // 5.5KB
+prettyBytes(-27145424323.5821, 5); // -27.145 GB
+prettyBytes(123456789, 3, false); // 123MB
 ```
 
 </details>
@@ -5319,8 +5268,6 @@ const randomHexColorCode = () => {
 
 ```js
 randomHexColorCode(); // "#e34155"
-randomHexColorCode(); // "#fd73a6"
-randomHexColorCode(); // "#4144c6"
 ```
 
 </details>
@@ -5372,7 +5319,6 @@ const sdbm = str => {
 
 ```js
 console.log(sdbm('name')); // -3521204949
-console.log(sdbm('age')); // 808122783
 ```
 
 </details>
@@ -5399,8 +5345,7 @@ const timeTaken = callback => {
 <summary>Examples</summary>
 
 ```js
-timeTaken(() => Math.pow(2, 10)); // 1024
-// (logged): timeTaken: 0.02099609375ms
+timeTaken(() => Math.pow(2, 10)); // 1024, (logged): timeTaken: 0.02099609375ms
 ```
 
 </details>
