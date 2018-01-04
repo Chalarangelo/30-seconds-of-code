@@ -20,7 +20,6 @@ const luhnCheck = num => {
 
 ```js
 luhnCheck("4485275742308327"); // true
-luhnCheck(4485275742308327); // true
 luhnCheck(6011329933655299); //  true
 luhnCheck(123456789); // false
 ```
