@@ -32,11 +32,11 @@ const elo = ([...ratings], kFactor = 32, selfRating) => {
 // Standard 1v1s
 elo([1200, 1200]); // [1216, 1184]
 elo([1200, 1200], 64); // [1232, 1168]
-
 // 4 player FFA, all same rank
 elo([1200, 1200, 1200, 1200]).map(Math.round); // [1246, 1215, 1185, 1154]
-
-// For teams, each rating can adjusted based on own team's average rating vs. 
-// average rating of opposing team, with the score being added to their
-// own individual rating by supplying it as the third argument.
+/*
+For teams, each rating can adjusted based on own team's average rating vs. 
+average rating of opposing team, with the score being added to their
+own individual rating by supplying it as the third argument.
+*/
 ```
