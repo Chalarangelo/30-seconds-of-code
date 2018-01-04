@@ -38,26 +38,5 @@ elo([1200, 1200, 1200, 1200]).map(Math.round); // [1246, 1215, 1185, 1154]
 
 // For teams, each rating can adjusted based on own team's average rating vs. 
 // average rating of opposing team, with the score being added to their
-// own individual rating
-
-// 2v2 teams
-// Ratings: [1324, 1275] and [1300, 1318]
-// Calculate the average ratings of each team and use that as
-// the basis of the "expected score" calculation. Supply the individual
-// rating as the third argument to compute own Elo rating.
-const ratings = [1324, 1275, 1300, 1318];
-const averages = [(1324 + 1275) / 2, (1300 + 1318) / 2];
-const results = ratings
-  .map(
-    (rating, index) =>
-      elo(
-        [index > 1 ? averages[0] : averages[1], index > 1 ? averages[0] : averages[1]],
-        32,
-        rating
-      )[index > 1 ? 1 : 0]
-  )
-  .map(Math.round); // [1340, 1291, 1284, 1302]
-
-// Individual rank in the match out of each player is also possible to take into account
-// Try out 50/50 balance between win/loss and individual performance
+// own individual rating by supplying it as the third argument.
 ```
