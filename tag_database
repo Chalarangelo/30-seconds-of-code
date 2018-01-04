@@ -134,5 +134,6 @@ UUIDGenerator:utility
 validateNumber:utility
 without:array
 words:string
+xor:array
 zip:array
 zipObject:array
