@@ -68,7 +68,7 @@ average(1, 2, 3);
 
 ## Table of Contents
 
-###  Adapter
+### 🔌 Adapter
 
 <details>
 <summary>View contents</summary>
@@ -82,11 +82,12 @@ average(1, 2, 3);
 
 </details>
 
-###  Array
+### 📚 Array
 
 <details>
 <summary>View contents</summary>
 
+* [`binarySearch`](#binarysearch)
 * [`chunk`](#chunk)
 * [`compact`](#compact)
 * [`countOccurrences`](#countoccurrences)
@@ -137,7 +138,7 @@ average(1, 2, 3);
 
 </details>
 
-###  Browser
+### 🌐 Browser
 
 <details>
 <summary>View contents</summary>
@@ -165,7 +166,7 @@ average(1, 2, 3);
 
 </details>
 
-###  Date
+### ⏱️ Date
 
 <details>
 <summary>View contents</summary>
@@ -178,7 +179,7 @@ average(1, 2, 3);
 
 </details>
 
-###  Function
+### 🎛️ Function
 
 <details>
 <summary>View contents</summary>
@@ -195,7 +196,7 @@ average(1, 2, 3);
 
 </details>
 
-###  Logic
+### 🔮 Logic
 
 <details>
 <summary>View contents</summary>
@@ -204,7 +205,7 @@ average(1, 2, 3);
 
 </details>
 
-###  Math
+### ➗ Math
 
 <details>
 <summary>View contents</summary>
@@ -245,7 +246,7 @@ average(1, 2, 3);
 
 </details>
 
-###  Node
+### 📦 Node
 
 <details>
 <summary>View contents</summary>
@@ -259,7 +260,7 @@ average(1, 2, 3);
 
 </details>
 
-###  Object
+### 🗃️ Object
 
 <details>
 <summary>View contents</summary>
@@ -277,7 +278,7 @@ average(1, 2, 3);
 
 </details>
 
-###  String
+### 📜 String
 
 <details>
 <summary>View contents</summary>
@@ -307,7 +308,7 @@ average(1, 2, 3);
 
 </details>
 
-###  Utility
+### 🔧 Utility
 
 <details>
 <summary>View contents</summary>
@@ -343,7 +344,7 @@ average(1, 2, 3);
 </details>
 
 ---
- ##  Adapter
+ ## 🔌 Adapter
 
 ### call
 
@@ -505,7 +506,38 @@ arrayMax([1, 2, 3]); // 3
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ##  Array
+ ## 📚 Array
+
+### binarySearch
+
+Use recursion to perform a logarithmic search similar to `.indexOf()` that finds the index of a value within an array. The two differences being 
+1. Operation only works with sorted arrays
+2. Offers a major performance boost when compared to a linear search or `.indexOf()` 
+
+```js
+const binarySearch = (arr, val, start = 0, end = arr.length - 1) => {
+  if (start > end) return -1;
+  const mid = Math.floor((start + end) / 2);
+  const target = arr[mid];
+  if (target > val) return binarySearch(arr, val, start, mid-1);
+  if (target < val) return binarySearch(arr, val, mid+1, end);
+  return mid;
+}
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 6); // 2
+binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 21); // -1
+binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 20); // 9
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 
 ### chunk
 
@@ -1725,7 +1757,7 @@ zipObject(['a', 'b'], [1, 2, 3]); // {a: 1, b: 2}
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ##  Browser
+ ## 🌐 Browser
 
 ### arrayToHtmlList
 
@@ -2283,7 +2315,7 @@ UUIDGeneratorBrowser(); // '7982fcfe-5721-4632-bede-6000885be57d'
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ##  Date
+ ## ⏱️ Date
 
 ### formatDuration
 
@@ -2423,7 +2455,7 @@ tomorrow(); // 2017-12-27 (if current date is 2017-12-26)
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ##  Function
+ ## 🎛️ Function
 
 ### chainAsync
 
@@ -2679,7 +2711,7 @@ async function sleepyWork() {
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ##  Logic
+ ## 🔮 Logic
 
 ### negate
 
@@ -2704,7 +2736,7 @@ negate(isOdd)(1); // false
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ##  Math
+ ## ➗ Math
 
 ### average
 
@@ -3649,7 +3681,7 @@ sumPower(10, 3, 5); //2925
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ##  Node
+ ## 📦 Node
 
 ### hasFlags
 
@@ -3810,7 +3842,7 @@ UUIDGeneratorNode(); // '79c7c136-60ee-40a2-beb2-856f1feabefc'
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ##  Object
+ ## 🗃️ Object
 
 ### cleanObj
 
@@ -4080,7 +4112,7 @@ truthCheckCollection([{ user: 'Tinky-Winky', sex: 'male' }, { user: 'Dipsy', sex
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ##  String
+ ## 📜 String
 
 ### anagrams
 
@@ -4695,7 +4727,7 @@ words('python, javaScript & coffee'); // ["python", "javaScript", "coffee"]
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ##  Utility
+ ## 🔧 Utility
 
 ### cloneRegExp
 
