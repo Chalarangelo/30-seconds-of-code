@@ -5,21 +5,13 @@ Use recursion to perform a logarithmic search similar to `.indexOf()` that finds
 2. Offers a major performance boost when compared liner search or `.indexOf()` 
 
 ```js
-const binarySearch = (array, value, start = 0, end = array.length - 1) => {
-  if (start > end) {
-    return -1;
-  }
-
-  let middle = Math.floor((start + end) / 2);
-  let value = array[middle];
-
-  if (value > value) {
-      return binarySearch(array, value, start, middle-1);
-  }
-  if (value < value) {
-    return binarySearch(array, value, middle+1, end);
-  }
-  return middle;
+const binarySearch = (arr, val, start = 0, end = arr.length - 1) => {
+  if (start > end) return -1;
+  let mid = Math.floor((start + end) / 2);
+  let target = arr[mid];
+  if (target > val) return binarySearch(arr, val, start, mid-1);
+  if (target < val) return binarySearch(arr, val, mid+1, end);
+  return mid;
 }
 ```
 
