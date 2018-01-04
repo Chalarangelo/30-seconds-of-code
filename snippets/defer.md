@@ -14,6 +14,6 @@ defer(console.log, 'a'), console.log('b'); // logs 'b' then 'a'
 
 // Example B:
 document.querySelector('#someElement').innerHTML = 'Hello';
-longRunningFunction(); // the browser will not update the HTML until this has finished
-defer(longRunningFunction); // the browser will update the HTML then run the function
+longRunningFunction(); //Browser will not update the HTML until this has finished
+defer(longRunningFunction); // Browser will update the HTML then run the function
 ```
