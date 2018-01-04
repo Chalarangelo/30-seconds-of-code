@@ -1,19 +1,26 @@
 ### luhnCheck
 
 Implementation of the [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) used to validate a variety of identification numbers, such as credit card numbers, IMEI numbers, National Provider Identifier numbers etc.
-Works with numbers and strings alike
+
+Use `String.split('')`, `Array.reverse()` and `Array.map()` in combination with `parseInt()` to obtain an array of digits.
+Use `Array.splice(0,1)` to obtain the last digit.
+Use `Array.reduce()` to implement the Luhn Algorithm.
+Return `true` if `sum` is divisible by `10`, `false` otherwise.
+
+
 ``` js 
 const luhnCheck = num => { 
-    let arr = (num+'').split('').reverse()
-    let lastDigit = arr.splice(0,1)
-    let sum = arr.reduce((acc,val,i) => i%2!==0 ? acc + parseInt(val) : acc + (parseInt(val) * 2)%9 || 9,0)
-     sum += parseInt(lastDigit)
-     return sum%10 === 0
- }
+  let arr = (num+'').split('').reverse().map(x => parseInt(x));
+  let lastDigit = arr.splice(0,1)[0];
+  let sum = arr.reduce((acc,val,i) => i%2!==0 ? acc + val : acc + (val * 2) % 9 || 9,0);
+  sum += lastDigit;
+  return sum%10 === 0;
+}
 ```
+
 ```js
- luhnCheck("4485275742308327"); //true
- luhnCheck(4485275742308327); //true
- luhnCheck(6011329933655299); // true
- luhnCheck(123456789); //false
+luhnCheck("4485275742308327"); // true
+luhnCheck(4485275742308327); // true
+luhnCheck(6011329933655299); //  true
+luhnCheck(123456789); // false
 ```
