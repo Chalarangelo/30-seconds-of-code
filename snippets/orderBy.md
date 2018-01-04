@@ -19,11 +19,7 @@ const orderBy = (arr, props, orders) =>
 ```
 
 ```js
-const users = [
-  { name: 'fred', age: 48 },
-  { name: 'barney', age: 36 },
-  { name: 'fred', age: 40 }
-];
+const users = [{ name: 'fred', age: 48 }, { name: 'barney', age: 36 }, { name: 'fred', age: 40 }];
 orderBy(users, ['name', 'age'], ['asc', 'desc']); // [{name: 'barney', age: 36}, {name: 'fred', age: 48}, {name: 'fred', age: 40}]
 orderBy(users, ['name', 'age']); // [{name: 'barney', age: 36}, {name: 'fred', age: 40}, {name: 'fred', age: 48}]
 ```
