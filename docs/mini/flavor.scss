@@ -131,6 +131,9 @@ $_drawer-right: false;
 
 @import 'navigation';
 
+
+$toast-back-color:       #212121;
+
 $mark-back-color-var:         '--mrk-b-col';
 $mark-fore-color-var:         '--mrk-f-col';
 $toast-back-color-var:        '--tst-b-col';
@@ -153,6 +156,12 @@ $_include-tooltip: false;
 $_include-collapse: false;
 
 @import 'contextual';
+
+.#{$toast-name} {
+  bottom: calc(var(#{$universal-margin-var}) / 2);
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
 
 /*
   Custom elements for contextual background elements, toasts and tooltips.
