@@ -916,7 +916,7 @@ initialize2DArray(2, 2, 0); // [[0,0], [0,0]]
 
 Initializes an array containing the numbers in the specified range where `start` and `end` are inclusive with there common difference `step`.
 
-Use `Array(Math.ceil((end+1-start)/step)` to create an array of the desired length(the amounts of elements is equal to `(end-start)/step` or `(end+1-start)/step` for inclusive end), `Array.map()` to fill with the desired values in a range.
+Use `Array.from(Math.ceil((end+1-start)/step))` to create an array of the desired length(the amounts of elements is equal to `(end-start)/step` or `(end+1-start)/step` for inclusive end), `Array.map()` to fill with the desired values in a range.
 You can omit `start` to use a default value of `0`.
 You can omit `step` to use a default value of `1`.
 
