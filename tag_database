@@ -108,6 +108,8 @@ negate:logic
 nthElement:array
 objectFromPairs:object
 objectToPairs:object
+off:browser
+on:browser
 once:function
 onUserInputChange:browser
 orderBy:object
