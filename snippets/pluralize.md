@@ -6,7 +6,11 @@ Check if `num` is greater than `0`. Throw an appropriate `Error` if not, return 
 Omit the third argument, `items`, to use a default plural form same as `item` suffixed with a single `'s'`.
 
 ```js
-const pluralize = (num, item, items = item + 's') =>
+const plurals = word => {
+    let value = word.replace(/(s|x|z|ch|sh)$/g,'$1es').replace(/([aeiou])y$/g,'$1ys').replace(/([^aeiou])y$/,'$1ies')
+    return value === word ? word + 's' : value
+}
+const pluralize = (num, item, items = plurals(item)) =>
   num <= 0
     ? (() => {
         throw new Error(`'num' should be >= 1. Value povided was ${num}.`);
