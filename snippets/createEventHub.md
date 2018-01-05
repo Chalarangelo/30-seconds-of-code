@@ -8,7 +8,7 @@ each one with `Array.forEach()` by passing in the data as an argument.
 For `on`, create an array for the event if it does not yet exist, then use `Array.push()` to add the handler
 to the array.
 
-For `off`, use `Array.findIndex()` to find the index of the handler in the event array and remove it.
+For `off`, use `Array.findIndex()` to find the index of the handler in the event array and remove it using `Array.splice()`.
 
 ```js
 const createEventHub = () => ({
