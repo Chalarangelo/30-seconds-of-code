@@ -50,10 +50,14 @@ try {
       .readFileSync('tag_database', 'utf8')
       .split('\n')
       .slice(0, -1)
-      .map(v => v.split(':').slice(0, 2))
+      .map(v => {
+        let data = v.split(':').slice(0, 2);
+        data[1] = data[1].split(',').map(t => t.trim());
+        return data;
+      })
   );
   tagDbStats = Object.entries(tagDbData)
-    .sort((a, b) => a[1].localeCompare(b[1]))
+    .sort((a, b) => a[1][0].localeCompare(b[1][0]))
     .reduce((acc, val) => {
       acc.hasOwnProperty(val[1]) ? acc[val[1]]++ : (acc[val[1]] = 1);
       return acc;
@@ -68,9 +72,9 @@ try {
   for (let snippet of Object.entries(snippets))
     if (
       tagDbData.hasOwnProperty(snippet[0].slice(0, -3)) &&
-      tagDbData[snippet[0].slice(0, -3)].trim()
+      tagDbData[snippet[0].slice(0, -3)].join(',').trim()
     )
-      output += `${snippet[0].slice(0, -3)}:${tagDbData[snippet[0].slice(0, -3)].trim()}\n`;
+      output += `${snippet[0].slice(0, -3)}:${tagDbData[snippet[0].slice(0, -3)].join(',').trim()}\n`;
     else {
       output += `${snippet[0].slice(0, -3)}:uncategorized\n`;
       missingTags++;
