@@ -2,7 +2,7 @@
 
 Removes an event listener from an element.
 
-Use `EventTarget.removeEventListener()` to remove an event listener to an element.
+Use `EventTarget.removeEventListener()` to remove an event listener from an element.
 
 ```js
 const off = (el, evt, fn, opts = false) => el.removeEventListener(evt, fn, opts);
