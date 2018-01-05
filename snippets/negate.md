@@ -2,7 +2,7 @@
 
 Negates a predicate function.
 
-Take a predicate function and apply `not` to it with its arguments.
+Take a predicate function and apply the not operator (`!`) to it with its arguments.
 
 ```js
 const negate = func => (...args) => !func(...args);

@@ -18,7 +18,7 @@
 
 ⚠️ **WARNING:** Snippets are not production ready.
 
-You can find a package with all the snippets on [npm](https://www.npmjs.com/package/30-seconds-of-code). 
+You can find a package with all the snippets on [npm](https://www.npmjs.com/package/30-seconds-of-code).
 
 ```
 npm install 30-seconds-of-code
@@ -1727,7 +1727,7 @@ zipObject(['a', 'b'], [1, 2, 3]); // {a: 1, b: 2}
 ---
  ## 🌐 Browser
 
-### arrayToHtmlList
+### arrayToHtmlList ![advanced](/advanced.svg)
 
 Converts the given array elements into `<li>` tags and appends them to the list of the given id.
 

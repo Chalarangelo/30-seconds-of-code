@@ -1,6 +1,6 @@
 ### select
 
-Retrieve a property that indicated by the selector from an object.
+Retrieve a property indicated by the selector from an object.
 
 If the property does not exists returns `undefined`.
 
