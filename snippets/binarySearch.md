@@ -1,17 +1,16 @@
 ### binarySearch
 
-Use recursion to perform a logarithmic search similar to `.indexOf()` that finds the index of a value within an array. The two differences being 
+Use recursion. Similar to `Array.indexOf()` that finds the index of a value within an array. The two differences being 
 1. Operation only works with sorted arrays
-2. Offers a major performance boost when compared to a linear search or `.indexOf()` 
+2. Offers a major performance boost when compared to a linear search or `Array.indexOf()` 
 
 ```js
 const binarySearch = (arr, val, start = 0, end = arr.length - 1) => {
   if (start > end) return -1;
   const mid = Math.floor((start + end) / 2);
-  const target = arr[mid];
-  return (target > val) 
+  return (arr[mid] > val) 
       ? binarySearch(arr, val, start, mid - 1)
-      : (target < val) 
+      : (arr[mid] < val) 
         ? binarySearch(arr, val, mid + 1, end)
         : mid
 }
