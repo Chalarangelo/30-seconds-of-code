@@ -2,13 +2,9 @@
 
 Adds an event listener to an element with the ability to use event delegation.
 
-Use `EventTarget.addEventListener()` to add an event listener to an element. If there is a
-`target` property supplied to the options object, ensure the event target matches the
-target specified and then invoke the callback by supplying the correct `this` context.
-Use `options` to pass options to `addEventListener` or omit it to use bubbling by default.
-In order to use this function with `off`, the reference to the custom delegator function
-is returned if the `target` option is specified. Omit `opts` to default to non-delegation 
-behavior and event bubbling.
+Use `EventTarget.addEventListener()` to add an event listener to an element. If there is a `target` property supplied to the options object, ensure the event target matches the target specified and then invoke the callback by supplying the correct `this` context.
+Returns a reference to the custom delegator function, in order to be possible to use with [`off`](#off).
+Omit `opts` to default to non-delegation behavior and event bubbling.
 
 ```js
 const on = (el, evt, fn, opts = {}) => {
