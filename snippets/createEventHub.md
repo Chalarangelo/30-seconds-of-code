@@ -21,7 +21,7 @@ const createEventHub = () => ({
     this.hub[event].push(handler);
   },
   off(event, handler) {
-    const i = this.hub[event].findIndex(h => h === handler);
+    const i = (this.hub[event] || []).findIndex(h => h === handler);
     if (i > -1) this.hub[event].splice(i, 1);
   }
 });
