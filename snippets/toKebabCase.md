@@ -2,8 +2,7 @@
 
 Converts a string to kebab case.
 
-Break the string into words and combine them using `-` as a separator.
-For more detailed explanation of this Regex, [visit this Site](https://regex101.com/r/bMCgAB/1).
+Break the string into words and combine them adding `-` as a separator, using a regexp.
 
 ```js
 const toKebabCase = str =>

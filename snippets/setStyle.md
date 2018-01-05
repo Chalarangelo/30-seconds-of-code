@@ -2,10 +2,10 @@
 
 Sets the value of a CSS rule for the specified element.
 
-Use `element.style` to set the value of the CSS rule for the specified element to `value`.
+Use `element.style` to set the value of the CSS rule for the specified element to `val`.
 
 ```js
-const setStyle = (el, ruleName, value) => (el.style[ruleName] = value);
+const setStyle = (el, ruleName, val) => (el.style[ruleName] = val);
 ```
 
 ```js
