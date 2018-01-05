@@ -15,9 +15,10 @@ const createElement = str => {
 ```
 
 ```js
-createElement(
+const el = createElement(
   `<div class="container">
     <p>Hello!</p>
   </div>`
 );
+console.log(el.className); // 'container'
 ```
