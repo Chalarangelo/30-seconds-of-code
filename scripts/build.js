@@ -106,7 +106,7 @@ try {
     if (capitalizedTag === 'Uncategorized') {
       uncategorizedOutput += `### _${capitalizedTag}_\n\n<details>\n<summary>View contents</summary>\n\n`;
       for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
-        uncategorizedOutput += `* [\`${taggedSnippet[0]}\`](#${taggedSnippet[0].toLowerCase()})\n`;
+        uncategorizedOutput += `* [\`${taggedSnippet[0]}\`](#${taggedSnippet[0].toLowerCase()}${taggedSnippet[1].includes('advanced')?'-':''})\n`;
       }
       uncategorizedOutput += '\n</details>\n\n';
     } else {
@@ -114,7 +114,7 @@ try {
         EMOJIS[tag] || ''
       } ${capitalizedTag}\n\n<details>\n<summary>View contents</summary>\n\n`;
       for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
-        output += `* [\`${taggedSnippet[0]}\`](#${taggedSnippet[0].toLowerCase()})\n`;
+        output += `* [\`${taggedSnippet[0]}\`](#${taggedSnippet[0].toLowerCase()}${taggedSnippet[1].includes('advanced')?'-':''})\n`;
       }
       output += '\n</details>\n\n';
     }
@@ -137,7 +137,7 @@ try {
       output += `---\n ## ${EMOJIS[tag] || ''} ${capitalizedTag}\n`;
       for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
         let data = snippets[taggedSnippet[0] + '.md'];
-        // Add advanced tag 
+        // Add advanced tag
         if(taggedSnippet[1].includes('advanced')){
           data = data.split(/\r?\n/);
           data[0] = data[0] +' ![advanced](/advanced.svg)';
