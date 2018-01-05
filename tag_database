@@ -101,8 +101,10 @@ negate:logic,function
 nthElement:array
 objectFromPairs:object,array
 objectToPairs:object,array
+off:browser,event
+on:browser,event
 once:function
-onUserInputChange:browser,advanced
+onUserInputChange:browser,event,advanced
 orderBy:object,array
 palindrome:string
 percentile:math
