@@ -19,9 +19,10 @@ compose:function
 copyToClipboard:browser,string,advanced
 countOccurrences:array
 countVowels:string
-currentURL:browser,url
-curry:function,recursion
-deepFlatten:array,recursion
+createEventHub:utility
+currentURL:browser
+curry:function
+deepFlatten:array
 defer:function
 detectDeviceType:browser
 difference:array,math
