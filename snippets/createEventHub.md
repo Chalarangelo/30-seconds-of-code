@@ -1,6 +1,6 @@
 ### createEventHub
 
-Creates a pubsub event hub with `emit`, `on`, and `off` methods.
+Creates a pub/sub ([publish–subscribe](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)) event hub with `emit`, `on`, and `off` methods.
 
 For `emit`, resolve the array of handlers based on the `event` argument and then run
 each one with `Array.forEach()` by passing in the data as an argument.
