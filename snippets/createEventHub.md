@@ -3,12 +3,12 @@
 Creates a pubsub event hub with `emit`, `on`, and `off` methods.
 
 For `emit`, resolve the array of handlers based on the `event` argument and then run
-each one by passing in the data as an argument.
+each one with `Array.forEach()` by passing in the data as an argument.
 
-For `on`, create an array for the event if it does not yet exist, then push the handler
-into the array.
+For `on`, create an array for the event if it does not yet exist, then use `Array.push()` to add the handler
+to the array.
 
-For `off`, find the index of the handler in the event array and remove it.
+For `off`, use `Array.findIndex()` to find the index of the handler in the event array and remove it.
 
 ```js
 const createEventHub = () => ({
