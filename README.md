@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ![Logo](/logo.png)
 
 # 30 seconds of code
@@ -68,77 +67,6 @@ average(1, 2, 3);
 </details>
 
 ## Table of Contents
-=======
-![Logo](/logo.png)
-
-# 30 seconds of code
-
-[![License](https://img.shields.io/badge/license-CC0--1.0-blue.svg)](https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE) [![npm Downloads](https://img.shields.io/npm/dt/30-seconds-of-code.svg)](https://www.npmjs.com/package/30-seconds-of-code) [![npm Version](https://img.shields.io/npm/v/30-seconds-of-code.svg)](https://www.npmjs.com/package/30-seconds-of-code) [![Gitter chat](https://img.shields.io/badge/chat-on%20gitter-4FB999.svg)](https://gitter.im/30-seconds-of-code/Lobby) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Travis Build](https://travis-ci.org/Chalarangelo/30-seconds-of-code.svg?branch=master)](https://travis-ci.org/Chalarangelo/30-seconds-of-code) [![Insight.io](https://img.shields.io/badge/insight.io-Ready-brightgreen.svg)](https://insight.io/github.com/Chalarangelo/30-seconds-of-code/tree/master/?source=0) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard) [![ProductHunt](https://img.shields.io/badge/producthunt-vote-orange.svg)](https://www.producthunt.com/posts/30-seconds-of-code)
-
-
-> Curated collection of useful JavaScript snippets that you can understand in 30 seconds or less.
-
-
-- Use <kbd>Ctrl</kbd> + <kbd>F</kbd> or <kbd>command</kbd> + <kbd>F</kbd> to search for a snippet.
-- Contributions welcome, please read the [contribution guide](CONTRIBUTING.md).
-- Snippets are written in ES6, use the [Babel transpiler](https://babeljs.io/) to ensure backwards-compatibility.
-- You can import these snippets into your text editor of choice (VSCode, Atom, Sublime) using the files found in [this repo](https://github.com/Rob-Rychs/30-seconds-of-code-texteditorsnippets).
-- You can import these snippets into Alfred 3, using [this file](https://github.com/lslvxy/30-seconds-of-code-alfredsnippets).
-
-#### Package
-
-⚠️ **WARNING:** Snippets are not production ready.
-
-You can find a package with all the snippets on [npm](https://www.npmjs.com/package/30-seconds-of-code).
-
-```
-npm install 30-seconds-of-code
-```
-
-CDN links
-- [ES2017 Full (UMD)](https://unpkg.com/30-seconds-of-code)
-- [ES5 Minified (UMD)](https://unpkg.com/30-seconds-of-code/dist/_30s.es5.min.js)
-
-<details>
-
-**Browser**
-
-> IMPORTANT: replace the `src` with the full version link and desired target spec (such as ES5 minified)):
-
-```html
-<script src="https://unpkg.com/30-seconds-of-code"></script>
-<script>
-  _30s.average(1, 2, 3);
-</script>
-```
-
-**Node**
-
-```js
-// CommonJS
-const _30s = require('30-seconds-of-code');
-_30s.average(1, 2, 3);
-
-// ES Modules
-import _30s from '30-seconds-of-code';
-_30s.average(1, 2, 3);
-```
-
-To import snippets directly:
-
-```js
-// CommonJS
-const { average } = require('30-seconds-of-code');
-average(1, 2, 3);
-
-// ES Modules
-import { average } from '30-seconds-of-code';
-average(1, 2, 3);
-```
-</details>
-
-## Table of Contents
->>>>>>> master
 
 ### 🔌 Adapter
 
@@ -190,7 +118,6 @@ average(1, 2, 3);
 * [`pull`](#pull)
 * [`pullAtIndex`](#pullatindex)
 * [`pullAtValue`](#pullatvalue)
-* [`quickSort`](#quicksort)
 * [`reducedFilter`](#reducedfilter)
 * [`remove`](#remove)
 * [`sample`](#sample)
@@ -231,7 +158,6 @@ average(1, 2, 3);
 * [`scrollToTop`](#scrolltotop)
 * [`setStyle`](#setstyle)
 * [`show`](#show)
-* [`speechSynthesis`](#speechsynthesis)
 * [`toggleClass`](#toggleclass)
 * [`UUIDGeneratorBrowser`](#uuidgeneratorbrowser)
 
@@ -244,7 +170,6 @@ average(1, 2, 3);
 
 * [`formatDuration`](#formatduration)
 * [`getDaysDiffBetweenDates`](#getdaysdiffbetweendates)
-* [`JSONToDate`](#jsontodate)
 * [`toEnglishDate`](#toenglishdate)
 * [`tomorrow`](#tomorrow)
 
@@ -283,21 +208,15 @@ average(1, 2, 3);
 
 * [`average`](#average)
 * [`clampNumber`](#clampnumber)
-* [`collatz`](#collatz)
 * [`digitize`](#digitize)
 * [`distance`](#distance)
 * [`elo`](#elo)
 * [`factorial`](#factorial)
-* [`factors`](#factors)
 * [`fibonacci`](#fibonacci)
-* [`fibonacciCountUntilNum`](#fibonaccicountuntilnum)
-* [`fibonacciUntilNum`](#fibonacciuntilnum)
 * [`gcd`](#gcd)
 * [`geometricProgression`](#geometricprogression)
 * [`hammingDistance`](#hammingdistance)
-* [`howManyTimes`](#howmanytimes)
 * [`inRange`](#inrange)
-* [`isArmstrongNumber`](#isarmstrongnumber)
 * [`isDivisible`](#isdivisible)
 * [`isEven`](#iseven)
 * [`isPrime`](#isprime)
@@ -310,7 +229,7 @@ average(1, 2, 3);
 * [`randomIntegerInRange`](#randomintegerinrange)
 * [`randomNumberInRange`](#randomnumberinrange)
 * [`round`](#round)
-* [`solveRPN`](#solverpn)
+* [`sdbm`](#sdbm)
 * [`standardDeviation`](#standarddeviation)
 * [`sum`](#sum)
 * [`sumPower`](#sumpower)
@@ -366,7 +285,6 @@ average(1, 2, 3);
 * [`mask`](#mask)
 * [`palindrome`](#palindrome)
 * [`pluralize`](#pluralize)
-* [`repeatString`](#repeatstring)
 * [`reverseString`](#reversestring)
 * [`sortCharactersInString`](#sortcharactersinstring)
 * [`splitLines`](#splitlines)
@@ -379,18 +297,12 @@ average(1, 2, 3);
 
 </details>
 
-### 🔧 Utility
+###  Type
 
 <details>
 <summary>View contents</summary>
 
-* [`cloneRegExp`](#cloneregexp)
-* [`coalesce`](#coalesce)
-* [`coalesceFactory`](#coalescefactory)
-* [`extendHex`](#extendhex)
 * [`getType`](#gettype)
-* [`getURLParameters`](#geturlparameters)
-* [`hexToRGB`](#hextorgb)
 * [`isArray`](#isarray)
 * [`isArrayLike`](#isarraylike)
 * [`isBoolean`](#isboolean)
@@ -402,10 +314,23 @@ average(1, 2, 3);
 * [`isString`](#isstring)
 * [`isSymbol`](#issymbol)
 * [`isValidJSON`](#isvalidjson)
+
+</details>
+
+### 🔧 Utility
+
+<details>
+<summary>View contents</summary>
+
+* [`cloneRegExp`](#cloneregexp)
+* [`coalesce`](#coalesce)
+* [`coalesceFactory`](#coalescefactory)
+* [`extendHex`](#extendhex)
+* [`getURLParameters`](#geturlparameters)
+* [`hexToRGB`](#hextorgb)
 * [`prettyBytes`](#prettybytes)
 * [`randomHexColorCode`](#randomhexcolorcode)
 * [`RGBToHex`](#rgbtohex)
-* [`sdbm`](#sdbm)
 * [`timeTaken`](#timetaken)
 * [`toDecimalMark`](#todecimalmark)
 * [`toOrdinalSuffix`](#toordinalsuffix)
@@ -473,7 +398,7 @@ Pall(p1, p2, p3).then(console.log);
 
 ### flip
 
-Flip takes a function as an argument, then makes the first argument the last
+Flip takes a function as an argument, then makes the first argument the last.
 
 Return a closure that takes variadic inputs, and splices the last argument to make it the first argument before applying the rest.
 
@@ -635,7 +560,7 @@ Counts the occurrences of a value in an array.
 Use `Array.reduce()` to increment a counter each time you encounter the specific value inside the array.
 
 ```js
-const countOccurrences = (arr, value) => arr.reduce((a, v) => (v === value ? a + 1 : a + 0), 0);
+const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a + 0), 0);
 ```
 
 <details>
@@ -841,7 +766,7 @@ filterNonUnique([1, 2, 2, 3, 4, 4, 5]); // [1,3,5]
 
 Flattens an array.
 
-Use a new array and concatenate it with the spread input array causing a shallow denesting of any contained arrays.
+Use a new array, `Array.concat()` and the spread operator (`...`) to cause a shallow denesting of any contained arrays.
 
 ```js
 const flatten = arr => [].concat(...arr);
@@ -1016,10 +941,10 @@ initializeArrayWithRange(9, 0, 2); // [0,2,4,6,8]
 Initializes and fills an array with the specified values.
 
 Use `Array(n)` to create an array of the desired length, `fill(v)` to fill it with the desired values.
-You can omit `value` to use a default value of `0`.
+You can omit `val` to use a default value of `0`.
 
 ```js
-const initializeArrayWithValues = (n, value = 0) => Array(n).fill(value);
+const initializeArrayWithValues = (n, val = 0) => Array(n).fill(val);
 ```
 
 <details>
@@ -1364,38 +1289,6 @@ let pulled = pullAtValue(myArray, ['b', 'd']); // myArray = [ 'a', 'c' ] , pulle
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### quickSort
-
-QuickSort an Array (ascending sort by default).
-
-Use recursion. 
-Use `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it. 
-If the parameter `desc` is truthy, return array sorts in descending order.
-
-```js
-const quickSort = ([n, ...nums], desc) =>
-  isNaN(n)
-    ? []
-    : [
-        ...quickSort(nums.filter(v => (desc ? v > n : v <= n)), desc),
-        n,
-        ...quickSort(nums.filter(v => (!desc ? v > n : v <= n)), desc)
-      ];
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-quickSort([4, 1, 3, 2]); // [1,2,3,4]
-quickSort([4, 1, 3, 2], true); // [4,3,2,1]
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
 ### reducedFilter
 
 Filter an array of objects based on a condition while also filtering out unspecified keys.
@@ -1526,7 +1419,7 @@ sampleSize([1, 2, 3], 4); // [2,3,1]
 
 Randomizes the order of the values of an array, returning a new array.
 
-Uses the Fisher-Yates algorithm to reorder the elements of the array, based on the [Lodash implementation](https://github.com/lodash/lodash/blob/b2ea6b1cd251796dcb5f9700c4911a7b6223920b/shuffle.js), but as a pure function.
+Uses the [Fisher-Yates algorithm](https://github.com/chalarangelo/30-seconds-of-code#shuffle) to reorder the elements of the array.
 
 ```js
 const shuffle = ([...arr]) => {
@@ -1556,7 +1449,7 @@ shuffle(foo); // [2,3,1], foo = [1,2,3]
 
 Returns an array of elements that appear in both arrays.
 
-Use `filter()` to remove values that are not part of `values`, determined using `includes()`.
+Use `Array.filter()` to remove values that are not part of `values`, determined using `Array.includes()`.
 
 ```js
 const similarity = (arr, values) => arr.filter(v => values.includes(v));
@@ -1632,7 +1525,7 @@ symmetricDifference([1, 2, 3], [1, 2, 4]); // [3,4]
 
 Returns all elements in an array except for the first one.
 
-Return `arr.slice(1)` if the array's `length` is more than `1`, otherwise, return the whole array.
+Return `Array.slice(1)` if the array's `length` is more than `1`, otherwise, return the whole array.
 
 ```js
 const tail = arr => (arr.length > 1 ? arr.slice(1) : arr);
@@ -1799,7 +1692,7 @@ zipObject(['a', 'b'], [1, 2, 3]); // {a: 1, b: 2}
 ---
  ## 🌐 Browser
 
-### arrayToHtmlList ![advanced](/advanced.svg)
+### arrayToHtmlList
 
 Converts the given array elements into `<li>` tags and appends them to the list of the given id.
 
@@ -1846,7 +1739,7 @@ bottomVisible(); // true
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### copyToClipboard
+### copyToClipboard ![advanced](/advanced.svg)
 
 Copy a string to the clipboard. Only works as a result of user action (i.e. inside a `click` event listener).
 
@@ -2085,7 +1978,7 @@ httpsRedirect(); // If you are on http://mydomain.com, you are redirected to htt
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### onUserInputChange
+### onUserInputChange ![advanced](/advanced.svg)
 
 Run the callback whenever the user input type changes (`mouse` or `touch`). Useful for enabling/disabling code depending on the input device. This process is dynamic and works with hybrid devices (e.g. touchscreen laptops).
 
@@ -2148,7 +2041,7 @@ redirect('https://google.com');
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### runAsync
+### runAsync ![advanced](/advanced.svg)
 
 Runs a function in a separate thread by using a [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), allowing long running functions to not block the UI.
 
@@ -2239,10 +2132,10 @@ scrollToTop();
 
 Sets the value of a CSS rule for the specified element.
 
-Use `element.style` to set the value of the CSS rule for the specified element to `value`.
+Use `element.style` to set the value of the CSS rule for the specified element to `val`.
 
 ```js
-const setStyle = (el, ruleName, value) => (el.style[ruleName] = value);
+const setStyle = (el, ruleName, val) => (el.style[ruleName] = val);
 ```
 
 <details>
@@ -2272,35 +2165,6 @@ const show = (...el) => [...el].forEach(e => (e.style.display = ''));
 
 ```js
 show(document.querySelectorAll('img')); // Shows all <img> elements on the page
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### speechSynthesis
-
-Performs speech synthesis (experimental).
-
-Use `SpeechSynthesisUtterance.voice` and `window.speechSynthesis.getVoices()` to convert a message to speech.
-Use `window.speechSynthesis.speak()` to play the message.
-
-Learn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
-
-```js
-const speechSynthesis = message => {
-  const msg = new SpeechSynthesisUtterance(message);
-  msg.voice = window.speechSynthesis.getVoices()[0];
-  window.speechSynthesis.speak(msg);
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-speechSynthesis('Hello, World'); // // plays the message
 ```
 
 </details>
@@ -2419,31 +2283,6 @@ getDaysDiffBetweenDates(new Date('2017-12-13'), new Date('2017-12-22')); // 9
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### JSONToDate
-
-Converts a JSON object to a date.
-
-Use `Date()`, to convert dates in JSON format to readable format (`dd/mm/yyyy`).
-
-```js
-const JSONToDate = arr => {
-  const dt = new Date(parseInt(arr.toString().substr(6)));
-  return `${dt.getDate()}/${dt.getMonth() + 1}/${dt.getFullYear()}`;
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-JSONToDate(/Date(1489525200000)/); // "14/3/2017"
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
 ### toEnglishDate
 
 Converts a date from American format to English format.
@@ -2477,7 +2316,7 @@ toEnglishDate('09/21/2010'); // '21/09/2010'
 ### tomorrow
 
 Results in a string representation of tomorrow's date.
-Use `new Date()` to get today's date, adding `86400000` of seconds to it(24 hours), using `toISOString` to convert Date object to string.
+Use `new Date()` to get today's date, adding `86400000` of seconds to it(24 hours), using `Date.toISOString()` to convert Date object to string.
 
 ```js
 const tomorrow = () => new Date(new Date().getTime() + 86400000).toISOString().split('T')[0];
@@ -2757,7 +2596,7 @@ async function sleepyWork() {
 
 Negates a predicate function.
 
-Take a predicate function and apply `not` to it with its arguments.
+Take a predicate function and apply the not operator (`!`) to it with its arguments.
 
 ```js
 const negate = func => (...args) => !func(...args);
@@ -2780,22 +2619,19 @@ negate(isOdd)(1); // false
 
 ### average
 
-Returns the average of an of two or more numbers/arrays.
+Returns the average of an of two or more numbers.
 
 Use `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`, divide by the `length` of the array.
 
 ```js
-const average = (...arr) => {
-  const nums = [].concat(...arr);
-  return nums.reduce((acc, val) => acc + val, 0) / nums.length;
-};
+const average = (...nums) => [...nums].reduce((acc, val) => acc + val, 0) / nums.length;
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```js
-average([1, 2, 3]); // 2
+average(...[1, 2, 3]); // 2
 average(1, 2, 3); // 2
 ```
 
@@ -2821,28 +2657,6 @@ const clampNumber = (num, a, b) => Math.max(Math.min(num, Math.max(a, b)), Math.
 ```js
 clampNumber(2, 3, 5); // 3
 clampNumber(1, -1, -5); // -1
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### collatz
-
-Applies the Collatz algorithm.
-
-If `n` is even, return `n/2`. Otherwise, return `3n+1`.
-
-```js
-const collatz = n => (n % 2 == 0 ? n / 2 : 3 * n + 1);
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-collatz(8); // 4
 ```
 
 </details>
@@ -2895,14 +2709,16 @@ distance(1, 1, 2, 3); // 2.23606797749979
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### elo
+### elo ![advanced](/advanced.svg)
 
 Computes the new ratings between two or more opponents using the [Elo rating system](https://en.wikipedia.org/wiki/Elo_rating_system). It takes an array
 of pre-ratings and returns an array containing post-ratings.
 The array should be ordered from best performer to worst performer (winner -> loser).
 
-Use the exponent `**` operator and math operators to compute the expected score (chance of winning)
-of each opponent and compute the new rating for each. Loop through the ratings, using each permutation to compute the post-Elo rating for each player in a pairwise fashion. Omit the second argument to use the default K-factor of 32, or supply a custom K-factor value. For details on the third argument, see the last example.
+Use the exponent `**` operator and math operators to compute the expected score (chance of winning).
+of each opponent and compute the new rating for each.
+Loop through the ratings, using each permutation to compute the post-Elo rating for each player in a pairwise fashion. 
+Omit the second argument to use the default `kFactor` of 32.
 
 ```js
 const elo = ([...ratings], kFactor = 32, selfRating) => {
@@ -2935,7 +2751,7 @@ elo([1200, 1200], 64); // [1232, 1168]
 // 4 player FFA, all same rank
 elo([1200, 1200, 1200, 1200]).map(Math.round); // [1246, 1215, 1185, 1154]
 /*
-For teams, each rating can adjusted based on own team's average rating vs. 
+For teams, each rating can adjusted based on own team's average rating vs.
 average rating of opposing team, with the score being added to their
 own individual rating by supplying it as the third argument.
 */
@@ -2976,57 +2792,6 @@ factorial(6); // 720
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### factors
-
-Returns the array of factors of the given `num`. 
-If the second argument is set to `true` returns only the prime factors of `num`.
-If `num` is `1` or `0` returns an empty array.
-If `num` is less than `0` returns all the factors of `-int` together with their additive inverses.
-
-Use `Array.from()`, `Array.map()` and `Array.filter()` to find all the factors of `num`.
-If given `num` is negative, use `Array.reduce()` to add the additive inverses to the array.
-Return all results if `primes` is `false`, else determine and return only the prime factors using `isPrime` and `Array.filter()`.
-Omit the second argument, `primes`, to return prime and non-prime factors by default.
-
-**Note**:- _Negative numbers are not considered prime._
-
-```js
-const factors = (num, primes = false) => {
-  const isPrime = num => {
-    const boundary = Math.floor(Math.sqrt(num));
-    for (var i = 2; i <= boundary; i++) if (num % i === 0) return false;
-    return num >= 2;
-  };
-  const isNeg = num < 0;
-  num = isNeg ? -num : num;
-  let array = Array.from({ length: num - 1 })
-    .map((val, i) => (num % (i + 2) === 0 ? i + 2 : false))
-    .filter(val => val);
-  if (isNeg)
-    array = array.reduce((acc, val) => {
-      acc.push(val);
-      acc.push(-val);
-      return acc;
-    }, []);
-  return primes ? array.filter(isPrime) : array;
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-factors(12); // [2,3,4,6,12]
-factors(12, true); // [2,3]
-factors(-12); // [2, -2, 3, -3, 4, -4, 6, -6, 12, -12]
-factors(-12, true); // [2,3]
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
 ### fibonacci
 
 Generates an array, containing the Fibonacci sequence, up until the nth term.
@@ -3054,59 +2819,6 @@ fibonacci(6); // [0, 1, 1, 2, 3, 5]
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### fibonacciCountUntilNum
-
-Returns the number of fibonnacci numbers up to `num`(`0` and `num` inclusive).
-
-Use a mathematical formula to calculate the number of fibonacci numbers until `num`.
-
-```js
-const fibonacciCountUntilNum = num =>
-  Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-fibonacciCountUntilNum(10); // 7
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### fibonacciUntilNum
-
-Generates an array, containing the Fibonacci sequence, up until the nth term.
-
-Create an empty array of the specific length, initializing the first two values (`0` and `1`).
-Use `Array.reduce()` to add values into the array, using the sum of the last two values, except for the first two.
-Uses a mathematical formula to calculate the length of the array required.
-
-```js
-const fibonacciUntilNum = num => {
-  let n = Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));
-  return Array.from({ length: n }).reduce(
-    (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),
-    []
-  );
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-fibonacciUntilNum(10); // [ 0, 1, 1, 2, 3, 5, 8 ]
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
 ### gcd
 
 Calculates the greatest common divisor between two or more numbers/arrays.
@@ -3118,7 +2830,7 @@ Otherwise, return the GCD of `y` and the remainder of the division `x/y`.
 ```js
 const gcd = (...arr) => {
   const _gcd = (x, y) => (!y ? x : gcd(y, x % y));
-  return [].concat(...arr).reduce((a, b) => _gcd(a, b));
+  return [...arr].reduce((a, b) => _gcd(a, b));
 };
 ```
 
@@ -3127,6 +2839,7 @@ const gcd = (...arr) => {
 
 ```js
 gcd(8, 36); // 4
+gcd(...[12, 8, 32]); // 4
 ```
 
 </details>
@@ -3187,44 +2900,6 @@ hammingDistance(2, 3); // 1
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### howManyTimes
-
-Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.
-Works for both negative and positive integers.
-
-If `divisor` is `-1` or `1` return `Infinity`.
-If `divisor` is `-0` or `0` return `0`.
-Otherwise, keep dividing `num` with `divisor` and incrementing `i`, while the result is an integer.
-Return the number of times the loop was executed, `i`.
-
-```js
-const howManyTimes = (num, divisor) => {
-  if (divisor === 1 || divisor === -1) return Infinity;
-  if (divisor === 0) return 0;
-  let i = 0;
-  while (Number.isInteger(num / divisor)) {
-    i++;
-    num = num / divisor;
-  }
-  return i;
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-howManyTimes(100, 2); // 2
-howManyTimes(100, 2.5); // 2
-howManyTimes(100, 0); // 0
-howManyTimes(100, -1); // Infinity
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
 ### inRange
 
 Checks if the given number falls within the given range.
@@ -3247,32 +2922,6 @@ inRange(3, 2, 5); // true
 inRange(3, 4); // true
 inRange(2, 3, 5); // false
 inrange(3, 2); // false
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### isArmstrongNumber
-
-Checks if the given number is an Armstrong number or not.
-
-Convert the given number into an array of digits. Use the exponent operator (`**`) to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return `true` otherwise `false`.
-
-```js
-const isArmstrongNumber = digits =>
-  (arr => arr.reduce((a, d) => a + parseInt(d) ** arr.length, 0) == digits)(
-    (digits + '').split('')
-  );
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-isArmstrongNumber(1634); // true
-isArmstrongNumber(56); // false
 ```
 
 </details>
@@ -3354,7 +3003,7 @@ isPrime(11); // true
 
 ### lcm
 
-Returns the least common multiple of two or more numbers/arrays.
+Returns the least common multiple of two or more numbers.
 
 Use the greatest common divisor (GCD) formula and `Math.abs()` to determine the least common multiple.
 The GCD formula uses recursion.
@@ -3363,7 +3012,7 @@ The GCD formula uses recursion.
 const lcm = (...arr) => {
   const gcd = (x, y) => (!y ? x : gcd(y, x % y));
   const _lcm = (x, y) => x * y / gcd(x, y);
-  return [].concat(...arr).reduce((a, b) => _lcm(a, b));
+  return [...arr].reduce((a, b) => _lcm(a, b));
 };
 ```
 
@@ -3372,7 +3021,7 @@ const lcm = (...arr) => {
 
 ```js
 lcm(12, 7); // 84
-lcm([1, 3, 4], 5); // 60
+lcm(...[1, 3, 4, 5]); // 60
 ```
 
 </details>
@@ -3584,44 +3233,20 @@ round(1.005, 2); // 1.01
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### solveRPN
+### sbdm
 
-Solves the given mathematical expression in [reverse polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation).
-Throws appropriate errors if there are unrecognized symbols or the expression is wrong. The valid operators are :- `+`,`-`,`*`,`/`,`^`,`**` (`^`&`**` are the exponential symbols and are same). This snippet does not supports any unary operators.
+Hashes the input string into a whole number.
 
-Use a dictionary, `OPERATORS` to specify each operator's matching mathematical operation.
-Use `String.replace()` with a regular expression to replace `^` with `**`, `String.split()` to tokenize the string and `Array.filter()` to remove empty tokens.
-Use `Array.forEach()` to parse each `symbol`, evaluate it as a numeric value or operator and solve the mathematical expression.
-Numeric values are converted to floating point numbers and pushed to a `stack`, while operators are evaluated using the `OPERATORS` dictionary and pop elements from the `stack` to apply operations.
+Use `String.split('')` and `Array.reduce()` to create a hash of the input string, utilizing bit shifting.
 
 ```js
-const solveRPN = rpn => {
-  const OPERATORS = {
-    '*': (a, b) => a * b,
-    '+': (a, b) => a + b,
-    '-': (a, b) => a - b,
-    '/': (a, b) => a / b,
-    '**': (a, b) => a ** b
-  };
-  const [stack, solve] = [
-    [],
-    rpn
-      .replace(/\^/g, '**')
-      .split(/\s+/g)
-      .filter(el => !/\s+/.test(el) && el !== '')
-  ];
-  solve.forEach(symbol => {
-    if (!isNaN(parseFloat(symbol)) && isFinite(symbol)) {
-      stack.push(symbol);
-    } else if (Object.keys(OPERATORS).includes(symbol)) {
-      const [a, b] = [stack.pop(), stack.pop()];
-      stack.push(OPERATORS[symbol](parseFloat(b), parseFloat(a)));
-    } else {
-      throw `${symbol} is not a recognized symbol`;
-    }
-  });
-  if (stack.length === 1) return stack.pop();
-  else throw `${rpn} is not a proper RPN. Please check it and try again`;
+const sdbm = str => {
+  let arr = str.split('');
+  return arr.reduce(
+    (hashCode, currentVal) =>
+      (hashCode = currentVal.charCodeAt(0) + (hashCode << 6) + (hashCode << 16) - hashCode),
+    0
+  );
 };
 ```
 
@@ -3629,8 +3254,7 @@ const solveRPN = rpn => {
 <summary>Examples</summary>
 
 ```js
-solveRPN('15 7 1 1 + - / 3 * 2 1 1 + + -'); // 5
-solveRPN('2 3 ^'); // 8
+console.log(sdbm('name')); // -3521204949
 ```
 
 </details>
@@ -3676,14 +3300,14 @@ Returns the sum of two or more numbers/arrays.
 Use `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`.
 
 ```js
-const sum = (...arr) => [].concat(...arr).reduce((acc, val) => acc + val, 0);
+const sum = (...arr) => [...arr].reduce((acc, val) => acc + val, 0);
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```js
-sum([1, 2, 3, 4]); // 10
+sum(...[1, 2, 3, 4]); // 10
 ```
 
 </details>
@@ -3888,8 +3512,8 @@ UUIDGeneratorNode(); // '79c7c136-60ee-40a2-beb2-856f1feabefc'
 
 Removes any properties except the ones specified from a JSON object.
 
-Use `Object.keys()` method to loop over given JSON object and deleting keys that are not `include`d in given array.
-Also if you give it a special key (`childIndicator`) it will search deeply inside it to apply function to inner objects too.
+Use `Object.keys()` method to loop over given JSON object and deleting keys that are not included in given array.
+If you pass a special key,`childIndicator`, it will search deeply apply the function to inner objects, too.
 
 ```js
 const cleanObj = (obj, keysToKeep = [], childIndicator) => {
@@ -4019,8 +3643,8 @@ objectToPairs({ a: 1, b: 2 }); // [['a',1],['b',2]])
 
 Returns a sorted array of objects ordered by properties and orders.
 
-Uses a custom implementation of sort, that reduces the props array argument with a default value of 0, it uses destructuring to swap the properties position depending on the order passed.
-If no orders array is passed it sort by 'asc' by default.
+Uses `Array.sort()`, `Array.reduce()` on the `props` array with a default value of `0`, use array destructuring to swap the properties position depending on the order passed.
+If no `orders` array is passed it sort by `'asc'` by default.
 
 ```js
 const orderBy = (arr, props, orders) =>
@@ -4051,7 +3675,7 @@ orderBy(users, ['name', 'age']); // [{name: 'barney', age: 36}, {name: 'fred', a
 
 ### select
 
-Retrieve a property that indicated by the selector from an object.
+Retrieve a property indicated by the selector from an object.
 
 If the property does not exists returns `undefined`.
 
@@ -4100,20 +3724,20 @@ const b = shallowClone(a); // a !== b
 
 Get size of arrays, objects or strings.
 
-Get type of `value` (`array`, `object` or `string`). 
-Use `length` property for arrays. 
-Use `length` or `size` value if available or number of keys for objects. 
-Use `size` of a [`Blob` object](https://developer.mozilla.org/en-US/docs/Web/API/Blob) created from `value` for strings.
+Get type of `val` (`array`, `object` or `string`). 
+Use `length` property for arrays.
+Use `length` or `size` value if available or number of keys for objects.
+Use `size` of a [`Blob` object](https://developer.mozilla.org/en-US/docs/Web/API/Blob) created from `val` for strings.
 
 Split strings into array of characters with `split('')` and return its length.
 
 ```js
-const size = value =>
-  Array.isArray(value)
-    ? value.length
-    : value && typeof value === 'object'
-      ? value.size || value.length || Object.keys(value).length
-      : typeof value === 'string' ? new Blob([value]).size : 0;
+const size = val =>
+  Array.isArray(val)
+    ? val.length
+    : val && typeof val === 'object'
+      ? val.size || val.length || Object.keys(val).length
+      : typeof val === 'string' ? new Blob([val]).size : 0;
 ```
 
 <details>
@@ -4192,7 +3816,7 @@ anagrams('abc'); // ['abc','acb','bac','bca','cab','cba']
 
 ### byteSize
 
-Returns the length of string.
+Returns the length of a string in bytes.
 
 Convert a given string to a [`Blob` Object](https://developer.mozilla.org/en-US/docs/Web/API/Blob) and find its `size`.
 
@@ -4217,7 +3841,7 @@ byteSize('Hello World'); // 11
 
 Capitalizes the first letter of a string.
 
-Use destructuring and `toUpperCase()` to capitalize first letter, `...rest` to get array of characters after first letter and then `Array.join('')` to make it a string again.
+Use array destructuring and `String.toUpperCase()` to capitalize first letter, `...rest` to get array of characters after first letter and then `Array.join('')` to make it a string again.
 Omit the `lowerRest` parameter to keep the rest of the string intact, or set it to `true` to convert to lowercase.
 
 ```js
@@ -4242,7 +3866,7 @@ capitalize('fooBar', true); // 'Foobar'
 
 Capitalizes the first letter of every word in a string.
 
-Use `replace()` to match the first character of each word and `toUpperCase()` to capitalize it.
+Use `String.replace()` to match the first character of each word and `String.toUpperCase()` to capitalize it.
 
 ```js
 const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperCase());
@@ -4287,7 +3911,7 @@ countVowels('gym'); // 0
 
 Escapes a string for use in HTML.
 
-Use `String.replace()` with a regex that matches the characters that need to be escaped, using a callback function to replace each character instance with its associated escaped character using a dictionary (object).
+Use `String.replace()` with a regexp that matches the characters that need to be escaped, using a callback function to replace each character instance with its associated escaped character using a dictionary (object).
 
 ```js
 const escapeHTML = str =>
@@ -4320,7 +3944,7 @@ escapeHTML('<a href="#">Me & you</a>'); // '&lt;a href=&quot;#&quot;&gt;Me &amp;
 
 Escapes a string to use in a regular expression.
 
-Use `replace()` to escape special characters.
+Use `String.replace()` to escape special characters.
 
 ```js
 const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -4342,8 +3966,8 @@ escapeRegExp('(test)'); // \\(test\\)
 
 Converts a string from camelcase.
 
-Use `replace()` to remove underscores, hyphens, and spaces and convert words to camelcase.
-Omit the second argument to use a default separator of `_`.
+Use `String.replace()` to remove underscores, hyphens, and spaces and convert words to camelcase.
+Omit the second argument to use a default `separator` of `_`.
 
 ```js
 const fromCamelCase = (str, separator = '_') =>
@@ -4395,7 +4019,7 @@ isAbsoluteURL('/foo/bar'); // false
 
 Replaces all but the last `num` of characters with the specified mask character.
 
-Use `String.slice()` to grab the portion of the characters that need to be masked and use `String.replace()` with a regex to replace every character with the mask character.
+Use `String.slice()` to grab the portion of the characters that need to be masked and use `String.replace()` with a regexp to replace every character with the mask character.
 Concatenate the masked characters with the remaining unmasked portion of the string.
 Omit the second argument, `num`, to keep a default of `4` characters unmasked. If `num` is negative, the unmasked characters will be at the start of the string.
 Omit the third argument, `mask`, to use a default character of `'*'` for the mask.
@@ -4423,8 +4047,8 @@ mask(1234567890, -4, '$'); // '1234$$$$$$'
 
 Returns `true` if the given string is a palindrome, `false` otherwise.
 
-Convert string `toLowerCase()` and use `replace()` to remove non-alphanumeric characters from it.
-Then, `split('')` into individual characters, `reverse()`, `join('')` and compare to the original, unreversed string, after converting it `tolowerCase()`.
+Convert string `String.toLowerCase()` and use `String.replace()` to remove non-alphanumeric characters from it.
+Then, `String.split('')` into individual characters, `Array.reverse()`, `String.join('')` and compare to the original, unreversed string, after converting it `String.tolowerCase()`.
 
 ```js
 const palindrome = str => {
@@ -4488,42 +4112,17 @@ autoPluralize(2, 'person'); // 'people'
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### repeatString
-
-Repeats a string n times using `String.repeat()`
-
-If no string is provided the default is `""` and the default number of times is 2.
-
-```js
-const repeatString = (str = '', num = 2) => {
-  return num >= 0 ? str.repeat(num) : str;
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-repeatString('abc', 3); // 'abcabcabc'
-repeatString('abc'); // 'abcabc'
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
 ### reverseString
 
 Reverses a string.
 
-Use `split('')` and `Array.reverse()` to reverse the order of the characters in the string.
-Combine characters to get a string using `join('')`.
+Use the spread operator (`...`) and `Array.reverse()` to reverse the order of the characters in the string.
+Combine characters to get a string using `String.join('')`.
 
 ```js
+
 const reverseString = str =>
-  str
-    .split('')
+  [..str]
     .reverse()
     .join('');
 ```
@@ -4544,14 +4143,10 @@ reverseString('foobar'); // 'raboof'
 
 Alphabetically sorts the characters in a string.
 
-Split the string using `split('')`, `Array.sort()` utilizing `localeCompare()`, recombine using `join('')`.
+Use the spread operator (`...`), `Array.sort()` and  `String.localeCompare()` to sort the characters in `str`, recombine using `String.join('')`.
 
 ```js
-const sortCharactersInString = str =>
-  str
-    .split('')
-    .sort((a, b) => a.localeCompare(b))
-    .join('');
+const sortCharactersInString = str => [...str].sort((a, b) => a.localeCompare(b)).join('');
 ```
 
 <details>
@@ -4592,8 +4187,7 @@ splitLines('This\nis a\nmultiline\nstring.\n'); // ['This', 'is a', 'multiline',
 
 Converts a string to camelcase.
 
-Break the string into words and combine them capitalizing the first letter of each word.
-For more detailed explanation of this Regex, [visit this Site](https://regex101.com/r/bMCgAB/1).
+Break the string into words and combine them capitalizing the first letter of each word, using a regexp.
 
 ```js
 const toCamelCase = str => {
@@ -4626,8 +4220,7 @@ toCamelCase('some-mixed_string with spaces_underscores-and-hyphens'); // 'someMi
 
 Converts a string to kebab case.
 
-Break the string into words and combine them using `-` as a separator.
-For more detailed explanation of this Regex, [visit this Site](https://regex101.com/r/bMCgAB/1).
+Break the string into words and combine them adding `-` as a separator, using a regexp.
 
 ```js
 const toKebabCase = str =>
@@ -4658,8 +4251,7 @@ toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSo
 
 Converts a string to snake case.
 
-Break the string into words and combine them using `_` as a separator.
-For more detailed explanation of this Regex, [visit this Site](https://regex101.com/r/bMCgAB/1).
+Break the string into words and combine them adding `_` as a separator, using a regexp.
 
 ```js
 const toSnakeCase = str =>
@@ -4691,7 +4283,7 @@ toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSo
 Truncates a string up to a specified length.
 
 Determine if the string's `length` is greater than `num`.
-Return the string truncated to the desired length, with `...` appended to the end or the original string.
+Return the string truncated to the desired length, with `'...'` appended to the end or the original string.
 
 ```js
 const truncateString = (str, num) =>
@@ -4747,8 +4339,8 @@ unescapeHTML('&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;'); // '<a href=
 
 Converts a given string into an array of words.
 
-Use `String.split()` with a supplied pattern (defaults to non-alpha as a regex) to convert to an array of strings. Use `Array.filter()` to remove any empty strings.
-Omit the second argument to use the default regex.
+Use `String.split()` with a supplied pattern (defaults to non-alpha as a regexp) to convert to an array of strings. Use `Array.filter()` to remove any empty strings.
+Omit the second argument to use the default regexp.
 
 ```js
 const words = (str, pattern = /[^a-zA-Z-]+/) => str.split(pattern).filter(Boolean);
@@ -4767,110 +4359,13 @@ words('python, javaScript & coffee'); // ["python", "javaScript", "coffee"]
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ## 🔧 Utility
-
-### cloneRegExp
-
-Clones a regular expression.
-
-Use `new RegExp()`, `RegExp.source` and `RegExp.flags` to clone the given regular expression.
-
-```js
-const cloneRegExp = regExp => new RegExp(regExp.source, regExp.flags);
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-const regExp = /lorem ipsum/gi;
-const regExp2 = cloneRegExp(regExp); // /lorem ipsum/gi
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### coalesce
-
-Returns the first non-null/undefined argument.
-
-Use `Array.find()` to return the first non `null`/`undefined` argument.
-
-```js
-const coalesce = (...args) => args.find(_ => ![undefined, null].includes(_));
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-coalesce(null, undefined, '', NaN, 'Waldo'); // ""
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### coalesceFactory
-
-Returns a customized coalesce function that returns the first argument that returns `true` from the provided argument validation function.
-
-Use `Array.find()` to return the first argument that returns `true` from the provided argument validation function.
-
-```js
-const coalesceFactory = valid => (...args) => args.find(valid);
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-const customCoalesce = coalesceFactory(_ => ![null, undefined, '', NaN].includes(_));
-customCoalesce(undefined, null, NaN, '', 'Waldo'); // "Waldo"
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### extendHex
-
-Extends a 3-digit color code to a 6-digit color code.
-
-Use `Array.map()`, `split()` and `Array.join()` to join the mapped array for converting a 3-digit RGB notated hexadecimal color-code to the 6-digit form.
-`String.slice()` is used to remove `#` from string start since it's added once.
-```js
-const extendHex = shortHex =>
-  '#' +
-  shortHex
-    .slice(shortHex.startsWith('#') ? 1 : 0)
-    .split('')
-    .map(x => x + x)
-    .join('');
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-extendHex('#03f'); // '#0033ff'
-extendHex('05a'); // '#0055aa'
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
+ ##  Type
 
 ### getType
 
 Returns the native type of a value.
 
-Returns lowercased constructor name of value, "undefined" or "null" if value is undefined or null
+Returns lowercased constructor name of value, `"undefined"` or `"null"` if value is `undefined` or `null`.
 
 ```js
 const getType = v =>
@@ -4889,74 +4384,6 @@ getType(new Set([1, 2, 3])); // 'Set'
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### getURLParameters
-
-Returns an object containing the parameters of the current URL.
-
-Use `match()` with an appropriate regular expression to get all key-value pairs, `Array.reduce()` to map and combine them into a single object.
-Pass `location.search` as the argument to apply to the current `url`.
-
-```js
-const getURLParameters = url =>
-  url
-    .match(/([^?=&]+)(=([^&]*))/g)
-    .reduce((a, v) => ((a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a), {});
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-getURLParameters('http://url.com/page?name=Adam&surname=Smith'); // {name: 'Adam', surname: 'Smith'}
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### hexToRGB
-
-Converts a color code to a `rgb()` or `rgba()` string if alpha value is provided.
-
-Use bitwise right-shift operator and mask bits with `&` (and) operator to convert a hexadecimal color code (with or without prefixed with `#`) to a string with the RGB values. If it's 3-digit color code, first convert to 6-digit version. If an alpha value is provided alongside 6-digit hex, give `rgba()` string in return.
-
-```js
-const hexToRGB = hex => {
-  let alpha = false,
-    h = hex.slice(hex.startsWith('#') ? 1 : 0);
-  if (h.length === 3) h = [...h].map(x => x + x).join('');
-  else if (h.length === 8) alpha = true;
-  h = parseInt(h, 16);
-  return (
-    'rgb' +
-    (alpha ? 'a' : '') +
-    '(' +
-    (h >>> (alpha ? 24 : 16)) +
-    ', ' +
-    ((h & (alpha ? 0x00ff0000 : 0x00ff00)) >>> (alpha ? 16 : 8)) +
-    ', ' +
-    ((h & (alpha ? 0x0000ff00 : 0x0000ff)) >>> (alpha ? 8 : 0)) +
-    (alpha ? `, ${h & 0x000000ff}` : '') +
-    ')'
-  );
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-hexToRGB('#27ae60ff'); // 'rgba(39, 174, 96, 255)'
-hexToRGB('27ae60'); // 'rgb(39, 174, 96)'
-hexToRGB('#fff'); // 'rgb(255, 255, 255)'
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
 ### isArray
 
 Checks if the given argument is an array.
@@ -4964,14 +4391,13 @@ Checks if the given argument is an array.
 Use `Array.isArray()` to check if a value is classified as an array.
 
 ```js
-const isArray = val => !!val && Array.isArray(val);
+const isArray = val => Array.isArray(val);
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```js
-isArray(null); // false
 isArray([1]); // true
 ```
 
@@ -5047,7 +4473,6 @@ const isFunction = val => typeof val === 'function';
 <summary>Examples</summary>
 
 ```js
-isFunction(null); // false
 isFunction('x'); // false
 isFunction(x => x); // true
 ```
@@ -5236,6 +4661,174 @@ isValidJSON(null); // true
 
 <br>[⬆ Back to top](#table-of-contents)
 
+---
+ ## 🔧 Utility
+
+### cloneRegExp
+
+Clones a regular expression.
+
+Use `new RegExp()`, `RegExp.source` and `RegExp.flags` to clone the given regular expression.
+
+```js
+const cloneRegExp = regExp => new RegExp(regExp.source, regExp.flags);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const regExp = /lorem ipsum/gi;
+const regExp2 = cloneRegExp(regExp); // /lorem ipsum/gi
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### coalesce
+
+Returns the first non-null/undefined argument.
+
+Use `Array.find()` to return the first non `null`/`undefined` argument.
+
+```js
+const coalesce = (...args) => args.find(_ => ![undefined, null].includes(_));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+coalesce(null, undefined, '', NaN, 'Waldo'); // ""
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### coalesceFactory
+
+Returns a customized coalesce function that returns the first argument that returns `true` from the provided argument validation function.
+
+Use `Array.find()` to return the first argument that returns `true` from the provided argument validation function.
+
+```js
+const coalesceFactory = valid => (...args) => args.find(valid);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const customCoalesce = coalesceFactory(_ => ![null, undefined, '', NaN].includes(_));
+customCoalesce(undefined, null, NaN, '', 'Waldo'); // "Waldo"
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### extendHex
+
+Extends a 3-digit color code to a 6-digit color code.
+
+Use `Array.map()`, `String.split()` and `Array.join()` to join the mapped array for converting a 3-digit RGB notated hexadecimal color-code to the 6-digit form.
+`Array.slice()` is used to remove `#` from string start since it's added once.
+
+```js
+const extendHex = shortHex =>
+  '#' +
+  shortHex
+    .slice(shortHex.startsWith('#') ? 1 : 0)
+    .split('')
+    .map(x => x + x)
+    .join('');
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+extendHex('#03f'); // '#0033ff'
+extendHex('05a'); // '#0055aa'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### getURLParameters
+
+Returns an object containing the parameters of the current URL.
+
+Use `String.match()` with an appropriate regular expression to get all key-value pairs, `Array.reduce()` to map and combine them into a single object.
+Pass `location.search` as the argument to apply to the current `url`.
+
+```js
+const getURLParameters = url =>
+  url
+    .match(/([^?=&]+)(=([^&]*))/g)
+    .reduce((a, v) => ((a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a), {});
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+getURLParameters('http://url.com/page?name=Adam&surname=Smith'); // {name: 'Adam', surname: 'Smith'}
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### hexToRGB ![advanced](/advanced.svg)
+
+Converts a color code to a `rgb()` or `rgba()` string if alpha value is provided.
+
+Use bitwise right-shift operator and mask bits with `&` (and) operator to convert a hexadecimal color code (with or without prefixed with `#`) to a string with the RGB values. If it's 3-digit color code, first convert to 6-digit version. If an alpha value is provided alongside 6-digit hex, give `rgba()` string in return.
+
+```js
+const hexToRGB = hex => {
+  let alpha = false,
+    h = hex.slice(hex.startsWith('#') ? 1 : 0);
+  if (h.length === 3) h = [...h].map(x => x + x).join('');
+  else if (h.length === 8) alpha = true;
+  h = parseInt(h, 16);
+  return (
+    'rgb' +
+    (alpha ? 'a' : '') +
+    '(' +
+    (h >>> (alpha ? 24 : 16)) +
+    ', ' +
+    ((h & (alpha ? 0x00ff0000 : 0x00ff00)) >>> (alpha ? 16 : 8)) +
+    ', ' +
+    ((h & (alpha ? 0x0000ff00 : 0x0000ff)) >>> (alpha ? 8 : 0)) +
+    (alpha ? `, ${h & 0x000000ff}` : '') +
+    ')'
+  );
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+hexToRGB('#27ae60ff'); // 'rgba(39, 174, 96, 255)'
+hexToRGB('27ae60'); // 'rgb(39, 174, 96)'
+hexToRGB('#fff'); // 'rgb(255, 255, 255)'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 
 ### prettyBytes
 
@@ -5300,7 +4893,7 @@ randomHexColorCode(); // "#e34155"
 
 Converts the values of RGB components to a color code.
 
-Convert given RGB parameters to hexadecimal string using bitwise left-shift operator (`<<`) and `toString(16)`, then `padStart(6,'0')` to get a 6-digit hexadecimal value.
+Convert given RGB parameters to hexadecimal string using bitwise left-shift operator (`<<`) and `toString(16)`, then `String.padStart(6,'0')` to get a 6-digit hexadecimal value.
 
 ```js
 const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
@@ -5311,35 +4904,6 @@ const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6
 
 ```js
 RGBToHex(255, 165, 1); // 'ffa501'
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### sbdm
-
-This algorithm is a simple hash-algorithm that hashes it input string `s` into a whole number.
-
-Use `split('')` and `Array.reduce()` to create a hash of the input string, utilizing bit shifting.
-
-```js
-const sdbm = str => {
-  let arr = str.split('');
-  return arr.reduce(
-    (hashCode, currentVal) =>
-      (hashCode = currentVal.charCodeAt(0) + (hashCode << 6) + (hashCode << 16) - hashCode),
-    0
-  );
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-console.log(sdbm('name')); // -3521204949
 ```
 
 </details>
@@ -5431,7 +4995,7 @@ toOrdinalSuffix('123'); // "123rd"
 
 Returns `true` if the given value is a number, `false` otherwise.
 
-Use `!isNaN` in combination with `parseFloat()` to check if the argument is a number.
+Use `!isNaN()` in combination with `parseFloat()` to check if the argument is a number.
 Use `isFinite()` to check if the number is finite.
 Use `Number()` to check if the coercion holds.
 
