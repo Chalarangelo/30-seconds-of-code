@@ -152,6 +152,8 @@ average(1, 2, 3);
 * [`hasClass`](#hasclass)
 * [`hide`](#hide)
 * [`httpsRedirect`](#httpsredirect)
+* [`off`](#off)
+* [`on`](#on)
 * [`onUserInputChange`](#onuserinputchange-)
 * [`redirect`](#redirect)
 * [`runAsync`](#runasync-)
@@ -1971,6 +1973,62 @@ const httpsRedirect = () => {
 
 ```js
 httpsRedirect(); // If you are on http://mydomain.com, you are redirected to https://mydomain.com
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### off
+
+Removes an event listener from an element.
+
+Use `EventTarget.removeEventListener()` to remove an event listener from an element. 
+Omit the fourth argument `opts` to use `false` or specify it based on the options used when the event listener was added.
+
+```js
+const off = (el, evt, fn, opts = false) => el.removeEventListener(evt, fn, opts);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const fn = () => console.log('!');
+document.body.addEventListener('click', fn);
+off(document.body, 'click', fn); // no longer logs '!' upon clicking on the page
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### on
+
+Adds an event listener to an element with the ability to use event delegation.
+
+Use `EventTarget.addEventListener()` to add an event listener to an element. If there is a `target` property supplied to the options object, ensure the event target matches the target specified and then invoke the callback by supplying the correct `this` context.
+Returns a reference to the custom delegator function, in order to be possible to use with [`off`](#off).
+Omit `opts` to default to non-delegation behavior and event bubbling.
+
+```js
+const on = (el, evt, fn, opts = {}) => {
+  const delegatorFn = e => e.target.matches(opts.target) && fn.call(e.target, e);
+  el.addEventListener(evt, opts.target ? delegatorFn : fn, opts.options || false);
+  if (opts.target) return delegatorFn;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const fn = () => console.log('!');
+on(document.body, 'click', fn); // logs '!' upon clicking the body
+on(document.body, 'click', fn, { target: 'p' }); // logs '!' upon clicking a `p` element child of the body
+on(document.body, 'click', fn, { options: true }); // use capturing instead of bubbling
 ```
 
 </details>
@@ -4120,6 +4178,7 @@ Use the spread operator (`...`) and `Array.reverse()` to reverse the order of th
 Combine characters to get a string using `String.join('')`.
 
 ```js
+
 
 
 
