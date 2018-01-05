@@ -18,8 +18,7 @@ const join = (arr, separator = ',', end = separator) =>
 ```
 
 ```js
-join(); // ''
-join(['pen', 'pineapple', 'apple', 'pen'], ',', '&'); //"pen,pineapple,apple&pen"
-join(['pen', 'pineapple', 'apple', 'pen'], ','); //"pen,pineapple,apple,pen"
-join(['pen', 'pineapple', 'apple', 'pen']); //"pen,pineapple,apple,pen"
+join(['pen', 'pineapple', 'apple', 'pen'], ',', '&'); // "pen,pineapple,apple&pen"
+join(['pen', 'pineapple', 'apple', 'pen'], ','); // "pen,pineapple,apple,pen"
+join(['pen', 'pineapple', 'apple', 'pen']); // "pen,pineapple,apple,pen"
 ```

@@ -2,8 +2,8 @@
 
 Converts a number in bytes to a human-readable string.
 
-Use an array dictionary of units to be accessed based on the exponent. 
-Use `Number.toPrecision()` to truncate the number to a certain number of digits. 
+Use an array dictionary of units to be accessed based on the exponent.
+Use `Number.toPrecision()` to truncate the number to a certain number of digits.
 Return the prettified string by building it up, taking into account the supplied options and whether it is negative or not.
 Omit the second argument, `precision`, to use a default precision of `3` digits.
 Omit the third argument, `addSpace`, to add space between the number and unit by default.
@@ -20,9 +20,6 @@ const prettyBytes = (num, precision = 3, addSpace = true) => {
 
 ```js
 prettyBytes(1000); // 1 KB
-prettyBytes(123456789); // 123 MB
-prettyBytes(-50); // -50 B
-prettyBytes(27145424323.5821); // 27.1 GB
-prettyBytes(27145424323.5821, 5); // 27.145 GB
-prettyBytes(5500, 3, false); // 5.5KB
+prettyBytes(-27145424323.5821, 5); // -27.145 GB
+prettyBytes(123456789, 3, false); // 123MB
 ```

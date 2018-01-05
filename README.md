@@ -170,6 +170,7 @@ average(1, 2, 3);
 <details>
 <summary>View contents</summary>
 
+* [`formatDuration`](#formatduration)
 * [`getDaysDiffBetweenDates`](#getdaysdiffbetweendates)
 * [`JSONToDate`](#jsontodate)
 * [`toEnglishDate`](#toenglishdate)
@@ -229,6 +230,7 @@ average(1, 2, 3);
 * [`isEven`](#iseven)
 * [`isPrime`](#isprime)
 * [`lcm`](#lcm)
+* [`luhnCheck`](#luhncheck)
 * [`median`](#median)
 * [`percentile`](#percentile)
 * [`powerset`](#powerset)
@@ -496,7 +498,6 @@ const spreadOver = fn => argsArr => fn(...argsArr);
 ```js
 const arrayMax = spreadOver(Math.max);
 arrayMax([1, 2, 3]); // 3
-arrayMax([1, 2, 4]); // 4
 ```
 
 </details>
@@ -630,17 +631,17 @@ difference([1, 2, 3], [1, 2, 4]); // [3]
 
 Filters out all values from an array for which the comparator function does not return `true`.
 
-Use `Array.filter()` and `Array.find()` to find the appropriate values.
+Use `Array.filter()` and `Array.findIndex()` to find the appropriate values.
 
 ```js
-const differenceWith = (arr, val, comp) => arr.filter(a => !val.find(b => comp(a, b)));
+const differenceWith = (arr, val, comp) => arr.filter(a => val.findIndex(b => comp(a, b)) === -1);
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```js
-differenceWith([1, 1.2, 1.5, 3], [1.9, 3], (a, b) => Math.round(a) == Math.round(b)); // [1, 1.2]
+differenceWith([1, 1.2, 1.5, 3, 0], [1.9, 3, 0], (a, b) => Math.round(a) === Math.round(b)); // [1, 1.2]
 ```
 
 </details>
@@ -918,7 +919,7 @@ Initializes an array containing the numbers in the specified range where `start`
 Use `Array(Math.ceil((end+1-start)/step)` to create an array of the desired length(the amounts of elements is equal to `(end-start)/step` or `(end+1-start)/step` for inclusive end), `Array.map()` to fill with the desired values in a range.
 You can omit `start` to use a default value of `0`.
 You can omit `step` to use a default value of `1`.
- 
+
 ```js
 const initializeArrayWithRange = (end, start = 0, step = 1) =>
   Array.from({ length: Math.ceil((end + 1 - start) / step) }).map((v, i) => i * step + start);
@@ -930,7 +931,7 @@ const initializeArrayWithRange = (end, start = 0, step = 1) =>
 ```js
 initializeArrayWithRange(5); // [0,1,2,3,4,5]
 initializeArrayWithRange(7, 3); // [3,4,5,6,7]
-initializeArrayWithRange(9, 0, 2); //[0,2,4,6,8]
+initializeArrayWithRange(9, 0, 2); // [0,2,4,6,8]
 ```
 
 </details>
@@ -1007,7 +1008,6 @@ const isSorted = arr => {
 <summary>Examples</summary>
 
 ```js
-isSorted([0, 1, 2, 3]); // 1
 isSorted([0, 1, 2, 2]); // 1
 isSorted([4, 3, 2]); // -1
 isSorted([4, 3, 5]); // 0
@@ -1041,10 +1041,9 @@ const join = (arr, separator = ',', end = separator) =>
 <summary>Examples</summary>
 
 ```js
-join(); // ''
-join(['pen', 'pineapple', 'apple', 'pen'], ',', '&'); //"pen,pineapple,apple&pen"
-join(['pen', 'pineapple', 'apple', 'pen'], ','); //"pen,pineapple,apple,pen"
-join(['pen', 'pineapple', 'apple', 'pen']); //"pen,pineapple,apple,pen"
+join(['pen', 'pineapple', 'apple', 'pen'], ',', '&'); // "pen,pineapple,apple&pen"
+join(['pen', 'pineapple', 'apple', 'pen'], ','); // "pen,pineapple,apple,pen"
+join(['pen', 'pineapple', 'apple', 'pen']); // "pen,pineapple,apple,pen"
 ```
 
 </details>
@@ -1104,7 +1103,7 @@ squareIt([1, 2, 3]); // { 1: 1, 2: 4, 3: 9 }
 
 Returns the `n` maximum elements from the provided array. If `n` is greater than or equal to the provided array's length, then return the original array(sorted in descending order).
 
-Use `Array.sort()` combined with the spread operator (`...`) to create a shallow clone of the array and sort it in descending order. 
+Use `Array.sort()` combined with the spread operator (`...`) to create a shallow clone of the array and sort it in descending order.
 Use `Array.slice()` to get the specified number of elements.
 Omit the second argument, `n`, to get a one-element array.
 
@@ -1118,7 +1117,6 @@ const maxN = (arr, n = 1) => [...arr].sort((a, b) => b - a).slice(0, n);
 ```js
 maxN([1, 2, 3]); // [3]
 maxN([1, 2, 3], 2); // [3,2]
-maxN([1, 2, 3], 4); // [3,2,1]
 ```
 
 </details>
@@ -1143,7 +1141,6 @@ const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
 ```js
 minN([1, 2, 3]); // [1]
 minN([1, 2, 3], 2); // [1,2]
-minN([1, 2, 3], 4); // [1,2,3]
 ```
 
 </details>
@@ -1221,13 +1218,8 @@ const pull = (arr, ...args) => {
 <summary>Examples</summary>
 
 ```js
-let myArray1 = ['a', 'b', 'c', 'a', 'b', 'c'];
-pull(myArray1, 'a', 'c');
-console.log(myArray1); // [ 'b', 'b' ]
-
-let myArray2 = ['a', 'b', 'c', 'a', 'b', 'c'];
-pull(myArray2, ['a', 'c']);
-console.log(myArray2); // [ 'b', 'b' ]
+let myArray = ['a', 'b', 'c', 'a', 'b', 'c'];
+pull(myArray, 'a', 'c'); // myArray = [ 'b', 'b' ]
 ```
 
 </details>
@@ -1260,10 +1252,7 @@ const pullAtIndex = (arr, pullArr) => {
 
 ```js
 let myArray = ['a', 'b', 'c', 'd'];
-let pulled = pullAtIndex(myArray, [1, 3]);
-
-console.log(myArray); // [ 'a', 'c' ]
-console.log(pulled); // [ 'b', 'd' ]
+let pulled = pullAtIndex(myArray, [1, 3]); // myArray = [ 'a', 'c' ] , pulled = [ 'b', 'd' ]
 ```
 
 </details>
@@ -1295,9 +1284,7 @@ const pullAtValue = (arr, pullArr) => {
 
 ```js
 let myArray = ['a', 'b', 'c', 'd'];
-let pulled = pullAtValue(myArray, ['b', 'd']);
-console.log(myArray); // [ 'a', 'c' ]
-console.log(pulled); // [ 'b', 'd' ]
+let pulled = pullAtValue(myArray, ['b', 'd']); // myArray = [ 'a', 'c' ] , pulled = [ 'b', 'd' ]
 ```
 
 </details>
@@ -1485,8 +1472,7 @@ const shuffle = ([...arr]) => {
 
 ```js
 const foo = [1, 2, 3];
-shuffle(foo); // [2,3,1]
-console.log(foo); // [1,2,3]
+shuffle(foo); // [2,3,1], foo = [1,2,3]
 ```
 
 </details>
@@ -1869,8 +1855,7 @@ const detectDeviceType = () =>
 <summary>Examples</summary>
 
 ```js
-detectDeviceType(); // "Mobile"
-detectDeviceType(); // "Desktop"
+detectDeviceType(); // "Mobile" or "Desktop"
 ```
 
 </details>
@@ -1903,8 +1888,8 @@ const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
 
 ```js
 // e.g. 100x100 viewport and a 10x10px element at position {top: -1, left: 0, bottom: 9, right: 10}
-elementIsVisibleInViewport(el); // false // (not fully visible)
-elementIsVisibleInViewport(el, true); // true // (partially visible)
+elementIsVisibleInViewport(el); // false - (not fully visible)
+elementIsVisibleInViewport(el, true); // true - (partially visible)
 ```
 
 </details>
@@ -2010,13 +1995,17 @@ Redirects the page to HTTPS if its currently in HTTP. Also, pressing the back bu
 
 Use `location.protocol` to get the protocol currently being used. If it's not HTTPS, use `location.replace()` to replace the existing page with the HTTPS version of the page. Use `location.href` to get the full address, split it with `String.split()` and remove the protocol part of the URL.  
 
-<details>
-<summary>Examples</summary>
-
 ```js
 const httpsRedirect = () => {
   if (location.protocol !== 'https:') location.replace('https://' + location.href.split('//')[1]);
 };
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+httpsRedirect(); // If you are on http://mydomain.com, you are redirected to https://mydomain.com
 ```
 
 </details>
@@ -2091,8 +2080,8 @@ redirect('https://google.com');
 
 Runs a function in a separate thread by using a [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), allowing long running functions to not block the UI.
 
-Create a new `Worker` using a `Blob` object URL, the contents of which should be the stringified version of the supplied function. 
-Immediately post the return value of calling the function back. 
+Create a new `Worker` using a `Blob` object URL, the contents of which should be the stringified version of the supplied function.
+Immediately post the return value of calling the function back.
 Return a promise, listening for `onmessage` and `onerror` events and resolving the data posted back from the worker, or throwing an error.
 
 ```js
@@ -2129,10 +2118,11 @@ const longRunningFunction = () => {
   }
   return result;
 };
-
-// NOTE: Since the function is running in a different context, closures are not supported.
-// The function supplied to `runAsync` gets stringified, so everything becomes literal.
-// All variables and functions must be defined inside.
+/*
+  NOTE: Since the function is running in a different context, closures are not supported.
+  The function supplied to `runAsync` gets stringified, so everything becomes literal.
+  All variables and functions must be defined inside.
+*/
 runAsync(longRunningFunction).then(console.log); // 209685000000
 runAsync(() => 10 ** 3).then(console.log); // 1000
 let outsideVariable = 50;
@@ -2295,6 +2285,45 @@ UUIDGeneratorBrowser(); // '7982fcfe-5721-4632-bede-6000885be57d'
 ---
  ## ⏱️ Date
 
+### formatDuration
+
+Returns the human readable format of the given number of milliseconds.
+
+Divide `ms` with the appropriate values to obtain the appropriate values for `day`, `hour`, `minute`, `second` and `millisecond`.
+Use `Object.entries()` with `Array.filter()` to keep only non-zero values.
+Use `Array.map()` to create the string for each value, pluralizing appropriately.
+Use `String.join(', ')` to combine the values into a string.
+
+```js
+const formatDuration = ms => {
+  if (ms < 0) ms = -ms;
+  const time = {
+    day: Math.floor(ms / 86400000),
+    hour: Math.floor(ms / 3600000) % 24,
+    minute: Math.floor(ms / 60000) % 60,
+    second: Math.floor(ms / 1000) % 60,
+    millisecond: Math.floor(ms) % 1000
+  };
+  return Object.entries(time)
+    .filter(val => val[1] !== 0)
+    .map(val => val[1] + ' ' + (val[1] !== 1 ? val[0] + 's' : val[0]))
+    .join(', ');
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+formatDuration(1001); // '1 second, 1 millisecond'
+formatDuration(34325055574); // '397 days, 6 hours, 44 minutes, 15 seconds, 574 milliseconds'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### getDaysDiffBetweenDates
 
 Returns the difference (in days) between two dates.
@@ -2421,10 +2450,6 @@ chainAsync([
   },
   next => {
     console.log('1 second');
-    setTimeout(next, 1000);
-  },
-  next => {
-    console.log('2 seconds');
   }
 ]);
 ```
@@ -2506,8 +2531,8 @@ defer(console.log, 'a'), console.log('b'); // logs 'b' then 'a'
 
 // Example B:
 document.querySelector('#someElement').innerHTML = 'Hello';
-longRunningFunction(); // the browser will not update the HTML until this has finished
-defer(longRunningFunction); // the browser will update the HTML then run the function
+longRunningFunction(); //Browser will not update the HTML until this has finished
+defer(longRunningFunction); // Browser will update the HTML then run the function
 ```
 
 </details>
@@ -2564,7 +2589,7 @@ const memoize = fn => {
 const anagramsCached = memoize(anagrams);
 anagramsCached('javascript'); // takes a long time
 anagramsCached('javascript'); // returns virtually instantly since it's now cached
-console.log(anagramsCached.cache); // Map
+console.log(anagramsCached.cache); // The cached anagrams map
 ```
 
 </details>
@@ -2620,7 +2645,7 @@ const runPromisesInSeries = ps => ps.reduce((p, next) => p.then(next), Promise.r
 
 ```js
 const delay = d => new Promise(r => setTimeout(r, d));
-runPromisesInSeries([() => delay(1000), () => delay(2000)]); // //executes each promise sequentially, taking a total of 3 seconds to complete
+runPromisesInSeries([() => delay(1000), () => delay(2000)]); // Executes each promise sequentially, taking a total of 3 seconds to complete
 ```
 
 </details>
@@ -2724,7 +2749,6 @@ const clampNumber = (num, a, b) => Math.max(Math.min(num, Math.max(a, b)), Math.
 ```js
 clampNumber(2, 3, 5); // 3
 clampNumber(1, -1, -5); // -1
-clampNumber(3, 2, 4); // 3
 ```
 
 </details>
@@ -2747,7 +2771,6 @@ const collatz = n => (n % 2 == 0 ? n / 2 : 3 * n + 1);
 
 ```js
 collatz(8); // 4
-collatz(5); // 16
 ```
 
 </details>
@@ -2802,19 +2825,31 @@ distance(1, 1, 2, 3); // 2.23606797749979
 
 ### elo
 
-Computes the new ratings between two opponents using the [Elo rating system](https://en.wikipedia.org/wiki/Elo_rating_system). It takes an array
-of two pre-ratings and returns an array containing two post-ratings.
-The winner's rating is the first element of the array.
+Computes the new ratings between two or more opponents using the [Elo rating system](https://en.wikipedia.org/wiki/Elo_rating_system). It takes an array
+of pre-ratings and returns an array containing post-ratings.
+The array should be ordered from best performer to worst performer (winner -> loser).
 
 Use the exponent `**` operator and math operators to compute the expected score (chance of winning)
-of each opponent and compute the new rating for each. Omit the second argument to use the default
-K-factor of 32, or supply a custom K-factor value.
+of each opponent and compute the new rating for each. Loop through the ratings, using each permutation to compute the post-Elo rating for each player in a pairwise fashion. Omit the second argument to use the default K-factor of 32, or supply a custom K-factor value. For details on the third argument, see the last example.
 
 ```js
-const elo = ([a, b], kFactor = 32) => {
+const elo = ([...ratings], kFactor = 32, selfRating) => {
+  const [a, b] = ratings;
   const expectedScore = (self, opponent) => 1 / (1 + 10 ** ((opponent - self) / 400));
-  const newRating = (rating, i) => rating + kFactor * (i - expectedScore(i ? a : b, i ? b : a));
-  return [newRating(a, 1), newRating(b, 0)];
+  const newRating = (rating, i) =>
+    (selfRating || rating) + kFactor * (i - expectedScore(i ? a : b, i ? b : a));
+  if (ratings.length === 2) {
+    return [newRating(a, 1), newRating(b, 0)];
+  } else {
+    for (let i = 0; i < ratings.length; i++) {
+      let j = i;
+      while (j < ratings.length - 1) {
+        [ratings[i], ratings[j + 1]] = elo([ratings[i], ratings[j + 1]], kFactor);
+        j++;
+      }
+    }
+  }
+  return ratings;
 };
 ```
 
@@ -2822,10 +2857,16 @@ const elo = ([a, b], kFactor = 32) => {
 <summary>Examples</summary>
 
 ```js
+// Standard 1v1s
 elo([1200, 1200]); // [1216, 1184]
-elo([1000, 2000]); // [1031.8991261061358, 1968.1008738938642]
-elo([1500, 1000]); // [1501.7036868864648, 998.2963131135352]
 elo([1200, 1200], 64); // [1232, 1168]
+// 4 player FFA, all same rank
+elo([1200, 1200, 1200, 1200]).map(Math.round); // [1246, 1215, 1185, 1154]
+/*
+For teams, each rating can adjusted based on own team's average rating vs. 
+average rating of opposing team, with the score being added to their
+own individual rating by supplying it as the third argument.
+*/
 ```
 
 </details>
@@ -2998,15 +3039,14 @@ fibonacciUntilNum(10); // [ 0, 1, 1, 2, 3, 5, 8 ]
 
 Calculates the greatest common divisor between two or more numbers/arrays.
 
-The `helperGcd `function uses recursion.
+The inner `_gcd` function uses recursion.
 Base case is when `y` equals `0`. In this case, return `x`.
 Otherwise, return the GCD of `y` and the remainder of the division `x/y`.
 
 ```js
 const gcd = (...arr) => {
-  let data = [].concat(...arr);
-  const helperGcd = (x, y) => (!y ? x : gcd(y, x % y));
-  return data.reduce((a, b) => helperGcd(a, b));
+  const _gcd = (x, y) => (!y ? x : gcd(y, x % y));
+  return [].concat(...arr).reduce((a, b) => _gcd(a, b));
 };
 ```
 
@@ -3024,10 +3064,10 @@ gcd(8, 36); // 4
 
 ### geometricProgression
 
-Initializes an array containing the numbers in the specified range where `start` and `end` are inclusive and the ratio between two terms is `step`. 
+Initializes an array containing the numbers in the specified range where `start` and `end` are inclusive and the ratio between two terms is `step`.
 Returns an error if `step` equals `1`.
 
-Use `Array.from()`, `Math.log()` and `Math.floor()` to create an array of the desired length, `Array.map()` to fill with the desired values in a range. 
+Use `Array.from()`, `Math.log()` and `Math.floor()` to create an array of the desired length, `Array.map()` to fill with the desired values in a range.
 Omit the second argument, `start`, to use a default value of `1`.
 Omit the third argument, `step`, to use a default value of `2`.
 
@@ -3043,9 +3083,8 @@ const geometricProgression = (end, start = 1, step = 2) =>
 
 ```js
 geometricProgression(256); // [1, 2, 4, 8, 16, 32, 64, 128, 256]
-geometricProgression(256, 3); //[3, 6, 12, 24, 48, 96, 192]
-geometricProgression(256, 1, 4); //[1, 4, 16, 64, 256]
-geometricProgression(256, 2, 1); //Gives error
+geometricProgression(256, 3); // [3, 6, 12, 24, 48, 96, 192]
+geometricProgression(256, 1, 4); // [1, 4, 16, 64, 256]
 ```
 
 </details>
@@ -3078,7 +3117,7 @@ hammingDistance(2, 3); // 1
 
 ### howManyTimes
 
-Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer. 
+Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.
 Works for both negative and positive integers.
 
 If `divisor` is `-1` or `1` return `Infinity`.
@@ -3103,13 +3142,10 @@ const howManyTimes = (num, divisor) => {
 <summary>Examples</summary>
 
 ```js
-howManyTimes(100, 2); //2
-howManyTimes(100, -2); //2
-howManyTimes(100, 2.5); //2
-howManyTimes(100, 3); //0
-howManyTimes(100, 0); //0
-howManyTimes(100, 1); //Infinity
-howManyTimes(100, -1); //Infinity
+howManyTimes(100, 2); // 2
+howManyTimes(100, 2.5); // 2
+howManyTimes(100, 0); // 0
+howManyTimes(100, -1); // Infinity
 ```
 
 </details>
@@ -3164,7 +3200,6 @@ const isArmstrongNumber = digits =>
 
 ```js
 isArmstrongNumber(1634); // true
-isArmstrongNumber(371); // true
 isArmstrongNumber(56); // false
 ```
 
@@ -3238,7 +3273,6 @@ const isPrime = num => {
 
 ```js
 isPrime(11); // true
-isPrime(12); // false
 ```
 
 </details>
@@ -3274,6 +3308,43 @@ lcm([1, 3, 4], 5); // 60
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### luhnCheck
+
+Implementation of the [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) used to validate a variety of identification numbers, such as credit card numbers, IMEI numbers, National Provider Identifier numbers etc.
+
+Use `String.split('')`, `Array.reverse()` and `Array.map()` in combination with `parseInt()` to obtain an array of digits.
+Use `Array.splice(0,1)` to obtain the last digit.
+Use `Array.reduce()` to implement the Luhn Algorithm.
+Return `true` if `sum` is divisible by `10`, `false` otherwise.
+
+
+```js
+const luhnCheck = num => {
+  let arr = (num + '')
+    .split('')
+    .reverse()
+    .map(x => parseInt(x));
+  let lastDigit = arr.splice(0, 1)[0];
+  let sum = arr.reduce((acc, val, i) => (i % 2 !== 0 ? acc + val : acc + (val * 2) % 9 || 9), 0);
+  sum += lastDigit;
+  return sum % 10 === 0;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+luhnCheck('4485275742308327'); // true
+luhnCheck(6011329933655299); //  true
+luhnCheck(123456789); // false
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### median
 
 Returns the median of an array of numbers.
@@ -3294,7 +3365,6 @@ const median = arr => {
 
 ```js
 median([5, 6, 50, 1, -5]); // 5
-median([0, 10, -2, 7]); // 3.5
 ```
 
 </details>
@@ -3488,10 +3558,7 @@ const solveRPN = rpn => {
 
 ```js
 solveRPN('15 7 1 1 + - / 3 * 2 1 1 + + -'); // 5
-solveRPN('3 5 6 + *'); //33
-solveRPN('2 4 / 5 6 - *'); //-0.5
-solveRPN('2 3 ^'); //8
-solveRPN('2 3 ^'); //8
+solveRPN('2 3 ^'); // 8
 ```
 
 </details>
@@ -3602,7 +3669,6 @@ const hasFlags = (...flags) =>
 ```js
 // node myScript.js -s --test --cool=true
 hasFlags('-s'); // true
-hasFlags('test', 'cool=true'); // true
 hasFlags('--test', 'cool=true', '-s'); // true
 hasFlags('special'); // false
 ```
@@ -3901,14 +3967,9 @@ const orderBy = (arr, props, orders) =>
 <summary>Examples</summary>
 
 ```js
-const users = [
-  { name: 'fred', age: 48 },
-  { name: 'barney', age: 36 },
-  { name: 'fred', age: 40 },
-  { name: 'barney', age: 34 }
-];
-orderBy(users, ['name', 'age'], ['asc', 'desc']); // [{name: 'barney', age: 36}, {name: 'barney', age: 34}, {name: 'fred', age: 48}, {name: 'fred', age: 40}]
-orderBy(users, ['name', 'age']); // [{name: 'barney', age: 34}, {name: 'barney', age: 36}, {name: 'fred', age: 40}, {name: 'fred', age: 48}]
+const users = [{ name: 'fred', age: 48 }, { name: 'barney', age: 36 }, { name: 'fred', age: 40 }];
+orderBy(users, ['name', 'age'], ['asc', 'desc']); // [{name: 'barney', age: 36}, {name: 'fred', age: 48}, {name: 'fred', age: 40}]
+orderBy(users, ['name', 'age']); // [{name: 'barney', age: 36}, {name: 'fred', age: 40}, {name: 'fred', age: 48}]
 ```
 
 </details>
@@ -3955,8 +4016,7 @@ const shallowClone = obj => Object.assign({}, obj);
 
 ```js
 const a = { x: true, y: 1 };
-const b = shallowClone(a);
-a === b; // false
+const b = shallowClone(a); // a !== b
 ```
 
 </details>
@@ -4004,7 +4064,7 @@ Checks if the predicate (second argument) is truthy on all elements of a collect
 
 Use `Array.every()` to check if each passed object has the specified property and if it returns a truthy value.
 
- ```js
+```js
 const truthCheckCollection = (collection, pre) => collection.every(obj => obj[pre]);
 ```
 
@@ -4263,7 +4323,7 @@ isAbsoluteURL('/foo/bar'); // false
 
 Replaces all but the last `num` of characters with the specified mask character.
 
-Use `String.slice()` to grab the portion of the characters that need to be masked and use `String.replace()` with a regex to replace every character with the mask character. 
+Use `String.slice()` to grab the portion of the characters that need to be masked and use `String.replace()` with a regex to replace every character with the mask character.
 Concatenate the masked characters with the remaining unmasked portion of the string.
 Omit the second argument, `num`, to keep a default of `4` characters unmasked. If `num` is negative, the unmasked characters will be at the start of the string.
 Omit the third argument, `mask`, to use a default character of `'*'` for the mask.
@@ -4279,7 +4339,6 @@ const mask = (cc, num = 4, mask = '*') =>
 ```js
 mask(1234567890); // '******7890'
 mask(1234567890, 3); // '*******890'
-mask(1234567890, 4, '$'); // '$$$$$$7890'
 mask(1234567890, -4, '$'); // '1234$$$$$$'
 ```
 
@@ -4322,29 +4381,34 @@ palindrome('taco cat'); // true
 
 ### pluralize
 
-If `num` is greater than `1` returns the plural form of the given string, else return the singular form.
+Returns the singular or plural form of the word based on the input number. If the first argument is an `object`, it will use a closure by returning a function that can auto-pluralize words that don't simply end in `s` if the supplied dictionary contains the word.
 
-Check if `num` is greater than `0`. Throw an appropriate `Error` if not, return the appropriate string otherwise.
-Omit the third argument, `items`, to use a default plural form same as `item` suffixed with a single `'s'`.
+If `num` is either `-1` or `1`, return the singular form of the word. If `num` is any other number, return the plural form. Omit the third argument to use the default of the singular word + `s`, or supply a custom pluralized word when necessary. If the first argument is an `object`, utilize a closure by returning a function which can use the supplied dictionary to resolve the correct plural form of the word.
 
 ```js
-const pluralize = (num, item, items = item + 's') =>
-  num <= 0
-    ? (() => {
-        throw new Error(`'num' should be >= 1. Value povided was ${num}.`);
-      })()
-    : num === 1 ? item : items;
+const pluralize = (val, word, plural = word + 's') => {
+  const _pluralize = (num, word, plural = word + 's') =>
+    [1, -1].includes(Number(num)) ? word : plural;
+  if (typeof val === 'object') return (num, word) => _pluralize(num, word, val[word]);
+  return _pluralize(val, word, plural);
+};
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```js
-pluralize(1, 'apple', 'apples'); // 'apple'
-pluralize(3, 'apple', 'apples'); // 'apples'
+pluralize(0, 'apple'); // 'apples'
+pluralize(1, 'apple'); // 'apple'
 pluralize(2, 'apple'); // 'apples'
-pluralize(0, 'apple', 'apples'); // Gives error
-pluralize(-3, 'apple', 'apples'); // Gives error
+pluralize(2, 'person', 'people'); // 'people'
+
+const PLURALS = {
+  person: 'people',
+  radius: 'radii'
+};
+const autoPluralize = pluralize(PLURALS);
+autoPluralize(2, 'person'); // 'people'
 ```
 
 </details>
@@ -4540,7 +4604,6 @@ const toSnakeCase = str =>
 ```js
 toSnakeCase('camelCase'); // 'camel_case'
 toSnakeCase('some text'); // 'some_text'
-toSnakeCase('some-javascript-property'); // 'some_javascript_property'
 toSnakeCase('some-mixed_string With spaces_underscores-and-hyphens'); // 'some_mixed_string_with_spaces_underscores_and_hyphens'
 toSnakeCase('AllThe-small Things'); // "all_the_smal_things"
 toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'); // "i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html"
@@ -4595,6 +4658,7 @@ const unescapeHTML = str =>
       }[tag] || tag)
   );
 ```
+
 <details>
 <summary>Examples</summary>
 
@@ -4745,7 +4809,7 @@ const getType = v =>
 <summary>Examples</summary>
 
 ```js
-getType(new Set([1, 2, 3])); // "set"
+getType(new Set([1, 2, 3])); // 'Set'
 ```
 
 </details>
@@ -4925,7 +4989,7 @@ isFunction(x => x); // true
 
 Returns `true` if the specified value is `null`, `false` otherwise.
 
-Use the strict equality operator to check if the value and of `val` are equal to `null`. 
+Use the strict equality operator to check if the value and of `val` are equal to `null`.
 
 ```js
 const isNull = val => val === null;
@@ -4936,7 +5000,6 @@ const isNull = val => val === null;
 
 ```js
 isNull(null); // true
-isNull('null'); // false
 ```
 
 </details>
@@ -4961,6 +5024,7 @@ const isNumber = val => typeof val === 'number';
 isNumber('1'); // false
 isNumber(1); // true
 ```
+
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -4982,14 +5046,12 @@ const isPrimitive = val => !['object', 'function'].includes(typeof val) || val =
 <summary>Examples</summary>
 
 ```js
-isPrimitive(window.someNonExistentProperty); // true
 isPrimitive(null); // true
 isPrimitive(50); // true
 isPrimitive('Hello!'); // true
 isPrimitive(false); // true
 isPrimitive(Symbol()); // true
 isPrimitive([]); // false
-isPrimitive(new String('Hello!')); // false
 ```
 
 </details>
@@ -5042,7 +5104,6 @@ const isString = val => typeof val === 'string';
 <summary>Examples</summary>
 
 ```js
-isString(10); // false
 isString('10'); // true
 ```
 
@@ -5065,7 +5126,6 @@ const isSymbol = val => typeof val === 'symbol';
 <summary>Examples</summary>
 
 ```js
-isSymbol('x'); // false
 isSymbol(Symbol('x')); // true
 ```
 
@@ -5109,8 +5169,8 @@ isValidJSON(null); // true
 
 Converts a number in bytes to a human-readable string.
 
-Use an array dictionary of units to be accessed based on the exponent. 
-Use `Number.toPrecision()` to truncate the number to a certain number of digits. 
+Use an array dictionary of units to be accessed based on the exponent.
+Use `Number.toPrecision()` to truncate the number to a certain number of digits.
 Return the prettified string by building it up, taking into account the supplied options and whether it is negative or not.
 Omit the second argument, `precision`, to use a default precision of `3` digits.
 Omit the third argument, `addSpace`, to add space between the number and unit by default.
@@ -5130,11 +5190,8 @@ const prettyBytes = (num, precision = 3, addSpace = true) => {
 
 ```js
 prettyBytes(1000); // 1 KB
-prettyBytes(123456789); // 123 MB
-prettyBytes(-50); // -50 B
-prettyBytes(27145424323.5821); // 27.1 GB
-prettyBytes(27145424323.5821, 5); // 27.145 GB
-prettyBytes(5500, 3, false); // 5.5KB
+prettyBytes(-27145424323.5821, 5); // -27.145 GB
+prettyBytes(123456789, 3, false); // 123MB
 ```
 
 </details>
@@ -5160,8 +5217,6 @@ const randomHexColorCode = () => {
 
 ```js
 randomHexColorCode(); // "#e34155"
-randomHexColorCode(); // "#fd73a6"
-randomHexColorCode(); // "#4144c6"
 ```
 
 </details>
@@ -5213,7 +5268,6 @@ const sdbm = str => {
 
 ```js
 console.log(sdbm('name')); // -3521204949
-console.log(sdbm('age')); // 808122783
 ```
 
 </details>
@@ -5240,8 +5294,7 @@ const timeTaken = callback => {
 <summary>Examples</summary>
 
 ```js
-timeTaken(() => Math.pow(2, 10)); // 1024
-// (logged): timeTaken: 0.02099609375ms
+timeTaken(() => Math.pow(2, 10)); // 1024, (logged): timeTaken: 0.02099609375ms
 ```
 
 </details>

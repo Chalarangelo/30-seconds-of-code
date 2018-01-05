@@ -41,8 +41,5 @@ const solveRPN = rpn => {
 
 ```js
 solveRPN('15 7 1 1 + - / 3 * 2 1 1 + + -'); // 5
-solveRPN('3 5 6 + *'); //33
-solveRPN('2 4 / 5 6 - *'); //-0.5
-solveRPN('2 3 ^'); //8
-solveRPN('2 3 ^'); //8
+solveRPN('2 3 ^'); // 8
 ```

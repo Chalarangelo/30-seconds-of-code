@@ -14,17 +14,11 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <script>
       const search = (node) => {
-        // Hide non-query-matching snippets
         Array.from(node.parentElement.parentElement.getElementsByTagName('a')).forEach(x => {
           x.style.display = x.getAttribute("href").toUpperCase().indexOf(node.value.toUpperCase()) + 1  ? '' : 'none'
         });
         Array.from( node.parentElement.parentElement.children )
-        // Filter out the hidden links
         .filter( x => !( x.tagName == 'A' && x.style.display == 'none' ) )
-        // set the display for each element based on if it's a H3
-        // If it's the last element and an H3, hide it
-        // Otherwise if it's and H3 and the next element is an H3, hide it
-        // Otherwise display it
         .forEach( ( element, index, source) => {
            element.style.display = (element.tagName == 'H3' && index + 1 == source.length ? 'none' : element.tagName == 'H3' && source[index + 1].tagName == 'H3' ? 'none'  : '')
         })
@@ -42,10 +36,19 @@
             const textArea = document.createElement("textarea");
             textArea.value = text.trim();
             document.body.appendChild(textArea);
-            console.log(textArea.innerText);
             textArea.select();
             document.execCommand("Copy");
             document.body.removeChild(textArea);
+            let tst = document.createElement('div');
+            tst.classList = 'toast';
+            tst.innerHTML = 'Snippet copied to clipboard!';
+            document.body.appendChild(tst);
+            setTimeout(function() {
+              tst.style.opacity = 0;
+              setTimeout(function() {
+                document.body.removeChild(tst);
+              },300);
+            },1700);
           }
         }, false);
       }
