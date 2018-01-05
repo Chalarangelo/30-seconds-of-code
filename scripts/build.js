@@ -1,5 +1,5 @@
 /*
-  This is the builder script that generates the README file.
+  This is the builder script that generates the README and SNIPPETS_ARCHIVE files.
   Run using `npm run builder`.
 */
 // Load modules
@@ -13,6 +13,7 @@ if(isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE
   process.exit(0);
 }
 const SNIPPETS_PATH = './snippets';
+const SNIPPETS_ARCHIVE_PATH = './snippets_archive';
 const STATIC_PARTS_PATH = './static-parts';
 
 const snippets = {};
@@ -43,7 +44,7 @@ const capitalize = (str, lowerRest = false) =>
 
 console.time('Builder');
 
-// Synchronously read all snippets and sort them as necessary (case-insensitive)
+// Synchronously read all snippets from snippets folder and sort them as necessary (case-insensitive)
 try {
   const snippetFilenames = fs
     .readdirSync(SNIPPETS_PATH)
@@ -164,5 +165,5 @@ try {
   process.exit(1);
 }
 
-console.log(`${chalk.green('SUCCESS!')} README file generated!`);
+console.log(`${chalk.green('SUCCESS!')} README and SNIPPETS_ARCHIVE files generated!`);
 console.timeEnd('Builder');
