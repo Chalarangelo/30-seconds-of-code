@@ -87,6 +87,7 @@ average(1, 2, 3);
 <details>
 <summary>View contents</summary>
 
+* [`binarySearch`](#binarysearch)
 * [`chunk`](#chunk)
 * [`compact`](#compact)
 * [`countOccurrences`](#countoccurrences)
@@ -118,6 +119,7 @@ average(1, 2, 3);
 * [`pull`](#pull)
 * [`pullAtIndex`](#pullatindex)
 * [`pullAtValue`](#pullatvalue)
+* [`quickSort`](#quicksort)
 * [`reducedFilter`](#reducedfilter)
 * [`remove`](#remove)
 * [`sample`](#sample)
@@ -143,7 +145,7 @@ average(1, 2, 3);
 
 * [`arrayToHtmlList`](#arraytohtmllist)
 * [`bottomVisible`](#bottomvisible)
-* [`copyToClipboard`](#copytoclipboard-)
+* [`copyToClipboard`](#copytoclipboard)
 * [`currentURL`](#currenturl)
 * [`detectDeviceType`](#detectdevicetype)
 * [`elementIsVisibleInViewport`](#elementisvisibleinviewport)
@@ -152,12 +154,13 @@ average(1, 2, 3);
 * [`hasClass`](#hasclass)
 * [`hide`](#hide)
 * [`httpsRedirect`](#httpsredirect)
-* [`onUserInputChange`](#onuserinputchange-)
+* [`onUserInputChange`](#onuserinputchange)
 * [`redirect`](#redirect)
-* [`runAsync`](#runasync-)
+* [`runAsync`](#runasync)
 * [`scrollToTop`](#scrolltotop)
 * [`setStyle`](#setstyle)
 * [`show`](#show)
+* [`speechSynthesis`](#speechsynthesis)
 * [`toggleClass`](#toggleclass)
 * [`UUIDGeneratorBrowser`](#uuidgeneratorbrowser)
 
@@ -170,6 +173,7 @@ average(1, 2, 3);
 
 * [`formatDuration`](#formatduration)
 * [`getDaysDiffBetweenDates`](#getdaysdiffbetweendates)
+* [`JSONToDate`](#jsontodate)
 * [`toEnglishDate`](#toenglishdate)
 * [`tomorrow`](#tomorrow)
 
@@ -208,15 +212,21 @@ average(1, 2, 3);
 
 * [`average`](#average)
 * [`clampNumber`](#clampnumber)
+* [`collatz`](#collatz)
 * [`digitize`](#digitize)
 * [`distance`](#distance)
-* [`elo`](#elo-)
+* [`elo`](#elo)
 * [`factorial`](#factorial)
+* [`factors`](#factors)
 * [`fibonacci`](#fibonacci)
+* [`fibonacciCountUntilNum`](#fibonaccicountuntilnum)
+* [`fibonacciUntilNum`](#fibonacciuntilnum)
 * [`gcd`](#gcd)
 * [`geometricProgression`](#geometricprogression)
 * [`hammingDistance`](#hammingdistance)
+* [`howManyTimes`](#howmanytimes)
 * [`inRange`](#inrange)
+* [`isArmstrongNumber`](#isarmstrongnumber)
 * [`isDivisible`](#isdivisible)
 * [`isEven`](#iseven)
 * [`isPrime`](#isprime)
@@ -229,7 +239,7 @@ average(1, 2, 3);
 * [`randomIntegerInRange`](#randomintegerinrange)
 * [`randomNumberInRange`](#randomnumberinrange)
 * [`round`](#round)
-* [`sdbm`](#sdbm)
+* [`solveRPN`](#solverpn)
 * [`standardDeviation`](#standarddeviation)
 * [`sum`](#sum)
 * [`sumPower`](#sumpower)
@@ -285,6 +295,7 @@ average(1, 2, 3);
 * [`mask`](#mask)
 * [`palindrome`](#palindrome)
 * [`pluralize`](#pluralize)
+* [`repeatString`](#repeatstring)
 * [`reverseString`](#reversestring)
 * [`sortCharactersInString`](#sortcharactersinstring)
 * [`splitLines`](#splitlines)
@@ -297,12 +308,18 @@ average(1, 2, 3);
 
 </details>
 
-###  Type
+### 🔧 Utility
 
 <details>
 <summary>View contents</summary>
 
+* [`cloneRegExp`](#cloneregexp)
+* [`coalesce`](#coalesce)
+* [`coalesceFactory`](#coalescefactory)
+* [`extendHex`](#extendhex)
 * [`getType`](#gettype)
+* [`getURLParameters`](#geturlparameters)
+* [`hexToRGB`](#hextorgb)
 * [`isArray`](#isarray)
 * [`isArrayLike`](#isarraylike)
 * [`isBoolean`](#isboolean)
@@ -314,23 +331,10 @@ average(1, 2, 3);
 * [`isString`](#isstring)
 * [`isSymbol`](#issymbol)
 * [`isValidJSON`](#isvalidjson)
-
-</details>
-
-### 🔧 Utility
-
-<details>
-<summary>View contents</summary>
-
-* [`cloneRegExp`](#cloneregexp)
-* [`coalesce`](#coalesce)
-* [`coalesceFactory`](#coalescefactory)
-* [`extendHex`](#extendhex)
-* [`getURLParameters`](#geturlparameters)
-* [`hexToRGB`](#hextorgb-)
 * [`prettyBytes`](#prettybytes)
 * [`randomHexColorCode`](#randomhexcolorcode)
 * [`RGBToHex`](#rgbtohex)
+* [`sdbm`](#sdbm)
 * [`timeTaken`](#timetaken)
 * [`toDecimalMark`](#todecimalmark)
 * [`toOrdinalSuffix`](#toordinalsuffix)
@@ -503,6 +507,37 @@ arrayMax([1, 2, 3]); // 3
 
 ---
  ## 📚 Array
+
+### binarySearch
+
+Use recursion to perform a logarithmic search similar to `.indexOf()` that finds the index of a value within an array. The two differences being 
+1. Operation only works with sorted arrays
+2. Offers a major performance boost when compared to a linear search or `.indexOf()` 
+
+```js
+const binarySearch = (arr, val, start = 0, end = arr.length - 1) => {
+  if (start > end) return -1;
+  const mid = Math.floor((start + end) / 2);
+  const target = arr[mid];
+  if (target > val) return binarySearch(arr, val, start, mid-1);
+  if (target < val) return binarySearch(arr, val, mid+1, end);
+  return mid;
+}
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 6); // 2
+binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 21); // -1
+binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 20); // 9
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 
 ### chunk
 
@@ -913,7 +948,7 @@ initialize2DArray(2, 2, 0); // [[0,0], [0,0]]
 
 Initializes an array containing the numbers in the specified range where `start` and `end` are inclusive with there common difference `step`.
 
-Use `Array.from(Math.ceil((end+1-start)/step))` to create an array of the desired length(the amounts of elements is equal to `(end-start)/step` or `(end+1-start)/step` for inclusive end), `Array.map()` to fill with the desired values in a range.
+Use `Array(Math.ceil((end+1-start)/step)` to create an array of the desired length(the amounts of elements is equal to `(end-start)/step` or `(end+1-start)/step` for inclusive end), `Array.map()` to fill with the desired values in a range.
 You can omit `start` to use a default value of `0`.
 You can omit `step` to use a default value of `1`.
 
@@ -936,15 +971,17 @@ initializeArrayWithRange(9, 0, 2); // [0,2,4,6,8]
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### initializeArrayWithValues
+### initializeArrayWithRange
 
-Initializes and fills an array with the specified values.
+Initializes an array containing the numbers in the specified range where `start` and `end` are inclusive with there common difference `step`.
 
-Use `Array(n)` to create an array of the desired length, `fill(v)` to fill it with the desired values.
-You can omit `val` to use a default value of `0`.
+Use `Array.from(Math.ceil((end+1-start)/step))` to create an array of the desired length(the amounts of elements is equal to `(end-start)/step` or `(end+1-start)/step` for inclusive end), `Array.map()` to fill with the desired values in a range.
+You can omit `start` to use a default value of `0`.
+You can omit `step` to use a default value of `1`.
 
 ```js
-const initializeArrayWithValues = (n, val = 0) => Array(n).fill(val);
+const initializeArrayWithRange = (end, start = 0, step = 1) =>
+  Array.from({ length: Math.ceil((end + 1 - start) / step) }).map((v, i) => i * step + start);
 ```
 
 <details>
@@ -959,17 +996,15 @@ initializeArrayWithValues(5, 2); // [2,2,2,2,2]
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### intersection
+### initializeArrayWithValues
 
-Returns a list of elements that exist in both arrays.
+Initializes and fills an array with the specified values.
 
-Create a `Set` from `b`, then use `Array.filter()` on `a` to only keep values contained in `b`.
+Use `Array(n)` to create an array of the desired length, `fill(v)` to fill it with the desired values.
+You can omit `val` to use a default value of `0`.
 
 ```js
-const intersection = (a, b) => {
-  const s = new Set(b);
-  return a.filter(x => s.has(x));
-};
+const initializeArrayWithValues = (n, val = 0) => Array(n).fill(val);
 ```
 
 <details>
@@ -1289,6 +1324,38 @@ let pulled = pullAtValue(myArray, ['b', 'd']); // myArray = [ 'a', 'c' ] , pulle
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### quickSort
+
+QuickSort an Array (ascending sort by default).
+
+Use recursion. 
+Use `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it. 
+If the parameter `desc` is truthy, return array sorts in descending order.
+
+```js
+const quickSort = ([n, ...nums], desc) =>
+  isNaN(n)
+    ? []
+    : [
+        ...quickSort(nums.filter(v => (desc ? v > n : v <= n)), desc),
+        n,
+        ...quickSort(nums.filter(v => (!desc ? v > n : v <= n)), desc)
+      ];
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+quickSort([4, 1, 3, 2]); // [1,2,3,4]
+quickSort([4, 1, 3, 2], true); // [4,3,2,1]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### reducedFilter
 
 Filter an array of objects based on a condition while also filtering out unspecified keys.
@@ -1304,48 +1371,6 @@ const reducedFilter = (data, keys, fn) =>
       return acc;
     }, {})
   );
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-const data = [
-  {
-    id: 1,
-    name: 'john',
-    age: 24
-  },
-  {
-    id: 2,
-    name: 'mike',
-    age: 50
-  }
-];
-
-reducedFilter(data, ['id', 'name'], item => item.age > 24); // [{ id: 2, name: 'mike'}]
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### remove
-
-Removes elements from an array for which the given function returns `false`.
-
-Use `Array.filter()` to find array elements that return truthy values and `Array.reduce()` to remove elements using `Array.splice()`.
-The `func` is invoked with three arguments (`value, index, array`).
-
-```js
-const remove = (arr, func) =>
-  Array.isArray(arr)
-    ? arr.filter(func).reduce((acc, val) => {
-        arr.splice(arr.indexOf(val), 1);
-        return acc.concat(val);
-      }, [])
-    : [];
 ```
 
 <details>
@@ -1419,7 +1444,7 @@ sampleSize([1, 2, 3], 4); // [2,3,1]
 
 Randomizes the order of the values of an array, returning a new array.
 
-Uses the [Fisher-Yates algorithm](https://github.com/chalarangelo/30-seconds-of-code#shuffle) to reorder the elements of the array.
+Uses the Fisher-Yates algorithm to reorder the elements of the array, based on the [Lodash implementation](https://github.com/lodash/lodash/blob/b2ea6b1cd251796dcb5f9700c4911a7b6223920b/shuffle.js), but as a pure function.
 
 ```js
 const shuffle = ([...arr]) => {
@@ -1445,14 +1470,21 @@ shuffle(foo); // [2,3,1], foo = [1,2,3]
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### similarity
+### shuffle
 
-Returns an array of elements that appear in both arrays.
+Randomizes the order of the values of an array, returning a new array.
 
-Use `Array.filter()` to remove values that are not part of `values`, determined using `Array.includes()`.
+Uses the [Fisher-Yates algorithm](https://github.com/chalarangelo/30-seconds-of-code#shuffle) to reorder the elements of the array.
 
 ```js
-const similarity = (arr, values) => arr.filter(v => values.includes(v));
+const shuffle = ([...arr]) => {
+  let m = arr.length;
+  while (m) {
+    const i = Math.floor(Math.random() * m--);
+    [arr[m], arr[i]] = [arr[i], arr[m]];
+  }
+  return arr;
+};
 ```
 
 <details>
@@ -1467,19 +1499,14 @@ similarity([1, 2, 3], [1, 2, 4]); // [1,2]
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### sortedIndex
+### similarity
 
-Returns the lowest index at which value should be inserted into array in order to maintain its sort order.
+Returns an array of elements that appear in both arrays.
 
-Check if the array is sorted in descending order (loosely).
-Use `Array.findIndex()` to find the appropriate index where the element should be inserted.
+Use `Array.filter()` to remove values that are not part of `values`, determined using `Array.includes()`.
 
 ```js
-const sortedIndex = (arr, n) => {
-  const isDescending = arr[0] > arr[arr.length - 1];
-  const index = arr.findIndex(el => (isDescending ? n >= el : n <= el));
-  return index === -1 ? arr.length : index;
-};
+const similarity = (arr, values) => arr.filter(v => values.includes(v));
 ```
 
 <details>
@@ -1525,7 +1552,7 @@ symmetricDifference([1, 2, 3], [1, 2, 4]); // [3,4]
 
 Returns all elements in an array except for the first one.
 
-Return `Array.slice(1)` if the array's `length` is more than `1`, otherwise, return the whole array.
+Return `arr.slice(1)` if the array's `length` is more than `1`, otherwise, return the whole array.
 
 ```js
 const tail = arr => (arr.length > 1 ? arr.slice(1) : arr);
@@ -1544,14 +1571,14 @@ tail([1]); // [1]
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### take
+### tail
 
-Returns an array with n elements removed from the beginning.
+Returns all elements in an array except for the first one.
 
-Use `Array.slice()` to create a slice of the array with `n` elements taken from the beginning.
+Return `Array.slice(1)` if the array's `length` is more than `1`, otherwise, return the whole array.
 
 ```js
-const take = (arr, n = 1) => arr.slice(0, n);
+const tail = arr => (arr.length > 1 ? arr.slice(1) : arr);
 ```
 
 <details>
@@ -1739,7 +1766,7 @@ bottomVisible(); // true
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### copyToClipboard ![advanced](/advanced.svg)
+### copyToClipboard
 
 Copy a string to the clipboard. Only works as a result of user action (i.e. inside a `click` event listener).
 
@@ -1781,14 +1808,34 @@ copyToClipboard('Lorem ipsum'); // 'Lorem ipsum' copied to clipboard.
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### currentURL
+### copyToClipboard ![advanced](/advanced.svg)
 
-Returns the current URL.
+Copy a string to the clipboard. Only works as a result of user action (i.e. inside a `click` event listener).
 
-Use `window.location.href` to get current URL.
+Create a new `<textarea>` element, fill it with the supplied data and add it to the HTML document.
+Use `Selection.getRangeAt()`to store the selected range (if any).
+Use `document.execCommand('copy')` to copy to the clipboard.
+Remove the `<textarea>` element from the HTML document.
+Finally, use `Selection().addRange()` to recover the original selected range (if any).
 
 ```js
-const currentURL = () => window.location.href;
+const copyToClipboard = str => {
+  const el = document.createElement('textarea');
+  el.value = str;
+  el.setAttribute('readonly', '');
+  el.style.position = 'absolute';
+  el.style.left = '-9999px';
+  document.body.appendChild(el);
+  const selected =
+    document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false;
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+  if (selected) {
+    document.getSelection().removeAllRanges();
+    document.getSelection().addRange(selected);
+  }
+};
 ```
 
 <details>
@@ -1978,7 +2025,7 @@ httpsRedirect(); // If you are on http://mydomain.com, you are redirected to htt
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### onUserInputChange ![advanced](/advanced.svg)
+### onUserInputChange
 
 Run the callback whenever the user input type changes (`mouse` or `touch`). Useful for enabling/disabling code depending on the input device. This process is dynamic and works with hybrid devices (e.g. touchscreen laptops).
 
@@ -2017,16 +2064,29 @@ onUserInputChange(type => {
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### redirect
+### onUserInputChange ![advanced](/advanced.svg)
 
-Redirects to a specified URL.
+Run the callback whenever the user input type changes (`mouse` or `touch`). Useful for enabling/disabling code depending on the input device. This process is dynamic and works with hybrid devices (e.g. touchscreen laptops).
 
-Use `window.location.href` or `window.location.replace()` to redirect to `url`.
-Pass a second argument to simulate a link click (`true` - default) or an HTTP redirect (`false`).
+Use two event listeners. Assume `mouse` input initially and bind a `touchstart` event listener to the document. 
+On `touchstart`, add a `mousemove` event listener to listen for two consecutive `mousemove` events firing within 20ms, using `performance.now()`.
+Run the callback with the input type as an argument in either of these situations.
 
 ```js
-const redirect = (url, asLink = true) =>
-  asLink ? (window.location.href = url) : window.location.replace(url);
+const onUserInputChange = callback => {
+  let type = 'mouse',
+    lastTime = 0;
+  const mousemoveHandler = () => {
+    const now = performance.now();
+    if (now - lastTime < 20)
+      (type = 'mouse'), callback(type), document.removeEventListener('mousemove', mousemoveHandler);
+    lastTime = now;
+  };
+  document.addEventListener('touchstart', () => {
+    if (type === 'touch') return;
+    (type = 'touch'), callback(type), document.addEventListener('mousemove', mousemoveHandler);
+  });
+};
 ```
 
 <details>
@@ -2041,7 +2101,7 @@ redirect('https://google.com');
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### runAsync ![advanced](/advanced.svg)
+### runAsync
 
 Runs a function in a separate thread by using a [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), allowing long running functions to not block the UI.
 
@@ -2099,20 +2159,30 @@ runAsync(() => typeof outsideVariable).then(console.log); // 'undefined'
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### scrollToTop
+### runAsync ![advanced](/advanced.svg)
 
-Smooth-scrolls to the top of the page.
+Runs a function in a separate thread by using a [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), allowing long running functions to not block the UI.
 
-Get distance from top using `document.documentElement.scrollTop` or `document.body.scrollTop`.
-Scroll by a fraction of the distance from the top. Use `window.requestAnimationFrame()` to animate the scrolling.
+Create a new `Worker` using a `Blob` object URL, the contents of which should be the stringified version of the supplied function.
+Immediately post the return value of calling the function back.
+Return a promise, listening for `onmessage` and `onerror` events and resolving the data posted back from the worker, or throwing an error.
 
 ```js
-const scrollToTop = () => {
-  const c = document.documentElement.scrollTop || document.body.scrollTop;
-  if (c > 0) {
-    window.requestAnimationFrame(scrollToTop);
-    window.scrollTo(0, c - c / 8);
-  }
+const runAsync = fn => {
+  const blob = `var fn = ${fn.toString()}; postMessage(fn());`;
+  const worker = new Worker(
+    URL.createObjectURL(new Blob([blob]), {
+      type: 'application/javascript; charset=utf-8'
+    })
+  );
+  return new Promise((res, rej) => {
+    worker.onmessage = ({ data }) => {
+      res(data), worker.terminate();
+    };
+    worker.onerror = err => {
+      rej(err), worker.terminate();
+    };
+  });
 };
 ```
 
@@ -2121,6 +2191,28 @@ const scrollToTop = () => {
 
 ```js
 scrollToTop();
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### setStyle
+
+Sets the value of a CSS rule for the specified element.
+
+Use `element.style` to set the value of the CSS rule for the specified element to `value`.
+
+```js
+const setStyle = (el, ruleName, value) => (el.style[ruleName] = value);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+setStyle(document.querySelector('p'), 'font-size', '20px'); // The first <p> element on the page will have a font-size of 20px
 ```
 
 </details>
@@ -2142,7 +2234,7 @@ const setStyle = (el, ruleName, val) => (el.style[ruleName] = val);
 <summary>Examples</summary>
 
 ```js
-setStyle(document.querySelector('p'), 'font-size', '20px'); // The first <p> element on the page will have a font-size of 20px
+show(document.querySelectorAll('img')); // Shows all <img> elements on the page
 ```
 
 </details>
@@ -2150,21 +2242,28 @@ setStyle(document.querySelector('p'), 'font-size', '20px'); // The first <p> ele
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### show
+### speechSynthesis
 
-Shows all the elements specified.
+Performs speech synthesis (experimental).
 
-Use the spread operator (`...`) and `Array.forEach()` to clear the `display` property for each element specified.
+Use `SpeechSynthesisUtterance.voice` and `window.speechSynthesis.getVoices()` to convert a message to speech.
+Use `window.speechSynthesis.speak()` to play the message.
+
+Learn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
 
 ```js
-const show = (...el) => [...el].forEach(e => (e.style.display = ''));
+const speechSynthesis = message => {
+  const msg = new SpeechSynthesisUtterance(message);
+  msg.voice = window.speechSynthesis.getVoices()[0];
+  window.speechSynthesis.speak(msg);
+};
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```js
-show(document.querySelectorAll('img')); // Shows all <img> elements on the page
+speechSynthesis('Hello, World'); // // plays the message
 ```
 
 </details>
@@ -2186,26 +2285,12 @@ const toggleClass = (el, className) => el.classList.toggle(className);
 <summary>Examples</summary>
 
 ```js
-toggleClass(document.querySelector('p.special'), 'special'); // The paragraph will not have the 'special' class anymore
+UUIDGeneratorBrowser(); // '7982fcfe-5721-4632-bede-6000885be57d'
 ```
 
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
-
-
-### UUIDGeneratorBrowser
-
-Generates a UUID in a browser.
-
-Use `crypto` API to generate a UUID, compliant with [RFC4122](https://www.ietf.org/rfc/rfc4122.txt) version 4.
-
-```js
-const UUIDGeneratorBrowser = () =>
-  ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
-    (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)
-  );
-```
 
 <details>
 <summary>Examples</summary>
@@ -2283,6 +2368,31 @@ getDaysDiffBetweenDates(new Date('2017-12-13'), new Date('2017-12-22')); // 9
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### JSONToDate
+
+Converts a JSON object to a date.
+
+Use `Date()`, to convert dates in JSON format to readable format (`dd/mm/yyyy`).
+
+```js
+const JSONToDate = arr => {
+  const dt = new Date(parseInt(arr.toString().substr(6)));
+  return `${dt.getDate()}/${dt.getMonth() + 1}/${dt.getFullYear()}`;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+JSONToDate(/Date(1489525200000)/); // "14/3/2017"
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### toEnglishDate
 
 Converts a date from American format to English format.
@@ -2305,22 +2415,12 @@ const toEnglishDate = time => {
 <summary>Examples</summary>
 
 ```js
-toEnglishDate('09/21/2010'); // '21/09/2010'
+tomorrow(); // 2017-12-27 (if current date is 2017-12-26)
 ```
 
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
-
-
-### tomorrow
-
-Results in a string representation of tomorrow's date.
-Use `new Date()` to get today's date, adding `86400000` of seconds to it(24 hours), using `Date.toISOString()` to convert Date object to string.
-
-```js
-const tomorrow = () => new Date(new Date().getTime() + 86400000).toISOString().split('T')[0];
-```
 
 <details>
 <summary>Examples</summary>
@@ -2338,16 +2438,13 @@ tomorrow(); // 2017-12-27 (if current date is 2017-12-26)
 
 ### chainAsync
 
-Chains asynchronous functions.
+### tomorrow
 
-Loop through an array of functions containing asynchronous events, calling `next` when each asynchronous event has completed.
+Results in a string representation of tomorrow's date.
+Use `new Date()` to get today's date, adding `86400000` of seconds to it(24 hours), using `Date.toISOString()` to convert Date object to string.
 
 ```js
-const chainAsync = fns => {
-  let curr = 0;
-  const next = () => fns[curr++](next);
-  next();
-};
+const tomorrow = () => new Date(new Date().getTime() + 86400000).toISOString().split('T')[0];
 ```
 
 <details>
@@ -2596,7 +2693,7 @@ async function sleepyWork() {
 
 Negates a predicate function.
 
-Take a predicate function and apply the not operator (`!`) to it with its arguments.
+Take a predicate function and apply `not` to it with its arguments.
 
 ```js
 const negate = func => (...args) => !func(...args);
@@ -2608,6 +2705,55 @@ const negate = func => (...args) => !func(...args);
 ```js
 filter([1, 2, 3, 4, 5, 6], negate(isEven)); // [1, 3, 5]
 negate(isOdd)(1); // false
+```
+<<<<<<< HEAD
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+---
+ ## 🔮 Logic
+
+### negate
+
+Negates a predicate function.
+
+Take a predicate function and apply the not operator (`!`) to it with its arguments.
+
+```js
+const negate = func => (...args) => !func(...args);
+```
+
+=======
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+---
+ ## ➗ Math
+
+>>>>>>> 35f8758da2978b98a9fa2b5f26359d0f4571d18c
+### average
+
+Returns the average of an of two or more numbers/arrays.
+
+Use `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`, divide by the `length` of the array.
+
+```js
+const average = (...arr) => {
+  const nums = [].concat(...arr);
+  return nums.reduce((acc, val) => acc + val, 0) / nums.length;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+average([1, 2, 3]); // 2
+average(1, 2, 3); // 2
 ```
 
 </details>
@@ -2627,19 +2773,6 @@ Use `Array.reduce()` to add each value to an accumulator, initialized with a val
 const average = (...nums) => [...nums].reduce((acc, val) => acc + val, 0) / nums.length;
 ```
 
-<details>
-<summary>Examples</summary>
-
-```js
-average(...[1, 2, 3]); // 2
-average(1, 2, 3); // 2
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
 ### clampNumber
 
 Clamps `num` within the inclusive range specified by the boundary values `a` and `b`.
@@ -2655,8 +2788,30 @@ const clampNumber = (num, a, b) => Math.max(Math.min(num, Math.max(a, b)), Math.
 <summary>Examples</summary>
 
 ```js
-clampNumber(2, 3, 5); // 3
-clampNumber(1, -1, -5); // -1
+average(...[1, 2, 3]); // 2
+average(1, 2, 3); // 2
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### collatz
+
+Applies the Collatz algorithm.
+
+If `n` is even, return `n/2`. Otherwise, return `3n+1`.
+
+```js
+const collatz = n => (n % 2 == 0 ? n / 2 : 3 * n + 1);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+collatz(8); // 4
 ```
 
 </details>
@@ -2679,7 +2834,7 @@ const digitize = n => [...('' + n)].map(i => parseInt(i));
 <summary>Examples</summary>
 
 ```js
-digitize(123); // [1, 2, 3]
+distance(1, 1, 2, 3); // 2.23606797749979
 ```
 
 </details>
@@ -2687,21 +2842,50 @@ digitize(123); // [1, 2, 3]
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### distance
+### elo
 
-Returns the distance between two points.
+Computes the new ratings between two or more opponents using the [Elo rating system](https://en.wikipedia.org/wiki/Elo_rating_system). It takes an array
+of pre-ratings and returns an array containing post-ratings.
+The array should be ordered from best performer to worst performer (winner -> loser).
 
-Use `Math.hypot()` to calculate the Euclidean distance between two points.
+Use the exponent `**` operator and math operators to compute the expected score (chance of winning)
+of each opponent and compute the new rating for each. Loop through the ratings, using each permutation to compute the post-Elo rating for each player in a pairwise fashion. Omit the second argument to use the default K-factor of 32, or supply a custom K-factor value. For details on the third argument, see the last example.
 
 ```js
-const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
+const elo = ([...ratings], kFactor = 32, selfRating) => {
+  const [a, b] = ratings;
+  const expectedScore = (self, opponent) => 1 / (1 + 10 ** ((opponent - self) / 400));
+  const newRating = (rating, i) =>
+    (selfRating || rating) + kFactor * (i - expectedScore(i ? a : b, i ? b : a));
+  if (ratings.length === 2) {
+    return [newRating(a, 1), newRating(b, 0)];
+  } else {
+    for (let i = 0; i < ratings.length; i++) {
+      let j = i;
+      while (j < ratings.length - 1) {
+        [ratings[i], ratings[j + 1]] = elo([ratings[i], ratings[j + 1]], kFactor);
+        j++;
+      }
+    }
+  }
+  return ratings;
+};
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```js
-distance(1, 1, 2, 3); // 2.23606797749979
+// Standard 1v1s
+elo([1200, 1200]); // [1216, 1184]
+elo([1200, 1200], 64); // [1232, 1168]
+// 4 player FFA, all same rank
+elo([1200, 1200, 1200, 1200]).map(Math.round); // [1246, 1215, 1185, 1154]
+/*
+For teams, each rating can adjusted based on own team's average rating vs. 
+average rating of opposing team, with the score being added to their
+own individual rating by supplying it as the third argument.
+*/
 ```
 
 </details>
@@ -2762,29 +2946,50 @@ own individual rating by supplying it as the third argument.
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### factorial
+### factors
 
-Calculates the factorial of a number.
+Returns the array of factors of the given `num`. 
+If the second argument is set to `true` returns only the prime factors of `num`.
+If `num` is `1` or `0` returns an empty array.
+If `num` is less than `0` returns all the factors of `-int` together with their additive inverses.
 
-Use recursion.
-If `n` is less than or equal to `1`, return `1`.
-Otherwise, return the product of `n` and the factorial of `n - 1`.
-Throws an exception if `n` is a negative number.
+Use `Array.from()`, `Array.map()` and `Array.filter()` to find all the factors of `num`.
+If given `num` is negative, use `Array.reduce()` to add the additive inverses to the array.
+Return all results if `primes` is `false`, else determine and return only the prime factors using `isPrime` and `Array.filter()`.
+Omit the second argument, `primes`, to return prime and non-prime factors by default.
+
+**Note**:- _Negative numbers are not considered prime._
 
 ```js
-const factorial = n =>
-  n < 0
-    ? (() => {
-        throw new TypeError('Negative numbers are not allowed!');
-      })()
-    : n <= 1 ? 1 : n * factorial(n - 1);
+const factors = (num, primes = false) => {
+  const isPrime = num => {
+    const boundary = Math.floor(Math.sqrt(num));
+    for (var i = 2; i <= boundary; i++) if (num % i === 0) return false;
+    return num >= 2;
+  };
+  const isNeg = num < 0;
+  num = isNeg ? -num : num;
+  let array = Array.from({ length: num - 1 })
+    .map((val, i) => (num % (i + 2) === 0 ? i + 2 : false))
+    .filter(val => val);
+  if (isNeg)
+    array = array.reduce((acc, val) => {
+      acc.push(val);
+      acc.push(-val);
+      return acc;
+    }, []);
+  return primes ? array.filter(isPrime) : array;
+};
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```js
-factorial(6); // 720
+factors(12); // [2,3,4,6,12]
+factors(12, true); // [2,3]
+factors(-12); // [2, -2, 3, -3, 4, -4, 6, -6, 12, -12]
+factors(-12, true); // [2,3]
 ```
 
 </details>
@@ -2811,7 +3016,7 @@ const fibonacci = n =>
 <summary>Examples</summary>
 
 ```js
-fibonacci(6); // [0, 1, 1, 2, 3, 5]
+fibonacciCountUntilNum(10); // 7
 ```
 
 </details>
@@ -2847,36 +3052,6 @@ gcd(...[12, 8, 32]); // 4
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### geometricProgression
-
-Initializes an array containing the numbers in the specified range where `start` and `end` are inclusive and the ratio between two terms is `step`.
-Returns an error if `step` equals `1`.
-
-Use `Array.from()`, `Math.log()` and `Math.floor()` to create an array of the desired length, `Array.map()` to fill with the desired values in a range.
-Omit the second argument, `start`, to use a default value of `1`.
-Omit the third argument, `step`, to use a default value of `2`.
-
-```js
-const geometricProgression = (end, start = 1, step = 2) =>
-  Array.from({ length: Math.floor(Math.log(end / start) / Math.log(step)) + 1 }).map(
-    (v, i) => start * step ** i
-  );
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-geometricProgression(256); // [1, 2, 4, 8, 16, 32, 64, 128, 256]
-geometricProgression(256, 3); // [3, 6, 12, 24, 48, 96, 192]
-geometricProgression(256, 1, 4); // [1, 4, 16, 64, 256]
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
 ### hammingDistance
 
 Calculates the Hamming distance between two values.
@@ -2893,6 +3068,44 @@ const hammingDistance = (num1, num2) => ((num1 ^ num2).toString(2).match(/1/g) |
 
 ```js
 hammingDistance(2, 3); // 1
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### howManyTimes
+
+Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.
+Works for both negative and positive integers.
+
+If `divisor` is `-1` or `1` return `Infinity`.
+If `divisor` is `-0` or `0` return `0`.
+Otherwise, keep dividing `num` with `divisor` and incrementing `i`, while the result is an integer.
+Return the number of times the loop was executed, `i`.
+
+```js
+const howManyTimes = (num, divisor) => {
+  if (divisor === 1 || divisor === -1) return Infinity;
+  if (divisor === 0) return 0;
+  let i = 0;
+  while (Number.isInteger(num / divisor)) {
+    i++;
+    num = num / divisor;
+  }
+  return i;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+howManyTimes(100, 2); // 2
+howManyTimes(100, 2.5); // 2
+howManyTimes(100, 0); // 0
+howManyTimes(100, -1); // Infinity
 ```
 
 </details>
@@ -2918,10 +3131,8 @@ const inRange = (n, start, end = null) => {
 <summary>Examples</summary>
 
 ```js
-inRange(3, 2, 5); // true
-inRange(3, 4); // true
-inRange(2, 3, 5); // false
-inrange(3, 2); // false
+isArmstrongNumber(1634); // true
+isArmstrongNumber(56); // false
 ```
 
 </details>
@@ -2937,29 +3148,6 @@ Use the modulo operator (`%`) to check if the remainder is equal to `0`.
 
 ```js
 const isDivisible = (dividend, divisor) => dividend % divisor === 0;
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-isDivisible(6, 3); // true
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### isEven
-
-Returns `true` if the given number is even, `false` otherwise.
-
-Checks whether a number is odd or even using the modulo (`%`) operator.
-Returns `true` if the number is even, `false` if the number is odd.
-
-```js
-const isEven = num => num % 2 === 0;
 ```
 
 <details>
@@ -3003,6 +3191,34 @@ isPrime(11); // true
 
 ### lcm
 
+Returns the least common multiple of two or more numbers/arrays.
+
+Use the greatest common divisor (GCD) formula and `Math.abs()` to determine the least common multiple.
+The GCD formula uses recursion.
+
+```js
+const lcm = (...arr) => {
+  const gcd = (x, y) => (!y ? x : gcd(y, x % y));
+  const _lcm = (x, y) => x * y / gcd(x, y);
+  return [].concat(...arr).reduce((a, b) => _lcm(a, b));
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+lcm(12, 7); // 84
+lcm([1, 3, 4], 5); // 60
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### lcm
+
 Returns the least common multiple of two or more numbers.
 
 Use the greatest common divisor (GCD) formula and `Math.abs()` to determine the least common multiple.
@@ -3022,43 +3238,6 @@ const lcm = (...arr) => {
 ```js
 lcm(12, 7); // 84
 lcm(...[1, 3, 4, 5]); // 60
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### luhnCheck
-
-Implementation of the [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) used to validate a variety of identification numbers, such as credit card numbers, IMEI numbers, National Provider Identifier numbers etc.
-
-Use `String.split('')`, `Array.reverse()` and `Array.map()` in combination with `parseInt()` to obtain an array of digits.
-Use `Array.splice(0,1)` to obtain the last digit.
-Use `Array.reduce()` to implement the Luhn Algorithm.
-Return `true` if `sum` is divisible by `10`, `false` otherwise.
-
-
-```js
-const luhnCheck = num => {
-  let arr = (num + '')
-    .split('')
-    .reverse()
-    .map(x => parseInt(x));
-  let lastDigit = arr.splice(0, 1)[0];
-  let sum = arr.reduce((acc, val, i) => (i % 2 !== 0 ? acc + val : acc + (val * 2) % 9 || 9), 0);
-  sum += lastDigit;
-  return sum % 10 === 0;
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-luhnCheck('4485275742308327'); // true
-luhnCheck(6011329933655299); //  true
-luhnCheck(123456789); // false
 ```
 
 </details>
@@ -3233,6 +3412,60 @@ round(1.005, 2); // 1.01
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### solveRPN
+
+Solves the given mathematical expression in [reverse polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation).
+Throws appropriate errors if there are unrecognized symbols or the expression is wrong. The valid operators are :- `+`,`-`,`*`,`/`,`^`,`**` (`^`&`**` are the exponential symbols and are same). This snippet does not supports any unary operators.
+
+Use a dictionary, `OPERATORS` to specify each operator's matching mathematical operation.
+Use `String.replace()` with a regular expression to replace `^` with `**`, `String.split()` to tokenize the string and `Array.filter()` to remove empty tokens.
+Use `Array.forEach()` to parse each `symbol`, evaluate it as a numeric value or operator and solve the mathematical expression.
+Numeric values are converted to floating point numbers and pushed to a `stack`, while operators are evaluated using the `OPERATORS` dictionary and pop elements from the `stack` to apply operations.
+
+```js
+const solveRPN = rpn => {
+  const OPERATORS = {
+    '*': (a, b) => a * b,
+    '+': (a, b) => a + b,
+    '-': (a, b) => a - b,
+    '/': (a, b) => a / b,
+    '**': (a, b) => a ** b
+  };
+  const [stack, solve] = [
+    [],
+    rpn
+      .replace(/\^/g, '**')
+      .split(/\s+/g)
+      .filter(el => !/\s+/.test(el) && el !== '')
+  ];
+  solve.forEach(symbol => {
+    if (!isNaN(parseFloat(symbol)) && isFinite(symbol)) {
+      stack.push(symbol);
+    } else if (Object.keys(OPERATORS).includes(symbol)) {
+      const [a, b] = [stack.pop(), stack.pop()];
+      stack.push(OPERATORS[symbol](parseFloat(b), parseFloat(a)));
+    } else {
+      throw `${symbol} is not a recognized symbol`;
+    }
+  });
+  if (stack.length === 1) return stack.pop();
+  else throw `${rpn} is not a proper RPN. Please check it and try again`;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+solveRPN('15 7 1 1 + - / 3 * 2 1 1 + + -'); // 5
+solveRPN('2 3 ^'); // 8
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### sbdm
 
 Hashes the input string into a whole number.
@@ -3262,30 +3495,21 @@ console.log(sdbm('name')); // -3521204949
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### standardDeviation
+### sum
 
-Returns the standard deviation of an array of numbers.
+Returns the sum of two or more numbers/arrays.
 
-Use `Array.reduce()` to calculate the mean, variance and the sum of the variance of the values, the variance of the values, then
-determine the standard deviation.
-You can omit the second argument to get the sample standard deviation or set it to `true` to get the population standard deviation.
+Use `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`.
 
 ```js
-const standardDeviation = (arr, usePopulation = false) => {
-  const mean = arr.reduce((acc, val) => acc + val, 0) / arr.length;
-  return Math.sqrt(
-    arr.reduce((acc, val) => acc.concat((val - mean) ** 2), []).reduce((acc, val) => acc + val, 0) /
-      (arr.length - (usePopulation ? 0 : 1))
-  );
-};
+const sum = (...arr) => [].concat(...arr).reduce((acc, val) => acc + val, 0);
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```js
-standardDeviation([10, 2, 38, 23, 38, 23, 21]); // 13.284434142114991 (sample)
-standardDeviation([10, 2, 38, 23, 38, 23, 21], true); // 12.29899614287479 (population)
+sum([1, 2, 3, 4]); // 10
 ```
 
 </details>
@@ -3308,36 +3532,6 @@ const sum = (...arr) => [...arr].reduce((acc, val) => acc + val, 0);
 
 ```js
 sum(...[1, 2, 3, 4]); // 10
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### sumPower
-
-Returns the sum of the powers of all the numbers from `start` to `end` (both inclusive).
-
-Use `Array.fill()` to create an array of all the numbers in the target range, `Array.map()` and the exponent operator (`**`) to raise them to `power` and `Array.reduce()` to add them together.
-Omit the second argument, `power`, to use a default power of `2`.
-Omit the third argument, `start`, to use a default starting value of `1`.
-
-```js
-const sumPower = (end, power = 2, start = 1) =>
-  Array(end + 1 - start)
-    .fill(0)
-    .map((x, i) => (i + start) ** power)
-    .reduce((a, b) => a + b, 0);
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-sumPower(10); // 385
-sumPower(10, 3); //3025
-sumPower(10, 3, 5); //2925
 ```
 
 </details>
@@ -3512,8 +3706,8 @@ UUIDGeneratorNode(); // '79c7c136-60ee-40a2-beb2-856f1feabefc'
 
 Removes any properties except the ones specified from a JSON object.
 
-Use `Object.keys()` method to loop over given JSON object and deleting keys that are not included in given array.
-If you pass a special key,`childIndicator`, it will search deeply apply the function to inner objects, too.
+Use `Object.keys()` method to loop over given JSON object and deleting keys that are not `include`d in given array.
+Also if you give it a special key (`childIndicator`) it will search deeply inside it to apply function to inner objects too.
 
 ```js
 const cleanObj = (obj, keysToKeep = [], childIndicator) => {
@@ -4335,6 +4529,17 @@ unescapeHTML('&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;'); // '<a href=
 
 <br>[⬆ Back to top](#table-of-contents)
 
+---
+ ## 🔧 Utility
+
+### cloneRegExp
+
+Clones a regular expression.
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 
 ### words
 
@@ -4371,6 +4576,16 @@ Returns lowercased constructor name of value, `"undefined"` or `"null"` if value
 ```js
 const getType = v =>
   v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name.toLowerCase();
+```
+
+### cloneRegExp
+
+Clones a regular expression.
+
+Use `new RegExp()`, `RegExp.source` and `RegExp.flags` to clone the given regular expression.
+
+```js
+const cloneRegExp = regExp => new RegExp(regExp.source, regExp.flags);
 ```
 
 <details>
@@ -4513,6 +4728,34 @@ Use `typeof` to check if a value is classified as a number primitive.
 
 ```js
 const isNumber = val => typeof val === 'number';
+```
+
+### hexToRGB
+
+Converts a color code to a `rgb()` or `rgba()` string if alpha value is provided.
+
+Use bitwise right-shift operator and mask bits with `&` (and) operator to convert a hexadecimal color code (with or without prefixed with `#`) to a string with the RGB values. If it's 3-digit color code, first convert to 6-digit version. If an alpha value is provided alongside 6-digit hex, give `rgba()` string in return.
+
+```js
+const hexToRGB = hex => {
+  let alpha = false,
+    h = hex.slice(hex.startsWith('#') ? 1 : 0);
+  if (h.length === 3) h = [...h].map(x => x + x).join('');
+  else if (h.length === 8) alpha = true;
+  h = parseInt(h, 16);
+  return (
+    'rgb' +
+    (alpha ? 'a' : '') +
+    '(' +
+    (h >>> (alpha ? 24 : 16)) +
+    ', ' +
+    ((h & (alpha ? 0x00ff0000 : 0x00ff00)) >>> (alpha ? 16 : 8)) +
+    ', ' +
+    ((h & (alpha ? 0x0000ff00 : 0x0000ff)) >>> (alpha ? 8 : 0)) +
+    (alpha ? `, ${h & 0x000000ff}` : '') +
+    ')'
+  );
+};
 ```
 
 <details>
