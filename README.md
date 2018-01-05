@@ -68,7 +68,7 @@ average(1, 2, 3);
 
 ## Table of Contents
 
-###  Adapter
+### 🔌 Adapter
 
 <details>
 <summary>View contents</summary>
@@ -82,11 +82,12 @@ average(1, 2, 3);
 
 </details>
 
-###  Array
+### 📚 Array
 
 <details>
 <summary>View contents</summary>
 
+* [`binarySearch`](#binarysearch)
 * [`chunk`](#chunk)
 * [`compact`](#compact)
 * [`countOccurrences`](#countoccurrences)
@@ -118,6 +119,7 @@ average(1, 2, 3);
 * [`pull`](#pull)
 * [`pullAtIndex`](#pullatindex)
 * [`pullAtValue`](#pullatvalue)
+* [`quickSort`](#quicksort)
 * [`reducedFilter`](#reducedfilter)
 * [`remove`](#remove)
 * [`sample`](#sample)
@@ -136,14 +138,14 @@ average(1, 2, 3);
 
 </details>
 
-###  Browser
+### 🌐 Browser
 
 <details>
 <summary>View contents</summary>
 
 * [`arrayToHtmlList`](#arraytohtmllist)
 * [`bottomVisible`](#bottomvisible)
-* [`copyToClipboard`](#copytoclipboard-)
+* [`copyToClipboard`](#copytoclipboard)
 * [`currentURL`](#currenturl)
 * [`detectDeviceType`](#detectdevicetype)
 * [`elementIsVisibleInViewport`](#elementisvisibleinviewport)
@@ -152,30 +154,32 @@ average(1, 2, 3);
 * [`hasClass`](#hasclass)
 * [`hide`](#hide)
 * [`httpsRedirect`](#httpsredirect)
-* [`onUserInputChange`](#onuserinputchange-)
+* [`onUserInputChange`](#onuserinputchange)
 * [`redirect`](#redirect)
-* [`runAsync`](#runasync-)
+* [`runAsync`](#runasync)
 * [`scrollToTop`](#scrolltotop)
 * [`setStyle`](#setstyle)
 * [`show`](#show)
+* [`speechSynthesis`](#speechsynthesis)
 * [`toggleClass`](#toggleclass)
 * [`UUIDGeneratorBrowser`](#uuidgeneratorbrowser)
 
 </details>
 
-###  Date
+### ⏱️ Date
 
 <details>
 <summary>View contents</summary>
 
 * [`formatDuration`](#formatduration)
 * [`getDaysDiffBetweenDates`](#getdaysdiffbetweendates)
+* [`JSONToDate`](#jsontodate)
 * [`toEnglishDate`](#toenglishdate)
 * [`tomorrow`](#tomorrow)
 
 </details>
 
-###  Function
+### 🎛️ Function
 
 <details>
 <summary>View contents</summary>
@@ -192,7 +196,7 @@ average(1, 2, 3);
 
 </details>
 
-###  Logic
+### 🔮 Logic
 
 <details>
 <summary>View contents</summary>
@@ -201,22 +205,28 @@ average(1, 2, 3);
 
 </details>
 
-###  Math
+### ➗ Math
 
 <details>
 <summary>View contents</summary>
 
 * [`average`](#average)
 * [`clampNumber`](#clampnumber)
+* [`collatz`](#collatz)
 * [`digitize`](#digitize)
 * [`distance`](#distance)
-* [`elo`](#elo-)
+* [`elo`](#elo)
 * [`factorial`](#factorial)
+* [`factors`](#factors)
 * [`fibonacci`](#fibonacci)
+* [`fibonacciCountUntilNum`](#fibonaccicountuntilnum)
+* [`fibonacciUntilNum`](#fibonacciuntilnum)
 * [`gcd`](#gcd)
 * [`geometricProgression`](#geometricprogression)
 * [`hammingDistance`](#hammingdistance)
+* [`howManyTimes`](#howmanytimes)
 * [`inRange`](#inrange)
+* [`isArmstrongNumber`](#isarmstrongnumber)
 * [`isDivisible`](#isdivisible)
 * [`isEven`](#iseven)
 * [`isPrime`](#isprime)
@@ -229,14 +239,14 @@ average(1, 2, 3);
 * [`randomIntegerInRange`](#randomintegerinrange)
 * [`randomNumberInRange`](#randomnumberinrange)
 * [`round`](#round)
-* [`sdbm`](#sdbm)
+* [`solveRPN`](#solverpn)
 * [`standardDeviation`](#standarddeviation)
 * [`sum`](#sum)
 * [`sumPower`](#sumpower)
 
 </details>
 
-###  Node
+### 📦 Node
 
 <details>
 <summary>View contents</summary>
@@ -250,7 +260,7 @@ average(1, 2, 3);
 
 </details>
 
-###  Object
+### 🗃️ Object
 
 <details>
 <summary>View contents</summary>
@@ -268,7 +278,7 @@ average(1, 2, 3);
 
 </details>
 
-###  String
+### 📜 String
 
 <details>
 <summary>View contents</summary>
@@ -285,6 +295,7 @@ average(1, 2, 3);
 * [`mask`](#mask)
 * [`palindrome`](#palindrome)
 * [`pluralize`](#pluralize)
+* [`repeatString`](#repeatstring)
 * [`reverseString`](#reversestring)
 * [`sortCharactersInString`](#sortcharactersinstring)
 * [`splitLines`](#splitlines)
@@ -297,12 +308,18 @@ average(1, 2, 3);
 
 </details>
 
-###  Type
+### 🔧 Utility
 
 <details>
 <summary>View contents</summary>
 
+* [`cloneRegExp`](#cloneregexp)
+* [`coalesce`](#coalesce)
+* [`coalesceFactory`](#coalescefactory)
+* [`extendHex`](#extendhex)
 * [`getType`](#gettype)
+* [`getURLParameters`](#geturlparameters)
+* [`hexToRGB`](#hextorgb)
 * [`isArray`](#isarray)
 * [`isArrayLike`](#isarraylike)
 * [`isBoolean`](#isboolean)
@@ -314,23 +331,10 @@ average(1, 2, 3);
 * [`isString`](#isstring)
 * [`isSymbol`](#issymbol)
 * [`isValidJSON`](#isvalidjson)
-
-</details>
-
-### 🔧 Utility
-
-<details>
-<summary>View contents</summary>
-
-* [`cloneRegExp`](#cloneregexp)
-* [`coalesce`](#coalesce)
-* [`coalesceFactory`](#coalescefactory)
-* [`extendHex`](#extendhex)
-* [`getURLParameters`](#geturlparameters)
-* [`hexToRGB`](#hextorgb-)
 * [`prettyBytes`](#prettybytes)
 * [`randomHexColorCode`](#randomhexcolorcode)
 * [`RGBToHex`](#rgbtohex)
+* [`sdbm`](#sdbm)
 * [`timeTaken`](#timetaken)
 * [`toDecimalMark`](#todecimalmark)
 * [`toOrdinalSuffix`](#toordinalsuffix)
@@ -340,7 +344,7 @@ average(1, 2, 3);
 </details>
 
 ---
- ##  Adapter
+ ## 🔌 Adapter
 
 ### call
 
@@ -502,7 +506,38 @@ arrayMax([1, 2, 3]); // 3
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ##  Array
+ ## 📚 Array
+
+### binarySearch
+
+Use recursion to perform a logarithmic search similar to `.indexOf()` that finds the index of a value within an array. The two differences being 
+1. Operation only works with sorted arrays
+2. Offers a major performance boost when compared to a linear search or `.indexOf()` 
+
+```js
+const binarySearch = (arr, val, start = 0, end = arr.length - 1) => {
+  if (start > end) return -1;
+  const mid = Math.floor((start + end) / 2);
+  const target = arr[mid];
+  if (target > val) return binarySearch(arr, val, start, mid-1);
+  if (target < val) return binarySearch(arr, val, mid+1, end);
+  return mid;
+}
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 6); // 2
+binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 21); // -1
+binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 20); // 9
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 
 ### chunk
 
@@ -1682,7 +1717,7 @@ zipObject(['a', 'b'], [1, 2, 3]); // {a: 1, b: 2}
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ##  Browser
+ ## 🌐 Browser
 
 ### arrayToHtmlList
 
@@ -2257,8 +2292,19 @@ UUIDGeneratorBrowser(); // '7982fcfe-5721-4632-bede-6000885be57d'
 
 <br>[⬆ Back to top](#table-of-contents)
 
+<details>
+<summary>Examples</summary>
+
+```js
+UUIDGeneratorBrowser(); // '7982fcfe-5721-4632-bede-6000885be57d'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 ---
- ##  Date
+ ## ⏱️ Date
 
 ### formatDuration
 
@@ -2376,8 +2422,21 @@ tomorrow(); // 2017-12-27 (if current date is 2017-12-26)
 
 <br>[⬆ Back to top](#table-of-contents)
 
+<details>
+<summary>Examples</summary>
+
+```js
+tomorrow(); // 2017-12-27 (if current date is 2017-12-26)
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 ---
- ##  Function
+ ## 🎛️ Function
+
+### chainAsync
 
 ### tomorrow
 
@@ -2628,7 +2687,7 @@ async function sleepyWork() {
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ##  Logic
+ ## 🔮 Logic
 
 ### negate
 
@@ -2647,6 +2706,7 @@ const negate = func => (...args) => !func(...args);
 filter([1, 2, 3, 4, 5, 6], negate(isEven)); // [1, 3, 5]
 negate(isOdd)(1); // false
 ```
+<<<<<<< HEAD
 
 </details>
 
@@ -2665,6 +2725,16 @@ Take a predicate function and apply the not operator (`!`) to it with its argume
 const negate = func => (...args) => !func(...args);
 ```
 
+=======
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+---
+ ## ➗ Math
+
+>>>>>>> 35f8758da2978b98a9fa2b5f26359d0f4571d18c
 ### average
 
 Returns the average of an of two or more numbers/arrays.
@@ -3469,7 +3539,7 @@ sum(...[1, 2, 3, 4]); // 10
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ##  Node
+ ## 📦 Node
 
 ### hasFlags
 
@@ -3631,26 +3701,6 @@ UUIDGeneratorNode(); // '79c7c136-60ee-40a2-beb2-856f1feabefc'
 
 ---
  ## 🗃️ Object
-
-### cleanObj
-
-Removes any properties except the ones specified from a JSON object.
-
-Use `Object.keys()` method to loop over given JSON object and deleting keys that are not included in given array.
-If you pass a special key,`childIndicator`, it will search deeply apply the function to inner objects, too.
-
-```js
-const cleanObj = (obj, keysToKeep = [], childIndicator) => {
-  Object.keys(obj).forEach(key => {
-    if (key === childIndicator) {
-      cleanObj(obj[key], keysToKeep, childIndicator);
-    } else if (!keysToKeep.includes(key)) {
-      delete obj[key];
-    }
-  });
-  return obj;
-};
-```
 
 ### cleanObj
 
@@ -3920,7 +3970,7 @@ truthCheckCollection([{ user: 'Tinky-Winky', sex: 'male' }, { user: 'Dipsy', sex
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ##  String
+ ## 📜 String
 
 ### anagrams
 
@@ -4474,6 +4524,17 @@ const unescapeHTML = str =>
 ```js
 unescapeHTML('&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;'); // '<a href="#">Me & you</a>'
 ```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+---
+ ## 🔧 Utility
+
+### cloneRegExp
+
+Clones a regular expression.
 
 </details>
 
