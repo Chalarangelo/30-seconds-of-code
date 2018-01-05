@@ -7,6 +7,7 @@ Combine characters to get a string using `String.join('')`.
 
 ```js
 
+
 const reverseString = str =>
   [..str]
     .reverse()

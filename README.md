@@ -143,7 +143,7 @@ average(1, 2, 3);
 
 * [`arrayToHtmlList`](#arraytohtmllist)
 * [`bottomVisible`](#bottomvisible)
-* [`copyToClipboard`](#copytoclipboard)
+* [`copyToClipboard`](#copytoclipboard-)
 * [`currentURL`](#currenturl)
 * [`detectDeviceType`](#detectdevicetype)
 * [`elementIsVisibleInViewport`](#elementisvisibleinviewport)
@@ -152,9 +152,9 @@ average(1, 2, 3);
 * [`hasClass`](#hasclass)
 * [`hide`](#hide)
 * [`httpsRedirect`](#httpsredirect)
-* [`onUserInputChange`](#onuserinputchange)
+* [`onUserInputChange`](#onuserinputchange-)
 * [`redirect`](#redirect)
-* [`runAsync`](#runasync)
+* [`runAsync`](#runasync-)
 * [`scrollToTop`](#scrolltotop)
 * [`setStyle`](#setstyle)
 * [`show`](#show)
@@ -210,7 +210,7 @@ average(1, 2, 3);
 * [`clampNumber`](#clampnumber)
 * [`digitize`](#digitize)
 * [`distance`](#distance)
-* [`elo`](#elo)
+* [`elo`](#elo-)
 * [`factorial`](#factorial)
 * [`fibonacci`](#fibonacci)
 * [`gcd`](#gcd)
@@ -327,7 +327,7 @@ average(1, 2, 3);
 * [`coalesceFactory`](#coalescefactory)
 * [`extendHex`](#extendhex)
 * [`getURLParameters`](#geturlparameters)
-* [`hexToRGB`](#hextorgb)
+* [`hexToRGB`](#hextorgb-)
 * [`prettyBytes`](#prettybytes)
 * [`randomHexColorCode`](#randomhexcolorcode)
 * [`RGBToHex`](#rgbtohex)
@@ -4198,6 +4198,7 @@ Use the spread operator (`...`) and `Array.reverse()` to reverse the order of th
 Combine characters to get a string using `String.join('')`.
 
 ```js
+
 
 const reverseString = str =>
   [..str]
