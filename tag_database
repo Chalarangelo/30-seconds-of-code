@@ -20,6 +20,7 @@ compose:function
 copyToClipboard:browser
 countOccurrences:array
 countVowels:string
+createElement:browser
 currentURL:browser
 curry:function
 deepFlatten:array
