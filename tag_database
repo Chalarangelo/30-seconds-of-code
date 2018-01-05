@@ -21,7 +21,7 @@ countOccurrences:array
 countVowels:string
 currentURL:browser,url
 curry:function,recursion
-createEventHub:browser,utility,advanced
+createEventHub:browser,event,advanced
 deepFlatten:array,recursion
 defer:function
 detectDeviceType:browser
