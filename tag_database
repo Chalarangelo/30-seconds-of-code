@@ -19,7 +19,7 @@ compose:function
 copyToClipboard:browser,string,advanced
 countOccurrences:array
 countVowels:string
-createEventHub:utility
+createEventHub:browser,utility,advanced
 currentURL:browser
 curry:function
 deepFlatten:array
