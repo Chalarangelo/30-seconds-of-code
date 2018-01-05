@@ -2,7 +2,7 @@
 
 Returns the native type of a value.
 
-Returns lowercased constructor name of value, "undefined" or "null" if value is undefined or null
+Returns lowercased constructor name of value, `"undefined"` or `"null"` if value is `undefined` or `null`.
 
 ```js
 const getType = v =>

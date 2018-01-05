@@ -61,7 +61,7 @@ const objectFromPairs = arr => arr.reduce((a, v) => ((a[v[0]] = v[1]), a), {});
 const capitalize = (str, lowerRest = false) =>
   str.slice(0, 1).toUpperCase() + (lowerRest ? str.slice(1).toLowerCase() : str.slice(1));
 // Start the timer of the script
-console.time('Builder');
+console.time('Webber');
 // Synchronously read all snippets and sort them as necessary (case-insensitive)
 try {
   let snippetFilenames = fs.readdirSync(snippetsPath);
@@ -96,7 +96,11 @@ try {
       .readFileSync('tag_database', 'utf8')
       .split('\n')
       .slice(0, -1)
-      .map(v => v.split(':').slice(0, 2))
+      .map(v => {
+        let data = v.split(':').slice(0, 2);
+        data[1] = data[1].split(',').map(t => t.trim());
+        return data;
+      })
   );
 } catch (err) {
   // Handle errors (hopefully not!)
@@ -109,7 +113,7 @@ try {
   output += `${startPart + '\n'}`;
   let uncategorizedOutput = '';
   // Loop over tags and snippets to create the table of contents
-  for (let tag of [...new Set(Object.entries(tagDbData).map(t => t[1]))]
+  for (let tag of [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
     .filter(v => v)
     .sort((a, b) => a.localeCompare(b))) {
     if (capitalize(tag, true) == 'Uncategorized') {
@@ -120,12 +124,12 @@ try {
           .replace(/<p>/g, '')
           .replace(/<\/p>/g, '') +
         `</h3>`;
-      for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag))
+      for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
         uncategorizedOutput += md
           .render(`[${taggedSnippet[0]}](#${taggedSnippet[0].toLowerCase()})\n`)
           .replace(/<p>/g, '')
           .replace(/<\/p>/g, '')
-          .replace(/<a/g, '<a class="sublink-1"');
+          .replace(/<a/g, `<a class="sublink-1" tags="${taggedSnippet[1].join(',')}"`);
       uncategorizedOutput += '\n';
     } else {
       output +=
@@ -135,12 +139,12 @@ try {
           .replace(/<p>/g, '')
           .replace(/<\/p>/g, '') +
         `</h3>`;
-      for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag))
+      for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
         output += md
           .render(`[${taggedSnippet[0]}](#${taggedSnippet[0].toLowerCase()})\n`)
           .replace(/<p>/g, '')
           .replace(/<\/p>/g, '')
-          .replace(/<a/g, '<a class="sublink-1"');
+          .replace(/<a/g, `<a class="sublink-1" tags="${taggedSnippet[1].join(',')}"`);
       output += '\n';
     }
   }
@@ -149,19 +153,20 @@ try {
   output += `<a id="top">&nbsp;</a>`;
   uncategorizedOutput = '';
   // Loop over tags and snippets to create the list of snippets
-  for (let tag of [...new Set(Object.entries(tagDbData).map(t => t[1]))]
+  for (let tag of [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
     .filter(v => v)
     .sort((a, b) => a.localeCompare(b))) {
     if (capitalize(tag, true) == 'Uncategorized') {
       uncategorizedOutput += md
         .render(`## ${capitalize(tag, true)}\n`)
         .replace(/<h2>/g, '<h2 style="text-align:center;">');
-      for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag))
+      for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
         uncategorizedOutput +=
           '<div class="card fluid">' +
           md
             .render(`\n${snippets[taggedSnippet[0] + '.md']}`)
             .replace(/<h3/g, `<h3 id="${taggedSnippet[0].toLowerCase()}" class="section double-padded"`)
+            .replace(/<\/h3>/g, `${taggedSnippet[1].includes('advanced')?'<mark class="tag">advanced</mark>':''}</h3>`)
             .replace(/<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm, (match, p1) => `<pre class="language-js">${Prism.highlight(unescapeHTML(p1), Prism.languages.javascript)}</pre>`)
             .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
           '<button class="primary clipboard-copy"><img src="clipboard.svg" alt="clipboard">&nbsp;Copy to clipboard</button>' +
@@ -170,12 +175,13 @@ try {
       output += md
         .render(`## ${capitalize(tag, true)}\n`)
         .replace(/<h2>/g, '<h2 style="text-align:center;">');
-      for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag))
+      for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
         output +=
           '<div class="card fluid">' +
           md
             .render(`\n${snippets[taggedSnippet[0] + '.md']}`)
             .replace(/<h3/g, `<h3 id="${taggedSnippet[0].toLowerCase()}" class="section double-padded"`)
+            .replace(/<\/h3>/g, `${taggedSnippet[1].includes('advanced')?'<mark class="tag">advanced</mark>':''}</h3>`)
             .replace(/<\/h3>/g, '</h3><div class="section double-padded">')
             .replace(/<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm, (match, p1) => `<pre class="language-js">${Prism.highlight(unescapeHTML(p1), Prism.languages.javascript)}</pre>`)
             .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
@@ -247,4 +253,4 @@ try {
 // Log a success message
 console.log(`${chalk.green('SUCCESS!')} index.html file generated!`);
 // Log the time taken
-console.timeEnd('Builder');
+console.timeEnd('Webber');
