@@ -14,7 +14,7 @@ For `off`, use `Array.findIndex()` to find the index of the handler in the event
 const createEventHub = () => ({
   hub: {},
   emit(event, data) {
-    this.hub[event].forEach(handler => handler(data));
+    (this.hub[event] || []).forEach(handler => handler(data));
   },
   on(event, handler) {
     if (!this.hub[event]) this.hub[event] = [];
