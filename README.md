@@ -2668,11 +2668,11 @@ clampNumber(1, -1, -5); // -1
 
 Converts a number to an array of digits.
 
-Convert the number to a string, using spread operators in ES6(`[...string]`) build an array.
+Convert the number to a string, using the spread operator (`...`) to build an array.
 Use `Array.map()` and `parseInt()` to transform each value to an integer.
 
 ```js
-const digitize = n => [...('' + n)].map(i => parseInt(i));
+const digitize = n => [...`${n}`].map(i => parseInt(i));
 ```
 
 <details>
@@ -4120,6 +4120,7 @@ Use the spread operator (`...`) and `Array.reverse()` to reverse the order of th
 Combine characters to get a string using `String.join('')`.
 
 ```js
+
 
 
 const reverseString = str =>
