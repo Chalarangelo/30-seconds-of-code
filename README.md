@@ -18,7 +18,7 @@
 
 ⚠️ **WARNING:** Snippets are not production ready.
 
-You can find a package with all the snippets on [npm](https://www.npmjs.com/package/30-seconds-of-code). 
+You can find a package with all the snippets on [npm](https://www.npmjs.com/package/30-seconds-of-code).
 
 ```
 npm install 30-seconds-of-code
