@@ -1,6 +1,6 @@
 ### plurals
 
-Returns the plural form of the provided `word`. Takes an optional argument of `dictionary` for irregular nouns.
+Returns the plural form of the provided `word`. Takes an optional argument of `dictionary` for irregular nouns. We recommend using [this](https://github.com/sindresorhus/irregular-plurals/blob/master/irregular-plurals.json) dictionary.
 
 ```js
 const plurals = (word,dictionary) => {
@@ -11,8 +11,8 @@ const plurals = (word,dictionary) => {
 ```
 
 ```js
-plurals("french fry")
-plurals("day")
-plurals("match")
-plurals("people", {"people":"person"})
+plurals("french fry"); // 'french fries'
+plurals("day"); //'days'
+plurals("match"); //'matches'
+plurals("people", {"people":"person"}); //'person'
 ```
