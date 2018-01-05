@@ -18,7 +18,7 @@
 
 ⚠️ **WARNING:** Snippets are not production ready.
 
-You can find a package with all the snippets on [npm](https://www.npmjs.com/package/30-seconds-of-code). 
+You can find a package with all the snippets on [npm](https://www.npmjs.com/package/30-seconds-of-code).
 
 ```
 npm install 30-seconds-of-code
@@ -1727,7 +1727,7 @@ zipObject(['a', 'b'], [1, 2, 3]); // {a: 1, b: 2}
 ---
  ## 🌐 Browser
 
-### arrayToHtmlList
+### arrayToHtmlList ![advanced](/advanced.svg)
 
 Converts the given array elements into `<li>` tags and appends them to the list of the given id.
 
@@ -2921,7 +2921,7 @@ elo([1200, 1200], 64); // [1232, 1168]
 // 4 player FFA, all same rank
 elo([1200, 1200, 1200, 1200]).map(Math.round); // [1246, 1215, 1185, 1154]
 /*
-For teams, each rating can adjusted based on own team's average rating vs. 
+For teams, each rating can adjusted based on own team's average rating vs.
 average rating of opposing team, with the score being added to their
 own individual rating by supplying it as the third argument.
 */
@@ -2964,7 +2964,7 @@ factorial(6); // 720
 
 ### factors
 
-Returns the array of factors of the given `num`. 
+Returns the array of factors of the given `num`.
 If the second argument is set to `true` returns only the prime factors of `num`.
 If `num` is `1` or `0` returns an empty array.
 If `num` is less than `0` returns all the factors of `-int` together with their additive inverses.

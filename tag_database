@@ -101,10 +101,8 @@ negate:logic,function
 nthElement:array
 objectFromPairs:object,array
 objectToPairs:object,array
-off:browser,event
-on:browser,event
 once:function
-onUserInputChange:browser,event,advanced
+onUserInputChange:browser,advanced
 orderBy:object,array
 palindrome:string
 percentile:math
@@ -125,6 +123,7 @@ readFileLines:node,array,string
 redirect:browser,url
 reducedFilter:array
 remove:array
+repeatString:string
 reverseString:string,array
 RGBToHex:utility
 round:math
