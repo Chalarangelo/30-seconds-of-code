@@ -73,7 +73,11 @@ try {
       .readFileSync('tag_database', 'utf8')
       .split('\n')
       .slice(0, -1)
-      .map(v => v.split(':').slice(0, 2))
+      .map(v => {
+        let data = v.split(':').slice(0, 2);
+        data[1] = data[1].split(',').map(t => t.trim());
+        return data;
+      })
   );
 } catch (err) {
   console.log(`${chalk.red('ERROR!')} During tag database loading: ${err}`);
@@ -85,7 +89,7 @@ try {
   const tags = [
     ...new Set(
       Object.entries(tagDbData)
-        .map(t => t[1])
+        .map(t => t[1][0])
         .filter(v => v)
         .sort((a, b) => a.localeCompare(b))
     )
@@ -101,7 +105,7 @@ try {
 
     if (capitalizedTag === 'Uncategorized') {
       uncategorizedOutput += `### _${capitalizedTag}_\n\n<details>\n<summary>View contents</summary>\n\n`;
-      for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag)) {
+      for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
         uncategorizedOutput += `* [\`${taggedSnippet[0]}\`](#${taggedSnippet[0].toLowerCase()})\n`;
       }
       uncategorizedOutput += '\n</details>\n\n';
@@ -109,7 +113,7 @@ try {
       output += `### ${
         EMOJIS[tag] || ''
       } ${capitalizedTag}\n\n<details>\n<summary>View contents</summary>\n\n`;
-      for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag)) {
+      for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
         output += `* [\`${taggedSnippet[0]}\`](#${taggedSnippet[0].toLowerCase()})\n`;
       }
       output += '\n</details>\n\n';
@@ -122,17 +126,23 @@ try {
   // Loop over tags and snippets to create the list of snippets
   for (const tag of tags) {
     const capitalizedTag = capitalize(tag, true);
-
+    // ![advanced](/advanced.svg)
     if (capitalizedTag == 'Uncategorized') {
       uncategorizedOutput += `---\n ## _${capitalizedTag}_\n`;
-      for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag)) {
+      for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
         uncategorizedOutput += `\n${snippets[taggedSnippet[0] + '.md'] +
           '\n<br>[⬆ back to top](#table-of-contents)\n\n'}`;
       }
     } else {
       output += `---\n ## ${EMOJIS[tag] || ''} ${capitalizedTag}\n`;
-      for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag)) {
+      for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
         let data = snippets[taggedSnippet[0] + '.md'];
+        // Add advanced tag 
+        if(taggedSnippet[1].includes('advanced')){
+          data = data.split(/\r?\n/);
+          data[0] = data[0] +' ![advanced](/advanced.svg)';
+          data = data.join('\n');
+        }
         data =
           data.slice(0, data.lastIndexOf('```js')) +
           '<details>\n<summary>Examples</summary>\n\n' +

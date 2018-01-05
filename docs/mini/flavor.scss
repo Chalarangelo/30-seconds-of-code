@@ -131,6 +131,8 @@ $_drawer-right: false;
 
 @import 'navigation';
 
+$mark-back-color: #424242;
+$mark-font-size: 0.5em;
 
 $toast-back-color:       #212121;
 
@@ -161,6 +163,12 @@ $_include-collapse: false;
   bottom: calc(var(#{$universal-margin-var}) / 2);
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
+}
+
+mark {
+  position: relative;
+  top: -0.25rem;
+  left: 0.25rem;
 }
 
 /*
