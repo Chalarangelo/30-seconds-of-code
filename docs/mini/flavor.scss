@@ -131,6 +131,8 @@ $_drawer-right: false;
 
 @import 'navigation';
 
+$mark-back-color: #424242;
+$mark-font-size: 0.5em;
 
 $toast-back-color:       #212121;
 
@@ -161,6 +163,12 @@ $_include-collapse: false;
   bottom: calc(var(#{$universal-margin-var}) / 2);
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
+}
+
+mark {
+  position: relative;
+  top: -0.25rem;
+  left: 0.25rem;
 }
 
 /*
@@ -318,7 +326,7 @@ button.primary.clipboard-copy {
 
 code[class*="language-"],
 pre[class*="language-"] {
-  color: black;
+  color: #222;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -385,8 +393,9 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 }
 
 
-.token.number{
-  color: #8132b5;
+.token.number,
+.token.class-name {
+  color: #832ed2;
 }
 
 .token.selector,
@@ -395,7 +404,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 .token.char,
 .token.builtin,
 .token.inserted {
-  color: #007e5d;
+  color: #067e36;
 }
 
 .token.operator,
@@ -410,7 +419,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 }
 
 .token.regex {
-  color: #007972;
+  color: #097cab;
 }
 .token.important,
 .token.variable {
