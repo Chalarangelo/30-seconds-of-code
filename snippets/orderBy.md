@@ -2,8 +2,8 @@
 
 Returns a sorted array of objects ordered by properties and orders.
 
-Uses a custom implementation of sort, that reduces the props array argument with a default value of 0, it uses destructuring to swap the properties position depending on the order passed.
-If no orders array is passed it sort by 'asc' by default.
+Uses `Array.sort()`, `Array.reduce()` on the `props` array with a default value of `0`, use array destructuring to swap the properties position depending on the order passed.
+If no `orders` array is passed it sort by `'asc'` by default.
 
 ```js
 const orderBy = (arr, props, orders) =>
