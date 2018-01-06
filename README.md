@@ -102,6 +102,7 @@ average(1, 2, 3);
 * [`flattenDepth`](#flattendepth)
 * [`groupBy`](#groupby)
 * [`head`](#head)
+* [`indexOfAll`](#indexofall)
 * [`initial`](#initial)
 * [`initialize2DArray`](#initialize2darray)
 * [`initializeArrayWithRange`](#initializearraywithrange)
@@ -285,6 +286,8 @@ average(1, 2, 3);
 * [`escapeRegExp`](#escaperegexp)
 * [`fromCamelCase`](#fromcamelcase)
 * [`isAbsoluteURL`](#isabsoluteurl)
+* [`isLowerCase`](#islowercase)
+* [`isUpperCase`](#isuppercase)
 * [`mask`](#mask)
 * [`palindrome`](#palindrome)
 * [`pluralize`](#pluralize)
@@ -339,17 +342,6 @@ average(1, 2, 3);
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`validateNumber`](#validatenumber)
 * [`yesNo`](#yesno)
-
-</details>
-
-### _Uncategorized_
-
-<details>
-<summary>View contents</summary>
-
-* [`indexOfAll`](#indexofall)
-* [`isLowerCase`](#islowercase)
-* [`isUpperCase`](#isuppercase)
 
 </details>
 
@@ -869,6 +861,34 @@ const head = arr => arr[0];
 
 ```js
 head([1, 2, 3]); // 1
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### indexOfAll
+
+Returns all indices of `val` in an array. If `val` never occurs, returns `[-1]`.
+
+Use `Array.forEach()` to loop over elements and `Array.push()` to store indices for matching elements.
+Return `[-1]` if `length` of the array of indices is `0`, otherwise return the array of indices.
+
+```js
+const indexOfAll = (arr, val) => {
+  const indices = [];
+  arr.forEach((el, i) => el === val && indices.push(i));
+  return indices.length ? indices : [-1];
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+indexOfAll([1, 2, 3, 1, 2, 3], 1); // [0,3]
+indexOfAll([1, 2, 3], 4); // [-1]
 ```
 
 </details>
@@ -4119,6 +4139,55 @@ isAbsoluteURL('/foo/bar'); // false
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### isLowerCase
+
+Checks if a string is lower case.
+
+Convert the given string to lower case, using `String.toLowerCase()` and compare it to the original.
+
+```js
+const isLowerCase = str => str === str.toLowerCase();
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isLowerCase('abc'); // true
+isLowerCase('a3@$'); // true
+isLowerCase('Ab4'); // false
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isUpperCase
+
+Checks if a string is upper case.
+
+Convert the given string to upper case, using `String.toUpperCase()` and compare it to the original.
+
+
+```js
+const isUpperCase = str => str === str.toUpperCase();
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isUpperCase('ABC'); // true
+isLowerCase('A3@$'); // true
+isLowerCase('aB4'); // false
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### mask
 
 Replaces all but the last `num` of characters with the specified mask character.
@@ -5140,70 +5209,6 @@ yesNo('Foo', true); // true
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
-
----
- ## _Uncategorized_
-
-### indexOfAll
-
-Returns all indices of `val` in an array. If `val` never occurs, returns `[-1]`.
-
-Use `Array.forEach()` to loop over elements and `Array.push()` to store indices for matching elements.
-Return `[-1]` if `length` of the array of indices is `0`, otherwise return the array of indices.
-
-```js
-const indexOfAll = (arr, val) => {
-  const indices = [];
-  arr.forEach((el, i) => el === val && indices.push(i));
-  return indices.length ? indices : [-1];
-};
-```
-
-```js
-indexOfAll([1, 2, 3, 1, 2, 3], 1); // [0,3]
-indexOfAll([1, 2, 3], 4); // [-1]
-```
-
-<br>[⬆ back to top](#table-of-contents)
-
-
-### isLowerCase
-
-Checks if a string is lower case.
-
-Convert the given string to lower case, using `String.toLowerCase()` and compare it to the original.
-
-```js
-const isLowerCase = str => str === str.toLowerCase();
-```
-
-```js
-isLowerCase('abc'); // true
-isLowerCase('a3@$'); // true
-isLowerCase('Ab4'); // false
-```
-
-<br>[⬆ back to top](#table-of-contents)
-
-
-### isUpperCase
-
-Checks if a string is upper case.
-
-Convert the given string to upper case, using `String.toUpperCase()` and compare it to the original.
-
-
-```js
-const isUpperCase = str => str === str.toUpperCase();
-```
-
-```js
-isUpperCase('ABC'); // true
-isLowerCase('A3@$'); // true
-isLowerCase('aB4'); // false
-```
-
-<br>[⬆ back to top](#table-of-contents)
 
 
 ## Collaborators
