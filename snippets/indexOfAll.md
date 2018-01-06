@@ -4,10 +4,11 @@ Returns an array of indexes at which the `val` occurs in `arr`. If it occurs onl
 
 ``` js
 const indexOfAll = (arr, val) => {
-    let indexes = [], i;
-    arr.forEach((el,i) => {if(el === val) indexes.push(i)})
-    return indexes.length === 0 ? [-1] : indexes
-}
+  const indices = [];
+  arr.forEach((el, i) => el === val && indices.push(i))
+  return indices.length ? indices : [-1];
+};
+
 ```
 ``` js
 indexOfAll([1,2,3],1); // [0]
