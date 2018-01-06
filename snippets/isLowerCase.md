@@ -9,7 +9,7 @@ const isLowerCase = str => str === str.toLowerCase();
 ```
 
 ```js
-isLowerCase('abc'); //true
-isLowerCase('a3@$'); //false
-isLowerCase('Ab4'); //false
+isLowerCase('abc'); // true
+isLowerCase('a3@$'); // true
+isLowerCase('Ab4'); // false
 ```
