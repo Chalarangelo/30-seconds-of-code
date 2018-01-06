@@ -1,17 +1,15 @@
 ### isLowerCase
 
-Checks if the provided argument contains anything else than the lowercase alphabets. If the second argument is provided to be true than numbers and other symbols are considered lowercase too.
+Checks if a string is lower case.
+
+Convert the given string to lower case, using `String.toLowerCase()` and compare it to the original.
 
 ``` js
-const isLowerCase = (val,symbol = false) => {
-  if (symbol) return val === val.toLowerCase()
-  else return !(/[^a-z]/g.test(val))
-}
+const isLowerCase = str => str === str.toLowerCase();
 ```
+
 ```js
-isUpperCase('abc'); //true
-isUpperCase('abc123@$'); //false
-isUpperCase('abc123@$',true); //true
-isUpperCase('abc123@$ABCD',true); //false
-isUpperCase('abc123@$ABCD'); //false
+isLowerCase('abc'); //true
+isLowerCase('a3@$'); //false
+isLowerCase('Ab4'); //false
 ```
