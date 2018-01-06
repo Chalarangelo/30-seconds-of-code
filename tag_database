@@ -61,7 +61,7 @@ head:array
 hexToRGB:utility,string,math,advanced
 hide:browser,css
 httpsRedirect:browser,url
-indexOfAll:uncategorized
+indexOfAll:array
 initial:array
 initialize2DArray:array
 initializeArrayWithRange:array,math
@@ -76,7 +76,7 @@ isBoolean:type
 isDivisible:math
 isEven:math
 isFunction:type,function
-isLowerCase:uncategorized
+isLowerCase:string,utility
 isNull:type
 isNumber:type,math
 isPrime:math
@@ -86,7 +86,7 @@ isSorted:array
 isString:type,string
 isSymbol:type
 isTravisCI:node
-isUpperCase:uncategorized
+isUpperCase:string,utility
 isValidJSON:type,json
 join:array
 JSONToFile:node,json
