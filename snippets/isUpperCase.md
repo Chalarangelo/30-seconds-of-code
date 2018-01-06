@@ -5,11 +5,11 @@ Checks if a string is upper case.
 Convert the given string to upper case, using `String.toUpperCase()` and compare it to the original.
 
 
-``` js
+```js
 const isUpperCase = str => str === str.toUpperCase();
 ```
 
-``` js
+```js
 isUpperCase('ABC'); // true
 isLowerCase('A3@$'); // true
 isLowerCase('aB4'); // false

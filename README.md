@@ -348,6 +348,8 @@ average(1, 2, 3);
 <summary>View contents</summary>
 
 * [`indexOfAll`](#indexofall)
+* [`isLowerCase`](#islowercase)
+* [`isUpperCase`](#isuppercase)
 
 </details>
 
@@ -5160,6 +5162,45 @@ const indexOfAll = (arr, val) => {
 ```js
 indexOfAll([1, 2, 3, 1, 2, 3], 1); // [0,3]
 indexOfAll([1, 2, 3], 4); // [-1]
+```
+
+<br>[⬆ back to top](#table-of-contents)
+
+
+### isLowerCase
+
+Checks if a string is lower case.
+
+Convert the given string to lower case, using `String.toLowerCase()` and compare it to the original.
+
+```js
+const isLowerCase = str => str === str.toLowerCase();
+```
+
+```js
+isLowerCase('abc'); // true
+isLowerCase('a3@$'); // true
+isLowerCase('Ab4'); // false
+```
+
+<br>[⬆ back to top](#table-of-contents)
+
+
+### isUpperCase
+
+Checks if a string is upper case.
+
+Convert the given string to upper case, using `String.toUpperCase()` and compare it to the original.
+
+
+```js
+const isUpperCase = str => str === str.toUpperCase();
+```
+
+```js
+isUpperCase('ABC'); // true
+isLowerCase('A3@$'); // true
+isLowerCase('aB4'); // false
 ```
 
 <br>[⬆ back to top](#table-of-contents)
