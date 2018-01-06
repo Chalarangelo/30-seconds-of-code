@@ -11,3 +11,9 @@ const indexesOf = (arr, val) => {
     return indexes.length === 0 ? -1 : indexes.length === 1 indexes.pop() : indexes
 }
 ```
+``` js
+indexesOf([1,2,3],1); // 0
+indexesOf([1,2,3,1,2,3],1); // [0,3]
+indexesOf([1,2,3],4); // -1
+indexesOf([[1,2,3]],[1,2,3]); // -1 (Array.prototype.indexOf()) has the same behaviour
+```
