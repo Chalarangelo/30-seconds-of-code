@@ -19,6 +19,7 @@ compose:function
 copyToClipboard:browser,string,advanced
 countOccurrences:array
 countVowels:string
+createElement:browser,utility
 currentURL:browser,url
 curry:function,recursion
 deepFlatten:array,recursion
