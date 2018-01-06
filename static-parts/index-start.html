@@ -14,13 +14,17 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <script>
       const search = (node) => {
+        let matchingTags = [];
         Array.from(node.parentElement.parentElement.getElementsByTagName('a')).forEach(x => {
-          x.style.display = x.getAttribute("href").toUpperCase().indexOf(node.value.toUpperCase()) + 1  ? '' : 'none'
+          let data = [x.innerText.toLowerCase(), ...x.getAttribute('tags').split(',')].map(v => !!(v.indexOf(node.value.toLowerCase()) + 1));
+          if(data.includes(true)){
+            x.style.display = '';
+            matchingTags.push(x.getAttribute('tags').split(',')[0]);
+          }
+          else x.style.display = 'none';
         });
-        Array.from( node.parentElement.parentElement.children )
-        .filter( x => !( x.tagName == 'A' && x.style.display == 'none' ) )
-        .forEach( ( element, index, source) => {
-           element.style.display = (element.tagName == 'H3' && index + 1 == source.length ? 'none' : element.tagName == 'H3' && source[index + 1].tagName == 'H3' ? 'none'  : '')
+        Array.from(node.parentElement.parentElement.getElementsByTagName('h3')).forEach(x => {
+          x.style.display = matchingTags.includes(x.innerText.toLowerCase()) ? '' : 'none';
         })
       }
       function loader() {

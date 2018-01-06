@@ -4,8 +4,10 @@ Computes the new ratings between two or more opponents using the [Elo rating sys
 of pre-ratings and returns an array containing post-ratings.
 The array should be ordered from best performer to worst performer (winner -> loser).
 
-Use the exponent `**` operator and math operators to compute the expected score (chance of winning)
-of each opponent and compute the new rating for each. Loop through the ratings, using each permutation to compute the post-Elo rating for each player in a pairwise fashion. Omit the second argument to use the default K-factor of 32, or supply a custom K-factor value. For details on the third argument, see the last example.
+Use the exponent `**` operator and math operators to compute the expected score (chance of winning).
+of each opponent and compute the new rating for each.
+Loop through the ratings, using each permutation to compute the post-Elo rating for each player in a pairwise fashion. 
+Omit the second argument to use the default `kFactor` of 32.
 
 ```js
 const elo = ([...ratings], kFactor = 32, selfRating) => {
@@ -35,7 +37,7 @@ elo([1200, 1200], 64); // [1232, 1168]
 // 4 player FFA, all same rank
 elo([1200, 1200, 1200, 1200]).map(Math.round); // [1246, 1215, 1185, 1154]
 /*
-For teams, each rating can adjusted based on own team's average rating vs. 
+For teams, each rating can adjusted based on own team's average rating vs.
 average rating of opposing team, with the score being added to their
 own individual rating by supplying it as the third argument.
 */

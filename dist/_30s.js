@@ -137,7 +137,7 @@ const difference = (a, b) => {
   return a.filter(x => !s.has(x));
 };
 
-const differenceWith = (arr, val, comp) => arr.filter(a => !val.find(b => comp(a, b)));
+const differenceWith = (arr, val, comp) => arr.filter(a => val.findIndex(b => comp(a, b)) === -1);
 
 const digitize = n => [...('' + n)].map(i => parseInt(i));
 
@@ -161,10 +161,23 @@ const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
     : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
 };
 
-const elo = ([a, b], kFactor = 32) => {
+const elo = ([...ratings], kFactor = 32, selfRating) => {
+  const [a, b] = ratings;
   const expectedScore = (self, opponent) => 1 / (1 + 10 ** ((opponent - self) / 400));
-  const newRating = (rating, i) => rating + kFactor * (i - expectedScore(i ? a : b, i ? b : a));
-  return [newRating(a, 1), newRating(b, 0)];
+  const newRating = (rating, i) =>
+    (selfRating || rating) + kFactor * (i - expectedScore(i ? a : b, i ? b : a));
+  if (ratings.length === 2) {
+    return [newRating(a, 1), newRating(b, 0)];
+  } else {
+    for (let i = 0; i < ratings.length; i++) {
+      let j = i;
+      while (j < ratings.length - 1) {
+        [ratings[i], ratings[j + 1]] = elo([ratings[i], ratings[j + 1]], kFactor);
+        j++;
+      }
+    }
+  }
+  return ratings;
 };
 
 const escapeHTML = str =>
@@ -247,6 +260,21 @@ const flattenDepth = (arr, depth = 1) =>
 
 const flip = fn => (...args) => fn(args.pop(), ...args);
 
+const formatDuration = ms => {
+  if (ms < 0) ms = -ms;
+  const time = {
+    day: Math.floor(ms / 86400000),
+    hour: Math.floor(ms / 3600000) % 24,
+    minute: Math.floor(ms / 60000) % 60,
+    second: Math.floor(ms / 1000) % 60,
+    millisecond: Math.floor(ms) % 1000
+  };
+  return Object.entries(time)
+    .filter(val => val[1] !== 0)
+    .map(val => val[1] + ' ' + (val[1] !== 1 ? val[0] + 's' : val[0]))
+    .join(', ');
+};
+
 const fromCamelCase = (str, separator = '_') =>
   str
     .replace(/([a-z\d])([A-Z])/g, '$1' + separator + '$2')
@@ -256,9 +284,8 @@ const fromCamelCase = (str, separator = '_') =>
 const functionName = fn => (console.debug(fn.name), fn);
 
 const gcd = (...arr) => {
-  let data = [].concat(...arr);
-  const helperGcd = (x, y) => (!y ? x : gcd(y, x % y));
-  return data.reduce((a, b) => helperGcd(a, b));
+  const _gcd = (x, y) => (!y ? x : gcd(y, x % y));
+  return [].concat(...arr).reduce((a, b) => _gcd(a, b));
 };
 
 const geometricProgression = (end, start = 1, step = 2) =>
@@ -387,7 +414,7 @@ const isDivisible = (dividend, divisor) => dividend % divisor === 0;
 
 const isEven = num => num % 2 === 0;
 
-const isFunction = val => val && typeof val === 'function';
+const isFunction = val => typeof val === 'function';
 
 const isNull = val => val === null;
 
@@ -450,6 +477,17 @@ const lowercaseKeys = obj =>
     acc[key.toLowerCase()] = obj[key];
     return acc;
   }, {});
+
+const luhnCheck = num => {
+  let arr = (num + '')
+    .split('')
+    .reverse()
+    .map(x => parseInt(x));
+  let lastDigit = arr.splice(0, 1)[0];
+  let sum = arr.reduce((acc, val, i) => (i % 2 !== 0 ? acc + val : acc + (val * 2) % 9 || 9), 0);
+  sum += lastDigit;
+  return sum % 10 === 0;
+};
 
 const mapObject = (arr, fn) =>
   (a => (
@@ -539,12 +577,12 @@ const pick = (obj, arr) =>
 
 const pipeFunctions = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
 
-const pluralize = (num, item, items = item + 's') =>
-  num <= 0
-    ? (() => {
-        throw new Error(`'num' should be >= 1. Value povided was ${num}.`);
-      })()
-    : num === 1 ? item : items;
+const pluralize = (val, word, plural = word + 's') => {
+  const _pluralize = (num, word, plural = word + 's') =>
+    [1, -1].includes(Number(num)) ? word : plural;
+  if (typeof val === 'object') return (num, word) => _pluralize(num, word, val[word]);
+  return _pluralize(val, word, plural);
+};
 
 const powerset = arr => arr.reduce((a, v) => a.concat(a.map(r => [v].concat(r))), [[]]);
 
@@ -904,7 +942,7 @@ const zip = (...arrays) => {
 const zipObject = (props, values) =>
   props.reduce((obj, prop, index) => (obj[prop] = values[index], obj), {});
 
-var imports = {JSONToDate,JSONToFile,RGBToHex,UUIDGeneratorBrowser,UUIDGeneratorNode,anagrams,arrayToHtmlList,average,bottomVisible,byteSize,call,capitalize,capitalizeEveryWord,chainAsync,chunk,clampNumber,cleanObj,cloneRegExp,coalesce,coalesceFactory,collatz,collectInto,compact,compose,copyToClipboard,countOccurrences,countVowels,currentURL,curry,deepFlatten,defer,detectDeviceType,difference,differenceWith,digitize,distance,distinctValuesOfArray,dropElements,dropRight,elementIsVisibleInViewport,elo,escapeHTML,escapeRegExp,everyNth,extendHex,factorial,factors,fibonacci,fibonacciCountUntilNum,fibonacciUntilNum,filterNonUnique,flatten,flattenDepth,flip,fromCamelCase,functionName,gcd,geometricProgression,getDaysDiffBetweenDates,getScrollPosition,getStyle,getType,getURLParameters,groupBy,hammingDistance,hasClass,hasFlags,head,hexToRGB,hide,howManyTimes,httpsRedirect,inRange,initial,initialize2DArray,initializeArrayWithRange,initializeArrayWithValues,intersection,invertKeyValues,isAbsoluteURL,isArmstrongNumber,isArray,isArrayLike,isBoolean,isDivisible,isEven,isFunction,isNull,isNumber,isPrime,isPrimitive,isPromiseLike,isSorted,isString,isSymbol,isTravisCI,isValidJSON,join,last,lcm,lowercaseKeys,mapObject,mask,maxN,median,memoize,minN,negate,nthElement,objectFromPairs,objectToPairs,onUserInputChange,once,orderBy,palindrome,percentile,pick,pipeFunctions,pluralize,powerset,prettyBytes,primes,promisify,pull,pullAtIndex,pullAtValue,quickSort,randomHexColorCode,randomIntegerInRange,randomNumberInRange,readFileLines,redirect,reducedFilter,remove,repeatString,reverseString,round,runAsync,runPromisesInSeries,sample,sampleSize,scrollToTop,sdbm,select,setStyle,shallowClone,show,shuffle,similarity,size,sleep,solveRPN,sortCharactersInString,sortedIndex,speechSynthesis,splitLines,spreadOver,standardDeviation,sum,sumPower,symmetricDifference,tail,take,takeRight,timeTaken,toCamelCase,toDecimalMark,toEnglishDate,toKebabCase,toOrdinalSuffix,toSnakeCase,toggleClass,tomorrow,truncateString,truthCheckCollection,unescapeHTML,union,untildify,validateNumber,without,words,yesNo,zip,zipObject,}
+var imports = {JSONToDate,JSONToFile,RGBToHex,UUIDGeneratorBrowser,UUIDGeneratorNode,anagrams,arrayToHtmlList,average,bottomVisible,byteSize,call,capitalize,capitalizeEveryWord,chainAsync,chunk,clampNumber,cleanObj,cloneRegExp,coalesce,coalesceFactory,collatz,collectInto,compact,compose,copyToClipboard,countOccurrences,countVowels,currentURL,curry,deepFlatten,defer,detectDeviceType,difference,differenceWith,digitize,distance,distinctValuesOfArray,dropElements,dropRight,elementIsVisibleInViewport,elo,escapeHTML,escapeRegExp,everyNth,extendHex,factorial,factors,fibonacci,fibonacciCountUntilNum,fibonacciUntilNum,filterNonUnique,flatten,flattenDepth,flip,formatDuration,fromCamelCase,functionName,gcd,geometricProgression,getDaysDiffBetweenDates,getScrollPosition,getStyle,getType,getURLParameters,groupBy,hammingDistance,hasClass,hasFlags,head,hexToRGB,hide,howManyTimes,httpsRedirect,inRange,initial,initialize2DArray,initializeArrayWithRange,initializeArrayWithValues,intersection,invertKeyValues,isAbsoluteURL,isArmstrongNumber,isArray,isArrayLike,isBoolean,isDivisible,isEven,isFunction,isNull,isNumber,isPrime,isPrimitive,isPromiseLike,isSorted,isString,isSymbol,isTravisCI,isValidJSON,join,last,lcm,lowercaseKeys,luhnCheck,mapObject,mask,maxN,median,memoize,minN,negate,nthElement,objectFromPairs,objectToPairs,onUserInputChange,once,orderBy,palindrome,percentile,pick,pipeFunctions,pluralize,powerset,prettyBytes,primes,promisify,pull,pullAtIndex,pullAtValue,quickSort,randomHexColorCode,randomIntegerInRange,randomNumberInRange,readFileLines,redirect,reducedFilter,remove,repeatString,reverseString,round,runAsync,runPromisesInSeries,sample,sampleSize,scrollToTop,sdbm,select,setStyle,shallowClone,show,shuffle,similarity,size,sleep,solveRPN,sortCharactersInString,sortedIndex,speechSynthesis,splitLines,spreadOver,standardDeviation,sum,sumPower,symmetricDifference,tail,take,takeRight,timeTaken,toCamelCase,toDecimalMark,toEnglishDate,toKebabCase,toOrdinalSuffix,toSnakeCase,toggleClass,tomorrow,truncateString,truthCheckCollection,unescapeHTML,union,untildify,validateNumber,without,words,yesNo,zip,zipObject,}
 
 return imports;
 
