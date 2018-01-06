@@ -1,6 +1,6 @@
 ### isLowerCase
 
-Checks if the provided argument contains anything else than the lowerCase alphabets. If the second argument is provided to be true than numbers and other symbols are considered lowercase too.
+Checks if the provided argument contains anything else than the lowercase alphabets. If the second argument is provided to be true than numbers and other symbols are considered lowercase too.
 
 ``` js
 const isLowerCase = (val,symbol = false) => {
