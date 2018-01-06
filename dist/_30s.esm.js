@@ -1,8 +1,3 @@
-const JSONToDate = arr => {
-  const dt = new Date(parseInt(arr.toString().substr(6)));
-  return `${dt.getDate()}/${dt.getMonth() + 1}/${dt.getFullYear()}`;
-};
-
 const fs = typeof require !== "undefined" && require('fs');
 const JSONToFile = (obj, filename) =>
   fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2));
@@ -34,10 +29,7 @@ const anagrams = str => {
 const arrayToHtmlList = (arr, listID) =>
   arr.map(item => (document.querySelector('#' + listID).innerHTML += `<li>${item}</li>`));
 
-const average = (...arr) => {
-  const nums = [].concat(...arr);
-  return nums.reduce((acc, val) => acc + val, 0) / nums.length;
-};
+const average = (...nums) => [...nums].reduce((acc, val) => acc + val, 0) / nums.length;
 
 const bottomVisible = () =>
   document.documentElement.clientHeight + window.scrollY >=
@@ -82,8 +74,6 @@ const coalesce = (...args) => args.find(_ => ![undefined, null].includes(_));
 
 const coalesceFactory = valid => (...args) => args.find(valid);
 
-const collatz = n => (n % 2 == 0 ? n / 2 : 3 * n + 1);
-
 const collectInto = fn => (...args) => fn(args);
 
 const compact = arr => arr.filter(Boolean);
@@ -108,9 +98,15 @@ const copyToClipboard = str => {
   }
 };
 
-const countOccurrences = (arr, value) => arr.reduce((a, v) => (v === value ? a + 1 : a + 0), 0);
+const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a + 0), 0);
 
 const countVowels = str => (str.match(/[aeiou]/gi) || []).length;
+
+const createElement = str => {
+  const el = document.createElement('div');
+  el.innerHTML = str;
+  return el.firstElementChild;
+};
 
 const currentURL = () => window.location.href;
 
@@ -133,7 +129,7 @@ const difference = (a, b) => {
 
 const differenceWith = (arr, val, comp) => arr.filter(a => val.findIndex(b => comp(a, b)) === -1);
 
-const digitize = n => [...('' + n)].map(i => parseInt(i));
+const digitize = n => [...`${n}`].map(i => parseInt(i));
 
 const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
 
@@ -206,42 +202,11 @@ const factorial = n =>
       })()
     : n <= 1 ? 1 : n * factorial(n - 1);
 
-const factors = (num, primes = false) => {
-  const isPrime = num => {
-    const boundary = Math.floor(Math.sqrt(num));
-    for (var i = 2; i <= boundary; i++) if (num % i === 0) return false;
-    return num >= 2;
-  };
-  const isNeg = num < 0;
-  num = isNeg ? -num : num;
-  let array = Array.from({ length: num - 1 })
-    .map((val, i) => (num % (i + 2) === 0 ? i + 2 : false))
-    .filter(val => val);
-  if (isNeg)
-    array = array.reduce((acc, val) => {
-      acc.push(val);
-      acc.push(-val);
-      return acc;
-    }, []);
-  return primes ? array.filter(isPrime) : array;
-};
-
 const fibonacci = n =>
   Array.from({ length: n }).reduce(
     (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),
     []
   );
-
-const fibonacciCountUntilNum = num =>
-  Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));
-
-const fibonacciUntilNum = num => {
-  let n = Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));
-  return Array.from({ length: n }).reduce(
-    (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),
-    []
-  );
-};
 
 const filterNonUnique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexOf(i));
 
@@ -279,7 +244,7 @@ const functionName = fn => (console.debug(fn.name), fn);
 
 const gcd = (...arr) => {
   const _gcd = (x, y) => (!y ? x : gcd(y, x % y));
-  return [].concat(...arr).reduce((a, b) => _gcd(a, b));
+  return [...arr].reduce((a, b) => _gcd(a, b));
 };
 
 const geometricProgression = (end, start = 1, step = 2) =>
@@ -342,17 +307,6 @@ const hexToRGB = hex => {
 
 const hide = (...el) => [...el].forEach(e => (e.style.display = 'none'));
 
-const howManyTimes = (num, divisor) => {
-  if (divisor === 1 || divisor === -1) return Infinity;
-  if (divisor === 0) return 0;
-  let i = 0;
-  while (Number.isInteger(num / divisor)) {
-    i++;
-    num = num / divisor;
-  }
-  return i;
-};
-
 const httpsRedirect = () => {
   if (location.protocol !== 'https:') location.replace('https://' + location.href.split('//')[1]);
 };
@@ -360,6 +314,12 @@ const httpsRedirect = () => {
 const inRange = (n, start, end = null) => {
   if (end && start > end) end = [start, (start = end)][0];
   return end == null ? n >= 0 && n < start : n >= start && n < end;
+};
+
+const indexOfAll = (arr, val) => {
+  const indices = [];
+  arr.forEach((el, i) => el === val && indices.push(i));
+  return indices.length ? indices : [-1];
 };
 
 const initial = arr => arr.slice(0, -1);
@@ -372,7 +332,7 @@ const initialize2DArray = (w, h, val = null) =>
 const initializeArrayWithRange = (end, start = 0, step = 1) =>
   Array.from({ length: Math.ceil((end + 1 - start) / step) }).map((v, i) => i * step + start);
 
-const initializeArrayWithValues = (n, value = 0) => Array(n).fill(value);
+const initializeArrayWithValues = (n, val = 0) => Array(n).fill(val);
 
 const intersection = (a, b) => {
   const s = new Set(b);
@@ -387,12 +347,7 @@ const invertKeyValues = obj =>
 
 const isAbsoluteURL = str => /^[a-z][a-z0-9+.-]*:/.test(str);
 
-const isArmstrongNumber = digits =>
-  (arr => arr.reduce((a, d) => a + parseInt(d) ** arr.length, 0) == digits)(
-    (digits + '').split('')
-  );
-
-const isArray = val => !!val && Array.isArray(val);
+const isArray = val => Array.isArray(val);
 
 const isArrayLike = val => {
   try {
@@ -409,6 +364,8 @@ const isDivisible = (dividend, divisor) => dividend % divisor === 0;
 const isEven = num => num % 2 === 0;
 
 const isFunction = val => typeof val === 'function';
+
+const isLowerCase = str => str === str.toLowerCase();
 
 const isNull = val => val === null;
 
@@ -440,6 +397,8 @@ const isSymbol = val => typeof val === 'symbol';
 
 const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
 
+const isUpperCase = str => str === str.toUpperCase();
+
 const isValidJSON = obj => {
   try {
     JSON.parse(obj);
@@ -463,7 +422,7 @@ const last = arr => arr[arr.length - 1];
 const lcm = (...arr) => {
   const gcd = (x, y) => (!y ? x : gcd(y, x % y));
   const _lcm = (x, y) => x * y / gcd(x, y);
-  return [].concat(...arr).reduce((a, b) => _lcm(a, b));
+  return [...arr].reduce((a, b) => _lcm(a, b));
 };
 
 const lowercaseKeys = obj =>
@@ -516,6 +475,14 @@ const nthElement = (arr, n = 0) => (n > 0 ? arr.slice(n, n + 1) : arr.slice(n))[
 const objectFromPairs = arr => arr.reduce((a, v) => (a[v[0]] = v[1], a), {});
 
 const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
+
+const off = (el, evt, fn, opts = false) => el.removeEventListener(evt, fn, opts);
+
+const on = (el, evt, fn, opts = {}) => {
+  const delegatorFn = e => e.target.matches(opts.target) && fn.call(e.target, e);
+  el.addEventListener(evt, opts.target ? delegatorFn : fn, opts.options || false);
+  if (opts.target) return delegatorFn;
+};
 
 const onUserInputChange = callback => {
   let type = 'mouse',
@@ -627,15 +594,6 @@ const pullAtValue = (arr, pullArr) => {
   return removed;
 };
 
-const quickSort = ([n, ...nums], desc) =>
-  isNaN(n)
-    ? []
-    : [
-        ...quickSort(nums.filter(v => (desc ? v > n : v <= n)), desc),
-        n,
-        ...quickSort(nums.filter(v => (!desc ? v > n : v <= n)), desc)
-      ];
-
 const randomHexColorCode = () => {
   let n = ((Math.random() * 0xfffff) | 0).toString(16);
   return '#' + (n.length !== 6 ? ((Math.random() * 0xf) | 0).toString(16) + n : n);
@@ -671,15 +629,7 @@ const remove = (arr, func) =>
       }, [])
     : [];
 
-const repeatString = (str = '', num = 2) => {
-  return num >= 0 ? str.repeat(num) : str;
-};
-
-const reverseString = str =>
-  str
-    .split('')
-    .reverse()
-    .join('');
+const reverseString = str => [...str].reverse().join('');
 
 const round = (n, decimals = 0) => Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`);
 
@@ -733,7 +683,7 @@ const sdbm = str => {
 const select = (from, selector) =>
   selector.split('.').reduce((prev, cur) => prev && prev[cur], from);
 
-const setStyle = (el, ruleName, value) => (el.style[ruleName] = value);
+const setStyle = (el, ruleName, val) => (el.style[ruleName] = val);
 
 const shallowClone = obj => Object.assign({}, obj);
 
@@ -750,60 +700,21 @@ const shuffle = ([...arr]) => {
 
 const similarity = (arr, values) => arr.filter(v => values.includes(v));
 
-const size = value =>
-  Array.isArray(value)
-    ? value.length
-    : value && typeof value === 'object'
-      ? value.size || value.length || Object.keys(value).length
-      : typeof value === 'string' ? new Blob([value]).size : 0;
+const size = val =>
+  Array.isArray(val)
+    ? val.length
+    : val && typeof val === 'object'
+      ? val.size || val.length || Object.keys(val).length
+      : typeof val === 'string' ? new Blob([val]).size : 0;
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-const solveRPN = rpn => {
-  const OPERATORS = {
-    '*': (a, b) => a * b,
-    '+': (a, b) => a + b,
-    '-': (a, b) => a - b,
-    '/': (a, b) => a / b,
-    '**': (a, b) => a ** b
-  };
-  const [stack, solve] = [
-    [],
-    rpn
-      .replace(/\^/g, '**')
-      .split(/\s+/g)
-      .filter(el => !/\s+/.test(el) && el !== '')
-  ];
-  solve.forEach(symbol => {
-    if (!isNaN(parseFloat(symbol)) && isFinite(symbol)) {
-      stack.push(symbol);
-    } else if (Object.keys(OPERATORS).includes(symbol)) {
-      const [a, b] = [stack.pop(), stack.pop()];
-      stack.push(OPERATORS[symbol](parseFloat(b), parseFloat(a)));
-    } else {
-      throw `${symbol} is not a recognized symbol`;
-    }
-  });
-  if (stack.length === 1) return stack.pop();
-  else throw `${rpn} is not a proper RPN. Please check it and try again`;
-};
-
-const sortCharactersInString = str =>
-  str
-    .split('')
-    .sort((a, b) => a.localeCompare(b))
-    .join('');
+const sortCharactersInString = str => [...str].sort((a, b) => a.localeCompare(b)).join('');
 
 const sortedIndex = (arr, n) => {
   const isDescending = arr[0] > arr[arr.length - 1];
   const index = arr.findIndex(el => (isDescending ? n >= el : n <= el));
   return index === -1 ? arr.length : index;
-};
-
-const speechSynthesis = message => {
-  const msg = new SpeechSynthesisUtterance(message);
-  msg.voice = window.speechSynthesis.getVoices()[0];
-  window.speechSynthesis.speak(msg);
 };
 
 const splitLines = str => str.split(/\r?\n/);
@@ -818,7 +729,7 @@ const standardDeviation = (arr, usePopulation = false) => {
   );
 };
 
-const sum = (...arr) => [].concat(...arr).reduce((acc, val) => acc + val, 0);
+const sum = (...arr) => [...arr].reduce((acc, val) => acc + val, 0);
 
 const sumPower = (end, power = 2, start = 1) =>
   Array(end + 1 - start)
@@ -936,6 +847,6 @@ const zip = (...arrays) => {
 const zipObject = (props, values) =>
   props.reduce((obj, prop, index) => (obj[prop] = values[index], obj), {});
 
-var imports = {JSONToDate,JSONToFile,RGBToHex,UUIDGeneratorBrowser,UUIDGeneratorNode,anagrams,arrayToHtmlList,average,bottomVisible,byteSize,call,capitalize,capitalizeEveryWord,chainAsync,chunk,clampNumber,cleanObj,cloneRegExp,coalesce,coalesceFactory,collatz,collectInto,compact,compose,copyToClipboard,countOccurrences,countVowels,currentURL,curry,deepFlatten,defer,detectDeviceType,difference,differenceWith,digitize,distance,distinctValuesOfArray,dropElements,dropRight,elementIsVisibleInViewport,elo,escapeHTML,escapeRegExp,everyNth,extendHex,factorial,factors,fibonacci,fibonacciCountUntilNum,fibonacciUntilNum,filterNonUnique,flatten,flattenDepth,flip,formatDuration,fromCamelCase,functionName,gcd,geometricProgression,getDaysDiffBetweenDates,getScrollPosition,getStyle,getType,getURLParameters,groupBy,hammingDistance,hasClass,hasFlags,head,hexToRGB,hide,howManyTimes,httpsRedirect,inRange,initial,initialize2DArray,initializeArrayWithRange,initializeArrayWithValues,intersection,invertKeyValues,isAbsoluteURL,isArmstrongNumber,isArray,isArrayLike,isBoolean,isDivisible,isEven,isFunction,isNull,isNumber,isPrime,isPrimitive,isPromiseLike,isSorted,isString,isSymbol,isTravisCI,isValidJSON,join,last,lcm,lowercaseKeys,luhnCheck,mapObject,mask,maxN,median,memoize,minN,negate,nthElement,objectFromPairs,objectToPairs,onUserInputChange,once,orderBy,palindrome,percentile,pick,pipeFunctions,pluralize,powerset,prettyBytes,primes,promisify,pull,pullAtIndex,pullAtValue,quickSort,randomHexColorCode,randomIntegerInRange,randomNumberInRange,readFileLines,redirect,reducedFilter,remove,repeatString,reverseString,round,runAsync,runPromisesInSeries,sample,sampleSize,scrollToTop,sdbm,select,setStyle,shallowClone,show,shuffle,similarity,size,sleep,solveRPN,sortCharactersInString,sortedIndex,speechSynthesis,splitLines,spreadOver,standardDeviation,sum,sumPower,symmetricDifference,tail,take,takeRight,timeTaken,toCamelCase,toDecimalMark,toEnglishDate,toKebabCase,toOrdinalSuffix,toSnakeCase,toggleClass,tomorrow,truncateString,truthCheckCollection,unescapeHTML,union,untildify,validateNumber,without,words,yesNo,zip,zipObject,}
+var imports = {JSONToFile,RGBToHex,UUIDGeneratorBrowser,UUIDGeneratorNode,anagrams,arrayToHtmlList,average,bottomVisible,byteSize,call,capitalize,capitalizeEveryWord,chainAsync,chunk,clampNumber,cleanObj,cloneRegExp,coalesce,coalesceFactory,collectInto,compact,compose,copyToClipboard,countOccurrences,countVowels,createElement,currentURL,curry,deepFlatten,defer,detectDeviceType,difference,differenceWith,digitize,distance,distinctValuesOfArray,dropElements,dropRight,elementIsVisibleInViewport,elo,escapeHTML,escapeRegExp,everyNth,extendHex,factorial,fibonacci,filterNonUnique,flatten,flattenDepth,flip,formatDuration,fromCamelCase,functionName,gcd,geometricProgression,getDaysDiffBetweenDates,getScrollPosition,getStyle,getType,getURLParameters,groupBy,hammingDistance,hasClass,hasFlags,head,hexToRGB,hide,httpsRedirect,inRange,indexOfAll,initial,initialize2DArray,initializeArrayWithRange,initializeArrayWithValues,intersection,invertKeyValues,isAbsoluteURL,isArray,isArrayLike,isBoolean,isDivisible,isEven,isFunction,isLowerCase,isNull,isNumber,isPrime,isPrimitive,isPromiseLike,isSorted,isString,isSymbol,isTravisCI,isUpperCase,isValidJSON,join,last,lcm,lowercaseKeys,luhnCheck,mapObject,mask,maxN,median,memoize,minN,negate,nthElement,objectFromPairs,objectToPairs,off,on,onUserInputChange,once,orderBy,palindrome,percentile,pick,pipeFunctions,pluralize,powerset,prettyBytes,primes,promisify,pull,pullAtIndex,pullAtValue,randomHexColorCode,randomIntegerInRange,randomNumberInRange,readFileLines,redirect,reducedFilter,remove,reverseString,round,runAsync,runPromisesInSeries,sample,sampleSize,scrollToTop,sdbm,select,setStyle,shallowClone,show,shuffle,similarity,size,sleep,sortCharactersInString,sortedIndex,splitLines,spreadOver,standardDeviation,sum,sumPower,symmetricDifference,tail,take,takeRight,timeTaken,toCamelCase,toDecimalMark,toEnglishDate,toKebabCase,toOrdinalSuffix,toSnakeCase,toggleClass,tomorrow,truncateString,truthCheckCollection,unescapeHTML,union,untildify,validateNumber,without,words,yesNo,zip,zipObject,}
 
 export default imports;
