@@ -8,13 +8,11 @@ Search a sorted array by repeatedly dividing the search interval in half. Begin 
 const binarySearch = (arr, val, start = 0, end = arr.length - 1) => {
   if (start > end) return -1;
   const mid = Math.floor((start + end) / 2);
-  return (arr[mid] > val) 
-      ? binarySearch(arr, val, start, mid - 1)
-      : (arr[mid] < val) 
-        ? binarySearch(arr, val, mid + 1, end)
-        : mid
+  if (arr[mid] > val) return binarySearch(arr, val, start, mid - 1);
+  if (arr[mid] < val) return binarySearch(arr, val, mid + 1, end);
+  return mid;
 }
-```
+``` 
 
 ```js
 binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 6); // 2
