@@ -4178,14 +4178,7 @@ Use the spread operator (`...`) and `Array.reverse()` to reverse the order of th
 Combine characters to get a string using `String.join('')`.
 
 ```js
-
-
-
-
-const reverseString = str =>
-  [..str]
-    .reverse()
-    .join('');
+const reverseString = str => [...str].reverse().join('');
 ```
 
 <details>
