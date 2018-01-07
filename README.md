@@ -1198,37 +1198,6 @@ nthElement(['a', 'b', 'b'], -3); // 'a'
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### partition
-
-Groups the elements into two arrays, depending on the provided function's truthiness for each element.
-
-Use `Array.reduce()` to create an array of two arrays.
-Use `Array.push()` to add elements for which `fn` returns `true` to the first array and elements for which `fn` returns `false` to the second one.
-
-```js
-const partition = (arr, fn) =>
-  arr.reduce(
-    (acc, val, i, arr) => {
-      acc[fn(val, i, arr) ? 0 : 1].push(val);
-      return acc;
-    },
-    [[], []]
-  );
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-var users = [{ user: 'barney', age: 36, active: false }, { user: 'fred', age: 40, active: true }];
-partition(users, o => o.active); // [[{ 'user': 'fred',    'age': 40, 'active': true }],[{ 'user': 'barney',  'age': 36, 'active': false }]]
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
 ### pick
 
 Picks the key-value pairs corresponding to the given keys from an object.
@@ -1842,11 +1811,11 @@ copyToClipboard('Lorem ipsum'); // 'Lorem ipsum' copied to clipboard.
 
 ### createElement
 
-Creates an element from a string (without appending it to the document). 
+Creates an element from a string (without appending it to the document).
 If the given string contains multiple elements, only the first one will be returned.
 
 Use `document.createElement()` to create a new element.
-Set its `innerHTML` to the string supplied as the argument. 
+Set its `innerHTML` to the string supplied as the argument.
 Use `ParentNode.firstElementChild` to return the element version of the string.
 
 ```js
@@ -2039,7 +2008,7 @@ const hide = (...el) => [...el].forEach(e => (e.style.display = 'none'));
 <summary>Examples</summary>
 
 ```js
-hide(...document.querySelectorAll('img')); // Hides all <img> elements on the page
+hide(document.querySelectorAll('img')); // Hides all <img> elements on the page
 ```
 
 Use `location.protocol` to get the protocol currently being used. If it's not HTTPS, use `location.replace()` to replace the existing page with the HTTPS version of the page. Use `location.href` to get the full address, split it with `String.split()` and remove the protocol part of the URL.
@@ -2075,7 +2044,7 @@ httpsRedirect(); // If you are on http://mydomain.com, you are redirected to htt
 
 Removes an event listener from an element.
 
-Use `EventTarget.removeEventListener()` to remove an event listener from an element. 
+Use `EventTarget.removeEventListener()` to remove an event listener from an element.
 Omit the fourth argument `opts` to use `false` or specify it based on the options used when the event listener was added.
 
 ```js
@@ -2313,7 +2282,7 @@ const show = (...el) => [...el].forEach(e => (e.style.display = ''));
 <summary>Examples</summary>
 
 ```js
-show(...document.querySelectorAll('img')); // Shows all <img> elements on the page
+show(document.querySelectorAll('img')); // Shows all <img> elements on the page
 ```
 
 </details>
@@ -2712,28 +2681,6 @@ console.log(anagramsCached.cache); // The cached anagrams map
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### negate
-
-Negates a predicate function.
-
-Take a predicate function and apply the not operator (`!`) to it with its arguments.
-
-```js
-const negate = func => (...args) => !func(...args);
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-[1, 2, 3, 4, 5, 6].filter(negate(n => n % 2 == 0)); // [ 1, 3, 5 ]
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
 ### once
 
 Ensures a function is called only once.
@@ -2832,6 +2779,31 @@ async function sleepyWork() {
   await sleep(1000);
   console.log('I woke up after 1 second.');
 }
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+---
+ ## 🔮 Logic
+
+### negate
+
+Negates a predicate function.
+
+Take a predicate function and apply the not operator (`!`) to it with its arguments.
+
+```js
+const negate = func => (...args) => !func(...args);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+filter([1, 2, 3, 4, 5, 6], negate(isEven)); // [1, 3, 5]
+negate(isOdd)(1); // false
 ```
 
 </details>
