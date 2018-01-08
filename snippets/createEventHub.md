@@ -30,10 +30,18 @@ const createEventHub = () => ({
 ```
 
 ```js
-const fn = data => console.log(data.hello);
+const handler = data => console.log(data);
 const hub = createEventHub();
 
-hub.on('message', fn); // subscribe the handler to listen for 'message' events
-hub.emit('message', { hello: 'world' }); // logs 'world'
-hub.off('message', fn); // unsubscribe the handler from 'message' events
+// Listen for different types of events
+hub.on('message', handler); // subscribe the handler to listen for a 'message' event
+hub.on('message', () => console.log('Message event fired')); // subscribe a different handler to listen for a 'message' event
+hub.on('double', number => console.log(number * 2));  // subscribe a handler to listen for a 'double' event
+
+// Emit events to invoke all subscribed handlers to them, passing the data to them as an argument
+hub.emit('message', 'hello world'); // logs 'hello world' and 'Message event fired'
+hub.emit('message', { hello: 'world' }); // logs the object and 'Message event fired'
+hub.emit('double', 5); // logs 10
+
+hub.off('message', handler); // unsubscribe a single handler from the 'message' event
 ```
