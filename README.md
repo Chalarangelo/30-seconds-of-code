@@ -115,6 +115,7 @@ average(1, 2, 3);
 * [`maxN`](#maxn)
 * [`minN`](#minn)
 * [`nthElement`](#nthelement)
+* [`partition`](#partition)
 * [`pick`](#pick)
 * [`pull`](#pull)
 * [`pullAtIndex`](#pullatindex)
@@ -190,18 +191,10 @@ average(1, 2, 3);
 * [`defer`](#defer)
 * [`functionName`](#functionname)
 * [`memoize`](#memoize)
+* [`negate`](#negate)
 * [`once`](#once)
 * [`runPromisesInSeries`](#runpromisesinseries)
 * [`sleep`](#sleep)
-
-</details>
-
-###  Logic
-
-<details>
-<summary>View contents</summary>
-
-* [`negate`](#negate)
 
 </details>
 
@@ -237,6 +230,7 @@ average(1, 2, 3);
 * [`standardDeviation`](#standarddeviation)
 * [`sum`](#sum)
 * [`sumPower`](#sumpower)
+* [`toSafeInteger`](#tosafeinteger)
 
 </details>
 
@@ -342,6 +336,15 @@ average(1, 2, 3);
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`validateNumber`](#validatenumber)
 * [`yesNo`](#yesno)
+
+</details>
+
+### _Uncategorized_
+
+<details>
+<summary>View contents</summary>
+
+* [`longestItem`](#longestitem)
 
 </details>
 
@@ -1204,6 +1207,37 @@ nthElement(['a', 'b', 'b'], -3); // 'a'
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### partition
+
+Groups the elements into two arrays, depending on the provided function's truthiness for each element.
+
+Use `Array.reduce()` to create an array of two arrays.
+Use `Array.push()` to add elements for which `fn` returns `true` to the first array and elements for which `fn` returns `false` to the second one.
+
+```js
+const partition = (arr, fn) =>
+  arr.reduce(
+    (acc, val, i, arr) => {
+      acc[fn(val, i, arr) ? 0 : 1].push(val);
+      return acc;
+    },
+    [[], []]
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+var users = [{ user: 'barney', age: 36, active: false }, { user: 'fred', age: 40, active: true }];
+partition(users, o => o.active); // [[{ 'user': 'fred',    'age': 40, 'active': true }],[{ 'user': 'barney',  'age': 36, 'active': false }]]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### pick
 
 Picks the key-value pairs corresponding to the given keys from an object.
@@ -2014,7 +2048,7 @@ const hide = (...el) => [...el].forEach(e => (e.style.display = 'none'));
 <summary>Examples</summary>
 
 ```js
-hide(document.querySelectorAll('img')); // Hides all <img> elements on the page
+hide(...document.querySelectorAll('img')); // Hides all <img> elements on the page
 ```
 
 </details>
@@ -2288,7 +2322,7 @@ const show = (...el) => [...el].forEach(e => (e.style.display = ''));
 <summary>Examples</summary>
 
 ```js
-show(document.querySelectorAll('img')); // Shows all <img> elements on the page
+show(...document.querySelectorAll('img')); // Shows all <img> elements on the page
 ```
 
 </details>
@@ -2632,6 +2666,28 @@ console.log(anagramsCached.cache); // The cached anagrams map
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### negate
+
+Negates a predicate function.
+
+Take a predicate function and apply the not operator (`!`) to it with its arguments.
+
+```js
+const negate = func => (...args) => !func(...args);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+[1, 2, 3, 4, 5, 6].filter(negate(n => n % 2 == 0)); // [ 1, 3, 5 ]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### once
 
 Ensures a function is called only once.
@@ -2707,31 +2763,6 @@ async function sleepyWork() {
   await sleep(1000);
   console.log('I woke up after 1 second.');
 }
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
----
- ## 🔮 Logic
-
-### negate
-
-Negates a predicate function.
-
-Take a predicate function and apply the not operator (`!`) to it with its arguments.
-
-```js
-const negate = func => (...args) => !func(...args);
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-filter([1, 2, 3, 4, 5, 6], negate(isEven)); // [1, 3, 5]
-negate(isOdd)(1); // false
 ```
 
 </details>
@@ -3462,6 +3493,31 @@ const sumPower = (end, power = 2, start = 1) =>
 sumPower(10); // 385
 sumPower(10, 3); //3025
 sumPower(10, 3, 5); //2925
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### toSafeInteger
+
+Converts a value to a safe integer.
+
+Use `Math.max()` and `Math.min()` to find the closest safe value.
+Use `Math.round()` to convert to an integer.
+
+```js
+const toSafeInteger = num =>
+  Math.round(Math.max(Math.min(num, Number.MAX_SAFE_INTEGER), Number.MIN_SAFE_INTEGER));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+toSafeInteger('3.2'); // 3
+toSafeInteger(Infinity); // 9007199254740991
 ```
 
 </details>
@@ -5209,6 +5265,29 @@ yesNo('Foo', true); // true
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
+
+---
+ ## _Uncategorized_
+
+### longestItem
+
+Takes any number of iterable objects or objects with a `length` property and returns the longest one.
+
+Use `Array.sort()` to sort all arguments by `length`, return the first (longest) one.
+
+```js
+const longestItem = (...vals) => [...vals].sort((a, b) => b.length - a.length)[0];
+```
+
+```js
+longestItem('this', 'is', 'a', 'testcase'); // 'testcase'
+longestItem(...['a', 'ab', 'abc']); // 'abc'
+longestItem(...['a', 'ab', 'abc'], 'abcd'); // 'abcd'
+longestItem([1, 2, 3], [1, 2], [1, 2, 3, 4, 5]); // [1, 2, 3, 4, 5]
+longestItem([1, 2, 3], 'foobar'); // 'foobar'
+```
+
+<br>[⬆ back to top](#table-of-contents)
 
 
 ## Collaborators
