@@ -115,7 +115,6 @@ average(1, 2, 3);
 * [`maxN`](#maxn)
 * [`minN`](#minn)
 * [`nthElement`](#nthelement)
-* [`partition`](#partition)
 * [`pick`](#pick)
 * [`pull`](#pull)
 * [`pullAtIndex`](#pullatindex)
@@ -191,10 +190,18 @@ average(1, 2, 3);
 * [`defer`](#defer)
 * [`functionName`](#functionname)
 * [`memoize`](#memoize)
-* [`negate`](#negate)
 * [`once`](#once)
 * [`runPromisesInSeries`](#runpromisesinseries)
 * [`sleep`](#sleep)
+
+</details>
+
+###  Logic
+
+<details>
+<summary>View contents</summary>
+
+* [`negate`](#negate)
 
 </details>
 
@@ -230,7 +237,6 @@ average(1, 2, 3);
 * [`standardDeviation`](#standarddeviation)
 * [`sum`](#sum)
 * [`sumPower`](#sumpower)
-* [`toSafeInteger`](#tosafeinteger)
 
 </details>
 
@@ -474,7 +480,7 @@ const delay = promisify((d, cb) => setTimeout(cb, d));
 delay(2000).then(() => console.log('Hi!')); // // Promise resolves after 2s
 ```
 
-Use closures and the spread operator (`...`) to map the array of arguments to the inputs of the function.
+</details>
 
 <br>[⬆ Back to top](#table-of-contents)
 
@@ -2011,7 +2017,7 @@ const hide = (...el) => [...el].forEach(e => (e.style.display = 'none'));
 hide(document.querySelectorAll('img')); // Hides all <img> elements on the page
 ```
 
-Use `location.protocol` to get the protocol currently being used. If it's not HTTPS, use `location.replace()` to replace the existing page with the HTTPS version of the page. Use `location.href` to get the full address, split it with `String.split()` and remove the protocol part of the URL.
+</details>
 
 <br>[⬆ Back to top](#table-of-contents)
 
@@ -2289,36 +2295,6 @@ show(document.querySelectorAll('img')); // Shows all <img> elements on the page
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Date
-
-### getDaysDiffBetweenDates
-
-Returns the difference (in days) between two dates.
-
-Calculate the difference (in days) between two `Date` objects.
-
-```js
-const getDaysDiffBetweenDates = (dateInitial, dateFinal) =>
-  (dateFinal - dateInitial) / (1000 * 3600 * 24);
-```
-
-### speechSynthesis
-
-Performs speech synthesis (experimental).
-
-Use `SpeechSynthesisUtterance.voice` and `window.speechSynthesis.getVoices()` to convert a message to speech.
-Use `window.speechSynthesis.speak()` to play the message.
-
-Learn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
-
-### speechSynthesis
-
-Performs speech synthesis (experimental).
-
-Use `SpeechSynthesisUtterance.voice` and `window.speechSynthesis.getVoices()` to convert a message to speech.
-Use `window.speechSynthesis.speak()` to play the message.
-
-Learn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
 
 ### toggleClass
 
@@ -2460,31 +2436,6 @@ toEnglishDate('09/21/2010'); // '21/09/2010'
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Function
-
-### chainAsync
-
-Chains asynchronous functions.
-
-Loop through an array of functions containing asynchronous events, calling `next` when each asynchronous event has completed.
-
-```js
-const chainAsync = fns => {
-  let curr = 0;
-  const next = () => fns[curr++](next);
-  next();
-};
-```
-
-### tomorrow
-
-Results in a string representation of tomorrow's date.
-Use `new Date()` to get today's date, adding `86400000` of seconds to it(24 hours), using `toISOString` to convert Date object to string.
-
-### tomorrow
-
-Results in a string representation of tomorrow's date.
-Use `new Date()` to get today's date, adding `86400000` of seconds to it(24 hours), using `toISOString` to convert Date object to string.
 
 ### tomorrow
 
@@ -2736,29 +2687,6 @@ runPromisesInSeries([() => delay(1000), () => delay(2000)]); // Executes each pr
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Logic
-
-### negate
-
-Negates a predicate function.
-
-Take a predicate function and apply `not` to it with its arguments.
-
-```js
-const negate = func => (...args) => !func(...args);
-```
-
-### sleep
-
-Delays the execution of an asynchronous function.
-
-Delay executing part of an `async` function, by putting it to sleep, returning a `Promise`.
-
-### sleep
-
-Delays the execution of an asynchronous function.
-
-Delay executing part of an `async` function, by putting it to sleep, returning a `Promise`.
 
 ### sleep
 
@@ -3534,31 +3462,6 @@ const sumPower = (end, power = 2, start = 1) =>
 sumPower(10); // 385
 sumPower(10, 3); //3025
 sumPower(10, 3, 5); //2925
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### toSafeInteger
-
-Converts a value to a safe integer.
-
-Use `Math.max()` and `Math.min()` to find the closest safe value.
-Use `Math.round()` to convert to an integer.
-
-```js
-const toSafeInteger = num =>
-  Math.round(Math.max(Math.min(num, Number.MAX_SAFE_INTEGER), Number.MIN_SAFE_INTEGER));
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-toSafeInteger('3.2'); // 3
-toSafeInteger(Infinity); // 9007199254740991
 ```
 
 </details>
