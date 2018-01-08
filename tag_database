@@ -130,6 +130,7 @@ randomNumberInRange:math,utility,random
 readFileLines:node,array,string
 redirect:browser,url
 reducedFilter:array
+reject:array,object,function
 remove:array
 reverseString:string,array
 RGBToHex:utility
