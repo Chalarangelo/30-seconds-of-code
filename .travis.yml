@@ -7,3 +7,5 @@ install:
 script:
     python3 scripts/pretty.py
     python3 scripts/readme.py
+after_success:
+    .travis/push.sh
