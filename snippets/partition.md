@@ -7,7 +7,7 @@ Use `Array.push()` to add elements for which `fn` returns `true` to the first ar
 
 ```js
 const partition = (arr, fn) =>
-  arr.reduce((acc, val, i, arr) => {fn(val,i,arr) ? acc[0].push(val) : acc[1].push(val); return acc;},[[],[]]);
+  arr.reduce((acc, val, i, arr) => {acc[fn(val,i,arr) ? 0 :1].push(val); return acc;},[[],[]]);
 ```
 
 ```js
