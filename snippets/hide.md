@@ -5,9 +5,9 @@ Hides all the elements specified.
 Use the spread operator (`...`) and `Array.forEach()` to apply `display: none` to each element specified.
 
 ```js
-const hide = el => [...el].forEach(e => (e.style.display = 'none'));
+const hide = (...el) => [...el].forEach(e => (e.style.display = 'none'));
 ```
 
 ```js
-hide(document.querySelectorAll('img')); // Hides all <img> elements on the page
+hide(...document.querySelectorAll('img')); // Hides all <img> elements on the page
 ```
