@@ -111,6 +111,7 @@ average(1, 2, 3);
 * [`isSorted`](#issorted)
 * [`join`](#join)
 * [`last`](#last)
+* [`longestItem`](#longestitem)
 * [`mapObject`](#mapobject)
 * [`maxN`](#maxn)
 * [`minN`](#minn)
@@ -336,15 +337,6 @@ average(1, 2, 3);
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`validateNumber`](#validatenumber)
 * [`yesNo`](#yesno)
-
-</details>
-
-### _Uncategorized_
-
-<details>
-<summary>View contents</summary>
-
-* [`longestItem`](#longestitem)
 
 </details>
 
@@ -1100,6 +1092,32 @@ const last = arr => arr[arr.length - 1];
 
 ```js
 last([1, 2, 3]); // 3
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### longestItem
+
+Takes any number of iterable objects or objects with a `length` property and returns the longest one.
+
+Use `Array.sort()` to sort all arguments by `length`, return the first (longest) one.
+
+```js
+const longestItem = (...vals) => [...vals].sort((a, b) => b.length - a.length)[0];
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+longestItem('this', 'is', 'a', 'testcase'); // 'testcase'
+longestItem(...['a', 'ab', 'abc']); // 'abc'
+longestItem(...['a', 'ab', 'abc'], 'abcd'); // 'abcd'
+longestItem([1, 2, 3], [1, 2], [1, 2, 3, 4, 5]); // [1, 2, 3, 4, 5]
+longestItem([1, 2, 3], 'foobar'); // 'foobar'
 ```
 
 </details>
@@ -5265,29 +5283,6 @@ yesNo('Foo', true); // true
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
-
----
- ## _Uncategorized_
-
-### longestItem
-
-Takes any number of iterable objects or objects with a `length` property and returns the longest one.
-
-Use `Array.sort()` to sort all arguments by `length`, return the first (longest) one.
-
-```js
-const longestItem = (...vals) => [...vals].sort((a, b) => b.length - a.length)[0];
-```
-
-```js
-longestItem('this', 'is', 'a', 'testcase'); // 'testcase'
-longestItem(...['a', 'ab', 'abc']); // 'abc'
-longestItem(...['a', 'ab', 'abc'], 'abcd'); // 'abcd'
-longestItem([1, 2, 3], [1, 2], [1, 2, 3, 4, 5]); // [1, 2, 3, 4, 5]
-longestItem([1, 2, 3], 'foobar'); // 'foobar'
-```
-
-<br>[⬆ back to top](#table-of-contents)
 
 
 ## Collaborators
