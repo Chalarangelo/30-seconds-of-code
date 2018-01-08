@@ -1,8 +1,8 @@
 ### longestItem
 
-Takes any iterable object or object with a `length` property and returns the longest one.
+Takes any number of iterable objects or objects with a `length` property and returns the longest one.
 
-The function sorts all arguments by their `length` and returns the first (longest) one.
+Use `Array.sort()` to sort all arguments by `length`, return the first (longest) one.
 
 ```js
 const longestItem = (...vals) => [...vals].sort((a, b) => b.length - a.length)[0];
