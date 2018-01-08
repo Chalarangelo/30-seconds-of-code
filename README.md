@@ -237,6 +237,7 @@ average(1, 2, 3);
 * [`standardDeviation`](#standarddeviation)
 * [`sum`](#sum)
 * [`sumPower`](#sumpower)
+* [`toSafeInteger`](#tosafeinteger)
 
 </details>
 
@@ -3462,6 +3463,31 @@ const sumPower = (end, power = 2, start = 1) =>
 sumPower(10); // 385
 sumPower(10, 3); //3025
 sumPower(10, 3, 5); //2925
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### toSafeInteger
+
+Converts a value to a safe integer.
+
+Use `Math.max()` and `Math.min()` to find the closest safe value.
+Use `Math.round()` to convert to an integer.
+
+```js
+const toSafeInteger = num =>
+  Math.round(Math.max(Math.min(num, Number.MAX_SAFE_INTEGER), Number.MIN_SAFE_INTEGER));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+toSafeInteger('3.2'); // 3
+toSafeInteger(Infinity); // 9007199254740991
 ```
 
 </details>
