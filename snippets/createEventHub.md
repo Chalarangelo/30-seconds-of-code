@@ -2,7 +2,7 @@
 
 Creates a pub/sub ([publish–subscribe](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)) event hub with `emit`, `on`, and `off` methods.
 
-Create an empty `hub` property using `Object.create(null)` to create a truly empty object that does not inherit properties from `Object.prototype` (which would be resolved if the event name matched one of the properties).
+Set a `hub` property using `Object.create(null)` to create a truly empty object that does not inherit properties from `Object.prototype` (which would be resolved if the event name matched one of the properties).
 
 For `emit`, resolve the array of handlers based on the `event` argument and then run
 each one with `Array.forEach()` by passing in the data as an argument.
@@ -34,16 +34,16 @@ const handler = data => console.log(data);
 const hub = createEventHub();
 let increment = 0;
 
-// Subscribe/listen for different types of events
+// Subscribe: listen for different types of events
 hub.on('message', handler);
 hub.on('message', () => console.log('Message event fired'));
 hub.on('increment', () => increment++);
 
-// Emit events to invoke all handlers subscribed to them, passing the data to them as an argument
+// Publish: emit events to invoke all handlers subscribed to them, passing the data to them as an argument
 hub.emit('message', 'hello world'); // logs 'hello world' and 'Message event fired'
 hub.emit('message', { hello: 'world' }); // logs the object and 'Message event fired'
 hub.emit('increment'); // `increment` variable is now 1
 
-// Unsubscribe/unlisten a handler from the 'message' event
+// Unsubscribe: stop a specific handler from listening to the 'message' event
 hub.off('message', handler); 
 ```
