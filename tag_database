@@ -93,6 +93,7 @@ join:array
 JSONToFile:node,json
 last:array
 lcm:math,recursion
+longestItem:uncategorized
 lowercaseKeys:object
 luhnCheck:math,utility
 mapObject:array,object
