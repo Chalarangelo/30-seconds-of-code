@@ -11,7 +11,7 @@ Omit the last argument, `err` to log the request to the console's error stream b
 ```js
 const httpPut = (url, data, callback, err = console.error) => {
     const request = new XMLHttpRequest();
-    request.open("POST", url, true);
+    request.open("PUT", url, true);
     request.setRequestHeader('Content-type','application/json; charset=utf-8');
     request.onload = () => callback(request);
     request.onerror = () => err(request);
@@ -22,7 +22,7 @@ const httpPut = (url, data, callback, err = console.error) => {
 ```js
 const password = "fooBaz";
 const data = JSON.stringify(password);
-httpPost(`https://website.com/posts/123`, data, request => {
+httpPost(`https://website.com/users/123`, data, request => {
   console.log(request.responseText);
 }); // 'Updates a user's password in database'
 ```
