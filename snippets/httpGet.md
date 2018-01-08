@@ -1,21 +1,20 @@
 ### httpGet
 
-Makes a `GET` request to the passed `URL` using `XMLHttpRequest` web api.
+Makes a `GET` request to the passed `URL`.
 
-Explain briefly how the snippet works.
+Use `XMLHttpRequest` web api to retrieve data from the server. When the response is ready call the callback function.
 
 ```js
-const httpGet = url => {
+const httpGet = (url, callback) => {
   const request = new XMLHttpRequest();
   request.open("GET", url, true);
-  request.onload = () => {
-    const response = JSON.parse(request.responseText);
-    (request.readyState === 4 && request.status == "200") ? console.log(response) : console.error(response);
-  }
+  request.onload = () => callback(request);
   request.send();
 }
 ```
 
 ```js
-functionName('sampleInput') // 'sampleOutput'
+httpGet('https://jsonplaceholder.typicode.com/posts', request => {
+  console.log(request.responseText);
+}) // 'Array of 100 items'
 ```
