@@ -2014,7 +2014,7 @@ const hide = (...el) => [...el].forEach(e => (e.style.display = 'none'));
 <summary>Examples</summary>
 
 ```js
-hide(document.querySelectorAll('img')); // Hides all <img> elements on the page
+hide(...document.querySelectorAll('img')); // Hides all <img> elements on the page
 ```
 
 </details>
@@ -2288,7 +2288,7 @@ const show = (...el) => [...el].forEach(e => (e.style.display = ''));
 <summary>Examples</summary>
 
 ```js
-show(document.querySelectorAll('img')); // Shows all <img> elements on the page
+show(...document.querySelectorAll('img')); // Shows all <img> elements on the page
 ```
 
 </details>
