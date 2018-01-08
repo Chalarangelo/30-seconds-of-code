@@ -5,7 +5,7 @@ Hides all the elements specified.
 Use the spread operator (`...`) and `Array.forEach()` to apply `display: none` to each element specified.
 
 ```js
-const hide = (...el) => [...el].forEach(e => (e.style.display = 'none'));
+const hide = el => [...el].forEach(e => (e.style.display = 'none'));
 ```
 
 ```js
