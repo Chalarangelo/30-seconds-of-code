@@ -111,6 +111,7 @@ once:function
 onUserInputChange:browser,event,advanced
 orderBy:object,array
 palindrome:string
+partition:array,object,function
 percentile:math
 pick:array
 pipeFunctions:adapter,function
