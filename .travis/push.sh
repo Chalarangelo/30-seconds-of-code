@@ -1,8 +1,8 @@
 #!/bin/sh
 
 setup_git() {
-  git config --global user.email "travis@travis-ci.org"
-  git config --global user.name "Travis CI"
+  git config --global user.email "mst10041967@gmail.com"
+  git config --global user.name "Rohit Tanwar"
 }
 
 commit_website_files() {
@@ -12,7 +12,7 @@ commit_website_files() {
 }
 
 upload_files() {
-  git remote add origin-pages https://${GH_KEY}@github.com/MVSE-outreach/resources.git > /dev/null 2>&1
+  git remote add origin-pages https://${GH_KEY}@github.com/kriadmin/30-seconds-of-python-code.git > /dev/null 2>&1
   git push --quiet --set-upstream origin-pages gh-pages 
 }
 
