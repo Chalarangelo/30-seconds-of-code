@@ -18,7 +18,7 @@ const httpGet = (url, callback, err = console.error) => {
 ```
 
 ```js
-httpGet('https://website.com/posts', request => {
+httpGet('https://website.com/users', request => {
   console.log(request.responseText);
 }); // 'Retrieves all users from the database'
 ```
