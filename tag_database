@@ -43,6 +43,7 @@ filterNonUnique:array
 flatten:array
 flattenDepth:array,recursion
 flip:adapter,function
+forEachRight:array,function
 formatDuration:date,math,string,utility
 fromCamelCase:string
 functionName:function,utility
