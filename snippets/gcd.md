@@ -32,8 +32,6 @@ def gcd(*args):
 ```
 
 
-
-
 ``` python
-gcd(8,36); # 4
+gcd(8,36) # 4
 ```
