@@ -16,7 +16,7 @@ const httpPost = (url, data, callback, err = console.error) => {
     request.onload = () => callback(request);
     request.onerror = () => err(request);
     request.send(data);
-}
+};
 ```
 
 ```js
