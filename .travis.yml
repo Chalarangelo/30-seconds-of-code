@@ -3,6 +3,6 @@ language: python
 python:
     3.6
 install:
-    pip install requirements.txt
+    pip install -r requirements.txt
 script:
     python3 scripts/pretty.py
