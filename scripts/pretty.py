@@ -1,6 +1,5 @@
 from yapf.yapflib.yapf_api import FormatCode
 import re
-import pprint
 import os
 files = os.listdir('snippets')
 codeRe = "```\s*python([\s\S]*?)```"

@@ -6,3 +6,4 @@ install:
     pip install requirements.txt
 script:
     python3 scripts/pretty.py
+    python3 scripts/readme.py
