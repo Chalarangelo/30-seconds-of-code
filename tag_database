@@ -63,6 +63,7 @@ head:array
 hexToRGB:utility,string,math,advanced
 hide:browser,css
 httpGet:utility,url
+httpPost:utility,url
 httpsRedirect:browser,url
 indexOfAll:array
 initial:array
