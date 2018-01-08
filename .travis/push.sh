@@ -12,7 +12,7 @@ commit_website_files() {
 }
 
 upload_files() {
-  git remote add origin-pages https://${GH_KEY}@github.com/kriadmin/30-seconds-of-python-code.git > /dev/null 2>&1
+  git remote add origin-pages https://${GH_KEY}@github.com/kriadmin/30-seconds-of-python-code.git
   git push --quiet --set-upstream origin-pages gh-pages 
 }
 
