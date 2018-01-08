@@ -9,11 +9,11 @@ Return `[-1]` if `length` of the array of indices is `0`, otherwise return the a
 const indexOfAll = (arr, val) => {
   const indices = [];
   arr.forEach((el, i) => el === val && indices.push(i));
-  return indices.length ? indices : [-1];
+  return indices;
 };
 ```
 
 ```js
 indexOfAll([1, 2, 3, 1, 2, 3], 1); // [0,3]
-indexOfAll([1, 2, 3], 4); // [-1]
+indexOfAll([1, 2, 3], 4); // []
 ```
