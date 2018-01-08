@@ -12,8 +12,8 @@ Here's what you can do to help:
 
 ### Snippet submission and Pull request guidelines
 
-- **DO NOT MODIFY THE README.md FILE!** Make changes to individual snippet files. You can optionally run `npm run builder` to update the README.md file automatically, based on the changes you have made.
-- **DO NOT MODIFY THE index.html FILE!** Make changes to individual snippet files. You can optionally run `npm run webber` to update the index.md file automatically, based on the changes you have made.
+- **DO NOT MODIFY THE README.md FILE!** Make changes to individual snippet files. The `travis_ci` will automatically build the `README.md` file when your pull request is merged.
+- **DO NOT MODIFY THE index.html FILE!** Make changes to individual snippet files. The `travis_ci` will automatically build the `index.html` file when your pull request is merged.
 - **Snippet filenames** must correspond to the title of the snippet. For example, if your snippet is titled `### awesomeSnippet` the filename should be `awesomeSnippet.md`.
   - Use `camelCase`, not `kebab-case` or `snake_case`.
   - Avoid capitalization of words, except if the whole word is capitalized (e.g. `URL` should be capitalized in the filename and the snippet title).
