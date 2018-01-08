@@ -38,7 +38,7 @@ hub.on('message', handler); // subscribe the handler to listen for a 'message' e
 hub.on('message', () => console.log('Message event fired')); // subscribe a different handler to listen for a 'message' event
 hub.on('double', number => console.log(number * 2));  // subscribe a handler to listen for a 'double' event
 
-// Emit events to invoke all subscribed handlers to them, passing the data to them as an argument
+// Emit events to invoke all handlers subscribed to them, passing the data to them as an argument
 hub.emit('message', 'hello world'); // logs 'hello world' and 'Message event fired'
 hub.emit('message', { hello: 'world' }); // logs the object and 'Message event fired'
 hub.emit('double', 5); // logs 10
