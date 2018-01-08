@@ -11,20 +11,20 @@ Here's what you can do to help:
 
 ### Snippet submission and Pull request guidelines
 
-- **DO NOT MODIFY THE README.md FILE!** Make changes to individual snippet files. You can optionally run `npm run builder` to update the README.md file automatically, based on the changes you have made.
-- **DO NOT MODIFY THE index.html FILE!** Make changes to individual snippet files. You can optionally run `npm run webber` to update the index.md file automatically, based on the changes you have made.
-- **Snippet filenames** must correspond to the title of the snippet. For example, if your snippet is titled `### awesomeSnippet` the filename should be `awesomeSnippet.md`.
+- **DO NOT MODIFY THE README.md FILE!** Make changes to individual snippet files. The `travis_ci` automatically builds the `README.md` file when your pull request is merged.
+- **Snippet filenames** must correspond to the title of the snippet and to the function name. For example, if your snippet is titled `### awesomeSnippet` the filename should be `awesomeSnippet.md` and the function name should be `awesomeSnippet`.
   - Use `camelCase`, not `kebab-case` or `snake_case`.
   - Avoid capitalization of words, except if the whole word is capitalized (e.g. `URL` should be capitalized in the filename and the snippet title).
 - **Snippet titles** should have be the same as the name of the function that is present in the snippet.
   - All snippet titles must be prefixed with `###` and be at the very first line of your snippet.
   - Snippet titles must be unique (although if you cannot find a better title, just add some placeholder at the end of the filename and title and we will figure it out).
   - Follow snippet titles with an empty line.
-- **Snippet descriptions** must be short and to the point. Try to explain *what* the snippet does and *how* the snippet works and what Javascript features are used. Remember to include what functions you are using and why.
+- **Snippet descriptions** must be short and to the point. Try to explain *what* the snippet does and *how* the snippet works and what **inbuilt** features/modules are used. Remember to include what functions you are using and why.
   - Follow snippet descriptions with an empty line.
+- **Snippets _CAN NOT_ use any external modules. Only the modules and function inbuilt in `python 3.6` shall be used.
 - **Snippet code** must be enclosed inside ` ```python ` and ` ``` `.
   - Remember to start your snippet's code on a new line below the opening backticks.
-  - Please follow [This Style Guide](https://www.python.org/dev/peps/pep-0008/).
+  - Please follow [This Style Guide](https://www.python.org/dev/peps/pep-0008/) for your code.
   - Try to keep your snippets' code short and to the point. Use modern techniques and features. Make sure to test your code before submitting.
   - All snippets must be followed by one (more if necessary) test case after the code, in a new block enclosed inside ` ```python ` and ` ``` `. The syntax for this is `myFunction('testInput') # 'testOutput'`. Use multiline examples only if necessary.
   - Try to make your function name unique, so that it does not conflict with existing snippets.
@@ -39,7 +39,6 @@ Here's what you can do to help:
 <!--
 ### Additional guidelines and conventions regarding snippets
 
-- When describing snippets, refer to methods, using their full name. For example, use `Array.reduce()`, instead of `reduce()`.
 - If your snippet contains argument with default parameters, explain what happens if they are omitted when calling the function and what the default case is.
 - If your snippet uses recursion, explain the base cases.
 - If your variable is not changed anywhere in the code name it in uppercase.
