@@ -5,8 +5,8 @@ python:
 install:
     pip install -r requirements.txt
 script:
-    chmod +x ./pretty.py
-    chmod +x ./readme.py
+    python scripts/pretty.py
+    python scripts/readme.py
 after_success:
 -   chmod +x ./push.sh
 -   ./push.sh
