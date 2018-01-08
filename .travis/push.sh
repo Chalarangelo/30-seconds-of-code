@@ -8,7 +8,7 @@ commit_website_files() {
     if [ $TRAVIS_BRANCH == "master" ]; then
       echo "Committing to master branch..."
       git checkout master
-      git add -A
+      git add *
       if [ $TRAVIS_EVENT_TYPE == "cron" ]; then
         git commit --message "Travis build: $TRAVIS_BUILD_NUMBER [cron]"
       elif [ $TRAVIS_EVENT_TYPE == "api" ]; then
