@@ -32,16 +32,18 @@ const createEventHub = () => ({
 ```js
 const handler = data => console.log(data);
 const hub = createEventHub();
+let increment = 0;
 
-// Listen for different types of events
-hub.on('message', handler); // subscribe the handler to listen for a 'message' event
-hub.on('message', () => console.log('Message event fired')); // subscribe a different handler to listen for a 'message' event
-hub.on('double', number => console.log(number * 2));  // subscribe a handler to listen for a 'double' event
+// Subscribe/listen for different types of events
+hub.on('message', handler);
+hub.on('message', () => console.log('Message event fired'));
+hub.on('increment', () => increment++);
 
 // Emit events to invoke all handlers subscribed to them, passing the data to them as an argument
 hub.emit('message', 'hello world'); // logs 'hello world' and 'Message event fired'
 hub.emit('message', { hello: 'world' }); // logs the object and 'Message event fired'
-hub.emit('double', 5); // logs 10
+hub.emit('increment'); // `increment` variable is now 1
 
-hub.off('message', handler); // unsubscribe a single handler from the 'message' event
+// Unsubscribe/unlisten a handler from the 'message' event
+hub.off('message', handler); 
 ```
