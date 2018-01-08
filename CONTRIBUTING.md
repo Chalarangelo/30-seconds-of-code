@@ -21,7 +21,7 @@ Here's what you can do to help:
   - Follow snippet titles with an empty line.
 - **Snippet descriptions** must be short and to the point. Try to explain *what* the snippet does and *how* the snippet works and what **inbuilt** features/modules are used. Remember to include what functions you are using and why.
   - Follow snippet descriptions with an empty line.
-- **Snippets _CAN NOT_ use any external modules. Only the modules and function inbuilt in `python 3.6` shall be used.
+- **Snippets _CAN NOT_ use any external modules**. Only the modules and function inbuilt in `python 3.6` shall be used.
 - **Snippet code** must be enclosed inside ` ```python ` and ` ``` `.
   - Remember to start your snippet's code on a new line below the opening backticks.
   - Please follow [This Style Guide](https://www.python.org/dev/peps/pep-0008/) for your code.
