@@ -165,6 +165,7 @@ toggleClass:browser
 toKebabCase:string,regexp
 tomorrow:date
 toOrdinalSuffix:utility,math
+toSafeInteger:math
 toSnakeCase:string,regexp
 truncateString:string
 truthCheckCollection:object,logic,array
