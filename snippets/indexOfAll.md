@@ -1,9 +1,9 @@
 ### indexOfAll
 
-Returns all indices of `val` in an array. If `val` never occurs, returns `[-1]`.
+Returns all indices of `val` in an array. If `val` never occurs, returns `[]`.
 
 Use `Array.forEach()` to loop over elements and `Array.push()` to store indices for matching elements.
-Return `[-1]` if `length` of the array of indices is `0`, otherwise return the array of indices.
+Return the array of indices.
 
 ```js
 const indexOfAll = (arr, val) => {
