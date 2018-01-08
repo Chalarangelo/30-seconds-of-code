@@ -2,7 +2,7 @@
 
 Makes a `GET` request to the passed URL.
 
-Use `XMLHttpRequest` web api to retrieve data from the given `url`. 
+Use `XMLHttpRequest` web api to make a `get` request to the given `url`.
 Handle the `onload` event, by running the provided `callback` function.
 Handle the `onerror` event, by running the provided `err` function.
 Omit the third argument, `err` to log the request to the console's error stream by default.
@@ -18,7 +18,7 @@ const httpGet = (url, callback, err = console.error) => {
 ```
 
 ```js
-httpGet('https://jsonplaceholder.typicode.com/posts', request => {
+httpGet('https://website.com/posts', request => {
   console.log(request.responseText);
-}) // 'Array of 100 items'
+}); // 'Retrieves all users from the database'
 ```
