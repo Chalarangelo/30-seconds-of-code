@@ -19,12 +19,14 @@ const createEventHub = () => ({
     (this.hub.get(event) || []).forEach(handler => handler(data));
   },
   on(event, handler) {
-    if (!this.hub.get(event)) this.hub.set(event, []);
-    this.hub.get(event).push(handler);
+    const handlers = this.hub.get(event);
+    if (!handlers) this.hub.set(event, []);
+    handlers.push(handler);
   },
   off(event, handler) {
-    const i = (this.hub.get(event) || []).findIndex(h => h === handler);
-    if (i > -1) this.hub.get(event).splice(i, 1);
+    const handlers = this.hub.get(event);
+    const i = (handlers || []).findIndex(h => h === handler);
+    if (i > -1) handlers.splice(i, 1);
   }
 });
 ```
