@@ -100,7 +100,7 @@ maxN:array,math
 median:math,array
 memoize:function
 minN:array,amth
-negate:logic,function
+negate:function
 nthElement:array
 objectFromPairs:object,array
 objectToPairs:object,array

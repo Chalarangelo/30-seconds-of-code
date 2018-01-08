@@ -9,6 +9,5 @@ const negate = func => (...args) => !func(...args);
 ```
 
 ```js
-filter([1, 2, 3, 4, 5, 6], negate(isEven)); // [1, 3, 5]
-negate(isOdd)(1); // false
+[1, 2, 3, 4, 5, 6].filter(negate(n => n % 2 == 0)); // [ 1, 3, 5 ]
 ```
