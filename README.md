@@ -190,18 +190,10 @@ average(1, 2, 3);
 * [`defer`](#defer)
 * [`functionName`](#functionname)
 * [`memoize`](#memoize)
+* [`negate`](#negate)
 * [`once`](#once)
 * [`runPromisesInSeries`](#runpromisesinseries)
 * [`sleep`](#sleep)
-
-</details>
-
-### 🔮 Logic
-
-<details>
-<summary>View contents</summary>
-
-* [`negate`](#negate)
 
 </details>
 
@@ -2633,6 +2625,28 @@ console.log(anagramsCached.cache); // The cached anagrams map
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### negate
+
+Negates a predicate function.
+
+Take a predicate function and apply the not operator (`!`) to it with its arguments.
+
+```js
+const negate = func => (...args) => !func(...args);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+[1, 2, 3, 4, 5, 6].filter(negate(n => n % 2 == 0)); // [ 1, 3, 5 ]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### once
 
 Ensures a function is called only once.
@@ -2708,31 +2722,6 @@ async function sleepyWork() {
   await sleep(1000);
   console.log('I woke up after 1 second.');
 }
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
----
- ## 🔮 Logic
-
-### negate
-
-Negates a predicate function.
-
-Take a predicate function and apply the not operator (`!`) to it with its arguments.
-
-```js
-const negate = func => (...args) => !func(...args);
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-filter([1, 2, 3, 4, 5, 6], negate(isEven)); // [1, 3, 5]
-negate(isOdd)(1); // false
 ```
 
 </details>
