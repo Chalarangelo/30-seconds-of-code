@@ -1,7 +1,6 @@
 anagrams:string,recursion
 arrayToHtmlList:browser,array
 average:math,array
-binarySearch:array
 bottomVisible:browser
 byteSize:string
 call:adapter,function
