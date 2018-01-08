@@ -2014,7 +2014,7 @@ const hide = (...el) => [...el].forEach(e => (e.style.display = 'none'));
 <summary>Examples</summary>
 
 ```js
-hide(document.querySelectorAll('img')); // Hides all <img> elements on the page
+hide(...document.querySelectorAll('img')); // Hides all <img> elements on the page
 ```
 
 Use `location.protocol` to get the protocol currently being used. If it's not HTTPS, use `location.replace()` to replace the existing page with the HTTPS version of the page. Use `location.href` to get the full address, split it with `String.split()` and remove the protocol part of the URL.
@@ -2288,7 +2288,7 @@ const show = (...el) => [...el].forEach(e => (e.style.display = ''));
 <summary>Examples</summary>
 
 ```js
-show(document.querySelectorAll('img')); // Shows all <img> elements on the page
+show(...document.querySelectorAll('img')); // Shows all <img> elements on the page
 ```
 
 </details>
