@@ -1,10 +1,31 @@
 ![Logo](/icon.png)
 
-# 30-seconds-of-code-python
+# 30-seconds-of-python-code
 Python implementation of 30-seconds-of-code.
 
-**Note**:- This is in no way affiliated with the original [30-seconds-of-code](https://github.com/Chalarangelo/30-seconds-of-code/)
+**Note**:- This is in no way affiliated with the original [30-seconds-of-code](https://github.com/Chalarangelo/30-seconds-of-code/).
 
+
+### chunk 
+
+Chunks an array into smaller arrays of a specified size.
+
+Uses `range` to create a list of desired size. Then use `map` on this list and fill it with splices of `arr`
+
+```python 
+from math import ceil
+
+
+def chunk(arr, size):
+    return list(
+        map(lambda x: arr[x * size:x * size + size],
+            list(range(0, ceil(len(arr) / size)))))
+
+```
+
+``` python
+    chunk([1,2,3,4,5],2) # [[1,2],[3,4],5]
+```
 ### gcd
 
 Calculates the greatest common divisor between two or more numbers/arrays.
