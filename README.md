@@ -27,6 +27,23 @@ def chunk(arr, size):
 chunk([1,2,3,4,5],2) # [[1,2],[3,4],5]
 ```
 
+### countOccurences
+
+Counts the occurrences of a value in an list.
+
+Uses the `reduce` functin from built-in module `functools` to increment a counter each time you encounter the specific value inside the list.
+
+```python 
+def countOccurences(arr, val):
+    return reduce(
+        (lambda x, y: x + 1 if y == val and type(y) == type(val) else x + 0),
+        arr)
+
+```
+
+```python
+countOccurrences([1, 1, 2, 1, 2, 3], 1) # 3
+```
 ### gcd
 
 Calculates the greatest common divisor between two or more numbers/lists.
@@ -69,7 +86,7 @@ gcd(8,36) # 4
 Returns the least common multiple of two or more numbers.
 
 Use the `greatest common divisor (GCD)` formula and the fact that `lcm(x,y) = x * y / gcd(x,y)` to determine the least common multiple. The GCD formula uses recursion.
-kbc
+
 Uses `reduce` function from the inbuilt module `functools`. Also defines a method `spread` for javascript like spreading of lists.
 
 ```python 
