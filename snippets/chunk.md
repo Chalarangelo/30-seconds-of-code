@@ -1,6 +1,6 @@
 ### chunk 
 
-Chunks an array into smaller arrays of a specified size.
+Chunks an array into smaller lists of a specified size.
 
 Uses `range` to create a list of desired size. Then use `map` on this list and fill it with splices of `arr`
 
