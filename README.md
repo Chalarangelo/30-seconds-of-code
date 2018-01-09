@@ -8,9 +8,9 @@ Python implementation of 30-seconds-of-code.
 
 ### chunk 
 
-Chunks an array into smaller arrays of a specified size.
+Chunks an array into smaller lists of a specified size.
 
-Uses `range` to create a list of desired size. Then use `map` on this list and fill it with splices of `arr`
+Uses `range` to create a list of desired size. Then use `map` on this list and fill it with splices of `arr`.
 
 ```python 
 from math import ceil
@@ -26,6 +26,7 @@ def chunk(arr, size):
 ``` python
 chunk([1,2,3,4,5],2) # [[1,2],[3,4],5]
 ```
+
 ### gcd
 
 Calculates the greatest common divisor between two or more numbers/lists.
@@ -68,7 +69,7 @@ gcd(8,36) # 4
 Returns the least common multiple of two or more numbers.
 
 Use the `greatest common divisor (GCD)` formula and the fact that `lcm(x,y) = x * y / gcd(x,y)` to determine the least common multiple. The GCD formula uses recursion.
-
+kbc
 Uses `reduce` function from the inbuilt module `functools`. Also defines a method `spread` for javascript like spreading of lists.
 
 ```python 
