@@ -18,7 +18,6 @@ compact:array
 compose:function
 copyToClipboard:browser,string,advanced
 countOccurrences:array
-countVowels:string
 createElement:browser,utility
 createEventHub:browser,event,advanced
 currentURL:browser,url
