@@ -299,7 +299,7 @@ average(1, 2, 3);
 
 </details>
 
-###  Type
+### 📃 Type
 
 <details>
 <summary>View contents</summary>
@@ -4660,7 +4660,7 @@ words('python, javaScript & coffee'); // ["python", "javaScript", "coffee"]
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ##  Type
+ ## 📃 Type
 
 ### getType
 
