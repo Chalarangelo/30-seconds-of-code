@@ -24,15 +24,15 @@ def chunk(arr, size):
 ```
 
 ``` python
-    chunk([1,2,3,4,5],2) # [[1,2],[3,4],5]
+chunk([1,2,3,4,5],2) # [[1,2],[3,4],5]
 ```
 ### gcd
 
-Calculates the greatest common divisor between two or more numbers/arrays.
+Calculates the greatest common divisor between two or more numbers/lists.
 
 The `helperGcdfunction` uses recursion. Base case is when `y` equals `0`. In this case, return `x`. Otherwise, return the GCD of `y` and the remainder of the division `x/y`.
 
-Uses the reduce function from the inbuild module `functools`. Also defines a method `spread` for javascript like spreading of arrays.
+Uses the reduce function from the inbuilt module `functools`. Also defines a method `spread` for javascript like spreading of lists.
 
 ```python 
 from functools import reduce
@@ -69,6 +69,8 @@ Returns the least common multiple of two or more numbers.
 
 Use the `greatest common divisor (GCD)` formula and the fact that `lcm(x,y) = x * y / gcd(x,y)` to determine the least common multiple. The GCD formula uses recursion.
 
+Uses `reduce` function from the inbuilt module `functools`. Also defines a method `spread` for javascript like spreading of lists.
+
 ```python 
 from functools import reduce
 
@@ -104,7 +106,7 @@ lcm([1, 3, 4], 5) # 60
 ```
 ### spread
 
-Implements javascript's spread syntax as a function. Flattens the list(non-deep) and returns an array.
+Implements javascript's spread syntax as a function. Flattens the list(non-deep) and returns an list.
 
 ```python 
 def spread(arg):
