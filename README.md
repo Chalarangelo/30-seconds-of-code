@@ -278,7 +278,6 @@ average(1, 2, 3);
 * [`byteSize`](#bytesize)
 * [`capitalize`](#capitalize)
 * [`capitalizeEveryWord`](#capitalizeeveryword)
-* [`countVowels`](#countvowels)
 * [`escapeHTML`](#escapehtml)
 * [`escapeRegExp`](#escaperegexp)
 * [`fromCamelCase`](#fromcamelcase)
@@ -4157,29 +4156,6 @@ const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperC
 
 ```js
 capitalizeEveryWord('hello world!'); // 'Hello World!'
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### countVowels
-
-Retuns `number` of vowels in provided string.
-
-Use a regular expression to count the number of vowels `(A, E, I, O, U)` in a `string`.
-
-```js
-const countVowels = str => (str.match(/[aeiou]/gi) || []).length;
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-countVowels('foobar'); // 3
-countVowels('gym'); // 0
 ```
 
 </details>
