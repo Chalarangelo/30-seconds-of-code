@@ -8,6 +8,7 @@ Here's what you can do to help:
 - Be part of the discussion by helping out with [existing issues](https://github.com/kriadmin/30-seconds-of-python-code/issues) or talking on our [gitter channel](https://gitter.im/30-seconds-of-python-code/Lobby).
 - Submit [pull requests](https://github.com/kriadmin/30-seconds-of-python-code/pulls) with snippets you have created (see below for guidelines).
 - Fix typos in existing snippets, improve snippet descriptions and explanations or provide better examples.
+- Before submitting a PR for any new snippets go through [this](https://github.com/kriadmin/30-seconds-of-python-code/projects/1) project. If your snippet is not there, then go ahead and submit a PR. Else if it is in the done column, sorry it has been already implemented.If it is in any other column submit a PR and give the card's link in the description section of PR.
 
 ### Snippet submission and Pull request guidelines
 
@@ -24,7 +25,7 @@ Here's what you can do to help:
 - **Snippets _CAN NOT_ use any external modules**. Only the modules and function inbuilt in `python 3.6` shall be used.
 - **Snippet code** must be enclosed inside ` ```python ` and ` ``` `.
   - Remember to start your snippet's code on a new line below the opening backticks.
-  - Please follow [This Style Guide](https://www.python.org/dev/peps/pep-0008/) for your code.(Though it doen't matter much as your code is automatically prettified)
+  - You can write the code in any style you like but eventually it will be formated by our prettifier so the formatting will change. Just make sure to have consistent spacing.
   - Try to keep your snippets' code short and to the point. Use modern techniques and features. Make sure to test your code before submitting.
   - All snippets must be followed by one (more if necessary) test case after the code, in a new block enclosed inside ` ```python ` and ` ``` `. The syntax for this is `myFunction('testInput') # 'testOutput'`. Use multiline examples only if necessary.
   - Try to make your function name unique, so that it does not conflict with existing snippets.
@@ -33,7 +34,7 @@ Here's what you can do to help:
 - Snippets *should* solve real-world problems, no matter how simple.
 - Snippets *should* be abstract enough to be applied to different scenarios.
 - It is not mandatory but highly appreciated if you provide **test cases** and/or performance tests.
-- You can start creating a new snippet, by using the [snippet template](snippet-template.md) to format your snippets.
+- You can start creating a new snippet, by using the [snippet template](snippet_template.md) to format your snippets.
 - Updating the README.md file should only be done by altering the scripts in the **scripts** folder or altering their relative static parts in the **static-parts** folder.
 
 <!--
