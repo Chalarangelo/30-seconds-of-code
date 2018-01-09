@@ -41,5 +41,5 @@ hub.emit('message', { hello: 'world' }); // logs the object and 'Message event f
 hub.emit('increment'); // `increment` variable is now 1
 
 // Unsubscribe: stop a specific handler from listening to the 'message' event
-hub.off('message', handler); 
+hub.off('message', handler);
 ```
