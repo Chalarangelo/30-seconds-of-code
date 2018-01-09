@@ -22,6 +22,7 @@ countVowels:string
 createElement:browser,utility
 currentURL:browser,url
 curry:function,recursion
+createEventHub:browser,event,advanced
 deepFlatten:array,recursion
 defer:function
 detectDeviceType:browser
