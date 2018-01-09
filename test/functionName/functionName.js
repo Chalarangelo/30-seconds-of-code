@@ -1,0 +1,1 @@
+module.exports = fn => (console.debug(fn.name), fn);

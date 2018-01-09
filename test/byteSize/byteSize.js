@@ -1,0 +1,1 @@
+module.exports = str => new Blob([str]).size;

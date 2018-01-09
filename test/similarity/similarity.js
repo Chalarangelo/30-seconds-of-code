@@ -1,0 +1,1 @@
+module.exports = (arr, values) => arr.filter(v => values.includes(v));

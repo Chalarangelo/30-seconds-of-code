@@ -1,0 +1,1 @@
+module.exports = (...args) => args.find(_ => ![undefined, null].includes(_));
