@@ -7,7 +7,9 @@ install:
 script:
     python scripts/pretty.py
     python scripts/readme.py
+-   pwd
 after_success:
+-   pwd
 -   chmod +x .travis/push.sh
 -   .travis/push.sh
 env:
