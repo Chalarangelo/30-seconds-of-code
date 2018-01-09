@@ -9,7 +9,7 @@ import re
 
 
 def countVowels(str):
-    return len(len(re.findall(r'[aeiou]', 'bcedfidsnoxluAEIO', re.IGNORECASE)))
+    return len(len(re.findall(r'[aeiou]', str, re.IGNORECASE)))
 
 ```
 
