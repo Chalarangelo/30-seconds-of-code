@@ -55,7 +55,7 @@ import re
 
 
 def countVowels(str):
-    return len(len(re.findall(r'[aeiou]', 'bcedfidsnoxluAEIO', re.IGNORECASE)))
+    return len(len(re.findall(r'[aeiou]', str, re.IGNORECASE)))
 
 ```
 
@@ -63,6 +63,7 @@ def countVowels(str):
 countVowels('foobar') # 3
 countVowels('gym') # 0
 ```
+
 ### gcd
 
 Calculates the greatest common divisor between two or more numbers/lists.
