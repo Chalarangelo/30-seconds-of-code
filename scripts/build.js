@@ -17,7 +17,7 @@ if(isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE
   console.log(`${chalk.green('NOBUILD')} README build terminated, parent commit is a Travis build!`);
   process.exit(0);
 }
-if(isTravisCI() && process.env['TRAVIS_EVENT_TYPE'] === 'cron' && process.env['TRAVIS_EVENT_TYPE'] === 'api'){
+if(isTravisCI() && (process.env['TRAVIS_EVENT_TYPE'] === 'cron' && process.env['TRAVIS_EVENT_TYPE'] === 'api')){
   console.log(`${chalk.green('ARCHIVE')} Cron job or custom build, building archive README!`);
   console.time('Builder');
   // Synchronously read all snippets from snippets_archive folder and sort them as necessary (case-insensitive)
