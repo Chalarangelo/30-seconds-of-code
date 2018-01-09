@@ -1,0 +1,1 @@
+module.exports = str => str.replace(/^~($|\/|\\)/, `${require('os').homedir()}$1`);

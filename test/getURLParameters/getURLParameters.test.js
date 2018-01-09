@@ -1,0 +1,13 @@
+const test = require('tape');
+const getURLParameters = require('./getURLParameters.js');
+
+test('Testing getURLParameters', (t) => {
+	//For more information on all the methods supported by tape
+	//Please go to https://github.com/substack/tape
+	t.true(typeof getURLParameters === 'function', 'getURLParameters is a Function');
+	//t.deepEqual(getURLParameters(args..), 'Expected');
+	//t.equal(getURLParameters(args..), 'Expected');
+	//t.false(getURLParameters(args..), 'Expected');
+	//t.throws(getURLParameters(args..), 'Expected');
+	t.end();
+});

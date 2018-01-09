@@ -1,0 +1,1 @@
+module.exports = fn => argsArr => fn(...argsArr);
