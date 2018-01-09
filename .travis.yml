@@ -8,8 +8,8 @@ script:
     python scripts/pretty.py
     python scripts/readme.py
 after_success:
--   chmod +x ./push.sh
--   ./push.sh
+-   chmod +x .travis/push.sh
+-   .travis/push.sh
 env:
   global:
     secure: hZJlqgOzA2zIUJSWIka0PylqNaTkfHq+kS48RrHmocrK0vLyCW7ECWrzez2f2RVdTNzPi0b+yJq2uCbFfWjImZqg+XY1I75/CVVdSYMk7PJkYZ/iBDixMYY8CAkRRd5yZft9uZAdZzR4KLCPN18n7qfISv/M9VA8989NKcVyiEU=
