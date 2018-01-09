@@ -25,7 +25,7 @@ Here's what you can do to help:
 - **Snippets _CAN NOT_ use any external modules**. Only the modules and function inbuilt in `python 3.6` shall be used.
 - **Snippet code** must be enclosed inside ` ```python ` and ` ``` `.
   - Remember to start your snippet's code on a new line below the opening backticks.
-  - Please follow [This Style Guide](https://www.python.org/dev/peps/pep-0008/) for your code.(Though it doen't matter much as your code is automatically prettified)
+  - You can write the code in any style you like but eventually it will be formated by our prettifier so the formatting will change. Just make sure to have consistent spacing.
   - Try to keep your snippets' code short and to the point. Use modern techniques and features. Make sure to test your code before submitting.
   - All snippets must be followed by one (more if necessary) test case after the code, in a new block enclosed inside ` ```python ` and ` ``` `. The syntax for this is `myFunction('testInput') # 'testOutput'`. Use multiline examples only if necessary.
   - Try to make your function name unique, so that it does not conflict with existing snippets.
