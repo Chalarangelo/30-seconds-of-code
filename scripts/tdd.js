@@ -13,11 +13,12 @@ if(isTravisCI() && process.env['TRAVIS_EVENT_TYPE'] !== 'cron' && process.env['T
   process.exit(0);
 }
 // Declare paths
-const SNIPPETS_PATH = './snippets';
+const SNIPPETS_ACTIVE = './snippets';
+const SNIPPETS_ARCHIVE = './snippets_archive'; 
 const TEST_PATH = './test';
 
 // Array of snippet names
-const snippetFiles = fs.readdirSync(SNIPPETS_PATH, 'utf8').map(fileName => fileName.slice(0, -3));
+const snippetFiles = fs.readdirSync(SNIPPETS_ACTIVE, 'utf8').map(fileName => fileName.slice(0, -3));
 
 // Current Snippet that depend on node_modules
 const errSnippets = ['JSONToFile', 'readFileLines', 'UUIDGeneratorNode'];
@@ -33,7 +34,7 @@ snippetFiles
   })
   .map(fileName => {
     // Grab snippetData
-    const fileData = fs.readFileSync(`${SNIPPETS_PATH}/${fileName}.md`, 'utf8');
+    const fileData = fs.readFileSync(`${SNIPPETS_ACTIVE}/${fileName}.md`, 'utf8');
     // Grab snippet Code blocks
     const fileCode = fileData.slice(fileData.indexOf('```js'), fileData.lastIndexOf('```') + 3);
     // Split code based on code markers
@@ -81,4 +82,4 @@ snippetFiles
     // return fileName for later use
     return fileName;
   });
-  
+
