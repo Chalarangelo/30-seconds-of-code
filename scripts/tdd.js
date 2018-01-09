@@ -18,7 +18,14 @@ const SNIPPETS_ARCHIVE = './snippets_archive';
 const TEST_PATH = './test';
 
 // Array of snippet names
-const snippetFiles = fs.readdirSync(SNIPPETS_ACTIVE, 'utf8').map(fileName => fileName.slice(0, -3));
+const snippetFiles = [];
+
+const snippetFilesActive = fs.readdirSync(SNIPPETS_ACTIVE, 'utf8').map(fileName => fileName.slice(0, -3));
+const snippetFilesArchive = fs.readdirSync(SNIPPETS_ARCHIVE, 'utf8').map(fileName => fileName.slice(0, -3));
+
+snippetFiles.push(...snippetFilesActive);
+snippetFiles.push(...snippetFilesArchive);
+
 
 // Current Snippet that depend on node_modules
 const errSnippets = ['JSONToFile', 'readFileLines', 'UUIDGeneratorNode'];
@@ -33,8 +40,9 @@ snippetFiles
     return fileName;
   })
   .map(fileName => {
+    const activeOrArchive = snippetFilesActive.includes(fileName) ? SNIPPETS_ACTIVE : SNIPPETS_ARCHIVE;
     // Grab snippetData
-    const fileData = fs.readFileSync(`${SNIPPETS_ACTIVE}/${fileName}.md`, 'utf8');
+    const fileData = fs.readFileSync(`${activeOrArchive}/${fileName}.md`, 'utf8');
     // Grab snippet Code blocks
     const fileCode = fileData.slice(fileData.indexOf('```js'), fileData.lastIndexOf('```') + 3);
     // Split code based on code markers
