@@ -44,13 +44,13 @@ Here's what you can do to help:
 - If your variable is not changed anywhere in the code name it in uppercase.
 - Use `camelCase` for function and variable names if they consist of more than one word.
 - Try to give meaningful names to variables. For example use `letter`, instead of `lt`. Some exceptions to convention are:
-  - `arr` for arrays (usually as the snippet function's argument).
+  - `arr` for lists (usually as the snippet function's argument).
   - `str` for strings.
   - `n` for a numeric value (usually as the snippet function's argument).
   - `val` or `v` for value (usually when iterating a list, mapping, sorting etc.).
   - `i` for indexes.
   - `func` for function arguments.
-  - `nums` for arrays of numbers.
+  - `nums` for lists of numbers.
 - Use `()` if your function takes no arguments.
 - Specify default parameters for arguments, if necessary. It is preferred to put default parameters last unless you have pretty good reason not to.
 - If your snippet's function takes variadic arguments, use `...args` (although in certain cases, it might be needed to use a different name).
