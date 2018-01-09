@@ -6,17 +6,69 @@
 const fs = require('fs-extra');
 const path = require('path');
 const chalk = require('chalk');
+// Paths
+const SNIPPETS_PATH = './snippets';
+const SNIPPETS_ARCHIVE_PATH = './snippets_archive';
+const STATIC_PARTS_PATH = './static-parts';
+const snippets = {};
 // Load helper functions (these are from existing snippets in 30 seconds of code!)
 const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
 if(isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
   console.log(`${chalk.green('NOBUILD')} README build terminated, parent commit is a Travis build!`);
   process.exit(0);
 }
-const SNIPPETS_PATH = './snippets';
-const SNIPPETS_ARCHIVE_PATH = './snippets_archive';
-const STATIC_PARTS_PATH = './static-parts';
+if(isTravisCI() && process.env['TRAVIS_EVENT_TYPE'] === 'cron' && process.env['TRAVIS_EVENT_TYPE'] === 'api'){
+  console.log(`${chalk.green('ARCHIVE')} Cron job or custom build, building archive README!`);
+  console.time('Builder');
+  // Synchronously read all snippets from snippets_archive folder and sort them as necessary (case-insensitive)
+  try {
+    const snippetFilenames = fs
+      .readdirSync(SNIPPETS_ARCHIVE_PATH)
+      .sort((a, b) => a.toLowerCase() - b.toLowerCase());
+    // Store the data read from each snippet in the appropriate object
+    for (const name of snippetFilenames) {
+      snippets[name] = fs.readFileSync(path.join(SNIPPETS_ARCHIVE_PATH, name), 'utf8');
+    }
+  } catch (err) {
+    console.log(`${chalk.red('ERROR!')} During snippet loading: ${err}`);
+    process.exit(1);
+  }
+  try {
+    // Add the start static part
+    let output = `![Logo](/logo.png)
 
-const snippets = {};
+# 30 seconds of code
+
+These snippets , while useful and interesting, didn\'t quite make it into the repository due to either having very specific use-cases or being outdated. However we felt like they might still be useful to some readers, so here they are.
+
+## Table of Contents
+
+`
+    for(const snippet of Object.entries(snippets))
+      output += `* [\`${snippet[0]}\`](#${snippet[0].toLowerCase()}\n`;
+    output += '\n---\n';
+    for(const snippet of Object.entries(snippets)){
+      let data = snippet[1];
+      data =
+        data.slice(0, data.lastIndexOf('```js')) +
+        '<details>\n<summary>Examples</summary>\n\n' +
+        data.slice(data.lastIndexOf('```js'), data.lastIndexOf('```')) +
+        data.slice(data.lastIndexOf('```')) +
+        '\n</details>\n';
+      output += `\n${data + '\n<br>[⬆ Back to top](#table-of-contents)\n\n'}`;
+    }
+
+    // Write to the README file of the archive
+    fs.writeFileSync(path.join(SNIPPETS_ARCHIVE_PATH,'README.md'), output);
+  } catch (err) {
+    console.log(`${chalk.red('ERROR!')} During README generation for snippets archive: ${err}`);
+    process.exit(1);
+  }
+
+  console.log(`${chalk.green('SUCCESS!')} README file generated for snippets archive!`);
+  console.timeEnd('Builder');
+  process.exit(0);
+}
 const EMOJIS = {
   adapter: '🔌',
   array: '📚',
@@ -29,6 +81,7 @@ const EMOJIS = {
   node: '📦',
   object: '🗃️',
   string: '📜',
+  type: '📃',
   utility: '🔧'
 };
 
@@ -165,5 +218,5 @@ try {
   process.exit(1);
 }
 
-console.log(`${chalk.green('SUCCESS!')} README and SNIPPETS_ARCHIVE files generated!`);
+console.log(`${chalk.green('SUCCESS!')} README file generated!`);
 console.timeEnd('Builder');
