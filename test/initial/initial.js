@@ -1,0 +1,1 @@
+module.exports = arr => arr.slice(0, -1);

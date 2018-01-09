@@ -1,0 +1,1 @@
+module.exports = (dividend, divisor) => dividend % divisor === 0;
