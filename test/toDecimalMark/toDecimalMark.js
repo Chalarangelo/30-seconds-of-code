@@ -1,0 +1,1 @@
+module.exports = num => num.toLocaleString('en-US');

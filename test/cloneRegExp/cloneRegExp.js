@@ -1,0 +1,1 @@
+module.exports = regExp => new RegExp(regExp.source, regExp.flags);

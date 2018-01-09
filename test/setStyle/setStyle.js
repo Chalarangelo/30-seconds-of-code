@@ -1,0 +1,1 @@
+module.exports = (el, ruleName, val) => (el.style[ruleName] = val);
