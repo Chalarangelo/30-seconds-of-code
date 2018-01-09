@@ -34,7 +34,7 @@ Here's what you can do to help:
 - Snippets *should* solve real-world problems, no matter how simple.
 - Snippets *should* be abstract enough to be applied to different scenarios.
 - It is not mandatory but highly appreciated if you provide **test cases** and/or performance tests.
-- You can start creating a new snippet, by using the [snippet template](snippet-template.md) to format your snippets.
+- You can start creating a new snippet, by using the [snippet template](snippet_template.md) to format your snippets.
 - Updating the README.md file should only be done by altering the scripts in the **scripts** folder or altering their relative static parts in the **static-parts** folder.
 
 <!--
