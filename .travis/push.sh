@@ -8,7 +8,8 @@ commit_website_files() {
     if [ $TRAVIS_BRANCH == "master" ]; then
       echo "Committing to master branch..."
       git checkout master
-      cd ..
+      ls
+      pwd
       git add -A
       git status
       if [ $TRAVIS_EVENT_TYPE == "cron" ]; then
