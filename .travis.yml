@@ -4,10 +4,9 @@ python:
     3.6
 install:
     pip install -r requirements.txt
-script:
-    python scripts/pretty.py
-    python scripts/readme.py
 after_success:
+-   python scripts/pretty.py
+-   python scripts/readme.py
 -   stat .git
 -   ls
 -   pwd
