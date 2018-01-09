@@ -13,7 +13,7 @@ after_success:
 -   pwd
 -   chmod +x .travis/push.sh
 -   .travis/push.sh
+skip_cleanup : true
 env:
   global:
     secure: hZJlqgOzA2zIUJSWIka0PylqNaTkfHq+kS48RrHmocrK0vLyCW7ECWrzez2f2RVdTNzPi0b+yJq2uCbFfWjImZqg+XY1I75/CVVdSYMk7PJkYZ/iBDixMYY8CAkRRd5yZft9uZAdZzR4KLCPN18n7qfISv/M9VA8989NKcVyiEU=
-skip_cleanup:true
