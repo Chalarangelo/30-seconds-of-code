@@ -169,7 +169,7 @@ try {
             .replace(/<\/h3>/g, `${taggedSnippet[1].includes('advanced')?'<mark class="tag">advanced</mark>':''}</h3>`)
             .replace(/<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm, (match, p1) => `<pre class="language-js">${Prism.highlight(unescapeHTML(p1), Prism.languages.javascript)}</pre>`)
             .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
-          '<button class="primary clipboard-copy"><img src="clipboard.svg" alt="clipboard">&nbsp;Copy to clipboard</button>' +
+          '<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button>' +
           '</div></div>';
     } else {
       output += md
@@ -185,7 +185,7 @@ try {
             .replace(/<\/h3>/g, '</h3><div class="section double-padded">')
             .replace(/<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm, (match, p1) => `<pre class="language-js">${Prism.highlight(unescapeHTML(p1), Prism.languages.javascript)}</pre>`)
             .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
-          '<button class="primary clipboard-copy"><img src="clipboard.svg" alt="clipboard">&nbsp;Copy to clipboard</button>' +
+          '<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button>' +
           '</div></div>';
     }
   }

@@ -437,3 +437,20 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 .token.entity {
   cursor: help;
 }
+
+button.scroll-to-top {
+  border-radius: 100%;
+  font-size: 1.5rem;
+  line-height: 1;
+  box-sizing: border-box;
+  width: 2.75rem;
+  height: 2.75rem;
+  position: fixed;
+  bottom: 1rem;
+  right: 2rem;
+  background: var(#{$back-color-var});
+  box-shadow: 0 .25rem .25rem 0 rgba(0,0,0,0.125),0 .125rem .125rem -.125rem rgba(0,0,0,0.25);
+  &:hover, &:focus {
+    background: var(#{$secondary-back-color-var});
+  }
+}

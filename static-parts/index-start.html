@@ -27,6 +27,13 @@
           x.style.display = matchingTags.includes(x.innerText.toLowerCase()) ? '' : 'none';
         })
       }
+      function scrollToTop(){
+        const c = document.querySelector('main').scrollTop;
+        if (c > 0) {
+          window.requestAnimationFrame(scrollToTop);
+          document.querySelector('main').scrollTo(0, c - c / 4);
+        }
+      };
       function loader() {
         registerClickListener();
       }
@@ -53,6 +60,9 @@
                 document.body.removeChild(tst);
               },300);
             },1700);
+          }
+          else if (event.target.classList.contains('scroll-to-top')){
+            scrollToTop();
           }
         }, false);
       }
