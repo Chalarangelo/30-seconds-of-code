@@ -1,0 +1,1 @@
+module.exports = val => typeof val === 'number';

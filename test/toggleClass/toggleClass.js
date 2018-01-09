@@ -1,0 +1,1 @@
+module.exports = (el, className) => el.classList.toggle(className);

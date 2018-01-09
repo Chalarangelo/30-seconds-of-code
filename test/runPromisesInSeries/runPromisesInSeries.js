@@ -1,0 +1,1 @@
+module.exports = ps => ps.reduce((p, next) => p.then(next), Promise.resolve());
