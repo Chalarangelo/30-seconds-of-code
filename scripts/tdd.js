@@ -44,7 +44,7 @@ snippetFiles
     // Grab snippetData
     const fileData = fs.readFileSync(`${activeOrArchive}/${fileName}.md`, 'utf8');
     // Grab snippet Code blocks
-    const fileCode = fileData.slice(fileData.indexOf('```js'), fileData.lastIndexOf('```') + 3);
+    const fileCode = fileData.slice(fileData.search(/```\s*js/i), fileData.lastIndexOf('```') + 3);
     // Split code based on code markers
     const blockMarkers = fileCode
       .split('\n')
