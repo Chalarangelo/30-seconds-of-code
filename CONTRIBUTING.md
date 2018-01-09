@@ -4,9 +4,9 @@
 
 Here's what you can do to help:
 
-- [Open issues](https://github.com/kriadmin/30-seconds-of-code-python/issues/new) for things you want to see added or modified.
-- Be part of the discussion by helping out with [existing issues](https://github.com/kriadmin/30-seconds-of-code-python/issues) or talking on our [gitter channel](https://gitter.im/30-seconds-of-code-python/Lobby).
-- Submit [pull requests](https://github.com/kriadmin/30-seconds-of-code-python/pulls) with snippets you have created (see below for guidelines).
+- [Open issues](https://github.com/kriadmin/30-seconds-of-python-code/issues/new) for things you want to see added or modified.
+- Be part of the discussion by helping out with [existing issues](https://github.com/kriadmin/30-seconds-of-python-code/issues) or talking on our [gitter channel](https://gitter.im/30-seconds-of-python-code/Lobby).
+- Submit [pull requests](https://github.com/kriadmin/30-seconds-of-python-code/pulls) with snippets you have created (see below for guidelines).
 - Fix typos in existing snippets, improve snippet descriptions and explanations or provide better examples.
 
 ### Snippet submission and Pull request guidelines
@@ -24,7 +24,7 @@ Here's what you can do to help:
 - **Snippets _CAN NOT_ use any external modules**. Only the modules and function inbuilt in `python 3.6` shall be used.
 - **Snippet code** must be enclosed inside ` ```python ` and ` ``` `.
   - Remember to start your snippet's code on a new line below the opening backticks.
-  - Please follow [This Style Guide](https://www.python.org/dev/peps/pep-0008/) for your code.
+  - Please follow [This Style Guide](https://www.python.org/dev/peps/pep-0008/) for your code.(Though it doen't matter much as your code is automatically prettified)
   - Try to keep your snippets' code short and to the point. Use modern techniques and features. Make sure to test your code before submitting.
   - All snippets must be followed by one (more if necessary) test case after the code, in a new block enclosed inside ` ```python ` and ` ``` `. The syntax for this is `myFunction('testInput') # 'testOutput'`. Use multiline examples only if necessary.
   - Try to make your function name unique, so that it does not conflict with existing snippets.
