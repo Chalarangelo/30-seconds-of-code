@@ -10,7 +10,6 @@ const chalk = require('chalk');
 const SNIPPETS_PATH = './snippets';
 const SNIPPETS_ARCHIVE_PATH = './snippets_archive';
 const STATIC_PARTS_PATH = './static-parts';
-const snippets = {};
 // Load helper functions (these are from existing snippets in 30 seconds of code!)
 const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
 if(isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
@@ -20,6 +19,7 @@ if(isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE
 if(isTravisCI() && (process.env['TRAVIS_EVENT_TYPE'] === 'cron' || process.env['TRAVIS_EVENT_TYPE'] === 'api')){
   console.log(`${chalk.green('ARCHIVE')} Cron job or custom build, building archive README!`);
   console.time('Builder');
+  let snippets = {};
   // Synchronously read all snippets from snippets_archive folder and sort them as necessary (case-insensitive)
   try {
     const snippetFilenames = fs
@@ -37,15 +37,15 @@ if(isTravisCI() && (process.env['TRAVIS_EVENT_TYPE'] === 'cron' || process.env['
     // Add the start static part
     let output = `![Logo](/logo.png)
 
-# 30 seconds of code
+# Snippets Archive
 
-These snippets , while useful and interesting, didn\'t quite make it into the repository due to either having very specific use-cases or being outdated. However we felt like they might still be useful to some readers, so here they are.
+These snippets, while useful and interesting, didn\'t quite make it into the repository due to either having very specific use-cases or being outdated. However we felt like they might still be useful to some readers, so here they are.
 
 ## Table of Contents
 
 `
     for(const snippet of Object.entries(snippets))
-      output += `* [\`${snippet[0]}\`](#${snippet[0].toLowerCase()}\n`;
+      output += `* [\`${snippet[0]}\`](#${snippet[0].toLowerCase()})\n`;
     output += '\n---\n';
     for(const snippet of Object.entries(snippets)){
       let data = snippet[1];
@@ -67,8 +67,8 @@ These snippets , while useful and interesting, didn\'t quite make it into the re
 
   console.log(`${chalk.green('SUCCESS!')} README file generated for snippets archive!`);
   console.timeEnd('Builder');
-  process.exit(0);
 }
+const snippets = {};
 const EMOJIS = {
   adapter: '🔌',
   array: '📚',
