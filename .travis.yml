@@ -8,6 +8,7 @@ script:
     python scripts/pretty.py
     python scripts/readme.py
 after_success:
+-   stat .git
 -   ls
 -   pwd
 -   chmod +x .travis/push.sh
