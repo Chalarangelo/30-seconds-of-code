@@ -1274,7 +1274,7 @@ const partition = (arr, fn) =>
 <summary>Examples</summary>
 
 ```js
-var users = [{ user: 'barney', age: 36, active: false }, { user: 'fred', age: 40, active: true }];
+const users = [{ user: 'barney', age: 36, active: false }, { user: 'fred', age: 40, active: true }];
 partition(users, o => o.active); // [[{ 'user': 'fred',    'age': 40, 'active': true }],[{ 'user': 'barney',  'age': 36, 'active': false }]]
 ```
 
@@ -3311,7 +3311,7 @@ const luhnCheck = num => {
 
 ```js
 luhnCheck('4485275742308327'); // true
-luhnCheck(6011329933655299); //  true
+luhnCheck(6011329933655299); //  false
 luhnCheck(123456789); // false
 ```
 
@@ -3508,7 +3508,7 @@ const sdbm = str => {
 <summary>Examples</summary>
 
 ```js
-console.log(sdbm('name')); // -3521204949
+sdbm('name'); // -3521204949
 ```
 
 </details>
@@ -3910,7 +3910,7 @@ const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
 <summary>Examples</summary>
 
 ```js
-objectToPairs({ a: 1, b: 2 }); // [['a',1],['b',2]])
+objectToPairs({ a: 1, b: 2 }); // [['a',1],['b',2]]
 ```
 
 </details>
@@ -4340,7 +4340,7 @@ const mask = (cc, num = 4, mask = '*') =>
 ```js
 mask(1234567890); // '******7890'
 mask(1234567890, 3); // '*******890'
-mask(1234567890, -4, '$'); // '1234$$$$$$'
+mask(1234567890, -4, '$'); // '$$$$567890'
 ```
 
 </details>
@@ -4476,7 +4476,7 @@ const splitLines = str => str.split(/\r?\n/);
 <summary>Examples</summary>
 
 ```js
-splitLines('This\nis a\nmultiline\nstring.\n'); // ['This', 'is a', 'multiline', 'string' , '']
+splitLines('This\nis a\nmultiline\nstring.\n'); // ['This', 'is a', 'multiline', 'string.' , '']
 ```
 
 </details>
@@ -4830,7 +4830,7 @@ isNumber(1); // true
 
 ### isPrimitive
 
-Returns a boolean determining if the supplied value is primitive or not.
+Returns a boolean determining if the passed value is primitive or not.
 
 Use `Array.includes()` on an array of type strings which are not primitive,
 supplying the type using `typeof`.
@@ -5155,9 +5155,9 @@ const prettyBytes = (num, precision = 3, addSpace = true) => {
 <summary>Examples</summary>
 
 ```js
-prettyBytes(1000); // 1 KB
-prettyBytes(-27145424323.5821, 5); // -27.145 GB
-prettyBytes(123456789, 3, false); // 123MB
+prettyBytes(1000); // "1 KB"
+prettyBytes(-27145424323.5821, 5); // "-27.145 GB"
+prettyBytes(123456789, 3, false); // "123MB"
 ```
 
 </details>
@@ -5251,7 +5251,7 @@ const toDecimalMark = num => num.toLocaleString('en-US');
 <summary>Examples</summary>
 
 ```js
-toDecimalMark(12305030388.9087); // "12,305,030,388.9087"
+toDecimalMark(12305030388.9087); // "12,305,030,388.909"
 ```
 
 </details>
