@@ -1,4 +1,4 @@
-module.exports = n =>
+module.exports = factorial = n =>
 n < 0
 ? (() => {
 throw new TypeError('Negative numbers are not allowed!');

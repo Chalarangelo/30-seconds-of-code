@@ -1,4 +1,4 @@
-module.exports = str =>
+module.exports = escapeHTML = str =>
 str.replace(
 /[&<>'"]/g,
 tag =>

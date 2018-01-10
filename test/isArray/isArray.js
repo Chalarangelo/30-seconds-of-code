@@ -1,1 +1,1 @@
-module.exports = val => Array.isArray(val);
+module.exports = isArray = val => Array.isArray(val);

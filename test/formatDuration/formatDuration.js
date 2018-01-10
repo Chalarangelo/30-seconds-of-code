@@ -1,4 +1,4 @@
-module.exports = ms => {
+module.exports = formatDuration = ms => {
 if (ms < 0) ms = -ms;
 const time = {
 day: Math.floor(ms / 86400000),

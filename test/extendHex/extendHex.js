@@ -1,4 +1,4 @@
-module.exports = shortHex =>
+module.exports = extendHex = shortHex =>
 '#' +
 shortHex
 .slice(shortHex.startsWith('#') ? 1 : 0)

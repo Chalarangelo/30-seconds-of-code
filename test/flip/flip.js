@@ -1,1 +1,1 @@
-module.exports = fn => (...args) => fn(args.pop(), ...args);
+module.exports = flip = fn => (...args) => fn(args.pop(), ...args);

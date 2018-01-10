@@ -1,4 +1,4 @@
-module.exports = time => {
+module.exports = toEnglishDate = time => {
 try {
 return new Date(time)
 .toISOString()
