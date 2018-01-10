@@ -7,17 +7,17 @@ Here's what you can do to help:
 - [Open issues](https://github.com/Chalarangelo/30-seconds-of-code/issues/new) for things you want to see added or modified.
 - Be part of the discussion by helping out with [existing issues](https://github.com/Chalarangelo/30-seconds-of-code/issues) or talking on our [gitter channel](https://gitter.im/30-seconds-of-code/Lobby).
 - Submit [pull requests](https://github.com/Chalarangelo/30-seconds-of-code/pulls) with snippets you have created (see below for guidelines).
-- Tag uncategorized snippets by running `npm run tagger` and adding the appropriate tag next to the script name in `tag_database`.
+- Tag uncategorized snippets by running `npm run tagger` and adding the appropriate tags next to the script name in `tag_database`.
 - Fix typos in existing snippets, improve snippet descriptions and explanations or provide better examples.
 
 ### Snippet submission and Pull request guidelines
 
-- **DO NOT MODIFY THE README.md FILE!** Make changes to individual snippet files. The `travis_ci` will automatically build the `README.md` file when your pull request is merged.
-- **DO NOT MODIFY THE index.html FILE!** Make changes to individual snippet files. The `travis_ci` will automatically build the `index.html` file when your pull request is merged.
+- **DO NOT MODIFY THE README.md FILE!** Make changes to individual snippet files. **Travis CI** will automatically build the `README.md` file when your pull request is merged.
+- **DO NOT MODIFY THE index.html FILE!** Make changes to individual snippet files. **Travis CI** will automatically build the `index.html` file when your pull request is merged.
 - **Snippet filenames** must correspond to the title of the snippet. For example, if your snippet is titled `### awesomeSnippet` the filename should be `awesomeSnippet.md`.
   - Use `camelCase`, not `kebab-case` or `snake_case`.
   - Avoid capitalization of words, except if the whole word is capitalized (e.g. `URL` should be capitalized in the filename and the snippet title).
-- **Snippet titles** should have be the same as the name of the function that is present in the snippet.
+- **Snippet titles** should be the same as the name of the function that is present in the snippet.
   - All snippet titles must be prefixed with `###` and be at the very first line of your snippet.
   - Snippet titles must be unique (although if you cannot find a better title, just add some placeholder at the end of the filename and title and we will figure it out).
   - Follow snippet titles with an empty line.
@@ -49,13 +49,13 @@ Here's what you can do to help:
 - Try to give meaningful names to variables. For example use `letter`, instead of `lt`. Some exceptions to convention are:
   - `arr` for arrays (usually as the snippet function's argument).
   - `str` for strings.
-  - `n` for a numeric value (usually as the snippet function's argument).
+  - `num` or `n` for a numeric value (usually as the snippet function's argument).
   - `el` for DOM elements (usually as the snippet function's argument).
   - `val` or `v` for value (usually when iterating a list, mapping, sorting etc.).
   - `acc` for accumulators in `Array.reduce()`.
   - `(a,b)` for the two values compared when using `Array.sort()`.
   - `i` for indexes.
-  - `func` for function arguments.
+  - `fn` for function arguments.
   - `nums` for arrays of numbers.
 - Use `()` if your function takes no arguments.
 - Use `_` if an argument inside some function (e.g. `Array.reduce()`) is not used anywhere in your code.
