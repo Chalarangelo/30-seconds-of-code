@@ -62,6 +62,8 @@ hasFlags:node
 head:array
 hexToRGB:utility,string,math,advanced
 hide:browser,css
+httpGet:utility,url,browser
+httpPost:utility,url,browser
 httpsRedirect:browser,url
 indexOfAll:array
 initial:array
