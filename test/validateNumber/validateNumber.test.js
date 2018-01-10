@@ -5,6 +5,7 @@ test('Testing validateNumber', (t) => {
 	//For more information on all the methods supported by tape
 	//Please go to https://github.com/substack/tape
 	t.true(typeof validateNumber === 'function', 'validateNumber is a Function');
+	t.equal(validateNumber(9), true, '9 is a number');
 	//t.deepEqual(validateNumber(args..), 'Expected');
 	//t.equal(validateNumber(args..), 'Expected');
 	//t.false(validateNumber(args..), 'Expected');
