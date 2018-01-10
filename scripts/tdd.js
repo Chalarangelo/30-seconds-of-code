@@ -1,6 +1,6 @@
 /*
   This is the tdd script that creates & updates your TDD environment .
-  Run using `npm run tagger`.
+  Run using `npm run tdd`.
 */
 
 // Load modules
