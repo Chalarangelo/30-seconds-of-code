@@ -7,7 +7,8 @@ test('Testing zip', (t) => {
 	t.true(typeof zip === 'function', 'zip is a Function');
 	t.deepEqual(zip(['a', 'b'], [1, 2], [true, false]), [['a', 1, true], ['b', 2, false]], 'Object was zipped');
 	t.deepEqual(zip(['a'], [1, 2], [true, false]), [['a', 1, true], [undefined, 2, false]], 'Object was zipped');
-	//t.equal(zip(args..), 'Expected');
+	t.true(Array.isArray(zip(['a', 'b'], [1, 2], [true, false])), 'zip returns an Array');
+	t.true(Array.isArray(zip(['a'], [1, 2], [true, false])), 'zip returns an Array');
 	//t.false(zip(args..), 'Expected');
 	//t.throws(zip(args..), 'Expected');
 	t.end();
