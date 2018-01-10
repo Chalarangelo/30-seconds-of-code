@@ -4677,7 +4677,7 @@ const getType = v =>
 <summary>Examples</summary>
 
 ```js
-getType(new Set([1, 2, 3])); // 'Set'
+getType(new Set([1, 2, 3])); // 'set'
 ```
 
 </details>
