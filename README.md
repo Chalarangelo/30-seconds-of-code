@@ -5201,6 +5201,7 @@ const httpPost = (url, callback, data = null, err = console.error) => {
 
 ```js
 
+
 const newPost = {
   "userId": 1,
   "id": 1337,
@@ -5445,4 +5446,3 @@ yesNo('Foo', true); // true
 ## Credits
 
 *Icons made by [Smashicons](https://www.flaticon.com/authors/smashicons) from [www.flaticon.com](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).*
-
