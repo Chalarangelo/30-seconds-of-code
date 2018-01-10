@@ -1,1 +1,1 @@
-module.exports = (...el) => [...el].forEach(e => (e.style.display = ''));
+module.exports = show = (...el) => [...el].forEach(e => (e.style.display = ''));

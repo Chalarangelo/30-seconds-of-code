@@ -1,4 +1,4 @@
-module.exports = (arr, pullArr) => {
+module.exports = pullAtIndex = (arr, pullArr) => {
 let removed = [];
 let pulled = arr
 .map((v, i) => (pullArr.includes(i) ? removed.push(v) : v))

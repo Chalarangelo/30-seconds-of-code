@@ -1,1 +1,1 @@
-module.exports = str => (str.match(/[aeiou]/gi) || []).length;
+module.exports = countVowels = str => (str.match(/[aeiou]/gi) || []).length;

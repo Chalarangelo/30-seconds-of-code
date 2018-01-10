@@ -1,4 +1,4 @@
-module.exports = str => {
+module.exports = toCamelCase = str => {
 let s =
 str &&
 str

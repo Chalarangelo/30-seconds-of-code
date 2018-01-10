@@ -1,1 +1,1 @@
-module.exports = obj => Object.keys(obj).map(k => [k, obj[k]]);
+module.exports = objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);

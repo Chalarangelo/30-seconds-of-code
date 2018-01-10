@@ -1,4 +1,4 @@
-module.exports = (num, divisor) => {
+module.exports = howManyTimes = (num, divisor) => {
 if (divisor === 1 || divisor === -1) return Infinity;
 if (divisor === 0) return 0;
 let i = 0;

@@ -1,4 +1,4 @@
-module.exports = str => {
+module.exports = anagrams = str => {
 if (str.length <= 2) return str.length === 2 ? [str, str[1] + str[0]] : [str];
 return str
 .split('')

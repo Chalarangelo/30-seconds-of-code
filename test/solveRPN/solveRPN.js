@@ -1,4 +1,4 @@
-module.exports = rpn => {
+module.exports = solveRPN = rpn => {
 const OPERATORS = {
 '*': (a, b) => a * b,
 '+': (a, b) => a + b,

@@ -1,1 +1,1 @@
-module.exports = fn => (console.debug(fn.name), fn);
+module.exports = functionName = fn => (console.debug(fn.name), fn);
