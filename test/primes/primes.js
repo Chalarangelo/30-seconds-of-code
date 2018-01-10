@@ -1,4 +1,4 @@
-module.exports = num => {
+module.exports = primes = num => {
 let arr = Array.from({ length: num - 1 }).map((x, i) => i + 2),
 sqroot = Math.floor(Math.sqrt(num)),
 numsTillSqroot = Array.from({ length: sqroot - 1 }).map((x, i) => i + 2);

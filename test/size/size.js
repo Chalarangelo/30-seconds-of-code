@@ -1,4 +1,4 @@
-module.exports = val =>
+module.exports = size = val =>
 Array.isArray(val)
 ? val.length
 : val && typeof val === 'object'

@@ -1,1 +1,1 @@
-module.exports = str => [...str].reverse().join('');
+module.exports = reverseString = str => [...str].reverse().join('');

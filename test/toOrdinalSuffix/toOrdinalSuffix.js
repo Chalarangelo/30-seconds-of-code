@@ -1,4 +1,4 @@
-module.exports = num => {
+module.exports = toOrdinalSuffix = num => {
 const int = parseInt(num),
 digits = [int % 10, int % 100],
 ordinals = ['st', 'nd', 'rd', 'th'],

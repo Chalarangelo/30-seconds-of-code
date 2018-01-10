@@ -1,4 +1,4 @@
-module.exports = str =>
+module.exports = unescapeHTML = str =>
 str.replace(
 /&amp;|&lt;|&gt;|&#39;|&quot;/g,
 tag =>

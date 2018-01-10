@@ -1,1 +1,1 @@
-module.exports = val => typeof val === 'boolean';
+module.exports = isBoolean = val => typeof val === 'boolean';

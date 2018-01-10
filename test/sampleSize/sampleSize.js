@@ -1,4 +1,4 @@
-module.exports = ([...arr], n = 1) => {
+module.exports = sampleSize = ([...arr], n = 1) => {
 let m = arr.length;
 while (m) {
 const i = Math.floor(Math.random() * m--);

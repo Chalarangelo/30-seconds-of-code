@@ -1,1 +1,1 @@
-module.exports = valid => (...args) => args.find(valid);
+module.exports = coalesceFactory = valid => (...args) => args.find(valid);

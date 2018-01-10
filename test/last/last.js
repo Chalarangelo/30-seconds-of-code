@@ -1,1 +1,1 @@
-module.exports = arr => arr[arr.length - 1];
+module.exports = last = arr => arr[arr.length - 1];

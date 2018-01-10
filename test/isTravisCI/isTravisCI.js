@@ -1,1 +1,1 @@
-module.exports = () => 'TRAVIS' in process.env && 'CI' in process.env;
+module.exports = isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;

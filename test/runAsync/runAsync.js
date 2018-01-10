@@ -1,4 +1,4 @@
-module.exports = fn => {
+module.exports = runAsync = fn => {
 const blob = `var fn = ${fn.toString()}; postMessage(fn());`;
 const worker = new Worker(
 URL.createObjectURL(new Blob([blob]), {

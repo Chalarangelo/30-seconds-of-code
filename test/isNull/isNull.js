@@ -1,1 +1,1 @@
-module.exports = val => val === null;
+module.exports = isNull = val => val === null;

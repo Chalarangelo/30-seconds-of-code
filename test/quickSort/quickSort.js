@@ -1,4 +1,4 @@
-module.exports = ([n, ...nums], desc) =>
+module.exports = quickSort = ([n, ...nums], desc) =>
 isNaN(n)
 ? []
 : [
