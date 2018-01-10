@@ -1,1 +1,1 @@
-module.exports = arr => [].concat(...arr);
+module.exports = flatten = arr => [].concat(...arr);

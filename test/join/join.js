@@ -1,4 +1,4 @@
-module.exports = (arr, separator = ',', end = separator) =>
+module.exports = join = (arr, separator = ',', end = separator) =>
 arr.reduce(
 (acc, val, i) =>
 i == arr.length - 2

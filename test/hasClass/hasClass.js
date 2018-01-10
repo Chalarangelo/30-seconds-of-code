@@ -1,1 +1,1 @@
-module.exports = (el, className) => el.classList.contains(className);
+module.exports = hasClass = (el, className) => el.classList.contains(className);

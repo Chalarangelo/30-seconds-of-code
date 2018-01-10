@@ -1,4 +1,4 @@
-module.exports = () => {
+module.exports = scrollToTop = () => {
 const c = document.documentElement.scrollTop || document.body.scrollTop;
 if (c > 0) {
 window.requestAnimationFrame(scrollToTop);

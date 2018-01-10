@@ -1,4 +1,4 @@
-module.exports = (obj, keysToKeep = [], childIndicator) => {
+module.exports = cleanObj = (obj, keysToKeep = [], childIndicator) => {
 Object.keys(obj).forEach(key => {
 if (key === childIndicator) {
 cleanObj(obj[key], keysToKeep, childIndicator);

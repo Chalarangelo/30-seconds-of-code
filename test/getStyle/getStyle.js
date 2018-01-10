@@ -1,1 +1,1 @@
-module.exports = (el, ruleName) => getComputedStyle(el)[ruleName];
+module.exports = getStyle = (el, ruleName) => getComputedStyle(el)[ruleName];

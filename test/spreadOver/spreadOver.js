@@ -1,1 +1,1 @@
-module.exports = fn => argsArr => fn(...argsArr);
+module.exports = spreadOver = fn => argsArr => fn(...argsArr);

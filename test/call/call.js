@@ -1,1 +1,1 @@
-module.exports = (key, ...args) => context => context[key](...args);
+module.exports = call = (key, ...args) => context => context[key](...args);

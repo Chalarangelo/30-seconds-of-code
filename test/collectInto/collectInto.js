@@ -1,1 +1,1 @@
-module.exports = fn => (...args) => fn(args);
+module.exports = collectInto = fn => (...args) => fn(args);

@@ -1,1 +1,1 @@
-module.exports = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+module.exports = randomIntegerInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;

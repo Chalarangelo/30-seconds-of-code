@@ -1,4 +1,4 @@
-module.exports = str => {
+module.exports = sdbm = str => {
 let arr = str.split('');
 return arr.reduce(
 (hashCode, currentVal) =>
