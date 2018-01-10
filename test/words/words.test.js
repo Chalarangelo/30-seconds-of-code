@@ -5,6 +5,7 @@ test('Testing words', (t) => {
 	//For more information on all the methods supported by tape
 	//Please go to https://github.com/substack/tape
 	t.true(typeof words === 'function', 'words is a Function');
+	// t.equal(words('I love javaScript!!'), ["I", "love", "javaScript"], "Returns words from a string");
 	//t.deepEqual(words(args..), 'Expected');
 	//t.equal(words(args..), 'Expected');
 	//t.false(words(args..), 'Expected');
