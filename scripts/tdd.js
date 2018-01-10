@@ -62,7 +62,7 @@ snippetFiles
       .filter((_, i) => blockMarkers[2] < i && i < blockMarkers[3]);
 
     // Export template for snippetName.js which takes into account snippet name.length when generating snippetName.js file
-    const exportFile = `module.exports = ${fileFunction.join('\n').slice(9 + fileName.length)}`;
+    const exportFile = `module.exports = ${fileName} = ${fileFunction.join('\n').slice(9 + fileName.length)}`;
 
     // Export template for snippetName.test.js which generates a example test & other information 
     const exportTest = [
