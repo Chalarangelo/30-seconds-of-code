@@ -14,9 +14,8 @@ test('Testing pullAtIndex', (t) => {
 	pullAtIndex(myArray2, [0, 2]);
 	t.deepEqual(myArray2, [ 'b', 'd' ], 'a & c was pulled from myArray2');
 
-	//t.deepEqual(pullAtIndex(args..), 'Expected');
-	//t.deepEqual(pullAtIndex(args..), 'Expected');
-	//t.equal(pullAtIndex(args..), 'Expected');
+	t.equal(Array.isArray(myArray1), 'myArray1 is still an Array');
+	t.equal(Array.isArray(myArray2), 'myArray2 is still an Array');
 	//t.false(pullAtIndex(args..), 'Expected');
 	//t.throws(pullAtIndex(args..), 'Expected');
 	t.end();
