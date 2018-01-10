@@ -28,7 +28,7 @@ const newPost = {
   "body": "bar bar bar"
 };
 const data = JSON.stringify(newPost);
-httpPost('https://website.com/posts', console.log, data; /*
+httpPost('https://jsonplaceholder.typicode.com/posts', console.log, data; /*
 Logs: {
   "userId": 1,
   "id": 1337,
