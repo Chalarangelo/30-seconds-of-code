@@ -7,7 +7,6 @@ test('Testing minN', (t) => {
 	t.true(typeof minN === 'function', 'minN is a Function');
 	t.deepEqual(minN([1, 2, 3]), [1], "Returns the n minimum elements from the provided array");
 	t.deepEqual(minN([1, 2, 3], 2), [1, 2], "Returns the n minimum elements from the provided array");
-
 	//t.equal(minN(args..), 'Expected');
 	//t.false(minN(args..), 'Expected');
 	//t.throws(minN(args..), 'Expected');
