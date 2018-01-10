@@ -330,6 +330,8 @@ average(1, 2, 3);
 * [`extendHex`](#extendhex)
 * [`getURLParameters`](#geturlparameters)
 * [`hexToRGB`](#hextorgb-)
+* [`httpGet`](#httpget)
+* [`httpPost`](#httppost)
 * [`prettyBytes`](#prettybytes)
 * [`randomHexColorCode`](#randomhexcolorcode)
 * [`RGBToHex`](#rgbtohex)
@@ -5124,6 +5126,96 @@ const hexToRGB = hex => {
 hexToRGB('#27ae60ff'); // 'rgba(39, 174, 96, 255)'
 hexToRGB('27ae60'); // 'rgb(39, 174, 96)'
 hexToRGB('#fff'); // 'rgb(255, 255, 255)'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### httpGet
+
+Makes a `GET` request to the passed URL.
+
+Use [`XMLHttpRequest`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest) web api to make a `get` request to the given `url`.
+Handle the `onload` event, by calling the given `callback` the `responseText`.
+Handle the `onerror` event, by running the provided `err` function.
+Omit the third argument, `err`, to log errors to the console's `error` stream by default.
+
+```js
+const httpGet = (url, callback, err = console.error) => {
+  const request = new XMLHttpRequest();
+  request.open('GET', url, true);
+  request.onload = () => callback(request.responseText);
+  request.onerror = () => err(request);
+  request.send();
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+httpGet(
+  'https://jsonplaceholder.typicode.com/posts/1',
+  console.log
+); /* 
+Logs: {
+  "userId": 1,
+  "id": 1,
+  "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+  "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+}
+*/
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### httpPost
+
+Makes a `POST` request to the passed URL.
+
+Use [`XMLHttpRequest`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest) web api to make a `post` request to the given `url`.
+Set the value of an `HTTP` request header with `setRequestHeader` method.
+Handle the `onload` event, by calling the given `callback` the `responseText`.
+Handle the `onerror` event, by running the provided `err` function.
+Omit the third argument, `data`, to send no data to the provided `url`.
+Omit the fourth argument, `err`, to log errors to the console's `error` stream by default.
+
+```js
+const httpPost = (url, callback, data = null, err = console.error) => {
+  const request = new XMLHttpRequest();
+  request.open('POST', url, true);
+  request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+  request.onload = () => callback(request.responseText);
+  request.onerror = () => err(request);
+  request.send(data);
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+
+const newPost = {
+  "userId": 1,
+  "id": 1337,
+  "title": "Foo",
+  "body": "bar bar bar"
+};
+const data = JSON.stringify(newPost);
+httpPost('https://jsonplaceholder.typicode.com/posts', console.log, data; /*
+Logs: {
+  "userId": 1,
+  "id": 1337,
+  "title": "Foo",
+  "body": "bar bar bar"
+}
+*/
 ```
 
 </details>
