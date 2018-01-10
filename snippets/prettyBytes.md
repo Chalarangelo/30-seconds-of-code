@@ -19,7 +19,7 @@ const prettyBytes = (num, precision = 3, addSpace = true) => {
 ```
 
 ```js
-prettyBytes(1000); // 1 KB
-prettyBytes(-27145424323.5821, 5); // -27.145 GB
-prettyBytes(123456789, 3, false); // 123MB
+prettyBytes(1000); // "1 KB"
+prettyBytes(-27145424323.5821, 5); // "-27.145 GB"
+prettyBytes(123456789, 3, false); // "123MB"
 ```
