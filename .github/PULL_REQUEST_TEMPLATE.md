@@ -13,6 +13,7 @@
 - [ ] Website
 - [ ] Snippets
 - [ ] General / Things regarding the repository (like CI Integration)
+- [ ] Tests
 
 ## Types of changes
 - [ ] Bug fix (non-breaking change which fixes an issue)
