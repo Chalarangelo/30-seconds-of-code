@@ -1,4 +1,4 @@
-module.exports = (arr, ...args) => {
+module.exports = pull = (arr, ...args) => {
 let argState = Array.isArray(args[0]) ? args[0] : args;
 let pulled = arr.filter((v, i) => !argState.includes(v));
 arr.length = 0;

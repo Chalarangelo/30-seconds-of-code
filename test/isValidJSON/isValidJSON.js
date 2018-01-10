@@ -1,4 +1,4 @@
-module.exports = obj => {
+module.exports = isValidJSON = obj => {
 try {
 JSON.parse(obj);
 return true;

@@ -1,4 +1,4 @@
-module.exports = (arr, callback) =>
+module.exports = forEachRight = (arr, callback) =>
 arr
 .slice(0)
 .reverse()

@@ -1,4 +1,4 @@
-module.exports = fn => {
+module.exports = once = fn => {
 let called = false;
 return function(...args) {
 if (called) return;

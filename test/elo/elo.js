@@ -1,4 +1,4 @@
-module.exports = ([...ratings], kFactor = 32, selfRating) => {
+module.exports = elo = ([...ratings], kFactor = 32, selfRating) => {
 const [a, b] = ratings;
 const expectedScore = (self, opponent) => 1 / (1 + 10 ** ((opponent - self) / 400));
 const newRating = (rating, i) =>

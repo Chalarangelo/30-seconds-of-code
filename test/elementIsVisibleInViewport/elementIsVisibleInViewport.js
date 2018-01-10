@@ -1,4 +1,4 @@
-module.exports = (el, partiallyVisible = false) => {
+module.exports = elementIsVisibleInViewport = (el, partiallyVisible = false) => {
 const { top, left, bottom, right } = el.getBoundingClientRect();
 const { innerHeight, innerWidth } = window;
 return partiallyVisible

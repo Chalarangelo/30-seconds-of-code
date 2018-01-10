@@ -1,4 +1,4 @@
-module.exports = callback => {
+module.exports = onUserInputChange = callback => {
 let type = 'mouse',
 lastTime = 0;
 const mousemoveHandler = () => {

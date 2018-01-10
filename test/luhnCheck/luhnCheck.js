@@ -1,4 +1,4 @@
-module.exports = num => {
+module.exports = luhnCheck = num => {
 let arr = (num + '')
 .split('')
 .reverse()

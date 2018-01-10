@@ -1,1 +1,1 @@
-module.exports = arr => [...new Set(arr)];
+module.exports = distinctValuesOfArray = arr => [...new Set(arr)];

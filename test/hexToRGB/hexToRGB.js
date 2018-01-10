@@ -1,4 +1,4 @@
-module.exports = hex => {
+module.exports = hexToRGB = hex => {
 let alpha = false,
 h = hex.slice(hex.startsWith('#') ? 1 : 0);
 if (h.length === 3) h = [...h].map(x => x + x).join('');

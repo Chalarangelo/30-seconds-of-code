@@ -1,2 +1,2 @@
-module.exports = ([first, ...rest], lowerRest = false) =>
+module.exports = capitalize = ([first, ...rest], lowerRest = false) =>
 first.toUpperCase() + (lowerRest ? rest.join('').toLowerCase() : rest.join(''));

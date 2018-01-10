@@ -1,4 +1,4 @@
-module.exports = val => {
+module.exports = isArrayLike = val => {
 try {
 return [...val], true;
 } catch (e) {
