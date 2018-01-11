@@ -99,6 +99,7 @@ average(1, 2, 3);
 * [`dropRight`](#dropright)
 * [`everyNth`](#everynth)
 * [`filterNonUnique`](#filternonunique)
+* [`findLast`](#findlast)
 * [`flatten`](#flatten)
 * [`forEachRight`](#foreachright)
 * [`groupBy`](#groupby)
@@ -792,6 +793,28 @@ const filterNonUnique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexO
 
 ```js
 filterNonUnique([1, 2, 2, 3, 4, 4, 5]); // [1,3,5]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### findLast
+
+Returns the last element for which the provided function returns a truthy value.
+
+Use `Array.filter()` to remove elements for which `fn` returns falsey values, `Array.slice(-1)` to get the last one.
+
+```js
+const findLast = (arr, fn) => arr.filter(fn).slice(-1);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+findLast([1, 2, 3, 4], n => n % 2 === 1); // 3
 ```
 
 </details>
@@ -5328,6 +5351,7 @@ const httpPost = (url, callback, data = null, err = console.error) => {
 <summary>Examples</summary>
 
 ```js
+
 
 
 
