@@ -7,7 +7,10 @@ test('Testing zipObject', (t) => {
 	t.true(typeof zipObject === 'function', 'zipObject is a Function');
 	t.deepEqual(zipObject(['a', 'b', 'c'], [1, 2]), {a: 1, b: 2, c: undefined}, 'Array was zipped to object');
 	t.deepEqual(zipObject(['a', 'b'], [1, 2, 3]), {a: 1, b: 2}, 'Array was zipped to object');
-	//t.equal(zipObject(args..), 'Expected');
+
+	const isObjectHard = (obj) => obj === Object(obj) && Object.prototype.toString.call(obj) !== '[object Array]';
+	t.true(isObjectHard(zipObject(['a', 'b', 'c'], [1, 2])), 'Hard type check that array was zipped to object');
+	t.true(isObjectHard(zipObject(['a', 'b'], [1, 2, 3])), 'Hard type check that array was zipped to object');
 	//t.false(zipObject(args..), 'Expected');
 	//t.throws(zipObject(args..), 'Expected');
 	t.end();
