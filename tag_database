@@ -84,6 +84,7 @@ isFunction:type,function
 isLowerCase:string,utility
 isNull:type
 isNumber:type,math
+isObject:type,object
 isPrime:math
 isPrimitive:type,function,array,string
 isPromiseLike:type,function,promise
