@@ -6,6 +6,7 @@ test('Testing flatten', (t) => {
 	//Please go to https://github.com/substack/tape
 	t.true(typeof flatten === 'function', 'flatten is a Function');
 	t.deepEqual(flatten([1, [2], 3, 4]), [1, 2, 3, 4], "Flattens an array");
+	t.deepEqual(flatten([1, [2, [3, [4, 5], 6], 7], 8], 2), [1, 2, 3, [4, 5], 6, 7, 8], "Flattens an array");
 	//t.deepEqual(flatten(args..), 'Expected');
 	//t.equal(flatten(args..), 'Expected');
 	//t.false(flatten(args..), 'Expected');
