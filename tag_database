@@ -51,6 +51,8 @@ forEachRight:array,function
 formatDuration:date,math,string,utility
 fromCamelCase:string
 functionName:function,utility
+functions:object,function
+functionsIn:object,function
 gcd:math,recursion
 geometricProgression:math
 getDaysDiffBetweenDates:date
