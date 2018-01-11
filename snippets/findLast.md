@@ -9,5 +9,5 @@ const findLast = (arr, fn) => arr.filter(fn).slice(-1);
 ```
 
 ```js
-findLast([1, 2, 3, 4], n => n % 2 === 1) // 3
+findLast([1, 2, 3, 4], n => n % 2 === 1); // 3
 ```
