@@ -7,13 +7,16 @@ Use `Array.reduce()` to create a new object with the same keys and mapped values
 
 ```js
 const mapValues = (obj, fn) =>
-  Object.keys(obj).reduce((acc,k) => {acc[k] = fn(obj[k], k, obj); return acc;},{});
+  Object.keys(obj).reduce((acc, k) => {
+    acc[k] = fn(obj[k], k, obj);
+    return acc;
+  }, {});
 ```
 
 ```js
 const users = {
-  'fred':    { 'user': 'fred',    'age': 40 },
-  'pebbles': { 'user': 'pebbles', 'age': 1 }
+  fred: { user: 'fred', age: 40 },
+  pebbles: { user: 'pebbles', age: 1 }
 };
 mapValues(users, u => u.age); // { fred: 40, pebbles: 1 }
 ```
