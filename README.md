@@ -261,6 +261,8 @@ average(1, 2, 3);
 <summary>View contents</summary>
 
 * [`cleanObj`](#cleanobj)
+* [`functions`](#functions)
+* [`functionsIn`](#functionsin)
 * [`invertKeyValues`](#invertkeyvalues)
 * [`lowercaseKeys`](#lowercasekeys)
 * [`mapKeys`](#mapkeys)
@@ -3922,6 +3924,63 @@ cleanObj(testObj, ['a'], 'children'); // { a: 1, children : { a: 1}}
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### functions
+
+Returns an array of function property names from own enumerable properties of object.
+
+Use `Object.keys(obj)` to iterate over the object's own properties, `Array.filter()` to keep only those that are functions.
+
+```js
+const functions = obj => Object.keys(obj).filter(key => typeof obj[key] === 'function');
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+function Foo() {
+  this.a = () => 1;
+  this.b = () => 2;
+}
+functions(new Foo()); // ['a', 'b']
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### functionName
+
+Returns an array of function property names from own and inherited enumerable properties of object.
+
+Use `Object.keys(obj)` and `Object.get.PrototypeOf(obj)` to iterate over the object's own and inherited properties, `Array.filter()` to keep only those that are functions.
+Use the spread operator (`...`) to combine all returned property names into one array.
+
+```js
+const functionsIn = obj =>
+  [...Object.keys(obj), ...Object.keys(Object.getPrototypeOf(obj))].filter(
+    key => typeof obj[key] === 'function'
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+function Foo() {
+  this.a = () => 1;
+  this.b = () => 2;
+}
+Foo.prototype.c = () => 3;
+functionsIn(new Foo()); // ['a', 'b', 'c']
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### invertKeyValues
 
 Inverts the key-value pairs of an object, without mutating it.
@@ -5412,6 +5471,7 @@ const httpPost = (url, callback, data = null, err = console.error) => {
 <summary>Examples</summary>
 
 ```js
+
 
 
 

@@ -7,7 +7,9 @@ Use the spread operator (`...`) to combine all returned property names into one 
 
 ```js
 const functionsIn = obj =>
-  [...Object.keys(obj), ...Object.keys(Object.getPrototypeOf(obj))].filter(key => typeof obj[key] === 'function');
+  [...Object.keys(obj), ...Object.keys(Object.getPrototypeOf(obj))].filter(
+    key => typeof obj[key] === 'function'
+  );
 ```
 
 ```js
@@ -16,5 +18,5 @@ function Foo() {
   this.b = () => 2;
 }
 Foo.prototype.c = () => 3;
-functionsIn(new Foo); // ['a', 'b', 'c']
+functionsIn(new Foo()); // ['a', 'b', 'c']
 ```
