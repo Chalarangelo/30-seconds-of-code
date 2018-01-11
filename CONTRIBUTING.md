@@ -1,4 +1,4 @@
-## Contributing
+![contribution guidelines](https://i.imgur.com/NddZff4.png)
 
 **30 seconds of code** is a community effort, so feel free to contribute in any way you can. Every contribution helps!
 
@@ -6,7 +6,7 @@ Here's what you can do to help:
 
 - [Open issues](https://github.com/Chalarangelo/30-seconds-of-code/issues/new) for things you want to see added or modified.
 - Be part of the discussion by helping out with [existing issues](https://github.com/Chalarangelo/30-seconds-of-code/issues) or talking on our [gitter channel](https://gitter.im/30-seconds-of-code/Lobby).
-- Submit [pull requests](https://github.com/Chalarangelo/30-seconds-of-code/pulls) with snippets you have created (see below for guidelines).
+- Submit [pull requests](https://github.com/Chalarangelo/30-seconds-of-code/pulls) with snippets and tests that you have created (see below for guidelines).
 - Tag uncategorized snippets by running `npm run tagger` and adding the appropriate tags next to the script name in `tag_database`.
 - Fix typos in existing snippets, improve snippet descriptions and explanations or provide better examples.
 
