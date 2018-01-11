@@ -1,0 +1,1 @@
+module.exports = isObject = obj => obj === Object(obj);
