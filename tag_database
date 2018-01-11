@@ -163,7 +163,6 @@ takeRight:array
 timeTaken:utility
 toCamelCase:string,regexp
 toDecimalMark:utility,math
-toEnglishDate:date,string
 toggleClass:browser
 toKebabCase:string,regexp
 tomorrow:date
