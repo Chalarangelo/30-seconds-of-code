@@ -103,7 +103,9 @@ lcm:math,recursion
 longestItem:array,string,utility
 lowercaseKeys:object
 luhnCheck:math,utility
+mapKeys:object,function
 mapObject:array,object
+mapValues:object,function
 mask:string,utility,regexp
 maxBy:math,array,function
 maxN:array,math
