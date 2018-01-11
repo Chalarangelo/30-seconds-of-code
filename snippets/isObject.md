@@ -2,6 +2,10 @@
 
 Returns a boolean determining if the passed value is an object or not.
 
+Uses the  `Object` constructor to create an object wrapper for the given value. 
+If the value is null or undefined, it will create and return an empty object
+otherwise, it will return an object of a type that corresponds to the given value.
+
 ```js
 const isObject = obj => obj === Object(obj);
 ```
