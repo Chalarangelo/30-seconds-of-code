@@ -277,6 +277,7 @@ average(1, 2, 3);
 * [`byteSize`](#bytesize)
 * [`capitalize`](#capitalize)
 * [`capitalizeEveryWord`](#capitalizeeveryword)
+* [`decapitalize`](#decapitalize)
 * [`escapeHTML`](#escapehtml)
 * [`escapeRegExp`](#escaperegexp)
 * [`fromCamelCase`](#fromcamelcase)
@@ -4139,6 +4140,31 @@ capitalizeEveryWord('hello world!'); // 'Hello World!'
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### decapitalize
+
+Decapitalizes the first letter of a string.
+
+Use array destructuring and `String.toLowerCase()` to decapitalize first letter, `...rest` to get array of characters after first letter and then `Array.join('')` to make it a string again.
+Omit the `upperRest` parameter to keep the rest of the string intact, or set it to `true` to convert to uppercase.
+
+```js
+const decapitalize = ([first, ...rest], upperRest = false) =>
+  first.toLowerCase() + (upperRest ? rest.join('').toUpperCase() : rest.join(''));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+decapitalize('FooBar'); // 'fooBar'
+decapitalize('FooBar', true); // 'fOOBAR'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### escapeHTML
 
 Escapes a string for use in HTML.
@@ -5174,6 +5200,7 @@ const httpPost = (url, callback, data = null, err = console.error) => {
 <summary>Examples</summary>
 
 ```js
+
 
 
 
