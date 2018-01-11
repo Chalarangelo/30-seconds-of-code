@@ -1,15 +1,16 @@
 ### select
 
-Retrieve a property indicated by the selector from an object.
+Retrieve a set of properties indicated by the given selectors from an object.
 
-If the property does not exists returns `undefined`.
+Use `Array.map()` for each selector, `String.split('.')` to split each selector and `Array.reduce()` to get the value indicated by it.
 
 ```js
-const select = (from, selector) =>
-  selector.split('.').reduce((prev, cur) => prev && prev[cur], from);
+const select = (from, ...selectors) =>
+  [...selectors].map(s => s.split('.').reduce((prev, cur) => prev && prev[cur], from));
 ```
 
 ```js
 const obj = { selector: { to: { val: 'val to select' } } };
-select(obj, 'selector.to.val'); // 'val to select'
+select(obj, 'selector.to.val'); // ['val to select']
+select(obj, 'selector.to.val', 'selector.to'); // ['val to select', { val: 'val to select' }]
 ```
