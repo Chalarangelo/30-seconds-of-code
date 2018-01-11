@@ -44,7 +44,6 @@ factorial:math,recursion
 fibonacci:math,array
 filterNonUnique:array
 flatten:array
-flattenDepth:array,recursion
 flip:adapter,function
 forEachRight:array,function
 formatDuration:date,math,string,utility
