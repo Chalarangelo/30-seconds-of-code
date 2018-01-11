@@ -9,5 +9,5 @@ const sumBy = (arr, fn) => arr.map(fn).reduce((acc, val) => acc + val, 0);
 ```
 
 ```js
-sumBy([{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }], o => o.n); // 20
+sumBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n); // 20
 ```

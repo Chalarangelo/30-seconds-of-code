@@ -206,6 +206,7 @@ average(1, 2, 3);
 <summary>View contents</summary>
 
 * [`average`](#average)
+* [`averageBy`](#averageby)
 * [`clampNumber`](#clampnumber)
 * [`digitize`](#digitize)
 * [`distance`](#distance)
@@ -221,7 +222,9 @@ average(1, 2, 3);
 * [`isPrime`](#isprime)
 * [`lcm`](#lcm)
 * [`luhnCheck`](#luhncheck)
+* [`maxBy`](#maxby)
 * [`median`](#median)
+* [`minBy`](#minby)
 * [`percentile`](#percentile)
 * [`powerset`](#powerset)
 * [`primes`](#primes)
@@ -231,6 +234,7 @@ average(1, 2, 3);
 * [`sdbm`](#sdbm)
 * [`standardDeviation`](#standarddeviation)
 * [`sum`](#sum)
+* [`sumBy`](#sumby)
 * [`sumPower`](#sumpower)
 * [`toSafeInteger`](#tosafeinteger)
 
@@ -2871,6 +2875,28 @@ average(1, 2, 3); // 2
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### averageBy
+
+Returns the average of an array, after mapping each element to a value using the provided function.
+
+Use `Array.map()` to map each element to the value returned by `fn`, `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`, divide by the `length` of the array.
+
+```js
+const averageBy = (arr, fn) => arr.map(fn).reduce((acc, val) => acc + val, 0) / arr.length;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+averageBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n); // 5
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### clampNumber
 
 Clamps `num` within the inclusive range specified by the boundary values `a` and `b`.
@@ -3297,6 +3323,28 @@ luhnCheck(123456789); // false
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### maxBy
+
+Returns the maximum value of an array, after mapping each element to a value using the provided function.
+
+Use `Array.map()` to map each element to the value returned by `fn`, `Math.max()` to get the maximum value.
+
+```js
+const maxBy = (arr, fn) => Math.max(...arr.map(fn));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+maxBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n); // 8
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### median
 
 Returns the median of an array of numbers.
@@ -3317,6 +3365,28 @@ const median = arr => {
 
 ```js
 median([5, 6, 50, 1, -5]); // 5
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### minBy
+
+Returns the minimum value of an array, after mapping each element to a value using the provided function.
+
+Use `Array.map()` to map each element to the value returned by `fn`, `Math.min()` to get the maximum value.
+
+```js
+const minBy = (arr, fn) => Math.min(...arr.map(fn));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+minBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n); // 8
 ```
 
 </details>
@@ -3539,6 +3609,28 @@ const sum = (...arr) => [...arr].reduce((acc, val) => acc + val, 0);
 
 ```js
 sum(...[1, 2, 3, 4]); // 10
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### sumBy
+
+Returns the sum of an array, after mapping each element to a value using the provided function.
+
+Use `Array.map()` to map each element to the value returned by `fn`, `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`.
+
+```js
+const sumBy = (arr, fn) => arr.map(fn).reduce((acc, val) => acc + val, 0);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+sumBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n); // 20
 ```
 
 </details>
@@ -5200,6 +5292,8 @@ const httpPost = (url, callback, data = null, err = console.error) => {
 <summary>Examples</summary>
 
 ```js
+
+
 
 
 
