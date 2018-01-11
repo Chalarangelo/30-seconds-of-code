@@ -99,7 +99,6 @@ average(1, 2, 3);
 * [`everyNth`](#everynth)
 * [`filterNonUnique`](#filternonunique)
 * [`flatten`](#flatten)
-* [`flattenDepth`](#flattendepth)
 * [`forEachRight`](#foreachright)
 * [`groupBy`](#groupby)
 * [`head`](#head)
@@ -792,34 +791,6 @@ const flatten = (arr, depth = 1) =>
 ```js
 flatten([1, [2], 3, 4]); // [1, 2, 3, 4]
 flatten([1, [2, [3, [4, 5], 6], 7], 8], 2); // [1, 2, 3, [4, 5], 6, 7, 8]
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### flattenDepth
-
-Flattens an array up to the specified depth.
-
-Use recursion, decrementing `depth` by 1 for each level of depth.
-Use `Array.reduce()` and `Array.concat()` to merge elements or arrays.
-Base case, for `depth` equal to `1` stops recursion.
-Omit the second element, `depth` to flatten only to a depth of `1` (single flatten).
-
-```js
-const flattenDepth = (arr, depth = 1) =>
-  depth != 1
-    ? arr.reduce((a, v) => a.concat(Array.isArray(v) ? flattenDepth(v, depth - 1) : v), [])
-    : arr.reduce((a, v) => a.concat(v), []);
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-flattenDepth([1, [2], 3, 4]); // [1,2,3,4]
 ```
 
 </details>
@@ -5292,6 +5263,7 @@ const httpPost = (url, callback, data = null, err = console.error) => {
 <summary>Examples</summary>
 
 ```js
+
 
 
 
