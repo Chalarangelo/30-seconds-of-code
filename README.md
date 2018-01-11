@@ -89,6 +89,7 @@ average(1, 2, 3);
 
 * [`chunk`](#chunk)
 * [`compact`](#compact)
+* [`countBy`](#countby)
 * [`countOccurrences`](#countoccurrences)
 * [`deepFlatten`](#deepflatten)
 * [`difference`](#difference)
@@ -98,6 +99,7 @@ average(1, 2, 3);
 * [`dropRight`](#dropright)
 * [`everyNth`](#everynth)
 * [`filterNonUnique`](#filternonunique)
+* [`findLast`](#findlast)
 * [`flatten`](#flatten)
 * [`forEachRight`](#foreachright)
 * [`groupBy`](#groupby)
@@ -561,6 +563,34 @@ compact([0, 1, false, 2, '', 3, 'a', 'e' * 23, NaN, 's', 34]); // [ 1, 2, 3, 'a'
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### countBy
+
+Groups the elements of an array based on the given function and returns the count of elements in each group.
+
+Use `Array.map()` to map the values of an array to a function or property name.
+Use `Array.reduce()` to create an object, where the keys are produced from the mapped results.
+
+```js
+const countBy = (arr, fn) =>
+  arr.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val, i) => {
+    acc[val] = (acc[val] || 0) + 1;
+    return acc;
+  }, {});
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+countBy([6.1, 4.2, 6.3], Math.floor); // {4: 1, 6: 2}
+countBy(['one', 'two', 'three'], 'length'); // {3: 2, 5: 1}
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### countOccurrences
 
 Counts the occurrences of a value in an array.
@@ -770,6 +800,28 @@ filterNonUnique([1, 2, 2, 3, 4, 4, 5]); // [1,3,5]
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### findLast
+
+Returns the last element for which the provided function returns a truthy value.
+
+Use `Array.filter()` to remove elements for which `fn` returns falsey values, `Array.slice(-1)` to get the last one.
+
+```js
+const findLast = (arr, fn) => arr.filter(fn).slice(-1);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+findLast([1, 2, 3, 4], n => n % 2 === 1); // 3
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### flatten
 
 Flattens an array up to the specified depth.
@@ -833,8 +885,8 @@ Use `Array.map()` to map the values of an array to a function or property name.
 Use `Array.reduce()` to create an object, where the keys are produced from the mapped results.
 
 ```js
-const groupBy = (arr, func) =>
-  arr.map(typeof func === 'function' ? func : val => val[func]).reduce((acc, val, i) => {
+const groupBy = (arr, fn) =>
+  arr.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val, i) => {
     acc[val] = (acc[val] || []).concat(arr[i]);
     return acc;
   }, {});
@@ -2854,7 +2906,9 @@ Returns the average of an array, after mapping each element to a value using the
 Use `Array.map()` to map each element to the value returned by `fn`, `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`, divide by the `length` of the array.
 
 ```js
-const averageBy = (arr, fn) => arr.map(fn).reduce((acc, val) => acc + val, 0) / arr.length;
+const averageBy = (arr, fn) =>
+  arr.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val) => acc + val, 0) /
+  arr.length;
 ```
 
 <details>
@@ -2862,6 +2916,7 @@ const averageBy = (arr, fn) => arr.map(fn).reduce((acc, val) => acc + val, 0) / 
 
 ```js
 averageBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n); // 5
+averageBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n'); // 5
 ```
 
 </details>
@@ -3302,7 +3357,7 @@ Returns the maximum value of an array, after mapping each element to a value usi
 Use `Array.map()` to map each element to the value returned by `fn`, `Math.max()` to get the maximum value.
 
 ```js
-const maxBy = (arr, fn) => Math.max(...arr.map(fn));
+const maxBy = (arr, fn) => Math.max(...arr.map(typeof fn === 'function' ? fn : val => val[fn]));
 ```
 
 <details>
@@ -3310,6 +3365,7 @@ const maxBy = (arr, fn) => Math.max(...arr.map(fn));
 
 ```js
 maxBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n); // 8
+maxBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n'); // 8
 ```
 
 </details>
@@ -3351,7 +3407,7 @@ Returns the minimum value of an array, after mapping each element to a value usi
 Use `Array.map()` to map each element to the value returned by `fn`, `Math.min()` to get the maximum value.
 
 ```js
-const minBy = (arr, fn) => Math.min(...arr.map(fn));
+const minBy = (arr, fn) => Math.min(...arr.map(typeof fn === 'function' ? fn : val => val[fn]));
 ```
 
 <details>
@@ -3359,6 +3415,7 @@ const minBy = (arr, fn) => Math.min(...arr.map(fn));
 
 ```js
 minBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n); // 8
+minBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n'); // 8
 ```
 
 </details>
@@ -3595,7 +3652,8 @@ Returns the sum of an array, after mapping each element to a value using the pro
 Use `Array.map()` to map each element to the value returned by `fn`, `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`.
 
 ```js
-const sumBy = (arr, fn) => arr.map(fn).reduce((acc, val) => acc + val, 0);
+const sumBy = (arr, fn) =>
+  arr.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val) => acc + val, 0);
 ```
 
 <details>
@@ -3603,6 +3661,7 @@ const sumBy = (arr, fn) => arr.map(fn).reduce((acc, val) => acc + val, 0);
 
 ```js
 sumBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n); // 20
+sumBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n'); // 20
 ```
 
 </details>
@@ -5292,6 +5351,8 @@ const httpPost = (url, callback, data = null, err = console.error) => {
 <summary>Examples</summary>
 
 ```js
+
+
 
 
 
