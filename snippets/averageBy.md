@@ -6,7 +6,8 @@ Use `Array.map()` to map each element to the value returned by `fn`, `Array.redu
 
 ```js
 const averageBy = (arr, fn) =>
-  arr.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val) => acc + val, 0) / arr.length;
+  arr.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val) => acc + val, 0) /
+  arr.length;
 ```
 
 ```js
