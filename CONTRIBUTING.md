@@ -26,7 +26,7 @@ Here's what you can do to help:
 - **Snippet code** must be enclosed inside ` ```js ` and ` ``` `.
   - Remember to start your snippet's code on a new line below the opening backticks.
   - Use ES6 notation to define your function. For example `const myFunction = ( arg1, arg2 ) => { }`.
-  - Please use Javacript [Semi-Standard Style](https://github.com/Flet/semistandard).
+  - Please use Javascript [Semi-Standard Style](https://github.com/Flet/semistandard).
   - Try to keep your snippets' code short and to the point. Use modern techniques and features. Make sure to test your code before submitting.
   - All snippets must be followed by one (more if necessary) test case after the code, in a new block enclosed inside ` ```js ` and ` ``` `. The syntax for this is `myFunction('testInput') // 'testOutput'`. Use multiline examples only if necessary.
   - Try to make your function name unique, so that it does not conflict with existing snippets.
