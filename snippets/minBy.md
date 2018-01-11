@@ -9,5 +9,5 @@ const minBy = (arr, fn) => Math.min(...arr.map(fn));
 ```
 
 ```js
-minBy([{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }], o => o.n);  // 8
+minBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n); // 8
 ```
