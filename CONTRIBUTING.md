@@ -36,7 +36,6 @@ Here's what you can do to help:
 - Snippets *should* be abstract enough to be applied to different scenarios.
 - It is not mandatory but highly appreciated if you provide **test cases** and/or performance tests (we recommend using [jsPerf](https://jsperf.com/)).
 - You can start creating a new snippet, by using the [snippet template](snippet-template.md) to format your snippets.
-- Updating the index.html or README.md files should only be done by altering the scripts in the **scripts** folder or altering their relative static parts in the **static-parts** folder.
 
 ### Writing tests
 - Before writing any tests run `npm run tdd` script. It will update test directory to include new snippets as well as update old ones if needed.
