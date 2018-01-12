@@ -39,9 +39,12 @@ Here's what you can do to help:
 - Updating the index.html or README.md files should only be done by altering the scripts in the **scripts** folder or altering their relative static parts in the **static-parts** folder.
 
 ### Writing tests
-- Before writing any tests run `npm run tdd` script. It will update all tests inside the test directory.
+- Before writing any tests run `npm run tdd` script. It will update test directory to include new snippets as well as update old ones if needed.
 - **DO NOT MODIFY THE snippetName.js files** under test directory.
 - We are using [tape](https://github.com/substack/tape) for testing.
+- Write tests under `snippetName.test.js` file. If you have trouble doing so, check out tests of other snippets.
+- Be sure to run `npm run test`. It is going to run all tests for all snippets. - Make a new pull request **only if all the tests are passing**.
+
 
 
 ### Additional guidelines and conventions regarding snippets
