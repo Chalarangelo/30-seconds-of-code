@@ -9,7 +9,10 @@ Omit the second argument, `inherited`, to not include inherited properties by de
 
 ```js
 const functions = (obj, inherited = false) =>
-  (inherited ? [...Object.keys(obj), ...Object.keys(Object.getPrototypeOf(obj))] : Object.keys(obj)).filter(key => typeof obj[key] === 'function');
+  (inherited
+    ? [...Object.keys(obj), ...Object.keys(Object.getPrototypeOf(obj))]
+    : Object.keys(obj)
+  ).filter(key => typeof obj[key] === 'function');
 ```
 
 ```js
