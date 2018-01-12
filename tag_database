@@ -181,6 +181,7 @@ tomorrow:date
 toOrdinalSuffix:utility,math
 toSafeInteger:math
 toSnakeCase:string,regexp
+transform:object,array
 truncateString:string
 truthCheckCollection:object,logic,array
 unescapeHTML:string,browser
