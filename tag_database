@@ -112,6 +112,7 @@ maxBy:math,array,function
 maxN:array,math
 median:math,array
 memoize:function
+merge:object,array
 minBy:math,array,function
 minN:array,amth
 negate:function
