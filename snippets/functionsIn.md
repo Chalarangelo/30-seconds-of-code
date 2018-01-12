@@ -1,4 +1,4 @@
-### functionName
+### functionsIn
 
 Returns an array of function property names from own and inherited enumerable properties of object.
 
