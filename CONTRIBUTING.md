@@ -42,7 +42,8 @@ Here's what you can do to help:
 - **DO NOT MODIFY THE snippetName.js files** under test directory.
 - We are using [tape](https://github.com/substack/tape) for testing.
 - Write tests under `snippetName.test.js` file. If you have trouble doing so, check out tests of other snippets.
-- Be sure to run `npm run test`. It is going to run all tests for all snippets. - Make a new pull request **only if all the tests are passing**.
+- Be sure to run `npm run test`. It is going to run all tests for all snippets.
+- Make a new pull request **only if all the tests are passing**.
 
 
 
