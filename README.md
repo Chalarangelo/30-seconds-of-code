@@ -266,12 +266,14 @@ average(1, 2, 3);
 * [`lowercaseKeys`](#lowercasekeys)
 * [`mapKeys`](#mapkeys)
 * [`mapValues`](#mapvalues)
+* [`merge`](#merge)
 * [`objectFromPairs`](#objectfrompairs)
 * [`objectToPairs`](#objecttopairs)
 * [`orderBy`](#orderby)
 * [`select`](#select)
 * [`shallowClone`](#shallowclone)
 * [`size`](#size)
+* [`transform`](#transform)
 * [`truthCheckCollection`](#truthcheckcollection)
 
 </details>
@@ -4070,6 +4072,46 @@ mapValues(users, u => u.age); // { fred: 40, pebbles: 1 }
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### merge
+
+Creates a new object from the combination of two or more objects.
+
+Use `Array.reduce()` combined with `Object.keys(obj)` to iterate over all objects and keys.
+Use `hasOwnProperty()` and `Array.concat()` to append values for keys existing in multiple objects.
+
+```js
+const merge = (...objs) =>
+  [...objs].reduce(
+    (acc, obj) =>
+      Object.keys(obj).reduce((a, k) => {
+        acc[k] = acc.hasOwnProperty(k) ? [].concat(acc[k]).concat(obj[k]) : obj[k];
+        return acc;
+      }, {}),
+    {}
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const object = {
+  a: [{ x: 2 }, { y: 4 }],
+  b: 1
+};
+const other = {
+  a: { z: 3 },
+  b: [2, 3],
+  c: 'foo'
+};
+merge(object, other); // { a: [ { x: 2 }, { y: 4 }, { z: 3 } ], b: [ 1, 2, 3 ], c: 'foo' }
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### objectFromPairs
 
 Creates an object from the given key-value pairs.
@@ -4223,6 +4265,35 @@ const size = val =>
 size([1, 2, 3, 4, 5]); // 5
 size('size'); // 4
 size({ one: 1, two: 2, three: 3 }); // 3
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### transform
+
+Applies a function against an accumulator and each key in the object (from left to right).
+
+Use `Object.keys(obj)` to iterate over each key in the object, `Array.reduce()` to call the apply the specified function against the given accumulator.
+
+```js
+const transform = (obj, fn, acc) => Object.keys(obj).reduce((a, k) => fn(a, obj[k], k, obj), acc);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+transform(
+  { a: 1, b: 2, c: 1 },
+  (r, v, k) => {
+    (r[v] || (r[v] = [])).push(k);
+    return r;
+  },
+  {}
+); // { '1': ['a', 'c'], '2': ['b'] }
 ```
 
 </details>
