@@ -262,7 +262,6 @@ average(1, 2, 3);
 
 * [`cleanObj`](#cleanobj)
 * [`functions`](#functions)
-* [`functionsIn`](#functionsin)
 * [`invertKeyValues`](#invertkeyvalues)
 * [`lowercaseKeys`](#lowercasekeys)
 * [`mapKeys`](#mapkeys)
@@ -3926,42 +3925,19 @@ cleanObj(testObj, ['a'], 'children'); // { a: 1, children : { a: 1}}
 
 ### functions
 
-Returns an array of function property names from own enumerable properties of object.
+Returns an array of function property names from own (and optionally inherited) enumerable properties of an object.
 
-Use `Object.keys(obj)` to iterate over the object's own properties, `Array.filter()` to keep only those that are functions.
-
-```js
-const functions = obj => Object.keys(obj).filter(key => typeof obj[key] === 'function');
-```
-
-<details>
-<summary>Examples</summary>
+Use `Object.keys(obj)` to iterate over the object's own properties.
+If `inherited` is `true`, use `Object.get.PrototypeOf(obj)` to also get the object's inherited properties.
+Use `Array.filter()` to keep only those properties that are functions.
+Omit the second argument, `inherited`, to not include inherited properties by default.
 
 ```js
-function Foo() {
-  this.a = () => 1;
-  this.b = () => 2;
-}
-functions(new Foo()); // ['a', 'b']
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### functionsIn
-
-Returns an array of function property names from own and inherited enumerable properties of object.
-
-Use `Object.keys(obj)` and `Object.get.PrototypeOf(obj)` to iterate over the object's own and inherited properties, `Array.filter()` to keep only those that are functions.
-Use the spread operator (`...`) to combine all returned property names into one array.
-
-```js
-const functionsIn = obj =>
-  [...Object.keys(obj), ...Object.keys(Object.getPrototypeOf(obj))].filter(
-    key => typeof obj[key] === 'function'
-  );
+const functions = (obj, inherited = false) =>
+  (inherited
+    ? [...Object.keys(obj), ...Object.keys(Object.getPrototypeOf(obj))]
+    : Object.keys(obj)
+  ).filter(key => typeof obj[key] === 'function');
 ```
 
 <details>
@@ -3973,7 +3949,8 @@ function Foo() {
   this.b = () => 2;
 }
 Foo.prototype.c = () => 3;
-functionsIn(new Foo()); // ['a', 'b', 'c']
+functions(new Foo()); // ['a', 'b']
+functions(new Foo(), true); // ['a', 'b', 'c']
 ```
 
 </details>
