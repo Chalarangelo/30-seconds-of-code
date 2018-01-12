@@ -1218,32 +1218,18 @@ Logs: {
   request<span class="token punctuation">.</span><span class="token function-variable function">onerror</span> <span class="token operator">=</span> <span class="token punctuation">()</span> <span class="token operator">=></span> <span class="token function">err</span><span class="token punctuation">(</span>request<span class="token punctuation">);</span>
   request<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>data<span class="token punctuation">);
 };</span>
-</pre><label class="collapse">Show examples</label><pre class="language-js">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="token keyword">const</span> newPost <span class="token operator">=</span> <span class="token punctuation">{</span>
-  <span class="token string">"userId"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-  <span class="token string">"id"</span><span class="token punctuation">:</span> <span class="token number">1337</span><span class="token punctuation">,</span>
-  <span class="token string">"title"</span><span class="token punctuation">:</span> <span class="token string">"Foo"</span><span class="token punctuation">,</span>
-  <span class="token string">"body"</span><span class="token punctuation">:</span> <span class="token string">"bar bar bar"</span>
+</pre><label class="collapse">Show examples</label><pre class="language-js"><span class="token keyword">const</span> newPost <span class="token operator">=</span> <span class="token punctuation">{</span>
+  userId<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  id<span class="token punctuation">:</span> <span class="token number">1337</span><span class="token punctuation">,</span>
+  title<span class="token punctuation">:</span> <span class="token string">'Foo'</span><span class="token punctuation">,</span>
+  body<span class="token punctuation">:</span> <span class="token string">'bar bar bar'</span>
 <span class="token punctuation">};</span>
 <span class="token keyword">const</span> data <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>newPost<span class="token punctuation">);</span>
-<span class="token function">httpPost</span><span class="token punctuation">(</span><span class="token string">'https://jsonplaceholder.typicode.com/posts'</span><span class="token punctuation">,</span> console<span class="token punctuation">.</span>log<span class="token punctuation">,</span> data<span class="token punctuation">;</span> <span class="token comment">/*
+<span class="token function">httpPost</span><span class="token punctuation">(</span>
+  <span class="token string">'https://jsonplaceholder.typicode.com/posts'</span><span class="token punctuation">,</span>
+  console<span class="token punctuation">.</span>log<span class="token punctuation">,</span>
+  data
+<span class="token punctuation">);</span> <span class="token comment">/*
 Logs: {
   "userId": 1,
   "id": 1337,

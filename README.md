@@ -5471,32 +5471,18 @@ const httpPost = (url, callback, data = null, err = console.error) => {
 <summary>Examples</summary>
 
 ```js
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const newPost = {
-  "userId": 1,
-  "id": 1337,
-  "title": "Foo",
-  "body": "bar bar bar"
+  userId: 1,
+  id: 1337,
+  title: 'Foo',
+  body: 'bar bar bar'
 };
 const data = JSON.stringify(newPost);
-httpPost('https://jsonplaceholder.typicode.com/posts', console.log, data; /*
+httpPost(
+  'https://jsonplaceholder.typicode.com/posts',
+  console.log,
+  data
+); /*
 Logs: {
   "userId": 1,
   "id": 1337,
