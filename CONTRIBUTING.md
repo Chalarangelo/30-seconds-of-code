@@ -13,8 +13,7 @@ Here's what you can do to help:
 
 ### Snippet submission and Pull request guidelines
 
-- **DO NOT MODIFY THE README.md FILE!** Make changes to individual snippet files. **Travis CI** will automatically build the `README.md` file when your pull request is merged.
-- **DO NOT MODIFY THE index.html FILE!** Make changes to individual snippet files. **Travis CI** will automatically build the `index.html` file when your pull request is merged.
+- **DO NOT MODIFY THE README.md or index.html FILES!** Make changes to individual snippet files. **Travis CI** will automatically build the `README.md` and `index.html` files when your pull request is merged.
 - **Snippet filenames** must correspond to the title of the snippet. For example, if your snippet is titled `### awesomeSnippet` the filename should be `awesomeSnippet.md`.
   - Use `camelCase`, not `kebab-case` or `snake_case`.
   - Avoid capitalization of words, except if the whole word is capitalized (e.g. `URL` should be capitalized in the filename and the snippet title).
@@ -38,6 +37,12 @@ Here's what you can do to help:
 - It is not mandatory but highly appreciated if you provide **test cases** and/or performance tests (we recommend using [jsPerf](https://jsperf.com/)).
 - You can start creating a new snippet, by using the [snippet template](snippet-template.md) to format your snippets.
 - Updating the index.html or README.md files should only be done by altering the scripts in the **scripts** folder or altering their relative static parts in the **static-parts** folder.
+
+### Writing tests
+- Before writing any tests run `npm run tdd` script. It will update all tests inside the test directory.
+- **DO NOT MODIFY THE snippetName.js files** under test directory.
+- We are using [tape](https://github.com/substack/tape) for testing.
+
 
 ### Additional guidelines and conventions regarding snippets
 
