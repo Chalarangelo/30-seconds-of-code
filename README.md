@@ -3950,7 +3950,7 @@ functions(new Foo()); // ['a', 'b']
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### functionName
+### functionsIn
 
 Returns an array of function property names from own and inherited enumerable properties of object.
 
@@ -5471,6 +5471,7 @@ const httpPost = (url, callback, data = null, err = console.error) => {
 <summary>Examples</summary>
 
 ```js
+
 
 
 
