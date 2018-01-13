@@ -126,6 +126,7 @@ once:function
 onUserInputChange:browser,event,advanced
 orderBy:object,array
 palindrome:string
+parseCookie:utility,string
 partition:array,object,function
 percentile:math
 pick:array
@@ -155,6 +156,7 @@ sampleSize:array,random
 scrollToTop:browser
 sdbm:math,utility
 select:object
+serializeCookie:utility,string
 setStyle:browser
 shallowClone:object
 show:browser,css
