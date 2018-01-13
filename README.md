@@ -344,9 +344,11 @@ average(1, 2, 3);
 * [`hexToRGB`](#hextorgb-)
 * [`httpGet`](#httpget)
 * [`httpPost`](#httppost)
+* [`parseCookie`](#parsecookie)
 * [`prettyBytes`](#prettybytes)
 * [`randomHexColorCode`](#randomhexcolorcode)
 * [`RGBToHex`](#rgbtohex)
+* [`serializeCookie`](#serializecookie)
 * [`timeTaken`](#timetaken)
 * [`toDecimalMark`](#todecimalmark)
 * [`toOrdinalSuffix`](#toordinalsuffix)
@@ -5588,6 +5590,37 @@ Logs: {
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### parseCookie
+
+Parse an HTTP Cookie header string and return an object of all cookie name-value pairs.
+
+Use `String.split(';')` to separate key-value pairs from each other.
+Use `Array.map()` and `String.split('=')` to separate keys from values in each pair.
+Use `Array.reduce()` and `decodeURIComponent()` to create an object with all key-value pairs.
+
+```js
+const parseCookie = str =>
+  str
+    .split(';')
+    .map(v => v.split('='))
+    .reduce((acc, v) => {
+      acc[decodeURIComponent(v[0].trim())] = decodeURIComponent(v[1].trim());
+      return acc;
+    }, {});
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+parseCookie('foo=bar; equation=E%3Dmc%5E2'); // { foo: 'bar', equation: 'E=mc^2' }
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### prettyBytes
 
 Converts a number in bytes to a human-readable string.
@@ -5662,6 +5695,28 @@ const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6
 
 ```js
 RGBToHex(255, 165, 1); // 'ffa501'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### serializeCookie
+
+Serialize a cookie name-value pair into a Set-Cookie header string.
+
+Use template literals and `encodeURIComponent()` to create the appropriate string.
+
+```js
+const serializeCookie = (name, val) => `${encodeURIComponent(name)}=${encodeURIComponent(val)}`;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+serializeCookie('foo', 'bar'); // 'foo=bar'
 ```
 
 </details>
