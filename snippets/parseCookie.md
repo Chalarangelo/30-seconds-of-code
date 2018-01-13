@@ -8,7 +8,13 @@ Use `Array.reduce()` and `decodeURIComponent()` to create an object with all key
 
 ```js
 const parseCookie = str =>
-  str.split(';').map(v => v.split('=')).reduce((acc,v) => {acc[decodeURIComponent(v[0].trim())] = decodeURIComponent(v[1].trim()); return acc},{});
+  str
+    .split(';')
+    .map(v => v.split('='))
+    .reduce((acc, v) => {
+      acc[decodeURIComponent(v[0].trim())] = decodeURIComponent(v[1].trim());
+      return acc;
+    }, {});
 ```
 
 ```js
