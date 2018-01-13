@@ -121,6 +121,9 @@ negate:function
 nthElement:array
 objectFromPairs:object,array
 objectToPairs:object,array
+observeMutations:browser,event,advanced
+off:browser,event
+on:browser,event
 once:function
 onUserInputChange:browser,advanced
 orderBy:object,array
