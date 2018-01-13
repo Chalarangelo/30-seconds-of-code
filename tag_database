@@ -15,6 +15,7 @@ cloneRegExp:utility,regexp
 coalesce:utility
 coalesceFactory:utility
 collectInto:adapter,function,array
+colorize:node,utility,string
 compact:array
 compose:function
 copyToClipboard:browser,string,advanced
