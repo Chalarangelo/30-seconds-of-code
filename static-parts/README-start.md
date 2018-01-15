@@ -20,8 +20,12 @@
 
 You can find a package with all the snippets on [npm](https://www.npmjs.com/package/30-seconds-of-code).
 
-```
+```bash
+# With npm
 npm install 30-seconds-of-code
+
+# With yarn
+yarn add 30-seconds-of-code
 ```
 
 CDN links
