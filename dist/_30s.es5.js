@@ -408,6 +408,21 @@ var elo = function elo(_ref) {
   return ratings;
 };
 
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var equals = function equals(a, b) {
+  if (a === b) return true;
+  if (a instanceof Date && b instanceof Date) return a.getTime() === b.getTime();
+  if (!a || !b || (typeof a === 'undefined' ? 'undefined' : _typeof(a)) != 'object' && (typeof b === 'undefined' ? 'undefined' : _typeof(b)) !== 'object') return a === b;
+  if (a === null || a === undefined || b === null || b === undefined) return false;
+  if (a.prototype !== b.prototype) return false;
+  var keys = Object.keys(a);
+  if (keys.length !== Object.keys(b).length) return false;
+  return keys.every(function (k) {
+    return equals(a[k], b[k]);
+  });
+};
+
 var escapeHTML = function escapeHTML(str) {
   return str.replace(/[&<>'"]/g, function (tag) {
     return {
@@ -760,16 +775,16 @@ var isPrime = function isPrime(num) {
   }return num >= 2;
 };
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-var isPrimitive = function isPrimitive(val) {
-  return !['object', 'function'].includes(typeof val === 'undefined' ? 'undefined' : _typeof(val)) || val === null;
-};
-
 var _typeof$1 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
+var isPrimitive = function isPrimitive(val) {
+  return !['object', 'function'].includes(typeof val === 'undefined' ? 'undefined' : _typeof$1(val)) || val === null;
+};
+
+var _typeof$2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 var isPromiseLike = function isPromiseLike(obj) {
-  return obj !== null && ((typeof obj === 'undefined' ? 'undefined' : _typeof$1(obj)) === 'object' || typeof obj === 'function') && typeof obj.then === 'function';
+  return obj !== null && ((typeof obj === 'undefined' ? 'undefined' : _typeof$2(obj)) === 'object' || typeof obj === 'function') && typeof obj.then === 'function';
 };
 
 var _slicedToArray$1 = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
@@ -811,10 +826,10 @@ var isString = function isString(val) {
   return typeof val === 'string';
 };
 
-var _typeof$2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+var _typeof$3 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var isSymbol = function isSymbol(val) {
-  return (typeof val === 'undefined' ? 'undefined' : _typeof$2(val)) === 'symbol';
+  return (typeof val === 'undefined' ? 'undefined' : _typeof$3(val)) === 'symbol';
 };
 
 var isTravisCI = function isTravisCI() {
@@ -1116,7 +1131,7 @@ var pipeFunctions = function pipeFunctions() {
   });
 };
 
-var _typeof$3 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+var _typeof$4 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var pluralize = function pluralize(val, word) {
   var plural = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : word + 's';
@@ -1125,7 +1140,7 @@ var pluralize = function pluralize(val, word) {
     var plural = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : word + 's';
     return [1, -1].includes(Number(num)) ? word : plural;
   };
-  if ((typeof val === 'undefined' ? 'undefined' : _typeof$3(val)) === 'object') return function (num, word) {
+  if ((typeof val === 'undefined' ? 'undefined' : _typeof$4(val)) === 'object') return function (num, word) {
     return _pluralize(num, word, val[word]);
   };
   return _pluralize(val, word, plural);
@@ -1227,6 +1242,13 @@ var pullAtValue = function pullAtValue(arr, pullArr) {
 var randomHexColorCode = function randomHexColorCode() {
   var n = (Math.random() * 0xfffff | 0).toString(16);
   return '#' + (n.length !== 6 ? (Math.random() * 0xf | 0).toString(16) + n : n);
+};
+
+var randomIntArrayInRange = function randomIntArrayInRange(min, max) {
+  var n = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
+  return Array.from({ length: n }, function () {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  });
 };
 
 var randomIntegerInRange = function randomIntegerInRange(min, max) {
@@ -1390,10 +1412,10 @@ var similarity = function similarity(arr, values) {
   });
 };
 
-var _typeof$4 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+var _typeof$5 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var size = function size(val) {
-  return Array.isArray(val) ? val.length : val && (typeof val === 'undefined' ? 'undefined' : _typeof$4(val)) === 'object' ? val.size || val.length || Object.keys(val).length : typeof val === 'string' ? new Blob([val]).size : 0;
+  return Array.isArray(val) ? val.length : val && (typeof val === 'undefined' ? 'undefined' : _typeof$5(val)) === 'object' ? val.size || val.length || Object.keys(val).length : typeof val === 'string' ? new Blob([val]).size : 0;
 };
 
 var sleep = function sleep(ms) {
@@ -1634,7 +1656,7 @@ var zipObject = function zipObject(props, values) {
   }, {});
 };
 
-var imports = { JSONToFile: JSONToFile, RGBToHex: RGBToHex, UUIDGeneratorBrowser: UUIDGeneratorBrowser, UUIDGeneratorNode: UUIDGeneratorNode, anagrams: anagrams, arrayToHtmlList: arrayToHtmlList, average: average, averageBy: averageBy, bottomVisible: bottomVisible, byteSize: byteSize, call: call, capitalize: capitalize, capitalizeEveryWord: capitalizeEveryWord, chainAsync: chainAsync, chunk: chunk, clampNumber: clampNumber, cleanObj: cleanObj, cloneRegExp: cloneRegExp, coalesce: coalesce, coalesceFactory: coalesceFactory, collectInto: collectInto, colorize: colorize, compact: compact, compose: compose, copyToClipboard: copyToClipboard, countBy: countBy, countOccurrences: countOccurrences, createElement: createElement, createEventHub: createEventHub, currentURL: currentURL, curry: curry, decapitalize: decapitalize, deepFlatten: deepFlatten, defer: defer, detectDeviceType: detectDeviceType, difference: difference, differenceWith: differenceWith, digitize: digitize, distance: distance, distinctValuesOfArray: distinctValuesOfArray, dropElements: dropElements, dropRight: dropRight, elementIsVisibleInViewport: elementIsVisibleInViewport, elo: elo, escapeHTML: escapeHTML, escapeRegExp: escapeRegExp, everyNth: everyNth, extendHex: extendHex, factorial: factorial, fibonacci: fibonacci, filterNonUnique: filterNonUnique, findLast: findLast, flatten: flatten, flip: flip, forEachRight: forEachRight, formatDuration: formatDuration, fromCamelCase: fromCamelCase, functionName: functionName, functions: functions, gcd: gcd, geometricProgression: geometricProgression, getDaysDiffBetweenDates: getDaysDiffBetweenDates, getScrollPosition: getScrollPosition, getStyle: getStyle, getType: getType, getURLParameters: getURLParameters, groupBy: groupBy, hammingDistance: hammingDistance, hasClass: hasClass, hasFlags: hasFlags, head: head, hexToRGB: hexToRGB, hide: hide, httpGet: httpGet, httpPost: httpPost, httpsRedirect: httpsRedirect, inRange: inRange, indexOfAll: indexOfAll, initial: initial, initialize2DArray: initialize2DArray, initializeArrayWithRange: initializeArrayWithRange, initializeArrayWithValues: initializeArrayWithValues, intersection: intersection, invertKeyValues: invertKeyValues, isAbsoluteURL: isAbsoluteURL, isArray: isArray, isArrayLike: isArrayLike, isBoolean: isBoolean, isDivisible: isDivisible, isEven: isEven, isFunction: isFunction, isLowerCase: isLowerCase, isNull: isNull, isNumber: isNumber, isObject: isObject, isPrime: isPrime, isPrimitive: isPrimitive, isPromiseLike: isPromiseLike, isSorted: isSorted, isString: isString, isSymbol: isSymbol, isTravisCI: isTravisCI, isUpperCase: isUpperCase, isValidJSON: isValidJSON, join: join, last: last, lcm: lcm, longestItem: longestItem, lowercaseKeys: lowercaseKeys, luhnCheck: luhnCheck, mapKeys: mapKeys, mapObject: mapObject, mapValues: mapValues, mask: mask, maxBy: maxBy, maxN: maxN, median: median, memoize: memoize, merge: merge, minBy: minBy, minN: minN, negate: negate, nthElement: nthElement, objectFromPairs: objectFromPairs, objectToPairs: objectToPairs, off: off, on: on, onUserInputChange: onUserInputChange, once: once, orderBy: orderBy, palindrome: palindrome, parseCookie: parseCookie, partition: partition, percentile: percentile, pick: pick, pipeFunctions: pipeFunctions, pluralize: pluralize, powerset: powerset, prettyBytes: prettyBytes, primes: primes, promisify: promisify, pull: pull, pullAtIndex: pullAtIndex, pullAtValue: pullAtValue, randomHexColorCode: randomHexColorCode, randomIntegerInRange: randomIntegerInRange, randomNumberInRange: randomNumberInRange, readFileLines: readFileLines, redirect: redirect, reducedFilter: reducedFilter, remove: remove, reverseString: reverseString, round: round, runAsync: runAsync, runPromisesInSeries: runPromisesInSeries, sample: sample, sampleSize: sampleSize, scrollToTop: scrollToTop, sdbm: sdbm, select: select, serializeCookie: serializeCookie, setStyle: setStyle, shallowClone: shallowClone, show: show, shuffle: shuffle, similarity: similarity, size: size, sleep: sleep, sortCharactersInString: sortCharactersInString, sortedIndex: sortedIndex, splitLines: splitLines, spreadOver: spreadOver, standardDeviation: standardDeviation, sum: sum, sumBy: sumBy, sumPower: sumPower, symmetricDifference: symmetricDifference, tail: tail, take: take, takeRight: takeRight, timeTaken: timeTaken, toCamelCase: toCamelCase, toDecimalMark: toDecimalMark, toKebabCase: toKebabCase, toOrdinalSuffix: toOrdinalSuffix, toSafeInteger: toSafeInteger, toSnakeCase: toSnakeCase, toggleClass: toggleClass, tomorrow: tomorrow, transform: transform, truncateString: truncateString, truthCheckCollection: truthCheckCollection, unescapeHTML: unescapeHTML, union: union, untildify: untildify, validateNumber: validateNumber, without: without, words: words, yesNo: yesNo, zip: zip, zipObject: zipObject };
+var imports = { JSONToFile: JSONToFile, RGBToHex: RGBToHex, UUIDGeneratorBrowser: UUIDGeneratorBrowser, UUIDGeneratorNode: UUIDGeneratorNode, anagrams: anagrams, arrayToHtmlList: arrayToHtmlList, average: average, averageBy: averageBy, bottomVisible: bottomVisible, byteSize: byteSize, call: call, capitalize: capitalize, capitalizeEveryWord: capitalizeEveryWord, chainAsync: chainAsync, chunk: chunk, clampNumber: clampNumber, cleanObj: cleanObj, cloneRegExp: cloneRegExp, coalesce: coalesce, coalesceFactory: coalesceFactory, collectInto: collectInto, colorize: colorize, compact: compact, compose: compose, copyToClipboard: copyToClipboard, countBy: countBy, countOccurrences: countOccurrences, createElement: createElement, createEventHub: createEventHub, currentURL: currentURL, curry: curry, decapitalize: decapitalize, deepFlatten: deepFlatten, defer: defer, detectDeviceType: detectDeviceType, difference: difference, differenceWith: differenceWith, digitize: digitize, distance: distance, distinctValuesOfArray: distinctValuesOfArray, dropElements: dropElements, dropRight: dropRight, elementIsVisibleInViewport: elementIsVisibleInViewport, elo: elo, equals: equals, escapeHTML: escapeHTML, escapeRegExp: escapeRegExp, everyNth: everyNth, extendHex: extendHex, factorial: factorial, fibonacci: fibonacci, filterNonUnique: filterNonUnique, findLast: findLast, flatten: flatten, flip: flip, forEachRight: forEachRight, formatDuration: formatDuration, fromCamelCase: fromCamelCase, functionName: functionName, functions: functions, gcd: gcd, geometricProgression: geometricProgression, getDaysDiffBetweenDates: getDaysDiffBetweenDates, getScrollPosition: getScrollPosition, getStyle: getStyle, getType: getType, getURLParameters: getURLParameters, groupBy: groupBy, hammingDistance: hammingDistance, hasClass: hasClass, hasFlags: hasFlags, head: head, hexToRGB: hexToRGB, hide: hide, httpGet: httpGet, httpPost: httpPost, httpsRedirect: httpsRedirect, inRange: inRange, indexOfAll: indexOfAll, initial: initial, initialize2DArray: initialize2DArray, initializeArrayWithRange: initializeArrayWithRange, initializeArrayWithValues: initializeArrayWithValues, intersection: intersection, invertKeyValues: invertKeyValues, isAbsoluteURL: isAbsoluteURL, isArray: isArray, isArrayLike: isArrayLike, isBoolean: isBoolean, isDivisible: isDivisible, isEven: isEven, isFunction: isFunction, isLowerCase: isLowerCase, isNull: isNull, isNumber: isNumber, isObject: isObject, isPrime: isPrime, isPrimitive: isPrimitive, isPromiseLike: isPromiseLike, isSorted: isSorted, isString: isString, isSymbol: isSymbol, isTravisCI: isTravisCI, isUpperCase: isUpperCase, isValidJSON: isValidJSON, join: join, last: last, lcm: lcm, longestItem: longestItem, lowercaseKeys: lowercaseKeys, luhnCheck: luhnCheck, mapKeys: mapKeys, mapObject: mapObject, mapValues: mapValues, mask: mask, maxBy: maxBy, maxN: maxN, median: median, memoize: memoize, merge: merge, minBy: minBy, minN: minN, negate: negate, nthElement: nthElement, objectFromPairs: objectFromPairs, objectToPairs: objectToPairs, off: off, on: on, onUserInputChange: onUserInputChange, once: once, orderBy: orderBy, palindrome: palindrome, parseCookie: parseCookie, partition: partition, percentile: percentile, pick: pick, pipeFunctions: pipeFunctions, pluralize: pluralize, powerset: powerset, prettyBytes: prettyBytes, primes: primes, promisify: promisify, pull: pull, pullAtIndex: pullAtIndex, pullAtValue: pullAtValue, randomHexColorCode: randomHexColorCode, randomIntArrayInRange: randomIntArrayInRange, randomIntegerInRange: randomIntegerInRange, randomNumberInRange: randomNumberInRange, readFileLines: readFileLines, redirect: redirect, reducedFilter: reducedFilter, remove: remove, reverseString: reverseString, round: round, runAsync: runAsync, runPromisesInSeries: runPromisesInSeries, sample: sample, sampleSize: sampleSize, scrollToTop: scrollToTop, sdbm: sdbm, select: select, serializeCookie: serializeCookie, setStyle: setStyle, shallowClone: shallowClone, show: show, shuffle: shuffle, similarity: similarity, size: size, sleep: sleep, sortCharactersInString: sortCharactersInString, sortedIndex: sortedIndex, splitLines: splitLines, spreadOver: spreadOver, standardDeviation: standardDeviation, sum: sum, sumBy: sumBy, sumPower: sumPower, symmetricDifference: symmetricDifference, tail: tail, take: take, takeRight: takeRight, timeTaken: timeTaken, toCamelCase: toCamelCase, toDecimalMark: toDecimalMark, toKebabCase: toKebabCase, toOrdinalSuffix: toOrdinalSuffix, toSafeInteger: toSafeInteger, toSnakeCase: toSnakeCase, toggleClass: toggleClass, tomorrow: tomorrow, transform: transform, truncateString: truncateString, truthCheckCollection: truthCheckCollection, unescapeHTML: unescapeHTML, union: union, untildify: untildify, validateNumber: validateNumber, without: without, words: words, yesNo: yesNo, zip: zip, zipObject: zipObject };
 
 return imports;
 
