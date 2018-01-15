@@ -38,6 +38,7 @@ dropElements:array,function
 dropRight:array
 elementIsVisibleInViewport:browser
 elo:math,array,advanced
+equals:object,array,type,advanced
 escapeHTML:string,browser,regexp
 escapeRegExp:string,regexp
 everyNth:array
