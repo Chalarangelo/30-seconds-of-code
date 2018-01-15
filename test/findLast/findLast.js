@@ -1,0 +1,1 @@
+module.exports = findLast = (arr, fn) => arr.filter(fn).slice(-1);
