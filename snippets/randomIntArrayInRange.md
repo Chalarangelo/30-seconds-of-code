@@ -6,7 +6,7 @@ Use `Array.from()` to create an empty array of the specific length, `Math.random
 
 ```js
 const randomIntArrayInRange = (min, max, n = 1) =>
-	Array.from({ length: n }, () => Math.floor(Math.random() * (max - min + 1)) + min);
+  Array.from({ length: n }, () => Math.floor(Math.random() * (max - min + 1)) + min);
 ```
 
 ```js

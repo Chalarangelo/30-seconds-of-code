@@ -138,8 +138,8 @@ pull:array
 pullAtIndex:array
 pullAtValue:array
 randomHexColorCode:utility,random
-randomIntegerInRange:math,utility,random
 randomIntArrayInRange:math,utility,random
+randomIntegerInRange:math,utility,random
 randomNumberInRange:math,utility,random
 readFileLines:node,array,string
 redirect:browser,url
