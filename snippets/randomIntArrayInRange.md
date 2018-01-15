@@ -10,5 +10,5 @@ const randomIntArrayInRange = (min, max, n = 1) =>
 ```
 
 ```js
-randomIntArrayInRange(10, 12, 35); // [ 15, 13, 25, 19, 13, 22, 19, 12, 27, 19 ]
+randomIntArrayInRange(12, 35, 10); // [ 34, 14, 27, 17, 30, 27, 20, 26, 21, 14 ]
 ```
