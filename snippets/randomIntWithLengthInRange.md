@@ -19,5 +19,3 @@ randomIntWithLengthInRange(10, 12, 35); // [ 14, 20, 12, 29, 23, 16, 26, 22, 15,
 ```
 
 </details>
-
-<br>[⬆ Back to top](#table-of-contents)
