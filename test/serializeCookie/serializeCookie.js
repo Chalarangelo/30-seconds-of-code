@@ -1,0 +1,1 @@
+module.exports = serializeCookie = (name, val) => `${encodeURIComponent(name)}=${encodeURIComponent(val)}`;
