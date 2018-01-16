@@ -1,4 +1,4 @@
-Test log for: Tue Jan 16 2018 15:31:32 GMT+0200 (GTB Standard Time)
+Test log for: Tue Jan 16 2018 14:20:20 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -19,7 +19,7 @@ Test log for: Tue Jan 16 2018 15:31:32 GMT+0200 (GTB Standard Time)
     √ average(true) returns 0
     √ average(false) returns 1
     √ average(9, 1) returns 5
-    √ average(153, 44, 55, 64, 71, 1122, 322774, 2232, 23423, 234, 3631) returns 32163.909090909092 
+    √ average(153, 44, 55, 64, 71, 1122, 322774, 2232, 23423, 234, 3631) returns 32163.909090909092
     √ average(1, 2, 3) returns 2
     √ average(null) returns 0
     √ average(1, 2, 3) returns NaN
@@ -66,7 +66,7 @@ Test log for: Tue Jan 16 2018 15:31:32 GMT+0200 (GTB Standard Time)
   Testing chunk
 
     √ chunk is a Function
-    √ chunk([1, 2, 3, 4, 5], 2) returns [[1,2],[3,4],[5]] 
+    √ chunk([1, 2, 3, 4, 5], 2) returns [[1,2],[3,4],[5]]
     √ chunk([]) returns []
     √ chunk(123) returns []
     √ chunk({ a: 123}) returns []
@@ -721,6 +721,10 @@ Test log for: Tue Jan 16 2018 15:31:32 GMT+0200 (GTB Standard Time)
     √ objectToPairs is a Function
     √ Creates an array of key-value pair arrays from an object.
 
+  Testing observeMutations
+
+    ✔ observeMutations is a Function
+
   Testing off
 
     √ off is a Function
@@ -1148,8 +1152,8 @@ Test log for: Tue Jan 16 2018 15:31:32 GMT+0200 (GTB Standard Time)
     √ Array was zipped to object
 
 
-  total:     492
-  passing:   492
-  duration:  345ms
+  total:     490
+  passing:   490
+  duration:  270ms
 
 
