@@ -26,9 +26,9 @@
     "linter": "node ./scripts/lint.js",
     "tagger": "node ./scripts/tag.js",
     "webber": "node ./scripts/web.js",
-    "tdd": "node ./scripts/tdd.js",
-    "test": "tape test/**/*.test.js | tap-spec",
-    "module": "node ./scripts/module.js"
+    "tester": "node ./scripts/tdd.js",
+    "packager": "node ./scripts/module.js",
+    "test": "tape test/**/*.test.js | tap-spec"
   },
   "repository": {
     "type": "git",

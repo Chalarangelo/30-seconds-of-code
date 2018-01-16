@@ -59,7 +59,7 @@ try {
   tagDbStats = Object.entries(tagDbData)
     .sort((a, b) => a[1][0].localeCompare(b[1][0]))
     .reduce((acc, val) => {
-      acc.hasOwnProperty(val[1]) ? acc[val[1]]++ : (acc[val[1]] = 1);
+      val[1].forEach(v => acc.hasOwnProperty(v) ? acc[v]++ : (acc[v] = 1));
       return acc;
     }, {});
 } catch (err) {
