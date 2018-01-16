@@ -7,11 +7,10 @@ commit_website_files() {
   if [ $TRAVIS_EVENT_TYPE != "pull_request" ]; then
     if [ $TRAVIS_BRANCH == "master" ]; then
       echo "Committing to master branch..."
-      git status
+      git checkout -b "travis"
       git add -A
-      git commit -m "travis_commit"
-      git status
-    fi
+      git commit -a --message="travis_commit"
+      fi
   fi
 }
 
