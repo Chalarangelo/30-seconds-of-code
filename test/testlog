@@ -1,4 +1,4 @@
-Test log for: Tue Jan 16 2018 13:20:30 GMT+0000 (UTC)
+Test log for: Tue Jan 16 2018 14:20:20 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.1 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -734,6 +734,10 @@ Test log for: Tue Jan 16 2018 13:20:30 GMT+0000 (UTC)
     ✔ objectToPairs is a Function
     ✔ Creates an array of key-value pair arrays from an object.
 
+  Testing observeMutations
+
+    ✔ observeMutations is a Function
+
   Testing off
 
     ✔ off is a Function
@@ -1142,8 +1146,8 @@ Test log for: Tue Jan 16 2018 13:20:30 GMT+0000 (UTC)
     ✔ Array was zipped to object
 
 
-  total:     489
-  passing:   489
-  duration:  512ms
+  total:     490
+  passing:   490
+  duration:  270ms
 
 
