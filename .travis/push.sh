@@ -7,7 +7,6 @@ commit_website_files() {
   if [ $TRAVIS_EVENT_TYPE != "pull_request" ]; then
     if [ $TRAVIS_BRANCH == "master" ]; then
       echo "Committing to master branch..."
-      git checkout master
       git status
       git add -A
       git status
@@ -26,7 +25,7 @@ upload_files() {
   if [ $TRAVIS_EVENT_TYPE != "pull_request" ]; then
     if [ $TRAVIS_BRANCH == "master" ]; then
       echo "Pushing to master branch..."
-      git push --force --quiet "https://${GH_TOKEN}@github.com/kriadmin/30-seconds-of-python-code.git" master > /dev/null 2>&1
+      git push --force "https://${GH_TOKEN}@github.com/kriadmin/30-seconds-of-python-code.git" master
     fi
   fi
 }

@@ -7,9 +7,6 @@ install:
 after_success:
 -   python scripts/pretty.py
 -   python scripts/readme.py
--   stat .git
--   ls
--   pwd
 -   chmod +x .travis/push.sh
 -   .travis/push.sh
 skip_cleanup : true
