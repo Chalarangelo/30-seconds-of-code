@@ -112,6 +112,7 @@ average(1, 2, 3);
 * [`initial`](#initial)
 * [`initialize2DArray`](#initialize2darray)
 * [`initializeArrayWithRange`](#initializearraywithrange)
+* [`initializeArrayWithRangeRight`](#initializearraywithrangeright)
 * [`initializeArrayWithValues`](#initializearraywithvalues)
 * [`intersection`](#intersection)
 * [`isSorted`](#issorted)
@@ -163,6 +164,7 @@ average(1, 2, 3);
 * [`hasClass`](#hasclass)
 * [`hide`](#hide)
 * [`httpsRedirect`](#httpsredirect)
+* [`observeMutations`](#observemutations-)
 * [`off`](#off)
 * [`on`](#on)
 * [`onUserInputChange`](#onuserinputchange-)
@@ -323,17 +325,26 @@ average(1, 2, 3);
 
 * [`getType`](#gettype)
 * [`isArray`](#isarray)
+* [`isArrayBuffer`](#isarraybuffer)
 * [`isArrayLike`](#isarraylike)
 * [`isBoolean`](#isboolean)
 * [`isFunction`](#isfunction)
+* [`isMap`](#ismap)
+* [`isNil`](#isnil)
 * [`isNull`](#isnull)
 * [`isNumber`](#isnumber)
 * [`isObject`](#isobject)
 * [`isPrimitive`](#isprimitive)
 * [`isPromiseLike`](#ispromiselike)
+* [`isRegExp`](#isregexp)
+* [`isSet`](#isset)
 * [`isString`](#isstring)
 * [`isSymbol`](#issymbol)
+* [`isTypedArray`](#istypedarray)
+* [`isUndefined`](#isundefined)
 * [`isValidJSON`](#isvalidjson)
+* [`isWeakMap`](#isweakmap)
+* [`isWeakSet`](#isweakset)
 
 </details>
 
@@ -1016,7 +1027,7 @@ initialize2DArray(2, 2, 0); // [[0,0], [0,0]]
 
 ### initializeArrayWithRange
 
-Initializes an array containing the numbers in the specified range where `start` and `end` are inclusive with there common difference `step`.
+Initializes an array containing the numbers in the specified range where `start` and `end` are inclusive with their common difference `step`.
 
 Use `Array.from(Math.ceil((end+1-start)/step))` to create an array of the desired length(the amounts of elements is equal to `(end-start)/step` or `(end+1-start)/step` for inclusive end), `Array.map()` to fill with the desired values in a range.
 You can omit `start` to use a default value of `0`.
@@ -1034,6 +1045,35 @@ const initializeArrayWithRange = (end, start = 0, step = 1) =>
 initializeArrayWithRange(5); // [0,1,2,3,4,5]
 initializeArrayWithRange(7, 3); // [3,4,5,6,7]
 initializeArrayWithRange(9, 0, 2); // [0,2,4,6,8]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### initializeArrayWithRangeRight
+
+Initializes an array containing the numbers in the specified range (in reverse) where `start` and `end` are inclusive with their common difference `step`.
+
+Use `Array.from(Math.ceil((end+1-start)/step))` to create an array of the desired length(the amounts of elements is equal to `(end-start)/step` or `(end+1-start)/step` for inclusive end), `Array.map()` to fill with the desired values in a range.
+You can omit `start` to use a default value of `0`.
+You can omit `step` to use a default value of `1`.
+
+```js
+const initializeArrayWithRangeRight = (end, start = 0, step = 1) =>
+  Array.from({ length: Math.ceil((end + 1 - start) / step) }).map(
+    (v, i, arr) => (arr.length - i - 1) * step + start
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+initializeArrayWithRangeRight(5); // [5,4,3,2,1,0]
+initializeArrayWithRangeRight(7, 3); // [7,6,5,4,3]
+initializeArrayWithRangeRight(9, 0, 2); // [8,6,4,2,0]
 ```
 
 </details>
@@ -2221,6 +2261,48 @@ const httpsRedirect = () => {
 
 ```js
 httpsRedirect(); // If you are on http://mydomain.com, you are redirected to https://mydomain.com
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### observeMutations ![advanced](/advanced.svg)
+
+Returns a new MutationObserver and runs the provided callback for each mutation on the specified element.
+
+Use a [`MutationObserver`](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver) to observe mutations on the given element.
+Use `Array.forEach()` to run the callback for each mutation that is observed.
+Omit the third argument, `options`, to use the default [options](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver#MutationObserverInit) (all `true`).
+
+```js
+const observeMutations = (element, callback, options) => {
+  const observer = new MutationObserver(mutations => mutations.forEach(m => callback(m)));
+  observer.observe(
+    element,
+    Object.assign(
+      {
+        childList: true,
+        attributes: true,
+        attributeOldValue: true,
+        characterData: true,
+        characterDataOldValue: true,
+        subtree: true
+      },
+      options
+    )
+  );
+  return observer;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const obs = observeMutations(document, console.log); // Logs all mutations that happen on the page
+obs.disconnect(); // Disconnects the observer and stops logging mutations on the page
 ```
 
 </details>
@@ -5107,6 +5189,28 @@ isArray([1]); // true
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### isArrayBuffer
+
+Checks if value is classified as a ArrayBuffer object.
+
+Use the `instanceof`operator to check if the provided value is a `ArrayBuffer` object.
+
+```js
+const isArrayBuffer = val => val instanceof ArrayBuffer;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isArrayBuffer(new ArrayBuffer()); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### isArrayLike
 
 Checks if the provided argument is array-like (i.e. is iterable).
@@ -5176,6 +5280,51 @@ const isFunction = val => typeof val === 'function';
 ```js
 isFunction('x'); // false
 isFunction(x => x); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isMap
+
+Checks if value is classified as a Map object.
+
+Use the `instanceof`operator to check if the provided value is a `Map` object.
+
+```js
+const isMap = val => val instanceof Map;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isMap(new Map()); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isNil
+
+Returns `true` if the specified value is `null` or `undefined`, `false` otherwise.
+
+Use the strict equality operator to check if the value and of `val` are equal to `null` or `undefined`.
+
+```js
+const isNil = val => val === undefined || val === null;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isNil(null); // true
+isNil(undefined); // true
 ```
 
 </details>
@@ -5316,6 +5465,50 @@ isPromiseLike({}); // false
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### isRegExp
+
+Checks if value is classified as a RegExp object.
+
+Use the `instanceof`operator to check if the provided value is a `RegExp` object.
+
+```js
+const isRegExp = val => val instanceof RegExp;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isRegExp(/./g); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isSet
+
+Checks if value is classified as a Set object.
+
+Use the `instanceof`operator to check if the provided value is a `Set` object.
+
+```js
+const isSet = val => val instanceof Set;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isSet(new Set()); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### isString
 
 Checks if the given argument is a string.
@@ -5360,6 +5553,50 @@ isSymbol(Symbol('x')); // true
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### isTypedArray
+
+Checks if value is classified as a TypedArray object.
+
+Use the `instanceof`operator to check if the provided value is a `TypedArray` object.
+
+```js
+const isTypedArray = val => val instanceof TypedArray;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isTypedArray(new TypedArray()); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isUndefined
+
+Returns `true` if the specified value is `undefined`, `false` otherwise.
+
+Use the strict equality operator to check if the value and of `val` are equal to `undefined`.
+
+```js
+const isUndefined = val => val === undefined;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isUndefined(undefined); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### isValidJSON
 
 Checks if the provided argument is a valid JSON.
@@ -5384,6 +5621,50 @@ const isValidJSON = obj => {
 isValidJSON('{"name":"Adam","age":20}'); // true
 isValidJSON('{"name":"Adam",age:"20"}'); // false
 isValidJSON(null); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isWeakMap
+
+Checks if value is classified as a WeakMap object.
+
+Use the `instanceof`operator to check if the provided value is a `WeakMap` object.
+
+```js
+const isWeakMap = val => val instanceof WeakMap;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isWeakMap(new WeakMap()); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isWeakSet
+
+Checks if value is classified as a WeakSet object.
+
+Use the `instanceof`operator to check if the provided value is a `WeakSet` object.
+
+```js
+const isWeakSet = val => val instanceof WeakSet;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isWeakSet(new WeakSet()); // true
 ```
 
 </details>
