@@ -9,6 +9,7 @@ commit_website_files() {
       echo "Committing to master branch..."
       git status
       git add -A
+      git commit -m "travis_commit"
       git status
     fi
   fi
