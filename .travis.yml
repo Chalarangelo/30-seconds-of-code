@@ -4,9 +4,10 @@ python:
     3.6
 install:
     pip install -r requirements.txt
-after_success:
+script:
 -   python scripts/pretty.py
 -   python scripts/readme.py
+after_success:
 -   chmod +x .travis/push.sh
 -   .travis/push.sh
 skip_cleanup : true
