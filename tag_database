@@ -193,6 +193,7 @@ truthCheckCollection:object,logic,array
 unescapeHTML:string,browser
 union:array,math
 untildify:node,string
+URLJoin:string,utility,regexp
 UUIDGeneratorBrowser:browser,utility,random
 UUIDGeneratorNode:node,utility,random
 validateNumber:utility,math
