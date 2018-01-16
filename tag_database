@@ -89,6 +89,7 @@ isEven:math
 isFunction:type,function
 isLowerCase:string,utility
 isMap:type
+isNil:type
 isNull:type
 isNumber:type,math
 isObject:type,object
@@ -102,6 +103,7 @@ isString:type,string
 isSymbol:type
 isTravisCI:node
 isTypedArray:type
+isUndefined:type
 isUpperCase:string,utility
 isValidJSON:type,json
 isWeakMap:type
