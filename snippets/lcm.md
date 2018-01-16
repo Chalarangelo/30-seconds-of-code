@@ -7,6 +7,8 @@ Use the `greatest common divisor (GCD)` formula and the fact that `lcm(x,y) = x 
 Uses `reduce` function from the inbuilt module `functools`. Also defines a method `spread` for javascript like spreading of lists.
 
 ```python 
+
+
 from functools import reduce
 
 

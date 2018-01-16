@@ -5,7 +5,7 @@ python:
 install:
     pip install -r requirements.txt
 script:
--   python scripts/pretty.py
+-   python scripts/lint.py
 -   python scripts/readme.py
 after_success:
 -   chmod +x .travis/push.sh

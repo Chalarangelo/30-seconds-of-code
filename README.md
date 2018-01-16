@@ -13,6 +13,8 @@ Chunks an array into smaller lists of a specified size.
 Uses `range` to create a list of desired size. Then use `map` on this list and fill it with splices of `arr`.
 
 ```python 
+
+
 from math import ceil
 
 
@@ -27,14 +29,16 @@ def chunk(arr, size):
 chunk([1,2,3,4,5],2) # [[1,2],[3,4],5]
 ```
 
-### countOccurences
+### count_occurences
 
 Counts the occurrences of a value in an list.
 
 Uses the `reduce` functin from built-in module `functools` to increment a counter each time you encounter the specific value inside the list.
 
 ```python 
-def countOccurences(arr, val):
+
+
+def count_occurences(arr, val):
     return reduce(
         (lambda x, y: x + 1 if y == val and type(y) == type(val) else x + 0),
         arr)
@@ -42,26 +46,28 @@ def countOccurences(arr, val):
 ```
 
 ```python
-countOccurrences([1, 1, 2, 1, 2, 3], 1) # 3
+count_occurrences([1, 1, 2, 1, 2, 3], 1) # 3
 ```
-### countVowels
+### count_vowels
 
 Retuns `number` of vowels in provided `string`.
 
 Use a regular expression to count the number of vowels `(A, E, I, O, U)` in a string.
 
 ```python 
+
+
 import re
 
 
-def countVowels(str):
+def count_vowels(str):
     return len(len(re.findall(r'[aeiou]', str, re.IGNORECASE)))
 
 ```
 
 ``` python
-countVowels('foobar') # 3
-countVowels('gym') # 0
+count_vowels('foobar') # 3
+count_vowels('gym') # 0
 ```
 
 ### gcd
@@ -73,6 +79,8 @@ The `helperGcdfunction` uses recursion. Base case is when `y` equals `0`. In thi
 Uses the reduce function from the inbuilt module `functools`. Also defines a method `spread` for javascript like spreading of lists.
 
 ```python 
+
+
 from functools import reduce
 
 
@@ -110,6 +118,8 @@ Use the `greatest common divisor (GCD)` formula and the fact that `lcm(x,y) = x 
 Uses `reduce` function from the inbuilt module `functools`. Also defines a method `spread` for javascript like spreading of lists.
 
 ```python 
+
+
 from functools import reduce
 
 
@@ -147,6 +157,8 @@ lcm([1, 3, 4], 5) # 60
 Implements javascript's spread syntax as a function. Flattens the list(non-deep) and returns an list.
 
 ```python 
+
+
 def spread(arg):
     ret = []
     for i in arg:
