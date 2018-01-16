@@ -75,7 +75,7 @@ indexOfAll:array
 initial:array
 initialize2DArray:array
 initializeArrayWithRange:array,math
-initializeArrayWithValues:array,amth
+initializeArrayWithValues:array,math
 inRange:math
 intersection:array,math
 invertKeyValues:object
@@ -116,7 +116,7 @@ median:math,array
 memoize:function
 merge:object,array
 minBy:math,array,function
-minN:array,amth
+minN:array,math
 negate:function
 nthElement:array
 objectFromPairs:object,array

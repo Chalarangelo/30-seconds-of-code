@@ -12,7 +12,8 @@ script:
 - npm run linter
 - npm run builder
 - npm run webber
-- npm run module
+- npm run packager
+- npm run tester
 after_success:
 - chmod +x .travis/push.sh
 - .travis/push.sh

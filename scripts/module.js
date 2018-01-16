@@ -19,7 +19,7 @@ const IMPORTS = './imports.js';
 // Regex for selecting code blocks
 const codeRE = /```\s*js([\s\S]*?)```/;
 // Start the timer of the script
-console.time('Module');
+console.time('Packager');
 // Load tag data from the database and snippets from their folder
 try {
   const tagDatabase = fs.readFileSync('tag_database', 'utf8');
@@ -72,7 +72,7 @@ try {
   // Log a success message
   console.log(`${chalk.green('SUCCESS!')} Snippet module built!`);
   // Log the time taken
-  console.timeEnd('Module');
+  console.timeEnd('Packager');
 } catch (err) {
   // Handle errors (hopefully not!)
   console.log(`${chalk.red('ERROR!')} During module creation: ${err}`);
