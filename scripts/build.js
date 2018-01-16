@@ -44,8 +44,8 @@ These snippets, while useful and interesting, didn\'t quite make it into the rep
 ## Table of Contents
 
 `
-    for(const snippet of Object.entries(snippets))
-      output += `* [\`${snippet[0]}\`](#${snippet[0].toLowerCase()})\n`;
+    for(const snippet of Object.entries(snippets).filter(s[0] !=== 'README.md'))
+      output += `* [\`${snippet[0].slice(0,-3)}\`](#${snippet[0].toLowerCase().slice(0,-3)})\n`;
     output += '\n---\n';
     for(const snippet of Object.entries(snippets)){
       let data = snippet[1];
