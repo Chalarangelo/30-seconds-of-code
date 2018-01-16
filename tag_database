@@ -75,6 +75,7 @@ indexOfAll:array
 initial:array
 initialize2DArray:array
 initializeArrayWithRange:array,math
+initializeArrayWithRangeRight:array,math
 initializeArrayWithValues:array,math
 inRange:math
 intersection:array,math
