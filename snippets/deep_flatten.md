@@ -6,6 +6,7 @@ Use recursion. Use `list.extend()` with an empty array (`result`) and the spread
 
 ```python 
 
+
 def spread(arg):
     ret = []
     for i in arg:
@@ -19,6 +20,8 @@ def spread(arg):
     result = []
     result.extend(spread(list(map(lambda x : deep(x) if type(x) == list else x,arr))))
     return result
+
+
 
 ```
 
