@@ -18,7 +18,7 @@ upload_files() {
   if [ $TRAVIS_EVENT_TYPE != "pull_request" ]; then
     if [ $TRAVIS_BRANCH == "master" ]; then
       echo "Pushing to master branch..."
-      git push --force "https://${GH_TOKEN}@github.com/kriadmin/30-seconds-of-python-code.git" master
+      git push --force "https://${GH_TOKEN}@github.com/kriadmin/30-seconds-of-python-code.git" travis
     fi
   fi
 }
