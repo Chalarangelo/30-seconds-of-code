@@ -721,6 +721,10 @@ Test log for: Tue Jan 16 2018 15:31:32 GMT+0200 (GTB Standard Time)
     √ objectToPairs is a Function
     √ Creates an array of key-value pair arrays from an object.
 
+  Testing observeMutations
+
+    ✔ observeMutations is a Function
+
   Testing off
 
     √ off is a Function
@@ -1151,5 +1155,6 @@ Test log for: Tue Jan 16 2018 15:31:32 GMT+0200 (GTB Standard Time)
   total:     492
   passing:   492
   duration:  345ms
+
 
 

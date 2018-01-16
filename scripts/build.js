@@ -26,7 +26,7 @@ if(isTravisCI() && (process.env['TRAVIS_EVENT_TYPE'] === 'cron' || process.env['
       .readdirSync(SNIPPETS_ARCHIVE_PATH)
       .sort((a, b) => a.toLowerCase() - b.toLowerCase());
     // Store the data read from each snippet in the appropriate object
-    for (const name of snippetFilenames) {
+    for (const name of snippetFilenames.filter(s => s !== 'README.md')) {
       snippets[name] = fs.readFileSync(path.join(SNIPPETS_ARCHIVE_PATH, name), 'utf8');
     }
   } catch (err) {
@@ -45,7 +45,7 @@ These snippets, while useful and interesting, didn\'t quite make it into the rep
 
 `
     for(const snippet of Object.entries(snippets))
-      output += `* [\`${snippet[0]}\`](#${snippet[0].toLowerCase()})\n`;
+      output += `* [\`${snippet[0].slice(0,-3)}\`](#${snippet[0].toLowerCase().slice(0,-3)})\n`;
     output += '\n---\n';
     for(const snippet of Object.entries(snippets)){
       let data = snippet[1];
