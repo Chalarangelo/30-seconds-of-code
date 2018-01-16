@@ -4,7 +4,8 @@
 */
 
 // Load modules
-const fs = require('fs-extra');
+const fs = require('fs-extra'), path = require('path');
+const child_process = require('child_process');
 const chalk = require('chalk');
 // Load helper functions (these are from existing snippets in 30 seconds of code!)
 const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
@@ -14,7 +15,7 @@ if(isTravisCI() && process.env['TRAVIS_EVENT_TYPE'] !== 'cron' && process.env['T
 }
 // Declare paths
 const SNIPPETS_ACTIVE = './snippets';
-const SNIPPETS_ARCHIVE = './snippets_archive'; 
+const SNIPPETS_ARCHIVE = './snippets_archive';
 const TEST_PATH = './test';
 
 // Array of snippet names
@@ -29,12 +30,12 @@ snippetFiles.push(...snippetFilesArchive);
 
 // Current Snippet that depend on node_modules
 const errSnippets = ['JSONToFile', 'readFileLines', 'UUIDGeneratorNode'];
-
+console.time('Tester');
 snippetFiles
   .filter(fileName => !errSnippets.includes(fileName))
   .map(fileName => {
     // Check if fileName for snippet exist in test/ dir, if doesnt create
-    fs.ensureDirSync(`${TEST_PATH}/${fileName}`);
+    fs.ensureDirSync(path.join(TEST_PATH,fileName));
 
     // return fileName for later use
     return fileName;
@@ -42,7 +43,7 @@ snippetFiles
   .map(fileName => {
     const activeOrArchive = snippetFilesActive.includes(fileName) ? SNIPPETS_ACTIVE : SNIPPETS_ARCHIVE;
     // Grab snippetData
-    const fileData = fs.readFileSync(`${activeOrArchive}/${fileName}.md`, 'utf8');
+    const fileData = fs.readFileSync(path.join(activeOrArchive,`${fileName}.md`), 'utf8');
     // Grab snippet Code blocks
     const fileCode = fileData.slice(fileData.search(/```\s*js/i), fileData.lastIndexOf('```') + 3);
     // Split code based on code markers
@@ -55,7 +56,7 @@ snippetFiles
       .split('\n')
       .map(line => line.trim())
       .filter((_, i) => blockMarkers[0] < i && i < blockMarkers[1]);
-    // Grab snippet example based on code markers 
+    // Grab snippet example based on code markers
     const fileExample = fileCode
       .split('\n')
       .map(line => line.trim())
@@ -64,13 +65,13 @@ snippetFiles
     // Export template for snippetName.js which takes into account snippet name.length when generating snippetName.js file
     const exportFile = `module.exports = ${fileName} = ${fileFunction.join('\n').slice(9 + fileName.length)}`;
 
-    // Export template for snippetName.test.js which generates a example test & other information 
+    // Export template for snippetName.test.js which generates a example test & other information
     const exportTest = [
       `const test = require('tape');`,
       `const ${fileName} = require('./${fileName}.js');`,
       `\ntest('Testing ${fileName}', (t) => {`,
       `\t//For more information on all the methods supported by tape\n\t//Please go to https://github.com/substack/tape`,
-      `\tt.true(typeof ${fileName} === 'function', '${fileName} is a Function');`,   
+      `\tt.true(typeof ${fileName} === 'function', '${fileName} is a Function');`,
       `\t//t.deepEqual(${fileName}(args..), 'Expected');`,
       `\t//t.equal(${fileName}(args..), 'Expected');`,
       `\t//t.false(${fileName}(args..), 'Expected');`,
@@ -80,14 +81,21 @@ snippetFiles
     ].join('\n');
 
     // Write/Update exportFile which is snippetName.js in respective dir
-    fs.writeFileSync(`${TEST_PATH}/${fileName}/${fileName}.js`, exportFile);
+    fs.writeFileSync(path.join(TEST_PATH,fileName,`${fileName}.js`), exportFile);
 
-    if ( !fs.existsSync(`${TEST_PATH}/${fileName}/${fileName}.test.js`) ) {
-      // if snippetName.test.js doesn't exist inrespective dir exportTest 
+    if ( !fs.existsSync(path.join(TEST_PATH,fileName,`${fileName}.test.js`)) ) {
+      // if snippetName.test.js doesn't exist inrespective dir exportTest
       fs.writeFileSync(`${TEST_PATH}/${fileName}/${fileName}.test.js`, exportTest);
     }
 
     // return fileName for later use
     return fileName;
   });
-
+try {
+  fs.writeFileSync(path.join(TEST_PATH,'testlog'),`Test log for: ${new Date().toString()}\n`);
+  child_process.execSync(`npm test >> ${TEST_PATH}/testlog`);
+}
+catch (e) {
+  fs.appendFileSync(path.join(TEST_PATH,'testlog'));
+}
+console.timeEnd('Tester');
