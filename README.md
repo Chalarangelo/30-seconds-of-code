@@ -324,17 +324,24 @@ average(1, 2, 3);
 
 * [`getType`](#gettype)
 * [`isArray`](#isarray)
+* [`isArrayBuffer`](#isarraybuffer)
 * [`isArrayLike`](#isarraylike)
 * [`isBoolean`](#isboolean)
 * [`isFunction`](#isfunction)
+* [`isMap`](#ismap)
 * [`isNull`](#isnull)
 * [`isNumber`](#isnumber)
 * [`isObject`](#isobject)
 * [`isPrimitive`](#isprimitive)
 * [`isPromiseLike`](#ispromiselike)
+* [`isRegExp`](#isregexp)
+* [`isSet`](#isset)
 * [`isString`](#isstring)
 * [`isSymbol`](#issymbol)
+* [`isTypedArray`](#istypedarray)
 * [`isValidJSON`](#isvalidjson)
+* [`isWeakMap`](#isweakmap)
+* [`isWeakSet`](#isweakset)
 
 </details>
 
@@ -5150,6 +5157,28 @@ isArray([1]); // true
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### isArrayBuffer
+
+Checks if value is classified as a ArrayBuffer object.
+
+Use the `instanceof`operator to check if the provided value is a `ArrayBuffer` object.
+
+```js
+const isArrayBuffer = val => val instanceof ArrayBuffer;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isArrayBuffer(new ArrayBuffer()); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### isArrayLike
 
 Checks if the provided argument is array-like (i.e. is iterable).
@@ -5219,6 +5248,28 @@ const isFunction = val => typeof val === 'function';
 ```js
 isFunction('x'); // false
 isFunction(x => x); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isMap
+
+Checks if value is classified as a Map object.
+
+Use the `instanceof`operator to check if the provided value is a `Map` object.
+
+```js
+const isMap = val => val instanceof Map;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isMap(new Map()); // true
 ```
 
 </details>
@@ -5359,6 +5410,50 @@ isPromiseLike({}); // false
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### isRegExp
+
+Checks if value is classified as a RegExp object.
+
+Use the `instanceof`operator to check if the provided value is a `RegExp` object.
+
+```js
+const isRegExp = val => val instanceof RegExp;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isRegExp(/./g); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isSet
+
+Checks if value is classified as a Set object.
+
+Use the `instanceof`operator to check if the provided value is a `Set` object.
+
+```js
+const isSet = val => val instanceof Set;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isSet(new Set()); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### isString
 
 Checks if the given argument is a string.
@@ -5403,6 +5498,28 @@ isSymbol(Symbol('x')); // true
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### isTypedArray
+
+Checks if value is classified as a TypedArray object.
+
+Use the `instanceof`operator to check if the provided value is a `TypedArray` object.
+
+```js
+const isTypedArray = val => val instanceof TypedArray;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isTypedArray(new TypedArray()); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### isValidJSON
 
 Checks if the provided argument is a valid JSON.
@@ -5427,6 +5544,50 @@ const isValidJSON = obj => {
 isValidJSON('{"name":"Adam","age":20}'); // true
 isValidJSON('{"name":"Adam",age:"20"}'); // false
 isValidJSON(null); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isWeakMap
+
+Checks if value is classified as a WeakMap object.
+
+Use the `instanceof`operator to check if the provided value is a `WeakMap` object.
+
+```js
+const isWeakMap = val => val instanceof WeakMap;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isWeakMap(new WeakMap()); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isWeakSet
+
+Checks if value is classified as a WeakSet object.
+
+Use the `instanceof`operator to check if the provided value is a `WeakSet` object.
+
+```js
+const isWeakSet = val => val instanceof WeakSet;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isWeakSet(new WeakSet()); // true
 ```
 
 </details>
