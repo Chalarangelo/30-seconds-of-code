@@ -1,4 +1,4 @@
-### deepFlatten
+### deep_flatten
 
 Deep flattens a list.
 
