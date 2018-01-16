@@ -314,6 +314,7 @@ average(1, 2, 3);
 * [`toSnakeCase`](#tosnakecase)
 * [`truncateString`](#truncatestring)
 * [`unescapeHTML`](#unescapehtml)
+* [`URLJoin`](#urljoin)
 * [`words`](#words)
 
 </details>
@@ -5111,6 +5112,36 @@ const unescapeHTML = str =>
 
 ```js
 unescapeHTML('&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;'); // '<a href="#">Me & you</a>'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### URLJoin
+
+Joins all given URL segments together, then normalizes the resulting URL.
+
+Use `String.join('/')` to combine URL segments, then a series of `String.replace()` calls with various regexps to normalize the resulting URL (remove double slashes, add proper slashes for protocol, remove slashes before parameters, combine parameters with `'&'` and normalize first parameter delimiter).
+
+```js
+const URLJoin = (...args) =>
+  args
+    .join('/')
+    .replace(/[\/]+/g, '/')
+    .replace(/^(.+):\//, '$1://')
+    .replace(/^file:/, 'file:/')
+    .replace(/\/(\?|&|#[^!])/g, '$1')
+    .replace(/\?/g, '&')
+    .replace('&', '?');
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+URLJoin('http://www.google.com', 'a', '/b/cd', '?foo=123', '?bar=foo'); // 'http://www.google.com/a/b/cd?foo=123&bar=foo'
 ```
 
 </details>
