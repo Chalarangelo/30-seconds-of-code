@@ -70,13 +70,14 @@ count_vowels('foobar') # 3
 count_vowels('gym') # 0
 ```
 
-### deepFlatten
+### deep_flatten
 
 Deep flattens a list.
 
 Use recursion. Use `list.extend()` with an empty array (`result`) and the spread function to flatten a list. Recursively flatten each element that is a list.
 
 ```python 
+
 
 def spread(arg):
     ret = []
@@ -91,6 +92,7 @@ def spread(arg):
     result = []
     result.extend(spread(list(map(lambda x : deep(x) if type(x) == list else x,arr))))
     return result
+
 
 ```
 
