@@ -13,9 +13,10 @@ Here's what you can do to help:
 ### Snippet submission and Pull request guidelines
 
 - **DO NOT MODIFY THE README.md FILE!** Make changes to individual snippet files. The `travis_ci` automatically builds the `README.md` file when your pull request is merged.
-- **Snippet filenames** must correspond to the title of the snippet and to the function name. For example, if your snippet is titled `### awesomeSnippet` the filename should be `awesomeSnippet.md` and the function name should be `awesomeSnippet`.
-  - Use `camelCase`, not `kebab-case` or `snake_case`.
-  - Avoid capitalization of words, except if the whole word is capitalized (e.g. `URL` should be capitalized in the filename and the snippet title).
+- **Snippet filenames** must correspond to the title of the snippet and to the function name. For example, if your snippet is titled `### awesome_snippet` the filename should be `awesome_snippet.md` and the function name should be `awesome_snippet`.
+  - Use `snake_case`, not `kebab-case` or `camelCase`.
+  - Avoid capitalization of words.
+  -  Please follow the (PEP8)[https://www.python.org/dev/peps/pep-0008/] guidelines.
 - **Snippet titles** should have be the same as the name of the function that is present in the snippet.
   - All snippet titles must be prefixed with `###` and be at the very first line of your snippet.
   - Snippet titles must be unique (although if you cannot find a better title, just add some placeholder at the end of the filename and title and we will figure it out).
@@ -27,7 +28,7 @@ Here's what you can do to help:
   - Remember to start your snippet's code on a new line below the opening backticks.
   - You can write the code in any style you like but eventually it will be formated by our prettifier so the formatting will change. Just make sure to have consistent spacing.
   - Try to keep your snippets' code short and to the point. Use modern techniques and features. Make sure to test your code before submitting.
-  - All snippets must be followed by one (more if necessary) test case after the code, in a new block enclosed inside ` ```python ` and ` ``` `. The syntax for this is `myFunction('testInput') # 'testOutput'`. Use multiline examples only if necessary.
+  - All snippets must be followed by one (more if necessary) test case after the code, in a new block enclosed inside ` ```python ` and ` ``` `. The syntax for this is `my_function('test_input') # 'test_output'`. Use multiline examples only if necessary.
   - Try to make your function name unique, so that it does not conflict with existing snippets.
   - Snippet functions do not have to handle errors in input, unless it's necessary (e.g. a mathematical function that cannot be extended to negative numbers should handle negative input appropriately).
 - Snippets should be short (usually below 20 - 30 lines). If your snippet is longer than that, you can still submit it, and we can help you shorten it or figure out ways to improve it.
