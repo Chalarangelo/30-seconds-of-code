@@ -3,6 +3,8 @@
 Implements javascript's spread syntax as a function. Flattens the list(non-deep) and returns an list.
 
 ```python 
+
+
 def spread(arg):
     ret = []
     for i in arg:
