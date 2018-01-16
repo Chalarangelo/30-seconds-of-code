@@ -112,6 +112,7 @@ average(1, 2, 3);
 * [`initial`](#initial)
 * [`initialize2DArray`](#initialize2darray)
 * [`initializeArrayWithRange`](#initializearraywithrange)
+* [`initializeArrayWithRangeRight`](#initializearraywithrangeright)
 * [`initializeArrayWithValues`](#initializearraywithvalues)
 * [`intersection`](#intersection)
 * [`isSorted`](#issorted)
@@ -329,6 +330,7 @@ average(1, 2, 3);
 * [`isBoolean`](#isboolean)
 * [`isFunction`](#isfunction)
 * [`isMap`](#ismap)
+* [`isNil`](#isnil)
 * [`isNull`](#isnull)
 * [`isNumber`](#isnumber)
 * [`isObject`](#isobject)
@@ -339,6 +341,7 @@ average(1, 2, 3);
 * [`isString`](#isstring)
 * [`isSymbol`](#issymbol)
 * [`isTypedArray`](#istypedarray)
+* [`isUndefined`](#isundefined)
 * [`isValidJSON`](#isvalidjson)
 * [`isWeakMap`](#isweakmap)
 * [`isWeakSet`](#isweakset)
@@ -1024,7 +1027,7 @@ initialize2DArray(2, 2, 0); // [[0,0], [0,0]]
 
 ### initializeArrayWithRange
 
-Initializes an array containing the numbers in the specified range where `start` and `end` are inclusive with there common difference `step`.
+Initializes an array containing the numbers in the specified range where `start` and `end` are inclusive with their common difference `step`.
 
 Use `Array.from(Math.ceil((end+1-start)/step))` to create an array of the desired length(the amounts of elements is equal to `(end-start)/step` or `(end+1-start)/step` for inclusive end), `Array.map()` to fill with the desired values in a range.
 You can omit `start` to use a default value of `0`.
@@ -1042,6 +1045,35 @@ const initializeArrayWithRange = (end, start = 0, step = 1) =>
 initializeArrayWithRange(5); // [0,1,2,3,4,5]
 initializeArrayWithRange(7, 3); // [3,4,5,6,7]
 initializeArrayWithRange(9, 0, 2); // [0,2,4,6,8]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### initializeArrayWithRangeRight
+
+Initializes an array containing the numbers in the specified range (in reverse) where `start` and `end` are inclusive with their common difference `step`.
+
+Use `Array.from(Math.ceil((end+1-start)/step))` to create an array of the desired length(the amounts of elements is equal to `(end-start)/step` or `(end+1-start)/step` for inclusive end), `Array.map()` to fill with the desired values in a range.
+You can omit `start` to use a default value of `0`.
+You can omit `step` to use a default value of `1`.
+
+```js
+const initializeArrayWithRangeRight = (end, start = 0, step = 1) =>
+  Array.from({ length: Math.ceil((end + 1 - start) / step) }).map(
+    (v, i, arr) => (arr.length - i - 1) * step + start
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+initializeArrayWithRangeRight(5); // [5,4,3,2,1,0]
+initializeArrayWithRangeRight(7, 3); // [7,6,5,4,3]
+initializeArrayWithRangeRight(9, 0, 2); // [8,6,4,2,0]
 ```
 
 </details>
@@ -5277,6 +5309,29 @@ isMap(new Map()); // true
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### isNil
+
+Returns `true` if the specified value is `null` or `undefined`, `false` otherwise.
+
+Use the strict equality operator to check if the value and of `val` are equal to `null` or `undefined`.
+
+```js
+const isNil = val => val === undefined || val === null;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isNil(null); // true
+isNil(undefined); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### isNull
 
 Returns `true` if the specified value is `null`, `false` otherwise.
@@ -5513,6 +5568,28 @@ const isTypedArray = val => val instanceof TypedArray;
 
 ```js
 isTypedArray(new TypedArray()); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isUndefined
+
+Returns `true` if the specified value is `undefined`, `false` otherwise.
+
+Use the strict equality operator to check if the value and of `val` are equal to `undefined`.
+
+```js
+const isUndefined = val => val === undefined;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isUndefined(undefined); // true
 ```
 
 </details>
