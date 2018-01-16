@@ -42,7 +42,7 @@ Logs: {
 */
 httpPost(
   'https://jsonplaceholder.typicode.com/posts',
-  null,
+  null, //does not send a body
   console.log
 ); /*
 Logs: {
