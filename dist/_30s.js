@@ -10,6 +10,16 @@ const JSONToFile = (obj, filename) =>
 
 const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
 
+const URLJoin = (...args) =>
+  args
+    .join('/')
+    .replace(/[\/]+/g, '/')
+    .replace(/^(.+):\//, '$1://')
+    .replace(/^file:/, 'file:/')
+    .replace(/\/(\?|&|#[^!])/g, '$1')
+    .replace(/\?/g, '&')
+    .replace('&', '?');
+
 const UUIDGeneratorBrowser = () =>
   ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
     (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)
@@ -184,8 +194,6 @@ const digitize = n => [...`${n}`].map(i => parseInt(i));
 
 const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
 
-const distinctValuesOfArray = arr => [...new Set(arr)];
-
 const dropElements = (arr, func) => {
   while (arr.length > 0 && !func(arr[0])) arr = arr.slice(1);
   return arr;
@@ -357,6 +365,30 @@ const hasClass = (el, className) => el.classList.contains(className);
 const hasFlags = (...flags) =>
   flags.every(flag => process.argv.includes(/^-{1,2}/.test(flag) ? flag : '--' + flag));
 
+const hashBrowser = val =>
+  crypto.subtle.digest('SHA-256', new TextEncoder('utf-8').encode(val)).then(h => {
+    let hexes = [],
+      view = new DataView(h);
+    for (let i = 0; i < view.byteLength; i += 4)
+      hexes.push(('00000000' + view.getUint32(i).toString(16)).slice(-8));
+    return hexes.join('');
+  });
+
+const crypto$2 = typeof require !== "undefined" && require('crypto');
+const hashNode = val =>
+  new Promise(resolve =>
+    setTimeout(
+      () =>
+        resolve(
+          crypto$2
+            .createHash('sha256')
+            .update(val)
+            .digest('hex')
+        ),
+      0
+    )
+  );
+
 const head = arr => arr[0];
 
 const hexToRGB = hex => {
@@ -389,7 +421,7 @@ const httpGet = (url, callback, err = console.error) => {
   request.send();
 };
 
-const httpPost = (url, callback, data = null, err = console.error) => {
+const httpPost = (url, data, callback, err = console.error) => {
   const request = new XMLHttpRequest();
   request.open('POST', url, true);
   request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
@@ -421,6 +453,11 @@ const initialize2DArray = (w, h, val = null) =>
 const initializeArrayWithRange = (end, start = 0, step = 1) =>
   Array.from({ length: Math.ceil((end + 1 - start) / step) }).map((v, i) => i * step + start);
 
+const initializeArrayWithRangeRight = (end, start = 0, step = 1) =>
+  Array.from({ length: Math.ceil((end + 1 - start) / step) }).map(
+    (v, i, arr) => (arr.length - i - 1) * step + start
+  );
+
 const initializeArrayWithValues = (n, val = 0) => Array(n).fill(val);
 
 const intersection = (a, b) => {
@@ -434,9 +471,9 @@ const invertKeyValues = obj =>
     return acc;
   }, {});
 
-const isAbsoluteURL = str => /^[a-z][a-z0-9+.-]*:/.test(str);
+const is = (type, val) => val instanceof type;
 
-const isArray = val => Array.isArray(val);
+const isAbsoluteURL = str => /^[a-z][a-z0-9+.-]*:/.test(str);
 
 const isArrayLike = val => {
   try {
@@ -455,6 +492,8 @@ const isEven = num => num % 2 === 0;
 const isFunction = val => typeof val === 'function';
 
 const isLowerCase = str => str === str.toLowerCase();
+
+const isNil = val => val === undefined || val === null;
 
 const isNull = val => val === null;
 
@@ -487,6 +526,8 @@ const isString = val => typeof val === 'string';
 const isSymbol = val => typeof val === 'symbol';
 
 const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
+
+const isUndefined = val => val === undefined;
 
 const isUpperCase = str => str === str.toUpperCase();
 
@@ -986,6 +1027,8 @@ const unescapeHTML = str =>
 
 const union = (a, b) => Array.from(new Set([...a, ...b]));
 
+const uniqueElements = arr => [...new Set(arr)];
+
 const untildify = str => str.replace(/^~($|\/|\\)/, `${typeof require !== "undefined" && require('os').homedir()}$1`);
 
 const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
@@ -1007,7 +1050,7 @@ const zip = (...arrays) => {
 const zipObject = (props, values) =>
   props.reduce((obj, prop, index) => (obj[prop] = values[index], obj), {});
 
-var imports = {JSONToFile,RGBToHex,UUIDGeneratorBrowser,UUIDGeneratorNode,anagrams,arrayToHtmlList,average,averageBy,bottomVisible,byteSize,call,capitalize,capitalizeEveryWord,chainAsync,chunk,clampNumber,cleanObj,cloneRegExp,coalesce,coalesceFactory,collectInto,colorize,compact,compose,copyToClipboard,countBy,countOccurrences,createElement,createEventHub,currentURL,curry,decapitalize,deepFlatten,defer,detectDeviceType,difference,differenceWith,digitize,distance,distinctValuesOfArray,dropElements,dropRight,elementIsVisibleInViewport,elo,equals,escapeHTML,escapeRegExp,everyNth,extendHex,factorial,fibonacci,filterNonUnique,findLast,flatten,flip,forEachRight,formatDuration,fromCamelCase,functionName,functions,gcd,geometricProgression,getDaysDiffBetweenDates,getScrollPosition,getStyle,getType,getURLParameters,groupBy,hammingDistance,hasClass,hasFlags,head,hexToRGB,hide,httpGet,httpPost,httpsRedirect,inRange,indexOfAll,initial,initialize2DArray,initializeArrayWithRange,initializeArrayWithValues,intersection,invertKeyValues,isAbsoluteURL,isArray,isArrayLike,isBoolean,isDivisible,isEven,isFunction,isLowerCase,isNull,isNumber,isObject,isPrime,isPrimitive,isPromiseLike,isSorted,isString,isSymbol,isTravisCI,isUpperCase,isValidJSON,join,last,lcm,longestItem,lowercaseKeys,luhnCheck,mapKeys,mapObject,mapValues,mask,maxBy,maxN,median,memoize,merge,minBy,minN,negate,nthElement,objectFromPairs,objectToPairs,observeMutations,off,on,onUserInputChange,once,orderBy,palindrome,parseCookie,partition,percentile,pick,pipeFunctions,pluralize,powerset,prettyBytes,primes,promisify,pull,pullAtIndex,pullAtValue,randomHexColorCode,randomIntArrayInRange,randomIntegerInRange,randomNumberInRange,readFileLines,redirect,reducedFilter,remove,reverseString,round,runAsync,runPromisesInSeries,sample,sampleSize,scrollToTop,sdbm,select,serializeCookie,setStyle,shallowClone,show,shuffle,similarity,size,sleep,sortCharactersInString,sortedIndex,splitLines,spreadOver,standardDeviation,sum,sumBy,sumPower,symmetricDifference,tail,take,takeRight,timeTaken,toCamelCase,toDecimalMark,toKebabCase,toOrdinalSuffix,toSafeInteger,toSnakeCase,toggleClass,tomorrow,transform,truncateString,truthCheckCollection,unescapeHTML,union,untildify,validateNumber,without,words,yesNo,zip,zipObject,}
+var imports = {JSONToFile,RGBToHex,URLJoin,UUIDGeneratorBrowser,UUIDGeneratorNode,anagrams,arrayToHtmlList,average,averageBy,bottomVisible,byteSize,call,capitalize,capitalizeEveryWord,chainAsync,chunk,clampNumber,cleanObj,cloneRegExp,coalesce,coalesceFactory,collectInto,colorize,compact,compose,copyToClipboard,countBy,countOccurrences,createElement,createEventHub,currentURL,curry,decapitalize,deepFlatten,defer,detectDeviceType,difference,differenceWith,digitize,distance,dropElements,dropRight,elementIsVisibleInViewport,elo,equals,escapeHTML,escapeRegExp,everyNth,extendHex,factorial,fibonacci,filterNonUnique,findLast,flatten,flip,forEachRight,formatDuration,fromCamelCase,functionName,functions,gcd,geometricProgression,getDaysDiffBetweenDates,getScrollPosition,getStyle,getType,getURLParameters,groupBy,hammingDistance,hasClass,hasFlags,hashBrowser,hashNode,head,hexToRGB,hide,httpGet,httpPost,httpsRedirect,inRange,indexOfAll,initial,initialize2DArray,initializeArrayWithRange,initializeArrayWithRangeRight,initializeArrayWithValues,intersection,invertKeyValues,is,isAbsoluteURL,isArrayLike,isBoolean,isDivisible,isEven,isFunction,isLowerCase,isNil,isNull,isNumber,isObject,isPrime,isPrimitive,isPromiseLike,isSorted,isString,isSymbol,isTravisCI,isUndefined,isUpperCase,isValidJSON,join,last,lcm,longestItem,lowercaseKeys,luhnCheck,mapKeys,mapObject,mapValues,mask,maxBy,maxN,median,memoize,merge,minBy,minN,negate,nthElement,objectFromPairs,objectToPairs,observeMutations,off,on,onUserInputChange,once,orderBy,palindrome,parseCookie,partition,percentile,pick,pipeFunctions,pluralize,powerset,prettyBytes,primes,promisify,pull,pullAtIndex,pullAtValue,randomHexColorCode,randomIntArrayInRange,randomIntegerInRange,randomNumberInRange,readFileLines,redirect,reducedFilter,remove,reverseString,round,runAsync,runPromisesInSeries,sample,sampleSize,scrollToTop,sdbm,select,serializeCookie,setStyle,shallowClone,show,shuffle,similarity,size,sleep,sortCharactersInString,sortedIndex,splitLines,spreadOver,standardDeviation,sum,sumBy,sumPower,symmetricDifference,tail,take,takeRight,timeTaken,toCamelCase,toDecimalMark,toKebabCase,toOrdinalSuffix,toSafeInteger,toSnakeCase,toggleClass,tomorrow,transform,truncateString,truthCheckCollection,unescapeHTML,union,uniqueElements,untildify,validateNumber,without,words,yesNo,zip,zipObject,}
 
 return imports;
 
