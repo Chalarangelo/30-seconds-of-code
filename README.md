@@ -254,6 +254,8 @@ average(1, 2, 3);
 <details>
 <summary>View contents</summary>
 
+* [`atob`](#atob)
+* [`btoa`](#btoa)
 * [`colorize`](#colorize)
 * [`hasFlags`](#hasflags)
 * [`hashNode`](#hashnode)
@@ -3869,6 +3871,50 @@ toSafeInteger(Infinity); // 9007199254740991
 
 ---
  ## 📦 Node
+
+### atob
+
+Decodes a string of data which has been encoded using base-64 encoding.
+
+Create a `Buffer` for the given string with base-64 encoding and use `Buffer.toString('binary')` to return the decoded string.
+
+```js
+const atob = str => new Buffer(str, 'base64').toString('binary');
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+atob('Zm9vYmFy'); // 'foobar'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### btoa
+
+Creates a base-64 encoded ASCII string from a String object in which each character in the string is treated as a byte of binary data.
+
+Create a `Buffer` for the given string with binary encoding and use `Buffer.toString('base64')` to return the encoded string.
+
+```js
+const btoa = str => new Buffer(str, 'binary').toString('base64');
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+btoa('foobar'); // 'Zm9vYmFy'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 
 ### colorize
 
