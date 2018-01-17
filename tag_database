@@ -1,8 +1,10 @@
 anagrams:string,recursion
 arrayToHtmlList:browser,array
+atob:node,string,utility
 average:math,array
 averageBy:math,array,function
 bottomVisible:browser
+btoa:node,string,utility
 byteSize:string
 call:adapter,function
 capitalize:string,array
