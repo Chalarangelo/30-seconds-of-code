@@ -33,7 +33,6 @@ difference:array,math
 differenceWith:array,function
 digitize:math,array
 distance:math
-distinctValuesOfArray:array
 dropElements:array,function
 dropRight:array
 elementIsVisibleInViewport:browser
@@ -203,6 +202,7 @@ truncateString:string
 truthCheckCollection:object,logic,array
 unescapeHTML:string,browser
 union:array,math
+uniqueElements:array
 untildify:node,string
 URLJoin:string,utility,regexp
 UUIDGeneratorBrowser:browser,utility,random
