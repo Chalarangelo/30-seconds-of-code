@@ -1,1 +1,2 @@
-module.exports = setStyle = (el, ruleName, val) => (el.style[ruleName] = val);
+const setStyle = (el, ruleName, val) => (el.style[ruleName] = val);
+ module.exports = setStyle

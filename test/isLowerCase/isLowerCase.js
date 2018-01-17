@@ -1,1 +1,2 @@
-module.exports = isLowerCase = str => str === str.toLowerCase();
+const isLowerCase = str => str === str.toLowerCase();
+ module.exports = isLowerCase

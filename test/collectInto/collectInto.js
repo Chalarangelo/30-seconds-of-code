@@ -1,1 +1,2 @@
-module.exports = collectInto = fn => (...args) => fn(args);
+const collectInto = fn => (...args) => fn(args);
+ module.exports = collectInto

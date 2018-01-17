@@ -1,4 +1,4 @@
-module.exports = formatDuration = ms => {
+const formatDuration = ms => {
 if (ms < 0) ms = -ms;
 const time = {
 day: Math.floor(ms / 86400000),
@@ -12,3 +12,4 @@ return Object.entries(time)
 .map(val => val[1] + ' ' + (val[1] !== 1 ? val[0] + 's' : val[0]))
 .join(', ');
 };
+ module.exports = formatDuration

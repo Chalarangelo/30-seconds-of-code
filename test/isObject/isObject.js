@@ -1,1 +1,2 @@
-module.exports = isObject = obj => obj === Object(obj);
+const isObject = obj => obj === Object(obj);
+ module.exports = isObject

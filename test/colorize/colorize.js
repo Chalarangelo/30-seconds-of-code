@@ -1,4 +1,4 @@
-module.exports = colorize = (...args) => ({
+const colorize = (...args) => ({
 black: `\x1b[30m${args.join(' ')}`,
 red: `\x1b[31m${args.join(' ')}`,
 green: `\x1b[32m${args.join(' ')}`,
@@ -16,3 +16,4 @@ bgMagenta: `\x1b[45m${args.join(' ')}\x1b[0m`,
 bgCyan: `\x1b[46m${args.join(' ')}\x1b[0m`,
 bgWhite: `\x1b[47m${args.join(' ')}\x1b[0m`
 });
+ module.exports = colorize

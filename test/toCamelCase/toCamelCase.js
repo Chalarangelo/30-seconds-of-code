@@ -1,4 +1,4 @@
-module.exports = toCamelCase = str => {
+const toCamelCase = str => {
 let s =
 str &&
 str
@@ -7,3 +7,4 @@ str
 .join('');
 return s.slice(0, 1).toLowerCase() + s.slice(1);
 };
+ module.exports = toCamelCase

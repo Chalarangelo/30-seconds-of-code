@@ -1,1 +1,2 @@
-module.exports = isSymbol = val => typeof val === 'symbol';
+const isSymbol = val => typeof val === 'symbol';
+ module.exports = isSymbol
