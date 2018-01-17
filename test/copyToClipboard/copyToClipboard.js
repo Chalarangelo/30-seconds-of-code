@@ -1,4 +1,4 @@
-module.exports = copyToClipboard = str => {
+const copyToClipboard = str => {
 const el = document.createElement('textarea');
 el.value = str;
 el.setAttribute('readonly', '');
@@ -15,3 +15,4 @@ document.getSelection().removeAllRanges();
 document.getSelection().addRange(selected);
 }
 };
+ module.exports = copyToClipboard

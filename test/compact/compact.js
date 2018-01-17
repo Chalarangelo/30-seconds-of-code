@@ -1,1 +1,2 @@
-module.exports = compact = arr => arr.filter(Boolean);
+const compact = arr => arr.filter(Boolean);
+ module.exports = compact

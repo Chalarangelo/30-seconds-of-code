@@ -1,1 +1,2 @@
-module.exports = digitize = n => [...`${n}`].map(i => parseInt(i));
+const digitize = n => [...`${n}`].map(i => parseInt(i));
+ module.exports = digitize

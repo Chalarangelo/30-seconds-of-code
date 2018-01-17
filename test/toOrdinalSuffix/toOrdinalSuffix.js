@@ -1,4 +1,4 @@
-module.exports = toOrdinalSuffix = num => {
+const toOrdinalSuffix = num => {
 const int = parseInt(num),
 digits = [int % 10, int % 100],
 ordinals = ['st', 'nd', 'rd', 'th'],
@@ -8,3 +8,4 @@ return oPattern.includes(digits[0]) && !tPattern.includes(digits[1])
 ? int + ordinals[digits[0] - 1]
 : int + ordinals[3];
 };
+ module.exports = toOrdinalSuffix

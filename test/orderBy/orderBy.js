@@ -1,4 +1,4 @@
-module.exports = orderBy = (arr, props, orders) =>
+const orderBy = (arr, props, orders) =>
 [...arr].sort((a, b) =>
 props.reduce((acc, prop, i) => {
 if (acc === 0) {
@@ -8,3 +8,4 @@ acc = p1 > p2 ? 1 : p1 < p2 ? -1 : 0;
 return acc;
 }, 0)
 );
+ module.exports = orderBy

@@ -1,1 +1,2 @@
-module.exports = pipeFunctions = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
+const pipeFunctions = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
+ module.exports = pipeFunctions

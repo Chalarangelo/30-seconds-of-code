@@ -1,4 +1,4 @@
-module.exports = observeMutations = (element, callback, options) => {
+const observeMutations = (element, callback, options) => {
 const observer = new MutationObserver(mutations => mutations.forEach(m => callback(m)));
 observer.observe(
 element,
@@ -16,3 +16,4 @@ options
 );
 return observer;
 };
+ module.exports = observeMutations

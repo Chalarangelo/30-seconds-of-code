@@ -1,1 +1,2 @@
-module.exports = spreadOver = fn => argsArr => fn(...argsArr);
+const spreadOver = fn => argsArr => fn(...argsArr);
+ module.exports = spreadOver

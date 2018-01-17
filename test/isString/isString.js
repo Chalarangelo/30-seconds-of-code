@@ -1,1 +1,2 @@
-module.exports = isString = val => typeof val === 'string';
+const isString = val => typeof val === 'string';
+ module.exports = isString
