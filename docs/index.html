@@ -1325,7 +1325,7 @@ Logs: {
   "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
 }
 */</span>
-</pre><button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button></div></div><div class="card fluid"><h3 id="httppost" class="section double-padded">httpPost</h3><div class="section double-padded"><p>Makes a <code>POST</code> request to the passed URL.</p><p>Use <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest"><code>XMLHttpRequest</code></a> web api to make a <code>post</code> request to the given <code>url</code>. Set the value of an <code>HTTP</code> request header with <code>setRequestHeader</code> method. Handle the <code>onload</code> event, by calling the given <code>callback</code> the <code>responseText</code>. Handle the <code>onerror</code> event, by running the provided <code>err</code> function. Omit the third argument, <code>data</code>, to send no data to the provided <code>url</code>. Omit the fourth argument, <code>err</code>, to log errors to the console's <code>error</code> stream by default.</p><pre class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">httpPost</span> <span class="token operator">=</span> <span class="token punctuation">(</span>url<span class="token punctuation">,</span> callback<span class="token punctuation">,</span> data <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">,</span> err <span class="token operator">=</span> console<span class="token punctuation">.</span>error<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</pre><button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button></div></div><div class="card fluid"><h3 id="httppost" class="section double-padded">httpPost</h3><div class="section double-padded"><p>Makes a <code>POST</code> request to the passed URL.</p><p>Use <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest"><code>XMLHttpRequest</code></a> web api to make a <code>post</code> request to the given <code>url</code>. Set the value of an <code>HTTP</code> request header with <code>setRequestHeader</code> method. Handle the <code>onload</code> event, by calling the given <code>callback</code> the <code>responseText</code>. Handle the <code>onerror</code> event, by running the provided <code>err</code> function. Omit the third argument, <code>data</code>, to send no data to the provided <code>url</code>. Omit the fourth argument, <code>err</code>, to log errors to the console's <code>error</code> stream by default.</p><pre class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">httpPost</span> <span class="token operator">=</span> <span class="token punctuation">(</span>url<span class="token punctuation">,</span> data<span class="token punctuation">,</span> callback<span class="token punctuation">,</span> err <span class="token operator">=</span> console<span class="token punctuation">.</span>error<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> request <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">();</span>
   request<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">'POST'</span><span class="token punctuation">,</span> url<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">);</span>
   request<span class="token punctuation">.</span><span class="token function">setRequestHeader</span><span class="token punctuation">(</span><span class="token string">'Content-type'</span><span class="token punctuation">,</span> <span class="token string">'application/json; charset=utf-8'</span><span class="token punctuation">);</span>
@@ -1342,14 +1342,23 @@ Logs: {
 <span class="token keyword">const</span> data <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>newPost<span class="token punctuation">);</span>
 <span class="token function">httpPost</span><span class="token punctuation">(</span>
   <span class="token string">'https://jsonplaceholder.typicode.com/posts'</span><span class="token punctuation">,</span>
-  console<span class="token punctuation">.</span>log<span class="token punctuation">,</span>
-  data
+  data<span class="token punctuation">,</span>
+  console<span class="token punctuation">.</span>log
 <span class="token punctuation">);</span> <span class="token comment">/*
 Logs: {
   "userId": 1,
   "id": 1337,
   "title": "Foo",
   "body": "bar bar bar"
+}
+*/</span>
+<span class="token function">httpPost</span><span class="token punctuation">(</span>
+  <span class="token string">'https://jsonplaceholder.typicode.com/posts'</span><span class="token punctuation">,</span>
+  <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token comment">//does not send a body</span>
+  console<span class="token punctuation">.</span>log
+<span class="token punctuation">);</span> <span class="token comment">/*
+Logs: {
+  "id": 101
 }
 */</span>
 </pre><button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button></div></div><div class="card fluid"><h3 id="parsecookie" class="section double-padded">parseCookie</h3><div class="section double-padded"><p>Parse an HTTP Cookie header string and return an object of all cookie name-value pairs.</p><p>Use <code>String.split(';')</code> to separate key-value pairs from each other. Use <code>Array.map()</code> and <code>String.split('=')</code> to separate keys from values in each pair. Use <code>Array.reduce()</code> and <code>decodeURIComponent()</code> to create an object with all key-value pairs.</p><pre class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">parseCookie</span> <span class="token operator">=</span> str <span class="token operator">=></span>
