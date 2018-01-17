@@ -1,1 +1,2 @@
-module.exports = similarity = (arr, values) => arr.filter(v => values.includes(v));
+const similarity = (arr, values) => arr.filter(v => values.includes(v));
+ module.exports = similarity

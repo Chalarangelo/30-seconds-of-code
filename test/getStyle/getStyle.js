@@ -1,1 +1,2 @@
-module.exports = getStyle = (el, ruleName) => getComputedStyle(el)[ruleName];
+const getStyle = (el, ruleName) => getComputedStyle(el)[ruleName];
+ module.exports = getStyle

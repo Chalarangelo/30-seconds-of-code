@@ -1,1 +1,2 @@
-module.exports = initial = arr => arr.slice(0, -1);
+const initial = arr => arr.slice(0, -1);
+ module.exports = initial

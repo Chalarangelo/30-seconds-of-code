@@ -1,1 +1,2 @@
-module.exports = isFunction = val => typeof val === 'function';
+const isFunction = val => typeof val === 'function';
+ module.exports = isFunction

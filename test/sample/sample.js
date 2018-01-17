@@ -1,1 +1,2 @@
-module.exports = sample = arr => arr[Math.floor(Math.random() * arr.length)];
+const sample = arr => arr[Math.floor(Math.random() * arr.length)];
+ module.exports = sample

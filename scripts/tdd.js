@@ -22,17 +22,15 @@ const TEST_PATH = './test';
 const snippetFiles = [];
 
 const snippetFilesActive = fs.readdirSync(SNIPPETS_ACTIVE, 'utf8').map(fileName => fileName.slice(0, -3));
-const snippetFilesArchive = fs.readdirSync(SNIPPETS_ARCHIVE, 'utf8').map(fileName => fileName.slice(0, -3));
+const snippetFilesArchive = fs.readdirSync(SNIPPETS_ARCHIVE, 'utf8')
+                              .filter(fileName => !fileName.includes('README')) // -> Filters out main README.md file in Archieve which isn't a snippet 
+                              .map(fileName => fileName.slice(0, -3));
 
 snippetFiles.push(...snippetFilesActive);
 snippetFiles.push(...snippetFilesArchive);
 
-
-// Current Snippet that depend on node_modules
-const errSnippets = ['JSONToFile', 'readFileLines', 'UUIDGeneratorNode', 'hashNode'];
 console.time('Tester');
 snippetFiles
-  .filter(fileName => !errSnippets.includes(fileName))
   .map(fileName => {
     // Check if fileName for snippet exist in test/ dir, if doesnt create
     fs.ensureDirSync(path.join(TEST_PATH,fileName));
@@ -62,8 +60,8 @@ snippetFiles
       .map(line => line.trim())
       .filter((_, i) => blockMarkers[2] < i && i < blockMarkers[3]);
 
-    // Export template for snippetName.js which takes into account snippet name.length when generating snippetName.js file
-    const exportFile = `module.exports = ${fileName} = ${fileFunction.join('\n').slice(9 + fileName.length)}`;
+    // Export template for snippetName.js
+    const exportFile = `${fileFunction.join('\n')}\n module.exports = ${fileName}`;
 
     // Export template for snippetName.test.js which generates a example test & other information
     const exportTest = [

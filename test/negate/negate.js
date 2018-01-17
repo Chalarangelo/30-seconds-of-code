@@ -1,1 +1,2 @@
-module.exports = negate = func => (...args) => !func(...args);
+const negate = func => (...args) => !func(...args);
+ module.exports = negate

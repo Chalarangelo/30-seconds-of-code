@@ -1,1 +1,2 @@
-module.exports = escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+ module.exports = escapeRegExp
