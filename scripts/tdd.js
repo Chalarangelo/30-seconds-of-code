@@ -29,7 +29,7 @@ snippetFiles.push(...snippetFilesArchive);
 
 
 // Current Snippet that depend on node_modules
-const errSnippets = ['JSONToFile', 'readFileLines', 'UUIDGeneratorNode'];
+const errSnippets = ['JSONToFile', 'readFileLines', 'UUIDGeneratorNode', 'hashNode'];
 console.time('Tester');
 snippetFiles
   .filter(fileName => !errSnippets.includes(fileName))
