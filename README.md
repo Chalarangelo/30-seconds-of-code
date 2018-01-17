@@ -3683,7 +3683,7 @@ round(1.005, 2); // 1.01
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### sbdm
+### sdbm
 
 Hashes the input string into a whole number.
 
