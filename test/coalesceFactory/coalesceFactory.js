@@ -1,1 +1,2 @@
-module.exports = coalesceFactory = valid => (...args) => args.find(valid);
+const coalesceFactory = valid => (...args) => args.find(valid);
+ module.exports = coalesceFactory

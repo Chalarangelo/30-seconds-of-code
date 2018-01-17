@@ -1,1 +1,2 @@
-module.exports = isArray = val => Array.isArray(val);
+const isArray = val => Array.isArray(val);
+ module.exports = isArray

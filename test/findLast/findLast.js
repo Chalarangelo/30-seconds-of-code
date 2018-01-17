@@ -1,1 +1,2 @@
-module.exports = findLast = (arr, fn) => arr.filter(fn).slice(-1);
+const findLast = (arr, fn) => arr.filter(fn).slice(-1);
+ module.exports = findLast

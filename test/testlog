@@ -1,6 +1,6 @@
-Test log for: Tue Jan 16 2018 14:20:20 GMT+0000 (UTC)
+Test log for: Wed Jan 17 2018 13:39:53 GMT-0500 (Eastern Standard Time)
 
-> 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
+> 30-seconds-of-code@0.0.1 test C:\Users\King David\Desktop\github-repo\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
 
 
@@ -192,11 +192,6 @@ Test log for: Tue Jan 16 2018 14:20:20 GMT+0000 (UTC)
   Testing distance
 
     √ distance is a Function
-
-  Testing distinctValuesOfArray
-
-    √ distinctValuesOfArray is a Function
-    √ Returns all the distinct values of an array
 
   Testing dropElements
 
@@ -444,6 +439,10 @@ Test log for: Tue Jan 16 2018 14:20:20 GMT+0000 (UTC)
     √ initializeArrayWithRange is a Function
     √ Initializes an array containing the numbers in the specified range
 
+  Testing initializeArrayWithRangeRight
+
+    √ initializeArrayWithRangeRight is a Function
+
   Testing initializeArrayWithValues
 
     √ initializeArrayWithValues is a Function
@@ -484,6 +483,10 @@ Test log for: Tue Jan 16 2018 14:20:20 GMT+0000 (UTC)
     √ passed value is an array
     √ passed value is not an array
 
+  Testing isArrayBuffer
+
+    √ isArrayBuffer is a Function
+
   Testing isArrayLike
 
     √ isArrayLike is a Function
@@ -517,6 +520,14 @@ Test log for: Tue Jan 16 2018 14:20:20 GMT+0000 (UTC)
     √ passed string is a lowercase
     √ passed string is a lowercase
     √ passed value is not a lowercase
+
+  Testing isMap
+
+    √ isMap is a Function
+
+  Testing isNil
+
+    √ isNil is a Function
 
   Testing isNull
 
@@ -562,6 +573,14 @@ Test log for: Tue Jan 16 2018 14:20:20 GMT+0000 (UTC)
 
     √ isPromiseLike is a Function
 
+  Testing isRegExp
+
+    √ isRegExp is a Function
+
+  Testing isSet
+
+    √ isSet is a Function
+
   Testing isSorted
 
     √ isSorted is a Function
@@ -587,6 +606,14 @@ Test log for: Tue Jan 16 2018 14:20:20 GMT+0000 (UTC)
 
     √ isTravisCI is a Function
 
+  Testing isTypedArray
+
+    √ isTypedArray is a Function
+
+  Testing isUndefined
+
+    √ isUndefined is a Function
+
   Testing isUpperCase
 
     √ isUpperCase is a Function
@@ -601,6 +628,14 @@ Test log for: Tue Jan 16 2018 14:20:20 GMT+0000 (UTC)
     √ {"name":"Adam",age:"20"} is not a valid JSON
     √ null is a valid JSON
 
+  Testing isWeakMap
+
+    √ isWeakMap is a Function
+
+  Testing isWeakSet
+
+    √ isWeakSet is a Function
+
   Testing join
 
     √ join is a Function
@@ -611,6 +646,10 @@ Test log for: Tue Jan 16 2018 14:20:20 GMT+0000 (UTC)
   Testing JSONToDate
 
     √ JSONToDate is a Function
+
+  Testing JSONToFile
+
+    √ JSONToFile is a Function
 
   Testing last
 
@@ -723,7 +762,7 @@ Test log for: Tue Jan 16 2018 14:20:20 GMT+0000 (UTC)
 
   Testing observeMutations
 
-    ✔ observeMutations is a Function
+    √ observeMutations is a Function
 
   Testing off
 
@@ -840,6 +879,10 @@ Test log for: Tue Jan 16 2018 14:20:20 GMT+0000 (UTC)
   Testing randomNumberInRange
 
     √ randomNumberInRange is a Function
+
+  Testing readFileLines
+
+    √ readFileLines is a Function
 
   Testing README
 
@@ -1099,6 +1142,11 @@ Test log for: Tue Jan 16 2018 14:20:20 GMT+0000 (UTC)
     √ union is a Function
     √ Returns every element that exists in any of the two arrays once
 
+  Testing uniqueElements
+
+    √ uniqueElements is a Function
+    √ Returns all unique values of an array
+
   Testing untildify
 
     √ untildify is a Function
@@ -1113,47 +1161,96 @@ Test log for: Tue Jan 16 2018 14:20:20 GMT+0000 (UTC)
 
     √ UUIDGeneratorBrowser is a Function
 
+  Testing UUIDGeneratorNode
+
+    √ UUIDGeneratorNode is a Function
+
   Testing validateNumber
 
     √ validateNumber is a Function
-    √ 9 is a number
+    √ validateNumber(9) returns true
+    √ validateNumber(234asd.slice(0, 2)) returns true
+    √ validateNumber(1232) returns true
+    √ validateNumber(1232 + 13423) returns true
+    √ validateNumber(1232 * 2342 * 123) returns true
+    √ validateNumber(1232.23423536) returns true
+    √ validateNumber(234asd) returns false
+    √ validateNumber(e234d) returns false
+    √ validateNumber(false) returns false
+    √ validateNumber(true) returns false
+    √ validateNumber(null) returns false
+    √ validateNumber(123 * asd) returns false
 
   Testing without
 
     √ without is a Function
-    √ Filters out the elements of an array, that have one of the specified values.
+    √ without([2, 1, 2, 3], 1, 2) returns [3]
+    √ without([]) returns []
+    √ without([3, 1, true, '3', true], '3', true) returns [3, 1]
+    √ without('string'.split(''), 's', 't', 'g') returns ['r', 'i', 'n']
+    √ without() throws an error
+    √ without(null) throws an error
+    √ without(undefined) throws an error
+    √ without() throws an error
+    √ without({}) throws an error
 
   Testing words
 
     √ words is a Function
-    √ Returns words from a string
-    √ Returns words from a string
+    √ words('I love javaScript!!') returns [I, love, javaScript]
+    √ words('python, javaScript & coffee') returns [python, javaScript, coffee]
+    √ words(I love javaScript!!) returns an array
+    √ words() throws a error
+    √ words(null) throws a error
+    √ words(undefined) throws a error
+    √ words({}) throws a error
+    √ words([]) throws a error
+    √ words(1234) throws a error
 
   Testing yesNo
 
     √ yesNo is a Function
-    √ Returns true as the provided string is y/yes
-    √ Returns true as the provided string is y/yes
-    √ Returns false as the provided string is n/no
-    √ Returns true since the 2nd argument is ommited
+    √ yesNo(Y) returns true
+    √ yesNo(yes) returns true
+    √ yesNo(foo, true) returns true
+    √ yesNo(No) returns false
+    √ yesNo() returns false
+    √ yesNo(null) returns false
+    √ yesNo(undefined) returns false
+    √ yesNo([123, null]) returns false
+    √ yesNo([Yes, No]) returns false
+    √ yesNo({ 2: Yes }) returns false
+    √ yesNo([Yes, No], true) returns true
+    √ yesNo({ 2: Yes }, true) returns true
 
   Testing zip
 
     √ zip is a Function
-    √ Object was zipped
-    √ Object was zipped
-    √ zip returns an Array
-    √ zip returns an Array
+    √ zip([a, b], [1, 2], [true, false]) returns [[a, 1, true], [b, 2, false]]
+    √ zip([a], [1, 2], [true, false]) returns [[a, 1, true], [undefined, 2, false]]
+    √ zip([]) returns []
+    √ zip(123) returns []
+    √ zip([a, b], [1, 2], [true, false]) returns an Array
+    √ zip([a], [1, 2], [true, false]) returns an Array
+    √ zip(null) throws an error
+    √ zip(undefined) throws an error
 
   Testing zipObject
 
     √ zipObject is a Function
-    √ Array was zipped to object
-    √ Array was zipped to object
+    √ zipObject([a, b, c], [1, 2]) returns {a: 1, b: 2, c: undefined}
+    √ zipObject([a, b], [1, 2, 3]) returns {a: 1, b: 2}
+    √ zipObject([a, b, c], string) returns { a: s, b: t, c: r }
+    √ zipObject([a], string) returns { a: s }
+    √ zipObject() throws an error
+    √ zipObject([string], null) throws an error
+    √ zipObject(null, [1]) throws an error
+    √ zipObject(string) throws an error
+    √ zipObject(test, string) throws an error
 
 
-  total:     490
-  passing:   490
-  duration:  270ms
+  total:     551
+  passing:   551
+  duration:  399ms
 
 

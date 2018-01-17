@@ -1,1 +1,2 @@
-module.exports = toggleClass = (el, className) => el.classList.toggle(className);
+const toggleClass = (el, className) => el.classList.toggle(className);
+ module.exports = toggleClass
