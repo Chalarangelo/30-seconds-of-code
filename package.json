@@ -28,6 +28,7 @@
     "webber": "node ./scripts/web.js",
     "tester": "node ./scripts/tdd.js",
     "packager": "node ./scripts/module.js",
+    "tdd": "node ./scripts/tdd.js",
     "test": "tape test/**/*.test.js | tap-spec"
   },
   "repository": {
