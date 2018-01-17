@@ -18,5 +18,5 @@ const hashBrowser = val =>
 ```
 
 ```js
-hashBrowser(JSON.stringify({a :'a', b: [1,2,3,4], 'foo': {c: 'bar'}})).then(hash => console.log(hash)); // '04aa106279f5977f59f9067fa9712afc4aedc6f5862a8defc34552d8c7206393'
+hashBrowser(JSON.stringify({a :'a', b: [1,2,3,4], 'foo': {c: 'bar'}})).then(console.log); // '04aa106279f5977f59f9067fa9712afc4aedc6f5862a8defc34552d8c7206393'
 ```
