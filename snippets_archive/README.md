@@ -6,23 +6,77 @@ These snippets, while useful and interesting, didn't quite make it into the repo
 
 ## Table of Contents
 
-* [`binarySearch`](#binarysearch)
+* [`JSONToDate`](#jsontodate)
 * [`speechSynthesis`](#speechsynthesis)
+* [`binarySearch`](#binarysearch)
+* [`collatz`](#collatz)
 * [`countVowels`](#countvowels)
 * [`factors`](#factors)
 * [`fibonacciCountUntilNum`](#fibonaccicountuntilnum)
 * [`fibonacciUntilNum`](#fibonacciuntilnum)
-* [`howManyTimes`](#howmanytimes)
 * [`httpDelete`](#httpdelete)
-* [`collatz`](#collatz)
+* [`httpPut`](#httpput)
 * [`isArmstrongNumber`](#isarmstrongnumber)
-* [`JSONToDate`](#jsontodate)
 * [`quickSort`](#quicksort)
 * [`removeVowels`](#removevowels)
 * [`solveRPN`](#solverpn)
-* [`httpPut`](#httpput)
+* [`howManyTimes`](#howmanytimes)
 
 ---
+
+### JSONToDate
+
+Converts a JSON object to a date.
+
+Use `Date()`, to convert dates in JSON format to readable format (`dd/mm/yyyy`).
+
+```js
+const JSONToDate = arr => {
+  const dt = new Date(parseInt(arr.toString().substr(6)));
+  return `${dt.getDate()}/${dt.getMonth() + 1}/${dt.getFullYear()}`;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+JSONToDate(/Date(1489525200000)/); // "14/3/2017"
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### speechSynthesis
+
+Performs speech synthesis (experimental).
+
+Use `SpeechSynthesisUtterance.voice` and `window.speechSynthesis.getVoices()` to convert a message to speech.
+Use `window.speechSynthesis.speak()` to play the message.
+
+Learn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
+
+```js
+const speechSynthesis = message => {
+  const msg = new SpeechSynthesisUtterance(message);
+  msg.voice = window.speechSynthesis.getVoices()[0];
+  window.speechSynthesis.speak(msg);
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+speechSynthesis('Hello, World'); // // plays the message
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 
 ### binarySearch
 
@@ -57,28 +111,21 @@ binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 21); // -1
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### speechSynthesis
+### collatz
 
-Performs speech synthesis (experimental).
+Applies the Collatz algorithm.
 
-Use `SpeechSynthesisUtterance.voice` and `window.speechSynthesis.getVoices()` to convert a message to speech.
-Use `window.speechSynthesis.speak()` to play the message.
-
-Learn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
+If `n` is even, return `n/2`. Otherwise, return `3n+1`.
 
 ```js
-const speechSynthesis = message => {
-  const msg = new SpeechSynthesisUtterance(message);
-  msg.voice = window.speechSynthesis.getVoices()[0];
-  window.speechSynthesis.speak(msg);
-};
+const collatz = n => (n % 2 == 0 ? n / 2 : 3 * n + 1);
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```js
-speechSynthesis('Hello, World'); // // plays the message
+collatz(8); // 4
 ```
 
 </details>
@@ -213,44 +260,6 @@ fibonacciUntilNum(10); // [ 0, 1, 1, 2, 3, 5, 8 ]
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### howManyTimes
-
-Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.
-Works for both negative and positive integers.
-
-If `divisor` is `-1` or `1` return `Infinity`.
-If `divisor` is `-0` or `0` return `0`.
-Otherwise, keep dividing `num` with `divisor` and incrementing `i`, while the result is an integer.
-Return the number of times the loop was executed, `i`.
-
-```js
-const howManyTimes = (num, divisor) => {
-  if (divisor === 1 || divisor === -1) return Infinity;
-  if (divisor === 0) return 0;
-  let i = 0;
-  while (Number.isInteger(num / divisor)) {
-    i++;
-    num = num / divisor;
-  }
-  return i;
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-howManyTimes(100, 2); // 2
-howManyTimes(100, 2.5); // 2
-howManyTimes(100, 0); // 0
-howManyTimes(100, -1); // Infinity
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
 ### httpDelete
 
 Makes a `DELETE` request to the passed URL.
@@ -284,21 +293,36 @@ httpDelete('https://website.com/users/123', request => {
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### collatz
+### httpPut
 
-Applies the Collatz algorithm.
+Makes a `PUT` request to the passed URL.
 
-If `n` is even, return `n/2`. Otherwise, return `3n+1`.
+Use `XMLHttpRequest` web api to make a `put` request to the given `url`.
+Set the value of an `HTTP` request header with `setRequestHeader` method.
+Handle the `onload` event, by running the provided `callback` function.
+Handle the `onerror` event, by running the provided `err` function.
+Omit the last argument, `err` to log the request to the console's error stream by default.
 
 ```js
-const collatz = n => (n % 2 == 0 ? n / 2 : 3 * n + 1);
+const httpPut = (url, data, callback, err = console.error) => {
+    const request = new XMLHttpRequest();
+    request.open("PUT", url, true);
+    request.setRequestHeader('Content-type','application/json; charset=utf-8');
+    request.onload = () => callback(request);
+    request.onerror = () => err(request);
+    request.send(data);
+};
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```js
-collatz(8); // 4
+const password = "fooBaz";
+const data = JSON.stringify(password);
+httpPut('https://website.com/users/123', data, request => {
+  console.log(request.responseText);
+}); // 'Updates a user's password in database'
 ```
 
 </details>
@@ -325,31 +349,6 @@ const isArmstrongNumber = digits =>
 ```js
 isArmstrongNumber(1634); // true
 isArmstrongNumber(56); // false
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### JSONToDate
-
-Converts a JSON object to a date.
-
-Use `Date()`, to convert dates in JSON format to readable format (`dd/mm/yyyy`).
-
-```js
-const JSONToDate = arr => {
-  const dt = new Date(parseInt(arr.toString().substr(6)));
-  return `${dt.getDate()}/${dt.getMonth() + 1}/${dt.getFullYear()}`;
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-JSONToDate(/Date(1489525200000)/); // "14/3/2017"
 ```
 
 </details>
@@ -467,24 +466,26 @@ solveRPN('2 3 ^'); // 8
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### httpPut
+### howManyTimes
 
-Makes a `PUT` request to the passed URL.
+Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.
+Works for both negative and positive integers.
 
-Use `XMLHttpRequest` web api to make a `put` request to the given `url`.
-Set the value of an `HTTP` request header with `setRequestHeader` method.
-Handle the `onload` event, by running the provided `callback` function.
-Handle the `onerror` event, by running the provided `err` function.
-Omit the last argument, `err` to log the request to the console's error stream by default.
+If `divisor` is `-1` or `1` return `Infinity`.
+If `divisor` is `-0` or `0` return `0`.
+Otherwise, keep dividing `num` with `divisor` and incrementing `i`, while the result is an integer.
+Return the number of times the loop was executed, `i`.
 
 ```js
-const httpPut = (url, data, callback, err = console.error) => {
-    const request = new XMLHttpRequest();
-    request.open("PUT", url, true);
-    request.setRequestHeader('Content-type','application/json; charset=utf-8');
-    request.onload = () => callback(request);
-    request.onerror = () => err(request);
-    request.send(data);
+const howManyTimes = (num, divisor) => {
+  if (divisor === 1 || divisor === -1) return Infinity;
+  if (divisor === 0) return 0;
+  let i = 0;
+  while (Number.isInteger(num / divisor)) {
+    i++;
+    num = num / divisor;
+  }
+  return i;
 };
 ```
 
@@ -492,11 +493,10 @@ const httpPut = (url, data, callback, err = console.error) => {
 <summary>Examples</summary>
 
 ```js
-const password = "fooBaz";
-const data = JSON.stringify(password);
-httpPut('https://website.com/users/123', data, request => {
-  console.log(request.responseText);
-}); // 'Updates a user's password in database'
+howManyTimes(100, 2); // 2
+howManyTimes(100, 2.5); // 2
+howManyTimes(100, 0); // 0
+howManyTimes(100, -1); // Infinity
 ```
 
 </details>
