@@ -98,7 +98,6 @@ average(1, 2, 3);
 * [`deepFlatten`](#deepflatten)
 * [`difference`](#difference)
 * [`differenceWith`](#differencewith)
-* [`distinctValuesOfArray`](#distinctvaluesofarray)
 * [`dropElements`](#dropelements)
 * [`dropRight`](#dropright)
 * [`everyNth`](#everynth)
@@ -140,6 +139,7 @@ average(1, 2, 3);
 * [`take`](#take)
 * [`takeRight`](#takeright)
 * [`union`](#union)
+* [`uniqueElements`](#uniqueelements)
 * [`without`](#without)
 * [`zip`](#zip)
 * [`zipObject`](#zipobject)
@@ -703,28 +703,6 @@ const differenceWith = (arr, val, comp) => arr.filter(a => val.findIndex(b => co
 
 ```js
 differenceWith([1, 1.2, 1.5, 3, 0], [1.9, 3, 0], (a, b) => Math.round(a) === Math.round(b)); // [1, 1.2]
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### distinctValuesOfArray
-
-Returns all the distinct values of an array.
-
-Use ES6 `Set` and the `...rest` operator to discard all duplicated values.
-
-```js
-const distinctValuesOfArray = arr => [...new Set(arr)];
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-distinctValuesOfArray([1, 2, 2, 3, 4, 4, 5]); // [1,2,3,4,5]
 ```
 
 </details>
@@ -1808,6 +1786,28 @@ const union = (a, b) => Array.from(new Set([...a, ...b]));
 
 ```js
 union([1, 2, 3], [4, 3, 2]); // [1,2,3,4]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### uniqueElements
+
+Returns all unique values of an array.
+
+Use ES6 `Set` and the `...rest` operator to discard all duplicated values.
+
+```js
+const uniqueElements = arr => [...new Set(arr)];
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+uniqueElements([1, 2, 2, 3, 4, 4, 5]); // [1,2,3,4,5]
 ```
 
 </details>
