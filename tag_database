@@ -65,6 +65,8 @@ groupBy:array,object
 hammingDistance:math
 hasClass:browser,css
 hasFlags:node
+hashBrowser:browser,utility,advanced
+hashNode:node,utility
 head:array
 hexToRGB:utility,string,math,advanced
 hide:browser,css
