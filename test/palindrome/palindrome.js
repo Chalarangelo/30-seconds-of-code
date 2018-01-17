@@ -1,4 +1,4 @@
-module.exports = palindrome = str => {
+const palindrome = str => {
 const s = str.toLowerCase().replace(/[\W_]/g, '');
 return (
 s ===
@@ -8,3 +8,4 @@ s
 .join('')
 );
 };
+ module.exports = palindrome

@@ -1,4 +1,4 @@
-module.exports = factors = (num, primes = false) => {
+const factors = (num, primes = false) => {
 const isPrime = num => {
 const boundary = Math.floor(Math.sqrt(num));
 for (var i = 2; i <= boundary; i++) if (num % i === 0) return false;
@@ -17,3 +17,4 @@ return acc;
 }, []);
 return primes ? array.filter(isPrime) : array;
 };
+ module.exports = factors

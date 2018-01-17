@@ -1,1 +1,2 @@
-module.exports = isBoolean = val => typeof val === 'boolean';
+const isBoolean = val => typeof val === 'boolean';
+ module.exports = isBoolean

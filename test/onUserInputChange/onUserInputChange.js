@@ -1,4 +1,4 @@
-module.exports = onUserInputChange = callback => {
+const onUserInputChange = callback => {
 let type = 'mouse',
 lastTime = 0;
 const mousemoveHandler = () => {
@@ -12,3 +12,4 @@ if (type === 'touch') return;
 (type = 'touch'), callback(type), document.addEventListener('mousemove', mousemoveHandler);
 });
 };
+ module.exports = onUserInputChange

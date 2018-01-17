@@ -1,4 +1,4 @@
-module.exports = merge = (...objs) =>
+const merge = (...objs) =>
 [...objs].reduce(
 (acc, obj) =>
 Object.keys(obj).reduce((a, k) => {
@@ -7,3 +7,4 @@ return acc;
 }, {}),
 {}
 );
+ module.exports = merge

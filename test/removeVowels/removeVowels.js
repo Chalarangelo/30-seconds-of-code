@@ -1,1 +1,2 @@
-module.exports = removeVowels = (str, repl = '') => str.replace(/[aeiou]/gi,repl);
+const removeVowels = (str, repl = '') => str.replace(/[aeiou]/gi,repl);
+ module.exports = removeVowels

@@ -1,1 +1,2 @@
-module.exports = currentURL = () => window.location.href;
+const currentURL = () => window.location.href;
+ module.exports = currentURL

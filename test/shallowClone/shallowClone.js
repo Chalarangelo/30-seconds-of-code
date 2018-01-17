@@ -1,1 +1,2 @@
-module.exports = shallowClone = obj => Object.assign({}, obj);
+const shallowClone = obj => Object.assign({}, obj);
+ module.exports = shallowClone

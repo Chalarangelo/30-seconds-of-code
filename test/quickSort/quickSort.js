@@ -1,4 +1,4 @@
-module.exports = quickSort = ([n, ...nums], desc) =>
+const quickSort = ([n, ...nums], desc) =>
 isNaN(n)
 ? []
 : [
@@ -6,3 +6,4 @@ isNaN(n)
 n,
 ...quickSort(nums.filter(v => (!desc ? v > n : v <= n)), desc)
 ];
+ module.exports = quickSort

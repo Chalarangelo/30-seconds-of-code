@@ -1,1 +1,2 @@
-module.exports = isUpperCase = str => str === str.toUpperCase();
+const isUpperCase = str => str === str.toUpperCase();
+ module.exports = isUpperCase

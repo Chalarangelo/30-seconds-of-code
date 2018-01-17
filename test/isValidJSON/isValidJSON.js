@@ -1,4 +1,4 @@
-module.exports = isValidJSON = obj => {
+const isValidJSON = obj => {
 try {
 JSON.parse(obj);
 return true;
@@ -6,3 +6,4 @@ return true;
 return false;
 }
 };
+ module.exports = isValidJSON

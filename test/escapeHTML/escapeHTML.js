@@ -1,4 +1,4 @@
-module.exports = escapeHTML = str =>
+const escapeHTML = str =>
 str.replace(
 /[&<>'"]/g,
 tag =>
@@ -10,3 +10,4 @@ tag =>
 '"': '&quot;'
 }[tag] || tag)
 );
+ module.exports = escapeHTML
