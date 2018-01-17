@@ -1,4 +1,4 @@
-### sbdm
+### sdbm
 
 Hashes the input string into a whole number.
 
