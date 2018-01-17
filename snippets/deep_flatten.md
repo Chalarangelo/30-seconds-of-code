@@ -21,6 +21,7 @@ def spread(arg):
     result.extend(spread(list(map(lambda x : deep(x) if type(x) == list else x,arr))))
     return result
 
+
 ```
 
 ```python
