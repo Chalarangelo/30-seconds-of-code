@@ -57,7 +57,7 @@ functionName:function,utility
 functions:object,function
 gcd:math,recursion
 geometricProgression:math
-get:uncategorized
+get:object
 getDaysDiffBetweenDates:date
 getScrollPosition:browser
 getStyle:browser,css
@@ -67,8 +67,8 @@ groupBy:array,object
 hammingDistance:math
 hasClass:browser,css
 hasFlags:node
-hashBrowser:browser,utility,advanced
-hashNode:node,utility
+hashBrowser:browser,utility,advanced,promise
+hashNode:node,utility,promise
 head:array
 hexToRGB:utility,string,math,advanced
 hide:browser,css
