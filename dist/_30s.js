@@ -45,6 +45,8 @@ const anagrams = str => {
 const arrayToHtmlList = (arr, listID) =>
   arr.map(item => (document.querySelector('#' + listID).innerHTML += `<li>${item}</li>`));
 
+const atob = str => new Buffer(str, 'base64').toString('binary');
+
 const average = (...nums) => [...nums].reduce((acc, val) => acc + val, 0) / nums.length;
 
 const averageBy = (arr, fn) =>
@@ -54,6 +56,8 @@ const averageBy = (arr, fn) =>
 const bottomVisible = () =>
   document.documentElement.clientHeight + window.scrollY >=
   (document.documentElement.scrollHeight || document.documentElement.clientHeight);
+
+const btoa = str => new Buffer(str, 'binary').toString('base64');
 
 const byteSize = str => new Blob([str]).size;
 
@@ -287,7 +291,7 @@ const flatten = (arr, depth = 1) =>
     ? arr.reduce((a, v) => a.concat(Array.isArray(v) ? flatten(v, depth - 1) : v), [])
     : arr.reduce((a, v) => a.concat(v), []);
 
-const flip = fn => (...args) => fn(args.pop(), ...args);
+const flip = fn => (first, ...rest) => fn(...rest, first);
 
 const forEachRight = (arr, callback) =>
   arr
@@ -332,6 +336,15 @@ const gcd = (...arr) => {
 const geometricProgression = (end, start = 1, step = 2) =>
   Array.from({ length: Math.floor(Math.log(end / start) / Math.log(step)) + 1 }).map(
     (v, i) => start * step ** i
+  );
+
+const get = (from, ...selectors) =>
+  [...selectors].map(s =>
+    s
+      .replace(/\[([^\[\]]*)\]/g, '.$1.')
+      .split('.')
+      .filter(t => t !== '')
+      .reduce((prev, cur) => prev && prev[cur], from)
   );
 
 const getDaysDiffBetweenDates = (dateInitial, dateFinal) =>
@@ -880,9 +893,6 @@ const sdbm = str => {
   );
 };
 
-const select = (from, ...selectors) =>
-  [...selectors].map(s => s.split('.').reduce((prev, cur) => prev && prev[cur], from));
-
 const serializeCookie = (name, val) => `${encodeURIComponent(name)}=${encodeURIComponent(val)}`;
 
 const setStyle = (el, ruleName, val) => (el.style[ruleName] = val);
@@ -1050,7 +1060,7 @@ const zip = (...arrays) => {
 const zipObject = (props, values) =>
   props.reduce((obj, prop, index) => (obj[prop] = values[index], obj), {});
 
-var imports = {JSONToFile,RGBToHex,URLJoin,UUIDGeneratorBrowser,UUIDGeneratorNode,anagrams,arrayToHtmlList,average,averageBy,bottomVisible,byteSize,call,capitalize,capitalizeEveryWord,chainAsync,chunk,clampNumber,cleanObj,cloneRegExp,coalesce,coalesceFactory,collectInto,colorize,compact,compose,copyToClipboard,countBy,countOccurrences,createElement,createEventHub,currentURL,curry,decapitalize,deepFlatten,defer,detectDeviceType,difference,differenceWith,digitize,distance,dropElements,dropRight,elementIsVisibleInViewport,elo,equals,escapeHTML,escapeRegExp,everyNth,extendHex,factorial,fibonacci,filterNonUnique,findLast,flatten,flip,forEachRight,formatDuration,fromCamelCase,functionName,functions,gcd,geometricProgression,getDaysDiffBetweenDates,getScrollPosition,getStyle,getType,getURLParameters,groupBy,hammingDistance,hasClass,hasFlags,hashBrowser,hashNode,head,hexToRGB,hide,httpGet,httpPost,httpsRedirect,inRange,indexOfAll,initial,initialize2DArray,initializeArrayWithRange,initializeArrayWithRangeRight,initializeArrayWithValues,intersection,invertKeyValues,is,isAbsoluteURL,isArrayLike,isBoolean,isDivisible,isEven,isFunction,isLowerCase,isNil,isNull,isNumber,isObject,isPrime,isPrimitive,isPromiseLike,isSorted,isString,isSymbol,isTravisCI,isUndefined,isUpperCase,isValidJSON,join,last,lcm,longestItem,lowercaseKeys,luhnCheck,mapKeys,mapObject,mapValues,mask,maxBy,maxN,median,memoize,merge,minBy,minN,negate,nthElement,objectFromPairs,objectToPairs,observeMutations,off,on,onUserInputChange,once,orderBy,palindrome,parseCookie,partition,percentile,pick,pipeFunctions,pluralize,powerset,prettyBytes,primes,promisify,pull,pullAtIndex,pullAtValue,randomHexColorCode,randomIntArrayInRange,randomIntegerInRange,randomNumberInRange,readFileLines,redirect,reducedFilter,remove,reverseString,round,runAsync,runPromisesInSeries,sample,sampleSize,scrollToTop,sdbm,select,serializeCookie,setStyle,shallowClone,show,shuffle,similarity,size,sleep,sortCharactersInString,sortedIndex,splitLines,spreadOver,standardDeviation,sum,sumBy,sumPower,symmetricDifference,tail,take,takeRight,timeTaken,toCamelCase,toDecimalMark,toKebabCase,toOrdinalSuffix,toSafeInteger,toSnakeCase,toggleClass,tomorrow,transform,truncateString,truthCheckCollection,unescapeHTML,union,uniqueElements,untildify,validateNumber,without,words,yesNo,zip,zipObject,}
+var imports = {JSONToFile,RGBToHex,URLJoin,UUIDGeneratorBrowser,UUIDGeneratorNode,anagrams,arrayToHtmlList,atob,average,averageBy,bottomVisible,btoa,byteSize,call,capitalize,capitalizeEveryWord,chainAsync,chunk,clampNumber,cleanObj,cloneRegExp,coalesce,coalesceFactory,collectInto,colorize,compact,compose,copyToClipboard,countBy,countOccurrences,createElement,createEventHub,currentURL,curry,decapitalize,deepFlatten,defer,detectDeviceType,difference,differenceWith,digitize,distance,dropElements,dropRight,elementIsVisibleInViewport,elo,equals,escapeHTML,escapeRegExp,everyNth,extendHex,factorial,fibonacci,filterNonUnique,findLast,flatten,flip,forEachRight,formatDuration,fromCamelCase,functionName,functions,gcd,geometricProgression,get,getDaysDiffBetweenDates,getScrollPosition,getStyle,getType,getURLParameters,groupBy,hammingDistance,hasClass,hasFlags,hashBrowser,hashNode,head,hexToRGB,hide,httpGet,httpPost,httpsRedirect,inRange,indexOfAll,initial,initialize2DArray,initializeArrayWithRange,initializeArrayWithRangeRight,initializeArrayWithValues,intersection,invertKeyValues,is,isAbsoluteURL,isArrayLike,isBoolean,isDivisible,isEven,isFunction,isLowerCase,isNil,isNull,isNumber,isObject,isPrime,isPrimitive,isPromiseLike,isSorted,isString,isSymbol,isTravisCI,isUndefined,isUpperCase,isValidJSON,join,last,lcm,longestItem,lowercaseKeys,luhnCheck,mapKeys,mapObject,mapValues,mask,maxBy,maxN,median,memoize,merge,minBy,minN,negate,nthElement,objectFromPairs,objectToPairs,observeMutations,off,on,onUserInputChange,once,orderBy,palindrome,parseCookie,partition,percentile,pick,pipeFunctions,pluralize,powerset,prettyBytes,primes,promisify,pull,pullAtIndex,pullAtValue,randomHexColorCode,randomIntArrayInRange,randomIntegerInRange,randomNumberInRange,readFileLines,redirect,reducedFilter,remove,reverseString,round,runAsync,runPromisesInSeries,sample,sampleSize,scrollToTop,sdbm,serializeCookie,setStyle,shallowClone,show,shuffle,similarity,size,sleep,sortCharactersInString,sortedIndex,splitLines,spreadOver,standardDeviation,sum,sumBy,sumPower,symmetricDifference,tail,take,takeRight,timeTaken,toCamelCase,toDecimalMark,toKebabCase,toOrdinalSuffix,toSafeInteger,toSnakeCase,toggleClass,tomorrow,transform,truncateString,truthCheckCollection,unescapeHTML,union,uniqueElements,untildify,validateNumber,without,words,yesNo,zip,zipObject,}
 
 return imports;
 
