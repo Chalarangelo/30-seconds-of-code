@@ -436,7 +436,7 @@ Flip takes a function as an argument, then makes the first argument the last.
 Return a closure that takes variadic inputs, and splices the last argument to make it the first argument before applying the rest.
 
 ```js
-const flip = fn => (...args) => fn(args.pop(), ...args);
+const flip = fn => (first, ...rest) => fn(...rest, first);
 ```
 
 <details>
@@ -6211,4 +6211,3 @@ yesNo('Foo', true); // true
 ## Credits
 
 *Icons made by [Smashicons](https://www.flaticon.com/authors/smashicons) from [www.flaticon.com](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).*
-
