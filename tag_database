@@ -52,6 +52,8 @@ flatten:array
 flip:adapter,function
 forEachRight:array,function
 formatDuration:date,math,string,utility
+forOwn:object
+forOwnRight:object
 fromCamelCase:string
 functionName:function,utility
 functions:object,function
