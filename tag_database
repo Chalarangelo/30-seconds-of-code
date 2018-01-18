@@ -57,6 +57,7 @@ functionName:function,utility
 functions:object,function
 gcd:math,recursion
 geometricProgression:math
+get:uncategorized
 getDaysDiffBetweenDates:date
 getScrollPosition:browser
 getStyle:browser,css
@@ -164,7 +165,6 @@ sample:array,random
 sampleSize:array,random
 scrollToTop:browser
 sdbm:math,utility
-select:object
 serializeCookie:utility,string
 setStyle:browser
 shallowClone:object
