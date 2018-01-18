@@ -1,4 +1,4 @@
-Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
+Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.1 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -44,6 +44,10 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
 
     ✔ arrayToHtmlList is a Function
 
+  Testing atob
+
+    ✔ atob is a Function
+
   Testing average
 
     ✔ average is a Function
@@ -70,6 +74,10 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
   Testing bottomVisible
 
     ✔ bottomVisible is a Function
+
+  Testing btoa
+
+    ✔ btoa is a Function
 
   Testing byteSize
 
@@ -359,6 +367,11 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
     ✔ Initializes an array containing the numbers in the specified range
     ✔ Initializes an array containing the numbers in the specified range
     ✔ Initializes an array containing the numbers in the specified range
+
+  Testing get
+
+    ✔ get is a Function
+    ✔ Retrieve a property indicated by the selector from an object.
 
   Testing getDaysDiffBetweenDates
 
@@ -972,11 +985,6 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
     ✔ sdbm is a Function
     ✔ Hashes the input string into a whole number.
 
-  Testing select
-
-    ✔ select is a Function
-    ✔ Retrieve a property indicated by the selector from an object.
-
   Testing serializeCookie
 
     ✔ serializeCookie is a Function
@@ -1261,8 +1269,8 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
     ✔ zipObject(test, string) throws an error
 
 
-  total:     554
-  passing:   554
-  duration:  329ms
+  total:     556
+  passing:   556
+  duration:  307ms
 
 
