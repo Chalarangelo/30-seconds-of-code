@@ -1,4 +1,4 @@
-Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
+Test log for: Sat Jan 20 2018 20:10:48 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.1 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -205,6 +205,10 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
     ✔ deepFlatten is a Function
     ✔ Deep flattens an array
 
+  Testing defaults
+
+    ✔ defaults is a Function
+
   Testing defer
 
     ✔ defer is a Function
@@ -333,6 +337,14 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
   Testing forEachRight
 
     ✔ forEachRight is a Function
+
+  Testing forOwn
+
+    ✔ forOwn is a Function
+
+  Testing forOwnRight
+
+    ✔ forOwnRight is a Function
 
   Testing formatDuration
 
@@ -605,6 +617,10 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
     ✔ isObject({ a:1 }) is a object
     ✔ isObject(true) is not a object
 
+  Testing isPlainObject
+
+    ✔ isPlainObject is a Function
+
   Testing isPrime
 
     ✔ isPrime is a Function
@@ -816,6 +832,14 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
 
     ✔ off is a Function
 
+  Testing omit
+
+    ✔ omit is a Function
+
+  Testing omitBy
+
+    ✔ omitBy is a Function
+
   Testing on
 
     ✔ on is a Function
@@ -858,6 +882,10 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
 
     ✔ pick is a Function
     ✔ Picks the key-value pairs corresponding to the given keys from an object.
+
+  Testing pickBy
+
+    ✔ pickBy is a Function
 
   Testing pipeFunctions
 
@@ -1269,8 +1297,8 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
     ✔ zipObject(test, string) throws an error
 
 
-  total:     556
-  passing:   556
-  duration:  307ms
+  total:     563
+  passing:   563
+  duration:  346ms
 
 
