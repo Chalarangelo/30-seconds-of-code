@@ -128,20 +128,6 @@ var clampNumber = function clampNumber(num, a, b) {
   return Math.max(Math.min(num, Math.max(a, b)), Math.min(a, b));
 };
 
-var cleanObj = function cleanObj(obj) {
-  var keysToKeep = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
-  var childIndicator = arguments[2];
-
-  Object.keys(obj).forEach(function (key) {
-    if (key === childIndicator) {
-      cleanObj(obj[key], keysToKeep, childIndicator);
-    } else if (!keysToKeep.includes(key)) {
-      delete obj[key];
-    }
-  });
-  return obj;
-};
-
 var cloneRegExp = function cloneRegExp(regExp) {
   return new RegExp(regExp.source, regExp.flags);
 };
@@ -310,6 +296,16 @@ var deepFlatten = function deepFlatten(arr) {
   })));
 };
 
+function _toConsumableArray$1(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+var defaults = function defaults(obj) {
+  for (var _len = arguments.length, defs = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    defs[_key - 1] = arguments[_key];
+  }
+
+  return Object.assign.apply(Object, [{}, obj].concat(_toConsumableArray$1(defs.reverse()), [obj]));
+};
+
 var defer = function defer(fn) {
   for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
     args[_key - 1] = arguments[_key];
@@ -338,10 +334,10 @@ var differenceWith = function differenceWith(arr, val, comp) {
   });
 };
 
-function _toConsumableArray$1(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$2(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var digitize = function digitize(n) {
-  return [].concat(_toConsumableArray$1("" + n)).map(function (i) {
+  return [].concat(_toConsumableArray$2("" + n)).map(function (i) {
     return parseInt(i);
   });
 };
@@ -506,6 +502,18 @@ var forEachRight = function forEachRight(arr, callback) {
   return arr.slice(0).reverse().forEach(callback);
 };
 
+var forOwn = function forOwn(obj, fn) {
+  return Object.keys(obj).forEach(function (key) {
+    return fn(obj[key], key, obj);
+  });
+};
+
+var forOwnRight = function forOwnRight(obj, fn) {
+  return Object.keys(obj).reverse().forEach(function (key) {
+    return fn(obj[key], key, obj);
+  });
+};
+
 var formatDuration = function formatDuration(ms) {
   if (ms < 0) ms = -ms;
   var time = {
@@ -531,11 +539,11 @@ var functionName = function functionName(fn) {
   return console.debug(fn.name), fn;
 };
 
-function _toConsumableArray$2(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$3(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var functions = function functions(obj) {
   var inherited = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-  return (inherited ? [].concat(_toConsumableArray$2(Object.keys(obj)), _toConsumableArray$2(Object.keys(Object.getPrototypeOf(obj)))) : Object.keys(obj)).filter(function (key) {
+  return (inherited ? [].concat(_toConsumableArray$3(Object.keys(obj)), _toConsumableArray$3(Object.keys(Object.getPrototypeOf(obj)))) : Object.keys(obj)).filter(function (key) {
     return typeof obj[key] === 'function';
   });
 };
@@ -651,12 +659,12 @@ var head = function head(arr) {
   return arr[0];
 };
 
-function _toConsumableArray$3(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$4(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var hexToRGB = function hexToRGB(hex) {
   var alpha = false,
       h = hex.slice(hex.startsWith('#') ? 1 : 0);
-  if (h.length === 3) h = [].concat(_toConsumableArray$3(h)).map(function (x) {
+  if (h.length === 3) h = [].concat(_toConsumableArray$4(h)).map(function (x) {
     return x + x;
   }).join('');else if (h.length === 8) alpha = true;
   h = parseInt(h, 16);
@@ -776,11 +784,11 @@ var isAbsoluteURL = function isAbsoluteURL(str) {
   );
 };
 
-function _toConsumableArray$4(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$5(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var isArrayLike = function isArrayLike(val) {
   try {
-    return [].concat(_toConsumableArray$4(val)), true;
+    return [].concat(_toConsumableArray$5(val)), true;
   } catch (e) {
     return false;
   }
@@ -822,6 +830,12 @@ var isObject = function isObject(obj) {
   return obj === Object(obj);
 };
 
+var _typeof$1 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var isPlainObject = function isPlainObject(val) {
+  return !!val && (typeof val === 'undefined' ? 'undefined' : _typeof$1(val)) === 'object' && val.constructor === Object;
+};
+
 var isPrime = function isPrime(num) {
   var boundary = Math.floor(Math.sqrt(num));
   for (var i = 2; i <= boundary; i++) {
@@ -829,16 +843,16 @@ var isPrime = function isPrime(num) {
   }return num >= 2;
 };
 
-var _typeof$1 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-var isPrimitive = function isPrimitive(val) {
-  return !['object', 'function'].includes(typeof val === 'undefined' ? 'undefined' : _typeof$1(val)) || val === null;
-};
-
 var _typeof$2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
+var isPrimitive = function isPrimitive(val) {
+  return !['object', 'function'].includes(typeof val === 'undefined' ? 'undefined' : _typeof$2(val)) || val === null;
+};
+
+var _typeof$3 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 var isPromiseLike = function isPromiseLike(obj) {
-  return obj !== null && ((typeof obj === 'undefined' ? 'undefined' : _typeof$2(obj)) === 'object' || typeof obj === 'function') && typeof obj.then === 'function';
+  return obj !== null && ((typeof obj === 'undefined' ? 'undefined' : _typeof$3(obj)) === 'object' || typeof obj === 'function') && typeof obj.then === 'function';
 };
 
 var _slicedToArray$1 = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
@@ -880,10 +894,10 @@ var isString = function isString(val) {
   return typeof val === 'string';
 };
 
-var _typeof$3 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+var _typeof$4 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var isSymbol = function isSymbol(val) {
-  return (typeof val === 'undefined' ? 'undefined' : _typeof$3(val)) === 'symbol';
+  return (typeof val === 'undefined' ? 'undefined' : _typeof$4(val)) === 'symbol';
 };
 
 var isTravisCI = function isTravisCI() {
@@ -992,28 +1006,28 @@ var mask = function mask(cc) {
   return ('' + cc).slice(0, -num).replace(/./g, mask) + ('' + cc).slice(-num);
 };
 
-function _toConsumableArray$5(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$6(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var maxBy = function maxBy(arr, fn) {
-  return Math.max.apply(Math, _toConsumableArray$5(arr.map(typeof fn === 'function' ? fn : function (val) {
+  return Math.max.apply(Math, _toConsumableArray$6(arr.map(typeof fn === 'function' ? fn : function (val) {
     return val[fn];
   })));
 };
 
-function _toConsumableArray$6(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$7(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var maxN = function maxN(arr) {
   var n = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
-  return [].concat(_toConsumableArray$6(arr)).sort(function (a, b) {
+  return [].concat(_toConsumableArray$7(arr)).sort(function (a, b) {
     return b - a;
   }).slice(0, n);
 };
 
-function _toConsumableArray$7(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$8(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var median = function median(arr) {
   var mid = Math.floor(arr.length / 2),
-      nums = [].concat(_toConsumableArray$7(arr)).sort(function (a, b) {
+      nums = [].concat(_toConsumableArray$8(arr)).sort(function (a, b) {
     return a - b;
   });
   return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
@@ -1041,19 +1055,19 @@ var merge = function merge() {
   }, {});
 };
 
-function _toConsumableArray$8(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$9(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var minBy = function minBy(arr, fn) {
-  return Math.min.apply(Math, _toConsumableArray$8(arr.map(typeof fn === 'function' ? fn : function (val) {
+  return Math.min.apply(Math, _toConsumableArray$9(arr.map(typeof fn === 'function' ? fn : function (val) {
     return val[fn];
   })));
 };
 
-function _toConsumableArray$9(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$10(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var minN = function minN(arr) {
   var n = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
-  return [].concat(_toConsumableArray$9(arr)).sort(function (a, b) {
+  return [].concat(_toConsumableArray$10(arr)).sort(function (a, b) {
     return a - b;
   }).slice(0, n);
 };
@@ -1103,6 +1117,22 @@ var off = function off(el, evt, fn) {
   return el.removeEventListener(evt, fn, opts);
 };
 
+var omit = function omit(obj, arr) {
+  return Object.keys(obj).filter(function (k) {
+    return !arr.includes(k);
+  }).reduce(function (acc, key) {
+    return acc[key] = obj[key], acc;
+  }, {});
+};
+
+var omitBy = function omitBy(obj, fn) {
+  return Object.keys(obj).filter(function (k) {
+    return !fn(obj[k], k);
+  }).reduce(function (acc, key) {
+    return acc[key] = obj[key], acc;
+  }, {});
+};
+
 var on = function on(el, evt, fn) {
   var opts = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
 
@@ -1143,10 +1173,10 @@ var once = function once(fn) {
 
 var _slicedToArray$2 = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
-function _toConsumableArray$10(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$11(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var orderBy = function orderBy(arr, props, orders) {
-  return [].concat(_toConsumableArray$10(arr)).sort(function (a, b) {
+  return [].concat(_toConsumableArray$11(arr)).sort(function (a, b) {
     return props.reduce(function (acc, prop, i) {
       if (acc === 0) {
         var _ref = orders && orders[i] === 'desc' ? [b[prop], a[prop]] : [a[prop], b[prop]],
@@ -1194,6 +1224,14 @@ var pick = function pick(obj, arr) {
   }, {});
 };
 
+var pickBy = function pickBy(obj, fn) {
+  return Object.keys(obj).filter(function (k) {
+    return fn(obj[k], k);
+  }).reduce(function (acc, key) {
+    return acc[key] = obj[key], acc;
+  }, {});
+};
+
 var pipeFunctions = function pipeFunctions() {
   for (var _len = arguments.length, fns = Array(_len), _key = 0; _key < _len; _key++) {
     fns[_key] = arguments[_key];
@@ -1206,7 +1244,7 @@ var pipeFunctions = function pipeFunctions() {
   });
 };
 
-var _typeof$4 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+var _typeof$5 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var pluralize = function pluralize(val, word) {
   var plural = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : word + 's';
@@ -1215,7 +1253,7 @@ var pluralize = function pluralize(val, word) {
     var plural = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : word + 's';
     return [1, -1].includes(Number(num)) ? word : plural;
   };
-  if ((typeof val === 'undefined' ? 'undefined' : _typeof$4(val)) === 'object') return function (num, word) {
+  if ((typeof val === 'undefined' ? 'undefined' : _typeof$5(val)) === 'object') return function (num, word) {
     return _pluralize(num, word, val[word]);
   };
   return _pluralize(val, word, plural);
@@ -1360,10 +1398,10 @@ var remove = function remove(arr, func) {
   }, []) : [];
 };
 
-function _toConsumableArray$11(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$12(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var reverseString = function reverseString(str) {
-  return [].concat(_toConsumableArray$11(str)).reverse().join('');
+  return [].concat(_toConsumableArray$12(str)).reverse().join('');
 };
 
 var round = function round(n) {
@@ -1475,10 +1513,10 @@ var similarity = function similarity(arr, values) {
   });
 };
 
-var _typeof$5 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+var _typeof$6 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var size = function size(val) {
-  return Array.isArray(val) ? val.length : val && (typeof val === 'undefined' ? 'undefined' : _typeof$5(val)) === 'object' ? val.size || val.length || Object.keys(val).length : typeof val === 'string' ? new Blob([val]).size : 0;
+  return Array.isArray(val) ? val.length : val && (typeof val === 'undefined' ? 'undefined' : _typeof$6(val)) === 'object' ? val.size || val.length || Object.keys(val).length : typeof val === 'string' ? new Blob([val]).size : 0;
 };
 
 var sleep = function sleep(ms) {
@@ -1487,10 +1525,10 @@ var sleep = function sleep(ms) {
   });
 };
 
-function _toConsumableArray$12(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$13(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var sortCharactersInString = function sortCharactersInString(str) {
-  return [].concat(_toConsumableArray$12(str)).sort(function (a, b) {
+  return [].concat(_toConsumableArray$13(str)).sort(function (a, b) {
     return a.localeCompare(b);
   }).join('');
 };
@@ -1507,11 +1545,11 @@ var splitLines = function splitLines(str) {
   return str.split(/\r?\n/);
 };
 
-function _toConsumableArray$13(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$14(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var spreadOver = function spreadOver(fn) {
   return function (argsArr) {
-    return fn.apply(undefined, _toConsumableArray$13(argsArr));
+    return fn.apply(undefined, _toConsumableArray$14(argsArr));
   };
 };
 
@@ -1556,14 +1594,14 @@ var sumPower = function sumPower(end) {
   }, 0);
 };
 
-function _toConsumableArray$14(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$15(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var symmetricDifference = function symmetricDifference(a, b) {
   var sA = new Set(a),
       sB = new Set(b);
-  return [].concat(_toConsumableArray$14(a.filter(function (x) {
+  return [].concat(_toConsumableArray$15(a.filter(function (x) {
     return !sB.has(x);
-  })), _toConsumableArray$14(b.filter(function (x) {
+  })), _toConsumableArray$15(b.filter(function (x) {
     return !sA.has(x);
   })));
 };
@@ -1661,16 +1699,16 @@ var unescapeHTML = function unescapeHTML(str) {
   });
 };
 
-function _toConsumableArray$15(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-var union = function union(a, b) {
-  return Array.from(new Set([].concat(_toConsumableArray$15(a), _toConsumableArray$15(b))));
-};
-
 function _toConsumableArray$16(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
+var union = function union(a, b) {
+  return Array.from(new Set([].concat(_toConsumableArray$16(a), _toConsumableArray$16(b))));
+};
+
+function _toConsumableArray$17(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 var uniqueElements = function uniqueElements(arr) {
-  return [].concat(_toConsumableArray$16(new Set(arr)));
+  return [].concat(_toConsumableArray$17(new Set(arr)));
 };
 
 var untildify = function untildify(str) {
@@ -1702,14 +1740,14 @@ var yesNo = function yesNo(val) {
   );
 };
 
-function _toConsumableArray$17(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$18(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var zip = function zip() {
   for (var _len = arguments.length, arrays = Array(_len), _key = 0; _key < _len; _key++) {
     arrays[_key] = arguments[_key];
   }
 
-  var maxLength = Math.max.apply(Math, _toConsumableArray$17(arrays.map(function (x) {
+  var maxLength = Math.max.apply(Math, _toConsumableArray$18(arrays.map(function (x) {
     return x.length;
   })));
   return Array.from({ length: maxLength }).map(function (_, i) {
@@ -1725,7 +1763,7 @@ var zipObject = function zipObject(props, values) {
   }, {});
 };
 
-var imports = { JSONToFile: JSONToFile, RGBToHex: RGBToHex, URLJoin: URLJoin, UUIDGeneratorBrowser: UUIDGeneratorBrowser, UUIDGeneratorNode: UUIDGeneratorNode, anagrams: anagrams, arrayToHtmlList: arrayToHtmlList, atob: atob, average: average, averageBy: averageBy, bottomVisible: bottomVisible, btoa: btoa, byteSize: byteSize, call: call, capitalize: capitalize, capitalizeEveryWord: capitalizeEveryWord, chainAsync: chainAsync, chunk: chunk, clampNumber: clampNumber, cleanObj: cleanObj, cloneRegExp: cloneRegExp, coalesce: coalesce, coalesceFactory: coalesceFactory, collectInto: collectInto, colorize: colorize, compact: compact, compose: compose, copyToClipboard: copyToClipboard, countBy: countBy, countOccurrences: countOccurrences, createElement: createElement, createEventHub: createEventHub, currentURL: currentURL, curry: curry, decapitalize: decapitalize, deepFlatten: deepFlatten, defer: defer, detectDeviceType: detectDeviceType, difference: difference, differenceWith: differenceWith, digitize: digitize, distance: distance, dropElements: dropElements, dropRight: dropRight, elementIsVisibleInViewport: elementIsVisibleInViewport, elo: elo, equals: equals, escapeHTML: escapeHTML, escapeRegExp: escapeRegExp, everyNth: everyNth, extendHex: extendHex, factorial: factorial, fibonacci: fibonacci, filterNonUnique: filterNonUnique, findLast: findLast, flatten: flatten, flip: flip, forEachRight: forEachRight, formatDuration: formatDuration, fromCamelCase: fromCamelCase, functionName: functionName, functions: functions, gcd: gcd, geometricProgression: geometricProgression, get: get, getDaysDiffBetweenDates: getDaysDiffBetweenDates, getScrollPosition: getScrollPosition, getStyle: getStyle, getType: getType, getURLParameters: getURLParameters, groupBy: groupBy, hammingDistance: hammingDistance, hasClass: hasClass, hasFlags: hasFlags, hashBrowser: hashBrowser, hashNode: hashNode, head: head, hexToRGB: hexToRGB, hide: hide, httpGet: httpGet, httpPost: httpPost, httpsRedirect: httpsRedirect, inRange: inRange, indexOfAll: indexOfAll, initial: initial, initialize2DArray: initialize2DArray, initializeArrayWithRange: initializeArrayWithRange, initializeArrayWithRangeRight: initializeArrayWithRangeRight, initializeArrayWithValues: initializeArrayWithValues, intersection: intersection, invertKeyValues: invertKeyValues, is: is, isAbsoluteURL: isAbsoluteURL, isArrayLike: isArrayLike, isBoolean: isBoolean, isDivisible: isDivisible, isEven: isEven, isFunction: isFunction, isLowerCase: isLowerCase, isNil: isNil, isNull: isNull, isNumber: isNumber, isObject: isObject, isPrime: isPrime, isPrimitive: isPrimitive, isPromiseLike: isPromiseLike, isSorted: isSorted, isString: isString, isSymbol: isSymbol, isTravisCI: isTravisCI, isUndefined: isUndefined, isUpperCase: isUpperCase, isValidJSON: isValidJSON, join: join, last: last, lcm: lcm, longestItem: longestItem, lowercaseKeys: lowercaseKeys, luhnCheck: luhnCheck, mapKeys: mapKeys, mapObject: mapObject, mapValues: mapValues, mask: mask, maxBy: maxBy, maxN: maxN, median: median, memoize: memoize, merge: merge, minBy: minBy, minN: minN, negate: negate, nthElement: nthElement, objectFromPairs: objectFromPairs, objectToPairs: objectToPairs, observeMutations: observeMutations, off: off, on: on, onUserInputChange: onUserInputChange, once: once, orderBy: orderBy, palindrome: palindrome, parseCookie: parseCookie, partition: partition, percentile: percentile, pick: pick, pipeFunctions: pipeFunctions, pluralize: pluralize, powerset: powerset, prettyBytes: prettyBytes, primes: primes, promisify: promisify, pull: pull, pullAtIndex: pullAtIndex, pullAtValue: pullAtValue, randomHexColorCode: randomHexColorCode, randomIntArrayInRange: randomIntArrayInRange, randomIntegerInRange: randomIntegerInRange, randomNumberInRange: randomNumberInRange, readFileLines: readFileLines, redirect: redirect, reducedFilter: reducedFilter, remove: remove, reverseString: reverseString, round: round, runAsync: runAsync, runPromisesInSeries: runPromisesInSeries, sample: sample, sampleSize: sampleSize, scrollToTop: scrollToTop, sdbm: sdbm, serializeCookie: serializeCookie, setStyle: setStyle, shallowClone: shallowClone, show: show, shuffle: shuffle, similarity: similarity, size: size, sleep: sleep, sortCharactersInString: sortCharactersInString, sortedIndex: sortedIndex, splitLines: splitLines, spreadOver: spreadOver, standardDeviation: standardDeviation, sum: sum, sumBy: sumBy, sumPower: sumPower, symmetricDifference: symmetricDifference, tail: tail, take: take, takeRight: takeRight, timeTaken: timeTaken, toCamelCase: toCamelCase, toDecimalMark: toDecimalMark, toKebabCase: toKebabCase, toOrdinalSuffix: toOrdinalSuffix, toSafeInteger: toSafeInteger, toSnakeCase: toSnakeCase, toggleClass: toggleClass, tomorrow: tomorrow, transform: transform, truncateString: truncateString, truthCheckCollection: truthCheckCollection, unescapeHTML: unescapeHTML, union: union, uniqueElements: uniqueElements, untildify: untildify, validateNumber: validateNumber, without: without, words: words, yesNo: yesNo, zip: zip, zipObject: zipObject };
+var imports = { JSONToFile: JSONToFile, RGBToHex: RGBToHex, URLJoin: URLJoin, UUIDGeneratorBrowser: UUIDGeneratorBrowser, UUIDGeneratorNode: UUIDGeneratorNode, anagrams: anagrams, arrayToHtmlList: arrayToHtmlList, atob: atob, average: average, averageBy: averageBy, bottomVisible: bottomVisible, btoa: btoa, byteSize: byteSize, call: call, capitalize: capitalize, capitalizeEveryWord: capitalizeEveryWord, chainAsync: chainAsync, chunk: chunk, clampNumber: clampNumber, cloneRegExp: cloneRegExp, coalesce: coalesce, coalesceFactory: coalesceFactory, collectInto: collectInto, colorize: colorize, compact: compact, compose: compose, copyToClipboard: copyToClipboard, countBy: countBy, countOccurrences: countOccurrences, createElement: createElement, createEventHub: createEventHub, currentURL: currentURL, curry: curry, decapitalize: decapitalize, deepFlatten: deepFlatten, defaults: defaults, defer: defer, detectDeviceType: detectDeviceType, difference: difference, differenceWith: differenceWith, digitize: digitize, distance: distance, dropElements: dropElements, dropRight: dropRight, elementIsVisibleInViewport: elementIsVisibleInViewport, elo: elo, equals: equals, escapeHTML: escapeHTML, escapeRegExp: escapeRegExp, everyNth: everyNth, extendHex: extendHex, factorial: factorial, fibonacci: fibonacci, filterNonUnique: filterNonUnique, findLast: findLast, flatten: flatten, flip: flip, forEachRight: forEachRight, forOwn: forOwn, forOwnRight: forOwnRight, formatDuration: formatDuration, fromCamelCase: fromCamelCase, functionName: functionName, functions: functions, gcd: gcd, geometricProgression: geometricProgression, get: get, getDaysDiffBetweenDates: getDaysDiffBetweenDates, getScrollPosition: getScrollPosition, getStyle: getStyle, getType: getType, getURLParameters: getURLParameters, groupBy: groupBy, hammingDistance: hammingDistance, hasClass: hasClass, hasFlags: hasFlags, hashBrowser: hashBrowser, hashNode: hashNode, head: head, hexToRGB: hexToRGB, hide: hide, httpGet: httpGet, httpPost: httpPost, httpsRedirect: httpsRedirect, inRange: inRange, indexOfAll: indexOfAll, initial: initial, initialize2DArray: initialize2DArray, initializeArrayWithRange: initializeArrayWithRange, initializeArrayWithRangeRight: initializeArrayWithRangeRight, initializeArrayWithValues: initializeArrayWithValues, intersection: intersection, invertKeyValues: invertKeyValues, is: is, isAbsoluteURL: isAbsoluteURL, isArrayLike: isArrayLike, isBoolean: isBoolean, isDivisible: isDivisible, isEven: isEven, isFunction: isFunction, isLowerCase: isLowerCase, isNil: isNil, isNull: isNull, isNumber: isNumber, isObject: isObject, isPlainObject: isPlainObject, isPrime: isPrime, isPrimitive: isPrimitive, isPromiseLike: isPromiseLike, isSorted: isSorted, isString: isString, isSymbol: isSymbol, isTravisCI: isTravisCI, isUndefined: isUndefined, isUpperCase: isUpperCase, isValidJSON: isValidJSON, join: join, last: last, lcm: lcm, longestItem: longestItem, lowercaseKeys: lowercaseKeys, luhnCheck: luhnCheck, mapKeys: mapKeys, mapObject: mapObject, mapValues: mapValues, mask: mask, maxBy: maxBy, maxN: maxN, median: median, memoize: memoize, merge: merge, minBy: minBy, minN: minN, negate: negate, nthElement: nthElement, objectFromPairs: objectFromPairs, objectToPairs: objectToPairs, observeMutations: observeMutations, off: off, omit: omit, omitBy: omitBy, on: on, onUserInputChange: onUserInputChange, once: once, orderBy: orderBy, palindrome: palindrome, parseCookie: parseCookie, partition: partition, percentile: percentile, pick: pick, pickBy: pickBy, pipeFunctions: pipeFunctions, pluralize: pluralize, powerset: powerset, prettyBytes: prettyBytes, primes: primes, promisify: promisify, pull: pull, pullAtIndex: pullAtIndex, pullAtValue: pullAtValue, randomHexColorCode: randomHexColorCode, randomIntArrayInRange: randomIntArrayInRange, randomIntegerInRange: randomIntegerInRange, randomNumberInRange: randomNumberInRange, readFileLines: readFileLines, redirect: redirect, reducedFilter: reducedFilter, remove: remove, reverseString: reverseString, round: round, runAsync: runAsync, runPromisesInSeries: runPromisesInSeries, sample: sample, sampleSize: sampleSize, scrollToTop: scrollToTop, sdbm: sdbm, serializeCookie: serializeCookie, setStyle: setStyle, shallowClone: shallowClone, show: show, shuffle: shuffle, similarity: similarity, size: size, sleep: sleep, sortCharactersInString: sortCharactersInString, sortedIndex: sortedIndex, splitLines: splitLines, spreadOver: spreadOver, standardDeviation: standardDeviation, sum: sum, sumBy: sumBy, sumPower: sumPower, symmetricDifference: symmetricDifference, tail: tail, take: take, takeRight: takeRight, timeTaken: timeTaken, toCamelCase: toCamelCase, toDecimalMark: toDecimalMark, toKebabCase: toKebabCase, toOrdinalSuffix: toOrdinalSuffix, toSafeInteger: toSafeInteger, toSnakeCase: toSnakeCase, toggleClass: toggleClass, tomorrow: tomorrow, transform: transform, truncateString: truncateString, truthCheckCollection: truthCheckCollection, unescapeHTML: unescapeHTML, union: union, uniqueElements: uniqueElements, untildify: untildify, validateNumber: validateNumber, without: without, words: words, yesNo: yesNo, zip: zip, zipObject: zipObject };
 
 return imports;
 
