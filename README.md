@@ -274,6 +274,8 @@ average(1, 2, 3);
 
 * [`cleanObj`](#cleanobj)
 * [`equals`](#equals-)
+* [`forOwn`](#forown)
+* [`forOwnRight`](#forownright)
 * [`functions`](#functions)
 * [`get`](#get)
 * [`invertKeyValues`](#invertkeyvalues)
@@ -4213,6 +4215,53 @@ const equals = (a, b) => {
 
 ```js
 equals({ a: [2, { e: 3 }], b: [4], c: 'foo' }, { a: [2, { e: 3 }], b: [4], c: 'foo' }); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### forOwn
+
+Iterates over all own properties of an object, running a callback for each one.
+
+Use `Object.keys(obj)` to get all the properties of the object, `Array.forEach()` to run the provided function for each key-value pair. The callback receives three arguments - the value, the key and the object.
+
+```js
+const forOwn = (obj, fn) => Object.keys(obj).forEach(key => fn(obj[key], key, obj));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+forOwn({ foo: 'bar', a: 1 }, v => console.log(v)); // 'bar', 1
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### forOwnRight
+
+Iterates over all own properties of an object in reverse, running a callback for each one.
+
+Use `Object.keys(obj)` to get all the properties of the object, `Array.reverse()` to reverse their order and `Array.forEach()` to run the provided function for each key-value pair. The callback receives three arguments - the value, the key and the object.
+
+```js
+const forOwnRight = (obj, fn) =>
+  Object.keys(obj)
+    .reverse()
+    .forEach(key => fn(obj[key], key, obj));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+forOwnRight({ foo: 'bar', a: 1 }, v => console.log(v)); // 1, 'bar'
 ```
 
 </details>
