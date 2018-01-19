@@ -123,7 +123,6 @@ average(1, 2, 3);
 * [`minN`](#minn)
 * [`nthElement`](#nthelement)
 * [`partition`](#partition)
-* [`pick`](#pick)
 * [`pull`](#pull)
 * [`pullAtIndex`](#pullatindex)
 * [`pullAtValue`](#pullatvalue)
@@ -284,7 +283,9 @@ average(1, 2, 3);
 * [`merge`](#merge)
 * [`objectFromPairs`](#objectfrompairs)
 * [`objectToPairs`](#objecttopairs)
+* [`omit`](#omit)
 * [`orderBy`](#orderby)
+* [`pick`](#pick)
 * [`shallowClone`](#shallowclone)
 * [`size`](#size)
 * [`transform`](#transform)
@@ -1342,29 +1343,6 @@ const partition = (arr, fn) =>
 ```js
 const users = [{ user: 'barney', age: 36, active: false }, { user: 'fred', age: 40, active: true }];
 partition(users, o => o.active); // [[{ 'user': 'fred',    'age': 40, 'active': true }],[{ 'user': 'barney',  'age': 36, 'active': false }]]
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### pick
-
-Picks the key-value pairs corresponding to the given keys from an object.
-
-Use `Array.reduce()` to convert the filtered/picked keys back to an object with the corresponding key-value pair if the key exists in the obj.
-
-```js
-const pick = (obj, arr) =>
-  arr.reduce((acc, curr) => (curr in obj && (acc[curr] = obj[curr]), acc), {});
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-pick({ a: 1, b: '2', c: 3 }, ['a', 'c']); // { 'a': 1, 'c': 3 }
 ```
 
 </details>
@@ -4496,6 +4474,32 @@ objectToPairs({ a: 1, b: 2 }); // [['a',1],['b',2]]
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### omit
+
+Omits the key-value pairs corresponding to the given keys from an object.
+
+Use `Object.keys(obj)`, `Array.filter()` and `Array.includes()` to remove the provided keys.
+Use `Array.reduce()` to convert the filtered keys back to an object with the corresponding key-value pairs.
+
+```js
+const omit = (obj, arr) =>
+  Object.keys(obj)
+    .filter(k => !arr.includes(k))
+    .reduce((acc, key) => ((acc[key] = obj[key]), acc), {});
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+omit({ a: 1, b: '2', c: 3 }, ['b']); // { 'a': 1, 'c': 3 }
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### orderBy
 
 Returns a sorted array of objects ordered by properties and orders.
@@ -4523,6 +4527,29 @@ const orderBy = (arr, props, orders) =>
 const users = [{ name: 'fred', age: 48 }, { name: 'barney', age: 36 }, { name: 'fred', age: 40 }];
 orderBy(users, ['name', 'age'], ['asc', 'desc']); // [{name: 'barney', age: 36}, {name: 'fred', age: 48}, {name: 'fred', age: 40}]
 orderBy(users, ['name', 'age']); // [{name: 'barney', age: 36}, {name: 'fred', age: 40}, {name: 'fred', age: 48}]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### pick
+
+Picks the key-value pairs corresponding to the given keys from an object.
+
+Use `Array.reduce()` to convert the filtered/picked keys back to an object with the corresponding key-value pairs if the key exists in the object.
+
+```js
+const pick = (obj, arr) =>
+  arr.reduce((acc, curr) => (curr in obj && (acc[curr] = obj[curr]), acc), {});
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+pick({ a: 1, b: '2', c: 3 }, ['a', 'c']); // { 'a': 1, 'c': 3 }
 ```
 
 </details>
