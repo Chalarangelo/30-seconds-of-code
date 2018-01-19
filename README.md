@@ -31,6 +31,22 @@ def chunk(arr, size):
 chunk([1,2,3,4,5],2) # [[1,2],[3,4],5]
 ```
 
+### compact
+
+Removes falsey values from a list.
+
+Use `filter()` to filter out falsey values (False, None, 0, and "").
+
+```python 
+
+def compact(arr):
+    return list(filter(lambda x: bool(x), arr))
+
+```
+
+``` python
+compact([0, 1, False, 2, '', 3, 'a', 's', 34]); // [ 1, 2, 3, 'a', 's', 34 ]
+```
 ### count_occurences
 
 Counts the occurrences of a value in an list.
@@ -94,6 +110,7 @@ def spread(arg):
     result = []
     result.extend(spread(list(map(lambda x : deep(x) if type(x) == list else x,arr))))
     return result
+
 
 
 
@@ -241,6 +258,7 @@ Randomizes the order of the values of an list, returning a new list.
 Uses the [Fisher-Yates algorithm](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle) to reorder the elements of the list.
 
 ```python 
+
 
 from copy import deepcopy
 from random import randint
