@@ -28,6 +28,7 @@ currentURL:browser,url
 curry:function,recursion
 decapitalize:string,array
 deepFlatten:array,recursion
+defaults:object
 defer:function
 detectDeviceType:browser
 difference:array,math
