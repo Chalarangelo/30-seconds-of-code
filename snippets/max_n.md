@@ -6,6 +6,7 @@ Use `list.sort()` combined with the `deepcopy` function from the inbuilt `copy` 
 
 ```python 
 
+
 from copy import deepcopy
 
 
@@ -15,4 +16,9 @@ def max_n(arr, n=1):
     numbers.reverse()
     return numbers[:n]
 
+```
+
+```python
+max_n([1, 2, 3]) # [3]
+max_n([1, 2, 3], 2) # [3,2]
 ```

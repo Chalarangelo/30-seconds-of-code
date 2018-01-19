@@ -97,6 +97,7 @@ def spread(arg):
 
 
 
+
 ```
 
 ```python
@@ -193,6 +194,7 @@ Use `list.sort()` combined with the `deepcopy` function from the inbuilt `copy` 
 
 ```python 
 
+
 from copy import deepcopy
 
 
@@ -203,6 +205,11 @@ def max_n(arr, n=1):
     return numbers[:n]
 
 ```
+
+```python
+max_n([1, 2, 3]) # [3]
+max_n([1, 2, 3], 2) # [3,2]
+```
 ### min_n
 
 Returns the `n` minimum elements from the provided list. If `n` is greater than or equal to the provided list's length, then return the original list(sorted in ascending order).
@@ -210,6 +217,7 @@ Returns the `n` minimum elements from the provided list. If `n` is greater than 
 Use `list.sort()` combined with the `deepcopy` function from the inbuilt `copy` module to create a shallow clone of the list and sort it in ascending order. Use `[:n]` to get the specified number of elements. Omit the second argument, `n`, to get a one-element array
 
 ```python 
+
 
 from copy import deepcopy
 
@@ -219,6 +227,11 @@ def min_n(arr, n=1):
     numbers.sort()
     return numbers[:n]
 
+```
+
+```python
+min_n([1, 2, 3]) # [1]
+min_n([1, 2, 3], 2) # [1,2]
 ```
 ### spread
 
