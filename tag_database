@@ -98,6 +98,7 @@ isNil:type
 isNull:type
 isNumber:type,math
 isObject:type,object
+isPlainObject:type,object
 isPrime:math
 isPrimitive:type,function,array,string
 isPromiseLike:type,function,promise
