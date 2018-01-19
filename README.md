@@ -284,8 +284,10 @@ average(1, 2, 3);
 * [`objectFromPairs`](#objectfrompairs)
 * [`objectToPairs`](#objecttopairs)
 * [`omit`](#omit)
+* [`omitBy`](#omitby)
 * [`orderBy`](#orderby)
 * [`pick`](#pick)
+* [`pickBy`](#pickby)
 * [`shallowClone`](#shallowclone)
 * [`size`](#size)
 * [`transform`](#transform)
@@ -4500,6 +4502,31 @@ omit({ a: 1, b: '2', c: 3 }, ['b']); // { 'a': 1, 'c': 3 }
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### omitBy
+
+Creates an object composed of the properties the given function returns falsey for. The function is invoked with two arguments: (value, key).
+
+Use `Object.keys(obj)` and `Array.filter()`to remove the keys for which `fn` returns a truthy value.
+Use `Array.reduce()` to convert the filtered keys back to an object with the corresponding key-value pairs.
+
+```js
+const omitBy = (obj, fn) =>
+  Object.keys(obj)
+    .filter(k => !fn(obj[k], k))
+    .reduce((acc, key) => ((acc[key] = obj[key]), acc), {});
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+omitBy({ a: 1, b: '2', c: 3 }, x => typeof x === 'number'); // { b: '2' }
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### orderBy
 
 Returns a sorted array of objects ordered by properties and orders.
@@ -4550,6 +4577,32 @@ const pick = (obj, arr) =>
 
 ```js
 pick({ a: 1, b: '2', c: 3 }, ['a', 'c']); // { 'a': 1, 'c': 3 }
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### pickBy
+
+Creates an object composed of the properties the given function returns truthy for. The function is invoked with two arguments: (value, key).
+
+Use `Object.keys(obj)` and `Array.filter()`to remove the keys for which `fn` returns a falsey value.
+Use `Array.reduce()` to convert the filtered keys back to an object with the corresponding key-value pairs.
+
+```js
+const pickBy = (obj, fn) =>
+  Object.keys(obj)
+    .filter(k => fn(obj[k], k))
+    .reduce((acc, key) => ((acc[key] = obj[key]), acc), {});
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+pickBy({ a: 1, b: '2', c: 3 }, x => typeof x === 'number'); // { 'a': 1, 'c': 3 }
 ```
 
 </details>
