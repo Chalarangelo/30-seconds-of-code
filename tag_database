@@ -131,6 +131,7 @@ objectFromPairs:object,array
 objectToPairs:object,array
 observeMutations:browser,event,advanced
 off:browser,event
+omit:object,array
 on:browser,event
 once:function
 onUserInputChange:browser,advanced
@@ -139,7 +140,7 @@ palindrome:string
 parseCookie:utility,string
 partition:array,object,function
 percentile:math
-pick:array
+pick:object,array
 pipeFunctions:adapter,function
 pluralize:string
 powerset:math
