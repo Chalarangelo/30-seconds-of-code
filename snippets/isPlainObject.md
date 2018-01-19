@@ -9,6 +9,6 @@ const isPlainObject = val => !!val && typeof val === 'object' && val.constructor
 ```
 
 ```js
-isPlainObject({ 'a': 1 }); // true
+isPlainObject({ a: 1 }); // true
 isPlainObject(new Map()); // false
 ```
