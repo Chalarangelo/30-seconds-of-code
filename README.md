@@ -94,8 +94,11 @@ def spread(arg):
     result = []
     result.extend(spread(list(map(lambda x : deep(x) if type(x) == list else x,arr))))
     return result
-    
-```   
+
+
+
+```
+
 ```python
 deep_flatten([1, [2], [[3], 4], 5]) # [1,2,3,4,5]
 ```
@@ -181,6 +184,41 @@ def lcm(*args):
 ``` python
 lcm(12, 7) # 84
 lcm([1, 3, 4], 5) # 60
+```
+### max_n
+
+Returns the `n` maximum elements from the provided list. If `n` is greater than or equal to the provided list's length, then return the original list(sorted in descending order).
+
+Use `list.sort()` combined with the `deepcopy` function from the inbuilt `copy` module to create a shallow clone of the list and sort it in ascending order and then use `list.reverse()` reverse it to make it descending order. Use `[:n]` to get the specified number of elements. Omit the second argument, `n`, to get a one-element array
+
+```python 
+
+from copy import deepcopy
+
+
+def max_n(arr, n=1):
+    numbers = deepcopy(arr)
+    numbers.sort()
+    numbers.reverse()
+    return numbers[:n]
+
+```
+### min_n
+
+Returns the `n` minimum elements from the provided list. If `n` is greater than or equal to the provided list's length, then return the original list(sorted in ascending order).
+
+Use `list.sort()` combined with the `deepcopy` function from the inbuilt `copy` module to create a shallow clone of the list and sort it in ascending order. Use `[:n]` to get the specified number of elements. Omit the second argument, `n`, to get a one-element array
+
+```python 
+
+from copy import deepcopy
+
+
+def min_n(arr, n=1):
+    numbers = deepcopy(arr)
+    numbers.sort()
+    return numbers[:n]
+
 ```
 ### spread
 
