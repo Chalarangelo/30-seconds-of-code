@@ -12,7 +12,6 @@ capitalizeEveryWord:string,regexp
 chainAsync:function
 chunk:array
 clampNumber:math
-cleanObj:object,json
 cloneRegExp:utility,regexp
 coalesce:utility
 coalesceFactory:utility
