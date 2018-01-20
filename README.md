@@ -39,6 +39,7 @@ Use `filter()` to filter out falsey values (False, None, 0, and "").
 
 ```python 
 
+
 def compact(arr):
     return list(filter(lambda x: bool(x), arr))
 
@@ -116,12 +117,29 @@ def spread(arg):
 
 
 
+
 ```
 
 ```python
 deep_flatten([1, [2], [[3], 4], 5]) # [1,2,3,4,5]
 ```
 
+### difference
+
+Returns the difference between two arrays.
+
+Create a `set` from `b`, then use list comprehension to only keep values not contained in `b`
+
+```python 
+
+def difference(a, b):
+    b = set(b)
+    return [item for item in a if item not in b]
+
+```
+``` python
+difference([1, 2, 3], [1, 2, 4]) # [3]
+```
 ### gcd
 
 Calculates the greatest common divisor between two or more numbers/lists.
