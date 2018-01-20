@@ -6,6 +6,7 @@ Use `filter()` to filter out falsey values (False, None, 0, and "").
 
 ```python 
 
+
 def compact(arr):
     return list(filter(lambda x: bool(x), arr))
 
