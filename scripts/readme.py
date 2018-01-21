@@ -38,7 +38,7 @@ toAppend += '## Table of Content \n'
 for category in tag_dict:
     toAppend = toAppend + '# ' + EMOJIS[category] + ' ' + title_case(category) +'\n\n <ul>'
     for snippet in tag_dict[category]:
-        toAppend += f'<li><a href = "#{snippet}">{snippet}</a></li>\n'
+        toAppend += f'<li><a href = "#{snippet}">`{snippet}`</a></li>\n'
     toAppend += '</ul>\n\n'
 toAppend += '<hr></hr> \n\n'
 for category in tag_dict:
