@@ -8,6 +8,34 @@
 **Note**:- This is in no way affiliated with the original [30-seconds-of-code](https://github.com/Chalarangelo/30-seconds-of-code/).
 
 
+## Table of Content 
+### :books: List
+
+<details><summary>View contents</summary> <ul><li><a href = "#chunk"><code>chunk</code></a></li>
+<li><a href = "#compact"><code>compact</code></a></li>
+<li><a href = "#count_occurences"><code>count_occurences</code></a></li>
+<li><a href = "#deep_flatten"><code>deep_flatten</code></a></li>
+<li><a href = "#difference"><code>difference</code></a></li>
+<li><a href = "#shuffle"><code>shuffle</code></a></li>
+<li><a href = "#spread"><code>spread</code></a></li>
+<li><a href = "#zip"><code>zip</code></a></li>
+</ul></details>
+
+### :scroll: String
+
+<details><summary>View contents</summary> <ul><li><a href = "#count_vowels"><code>count_vowels</code></a></li>
+</ul></details>
+
+### :heavy_division_sign: Math
+
+<details><summary>View contents</summary> <ul><li><a href = "#gcd"><code>gcd</code></a></li>
+<li><a href = "#lcm"><code>lcm</code></a></li>
+<li><a href = "#max_n"><code>max_n</code></a></li>
+<li><a href = "#min_n"><code>min_n</code></a></li>
+</ul></details>
+
+<hr></hr> 
+
 ## :books: List
 
 ### chunk 
