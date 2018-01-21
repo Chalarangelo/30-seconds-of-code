@@ -1,15 +1,15 @@
-### functionName
+### function_name
 
 Describe briefly what the function does
 
 Explain your method and the functions used.
 
 ``` python
-def functionName(args):
+def function_name(args):
     # code
     return 0
 ```
 
 ``` python
-functionName(val) # result
+function_name(val) # result
 ```
