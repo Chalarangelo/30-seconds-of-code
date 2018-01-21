@@ -6,6 +6,7 @@ files = os.listdir('snippets')
 codeRe = "```\s*python([\s\S]*?)```"
 for file in files:
     someFile = open("snippets/" + file)
+    print(file)
     fileData = someFile.read() 
     someFile.close()
     originalCode = re.search(codeRe,fileData).group(0)
