@@ -46,7 +46,7 @@ def compact(arr):
 ```
 
 ``` python
-compact([0, 1, False, 2, '', 3, 'a', 's', 34]); // [ 1, 2, 3, 'a', 's', 34 ]
+compact([0, 1, False, 2, '', 3, 'a', 's', 34]) # [ 1, 2, 3, 'a', 's', 34 ]
 ```
 ### count_occurences
 
@@ -337,9 +337,9 @@ def zip(*args, fillvalue=None):
 ```
 
 ``` python
-zip(['a', 'b'], [1, 2], [True, False]) // [['a', 1, True], ['b', 2, False]]
-zip(['a'], [1, 2], [True, False]) // [['a', 1, True], [None, 2, False]]
-zip(['a'], [1, 2], [True, False], fill_value = '_') // [['a', 1, True], ['_', 2, False]]
+zip(['a', 'b'], [1, 2], [True, False]) # [['a', 1, True], ['b', 2, False]]
+zip(['a'], [1, 2], [True, False]) # [['a', 1, True], [None, 2, False]]
+zip(['a'], [1, 2], [True, False], fill_value = '_') # [['a', 1, True], ['_', 2, False]]
 ```
 
 ## Credits
