@@ -1,4 +1,6 @@
 import os
+def title_case(str):
+    return str[:1].upper() + str[1:].lower()
 EMOJIS = {
   'adapter': ':electric_plug:',
   'list': ':books:',
@@ -32,7 +34,7 @@ end = open("static-parts/readme-end.md").read()
 toAppend = ''
 tag_dict = tagger()
 for category in tag_dict:
-    toAppend = toAppend + '# ' + EMOJIS[category] + ' ' + category +'\n\n'
+    toAppend = toAppend + '# ' + EMOJIS[category] + ' ' + title_case(category) +'\n\n'
     for snippet in tag_dict[category]:
         someFile = open("snippets/" + snippet + '.md')
         fileData = someFile.read() 
