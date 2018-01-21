@@ -28,6 +28,7 @@ def tagger():
         else:
             tag_dict[category] = [snippet]
     return tag_dict
+
 files = os.listdir('snippets')
 start = open("static-parts/readme-start.md").read() + '\n\n'
 end = open("static-parts/readme-end.md").read()
