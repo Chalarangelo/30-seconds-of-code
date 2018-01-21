@@ -36,7 +36,7 @@ start = open("static-parts/readme-start.md").read() + '\n\n'
 end = open("static-parts/readme-end.md").read()
 toAppend = ''
 tag_dict = tagger()
-toAppend += '## Table of Content \n'
+toAppend += '## Table of Contents \n'
 for category in tag_dict:
     toAppend = toAppend + '### ' + EMOJIS[category] + ' ' + title_case(category) +'\n\n<details><summary>View contents</summary> <ul>'
     for snippet in tag_dict[category]:
@@ -49,5 +49,5 @@ for category in tag_dict:
         someFile = open("snippets/" + snippet + '.md')
         fileData = someFile.read() 
         codeParts = re.split(codeRe,fileData)
-        toAppend += codeParts[0] + f'```py{codeParts[1]} \n ```' +codeParts[2] + f'<details><summary>View Examples</summary>\n\n```py\n{codeParts[3]}\n```\n</details>\n\n<br><a href = "#table-of-contents">:arrow_up: Back To Top</a>\n ' + '\n'
+        toAppend += codeParts[0] + f'```py{codeParts[1]} \n ```' +codeParts[2] + f'<details><summary>View Examples</summary>\n\n```py\n{codeParts[3]}\n```\n</details>\n\n<br><a href = "#table-of-contents">:arrow_up: Back to top</a>\n ' + '\n'
 open("README.md",'w').write(start+toAppend+'\n'+end)    
