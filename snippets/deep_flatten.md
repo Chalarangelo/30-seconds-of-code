@@ -16,18 +16,12 @@ def spread(arg):
             ret.append(i)
     return ret
 
- def deep_flatten(arr):
+
+def deep_flatten(arr):
     result = []
-    result.extend(spread(list(map(lambda x : deep(x) if type(x) == list else x,arr))))
+    result.extend(
+        spread(list(map(lambda x: deep(x) if type(x) == list else x, arr))))
     return result
-
-
-
-
-
-
-
-
 
 ```
 

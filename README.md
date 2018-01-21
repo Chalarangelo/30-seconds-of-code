@@ -107,18 +107,12 @@ def spread(arg):
             ret.append(i)
     return ret
 
- def deep_flatten(arr):
+
+def deep_flatten(arr):
     result = []
-    result.extend(spread(list(map(lambda x : deep(x) if type(x) == list else x,arr))))
+    result.extend(
+        spread(list(map(lambda x: deep(x) if type(x) == list else x, arr))))
     return result
-
-
-
-
-
-
-
-
 
 ```
 
@@ -288,7 +282,7 @@ from random import randint
 def shuffle(arr):
     temp_arr = deepcopy(arr)
     m = len(temp_arr)
-    while(m):
+    while (m):
         m -= 1
         i = randint(0, m)
         temp_arr[m], temp_arr[i] = temp_arr[i], temp_arr[m]
@@ -335,16 +329,17 @@ def zip(*args, fillvalue=None):
     max_length = max([len(arr) for arr in args])
     result = []
     for i in range(max_length):
-        result.append([args[k][i] if i < len(args[k])
-                       else None for k in range(len(args))])
+        result.append([
+            args[k][i] if i < len(args[k]) else None for k in range(len(args))
+        ])
     return result
 
 ```
 
 ``` python
-zip(['a', 'b'], [1, 2], [True, False]); // [['a', 1, True], ['b', 2, False]]
-zip(['a'], [1, 2], [True, False]); // [['a', 1, True], [None, 2, False]]
-zip(['a'], [1, 2], [True, False], fill_value = '_'); // [['a', 1, True], ['_', 2, False]]
+zip(['a', 'b'], [1, 2], [True, False]) // [['a', 1, True], ['b', 2, False]]
+zip(['a'], [1, 2], [True, False]) // [['a', 1, True], [None, 2, False]]
+zip(['a'], [1, 2], [True, False], fill_value = '_') // [['a', 1, True], ['_', 2, False]]
 ```
 
 ## Credits
