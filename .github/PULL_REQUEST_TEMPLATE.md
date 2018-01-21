@@ -27,7 +27,7 @@
 <!--- If you're unsure about any of these, don't hesitate to ask. We're here to help! -->
 - [ ] My code follows the code style of this project.
 - [ ] My change requires a change to the documentation.
-- [ ] I have updated the documentation accordingly.
+- [ ] I have updated the documentation accordingly. <!-- Check this only if you have updated tag_database and ran lint.py and readme.py in the scripts folder -->
 - [ ] I have checked that the changes are working properly
 - [ ] I have checked that there isn't any PR doing the same
 - [ ] I have read the **CONTRIBUTING** document.
