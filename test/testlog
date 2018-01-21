@@ -1,4 +1,4 @@
-Test log for: Sat Jan 20 2018 20:10:48 GMT+0000 (UTC)
+Test log for: Mon Jan 22 2018 20:11:29 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.1 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1299,6 +1299,6 @@ Test log for: Sat Jan 20 2018 20:10:48 GMT+0000 (UTC)
 
   total:     563
   passing:   563
-  duration:  346ms
+  duration:  314ms
 
 
