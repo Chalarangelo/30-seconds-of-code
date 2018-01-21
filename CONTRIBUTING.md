@@ -38,6 +38,8 @@ Here's what you can do to help:
 - It is not mandatory but highly appreciated if you provide **test cases** and/or performance tests.
 - You can start creating a new snippet, by using the [snippet template](snippet_template.md) to format your snippets.
 - Updating the README.md file should only be done by altering the scripts in the **scripts** folder or altering their relative static parts in the **static-parts** folder.
+- You may tag your snippet in tag_databse although it is _not_ necessary.
+- You may also run `scripts\lint.py` & `scripts\readme.py`.
 
 <!--
 ### Additional guidelines and conventions regarding snippets
