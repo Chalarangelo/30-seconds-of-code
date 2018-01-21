@@ -1,0 +1,13 @@
+chunk:list
+compact:list
+count_occurences:list
+count_vowels:string
+deep_flatten:list
+difference:list
+gcd:math
+lcm:math
+max_n:math
+min_n:math
+shuffle:list
+spread:list
+zip:list

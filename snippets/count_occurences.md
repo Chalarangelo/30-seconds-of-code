@@ -1,5 +1,7 @@
 ### count_occurences
 
+:information_source: Already implemented via `list.count()`.
+
 Counts the occurrences of a value in an list.
 
 Uses the `reduce` functin from built-in module `functools` to increment a counter each time you encounter the specific value inside the list.
