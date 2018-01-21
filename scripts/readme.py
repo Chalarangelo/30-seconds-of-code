@@ -1,4 +1,19 @@
 import os
+EMOJIS = {
+  'adapter': ':electric_plug:',
+  'list': ':books:',
+  'browser': ':globe_with_meridians:',
+  'date': ':stopwatch:',
+  'function': ':control_knobs:',
+  'logic': ':crystal_ball:',
+  'math': ':heavy_division_sign:',
+  'media': ':tv:',
+  'node': ':package:',
+  'object': 'card_file_box',
+  'string': ':scroll:',
+  'type': ':page_with_curl:',
+  'utility': ':wrench:'
+}
 def tagger():
     tag_data = open('tag_database').read()
     tag_dict = {}
@@ -17,7 +32,7 @@ end = open("static-parts/readme-end.md").read()
 toAppend = ''
 tag_dict = tagger()
 for category in tag_dict:
-    toAppend = toAppend + '# ' + category +'\n\n'
+    toAppend = toAppend + '# ' + EMOJIS[category] + ' ' + category +'\n\n'
     for snippet in tag_dict[category]:
         someFile = open("snippets/" + snippet + '.md')
         fileData = someFile.read() 
