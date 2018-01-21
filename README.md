@@ -66,6 +66,7 @@ chunk([1,2,3,4,5],2) # [[1,2],[3,4],5]
 
 ```
 </details>
+
 ### compact
 
 Removes falsey values from a list.
@@ -89,6 +90,7 @@ compact([0, 1, False, 2, '', 3, 'a', 's', 34]) # [ 1, 2, 3, 'a', 's', 34 ]
 
 ```
 </details>
+
 ### count_occurences
 
 :information_source: Already implemented via `list.count()`.
@@ -116,6 +118,7 @@ count_occurrences([1, 1, 2, 1, 2, 3], 1) # 3
 
 ```
 </details>
+
 ### deep_flatten
 
 Deep flattens a list.
@@ -152,6 +155,7 @@ deep_flatten([1, [2], [[3], 4], 5]) # [1,2,3,4,5]
 
 ```
 </details>
+
 ### difference
 
 Returns the difference between two arrays.
@@ -175,6 +179,7 @@ difference([1, 2, 3], [1, 2, 4]) # [3]
 
 ```
 </details>
+
 ### shuffle
 
 :information_source: The same algorithm is already implemented via `random.shuffle`.
@@ -211,6 +216,7 @@ shuffle(foo) # [2,3,1] , foo = [1,2,3]
 
 ```
 </details>
+
 ### spread
 
 Implements javascript's spread syntax as a function. Flattens the list(non-deep) and returns an list.
@@ -239,6 +245,7 @@ spread([1,2,3,[4,5,6],[7],8,9]) # [1,2,3,4,5,6,7,8,9]
 
 ```
 </details>
+
 ### zip
 
 :information_source: Already implemented via `itertools.zip_longest()`
@@ -272,6 +279,7 @@ zip(['a'], [1, 2], [True, False], fill_value = '_') # [['a', 1, True], ['_', 2, 
 
 ```
 </details>
+
 ## :scroll: String
 
 ### count_vowels
@@ -301,6 +309,7 @@ count_vowels('gym') # 0
 
 ```
 </details>
+
 ## :heavy_division_sign: Math
 
 ### gcd
@@ -350,6 +359,7 @@ gcd(8,36) # 4
 
 ```
 </details>
+
 ### lcm 
 
 Returns the least common multiple of two or more numbers.
@@ -399,6 +409,7 @@ lcm([1, 3, 4], 5) # 60
 
 ```
 </details>
+
 ### max_n
 
 Returns the `n` maximum elements from the provided list. If `n` is greater than or equal to the provided list's length, then return the original list(sorted in descending order).
@@ -429,6 +440,7 @@ max_n([1, 2, 3], 2) # [3,2]
 
 ```
 </details>
+
 ### min_n
 
 Returns the `n` minimum elements from the provided list. If `n` is greater than or equal to the provided list's length, then return the original list(sorted in ascending order).
@@ -458,6 +470,7 @@ min_n([1, 2, 3], 2) # [1,2]
 
 ```
 </details>
+
 
 ## Credits
 
