@@ -67,7 +67,7 @@ chunk([1,2,3,4,5],2) # [[1,2],[3,4],5]
 ```
 </details>
 
-<a href = "#table-of-contents">:arrow_up: Back To Top</a>
+<br><a href = "#table-of-contents">:arrow_up: Back To Top</a>
  
 ### compact
 
@@ -93,7 +93,7 @@ compact([0, 1, False, 2, '', 3, 'a', 's', 34]) # [ 1, 2, 3, 'a', 's', 34 ]
 ```
 </details>
 
-<a href = "#table-of-contents">:arrow_up: Back To Top</a>
+<br><a href = "#table-of-contents">:arrow_up: Back To Top</a>
  
 ### count_occurences
 
@@ -123,7 +123,7 @@ count_occurrences([1, 1, 2, 1, 2, 3], 1) # 3
 ```
 </details>
 
-<a href = "#table-of-contents">:arrow_up: Back To Top</a>
+<br><a href = "#table-of-contents">:arrow_up: Back To Top</a>
  
 ### deep_flatten
 
@@ -162,7 +162,7 @@ deep_flatten([1, [2], [[3], 4], 5]) # [1,2,3,4,5]
 ```
 </details>
 
-<a href = "#table-of-contents">:arrow_up: Back To Top</a>
+<br><a href = "#table-of-contents">:arrow_up: Back To Top</a>
  
 ### difference
 
@@ -188,7 +188,7 @@ difference([1, 2, 3], [1, 2, 4]) # [3]
 ```
 </details>
 
-<a href = "#table-of-contents">:arrow_up: Back To Top</a>
+<br><a href = "#table-of-contents">:arrow_up: Back To Top</a>
  
 ### shuffle
 
@@ -227,7 +227,7 @@ shuffle(foo) # [2,3,1] , foo = [1,2,3]
 ```
 </details>
 
-<a href = "#table-of-contents">:arrow_up: Back To Top</a>
+<br><a href = "#table-of-contents">:arrow_up: Back To Top</a>
  
 ### spread
 
@@ -258,7 +258,7 @@ spread([1,2,3,[4,5,6],[7],8,9]) # [1,2,3,4,5,6,7,8,9]
 ```
 </details>
 
-<a href = "#table-of-contents">:arrow_up: Back To Top</a>
+<br><a href = "#table-of-contents">:arrow_up: Back To Top</a>
  
 ### zip
 
@@ -294,7 +294,7 @@ zip(['a'], [1, 2], [True, False], fill_value = '_') # [['a', 1, True], ['_', 2, 
 ```
 </details>
 
-<a href = "#table-of-contents">:arrow_up: Back To Top</a>
+<br><a href = "#table-of-contents">:arrow_up: Back To Top</a>
  
 ## :scroll: String
 
@@ -326,7 +326,7 @@ count_vowels('gym') # 0
 ```
 </details>
 
-<a href = "#table-of-contents">:arrow_up: Back To Top</a>
+<br><a href = "#table-of-contents">:arrow_up: Back To Top</a>
  
 ## :heavy_division_sign: Math
 
@@ -378,7 +378,7 @@ gcd(8,36) # 4
 ```
 </details>
 
-<a href = "#table-of-contents">:arrow_up: Back To Top</a>
+<br><a href = "#table-of-contents">:arrow_up: Back To Top</a>
  
 ### lcm 
 
@@ -430,7 +430,7 @@ lcm([1, 3, 4], 5) # 60
 ```
 </details>
 
-<a href = "#table-of-contents">:arrow_up: Back To Top</a>
+<br><a href = "#table-of-contents">:arrow_up: Back To Top</a>
  
 ### max_n
 
@@ -463,7 +463,7 @@ max_n([1, 2, 3], 2) # [3,2]
 ```
 </details>
 
-<a href = "#table-of-contents">:arrow_up: Back To Top</a>
+<br><a href = "#table-of-contents">:arrow_up: Back To Top</a>
  
 ### min_n
 
@@ -495,7 +495,7 @@ min_n([1, 2, 3], 2) # [1,2]
 ```
 </details>
 
-<a href = "#table-of-contents">:arrow_up: Back To Top</a>
+<br><a href = "#table-of-contents">:arrow_up: Back To Top</a>
  
 
 ## Credits

@@ -49,5 +49,5 @@ for category in tag_dict:
         someFile = open("snippets/" + snippet + '.md')
         fileData = someFile.read() 
         codeParts = re.split(codeRe,fileData)
-        toAppend += codeParts[0] + f'```py{codeParts[1]} \n ```' +codeParts[2] + f'<details><summary>View Examples</summary>\n\n```py\n{codeParts[3]}\n```\n</details>\n\n<a href = "#table-of-contents">:arrow_up: Back To Top</a>\n ' + '\n'
+        toAppend += codeParts[0] + f'```py{codeParts[1]} \n ```' +codeParts[2] + f'<details><summary>View Examples</summary>\n\n```py\n{codeParts[3]}\n```\n</details>\n\n<br><a href = "#table-of-contents">:arrow_up: Back To Top</a>\n ' + '\n'
 open("README.md",'w').write(start+toAppend+'\n'+end)    
