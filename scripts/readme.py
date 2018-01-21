@@ -34,6 +34,13 @@ start = open("static-parts/readme-start.md").read() + '\n\n'
 end = open("static-parts/readme-end.md").read()
 toAppend = ''
 tag_dict = tagger()
+toAppend += '## Table of Content \n'
+for category in tag_dict:
+    toAppend = toAppend + '# ' + EMOJIS[category] + ' ' + title_case(category) +'\n\n <ul>'
+    for snippet in tag_dict[category]:
+        toAppend += f'<li>{snippet}</li>\n'
+    toAppend += '</ul>\n'
+toAppend += '<hr></hr> \n'
 for category in tag_dict:
     toAppend = toAppend + '## ' + EMOJIS[category] + ' ' + title_case(category) +'\n\n'
     for snippet in tag_dict[category]:

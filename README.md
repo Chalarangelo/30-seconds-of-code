@@ -8,6 +8,30 @@
 **Note**:- This is in no way affiliated with the original [30-seconds-of-code](https://github.com/Chalarangelo/30-seconds-of-code/).
 
 
+## Table of Content 
+# :books: List
+
+ <ul><li>chunk</li>
+<li>compact</li>
+<li>count_occurences</li>
+<li>deep_flatten</li>
+<li>difference</li>
+<li>shuffle</li>
+<li>spread</li>
+<li>zip</li>
+</ul>
+# :scroll: String
+
+ <ul><li>count_vowels</li>
+</ul>
+# :heavy_division_sign: Math
+
+ <ul><li>gcd</li>
+<li>lcm</li>
+<li>max_n</li>
+<li>min_n</li>
+</ul>
+<hr></hr> 
 ## :books: List
 
 ### chunk 
