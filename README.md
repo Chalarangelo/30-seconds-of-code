@@ -9,7 +9,7 @@
 
 
 ## Table of Content 
-# :books: List
+### :books: List
 
  <ul><li><a href = "#chunk"><code>chunk</code></a></li>
 <li><a href = "#compact"><code>compact</code></a></li>
@@ -21,12 +21,12 @@
 <li><a href = "#zip"><code>zip</code></a></li>
 </ul>
 
-# :scroll: String
+### :scroll: String
 
  <ul><li><a href = "#count_vowels"><code>count_vowels</code></a></li>
 </ul>
 
-# :heavy_division_sign: Math
+### :heavy_division_sign: Math
 
  <ul><li><a href = "#gcd"><code>gcd</code></a></li>
 <li><a href = "#lcm"><code>lcm</code></a></li>
