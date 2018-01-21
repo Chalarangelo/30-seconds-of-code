@@ -19,12 +19,12 @@
 <li><a href = "#shuffle"><code>shuffle</code></a></li>
 <li><a href = "#spread"><code>spread</code></a></li>
 <li><a href = "#zip"><code>zip</code></a></li>
-</ul><details>
+</ul></details>
 
 ### :scroll: String
 
 <details><summary>View contents<summary> <ul><li><a href = "#count_vowels"><code>count_vowels</code></a></li>
-</ul><details>
+</ul></details>
 
 ### :heavy_division_sign: Math
 
@@ -32,7 +32,7 @@
 <li><a href = "#lcm"><code>lcm</code></a></li>
 <li><a href = "#max_n"><code>max_n</code></a></li>
 <li><a href = "#min_n"><code>min_n</code></a></li>
-</ul><details>
+</ul></details>
 
 <hr></hr> 
 
