@@ -11,30 +11,31 @@
 ## Table of Content 
 # :books: List
 
- <ul><li>chunk</li>
-<li>compact</li>
-<li>count_occurences</li>
-<li>deep_flatten</li>
-<li>difference</li>
-<li>shuffle</li>
-<li>spread</li>
-<li>zip</li>
+ <ul><li><a href = "#chunk">chunk</a></li>
+<li><a href = "#compact">compact</a></li>
+<li><a href = "#count_occurences">count_occurences</a></li>
+<li><a href = "#deep_flatten">deep_flatten</a></li>
+<li><a href = "#difference">difference</a></li>
+<li><a href = "#shuffle">shuffle</a></li>
+<li><a href = "#spread">spread</a></li>
+<li><a href = "#zip">zip</a></li>
 </ul>
 
 # :scroll: String
 
- <ul><li>count_vowels</li>
+ <ul><li><a href = "#count_vowels">count_vowels</a></li>
 </ul>
 
 # :heavy_division_sign: Math
 
- <ul><li>gcd</li>
-<li>lcm</li>
-<li>max_n</li>
-<li>min_n</li>
+ <ul><li><a href = "#gcd">gcd</a></li>
+<li><a href = "#lcm">lcm</a></li>
+<li><a href = "#max_n">max_n</a></li>
+<li><a href = "#min_n">min_n</a></li>
 </ul>
 
 <hr></hr> 
+
 ## :books: List
 
 ### chunk 
