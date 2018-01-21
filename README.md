@@ -226,6 +226,8 @@ count_vowels('gym') # 0
 
 ### gcd
 
+:information_source: `math.gcd` works with only two numbers
+
 Calculates the greatest common divisor between two or more numbers/lists.
 
 The `helperGcdfunction` uses recursion. Base case is when `y` equals `0`. In this case, return `x`. Otherwise, return the GCD of `y` and the remainder of the division `x/y`.
