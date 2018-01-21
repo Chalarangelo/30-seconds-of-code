@@ -19,7 +19,7 @@ def zip(*args, fillvalue=None):
 ```
 
 ``` python
-zip(['a', 'b'], [1, 2], [True, False]) // [['a', 1, True], ['b', 2, False]]
-zip(['a'], [1, 2], [True, False]) // [['a', 1, True], [None, 2, False]]
-zip(['a'], [1, 2], [True, False], fill_value = '_') // [['a', 1, True], ['_', 2, False]]
+zip(['a', 'b'], [1, 2], [True, False]) # [['a', 1, True], ['b', 2, False]]
+zip(['a'], [1, 2], [True, False]) # [['a', 1, True], [None, 2, False]]
+zip(['a'], [1, 2], [True, False], fill_value = '_') # [['a', 1, True], ['_', 2, False]]
 ```
