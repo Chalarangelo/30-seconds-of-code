@@ -20,10 +20,12 @@
 <li>spread</li>
 <li>zip</li>
 </ul>
+
 # :scroll: String
 
  <ul><li>count_vowels</li>
 </ul>
+
 # :heavy_division_sign: Math
 
  <ul><li>gcd</li>
@@ -31,6 +33,7 @@
 <li>max_n</li>
 <li>min_n</li>
 </ul>
+
 <hr></hr> 
 ## :books: List
 
