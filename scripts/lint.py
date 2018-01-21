@@ -9,6 +9,7 @@ for file in files:
     fileData = someFile.read() 
     someFile.close()
     originalCode = re.search(codeRe,fileData).group(0)
+    print(re.split(codeRe,fileData)[0])
     formatedCode = autopep8.fix_code(re.split(codeRe,fileData)[1])
     fileToSave = fileData.replace(originalCode,('```python \n'+formatedCode+'\n```'))
     someFile = open("snippets/"+file,'w')
