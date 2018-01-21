@@ -8,7 +8,7 @@
 **Note**:- This is in no way affiliated with the original [30-seconds-of-code](https://github.com/Chalarangelo/30-seconds-of-code/).
 
 
-# list
+# :books: list
 
 ### chunk 
 
@@ -198,7 +198,7 @@ zip(['a', 'b'], [1, 2], [True, False]) # [['a', 1, True], ['b', 2, False]]
 zip(['a'], [1, 2], [True, False]) # [['a', 1, True], [None, 2, False]]
 zip(['a'], [1, 2], [True, False], fill_value = '_') # [['a', 1, True], ['_', 2, False]]
 ```
-# string
+# :scroll: string
 
 ### count_vowels
 
@@ -222,7 +222,7 @@ count_vowels('foobar') # 3
 count_vowels('gym') # 0
 ```
 
-# math
+# :heavy_division_sign: math
 
 ### gcd
 
