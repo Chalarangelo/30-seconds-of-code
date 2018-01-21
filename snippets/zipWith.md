@@ -19,4 +19,5 @@ const zipWith = (...arrays) => {
 
 ``` js
 zipWith([1, 2], [10, 20], [100, 200], (a,b,c) => a + b + c); // [111,222]
+zipWith([1, 2, 3], [10, 20], [100, 200], (a,b,c) => (a != null ? a : 'a') + (b != null ? b:'b') + (c != null ? c : 'c')); // [111, 222, '3bc]
 ```
