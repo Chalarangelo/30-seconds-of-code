@@ -44,7 +44,7 @@ Chunks an array into smaller lists of a specified size.
 
 Uses `range` to create a list of desired size. Then use `map` on this list and fill it with splices of `arr`.
 
-```python 
+```py 
 
 
 from math import ceil
@@ -55,29 +55,40 @@ def chunk(arr, size):
         map(lambda x: arr[x * size:x * size + size],
             list(range(0, ceil(len(arr) / size)))))
 
-```
+ 
+ ```
 
-``` python
+<details><summary>View Examples</summary>
+
+```py
+
 chunk([1,2,3,4,5],2) # [[1,2],[3,4],5]
-```
 
+```
+<details>
 ### compact
 
 Removes falsey values from a list.
 
 Use `filter()` to filter out falsey values (False, None, 0, and "").
 
-```python 
+```py 
 
 
 def compact(arr):
     return list(filter(lambda x: bool(x), arr))
 
-```
+ 
+ ```
 
-``` python
+<details><summary>View Examples</summary>
+
+```py
+
 compact([0, 1, False, 2, '', 3, 'a', 's', 34]) # [ 1, 2, 3, 'a', 's', 34 ]
+
 ```
+<details>
 ### count_occurences
 
 :information_source: Already implemented via `list.count()`.
@@ -86,7 +97,7 @@ Counts the occurrences of a value in an list.
 
 Uses the `reduce` functin from built-in module `functools` to increment a counter each time you encounter the specific value inside the list.
 
-```python 
+```py 
 
 
 def count_occurences(arr, val):
@@ -94,18 +105,24 @@ def count_occurences(arr, val):
         (lambda x, y: x + 1 if y == val and type(y) == type(val) else x + 0),
         arr)
 
-```
+ 
+ ```
 
-```python
+<details><summary>View Examples</summary>
+
+```py
+
 count_occurrences([1, 1, 2, 1, 2, 3], 1) # 3
+
 ```
+<details>
 ### deep_flatten
 
 Deep flattens a list.
 
 Use recursion. Use `list.extend()` with an empty array (`result`) and the spread function to flatten a list. Recursively flatten each element that is a list.
 
-```python 
+```py 
 
 
 def spread(arg):
@@ -124,29 +141,40 @@ def deep_flatten(arr):
         spread(list(map(lambda x: deep(x) if type(x) == list else x, arr))))
     return result
 
-```
+ 
+ ```
 
-```python
+<details><summary>View Examples</summary>
+
+```py
+
 deep_flatten([1, [2], [[3], 4], 5]) # [1,2,3,4,5]
-```
 
+```
+<details>
 ### difference
 
 Returns the difference between two arrays.
 
 Create a `set` from `b`, then use list comprehension to only keep values not contained in `b`
 
-```python 
+```py 
 
 
 def difference(a, b):
     b = set(b)
     return [item for item in a if item not in b]
 
-```
-``` python
+ 
+ ```
+<details><summary>View Examples</summary>
+
+```py
+
 difference([1, 2, 3], [1, 2, 4]) # [3]
+
 ```
+<details>
 ### shuffle
 
 :information_source: The same algorithm is already implemented via `random.shuffle`.
@@ -155,7 +183,7 @@ Randomizes the order of the values of an list, returning a new list.
 
 Uses the [Fisher-Yates algorithm](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle) to reorder the elements of the list.
 
-```python 
+```py 
 
 
 from copy import deepcopy
@@ -171,17 +199,23 @@ def shuffle(arr):
         temp_arr[m], temp_arr[i] = temp_arr[i], temp_arr[m]
     return temp_arr
 
-```
+ 
+ ```
 
-``` python
+<details><summary>View Examples</summary>
+
+```py
+
 foo = [1,2,3]
 shuffle(foo) # [2,3,1] , foo = [1,2,3]
+
 ```
+<details>
 ### spread
 
 Implements javascript's spread syntax as a function. Flattens the list(non-deep) and returns an list.
 
-```python 
+```py 
 
 
 def spread(arg):
@@ -193,12 +227,18 @@ def spread(arg):
             ret.append(i)
     return ret
 
-```
+ 
+ ```
 
 
-```python
+<details><summary>View Examples</summary>
+
+```py
+
 spread([1,2,3,[4,5,6],[7],8,9]) # [1,2,3,4,5,6,7,8,9]
+
 ```
+<details>
 ### zip
 
 :information_source: Already implemented via `itertools.zip_longest()`
@@ -207,7 +247,7 @@ Creates a list of elements, grouped based on the position in the original lists.
 
 Use `max` combined with `list comprehension` to get the length of the longest list in the arguments. Loops for `max_length` times grouping elements. If lengths of `lists` vary `fill_value` is used. By default `fill_value` is `None`.
 
-```python 
+```py 
 
 
 def zip(*args, fillvalue=None):
@@ -219,13 +259,19 @@ def zip(*args, fillvalue=None):
         ])
     return result
 
-```
+ 
+ ```
 
-``` python
+<details><summary>View Examples</summary>
+
+```py
+
 zip(['a', 'b'], [1, 2], [True, False]) # [['a', 1, True], ['b', 2, False]]
 zip(['a'], [1, 2], [True, False]) # [['a', 1, True], [None, 2, False]]
 zip(['a'], [1, 2], [True, False], fill_value = '_') # [['a', 1, True], ['_', 2, False]]
+
 ```
+<details>
 ## :scroll: String
 
 ### count_vowels
@@ -234,7 +280,7 @@ Retuns `number` of vowels in provided `string`.
 
 Use a regular expression to count the number of vowels `(A, E, I, O, U)` in a string.
 
-```python 
+```py 
 
 
 import re
@@ -243,13 +289,18 @@ import re
 def count_vowels(str):
     return len(len(re.findall(r'[aeiou]', str, re.IGNORECASE)))
 
-```
+ 
+ ```
 
-``` python
+<details><summary>View Examples</summary>
+
+```py
+
 count_vowels('foobar') # 3
 count_vowels('gym') # 0
-```
 
+```
+<details>
 ## :heavy_division_sign: Math
 
 ### gcd
@@ -262,7 +313,7 @@ The `helperGcdfunction` uses recursion. Base case is when `y` equals `0`. In thi
 
 Uses the reduce function from the inbuilt module `functools`. Also defines a method `spread` for javascript like spreading of lists.
 
-```python 
+```py 
 
 
 from functools import reduce
@@ -287,12 +338,18 @@ def gcd(*args):
 
     return reduce((lambda x, y: _gcd(x, y)), numbers)
 
-```
+ 
+ ```
 
 
-``` python
+<details><summary>View Examples</summary>
+
+```py
+
 gcd(8,36) # 4
+
 ```
+<details>
 ### lcm 
 
 Returns the least common multiple of two or more numbers.
@@ -301,7 +358,7 @@ Use the `greatest common divisor (GCD)` formula and the fact that `lcm(x,y) = x 
 
 Uses `reduce` function from the inbuilt module `functools`. Also defines a method `spread` for javascript like spreading of lists.
 
-```python 
+```py 
 
 
 from functools import reduce
@@ -329,20 +386,26 @@ def lcm(*args):
 
     return reduce((lambda x, y: _lcm(x, y)), numbers)
 
-```
+ 
+ ```
 
 
-``` python
+<details><summary>View Examples</summary>
+
+```py
+
 lcm(12, 7) # 84
 lcm([1, 3, 4], 5) # 60
+
 ```
+<details>
 ### max_n
 
 Returns the `n` maximum elements from the provided list. If `n` is greater than or equal to the provided list's length, then return the original list(sorted in descending order).
 
 Use `list.sort()` combined with the `deepcopy` function from the inbuilt `copy` module to create a shallow clone of the list and sort it in ascending order and then use `list.reverse()` reverse it to make it descending order. Use `[:n]` to get the specified number of elements. Omit the second argument, `n`, to get a one-element array
 
-```python 
+```py 
 
 
 from copy import deepcopy
@@ -354,19 +417,25 @@ def max_n(arr, n=1):
     numbers.reverse()
     return numbers[:n]
 
-```
+ 
+ ```
 
-```python
+<details><summary>View Examples</summary>
+
+```py
+
 max_n([1, 2, 3]) # [3]
 max_n([1, 2, 3], 2) # [3,2]
+
 ```
+<details>
 ### min_n
 
 Returns the `n` minimum elements from the provided list. If `n` is greater than or equal to the provided list's length, then return the original list(sorted in ascending order).
 
 Use `list.sort()` combined with the `deepcopy` function from the inbuilt `copy` module to create a shallow clone of the list and sort it in ascending order. Use `[:n]` to get the specified number of elements. Omit the second argument, `n`, to get a one-element array
 
-```python 
+```py 
 
 
 from copy import deepcopy
@@ -377,12 +446,18 @@ def min_n(arr, n=1):
     numbers.sort()
     return numbers[:n]
 
-```
+ 
+ ```
 
-```python
+<details><summary>View Examples</summary>
+
+```py
+
 min_n([1, 2, 3]) # [1]
 min_n([1, 2, 3], 2) # [1,2]
+
 ```
+<details>
 
 ## Credits
 

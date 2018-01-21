@@ -1,4 +1,6 @@
 import os
+import re
+codeRe = "```\s*python([\s\S]*?)```"
 def title_case(str):
     return str[:1].upper() + str[1:].lower()
 EMOJIS = {
@@ -46,5 +48,6 @@ for category in tag_dict:
     for snippet in tag_dict[category]:
         someFile = open("snippets/" + snippet + '.md')
         fileData = someFile.read() 
-        toAppend += fileData + '\n'
+        codeParts = re.split(codeRe,fileData)
+        toAppend += codeParts[0] + f'```py{codeParts[1]} \n ```' +codeParts[2] + f'<details><summary>View Examples</summary>\n\n```py\n{codeParts[3]}\n```\n<details>' + '\n'
 open("README.md",'w').write(start+toAppend+'\n'+end)    
