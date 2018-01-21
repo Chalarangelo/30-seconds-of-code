@@ -35,7 +35,7 @@ end = open("static-parts/readme-end.md").read()
 toAppend = ''
 tag_dict = tagger()
 for category in tag_dict:
-    toAppend = toAppend + '# ' + EMOJIS[category] + ' ' + title_case(category) +'\n\n'
+    toAppend = toAppend + '## ' + EMOJIS[category] + ' ' + title_case(category) +'\n\n'
     for snippet in tag_dict[category]:
         someFile = open("snippets/" + snippet + '.md')
         fileData = someFile.read() 
