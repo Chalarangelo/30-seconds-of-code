@@ -47,7 +47,9 @@ extendHex:utility,string
 factorial:math,recursion
 fibonacci:math,array
 filterNonUnique:array
+findKey:object,function
 findLast:array
+findLastKey:object,function
 flatten:array
 flip:adapter,function
 forEachRight:array,function
