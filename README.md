@@ -2684,10 +2684,16 @@ getDaysDiffBetweenDates(new Date('2017-12-13'), new Date('2017-12-22')); // 9
 ### tomorrow
 
 Results in a string representation of tomorrow's date.
-Use `new Date()` to get today's date, adding `86400000` of seconds to it(24 hours), using `Date.toISOString()` to convert Date object to string.
+Use `new Date()` to get today's date, adding one day using `Date.getDate()` and `Date.setDate()`, and converting the Date object to a string.
 
 ```js
-const tomorrow = () => new Date(new Date().getTime() + 86400000).toISOString().split('T')[0];
+const tomorrow = () => {
+  let t = new Date();
+  t.setDate(t.getDate() + 1);
+  return `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, '0')}-${String(
+    t.getDate()
+  ).padStart(2, '0')}`;
+};
 ```
 
 <details>
