@@ -284,6 +284,8 @@ average(1, 2, 3);
 * [`lowercaseKeys`](#lowercasekeys)
 * [`mapKeys`](#mapkeys)
 * [`mapValues`](#mapvalues)
+* [`matches`](#matches)
+* [`matchesWith`](#matcheswith)
 * [`merge`](#merge)
 * [`objectFromPairs`](#objectfrompairs)
 * [`objectToPairs`](#objecttopairs)
@@ -4526,6 +4528,64 @@ const users = {
   pebbles: { user: 'pebbles', age: 1 }
 };
 mapValues(users, u => u.age); // { fred: 40, pebbles: 1 }
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### matches
+
+Compares two objects to determine if the first one contains equivalent property values to the second one.
+
+Use `Object.keys(source)` to get all the keys of the second object, then `Array.every()`, `Object.hasOwnProperty()` and strict comparison to determine if all keys exist in the first object and have the same values.
+
+```js
+const matches = (obj, source) =>
+  Object.keys(source).every(key => obj.hasOwnProperty(key) && obj[key] === source[key]);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+matches({ age: 25, hair: 'long', beard: true }, { hair: 'long', beard: true }); // true
+matches({ hair: 'long', beard: true }, { age: 25, hair: 'long', beard: true }); // false
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### matchesWith
+
+Compares two objects to determine if the first one contains equivalent property values to the second one, based on a provided function.
+
+Use `Object.keys(source)` to get all the keys of the second object, then `Array.every()`, `Object.hasOwnProperty()` and the provided function to determine if all keys exist in the first object and have equivalent values.
+If no function is provided, the values will be compared using the equality operator.
+
+```js
+const matchesWith = (obj, source, fn) =>
+  Object.keys(source).every(
+    key =>
+      obj.hasOwnProperty(key) && fn
+        ? fn(obj[key], source[key], key, obj, source)
+        : obj[key] == source[key]
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const isGreeting = val => /^h(?:i|ello)$/.test(val);
+matchesWith(
+  { greeting: 'hello' },
+  { greeting: 'hi' },
+  (oV, sV) => isGreeting(oV) && isGreeting(sV)
+); // true
 ```
 
 </details>
