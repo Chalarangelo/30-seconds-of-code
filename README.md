@@ -4807,6 +4807,7 @@ const omitBy = (obj, fn) =>
 
 ```js
 omitBy({ a: 1, b: '2', c: 3 }, x => typeof x === 'number'); // { b: '2' }
+```
 
 </details>
 
