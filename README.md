@@ -198,6 +198,7 @@ average(1, 2, 3);
 
 * [`chainAsync`](#chainasync)
 * [`compose`](#compose)
+* [`composeRight`](#composeright)
 * [`curry`](#curry)
 * [`defer`](#defer)
 * [`functionName`](#functionname)
@@ -2838,6 +2839,32 @@ const add5 = x => x + 5;
 const multiply = (x, y) => x * y;
 const multiplyAndAdd5 = compose(add5, multiply);
 multiplyAndAdd5(5, 2); // 15
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### composeRight
+
+Performs left-to-right function composition.
+
+Use `Array.reduce()` to perform left-to-right function composition.
+The first (leftmost) function can accept one or more arguments; the remaining functions must be unary.
+
+```js
+const composeRight = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const add = (x, y) => x + y;
+const square = x => x * x;
+const addAndSquare = composeRight(add, square);
+addAndSquare(1, 2); // 9
 ```
 
 </details>
