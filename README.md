@@ -198,6 +198,7 @@ average(1, 2, 3);
 
 * [`chainAsync`](#chainasync)
 * [`compose`](#compose)
+* [`composeRight`](#composeright)
 * [`curry`](#curry)
 * [`defer`](#defer)
 * [`functionName`](#functionname)
@@ -375,6 +376,7 @@ average(1, 2, 3);
 * [`hexToRGB`](#hextorgb-)
 * [`httpGet`](#httpget)
 * [`httpPost`](#httppost)
+* [`nthArg`](#ntharg)
 * [`parseCookie`](#parsecookie)
 * [`prettyBytes`](#prettybytes)
 * [`randomHexColorCode`](#randomhexcolorcode)
@@ -2837,6 +2839,32 @@ const add5 = x => x + 5;
 const multiply = (x, y) => x * y;
 const multiplyAndAdd5 = compose(add5, multiply);
 multiplyAndAdd5(5, 2); // 15
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### composeRight
+
+Performs left-to-right function composition.
+
+Use `Array.reduce()` to perform left-to-right function composition.
+The first (leftmost) function can accept one or more arguments; the remaining functions must be unary.
+
+```js
+const composeRight = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const add = (x, y) => x + y;
+const square = x => x * x;
+const addAndSquare = composeRight(add, square);
+addAndSquare(1, 2); // 9
 ```
 
 </details>
@@ -6389,6 +6417,32 @@ Logs: {
   "id": 101
 }
 */
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### nthArg
+
+Creates a function that gets the argument at index `n`. If `n` is negative, the nth argument from the end is returned.
+
+Use `Array.slice()` to get the desired argument at index `n`.
+
+```js
+const nthArg = n => (...args) => args.slice(n)[0];
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const third = nthArg(2);
+third(1, 2, 3); // 3
+third(1, 2); // undefined
+const last = nthArg(-1);
+last(1, 2, 3, 4, 5); // 5
 ```
 
 </details>

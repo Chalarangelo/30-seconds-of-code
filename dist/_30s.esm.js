@@ -62,6 +62,8 @@ const capitalize = ([first, ...rest], lowerRest = false) =>
 
 const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperCase());
 
+const castArray = val => (Array.isArray(val) ? val : [val]);
+
 const chainAsync = fns => {
   let curr = 0;
   const next = () => fns[curr++](next);
@@ -160,6 +162,14 @@ const curry = (fn, arity = fn.length, ...args) =>
 
 const decapitalize = ([first, ...rest], upperRest = false) =>
   first.toLowerCase() + (upperRest ? rest.join('').toUpperCase() : rest.join(''));
+
+const deepClone = obj => {
+  let clone = Object.assign({}, obj);
+  Object.keys(clone).forEach(
+    key => (clone[key] = typeof obj[key] === 'object' ? deepClone(obj[key]) : obj[key])
+  );
+  return clone;
+};
 
 const deepFlatten = arr => [].concat(...arr.map(v => (Array.isArray(v) ? deepFlatten(v) : v)));
 
@@ -269,7 +279,14 @@ const fibonacci = n =>
 
 const filterNonUnique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexOf(i));
 
+const findKey = (obj, fn) => Object.keys(obj).find(key => fn(obj[key], key, obj));
+
 const findLast = (arr, fn) => arr.filter(fn).slice(-1);
+
+const findLastKey = (obj, fn) =>
+  Object.keys(obj)
+    .reverse()
+    .find(key => fn(obj[key], key, obj));
 
 const flatten = (arr, depth = 1) =>
   depth != 1
@@ -470,9 +487,11 @@ const intersection = (a, b) => {
   return a.filter(x => s.has(x));
 };
 
-const invertKeyValues = obj =>
+const invertKeyValues = (obj, fn) =>
   Object.keys(obj).reduce((acc, key) => {
-    acc[obj[key]] = key;
+    const val = fn ? fn(obj[key]) : obj[key];
+    acc[val] = acc[val] || [];
+    acc[val].push(key);
     return acc;
   }, {});
 
@@ -492,6 +511,8 @@ const isBoolean = val => typeof val === 'boolean';
 
 const isDivisible = (dividend, divisor) => dividend % divisor === 0;
 
+const isEmpty = val => val == null || !(Object.keys(val) || val).length;
+
 const isEven = num => num % 2 === 0;
 
 const isFunction = val => typeof val === 'function';
@@ -505,6 +526,8 @@ const isNull = val => val === null;
 const isNumber = val => typeof val === 'number';
 
 const isObject = obj => obj === Object(obj);
+
+const isObjectLike = val => val !== null && typeof val === 'object';
 
 const isPlainObject = val => !!val && typeof val === 'object' && val.constructor === Object;
 
@@ -602,6 +625,17 @@ const mapValues = (obj, fn) =>
 const mask = (cc, num = 4, mask = '*') =>
   ('' + cc).slice(0, -num).replace(/./g, mask) + ('' + cc).slice(-num);
 
+const matches = (obj, source) =>
+  Object.keys(source).every(key => obj.hasOwnProperty(key) && obj[key] === source[key]);
+
+const matchesWith = (obj, source, fn) =>
+  Object.keys(source).every(
+    key =>
+      obj.hasOwnProperty(key) && fn
+        ? fn(obj[key], source[key], key, obj, source)
+        : obj[key] == source[key]
+  );
+
 const maxBy = (arr, fn) => Math.max(...arr.map(typeof fn === 'function' ? fn : val => val[fn]));
 
 const maxN = (arr, n = 1) => [...arr].sort((a, b) => b - a).slice(0, n);
@@ -636,6 +670,8 @@ const minBy = (arr, fn) => Math.min(...arr.map(typeof fn === 'function' ? fn : v
 const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
 
 const negate = func => (...args) => !func(...args);
+
+const nthArg = n => (...args) => args.slice(n)[0];
 
 const nthElement = (arr, n = 0) => (n > 0 ? arr.slice(n, n + 1) : arr.slice(n))[0];
 
@@ -714,6 +750,8 @@ const orderBy = (arr, props, orders) =>
       return acc;
     }, 0)
   );
+
+const over = (...fns) => (...args) => fns.map(fn => fn.apply(null, args));
 
 const palindrome = str => {
   const s = str.toLowerCase().replace(/[\W_]/g, '');
@@ -1022,7 +1060,13 @@ const toSnakeCase = str =>
 
 const toggleClass = (el, className) => el.classList.toggle(className);
 
-const tomorrow = () => new Date(new Date().getTime() + 86400000).toISOString().split('T')[0];
+const tomorrow = () => {
+  let t = new Date();
+  t.setDate(t.getDate() + 1);
+  return `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, '0')}-${String(
+    t.getDate()
+  ).padStart(2, '0')}`;
+};
 
 const transform = (obj, fn, acc) => Object.keys(obj).reduce((a, k) => fn(a, obj[k], k, obj), acc);
 
@@ -1069,6 +1113,17 @@ const zip = (...arrays) => {
 const zipObject = (props, values) =>
   props.reduce((obj, prop, index) => (obj[prop] = values[index], obj), {});
 
-var imports = {JSONToFile,RGBToHex,URLJoin,UUIDGeneratorBrowser,UUIDGeneratorNode,anagrams,arrayToHtmlList,atob,average,averageBy,bottomVisible,btoa,byteSize,call,capitalize,capitalizeEveryWord,chainAsync,chunk,clampNumber,cloneRegExp,coalesce,coalesceFactory,collectInto,colorize,compact,compose,copyToClipboard,countBy,countOccurrences,createElement,createEventHub,currentURL,curry,decapitalize,deepFlatten,defaults,defer,detectDeviceType,difference,differenceWith,digitize,distance,dropElements,dropRight,elementIsVisibleInViewport,elo,equals,escapeHTML,escapeRegExp,everyNth,extendHex,factorial,fibonacci,filterNonUnique,findLast,flatten,flip,forEachRight,forOwn,forOwnRight,formatDuration,fromCamelCase,functionName,functions,gcd,geometricProgression,get,getDaysDiffBetweenDates,getScrollPosition,getStyle,getType,getURLParameters,groupBy,hammingDistance,hasClass,hasFlags,hashBrowser,hashNode,head,hexToRGB,hide,httpGet,httpPost,httpsRedirect,inRange,indexOfAll,initial,initialize2DArray,initializeArrayWithRange,initializeArrayWithRangeRight,initializeArrayWithValues,intersection,invertKeyValues,is,isAbsoluteURL,isArrayLike,isBoolean,isDivisible,isEven,isFunction,isLowerCase,isNil,isNull,isNumber,isObject,isPlainObject,isPrime,isPrimitive,isPromiseLike,isSorted,isString,isSymbol,isTravisCI,isUndefined,isUpperCase,isValidJSON,join,last,lcm,longestItem,lowercaseKeys,luhnCheck,mapKeys,mapObject,mapValues,mask,maxBy,maxN,median,memoize,merge,minBy,minN,negate,nthElement,objectFromPairs,objectToPairs,observeMutations,off,omit,omitBy,on,onUserInputChange,once,orderBy,palindrome,parseCookie,partition,percentile,pick,pickBy,pipeFunctions,pluralize,powerset,prettyBytes,primes,promisify,pull,pullAtIndex,pullAtValue,randomHexColorCode,randomIntArrayInRange,randomIntegerInRange,randomNumberInRange,readFileLines,redirect,reducedFilter,remove,reverseString,round,runAsync,runPromisesInSeries,sample,sampleSize,scrollToTop,sdbm,serializeCookie,setStyle,shallowClone,show,shuffle,similarity,size,sleep,sortCharactersInString,sortedIndex,splitLines,spreadOver,standardDeviation,sum,sumBy,sumPower,symmetricDifference,tail,take,takeRight,timeTaken,toCamelCase,toDecimalMark,toKebabCase,toOrdinalSuffix,toSafeInteger,toSnakeCase,toggleClass,tomorrow,transform,truncateString,truthCheckCollection,unescapeHTML,union,uniqueElements,untildify,validateNumber,without,words,yesNo,zip,zipObject,}
+const zipWith = (...arrays) => {
+  const length = arrays.length;
+  let fn = length > 1 ? arrays[length - 1] : undefined;
+  fn = typeof fn == 'function' ? (arrays.pop(), fn) : undefined;
+  const maxLength = Math.max(...arrays.map(x => x.length));
+  const result = Array.from({ length: maxLength }).map((_, i) => {
+    return Array.from({ length: arrays.length }, (_, k) => arrays[k][i]);
+  });
+  return fn ? result.map(arr => fn(...arr)) : result;
+};
+
+var imports = {JSONToFile,RGBToHex,URLJoin,UUIDGeneratorBrowser,UUIDGeneratorNode,anagrams,arrayToHtmlList,atob,average,averageBy,bottomVisible,btoa,byteSize,call,capitalize,capitalizeEveryWord,castArray,chainAsync,chunk,clampNumber,cloneRegExp,coalesce,coalesceFactory,collectInto,colorize,compact,compose,copyToClipboard,countBy,countOccurrences,createElement,createEventHub,currentURL,curry,decapitalize,deepClone,deepFlatten,defaults,defer,detectDeviceType,difference,differenceWith,digitize,distance,dropElements,dropRight,elementIsVisibleInViewport,elo,equals,escapeHTML,escapeRegExp,everyNth,extendHex,factorial,fibonacci,filterNonUnique,findKey,findLast,findLastKey,flatten,flip,forEachRight,forOwn,forOwnRight,formatDuration,fromCamelCase,functionName,functions,gcd,geometricProgression,get,getDaysDiffBetweenDates,getScrollPosition,getStyle,getType,getURLParameters,groupBy,hammingDistance,hasClass,hasFlags,hashBrowser,hashNode,head,hexToRGB,hide,httpGet,httpPost,httpsRedirect,inRange,indexOfAll,initial,initialize2DArray,initializeArrayWithRange,initializeArrayWithRangeRight,initializeArrayWithValues,intersection,invertKeyValues,is,isAbsoluteURL,isArrayLike,isBoolean,isDivisible,isEmpty,isEven,isFunction,isLowerCase,isNil,isNull,isNumber,isObject,isObjectLike,isPlainObject,isPrime,isPrimitive,isPromiseLike,isSorted,isString,isSymbol,isTravisCI,isUndefined,isUpperCase,isValidJSON,join,last,lcm,longestItem,lowercaseKeys,luhnCheck,mapKeys,mapObject,mapValues,mask,matches,matchesWith,maxBy,maxN,median,memoize,merge,minBy,minN,negate,nthArg,nthElement,objectFromPairs,objectToPairs,observeMutations,off,omit,omitBy,on,onUserInputChange,once,orderBy,over,palindrome,parseCookie,partition,percentile,pick,pickBy,pipeFunctions,pluralize,powerset,prettyBytes,primes,promisify,pull,pullAtIndex,pullAtValue,randomHexColorCode,randomIntArrayInRange,randomIntegerInRange,randomNumberInRange,readFileLines,redirect,reducedFilter,remove,reverseString,round,runAsync,runPromisesInSeries,sample,sampleSize,scrollToTop,sdbm,serializeCookie,setStyle,shallowClone,show,shuffle,similarity,size,sleep,sortCharactersInString,sortedIndex,splitLines,spreadOver,standardDeviation,sum,sumBy,sumPower,symmetricDifference,tail,take,takeRight,timeTaken,toCamelCase,toDecimalMark,toKebabCase,toOrdinalSuffix,toSafeInteger,toSnakeCase,toggleClass,tomorrow,transform,truncateString,truthCheckCollection,unescapeHTML,union,uniqueElements,untildify,validateNumber,without,words,yesNo,zip,zipObject,zipWith,}
 
 export default imports;
