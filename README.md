@@ -272,6 +272,7 @@ average(1, 2, 3);
 <details>
 <summary>View contents</summary>
 
+* [`deepClone`](#deepclone)
 * [`defaults`](#defaults)
 * [`equals`](#equals-)
 * [`findKey`](#findkey)
@@ -364,6 +365,7 @@ average(1, 2, 3);
 <details>
 <summary>View contents</summary>
 
+* [`castArray`](#castarray)
 * [`cloneRegExp`](#cloneregexp)
 * [`coalesce`](#coalesce)
 * [`coalesceFactory`](#coalescefactory)
@@ -4191,6 +4193,37 @@ UUIDGeneratorNode(); // '79c7c136-60ee-40a2-beb2-856f1feabefc'
 ---
  ## 🗃️ Object
 
+### deepClone
+
+Creates a deep clone of an object.
+
+Use recursion.
+Use `Object.assign()` and an empty object (`{}`) to create a shallow clone of the original.
+Use `Object.keys()` and `Array.forEach()` to determine which key-value pairs need to be deep cloned.
+
+```js
+const deepClone = obj => {
+  let clone = Object.assign({}, obj);
+  Object.keys(clone).forEach(
+    key => (clone[key] = typeof obj[key] === 'object' ? deepClone(obj[key]) : obj[key])
+  );
+  return clone;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const a = { foo: 'bar', obj: { a: 1, b: 2 } };
+const b = deepClone(a); // a !== b, a.obj !== b.obj
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### defaults
 
 Assigns default values for all properties in an object that are `undefined`.
@@ -6047,6 +6080,29 @@ isValidJSON(null); // true
 
 ---
  ## 🔧 Utility
+
+### castArray
+
+Casts the provided value as an array if it's not one.
+
+Use `Array.isArray()` to determine if `val` is an array and return it as-is or encapsulated in an array accordingly.
+
+```js
+const castArray = val => (Array.isArray(val) ? val : [val]);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+castArray('foo'); // ['foo']
+castArray([1]); // [1]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 
 ### cloneRegExp
 

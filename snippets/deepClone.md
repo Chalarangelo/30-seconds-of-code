@@ -10,10 +10,7 @@ Use `Object.keys()` and `Array.forEach()` to determine which key-value pairs nee
 const deepClone = obj => {
   let clone = Object.assign({}, obj);
   Object.keys(clone).forEach(
-    key =>
-      (clone[key] = typeof obj[key] === 'object'
-        ? deepClone(obj[key])
-        : obj[key])
+    key => (clone[key] = typeof obj[key] === 'object' ? deepClone(obj[key]) : obj[key])
   );
   return clone;
 };
