@@ -85,7 +85,7 @@ initializeArrayWithRangeRight:array,math
 initializeArrayWithValues:array,math
 inRange:math
 intersection:array,math
-invertKeyValues:object
+invertKeyValues:object,function
 is:type,array,regexp
 isAbsoluteURL:string,utility,browser,url
 isArrayLike:type,array
