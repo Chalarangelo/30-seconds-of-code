@@ -17,5 +17,9 @@ const matchesWith = (obj, source, fn) =>
 
 ```js
 const isGreeting = val => /^h(?:i|ello)$/.test(val);
-matchesWith({ greeting: 'hello' }, { greeting: 'hi' }, (oV, sV) => isGreeting(oV) && isGreeting(sV)); // true
+matchesWith(
+  { greeting: 'hello' },
+  { greeting: 'hi' },
+  (oV, sV) => isGreeting(oV) && isGreeting(sV)
+); // true
 ```
