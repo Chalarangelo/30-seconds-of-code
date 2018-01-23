@@ -9,6 +9,7 @@ byteSize:string
 call:adapter,function
 capitalize:string,array
 capitalizeEveryWord:string,regexp
+castArray:utility,array,type
 chainAsync:function
 chunk:array
 clampNumber:math
