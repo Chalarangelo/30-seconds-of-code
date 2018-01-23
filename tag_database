@@ -147,6 +147,7 @@ on:browser,event
 once:function
 onUserInputChange:browser,advanced
 orderBy:object,array
+over:adapter,function
 palindrome:string
 parseCookie:utility,string
 partition:array,object,function
