@@ -93,6 +93,7 @@ isAbsoluteURL:string,utility,browser,url
 isArrayLike:type,array
 isBoolean:type
 isDivisible:math
+isEmpty:type,array,object,string
 isEven:math
 isFunction:type,function
 isLowerCase:string,utility
