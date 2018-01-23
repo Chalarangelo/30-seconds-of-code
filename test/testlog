@@ -1,4 +1,4 @@
-Test log for: Mon Jan 22 2018 20:11:29 GMT+0000 (UTC)
+Test log for: Tue Jan 23 2018 20:11:47 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.1 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -97,6 +97,10 @@ Test log for: Mon Jan 22 2018 20:11:29 GMT+0000 (UTC)
 
     ✔ capitalizeEveryWord is a Function
     ✔ Capitalizes the first letter of every word in a string
+
+  Testing castArray
+
+    ✔ castArray is a Function
 
   Testing chainAsync
 
@@ -199,6 +203,10 @@ Test log for: Mon Jan 22 2018 20:11:29 GMT+0000 (UTC)
   Testing decapitalize
 
     ✔ decapitalize is a Function
+
+  Testing deepClone
+
+    ✔ deepClone is a Function
 
   Testing deepFlatten
 
@@ -320,9 +328,17 @@ Test log for: Mon Jan 22 2018 20:11:29 GMT+0000 (UTC)
     ✔ filterNonUnique is a Function
     ✔ Filters out the non-unique values in an array
 
+  Testing findKey
+
+    ✔ findKey is a Function
+
   Testing findLast
 
     ✔ findLast is a Function
+
+  Testing findLastKey
+
+    ✔ findLastKey is a Function
 
   Testing flatten
 
@@ -528,7 +544,17 @@ Test log for: Mon Jan 22 2018 20:11:29 GMT+0000 (UTC)
   Testing invertKeyValues
 
     ✔ invertKeyValues is a Function
-    ✔ Inverts the key-value pairs of an object
+
+    ✖ Inverts the key-value pairs of an object
+    -------------------------------------------
+      operator: deepEqual
+      expected: |-
+        { 20: 'age', John: 'name' }
+      actual: |-
+        { 20: [ 'age' ], John: [ 'name' ] }
+      at: Test.test (/home/travis/build/Chalarangelo/30-seconds-of-code/test/invertKeyValues/invertKeyValues.test.js:8:4)
+      stack: |-
+
 
   Testing is
 
@@ -569,6 +595,10 @@ Test log for: Mon Jan 22 2018 20:11:29 GMT+0000 (UTC)
 
     ✔ isDivisible is a Function
     ✔ The number 6 is divisible by 3
+
+  Testing isEmpty
+
+    ✔ isEmpty is a Function
 
   Testing isEven
 
@@ -616,6 +646,10 @@ Test log for: Mon Jan 22 2018 20:11:29 GMT+0000 (UTC)
     ✔ isObject([]) is a object
     ✔ isObject({ a:1 }) is a object
     ✔ isObject(true) is not a object
+
+  Testing isObjectLike
+
+    ✔ isObjectLike is a Function
 
   Testing isPlainObject
 
@@ -769,6 +803,14 @@ Test log for: Mon Jan 22 2018 20:11:29 GMT+0000 (UTC)
     ✔ Replaces all but the last num of characters with the specified mask character
     ✔ Replaces all but the last num of characters with the specified mask character
 
+  Testing matches
+
+    ✔ matches is a Function
+
+  Testing matchesWith
+
+    ✔ matchesWith is a Function
+
   Testing maxBy
 
     ✔ maxBy is a Function
@@ -807,6 +849,10 @@ Test log for: Mon Jan 22 2018 20:11:29 GMT+0000 (UTC)
 
     ✔ negate is a Function
     ✔ Negates a predicate function
+
+  Testing nthArg
+
+    ✔ nthArg is a Function
 
   Testing nthElement
 
@@ -857,6 +903,10 @@ Test log for: Mon Jan 22 2018 20:11:29 GMT+0000 (UTC)
     ✔ orderBy is a Function
     ✔ Returns a sorted array of objects ordered by properties and orders.
     ✔ Returns a sorted array of objects ordered by properties and orders.
+
+  Testing over
+
+    ✔ over is a Function
 
   Testing palindrome
 
@@ -1296,9 +1346,23 @@ Test log for: Mon Jan 22 2018 20:11:29 GMT+0000 (UTC)
     ✔ zipObject(string) throws an error
     ✔ zipObject(test, string) throws an error
 
+  Testing zipWith
 
-  total:     563
-  passing:   563
-  duration:  314ms
+    ✔ zipWith is a Function
 
 
+
+  Failed Tests: There was 1 failure
+
+    Testing invertKeyValues
+
+      ✖ Inverts the key-value pairs of an object
+
+
+  total:     574
+  passing:   573
+  failing:   1
+  duration:  440ms
+
+
+undefined

@@ -375,6 +375,7 @@ average(1, 2, 3);
 * [`hexToRGB`](#hextorgb-)
 * [`httpGet`](#httpget)
 * [`httpPost`](#httppost)
+* [`nthArg`](#ntharg)
 * [`parseCookie`](#parsecookie)
 * [`prettyBytes`](#prettybytes)
 * [`randomHexColorCode`](#randomhexcolorcode)
@@ -6389,6 +6390,32 @@ Logs: {
   "id": 101
 }
 */
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### nthArg
+
+Creates a function that gets the argument at index `n`. If `n` is negative, the nth argument from the end is returned.
+
+Use `Array.slice()` to get the desired argument at index `n`.
+
+```js
+const nthArg = n => (...args) => args.slice(n)[0];
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const third = nthArg(2);
+third(1, 2, 3); // 3
+third(1, 2); // undefined
+const last = nthArg(-1);
+last(1, 2, 3, 4, 5); // 5
 ```
 
 </details>
