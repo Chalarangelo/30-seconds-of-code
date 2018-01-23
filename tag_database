@@ -136,6 +136,7 @@ merge:object,array
 minBy:math,array,function
 minN:array,math
 negate:function
+nthArg:utility,function
 nthElement:array
 objectFromPairs:object,array
 objectToPairs:object,array
