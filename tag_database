@@ -216,3 +216,4 @@ words:string,regexp
 yesNo:utility,regexp
 zip:array
 zipObject:array,object
+zipWith:array,advanced
