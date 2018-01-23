@@ -101,6 +101,7 @@ isNil:type
 isNull:type
 isNumber:type,math
 isObject:type,object
+isObjectLike:type,object
 isPlainObject:type,object
 isPrime:math
 isPrimitive:type,function,array,string
