@@ -125,7 +125,7 @@ mapObject:array,object
 mapValues:object,function
 mask:string,utility,regexp
 matches:object,type
-matchesWith:object,type,function
+matchesWith:object,type,function 
 maxBy:math,array,function
 maxN:array,math
 median:math,array
