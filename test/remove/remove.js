@@ -5,4 +5,4 @@ arr.splice(arr.indexOf(val), 1);
 return acc.concat(val);
 }, [])
 : [];
- module.exports = remove
+module.exports = remove

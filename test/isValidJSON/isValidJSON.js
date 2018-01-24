@@ -6,4 +6,4 @@ return true;
 return false;
 }
 };
- module.exports = isValidJSON
+module.exports = isValidJSON

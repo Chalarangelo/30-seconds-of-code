@@ -5,4 +5,4 @@ acc[val] = acc[val] || [];
 acc[val].push(key);
 return acc;
 }, {});
- module.exports = invertKeyValues
+module.exports = invertKeyValues
