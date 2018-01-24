@@ -1,4 +1,4 @@
-Test log for: Wed Jan 24 2018 17:37:28 GMT+0200 (GTB Standard Time)
+Test log for: Wed Jan 24 2018 17:48:46 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -87,6 +87,11 @@ Test log for: Wed Jan 24 2018 17:37:28 GMT+0200 (GTB Standard Time)
   Testing castArray
 
     √ castArray is a Function
+    √ Works for single values
+    √ Works for arrays with one value
+    √ Works for arrays with multiple value
+    √ Works for strings
+    √ Works for objects
 
   Testing chainAsync
 
@@ -118,6 +123,7 @@ Test log for: Wed Jan 24 2018 17:37:28 GMT+0200 (GTB Standard Time)
   Testing cloneRegExp
 
     √ cloneRegExp is a Function
+    √ Clones regular expressions properly
 
   Testing coalesce
 
@@ -154,6 +160,7 @@ Test log for: Wed Jan 24 2018 17:37:28 GMT+0200 (GTB Standard Time)
   Testing composeRight
 
     √ composeRight is a Function
+    √ Performs left-to-right function composition
 
   Testing copyToClipboard
 
@@ -197,6 +204,8 @@ Test log for: Wed Jan 24 2018 17:37:28 GMT+0200 (GTB Standard Time)
   Testing deepClone
 
     √ deepClone is a Function
+    √ Shallow cloning works
+    √ Deep cloning works
 
   Testing deepFlatten
 
@@ -1124,6 +1133,8 @@ Test log for: Wed Jan 24 2018 17:37:28 GMT+0200 (GTB Standard Time)
   Testing shallowClone
 
     √ shallowClone is a Function
+    √ Shallow cloning works
+    √ Does not clone deeply
 
   Testing show
 
@@ -1463,8 +1474,8 @@ Test log for: Wed Jan 24 2018 17:37:28 GMT+0200 (GTB Standard Time)
     √ zipWith is a Function
 
 
-  total:     627
-  passing:   627
-  duration:  419ms
+  total:     638
+  passing:   638
+  duration:  418ms
 
 
