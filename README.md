@@ -87,6 +87,15 @@ average(1, 2, 3);
 
 </details>
 
+###  Adaptor
+
+<details>
+<summary>View contents</summary>
+
+* [`unary`](#unary)
+
+</details>
+
 ### 📚 Array
 
 <details>
@@ -580,6 +589,30 @@ const spreadOver = fn => argsArr => fn(...argsArr);
 ```js
 const arrayMax = spreadOver(Math.max);
 arrayMax([1, 2, 3]); // 3
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+---
+ ##  Adaptor
+
+### unary
+
+Creates a function that accepts up to one argument, ignoring any additional arguments.
+
+Call the provided function, `fn`, with just the first argument given.
+
+```js
+const unary = fn => val => fn(val);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+['6', '8', '10'].map(unary(parseInt)); // [6, 8, 10]
 ```
 
 </details>
