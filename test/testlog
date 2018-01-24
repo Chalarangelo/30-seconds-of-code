@@ -1,6 +1,6 @@
-Test log for: Wed Jan 24 2018 06:31:13 GMT-0500 (Eastern Standard Time)
+Test log for: Wed Jan 24 2018 16:47:50 GMT+0200 (GTB Standard Time)
 
-> 30-seconds-of-code@0.0.1 test C:\Users\King David\Desktop\github-repo\30-seconds-of-code
+> 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
 
 
@@ -12,6 +12,10 @@ Test log for: Wed Jan 24 2018 06:31:13 GMT-0500 (Eastern Standard Time)
   Testing arrayToHtmlList
 
     √ arrayToHtmlList is a Function
+
+  Testing ary
+
+    √ ary is a Function
 
   Testing atob
 
@@ -39,6 +43,14 @@ Test log for: Wed Jan 24 2018 06:31:13 GMT-0500 (Eastern Standard Time)
   Testing binarySearch
 
     √ binarySearch is a Function
+
+  Testing bind
+
+    √ bind is a Function
+
+  Testing bindKey
+
+    √ bindKey is a Function
 
   Testing bottomVisible
 
@@ -193,6 +205,10 @@ Test log for: Wed Jan 24 2018 06:31:13 GMT-0500 (Eastern Standard Time)
   Testing defer
 
     √ defer is a Function
+
+  Testing delay
+
+    √ delay is a Function
 
   Testing detectDeviceType
 
@@ -906,6 +922,14 @@ Test log for: Wed Jan 24 2018 06:31:13 GMT-0500 (Eastern Standard Time)
 
     √ parseCookie is a Function
 
+  Testing partial
+
+    √ partial is a Function
+
+  Testing partialRight
+
+    √ partialRight is a Function
+
   Testing partition
 
     √ partition is a Function
@@ -1010,6 +1034,10 @@ Test log for: Wed Jan 24 2018 06:31:13 GMT-0500 (Eastern Standard Time)
 
     √ reducedFilter is a Function
     √ Filter an array of objects based on a condition while also filtering out unspecified keys.
+
+  Testing reduceSuccessive
+
+    √ reduceSuccessive is a Function
 
   Testing remove
 
@@ -1181,6 +1209,10 @@ Test log for: Wed Jan 24 2018 06:31:13 GMT-0500 (Eastern Standard Time)
     √ Returns an array with n elements removed from the end
     √ Returns an array with n elements removed from the end
 
+  Testing times
+
+    √ times is a Function
+
   Testing timeTaken
 
     √ timeTaken is a Function
@@ -1253,10 +1285,18 @@ Test log for: Wed Jan 24 2018 06:31:13 GMT-0500 (Eastern Standard Time)
     √ truthCheckCollection is a Function
     √ second argument is truthy on all elements of a collection
 
+  Testing unary
+
+    √ unary is a Function
+
   Testing unescapeHTML
 
     √ unescapeHTML is a Function
     √ Unescapes escaped HTML characters.
+
+  Testing unfold
+
+    √ unfold is a Function
 
   Testing union
 
@@ -1344,6 +1384,10 @@ Test log for: Wed Jan 24 2018 06:31:13 GMT-0500 (Eastern Standard Time)
     √ words([]) throws a error
     √ words(1234) throws a error
 
+  Testing xProd
+
+    √ xProd is a Function
+
   Testing yesNo
 
     √ yesNo is a Function
@@ -1390,8 +1434,8 @@ Test log for: Wed Jan 24 2018 06:31:13 GMT-0500 (Eastern Standard Time)
     √ zipWith is a Function
 
 
-  total:     587
-  passing:   587
-  duration:  520ms
+  total:     598
+  passing:   598
+  duration:  1.3s
 
 
