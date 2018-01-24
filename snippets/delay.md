@@ -10,7 +10,11 @@ const delay = (fn, wait, ...args) => setTimeout(fn, wait, ...args);
 ```
 
 ```js
-delay(function(text) {
-  console.log(text);
-}, 1000, 'later'); // Logs 'later' after one second.
+delay(
+  function(text) {
+    console.log(text);
+  },
+  1000,
+  'later'
+); // Logs 'later' after one second.
 ```
