@@ -5,4 +5,4 @@ arr.reduce((acc, val) => acc.concat((val - mean) ** 2), []).reduce((acc, val) =>
 (arr.length - (usePopulation ? 0 : 1))
 );
 };
- module.exports = standardDeviation
+module.exports = standardDeviation

@@ -6,4 +6,4 @@ isNaN(n)
 n,
 ...quickSort(nums.filter(v => (!desc ? v > n : v <= n)), desc)
 ];
- module.exports = quickSort
+module.exports = quickSort

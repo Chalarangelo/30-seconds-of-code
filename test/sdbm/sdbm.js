@@ -6,4 +6,4 @@ return arr.reduce(
 0
 );
 };
- module.exports = sdbm
+module.exports = sdbm

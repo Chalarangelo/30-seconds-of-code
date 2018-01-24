@@ -16,4 +16,4 @@ j++;
 }
 return ratings;
 };
- module.exports = elo
+module.exports = elo

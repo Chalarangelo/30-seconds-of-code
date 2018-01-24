@@ -17,4 +17,4 @@ return acc;
 }, []);
 return primes ? array.filter(isPrime) : array;
 };
- module.exports = factors
+module.exports = factors

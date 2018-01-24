@@ -4,4 +4,4 @@ const r = callback();
 console.timeEnd('timeTaken');
 return r;
 };
- module.exports = timeTaken
+module.exports = timeTaken

@@ -1,1354 +1,1401 @@
-Test log for: Tue Jan 23 2018 20:11:47 GMT+0000 (UTC)
+Test log for: Wed Jan 24 2018 06:26:20 GMT-0500 (Eastern Standard Time)
 
-> 30-seconds-of-code@0.0.1 test /home/travis/build/Chalarangelo/30-seconds-of-code
+> 30-seconds-of-code@0.0.1 test C:\Users\King David\Desktop\github-repo\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
 
 
-  Testing JSONToDate
-
-    ✔ JSONToDate is a Function
-
-  Testing JSONToFile
-
-    ✔ JSONToFile is a Function
-
-  Testing README
-
-    ✔ README is a Function
-
-  Testing RGBToHex
-
-    ✔ RGBToHex is a Function
-    ✔ Converts the values of RGB components to a color code.
-
-  Testing URLJoin
-
-    ✔ URLJoin is a Function
-    ✔ Returns proper URL
-    ✔ Returns proper URL
-
-  Testing UUIDGeneratorBrowser
-
-    ✔ UUIDGeneratorBrowser is a Function
-
-  Testing UUIDGeneratorNode
-
-    ✔ UUIDGeneratorNode is a Function
-
   Testing anagrams
 
-    ✔ anagrams is a Function
-    ✔ Generates all anagrams of a string
+    √ anagrams is a Function
+    √ Generates all anagrams of a string
 
   Testing arrayToHtmlList
 
-    ✔ arrayToHtmlList is a Function
+    √ arrayToHtmlList is a Function
 
   Testing atob
 
-    ✔ atob is a Function
+    √ atob is a Function
 
   Testing average
 
-    ✔ average is a Function
-    ✔ average(true) returns 0
-    ✔ average(false) returns 1
-    ✔ average(9, 1) returns 5
-    ✔ average(153, 44, 55, 64, 71, 1122, 322774, 2232, 23423, 234, 3631) returns 32163.909090909092
-    ✔ average(1, 2, 3) returns 2
-    ✔ average(null) returns 0
-    ✔ average(1, 2, 3) returns NaN
-    ✔ average(String) returns NaN
-    ✔ average({ a: 123}) returns NaN
-    ✔ average([undefined, 0, string]) returns NaN
-    ✔ head([1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 1122, 32124, 23232]) takes less than 2s to run
+    √ average is a Function
+    √ average(true) returns 0
+    √ average(false) returns 1
+    √ average(9, 1) returns 5
+    √ average(153, 44, 55, 64, 71, 1122, 322774, 2232, 23423, 234, 3631) returns 32163.909090909092
+    √ average(1, 2, 3) returns 2
+    √ average(null) returns 0
+    √ average(1, 2, 3) returns NaN
+    √ average(String) returns NaN
+    √ average({ a: 123}) returns NaN
+    √ average([undefined, 0, string]) returns NaN
+    √ head([1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 1122, 32124, 23232]) takes less than 2s to run
 
   Testing averageBy
 
-    ✔ averageBy is a Function
+    √ averageBy is a Function
 
   Testing binarySearch
 
-    ✔ binarySearch is a Function
+    √ binarySearch is a Function
 
   Testing bottomVisible
 
-    ✔ bottomVisible is a Function
+    √ bottomVisible is a Function
 
   Testing btoa
 
-    ✔ btoa is a Function
+    √ btoa is a Function
 
   Testing byteSize
 
-    ✔ byteSize is a Function
+    √ byteSize is a Function
 
   Testing call
 
-    ✔ call is a Function
+    √ call is a Function
 
   Testing capitalize
 
-    ✔ capitalize is a Function
-    ✔ Capitalizes the first letter of a string
-    ✔ Capitalizes the first letter of a string
+    √ capitalize is a Function
+    √ Capitalizes the first letter of a string
+    √ Capitalizes the first letter of a string
 
   Testing capitalizeEveryWord
 
-    ✔ capitalizeEveryWord is a Function
-    ✔ Capitalizes the first letter of every word in a string
+    √ capitalizeEveryWord is a Function
+    √ Capitalizes the first letter of every word in a string
 
   Testing castArray
 
-    ✔ castArray is a Function
+    √ castArray is a Function
 
   Testing chainAsync
 
-    ✔ chainAsync is a Function
+    √ chainAsync is a Function
 
   Testing chunk
 
-    ✔ chunk is a Function
-    ✔ chunk([1, 2, 3, 4, 5], 2) returns [[1,2],[3,4],[5]]
-    ✔ chunk([]) returns []
-    ✔ chunk(123) returns []
-    ✔ chunk({ a: 123}) returns []
-    ✔ chunk(string, 2) returns [ st, ri, ng ]
-    ✔ chunk() throws an error
-    ✔ chunk(undefined) throws an error
-    ✔ chunk(null) throws an error
-    ✔ chunk(This is a string, 2) takes less than 2s to run
+    √ chunk is a Function
+    √ chunk([1, 2, 3, 4, 5], 2) returns [[1,2],[3,4],[5]]
+    √ chunk([]) returns []
+    √ chunk(123) returns []
+    √ chunk({ a: 123}) returns []
+    √ chunk(string, 2) returns [ st, ri, ng ]
+    √ chunk() throws an error
+    √ chunk(undefined) throws an error
+    √ chunk(null) throws an error
+    √ chunk(This is a string, 2) takes less than 2s to run
 
   Testing clampNumber
 
-    ✔ clampNumber is a Function
-    ✔ Clamps num within the inclusive range specified by the boundary values a and b
+    √ clampNumber is a Function
+    √ Clamps num within the inclusive range specified by the boundary values a and b
 
   Testing cleanObj
 
-    ✔ cleanObj is a Function
-    ✔ Removes any properties except the ones specified from a JSON object
+    √ cleanObj is a Function
+    √ Removes any properties except the ones specified from a JSON object
 
   Testing cloneRegExp
 
-    ✔ cloneRegExp is a Function
+    √ cloneRegExp is a Function
 
   Testing coalesce
 
-    ✔ coalesce is a Function
-    ✔ Returns the first non-null/undefined argument
+    √ coalesce is a Function
+    √ Returns the first non-null/undefined argument
 
   Testing coalesceFactory
 
-    ✔ coalesceFactory is a Function
-    ✔ Returns a customized coalesce function
+    √ coalesceFactory is a Function
+    √ Returns a customized coalesce function
 
   Testing collatz
 
-    ✔ collatz is a Function
+    √ collatz is a Function
 
   Testing collectInto
 
-    ✔ collectInto is a Function
+    √ collectInto is a Function
 
   Testing colorize
 
-    ✔ colorize is a Function
+    √ colorize is a Function
 
   Testing compact
 
-    ✔ compact is a Function
-    ✔ Removes falsey values from an array
+    √ compact is a Function
+    √ Removes falsey values from an array
 
   Testing compose
 
-    ✔ compose is a Function
-    ✔ Performs right-to-left function composition
+    √ compose is a Function
+    √ Performs right-to-left function composition
+
+  Testing composeRight
+
+    √ composeRight is a Function
 
   Testing copyToClipboard
 
-    ✔ copyToClipboard is a Function
+    √ copyToClipboard is a Function
 
   Testing countBy
 
-    ✔ countBy is a Function
+    √ countBy is a Function
 
   Testing countOccurrences
 
-    ✔ countOccurrences is a Function
-    ✔ Counts the occurrences of a value in an array
+    √ countOccurrences is a Function
+    √ Counts the occurrences of a value in an array
 
   Testing countVowels
 
-    ✔ countVowels is a Function
+    √ countVowels is a Function
 
   Testing createElement
 
-    ✔ createElement is a Function
+    √ createElement is a Function
 
   Testing createEventHub
 
-    ✔ createEventHub is a Function
+    √ createEventHub is a Function
 
   Testing currentURL
 
-    ✔ currentURL is a Function
+    √ currentURL is a Function
 
   Testing curry
 
-    ✔ curry is a Function
-    ✔ curries a Math.pow
-    ✔ curries a Math.min
+    √ curry is a Function
+    √ curries a Math.pow
+    √ curries a Math.min
 
   Testing decapitalize
 
-    ✔ decapitalize is a Function
+    √ decapitalize is a Function
 
   Testing deepClone
 
-    ✔ deepClone is a Function
+    √ deepClone is a Function
 
   Testing deepFlatten
 
-    ✔ deepFlatten is a Function
-    ✔ Deep flattens an array
+    √ deepFlatten is a Function
+    √ Deep flattens an array
 
   Testing defaults
 
-    ✔ defaults is a Function
+    √ defaults is a Function
 
   Testing defer
 
-    ✔ defer is a Function
+    √ defer is a Function
 
   Testing detectDeviceType
 
-    ✔ detectDeviceType is a Function
+    √ detectDeviceType is a Function
 
   Testing difference
 
-    ✔ difference is a Function
-    ✔ Returns the difference between two arrays
+    √ difference is a Function
+    √ Returns the difference between two arrays
+
+  Testing differenceBy
+
+    √ differenceBy is a Function
 
   Testing differenceWith
 
-    ✔ differenceWith is a Function
-    ✔ Filters out all values from an array
+    √ differenceWith is a Function
+    √ Filters out all values from an array
 
   Testing digitize
 
-    ✔ digitize is a Function
-    ✔ Converts a number to an array of digits
+    √ digitize is a Function
+    √ Converts a number to an array of digits
 
   Testing distance
 
-    ✔ distance is a Function
+    √ distance is a Function
 
   Testing dropElements
 
-    ✔ dropElements is a Function
-    ✔ Removes elements in an array until the passed function returns true
+    √ dropElements is a Function
+    √ Removes elements in an array until the passed function returns true
 
   Testing dropRight
 
-    ✔ dropRight is a Function
-    ✔ Returns a new array with n elements removed from the right
-    ✔ Returns a new array with n elements removed from the right
-    ✔ Returns a new array with n elements removed from the right
+    √ dropRight is a Function
+    √ Returns a new array with n elements removed from the right
+    √ Returns a new array with n elements removed from the right
+    √ Returns a new array with n elements removed from the right
 
   Testing elementIsVisibleInViewport
 
-    ✔ elementIsVisibleInViewport is a Function
+    √ elementIsVisibleInViewport is a Function
 
   Testing elo
 
-    ✔ elo is a Function
-    ✔ Standard 1v1s
-    ✔ should be equivalent
-    ✔ 4 player FFA, all same rank
+    √ elo is a Function
+    √ Standard 1v1s
+    √ should be equivalent
+    √ 4 player FFA, all same rank
 
   Testing equals
 
-    ✔ equals is a Function
-    ✔ { a: [2, {e: 3}], b: [4], c: 'foo' } is equal to { a: [2, {e: 3}], b: [4], c: 'foo' }
-    ✔ [1,2,3] is equal to [1,2,3]
-    ✔ { a: [2, 3], b: [4] } is not equal to { a: [2, 3], b: [6] }
-    ✔ [1,2,3] is not equal to [1,2,4]
-    ✔ [1, 2, 3] should be equal to { 0: 1, 1: 2, 2: 3 }) - type is different, but their enumerable properties match.
+    √ equals is a Function
+    √ { a: [2, {e: 3}], b: [4], c: 'foo' } is equal to { a: [2, {e: 3}], b: [4], c: 'foo' }
+    √ [1,2,3] is equal to [1,2,3]
+    √ { a: [2, 3], b: [4] } is not equal to { a: [2, 3], b: [6] }
+    √ [1,2,3] is not equal to [1,2,4]
+    √ [1, 2, 3] should be equal to { 0: 1, 1: 2, 2: 3 }) - type is different, but their enumerable properties match.
 
   Testing escapeHTML
 
-    ✔ escapeHTML is a Function
-    ✔ Escapes a string for use in HTML
+    √ escapeHTML is a Function
+    √ Escapes a string for use in HTML
 
   Testing escapeRegExp
 
-    ✔ escapeRegExp is a Function
-    ✔ Escapes a string to use in a regular expression
+    √ escapeRegExp is a Function
+    √ Escapes a string to use in a regular expression
 
   Testing everyNth
 
-    ✔ everyNth is a Function
-    ✔ Returns every nth element in an array
+    √ everyNth is a Function
+    √ Returns every nth element in an array
 
   Testing extendHex
 
-    ✔ extendHex is a Function
-    ✔ Extends a 3-digit color code to a 6-digit color code
-    ✔ Extends a 3-digit color code to a 6-digit color code
+    √ extendHex is a Function
+    √ Extends a 3-digit color code to a 6-digit color code
+    √ Extends a 3-digit color code to a 6-digit color code
 
   Testing factorial
 
-    ✔ factorial is a Function
-    ✔ Calculates the factorial of 720
-    ✔ Calculates the factorial of 0
-    ✔ Calculates the factorial of 1
-    ✔ Calculates the factorial of 4
-    ✔ Calculates the factorial of 10
+    √ factorial is a Function
+    √ Calculates the factorial of 720
+    √ Calculates the factorial of 0
+    √ Calculates the factorial of 1
+    √ Calculates the factorial of 4
+    √ Calculates the factorial of 10
 
   Testing factors
 
-    ✔ factors is a Function
+    √ factors is a Function
 
   Testing fibonacci
 
-    ✔ fibonacci is a Function
-    ✔ Generates an array, containing the Fibonacci sequence
+    √ fibonacci is a Function
+    √ Generates an array, containing the Fibonacci sequence
 
   Testing fibonacciCountUntilNum
 
-    ✔ fibonacciCountUntilNum is a Function
+    √ fibonacciCountUntilNum is a Function
 
   Testing fibonacciUntilNum
 
-    ✔ fibonacciUntilNum is a Function
+    √ fibonacciUntilNum is a Function
 
   Testing filterNonUnique
 
-    ✔ filterNonUnique is a Function
-    ✔ Filters out the non-unique values in an array
+    √ filterNonUnique is a Function
+    √ Filters out the non-unique values in an array
 
   Testing findKey
 
-    ✔ findKey is a Function
+    √ findKey is a Function
 
   Testing findLast
 
-    ✔ findLast is a Function
+    √ findLast is a Function
+
+  Testing findLastIndex
+
+    √ findLastIndex is a Function
 
   Testing findLastKey
 
-    ✔ findLastKey is a Function
+    √ findLastKey is a Function
 
   Testing flatten
 
-    ✔ flatten is a Function
-    ✔ Flattens an array
-    ✔ Flattens an array
+    √ flatten is a Function
+    √ Flattens an array
+    √ Flattens an array
 
   Testing flip
 
-    ✔ flip is a Function
+    √ flip is a Function
 
   Testing forEachRight
 
-    ✔ forEachRight is a Function
-
-  Testing forOwn
-
-    ✔ forOwn is a Function
-
-  Testing forOwnRight
-
-    ✔ forOwnRight is a Function
+    √ forEachRight is a Function
 
   Testing formatDuration
 
-    ✔ formatDuration is a Function
-    ✔ Returns the human readable format of the given number of milliseconds
-    ✔ Returns the human readable format of the given number of milliseconds
+    √ formatDuration is a Function
+    √ Returns the human readable format of the given number of milliseconds
+    √ Returns the human readable format of the given number of milliseconds
+
+  Testing forOwn
+
+    √ forOwn is a Function
+
+  Testing forOwnRight
+
+    √ forOwnRight is a Function
 
   Testing fromCamelCase
 
-    ✔ fromCamelCase is a Function
-    ✔ Converts a string from camelcase
-    ✔ Converts a string from camelcase
-    ✔ Converts a string from camelcase
+    √ fromCamelCase is a Function
+    √ Converts a string from camelcase
+    √ Converts a string from camelcase
+    √ Converts a string from camelcase
 
   Testing functionName
 
-    ✔ functionName is a Function
+    √ functionName is a Function
 
   Testing functions
 
-    ✔ functions is a Function
+    √ functions is a Function
 
   Testing gcd
 
-    ✔ gcd is a Function
-    ✔ Calculates the greatest common divisor between two or more numbers/arrays
-    ✔ Calculates the greatest common divisor between two or more numbers/arrays
+    √ gcd is a Function
+    √ Calculates the greatest common divisor between two or more numbers/arrays
+    √ Calculates the greatest common divisor between two or more numbers/arrays
 
   Testing geometricProgression
 
-    ✔ geometricProgression is a Function
-    ✔ Initializes an array containing the numbers in the specified range
-    ✔ Initializes an array containing the numbers in the specified range
-    ✔ Initializes an array containing the numbers in the specified range
+    √ geometricProgression is a Function
+    √ Initializes an array containing the numbers in the specified range
+    √ Initializes an array containing the numbers in the specified range
+    √ Initializes an array containing the numbers in the specified range
 
   Testing get
 
-    ✔ get is a Function
-    ✔ Retrieve a property indicated by the selector from an object.
+    √ get is a Function
+    √ Retrieve a property indicated by the selector from an object.
 
   Testing getDaysDiffBetweenDates
 
-    ✔ getDaysDiffBetweenDates is a Function
-    ✔ Returns the difference in days between two dates
+    √ getDaysDiffBetweenDates is a Function
+    √ Returns the difference in days between two dates
 
   Testing getScrollPosition
 
-    ✔ getScrollPosition is a Function
+    √ getScrollPosition is a Function
 
   Testing getStyle
 
-    ✔ getStyle is a Function
+    √ getStyle is a Function
 
   Testing getType
 
-    ✔ getType is a Function
-    ✔ Returns the native type of a value
+    √ getType is a Function
+    √ Returns the native type of a value
 
   Testing getURLParameters
 
-    ✔ getURLParameters is a Function
-    ✔ Returns an object containing the parameters of the current URL
+    √ getURLParameters is a Function
+    √ Returns an object containing the parameters of the current URL
 
   Testing groupBy
 
-    ✔ groupBy is a Function
-    ✔ Groups the elements of an array based on the given function
-    ✔ Groups the elements of an array based on the given function
+    √ groupBy is a Function
+    √ Groups the elements of an array based on the given function
+    √ Groups the elements of an array based on the given function
 
   Testing hammingDistance
 
-    ✔ hammingDistance is a Function
-    ✔ retuns hamming disance between 2 values
+    √ hammingDistance is a Function
+    √ retuns hamming disance between 2 values
 
   Testing hasClass
 
-    ✔ hasClass is a Function
+    √ hasClass is a Function
 
   Testing hasFlags
 
-    ✔ hasFlags is a Function
+    √ hasFlags is a Function
 
   Testing hashBrowser
 
-    ✔ hashBrowser is a Function
+    √ hashBrowser is a Function
 
   Testing hashNode
 
-    ✔ hashNode is a Function
+    √ hashNode is a Function
 
   Testing head
 
-    ✔ head is a Function
-    ✔ head({ a: 1234}) returns undefined
-    ✔ head([1, 2, 3]) returns 1
-    ✔ head({ 0: false}) returns false
-    ✔ head(String) returns S
-    ✔ head(null) throws an Error
-    ✔ head(undefined) throws an Error
-    ✔ head() throws an Error
-    ✔ head([1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 1122, 32124, 23232]) takes less than 2s to run
+    √ head is a Function
+    √ head({ a: 1234}) returns undefined
+    √ head([1, 2, 3]) returns 1
+    √ head({ 0: false}) returns false
+    √ head(String) returns S
+    √ head(null) throws an Error
+    √ head(undefined) throws an Error
+    √ head() throws an Error
+    √ head([1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 1122, 32124, 23232]) takes less than 2s to run
 
   Testing hexToRGB
 
-    ✔ hexToRGB is a Function
-    ✔ Converts a color code to a rgb() or rgba() string
-    ✔ Converts a color code to a rgb() or rgba() string
-    ✔ Converts a color code to a rgb() or rgba() string
+    √ hexToRGB is a Function
+    √ Converts a color code to a rgb() or rgba() string
+    √ Converts a color code to a rgb() or rgba() string
+    √ Converts a color code to a rgb() or rgba() string
 
   Testing hide
 
-    ✔ hide is a Function
+    √ hide is a Function
 
   Testing howManyTimes
 
-    ✔ howManyTimes is a Function
+    √ howManyTimes is a Function
 
   Testing httpDelete
 
-    ✔ httpDelete is a Function
+    √ httpDelete is a Function
 
   Testing httpGet
 
-    ✔ httpGet is a Function
+    √ httpGet is a Function
 
   Testing httpPost
 
-    ✔ httpPost is a Function
+    √ httpPost is a Function
 
   Testing httpPut
 
-    ✔ httpPut is a Function
+    √ httpPut is a Function
 
   Testing httpsRedirect
 
-    ✔ httpsRedirect is a Function
-
-  Testing inRange
-
-    ✔ inRange is a Function
-    ✔ The given number falls within the given range
-    ✔ The given number falls within the given range
-    ✔ The given number does not falls within the given range
-    ✔ The given number does not falls within the given range
+    √ httpsRedirect is a Function
 
   Testing indexOfAll
 
-    ✔ indexOfAll is a Function
-    ✔ Returns all indices of val in an array
-    ✔ Returns all indices of val in an array
+    √ indexOfAll is a Function
+    √ Returns all indices of val in an array
+    √ Returns all indices of val in an array
 
   Testing initial
 
-    ✔ initial is a Function
-    ✔ Returns all the elements of an array except the last one
+    √ initial is a Function
+    √ Returns all the elements of an array except the last one
 
   Testing initialize2DArray
 
-    ✔ initialize2DArray is a Function
-    ✔ Initializes a 2D array of given width and height and value
+    √ initialize2DArray is a Function
+    √ Initializes a 2D array of given width and height and value
 
   Testing initializeArrayWithRange
 
-    ✔ initializeArrayWithRange is a Function
-    ✔ Initializes an array containing the numbers in the specified range
+    √ initializeArrayWithRange is a Function
+    √ Initializes an array containing the numbers in the specified range
 
   Testing initializeArrayWithRangeRight
 
-    ✔ initializeArrayWithRangeRight is a Function
+    √ initializeArrayWithRangeRight is a Function
 
   Testing initializeArrayWithValues
 
-    ✔ initializeArrayWithValues is a Function
-    ✔ Initializes and fills an array with the specified values
+    √ initializeArrayWithValues is a Function
+    √ Initializes and fills an array with the specified values
+
+  Testing inRange
+
+    √ inRange is a Function
+    √ The given number falls within the given range
+    √ The given number falls within the given range
+    √ The given number does not falls within the given range
+    √ The given number does not falls within the given range
 
   Testing intersection
 
-    ✔ intersection is a Function
-    ✔ Returns a list of elements that exist in both arrays
+    √ intersection is a Function
+    √ Returns a list of elements that exist in both arrays
+
+  Testing intersectionBy
+
+    √ intersectionBy is a Function
+
+  Testing intersectionWith
+
+    √ intersectionWith is a Function
 
   Testing invertKeyValues
 
-    ✔ invertKeyValues is a Function
+    √ invertKeyValues is a Function
 
-    ✖ Inverts the key-value pairs of an object
+    × Inverts the key-value pairs of an object
     -------------------------------------------
       operator: deepEqual
       expected: |-
         { 20: 'age', John: 'name' }
       actual: |-
         { 20: [ 'age' ], John: [ 'name' ] }
-      at: Test.test (/home/travis/build/Chalarangelo/30-seconds-of-code/test/invertKeyValues/invertKeyValues.test.js:8:4)
       stack: |-
 
 
   Testing is
 
-    ✔ is is a Function
+    √ is is a Function
 
   Testing isAbsoluteURL
 
-    ✔ isAbsoluteURL is a Function
-    ✔ Given string is an absolute URL
-    ✔ Given string is an absolute URL
-    ✔ Given string is not an absolute URL
+    √ isAbsoluteURL is a Function
+    √ Given string is an absolute URL
+    √ Given string is an absolute URL
+    √ Given string is not an absolute URL
 
   Testing isArmstrongNumber
 
-    ✔ isArmstrongNumber is a Function
+    √ isArmstrongNumber is a Function
 
   Testing isArray
 
-    ✔ isArray is a Function
-    ✔ passed value is an array
-    ✔ passed value is not an array
+    √ isArray is a Function
+    √ passed value is an array
+    √ passed value is not an array
 
   Testing isArrayBuffer
 
-    ✔ isArrayBuffer is a Function
+    √ isArrayBuffer is a Function
 
   Testing isArrayLike
 
-    ✔ isArrayLike is a Function
+    √ isArrayLike is a Function
 
   Testing isBoolean
 
-    ✔ isBoolean is a Function
-    ✔ passed value is not a boolean
-    ✔ passed value is not a boolean
+    √ isBoolean is a Function
+    √ passed value is not a boolean
+    √ passed value is not a boolean
 
   Testing isDivisible
 
-    ✔ isDivisible is a Function
-    ✔ The number 6 is divisible by 3
+    √ isDivisible is a Function
+    √ The number 6 is divisible by 3
 
   Testing isEmpty
 
-    ✔ isEmpty is a Function
+    √ isEmpty is a Function
 
   Testing isEven
 
-    ✔ isEven is a Function
-    ✔ 4 is even number
-    ✔ undefined
+    √ isEven is a Function
+    √ 4 is even number
+    √ undefined
 
   Testing isFunction
 
-    ✔ isFunction is a Function
-    ✔ passed value is a function
-    ✔ passed value is not a function
+    √ isFunction is a Function
+    √ passed value is a function
+    √ passed value is not a function
 
   Testing isLowerCase
 
-    ✔ isLowerCase is a Function
-    ✔ passed string is a lowercase
-    ✔ passed string is a lowercase
-    ✔ passed value is not a lowercase
+    √ isLowerCase is a Function
+    √ passed string is a lowercase
+    √ passed string is a lowercase
+    √ passed value is not a lowercase
 
   Testing isMap
 
-    ✔ isMap is a Function
+    √ isMap is a Function
 
   Testing isNil
 
-    ✔ isNil is a Function
+    √ isNil is a Function
 
   Testing isNull
 
-    ✔ isNull is a Function
-    ✔ passed argument is a null
-    ✔ passed argument is a null
+    √ isNull is a Function
+    √ passed argument is a null
+    √ passed argument is a null
 
   Testing isNumber
 
-    ✔ isNumber is a Function
-    ✔ passed argument is a number
-    ✔ passed argument is not a number
+    √ isNumber is a Function
+    √ passed argument is a number
+    √ passed argument is not a number
 
   Testing isObject
 
-    ✔ isObject is a Function
-    ✔ isObject([1, 2, 3, 4]) is a object
-    ✔ isObject([]) is a object
-    ✔ isObject({ a:1 }) is a object
-    ✔ isObject(true) is not a object
+    √ isObject is a Function
+    √ isObject([1, 2, 3, 4]) is a object
+    √ isObject([]) is a object
+    √ isObject({ a:1 }) is a object
+    √ isObject(true) is not a object
 
   Testing isObjectLike
 
-    ✔ isObjectLike is a Function
+    √ isObjectLike is a Function
 
   Testing isPlainObject
 
-    ✔ isPlainObject is a Function
+    √ isPlainObject is a Function
 
   Testing isPrime
 
-    ✔ isPrime is a Function
-    ✔ passed number is a prime
+    √ isPrime is a Function
+    √ passed number is a prime
 
   Testing isPrimitive
 
-    ✔ isPrimitive is a Function
-    ✔ isPrimitive(null) is primitive
-    ✔ isPrimitive(undefined) is primitive
-    ✔ isPrimitive(string) is primitive
-    ✔ isPrimitive(true) is primitive
-    ✔ isPrimitive(50) is primitive
-    ✔ isPrimitive('Hello') is primitive
-    ✔ isPrimitive(false) is primitive
-    ✔ isPrimitive(Symbol()) is primitive
-    ✔ isPrimitive([1, 2, 3]) is not primitive
-    ✔ isPrimitive({ a: 123 }) is not primitive
-    ✔ isPrimitive({ a: 123 }) takes less than 2s to run
+    √ isPrimitive is a Function
+    √ isPrimitive(null) is primitive
+    √ isPrimitive(undefined) is primitive
+    √ isPrimitive(string) is primitive
+    √ isPrimitive(true) is primitive
+    √ isPrimitive(50) is primitive
+    √ isPrimitive('Hello') is primitive
+    √ isPrimitive(false) is primitive
+    √ isPrimitive(Symbol()) is primitive
+    √ isPrimitive([1, 2, 3]) is not primitive
+    √ isPrimitive({ a: 123 }) is not primitive
+    √ isPrimitive({ a: 123 }) takes less than 2s to run
 
   Testing isPromiseLike
 
-    ✔ isPromiseLike is a Function
+    √ isPromiseLike is a Function
 
   Testing isRegExp
 
-    ✔ isRegExp is a Function
+    √ isRegExp is a Function
 
   Testing isSet
 
-    ✔ isSet is a Function
+    √ isSet is a Function
 
   Testing isSorted
 
-    ✔ isSorted is a Function
-    ✔ Array is sorted in ascending order
-    ✔ Array is sorted in descending order
-    ✔ Array is not sorted, direction changed in array
+    √ isSorted is a Function
+    √ Array is sorted in ascending order
+    √ Array is sorted in descending order
+    √ Array is not sorted, direction changed in array
 
   Testing isString
 
-    ✔ isString is a Function
-    ✔ foo is a string
-    ✔ "10" is a string
-    ✔ Empty string is a string
-    ✔ 10 is not a string
-    ✔ true is not string
+    √ isString is a Function
+    √ foo is a string
+    √ "10" is a string
+    √ Empty string is a string
+    √ 10 is not a string
+    √ true is not string
 
   Testing isSymbol
 
-    ✔ isSymbol is a Function
-    ✔ Checks if the given argument is a symbol
+    √ isSymbol is a Function
+    √ Checks if the given argument is a symbol
 
   Testing isTravisCI
 
-    ✔ isTravisCI is a Function
+    √ isTravisCI is a Function
 
   Testing isTypedArray
 
-    ✔ isTypedArray is a Function
+    √ isTypedArray is a Function
 
   Testing isUndefined
 
-    ✔ isUndefined is a Function
+    √ isUndefined is a Function
 
   Testing isUpperCase
 
-    ✔ isUpperCase is a Function
-    ✔ ABC is all upper case
-    ✔ abc is not all upper case
-    ✔ A3@$ is all uppercase
+    √ isUpperCase is a Function
+    √ ABC is all upper case
+    √ abc is not all upper case
+    √ A3@$ is all uppercase
 
   Testing isValidJSON
 
-    ✔ isValidJSON is a Function
-    ✔ {"name":"Adam","age":20} is a valid JSON
-    ✔ {"name":"Adam",age:"20"} is not a valid JSON
-    ✔ null is a valid JSON
+    √ isValidJSON is a Function
+    √ {"name":"Adam","age":20} is a valid JSON
+    √ {"name":"Adam",age:"20"} is not a valid JSON
+    √ null is a valid JSON
 
   Testing isWeakMap
 
-    ✔ isWeakMap is a Function
+    √ isWeakMap is a Function
 
   Testing isWeakSet
 
-    ✔ isWeakSet is a Function
+    √ isWeakSet is a Function
 
   Testing join
 
-    ✔ join is a Function
-    ✔ Joins all elements of an array into a string and returns this string
-    ✔ Joins all elements of an array into a string and returns this string
-    ✔ Joins all elements of an array into a string and returns this string
+    √ join is a Function
+    √ Joins all elements of an array into a string and returns this string
+    √ Joins all elements of an array into a string and returns this string
+    √ Joins all elements of an array into a string and returns this string
+
+  Testing JSONToDate
+
+    √ JSONToDate is a Function
+
+  Testing JSONToFile
+
+    √ JSONToFile is a Function
 
   Testing last
 
-    ✔ last is a Function
-    ✔ last({ a: 1234}) returns undefined
-    ✔ last([1, 2, 3]) returns 3
-    ✔ last({ 0: false}) returns undefined
-    ✔ last(String) returns g
-    ✔ last(null) throws an Error
-    ✔ last(undefined) throws an Error
-    ✔ last() throws an Error
-    ✔ last([1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 1122, 32124, 23232]) takes less than 2s to run
+    √ last is a Function
+    √ last({ a: 1234}) returns undefined
+    √ last([1, 2, 3]) returns 3
+    √ last({ 0: false}) returns undefined
+    √ last(String) returns g
+    √ last(null) throws an Error
+    √ last(undefined) throws an Error
+    √ last() throws an Error
+    √ last([1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 1122, 32124, 23232]) takes less than 2s to run
 
   Testing lcm
 
-    ✔ lcm is a Function
-    ✔ Returns the least common multiple of two or more numbers.
-    ✔ Returns the least common multiple of two or more numbers.
+    √ lcm is a Function
+    √ Returns the least common multiple of two or more numbers.
+    √ Returns the least common multiple of two or more numbers.
 
   Testing longestItem
 
-    ✔ longestItem is a Function
-    ✔ Returns the longest object
+    √ longestItem is a Function
+    √ Returns the longest object
 
   Testing lowercaseKeys
 
-    ✔ lowercaseKeys is a Function
+    √ lowercaseKeys is a Function
 
   Testing luhnCheck
 
-    ✔ luhnCheck is a Function
-    ✔ validates identification number
-    ✔ validates identification number
-    ✔ validates identification number
+    √ luhnCheck is a Function
+    √ validates identification number
+    √ validates identification number
+    √ validates identification number
 
   Testing mapKeys
 
-    ✔ mapKeys is a Function
+    √ mapKeys is a Function
 
   Testing mapObject
 
-    ✔ mapObject is a Function
-    ✔ Maps the values of an array to an object using a function
+    √ mapObject is a Function
+    √ Maps the values of an array to an object using a function
 
   Testing mapValues
 
-    ✔ mapValues is a Function
+    √ mapValues is a Function
 
   Testing mask
 
-    ✔ mask is a Function
-    ✔ Replaces all but the last num of characters with the specified mask character
-    ✔ Replaces all but the last num of characters with the specified mask character
-    ✔ Replaces all but the last num of characters with the specified mask character
+    √ mask is a Function
+    √ Replaces all but the last num of characters with the specified mask character
+    √ Replaces all but the last num of characters with the specified mask character
+    √ Replaces all but the last num of characters with the specified mask character
 
   Testing matches
 
-    ✔ matches is a Function
+    √ matches is a Function
 
   Testing matchesWith
 
-    ✔ matchesWith is a Function
+    √ matchesWith is a Function
 
   Testing maxBy
 
-    ✔ maxBy is a Function
+    √ maxBy is a Function
 
   Testing maxN
 
-    ✔ maxN is a Function
-    ✔ Returns the n maximum elements from the provided array
-    ✔ Returns the n maximum elements from the provided array
+    √ maxN is a Function
+    √ Returns the n maximum elements from the provided array
+    √ Returns the n maximum elements from the provided array
 
   Testing median
 
-    ✔ median is a Function
-    ✔ Returns the median of an array of numbers
-    ✔ Returns the median of an array of numbers
+    √ median is a Function
+    √ Returns the median of an array of numbers
+    √ Returns the median of an array of numbers
 
   Testing memoize
 
-    ✔ memoize is a Function
+    √ memoize is a Function
 
   Testing merge
 
-    ✔ merge is a Function
+    √ merge is a Function
 
   Testing minBy
 
-    ✔ minBy is a Function
+    √ minBy is a Function
 
   Testing minN
 
-    ✔ minN is a Function
-    ✔ Returns the n minimum elements from the provided array
-    ✔ Returns the n minimum elements from the provided array
+    √ minN is a Function
+    √ Returns the n minimum elements from the provided array
+    √ Returns the n minimum elements from the provided array
 
   Testing negate
 
-    ✔ negate is a Function
-    ✔ Negates a predicate function
+    √ negate is a Function
+    √ Negates a predicate function
 
   Testing nthArg
 
-    ✔ nthArg is a Function
+    √ nthArg is a Function
 
   Testing nthElement
 
-    ✔ nthElement is a Function
-    ✔ Returns the nth element of an array.
-    ✔ Returns the nth element of an array.
+    √ nthElement is a Function
+    √ Returns the nth element of an array.
+    √ Returns the nth element of an array.
 
   Testing objectFromPairs
 
-    ✔ objectFromPairs is a Function
-    ✔ Creates an object from the given key-value pairs.
+    √ objectFromPairs is a Function
+    √ Creates an object from the given key-value pairs.
 
   Testing objectToPairs
 
-    ✔ objectToPairs is a Function
-    ✔ Creates an array of key-value pair arrays from an object.
+    √ objectToPairs is a Function
+    √ Creates an array of key-value pair arrays from an object.
 
   Testing observeMutations
 
-    ✔ observeMutations is a Function
+    √ observeMutations is a Function
 
   Testing off
 
-    ✔ off is a Function
+    √ off is a Function
 
   Testing omit
 
-    ✔ omit is a Function
+    √ omit is a Function
 
   Testing omitBy
 
-    ✔ omitBy is a Function
+    √ omitBy is a Function
 
   Testing on
 
-    ✔ on is a Function
-
-  Testing onUserInputChange
-
-    ✔ onUserInputChange is a Function
+    √ on is a Function
 
   Testing once
 
-    ✔ once is a Function
+    √ once is a Function
+
+  Testing onUserInputChange
+
+    √ onUserInputChange is a Function
 
   Testing orderBy
 
-    ✔ orderBy is a Function
-    ✔ Returns a sorted array of objects ordered by properties and orders.
-    ✔ Returns a sorted array of objects ordered by properties and orders.
+    √ orderBy is a Function
+    √ Returns a sorted array of objects ordered by properties and orders.
+    √ Returns a sorted array of objects ordered by properties and orders.
 
   Testing over
 
-    ✔ over is a Function
+    √ over is a Function
 
   Testing palindrome
 
-    ✔ palindrome is a Function
-    ✔ Given string is a palindrome
-    ✔ Given string is not a palindrome
+    √ palindrome is a Function
+    √ Given string is a palindrome
+    √ Given string is not a palindrome
 
   Testing parseCookie
 
-    ✔ parseCookie is a Function
+    √ parseCookie is a Function
 
   Testing partition
 
-    ✔ partition is a Function
-    ✔ Groups the elements into two arrays, depending on the provided function's truthiness for each element.
+    √ partition is a Function
+    √ Groups the elements into two arrays, depending on the provided function's truthiness for each element.
 
   Testing percentile
 
-    ✔ percentile is a Function
-    ✔ Uses the percentile formula to calculate how many numbers in the given array are less or equal to the given value.
+    √ percentile is a Function
+    √ Uses the percentile formula to calculate how many numbers in the given array are less or equal to the given value.
 
   Testing pick
 
-    ✔ pick is a Function
-    ✔ Picks the key-value pairs corresponding to the given keys from an object.
+    √ pick is a Function
+    √ Picks the key-value pairs corresponding to the given keys from an object.
 
   Testing pickBy
 
-    ✔ pickBy is a Function
+    √ pickBy is a Function
 
   Testing pipeFunctions
 
-    ✔ pipeFunctions is a Function
+    √ pipeFunctions is a Function
 
   Testing pluralize
 
-    ✔ pluralize is a Function
+    √ pluralize is a Function
 
   Testing powerset
 
-    ✔ powerset is a Function
-    ✔ Returns the powerset of a given array of numbers.
+    √ powerset is a Function
+    √ Returns the powerset of a given array of numbers.
 
   Testing prettyBytes
 
-    ✔ prettyBytes is a Function
-    ✔ Converts a number in bytes to a human-readable string.
-    ✔ Converts a number in bytes to a human-readable string.
-    ✔ Converts a number in bytes to a human-readable string.
+    √ prettyBytes is a Function
+    √ Converts a number in bytes to a human-readable string.
+    √ Converts a number in bytes to a human-readable string.
+    √ Converts a number in bytes to a human-readable string.
 
   Testing primes
 
-    ✔ primes is a Function
-    ✔ Generates primes up to a given number, using the Sieve of Eratosthenes.
+    √ primes is a Function
+    √ Generates primes up to a given number, using the Sieve of Eratosthenes.
 
   Testing promisify
 
-    ✔ promisify is a Function
+    √ promisify is a Function
 
   Testing pull
 
-    ✔ pull is a Function
+    √ pull is a Function
 
   Testing pullAtIndex
 
-    ✔ pullAtIndex is a Function
+    √ pullAtIndex is a Function
 
   Testing pullAtValue
 
-    ✔ pullAtValue is a Function
+    √ pullAtValue is a Function
 
   Testing quickSort
 
-    ✔ quickSort is a Function
-    ✔ quickSort([5, 6, 4, 3, 1, 2]) returns [1, 2, 3, 4, 5, 6]
-    ✔ quickSort([-1, 0, -2]) returns [-2, -1, 0]
-    ✔ quickSort() throws an error
-    ✔ quickSort(123) throws an error
-    ✔ quickSort({ 234: string}) throws an error
-    ✔ quickSort(null) throws an error
-    ✔ quickSort(undefined) throws an error
-    ✔ quickSort([11, 1, 324, 23232, -1, 53, 2, 524, 32, 13, 156, 133, 62, 12, 4]) takes less than 2s to run
+    √ quickSort is a Function
+    √ quickSort([5, 6, 4, 3, 1, 2]) returns [1, 2, 3, 4, 5, 6]
+    √ quickSort([-1, 0, -2]) returns [-2, -1, 0]
+    √ quickSort() throws an error
+    √ quickSort(123) throws an error
+    √ quickSort({ 234: string}) throws an error
+    √ quickSort(null) throws an error
+    √ quickSort(undefined) throws an error
+    √ quickSort([11, 1, 324, 23232, -1, 53, 2, 524, 32, 13, 156, 133, 62, 12, 4]) takes less than 2s to run
 
   Testing randomHexColorCode
 
-    ✔ randomHexColorCode is a Function
+    √ randomHexColorCode is a Function
 
   Testing randomIntArrayInRange
 
-    ✔ randomIntArrayInRange is a Function
+    √ randomIntArrayInRange is a Function
 
   Testing randomIntegerInRange
 
-    ✔ randomIntegerInRange is a Function
+    √ randomIntegerInRange is a Function
 
   Testing randomNumberInRange
 
-    ✔ randomNumberInRange is a Function
+    √ randomNumberInRange is a Function
 
   Testing readFileLines
 
-    ✔ readFileLines is a Function
+    √ readFileLines is a Function
+
+  Testing README
+
+    √ README is a Function
 
   Testing redirect
 
-    ✔ redirect is a Function
+    √ redirect is a Function
 
   Testing reducedFilter
 
-    ✔ reducedFilter is a Function
-    ✔ Filter an array of objects based on a condition while also filtering out unspecified keys.
+    √ reducedFilter is a Function
+    √ Filter an array of objects based on a condition while also filtering out unspecified keys.
 
   Testing remove
 
-    ✔ remove is a Function
-    ✔ Removes elements from an array for which the given function returns false
+    √ remove is a Function
+    √ Removes elements from an array for which the given function returns false
 
   Testing removeVowels
 
-    ✔ removeVowels is a Function
+    √ removeVowels is a Function
 
   Testing reverseString
 
-    ✔ reverseString is a Function
-    ✔ Reverses a string.
+    √ reverseString is a Function
+    √ Reverses a string.
+
+  Testing RGBToHex
+
+    √ RGBToHex is a Function
+    √ Converts the values of RGB components to a color code.
 
   Testing round
 
-    ✔ round is a Function
-    ✔ Rounds a number to a specified amount of digits.
+    √ round is a Function
+    √ Rounds a number to a specified amount of digits.
 
   Testing runAsync
 
-    ✔ runAsync is a Function
+    √ runAsync is a Function
 
   Testing runPromisesInSeries
 
-    ✔ runPromisesInSeries is a Function
+    √ runPromisesInSeries is a Function
 
   Testing sample
 
-    ✔ sample is a Function
+    √ sample is a Function
 
   Testing sampleSize
 
-    ✔ sampleSize is a Function
+    √ sampleSize is a Function
 
   Testing scrollToTop
 
-    ✔ scrollToTop is a Function
+    √ scrollToTop is a Function
 
   Testing sdbm
 
-    ✔ sdbm is a Function
-    ✔ Hashes the input string into a whole number.
+    √ sdbm is a Function
+    √ Hashes the input string into a whole number.
 
   Testing serializeCookie
 
-    ✔ serializeCookie is a Function
+    √ serializeCookie is a Function
 
   Testing setStyle
 
-    ✔ setStyle is a Function
+    √ setStyle is a Function
 
   Testing shallowClone
 
-    ✔ shallowClone is a Function
+    √ shallowClone is a Function
 
   Testing show
 
-    ✔ show is a Function
+    √ show is a Function
 
   Testing shuffle
 
-    ✔ shuffle is a Function
+    √ shuffle is a Function
 
   Testing similarity
 
-    ✔ similarity is a Function
-    ✔ Returns an array of elements that appear in both arrays.
+    √ similarity is a Function
+    √ Returns an array of elements that appear in both arrays.
 
   Testing size
 
-    ✔ size is a Function
-    ✔ Get size of arrays, objects or strings.
-    ✔ Get size of arrays, objects or strings.
+    √ size is a Function
+    √ Get size of arrays, objects or strings.
+    √ Get size of arrays, objects or strings.
 
   Testing sleep
 
-    ✔ sleep is a Function
+    √ sleep is a Function
 
   Testing solveRPN
 
-    ✔ solveRPN is a Function
+    √ solveRPN is a Function
 
   Testing sortCharactersInString
 
-    ✔ sortCharactersInString is a Function
-    ✔ Alphabetically sorts the characters in a string.
+    √ sortCharactersInString is a Function
+    √ Alphabetically sorts the characters in a string.
 
   Testing sortedIndex
 
-    ✔ sortedIndex is a Function
-    ✔ Returns the lowest index at which value should be inserted into array in order to maintain its sort order.
-    ✔ Returns the lowest index at which value should be inserted into array in order to maintain its sort order.
+    √ sortedIndex is a Function
+    √ Returns the lowest index at which value should be inserted into array in order to maintain its sort order.
+    √ Returns the lowest index at which value should be inserted into array in order to maintain its sort order.
+
+  Testing sortedLastIndex
+
+    √ sortedLastIndex is a Function
 
   Testing speechSynthesis
 
-    ✔ speechSynthesis is a Function
+    √ speechSynthesis is a Function
 
   Testing splitLines
 
-    ✔ splitLines is a Function
-    ✔ Splits a multiline string into an array of lines.
+    √ splitLines is a Function
+    √ Splits a multiline string into an array of lines.
 
   Testing spreadOver
 
-    ✔ spreadOver is a Function
-    ✔ Takes a variadic function and returns a closure that accepts an array of arguments to map to the inputs of the function.
+    √ spreadOver is a Function
+    √ Takes a variadic function and returns a closure that accepts an array of arguments to map to the inputs of the function.
 
   Testing standardDeviation
 
-    ✔ standardDeviation is a Function
-    ✔ Returns the standard deviation of an array of numbers
-    ✔ Returns the standard deviation of an array of numbers
+    √ standardDeviation is a Function
+    √ Returns the standard deviation of an array of numbers
+    √ Returns the standard deviation of an array of numbers
 
   Testing sum
 
-    ✔ sum is a Function
-    ✔ Returns the sum of two or more numbers/arrays.
+    √ sum is a Function
+    √ Returns the sum of two or more numbers/arrays.
 
   Testing sumBy
 
-    ✔ sumBy is a Function
+    √ sumBy is a Function
 
   Testing sumPower
 
-    ✔ sumPower is a Function
-    ✔ Returns the sum of the powers of all the numbers from start to end
-    ✔ Returns the sum of the powers of all the numbers from start to end
-    ✔ Returns the sum of the powers of all the numbers from start to end
+    √ sumPower is a Function
+    √ Returns the sum of the powers of all the numbers from start to end
+    √ Returns the sum of the powers of all the numbers from start to end
+    √ Returns the sum of the powers of all the numbers from start to end
 
   Testing symmetricDifference
 
-    ✔ symmetricDifference is a Function
-    ✔ Returns the symmetric difference between two arrays.
+    √ symmetricDifference is a Function
+    √ Returns the symmetric difference between two arrays.
+
+  Testing symmetricDifferenceBy
+
+    √ symmetricDifferenceBy is a Function
+
+  Testing symmetricDifferenceWith
+
+    √ symmetricDifferenceWith is a Function
 
   Testing tail
 
-    ✔ tail is a Function
-    ✔ Returns tail
-    ✔ Returns tail
+    √ tail is a Function
+    √ Returns tail
+    √ Returns tail
 
   Testing take
 
-    ✔ take is a Function
-    ✔ Returns an array with n elements removed from the beginning.
-    ✔ Returns an array with n elements removed from the beginning.
+    √ take is a Function
+    √ Returns an array with n elements removed from the beginning.
+    √ Returns an array with n elements removed from the beginning.
 
   Testing takeRight
 
-    ✔ takeRight is a Function
-    ✔ Returns an array with n elements removed from the end
-    ✔ Returns an array with n elements removed from the end
+    √ takeRight is a Function
+    √ Returns an array with n elements removed from the end
+    √ Returns an array with n elements removed from the end
 
   Testing timeTaken
 
-    ✔ timeTaken is a Function
+    √ timeTaken is a Function
 
   Testing toCamelCase
 
-    ✔ toCamelCase is a Function
-    ✔ Converts a string to camelCase
-    ✔ Converts a string to camelCase
-    ✔ Converts a string to camelCase
-    ✔ Converts a string to camelCase
+    √ toCamelCase is a Function
+    √ Converts a string to camelCase
+    √ Converts a string to camelCase
+    √ Converts a string to camelCase
+    √ Converts a string to camelCase
 
   Testing toDecimalMark
 
-    ✔ toDecimalMark is a Function
-    ✔ convert a float-point arithmetic to the Decimal mark form
-
-  Testing toKebabCase
-
-    ✔ toKebabCase is a Function
-    ✔ string converts to snake case
-    ✔ string converts to snake case
-    ✔ string converts to snake case
-    ✔ string converts to snake case
-
-  Testing toOrdinalSuffix
-
-    ✔ toOrdinalSuffix is a Function
-    ✔ Adds an ordinal suffix to a number
-    ✔ Adds an ordinal suffix to a number
-    ✔ Adds an ordinal suffix to a number
-    ✔ Adds an ordinal suffix to a number
-
-  Testing toSafeInteger
-
-    ✔ toSafeInteger is a Function
-    ✔ Converts a value to a safe integer
-    ✔ Converts a value to a safe integer
-    ✔ Converts a value to a safe integer
-    ✔ Converts a value to a safe integer
-    ✔ Converts a value to a safe integer
-
-  Testing toSnakeCase
-
-    ✔ toSnakeCase is a Function
-    ✔ string converts to snake case
-    ✔ string converts to snake case
-    ✔ string converts to snake case
-    ✔ string converts to snake case
+    √ toDecimalMark is a Function
+    √ convert a float-point arithmetic to the Decimal mark form
 
   Testing toggleClass
 
-    ✔ toggleClass is a Function
+    √ toggleClass is a Function
+
+  Testing toKebabCase
+
+    √ toKebabCase is a Function
+    √ string converts to snake case
+    √ string converts to snake case
+    √ string converts to snake case
+    √ string converts to snake case
 
   Testing tomorrow
 
-    ✔ tomorrow is a Function
+    √ tomorrow is a Function
+
+  Testing toOrdinalSuffix
+
+    √ toOrdinalSuffix is a Function
+    √ Adds an ordinal suffix to a number
+    √ Adds an ordinal suffix to a number
+    √ Adds an ordinal suffix to a number
+    √ Adds an ordinal suffix to a number
+
+  Testing toSafeInteger
+
+    √ toSafeInteger is a Function
+    √ Converts a value to a safe integer
+    √ Converts a value to a safe integer
+    √ Converts a value to a safe integer
+    √ Converts a value to a safe integer
+    √ Converts a value to a safe integer
+
+  Testing toSnakeCase
+
+    √ toSnakeCase is a Function
+    √ string converts to snake case
+    √ string converts to snake case
+    √ string converts to snake case
+    √ string converts to snake case
 
   Testing transform
 
-    ✔ transform is a Function
+    √ transform is a Function
 
   Testing truncateString
 
-    ✔ truncateString is a Function
-    ✔ Truncates a "boomerang" up to a specified length.
+    √ truncateString is a Function
+    √ Truncates a "boomerang" up to a specified length.
 
   Testing truthCheckCollection
 
-    ✔ truthCheckCollection is a Function
-    ✔ second argument is truthy on all elements of a collection
+    √ truthCheckCollection is a Function
+    √ second argument is truthy on all elements of a collection
 
   Testing unescapeHTML
 
-    ✔ unescapeHTML is a Function
-    ✔ Unescapes escaped HTML characters.
+    √ unescapeHTML is a Function
+    √ Unescapes escaped HTML characters.
 
   Testing union
 
-    ✔ union is a Function
-    ✔ Returns every element that exists in any of the two arrays once
+    √ union is a Function
+    √ Returns every element that exists in any of the two arrays once
+
+  Testing unionBy
+
+    √ unionBy is a Function
+
+  Testing unionWith
+
+    √ unionWith is a Function
 
   Testing uniqueElements
 
-    ✔ uniqueElements is a Function
-    ✔ Returns all unique values of an array
+    √ uniqueElements is a Function
+    √ Returns all unique values of an array
 
   Testing untildify
 
-    ✔ untildify is a Function
+    √ untildify is a Function
+
+  Testing unzip
+
+    √ unzip is a Function
+
+  Testing unzipWith
+
+    √ unzipWith is a Function
+
+  Testing URLJoin
+
+    √ URLJoin is a Function
+    √ Returns proper URL
+    √ Returns proper URL
+
+  Testing UUIDGeneratorBrowser
+
+    √ UUIDGeneratorBrowser is a Function
+
+  Testing UUIDGeneratorNode
+
+    √ UUIDGeneratorNode is a Function
 
   Testing validateNumber
 
-    ✔ validateNumber is a Function
-    ✔ validateNumber(9) returns true
-    ✔ validateNumber(234asd.slice(0, 2)) returns true
-    ✔ validateNumber(1232) returns true
-    ✔ validateNumber(1232 + 13423) returns true
-    ✔ validateNumber(1232 * 2342 * 123) returns true
-    ✔ validateNumber(1232.23423536) returns true
-    ✔ validateNumber(234asd) returns false
-    ✔ validateNumber(e234d) returns false
-    ✔ validateNumber(false) returns false
-    ✔ validateNumber(true) returns false
-    ✔ validateNumber(null) returns false
-    ✔ validateNumber(123 * asd) returns false
+    √ validateNumber is a Function
+    √ validateNumber(9) returns true
+    √ validateNumber(234asd.slice(0, 2)) returns true
+    √ validateNumber(1232) returns true
+    √ validateNumber(1232 + 13423) returns true
+    √ validateNumber(1232 * 2342 * 123) returns true
+    √ validateNumber(1232.23423536) returns true
+    √ validateNumber(234asd) returns false
+    √ validateNumber(e234d) returns false
+    √ validateNumber(false) returns false
+    √ validateNumber(true) returns false
+    √ validateNumber(null) returns false
+    √ validateNumber(123 * asd) returns false
 
   Testing without
 
-    ✔ without is a Function
-    ✔ without([2, 1, 2, 3], 1, 2) returns [3]
-    ✔ without([]) returns []
-    ✔ without([3, 1, true, '3', true], '3', true) returns [3, 1]
-    ✔ without('string'.split(''), 's', 't', 'g') returns ['r', 'i', 'n']
-    ✔ without() throws an error
-    ✔ without(null) throws an error
-    ✔ without(undefined) throws an error
-    ✔ without() throws an error
-    ✔ without({}) throws an error
+    √ without is a Function
+    √ without([2, 1, 2, 3], 1, 2) returns [3]
+    √ without([]) returns []
+    √ without([3, 1, true, '3', true], '3', true) returns [3, 1]
+    √ without('string'.split(''), 's', 't', 'g') returns ['r', 'i', 'n']
+    √ without() throws an error
+    √ without(null) throws an error
+    √ without(undefined) throws an error
+    √ without() throws an error
+    √ without({}) throws an error
 
   Testing words
 
-    ✔ words is a Function
-    ✔ words('I love javaScript!!') returns [I, love, javaScript]
-    ✔ words('python, javaScript & coffee') returns [python, javaScript, coffee]
-    ✔ words(I love javaScript!!) returns an array
-    ✔ words() throws a error
-    ✔ words(null) throws a error
-    ✔ words(undefined) throws a error
-    ✔ words({}) throws a error
-    ✔ words([]) throws a error
-    ✔ words(1234) throws a error
+    √ words is a Function
+    √ words('I love javaScript!!') returns [I, love, javaScript]
+    √ words('python, javaScript & coffee') returns [python, javaScript, coffee]
+    √ words(I love javaScript!!) returns an array
+    √ words() throws a error
+    √ words(null) throws a error
+    √ words(undefined) throws a error
+    √ words({}) throws a error
+    √ words([]) throws a error
+    √ words(1234) throws a error
 
   Testing yesNo
 
-    ✔ yesNo is a Function
-    ✔ yesNo(Y) returns true
-    ✔ yesNo(yes) returns true
-    ✔ yesNo(foo, true) returns true
-    ✔ yesNo(No) returns false
-    ✔ yesNo() returns false
-    ✔ yesNo(null) returns false
-    ✔ yesNo(undefined) returns false
-    ✔ yesNo([123, null]) returns false
-    ✔ yesNo([Yes, No]) returns false
-    ✔ yesNo({ 2: Yes }) returns false
-    ✔ yesNo([Yes, No], true) returns true
-    ✔ yesNo({ 2: Yes }, true) returns true
+    √ yesNo is a Function
+    √ yesNo(Y) returns true
+    √ yesNo(yes) returns true
+    √ yesNo(foo, true) returns true
+    √ yesNo(No) returns false
+    √ yesNo() returns false
+    √ yesNo(null) returns false
+    √ yesNo(undefined) returns false
+    √ yesNo([123, null]) returns false
+    √ yesNo([Yes, No]) returns false
+    √ yesNo({ 2: Yes }) returns false
+    √ yesNo([Yes, No], true) returns true
+    √ yesNo({ 2: Yes }, true) returns true
 
   Testing zip
 
-    ✔ zip is a Function
-    ✔ zip([a, b], [1, 2], [true, false]) returns [[a, 1, true], [b, 2, false]]
-    ✔ zip([a], [1, 2], [true, false]) returns [[a, 1, true], [undefined, 2, false]]
-    ✔ zip([]) returns []
-    ✔ zip(123) returns []
-    ✔ zip([a, b], [1, 2], [true, false]) returns an Array
-    ✔ zip([a], [1, 2], [true, false]) returns an Array
-    ✔ zip(null) throws an error
-    ✔ zip(undefined) throws an error
+    √ zip is a Function
+    √ zip([a, b], [1, 2], [true, false]) returns [[a, 1, true], [b, 2, false]]
+    √ zip([a], [1, 2], [true, false]) returns [[a, 1, true], [undefined, 2, false]]
+    √ zip([]) returns []
+    √ zip(123) returns []
+    √ zip([a, b], [1, 2], [true, false]) returns an Array
+    √ zip([a], [1, 2], [true, false]) returns an Array
+    √ zip(null) throws an error
+    √ zip(undefined) throws an error
 
   Testing zipObject
 
-    ✔ zipObject is a Function
-    ✔ zipObject([a, b, c], [1, 2]) returns {a: 1, b: 2, c: undefined}
-    ✔ zipObject([a, b], [1, 2, 3]) returns {a: 1, b: 2}
-    ✔ zipObject([a, b, c], string) returns { a: s, b: t, c: r }
-    ✔ zipObject([a], string) returns { a: s }
-    ✔ zipObject() throws an error
-    ✔ zipObject([string], null) throws an error
-    ✔ zipObject(null, [1]) throws an error
-    ✔ zipObject(string) throws an error
-    ✔ zipObject(test, string) throws an error
+    √ zipObject is a Function
+    √ zipObject([a, b, c], [1, 2]) returns {a: 1, b: 2, c: undefined}
+    √ zipObject([a, b], [1, 2, 3]) returns {a: 1, b: 2}
+    √ zipObject([a, b, c], string) returns { a: s, b: t, c: r }
+    √ zipObject([a], string) returns { a: s }
+    √ zipObject() throws an error
+    √ zipObject([string], null) throws an error
+    √ zipObject(null, [1]) throws an error
+    √ zipObject(string) throws an error
+    √ zipObject(test, string) throws an error
 
   Testing zipWith
 
-    ✔ zipWith is a Function
+    √ zipWith is a Function
 
 
 
@@ -1356,13 +1403,13 @@ Test log for: Tue Jan 23 2018 20:11:47 GMT+0000 (UTC)
 
     Testing invertKeyValues
 
-      ✖ Inverts the key-value pairs of an object
+      × Inverts the key-value pairs of an object
 
 
-  total:     574
-  passing:   573
+  total:     586
+  passing:   585
   failing:   1
-  duration:  440ms
+  duration:  521ms
 
 
 undefined

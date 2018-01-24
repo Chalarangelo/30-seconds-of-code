@@ -8,4 +8,4 @@ return oPattern.includes(digits[0]) && !tPattern.includes(digits[1])
 ? int + ordinals[digits[0] - 1]
 : int + ordinals[3];
 };
- module.exports = toOrdinalSuffix
+module.exports = toOrdinalSuffix

@@ -7,4 +7,4 @@ return acc;
 }, {}),
 {}
 );
- module.exports = merge
+module.exports = merge

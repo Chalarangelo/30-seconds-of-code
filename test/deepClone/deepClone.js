@@ -5,4 +5,4 @@ key => (clone[key] = typeof obj[key] === 'object' ? deepClone(obj[key]) : obj[ke
 );
 return clone;
 };
- module.exports = deepClone
+module.exports = deepClone

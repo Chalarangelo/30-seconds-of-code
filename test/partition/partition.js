@@ -6,4 +6,4 @@ return acc;
 },
 [[], []]
 );
- module.exports = partition
+module.exports = partition

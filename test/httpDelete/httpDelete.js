@@ -5,4 +5,4 @@ request.onload = () => callback(request);
 request.onerror = () => err(request);
 request.send();
 };
- module.exports = httpDelete
+module.exports = httpDelete
