@@ -134,6 +134,7 @@ average(1, 2, 3);
 * [`pullAtIndex`](#pullatindex)
 * [`pullAtValue`](#pullatvalue)
 * [`reducedFilter`](#reducedfilter)
+* [`reduceSuccessive`](#reducesuccessive)
 * [`remove`](#remove)
 * [`sample`](#sample)
 * [`sampleSize`](#samplesize)
@@ -1686,6 +1687,29 @@ const data = [
 ];
 
 reducedFilter(data, ['id', 'name'], item => item.age > 24); // [{ id: 2, name: 'mike'}]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### reduceSuccessive
+
+Applies a function against an accumulator and each element in the array (from left to right), returning an array of successively reduced values.
+
+Use `Array.reduce()` to apply the given function to the given array, storing each new result.
+
+```js
+const reduceSuccessive = (arr, fn, acc) =>
+  arr.reduce((res, val, i, arr) => (res.push(fn(res.slice(-1)[0], val, i, arr)), res), [acc]);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+reduceSuccessive([1, 2, 3, 4, 5, 6], (acc, val) => acc + val, 0); // [0, 1, 3, 6, 10, 15, 21]
 ```
 
 </details>
