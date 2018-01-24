@@ -200,6 +200,8 @@ sum:math,array
 sumBy:math,array,function
 sumPower:math
 symmetricDifference:array,math
+symmetricDifferenceBy:array,function
+symmetricDifferenceWith:array,function
 tail:array
 take:array
 takeRight:array
