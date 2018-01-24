@@ -85,14 +85,6 @@ average(1, 2, 3);
 * [`pipeFunctions`](#pipefunctions)
 * [`promisify`](#promisify)
 * [`spreadOver`](#spreadover)
-
-</details>
-
-###  Adaptor
-
-<details>
-<summary>View contents</summary>
-
 * [`unary`](#unary)
 
 </details>
@@ -626,8 +618,6 @@ arrayMax([1, 2, 3]); // 3
 
 <br>[⬆ Back to top](#table-of-contents)
 
----
- ##  Adaptor
 
 ### unary
 
