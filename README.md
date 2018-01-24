@@ -105,6 +105,7 @@ average(1, 2, 3);
 * [`everyNth`](#everynth)
 * [`filterNonUnique`](#filternonunique)
 * [`findLast`](#findlast)
+* [`findLastIndex`](#findlastindex)
 * [`flatten`](#flatten)
 * [`forEachRight`](#foreachright)
 * [`groupBy`](#groupby)
@@ -884,7 +885,7 @@ Returns the last element for which the provided function returns a truthy value.
 Use `Array.filter()` to remove elements for which `fn` returns falsey values, `Array.slice(-1)` to get the last one.
 
 ```js
-const findLast = (arr, fn) => arr.filter(fn).slice(-1);
+const findLast = (arr, fn) => arr.filter(fn).slice(-1)[0];
 ```
 
 <details>
@@ -892,6 +893,33 @@ const findLast = (arr, fn) => arr.filter(fn).slice(-1);
 
 ```js
 findLast([1, 2, 3, 4], n => n % 2 === 1); // 3
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### findLastIndex
+
+Returns the index of the last element for which the provided function returns a truthy value.
+
+Use `Array.map()` to map each element to an array with its index and value.
+Use `Array.filter()` to remove elements for which `fn` returns falsey values, `Array.slice(-1)` to get the last one.
+
+```js
+const findLastIndex = (arr, fn) =>
+  arr
+    .map((val, i) => [i, val])
+    .filter(val => fn(val[1], val[0], arr))
+    .slice(-1)[0][0];
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+findLastIndex([1, 2, 3, 4], n => n % 2 === 1); // 2 (index of the value 3)
 ```
 
 </details>
