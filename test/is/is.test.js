@@ -2,9 +2,9 @@ const test = require('tape');
 const is = require('./is.js');
 
 test('Testing is', (t) => {
-	//For more information on all the methods supported by tape
-	//Please go to https://github.com/substack/tape
-	t.true(typeof is === 'function', 'is is a Function');
+  //For more information on all the methods supported by tape
+  //Please go to https://github.com/substack/tape
+  t.true(typeof is === 'function', 'is is a Function');
   t.true(is(Array, [1]), `Works for arrays with data`);
   t.true(is(Array, []), `Works for empty arrays`);
   t.false(is(Array, {}), `Works for arrays, not objects`);
@@ -21,9 +21,9 @@ test('Testing is', (t) => {
   t.false(is(Boolean, false), `Works for booleans - returns false for primitive`);
   t.true(is(Boolean, new Boolean(false)), `Works for booleans - returns true when using constructor`);
   t.true(is(Function, () => null), `Works for functions`);
-	//t.deepEqual(is(args..), 'Expected');
-	//t.equal(is(args..), 'Expected');
-	//t.false(is(args..), 'Expected');
-	//t.throws(is(args..), 'Expected');
-	t.end();
+  //t.deepEqual(is(args..), 'Expected');
+  //t.equal(is(args..), 'Expected');
+  //t.false(is(args..), 'Expected');
+  //t.throws(is(args..), 'Expected');
+  t.end();
 });
