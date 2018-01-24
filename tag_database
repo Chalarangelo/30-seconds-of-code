@@ -160,6 +160,8 @@ orderBy:object,array
 over:adapter,function
 palindrome:string
 parseCookie:utility,string
+partial:function
+partialRight:function
 partition:array,object,function
 percentile:math
 pick:object,array
