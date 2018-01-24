@@ -1,4 +1,4 @@
-Test log for: Wed Jan 24 2018 17:16:12 GMT+0200 (GTB Standard Time)
+Test log for: Wed Jan 24 2018 17:33:18 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -20,6 +20,8 @@ Test log for: Wed Jan 24 2018 17:16:12 GMT+0200 (GTB Standard Time)
   Testing atob
 
     √ atob is a Function
+    √ atob("Zm9vYmFy") equals "foobar"
+    √ atob("Z") returns ""
 
   Testing average
 
@@ -59,6 +61,7 @@ Test log for: Wed Jan 24 2018 17:16:12 GMT+0200 (GTB Standard Time)
   Testing btoa
 
     √ btoa is a Function
+    √ btoa("foobar") equals "Zm9vYmFy"
 
   Testing byteSize
 
@@ -1454,8 +1457,8 @@ Test log for: Wed Jan 24 2018 17:16:12 GMT+0200 (GTB Standard Time)
     √ zipWith is a Function
 
 
-  total:     618
-  passing:   618
-  duration:  412ms
+  total:     621
+  passing:   621
+  duration:  417ms
 
 
