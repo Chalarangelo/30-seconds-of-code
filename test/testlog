@@ -1,4 +1,4 @@
-Test log for: Wed Jan 24 2018 06:26:20 GMT-0500 (Eastern Standard Time)
+Test log for: Wed Jan 24 2018 06:31:13 GMT-0500 (Eastern Standard Time)
 
 > 30-seconds-of-code@0.0.1 test C:\Users\King David\Desktop\github-repo\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -533,16 +533,8 @@ Test log for: Wed Jan 24 2018 06:26:20 GMT-0500 (Eastern Standard Time)
   Testing invertKeyValues
 
     √ invertKeyValues is a Function
-
-    × Inverts the key-value pairs of an object
-    -------------------------------------------
-      operator: deepEqual
-      expected: |-
-        { 20: 'age', John: 'name' }
-      actual: |-
-        { 20: [ 'age' ], John: [ 'name' ] }
-      stack: |-
-
+    √ invertKeyValues({ a: 1, b: 2, c: 1 }) returns { 1: [ 'a', 'c' ], 2: [ 'b' ] }
+    √ invertKeyValues({ a: 1, b: 2, c: 1 }, value => 'group' + value) returns { group1: [ 'a', 'c' ], group2: [ 'b' ] }
 
   Testing is
 
@@ -1398,18 +1390,8 @@ Test log for: Wed Jan 24 2018 06:26:20 GMT-0500 (Eastern Standard Time)
     √ zipWith is a Function
 
 
-
-  Failed Tests: There was 1 failure
-
-    Testing invertKeyValues
-
-      × Inverts the key-value pairs of an object
+  total:     587
+  passing:   587
+  duration:  520ms
 
 
-  total:     586
-  passing:   585
-  failing:   1
-  duration:  521ms
-
-
-undefined
