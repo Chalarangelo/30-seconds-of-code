@@ -45,6 +45,8 @@ const anagrams = str => {
 const arrayToHtmlList = (arr, listID) =>
   arr.map(item => (document.querySelector('#' + listID).innerHTML += `<li>${item}</li>`));
 
+const ary = (fn, n) => (...args) => fn(...args.slice(0, n));
+
 const atob = str => new Buffer(str, 'base64').toString('binary');
 
 const average = (...nums) => [...nums].reduce((acc, val) => acc + val, 0) / nums.length;
@@ -52,6 +54,16 @@ const average = (...nums) => [...nums].reduce((acc, val) => acc + val, 0) / nums
 const averageBy = (arr, fn) =>
   arr.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val) => acc + val, 0) /
   arr.length;
+
+const bind = (fn, context, ...args) =>
+  function() {
+    return fn.apply(context, args.concat(...arguments));
+  };
+
+const bindKey = (context, fn, ...args) =>
+  function() {
+    return context[fn].apply(context, args.concat(...arguments));
+  };
 
 const bottomVisible = () =>
   document.documentElement.clientHeight + window.scrollY >=
@@ -113,6 +125,8 @@ const colorize = (...args) => ({
 const compact = arr => arr.filter(Boolean);
 
 const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));
+
+const composeRight = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
 
 const copyToClipboard = str => {
   const el = document.createElement('textarea');
@@ -183,6 +197,8 @@ const defaults = (obj, ...defs) => Object.assign({}, obj, ...defs.reverse(), obj
 
 const defer = (fn, ...args) => setTimeout(fn, 1, ...args);
 
+const delay = (fn, wait, ...args) => setTimeout(fn, wait, ...args);
+
 const detectDeviceType = () =>
   /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
     ? 'Mobile'
@@ -191,6 +207,11 @@ const detectDeviceType = () =>
 const difference = (a, b) => {
   const s = new Set(b);
   return a.filter(x => !s.has(x));
+};
+
+const differenceBy = (a, b, fn) => {
+  const s = new Set(b.map(v => fn(v)));
+  return a.filter(x => !s.has(fn(x)));
 };
 
 const differenceWith = (arr, val, comp) => arr.filter(a => val.findIndex(b => comp(a, b)) === -1);
@@ -287,7 +308,13 @@ const filterNonUnique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexO
 
 const findKey = (obj, fn) => Object.keys(obj).find(key => fn(obj[key], key, obj));
 
-const findLast = (arr, fn) => arr.filter(fn).slice(-1);
+const findLast = (arr, fn) => arr.filter(fn).slice(-1)[0];
+
+const findLastIndex = (arr, fn) =>
+  arr
+    .map((val, i) => [i, val])
+    .filter(val => fn(val[1], val[0], arr))
+    .slice(-1)[0][0];
 
 const findLastKey = (obj, fn) =>
   Object.keys(obj)
@@ -492,6 +519,13 @@ const intersection = (a, b) => {
   const s = new Set(b);
   return a.filter(x => s.has(x));
 };
+
+const intersectionBy = (a, b, fn) => {
+  const s = new Set(b.map(x => fn(x)));
+  return a.filter(x => s.has(fn(x)));
+};
+
+const intersectionWith = (a, b, comp) => a.filter(x => b.findIndex(y => comp(x, y)) !== -1);
 
 const invertKeyValues = (obj, fn) =>
   Object.keys(obj).reduce((acc, key) => {
@@ -779,6 +813,10 @@ const parseCookie = str =>
       return acc;
     }, {});
 
+const partial = (fn, ...partials) => (...args) => fn(...partials, ...args);
+
+const partialRight = (fn, ...partials) => (...args) => fn(...args, ...partials);
+
 const partition = (arr, fn) =>
   arr.reduce(
     (acc, val, i, arr) => {
@@ -878,6 +916,9 @@ const readFileLines = filename =>
 
 const redirect = (url, asLink = true) =>
   asLink ? (window.location.href = url) : window.location.replace(url);
+
+const reduceSuccessive = (arr, fn, acc) =>
+  arr.reduce((res, val, i, arr) => (res.push(fn(res.slice(-1)[0], val, i, arr)), res), [acc]);
 
 const reducedFilter = (data, keys, fn) =>
   data.filter(fn).map(el =>
@@ -982,6 +1023,15 @@ const sortedIndex = (arr, n) => {
   return index === -1 ? arr.length : index;
 };
 
+const sortedLastIndex = (arr, n) => {
+  const isDescending = arr[0] > arr[arr.length - 1];
+  const index = arr
+    .map((val, i) => [i, val])
+    .filter(el => (isDescending ? n >= el[1] : n >= el[1]))
+    .slice(-1)[0][0];
+  return index === -1 ? arr.length : index;
+};
+
 const splitLines = str => str.split(/\r?\n/);
 
 const spreadOver = fn => argsArr => fn(...argsArr);
@@ -1011,6 +1061,17 @@ const symmetricDifference = (a, b) => {
   return [...a.filter(x => !sB.has(x)), ...b.filter(x => !sA.has(x))];
 };
 
+const symmetricDifferenceBy = (a, b, fn) => {
+  const sA = new Set(a.map(v => fn(v))),
+    sB = new Set(b.map(v => fn(v)));
+  return [...a.filter(x => !sB.has(fn(x))), ...b.filter(x => !sA.has(fn(x)))];
+};
+
+const symmetricDifferenceWith = (arr, val, comp) => [
+  ...arr.filter(a => val.findIndex(b => comp(a, b)) === -1),
+  ...val.filter(a => arr.findIndex(b => comp(a, b)) === -1)
+];
+
 const tail = arr => (arr.length > 1 ? arr.slice(1) : arr);
 
 const take = (arr, n = 1) => arr.slice(0, n);
@@ -1022,6 +1083,11 @@ const timeTaken = callback => {
   const r = callback();
   console.timeEnd('timeTaken');
   return r;
+};
+
+const times = (n, fn, context = undefined) => {
+  let i = 0;
+  while (fn.call(context, i) !== false && ++i < n) {}
 };
 
 const toCamelCase = str => {
@@ -1081,6 +1147,8 @@ const truncateString = (str, num) =>
 
 const truthCheckCollection = (collection, pre) => collection.every(obj => obj[pre]);
 
+const unary = fn => val => fn(val);
+
 const unescapeHTML = str =>
   str.replace(
     /&amp;|&lt;|&gt;|&#39;|&quot;/g,
@@ -1094,17 +1162,52 @@ const unescapeHTML = str =>
       }[tag] || tag)
   );
 
+const unfold = (fn, seed) => {
+  let result = [],
+    val = [null, seed];
+  while ((val = fn(val[1]))) result.push(val[0]);
+  return result;
+};
+
 const union = (a, b) => Array.from(new Set([...a, ...b]));
+
+const unionBy = (a, b, fn) => {
+  const s = new Set(a.map(v => fn(v)));
+  return Array.from(new Set([...a, ...b.filter(x => !s.has(fn(x)))]));
+};
+
+const unionWith = (a, b, comp) =>
+  Array.from(new Set([...a, ...b.filter(x => a.findIndex(y => comp(x, y)) === -1)]));
 
 const uniqueElements = arr => [...new Set(arr)];
 
 const untildify = str => str.replace(/^~($|\/|\\)/, `${typeof require !== "undefined" && require('os').homedir()}$1`);
+
+const unzip = arr =>
+  arr.reduce(
+    (acc, val) => (val.forEach((v, i) => acc[i].push(v)), acc),
+    Array.from({
+      length: Math.max(...arr.map(x => x.length))
+    }).map(x => [])
+  );
+
+const unzipWith = (arr, fn) =>
+  arr
+    .reduce(
+      (acc, val) => (val.forEach((v, i) => acc[i].push(v)), acc),
+      Array.from({
+        length: Math.max(...arr.map(x => x.length))
+      }).map(x => [])
+    )
+    .map(val => fn(...val));
 
 const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
 
 const without = (arr, ...args) => arr.filter(v => !args.includes(v));
 
 const words = (str, pattern = /[^a-zA-Z-]+/) => str.split(pattern).filter(Boolean);
+
+const xProd = (a, b) => a.reduce((acc, x) => acc.concat(b.map(y => [x, y])), []);
 
 const yesNo = (val, def = false) =>
   /^(y|yes)$/i.test(val) ? true : /^(n|no)$/i.test(val) ? false : def;
@@ -1130,7 +1233,7 @@ const zipWith = (...arrays) => {
   return fn ? result.map(arr => fn(...arr)) : result;
 };
 
-var imports = {JSONToFile,RGBToHex,URLJoin,UUIDGeneratorBrowser,UUIDGeneratorNode,anagrams,arrayToHtmlList,atob,average,averageBy,bottomVisible,btoa,byteSize,call,capitalize,capitalizeEveryWord,castArray,chainAsync,chunk,clampNumber,cloneRegExp,coalesce,coalesceFactory,collectInto,colorize,compact,compose,copyToClipboard,countBy,countOccurrences,createElement,createEventHub,currentURL,curry,decapitalize,deepClone,deepFlatten,defaults,defer,detectDeviceType,difference,differenceWith,digitize,distance,dropElements,dropRight,elementIsVisibleInViewport,elo,equals,escapeHTML,escapeRegExp,everyNth,extendHex,factorial,fibonacci,filterNonUnique,findKey,findLast,findLastKey,flatten,flip,forEachRight,forOwn,forOwnRight,formatDuration,fromCamelCase,functionName,functions,gcd,geometricProgression,get,getDaysDiffBetweenDates,getScrollPosition,getStyle,getType,getURLParameters,groupBy,hammingDistance,hasClass,hasFlags,hashBrowser,hashNode,head,hexToRGB,hide,httpGet,httpPost,httpsRedirect,inRange,indexOfAll,initial,initialize2DArray,initializeArrayWithRange,initializeArrayWithRangeRight,initializeArrayWithValues,intersection,invertKeyValues,is,isAbsoluteURL,isArrayLike,isBoolean,isDivisible,isEmpty,isEven,isFunction,isLowerCase,isNil,isNull,isNumber,isObject,isObjectLike,isPlainObject,isPrime,isPrimitive,isPromiseLike,isSorted,isString,isSymbol,isTravisCI,isUndefined,isUpperCase,isValidJSON,join,last,lcm,longestItem,lowercaseKeys,luhnCheck,mapKeys,mapObject,mapValues,mask,matches,matchesWith,maxBy,maxN,median,memoize,merge,minBy,minN,negate,nthArg,nthElement,objectFromPairs,objectToPairs,observeMutations,off,omit,omitBy,on,onUserInputChange,once,orderBy,over,palindrome,parseCookie,partition,percentile,pick,pickBy,pipeFunctions,pluralize,powerset,prettyBytes,primes,promisify,pull,pullAtIndex,pullAtValue,randomHexColorCode,randomIntArrayInRange,randomIntegerInRange,randomNumberInRange,readFileLines,redirect,reducedFilter,remove,reverseString,round,runAsync,runPromisesInSeries,sample,sampleSize,scrollToTop,sdbm,serializeCookie,setStyle,shallowClone,show,shuffle,similarity,size,sleep,sortCharactersInString,sortedIndex,splitLines,spreadOver,standardDeviation,sum,sumBy,sumPower,symmetricDifference,tail,take,takeRight,timeTaken,toCamelCase,toDecimalMark,toKebabCase,toOrdinalSuffix,toSafeInteger,toSnakeCase,toggleClass,tomorrow,transform,truncateString,truthCheckCollection,unescapeHTML,union,uniqueElements,untildify,validateNumber,without,words,yesNo,zip,zipObject,zipWith,}
+var imports = {JSONToFile,RGBToHex,URLJoin,UUIDGeneratorBrowser,UUIDGeneratorNode,anagrams,arrayToHtmlList,ary,atob,average,averageBy,bind,bindKey,bottomVisible,btoa,byteSize,call,capitalize,capitalizeEveryWord,castArray,chainAsync,chunk,clampNumber,cloneRegExp,coalesce,coalesceFactory,collectInto,colorize,compact,compose,composeRight,copyToClipboard,countBy,countOccurrences,createElement,createEventHub,currentURL,curry,decapitalize,deepClone,deepFlatten,defaults,defer,delay,detectDeviceType,difference,differenceBy,differenceWith,digitize,distance,dropElements,dropRight,elementIsVisibleInViewport,elo,equals,escapeHTML,escapeRegExp,everyNth,extendHex,factorial,fibonacci,filterNonUnique,findKey,findLast,findLastIndex,findLastKey,flatten,flip,forEachRight,forOwn,forOwnRight,formatDuration,fromCamelCase,functionName,functions,gcd,geometricProgression,get,getDaysDiffBetweenDates,getScrollPosition,getStyle,getType,getURLParameters,groupBy,hammingDistance,hasClass,hasFlags,hashBrowser,hashNode,head,hexToRGB,hide,httpGet,httpPost,httpsRedirect,inRange,indexOfAll,initial,initialize2DArray,initializeArrayWithRange,initializeArrayWithRangeRight,initializeArrayWithValues,intersection,intersectionBy,intersectionWith,invertKeyValues,is,isAbsoluteURL,isArrayLike,isBoolean,isDivisible,isEmpty,isEven,isFunction,isLowerCase,isNil,isNull,isNumber,isObject,isObjectLike,isPlainObject,isPrime,isPrimitive,isPromiseLike,isSorted,isString,isSymbol,isTravisCI,isUndefined,isUpperCase,isValidJSON,join,last,lcm,longestItem,lowercaseKeys,luhnCheck,mapKeys,mapObject,mapValues,mask,matches,matchesWith,maxBy,maxN,median,memoize,merge,minBy,minN,negate,nthArg,nthElement,objectFromPairs,objectToPairs,observeMutations,off,omit,omitBy,on,onUserInputChange,once,orderBy,over,palindrome,parseCookie,partial,partialRight,partition,percentile,pick,pickBy,pipeFunctions,pluralize,powerset,prettyBytes,primes,promisify,pull,pullAtIndex,pullAtValue,randomHexColorCode,randomIntArrayInRange,randomIntegerInRange,randomNumberInRange,readFileLines,redirect,reduceSuccessive,reducedFilter,remove,reverseString,round,runAsync,runPromisesInSeries,sample,sampleSize,scrollToTop,sdbm,serializeCookie,setStyle,shallowClone,show,shuffle,similarity,size,sleep,sortCharactersInString,sortedIndex,sortedLastIndex,splitLines,spreadOver,standardDeviation,sum,sumBy,sumPower,symmetricDifference,symmetricDifferenceBy,symmetricDifferenceWith,tail,take,takeRight,timeTaken,times,toCamelCase,toDecimalMark,toKebabCase,toOrdinalSuffix,toSafeInteger,toSnakeCase,toggleClass,tomorrow,transform,truncateString,truthCheckCollection,unary,unescapeHTML,unfold,union,unionBy,unionWith,uniqueElements,untildify,unzip,unzipWith,validateNumber,without,words,xProd,yesNo,zip,zipObject,zipWith,}
 
 return imports;
 
