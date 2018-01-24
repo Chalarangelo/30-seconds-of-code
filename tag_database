@@ -53,6 +53,7 @@ fibonacci:math,array
 filterNonUnique:array
 findKey:object,function
 findLast:array
+findLastIndex:array,function
 findLastKey:object,function
 flatten:array
 flip:adapter,function
