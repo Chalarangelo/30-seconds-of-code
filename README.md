@@ -98,6 +98,7 @@ average(1, 2, 3);
 * [`countOccurrences`](#countoccurrences)
 * [`deepFlatten`](#deepflatten)
 * [`difference`](#difference)
+* [`differenceBy`](#differenceby)
 * [`differenceWith`](#differencewith)
 * [`dropElements`](#dropelements)
 * [`dropRight`](#dropright)
@@ -719,6 +720,32 @@ const difference = (a, b) => {
 
 ```js
 difference([1, 2, 3], [1, 2, 4]); // [3]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### differenceBy
+
+Returns the difference between two arrays, after applying the provided function to each array element of both.
+
+Create a `Set` by applying `fn` to each element in `b`, then use `Array.filter()` in combination with `fn` on `a` to only keep values not contained in the previously created set.
+
+```js
+const differenceBy = (a, b, fn) => {
+  const s = new Set(b.map(v => fn(v)));
+  return a.filter(x => !s.has(fn(x)));
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [1.2]
+differenceBy([{ x: 2 }, { x: 1 }], [{ x: 1 }], v => v.x); // [ { x: 2 } ]
 ```
 
 </details>
