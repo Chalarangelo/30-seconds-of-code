@@ -136,10 +136,14 @@ average(1, 2, 3);
 * [`similarity`](#similarity)
 * [`sortedIndex`](#sortedindex)
 * [`symmetricDifference`](#symmetricdifference)
+* [`symmetricDifferenceBy`](#symmetricdifferenceby)
+* [`symmetricDifferenceWith`](#symmetricdifferencewith)
 * [`tail`](#tail)
 * [`take`](#take)
 * [`takeRight`](#takeright)
 * [`union`](#union)
+* [`unionBy`](#unionby)
+* [`unionWith`](#unionwith)
 * [`uniqueElements`](#uniqueelements)
 * [`without`](#without)
 * [`zip`](#zip)
@@ -1744,6 +1748,61 @@ symmetricDifference([1, 2, 3], [1, 2, 4]); // [3,4]
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### symmetricDifferenceBy
+
+Returns the symmetric difference between two arrays, after applying the provided function to each array element of both.
+
+Create a `Set` by applying `fn` to each array's elements, then use `Array.filter()` on each of them to only keep values not contained in the other.
+
+```js
+const symmetricDifferenceBy = (a, b, fn) => {
+  const sA = new Set(a.map(v => fn(v))),
+    sB = new Set(b.map(v => fn(v)));
+  return [...a.filter(x => !sB.has(fn(x))), ...b.filter(x => !sA.has(fn(x)))];
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+symmetricDifferenceBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [ 1.2, 3.4 ]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### symmetricDifferenceWith
+
+Returns the symmetric difference between two arrays, using a provided function as a comparator.
+
+Use `Array.filter()` and `Array.findIndex()` to find the appropriate values.
+
+```js
+const symmetricDifferenceWith = (arr, val, comp) => [
+  ...arr.filter(a => val.findIndex(b => comp(a, b)) === -1),
+  ...val.filter(a => arr.findIndex(b => comp(a, b)) === -1)
+];
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+symmetricDifferenceWith(
+  [1, 1.2, 1.5, 3, 0],
+  [1.9, 3, 0, 3.9],
+  (a, b) => Math.round(a) === Math.round(b)
+); // [1, 1.2, 3.9]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### tail
 
 Returns all elements in an array except for the first one.
@@ -1828,6 +1887,56 @@ const union = (a, b) => Array.from(new Set([...a, ...b]));
 
 ```js
 union([1, 2, 3], [4, 3, 2]); // [1,2,3,4]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### unionBy
+
+Returns every element that exists in any of the two arrays once, after applying the provided function to each array element of both.
+
+Create a `Set` by applying all `fn` to all values of `a`.
+Create a `Set` from `a` and all elements in `b` whose value, after applying `fn` does not match a value in the previously created set.
+Return the last set converted to an array.
+
+```js
+const unionBy = (a, b, fn) => {
+  const s = new Set(a.map(v => fn(v)));
+  return Array.from(new Set([...a, ...b.filter(x => !s.has(fn(x)))]));
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+unionBy([2.1], [1.2, 2.3], Math.floor); // [2.1, 1.2]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### unionWith
+
+Returns every element that exists in any of the two arrays once, using a provided comparator function.
+
+Create a `Set` with all values of `a` and values in `b` for which the comparator finds no matches in `a`, using `Array.findIndex()`.
+
+```js
+const unionWith = (a, b, comp) =>
+  Array.from(new Set([...a, ...b.filter(x => a.findIndex(y => comp(x, y)) === -1)]));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+unionWith([1, 1.2, 1.5, 3, 0], [1.9, 3, 0, 3.9], (a, b) => Math.round(a) === Math.round(b)); // [1, 1.2, 1.5, 3, 0, 3.9]
 ```
 
 </details>

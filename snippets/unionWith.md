@@ -6,9 +6,7 @@ Create a `Set` with all values of `a` and values in `b` for which the comparator
 
 ```js
 const unionWith = (a, b, comp) =>
-  Array.from(
-    new Set([...a, ...b.filter(x => a.findIndex(y => comp(x, y)) === -1)])
-  );
+  Array.from(new Set([...a, ...b.filter(x => a.findIndex(y => comp(x, y)) === -1)]));
 ```
 
 ```js
