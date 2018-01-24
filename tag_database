@@ -1,5 +1,6 @@
 anagrams:string,recursion
 arrayToHtmlList:browser,array
+ary:adapter,function
 atob:node,string,utility
 average:math,array
 averageBy:math,array,function
