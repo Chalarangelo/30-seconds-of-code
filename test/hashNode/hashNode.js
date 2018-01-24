@@ -12,4 +12,4 @@ crypto
 0
 )
 );
- module.exports = hashNode
+module.exports = hashNode
