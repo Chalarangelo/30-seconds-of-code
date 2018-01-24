@@ -8,4 +8,4 @@ let sum = arr.reduce((acc, val, i) => (i % 2 !== 0 ? acc + val : acc + (val * 2)
 sum += lastDigit;
 return sum % 10 === 0;
 };
- module.exports = luhnCheck
+module.exports = luhnCheck
