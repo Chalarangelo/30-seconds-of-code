@@ -1,2 +1,2 @@
 const isNil = val => val === undefined || val === null;
- module.exports = isNil
+module.exports = isNil

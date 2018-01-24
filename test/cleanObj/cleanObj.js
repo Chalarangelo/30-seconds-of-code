@@ -8,4 +8,4 @@ delete obj[key];
 });
 return obj;
 };
- module.exports = cleanObj
+module.exports = cleanObj

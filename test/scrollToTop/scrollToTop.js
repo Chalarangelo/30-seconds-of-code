@@ -5,4 +5,4 @@ window.requestAnimationFrame(scrollToTop);
 window.scrollTo(0, c - c / 8);
 }
 };
- module.exports = scrollToTop
+module.exports = scrollToTop
