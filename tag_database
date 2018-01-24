@@ -91,6 +91,8 @@ initializeArrayWithRangeRight:array,math
 initializeArrayWithValues:array,math
 inRange:math
 intersection:array,math
+intersectionBy:array,function
+intersectionWith:array,function
 invertKeyValues:object,function
 is:type,array,regexp
 isAbsoluteURL:string,utility,browser,url
