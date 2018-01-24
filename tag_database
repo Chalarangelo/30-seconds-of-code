@@ -230,6 +230,7 @@ truncateString:string
 truthCheckCollection:object,logic,array
 unary:adapter,function
 unescapeHTML:string,browser
+unfold:function,array
 union:array,math
 unionBy:array,function
 unionWith:array,function
