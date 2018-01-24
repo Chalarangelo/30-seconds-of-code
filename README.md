@@ -218,6 +218,7 @@ average(1, 2, 3);
 <summary>View contents</summary>
 
 * [`bind`](#bind)
+* [`bindKey`](#bindkey)
 * [`chainAsync`](#chainasync)
 * [`compose`](#compose)
 * [`composeRight`](#composeright)
@@ -3177,6 +3178,39 @@ function greet(greeting, punctuation) {
 }
 const freddy = { user: 'fred' };
 const freddyBound = bind(greet, freddy);
+console.log(freddyBound('hi', '!')); // 'hi fred!'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### bindKey
+
+Creates a function that invokes the method at a given key of an object, optionally adding any additional supplied parameters to the beginning of the arguments.
+
+Return a `function` that uses `Function.apply()` to bind `context[fn]` to `context`.
+Use `Array.concat()` to prepend any additional supplied parameters to the arguments.
+
+```js
+const bindKey = (context, fn, ...args) =>
+  function() {
+    return context[fn].apply(context, args.concat(...arguments));
+  };
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const freddy = {
+  user: 'fred',
+  greet: function(greeting, punctuation) {
+    return greeting + ' ' + this.user + punctuation;
+  }
+};
+const freddyBound = bindKey(freddy, 'greet');
 console.log(freddyBound('hi', '!')); // 'hi fred!'
 ```
 
