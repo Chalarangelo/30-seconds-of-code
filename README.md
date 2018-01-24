@@ -116,6 +116,8 @@ average(1, 2, 3);
 * [`initializeArrayWithRangeRight`](#initializearraywithrangeright)
 * [`initializeArrayWithValues`](#initializearraywithvalues)
 * [`intersection`](#intersection)
+* [`intersectionBy`](#intersectionby)
+* [`intersectionWith`](#intersectionwith)
 * [`isSorted`](#issorted)
 * [`join`](#join)
 * [`last`](#last)
@@ -146,6 +148,7 @@ average(1, 2, 3);
 * [`unionWith`](#unionwith)
 * [`uniqueElements`](#uniqueelements)
 * [`unzip`](#unzip)
+* [`unzipWith`](#unzipwith-)
 * [`without`](#without)
 * [`zip`](#zip)
 * [`zipObject`](#zipobject)
@@ -1178,6 +1181,53 @@ intersection([1, 2, 3], [4, 3, 2]); // [2,3]
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### intersectionBy
+
+Returns a list of elements that exist in both arrays, after applying the provided function to each array element of both.
+
+Create a `Set` by applying `fn` to all elements in `b`, then use `Array.filter()` on `a` to only keep elements, which produce values contained in `b` when `fn` is applied to them.
+
+```js
+const intersectionBy = (a, b, fn) => {
+  const s = new Set(b.map(x => fn(x)));
+  return a.filter(x => s.has(fn(x)));
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+intersectionBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [2.1]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### intersectionWith
+
+Returns a list of elements that exist in both arrays, using a provided comparator function.
+
+Use `Array.filter()` and `Array.findIndex()` in combination with the provided comparator to determine intersecting values.
+
+```js
+const intersectionWith = (a, b, comp) => a.filter(x => b.findIndex(y => comp(x, y)) !== -1);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+intersectionWith([1, 1.2, 1.5, 3, 0], [1.9, 3, 0, 3.9], (a, b) => Math.round(a) === Math.round(b)); // [1.5, 3, 0]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### isSorted
 
 Returns `1` if the array is sorted in ascending order, `-1` if it is sorted in descending order or `0` if it is not sorted.
@@ -1990,6 +2040,38 @@ const unzip = arr =>
 ```js
 unzip([['a', 1, true], ['b', 2, false]]); //[['a', 'b'], [1, 2], [true, false]]
 unzip([['a', 1, true], ['b', 2]]); //[['a', 'b'], [1, 2], [true]]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### unzipWith ![advanced](/advanced.svg)
+
+Creates an array of elements, ungrouping the elements in an array produced by [zip](#zip) and applying the provided function.
+
+Use `Math.max.apply()` to get the longest subarray in the array, `Array.map()` to make each element an array.
+Use `Array.reduce()` and `Array.forEach()` to map grouped values to individual arrays.
+Use `Array.map()` and the spread operator (`...`) to apply `fn` to each individual group of elements.
+
+```js
+const unzipWith = (arr, fn) =>
+  arr
+    .reduce(
+      (acc, val) => (val.forEach((v, i) => acc[i].push(v)), acc),
+      Array.from({
+        length: Math.max(...arr.map(x => x.length))
+      }).map(x => [])
+    )
+    .map(val => fn(...val));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+unzipWith([[1, 10, 100], [2, 20, 200]], (...args) => args.reduce((acc, v) => acc + v, 0)); // [3, 30, 300]
 ```
 
 </details>

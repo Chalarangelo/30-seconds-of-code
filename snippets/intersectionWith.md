@@ -5,8 +5,7 @@ Returns a list of elements that exist in both arrays, using a provided comparato
 Use `Array.filter()` and `Array.findIndex()` in combination with the provided comparator to determine intersecting values.
 
 ```js
-const intersectionWith = (a, b, comp) =>
-  a.filter(x => b.findIndex(y => comp(x, y)) !== -1);
+const intersectionWith = (a, b, comp) => a.filter(x => b.findIndex(y => comp(x, y)) !== -1);
 ```
 
 ```js
