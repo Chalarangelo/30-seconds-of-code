@@ -5,7 +5,7 @@ Creates a function that invokes `fn` with `partials` appended to the arguments i
 Use the spread operator (`...`) to append `partials` to the list of arguments of `fn`.
 
 ```js
-const partialRight = (fn, ...partials) => (...args) => fn( ...args, ...partials);
+const partialRight = (fn, ...partials) => (...args) => fn(...args, ...partials);
 ```
 
 ```js

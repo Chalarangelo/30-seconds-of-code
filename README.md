@@ -224,10 +224,13 @@ average(1, 2, 3);
 * [`composeRight`](#composeright)
 * [`curry`](#curry)
 * [`defer`](#defer)
+* [`delay`](#delay)
 * [`functionName`](#functionname)
 * [`memoize`](#memoize)
 * [`negate`](#negate)
 * [`once`](#once)
+* [`partial`](#partial)
+* [`partialRight`](#partialright)
 * [`runPromisesInSeries`](#runpromisesinseries)
 * [`sleep`](#sleep)
 * [`times`](#times)
@@ -3360,6 +3363,35 @@ defer(longRunningFunction); // Browser will update the HTML then run the functio
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### defer
+
+Invokes the provided function after `wait` milliseconds.
+
+Use `setTimeout()` to delay execution of `fn`.
+Use the spread (`...`) operator to supply the function with an arbitrary number of arguments.
+
+```js
+const delay = (fn, wait, ...args) => setTimeout(fn, wait, ...args);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+delay(
+  function(text) {
+    console.log(text);
+  },
+  1000,
+  'later'
+); // Logs 'later' after one second.
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### functionName
 
 Logs the name of a function.
@@ -3465,6 +3497,58 @@ const startApp = function(event) {
   console.log(this, event); // document.body, MouseEvent
 };
 document.body.addEventListener('click', once(startApp)); // only runs `startApp` once upon click
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### partial
+
+Creates a function that invokes `fn` with `partials` prepended to the arguments it receives.
+
+Use the spread operator (`...`) to prepend `partials` to the list of arguments of `fn`.
+
+```js
+const partial = (fn, ...partials) => (...args) => fn(...partials, ...args);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+function greet(greeting, name) {
+  return greeting + ' ' + name + '!';
+}
+const greetHello = partial(greet, 'Hello');
+greetHello('John'); // 'Hello John!'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### partialRight
+
+Creates a function that invokes `fn` with `partials` appended to the arguments it receives.
+
+Use the spread operator (`...`) to append `partials` to the list of arguments of `fn`.
+
+```js
+const partialRight = (fn, ...partials) => (...args) => fn(...args, ...partials);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+function greet(greeting, name) {
+  return greeting + ' ' + name + '!';
+}
+const greetJohn = partialRight(greet, 'John');
+greetJohn('Hello'); // 'Hello John!'
 ```
 
 </details>
