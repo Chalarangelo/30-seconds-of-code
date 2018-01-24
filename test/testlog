@@ -1,4 +1,4 @@
-Test log for: Wed Jan 24 2018 16:47:50 GMT+0200 (GTB Standard Time)
+Test log for: Wed Jan 24 2018 17:16:12 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -555,6 +555,22 @@ Test log for: Wed Jan 24 2018 16:47:50 GMT+0200 (GTB Standard Time)
   Testing is
 
     √ is is a Function
+    √ Works for arrays with data
+    √ Works for empty arrays
+    √ Works for arrays, not objects
+    √ Works for objects
+    √ Works for maps
+    √ Works for regular expressions
+    √ Works for sets
+    √ Works for weak maps
+    √ Works for weak sets
+    √ Works for strings - returns false for primitive
+    √ Works for strings - returns true when using constructor
+    √ Works for numbers - returns false for primitive
+    √ Works for numbers - returns true when using constructor
+    √ Works for booleans - returns false for primitive
+    √ Works for booleans - returns true when using constructor
+    √ Works for functions
 
   Testing isAbsoluteURL
 
@@ -1323,10 +1339,13 @@ Test log for: Wed Jan 24 2018 16:47:50 GMT+0200 (GTB Standard Time)
   Testing unzip
 
     √ unzip is a Function
+    √ unzip([['a', 1, true], ['b', 2, false]]) equals [['a', 'b'], [1, 2], [true, false]]
+    √ unzip([['a', 1, true], ['b', 2]]) equals [['a', 'b'], [1, 2], [true]]
 
   Testing unzipWith
 
     √ unzipWith is a Function
+    √ unzipWith([[1, 10, 100], [2, 20, 200]], (...args) => args.reduce((acc, v) => acc + v, 0)) equals [3, 30, 300]
 
   Testing URLJoin
 
@@ -1387,6 +1406,7 @@ Test log for: Wed Jan 24 2018 16:47:50 GMT+0200 (GTB Standard Time)
   Testing xProd
 
     √ xProd is a Function
+    √ xProd([1, 2], ['a', 'b']) returns [[1, 'a'], [1, 'b'], [2, 'a'], [2, 'b']]
 
   Testing yesNo
 
@@ -1434,8 +1454,8 @@ Test log for: Wed Jan 24 2018 16:47:50 GMT+0200 (GTB Standard Time)
     √ zipWith is a Function
 
 
-  total:     598
-  passing:   598
-  duration:  1.3s
+  total:     618
+  passing:   618
+  duration:  412ms
 
 
