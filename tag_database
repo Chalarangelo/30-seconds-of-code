@@ -224,6 +224,7 @@ unionWith:array,function
 uniqueElements:array
 untildify:node,string
 unzip:array
+unzipWith:array,function,advanced
 URLJoin:string,utility,regexp
 UUIDGeneratorBrowser:browser,utility,random
 UUIDGeneratorNode:node,utility,random
