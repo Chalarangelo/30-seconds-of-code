@@ -223,6 +223,7 @@ unionBy:array,function
 unionWith:array,function
 uniqueElements:array
 untildify:node,string
+unzip:array
 URLJoin:string,utility,regexp
 UUIDGeneratorBrowser:browser,utility,random
 UUIDGeneratorNode:node,utility,random
