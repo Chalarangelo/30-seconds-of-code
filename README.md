@@ -224,6 +224,7 @@ average(1, 2, 3);
 * [`composeRight`](#composeright)
 * [`curry`](#curry)
 * [`defer`](#defer)
+* [`delay`](#delay)
 * [`functionName`](#functionname)
 * [`memoize`](#memoize)
 * [`negate`](#negate)
@@ -3353,6 +3354,35 @@ defer(console.log, 'a'), console.log('b'); // logs 'b' then 'a'
 document.querySelector('#someElement').innerHTML = 'Hello';
 longRunningFunction(); //Browser will not update the HTML until this has finished
 defer(longRunningFunction); // Browser will update the HTML then run the function
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### defer
+
+Invokes the provided function after `wait` milliseconds.
+
+Use `setTimeout()` to delay execution of `fn`.
+Use the spread (`...`) operator to supply the function with an arbitrary number of arguments.
+
+```js
+const delay = (fn, wait, ...args) => setTimeout(fn, wait, ...args);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+delay(
+  function(text) {
+    console.log(text);
+  },
+  1000,
+  'later'
+); // Logs 'later' after one second.
 ```
 
 </details>
