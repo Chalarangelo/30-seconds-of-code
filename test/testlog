@@ -1,4 +1,4 @@
-Test log for: Wed Jan 24 2018 17:33:18 GMT+0200 (GTB Standard Time)
+Test log for: Wed Jan 24 2018 17:37:28 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -41,6 +41,8 @@ Test log for: Wed Jan 24 2018 17:33:18 GMT+0200 (GTB Standard Time)
   Testing averageBy
 
     √ averageBy is a Function
+    √ Produces the right result with a function
+    √ Produces the right result with a property name
 
   Testing binarySearch
 
@@ -837,6 +839,8 @@ Test log for: Wed Jan 24 2018 17:33:18 GMT+0200 (GTB Standard Time)
   Testing maxBy
 
     √ maxBy is a Function
+    √ Produces the right result with a function
+    √ Produces the right result with a property name
 
   Testing maxN
 
@@ -861,6 +865,8 @@ Test log for: Wed Jan 24 2018 17:33:18 GMT+0200 (GTB Standard Time)
   Testing minBy
 
     √ minBy is a Function
+    √ Produces the right result with a function
+    √ Produces the right result with a property name
 
   Testing minN
 
@@ -1457,8 +1463,8 @@ Test log for: Wed Jan 24 2018 17:33:18 GMT+0200 (GTB Standard Time)
     √ zipWith is a Function
 
 
-  total:     621
-  passing:   621
-  duration:  417ms
+  total:     627
+  passing:   627
+  duration:  419ms
 
 
