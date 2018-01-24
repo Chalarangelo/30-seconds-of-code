@@ -217,6 +217,7 @@ average(1, 2, 3);
 <details>
 <summary>View contents</summary>
 
+* [`bind`](#bind)
 * [`chainAsync`](#chainasync)
 * [`compose`](#compose)
 * [`composeRight`](#composeright)
@@ -3152,6 +3153,37 @@ tomorrow(); // 2017-12-27 (if current date is 2017-12-26)
 
 ---
  ## 🎛️ Function
+
+### bind
+
+Creates a function that invokes `fn` with a given context, optionally adding any additional supplied parameters to the beginning of the arguments.
+
+Return a `function` that uses `Function.apply()` to apply the given `context` to `fn`.
+Use `Array.concat()` to prepend any additional supplied parameters to the arguments.
+
+```js
+const bind = (fn, context, ...args) =>
+  function() {
+    return fn.apply(context, args.concat(...arguments));
+  };
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+function greet(greeting, punctuation) {
+  return greeting + ' ' + this.user + punctuation;
+}
+const freddy = { user: 'fred' };
+const freddyBound = bind(greet, freddy);
+console.log(freddyBound('hi', '!')); // 'hi fred!'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 
 ### chainAsync
 
