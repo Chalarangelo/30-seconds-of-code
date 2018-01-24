@@ -5,6 +5,7 @@ atob:node,string,utility
 average:math,array
 averageBy:math,array,function
 bind:function,object
+bindKey:function,object
 bottomVisible:browser
 btoa:node,string,utility
 byteSize:string
