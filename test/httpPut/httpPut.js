@@ -6,4 +6,4 @@ request.onload = () => callback(request);
 request.onerror = () => err(request);
 request.send(data);
 };
- module.exports = httpPut
+module.exports = httpPut

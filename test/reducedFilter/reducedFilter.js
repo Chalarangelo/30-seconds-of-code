@@ -5,4 +5,4 @@ acc[key] = el[key];
 return acc;
 }, {})
 );
- module.exports = reducedFilter
+module.exports = reducedFilter

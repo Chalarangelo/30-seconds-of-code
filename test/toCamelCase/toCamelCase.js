@@ -7,4 +7,4 @@ str
 .join('');
 return s.slice(0, 1).toLowerCase() + s.slice(1);
 };
- module.exports = toCamelCase
+module.exports = toCamelCase
