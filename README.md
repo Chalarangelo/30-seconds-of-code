@@ -227,6 +227,7 @@ average(1, 2, 3);
 * [`runPromisesInSeries`](#runpromisesinseries)
 * [`sleep`](#sleep)
 * [`times`](#times)
+* [`unfold`](#unfold)
 
 </details>
 
@@ -3639,6 +3640,35 @@ const times = (n, fn, context = undefined) => {
 var output = '';
 times(5, i => (output += i));
 console.log(output); // 01234
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### unfold
+
+Builds an array, using an iterator function and an initial seed value.
+
+Use a `while` loop and `Array.push()` to call the function repeatedly until it returns `false`.
+The iterator function accepts one argument (`seed`) and must always return an array with two elements ([`value`, `nextSeed`]) or `false` to terminate.
+
+```js
+const unfold = (fn, seed) => {
+  let result = [],
+    val = [null, seed];
+  while ((val = fn(val[1]))) result.push(val[0]);
+  return result;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+var f = n => (n > 50 ? false : [-n, n + 10]);
+unfold(f, 10); // [-10, -20, -30, -40, -50]
 ```
 
 </details>
