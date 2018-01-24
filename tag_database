@@ -219,6 +219,8 @@ truncateString:string
 truthCheckCollection:object,logic,array
 unescapeHTML:string,browser
 union:array,math
+unionBy:array,function
+unionWith:array,function
 uniqueElements:array
 untildify:node,string
 URLJoin:string,utility,regexp
