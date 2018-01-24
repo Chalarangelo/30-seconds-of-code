@@ -146,6 +146,7 @@ average(1, 2, 3);
 * [`unionWith`](#unionwith)
 * [`uniqueElements`](#uniqueelements)
 * [`unzip`](#unzip)
+* [`unzipWith`](#unzipwith-)
 * [`without`](#without)
 * [`zip`](#zip)
 * [`zipObject`](#zipobject)
@@ -1990,6 +1991,38 @@ const unzip = arr =>
 ```js
 unzip([['a', 1, true], ['b', 2, false]]); //[['a', 'b'], [1, 2], [true, false]]
 unzip([['a', 1, true], ['b', 2]]); //[['a', 'b'], [1, 2], [true]]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### unzipWith ![advanced](/advanced.svg)
+
+Creates an array of elements, ungrouping the elements in an array produced by [zip](#zip) and applying the provided function.
+
+Use `Math.max.apply()` to get the longest subarray in the array, `Array.map()` to make each element an array.
+Use `Array.reduce()` and `Array.forEach()` to map grouped values to individual arrays.
+Use `Array.map()` and the spread operator (`...`) to apply `fn` to each individual group of elements.
+
+```js
+const unzipWith = (arr, fn) =>
+  arr
+    .reduce(
+      (acc, val) => (val.forEach((v, i) => acc[i].push(v)), acc),
+      Array.from({
+        length: Math.max(...arr.map(x => x.length))
+      }).map(x => [])
+    )
+    .map(val => fn(...val));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+unzipWith([[1, 10, 100], [2, 20, 200]], (...args) => args.reduce((acc, v) => acc + v, 0)); // [3, 30, 300]
 ```
 
 </details>
