@@ -77,6 +77,7 @@ average(1, 2, 3);
 <details>
 <summary>View contents</summary>
 
+* [`ary`](#ary)
 * [`call`](#call)
 * [`collectInto`](#collectinto)
 * [`flip`](#flip)
@@ -227,6 +228,7 @@ average(1, 2, 3);
 * [`once`](#once)
 * [`runPromisesInSeries`](#runpromisesinseries)
 * [`sleep`](#sleep)
+* [`times`](#times)
 
 </details>
 
@@ -412,6 +414,29 @@ average(1, 2, 3);
 
 ---
  ## 🔌 Adapter
+
+### ary
+
+Creates a function that accepts up to `n` arguments, ignoring any additional arguments.
+
+Call the provided function, `fn`, with up to `n` arguments, using `Array.slice(0,n)` and the spread operator (`...`).
+
+```js
+const ary = (fn, n) => (...args) => fn(...args.slice(0, n));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const firstTwoMax = ary(Math.max, 2);
+[[2, 6, 'a'], [8, 4, 6], [10]].map(x => firstTwoMax(...x)); // [6, 8, 10]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 
 ### call
 
@@ -3423,6 +3448,34 @@ async function sleepyWork() {
   await sleep(1000);
   console.log('I woke up after 1 second.');
 }
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### times
+
+Iterates over a callback `n` times
+
+Use `Function.call()` to call `fn` `n` times or until it returns `false`.
+Omit the last argument, `context`, to use an `undefined` object (or the global object in non-strict mode).
+
+```js
+const times = (n, fn, context = undefined) => {
+  let i = 0;
+  while (fn.call(context, i) !== false && ++i < n) {}
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+var output = '';
+times(5, i => (output += i));
+console.log(output); // 01234
 ```
 
 </details>

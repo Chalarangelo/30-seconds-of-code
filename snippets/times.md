@@ -9,11 +9,11 @@ Omit the last argument, `context`, to use an `undefined` object (or the global o
 const times = (n, fn, context = undefined) => {
   let i = 0;
   while (fn.call(context, i) !== false && ++i < n) {}
-}
+};
 ```
 
 ```js
 var output = '';
-times(5, i => output += i);
+times(5, i => (output += i));
 console.log(output); // 01234
 ```
