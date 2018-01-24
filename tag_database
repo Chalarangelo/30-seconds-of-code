@@ -35,6 +35,7 @@ defaults:object
 defer:function
 detectDeviceType:browser
 difference:array,math
+differenceBy:array,function
 differenceWith:array,function
 digitize:math,array
 distance:math
