@@ -162,6 +162,7 @@ average(1, 2, 3);
 * [`unzip`](#unzip)
 * [`unzipWith`](#unzipwith-)
 * [`without`](#without)
+* [`xProd`](#xprod)
 * [`zip`](#zip)
 * [`zipObject`](#zipobject)
 * [`zipWith`](#zipwith-)
@@ -2219,6 +2220,28 @@ const without = (arr, ...args) => arr.filter(v => !args.includes(v));
 
 ```js
 without([2, 1, 2, 3], 1, 2); // [3]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### xProd
+
+Creates a new array out of the two supplied by creating each possible pair from the arrays.
+
+Use `Array.map()` to produce every possible pair from the elements of the two arrays.
+
+```js
+const xProd = (a, b) => a.map(x => b.map(y => [x, y]));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+xProd([1, 2], ['a', 'b']); // [[1, 'a'], [1, 'b'], [2, 'a'], [2, 'b']]
 ```
 
 </details>
