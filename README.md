@@ -116,6 +116,8 @@ average(1, 2, 3);
 * [`initializeArrayWithRangeRight`](#initializearraywithrangeright)
 * [`initializeArrayWithValues`](#initializearraywithvalues)
 * [`intersection`](#intersection)
+* [`intersectionBy`](#intersectionby)
+* [`intersectionWith`](#intersectionwith)
 * [`isSorted`](#issorted)
 * [`join`](#join)
 * [`last`](#last)
@@ -1172,6 +1174,53 @@ const intersection = (a, b) => {
 
 ```js
 intersection([1, 2, 3], [4, 3, 2]); // [2,3]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### intersectionBy
+
+Returns a list of elements that exist in both arrays, after applying the provided function to each array element of both.
+
+Create a `Set` by applying `fn` to all elements in `b`, then use `Array.filter()` on `a` to only keep elements, which produce values contained in `b` when `fn` is applied to them.
+
+```js
+const intersectionBy = (a, b, fn) => {
+  const s = new Set(b.map(x => fn(x)));
+  return a.filter(x => s.has(fn(x)));
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+intersectionBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [2.1]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### intersectionWith
+
+Returns a list of elements that exist in both arrays, using a provided comparator function.
+
+Use `Array.filter()` and `Array.findIndex()` in combination with the provided comparator to determine intersecting values.
+
+```js
+const intersectionWith = (a, b, comp) => a.filter(x => b.findIndex(y => comp(x, y)) !== -1);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+intersectionWith([1, 1.2, 1.5, 3, 0], [1.9, 3, 0, 3.9], (a, b) => Math.round(a) === Math.round(b)); // [1.5, 3, 0]
 ```
 
 </details>
