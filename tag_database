@@ -36,6 +36,7 @@ deepClone:object,recursion
 deepFlatten:array,recursion
 defaults:object
 defer:function
+delay:function
 detectDeviceType:browser
 difference:array,math
 differenceBy:array,function
