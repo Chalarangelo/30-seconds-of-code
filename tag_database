@@ -221,6 +221,7 @@ toSnakeCase:string,regexp
 transform:object,array
 truncateString:string
 truthCheckCollection:object,logic,array
+unary:adaptor,function
 unescapeHTML:string,browser
 union:array,math
 unionBy:array,function
