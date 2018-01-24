@@ -209,6 +209,7 @@ symmetricDifferenceWith:array,function
 tail:array
 take:array
 takeRight:array
+times:function
 timeTaken:utility
 toCamelCase:string,regexp
 toDecimalMark:utility,math
