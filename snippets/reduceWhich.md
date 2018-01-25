@@ -21,5 +21,5 @@ reduceWhich([1, 3, 2], function (a, b) {return b - a;}); // 3
 reduceWhich([{name: 'Tom', age: 12}, {name: 'Jack', age: 18}, {name: 'Lucy', age: 9}], function(a, b){return a.age - b.age;}) // {name: "Lucy", age: 9}
 
 // get maximum value from object array by a given key map to value
-reduceWhich([{name: 'Tom', age: 12}, {name: 'Jack', age: 18}, {name: 'Lucy', age: 9}], function(a, b){return a.age - b.age;}) // {name: "Jack", age: 18}
+reduceWhich([{name: 'Tom', age: 12}, {name: 'Jack', age: 18}, {name: 'Lucy', age: 9}], function(a, b){return b.age - a.age;}) // {name: "Jack", age: 18}
 ```
