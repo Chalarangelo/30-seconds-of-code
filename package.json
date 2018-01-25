@@ -44,5 +44,8 @@
   "bugs": {
     "url": "https://github.com/Chalarangelo/30-seconds-of-code/issues"
   },
-  "homepage": "https://github.com/Chalarangelo/30-seconds-of-code#readme"
+  "homepage": "https://github.com/Chalarangelo/30-seconds-of-code#readme",
+  "dependencies": {
+    "jsdom": "^11.6.1"
+  }
 }
