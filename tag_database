@@ -183,6 +183,7 @@ readFileLines:node,array,string
 redirect:browser,url
 reducedFilter:array
 reduceSuccessive:array,function
+reduceWhich:uncategorized
 remove:array
 reverseString:string,array
 RGBToHex:utility
