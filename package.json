@@ -4,17 +4,18 @@
     "chalk": "^2.3.0",
     "fs-extra": "^4.0.2",
     "html-minifier": "^3.5.7",
+    "jsdom": "^11.6.1",
     "markdown-it": "^8.4.0",
+    "mini.css": "^2.3.7",
     "node-sass": "^4.7.2",
     "prettier": "^1.9.2",
+    "prismjs": "^1.9.0",
     "rollup": "^0.53.2",
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-babel-minify": "^3.1.2",
     "semistandard": "^11.0.0",
-    "tape": "^4.8.0",
     "tap-spec": "^4.1.1",
-    "mini.css": "^2.3.7",
-    "prismjs": "^1.9.0"
+    "tape": "^4.8.0"
   },
   "name": "30-seconds-of-code",
   "description": "A collection of useful JavaScript snippets.",
@@ -45,7 +46,5 @@
     "url": "https://github.com/Chalarangelo/30-seconds-of-code/issues"
   },
   "homepage": "https://github.com/Chalarangelo/30-seconds-of-code#readme",
-  "dependencies": {
-    "jsdom": "^11.6.1"
-  }
+  "dependencies": {}
 }
