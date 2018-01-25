@@ -1,4 +1,4 @@
-Test log for: Wed Jan 24 2018 20:13:12 GMT+0000 (UTC)
+Test log for: Thu Jan 25 2018 20:12:57 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.1 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1087,6 +1087,10 @@ Test log for: Wed Jan 24 2018 20:13:12 GMT+0000 (UTC)
 
     ✔ reduceSuccessive is a Function
 
+  Testing reduceWhich
+
+    ✔ reduceWhich is a Function
+
   Testing reducedFilter
 
     ✔ reducedFilter is a Function
@@ -1474,8 +1478,8 @@ Test log for: Wed Jan 24 2018 20:13:12 GMT+0000 (UTC)
     ✔ zipWith is a Function
 
 
-  total:     638
-  passing:   638
-  duration:  374ms
+  total:     639
+  passing:   639
+  duration:  487ms
 
 
