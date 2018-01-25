@@ -9,9 +9,9 @@ test('Testing hasClass', (t) => {
 	t.true(typeof hasClass === 'function', 'hasClass is a Function');
 	const className = 'container'
 	const dom = new JSDOM(`
-	<p class="container">Some text</p>
+	<p class="${className}">Some text</p>
 	`);
-	t.true(hasClass(dom.window.document.querySelector('p'), 'container'), 'element has the specified class');
+	t.true(hasClass(dom.window.document.querySelector('p'), className), 'element has the specified class');
 	//t.deepEqual(hasClass(args..), 'Expected');
 	//t.equal(hasClass(args..), 'Expected');
 	//t.false(hasClass(args..), 'Expected');
