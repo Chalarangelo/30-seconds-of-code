@@ -135,6 +135,7 @@ average(1, 2, 3);
 * [`pullAtValue`](#pullatvalue)
 * [`reducedFilter`](#reducedfilter)
 * [`reduceSuccessive`](#reducesuccessive)
+* [`reduceWhich`](#reducewhich)
 * [`remove`](#remove)
 * [`sample`](#sample)
 * [`sampleSize`](#samplesize)
@@ -409,15 +410,6 @@ average(1, 2, 3);
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`validateNumber`](#validatenumber)
 * [`yesNo`](#yesno)
-
-</details>
-
-### _Uncategorized_
-
-<details>
-<summary>View contents</summary>
-
-* [`reduceWhich`](#reducewhich)
 
 </details>
 
@@ -1719,6 +1711,35 @@ const reduceSuccessive = (arr, fn, acc) =>
 
 ```js
 reduceSuccessive([1, 2, 3, 4, 5, 6], (acc, val) => acc + val, 0); // [0, 1, 3, 6, 10, 15, 21]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### reduceWhich
+
+Returns the minimum/maximum value of an array, after applying the provided function to set comparing rule.
+
+Use `Array.reduce()` in combination with the `comparator` function to get the appropriate element in the array.
+You can omit the second parameter, `comparator`, to use the default one that returns the minimum element in the array.
+
+```js
+const reduceWhich = (arr, comparator = (a, b) => a - b) =>
+  arr.reduce((a, b) => (comparator(a, b) >= 0 ? b : a));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+reduceWhich([1, 3, 2]); // 1
+reduceWhich([1, 3, 2], (a, b) => b - a); // 3
+reduceWhich(
+  [{ name: 'Tom', age: 12 }, { name: 'Jack', age: 18 }, { name: 'Lucy', age: 9 }],
+  (a, b) => a.age - b.age
+); // {name: "Lucy", age: 9}
 ```
 
 </details>
@@ -7335,32 +7356,6 @@ yesNo('Foo', true); // true
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
-
----
- ## _Uncategorized_
-
-### reduceWhich
-
-Returns the minimum/maximum value of an array, after applying the provided function to set comparing rule.
-
-Use `Array.reduce()` in combination with the `comparator` function to get the appropriate element in the array.
-You can omit the second parameter, `comparator`, to use the default one that returns the minimum element in the array.
-
-```js
-const reduceWhich = (arr, comparator = (a, b) => a - b) =>
-  arr.reduce((a, b) => (comparator(a, b) >= 0 ? b : a));
-```
-
-```js
-reduceWhich([1, 3, 2]); // 1
-reduceWhich([1, 3, 2], (a, b) => b - a); // 3
-reduceWhich(
-  [{ name: 'Tom', age: 12 }, { name: 'Jack', age: 18 }, { name: 'Lucy', age: 9 }],
-  (a, b) => a.age - b.age
-); // {name: "Lucy", age: 9}
-```
-
-<br>[⬆ back to top](#table-of-contents)
 
 
 ## Collaborators
