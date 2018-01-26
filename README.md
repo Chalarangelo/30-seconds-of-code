@@ -151,6 +151,8 @@ average(1, 2, 3);
 * [`tail`](#tail)
 * [`take`](#take)
 * [`takeRight`](#takeright)
+* [`takeRightWhile`](#takerightwhile)
+* [`takeWhile`](#takewhile)
 * [`union`](#union)
 * [`unionBy`](#unionby)
 * [`unionWith`](#unionwith)
@@ -2137,6 +2139,59 @@ const takeRight = (arr, n = 1) => arr.slice(arr.length - n, arr.length);
 ```js
 takeRight([1, 2, 3], 2); // [ 2, 3 ]
 takeRight([1, 2, 3]); // [3]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### takeRightWhile
+
+Removes elements from the end of an array until the passed function returns `true`. Returns the removed elements.
+
+Loop through the array, using a `for...of` loop over `Array.keys()` until the returned value from the function is `true`.
+Return the removed elements, using `Array.reverse()` and `Array.slice()`.
+
+```js
+const takeRightWhile = (arr, func) => {
+  for (let i of arr.reverse().keys())
+    if (func(arr[i])) return arr.reverse().slice(arr.length - i, arr.length);
+  return arr;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+takeRightWhile([1, 2, 3, 4], n => n < 3); // [3, 4]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### takeWhile
+
+Removes elements in an array until the passed function returns `true`. Returns the removed elements.
+
+Loop through the array, using a `for...of` loop over `Array.keys()` until the returned value from the function is `true`.
+Return the removed elements, using `Array.slice()`.
+
+```js
+const takeWhile = (arr, func) => {
+  for (let i of arr.keys()) if (func(arr[i])) return arr.slice(0, i);
+  return arr;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+takeWhile([1, 2, 3, 4], n => n >= 3); // [1, 2]
 ```
 
 </details>
