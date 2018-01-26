@@ -427,7 +427,7 @@ average(1, 2, 3);
 <details>
 <summary>View contents</summary>
 
-* [`stripHTMLtags`](#striphtmltags)
+* [`stripHTMLTags`](#striphtmltags)
 
 </details>
 
