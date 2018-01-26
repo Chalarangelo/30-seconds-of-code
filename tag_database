@@ -219,6 +219,8 @@ symmetricDifferenceWith:array,function
 tail:array
 take:array
 takeRight:array
+takeRightWhile:array,function
+takeWhile:array,function
 times:function
 timeTaken:utility
 toCamelCase:string,regexp
