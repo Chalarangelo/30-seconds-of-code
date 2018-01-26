@@ -60,6 +60,14 @@ const bind = (fn, context, ...args) =>
     return fn.apply(context, args.concat(...arguments));
   };
 
+const bindAll = (obj, ...fns) =>
+  fns.forEach(
+    fn =>
+      (obj[fn] = function() {
+        return fn.apply(obj);
+      })
+  );
+
 const bindKey = (context, fn, ...args) =>
   function() {
     return context[fn].apply(context, args.concat(...arguments));
@@ -220,12 +228,19 @@ const digitize = n => [...`${n}`].map(i => parseInt(i));
 
 const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
 
+const drop = (arr, n = 1) => arr.slice(n);
+
+const dropRight = (arr, n = 1) => arr.slice(0, -n);
+
+const dropRightWhile = (arr, func) => {
+  while (arr.length > 0 && !func(arr[arr.length - 1])) arr = arr.slice(0, -1);
+  return arr;
+};
+
 const dropWhile = (arr, func) => {
   while (arr.length > 0 && !func(arr[0])) arr = arr.slice(1);
   return arr;
 };
-
-const dropRight = (arr, n = 1) => arr.slice(0, -n);
 
 const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
   const { top, left, bottom, right } = el.getBoundingClientRect();
@@ -403,9 +418,10 @@ const getType = v =>
   v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name.toLowerCase();
 
 const getURLParameters = url =>
-  url
-    .match(/([^?=&]+)(=([^&]*))/g)
-    .reduce((a, v) => (a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1), a), {});
+  (url.match(/([^?=&]+)(=([^&]*))/g) || []).reduce(
+    (a, v) => (a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1), a),
+    {}
+  );
 
 const groupBy = (arr, fn) =>
   arr.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val, i) => {
@@ -895,6 +911,16 @@ const pullAtValue = (arr, pullArr) => {
   return removed;
 };
 
+const pullBy = (arr, ...args) => {
+  const length = args.length;
+  let fn = length > 1 ? args[length - 1] : undefined;
+  fn = typeof fn == 'function' ? (args.pop(), fn) : undefined;
+  let argState = (Array.isArray(args[0]) ? args[0] : args).map(val => fn(val));
+  let pulled = arr.filter((v, i) => !argState.includes(fn(v)));
+  arr.length = 0;
+  pulled.forEach(v => arr.push(v));
+};
+
 const randomHexColorCode = () => {
   let n = ((Math.random() * 0xfffff) | 0).toString(16);
   return '#' + (n.length !== 6 ? ((Math.random() * 0xf) | 0).toString(16) + n : n);
@@ -938,6 +964,8 @@ const remove = (arr, func) =>
         return acc.concat(val);
       }, [])
     : [];
+
+const removeNonASCII = str => str.replace(/[^\x20-\x7E]/g, '');
 
 const reverseString = str => [...str].reverse().join('');
 
@@ -1026,13 +1054,30 @@ const sortedIndex = (arr, n) => {
   return index === -1 ? arr.length : index;
 };
 
+const sortedIndexBy = (arr, n, fn) => {
+  const isDescending = fn(arr[0]) > fn(arr[arr.length - 1]);
+  const val = fn(n);
+  const index = arr.findIndex(el => (isDescending ? val >= fn(el) : val <= fn(el)));
+  return index === -1 ? arr.length : index;
+};
+
 const sortedLastIndex = (arr, n) => {
   const isDescending = arr[0] > arr[arr.length - 1];
   const index = arr
     .map((val, i) => [i, val])
-    .filter(el => (isDescending ? n >= el[1] : n >= el[1]))
-    .slice(-1)[0][0];
-  return index === -1 ? arr.length : index;
+    .reverse()
+    .findIndex(el => (isDescending ? n <= el[1] : n >= el[1]));
+  return index === -1 ? 0 : arr.length - index - 1;
+};
+
+const sortedLastIndexBy = (arr, n, fn) => {
+  const isDescending = fn(arr[0]) > fn(arr[arr.length - 1]);
+  const val = fn(n);
+  const index = arr
+    .map((val, i) => [i, fn(val)])
+    .reverse()
+    .findIndex(el => (isDescending ? val <= el[1] : val >= el[1]));
+  return index === -1 ? 0 : arr.length - index;
 };
 
 const splitLines = str => str.split(/\r?\n/);
@@ -1046,6 +1091,8 @@ const standardDeviation = (arr, usePopulation = false) => {
       (arr.length - (usePopulation ? 0 : 1))
   );
 };
+
+const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');
 
 const sum = (...arr) => [...arr].reduce((acc, val) => acc + val, 0);
 
@@ -1080,6 +1127,17 @@ const tail = arr => (arr.length > 1 ? arr.slice(1) : arr);
 const take = (arr, n = 1) => arr.slice(0, n);
 
 const takeRight = (arr, n = 1) => arr.slice(arr.length - n, arr.length);
+
+const takeRightWhile = (arr, func) => {
+  for (let i of arr.reverse().keys())
+    if (func(arr[i])) return arr.reverse().slice(arr.length - i, arr.length);
+  return arr;
+};
+
+const takeWhile = (arr, func) => {
+  for (let i of arr.keys()) if (func(arr[i])) return arr.slice(0, i);
+  return arr;
+};
 
 const timeTaken = callback => {
   console.time('timeTaken');
@@ -1236,7 +1294,7 @@ const zipWith = (...arrays) => {
   return fn ? result.map(arr => fn(...arr)) : result;
 };
 
-var imports = {JSONToFile,RGBToHex,URLJoin,UUIDGeneratorBrowser,UUIDGeneratorNode,anagrams,arrayToHtmlList,ary,atob,average,averageBy,bind,bindKey,bottomVisible,btoa,byteSize,call,capitalize,capitalizeEveryWord,castArray,chainAsync,chunk,clampNumber,cloneRegExp,coalesce,coalesceFactory,collectInto,colorize,compact,compose,composeRight,copyToClipboard,countBy,countOccurrences,createElement,createEventHub,currentURL,curry,decapitalize,deepClone,deepFlatten,defaults,defer,delay,detectDeviceType,difference,differenceBy,differenceWith,digitize,distance,dropWhile,dropRight,elementIsVisibleInViewport,elo,equals,escapeHTML,escapeRegExp,everyNth,extendHex,factorial,fibonacci,filterNonUnique,findKey,findLast,findLastIndex,findLastKey,flatten,flip,forEachRight,forOwn,forOwnRight,formatDuration,fromCamelCase,functionName,functions,gcd,geometricProgression,get,getDaysDiffBetweenDates,getScrollPosition,getStyle,getType,getURLParameters,groupBy,hammingDistance,hasClass,hasFlags,hashBrowser,hashNode,head,hexToRGB,hide,httpGet,httpPost,httpsRedirect,inRange,indexOfAll,initial,initialize2DArray,initializeArrayWithRange,initializeArrayWithRangeRight,initializeArrayWithValues,intersection,intersectionBy,intersectionWith,invertKeyValues,is,isAbsoluteURL,isArrayLike,isBoolean,isDivisible,isEmpty,isEven,isFunction,isLowerCase,isNil,isNull,isNumber,isObject,isObjectLike,isPlainObject,isPrime,isPrimitive,isPromiseLike,isSorted,isString,isSymbol,isTravisCI,isUndefined,isUpperCase,isValidJSON,join,last,lcm,longestItem,lowercaseKeys,luhnCheck,mapKeys,mapObject,mapValues,mask,matches,matchesWith,maxBy,maxN,median,memoize,merge,minBy,minN,negate,nthArg,nthElement,objectFromPairs,objectToPairs,observeMutations,off,omit,omitBy,on,onUserInputChange,once,orderBy,over,palindrome,parseCookie,partial,partialRight,partition,percentile,pick,pickBy,pipeFunctions,pluralize,powerset,prettyBytes,primes,promisify,pull,pullAtIndex,pullAtValue,randomHexColorCode,randomIntArrayInRange,randomIntegerInRange,randomNumberInRange,readFileLines,redirect,reduceSuccessive,reduceWhich,reducedFilter,remove,reverseString,round,runAsync,runPromisesInSeries,sample,sampleSize,scrollToTop,sdbm,serializeCookie,setStyle,shallowClone,show,shuffle,similarity,size,sleep,sortCharactersInString,sortedIndex,sortedLastIndex,splitLines,spreadOver,standardDeviation,sum,sumBy,sumPower,symmetricDifference,symmetricDifferenceBy,symmetricDifferenceWith,tail,take,takeRight,timeTaken,times,toCamelCase,toDecimalMark,toKebabCase,toOrdinalSuffix,toSafeInteger,toSnakeCase,toggleClass,tomorrow,transform,truncateString,truthCheckCollection,unary,unescapeHTML,unfold,union,unionBy,unionWith,uniqueElements,untildify,unzip,unzipWith,validateNumber,without,words,xProd,yesNo,zip,zipObject,zipWith,}
+var imports = {JSONToFile,RGBToHex,URLJoin,UUIDGeneratorBrowser,UUIDGeneratorNode,anagrams,arrayToHtmlList,ary,atob,average,averageBy,bind,bindAll,bindKey,bottomVisible,btoa,byteSize,call,capitalize,capitalizeEveryWord,castArray,chainAsync,chunk,clampNumber,cloneRegExp,coalesce,coalesceFactory,collectInto,colorize,compact,compose,composeRight,copyToClipboard,countBy,countOccurrences,createElement,createEventHub,currentURL,curry,decapitalize,deepClone,deepFlatten,defaults,defer,delay,detectDeviceType,difference,differenceBy,differenceWith,digitize,distance,drop,dropRight,dropRightWhile,dropWhile,elementIsVisibleInViewport,elo,equals,escapeHTML,escapeRegExp,everyNth,extendHex,factorial,fibonacci,filterNonUnique,findKey,findLast,findLastIndex,findLastKey,flatten,flip,forEachRight,forOwn,forOwnRight,formatDuration,fromCamelCase,functionName,functions,gcd,geometricProgression,get,getDaysDiffBetweenDates,getScrollPosition,getStyle,getType,getURLParameters,groupBy,hammingDistance,hasClass,hasFlags,hashBrowser,hashNode,head,hexToRGB,hide,httpGet,httpPost,httpsRedirect,inRange,indexOfAll,initial,initialize2DArray,initializeArrayWithRange,initializeArrayWithRangeRight,initializeArrayWithValues,intersection,intersectionBy,intersectionWith,invertKeyValues,is,isAbsoluteURL,isArrayLike,isBoolean,isDivisible,isEmpty,isEven,isFunction,isLowerCase,isNil,isNull,isNumber,isObject,isObjectLike,isPlainObject,isPrime,isPrimitive,isPromiseLike,isSorted,isString,isSymbol,isTravisCI,isUndefined,isUpperCase,isValidJSON,join,last,lcm,longestItem,lowercaseKeys,luhnCheck,mapKeys,mapObject,mapValues,mask,matches,matchesWith,maxBy,maxN,median,memoize,merge,minBy,minN,negate,nthArg,nthElement,objectFromPairs,objectToPairs,observeMutations,off,omit,omitBy,on,onUserInputChange,once,orderBy,over,palindrome,parseCookie,partial,partialRight,partition,percentile,pick,pickBy,pipeFunctions,pluralize,powerset,prettyBytes,primes,promisify,pull,pullAtIndex,pullAtValue,pullBy,randomHexColorCode,randomIntArrayInRange,randomIntegerInRange,randomNumberInRange,readFileLines,redirect,reduceSuccessive,reduceWhich,reducedFilter,remove,removeNonASCII,reverseString,round,runAsync,runPromisesInSeries,sample,sampleSize,scrollToTop,sdbm,serializeCookie,setStyle,shallowClone,show,shuffle,similarity,size,sleep,sortCharactersInString,sortedIndex,sortedIndexBy,sortedLastIndex,sortedLastIndexBy,splitLines,spreadOver,standardDeviation,stripHTMLTags,sum,sumBy,sumPower,symmetricDifference,symmetricDifferenceBy,symmetricDifferenceWith,tail,take,takeRight,takeRightWhile,takeWhile,timeTaken,times,toCamelCase,toDecimalMark,toKebabCase,toOrdinalSuffix,toSafeInteger,toSnakeCase,toggleClass,tomorrow,transform,truncateString,truthCheckCollection,unary,unescapeHTML,unfold,union,unionBy,unionWith,uniqueElements,untildify,unzip,unzipWith,validateNumber,without,words,xProd,yesNo,zip,zipObject,zipWith,}
 
 return imports;
 

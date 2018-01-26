@@ -93,6 +93,18 @@ var bind = function bind(fn, context) {
   };
 };
 
+var bindAll = function bindAll(obj) {
+  for (var _len = arguments.length, fns = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    fns[_key - 1] = arguments[_key];
+  }
+
+  return fns.forEach(function (fn) {
+    return obj[fn] = function () {
+      return fn.apply(obj);
+    };
+  });
+};
+
 var bindKey = function bindKey(context, fn) {
   for (var _len = arguments.length, args = Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
     args[_key - 2] = arguments[_key];
@@ -421,15 +433,26 @@ var distance = function distance(x0, y0, x1, y1) {
   return Math.hypot(x1 - x0, y1 - y0);
 };
 
-var dropWhile = function dropWhile(arr, func) {
-  while (arr.length > 0 && !func(arr[0])) {
-    arr = arr.slice(1);
-  }return arr;
+var drop = function drop(arr) {
+  var n = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+  return arr.slice(n);
 };
 
 var dropRight = function dropRight(arr) {
   var n = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
   return arr.slice(0, -n);
+};
+
+var dropRightWhile = function dropRightWhile(arr, func) {
+  while (arr.length > 0 && !func(arr[arr.length - 1])) {
+    arr = arr.slice(0, -1);
+  }return arr;
+};
+
+var dropWhile = function dropWhile(arr, func) {
+  while (arr.length > 0 && !func(arr[0])) {
+    arr = arr.slice(1);
+  }return arr;
 };
 
 var elementIsVisibleInViewport = function elementIsVisibleInViewport(el) {
@@ -699,7 +722,7 @@ var getType = function getType(v) {
 };
 
 var getURLParameters = function getURLParameters(url) {
-  return url.match(/([^?=&]+)(=([^&]*))/g).reduce(function (a, v) {
+  return (url.match(/([^?=&]+)(=([^&]*))/g) || []).reduce(function (a, v) {
     return a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1), a;
   }, {});
 };
@@ -1542,6 +1565,26 @@ var pullAtValue = function pullAtValue(arr, pullArr) {
   return removed;
 };
 
+var pullBy = function pullBy(arr) {
+  for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    args[_key - 1] = arguments[_key];
+  }
+
+  var length = args.length;
+  var fn = length > 1 ? args[length - 1] : undefined;
+  fn = typeof fn == 'function' ? (args.pop(), fn) : undefined;
+  var argState = (Array.isArray(args[0]) ? args[0] : args).map(function (val) {
+    return fn(val);
+  });
+  var pulled = arr.filter(function (v, i) {
+    return !argState.includes(fn(v));
+  });
+  arr.length = 0;
+  pulled.forEach(function (v) {
+    return arr.push(v);
+  });
+};
+
 var randomHexColorCode = function randomHexColorCode() {
   var n = (Math.random() * 0xfffff | 0).toString(16);
   return '#' + (n.length !== 6 ? (Math.random() * 0xf | 0).toString(16) + n : n);
@@ -1601,6 +1644,10 @@ var remove = function remove(arr, func) {
     arr.splice(arr.indexOf(val), 1);
     return acc.concat(val);
   }, []) : [];
+};
+
+var removeNonASCII = function removeNonASCII(str) {
+  return str.replace(/[^\x20-\x7E]/g, '');
 };
 
 function _toConsumableArray$13(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
@@ -1746,14 +1793,34 @@ var sortedIndex = function sortedIndex(arr, n) {
   return index === -1 ? arr.length : index;
 };
 
+var sortedIndexBy = function sortedIndexBy(arr, n, fn) {
+  var isDescending = fn(arr[0]) > fn(arr[arr.length - 1]);
+  var val = fn(n);
+  var index = arr.findIndex(function (el) {
+    return isDescending ? val >= fn(el) : val <= fn(el);
+  });
+  return index === -1 ? arr.length : index;
+};
+
 var sortedLastIndex = function sortedLastIndex(arr, n) {
   var isDescending = arr[0] > arr[arr.length - 1];
   var index = arr.map(function (val, i) {
     return [i, val];
-  }).filter(function (el) {
-    return isDescending ? n >= el[1] : n >= el[1];
-  }).slice(-1)[0][0];
-  return index === -1 ? arr.length : index;
+  }).reverse().findIndex(function (el) {
+    return isDescending ? n <= el[1] : n >= el[1];
+  });
+  return index === -1 ? 0 : arr.length - index - 1;
+};
+
+var sortedLastIndexBy = function sortedLastIndexBy(arr, n, fn) {
+  var isDescending = fn(arr[0]) > fn(arr[arr.length - 1]);
+  var val = fn(n);
+  var index = arr.map(function (val, i) {
+    return [i, fn(val)];
+  }).reverse().findIndex(function (el) {
+    return isDescending ? val <= el[1] : val >= el[1];
+  });
+  return index === -1 ? 0 : arr.length - index;
 };
 
 var splitLines = function splitLines(str) {
@@ -1779,6 +1846,10 @@ var standardDeviation = function standardDeviation(arr) {
   }, []).reduce(function (acc, val) {
     return acc + val;
   }, 0) / (arr.length - (usePopulation ? 0 : 1)));
+};
+
+var stripHTMLTags = function stripHTMLTags(str) {
+  return str.replace(/<[^>]*>/g, '');
 };
 
 var sum = function sum() {
@@ -1863,6 +1934,63 @@ var take = function take(arr) {
 var takeRight = function takeRight(arr) {
   var n = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
   return arr.slice(arr.length - n, arr.length);
+};
+
+var takeRightWhile = function takeRightWhile(arr, func) {
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
+
+  try {
+    for (var _iterator = arr.reverse().keys()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var i = _step.value;
+
+      if (func(arr[i])) return arr.reverse().slice(arr.length - i, arr.length);
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion && _iterator.return) {
+        _iterator.return();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
+
+  return arr;
+};
+
+var takeWhile = function takeWhile(arr, func) {
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
+
+  try {
+    for (var _iterator = arr.keys()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var i = _step.value;
+      if (func(arr[i])) return arr.slice(0, i);
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion && _iterator.return) {
+        _iterator.return();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
+
+  return arr;
 };
 
 var timeTaken = function timeTaken(callback) {
@@ -2117,7 +2245,7 @@ var zipWith = function zipWith() {
   }) : result;
 };
 
-var imports = { JSONToFile: JSONToFile, RGBToHex: RGBToHex, URLJoin: URLJoin, UUIDGeneratorBrowser: UUIDGeneratorBrowser, UUIDGeneratorNode: UUIDGeneratorNode, anagrams: anagrams, arrayToHtmlList: arrayToHtmlList, ary: ary, atob: atob, average: average, averageBy: averageBy, bind: bind, bindKey: bindKey, bottomVisible: bottomVisible, btoa: btoa, byteSize: byteSize, call: call, capitalize: capitalize, capitalizeEveryWord: capitalizeEveryWord, castArray: castArray, chainAsync: chainAsync, chunk: chunk, clampNumber: clampNumber, cloneRegExp: cloneRegExp, coalesce: coalesce, coalesceFactory: coalesceFactory, collectInto: collectInto, colorize: colorize, compact: compact, compose: compose, composeRight: composeRight, copyToClipboard: copyToClipboard, countBy: countBy, countOccurrences: countOccurrences, createElement: createElement, createEventHub: createEventHub, currentURL: currentURL, curry: curry, decapitalize: decapitalize, deepClone: deepClone, deepFlatten: deepFlatten, defaults: defaults, defer: defer, delay: delay, detectDeviceType: detectDeviceType, difference: difference, differenceBy: differenceBy, differenceWith: differenceWith, digitize: digitize, distance: distance, dropWhile: dropWhile, dropRight: dropRight, elementIsVisibleInViewport: elementIsVisibleInViewport, elo: elo, equals: equals, escapeHTML: escapeHTML, escapeRegExp: escapeRegExp, everyNth: everyNth, extendHex: extendHex, factorial: factorial, fibonacci: fibonacci, filterNonUnique: filterNonUnique, findKey: findKey, findLast: findLast, findLastIndex: findLastIndex, findLastKey: findLastKey, flatten: flatten, flip: flip, forEachRight: forEachRight, forOwn: forOwn, forOwnRight: forOwnRight, formatDuration: formatDuration, fromCamelCase: fromCamelCase, functionName: functionName, functions: functions, gcd: gcd, geometricProgression: geometricProgression, get: get, getDaysDiffBetweenDates: getDaysDiffBetweenDates, getScrollPosition: getScrollPosition, getStyle: getStyle, getType: getType, getURLParameters: getURLParameters, groupBy: groupBy, hammingDistance: hammingDistance, hasClass: hasClass, hasFlags: hasFlags, hashBrowser: hashBrowser, hashNode: hashNode, head: head, hexToRGB: hexToRGB, hide: hide, httpGet: httpGet, httpPost: httpPost, httpsRedirect: httpsRedirect, inRange: inRange, indexOfAll: indexOfAll, initial: initial, initialize2DArray: initialize2DArray, initializeArrayWithRange: initializeArrayWithRange, initializeArrayWithRangeRight: initializeArrayWithRangeRight, initializeArrayWithValues: initializeArrayWithValues, intersection: intersection, intersectionBy: intersectionBy, intersectionWith: intersectionWith, invertKeyValues: invertKeyValues, is: is, isAbsoluteURL: isAbsoluteURL, isArrayLike: isArrayLike, isBoolean: isBoolean, isDivisible: isDivisible, isEmpty: isEmpty, isEven: isEven, isFunction: isFunction, isLowerCase: isLowerCase, isNil: isNil, isNull: isNull, isNumber: isNumber, isObject: isObject, isObjectLike: isObjectLike, isPlainObject: isPlainObject, isPrime: isPrime, isPrimitive: isPrimitive, isPromiseLike: isPromiseLike, isSorted: isSorted, isString: isString, isSymbol: isSymbol, isTravisCI: isTravisCI, isUndefined: isUndefined, isUpperCase: isUpperCase, isValidJSON: isValidJSON, join: join, last: last, lcm: lcm, longestItem: longestItem, lowercaseKeys: lowercaseKeys, luhnCheck: luhnCheck, mapKeys: mapKeys, mapObject: mapObject, mapValues: mapValues, mask: mask, matches: matches, matchesWith: matchesWith, maxBy: maxBy, maxN: maxN, median: median, memoize: memoize, merge: merge, minBy: minBy, minN: minN, negate: negate, nthArg: nthArg, nthElement: nthElement, objectFromPairs: objectFromPairs, objectToPairs: objectToPairs, observeMutations: observeMutations, off: off, omit: omit, omitBy: omitBy, on: on, onUserInputChange: onUserInputChange, once: once, orderBy: orderBy, over: over, palindrome: palindrome, parseCookie: parseCookie, partial: partial, partialRight: partialRight, partition: partition, percentile: percentile, pick: pick, pickBy: pickBy, pipeFunctions: pipeFunctions, pluralize: pluralize, powerset: powerset, prettyBytes: prettyBytes, primes: primes, promisify: promisify, pull: pull, pullAtIndex: pullAtIndex, pullAtValue: pullAtValue, randomHexColorCode: randomHexColorCode, randomIntArrayInRange: randomIntArrayInRange, randomIntegerInRange: randomIntegerInRange, randomNumberInRange: randomNumberInRange, readFileLines: readFileLines, redirect: redirect, reduceSuccessive: reduceSuccessive, reduceWhich: reduceWhich, reducedFilter: reducedFilter, remove: remove, reverseString: reverseString, round: round, runAsync: runAsync, runPromisesInSeries: runPromisesInSeries, sample: sample, sampleSize: sampleSize, scrollToTop: scrollToTop, sdbm: sdbm, serializeCookie: serializeCookie, setStyle: setStyle, shallowClone: shallowClone, show: show, shuffle: shuffle, similarity: similarity, size: size, sleep: sleep, sortCharactersInString: sortCharactersInString, sortedIndex: sortedIndex, sortedLastIndex: sortedLastIndex, splitLines: splitLines, spreadOver: spreadOver, standardDeviation: standardDeviation, sum: sum, sumBy: sumBy, sumPower: sumPower, symmetricDifference: symmetricDifference, symmetricDifferenceBy: symmetricDifferenceBy, symmetricDifferenceWith: symmetricDifferenceWith, tail: tail, take: take, takeRight: takeRight, timeTaken: timeTaken, times: times, toCamelCase: toCamelCase, toDecimalMark: toDecimalMark, toKebabCase: toKebabCase, toOrdinalSuffix: toOrdinalSuffix, toSafeInteger: toSafeInteger, toSnakeCase: toSnakeCase, toggleClass: toggleClass, tomorrow: tomorrow, transform: transform, truncateString: truncateString, truthCheckCollection: truthCheckCollection, unary: unary, unescapeHTML: unescapeHTML, unfold: unfold, union: union, unionBy: unionBy, unionWith: unionWith, uniqueElements: uniqueElements, untildify: untildify, unzip: unzip, unzipWith: unzipWith, validateNumber: validateNumber, without: without, words: words, xProd: xProd, yesNo: yesNo, zip: zip, zipObject: zipObject, zipWith: zipWith };
+var imports = { JSONToFile: JSONToFile, RGBToHex: RGBToHex, URLJoin: URLJoin, UUIDGeneratorBrowser: UUIDGeneratorBrowser, UUIDGeneratorNode: UUIDGeneratorNode, anagrams: anagrams, arrayToHtmlList: arrayToHtmlList, ary: ary, atob: atob, average: average, averageBy: averageBy, bind: bind, bindAll: bindAll, bindKey: bindKey, bottomVisible: bottomVisible, btoa: btoa, byteSize: byteSize, call: call, capitalize: capitalize, capitalizeEveryWord: capitalizeEveryWord, castArray: castArray, chainAsync: chainAsync, chunk: chunk, clampNumber: clampNumber, cloneRegExp: cloneRegExp, coalesce: coalesce, coalesceFactory: coalesceFactory, collectInto: collectInto, colorize: colorize, compact: compact, compose: compose, composeRight: composeRight, copyToClipboard: copyToClipboard, countBy: countBy, countOccurrences: countOccurrences, createElement: createElement, createEventHub: createEventHub, currentURL: currentURL, curry: curry, decapitalize: decapitalize, deepClone: deepClone, deepFlatten: deepFlatten, defaults: defaults, defer: defer, delay: delay, detectDeviceType: detectDeviceType, difference: difference, differenceBy: differenceBy, differenceWith: differenceWith, digitize: digitize, distance: distance, drop: drop, dropRight: dropRight, dropRightWhile: dropRightWhile, dropWhile: dropWhile, elementIsVisibleInViewport: elementIsVisibleInViewport, elo: elo, equals: equals, escapeHTML: escapeHTML, escapeRegExp: escapeRegExp, everyNth: everyNth, extendHex: extendHex, factorial: factorial, fibonacci: fibonacci, filterNonUnique: filterNonUnique, findKey: findKey, findLast: findLast, findLastIndex: findLastIndex, findLastKey: findLastKey, flatten: flatten, flip: flip, forEachRight: forEachRight, forOwn: forOwn, forOwnRight: forOwnRight, formatDuration: formatDuration, fromCamelCase: fromCamelCase, functionName: functionName, functions: functions, gcd: gcd, geometricProgression: geometricProgression, get: get, getDaysDiffBetweenDates: getDaysDiffBetweenDates, getScrollPosition: getScrollPosition, getStyle: getStyle, getType: getType, getURLParameters: getURLParameters, groupBy: groupBy, hammingDistance: hammingDistance, hasClass: hasClass, hasFlags: hasFlags, hashBrowser: hashBrowser, hashNode: hashNode, head: head, hexToRGB: hexToRGB, hide: hide, httpGet: httpGet, httpPost: httpPost, httpsRedirect: httpsRedirect, inRange: inRange, indexOfAll: indexOfAll, initial: initial, initialize2DArray: initialize2DArray, initializeArrayWithRange: initializeArrayWithRange, initializeArrayWithRangeRight: initializeArrayWithRangeRight, initializeArrayWithValues: initializeArrayWithValues, intersection: intersection, intersectionBy: intersectionBy, intersectionWith: intersectionWith, invertKeyValues: invertKeyValues, is: is, isAbsoluteURL: isAbsoluteURL, isArrayLike: isArrayLike, isBoolean: isBoolean, isDivisible: isDivisible, isEmpty: isEmpty, isEven: isEven, isFunction: isFunction, isLowerCase: isLowerCase, isNil: isNil, isNull: isNull, isNumber: isNumber, isObject: isObject, isObjectLike: isObjectLike, isPlainObject: isPlainObject, isPrime: isPrime, isPrimitive: isPrimitive, isPromiseLike: isPromiseLike, isSorted: isSorted, isString: isString, isSymbol: isSymbol, isTravisCI: isTravisCI, isUndefined: isUndefined, isUpperCase: isUpperCase, isValidJSON: isValidJSON, join: join, last: last, lcm: lcm, longestItem: longestItem, lowercaseKeys: lowercaseKeys, luhnCheck: luhnCheck, mapKeys: mapKeys, mapObject: mapObject, mapValues: mapValues, mask: mask, matches: matches, matchesWith: matchesWith, maxBy: maxBy, maxN: maxN, median: median, memoize: memoize, merge: merge, minBy: minBy, minN: minN, negate: negate, nthArg: nthArg, nthElement: nthElement, objectFromPairs: objectFromPairs, objectToPairs: objectToPairs, observeMutations: observeMutations, off: off, omit: omit, omitBy: omitBy, on: on, onUserInputChange: onUserInputChange, once: once, orderBy: orderBy, over: over, palindrome: palindrome, parseCookie: parseCookie, partial: partial, partialRight: partialRight, partition: partition, percentile: percentile, pick: pick, pickBy: pickBy, pipeFunctions: pipeFunctions, pluralize: pluralize, powerset: powerset, prettyBytes: prettyBytes, primes: primes, promisify: promisify, pull: pull, pullAtIndex: pullAtIndex, pullAtValue: pullAtValue, pullBy: pullBy, randomHexColorCode: randomHexColorCode, randomIntArrayInRange: randomIntArrayInRange, randomIntegerInRange: randomIntegerInRange, randomNumberInRange: randomNumberInRange, readFileLines: readFileLines, redirect: redirect, reduceSuccessive: reduceSuccessive, reduceWhich: reduceWhich, reducedFilter: reducedFilter, remove: remove, removeNonASCII: removeNonASCII, reverseString: reverseString, round: round, runAsync: runAsync, runPromisesInSeries: runPromisesInSeries, sample: sample, sampleSize: sampleSize, scrollToTop: scrollToTop, sdbm: sdbm, serializeCookie: serializeCookie, setStyle: setStyle, shallowClone: shallowClone, show: show, shuffle: shuffle, similarity: similarity, size: size, sleep: sleep, sortCharactersInString: sortCharactersInString, sortedIndex: sortedIndex, sortedIndexBy: sortedIndexBy, sortedLastIndex: sortedLastIndex, sortedLastIndexBy: sortedLastIndexBy, splitLines: splitLines, spreadOver: spreadOver, standardDeviation: standardDeviation, stripHTMLTags: stripHTMLTags, sum: sum, sumBy: sumBy, sumPower: sumPower, symmetricDifference: symmetricDifference, symmetricDifferenceBy: symmetricDifferenceBy, symmetricDifferenceWith: symmetricDifferenceWith, tail: tail, take: take, takeRight: takeRight, takeRightWhile: takeRightWhile, takeWhile: takeWhile, timeTaken: timeTaken, times: times, toCamelCase: toCamelCase, toDecimalMark: toDecimalMark, toKebabCase: toKebabCase, toOrdinalSuffix: toOrdinalSuffix, toSafeInteger: toSafeInteger, toSnakeCase: toSnakeCase, toggleClass: toggleClass, tomorrow: tomorrow, transform: transform, truncateString: truncateString, truthCheckCollection: truthCheckCollection, unary: unary, unescapeHTML: unescapeHTML, unfold: unfold, union: union, unionBy: unionBy, unionWith: unionWith, uniqueElements: uniqueElements, untildify: untildify, unzip: unzip, unzipWith: unzipWith, validateNumber: validateNumber, without: without, words: words, xProd: xProd, yesNo: yesNo, zip: zip, zipObject: zipObject, zipWith: zipWith };
 
 return imports;
 
