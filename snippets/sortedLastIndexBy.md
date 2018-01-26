@@ -18,5 +18,5 @@ const sortedLastIndexBy = (arr, n, fn) => {
 ```
 
 ```js
-sortedLastIndexBy([{ 'x': 4 }, { 'x': 5 }], { 'x': 4 }, o => o.x); // 1
+sortedLastIndexBy([{ x: 4 }, { x: 5 }], { x: 4 }, o => o.x); // 1
 ```

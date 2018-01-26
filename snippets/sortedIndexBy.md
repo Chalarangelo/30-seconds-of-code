@@ -15,5 +15,5 @@ const sortedIndexBy = (arr, n, fn) => {
 ```
 
 ```js
-sortedIndexBy([{ 'x': 4 }, { 'x': 5 }], { 'x': 4 }, o => o.x); // 0
+sortedIndexBy([{ x: 4 }, { x: 5 }], { x: 4 }, o => o.x); // 0
 ```

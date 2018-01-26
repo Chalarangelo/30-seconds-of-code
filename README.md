@@ -144,7 +144,9 @@ average(1, 2, 3);
 * [`shuffle`](#shuffle)
 * [`similarity`](#similarity)
 * [`sortedIndex`](#sortedindex)
+* [`sortedIndexBy`](#sortedindexby)
 * [`sortedLastIndex`](#sortedlastindex)
+* [`sortedLastIndexBy`](#sortedlastindexby)
 * [`symmetricDifference`](#symmetricdifference)
 * [`symmetricDifferenceBy`](#symmetricdifferenceby)
 * [`symmetricDifferenceWith`](#symmetricdifferencewith)
@@ -1965,21 +1967,18 @@ sortedIndex([30, 50], 40); // 1
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### sortedLastIndex
+### sortedIndexBy
 
-Returns the highest index at which value should be inserted into array in order to maintain its sort order.
+Returns the lowest index at which value should be inserted into array in order to maintain its sort order, based on a provided iterator function.
 
 Check if the array is sorted in descending order (loosely).
-Use `Array.map()` to map each element to an array with its index and value.
-Use `Array.filter()` to find all possible positions where the element could be inserted, `Array.slice(-1)` to get the last one.
+Use `Array.findIndex()` to find the appropriate index where the element should be inserted, based on the iterator function `fn`.
 
 ```js
-const sortedLastIndex = (arr, n) => {
-  const isDescending = arr[0] > arr[arr.length - 1];
-  const index = arr
-    .map((val, i) => [i, val])
-    .filter(el => (isDescending ? n >= el[1] : n >= el[1]))
-    .slice(-1)[0][0];
+const sortedIndexBy = (arr, n, fn) => {
+  const isDescending = fn(arr[0]) > fn(arr[arr.length - 1]);
+  const val = fn(n);
+  const index = arr.findIndex(el => (isDescending ? val >= fn(el) : val <= fn(el)));
   return index === -1 ? arr.length : index;
 };
 ```
@@ -1988,7 +1987,69 @@ const sortedLastIndex = (arr, n) => {
 <summary>Examples</summary>
 
 ```js
+sortedIndexBy([{ x: 4 }, { x: 5 }], { x: 4 }, o => o.x); // 0
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### sortedLastIndex
+
+Returns the highest index at which value should be inserted into array in order to maintain its sort order.
+
+Check if the array is sorted in descending order (loosely).
+Use `Array.map()` to map each element to an array with its index and value.
+Use `Array.reverse()` and `Array.findIndex()` to find the appropriate last index where the element should be inserted.
+
+```js
+const sortedLastIndex = (arr, n) => {
+  const isDescending = arr[0] > arr[arr.length - 1];
+  const index = arr
+    .map((val, i) => [i, val])
+    .reverse()
+    .findIndex(el => (isDescending ? n <= el[1] : n >= el[1]));
+  return index === -1 ? 0 : arr.length - index - 1;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
 sortedLastIndex([10, 20, 30, 30, 40], 30); // 3
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### sortedLastIndexBy
+
+Returns the highest index at which value should be inserted into array in order to maintain its sort order, based on a provided iterator function.
+
+Check if the array is sorted in descending order (loosely).
+Use `Array.reverse()` and `Array.findIndex()` to find the appropriate last index where the element should be inserted, based on the iterator function `fn`..
+
+```js
+const sortedLastIndexBy = (arr, n, fn) => {
+  const isDescending = fn(arr[0]) > fn(arr[arr.length - 1]);
+  const val = fn(n);
+  const index = arr
+    .map((val, i) => [i, fn(val)])
+    .reverse()
+    .findIndex(el => (isDescending ? val <= el[1] : val >= el[1]));
+  return index === -1 ? 0 : arr.length - index;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+sortedLastIndexBy([{ x: 4 }, { x: 5 }], { x: 4 }, o => o.x); // 1
 ```
 
 </details>
