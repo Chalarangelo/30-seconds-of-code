@@ -2,7 +2,7 @@
 
 # 30 seconds of code
 
-[![License](https://img.shields.io/badge/license-CC0--1.0-blue.svg)](https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE) [![npm Downloads](https://img.shields.io/npm/dt/30-seconds-of-code.svg)](https://www.npmjs.com/package/30-seconds-of-code) [![npm Version](https://img.shields.io/npm/v/30-seconds-of-code.svg)](https://www.npmjs.com/package/30-seconds-of-code) [![Gitter chat](https://img.shields.io/badge/chat-on%20gitter-4FB999.svg)](https://gitter.im/30-seconds-of-code/Lobby) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Travis Build](https://travis-ci.org/Chalarangelo/30-seconds-of-code.svg?branch=master)](https://travis-ci.org/Chalarangelo/30-seconds-of-code) [![Insight.io](https://img.shields.io/badge/insight.io-Ready-brightgreen.svg)](https://insight.io/github.com/Chalarangelo/30-seconds-of-code/tree/master/?source=0) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard) [![ProductHunt](https://img.shields.io/badge/producthunt-vote-orange.svg)](https://www.producthunt.com/posts/30-seconds-of-code)
+[![Backers on Open Collective](https://opencollective.com/30-seconds-of-code/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/30-seconds-of-code/sponsors/badge.svg)](#sponsors) [![License](https://img.shields.io/badge/license-CC0--1.0-blue.svg)](https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE) [![npm Downloads](https://img.shields.io/npm/dt/30-seconds-of-code.svg)](https://www.npmjs.com/package/30-seconds-of-code) [![npm Version](https://img.shields.io/npm/v/30-seconds-of-code.svg)](https://www.npmjs.com/package/30-seconds-of-code) [![Gitter chat](https://img.shields.io/badge/chat-on%20gitter-4FB999.svg)](https://gitter.im/30-seconds-of-code/Lobby) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Travis Build](https://travis-ci.org/Chalarangelo/30-seconds-of-code.svg?branch=master)](https://travis-ci.org/Chalarangelo/30-seconds-of-code) [![Insight.io](https://img.shields.io/badge/insight.io-Ready-brightgreen.svg)](https://insight.io/github.com/Chalarangelo/30-seconds-of-code/tree/master/?source=0) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard) [![ProductHunt](https://img.shields.io/badge/producthunt-vote-orange.svg)](https://www.producthunt.com/posts/30-seconds-of-code)
 
 
 > Curated collection of useful JavaScript snippets that you can understand in 30 seconds or less.
@@ -7258,7 +7258,7 @@ timeTaken(() => Math.pow(2, 10)); // 1024, (logged): timeTaken: 0.02099609375ms
 
 Use `toLocaleString()` to convert a float-point arithmetic to the [Decimal mark](https://en.wikipedia.org/wiki/Decimal_mark) form. It makes a comma separated string from a number.
 
- ```js
+```js
 const toDecimalMark = num => num.toLocaleString('en-US');
 ```
 
@@ -7368,4 +7368,34 @@ yesNo('Foo', true); // true
 ## Credits
 
 *Icons made by [Smashicons](https://www.flaticon.com/authors/smashicons) from [www.flaticon.com](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).*
+
+
+## Contributors
+
+This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+<a href="graphs/contributors"><img src="https://opencollective.com/30-seconds-of-code/contributors.svg?width=890" /></a>
+
+
+## Backers
+
+Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/30-seconds-of-code#backer)]
+
+<a href="https://opencollective.com/30-seconds-of-code#backers" target="_blank"><img src="https://opencollective.com/30-seconds-of-code/backers.svg?width=890"></a>
+
+
+## Sponsors
+
+Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/30-seconds-of-code#sponsor)]
+
+<a href="https://opencollective.com/30-seconds-of-code/sponsor/0/website" target="_blank"><img src="https://opencollective.com/30-seconds-of-code/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/30-seconds-of-code/sponsor/1/website" target="_blank"><img src="https://opencollective.com/30-seconds-of-code/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/30-seconds-of-code/sponsor/2/website" target="_blank"><img src="https://opencollective.com/30-seconds-of-code/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/30-seconds-of-code/sponsor/3/website" target="_blank"><img src="https://opencollective.com/30-seconds-of-code/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/30-seconds-of-code/sponsor/4/website" target="_blank"><img src="https://opencollective.com/30-seconds-of-code/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/30-seconds-of-code/sponsor/5/website" target="_blank"><img src="https://opencollective.com/30-seconds-of-code/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/30-seconds-of-code/sponsor/6/website" target="_blank"><img src="https://opencollective.com/30-seconds-of-code/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/30-seconds-of-code/sponsor/7/website" target="_blank"><img src="https://opencollective.com/30-seconds-of-code/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/30-seconds-of-code/sponsor/8/website" target="_blank"><img src="https://opencollective.com/30-seconds-of-code/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/30-seconds-of-code/sponsor/9/website" target="_blank"><img src="https://opencollective.com/30-seconds-of-code/sponsor/9/avatar.svg"></a>
+
 
