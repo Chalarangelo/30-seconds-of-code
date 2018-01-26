@@ -102,8 +102,10 @@ average(1, 2, 3);
 * [`difference`](#difference)
 * [`differenceBy`](#differenceby)
 * [`differenceWith`](#differencewith)
-* [`dropWhile`](#dropWhile)
+* [`drop`](#drop)
 * [`dropRight`](#dropright)
+* [`dropRightWhile`](#droprightwhile)
+* [`dropWhile`](#dropwhile)
 * [`everyNth`](#everynth)
 * [`filterNonUnique`](#filternonunique)
 * [`findLast`](#findlast)
@@ -842,25 +844,23 @@ differenceWith([1, 1.2, 1.5, 3, 0], [1.9, 3, 0], (a, b) => Math.round(a) === Mat
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### dropWhile
+### drop
 
-Removes elements in an array until the passed function returns `true`. Returns the remaining elements in the array.
+Returns a new array with `n` elements removed from the left.
 
-Loop through the array, using `Array.slice()` to drop the first element of the array until the returned value from the function is `true`.
-Returns the remaining elements.
+Use `Array.slice()` to slice the remove the specified number of elements from the left.
 
 ```js
-const dropWhile = (arr, func) => {
-  while (arr.length > 0 && !func(arr[0])) arr = arr.slice(1);
-  return arr;
-};
+const drop = (arr, n = 1) => arr.slice(n);
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```js
-dropWhile([1, 2, 3, 4], n => n >= 3); // [3,4]
+drop([1, 2, 3]); // [2,3]
+drop([1, 2, 3], 2); // [3]
+drop([1, 2, 3], 42); // []
 ```
 
 </details>
@@ -885,6 +885,58 @@ const dropRight = (arr, n = 1) => arr.slice(0, -n);
 dropRight([1, 2, 3]); // [1,2]
 dropRight([1, 2, 3], 2); // [1]
 dropRight([1, 2, 3], 42); // []
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### dropRightWhile
+
+Removes elements from the end of an array until the passed function returns `true`. Returns the remaining elements in the array.
+
+Loop through the array, using `Array.slice()` to drop the last element of the array until the returned value from the function is `true`.
+Returns the remaining elements.
+
+```js
+const dropRightWhile = (arr, func) => {
+  while (arr.length > 0 && !func(arr[arr.length - 1])) arr = arr.slice(0, -1);
+  return arr;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+dropRightWhile([1, 2, 3, 4], n => n < 3); // [1, 2]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### dropWhile
+
+Removes elements in an array until the passed function returns `true`. Returns the remaining elements in the array.
+
+Loop through the array, using `Array.slice()` to drop the first element of the array until the returned value from the function is `true`.
+Returns the remaining elements.
+
+```js
+const dropWhile = (arr, func) => {
+  while (arr.length > 0 && !func(arr[0])) arr = arr.slice(1);
+  return arr;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+dropWhile([1, 2, 3, 4], n => n >= 3); // [3,4]
 ```
 
 </details>
