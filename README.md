@@ -353,10 +353,10 @@ average(1, 2, 3);
 * [`mask`](#mask)
 * [`palindrome`](#palindrome)
 * [`pluralize`](#pluralize)
+* [`removeNonASCII`](#removenonascii)
 * [`reverseString`](#reversestring)
 * [`sortCharactersInString`](#sortcharactersinstring)
 * [`splitLines`](#splitlines)
-* [`stripHTMLtags`](#striphtmltags)
 * [`toCamelCase`](#tocamelcase)
 * [`toKebabCase`](#tokebabcase)
 * [`toSnakeCase`](#tosnakecase)
@@ -418,6 +418,15 @@ average(1, 2, 3);
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`validateNumber`](#validatenumber)
 * [`yesNo`](#yesno)
+
+</details>
+
+### _Uncategorized_
+
+<details>
+<summary>View contents</summary>
+
+* [`stripHTMLtags`](#striphtmltags)
 
 </details>
 
@@ -6238,6 +6247,28 @@ autoPluralize(2, 'person'); // 'people'
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### removeNonASCII
+
+Removes non-printable ASCII characters.
+
+Use a regular expression to remove non-printable ASCII characters.
+
+```js
+const removeNonASCII = str => str.replace(/[^\x20-\x7E]/g, '');
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+removeNonASCII('äÄçÇéÉêlorem-ipsumöÖÐþúÚ'); // 'lorem-ipsum'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### reverseString
 
 Reverses a string.
@@ -6298,28 +6329,6 @@ const splitLines = str => str.split(/\r?\n/);
 
 ```js
 splitLines('This\nis a\nmultiline\nstring.\n'); // ['This', 'is a', 'multiline', 'string.' , '']
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### stripHTMLTags
-
-Removes HTML/XML tags from string.
-
-Use a regular expression to remove HTML/XML tags from a string.
-
-```js
-const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-stripHTMLTags('<p><em>lorem</em> <strong>ipsum</strong></p>'); // 'lorem ipsum'
 ```
 
 </details>
@@ -7584,6 +7593,25 @@ yesNo('Foo', true); // true
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
+
+---
+ ## _Uncategorized_
+
+### stripHTMLTags
+
+Removes HTML/XML tags from string.
+
+Use a regular expression to remove HTML/XML tags from a string.
+
+```js
+const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');
+```
+
+```js
+stripHTMLTags('<p><em>lorem</em> <strong>ipsum</strong></p>'); // 'lorem ipsum'
+```
+
+<br>[⬆ back to top](#table-of-contents)
 
 
 ## Collaborators
