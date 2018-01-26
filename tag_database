@@ -213,6 +213,7 @@ sortedLastIndexBy:array,math,function
 splitLines:string
 spreadOver:adapter
 standardDeviation:math,array
+stripHTMLtags:string,utility,regexp
 sum:math,array
 sumBy:math,array,function
 sumPower:math
