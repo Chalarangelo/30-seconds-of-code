@@ -8,7 +8,7 @@ Return the removed elements, using `Array.reverse()` and `Array.slice()`.
 ```js
 const takeRightWhile = (arr, func) => {
   for (let i of arr.reverse().keys())
-    if (func(arr[i])) return arr.reverse().slice(arr.length - i,arr.length);
+    if (func(arr[i])) return arr.reverse().slice(arr.length - i, arr.length);
   return arr;
 };
 ```
