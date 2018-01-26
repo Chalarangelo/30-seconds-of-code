@@ -304,6 +304,7 @@ average(1, 2, 3);
 <details>
 <summary>View contents</summary>
 
+* [`bindAll`](#bindall)
 * [`deepClone`](#deepclone)
 * [`defaults`](#defaults)
 * [`equals`](#equals-)
@@ -5099,6 +5100,41 @@ UUIDGeneratorNode(); // '79c7c136-60ee-40a2-beb2-856f1feabefc'
 
 ---
  ## 🗃️ Object
+
+### bindAll
+
+Explain briefly what the snippet does.
+
+Use `Array.forEach()` to return a `function` that uses `Function.apply()` to apply the given context (`obj`) to `fn` for each function specified.
+
+```js
+const bindAll = (obj, ...fns) =>
+  fns.forEach(
+    fn =>
+      (obj[fn] = function() {
+        return fn.apply(obj);
+      })
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+var view = {
+  label: 'docs',
+  click: function() {
+    console.log('clicked ' + this.label);
+  }
+};
+bindAll(view, 'click');
+jQuery(element).on('click', view.click); // Logs 'clicked docs' when clicked.
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 
 ### deepClone
 
