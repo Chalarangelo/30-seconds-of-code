@@ -3431,7 +3431,7 @@ defer(longRunningFunction); // Browser will update the HTML then run the functio
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### defer
+### delay
 
 Invokes the provided function after `wait` milliseconds.
 
