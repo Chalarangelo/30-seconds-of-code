@@ -5,6 +5,7 @@ atob:node,string,utility
 average:math,array
 averageBy:math,array,function
 bind:function,object
+bindAll:object,function
 bindKey:function,object
 bottomVisible:browser
 btoa:node,string,utility
@@ -214,7 +215,7 @@ sortedLastIndexBy:array,math,function
 splitLines:string
 spreadOver:adapter
 standardDeviation:math,array
-stripHTMLtags:uncategorized
+stripHTMLTags:string,utility,regexp
 sum:math,array
 sumBy:math,array,function
 sumPower:math
