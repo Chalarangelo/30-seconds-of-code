@@ -7,8 +7,7 @@ Return the removed elements, using `Array.slice()`.
 
 ```js
 const takeWhile = (arr, func) => {
-  for(let i of arr.keys())
-    if (func(arr[i])) return arr.slice(0,i);
+  for (let i of arr.keys()) if (func(arr[i])) return arr.slice(0, i);
   return arr;
 };
 ```
