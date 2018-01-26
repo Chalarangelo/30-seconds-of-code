@@ -1,6 +1,6 @@
-Test log for: Fri Jan 26 2018 12:00:18 GMT+0200 (GTB Standard Time)
+Test log for: Fri Jan 26 2018 20:13:29 GMT+0000 (UTC)
 
-> 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
+> 30-seconds-of-code@0.0.1 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
 
 
@@ -1485,3 +1485,4 @@ Test log for: Fri Jan 26 2018 12:00:18 GMT+0200 (GTB Standard Time)
   duration:  1.1s
 
 
+undefined
