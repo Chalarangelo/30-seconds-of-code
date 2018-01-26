@@ -77,12 +77,15 @@ average(1, 2, 3);
 <details>
 <summary>View contents</summary>
 
+* [`ary`](#ary)
 * [`call`](#call)
 * [`collectInto`](#collectinto)
 * [`flip`](#flip)
+* [`over`](#over)
 * [`pipeFunctions`](#pipefunctions)
 * [`promisify`](#promisify)
 * [`spreadOver`](#spreadover)
+* [`unary`](#unary)
 
 </details>
 
@@ -97,12 +100,14 @@ average(1, 2, 3);
 * [`countOccurrences`](#countoccurrences)
 * [`deepFlatten`](#deepflatten)
 * [`difference`](#difference)
+* [`differenceBy`](#differenceby)
 * [`differenceWith`](#differencewith)
 * [`dropElements`](#dropelements)
 * [`dropRight`](#dropright)
 * [`everyNth`](#everynth)
 * [`filterNonUnique`](#filternonunique)
 * [`findLast`](#findlast)
+* [`findLastIndex`](#findlastindex)
 * [`flatten`](#flatten)
 * [`forEachRight`](#foreachright)
 * [`groupBy`](#groupby)
@@ -114,6 +119,8 @@ average(1, 2, 3);
 * [`initializeArrayWithRangeRight`](#initializearraywithrangeright)
 * [`initializeArrayWithValues`](#initializearraywithvalues)
 * [`intersection`](#intersection)
+* [`intersectionBy`](#intersectionby)
+* [`intersectionWith`](#intersectionwith)
 * [`isSorted`](#issorted)
 * [`join`](#join)
 * [`last`](#last)
@@ -127,21 +134,32 @@ average(1, 2, 3);
 * [`pullAtIndex`](#pullatindex)
 * [`pullAtValue`](#pullatvalue)
 * [`reducedFilter`](#reducedfilter)
+* [`reduceSuccessive`](#reducesuccessive)
+* [`reduceWhich`](#reducewhich)
 * [`remove`](#remove)
 * [`sample`](#sample)
 * [`sampleSize`](#samplesize)
 * [`shuffle`](#shuffle)
 * [`similarity`](#similarity)
 * [`sortedIndex`](#sortedindex)
+* [`sortedLastIndex`](#sortedlastindex)
 * [`symmetricDifference`](#symmetricdifference)
+* [`symmetricDifferenceBy`](#symmetricdifferenceby)
+* [`symmetricDifferenceWith`](#symmetricdifferencewith)
 * [`tail`](#tail)
 * [`take`](#take)
 * [`takeRight`](#takeright)
 * [`union`](#union)
+* [`unionBy`](#unionby)
+* [`unionWith`](#unionwith)
 * [`uniqueElements`](#uniqueelements)
+* [`unzip`](#unzip)
+* [`unzipWith`](#unzipwith-)
 * [`without`](#without)
+* [`xProd`](#xprod)
 * [`zip`](#zip)
 * [`zipObject`](#zipobject)
+* [`zipWith`](#zipwith-)
 
 </details>
 
@@ -194,16 +212,24 @@ average(1, 2, 3);
 <details>
 <summary>View contents</summary>
 
+* [`bind`](#bind)
+* [`bindKey`](#bindkey)
 * [`chainAsync`](#chainasync)
 * [`compose`](#compose)
+* [`composeRight`](#composeright)
 * [`curry`](#curry)
 * [`defer`](#defer)
+* [`delay`](#delay)
 * [`functionName`](#functionname)
 * [`memoize`](#memoize)
 * [`negate`](#negate)
 * [`once`](#once)
+* [`partial`](#partial)
+* [`partialRight`](#partialright)
 * [`runPromisesInSeries`](#runpromisesinseries)
 * [`sleep`](#sleep)
+* [`times`](#times)
+* [`unfold`](#unfold)
 
 </details>
 
@@ -271,8 +297,11 @@ average(1, 2, 3);
 <details>
 <summary>View contents</summary>
 
+* [`deepClone`](#deepclone)
 * [`defaults`](#defaults)
 * [`equals`](#equals-)
+* [`findKey`](#findkey)
+* [`findLastKey`](#findlastkey)
 * [`forOwn`](#forown)
 * [`forOwnRight`](#forownright)
 * [`functions`](#functions)
@@ -281,6 +310,8 @@ average(1, 2, 3);
 * [`lowercaseKeys`](#lowercasekeys)
 * [`mapKeys`](#mapkeys)
 * [`mapValues`](#mapvalues)
+* [`matches`](#matches)
+* [`matchesWith`](#matcheswith)
 * [`merge`](#merge)
 * [`objectFromPairs`](#objectfrompairs)
 * [`objectToPairs`](#objecttopairs)
@@ -337,11 +368,13 @@ average(1, 2, 3);
 * [`is`](#is)
 * [`isArrayLike`](#isarraylike)
 * [`isBoolean`](#isboolean)
+* [`isEmpty`](#isempty)
 * [`isFunction`](#isfunction)
 * [`isNil`](#isnil)
 * [`isNull`](#isnull)
 * [`isNumber`](#isnumber)
 * [`isObject`](#isobject)
+* [`isObjectLike`](#isobjectlike)
 * [`isPlainObject`](#isplainobject)
 * [`isPrimitive`](#isprimitive)
 * [`isPromiseLike`](#ispromiselike)
@@ -357,6 +390,7 @@ average(1, 2, 3);
 <details>
 <summary>View contents</summary>
 
+* [`castArray`](#castarray)
 * [`cloneRegExp`](#cloneregexp)
 * [`coalesce`](#coalesce)
 * [`coalesceFactory`](#coalescefactory)
@@ -365,6 +399,7 @@ average(1, 2, 3);
 * [`hexToRGB`](#hextorgb-)
 * [`httpGet`](#httpget)
 * [`httpPost`](#httppost)
+* [`nthArg`](#ntharg)
 * [`parseCookie`](#parsecookie)
 * [`prettyBytes`](#prettybytes)
 * [`randomHexColorCode`](#randomhexcolorcode)
@@ -380,6 +415,29 @@ average(1, 2, 3);
 
 ---
  ## 🔌 Adapter
+
+### ary
+
+Creates a function that accepts up to `n` arguments, ignoring any additional arguments.
+
+Call the provided function, `fn`, with up to `n` arguments, using `Array.slice(0,n)` and the spread operator (`...`).
+
+```js
+const ary = (fn, n) => (...args) => fn(...args.slice(0, n));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const firstTwoMax = ary(Math.max, 2);
+[[2, 6, 'a'], [8, 4, 6], [10]].map(x => firstTwoMax(...x)); // [6, 8, 10]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 
 ### call
 
@@ -463,6 +521,29 @@ Object.assign(b, a); // == b
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### over
+
+Creates a function that invokes each provided function with the arguments it receives and returns the results.
+
+Use `Array.map()` and `Function.apply()` to apply each function to the given arguments.
+
+```js
+const over = (...fns) => (...args) => fns.map(fn => fn.apply(null, args));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const minMax = over(Math.min, Math.max);
+minMax(1, 2, 3, 4, 5); // [1,5]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### pipeFunctions
 
 Performs left-to-right function composition.
@@ -534,6 +615,28 @@ const spreadOver = fn => argsArr => fn(...argsArr);
 ```js
 const arrayMax = spreadOver(Math.max);
 arrayMax([1, 2, 3]); // 3
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### unary
+
+Creates a function that accepts up to one argument, ignoring any additional arguments.
+
+Call the provided function, `fn`, with just the first argument given.
+
+```js
+const unary = fn => val => fn(val);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+['6', '8', '10'].map(unary(parseInt)); // [6, 8, 10]
 ```
 
 </details>
@@ -691,6 +794,32 @@ difference([1, 2, 3], [1, 2, 4]); // [3]
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### differenceBy
+
+Returns the difference between two arrays, after applying the provided function to each array element of both.
+
+Create a `Set` by applying `fn` to each element in `b`, then use `Array.filter()` in combination with `fn` on `a` to only keep values not contained in the previously created set.
+
+```js
+const differenceBy = (a, b, fn) => {
+  const s = new Set(b.map(v => fn(v)));
+  return a.filter(x => !s.has(fn(x)));
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [1.2]
+differenceBy([{ x: 2 }, { x: 1 }], [{ x: 1 }], v => v.x); // [ { x: 2 } ]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### differenceWith
 
 Filters out all values from an array for which the comparator function does not return `true`.
@@ -814,7 +943,7 @@ Returns the last element for which the provided function returns a truthy value.
 Use `Array.filter()` to remove elements for which `fn` returns falsey values, `Array.slice(-1)` to get the last one.
 
 ```js
-const findLast = (arr, fn) => arr.filter(fn).slice(-1);
+const findLast = (arr, fn) => arr.filter(fn).slice(-1)[0];
 ```
 
 <details>
@@ -822,6 +951,33 @@ const findLast = (arr, fn) => arr.filter(fn).slice(-1);
 
 ```js
 findLast([1, 2, 3, 4], n => n % 2 === 1); // 3
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### findLastIndex
+
+Returns the index of the last element for which the provided function returns a truthy value.
+
+Use `Array.map()` to map each element to an array with its index and value.
+Use `Array.filter()` to remove elements for which `fn` returns falsey values, `Array.slice(-1)` to get the last one.
+
+```js
+const findLastIndex = (arr, fn) =>
+  arr
+    .map((val, i) => [i, val])
+    .filter(val => fn(val[1], val[0], arr))
+    .slice(-1)[0][0];
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+findLastIndex([1, 2, 3, 4], n => n % 2 === 1); // 2 (index of the value 3)
 ```
 
 </details>
@@ -1104,6 +1260,53 @@ const intersection = (a, b) => {
 
 ```js
 intersection([1, 2, 3], [4, 3, 2]); // [2,3]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### intersectionBy
+
+Returns a list of elements that exist in both arrays, after applying the provided function to each array element of both.
+
+Create a `Set` by applying `fn` to all elements in `b`, then use `Array.filter()` on `a` to only keep elements, which produce values contained in `b` when `fn` is applied to them.
+
+```js
+const intersectionBy = (a, b, fn) => {
+  const s = new Set(b.map(x => fn(x)));
+  return a.filter(x => s.has(fn(x)));
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+intersectionBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [2.1]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### intersectionWith
+
+Returns a list of elements that exist in both arrays, using a provided comparator function.
+
+Use `Array.filter()` and `Array.findIndex()` in combination with the provided comparator to determine intersecting values.
+
+```js
+const intersectionWith = (a, b, comp) => a.filter(x => b.findIndex(y => comp(x, y)) !== -1);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+intersectionWith([1, 1.2, 1.5, 3, 0], [1.9, 3, 0, 3.9], (a, b) => Math.round(a) === Math.round(b)); // [1.5, 3, 0]
 ```
 
 </details>
@@ -1492,6 +1695,58 @@ reducedFilter(data, ['id', 'name'], item => item.age > 24); // [{ id: 2, name: '
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### reduceSuccessive
+
+Applies a function against an accumulator and each element in the array (from left to right), returning an array of successively reduced values.
+
+Use `Array.reduce()` to apply the given function to the given array, storing each new result.
+
+```js
+const reduceSuccessive = (arr, fn, acc) =>
+  arr.reduce((res, val, i, arr) => (res.push(fn(res.slice(-1)[0], val, i, arr)), res), [acc]);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+reduceSuccessive([1, 2, 3, 4, 5, 6], (acc, val) => acc + val, 0); // [0, 1, 3, 6, 10, 15, 21]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### reduceWhich
+
+Returns the minimum/maximum value of an array, after applying the provided function to set comparing rule.
+
+Use `Array.reduce()` in combination with the `comparator` function to get the appropriate element in the array.
+You can omit the second parameter, `comparator`, to use the default one that returns the minimum element in the array.
+
+```js
+const reduceWhich = (arr, comparator = (a, b) => a - b) =>
+  arr.reduce((a, b) => (comparator(a, b) >= 0 ? b : a));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+reduceWhich([1, 3, 2]); // 1
+reduceWhich([1, 3, 2], (a, b) => b - a); // 3
+reduceWhich(
+  [{ name: 'Tom', age: 12 }, { name: 'Jack', age: 18 }, { name: 'Lucy', age: 9 }],
+  (a, b) => a.age - b.age
+); // {name: "Lucy", age: 9}
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### remove
 
 Removes elements from an array for which the given function returns `false`.
@@ -1656,6 +1911,37 @@ sortedIndex([30, 50], 40); // 1
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### sortedLastIndex
+
+Returns the highest index at which value should be inserted into array in order to maintain its sort order.
+
+Check if the array is sorted in descending order (loosely).
+Use `Array.map()` to map each element to an array with its index and value.
+Use `Array.filter()` to find all possible positions where the element could be inserted, `Array.slice(-1)` to get the last one.
+
+```js
+const sortedLastIndex = (arr, n) => {
+  const isDescending = arr[0] > arr[arr.length - 1];
+  const index = arr
+    .map((val, i) => [i, val])
+    .filter(el => (isDescending ? n >= el[1] : n >= el[1]))
+    .slice(-1)[0][0];
+  return index === -1 ? arr.length : index;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+sortedLastIndex([10, 20, 30, 30, 40], 30); // 3
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### symmetricDifference
 
 Returns the symmetric difference between two arrays.
@@ -1675,6 +1961,61 @@ const symmetricDifference = (a, b) => {
 
 ```js
 symmetricDifference([1, 2, 3], [1, 2, 4]); // [3,4]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### symmetricDifferenceBy
+
+Returns the symmetric difference between two arrays, after applying the provided function to each array element of both.
+
+Create a `Set` by applying `fn` to each array's elements, then use `Array.filter()` on each of them to only keep values not contained in the other.
+
+```js
+const symmetricDifferenceBy = (a, b, fn) => {
+  const sA = new Set(a.map(v => fn(v))),
+    sB = new Set(b.map(v => fn(v)));
+  return [...a.filter(x => !sB.has(fn(x))), ...b.filter(x => !sA.has(fn(x)))];
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+symmetricDifferenceBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [ 1.2, 3.4 ]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### symmetricDifferenceWith
+
+Returns the symmetric difference between two arrays, using a provided function as a comparator.
+
+Use `Array.filter()` and `Array.findIndex()` to find the appropriate values.
+
+```js
+const symmetricDifferenceWith = (arr, val, comp) => [
+  ...arr.filter(a => val.findIndex(b => comp(a, b)) === -1),
+  ...val.filter(a => arr.findIndex(b => comp(a, b)) === -1)
+];
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+symmetricDifferenceWith(
+  [1, 1.2, 1.5, 3, 0],
+  [1.9, 3, 0, 3.9],
+  (a, b) => Math.round(a) === Math.round(b)
+); // [1, 1.2, 3.9]
 ```
 
 </details>
@@ -1773,6 +2114,56 @@ union([1, 2, 3], [4, 3, 2]); // [1,2,3,4]
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### unionBy
+
+Returns every element that exists in any of the two arrays once, after applying the provided function to each array element of both.
+
+Create a `Set` by applying all `fn` to all values of `a`.
+Create a `Set` from `a` and all elements in `b` whose value, after applying `fn` does not match a value in the previously created set.
+Return the last set converted to an array.
+
+```js
+const unionBy = (a, b, fn) => {
+  const s = new Set(a.map(v => fn(v)));
+  return Array.from(new Set([...a, ...b.filter(x => !s.has(fn(x)))]));
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+unionBy([2.1], [1.2, 2.3], Math.floor); // [2.1, 1.2]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### unionWith
+
+Returns every element that exists in any of the two arrays once, using a provided comparator function.
+
+Create a `Set` with all values of `a` and values in `b` for which the comparator finds no matches in `a`, using `Array.findIndex()`.
+
+```js
+const unionWith = (a, b, comp) =>
+  Array.from(new Set([...a, ...b.filter(x => a.findIndex(y => comp(x, y)) === -1)]));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+unionWith([1, 1.2, 1.5, 3, 0], [1.9, 3, 0, 3.9], (a, b) => Math.round(a) === Math.round(b)); // [1, 1.2, 1.5, 3, 0, 3.9]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### uniqueElements
 
 Returns all unique values of an array.
@@ -1788,6 +2179,68 @@ const uniqueElements = arr => [...new Set(arr)];
 
 ```js
 uniqueElements([1, 2, 2, 3, 4, 4, 5]); // [1,2,3,4,5]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### unzip
+
+Creates an array of arrays, ungrouping the elements in an array produced by [zip](#zip).
+
+Use `Math.max.apply()` to get the longest subarray in the array, `Array.map()` to make each element an array.
+Use `Array.reduce()` and `Array.forEach()` to map grouped values to individual arrays.
+
+```js
+const unzip = arr =>
+  arr.reduce(
+    (acc, val) => (val.forEach((v, i) => acc[i].push(v)), acc),
+    Array.from({
+      length: Math.max(...arr.map(x => x.length))
+    }).map(x => [])
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+unzip([['a', 1, true], ['b', 2, false]]); //[['a', 'b'], [1, 2], [true, false]]
+unzip([['a', 1, true], ['b', 2]]); //[['a', 'b'], [1, 2], [true]]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### unzipWith ![advanced](/advanced.svg)
+
+Creates an array of elements, ungrouping the elements in an array produced by [zip](#zip) and applying the provided function.
+
+Use `Math.max.apply()` to get the longest subarray in the array, `Array.map()` to make each element an array.
+Use `Array.reduce()` and `Array.forEach()` to map grouped values to individual arrays.
+Use `Array.map()` and the spread operator (`...`) to apply `fn` to each individual group of elements.
+
+```js
+const unzipWith = (arr, fn) =>
+  arr
+    .reduce(
+      (acc, val) => (val.forEach((v, i) => acc[i].push(v)), acc),
+      Array.from({
+        length: Math.max(...arr.map(x => x.length))
+      }).map(x => [])
+    )
+    .map(val => fn(...val));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+unzipWith([[1, 10, 100], [2, 20, 200]], (...args) => args.reduce((acc, v) => acc + v, 0)); // [3, 30, 300]
 ```
 
 </details>
@@ -1812,6 +2265,28 @@ const without = (arr, ...args) => arr.filter(v => !args.includes(v));
 
 ```js
 without([2, 1, 2, 3], 1, 2); // [3]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### xProd
+
+Creates a new array out of the two supplied by creating each possible pair from the arrays.
+
+Use `Array.reduce()`, `Array.map()` and `Array.concat()` to produce every possible pair from the elements of the two arrays and save them in an array.
+
+```js
+const xProd = (a, b) => a.reduce((acc, x) => acc.concat(b.map(y => [x, y])), []);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+xProd([1, 2], ['a', 'b']); // [[1, 'a'], [1, 'b'], [2, 'a'], [2, 'b']]
 ```
 
 </details>
@@ -1866,6 +2341,47 @@ const zipObject = (props, values) =>
 ```js
 zipObject(['a', 'b', 'c'], [1, 2]); // {a: 1, b: 2, c: undefined}
 zipObject(['a', 'b'], [1, 2, 3]); // {a: 1, b: 2}
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### zipWith ![advanced](/advanced.svg)
+
+Creates an array of elements, grouped based on the position in the original arrays and using function as the last value to specify how grouped values should be combined.
+
+Check if the last argument provided in a function.
+Use `Math.max()` to get the longest array in the arguments.
+Creates an array with that length as return value and use `Array.from()` with a map-function to create an array of grouped elements.
+If lengths of the argument-arrays vary, `undefined` is used where no value could be found.
+The function is invoked with the elements of each group `(...group)`.
+
+```js
+const zipWith = (...arrays) => {
+  const length = arrays.length;
+  let fn = length > 1 ? arrays[length - 1] : undefined;
+  fn = typeof fn == 'function' ? (arrays.pop(), fn) : undefined;
+  const maxLength = Math.max(...arrays.map(x => x.length));
+  const result = Array.from({ length: maxLength }).map((_, i) => {
+    return Array.from({ length: arrays.length }, (_, k) => arrays[k][i]);
+  });
+  return fn ? result.map(arr => fn(...arr)) : result;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+zipWith([1, 2], [10, 20], [100, 200], (a, b, c) => a + b + c); // [111,222]
+zipWith(
+  [1, 2, 3],
+  [10, 20],
+  [100, 200],
+  (a, b, c) => (a != null ? a : 'a') + (b != null ? b : 'b') + (c != null ? c : 'c')
+); // [111, 222, '3bc']
 ```
 
 </details>
@@ -2684,10 +3200,16 @@ getDaysDiffBetweenDates(new Date('2017-12-13'), new Date('2017-12-22')); // 9
 ### tomorrow
 
 Results in a string representation of tomorrow's date.
-Use `new Date()` to get today's date, adding `86400000` of seconds to it(24 hours), using `Date.toISOString()` to convert Date object to string.
+Use `new Date()` to get today's date, adding one day using `Date.getDate()` and `Date.setDate()`, and converting the Date object to a string.
 
 ```js
-const tomorrow = () => new Date(new Date().getTime() + 86400000).toISOString().split('T')[0];
+const tomorrow = () => {
+  let t = new Date();
+  t.setDate(t.getDate() + 1);
+  return `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, '0')}-${String(
+    t.getDate()
+  ).padStart(2, '0')}`;
+};
 ```
 
 <details>
@@ -2703,6 +3225,70 @@ tomorrow(); // 2017-12-27 (if current date is 2017-12-26)
 
 ---
  ## 🎛️ Function
+
+### bind
+
+Creates a function that invokes `fn` with a given context, optionally adding any additional supplied parameters to the beginning of the arguments.
+
+Return a `function` that uses `Function.apply()` to apply the given `context` to `fn`.
+Use `Array.concat()` to prepend any additional supplied parameters to the arguments.
+
+```js
+const bind = (fn, context, ...args) =>
+  function() {
+    return fn.apply(context, args.concat(...arguments));
+  };
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+function greet(greeting, punctuation) {
+  return greeting + ' ' + this.user + punctuation;
+}
+const freddy = { user: 'fred' };
+const freddyBound = bind(greet, freddy);
+console.log(freddyBound('hi', '!')); // 'hi fred!'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### bindKey
+
+Creates a function that invokes the method at a given key of an object, optionally adding any additional supplied parameters to the beginning of the arguments.
+
+Return a `function` that uses `Function.apply()` to bind `context[fn]` to `context`.
+Use `Array.concat()` to prepend any additional supplied parameters to the arguments.
+
+```js
+const bindKey = (context, fn, ...args) =>
+  function() {
+    return context[fn].apply(context, args.concat(...arguments));
+  };
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const freddy = {
+  user: 'fred',
+  greet: function(greeting, punctuation) {
+    return greeting + ' ' + this.user + punctuation;
+  }
+};
+const freddyBound = bindKey(freddy, 'greet');
+console.log(freddyBound('hi', '!')); // 'hi fred!'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 
 ### chainAsync
 
@@ -2764,6 +3350,32 @@ multiplyAndAdd5(5, 2); // 15
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### composeRight
+
+Performs left-to-right function composition.
+
+Use `Array.reduce()` to perform left-to-right function composition.
+The first (leftmost) function can accept one or more arguments; the remaining functions must be unary.
+
+```js
+const composeRight = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const add = (x, y) => x + y;
+const square = x => x * x;
+const addAndSquare = composeRight(add, square);
+addAndSquare(1, 2); // 9
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### curry
 
 Curries a function.
@@ -2812,6 +3424,35 @@ defer(console.log, 'a'), console.log('b'); // logs 'b' then 'a'
 document.querySelector('#someElement').innerHTML = 'Hello';
 longRunningFunction(); //Browser will not update the HTML until this has finished
 defer(longRunningFunction); // Browser will update the HTML then run the function
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### delay
+
+Invokes the provided function after `wait` milliseconds.
+
+Use `setTimeout()` to delay execution of `fn`.
+Use the spread (`...`) operator to supply the function with an arbitrary number of arguments.
+
+```js
+const delay = (fn, wait, ...args) => setTimeout(fn, wait, ...args);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+delay(
+  function(text) {
+    console.log(text);
+  },
+  1000,
+  'later'
+); // Logs 'later' after one second.
 ```
 
 </details>
@@ -2931,6 +3572,58 @@ document.body.addEventListener('click', once(startApp)); // only runs `startApp`
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### partial
+
+Creates a function that invokes `fn` with `partials` prepended to the arguments it receives.
+
+Use the spread operator (`...`) to prepend `partials` to the list of arguments of `fn`.
+
+```js
+const partial = (fn, ...partials) => (...args) => fn(...partials, ...args);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+function greet(greeting, name) {
+  return greeting + ' ' + name + '!';
+}
+const greetHello = partial(greet, 'Hello');
+greetHello('John'); // 'Hello John!'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### partialRight
+
+Creates a function that invokes `fn` with `partials` appended to the arguments it receives.
+
+Use the spread operator (`...`) to append `partials` to the list of arguments of `fn`.
+
+```js
+const partialRight = (fn, ...partials) => (...args) => fn(...args, ...partials);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+function greet(greeting, name) {
+  return greeting + ' ' + name + '!';
+}
+const greetJohn = partialRight(greet, 'John');
+greetJohn('Hello'); // 'Hello John!'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### runPromisesInSeries
 
 Runs an array of promises in series.
@@ -2973,6 +3666,63 @@ async function sleepyWork() {
   await sleep(1000);
   console.log('I woke up after 1 second.');
 }
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### times
+
+Iterates over a callback `n` times
+
+Use `Function.call()` to call `fn` `n` times or until it returns `false`.
+Omit the last argument, `context`, to use an `undefined` object (or the global object in non-strict mode).
+
+```js
+const times = (n, fn, context = undefined) => {
+  let i = 0;
+  while (fn.call(context, i) !== false && ++i < n) {}
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+var output = '';
+times(5, i => (output += i));
+console.log(output); // 01234
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### unfold
+
+Builds an array, using an iterator function and an initial seed value.
+
+Use a `while` loop and `Array.push()` to call the function repeatedly until it returns `false`.
+The iterator function accepts one argument (`seed`) and must always return an array with two elements ([`value`, `nextSeed`]) or `false` to terminate.
+
+```js
+const unfold = (fn, seed) => {
+  let result = [],
+    val = [null, seed];
+  while ((val = fn(val[1]))) result.push(val[0]);
+  return result;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+var f = n => (n > 50 ? false : [-n, n + 10]);
+unfold(f, 10); // [-10, -20, -30, -40, -50]
 ```
 
 </details>
@@ -3520,8 +4270,8 @@ const minBy = (arr, fn) => Math.min(...arr.map(typeof fn === 'function' ? fn : v
 <summary>Examples</summary>
 
 ```js
-minBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n); // 8
-minBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n'); // 8
+minBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n); // 2
+minBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n'); // 2
 ```
 
 </details>
@@ -4137,6 +4887,37 @@ UUIDGeneratorNode(); // '79c7c136-60ee-40a2-beb2-856f1feabefc'
 ---
  ## 🗃️ Object
 
+### deepClone
+
+Creates a deep clone of an object.
+
+Use recursion.
+Use `Object.assign()` and an empty object (`{}`) to create a shallow clone of the original.
+Use `Object.keys()` and `Array.forEach()` to determine which key-value pairs need to be deep cloned.
+
+```js
+const deepClone = obj => {
+  let clone = Object.assign({}, obj);
+  Object.keys(clone).forEach(
+    key => (clone[key] = typeof obj[key] === 'object' ? deepClone(obj[key]) : obj[key])
+  );
+  return clone;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const a = { foo: 'bar', obj: { a: 1, b: 2 } };
+const b = deepClone(a); // a !== b, a.obj !== b.obj
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### defaults
 
 Assigns default values for all properties in an object that are `undefined`.
@@ -4185,6 +4966,67 @@ const equals = (a, b) => {
 
 ```js
 equals({ a: [2, { e: 3 }], b: [4], c: 'foo' }, { a: [2, { e: 3 }], b: [4], c: 'foo' }); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### findKey
+
+Returns the first key that satisfies the provided testing function. Otherwise `undefined` is returned.
+
+Use `Object.keys(obj)` to get all the properties of the object, `Array.find()` to test the provided function for each key-value pair. The callback receives three arguments - the value, the key and the object.
+
+```js
+const findKey = (obj, fn) => Object.keys(obj).find(key => fn(obj[key], key, obj));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+findKey(
+  {
+    barney: { age: 36, active: true },
+    fred: { age: 40, active: false },
+    pebbles: { age: 1, active: true }
+  },
+  o => o['active']
+); // 'barney'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### findLastKey
+
+Returns the last key that satisfies the provided testing function. Otherwise `undefined` is returned.
+
+Use `Object.keys(obj)` to get all the properties of the object, `Array.reverse()` to reverse their order and `Array.find()` to test the provided function for each key-value pair. The callback receives three arguments - the value, the key and the object.
+
+```js
+const findLastKey = (obj, fn) =>
+  Object.keys(obj)
+    .reverse()
+    .find(key => fn(obj[key], key, obj));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+findLastKey(
+  {
+    barney: { age: 36, active: true },
+    fred: { age: 40, active: false },
+    pebbles: { age: 1, active: true }
+  },
+  o => o['active']
+); // 'pebbles'
 ```
 
 </details>
@@ -4306,14 +5148,17 @@ get(obj, 'selector.to.val', 'target[0]', 'target[2].a'); // ['val to select', 1,
 
 ### invertKeyValues
 
-Inverts the key-value pairs of an object, without mutating it.
+Inverts the key-value pairs of an object, without mutating it. The corresponding inverted value of each inverted key is an array of keys responsible for generating the inverted value. If a function is supplied, it is applied to each inverted key.
 
-Use `Object.keys()` and `Array.reduce()` to invert the key-value pairs of an object.
+Use `Object.keys()` and `Array.reduce()` to invert the key-value pairs of an object and apply the function provided (if any).
+Omit the second argument, `fn`, to get the inverted keys without applying a function to them.
 
 ```js
-const invertKeyValues = obj =>
+const invertKeyValues = (obj, fn) =>
   Object.keys(obj).reduce((acc, key) => {
-    acc[obj[key]] = key;
+    const val = fn ? fn(obj[key]) : obj[key];
+    acc[val] = acc[val] || [];
+    acc[val].push(key);
     return acc;
   }, {});
 ```
@@ -4322,7 +5167,8 @@ const invertKeyValues = obj =>
 <summary>Examples</summary>
 
 ```js
-invertKeyValues({ name: 'John', age: 20 }); // { 20: 'age', John: 'name' }
+invertKeyValues({ a: 1, b: 2, c: 1 }); // { 1: [ 'a', 'c' ], 2: [ 'b' ] }
+invertKeyValues({ a: 1, b: 2, c: 1 }, value => 'group' + value); // { group1: [ 'a', 'c' ], group2: [ 'b' ] }
 ```
 
 </details>
@@ -4409,6 +5255,64 @@ const users = {
   pebbles: { user: 'pebbles', age: 1 }
 };
 mapValues(users, u => u.age); // { fred: 40, pebbles: 1 }
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### matches
+
+Compares two objects to determine if the first one contains equivalent property values to the second one.
+
+Use `Object.keys(source)` to get all the keys of the second object, then `Array.every()`, `Object.hasOwnProperty()` and strict comparison to determine if all keys exist in the first object and have the same values.
+
+```js
+const matches = (obj, source) =>
+  Object.keys(source).every(key => obj.hasOwnProperty(key) && obj[key] === source[key]);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+matches({ age: 25, hair: 'long', beard: true }, { hair: 'long', beard: true }); // true
+matches({ hair: 'long', beard: true }, { age: 25, hair: 'long', beard: true }); // false
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### matchesWith
+
+Compares two objects to determine if the first one contains equivalent property values to the second one, based on a provided function.
+
+Use `Object.keys(source)` to get all the keys of the second object, then `Array.every()`, `Object.hasOwnProperty()` and the provided function to determine if all keys exist in the first object and have equivalent values.
+If no function is provided, the values will be compared using the equality operator.
+
+```js
+const matchesWith = (obj, source, fn) =>
+  Object.keys(source).every(
+    key =>
+      obj.hasOwnProperty(key) && fn
+        ? fn(obj[key], source[key], key, obj, source)
+        : obj[key] == source[key]
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const isGreeting = val => /^h(?:i|ello)$/.test(val);
+matchesWith(
+  { greeting: 'hello' },
+  { greeting: 'hi' },
+  (oV, sV) => isGreeting(oV) && isGreeting(sV)
+); // true
 ```
 
 </details>
@@ -4545,6 +5449,7 @@ const omitBy = (obj, fn) =>
 
 ```js
 omitBy({ a: 1, b: '2', c: 3 }, x => typeof x === 'number'); // { b: '2' }
+```
 
 </details>
 
@@ -5514,6 +6419,37 @@ isBoolean(false); // true
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### isEmpty
+
+Returns true if the a value is an empty object, collection, map or set, has no enumerable properties or is any type that is not considered a collection.
+
+Check if the provided value is `null` or if its `length` is equal to `0`.
+
+```js
+const isEmpty = val => val == null || !(Object.keys(val) || val).length;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isEmpty(new Map()); // true
+isEmpty(new Set()); // true
+isEmpty([]); // true
+isEmpty({}); // true
+isEmpty(''); // true
+isEmpty([1, 2]); // false
+isEmpty({ a: 1, b: 2 }); // false
+isEmpty('text'); // false
+isEmpty(123); // true - type is not considered a collection
+isEmpty(true); // true - type is not considered a collection
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### isFunction
 
 Checks if the given argument is a function.
@@ -5626,6 +6562,31 @@ isObject(['Hello!']); // true
 isObject({ a: 1 }); // true
 isObject({}); // true
 isObject(true); // false
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isObjectLike
+
+Checks if a value is object-like.
+
+Check if the provided value is not `null` and its `typeof` is equal to `'object'`.
+
+```js
+const isObjectLike = val => val !== null && typeof val === 'object';
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isObjectLike({}); // true
+isObjectLike([1, 2, 3]); // true
+isObjectLike(x => x); // false
+isObjectLike(null); // false
 ```
 
 </details>
@@ -5814,6 +6775,29 @@ isValidJSON(null); // true
 
 ---
  ## 🔧 Utility
+
+### castArray
+
+Casts the provided value as an array if it's not one.
+
+Use `Array.isArray()` to determine if `val` is an array and return it as-is or encapsulated in an array accordingly.
+
+```js
+const castArray = val => (Array.isArray(val) ? val : [val]);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+castArray('foo'); // ['foo']
+castArray([1]); // [1]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 
 ### cloneRegExp
 
@@ -6076,6 +7060,32 @@ Logs: {
   "id": 101
 }
 */
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### nthArg
+
+Creates a function that gets the argument at index `n`. If `n` is negative, the nth argument from the end is returned.
+
+Use `Array.slice()` to get the desired argument at index `n`.
+
+```js
+const nthArg = n => (...args) => args.slice(n)[0];
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const third = nthArg(2);
+third(1, 2, 3); // 3
+third(1, 2); // undefined
+const last = nthArg(-1);
+last(1, 2, 3, 4, 5); // 5
 ```
 
 </details>

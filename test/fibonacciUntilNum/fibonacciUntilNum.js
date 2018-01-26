@@ -5,4 +5,4 @@ return Array.from({ length: n }).reduce(
 []
 );
 };
- module.exports = fibonacciUntilNum
+module.exports = fibonacciUntilNum

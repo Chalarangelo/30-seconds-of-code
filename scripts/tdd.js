@@ -23,7 +23,7 @@ const snippetFiles = [];
 
 const snippetFilesActive = fs.readdirSync(SNIPPETS_ACTIVE, 'utf8').map(fileName => fileName.slice(0, -3));
 const snippetFilesArchive = fs.readdirSync(SNIPPETS_ARCHIVE, 'utf8')
-                              .filter(fileName => !fileName.includes('README')) // -> Filters out main README.md file in Archieve which isn't a snippet 
+                              .filter(fileName => !fileName.includes('README')) // -> Filters out main README.md file in Archieve which isn't a snippet
                               .map(fileName => fileName.slice(0, -3));
 
 snippetFiles.push(...snippetFilesActive);
@@ -46,35 +46,35 @@ snippetFiles
     const fileCode = fileData.slice(fileData.search(/```\s*js/i), fileData.lastIndexOf('```') + 3);
     // Split code based on code markers
     const blockMarkers = fileCode
-      .split('\n')
-      .map((line, lineIndex) => (line.slice(0, 3) === '```' ? lineIndex : '//CLEAR//'))
-      .filter(x => !(x === '//CLEAR//'));
+                            .split('\n')
+                            .map((line, lineIndex) => (line.slice(0, 3) === '```' ? lineIndex : '//CLEAR//'))
+                            .filter(x => !(x === '//CLEAR//'));
     // Grab snippet function based on code markers
     const fileFunction = fileCode
-      .split('\n')
-      .map(line => line.trim())
-      .filter((_, i) => blockMarkers[0] < i && i < blockMarkers[1]);
+                            .split('\n')
+                            .map(line => line.trim())
+                            .filter((_, i) => blockMarkers[0] < i && i < blockMarkers[1]);
     // Grab snippet example based on code markers
     const fileExample = fileCode
-      .split('\n')
-      .map(line => line.trim())
-      .filter((_, i) => blockMarkers[2] < i && i < blockMarkers[3]);
+                            .split('\n')
+                            .map(line => line.trim())
+                            .filter((_, i) => blockMarkers[2] < i && i < blockMarkers[3]);
 
     // Export template for snippetName.js
-    const exportFile = `${fileFunction.join('\n')}\n module.exports = ${fileName}`;
+    const exportFile = `${fileFunction.join('\n')}\nmodule.exports = ${fileName}`.trim();
 
     // Export template for snippetName.test.js which generates a example test & other information
     const exportTest = [
       `const test = require('tape');`,
       `const ${fileName} = require('./${fileName}.js');`,
       `\ntest('Testing ${fileName}', (t) => {`,
-      `\t//For more information on all the methods supported by tape\n\t//Please go to https://github.com/substack/tape`,
-      `\tt.true(typeof ${fileName} === 'function', '${fileName} is a Function');`,
-      `\t//t.deepEqual(${fileName}(args..), 'Expected');`,
-      `\t//t.equal(${fileName}(args..), 'Expected');`,
-      `\t//t.false(${fileName}(args..), 'Expected');`,
-      `\t//t.throws(${fileName}(args..), 'Expected');`,
-      `\tt.end();`,
+      `  //For more information on all the methods supported by tape\n  //Please go to https://github.com/substack/tape`,
+      `  t.true(typeof ${fileName} === 'function', '${fileName} is a Function');`,
+      `  //t.deepEqual(${fileName}(args..), 'Expected');`,
+      `  //t.equal(${fileName}(args..), 'Expected');`,
+      `  //t.false(${fileName}(args..), 'Expected');`,
+      `  //t.throws(${fileName}(args..), 'Expected');`,
+      `  t.end();`,
       `});`
     ].join('\n');
 
