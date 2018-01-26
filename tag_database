@@ -177,6 +177,7 @@ promisify:adapter,function,promise
 pull:array
 pullAtIndex:array
 pullAtValue:array
+pullBy:array,function,advanced
 randomHexColorCode:utility,random
 randomIntArrayInRange:math,utility,random
 randomIntegerInRange:math,utility,random
@@ -256,4 +257,4 @@ xProd:array,math
 yesNo:utility,regexp
 zip:array
 zipObject:array,object
-zipWith:array,advanced
+zipWith:array,function,advanced
