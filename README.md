@@ -135,6 +135,7 @@ average(1, 2, 3);
 * [`pull`](#pull)
 * [`pullAtIndex`](#pullatindex)
 * [`pullAtValue`](#pullatvalue)
+* [`pullBy`](#pullby-)
 * [`reducedFilter`](#reducedfilter)
 * [`reduceSuccessive`](#reducesuccessive)
 * [`reduceWhich`](#reducewhich)
@@ -355,6 +356,7 @@ average(1, 2, 3);
 * [`reverseString`](#reversestring)
 * [`sortCharactersInString`](#sortcharactersinstring)
 * [`splitLines`](#splitlines)
+* [`stripHTMLtags`](#striphtmltags)
 * [`toCamelCase`](#tocamelcase)
 * [`toKebabCase`](#tokebabcase)
 * [`toSnakeCase`](#tosnakecase)
@@ -1702,6 +1704,40 @@ const pullAtValue = (arr, pullArr) => {
 ```js
 let myArray = ['a', 'b', 'c', 'd'];
 let pulled = pullAtValue(myArray, ['b', 'd']); // myArray = [ 'a', 'c' ] , pulled = [ 'b', 'd' ]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### pullBy ![advanced](/advanced.svg)
+
+Mutates the original array to filter out the values specified, based on a given iterator function.
+
+Check if the last argument provided in a function.
+Use `Array.map()` to apply the iterator function `fn` to all array elements.
+Use `Array.filter()` and `Array.includes()` to pull out the values that are not needed.
+Use `Array.length = 0` to mutate the passed in an array by resetting it's length to zero and `Array.push()` to re-populate it with only the pulled values.
+
+```js
+const pullBy = (arr, ...args) => {
+  const length = args.length;
+  let fn = length > 1 ? args[length - 1] : undefined;
+  fn = typeof fn == 'function' ? (args.pop(), fn) : undefined;
+  let argState = (Array.isArray(args[0]) ? args[0] : args).map(val => fn(val));
+  let pulled = arr.filter((v, i) => !argState.includes(fn(v)));
+  arr.length = 0;
+  pulled.forEach(v => arr.push(v));
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+var myArray = [{ x: 1 }, { x: 2 }, { x: 3 }, { x: 1 }];
+pullBy(myArray, [{ x: 1 }, { x: 3 }], o => o.x); // myArray = [{ x: 2 }]
 ```
 
 </details>
@@ -6262,6 +6298,28 @@ const splitLines = str => str.split(/\r?\n/);
 
 ```js
 splitLines('This\nis a\nmultiline\nstring.\n'); // ['This', 'is a', 'multiline', 'string.' , '']
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### stripHTMLTags
+
+Removes HTML/XML tags from string.
+
+Use a regular expression to remove HTML/XML tags from a string.
+
+```js
+const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+stripHTMLTags('<p><em>lorem</em> <strong>ipsum</strong></p>'); // 'lorem ipsum'
 ```
 
 </details>

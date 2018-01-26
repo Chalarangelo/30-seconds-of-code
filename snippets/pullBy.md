@@ -20,6 +20,6 @@ const pullBy = (arr, ...args) => {
 ```
 
 ```js
-var myArray = [{ 'x': 1 }, { 'x': 2 }, { 'x': 3 }, { 'x': 1 }];
-pullBy(myArray, [{ 'x': 1 }, { 'x': 3 }], o => o.x); // myArray = [{ x: 2 }]
+var myArray = [{ x: 1 }, { x: 2 }, { x: 3 }, { x: 1 }];
+pullBy(myArray, [{ x: 1 }, { x: 3 }], o => o.x); // myArray = [{ x: 2 }]
 ```
