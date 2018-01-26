@@ -10,4 +10,4 @@ tag =>
 '&quot;': '"'
 }[tag] || tag)
 );
- module.exports = unescapeHTML
+module.exports = unescapeHTML

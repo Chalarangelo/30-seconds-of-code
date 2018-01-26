@@ -57,7 +57,6 @@ try {
       })
   );
   tagDbStats = Object.entries(tagDbData)
-    .sort((a, b) => a[1][0].localeCompare(b[1][0]))
     .reduce((acc, val) => {
       val[1].forEach(v => acc.hasOwnProperty(v) ? acc[v]++ : (acc[v] = 1));
       return acc;
@@ -89,7 +88,7 @@ try {
 }
 // Log statistics for the tag_database file
 console.log(`\n${chalk.bgWhite(chalk.black('=== TAG STATS ==='))}`);
-for (let tagData of Object.entries(tagDbStats).filter(v => v[0] !== 'undefined'))
+for (let tagData of Object.entries(tagDbStats).filter(v => v[0] !== 'undefined').sort((a,b) => a[0].localeCompare(b[0])))
   console.log(`${chalk.green(tagData[0])}: ${tagData[1]} snippets`);
 console.log(
   `${chalk.blue("New untagged snippets (will be tagged as 'uncategorized'):")} ${missingTags}\n`

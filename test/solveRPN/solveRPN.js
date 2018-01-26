@@ -26,4 +26,4 @@ throw `${symbol} is not a recognized symbol`;
 if (stack.length === 1) return stack.pop();
 else throw `${rpn} is not a proper RPN. Please check it and try again`;
 };
- module.exports = solveRPN
+module.exports = solveRPN

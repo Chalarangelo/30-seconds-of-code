@@ -1,4 +1,4 @@
-Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
+Test log for: Thu Jan 25 2018 20:12:57 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.1 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -44,9 +44,15 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
 
     ✔ arrayToHtmlList is a Function
 
+  Testing ary
+
+    ✔ ary is a Function
+
   Testing atob
 
     ✔ atob is a Function
+    ✔ atob("Zm9vYmFy") equals "foobar"
+    ✔ atob("Z") returns ""
 
   Testing average
 
@@ -66,10 +72,20 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
   Testing averageBy
 
     ✔ averageBy is a Function
+    ✔ Produces the right result with a function
+    ✔ Produces the right result with a property name
 
   Testing binarySearch
 
     ✔ binarySearch is a Function
+
+  Testing bind
+
+    ✔ bind is a Function
+
+  Testing bindKey
+
+    ✔ bindKey is a Function
 
   Testing bottomVisible
 
@@ -78,6 +94,7 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
   Testing btoa
 
     ✔ btoa is a Function
+    ✔ btoa("foobar") equals "Zm9vYmFy"
 
   Testing byteSize
 
@@ -97,6 +114,15 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
 
     ✔ capitalizeEveryWord is a Function
     ✔ Capitalizes the first letter of every word in a string
+
+  Testing castArray
+
+    ✔ castArray is a Function
+    ✔ Works for single values
+    ✔ Works for arrays with one value
+    ✔ Works for arrays with multiple value
+    ✔ Works for strings
+    ✔ Works for objects
 
   Testing chainAsync
 
@@ -128,6 +154,7 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
   Testing cloneRegExp
 
     ✔ cloneRegExp is a Function
+    ✔ Clones regular expressions properly
 
   Testing coalesce
 
@@ -160,6 +187,11 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
 
     ✔ compose is a Function
     ✔ Performs right-to-left function composition
+
+  Testing composeRight
+
+    ✔ composeRight is a Function
+    ✔ Performs left-to-right function composition
 
   Testing copyToClipboard
 
@@ -200,14 +232,28 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
 
     ✔ decapitalize is a Function
 
+  Testing deepClone
+
+    ✔ deepClone is a Function
+    ✔ Shallow cloning works
+    ✔ Deep cloning works
+
   Testing deepFlatten
 
     ✔ deepFlatten is a Function
     ✔ Deep flattens an array
 
+  Testing defaults
+
+    ✔ defaults is a Function
+
   Testing defer
 
     ✔ defer is a Function
+
+  Testing delay
+
+    ✔ delay is a Function
 
   Testing detectDeviceType
 
@@ -217,6 +263,10 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
 
     ✔ difference is a Function
     ✔ Returns the difference between two arrays
+
+  Testing differenceBy
+
+    ✔ differenceBy is a Function
 
   Testing differenceWith
 
@@ -316,9 +366,21 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
     ✔ filterNonUnique is a Function
     ✔ Filters out the non-unique values in an array
 
+  Testing findKey
+
+    ✔ findKey is a Function
+
   Testing findLast
 
     ✔ findLast is a Function
+
+  Testing findLastIndex
+
+    ✔ findLastIndex is a Function
+
+  Testing findLastKey
+
+    ✔ findLastKey is a Function
 
   Testing flatten
 
@@ -333,6 +395,14 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
   Testing forEachRight
 
     ✔ forEachRight is a Function
+
+  Testing forOwn
+
+    ✔ forOwn is a Function
+
+  Testing forOwnRight
+
+    ✔ forOwnRight is a Function
 
   Testing formatDuration
 
@@ -513,14 +583,39 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
     ✔ intersection is a Function
     ✔ Returns a list of elements that exist in both arrays
 
+  Testing intersectionBy
+
+    ✔ intersectionBy is a Function
+
+  Testing intersectionWith
+
+    ✔ intersectionWith is a Function
+
   Testing invertKeyValues
 
     ✔ invertKeyValues is a Function
-    ✔ Inverts the key-value pairs of an object
+    ✔ invertKeyValues({ a: 1, b: 2, c: 1 }) returns { 1: [ 'a', 'c' ], 2: [ 'b' ] }
+    ✔ invertKeyValues({ a: 1, b: 2, c: 1 }, value => 'group' + value) returns { group1: [ 'a', 'c' ], group2: [ 'b' ] }
 
   Testing is
 
     ✔ is is a Function
+    ✔ Works for arrays with data
+    ✔ Works for empty arrays
+    ✔ Works for arrays, not objects
+    ✔ Works for objects
+    ✔ Works for maps
+    ✔ Works for regular expressions
+    ✔ Works for sets
+    ✔ Works for weak maps
+    ✔ Works for weak sets
+    ✔ Works for strings - returns false for primitive
+    ✔ Works for strings - returns true when using constructor
+    ✔ Works for numbers - returns false for primitive
+    ✔ Works for numbers - returns true when using constructor
+    ✔ Works for booleans - returns false for primitive
+    ✔ Works for booleans - returns true when using constructor
+    ✔ Works for functions
 
   Testing isAbsoluteURL
 
@@ -557,6 +652,10 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
 
     ✔ isDivisible is a Function
     ✔ The number 6 is divisible by 3
+
+  Testing isEmpty
+
+    ✔ isEmpty is a Function
 
   Testing isEven
 
@@ -604,6 +703,14 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
     ✔ isObject([]) is a object
     ✔ isObject({ a:1 }) is a object
     ✔ isObject(true) is not a object
+
+  Testing isObjectLike
+
+    ✔ isObjectLike is a Function
+
+  Testing isPlainObject
+
+    ✔ isPlainObject is a Function
 
   Testing isPrime
 
@@ -753,9 +860,19 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
     ✔ Replaces all but the last num of characters with the specified mask character
     ✔ Replaces all but the last num of characters with the specified mask character
 
+  Testing matches
+
+    ✔ matches is a Function
+
+  Testing matchesWith
+
+    ✔ matchesWith is a Function
+
   Testing maxBy
 
     ✔ maxBy is a Function
+    ✔ Produces the right result with a function
+    ✔ Produces the right result with a property name
 
   Testing maxN
 
@@ -780,6 +897,8 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
   Testing minBy
 
     ✔ minBy is a Function
+    ✔ Produces the right result with a function
+    ✔ Produces the right result with a property name
 
   Testing minN
 
@@ -791,6 +910,10 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
 
     ✔ negate is a Function
     ✔ Negates a predicate function
+
+  Testing nthArg
+
+    ✔ nthArg is a Function
 
   Testing nthElement
 
@@ -816,6 +939,14 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
 
     ✔ off is a Function
 
+  Testing omit
+
+    ✔ omit is a Function
+
+  Testing omitBy
+
+    ✔ omitBy is a Function
+
   Testing on
 
     ✔ on is a Function
@@ -834,6 +965,10 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
     ✔ Returns a sorted array of objects ordered by properties and orders.
     ✔ Returns a sorted array of objects ordered by properties and orders.
 
+  Testing over
+
+    ✔ over is a Function
+
   Testing palindrome
 
     ✔ palindrome is a Function
@@ -843,6 +978,14 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
   Testing parseCookie
 
     ✔ parseCookie is a Function
+
+  Testing partial
+
+    ✔ partial is a Function
+
+  Testing partialRight
+
+    ✔ partialRight is a Function
 
   Testing partition
 
@@ -858,6 +1001,10 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
 
     ✔ pick is a Function
     ✔ Picks the key-value pairs corresponding to the given keys from an object.
+
+  Testing pickBy
+
+    ✔ pickBy is a Function
 
   Testing pipeFunctions
 
@@ -936,6 +1083,14 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
 
     ✔ redirect is a Function
 
+  Testing reduceSuccessive
+
+    ✔ reduceSuccessive is a Function
+
+  Testing reduceWhich
+
+    ✔ reduceWhich is a Function
+
   Testing reducedFilter
 
     ✔ reducedFilter is a Function
@@ -996,6 +1151,8 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
   Testing shallowClone
 
     ✔ shallowClone is a Function
+    ✔ Shallow cloning works
+    ✔ Does not clone deeply
 
   Testing show
 
@@ -1034,6 +1191,10 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
     ✔ sortedIndex is a Function
     ✔ Returns the lowest index at which value should be inserted into array in order to maintain its sort order.
     ✔ Returns the lowest index at which value should be inserted into array in order to maintain its sort order.
+
+  Testing sortedLastIndex
+
+    ✔ sortedLastIndex is a Function
 
   Testing speechSynthesis
 
@@ -1076,6 +1237,14 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
     ✔ symmetricDifference is a Function
     ✔ Returns the symmetric difference between two arrays.
 
+  Testing symmetricDifferenceBy
+
+    ✔ symmetricDifferenceBy is a Function
+
+  Testing symmetricDifferenceWith
+
+    ✔ symmetricDifferenceWith is a Function
+
   Testing tail
 
     ✔ tail is a Function
@@ -1097,6 +1266,10 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
   Testing timeTaken
 
     ✔ timeTaken is a Function
+
+  Testing times
+
+    ✔ times is a Function
 
   Testing toCamelCase
 
@@ -1166,15 +1339,31 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
     ✔ truthCheckCollection is a Function
     ✔ second argument is truthy on all elements of a collection
 
+  Testing unary
+
+    ✔ unary is a Function
+
   Testing unescapeHTML
 
     ✔ unescapeHTML is a Function
     ✔ Unescapes escaped HTML characters.
 
+  Testing unfold
+
+    ✔ unfold is a Function
+
   Testing union
 
     ✔ union is a Function
     ✔ Returns every element that exists in any of the two arrays once
+
+  Testing unionBy
+
+    ✔ unionBy is a Function
+
+  Testing unionWith
+
+    ✔ unionWith is a Function
 
   Testing uniqueElements
 
@@ -1184,6 +1373,17 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
   Testing untildify
 
     ✔ untildify is a Function
+
+  Testing unzip
+
+    ✔ unzip is a Function
+    ✔ unzip([['a', 1, true], ['b', 2, false]]) equals [['a', 'b'], [1, 2], [true, false]]
+    ✔ unzip([['a', 1, true], ['b', 2]]) equals [['a', 'b'], [1, 2], [true]]
+
+  Testing unzipWith
+
+    ✔ unzipWith is a Function
+    ✔ unzipWith([[1, 10, 100], [2, 20, 200]], (...args) => args.reduce((acc, v) => acc + v, 0)) equals [3, 30, 300]
 
   Testing validateNumber
 
@@ -1227,6 +1427,11 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
     ✔ words([]) throws a error
     ✔ words(1234) throws a error
 
+  Testing xProd
+
+    ✔ xProd is a Function
+    ✔ xProd([1, 2], ['a', 'b']) returns [[1, 'a'], [1, 'b'], [2, 'a'], [2, 'b']]
+
   Testing yesNo
 
     ✔ yesNo is a Function
@@ -1268,9 +1473,13 @@ Test log for: Thu Jan 18 2018 20:09:23 GMT+0000 (UTC)
     ✔ zipObject(string) throws an error
     ✔ zipObject(test, string) throws an error
 
+  Testing zipWith
 
-  total:     556
-  passing:   556
-  duration:  307ms
+    ✔ zipWith is a Function
+
+
+  total:     639
+  passing:   639
+  duration:  487ms
 
 
