@@ -358,6 +358,7 @@ average(1, 2, 3);
 * [`reverseString`](#reversestring)
 * [`sortCharactersInString`](#sortcharactersinstring)
 * [`splitLines`](#splitlines)
+* [`stripHTMLTags`](#striphtmltags)
 * [`toCamelCase`](#tocamelcase)
 * [`toKebabCase`](#tokebabcase)
 * [`toSnakeCase`](#tosnakecase)
@@ -419,15 +420,6 @@ average(1, 2, 3);
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`validateNumber`](#validatenumber)
 * [`yesNo`](#yesno)
-
-</details>
-
-### _Uncategorized_
-
-<details>
-<summary>View contents</summary>
-
-* [`stripHTMLTags`](#striphtmltags)
 
 </details>
 
@@ -6372,6 +6364,28 @@ splitLines('This\nis a\nmultiline\nstring.\n'); // ['This', 'is a', 'multiline',
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### stripHTMLTags
+
+Removes HTML/XML tags from string.
+
+Use a regular expression to remove HTML/XML tags from a string.
+
+```js
+const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+stripHTMLTags('<p><em>lorem</em> <strong>ipsum</strong></p>'); // 'lorem ipsum'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### toCamelCase
 
 Converts a string to camelcase.
@@ -7629,25 +7643,6 @@ yesNo('Foo', true); // true
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
-
----
- ## _Uncategorized_
-
-### stripHTMLTags
-
-Removes HTML/XML tags from string.
-
-Use a regular expression to remove HTML/XML tags from a string.
-
-```js
-const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');
-```
-
-```js
-stripHTMLTags('<p><em>lorem</em> <strong>ipsum</strong></p>'); // 'lorem ipsum'
-```
-
-<br>[⬆ back to top](#table-of-contents)
 
 
 ## Collaborators
