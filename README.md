@@ -102,7 +102,7 @@ average(1, 2, 3);
 * [`difference`](#difference)
 * [`differenceBy`](#differenceby)
 * [`differenceWith`](#differencewith)
-* [`dropElements`](#dropelements)
+* [`dropWhile`](#dropWhile)
 * [`dropRight`](#dropright)
 * [`everyNth`](#everynth)
 * [`filterNonUnique`](#filternonunique)
@@ -842,7 +842,7 @@ differenceWith([1, 1.2, 1.5, 3, 0], [1.9, 3, 0], (a, b) => Math.round(a) === Mat
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### dropElements
+### dropWhile
 
 Removes elements in an array until the passed function returns `true`. Returns the remaining elements in the array.
 
@@ -850,7 +850,7 @@ Loop through the array, using `Array.slice()` to drop the first element of the a
 Returns the remaining elements.
 
 ```js
-const dropElements = (arr, func) => {
+const dropWhile = (arr, func) => {
   while (arr.length > 0 && !func(arr[0])) arr = arr.slice(1);
   return arr;
 };
@@ -860,7 +860,7 @@ const dropElements = (arr, func) => {
 <summary>Examples</summary>
 
 ```js
-dropElements([1, 2, 3, 4], n => n >= 3); // [3,4]
+dropWhile([1, 2, 3, 4], n => n >= 3); // [3,4]
 ```
 
 </details>

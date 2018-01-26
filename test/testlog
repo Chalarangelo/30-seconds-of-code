@@ -252,9 +252,9 @@ Test log for: Fri Jan 26 2018 12:00:18 GMT+0200 (GTB Standard Time)
 
     √ distance is a Function
 
-  Testing dropElements
+  Testing dropWhile
 
-    √ dropElements is a Function
+    √ dropWhile is a Function
     √ Removes elements in an array until the passed function returns true
 
   Testing dropRight

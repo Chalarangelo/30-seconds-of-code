@@ -43,8 +43,10 @@ differenceBy:array,function
 differenceWith:array,function
 digitize:math,array
 distance:math
-dropElements:array,function
+drop:array
 dropRight:array
+dropRightWhile:array,function
+dropWhile:array,function
 elementIsVisibleInViewport:browser
 elo:math,array,advanced
 equals:object,array,type,advanced
