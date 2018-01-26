@@ -16,8 +16,8 @@ const bindAll = (obj, ...fns) =>
 
 ```js
 var view = {
-  'label': 'docs',
-  'click': function() {
+  label: 'docs',
+  click: function() {
     console.log('clicked ' + this.label);
   }
 };
