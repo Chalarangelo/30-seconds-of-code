@@ -35,3 +35,6 @@
 - [ ] I have checked that the changes are working properly
 - [ ] I have checked that there isn't any PR doing the same
 - [ ] I have read the **CONTRIBUTING** document.
+
+<!-- Love 30-seconds-of-code? Please consider supporting our collective:
+👉  https://opencollective.com/30-seconds-of-code/donate -->
