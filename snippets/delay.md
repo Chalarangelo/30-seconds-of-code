@@ -1,4 +1,4 @@
-### defer
+### delay
 
 Invokes the provided function after `wait` milliseconds.
 
