@@ -4,16 +4,16 @@ Returns the highest index at which value should be inserted into array in order 
 
 Check if the array is sorted in descending order (loosely).
 Use `Array.map()` to map each element to an array with its index and value.
-Use `Array.filter()` to find all possible positions where the element could be inserted, `Array.slice(-1)` to get the last one.
+Use `Array.reverse()` and `Array.findIndex()` to find the appropriate last index where the element should be inserted.
 
 ```js
 const sortedLastIndex = (arr, n) => {
   const isDescending = arr[0] > arr[arr.length - 1];
   const index = arr
     .map((val, i) => [i, val])
-    .filter(el => (isDescending ? n >= el[1] : n >= el[1]))
-    .slice(-1)[0][0];
-  return index === -1 ? arr.length : index;
+    .reverse()
+    .findIndex(el => (isDescending ? n <= el[1] : n >= el[1]));
+  return index === -1 ? 0 : arr.length - index - 1;
 };
 ```
 

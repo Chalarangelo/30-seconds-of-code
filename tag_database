@@ -206,7 +206,9 @@ size:object,array,string
 sleep:function,promise
 sortCharactersInString:string
 sortedIndex:array,math
+sortedIndexBy:array,math,function
 sortedLastIndex:array,math
+sortedLastIndexBy:array,math,function
 splitLines:string
 spreadOver:adapter
 standardDeviation:math,array
