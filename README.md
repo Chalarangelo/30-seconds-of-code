@@ -5095,8 +5095,6 @@ UUIDGeneratorNode(); // '79c7c136-60ee-40a2-beb2-856f1feabefc'
 
 ### bindAll
 
-Explain briefly what the snippet does.
-
 Use `Array.forEach()` to return a `function` that uses `Function.apply()` to apply the given context (`obj`) to `fn` for each function specified.
 
 ```js
