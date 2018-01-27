@@ -9,6 +9,15 @@
 
 
 ## Table of Contents 
+### :heavy_division_sign: Math
+
+<details><summary>View contents</summary> <ul><li><a href = "#average"><code>average</code></a></li>
+<li><a href = "#gcd"><code>gcd</code></a></li>
+<li><a href = "#lcm"><code>lcm</code></a></li>
+<li><a href = "#max_n"><code>max_n</code></a></li>
+<li><a href = "#min_n"><code>min_n</code></a></li>
+</ul></details>
+
 ### :books: List
 
 <details><summary>View contents</summary> <ul><li><a href = "#chunk"><code>chunk</code></a></li>
@@ -26,16 +35,206 @@
 <details><summary>View contents</summary> <ul><li><a href = "#count_vowels"><code>count_vowels</code></a></li>
 </ul></details>
 
-### :heavy_division_sign: Math
-
-<details><summary>View contents</summary> <ul><li><a href = "#gcd"><code>gcd</code></a></li>
-<li><a href = "#lcm"><code>lcm</code></a></li>
-<li><a href = "#max_n"><code>max_n</code></a></li>
-<li><a href = "#min_n"><code>min_n</code></a></li>
-</ul></details>
-
 <hr></hr> 
 
+## :heavy_division_sign: Math
+
+### average
+
+:information_source: Already implemented via `statistics.mean`. `statistics.mean` takes an array as an argument whereas this function takes variadic arguments.
+
+Returns the average of two or more numbers.
+
+Takes the sum of all the `args` and divides it by `len(args)`. The secind argument `0.0` in sum is to handle floating point division in `python2`.
+
+```py 
+
+
+def average(*args):
+    return sum(args, 0.0) / len(args)
+
+ 
+ ```
+
+<details><summary>View Examples</summary>
+
+```py
+
+average(*[1, 2, 3]) # 2.0
+average(1, 2, 3) # 2.0
+
+```
+</details>
+
+<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
+ 
+### gcd
+
+:information_source: `math.gcd` works with only two numbers
+
+Calculates the greatest common divisor between two or more numbers/lists.
+
+The `helperGcdfunction` uses recursion. Base case is when `y` equals `0`. In this case, return `x`. Otherwise, return the GCD of `y` and the remainder of the division `x/y`.
+
+Uses the reduce function from the inbuilt module `functools`. Also defines a method `spread` for javascript like spreading of lists.
+
+```py 
+
+
+from functools import reduce
+
+
+def spread(arg):
+    ret = []
+    for i in arg:
+        if isinstance(i, list):
+            ret.extend(i)
+        else:
+            ret.append(i)
+    return ret
+
+
+def gcd(*args):
+    numbers = []
+    numbers.extend(spread(list(args)))
+
+    def _gcd(x, y):
+        return x if not y else gcd(y, x % y)
+
+    return reduce((lambda x, y: _gcd(x, y)), numbers)
+
+ 
+ ```
+
+
+<details><summary>View Examples</summary>
+
+```py
+
+gcd(8,36) # 4
+
+```
+</details>
+
+<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
+ 
+### lcm 
+
+Returns the least common multiple of two or more numbers.
+
+Use the `greatest common divisor (GCD)` formula and the fact that `lcm(x,y) = x * y / gcd(x,y)` to determine the least common multiple. The GCD formula uses recursion.
+
+Uses `reduce` function from the inbuilt module `functools`. Also defines a method `spread` for javascript like spreading of lists.
+
+```py 
+
+
+from functools import reduce
+
+
+def spread(arg):
+    ret = []
+    for i in arg:
+        if isinstance(i, list):
+            ret.extend(i)
+        else:
+            ret.append(i)
+    return ret
+
+
+def lcm(*args):
+    numbers = []
+    numbers.extend(spread(list(args)))
+
+    def _gcd(x, y):
+        return x if not y else gcd(y, x % y)
+
+    def _lcm(x, y):
+        return x * y / _gcd(x, y)
+
+    return reduce((lambda x, y: _lcm(x, y)), numbers)
+
+ 
+ ```
+
+
+<details><summary>View Examples</summary>
+
+```py
+
+lcm(12, 7) # 84
+lcm([1, 3, 4], 5) # 60
+
+```
+</details>
+
+<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
+ 
+### max_n
+
+Returns the `n` maximum elements from the provided list. If `n` is greater than or equal to the provided list's length, then return the original list(sorted in descending order).
+
+Use `list.sort()` combined with the `deepcopy` function from the inbuilt `copy` module to create a shallow clone of the list and sort it in ascending order and then use `list.reverse()` reverse it to make it descending order. Use `[:n]` to get the specified number of elements. Omit the second argument, `n`, to get a one-element array
+
+```py 
+
+
+from copy import deepcopy
+
+
+def max_n(arr, n=1):
+    numbers = deepcopy(arr)
+    numbers.sort()
+    numbers.reverse()
+    return numbers[:n]
+
+ 
+ ```
+
+<details><summary>View Examples</summary>
+
+```py
+
+max_n([1, 2, 3]) # [3]
+max_n([1, 2, 3], 2) # [3,2]
+
+```
+</details>
+
+<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
+ 
+### min_n
+
+Returns the `n` minimum elements from the provided list. If `n` is greater than or equal to the provided list's length, then return the original list(sorted in ascending order).
+
+Use `list.sort()` combined with the `deepcopy` function from the inbuilt `copy` module to create a shallow clone of the list and sort it in ascending order. Use `[:n]` to get the specified number of elements. Omit the second argument, `n`, to get a one-element array
+
+```py 
+
+
+from copy import deepcopy
+
+
+def min_n(arr, n=1):
+    numbers = deepcopy(arr)
+    numbers.sort()
+    return numbers[:n]
+
+ 
+ ```
+
+<details><summary>View Examples</summary>
+
+```py
+
+min_n([1, 2, 3]) # [1]
+min_n([1, 2, 3], 2) # [1,2]
+
+```
+</details>
+
+<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
+ 
 ## :books: List
 
 ### chunk 
@@ -322,175 +521,6 @@ def count_vowels(str):
 
 count_vowels('foobar') # 3
 count_vowels('gym') # 0
-
-```
-</details>
-
-<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
- 
-## :heavy_division_sign: Math
-
-### gcd
-
-:information_source: `math.gcd` works with only two numbers
-
-Calculates the greatest common divisor between two or more numbers/lists.
-
-The `helperGcdfunction` uses recursion. Base case is when `y` equals `0`. In this case, return `x`. Otherwise, return the GCD of `y` and the remainder of the division `x/y`.
-
-Uses the reduce function from the inbuilt module `functools`. Also defines a method `spread` for javascript like spreading of lists.
-
-```py 
-
-
-from functools import reduce
-
-
-def spread(arg):
-    ret = []
-    for i in arg:
-        if isinstance(i, list):
-            ret.extend(i)
-        else:
-            ret.append(i)
-    return ret
-
-
-def gcd(*args):
-    numbers = []
-    numbers.extend(spread(list(args)))
-
-    def _gcd(x, y):
-        return x if not y else gcd(y, x % y)
-
-    return reduce((lambda x, y: _gcd(x, y)), numbers)
-
- 
- ```
-
-
-<details><summary>View Examples</summary>
-
-```py
-
-gcd(8,36) # 4
-
-```
-</details>
-
-<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
- 
-### lcm 
-
-Returns the least common multiple of two or more numbers.
-
-Use the `greatest common divisor (GCD)` formula and the fact that `lcm(x,y) = x * y / gcd(x,y)` to determine the least common multiple. The GCD formula uses recursion.
-
-Uses `reduce` function from the inbuilt module `functools`. Also defines a method `spread` for javascript like spreading of lists.
-
-```py 
-
-
-from functools import reduce
-
-
-def spread(arg):
-    ret = []
-    for i in arg:
-        if isinstance(i, list):
-            ret.extend(i)
-        else:
-            ret.append(i)
-    return ret
-
-
-def lcm(*args):
-    numbers = []
-    numbers.extend(spread(list(args)))
-
-    def _gcd(x, y):
-        return x if not y else gcd(y, x % y)
-
-    def _lcm(x, y):
-        return x * y / _gcd(x, y)
-
-    return reduce((lambda x, y: _lcm(x, y)), numbers)
-
- 
- ```
-
-
-<details><summary>View Examples</summary>
-
-```py
-
-lcm(12, 7) # 84
-lcm([1, 3, 4], 5) # 60
-
-```
-</details>
-
-<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
- 
-### max_n
-
-Returns the `n` maximum elements from the provided list. If `n` is greater than or equal to the provided list's length, then return the original list(sorted in descending order).
-
-Use `list.sort()` combined with the `deepcopy` function from the inbuilt `copy` module to create a shallow clone of the list and sort it in ascending order and then use `list.reverse()` reverse it to make it descending order. Use `[:n]` to get the specified number of elements. Omit the second argument, `n`, to get a one-element array
-
-```py 
-
-
-from copy import deepcopy
-
-
-def max_n(arr, n=1):
-    numbers = deepcopy(arr)
-    numbers.sort()
-    numbers.reverse()
-    return numbers[:n]
-
- 
- ```
-
-<details><summary>View Examples</summary>
-
-```py
-
-max_n([1, 2, 3]) # [3]
-max_n([1, 2, 3], 2) # [3,2]
-
-```
-</details>
-
-<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
- 
-### min_n
-
-Returns the `n` minimum elements from the provided list. If `n` is greater than or equal to the provided list's length, then return the original list(sorted in ascending order).
-
-Use `list.sort()` combined with the `deepcopy` function from the inbuilt `copy` module to create a shallow clone of the list and sort it in ascending order. Use `[:n]` to get the specified number of elements. Omit the second argument, `n`, to get a one-element array
-
-```py 
-
-
-from copy import deepcopy
-
-
-def min_n(arr, n=1):
-    numbers = deepcopy(arr)
-    numbers.sort()
-    return numbers[:n]
-
- 
- ```
-
-<details><summary>View Examples</summary>
-
-```py
-
-min_n([1, 2, 3]) # [1]
-min_n([1, 2, 3], 2) # [1,2]
 
 ```
 </details>
