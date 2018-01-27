@@ -1,7 +1,5 @@
 ### bindAll
 
-Explain briefly what the snippet does.
-
 Use `Array.forEach()` to return a `function` that uses `Function.apply()` to apply the given context (`obj`) to `fn` for each function specified.
 
 ```js
