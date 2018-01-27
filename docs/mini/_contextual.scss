@@ -336,16 +336,19 @@ mark {
       border-top: 0;
     }
     & > label:first-of-type {
-      border-radius: var(#{$universal-border-radius-var}) var(#{$universal-border-radius-var}) 0 0; // universalize
+      border-radius: var(#{$universal-border-radius-var}) var(#{$universal-border-radius-var}) 0 0;
     }
-    & > label:last-of-type {
-      border-radius: 0 0 var(#{$universal-border-radius-var}) var(#{$universal-border-radius-var}); // universalize
+    & > label:last-of-type:not(:first-of-type) {
+      border-radius: 0 0 var(#{$universal-border-radius-var}) var(#{$universal-border-radius-var});
     }
-    & > :checked:last-of-type + label {
+    & > label:last-of-type:first-of-type {
+      border-radius: var(#{$universal-border-radius-var});
+    }
+    & > :checked:last-of-type:not(:first-of-type) + label {
       border-radius: 0;
-      + div {
-        border-radius: 0 0 var(#{$universal-border-radius-var}) var(#{$universal-border-radius-var}); // universalize
-      }
+    }
+    & > :checked:last-of-type + label + div {
+      border-radius: 0 0 var(#{$universal-border-radius-var}) var(#{$universal-border-radius-var});
     }
   }
 }

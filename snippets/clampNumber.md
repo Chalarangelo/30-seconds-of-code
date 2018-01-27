@@ -12,5 +12,4 @@ const clampNumber = (num, a, b) => Math.max(Math.min(num, Math.max(a, b)), Math.
 ```js
 clampNumber(2, 3, 5); // 3
 clampNumber(1, -1, -5); // -1
-clampNumber(3, 2, 4); // 3
 ```

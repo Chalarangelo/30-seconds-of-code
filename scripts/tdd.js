@@ -1,50 +1,99 @@
-const fs = require('fs-extra');
+/*
+  This is the tdd script that creates & updates your TDD environment .
+  Run using `npm run tdd`.
+*/
 
-const SNIPPETS_PATH = './snippets';
+// Load modules
+const fs = require('fs-extra'), path = require('path');
+const child_process = require('child_process');
+const chalk = require('chalk');
+// Load helper functions (these are from existing snippets in 30 seconds of code!)
+const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
+if(isTravisCI() && process.env['TRAVIS_EVENT_TYPE'] !== 'cron' && process.env['TRAVIS_EVENT_TYPE'] !== 'api') {
+  console.log(`${chalk.green('NOBUILD')} Testing terminated, not a cron job or a custom build!`);
+  process.exit(0);
+}
+// Declare paths
+const SNIPPETS_ACTIVE = './snippets';
+const SNIPPETS_ARCHIVE = './snippets_archive';
 const TEST_PATH = './test';
 
-const snippetFiles = fs.readdirSync(SNIPPETS_PATH, 'utf8').map(fileName => fileName.slice(0, -3));
+// Array of snippet names
+const snippetFiles = [];
 
-fs.removeSync(TEST_PATH);
+const snippetFilesActive = fs.readdirSync(SNIPPETS_ACTIVE, 'utf8').map(fileName => fileName.slice(0, -3));
+const snippetFilesArchive = fs.readdirSync(SNIPPETS_ARCHIVE, 'utf8')
+                              .filter(fileName => !fileName.includes('README')) // -> Filters out main README.md file in Archieve which isn't a snippet
+                              .map(fileName => fileName.slice(0, -3));
 
+snippetFiles.push(...snippetFilesActive);
+snippetFiles.push(...snippetFilesArchive);
+
+console.time('Tester');
 snippetFiles
   .map(fileName => {
-    fs.ensureDirSync(`${TEST_PATH}/${fileName}`);
+    // Check if fileName for snippet exist in test/ dir, if doesnt create
+    fs.ensureDirSync(path.join(TEST_PATH,fileName));
+
+    // return fileName for later use
     return fileName;
   })
   .map(fileName => {
-    const fileData = fs.readFileSync(`${SNIPPETS_PATH}/${fileName}.md`, 'utf8');
-    const fileCode = fileData.slice(fileData.indexOf('```js'), fileData.lastIndexOf('```') + 3);
+    const activeOrArchive = snippetFilesActive.includes(fileName) ? SNIPPETS_ACTIVE : SNIPPETS_ARCHIVE;
+    // Grab snippetData
+    const fileData = fs.readFileSync(path.join(activeOrArchive,`${fileName}.md`), 'utf8');
+    // Grab snippet Code blocks
+    const fileCode = fileData.slice(fileData.search(/```\s*js/i), fileData.lastIndexOf('```') + 3);
+    // Split code based on code markers
     const blockMarkers = fileCode
-      .split('\n')
-      .map((line, lineIndex) => (line.slice(0, 3) === '```' ? lineIndex : '//CLEAR//'))
-      .filter(x => !(x === '//CLEAR//'));
+                            .split('\n')
+                            .map((line, lineIndex) => (line.slice(0, 3) === '```' ? lineIndex : '//CLEAR//'))
+                            .filter(x => !(x === '//CLEAR//'));
+    // Grab snippet function based on code markers
     const fileFunction = fileCode
-      .split('\n')
-      .map(line => line.trim())
-      .filter((_, i) => blockMarkers[0] < i && i < blockMarkers[1]);
+                            .split('\n')
+                            .map(line => line.trim())
+                            .filter((_, i) => blockMarkers[0] < i && i < blockMarkers[1]);
+    // Grab snippet example based on code markers
     const fileExample = fileCode
-      .split('\n')
-      .map(line => line.trim())
-      .filter((_, i) => blockMarkers[2] < i && i < blockMarkers[3]);
+                            .split('\n')
+                            .map(line => line.trim())
+                            .filter((_, i) => blockMarkers[2] < i && i < blockMarkers[3]);
 
-    const exportFile = `module.exports = ${fileFunction.join('\n').slice(17)}`;
+    // Export template for snippetName.js
+    const exportFile = `${fileFunction.join('\n')}\nmodule.exports = ${fileName}`.trim();
+
+    // Export template for snippetName.test.js which generates a example test & other information
     const exportTest = [
       `const test = require('tape');`,
       `const ${fileName} = require('./${fileName}.js');`,
-      `test('Testing ${fileName}', (t) => {`,
-      `//For more information on all the methods supported by tape\n//Please go to https://github.com/substack/tape`,
-      `//t.deepEqual(${fileName}(args..), 'Expected');`,
-      `//t.equal(${fileName}(args..), 'Expected');`,
-      `//t.false(${fileName}(args..), 'Expected');`,
-      `//t.true(${fileName}(args..), 'Expected');`,
-      `//t.throws(${fileName}(args..), 'Expected');`,
-      `t.end();`,
+      `\ntest('Testing ${fileName}', (t) => {`,
+      `  //For more information on all the methods supported by tape\n  //Please go to https://github.com/substack/tape`,
+      `  t.true(typeof ${fileName} === 'function', '${fileName} is a Function');`,
+      `  //t.deepEqual(${fileName}(args..), 'Expected');`,
+      `  //t.equal(${fileName}(args..), 'Expected');`,
+      `  //t.false(${fileName}(args..), 'Expected');`,
+      `  //t.throws(${fileName}(args..), 'Expected');`,
+      `  t.end();`,
       `});`
     ].join('\n');
 
-    fs.writeFileSync(`${TEST_PATH}/${fileName}/${fileName}.js`, exportFile);
-    fs.writeFileSync(`${TEST_PATH}/${fileName}/${fileName}.test.js`, exportTest);
+    // Write/Update exportFile which is snippetName.js in respective dir
+    fs.writeFileSync(path.join(TEST_PATH,fileName,`${fileName}.js`), exportFile);
 
+    if ( !fs.existsSync(path.join(TEST_PATH,fileName,`${fileName}.test.js`)) ) {
+      // if snippetName.test.js doesn't exist inrespective dir exportTest
+      fs.writeFileSync(`${TEST_PATH}/${fileName}/${fileName}.test.js`, exportTest);
+    }
+
+    // return fileName for later use
     return fileName;
   });
+try {
+  fs.writeFileSync(path.join(TEST_PATH,'testlog'),`Test log for: ${new Date().toString()}\n`);
+  child_process.execSync(`npm test >> ${TEST_PATH}/testlog`);
+}
+catch (e) {
+  fs.appendFileSync(path.join(TEST_PATH,'testlog'));
+}
+console.timeEnd('Tester');

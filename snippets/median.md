@@ -15,5 +15,4 @@ const median = arr => {
 
 ```js
 median([5, 6, 50, 1, -5]); // 5
-median([0, 10, -2, 7]); // 3.5
 ```

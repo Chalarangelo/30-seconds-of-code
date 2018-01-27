@@ -2,8 +2,8 @@
 
 Returns `true` if the given string is a palindrome, `false` otherwise.
 
-Convert string `toLowerCase()` and use `replace()` to remove non-alphanumeric characters from it.
-Then, `split('')` into individual characters, `reverse()`, `join('')` and compare to the original, unreversed string, after converting it `tolowerCase()`.
+Convert string `String.toLowerCase()` and use `String.replace()` to remove non-alphanumeric characters from it.
+Then, `String.split('')` into individual characters, `Array.reverse()`, `String.join('')` and compare to the original, unreversed string, after converting it `String.tolowerCase()`.
 
 ```js
 const palindrome = str => {

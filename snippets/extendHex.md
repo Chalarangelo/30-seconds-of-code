@@ -2,8 +2,9 @@
 
 Extends a 3-digit color code to a 6-digit color code.
 
-Use `Array.map()`, `split()` and `Array.join()` to join the mapped array for converting a 3-digit RGB notated hexadecimal color-code to the 6-digit form.
-`String.slice()` is used to remove `#` from string start since it's added once.
+Use `Array.map()`, `String.split()` and `Array.join()` to join the mapped array for converting a 3-digit RGB notated hexadecimal color-code to the 6-digit form.
+`Array.slice()` is used to remove `#` from string start since it's added once.
+
 ```js
 const extendHex = shortHex =>
   '#' +

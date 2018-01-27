@@ -3,7 +3,7 @@
 Truncates a string up to a specified length.
 
 Determine if the string's `length` is greater than `num`.
-Return the string truncated to the desired length, with `...` appended to the end or the original string.
+Return the string truncated to the desired length, with `'...'` appended to the end or the original string.
 
 ```js
 const truncateString = (str, num) =>

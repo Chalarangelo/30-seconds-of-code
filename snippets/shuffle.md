@@ -2,7 +2,7 @@
 
 Randomizes the order of the values of an array, returning a new array.
 
-Uses the Fisher-Yates algoritm to reorder the elements of the array, based on the [Lodash implementation](https://github.com/lodash/lodash/blob/b2ea6b1cd251796dcb5f9700c4911a7b6223920b/shuffle.js), but as a pure function.
+Uses the [Fisher-Yates algorithm](https://github.com/chalarangelo/30-seconds-of-code#shuffle) to reorder the elements of the array.
 
 ```js
 const shuffle = ([...arr]) => {
@@ -17,6 +17,5 @@ const shuffle = ([...arr]) => {
 
 ```js
 const foo = [1, 2, 3];
-shuffle(foo); // [2,3,1]
-console.log(foo); // [1,2,3]
+shuffle(foo); // [2,3,1], foo = [1,2,3]
 ```

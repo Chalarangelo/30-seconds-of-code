@@ -1,0 +1,8 @@
+Test log for: Fri Jan 26 2018 20:13:29 GMT+0000 (UTC)
+
+> 30-seconds-of-code@0.0.1 test /home/travis/build/Chalarangelo/30-seconds-of-code
+> tape test/**/*.test.js | tap-spec
+
+
+
+undefined
