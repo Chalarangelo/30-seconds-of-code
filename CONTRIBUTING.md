@@ -47,10 +47,8 @@ Here's what you can do to help:
 
 #### Browser specific tests
 - If your snippet belongs to `browser` category then you will need to modify the tests to make them work.
-- By default, `NodeJS` isn't browser environment. That said we have to use external package to help us simulate the browser for our tests.
+- By default, `Node.js` isn't browser environment. That said we have to use external package to help us simulate the browser for our tests.
 - We use [jsdom](https://www.npmjs.com/package/jsdom) for our browser specific tests. You can find their [documentation](https://github.com/jsdom/jsdom) on GitHub as well.
-
-
 
 ### Additional guidelines and conventions regarding snippets
 
