@@ -12,6 +12,7 @@
 ### :heavy_division_sign: Math
 
 <details><summary>View contents</summary> <ul><li><a href = "#average"><code>average</code></a></li>
+<li><a href = "#factorial"><code>factorial</code></a></li>
 <li><a href = "#gcd"><code>gcd</code></a></li>
 <li><a href = "#lcm"><code>lcm</code></a></li>
 <li><a href = "#max_n"><code>max_n</code></a></li>
@@ -47,12 +48,10 @@ Returns the average of two or more numbers.
 
 Takes the sum of all the `args` and divides it by `len(args)`. The secind argument `0.0` in sum is to handle floating point division in `python2`.
 
-```py 
-
+```py
 
 def average(*args):
     return sum(args, 0.0) / len(args)
-
  
  ```
 
@@ -62,6 +61,32 @@ def average(*args):
 
 average(*[1, 2, 3]) # 2.0
 average(1, 2, 3) # 2.0
+
+```
+</details>
+
+<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
+ 
+### factorial
+
+Calculates the factorial of a number.
+
+Use recursion. If `num` is less than or equal to `1`, return `1`. Otherwise, return the product of `num` and the factorial of `num - 1`. Throws an exception if `num` is a negative or a floating point number.
+
+```py
+
+def factorial(num):
+    if not ((num >= 0) & (num % 1 == 0)):
+        raise Exception(
+            f"Number( {num} ) can't be floating point or negative ")
+    return 1 if num == 0 else num * factorial(num - 1)
+ 
+ ```
+<details><summary>View Examples</summary>
+
+```py
+
+factorial(6) # 720
 
 ```
 </details>
@@ -78,8 +103,7 @@ The `helperGcdfunction` uses recursion. Base case is when `y` equals `0`. In thi
 
 Uses the reduce function from the inbuilt module `functools`. Also defines a method `spread` for javascript like spreading of lists.
 
-```py 
-
+```py
 
 from functools import reduce
 
@@ -102,7 +126,6 @@ def gcd(*args):
         return x if not y else gcd(y, x % y)
 
     return reduce((lambda x, y: _gcd(x, y)), numbers)
-
  
  ```
 
@@ -126,8 +149,7 @@ Use the `greatest common divisor (GCD)` formula and the fact that `lcm(x,y) = x 
 
 Uses `reduce` function from the inbuilt module `functools`. Also defines a method `spread` for javascript like spreading of lists.
 
-```py 
-
+```py
 
 from functools import reduce
 
@@ -153,7 +175,6 @@ def lcm(*args):
         return x * y / _gcd(x, y)
 
     return reduce((lambda x, y: _lcm(x, y)), numbers)
-
  
  ```
 
@@ -176,8 +197,7 @@ Returns the `n` maximum elements from the provided list. If `n` is greater than 
 
 Use `list.sort()` combined with the `deepcopy` function from the inbuilt `copy` module to create a shallow clone of the list and sort it in ascending order and then use `list.reverse()` reverse it to make it descending order. Use `[:n]` to get the specified number of elements. Omit the second argument, `n`, to get a one-element array
 
-```py 
-
+```py
 
 from copy import deepcopy
 
@@ -187,7 +207,6 @@ def max_n(arr, n=1):
     numbers.sort()
     numbers.reverse()
     return numbers[:n]
-
  
  ```
 
@@ -209,8 +228,7 @@ Returns the `n` minimum elements from the provided list. If `n` is greater than 
 
 Use `list.sort()` combined with the `deepcopy` function from the inbuilt `copy` module to create a shallow clone of the list and sort it in ascending order. Use `[:n]` to get the specified number of elements. Omit the second argument, `n`, to get a one-element array
 
-```py 
-
+```py
 
 from copy import deepcopy
 
@@ -219,7 +237,6 @@ def min_n(arr, n=1):
     numbers = deepcopy(arr)
     numbers.sort()
     return numbers[:n]
-
  
  ```
 
@@ -243,8 +260,7 @@ Chunks an array into smaller lists of a specified size.
 
 Uses `range` to create a list of desired size. Then use `map` on this list and fill it with splices of `arr`.
 
-```py 
-
+```py
 
 from math import ceil
 
@@ -253,7 +269,6 @@ def chunk(arr, size):
     return list(
         map(lambda x: arr[x * size:x * size + size],
             list(range(0, ceil(len(arr) / size)))))
-
  
  ```
 
@@ -274,12 +289,10 @@ Removes falsey values from a list.
 
 Use `filter()` to filter out falsey values (False, None, 0, and "").
 
-```py 
-
+```py
 
 def compact(arr):
     return list(filter(lambda x: bool(x), arr))
-
  
  ```
 
@@ -302,14 +315,12 @@ Counts the occurrences of a value in an list.
 
 Uses the `reduce` functin from built-in module `functools` to increment a counter each time you encounter the specific value inside the list.
 
-```py 
-
+```py
 
 def count_occurences(arr, val):
     return reduce(
         (lambda x, y: x + 1 if y == val and type(y) == type(val) else x + 0),
         arr)
-
  
  ```
 
@@ -330,8 +341,7 @@ Deep flattens a list.
 
 Use recursion. Use `list.extend()` with an empty array (`result`) and the spread function to flatten a list. Recursively flatten each element that is a list.
 
-```py 
-
+```py
 
 def spread(arg):
     ret = []
@@ -348,7 +358,6 @@ def deep_flatten(arr):
     result.extend(
         spread(list(map(lambda x: deep(x) if type(x) == list else x, arr))))
     return result
-
  
  ```
 
@@ -369,13 +378,11 @@ Returns the difference between two arrays.
 
 Create a `set` from `b`, then use list comprehension to only keep values not contained in `b`
 
-```py 
-
+```py
 
 def difference(a, b):
     b = set(b)
     return [item for item in a if item not in b]
-
  
  ```
 <details><summary>View Examples</summary>
@@ -397,8 +404,7 @@ Randomizes the order of the values of an list, returning a new list.
 
 Uses the [Fisher-Yates algorithm](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle) to reorder the elements of the list.
 
-```py 
-
+```py
 
 from copy import deepcopy
 from random import randint
@@ -412,7 +418,6 @@ def shuffle(arr):
         i = randint(0, m)
         temp_arr[m], temp_arr[i] = temp_arr[i], temp_arr[m]
     return temp_arr
-
  
  ```
 
@@ -432,8 +437,7 @@ shuffle(foo) # [2,3,1] , foo = [1,2,3]
 
 Implements javascript's spread syntax as a function. Flattens the list(non-deep) and returns an list.
 
-```py 
-
+```py
 
 def spread(arg):
     ret = []
@@ -443,7 +447,6 @@ def spread(arg):
         else:
             ret.append(i)
     return ret
-
  
  ```
 
@@ -467,8 +470,7 @@ Creates a list of elements, grouped based on the position in the original lists.
 
 Use `max` combined with `list comprehension` to get the length of the longest list in the arguments. Loops for `max_length` times grouping elements. If lengths of `lists` vary `fill_value` is used. By default `fill_value` is `None`.
 
-```py 
-
+```py
 
 def zip(*args, fillvalue=None):
     max_length = max([len(arr) for arr in args])
@@ -478,7 +480,6 @@ def zip(*args, fillvalue=None):
             args[k][i] if i < len(args[k]) else None for k in range(len(args))
         ])
     return result
-
  
  ```
 
@@ -503,15 +504,13 @@ Retuns `number` of vowels in provided `string`.
 
 Use a regular expression to count the number of vowels `(A, E, I, O, U)` in a string.
 
-```py 
-
+```py
 
 import re
 
 
 def count_vowels(str):
     return len(len(re.findall(r'[aeiou]', str, re.IGNORECASE)))
-
  
  ```
 

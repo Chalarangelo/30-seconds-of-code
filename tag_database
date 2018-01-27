@@ -5,6 +5,7 @@ count_occurences:list
 count_vowels:string
 deep_flatten:list
 difference:list
+factorial:math
 gcd:math
 lcm:math
 max_n:math

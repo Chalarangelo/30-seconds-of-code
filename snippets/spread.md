@@ -2,8 +2,7 @@
 
 Implements javascript's spread syntax as a function. Flattens the list(non-deep) and returns an list.
 
-```python 
-
+```python
 
 def spread(arg):
     ret = []
@@ -13,7 +12,6 @@ def spread(arg):
         else:
             ret.append(i)
     return ret
-
 ```
 
 

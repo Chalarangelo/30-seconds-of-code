@@ -8,8 +8,7 @@ The `helperGcdfunction` uses recursion. Base case is when `y` equals `0`. In thi
 
 Uses the reduce function from the inbuilt module `functools`. Also defines a method `spread` for javascript like spreading of lists.
 
-```python 
-
+```python
 
 from functools import reduce
 
@@ -32,7 +31,6 @@ def gcd(*args):
         return x if not y else gcd(y, x % y)
 
     return reduce((lambda x, y: _gcd(x, y)), numbers)
-
 ```
 
 
