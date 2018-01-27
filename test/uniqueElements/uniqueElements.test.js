@@ -12,10 +12,10 @@ test('Testing uniqueElements', (t) => {
   t.deepEqual(uniqueElements(null), [], "uniqueElements(null) returns []");
   t.deepEqual(uniqueElements(undefined), [], "uniqueElements(undefined) returns []");
   t.deepEqual(uniqueElements('strt'), ['s', 't', 'r'], "uniqueElements('strt') returns ['s', 't', 'r']");
-  t.throws(() => uniqueElements(1, 1, 2543, 534, 5), 'Expected');
-  t.throws(() => uniqueElements({}), 'Expected');
-  t.throws(() => uniqueElements(true), 'Expected');
-  t.throws(() => uniqueElements(false), 'Expected');
+  t.throws(() => uniqueElements(1, 1, 2543, 534, 5), 'uniqueElements(1, 1, 2543, 534, 5) throws an error');
+  t.throws(() => uniqueElements({}), 'uniqueElements({}) throws an error');
+  t.throws(() => uniqueElements(true), 'uniqueElements(true) throws an error');
+  t.throws(() => uniqueElements(false), 'uniqueElements(false) throws an error');
 
   let start = new Date().getTime();
   uniqueElements([true, 0, 1, false, false, undefined, null, ''])
