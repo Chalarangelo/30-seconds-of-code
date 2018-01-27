@@ -18,6 +18,7 @@ const unescapeHTML = str =>
       }[tag] || tag)
   );
 ```
+
 ```js
 unescapeHTML('&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;'); // '<a href="#">Me & you</a>'
 ```

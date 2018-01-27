@@ -8,6 +8,25 @@ const fs = require('fs-extra'),
   chalk = require('chalk'),
   md = require('markdown-it')(),
   minify = require('html-minifier').minify;
+var Prism = require('prismjs');
+  // Load helper functions (these are from existing snippets in 30 seconds of code!)
+const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
+const unescapeHTML = str =>
+  str.replace(
+    /&amp;|&lt;|&gt;|&#39;|&quot;/g,
+    tag =>
+      ({
+        '&amp;': '&',
+        '&lt;': '<',
+        '&gt;': '>',
+        '&#39;': "'",
+        '&quot;': '"'
+      }[tag] || tag)
+  );
+if(isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
+  console.log(`${chalk.green('NOBUILD')} index build terminated, parent commit is a Travis build!`);
+  process.exit(0);
+}
 // Compile the mini.css framework and custom CSS styles, using `node-sass`.
 const sass = require('node-sass');
 sass.render(
@@ -42,7 +61,7 @@ const objectFromPairs = arr => arr.reduce((a, v) => ((a[v[0]] = v[1]), a), {});
 const capitalize = (str, lowerRest = false) =>
   str.slice(0, 1).toUpperCase() + (lowerRest ? str.slice(1).toLowerCase() : str.slice(1));
 // Start the timer of the script
-console.time('Builder');
+console.time('Webber');
 // Synchronously read all snippets and sort them as necessary (case-insensitive)
 try {
   let snippetFilenames = fs.readdirSync(snippetsPath);
@@ -77,7 +96,11 @@ try {
       .readFileSync('tag_database', 'utf8')
       .split('\n')
       .slice(0, -1)
-      .map(v => v.split(':').slice(0, 2))
+      .map(v => {
+        let data = v.split(':').slice(0, 2);
+        data[1] = data[1].split(',').map(t => t.trim());
+        return data;
+      })
   );
 } catch (err) {
   // Handle errors (hopefully not!)
@@ -90,7 +113,7 @@ try {
   output += `${startPart + '\n'}`;
   let uncategorizedOutput = '';
   // Loop over tags and snippets to create the table of contents
-  for (let tag of [...new Set(Object.entries(tagDbData).map(t => t[1]))]
+  for (let tag of [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
     .filter(v => v)
     .sort((a, b) => a.localeCompare(b))) {
     if (capitalize(tag, true) == 'Uncategorized') {
@@ -101,12 +124,12 @@ try {
           .replace(/<p>/g, '')
           .replace(/<\/p>/g, '') +
         `</h3>`;
-      for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag))
+      for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
         uncategorizedOutput += md
           .render(`[${taggedSnippet[0]}](#${taggedSnippet[0].toLowerCase()})\n`)
           .replace(/<p>/g, '')
           .replace(/<\/p>/g, '')
-          .replace(/<a/g, '<a class="sublink-1"');
+          .replace(/<a/g, `<a class="sublink-1" tags="${taggedSnippet[1].join(',')}"`);
       uncategorizedOutput += '\n';
     } else {
       output +=
@@ -116,12 +139,12 @@ try {
           .replace(/<p>/g, '')
           .replace(/<\/p>/g, '') +
         `</h3>`;
-      for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag))
+      for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
         output += md
           .render(`[${taggedSnippet[0]}](#${taggedSnippet[0].toLowerCase()})\n`)
           .replace(/<p>/g, '')
           .replace(/<\/p>/g, '')
-          .replace(/<a/g, '<a class="sublink-1"');
+          .replace(/<a/g, `<a class="sublink-1" tags="${taggedSnippet[1].join(',')}"`);
       output += '\n';
     }
   }
@@ -130,38 +153,79 @@ try {
   output += `<a id="top">&nbsp;</a>`;
   uncategorizedOutput = '';
   // Loop over tags and snippets to create the list of snippets
-  for (let tag of [...new Set(Object.entries(tagDbData).map(t => t[1]))]
+  for (let tag of [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
     .filter(v => v)
     .sort((a, b) => a.localeCompare(b))) {
     if (capitalize(tag, true) == 'Uncategorized') {
       uncategorizedOutput += md
         .render(`## ${capitalize(tag, true)}\n`)
         .replace(/<h2>/g, '<h2 style="text-align:center;">');
-      for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag))
+      for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
         uncategorizedOutput +=
-          '<div class="card fluid"><div class="section double-padded">' +
+          '<div class="card fluid">' +
           md
             .render(`\n${snippets[taggedSnippet[0] + '.md']}`)
-            .replace(/<h3/g, `<h3 id="${taggedSnippet[0].toLowerCase()}"`)
-            .replace(/<\/h3>/g, '</h3></div><div class="section double-padded">') +
-          '</div></div><br/>';
+            .replace(/<h3/g, `<h3 id="${taggedSnippet[0].toLowerCase()}" class="section double-padded"`)
+            .replace(/<\/h3>/g, `${taggedSnippet[1].includes('advanced')?'<mark class="tag">advanced</mark>':''}</h3>`)
+            .replace(/<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm, (match, p1) => `<pre class="language-js">${Prism.highlight(unescapeHTML(p1), Prism.languages.javascript)}</pre>`)
+            .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
+          '<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button>' +
+          '</div></div>';
     } else {
       output += md
         .render(`## ${capitalize(tag, true)}\n`)
         .replace(/<h2>/g, '<h2 style="text-align:center;">');
-      for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1] === tag))
+      for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
         output +=
-          '<div class="card fluid"><div class="section double-padded">' +
+          '<div class="card fluid">' +
           md
             .render(`\n${snippets[taggedSnippet[0] + '.md']}`)
-            .replace(/<h3/g, `<h3 id="${taggedSnippet[0].toLowerCase()}"`)
-            .replace(/<\/h3>/g, '</h3></div><div class="section double-padded">') +
-          '</div></div><br/>';
+            .replace(/<h3/g, `<h3 id="${taggedSnippet[0].toLowerCase()}" class="section double-padded"`)
+            .replace(/<\/h3>/g, `${taggedSnippet[1].includes('advanced')?'<mark class="tag">advanced</mark>':''}</h3>`)
+            .replace(/<\/h3>/g, '</h3><div class="section double-padded">')
+            .replace(/<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm, (match, p1) => `<pre class="language-js">${Prism.highlight(unescapeHTML(p1), Prism.languages.javascript)}</pre>`)
+            .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
+          '<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button>' +
+          '</div></div>';
     }
   }
   output += uncategorizedOutput;
   // Add the ending static part
   output += `\n${endPart + '\n'}`;
+  // Optimize punctuation nodes
+  let count = 0;
+  do {
+    const punctuationRegex = /<span class="token punctuation">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token punctuation">([^\0]*?)<\/span>/gm;
+    output = output.replace(punctuationRegex,
+      (match, p1, p2, p3)  => `<span class="token punctuation">${p1}${p2}${p3}</span>`
+    );
+    count = 0;
+    while (punctuationRegex.exec(output) !== null) {
+      ++count;
+    }
+  } while (count > 0);
+  // Optimize operator nodes
+  do {
+    const operatorRegex = /<span class="token operator">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token operator">([^\0]*?)<\/span>/gm;
+    output = output.replace(operatorRegex,
+      (match, p1, p2, p3)  => `<span class="token operator">${p1}${p2}${p3}</span>`
+    );
+    count = 0;
+    while (operatorRegex.exec(output) !== null) {
+      ++count;
+    }
+  } while (count > 0);
+  // Optimize keyword nodes
+  do {
+    const keyWordRegex = /<span class="token keyword">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token keyword">([^\0]*?)<\/span>/gm;
+    output = output.replace(keyWordRegex,
+      (match, p1, p2, p3)  => `<span class="token keyword">${p1}${p2}${p3}</span>`
+    );
+    count = 0;
+    while (keyWordRegex.exec(output) !== null) {
+      ++count;
+    }
+  } while (count > 0);
   // Minify output
   output = minify(output, {
     collapseBooleanAttributes: true,
@@ -189,4 +253,4 @@ try {
 // Log a success message
 console.log(`${chalk.green('SUCCESS!')} index.html file generated!`);
 // Log the time taken
-console.timeEnd('Builder');
+console.timeEnd('Webber');

@@ -1,23 +1,23 @@
-## Contributing
+![contribution guidelines](https://i.imgur.com/8Wk9nat.png)
 
 **30 seconds of code** is a community effort, so feel free to contribute in any way you can. Every contribution helps!
 
 Here's what you can do to help:
 
+- Submit [pull requests](https://github.com/Chalarangelo/30-seconds-of-code/pulls) with snippets and tests that you have created (see below for guidelines).
 - [Open issues](https://github.com/Chalarangelo/30-seconds-of-code/issues/new) for things you want to see added or modified.
 - Be part of the discussion by helping out with [existing issues](https://github.com/Chalarangelo/30-seconds-of-code/issues) or talking on our [gitter channel](https://gitter.im/30-seconds-of-code/Lobby).
-- Submit [pull requests](https://github.com/Chalarangelo/30-seconds-of-code/pulls) with snippets you have created (see below for guidelines).
-- Tag uncategorized snippets by running `npm run tagger` and adding the appropriate tag next to the script name in `tag_database`.
+- Tag uncategorized snippets by running `npm run tagger` and adding the appropriate tags next to the script name in `tag_database`.
 - Fix typos in existing snippets, improve snippet descriptions and explanations or provide better examples.
+- Write tests for existing snippets (see below for guidelines).
 
 ### Snippet submission and Pull request guidelines
 
-- **DO NOT MODIFY THE README.md FILE!** Make changes to individual snippet files. You can optionally run `npm run builder` to update the README.md file automatically, based on the changes you have made.
-- **DO NOT MODIFY THE index.html FILE!** Make changes to individual snippet files. You can optionally run `npm run webber` to update the index.md file automatically, based on the changes you have made.
+- **DO NOT MODIFY THE README.md or index.html FILES!** Make changes to individual snippet files. **Travis CI** will automatically build the `README.md` and `index.html` files when your pull request is merged.
 - **Snippet filenames** must correspond to the title of the snippet. For example, if your snippet is titled `### awesomeSnippet` the filename should be `awesomeSnippet.md`.
   - Use `camelCase`, not `kebab-case` or `snake_case`.
   - Avoid capitalization of words, except if the whole word is capitalized (e.g. `URL` should be capitalized in the filename and the snippet title).
-- **Snippet titles** should have be the same as the name of the function that is present in the snippet.
+- **Snippet titles** should be the same as the name of the function that is present in the snippet.
   - All snippet titles must be prefixed with `###` and be at the very first line of your snippet.
   - Snippet titles must be unique (although if you cannot find a better title, just add some placeholder at the end of the filename and title and we will figure it out).
   - Follow snippet titles with an empty line.
@@ -26,7 +26,7 @@ Here's what you can do to help:
 - **Snippet code** must be enclosed inside ` ```js ` and ` ``` `.
   - Remember to start your snippet's code on a new line below the opening backticks.
   - Use ES6 notation to define your function. For example `const myFunction = ( arg1, arg2 ) => { }`.
-  - Please use Javacript [Semi-Standard Style](https://github.com/Flet/semistandard).
+  - Please use Javascript [Semi-Standard Style](https://github.com/Flet/semistandard).
   - Try to keep your snippets' code short and to the point. Use modern techniques and features. Make sure to test your code before submitting.
   - All snippets must be followed by one (more if necessary) test case after the code, in a new block enclosed inside ` ```js ` and ` ``` `. The syntax for this is `myFunction('testInput') // 'testOutput'`. Use multiline examples only if necessary.
   - Try to make your function name unique, so that it does not conflict with existing snippets.
@@ -36,7 +36,19 @@ Here's what you can do to help:
 - Snippets *should* be abstract enough to be applied to different scenarios.
 - It is not mandatory but highly appreciated if you provide **test cases** and/or performance tests (we recommend using [jsPerf](https://jsperf.com/)).
 - You can start creating a new snippet, by using the [snippet template](snippet-template.md) to format your snippets.
-- Updating the index.html or README.md files should only be done by altering the scripts in the **scripts** folder or altering their relative static parts in the **static-parts** folder.
+
+### Writing tests
+- Before writing any tests run `npm run tdd` script. It will update test directory to include new snippets as well as update old ones if needed.
+- **DO NOT MODIFY THE snippetName.js files** under test directory.
+- We are using [tape](https://github.com/substack/tape) for testing.
+- Write tests under `snippetName.test.js` file. If you have trouble doing so, check out tests of other snippets.
+- Be sure to run `npm run test`. It is going to run all tests for all snippets.
+- Make a new pull request **only if all the tests are passing**.
+
+#### Browser specific tests
+- If your snippet belongs to `browser` category, then you will need to modify the tests to make them work.
+- By default, `Node.js` isn't browser environment. That said we have to use an external package to help us simulate the browser for our tests.
+- We use [jsdom](https://www.npmjs.com/package/jsdom) for our browser specific tests. You can find their [documentation](https://github.com/jsdom/jsdom) on GitHub as well.
 
 ### Additional guidelines and conventions regarding snippets
 
@@ -49,13 +61,13 @@ Here's what you can do to help:
 - Try to give meaningful names to variables. For example use `letter`, instead of `lt`. Some exceptions to convention are:
   - `arr` for arrays (usually as the snippet function's argument).
   - `str` for strings.
-  - `n` for a numeric value (usually as the snippet function's argument).
+  - `num` or `n` for a numeric value (usually as the snippet function's argument).
   - `el` for DOM elements (usually as the snippet function's argument).
   - `val` or `v` for value (usually when iterating a list, mapping, sorting etc.).
   - `acc` for accumulators in `Array.reduce()`.
   - `(a,b)` for the two values compared when using `Array.sort()`.
   - `i` for indexes.
-  - `func` for function arguments.
+  - `fn` for function arguments.
   - `nums` for arrays of numbers.
 - Use `()` if your function takes no arguments.
 - Use `_` if an argument inside some function (e.g. `Array.reduce()`) is not used anywhere in your code.

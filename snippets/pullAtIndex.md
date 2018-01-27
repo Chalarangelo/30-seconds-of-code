@@ -20,8 +20,5 @@ const pullAtIndex = (arr, pullArr) => {
 
 ```js
 let myArray = ['a', 'b', 'c', 'd'];
-let pulled = pullAtIndex(myArray, [1, 3]);
-
-console.log(myArray); // [ 'a', 'c' ]
-console.log(pulled); // [ 'b', 'd' ]
+let pulled = pullAtIndex(myArray, [1, 3]); // myArray = [ 'a', 'c' ] , pulled = [ 'b', 'd' ]
 ```
