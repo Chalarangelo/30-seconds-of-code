@@ -6,8 +6,7 @@ Randomizes the order of the values of an list, returning a new list.
 
 Uses the [Fisher-Yates algorithm](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle) to reorder the elements of the list.
 
-```python 
-
+```python
 
 from copy import deepcopy
 from random import randint
@@ -21,7 +20,6 @@ def shuffle(arr):
         i = randint(0, m)
         temp_arr[m], temp_arr[i] = temp_arr[i], temp_arr[m]
     return temp_arr
-
 ```
 
 ``` python

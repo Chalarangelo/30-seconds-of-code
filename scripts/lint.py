@@ -11,7 +11,7 @@ for file in files:
     originalCode = re.search(codeRe,fileData).group(0)
     #print(re.split(codeRe,fileData)[0])
     formatedCode = autopep8.fix_code(re.split(codeRe,fileData)[1])
-    fileToSave = fileData.replace(originalCode,('```python \n'+formatedCode+'\n```'))
+    fileToSave = fileData.replace(originalCode,('```python'+formatedCode+'```'))
     someFile = open("snippets/"+file,'w')
     someFile.write(fileToSave)
     someFile.close()
