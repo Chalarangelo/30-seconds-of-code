@@ -1,6 +1,6 @@
 ### average
 
-Returns the average of an of two or more numbers.
+Returns the average of two or more numbers.
 
 Use `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`, divide by the `length` of the array.
 
