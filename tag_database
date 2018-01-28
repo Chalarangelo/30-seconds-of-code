@@ -162,6 +162,7 @@ once:function
 onUserInputChange:browser,advanced
 orderBy:object,array
 over:adapter,function
+overArgs:adapter,function
 palindrome:string
 parseCookie:utility,string
 partial:function
