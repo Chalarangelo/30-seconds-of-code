@@ -82,6 +82,7 @@ average(1, 2, 3);
 * [`collectInto`](#collectinto)
 * [`flip`](#flip)
 * [`over`](#over)
+* [`overArgs`](#overargs)
 * [`pipeAsyncFunctions`](#pipeasyncfunctions)
 * [`pipeFunctions`](#pipefunctions)
 * [`promisify`](#promisify)
@@ -549,6 +550,34 @@ const over = (...fns) => (...args) => fns.map(fn => fn.apply(null, args));
 ```js
 const minMax = over(Math.min, Math.max);
 minMax(1, 2, 3, 4, 5); // [1,5]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### overArgs
+
+Creates a function that invokes the provided function with its arguments transformed.
+
+Use `Array.map()` to apply `transforms` to `args` in combination with the spread operator (`...`) to pass the transformed arguments to `fn`.
+
+```js
+const overArgs = (fn, transforms) => (...args) => fn(...args.map((val, i) => transforms[i](val)));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+var func = overArgs(
+  function(x, y) {
+    return [x, y];
+  },
+  [square, doubled]
+);
+func(9, 3); // [81, 6]
 ```
 
 </details>
