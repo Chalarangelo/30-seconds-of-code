@@ -5319,10 +5319,12 @@ Use `Array.forEach()` to return a `function` that uses `Function.apply()` to app
 ```js
 const bindAll = (obj, ...fns) =>
   fns.forEach(
-    fn =>
+    fn => (
+      (f = obj[fn]),
       (obj[fn] = function() {
-        return fn.apply(obj);
+        return f.apply(obj);
       })
+    )
   );
 ```
 

@@ -5,10 +5,12 @@ Use `Array.forEach()` to return a `function` that uses `Function.apply()` to app
 ```js
 const bindAll = (obj, ...fns) =>
   fns.forEach(
-    fn =>
-      (f = obj[fn], obj[fn] = function() {
+    fn => (
+      (f = obj[fn]),
+      (obj[fn] = function() {
         return f.apply(obj);
       })
+    )
   );
 ```
 
