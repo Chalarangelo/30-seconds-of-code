@@ -187,6 +187,7 @@ randomIntArrayInRange:math,utility,random
 randomIntegerInRange:math,utility,random
 randomNumberInRange:math,utility,random
 readFileLines:node,array,string
+rearg:adapter,function
 redirect:browser,url
 reducedFilter:array
 reduceSuccessive:array,function
