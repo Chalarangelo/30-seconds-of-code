@@ -86,6 +86,7 @@ average(1, 2, 3);
 * [`pipeAsyncFunctions`](#pipeasyncfunctions)
 * [`pipeFunctions`](#pipefunctions)
 * [`promisify`](#promisify)
+* [`rearg`](#rearg)
 * [`spreadOver`](#spreadover)
 * [`unary`](#unary)
 
@@ -665,6 +666,40 @@ const promisify = func => (...args) =>
 ```js
 const delay = promisify((d, cb) => setTimeout(cb, d));
 delay(2000).then(() => console.log('Hi!')); // // Promise resolves after 2s
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### rearg
+
+Creates a function that invokes the provided function with its arguments arranged according to the specified indexes.
+
+Use `Array.reduce()` and `Array.indexOf()` to reorder arguments based on `indexes` in combination with the spread operator (`...`) to pass the transformed arguments to `fn`.
+
+```js
+const rearg = (fn, indexes) => (...args) =>
+  fn(
+    ...args.reduce(
+      (acc, val, i) => ((acc[indexes.indexOf(i)] = val), acc),
+      Array.from({ length: indexes.length })
+    )
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+var rearged = rearg(
+  function(a, b, c) {
+    return [a, b, c];
+  },
+  [2, 0, 1]
+);
+rearged('b', 'c', 'a'); // ['a', 'b', 'c']
 ```
 
 </details>
