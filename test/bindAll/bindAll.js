@@ -1,8 +1,8 @@
 const bindAll = (obj, ...fns) =>
 fns.forEach(
 fn =>
-(obj[fn] = function() {
-return fn.apply(obj);
+(f = obj[fn], obj[fn] = function() {
+return f.apply(obj);
 })
 );
 module.exports = bindAll
