@@ -232,6 +232,7 @@ take:array
 takeRight:array
 takeRightWhile:array,function
 takeWhile:array,function
+throttle:function
 times:function
 timeTaken:utility
 toCamelCase:string,regexp
