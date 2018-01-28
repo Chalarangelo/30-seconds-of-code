@@ -1,4 +1,4 @@
-Test log for: Sun Jan 28 2018 16:28:45 GMT+0200 (GTB Standard Time)
+Test log for: Sun Jan 28 2018 16:40:59 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -186,6 +186,8 @@ Test log for: Sun Jan 28 2018 16:28:45 GMT+0200 (GTB Standard Time)
   Testing countBy
 
     √ countBy is a Function
+    √ Works for functions
+    √ Works for property names
 
   Testing countOccurrences
 
@@ -221,6 +223,8 @@ Test log for: Sun Jan 28 2018 16:28:45 GMT+0200 (GTB Standard Time)
   Testing decapitalize
 
     √ decapitalize is a Function
+    √ Works with default parameter
+    √ Works with second parameter set to true
 
   Testing deepClone
 
@@ -1601,10 +1605,11 @@ Test log for: Sun Jan 28 2018 16:28:45 GMT+0200 (GTB Standard Time)
   Testing zipWith
 
     √ zipWith is a Function
+    √ Works with multiple promises
 
 
-  total:     716
-  passing:   716
-  duration:  1.1s
+  total:     721
+  passing:   721
+  duration:  3.1s
 
 
