@@ -169,7 +169,7 @@ partition:array,object,function
 percentile:math
 pick:object,array
 pickBy:object,array,function
-pipeAsyncFunctions:adapter,function,async
+pipeAsyncFunctions:adapter,function,promise
 pipeFunctions:adapter,function
 pluralize:string
 powerset:math
