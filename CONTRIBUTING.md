@@ -38,7 +38,7 @@ Here's what you can do to help:
 - You can start creating a new snippet, by using the [snippet template](snippet-template.md) to format your snippets.
 
 ### Writing tests
-- Before writing any tests run `npm run tdd` script. It will update test directory to include new snippets as well as update old ones if needed.
+- Before writing any tests run `npm run tester` script. It will update test directory to include new snippets as well as update old ones if needed.
 - **DO NOT MODIFY THE snippetName.js files** under test directory.
 - We are using [tape](https://github.com/substack/tape) for testing.
 - Write tests under `snippetName.test.js` file. If you have trouble doing so, check out tests of other snippets.
