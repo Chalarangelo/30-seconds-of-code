@@ -33,6 +33,7 @@ createElement:browser,utility
 createEventHub:browser,event,advanced
 currentURL:browser,url
 curry:function,recursion
+debounce:function
 decapitalize:string,array
 deepClone:object,recursion
 deepFlatten:array,recursion
