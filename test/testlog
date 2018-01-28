@@ -1,4 +1,4 @@
-Test log for: Sat Jan 27 2018 11:05:08 GMT-0500 (Eastern Standard Time)
+Test log for: Sun Jan 28 2018 14:42:53 GMT-0500 (Eastern Standard Time)
 
 > 30-seconds-of-code@0.0.1 test C:\Users\King David\Desktop\github-repo\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -8,6 +8,10 @@ Test log for: Sat Jan 27 2018 11:05:08 GMT-0500 (Eastern Standard Time)
 
     √ anagrams is a Function
     √ Generates all anagrams of a string
+
+  Testing arrayToHtmlList
+
+    √ arrayToHtmlList is a Function
 
   Testing ary
 
@@ -452,6 +456,10 @@ Test log for: Sat Jan 27 2018 11:05:08 GMT-0500 (Eastern Standard Time)
 
     √ hammingDistance is a Function
     √ retuns hamming disance between 2 values
+
+  Testing hasClass
+
+    √ hasClass is a Function
 
   Testing hasFlags
 
@@ -1513,8 +1521,8 @@ Test log for: Sat Jan 27 2018 11:05:08 GMT-0500 (Eastern Standard Time)
     √ zipWith is a Function
 
 
-  total:     647
-  passing:   647
-  duration:  576ms
+  total:     649
+  passing:   649
+  duration:  499ms
 
 
