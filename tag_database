@@ -2,6 +2,7 @@ anagrams:string,recursion
 arrayToHtmlList:browser,array
 ary:adapter,function
 atob:node,string,utility
+attempt:function
 average:math,array
 averageBy:math,array,function
 bind:function,object
