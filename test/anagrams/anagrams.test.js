@@ -6,6 +6,8 @@ test('Testing anagrams', (t) => {
   //Please go to https://github.com/substack/tape
   t.true(typeof anagrams === 'function', 'anagrams is a Function');
   t.deepEqual(anagrams('abc'), ['abc','acb','bac','bca','cab','cba'], "Generates all anagrams of a string");
+  t.deepEqual(anagrams('a'), ['a'], "Works for single-letter strings");
+  t.deepEqual(anagrams(''), [''], "Works for empty strings");
   //t.deepEqual(anagrams(args..), 'Expected');
   //t.equal(anagrams(args..), 'Expected');
   //t.false(anagrams(args..), 'Expected');

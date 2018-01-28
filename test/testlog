@@ -1,4 +1,4 @@
-Test log for: Sun Jan 28 2018 14:28:04 GMT+0200 (GTB Standard Time)
+Test log for: Sun Jan 28 2018 16:28:45 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -8,6 +8,8 @@ Test log for: Sun Jan 28 2018 14:28:04 GMT+0200 (GTB Standard Time)
 
     √ anagrams is a Function
     √ Generates all anagrams of a string
+    √ Works for single-letter strings
+    √ Works for empty strings
 
   Testing arrayToHtmlList
 
@@ -17,12 +19,19 @@ Test log for: Sun Jan 28 2018 14:28:04 GMT+0200 (GTB Standard Time)
   Testing ary
 
     √ ary is a Function
+    √ Discards arguments with index >=n
 
   Testing atob
 
     √ atob is a Function
     √ atob("Zm9vYmFy") equals "foobar"
     √ atob("Z") returns ""
+
+  Testing attempt
+
+    √ attempt is a Function
+    √ Returns a value
+    √ Returns an error
 
   Testing average
 
@@ -52,14 +61,17 @@ Test log for: Sun Jan 28 2018 14:28:04 GMT+0200 (GTB Standard Time)
   Testing bind
 
     √ bind is a Function
+    √ Binds to an object context
 
   Testing bindAll
 
     √ bindAll is a Function
+    √ Binds to an object context
 
   Testing bindKey
 
     √ bindKey is a Function
+    √ Binds function to an object context
 
   Testing bottomVisible
 
@@ -201,6 +213,10 @@ Test log for: Sun Jan 28 2018 14:28:04 GMT+0200 (GTB Standard Time)
     √ curry is a Function
     √ curries a Math.pow
     √ curries a Math.min
+
+  Testing debounce
+
+    √ debounce is a Function
 
   Testing decapitalize
 
@@ -959,6 +975,10 @@ Test log for: Sun Jan 28 2018 14:28:04 GMT+0200 (GTB Standard Time)
 
     √ over is a Function
 
+  Testing overArgs
+
+    √ overArgs is a Function
+
   Testing palindrome
 
     √ palindrome is a Function
@@ -1082,6 +1102,10 @@ Test log for: Sun Jan 28 2018 14:28:04 GMT+0200 (GTB Standard Time)
 
     √ README is a Function
 
+  Testing rearg
+
+    √ rearg is a Function
+
   Testing redirect
 
     √ redirect is a Function
@@ -1125,7 +1149,16 @@ Test log for: Sun Jan 28 2018 14:28:04 GMT+0200 (GTB Standard Time)
   Testing round
 
     √ round is a Function
-    √ Rounds a number to a specified amount of digits.
+    √ round(1.005, 2) returns 1.01
+    √ round(123.3423345345345345344, 11) returns 123.34233453453
+    √ round(3.342, 11) returns 3.342
+    √ round(1.005) returns 1
+    √ round([1.005, 2]) returns NaN
+    √ round(string) returns NaN
+    √ round() returns NaN
+    √ round(132, 413, 4134) returns NaN
+    √ round({a: 132}, 413) returns NaN
+    √ round(123.3423345345345345344, 11) takes less than 2s to run
 
   Testing runAsync
 
@@ -1295,6 +1328,10 @@ Test log for: Sun Jan 28 2018 14:28:04 GMT+0200 (GTB Standard Time)
 
     √ takeWhile is a Function
 
+  Testing throttle
+
+    √ throttle is a Function
+
   Testing times
 
     √ times is a Function
@@ -1306,10 +1343,15 @@ Test log for: Sun Jan 28 2018 14:28:04 GMT+0200 (GTB Standard Time)
   Testing toCamelCase
 
     √ toCamelCase is a Function
-    √ Converts a string to camelCase
-    √ Converts a string to camelCase
-    √ Converts a string to camelCase
-    √ Converts a string to camelCase
+    √ toCamelCase('some_database_field_name') returns someDatabaseFieldName
+    √ toCamelCase('Some label that needs to be camelized') returns someLabelThatNeedsToBeCamelized
+    √ toCamelCase('some-javascript-property') return someJavascriptProperty
+    √ toCamelCase('some-mixed_string with spaces_underscores-and-hyphens') returns someMixedStringWithSpacesUnderscoresAndHyphens
+    √ toCamelCase() throws a error
+    √ toCamelCase([]) throws a error
+    √ toCamelCase({}) throws a error
+    √ toCamelCase(123) throws a error
+    √ toCamelCase(some-mixed_string with spaces_underscores-and-hyphens) takes less than 2s to run
 
   Testing toDecimalMark
 
@@ -1323,10 +1365,15 @@ Test log for: Sun Jan 28 2018 14:28:04 GMT+0200 (GTB Standard Time)
   Testing toKebabCase
 
     √ toKebabCase is a Function
-    √ string converts to snake case
-    √ string converts to snake case
-    √ string converts to snake case
-    √ string converts to snake case
+    √ toKebabCase('camelCase') returns camel-case
+    √ toKebabCase('some text') returns some-text
+    √ toKebabCase('some-mixed-string With spaces-underscores-and-hyphens') returns some-mixed-string-with-spaces-underscores-and-hyphens
+    √ toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') returns i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html
+    √ toKebabCase() return undefined
+    √ toKebabCase([]) throws an error
+    √ toKebabCase({}) throws an error
+    √ toKebabCase(123) throws an error
+    √ toKebabCase(IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML) takes less than 2s to run
 
   Testing tomorrow
 
@@ -1343,19 +1390,30 @@ Test log for: Sun Jan 28 2018 14:28:04 GMT+0200 (GTB Standard Time)
   Testing toSafeInteger
 
     √ toSafeInteger is a Function
+    √ Number(toSafeInteger(3.2)) is a number
     √ Converts a value to a safe integer
-    √ Converts a value to a safe integer
-    √ Converts a value to a safe integer
-    √ Converts a value to a safe integer
-    √ Converts a value to a safe integer
+    √ toSafeInteger('4.2') returns 4
+    √ toSafeInteger(4.6) returns 5
+    √ toSafeInteger([]) returns 0
+    √ isNaN(toSafeInteger([1.5, 3124])) is true
+    √ isNaN(toSafeInteger('string')) is true
+    √ isNaN(toSafeInteger({})) is true
+    √ isNaN(toSafeInteger()) is true
+    √ toSafeInteger(Infinity) returns 9007199254740991
+    √ toSafeInteger(3.2) takes less than 2s to run
 
   Testing toSnakeCase
 
     √ toSnakeCase is a Function
-    √ string converts to snake case
-    √ string converts to snake case
-    √ string converts to snake case
-    √ string converts to snake case
+    √ toSnakeCase('camelCase') returns camel_case
+    √ toSnakeCase('some text') returns some_text
+    √ toSnakeCase('some-mixed_string With spaces_underscores-and-hyphens') returns some_mixed_string_with_spaces_underscores_and_hyphens
+    √ toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') returns i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html
+    √ toSnakeCase() returns undefined
+    √ toSnakeCase([]) throws an error
+    √ toSnakeCase({}) throws an error
+    √ toSnakeCase(123) throws an error
+    √ toSnakeCase(IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML) takes less than 2s to run
 
   Testing transform
 
@@ -1387,7 +1445,17 @@ Test log for: Sun Jan 28 2018 14:28:04 GMT+0200 (GTB Standard Time)
   Testing union
 
     √ union is a Function
-    √ Returns every element that exists in any of the two arrays once
+    √ union([1, 2, 3], [4, 3, 2]) returns [1, 2, 3, 4]
+    √ union('str', 'asd') returns [ 's', 't', 'r', 'a', 'd' ]
+    √ union([[], {}], [1, 2, 3]) returns [[], {}, 1, 2, 3]
+    √ union([], []) returns []
+    √ union() throws an error
+    √ union(true, str) throws an error
+    √ union(false, true) throws an error
+    √ union(123, {}) throws an error
+    √ union([], {}) throws an error
+    √ union(undefined, null) throws an error
+    √ union([1, 2, 3], [4, 3, 2]) takes less than 2s to run
 
   Testing unionBy
 
@@ -1400,7 +1468,18 @@ Test log for: Sun Jan 28 2018 14:28:04 GMT+0200 (GTB Standard Time)
   Testing uniqueElements
 
     √ uniqueElements is a Function
-    √ Returns all unique values of an array
+    √ uniqueElements([1, 2, 2, 3, 4, 4, 5]) returns [1,2,3,4,5]
+    √ uniqueElements([1, 23, 53]) returns [1, 23, 53]
+    √ uniqueElements([true, 0, 1, false, false, undefined, null, '']) returns [true, 0, 1, false, false, undefined, null, '']
+    √ uniqueElements() returns []
+    √ uniqueElements(null) returns []
+    √ uniqueElements(undefined) returns []
+    √ uniqueElements('strt') returns ['s', 't', 'r']
+    √ uniqueElements(1, 1, 2543, 534, 5) throws an error
+    √ uniqueElements({}) throws an error
+    √ uniqueElements(true) throws an error
+    √ uniqueElements(false) throws an error
+    √ uniqueElements([true, 0, 1, false, false, undefined, null]) takes less than 2s to run
 
   Testing untildify
 
@@ -1524,8 +1603,8 @@ Test log for: Sun Jan 28 2018 14:28:04 GMT+0200 (GTB Standard Time)
     √ zipWith is a Function
 
 
-  total:     652
-  passing:   652
-  duration:  1.7s
+  total:     716
+  passing:   716
+  duration:  1.1s
 
 
