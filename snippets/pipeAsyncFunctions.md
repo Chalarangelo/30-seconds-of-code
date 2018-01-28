@@ -1,8 +1,9 @@
 ### pipeAsyncFunctions
 
-Performs left-to-right function composition.
+Performs left-to-right function composition for asynchronous functions.
 
-Use `Array.reduce()` with the spread operator (`...`) to perform left-to-right function composition using `Promise.then()`. The functions can return a combination of: simple values, `Promise`'s, or they can be defined as `async` ones returning through `await`.
+Use `Array.reduce()` with the spread operator (`...`) to perform left-to-right function composition using `Promise.then()`.
+The functions can return a combination of: simple values, `Promise`'s, or they can be defined as `async` ones returning through `await`.
 All functions must be unary.
 
 ```js

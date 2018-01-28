@@ -1,6 +1,6 @@
-Test log for: Fri Jan 26 2018 20:13:29 GMT+0000 (UTC)
+Test log for: Sun Jan 28 2018 14:28:04 GMT+0200 (GTB Standard Time)
 
-> 30-seconds-of-code@0.0.1 test /home/travis/build/Chalarangelo/30-seconds-of-code
+> 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
 
 
@@ -52,6 +52,10 @@ Test log for: Fri Jan 26 2018 20:13:29 GMT+0000 (UTC)
   Testing bind
 
     √ bind is a Function
+
+  Testing bindAll
+
+    √ bindAll is a Function
 
   Testing bindKey
 
@@ -252,10 +256,9 @@ Test log for: Fri Jan 26 2018 20:13:29 GMT+0000 (UTC)
 
     √ distance is a Function
 
-  Testing dropWhile
+  Testing drop
 
-    √ dropWhile is a Function
-    √ Removes elements in an array until the passed function returns true
+    √ drop is a Function
 
   Testing dropRight
 
@@ -263,6 +266,14 @@ Test log for: Fri Jan 26 2018 20:13:29 GMT+0000 (UTC)
     √ Returns a new array with n elements removed from the right
     √ Returns a new array with n elements removed from the right
     √ Returns a new array with n elements removed from the right
+
+  Testing dropRightWhile
+
+    √ dropRightWhile is a Function
+
+  Testing dropWhile
+
+    √ dropWhile is a Function
 
   Testing elementIsVisibleInViewport
 
@@ -985,6 +996,11 @@ Test log for: Fri Jan 26 2018 20:13:29 GMT+0000 (UTC)
 
     √ pickBy is a Function
 
+  Testing pipeAsyncFunctions
+
+    √ pipeAsyncFunctions is a Function
+    √ pipeAsyncFunctions result should be 15
+
   Testing pipeFunctions
 
     √ pipeFunctions is a Function
@@ -1025,6 +1041,10 @@ Test log for: Fri Jan 26 2018 20:13:29 GMT+0000 (UTC)
   Testing pullAtValue
 
     √ pullAtValue is a Function
+
+  Testing pullBy
+
+    √ pullBy is a Function
 
   Testing quickSort
 
@@ -1083,6 +1103,10 @@ Test log for: Fri Jan 26 2018 20:13:29 GMT+0000 (UTC)
 
     √ remove is a Function
     √ Removes elements from an array for which the given function returns false
+
+  Testing removeNonASCII
+
+    √ removeNonASCII is a Function
 
   Testing removeVowels
 
@@ -1180,9 +1204,17 @@ Test log for: Fri Jan 26 2018 20:13:29 GMT+0000 (UTC)
     √ Returns the lowest index at which value should be inserted into array in order to maintain its sort order.
     √ Returns the lowest index at which value should be inserted into array in order to maintain its sort order.
 
+  Testing sortedIndexBy
+
+    √ sortedIndexBy is a Function
+
   Testing sortedLastIndex
 
     √ sortedLastIndex is a Function
+
+  Testing sortedLastIndexBy
+
+    √ sortedLastIndexBy is a Function
 
   Testing speechSynthesis
 
@@ -1203,6 +1235,10 @@ Test log for: Fri Jan 26 2018 20:13:29 GMT+0000 (UTC)
     √ standardDeviation is a Function
     √ Returns the standard deviation of an array of numbers
     √ Returns the standard deviation of an array of numbers
+
+  Testing stripHTMLTags
+
+    √ stripHTMLTags is a Function
 
   Testing sum
 
@@ -1250,6 +1286,14 @@ Test log for: Fri Jan 26 2018 20:13:29 GMT+0000 (UTC)
     √ takeRight is a Function
     √ Returns an array with n elements removed from the end
     √ Returns an array with n elements removed from the end
+
+  Testing takeRightWhile
+
+    √ takeRightWhile is a Function
+
+  Testing takeWhile
+
+    √ takeWhile is a Function
 
   Testing times
 
@@ -1480,9 +1524,8 @@ Test log for: Fri Jan 26 2018 20:13:29 GMT+0000 (UTC)
     √ zipWith is a Function
 
 
-  total:     641
-  passing:   641
-  duration:  1.1s
+  total:     652
+  passing:   652
+  duration:  1.7s
 
 
-undefined
