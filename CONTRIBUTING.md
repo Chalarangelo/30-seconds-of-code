@@ -38,14 +38,17 @@ Here's what you can do to help:
 - You can start creating a new snippet, by using the [snippet template](snippet-template.md) to format your snippets.
 
 ### Writing tests
-- Before writing any tests run `npm run tdd` script. It will update test directory to include new snippets as well as update old ones if needed.
+- Before writing any tests run `npm run tester` script. It will update test directory to include new snippets as well as update old ones if needed.
 - **DO NOT MODIFY THE snippetName.js files** under test directory.
 - We are using [tape](https://github.com/substack/tape) for testing.
 - Write tests under `snippetName.test.js` file. If you have trouble doing so, check out tests of other snippets.
 - Be sure to run `npm run test`. It is going to run all tests for all snippets.
 - Make a new pull request **only if all the tests are passing**.
 
-
+#### Browser specific tests
+- If your snippet belongs to `browser` category, then you will need to modify the tests to make them work.
+- By default, `Node.js` isn't browser environment. That said we have to use an external package to help us simulate the browser for our tests.
+- We use [jsdom](https://www.npmjs.com/package/jsdom) for our browser specific tests. You can find their [documentation](https://github.com/jsdom/jsdom) on GitHub as well.
 
 ### Additional guidelines and conventions regarding snippets
 

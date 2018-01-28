@@ -82,8 +82,11 @@ average(1, 2, 3);
 * [`collectInto`](#collectinto)
 * [`flip`](#flip)
 * [`over`](#over)
+* [`overArgs`](#overargs)
+* [`pipeAsyncFunctions`](#pipeasyncfunctions)
 * [`pipeFunctions`](#pipefunctions)
 * [`promisify`](#promisify)
+* [`rearg`](#rearg)
 * [`spreadOver`](#spreadover)
 * [`unary`](#unary)
 
@@ -219,12 +222,14 @@ average(1, 2, 3);
 <details>
 <summary>View contents</summary>
 
+* [`attempt`](#attempt)
 * [`bind`](#bind)
 * [`bindKey`](#bindkey)
 * [`chainAsync`](#chainasync)
 * [`compose`](#compose)
 * [`composeRight`](#composeright)
 * [`curry`](#curry)
+* [`debounce`](#debounce)
 * [`defer`](#defer)
 * [`delay`](#delay)
 * [`functionName`](#functionname)
@@ -235,6 +240,7 @@ average(1, 2, 3);
 * [`partialRight`](#partialright)
 * [`runPromisesInSeries`](#runpromisesinseries)
 * [`sleep`](#sleep)
+* [`throttle`](#throttle)
 * [`times`](#times)
 * [`unfold`](#unfold)
 
@@ -495,7 +501,7 @@ const Pall = collectInto(Promise.all.bind(Promise));
 let p1 = Promise.resolve(1);
 let p2 = Promise.resolve(2);
 let p3 = new Promise(resolve => setTimeout(resolve, 2000, 3));
-Pall(p1, p2, p3).then(console.log);
+Pall(p1, p2, p3).then(console.log); // [1, 2, 3] (after about 2 seconds)
 ```
 
 </details>
@@ -554,6 +560,66 @@ minMax(1, 2, 3, 4, 5); // [1,5]
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### overArgs
+
+Creates a function that invokes the provided function with its arguments transformed.
+
+Use `Array.map()` to apply `transforms` to `args` in combination with the spread operator (`...`) to pass the transformed arguments to `fn`.
+
+```js
+const overArgs = (fn, transforms) => (...args) => fn(...args.map((val, i) => transforms[i](val)));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+var func = overArgs(
+  function(x, y) {
+    return [x, y];
+  },
+  [square, doubled]
+);
+func(9, 3); // [81, 6]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### pipeAsyncFunctions
+
+Performs left-to-right function composition for asynchronous functions.
+
+Use `Array.reduce()` with the spread operator (`...`) to perform left-to-right function composition using `Promise.then()`.
+The functions can return a combination of: simple values, `Promise`'s, or they can be defined as `async` ones returning through `await`.
+All functions must be unary.
+
+```js
+const pipeAsyncFunctions = (...fns) => arg => fns.reduce((p, f) => p.then(f), Promise.resolve(arg));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const sum = pipeAsyncFunctions(
+  x => x + 1,
+  x => new Promise(resolve => setTimeout(() => resolve(x + 2), 1000)),
+  x => x + 3,
+  async x => (await x) + 4
+);
+(async () => {
+  console.log(await sum(5)); // 15 (after one second)
+})();
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### pipeFunctions
 
 Performs left-to-right function composition.
@@ -602,6 +668,40 @@ const promisify = func => (...args) =>
 ```js
 const delay = promisify((d, cb) => setTimeout(cb, d));
 delay(2000).then(() => console.log('Hi!')); // // Promise resolves after 2s
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### rearg
+
+Creates a function that invokes the provided function with its arguments arranged according to the specified indexes.
+
+Use `Array.reduce()` and `Array.indexOf()` to reorder arguments based on `indexes` in combination with the spread operator (`...`) to pass the transformed arguments to `fn`.
+
+```js
+const rearg = (fn, indexes) => (...args) =>
+  fn(
+    ...args.reduce(
+      (acc, val, i) => ((acc[indexes.indexOf(i)] = val), acc),
+      Array.from({ length: indexes.length })
+    )
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+var rearged = rearg(
+  function(a, b, c) {
+    return [a, b, c];
+  },
+  [2, 0, 1]
+);
+rearged('b', 'c', 'a'); // ['a', 'b', 'c']
 ```
 
 </details>
@@ -3432,6 +3532,37 @@ tomorrow(); // 2017-12-27 (if current date is 2017-12-26)
 ---
  ## 🎛️ Function
 
+### attempt
+
+Attempts to invoke a function with the provided arguments, returning either the result or the caught error object.
+
+Use a `try... catch` block to return either the result of the function or an appropriate error.
+
+```js
+const attempt = (fn, ...args) => {
+  try {
+    return fn(args);
+  } catch (e) {
+    return e instanceof Error ? e : new Error(e);
+  }
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+var elements = attempt(function(selector) {
+  return document.querySelectorAll(selector);
+}, '>_>');
+if (elements instanceof Error) elements = []; // elements = []
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### bind
 
 Creates a function that invokes `fn` with a given context, optionally adding any additional supplied parameters to the beginning of the arguments.
@@ -3602,6 +3733,44 @@ const curry = (fn, arity = fn.length, ...args) =>
 ```js
 curry(Math.pow)(2)(10); // 1024
 curry(Math.min, 3)(10)(50)(2); // 2
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### debounce
+
+Creates a debounced function that delays invoking the provided function until after `wait` milliseconds have elapsed since the last time the debounced function was invoked.
+
+Use `setTimeout()` and `clearTimeout()` to debounce the given method, `fn`.
+Use `Function.apply()` to apply the `this` context to the function and provide the necessary `arguments`.
+Omit the second argument, `wait`, to set the timeout at a default of 0 ms.
+
+```js
+const debounce = (fn, wait = 0) => {
+  let inDebounce;
+  return function() {
+    const context = this,
+      args = arguments;
+    clearTimeout(inDebounce);
+    inDebounce = setTimeout(() => fn.apply(context, args), wait);
+  };
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+window.addEventListener(
+  'resize',
+  debounce(function(evt) {
+    console.log(window.innerWidth);
+    console.log(window.innerHeight);
+  }, 250)
+); // Will log the window dimensions at most every 250ms
 ```
 
 </details>
@@ -3872,6 +4041,56 @@ async function sleepyWork() {
   await sleep(1000);
   console.log('I woke up after 1 second.');
 }
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### throttle
+
+Creates a throttled function that only invokes the provided function at most once per every `wait` milliseconds
+
+Use `setTimeout()` and `clearTimeout()` to throttle the given method, `fn`.
+Use `Function.apply()` to apply the `this` context to the function and provide the necessary `arguments`.
+Use `Date.now()` to keep track of the last time the throttled function was invoked.
+Omit the second argument, `wait`, to set the timeout at a default of 0 ms.
+
+```js
+const throttle = (fn, wait) => {
+  let inThrottle, lastFn, lastTime;
+  return function() {
+    const context = this,
+      args = arguments;
+    if (!inThrottle) {
+      fn.apply(context, args);
+      lastTime = Date.now();
+      inThrottle = true;
+    } else {
+      clearTimeout(lastFn);
+      lastFn = setTimeout(function() {
+        if (Date.now() - lastTime >= wait) {
+          fn.apply(context, args);
+          lastTime = Date.now();
+        }
+      }, wait - (Date.now() - lastTime));
+    }
+  };
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+window.addEventListener(
+  'resize',
+  throttle(function(evt) {
+    console.log(window.innerWidth);
+    console.log(window.innerHeight);
+  }, 250)
+); // Will log the window dimensions at most every 250ms
 ```
 
 </details>
@@ -5095,17 +5314,17 @@ UUIDGeneratorNode(); // '79c7c136-60ee-40a2-beb2-856f1feabefc'
 
 ### bindAll
 
-Explain briefly what the snippet does.
-
 Use `Array.forEach()` to return a `function` that uses `Function.apply()` to apply the given context (`obj`) to `fn` for each function specified.
 
 ```js
 const bindAll = (obj, ...fns) =>
   fns.forEach(
-    fn =>
+    fn => (
+      (f = obj[fn]),
       (obj[fn] = function() {
-        return fn.apply(obj);
+        return f.apply(obj);
       })
+    )
   );
 ```
 
