@@ -6,7 +6,7 @@ test('Testing randomHexColorCode', (t) => {
   //Please go to https://github.com/substack/tape
   t.true(typeof randomHexColorCode === 'function', 'randomHexColorCode is a Function');
   //t.deepEqual(randomHexColorCode(args..), 'Expected');
-  //t.equal(randomHexColorCode(args..), 'Expected');
+  t.equal(randomHexColorCode().length, 7);
   //t.false(randomHexColorCode(args..), 'Expected');
   //t.throws(randomHexColorCode(args..), 'Expected');
   t.end();
