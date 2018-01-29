@@ -6,7 +6,7 @@ Use `Math.random` to generate a random 24-bit(6x4bits) hexadecimal number. Use b
 
 ```js
 const randomHexColorCode = () => {
-  let n = (((Math.random() * 0xfffff)) << 6).toString(16);
+  let n = (((Math.random() * 0xfffff)) * 1000000).toString(16);
   return '#' + n.slice(0, 6);
 };
 ```
