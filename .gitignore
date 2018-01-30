@@ -4,3 +4,6 @@ currentSnippet\.js
 .idea
 test.sh
 /*.log
+test/**/*.js
+!test/**/*.test.js
+test/testlog
