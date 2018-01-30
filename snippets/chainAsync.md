@@ -9,7 +9,7 @@ The tenerary function checks the next function exists before calling it, otherwi
 ```js
 const chainAsync = fns => {
   let curr = 0;
-  const next = () => fns[++curr] ? fns[curr](next) : false;
+  const next = () => (fns[++curr] ? fns[curr](next) : false);
   next();
 };
 ```
