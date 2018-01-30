@@ -1,16 +1,16 @@
 ### bindAll
 
-Explain briefly what the snippet does.
-
 Use `Array.forEach()` to return a `function` that uses `Function.apply()` to apply the given context (`obj`) to `fn` for each function specified.
 
 ```js
 const bindAll = (obj, ...fns) =>
   fns.forEach(
-    fn =>
+    fn => (
+      (f = obj[fn]),
       (obj[fn] = function() {
-        return fn.apply(obj);
+        return f.apply(obj);
       })
+    )
   );
 ```
 
