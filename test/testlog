@@ -1,4 +1,4 @@
-Test log for: Mon Jan 29 2018 20:15:23 GMT+0000 (UTC)
+Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.1 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1912,6 +1912,7 @@ Test log for: Mon Jan 29 2018 20:15:23 GMT+0000 (UTC)
   Testing randomHexColorCode
 
     ✔ randomHexColorCode is a Function
+    ✔ should be equal
 
   Testing randomIntArrayInRange
 
@@ -2412,8 +2413,8 @@ Test log for: Mon Jan 29 2018 20:15:23 GMT+0000 (UTC)
     ✔ Works with multiple promises
 
 
-  total:     721
-  passing:   721
-  duration:  3.1s
+  total:     722
+  passing:   722
+  duration:  2.9s
 
 
