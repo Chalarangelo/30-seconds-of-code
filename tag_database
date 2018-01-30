@@ -2,6 +2,7 @@ anagrams:string,recursion
 arrayToHtmlList:browser,array
 ary:adapter,function
 atob:node,string,utility
+attempt:function
 average:math,array
 averageBy:math,array,function
 bind:function,object
@@ -32,6 +33,7 @@ createElement:browser,utility
 createEventHub:browser,event,advanced
 currentURL:browser,url
 curry:function,recursion
+debounce:function
 decapitalize:string,array
 deepClone:object,recursion
 deepFlatten:array,recursion
@@ -161,6 +163,7 @@ once:function
 onUserInputChange:browser,event,advanced
 orderBy:object,array
 over:adapter,function
+overArgs:adapter,function
 palindrome:string
 parseCookie:utility,string
 partial:function
@@ -169,6 +172,7 @@ partition:array,object,function
 percentile:math
 pick:object,array
 pickBy:object,array,function
+pipeAsyncFunctions:adapter,function,promise
 pipeFunctions:adapter,function
 pluralize:string
 powerset:math
@@ -184,6 +188,7 @@ randomIntArrayInRange:math,utility,random
 randomIntegerInRange:math,utility,random
 randomNumberInRange:math,utility,random
 readFileLines:node,array,string
+rearg:adapter,function
 redirect:browser,url
 reducedFilter:array
 reduceSuccessive:array,function
@@ -227,6 +232,7 @@ take:array
 takeRight:array
 takeRightWhile:array,function
 takeWhile:array,function
+throttle:function
 times:function
 timeTaken:utility
 toCamelCase:string,regexp
