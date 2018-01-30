@@ -1638,8 +1638,8 @@ var pullBy = function pullBy(arr) {
 };
 
 var randomHexColorCode = function randomHexColorCode() {
-  var n = (Math.random() * 0xfffff | 0).toString(16);
-  return '#' + (n.length !== 6 ? (Math.random() * 0xf | 0).toString(16) + n : n);
+  var n = (Math.random() * 0xfffff * 1000000).toString(16);
+  return '#' + n.slice(0, 6);
 };
 
 var randomIntArrayInRange = function randomIntArrayInRange(min, max) {

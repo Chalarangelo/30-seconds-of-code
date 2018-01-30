@@ -938,8 +938,8 @@ const pullBy = (arr, ...args) => {
 };
 
 const randomHexColorCode = () => {
-  let n = ((Math.random() * 0xfffff) | 0).toString(16);
-  return '#' + (n.length !== 6 ? ((Math.random() * 0xf) | 0).toString(16) + n : n);
+  let n = (Math.random() * 0xfffff * 1000000).toString(16);
+  return '#' + n.slice(0, 6);
 };
 
 const randomIntArrayInRange = (min, max, n = 1) =>
