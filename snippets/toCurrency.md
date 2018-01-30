@@ -2,10 +2,10 @@
 
 Take a number and return specified currency formatting.
 
-Use `new Intl.NumberFormat` to enable country / currency sensitive formatting.
+Use `Intl.NumberFormat` to enable country / currency sensitive formatting.
 
 ```js
-const toCurrency = (n, curr, LanguageFormat = undefined) => new Intl.NumberFormat(LanguageFormat, { style: 'currency', currency: curr }).format(n);
+const toCurrency = (n, curr, LanguageFormat = undefined) => Intl.NumberFormat(LanguageFormat, { style: 'currency', currency: curr }).format(n);
 ```
 
 ```js
