@@ -236,6 +236,7 @@ throttle:function
 times:function
 timeTaken:utility
 toCamelCase:string,regexp
+toCurrency:utility
 toDecimalMark:utility,math
 toggleClass:browser
 toKebabCase:string,regexp
