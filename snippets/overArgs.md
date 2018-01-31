@@ -9,11 +9,9 @@ const overArgs = (fn, transforms) => (...args) => fn(...args.map((val, i) => tra
 ```
 
 ```js
-var func = overArgs(
-  function(x, y) {
-    return [x, y];
-  },
-  [square, doubled]
-);
-func(9, 3); // [81, 6]
+const square = n => n * n;
+const double = n => n * 2;
+
+const fn = overArgs((x, y) => [x, y], [square, doubled]);
+fn(9, 3); // [81, 6]
 ```
