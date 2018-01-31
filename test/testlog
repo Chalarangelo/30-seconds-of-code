@@ -1,39 +1,8 @@
-Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
+Test log for: Tue Jan 30 2018 20:36:05 GMT+0000 (GMT)
 
-> 30-seconds-of-code@0.0.1 test /home/travis/build/Chalarangelo/30-seconds-of-code
+> 30-seconds-of-code@0.0.1 test /home/oscar/Projects/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
 
-
-  Testing JSONToDate
-
-    ✔ JSONToDate is a Function
-
-  Testing JSONToFile
-
-    ✔ JSONToFile is a Function
-
-  Testing README
-
-    ✔ README is a Function
-
-  Testing RGBToHex
-
-    ✔ RGBToHex is a Function
-    ✔ Converts the values of RGB components to a color code.
-
-  Testing URLJoin
-
-    ✔ URLJoin is a Function
-    ✔ Returns proper URL
-    ✔ Returns proper URL
-
-  Testing UUIDGeneratorBrowser
-
-    ✔ UUIDGeneratorBrowser is a Function
-
-  Testing UUIDGeneratorNode
-
-    ✔ UUIDGeneratorNode is a Function
 
   Testing anagrams
 
@@ -89,14 +58,14 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
 
     ✔ binarySearch is a Function
 
-  Testing bind
-
-    ✔ bind is a Function
-    ✔ Binds to an object context
-
   Testing bindAll
 
     ✔ bindAll is a Function
+    ✔ Binds to an object context
+
+  Testing bind
+
+    ✔ bind is a Function
     ✔ Binds to an object context
 
   Testing bindKey
@@ -284,14 +253,14 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
 
     ✔ detectDeviceType is a Function
 
+  Testing differenceBy
+
+    ✔ differenceBy is a Function
+
   Testing difference
 
     ✔ difference is a Function
     ✔ Returns the difference between two arrays
-
-  Testing differenceBy
-
-    ✔ differenceBy is a Function
 
   Testing differenceWith
 
@@ -380,14 +349,14 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
 
     ✔ factors is a Function
 
+  Testing fibonacciCountUntilNum
+
+    ✔ fibonacciCountUntilNum is a Function
+
   Testing fibonacci
 
     ✔ fibonacci is a Function
     ✔ Generates an array, containing the Fibonacci sequence
-
-  Testing fibonacciCountUntilNum
-
-    ✔ fibonacciCountUntilNum is a Function
 
   Testing fibonacciUntilNum
 
@@ -428,6 +397,12 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
 
     ✔ forEachRight is a Function
 
+  Testing formatDuration
+
+    ✔ formatDuration is a Function
+    ✔ Returns the human readable format of the given number of milliseconds
+    ✔ Returns the human readable format of the given number of milliseconds
+
   Testing forOwn
 
     ✔ forOwn is a Function
@@ -435,12 +410,6 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
   Testing forOwnRight
 
     ✔ forOwnRight is a Function
-
-  Testing formatDuration
-
-    ✔ formatDuration is a Function
-    ✔ Returns the human readable format of the given number of milliseconds
-    ✔ Returns the human readable format of the given number of milliseconds
 
   Testing fromCamelCase
 
@@ -470,15 +439,15 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
     ✔ Initializes an array containing the numbers in the specified range
     ✔ Initializes an array containing the numbers in the specified range
 
-  Testing get
-
-    ✔ get is a Function
-    ✔ Retrieve a property indicated by the selector from an object.
-
   Testing getDaysDiffBetweenDates
 
     ✔ getDaysDiffBetweenDates is a Function
     ✔ Returns the difference in days between two dates
+
+  Testing get
+
+    ✔ get is a Function
+    ✔ Retrieve a property indicated by the selector from an object.
 
   Testing getScrollPosition
 
@@ -573,14 +542,6 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
 
     ✔ httpsRedirect is a Function
 
-  Testing inRange
-
-    ✔ inRange is a Function
-    ✔ The given number falls within the given range
-    ✔ The given number falls within the given range
-    ✔ The given number does not falls within the given range
-    ✔ The given number does not falls within the given range
-
   Testing indexOfAll
 
     ✔ indexOfAll is a Function
@@ -611,14 +572,22 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
     ✔ initializeArrayWithValues is a Function
     ✔ Initializes and fills an array with the specified values
 
-  Testing intersection
+  Testing inRange
 
-    ✔ intersection is a Function
-    ✔ Returns a list of elements that exist in both arrays
+    ✔ inRange is a Function
+    ✔ The given number falls within the given range
+    ✔ The given number falls within the given range
+    ✔ The given number does not falls within the given range
+    ✔ The given number does not falls within the given range
 
   Testing intersectionBy
 
     ✔ intersectionBy is a Function
+
+  Testing intersection
+
+    ✔ intersection is a Function
+    ✔ Returns a list of elements that exist in both arrays
 
   Testing intersectionWith
 
@@ -630,26 +599,6 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
     ✔ invertKeyValues({ a: 1, b: 2, c: 1 }) returns { 1: [ 'a', 'c' ], 2: [ 'b' ] }
     ✔ invertKeyValues({ a: 1, b: 2, c: 1 }, value => 'group' + value) returns { group1: [ 'a', 'c' ], group2: [ 'b' ] }
 
-  Testing is
-
-    ✔ is is a Function
-    ✔ Works for arrays with data
-    ✔ Works for empty arrays
-    ✔ Works for arrays, not objects
-    ✔ Works for objects
-    ✔ Works for maps
-    ✔ Works for regular expressions
-    ✔ Works for sets
-    ✔ Works for weak maps
-    ✔ Works for weak sets
-    ✔ Works for strings - returns false for primitive
-    ✔ Works for strings - returns true when using constructor
-    ✔ Works for numbers - returns false for primitive
-    ✔ Works for numbers - returns true when using constructor
-    ✔ Works for booleans - returns false for primitive
-    ✔ Works for booleans - returns true when using constructor
-    ✔ Works for functions
-
   Testing isAbsoluteURL
 
     ✔ isAbsoluteURL is a Function
@@ -660,16 +609,6 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
   Testing isArmstrongNumber
 
     ✔ isArmstrongNumber is a Function
-
-  Testing isArray
-
-    ✔ isArray is a Function
-    ✔ passed value is an array
-    ✔ passed value is not an array
-
-  Testing isArrayBuffer
-
-    ✔ isArrayBuffer is a Function
 
   Testing isArrayLike
 
@@ -702,16 +641,32 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
     ✔ passed value is a function
     ✔ passed value is not a function
 
+  Testing is
+
+    ✔ is is a Function
+    ✔ Works for arrays with data
+    ✔ Works for empty arrays
+    ✔ Works for arrays, not objects
+    ✔ Works for objects
+    ✔ Works for maps
+    ✔ Works for regular expressions
+    ✔ Works for sets
+    ✔ Works for weak maps
+    ✔ Works for weak sets
+    ✔ Works for strings - returns false for primitive
+    ✔ Works for strings - returns true when using constructor
+    ✔ Works for numbers - returns false for primitive
+    ✔ Works for numbers - returns true when using constructor
+    ✔ Works for booleans - returns false for primitive
+    ✔ Works for booleans - returns true when using constructor
+    ✔ Works for functions
+
   Testing isLowerCase
 
     ✔ isLowerCase is a Function
     ✔ passed string is a lowercase
     ✔ passed string is a lowercase
     ✔ passed value is not a lowercase
-
-  Testing isMap
-
-    ✔ isMap is a Function
 
   Testing isNil
 
@@ -769,14 +724,6 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
 
     ✔ isPromiseLike is a Function
 
-  Testing isRegExp
-
-    ✔ isRegExp is a Function
-
-  Testing isSet
-
-    ✔ isSet is a Function
-
   Testing isSorted
 
     ✔ isSorted is a Function
@@ -802,10 +749,6 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
 
     ✔ isTravisCI is a Function
 
-  Testing isTypedArray
-
-    ✔ isTypedArray is a Function
-
   Testing isUndefined
 
     ✔ isUndefined is a Function
@@ -824,20 +767,20 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
     ✔ {"name":"Adam",age:"20"} is not a valid JSON
     ✔ null is a valid JSON
 
-  Testing isWeakMap
-
-    ✔ isWeakMap is a Function
-
-  Testing isWeakSet
-
-    ✔ isWeakSet is a Function
-
   Testing join
 
     ✔ join is a Function
     ✔ Joins all elements of an array into a string and returns this string
     ✔ Joins all elements of an array into a string and returns this string
     ✔ Joins all elements of an array into a string and returns this string
+
+  Testing JSONToDate
+
+    ✔ JSONToDate is a Function
+
+  Testing JSONToFile
+
+    ✔ JSONToFile is a Function
 
   Testing last
 
@@ -972,13 +915,17 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
 
     ✔ off is a Function
 
+  Testing omitBy
+
+    ✔ omitBy is a Function
+
   Testing omit
 
     ✔ omit is a Function
 
-  Testing omitBy
+  Testing once
 
-    ✔ omitBy is a Function
+    ✔ once is a Function
 
   Testing on
 
@@ -988,23 +935,19 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
 
     ✔ onUserInputChange is a Function
 
-  Testing once
-
-    ✔ once is a Function
-
   Testing orderBy
 
     ✔ orderBy is a Function
     ✔ Returns a sorted array of objects ordered by properties and orders.
     ✔ Returns a sorted array of objects ordered by properties and orders.
 
-  Testing over
-
-    ✔ over is a Function
-
   Testing overArgs
 
     ✔ overArgs is a Function
+
+  Testing over
+
+    ✔ over is a Function
 
   Testing palindrome
 
@@ -1034,14 +977,14 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
     ✔ percentile is a Function
     ✔ Uses the percentile formula to calculate how many numbers in the given array are less or equal to the given value.
 
+  Testing pickBy
+
+    ✔ pickBy is a Function
+
   Testing pick
 
     ✔ pick is a Function
     ✔ Picks the key-value pairs corresponding to the given keys from an object.
-
-  Testing pickBy
-
-    ✔ pickBy is a Function
 
   Testing pipeAsyncFunctions
 
@@ -1077,10 +1020,6 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
 
     ✔ promisify is a Function
 
-  Testing pull
-
-    ✔ pull is a Function
-
   Testing pullAtIndex
 
     ✔ pullAtIndex is a Function
@@ -1092,6 +1031,10 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
   Testing pullBy
 
     ✔ pullBy is a Function
+
+  Testing pull
+
+    ✔ pull is a Function
 
   Testing quickSort
 
@@ -1134,6 +1077,11 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
 
     ✔ redirect is a Function
 
+  Testing reducedFilter
+
+    ✔ reducedFilter is a Function
+    ✔ Filter an array of objects based on a condition while also filtering out unspecified keys.
+
   Testing reduceSuccessive
 
     ✔ reduceSuccessive is a Function
@@ -1142,19 +1090,14 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
 
     ✔ reduceWhich is a Function
 
-  Testing reducedFilter
+  Testing removeNonASCII
 
-    ✔ reducedFilter is a Function
-    ✔ Filter an array of objects based on a condition while also filtering out unspecified keys.
+    ✔ removeNonASCII is a Function
 
   Testing remove
 
     ✔ remove is a Function
     ✔ Removes elements from an array for which the given function returns false
-
-  Testing removeNonASCII
-
-    ✔ removeNonASCII is a Function
 
   Testing removeVowels
 
@@ -1164,6 +1107,11 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
 
     ✔ reverseString is a Function
     ✔ Reverses a string.
+
+  Testing RGBToHex
+
+    ✔ RGBToHex is a Function
+    ✔ Converts the values of RGB components to a color code.
 
   Testing round
 
@@ -1250,23 +1198,23 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
     ✔ sortCharactersInString is a Function
     ✔ Alphabetically sorts the characters in a string.
 
+  Testing sortedIndexBy
+
+    ✔ sortedIndexBy is a Function
+
   Testing sortedIndex
 
     ✔ sortedIndex is a Function
     ✔ Returns the lowest index at which value should be inserted into array in order to maintain its sort order.
     ✔ Returns the lowest index at which value should be inserted into array in order to maintain its sort order.
 
-  Testing sortedIndexBy
+  Testing sortedLastIndexBy
 
-    ✔ sortedIndexBy is a Function
+    ✔ sortedLastIndexBy is a Function
 
   Testing sortedLastIndex
 
     ✔ sortedLastIndex is a Function
-
-  Testing sortedLastIndexBy
-
-    ✔ sortedLastIndexBy is a Function
 
   Testing speechSynthesis
 
@@ -1292,11 +1240,6 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
 
     ✔ stripHTMLTags is a Function
 
-  Testing sum
-
-    ✔ sum is a Function
-    ✔ Returns the sum of two or more numbers/arrays.
-
   Testing sumBy
 
     ✔ sumBy is a Function
@@ -1308,14 +1251,19 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
     ✔ Returns the sum of the powers of all the numbers from start to end
     ✔ Returns the sum of the powers of all the numbers from start to end
 
-  Testing symmetricDifference
+  Testing sum
 
-    ✔ symmetricDifference is a Function
-    ✔ Returns the symmetric difference between two arrays.
+    ✔ sum is a Function
+    ✔ Returns the sum of two or more numbers/arrays.
 
   Testing symmetricDifferenceBy
 
     ✔ symmetricDifferenceBy is a Function
+
+  Testing symmetricDifference
+
+    ✔ symmetricDifference is a Function
+    ✔ Returns the symmetric difference between two arrays.
 
   Testing symmetricDifferenceWith
 
@@ -1327,12 +1275,6 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
     ✔ Returns tail
     ✔ Returns tail
 
-  Testing take
-
-    ✔ take is a Function
-    ✔ Returns an array with n elements removed from the beginning.
-    ✔ Returns an array with n elements removed from the beginning.
-
   Testing takeRight
 
     ✔ takeRight is a Function
@@ -1343,6 +1285,12 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
 
     ✔ takeRightWhile is a Function
 
+  Testing take
+
+    ✔ take is a Function
+    ✔ Returns an array with n elements removed from the beginning.
+    ✔ Returns an array with n elements removed from the beginning.
+
   Testing takeWhile
 
     ✔ takeWhile is a Function
@@ -1351,13 +1299,13 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
 
     ✔ throttle is a Function
 
-  Testing timeTaken
-
-    ✔ timeTaken is a Function
-
   Testing times
 
     ✔ times is a Function
+
+  Testing timeTaken
+
+    ✔ timeTaken is a Function
 
   Testing toCamelCase
 
@@ -1377,6 +1325,10 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
     ✔ toDecimalMark is a Function
     ✔ convert a float-point arithmetic to the Decimal mark form
 
+  Testing toggleClass
+
+    ✔ toggleClass is a Function
+
   Testing toKebabCase
 
     ✔ toKebabCase is a Function
@@ -1389,6 +1341,10 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
     ✔ toKebabCase({}) throws an error
     ✔ toKebabCase(123) throws an error
     ✔ toKebabCase(IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML) takes less than 2s to run
+
+  Testing tomorrow
+
+    ✔ tomorrow is a Function
 
   Testing toOrdinalSuffix
 
@@ -1426,14 +1382,6 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
     ✔ toSnakeCase(123) throws an error
     ✔ toSnakeCase(IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML) takes less than 2s to run
 
-  Testing toggleClass
-
-    ✔ toggleClass is a Function
-
-  Testing tomorrow
-
-    ✔ tomorrow is a Function
-
   Testing transform
 
     ✔ transform is a Function
@@ -1461,6 +1409,10 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
 
     ✔ unfold is a Function
 
+  Testing unionBy
+
+    ✔ unionBy is a Function
+
   Testing union
 
     ✔ union is a Function
@@ -1475,10 +1427,6 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
     ✔ union([], {}) throws an error
     ✔ union(undefined, null) throws an error
     ✔ union([1, 2, 3], [4, 3, 2]) takes less than 2s to run
-
-  Testing unionBy
-
-    ✔ unionBy is a Function
 
   Testing unionWith
 
@@ -1514,6 +1462,20 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
 
     ✔ unzipWith is a Function
     ✔ unzipWith([[1, 10, 100], [2, 20, 200]], (...args) => args.reduce((acc, v) => acc + v, 0)) equals [3, 30, 300]
+
+  Testing URLJoin
+
+    ✔ URLJoin is a Function
+    ✔ Returns proper URL
+    ✔ Returns proper URL
+
+  Testing UUIDGeneratorBrowser
+
+    ✔ UUIDGeneratorBrowser is a Function
+
+  Testing UUIDGeneratorNode
+
+    ✔ UUIDGeneratorNode is a Function
 
   Testing validateNumber
 
@@ -1578,18 +1540,6 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
     ✔ yesNo([Yes, No], true) returns true
     ✔ yesNo({ 2: Yes }, true) returns true
 
-  Testing zip
-
-    ✔ zip is a Function
-    ✔ zip([a, b], [1, 2], [true, false]) returns [[a, 1, true], [b, 2, false]]
-    ✔ zip([a], [1, 2], [true, false]) returns [[a, 1, true], [undefined, 2, false]]
-    ✔ zip([]) returns []
-    ✔ zip(123) returns []
-    ✔ zip([a, b], [1, 2], [true, false]) returns an Array
-    ✔ zip([a], [1, 2], [true, false]) returns an Array
-    ✔ zip(null) throws an error
-    ✔ zip(undefined) throws an error
-
   Testing zipObject
 
     ✔ zipObject is a Function
@@ -1606,11 +1556,23 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
   Testing zipWith
 
     ✔ zipWith is a Function
+
+  Testing zip
+
+    ✔ zip is a Function
+    ✔ zip([a, b], [1, 2], [true, false]) returns [[a, 1, true], [b, 2, false]]
+    ✔ zip([a], [1, 2], [true, false]) returns [[a, 1, true], [undefined, 2, false]]
+    ✔ zip([]) returns []
+    ✔ zip(123) returns []
+    ✔ zip([a, b], [1, 2], [true, false]) returns an Array
+    ✔ zip([a], [1, 2], [true, false]) returns an Array
+    ✔ zip(null) throws an error
+    ✔ zip(undefined) throws an error
     ✔ Works with multiple promises
 
 
-  total:     722
-  passing:   722
-  duration:  2.9s
+  total:     711
+  passing:   711
+  duration:  3.5s
 
 
