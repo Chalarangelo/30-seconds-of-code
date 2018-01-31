@@ -1,4 +1,4 @@
-Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
+Test log for: Thu Feb 01 2018 20:16:56 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.1 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -45,7 +45,6 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
   Testing arrayToHtmlList
 
     ✔ arrayToHtmlList is a Function
-    ✔ Generates and fills a list element
 
   Testing ary
 
@@ -512,7 +511,6 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
   Testing hasClass
 
     ✔ hasClass is a Function
-    ✔ element has the specified class
 
   Testing hasFlags
 
@@ -1372,6 +1370,10 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
     ✔ toCamelCase(123) throws a error
     ✔ toCamelCase(some-mixed_string with spaces_underscores-and-hyphens) takes less than 2s to run
 
+  Testing toCurrency
+
+    ✔ toCurrency is a Function
+
   Testing toDecimalMark
 
     ✔ toDecimalMark is a Function
@@ -1609,8 +1611,8 @@ Test log for: Tue Jan 30 2018 20:16:22 GMT+0000 (UTC)
     ✔ Works with multiple promises
 
 
-  total:     722
-  passing:   722
-  duration:  2.9s
+  total:     721
+  passing:   721
+  duration:  2.3s
 
 
