@@ -6,9 +6,6 @@
 <!--- Describe your changes in detail -->
 **Resolves** #(issue number) <!--- Delete if not a issue fix-->
 
-<!--- Provide a link to the method your trying to [ADD] or [UPDATE] in the Description -->
-**Lodash[ACTION]** #100 -> https://lodash.com/docs/4.17.4#(method) <!--- Delete if not a Lodash[ADD OR UPDATE] -->
-
 ## What does your PR belong to?
 - [ ] Website
 - [ ] Snippets
@@ -20,12 +17,6 @@
 - [ ] Enhancement (non-breaking improvement of a snippet)
 - [ ] New feature (non-breaking change which adds functionality)
 - [ ] Breaking change (fix or feature that would cause existing functionality to change)
-
-## [Lodash Backlog](https://github.com/Chalarangelo/30-seconds-of-code/issues/100)
-<!--- Provide a link to the method your trying to [ADD] or [UPDATE] in the Description above -->
-<!--- Add the prefix [UPDATE: `method.md`] or [ADD: `method.md`] to the Title & Desciption -->
-- [ ] I added the prefix [UPDATE: `method.md`] or [ADD: `method.md`]
-- [ ] I have referenced the `method` to the lodash backlog.
 
 ## Checklist:
 <!--- If you're unsure about any of these, don't hesitate to ask. We're here to help! -->
