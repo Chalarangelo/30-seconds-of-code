@@ -34,6 +34,13 @@
 ### :scroll: String
 
 <details><summary>View contents</summary> <ul><li><a href = "#count_vowels"><code>count_vowels</code></a></li>
+<li><a href = "#byte_size"><code>byte_size</code></a></li>
+<li><a href = "#capitalize"><code>capitalize</code></a></li>
+<li><a href = "#capitalize_every_word"><code>capitalize_every_word</code></a></li>
+<li><a href = "#decapitalize"><code>decapitalize</code></a></li>
+<li><a href = "#palindrome"><code>palindrome</code></a></li>
+<li><a href = "#is_upper_case"><code>is_upper_case</code></a></li>
+<li><a href = "#is_lower_case"><code>is_lower_case</code></a></li>
 </ul></details>
 
 <hr></hr> 
@@ -49,7 +56,6 @@ Returns the average of two or more numbers.
 Takes the sum of all the `args` and divides it by `len(args)`. The secind argument `0.0` in sum is to handle floating point division in `python2`.
 
 ```py
-
 def average(*args):
     return sum(args, 0.0) / len(args)
  
@@ -74,7 +80,6 @@ Calculates the factorial of a number.
 Use recursion. If `num` is less than or equal to `1`, return `1`. Otherwise, return the product of `num` and the factorial of `num - 1`. Throws an exception if `num` is a negative or a floating point number.
 
 ```py
-
 def factorial(num):
     if not ((num >= 0) & (num % 1 == 0)):
         raise Exception(
@@ -104,7 +109,6 @@ The `helperGcdfunction` uses recursion. Base case is when `y` equals `0`. In thi
 Uses the reduce function from the inbuilt module `functools`. Also defines a method `spread` for javascript like spreading of lists.
 
 ```py
-
 from functools import reduce
 
 
@@ -150,7 +154,6 @@ Use the `greatest common divisor (GCD)` formula and the fact that `lcm(x,y) = x 
 Uses `reduce` function from the inbuilt module `functools`. Also defines a method `spread` for javascript like spreading of lists.
 
 ```py
-
 from functools import reduce
 
 
@@ -198,7 +201,6 @@ Returns the `n` maximum elements from the provided list. If `n` is greater than 
 Use `list.sort()` combined with the `deepcopy` function from the inbuilt `copy` module to create a shallow clone of the list and sort it in ascending order and then use `list.reverse()` reverse it to make it descending order. Use `[:n]` to get the specified number of elements. Omit the second argument, `n`, to get a one-element array
 
 ```py
-
 from copy import deepcopy
 
 
@@ -229,7 +231,6 @@ Returns the `n` minimum elements from the provided list. If `n` is greater than 
 Use `list.sort()` combined with the `deepcopy` function from the inbuilt `copy` module to create a shallow clone of the list and sort it in ascending order. Use `[:n]` to get the specified number of elements. Omit the second argument, `n`, to get a one-element array
 
 ```py
-
 from copy import deepcopy
 
 
@@ -261,7 +262,6 @@ Chunks an array into smaller lists of a specified size.
 Uses `range` to create a list of desired size. Then use `map` on this list and fill it with splices of `arr`.
 
 ```py
-
 from math import ceil
 
 
@@ -290,7 +290,6 @@ Removes falsey values from a list.
 Use `filter()` to filter out falsey values (False, None, 0, and "").
 
 ```py
-
 def compact(arr):
     return list(filter(lambda x: bool(x), arr))
  
@@ -316,7 +315,6 @@ Counts the occurrences of a value in an list.
 Uses the `reduce` functin from built-in module `functools` to increment a counter each time you encounter the specific value inside the list.
 
 ```py
-
 def count_occurences(arr, val):
     return reduce(
         (lambda x, y: x + 1 if y == val and type(y) == type(val) else x + 0),
@@ -342,7 +340,6 @@ Deep flattens a list.
 Use recursion. Use `list.extend()` with an empty array (`result`) and the spread function to flatten a list. Recursively flatten each element that is a list.
 
 ```py
-
 def spread(arg):
     ret = []
     for i in arg:
@@ -379,7 +376,6 @@ Returns the difference between two arrays.
 Create a `set` from `b`, then use list comprehension to only keep values not contained in `b`
 
 ```py
-
 def difference(a, b):
     b = set(b)
     return [item for item in a if item not in b]
@@ -405,7 +401,6 @@ Randomizes the order of the values of an list, returning a new list.
 Uses the [Fisher-Yates algorithm](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle) to reorder the elements of the list.
 
 ```py
-
 from copy import deepcopy
 from random import randint
 
@@ -438,7 +433,6 @@ shuffle(foo) # [2,3,1] , foo = [1,2,3]
 Implements javascript's spread syntax as a function. Flattens the list(non-deep) and returns an list.
 
 ```py
-
 def spread(arg):
     ret = []
     for i in arg:
@@ -471,7 +465,6 @@ Creates a list of elements, grouped based on the position in the original lists.
 Use `max` combined with `list comprehension` to get the length of the longest list in the arguments. Loops for `max_length` times grouping elements. If lengths of `lists` vary `fill_value` is used. By default `fill_value` is `None`.
 
 ```py
-
 def zip(*args, fillvalue=None):
     max_length = max([len(arr) for arr in args])
     result = []
@@ -505,7 +498,6 @@ Retuns `number` of vowels in provided `string`.
 Use a regular expression to count the number of vowels `(A, E, I, O, U)` in a string.
 
 ```py
-
 import re
 
 
@@ -520,6 +512,175 @@ def count_vowels(str):
 
 count_vowels('foobar') # 3
 count_vowels('gym') # 0
+
+```
+</details>
+
+<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
+ 
+### byte_size
+
+Returns the length of a string in bytes.
+
+`utf-8` encodes a given string and find its length.
+
+```py
+def byte_size(string):
+    return(len(string.encode('utf-8')))
+ 
+ ```
+
+<details><summary>View Examples</summary>
+
+```py
+
+byte_size('😀') # 4
+byte_size('Hello World') # 11
+
+```
+</details>
+
+<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
+ 
+### capitalize
+
+Capitalizes the first letter of a string.
+
+Capitalizes the fist letter of the sring and then adds it with rest of the string. Omit the `lower_rest` parameter to keep the rest of the string intact, or set it to `true` to convert to lowercase.
+
+```py
+def capitalize(string, lower_rest=False):
+    return string[:1].upper() + (string[1:].lower() if lower_rest else string[1:])
+ 
+ ```
+
+<details><summary>View Examples</summary>
+
+```py
+
+capitalize('fooBar') # 'FooBar'
+capitalize('fooBar', True) # 'Foobar'
+
+```
+</details>
+
+<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
+ 
+### capitalize_every_word
+
+Capitalizes the first letter of every word in a string.
+
+Uses `str.title` to capitalize first letter of evry word in the string.
+
+```py
+def capitalize_every_word(string):
+    return string.title()
+ 
+ ```
+
+<details><summary>View Examples</summary>
+
+```py
+
+capitalize_every_word('hello world!') # 'Hello World!'
+
+```
+</details>
+
+<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
+ 
+### decapitalize
+
+Decapitalizes the first letter of a string.
+
+Decapitalizes the fist letter of the sring and then adds it with rest of the string. Omit the `upper_rest` parameter to keep the rest of the string intact, or set it to `true` to convert to uppercase.
+
+```py
+def decapitalize(string, upper_rest=False):
+    return str[:1].lower() + (str[1:].upper() if upper_rest else str[1:])
+ 
+ ```
+
+<details><summary>View Examples</summary>
+
+```py
+
+decapitalize('FooBar') # 'fooBar'
+decapitalize('FooBar', True) # 'fOOBAR'
+
+```
+</details>
+
+<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
+ 
+### palindrome
+
+Returns `True` if the given string is a palindrome, `False` otherwise.
+
+Convert string `str.lower()` and use `re.sub` to remove non-alphanumeric characters from it. Then compare the new string to the reversed.
+
+```py
+def palindrome(string):
+    from re import sub
+    s = sub('[\W_]', '', string.lower())
+    return s == s[::-1]
+ 
+ ```
+<details><summary>View Examples</summary>
+
+```py
+
+palindrome('taco cat') # True
+
+```
+</details>
+
+<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
+ 
+### is_upper_case
+
+Checks if a string is upper case.
+
+Convert the given string to upper case, using `str.upper()` method and compare it to the original.
+
+```py
+def is_upper_case(str):
+    return str == str.upper()
+ 
+ ```
+
+<details><summary>View Examples</summary>
+
+```py
+
+is_upper_case('ABC') # True
+is_upper_case('a3@$') # True
+is_upper_case('aB4') # False
+
+```
+</details>
+
+<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
+ 
+### is_lower_case
+
+Checks if a string is lower case.
+
+Convert the given string to lower case, using `str.lower()` method and compare it to the original.
+
+```py
+def is_lower_case(str):
+    return str == str.lower()
+ 
+ ```
+
+<details><summary>View Examples</summary>
+
+```py
+
+is_lower_case('abc') # True
+is_lower_case('a3@$') # True
+is_lower_case('Ab4') # False
 
 ```
 </details>

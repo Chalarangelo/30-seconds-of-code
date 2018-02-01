@@ -5,7 +5,6 @@ Returns the `n` maximum elements from the provided list. If `n` is greater than 
 Use `list.sort()` combined with the `deepcopy` function from the inbuilt `copy` module to create a shallow clone of the list and sort it in ascending order and then use `list.reverse()` reverse it to make it descending order. Use `[:n]` to get the specified number of elements. Omit the second argument, `n`, to get a one-element array
 
 ```python
-
 from copy import deepcopy
 
 
