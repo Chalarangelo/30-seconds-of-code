@@ -13,3 +13,10 @@ min_n:math
 shuffle:list
 spread:list
 zip:list
+byte_size:string
+capitalize:string
+capitalize_every_word:string
+decapitalize:string
+palindrome:string
+is_upper_case:string
+is_lower_case:string
