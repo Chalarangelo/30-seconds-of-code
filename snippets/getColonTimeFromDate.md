@@ -1,11 +1,13 @@
 ### getColonTimeFromDate
 
-Formats hour, minute, and second time integers from Date into stringified colon representation. Formats hour integer to 12 hour clock and maintains digit lengths to match (HH:MM:SS).
+Returns a string of the form `HH:MM:SS` from a `Date` object.
+
+Use `Date.toString()` and `String.slice()` to get the `HH:MM:SS` part of a given `Date` object.
 
 ```js
-const getColonTimeFromDate = date => date.toTimeString().slice(0, 8)
+const getColonTimeFromDate = date => date.toTimeString().slice(0, 8);
 ```
 
 ```js
-getColonTimeFromDate(new Date()) // "08:38:00"
+getColonTimeFromDate(new Date()); // "08:38:00"
 ```
