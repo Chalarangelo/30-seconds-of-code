@@ -1,4 +1,4 @@
-Test log for: Thu Feb 01 2018 20:16:56 GMT+0000 (UTC)
+Test log for: Fri Feb 02 2018 20:16:58 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.1 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -474,10 +474,18 @@ Test log for: Thu Feb 01 2018 20:16:56 GMT+0000 (UTC)
     ✔ get is a Function
     ✔ Retrieve a property indicated by the selector from an object.
 
+  Testing getColonTimeFromDate
+
+    ✔ getColonTimeFromDate is a Function
+
   Testing getDaysDiffBetweenDates
 
     ✔ getDaysDiffBetweenDates is a Function
     ✔ Returns the difference in days between two dates
+
+  Testing getMeridiemSuffixOfInteger
+
+    ✔ getMeridiemSuffixOfInteger is a Function
 
   Testing getScrollPosition
 
@@ -1611,8 +1619,8 @@ Test log for: Thu Feb 01 2018 20:16:56 GMT+0000 (UTC)
     ✔ Works with multiple promises
 
 
-  total:     721
-  passing:   721
+  total:     723
+  passing:   723
   duration:  2.3s
 
 
