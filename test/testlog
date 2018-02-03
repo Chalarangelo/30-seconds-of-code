@@ -1,4 +1,4 @@
-Test log for: Sat Feb 03 2018 12:51:49 GMT+0200 (GTB Standard Time)
+Test log for: Sat Feb 03 2018 12:55:18 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -381,18 +381,22 @@ Test log for: Sat Feb 03 2018 12:51:49 GMT+0200 (GTB Standard Time)
   Testing findKey
 
     √ findKey is a Function
+    √ Returns the appropriate key
 
   Testing findLast
 
     √ findLast is a Function
+    √ Finds last element for which the given function returns true
 
   Testing findLastIndex
 
     √ findLastIndex is a Function
+    √ Finds last index for which the given function returns true
 
   Testing findLastKey
 
     √ findLastKey is a Function
+    √ Returns the appropriate key
 
   Testing flatten
 
@@ -1653,8 +1657,8 @@ Test log for: Sat Feb 03 2018 12:51:49 GMT+0200 (GTB Standard Time)
     √ Works with multiple promises
 
 
-  total:     757
-  passing:   757
+  total:     761
+  passing:   761
   duration:  2.4s
 
 
