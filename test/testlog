@@ -1,4 +1,4 @@
-Test log for: Sat Feb 03 2018 12:32:27 GMT+0200 (GTB Standard Time)
+Test log for: Sat Feb 03 2018 12:51:49 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1142,10 +1142,14 @@ Test log for: Sat Feb 03 2018 12:32:27 GMT+0200 (GTB Standard Time)
   Testing reduceSuccessive
 
     √ reduceSuccessive is a Function
+    √ Returns the array of successively reduced values
 
   Testing reduceWhich
 
     √ reduceWhich is a Function
+    √ Returns the minimum of an array
+    √ Returns the maximum of an array
+    √ Returns the object with the minimum specified value in an array
 
   Testing remove
 
@@ -1155,6 +1159,7 @@ Test log for: Sat Feb 03 2018 12:32:27 GMT+0200 (GTB Standard Time)
   Testing removeNonASCII
 
     √ removeNonASCII is a Function
+    √ Removes non-ASCII characters
 
   Testing removeVowels
 
@@ -1648,8 +1653,8 @@ Test log for: Sat Feb 03 2018 12:32:27 GMT+0200 (GTB Standard Time)
     √ Works with multiple promises
 
 
-  total:     752
-  passing:   752
+  total:     757
+  passing:   757
   duration:  2.4s
 
 
