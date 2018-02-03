@@ -4,12 +4,10 @@ Chains asynchronous functions.
 
 Loop through an array of functions containing asynchronous events, calling `next` when each asynchronous event has completed.
 
-The tenerary function checks the next function exists before calling it, otherwise it will exit.
-
 ```js
 const chainAsync = fns => {
   let curr = 0;
-    const next = () => (fns[curr] ? fns[curr++](next) : false);
+  const next = () => fns[curr++](next);
   next();
 };
 ```
