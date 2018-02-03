@@ -1,4 +1,4 @@
-Test log for: Sat Feb 03 2018 13:28:38 GMT+0200 (GTB Standard Time)
+Test log for: Sat Feb 03 2018 13:32:50 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -918,6 +918,7 @@ Test log for: Sat Feb 03 2018 13:28:38 GMT+0200 (GTB Standard Time)
   Testing mapValues
 
     √ mapValues is a Function
+    √ Maps values
 
   Testing mask
 
@@ -929,10 +930,13 @@ Test log for: Sat Feb 03 2018 13:28:38 GMT+0200 (GTB Standard Time)
   Testing matches
 
     √ matches is a Function
+    √ Matches returns true for two similar objects
+    √ Matches returns false for two non-similar objects
 
   Testing matchesWith
 
     √ matchesWith is a Function
+    √ Returns true for two objects with similar values, based on the provided function
 
   Testing maxBy
 
@@ -1691,8 +1695,8 @@ Test log for: Sat Feb 03 2018 13:28:38 GMT+0200 (GTB Standard Time)
     √ Works with multiple promises
 
 
-  total:     795
-  passing:   795
+  total:     799
+  passing:   799
   duration:  2.4s
 
 
