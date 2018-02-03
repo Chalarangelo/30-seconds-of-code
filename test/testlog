@@ -1,4 +1,4 @@
-Test log for: Sat Feb 03 2018 12:17:47 GMT+0200 (GTB Standard Time)
+Test log for: Sat Feb 03 2018 12:19:55 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1320,10 +1320,12 @@ Test log for: Sat Feb 03 2018 12:17:47 GMT+0200 (GTB Standard Time)
   Testing symmetricDifferenceBy
 
     √ symmetricDifferenceBy is a Function
+    √ Returns the symmetric difference between two arrays, after applying the provided function to each array element of both
 
   Testing symmetricDifferenceWith
 
     √ symmetricDifferenceWith is a Function
+    √ Returns the symmetric difference between two arrays, using a provided function as a comparator
 
   Testing tail
 
@@ -1639,8 +1641,8 @@ Test log for: Sat Feb 03 2018 12:17:47 GMT+0200 (GTB Standard Time)
     √ Works with multiple promises
 
 
-  total:     743
-  passing:   743
+  total:     745
+  passing:   745
   duration:  2.4s
 
 
