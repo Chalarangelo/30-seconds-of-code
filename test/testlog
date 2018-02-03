@@ -1,4 +1,4 @@
-Test log for: Sat Feb 03 2018 12:03:55 GMT+0200 (GTB Standard Time)
+Test log for: Sat Feb 03 2018 12:08:59 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1445,6 +1445,7 @@ Test log for: Sat Feb 03 2018 12:03:55 GMT+0200 (GTB Standard Time)
   Testing transform
 
     √ transform is a Function
+    √ Transforms an object
 
   Testing truncateString
 
@@ -1635,8 +1636,8 @@ Test log for: Sat Feb 03 2018 12:03:55 GMT+0200 (GTB Standard Time)
     √ Works with multiple promises
 
 
-  total:     739
-  passing:   739
+  total:     740
+  passing:   740
   duration:  2.4s
 
 
