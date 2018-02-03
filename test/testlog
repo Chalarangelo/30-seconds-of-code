@@ -1,4 +1,4 @@
-Test log for: Sat Feb 03 2018 12:55:18 GMT+0200 (GTB Standard Time)
+Test log for: Sat Feb 03 2018 12:59:22 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -411,6 +411,7 @@ Test log for: Sat Feb 03 2018 12:55:18 GMT+0200 (GTB Standard Time)
   Testing forEachRight
 
     √ forEachRight is a Function
+    √ Iterates over the array in reverse
 
   Testing formatDuration
 
@@ -421,10 +422,12 @@ Test log for: Sat Feb 03 2018 12:55:18 GMT+0200 (GTB Standard Time)
   Testing forOwn
 
     √ forOwn is a Function
+    √ Iterates over an element's key-value pairs
 
   Testing forOwnRight
 
     √ forOwnRight is a Function
+    √ Iterates over an element's key-value pairs in reverse
 
   Testing fromCamelCase
 
@@ -1657,8 +1660,8 @@ Test log for: Sat Feb 03 2018 12:55:18 GMT+0200 (GTB Standard Time)
     √ Works with multiple promises
 
 
-  total:     761
-  passing:   761
+  total:     764
+  passing:   764
   duration:  2.4s
 
 
