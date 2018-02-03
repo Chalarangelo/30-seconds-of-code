@@ -1,4 +1,4 @@
-Test log for: Sat Feb 03 2018 13:01:36 GMT+0200 (GTB Standard Time)
+Test log for: Sat Feb 03 2018 13:12:08 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -670,6 +670,9 @@ Test log for: Sat Feb 03 2018 13:01:36 GMT+0200 (GTB Standard Time)
   Testing isArrayLike
 
     √ isArrayLike is a Function
+    √ Returns true for a string
+    √ Returns true for an array
+    √ Returns false for null
 
   Testing isBoolean
 
@@ -685,6 +688,16 @@ Test log for: Sat Feb 03 2018 13:01:36 GMT+0200 (GTB Standard Time)
   Testing isEmpty
 
     √ isEmpty is a Function
+    √ Returns true for empty Map
+    √ Returns true for empty Set
+    √ Returns true for empty array
+    √ Returns true for empty object
+    √ Returns true for empty string
+    √ Returns false for non-empty array
+    √ Returns false for non-empty object
+    √ Returns false for non-empty string
+    √ Returns true - type is not considered a collection
+    √ Returns true - type is not considered a collection
 
   Testing isEven
 
@@ -712,6 +725,9 @@ Test log for: Sat Feb 03 2018 13:01:36 GMT+0200 (GTB Standard Time)
   Testing isNil
 
     √ isNil is a Function
+    √ Returns true for null
+    √ Returns true for undefined
+    √ Returns false for an empty string
 
   Testing isNull
 
@@ -736,10 +752,16 @@ Test log for: Sat Feb 03 2018 13:01:36 GMT+0200 (GTB Standard Time)
   Testing isObjectLike
 
     √ isObjectLike is a Function
+    √ Returns true for an object
+    √ Returns true for an array
+    √ Returns false for a function
+    √ Returns false for null
 
   Testing isPlainObject
 
     √ isPlainObject is a Function
+    √ Returns true for a plain object
+    √ Returns false for a Map (example of non-plain object)
 
   Testing isPrime
 
@@ -764,6 +786,9 @@ Test log for: Sat Feb 03 2018 13:01:36 GMT+0200 (GTB Standard Time)
   Testing isPromiseLike
 
     √ isPromiseLike is a Function
+    √ Returns true for a promise-like object
+    √ Returns false for null
+    √ Returns false for an empty object
 
   Testing isRegExp
 
@@ -805,6 +830,7 @@ Test log for: Sat Feb 03 2018 13:01:36 GMT+0200 (GTB Standard Time)
   Testing isUndefined
 
     √ isUndefined is a Function
+    √ Returns true for undefined
 
   Testing isUpperCase
 
@@ -1662,8 +1688,8 @@ Test log for: Sat Feb 03 2018 13:01:36 GMT+0200 (GTB Standard Time)
     √ Works with multiple promises
 
 
-  total:     766
-  passing:   766
+  total:     792
+  passing:   792
   duration:  2.4s
 
 
