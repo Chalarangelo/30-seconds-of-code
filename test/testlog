@@ -1,4 +1,4 @@
-Test log for: Sat Feb 03 2018 13:32:50 GMT+0200 (GTB Standard Time)
+Test log for: Sat Feb 03 2018 13:39:03 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -959,6 +959,9 @@ Test log for: Sat Feb 03 2018 13:32:50 GMT+0200 (GTB Standard Time)
   Testing memoize
 
     √ memoize is a Function
+    √ Function works properly
+    √ Function works properly
+    √ Cache stores values
 
   Testing merge
 
@@ -1695,8 +1698,8 @@ Test log for: Sat Feb 03 2018 13:32:50 GMT+0200 (GTB Standard Time)
     √ Works with multiple promises
 
 
-  total:     799
-  passing:   799
+  total:     802
+  passing:   802
   duration:  2.4s
 
 
