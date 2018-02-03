@@ -1,4 +1,4 @@
-Test log for: Sat Feb 03 2018 12:21:49 GMT+0200 (GTB Standard Time)
+Test log for: Sat Feb 03 2018 12:25:38 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1263,14 +1263,17 @@ Test log for: Sat Feb 03 2018 12:21:49 GMT+0200 (GTB Standard Time)
   Testing sortedIndexBy
 
     √ sortedIndexBy is a Function
+    √ Returns the lowest index to insert the element without messing up the list order
 
   Testing sortedLastIndex
 
     √ sortedLastIndex is a Function
+    √ Returns the highest index to insert the element without messing up the list order
 
   Testing sortedLastIndexBy
 
     √ sortedLastIndexBy is a Function
+    √ Returns the highest index to insert the element without messing up the list order
 
   Testing speechSynthesis
 
@@ -1642,8 +1645,8 @@ Test log for: Sat Feb 03 2018 12:21:49 GMT+0200 (GTB Standard Time)
     √ Works with multiple promises
 
 
-  total:     746
-  passing:   746
+  total:     749
+  passing:   749
   duration:  2.4s
 
 
