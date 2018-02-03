@@ -1,4 +1,4 @@
-Test log for: Sat Feb 03 2018 12:25:38 GMT+0200 (GTB Standard Time)
+Test log for: Sat Feb 03 2018 12:32:27 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1010,6 +1010,7 @@ Test log for: Sat Feb 03 2018 12:25:38 GMT+0200 (GTB Standard Time)
   Testing parseCookie
 
     √ parseCookie is a Function
+    √ Parses the cookie
 
   Testing partial
 
@@ -1211,6 +1212,7 @@ Test log for: Sat Feb 03 2018 12:25:38 GMT+0200 (GTB Standard Time)
   Testing serializeCookie
 
     √ serializeCookie is a Function
+    √ Serializes the cookie
 
   Testing setStyle
 
@@ -1229,6 +1231,7 @@ Test log for: Sat Feb 03 2018 12:25:38 GMT+0200 (GTB Standard Time)
   Testing shuffle
 
     √ shuffle is a Function
+    √ Shuffles the array
 
   Testing similarity
 
@@ -1645,8 +1648,8 @@ Test log for: Sat Feb 03 2018 12:25:38 GMT+0200 (GTB Standard Time)
     √ Works with multiple promises
 
 
-  total:     749
-  passing:   749
+  total:     752
+  passing:   752
   duration:  2.4s
 
 
