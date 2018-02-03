@@ -1,4 +1,4 @@
-Test log for: Sat Feb 03 2018 11:58:05 GMT+0200 (GTB Standard Time)
+Test log for: Sat Feb 03 2018 12:00:56 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1487,10 +1487,12 @@ Test log for: Sat Feb 03 2018 11:58:05 GMT+0200 (GTB Standard Time)
   Testing unionBy
 
     √ unionBy is a Function
+    √ Produces the appropriate results
 
   Testing unionWith
 
     √ unionWith is a Function
+    √ Produces the appropriate results
 
   Testing uniqueElements
 
@@ -1631,8 +1633,8 @@ Test log for: Sat Feb 03 2018 11:58:05 GMT+0200 (GTB Standard Time)
     √ Works with multiple promises
 
 
-  total:     735
-  passing:   735
+  total:     737
+  passing:   737
   duration:  2.4s
 
 
