@@ -43,7 +43,7 @@ These snippets, while useful and interesting, didn\'t quite make it into the rep
 
 ## Table of Contents
 
-`
+`;
     for(const snippet of Object.entries(snippets))
       output += `* [\`${snippet[0].slice(0,-3)}\`](#${snippet[0].toLowerCase().slice(0,-3)})\n`;
     output += '\n---\n';

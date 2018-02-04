@@ -1,2 +1,2 @@
 const isWeakMap = val => val instanceof WeakMap;
- module.exports = isWeakMap
+ module.exports = isWeakMap;
