@@ -17,6 +17,6 @@ test('Testing quickSort', (t) => {
   quickSort([11, 1, 324, 23232, -1, 53, 2, 524, 32, 13, 156, 133, 62, 12, 4]);
   let end = new Date().getTime();
   t.true((end - start) < 2000, 'quickSort([11, 1, 324, 23232, -1, 53, 2, 524, 32, 13, 156, 133, 62, 12, 4]) takes less than 2s to run');
-  
+
   t.end();
 });

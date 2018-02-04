@@ -6,7 +6,7 @@ test('Testing attempt', (t) => {
   //Please go to https://github.com/substack/tape
   t.true(typeof attempt === 'function', 'attempt is a Function');
   t.equals(attempt(() => 0), 0, 'Returns a value');
-  t.true(attempt(() => {throw new Error()}) instanceof Error, 'Returns an error');
+  t.true(attempt(() => {throw new Error();}) instanceof Error, 'Returns an error');
   //t.deepEqual(attempt(args..), 'Expected');
   //t.equal(attempt(args..), 'Expected');
   //t.false(attempt(args..), 'Expected');

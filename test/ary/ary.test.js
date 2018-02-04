@@ -6,7 +6,7 @@ test('Testing ary', (t) => {
   //Please go to https://github.com/substack/tape
   t.true(typeof ary === 'function', 'ary is a Function');
   const firstTwoMax = ary(Math.max, 2);
-  t.deepEquals([[2, 6, 'a'], [8, 4, 6], [10]].map(x => firstTwoMax(...x)), [6, 8, 10], 'Discards arguments with index >=n')
+  t.deepEquals([[2, 6, 'a'], [8, 4, 6], [10]].map(x => firstTwoMax(...x)), [6, 8, 10], 'Discards arguments with index >=n');
   //t.deepEqual(ary(args..), 'Expected');
   //t.equal(ary(args..), 'Expected');
   //t.false(ary(args..), 'Expected');

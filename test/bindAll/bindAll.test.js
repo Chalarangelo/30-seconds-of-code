@@ -10,7 +10,7 @@ test('Testing bindAll', (t) => {
     'click': function() {
       return 'clicked ' + this.label;
     }
-  }
+  };
   bindAll(view, 'click');
   t.equal(view.click(), 'clicked docs', 'Binds to an object context')
   //t.deepEqual(bindAll(args..), 'Expected');

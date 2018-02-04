@@ -18,7 +18,7 @@ test('Testing uniqueElements', (t) => {
   t.throws(() => uniqueElements(false), 'uniqueElements(false) throws an error');
 
   let start = new Date().getTime();
-  uniqueElements([true, 0, 1, false, false, undefined, null, ''])
+  uniqueElements([true, 0, 1, false, false, undefined, null, '']);
   let end = new Date().getTime();
   t.true((end - start) < 2000, 'uniqueElements([true, 0, 1, false, false, undefined, null]) takes less than 2s to run');
 
