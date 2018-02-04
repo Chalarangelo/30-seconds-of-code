@@ -80,7 +80,6 @@ tagDbData = util.readTags();
 try {
   // Add the start static part
   output += `${startPart + '\n'}`;
-  let uncategorizedOutput = '';
   // Loop over tags and snippets to create the table of contents
   for (let tag of [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
     .filter(v => v)
@@ -100,10 +99,8 @@ try {
           .replace(/<a/g, `<a class="sublink-1" tags="${taggedSnippet[1].join(',')}"`);
       output += '\n';
   }
-  output += uncategorizedOutput;
   output += `</nav><main class="col-sm-12 col-md-8 col-lg-9" style="height: 100%;overflow-y: auto; background: #eceef2; padding: 0;">`;
   output += `<a id="top">&nbsp;</a>`;
-  uncategorizedOutput = '';
   // Loop over tags and snippets to create the list of snippets
   for (let tag of [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
     .filter(v => v)
