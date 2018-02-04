@@ -9,9 +9,7 @@ const partial = (fn, ...partials) => (...args) => fn(...partials, ...args);
 ```
 
 ```js
-function greet(greeting, name) {
-  return greeting + ' ' + name + '!';
-}
+const greet = (greeting, name) => greeting + ' ' + name + '!';
 const greetHello = partial(greet, 'Hello');
 greetHello('John'); // 'Hello John!'
 ```
