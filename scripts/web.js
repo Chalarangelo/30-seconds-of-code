@@ -59,8 +59,6 @@ let snippets = {},
   tagDbData = {};
 // Load helper functions (these are from existing snippets in 30 seconds of code!)
 const objectFromPairs = arr => arr.reduce((a, v) => ((a[v[0]] = v[1]), a), {});
-const capitalize = (str, lowerRest = false) =>
-  str.slice(0, 1).toUpperCase() + (lowerRest ? str.slice(1).toLowerCase() : str.slice(1));
 // Start the timer of the script
 console.time('Webber');
 // Synchronously read all snippets and sort them as necessary (case-insensitive)
@@ -83,11 +81,11 @@ try {
   // Loop over tags and snippets to create the table of contents
   for (let tag of [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
     .filter(v => v)
-    .sort((a, b) => capitalize(a, true) === 'Uncategorized' ? 1 : capitalize(b, true) === 'Uncategorized' ? -1 : a.localeCompare(b))) {
+    .sort((a, b) => util.capitalize(a, true) === 'Uncategorized' ? 1 : util.capitalize(b, true) === 'Uncategorized' ? -1 : a.localeCompare(b))) {
       output +=
         `<h3>` +
         md
-          .render(`${capitalize(tag, true)}\n`)
+          .render(`${util.capitalize(tag, true)}\n`)
           .replace(/<p>/g, '')
           .replace(/<\/p>/g, '') +
         `</h3>`;
@@ -104,9 +102,9 @@ try {
   // Loop over tags and snippets to create the list of snippets
   for (let tag of [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
     .filter(v => v)
-    .sort((a, b) => capitalize(a, true) === 'Uncategorized' ? 1 : capitalize(b, true) === 'Uncategorized' ? -1 : a.localeCompare(b))) {
+    .sort((a, b) => util.capitalize(a, true) === 'Uncategorized' ? 1 : util.capitalize(b, true) === 'Uncategorized' ? -1 : a.localeCompare(b))) {
       output += md
-        .render(`## ${capitalize(tag, true)}\n`)
+        .render(`## ${util.capitalize(tag, true)}\n`)
         .replace(/<h2>/g, '<h2 style="text-align:center;">');
       for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
         output +=

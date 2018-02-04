@@ -48,6 +48,7 @@ const readTags = () => {
   }
   return tagDbData;
 }
+// Optimizes nodes in an HTML document
 const optimizeNodes = (data, regexp, replacer) => {
   let count = 0;
   let output = data;
@@ -60,4 +61,7 @@ const optimizeNodes = (data, regexp, replacer) => {
   } while (count > 0);
   return output;
 }
-module.exports = {readSnippets, readTags, optimizeNodes};
+// Capitalizes the first letter of a string
+const capitalize = (str, lowerRest = false) =>
+  str.slice(0, 1).toUpperCase() + (lowerRest ? str.slice(1).toLowerCase() : str.slice(1));
+module.exports = {readSnippets, readTags, optimizeNodes, capitalize};
