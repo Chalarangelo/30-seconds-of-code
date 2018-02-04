@@ -16,4 +16,4 @@ options
 );
 return observer;
 };
-module.exports = observeMutations
+module.exports = observeMutations;

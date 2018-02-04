@@ -5,4 +5,4 @@ return fn(args);
 return e instanceof Error ? e : new Error(e);
 }
 };
-module.exports = attempt
+module.exports = attempt;

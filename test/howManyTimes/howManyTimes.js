@@ -8,4 +8,4 @@ num = num / divisor;
 }
 return i;
 };
-module.exports = howManyTimes
+module.exports = howManyTimes;

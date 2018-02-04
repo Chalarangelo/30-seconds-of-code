@@ -6,4 +6,4 @@ const index = arr
 .findIndex(el => (isDescending ? n <= el[1] : n >= el[1]));
 return index === -1 ? 0 : arr.length - index - 1;
 };
-module.exports = sortedLastIndex
+module.exports = sortedLastIndex;

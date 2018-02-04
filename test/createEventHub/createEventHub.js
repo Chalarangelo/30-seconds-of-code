@@ -12,4 +12,4 @@ const i = (this.hub[event] || []).findIndex(h => h === handler);
 if (i > -1) this.hub[event].splice(i, 1);
 }
 });
-module.exports = createEventHub
+module.exports = createEventHub;

@@ -18,4 +18,4 @@ lastTime = Date.now();
 }
 };
 };
-module.exports = throttle
+module.exports = throttle;

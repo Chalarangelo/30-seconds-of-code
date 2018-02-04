@@ -6,4 +6,4 @@ const i = Math.floor(Math.random() * m--);
 }
 return arr.slice(0, n);
 };
-module.exports = sampleSize
+module.exports = sampleSize;
