@@ -11,13 +11,13 @@ test('Testing collatz', (t) => {
 
   let n = 9;
   while(true){
-    if (n == 1){
+    if (n === 1){
       t.pass('Eventually reaches 1');
       break;
     }
     n = collatz(n);
   }
-  
+
   //t.false(collatz(args..), 'Expected');
   //t.throws(collatz(args..), 'Expected');
   t.end();
