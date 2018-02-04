@@ -1,4 +1,4 @@
-Test log for: Sun Feb 04 2018 16:47:24 GMT+0200 (GTB Standard Time)
+Test log for: Sun Feb 04 2018 16:54:16 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -409,6 +409,7 @@ Test log for: Sun Feb 04 2018 16:47:24 GMT+0200 (GTB Standard Time)
   Testing flip
 
     √ flip is a Function
+    √ Flips argument order
 
   Testing forEachRight
 
@@ -1044,10 +1045,12 @@ Test log for: Sun Feb 04 2018 16:47:24 GMT+0200 (GTB Standard Time)
   Testing over
 
     √ over is a Function
+    √ Applies given functions over multiple arguments
 
   Testing overArgs
 
     √ overArgs is a Function
+    √ Invokes the provided function with its arguments transformed
 
   Testing palindrome
 
@@ -1095,6 +1098,7 @@ Test log for: Sun Feb 04 2018 16:47:24 GMT+0200 (GTB Standard Time)
   Testing pipeFunctions
 
     √ pipeFunctions is a Function
+    √ Performs left-to-right function composition
 
   Testing pluralize
 
@@ -1701,8 +1705,8 @@ Test log for: Sun Feb 04 2018 16:47:24 GMT+0200 (GTB Standard Time)
     √ Works with multiple promises
 
 
-  total:     805
-  passing:   805
+  total:     809
+  passing:   809
   duration:  2.4s
 
 
