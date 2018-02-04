@@ -212,7 +212,9 @@ average(1, 2, 3);
 <summary>View contents</summary>
 
 * [`formatDuration`](#formatduration)
+* [`getColonTimeFromDate`](#getcolontimefromdate)
 * [`getDaysDiffBetweenDates`](#getdaysdiffbetweendates)
+* [`getMeridiemSuffixOfInteger`](#getmeridiemsuffixofinteger)
 * [`tomorrow`](#tomorrow)
 
 </details>
@@ -427,16 +429,6 @@ average(1, 2, 3);
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`validateNumber`](#validatenumber)
 * [`yesNo`](#yesno)
-
-</details>
-
-### _Uncategorized_
-
-<details>
-<summary>View contents</summary>
-
-* [`getColonTimeFromDate`](#getcolontimefromdate)
-* [`getMeridiemSuffixOfInteger`](#getmeridiemsuffixofinteger)
 
 </details>
 
@@ -3488,6 +3480,28 @@ formatDuration(34325055574); // '397 days, 6 hours, 44 minutes, 15 seconds, 574 
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### getColonTimeFromDate
+
+Returns a string of the form `HH:MM:SS` from a `Date` object.
+
+Use `Date.toString()` and `String.slice()` to get the `HH:MM:SS` part of a given `Date` object.
+
+```js
+const getColonTimeFromDate = date => date.toTimeString().slice(0, 8);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+getColonTimeFromDate(new Date()); // "08:38:00"
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### getDaysDiffBetweenDates
 
 Returns the difference (in days) between two dates.
@@ -3504,6 +3518,34 @@ const getDaysDiffBetweenDates = (dateInitial, dateFinal) =>
 
 ```js
 getDaysDiffBetweenDates(new Date('2017-12-13'), new Date('2017-12-22')); // 9
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### getMeridiemSuffixOfInteger
+
+Converts an integer to a suffixed string, adding `am` or `pm` based on its value.
+
+Use the modulo operator (`%`) and conditional checks to transform an integer to a stringified 12-hour format with meridiem suffix.
+
+```js
+const getMeridiemSuffixOfInteger = num =>
+  num === 0 || num === 24
+    ? 12 + 'am'
+    : num === 12 ? 12 + 'pm' : num < 12 ? num % 12 + 'am' : num % 12 + 'pm';
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+getMeridiemSuffixOfInteger(0); // "12am"
+getMeridiemSuffixOfInteger(11); // "11am"
+getMeridiemSuffixOfInteger(13); // "1pm"
+getMeridiemSuffixOfInteger(25); // "1pm"
 ```
 
 </details>
@@ -7897,48 +7939,6 @@ yesNo('Foo', true); // true
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
-
----
- ## _Uncategorized_
-
-### getColonTimeFromDate
-
-Returns a string of the form `HH:MM:SS` from a `Date` object.
-
-Use `Date.toString()` and `String.slice()` to get the `HH:MM:SS` part of a given `Date` object.
-
-```js
-const getColonTimeFromDate = date => date.toTimeString().slice(0, 8);
-```
-
-```js
-getColonTimeFromDate(new Date()); // "08:38:00"
-```
-
-<br>[⬆ back to top](#table-of-contents)
-
-
-### getMeridiemSuffixOfInteger
-
-Converts an integer to a suffixed string, adding `am` or `pm` based on its value.
-
-Use the modulo operator (`%`) and conditional checks to transform an integer to a stringified 12-hour format with meridiem suffix.
-
-```js
-const getMeridiemSuffixOfInteger = num =>
-  num === 0 || num === 24
-    ? 12 + 'am'
-    : num === 12 ? 12 + 'pm' : num < 12 ? num % 12 + 'am' : num % 12 + 'pm';
-```
-
-```js
-getMeridiemSuffixOfInteger(0); // "12am"
-getMeridiemSuffixOfInteger(11); // "11am"
-getMeridiemSuffixOfInteger(13); // "1pm"
-getMeridiemSuffixOfInteger(25); // "1pm"
-```
-
-<br>[⬆ back to top](#table-of-contents)
 
 
 ## Collaborators
