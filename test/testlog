@@ -1,4 +1,4 @@
-Test log for: Sun Feb 04 2018 20:45:51 GMT+0200 (GTB Standard Time)
+Test log for: Sun Feb 04 2018 20:47:53 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -618,10 +618,12 @@ Test log for: Sun Feb 04 2018 20:45:51 GMT+0200 (GTB Standard Time)
   Testing intersectionBy
 
     √ intersectionBy is a Function
+    √ Returns a list of elements that exist in both arrays, after applying the provided function to each array element of both
 
   Testing intersectionWith
 
     √ intersectionWith is a Function
+    √ Returns a list of elements that exist in both arrays, using a provided comparator function
 
   Testing invertKeyValues
 
@@ -1706,8 +1708,8 @@ Test log for: Sun Feb 04 2018 20:45:51 GMT+0200 (GTB Standard Time)
     √ Works with multiple promises
 
 
-  total:     813
-  passing:   813
+  total:     815
+  passing:   815
   duration:  2.4s
 
 
