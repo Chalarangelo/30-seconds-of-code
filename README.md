@@ -1156,7 +1156,7 @@ Omit the second argument, `depth` to flatten only to a depth of `1` (single flat
 
 ```js
 const flatten = (arr, depth = 1) =>
-  depth != 1
+  depth !== 1
     ? arr.reduce((a, v) => a.concat(Array.isArray(v) ? flatten(v, depth - 1) : v), [])
     : arr.reduce((a, v) => a.concat(v), []);
 ```
@@ -1517,9 +1517,9 @@ Omit the third argument, `end`, to use the same value as `separator` by default.
 const join = (arr, separator = ',', end = separator) =>
   arr.reduce(
     (acc, val, i) =>
-      i == arr.length - 2
+      i === arr.length - 2
         ? acc + val + end
-        : i == arr.length - 1 ? acc + val : acc + val + separator,
+        : i === arr.length - 1 ? acc + val : acc + val + separator,
     ''
   );
 ```
@@ -1962,7 +1962,7 @@ const remove = (arr, func) =>
 <summary>Examples</summary>
 
 ```js
-remove([1, 2, 3, 4], n => n % 2 == 0); // [2, 4]
+remove([1, 2, 3, 4], n => n % 2 === 0); // [2, 4]
 ```
 
 </details>
@@ -3956,7 +3956,7 @@ const negate = func => (...args) => !func(...args);
 <summary>Examples</summary>
 
 ```js
-[1, 2, 3, 4, 5, 6].filter(negate(n => n % 2 == 0)); // [ 1, 3, 5 ]
+[1, 2, 3, 4, 5, 6].filter(negate(n => n % 2 === 0)); // [ 1, 3, 5 ]
 ```
 
 </details>
@@ -4595,7 +4595,7 @@ Return `false` if any of them divides the given number, else return `true`, unle
 ```js
 const isPrime = num => {
   const boundary = Math.floor(Math.sqrt(num));
-  for (var i = 2; i <= boundary; i++) if (num % i == 0) return false;
+  for (var i = 2; i <= boundary; i++) if (num % i === 0) return false;
   return num >= 2;
 };
 ```
@@ -4806,7 +4806,7 @@ const primes = num => {
   let arr = Array.from({ length: num - 1 }).map((x, i) => i + 2),
     sqroot = Math.floor(Math.sqrt(num)),
     numsTillSqroot = Array.from({ length: sqroot - 1 }).map((x, i) => i + 2);
-  numsTillSqroot.forEach(x => (arr = arr.filter(y => y % x !== 0 || y == x)));
+  numsTillSqroot.forEach(x => (arr = arr.filter(y => y % x !== 0 || y === x)));
   return arr;
 };
 ```
