@@ -15,7 +15,7 @@ test('Testing toKebabCase', (t) => {
   t.throws(() => toKebabCase(123), 'toKebabCase(123) throws an error');
 
   let start = new Date().getTime();
-  toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML')
+  toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML');
   let end = new Date().getTime();
   t.true((end - start) < 2000, 'toKebabCase(IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML) takes less than 2s to run');
   t.end();

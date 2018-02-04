@@ -1,2 +1,2 @@
 const isArrayBuffer = val => val instanceof ArrayBuffer;
- module.exports = isArrayBuffer
+ module.exports = isArrayBuffer;
