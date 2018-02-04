@@ -355,7 +355,7 @@ const findLastKey = (obj, fn) =>
     .find(key => fn(obj[key], key, obj));
 
 const flatten = (arr, depth = 1) =>
-  depth != 1
+  depth !== 1
     ? arr.reduce((a, v) => a.concat(Array.isArray(v) ? flatten(v, depth - 1) : v), [])
     : arr.reduce((a, v) => a.concat(v), []);
 
@@ -614,7 +614,7 @@ const isPlainObject = val => !!val && typeof val === 'object' && val.constructor
 
 const isPrime = num => {
   const boundary = Math.floor(Math.sqrt(num));
-  for (var i = 2; i <= boundary; i++) if (num % i == 0) return false;
+  for (var i = 2; i <= boundary; i++) if (num % i === 0) return false;
   return num >= 2;
 };
 
@@ -654,9 +654,9 @@ const isValidJSON = obj => {
 const join = (arr, separator = ',', end = separator) =>
   arr.reduce(
     (acc, val, i) =>
-      i == arr.length - 2
+      i === arr.length - 2
         ? acc + val + end
-        : i == arr.length - 1 ? acc + val : acc + val + separator,
+        : i === arr.length - 1 ? acc + val : acc + val + separator,
     ''
   );
 
@@ -905,7 +905,7 @@ const primes = num => {
   let arr = Array.from({ length: num - 1 }).map((x, i) => i + 2),
     sqroot = Math.floor(Math.sqrt(num)),
     numsTillSqroot = Array.from({ length: sqroot - 1 }).map((x, i) => i + 2);
-  numsTillSqroot.forEach(x => (arr = arr.filter(y => y % x !== 0 || y == x)));
+  numsTillSqroot.forEach(x => (arr = arr.filter(y => y % x !== 0 || y === x)));
   return arr;
 };
 

@@ -81,12 +81,12 @@ speechSynthesis('Hello, World'); // // plays the message
 
 ### binarySearch
 
-Use recursion. Similar to `Array.indexOf()` that finds the index of a value within an array. 
+Use recursion. Similar to `Array.indexOf()` that finds the index of a value within an array.
 The difference being this operation only works with sorted arrays which offers a major performance boost due to it's logarithmic nature when compared to a linear search or `Array.indexOf()`.
 
-Search a sorted array by repeatedly dividing the search interval in half. 
-Begin with an interval covering the whole array. 
-If the value of the search is less than the item in the middle of the interval, recurse into the lower half. Otherwise recurse into the upper half. 
+Search a sorted array by repeatedly dividing the search interval in half.
+Begin with an interval covering the whole array.
+If the value of the search is less than the item in the middle of the interval, recurse into the lower half. Otherwise recurse into the upper half.
 Repeatedly recurse until the value is found which is the mid or you've recursed to a point that is greater than the length which means the value doesn't exist and return `-1`.
 
 ```js
@@ -96,8 +96,8 @@ const binarySearch = (arr, val, start = 0, end = arr.length - 1) => {
   if (arr[mid] > val) return binarySearch(arr, val, start, mid - 1);
   if (arr[mid] < val) return binarySearch(arr, val, mid + 1, end);
   return mid;
-}
-``` 
+};
+```
 
 <details>
 <summary>Examples</summary>
@@ -152,7 +152,7 @@ Applies the Collatz algorithm.
 If `n` is even, return `n/2`. Otherwise, return `3n+1`.
 
 ```js
-const collatz = n => (n % 2 == 0 ? n / 2 : 3 * n + 1);
+const collatz = n => (n % 2 === 0 ? n / 2 : 3 * n + 1);
 ```
 
 <details>
