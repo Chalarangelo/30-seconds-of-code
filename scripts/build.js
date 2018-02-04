@@ -120,70 +120,46 @@ try {
       Object.entries(tagDbData)
         .map(t => t[1][0])
         .filter(v => v)
-        .sort((a, b) => a.localeCompare(b))
-    )
+        .sort((a, b) => capitalize(a, true) === 'Uncategorized' ? 1 : capitalize(b, true) === 'Uncategorized' ? -1 : a.localeCompare(b)))
   ];
 
   // Add the start static part
   output += `${startPart + '\n'}`;
-  let uncategorizedOutput = '';
 
   // Loop over tags and snippets to create the table of contents
   for (const tag of tags) {
     const capitalizedTag = capitalize(tag, true);
-
-    if (capitalizedTag === 'Uncategorized') {
-      uncategorizedOutput += `### _${capitalizedTag}_\n\n<details>\n<summary>View contents</summary>\n\n`;
-      for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
-        uncategorizedOutput += `* [\`${taggedSnippet[0]}\`](#${taggedSnippet[0].toLowerCase()}${taggedSnippet[1].includes('advanced')?'-':''})\n`;
-      }
-      uncategorizedOutput += '\n</details>\n\n';
-    } else {
-      output += `### ${
-        EMOJIS[tag] || ''
-      } ${capitalizedTag}\n\n<details>\n<summary>View contents</summary>\n\n`;
-      for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
-        output += `* [\`${taggedSnippet[0]}\`](#${taggedSnippet[0].toLowerCase()}${taggedSnippet[1].includes('advanced')?'-':''})\n`;
-      }
-      output += '\n</details>\n\n';
+    output += `### ${
+      EMOJIS[tag] || ''
+    } ${capitalizedTag}\n\n<details>\n<summary>View contents</summary>\n\n`;
+    for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
+      output += `* [\`${taggedSnippet[0]}\`](#${taggedSnippet[0].toLowerCase()}${taggedSnippet[1].includes('advanced')?'-':''})\n`;
     }
+    output += '\n</details>\n\n';
   }
-
-  output += uncategorizedOutput;
-  uncategorizedOutput = '';
 
   // Loop over tags and snippets to create the list of snippets
   for (const tag of tags) {
     const capitalizedTag = capitalize(tag, true);
-    // ![advanced](/advanced.svg)
-    if (capitalizedTag === 'Uncategorized') {
-      uncategorizedOutput += `---\n ## _${capitalizedTag}_\n`;
-      for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
-        uncategorizedOutput += `\n${snippets[taggedSnippet[0] + '.md'] +
-          '\n<br>[⬆ back to top](#table-of-contents)\n\n'}`;
+    output += `---\n ## ${EMOJIS[tag] || ''} ${capitalizedTag}\n`;
+    for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
+      let data = snippets[taggedSnippet[0] + '.md'];
+      // Add advanced tag
+      if(taggedSnippet[1].includes('advanced')){
+        data = data.split(/\r?\n/);
+        data[0] = data[0] +' ![advanced](/advanced.svg)';
+        data = data.join('\n');
       }
-    } else {
-      output += `---\n ## ${EMOJIS[tag] || ''} ${capitalizedTag}\n`;
-      for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
-        let data = snippets[taggedSnippet[0] + '.md'];
-        // Add advanced tag
-        if(taggedSnippet[1].includes('advanced')){
-          data = data.split(/\r?\n/);
-          data[0] = data[0] +' ![advanced](/advanced.svg)';
-          data = data.join('\n');
-        }
-        data =
-          data.slice(0, data.lastIndexOf('```js')) +
-          '<details>\n<summary>Examples</summary>\n\n' +
-          data.slice(data.lastIndexOf('```js'), data.lastIndexOf('```')) +
-          data.slice(data.lastIndexOf('```')) +
-          '\n</details>\n';
-        output += `\n${data + '\n<br>[⬆ Back to top](#table-of-contents)\n\n'}`;
-      }
+      data =
+        data.slice(0, data.lastIndexOf('```js')) +
+        '<details>\n<summary>Examples</summary>\n\n' +
+        data.slice(data.lastIndexOf('```js'), data.lastIndexOf('```')) +
+        data.slice(data.lastIndexOf('```')) +
+        '\n</details>\n';
+      output += `\n${data + '\n<br>[⬆ Back to top](#table-of-contents)\n\n'}`;
     }
   }
 
-  output += uncategorizedOutput;
   // Add the ending static part
   output += `\n${endPart + '\n'}`;
   // Write to the README file
