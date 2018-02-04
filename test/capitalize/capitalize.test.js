@@ -8,6 +8,7 @@ test('Testing capitalize', (t) => {
   t.equal(capitalize('fooBar'), 'FooBar', "Capitalizes the first letter of a string");
   t.equal(capitalize('fooBar', true), 'Foobar', "Capitalizes the first letter of a string");
   t.equal(capitalize('#!#', true), '#!#', "Works with characters");
+  t.equal(capitalize('a', true), 'A', "Works with single character words");
   //t.deepEqual(capitalize(args..), 'Expected');
   //t.equal(capitalize(args..), 'Expected');
   //t.false(capitalize(args..), 'Expected');
