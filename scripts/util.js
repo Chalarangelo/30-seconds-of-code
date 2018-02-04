@@ -23,7 +23,7 @@ const readSnippets = snippetsPath => {
   }
   return snippets;
 }
-// Used in `readTags`
+// Creates an object from pairs
 const objectFromPairs = arr => arr.reduce((a, v) => ((a[v[0]] = v[1]), a), {});
 // Load tag data from the database
 const readTags = () => {
@@ -64,4 +64,6 @@ const optimizeNodes = (data, regexp, replacer) => {
 // Capitalizes the first letter of a string
 const capitalize = (str, lowerRest = false) =>
   str.slice(0, 1).toUpperCase() + (lowerRest ? str.slice(1).toLowerCase() : str.slice(1));
-module.exports = {readSnippets, readTags, optimizeNodes, capitalize};
+// Checks if current environment is Travis CI
+const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
+module.exports = {readSnippets, readTags, optimizeNodes, capitalize, objectFromPairs, isTravisCI};

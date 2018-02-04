@@ -10,8 +10,6 @@ const fs = require('fs-extra'),
   minify = require('html-minifier').minify;
 const util = require('./util');
 var Prism = require('prismjs');
-  // Load helper functions (these are from existing snippets in 30 seconds of code!)
-const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
 const unescapeHTML = str =>
   str.replace(
     /&amp;|&lt;|&gt;|&#39;|&quot;/g,
@@ -24,7 +22,7 @@ const unescapeHTML = str =>
         '&quot;': '"'
       }[tag] || tag)
   );
-if(isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
+if(util.isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
   console.log(`${chalk.green('NOBUILD')} index build terminated, parent commit is a Travis build!`);
   process.exit(0);
 }
@@ -57,8 +55,6 @@ let snippets = {},
   endPart = '',
   output = '',
   tagDbData = {};
-// Load helper functions (these are from existing snippets in 30 seconds of code!)
-const objectFromPairs = arr => arr.reduce((a, v) => ((a[v[0]] = v[1]), a), {});
 // Start the timer of the script
 console.time('Webber');
 // Synchronously read all snippets and sort them as necessary (case-insensitive)
