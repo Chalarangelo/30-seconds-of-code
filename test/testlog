@@ -1,4 +1,4 @@
-Test log for: Sun Feb 04 2018 16:57:01 GMT+0200 (GTB Standard Time)
+Test log for: Sun Feb 04 2018 16:58:46 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1066,10 +1066,12 @@ Test log for: Sun Feb 04 2018 16:57:01 GMT+0200 (GTB Standard Time)
   Testing partial
 
     √ partial is a Function
+    √ Prepends arguments
 
   Testing partialRight
 
     √ partialRight is a Function
+    √ Appends arguments
 
   Testing partition
 
@@ -1707,8 +1709,8 @@ Test log for: Sun Feb 04 2018 16:57:01 GMT+0200 (GTB Standard Time)
     √ Works with multiple promises
 
 
-  total:     811
-  passing:   811
+  total:     813
+  passing:   813
   duration:  2.4s
 
 
