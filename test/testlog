@@ -1,4 +1,4 @@
-Test log for: Sun Feb 04 2018 17:37:55 GMT+0200 (GTB Standard Time)
+Test log for: Sun Feb 04 2018 17:47:43 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1711,6 +1711,6 @@ Test log for: Sun Feb 04 2018 17:37:55 GMT+0200 (GTB Standard Time)
 
   total:     813
   passing:   813
-  duration:  2.5s
+  duration:  2.4s
 
 
