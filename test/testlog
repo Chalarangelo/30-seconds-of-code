@@ -1,4 +1,4 @@
-Test log for: Sun Feb 04 2018 16:54:16 GMT+0200 (GTB Standard Time)
+Test log for: Sun Feb 04 2018 16:57:01 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1089,6 +1089,7 @@ Test log for: Sun Feb 04 2018 16:54:16 GMT+0200 (GTB Standard Time)
   Testing pickBy
 
     √ pickBy is a Function
+    √ Creates an object composed of the properties the given function returns truthy for.
 
   Testing pipeAsyncFunctions
 
@@ -1181,6 +1182,7 @@ Test log for: Sun Feb 04 2018 16:54:16 GMT+0200 (GTB Standard Time)
   Testing rearg
 
     √ rearg is a Function
+    √ Reorders arguments in invoked function
 
   Testing redirect
 
@@ -1705,8 +1707,8 @@ Test log for: Sun Feb 04 2018 16:54:16 GMT+0200 (GTB Standard Time)
     √ Works with multiple promises
 
 
-  total:     809
-  passing:   809
+  total:     811
+  passing:   811
   duration:  2.4s
 
 
