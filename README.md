@@ -4011,9 +4011,7 @@ const partial = (fn, ...partials) => (...args) => fn(...partials, ...args);
 <summary>Examples</summary>
 
 ```js
-function greet(greeting, name) {
-  return greeting + ' ' + name + '!';
-}
+const greet = (greeting, name) => greeting + ' ' + name + '!';
 const greetHello = partial(greet, 'Hello');
 greetHello('John'); // 'Hello John!'
 ```
@@ -4037,9 +4035,7 @@ const partialRight = (fn, ...partials) => (...args) => fn(...args, ...partials);
 <summary>Examples</summary>
 
 ```js
-function greet(greeting, name) {
-  return greeting + ' ' + name + '!';
-}
+const greet = (greeting, name) => greeting + ' ' + name + '!';
 const greetJohn = partialRight(greet, 'John');
 greetJohn('Hello'); // 'Hello John!'
 ```
