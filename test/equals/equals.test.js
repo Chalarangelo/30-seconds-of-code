@@ -9,7 +9,7 @@ test('Testing equals', (t) => {
   t.true(equals([1, 2, 3], [1, 2, 3]), '[1,2,3] is equal to [1,2,3]');
   t.false(equals({ a: [2, 3], b: [4] }, { a: [2, 3], b: [6] }), '{ a: [2, 3], b: [4] } is not equal to { a: [2, 3], b: [6] }');
   t.false(equals([1, 2, 3], [1, 2, 4]), '[1,2,3] is not equal to [1,2,4]');
-  t.true(equals([1, 2, 3], { 0: 1, 1: 2, 2: 3 }), '[1, 2, 3] should be equal to { 0: 1, 1: 2, 2: 3 }) - type is different, but their enumerable properties match.')
+  t.true(equals([1, 2, 3], { 0: 1, 1: 2, 2: 3 }), '[1, 2, 3] should be equal to { 0: 1, 1: 2, 2: 3 }) - type is different, but their enumerable properties match.');
   //t.deepEqual(equals(args..), 'Expected');
   //t.equal(equals(args..), 'Expected');
   //t.false(equals(args..), 'Expected');
