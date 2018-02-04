@@ -6,6 +6,7 @@
 const fs = require('fs-extra'),
   path = require('path'),
   chalk = require('chalk');
+const util = require('./util');
 // Load helper functions (these are from existing snippets in 30 seconds of code!)
 const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
 if(isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
@@ -26,24 +27,7 @@ const countOccurrences = (arr, value) => arr.reduce((a, v) => (v === value ? a +
 // Start the timer of the script
 console.time('Tagger');
 // Synchronously read all snippets and sort them as necessary (case-insensitive)
-try {
-  let snippetFilenames = fs.readdirSync(snippetsPath);
-  snippetFilenames.sort((a, b) => {
-    a = a.toLowerCase();
-    b = b.toLowerCase();
-    if (a < b) return -1;
-    if (a > b) return 1;
-    return 0;
-  });
-  // Store the data read from each snippet in the appropriate object
-  for (let snippet of snippetFilenames)
-    snippets[snippet] = fs.readFileSync(path.join(snippetsPath, snippet), 'utf8');
-} catch (err) {
-  // Handle errors (hopefully not!)
-  console.log(`${chalk.red('ERROR!')} During snippet loading: ${err}`);
-  process.exit(1);
-}
-// Load tag data from the database
+snippets = util.readSnippets(snippetsPath);
 try {
   tagDbData = objectFromPairs(
     fs
