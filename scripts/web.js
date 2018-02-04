@@ -156,7 +156,7 @@ try {
   for (let tag of [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
     .filter(v => v)
     .sort((a, b) => a.localeCompare(b))) {
-    if (capitalize(tag, true) == 'Uncategorized') {
+    if (capitalize(tag, true) === 'Uncategorized') {
       uncategorizedOutput += md
         .render(`## ${capitalize(tag, true)}\n`)
         .replace(/<h2>/g, '<h2 style="text-align:center;">');

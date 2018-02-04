@@ -181,7 +181,7 @@ try {
   for (const tag of tags) {
     const capitalizedTag = capitalize(tag, true);
     // ![advanced](/advanced.svg)
-    if (capitalizedTag == 'Uncategorized') {
+    if (capitalizedTag === 'Uncategorized') {
       uncategorizedOutput += `---\n ## _${capitalizedTag}_\n`;
       for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
         uncategorizedOutput += `\n${snippets[taggedSnippet[0] + '.md'] +
