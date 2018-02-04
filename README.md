@@ -72,7 +72,7 @@ average(1, 2, 3);
 
 ## Table of Contents
 
-### 🔌 undefined
+### 🔌 Adapter
 
 <details>
 <summary>View contents</summary>
@@ -92,7 +92,7 @@ average(1, 2, 3);
 
 </details>
 
-### 📚 undefined
+### 📚 Array
 
 <details>
 <summary>View contents</summary>
@@ -173,7 +173,7 @@ average(1, 2, 3);
 
 </details>
 
-### 🌐 undefined
+### 🌐 Browser
 
 <details>
 <summary>View contents</summary>
@@ -206,7 +206,7 @@ average(1, 2, 3);
 
 </details>
 
-### ⏱️ undefined
+### ⏱️ Date
 
 <details>
 <summary>View contents</summary>
@@ -219,7 +219,7 @@ average(1, 2, 3);
 
 </details>
 
-### 🎛️ undefined
+### 🎛️ Function
 
 <details>
 <summary>View contents</summary>
@@ -248,7 +248,7 @@ average(1, 2, 3);
 
 </details>
 
-### ➗ undefined
+### ➗ Math
 
 <details>
 <summary>View contents</summary>
@@ -289,7 +289,7 @@ average(1, 2, 3);
 
 </details>
 
-### 📦 undefined
+### 📦 Node
 
 <details>
 <summary>View contents</summary>
@@ -307,7 +307,7 @@ average(1, 2, 3);
 
 </details>
 
-### 🗃️ undefined
+### 🗃️ Object
 
 <details>
 <summary>View contents</summary>
@@ -343,7 +343,7 @@ average(1, 2, 3);
 
 </details>
 
-### 📜 undefined
+### 📜 String
 
 <details>
 <summary>View contents</summary>
@@ -377,7 +377,7 @@ average(1, 2, 3);
 
 </details>
 
-### 📃 undefined
+### 📃 Type
 
 <details>
 <summary>View contents</summary>
@@ -403,7 +403,7 @@ average(1, 2, 3);
 
 </details>
 
-### 🔧 undefined
+### 🔧 Utility
 
 <details>
 <summary>View contents</summary>
@@ -433,7 +433,7 @@ average(1, 2, 3);
 </details>
 
 ---
- ## 🔌 undefined
+ ## 🔌 Adapter
 
 ### ary
 
@@ -754,7 +754,7 @@ const unary = fn => val => fn(val);
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ## 📚 undefined
+ ## 📚 Array
 
 ### chunk
 
@@ -2695,7 +2695,7 @@ zipWith(
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ## 🌐 undefined
+ ## 🌐 Browser
 
 ### arrayToHtmlList
 
@@ -3439,7 +3439,7 @@ UUIDGeneratorBrowser(); // '7982fcfe-5721-4632-bede-6000885be57d'
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ## ⏱️ undefined
+ ## ⏱️ Date
 
 ### formatDuration
 
@@ -3580,7 +3580,7 @@ tomorrow(); // 2017-12-27 (if current date is 2017-12-26)
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ## 🎛️ undefined
+ ## 🎛️ Function
 
 ### attempt
 
@@ -4201,7 +4201,7 @@ unfold(f, 10); // [-10, -20, -30, -40, -50]
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ## ➗ undefined
+ ## ➗ Math
 
 ### average
 
@@ -5074,7 +5074,7 @@ toSafeInteger(Infinity); // 9007199254740991
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ## 📦 undefined
+ ## 📦 Node
 
 ### atob
 
@@ -5356,7 +5356,7 @@ UUIDGeneratorNode(); // '79c7c136-60ee-40a2-beb2-856f1feabefc'
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ## 🗃️ undefined
+ ## 🗃️ Object
 
 ### bindAll
 
@@ -6153,7 +6153,7 @@ truthCheckCollection([{ user: 'Tinky-Winky', sex: 'male' }, { user: 'Dipsy', sex
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ## 📜 undefined
+ ## 📜 String
 
 ### anagrams
 
@@ -6857,7 +6857,7 @@ words('python, javaScript & coffee'); // ["python", "javaScript", "coffee"]
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ## 📃 undefined
+ ## 📃 Type
 
 ### getType
 
@@ -7324,7 +7324,7 @@ isValidJSON(null); // true
 <br>[⬆ Back to top](#table-of-contents)
 
 ---
- ## 🔧 undefined
+ ## 🔧 Utility
 
 ### castArray
 
