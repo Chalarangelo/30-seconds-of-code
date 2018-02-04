@@ -105,7 +105,7 @@ try {
 
 // Load tag data from the database
 tagDbData = util.readTags();
-
+console.log(tagDbData);
 // Create the output for the README file
 try {
   const tags = [
@@ -116,6 +116,8 @@ try {
         .sort((a, b) => util.capitalize(a, true) === 'Uncategorized' ? 1 : util.capitalize(b, true) === 'Uncategorized' ? -1 : a.localeCompare(b)))
   ];
 
+  console.log(tags);
+
   // Add the start static part
   output += `${startPart + '\n'}`;
 
@@ -124,7 +126,7 @@ try {
     const capitalizedTag = util.capitalize(tag, true);
     output += `### ${
       EMOJIS[tag] || ''
-    } ${util.capitalizedTag}\n\n<details>\n<summary>View contents</summary>\n\n`;
+    } ${capitalizedTag}\n\n<details>\n<summary>View contents</summary>\n\n`;
     for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
       output += `* [\`${taggedSnippet[0]}\`](#${taggedSnippet[0].toLowerCase()}${taggedSnippet[1].includes('advanced')?'-':''})\n`;
     }
@@ -134,7 +136,7 @@ try {
   // Loop over tags and snippets to create the list of snippets
   for (const tag of tags) {
     const capitalizedTag = util.capitalize(tag, true);
-    output += `---\n ## ${EMOJIS[tag] || ''} ${util.capitalizedTag}\n`;
+    output += `---\n ## ${EMOJIS[tag] || ''} ${capitalizedTag}\n`;
     for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
       let data = snippets[taggedSnippet[0] + '.md'];
       // Add advanced tag
