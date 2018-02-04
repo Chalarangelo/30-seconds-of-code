@@ -111,22 +111,7 @@ try {
 }
 
 // Load tag data from the database
-try {
-  tagDbData = objectFromPairs(
-    fs
-      .readFileSync('tag_database', 'utf8')
-      .split('\n')
-      .slice(0, -1)
-      .map(v => {
-        let data = v.split(':').slice(0, 2);
-        data[1] = data[1].split(',').map(t => t.trim());
-        return data;
-      })
-  );
-} catch (err) {
-  console.log(`${chalk.red('ERROR!')} During tag database loading: ${err}`);
-  process.exit(1);
-}
+tagDbData = util.readTags();
 
 // Create the output for the README file
 try {

@@ -28,28 +28,13 @@ const countOccurrences = (arr, value) => arr.reduce((a, v) => (v === value ? a +
 console.time('Tagger');
 // Synchronously read all snippets and sort them as necessary (case-insensitive)
 snippets = util.readSnippets(snippetsPath);
-try {
-  tagDbData = objectFromPairs(
-    fs
-      .readFileSync('tag_database', 'utf8')
-      .split('\n')
-      .slice(0, -1)
-      .map(v => {
-        let data = v.split(':').slice(0, 2);
-        data[1] = data[1].split(',').map(t => t.trim());
-        return data;
-      })
-  );
-  tagDbStats = Object.entries(tagDbData)
-    .reduce((acc, val) => {
-      val[1].forEach(v => acc.hasOwnProperty(v) ? acc[v]++ : (acc[v] = 1));
-      return acc;
-    }, {});
-} catch (err) {
-  // Handle errors (hopefully not!)
-  console.log(`${chalk.red('ERROR!')} During tag database loading: ${err}`);
-  process.exit(1);
-}
+// Load tag data from the database
+tagDbData = util.readTags();
+tagDbStats = Object.entries(tagDbData)
+  .reduce((acc, val) => {
+    val[1].forEach(v => acc.hasOwnProperty(v) ? acc[v]++ : (acc[v] = 1));
+    return acc;
+  }, {});
 // Update the listing of snippets in tag_database and log the statistics, along with missing scripts
 try {
   for (let snippet of Object.entries(snippets))
