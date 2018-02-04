@@ -76,9 +76,9 @@ functions:object,function
 gcd:math,recursion
 geometricProgression:math
 get:object
-getColonTimeFromDate:uncategorized
+getColonTimeFromDate:date
 getDaysDiffBetweenDates:date
-getMeridiemSuffixOfInteger:uncategorized
+getMeridiemSuffixOfInteger:date
 getScrollPosition:browser
 getStyle:browser,css
 getType:type
