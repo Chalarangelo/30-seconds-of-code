@@ -1,4 +1,4 @@
-Test log for: Sun Feb 04 2018 20:50:10 GMT+0200 (GTB Standard Time)
+Test log for: Sun Feb 04 2018 20:53:05 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1024,10 +1024,12 @@ Test log for: Sun Feb 04 2018 20:50:10 GMT+0200 (GTB Standard Time)
   Testing omit
 
     √ omit is a Function
+    √ Omits the key-value pairs corresponding to the given keys from an object
 
   Testing omitBy
 
     √ omitBy is a Function
+    √ Creates an object composed of the properties the given function returns falsey for
 
   Testing on
 
@@ -1711,8 +1713,8 @@ Test log for: Sun Feb 04 2018 20:50:10 GMT+0200 (GTB Standard Time)
     √ Works with multiple promises
 
 
-  total:     818
-  passing:   818
+  total:     820
+  passing:   820
   duration:  2.4s
 
 
