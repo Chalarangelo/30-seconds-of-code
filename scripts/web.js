@@ -107,6 +107,10 @@ try {
   console.log(`${chalk.red('ERROR!')} During tag database loading: ${err}`);
   process.exit(1);
 }
+const renderTagAndSnippets = (tag) => {
+
+}
+
 // Create the output for the index.html file
 try {
   // Add the start static part
@@ -115,23 +119,7 @@ try {
   // Loop over tags and snippets to create the table of contents
   for (let tag of [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
     .filter(v => v)
-    .sort((a, b) => a.localeCompare(b))) {
-    if (capitalize(tag, true) === 'Uncategorized') {
-      uncategorizedOutput +=
-        `<h3>` +
-        md
-          .render(`${capitalize(tag, true)}\n`)
-          .replace(/<p>/g, '')
-          .replace(/<\/p>/g, '') +
-        `</h3>`;
-      for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
-        uncategorizedOutput += md
-          .render(`[${taggedSnippet[0]}](#${taggedSnippet[0].toLowerCase()})\n`)
-          .replace(/<p>/g, '')
-          .replace(/<\/p>/g, '')
-          .replace(/<a/g, `<a class="sublink-1" tags="${taggedSnippet[1].join(',')}"`);
-      uncategorizedOutput += '\n';
-    } else {
+    .sort((a, b) => capitalize(a, true) === 'Uncategorized' ? 1 : capitalize(b, true) === 'Uncategorized' ? -1 : a.localeCompare(b))) {
       output +=
         `<h3>` +
         md
@@ -146,7 +134,6 @@ try {
           .replace(/<\/p>/g, '')
           .replace(/<a/g, `<a class="sublink-1" tags="${taggedSnippet[1].join(',')}"`);
       output += '\n';
-    }
   }
   output += uncategorizedOutput;
   output += `</nav><main class="col-sm-12 col-md-8 col-lg-9" style="height: 100%;overflow-y: auto; background: #eceef2; padding: 0;">`;
@@ -155,23 +142,7 @@ try {
   // Loop over tags and snippets to create the list of snippets
   for (let tag of [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
     .filter(v => v)
-    .sort((a, b) => a.localeCompare(b))) {
-    if (capitalize(tag, true) === 'Uncategorized') {
-      uncategorizedOutput += md
-        .render(`## ${capitalize(tag, true)}\n`)
-        .replace(/<h2>/g, '<h2 style="text-align:center;">');
-      for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
-        uncategorizedOutput +=
-          '<div class="card fluid">' +
-          md
-            .render(`\n${snippets[taggedSnippet[0] + '.md']}`)
-            .replace(/<h3/g, `<h3 id="${taggedSnippet[0].toLowerCase()}" class="section double-padded"`)
-            .replace(/<\/h3>/g, `${taggedSnippet[1].includes('advanced')?'<mark class="tag">advanced</mark>':''}</h3>`)
-            .replace(/<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm, (match, p1) => `<pre class="language-js">${Prism.highlight(unescapeHTML(p1), Prism.languages.javascript)}</pre>`)
-            .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
-          '<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button>' +
-          '</div></div>';
-    } else {
+    .sort((a, b) => capitalize(a, true) === 'Uncategorized' ? 1 : capitalize(b, true) === 'Uncategorized' ? -1 : a.localeCompare(b))) {
       output += md
         .render(`## ${capitalize(tag, true)}\n`)
         .replace(/<h2>/g, '<h2 style="text-align:center;">');
@@ -187,9 +158,7 @@ try {
             .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
           '<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button>' +
           '</div></div>';
-    }
   }
-  output += uncategorizedOutput;
   // Add the ending static part
   output += `\n${endPart + '\n'}`;
   // Optimize punctuation nodes
