@@ -22,7 +22,7 @@ const readSnippets = snippetsPath => {
     process.exit(1);
   }
   return snippets;
-}
+};
 // Creates an object from pairs
 const objectFromPairs = arr => arr.reduce((a, v) => ((a[v[0]] = v[1]), a), {});
 // Load tag data from the database
@@ -47,7 +47,7 @@ const readTags = () => {
     process.exit(1);
   }
   return tagDbData;
-}
+};
 // Optimizes nodes in an HTML document
 const optimizeNodes = (data, regexp, replacer) => {
   let count = 0;
@@ -60,7 +60,7 @@ const optimizeNodes = (data, regexp, replacer) => {
     }
   } while (count > 0);
   return output;
-}
+};
 // Capitalizes the first letter of a string
 const capitalize = (str, lowerRest = false) =>
   str.slice(0, 1).toUpperCase() + (lowerRest ? str.slice(1).toLowerCase() : str.slice(1));
