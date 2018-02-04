@@ -48,4 +48,16 @@ const readTags = () => {
   }
   return tagDbData;
 }
-module.exports = {readSnippets, readTags};
+const optimizeNodes = (data, regexp, replacer) => {
+  let count = 0;
+  let output = data;
+  do {
+    output = output.replace(regexp, replacer);
+    count = 0;
+    while (regexp.exec(output) !== null) {
+      ++count;
+    }
+  } while (count > 0);
+  return output;
+}
+module.exports = {readSnippets, readTags, optimizeNodes};

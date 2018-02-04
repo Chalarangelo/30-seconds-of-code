@@ -124,39 +124,43 @@ try {
   // Add the ending static part
   output += `\n${endPart + '\n'}`;
   // Optimize punctuation nodes
-  let count = 0;
-  do {
-    const punctuationRegex = /<span class="token punctuation">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token punctuation">([^\0]*?)<\/span>/gm;
-    output = output.replace(punctuationRegex,
-      (match, p1, p2, p3)  => `<span class="token punctuation">${p1}${p2}${p3}</span>`
-    );
-    count = 0;
-    while (punctuationRegex.exec(output) !== null) {
-      ++count;
-    }
-  } while (count > 0);
+  output = util.optimizeNodes(output, /<span class="token punctuation">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token punctuation">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token punctuation">${p1}${p2}${p3}</span>`);
   // Optimize operator nodes
-  do {
-    const operatorRegex = /<span class="token operator">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token operator">([^\0]*?)<\/span>/gm;
-    output = output.replace(operatorRegex,
-      (match, p1, p2, p3)  => `<span class="token operator">${p1}${p2}${p3}</span>`
-    );
-    count = 0;
-    while (operatorRegex.exec(output) !== null) {
-      ++count;
-    }
-  } while (count > 0);
+  output = util.optimizeNodes(output, /<span class="token operator">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token operator">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token operator">${p1}${p2}${p3}</span>`);
   // Optimize keyword nodes
-  do {
-    const keyWordRegex = /<span class="token keyword">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token keyword">([^\0]*?)<\/span>/gm;
-    output = output.replace(keyWordRegex,
-      (match, p1, p2, p3)  => `<span class="token keyword">${p1}${p2}${p3}</span>`
-    );
-    count = 0;
-    while (keyWordRegex.exec(output) !== null) {
-      ++count;
-    }
-  } while (count > 0);
+  output = util.optimizeNodes(output, /<span class="token keyword">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token keyword">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token keyword">${p1}${p2}${p3}</span>`);
+  // do {
+  //   const punctuationRegex = /<span class="token punctuation">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token punctuation">([^\0]*?)<\/span>/gm;
+  //   output = output.replace(punctuationRegex,
+  //     (match, p1, p2, p3)  => `<span class="token punctuation">${p1}${p2}${p3}</span>`
+  //   );
+  //   count = 0;
+  //   while (punctuationRegex.exec(output) !== null) {
+  //     ++count;
+  //   }
+  // } while (count > 0);
+  // // Optimize operator nodes
+  // do {
+  //   const operatorRegex = /<span class="token operator">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token operator">([^\0]*?)<\/span>/gm;
+  //   output = output.replace(operatorRegex,
+  //     (match, p1, p2, p3)  => `<span class="token operator">${p1}${p2}${p3}</span>`
+  //   );
+  //   count = 0;
+  //   while (operatorRegex.exec(output) !== null) {
+  //     ++count;
+  //   }
+  // } while (count > 0);
+  // // Optimize keyword nodes
+  // do {
+  //   const keyWordRegex = /<span class="token keyword">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token keyword">([^\0]*?)<\/span>/gm;
+  //   output = output.replace(keyWordRegex,
+  //     (match, p1, p2, p3)  => `<span class="token keyword">${p1}${p2}${p3}</span>`
+  //   );
+  //   count = 0;
+  //   while (keyWordRegex.exec(output) !== null) {
+  //     ++count;
+  //   }
+  // } while (count > 0);
   // Minify output
   output = minify(output, {
     collapseBooleanAttributes: true,
