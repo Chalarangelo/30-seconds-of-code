@@ -96,7 +96,7 @@ const binarySearch = (arr, val, start = 0, end = arr.length - 1) => {
   if (arr[mid] > val) return binarySearch(arr, val, start, mid - 1);
   if (arr[mid] < val) return binarySearch(arr, val, mid + 1, end);
   return mid;
-}
+};
 ```
 
 <details>
@@ -152,7 +152,7 @@ Applies the Collatz algorithm.
 If `n` is even, return `n/2`. Otherwise, return `3n+1`.
 
 ```js
-const collatz = n => (n % 2 == 0 ? n / 2 : 3 * n + 1);
+const collatz = n => (n % 2 === 0 ? n / 2 : 3 * n + 1);
 ```
 
 <details>
