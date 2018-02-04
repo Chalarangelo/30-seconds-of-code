@@ -1,3 +1,4 @@
+#!/bin/bash
 setup_git() {
   git config --global user.email "30secondsofcode@gmail.com"
   git config --global user.name "30secondsofcode"
