@@ -6,4 +6,4 @@ request.onload = () => callback(request.responseText);
 request.onerror = () => err(request);
 request.send(data);
 };
-module.exports = httpPost
+module.exports = httpPost;

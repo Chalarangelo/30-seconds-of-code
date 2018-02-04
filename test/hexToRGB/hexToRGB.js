@@ -17,4 +17,4 @@ return (
 ')'
 );
 };
-module.exports = hexToRGB
+module.exports = hexToRGB;

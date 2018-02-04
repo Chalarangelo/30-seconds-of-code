@@ -5,4 +5,4 @@ fn(
 Array.from({ length: indexes.length })
 )
 );
-module.exports = rearg
+module.exports = rearg;

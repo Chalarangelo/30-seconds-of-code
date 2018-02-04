@@ -61,7 +61,7 @@ snippetFiles
                             .filter((_, i) => blockMarkers[2] < i && i < blockMarkers[3]);
 
     // Export template for snippetName.js
-    const exportFile = `${fileFunction.join('\n')}\nmodule.exports = ${fileName}`.trim();
+    const exportFile = `${fileFunction.join('\n')}\nmodule.exports = ${fileName};`.trim();
 
     // Export template for snippetName.test.js which generates a example test & other information
     const exportTest = [

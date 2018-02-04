@@ -8,4 +8,4 @@ s
 .join('')
 );
 };
-module.exports = palindrome
+module.exports = palindrome;

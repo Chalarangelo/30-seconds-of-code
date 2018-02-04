@@ -7,4 +7,4 @@ length: Math.max(...arr.map(x => x.length))
 }).map(x => [])
 )
 .map(val => fn(...val));
-module.exports = unzipWith
+module.exports = unzipWith;

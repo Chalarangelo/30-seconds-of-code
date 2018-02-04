@@ -6,4 +6,4 @@ const i = Math.floor(Math.random() * m--);
 }
 return arr;
 };
-module.exports = shuffle
+module.exports = shuffle;

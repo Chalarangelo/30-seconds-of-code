@@ -14,4 +14,4 @@ rej(err), worker.terminate();
 };
 });
 };
-module.exports = runAsync
+module.exports = runAsync;

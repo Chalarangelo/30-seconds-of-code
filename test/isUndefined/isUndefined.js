@@ -1,2 +1,2 @@
 const isUndefined = val => val === undefined;
-module.exports = isUndefined
+module.exports = isUndefined;

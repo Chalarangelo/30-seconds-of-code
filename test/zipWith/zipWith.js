@@ -8,4 +8,4 @@ return Array.from({ length: arrays.length }, (_, k) => arrays[k][i]);
 });
 return fn ? result.map(arr => fn(...arr)) : result;
 };
-module.exports = zipWith
+module.exports = zipWith;

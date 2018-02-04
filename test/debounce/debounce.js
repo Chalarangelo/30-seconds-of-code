@@ -7,4 +7,4 @@ clearTimeout(inDebounce);
 inDebounce = setTimeout(() => fn.apply(context, args), wait);
 };
 };
-module.exports = debounce
+module.exports = debounce;

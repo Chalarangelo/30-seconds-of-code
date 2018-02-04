@@ -5,4 +5,4 @@ shortHex
 .split('')
 .map(x => x + x)
 .join('');
-module.exports = extendHex
+module.exports = extendHex;

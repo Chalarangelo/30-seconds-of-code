@@ -1,2 +1,2 @@
 const unary = fn => val => fn(val);
-module.exports = unary
+module.exports = unary;

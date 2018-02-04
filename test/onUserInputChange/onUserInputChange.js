@@ -12,4 +12,4 @@ if (type === 'touch') return;
 (type = 'touch'), callback(type), document.addEventListener('mousemove', mousemoveHandler);
 });
 };
-module.exports = onUserInputChange
+module.exports = onUserInputChange;

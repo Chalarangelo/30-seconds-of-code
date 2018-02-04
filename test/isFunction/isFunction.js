@@ -1,2 +1,2 @@
 const isFunction = val => typeof val === 'function';
-module.exports = isFunction
+module.exports = isFunction;
