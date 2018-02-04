@@ -6,6 +6,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 const chalk = require('chalk');
+const util = require('./util');
 // Paths
 const SNIPPETS_PATH = './snippets';
 const SNIPPETS_ARCHIVE_PATH = './snippets_archive';
@@ -68,7 +69,7 @@ These snippets, while useful and interesting, didn\'t quite make it into the rep
   console.log(`${chalk.green('SUCCESS!')} README file generated for snippets archive!`);
   console.timeEnd('Builder');
 }
-const snippets = {};
+let snippets = {};
 const EMOJIS = {
   adapter: '🔌',
   array: '📚',
@@ -98,18 +99,7 @@ const capitalize = (str, lowerRest = false) =>
 console.time('Builder');
 
 // Synchronously read all snippets from snippets folder and sort them as necessary (case-insensitive)
-try {
-  const snippetFilenames = fs
-    .readdirSync(SNIPPETS_PATH)
-    .sort((a, b) => a.toLowerCase() - b.toLowerCase());
-  // Store the data read from each snippet in the appropriate object
-  for (const name of snippetFilenames) {
-    snippets[name] = fs.readFileSync(path.join(SNIPPETS_PATH, name), 'utf8');
-  }
-} catch (err) {
-  console.log(`${chalk.red('ERROR!')} During snippet loading: ${err}`);
-  process.exit(1);
-}
+snippets = util.readSnippets(SNIPPETS_PATH);
 
 // Load static parts for the README file
 try {
