@@ -93,8 +93,6 @@ let startPart = '',
 
 // Load helper functions (these are from existing snippets in 30 seconds of code!)
 const objectFromPairs = arr => arr.reduce((a, v) => ((a[v[0]] = v[1]), a), {});
-const capitalize = (str, lowerRest = false) =>
-  str.slice(0, 1).toUpperCase() + (lowerRest ? str.slice(1).toLowerCase() : str.slice(1));
 
 console.time('Builder');
 
@@ -120,7 +118,7 @@ try {
       Object.entries(tagDbData)
         .map(t => t[1][0])
         .filter(v => v)
-        .sort((a, b) => capitalize(a, true) === 'Uncategorized' ? 1 : capitalize(b, true) === 'Uncategorized' ? -1 : a.localeCompare(b)))
+        .sort((a, b) => util.capitalize(a, true) === 'Uncategorized' ? 1 : util.capitalize(b, true) === 'Uncategorized' ? -1 : a.localeCompare(b)))
   ];
 
   // Add the start static part
@@ -128,10 +126,10 @@ try {
 
   // Loop over tags and snippets to create the table of contents
   for (const tag of tags) {
-    const capitalizedTag = capitalize(tag, true);
+    const capitalizedTag = util.capitalize(tag, true);
     output += `### ${
       EMOJIS[tag] || ''
-    } ${capitalizedTag}\n\n<details>\n<summary>View contents</summary>\n\n`;
+    } ${util.capitalizedTag}\n\n<details>\n<summary>View contents</summary>\n\n`;
     for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
       output += `* [\`${taggedSnippet[0]}\`](#${taggedSnippet[0].toLowerCase()}${taggedSnippet[1].includes('advanced')?'-':''})\n`;
     }
@@ -140,8 +138,8 @@ try {
 
   // Loop over tags and snippets to create the list of snippets
   for (const tag of tags) {
-    const capitalizedTag = capitalize(tag, true);
-    output += `---\n ## ${EMOJIS[tag] || ''} ${capitalizedTag}\n`;
+    const capitalizedTag = util.capitalize(tag, true);
+    output += `---\n ## ${EMOJIS[tag] || ''} ${util.capitalizedTag}\n`;
     for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
       let data = snippets[taggedSnippet[0] + '.md'];
       // Add advanced tag
