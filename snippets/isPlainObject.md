@@ -1,6 +1,6 @@
 ### isPlainObject
 
-Checks if the provided value is an bbject created by the Object constructor.
+Checks if the provided value is an object created by the Object constructor.
 
 Check if the provided value is truthy, use `typeof` to check if it is an object and `Object.constructor` to make sure the constructor is equal to `Object`.
 
