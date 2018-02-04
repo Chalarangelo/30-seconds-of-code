@@ -8,6 +8,7 @@ const fs = require('fs-extra'),
   chalk = require('chalk'),
   md = require('markdown-it')(),
   minify = require('html-minifier').minify;
+const util = require('./util');
 var Prism = require('prismjs');
   // Load helper functions (these are from existing snippets in 30 seconds of code!)
 const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
@@ -63,23 +64,7 @@ const capitalize = (str, lowerRest = false) =>
 // Start the timer of the script
 console.time('Webber');
 // Synchronously read all snippets and sort them as necessary (case-insensitive)
-try {
-  let snippetFilenames = fs.readdirSync(snippetsPath);
-  snippetFilenames.sort((a, b) => {
-    a = a.toLowerCase();
-    b = b.toLowerCase();
-    if (a < b) return -1;
-    if (a > b) return 1;
-    return 0;
-  });
-  // Store the data read from each snippet in the appropriate object
-  for (let snippet of snippetFilenames)
-    snippets[snippet] = fs.readFileSync(path.join(snippetsPath, snippet), 'utf8');
-} catch (err) {
-  // Handle errors (hopefully not!)
-  console.log(`${chalk.red('ERROR!')} During snippet loading: ${err}`);
-  process.exit(1);
-}
+snippets = util.readSnippets(snippetsPath);
 // Load static parts for the index.html file
 try {
   startPart = fs.readFileSync(path.join(staticPartsPath, 'index-start.html'), 'utf8');
@@ -107,10 +92,6 @@ try {
   console.log(`${chalk.red('ERROR!')} During tag database loading: ${err}`);
   process.exit(1);
 }
-const renderTagAndSnippets = (tag) => {
-
-}
-
 // Create the output for the index.html file
 try {
   // Add the start static part
