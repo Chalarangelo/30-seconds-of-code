@@ -1,4 +1,4 @@
-Test log for: Sun Feb 04 2018 20:47:53 GMT+0200 (GTB Standard Time)
+Test log for: Sun Feb 04 2018 20:50:10 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -993,6 +993,9 @@ Test log for: Sun Feb 04 2018 20:47:53 GMT+0200 (GTB Standard Time)
   Testing nthArg
 
     √ nthArg is a Function
+    √ Returns the nth argument
+    √ Returns undefined if arguments too few
+    √ Works for negative values
 
   Testing nthElement
 
@@ -1708,8 +1711,8 @@ Test log for: Sun Feb 04 2018 20:47:53 GMT+0200 (GTB Standard Time)
     √ Works with multiple promises
 
 
-  total:     815
-  passing:   815
+  total:     818
+  passing:   818
   duration:  2.4s
 
 
