@@ -7,4 +7,4 @@ arr.length = 0;
 pulled.forEach(v => arr.push(v));
 return removed;
 };
-module.exports = pullAtIndex
+module.exports = pullAtIndex;

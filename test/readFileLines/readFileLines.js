@@ -4,4 +4,4 @@ fs
 .readFileSync(filename)
 .toString('UTF8')
 .split('\n');
-module.exports = readFileLines
+module.exports = readFileLines;

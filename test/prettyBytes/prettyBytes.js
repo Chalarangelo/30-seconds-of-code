@@ -5,4 +5,4 @@ const exponent = Math.min(Math.floor(Math.log10(num < 0 ? -num : num) / 3), UNIT
 const n = Number(((num < 0 ? -num : num) / 1000 ** exponent).toPrecision(precision));
 return (num < 0 ? '-' : '') + n + (addSpace ? ' ' : '') + UNITS[exponent];
 };
-module.exports = prettyBytes
+module.exports = prettyBytes;

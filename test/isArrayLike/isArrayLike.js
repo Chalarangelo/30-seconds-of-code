@@ -5,4 +5,4 @@ return [...val], true;
 return false;
 }
 };
-module.exports = isArrayLike
+module.exports = isArrayLike;

@@ -12,4 +12,4 @@ return Object.entries(time)
 .map(val => val[1] + ' ' + (val[1] !== 1 ? val[0] + 's' : val[0]))
 .join(', ');
 };
-module.exports = formatDuration
+module.exports = formatDuration;

@@ -8,4 +8,4 @@ acc.concat(anagrams(str.slice(0, i) + str.slice(i + 1)).map(val => letter + val)
 []
 );
 };
-module.exports = anagrams
+module.exports = anagrams;

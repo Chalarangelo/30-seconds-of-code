@@ -5,4 +5,4 @@ request.onload = () => callback(request.responseText);
 request.onerror = () => err(request);
 request.send();
 };
-module.exports = httpGet
+module.exports = httpGet;

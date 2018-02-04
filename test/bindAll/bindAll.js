@@ -7,4 +7,4 @@ return f.apply(obj);
 })
 )
 );
-module.exports = bindAll
+module.exports = bindAll;

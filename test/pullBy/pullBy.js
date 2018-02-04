@@ -7,4 +7,4 @@ let pulled = arr.filter((v, i) => !argState.includes(fn(v)));
 arr.length = 0;
 pulled.forEach(v => arr.push(v));
 };
-module.exports = pullBy
+module.exports = pullBy;

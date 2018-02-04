@@ -4,4 +4,4 @@ let pulled = arr.filter((v, i) => !argState.includes(v));
 arr.length = 0;
 pulled.forEach(v => arr.push(v));
 };
-module.exports = pull
+module.exports = pull;

@@ -1,2 +1,2 @@
 const byteSize = str => new Blob([str]).size;
-module.exports = byteSize
+module.exports = byteSize;
