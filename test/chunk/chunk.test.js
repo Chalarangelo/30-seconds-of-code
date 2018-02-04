@@ -15,7 +15,7 @@ test('Testing chunk', (t) => {
   t.throws(() => chunk(null), 'chunk(null) throws an error');
 
   let start = new Date().getTime();
-  chunk('This is a string', 2)
+  chunk('This is a string', 2);
   let end = new Date().getTime();
   t.true((end - start) < 2000, 'chunk(This is a string, 2) takes less than 2s to run');
   t.end();

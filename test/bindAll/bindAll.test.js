@@ -12,7 +12,7 @@ test('Testing bindAll', (t) => {
     }
   };
   bindAll(view, 'click');
-  t.equal(view.click(), 'clicked docs', 'Binds to an object context')
+  t.equal(view.click(), 'clicked docs', 'Binds to an object context');
   //t.deepEqual(bindAll(args..), 'Expected');
   //t.equal(bindAll(args..), 'Expected');
   //t.false(bindAll(args..), 'Expected');
