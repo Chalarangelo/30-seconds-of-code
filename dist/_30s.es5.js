@@ -625,7 +625,7 @@ var findLastKey = function findLastKey(obj, fn) {
 
 var flatten = function flatten(arr) {
   var depth = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
-  return depth != 1 ? arr.reduce(function (a, v) {
+  return depth !== 1 ? arr.reduce(function (a, v) {
     return a.concat(Array.isArray(v) ? flatten(v, depth - 1) : v);
   }, []) : arr.reduce(function (a, v) {
     return a.concat(v);
@@ -1020,7 +1020,7 @@ var isPlainObject = function isPlainObject(val) {
 var isPrime = function isPrime(num) {
   var boundary = Math.floor(Math.sqrt(num));
   for (var i = 2; i <= boundary; i++) {
-    if (num % i == 0) return false;
+    if (num % i === 0) return false;
   }return num >= 2;
 };
 
@@ -1106,7 +1106,7 @@ var join = function join(arr) {
   var separator = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ',';
   var end = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : separator;
   return arr.reduce(function (acc, val, i) {
-    return i == arr.length - 2 ? acc + val + end : i == arr.length - 1 ? acc + val : acc + val + separator;
+    return i === arr.length - 2 ? acc + val + end : i === arr.length - 1 ? acc + val : acc + val + separator;
   }, '');
 };
 
@@ -1561,7 +1561,7 @@ var primes = function primes(num) {
   });
   numsTillSqroot.forEach(function (x) {
     return arr = arr.filter(function (y) {
-      return y % x !== 0 || y == x;
+      return y % x !== 0 || y === x;
     });
   });
   return arr;
