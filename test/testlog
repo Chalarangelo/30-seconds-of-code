@@ -1,4 +1,4 @@
-Test log for: Sun Feb 04 2018 17:54:05 GMT+0200 (GTB Standard Time)
+Test log for: Sun Feb 04 2018 20:45:51 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1096,6 +1096,7 @@ Test log for: Sun Feb 04 2018 17:54:05 GMT+0200 (GTB Standard Time)
   Testing pipeAsyncFunctions
 
     √ pipeAsyncFunctions is a Function
+    √ Produces the appropriate hash
     √ pipeAsyncFunctions result should be 15
 
   Testing pipeFunctions
@@ -1705,8 +1706,8 @@ Test log for: Sun Feb 04 2018 17:54:05 GMT+0200 (GTB Standard Time)
     √ Works with multiple promises
 
 
-  total:     812
-  passing:   812
-  duration:  2.5s
+  total:     813
+  passing:   813
+  duration:  2.4s
 
 
