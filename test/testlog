@@ -1,4 +1,4 @@
-Test log for: Sun Feb 04 2018 20:17:34 GMT+0000 (UTC)
+Test log for: Tue Feb 06 2018 20:19:07 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.1 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -85,6 +85,8 @@ Test log for: Sun Feb 04 2018 20:17:34 GMT+0000 (UTC)
     ✔ binarySearch is a Function
     ✔ Finds item in array
     ✔ Returns -1 when not found
+    ✔ Works with empty arrays
+    ✔ Works for one element arrays
 
   Testing bind
 
@@ -124,11 +126,15 @@ Test log for: Sun Feb 04 2018 20:17:34 GMT+0000 (UTC)
     ✔ capitalize is a Function
     ✔ Capitalizes the first letter of a string
     ✔ Capitalizes the first letter of a string
+    ✔ Works with characters
+    ✔ Works with single character words
 
   Testing capitalizeEveryWord
 
     ✔ capitalizeEveryWord is a Function
     ✔ Capitalizes the first letter of every word in a string
+    ✔ Works with characters
+    ✔ Works with one word string
 
   Testing castArray
 
@@ -1724,8 +1730,8 @@ Test log for: Sun Feb 04 2018 20:17:34 GMT+0000 (UTC)
     ✔ Works with multiple promises
 
 
-  total:     831
-  passing:   831
+  total:     837
+  passing:   837
   duration:  2.3s
 
 
