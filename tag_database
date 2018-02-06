@@ -234,6 +234,7 @@ sortedLastIndex:array,math
 sortedLastIndexBy:array,math,function
 splitLines:string
 spreadOver:adapter
+stableSort:array,sort
 standardDeviation:math,array
 stripHTMLTags:string,utility,regexp
 sum:math,array
