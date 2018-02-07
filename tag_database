@@ -26,6 +26,7 @@ colorize:node,utility,string
 compact:array
 compose:function
 composeRight:function
+converge:function
 copyToClipboard:browser,string,advanced
 countBy:array,object
 countOccurrences:array
