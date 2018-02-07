@@ -14,14 +14,60 @@ const stableSort = (arr, compare) =>
 ```
 
 ```js
-const str = 'abcdefghijklmnopqrstuvwxyz';
-const compare = (a, b) => ~~(str.indexOf(b) / 2.3) - ~~(str.indexOf(a) / 2.3);
+// sorted by weight
+const input = [
+  { height: 100, weight: 80 },
+  { height: 90, weight: 90 },
+  { height: 70, weight: 95 },
+  { height: 100, weight: 100 },
+  { height: 80, weight: 110 },
+  { height: 110, weight: 115 },
+  { height: 100, weight: 120 },
+  { height: 70, weight: 125 },
+  { height: 70, weight: 130 },
+  { height: 100, weight: 135 },
+  { height: 75, weight: 140 },
+  { height: 70, weight: 140 }
+];
 
-// default Array.sort() is unstable in Chrome and NodeJS + modifies the input array
-var arr1 = str.split('');
-console.log(arr1.sort(compare).join('') === 'xyzvwtursopqmnklhijfgdeabc'); // false
+const compare = (a, b) => a.height - b.height;
 
-// stable sort + returns new array
-const arr2 = str.split('');
-console.log(stableSort(arr2, compare).join('') === 'xyzvwtursopqmnklhijfgdeabc'); // true
+// stable - sorted by height using stableSort()
+// Items with the same height are still sorted by weight which means they preserved their relative order.
+stableSort(input, compare);
+/*
+  [
+    { height: 70, weight: 95 },
+    { height: 70, weight: 125 },
+    { height: 70, weight: 130 },
+    { height: 70, weight: 140 },
+    { height: 75, weight: 140 },
+    { height: 80, weight: 110 },
+    { height: 90, weight: 90 },
+    { height: 100, weight: 80 },
+    { height: 100, weight: 100 },
+    { height: 100, weight: 120 },
+    { height: 100, weight: 135 },
+    { height: 110, weight: 115 }
+  ]
+*/
+
+// unstable - sorted by height using Array.sort()
+input.sort(compare);
+/*
+  [
+    { height: 70, weight: 140},
+    { height: 70, weight: 95 },
+    { height: 70, weight: 125 },
+    { height: 70, weight: 130 },
+    { height: 75, weight: 140 },
+    { height: 80, weight: 110 },
+    { height: 90, weight: 90 },
+    { height: 100, weight: 100 },
+    { height: 100, weight: 80 },
+    { height: 100, weight: 135 },
+    { height: 100, weight: 120 },
+    { height: 110, weight: 115 }
+  ]
+*/
 ```
