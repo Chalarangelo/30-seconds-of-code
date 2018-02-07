@@ -65,6 +65,7 @@ findLast:array
 findLastIndex:array,function
 findLastKey:object,function
 flatten:array
+flattenObject:object,recursion
 flip:adapter,function
 forEachRight:array,function
 formatDuration:date,math,string,utility
@@ -251,6 +252,7 @@ truncateString:string
 truthCheckCollection:object,logic,array
 unary:adapter,function
 unescapeHTML:string,browser
+unflattenObject:object,advanced
 unfold:function,array
 union:array,math
 unionBy:array,function
