@@ -141,7 +141,7 @@ longestItem:array,string,utility
 lowercaseKeys:object
 luhnCheck:math,utility
 mapKeys:object,function
-mapObject:array,object
+mapObject:array,object,advanced
 mapValues:object,function
 mask:string,utility,regexp
 matches:object,type
