@@ -6,24 +6,22 @@ Use `Array.map()` to pair each element of the input array with its corresponding
 Returns new array without modifying the initial one.
 
 ```js
-var stableSort = (arr, compare) =>
+const stableSort = (arr, compare) =>
   arr
     .map((item, index) => ({ item, index }))
-    .sort((a, b) =>
-      ((result = compare(a.item, b.item)) => (result !== 0 ? result : a.index - b.index))()
-    )
+    .sort((a, b) => compare(a.item, b.item) || a.index - b.index)
     .map(({ item }) => item);
 ```
 
 ```js
-var str = 'abcdefghijklmnopqrstuvwxyz';
-var compare = (a, b) => ~~(str.indexOf(b) / 2.3) - ~~(str.indexOf(a) / 2.3);
+const str = 'abcdefghijklmnopqrstuvwxyz';
+const compare = (a, b) => ~~(str.indexOf(b) / 2.3) - ~~(str.indexOf(a) / 2.3);
 
 // default Array.sort() is unstable in Chrome and NodeJS + modifies the input array
 var arr1 = str.split('');
 console.log(arr1.sort(compare).join('') === 'xyzvwtursopqmnklhijfgdeabc'); // false
 
 // stable sort + returns new array
-var arr2 = str.split('');
+const arr2 = str.split('');
 console.log(stableSort(arr2, compare).join('') === 'xyzvwtursopqmnklhijfgdeabc'); // true
 ```
