@@ -23,6 +23,7 @@
 
 <details><summary>View contents</summary> <ul><li><a href = "#chunk"><code>chunk</code></a></li>
 <li><a href = "#compact"><code>compact</code></a></li>
+<li><a href = "#count_by"><code>count_by</code></a></li>
 <li><a href = "#count_occurences"><code>count_occurences</code></a></li>
 <li><a href = "#deep_flatten"><code>deep_flatten</code></a></li>
 <li><a href = "#difference"><code>difference</code></a></li>
@@ -33,14 +34,14 @@
 
 ### :scroll: String
 
-<details><summary>View contents</summary> <ul><li><a href = "#count_vowels"><code>count_vowels</code></a></li>
-<li><a href = "#byte_size"><code>byte_size</code></a></li>
+<details><summary>View contents</summary> <ul><li><a href = "#byte_size"><code>byte_size</code></a></li>
 <li><a href = "#capitalize"><code>capitalize</code></a></li>
 <li><a href = "#capitalize_every_word"><code>capitalize_every_word</code></a></li>
+<li><a href = "#count_vowels"><code>count_vowels</code></a></li>
 <li><a href = "#decapitalize"><code>decapitalize</code></a></li>
-<li><a href = "#palindrome"><code>palindrome</code></a></li>
-<li><a href = "#is_upper_case"><code>is_upper_case</code></a></li>
 <li><a href = "#is_lower_case"><code>is_lower_case</code></a></li>
+<li><a href = "#is_upper_case"><code>is_upper_case</code></a></li>
+<li><a href = "#palindrome"><code>palindrome</code></a></li>
 </ul></details>
 
 <hr></hr> 
@@ -306,6 +307,35 @@ compact([0, 1, False, 2, '', 3, 'a', 's', 34]) # [ 1, 2, 3, 'a', 's', 34 ]
 
 <br><a href = "#table-of-contents">:arrow_up: Back to top</a>
  
+### count_by
+
+Groups the elements of a list based on the given function and returns the count of elements in each group.
+
+Use `map()` to map the values of the list using the given function. Iterate over the map and increase the the elements count each time it occurs.
+
+```py
+def count_by(arr, fn=lambda x: x):
+    key = {}
+    for el in map(fn, arr):
+        key[el] = 0 if not el in key else key[el]
+        key[el] += 1
+    return key
+ 
+ ```
+
+<details><summary>View Examples</summary>
+
+```py
+
+from math import floor
+count_by([6.1, 4.2, 6.3], floor) # {4: 1, 6: 2}
+count_by(['one', 'two', 'three'], len) # {3: 2, 5: 1}
+
+```
+</details>
+
+<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
+ 
 ### count_occurences
 
 :information_source: Already implemented via `list.count()`.
@@ -491,33 +521,6 @@ zip(['a'], [1, 2], [True, False], fill_value = '_') # [['a', 1, True], ['_', 2, 
  
 ## :scroll: String
 
-### count_vowels
-
-Retuns `number` of vowels in provided `string`.
-
-Use a regular expression to count the number of vowels `(A, E, I, O, U)` in a string.
-
-```py
-import re
-
-
-def count_vowels(str):
-    return len(len(re.findall(r'[aeiou]', str, re.IGNORECASE)))
- 
- ```
-
-<details><summary>View Examples</summary>
-
-```py
-
-count_vowels('foobar') # 3
-count_vowels('gym') # 0
-
-```
-</details>
-
-<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
- 
 ### byte_size
 
 Returns the length of a string in bytes.
@@ -589,6 +592,33 @@ capitalize_every_word('hello world!') # 'Hello World!'
 
 <br><a href = "#table-of-contents">:arrow_up: Back to top</a>
  
+### count_vowels
+
+Retuns `number` of vowels in provided `string`.
+
+Use a regular expression to count the number of vowels `(A, E, I, O, U)` in a string.
+
+```py
+import re
+
+
+def count_vowels(str):
+    return len(len(re.findall(r'[aeiou]', str, re.IGNORECASE)))
+ 
+ ```
+
+<details><summary>View Examples</summary>
+
+```py
+
+count_vowels('foobar') # 3
+count_vowels('gym') # 0
+
+```
+</details>
+
+<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
+ 
 ### decapitalize
 
 Decapitalizes the first letter of a string.
@@ -613,24 +643,25 @@ decapitalize('FooBar', True) # 'fOOBAR'
 
 <br><a href = "#table-of-contents">:arrow_up: Back to top</a>
  
-### palindrome
+### is_lower_case
 
-Returns `True` if the given string is a palindrome, `False` otherwise.
+Checks if a string is lower case.
 
-Convert string `str.lower()` and use `re.sub` to remove non-alphanumeric characters from it. Then compare the new string to the reversed.
+Convert the given string to lower case, using `str.lower()` method and compare it to the original.
 
 ```py
-def palindrome(string):
-    from re import sub
-    s = sub('[\W_]', '', string.lower())
-    return s == s[::-1]
+def is_lower_case(str):
+    return str == str.lower()
  
  ```
+
 <details><summary>View Examples</summary>
 
 ```py
 
-palindrome('taco cat') # True
+is_lower_case('abc') # True
+is_lower_case('a3@$') # True
+is_lower_case('Ab4') # False
 
 ```
 </details>
@@ -662,25 +693,24 @@ is_upper_case('aB4') # False
 
 <br><a href = "#table-of-contents">:arrow_up: Back to top</a>
  
-### is_lower_case
+### palindrome
 
-Checks if a string is lower case.
+Returns `True` if the given string is a palindrome, `False` otherwise.
 
-Convert the given string to lower case, using `str.lower()` method and compare it to the original.
+Convert string `str.lower()` and use `re.sub` to remove non-alphanumeric characters from it. Then compare the new string to the reversed.
 
 ```py
-def is_lower_case(str):
-    return str == str.lower()
+def palindrome(string):
+    from re import sub
+    s = sub('[\W_]', '', string.lower())
+    return s == s[::-1]
  
  ```
-
 <details><summary>View Examples</summary>
 
 ```py
 
-is_lower_case('abc') # True
-is_lower_case('a3@$') # True
-is_lower_case('Ab4') # False
+palindrome('taco cat') # True
 
 ```
 </details>

@@ -38,13 +38,13 @@ tag_dict = tagger()
 toAppend += '## Table of Contents \n'
 for category in tag_dict:
     toAppend = toAppend + '### ' + EMOJIS[category] + ' ' + title_case(category) +'\n\n<details><summary>View contents</summary> <ul>'
-    for snippet in tag_dict[category]:
+    for snippet in sorted(tag_dict[category]):
         toAppend += f'<li><a href = "#{snippet}"><code>{snippet}</code></a></li>\n'
     toAppend += '</ul></details>\n\n'
 toAppend += '<hr></hr> \n\n'
 for category in tag_dict:
     toAppend = toAppend + '## ' + EMOJIS[category] + ' ' + title_case(category) +'\n\n'
-    for snippet in tag_dict[category]:
+    for snippet in sorted(tag_dict[category]):
         someFile = open("snippets/" + snippet + '.md')
         fileData = someFile.read() 
         codeParts = re.split(codeRe,fileData)
