@@ -131,7 +131,7 @@ average(1, 2, 3);
 * [`join`](#join)
 * [`last`](#last)
 * [`longestItem`](#longestitem)
-* [`mapObject`](#mapobject)
+* [`mapObject`](#mapobject-)
 * [`maxN`](#maxn)
 * [`minN`](#minn)
 * [`nthElement`](#nthelement)
@@ -1590,7 +1590,7 @@ longestItem([1, 2, 3], 'foobar'); // 'foobar'
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### mapObject
+### mapObject ![advanced](/advanced.svg)
 
 Maps the values of an array to an object using a function, where the key-value pairs consist of the original value as the key and the mapped value.
 
