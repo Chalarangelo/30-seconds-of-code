@@ -1,4 +1,4 @@
-Test log for: Wed Feb 07 2018 11:29:34 GMT+0200 (GTB Standard Time)
+Test log for: Wed Feb 07 2018 11:34:35 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -416,6 +416,7 @@ Test log for: Wed Feb 07 2018 11:29:34 GMT+0200 (GTB Standard Time)
 
     √ flattenObject is a Function
     √ Flattens an object with the paths for keys
+    √ Works with arrays
 
   Testing flip
 
@@ -1740,8 +1741,8 @@ Test log for: Wed Feb 07 2018 11:29:34 GMT+0200 (GTB Standard Time)
     √ Works with multiple promises
 
 
-  total:     841
-  passing:   841
+  total:     842
+  passing:   842
   duration:  2.4s
 
 
