@@ -12,11 +12,11 @@ test('Testing stableSort', (t) => {
   
   // test if js engine's Array#sort implementation is stable
   // https://gist.github.com/leeoniya/5816476
-  var str = 'abcdefghijklmnopqrstuvwxyz';
-  var compare = (a, b) => ~~(str.indexOf(b) / 2.3) - ~~(str.indexOf(a) / 2.3);
+  const str = 'abcdefghijklmnopqrstuvwxyz';
+  const compare = (a, b) => ~~(str.indexOf(b) / 2.3) - ~~(str.indexOf(a) / 2.3);
 
-  var input = str.split('');
-  var output = stableSort(input, compare);
+  const input = str.split('');
+  const output = stableSort(input, compare);
 
   t.equal(output.join(''), 'xyzvwtursopqmnklhijfgdeabc');
   t.notDeepEqual(input, output);
