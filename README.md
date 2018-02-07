@@ -29,6 +29,7 @@
 <li><a href = "#shuffle"><code>shuffle</code></a></li>
 <li><a href = "#spread"><code>spread</code></a></li>
 <li><a href = "#zip"><code>zip</code></a></li>
+<li><a href = "#count_by"><code>count_by</code></a></li>
 </ul></details>
 
 ### :scroll: String
@@ -483,6 +484,35 @@ def zip(*args, fillvalue=None):
 zip(['a', 'b'], [1, 2], [True, False]) # [['a', 1, True], ['b', 2, False]]
 zip(['a'], [1, 2], [True, False]) # [['a', 1, True], [None, 2, False]]
 zip(['a'], [1, 2], [True, False], fill_value = '_') # [['a', 1, True], ['_', 2, False]]
+
+```
+</details>
+
+<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
+ 
+### count_by
+
+Groups the elements of a list based on the given function and returns the count of elements in each group.
+
+Use `map()` to map the values of the list using the given function. Iterate over the map and increase the the elements count each time it occurs.
+
+```py
+def count_by(arr, fn=lambda x: x):
+    key = {}
+    for el in map(fn, arr):
+        key[el] = 0 if not el in key else key[el]
+        key[el] += 1
+    return key
+ 
+ ```
+
+<details><summary>View Examples</summary>
+
+```py
+
+from math import floor
+count_by([6.1, 4.2, 6.3], floor) # {4: 1, 6: 2}
+count_by(['one', 'two', 'three'], len) # {3: 2, 5: 1}
 
 ```
 </details>
