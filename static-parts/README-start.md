@@ -32,6 +32,7 @@ CDN links
 - [ES5 Minified (UMD)](https://unpkg.com/30-seconds-of-code/dist/_30s.es5.min.js)
 
 <details>
+<summary>Details</summary>
 
 **Browser**
 
