@@ -15,9 +15,7 @@ const unflattenObject = obj =>
         acc,
         JSON.parse(
           '{' +
-            keys
-              .map((v, i) => (i !== keys.length - 1 ? `"${v}":{` : `"${v}":`))
-              .join('') +
+            keys.map((v, i) => (i !== keys.length - 1 ? `"${v}":{` : `"${v}":`)).join('') +
             obj[k] +
             '}'.repeat(keys.length)
         )
