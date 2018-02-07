@@ -1,4 +1,4 @@
-Test log for: Wed Feb 07 2018 11:34:35 GMT+0200 (GTB Standard Time)
+Test log for: Wed Feb 07 2018 12:22:33 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -189,6 +189,12 @@ Test log for: Wed Feb 07 2018 11:34:35 GMT+0200 (GTB Standard Time)
 
     √ composeRight is a Function
     √ Performs left-to-right function composition
+
+  Testing converge
+
+    √ converge is a Function
+    √ Produces the average of the array
+    √ Produces the strange concatenation
 
   Testing copyToClipboard
 
@@ -1319,7 +1325,6 @@ Test log for: Wed Feb 07 2018 11:34:35 GMT+0200 (GTB Standard Time)
   Testing shuffle
 
     √ shuffle is a Function
-    √ Shuffles the array
 
   Testing similarity
 
@@ -1741,8 +1746,8 @@ Test log for: Wed Feb 07 2018 11:34:35 GMT+0200 (GTB Standard Time)
     √ Works with multiple promises
 
 
-  total:     842
-  passing:   842
+  total:     844
+  passing:   844
   duration:  2.4s
 
 
