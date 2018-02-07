@@ -138,6 +138,8 @@ const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));
 
 const composeRight = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
 
+const converge = (converger, fns) => (...args) => converger(...fns.map(fn => fn.apply(null, args)));
+
 const copyToClipboard = str => {
   const el = document.createElement('textarea');
   el.value = str;
@@ -352,6 +354,14 @@ const flatten = (arr, depth = 1) =>
   depth !== 1
     ? arr.reduce((a, v) => a.concat(Array.isArray(v) ? flatten(v, depth - 1) : v), [])
     : arr.reduce((a, v) => a.concat(v), []);
+
+const flattenObject = (obj, prefix = '') =>
+  Object.keys(obj).reduce((acc, k) => {
+    const pre = prefix.length ? prefix + '.' : '';
+    if (typeof obj[k] === 'object') Object.assign(acc, flattenObject(obj[k], pre + k));
+    else acc[pre + k] = obj[k];
+    return acc;
+  }, {});
 
 const flip = fn => (first, ...rest) => fn(...rest, first);
 
@@ -1278,6 +1288,23 @@ const unescapeHTML = str =>
       }[tag] || tag)
   );
 
+const unflattenObject = obj =>
+  Object.keys(obj).reduce((acc, k) => {
+    if (k.indexOf('.') !== -1) {
+      const keys = k.split('.');
+      Object.assign(
+        acc,
+        JSON.parse(
+          '{' +
+            keys.map((v, i) => (i !== keys.length - 1 ? `"${v}":{` : `"${v}":`)).join('') +
+            obj[k] +
+            '}'.repeat(keys.length)
+        )
+      );
+    } else acc[k] = obj[k];
+    return acc;
+  }, {});
+
 const unfold = (fn, seed) => {
   let result = [],
     val = [null, seed];
@@ -1349,6 +1376,6 @@ const zipWith = (...arrays) => {
   return fn ? result.map(arr => fn(...arr)) : result;
 };
 
-var imports = {JSONToFile,RGBToHex,URLJoin,UUIDGeneratorBrowser,UUIDGeneratorNode,anagrams,arrayToHtmlList,ary,atob,attempt,average,averageBy,bind,bindAll,bindKey,bottomVisible,btoa,byteSize,call,capitalize,capitalizeEveryWord,castArray,chainAsync,chunk,clampNumber,cloneRegExp,coalesce,coalesceFactory,collectInto,colorize,compact,compose,composeRight,copyToClipboard,countBy,countOccurrences,createElement,createEventHub,currentURL,curry,debounce,decapitalize,deepClone,deepFlatten,defaults,defer,delay,detectDeviceType,difference,differenceBy,differenceWith,digitize,distance,drop,dropRight,dropRightWhile,dropWhile,elementIsVisibleInViewport,elo,equals,escapeHTML,escapeRegExp,everyNth,extendHex,factorial,fibonacci,filterNonUnique,findKey,findLast,findLastIndex,findLastKey,flatten,flip,forEachRight,forOwn,forOwnRight,formatDuration,fromCamelCase,functionName,functions,gcd,geometricProgression,get,getColonTimeFromDate,getDaysDiffBetweenDates,getMeridiemSuffixOfInteger,getScrollPosition,getStyle,getType,getURLParameters,groupBy,hammingDistance,hasClass,hasFlags,hashBrowser,hashNode,head,hexToRGB,hide,httpGet,httpPost,httpsRedirect,inRange,indexOfAll,initial,initialize2DArray,initializeArrayWithRange,initializeArrayWithRangeRight,initializeArrayWithValues,intersection,intersectionBy,intersectionWith,invertKeyValues,is,isAbsoluteURL,isArrayLike,isBoolean,isDivisible,isEmpty,isEven,isFunction,isLowerCase,isNil,isNull,isNumber,isObject,isObjectLike,isPlainObject,isPrime,isPrimitive,isPromiseLike,isSorted,isString,isSymbol,isTravisCI,isUndefined,isUpperCase,isValidJSON,join,last,lcm,longestItem,lowercaseKeys,luhnCheck,mapKeys,mapObject,mapValues,mask,matches,matchesWith,maxBy,maxN,median,memoize,merge,minBy,minN,negate,nthArg,nthElement,objectFromPairs,objectToPairs,observeMutations,off,omit,omitBy,on,onUserInputChange,once,orderBy,over,overArgs,palindrome,parseCookie,partial,partialRight,partition,percentile,pick,pickBy,pipeAsyncFunctions,pipeFunctions,pluralize,powerset,prettyBytes,primes,promisify,pull,pullAtIndex,pullAtValue,pullBy,randomHexColorCode,randomIntArrayInRange,randomIntegerInRange,randomNumberInRange,readFileLines,rearg,redirect,reduceSuccessive,reduceWhich,reducedFilter,remove,removeNonASCII,reverseString,round,runAsync,runPromisesInSeries,sample,sampleSize,scrollToTop,sdbm,serializeCookie,setStyle,shallowClone,show,shuffle,similarity,size,sleep,sortCharactersInString,sortedIndex,sortedIndexBy,sortedLastIndex,sortedLastIndexBy,splitLines,spreadOver,standardDeviation,stripHTMLTags,sum,sumBy,sumPower,symmetricDifference,symmetricDifferenceBy,symmetricDifferenceWith,tail,take,takeRight,takeRightWhile,takeWhile,throttle,timeTaken,times,toCamelCase,toCurrency,toDecimalMark,toKebabCase,toOrdinalSuffix,toSafeInteger,toSnakeCase,toggleClass,tomorrow,transform,truncateString,truthCheckCollection,unary,unescapeHTML,unfold,union,unionBy,unionWith,uniqueElements,untildify,unzip,unzipWith,validateNumber,without,words,xProd,yesNo,zip,zipObject,zipWith,}
+var imports = {JSONToFile,RGBToHex,URLJoin,UUIDGeneratorBrowser,UUIDGeneratorNode,anagrams,arrayToHtmlList,ary,atob,attempt,average,averageBy,bind,bindAll,bindKey,bottomVisible,btoa,byteSize,call,capitalize,capitalizeEveryWord,castArray,chainAsync,chunk,clampNumber,cloneRegExp,coalesce,coalesceFactory,collectInto,colorize,compact,compose,composeRight,converge,copyToClipboard,countBy,countOccurrences,createElement,createEventHub,currentURL,curry,debounce,decapitalize,deepClone,deepFlatten,defaults,defer,delay,detectDeviceType,difference,differenceBy,differenceWith,digitize,distance,drop,dropRight,dropRightWhile,dropWhile,elementIsVisibleInViewport,elo,equals,escapeHTML,escapeRegExp,everyNth,extendHex,factorial,fibonacci,filterNonUnique,findKey,findLast,findLastIndex,findLastKey,flatten,flattenObject,flip,forEachRight,forOwn,forOwnRight,formatDuration,fromCamelCase,functionName,functions,gcd,geometricProgression,get,getColonTimeFromDate,getDaysDiffBetweenDates,getMeridiemSuffixOfInteger,getScrollPosition,getStyle,getType,getURLParameters,groupBy,hammingDistance,hasClass,hasFlags,hashBrowser,hashNode,head,hexToRGB,hide,httpGet,httpPost,httpsRedirect,inRange,indexOfAll,initial,initialize2DArray,initializeArrayWithRange,initializeArrayWithRangeRight,initializeArrayWithValues,intersection,intersectionBy,intersectionWith,invertKeyValues,is,isAbsoluteURL,isArrayLike,isBoolean,isDivisible,isEmpty,isEven,isFunction,isLowerCase,isNil,isNull,isNumber,isObject,isObjectLike,isPlainObject,isPrime,isPrimitive,isPromiseLike,isSorted,isString,isSymbol,isTravisCI,isUndefined,isUpperCase,isValidJSON,join,last,lcm,longestItem,lowercaseKeys,luhnCheck,mapKeys,mapObject,mapValues,mask,matches,matchesWith,maxBy,maxN,median,memoize,merge,minBy,minN,negate,nthArg,nthElement,objectFromPairs,objectToPairs,observeMutations,off,omit,omitBy,on,onUserInputChange,once,orderBy,over,overArgs,palindrome,parseCookie,partial,partialRight,partition,percentile,pick,pickBy,pipeAsyncFunctions,pipeFunctions,pluralize,powerset,prettyBytes,primes,promisify,pull,pullAtIndex,pullAtValue,pullBy,randomHexColorCode,randomIntArrayInRange,randomIntegerInRange,randomNumberInRange,readFileLines,rearg,redirect,reduceSuccessive,reduceWhich,reducedFilter,remove,removeNonASCII,reverseString,round,runAsync,runPromisesInSeries,sample,sampleSize,scrollToTop,sdbm,serializeCookie,setStyle,shallowClone,show,shuffle,similarity,size,sleep,sortCharactersInString,sortedIndex,sortedIndexBy,sortedLastIndex,sortedLastIndexBy,splitLines,spreadOver,standardDeviation,stripHTMLTags,sum,sumBy,sumPower,symmetricDifference,symmetricDifferenceBy,symmetricDifferenceWith,tail,take,takeRight,takeRightWhile,takeWhile,throttle,timeTaken,times,toCamelCase,toCurrency,toDecimalMark,toKebabCase,toOrdinalSuffix,toSafeInteger,toSnakeCase,toggleClass,tomorrow,transform,truncateString,truthCheckCollection,unary,unescapeHTML,unflattenObject,unfold,union,unionBy,unionWith,uniqueElements,untildify,unzip,unzipWith,validateNumber,without,words,xProd,yesNo,zip,zipObject,zipWith,}
 
 export default imports;
