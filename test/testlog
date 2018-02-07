@@ -1,4 +1,4 @@
-Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
+Test log for: Tue Feb 06 2018 20:19:07 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.1 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -11,10 +11,6 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
   Testing JSONToFile
 
     ✔ JSONToFile is a Function
-
-  Testing README
-
-    ✔ README is a Function
 
   Testing RGBToHex
 
@@ -39,10 +35,29 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
 
     ✔ anagrams is a Function
     ✔ Generates all anagrams of a string
+    ✔ Works for single-letter strings
+    ✔ Works for empty strings
 
   Testing arrayToHtmlList
 
     ✔ arrayToHtmlList is a Function
+
+  Testing ary
+
+    ✔ ary is a Function
+    ✔ Discards arguments with index >=n
+
+  Testing atob
+
+    ✔ atob is a Function
+    ✔ atob("Zm9vYmFy") equals "foobar"
+    ✔ atob("Z") returns ""
+
+  Testing attempt
+
+    ✔ attempt is a Function
+    ✔ Returns a value
+    ✔ Returns an error
 
   Testing average
 
@@ -62,14 +77,40 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
   Testing averageBy
 
     ✔ averageBy is a Function
+    ✔ Produces the right result with a function
+    ✔ Produces the right result with a property name
 
   Testing binarySearch
 
     ✔ binarySearch is a Function
+    ✔ Finds item in array
+    ✔ Returns -1 when not found
+    ✔ Works with empty arrays
+    ✔ Works for one element arrays
+
+  Testing bind
+
+    ✔ bind is a Function
+    ✔ Binds to an object context
+
+  Testing bindAll
+
+    ✔ bindAll is a Function
+    ✔ Binds to an object context
+
+  Testing bindKey
+
+    ✔ bindKey is a Function
+    ✔ Binds function to an object context
 
   Testing bottomVisible
 
     ✔ bottomVisible is a Function
+
+  Testing btoa
+
+    ✔ btoa is a Function
+    ✔ btoa("foobar") equals "Zm9vYmFy"
 
   Testing byteSize
 
@@ -78,17 +119,31 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
   Testing call
 
     ✔ call is a Function
+    ✔ Calls function on given object
 
   Testing capitalize
 
     ✔ capitalize is a Function
     ✔ Capitalizes the first letter of a string
     ✔ Capitalizes the first letter of a string
+    ✔ Works with characters
+    ✔ Works with single character words
 
   Testing capitalizeEveryWord
 
     ✔ capitalizeEveryWord is a Function
     ✔ Capitalizes the first letter of every word in a string
+    ✔ Works with characters
+    ✔ Works with one word string
+
+  Testing castArray
+
+    ✔ castArray is a Function
+    ✔ Works for single values
+    ✔ Works for arrays with one value
+    ✔ Works for arrays with multiple value
+    ✔ Works for strings
+    ✔ Works for objects
 
   Testing chainAsync
 
@@ -120,6 +175,7 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
   Testing cloneRegExp
 
     ✔ cloneRegExp is a Function
+    ✔ Clones regular expressions properly
 
   Testing coalesce
 
@@ -134,6 +190,9 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
   Testing collatz
 
     ✔ collatz is a Function
+    ✔ When n is even, divide by 2
+    ✔ When n is odd, times by 3 and add 1
+    ✔ Eventually reaches 1
 
   Testing collectInto
 
@@ -153,6 +212,11 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
     ✔ compose is a Function
     ✔ Performs right-to-left function composition
 
+  Testing composeRight
+
+    ✔ composeRight is a Function
+    ✔ Performs left-to-right function composition
+
   Testing copyToClipboard
 
     ✔ copyToClipboard is a Function
@@ -160,6 +224,8 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
   Testing countBy
 
     ✔ countBy is a Function
+    ✔ Works for functions
+    ✔ Works for property names
 
   Testing countOccurrences
 
@@ -188,18 +254,38 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
     ✔ curries a Math.pow
     ✔ curries a Math.min
 
+  Testing debounce
+
+    ✔ debounce is a Function
+
   Testing decapitalize
 
     ✔ decapitalize is a Function
+    ✔ Works with default parameter
+    ✔ Works with second parameter set to true
+
+  Testing deepClone
+
+    ✔ deepClone is a Function
+    ✔ Shallow cloning works
+    ✔ Deep cloning works
 
   Testing deepFlatten
 
     ✔ deepFlatten is a Function
     ✔ Deep flattens an array
 
+  Testing defaults
+
+    ✔ defaults is a Function
+
   Testing defer
 
     ✔ defer is a Function
+
+  Testing delay
+
+    ✔ delay is a Function
 
   Testing detectDeviceType
 
@@ -209,6 +295,12 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
 
     ✔ difference is a Function
     ✔ Returns the difference between two arrays
+
+  Testing differenceBy
+
+    ✔ differenceBy is a Function
+    ✔ Works using a native function and numbers
+    ✔ Works with arrow function and objects
 
   Testing differenceWith
 
@@ -223,11 +315,14 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
   Testing distance
 
     ✔ distance is a Function
+    ✔ Calculates the distance between two points
 
-  Testing dropElements
+  Testing drop
 
-    ✔ dropElements is a Function
-    ✔ Removes elements in an array until the passed function returns true
+    ✔ drop is a Function
+    ✔ Works without the last argument
+    ✔ Removes appropriate element count as specified
+    ✔ Empties array given a count greater than length
 
   Testing dropRight
 
@@ -235,6 +330,16 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
     ✔ Returns a new array with n elements removed from the right
     ✔ Returns a new array with n elements removed from the right
     ✔ Returns a new array with n elements removed from the right
+
+  Testing dropRightWhile
+
+    ✔ dropRightWhile is a Function
+    ✔ Removes elements from the end of an array until the passed function returns true.
+
+  Testing dropWhile
+
+    ✔ dropWhile is a Function
+    ✔ Removes elements in an array until the passed function returns true.
 
   Testing elementIsVisibleInViewport
 
@@ -308,9 +413,25 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
     ✔ filterNonUnique is a Function
     ✔ Filters out the non-unique values in an array
 
+  Testing findKey
+
+    ✔ findKey is a Function
+    ✔ Returns the appropriate key
+
   Testing findLast
 
     ✔ findLast is a Function
+    ✔ Finds last element for which the given function returns true
+
+  Testing findLastIndex
+
+    ✔ findLastIndex is a Function
+    ✔ Finds last index for which the given function returns true
+
+  Testing findLastKey
+
+    ✔ findLastKey is a Function
+    ✔ Returns the appropriate key
 
   Testing flatten
 
@@ -321,10 +442,22 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
   Testing flip
 
     ✔ flip is a Function
+    ✔ Flips argument order
 
   Testing forEachRight
 
     ✔ forEachRight is a Function
+    ✔ Iterates over the array in reverse
+
+  Testing forOwn
+
+    ✔ forOwn is a Function
+    ✔ Iterates over an element's key-value pairs
+
+  Testing forOwnRight
+
+    ✔ forOwnRight is a Function
+    ✔ Iterates over an element's key-value pairs in reverse
 
   Testing formatDuration
 
@@ -346,6 +479,8 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
   Testing functions
 
     ✔ functions is a Function
+    ✔ Returns own methods
+    ✔ Returns own and inherited methods
 
   Testing gcd
 
@@ -360,10 +495,23 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
     ✔ Initializes an array containing the numbers in the specified range
     ✔ Initializes an array containing the numbers in the specified range
 
+  Testing get
+
+    ✔ get is a Function
+    ✔ Retrieve a property indicated by the selector from an object.
+
+  Testing getColonTimeFromDate
+
+    ✔ getColonTimeFromDate is a Function
+
   Testing getDaysDiffBetweenDates
 
     ✔ getDaysDiffBetweenDates is a Function
     ✔ Returns the difference in days between two dates
+
+  Testing getMeridiemSuffixOfInteger
+
+    ✔ getMeridiemSuffixOfInteger is a Function
 
   Testing getScrollPosition
 
@@ -500,14 +648,41 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
     ✔ intersection is a Function
     ✔ Returns a list of elements that exist in both arrays
 
+  Testing intersectionBy
+
+    ✔ intersectionBy is a Function
+    ✔ Returns a list of elements that exist in both arrays, after applying the provided function to each array element of both
+
+  Testing intersectionWith
+
+    ✔ intersectionWith is a Function
+    ✔ Returns a list of elements that exist in both arrays, using a provided comparator function
+
   Testing invertKeyValues
 
     ✔ invertKeyValues is a Function
-    ✔ Inverts the key-value pairs of an object
+    ✔ invertKeyValues({ a: 1, b: 2, c: 1 }) returns { 1: [ 'a', 'c' ], 2: [ 'b' ] }
+    ✔ invertKeyValues({ a: 1, b: 2, c: 1 }, value => 'group' + value) returns { group1: [ 'a', 'c' ], group2: [ 'b' ] }
 
   Testing is
 
     ✔ is is a Function
+    ✔ Works for arrays with data
+    ✔ Works for empty arrays
+    ✔ Works for arrays, not objects
+    ✔ Works for objects
+    ✔ Works for maps
+    ✔ Works for regular expressions
+    ✔ Works for sets
+    ✔ Works for weak maps
+    ✔ Works for weak sets
+    ✔ Works for strings - returns false for primitive
+    ✔ Works for strings - returns true when using constructor
+    ✔ Works for numbers - returns false for primitive
+    ✔ Works for numbers - returns true when using constructor
+    ✔ Works for booleans - returns false for primitive
+    ✔ Works for booleans - returns true when using constructor
+    ✔ Works for functions
 
   Testing isAbsoluteURL
 
@@ -533,6 +708,9 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
   Testing isArrayLike
 
     ✔ isArrayLike is a Function
+    ✔ Returns true for a string
+    ✔ Returns true for an array
+    ✔ Returns false for null
 
   Testing isBoolean
 
@@ -544,6 +722,20 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
 
     ✔ isDivisible is a Function
     ✔ The number 6 is divisible by 3
+
+  Testing isEmpty
+
+    ✔ isEmpty is a Function
+    ✔ Returns true for empty Map
+    ✔ Returns true for empty Set
+    ✔ Returns true for empty array
+    ✔ Returns true for empty object
+    ✔ Returns true for empty string
+    ✔ Returns false for non-empty array
+    ✔ Returns false for non-empty object
+    ✔ Returns false for non-empty string
+    ✔ Returns true - type is not considered a collection
+    ✔ Returns true - type is not considered a collection
 
   Testing isEven
 
@@ -571,6 +763,9 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
   Testing isNil
 
     ✔ isNil is a Function
+    ✔ Returns true for null
+    ✔ Returns true for undefined
+    ✔ Returns false for an empty string
 
   Testing isNull
 
@@ -591,6 +786,20 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
     ✔ isObject([]) is a object
     ✔ isObject({ a:1 }) is a object
     ✔ isObject(true) is not a object
+
+  Testing isObjectLike
+
+    ✔ isObjectLike is a Function
+    ✔ Returns true for an object
+    ✔ Returns true for an array
+    ✔ Returns false for a function
+    ✔ Returns false for null
+
+  Testing isPlainObject
+
+    ✔ isPlainObject is a Function
+    ✔ Returns true for a plain object
+    ✔ Returns false for a Map (example of non-plain object)
 
   Testing isPrime
 
@@ -615,6 +824,9 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
   Testing isPromiseLike
 
     ✔ isPromiseLike is a Function
+    ✔ Returns true for a promise-like object
+    ✔ Returns false for null
+    ✔ Returns false for an empty object
 
   Testing isRegExp
 
@@ -656,6 +868,7 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
   Testing isUndefined
 
     ✔ isUndefined is a Function
+    ✔ Returns true for undefined
 
   Testing isUpperCase
 
@@ -712,6 +925,8 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
   Testing lowercaseKeys
 
     ✔ lowercaseKeys is a Function
+    ✔ Lowercases object keys
+    ✔ Does not mutate original object
 
   Testing luhnCheck
 
@@ -723,6 +938,7 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
   Testing mapKeys
 
     ✔ mapKeys is a Function
+    ✔ Maps keys
 
   Testing mapObject
 
@@ -732,6 +948,7 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
   Testing mapValues
 
     ✔ mapValues is a Function
+    ✔ Maps values
 
   Testing mask
 
@@ -740,9 +957,22 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
     ✔ Replaces all but the last num of characters with the specified mask character
     ✔ Replaces all but the last num of characters with the specified mask character
 
+  Testing matches
+
+    ✔ matches is a Function
+    ✔ Matches returns true for two similar objects
+    ✔ Matches returns false for two non-similar objects
+
+  Testing matchesWith
+
+    ✔ matchesWith is a Function
+    ✔ Returns true for two objects with similar values, based on the provided function
+
   Testing maxBy
 
     ✔ maxBy is a Function
+    ✔ Produces the right result with a function
+    ✔ Produces the right result with a property name
 
   Testing maxN
 
@@ -759,14 +989,20 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
   Testing memoize
 
     ✔ memoize is a Function
+    ✔ Function works properly
+    ✔ Function works properly
+    ✔ Cache stores values
 
   Testing merge
 
     ✔ merge is a Function
+    ✔ Merges two objects
 
   Testing minBy
 
     ✔ minBy is a Function
+    ✔ Produces the right result with a function
+    ✔ Produces the right result with a property name
 
   Testing minN
 
@@ -778,6 +1014,13 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
 
     ✔ negate is a Function
     ✔ Negates a predicate function
+
+  Testing nthArg
+
+    ✔ nthArg is a Function
+    ✔ Returns the nth argument
+    ✔ Returns undefined if arguments too few
+    ✔ Works for negative values
 
   Testing nthElement
 
@@ -803,6 +1046,16 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
 
     ✔ off is a Function
 
+  Testing omit
+
+    ✔ omit is a Function
+    ✔ Omits the key-value pairs corresponding to the given keys from an object
+
+  Testing omitBy
+
+    ✔ omitBy is a Function
+    ✔ Creates an object composed of the properties the given function returns falsey for
+
   Testing on
 
     ✔ on is a Function
@@ -821,6 +1074,16 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
     ✔ Returns a sorted array of objects ordered by properties and orders.
     ✔ Returns a sorted array of objects ordered by properties and orders.
 
+  Testing over
+
+    ✔ over is a Function
+    ✔ Applies given functions over multiple arguments
+
+  Testing overArgs
+
+    ✔ overArgs is a Function
+    ✔ Invokes the provided function with its arguments transformed
+
   Testing palindrome
 
     ✔ palindrome is a Function
@@ -830,6 +1093,17 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
   Testing parseCookie
 
     ✔ parseCookie is a Function
+    ✔ Parses the cookie
+
+  Testing partial
+
+    ✔ partial is a Function
+    ✔ Prepends arguments
+
+  Testing partialRight
+
+    ✔ partialRight is a Function
+    ✔ Appends arguments
 
   Testing partition
 
@@ -846,13 +1120,30 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
     ✔ pick is a Function
     ✔ Picks the key-value pairs corresponding to the given keys from an object.
 
+  Testing pickBy
+
+    ✔ pickBy is a Function
+    ✔ Creates an object composed of the properties the given function returns truthy for.
+
+  Testing pipeAsyncFunctions
+
+    ✔ pipeAsyncFunctions is a Function
+    ✔ Produces the appropriate hash
+    ✔ pipeAsyncFunctions result should be 15
+
   Testing pipeFunctions
 
     ✔ pipeFunctions is a Function
+    ✔ Performs left-to-right function composition
 
   Testing pluralize
 
     ✔ pluralize is a Function
+    ✔ Produces the plural of the word
+    ✔ Produces the singular of the word
+    ✔ Produces the plural of the word
+    ✔ Prodices the defined plural of the word
+    ✔ Works with a dictionary
 
   Testing powerset
 
@@ -878,14 +1169,24 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
   Testing pull
 
     ✔ pull is a Function
+    ✔ Pulls the specified values
 
   Testing pullAtIndex
 
     ✔ pullAtIndex is a Function
+    ✔ Pulls the given values
+    ✔ Pulls the given values
 
   Testing pullAtValue
 
     ✔ pullAtValue is a Function
+    ✔ Pulls the specified values
+    ✔ Pulls the specified values
+
+  Testing pullBy
+
+    ✔ pullBy is a Function
+    ✔ Pulls the specified values
 
   Testing quickSort
 
@@ -902,6 +1203,7 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
   Testing randomHexColorCode
 
     ✔ randomHexColorCode is a Function
+    ✔ should be equal
 
   Testing randomIntArrayInRange
 
@@ -919,9 +1221,26 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
 
     ✔ readFileLines is a Function
 
+  Testing rearg
+
+    ✔ rearg is a Function
+    ✔ Reorders arguments in invoked function
+
   Testing redirect
 
     ✔ redirect is a Function
+
+  Testing reduceSuccessive
+
+    ✔ reduceSuccessive is a Function
+    ✔ Returns the array of successively reduced values
+
+  Testing reduceWhich
+
+    ✔ reduceWhich is a Function
+    ✔ Returns the minimum of an array
+    ✔ Returns the maximum of an array
+    ✔ Returns the object with the minimum specified value in an array
 
   Testing reducedFilter
 
@@ -932,6 +1251,11 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
 
     ✔ remove is a Function
     ✔ Removes elements from an array for which the given function returns false
+
+  Testing removeNonASCII
+
+    ✔ removeNonASCII is a Function
+    ✔ Removes non-ASCII characters
 
   Testing removeVowels
 
@@ -945,7 +1269,16 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
   Testing round
 
     ✔ round is a Function
-    ✔ Rounds a number to a specified amount of digits.
+    ✔ round(1.005, 2) returns 1.01
+    ✔ round(123.3423345345345345344, 11) returns 123.34233453453
+    ✔ round(3.342, 11) returns 3.342
+    ✔ round(1.005) returns 1
+    ✔ round([1.005, 2]) returns NaN
+    ✔ round(string) returns NaN
+    ✔ round() returns NaN
+    ✔ round(132, 413, 4134) returns NaN
+    ✔ round({a: 132}, 413) returns NaN
+    ✔ round(123.3423345345345345344, 11) takes less than 2s to run
 
   Testing runAsync
 
@@ -972,14 +1305,10 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
     ✔ sdbm is a Function
     ✔ Hashes the input string into a whole number.
 
-  Testing select
-
-    ✔ select is a Function
-    ✔ Retrieve a property indicated by the selector from an object.
-
   Testing serializeCookie
 
     ✔ serializeCookie is a Function
+    ✔ Serializes the cookie
 
   Testing setStyle
 
@@ -988,6 +1317,8 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
   Testing shallowClone
 
     ✔ shallowClone is a Function
+    ✔ Shallow cloning works
+    ✔ Does not clone deeply
 
   Testing show
 
@@ -996,6 +1327,7 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
   Testing shuffle
 
     ✔ shuffle is a Function
+    ✔ Shuffles the array
 
   Testing similarity
 
@@ -1027,6 +1359,21 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
     ✔ Returns the lowest index at which value should be inserted into array in order to maintain its sort order.
     ✔ Returns the lowest index at which value should be inserted into array in order to maintain its sort order.
 
+  Testing sortedIndexBy
+
+    ✔ sortedIndexBy is a Function
+    ✔ Returns the lowest index to insert the element without messing up the list order
+
+  Testing sortedLastIndex
+
+    ✔ sortedLastIndex is a Function
+    ✔ Returns the highest index to insert the element without messing up the list order
+
+  Testing sortedLastIndexBy
+
+    ✔ sortedLastIndexBy is a Function
+    ✔ Returns the highest index to insert the element without messing up the list order
+
   Testing speechSynthesis
 
     ✔ speechSynthesis is a Function
@@ -1046,6 +1393,11 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
     ✔ standardDeviation is a Function
     ✔ Returns the standard deviation of an array of numbers
     ✔ Returns the standard deviation of an array of numbers
+
+  Testing stripHTMLTags
+
+    ✔ stripHTMLTags is a Function
+    ✔ Removes HTML tags
 
   Testing sum
 
@@ -1068,6 +1420,16 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
     ✔ symmetricDifference is a Function
     ✔ Returns the symmetric difference between two arrays.
 
+  Testing symmetricDifferenceBy
+
+    ✔ symmetricDifferenceBy is a Function
+    ✔ Returns the symmetric difference between two arrays, after applying the provided function to each array element of both
+
+  Testing symmetricDifferenceWith
+
+    ✔ symmetricDifferenceWith is a Function
+    ✔ Returns the symmetric difference between two arrays, using a provided function as a comparator
+
   Testing tail
 
     ✔ tail is a Function
@@ -1086,17 +1448,45 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
     ✔ Returns an array with n elements removed from the end
     ✔ Returns an array with n elements removed from the end
 
+  Testing takeRightWhile
+
+    ✔ takeRightWhile is a Function
+    ✔ Removes elements until the function returns true
+
+  Testing takeWhile
+
+    ✔ takeWhile is a Function
+    ✔ Removes elements until the function returns true
+
+  Testing throttle
+
+    ✔ throttle is a Function
+
   Testing timeTaken
 
     ✔ timeTaken is a Function
 
+  Testing times
+
+    ✔ times is a Function
+    ✔ Runs a function the specified amount of times
+
   Testing toCamelCase
 
     ✔ toCamelCase is a Function
-    ✔ Converts a string to camelCase
-    ✔ Converts a string to camelCase
-    ✔ Converts a string to camelCase
-    ✔ Converts a string to camelCase
+    ✔ toCamelCase('some_database_field_name') returns someDatabaseFieldName
+    ✔ toCamelCase('Some label that needs to be camelized') returns someLabelThatNeedsToBeCamelized
+    ✔ toCamelCase('some-javascript-property') return someJavascriptProperty
+    ✔ toCamelCase('some-mixed_string with spaces_underscores-and-hyphens') returns someMixedStringWithSpacesUnderscoresAndHyphens
+    ✔ toCamelCase() throws a error
+    ✔ toCamelCase([]) throws a error
+    ✔ toCamelCase({}) throws a error
+    ✔ toCamelCase(123) throws a error
+    ✔ toCamelCase(some-mixed_string with spaces_underscores-and-hyphens) takes less than 2s to run
+
+  Testing toCurrency
+
+    ✔ toCurrency is a Function
 
   Testing toDecimalMark
 
@@ -1106,10 +1496,15 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
   Testing toKebabCase
 
     ✔ toKebabCase is a Function
-    ✔ string converts to snake case
-    ✔ string converts to snake case
-    ✔ string converts to snake case
-    ✔ string converts to snake case
+    ✔ toKebabCase('camelCase') returns camel-case
+    ✔ toKebabCase('some text') returns some-text
+    ✔ toKebabCase('some-mixed-string With spaces-underscores-and-hyphens') returns some-mixed-string-with-spaces-underscores-and-hyphens
+    ✔ toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') returns i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html
+    ✔ toKebabCase() return undefined
+    ✔ toKebabCase([]) throws an error
+    ✔ toKebabCase({}) throws an error
+    ✔ toKebabCase(123) throws an error
+    ✔ toKebabCase(IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML) takes less than 2s to run
 
   Testing toOrdinalSuffix
 
@@ -1122,19 +1517,30 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
   Testing toSafeInteger
 
     ✔ toSafeInteger is a Function
+    ✔ Number(toSafeInteger(3.2)) is a number
     ✔ Converts a value to a safe integer
-    ✔ Converts a value to a safe integer
-    ✔ Converts a value to a safe integer
-    ✔ Converts a value to a safe integer
-    ✔ Converts a value to a safe integer
+    ✔ toSafeInteger('4.2') returns 4
+    ✔ toSafeInteger(4.6) returns 5
+    ✔ toSafeInteger([]) returns 0
+    ✔ isNaN(toSafeInteger([1.5, 3124])) is true
+    ✔ isNaN(toSafeInteger('string')) is true
+    ✔ isNaN(toSafeInteger({})) is true
+    ✔ isNaN(toSafeInteger()) is true
+    ✔ toSafeInteger(Infinity) returns 9007199254740991
+    ✔ toSafeInteger(3.2) takes less than 2s to run
 
   Testing toSnakeCase
 
     ✔ toSnakeCase is a Function
-    ✔ string converts to snake case
-    ✔ string converts to snake case
-    ✔ string converts to snake case
-    ✔ string converts to snake case
+    ✔ toSnakeCase('camelCase') returns camel_case
+    ✔ toSnakeCase('some text') returns some_text
+    ✔ toSnakeCase('some-mixed_string With spaces_underscores-and-hyphens') returns some_mixed_string_with_spaces_underscores_and_hyphens
+    ✔ toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') returns i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html
+    ✔ toSnakeCase() returns undefined
+    ✔ toSnakeCase([]) throws an error
+    ✔ toSnakeCase({}) throws an error
+    ✔ toSnakeCase(123) throws an error
+    ✔ toSnakeCase(IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML) takes less than 2s to run
 
   Testing toggleClass
 
@@ -1147,6 +1553,7 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
   Testing transform
 
     ✔ transform is a Function
+    ✔ Transforms an object
 
   Testing truncateString
 
@@ -1158,24 +1565,76 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
     ✔ truthCheckCollection is a Function
     ✔ second argument is truthy on all elements of a collection
 
+  Testing unary
+
+    ✔ unary is a Function
+    ✔ Discards arguments after the first one
+
   Testing unescapeHTML
 
     ✔ unescapeHTML is a Function
     ✔ Unescapes escaped HTML characters.
 
+  Testing unfold
+
+    ✔ unfold is a Function
+    ✔ Works with a given function, producing an array
+
   Testing union
 
     ✔ union is a Function
-    ✔ Returns every element that exists in any of the two arrays once
+    ✔ union([1, 2, 3], [4, 3, 2]) returns [1, 2, 3, 4]
+    ✔ union('str', 'asd') returns [ 's', 't', 'r', 'a', 'd' ]
+    ✔ union([[], {}], [1, 2, 3]) returns [[], {}, 1, 2, 3]
+    ✔ union([], []) returns []
+    ✔ union() throws an error
+    ✔ union(true, str) throws an error
+    ✔ union(false, true) throws an error
+    ✔ union(123, {}) throws an error
+    ✔ union([], {}) throws an error
+    ✔ union(undefined, null) throws an error
+    ✔ union([1, 2, 3], [4, 3, 2]) takes less than 2s to run
+
+  Testing unionBy
+
+    ✔ unionBy is a Function
+    ✔ Produces the appropriate results
+
+  Testing unionWith
+
+    ✔ unionWith is a Function
+    ✔ Produces the appropriate results
 
   Testing uniqueElements
 
     ✔ uniqueElements is a Function
-    ✔ Returns all unique values of an array
+    ✔ uniqueElements([1, 2, 2, 3, 4, 4, 5]) returns [1,2,3,4,5]
+    ✔ uniqueElements([1, 23, 53]) returns [1, 23, 53]
+    ✔ uniqueElements([true, 0, 1, false, false, undefined, null, '']) returns [true, 0, 1, false, false, undefined, null, '']
+    ✔ uniqueElements() returns []
+    ✔ uniqueElements(null) returns []
+    ✔ uniqueElements(undefined) returns []
+    ✔ uniqueElements('strt') returns ['s', 't', 'r']
+    ✔ uniqueElements(1, 1, 2543, 534, 5) throws an error
+    ✔ uniqueElements({}) throws an error
+    ✔ uniqueElements(true) throws an error
+    ✔ uniqueElements(false) throws an error
+    ✔ uniqueElements([true, 0, 1, false, false, undefined, null]) takes less than 2s to run
 
   Testing untildify
 
     ✔ untildify is a Function
+
+  Testing unzip
+
+    ✔ unzip is a Function
+    ✔ unzip([['a', 1, true], ['b', 2, false]]) equals [['a', 'b'], [1, 2], [true, false]]
+    ✔ unzip([['a', 1, true], ['b', 2]]) equals [['a', 'b'], [1, 2], [true]]
+
+  Testing unzipWith
+
+    ✔ unzipWith is a Function
+    ✔ unzipWith([[1, 10, 100], [2, 20, 200]], (...args) => args.reduce((acc, v) => acc + v, 0)) equals [3, 30, 300]
 
   Testing validateNumber
 
@@ -1219,6 +1678,11 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
     ✔ words([]) throws a error
     ✔ words(1234) throws a error
 
+  Testing xProd
+
+    ✔ xProd is a Function
+    ✔ xProd([1, 2], ['a', 'b']) returns [[1, 'a'], [1, 'b'], [2, 'a'], [2, 'b']]
+
   Testing yesNo
 
     ✔ yesNo is a Function
@@ -1260,9 +1724,14 @@ Test log for: Wed Jan 17 2018 20:11:11 GMT+0000 (UTC)
     ✔ zipObject(string) throws an error
     ✔ zipObject(test, string) throws an error
 
+  Testing zipWith
 
-  total:     554
-  passing:   554
-  duration:  329ms
+    ✔ zipWith is a Function
+    ✔ Works with multiple promises
+
+
+  total:     837
+  passing:   837
+  duration:  2.3s
 
 

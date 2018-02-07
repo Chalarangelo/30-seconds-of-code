@@ -2,7 +2,7 @@
 
 # 30 seconds of code
 
-[![License](https://img.shields.io/badge/license-CC0--1.0-blue.svg)](https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE) [![npm Downloads](https://img.shields.io/npm/dt/30-seconds-of-code.svg)](https://www.npmjs.com/package/30-seconds-of-code) [![npm Version](https://img.shields.io/npm/v/30-seconds-of-code.svg)](https://www.npmjs.com/package/30-seconds-of-code) [![Gitter chat](https://img.shields.io/badge/chat-on%20gitter-4FB999.svg)](https://gitter.im/30-seconds-of-code/Lobby) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Travis Build](https://travis-ci.org/Chalarangelo/30-seconds-of-code.svg?branch=master)](https://travis-ci.org/Chalarangelo/30-seconds-of-code) [![Insight.io](https://img.shields.io/badge/insight.io-Ready-brightgreen.svg)](https://insight.io/github.com/Chalarangelo/30-seconds-of-code/tree/master/?source=0) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard) [![ProductHunt](https://img.shields.io/badge/producthunt-vote-orange.svg)](https://www.producthunt.com/posts/30-seconds-of-code)
+[![License](https://img.shields.io/badge/license-CC0--1.0-blue.svg)](https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE) [![npm Downloads](https://img.shields.io/npm/dt/30-seconds-of-code.svg)](https://www.npmjs.com/package/30-seconds-of-code) [![npm Version](https://img.shields.io/npm/v/30-seconds-of-code.svg)](https://www.npmjs.com/package/30-seconds-of-code) [![Gitter chat](https://img.shields.io/badge/chat-on%20gitter-4FB999.svg)](https://gitter.im/30-seconds-of-code/Lobby) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Travis Build](https://travis-ci.org/Chalarangelo/30-seconds-of-code.svg?branch=master)](https://travis-ci.org/Chalarangelo/30-seconds-of-code) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/207ea6fa2c204ccda61dc3047986e144)](https://www.codacy.com/app/Chalarangelo/30-seconds-of-code?utm_source=github.com&utm_medium=referral&utm_content=Chalarangelo/30-seconds-of-code&utm_campaign=badger) [![Maintainability](https://api.codeclimate.com/v1/badges/e9020d1c963a91c0c8a2/maintainability)](https://codeclimate.com/github/Chalarangelo/30-seconds-of-code/maintainability)  [![Insight.io](https://img.shields.io/badge/insight.io-Ready-brightgreen.svg)](https://insight.io/github.com/Chalarangelo/30-seconds-of-code/tree/master/?source=0) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard) [![ProductHunt](https://img.shields.io/badge/producthunt-vote-orange.svg)](https://www.producthunt.com/posts/30-seconds-of-code)
 
 
 > Curated collection of useful JavaScript snippets that you can understand in 30 seconds or less.
@@ -77,12 +77,18 @@ average(1, 2, 3);
 <details>
 <summary>View contents</summary>
 
+* [`ary`](#ary)
 * [`call`](#call)
 * [`collectInto`](#collectinto)
 * [`flip`](#flip)
+* [`over`](#over)
+* [`overArgs`](#overargs)
+* [`pipeAsyncFunctions`](#pipeasyncfunctions)
 * [`pipeFunctions`](#pipefunctions)
 * [`promisify`](#promisify)
+* [`rearg`](#rearg)
 * [`spreadOver`](#spreadover)
+* [`unary`](#unary)
 
 </details>
 
@@ -97,12 +103,16 @@ average(1, 2, 3);
 * [`countOccurrences`](#countoccurrences)
 * [`deepFlatten`](#deepflatten)
 * [`difference`](#difference)
+* [`differenceBy`](#differenceby)
 * [`differenceWith`](#differencewith)
-* [`dropElements`](#dropelements)
+* [`drop`](#drop)
 * [`dropRight`](#dropright)
+* [`dropRightWhile`](#droprightwhile)
+* [`dropWhile`](#dropwhile)
 * [`everyNth`](#everynth)
 * [`filterNonUnique`](#filternonunique)
 * [`findLast`](#findlast)
+* [`findLastIndex`](#findlastindex)
 * [`flatten`](#flatten)
 * [`forEachRight`](#foreachright)
 * [`groupBy`](#groupby)
@@ -114,6 +124,8 @@ average(1, 2, 3);
 * [`initializeArrayWithRangeRight`](#initializearraywithrangeright)
 * [`initializeArrayWithValues`](#initializearraywithvalues)
 * [`intersection`](#intersection)
+* [`intersectionBy`](#intersectionby)
+* [`intersectionWith`](#intersectionwith)
 * [`isSorted`](#issorted)
 * [`join`](#join)
 * [`last`](#last)
@@ -123,26 +135,41 @@ average(1, 2, 3);
 * [`minN`](#minn)
 * [`nthElement`](#nthelement)
 * [`partition`](#partition)
-* [`pick`](#pick)
 * [`pull`](#pull)
 * [`pullAtIndex`](#pullatindex)
 * [`pullAtValue`](#pullatvalue)
+* [`pullBy`](#pullby-)
 * [`reducedFilter`](#reducedfilter)
+* [`reduceSuccessive`](#reducesuccessive)
+* [`reduceWhich`](#reducewhich)
 * [`remove`](#remove)
 * [`sample`](#sample)
 * [`sampleSize`](#samplesize)
 * [`shuffle`](#shuffle)
 * [`similarity`](#similarity)
 * [`sortedIndex`](#sortedindex)
+* [`sortedIndexBy`](#sortedindexby)
+* [`sortedLastIndex`](#sortedlastindex)
+* [`sortedLastIndexBy`](#sortedlastindexby)
 * [`symmetricDifference`](#symmetricdifference)
+* [`symmetricDifferenceBy`](#symmetricdifferenceby)
+* [`symmetricDifferenceWith`](#symmetricdifferencewith)
 * [`tail`](#tail)
 * [`take`](#take)
 * [`takeRight`](#takeright)
+* [`takeRightWhile`](#takerightwhile)
+* [`takeWhile`](#takewhile)
 * [`union`](#union)
+* [`unionBy`](#unionby)
+* [`unionWith`](#unionwith)
 * [`uniqueElements`](#uniqueelements)
+* [`unzip`](#unzip)
+* [`unzipWith`](#unzipwith-)
 * [`without`](#without)
+* [`xProd`](#xprod)
 * [`zip`](#zip)
 * [`zipObject`](#zipobject)
+* [`zipWith`](#zipwith-)
 
 </details>
 
@@ -185,7 +212,9 @@ average(1, 2, 3);
 <summary>View contents</summary>
 
 * [`formatDuration`](#formatduration)
+* [`getColonTimeFromDate`](#getcolontimefromdate)
 * [`getDaysDiffBetweenDates`](#getdaysdiffbetweendates)
+* [`getMeridiemSuffixOfInteger`](#getmeridiemsuffixofinteger)
 * [`tomorrow`](#tomorrow)
 
 </details>
@@ -195,16 +224,27 @@ average(1, 2, 3);
 <details>
 <summary>View contents</summary>
 
+* [`attempt`](#attempt)
+* [`bind`](#bind)
+* [`bindKey`](#bindkey)
 * [`chainAsync`](#chainasync)
 * [`compose`](#compose)
+* [`composeRight`](#composeright)
 * [`curry`](#curry)
+* [`debounce`](#debounce)
 * [`defer`](#defer)
+* [`delay`](#delay)
 * [`functionName`](#functionname)
 * [`memoize`](#memoize)
 * [`negate`](#negate)
 * [`once`](#once)
+* [`partial`](#partial)
+* [`partialRight`](#partialright)
 * [`runPromisesInSeries`](#runpromisesinseries)
 * [`sleep`](#sleep)
+* [`throttle`](#throttle)
+* [`times`](#times)
+* [`unfold`](#unfold)
 
 </details>
 
@@ -272,18 +312,30 @@ average(1, 2, 3);
 <details>
 <summary>View contents</summary>
 
-* [`cleanObj`](#cleanobj)
+* [`bindAll`](#bindall)
+* [`deepClone`](#deepclone)
+* [`defaults`](#defaults)
 * [`equals`](#equals-)
+* [`findKey`](#findkey)
+* [`findLastKey`](#findlastkey)
+* [`forOwn`](#forown)
+* [`forOwnRight`](#forownright)
 * [`functions`](#functions)
+* [`get`](#get)
 * [`invertKeyValues`](#invertkeyvalues)
 * [`lowercaseKeys`](#lowercasekeys)
 * [`mapKeys`](#mapkeys)
 * [`mapValues`](#mapvalues)
+* [`matches`](#matches)
+* [`matchesWith`](#matcheswith)
 * [`merge`](#merge)
 * [`objectFromPairs`](#objectfrompairs)
 * [`objectToPairs`](#objecttopairs)
+* [`omit`](#omit)
+* [`omitBy`](#omitby)
 * [`orderBy`](#orderby)
-* [`select`](#select)
+* [`pick`](#pick)
+* [`pickBy`](#pickby)
 * [`shallowClone`](#shallowclone)
 * [`size`](#size)
 * [`transform`](#transform)
@@ -310,9 +362,11 @@ average(1, 2, 3);
 * [`mask`](#mask)
 * [`palindrome`](#palindrome)
 * [`pluralize`](#pluralize)
+* [`removeNonASCII`](#removenonascii)
 * [`reverseString`](#reversestring)
 * [`sortCharactersInString`](#sortcharactersinstring)
 * [`splitLines`](#splitlines)
+* [`stripHTMLTags`](#striphtmltags)
 * [`toCamelCase`](#tocamelcase)
 * [`toKebabCase`](#tokebabcase)
 * [`toSnakeCase`](#tosnakecase)
@@ -332,11 +386,14 @@ average(1, 2, 3);
 * [`is`](#is)
 * [`isArrayLike`](#isarraylike)
 * [`isBoolean`](#isboolean)
+* [`isEmpty`](#isempty)
 * [`isFunction`](#isfunction)
 * [`isNil`](#isnil)
 * [`isNull`](#isnull)
 * [`isNumber`](#isnumber)
 * [`isObject`](#isobject)
+* [`isObjectLike`](#isobjectlike)
+* [`isPlainObject`](#isplainobject)
 * [`isPrimitive`](#isprimitive)
 * [`isPromiseLike`](#ispromiselike)
 * [`isString`](#isstring)
@@ -351,6 +408,7 @@ average(1, 2, 3);
 <details>
 <summary>View contents</summary>
 
+* [`castArray`](#castarray)
 * [`cloneRegExp`](#cloneregexp)
 * [`coalesce`](#coalesce)
 * [`coalesceFactory`](#coalescefactory)
@@ -359,12 +417,14 @@ average(1, 2, 3);
 * [`hexToRGB`](#hextorgb-)
 * [`httpGet`](#httpget)
 * [`httpPost`](#httppost)
+* [`nthArg`](#ntharg)
 * [`parseCookie`](#parsecookie)
 * [`prettyBytes`](#prettybytes)
 * [`randomHexColorCode`](#randomhexcolorcode)
 * [`RGBToHex`](#rgbtohex)
 * [`serializeCookie`](#serializecookie)
 * [`timeTaken`](#timetaken)
+* [`toCurrency`](#tocurrency)
 * [`toDecimalMark`](#todecimalmark)
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`validateNumber`](#validatenumber)
@@ -374,6 +434,29 @@ average(1, 2, 3);
 
 ---
  ## 🔌 Adapter
+
+### ary
+
+Creates a function that accepts up to `n` arguments, ignoring any additional arguments.
+
+Call the provided function, `fn`, with up to `n` arguments, using `Array.slice(0,n)` and the spread operator (`...`).
+
+```js
+const ary = (fn, n) => (...args) => fn(...args.slice(0, n));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const firstTwoMax = ary(Math.max, 2);
+[[2, 6, 'a'], [8, 4, 6], [10]].map(x => firstTwoMax(...x)); // [6, 8, 10]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 
 ### call
 
@@ -421,7 +504,7 @@ const Pall = collectInto(Promise.all.bind(Promise));
 let p1 = Promise.resolve(1);
 let p2 = Promise.resolve(2);
 let p3 = new Promise(resolve => setTimeout(resolve, 2000, 3));
-Pall(p1, p2, p3).then(console.log);
+Pall(p1, p2, p3).then(console.log); // [1, 2, 3] (after about 2 seconds)
 ```
 
 </details>
@@ -436,7 +519,7 @@ Flip takes a function as an argument, then makes the first argument the last.
 Return a closure that takes variadic inputs, and splices the last argument to make it the first argument before applying the rest.
 
 ```js
-const flip = fn => (...args) => fn(args.pop(), ...args);
+const flip = fn => (first, ...rest) => fn(...rest, first);
 ```
 
 <details>
@@ -450,6 +533,86 @@ let mergePerson = mergeFrom.bind(null, a);
 mergePerson(b); // == b
 b = {};
 Object.assign(b, a); // == b
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### over
+
+Creates a function that invokes each provided function with the arguments it receives and returns the results.
+
+Use `Array.map()` and `Function.apply()` to apply each function to the given arguments.
+
+```js
+const over = (...fns) => (...args) => fns.map(fn => fn.apply(null, args));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const minMax = over(Math.min, Math.max);
+minMax(1, 2, 3, 4, 5); // [1,5]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### overArgs
+
+Creates a function that invokes the provided function with its arguments transformed.
+
+Use `Array.map()` to apply `transforms` to `args` in combination with the spread operator (`...`) to pass the transformed arguments to `fn`.
+
+```js
+const overArgs = (fn, transforms) => (...args) => fn(...args.map((val, i) => transforms[i](val)));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const square = n => n * n;
+const double = n => n * 2;
+const fn = overArgs((x, y) => [x, y], [square, double]);
+fn(9, 3); // [81, 6]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### pipeAsyncFunctions
+
+Performs left-to-right function composition for asynchronous functions.
+
+Use `Array.reduce()` with the spread operator (`...`) to perform left-to-right function composition using `Promise.then()`.
+The functions can return a combination of: simple values, `Promise`'s, or they can be defined as `async` ones returning through `await`.
+All functions must be unary.
+
+```js
+const pipeAsyncFunctions = (...fns) => arg => fns.reduce((p, f) => p.then(f), Promise.resolve(arg));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const sum = pipeAsyncFunctions(
+  x => x + 1,
+  x => new Promise(resolve => setTimeout(() => resolve(x + 2), 1000)),
+  x => x + 3,
+  async x => (await x) + 4
+);
+(async () => {
+  console.log(await sum(5)); // 15 (after one second)
+})();
 ```
 
 </details>
@@ -512,6 +675,40 @@ delay(2000).then(() => console.log('Hi!')); // // Promise resolves after 2s
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### rearg
+
+Creates a function that invokes the provided function with its arguments arranged according to the specified indexes.
+
+Use `Array.reduce()` and `Array.indexOf()` to reorder arguments based on `indexes` in combination with the spread operator (`...`) to pass the transformed arguments to `fn`.
+
+```js
+const rearg = (fn, indexes) => (...args) =>
+  fn(
+    ...args.reduce(
+      (acc, val, i) => ((acc[indexes.indexOf(i)] = val), acc),
+      Array.from({ length: indexes.length })
+    )
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+var rearged = rearg(
+  function(a, b, c) {
+    return [a, b, c];
+  },
+  [2, 0, 1]
+);
+rearged('b', 'c', 'a'); // ['a', 'b', 'c']
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### spreadOver
 
 Takes a variadic function and returns a closure that accepts an array of arguments to map to the inputs of the function.
@@ -528,6 +725,28 @@ const spreadOver = fn => argsArr => fn(...argsArr);
 ```js
 const arrayMax = spreadOver(Math.max);
 arrayMax([1, 2, 3]); // 3
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### unary
+
+Creates a function that accepts up to one argument, ignoring any additional arguments.
+
+Call the provided function, `fn`, with just the first argument given.
+
+```js
+const unary = fn => val => fn(val);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+['6', '8', '10'].map(unary(parseInt)); // [6, 8, 10]
 ```
 
 </details>
@@ -685,6 +904,32 @@ difference([1, 2, 3], [1, 2, 4]); // [3]
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### differenceBy
+
+Returns the difference between two arrays, after applying the provided function to each array element of both.
+
+Create a `Set` by applying `fn` to each element in `b`, then use `Array.filter()` in combination with `fn` on `a` to only keep values not contained in the previously created set.
+
+```js
+const differenceBy = (a, b, fn) => {
+  const s = new Set(b.map(v => fn(v)));
+  return a.filter(x => !s.has(fn(x)));
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [1.2]
+differenceBy([{ x: 2 }, { x: 1 }], [{ x: 1 }], v => v.x); // [ { x: 2 } ]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### differenceWith
 
 Filters out all values from an array for which the comparator function does not return `true`.
@@ -707,25 +952,23 @@ differenceWith([1, 1.2, 1.5, 3, 0], [1.9, 3, 0], (a, b) => Math.round(a) === Mat
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### dropElements
+### drop
 
-Removes elements in an array until the passed function returns `true`. Returns the remaining elements in the array.
+Returns a new array with `n` elements removed from the left.
 
-Loop through the array, using `Array.slice()` to drop the first element of the array until the returned value from the function is `true`.
-Returns the remaining elements.
+Use `Array.slice()` to slice the remove the specified number of elements from the left.
 
 ```js
-const dropElements = (arr, func) => {
-  while (arr.length > 0 && !func(arr[0])) arr = arr.slice(1);
-  return arr;
-};
+const drop = (arr, n = 1) => arr.slice(n);
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```js
-dropElements([1, 2, 3, 4], n => n >= 3); // [3,4]
+drop([1, 2, 3]); // [2,3]
+drop([1, 2, 3], 2); // [3]
+drop([1, 2, 3], 42); // []
 ```
 
 </details>
@@ -750,6 +993,58 @@ const dropRight = (arr, n = 1) => arr.slice(0, -n);
 dropRight([1, 2, 3]); // [1,2]
 dropRight([1, 2, 3], 2); // [1]
 dropRight([1, 2, 3], 42); // []
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### dropRightWhile
+
+Removes elements from the end of an array until the passed function returns `true`. Returns the remaining elements in the array.
+
+Loop through the array, using `Array.slice()` to drop the last element of the array until the returned value from the function is `true`.
+Returns the remaining elements.
+
+```js
+const dropRightWhile = (arr, func) => {
+  while (arr.length > 0 && !func(arr[arr.length - 1])) arr = arr.slice(0, -1);
+  return arr;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+dropRightWhile([1, 2, 3, 4], n => n < 3); // [1, 2]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### dropWhile
+
+Removes elements in an array until the passed function returns `true`. Returns the remaining elements in the array.
+
+Loop through the array, using `Array.slice()` to drop the first element of the array until the returned value from the function is `true`.
+Returns the remaining elements.
+
+```js
+const dropWhile = (arr, func) => {
+  while (arr.length > 0 && !func(arr[0])) arr = arr.slice(1);
+  return arr;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+dropWhile([1, 2, 3, 4], n => n >= 3); // [3,4]
 ```
 
 </details>
@@ -808,7 +1103,7 @@ Returns the last element for which the provided function returns a truthy value.
 Use `Array.filter()` to remove elements for which `fn` returns falsey values, `Array.slice(-1)` to get the last one.
 
 ```js
-const findLast = (arr, fn) => arr.filter(fn).slice(-1);
+const findLast = (arr, fn) => arr.filter(fn).slice(-1)[0];
 ```
 
 <details>
@@ -816,6 +1111,33 @@ const findLast = (arr, fn) => arr.filter(fn).slice(-1);
 
 ```js
 findLast([1, 2, 3, 4], n => n % 2 === 1); // 3
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### findLastIndex
+
+Returns the index of the last element for which the provided function returns a truthy value.
+
+Use `Array.map()` to map each element to an array with its index and value.
+Use `Array.filter()` to remove elements for which `fn` returns falsey values, `Array.slice(-1)` to get the last one.
+
+```js
+const findLastIndex = (arr, fn) =>
+  arr
+    .map((val, i) => [i, val])
+    .filter(val => fn(val[1], val[0], arr))
+    .slice(-1)[0][0];
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+findLastIndex([1, 2, 3, 4], n => n % 2 === 1); // 2 (index of the value 3)
 ```
 
 </details>
@@ -834,7 +1156,7 @@ Omit the second argument, `depth` to flatten only to a depth of `1` (single flat
 
 ```js
 const flatten = (arr, depth = 1) =>
-  depth != 1
+  depth !== 1
     ? arr.reduce((a, v) => a.concat(Array.isArray(v) ? flatten(v, depth - 1) : v), [])
     : arr.reduce((a, v) => a.concat(v), []);
 ```
@@ -1105,6 +1427,53 @@ intersection([1, 2, 3], [4, 3, 2]); // [2,3]
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### intersectionBy
+
+Returns a list of elements that exist in both arrays, after applying the provided function to each array element of both.
+
+Create a `Set` by applying `fn` to all elements in `b`, then use `Array.filter()` on `a` to only keep elements, which produce values contained in `b` when `fn` is applied to them.
+
+```js
+const intersectionBy = (a, b, fn) => {
+  const s = new Set(b.map(x => fn(x)));
+  return a.filter(x => s.has(fn(x)));
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+intersectionBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [2.1]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### intersectionWith
+
+Returns a list of elements that exist in both arrays, using a provided comparator function.
+
+Use `Array.filter()` and `Array.findIndex()` in combination with the provided comparator to determine intersecting values.
+
+```js
+const intersectionWith = (a, b, comp) => a.filter(x => b.findIndex(y => comp(x, y)) !== -1);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+intersectionWith([1, 1.2, 1.5, 3, 0], [1.9, 3, 0, 3.9], (a, b) => Math.round(a) === Math.round(b)); // [1.5, 3, 0]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### isSorted
 
 Returns `1` if the array is sorted in ascending order, `-1` if it is sorted in descending order or `0` if it is not sorted.
@@ -1148,9 +1517,9 @@ Omit the third argument, `end`, to use the same value as `separator` by default.
 const join = (arr, separator = ',', end = separator) =>
   arr.reduce(
     (acc, val, i) =>
-      i == arr.length - 2
+      i === arr.length - 2
         ? acc + val + end
-        : i == arr.length - 1 ? acc + val : acc + val + separator,
+        : i === arr.length - 1 ? acc + val : acc + val + separator,
     ''
   );
 ```
@@ -1348,29 +1717,6 @@ partition(users, o => o.active); // [[{ 'user': 'fred',    'age': 40, 'active': 
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### pick
-
-Picks the key-value pairs corresponding to the given keys from an object.
-
-Use `Array.reduce()` to convert the filtered/picked keys back to an object with the corresponding key-value pair if the key exists in the obj.
-
-```js
-const pick = (obj, arr) =>
-  arr.reduce((acc, curr) => (curr in obj && (acc[curr] = obj[curr]), acc), {});
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-pick({ a: 1, b: '2', c: 3 }, ['a', 'c']); // { 'a': 1, 'c': 3 }
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
 ### pull
 
 Mutates the original array to filter out the values specified.
@@ -1467,6 +1813,40 @@ let pulled = pullAtValue(myArray, ['b', 'd']); // myArray = [ 'a', 'c' ] , pulle
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### pullBy ![advanced](/advanced.svg)
+
+Mutates the original array to filter out the values specified, based on a given iterator function.
+
+Check if the last argument provided in a function.
+Use `Array.map()` to apply the iterator function `fn` to all array elements.
+Use `Array.filter()` and `Array.includes()` to pull out the values that are not needed.
+Use `Array.length = 0` to mutate the passed in an array by resetting it's length to zero and `Array.push()` to re-populate it with only the pulled values.
+
+```js
+const pullBy = (arr, ...args) => {
+  const length = args.length;
+  let fn = length > 1 ? args[length - 1] : undefined;
+  fn = typeof fn == 'function' ? (args.pop(), fn) : undefined;
+  let argState = (Array.isArray(args[0]) ? args[0] : args).map(val => fn(val));
+  let pulled = arr.filter((v, i) => !argState.includes(fn(v)));
+  arr.length = 0;
+  pulled.forEach(v => arr.push(v));
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+var myArray = [{ x: 1 }, { x: 2 }, { x: 3 }, { x: 1 }];
+pullBy(myArray, [{ x: 1 }, { x: 3 }], o => o.x); // myArray = [{ x: 2 }]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### reducedFilter
 
 Filter an array of objects based on a condition while also filtering out unspecified keys.
@@ -1509,6 +1889,58 @@ reducedFilter(data, ['id', 'name'], item => item.age > 24); // [{ id: 2, name: '
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### reduceSuccessive
+
+Applies a function against an accumulator and each element in the array (from left to right), returning an array of successively reduced values.
+
+Use `Array.reduce()` to apply the given function to the given array, storing each new result.
+
+```js
+const reduceSuccessive = (arr, fn, acc) =>
+  arr.reduce((res, val, i, arr) => (res.push(fn(res.slice(-1)[0], val, i, arr)), res), [acc]);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+reduceSuccessive([1, 2, 3, 4, 5, 6], (acc, val) => acc + val, 0); // [0, 1, 3, 6, 10, 15, 21]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### reduceWhich
+
+Returns the minimum/maximum value of an array, after applying the provided function to set comparing rule.
+
+Use `Array.reduce()` in combination with the `comparator` function to get the appropriate element in the array.
+You can omit the second parameter, `comparator`, to use the default one that returns the minimum element in the array.
+
+```js
+const reduceWhich = (arr, comparator = (a, b) => a - b) =>
+  arr.reduce((a, b) => (comparator(a, b) >= 0 ? b : a));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+reduceWhich([1, 3, 2]); // 1
+reduceWhich([1, 3, 2], (a, b) => b - a); // 3
+reduceWhich(
+  [{ name: 'Tom', age: 12 }, { name: 'Jack', age: 18 }, { name: 'Lucy', age: 9 }],
+  (a, b) => a.age - b.age
+); // {name: "Lucy", age: 9}
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### remove
 
 Removes elements from an array for which the given function returns `false`.
@@ -1530,7 +1962,7 @@ const remove = (arr, func) =>
 <summary>Examples</summary>
 
 ```js
-remove([1, 2, 3, 4], n => n % 2 == 0); // [2, 4]
+remove([1, 2, 3, 4], n => n % 2 === 0); // [2, 4]
 ```
 
 </details>
@@ -1673,6 +2105,96 @@ sortedIndex([30, 50], 40); // 1
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### sortedIndexBy
+
+Returns the lowest index at which value should be inserted into array in order to maintain its sort order, based on a provided iterator function.
+
+Check if the array is sorted in descending order (loosely).
+Use `Array.findIndex()` to find the appropriate index where the element should be inserted, based on the iterator function `fn`.
+
+```js
+const sortedIndexBy = (arr, n, fn) => {
+  const isDescending = fn(arr[0]) > fn(arr[arr.length - 1]);
+  const val = fn(n);
+  const index = arr.findIndex(el => (isDescending ? val >= fn(el) : val <= fn(el)));
+  return index === -1 ? arr.length : index;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+sortedIndexBy([{ x: 4 }, { x: 5 }], { x: 4 }, o => o.x); // 0
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### sortedLastIndex
+
+Returns the highest index at which value should be inserted into array in order to maintain its sort order.
+
+Check if the array is sorted in descending order (loosely).
+Use `Array.map()` to map each element to an array with its index and value.
+Use `Array.reverse()` and `Array.findIndex()` to find the appropriate last index where the element should be inserted.
+
+```js
+const sortedLastIndex = (arr, n) => {
+  const isDescending = arr[0] > arr[arr.length - 1];
+  const index = arr
+    .map((val, i) => [i, val])
+    .reverse()
+    .findIndex(el => (isDescending ? n <= el[1] : n >= el[1]));
+  return index === -1 ? 0 : arr.length - index - 1;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+sortedLastIndex([10, 20, 30, 30, 40], 30); // 3
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### sortedLastIndexBy
+
+Returns the highest index at which value should be inserted into array in order to maintain its sort order, based on a provided iterator function.
+
+Check if the array is sorted in descending order (loosely).
+Use `Array.reverse()` and `Array.findIndex()` to find the appropriate last index where the element should be inserted, based on the iterator function `fn`..
+
+```js
+const sortedLastIndexBy = (arr, n, fn) => {
+  const isDescending = fn(arr[0]) > fn(arr[arr.length - 1]);
+  const val = fn(n);
+  const index = arr
+    .map((val, i) => [i, fn(val)])
+    .reverse()
+    .findIndex(el => (isDescending ? val <= el[1] : val >= el[1]));
+  return index === -1 ? 0 : arr.length - index;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+sortedLastIndexBy([{ x: 4 }, { x: 5 }], { x: 4 }, o => o.x); // 1
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### symmetricDifference
 
 Returns the symmetric difference between two arrays.
@@ -1692,6 +2214,61 @@ const symmetricDifference = (a, b) => {
 
 ```js
 symmetricDifference([1, 2, 3], [1, 2, 4]); // [3,4]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### symmetricDifferenceBy
+
+Returns the symmetric difference between two arrays, after applying the provided function to each array element of both.
+
+Create a `Set` by applying `fn` to each array's elements, then use `Array.filter()` on each of them to only keep values not contained in the other.
+
+```js
+const symmetricDifferenceBy = (a, b, fn) => {
+  const sA = new Set(a.map(v => fn(v))),
+    sB = new Set(b.map(v => fn(v)));
+  return [...a.filter(x => !sB.has(fn(x))), ...b.filter(x => !sA.has(fn(x)))];
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+symmetricDifferenceBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [ 1.2, 3.4 ]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### symmetricDifferenceWith
+
+Returns the symmetric difference between two arrays, using a provided function as a comparator.
+
+Use `Array.filter()` and `Array.findIndex()` to find the appropriate values.
+
+```js
+const symmetricDifferenceWith = (arr, val, comp) => [
+  ...arr.filter(a => val.findIndex(b => comp(a, b)) === -1),
+  ...val.filter(a => arr.findIndex(b => comp(a, b)) === -1)
+];
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+symmetricDifferenceWith(
+  [1, 1.2, 1.5, 3, 0],
+  [1.9, 3, 0, 3.9],
+  (a, b) => Math.round(a) === Math.round(b)
+); // [1, 1.2, 3.9]
 ```
 
 </details>
@@ -1768,6 +2345,59 @@ takeRight([1, 2, 3]); // [3]
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### takeRightWhile
+
+Removes elements from the end of an array until the passed function returns `true`. Returns the removed elements.
+
+Loop through the array, using a `for...of` loop over `Array.keys()` until the returned value from the function is `true`.
+Return the removed elements, using `Array.reverse()` and `Array.slice()`.
+
+```js
+const takeRightWhile = (arr, func) => {
+  for (let i of arr.reverse().keys())
+    if (func(arr[i])) return arr.reverse().slice(arr.length - i, arr.length);
+  return arr;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+takeRightWhile([1, 2, 3, 4], n => n < 3); // [3, 4]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### takeWhile
+
+Removes elements in an array until the passed function returns `true`. Returns the removed elements.
+
+Loop through the array, using a `for...of` loop over `Array.keys()` until the returned value from the function is `true`.
+Return the removed elements, using `Array.slice()`.
+
+```js
+const takeWhile = (arr, func) => {
+  for (let i of arr.keys()) if (func(arr[i])) return arr.slice(0, i);
+  return arr;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+takeWhile([1, 2, 3, 4], n => n >= 3); // [1, 2]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### union
 
 Returns every element that exists in any of the two arrays once.
@@ -1783,6 +2413,56 @@ const union = (a, b) => Array.from(new Set([...a, ...b]));
 
 ```js
 union([1, 2, 3], [4, 3, 2]); // [1,2,3,4]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### unionBy
+
+Returns every element that exists in any of the two arrays once, after applying the provided function to each array element of both.
+
+Create a `Set` by applying all `fn` to all values of `a`.
+Create a `Set` from `a` and all elements in `b` whose value, after applying `fn` does not match a value in the previously created set.
+Return the last set converted to an array.
+
+```js
+const unionBy = (a, b, fn) => {
+  const s = new Set(a.map(v => fn(v)));
+  return Array.from(new Set([...a, ...b.filter(x => !s.has(fn(x)))]));
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+unionBy([2.1], [1.2, 2.3], Math.floor); // [2.1, 1.2]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### unionWith
+
+Returns every element that exists in any of the two arrays once, using a provided comparator function.
+
+Create a `Set` with all values of `a` and values in `b` for which the comparator finds no matches in `a`, using `Array.findIndex()`.
+
+```js
+const unionWith = (a, b, comp) =>
+  Array.from(new Set([...a, ...b.filter(x => a.findIndex(y => comp(x, y)) === -1)]));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+unionWith([1, 1.2, 1.5, 3, 0], [1.9, 3, 0, 3.9], (a, b) => Math.round(a) === Math.round(b)); // [1, 1.2, 1.5, 3, 0, 3.9]
 ```
 
 </details>
@@ -1812,6 +2492,68 @@ uniqueElements([1, 2, 2, 3, 4, 4, 5]); // [1,2,3,4,5]
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### unzip
+
+Creates an array of arrays, ungrouping the elements in an array produced by [zip](#zip).
+
+Use `Math.max.apply()` to get the longest subarray in the array, `Array.map()` to make each element an array.
+Use `Array.reduce()` and `Array.forEach()` to map grouped values to individual arrays.
+
+```js
+const unzip = arr =>
+  arr.reduce(
+    (acc, val) => (val.forEach((v, i) => acc[i].push(v)), acc),
+    Array.from({
+      length: Math.max(...arr.map(x => x.length))
+    }).map(x => [])
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+unzip([['a', 1, true], ['b', 2, false]]); //[['a', 'b'], [1, 2], [true, false]]
+unzip([['a', 1, true], ['b', 2]]); //[['a', 'b'], [1, 2], [true]]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### unzipWith ![advanced](/advanced.svg)
+
+Creates an array of elements, ungrouping the elements in an array produced by [zip](#zip) and applying the provided function.
+
+Use `Math.max.apply()` to get the longest subarray in the array, `Array.map()` to make each element an array.
+Use `Array.reduce()` and `Array.forEach()` to map grouped values to individual arrays.
+Use `Array.map()` and the spread operator (`...`) to apply `fn` to each individual group of elements.
+
+```js
+const unzipWith = (arr, fn) =>
+  arr
+    .reduce(
+      (acc, val) => (val.forEach((v, i) => acc[i].push(v)), acc),
+      Array.from({
+        length: Math.max(...arr.map(x => x.length))
+      }).map(x => [])
+    )
+    .map(val => fn(...val));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+unzipWith([[1, 10, 100], [2, 20, 200]], (...args) => args.reduce((acc, v) => acc + v, 0)); // [3, 30, 300]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### without
 
 Filters out the elements of an array, that have one of the specified values.
@@ -1829,6 +2571,28 @@ const without = (arr, ...args) => arr.filter(v => !args.includes(v));
 
 ```js
 without([2, 1, 2, 3], 1, 2); // [3]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### xProd
+
+Creates a new array out of the two supplied by creating each possible pair from the arrays.
+
+Use `Array.reduce()`, `Array.map()` and `Array.concat()` to produce every possible pair from the elements of the two arrays and save them in an array.
+
+```js
+const xProd = (a, b) => a.reduce((acc, x) => acc.concat(b.map(y => [x, y])), []);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+xProd([1, 2], ['a', 'b']); // [[1, 'a'], [1, 'b'], [2, 'a'], [2, 'b']]
 ```
 
 </details>
@@ -1883,6 +2647,47 @@ const zipObject = (props, values) =>
 ```js
 zipObject(['a', 'b', 'c'], [1, 2]); // {a: 1, b: 2, c: undefined}
 zipObject(['a', 'b'], [1, 2, 3]); // {a: 1, b: 2}
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### zipWith ![advanced](/advanced.svg)
+
+Creates an array of elements, grouped based on the position in the original arrays and using function as the last value to specify how grouped values should be combined.
+
+Check if the last argument provided in a function.
+Use `Math.max()` to get the longest array in the arguments.
+Creates an array with that length as return value and use `Array.from()` with a map-function to create an array of grouped elements.
+If lengths of the argument-arrays vary, `undefined` is used where no value could be found.
+The function is invoked with the elements of each group `(...group)`.
+
+```js
+const zipWith = (...arrays) => {
+  const length = arrays.length;
+  let fn = length > 1 ? arrays[length - 1] : undefined;
+  fn = typeof fn == 'function' ? (arrays.pop(), fn) : undefined;
+  const maxLength = Math.max(...arrays.map(x => x.length));
+  const result = Array.from({ length: maxLength }).map((_, i) => {
+    return Array.from({ length: arrays.length }, (_, k) => arrays[k][i]);
+  });
+  return fn ? result.map(arr => fn(...arr)) : result;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+zipWith([1, 2], [10, 20], [100, 200], (a, b, c) => a + b + c); // [111,222]
+zipWith(
+  [1, 2, 3],
+  [10, 20],
+  [100, 200],
+  (a, b, c) => (a != null ? a : 'a') + (b != null ? b : 'b') + (c != null ? c : 'c')
+); // [111, 222, '3bc']
 ```
 
 </details>
@@ -2675,6 +3480,28 @@ formatDuration(34325055574); // '397 days, 6 hours, 44 minutes, 15 seconds, 574 
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### getColonTimeFromDate
+
+Returns a string of the form `HH:MM:SS` from a `Date` object.
+
+Use `Date.toString()` and `String.slice()` to get the `HH:MM:SS` part of a given `Date` object.
+
+```js
+const getColonTimeFromDate = date => date.toTimeString().slice(0, 8);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+getColonTimeFromDate(new Date()); // "08:38:00"
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### getDaysDiffBetweenDates
 
 Returns the difference (in days) between two dates.
@@ -2698,13 +3525,47 @@ getDaysDiffBetweenDates(new Date('2017-12-13'), new Date('2017-12-22')); // 9
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### getMeridiemSuffixOfInteger
+
+Converts an integer to a suffixed string, adding `am` or `pm` based on its value.
+
+Use the modulo operator (`%`) and conditional checks to transform an integer to a stringified 12-hour format with meridiem suffix.
+
+```js
+const getMeridiemSuffixOfInteger = num =>
+  num === 0 || num === 24
+    ? 12 + 'am'
+    : num === 12 ? 12 + 'pm' : num < 12 ? num % 12 + 'am' : num % 12 + 'pm';
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+getMeridiemSuffixOfInteger(0); // "12am"
+getMeridiemSuffixOfInteger(11); // "11am"
+getMeridiemSuffixOfInteger(13); // "1pm"
+getMeridiemSuffixOfInteger(25); // "1pm"
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### tomorrow
 
 Results in a string representation of tomorrow's date.
-Use `new Date()` to get today's date, adding `86400000` of seconds to it(24 hours), using `Date.toISOString()` to convert Date object to string.
+Use `new Date()` to get today's date, adding one day using `Date.getDate()` and `Date.setDate()`, and converting the Date object to a string.
 
 ```js
-const tomorrow = () => new Date(new Date().getTime() + 86400000).toISOString().split('T')[0];
+const tomorrow = () => {
+  let t = new Date();
+  t.setDate(t.getDate() + 1);
+  return `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, '0')}-${String(
+    t.getDate()
+  ).padStart(2, '0')}`;
+};
 ```
 
 <details>
@@ -2720,6 +3581,101 @@ tomorrow(); // 2017-12-27 (if current date is 2017-12-26)
 
 ---
  ## 🎛️ Function
+
+### attempt
+
+Attempts to invoke a function with the provided arguments, returning either the result or the caught error object.
+
+Use a `try... catch` block to return either the result of the function or an appropriate error.
+
+```js
+const attempt = (fn, ...args) => {
+  try {
+    return fn(args);
+  } catch (e) {
+    return e instanceof Error ? e : new Error(e);
+  }
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+var elements = attempt(function(selector) {
+  return document.querySelectorAll(selector);
+}, '>_>');
+if (elements instanceof Error) elements = []; // elements = []
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### bind
+
+Creates a function that invokes `fn` with a given context, optionally adding any additional supplied parameters to the beginning of the arguments.
+
+Return a `function` that uses `Function.apply()` to apply the given `context` to `fn`.
+Use `Array.concat()` to prepend any additional supplied parameters to the arguments.
+
+```js
+const bind = (fn, context, ...args) =>
+  function() {
+    return fn.apply(context, args.concat(...arguments));
+  };
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+function greet(greeting, punctuation) {
+  return greeting + ' ' + this.user + punctuation;
+}
+const freddy = { user: 'fred' };
+const freddyBound = bind(greet, freddy);
+console.log(freddyBound('hi', '!')); // 'hi fred!'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### bindKey
+
+Creates a function that invokes the method at a given key of an object, optionally adding any additional supplied parameters to the beginning of the arguments.
+
+Return a `function` that uses `Function.apply()` to bind `context[fn]` to `context`.
+Use `Array.concat()` to prepend any additional supplied parameters to the arguments.
+
+```js
+const bindKey = (context, fn, ...args) =>
+  function() {
+    return context[fn].apply(context, args.concat(...arguments));
+  };
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const freddy = {
+  user: 'fred',
+  greet: function(greeting, punctuation) {
+    return greeting + ' ' + this.user + punctuation;
+  }
+};
+const freddyBound = bindKey(freddy, 'greet');
+console.log(freddyBound('hi', '!')); // 'hi fred!'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 
 ### chainAsync
 
@@ -2781,6 +3737,32 @@ multiplyAndAdd5(5, 2); // 15
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### composeRight
+
+Performs left-to-right function composition.
+
+Use `Array.reduce()` to perform left-to-right function composition.
+The first (leftmost) function can accept one or more arguments; the remaining functions must be unary.
+
+```js
+const composeRight = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const add = (x, y) => x + y;
+const square = x => x * x;
+const addAndSquare = composeRight(add, square);
+addAndSquare(1, 2); // 9
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### curry
 
 Curries a function.
@@ -2801,6 +3783,44 @@ const curry = (fn, arity = fn.length, ...args) =>
 ```js
 curry(Math.pow)(2)(10); // 1024
 curry(Math.min, 3)(10)(50)(2); // 2
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### debounce
+
+Creates a debounced function that delays invoking the provided function until after `wait` milliseconds have elapsed since the last time the debounced function was invoked.
+
+Use `setTimeout()` and `clearTimeout()` to debounce the given method, `fn`.
+Use `Function.apply()` to apply the `this` context to the function and provide the necessary `arguments`.
+Omit the second argument, `wait`, to set the timeout at a default of 0 ms.
+
+```js
+const debounce = (fn, wait = 0) => {
+  let inDebounce;
+  return function() {
+    const context = this,
+      args = arguments;
+    clearTimeout(inDebounce);
+    inDebounce = setTimeout(() => fn.apply(context, args), wait);
+  };
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+window.addEventListener(
+  'resize',
+  debounce(function(evt) {
+    console.log(window.innerWidth);
+    console.log(window.innerHeight);
+  }, 250)
+); // Will log the window dimensions at most every 250ms
 ```
 
 </details>
@@ -2829,6 +3849,35 @@ defer(console.log, 'a'), console.log('b'); // logs 'b' then 'a'
 document.querySelector('#someElement').innerHTML = 'Hello';
 longRunningFunction(); //Browser will not update the HTML until this has finished
 defer(longRunningFunction); // Browser will update the HTML then run the function
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### delay
+
+Invokes the provided function after `wait` milliseconds.
+
+Use `setTimeout()` to delay execution of `fn`.
+Use the spread (`...`) operator to supply the function with an arbitrary number of arguments.
+
+```js
+const delay = (fn, wait, ...args) => setTimeout(fn, wait, ...args);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+delay(
+  function(text) {
+    console.log(text);
+  },
+  1000,
+  'later'
+); // Logs 'later' after one second.
 ```
 
 </details>
@@ -2907,7 +3956,7 @@ const negate = func => (...args) => !func(...args);
 <summary>Examples</summary>
 
 ```js
-[1, 2, 3, 4, 5, 6].filter(negate(n => n % 2 == 0)); // [ 1, 3, 5 ]
+[1, 2, 3, 4, 5, 6].filter(negate(n => n % 2 === 0)); // [ 1, 3, 5 ]
 ```
 
 </details>
@@ -2941,6 +3990,54 @@ const startApp = function(event) {
   console.log(this, event); // document.body, MouseEvent
 };
 document.body.addEventListener('click', once(startApp)); // only runs `startApp` once upon click
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### partial
+
+Creates a function that invokes `fn` with `partials` prepended to the arguments it receives.
+
+Use the spread operator (`...`) to prepend `partials` to the list of arguments of `fn`.
+
+```js
+const partial = (fn, ...partials) => (...args) => fn(...partials, ...args);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const greet = (greeting, name) => greeting + ' ' + name + '!';
+const greetHello = partial(greet, 'Hello');
+greetHello('John'); // 'Hello John!'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### partialRight
+
+Creates a function that invokes `fn` with `partials` appended to the arguments it receives.
+
+Use the spread operator (`...`) to append `partials` to the list of arguments of `fn`.
+
+```js
+const partialRight = (fn, ...partials) => (...args) => fn(...args, ...partials);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const greet = (greeting, name) => greeting + ' ' + name + '!';
+const greetJohn = partialRight(greet, 'John');
+greetJohn('Hello'); // 'Hello John!'
 ```
 
 </details>
@@ -2996,12 +4093,119 @@ async function sleepyWork() {
 
 <br>[⬆ Back to top](#table-of-contents)
 
+
+### throttle
+
+Creates a throttled function that only invokes the provided function at most once per every `wait` milliseconds
+
+Use `setTimeout()` and `clearTimeout()` to throttle the given method, `fn`.
+Use `Function.apply()` to apply the `this` context to the function and provide the necessary `arguments`.
+Use `Date.now()` to keep track of the last time the throttled function was invoked.
+Omit the second argument, `wait`, to set the timeout at a default of 0 ms.
+
+```js
+const throttle = (fn, wait) => {
+  let inThrottle, lastFn, lastTime;
+  return function() {
+    const context = this,
+      args = arguments;
+    if (!inThrottle) {
+      fn.apply(context, args);
+      lastTime = Date.now();
+      inThrottle = true;
+    } else {
+      clearTimeout(lastFn);
+      lastFn = setTimeout(function() {
+        if (Date.now() - lastTime >= wait) {
+          fn.apply(context, args);
+          lastTime = Date.now();
+        }
+      }, wait - (Date.now() - lastTime));
+    }
+  };
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+window.addEventListener(
+  'resize',
+  throttle(function(evt) {
+    console.log(window.innerWidth);
+    console.log(window.innerHeight);
+  }, 250)
+); // Will log the window dimensions at most every 250ms
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### times
+
+Iterates over a callback `n` times
+
+Use `Function.call()` to call `fn` `n` times or until it returns `false`.
+Omit the last argument, `context`, to use an `undefined` object (or the global object in non-strict mode).
+
+```js
+const times = (n, fn, context = undefined) => {
+  let i = 0;
+  while (fn.call(context, i) !== false && ++i < n) {}
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+var output = '';
+times(5, i => (output += i));
+console.log(output); // 01234
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### unfold
+
+Builds an array, using an iterator function and an initial seed value.
+
+Use a `while` loop and `Array.push()` to call the function repeatedly until it returns `false`.
+The iterator function accepts one argument (`seed`) and must always return an array with two elements ([`value`, `nextSeed`]) or `false` to terminate.
+
+```js
+const unfold = (fn, seed) => {
+  let result = [],
+    val = [null, seed];
+  while ((val = fn(val[1]))) result.push(val[0]);
+  return result;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+var f = n => (n > 50 ? false : [-n, n + 10]);
+unfold(f, 10); // [-10, -20, -30, -40, -50]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 ---
  ## ➗ Math
 
 ### average
 
-Returns the average of an of two or more numbers.
+Returns the average of two or more numbers.
 
 Use `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`, divide by the `length` of the array.
 
@@ -3391,7 +4595,7 @@ Return `false` if any of them divides the given number, else return `true`, unle
 ```js
 const isPrime = num => {
   const boundary = Math.floor(Math.sqrt(num));
-  for (var i = 2; i <= boundary; i++) if (num % i == 0) return false;
+  for (var i = 2; i <= boundary; i++) if (num % i === 0) return false;
   return num >= 2;
 };
 ```
@@ -3537,8 +4741,8 @@ const minBy = (arr, fn) => Math.min(...arr.map(typeof fn === 'function' ? fn : v
 <summary>Examples</summary>
 
 ```js
-minBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n); // 8
-minBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n'); // 8
+minBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n); // 2
+minBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n'); // 2
 ```
 
 </details>
@@ -3602,7 +4806,7 @@ const primes = num => {
   let arr = Array.from({ length: num - 1 }).map((x, i) => i + 2),
     sqroot = Math.floor(Math.sqrt(num)),
     numsTillSqroot = Array.from({ length: sqroot - 1 }).map((x, i) => i + 2);
-  numsTillSqroot.forEach(x => (arr = arr.filter(y => y % x !== 0 || y == x)));
+  numsTillSqroot.forEach(x => (arr = arr.filter(y => y % x !== 0 || y === x)));
   return arr;
 };
 ```
@@ -4012,7 +5216,7 @@ const hashNode = val =>
 <summary>Examples</summary>
 
 ```js
-hashBrowser(JSON.stringify({ a: 'a', b: [1, 2, 3, 4], foo: { c: 'bar' } })).then(console.log); // '04aa106279f5977f59f9067fa9712afc4aedc6f5862a8defc34552d8c7206393'
+hashNode(JSON.stringify({ a: 'a', b: [1, 2, 3, 4], foo: { c: 'bar' } })).then(console.log); // '04aa106279f5977f59f9067fa9712afc4aedc6f5862a8defc34552d8c7206393'
 ```
 
 </details>
@@ -4154,23 +5358,56 @@ UUIDGeneratorNode(); // '79c7c136-60ee-40a2-beb2-856f1feabefc'
 ---
  ## 🗃️ Object
 
-### cleanObj
+### bindAll
 
-Removes any properties except the ones specified from a JSON object.
-
-Use `Object.keys()` method to loop over given JSON object and deleting keys that are not included in given array.
-If you pass a special key,`childIndicator`, it will search deeply apply the function to inner objects, too.
+Use `Array.forEach()` to return a `function` that uses `Function.apply()` to apply the given context (`obj`) to `fn` for each function specified.
 
 ```js
-const cleanObj = (obj, keysToKeep = [], childIndicator) => {
-  Object.keys(obj).forEach(key => {
-    if (key === childIndicator) {
-      cleanObj(obj[key], keysToKeep, childIndicator);
-    } else if (!keysToKeep.includes(key)) {
-      delete obj[key];
-    }
-  });
-  return obj;
+const bindAll = (obj, ...fns) =>
+  fns.forEach(
+    fn => (
+      (f = obj[fn]),
+      (obj[fn] = function() {
+        return f.apply(obj);
+      })
+    )
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+var view = {
+  label: 'docs',
+  click: function() {
+    console.log('clicked ' + this.label);
+  }
+};
+bindAll(view, 'click');
+jQuery(element).on('click', view.click); // Logs 'clicked docs' when clicked.
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### deepClone
+
+Creates a deep clone of an object.
+
+Use recursion.
+Use `Object.assign()` and an empty object (`{}`) to create a shallow clone of the original.
+Use `Object.keys()` and `Array.forEach()` to determine which key-value pairs need to be deep cloned.
+
+```js
+const deepClone = obj => {
+  let clone = Object.assign({}, obj);
+  Object.keys(clone).forEach(
+    key => (clone[key] = typeof obj[key] === 'object' ? deepClone(obj[key]) : obj[key])
+  );
+  return clone;
 };
 ```
 
@@ -4178,8 +5415,30 @@ const cleanObj = (obj, keysToKeep = [], childIndicator) => {
 <summary>Examples</summary>
 
 ```js
-const testObj = { a: 1, b: 2, children: { a: 1, b: 2 } };
-cleanObj(testObj, ['a'], 'children'); // { a: 1, children : { a: 1}}
+const a = { foo: 'bar', obj: { a: 1, b: 2 } };
+const b = deepClone(a); // a !== b, a.obj !== b.obj
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### defaults
+
+Assigns default values for all properties in an object that are `undefined`.
+
+Use `Object.assign()` to create a new empty object and copy the original one to maintain key order, use `Array.reverse()` and the spread operator `...` to combine the default values from left to right, finally use `obj` again to overwrite properties that originally had a value.
+
+```js
+const defaults = (obj, ...defs) => Object.assign({}, obj, ...defs.reverse(), obj);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+defaults({ a: 1 }, { b: 2 }, { b: 6 }, { a: 3 }); // { a: 1, b: 2 }
 ```
 
 </details>
@@ -4213,6 +5472,114 @@ const equals = (a, b) => {
 
 ```js
 equals({ a: [2, { e: 3 }], b: [4], c: 'foo' }, { a: [2, { e: 3 }], b: [4], c: 'foo' }); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### findKey
+
+Returns the first key that satisfies the provided testing function. Otherwise `undefined` is returned.
+
+Use `Object.keys(obj)` to get all the properties of the object, `Array.find()` to test the provided function for each key-value pair. The callback receives three arguments - the value, the key and the object.
+
+```js
+const findKey = (obj, fn) => Object.keys(obj).find(key => fn(obj[key], key, obj));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+findKey(
+  {
+    barney: { age: 36, active: true },
+    fred: { age: 40, active: false },
+    pebbles: { age: 1, active: true }
+  },
+  o => o['active']
+); // 'barney'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### findLastKey
+
+Returns the last key that satisfies the provided testing function. Otherwise `undefined` is returned.
+
+Use `Object.keys(obj)` to get all the properties of the object, `Array.reverse()` to reverse their order and `Array.find()` to test the provided function for each key-value pair. The callback receives three arguments - the value, the key and the object.
+
+```js
+const findLastKey = (obj, fn) =>
+  Object.keys(obj)
+    .reverse()
+    .find(key => fn(obj[key], key, obj));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+findLastKey(
+  {
+    barney: { age: 36, active: true },
+    fred: { age: 40, active: false },
+    pebbles: { age: 1, active: true }
+  },
+  o => o['active']
+); // 'pebbles'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### forOwn
+
+Iterates over all own properties of an object, running a callback for each one.
+
+Use `Object.keys(obj)` to get all the properties of the object, `Array.forEach()` to run the provided function for each key-value pair. The callback receives three arguments - the value, the key and the object.
+
+```js
+const forOwn = (obj, fn) => Object.keys(obj).forEach(key => fn(obj[key], key, obj));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+forOwn({ foo: 'bar', a: 1 }, v => console.log(v)); // 'bar', 1
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### forOwnRight
+
+Iterates over all own properties of an object in reverse, running a callback for each one.
+
+Use `Object.keys(obj)` to get all the properties of the object, `Array.reverse()` to reverse their order and `Array.forEach()` to run the provided function for each key-value pair. The callback receives three arguments - the value, the key and the object.
+
+```js
+const forOwnRight = (obj, fn) =>
+  Object.keys(obj)
+    .reverse()
+    .forEach(key => fn(obj[key], key, obj));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+forOwnRight({ foo: 'bar', a: 1 }, v => console.log(v)); // 1, 'bar'
 ```
 
 </details>
@@ -4255,16 +5622,49 @@ functions(new Foo(), true); // ['a', 'b', 'c']
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### invertKeyValues
+### get
 
-Inverts the key-value pairs of an object, without mutating it.
+Retrieve a set of properties indicated by the given selectors from an object.
 
-Use `Object.keys()` and `Array.reduce()` to invert the key-value pairs of an object.
+Use `Array.map()` for each selector, `String.replace()` to replace square brackets with dots, `String.split('.')` to split each selector, `Array.filter()` to remove empty values and `Array.reduce()` to get the value indicated by it.
 
 ```js
-const invertKeyValues = obj =>
+const get = (from, ...selectors) =>
+  [...selectors].map(s =>
+    s
+      .replace(/\[([^\[\]]*)\]/g, '.$1.')
+      .split('.')
+      .filter(t => t !== '')
+      .reduce((prev, cur) => prev && prev[cur], from)
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const obj = { selector: { to: { val: 'val to select' } }, target: [1, 2, { a: 'test' }] };
+get(obj, 'selector.to.val', 'target[0]', 'target[2].a'); // ['val to select', 1, 'test']
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### invertKeyValues
+
+Inverts the key-value pairs of an object, without mutating it. The corresponding inverted value of each inverted key is an array of keys responsible for generating the inverted value. If a function is supplied, it is applied to each inverted key.
+
+Use `Object.keys()` and `Array.reduce()` to invert the key-value pairs of an object and apply the function provided (if any).
+Omit the second argument, `fn`, to get the inverted keys without applying a function to them.
+
+```js
+const invertKeyValues = (obj, fn) =>
   Object.keys(obj).reduce((acc, key) => {
-    acc[obj[key]] = key;
+    const val = fn ? fn(obj[key]) : obj[key];
+    acc[val] = acc[val] || [];
+    acc[val].push(key);
     return acc;
   }, {});
 ```
@@ -4273,7 +5673,8 @@ const invertKeyValues = obj =>
 <summary>Examples</summary>
 
 ```js
-invertKeyValues({ name: 'John', age: 20 }); // { 20: 'age', John: 'name' }
+invertKeyValues({ a: 1, b: 2, c: 1 }); // { 1: [ 'a', 'c' ], 2: [ 'b' ] }
+invertKeyValues({ a: 1, b: 2, c: 1 }, value => 'group' + value); // { group1: [ 'a', 'c' ], group2: [ 'b' ] }
 ```
 
 </details>
@@ -4367,6 +5768,64 @@ mapValues(users, u => u.age); // { fred: 40, pebbles: 1 }
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### matches
+
+Compares two objects to determine if the first one contains equivalent property values to the second one.
+
+Use `Object.keys(source)` to get all the keys of the second object, then `Array.every()`, `Object.hasOwnProperty()` and strict comparison to determine if all keys exist in the first object and have the same values.
+
+```js
+const matches = (obj, source) =>
+  Object.keys(source).every(key => obj.hasOwnProperty(key) && obj[key] === source[key]);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+matches({ age: 25, hair: 'long', beard: true }, { hair: 'long', beard: true }); // true
+matches({ hair: 'long', beard: true }, { age: 25, hair: 'long', beard: true }); // false
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### matchesWith
+
+Compares two objects to determine if the first one contains equivalent property values to the second one, based on a provided function.
+
+Use `Object.keys(source)` to get all the keys of the second object, then `Array.every()`, `Object.hasOwnProperty()` and the provided function to determine if all keys exist in the first object and have equivalent values.
+If no function is provided, the values will be compared using the equality operator.
+
+```js
+const matchesWith = (obj, source, fn) =>
+  Object.keys(source).every(
+    key =>
+      obj.hasOwnProperty(key) && fn
+        ? fn(obj[key], source[key], key, obj, source)
+        : obj[key] == source[key]
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const isGreeting = val => /^h(?:i|ello)$/.test(val);
+matchesWith(
+  { greeting: 'hello' },
+  { greeting: 'hi' },
+  (oV, sV) => isGreeting(oV) && isGreeting(sV)
+); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### merge
 
 Creates a new object from the combination of two or more objects.
@@ -4451,6 +5910,58 @@ objectToPairs({ a: 1, b: 2 }); // [['a',1],['b',2]]
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### omit
+
+Omits the key-value pairs corresponding to the given keys from an object.
+
+Use `Object.keys(obj)`, `Array.filter()` and `Array.includes()` to remove the provided keys.
+Use `Array.reduce()` to convert the filtered keys back to an object with the corresponding key-value pairs.
+
+```js
+const omit = (obj, arr) =>
+  Object.keys(obj)
+    .filter(k => !arr.includes(k))
+    .reduce((acc, key) => ((acc[key] = obj[key]), acc), {});
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+omit({ a: 1, b: '2', c: 3 }, ['b']); // { 'a': 1, 'c': 3 }
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### omitBy
+
+Creates an object composed of the properties the given function returns falsey for. The function is invoked with two arguments: (value, key).
+
+Use `Object.keys(obj)` and `Array.filter()`to remove the keys for which `fn` returns a truthy value.
+Use `Array.reduce()` to convert the filtered keys back to an object with the corresponding key-value pairs.
+
+```js
+const omitBy = (obj, fn) =>
+  Object.keys(obj)
+    .filter(k => !fn(obj[k], k))
+    .reduce((acc, key) => ((acc[key] = obj[key]), acc), {});
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+omitBy({ a: 1, b: '2', c: 3 }, x => typeof x === 'number'); // { b: '2' }
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### orderBy
 
 Returns a sorted array of objects ordered by properties and orders.
@@ -4485,24 +5996,48 @@ orderBy(users, ['name', 'age']); // [{name: 'barney', age: 36}, {name: 'fred', a
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### select
+### pick
 
-Retrieve a set of properties indicated by the given selectors from an object.
+Picks the key-value pairs corresponding to the given keys from an object.
 
-Use `Array.map()` for each selector, `String.split('.')` to split each selector and `Array.reduce()` to get the value indicated by it.
+Use `Array.reduce()` to convert the filtered/picked keys back to an object with the corresponding key-value pairs if the key exists in the object.
 
 ```js
-const select = (from, ...selectors) =>
-  [...selectors].map(s => s.split('.').reduce((prev, cur) => prev && prev[cur], from));
+const pick = (obj, arr) =>
+  arr.reduce((acc, curr) => (curr in obj && (acc[curr] = obj[curr]), acc), {});
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```js
-const obj = { selector: { to: { val: 'val to select' } } };
-select(obj, 'selector.to.val'); // ['val to select']
-select(obj, 'selector.to.val', 'selector.to'); // ['val to select', { val: 'val to select' }]
+pick({ a: 1, b: '2', c: 3 }, ['a', 'c']); // { 'a': 1, 'c': 3 }
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### pickBy
+
+Creates an object composed of the properties the given function returns truthy for. The function is invoked with two arguments: (value, key).
+
+Use `Object.keys(obj)` and `Array.filter()`to remove the keys for which `fn` returns a falsey value.
+Use `Array.reduce()` to convert the filtered keys back to an object with the corresponding key-value pairs.
+
+```js
+const pickBy = (obj, fn) =>
+  Object.keys(obj)
+    .filter(k => fn(obj[k], k))
+    .reduce((acc, key) => ((acc[key] = obj[key]), acc), {});
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+pickBy({ a: 1, b: '2', c: 3 }, x => typeof x === 'number'); // { 'a': 1, 'c': 3 }
 ```
 
 </details>
@@ -5005,6 +6540,28 @@ autoPluralize(2, 'person'); // 'people'
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### removeNonASCII
+
+Removes non-printable ASCII characters.
+
+Use a regular expression to remove non-printable ASCII characters.
+
+```js
+const removeNonASCII = str => str.replace(/[^\x20-\x7E]/g, '');
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+removeNonASCII('äÄçÇéÉêlorem-ipsumöÖÐþúÚ'); // 'lorem-ipsum'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### reverseString
 
 Reverses a string.
@@ -5065,6 +6622,28 @@ const splitLines = str => str.split(/\r?\n/);
 
 ```js
 splitLines('This\nis a\nmultiline\nstring.\n'); // ['This', 'is a', 'multiline', 'string.' , '']
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### stripHTMLTags
+
+Removes HTML/XML tags from string.
+
+Use a regular expression to remove HTML/XML tags from a string.
+
+```js
+const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+stripHTMLTags('<p><em>lorem</em> <strong>ipsum</strong></p>'); // 'lorem ipsum'
 ```
 
 </details>
@@ -5390,6 +6969,37 @@ isBoolean(false); // true
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### isEmpty
+
+Returns true if the a value is an empty object, collection, map or set, has no enumerable properties or is any type that is not considered a collection.
+
+Check if the provided value is `null` or if its `length` is equal to `0`.
+
+```js
+const isEmpty = val => val == null || !(Object.keys(val) || val).length;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isEmpty(new Map()); // true
+isEmpty(new Set()); // true
+isEmpty([]); // true
+isEmpty({}); // true
+isEmpty(''); // true
+isEmpty([1, 2]); // false
+isEmpty({ a: 1, b: 2 }); // false
+isEmpty('text'); // false
+isEmpty(123); // true - type is not considered a collection
+isEmpty(true); // true - type is not considered a collection
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### isFunction
 
 Checks if the given argument is a function.
@@ -5502,6 +7112,54 @@ isObject(['Hello!']); // true
 isObject({ a: 1 }); // true
 isObject({}); // true
 isObject(true); // false
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isObjectLike
+
+Checks if a value is object-like.
+
+Check if the provided value is not `null` and its `typeof` is equal to `'object'`.
+
+```js
+const isObjectLike = val => val !== null && typeof val === 'object';
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isObjectLike({}); // true
+isObjectLike([1, 2, 3]); // true
+isObjectLike(x => x); // false
+isObjectLike(null); // false
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isPlainObject
+
+Checks if the provided value is an object created by the Object constructor.
+
+Check if the provided value is truthy, use `typeof` to check if it is an object and `Object.constructor` to make sure the constructor is equal to `Object`.
+
+```js
+const isPlainObject = val => !!val && typeof val === 'object' && val.constructor === Object;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isPlainObject({ a: 1 }); // true
+isPlainObject(new Map()); // false
 ```
 
 </details>
@@ -5668,6 +7326,29 @@ isValidJSON(null); // true
 ---
  ## 🔧 Utility
 
+### castArray
+
+Casts the provided value as an array if it's not one.
+
+Use `Array.isArray()` to determine if `val` is an array and return it as-is or encapsulated in an array accordingly.
+
+```js
+const castArray = val => (Array.isArray(val) ? val : [val]);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+castArray('foo'); // ['foo']
+castArray([1]); // [1]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### cloneRegExp
 
 Clones a regular expression.
@@ -5775,9 +7456,10 @@ Pass `location.search` as the argument to apply to the current `url`.
 
 ```js
 const getURLParameters = url =>
-  url
-    .match(/([^?=&]+)(=([^&]*))/g)
-    .reduce((a, v) => ((a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a), {});
+  (url.match(/([^?=&]+)(=([^&]*))/g) || []).reduce(
+    (a, v) => ((a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a),
+    {}
+  );
 ```
 
 <details>
@@ -5785,6 +7467,7 @@ const getURLParameters = url =>
 
 ```js
 getURLParameters('http://url.com/page?name=Adam&surname=Smith'); // {name: 'Adam', surname: 'Smith'}
+getURLParameters('google.com'); // {}
 ```
 
 </details>
@@ -5936,6 +7619,32 @@ Logs: {
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### nthArg
+
+Creates a function that gets the argument at index `n`. If `n` is negative, the nth argument from the end is returned.
+
+Use `Array.slice()` to get the desired argument at index `n`.
+
+```js
+const nthArg = n => (...args) => args.slice(n)[0];
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const third = nthArg(2);
+third(1, 2, 3); // 3
+third(1, 2); // undefined
+const last = nthArg(-1);
+last(1, 2, 3, 4, 5); // 5
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### parseCookie
 
 Parse an HTTP Cookie header string and return an object of all cookie name-value pairs.
@@ -6009,8 +7718,8 @@ Use `Math.random` to generate a random 24-bit(6x4bits) hexadecimal number. Use b
 
 ```js
 const randomHexColorCode = () => {
-  let n = ((Math.random() * 0xfffff) | 0).toString(16);
-  return '#' + (n.length !== 6 ? ((Math.random() * 0xf) | 0).toString(16) + n : n);
+  let n = (Math.random() * 0xfffff * 1000000).toString(16);
+  return '#' + n.slice(0, 6);
 };
 ```
 
@@ -6090,6 +7799,33 @@ const timeTaken = callback => {
 
 ```js
 timeTaken(() => Math.pow(2, 10)); // 1024, (logged): timeTaken: 0.02099609375ms
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### toCurrency
+
+Take a number and return specified currency formatting.
+
+Use `Intl.NumberFormat` to enable country / currency sensitive formatting.
+
+```js
+const toCurrency = (n, curr, LanguageFormat = undefined) =>
+  Intl.NumberFormat(LanguageFormat, { style: 'currency', currency: curr }).format(n);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+toCurrency(123456.789, 'EUR'); // €123,456.79  | currency: Euro | currencyLangFormat: Local
+toCurrency(123456.789, 'USD', 'en-us'); // €123,456.79  | currency: US Dollar | currencyLangFormat: English (United States)
+toCurrency(123456.789, 'USD', 'fa'); // ۱۲۳٬۴۵۶٫۷۹ ؜$ | currency: US Dollar | currencyLangFormat: Farsi
+toCurrency(322342436423.2435, 'JPY'); // ¥322,342,436,423 | currency: Japanese Yen | currencyLangFormat: Local
+toCurrency(322342436423.2435, 'JPY', 'fi'); // 322 342 436 423 ¥ | currency: Japanese Yen | currencyLangFormat: Finnish
 ```
 
 </details>

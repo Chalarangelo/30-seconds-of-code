@@ -9,18 +9,19 @@ These snippets, while useful and interesting, didn't quite make it into the repo
 * [`JSONToDate`](#jsontodate)
 * [`speechSynthesis`](#speechsynthesis)
 * [`binarySearch`](#binarysearch)
+* [`cleanObj`](#cleanobj)
 * [`collatz`](#collatz)
 * [`countVowels`](#countvowels)
 * [`factors`](#factors)
 * [`fibonacciCountUntilNum`](#fibonaccicountuntilnum)
-* [`fibonacciUntilNum`](#fibonacciuntilnum)
+* [`howManyTimes`](#howmanytimes)
 * [`httpDelete`](#httpdelete)
 * [`httpPut`](#httpput)
 * [`isArmstrongNumber`](#isarmstrongnumber)
 * [`quickSort`](#quicksort)
 * [`removeVowels`](#removevowels)
 * [`solveRPN`](#solverpn)
-* [`howManyTimes`](#howmanytimes)
+* [`fibonacciUntilNum`](#fibonacciuntilnum)
 
 ---
 
@@ -80,12 +81,12 @@ speechSynthesis('Hello, World'); // // plays the message
 
 ### binarySearch
 
-Use recursion. Similar to `Array.indexOf()` that finds the index of a value within an array. 
+Use recursion. Similar to `Array.indexOf()` that finds the index of a value within an array.
 The difference being this operation only works with sorted arrays which offers a major performance boost due to it's logarithmic nature when compared to a linear search or `Array.indexOf()`.
 
-Search a sorted array by repeatedly dividing the search interval in half. 
-Begin with an interval covering the whole array. 
-If the value of the search is less than the item in the middle of the interval, recurse into the lower half. Otherwise recurse into the upper half. 
+Search a sorted array by repeatedly dividing the search interval in half.
+Begin with an interval covering the whole array.
+If the value of the search is less than the item in the middle of the interval, recurse into the lower half. Otherwise recurse into the upper half.
 Repeatedly recurse until the value is found which is the mid or you've recursed to a point that is greater than the length which means the value doesn't exist and return `-1`.
 
 ```js
@@ -95,8 +96,8 @@ const binarySearch = (arr, val, start = 0, end = arr.length - 1) => {
   if (arr[mid] > val) return binarySearch(arr, val, start, mid - 1);
   if (arr[mid] < val) return binarySearch(arr, val, mid + 1, end);
   return mid;
-}
-``` 
+};
+```
 
 <details>
 <summary>Examples</summary>
@@ -111,6 +112,39 @@ binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 21); // -1
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### cleanObj
+
+Removes any properties except the ones specified from a JSON object.
+
+Use `Object.keys()` method to loop over given JSON object and deleting keys that are not included in given array.
+If you pass a special key,`childIndicator`, it will search deeply apply the function to inner objects, too.
+
+```js
+const cleanObj = (obj, keysToKeep = [], childIndicator) => {
+  Object.keys(obj).forEach(key => {
+    if (key === childIndicator) {
+      cleanObj(obj[key], keysToKeep, childIndicator);
+    } else if (!keysToKeep.includes(key)) {
+      delete obj[key];
+    }
+  });
+  return obj;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const testObj = { a: 1, b: 2, children: { a: 1, b: 2 } };
+cleanObj(testObj, ['a'], 'children'); // { a: 1, children : { a: 1}}
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### collatz
 
 Applies the Collatz algorithm.
@@ -118,7 +152,7 @@ Applies the Collatz algorithm.
 If `n` is even, return `n/2`. Otherwise, return `3n+1`.
 
 ```js
-const collatz = n => (n % 2 == 0 ? n / 2 : 3 * n + 1);
+const collatz = n => (n % 2 === 0 ? n / 2 : 3 * n + 1);
 ```
 
 <details>
@@ -230,21 +264,26 @@ fibonacciCountUntilNum(10); // 7
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### fibonacciUntilNum
+### howManyTimes
 
-Generates an array, containing the Fibonacci sequence, up until the nth term.
+Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.
+Works for both negative and positive integers.
 
-Create an empty array of the specific length, initializing the first two values (`0` and `1`).
-Use `Array.reduce()` to add values into the array, using the sum of the last two values, except for the first two.
-Uses a mathematical formula to calculate the length of the array required.
+If `divisor` is `-1` or `1` return `Infinity`.
+If `divisor` is `-0` or `0` return `0`.
+Otherwise, keep dividing `num` with `divisor` and incrementing `i`, while the result is an integer.
+Return the number of times the loop was executed, `i`.
 
 ```js
-const fibonacciUntilNum = num => {
-  let n = Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));
-  return Array.from({ length: n }).reduce(
-    (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),
-    []
-  );
+const howManyTimes = (num, divisor) => {
+  if (divisor === 1 || divisor === -1) return Infinity;
+  if (divisor === 0) return 0;
+  let i = 0;
+  while (Number.isInteger(num / divisor)) {
+    i++;
+    num = num / divisor;
+  }
+  return i;
 };
 ```
 
@@ -252,7 +291,10 @@ const fibonacciUntilNum = num => {
 <summary>Examples</summary>
 
 ```js
-fibonacciUntilNum(10); // [ 0, 1, 1, 2, 3, 5, 8 ]
+howManyTimes(100, 2); // 2
+howManyTimes(100, 2.5); // 2
+howManyTimes(100, 0); // 0
+howManyTimes(100, -1); // Infinity
 ```
 
 </details>
@@ -466,26 +508,21 @@ solveRPN('2 3 ^'); // 8
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### howManyTimes
+### fibonacciUntilNum
 
-Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.
-Works for both negative and positive integers.
+Generates an array, containing the Fibonacci sequence, up until the nth term.
 
-If `divisor` is `-1` or `1` return `Infinity`.
-If `divisor` is `-0` or `0` return `0`.
-Otherwise, keep dividing `num` with `divisor` and incrementing `i`, while the result is an integer.
-Return the number of times the loop was executed, `i`.
+Create an empty array of the specific length, initializing the first two values (`0` and `1`).
+Use `Array.reduce()` to add values into the array, using the sum of the last two values, except for the first two.
+Uses a mathematical formula to calculate the length of the array required.
 
 ```js
-const howManyTimes = (num, divisor) => {
-  if (divisor === 1 || divisor === -1) return Infinity;
-  if (divisor === 0) return 0;
-  let i = 0;
-  while (Number.isInteger(num / divisor)) {
-    i++;
-    num = num / divisor;
-  }
-  return i;
+const fibonacciUntilNum = num => {
+  let n = Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));
+  return Array.from({ length: n }).reduce(
+    (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),
+    []
+  );
 };
 ```
 
@@ -493,10 +530,7 @@ const howManyTimes = (num, divisor) => {
 <summary>Examples</summary>
 
 ```js
-howManyTimes(100, 2); // 2
-howManyTimes(100, 2.5); // 2
-howManyTimes(100, 0); // 0
-howManyTimes(100, -1); // Infinity
+fibonacciUntilNum(10); // [ 0, 1, 1, 2, 3, 5, 8 ]
 ```
 
 </details>

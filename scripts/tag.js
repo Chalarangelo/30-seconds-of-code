@@ -6,9 +6,8 @@
 const fs = require('fs-extra'),
   path = require('path'),
   chalk = require('chalk');
-// Load helper functions (these are from existing snippets in 30 seconds of code!)
-const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
-if(isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
+const util = require('./util');
+if(util.isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
   console.log(`${chalk.green('NOBUILD')} Tagging terminated, parent commit is a Travis build!`);
   process.exit(0);
 }
@@ -26,47 +25,14 @@ const countOccurrences = (arr, value) => arr.reduce((a, v) => (v === value ? a +
 // Start the timer of the script
 console.time('Tagger');
 // Synchronously read all snippets and sort them as necessary (case-insensitive)
-try {
-  let snippetFilenames = fs.readdirSync(snippetsPath);
-  snippetFilenames.sort((a, b) => {
-    a = a.toLowerCase();
-    b = b.toLowerCase();
-    if (a < b) return -1;
-    if (a > b) return 1;
-    return 0;
-  });
-  // Store the data read from each snippet in the appropriate object
-  for (let snippet of snippetFilenames)
-    snippets[snippet] = fs.readFileSync(path.join(snippetsPath, snippet), 'utf8');
-} catch (err) {
-  // Handle errors (hopefully not!)
-  console.log(`${chalk.red('ERROR!')} During snippet loading: ${err}`);
-  process.exit(1);
-}
+snippets = util.readSnippets(snippetsPath);
 // Load tag data from the database
-try {
-  tagDbData = objectFromPairs(
-    fs
-      .readFileSync('tag_database', 'utf8')
-      .split('\n')
-      .slice(0, -1)
-      .map(v => {
-        let data = v.split(':').slice(0, 2);
-        data[1] = data[1].split(',').map(t => t.trim());
-        return data;
-      })
-  );
-  tagDbStats = Object.entries(tagDbData)
-    .sort((a, b) => a[1][0].localeCompare(b[1][0]))
-    .reduce((acc, val) => {
-      val[1].forEach(v => acc.hasOwnProperty(v) ? acc[v]++ : (acc[v] = 1));
-      return acc;
-    }, {});
-} catch (err) {
-  // Handle errors (hopefully not!)
-  console.log(`${chalk.red('ERROR!')} During tag database loading: ${err}`);
-  process.exit(1);
-}
+tagDbData = util.readTags();
+tagDbStats = Object.entries(tagDbData)
+  .reduce((acc, val) => {
+    val[1].forEach(v => acc.hasOwnProperty(v) ? acc[v]++ : (acc[v] = 1));
+    return acc;
+  }, {});
 // Update the listing of snippets in tag_database and log the statistics, along with missing scripts
 try {
   for (let snippet of Object.entries(snippets))
@@ -89,7 +55,7 @@ try {
 }
 // Log statistics for the tag_database file
 console.log(`\n${chalk.bgWhite(chalk.black('=== TAG STATS ==='))}`);
-for (let tagData of Object.entries(tagDbStats).filter(v => v[0] !== 'undefined'))
+for (let tagData of Object.entries(tagDbStats).filter(v => v[0] !== 'undefined').sort((a,b) => a[0].localeCompare(b[0])))
   console.log(`${chalk.green(tagData[0])}: ${tagData[1]} snippets`);
 console.log(
   `${chalk.blue("New untagged snippets (will be tagged as 'uncategorized'):")} ${missingTags}\n`
