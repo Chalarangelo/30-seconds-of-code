@@ -6,7 +6,7 @@ const Blob = class{
       size: Buffer.byteLength(s.toString())
     };
   }
-}
+};
 // const byteSize = require('./byteSize.js');
 // Override
 const byteSize = str => new Blob([str]).size;
