@@ -99,11 +99,13 @@ Use \`Array.concat()\` to prepend any additional supplied parameters to the argu
 'bindAll' : {
   'description': `### bindAll
 
+Binds methods of an object to the object itself, overwriting the existing method.
+
 Use \`Array.forEach()\` to return a \`function\` that uses \`Function.apply()\` to apply the given context (\`obj\`) to \`fn\` for each function specified.
 
 `,
   'comments': [`// Logs 'clicked docs' when clicked.`],
-  'hash': '2d8eba637f445e60525f33ebc004a70e40b06ab4bc13f8262652535008cbb40c => 00a2fdef0a5cfdf4e4e634937306e9f9851d11491f406e3ea209d9d0141bacae'
+  'hash': '00a2fdef0a5cfdf4e4e634937306e9f9851d11491f406e3ea209d9d0141bacae'
 },
 'bindKey' : {
   'description': `### bindKey
