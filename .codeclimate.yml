@@ -1,4 +1,9 @@
 version: "2"         # required to adjust maintainability checks
+plugins:
+  eslint:
+    enabled: true
+  markdownlint:
+    enabled: true
 checks:
   argument-count:
     config:
