@@ -1,5 +1,7 @@
 ### count_by
 
+:information_source: Already implemented via `collections.Counter`
+
 Groups the elements of a list based on the given function and returns the count of elements in each group.
 
 Use `map()` to map the values of the list using the given function. Iterate over the map and increase the the elements count each time it occurs.
