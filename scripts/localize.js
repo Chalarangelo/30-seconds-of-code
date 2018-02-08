@@ -44,5 +44,5 @@ locales.forEach(locale => {
   fs.writeFileSync(path.join(LOCALE_PATH,locale+'_log'), `${new Date()}
 Hash changes: ${hashChanges.length}
 
-${hashChanges.length ? hashChanges.map(v => ('Snippet name:' + v.snippetName +'\n  Old hash: ' + v.oldHash + '\n  New hash: ' + v.newHash + '\n')).join('\n') : ''}`)
+${hashChanges.length ? hashChanges.map(v => ('Snippet name:' + v.snippetName +'\n  Old hash: ' + v.oldHash + '\n  New hash: ' + v.newHash + '\n')).join('\n') : ''}`);
 });
