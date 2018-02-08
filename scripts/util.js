@@ -1,6 +1,7 @@
 const fs = require('fs-extra'),
   path = require('path'),
-  chalk = require('chalk');
+  chalk = require('chalk'),
+  crypto = require('crypto');
 // Synchronously read all snippets and sort them as necessary (case-insensitive)
 const readSnippets = snippetsPath => {
   let snippets = {};
@@ -66,4 +67,6 @@ const capitalize = (str, lowerRest = false) =>
   str.slice(0, 1).toUpperCase() + (lowerRest ? str.slice(1).toLowerCase() : str.slice(1));
 // Checks if current environment is Travis CI
 const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
-module.exports = {readSnippets, readTags, optimizeNodes, capitalize, objectFromPairs, isTravisCI};
+// Creates a hash for a value using the SHA-256 algorithm.
+const hashData = val => crypto.createHash('sha256').update(val).digest('hex');
+module.exports = {readSnippets, readTags, optimizeNodes, capitalize, objectFromPairs, isTravisCI, hashData};
