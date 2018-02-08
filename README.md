@@ -2,6 +2,7 @@
 
 # 30-seconds-of-python-code
 [![License](https://img.shields.io/aur/license/yaourt.svg)](https://github.com/kriadmin/30-seconds-of-python-code/blob/master/LICENSE) [![Gitter chat](https://img.shields.io/badge/chat-on%20gitter-4FB999.svg)](https://gitter.im/30-seconds-of-python-code/Lobby) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Travis Build](https://travis-ci.org/kriadmin/30-seconds-of-python-code.svg?branch=master)](https://travis-ci.org/kriadmin/30-seconds-of-python-code) [![Insight.io](https://img.shields.io/badge/insight.io-Ready-brightgreen.svg)](https://insight.io/github.com/kriadmin/30-seconds-of-python-code/tree/master/?source=0) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkriadmin%2F30-seconds-of-python-code.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkriadmin%2F30-seconds-of-python-code?ref=badge_shield)
 
 >Python implementation of 30-seconds-of-code.
 
@@ -27,6 +28,7 @@
 <li><a href = "#count_occurences"><code>count_occurences</code></a></li>
 <li><a href = "#deep_flatten"><code>deep_flatten</code></a></li>
 <li><a href = "#difference"><code>difference</code></a></li>
+<li><a href = "#difference_by"><code>difference_by</code></a></li>
 <li><a href = "#shuffle"><code>shuffle</code></a></li>
 <li><a href = "#spread"><code>spread</code></a></li>
 <li><a href = "#zip"><code>zip</code></a></li>
@@ -309,6 +311,8 @@ compact([0, 1, False, 2, '', 3, 'a', 's', 34]) # [ 1, 2, 3, 'a', 's', 34 ]
  
 ### count_by
 
+:information_source: Already implemented via `collections.Counter`
+
 Groups the elements of a list based on the given function and returns the count of elements in each group.
 
 Use `map()` to map the values of the list using the given function. Iterate over the map and increase the the elements count each time it occurs.
@@ -422,6 +426,32 @@ difference([1, 2, 3], [1, 2, 4]) # [3]
 
 <br><a href = "#table-of-contents">:arrow_up: Back to top</a>
  
+### difference_by
+
+Returns the difference between two list, after applying the provided function to each list element of both.
+
+Create a `set` by applying `fn` to each element in `b`, then use list comprehension in combination with fn on a to only keep values not contained in the previously created `set`.
+
+```py
+def difference_by(a, b, fn):
+    b = set(map(fn, b))
+    return [item for item in a if fn(item) not in b]
+ 
+ ```
+
+<details><summary>View Examples</summary>
+
+```py
+
+from math import floor
+difference_by([2.1, 1.2], [2.3, 3.4],floor) # [1.2]
+difference_by([{ 'x': 2 }, { 'x': 1 }], [{ 'x': 1 }], lambda v : v['x']) # [ { x: 2 } ]
+
+```
+</details>
+
+<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
+ 
 ### shuffle
 
 :information_source: The same algorithm is already implemented via `random.shuffle`.
@@ -460,7 +490,7 @@ shuffle(foo) # [2,3,1] , foo = [1,2,3]
  
 ### spread
 
-Implements javascript's spread syntax as a function. Flattens the list(non-deep) and returns an list.
+Implements javascript's `[].concat(...arr)`. Flattens the list(non-deep) and returns an list.
 
 ```py
 def spread(arg):
@@ -721,3 +751,8 @@ palindrome('taco cat') # True
 ## Credits
 
 *Icons made by [Smashicons](https://www.flaticon.com/authors/smashicons) from [www.flaticon.com](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).*
+
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkriadmin%2F30-seconds-of-python-code.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkriadmin%2F30-seconds-of-python-code?ref=badge_large)
