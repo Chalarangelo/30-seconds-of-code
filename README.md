@@ -6,7 +6,7 @@
 
 
 > Curated collection of useful JavaScript snippets that you can understand in 30 seconds or less.
-
+test
 
 - Use <kbd>Ctrl</kbd> + <kbd>F</kbd> or <kbd>command</kbd> + <kbd>F</kbd> to search for a snippet.
 - Contributions welcome, please read the [contribution guide](CONTRIBUTING.md).
