@@ -12,7 +12,7 @@ test('Testing functionName', (t) => {
   t.true(typeof functionName === 'function', 'functionName is a Function');
   functionName(Math.max);
   t.equal(output, 'max', 'Works for native functions');
-  function fun(x) {return x};
+  function fun(x) {return x;}
   functionName(fun);
   t.equal(output, 'fun', 'Works for functions');
   const fn = x => x;

@@ -2871,8 +2871,8 @@ Take a number and return specified currency formatting.
 Use \`Intl.NumberFormat\` to enable country / currency sensitive formatting.
 
 `,
-  'comments': [`// €123,456.79  | currency: Euro | currencyLangFormat: Local`,`// €123,456.79  | currency: US Dollar | currencyLangFormat: English (United States)`,`// ۱۲۳٬۴۵۶٫۷۹ ؜$ | currency: US Dollar | currencyLangFormat: Farsi`,`// ¥322,342,436,423 | currency: Japanese Yen | currencyLangFormat: Local`,`// 322 342 436 423 ¥ | currency: Japanese Yen | currencyLangFormat: Finnish`],
-  'hash': 'd1c86c6f075b79b53b74aede9669101f1a07e89cc73ccabf347ad42674b1a33c'
+  'comments': [`// €123,456.79  | currency: Euro | currencyLangFormat: Local`,`// $123,456.79  | currency: US Dollar | currencyLangFormat: English (United States)`,`// ۱۲۳٬۴۵۶٫۷۹ ؜$ | currency: US Dollar | currencyLangFormat: Farsi`,`// ¥322,342,436,423 | currency: Japanese Yen | currencyLangFormat: Local`,`// 322 342 436 423 ¥ | currency: Japanese Yen | currencyLangFormat: Finnish`],
+  'hash': 'f00f4a2229ed6b9f98356e6b0ea9e245f1d53bdbd616eb4c2babb87d7cf350b9'
 },
 'toDecimalMark' : {
   'description': `### toDecimalMark
