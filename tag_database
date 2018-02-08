@@ -21,3 +21,4 @@ palindrome:string
 is_upper_case:string
 is_lower_case:string
 count_by:list
+difference_by:list
