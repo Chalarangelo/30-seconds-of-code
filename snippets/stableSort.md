@@ -30,12 +30,12 @@ const input = [
   { height: 70, weight: 140 }
 ];
 
-const compare = (a, b) => a.height - b.height;
+// sort by height
+stableSort(input, (a, b) => a.height - b.height);
 
-// stable - sorted by height using stableSort()
-// Items with the same height are still sorted by weight which means they preserved their relative order.
-stableSort(input, compare);
 /*
+  Items with the same height are still sorted by weight
+  which means they preserved their relative order.
   [
     { height: 70, weight: 95 },
     { height: 70, weight: 125 },
@@ -51,23 +51,3 @@ stableSort(input, compare);
     { height: 110, weight: 115 }
   ]
 */
-
-// unstable - sorted by height using Array.sort()
-input.sort(compare);
-/*
-  [
-    { height: 70, weight: 140},
-    { height: 70, weight: 95 },
-    { height: 70, weight: 125 },
-    { height: 70, weight: 130 },
-    { height: 75, weight: 140 },
-    { height: 80, weight: 110 },
-    { height: 90, weight: 90 },
-    { height: 100, weight: 100 },
-    { height: 100, weight: 80 },
-    { height: 100, weight: 135 },
-    { height: 100, weight: 120 },
-    { height: 110, weight: 115 }
-  ]
-*/
-```
