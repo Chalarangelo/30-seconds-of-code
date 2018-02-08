@@ -2,7 +2,6 @@
 
 # 30-seconds-of-python-code
 [![License](https://img.shields.io/aur/license/yaourt.svg)](https://github.com/kriadmin/30-seconds-of-python-code/blob/master/LICENSE) [![Gitter chat](https://img.shields.io/badge/chat-on%20gitter-4FB999.svg)](https://gitter.im/30-seconds-of-python-code/Lobby) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Travis Build](https://travis-ci.org/kriadmin/30-seconds-of-python-code.svg?branch=master)](https://travis-ci.org/kriadmin/30-seconds-of-python-code) [![Insight.io](https://img.shields.io/badge/insight.io-Ready-brightgreen.svg)](https://insight.io/github.com/kriadmin/30-seconds-of-python-code/tree/master/?source=0) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkriadmin%2F30-seconds-of-python-code.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkriadmin%2F30-seconds-of-python-code?ref=badge_shield)
 
 >Python implementation of 30-seconds-of-code.
 
@@ -722,7 +721,3 @@ palindrome('taco cat') # True
 ## Credits
 
 *Icons made by [Smashicons](https://www.flaticon.com/authors/smashicons) from [www.flaticon.com](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).*
-
-
-## License
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkriadmin%2F30-seconds-of-python-code.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkriadmin%2F30-seconds-of-python-code?ref=badge_large)
