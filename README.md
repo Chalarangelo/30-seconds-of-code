@@ -5391,6 +5391,8 @@ UUIDGeneratorNode(); // '79c7c136-60ee-40a2-beb2-856f1feabefc'
 
 ### bindAll
 
+Binds methods of an object to the object itself, overwriting the existing method.
+
 Use `Array.forEach()` to return a `function` that uses `Function.apply()` to apply the given context (`obj`) to `fn` for each function specified.
 
 ```js
