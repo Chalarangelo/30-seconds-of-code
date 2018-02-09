@@ -1,4 +1,4 @@
-Test log for: Fri Feb 09 2018 13:35:07 GMT+0200 (GTB Standard Time)
+Test log for: Fri Feb 09 2018 13:39:36 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1230,6 +1230,7 @@ Test log for: Fri Feb 09 2018 13:35:07 GMT+0200 (GTB Standard Time)
   Testing readFileLines
 
     √ readFileLines is a Function
+    √ Tested on 09/02/2018 by @chalarangelo
 
   Testing rearg
 
@@ -1298,6 +1299,7 @@ Test log for: Fri Feb 09 2018 13:35:07 GMT+0200 (GTB Standard Time)
   Testing runAsync
 
     √ runAsync is a Function
+    √ Tested on 09/02/2018 by @chalarangelo
 
   Testing runPromisesInSeries
 
@@ -1784,14 +1786,15 @@ Test log for: Fri Feb 09 2018 13:35:07 GMT+0200 (GTB Standard Time)
   Testing zipWith
 
     √ zipWith is a Function
+    √ Runs the function provided
     √ Sends a GET request
+    √ Runs promises in series
     √ Sends a POST request
     √ Works with multiple promises
-    √ Runs the functions provided
 
 
-  total:     888
-  passing:   888
-  duration:  2.5s
+  total:     891
+  passing:   891
+  duration:  2.4s
 
 
