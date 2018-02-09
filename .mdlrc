@@ -1,1 +1,11 @@
-first-header-h1 false
+header-style "atx"
+ul-style "asterisk"
+no-trailing-spaces true
+no-hard-tabs true
+no-reversed-links true
+no-missing-space-atx true
+header-start-left true
+single-h1 true
+blanks-around-fences true
+no-space-in-code true
+fenced-code-language true
