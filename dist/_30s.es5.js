@@ -1761,8 +1761,7 @@ var round = function round(n) {
 };
 
 var runAsync = function runAsync(fn) {
-  var blob = 'var fn = ' + fn.toString() + '; postMessage(fn());';
-  var worker = new Worker(URL.createObjectURL(new Blob([blob]), {
+  var worker = new Worker(URL.createObjectURL(new Blob(['postMessage((' + fn + ')());']), {
     type: 'application/javascript; charset=utf-8'
   }));
   return new Promise(function (res, rej) {
