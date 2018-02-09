@@ -1,4 +1,4 @@
-Test log for: Fri Feb 09 2018 13:23:32 GMT+0200 (GTB Standard Time)
+Test log for: Fri Feb 09 2018 13:30:29 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1210,16 +1210,21 @@ Test log for: Fri Feb 09 2018 13:23:32 GMT+0200 (GTB Standard Time)
   Testing randomIntArrayInRange
 
     √ randomIntArrayInRange is a Function
+    √ The returned array contains only integers
+    √ The returned array has the proper length
+    √ The returned array's values lie between provided lowerLimit and upperLimit (both inclusive).
 
   Testing randomIntegerInRange
 
     √ randomIntegerInRange is a Function
-    √ The returned value is a Integer
-    √ The returned value lies between provied lowerLimit and upperLimit (both inclusive).
+    √ The returned value is an integer
+    √ The returned value lies between provided lowerLimit and upperLimit (both inclusive).
 
   Testing randomNumberInRange
 
     √ randomNumberInRange is a Function
+    √ The returned value is a number
+    √ The returned value lies between provided lowerLimit and upperLimit (both inclusive).
 
   Testing readFileLines
 
@@ -1783,8 +1788,8 @@ Test log for: Fri Feb 09 2018 13:23:32 GMT+0200 (GTB Standard Time)
     √ Works with multiple promises
 
 
-  total:     881
-  passing:   881
+  total:     886
+  passing:   886
   duration:  2.4s
 
 
