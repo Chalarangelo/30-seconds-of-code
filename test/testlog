@@ -1,4 +1,4 @@
-Test log for: Thu Feb 08 2018 16:12:32 GMT+0200 (GTB Standard Time)
+Test log for: Fri Feb 09 2018 13:05:56 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1296,10 +1296,18 @@ Test log for: Thu Feb 08 2018 16:12:32 GMT+0200 (GTB Standard Time)
   Testing sample
 
     √ sample is a Function
+    √ Returns a random element from the array
+    √ Works for single-element arrays
+    √ Returns undefined for empty array
 
   Testing sampleSize
 
     √ sampleSize is a Function
+    √ Returns a single element without n specified
+    √ Returns a random sample of specified size from an array
+    √ Returns all elements in an array if n >= length
+    √ Returns an empty array if original array is empty
+    √ Returns an empty array if n = 0
 
   Testing scrollToTop
 
@@ -1332,6 +1340,10 @@ Test log for: Thu Feb 08 2018 16:12:32 GMT+0200 (GTB Standard Time)
   Testing shuffle
 
     √ shuffle is a Function
+    √ Shuffles the array
+    √ New array contains all original elements
+    √ Works for empty arrays
+    √ Works for single-element arrays
 
   Testing similarity
 
@@ -1758,8 +1770,8 @@ Test log for: Thu Feb 08 2018 16:12:32 GMT+0200 (GTB Standard Time)
     √ Works with multiple promises
 
 
-  total:     856
-  passing:   856
+  total:     868
+  passing:   868
   duration:  2.4s
 
 
