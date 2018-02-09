@@ -4,6 +4,8 @@ plugins:
     enabled: true
   markdownlint:
     enabled: true
+    # initial: .mdlrc
+    # config: .mdlrc.style.rb
   fixme:
     enabled: true
 checks:
