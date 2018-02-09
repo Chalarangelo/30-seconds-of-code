@@ -1,4 +1,4 @@
-Test log for: Fri Feb 09 2018 13:19:59 GMT+0200 (GTB Standard Time)
+Test log for: Fri Feb 09 2018 13:23:32 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1655,6 +1655,9 @@ Test log for: Fri Feb 09 2018 13:19:59 GMT+0200 (GTB Standard Time)
   Testing untildify
 
     √ untildify is a Function
+    √ Contains no tildes
+    √ Does not alter the rest of the path
+    √ Does not alter paths without tildes
 
   Testing unzip
 
@@ -1676,6 +1679,7 @@ Test log for: Fri Feb 09 2018 13:19:59 GMT+0200 (GTB Standard Time)
   Testing UUIDGeneratorBrowser
 
     √ UUIDGeneratorBrowser is a Function
+    √ Tested 09/02/2018 by @chalarangelo
 
   Testing UUIDGeneratorNode
 
@@ -1779,8 +1783,8 @@ Test log for: Fri Feb 09 2018 13:19:59 GMT+0200 (GTB Standard Time)
     √ Works with multiple promises
 
 
-  total:     877
-  passing:   877
+  total:     881
+  passing:   881
   duration:  2.4s
 
 
