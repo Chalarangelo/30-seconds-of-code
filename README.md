@@ -6,7 +6,6 @@
 
 
 > Curated collection of useful JavaScript snippets that you can understand in 30 seconds or less.
-test
 
 - Use <kbd>Ctrl</kbd> + <kbd>F</kbd> or <kbd>command</kbd> + <kbd>F</kbd> to search for a snippet.
 - Contributions welcome, please read the [contribution guide](CONTRIBUTING.md).
@@ -3275,9 +3274,8 @@ Return a promise, listening for `onmessage` and `onerror` events and resolving t
 
 ```js
 const runAsync = fn => {
-  const blob = `var fn = ${fn.toString()}; postMessage(fn());`;
   const worker = new Worker(
-    URL.createObjectURL(new Blob([blob]), {
+    URL.createObjectURL(new Blob([`postMessage((${fn})());`]), {
       type: 'application/javascript; charset=utf-8'
     })
   );
