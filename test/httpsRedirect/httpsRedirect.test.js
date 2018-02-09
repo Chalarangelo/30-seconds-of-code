@@ -5,6 +5,7 @@ test('Testing httpsRedirect', (t) => {
   //For more information on all the methods supported by tape
   //Please go to https://github.com/substack/tape
   t.true(typeof httpsRedirect === 'function', 'httpsRedirect is a Function');
+  t.pass('Tested on 09/02/2018 by @chalarangelo');
   //t.deepEqual(httpsRedirect(args..), 'Expected');
   //t.equal(httpsRedirect(args..), 'Expected');
   //t.false(httpsRedirect(args..), 'Expected');
