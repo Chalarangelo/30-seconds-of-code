@@ -5,6 +5,7 @@ test('Testing colorize', (t) => {
   //For more information on all the methods supported by tape
   //Please go to https://github.com/substack/tape
   t.true(typeof colorize === 'function', 'colorize is a Function');
+  t.pass('Tested on 09/02/2018 by @chalarangelo');
   //t.deepEqual(colorize(args..), 'Expected');
   //t.equal(colorize(args..), 'Expected');
   //t.false(colorize(args..), 'Expected');
