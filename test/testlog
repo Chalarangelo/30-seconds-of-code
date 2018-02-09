@@ -1,4 +1,4 @@
-Test log for: Fri Feb 09 2018 13:12:06 GMT+0200 (GTB Standard Time)
+Test log for: Fri Feb 09 2018 13:19:59 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1680,6 +1680,8 @@ Test log for: Fri Feb 09 2018 13:12:06 GMT+0200 (GTB Standard Time)
   Testing UUIDGeneratorNode
 
     √ UUIDGeneratorNode is a Function
+    √ Contains dashes in the proper places
+    √ Only contains hexadecimal digits
 
   Testing validateNumber
 
@@ -1777,8 +1779,8 @@ Test log for: Fri Feb 09 2018 13:12:06 GMT+0200 (GTB Standard Time)
     √ Works with multiple promises
 
 
-  total:     875
-  passing:   875
+  total:     877
+  passing:   877
   duration:  2.4s
 
 
