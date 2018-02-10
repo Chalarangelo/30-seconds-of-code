@@ -7,12 +7,12 @@ Use `new Date()` to get today's date, adding one day using `Date.getDate()` and 
 const tomorrow = () => {
   let t = new Date();
   t.setDate(t.getDate() + 1);
-  return `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, '0')}-${String(
+  return `${String(t.getMonth() + 1).padStart(2, '0')}-${String(
     t.getDate()
-  ).padStart(2, '0')}`;
+  ).padStart(2, '0')}-${t.getFullYear()}`;
 };
 ```
 
 ```js
-tomorrow(); // 2017-12-27 (if current date is 2017-12-26)
+tomorrow(); // 12-27-2017 (if current date is 12-26-2017)
 ```
