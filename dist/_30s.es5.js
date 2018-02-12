@@ -362,16 +362,20 @@ var curry = function curry(fn) {
 };
 
 var debounce = function debounce(fn) {
-  var wait = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+  var ms = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
 
-  var inDebounce = void 0;
+  var timeoutId = void 0;
   return function () {
-    var context = this,
-        args = arguments;
-    clearTimeout(inDebounce);
-    inDebounce = setTimeout(function () {
-      return fn.apply(context, args);
-    }, wait);
+    var _this = this;
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(function () {
+      return fn.apply(_this, args);
+    }, ms);
   };
 };
 

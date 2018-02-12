@@ -198,13 +198,11 @@ const currentURL = () => window.location.href;
 const curry = (fn, arity = fn.length, ...args) =>
   arity <= args.length ? fn(...args) : curry.bind(null, fn, arity, ...args);
 
-const debounce = (fn, wait = 0) => {
-  let inDebounce;
-  return function() {
-    const context = this,
-      args = arguments;
-    clearTimeout(inDebounce);
-    inDebounce = setTimeout(() => fn.apply(context, args), wait);
+const debounce = (fn, ms = 0) => {
+  let timeoutId;
+  return function(...args) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => fn.apply(this, args), ms);
   };
 };
 
