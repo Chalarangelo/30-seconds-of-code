@@ -7,10 +7,10 @@ test('Testing randomIntArrayInRange', (t) => {
   t.true(typeof randomIntArrayInRange === 'function', 'randomIntArrayInRange is a Function');
   const lowerLimit = Math.floor(Math.random() * 20);
   const upperLimit = Math.floor(lowerLimit + Math.random() * 10);
-  const randLength = Math.floor(Math.random() * 10)
-  t.true(randomIntArrayInRange(lowerLimit,upperLimit).length === 1,'The default value of returned array is 1');
-  t.true(randomIntArrayInRange(lowerLimit,upperLimit,randLength).length === randLength,'The length of returned array is the same as the provided value.')
-  t.true(randomIntArrayInRange(lowerLimit,upperLimit,randLength).filter(el => !((el>=lowerLimit) && (el <= upperLimit))).length === 0,'The returned values is in range.')
+  const arr = randomIntArrayInRange(lowerLimit,upperLimit, 10);
+  t.true(arr.every(x => typeof x === 'number'), 'The returned array contains only integers');
+  t.equal(arr.length, 10, 'The returned array has the proper length');
+  t.true(arr.every(x => (x >= lowerLimit) && (x <= upperLimit)),'The returned array\'s values lie between provided lowerLimit and upperLimit (both inclusive).');
   //t.deepEqual(randomIntArrayInRange(args..), 'Expected');
   //t.equal(randomIntArrayInRange(args..), 'Expected');
   //t.false(randomIntArrayInRange(args..), 'Expected');
