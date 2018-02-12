@@ -2,11 +2,8 @@ const permuteAll = (input) => {
 const result = [];
 let inputState = input;
 
-if (typeof input === 'string') {
-inputState = input.split('');
-} else if (typeof input === 'number') {
-inputState = (input).toString().split('');
-}
+if (typeof input === 'string') inputState = input.split('')
+if (typeof input === 'number') inputState = (input).toString().split('');
 
 const permute = (arr, m = []) => {
 if (arr.length === 0) {
