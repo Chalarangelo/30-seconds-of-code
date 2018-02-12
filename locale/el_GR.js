@@ -211,11 +211,11 @@ module.exports = {
 'chunk' : {
   'description': `### chunk
 
-Chunks an πίνακα into smaller arrays of a specified size.
+Μετατρέπει ένα πίνακα σε μικρότερους πίνακες με το καθορισμένο μέγεθος.
 
-Χρησιμοποιείται \`Array.from()\` to create a new array, that fits the number of chunks that will be produced.
-Χρησιμοποιείται \`Array.slice()\` to map each element of the new πίνακα to a chunk the length of \`size\`.
-If the original πίνακα can't be split evenly, the final chunk will contain the remaining elements.
+Χρησιμοποιείται η μέθοδος \`Array.from()\` για να δημιουργηθεί ένας νέος πίνακας, που χωράει τον αριθμό των πινάκων που θα παραχθούν.
+Χρησιμοποιείται η μέθοδος \`Array.slice()\` για να γίνει map κάθε στοιχείο του νέου πίνακα σε μια πλειάδα στοιχείων μήκους \`size\`.
+Αν ο αρχικός πίνακας δε μπορεί να χωριστεί σε ίσα τμήματα, ο τελευταίος υποπίνακας θα περιέχει τα εναπομείναντα στοιχεία.
 
 `,
   'comments': [`// [[1,2],[3,4],[5]]`],
@@ -224,10 +224,10 @@ If the original πίνακα can't be split evenly, the final chunk will contain
 'clampNumber' : {
   'description': `### clampNumber
 
-Clamps \`num\` within the inclusive range specified by the boundary values \`a\` and \`b\`.
+Περιορίζει ένα αριθμό \`num\` μέσα στο εύρος τιμών που περικλείεται ανάμεσα στις τιμές \`a\` και \`b\` (περιλαμβάνοντας τα άκρα).
 
-If \`num\` falls within the range, return \`num\`.
-Otherwise, return the nearest number in the range.
+Αν ο αριθμός \`num\` είναι μέσα στο εύρος τιμών, επιστρέφεται ο αριθμός \`num\`.
+Αλλιώς, επιστρέφεται ο κοντινότερος αριθμός μέσα στο εύρος τιμών.
 
 `,
   'comments': [`// 3`,`// -1`],
@@ -236,9 +236,9 @@ Otherwise, return the nearest number in the range.
 'cloneRegExp' : {
   'description': `### cloneRegExp
 
-Clones a regular expression.
+Κλωνοποιεί μία κανονική έκφραση (regular expression).
 
-Χρησιμοποιείται \`new RegExp()\`, \`RegExp.source\` and \`RegExp.flags\` to clone the given regular expression.
+Χρησιμοποιείται μία \`new RegExp()\`, οι μέθοδοι \`RegExp.source\` και \`RegExp.flags\` για να κλωνοποιηθεί η δεδομένη κανονική έκφραση.
 
 `,
   'comments': [`// /lorem ipsum/gi`],
@@ -247,9 +247,9 @@ Clones a regular expression.
 'coalesce' : {
   'description': `### coalesce
 
-Επιστρέφει the first non-null/undefined argument.
+Επιστρέφει το πρώτο όρισμα που δεν είναι null ή undefined.
 
-Χρησιμοποιείται \`Array.find()\` to return the first non \`null\`/\`undefined\` argument.
+Χρησιμοποιείται η μέθοδος \`Array.find()\` για να επιστρέψει το πρώτο όρισμα που δεν είναι \`null\` ή \`undefined\`.
 
 `,
   'comments': [`// ""`],
@@ -258,9 +258,9 @@ Clones a regular expression.
 'coalesceFactory' : {
   'description': `### coalesceFactory
 
-Επιστρέφει a customized coalesce συνάρτηση that returns the first argument that returns \`true\` from the provided argument validation function.
+Επιστρέφει μία συνάρτηση που επιστρέφει το πρώτο όρισμα που επιστρέφει \`true\` από τη δεδομένη συνάρτηση επικύρωσης ορισμάτων.
 
-Χρησιμοποιείται \`Array.find()\` to return the first argument that returns \`true\` from the provided argument validation function.
+Χρησιμοποιείται η μέθοδος \`Array.find()\` για να επιστρέψει το πρώτο όρισμα που επιστρέφει \`true\` από τη δεδομένη συνάρτηση επικύρωσης ορισμάτων.
 
 `,
   'comments': [`// "Waldo"`],
@@ -269,32 +269,32 @@ Clones a regular expression.
 'collectInto' : {
   'description': `### collectInto
 
-Changes a συνάρτηση that accepts an πίνακα into a variadic function.
+Μετατρέπει μία a συνάρτηση που δέχεται σαν όρισμα ένα πίνακα σε μία συνάρτηση πολλαπλών ορισμάτων (variadic).
 
-Given a function, return a closure that collects all inputs into an array-accepting function.
+Δεδομένης μία συνάρτησης, επιστρέφει ένα closure που συλλέγει όλα τα δεδομένα εισόδου σε μία συνάρτηση που δέχεται σαν όρισμα ένα πίνακα.
 
 `,
-  'comments': [`// [1, 2, 3] (after about 2 seconds)`],
+  'comments': [`// [1, 2, 3] (μετά από περίπου 2 δευτερόλεπτα)`],
   'hash': '6b57cac68ad177d8fbb30e9c586f8f9c088acf755c6c956b5387441ea3850fce'
 },
 'colorize' : {
   'description': `### colorize
 
-Add special characters to text to print in color in the console (combined with \`console.log()\`).
+Προσθέτει ειδικούς χαρακτήρες σε κείμενο για να εμφανιστεί με χρώματα στην κονσόλα (σε συνδυασμό με τη μέθοδο \`console.log()\`).
 
-Χρησιμοποιείται template literals and special characters to add the appropriate color code to the string output.
-For background colors, add a special character that resets the background color at the end of the string.
+Χρησιμοποιούνται template literals και ειδικοί χαρακτήρες για να προστεθεί ο κατάλληλος κωδικός χρώματος στη συμβολοσειρά.
+Για χρώματα φόντου, προστίθεται ένας επιπλέον ειδικός χαρακτήρας που καθαρίζει το χρώμα παρασκηνίου μετά το τέλος της συμβολοσειράς.
 
 `,
-  'comments': [`// 'foo' (red letters)`,`// 'foo bar' (blue background)`,`// 'foo bar' (first word in yellow letters, second word in green letters, white background for both)`],
+  'comments': [`// 'foo' (κόκκινα γράμματα)`,`// 'foo bar' (μπλε φόντο)`,`// 'foo bar' (η πρώτη λέξη με κίτρινα γράμματα, η δεύτερη με πράσινα γράμματα, λευκό φόντο και για τις δυο)`],
   'hash': '4f42f00e7d675d21829a5fcd2ab2e3fa2058d1c1b1d6850ff28f2a424364593e'
 },
 'compact' : {
   'description': `### compact
 
-Removes falsey values from an array.
+Αφαιρεί όσες τιμές αξιολογούνται ως false σε ένα πίνακα.
 
-Χρησιμοποιείται \`Array.filter()\` to filter out falsey values (\`false\`, \`null\`, \`0\`, \`""\`, \`undefined\`, and \`NaN\`).
+Χρησιμοποιείται η μέθοδος \`Array.filter()\` για να αφαιρέσει τις τιμές (\`false\`, \`null\`, \`0\`, \`""\`, \`undefined\`, and \`NaN\`).
 
 `,
   'comments': [`// [ 1, 2, 3, 'a', 's', 34 ]`],
@@ -303,10 +303,10 @@ Removes falsey values from an array.
 'compose' : {
   'description': `### compose
 
-Performs right-to-left συνάρτηση composition.
+Εκτελεί σύνθεση συναρτήσεων από τα δεξιά προς τα αριστερά.
 
-Χρησιμοποιείται \`Array.reduce()\` to perform right-to-left συνάρτηση composition.
-The last (rightmost) συνάρτηση can accept oneήmore arguments; the remaining functions must be unary.
+Χρησιμοποιείται η μέθοδος \`Array.reduce()\` για να εκτελεστεί σύνθεση συναρτήσεων από τα δεξιά προς τα αριστερά.
+Η τελευταία (δεξιότερη) συνάρτηση μπορεί να δεχτεί ένα ή περισσότερα ορίσματα, οι υπόλοιπες πρέπει να είναι μοναδιαίες.
 
 `,
   'comments': [`// 15`],
@@ -315,10 +315,10 @@ The last (rightmost) συνάρτηση can accept oneήmore arguments; the rema
 'composeRight' : {
   'description': `### composeRight
 
-Performs left-to-right συνάρτηση composition.
+Εκτελεί σύνθεση συναρτήσεων από τα αριστερά προς τα δεξιά.
 
-Χρησιμοποιείται \`Array.reduce()\` to perform left-to-right συνάρτηση composition.
-The first (leftmost) συνάρτηση can accept oneήmore arguments; the remaining functions must be unary.
+Χρησιμοποιείται η μέθοδος \`Array.reduce()\` για να εκτελεστεί σύνθεση συναρτήσεων από τα αριστερά προς τα δεξιά.
+Η πρώτη (αριστερότερη) συνάρτηση μπορεί να δεχτεί ένα ή περισσότερα ορίσματα, οι υπόλοιπες πρέπει να είναι μοναδιαίες.
 
 `,
   'comments': [`// 9`],
@@ -327,10 +327,10 @@ The first (leftmost) συνάρτηση can accept oneήmore arguments; the rema
 'converge' : {
   'description': `### converge
 
-Accepts a converging συνάρτηση and a list of branching functions and returns a συνάρτηση that applies each branching συνάρτηση to the ορίσματα and the results of the branching functions are passed as ορίσματα to the converging function.
+Δέχεται μια συγκλίνουσα συνάρτηση και μία λίστα συναρτήσεων διακλάδωσης και επιστρέφει μια συνάρτηση που εφαρμόζει κάθε συνάρτηση διακλάδωσης στα ορίσματα και τα αποτελέσματά τους δίνονται ως ορίσματα στη συγκλίνουσα συνάρτηση.
 
-Χρησιμοποιείται \`Array.map()\` and \`Function.apply()\` to apply each συνάρτηση to the given arguments.
-Χρησιμοποιείται the spread operator (\`...\`) to call \`coverger\` with the results of all other functions.
+Χρησιμοποιούνται οι μέθοδοι \`Array.map()\` και \`Function.apply()\` για να εφαρμοστεί κάθε συνάρτηση στα δεδομένα ορίσματα.
+Χρησιμοποιείται ο τελεστής spread (\`...\`) για να κληθεί η μέθοδος \`coverger\` με τα αποτελέσματα των άλλων μεθόδων.
 
 `,
   'comments': [`// 4`],
@@ -339,25 +339,25 @@ Accepts a converging συνάρτηση and a list of branching functions and re
 'copyToClipboard' : {
   'description': `### copyToClipboard
 
-Copy a string to the clipboard. Only works as a result of user action (i.e. inside a \`click\` event listener).
+Αντιγράφει μια συμβολοσειρά στο πρόχειρο. Λειτουργεί μόνο σαν αποτέλεσμα ενέργειας χρήστη (δηλαδή μέσα σε ένα event listener για \`click\`).
 
-Create a new \`<textarea>\` element, fill it with the supplied data and add it to the HTML document.
-Χρησιμοποιείται \`Selection.getRangeAt()\`to store the selected range (if any).
-Χρησιμοποιείται \`document.execCommand('copy')\` to copy to the clipboard.
-Remove the \`<textarea>\` element from the HTML document.
-Finally, use \`Selection().addRange()\` to recover the original selected range (if any).
+Δημιουργείται ένα νέο στοιχείο \`<textarea>\`, γεμίζεται με τα παρχεόμενα δεδομένα και προστίθεται στο έγγραφο HTML.
+Χρησιμοποιείται η μέθοδος \`Selection.getRangeAt()\` για να αποθηκεύσει το επιλεγμένο εύρος (αν υπάρχει).
+Χρησιμοποιείται η μέθοδος \`document.execCommand('copy')\` για να γίνει αντιγραφή στο πρόχειρο.
+Αφαιρείται το στοιχείο \`<textarea>\` από το έγγραφο HTML.
+Τέλος, χρησιμοποιείται η μέθοδος \`Selection().addRange()\` για να γίνει ανάκτηση του επιλεγμένου έυρους (αν υπήρχε).
 
 `,
-  'comments': [`// 'Lorem ipsum' copied to clipboard.`],
+  'comments': [`// 'Lorem ipsum' αντεγραμμένο στο πρόχειρο.`],
   'hash': 'c496300a947ef9aabbe72f79c7ba0ca85c3a816eb54cbc8bb44ea5830b5380c9'
 },
 'countBy' : {
   'description': `### countBy
 
-Groups the elements of an πίνακα based on the given συνάρτηση and returns the count of elements in each group.
+Ομαδοποιεί τα στοιχεία ενός πίνακα με βάση τη δεδομένη συνάρτηση και επιστρέφει το πλήθος των στοιχείων σε κάθε ομάδα.
 
-Χρησιμοποιείται \`Array.map()\` to map the values of an πίνακα to a functionήproperty name.
-Χρησιμοποιείται \`Array.reduce()\` to create an object, where the keys are produced from the mapped results.
+Χρησιμοποιείται η μέθοδος \`Array.map()\` για να γίνει map των τιμών του πίνακα σε ένα όνομα συνάρτησης ή ιδιότητας.
+Χρησιμοποιείται η μέθοδος \`Array.reduce()\` για να δημιουργηθεί ένα αντικείμενο, το οποίου τα keys παράγονται από τα αποτελέσματα του προηγούμενου mapping.
 
 `,
   'comments': [`// {4: 1, 6: 2}`,`// {3: 2, 5: 1}`],
@@ -366,9 +366,9 @@ Groups the elements of an πίνακα based on the given συνάρτηση and
 'countOccurrences' : {
   'description': `### countOccurrences
 
-Counts the occurrences of a value in an array.
+Μετρά το πλήθος εμφανίσεων μια τιμής σε ένα πίνακα.
 
-Χρησιμοποιείται \`Array.reduce()\` to increment a counter each time you encounter the specific value inside the array.
+Χρησιμοποιείται η μέθοδος \`Array.reduce()\` για να επαυξηθεί ένας μετρητής κάθε φορά που συναντάται ένα στοιχείο με τη συγκεκριμένη τιμή μέσα στον πίνακα.
 
 `,
   'comments': [`// 3`],
@@ -377,12 +377,12 @@ Counts the occurrences of a value in an array.
 'createElement' : {
   'description': `### createElement
 
-Δημιουργεί an element from a string (without appending it to the document).
-If the given string contains multiple elements, only the first one will be returned.
+Δημιουργεί ένα στοιχείο από μία συμβολοσειρά (χωρίς να το προσθέτει στο έγγραφο).
+Αν η δεδομένη συμβολοσειρά περιέχει πολλαπλά στοιχεία, μόνο το πρώτο θα επιστραφεί.
 
-Χρησιμοποιείται \`document.createElement()\` to create a new element.
-Set its \`innerHTML\` to the string supplied as the argument.
-Χρησιμοποιείται \`ParentNode.firstElementChild\` to return the element version of the string.
+Χρησιμοποιείται η μέθοδος \`document.createElement()\` για να δημιουργηθεί ένα στοιχείο.
+Τίθεται το \`innerHTML\` του στη συμβολοσειρά που δόθηκε ως όρισμα.
+Χρησιμοποιείται η ιδιότητα \`ParentNode.firstElementChild\` για να επιστραφεί το στοιχείο που έχει παραχθεί.
 
 `,
   'comments': [`// 'container'`],
@@ -391,24 +391,23 @@ Set its \`innerHTML\` to the string supplied as the argument.
 'createEventHub' : {
   'description': `### createEventHub
 
-Δημιουργεί a pub/sub ([publish–subscribe](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)) event hub with \`emit\`, \`on\`, and \`off\` methods.
+Δημιουργεί ένα κεντρικό σημείο γεγονότων pub/sub ([publish–subscribe](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)) με μεθόδους \`emit\`, \`on\`, και \`off\`.
 
-Χρησιμοποιείται \`Object.create(null)\` to create an empty \`hub\` αντικείμενο that does not inherit properties from \`Object.prototype\`.
-For \`emit\`, resolve the πίνακα of handlers based on the \`event\` argument and then run each one with \`Array.forEach()\` by passing in the data as an argument.
-For \`on\`, create an πίνακα for the event if it does not yet exist, then use \`Array.push()\` to add the handler
-to the array.
-For \`off\`, use \`Array.findIndex()\` to find the index of the handler in the event πίνακα and remove it using \`Array.splice()\`.
+Χρησιμοποιείται η μέθοδος \`Object.create(null)\` για να δημιουργήσει ένα άδειο αντικείμενο \`hub\` που δεν κληρονομεί ιδιότητες από το \`Object.prototype\`.
+Για τη μέθοδο \`emit\`, αναλύεται ο πίνακας χειριστών με βάση το όρσμα \`event\` και έπειτα εκτελείται κάθε ένας με τη μέθοδο \`Array.forEach()\`, περνώντας τα δεδομένα σαν όρισμα.
+Για τη μέθοδο \`on\`, δημιουργείται ένας πίνακας για το γεγονός αν δεν υπάρχει ήδη, έπειτα χρησιμοποιείται η μέθοδος \`Array.push()\` για να προστεθεί ο χειριστής στον πίνακα.
+Για τη μέθοδο \`off\`, χρησιμοποιείται η μέθοδος \`Array.findIndex()\` για να βρεθεί ο δείκτη του χειριστή στον πίνακα γεγονότων και αφαιρείται με χρήση της μεθόδου \`Array.splice()\`.
 
 `,
-  'comments': [`//en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)) event hub with \`emit\`, \`on\`, and \`off\` methods.`,`// Subscribe: listen for different types of events`,`// Publish: emit events to invoke all handlers subscribed to them, passing the data to them as an argument`,`// logs 'hello world' and 'Message event fired'`,`// logs the αντικείμενο and 'Message event fired'`,`// \`increment\` variable is now 1`,`// Unsubscribe: stop a specific handler from listening to the 'message' event`],
+  'comments': [`//en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)) με μεθόδους \`emit\`, \`on\`, και \`off\`.`,`// Εγγραφή: ακούε για διάφορα είδη γεγονότων`,`// Δημοσίευση: εκπέμπει γεγονότα για να κληθούν όλοι οι χειριστές που έχουν εγγραφεί σε αυτά, περνώντας τα δεδομένα σαν όρισμα`,`// καταγράφει 'hello world' και 'Message event fired'`,`// καταγράφει το αντικείμενο και 'Message event fired'`,`// η μεταβλητή \`increment\` είναι πλέον 1`,`// Απεγγραφή: σταματάει ένα χειριστή να ακούει για το γεγονός 'message'`],
   'hash': 'e952a30a27c1465ea9ac465d4b7de3f9dda6e58279c176bc7c0e98fb6d99f1fc'
 },
 'currentURL' : {
   'description': `### currentURL
 
-Επιστρέφει the current URL.
+Επιστρέφει την τρέχουσα διεύθυνση URL.
 
-Χρησιμοποιείται \`window.location.href\` to get current URL.
+Χρησιμοποιείται η μέθοδος \`window.location.href\` για να ληφθεί η τρέχουσα διεύθυνση URL.
 
 `,
   'comments': [`// 'https://google.com'`],
@@ -417,12 +416,12 @@ For \`off\`, use \`Array.findIndex()\` to find the index of the handler in the e
 'curry' : {
   'description': `### curry
 
-Curries a function.
+Κάνει curry σε μία συνάρτηση.
 
-Χρησιμοποιείται recursion.
-If the number of provided ορίσματα (\`args\`) is sufficient, call the passed συνάρτηση \`fn\`.
-Otherwise, return a curried συνάρτηση \`fn\` that expects the rest of the arguments.
-If you want to curry a συνάρτηση that accepts a variable number of ορίσματα (a variadic function, e.g. \`Math.min()\`), you can προαιρετικά pass the number of ορίσματα to the second parameter \`arity\`.
+Χρησιμοποιείται αναδρομή.
+Αν ο αριθμός των παρεχόμενων ορισμάτων (\`args\`) είναι επαρκής, καλείται η δεδομένη συνάρτηση \`fn\`.
+Αλλιώς, επιστρέφεται μια curried συνάρτηση \`fn\` που δέχεται τα υπόλοιπα ορίσματα.
+Αν θέλετε να κάνετε curry μια συνάρτηση που δέχεται ένα μεταβλητό αριθμό ορισμάτων (μια variadic συνάρτηση, π.χ. τη μέθοδο \`Math.min()\`), μπορείτε προεραιτικά να δηλώσετε τον αριθμό των ορισμάτων ως τη δεύτερη παράμετρο, \`arity\`.
 
 `,
   'comments': [`// 1024`,`// 2`],
