@@ -183,6 +183,7 @@ partial:function
 partialRight:function
 partition:array,object,function
 percentile:math
+permuteAll:utility,advanced,array,string
 pick:object,array
 pickBy:object,array,function
 pipeAsyncFunctions:adapter,function,promise
