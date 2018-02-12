@@ -133,9 +133,9 @@ module.exports = {
 'btoa' : {
   'description': `### btoa
 
-Δημιουργεί a base-64 encoded ASCII string from a String αντικείμενο in which each character in the string is treated as a byte of binary data.
+Δημιουργεί μια συμβολοσειρά ASCII με κωδικοποίηση base-64 από ένα αντικειμένο String στο οποίο κάθε χαρακτήρας αποτελεί ένα byte δυαδικών δεδομένων.
 
-Create a \`Buffer\` for the given string with binary encoding and use \`Buffer.toString('base64')\` to return the encoded string.
+Δημιουρείται ένα \`Buffer\` για τη δεδομένη συμβολοσειρά με δυαδική κωδικοποίηση και χρησιμοποιείται η \`Buffer.toString('base64')\` για να επιστρέψει την κωδικοποιημένη συμβολοσειρά.
 
 `,
   'comments': [`// 'Zm9vYmFy'`],
@@ -144,20 +144,20 @@ Create a \`Buffer\` for the given string with binary encoding and use \`Buffer.t
 'byteSize' : {
   'description': `### byteSize
 
-Επιστρέφει the length of a string in bytes.
+Επιστρέφει το μήκος μίας συμβολοσειράς σε byte.
 
-Convert a given string to a [\`Blob\` Object](https://developer.mozilla.org/en-US/docs/Web/API/Blob) and find its \`size\`.
+Μετατρέπει τη δεδομένη συμβολοσειρά σε ένα [αντικείμενο \`Blob\`](https://developer.mozilla.org/en-US/docs/Web/API/Blob) και βρίσκει το \`size\` της.
 
 `,
-  'comments': [`//developer.mozilla.org/en-US/docs/Web/API/Blob) and find its \`size\`.`,`// 4`,`// 11`],
+  'comments': [`//developer.mozilla.org/en-US/docs/Web/API/Blob) και βρίσκει το \`size\` της.`,`// 4`,`// 11`],
   'hash': '1848a81b6d95cc66138d877364bcbb3de7b89ebc4d2031348aa95345602f4a60'
 },
 'call' : {
   'description': `### call
 
-Given a key and a set of arguments, call them when given a context. Primarily useful in composition.
+Δεδομένου ενός key και ενός συνόλου ορισμάτων, καλούνται με ένα δεδομένο context. Κυρίως χρήσιμο σε σύνθεση συναρτήσεων.
 
-Χρησιμοποιείται a closure to call a stored key with stored arguments.
+Χρησιμοποιείται ένα closure για να κληθεί ένα αποθηκευμένο key με τα αποθηκευμένα ορίσματα.
 
 `,
   'comments': [`//[ 2, 4, 6 ]`,`//[ 2, 4, 6 ]`],
@@ -166,10 +166,10 @@ Given a key and a set of arguments, call them when given a context. Primarily us
 'capitalize' : {
   'description': `### capitalize
 
-Capitalizes the first letter of a string.
+Μετατρέπει το πρώτο γράμμα μιας συμβολοσειράς σε κεφαλαίο.
 
-Χρησιμοποιείται πίνακα destructuring and \`String.toUpperCase()\` to capitalize first letter, \`...rest\` to get πίνακα of characters after first letter and then \`Array.join('')\` to make it a string again.
-Omit the \`lowerRest\` parameter to keep the rest of the string intact,ήset it to \`true\` to convert to lowercase.
+Χρησιμοποιείται αποδόμηση πίνακα και η μέθοδος \`String.toUpperCase()\` για να μετατραπεί το πρώτο γράμμα σε κεφαλαίο, η εντολή \`...rest\` για να ληφθούν τα υπόλοιπα στοιχεία του πίνακα εκτός του πρώτου γράμματος και τέλος η μέθοδος \`Array.join('')\` για να μετατραπεί και πάλι σε συμβολοσειρά.
+Αν παραληφθεί η παράμετρος \`lowerRest\`, τα υπόλοιπα γράμματα παραμένουν ως έχουν, αν όμως τεθεί \`true\` μετατρέπονται σε πεζά.
 
 `,
   'comments': [`// 'FooBar'`,`// 'Foobar'`],
@@ -178,9 +178,9 @@ Omit the \`lowerRest\` parameter to keep the rest of the string intact,ήset it 
 'capitalizeEveryWord' : {
   'description': `### capitalizeEveryWord
 
-Capitalizes the first letter of every word in a string.
+Μετατρέπει το πρώτο γράμμα κάθε λέξης μιας συμβολοσειράς σε κεφαλαίο.
 
-Χρησιμοποιείται \`String.replace()\` to match the first character of each word and \`String.toUpperCase()\` to capitalize it.
+Χρησιμοποιείται η μέθοδος \`String.replace()\` για να βρεθεί το πρώτο γράμμα κάθε λέξης και η μέθοδος \`String.toUpperCase()\` για να το μετατρέψει σε κεφαλαίο.
 
 `,
   'comments': [`// 'Hello World!'`],
@@ -189,9 +189,9 @@ Capitalizes the first letter of every word in a string.
 'castArray' : {
   'description': `### castArray
 
-Casts the provided value as an πίνακα if it's not one.
+Μετατρέπει τη δεδομένη τιμή σε πίνακα, αν δεν είναι ήδη πίνακας.
 
-Χρησιμοποιείται \`Array.isArray()\` to determine if \`val\` is an πίνακα and return it as-isήencapsulated in an πίνακα accordingly.
+Χρησιμοποιείται η μέθοδος \`Array.isArray()\` για να ελεγχθεί αν η μεταβλητή \`val\` είναι πίνακας και ανάλογα επιστρέφεται όπως είναι ή ως πίνακας ενός στοιχείου.
 
 `,
   'comments': [`// ['foo']`,`// [1]`],
@@ -200,9 +200,9 @@ Casts the provided value as an πίνακα if it's not one.
 'chainAsync' : {
   'description': `### chainAsync
 
-Chains asynchronous functions.
+Συνδέει σειριακά ασύγχρονες συναρτήσεις.
 
-Loop through an πίνακα of functions containing asynchronous events, calling \`next\` when each asynchronous event has completed.
+Διατρέχει ένα πίνακα συναρτήσεων που περιέχει ασύγχρονα γεγονότα, καλώντας τη \`next\` όταν ένα ασύγχρονο γεγονός έχει ολοκληρωθεί.
 
 `,
   'comments': [],
