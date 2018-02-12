@@ -7,8 +7,9 @@ test('Testing randomNumberInRange', (t) => {
   t.true(typeof randomNumberInRange === 'function', 'randomNumberInRange is a Function');
   const lowerLimit = Math.floor(Math.random() * 20);
   const upperLimit = Math.floor(lowerLimit + Math.random() * 10);
+  t.true(typeof randomNumberInRange(lowerLimit,upperLimit) === 'number','The returned value is a number');
   const numberForTest = randomNumberInRange(lowerLimit,upperLimit);
-  t.true((numberForTest >= lowerLimit) && (numberForTest <= upperLimit),'The returned value lies between provied lowerLimit and upperLimit (both inclusive).');
+  t.true((numberForTest >= lowerLimit) && (numberForTest <= upperLimit),'The returned value lies between provided lowerLimit and upperLimit (both inclusive).');
   //t.deepEqual(randomNumberInRange(args..), 'Expected');
   //t.equal(randomNumberInRange(args..), 'Expected');
   //t.false(randomNumberInRange(args..), 'Expected');

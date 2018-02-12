@@ -1013,9 +1013,8 @@ const reverseString = str => [...str].reverse().join('');
 const round = (n, decimals = 0) => Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`);
 
 const runAsync = fn => {
-  const blob = `var fn = ${fn.toString()}; postMessage(fn());`;
   const worker = new Worker(
-    URL.createObjectURL(new Blob([blob]), {
+    URL.createObjectURL(new Blob([`postMessage((${fn})());`]), {
       type: 'application/javascript; charset=utf-8'
     })
   );

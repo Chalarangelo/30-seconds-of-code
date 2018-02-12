@@ -6,7 +6,10 @@ test('Testing shuffle', (t) => {
   //Please go to https://github.com/substack/tape
   t.true(typeof shuffle === 'function', 'shuffle is a Function');
   const arr = [1,2,3,4,5,6];
-  //t.notDeepEqual(shuffle(arr), arr, 'Shuffles the array'); Does not work always (got a test failing once)
+  t.notEqual(shuffle(arr), arr, 'Shuffles the array');
+  t.true(shuffle(arr).every(x => arr.includes(x)), 'New array contains all original elements');
+  t.deepEqual(shuffle([]),[],'Works for empty arrays');
+  t.deepEqual(shuffle([1]),[1],'Works for single-element arrays');
   //t.deepEqual(shuffle(args..), 'Expected');
   //t.equal(shuffle(args..), 'Expected');
   //t.false(shuffle(args..), 'Expected');
