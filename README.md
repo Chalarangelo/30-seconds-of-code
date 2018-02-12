@@ -3821,20 +3821,17 @@ curry(Math.min, 3)(10)(50)(2); // 2
 
 ### debounce
 
-Creates a debounced function that delays invoking the provided function until after `wait` milliseconds have elapsed since the last time the debounced function was invoked.
+Creates a debounced function that delays invoking the provided function until at least `ms` milliseconds have elapsed since the last time it was invoked.
 
-Use `setTimeout()` and `clearTimeout()` to debounce the given method, `fn`.
-Use `Function.apply()` to apply the `this` context to the function and provide the necessary `arguments`.
-Omit the second argument, `wait`, to set the timeout at a default of 0 ms.
+Each time the debounced function is invoked, clear the current pending timeout with `clearTimeout()` and use `setTimeout()` to create a new timeout that delays invoking the function until at least `ms` milliseconds has elapsed. Use `Function.apply()` to apply the `this` context to the function and provide the necessary arguments.
+Omit the second argument, `ms`, to set the timeout at a default of 0 ms.
 
 ```js
-const debounce = (fn, wait = 0) => {
-  let inDebounce;
-  return function() {
-    const context = this,
-      args = arguments;
-    clearTimeout(inDebounce);
-    inDebounce = setTimeout(() => fn.apply(context, args), wait);
+const debounce = (fn, ms = 0) => {
+  let timeoutId;
+  return function(...args) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => fn.apply(this, args), ms);
   };
 };
 ```
@@ -3845,7 +3842,7 @@ const debounce = (fn, wait = 0) => {
 ```js
 window.addEventListener(
   'resize',
-  debounce(function(evt) {
+  debounce(() => {
     console.log(window.innerWidth);
     console.log(window.innerHeight);
   }, 250)
