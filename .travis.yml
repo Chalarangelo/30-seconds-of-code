@@ -3,7 +3,7 @@ cache:
   directories:
     - __pycache__
 python:
-- "3.6"
+- "3.6.2"
 before_install:
 - sudo pip install -r requirements.txt
 script:
