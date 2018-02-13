@@ -22,5 +22,5 @@ return (typeof input === 'string')
 : (typeof input === 'number')
 ? result.map(variant => parseFloat(variant.join('')))
 : result;
-}
+};
 module.exports = permuteAll;
