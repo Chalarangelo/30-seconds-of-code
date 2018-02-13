@@ -27,7 +27,7 @@ const permuteAll = (input) => {
             : (typeof input === 'number') 
                 ? result.map(variant => parseFloat(variant.join('')))
                 : result;
-}
+};
 ```
 
 ```js
