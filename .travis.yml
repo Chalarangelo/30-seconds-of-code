@@ -3,7 +3,7 @@ cache:
   directories:
     - __pycache__
 before_install:
-- pip install -r requirements.txt
+- sudo pip install -r requirements.txt
 script:
 - python scripts\lint.py
 - python scripts\readme.py
