@@ -1,4 +1,3 @@
-import os
 import re
 codeRe = "```\s*python([\s\S]*?)```"
 def title_case(str):
