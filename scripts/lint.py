@@ -1,5 +1,4 @@
 import autopep8
-from yapf.yapflib.yapf_api import FormatCode
 import re
 import os
 files = os.listdir('snippets')
