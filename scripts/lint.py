@@ -1,6 +1,8 @@
 import autopep8
 import re
 import os
+import sys
+print(sys.version)
 files = os.listdir('snippets')
 codeRe = "```\s*python([\s\S]*?)```"
 for file in files:
