@@ -1,24 +1,8 @@
-Test log for: Wed Feb 14 2018 11:45:44 GMT+0200 (GTB Standard Time)
+Test log for: Wed Feb 14 2018 11:56:24 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
 
-
-  Testing all
-
-    √ all is a Function
-    √ Returns true for arrays with no falsey values
-    √ Returns false for arrays with 0
-    √ Returns false for arrays with NaN
-    √ Returns false for arrays with undefined
-    √ Returns false for arrays with null
-    √ Returns false for arrays with empty strings
-
-  Testing allBy
-
-    √ allBy is a Function
-    √ Returns true with predicate function
-    √ Returns false with a predicate function
 
   Testing anagrams
 
@@ -26,19 +10,6 @@ Test log for: Wed Feb 14 2018 11:45:44 GMT+0200 (GTB Standard Time)
     √ Generates all anagrams of a string
     √ Works for single-letter strings
     √ Works for empty strings
-
-  Testing any
-
-    √ any is a Function
-    √ Returns true for arrays with at least one truthy value
-    √ Returns false for arrays with no truthy values
-    √ Returns false for arrays with no truthy values
-
-  Testing anyBy
-
-    √ anyBy is a Function
-    √ Returns true with predicate function
-    √ Returns false with a predicate function
 
   Testing arrayToHtmlList
 
@@ -1053,18 +1024,6 @@ Test log for: Wed Feb 14 2018 11:45:44 GMT+0200 (GTB Standard Time)
     √ negate is a Function
     √ Negates a predicate function
 
-  Testing none
-
-    √ none is a Function
-    √ Returns true for arrays with no truthy values
-    √ Returns false for arrays with at least one truthy value
-
-  Testing noneBy
-
-    √ noneBy is a Function
-    √ Returns true with a predicate function
-    √ Returns false with predicate function
-
   Testing nthArg
 
     √ nthArg is a Function
@@ -1655,6 +1614,13 @@ Test log for: Wed Feb 14 2018 11:45:44 GMT+0200 (GTB Standard Time)
     √ unary is a Function
     √ Discards arguments after the first one
 
+  Testing uncurry
+
+    √ uncurry is a Function
+    √ Works without a provided value for n
+    √ Works without n = 2
+    √ Works withoutn = 3
+
   Testing unescapeHTML
 
     √ unescapeHTML is a Function
@@ -1844,8 +1810,8 @@ Test log for: Wed Feb 14 2018 11:45:44 GMT+0200 (GTB Standard Time)
     √ Works with multiple promises
 
 
-  total:     924
-  passing:   924
+  total:     905
+  passing:   905
   duration:  2.4s
 
 

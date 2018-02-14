@@ -258,6 +258,7 @@ transform:object,array
 truncateString:string
 truthCheckCollection:object,logic,array
 unary:adapter,function
+uncurry:function
 unescapeHTML:string,browser
 unflattenObject:object,advanced
 unfold:function,array
