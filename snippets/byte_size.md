@@ -11,5 +11,5 @@ def byte_size(string):
 
 ```python
 byte_size('😀') # 4
-byte_size('Hello World') # 11
+byte_size('Hello Wor') # 11
 ```
