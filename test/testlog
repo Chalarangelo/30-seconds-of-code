@@ -1,4 +1,4 @@
-Test log for: Wed Feb 14 2018 12:33:42 GMT+0200 (GTB Standard Time)
+Test log for: Wed Feb 14 2018 12:46:59 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -10,6 +10,14 @@ Test log for: Wed Feb 14 2018 12:33:42 GMT+0200 (GTB Standard Time)
     √ Generates all anagrams of a string
     √ Works for single-letter strings
     √ Works for empty strings
+
+  Testing approximatelyEqual
+
+    √ approximatelyEqual is a Function
+    √ Works for PI / 2
+    √ Works for 0.1 + 0.2 === 0.3
+    √ Works for exactly equal values
+    √ Works for a custom epsilon
 
   Testing arrayToHtmlList
 
@@ -1839,8 +1847,8 @@ Test log for: Wed Feb 14 2018 12:33:42 GMT+0200 (GTB Standard Time)
     √ Works with multiple promises
 
 
-  total:     919
-  passing:   919
-  duration:  2.4s
+  total:     924
+  passing:   924
+  duration:  2.5s
 
 

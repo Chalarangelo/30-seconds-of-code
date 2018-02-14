@@ -1,8 +1,7 @@
 all:array
 allBy:array,function
 anagrams:string,recursion
-any:array
-anyBy:array,function
+approximatelyEqual:math
 arrayToHtmlList:browser,array
 ary:adapter,function
 atob:node,string,utility
