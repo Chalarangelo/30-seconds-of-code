@@ -1,4 +1,5 @@
 anagrams:string,recursion
+approximatelyEqual:math
 arrayToHtmlList:browser,array
 ary:adapter,function
 atob:node,string,utility
