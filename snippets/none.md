@@ -9,5 +9,5 @@ const none = arr => !arr.some(Boolean);
 ```
 
 ```js
-none([0,0,0]); // true
+none([0, 0, 0]); // true
 ```

@@ -9,5 +9,5 @@ const all = arr => arr.every(Boolean);
 ```
 
 ```js
-all([1,2,3]); // true
+all([1, 2, 3]); // true
 ```

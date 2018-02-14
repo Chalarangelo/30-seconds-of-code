@@ -9,5 +9,5 @@ const noneBy = (arr, fn) => !arr.some(fn);
 ```
 
 ```js
-noneBy([0,1,3,0], x => x == 2); // true
+noneBy([0, 1, 3, 0], x => x == 2); // true
 ```
