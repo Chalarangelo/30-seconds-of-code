@@ -261,6 +261,7 @@ average(1, 2, 3);
 * [`average`](#average)
 * [`averageBy`](#averageby)
 * [`clampNumber`](#clampnumber)
+* [`degreesToRads`](#degreestorads)
 * [`digitize`](#digitize)
 * [`distance`](#distance)
 * [`elo`](#elo-)
@@ -281,6 +282,7 @@ average(1, 2, 3);
 * [`percentile`](#percentile)
 * [`powerset`](#powerset)
 * [`primes`](#primes)
+* [`radsToDegrees`](#radstodegrees)
 * [`randomIntArrayInRange`](#randomintarrayinrange)
 * [`randomIntegerInRange`](#randomintegerinrange)
 * [`randomNumberInRange`](#randomnumberinrange)
@@ -4383,6 +4385,28 @@ clampNumber(1, -1, -5); // -1
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### degreesToRads
+
+Converts an angle from degrees to radians.
+
+Use `Math.PI` and the degree to radian formula to convert the angle from degrees to radians.
+
+```js
+const degreesToRads = deg => deg * Math.PI / 180.0;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+degreesToRads(90.0); // ~1.5708
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### digitize
 
 Converts a number to an array of digits.
@@ -4924,6 +4948,28 @@ const primes = num => {
 
 ```js
 primes(10); // [2,3,5,7]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### radsToDegrees
+
+Converts an angle from radians to degrees.
+
+Use `Math.PI` and the radian to degree formula to convert the angle from radians to degrees.
+
+```js
+const radsToDegrees = rad => rad * 180.0 / Math.PI;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+radsToDegrees(Math.PI / 2); // 90
 ```
 
 </details>
