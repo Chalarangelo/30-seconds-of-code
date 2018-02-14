@@ -7,6 +7,7 @@ setup_git() {
 commit_website_files() {
   if [ $TRAVIS_EVENT_TYPE != "pull_request" ]; then
     if [ $TRAVIS_BRANCH == "master" ]; then
+      git checkout master
       echo "Committing to master branch..."
       git add -A
       echo "All files added"
