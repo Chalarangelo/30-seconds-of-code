@@ -1,4 +1,4 @@
-Test log for: Wed Feb 14 2018 11:56:24 GMT+0200 (GTB Standard Time)
+Test log for: Wed Feb 14 2018 12:12:48 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -52,6 +52,16 @@ Test log for: Wed Feb 14 2018 11:56:24 GMT+0200 (GTB Standard Time)
     √ averageBy is a Function
     √ Produces the right result with a function
     √ Produces the right result with a property name
+
+  Testing bifurcate
+
+    √ bifurcate is a Function
+    √ Splits the collection into two groups
+
+  Testing bifurcateBy
+
+    √ bifurcateBy is a Function
+    √ Splits the collection into two groups
 
   Testing binarySearch
 
@@ -1803,15 +1813,15 @@ Test log for: Wed Feb 14 2018 11:56:24 GMT+0200 (GTB Standard Time)
   Testing zipWith
 
     √ zipWith is a Function
-    √ Runs the function provided
     √ Sends a GET request
+    √ Runs the function provided
     √ Runs promises in series
     √ Sends a POST request
     √ Works with multiple promises
 
 
-  total:     905
-  passing:   905
+  total:     909
+  passing:   909
   duration:  2.4s
 
 
