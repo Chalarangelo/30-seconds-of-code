@@ -259,6 +259,7 @@ average(1, 2, 3);
 
 * [`average`](#average)
 * [`averageBy`](#averageby)
+* [`binomialCoefficient`](#binomialcoefficient)
 * [`clampNumber`](#clampnumber)
 * [`degreesToRads`](#degreestorads)
 * [`digitize`](#digitize)
@@ -4353,6 +4354,41 @@ const averageBy = (arr, fn) =>
 ```js
 averageBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n); // 5
 averageBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n'); // 5
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### binomialCoefficient
+
+Evaluates the binomial coefficient of two integers `n` and `k`.
+
+Use `Number.isNaN()` to check if any of the two values is `NaN`.
+Check if `k` is less than `0`, greater than or equal to `n`, equal to `1` or `n - 1` and return the appropriate result.
+Check if `n - k` is less than `k` and switch their values accordingly.
+Loop from `2` through `k` and calculate the binomial coefficient.
+Use `Math.round()` to account for rounding errors in the calculation.
+
+```js
+const binomialCoefficient = (n, k) => {
+  if (Number.isNaN(n) || Number.isNaN(k)) return NaN;
+  if (k < 0 || k > n) return 0;
+  if (k === 0 || k === n) return 1;
+  if (k === 1 || k === n - 1) return n;
+  if (n - k < k) k = n - k;
+  let res = n;
+  for (let j = 2; j <= k; j++) res *= (n - j + 1) / j;
+  return Math.round(res);
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+binomialCoefficient(8, 2); // 28
 ```
 
 </details>
