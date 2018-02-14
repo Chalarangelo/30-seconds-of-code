@@ -9,6 +9,8 @@ atob:node,string,utility
 attempt:function
 average:math,array
 averageBy:math,array,function
+bifurcate:array
+bifurcateBy:array,function
 bind:function,object
 bindAll:object,function
 bindKey:function,object
