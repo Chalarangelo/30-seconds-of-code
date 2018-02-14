@@ -1,4 +1,8 @@
+all:array
+allBy:array,function
 anagrams:string,recursion
+any:array
+anyBy:array,function
 arrayToHtmlList:browser,array
 ary:adapter,function
 atob:node,string,utility
@@ -154,6 +158,8 @@ merge:object,array
 minBy:math,array,function
 minN:array,math
 negate:function
+none:array
+noneBy:array,function
 nthArg:utility,function
 nthElement:array
 objectFromPairs:object,array
