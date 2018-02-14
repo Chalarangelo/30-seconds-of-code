@@ -42,6 +42,7 @@ deepClone:object,recursion
 deepFlatten:array,recursion
 defaults:object
 defer:function
+degreesToRads:math
 delay:function
 detectDeviceType:browser
 difference:array,math
@@ -189,6 +190,7 @@ pull:array
 pullAtIndex:array
 pullAtValue:array
 pullBy:array,function,advanced
+radsToDegrees:math
 randomHexColorCode:utility,random
 randomIntArrayInRange:math,utility,random
 randomIntegerInRange:math,utility,random
