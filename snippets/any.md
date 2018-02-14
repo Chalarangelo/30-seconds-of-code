@@ -9,5 +9,5 @@ const any = arr => arr.some(Boolean);
 ```
 
 ```js
-any([0,0,1,0]); // true
+any([0, 0, 1, 0]); // true
 ```

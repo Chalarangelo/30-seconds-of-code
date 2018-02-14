@@ -9,5 +9,5 @@ const anyBy = (arr, fn) => arr.some(fn);
 ```
 
 ```js
-anyBy([0,1,2,0], x => x >= 2); // true
+anyBy([0, 1, 2, 0], x => x >= 2); // true
 ```
