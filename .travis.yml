@@ -1,4 +1,4 @@
-language: python3
+language: python
 cache:
   directories:
     - __pycache__
