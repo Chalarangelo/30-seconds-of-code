@@ -14,6 +14,7 @@ bifurcateBy:array,function
 bind:function,object
 bindAll:object,function
 bindKey:function,object
+binomialCoefficient:math
 bottomVisible:browser
 btoa:node,string,utility
 byteSize:string

@@ -1,4 +1,4 @@
-Test log for: Wed Feb 14 2018 12:24:07 GMT+0200 (GTB Standard Time)
+Test log for: Wed Feb 14 2018 12:33:42 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test G:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -85,6 +85,15 @@ Test log for: Wed Feb 14 2018 12:24:07 GMT+0200 (GTB Standard Time)
 
     √ bindKey is a Function
     √ Binds function to an object context
+
+  Testing binomialCoefficient
+
+    √ binomialCoefficient is a Function
+    √ Returns the appropriate value
+    √ Returns the appropriate value
+    √ Returns the appropriate value
+    √ Returns NaN
+    √ Returns NaN
 
   Testing bottomVisible
 
@@ -1830,8 +1839,8 @@ Test log for: Wed Feb 14 2018 12:24:07 GMT+0200 (GTB Standard Time)
     √ Works with multiple promises
 
 
-  total:     913
-  passing:   913
+  total:     919
+  passing:   919
   duration:  2.4s
 
 
