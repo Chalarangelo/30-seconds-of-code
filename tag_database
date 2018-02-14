@@ -160,7 +160,7 @@ memoize:function
 merge:object,array
 minBy:math,array,function
 minN:array,math
-mostPerformant:function
+mostPerformant:utility,function
 negate:function
 none:array
 noneBy:array,function
