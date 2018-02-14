@@ -98,6 +98,8 @@ average(1, 2, 3);
 <details>
 <summary>View contents</summary>
 
+* [`bifurcate`](#bifurcate)
+* [`bifurcateBy`](#bifurcateby)
 * [`chunk`](#chunk)
 * [`compact`](#compact)
 * [`countBy`](#countby)
@@ -246,6 +248,7 @@ average(1, 2, 3);
 * [`sleep`](#sleep)
 * [`throttle`](#throttle)
 * [`times`](#times)
+* [`uncurry`](#uncurry)
 * [`unfold`](#unfold)
 
 </details>
@@ -255,9 +258,12 @@ average(1, 2, 3);
 <details>
 <summary>View contents</summary>
 
+* [`approximatelyEqual`](#approximatelyequal)
 * [`average`](#average)
 * [`averageBy`](#averageby)
+* [`binomialCoefficient`](#binomialcoefficient)
 * [`clampNumber`](#clampnumber)
+* [`degreesToRads`](#degreestorads)
 * [`digitize`](#digitize)
 * [`distance`](#distance)
 * [`elo`](#elo-)
@@ -278,6 +284,7 @@ average(1, 2, 3);
 * [`percentile`](#percentile)
 * [`powerset`](#powerset)
 * [`primes`](#primes)
+* [`radsToDegrees`](#radstodegrees)
 * [`randomIntArrayInRange`](#randomintarrayinrange)
 * [`randomIntegerInRange`](#randomintegerinrange)
 * [`randomNumberInRange`](#randomnumberinrange)
@@ -759,6 +766,52 @@ const unary = fn => val => fn(val);
 
 ---
  ## 📚 Array
+
+### bifurcate
+
+Splits values into two groups. If an element in `filter` is truthy, the corresponding element in the collection belongs to the first group; otherwise, it belongs to the second group.
+
+Use `Array.reduce()` and `Array.push()` to add elements to groups, based on `filter`.
+
+```js
+const bifurcate = (arr, filter) =>
+  arr.reduce((acc, val, i) => (acc[filter[i] ? 0 : 1].push(val), acc), [[], []]);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+bifurcate(['beep', 'boop', 'foo', 'bar'], [true, true, false, true]); // [ ['beep', 'boop', 'bar'], ['foo'] ]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### bifurcateBy
+
+Splits values into two groups according to a predicate function, which specifies which group an element in the input collection belongs to. If the predicate function returns a truthy value, the collection element belongs to the first group; otherwise, it belongs to the second group.
+
+Use `Array.reduce()` and `Array.push()` to add elements to groups, based on the value returned by `fn` for each element.
+
+```js
+const bifurcateBy = (arr, fn) =>
+  arr.reduce((acc, val, i) => (acc[fn(val, i) ? 0 : 1].push(val), acc), [[], []]);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+bifurcateBy(['beep', 'boop', 'foo', 'bar'], x => x[0] === 'b'); // [ ['beep', 'boop', 'bar'], ['foo'] ]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 
 ### chunk
 
@@ -4199,6 +4252,38 @@ console.log(output); // 01234
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### uncurry
+
+Uncurries a function up to depth `n`.
+
+Return a variadic function.
+Use `Array.reduce()` on the provided arguments to call each subsequent curry level of the function.
+If the `length` of the provided arguments is less than `n` throw an error.
+Otherwise, call `fn` with the proper amount of arguments, using `Array.slice(0, n)`.
+Omit the second argument, `n`, to uncurry up to depth `1`.
+
+```js
+const uncurry = (fn, n = 1) => (...args) => {
+  const next = acc => args => args.reduce((x, y) => x(y), acc);
+  if (n > args.length) throw new RangeError('Arguments too few!');
+  return next(fn)(args.slice(0, n));
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const add = x => y => z => x + y + z;
+const uncurriedAdd = uncurry(add, 3);
+uncurriedAdd(1, 2, 3); // 6
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### unfold
 
 Builds an array, using an iterator function and an initial seed value.
@@ -4229,6 +4314,29 @@ unfold(f, 10); // [-10, -20, -30, -40, -50]
 
 ---
  ## ➗ Math
+
+### approximatelyEqual
+
+Checks if two numbers are approximately equal to each other.
+
+Use `Math.abs()` to compare the absolute difference of the two values to `epsilon`.
+Omit the third parameter, `epsilon`, to use a default value of `0.001`.
+
+```js
+const approximatelyEqual = (v1, v2, epsilon = 0.001) => Math.abs(v1 - v2) < epsilon;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+approximatelyEqual(Math.PI / 2.0, 1.5708); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 
 ### average
 
@@ -4278,6 +4386,41 @@ averageBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n'); // 5
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### binomialCoefficient
+
+Evaluates the binomial coefficient of two integers `n` and `k`.
+
+Use `Number.isNaN()` to check if any of the two values is `NaN`.
+Check if `k` is less than `0`, greater than or equal to `n`, equal to `1` or `n - 1` and return the appropriate result.
+Check if `n - k` is less than `k` and switch their values accordingly.
+Loop from `2` through `k` and calculate the binomial coefficient.
+Use `Math.round()` to account for rounding errors in the calculation.
+
+```js
+const binomialCoefficient = (n, k) => {
+  if (Number.isNaN(n) || Number.isNaN(k)) return NaN;
+  if (k < 0 || k > n) return 0;
+  if (k === 0 || k === n) return 1;
+  if (k === 1 || k === n - 1) return n;
+  if (n - k < k) k = n - k;
+  let res = n;
+  for (let j = 2; j <= k; j++) res *= (n - j + 1) / j;
+  return Math.round(res);
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+binomialCoefficient(8, 2); // 28
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### clampNumber
 
 Clamps `num` within the inclusive range specified by the boundary values `a` and `b`.
@@ -4295,6 +4438,28 @@ const clampNumber = (num, a, b) => Math.max(Math.min(num, Math.max(a, b)), Math.
 ```js
 clampNumber(2, 3, 5); // 3
 clampNumber(1, -1, -5); // -1
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### degreesToRads
+
+Converts an angle from degrees to radians.
+
+Use `Math.PI` and the degree to radian formula to convert the angle from degrees to radians.
+
+```js
+const degreesToRads = deg => deg * Math.PI / 180.0;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+degreesToRads(90.0); // ~1.5708
 ```
 
 </details>
@@ -4843,6 +5008,28 @@ const primes = num => {
 
 ```js
 primes(10); // [2,3,5,7]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### radsToDegrees
+
+Converts an angle from radians to degrees.
+
+Use `Math.PI` and the radian to degree formula to convert the angle from radians to degrees.
+
+```js
+const radsToDegrees = rad => rad * 180.0 / Math.PI;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+radsToDegrees(Math.PI / 2); // 90
 ```
 
 </details>
