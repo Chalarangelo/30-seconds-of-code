@@ -9,5 +9,5 @@ const allBy = (arr, fn) => arr.every(fn);
 ```
 
 ```js
-allBy([4,2,3], x => x > 1); // true
+allBy([4, 2, 3], x => x > 1); // true
 ```

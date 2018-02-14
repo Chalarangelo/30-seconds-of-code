@@ -98,6 +98,10 @@ average(1, 2, 3);
 <details>
 <summary>View contents</summary>
 
+* [`all`](#all)
+* [`allBy`](#allby)
+* [`any`](#any)
+* [`anyBy`](#anyby)
 * [`bifurcate`](#bifurcate)
 * [`bifurcateBy`](#bifurcateby)
 * [`chunk`](#chunk)
@@ -136,6 +140,8 @@ average(1, 2, 3);
 * [`mapObject`](#mapobject-)
 * [`maxN`](#maxn)
 * [`minN`](#minn)
+* [`none`](#none)
+* [`noneBy`](#noneby)
 * [`nthElement`](#nthelement)
 * [`partition`](#partition)
 * [`pull`](#pull)
@@ -766,6 +772,94 @@ const unary = fn => val => fn(val);
 
 ---
  ## 📚 Array
+
+### all
+
+Returns `true` if all elements in a collection are truthy, `false` otherwise.
+
+Use `Array.every(Boolean)` to test if all elements in the collection are truthy.
+
+```js
+const all = arr => arr.every(Boolean);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+all([1, 2, 3]); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### allBy
+
+Returns `true` if the provided predicate function returns `true` for all elements in a collection, `false` otherwise.
+
+Use `Array.every()` to test if all elements in the collection return `true` based on `fn`.
+
+```js
+const allBy = (arr, fn) => arr.every(fn);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+allBy([4, 2, 3], x => x > 1); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### any
+
+Returns `true` if at least one element in a collection is truthy, `false` otherwise.
+
+Use `Array.some(Boolean)` to test if any elements in the collection are truthy.
+
+```js
+const any = arr => arr.some(Boolean);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+any([0, 0, 1, 0]); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### anyBy
+
+Returns `true` if the provided predicate function returns `true` for at least one element in a collection, `false` otherwise.
+
+Use `Array.some()` to test if any elements in the collection return `true` based on `fn`.
+
+```js
+const anyBy = (arr, fn) => arr.some(fn);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+anyBy([0, 1, 2, 0], x => x >= 2); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 
 ### bifurcate
 
@@ -1711,6 +1805,50 @@ const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
 ```js
 minN([1, 2, 3]); // [1]
 minN([1, 2, 3], 2); // [1,2]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### none
+
+Returns `true` if no elements in a collection are truthy, `false` otherwise.
+
+Use `!Array.some(Boolean)` to test if any elements in the collection are truthy.
+
+```js
+const none = arr => !arr.some(Boolean);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+none([0, 0, 0]); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### noneBy
+
+Returns `true` if the provided predicate function returns `false` for all elements in a collection, `false` otherwise.
+
+Use `Array.some()` to test if any elements in the collection return `true` based on `fn`.
+
+```js
+const noneBy = (arr, fn) => !arr.some(fn);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+noneBy([0, 1, 3, 0], x => x == 2); // true
 ```
 
 </details>
