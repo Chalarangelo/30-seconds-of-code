@@ -25,6 +25,10 @@ const UUIDGeneratorNode = () =>
     (c ^ (crypto$1.randomBytes(1)[0] & (15 >> (c / 4)))).toString(16)
   );
 
+const all = arr => arr.every(Boolean);
+
+const allBy = (arr, fn) => arr.every(fn);
+
 const anagrams = str => {
   if (str.length <= 2) return str.length === 2 ? [str, str[1] + str[0]] : [str];
   return str
@@ -35,6 +39,12 @@ const anagrams = str => {
       []
     );
 };
+
+const any = arr => arr.some(Boolean);
+
+const anyBy = (arr, fn) => arr.some(fn);
+
+const approximatelyEqual = (v1, v2, epsilon = 0.001) => Math.abs(v1 - v2) < epsilon;
 
 const arrayToHtmlList = (arr, listID) =>
   arr.map(item => (document.querySelector('#' + listID).innerHTML += `<li>${item}</li>`));
@@ -57,6 +67,12 @@ const averageBy = (arr, fn) =>
   arr.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val) => acc + val, 0) /
   arr.length;
 
+const bifurcate = (arr, filter) =>
+  arr.reduce((acc, val, i) => (acc[filter[i] ? 0 : 1].push(val), acc), [[], []]);
+
+const bifurcateBy = (arr, fn) =>
+  arr.reduce((acc, val, i) => (acc[fn(val, i) ? 0 : 1].push(val), acc), [[], []]);
+
 const bind = (fn, context, ...args) =>
   function() {
     return fn.apply(context, args.concat(...arguments));
@@ -74,6 +90,17 @@ const bindKey = (context, fn, ...args) =>
   function() {
     return context[fn].apply(context, args.concat(...arguments));
   };
+
+const binomialCoefficient = (n, k) => {
+  if (Number.isNaN(n) || Number.isNaN(k)) return NaN;
+  if (k < 0 || k > n) return 0;
+  if (k === 0 || k === n) return 1;
+  if (k === 1 || k === n - 1) return n;
+  if (n - k < k) k = n - k;
+  let res = n;
+  for (let j = 2; j <= k; j++) res *= (n - j + 1) / j;
+  return Math.round(res);
+};
 
 const bottomVisible = () =>
   document.documentElement.clientHeight + window.scrollY >=
@@ -216,6 +243,8 @@ const deepFlatten = arr => [].concat(...arr.map(v => (Array.isArray(v) ? deepFla
 const defaults = (obj, ...defs) => Object.assign({}, obj, ...defs.reverse(), obj);
 
 const defer = (fn, ...args) => setTimeout(fn, 1, ...args);
+
+const degreesToRads = deg => deg * Math.PI / 180.0;
 
 const delay = (fn, wait, ...args) => setTimeout(fn, wait, ...args);
 
@@ -752,7 +781,20 @@ const minBy = (arr, fn) => Math.min(...arr.map(typeof fn === 'function' ? fn : v
 
 const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
 
+const mostPerformant = (fns, iterations = 10000) => {
+  const times = fns.map(fn => {
+    const before = performance.now();
+    for (let i = 0; i < iterations; i++) fn();
+    return performance.now() - before;
+  });
+  return times.indexOf(Math.min(...times));
+};
+
 const negate = func => (...args) => !func(...args);
+
+const none = arr => !arr.some(Boolean);
+
+const noneBy = (arr, fn) => !arr.some(fn);
 
 const nthArg = n => (...args) => args.slice(n)[0];
 
@@ -951,6 +993,8 @@ const pullBy = (arr, ...args) => {
   arr.length = 0;
   pulled.forEach(v => arr.push(v));
 };
+
+const radsToDegrees = rad => rad * 180.0 / Math.PI;
 
 const randomHexColorCode = () => {
   let n = (Math.random() * 0xfffff * 1000000).toString(16);
@@ -1272,6 +1316,12 @@ const truthCheckCollection = (collection, pre) => collection.every(obj => obj[pr
 
 const unary = fn => val => fn(val);
 
+const uncurry = (fn, n = 1) => (...args) => {
+  const next = acc => args => args.reduce((x, y) => x(y), acc);
+  if (n > args.length) throw new RangeError('Arguments too few!');
+  return next(fn)(args.slice(0, n));
+};
+
 const unescapeHTML = str =>
   str.replace(
     /&amp;|&lt;|&gt;|&#39;|&quot;/g,
@@ -1373,6 +1423,6 @@ const zipWith = (...arrays) => {
   return fn ? result.map(arr => fn(...arr)) : result;
 };
 
-var imports = {JSONToFile,RGBToHex,URLJoin,UUIDGeneratorBrowser,UUIDGeneratorNode,anagrams,arrayToHtmlList,ary,atob,attempt,average,averageBy,bind,bindAll,bindKey,bottomVisible,btoa,byteSize,call,capitalize,capitalizeEveryWord,castArray,chainAsync,chunk,clampNumber,cloneRegExp,coalesce,coalesceFactory,collectInto,colorize,compact,compose,composeRight,converge,copyToClipboard,countBy,countOccurrences,createElement,createEventHub,currentURL,curry,debounce,decapitalize,deepClone,deepFlatten,defaults,defer,delay,detectDeviceType,difference,differenceBy,differenceWith,digitize,distance,drop,dropRight,dropRightWhile,dropWhile,elementIsVisibleInViewport,elo,equals,escapeHTML,escapeRegExp,everyNth,extendHex,factorial,fibonacci,filterNonUnique,findKey,findLast,findLastIndex,findLastKey,flatten,flattenObject,flip,forEachRight,forOwn,forOwnRight,formatDuration,fromCamelCase,functionName,functions,gcd,geometricProgression,get,getColonTimeFromDate,getDaysDiffBetweenDates,getMeridiemSuffixOfInteger,getScrollPosition,getStyle,getType,getURLParameters,groupBy,hammingDistance,hasClass,hasFlags,hashBrowser,hashNode,head,hexToRGB,hide,httpGet,httpPost,httpsRedirect,inRange,indexOfAll,initial,initialize2DArray,initializeArrayWithRange,initializeArrayWithRangeRight,initializeArrayWithValues,intersection,intersectionBy,intersectionWith,invertKeyValues,is,isAbsoluteURL,isArrayLike,isBoolean,isDivisible,isEmpty,isEven,isFunction,isLowerCase,isNil,isNull,isNumber,isObject,isObjectLike,isPlainObject,isPrime,isPrimitive,isPromiseLike,isSorted,isString,isSymbol,isTravisCI,isUndefined,isUpperCase,isValidJSON,join,last,lcm,longestItem,lowercaseKeys,luhnCheck,mapKeys,mapObject,mapValues,mask,matches,matchesWith,maxBy,maxN,median,memoize,merge,minBy,minN,negate,nthArg,nthElement,objectFromPairs,objectToPairs,observeMutations,off,omit,omitBy,on,onUserInputChange,once,orderBy,over,overArgs,palindrome,parseCookie,partial,partialRight,partition,percentile,pick,pickBy,pipeAsyncFunctions,pipeFunctions,pluralize,powerset,prettyBytes,primes,promisify,pull,pullAtIndex,pullAtValue,pullBy,randomHexColorCode,randomIntArrayInRange,randomIntegerInRange,randomNumberInRange,readFileLines,rearg,redirect,reduceSuccessive,reduceWhich,reducedFilter,remove,removeNonASCII,reverseString,round,runAsync,runPromisesInSeries,sample,sampleSize,scrollToTop,sdbm,serializeCookie,setStyle,shallowClone,show,shuffle,similarity,size,sleep,sortCharactersInString,sortedIndex,sortedIndexBy,sortedLastIndex,sortedLastIndexBy,splitLines,spreadOver,standardDeviation,stripHTMLTags,sum,sumBy,sumPower,symmetricDifference,symmetricDifferenceBy,symmetricDifferenceWith,tail,take,takeRight,takeRightWhile,takeWhile,throttle,timeTaken,times,toCamelCase,toCurrency,toDecimalMark,toKebabCase,toOrdinalSuffix,toSafeInteger,toSnakeCase,toggleClass,tomorrow,transform,truncateString,truthCheckCollection,unary,unescapeHTML,unflattenObject,unfold,union,unionBy,unionWith,uniqueElements,untildify,unzip,unzipWith,validateNumber,without,words,xProd,yesNo,zip,zipObject,zipWith,}
+var imports = {JSONToFile,RGBToHex,URLJoin,UUIDGeneratorBrowser,UUIDGeneratorNode,all,allBy,anagrams,any,anyBy,approximatelyEqual,arrayToHtmlList,ary,atob,attempt,average,averageBy,bifurcate,bifurcateBy,bind,bindAll,bindKey,binomialCoefficient,bottomVisible,btoa,byteSize,call,capitalize,capitalizeEveryWord,castArray,chainAsync,chunk,clampNumber,cloneRegExp,coalesce,coalesceFactory,collectInto,colorize,compact,compose,composeRight,converge,copyToClipboard,countBy,countOccurrences,createElement,createEventHub,currentURL,curry,debounce,decapitalize,deepClone,deepFlatten,defaults,defer,degreesToRads,delay,detectDeviceType,difference,differenceBy,differenceWith,digitize,distance,drop,dropRight,dropRightWhile,dropWhile,elementIsVisibleInViewport,elo,equals,escapeHTML,escapeRegExp,everyNth,extendHex,factorial,fibonacci,filterNonUnique,findKey,findLast,findLastIndex,findLastKey,flatten,flattenObject,flip,forEachRight,forOwn,forOwnRight,formatDuration,fromCamelCase,functionName,functions,gcd,geometricProgression,get,getColonTimeFromDate,getDaysDiffBetweenDates,getMeridiemSuffixOfInteger,getScrollPosition,getStyle,getType,getURLParameters,groupBy,hammingDistance,hasClass,hasFlags,hashBrowser,hashNode,head,hexToRGB,hide,httpGet,httpPost,httpsRedirect,inRange,indexOfAll,initial,initialize2DArray,initializeArrayWithRange,initializeArrayWithRangeRight,initializeArrayWithValues,intersection,intersectionBy,intersectionWith,invertKeyValues,is,isAbsoluteURL,isArrayLike,isBoolean,isDivisible,isEmpty,isEven,isFunction,isLowerCase,isNil,isNull,isNumber,isObject,isObjectLike,isPlainObject,isPrime,isPrimitive,isPromiseLike,isSorted,isString,isSymbol,isTravisCI,isUndefined,isUpperCase,isValidJSON,join,last,lcm,longestItem,lowercaseKeys,luhnCheck,mapKeys,mapObject,mapValues,mask,matches,matchesWith,maxBy,maxN,median,memoize,merge,minBy,minN,mostPerformant,negate,none,noneBy,nthArg,nthElement,objectFromPairs,objectToPairs,observeMutations,off,omit,omitBy,on,onUserInputChange,once,orderBy,over,overArgs,palindrome,parseCookie,partial,partialRight,partition,percentile,pick,pickBy,pipeAsyncFunctions,pipeFunctions,pluralize,powerset,prettyBytes,primes,promisify,pull,pullAtIndex,pullAtValue,pullBy,radsToDegrees,randomHexColorCode,randomIntArrayInRange,randomIntegerInRange,randomNumberInRange,readFileLines,rearg,redirect,reduceSuccessive,reduceWhich,reducedFilter,remove,removeNonASCII,reverseString,round,runAsync,runPromisesInSeries,sample,sampleSize,scrollToTop,sdbm,serializeCookie,setStyle,shallowClone,show,shuffle,similarity,size,sleep,sortCharactersInString,sortedIndex,sortedIndexBy,sortedLastIndex,sortedLastIndexBy,splitLines,spreadOver,standardDeviation,stripHTMLTags,sum,sumBy,sumPower,symmetricDifference,symmetricDifferenceBy,symmetricDifferenceWith,tail,take,takeRight,takeRightWhile,takeWhile,throttle,timeTaken,times,toCamelCase,toCurrency,toDecimalMark,toKebabCase,toOrdinalSuffix,toSafeInteger,toSnakeCase,toggleClass,tomorrow,transform,truncateString,truthCheckCollection,unary,uncurry,unescapeHTML,unflattenObject,unfold,union,unionBy,unionWith,uniqueElements,untildify,unzip,unzipWith,validateNumber,without,words,xProd,yesNo,zip,zipObject,zipWith,}
 
 export default imports;
