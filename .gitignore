@@ -1,5 +1,4 @@
 __pycache__/
-tape.py 
-test/
-pytest.ini
 website/
+ms.py
+tape*
