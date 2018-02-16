@@ -5,6 +5,7 @@ test('Testing hasFlags', (t) => {
   //For more information on all the methods supported by tape
   //Please go to https://github.com/substack/tape
   t.true(typeof hasFlags === 'function', 'hasFlags is a Function');
+  t.pass('Tested by @chalarangelo on 16/02/2018');
   //t.deepEqual(hasFlags(args..), 'Expected');
   //t.equal(hasFlags(args..), 'Expected');
   //t.false(hasFlags(args..), 'Expected');

@@ -5,6 +5,7 @@ test('Testing setStyle', (t) => {
   //For more information on all the methods supported by tape
   //Please go to https://github.com/substack/tape
   t.true(typeof setStyle === 'function', 'setStyle is a Function');
+  t.pass('Tested by @chalarangelo on 16/02/2018');
   //t.deepEqual(setStyle(args..), 'Expected');
   //t.equal(setStyle(args..), 'Expected');
   //t.false(setStyle(args..), 'Expected');
