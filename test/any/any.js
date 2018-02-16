@@ -1,2 +1,2 @@
-const any = arr => arr.some(Boolean);
+const any = (arr, fn = Boolean) => arr.some(fn);
 module.exports = any;

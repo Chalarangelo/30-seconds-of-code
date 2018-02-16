@@ -1,4 +1,4 @@
-Test log for: Sat Feb 17 2018 21:51:17 GMT+0530 (India Standard Time)
+Test log for: Fri Feb 16 2018 13:42:15 GMT+0200 (GTB Standard Time)
 
 > 30-seconds-of-code@0.0.1 test R:\github\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -13,10 +13,6 @@ Test log for: Sat Feb 17 2018 21:51:17 GMT+0530 (India Standard Time)
     √ Returns false for arrays with undefined
     √ Returns false for arrays with null
     √ Returns false for arrays with empty strings
-
-  Testing allBy
-
-    √ allBy is a Function
     √ Returns true with predicate function
     √ Returns false with a predicate function
 
@@ -33,10 +29,6 @@ Test log for: Sat Feb 17 2018 21:51:17 GMT+0530 (India Standard Time)
     √ Returns true for arrays with at least one truthy value
     √ Returns false for arrays with no truthy values
     √ Returns false for arrays with no truthy values
-
-  Testing anyBy
-
-    √ anyBy is a Function
     √ Returns true with predicate function
     √ Returns false with a predicate function
 
@@ -1098,10 +1090,6 @@ Test log for: Sat Feb 17 2018 21:51:17 GMT+0530 (India Standard Time)
     √ none is a Function
     √ Returns true for arrays with no truthy values
     √ Returns false for arrays with at least one truthy value
-
-  Testing noneBy
-
-    √ noneBy is a Function
     √ Returns true with a predicate function
     √ Returns false with predicate function
 
@@ -1892,14 +1880,15 @@ Test log for: Sat Feb 17 2018 21:51:17 GMT+0530 (India Standard Time)
 
     √ zipWith is a Function
     √ Runs the function provided
+    √ Sends a GET request
     √ Runs promises in series
     √ Sends a GET request
     √ Works with multiple promises
     √ Sends a POST request
 
 
-  total:     951
-  passing:   951
-  duration:  5.6s
+  total:     945
+  passing:   945
+  duration:  4.9s
 
 

@@ -1,13 +1,15 @@
 ### none
 
-Returns `true` if no elements in a collection are truthy, `false` otherwise.
+Returns `true` if the provided predicate function returns `false` for all elements in a collection, `false` otherwise.
 
-Use `!Array.some(Boolean)` to test if any elements in the collection are truthy.
+Use `Array.some()` to test if any elements in the collection return `true` based on `fn`.
+Omit the second argument, `fn`, to use `Boolean` as a default.
 
 ```js
-const none = arr => !arr.some(Boolean);
+const none = (arr, fn = Boolean) => !arr.some(fn);
 ```
 
 ```js
+none([0, 1, 3, 0], x => x == 2); // true
 none([0, 0, 0]); // true
 ```

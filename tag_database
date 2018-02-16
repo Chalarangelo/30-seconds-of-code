@@ -1,6 +1,6 @@
-all:array
-allBy:array,function
+all:array,function
 anagrams:string,recursion
+any:array,function
 approximatelyEqual:math
 arrayToHtmlList:browser,array
 ary:adapter,function
@@ -162,8 +162,7 @@ minBy:math,array,function
 minN:array,math
 mostPerformant:utility,function
 negate:function
-none:array
-noneBy:array,function
+none:array,function
 nthArg:utility,function
 nthElement:array
 objectFromPairs:object,array

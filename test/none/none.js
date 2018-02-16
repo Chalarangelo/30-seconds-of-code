@@ -1,2 +1,2 @@
-const none = arr => !arr.some(Boolean);
+const none = (arr, fn = Boolean) => !arr.some(fn);
 module.exports = none;

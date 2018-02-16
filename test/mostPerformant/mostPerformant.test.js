@@ -5,6 +5,7 @@ test('Testing mostPerformant', (t) => {
   //For more information on all the methods supported by tape
   //Please go to https://github.com/substack/tape
   t.true(typeof mostPerformant === 'function', 'mostPerformant is a Function');
+  t.pass('Tested by @chalarangelo on 16/02/2018');
   //t.deepEqual(mostPerformant(args..), 'Expected');
   //t.equal(mostPerformant(args..), 'Expected');
   //t.false(mostPerformant(args..), 'Expected');

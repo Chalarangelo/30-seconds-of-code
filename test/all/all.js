@@ -1,2 +1,2 @@
-const all = arr => arr.every(Boolean);
+const all = (arr, fn = Boolean) => arr.every(fn);
 module.exports = all;
