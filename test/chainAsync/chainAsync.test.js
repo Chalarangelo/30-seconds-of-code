@@ -10,8 +10,8 @@ test('Testing chainAsync', (t) => {
       next();
     },
     next => {
-      (() =>{
-        next()
+      (() => {
+        next();
       })();
     },
     next => {
