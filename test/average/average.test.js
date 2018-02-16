@@ -19,6 +19,6 @@ test('Testing average', (t) => {
   let start = new Date().getTime();
   average(153, 44, 55, 64, 71, 1122, 322774, 2232, 23423, 234, 3631);
   let end = new Date().getTime();  
-  t.true((end - start) < 2000, 'head([1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 1122, 32124, 23232]) takes less than 2s to run');
+  t.true((end - start) < 2000, 'average([1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 1122, 32124, 23232]) takes less than 2s to run');
   t.end();
 });
