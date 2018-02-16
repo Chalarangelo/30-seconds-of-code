@@ -5,22 +5,19 @@ test('Testing chainAsync', (t) => {
   //For more information on all the methods supported by tape
   //Please go to https://github.com/substack/tape
   t.true(typeof chainAsync === 'function', 'chainAsync is a Function');
-  //t.deepEqual(chainAsync(args..), 'Expected');
-  // chainAsync([
-  //   next => {
-  //     next();
-  //   },
-  //   next => {
-  //     (() =>{
-  //       next()
-  //     })();
-  //   },
-  //   next => {
-  //     t.pass("Calls all functions in an array");
-  //     next();
-  //   }
-  // ]);
-  //
+  chainAsync([
+    next => {
+      next();
+    },
+    next => {
+      (() =>{
+        next()
+      })();
+    },
+    next => {
+      t.pass("Calls all functions in an array");
+    }
+  ]);
   // // Ensure we wait for the 2nd assertion to be made
   // t.plan(2);
 
