@@ -19,7 +19,7 @@
   },
   "name": "30-seconds-of-code",
   "description": "A collection of useful JavaScript snippets.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/_30s.js",
   "module": "dist/_30s.esm.js",
   "scripts": {
