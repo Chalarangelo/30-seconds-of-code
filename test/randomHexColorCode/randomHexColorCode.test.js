@@ -8,7 +8,7 @@ test('Testing randomHexColorCode', (t) => {
   //t.deepEqual(randomHexColorCode(args..), 'Expected');
   t.equal(randomHexColorCode().length, 7);
   t.true(randomHexColorCode().startsWith('#'),'The color code starts with "#"');
-  t.true(randomHexColorCode().slice(1).match(/[^0123456789abcdef]/i) === null)
+  t.true(randomHexColorCode().slice(1).match(/[^0123456789abcdef]/i) === null,'The color code contains only valid hex-digits');
   //t.false(randomHexColorCode(args..), 'Expected');
   //t.throws(randomHexColorCode(args..), 'Expected');
   t.end();
