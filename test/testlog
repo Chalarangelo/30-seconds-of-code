@@ -1,4 +1,4 @@
-Test log for: Sun Feb 11 2018 20:20:34 GMT+0000 (UTC)
+Test log for: Thu Feb 15 2018 20:32:12 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.1 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -35,12 +35,49 @@ Test log for: Sun Feb 11 2018 20:20:34 GMT+0000 (UTC)
     ✔ Contains dashes in the proper places
     ✔ Only contains hexadecimal digits
 
+  Testing all
+
+    ✔ all is a Function
+    ✔ Returns true for arrays with no falsey values
+    ✔ Returns false for arrays with 0
+    ✔ Returns false for arrays with NaN
+    ✔ Returns false for arrays with undefined
+    ✔ Returns false for arrays with null
+    ✔ Returns false for arrays with empty strings
+
+  Testing allBy
+
+    ✔ allBy is a Function
+    ✔ Returns true with predicate function
+    ✔ Returns false with a predicate function
+
   Testing anagrams
 
     ✔ anagrams is a Function
     ✔ Generates all anagrams of a string
     ✔ Works for single-letter strings
     ✔ Works for empty strings
+
+  Testing any
+
+    ✔ any is a Function
+    ✔ Returns true for arrays with at least one truthy value
+    ✔ Returns false for arrays with no truthy values
+    ✔ Returns false for arrays with no truthy values
+
+  Testing anyBy
+
+    ✔ anyBy is a Function
+    ✔ Returns true with predicate function
+    ✔ Returns false with a predicate function
+
+  Testing approximatelyEqual
+
+    ✔ approximatelyEqual is a Function
+    ✔ Works for PI / 2
+    ✔ Works for 0.1 + 0.2 === 0.3
+    ✔ Works for exactly equal values
+    ✔ Works for a custom epsilon
 
   Testing arrayToHtmlList
 
@@ -84,6 +121,16 @@ Test log for: Sun Feb 11 2018 20:20:34 GMT+0000 (UTC)
     ✔ Produces the right result with a function
     ✔ Produces the right result with a property name
 
+  Testing bifurcate
+
+    ✔ bifurcate is a Function
+    ✔ Splits the collection into two groups
+
+  Testing bifurcateBy
+
+    ✔ bifurcateBy is a Function
+    ✔ Splits the collection into two groups
+
   Testing binarySearch
 
     ✔ binarySearch is a Function
@@ -106,6 +153,15 @@ Test log for: Sun Feb 11 2018 20:20:34 GMT+0000 (UTC)
 
     ✔ bindKey is a Function
     ✔ Binds function to an object context
+
+  Testing binomialCoefficient
+
+    ✔ binomialCoefficient is a Function
+    ✔ Returns the appropriate value
+    ✔ Returns the appropriate value
+    ✔ Returns the appropriate value
+    ✔ Returns NaN
+    ✔ Returns NaN
 
   Testing bottomVisible
 
@@ -298,6 +354,11 @@ Test log for: Sun Feb 11 2018 20:20:34 GMT+0000 (UTC)
   Testing defer
 
     ✔ defer is a Function
+
+  Testing degreesToRads
+
+    ✔ degreesToRads is a Function
+    ✔ Returns the appropriate value
 
   Testing delay
 
@@ -1041,10 +1102,26 @@ Test log for: Sun Feb 11 2018 20:20:34 GMT+0000 (UTC)
     ✔ Returns the n minimum elements from the provided array
     ✔ Returns the n minimum elements from the provided array
 
+  Testing mostPerformant
+
+    ✔ mostPerformant is a Function
+
   Testing negate
 
     ✔ negate is a Function
     ✔ Negates a predicate function
+
+  Testing none
+
+    ✔ none is a Function
+    ✔ Returns true for arrays with no truthy values
+    ✔ Returns false for arrays with at least one truthy value
+
+  Testing noneBy
+
+    ✔ noneBy is a Function
+    ✔ Returns true with a predicate function
+    ✔ Returns false with predicate function
 
   Testing nthArg
 
@@ -1232,6 +1309,11 @@ Test log for: Sun Feb 11 2018 20:20:34 GMT+0000 (UTC)
     ✔ quickSort(null) throws an error
     ✔ quickSort(undefined) throws an error
     ✔ quickSort([11, 1, 324, 23232, -1, 53, 2, 524, 32, 13, 156, 133, 62, 12, 4]) takes less than 2s to run
+
+  Testing radsToDegrees
+
+    ✔ radsToDegrees is a Function
+    ✔ Returns the appropriate value
 
   Testing randomHexColorCode
 
@@ -1631,6 +1713,13 @@ Test log for: Sun Feb 11 2018 20:20:34 GMT+0000 (UTC)
     ✔ unary is a Function
     ✔ Discards arguments after the first one
 
+  Testing uncurry
+
+    ✔ uncurry is a Function
+    ✔ Works without a provided value for n
+    ✔ Works without n = 2
+    ✔ Works withoutn = 3
+
   Testing unescapeHTML
 
     ✔ unescapeHTML is a Function
@@ -1796,15 +1885,15 @@ Test log for: Sun Feb 11 2018 20:20:34 GMT+0000 (UTC)
   Testing zipWith
 
     ✔ zipWith is a Function
-    ✔ Sends a GET request
     ✔ Runs the function provided
+    ✔ Sends a GET request
     ✔ Sends a POST request
     ✔ Runs promises in series
     ✔ Works with multiple promises
 
 
-  total:     901
-  passing:   901
-  duration:  2.4s
+  total:     948
+  passing:   948
+  duration:  2.7s
 
 

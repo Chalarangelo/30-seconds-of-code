@@ -98,6 +98,12 @@ average(1, 2, 3);
 <details>
 <summary>View contents</summary>
 
+* [`all`](#all)
+* [`allBy`](#allby)
+* [`any`](#any)
+* [`anyBy`](#anyby)
+* [`bifurcate`](#bifurcate)
+* [`bifurcateBy`](#bifurcateby)
 * [`chunk`](#chunk)
 * [`compact`](#compact)
 * [`countBy`](#countby)
@@ -134,6 +140,8 @@ average(1, 2, 3);
 * [`mapObject`](#mapobject-)
 * [`maxN`](#maxn)
 * [`minN`](#minn)
+* [`none`](#none)
+* [`noneBy`](#noneby)
 * [`nthElement`](#nthelement)
 * [`partition`](#partition)
 * [`pull`](#pull)
@@ -246,6 +254,7 @@ average(1, 2, 3);
 * [`sleep`](#sleep)
 * [`throttle`](#throttle)
 * [`times`](#times)
+* [`uncurry`](#uncurry)
 * [`unfold`](#unfold)
 
 </details>
@@ -255,9 +264,12 @@ average(1, 2, 3);
 <details>
 <summary>View contents</summary>
 
+* [`approximatelyEqual`](#approximatelyequal)
 * [`average`](#average)
 * [`averageBy`](#averageby)
+* [`binomialCoefficient`](#binomialcoefficient)
 * [`clampNumber`](#clampnumber)
+* [`degreesToRads`](#degreestorads)
 * [`digitize`](#digitize)
 * [`distance`](#distance)
 * [`elo`](#elo-)
@@ -278,6 +290,7 @@ average(1, 2, 3);
 * [`percentile`](#percentile)
 * [`powerset`](#powerset)
 * [`primes`](#primes)
+* [`radsToDegrees`](#radstodegrees)
 * [`randomIntArrayInRange`](#randomintarrayinrange)
 * [`randomIntegerInRange`](#randomintegerinrange)
 * [`randomNumberInRange`](#randomnumberinrange)
@@ -421,6 +434,7 @@ average(1, 2, 3);
 * [`hexToRGB`](#hextorgb-)
 * [`httpGet`](#httpget)
 * [`httpPost`](#httppost)
+* [`mostPerformant`](#mostperformant)
 * [`nthArg`](#ntharg)
 * [`parseCookie`](#parsecookie)
 * [`prettyBytes`](#prettybytes)
@@ -759,6 +773,140 @@ const unary = fn => val => fn(val);
 
 ---
  ## 📚 Array
+
+### all
+
+Returns `true` if all elements in a collection are truthy, `false` otherwise.
+
+Use `Array.every(Boolean)` to test if all elements in the collection are truthy.
+
+```js
+const all = arr => arr.every(Boolean);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+all([1, 2, 3]); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### allBy
+
+Returns `true` if the provided predicate function returns `true` for all elements in a collection, `false` otherwise.
+
+Use `Array.every()` to test if all elements in the collection return `true` based on `fn`.
+
+```js
+const allBy = (arr, fn) => arr.every(fn);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+allBy([4, 2, 3], x => x > 1); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### any
+
+Returns `true` if at least one element in a collection is truthy, `false` otherwise.
+
+Use `Array.some(Boolean)` to test if any elements in the collection are truthy.
+
+```js
+const any = arr => arr.some(Boolean);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+any([0, 0, 1, 0]); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### anyBy
+
+Returns `true` if the provided predicate function returns `true` for at least one element in a collection, `false` otherwise.
+
+Use `Array.some()` to test if any elements in the collection return `true` based on `fn`.
+
+```js
+const anyBy = (arr, fn) => arr.some(fn);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+anyBy([0, 1, 2, 0], x => x >= 2); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### bifurcate
+
+Splits values into two groups. If an element in `filter` is truthy, the corresponding element in the collection belongs to the first group; otherwise, it belongs to the second group.
+
+Use `Array.reduce()` and `Array.push()` to add elements to groups, based on `filter`.
+
+```js
+const bifurcate = (arr, filter) =>
+  arr.reduce((acc, val, i) => (acc[filter[i] ? 0 : 1].push(val), acc), [[], []]);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+bifurcate(['beep', 'boop', 'foo', 'bar'], [true, true, false, true]); // [ ['beep', 'boop', 'bar'], ['foo'] ]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### bifurcateBy
+
+Splits values into two groups according to a predicate function, which specifies which group an element in the input collection belongs to. If the predicate function returns a truthy value, the collection element belongs to the first group; otherwise, it belongs to the second group.
+
+Use `Array.reduce()` and `Array.push()` to add elements to groups, based on the value returned by `fn` for each element.
+
+```js
+const bifurcateBy = (arr, fn) =>
+  arr.reduce((acc, val, i) => (acc[fn(val, i) ? 0 : 1].push(val), acc), [[], []]);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+bifurcateBy(['beep', 'boop', 'foo', 'bar'], x => x[0] === 'b'); // [ ['beep', 'boop', 'bar'], ['foo'] ]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 
 ### chunk
 
@@ -1658,6 +1806,50 @@ const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
 ```js
 minN([1, 2, 3]); // [1]
 minN([1, 2, 3], 2); // [1,2]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### none
+
+Returns `true` if no elements in a collection are truthy, `false` otherwise.
+
+Use `!Array.some(Boolean)` to test if any elements in the collection are truthy.
+
+```js
+const none = arr => !arr.some(Boolean);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+none([0, 0, 0]); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### noneBy
+
+Returns `true` if the provided predicate function returns `false` for all elements in a collection, `false` otherwise.
+
+Use `Array.some()` to test if any elements in the collection return `true` based on `fn`.
+
+```js
+const noneBy = (arr, fn) => !arr.some(fn);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+noneBy([0, 1, 3, 0], x => x == 2); // true
 ```
 
 </details>
@@ -4199,6 +4391,38 @@ console.log(output); // 01234
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### uncurry
+
+Uncurries a function up to depth `n`.
+
+Return a variadic function.
+Use `Array.reduce()` on the provided arguments to call each subsequent curry level of the function.
+If the `length` of the provided arguments is less than `n` throw an error.
+Otherwise, call `fn` with the proper amount of arguments, using `Array.slice(0, n)`.
+Omit the second argument, `n`, to uncurry up to depth `1`.
+
+```js
+const uncurry = (fn, n = 1) => (...args) => {
+  const next = acc => args => args.reduce((x, y) => x(y), acc);
+  if (n > args.length) throw new RangeError('Arguments too few!');
+  return next(fn)(args.slice(0, n));
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const add = x => y => z => x + y + z;
+const uncurriedAdd = uncurry(add, 3);
+uncurriedAdd(1, 2, 3); // 6
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### unfold
 
 Builds an array, using an iterator function and an initial seed value.
@@ -4229,6 +4453,29 @@ unfold(f, 10); // [-10, -20, -30, -40, -50]
 
 ---
  ## ➗ Math
+
+### approximatelyEqual
+
+Checks if two numbers are approximately equal to each other.
+
+Use `Math.abs()` to compare the absolute difference of the two values to `epsilon`.
+Omit the third parameter, `epsilon`, to use a default value of `0.001`.
+
+```js
+const approximatelyEqual = (v1, v2, epsilon = 0.001) => Math.abs(v1 - v2) < epsilon;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+approximatelyEqual(Math.PI / 2.0, 1.5708); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 
 ### average
 
@@ -4278,6 +4525,41 @@ averageBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n'); // 5
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### binomialCoefficient
+
+Evaluates the binomial coefficient of two integers `n` and `k`.
+
+Use `Number.isNaN()` to check if any of the two values is `NaN`.
+Check if `k` is less than `0`, greater than or equal to `n`, equal to `1` or `n - 1` and return the appropriate result.
+Check if `n - k` is less than `k` and switch their values accordingly.
+Loop from `2` through `k` and calculate the binomial coefficient.
+Use `Math.round()` to account for rounding errors in the calculation.
+
+```js
+const binomialCoefficient = (n, k) => {
+  if (Number.isNaN(n) || Number.isNaN(k)) return NaN;
+  if (k < 0 || k > n) return 0;
+  if (k === 0 || k === n) return 1;
+  if (k === 1 || k === n - 1) return n;
+  if (n - k < k) k = n - k;
+  let res = n;
+  for (let j = 2; j <= k; j++) res *= (n - j + 1) / j;
+  return Math.round(res);
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+binomialCoefficient(8, 2); // 28
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### clampNumber
 
 Clamps `num` within the inclusive range specified by the boundary values `a` and `b`.
@@ -4295,6 +4577,28 @@ const clampNumber = (num, a, b) => Math.max(Math.min(num, Math.max(a, b)), Math.
 ```js
 clampNumber(2, 3, 5); // 3
 clampNumber(1, -1, -5); // -1
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### degreesToRads
+
+Converts an angle from degrees to radians.
+
+Use `Math.PI` and the degree to radian formula to convert the angle from degrees to radians.
+
+```js
+const degreesToRads = deg => deg * Math.PI / 180.0;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+degreesToRads(90.0); // ~1.5708
 ```
 
 </details>
@@ -4843,6 +5147,28 @@ const primes = num => {
 
 ```js
 primes(10); // [2,3,5,7]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### radsToDegrees
+
+Converts an angle from radians to degrees.
+
+Use `Math.PI` and the radian to degree formula to convert the angle from radians to degrees.
+
+```js
+const radsToDegrees = rad => rad * 180.0 / Math.PI;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+radsToDegrees(Math.PI / 2); // 90
 ```
 
 </details>
@@ -7712,6 +8038,46 @@ Logs: {
   "id": 101
 }
 */
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### mostPerformant
+
+Returns the index of the function in an array of functions which executed the fastest.
+
+Use `Array.map()` to generate an array where each value is the total time taken to execute the function after `iterations` times. Use the difference in `performance.now()` values before and after to get the total time in milliseconds to a high degree of accuracy.
+Use `Math.min()` to find the minimum execution time, and return the index of that shortest time which corresponds to the index of the most performant function. 
+Omit the second argument, `iterations`, to use a default of 10,000 iterations. The more iterations, the more reliable the result but the longer it will take.
+
+```js
+const mostPerformant = (fns, iterations = 10000) => {
+  const times = fns.map(fn => {
+    const before = performance.now();
+    for (let i = 0; i < iterations; i++) fn();
+    return performance.now() - before;
+  });
+  return times.indexOf(Math.min(...times));
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+mostPerformant([
+  () => {
+    // Loops through the entire array before returning `false`
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, '10'].every(el => typeof el === 'number');
+  },
+  () => {
+    // Only needs to reach index `1` before returning false
+    [1, '2', 3, 4, 5, 6, 7, 8, 9, 10].every(el => typeof el === 'number');
+  }
+]); // 1
 ```
 
 </details>
