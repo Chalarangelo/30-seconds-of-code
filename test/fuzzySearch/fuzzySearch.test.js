@@ -5,6 +5,8 @@ test('Testing fuzzySearch', (t) => {
   //For more information on all the methods supported by tape
   //Please go to https://github.com/substack/tape
   t.true(typeof fuzzySearch === 'function', 'fuzzySearch is a Function');
+  t.true(fuzzySearch('rt','Rohit'),'Provided examples work');
+  t.false(fuzzySearch('tr','Rohit'),'Provided examples work');
   //t.deepEqual(fuzzySearch(args..), 'Expected');
   //t.equal(fuzzySearch(args..), 'Expected');
   //t.false(fuzzySearch(args..), 'Expected');
