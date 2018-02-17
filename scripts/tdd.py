@@ -15,7 +15,7 @@ for snippet in snippets:
         file_to_write_to.close()
         test_file.write(f'''
 import types,functools
-from tape import test
+from pytape import test
 from {snippet} import {snippet}
 def {snippet}_test(t):
     t.true(isinstance({snippet}, (types.BuiltinFunctionType, types.FunctionType, functools.partial)),'{snippet} is a function')

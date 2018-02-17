@@ -1,0 +1,10 @@
+README
+flask_oauth.py
+setup.cfg
+setup.py
+Flask_OAuth.egg-info/PKG-INFO
+Flask_OAuth.egg-info/SOURCES.txt
+Flask_OAuth.egg-info/dependency_links.txt
+Flask_OAuth.egg-info/not-zip-safe
+Flask_OAuth.egg-info/requires.txt
+Flask_OAuth.egg-info/top_level.txt

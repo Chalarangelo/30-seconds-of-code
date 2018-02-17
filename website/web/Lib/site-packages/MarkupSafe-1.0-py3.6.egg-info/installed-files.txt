@@ -1,0 +1,15 @@
+..\markupsafe\_compat.py
+..\markupsafe\_constants.py
+..\markupsafe\_native.py
+..\markupsafe\__init__.py
+..\markupsafe\_speedups.c
+..\markupsafe\__pycache__\_compat.cpython-36.pyc
+..\markupsafe\__pycache__\_constants.cpython-36.pyc
+..\markupsafe\__pycache__\_native.cpython-36.pyc
+..\markupsafe\__pycache__\__init__.cpython-36.pyc
+..\markupsafe\_speedups.cp36-win_amd64.pyd
+dependency_links.txt
+not-zip-safe
+PKG-INFO
+SOURCES.txt
+top_level.txt

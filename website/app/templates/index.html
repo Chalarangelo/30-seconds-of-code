@@ -1,0 +1,379 @@
+{% extends "base.html" %}
+
+{% block content %}<div class="row" style="height:calc(100vh - 5.875rem);overflow:hidden"><input id="doc-drawer-checkbox" class="drawer" value="on" type="checkbox"><nav class="col-md-4 col-lg-3" style="border-top:0"><div class="group"><input class="search" id="searchInput" onkeyup="search(this)" type="text"><label id="search-label">Search for snippet...</label></div><label for="doc-drawer-checkbox" class="button drawer-close"></label><h3 style = "">Math</h3><a class="sublink-1" tags="math" href="#average" style="">average</a><a class="sublink-1" tags="math" href="#factorial" style="">factorial</a><a class="sublink-1" tags="math" href="#gcd" style="">gcd</a><a class="sublink-1" tags="math" href="#lcm" style="">lcm</a><a class="sublink-1" tags="math" href="#max_n" style="">max_n</a><a class="sublink-1" tags="math" href="#min_n" style="">min_n</a><h3 style = "">List</h3><a class="sublink-1" tags="list" href="#chunk" style="">chunk</a><a class="sublink-1" tags="list" href="#compact" style="">compact</a><a class="sublink-1" tags="list" href="#count_occurences" style="">count_occurences</a><a class="sublink-1" tags="list" href="#deep_flatten" style="">deep_flatten</a><a class="sublink-1" tags="list" href="#difference" style="">difference</a><a class="sublink-1" tags="list" href="#shuffle" style="">shuffle</a><a class="sublink-1" tags="list" href="#spread" style="">spread</a><a class="sublink-1" tags="list" href="#zip" style="">zip</a><a class="sublink-1" tags="list" href="#count_by" style="">count_by</a><a class="sublink-1" tags="list" href="#difference_by" style="">difference_by</a><h3 style = "">String</h3><a class="sublink-1" tags="string" href="#count_vowels" style="">count_vowels</a><a class="sublink-1" tags="string" href="#byte_size" style="">byte_size</a><a class="sublink-1" tags="string" href="#capitalize" style="">capitalize</a><a class="sublink-1" tags="string" href="#capitalize_every_word" style="">capitalize_every_word</a><a class="sublink-1" tags="string" href="#decapitalize" style="">decapitalize</a><a class="sublink-1" tags="string" href="#palindrome" style="">palindrome</a><a class="sublink-1" tags="string" href="#is_upper_case" style="">is_upper_case</a><a class="sublink-1" tags="string" href="#is_lower_case" style="">is_lower_case</a></nav><main class="col-sm-12 col-md-8 col-lg-9" style="height:100%;overflow-y:auto;background:#eceef2;padding:0"><h2 style="text-align:center">Math</h2><div class="card fluid"><h3 id="average" class="section double-padded">average</h3><!--<form action="" method="post"><button type="submit" value="average" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+<p><emoji>ℹ</emoji> Already implemented via <code>statistics.mean</code>. <code>statistics.mean</code> takes an array as an argument whereas this function takes variadic arguments.</p>
+<p>Returns the average of two or more numbers.</p>
+<p>Takes the sum of all the <code>args</code> and divides it by <code>len(args)</code>. The secind argument <code>0.0</code> in sum is to handle floating point division in <code>python2</code>.</p>
+
+<pre class="language-python">def average(*args):
+    return sum(args, 0.0) / len(args)</pre>
+<label class="collapse">Show examples</label>
+<pre class="language-python">average(*[1, 2, 3]) # 2.0
+average(1, 2, 3) # 2.0</pre>
+<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
+
+</div><div class="card fluid"><h3 id="factorial" class="section double-padded">factorial</h3><!--<form action="" method="post"><button type="submit" value="factorial" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+<p>Calculates the factorial of a number.</p>
+<p>Use recursion. If <code>num</code> is less than or equal to <code>1</code>, return <code>1</code>. Otherwise, return the product of <code>num</code> and the factorial of <code>num - 1</code>. Throws an exception if <code>num</code> is a negative or a floating point number.</p>
+
+<pre class="language-python">def factorial(num):
+    if not ((num &gt;= 0) &amp; (num % 1 == 0)):
+        raise Exception(
+            f"Number( {num} ) can't be floating point or negative ")
+    return 1 if num == 0 else num * factorial(num - 1)</pre>
+<label class="collapse">Show examples</label>
+<pre class="language-python">factorial(6) # 720</pre>
+<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
+
+</div><div class="card fluid"><h3 id="gcd" class="section double-padded">gcd</h3><!--<form action="" method="post"><button type="submit" value="gcd" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+<p><emoji>ℹ</emoji> <code>math.gcd</code> works with only two numbers</p>
+<p>Calculates the greatest common divisor between two or more numbers/lists.</p>
+<p>The <code>helperGcdfunction</code> uses recursion. Base case is when <code>y</code> equals <code>0</code>. In this case, return <code>x</code>. Otherwise, return the GCD of <code>y</code> and the remainder of the division <code>x/y</code>.</p>
+<p>Uses the reduce function from the inbuilt module <code>functools</code>. Also defines a method <code>spread</code> for javascript like spreading of lists.</p>
+
+<pre class="language-python">from functools import reduce
+
+
+def spread(arg):
+    ret = []
+    for i in arg:
+        if isinstance(i, list):
+            ret.extend(i)
+        else:
+            ret.append(i)
+    return ret
+
+
+def gcd(*args):
+    numbers = []
+    numbers.extend(spread(list(args)))
+
+    def _gcd(x, y):
+        return x if not y else gcd(y, x % y)
+
+    return reduce((lambda x, y: _gcd(x, y)), numbers)</pre>
+<label class="collapse">Show examples</label>
+<pre class="language-python">gcd(8,36) # 4</pre>
+<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
+
+</div><div class="card fluid"><h3 id="lcm" class="section double-padded">lcm</h3><!--<form action="" method="post"><button type="submit" value="lcm" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+<p>Returns the least common multiple of two or more numbers.</p>
+<p>Use the <code>greatest common divisor (GCD)</code> formula and the fact that <code>lcm(x,y) = x * y / gcd(x,y)</code> to determine the least common multiple. The GCD formula uses recursion.</p>
+<p>Uses <code>reduce</code> function from the inbuilt module <code>functools</code>. Also defines a method <code>spread</code> for javascript like spreading of lists.</p>
+
+<pre class="language-python">from functools import reduce
+
+
+def spread(arg):
+    ret = []
+    for i in arg:
+        if isinstance(i, list):
+            ret.extend(i)
+        else:
+            ret.append(i)
+    return ret
+
+
+def lcm(*args):
+    numbers = []
+    numbers.extend(spread(list(args)))
+
+    def _gcd(x, y):
+        return x if not y else gcd(y, x % y)
+
+    def _lcm(x, y):
+        return x * y / _gcd(x, y)
+
+    return reduce((lambda x, y: _lcm(x, y)), numbers)</pre>
+<label class="collapse">Show examples</label>
+<pre class="language-python">lcm(12, 7) # 84
+lcm([1, 3, 4], 5) # 60</pre>
+<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
+
+</div><div class="card fluid"><h3 id="max_n" class="section double-padded">max_n</h3><!--<form action="" method="post"><button type="submit" value="max_n" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+<p>Returns the <code>n</code> maximum elements from the provided list. If <code>n</code> is greater than or equal to the provided list's length, then return the original list(sorted in descending order).</p>
+<p>Use <code>list.sort()</code> combined with the <code>deepcopy</code> function from the inbuilt <code>copy</code> module to create a shallow clone of the list and sort it in ascending order and then use <code>list.reverse()</code> reverse it to make it descending order. Use <code>[:n]</code> to get the specified number of elements. Omit the second argument, <code>n</code>, to get a one-element array</p>
+
+<pre class="language-python">from copy import deepcopy
+
+
+def max_n(arr, n=1):
+    numbers = deepcopy(arr)
+    numbers.sort()
+    numbers.reverse()
+    return numbers[:n]</pre>
+<label class="collapse">Show examples</label>
+<pre class="language-python">max_n([1, 2, 3]) # [3]
+max_n([1, 2, 3], 2) # [3,2]</pre>
+<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
+
+</div><div class="card fluid"><h3 id="min_n" class="section double-padded">min_n</h3><!--<form action="" method="post"><button type="submit" value="min_n" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+<p>Returns the <code>n</code> minimum elements from the provided list. If <code>n</code> is greater than or equal to the provided list's length, then return the original list(sorted in ascending order).</p>
+<p>Use <code>list.sort()</code> combined with the <code>deepcopy</code> function from the inbuilt <code>copy</code> module to create a shallow clone of the list and sort it in ascending order. Use <code>[:n]</code> to get the specified number of elements. Omit the second argument, <code>n</code>, to get a one-element array</p>
+
+<pre class="language-python">from copy import deepcopy
+
+
+def min_n(arr, n=1):
+    numbers = deepcopy(arr)
+    numbers.sort()
+    return numbers[:n]</pre>
+<label class="collapse">Show examples</label>
+<pre class="language-python">min_n([1, 2, 3]) # [1]
+min_n([1, 2, 3], 2) # [1,2]</pre>
+<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
+
+</div><h2 style="text-align:center">List</h2><div class="card fluid"><h3 id="chunk" class="section double-padded">chunk</h3><!--<form action="" method="post"><button type="submit" value="chunk" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+<p>Chunks an array into smaller lists of a specified size.</p>
+<p>Uses <code>range</code> to create a list of desired size. Then use <code>map</code> on this list and fill it with splices of <code>arr</code>.</p>
+
+<pre class="language-python">from math import ceil
+
+
+def chunk(arr, size):
+    return list(
+        map(lambda x: arr[x * size:x * size + size],
+            list(range(0, ceil(len(arr) / size)))))</pre>
+<label class="collapse">Show examples</label>
+<pre class="language-python">chunk([1,2,3,4,5],2) # [[1,2],[3,4],5]</pre>
+<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
+
+</div><div class="card fluid"><h3 id="compact" class="section double-padded">compact</h3><!--<form action="" method="post"><button type="submit" value="compact" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+<p>Removes falsey values from a list.</p>
+<p>Use <code>filter()</code> to filter out falsey values (False, None, 0, and "").</p>
+
+<pre class="language-python">def compact(arr):
+    return list(filter(lambda x: bool(x), arr))</pre>
+<label class="collapse">Show examples</label>
+<pre class="language-python">compact([0, 1, False, 2, '', 3, 'a', 's', 34]) # [ 1, 2, 3, 'a', 's', 34 ]</pre>
+<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
+
+</div><div class="card fluid"><h3 id="count_occurences" class="section double-padded">count_occurences</h3><!--<form action="" method="post"><button type="submit" value="count_occurences" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+<p><emoji>ℹ</emoji> Already implemented via <code>list.count()</code>.</p>
+<p>Counts the occurrences of a value in an list.</p>
+<p>Uses the <code>reduce</code> functin from built-in module <code>functools</code> to increment a counter each time you encounter the specific value inside the list.</p>
+
+<pre class="language-python">def count_occurences(arr, val):
+    return reduce(
+        (lambda x, y: x + 1 if y == val and type(y) == type(val) else x + 0),
+        arr)</pre>
+<label class="collapse">Show examples</label>
+<pre class="language-python">count_occurrences([1, 1, 2, 1, 2, 3], 1) # 3</pre>
+<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
+
+</div><div class="card fluid"><h3 id="deep_flatten" class="section double-padded">deep_flatten</h3><!--<form action="" method="post"><button type="submit" value="deep_flatten" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+<p>Deep flattens a list.</p>
+<p>Use recursion. Use <code>list.extend()</code> with an empty array (<code>result</code>) and the spread function to flatten a list. Recursively flatten each element that is a list.</p>
+
+<pre class="language-python">def spread(arg):
+    ret = []
+    for i in arg:
+        if isinstance(i, list):
+            ret.extend(i)
+        else:
+            ret.append(i)
+    return ret
+
+
+def deep_flatten(arr):
+    result = []
+    result.extend(
+        spread(list(map(lambda x: deep(x) if type(x) == list else x, arr))))
+    return result</pre>
+<label class="collapse">Show examples</label>
+<pre class="language-python">deep_flatten([1, [2], [[3], 4], 5]) # [1,2,3,4,5]</pre>
+<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
+
+</div><div class="card fluid"><h3 id="difference" class="section double-padded">difference</h3><!--<form action="" method="post"><button type="submit" value="difference" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+<p>Returns the difference between two arrays.</p>
+<p>Create a <code>set</code> from <code>b</code>, then use list comprehension to only keep values not contained in <code>b</code></p>
+
+<pre class="language-python">def difference(a, b):
+    b = set(b)
+    return [item for item in a if item not in b]</pre>
+<label class="collapse">Show examples</label>
+<pre class="language-python">difference([1, 2, 3], [1, 2, 4]) # [3]</pre>
+<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
+
+</div><div class="card fluid"><h3 id="shuffle" class="section double-padded">shuffle</h3><!--<form action="" method="post"><button type="submit" value="shuffle" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+<p><emoji>ℹ</emoji> The same algorithm is already implemented via <code>random.shuffle</code>.</p>
+<p>Randomizes the order of the values of an list, returning a new list.</p>
+<p>Uses the <a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">Fisher-Yates algorithm</a> to reorder the elements of the list.</p>
+
+<pre class="language-python">from copy import deepcopy
+from random import randint
+
+
+def shuffle(arr):
+    temp_arr = deepcopy(arr)
+    m = len(temp_arr)
+    while (m):
+        m -= 1
+        i = randint(0, m)
+        temp_arr[m], temp_arr[i] = temp_arr[i], temp_arr[m]
+    return temp_arr</pre>
+<label class="collapse">Show examples</label>
+<pre class="language-python">foo = [1,2,3]
+shuffle(foo) # [2,3,1] , foo = [1,2,3]</pre>
+<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
+
+</div><div class="card fluid"><h3 id="spread" class="section double-padded">spread</h3><!--<form action="" method="post"><button type="submit" value="spread" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+<p>Implements javascript's <code>[].concat(...arr)</code>. Flattens the list(non-deep) and returns an list.</p>
+
+<pre class="language-python">def spread(arg):
+    ret = []
+    for i in arg:
+        if isinstance(i, list):
+            ret.extend(i)
+        else:
+            ret.append(i)
+    return ret</pre>
+<label class="collapse">Show examples</label>
+<pre class="language-python">spread([1,2,3,[4,5,6],[7],8,9]) # [1,2,3,4,5,6,7,8,9]</pre>
+<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
+
+</div><div class="card fluid"><h3 id="zip" class="section double-padded">zip</h3><!--<form action="" method="post"><button type="submit" value="zip" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+<p><emoji>ℹ</emoji> Already implemented via <code>itertools.zip_longest()</code></p>
+<p>Creates a list of elements, grouped based on the position in the original lists.</p>
+<p>Use <code>max</code> combined with <code>list comprehension</code> to get the length of the longest list in the arguments. Loops for <code>max_length</code> times grouping elements. If lengths of <code>lists</code> vary <code>fill_value</code> is used. By default <code>fill_value</code> is <code>None</code>.</p>
+
+<pre class="language-python">def zip(*args, fillvalue=None):
+    max_length = max([len(arr) for arr in args])
+    result = []
+    for i in range(max_length):
+        result.append([
+            args[k][i] if i &lt; len(args[k]) else None for k in range(len(args))
+        ])
+    return result</pre>
+<label class="collapse">Show examples</label>
+<pre class="language-python">zip(['a', 'b'], [1, 2], [True, False]) # [['a', 1, True], ['b', 2, False]]
+zip(['a'], [1, 2], [True, False]) # [['a', 1, True], [None, 2, False]]
+zip(['a'], [1, 2], [True, False], fill_value = '_') # [['a', 1, True], ['_', 2, False]]</pre>
+<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
+
+</div><div class="card fluid"><h3 id="count_by" class="section double-padded">count_by</h3><!--<form action="" method="post"><button type="submit" value="count_by" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+<p><emoji>ℹ</emoji> Already implemented via <code>collections.Counter</code></p>
+<p>Groups the elements of a list based on the given function and returns the count of elements in each group.</p>
+<p>Use <code>map()</code> to map the values of the list using the given function. Iterate over the map and increase the the elements count each time it occurs.</p>
+
+<pre class="language-python">def count_by(arr, fn=lambda x: x):
+    key = {}
+    for el in map(fn, arr):
+        key[el] = 0 if not el in key else key[el]
+        key[el] += 1
+    return key</pre>
+<label class="collapse">Show examples</label>
+<pre class="language-python">from math import floor
+count_by([6.1, 4.2, 6.3], floor) # {4: 1, 6: 2}
+count_by(['one', 'two', 'three'], len) # {3: 2, 5: 1}</pre>
+<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
+
+</div><div class="card fluid"><h3 id="difference_by" class="section double-padded">difference_by</h3><!--<form action="" method="post"><button type="submit" value="difference_by" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+<p>Returns the difference between two list, after applying the provided function to each list element of both.</p>
+<p>Create a <code>set</code> by applying <code>fn</code> to each element in <code>b</code>, then use list comprehension in combination with fn on a to only keep values not contained in the previously created <code>set</code>.</p>
+
+<pre class="language-python">def difference_by(a, b, fn):
+    b = set(map(fn, b))
+    return [item for item in a if fn(item) not in b]</pre>
+<label class="collapse">Show examples</label>
+<pre class="language-python">from math import floor
+difference_by([2.1, 1.2], [2.3, 3.4],floor) # [1.2]
+difference_by([{ 'x': 2 }, { 'x': 1 }], [{ 'x': 1 }], lambda v : v['x']) # [ { x: 2 } ]</pre>
+<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
+
+</div><h2 style="text-align:center">String</h2><div class="card fluid"><h3 id="count_vowels" class="section double-padded">count_vowels</h3><!--<form action="" method="post"><button type="submit" value="count_vowels" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+<p>Retuns <code>number</code> of vowels in provided <code>string</code>.</p>
+<p>Use a regular expression to count the number of vowels <code>(A, E, I, O, U)</code> in a string.</p>
+
+<pre class="language-python">import re
+
+
+def count_vowels(str):
+    return len(len(re.findall(r'[aeiou]', str, re.IGNORECASE)))</pre>
+<label class="collapse">Show examples</label>
+<pre class="language-python">count_vowels('foobar') # 3
+count_vowels('gym') # 0</pre>
+<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
+
+</div><div class="card fluid"><h3 id="byte_size" class="section double-padded">byte_size</h3><!--<form action="" method="post"><button type="submit" value="byte_size" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+<p>Returns the length of a string in bytes.</p>
+<p><code>utf-8</code> encodes a given string and find its length.</p>
+
+<pre class="language-python">def byte_size(string):
+    return(len(string.encode('utf-8')))</pre>
+<label class="collapse">Show examples</label>
+<pre class="language-python">byte_size('ðŸ˜€') # 4
+byte_size('Hello World') # 11</pre>
+<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
+
+</div><div class="card fluid"><h3 id="capitalize" class="section double-padded">capitalize</h3><!--<form action="" method="post"><button type="submit" value="capitalize" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+<p>Capitalizes the first letter of a string.</p>
+<p>Capitalizes the fist letter of the sring and then adds it with rest of the string. Omit the <code>lower_rest</code> parameter to keep the rest of the string intact, or set it to <code>true</code> to convert to lowercase.</p>
+
+<pre class="language-python">def capitalize(string, lower_rest=False):
+    return string[:1].upper() + (string[1:].lower() if lower_rest else string[1:])</pre>
+<label class="collapse">Show examples</label>
+<pre class="language-python">capitalize('fooBar') # 'FooBar'
+capitalize('fooBar', True) # 'Foobar'</pre>
+<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
+
+</div><div class="card fluid"><h3 id="capitalize_every_word" class="section double-padded">capitalize_every_word</h3><!--<form action="" method="post"><button type="submit" value="capitalize_every_word" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+<p>Capitalizes the first letter of every word in a string.</p>
+<p>Uses <code>str.title</code> to capitalize first letter of evry word in the string.</p>
+
+<pre class="language-python">def capitalize_every_word(string):
+    return string.title()</pre>
+<label class="collapse">Show examples</label>
+<pre class="language-python">capitalize_every_word('hello world!') # 'Hello World!'</pre>
+<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
+
+</div><div class="card fluid"><h3 id="decapitalize" class="section double-padded">decapitalize</h3><!--<form action="" method="post"><button type="submit" value="decapitalize" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+<p>Decapitalizes the first letter of a string.</p>
+<p>Decapitalizes the fist letter of the sring and then adds it with rest of the string. Omit the <code>upper_rest</code> parameter to keep the rest of the string intact, or set it to <code>true</code> to convert to uppercase.</p>
+
+<pre class="language-python">def decapitalize(string, upper_rest=False):
+    return str[:1].lower() + (str[1:].upper() if upper_rest else str[1:])</pre>
+<label class="collapse">Show examples</label>
+<pre class="language-python">decapitalize('FooBar') # 'fooBar'
+decapitalize('FooBar', True) # 'fOOBAR'</pre>
+<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
+
+</div><div class="card fluid"><h3 id="palindrome" class="section double-padded">palindrome</h3><!--<form action="" method="post"><button type="submit" value="palindrome" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+<p>Returns <code>True</code> if the given string is a palindrome, <code>False</code> otherwise.</p>
+<p>Convert string <code>str.lower()</code> and use <code>re.sub</code> to remove non-alphanumeric characters from it. Then compare the new string to the reversed.</p>
+
+<pre class="language-python">def palindrome(string):
+    from re import sub
+    s = sub('[\W_]', '', string.lower())
+    return s == s[::-1]</pre>
+<label class="collapse">Show examples</label>
+<pre class="language-python">palindrome('taco cat') # True</pre>
+<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
+
+</div><div class="card fluid"><h3 id="is_upper_case" class="section double-padded">is_upper_case</h3><!--<form action="" method="post"><button type="submit" value="is_upper_case" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+<p>Checks if a string is upper case.</p>
+<p>Convert the given string to upper case, using <code>str.upper()</code> method and compare it to the original.</p>
+
+<pre class="language-python">def is_upper_case(str):
+    return str == str.upper()</pre>
+<label class="collapse">Show examples</label>
+<pre class="language-python">is_upper_case('ABC') # True
+is_upper_case('a3@$') # True
+is_upper_case('aB4') # False</pre>
+<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
+
+</div><div class="card fluid"><h3 id="is_lower_case" class="section double-padded">is_lower_case</h3><!--<form action="" method="post"><button type="submit" value="is_lower_case" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+<p>Checks if a string is lower case.</p>
+<p>Convert the given string to lower case, using <code>str.lower()</code> method and compare it to the original.</p>
+
+<pre class="language-python">def is_lower_case(str):
+    return str == str.lower()</pre>
+<label class="collapse">Show examples</label>
+<pre class="language-python">is_lower_case('abc') # True
+is_lower_case('a3@$') # True
+is_lower_case('Ab4') # False</pre>
+<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
+
+</div><button class="scroll-to-top">↑</button>
+			<footer><p style="display:inline-block"><strong>30 seconds of python code</strong> is licensed under the <a href="https://github.com/kriadmin/30-seconds-of-python-code/blob/master/LICENSE">GPL-3.0</a> license.<br>Icons made by <a href="https://www.flaticon.com/authors/smashicons">Smashicons</a> from <a href="https://www.flaticon.com/">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/">CC 3.0 BY</a>.<br>Ribbon made by <a href="https://github.com/tholman/github-corners">Tim Holman</a> is licensed by <a href="https://opensource.org/licenses/MIT">The MIT License</a><br>Built with the <a href="https://minicss.org">mini.css framework</a>.</p></footer>
+			</main></div>{% endblock %}

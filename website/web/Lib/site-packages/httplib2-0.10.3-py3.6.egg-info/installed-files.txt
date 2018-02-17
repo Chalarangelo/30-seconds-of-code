@@ -1,0 +1,9 @@
+..\httplib2\iri2uri.py
+..\httplib2\__init__.py
+..\httplib2\cacerts.txt
+..\httplib2\__pycache__\iri2uri.cpython-36.pyc
+..\httplib2\__pycache__\__init__.cpython-36.pyc
+dependency_links.txt
+PKG-INFO
+SOURCES.txt
+top_level.txt

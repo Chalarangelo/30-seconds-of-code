@@ -1,5 +1,5 @@
 import types,functools
-from tape import test
+from pytape import test
 from shuffle import shuffle
 def shuffle_test(t):
     t.true(isinstance(shuffle, (types.BuiltinFunctionType, types.FunctionType, functools.partial)),'shuffle is a function')
