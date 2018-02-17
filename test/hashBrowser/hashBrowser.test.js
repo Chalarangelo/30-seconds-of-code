@@ -5,6 +5,7 @@ test('Testing hashBrowser', (t) => {
   //For more information on all the methods supported by tape
   //Please go to https://github.com/substack/tape
   t.true(typeof hashBrowser === 'function', 'hashBrowser is a Function');
+  t.pass('Tested by @chalarangelo on 16/02/2018');
   //t.deepEqual(hashBrowser(args..), 'Expected');
   //t.equal(hashBrowser(args..), 'Expected');
   //t.false(hashBrowser(args..), 'Expected');

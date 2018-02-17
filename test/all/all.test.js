@@ -11,6 +11,8 @@ test('Testing all', (t) => {
   t.false(all([undefined,1]), 'Returns false for arrays with undefined');
   t.false(all([null,1]), 'Returns false for arrays with null');
   t.false(all(['',1]), 'Returns false for arrays with empty strings');
+  t.true(all([4,1,2,3], x => x >= 1), 'Returns true with predicate function');
+  t.false(all([0,1], x => x >= 1), 'Returns false with a predicate function');
   //t.deepEqual(all(args..), 'Expected');
   //t.equal(all(args..), 'Expected');
   //t.false(all(args..), 'Expected');
