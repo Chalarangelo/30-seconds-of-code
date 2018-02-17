@@ -28,6 +28,6 @@ fuzzySearch = (patrn, str) => {
 
 
 ``` js
-fuzzySearch('rt','Rohit); // true
-fuzzySearch('tr','Rohit); // false
+fuzzySearch('rt','Rohit'); // true
+fuzzySearch('tr','Rohit'); // false
 ```
