@@ -82,6 +82,7 @@ forOwnRight:object
 fromCamelCase:string
 functionName:function,utility
 functions:object,function
+fuzzySearch:string,utility
 gcd:math,recursion
 geometricProgression:math
 get:object
@@ -283,4 +284,4 @@ xProd:array,math
 yesNo:utility,regexp
 zip:array
 zipObject:array,object
-zipWith:array,function,advanced
+zipWith:uncategorized
