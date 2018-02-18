@@ -82,7 +82,6 @@ forOwnRight:object
 fromCamelCase:string
 functionName:function,utility
 functions:object,function
-fuzzySearch:string,utility
 gcd:math,recursion
 geometricProgression:math
 get:object
@@ -145,6 +144,7 @@ join:array
 JSONToFile:node,json
 last:array
 lcm:math,recursion
+levenshteinDistance:string,utility
 longestItem:array,string,utility
 lowercaseKeys:object
 luhnCheck:math,utility
@@ -284,4 +284,4 @@ xProd:array,math
 yesNo:utility,regexp
 zip:array
 zipObject:array,object
-zipWith:uncategorized
+zipWith:array,function,advanced

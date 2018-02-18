@@ -1,6 +1,6 @@
-Test log for: Sat Feb 17 2018 20:23:50 GMT+0000 (UTC)
+Test log for: Sun Feb 18 2018 19:56:04 GMT+0530 (India Standard Time)
 
-> 30-seconds-of-code@0.0.2 test /home/travis/build/Chalarangelo/30-seconds-of-code
+> 30-seconds-of-code@0.0.2 test R:\github\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
 
 
@@ -37,15 +37,15 @@ Test log for: Sat Feb 17 2018 20:23:50 GMT+0000 (UTC)
 
   Testing all
 
-    ✔ all is a Function
-    ✔ Returns true for arrays with no falsey values
-    ✔ Returns false for arrays with 0
-    ✔ Returns false for arrays with NaN
-    ✔ Returns false for arrays with undefined
-    ✔ Returns false for arrays with null
-    ✔ Returns false for arrays with empty strings
-    ✔ Returns true with predicate function
-    ✔ Returns false with a predicate function
+    √ all is a Function
+    √ Returns true for arrays with no falsey values
+    √ Returns false for arrays with 0
+    √ Returns false for arrays with NaN
+    √ Returns false for arrays with undefined
+    √ Returns false for arrays with null
+    √ Returns false for arrays with empty strings
+    √ Returns true with predicate function
+    √ Returns false with a predicate function
 
   Testing anagrams
 
@@ -56,12 +56,12 @@ Test log for: Sat Feb 17 2018 20:23:50 GMT+0000 (UTC)
 
   Testing any
 
-    ✔ any is a Function
-    ✔ Returns true for arrays with at least one truthy value
-    ✔ Returns false for arrays with no truthy values
-    ✔ Returns false for arrays with no truthy values
-    ✔ Returns true with predicate function
-    ✔ Returns false with a predicate function
+    √ any is a Function
+    √ Returns true for arrays with at least one truthy value
+    √ Returns false for arrays with no truthy values
+    √ Returns false for arrays with no truthy values
+    √ Returns true with predicate function
+    √ Returns false with a predicate function
 
   Testing approximatelyEqual
 
@@ -73,8 +73,8 @@ Test log for: Sat Feb 17 2018 20:23:50 GMT+0000 (UTC)
 
   Testing arrayToHtmlList
 
-    ✔ arrayToHtmlList is a Function
-    ✔ Tested by @chalarangelo on 16/02/2018
+    √ arrayToHtmlList is a Function
+    √ Tested by @chalarangelo on 16/02/2018
 
   Testing ary
 
@@ -95,18 +95,18 @@ Test log for: Sat Feb 17 2018 20:23:50 GMT+0000 (UTC)
 
   Testing average
 
-    ✔ average is a Function
-    ✔ average(true) returns 0
-    ✔ average(false) returns 1
-    ✔ average(9, 1) returns 5
-    ✔ average(153, 44, 55, 64, 71, 1122, 322774, 2232, 23423, 234, 3631) returns 32163.909090909092
-    ✔ average(1, 2, 3) returns 2
-    ✔ average(null) returns 0
-    ✔ average(1, 2, 3) returns NaN
-    ✔ average(String) returns NaN
-    ✔ average({ a: 123}) returns NaN
-    ✔ average([undefined, 0, string]) returns NaN
-    ✔ average([1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 1122, 32124, 23232]) takes less than 2s to run
+    √ average is a Function
+    √ average(true) returns 0
+    √ average(false) returns 1
+    √ average(9, 1) returns 5
+    √ average(153, 44, 55, 64, 71, 1122, 322774, 2232, 23423, 234, 3631) returns 32163.909090909092
+    √ average(1, 2, 3) returns 2
+    √ average(null) returns 0
+    √ average(1, 2, 3) returns NaN
+    √ average(String) returns NaN
+    √ average({ a: 123}) returns NaN
+    √ average([undefined, 0, string]) returns NaN
+    √ average([1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 1122, 32124, 23232]) takes less than 2s to run
 
   Testing averageBy
 
@@ -204,8 +204,8 @@ Test log for: Sat Feb 17 2018 20:23:50 GMT+0000 (UTC)
 
   Testing chainAsync
 
-    ✔ chainAsync is a Function
-    ✔ Calls all functions in an array
+    √ chainAsync is a Function
+    √ Calls all functions in an array
 
   Testing chunk
 
@@ -304,18 +304,18 @@ Test log for: Sat Feb 17 2018 20:23:50 GMT+0000 (UTC)
 
   Testing createElement
 
-    ✔ createElement is a Function
-    ✔ Tested by @chalarangelo on 16/02/2018
+    √ createElement is a Function
+    √ Tested by @chalarangelo on 16/02/2018
 
   Testing createEventHub
 
-    ✔ createEventHub is a Function
-    ✔ Tested by @chalarangelo on 16/02/2018
+    √ createEventHub is a Function
+    √ Tested by @chalarangelo on 16/02/2018
 
   Testing currentURL
 
-    ✔ currentURL is a Function
-    ✔ Tested by @chalarangelo on 16/02/2018
+    √ currentURL is a Function
+    √ Tested by @chalarangelo on 16/02/2018
 
   Testing curry
 
@@ -346,13 +346,13 @@ Test log for: Sat Feb 17 2018 20:23:50 GMT+0000 (UTC)
 
   Testing defaults
 
-    ✔ defaults is a Function
-    ✔ Assigns default values for undefined properties
+    √ defaults is a Function
+    √ Assigns default values for undefined properties
 
   Testing defer
 
-    ✔ defer is a Function
-    ✔ Tested by @chalarangelo on 16/02/2018
+    √ defer is a Function
+    √ Tested by @chalarangelo on 16/02/2018
 
   Testing degreesToRads
 
@@ -565,9 +565,15 @@ Test log for: Sat Feb 17 2018 20:23:50 GMT+0000 (UTC)
 
   Testing functions
 
-    ✔ functions is a Function
-    ✔ Returns own methods
-    ✔ Returns own and inherited methods
+    √ functions is a Function
+    √ Returns own methods
+    √ Returns own and inherited methods
+
+  Testing fuzzySearch
+
+    √ fuzzySearch is a Function
+    √ Provided examples work
+    √ Provided examples work
 
   Testing gcd
 
@@ -602,13 +608,13 @@ Test log for: Sat Feb 17 2018 20:23:50 GMT+0000 (UTC)
 
   Testing getScrollPosition
 
-    ✔ getScrollPosition is a Function
-    ✔ Tested by @chalarangelo on 16/02/2018
+    √ getScrollPosition is a Function
+    √ Tested by @chalarangelo on 16/02/2018
 
   Testing getStyle
 
-    ✔ getStyle is a Function
-    ✔ Tested by @chalarangelo on 16/02/2018
+    √ getStyle is a Function
+    √ Tested by @chalarangelo on 16/02/2018
 
   Testing getType
 
@@ -637,13 +643,13 @@ Test log for: Sat Feb 17 2018 20:23:50 GMT+0000 (UTC)
 
   Testing hasFlags
 
-    ✔ hasFlags is a Function
-    ✔ Tested by @chalarangelo on 16/02/2018
+    √ hasFlags is a Function
+    √ Tested by @chalarangelo on 16/02/2018
 
   Testing hashBrowser
 
-    ✔ hashBrowser is a Function
-    ✔ Tested by @chalarangelo on 16/02/2018
+    √ hashBrowser is a Function
+    √ Tested by @chalarangelo on 16/02/2018
 
   Testing hashNode
 
@@ -670,8 +676,8 @@ Test log for: Sat Feb 17 2018 20:23:50 GMT+0000 (UTC)
 
   Testing hide
 
-    ✔ hide is a Function
-    ✔ Tested by @chalarangelo on 16/02/2018
+    √ hide is a Function
+    √ Tested by @chalarangelo on 16/02/2018
 
   Testing howManyTimes
 
@@ -1011,6 +1017,10 @@ Test log for: Sat Feb 17 2018 20:23:50 GMT+0000 (UTC)
     ✔ Returns the least common multiple of two or more numbers.
     ✔ Returns the least common multiple of two or more numbers.
 
+  Testing levenshteinDistance
+
+    √ levenshteinDistance is a Function
+
   Testing longestItem
 
     ✔ longestItem is a Function
@@ -1108,8 +1118,8 @@ Test log for: Sat Feb 17 2018 20:23:50 GMT+0000 (UTC)
 
   Testing mostPerformant
 
-    ✔ mostPerformant is a Function
-    ✔ Tested by @chalarangelo on 16/02/2018
+    √ mostPerformant is a Function
+    √ Tested by @chalarangelo on 16/02/2018
 
   Testing negate
 
@@ -1118,11 +1128,11 @@ Test log for: Sat Feb 17 2018 20:23:50 GMT+0000 (UTC)
 
   Testing none
 
-    ✔ none is a Function
-    ✔ Returns true for arrays with no truthy values
-    ✔ Returns false for arrays with at least one truthy value
-    ✔ Returns true with a predicate function
-    ✔ Returns false with predicate function
+    √ none is a Function
+    √ Returns true for arrays with no truthy values
+    √ Returns false for arrays with at least one truthy value
+    √ Returns true with a predicate function
+    √ Returns false with predicate function
 
   Testing nthArg
 
@@ -1154,8 +1164,8 @@ Test log for: Sat Feb 17 2018 20:23:50 GMT+0000 (UTC)
 
   Testing off
 
-    ✔ off is a Function
-    ✔ Tested by @chalarangelo on 16/02/2018
+    √ off is a Function
+    √ Tested by @chalarangelo on 16/02/2018
 
   Testing omit
 
@@ -1169,18 +1179,18 @@ Test log for: Sat Feb 17 2018 20:23:50 GMT+0000 (UTC)
 
   Testing on
 
-    ✔ on is a Function
-    ✔ Tested by @chalarangelo on 16/02/2018
+    √ on is a Function
+    √ Tested by @chalarangelo on 16/02/2018
 
   Testing onUserInputChange
 
-    ✔ onUserInputChange is a Function
-    ✔ Tested by @chalarangelo on 16/02/2018
+    √ once is a Function
+    √ Tested by @chalarangelo on 16/02/2018
 
   Testing once
 
-    ✔ once is a Function
-    ✔ Tested by @chalarangelo on 16/02/2018
+    √ onUserInputChange is a Function
+    √ Tested by @chalarangelo on 16/02/2018
 
   Testing orderBy
 
@@ -1322,10 +1332,10 @@ Test log for: Sat Feb 17 2018 20:23:50 GMT+0000 (UTC)
 
   Testing randomHexColorCode
 
-    ✔ randomHexColorCode is a Function
-    ✔ should be equal
-    ✔ The color code starts with "#"
-    ✔ The color code contains only valid hex-digits
+    √ randomHexColorCode is a Function
+    √ should be equal
+    √ The color code starts with "#"
+    √ The color code contains only valid hex-digits
 
   Testing randomIntArrayInRange
 
@@ -1453,8 +1463,8 @@ Test log for: Sat Feb 17 2018 20:23:50 GMT+0000 (UTC)
 
   Testing setStyle
 
-    ✔ setStyle is a Function
-    ✔ Tested by @chalarangelo on 16/02/2018
+    √ setStyle is a Function
+    √ Tested by @chalarangelo on 16/02/2018
 
   Testing shallowClone
 
@@ -1464,8 +1474,8 @@ Test log for: Sat Feb 17 2018 20:23:50 GMT+0000 (UTC)
 
   Testing show
 
-    ✔ show is a Function
-    ✔ Tested by @chalarangelo on 16/02/2018
+    √ show is a Function
+    √ Tested by @chalarangelo on 16/02/2018
 
   Testing shuffle
 
@@ -1606,18 +1616,18 @@ Test log for: Sat Feb 17 2018 20:23:50 GMT+0000 (UTC)
 
   Testing throttle
 
-    ✔ throttle is a Function
-    ✔ Tested by @chalarangelo on 16/02/2018
+    √ throttle is a Function
+    √ Tested by @chalarangelo on 16/02/2018
 
   Testing timeTaken
 
-    ✔ timeTaken is a Function
-    ✔ Tested by @chalarangelo on 16/02/2018
+    √ times is a Function
+    √ Runs a function the specified amount of times
 
   Testing times
 
-    ✔ times is a Function
-    ✔ Runs a function the specified amount of times
+    √ timeTaken is a Function
+    √ Tested by @chalarangelo on 16/02/2018
 
   Testing toCamelCase
 
@@ -1641,8 +1651,13 @@ Test log for: Sat Feb 17 2018 20:23:50 GMT+0000 (UTC)
 
   Testing toDecimalMark
 
-    ✔ toDecimalMark is a Function
-    ✔ convert a float-point arithmetic to the Decimal mark form
+    √ toDecimalMark is a Function
+    √ convert a float-point arithmetic to the Decimal mark form
+
+  Testing toggleClass
+
+    √ toggleClass is a Function
+    √ Tested by @chalarangelo on 16/02/2018
 
   Testing toKebabCase
 
@@ -1667,36 +1682,18 @@ Test log for: Sat Feb 17 2018 20:23:50 GMT+0000 (UTC)
 
   Testing toSafeInteger
 
-    ✔ toSafeInteger is a Function
-    ✔ Number(toSafeInteger(3.2)) is a number
-    ✔ Converts a value to a safe integer
-    ✔ toSafeInteger('4.2') returns 4
-    ✔ toSafeInteger(4.6) returns 5
-    ✔ toSafeInteger([]) returns 0
-    ✔ isNaN(toSafeInteger([1.5, 3124])) is true
-    ✔ isNaN(toSafeInteger('string')) is true
-    ✔ isNaN(toSafeInteger({})) is true
-    ✔ isNaN(toSafeInteger()) is true
-    ✔ toSafeInteger(Infinity) returns 9007199254740991
-    ✔ toSafeInteger(3.2) takes less than 2s to run
-
-  Testing toSnakeCase
-
-    ✔ toSnakeCase is a Function
-    ✔ toSnakeCase('camelCase') returns camel_case
-    ✔ toSnakeCase('some text') returns some_text
-    ✔ toSnakeCase('some-mixed_string With spaces_underscores-and-hyphens') returns some_mixed_string_with_spaces_underscores_and_hyphens
-    ✔ toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') returns i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html
-    ✔ toSnakeCase() returns undefined
-    ✔ toSnakeCase([]) throws an error
-    ✔ toSnakeCase({}) throws an error
-    ✔ toSnakeCase(123) throws an error
-    ✔ toSnakeCase(IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML) takes less than 2s to run
-
-  Testing toggleClass
-
-    ✔ toggleClass is a Function
-    ✔ Tested by @chalarangelo on 16/02/2018
+    √ toSafeInteger is a Function
+    √ Number(toSafeInteger(3.2)) is a number
+    √ Converts a value to a safe integer
+    √ toSafeInteger('4.2') returns 4
+    √ toSafeInteger(4.6) returns 5
+    √ toSafeInteger([]) returns 0
+    √ isNaN(toSafeInteger([1.5, 3124])) is true
+    √ isNaN(toSafeInteger('string')) is true
+    √ isNaN(toSafeInteger({})) is true
+    √ isNaN(toSafeInteger()) is true
+    √ toSafeInteger(Infinity) returns 9007199254740991
+    √ toSafeInteger(3.2) takes less than 2s to run
 
   Testing tomorrow
 
@@ -1896,17 +1893,17 @@ Test log for: Sat Feb 17 2018 20:23:50 GMT+0000 (UTC)
 
   Testing zipWith
 
-    ✔ zipWith is a Function
-    ✔ Sends a GET request
-    ✔ Sends a POST request
-    ✔ Runs the function provided
-    ✔ Runs promises in series
-    ✔ Works as expecting, passing arguments properly
-    ✔ Works with multiple promises
+    √ zipWith is a Function
+    √ Runs the function provided
+    √ Runs promises in series
+    √ Works as expecting, passing arguments properly
+    √ Sends a GET request
+    √ Sends a POST request
+    √ Works with multiple promises
 
 
-  total:     970
-  passing:   970
-  duration:  2.4s
+  total:     974
+  passing:   974
+  duration:  2.9s
 
 
