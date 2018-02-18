@@ -23,7 +23,7 @@ fuzzySearch = (patrn, str) => {
     }
 
     return patternLength !== 0 && strLength !== 0 && patternIdx === patternLength ? true : false;
-}
+};
 ```
 
 
