@@ -284,4 +284,4 @@ xProd:array,math
 yesNo:utility,regexp
 zip:array
 zipObject:array,object
-zipWith:uncategorized
+zipWith:array,function,advanced 
