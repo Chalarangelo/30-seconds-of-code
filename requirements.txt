@@ -3,10 +3,14 @@ cffi==1.11.4
 click==6.7
 emoji==0.4.5
 Flask==0.12.2
+Flask-OAuth==0.12
 gunicorn==19.7.1
+httplib2==0.10.3
 itsdangerous==0.24
 Jinja2==2.10
 MarkupSafe==1.0
 misaka==2.1.0
+mistune==0.8.3
+oauth2==1.9.0.post1
 pycparser==2.18
 Werkzeug==0.14.1
