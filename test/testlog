@@ -1,4 +1,4 @@
-Test log for: Sat Feb 17 2018 20:23:50 GMT+0000 (UTC)
+Test log for: Sun Feb 18 2018 20:24:43 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.2 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1534,6 +1534,11 @@ Test log for: Sat Feb 17 2018 20:23:50 GMT+0000 (UTC)
     ✔ spreadOver is a Function
     ✔ Takes a variadic function and returns a closure that accepts an array of arguments to map to the inputs of the function.
 
+  Testing stableSort
+
+    ✔ stableSort is a Function
+    ✔ Array is properly sorted
+
   Testing standardDeviation
 
     ✔ standardDeviation is a Function
@@ -1905,8 +1910,8 @@ Test log for: Sat Feb 17 2018 20:23:50 GMT+0000 (UTC)
     ✔ Works with multiple promises
 
 
-  total:     970
-  passing:   970
+  total:     972
+  passing:   972
   duration:  2.4s
 
 
