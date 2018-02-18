@@ -20,8 +20,8 @@ const levenshteinDistance  = (string1,string2) => {
             }
         }
     }
-    return matrix[string2.length][string1.length]
-}
+    return matrix[string2.length][string1.length];
+};
 ```
 
 ```js
