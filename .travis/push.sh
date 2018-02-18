@@ -32,7 +32,7 @@ upload_files() {
       git push --force  "https://${GH_TOKEN}@github.com/kriadmin/30-seconds-of-python-code.git" master > /dev/null 2>&1
       echo "Pushing done"
       echo "Pushing to website"
-      git subtree push --prefix website "https://${GH_TOKEN}@github.com/kriadmin/30-seconds-of-python-code.git" website --force
+      git subtree push --prefix website "https://${GH_TOKEN}@github.com/kriadmin/30-seconds-of-python-code.git" website
       echo "Pushed to master branch"
       git status
     fi
