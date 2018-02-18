@@ -10,12 +10,8 @@ test('Testing stableSort', (t) => {
   //t.false(stableSort(args..), 'Expected');
   //t.throws(stableSort(args..), 'Expected');
   
-  const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const compare = () => 0;
-  // stable
-  t.deepEqual(stableSort(arr, compare), arr);
-  // unstable
-  t.notDeepEqual([...arr].sort(compare), arr);
-
+  t.deepEqual(stableSort(arr, compare), arr, 'Array is properly sorted');
   t.end();
 });
