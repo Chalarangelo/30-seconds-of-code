@@ -10,6 +10,7 @@ script:
 - python scripts/lint.py
 - python scripts/readme.py
 - python scripts/tdd.py
+- python3 website/main.py
 after_success:
 - chmod +x .travis/push.sh
 - .travis/push.sh

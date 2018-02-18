@@ -62,7 +62,7 @@ end = '{% endblock %}'
 footer = '''
 			<footer><p style="display:inline-block"><strong>30 seconds of python code</strong> is licensed under the <a href="https://github.com/kriadmin/30-seconds-of-python-code/blob/master/LICENSE">GPL-3.0</a> license.<br>Icons made by <a href="https://www.flaticon.com/authors/smashicons">Smashicons</a> from <a href="https://www.flaticon.com/">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/">CC 3.0 BY</a>.<br>Ribbon made by <a href="https://github.com/tholman/github-corners">Tim Holman</a> is licensed by <a href="https://opensource.org/licenses/MIT">The MIT License</a><br>Built with the <a href="https://minicss.org">mini.css framework</a>.</p></footer>
 			'''
-rendered = f'<div class="row" style="height:calc(100vh - 5.875rem);overflow:hidden">{nav_string}<main class="col-sm-12 col-md-8 col-lg-9" style="height:100%;overflow-y:auto;background:#eceef2;padding:0">' + rendered + f'<button class="scroll-to-top">↑</button>{footer}</main></div>'
+rendered = f'<div class="row" style="height:calc(100vh - 5.875rem);overflow:hidden">{nav_string}<main class="col-sm-12 col-md-8 col-lg-9" style="height:100%;overflow-y:auto;background:#eceef2;padding:0"><a id="top"></a>' + rendered + f'<button class="scroll-to-top">↑</button>{footer}</main></div>'
 rendered = re.sub('<code\s*class=" language-python">','',rendered)
 open('website/app/templates/index.html','w',encoding='utf-8').write(start + rendered + end)
 snippets = [snippet.replace('.md','') for snippet in snippets]
