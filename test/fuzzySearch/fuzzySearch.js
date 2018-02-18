@@ -15,5 +15,5 @@ if (patternChar === strChar)
 }
 
 return patternLength !== 0 && strLength !== 0 && patternIdx === patternLength ? true : false;
-}
+};
 module.exports = fuzzySearch;
