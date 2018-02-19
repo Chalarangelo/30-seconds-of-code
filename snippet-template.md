@@ -10,5 +10,5 @@ const functionName = arguments =>
 ```
 
 ```js
-functionName('sampleInput') // 'sampleOutput'
+functionName('sampleInput'); // 'sampleOutput'
 ```
