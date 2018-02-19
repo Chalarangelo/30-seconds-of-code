@@ -6,20 +6,15 @@ Loops through `str` and determines if it contains all characters of `patrn` and 
 
 Taken from [here](https://github.com/forrestthewoods/lib_fts/blob/80f3f8c52db53428247e741b9efe2cde9667050c/code/fts_fuzzy_match.js#L18).
 ``` js
-fuzzySearch = (patrn, str) => {
-    const pattern = patrn;
-    const string = str; 
-    let patternIdx = 0;
-    let strIdx = 0;
+fuzzySearch = (pattern, string) => { 
     let patternLength = pattern.length;
     let strLength = string.length;
 
-    while (patternIdx !== patternLength && strIdx !== strLength) {
+    for (var patternIdx = 0, strIdx = 0;patternIdx !== patternLength && strIdx !== strLength;strIdx++){
         let patternChar = pattern[patternIdx].toLowerCase();
         let strChar = string[strIdx].toLowerCase();
         if (patternChar === strChar)
             ++patternIdx;
-        ++strIdx;
     }
 
     return patternLength !== 0 && strLength !== 0 && patternIdx === patternLength ? true : false;
