@@ -10,8 +10,8 @@ const levenshteinDistance  = (string1,string2) => {
     if(string2.length === 0) return string1.length;
     let matrix = Array(string2.length+ 1).fill(0).map((x,i) => [i]);
     matrix[0] = Array(string1.length + 1).fill(0).map((x,i) => i);
-    for(i = 1;i <= string2.length;i++){
-        for(j = 1;j<=string1.length; j++){
+    for(var i = 1;i <= string2.length;i++){
+        for(var j = 1;j<=string1.length; j++){
             if(string2[i-1] === string1[j-1]){
                 matrix[i][j] = matrix[i-1][j-1];
             }
