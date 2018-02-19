@@ -1,7 +1,3 @@
-all:array,function
-anagrams:string,recursion
-any:array,function
-approximatelyEqual:math
 arrayToHtmlList:browser,array
 ary:adapter,function
 atob:node,string,utility
@@ -117,6 +113,7 @@ intersectionWith:array,function
 invertKeyValues:object,function
 is:type,array,regexp
 isAbsoluteURL:string,utility,browser,url
+isAnagram:string,regexp
 isArrayLike:type,array
 isBoolean:type
 isDivisible:math
@@ -183,7 +180,7 @@ partial:function
 partialRight:function
 partition:array,object,function
 percentile:math
-permuteAll:utility,advanced,array,string
+permutations:array,recursion
 pick:object,array
 pickBy:object,array,function
 pipeAsyncFunctions:adapter,function,promise
@@ -236,6 +233,7 @@ splitLines:string
 spreadOver:adapter
 stableSort:array,sort,advanced
 standardDeviation:math,array
+stringPermutations:string,recursion
 stripHTMLTags:string,utility,regexp
 sum:math,array
 sumBy:math,array,function
