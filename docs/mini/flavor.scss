@@ -92,7 +92,7 @@ $button-hover-border-color-var: '--btn-h-br-col';
 $button-group-border-color-var: '--btn-grp-br-col';
 
 
-$_include-fluid-input-group: false;
+$_include-fluid-input-group: true;
 
 @import 'input_control';
 
@@ -195,68 +195,45 @@ pre {
   border: 0.0625rem solid var(#{$secondary-border-color-var});
   border-radius: var(#{$universal-border-radius-var});
 }
-.group{
-  position:relative;
-  margin-top: 2em;
-  margin-bottom: 1em
-}
-.search{
+
+.search {
   font-size: 0.875rem;
-  margin-top: -0.1em;
-  display:block;
-  width:100%;
-  border:none;
-  border-bottom: $__1px solid var(#{$nav-link-color-var});
-}
-.search:focus{
-  outline:none
-}
-label#search-label{
-  color:var(#{$nav-link-color-var});
-  font-size: 1.125rem;
-  font-weight:400;
-  position:absolute;
-  left: 0.3125rem;
-  top: 0.625rem;
-}
-.search:focus ~ label#search-label,.search:valid ~ label#search-label{
-  top: -1.25rem;
-  font-size: 0.875rem;
-  color:var(#{$nav-link-color-var});
-}
-label#menu-toggle {
-  width: 3.4375rem;
 }
 
 header h1.logo {
   margin-top: -0.8rem;
   text-align:center;
+  position: relative;
+  top: 0;
+  transition: top 0.3s;
   a {
   text-decoration:none;
   color: #111;
+  }
+  @media screen and (min-width: 769px) {
+    &:hover {
+      top: -3.5rem;
+    }
   }
 }
 
 header #title {
   position:relative;
   top: -1rem;
-  @media screen and (max-width: 500px) { font-size: 1rem; display: block }
+  @media screen and (max-width: 768px) { display: none; }
 }
 
 header h1 small {
   display:block;
   font-size: 0.875rem;
   color: #888;
-  margin-top: -0.8rem;
-  @media screen and (max-width: 768px) { font-size: 0.75rem; }
-  @media screen and (max-width: 600px) { font-size: 0.625rem; }
-  @media screen and (max-width: 500px) { font-size: 0.5rem; margin-top: -1.2rem; }
+  margin-top: 0.75rem;
 }
 
 label#menu-toggle {
   position: absolute;
-  left: 0.5rem;
-  top: 0.5rem;
+  left: 0rem;
+  top: 0rem;
   width: 3.4375rem;
 }
 
