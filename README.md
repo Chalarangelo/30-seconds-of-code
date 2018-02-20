@@ -29,6 +29,7 @@
 <li><a href = "#deep_flatten"><code>deep_flatten</code></a></li>
 <li><a href = "#difference"><code>difference</code></a></li>
 <li><a href = "#difference_by"><code>difference_by</code></a></li>
+<li><a href = "#insertion_sort"><code>insertion_sort</code></a></li>
 <li><a href = "#shuffle"><code>shuffle</code></a></li>
 <li><a href = "#spread"><code>spread</code></a></li>
 <li><a href = "#zip"><code>zip</code></a></li>
@@ -446,6 +447,36 @@ def difference_by(a, b, fn):
 from math import floor
 difference_by([2.1, 1.2], [2.3, 3.4],floor) # [1.2]
 difference_by([{ 'x': 2 }, { 'x': 1 }], [{ 'x': 1 }], lambda v : v['x']) # [ { x: 2 } ]
+
+```
+</details>
+
+<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
+ 
+### insertion_sort
+
+On a very basic level, an insertion sort algorithm contains the logic of shifting around and inserting elements in order to sort an unordered list of any size. The way that it goes about inserting elements, however, is what makes insertion sort so very interesting!
+
+```py
+def insertionsort(arr):
+
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
+            arr[j + 1] = key
+ 
+ ```
+
+<details><summary>View Examples</summary>
+
+```py
+
+arr = [7,4,9,2,6,3]
+insertionsort(arr)
+print('Sorted %s'  %arr) # sorted [2, 3, 4, 6, 7, 9]
 
 ```
 </details>
