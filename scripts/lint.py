@@ -1,18 +1,10 @@
 import autopep8
-import re
 import os
-import sys
-print(sys.version)
-files = os.listdir('snippets')
-codeRe = "```\s*python([\s\S]*?)```"
-for file in files:
-    someFile = open("snippets/" + file)
-    fileData = someFile.read() 
-    someFile.close()
-    originalCode = re.search(codeRe,fileData).group(0)
-    #print(re.split(codeRe,fileData)[0])
-    formatedCode = '\n'+autopep8.fix_code(re.split(codeRe,fileData)[1]).strip()+'\n'
-    fileToSave = fileData.replace(originalCode,('```python'+formatedCode+'```'))
-    someFile = open("snippets/"+file,'w')
-    someFile.write(fileToSave)
-    someFile.close()
+import util
+snippets = util.read_snippets()
+for snippet in snippets:
+    formatedCode = autopep8.fix_code(snippet.read_code()).strip()
+    fixedCode = snippet.content.replace(snippet.read_code(),formatedCode)
+    snippetFile = open(f"snippets/{snippet.name}.md",'w')
+    snippetFile.write(fixedCode)
+    snippetFile.close()

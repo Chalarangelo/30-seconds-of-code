@@ -1,6 +1,21 @@
 import os,re
+def author_reader():
+
+    contributor_file = open('contributor_database')
+
+    author_database = {}
+
+    contributor_db = contributor_file.read().split('\n')
+    contributor_db = [contributor for contributor in contributor_db if contributor.strip() != '']
+    for contributor_data_db in contributor_db:
+        snippetName,contributor_data = contributor_data_db.split(':')  
+        author = contributor_data.split(',')[0]
+        contributors = contributor_data.split(',')
+        author = re.sub('(\[[\w\s]+\]\()\@(\w+)\)','\g<1>https://www.github.com/\g<2>)',author.strip())
+        contributors = [re.sub('(\[[\w\s]+\]\()\@(\w+)\)','\g<1>https://www.github.com/\g<2>)',contributor) for contributor in contributors]
+        author_database[snippetName] = (author,contributors)
+    return author_database
 def tagger():
-    snippet_files = [snippet.replace('.md','')for snippet in os.listdir('snippets')]
 
     tag_database_file = open('tag_database')
 
@@ -40,11 +55,13 @@ def read_snippets():
     for snippet_file in snippet_files:
         snippets.append(snippet(f'snippets/{snippet_file}'))
     return snippets
+
+
 def read_readme_start():
-    with open('static-part/readme-start.md') as f:
+    with open('static-parts/readme-start.md') as f:
         readme_start = f.read()
     return readme_start
 def read_readme_end():
-    with open('static-part/readme-end.md') as f:
+    with open('static-parts/readme-end.md') as f:
         readme_end = f.read()
     return readme_end 

@@ -27,6 +27,7 @@ start = util.read_readme_start()
 end = util.read_readme_end()
 toAppend = ''
 tag_dict = tagger()
+author_database = util.author_reader()
 for category in sorted(tag_dict):
     toAppend = toAppend + '### ' + EMOJIS[category] + ' ' + title_case(category) +'\n\n<details><summary>View contents</summary> <ul>'
     for snippet in sorted(tag_dict[category],key=lambda snippet : snippet.name):
@@ -34,8 +35,9 @@ for category in sorted(tag_dict):
     toAppend += '</ul></details>\n\n'
 toAppend += '<hr></hr> \n\n'
 for category in sorted(tag_dict):
-    toAppend = toAppend + '## ' + EMOJIS[category] + ' ' + title_case(scategory) +'\n\n'
+    toAppend = toAppend + '## ' + EMOJIS[category] + ' ' + title_case(category) +'\n\n'
     for snippet in sorted(tag_dict[category],key=lambda snippet : snippet.name):
-        fileData = someFile.read() 
-        toAppend += f'###{snippet.title}\n\n```py{snippet.read_code()} \n ```'.format(codeParts= codeParts) +codeParts[2] + '<details><summary>View Examples</summary>\n\n```py\n{codeParts[3]}\n```\n</details>\n\n<br><a href = "#table-of-contents">:arrow_up: Back to top</a>\n '.format(codeParts=codeParts) + '\n'
-open("README.md",'w').write(start+toAppend+'\n'+end)'''    
+        author,contributors = author_database[snippet.name]
+        contributors = ', '.join(contributors)
+        toAppend += f'### {snippet.name} \n<span style="color:grey">Author:-</span> {author} \n <span style="color:grey">Contributors:-</span>{contributors}\n\n{snippet.read_description()}\n```py\n{snippet.read_code()}\n```\n<details><summary>View Examples</summary>\n\n```py\n{snippet.read_example()}\n```\n</details>\n\n<br><a href = "#table-of-contents">:arrow_up: Back to top</a>\n\n'
+open("README.md",'w').write(start+toAppend+'\n'+end)    
