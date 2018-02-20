@@ -1,4 +1,6 @@
-### insertion_sort
+## insertion_sort
+
+### Insertion Sort Algorithm
 
 On a very basic level, an insertion sort algorithm contains the logic of shifting around and inserting elements in order to sort an unordered list of any size. The way that it goes about inserting elements, however, is what makes insertion sort so very interesting!
 
