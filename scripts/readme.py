@@ -1,5 +1,5 @@
-import re
-codeRe = "```\s*python([\s\S]*?)```"
+import util
+from collections import defaultdict
 def title_case(str):
     return str[:1].upper() + str[1:].lower()
 EMOJIS = {
@@ -18,34 +18,24 @@ EMOJIS = {
   'utility': ':wrench:'
 }
 def tagger():
-    tag_data = open('tag_database').read()
-    tag_dict = {}
-    tag_list = tag_data.split('\n')
-    for tag in tag_list:
-        category = tag.split(':')[1]
-        snippet = tag.split(':')[0]
-        if category in tag_dict:
-            tag_dict[category].append(snippet)
-        else:
-            tag_dict[category] = [snippet]
-    return tag_dict
+    tag_db = defaultdict(list)
+    for snippet in util.read_snippets():
+        tag_db[snippet.category[0]].append(snippet)
+    return tag_db
 
-start = open("static-parts/readme-start.md").read() + '\n\n'
-end = open("static-parts/readme-end.md").read()
+start = util.read_readme_start()
+end = util.read_readme_end()
 toAppend = ''
 tag_dict = tagger()
-toAppend += '## Table of Contents \n'
-for category in tag_dict:
+for category in sorted(tag_dict):
     toAppend = toAppend + '### ' + EMOJIS[category] + ' ' + title_case(category) +'\n\n<details><summary>View contents</summary> <ul>'
-    for snippet in sorted(tag_dict[category]):
-        toAppend += f'<li><a href = "#{snippet}"><code>{snippet}</code></a></li>\n'
+    for snippet in sorted(tag_dict[category],key=lambda snippet : snippet.name):
+        toAppend += f'<li><a href = "#{snippet.name}"><code>{snippet.name}</code></a></li>\n'
     toAppend += '</ul></details>\n\n'
 toAppend += '<hr></hr> \n\n'
-for category in tag_dict:
-    toAppend = toAppend + '## ' + EMOJIS[category] + ' ' + title_case(category) +'\n\n'
-    for snippet in sorted(tag_dict[category]):
-        someFile = open("snippets/" + snippet + '.md')
+for category in sorted(tag_dict):
+    toAppend = toAppend + '## ' + EMOJIS[category] + ' ' + title_case(scategory) +'\n\n'
+    for snippet in sorted(tag_dict[category],key=lambda snippet : snippet.name):
         fileData = someFile.read() 
-        codeParts = re.split(codeRe,fileData)
-        toAppend += codeParts[0] + '```py{codeParts[1]} \n ```'.format(codeParts= codeParts) +codeParts[2] + '<details><summary>View Examples</summary>\n\n```py\n{codeParts[3]}\n```\n</details>\n\n<br><a href = "#table-of-contents">:arrow_up: Back to top</a>\n '.format(codeParts=codeParts) + '\n'
-open("README.md",'w').write(start+toAppend+'\n'+end)    
+        toAppend += f'###{snippet.title}\n\n```py{snippet.read_code()} \n ```'.format(codeParts= codeParts) +codeParts[2] + '<details><summary>View Examples</summary>\n\n```py\n{codeParts[3]}\n```\n</details>\n\n<br><a href = "#table-of-contents">:arrow_up: Back to top</a>\n '.format(codeParts=codeParts) + '\n'
+open("README.md",'w').write(start+toAppend+'\n'+end)'''    
