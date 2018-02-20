@@ -1,6 +1,6 @@
 ### Insertion Sort
 
-```py
+```python
 arr = [7,4,9,2,6,3]
 
 def insertionsort(arr):
@@ -15,5 +15,5 @@ def insertionsort(arr):
 
 
 insertionsort(arr)
-print('modified %s'  %arr) # modified [2, 3, 4, 6, 7, 9]
+print('Sorted %s'  %arr) # sorted [2, 3, 4, 6, 7, 9]
 ```
