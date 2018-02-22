@@ -1,0 +1,12 @@
+..\emoji\core.py
+..\emoji\unicode_codes.py
+..\emoji\__init__.py
+..\emoji\__pycache__\core.cpython-36.pyc
+..\emoji\__pycache__\unicode_codes.cpython-36.pyc
+..\emoji\__pycache__\__init__.cpython-36.pyc
+dependency_links.txt
+PKG-INFO
+requires.txt
+SOURCES.txt
+top_level.txt
+zip-safe

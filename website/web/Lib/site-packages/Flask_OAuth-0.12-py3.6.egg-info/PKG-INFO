@@ -1,0 +1,30 @@
+Metadata-Version: 1.1
+Name: Flask-OAuth
+Version: 0.12
+Summary: Adds OAuth support to Flask
+Home-page: http://github.com/mitsuhiko/flask-oauth
+Author: Armin Ronacher
+Author-email: armin.ronacher@active-4.com
+License: BSD
+Description: 
+        Flask-OAuth
+        -----------
+        
+        Adds OAuth support to Flask.
+        
+        Links
+        `````
+        
+        * `documentation <http://packages.python.org/Flask-OAuth>`_
+        * `development version
+          <http://github.com/mitsuhiko/flask-oauth/zipball/master#egg=Flask-OAuth-dev>`_
+        
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
