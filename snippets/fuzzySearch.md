@@ -1,14 +1,14 @@
 ### fuzzySearch
 
-Determines if the `patrn` matches with `str`
+Determines if the `pattern` matches with `str`
 
-Loops through `str` and determines if it contains all characters of `patrn` and in the correct order. Both the strings are converted to lower case.
+Loops through `str` and determines if it contains all characters of `pattern` and in the correct order. Both the strings are converted to lower case.
 
-Taken from [here](https://github.com/forrestthewoods/lib_fts/blob/80f3f8c52db53428247e741b9efe2cde9667050c/code/fts_fuzzy_match.js#L18).
+Adapted from [here](https://github.com/forrestthewoods/lib_fts/blob/80f3f8c52db53428247e741b9efe2cde9667050c/code/fts_fuzzy_match.js#L18).
 ``` js
 const fuzzySearch = (pattern, str) =>
 	[...str].reduce(
-		(acc, char) => char.toLowerCase() === (pattern[acc]  || '').toLowerCase() ? acc + 1 : acc, 0
+		(matchIndex, char) => char.toLowerCase() === (pattern[matchIndex]  || '').toLowerCase() ? matchIndex + 1 : matchIndex, 0
 	) === pattern.length ? true : false;
 ```
 
