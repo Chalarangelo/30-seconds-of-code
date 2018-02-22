@@ -39,5 +39,5 @@ for category in sorted(tag_dict):
     for snippet in sorted(tag_dict[category],key=lambda snippet : snippet.name):
         author,contributors = author_database[snippet.name]
         contributors = ', '.join(contributors)
-        toAppend += f'### {snippet.name} \n<span style="color:grey">Author:-</span> {author} \n <span style="color:grey">Contributors:-</span>{contributors}\n\n{snippet.read_description()}\n```py\n{snippet.read_code()}\n```\n<details><summary>View Examples</summary>\n\n```py\n{snippet.read_example()}\n```\n</details>\n\n<br><a href = "#table-of-contents">:arrow_up: Back to top</a>\n\n'
+        toAppend += f'### {snippet.name} \n<span style="color:grey">Author:-</span> {author} \n\n <span style="color:grey">Contributors:-</span>{contributors}\n\n{snippet.read_description()}\n```py\n{snippet.read_code()}\n```\n<details><summary>View Examples</summary>\n\n```py\n{snippet.read_example()}\n```\n</details>\n\n<br><a href = "#table-of-contents">:arrow_up: Back to top</a>\n\n'
 open("README.md",'w').write(start+toAppend+'\n'+end)    
