@@ -23,4 +23,3 @@ is_lower_case:string
 count_by:list
 difference_by:list
 insertion_sort:list
-
