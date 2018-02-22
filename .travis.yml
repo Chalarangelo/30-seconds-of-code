@@ -12,7 +12,7 @@ script:
 - python scripts/tdd.py
 - python3 website/main.py
 after_success:
-- chmod +x .travis/push.sh
+- sed -i -e 's/\r$//' .travis/push.sh
 - .travis/push.sh
 group: deprecated-2017Q4
 env:
