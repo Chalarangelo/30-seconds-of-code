@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
-{% block content %}<div class="row" style="height:calc(100vh - 5.875rem);overflow:hidden"><input id="doc-drawer-checkbox" class="drawer" value="on" type="checkbox"><nav class="col-md-4 col-lg-3" style="border-top:0"><div class="group"><input class="search" id="searchInput" onkeyup="search(this)" type="text"><label id="search-label">Search for snippet...</label></div><label for="doc-drawer-checkbox" class="button drawer-close"></label><h3 style = "">Math</h3><a class="sublink-1" tags="math" href="#average" style="">average</a><a class="sublink-1" tags="math" href="#factorial" style="">factorial</a><a class="sublink-1" tags="math" href="#gcd" style="">gcd</a><a class="sublink-1" tags="math" href="#lcm" style="">lcm</a><a class="sublink-1" tags="math" href="#max_n" style="">max_n</a><a class="sublink-1" tags="math" href="#min_n" style="">min_n</a><h3 style = "">List</h3><a class="sublink-1" tags="list" href="#chunk" style="">chunk</a><a class="sublink-1" tags="list" href="#compact" style="">compact</a><a class="sublink-1" tags="list" href="#count_occurences" style="">count_occurences</a><a class="sublink-1" tags="list" href="#deep_flatten" style="">deep_flatten</a><a class="sublink-1" tags="list" href="#difference" style="">difference</a><a class="sublink-1" tags="list" href="#shuffle" style="">shuffle</a><a class="sublink-1" tags="list" href="#spread" style="">spread</a><a class="sublink-1" tags="list" href="#zip" style="">zip</a><a class="sublink-1" tags="list" href="#count_by" style="">count_by</a><a class="sublink-1" tags="list" href="#difference_by" style="">difference_by</a><h3 style = "">String</h3><a class="sublink-1" tags="string" href="#count_vowels" style="">count_vowels</a><a class="sublink-1" tags="string" href="#byte_size" style="">byte_size</a><a class="sublink-1" tags="string" href="#capitalize" style="">capitalize</a><a class="sublink-1" tags="string" href="#capitalize_every_word" style="">capitalize_every_word</a><a class="sublink-1" tags="string" href="#decapitalize" style="">decapitalize</a><a class="sublink-1" tags="string" href="#palindrome" style="">palindrome</a><a class="sublink-1" tags="string" href="#is_upper_case" style="">is_upper_case</a><a class="sublink-1" tags="string" href="#is_lower_case" style="">is_lower_case</a></nav><main class="col-sm-12 col-md-8 col-lg-9" style="height:100%;overflow-y:auto;background:#eceef2;padding:0"><a id="top"></a><h2 style="text-align:center">Math</h2><div class="card fluid"><h3 id="average" class="section double-padded">average</h3><!--<form action="" method="post"><button type="submit" value="average" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+{% block content %}<div class="row" style="height:calc(100vh - 5.875rem);overflow:hidden"><input id="doc-drawer-checkbox" class="drawer" value="on" type="checkbox"><nav class="col-md-4 col-lg-3" style="border-top:0"><div class="group"><input class="search" id="searchInput" onkeyup="search(this)" type="text"><label id="search-label">Search for snippet...</label></div><label for="doc-drawer-checkbox" class="button drawer-close"></label><h3 style = "">Math</h3><a class="sublink-1" tags="math" href="#average" style="">average</a><a class="sublink-1" tags="math" href="#factorial" style="">factorial</a><a class="sublink-1" tags="math" href="#gcd" style="">gcd</a><a class="sublink-1" tags="math" href="#lcm" style="">lcm</a><a class="sublink-1" tags="math" href="#max_n" style="">max_n</a><a class="sublink-1" tags="math" href="#min_n" style="">min_n</a><h3 style = "">List</h3><a class="sublink-1" tags="list" href="#chunk" style="">chunk</a><a class="sublink-1" tags="list" href="#compact" style="">compact</a><a class="sublink-1" tags="list" href="#count_occurences" style="">count_occurences</a><a class="sublink-1" tags="list" href="#deep_flatten" style="">deep_flatten</a><a class="sublink-1" tags="list" href="#difference" style="">difference</a><a class="sublink-1" tags="list" href="#shuffle" style="">shuffle</a><a class="sublink-1" tags="list" href="#spread" style="">spread</a><a class="sublink-1" tags="list" href="#zip" style="">zip</a><a class="sublink-1" tags="list" href="#count_by" style="">count_by</a><a class="sublink-1" tags="list" href="#difference_by" style="">difference_by</a><a class="sublink-1" tags="list" href="#insertion_sort" style="">insertion_sort</a><h3 style = "">String</h3><a class="sublink-1" tags="string" href="#count_vowels" style="">count_vowels</a><a class="sublink-1" tags="string" href="#byte_size" style="">byte_size</a><a class="sublink-1" tags="string" href="#capitalize" style="">capitalize</a><a class="sublink-1" tags="string" href="#capitalize_every_word" style="">capitalize_every_word</a><a class="sublink-1" tags="string" href="#decapitalize" style="">decapitalize</a><a class="sublink-1" tags="string" href="#palindrome" style="">palindrome</a><a class="sublink-1" tags="string" href="#is_upper_case" style="">is_upper_case</a><a class="sublink-1" tags="string" href="#is_lower_case" style="">is_lower_case</a></nav><main class="col-sm-12 col-md-8 col-lg-9" style="height:100%;overflow-y:auto;background:#eceef2;padding:0"><a id="top"></a><h2 style="text-align:center">Math</h2><div class="card fluid"><h3 id="average" class="section double-padded">average</h3><!--<form action="" method="post"><button type="submit" value="average" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
 <p><emoji>ℹ</emoji> Already implemented via <code>statistics.mean</code>. <code>statistics.mean</code> takes an array as an argument whereas this function takes variadic arguments.</p>
 <p>Returns the average of two or more numbers.</p>
-<p>Takes the sum of all the <code>args</code> and divides it by <code>len(args)</code>. The secind argument <code>0.0</code> in sum is to handle floating point division in <code>python2</code>.</p>
+<p>Takes the sum of all the <code>args</code> and divides it by <code>len(args)</code>. The second argument <code>0.0</code> in sum is to handle floating point division in <code>python2</code>.</p>
 
 <pre class="language-python">def average(*args):
     return sum(args, 0.0) / len(args)</pre>
@@ -79,7 +79,7 @@ def lcm(*args):
     numbers.extend(spread(list(args)))
 
     def _gcd(x, y):
-        return x if not y else gcd(y, x % y)
+        return x if not y else _gcd(y, x % y)
 
     def _lcm(x, y):
         return x * y / _gcd(x, y)
@@ -153,7 +153,10 @@ def chunk(arr, size):
 <p>Counts the occurrences of a value in an list.</p>
 <p>Uses the <code>reduce</code> functin from built-in module <code>functools</code> to increment a counter each time you encounter the specific value inside the list.</p>
 
-<pre class="language-python">def count_occurences(arr, val):
+<pre class="language-python">from functools import reduce
+
+
+def count_occurences(arr, val):
     return reduce(
         (lambda x, y: x + 1 if y == val and type(y) == type(val) else x + 0),
         arr)</pre>
@@ -178,7 +181,7 @@ def chunk(arr, size):
 def deep_flatten(arr):
     result = []
     result.extend(
-        spread(list(map(lambda x: deep(x) if type(x) == list else x, arr))))
+        spread(list(map(lambda x: deep_flatten(x) if type(x) == list else x, arr))))
     return result</pre>
 <label class="collapse">Show examples</label>
 <pre class="language-python">deep_flatten([1, [2], [[3], 4], 5]) # [1,2,3,4,5]</pre>
@@ -259,7 +262,7 @@ zip(['a'], [1, 2], [True, False], fill_value = '_') # [['a', 1, True], ['_', 2, 
 <pre class="language-python">def count_by(arr, fn=lambda x: x):
     key = {}
     for el in map(fn, arr):
-        key[el] = 0 if not el in key else key[el]
+        key[el] = 0 if el not in key else key[el]
         key[el] += 1
     return key</pre>
 <label class="collapse">Show examples</label>
@@ -279,6 +282,24 @@ count_by(['one', 'two', 'three'], len) # {3: 2, 5: 1}</pre>
 <pre class="language-python">from math import floor
 difference_by([2.1, 1.2], [2.3, 3.4],floor) # [1.2]
 difference_by([{ 'x': 2 }, { 'x': 1 }], [{ 'x': 1 }], lambda v : v['x']) # [ { x: 2 } ]</pre>
+<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
+
+</div><div class="card fluid"><h3 id="insertion_sort" class="section double-padded">insertion_sort</h3><!--<form action="" method="post"><button type="submit" value="insertion_sort" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+<p>On a very basic level, an insertion sort algorithm contains the logic of shifting around and inserting elements in order to sort an unordered list of any size. The way that it goes about inserting elements, however, is what makes insertion sort so very interesting!</p>
+
+<pre class="language-python">def insertion_sort(arr):
+
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+        while j &gt;= 0 and key &lt; arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
+            arr[j + 1] = key</pre>
+<label class="collapse">Show examples</label>
+<pre class="language-python">arr = [7,4,9,2,6,3]
+insertionsort(arr)
+print('Sorted %s'  %arr) # sorted [2, 3, 4, 6, 7, 9]</pre>
 <button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
 
 </div><h2 style="text-align:center">String</h2><div class="card fluid"><h3 id="count_vowels" class="section double-padded">count_vowels</h3><!--<form action="" method="post"><button type="submit" value="count_vowels" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
