@@ -11,6 +11,7 @@ script:
 - python scripts/readme.py
 - python scripts/tdd.py
 - python3 website/main.py
+- python3 scripts/auto-lint.py
 after_success:
 - chmod +x .travis/push.sh
 - .travis/push.sh
