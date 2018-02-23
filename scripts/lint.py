@@ -1,10 +1,9 @@
-import autopep8
-import os
 import util
-snippets = util.read_snippets()
-for snippet in snippets:
-    formatedCode = autopep8.fix_code(snippet.read_code()).strip()
-    fixedCode = snippet.content.replace(snippet.read_code(),formatedCode)
-    snippetFile = open(f"snippets/{snippet.name}.md",'w')
-    snippetFile.write(fixedCode)
-    snippetFile.close()
+import subprocess
+import sys
+for snippet in util.read_snippets():
+    code = snippet.read_code()
+    check_1 = subprocess.run(['flake8', '-','--select=E901,E999,F821,F822,F823','--count','--show-source','--statistics'], input=code, encoding='utf8',stdout=subprocess.PIPE)
+    check_2 = subprocess.run(['flake8', '-','--exit-zero','--max-complexity=10','--count','--max-line-length=127','--statistics','--ignore=W292'], input=code, encoding='utf8',stdout=subprocess.PIPE)
+    check_1.check_returncode()
+    check_2.check_returncode()
