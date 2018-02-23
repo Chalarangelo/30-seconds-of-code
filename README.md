@@ -1,6 +1,6 @@
 ![Logo](/icon.png)
 
-# 30-seconds-of-python-code
+# 30-seconds-of-python-code [![Tweet](http://jpillora.com/github-twitter-button/img/tweet.png)](http://www.twitter.com/share?text=%2330secondsofcode+30-seconds-of-python-code+-+Python+Implementation+of+30+seconds+of+code%0Ahttps://github.com/kriadmin/30-seconds-of-python-code&url=a")
 [![License](https://img.shields.io/aur/license/yaourt.svg)](https://github.com/kriadmin/30-seconds-of-python-code/blob/master/LICENSE) [![Gitter chat](https://img.shields.io/badge/chat-on%20gitter-4FB999.svg)](https://gitter.im/30-seconds-of-python-code/Lobby) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Travis Build](https://travis-ci.org/kriadmin/30-seconds-of-python-code.svg?branch=master)](https://travis-ci.org/kriadmin/30-seconds-of-python-code) [![Insight.io](https://img.shields.io/badge/insight.io-Ready-brightgreen.svg)](https://insight.io/github.com/kriadmin/30-seconds-of-python-code/tree/master/?source=0) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkriadmin%2F30-seconds-of-python-code.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkriadmin%2F30-seconds-of-python-code?ref=badge_shield)
 
@@ -52,6 +52,7 @@
 
 ### chunk 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
+
  <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin)
 
 Chunks an array into smaller lists of a specified size.
@@ -77,6 +78,7 @@ chunk([1,2,3,4,5],2) # [[1,2],[3,4],5]
 
 ### compact 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
+
  <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin)
 
 Removes falsey values from a list.
@@ -97,6 +99,7 @@ compact([0, 1, False, 2, '', 3, 'a', 's', 34]) # [ 1, 2, 3, 'a', 's', 34 ]
 
 ### count_by 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
+
  <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin)
 
 :information_source: Already implemented via `collections.Counter`
@@ -108,7 +111,7 @@ Use `map()` to map the values of the list using the given function. Iterate over
 def count_by(arr, fn=lambda x: x):
     key = {}
     for el in map(fn, arr):
-        key[el] = 0 if not el in key else key[el]
+        key[el] = 0 if el not in key else key[el]
         key[el] += 1
     return key
 ```
@@ -125,6 +128,7 @@ count_by(['one', 'two', 'three'], len) # {3: 2, 5: 1}
 
 ### count_occurences 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
+
  <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin)
 
 :information_source: Already implemented via `list.count()`.
@@ -152,6 +156,7 @@ count_occurrences([1, 1, 2, 1, 2, 3], 1) # 3
 
 ### deep_flatten 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
+
  <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin), [Meet Zaveri](https://www.github.com/meetzaveri)
 
 Deep flattens a list.
@@ -185,6 +190,7 @@ deep_flatten([1, [2], [[3], 4], 5]) # [1,2,3,4,5]
 
 ### difference 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
+
  <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin)
 
 Returns the difference between two arrays.
@@ -206,6 +212,7 @@ difference([1, 2, 3], [1, 2, 4]) # [3]
 
 ### difference_by 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
+
  <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin)
 
 Returns the difference between two list, after applying the provided function to each list element of both.
@@ -229,6 +236,7 @@ difference_by([{ 'x': 2 }, { 'x': 1 }], [{ 'x': 1 }], lambda v : v['x']) # [ { x
 
 ### insertion_sort 
 <span style="color:grey">Author:-</span> [Meet Zaveri](https://www.github.com/meetzaveri) 
+
  <span style="color:grey">Contributors:-</span>[Meet Zaveri](https://www.github.com/meetzaveri), [Rohit Tanwar](https://www.github.com/kriadmin)
 
 On a very basic level, an insertion sort algorithm contains the logic of shifting around and inserting elements in order to sort an unordered list of any size. The way that it goes about inserting elements, however, is what makes insertion sort so very interesting!
@@ -256,6 +264,7 @@ print('Sorted %s'  %arr) # sorted [2, 3, 4, 6, 7, 9]
 
 ### shuffle 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
+
  <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin)
 
 :information_source: The same algorithm is already implemented via `random.shuffle`.
@@ -289,6 +298,7 @@ shuffle(foo) # [2,3,1] , foo = [1,2,3]
 
 ### spread 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
+
  <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin)
 
 Implements javascript's `[].concat(...arr)`. Flattens the list(non-deep) and returns an list.
@@ -313,6 +323,7 @@ spread([1,2,3,[4,5,6],[7],8,9]) # [1,2,3,4,5,6,7,8,9]
 
 ### zip 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
+
  <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin)
 
 :information_source: Already implemented via `itertools.zip_longest()`
@@ -345,13 +356,14 @@ zip(['a'], [1, 2], [True, False], fill_value = '_') # [['a', 1, True], ['_', 2, 
 
 ### average 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
- <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin)
+
+ <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin), [Hui Binyuan](https://www.github.com/huybery)
 
 :information_source: Already implemented via `statistics.mean`. `statistics.mean` takes an array as an argument whereas this function takes variadic arguments.
 
 Returns the average of two or more numbers.
 
-Takes the sum of all the `args` and divides it by `len(args)`. The secind argument `0.0` in sum is to handle floating point division in `python2`.
+Takes the sum of all the `args` and divides it by `len(args)`. The second argument `0.0` in sum is to handle floating point division in `python2`.
 ```py
 def average(*args):
     return sum(args, 0.0) / len(args)
@@ -368,6 +380,7 @@ average(1, 2, 3) # 2.0
 
 ### factorial 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
+
  <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin)
 
 Calculates the factorial of a number.
@@ -391,6 +404,7 @@ factorial(6) # 720
 
 ### gcd 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
+
  <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin), [cclauss][@cclauss]
 
 :information_source: `math.gcd` works with only two numbers
@@ -434,6 +448,7 @@ gcd(8,36) # 4
 
 ### lcm 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
+
  <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin)
 
 Returns the least common multiple of two or more numbers.
@@ -479,6 +494,7 @@ lcm([1, 3, 4], 5) # 60
 
 ### max_n 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
+
  <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin)
 
 Returns the `n` maximum elements from the provided list. If `n` is greater than or equal to the provided list's length, then return the original list(sorted in descending order).
@@ -506,6 +522,7 @@ max_n([1, 2, 3], 2) # [3,2]
 
 ### min_n 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
+
  <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin)
 
 Returns the `n` minimum elements from the provided list. If `n` is greater than or equal to the provided list's length, then return the original list(sorted in ascending order).
@@ -534,6 +551,7 @@ min_n([1, 2, 3], 2) # [1,2]
 
 ### byte_size 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
+
  <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin)
 
 Returns the length of a string in bytes.
@@ -555,6 +573,7 @@ byte_size('Hello World') # 11
 
 ### capitalize 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
+
  <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin)
 
 Capitalizes the first letter of a string.
@@ -576,6 +595,7 @@ capitalize('fooBar', True) # 'Foobar'
 
 ### capitalize_every_word 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
+
  <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin)
 
 Capitalizes the first letter of every word in a string.
@@ -596,6 +616,7 @@ capitalize_every_word('hello world!') # 'Hello World!'
 
 ### count_vowels 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
+
  <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin)
 
 Retuns `number` of vowels in provided `string`.
@@ -620,6 +641,7 @@ count_vowels('gym') # 0
 
 ### decapitalize 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
+
  <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin)
 
 Decapitalizes the first letter of a string.
@@ -641,6 +663,7 @@ decapitalize('FooBar', True) # 'fOOBAR'
 
 ### is_lower_case 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
+
  <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin)
 
 Checks if a string is lower case.
@@ -663,6 +686,7 @@ is_lower_case('Ab4') # False
 
 ### is_upper_case 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
+
  <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin)
 
 Checks if a string is upper case.
@@ -685,6 +709,7 @@ is_upper_case('aB4') # False
 
 ### palindrome 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
+
  <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin)
 
 Returns `True` if the given string is a palindrome, `False` otherwise.
