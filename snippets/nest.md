@@ -5,7 +5,10 @@ Useful for nesting comments, such as the ones on reddit.com.
 
 Use recursion. Use `Array.filter()` to filter the items where the `id` matches the `link`,
 then use `Array.map()` to map each one to a new object that has a `children` property which
-recursively nests the items based on which ones are children of the current item.
+recursively nests the items based on which ones are children of the current item. Omit the second 
+argument, `id`, to default to `null` which indicates the object is not linked to another one (i.e.,
+it is a top level). Omit the third argument, `link`, to use `'parent_id'` as the default property
+which links the object to another one by its `id`.
 
 ```js
 const nest = (items, id = null, link = 'parent_id') =>
