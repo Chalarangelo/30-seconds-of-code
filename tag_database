@@ -159,6 +159,7 @@ minBy:math,array,function
 minN:array,math
 mostPerformant:utility,function
 negate:function
+nest:object
 none:array,function
 nthArg:utility,function
 nthElement:array
