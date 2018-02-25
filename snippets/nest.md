@@ -12,7 +12,9 @@ which links the object to another one by its `id`.
 
 ```js
 const nest = (items, id = null, link = 'parent_id') =>
-  items.filter(item => item[link] === id).map(item => ({ ...item, children: nest(items, item.id) }))
+  items
+    .filter(item => item[link] === id)
+    .map(item => ({ ...item, children: nest(items, item.id) }));
 ```
 
 ```js
@@ -23,7 +25,7 @@ const comments = [
   { id: 3, parent_id: 1 },
   { id: 4, parent_id: 2 },
   { id: 5, parent_id: 4 }
-]
-const nestedComments = nest(comments) // [{ id: 1, parent_id: null, children: [...] }]
+];
+const nestedComments = nest(comments); // [{ id: 1, parent_id: null, children: [...] }]
 ```
 
