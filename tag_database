@@ -203,6 +203,7 @@ randomIntegerInRange:math,utility,random
 randomNumberInRange:math,utility,random
 readFileLines:node,array,string
 rearg:adapter,function
+recordFrames:utility
 redirect:browser,url
 reducedFilter:array
 reduceSuccessive:array,function
