@@ -1,0 +1,146 @@
+code[class*='language-'],
+pre[class*='language-'] {
+  color: rgb(50, 75, 100);
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 2;
+  font-size: 1rem;
+  -webkit-overflow-scrolling: touch;
+  margin: 0;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+@media print {
+  code[class*='language-'],
+  pre[class*='language-'] {
+    text-shadow: none;
+  }
+}
+
+/* Code blocks */
+pre[class*='language-'] {
+  overflow: auto;
+  padding: 0.75rem 1.25rem;
+}
+
+pre.is-option {
+  margin: 0;
+  padding: 0;
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background: #f5f6f9;
+  border-radius: 0.25rem;
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #8ca2d3;
+}
+
+.token.selector,
+.token.attr-name {
+  color: #da7800;
+}
+
+.token.punctuation {
+  color: #93a0c7;
+}
+
+.namespace {
+  opacity: 0.7;
+}
+
+.token.tag {
+  color: #e22f70;
+}
+
+.token.property,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #0087ca;
+}
+
+.token.string,
+.language-css .token.string,
+.token.url,
+.token.attr-value,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #008a7e;
+}
+
+.token.operator,
+.token.entity,
+.style .token.string {
+  color: #f53737;
+}
+
+.token.important,
+.token.atrule,
+.token.keyword {
+  color: #7552ff;
+}
+
+.token.function {
+  color: #396dff;
+}
+
+.token.regex,
+.token.variable {
+  color: #00a8d4;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
