@@ -1,0 +1,29 @@
+{
+  "name": "30-seconds-of-css",
+  "version": "0.0.0",
+  "description": "A curated collection of useful CSS snippets.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon -e md,js ./scripts/build.js & parcel",
+    "build": "node ./scripts/build.js && npm run prettier && npm run parcel",
+    "parcel": "parcel build index.html --public-url ./",
+    "prettier": "prettier --single-quote --no-semi --print-width=100 ./js/index.js --write './src/**/*.js' './src/**/*.scss'"
+  },
+  "author": "atomiks",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "caniuse-db": "^1.0.30000810",
+    "jsdom": "^11.6.2",
+    "marked": "^0.3.16",
+    "node-sass": "^4.7.2",
+    "nodemon": "^1.15.1",
+    "normalize.css": "^8.0.0",
+    "parcel-bundler": "^1.6.2",
+    "prettier": "^1.10.2",
+    "pretty": "^2.0.0",
+    "prismjs": "^1.11.0"
+  }
+}

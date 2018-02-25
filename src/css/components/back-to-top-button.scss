@@ -1,0 +1,39 @@
+.back-to-top-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: bold;
+  background: white;
+  width: 4rem;
+  height: 4rem;
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  border-radius: 50%;
+  user-select: none;
+  box-shadow: 0 0.4rem 0.8rem -0.1rem rgba(0, 32, 128, 0.15);
+  transition: all 0.2s ease-out;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1;
+  border: 1px solid rgba(0, 32, 128, 0.1);
+  outline: 0;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+    box-shadow: 0 0.8rem 1.6rem -0.2rem rgba(0, 32, 128, 0.15);
+    color: #35a8ff;
+  }
+
+  &:focus {
+    box-shadow: 0 0.8rem 1.6rem -0.2rem rgba(0, 32, 128, 0.15), 0 0 2px 2px #35a8ff;
+  }
+
+  &.is-visible {
+    visibility: visible;
+    opacity: 1;
+  }
+}

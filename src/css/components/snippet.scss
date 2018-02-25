@@ -1,0 +1,128 @@
+.snippet {
+  position: relative;
+  background: white;
+  padding: 2rem 5%;
+  box-shadow: 0 0.4rem 0.8rem -0.1rem rgba(0, 32, 128, 0.1), 0 0 0 1px #f0f2f7;
+  border-radius: 0.25rem;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+
+  h3 {
+    font-size: 2rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(0, 32, 128, 0.1);
+    margin-bottom: 1.25rem;
+    margin-top: 0;
+    line-height: 1.3;
+  }
+
+  code:not([class*='lang']) {
+    background: #fcfaff;
+    border: 1px solid #e2ddff;
+    color: #4b00da;
+    border-radius: 0.15rem;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    font-size: 0.9rem;
+    padding: 0.2rem 0.4rem;
+    margin: 0 0.1rem;
+  }
+
+  ol {
+    margin-top: 0.5rem;
+  }
+
+  ol > li {
+    margin-bottom: 0.5rem;
+  }
+
+  > p {
+    margin-top: 0.5rem;
+  }
+
+  h4 {
+    display: inline-block;
+    margin: 1rem 0 0.5rem;
+    line-height: 2;
+    padding: 0 0.5rem;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    background: #333;
+    border: 1px solid #c6d6ea;
+    border-bottom-color: darken(#c6d6ea, 5);
+    background: white;
+    box-shadow: 0 0.25rem 0.5rem -0.1rem rgba(0, 32, 64, 0.15);
+
+    &[data-type='HTML'] {
+      color: white;
+      border: none;
+      background: linear-gradient(135deg, #ff4c9f, #ff7b74);
+    }
+    &[data-type='CSS'] {
+      color: white;
+      border: none;
+      background: linear-gradient(135deg, #7983ff, #5f9de9);
+    }
+    &[data-type='JavaScript'] {
+      color: white;
+      border: none;
+      background: linear-gradient(135deg, #ffb000, #f58818);
+    }
+  }
+
+  &__browser-support {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 200;
+    line-height: 1;
+    margin: 0.5rem 0;
+  }
+
+  &__subheading.is-html {
+    color: #e22f70;
+  }
+
+  &__subheading.is-css {
+    color: #0a91d4;
+  }
+
+  &__subheading.is-explanation {
+    color: #4b00da;
+  }
+
+  &__support-note {
+    color: #9fa5b5;
+    font-weight: bold;
+  }
+
+  &__requires-javascript {
+    position: absolute;
+    background: red;
+    background: linear-gradient(145deg, #ff003b, #ff4b39);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+    transform: rotate(20deg);
+    font-weight: bold;
+    top: 1rem;
+    right: 0;
+  }
+}
+
+.snippet-demo {
+  background: #f5f6f9;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1.25rem;
+
+  &.is-distinct {
+    background: linear-gradient(135deg, #ff4c9f, #ff7b74);
+  }
+}
+
+@media (min-width: 768px) {
+  .snippet {
+    &__requires-javascript {
+      right: -0.5rem;
+    }
+  }
+}
