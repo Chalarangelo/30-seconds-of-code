@@ -11,7 +11,7 @@ Changes the styling of text selection.
 #### CSS
 
 ```css
-.text-selection::selection {
+.custom-text-selection::selection {
   background: red;
   color: white;
 }
