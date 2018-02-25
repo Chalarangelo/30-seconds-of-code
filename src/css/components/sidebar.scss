@@ -31,6 +31,7 @@
     visibility: hidden;
     opacity: 0;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     max-height: 378px;
     margin-top: 44px;
     box-shadow: 0 0.25rem 0.5rem -0.1rem rgba(0, 32, 128, 0.2);
