@@ -5,7 +5,7 @@ Inspired by [30 seconds of code](https://github.com/Chalarangelo/30-seconds-of-c
 
 ## View online
 
-https://github.io/atomiks/30-seconds-of-css
+https://atomiks.github.io/30-seconds-of-css/
 
 ## Contributing
 
