@@ -159,6 +159,9 @@ $_include-collapse: false;
 
 @import 'contextual';
 
+div,main,nav{
+  -webkit-overflow-scrolling: touch;
+}
 .#{$toast-name} {
   bottom: calc(var(#{$universal-margin-var}) / 2);
   opacity: 1;
