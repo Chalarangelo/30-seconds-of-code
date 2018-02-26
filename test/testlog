@@ -1,4 +1,4 @@
-Test log for: Sun Feb 18 2018 20:24:43 GMT+0000 (UTC)
+Test log for: Mon Feb 26 2018 15:00:57 GMT+0530 (India Standard Time)
 
 > 30-seconds-of-code@0.0.2 test R:\github\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -568,12 +568,6 @@ Test log for: Sun Feb 18 2018 20:24:43 GMT+0000 (UTC)
     √ functions is a Function
     √ Returns own methods
     √ Returns own and inherited methods
-
-  Testing fuzzySearch
-
-    √ fuzzySearch is a Function
-    √ Provided examples work
-    √ Provided examples work
 
   Testing gcd
 
@@ -1546,8 +1540,8 @@ Test log for: Sun Feb 18 2018 20:24:43 GMT+0000 (UTC)
 
   Testing stableSort
 
-    ✔ stableSort is a Function
-    ✔ Array is properly sorted
+    √ stableSort is a Function
+    √ Array is properly sorted
 
   Testing standardDeviation
 
@@ -1901,14 +1895,14 @@ Test log for: Sun Feb 18 2018 20:24:43 GMT+0000 (UTC)
     √ zipWith is a Function
     √ Runs the function provided
     √ Runs promises in series
-    √ Works as expecting, passing arguments properly
     √ Sends a GET request
+    √ Works as expecting, passing arguments properly
     √ Sends a POST request
     √ Works with multiple promises
 
 
-  total:     972
-  passing:   972
-  duration:  2.4s
+  total:     973
+  passing:   973
+  duration:  3s
 
 
