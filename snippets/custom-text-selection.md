@@ -24,7 +24,8 @@ Changes the styling of text selection.
 </div>
 
 <style>
-.snippet-demo__custom-text-selection::selection {
+.snippet-demo__custom-text-selection::selection,
+.snippet-demo__custom-text-selection::-moz-selection {
   background: red;
   color: white;
 }
