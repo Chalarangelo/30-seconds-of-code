@@ -24,7 +24,10 @@ Changes the styling of text selection.
 </div>
 
 <style>
-.snippet-demo__custom-text-selection::selection,
+.snippet-demo__custom-text-selection::selection {
+  background: red;
+  color: white;
+}
 .snippet-demo__custom-text-selection::-moz-selection {
   background: red;
   color: white;
@@ -37,6 +40,7 @@ Changes the styling of text selection.
 
 #### Browser support
 
-<span class="snippet__support-note">⚠️ Requires prefixes for full support.</span>
+<span class="snippet__support-note">⚠️ Requires prefixes for full support and is not actually
+in any specification.</span>
 
 * https://caniuse.com/#feat=css-selection
