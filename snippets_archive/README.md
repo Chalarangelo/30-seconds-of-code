@@ -14,14 +14,16 @@ These snippets, while useful and interesting, didn't quite make it into the repo
 * [`countVowels`](#countvowels)
 * [`factors`](#factors)
 * [`fibonacciCountUntilNum`](#fibonaccicountuntilnum)
-* [`howManyTimes`](#howmanytimes)
+* [`fibonacciUntilNum`](#fibonacciuntilnum)
 * [`httpDelete`](#httpdelete)
 * [`httpPut`](#httpput)
 * [`isArmstrongNumber`](#isarmstrongnumber)
+* [`isSimilar`](#issimilar)
+* [`levenshteinDistance`](#levenshteindistance)
 * [`quickSort`](#quicksort)
 * [`removeVowels`](#removevowels)
 * [`solveRPN`](#solverpn)
-* [`fibonacciUntilNum`](#fibonacciuntilnum)
+* [`howManyTimes`](#howmanytimes)
 
 ---
 
@@ -264,26 +266,21 @@ fibonacciCountUntilNum(10); // 7
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### howManyTimes
+### fibonacciUntilNum
 
-Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.
-Works for both negative and positive integers.
+Generates an array, containing the Fibonacci sequence, up until the nth term.
 
-If `divisor` is `-1` or `1` return `Infinity`.
-If `divisor` is `-0` or `0` return `0`.
-Otherwise, keep dividing `num` with `divisor` and incrementing `i`, while the result is an integer.
-Return the number of times the loop was executed, `i`.
+Create an empty array of the specific length, initializing the first two values (`0` and `1`).
+Use `Array.reduce()` to add values into the array, using the sum of the last two values, except for the first two.
+Uses a mathematical formula to calculate the length of the array required.
 
 ```js
-const howManyTimes = (num, divisor) => {
-  if (divisor === 1 || divisor === -1) return Infinity;
-  if (divisor === 0) return 0;
-  let i = 0;
-  while (Number.isInteger(num / divisor)) {
-    i++;
-    num = num / divisor;
-  }
-  return i;
+const fibonacciUntilNum = num => {
+  let n = Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));
+  return Array.from({ length: n }).reduce(
+    (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),
+    []
+  );
 };
 ```
 
@@ -291,10 +288,7 @@ const howManyTimes = (num, divisor) => {
 <summary>Examples</summary>
 
 ```js
-howManyTimes(100, 2); // 2
-howManyTimes(100, 2.5); // 2
-howManyTimes(100, 0); // 0
-howManyTimes(100, -1); // Infinity
+fibonacciUntilNum(10); // [ 0, 1, 1, 2, 3, 5, 8 ]
 ```
 
 </details>
@@ -391,6 +385,75 @@ const isArmstrongNumber = digits =>
 ```js
 isArmstrongNumber(1634); // true
 isArmstrongNumber(56); // false
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isSimilar
+
+Determines if the `pattern` matches with `str`.
+
+Use `String.toLowerCase()` to convert both strings to lowercase, then loop through `str` and determine if it contains all characters of `pattern` and in the correct order.
+Adapted from [here](https://github.com/forrestthewoods/lib_fts/blob/80f3f8c52db53428247e741b9efe2cde9667050c/code/fts_fuzzy_match.js#L18).
+
+``` js
+const isSimilar = (pattern, str) =>
+	[...str].reduce(
+		(matchIndex, char) => char.toLowerCase() === (pattern[matchIndex]  || '').toLowerCase() ? matchIndex + 1 : matchIndex, 0
+	) === pattern.length ? true : false;
+```
+
+
+``` js
+isSimilar('rt','Rohit'); // true
+isSimilar('tr','Rohit'); // false
+```<details>
+<summary>Examples</summary>
+
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### levenshteinDistance
+
+Calculates the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) between two strings.
+
+Calculates the number of changes (substitutions, deletions or additions) required to convert `string1` to `string2`. 
+Can also be used to compare two strings as shown in the second example.
+
+``` js
+const levenshteinDistance  = (string1, string2) => {
+    if(string1.length === 0) return string2.length;
+    if(string2.length === 0) return string1.length;
+    let matrix = Array(string2.length + 1).fill(0).map((x,i) => [i]);
+    matrix[0] = Array(string1.length + 1).fill(0).map((x,i) => i);
+    for(let i = 1; i <= string2.length; i++){
+        for(let j = 1; j<=string1.length; j++){
+            if(string2[i-1] === string1[j-1]){
+                matrix[i][j] = matrix[i-1][j-1];
+            }
+            else{
+                matrix[i][j] = Math.min(matrix[i-1][j-1]+1, matrix[i][j-1]+1, matrix[i-1][j]+1);
+            }
+        }
+    }
+    return matrix[string2.length][string1.length];
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+levenshteinDistance('30-seconds-of-code','30-seconds-of-python-code'); // 7
+const compareStrings = (string1,string2) => (100 - levenshteinDistance(string1,string2) / Math.max(string1.length,string2.length));
+compareStrings('30-seconds-of-code', '30-seconds-of-python-code'); // 99.72 (%)
 ```
 
 </details>
@@ -508,21 +571,26 @@ solveRPN('2 3 ^'); // 8
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### fibonacciUntilNum
+### howManyTimes
 
-Generates an array, containing the Fibonacci sequence, up until the nth term.
+Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.
+Works for both negative and positive integers.
 
-Create an empty array of the specific length, initializing the first two values (`0` and `1`).
-Use `Array.reduce()` to add values into the array, using the sum of the last two values, except for the first two.
-Uses a mathematical formula to calculate the length of the array required.
+If `divisor` is `-1` or `1` return `Infinity`.
+If `divisor` is `-0` or `0` return `0`.
+Otherwise, keep dividing `num` with `divisor` and incrementing `i`, while the result is an integer.
+Return the number of times the loop was executed, `i`.
 
 ```js
-const fibonacciUntilNum = num => {
-  let n = Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));
-  return Array.from({ length: n }).reduce(
-    (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),
-    []
-  );
+const howManyTimes = (num, divisor) => {
+  if (divisor === 1 || divisor === -1) return Infinity;
+  if (divisor === 0) return 0;
+  let i = 0;
+  while (Number.isInteger(num / divisor)) {
+    i++;
+    num = num / divisor;
+  }
+  return i;
 };
 ```
 
@@ -530,7 +598,10 @@ const fibonacciUntilNum = num => {
 <summary>Examples</summary>
 
 ```js
-fibonacciUntilNum(10); // [ 0, 1, 1, 2, 3, 5, 8 ]
+howManyTimes(100, 2); // 2
+howManyTimes(100, 2.5); // 2
+howManyTimes(100, 0); // 0
+howManyTimes(100, -1); // Infinity
 ```
 
 </details>
