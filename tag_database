@@ -1,5 +1,4 @@
 all:array,function
-anagrams:string,recursion
 any:array,function
 approximatelyEqual:math
 arrayToHtmlList:browser,array
@@ -117,6 +116,7 @@ intersectionWith:array,function
 invertKeyValues:object,function
 is:type,array,regexp
 isAbsoluteURL:string,utility,browser,url
+isAnagram:string,regexp
 isArrayLike:type,array
 isBoolean:type
 isDivisible:math
@@ -162,6 +162,7 @@ minBy:math,array,function
 minN:array,math
 mostPerformant:utility,function
 negate:function
+nest:object
 none:array,function
 nthArg:utility,function
 nthElement:array
@@ -177,12 +178,14 @@ onUserInputChange:browser,event,advanced
 orderBy:object,array
 over:adapter,function
 overArgs:adapter,function
+pad:string
 palindrome:string
 parseCookie:utility,string
 partial:function
 partialRight:function
 partition:array,object,function
 percentile:math
+permutations:array,recursion
 pick:object,array
 pickBy:object,array,function
 pipeAsyncFunctions:adapter,function,promise
@@ -233,7 +236,9 @@ sortedLastIndex:array,math
 sortedLastIndexBy:array,math,function
 splitLines:string
 spreadOver:adapter
+stableSort:array,sort,advanced
 standardDeviation:math,array
+stringPermutations:string,recursion
 stripHTMLTags:string,utility,regexp
 sum:math,array
 sumBy:math,array,function
