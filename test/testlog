@@ -1,4 +1,4 @@
-Test log for: Sun Feb 25 2018 20:27:15 GMT+0000 (UTC)
+Test log for: Mon Feb 26 2018 10:20:44 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.2 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1117,6 +1117,10 @@ Test log for: Sun Feb 25 2018 20:27:15 GMT+0000 (UTC)
     ✔ negate is a Function
     ✔ Negates a predicate function
 
+  Testing nest
+
+    ✔ nest is a Function
+
   Testing none
 
     ✔ none is a Function
@@ -1923,8 +1927,8 @@ Test log for: Sun Feb 25 2018 20:27:15 GMT+0000 (UTC)
     ✔ Works with multiple promises
 
 
-  total:     979
-  passing:   979
+  total:     980
+  passing:   980
   duration:  2.3s
 
 
