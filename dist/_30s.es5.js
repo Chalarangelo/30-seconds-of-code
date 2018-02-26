@@ -39,15 +39,6 @@ var all = function all(arr) {
   return arr.every(fn);
 };
 
-var anagrams = function anagrams(str) {
-  if (str.length <= 2) return str.length === 2 ? [str, str[1] + str[0]] : [str];
-  return str.split('').reduce(function (acc, letter, i) {
-    return acc.concat(anagrams(str.slice(0, i) + str.slice(i + 1)).map(function (val) {
-      return letter + val;
-    }));
-  }, []);
-};
-
 var any = function any(arr) {
   var fn = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Boolean;
   return arr.some(fn);
@@ -1027,6 +1018,13 @@ var isAbsoluteURL = function isAbsoluteURL(str) {
   );
 };
 
+var isAnagram = function isAnagram(str1, str2) {
+  var normalize = function normalize(str) {
+    return str.toLowerCase().replace(/[^a-z0-9]/gi, '').split('').sort().join('');
+  };
+  return normalize(str1) === normalize(str2);
+};
+
 function _toConsumableArray$7(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var isArrayLike = function isArrayLike(val) {
@@ -1570,6 +1568,17 @@ var percentile = function percentile(arr, val) {
   }, 0) / arr.length;
 };
 
+function _toConsumableArray$16(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+var permutations = function permutations(arr) {
+  if (arr.length <= 2) return arr.length === 2 ? [arr, [arr[1], arr[0]]] : arr;
+  return arr.reduce(function (acc, item, i) {
+    return acc.concat(permutations([].concat(_toConsumableArray$16(arr.slice(0, i)), _toConsumableArray$16(arr.slice(i + 1)))).map(function (val) {
+      return [item].concat(_toConsumableArray$16(val));
+    }));
+  }, []);
+};
+
 var pick = function pick(obj, arr) {
   return arr.reduce(function (acc, curr) {
     return curr in obj && (acc[curr] = obj[curr]), acc;
@@ -1765,7 +1774,7 @@ var readFileLines = function readFileLines(filename) {
   return fs$1.readFileSync(filename).toString('UTF8').split('\n');
 };
 
-function _toConsumableArray$16(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$17(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var rearg = function rearg(fn, indexes) {
   return function () {
@@ -1773,7 +1782,7 @@ var rearg = function rearg(fn, indexes) {
       args[_key] = arguments[_key];
     }
 
-    return fn.apply(undefined, _toConsumableArray$16(args.reduce(function (acc, val, i) {
+    return fn.apply(undefined, _toConsumableArray$17(args.reduce(function (acc, val, i) {
       return acc[indexes.indexOf(i)] = val, acc;
     }, Array.from({ length: indexes.length }))));
   };
@@ -1819,10 +1828,10 @@ var removeNonASCII = function removeNonASCII(str) {
   return str.replace(/[^\x20-\x7E]/g, '');
 };
 
-function _toConsumableArray$17(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$18(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var reverseString = function reverseString(str) {
-  return [].concat(_toConsumableArray$17(str)).reverse().join('');
+  return [].concat(_toConsumableArray$18(str)).reverse().join('');
 };
 
 var round = function round(n) {
@@ -1945,10 +1954,10 @@ var sleep = function sleep(ms) {
   });
 };
 
-function _toConsumableArray$18(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$19(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var sortCharactersInString = function sortCharactersInString(str) {
-  return [].concat(_toConsumableArray$18(str)).sort(function (a, b) {
+  return [].concat(_toConsumableArray$19(str)).sort(function (a, b) {
     return a.localeCompare(b);
   }).join('');
 };
@@ -1995,11 +2004,11 @@ var splitLines = function splitLines(str) {
   return str.split(/\r?\n/);
 };
 
-function _toConsumableArray$19(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$20(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var spreadOver = function spreadOver(fn) {
   return function (argsArr) {
-    return fn.apply(undefined, _toConsumableArray$19(argsArr));
+    return fn.apply(undefined, _toConsumableArray$20(argsArr));
   };
 };
 
@@ -2025,6 +2034,15 @@ var standardDeviation = function standardDeviation(arr) {
   }, []).reduce(function (acc, val) {
     return acc + val;
   }, 0) / (arr.length - (usePopulation ? 0 : 1)));
+};
+
+var stringPermutations = function stringPermutations(str) {
+  if (str.length <= 2) return str.length === 2 ? [str, str[1] + str[0]] : [str];
+  return str.split('').reduce(function (acc, letter, i) {
+    return acc.concat(stringPermutations(str.slice(0, i) + str.slice(i + 1)).map(function (val) {
+      return letter + val;
+    }));
+  }, []);
 };
 
 var stripHTMLTags = function stripHTMLTags(str) {
@@ -2059,19 +2077,19 @@ var sumPower = function sumPower(end) {
   }, 0);
 };
 
-function _toConsumableArray$20(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$21(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var symmetricDifference = function symmetricDifference(a, b) {
   var sA = new Set(a),
       sB = new Set(b);
-  return [].concat(_toConsumableArray$20(a.filter(function (x) {
+  return [].concat(_toConsumableArray$21(a.filter(function (x) {
     return !sB.has(x);
-  })), _toConsumableArray$20(b.filter(function (x) {
+  })), _toConsumableArray$21(b.filter(function (x) {
     return !sA.has(x);
   })));
 };
 
-function _toConsumableArray$21(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$22(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var symmetricDifferenceBy = function symmetricDifferenceBy(a, b, fn) {
   var sA = new Set(a.map(function (v) {
@@ -2080,21 +2098,21 @@ var symmetricDifferenceBy = function symmetricDifferenceBy(a, b, fn) {
       sB = new Set(b.map(function (v) {
     return fn(v);
   }));
-  return [].concat(_toConsumableArray$21(a.filter(function (x) {
+  return [].concat(_toConsumableArray$22(a.filter(function (x) {
     return !sB.has(fn(x));
-  })), _toConsumableArray$21(b.filter(function (x) {
+  })), _toConsumableArray$22(b.filter(function (x) {
     return !sA.has(fn(x));
   })));
 };
 
-function _toConsumableArray$22(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$23(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var symmetricDifferenceWith = function symmetricDifferenceWith(arr, val, comp) {
-  return [].concat(_toConsumableArray$22(arr.filter(function (a) {
+  return [].concat(_toConsumableArray$23(arr.filter(function (a) {
     return val.findIndex(function (b) {
       return comp(a, b);
     }) === -1;
-  })), _toConsumableArray$22(val.filter(function (a) {
+  })), _toConsumableArray$23(val.filter(function (a) {
     return arr.findIndex(function (b) {
       return comp(a, b);
     }) === -1;
@@ -2333,62 +2351,46 @@ var unfold = function unfold(fn, seed) {
   }return result;
 };
 
-function _toConsumableArray$23(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$24(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var union = function union(a, b) {
-  return Array.from(new Set([].concat(_toConsumableArray$23(a), _toConsumableArray$23(b))));
+  return Array.from(new Set([].concat(_toConsumableArray$24(a), _toConsumableArray$24(b))));
 };
 
-function _toConsumableArray$24(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$25(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var unionBy = function unionBy(a, b, fn) {
   var s = new Set(a.map(function (v) {
     return fn(v);
   }));
-  return Array.from(new Set([].concat(_toConsumableArray$24(a), _toConsumableArray$24(b.filter(function (x) {
+  return Array.from(new Set([].concat(_toConsumableArray$25(a), _toConsumableArray$25(b.filter(function (x) {
     return !s.has(fn(x));
   })))));
 };
 
-function _toConsumableArray$25(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$26(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var unionWith = function unionWith(a, b, comp) {
-  return Array.from(new Set([].concat(_toConsumableArray$25(a), _toConsumableArray$25(b.filter(function (x) {
+  return Array.from(new Set([].concat(_toConsumableArray$26(a), _toConsumableArray$26(b.filter(function (x) {
     return a.findIndex(function (y) {
       return comp(x, y);
     }) === -1;
   })))));
 };
 
-function _toConsumableArray$26(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$27(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var uniqueElements = function uniqueElements(arr) {
-  return [].concat(_toConsumableArray$26(new Set(arr)));
+  return [].concat(_toConsumableArray$27(new Set(arr)));
 };
 
 var untildify = function untildify(str) {
   return str.replace(/^~($|\/|\\)/, (typeof require !== "undefined" && require('os').homedir()) + "$1");
 };
 
-function _toConsumableArray$27(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-var unzip = function unzip(arr) {
-  return arr.reduce(function (acc, val) {
-    return val.forEach(function (v, i) {
-      return acc[i].push(v);
-    }), acc;
-  }, Array.from({
-    length: Math.max.apply(Math, _toConsumableArray$27(arr.map(function (x) {
-      return x.length;
-    })))
-  }).map(function (x) {
-    return [];
-  }));
-};
-
 function _toConsumableArray$28(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-var unzipWith = function unzipWith(arr, fn) {
+var unzip = function unzip(arr) {
   return arr.reduce(function (acc, val) {
     return val.forEach(function (v, i) {
       return acc[i].push(v);
@@ -2399,8 +2401,24 @@ var unzipWith = function unzipWith(arr, fn) {
     })))
   }).map(function (x) {
     return [];
+  }));
+};
+
+function _toConsumableArray$29(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+var unzipWith = function unzipWith(arr, fn) {
+  return arr.reduce(function (acc, val) {
+    return val.forEach(function (v, i) {
+      return acc[i].push(v);
+    }), acc;
+  }, Array.from({
+    length: Math.max.apply(Math, _toConsumableArray$29(arr.map(function (x) {
+      return x.length;
+    })))
+  }).map(function (x) {
+    return [];
   })).map(function (val) {
-    return fn.apply(undefined, _toConsumableArray$28(val));
+    return fn.apply(undefined, _toConsumableArray$29(val));
   });
 };
 
@@ -2437,14 +2455,14 @@ var yesNo = function yesNo(val) {
   );
 };
 
-function _toConsumableArray$29(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$30(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var zip = function zip() {
   for (var _len = arguments.length, arrays = Array(_len), _key = 0; _key < _len; _key++) {
     arrays[_key] = arguments[_key];
   }
 
-  var maxLength = Math.max.apply(Math, _toConsumableArray$29(arrays.map(function (x) {
+  var maxLength = Math.max.apply(Math, _toConsumableArray$30(arrays.map(function (x) {
     return x.length;
   })));
   return Array.from({ length: maxLength }).map(function (_, i) {
@@ -2460,7 +2478,7 @@ var zipObject = function zipObject(props, values) {
   }, {});
 };
 
-function _toConsumableArray$30(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray$31(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var zipWith = function zipWith() {
   for (var _len = arguments.length, arrays = Array(_len), _key = 0; _key < _len; _key++) {
@@ -2470,7 +2488,7 @@ var zipWith = function zipWith() {
   var length = arrays.length;
   var fn = length > 1 ? arrays[length - 1] : undefined;
   fn = typeof fn == 'function' ? (arrays.pop(), fn) : undefined;
-  var maxLength = Math.max.apply(Math, _toConsumableArray$30(arrays.map(function (x) {
+  var maxLength = Math.max.apply(Math, _toConsumableArray$31(arrays.map(function (x) {
     return x.length;
   })));
   var result = Array.from({ length: maxLength }).map(function (_, i) {
@@ -2479,11 +2497,11 @@ var zipWith = function zipWith() {
     });
   });
   return fn ? result.map(function (arr) {
-    return fn.apply(undefined, _toConsumableArray$30(arr));
+    return fn.apply(undefined, _toConsumableArray$31(arr));
   }) : result;
 };
 
-var imports = { JSONToFile: JSONToFile, RGBToHex: RGBToHex, URLJoin: URLJoin, UUIDGeneratorBrowser: UUIDGeneratorBrowser, UUIDGeneratorNode: UUIDGeneratorNode, all: all, anagrams: anagrams, any: any, approximatelyEqual: approximatelyEqual, arrayToHtmlList: arrayToHtmlList, ary: ary, atob: atob, attempt: attempt, average: average, averageBy: averageBy, bifurcate: bifurcate, bifurcateBy: bifurcateBy, bind: bind, bindAll: bindAll, bindKey: bindKey, binomialCoefficient: binomialCoefficient, bottomVisible: bottomVisible, btoa: btoa, byteSize: byteSize, call: call, capitalize: capitalize, capitalizeEveryWord: capitalizeEveryWord, castArray: castArray, chainAsync: chainAsync, chunk: chunk, clampNumber: clampNumber, cloneRegExp: cloneRegExp, coalesce: coalesce, coalesceFactory: coalesceFactory, collectInto: collectInto, colorize: colorize, compact: compact, compose: compose, composeRight: composeRight, converge: converge, copyToClipboard: copyToClipboard, countBy: countBy, countOccurrences: countOccurrences, createElement: createElement, createEventHub: createEventHub, currentURL: currentURL, curry: curry, debounce: debounce, decapitalize: decapitalize, deepClone: deepClone, deepFlatten: deepFlatten, defaults: defaults, defer: defer, degreesToRads: degreesToRads, delay: delay, detectDeviceType: detectDeviceType, difference: difference, differenceBy: differenceBy, differenceWith: differenceWith, digitize: digitize, distance: distance, drop: drop, dropRight: dropRight, dropRightWhile: dropRightWhile, dropWhile: dropWhile, elementIsVisibleInViewport: elementIsVisibleInViewport, elo: elo, equals: equals, escapeHTML: escapeHTML, escapeRegExp: escapeRegExp, everyNth: everyNth, extendHex: extendHex, factorial: factorial, fibonacci: fibonacci, filterNonUnique: filterNonUnique, findKey: findKey, findLast: findLast, findLastIndex: findLastIndex, findLastKey: findLastKey, flatten: flatten, flattenObject: flattenObject, flip: flip, forEachRight: forEachRight, forOwn: forOwn, forOwnRight: forOwnRight, formatDuration: formatDuration, fromCamelCase: fromCamelCase, functionName: functionName, functions: functions, gcd: gcd, geometricProgression: geometricProgression, get: get, getColonTimeFromDate: getColonTimeFromDate, getDaysDiffBetweenDates: getDaysDiffBetweenDates, getMeridiemSuffixOfInteger: getMeridiemSuffixOfInteger, getScrollPosition: getScrollPosition, getStyle: getStyle, getType: getType, getURLParameters: getURLParameters, groupBy: groupBy, hammingDistance: hammingDistance, hasClass: hasClass, hasFlags: hasFlags, hashBrowser: hashBrowser, hashNode: hashNode, head: head, hexToRGB: hexToRGB, hide: hide, httpGet: httpGet, httpPost: httpPost, httpsRedirect: httpsRedirect, inRange: inRange, indexOfAll: indexOfAll, initial: initial, initialize2DArray: initialize2DArray, initializeArrayWithRange: initializeArrayWithRange, initializeArrayWithRangeRight: initializeArrayWithRangeRight, initializeArrayWithValues: initializeArrayWithValues, intersection: intersection, intersectionBy: intersectionBy, intersectionWith: intersectionWith, invertKeyValues: invertKeyValues, is: is, isAbsoluteURL: isAbsoluteURL, isArrayLike: isArrayLike, isBoolean: isBoolean, isDivisible: isDivisible, isEmpty: isEmpty, isEven: isEven, isFunction: isFunction, isLowerCase: isLowerCase, isNil: isNil, isNull: isNull, isNumber: isNumber, isObject: isObject, isObjectLike: isObjectLike, isPlainObject: isPlainObject, isPrime: isPrime, isPrimitive: isPrimitive, isPromiseLike: isPromiseLike, isSorted: isSorted, isString: isString, isSymbol: isSymbol, isTravisCI: isTravisCI, isUndefined: isUndefined, isUpperCase: isUpperCase, isValidJSON: isValidJSON, join: join, last: last, lcm: lcm, longestItem: longestItem, lowercaseKeys: lowercaseKeys, luhnCheck: luhnCheck, mapKeys: mapKeys, mapObject: mapObject, mapValues: mapValues, mask: mask, matches: matches, matchesWith: matchesWith, maxBy: maxBy, maxN: maxN, median: median, memoize: memoize, merge: merge, minBy: minBy, minN: minN, mostPerformant: mostPerformant, negate: negate, none: none, nthArg: nthArg, nthElement: nthElement, objectFromPairs: objectFromPairs, objectToPairs: objectToPairs, observeMutations: observeMutations, off: off, omit: omit, omitBy: omitBy, on: on, onUserInputChange: onUserInputChange, once: once, orderBy: orderBy, over: over, overArgs: overArgs, palindrome: palindrome, parseCookie: parseCookie, partial: partial, partialRight: partialRight, partition: partition, percentile: percentile, pick: pick, pickBy: pickBy, pipeAsyncFunctions: pipeAsyncFunctions, pipeFunctions: pipeFunctions, pluralize: pluralize, powerset: powerset, prettyBytes: prettyBytes, primes: primes, promisify: promisify, pull: pull, pullAtIndex: pullAtIndex, pullAtValue: pullAtValue, pullBy: pullBy, radsToDegrees: radsToDegrees, randomHexColorCode: randomHexColorCode, randomIntArrayInRange: randomIntArrayInRange, randomIntegerInRange: randomIntegerInRange, randomNumberInRange: randomNumberInRange, readFileLines: readFileLines, rearg: rearg, redirect: redirect, reduceSuccessive: reduceSuccessive, reduceWhich: reduceWhich, reducedFilter: reducedFilter, remove: remove, removeNonASCII: removeNonASCII, reverseString: reverseString, round: round, runAsync: runAsync, runPromisesInSeries: runPromisesInSeries, sample: sample, sampleSize: sampleSize, scrollToTop: scrollToTop, sdbm: sdbm, serializeCookie: serializeCookie, setStyle: setStyle, shallowClone: shallowClone, show: show, shuffle: shuffle, similarity: similarity, size: size, sleep: sleep, sortCharactersInString: sortCharactersInString, sortedIndex: sortedIndex, sortedIndexBy: sortedIndexBy, sortedLastIndex: sortedLastIndex, sortedLastIndexBy: sortedLastIndexBy, splitLines: splitLines, spreadOver: spreadOver, stableSort: stableSort, standardDeviation: standardDeviation, stripHTMLTags: stripHTMLTags, sum: sum, sumBy: sumBy, sumPower: sumPower, symmetricDifference: symmetricDifference, symmetricDifferenceBy: symmetricDifferenceBy, symmetricDifferenceWith: symmetricDifferenceWith, tail: tail, take: take, takeRight: takeRight, takeRightWhile: takeRightWhile, takeWhile: takeWhile, throttle: throttle, timeTaken: timeTaken, times: times, toCamelCase: toCamelCase, toCurrency: toCurrency, toDecimalMark: toDecimalMark, toKebabCase: toKebabCase, toOrdinalSuffix: toOrdinalSuffix, toSafeInteger: toSafeInteger, toSnakeCase: toSnakeCase, toggleClass: toggleClass, tomorrow: tomorrow, transform: transform, truncateString: truncateString, truthCheckCollection: truthCheckCollection, unary: unary, uncurry: uncurry, unescapeHTML: unescapeHTML, unflattenObject: unflattenObject, unfold: unfold, union: union, unionBy: unionBy, unionWith: unionWith, uniqueElements: uniqueElements, untildify: untildify, unzip: unzip, unzipWith: unzipWith, validateNumber: validateNumber, without: without, words: words, xProd: xProd, yesNo: yesNo, zip: zip, zipObject: zipObject, zipWith: zipWith };
+var imports = { JSONToFile: JSONToFile, RGBToHex: RGBToHex, URLJoin: URLJoin, UUIDGeneratorBrowser: UUIDGeneratorBrowser, UUIDGeneratorNode: UUIDGeneratorNode, all: all, any: any, approximatelyEqual: approximatelyEqual, arrayToHtmlList: arrayToHtmlList, ary: ary, atob: atob, attempt: attempt, average: average, averageBy: averageBy, bifurcate: bifurcate, bifurcateBy: bifurcateBy, bind: bind, bindAll: bindAll, bindKey: bindKey, binomialCoefficient: binomialCoefficient, bottomVisible: bottomVisible, btoa: btoa, byteSize: byteSize, call: call, capitalize: capitalize, capitalizeEveryWord: capitalizeEveryWord, castArray: castArray, chainAsync: chainAsync, chunk: chunk, clampNumber: clampNumber, cloneRegExp: cloneRegExp, coalesce: coalesce, coalesceFactory: coalesceFactory, collectInto: collectInto, colorize: colorize, compact: compact, compose: compose, composeRight: composeRight, converge: converge, copyToClipboard: copyToClipboard, countBy: countBy, countOccurrences: countOccurrences, createElement: createElement, createEventHub: createEventHub, currentURL: currentURL, curry: curry, debounce: debounce, decapitalize: decapitalize, deepClone: deepClone, deepFlatten: deepFlatten, defaults: defaults, defer: defer, degreesToRads: degreesToRads, delay: delay, detectDeviceType: detectDeviceType, difference: difference, differenceBy: differenceBy, differenceWith: differenceWith, digitize: digitize, distance: distance, drop: drop, dropRight: dropRight, dropRightWhile: dropRightWhile, dropWhile: dropWhile, elementIsVisibleInViewport: elementIsVisibleInViewport, elo: elo, equals: equals, escapeHTML: escapeHTML, escapeRegExp: escapeRegExp, everyNth: everyNth, extendHex: extendHex, factorial: factorial, fibonacci: fibonacci, filterNonUnique: filterNonUnique, findKey: findKey, findLast: findLast, findLastIndex: findLastIndex, findLastKey: findLastKey, flatten: flatten, flattenObject: flattenObject, flip: flip, forEachRight: forEachRight, forOwn: forOwn, forOwnRight: forOwnRight, formatDuration: formatDuration, fromCamelCase: fromCamelCase, functionName: functionName, functions: functions, gcd: gcd, geometricProgression: geometricProgression, get: get, getColonTimeFromDate: getColonTimeFromDate, getDaysDiffBetweenDates: getDaysDiffBetweenDates, getMeridiemSuffixOfInteger: getMeridiemSuffixOfInteger, getScrollPosition: getScrollPosition, getStyle: getStyle, getType: getType, getURLParameters: getURLParameters, groupBy: groupBy, hammingDistance: hammingDistance, hasClass: hasClass, hasFlags: hasFlags, hashBrowser: hashBrowser, hashNode: hashNode, head: head, hexToRGB: hexToRGB, hide: hide, httpGet: httpGet, httpPost: httpPost, httpsRedirect: httpsRedirect, inRange: inRange, indexOfAll: indexOfAll, initial: initial, initialize2DArray: initialize2DArray, initializeArrayWithRange: initializeArrayWithRange, initializeArrayWithRangeRight: initializeArrayWithRangeRight, initializeArrayWithValues: initializeArrayWithValues, intersection: intersection, intersectionBy: intersectionBy, intersectionWith: intersectionWith, invertKeyValues: invertKeyValues, is: is, isAbsoluteURL: isAbsoluteURL, isAnagram: isAnagram, isArrayLike: isArrayLike, isBoolean: isBoolean, isDivisible: isDivisible, isEmpty: isEmpty, isEven: isEven, isFunction: isFunction, isLowerCase: isLowerCase, isNil: isNil, isNull: isNull, isNumber: isNumber, isObject: isObject, isObjectLike: isObjectLike, isPlainObject: isPlainObject, isPrime: isPrime, isPrimitive: isPrimitive, isPromiseLike: isPromiseLike, isSorted: isSorted, isString: isString, isSymbol: isSymbol, isTravisCI: isTravisCI, isUndefined: isUndefined, isUpperCase: isUpperCase, isValidJSON: isValidJSON, join: join, last: last, lcm: lcm, longestItem: longestItem, lowercaseKeys: lowercaseKeys, luhnCheck: luhnCheck, mapKeys: mapKeys, mapObject: mapObject, mapValues: mapValues, mask: mask, matches: matches, matchesWith: matchesWith, maxBy: maxBy, maxN: maxN, median: median, memoize: memoize, merge: merge, minBy: minBy, minN: minN, mostPerformant: mostPerformant, negate: negate, none: none, nthArg: nthArg, nthElement: nthElement, objectFromPairs: objectFromPairs, objectToPairs: objectToPairs, observeMutations: observeMutations, off: off, omit: omit, omitBy: omitBy, on: on, onUserInputChange: onUserInputChange, once: once, orderBy: orderBy, over: over, overArgs: overArgs, palindrome: palindrome, parseCookie: parseCookie, partial: partial, partialRight: partialRight, partition: partition, percentile: percentile, permutations: permutations, pick: pick, pickBy: pickBy, pipeAsyncFunctions: pipeAsyncFunctions, pipeFunctions: pipeFunctions, pluralize: pluralize, powerset: powerset, prettyBytes: prettyBytes, primes: primes, promisify: promisify, pull: pull, pullAtIndex: pullAtIndex, pullAtValue: pullAtValue, pullBy: pullBy, radsToDegrees: radsToDegrees, randomHexColorCode: randomHexColorCode, randomIntArrayInRange: randomIntArrayInRange, randomIntegerInRange: randomIntegerInRange, randomNumberInRange: randomNumberInRange, readFileLines: readFileLines, rearg: rearg, redirect: redirect, reduceSuccessive: reduceSuccessive, reduceWhich: reduceWhich, reducedFilter: reducedFilter, remove: remove, removeNonASCII: removeNonASCII, reverseString: reverseString, round: round, runAsync: runAsync, runPromisesInSeries: runPromisesInSeries, sample: sample, sampleSize: sampleSize, scrollToTop: scrollToTop, sdbm: sdbm, serializeCookie: serializeCookie, setStyle: setStyle, shallowClone: shallowClone, show: show, shuffle: shuffle, similarity: similarity, size: size, sleep: sleep, sortCharactersInString: sortCharactersInString, sortedIndex: sortedIndex, sortedIndexBy: sortedIndexBy, sortedLastIndex: sortedLastIndex, sortedLastIndexBy: sortedLastIndexBy, splitLines: splitLines, spreadOver: spreadOver, stableSort: stableSort, standardDeviation: standardDeviation, stringPermutations: stringPermutations, stripHTMLTags: stripHTMLTags, sum: sum, sumBy: sumBy, sumPower: sumPower, symmetricDifference: symmetricDifference, symmetricDifferenceBy: symmetricDifferenceBy, symmetricDifferenceWith: symmetricDifferenceWith, tail: tail, take: take, takeRight: takeRight, takeRightWhile: takeRightWhile, takeWhile: takeWhile, throttle: throttle, timeTaken: timeTaken, times: times, toCamelCase: toCamelCase, toCurrency: toCurrency, toDecimalMark: toDecimalMark, toKebabCase: toKebabCase, toOrdinalSuffix: toOrdinalSuffix, toSafeInteger: toSafeInteger, toSnakeCase: toSnakeCase, toggleClass: toggleClass, tomorrow: tomorrow, transform: transform, truncateString: truncateString, truthCheckCollection: truthCheckCollection, unary: unary, uncurry: uncurry, unescapeHTML: unescapeHTML, unflattenObject: unflattenObject, unfold: unfold, union: union, unionBy: unionBy, unionWith: unionWith, uniqueElements: uniqueElements, untildify: untildify, unzip: unzip, unzipWith: unzipWith, validateNumber: validateNumber, without: without, words: words, xProd: xProd, yesNo: yesNo, zip: zip, zipObject: zipObject, zipWith: zipWith };
 
 return imports;
 
