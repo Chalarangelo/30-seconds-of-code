@@ -82,7 +82,6 @@ forOwnRight:object
 fromCamelCase:string
 functionName:function,utility
 functions:object,function
-fuzzySearch:string,utility
 gcd:math,recursion
 geometricProgression:math
 get:object
