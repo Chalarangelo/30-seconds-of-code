@@ -31,6 +31,7 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
   background: white;
   width: 300px;
   height: 250px;
+  padding: 15px 0;
   line-height: 1.2;
   text-align: center;
 }
@@ -63,6 +64,7 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
   background: white;
   width: 300px;
   height: 250px;
+  padding: 15px 0;
   line-height: 1.2;
   text-align: center;
 }
