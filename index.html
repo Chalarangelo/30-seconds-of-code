@@ -113,7 +113,10 @@
               <p class="snippet-demo__custom-text-selection">Select some of this text.</p>
             </div>
             <style>
-              .snippet-demo__custom-text-selection::selection,
+              .snippet-demo__custom-text-selection::selection {
+                background: red;
+                color: white;
+              }
               .snippet-demo__custom-text-selection::-moz-selection {
                 background: red;
                 color: white;
@@ -127,7 +130,8 @@
                 84.6%
               </div>
             </div>
-            <p><span class="snippet__support-note">⚠️ Requires prefixes for full support.</span></p>
+            <p><span class="snippet__support-note">⚠️ Requires prefixes for full support and is not actually
+in any specification.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=css-selection" target="_blank">https://caniuse.com/#feat=css-selection</a>
