@@ -1,16 +1,17 @@
 ### pad
 
-Pads `string` on the left and right side if it's shorter than `length`.
-String is *NOT* truncated on both sides if it exceeds length.
+Pads a string on both sides with the specified character, if it's shorter than the specified length.
+
+Use `String.padStart()` and `String.padEnd()` to pad both sides of the given string.
+Omit the third argument, `char`, to use the whitespace character as the default padding character.
 
 ```js
-const pad = (string, length = 8, char = ' ') =>
-  string.padStart((string.length + length) / 2, char).padEnd(length, char);
-module.exports = pad;
+const pad = (str, length, char = ' ') =>
+  str.padStart((str.length + length) / 2, char).padEnd(length, char);
 ```
 
 ```js
-pad('cat'); //> '  cat   '
-pad(String(42), 4, '0'); //> '004200'
-pad('foobar', 3); //> 'foobar'
+pad('cat', 8); // '  cat   '
+pad(String(42), 6, '0'); // '004200'
+pad('foobar', 3); // 'foobar'
 ```
