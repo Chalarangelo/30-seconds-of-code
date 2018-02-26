@@ -113,7 +113,8 @@
               <p class="snippet-demo__custom-text-selection">Select some of this text.</p>
             </div>
             <style>
-              .snippet-demo__custom-text-selection::selection {
+              .snippet-demo__custom-text-selection::selection,
+              .snippet-demo__custom-text-selection::-moz-selection {
                 background: red;
                 color: white;
               }
@@ -570,6 +571,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
   background: white;
   width: 300px;
   height: 250px;
+  padding: 15px 0;
   line-height: 1.2;
   text-align: center;
 }
@@ -599,6 +601,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 background: white;
                 width: 300px;
                 height: 250px;
+                padding: 15px 0;
                 line-height: 1.2;
                 text-align: center;
               }
