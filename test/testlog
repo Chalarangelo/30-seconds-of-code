@@ -1,4 +1,4 @@
-Test log for: Mon Feb 26 2018 15:00:57 GMT+0530 (India Standard Time)
+Test log for: Mon Feb 26 2018 15:06:03 GMT+0530 (India Standard Time)
 
 > 30-seconds-of-code@0.0.2 test R:\github\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -569,6 +569,12 @@ Test log for: Mon Feb 26 2018 15:00:57 GMT+0530 (India Standard Time)
     √ Returns own methods
     √ Returns own and inherited methods
 
+  Testing fuzzySearch
+
+    √ fuzzySearch is a Function
+    √ Provided examples work
+    √ Provided examples work
+
   Testing gcd
 
     ✔ gcd is a Function
@@ -929,6 +935,10 @@ Test log for: Mon Feb 26 2018 15:00:57 GMT+0530 (India Standard Time)
 
     ✔ isSet is a Function
 
+  Testing isSimilar
+
+    √ isSimilar is a Function
+
   Testing isSorted
 
     ✔ isSorted is a Function
@@ -1176,12 +1186,12 @@ Test log for: Mon Feb 26 2018 15:00:57 GMT+0530 (India Standard Time)
     √ on is a Function
     √ Tested by @chalarangelo on 16/02/2018
 
-  Testing onUserInputChange
+  Testing once
 
     √ once is a Function
     √ Tested by @chalarangelo on 16/02/2018
 
-  Testing once
+  Testing onUserInputChange
 
     √ onUserInputChange is a Function
     √ Tested by @chalarangelo on 16/02/2018
@@ -1618,6 +1628,11 @@ Test log for: Mon Feb 26 2018 15:00:57 GMT+0530 (India Standard Time)
     √ throttle is a Function
     √ Tested by @chalarangelo on 16/02/2018
 
+  Testing times
+
+    √ times is a Function
+    √ Runs a function the specified amount of times
+
   Testing timeTaken
 
     √ times is a Function
@@ -1896,13 +1911,13 @@ Test log for: Mon Feb 26 2018 15:00:57 GMT+0530 (India Standard Time)
     √ Runs the function provided
     √ Runs promises in series
     √ Sends a GET request
-    √ Works as expecting, passing arguments properly
     √ Sends a POST request
+    √ Works as expecting, passing arguments properly
     √ Works with multiple promises
 
 
-  total:     973
-  passing:   973
-  duration:  3s
+  total:     974
+  passing:   974
+  duration:  2.6s
 
 
