@@ -376,6 +376,7 @@ average(1, 2, 3);
 * [`isLowerCase`](#islowercase)
 * [`isUpperCase`](#isuppercase)
 * [`mask`](#mask)
+* [`pad`](#pad)
 * [`palindrome`](#palindrome)
 * [`pluralize`](#pluralize)
 * [`removeNonASCII`](#removenonascii)
@@ -6931,6 +6932,32 @@ const mask = (cc, num = 4, mask = '*') =>
 mask(1234567890); // '******7890'
 mask(1234567890, 3); // '*******890'
 mask(1234567890, -4, '$'); // '$$$$567890'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### pad
+
+Pads a string on both sides with the specified character, if it's shorter than the specified length.
+
+Use `String.padStart()` and `String.padEnd()` to pad both sides of the given string.
+Omit the third argument, `char`, to use the whitespace character as the default padding character.
+
+```js
+const pad = (str, length, char = ' ') =>
+  str.padStart((str.length + length) / 2, char).padEnd(length, char);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+pad('cat', 8); // '  cat   '
+pad(String(42), 6, '0'); // '004200'
+pad('foobar', 3); // 'foobar'
 ```
 
 </details>
