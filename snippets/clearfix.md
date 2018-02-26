@@ -2,6 +2,8 @@
 
 Ensures that an element self-clears its children.
 
+###### Note: This is useful only if you are still using float to build layouts. Please consider to use a modern approach with flexbox layout or grid layout.
+
 #### HTML
 
 ```html
@@ -17,7 +19,7 @@ Ensures that an element self-clears its children.
 ```css
 .clearfix::after {
   content: '';
-  display: table;
+  display: block;
   clear: both;
 }
 
@@ -39,7 +41,7 @@ Ensures that an element self-clears its children.
 <style>
 .snippet-demo__clearfix::after {
   content: '';
-  display: table;
+  display: block;
   clear: both;
 }
 
