@@ -14,14 +14,16 @@ These snippets, while useful and interesting, didn't quite make it into the repo
 * [`countVowels`](#countvowels)
 * [`factors`](#factors)
 * [`fibonacciCountUntilNum`](#fibonaccicountuntilnum)
-* [`howManyTimes`](#howmanytimes)
+* [`fibonacciUntilNum`](#fibonacciuntilnum)
 * [`httpDelete`](#httpdelete)
 * [`httpPut`](#httpput)
 * [`isArmstrongNumber`](#isarmstrongnumber)
+* [`isSimilar`](#issimilar)
+* [`levenshteinDistance`](#levenshteindistance)
 * [`quickSort`](#quicksort)
 * [`removeVowels`](#removevowels)
 * [`solveRPN`](#solverpn)
-* [`fibonacciUntilNum`](#fibonacciuntilnum)
+* [`howManyTimes`](#howmanytimes)
 
 ---
 
@@ -473,676 +475,6 @@ fibonacciCountUntilNum(10); // 7
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### howManyTimes
-
-Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.
-Works for both negative and positive integers.
-
-If `divisor` is `-1` or `1` return `Infinity`.
-If `divisor` is `-0` or `0` return `0`.
-Otherwise, keep dividing `num` with `divisor` and incrementing `i`, while the result is an integer.
-Return the number of times the loop was executed, `i`.
-
-```js
-const howManyTimes = (num, divisor) => {
-  if (divisor === 1 || divisor === -1) return Infinity;
-  if (divisor === 0) return 0;
-  let i = 0;
-  while (Number.isInteger(num / divisor)) {
-    i++;
-    num = num / divisor;
-  }
-  return i;
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-howManyTimes(100, 2); // 2
-howManyTimes(100, 2.5); // 2
-howManyTimes(100, 0); // 0
-howManyTimes(100, -1); // Infinity
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### httpDelete
-
-Makes a `DELETE` request to the passed URL.
-
-Use `XMLHttpRequest` web api to make a `delete` request to the given `url`.
-Handle the `onload` event, by running the provided `callback` function.
-Handle the `onerror` event, by running the provided `err` function.
-Omit the third argument, `err` to log the request to the console's error stream by default.
-
-```js
-const httpDelete = (url, callback, err = console.error) => {
-  const request = new XMLHttpRequest();
-  request.open("DELETE", url, true);
-  request.onload = () => callback(request);
-  request.onerror = () => err(request);
-  request.send();
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-httpDelete('https://website.com/users/123', request => {
-  console.log(request.responseText);
-}); // 'Deletes a user from the database'
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### httpPut
-
-Makes a `PUT` request to the passed URL.
-
-Use `XMLHttpRequest` web api to make a `put` request to the given `url`.
-Set the value of an `HTTP` request header with `setRequestHeader` method.
-Handle the `onload` event, by running the provided `callback` function.
-Handle the `onerror` event, by running the provided `err` function.
-Omit the last argument, `err` to log the request to the console's error stream by default.
-
-```js
-const httpPut = (url, data, callback, err = console.error) => {
-    const request = new XMLHttpRequest();
-    request.open("PUT", url, true);
-    request.setRequestHeader('Content-type','application/json; charset=utf-8');
-    request.onload = () => callback(request);
-    request.onerror = () => err(request);
-    request.send(data);
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-const password = "fooBaz";
-const data = JSON.stringify(password);
-httpPut('https://website.com/users/123', data, request => {
-  console.log(request.responseText);
-}); // 'Updates a user's password in database'
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### isArmstrongNumber
-
-Checks if the given number is an Armstrong number or not.
-
-Convert the given number into an array of digits. Use the exponent operator (`**`) to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return `true` otherwise `false`.
-
-```js
-const isArmstrongNumber = digits =>
-  (arr => arr.reduce((a, d) => a + parseInt(d) ** arr.length, 0) == digits)(
-    (digits + '').split('')
-  );
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-isArmstrongNumber(1634); // true
-isArmstrongNumber(56); // false
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### quickSort
-
-QuickSort an Array (ascending sort by default).
-
-Use recursion.
-Use `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it.
-If the parameter `desc` is truthy, return array sorts in descending order.
-
-```js
-const quickSort = ([n, ...nums], desc) =>
-  isNaN(n)
-    ? []
-    : [
-        ...quickSort(nums.filter(v => (desc ? v > n : v <= n)), desc),
-        n,
-        ...quickSort(nums.filter(v => (!desc ? v > n : v <= n)), desc)
-      ];
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-quickSort([4, 1, 3, 2]); // [1,2,3,4]
-quickSort([4, 1, 3, 2], true); // [4,3,2,1]
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### removeVowels
-
-Returns all the vowels in a `str` replaced by `repl`.
-
-Use `String.replace()` with a regexp to replace all vowels in `str`.
-Omot `repl` to use a default value of `''`.
-
-```js
-const removeVowels = (str, repl = '') => str.replace(/[aeiou]/gi,repl);
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-removeVowels("foobAr"); // "fbr"
-removeVowels("foobAr","*"); // "f**b*r"
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### solveRPN
-
-Solves the given mathematical expression in [reverse polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation).
-Throws appropriate errors if there are unrecognized symbols or the expression is wrong. The valid operators are :- `+`,`-`,`*`,`/`,`^`,`**` (`^`&`**` are the exponential symbols and are same). This snippet does not supports any unary operators.
-
-Use a dictionary, `OPERATORS` to specify each operator's matching mathematical operation.
-Use `String.replace()` with a regular expression to replace `^` with `**`, `String.split()` to tokenize the string and `Array.filter()` to remove empty tokens.
-Use `Array.forEach()` to parse each `symbol`, evaluate it as a numeric value or operator and solve the mathematical expression.
-Numeric values are converted to floating point numbers and pushed to a `stack`, while operators are evaluated using the `OPERATORS` dictionary and pop elements from the `stack` to apply operations.
-
-```js
-const solveRPN = rpn => {
-  const OPERATORS = {
-    '*': (a, b) => a * b,
-    '+': (a, b) => a + b,
-    '-': (a, b) => a - b,
-    '/': (a, b) => a / b,
-    '**': (a, b) => a ** b
-  };
-  const [stack, solve] = [
-    [],
-    rpn
-      .replace(/\^/g, '**')
-      .split(/\s+/g)
-      .filter(el => !/\s+/.test(el) && el !== '')
-  ];
-  solve.forEach(symbol => {
-    if (!isNaN(parseFloat(symbol)) && isFinite(symbol)) {
-      stack.push(symbol);
-    } else if (Object.keys(OPERATORS).includes(symbol)) {
-      const [a, b] = [stack.pop(), stack.pop()];
-      stack.push(OPERATORS[symbol](parseFloat(b), parseFloat(a)));
-    } else {
-      throw `${symbol} is not a recognized symbol`;
-    }
-  });
-  if (stack.length === 1) return stack.pop();
-  else throw `${rpn} is not a proper RPN. Please check it and try again`;
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-solveRPN('15 7 1 1 + - / 3 * 2 1 1 + + -'); // 5
-solveRPN('2 3 ^'); // 8
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### howManyTimes
-
-Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.
-Works for both negative and positive integers.
-
-If `divisor` is `-1` or `1` return `Infinity`.
-If `divisor` is `-0` or `0` return `0`.
-Otherwise, keep dividing `num` with `divisor` and incrementing `i`, while the result is an integer.
-Return the number of times the loop was executed, `i`.
-
-```js
-const howManyTimes = (num, divisor) => {
-  if (divisor === 1 || divisor === -1) return Infinity;
-  if (divisor === 0) return 0;
-  let i = 0;
-  while (Number.isInteger(num / divisor)) {
-    i++;
-    num = num / divisor;
-  }
-  return i;
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-howManyTimes(100, 2); // 2
-howManyTimes(100, 2.5); // 2
-howManyTimes(100, 0); // 0
-howManyTimes(100, -1); // Infinity
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### isArmstrongNumber
-
-Checks if the given number is an Armstrong number or not.
-
-Convert the given number into an array of digits. Use the exponent operator (`**`) to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return `true` otherwise `false`.
-
-```js
-const isArmstrongNumber = digits =>
-  (arr => arr.reduce((a, d) => a + parseInt(d) ** arr.length, 0) == digits)(
-    (digits + '').split('')
-  );
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-isArmstrongNumber(1634); // true
-isArmstrongNumber(56); // false
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### quickSort
-
-QuickSort an Array (ascending sort by default).
-
-Use recursion.
-Use `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it.
-If the parameter `desc` is truthy, return array sorts in descending order.
-
-```js
-const quickSort = ([n, ...nums], desc) =>
-  isNaN(n)
-    ? []
-    : [
-        ...quickSort(nums.filter(v => (desc ? v > n : v <= n)), desc),
-        n,
-        ...quickSort(nums.filter(v => (!desc ? v > n : v <= n)), desc)
-      ];
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-quickSort([4, 1, 3, 2]); // [1,2,3,4]
-quickSort([4, 1, 3, 2], true); // [4,3,2,1]
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### removeVowels
-
-Returns all the vowels in a `str` replaced by `repl`.
-
-Use `String.replace()` with a regexp to replace all vowels in `str`.
-Omot `repl` to use a default value of `''`.
-
-```js
-const removeVowels = (str, repl = '') => str.replace(/[aeiou]/gi,repl);
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-removeVowels("foobAr"); // "fbr"
-removeVowels("foobAr","*"); // "f**b*r"
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### solveRPN
-
-Solves the given mathematical expression in [reverse polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation).
-Throws appropriate errors if there are unrecognized symbols or the expression is wrong. The valid operators are :- `+`,`-`,`*`,`/`,`^`,`**` (`^`&`**` are the exponential symbols and are same). This snippet does not supports any unary operators.
-
-Use a dictionary, `OPERATORS` to specify each operator's matching mathematical operation.
-Use `String.replace()` with a regular expression to replace `^` with `**`, `String.split()` to tokenize the string and `Array.filter()` to remove empty tokens.
-Use `Array.forEach()` to parse each `symbol`, evaluate it as a numeric value or operator and solve the mathematical expression.
-Numeric values are converted to floating point numbers and pushed to a `stack`, while operators are evaluated using the `OPERATORS` dictionary and pop elements from the `stack` to apply operations.
-
-```js
-const solveRPN = rpn => {
-  const OPERATORS = {
-    '*': (a, b) => a * b,
-    '+': (a, b) => a + b,
-    '-': (a, b) => a - b,
-    '/': (a, b) => a / b,
-    '**': (a, b) => a ** b
-  };
-  const [stack, solve] = [
-    [],
-    rpn
-      .replace(/\^/g, '**')
-      .split(/\s+/g)
-      .filter(el => !/\s+/.test(el) && el !== '')
-  ];
-  solve.forEach(symbol => {
-    if (!isNaN(parseFloat(symbol)) && isFinite(symbol)) {
-      stack.push(symbol);
-    } else if (Object.keys(OPERATORS).includes(symbol)) {
-      const [a, b] = [stack.pop(), stack.pop()];
-      stack.push(OPERATORS[symbol](parseFloat(b), parseFloat(a)));
-    } else {
-      throw `${symbol} is not a recognized symbol`;
-    }
-  });
-  if (stack.length === 1) return stack.pop();
-  else throw `${rpn} is not a proper RPN. Please check it and try again`;
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-solveRPN('15 7 1 1 + - / 3 * 2 1 1 + + -'); // 5
-solveRPN('2 3 ^'); // 8
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### howManyTimes
-
-Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.
-Works for both negative and positive integers.
-
-If `divisor` is `-1` or `1` return `Infinity`.
-If `divisor` is `-0` or `0` return `0`.
-Otherwise, keep dividing `num` with `divisor` and incrementing `i`, while the result is an integer.
-Return the number of times the loop was executed, `i`.
-
-```js
-const howManyTimes = (num, divisor) => {
-  if (divisor === 1 || divisor === -1) return Infinity;
-  if (divisor === 0) return 0;
-  let i = 0;
-  while (Number.isInteger(num / divisor)) {
-    i++;
-    num = num / divisor;
-  }
-  return i;
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-<details>
-<summary>Examples</summary>
-
-```js
-howManyTimes(100, 2); // 2
-howManyTimes(100, 2.5); // 2
-howManyTimes(100, 0); // 0
-howManyTimes(100, -1); // Infinity
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### httpDelete
-
-Makes a `DELETE` request to the passed URL.
-
-Use `XMLHttpRequest` web api to make a `delete` request to the given `url`.
-Handle the `onload` event, by running the provided `callback` function.
-Handle the `onerror` event, by running the provided `err` function.
-Omit the third argument, `err` to log the request to the console's error stream by default.
-
-```js
-const httpDelete = (url, callback, err = console.error) => {
-  const request = new XMLHttpRequest();
-  request.open("DELETE", url, true);
-  request.onload = () => callback(request);
-  request.onerror = () => err(request);
-  request.send();
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-httpDelete('https://website.com/users/123', request => {
-  console.log(request.responseText);
-}); // 'Deletes a user from the database'
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### httpPut
-
-Makes a `PUT` request to the passed URL.
-
-Use `XMLHttpRequest` web api to make a `put` request to the given `url`.
-Set the value of an `HTTP` request header with `setRequestHeader` method.
-Handle the `onload` event, by running the provided `callback` function.
-Handle the `onerror` event, by running the provided `err` function.
-Omit the last argument, `err` to log the request to the console's error stream by default.
-
-```js
-const httpPut = (url, data, callback, err = console.error) => {
-    const request = new XMLHttpRequest();
-    request.open("PUT", url, true);
-    request.setRequestHeader('Content-type','application/json; charset=utf-8');
-    request.onload = () => callback(request);
-    request.onerror = () => err(request);
-    request.send(data);
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-const password = "fooBaz";
-const data = JSON.stringify(password);
-httpPut('https://website.com/users/123', data, request => {
-  console.log(request.responseText);
-}); // 'Updates a user's password in database'
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### isArmstrongNumber
-
-Checks if the given number is an Armstrong number or not.
-
-Convert the given number into an array of digits. Use the exponent operator (`**`) to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return `true` otherwise `false`.
-
-```js
-const isArmstrongNumber = digits =>
-  (arr => arr.reduce((a, d) => a + parseInt(d) ** arr.length, 0) == digits)(
-    (digits + '').split('')
-  );
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-isArmstrongNumber(1634); // true
-isArmstrongNumber(56); // false
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### quickSort
-
-QuickSort an Array (ascending sort by default).
-
-Use recursion.
-Use `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it.
-If the parameter `desc` is truthy, return array sorts in descending order.
-
-```js
-const quickSort = ([n, ...nums], desc) =>
-  isNaN(n)
-    ? []
-    : [
-        ...quickSort(nums.filter(v => (desc ? v > n : v <= n)), desc),
-        n,
-        ...quickSort(nums.filter(v => (!desc ? v > n : v <= n)), desc)
-      ];
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-quickSort([4, 1, 3, 2]); // [1,2,3,4]
-quickSort([4, 1, 3, 2], true); // [4,3,2,1]
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### removeVowels
-
-Returns all the vowels in a `str` replaced by `repl`.
-
-Use `String.replace()` with a regexp to replace all vowels in `str`.
-Omot `repl` to use a default value of `''`.
-
-```js
-const removeVowels = (str, repl = '') => str.replace(/[aeiou]/gi,repl);
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-removeVowels("foobAr"); // "fbr"
-removeVowels("foobAr","*"); // "f**b*r"
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### solveRPN
-
-Solves the given mathematical expression in [reverse polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation).
-Throws appropriate errors if there are unrecognized symbols or the expression is wrong. The valid operators are :- `+`,`-`,`*`,`/`,`^`,`**` (`^`&`**` are the exponential symbols and are same). This snippet does not supports any unary operators.
-
-Use a dictionary, `OPERATORS` to specify each operator's matching mathematical operation.
-Use `String.replace()` with a regular expression to replace `^` with `**`, `String.split()` to tokenize the string and `Array.filter()` to remove empty tokens.
-Use `Array.forEach()` to parse each `symbol`, evaluate it as a numeric value or operator and solve the mathematical expression.
-Numeric values are converted to floating point numbers and pushed to a `stack`, while operators are evaluated using the `OPERATORS` dictionary and pop elements from the `stack` to apply operations.
-
-```js
-const solveRPN = rpn => {
-  const OPERATORS = {
-    '*': (a, b) => a * b,
-    '+': (a, b) => a + b,
-    '-': (a, b) => a - b,
-    '/': (a, b) => a / b,
-    '**': (a, b) => a ** b
-  };
-  const [stack, solve] = [
-    [],
-    rpn
-      .replace(/\^/g, '**')
-      .split(/\s+/g)
-      .filter(el => !/\s+/.test(el) && el !== '')
-  ];
-  solve.forEach(symbol => {
-    if (!isNaN(parseFloat(symbol)) && isFinite(symbol)) {
-      stack.push(symbol);
-    } else if (Object.keys(OPERATORS).includes(symbol)) {
-      const [a, b] = [stack.pop(), stack.pop()];
-      stack.push(OPERATORS[symbol](parseFloat(b), parseFloat(a)));
-    } else {
-      throw `${symbol} is not a recognized symbol`;
-    }
-  });
-  if (stack.length === 1) return stack.pop();
-  else throw `${rpn} is not a proper RPN. Please check it and try again`;
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-solveRPN('15 7 1 1 + - / 3 * 2 1 1 + + -'); // 5
-solveRPN('2 3 ^'); // 8
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
 ### fibonacciUntilNum
 
 Generates an array, containing the Fibonacci sequence, up until the nth term.
@@ -1166,6 +498,745 @@ const fibonacciUntilNum = num => {
 
 ```js
 fibonacciUntilNum(10); // [ 0, 1, 1, 2, 3, 5, 8 ]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### httpDelete
+
+Makes a `DELETE` request to the passed URL.
+
+Use `XMLHttpRequest` web api to make a `delete` request to the given `url`.
+Handle the `onload` event, by running the provided `callback` function.
+Handle the `onerror` event, by running the provided `err` function.
+Omit the third argument, `err` to log the request to the console's error stream by default.
+
+```js
+const httpDelete = (url, callback, err = console.error) => {
+  const request = new XMLHttpRequest();
+  request.open("DELETE", url, true);
+  request.onload = () => callback(request);
+  request.onerror = () => err(request);
+  request.send();
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+httpDelete('https://website.com/users/123', request => {
+  console.log(request.responseText);
+}); // 'Deletes a user from the database'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### httpPut
+
+Makes a `PUT` request to the passed URL.
+
+Use `XMLHttpRequest` web api to make a `put` request to the given `url`.
+Set the value of an `HTTP` request header with `setRequestHeader` method.
+Handle the `onload` event, by running the provided `callback` function.
+Handle the `onerror` event, by running the provided `err` function.
+Omit the last argument, `err` to log the request to the console's error stream by default.
+
+```js
+const httpPut = (url, data, callback, err = console.error) => {
+    const request = new XMLHttpRequest();
+    request.open("PUT", url, true);
+    request.setRequestHeader('Content-type','application/json; charset=utf-8');
+    request.onload = () => callback(request);
+    request.onerror = () => err(request);
+    request.send(data);
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const password = "fooBaz";
+const data = JSON.stringify(password);
+httpPut('https://website.com/users/123', data, request => {
+  console.log(request.responseText);
+}); // 'Updates a user's password in database'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isArmstrongNumber
+
+Checks if the given number is an Armstrong number or not.
+
+Convert the given number into an array of digits. Use the exponent operator (`**`) to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return `true` otherwise `false`.
+
+```js
+const isArmstrongNumber = digits =>
+  (arr => arr.reduce((a, d) => a + parseInt(d) ** arr.length, 0) == digits)(
+    (digits + '').split('')
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isArmstrongNumber(1634); // true
+isArmstrongNumber(56); // false
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isSimilar
+
+Determines if the `pattern` matches with `str`.
+
+Use `String.toLowerCase()` to convert both strings to lowercase, then loop through `str` and determine if it contains all characters of `pattern` and in the correct order.
+Adapted from [here](https://github.com/forrestthewoods/lib_fts/blob/80f3f8c52db53428247e741b9efe2cde9667050c/code/fts_fuzzy_match.js#L18).
+
+``` js
+const isSimilar = (pattern, str) =>
+	[...str].reduce(
+		(matchIndex, char) => char.toLowerCase() === (pattern[matchIndex]  || '').toLowerCase() ? matchIndex + 1 : matchIndex, 0
+	) === pattern.length ? true : false;
+```
+
+
+``` js
+isSimilar('rt','Rohit'); // true
+isSimilar('tr','Rohit'); // false
+```<details>
+<summary>Examples</summary>
+
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### levenshteinDistance
+
+Calculates the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) between two strings.
+
+Calculates the number of changes (substitutions, deletions or additions) required to convert `string1` to `string2`. 
+Can also be used to compare two strings as shown in the second example.
+
+``` js
+const levenshteinDistance  = (string1, string2) => {
+    if(string1.length === 0) return string2.length;
+    if(string2.length === 0) return string1.length;
+    let matrix = Array(string2.length + 1).fill(0).map((x,i) => [i]);
+    matrix[0] = Array(string1.length + 1).fill(0).map((x,i) => i);
+    for(let i = 1; i <= string2.length; i++){
+        for(let j = 1; j<=string1.length; j++){
+            if(string2[i-1] === string1[j-1]){
+                matrix[i][j] = matrix[i-1][j-1];
+            }
+            else{
+                matrix[i][j] = Math.min(matrix[i-1][j-1]+1, matrix[i][j-1]+1, matrix[i-1][j]+1);
+            }
+        }
+    }
+    return matrix[string2.length][string1.length];
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+levenshteinDistance('30-seconds-of-code','30-seconds-of-python-code'); // 7
+const compareStrings = (string1,string2) => (100 - levenshteinDistance(string1,string2) / Math.max(string1.length,string2.length));
+compareStrings('30-seconds-of-code', '30-seconds-of-python-code'); // 99.72 (%)
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### quickSort
+
+QuickSort an Array (ascending sort by default).
+
+Use recursion.
+Use `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it.
+If the parameter `desc` is truthy, return array sorts in descending order.
+
+```js
+const quickSort = ([n, ...nums], desc) =>
+  isNaN(n)
+    ? []
+    : [
+        ...quickSort(nums.filter(v => (desc ? v > n : v <= n)), desc),
+        n,
+        ...quickSort(nums.filter(v => (!desc ? v > n : v <= n)), desc)
+      ];
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+quickSort([4, 1, 3, 2]); // [1,2,3,4]
+quickSort([4, 1, 3, 2], true); // [4,3,2,1]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### removeVowels
+
+Returns all the vowels in a `str` replaced by `repl`.
+
+Use `String.replace()` with a regexp to replace all vowels in `str`.
+Omot `repl` to use a default value of `''`.
+
+```js
+const removeVowels = (str, repl = '') => str.replace(/[aeiou]/gi,repl);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+removeVowels("foobAr"); // "fbr"
+removeVowels("foobAr","*"); // "f**b*r"
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### solveRPN
+
+Solves the given mathematical expression in [reverse polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation).
+Throws appropriate errors if there are unrecognized symbols or the expression is wrong. The valid operators are :- `+`,`-`,`*`,`/`,`^`,`**` (`^`&`**` are the exponential symbols and are same). This snippet does not supports any unary operators.
+
+Use a dictionary, `OPERATORS` to specify each operator's matching mathematical operation.
+Use `String.replace()` with a regular expression to replace `^` with `**`, `String.split()` to tokenize the string and `Array.filter()` to remove empty tokens.
+Use `Array.forEach()` to parse each `symbol`, evaluate it as a numeric value or operator and solve the mathematical expression.
+Numeric values are converted to floating point numbers and pushed to a `stack`, while operators are evaluated using the `OPERATORS` dictionary and pop elements from the `stack` to apply operations.
+
+```js
+const solveRPN = rpn => {
+  const OPERATORS = {
+    '*': (a, b) => a * b,
+    '+': (a, b) => a + b,
+    '-': (a, b) => a - b,
+    '/': (a, b) => a / b,
+    '**': (a, b) => a ** b
+  };
+  const [stack, solve] = [
+    [],
+    rpn
+      .replace(/\^/g, '**')
+      .split(/\s+/g)
+      .filter(el => !/\s+/.test(el) && el !== '')
+  ];
+  solve.forEach(symbol => {
+    if (!isNaN(parseFloat(symbol)) && isFinite(symbol)) {
+      stack.push(symbol);
+    } else if (Object.keys(OPERATORS).includes(symbol)) {
+      const [a, b] = [stack.pop(), stack.pop()];
+      stack.push(OPERATORS[symbol](parseFloat(b), parseFloat(a)));
+    } else {
+      throw `${symbol} is not a recognized symbol`;
+    }
+  });
+  if (stack.length === 1) return stack.pop();
+  else throw `${rpn} is not a proper RPN. Please check it and try again`;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+solveRPN('15 7 1 1 + - / 3 * 2 1 1 + + -'); // 5
+solveRPN('2 3 ^'); // 8
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### howManyTimes
+
+Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.
+Works for both negative and positive integers.
+
+If `divisor` is `-1` or `1` return `Infinity`.
+If `divisor` is `-0` or `0` return `0`.
+Otherwise, keep dividing `num` with `divisor` and incrementing `i`, while the result is an integer.
+Return the number of times the loop was executed, `i`.
+
+```js
+const howManyTimes = (num, divisor) => {
+  if (divisor === 1 || divisor === -1) return Infinity;
+  if (divisor === 0) return 0;
+  let i = 0;
+  while (Number.isInteger(num / divisor)) {
+    i++;
+    num = num / divisor;
+  }
+  return i;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+howManyTimes(100, 2); // 2
+howManyTimes(100, 2.5); // 2
+howManyTimes(100, 0); // 0
+howManyTimes(100, -1); // Infinity
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isArmstrongNumber
+
+Checks if the given number is an Armstrong number or not.
+
+Convert the given number into an array of digits. Use the exponent operator (`**`) to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return `true` otherwise `false`.
+
+```js
+const isArmstrongNumber = digits =>
+  (arr => arr.reduce((a, d) => a + parseInt(d) ** arr.length, 0) == digits)(
+    (digits + '').split('')
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isArmstrongNumber(1634); // true
+isArmstrongNumber(56); // false
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### quickSort
+
+QuickSort an Array (ascending sort by default).
+
+Use recursion.
+Use `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it.
+If the parameter `desc` is truthy, return array sorts in descending order.
+
+```js
+const quickSort = ([n, ...nums], desc) =>
+  isNaN(n)
+    ? []
+    : [
+        ...quickSort(nums.filter(v => (desc ? v > n : v <= n)), desc),
+        n,
+        ...quickSort(nums.filter(v => (!desc ? v > n : v <= n)), desc)
+      ];
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+quickSort([4, 1, 3, 2]); // [1,2,3,4]
+quickSort([4, 1, 3, 2], true); // [4,3,2,1]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### removeVowels
+
+Returns all the vowels in a `str` replaced by `repl`.
+
+Use `String.replace()` with a regexp to replace all vowels in `str`.
+Omot `repl` to use a default value of `''`.
+
+```js
+const removeVowels = (str, repl = '') => str.replace(/[aeiou]/gi,repl);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+removeVowels("foobAr"); // "fbr"
+removeVowels("foobAr","*"); // "f**b*r"
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### solveRPN
+
+Solves the given mathematical expression in [reverse polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation).
+Throws appropriate errors if there are unrecognized symbols or the expression is wrong. The valid operators are :- `+`,`-`,`*`,`/`,`^`,`**` (`^`&`**` are the exponential symbols and are same). This snippet does not supports any unary operators.
+
+Use a dictionary, `OPERATORS` to specify each operator's matching mathematical operation.
+Use `String.replace()` with a regular expression to replace `^` with `**`, `String.split()` to tokenize the string and `Array.filter()` to remove empty tokens.
+Use `Array.forEach()` to parse each `symbol`, evaluate it as a numeric value or operator and solve the mathematical expression.
+Numeric values are converted to floating point numbers and pushed to a `stack`, while operators are evaluated using the `OPERATORS` dictionary and pop elements from the `stack` to apply operations.
+
+```js
+const solveRPN = rpn => {
+  const OPERATORS = {
+    '*': (a, b) => a * b,
+    '+': (a, b) => a + b,
+    '-': (a, b) => a - b,
+    '/': (a, b) => a / b,
+    '**': (a, b) => a ** b
+  };
+  const [stack, solve] = [
+    [],
+    rpn
+      .replace(/\^/g, '**')
+      .split(/\s+/g)
+      .filter(el => !/\s+/.test(el) && el !== '')
+  ];
+  solve.forEach(symbol => {
+    if (!isNaN(parseFloat(symbol)) && isFinite(symbol)) {
+      stack.push(symbol);
+    } else if (Object.keys(OPERATORS).includes(symbol)) {
+      const [a, b] = [stack.pop(), stack.pop()];
+      stack.push(OPERATORS[symbol](parseFloat(b), parseFloat(a)));
+    } else {
+      throw `${symbol} is not a recognized symbol`;
+    }
+  });
+  if (stack.length === 1) return stack.pop();
+  else throw `${rpn} is not a proper RPN. Please check it and try again`;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+solveRPN('15 7 1 1 + - / 3 * 2 1 1 + + -'); // 5
+solveRPN('2 3 ^'); // 8
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### howManyTimes
+
+Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.
+Works for both negative and positive integers.
+
+If `divisor` is `-1` or `1` return `Infinity`.
+If `divisor` is `-0` or `0` return `0`.
+Otherwise, keep dividing `num` with `divisor` and incrementing `i`, while the result is an integer.
+Return the number of times the loop was executed, `i`.
+
+```js
+const howManyTimes = (num, divisor) => {
+  if (divisor === 1 || divisor === -1) return Infinity;
+  if (divisor === 0) return 0;
+  let i = 0;
+  while (Number.isInteger(num / divisor)) {
+    i++;
+    num = num / divisor;
+  }
+  return i;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+<details>
+<summary>Examples</summary>
+
+```js
+howManyTimes(100, 2); // 2
+howManyTimes(100, 2.5); // 2
+howManyTimes(100, 0); // 0
+howManyTimes(100, -1); // Infinity
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### httpDelete
+
+Makes a `DELETE` request to the passed URL.
+
+Use `XMLHttpRequest` web api to make a `delete` request to the given `url`.
+Handle the `onload` event, by running the provided `callback` function.
+Handle the `onerror` event, by running the provided `err` function.
+Omit the third argument, `err` to log the request to the console's error stream by default.
+
+```js
+const httpDelete = (url, callback, err = console.error) => {
+  const request = new XMLHttpRequest();
+  request.open("DELETE", url, true);
+  request.onload = () => callback(request);
+  request.onerror = () => err(request);
+  request.send();
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+httpDelete('https://website.com/users/123', request => {
+  console.log(request.responseText);
+}); // 'Deletes a user from the database'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### httpPut
+
+Makes a `PUT` request to the passed URL.
+
+Use `XMLHttpRequest` web api to make a `put` request to the given `url`.
+Set the value of an `HTTP` request header with `setRequestHeader` method.
+Handle the `onload` event, by running the provided `callback` function.
+Handle the `onerror` event, by running the provided `err` function.
+Omit the last argument, `err` to log the request to the console's error stream by default.
+
+```js
+const httpPut = (url, data, callback, err = console.error) => {
+    const request = new XMLHttpRequest();
+    request.open("PUT", url, true);
+    request.setRequestHeader('Content-type','application/json; charset=utf-8');
+    request.onload = () => callback(request);
+    request.onerror = () => err(request);
+    request.send(data);
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const password = "fooBaz";
+const data = JSON.stringify(password);
+httpPut('https://website.com/users/123', data, request => {
+  console.log(request.responseText);
+}); // 'Updates a user's password in database'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isArmstrongNumber
+
+Checks if the given number is an Armstrong number or not.
+
+Convert the given number into an array of digits. Use the exponent operator (`**`) to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return `true` otherwise `false`.
+
+```js
+const isArmstrongNumber = digits =>
+  (arr => arr.reduce((a, d) => a + parseInt(d) ** arr.length, 0) == digits)(
+    (digits + '').split('')
+  );
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isArmstrongNumber(1634); // true
+isArmstrongNumber(56); // false
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### quickSort
+
+QuickSort an Array (ascending sort by default).
+
+Use recursion.
+Use `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it.
+If the parameter `desc` is truthy, return array sorts in descending order.
+
+```js
+const quickSort = ([n, ...nums], desc) =>
+  isNaN(n)
+    ? []
+    : [
+        ...quickSort(nums.filter(v => (desc ? v > n : v <= n)), desc),
+        n,
+        ...quickSort(nums.filter(v => (!desc ? v > n : v <= n)), desc)
+      ];
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+quickSort([4, 1, 3, 2]); // [1,2,3,4]
+quickSort([4, 1, 3, 2], true); // [4,3,2,1]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### removeVowels
+
+Returns all the vowels in a `str` replaced by `repl`.
+
+Use `String.replace()` with a regexp to replace all vowels in `str`.
+Omot `repl` to use a default value of `''`.
+
+```js
+const removeVowels = (str, repl = '') => str.replace(/[aeiou]/gi,repl);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+removeVowels("foobAr"); // "fbr"
+removeVowels("foobAr","*"); // "f**b*r"
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### solveRPN
+
+Solves the given mathematical expression in [reverse polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation).
+Throws appropriate errors if there are unrecognized symbols or the expression is wrong. The valid operators are :- `+`,`-`,`*`,`/`,`^`,`**` (`^`&`**` are the exponential symbols and are same). This snippet does not supports any unary operators.
+
+Use a dictionary, `OPERATORS` to specify each operator's matching mathematical operation.
+Use `String.replace()` with a regular expression to replace `^` with `**`, `String.split()` to tokenize the string and `Array.filter()` to remove empty tokens.
+Use `Array.forEach()` to parse each `symbol`, evaluate it as a numeric value or operator and solve the mathematical expression.
+Numeric values are converted to floating point numbers and pushed to a `stack`, while operators are evaluated using the `OPERATORS` dictionary and pop elements from the `stack` to apply operations.
+
+```js
+const solveRPN = rpn => {
+  const OPERATORS = {
+    '*': (a, b) => a * b,
+    '+': (a, b) => a + b,
+    '-': (a, b) => a - b,
+    '/': (a, b) => a / b,
+    '**': (a, b) => a ** b
+  };
+  const [stack, solve] = [
+    [],
+    rpn
+      .replace(/\^/g, '**')
+      .split(/\s+/g)
+      .filter(el => !/\s+/.test(el) && el !== '')
+  ];
+  solve.forEach(symbol => {
+    if (!isNaN(parseFloat(symbol)) && isFinite(symbol)) {
+      stack.push(symbol);
+    } else if (Object.keys(OPERATORS).includes(symbol)) {
+      const [a, b] = [stack.pop(), stack.pop()];
+      stack.push(OPERATORS[symbol](parseFloat(b), parseFloat(a)));
+    } else {
+      throw `${symbol} is not a recognized symbol`;
+    }
+  });
+  if (stack.length === 1) return stack.pop();
+  else throw `${rpn} is not a proper RPN. Please check it and try again`;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+solveRPN('15 7 1 1 + - / 3 * 2 1 1 + + -'); // 5
+solveRPN('2 3 ^'); // 8
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### howManyTimes
+
+Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.
+Works for both negative and positive integers.
+
+If `divisor` is `-1` or `1` return `Infinity`.
+If `divisor` is `-0` or `0` return `0`.
+Otherwise, keep dividing `num` with `divisor` and incrementing `i`, while the result is an integer.
+Return the number of times the loop was executed, `i`.
+
+```js
+const howManyTimes = (num, divisor) => {
+  if (divisor === 1 || divisor === -1) return Infinity;
+  if (divisor === 0) return 0;
+  let i = 0;
+  while (Number.isInteger(num / divisor)) {
+    i++;
+    num = num / divisor;
+  }
+  return i;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+howManyTimes(100, 2); // 2
+howManyTimes(100, 2.5); // 2
+howManyTimes(100, 0); // 0
+howManyTimes(100, -1); // Infinity
 ```
 
 </details>

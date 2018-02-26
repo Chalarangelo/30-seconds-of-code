@@ -1,4 +1,4 @@
-Test log for: Mon Feb 26 2018 10:20:44 GMT+0000 (UTC)
+Test log for: Mon Feb 26 2018 20:28:27 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.2 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -930,6 +930,10 @@ Test log for: Mon Feb 26 2018 10:20:44 GMT+0000 (UTC)
 
     ✔ isSet is a Function
 
+  Testing isSimilar
+
+    ✔ isSimilar is a Function
+
   Testing isSorted
 
     ✔ isSorted is a Function
@@ -1011,6 +1015,10 @@ Test log for: Mon Feb 26 2018 10:20:44 GMT+0000 (UTC)
     ✔ lcm is a Function
     ✔ Returns the least common multiple of two or more numbers.
     ✔ Returns the least common multiple of two or more numbers.
+
+  Testing levenshteinDistance
+
+    ✔ levenshteinDistance is a Function
 
   Testing longestItem
 
@@ -1202,6 +1210,30 @@ Test log for: Mon Feb 26 2018 10:20:44 GMT+0000 (UTC)
 
     ✔ overArgs is a Function
     ✔ Invokes the provided function with its arguments transformed
+
+  Testing pad
+
+    ✔ pad is a Function
+
+    ✖ cat is padded on both sides
+    ------------------------------
+      operator: equal
+      expected: '  cat   '
+      actual:   'cat'
+      at: Test.test (/home/travis/build/Chalarangelo/30-seconds-of-code/test/pad/pad.test.js:8:5)
+      stack: |-
+
+
+    ✖ length of string is 8
+    ------------------------
+      operator: equal
+      expected: 8
+      actual:   3
+      at: Test.test (/home/travis/build/Chalarangelo/30-seconds-of-code/test/pad/pad.test.js:9:5)
+      stack: |-
+
+    ✔ pads 42 with "0"
+    ✔ does not truncates if string exceeds length
 
   Testing palindrome
 
@@ -1920,15 +1952,26 @@ Test log for: Mon Feb 26 2018 10:20:44 GMT+0000 (UTC)
 
     ✔ zipWith is a Function
     ✔ Sends a GET request
-    ✔ Runs the function provided
     ✔ Sends a POST request
+    ✔ Runs the function provided
     ✔ Runs promises in series
     ✔ Works as expecting, passing arguments properly
     ✔ Works with multiple promises
 
 
-  total:     980
-  passing:   980
-  duration:  2.3s
+
+  Failed Tests: There were 2 failures
+
+    Testing pad
+
+      ✖ cat is padded on both sides
+      ✖ length of string is 8
 
 
+  total:     987
+  passing:   985
+  failing:   2
+  duration:  2.4s
+
+
+undefined
