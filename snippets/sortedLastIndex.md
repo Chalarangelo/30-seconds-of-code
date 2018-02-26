@@ -8,9 +8,7 @@ Use `Array.reverse()` and `Array.findIndex()` to find the appropriate last index
 ```js
 const sortedLastIndex = (arr, n) => {
   const isDescending = arr[0] > arr[arr.length - 1];
-  const index = arr
-    .reverse()
-    .findIndex(el => (isDescending ? n <= el : n >= el));
+  const index = arr.reverse().findIndex(el => (isDescending ? n <= el : n >= el));
   return index === -1 ? 0 : arr.length - index - 1;
 };
 ```
