@@ -144,7 +144,6 @@ join:array
 JSONToFile:node,json
 last:array
 lcm:math,recursion
-levenshteinDistance:string,utility
 longestItem:array,string,utility
 lowercaseKeys:object
 luhnCheck:math,utility
