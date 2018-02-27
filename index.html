@@ -51,7 +51,7 @@
           <div class="snippet">
             <h3 id="clearfix">Clearfix</h3>
             <p>Ensures that an element self-clears its children.</p>
-            <h6 data-type="Note: This is useful only if you are still using float to build layouts. Please consider to use a modern approach with flexbox layout or grid layout.">Note: This is useful only if you are still using float to build layouts. Please consider to use a modern approach with flexbox layout or grid layout.</h6>
+            <h6 data-type="Note: This is only useful if you are still using float to build layouts. Please consider using a modern approach with flexbox layout or grid layout.">Note: This is only useful if you are still using float to build layouts. Please consider using a modern approach with flexbox layout or grid layout.</h6>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="clearfix"&gt;
   &lt;div class="floated"&gt;float a&lt;/div&gt;
   &lt;div class="floated"&gt;float b&lt;/div&gt;
@@ -59,7 +59,7 @@
 &lt;/div&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.clearfix::after {
-  content: '';
+  content: "";
   display: block;
   clear: both;
 }
