@@ -819,6 +819,10 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
   background-repeat: repeat-x;
   background-size: 1px 1px;
 }
+.pretty-text-underline::-moz-selection {
+  background-color: rgba(0, 150, 255, 0.3);
+  text-shadow: none;
+}
 .pretty-text-underline::selection {
   background-color: rgba(0, 150, 255, 0.3);
   text-shadow: none;
@@ -837,6 +841,10 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 background-position: 0 1.04em;
                 background-repeat: repeat-x;
                 background-size: 1px 1px;
+              }
+              .snippet-demo__pretty-text-underline::-moz-selection {
+                background-color: rgba(0, 150, 255, 0.3);
+                text-shadow: none;
               }
               .snippet-demo__pretty-text-underline::selection {
                 background-color: rgba(0, 150, 255, 0.3);
@@ -858,7 +866,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 94.8%
               </div>
             </div>
-            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <p><span class="snippet__support-note">⚠️ Firefox requires a vendor prefix for the selection pseudo-selector to work.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=css-textshadow" target="_blank">https://caniuse.com/#feat=css-textshadow</a>
@@ -1044,7 +1052,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
           </div>
           <div class="snippet">
             <h3 id="truncate-text">Truncate text</h3>
-            <p>If the text is longer than one line, it will be truncated and end with an ellipsis <code>...</code>.</p>
+            <p>If the text is longer than one line, it will be truncated and end with an ellipsis <code>…</code>.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p class="truncate-text"&gt;If I exceed one line's width, I will be truncated.&lt;/p&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.truncate-text {
