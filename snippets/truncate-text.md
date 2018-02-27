@@ -1,6 +1,6 @@
 ### Truncate text
 
-If the text is longer than one line, it will be truncated and end with an ellipsis `...`.
+If the text is longer than one line, it will be truncated and end with an ellipsis `…`.
 
 #### HTML
 
