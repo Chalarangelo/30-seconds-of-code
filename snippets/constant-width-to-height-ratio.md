@@ -38,7 +38,7 @@ Resize your browser window to see the proportion of the element remain the same.
 #### Explanation
 
 `padding-top` and `padding-bottom` can be used as an alternative to `height` such that the percentage value
-causes an element's height to become a percentage of its width, i.e. `50%` means the height will be 50% of the element's width. This allows its proportion to remain constant.
+causes an element's height to become a percentage of its parent's width, i.e. `50%` means the height will be 50% of the parent element's width, which means it acts the same as `width`. This allows its proportion to remain constant.
 
 #### Browser support
 
