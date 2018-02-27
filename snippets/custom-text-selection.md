@@ -16,7 +16,7 @@ Changes the styling of text selection.
   color: black;
 }
 .custom-text-selection::selection {
-  background: red;
+  background: deeppink;
   color: white;
 }
 ```
@@ -24,32 +24,23 @@ Changes the styling of text selection.
 #### Demo
 
 <div class="snippet-demo">
-  <p>Global aquamarine selection color</p>
-  <p class="snippet-demo__custom-text-selection">Red selection color.</p>
+  <p class="snippet-demo__custom-text-selection">Select some of this text.</p>
 </div>
 
 <style>
-::selection {
-  background: aquamarine;
-  color: black;
-}
-::-moz-selection {
-  background: aquamarine;
-  color: black;
-}
 .snippet-demo__custom-text-selection::selection {
-  background: red;
+  background: deeppink;
   color: white;
 }
 .snippet-demo__custom-text-selection::-moz-selection {
-  background: red;
+  background: deeppink;
   color: white;
 }
 </style>
 
 #### Explanation
 
-`::selection` and `::-moz-selection` defines a pseudo selector on an element to style text within it when selected. Note that if you don't combine any other selector your style will be applied at document root level, to any selectable element.
+`::selection` defines a pseudo selector on an element to style text within it when selected. Note that if you don't combine any other selector your style will be applied at document root level, to any selectable element.
 
 #### Browser support
 

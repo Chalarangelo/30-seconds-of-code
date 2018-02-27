@@ -71,7 +71,7 @@ require = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({18:[function(require,module,exports) {
+})({13:[function(require,module,exports) {
 var bundleURL = null;
 function getBundleURLCached() {
   if (!bundleURL) {
@@ -101,7 +101,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],15:[function(require,module,exports) {
+},{}],10:[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -132,13 +132,13 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":18}],20:[function(require,module,exports) {
+},{"./bundle-url":13}],14:[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
-},{"_css_loader":15}],19:[function(require,module,exports) {
+},{"_css_loader":10}],15:[function(require,module,exports) {
 var global = (1,eval)("this");
 
 /* **********************************************
@@ -979,19 +979,19 @@ Prism.languages.js = Prism.languages.javascript;
 
 })();
 
-},{}],10:[function(require,module,exports) {
+},{}],6:[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
-},{"_css_loader":15}],9:[function(require,module,exports) {
+},{"_css_loader":10}],5:[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
-},{"_css_loader":15}],11:[function(require,module,exports) {
+},{"_css_loader":10}],7:[function(require,module,exports) {
 var e = Element.prototype;
 if (!e.matches) {
   e.matches = e.matchesSelector || e.msMatchesSelector || e.webkitMatchesSelector || e.mozMatchesSelector;
@@ -1007,7 +1007,7 @@ if (!e.closest) {
     return null;
   };
 }
-},{}],17:[function(require,module,exports) {
+},{}],11:[function(require,module,exports) {
 var global = (1,eval)("this");
 var _typeof2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -1200,7 +1200,7 @@ var _typeof2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbo
     };
   }();
 });
-},{}],16:[function(require,module,exports) {
+},{}],12:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1262,7 +1262,7 @@ if (/iPhone|iPad|iPod/.test(navigator.platform) && !window.MSStream) {
     });
   }
 })();
-},{}],12:[function(require,module,exports) {
+},{}],8:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1308,7 +1308,7 @@ document.addEventListener('click', function (e) {
 });
 
 exports.default = { toggle: toggle };
-},{"../deps/jump":17,"../deps/utils":16}],13:[function(require,module,exports) {
+},{"../deps/jump":11,"../deps/utils":12}],9:[function(require,module,exports) {
 'use strict';
 
 var _jump = require('../deps/jump');
@@ -1330,7 +1330,7 @@ backToTopButton.onclick = function () {
     easing: _utils.easeOutQuint
   });
 };
-},{"../deps/jump":17,"../deps/utils":16}],7:[function(require,module,exports) {
+},{"../deps/jump":11,"../deps/utils":12}],3:[function(require,module,exports) {
 'use strict';
 
 require('normalize.css');
@@ -1352,7 +1352,7 @@ var _BackToTopButton = require('./components/BackToTopButton');
 var _BackToTopButton2 = _interopRequireDefault(_BackToTopButton);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"normalize.css":20,"prismjs":19,"../css/deps/prism.css":10,"../css/index.scss":9,"./deps/polyfills":11,"./components/Menu":12,"./components/BackToTopButton":13}],21:[function(require,module,exports) {
+},{"normalize.css":14,"prismjs":15,"../css/deps/prism.css":6,"../css/index.scss":5,"./deps/polyfills":7,"./components/Menu":8,"./components/BackToTopButton":9}],16:[function(require,module,exports) {
 
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
@@ -1374,7 +1374,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '57220' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '58660' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -1475,5 +1475,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.require, id);
   });
 }
-},{}]},{},[21,7])
+},{}]},{},[16,3])
 //# sourceMappingURL=/dist/f06fd0495a34430f242f7611190395d6.map
