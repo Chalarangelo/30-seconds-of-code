@@ -69,7 +69,7 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
 
 #### Browser support
 
-<span class="snippet__support-note">✅ No caveats.</span>
+<span class="snippet__support-note">⚠️ When selecting the text some browsers will also select the text shadow, making the text look very heavy.</span>
 
 * https://caniuse.com/#feat=css-textshadow
 * https://caniuse.com/#feat=css-gradients
