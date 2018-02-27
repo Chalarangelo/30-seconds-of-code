@@ -17,6 +17,7 @@
       </button>
       <div class="sidebar__links">
         <a class="sidebar__link" href="#clearfix">Clearfix</a>
+        <a class="sidebar__link" href="#constant-width-to-height-ratio">Constant width to height ratio</a>
         <a class="sidebar__link" href="#custom-text-selection">Custom text selection</a>
         <a class="sidebar__link" href="#easing-variables">Easing variables</a>
         <a class="sidebar__link" href="#etched-text">Etched text</a>
@@ -98,6 +99,40 @@
               </div>
             </div>
             <p><span class="snippet__support-note">✅ No caveats.</span></p>
+          </div>
+          <div class="snippet">
+            <h3 id="constant-width-to-height-ratio">Constant width to height ratio</h3>
+            <p>Given an element of variable width, it will ensure its height remains proportionate in a responsive fashion (i.e., its width to height ratio remains constant).</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="constant-width-to-height-ratio"&gt;&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.constant-width-to-height-ratio {
+  background: #333;
+  width: 50%;
+  padding-top: 50%;
+}
+</code></pre>
+            <h4 data-type="Demo">Demo</h4>
+            <p>Resize your browser window to see the proportion of the element remain the same.</p>
+            <div class="snippet-demo">
+              <div class="snippet-demo__constant-width-to-height-ratio"></div>
+            </div>
+            <style>
+              .snippet-demo__constant-width-to-height-ratio {
+                background: #333;
+                width: 50%;
+                padding-top: 50%;
+              }
+            </style>
+            <h4 data-type="Explanation">Explanation</h4>
+            <p><code>padding-top</code> and <code>padding-bottom</code> can be used as an alternative to <code>height</code> such that the percentage value causes an element's height to become a percentage of its width, i.e. <code>50%</code> means the height
+              will be 50% of the element's width. This allows its proportion to remain constant.</p>
+            <h4 data-type="Browser support">Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                99+%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">⚠️ <code>padding-top</code> pushes any content within the element to the bottom.</span></p>
           </div>
           <div class="snippet">
             <h3 id="custom-text-selection">Custom text selection</h3>
