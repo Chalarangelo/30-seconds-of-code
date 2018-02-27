@@ -13,6 +13,11 @@
 - You can import these snippets into your text editor of choice (VSCode, Atom, Sublime) using the files found in [this repo](https://github.com/Rob-Rychs/30-seconds-of-code-texteditorsnippets).
 - You can import these snippets into Alfred 3, using [this file](https://github.com/lslvxy/30-seconds-of-code-alfredsnippets).
 
+#### Related
+
+- [30 Seconds of CSS](https://atomiks.github.io/30-seconds-of-css/)
+- [30 Seconds of Python](https://github.com/kriadmin/30-seconds-of-python-code)
+
 #### Package
 
 ⚠️ **WARNING:** Snippets are not production ready.
