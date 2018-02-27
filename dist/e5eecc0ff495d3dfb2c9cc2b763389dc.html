@@ -1,17 +1,16 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>30 Seconds of CSS</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-    <script src="./src/js/index.js" defer=""></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="/dist/527b39bfa5c417dbf84620127ec95368.png">
+    <script src="/dist/f06fd0495a34430f242f7611190395d6.js" defer=""></script>
     <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
-  </head>
+  <link rel="stylesheet" href="/dist/f06fd0495a34430f242f7611190395d6.css"></head>
   <body>
-    <button class="back-to-top-button" aria-label="back to top">↑</button>
-    <nav class="sidebar" aria-label="Table of Contents">
-      <button class="hamburger hamburger--spin sidebar__menu" type="button" aria-label="Menu">
+    <button class="back-to-top-button">↑</button>
+    <aside class="sidebar">
+      <button class="hamburger hamburger--spin sidebar__menu" type="button">
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
         </span>
@@ -20,7 +19,6 @@
         <a class="sidebar__link" href="#clearfix">Clearfix</a>
         <a class="sidebar__link" href="#constant-width-to-height-ratio">Constant width to height ratio</a>
         <a class="sidebar__link" href="#custom-text-selection">Custom text selection</a>
-        <a class="sidebar__link" href="#donut-spinner">Donut spinner</a>
         <a class="sidebar__link" href="#easing-variables">Easing variables</a>
         <a class="sidebar__link" href="#etched-text">Etched text</a>
         <a class="sidebar__link" href="#gradient-text">Gradient text</a>
@@ -35,19 +33,21 @@
         <a class="sidebar__link" href="#triangle">Triangle</a>
         <a class="sidebar__link" href="#truncate-text">Truncate text</a>
       </div>
-    </nav>
+    </aside>
     <div class="content-wrapper">
       <header class="header">
         <div class="container">
-          <img class="header__logo" draggable="false" src="./src/img/logo.png">
+          <img class="header__logo" draggable="false" src="/dist/5f62c8cc1947e40c7e328854a3026c04.png">
           <h1 class="header__heading">30 Seconds of <strong class="header__css">CSS</strong></h1>
           <p class="header__description">
             A curated collection of useful CSS snippets you can understand in 30 seconds or less.
           </p>
-          <a class="github-button header__github-button" href="https://github.com/atomiks/30-seconds-of-css" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star atomiks/30-seconds-of-css on GitHub">Star</a>
+
+          <!-- Place this tag where you want the button to render. -->
+          <a class="github-button header__github-button" href="https://github.com/atomiks/30-seconds-of-css" data-icon="octicon-star" data-size="large" aria-label="Star atomiks/30-seconds-of-css on GitHub">Star</a>
         </div>
       </header>
-      <main class="main" id="main">
+      <main class="main">
         <div class="container">
           <div class="snippet">
             <h3 id="clearfix">Clearfix</h3>
@@ -185,66 +185,6 @@ in any specification.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=css-selection" target="_blank">https://caniuse.com/#feat=css-selection</a>
-              </li>
-            </ul>
-          </div>
-          <div class="snippet">
-            <h3 id="donut-spinner">Donut spinner</h3>
-            <p>Creates a donut spinner that can be used to indicate the loading of content.</p>
-            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="donut"&gt;&lt;/div&gt;
-</code></pre>
-            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">@keyframes donut-spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-.donut {
-  display: inline-block;
-  border: 4px solid rgba(0, 0, 0, 0.25);
-  border-left-color: blue;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  animation: donut-spin 1.2s linear infinite;
-}
-</code></pre>
-            <h4 data-type="Demo">Demo</h4>
-            <div class="snippet-demo">
-              <div class="snippet-demo__donut-spinner"></div>
-            </div>
-            <style>
-              @keyframes snippet-demo__donut-spin {
-                0% {
-                  transform: rotate(0deg);
-                }
-                100% {
-                  transform: rotate(360deg);
-                }
-              }
-              .snippet-demo__donut-spinner {
-                display: inline-block;
-                border: 4px solid rgba(0, 0, 0, 0.25);
-                border-left-color: blue;
-                border-radius: 50%;
-                width: 20px;
-                height: 20px;
-                animation: snippet-demo__donut-spin 1.2s linear infinite;
-              }
-            </style>
-            <h4 data-type="Explanation">Explanation</h4>
-            <p>Use a semi-transparent <code>border</code> for the whole element, except one side that will serve as the loading indicator for the donut. Use <code>animation</code> to rotate the element.</p>
-            <h4 data-type="Browser support">Browser support</h4>
-            <div>
-              <div class="snippet__browser-support">
-                94.8%
-              </div>
-            </div>
-            <p><span class="snippet__support-note">⚠️ Requires prefixes for full support.</span></p>
-            <ul>
-              <li>
-                <a href="https://caniuse.com/#feat=css-animation" target="_blank">https://caniuse.com/#feat=css-animation</a>
-              </li>
-              <li>
-                <a href="https://caniuse.com/#feat=transforms2d" target="_blank">https://caniuse.com/#feat=transforms2d</a>
               </li>
             </ul>
           </div>
@@ -679,7 +619,6 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
   width: 300px;
   height: 25px;
   background: linear-gradient(rgba(255, 255, 255, 0.001), white); /* transparent keyword is broken in Safari */
-  pointer-events: none;
 }
 .overflow-scroll-gradient__scroller {
   overflow-y: scroll;
@@ -710,7 +649,6 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 width: 300px;
                 height: 25px;
                 bottom: 0;
-                pointer-events: none;
               }
               .snippet-demo__overflow-scroll-gradient__scroller {
                 overflow-y: scroll;
@@ -727,14 +665,13 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
             </script>
             <h4 data-type="Explanation">Explanation</h4>
             <ol>
-              <li><code>position: relative</code> on the parent establishes a Cartesian positioning context for psuedo-elements.</li>
+              <li><code>position: relative</code> on the parent establishes a Cartesian positioning context for psuedo elements.</li>
               <li><code>::after</code> defines a pseudo element.</li>
               <li><code>background-image: linear-gradient(...)</code> adds a linear gradient that fades from transparent to white (top to bottom).</li>
               <li><code>position: absolute</code> takes the pseudo element out of the flow of the document and positions it in relation to the parent.</li>
               <li><code>width: 300px</code> matches the size of the scrolling element (which is a child of the parent that has the pseudo element).</li>
-              <li><code>height: 25px</code> is the height of the fading gradient psuedo-element, which should be kept relatively small.</li>
-              <li><code>bottom: 0</code> positions the pseudo-element at the bottom of the parent.</li>
-              <li><code>pointer-events: none</code> specifies that the psuedo-element cannot be a target of mouse events, allowing text behind it to still be selectable/interactive.</li>
+              <li><code>height: 25px</code> is the height of the fading gradient psuedo element, which should be kept relatively small.</li>
+              <li><code>bottom: 0</code> positions the pseudo element at the bottom of the parent.</li>
             </ol>
             <h4 data-type="Browser support">Browser support</h4>
             <div>
@@ -825,7 +762,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.pretty-text-underline {
   display: inline;
-  font-size: 18px;
+  font-size: 1.25rem;
   text-shadow: 1px 1px 0 #f5f6f9,
     -1px 1px 0 #f5f6f9,
     -1px -1px 0 #f5f6f9,
@@ -1104,7 +1041,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 98.1%
               </div>
             </div>
-            <p><span class="snippet__support-note">⚠️ Only works for single line elements.</span></p>
+            <p><span class="snippet__support-note">✅ No caveats.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=text-overflow" target="_blank">https://caniuse.com/#feat=text-overflow</a>
