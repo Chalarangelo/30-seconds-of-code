@@ -1,0 +1,44 @@
+### Clearfix
+
+Resets the box-model so that `width`s and `height`s are not affected by their `border`s and/or `padding`.
+
+#### CSS
+
+```css
+.html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+```
+
+#### Demo
+
+<div class="box-sizing-reset">Demo</div>
+
+<style>
+.box-sizing-reset {
+  box-sizing: border-box;
+  width: 200px;
+  padding: 1.5em;
+  color: #000;
+  font-family: sans-serif;
+  background-color: #ccc;
+  border: 5px solid;
+}
+</style>
+
+#### Explanation
+
+1. `box-sizing: border-box` makes the addition of `padding` or `border`s not affect an elements `width` and/or `height`.
+2. `box-sizing: inherit` makes an element respect its parents `box-sizing` rule.
+
+#### Browser support
+
+<span class="snippet__support-note">✅ No caveats.</span>
+
+* https://caniuse.com/#feat=css3-boxsizing
