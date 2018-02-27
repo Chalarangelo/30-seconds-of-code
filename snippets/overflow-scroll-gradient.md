@@ -25,6 +25,7 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
   width: 300px;
   height: 25px;
   background: linear-gradient(rgba(255, 255, 255, 0.001), white); /* transparent keyword is broken in Safari */
+  pointer-events: none;
 }
 .overflow-scroll-gradient__scroller {
   overflow-y: scroll;
@@ -58,6 +59,7 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
   width: 300px;
   height: 25px;
   bottom: 0;
+  pointer-events: none;
 }
 .snippet-demo__overflow-scroll-gradient__scroller {
   overflow-y: scroll;
