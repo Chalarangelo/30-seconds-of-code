@@ -12,8 +12,8 @@ Creates a donut spinner that can be used to indicate the loading of content.
 
 ```css
 @keyframes donut-spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg);}
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 .donut {
   display: inline-block;
