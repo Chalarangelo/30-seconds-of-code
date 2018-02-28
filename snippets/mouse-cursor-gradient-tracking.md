@@ -2,6 +2,8 @@
 
 A hover effect where the gradient follows the mouse cursor.
 
+<small class="snippet__credit">**Credit:** [Tobias Reich](https://codepen.io/electerious/pen/MQrRxX)</small>
+
 #### HTML
 
 ```html
