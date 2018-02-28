@@ -21,6 +21,7 @@
         <a class="sidebar__link" href="#clearfix">Clearfix</a>
         <a class="sidebar__link" href="#constant-width-to-height-ratio">Constant width to height ratio</a>
         <a class="sidebar__link" href="#custom-text-selection">Custom text selection</a>
+        <a class="sidebar__link" href="#donut-spinner">Donut spinner</a>
         <a class="sidebar__link" href="#easing-variables">Easing variables</a>
         <a class="sidebar__link" href="#etched-text">Etched text</a>
         <a class="sidebar__link" href="#gradient-text">Gradient text</a>
@@ -171,6 +172,66 @@ in any specification.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=css-selection" target="_blank">https://caniuse.com/#feat=css-selection</a>
+              </li>
+            </ul>
+          </div>
+          <div class="snippet">
+            <h3 id="donut-spinner">Donut spinner</h3>
+            <p>Creates a donut spinner that can be used to indicate the loading of content.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="donut"&gt;&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">@keyframes donut-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg);}
+}
+.donut {
+  display: inline-block;
+  border: 4px solid rgba(0, 0, 0, 0.25);
+  border-left-color: blue;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: donut-spin 1.2s linear infinite;
+}
+</code></pre>
+            <h4 data-type="Demo">Demo</h4>
+            <div class="snippet-demo">
+              <div class="snippet-demo__donut-spinner"></div>
+            </div>
+            <style>
+              @keyframes snippet-demo__donut-spin {
+                0% {
+                  transform: rotate(0deg);
+                }
+                100% {
+                  transform: rotate(360deg);
+                }
+              }
+              .snippet-demo__donut-spinner {
+                display: inline-block;
+                border: 4px solid rgba(0, 0, 0, 0.25);
+                border-left-color: blue;
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+                animation: snippet-demo__donut-spin 1.2s linear infinite;
+              }
+            </style>
+            <h4 data-type="Explanation">Explanation</h4>
+            <p>Use a semi-transparent <code>border</code> for the whole element, except one side that will serve as the loading indicator for the donut. Use <code>animation</code> to rotate the element.</p>
+            <h4 data-type="Browser support">Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                94.8%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">⚠️ Requires prefixes for full support.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=css-animation" target="_blank">https://caniuse.com/#feat=css-animation</a>
+              </li>
+              <li>
+                <a href="https://caniuse.com/#feat=transforms2d" target="_blank">https://caniuse.com/#feat=transforms2d</a>
               </li>
             </ul>
           </div>
