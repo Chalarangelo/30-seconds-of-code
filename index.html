@@ -31,6 +31,7 @@
         <a class="sidebar__link" href="#overflow-scroll-gradient">Overflow scroll gradient</a>
         <a class="sidebar__link" href="#popout-menu">Popout menu</a>
         <a class="sidebar__link" href="#pretty-text-underline">Pretty text underline</a>
+        <a class="sidebar__link" href="#scrollbars-styling">Scrollbars styling</a>
         <a class="sidebar__link" href="#shape-separator">Shape separator</a>
         <a class="sidebar__link" href="#system-font-stack">System font stack</a>
         <a class="sidebar__link" href="#triangle">Triangle</a>
@@ -915,6 +916,76 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
               </li>
               <li>
                 <a href="https://caniuse.com/#feat=css-gradients" target="_blank">https://caniuse.com/#feat=css-gradients</a>
+              </li>
+            </ul>
+          </div>
+          <div class="snippet">
+            <h3 id="scrollbars-styling">Scrollbars styling</h3>
+            <p>Customise scrollbars style for the document and elements with overflow scrollable, on webkit platforms.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="custom-scroll"&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui iure, consequatur velit sit?&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+</code></pre>
+            <h4 data-type="Demo">Demo</h4>
+            <div class="snippet-demo">
+              <div class="snippet-demo__scrollbars-styling">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui iure, consequatur velit sit?
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui iure, consequatur velit sit?
+                </p>
+              </div>
+            </div>
+            <style>
+              .snippet-demo__scrollbars-styling {
+                height: 100px;
+                overflow: auto;
+              }
+              .snippet-demo__scrollbars-styling::-webkit-scrollbar {
+                width: 8px;
+              }
+              .snippet-demo__scrollbars-styling::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+                border-radius: 10px;
+              }
+              .snippet-demo__scrollbars-styling::-webkit-scrollbar-thumb {
+                border-radius: 10px;
+                box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+              }
+            </style>
+            <h4 data-type="Explanation">Explanation</h4>
+            <ol>
+              <li><code>::-webkit-scrollbar</code> target the whole scrollbar element.</li>
+              <li><code>::-webkit-scrollbar-track</code> target only the scrollbar track.</li>
+              <li><code>::-webkit-scrollbar-thumb</code> Allow you to target and style the scrollbar thumb.</li>
+            </ol>
+            <p>There are many other pseudo elements that you can use to style scrollbars. More info about this on the
+              <a href="https://webkit.org/blog/363/styling-scrollbars/" target="_blank">WebKit Blog</a>
+            </p>
+            <h4 data-type="Browser support">Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                87.3%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">⚠️ Currently scrollbar styling doesn't appear to be on any standards track.
+</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=css-scrollbar" target="_blank">https://caniuse.com/#feat=css-scrollbar</a>
               </li>
             </ul>
           </div>
