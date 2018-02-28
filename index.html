@@ -1,3 +1,5 @@
+
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -8,9 +10,9 @@
     <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
   </head>
   <body>
-    <button class="back-to-top-button">↑</button>
-    <aside class="sidebar">
-      <button class="hamburger hamburger--spin sidebar__menu" type="button">
+    <button class="back-to-top-button" aria-label="back to top">↑</button>
+    <nav class="sidebar" aria-label="Table of Contents">
+      <button class="hamburger hamburger--spin sidebar__menu" type="button" aria-label="Menu">
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
         </span>
@@ -34,7 +36,7 @@
         <a class="sidebar__link" href="#triangle">Triangle</a>
         <a class="sidebar__link" href="#truncate-text">Truncate text</a>
       </div>
-    </aside>
+    </nav>
     <div class="content-wrapper">
       <header class="header">
         <div class="container">
@@ -43,12 +45,10 @@
           <p class="header__description">
             A curated collection of useful CSS snippets you can understand in 30 seconds or less.
           </p>
-
-          <!-- Place this tag where you want the button to render. -->
-          <a class="github-button header__github-button" href="https://github.com/atomiks/30-seconds-of-css" data-icon="octicon-star" data-size="large" aria-label="Star atomiks/30-seconds-of-css on GitHub">Star</a>
+          <a class="github-button header__github-button" href="https://github.com/atomiks/30-seconds-of-css" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star atomiks/30-seconds-of-css on GitHub">Star</a>
         </div>
       </header>
-      <main class="main">
+      <main class="main" id="main">
         <div class="container">
           <div class="snippet">
             <h3 id="clearfix">Clearfix</h3>
@@ -125,8 +125,8 @@
               }
             </style>
             <h4 data-type="Explanation">Explanation</h4>
-            <p><code>padding-top</code> and <code>padding-bottom</code> can be used as an alternative to <code>height</code> such that the percentage value causes an element's height to become a percentage of its width, i.e. <code>50%</code> means the height
-              will be 50% of the element's width. This allows its proportion to remain constant.</p>
+            <p><code>padding-top</code> and <code>padding-bottom</code> can be used as an alternative to <code>height</code> such that the percentage value causes an element's height to become a percentage of its parent's width, i.e. <code>50%</code> means
+              the height will be 50% of the parent element's width, which means it acts the same as <code>width</code>. This allows its proportion to remain constant.</p>
             <h4 data-type="Browser support">Browser support</h4>
             <div>
               <div class="snippet__browser-support">
@@ -666,6 +666,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
   width: 300px;
   height: 25px;
   background: linear-gradient(rgba(255, 255, 255, 0.001), white); /* transparent keyword is broken in Safari */
+  pointer-events: none;
 }
 .overflow-scroll-gradient__scroller {
   overflow-y: scroll;
@@ -696,6 +697,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 width: 300px;
                 height: 25px;
                 bottom: 0;
+                pointer-events: none;
               }
               .snippet-demo__overflow-scroll-gradient__scroller {
                 overflow-y: scroll;
@@ -712,13 +714,14 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
             </script>
             <h4 data-type="Explanation">Explanation</h4>
             <ol>
-              <li><code>position: relative</code> on the parent establishes a Cartesian positioning context for psuedo elements.</li>
+              <li><code>position: relative</code> on the parent establishes a Cartesian positioning context for psuedo-elements.</li>
               <li><code>::after</code> defines a pseudo element.</li>
               <li><code>background-image: linear-gradient(...)</code> adds a linear gradient that fades from transparent to white (top to bottom).</li>
               <li><code>position: absolute</code> takes the pseudo element out of the flow of the document and positions it in relation to the parent.</li>
               <li><code>width: 300px</code> matches the size of the scrolling element (which is a child of the parent that has the pseudo element).</li>
-              <li><code>height: 25px</code> is the height of the fading gradient psuedo element, which should be kept relatively small.</li>
-              <li><code>bottom: 0</code> positions the pseudo element at the bottom of the parent.</li>
+              <li><code>height: 25px</code> is the height of the fading gradient psuedo-element, which should be kept relatively small.</li>
+              <li><code>bottom: 0</code> positions the pseudo-element at the bottom of the parent.</li>
+              <li><code>pointer-events: none</code> specifies that the psuedo-element cannot be a target of mouse events, allowing text behind it to still be selectable/interactive.</li>
             </ol>
             <h4 data-type="Browser support">Browser support</h4>
             <div>
@@ -809,15 +812,19 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.pretty-text-underline {
   display: inline;
-  font-size: 1.25rem;
+  font-size: 18px;
   text-shadow: 1px 1px 0 #f5f6f9,
     -1px 1px 0 #f5f6f9,
     -1px -1px 0 #f5f6f9,
     1px -1px 0 #f5f6f9;
   background-image: linear-gradient(90deg, currentColor 100%, transparent 100%);
-  background-position: 0 1.04em;
+  background-position: 0 18px;
   background-repeat: repeat-x;
   background-size: 1px 1px;
+}
+.pretty-text-underline::-moz-selection {
+  background-color: rgba(0, 150, 255, 0.3);
+  text-shadow: none;
 }
 .pretty-text-underline::selection {
   background-color: rgba(0, 150, 255, 0.3);
@@ -834,9 +841,13 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 font-size: 18px !important;
                 text-shadow: 1px 1px 0 #f5f6f9, -1px 1px 0 #f5f6f9, -1px -1px 0 #f5f6f9, 1px -1px 0 #f5f6f9;
                 background-image: linear-gradient(90deg, currentColor 100%, transparent 100%);
-                background-position: 0 1.04em;
+                background-position: 0 18px;
                 background-repeat: repeat-x;
                 background-size: 1px 1px;
+              }
+              .snippet-demo__pretty-text-underline::-moz-selection {
+                background-color: rgba(0, 150, 255, 0.3);
+                text-shadow: none;
               }
               .snippet-demo__pretty-text-underline::selection {
                 background-color: rgba(0, 150, 255, 0.3);
@@ -858,7 +869,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 94.8%
               </div>
             </div>
-            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <p><span class="snippet__support-note">⚠️ Firefox requires a vendor prefix for the selection pseudo-selector to work.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=css-textshadow" target="_blank">https://caniuse.com/#feat=css-textshadow</a>
@@ -1044,7 +1055,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
           </div>
           <div class="snippet">
             <h3 id="truncate-text">Truncate text</h3>
-            <p>If the text is longer than one line, it will be truncated and end with an ellipsis <code>...</code>.</p>
+            <p>If the text is longer than one line, it will be truncated and end with an ellipsis <code>…</code>.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p class="truncate-text"&gt;If I exceed one line's width, I will be truncated.&lt;/p&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.truncate-text {
@@ -1080,7 +1091,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 98.1%
               </div>
             </div>
-            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <p><span class="snippet__support-note">⚠️ Only works for single line elements.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=text-overflow" target="_blank">https://caniuse.com/#feat=text-overflow</a>

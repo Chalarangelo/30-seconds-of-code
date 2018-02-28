@@ -14,15 +14,19 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
 ```css
 .pretty-text-underline {
   display: inline;
-  font-size: 1.25rem;
+  font-size: 18px;
   text-shadow: 1px 1px 0 #f5f6f9,
     -1px 1px 0 #f5f6f9,
     -1px -1px 0 #f5f6f9,
     1px -1px 0 #f5f6f9;
   background-image: linear-gradient(90deg, currentColor 100%, transparent 100%);
-  background-position: 0 1.04em;
+  background-position: 0 18px;
   background-repeat: repeat-x;
   background-size: 1px 1px;
+}
+.pretty-text-underline::-moz-selection {
+  background-color: rgba(0, 150, 255, 0.3);
+  text-shadow: none;
 }
 .pretty-text-underline::selection {
   background-color: rgba(0, 150, 255, 0.3);
@@ -45,9 +49,14 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
     -1px -1px 0 #f5f6f9,
     1px -1px 0 #f5f6f9;
   background-image: linear-gradient(90deg, currentColor 100%, transparent 100%);
-  background-position: 0 1.04em;
+  background-position: 0 18px;
   background-repeat: repeat-x;
   background-size: 1px 1px;
+}
+
+.snippet-demo__pretty-text-underline::-moz-selection {
+  background-color: rgba(0, 150, 255, 0.3);
+  text-shadow: none;
 }
 
 .snippet-demo__pretty-text-underline::selection {
@@ -69,7 +78,7 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
 
 #### Browser support
 
-<span class="snippet__support-note">✅ No caveats.</span>
+<span class="snippet__support-note">⚠️ Firefox requires a vendor prefix for the selection pseudo-selector to work.</span>
 
 * https://caniuse.com/#feat=css-textshadow
 * https://caniuse.com/#feat=css-gradients

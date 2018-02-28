@@ -25,6 +25,7 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
   width: 300px;
   height: 25px;
   background: linear-gradient(rgba(255, 255, 255, 0.001), white); /* transparent keyword is broken in Safari */
+  pointer-events: none;
 }
 .overflow-scroll-gradient__scroller {
   overflow-y: scroll;
@@ -58,6 +59,7 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
   width: 300px;
   height: 25px;
   bottom: 0;
+  pointer-events: none;
 }
 .snippet-demo__overflow-scroll-gradient__scroller {
   overflow-y: scroll;
@@ -76,15 +78,16 @@ document.querySelector('.snippet-demo__overflow-scroll-gradient__scroller').inne
 
 #### Explanation
 
-1. `position: relative` on the parent establishes a Cartesian positioning context for psuedo elements.
+1. `position: relative` on the parent establishes a Cartesian positioning context for psuedo-elements.
 2. `::after` defines a pseudo element.
 3. `background-image: linear-gradient(...)` adds a linear gradient that fades from transparent to white
 (top to bottom).
 4. `position: absolute` takes the pseudo element out of the flow of the document and positions it in relation to the parent.
 5. `width: 300px` matches the size of the scrolling element (which is a child of the parent that has
   the pseudo element).
-6. `height: 25px` is the height of the fading gradient psuedo element, which should be kept relatively small.
-7. `bottom: 0` positions the pseudo element at the bottom of the parent.
+6. `height: 25px` is the height of the fading gradient psuedo-element, which should be kept relatively small.
+7. `bottom: 0` positions the pseudo-element at the bottom of the parent.
+8. `pointer-events: none` specifies that the psuedo-element cannot be a target of mouse events, allowing text behind it to still be selectable/interactive.
 
 #### Browser support
 
