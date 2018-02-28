@@ -68,8 +68,7 @@ for (const snippetFile of fs.readdirSync(SNIPPETS_PATH)) {
 }
 
 // doctype declaration gets stripped, add it back in
-const html = `
-<!DOCTYPE html>
+const html = `<!DOCTYPE html>
 ${pretty(document.documentElement.outerHTML, { ocd: true })}
 `
 
