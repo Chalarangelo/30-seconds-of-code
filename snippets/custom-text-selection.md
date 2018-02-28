@@ -11,8 +11,12 @@ Changes the styling of text selection.
 #### CSS
 
 ```css
+::selection {
+  background: aquamarine;
+  color: black;
+}
 .custom-text-selection::selection {
-  background: red;
+  background: deeppink;
   color: white;
 }
 ```
@@ -25,18 +29,18 @@ Changes the styling of text selection.
 
 <style>
 .snippet-demo__custom-text-selection::selection {
-  background: red;
+  background: deeppink;
   color: white;
 }
 .snippet-demo__custom-text-selection::-moz-selection {
-  background: red;
+  background: deeppink;
   color: white;
 }
 </style>
 
 #### Explanation
 
-`::selection` defines a pseudo selector on an element to style text within it when selected.
+`::selection` defines a pseudo selector on an element to style text within it when selected. Note that if you don't combine any other selector your style will be applied at document root level, to any selectable element.
 
 #### Browser support
 
