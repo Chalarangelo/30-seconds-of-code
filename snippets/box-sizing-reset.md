@@ -1,4 +1,4 @@
-### Clearfix
+### Box-sizing Reset
 
 Resets the box-model so that `width`s and `height`s are not affected by their `border`s and/or `padding`.
 
@@ -18,10 +18,12 @@ Resets the box-model so that `width`s and `height`s are not affected by their `b
 
 #### Demo
 
-<div class="box-sizing-reset">Demo</div>
+<div class="snippet-demo">
+  <div class="snippet-demo__box-sizing-reset">Demo</div>
+</div>
 
 <style>
-.box-sizing-reset {
+.snippet-demo__box-sizing-reset {
   box-sizing: border-box;
   width: 200px;
   padding: 1.5em;
