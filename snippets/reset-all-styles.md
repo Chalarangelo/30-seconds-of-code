@@ -1,6 +1,6 @@
 ### Reset all styles
 
-Reset all styles to default values with one css property.
+Reset all styles to default values with one css property. This will no affect `direction` and `unicode-bidi` properties.
 
 #### HTML
 
