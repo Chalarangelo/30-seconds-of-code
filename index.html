@@ -20,6 +20,7 @@
         <a class="sidebar__link" href="#clearfix">Clearfix</a>
         <a class="sidebar__link" href="#constant-width-to-height-ratio">Constant width to height ratio</a>
         <a class="sidebar__link" href="#custom-text-selection">Custom text selection</a>
+        <a class="sidebar__link" href="#disable-selection">Disable selection</a>
         <a class="sidebar__link" href="#donut-spinner">Donut spinner</a>
         <a class="sidebar__link" href="#easing-variables">Easing variables</a>
         <a class="sidebar__link" href="#etched-text">Etched text</a>
@@ -175,6 +176,41 @@ in any specification.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=css-selection" target="_blank">https://caniuse.com/#feat=css-selection</a>
+              </li>
+            </ul>
+          </div>
+          <div class="snippet">
+            <h3 id="disable-selection">Disable selection</h3>
+            <p>Makes the content unselectable.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p&gt;You can select me.&lt;/p&gt;
+&lt;p class="unselectable"&gt;You can't select me!&lt;/p&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.unselectable {
+  user-select: none;
+}
+</code></pre>
+            <h4 data-type="Demo">Demo</h4>
+            <div class="snippet-demo">
+              <p>You can select me.</p>
+              <p class="snippet-demo__disable-selection">You can't select me!</p>
+            </div>
+            <style>
+              .snippet-demo__disable-selection {
+                user-select: none;
+              }
+            </style>
+            <h4 data-type="Explanation">Explanation</h4>
+            <p><code>user-select: none</code> specifies that the text cannot be selected.</p>
+            <h4 data-type="Browser support">Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                86.3%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">⚠️ Requires prefixes for full support.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=user-select-none" target="_blank">https://caniuse.com/#feat=user-select-none</a>
               </li>
             </ul>
           </div>
