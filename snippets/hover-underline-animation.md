@@ -14,7 +14,7 @@ Creates an animated underline effect when the text is hovered over.
 .hover-underline-animation {
   display: inline-block;
   position: relative;
-  color: deeppink;
+  color: #0087ca;
 }
 .hover-underline-animation::after {
   content: '';
@@ -24,7 +24,7 @@ Creates an animated underline effect when the text is hovered over.
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: deeppink;
+  background-color: #0087ca;
   transform-origin: bottom right;
   transition: transform 0.2s ease-out;
 }
