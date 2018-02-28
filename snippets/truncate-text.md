@@ -46,6 +46,6 @@ If the text is longer than one line, it will be truncated and end with an ellips
 
 #### Browser support
 
-<span class="snippet__support-note">✅ No caveats.</span>
+<span class="snippet__support-note">⚠️ Only works for single line elements.</span>
 
 * https://caniuse.com/#feat=text-overflow
