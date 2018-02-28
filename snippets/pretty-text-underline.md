@@ -20,7 +20,7 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
     -1px -1px 0 #f5f6f9,
     1px -1px 0 #f5f6f9;
   background-image: linear-gradient(90deg, currentColor 100%, transparent 100%);
-  background-position: 0 18px;
+  background-position: 0 1.04em;
   background-repeat: repeat-x;
   background-size: 1px 1px;
 }
@@ -49,7 +49,7 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
     -1px -1px 0 #f5f6f9,
     1px -1px 0 #f5f6f9;
   background-image: linear-gradient(90deg, currentColor 100%, transparent 100%);
-  background-position: 0 18px;
+  background-position: 0 1.04em;
   background-repeat: repeat-x;
   background-size: 1px 1px;
 }
