@@ -5,10 +5,8 @@ Makes the content unselectable.
 #### HTML
 
 ```html
-<div>
-  <p>You can select me.</p>
-  <p class="unselectable">You can't select me!</p>
-</div>
+<p>You can select me.</p>
+<p class="unselectable">You can't select me!</p>
 ```
 
 #### CSS
