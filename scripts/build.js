@@ -67,4 +67,10 @@ for (const snippetFile of fs.readdirSync(SNIPPETS_PATH)) {
   )
 }
 
-fs.writeFileSync('./index.html', pretty(document.documentElement.outerHTML, { ocd: true }))
+// doctype declaration gets stripped, add it back in
+const html = `
+<!DOCTYPE html>
+${pretty(document.documentElement.outerHTML, { ocd: true })}
+`
+
+fs.writeFileSync('./index.html', html)
