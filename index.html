@@ -8,9 +8,9 @@
     <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
   </head>
   <body>
-    <button class="back-to-top-button">↑</button>
-    <aside class="sidebar">
-      <button class="hamburger hamburger--spin sidebar__menu" type="button">
+    <button class="back-to-top-button" aria-label="back to top">↑</button>
+    <nav class="sidebar" aria-label="Table of Contents">
+      <button class="hamburger hamburger--spin sidebar__menu" type="button" aria-label="Menu">
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
         </span>
@@ -34,7 +34,7 @@
         <a class="sidebar__link" href="#triangle">Triangle</a>
         <a class="sidebar__link" href="#truncate-text">Truncate text</a>
       </div>
-    </aside>
+    </nav>
     <div class="content-wrapper">
       <header class="header">
         <div class="container">
@@ -48,7 +48,7 @@
           <a class="github-button header__github-button" href="https://github.com/atomiks/30-seconds-of-css" data-icon="octicon-star" data-size="large" aria-label="Star atomiks/30-seconds-of-css on GitHub">Star</a>
         </div>
       </header>
-      <main class="main">
+      <main class="main" id="main">
         <div class="container">
           <div class="snippet">
             <h3 id="clearfix">Clearfix</h3>
