@@ -2,6 +2,8 @@
 
 Creates an animated underline effect when the text is hovered over.
 
+<small>**Credit:** https://flatuicolors.com/</small>
+
 #### HTML
 
 ```html
