@@ -18,6 +18,7 @@
         </span>
       </button>
       <div class="sidebar__links">
+        <a class="sidebar__link" href="#box-sizing-reset">Box-sizing reset</a>
         <a class="sidebar__link" href="#clearfix">Clearfix</a>
         <a class="sidebar__link" href="#constant-width-to-height-ratio">Constant width to height ratio</a>
         <a class="sidebar__link" href="#custom-text-selection">Custom text selection</a>
@@ -52,6 +53,51 @@
       </header>
       <main class="main" id="main">
         <div class="container">
+          <div class="snippet">
+            <h3 id="box-sizing-reset">Box-sizing reset</h3>
+            <p>Resets the box-model so that <code>width</code>s and <code>height</code>s are not affected by their <code>border</code>s or <code>padding</code>.</p>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+</code></pre>
+            <h4 data-type="Demo">Demo</h4>
+            <div class="snippet-demo">
+              <div class="snippet-demo__box-sizing-reset">Demo</div>
+            </div>
+            <style>
+              .snippet-demo__box-sizing-reset {
+                box-sizing: border-box;
+                width: 200px;
+                padding: 1.5em;
+                color: #000;
+                font-family: sans-serif;
+                background-color: #ccc;
+                border: 5px solid;
+              }
+            </style>
+            <h4 data-type="Explanation">Explanation</h4>
+            <ol>
+              <li><code>box-sizing: border-box</code> makes the addition of <code>padding</code> or <code>border</code>s not affect an element's <code>width</code> or <code>height</code>.</li>
+              <li><code>box-sizing: inherit</code> makes an element respect its parent's <code>box-sizing</code> rule.</li>
+            </ol>
+            <h4 data-type="Browser support">Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                98.2%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=css3-boxsizing" target="_blank">https://caniuse.com/#feat=css3-boxsizing</a>
+              </li>
+            </ul>
+          </div>
           <div class="snippet">
             <h3 id="clearfix">Clearfix</h3>
             <p>Ensures that an element self-clears its children.</p>
