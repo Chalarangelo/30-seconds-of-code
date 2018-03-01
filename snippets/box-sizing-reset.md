@@ -1,6 +1,6 @@
-### Box-sizing Reset
+### Box-sizing reset
 
-Resets the box-model so that `width`s and `height`s are not affected by their `border`s and/or `padding`.
+Resets the box-model so that `width`s and `height`s are not affected by their `border`s or `padding`.
 
 #### CSS
 
@@ -36,8 +36,8 @@ Resets the box-model so that `width`s and `height`s are not affected by their `b
 
 #### Explanation
 
-1. `box-sizing: border-box` makes the addition of `padding` or `border`s not affect an elements `width` and/or `height`.
-2. `box-sizing: inherit` makes an element respect its parents `box-sizing` rule.
+1. `box-sizing: border-box` makes the addition of `padding` or `border`s not affect an element's `width` or `height`.
+2. `box-sizing: inherit` makes an element respect its parent's `box-sizing` rule.
 
 #### Browser support
 
