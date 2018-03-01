@@ -17,7 +17,7 @@ A hover effect where the gradient follows the mouse cursor.
 ```css
 .mouse-cursor-gradient-tracking {
   position: relative;
-  background: #2379f7;
+  background: #7983ff;
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
   border: none;
@@ -72,7 +72,7 @@ btn.onmousemove = function (e) {
 <style>
 .snippet-demo__mouse-cursor-gradient-tracking {
   position: relative;
-  background: #2379f7;
+  background: #7983ff;
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
   border: none;

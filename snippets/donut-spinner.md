@@ -17,11 +17,11 @@ Creates a donut spinner that can be used to indicate the loading of content.
 }
 .donut {
   display: inline-block;
-  border: 4px solid rgba(0, 0, 0, 0.25);
-  border-left-color: blue;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #7983ff;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   animation: donut-spin 1.2s linear infinite;
 }
 ```
@@ -39,11 +39,11 @@ Creates a donut spinner that can be used to indicate the loading of content.
 }
 .snippet-demo__donut-spinner {
   display: inline-block;
-  border: 4px solid rgba(0, 0, 0, 0.25);
-  border-left-color: blue;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #7983ff;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   animation: snippet-demo__donut-spin 1.2s linear infinite;
 }
 </style>
