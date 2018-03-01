@@ -49,10 +49,10 @@ Uses an SVG shape to separate two different blocks to create more a interesting 
 
 #### Explanation
 
-1. `position: relative` on the element establishes a Cartesian positioning context for psuedo elements.
+1. `position: relative` on the element establishes a Cartesian positioning context for pseudo elements.
 2. `::after` defines a pseudo element.
 3. `background-image: url(...)` adds the SVG shape (a 24x24 triangle in base64 format) as the background image
-   of the psuedo element, which repeats by default. It must be the same color as the block that is being
+   of the pseudo element, which repeats by default. It must be the same color as the block that is being
    separated.
 4. `position: absolute` takes the pseudo element out of the flow of the document and positions it in relation to the parent.
 5. `width: 100%` ensures the element stretches the entire width of its parent.

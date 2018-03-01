@@ -70,7 +70,7 @@ Creates an animated underline effect when the text is hovered over.
 
 1. `display: inline-block` makes the block `p` an `inline-block` to prevent the underline from
 spanning the entire parent width rather than just the content (text).
-2. `position: relative` on the element establishes a Cartesian positioning context for psuedo-elements.
+2. `position: relative` on the element establishes a Cartesian positioning context for pseudo-elements.
 3. `::after` defines a pseudo-element.
 4. `position: absolute` takes the pseudo element out of the flow of the document and positions it in relation to the parent.
 5. `width: 100%` ensures the pseudo-element spans the entire width of the text block.
