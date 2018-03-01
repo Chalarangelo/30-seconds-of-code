@@ -26,6 +26,7 @@
         <a class="sidebar__link" href="#donut-spinner">Donut spinner</a>
         <a class="sidebar__link" href="#easing-variables">Easing variables</a>
         <a class="sidebar__link" href="#etched-text">Etched text</a>
+        <a class="sidebar__link" href="#evenly-distributed-children">Evenly distributed children</a>
         <a class="sidebar__link" href="#gradient-text">Gradient text</a>
         <a class="sidebar__link" href="#hairline-border">Hairline border</a>
         <a class="sidebar__link" href="#horizontal-and-vertical-centering">Horizontal and vertical centering</a>
@@ -452,6 +453,54 @@ in any specification.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=css-textshadow" target="_blank">https://caniuse.com/#feat=css-textshadow</a>
+              </li>
+            </ul>
+          </div>
+          <div class="snippet">
+            <h3 id="evenly-distributed-children">Evenly distributed children</h3>
+            <p>Evenly distributes child elements within a parent element.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="evenly-distributed-children"&gt;
+  &lt;p&gt;Item1&lt;/p&gt;
+  &lt;p&gt;Item2&lt;/p&gt;
+  &lt;p&gt;Item3&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.evenly-distributed-children {
+  display: flex;
+  justify-content: space-between;
+}
+</code></pre>
+            <h4 data-type="Demo">Demo</h4>
+            <div class="snippet-demo">
+              <div class="snippet-demo__evenly-distributed-children">
+                <p>Item1</p>
+                <p>Item2</p>
+                <p>Item3</p>
+              </div>
+            </div>
+            <style>
+              .snippet-demo__evenly-distributed-children {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+              }
+            </style>
+            <h4 data-type="Explanation">Explanation</h4>
+            <ol>
+              <li><code>display: flex</code> enables flexbox.</li>
+              <li><code>justify-content: space-between</code> evenly distributes child elements horizontally. The first item is positioned at the left edge, while the last item is positioned at the right edge.</li>
+            </ol>
+            <p>Alternatively, use <code>justify-content: space-around</code> to distribute the children with space around them, rather than between them.</p>
+            <h4 data-type="Browser support">Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                97.8%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">⚠️ Needs prefixes for full support.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=flexbox" target="_blank">https://caniuse.com/#feat=flexbox</a>
               </li>
             </ul>
           </div>
