@@ -13,6 +13,7 @@ Customizes the scrollbar style for the document and elements with scrollable ove
 #### CSS
 
 ```css
+/* Document scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -25,6 +26,10 @@ Customizes the scrollbar style for the document and elements with scrollable ove
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
   box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+/* Scrollable element */
+.some-element::webkit-scrollbar {
 }
 ```
 
