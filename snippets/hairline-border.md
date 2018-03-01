@@ -67,7 +67,7 @@ very sharp and crisp.
 
 #### Explanation
 
-1. `box-shadow`, when only using spread, adds a psuedo-border which can use subpixels\*.
+1. `box-shadow`, when only using spread, adds a pseudo-border which can use subpixels\*.
 2. Use `@media (min-resolution: ...)` to check the device pixel ratio (`1ddpx` equals 96 DPI),
    setting the spread of the `box-shadow` equal to `1 / dppx`.
 
