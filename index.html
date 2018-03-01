@@ -21,6 +21,7 @@
         <a class="sidebar__link" href="#box-sizing-reset">Box-sizing reset</a>
         <a class="sidebar__link" href="#clearfix">Clearfix</a>
         <a class="sidebar__link" href="#constant-width-to-height-ratio">Constant width to height ratio</a>
+        <a class="sidebar__link" href="#custom-scrollbar">Custom scrollbar</a>
         <a class="sidebar__link" href="#custom-text-selection">Custom text selection</a>
         <a class="sidebar__link" href="#disable-selection">Disable selection</a>
         <a class="sidebar__link" href="#donut-spinner">Donut spinner</a>
@@ -183,6 +184,79 @@
               </div>
             </div>
             <p><span class="snippet__support-note">⚠️ <code>padding-top</code> pushes any content within the element to the bottom.</span></p>
+          </div>
+          <div class="snippet">
+            <h3 id="custom-scrollbar">Custom scrollbar</h3>
+            <p>Customizes the scrollbar style for the document and elements with scrollable overflow, on WebKit platforms.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="custom-scrollbar"&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui iure, consequatur velit sit?&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">/* Document scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+/* Scrollable element */
+.some-element::webkit-scrollbar {
+}
+</code></pre>
+            <h4 data-type="Demo">Demo</h4>
+            <div class="snippet-demo">
+              <div class="snippet-demo__custom-scrollbar">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui iure, consequatur velit sit?
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui iure, consequatur velit sit?
+                </p>
+              </div>
+            </div>
+            <style>
+              .snippet-demo__custom-scrollbar {
+                height: 100px;
+                overflow: auto;
+              }
+              .snippet-demo__custom-scrollbar::-webkit-scrollbar {
+                width: 8px;
+              }
+              .snippet-demo__custom-scrollbar::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+                border-radius: 10px;
+              }
+              .snippet-demo__custom-scrollbar::-webkit-scrollbar-thumb {
+                border-radius: 10px;
+                box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+              }
+            </style>
+            <h4 data-type="Explanation">Explanation</h4>
+            <ol>
+              <li><code>::-webkit-scrollbar</code> targets the whole scrollbar element.</li>
+              <li><code>::-webkit-scrollbar-track</code> targets only the scrollbar track.</li>
+              <li><code>::-webkit-scrollbar-thumb</code> targets the scrollbar thumb.</li>
+            </ol>
+            <p>There are many other pseudo-elements that you can use to style scrollbars. For more info, visit the
+              <a href="https://webkit.org/blog/363/styling-scrollbars/" target="_blank">WebKit Blog</a>
+            </p>
+            <h4 data-type="Browser support">Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                87.3%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">⚠️ Scrollbar styling doesn't appear to be on any standards track.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=css-scrollbar" target="_blank">https://caniuse.com/#feat=css-scrollbar</a>
+              </li>
+            </ul>
           </div>
           <div class="snippet">
             <h3 id="custom-text-selection">Custom text selection</h3>
