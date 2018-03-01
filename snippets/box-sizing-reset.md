@@ -27,9 +27,9 @@ html {
   box-sizing: border-box;
   width: 200px;
   padding: 1.5em;
-  color: #000;
+  color: #7983ff;
   font-family: sans-serif;
-  background-color: #ccc;
+  background-color: white;
   border: 5px solid;
 }
 </style>
