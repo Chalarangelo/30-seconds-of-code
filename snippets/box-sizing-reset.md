@@ -5,7 +5,7 @@ Resets the box-model so that `width`s and `height`s are not affected by their `b
 #### CSS
 
 ```css
-.html {
+html {
   box-sizing: border-box;
 }
 
