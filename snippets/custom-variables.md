@@ -55,4 +55,4 @@ Reuse declared variable throughout the document using the `var(--variable-name)`
 <!-- Whenever possible, link a `caniuse` feature which allows the browser support percentage to be displayed.
 If no link is provided, it defaults to 99+%. -->
 
-* https://caniuse.com/#feat=some-feature
+* https://caniuse.com/#feat=css-variables
