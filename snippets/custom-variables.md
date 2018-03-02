@@ -44,14 +44,13 @@ CSS variables that contain specific values to be reused throughout a document.
 
 #### Explanation
 
-<!-- Use a step-by-step (ordered) list if possible. Keep it concise. -->
-Bla bla bla
+Declare variable with `--variable-name:`.
+
+Reuse declared variable throughout the document using the `var(--variable-name)` function.
 
 #### Browser support
 
-<!-- Use the checkmark or the warning emoji, see the existing snippets. -->
-
-<span class="snippet__support-note">✅ No caveats.</span>
+<span class="snippet__support-note">⚠️ This is an experimental technology.</span>
 
 <!-- Whenever possible, link a `caniuse` feature which allows the browser support percentage to be displayed.
 If no link is provided, it defaults to 99+%. -->
