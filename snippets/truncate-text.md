@@ -15,6 +15,7 @@ If the text is longer than one line, it will be truncated and end with an ellips
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  width: 200px;
 }
 ```
 
@@ -43,6 +44,7 @@ If the text is longer than one line, it will be truncated and end with an ellips
 2. `white-space: nowrap` prevents the text from exceeding one line in height.
 3. `text-overflow: ellipsis` makes it so that if the text exceeds its dimensions, it
    will end with an ellipsis.
+4. `width: 200px;` ensures the element has a dimension, to know when to get ellipsis
 
 #### Browser support
 
