@@ -226,6 +226,7 @@ shuffle:array,random
 similarity:array,math
 size:object,array,string
 sleep:function,promise
+smoothScroll:browser,css
 sortCharactersInString:string
 sortedIndex:array,math
 sortedIndexBy:array,math,function
