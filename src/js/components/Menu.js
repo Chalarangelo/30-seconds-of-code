@@ -5,7 +5,11 @@ const menu = select('.hamburger')
 const links = select('.sidebar__links')
 const ACTIVE_CLASS = 'is-active'
 
-const toggle = () => [menu, links].forEach(el => el.classList.toggle(ACTIVE_CLASS))
+const toggle = () => {
+  const els = [menu, links]
+  els.forEach(el => el.classList.toggle(ACTIVE_CLASS))
+  menu.setAttribute('aria-expanded', menu.classList.contains(ACTIVE_CLASS) ? 'true' : 'false')
+}
 
 menu.addEventListener('click', toggle)
 
