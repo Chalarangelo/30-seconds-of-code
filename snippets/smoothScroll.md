@@ -5,7 +5,7 @@ Smoothly scrolls the element on which it's called into the visible area of the b
 Use `.scrollIntoView` method to scroll the element. Pass `{ behavior: 'smooth' }` to `.scrollIntoView` so it scrolls smoothly.
 
 ```js
-const smoothScroll = (element) =>
+const smoothScroll = element =>
   document.querySelector(element).scrollIntoView({
       behavior: 'smooth'
   });
