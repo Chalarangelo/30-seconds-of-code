@@ -27,24 +27,21 @@ Clean & simple animated loading animation with CSS3. If you are worried about su
     background: black;
     border-radius: 50px;
     animation: loader 0.9s infinite alternate;
-    animation: loader 0.9s infinite alternate;
 }
 .snippet-demo__Animated-loading-animation span:nth-of-type(2) {
     animation-delay: 0.3s;
-    animation-delay: 0.3s;
 }
 .snippet-demo__Animated-loading-animation span:nth-of-type(3) {
-    animation-delay: 0.6s;
     animation-delay: 0.6s;
 }
 @keyframes loader {
   0% {
     opacity: 0.9;
-    -webkit-transform: translateY(0);
+    transform: translateY(0);
   }
   100% {
     opacity: 0.1;
-    -webkit-transform: translateY(-21px);
+    transform: translateY(-21px);
   }
 }
 ```
