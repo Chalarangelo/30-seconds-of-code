@@ -23,6 +23,7 @@
         <a class="sidebar__link" href="#constant-width-to-height-ratio">Constant width to height ratio</a>
         <a class="sidebar__link" href="#custom-scrollbar">Custom scrollbar</a>
         <a class="sidebar__link" href="#custom-text-selection">Custom text selection</a>
+        <a class="sidebar__link" href="#custom-variables">Custom variables</a>
         <a class="sidebar__link" href="#disable-selection">Disable selection</a>
         <a class="sidebar__link" href="#donut-spinner">Donut spinner</a>
         <a class="sidebar__link" href="#easing-variables">Easing variables</a>
@@ -299,6 +300,62 @@ in any specification.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=css-selection" target="_blank">https://caniuse.com/#feat=css-selection</a>
+              </li>
+            </ul>
+          </div>
+          <div class="snippet">
+            <h3 id="custom-variables">Custom variables</h3>
+            <p>CSS variables that contain specific values to be reused throughout a document.</p>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">:root {
+    --some-color: #da7800;
+    --some-keyword: italic;
+    --some-size: 1.25em;
+    --some-complex-value: 1px 1px 2px WhiteSmoke, 0 0 1em SlateGray , 0 0 0.2em SlateGray;
+}
+</code></pre>
+            <h4 data-type="Demo">Demo</h4>
+
+            <!-- You must create a `snippet-demo` parent block and use it as a namespace with BEM syntax. -->
+            <div class="snippet-demo">
+              <div class="snippet-demo__custom-variables">
+                <p>CSS is awesome!</p>
+              </div>
+            </div>
+
+            <!-- Add your style rules here. -->
+            <style>
+              :root {
+                --some-color: #686868;
+                --some-keyword: italic;
+                --some-size: 1.25em;
+                --some-complex-value: 1px 1px 2px WhiteSmoke, 0 0 1em SlateGray, 0 0 0.2em SlateGray;
+              }
+              .snippet-demo__custom-variables p {
+                color: var(--some-color);
+                font-size: var(--some-size);
+                font-style: var(--some-keyword);
+                text-shadow: var(--some-complex-value);
+              }
+            </style>
+            <h4 data-type="Explanation">Explanation</h4>
+
+            <!-- Use a step-by-step (ordered) list if possible. Keep it concise. -->
+            <p>Bla bla bla</p>
+            <h4 data-type="Browser support">Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                100%
+              </div>
+            </div>
+
+            <!-- Use the checkmark or the warning emoji, see the existing snippets. -->
+            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+
+            <!-- Whenever possible, link a `caniuse` feature which allows the browser support percentage to be displayed.
+If no link is provided, it defaults to 99+%. -->
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=some-feature" target="_blank">https://caniuse.com/#feat=some-feature</a>
               </li>
             </ul>
           </div>
