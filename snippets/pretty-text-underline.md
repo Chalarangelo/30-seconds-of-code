@@ -13,6 +13,7 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
 
 ```css
 .pretty-text-underline {
+  font-family: Arial, sans-serif;
   display: inline;
   font-size: 18px;
   text-shadow: 1px 1px 0 #f5f6f9,
@@ -20,7 +21,7 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
     -1px -1px 0 #f5f6f9,
     1px -1px 0 #f5f6f9;
   background-image: linear-gradient(90deg, currentColor 100%, transparent 100%);
-  background-position: 0 1.04em;
+  background-position: 0 0.98em;
   background-repeat: repeat-x;
   background-size: 1px 1px;
 }
@@ -42,6 +43,7 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
 
 <style>
 .snippet-demo__pretty-text-underline {
+  font-family: Arial, sans-serif;
   display: inline;
   font-size: 18px !important;
   text-shadow: 1px 1px 0 #f5f6f9,
@@ -49,7 +51,7 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
     -1px -1px 0 #f5f6f9,
     1px -1px 0 #f5f6f9;
   background-image: linear-gradient(90deg, currentColor 100%, transparent 100%);
-  background-position: 0 1.04em;
+  background-position: 0 0.98em;
   background-repeat: repeat-x;
   background-size: 1px 1px;
 }
@@ -78,7 +80,7 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
 
 #### Browser support
 
-<span class="snippet__support-note">⚠️ Firefox requires a vendor prefix for the selection pseudo-selector to work.</span>
+<span class="snippet__support-note">⚠️ The distance of the underline from the text depends on the internal metrics of a font, so you must ensure everyone sees the same font (i.e. no system fonts which will change based on the OS).</span>
 
 * https://caniuse.com/#feat=css-textshadow
 * https://caniuse.com/#feat=css-gradients
