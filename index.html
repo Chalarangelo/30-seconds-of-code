@@ -1366,6 +1366,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  width: 200px;
 }
 </code></pre>
             <h4 data-type="Demo">Demo</h4>
@@ -1388,6 +1389,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
               <li><code>overflow: hidden</code> prevents the text from overflowing its dimensions (for a block, 100% width and auto height).</li>
               <li><code>white-space: nowrap</code> prevents the text from exceeding one line in height.</li>
               <li><code>text-overflow: ellipsis</code> makes it so that if the text exceeds its dimensions, it will end with an ellipsis.</li>
+              <li><code>width: 200px;</code> ensures the element has a dimension, to know when to get ellipsis</li>
             </ol>
             <h4 data-type="Browser support">Browser support</h4>
             <div>
