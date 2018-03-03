@@ -104,3 +104,5 @@ The variables are defined globally within the `:root` CSS pseudo-class which mat
 <span class="snippet__support-note">✅ No caveats.</span>
 
 * https://caniuse.com/#feat=css-variables
+
+<!-- tags: animation -->

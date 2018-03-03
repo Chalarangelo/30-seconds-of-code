@@ -39,3 +39,5 @@ Makes the content unselectable.
 <span class="snippet__support-note">⚠️ Requires prefixes for full support.</span>
 
 * https://caniuse.com/#feat=user-select-none
+
+<!-- tags: interactivity -->

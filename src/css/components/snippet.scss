@@ -14,6 +14,10 @@
     margin-bottom: 1.25rem;
     margin-top: 0;
     line-height: 1.3;
+
+    span:not(.snippet__tag) {
+      margin-right: 0.75rem;
+    }
   }
 
   code:not([class*='lang']) {
@@ -42,16 +46,20 @@
   h4 {
     display: inline-block;
     margin: 1rem 0 0.5rem;
+    font-size: 1.1rem;
     line-height: 2;
-    padding: 0 0.5rem;
-    border-radius: 3px;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    background: #333;
-    border: 1px solid #c6d6ea;
-    border-bottom-color: darken(#c6d6ea, 5);
-    background: white;
-    box-shadow: 0 0.25rem 0.5rem -0.1rem rgba(0, 32, 64, 0.15);
+
+    &[data-type] {
+      background: #333;
+      padding: 0 0.5rem;
+      border-radius: 3px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      border: 1px solid #c6d6ea;
+      border-bottom-color: darken(#c6d6ea, 5);
+      background: white;
+      box-shadow: 0 0.25rem 0.5rem -0.1rem rgba(0, 32, 64, 0.15);
+    }
 
     &[data-type='HTML'] {
       color: white;
@@ -106,6 +114,9 @@
     font-weight: bold;
     top: 1rem;
     right: 0;
+  }
+
+  &__tag {
   }
 }
 

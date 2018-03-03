@@ -12,8 +12,12 @@ Creates a donut spinner that can be used to indicate the loading of content.
 
 ```css
 @keyframes donut-spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .donut {
   display: inline-block;
@@ -59,3 +63,5 @@ serve as the loading indicator for the donut. Use `animation` to rotate the elem
 
 * https://caniuse.com/#feat=css-animation
 * https://caniuse.com/#feat=transforms2d
+
+<!-- tags: animation -->

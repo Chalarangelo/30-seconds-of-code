@@ -25,5 +25,9 @@
     "prettier": "^1.10.2",
     "pretty": "^2.0.0",
     "prismjs": "^1.11.0"
+  },
+  "dependencies": {
+    "feather-icons": "^4.7.0",
+    "focus-visible": "^4.1.0"
   }
 }

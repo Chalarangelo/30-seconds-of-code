@@ -1,7 +1,33 @@
-export const select = s => document.querySelector(s)
-export const selectAll = s => [].slice.call(document.querySelectorAll(s))
+export const select = (s, parent = document) => parent.querySelector(s)
+
+export const selectAll = (s, parent = document) => [].slice.call(parent.querySelectorAll(s))
+
 export const scrollY = () => window.scrollY || window.pageYOffset
+
 export const easeOutQuint = (t, b, c, d) => c * ((t = t / d - 1) * t ** 4 + 1) + b
+
+export const on = (el, evt, fn, opts = {}) => {
+  const delegatorFn = e => e.target.matches(opts.target) && fn.call(e.target, e)
+  el.addEventListener(evt, opts.target ? delegatorFn : fn, opts.options || false)
+  if (opts.target) return delegatorFn
+}
+
+export const createEventHub = () => ({
+  hub: Object.create(null),
+  emit(event, data) {
+    ;(this.hub[event] || []).forEach(handler => handler(data))
+  },
+  on(event, handler) {
+    if (!this.hub[event]) this.hub[event] = []
+    this.hub[event].push(handler)
+  },
+  off(event, handler) {
+    const i = (this.hub[event] || []).findIndex(h => h === handler)
+    if (i > -1) this.hub[event].splice(i, 1)
+  }
+})
+
+window.EventHub = createEventHub()
 
 /*
 * Make iOS behave normally.
