@@ -1,3 +1,4 @@
+import jump from '../deps/jump'
 import { select, selectAll, easeOutQuint } from '../deps/utils'
 
 const menu = select('.hamburger')
@@ -16,8 +17,14 @@ const toggle = () => {
 menu.addEventListener('click', toggle)
 
 links.addEventListener('click', e => {
-  if (e.target.closest('.sidebar__link')) {
+  const link = e.target.closest('.sidebar__link')
+  if (link) {
     setTimeout(toggle, 50)
+    jump(link.getAttribute('href'), {
+      duration: 500,
+      easing: easeOutQuint,
+      offset: window.innerWidth <= 991 ? -64 : -32
+    })
   }
 })
 
