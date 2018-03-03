@@ -16,8 +16,8 @@ const toggle = () => {
 menu.addEventListener('click', toggle)
 
 links.addEventListener('click', e => {
-  if (e.target.classList.contains('sidebar__link')) {
-    setTimeout(toggle, 100)
+  if (e.target.closest('.sidebar__link')) {
+    setTimeout(toggle, 50)
   }
 })
 
