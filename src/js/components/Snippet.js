@@ -6,7 +6,7 @@ EventHub.on('Tag.click', data => {
     snippet.style.display = 'block'
     if (data.type === 'all') return
     const tags = selectAll('.tags__tag', snippet)
-    if (!selectAll('.tags__tag', snippet).some(el => el.dataset.type === data.type)) {
+    if (!tags.some(el => el.dataset.type === data.type)) {
       snippet.style.display = 'none'
     }
   })
