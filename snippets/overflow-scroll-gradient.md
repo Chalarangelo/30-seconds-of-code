@@ -22,7 +22,7 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
   content: '';
   position: absolute;
   bottom: 0;
-  width: 300px;
+  width: 240px;
   height: 25px;
   background: linear-gradient(
     rgba(255, 255, 255, 0.001),
@@ -33,8 +33,8 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
 .overflow-scroll-gradient__scroller {
   overflow-y: scroll;
   background: white;
-  width: 300px;
-  height: 250px;
+  width: 240px;
+  height: 200px;
   padding: 15px 0;
   line-height: 1.2;
   text-align: center;
@@ -59,7 +59,7 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
   content: '';
   background: linear-gradient(rgba(255, 255, 255, 0.001), white);
   position: absolute;
-  width: 300px;
+  width: 240px;
   height: 25px;
   bottom: 0;
   pointer-events: none;
@@ -67,8 +67,8 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
 .snippet-demo__overflow-scroll-gradient__scroller {
   overflow-y: scroll;
   background: white;
-  width: 300px;
-  height: 250px;
+  width: 240px;
+  height: 200px;
   padding: 15px 0;
   line-height: 1.2;
   text-align: center;
@@ -76,7 +76,7 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
 </style>
 
 <script>
-document.querySelector('.snippet-demo__overflow-scroll-gradient__scroller').innerHTML = 'content '.repeat(200)
+document.querySelector('.snippet-demo__overflow-scroll-gradient__scroller').innerHTML = 'content '.repeat(100)
 </script>
 
 #### Explanation
@@ -86,7 +86,7 @@ document.querySelector('.snippet-demo__overflow-scroll-gradient__scroller').inne
 3. `background-image: linear-gradient(...)` adds a linear gradient that fades from transparent to white
    (top to bottom).
 4. `position: absolute` takes the pseudo element out of the flow of the document and positions it in relation to the parent.
-5. `width: 300px` matches the size of the scrolling element (which is a child of the parent that has
+5. `width: 240px` matches the size of the scrolling element (which is a child of the parent that has
    the pseudo element).
 6. `height: 25px` is the height of the fading gradient pseudo-element, which should be kept relatively small.
 7. `bottom: 0` positions the pseudo-element at the bottom of the parent.
