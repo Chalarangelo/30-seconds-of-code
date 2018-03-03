@@ -2,7 +2,8 @@
 
 Smoothly scrolls the element on which it's called into the visible area of the browser window.
 
-Use `.scrollIntoView` method to scroll the element. Pass `{ behavior: 'smooth' }` to `.scrollIntoView` so it scrolls smoothly.
+Use `.scrollIntoView` method to scroll the element. 
+Pass `{ behavior: 'smooth' }` to `.scrollIntoView` so it scrolls smoothly.
 
 ```js
 const smoothScroll = element =>
@@ -12,6 +13,6 @@ const smoothScroll = element =>
 ```
 
 ```js
-smoothScroll('#fooBar'); // scrolls smoothly to the element with the id of fooBar
-smoothScroll('.fooBar'); // scrolls smoothly to the element with the class of fooBar
+smoothScroll('#fooBar'); // scrolls smoothly to the element with the id fooBar
+smoothScroll('.fooBar'); // scrolls smoothly to the first element with a class of fooBar
 ```
