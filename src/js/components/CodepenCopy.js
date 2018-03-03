@@ -18,8 +18,8 @@ snippets.forEach(snippet => {
   var data = {
     css : css.textContent,
     title: snippet.querySelector('h3 > span').textContent,
-    html: html ? html.textContent.replace(/"/g, "&apos;") : '',
-    js: js ? js.textContent.replace(/"/g, "&apos;") : ''
+    html: html ? html.textContent : '',
+    js: js ? js.textContent : ''
   }
   codepenInput.value = JSON.stringify(data);
   codepenForm.appendChild(codepenInput);
