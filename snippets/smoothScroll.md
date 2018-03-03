@@ -8,7 +8,7 @@ Pass `{ behavior: 'smooth' }` to `.scrollIntoView` so it scrolls smoothly.
 ```js
 const smoothScroll = element =>
   document.querySelector(element).scrollIntoView({
-      behavior: 'smooth'
+    behavior: 'smooth'
   });
 ```
 

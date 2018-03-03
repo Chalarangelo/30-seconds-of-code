@@ -1,4 +1,4 @@
-Test log for: Fri Mar 02 2018 20:31:49 GMT+0000 (UTC)
+Test log for: Mon Mar 05 2018 20:32:06 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.2 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1532,6 +1532,10 @@ Test log for: Fri Mar 02 2018 20:31:49 GMT+0000 (UTC)
 
     ✔ sleep is a Function
 
+  Testing smoothScroll
+
+    ✔ smoothScroll is a Function
+
   Testing solveRPN
 
     ✔ solveRPN is a Function
@@ -1968,10 +1972,10 @@ Test log for: Fri Mar 02 2018 20:31:49 GMT+0000 (UTC)
       ✖ length of string is 8
 
 
-  total:     987
-  passing:   985
+  total:     988
+  passing:   986
   failing:   2
-  duration:  2.5s
+  duration:  2.6s
 
 
 undefined
