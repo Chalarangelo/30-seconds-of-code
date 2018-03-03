@@ -1,4 +1,5 @@
 // Deps
+import 'focus-visible'
 import 'normalize.css'
 import 'prismjs'
 import feather from 'feather-icons'
