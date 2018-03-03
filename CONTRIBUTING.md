@@ -42,3 +42,5 @@ Brief description
 If no link is provided, it defaults to 99+%. -->
 
 * https://caniuse.com/#feat=some-feature
+
+<!-- tags: (separate each by a comma) -->
