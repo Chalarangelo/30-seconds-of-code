@@ -15,12 +15,13 @@ snippets.forEach(snippet => {
   var css = snippet.querySelector('pre code.lang-css');
   var html = snippet.querySelector('pre code.lang-html');
   var js = snippet.querySelector('pre code.lang-js');
-  codepenInput.value = `{
-    "title": "${snippet.querySelector('h3 > span').textContent}",
-    "css": "${css.textContent}"
-    ${html ? `,"html" : "${html.textContent.replace(/"/g, "&apos;")}"` : ''}
-    ${js ? `,"js" : "${js.textContent.replace(/"/g, "&apos;")}"` : ''}
-  }`.replace(/"/g, "&quot;");//, html: ${html}, css: ${css}, js: ${js}}`;
+  var data = {
+    css : css.textContent,
+    title: snippet.querySelector('h3 > span').textContent,
+    html: html ? html.textContent.replace(/"/g, "&apos;") : '',
+    js: js ? js.textContent.replace(/"/g, "&apos;") : ''
+  }
+  codepenInput.value = JSON.stringify(data);
   codepenForm.appendChild(codepenInput);
   codepenForm.appendChild(codepenButton);
   snippet.appendChild(codepenForm);
