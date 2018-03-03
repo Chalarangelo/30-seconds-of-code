@@ -69,7 +69,7 @@ Creates an animated underline effect when the text is hovered over.
 #### Explanation
 
 1. `display: inline-block` makes the block `p` an `inline-block` to prevent the underline from
-spanning the entire parent width rather than just the content (text).
+   spanning the entire parent width rather than just the content (text).
 2. `position: relative` on the element establishes a Cartesian positioning context for pseudo-elements.
 3. `::after` defines a pseudo-element.
 4. `position: absolute` takes the pseudo element out of the flow of the document and positions it in relation to the parent.
@@ -77,11 +77,11 @@ spanning the entire parent width rather than just the content (text).
 6. `transform: scaleX(0)` initially scales the pseudo element to 0 so it has no width and is not visible.
 7. `bottom: 0` and `left: 0` position it to the bottom left of the block.
 8. `transition: transform 0.25s ease-out` means changes to `transform` will be transitioned over 0.25 seconds
-with an `ease-out` timing function.
+   with an `ease-out` timing function.
 9. `transform-origin: bottom right` means the transform anchor point is positioned at the bottom right of the block.
 10. `:hover::after` then uses `scaleX(1)` to transition the width to 100%, then changes the `transform-origin`
-to `bottom left` so that the anchor point is reversed, allowing it transition out in the other direction when
-hovered off.
+    to `bottom left` so that the anchor point is reversed, allowing it transition out in the other direction when
+    hovered off.
 
 #### Browser support
 
@@ -89,3 +89,5 @@ hovered off.
 
 * https://caniuse.com/#feat=transforms2d
 * https://caniuse.com/#feat=css-transitions
+
+<!-- tags: animation -->

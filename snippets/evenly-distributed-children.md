@@ -51,3 +51,5 @@ Alternatively, use `justify-content: space-around` to distribute the children wi
 <span class="snippet__support-note">⚠️ Needs prefixes for full support.</span>
 
 * https://caniuse.com/#feat=flexbox
+
+<!-- tags: layout -->

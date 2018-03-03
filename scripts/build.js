@@ -2,70 +2,133 @@ const fs = require('fs')
 const path = require('path')
 const marked = require('marked')
 const pretty = require('pretty')
-const { JSDOM } = require('jsdom')
 const caniuseDb = require('caniuse-db/data.json')
-const { toKebabCase, emptyHTML } = require('../utils/utils.js')
-
-const renderer = new marked.Renderer()
-renderer.heading = (text, level) =>
-  level === 3
-    ? `<h${level} id="${toKebabCase(text)}">${text}</h${level}>`
-    : `<h${level} data-type="${text}">${text}</h${level}>`
-renderer.link = (url, _, text) => `<a href="${url}" target="_blank">${text || url}</a>`
+const { toKebabCase, createElement, template, dom } = require('../utils/utils.js')
 
 const SNIPPETS_PATH = './snippets'
-const SNIPPET_CONTAINER_SELECTOR = '.main > .container'
+const TAGS = [
+  {
+    name: 'all',
+    icon: 'check'
+  },
+  {
+    name: 'layout',
+    icon: 'layout'
+  },
+  {
+    name: 'visual',
+    icon: 'eye'
+  },
+  {
+    name: 'animation',
+    icon: 'loader'
+  },
+  {
+    name: 'interactivity',
+    icon: 'edit-2'
+  }
+]
 
-const createElement = str => {
-  const el = document.createElement('div')
-  el.innerHTML = str
-  return el.firstElementChild
+const renderer = new marked.Renderer()
+renderer.heading = (text, level) => {
+  if (level === 3) {
+    return `<h${level} id="${toKebabCase(text)}"><span>${text}</span></h${level}>`
+  } else {
+    return ['HTML', 'CSS', 'JavaScript'].includes(text)
+      ? `<h${level} data-type="${text}">${text}</h${level}>`
+      : `<h${level}>${text}</h${level}>`
+  }
+}
+renderer.link = (url, _, text) => `<a href="${url}" target="_blank">${text || url}</a>`
+
+const document = dom('./src/html/index.html')
+const components = {
+  backToTopButton: dom('./src/html/components/back-to-top-button.html'),
+  sidebar: dom('./src/html/components/sidebar.html'),
+  header: dom('./src/html/components/header.html'),
+  main: dom('./src/html/components/main.html'),
+  tags: dom('./src/html/components/tags.html')
 }
 
-const template = markdown => `
-  <div class="snippet">
-    ${markdown}
-  </div>
-`
-
-const document = new JSDOM(fs.readFileSync('./index.html', 'utf8')).window.document
-const snippetContainer = document.querySelector('.main > .container')
-const sidebarLinks = document.querySelector('.sidebar__links')
-emptyHTML(snippetContainer, sidebarLinks)
+const snippetContainer = components.main.querySelector('.container')
+const sidebarLinkContainer = components.sidebar.querySelector('.sidebar__links')
+TAGS.slice(1).forEach(tag => {
+  sidebarLinkContainer.append(
+    createElement(`
+      <section data-type="${tag.name}" class="sidebar__section">
+        <h4 class="sidebar__section-heading">${tag.name}</h4>
+      </section>
+    `)
+  )
+})
 
 for (const snippetFile of fs.readdirSync(SNIPPETS_PATH)) {
   const snippetPath = path.join(SNIPPETS_PATH, snippetFile)
   const snippetData = fs.readFileSync(snippetPath, 'utf8')
   const markdown = marked(snippetData, { renderer })
-  const snippetTemplate = template(markdown)
-  const el = createElement(snippetTemplate)
-  snippetContainer.append(el)
+  const snippetEl = createElement(`<div class="snippet">${markdown}</div>`)
+  snippetContainer.append(snippetEl)
 
-  sidebarLinks.append(
-    createElement(
-      `<a class="sidebar__link" href="#${snippetFile.replace('.md', '')}">${
-        el.querySelector('h3').innerHTML
-      }</a>`
-    )
-  )
-
+  // browser support usage
   const featUsageShares = (snippetData.match(/https?:\/\/caniuse\.com\/#feat=.*/g) || []).map(
     feat => {
       const featData = caniuseDb.data[feat.match(/#feat=(.*)/)[1]]
       return featData ? Number(featData.usage_perc_y + featData.usage_perc_a) : 100
     }
   )
-
-  el.querySelector('h4:last-of-type').after(
+  const browserSupportHeading = snippetEl.querySelector('h4:last-of-type')
+  browserSupportHeading.after(
     createElement(`
       <div>
         <div class="snippet__browser-support">
           ${featUsageShares.length ? Math.min(...featUsageShares).toPrecision(3) : '99+'}%
         </div>
       </div>
-      `)
+    `)
   )
+
+  // sidebar link
+  const link = createElement(
+    `<a class="sidebar__link" href="#${snippetFile.replace('.md', '')}">${
+      snippetEl.querySelector('h3').innerHTML
+    }</a>`
+  )
+
+  // tags
+  const tags = (snippetData.match(/<!--\s*tags:\s*(.+?)-->/) || [, ''])[1]
+    .split(/,\s*/)
+    .forEach(tag => {
+      tag = tag.trim().toLowerCase()
+      snippetEl
+        .querySelector('h3')
+        .append(
+          createElement(
+            `<span class="tags__tag snippet__tag" data-type="${tag}"><i data-feather="${
+              TAGS.find(t => t.name === tag).icon
+            }"></i>${tag}</span>`
+          )
+        )
+
+      sidebarLinkContainer.querySelector(`section[data-type="${tag}"]`).append(link)
+    })
 }
+
+// build dom
+TAGS.forEach(tag =>
+  components.tags.append(
+    createElement(
+      `<button class="tags__tag is-large ${tag.name === 'all' ? 'is-active' : ''}" data-type="${
+        tag.name
+      }"><i data-feather="${tag.icon}"></i>${tag.name}</button>`
+    )
+  )
+)
+const content = document.querySelector('.content-wrapper')
+content.before(components.backToTopButton)
+content.before(components.sidebar)
+content.append(components.header)
+content.append(components.main)
+components.main.querySelector('.container').prepend(components.tags)
 
 // doctype declaration gets stripped, add it back in
 const html = `<!DOCTYPE html>

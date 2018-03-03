@@ -41,7 +41,7 @@ A hover effect where the gradient follows the mouse cursor.
   height: var(--size);
   background: radial-gradient(circle closest-side, pink, transparent);
   transform: translate(-50%, -50%);
-  transition: width .2s ease, height .2s ease;
+  transition: width 0.2s ease, height 0.2s ease;
 }
 
 .mouse-cursor-gradient-tracking:hover::before {
@@ -53,7 +53,7 @@ A hover effect where the gradient follows the mouse cursor.
 
 ```js
 var btn = document.querySelector('.mouse-cursor-gradient-tracking')
-btn.onmousemove = function (e) {
+btn.onmousemove = function(e) {
   var x = e.pageX - btn.offsetLeft
   var y = e.pageY - btn.offsetTop
   btn.style.setProperty('--x', x + 'px')
@@ -131,7 +131,10 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
 ```
 
 #### Browser support
+
 <div class="snippet__requires-javascript">Requires JavaScript</div>
 <span class="snippet__support-note">⚠️ Requires JavaScript.</span>
 
 * https://caniuse.com/#feat=css-variables
+
+<!-- tags: visual, interactivity -->
