@@ -11,7 +11,7 @@ snippets.forEach(snippet => {
   codepenInput.name = 'data';
   var codepenButton = document.createElement('button');
   codepenButton.classList = 'btn is-large codepen-btn';
-  codepenButton.innerHTML = '<i data-feather="eye"></i>View on Codepen';
+  codepenButton.innerHTML = '<i data-feather="eye"></i>Edit on Codepen';
   var css = snippet.querySelector('pre code.lang-css');
   var html = snippet.querySelector('pre code.lang-html');
   var js = snippet.querySelector('pre code.lang-js');
