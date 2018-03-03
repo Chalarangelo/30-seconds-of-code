@@ -24,7 +24,8 @@
           <a class="sidebar__link" href="#clearfix"><span>Clearfix</span></a>
           <a class="sidebar__link" href="#constant-width-to-height-ratio"><span>Constant width to height ratio</span></a>
           <a class="sidebar__link" href="#evenly-distributed-children"><span>Evenly distributed children</span></a>
-          <a class="sidebar__link" href="#horizontal-and-vertical-centering"><span>Horizontal and vertical centering</span></a>
+          <a class="sidebar__link" href="#flexbox-centering"><span>Flexbox centering</span></a>
+          <a class="sidebar__link" href="#grid-centering"><span>Grid centering</span></a>
           <a class="sidebar__link" href="#truncate-text"><span>Truncate text</span></a>
         </section>
         <section data-type="visual" class="sidebar__section">
@@ -175,7 +176,7 @@
                 99+%
               </div>
             </div>
-            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <p><span class="snippet__support-note">⚠️ For this snippet to work properly you need to ensure that there are no non-floating children in the container and that there are no tall floats before the clearfixed container but in the same formatting context (e.g. floated columns).</span></p>
 
             <!-- tags: layout -->
           </div>
@@ -364,7 +365,8 @@ in any specification.</span></p>
                 86.3%
               </div>
             </div>
-            <p><span class="snippet__support-note">⚠️ Requires prefixes for full support.</span></p>
+            <p><span class="snippet__support-note">⚠️ Requires prefixes for full support.</span>
+              <span class="snippet__support-note">⚠️ This is not a secure method to prevent users from copying content.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=user-select-none" target="_blank">https://caniuse.com/#feat=user-select-none</a>
@@ -627,6 +629,54 @@ in any specification.</span></p>
             <!-- tags: layout -->
           </div>
           <div class="snippet">
+            <h3 id="flexbox-centering"><span>Flexbox centering</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
+            <p>Horizontally and vertically centers a child element within a parent element using <code>flexbox</code>.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="flexbox-centering"&gt;
+  &lt;div class="child"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.flexbox-centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo">
+              <div class="snippet-demo__flexbox-centering">
+                <p class="snippet-demo__flexbox-centering__child">Centered content.</p>
+              </div>
+            </div>
+            <style>
+              .snippet-demo__flexbox-centering {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 200px;
+              }
+            </style>
+            <h4>Explanation</h4>
+            <ol>
+              <li><code>display: flex</code> enables flexbox.</li>
+              <li><code>justify-content: center</code> centers the child horizontally.</li>
+              <li><code>align-items: center</code> centers the child vertically.</li>
+            </ol>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                97.8%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">⚠️ Needs prefixes for full support.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=flexbox" target="_blank">https://caniuse.com/#feat=flexbox</a>
+              </li>
+            </ul>
+
+            <!-- tags: layout -->
+          </div>
+          <div class="snippet">
             <h3 id="gradient-text"><span>Gradient text</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
             <p>Gives text a gradient color.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p class="gradient-text"&gt;Gradient text&lt;/p&gt;
@@ -673,6 +723,54 @@ in any specification.</span></p>
             </ul>
 
             <!-- tags: visual -->
+          </div>
+          <div class="snippet">
+            <h3 id="grid-centering"><span>Grid centering</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
+            <p>Horizontally and vertically centers a child element within a parent element using <code>grid</code>.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="grid-centering"&gt;
+  &lt;div class="child"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.grid-centering {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo">
+              <div class="snippet-demo__grid-centering">
+                <p class="snippet-demo__grid-centering__child">Centered content.</p>
+              </div>
+            </div>
+            <style>
+              .snippet-demo__grid-centering {
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                height: 200px;
+              }
+            </style>
+            <h4>Explanation</h4>
+            <ol>
+              <li><code>display: grid</code> enables grid.</li>
+              <li><code>justify-content: center</code> centers the child horizontally.</li>
+              <li><code>align-items: center</code> centers the child vertically.</li>
+            </ol>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                86.6%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=css-grid" target="_blank">https://caniuse.com/#feat=css-grid</a>
+              </li>
+            </ul>
+
+            <!-- tags: layout -->
           </div>
           <div class="snippet">
             <h3 id="hairline-border"><span>Hairline border</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
@@ -746,54 +844,6 @@ in any specification.</span></p>
             <p>*Chrome does not support subpixel values on <code>border</code>. Safari does not support subpixel values on <code>box-shadow</code>. Firefox supports subpixel values on both.</p>
 
             <!-- tags: visual -->
-          </div>
-          <div class="snippet">
-            <h3 id="horizontal-and-vertical-centering"><span>Horizontal and vertical centering</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
-            <p>Horizontally and vertically centers a child element within a parent element.</p>
-            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="horizontal-and-vertical-centering"&gt;
-  &lt;div class="child"&gt;&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.horizontal-and-vertical-centering {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-</code></pre>
-            <h4>Demo</h4>
-            <div class="snippet-demo">
-              <div class="snippet-demo__horizontal-and-vertical-centering">
-                <p class="snippet-demo__horizontal-and-vertical-centering__child">Centered content.</p>
-              </div>
-            </div>
-            <style>
-              .snippet-demo__horizontal-and-vertical-centering {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 200px;
-              }
-            </style>
-            <h4>Explanation</h4>
-            <ol>
-              <li><code>display: flex</code> enables flexbox.</li>
-              <li><code>justify-content: center</code> centers the child horizontally.</li>
-              <li><code>align-items: center</code> centers the child vertically.</li>
-            </ol>
-            <h4>Browser support</h4>
-            <div>
-              <div class="snippet__browser-support">
-                97.8%
-              </div>
-            </div>
-            <p><span class="snippet__support-note">⚠️ Needs prefixes for full support.</span></p>
-            <ul>
-              <li>
-                <a href="https://caniuse.com/#feat=flexbox" target="_blank">https://caniuse.com/#feat=flexbox</a>
-              </li>
-            </ul>
-
-            <!-- tags: layout -->
           </div>
           <div class="snippet">
             <h3 id="hover-underline-animation"><span>Hover underline animation</span><span class="tags__tag snippet__tag" data-type="animation"><i data-feather="loader"></i>animation</span></h3>
