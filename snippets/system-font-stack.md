@@ -12,7 +12,8 @@ Uses the native font of the operating system to get close to a native app feel.
 
 ```css
 .system-font-stack {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,
+    Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 ```
 
@@ -46,3 +47,5 @@ falls back to the next if it cannot find the font (on the system or defined in C
 #### Browser support
 
 <span class="snippet__support-note">✅ No caveats.</span>
+
+<!-- tags: visual -->

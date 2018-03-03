@@ -19,13 +19,13 @@ Customizes the scrollbar style for the document and elements with scrollable ove
 }
 
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
 /* Scrollable element */
@@ -80,3 +80,5 @@ There are many other pseudo-elements that you can use to style scrollbars. For m
 <span class="snippet__support-note">⚠️ Scrollbar styling doesn't appear to be on any standards track.</span>
 
 * https://caniuse.com/#feat=css-scrollbar
+
+<!-- tags: visual -->

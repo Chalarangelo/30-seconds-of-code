@@ -1,0 +1,83 @@
+.tags {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+
+  &__tag {
+    display: inline-block;
+    position: relative;
+    top: -1px;
+    font-weight: bold;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #8385aa;
+    white-space: nowrap;
+    border: 1px solid lighten(#8385aa, 15);
+    border-radius: 2px;
+    vertical-align: middle;
+    line-height: 2;
+    padding: 0 0.5rem;
+    margin-right: 0.5rem;
+    transition: all 0.1s ease-out;
+    outline: 0;
+
+    &.is-large {
+      font-size: 0.95rem;
+      border-radius: 0.2rem;
+
+      .feather {
+        top: -2px;
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    .feather {
+      vertical-align: middle;
+      margin-right: 0.25rem;
+      position: relative;
+      top: -1px;
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  button.tags__tag {
+    user-select: none;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+
+    &:hover {
+      background: #8385aa;
+      border-color: #8385aa;
+      color: white;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0.25rem transparentize(#8385aa, 0.5);
+    }
+
+    &:active {
+      box-shadow: inset 0 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.2);
+      background: darken(#8385aa, 10);
+      border-color: darken(#8385aa, 10);
+    }
+
+    &.is-active {
+      background: #7983ff;
+      border-color: #7983ff;
+      color: white;
+
+      &:focus {
+        box-shadow: 0 0 0 0.25rem transparentize(#7983ff, 0.5);
+      }
+    }
+  }
+}
+
+@media (min-width: 579px) {
+}

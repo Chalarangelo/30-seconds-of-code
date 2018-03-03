@@ -43,3 +43,5 @@ causes an element's height to become a percentage of its parent's width, i.e. `5
 #### Browser support
 
 <span class="snippet__support-note">⚠️ `padding-top` pushes any content within the element to the bottom.</span>
+
+<!-- tags: layout -->
