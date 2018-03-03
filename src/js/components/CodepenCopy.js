@@ -24,5 +24,5 @@ snippets.forEach(snippet => {
   codepenInput.value = JSON.stringify(data);
   codepenForm.appendChild(codepenInput);
   codepenForm.appendChild(codepenButton);
-  snippet.appendChild(codepenForm);
+  snippet.insertBefore(codepenForm, snippet.querySelector('.snippet-demo').nextSibling);
 });

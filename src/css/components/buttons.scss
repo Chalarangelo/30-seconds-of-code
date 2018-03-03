@@ -69,4 +69,9 @@ button.btn {
       box-shadow: 0 0 0 0.25rem transparentize(#7983ff, 0.5);
     }
   }
+
+  &.codepen-btn {
+    margin: 0.5rem auto;
+    display: block;
+  }
 }
