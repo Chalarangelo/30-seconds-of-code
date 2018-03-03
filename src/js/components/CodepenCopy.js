@@ -15,7 +15,6 @@ snippets.forEach(snippet => {
   var css = snippet.querySelector('pre code.lang-css');
   var html = snippet.querySelector('pre code.lang-html');
   var js = snippet.querySelector('pre code.lang-js');
-  console.log(css);
   codepenInput.value = `{
     "title": "${snippet.querySelector('h3 > span').textContent}",
     "css": "${css.textContent}"
