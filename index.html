@@ -25,6 +25,7 @@
           <a class="sidebar__link" href="#constant-width-to-height-ratio"><span>Constant width to height ratio</span></a>
           <a class="sidebar__link" href="#evenly-distributed-children"><span>Evenly distributed children</span></a>
           <a class="sidebar__link" href="#flexbox-centering"><span>Flexbox centering</span></a>
+          <a class="sidebar__link" href="#grid-centering"><span>Grid centering</span></a>
           <a class="sidebar__link" href="#truncate-text"><span>Truncate text</span></a>
         </section>
         <section data-type="visual" class="sidebar__section">
@@ -722,6 +723,54 @@ in any specification.</span></p>
             </ul>
 
             <!-- tags: visual -->
+          </div>
+          <div class="snippet">
+            <h3 id="grid-centering"><span>Grid centering</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
+            <p>Horizontally and vertically centers a child element within a parent element using <code>grid</code>.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="grid-centering"&gt;
+  &lt;div class="child"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.grid-centering {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo">
+              <div class="snippet-demo__grid-centering">
+                <p class="snippet-demo__grid-centering__child">Centered content.</p>
+              </div>
+            </div>
+            <style>
+              .snippet-demo__grid-centering {
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                height: 200px;
+              }
+            </style>
+            <h4>Explanation</h4>
+            <ol>
+              <li><code>display: grid</code> enables grid.</li>
+              <li><code>justify-content: center</code> centers the child horizontally.</li>
+              <li><code>align-items: center</code> centers the child vertically.</li>
+            </ol>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                97.8%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">⚠️ Needs prefixes for full support.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=flexbox" target="_blank">https://caniuse.com/#feat=flexbox</a>
+              </li>
+            </ul>
+
+            <!-- tags: layout -->
           </div>
           <div class="snippet">
             <h3 id="hairline-border"><span>Hairline border</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
