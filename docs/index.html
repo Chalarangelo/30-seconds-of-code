@@ -155,7 +155,7 @@
   justify-content: space-between;
 }
 </code></pre> <h4>Demo</h4> <div class="snippet-demo"> <div class="snippet-demo__evenly-distributed-children"> <p>Item1</p> <p>Item2</p> <p>Item3</p> </div> </div>  <h4>Explanation</h4> <ol> <li><code>display: flex</code> enables flexbox.</li> <li><code>justify-content: space-between</code> evenly distributes child elements horizontally. The first item is positioned at the left edge, while the last item is positioned at the right edge.</li> </ol> <p>Alternatively, use <code>justify-content: space-around</code> to distribute the children with space around them, rather than between them.</p> <h4>Browser support</h4> <div> <div class="snippet__browser-support"> 97.8% </div> </div> <p><span class="snippet__support-note">⚠️ Needs prefixes for full support.</span></p> <ul> <li> <a href="https://caniuse.com/#feat=flexbox" target="_blank">https://caniuse.com/#feat=flexbox</a> </li> </ul>  </div> <div class="snippet"> <h3 id="flexbox-centering"><span>Flexbox centering</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3> <p>Horizontally and vertically centers a child element within a parent element using <code>flexbox</code>.</p> <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="flexbox-centering"&gt;
-  &lt;div class="child"&gt;&lt;/div&gt;
+  &lt;div class="child"&gt;Centered content.&lt;/div&gt;
 &lt;/div&gt;
 </code></pre> <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.flexbox-centering {
   display: flex;
@@ -169,7 +169,7 @@
   -webkit-background-clip: text;
 }
 </code></pre> <h4>Demo</h4> <div class="snippet-demo"> <p class="snippet-demo__gradient-text"> Gradient text </p> </div>  <h4>Explanation</h4> <ol> <li><code>background: -webkit-linear-gradient(...)</code> gives the text element a gradient background.</li> <li><code>webkit-text-fill-color: transparent</code> fills the text with a transparent color.</li> <li><code>webkit-background-clip: text</code> clips the background with the text, filling the text with the gradient background as the color.</li> </ol> <h4>Browser support</h4> <div> <div class="snippet__browser-support"> 90.7% </div> </div> <p><span class="snippet__support-note">⚠️ Uses non-standard properties.</span></p> <ul> <li> <a href="https://caniuse.com/#feat=text-stroke" target="_blank">https://caniuse.com/#feat=text-stroke</a> </li> </ul>  </div> <div class="snippet"> <h3 id="grid-centering"><span>Grid centering</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3> <p>Horizontally and vertically centers a child element within a parent element using <code>grid</code>.</p> <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="grid-centering"&gt;
-  &lt;div class="child"&gt;&lt;/div&gt;
+  &lt;div class="child"&gt;Centered content.&lt;/div&gt;
 &lt;/div&gt;
 </code></pre> <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.grid-centering {
   display: grid;

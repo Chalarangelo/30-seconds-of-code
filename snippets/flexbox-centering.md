@@ -6,7 +6,7 @@ Horizontally and vertically centers a child element within a parent element usin
 
 ```html
 <div class="flexbox-centering">
-  <div class="child"></div>
+  <div class="child">Centered content.</div>
 </div>
 ```
 
