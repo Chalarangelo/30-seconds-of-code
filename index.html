@@ -37,6 +37,7 @@
           <a class="sidebar__link" href="#hairline-border"><span>Hairline border</span></a>
           <a class="sidebar__link" href="#overflow-scroll-gradient"><span>Overflow scroll gradient</span></a>
           <a class="sidebar__link" href="#pretty-text-underline"><span>Pretty text underline</span></a>
+          <a class="sidebar__link" href="#reset-all-styles"><span>Reset all styles</span></a>
           <a class="sidebar__link" href="#shape-separator"><span>Shape separator</span></a>
           <a class="sidebar__link" href="#system-font-stack"><span>System font stack</span></a>
           <a class="sidebar__link" href="#triangle"><span>Triangle</span></a>
@@ -1409,6 +1410,47 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
               </li>
               <li>
                 <a href="https://caniuse.com/#feat=css-gradients" target="_blank">https://caniuse.com/#feat=css-gradients</a>
+              </li>
+            </ul>
+
+            <!-- tags: visual -->
+          </div>
+          <div class="snippet">
+            <h3 id="reset-all-styles"><span>Reset all styles</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
+            <p>Resets all styles to default values with one property. This will not affect <code>direction</code> and <code>unicode-bidi</code> properties.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="reset-all-styles"&gt;
+  &lt;h4&gt;Title&lt;/h4&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui iure, consequatur velit sit?&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.reset-all-styles {
+  all: initial;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo">
+              <div class="snippet-demo__reset-all-styles">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui iure, consequatur velit sit?</p>
+              </div>
+            </div>
+            <style>
+              .snippet-demo__reset-all-styles {
+                all: initial;
+              }
+            </style>
+            <h4>Explanation</h4>
+            <p>The <code>all</code> property allows you to reset all styles (inherited or not) to default values.</p>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                87.5%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">⚠️ MS Edge status is under consideration.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=css-all" target="_blank">https://caniuse.com/#feat=css-all</a>
               </li>
             </ul>
 
