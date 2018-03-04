@@ -1,11 +1,11 @@
 ### Reset all styles
 
-Reset all styles to default values with one css property. This will no affect `direction` and `unicode-bidi` properties.
+Resets all styles to default values with one property. This will not affect `direction` and `unicode-bidi` properties.
 
 #### HTML
 
 ```html
-<div class="reset-style">
+<div class="reset-all-styles">
   <h4>Title</h4>
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui iure, consequatur velit sit?</p>
 </div>
@@ -14,7 +14,7 @@ Reset all styles to default values with one css property. This will no affect `d
 #### CSS
 
 ```css
-.reset-style {
+.reset-all-styles {
   all: initial;
 }
 ```
@@ -36,7 +36,7 @@ Reset all styles to default values with one css property. This will no affect `d
 
 #### Explanation
 
-The `all` css property allows you to reset all styles (inherited or not) to default values.
+The `all` property allows you to reset all styles (inherited or not) to default values.
 
 #### Browser support
 
