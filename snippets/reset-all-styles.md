@@ -43,3 +43,5 @@ The `all` property allows you to reset all styles (inherited or not) to default 
 <span class="snippet__support-note">⚠️ MS Edge status is under consideration.</span>
 
 * https://caniuse.com/#feat=css-all
+
+<!-- tags: visual -->
