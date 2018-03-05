@@ -54,6 +54,7 @@
           <a class="sidebar__link" href="#disable-selection"><span>Disable selection</span></a>
           <a class="sidebar__link" href="#mouse-cursor-gradient-tracking"><span>Mouse cursor gradient tracking</span></a>
           <a class="sidebar__link" href="#popout-menu"><span>Popout menu</span></a>
+          <a class="sidebar__link" href="#sibling-fade"><span>Sibling fade</span></a>
         </section>
       </div>
     </nav>
@@ -1519,6 +1520,66 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
             </ul>
 
             <!-- tags: visual -->
+          </div>
+          <div class="snippet">
+            <h3 id="sibling-fade"><span>Sibling fade</span><span class="tags__tag snippet__tag" data-type="interactivity"><i data-feather="edit-2"></i>interactivity</span></h3>
+            <p>Fades out the siblings of a hovered item.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="sibling-fade"&gt;
+  &lt;span&gt;Item 1&lt;/span&gt;
+  &lt;span&gt;Item 2&lt;/span&gt;
+  &lt;span&gt;Item 3&lt;/span&gt;
+  &lt;span&gt;Item 4&lt;/span&gt;
+  &lt;span&gt;Item 5&lt;/span&gt;
+  &lt;span&gt;Item 6&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">span {
+  padding: 0 1rem;
+  transition: opacity 0.2s;
+}
+.sibling-fade:hover span:not(:hover) {
+  opacity: 0.5;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo">
+              <nav class="snippet-demo__sibling-fade">
+                <span>Item 1</span>
+                <span>Item 2</span>
+                <span>Item 3</span>
+                <span>Item 4</span>
+                <span>Item 5</span>
+                <span>Item 6</span>
+              </nav>
+            </div>
+            <style>
+              .snippet-demo__sibling-fade {
+                cursor: default;
+                line-height: 2;
+                vertical-align: middle;
+              }
+              .snippet-demo__sibling-fade span {
+                padding: 1rem;
+                transition: opacity 0.2s;
+              }
+              .snippet-demo__sibling-fade:hover span:not(:hover) {
+                opacity: 0.5;
+              }
+            </style>
+            <h4>Explanation</h4>
+            <ol>
+              <li><code>transition: opacity 0.2s</code> specifies that changes to opacity will be transitioned over 0.2 seconds.</li>
+              <li><code>.sibling-fade:hover span:not(:hover)</code> specifies that when the parent is hovered, select any <code>span</code> children that are not currently being hovered and change their opacity to <code>0.5</code>.</li>
+            </ol>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                99+%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+
+            <!-- tags: interactivity -->
           </div>
           <div class="snippet">
             <h3 id="system-font-stack"><span>System font stack</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
