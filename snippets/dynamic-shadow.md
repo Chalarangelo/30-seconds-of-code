@@ -23,7 +23,7 @@ Creates a shadow similar to `box-shadow` but based on the colors of the element 
   height: 10rem;
   background: linear-gradient(75deg, #6d78ff, #00ffb8);
 }
-.dynamic-shadow::before {
+.dynamic-shadow::after {
   content: '';
   width: 100%;
   height: 100%;
