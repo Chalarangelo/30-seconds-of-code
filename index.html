@@ -30,6 +30,7 @@
         </section>
         <section data-type="visual" class="sidebar__section">
           <h4 class="sidebar__section-heading">visual</h4>
+          <a class="sidebar__link" href="#circle"><span>Circle</span></a>
           <a class="sidebar__link" href="#custom-scrollbar"><span>Custom scrollbar</span></a>
           <a class="sidebar__link" href="#custom-text-selection"><span>Custom text selection</span></a>
           <a class="sidebar__link" href="#etched-text"><span>Etched text</span></a>
@@ -243,6 +244,48 @@
             </ul>
 
             <!-- tags: layout -->
+          </div>
+          <div class="snippet">
+            <h3 id="circle"><span>Circle</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
+            <p>Creates a circle shape with pure CSS.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="circle"&gt;&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.circle {
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  background: #333;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo">
+              <div class="snippet-demo__circle"></div>
+            </div>
+            <style>
+              .snippet-demo__circle {
+                border-radius: 50%;
+                width: 2rem;
+                height: 2rem;
+                background: #333;
+              }
+            </style>
+            <h4>Explanation</h4>
+            <p><code>border-radius: 50%</code> curves the borders of an element to create a circle.</p>
+            <p>Since a circle has the same radius at any given point, the <code>width</code> and <code>height</code> must be the same. Differing values will create an ellipse.</p>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                95.0%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=border-radius" target="_blank">https://caniuse.com/#feat=border-radius</a>
+              </li>
+            </ul>
+
+            <!-- tags: visual -->
           </div>
           <div class="snippet">
             <h3 id="clearfix"><span>Clearfix</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
