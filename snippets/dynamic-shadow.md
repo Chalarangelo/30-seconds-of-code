@@ -87,7 +87,7 @@ will be positioned underneath the element itself while still being visible.
 
 #### Browser support
 
-<span class="snippet__support-note">✅ No caveats.</span>
+<span class="snippet__support-note">⚠️ Requires prefixes for full support.</span>
 
 * https://caniuse.com/#feat=css-filters
 
