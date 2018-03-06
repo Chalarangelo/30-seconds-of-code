@@ -121,10 +121,10 @@
   border-radius: 50%;
   animation: bouncing-loader 0.6s infinite alternate;
 }
-.bouncing-loader &gt; div:nth-of-type(2) {
+.bouncing-loader &gt; div:nth-child(2) {
   animation-delay: 0.2s;
 }
-.bouncing-loader &gt; div:nth-of-type(3) {
+.bouncing-loader &gt; div:nth-child(3) {
   animation-delay: 0.4s;
 }
 </code></pre>
@@ -170,20 +170,23 @@
             <p>Note: <code>1rem</code> is usually <code>16px</code>.</p>
             <ol>
               <li>
-                <p><code>@keyframes</code> defines an animation that has two states, where the element changes <code>opacity</code>, and is translated up on the 2D plane using <code>transform: translateY()</code>.</p>
+                <p><code>@keyframes</code> defines an animation that has two states, where the element changes <code>opacity</code> and is translated up on the 2D plane using <code>transform: translateY()</code>.</p>
               </li>
               <li>
-                <p><code>.bouncing-loader</code> is the parent container of the bouncing circles and uses <code>display: flex</code> and <code>justify-content: center</code> to position them in the in the center.</p>
+                <p><code>.bouncing-loader</code> is the parent container of the bouncing circles and uses <code>display: flex</code> and <code>justify-content: center</code> to position them in the center.</p>
               </li>
               <li>
-                <p>Using <code>.bouncing-loader &gt; div</code>, we target the three child <code>div</code>s of the parent to be styled. The <code>div</code>s are given a width and height of <code>1rem</code>, using <code>border-radius: 50%</code> to turn
-                  them from squares to circles.</p>
+                <p><code>.bouncing-loader &gt; div</code>, targets the three child <code>div</code>s of the parent to be styled. The <code>div</code>s are given a width and height of <code>1rem</code>, using <code>border-radius: 50%</code> to turn them from
+                  squares to circles.</p>
               </li>
               <li>
                 <p><code>margin: 3rem 0.2rem</code> specifies that each circle has a top/bottom margin of <code>3rem</code> and left/right margin of <code>0.2rem</code> so that they do not directly touch each other, giving them some breathing room.</p>
               </li>
               <li>
                 <p><code>animation</code> is a shorthand property for the various animation properties: <code>animation-name</code>, <code>animation-duration</code>, <code>animation-iteration-count</code>, <code>animation-direction</code> are used.</p>
+              </li>
+              <li>
+                <p><code>nth-child(n)</code> targets the element which is the nth child of its parent.</p>
               </li>
               <li>
                 <p><code>animation-delay</code> is used on the second and third <code>div</code> respectively, so that each element does not start the animation at the same time.</p>
