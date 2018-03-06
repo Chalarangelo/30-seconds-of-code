@@ -37,10 +37,10 @@ Creates a bouncing loader animation.
   border-radius: 50%;
   animation: bouncing-loader 0.6s infinite alternate;
 }
-.bouncing-loader > div:nth-of-type(2) {
+.bouncing-loader > div:nth-child(2) {
   animation-delay: 0.2s;
 }
-.bouncing-loader > div:nth-of-type(3) {
+.bouncing-loader > div:nth-child(3) {
   animation-delay: 0.4s;
 }
 ```
@@ -90,19 +90,21 @@ Creates a bouncing loader animation.
 
 Note: `1rem` is usually `16px`.
 
-1. `@keyframes` defines an animation that has two states, where the element changes `opacity`, and is translated up on the 2D plane using `transform: translateY()`.
+1. `@keyframes` defines an animation that has two states, where the element changes `opacity` and is translated up on the 2D plane using `transform: translateY()`.
 
 2. `.bouncing-loader` is the parent container of the bouncing circles and uses `display: flex`
-   and `justify-content: center` to position them in the in the center.
+   and `justify-content: center` to position them in the center.
 
-3. Using `.bouncing-loader > div`, we target the three child `div`s of the parent to be styled. The `div`s are given a width and height of `1rem`, using `border-radius: 50%` to turn them from squares to circles.
+3. `.bouncing-loader > div`, targets the three child `div`s of the parent to be styled. The `div`s are given a width and height of `1rem`, using `border-radius: 50%` to turn them from squares to circles.
 
 4. `margin: 3rem 0.2rem` specifies that each circle has a top/bottom margin of `3rem` and left/right margin
    of `0.2rem` so that they do not directly touch each other, giving them some breathing room.
 
 5. `animation` is a shorthand property for the various animation properties: `animation-name`, `animation-duration`, `animation-iteration-count`, `animation-direction` are used.
 
-6. `animation-delay` is used on the second and third `div` respectively, so that each element does not start the animation at the same time.
+6. `nth-child(n)` targets the element which is the nth child of its parent.
+
+7. `animation-delay` is used on the second and third `div` respectively, so that each element does not start the animation at the same time.
 
 #### Browser support
 
