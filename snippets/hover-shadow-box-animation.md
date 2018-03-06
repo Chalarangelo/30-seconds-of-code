@@ -6,7 +6,7 @@ Creates a shadow box around the text whern it is hovered.
 #### HTML
 
 ```html
-< h4 class = "hover-shadow-box-animation"> Box it! </h4>
+<h4 class = "hover-shadow-box-animation"> Box it! </h4>
 ```
 
 #### CSS
@@ -18,6 +18,7 @@ Creates a shadow box around the text whern it is hovered.
   -webkit-transform:perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px transparent;
+  margin: 10px;
   -webkit-transition-duration : 0.3s;
   transition-duration: 0.3s;
   -webkit-transition-property: box-shadow, transform;
@@ -32,7 +33,7 @@ Creates a shadow box around the text whern it is hovered.
 #### Demo
 
 <div class = "snippet-demo">
-  < h4 class = "snippet-demo_hover-shadow-box-animation"> Box it! 
+  <h4 class = "snippet-demo_hover-shadow-box-animation"> Box it! 
 </h4>
 </div>
                                                        
@@ -40,6 +41,7 @@ Creates a shadow box around the text whern it is hovered.
 .snippet-demo_hover-shadow-box-animation{
   display: inline-block;
   color: #0087ca;
+  margin: 10px;
   vertical-align: middle;
   -webkit-transform:perspective(1px) translateZ(45);
   transform: perspective(1px) translateZ(45);
