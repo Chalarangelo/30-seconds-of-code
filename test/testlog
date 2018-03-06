@@ -1,4 +1,4 @@
-Test log for: Mon Mar 05 2018 20:32:06 GMT+0000 (UTC)
+Test log for: Thu Mar 08 2018 20:34:08 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.2 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1398,6 +1398,10 @@ Test log for: Mon Mar 05 2018 20:32:06 GMT+0000 (UTC)
     ✔ rearg is a Function
     ✔ Reorders arguments in invoked function
 
+  Testing recordAnimationFrames
+
+    ✔ recordAnimationFrames is a Function
+
   Testing redirect
 
     ✔ redirect is a Function
@@ -1956,9 +1960,9 @@ Test log for: Mon Mar 05 2018 20:32:06 GMT+0000 (UTC)
 
     ✔ zipWith is a Function
     ✔ Sends a GET request
-    ✔ Sends a POST request
     ✔ Runs the function provided
     ✔ Runs promises in series
+    ✔ Sends a POST request
     ✔ Works as expecting, passing arguments properly
     ✔ Works with multiple promises
 
@@ -1972,10 +1976,10 @@ Test log for: Mon Mar 05 2018 20:32:06 GMT+0000 (UTC)
       ✖ length of string is 8
 
 
-  total:     988
-  passing:   986
+  total:     989
+  passing:   987
   failing:   2
-  duration:  2.6s
+  duration:  2.5s
 
 
 undefined
