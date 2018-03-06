@@ -354,7 +354,17 @@
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.constant-width-to-height-ratio {
   background: #333;
   width: 50%;
-  padding-top: 50%;
+}
+.constant-width-to-height-ratio::before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+  float: left;
+}
+.constant-width-to-height-ratio::after {
+  content: '';
+  display: block;
+  clear: both;
 }
 </code></pre>
             <h4>Demo</h4>
@@ -366,19 +376,31 @@
               .snippet-demo__constant-width-to-height-ratio {
                 background: #333;
                 width: 50%;
-                padding-top: 50%;
+              }
+              .snippet-demo__constant-width-to-height-ratio::before {
+                content: '';
+                display: block;
+                padding-top: 100%;
+                float: left;
+              }
+              .snippet-demo__constant-width-to-height-ratio::after {
+                content: '';
+                display: block;
+                clear: both;
               }
             </style>
             <h4>Explanation</h4>
-            <p><code>padding-top</code> and <code>padding-bottom</code> can be used as an alternative to <code>height</code> such that the percentage value causes an element's height to become a percentage of its parent's width, i.e. <code>50%</code> means
-              the height will be 50% of the parent element's width, which means it acts the same as <code>width</code>. This allows its proportion to remain constant.</p>
+            <p><code>padding-top</code> on the <code>::before</code> pseudo-element causes the height of the element to equal a percentage of its width. <code>100%</code> therefore means the element's height will always be <code>100%</code> of the width,
+              creating a responsive square.
+            </p>
+            <p>This method also allows content to be placed inside the element normally.</p>
             <h4>Browser support</h4>
             <div>
               <div class="snippet__browser-support">
                 99+%
               </div>
             </div>
-            <p><span class="snippet__support-note">⚠️ <code>padding-top</code> pushes any content within the element to the bottom.</span></p>
+            <p><span class="snippet__support-note">✅ No caveats.</span></p>
 
             <!-- tags: layout -->
           </div>

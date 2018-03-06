@@ -15,7 +15,17 @@ Given an element of variable width, it will ensure its height remains proportion
 .constant-width-to-height-ratio {
   background: #333;
   width: 50%;
-  padding-top: 50%;
+}
+.constant-width-to-height-ratio::before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+  float: left;
+}
+.constant-width-to-height-ratio::after {
+  content: '';
+  display: block;
+  clear: both;
 }
 ```
 
@@ -31,17 +41,30 @@ Resize your browser window to see the proportion of the element remain the same.
 .snippet-demo__constant-width-to-height-ratio {
   background: #333;
   width: 50%;
-  padding-top: 50%;
+}
+.snippet-demo__constant-width-to-height-ratio::before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+  float: left;
+}
+.snippet-demo__constant-width-to-height-ratio::after {
+  content: '';
+  display: block;
+  clear: both;
 }
 </style>
 
 #### Explanation
 
-`padding-top` and `padding-bottom` can be used as an alternative to `height` such that the percentage value
-causes an element's height to become a percentage of its parent's width, i.e. `50%` means the height will be 50% of the parent element's width, which means it acts the same as `width`. This allows its proportion to remain constant.
+`padding-top` on the `::before` pseudo-element causes the height of the element to equal a percentage of
+its width. `100%` therefore means the element's height will always be `100%` of the width, creating a responsive
+square.
+
+This method also allows content to be placed inside the element normally.
 
 #### Browser support
 
-<span class="snippet__support-note">⚠️ `padding-top` pushes any content within the element to the bottom.</span>
+<span class="snippet__support-note">✅ No caveats.</span>
 
 <!-- tags: layout -->
