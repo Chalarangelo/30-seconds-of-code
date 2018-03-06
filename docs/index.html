@@ -239,25 +239,25 @@
   &lt;div class="box footer"&gt;Footer&lt;/div&gt;
 &lt;/div&gt;
 </code></pre> <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.grid-layout {
-        display: grid;
-        grid-gap: 10px;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-areas:
-        "sidebar header header"
-        "sidebar content content"
-        "sidebar footer  footer";
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    'sidebar header header'
+    'sidebar content content'
+    'sidebar footer  footer';
 }
 .sidebar {
-    grid-area: sidebar;
+  grid-area: sidebar;
 }
 .content {
-    grid-area: content;
+  grid-area: content;
 }
 .header {
-    grid-area: header;
+  grid-area: header;
 }
 .footer {
-    grid-area: footer;
+  grid-area: footer;
 }
 </code></pre> <h4>Demo</h4> <div class="snippet-demo"> <div class="snippet-demo__grid-layout"> <div class="box snippet-demo__grid-layout__header">Header</div> <div class="box snippet-demo__grid-layout__sidebar">Sidebar</div> <div class="box snippet-demo__grid-layout__content">Content <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div> <div class="box snippet-demo__grid-layout__footer">Footer</div> </div> </div>  <h4>Explanation</h4> <ol> <li><code>display: grid</code> enables grid.</li> <li><code>grid-gap: 10px</code> defines spacing between the elements.</li> <li><code>grid-template-columns: repeat(3, 1fr)</code> defines 3 columns of the same size.</li> <li><code>grid-template-areas</code> defines the names of grid areas.</li> <li><code>grid-area: sidebar</code> makes the element use the area with the name <code>sidebar</code>.</li> </ol> <h4>Browser support</h4> <div> <div class="snippet__browser-support"> 87.6% </div> </div> <p><span class="snippet__support-note">✅ No caveats.</span></p> <ul> <li> <a href="https://caniuse.com/#feat=css-grid" target="_blank">https://caniuse.com/#feat=css-grid</a> </li> </ul>  </div> <div class="snippet"> <h3 id="hairline-border"><span>Hairline border</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3> <p>Gives an element a border equal to 1 native device pixel in width, which can look very sharp and crisp.</p> <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="hairline-border"&gt;text&lt;/div&gt;
 </code></pre> <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.hairline-border {
