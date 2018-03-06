@@ -19,25 +19,25 @@ Basic website layout using `grid`.
 
 ```css
 .grid-layout {
-        display: grid;
-        grid-gap: 10px;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-areas:
-        "sidebar header header"
-        "sidebar content content"
-        "sidebar footer  footer";
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    'sidebar header header'
+    'sidebar content content'
+    'sidebar footer  footer';
 }
 .sidebar {
-    grid-area: sidebar;
+  grid-area: sidebar;
 }
 .content {
-    grid-area: content;
+  grid-area: content;
 }
 .header {
-    grid-area: header;
+  grid-area: header;
 }
 .footer {
-    grid-area: footer;
+  grid-area: footer;
 }
 ```
 
