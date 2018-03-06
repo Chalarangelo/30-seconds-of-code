@@ -2,8 +2,10 @@
 
 Invokes the provided callback on each animation frame.
 
-Use recursion. Provided that `running` is `true`, continue invoking `window.requestAnimationFrame()` which invokes the
-provided callback. Return an object with two methods `start` and `stop` to allow manual control of the recording. Omit the second argument, `autoStart`, to implicitly call `start` when the function is invoked.
+Use recursion. 
+Provided that `running` is `true`, continue invoking `window.requestAnimationFrame()` which invokes the provided callback. 
+Return an object with two methods `start` and `stop` to allow manual control of the recording. 
+Omit the second argument, `autoStart`, to implicitly call `start` when the function is invoked.
 
 ```js
 const recordAnimationFrames = (callback, autoStart = true) => {
@@ -28,9 +30,9 @@ const recordAnimationFrames = (callback, autoStart = true) => {
 ```
 
 ```js
-const cb = () => console.log('Animation frame fired')
-const recorder = recordAnimationFrames(cb) // logs 'Animation frame fired' on each animation frame
-recorder.stop() // stops logging
-recorder.start() // starts again
-const recorder2 = recordAnimationFrames(cb, false) // `start` needs to be explicitly called to begin recording frames
+const cb = () => console.log('Animation frame fired');
+const recorder = recordAnimationFrames(cb); // logs 'Animation frame fired' on each animation frame
+recorder.stop(); // stops logging
+recorder.start(); // starts again
+const recorder2 = recordAnimationFrames(cb, false); // `start` needs to be explicitly called to begin recording frames
 ```
