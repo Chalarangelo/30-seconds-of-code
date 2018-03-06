@@ -9,24 +9,25 @@ Omit the second argument, `autoStart`, to implicitly call `start` when the funct
 
 ```js
 const recordAnimationFrames = (callback, autoStart = true) => {
-  let running = true, raf
+  let running = true,
+    raf;
   const stop = () => {
-    running = false
-    cancelAnimationFrame(raf)
-  }
+    running = false;
+    cancelAnimationFrame(raf);
+  };
   const start = () => {
-    running = true
-    run()
-  }
+    running = true;
+    run();
+  };
   const run = () => {
     raf = requestAnimationFrame(() => {
-      callback()
-      if (running) run()
-    })
-  }
-  if (autoStart) start()
-  return { start, stop }
-}
+      callback();
+      if (running) run();
+    });
+  };
+  if (autoStart) start();
+  return { start, stop };
+};
 ```
 
 ```js
