@@ -206,6 +206,7 @@ randomIntegerInRange:math,utility,random
 randomNumberInRange:math,utility,random
 readFileLines:node,array,string
 rearg:adapter,function
+recordAnimationFrames:browser,utility
 redirect:browser,url
 reducedFilter:array
 reduceSuccessive:array,function
