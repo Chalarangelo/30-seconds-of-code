@@ -18,7 +18,7 @@ Ensures that an element self-clears its children.
 
 ```css
 .clearfix::after {
-  content: "";
+  content: '';
   display: block;
   clear: both;
 }
@@ -59,4 +59,6 @@ Ensures that an element self-clears its children.
 
 #### Browser support
 
-<span class="snippet__support-note">✅ No caveats.</span>
+<span class="snippet__support-note">⚠️ For this snippet to work properly you need to ensure that there are no non-floating children in the container and that there are no tall floats before the clearfixed container but in the same formatting context (e.g. floated columns).</span>
+
+<!-- tags: layout -->

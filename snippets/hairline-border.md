@@ -81,3 +81,5 @@ very sharp and crisp.
 <hr>
 
 \*Chrome does not support subpixel values on `border`. Safari does not support subpixel values on `box-shadow`. Firefox supports subpixel values on both.
+
+<!-- tags: visual -->

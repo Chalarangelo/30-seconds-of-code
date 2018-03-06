@@ -14,6 +14,7 @@ Uses an SVG shape to separate two different blocks to create more a interesting 
 .shape-separator {
   position: relative;
   height: 48px;
+  background: #333;
 }
 .shape-separator::after {
   content: '';
@@ -64,3 +65,5 @@ Uses an SVG shape to separate two different blocks to create more a interesting 
 <span class="snippet__support-note">✅ No caveats.</span>
 
 * https://caniuse.com/#feat=svg
+
+<!-- tags: visual -->

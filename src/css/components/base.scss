@@ -1,5 +1,12 @@
 html {
   font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
 }
 
 body {
@@ -32,7 +39,7 @@ ol {
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 64rem;
   padding: 0 2%;
   margin: 0 auto;
 }

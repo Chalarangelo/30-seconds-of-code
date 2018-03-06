@@ -35,6 +35,7 @@
     max-height: 378px;
     margin-top: 44px;
     box-shadow: 0 0.25rem 0.5rem -0.1rem rgba(0, 32, 128, 0.2);
+    padding-bottom: 1rem;
 
     &.is-active {
       transform: rotateX(0);
@@ -58,6 +59,16 @@
       background: rgba(255, 255, 255, 0.1);
       border-color: pink;
     }
+  }
+
+  &__section {
+    padding: 0 0.75rem;
+  }
+
+  &__section-heading {
+    text-transform: capitalize;
+    color: #e3f5ff;
+    margin-bottom: 0.5rem;
   }
 }
 

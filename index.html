@@ -14,33 +14,49 @@
     <nav class="sidebar" aria-label="Table of Contents">
       <button class="hamburger hamburger--spin sidebar__menu" type="button" aria-label="Menu" aria-expanded="false">
         <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
+      <span class="hamburger-inner"></span>
         </span>
       </button>
       <div class="sidebar__links">
-        <a class="sidebar__link" href="#box-sizing-reset">Box-sizing reset</a>
-        <a class="sidebar__link" href="#clearfix">Clearfix</a>
-        <a class="sidebar__link" href="#constant-width-to-height-ratio">Constant width to height ratio</a>
-        <a class="sidebar__link" href="#custom-scrollbar">Custom scrollbar</a>
-        <a class="sidebar__link" href="#custom-text-selection">Custom text selection</a>
-        <a class="sidebar__link" href="#custom-variables">Custom variables</a>
-        <a class="sidebar__link" href="#disable-selection">Disable selection</a>
-        <a class="sidebar__link" href="#donut-spinner">Donut spinner</a>
-        <a class="sidebar__link" href="#easing-variables">Easing variables</a>
-        <a class="sidebar__link" href="#etched-text">Etched text</a>
-        <a class="sidebar__link" href="#evenly-distributed-children">Evenly distributed children</a>
-        <a class="sidebar__link" href="#gradient-text">Gradient text</a>
-        <a class="sidebar__link" href="#hairline-border">Hairline border</a>
-        <a class="sidebar__link" href="#horizontal-and-vertical-centering">Horizontal and vertical centering</a>
-        <a class="sidebar__link" href="#hover-underline-animation">Hover underline animation</a>
-        <a class="sidebar__link" href="#mouse-cursor-gradient-tracking">Mouse cursor gradient tracking</a>
-        <a class="sidebar__link" href="#overflow-scroll-gradient">Overflow scroll gradient</a>
-        <a class="sidebar__link" href="#popout-menu">Popout menu</a>
-        <a class="sidebar__link" href="#pretty-text-underline">Pretty text underline</a>
-        <a class="sidebar__link" href="#shape-separator">Shape separator</a>
-        <a class="sidebar__link" href="#system-font-stack">System font stack</a>
-        <a class="sidebar__link" href="#triangle">Triangle</a>
-        <a class="sidebar__link" href="#truncate-text">Truncate text</a>
+        <section data-type="layout" class="sidebar__section">
+          <h4 class="sidebar__section-heading">layout</h4>
+          <a class="sidebar__link" href="#box-sizing-reset"><span>Box-sizing reset</span></a>
+          <a class="sidebar__link" href="#clearfix"><span>Clearfix</span></a>
+          <a class="sidebar__link" href="#constant-width-to-height-ratio"><span>Constant width to height ratio</span></a>
+          <a class="sidebar__link" href="#evenly-distributed-children"><span>Evenly distributed children</span></a>
+          <a class="sidebar__link" href="#flexbox-centering"><span>Flexbox centering</span></a>
+          <a class="sidebar__link" href="#grid-centering"><span>Grid centering</span></a>
+          <a class="sidebar__link" href="#truncate-text"><span>Truncate text</span></a>
+        </section>
+        <section data-type="visual" class="sidebar__section">
+          <h4 class="sidebar__section-heading">visual</h4>
+          <a class="sidebar__link" href="#circle"><span>Circle</span></a>
+          <a class="sidebar__link" href="#custom-scrollbar"><span>Custom scrollbar</span></a>
+          <a class="sidebar__link" href="#custom-text-selection"><span>Custom text selection</span></a>
+          <a class="sidebar__link" href="#etched-text"><span>Etched text</span></a>
+          <a class="sidebar__link" href="#gradient-text"><span>Gradient text</span></a>
+          <a class="sidebar__link" href="#hairline-border"><span>Hairline border</span></a>
+          <a class="sidebar__link" href="#overflow-scroll-gradient"><span>Overflow scroll gradient</span></a>
+          <a class="sidebar__link" href="#pretty-text-underline"><span>Pretty text underline</span></a>
+          <a class="sidebar__link" href="#reset-all-styles"><span>Reset all styles</span></a>
+          <a class="sidebar__link" href="#shape-separator"><span>Shape separator</span></a>
+          <a class="sidebar__link" href="#system-font-stack"><span>System font stack</span></a>
+          <a class="sidebar__link" href="#triangle"><span>Triangle</span></a>
+        </section>
+        <section data-type="animation" class="sidebar__section">
+          <h4 class="sidebar__section-heading">animation</h4>
+          <a class="sidebar__link" href="#bouncing-loader"><span>Bouncing loader</span></a>
+          <a class="sidebar__link" href="#donut-spinner"><span>Donut spinner</span></a>
+          <a class="sidebar__link" href="#easing-variables"><span>Easing variables</span></a>
+          <a class="sidebar__link" href="#hover-underline-animation"><span>Hover underline animation</span></a>
+        </section>
+        <section data-type="interactivity" class="sidebar__section">
+          <h4 class="sidebar__section-heading">interactivity</h4>
+          <a class="sidebar__link" href="#disable-selection"><span>Disable selection</span></a>
+          <a class="sidebar__link" href="#mouse-cursor-gradient-tracking"><span>Mouse cursor gradient tracking</span></a>
+          <a class="sidebar__link" href="#popout-menu"><span>Popout menu</span></a>
+          <a class="sidebar__link" href="#sibling-fade"><span>Sibling fade</span></a>
+        </section>
       </div>
     </nav>
     <div class="content-wrapper">
@@ -56,8 +72,134 @@
       </header>
       <main class="main" id="main">
         <div class="container">
+          <nav class="tags" aria-label="Filter by tags">
+            <button class="tags__tag is-large is-active" data-type="all">
+              <i data-feather="check"></i>all</button>
+            <button class="tags__tag is-large " data-type="layout">
+              <i data-feather="layout"></i>layout</button>
+            <button class="tags__tag is-large " data-type="visual">
+              <i data-feather="eye"></i>visual</button>
+            <button class="tags__tag is-large " data-type="animation">
+              <i data-feather="loader"></i>animation</button>
+            <button class="tags__tag is-large " data-type="interactivity">
+              <i data-feather="edit-2"></i>interactivity</button>
+          </nav>
           <div class="snippet">
-            <h3 id="box-sizing-reset">Box-sizing reset</h3>
+            <h3 id="bouncing-loader"><span>Bouncing loader</span><span class="tags__tag snippet__tag" data-type="animation"><i data-feather="loader"></i>animation</span></h3>
+            <p>Creates a bouncing loader animation.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="bouncing-loader"&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">@keyframes bouncing-loader {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0.1;
+    transform: translateY(-1rem);
+  }
+}
+.bouncing-loader {
+  display: flex;
+  justify-content: center;
+}
+.bouncing-loader &gt; div {
+  width: 1rem;
+  height: 1rem;
+  margin: 3rem 0.2rem;
+  background: #8385aa;
+  border-radius: 50%;
+  animation: bouncing-loader 0.6s infinite alternate;
+}
+.bouncing-loader &gt; div:nth-of-type(2) {
+  animation-delay: 0.2s;
+}
+.bouncing-loader &gt; div:nth-of-type(3) {
+  animation-delay: 0.4s;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo">
+              <div class="snippet-demo__bouncing-loader">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+            <style>
+              @keyframes bouncing-loader {
+                from {
+                  opacity: 1;
+                  transform: translateY(0);
+                }
+                to {
+                  opacity: 0.1;
+                  transform: translateY(-1rem);
+                }
+              }
+              .snippet-demo__bouncing-loader {
+                display: flex;
+                justify-content: center;
+              }
+              .snippet-demo__bouncing-loader>div {
+                width: 1rem;
+                height: 1rem;
+                margin: 3rem 0.2rem;
+                background: #8385aa;
+                border-radius: 50%;
+                animation: bouncing-loader 0.6s infinite alternate;
+              }
+              .snippet-demo__bouncing-loader>div:nth-child(2) {
+                animation-delay: 0.2s;
+              }
+              .snippet-demo__bouncing-loader>div:nth-child(3) {
+                animation-delay: 0.4s;
+              }
+            </style>
+            <h4>Explanation</h4>
+            <p>Note: <code>1rem</code> is usually <code>16px</code>.</p>
+            <ol>
+              <li>
+                <p><code>@keyframes</code> defines an animation that has two states, where the element changes <code>opacity</code>, and is translated up on the 2D plane using <code>transform: translateY()</code>.</p>
+              </li>
+              <li>
+                <p><code>.bouncing-loader</code> is the parent container of the bouncing circles and uses <code>display: flex</code> and <code>justify-content: center</code> to position them in the in the center.</p>
+              </li>
+              <li>
+                <p>Using <code>.bouncing-loader &gt; div</code>, we target the three child <code>div</code>s of the parent to be styled. The <code>div</code>s are given a width and height of <code>1rem</code>, using <code>border-radius: 50%</code> to turn
+                  them from squares to circles.</p>
+              </li>
+              <li>
+                <p><code>margin: 3rem 0.2rem</code> specifies that each circle has a top/bottom margin of <code>3rem</code> and left/right margin of <code>0.2rem</code> so that they do not directly touch each other, giving them some breathing room.</p>
+              </li>
+              <li>
+                <p><code>animation</code> is a shorthand property for the various animation properties: <code>animation-name</code>, <code>animation-duration</code>, <code>animation-iteration-count</code>, <code>animation-direction</code> are used.</p>
+              </li>
+              <li>
+                <p><code>animation-delay</code> is used on the second and third <code>div</code> respectively, so that each element does not start the animation at the same time.</p>
+              </li>
+            </ol>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                95.3%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=css-animation" target="_blank">https://caniuse.com/#feat=css-animation</a>
+              </li>
+            </ul>
+
+            <!-- tags: animation -->
+          </div>
+          <div class="snippet">
+            <h3 id="box-sizing-reset"><span>Box-sizing reset</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
             <p>Resets the box-model so that <code>width</code>s and <code>height</code>s are not affected by their <code>border</code>s or <code>padding</code>.</p>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">html {
   box-sizing: border-box;
@@ -68,7 +210,7 @@
   box-sizing: inherit;
 }
 </code></pre>
-            <h4 data-type="Demo">Demo</h4>
+            <h4>Demo</h4>
             <div class="snippet-demo">
               <div class="snippet-demo__box-sizing-reset">Demo</div>
             </div>
@@ -83,15 +225,15 @@
                 border: 5px solid;
               }
             </style>
-            <h4 data-type="Explanation">Explanation</h4>
+            <h4>Explanation</h4>
             <ol>
               <li><code>box-sizing: border-box</code> makes the addition of <code>padding</code> or <code>border</code>s not affect an element's <code>width</code> or <code>height</code>.</li>
               <li><code>box-sizing: inherit</code> makes an element respect its parent's <code>box-sizing</code> rule.</li>
             </ol>
-            <h4 data-type="Browser support">Browser support</h4>
+            <h4>Browser support</h4>
             <div>
               <div class="snippet__browser-support">
-                98.2%
+                98.4%
               </div>
             </div>
             <p><span class="snippet__support-note">✅ No caveats.</span></p>
@@ -100,11 +242,55 @@
                 <a href="https://caniuse.com/#feat=css3-boxsizing" target="_blank">https://caniuse.com/#feat=css3-boxsizing</a>
               </li>
             </ul>
+
+            <!-- tags: layout -->
           </div>
           <div class="snippet">
-            <h3 id="clearfix">Clearfix</h3>
+            <h3 id="circle"><span>Circle</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
+            <p>Creates a circle shape with pure CSS.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="circle"&gt;&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.circle {
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  background: #333;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo">
+              <div class="snippet-demo__circle"></div>
+            </div>
+            <style>
+              .snippet-demo__circle {
+                border-radius: 50%;
+                width: 2rem;
+                height: 2rem;
+                background: #333;
+              }
+            </style>
+            <h4>Explanation</h4>
+            <p><code>border-radius: 50%</code> curves the borders of an element to create a circle.</p>
+            <p>Since a circle has the same radius at any given point, the <code>width</code> and <code>height</code> must be the same. Differing values will create an ellipse.</p>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                95.5%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=border-radius" target="_blank">https://caniuse.com/#feat=border-radius</a>
+              </li>
+            </ul>
+
+            <!-- tags: visual -->
+          </div>
+          <div class="snippet">
+            <h3 id="clearfix"><span>Clearfix</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
             <p>Ensures that an element self-clears its children.</p>
-            <h6 data-type="Note: This is only useful if you are still using float to build layouts. Please consider using a modern approach with flexbox layout or grid layout.">Note: This is only useful if you are still using float to build layouts. Please consider using a modern approach with flexbox layout or grid layout.</h6>
+            <h6>Note: This is only useful if you are still using float to build layouts. Please consider using a modern approach with flexbox layout or grid layout.</h6>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="clearfix"&gt;
   &lt;div class="floated"&gt;float a&lt;/div&gt;
   &lt;div class="floated"&gt;float b&lt;/div&gt;
@@ -112,7 +298,7 @@
 &lt;/div&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.clearfix::after {
-  content: "";
+  content: '';
   display: block;
   clear: both;
 }
@@ -120,7 +306,7 @@
   float: left;
 }
 </code></pre>
-            <h4 data-type="Demo">Demo</h4>
+            <h4>Demo</h4>
             <div class="snippet-demo">
               <div class="snippet-demo__clearfix">
                 <div class="snippet-demo__floated">float a</div>
@@ -138,22 +324,24 @@
                 float: left;
               }
             </style>
-            <h4 data-type="Explanation">Explanation</h4>
+            <h4>Explanation</h4>
             <ol>
               <li><code>.clearfix::after</code> defines a pseudo-element.</li>
               <li><code>content: ''</code> allows the pseudo-element to affect layout.</li>
               <li><code>clear: both</code> indicates that the left, right or both sides of the element cannot be adjacent to earlier floated elements within the same block formatting context.</li>
             </ol>
-            <h4 data-type="Browser support">Browser support</h4>
+            <h4>Browser support</h4>
             <div>
               <div class="snippet__browser-support">
                 99+%
               </div>
             </div>
-            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <p><span class="snippet__support-note">⚠️ For this snippet to work properly you need to ensure that there are no non-floating children in the container and that there are no tall floats before the clearfixed container but in the same formatting context (e.g. floated columns).</span></p>
+
+            <!-- tags: layout -->
           </div>
           <div class="snippet">
-            <h3 id="constant-width-to-height-ratio">Constant width to height ratio</h3>
+            <h3 id="constant-width-to-height-ratio"><span>Constant width to height ratio</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
             <p>Given an element of variable width, it will ensure its height remains proportionate in a responsive fashion (i.e., its width to height ratio remains constant).</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="constant-width-to-height-ratio"&gt;&lt;/div&gt;
 </code></pre>
@@ -163,7 +351,7 @@
   padding-top: 50%;
 }
 </code></pre>
-            <h4 data-type="Demo">Demo</h4>
+            <h4>Demo</h4>
             <p>Resize your browser window to see the proportion of the element remain the same.</p>
             <div class="snippet-demo">
               <div class="snippet-demo__constant-width-to-height-ratio"></div>
@@ -175,19 +363,21 @@
                 padding-top: 50%;
               }
             </style>
-            <h4 data-type="Explanation">Explanation</h4>
+            <h4>Explanation</h4>
             <p><code>padding-top</code> and <code>padding-bottom</code> can be used as an alternative to <code>height</code> such that the percentage value causes an element's height to become a percentage of its parent's width, i.e. <code>50%</code> means
               the height will be 50% of the parent element's width, which means it acts the same as <code>width</code>. This allows its proportion to remain constant.</p>
-            <h4 data-type="Browser support">Browser support</h4>
+            <h4>Browser support</h4>
             <div>
               <div class="snippet__browser-support">
                 99+%
               </div>
             </div>
             <p><span class="snippet__support-note">⚠️ <code>padding-top</code> pushes any content within the element to the bottom.</span></p>
+
+            <!-- tags: layout -->
           </div>
           <div class="snippet">
-            <h3 id="custom-scrollbar">Custom scrollbar</h3>
+            <h3 id="custom-scrollbar"><span>Custom scrollbar</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
             <p>Customizes the scrollbar style for the document and elements with scrollable overflow, on WebKit platforms.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="custom-scrollbar"&gt;
   &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui iure, consequatur velit sit?&lt;/p&gt;
@@ -198,18 +388,18 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
 /* Scrollable element */
 .some-element::webkit-scrollbar {
 }
 </code></pre>
-            <h4 data-type="Demo">Demo</h4>
+            <h4>Demo</h4>
             <div class="snippet-demo">
               <div class="snippet-demo__custom-scrollbar">
                 <p>
@@ -237,7 +427,7 @@
                 box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
               }
             </style>
-            <h4 data-type="Explanation">Explanation</h4>
+            <h4>Explanation</h4>
             <ol>
               <li><code>::-webkit-scrollbar</code> targets the whole scrollbar element.</li>
               <li><code>::-webkit-scrollbar-track</code> targets only the scrollbar track.</li>
@@ -246,10 +436,10 @@
             <p>There are many other pseudo-elements that you can use to style scrollbars. For more info, visit the
               <a href="https://webkit.org/blog/363/styling-scrollbars/" target="_blank">WebKit Blog</a>
             </p>
-            <h4 data-type="Browser support">Browser support</h4>
+            <h4>Browser support</h4>
             <div>
               <div class="snippet__browser-support">
-                87.3%
+                88.0%
               </div>
             </div>
             <p><span class="snippet__support-note">⚠️ Scrollbar styling doesn't appear to be on any standards track.</span></p>
@@ -258,9 +448,11 @@
                 <a href="https://caniuse.com/#feat=css-scrollbar" target="_blank">https://caniuse.com/#feat=css-scrollbar</a>
               </li>
             </ul>
+
+            <!-- tags: visual -->
           </div>
           <div class="snippet">
-            <h3 id="custom-text-selection">Custom text selection</h3>
+            <h3 id="custom-text-selection"><span>Custom text selection</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
             <p>Changes the styling of text selection.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p class="custom-text-selection"&gt;Select some of this text.&lt;/p&gt;
 </code></pre>
@@ -273,7 +465,7 @@
   color: white;
 }
 </code></pre>
-            <h4 data-type="Demo">Demo</h4>
+            <h4>Demo</h4>
             <div class="snippet-demo">
               <p class="snippet-demo__custom-text-selection">Select some of this text.</p>
             </div>
@@ -287,12 +479,12 @@
                 color: white;
               }
             </style>
-            <h4 data-type="Explanation">Explanation</h4>
+            <h4>Explanation</h4>
             <p><code>::selection</code> defines a pseudo selector on an element to style text within it when selected. Note that if you don't combine any other selector your style will be applied at document root level, to any selectable element.</p>
-            <h4 data-type="Browser support">Browser support</h4>
+            <h4>Browser support</h4>
             <div>
               <div class="snippet__browser-support">
-                84.6%
+                84.9%
               </div>
             </div>
             <p><span class="snippet__support-note">⚠️ Requires prefixes for full support and is not actually
@@ -302,62 +494,11 @@ in any specification.</span></p>
                 <a href="https://caniuse.com/#feat=css-selection" target="_blank">https://caniuse.com/#feat=css-selection</a>
               </li>
             </ul>
+
+            <!-- tags: visual -->
           </div>
           <div class="snippet">
-            <h3 id="custom-variables">Custom variables</h3>
-            <p>CSS variables that contain specific values to be reused throughout a document.</p>
-            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">:root {
-    --some-color: #da7800;
-    --some-keyword: italic;
-    --some-size: 1.25em;
-    --some-complex-value: 1px 1px 2px WhiteSmoke, 0 0 1em SlateGray , 0 0 0.2em SlateGray;
-}
-</code></pre>
-            <h4 data-type="Demo">Demo</h4>
-
-            <!-- You must create a `snippet-demo` parent block and use it as a namespace with BEM syntax. -->
-            <div class="snippet-demo">
-              <div class="snippet-demo__custom-variables">
-                <p>CSS is awesome!</p>
-              </div>
-            </div>
-
-            <!-- Add your style rules here. -->
-            <style>
-              :root {
-                --some-color: #686868;
-                --some-keyword: italic;
-                --some-size: 1.25em;
-                --some-complex-value: 1px 1px 2px WhiteSmoke, 0 0 1em SlateGray, 0 0 0.2em SlateGray;
-              }
-              .snippet-demo__custom-variables p {
-                color: var(--some-color);
-                font-size: var(--some-size);
-                font-style: var(--some-keyword);
-                text-shadow: var(--some-complex-value);
-              }
-            </style>
-            <h4 data-type="Explanation">Explanation</h4>
-            <p>Declare variable with <code>--variable-name:</code>.</p>
-            <p>Reuse declared variable throughout the document using the <code>var(--variable-name)</code> function.</p>
-            <h4 data-type="Browser support">Browser support</h4>
-            <div>
-              <div class="snippet__browser-support">
-                87.2%
-              </div>
-            </div>
-            <p><span class="snippet__support-note">⚠️ This is an experimental technology.</span></p>
-
-            <!-- Whenever possible, link a `caniuse` feature which allows the browser support percentage to be displayed.
-If no link is provided, it defaults to 99+%. -->
-            <ul>
-              <li>
-                <a href="https://caniuse.com/#feat=css-variables" target="_blank">https://caniuse.com/#feat=css-variables</a>
-              </li>
-            </ul>
-          </div>
-          <div class="snippet">
-            <h3 id="disable-selection">Disable selection</h3>
+            <h3 id="disable-selection"><span>Disable selection</span><span class="tags__tag snippet__tag" data-type="interactivity"><i data-feather="edit-2"></i>interactivity</span></h3>
             <p>Makes the content unselectable.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p&gt;You can select me.&lt;/p&gt;
 &lt;p class="unselectable"&gt;You can't select me!&lt;/p&gt;
@@ -366,7 +507,7 @@ If no link is provided, it defaults to 99+%. -->
   user-select: none;
 }
 </code></pre>
-            <h4 data-type="Demo">Demo</h4>
+            <h4>Demo</h4>
             <div class="snippet-demo">
               <p>You can select me.</p>
               <p class="snippet-demo__disable-selection">You can't select me!</p>
@@ -376,29 +517,36 @@ If no link is provided, it defaults to 99+%. -->
                 user-select: none;
               }
             </style>
-            <h4 data-type="Explanation">Explanation</h4>
+            <h4>Explanation</h4>
             <p><code>user-select: none</code> specifies that the text cannot be selected.</p>
-            <h4 data-type="Browser support">Browser support</h4>
+            <h4>Browser support</h4>
             <div>
               <div class="snippet__browser-support">
-                86.3%
+                87.2%
               </div>
             </div>
-            <p><span class="snippet__support-note">⚠️ Requires prefixes for full support.</span></p>
+            <p><span class="snippet__support-note">⚠️ Requires prefixes for full support.</span>
+              <span class="snippet__support-note">⚠️ This is not a secure method to prevent users from copying content.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=user-select-none" target="_blank">https://caniuse.com/#feat=user-select-none</a>
               </li>
             </ul>
+
+            <!-- tags: interactivity -->
           </div>
           <div class="snippet">
-            <h3 id="donut-spinner">Donut spinner</h3>
+            <h3 id="donut-spinner"><span>Donut spinner</span><span class="tags__tag snippet__tag" data-type="animation"><i data-feather="loader"></i>animation</span></h3>
             <p>Creates a donut spinner that can be used to indicate the loading of content.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="donut"&gt;&lt;/div&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">@keyframes donut-spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .donut {
   display: inline-block;
@@ -410,7 +558,7 @@ If no link is provided, it defaults to 99+%. -->
   animation: donut-spin 1.2s linear infinite;
 }
 </code></pre>
-            <h4 data-type="Demo">Demo</h4>
+            <h4>Demo</h4>
             <div class="snippet-demo">
               <div class="snippet-demo__donut-spinner"></div>
             </div>
@@ -433,12 +581,12 @@ If no link is provided, it defaults to 99+%. -->
                 animation: snippet-demo__donut-spin 1.2s linear infinite;
               }
             </style>
-            <h4 data-type="Explanation">Explanation</h4>
+            <h4>Explanation</h4>
             <p>Use a semi-transparent <code>border</code> for the whole element, except one side that will serve as the loading indicator for the donut. Use <code>animation</code> to rotate the element.</p>
-            <h4 data-type="Browser support">Browser support</h4>
+            <h4>Browser support</h4>
             <div>
               <div class="snippet__browser-support">
-                94.8%
+                95.3%
               </div>
             </div>
             <p><span class="snippet__support-note">⚠️ Requires prefixes for full support.</span></p>
@@ -450,9 +598,11 @@ If no link is provided, it defaults to 99+%. -->
                 <a href="https://caniuse.com/#feat=transforms2d" target="_blank">https://caniuse.com/#feat=transforms2d</a>
               </li>
             </ul>
+
+            <!-- tags: animation -->
           </div>
           <div class="snippet">
-            <h3 id="easing-variables">Easing variables</h3>
+            <h3 id="easing-variables"><span>Easing variables</span><span class="tags__tag snippet__tag" data-type="animation"><i data-feather="loader"></i>animation</span></h3>
             <p>Variables that can be reused for <code>transition-timing-function</code> properties, more powerful than the built-in <code>ease</code>, <code>ease-in</code>, <code>ease-out</code> and <code>ease-in-out</code>.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="easing-variables"&gt;&lt;/div&gt;
 </code></pre>
@@ -486,7 +636,7 @@ If no link is provided, it defaults to 99+%. -->
   transform: rotate(45deg);
 }
 </code></pre>
-            <h4 data-type="Demo">Demo</h4>
+            <h4>Demo</h4>
             <div class="snippet-demo">
               <div class="snippet-demo__easing-variables">Hover</div>
             </div>
@@ -527,13 +677,13 @@ If no link is provided, it defaults to 99+%. -->
                 transform: rotate(45deg);
               }
             </style>
-            <h4 data-type="Explanation">Explanation</h4>
+            <h4>Explanation</h4>
             <p>The variables are defined globally within the <code>:root</code> CSS pseudo-class which matches the root element of a tree representing the document. In HTML, <code>:root</code> represents the <code>&lt;html&gt;</code> element and is identical
               to the selector <code>html</code>, except that its specificity is higher.</p>
-            <h4 data-type="Browser support">Browser support</h4>
+            <h4>Browser support</h4>
             <div>
               <div class="snippet__browser-support">
-                87.2%
+                88.0%
               </div>
             </div>
             <p><span class="snippet__support-note">✅ No caveats.</span></p>
@@ -542,9 +692,11 @@ If no link is provided, it defaults to 99+%. -->
                 <a href="https://caniuse.com/#feat=css-variables" target="_blank">https://caniuse.com/#feat=css-variables</a>
               </li>
             </ul>
+
+            <!-- tags: animation -->
           </div>
           <div class="snippet">
-            <h3 id="etched-text">Etched text</h3>
+            <h3 id="etched-text"><span>Etched text</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
             <p>Creates an effect where text appears to be "etched" or engraved into the background.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p class="etched-text"&gt;I appear etched into the background.&lt;/p&gt;
 </code></pre>
@@ -555,7 +707,7 @@ If no link is provided, it defaults to 99+%. -->
   color: #b8bec5;
 }
 </code></pre>
-            <h4 data-type="Demo">Demo</h4>
+            <h4>Demo</h4>
             <div class="snippet-demo">
               <p class="snippet-demo__etched-text">I appear etched into the background.</p>
             </div>
@@ -567,14 +719,14 @@ If no link is provided, it defaults to 99+%. -->
                 text-shadow: 0 2px 0 white;
               }
             </style>
-            <h4 data-type="Explanation">Explanation</h4>
+            <h4>Explanation</h4>
             <p><code>text-shadow: 0 2px white</code> creates a white shadow offset <code>0px</code> horizontally and <code>2px</code> vertically from the origin position.</p>
             <p>The background must be darker than the shadow for the effect to work.</p>
             <p>The text color should be slightly faded to make it look like it's engraved/carved out of the background.</p>
-            <h4 data-type="Browser support">Browser support</h4>
+            <h4>Browser support</h4>
             <div>
               <div class="snippet__browser-support">
-                97.9%
+                98.1%
               </div>
             </div>
             <p><span class="snippet__support-note">✅ No caveats.</span></p>
@@ -583,9 +735,11 @@ If no link is provided, it defaults to 99+%. -->
                 <a href="https://caniuse.com/#feat=css-textshadow" target="_blank">https://caniuse.com/#feat=css-textshadow</a>
               </li>
             </ul>
+
+            <!-- tags: visual -->
           </div>
           <div class="snippet">
-            <h3 id="evenly-distributed-children">Evenly distributed children</h3>
+            <h3 id="evenly-distributed-children"><span>Evenly distributed children</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
             <p>Evenly distributes child elements within a parent element.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="evenly-distributed-children"&gt;
   &lt;p&gt;Item1&lt;/p&gt;
@@ -598,7 +752,7 @@ If no link is provided, it defaults to 99+%. -->
   justify-content: space-between;
 }
 </code></pre>
-            <h4 data-type="Demo">Demo</h4>
+            <h4>Demo</h4>
             <div class="snippet-demo">
               <div class="snippet-demo__evenly-distributed-children">
                 <p>Item1</p>
@@ -613,16 +767,16 @@ If no link is provided, it defaults to 99+%. -->
                 justify-content: space-between;
               }
             </style>
-            <h4 data-type="Explanation">Explanation</h4>
+            <h4>Explanation</h4>
             <ol>
               <li><code>display: flex</code> enables flexbox.</li>
               <li><code>justify-content: space-between</code> evenly distributes child elements horizontally. The first item is positioned at the left edge, while the last item is positioned at the right edge.</li>
             </ol>
             <p>Alternatively, use <code>justify-content: space-around</code> to distribute the children with space around them, rather than between them.</p>
-            <h4 data-type="Browser support">Browser support</h4>
+            <h4>Browser support</h4>
             <div>
               <div class="snippet__browser-support">
-                97.8%
+                98.1%
               </div>
             </div>
             <p><span class="snippet__support-note">⚠️ Needs prefixes for full support.</span></p>
@@ -631,9 +785,59 @@ If no link is provided, it defaults to 99+%. -->
                 <a href="https://caniuse.com/#feat=flexbox" target="_blank">https://caniuse.com/#feat=flexbox</a>
               </li>
             </ul>
+
+            <!-- tags: layout -->
           </div>
           <div class="snippet">
-            <h3 id="gradient-text">Gradient text</h3>
+            <h3 id="flexbox-centering"><span>Flexbox centering</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
+            <p>Horizontally and vertically centers a child element within a parent element using <code>flexbox</code>.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="flexbox-centering"&gt;
+  &lt;div class="child"&gt;Centered content.&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.flexbox-centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo">
+              <div class="snippet-demo__flexbox-centering">
+                <p class="snippet-demo__flexbox-centering__child">Centered content.</p>
+              </div>
+            </div>
+            <style>
+              .snippet-demo__flexbox-centering {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 200px;
+              }
+            </style>
+            <h4>Explanation</h4>
+            <ol>
+              <li><code>display: flex</code> enables flexbox.</li>
+              <li><code>justify-content: center</code> centers the child horizontally.</li>
+              <li><code>align-items: center</code> centers the child vertically.</li>
+            </ol>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                98.1%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">⚠️ Needs prefixes for full support.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=flexbox" target="_blank">https://caniuse.com/#feat=flexbox</a>
+              </li>
+            </ul>
+
+            <!-- tags: layout -->
+          </div>
+          <div class="snippet">
+            <h3 id="gradient-text"><span>Gradient text</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
             <p>Gives text a gradient color.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p class="gradient-text"&gt;Gradient text&lt;/p&gt;
 </code></pre>
@@ -643,7 +847,7 @@ If no link is provided, it defaults to 99+%. -->
   -webkit-background-clip: text;
 }
 </code></pre>
-            <h4 data-type="Demo">Demo</h4>
+            <h4>Demo</h4>
             <div class="snippet-demo">
               <p class="snippet-demo__gradient-text">
                 Gradient text
@@ -659,16 +863,16 @@ If no link is provided, it defaults to 99+%. -->
                 margin: 0;
               }
             </style>
-            <h4 data-type="Explanation">Explanation</h4>
+            <h4>Explanation</h4>
             <ol>
               <li><code>background: -webkit-linear-gradient(...)</code> gives the text element a gradient background.</li>
               <li><code>webkit-text-fill-color: transparent</code> fills the text with a transparent color.</li>
               <li><code>webkit-background-clip: text</code> clips the background with the text, filling the text with the gradient background as the color.</li>
             </ol>
-            <h4 data-type="Browser support">Browser support</h4>
+            <h4>Browser support</h4>
             <div>
               <div class="snippet__browser-support">
-                90.7%
+                91.5%
               </div>
             </div>
             <p><span class="snippet__support-note">⚠️ Uses non-standard properties.</span></p>
@@ -677,9 +881,59 @@ If no link is provided, it defaults to 99+%. -->
                 <a href="https://caniuse.com/#feat=text-stroke" target="_blank">https://caniuse.com/#feat=text-stroke</a>
               </li>
             </ul>
+
+            <!-- tags: visual -->
           </div>
           <div class="snippet">
-            <h3 id="hairline-border">Hairline border</h3>
+            <h3 id="grid-centering"><span>Grid centering</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
+            <p>Horizontally and vertically centers a child element within a parent element using <code>grid</code>.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="grid-centering"&gt;
+  &lt;div class="child"&gt;Centered content.&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.grid-centering {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo">
+              <div class="snippet-demo__grid-centering">
+                <p class="snippet-demo__grid-centering__child">Centered content.</p>
+              </div>
+            </div>
+            <style>
+              .snippet-demo__grid-centering {
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                height: 200px;
+              }
+            </style>
+            <h4>Explanation</h4>
+            <ol>
+              <li><code>display: grid</code> enables grid.</li>
+              <li><code>justify-content: center</code> centers the child horizontally.</li>
+              <li><code>align-items: center</code> centers the child vertically.</li>
+            </ol>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                87.6%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=css-grid" target="_blank">https://caniuse.com/#feat=css-grid</a>
+              </li>
+            </ul>
+
+            <!-- tags: layout -->
+          </div>
+          <div class="snippet">
+            <h3 id="hairline-border"><span>Hairline border</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
             <p>Gives an element a border equal to 1 native device pixel in width, which can look very sharp and crisp.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="hairline-border"&gt;text&lt;/div&gt;
 </code></pre>
@@ -702,7 +956,7 @@ If no link is provided, it defaults to 99+%. -->
   }
 }
 </code></pre>
-            <h4 data-type="Demo">Demo</h4>
+            <h4>Demo</h4>
             <div class="snippet-demo">
               <p class="snippet-demo__hairline-border">Text with a hairline border around it.</p>
             </div>
@@ -726,15 +980,15 @@ If no link is provided, it defaults to 99+%. -->
                 }
               }
             </style>
-            <h4 data-type="Explanation">Explanation</h4>
+            <h4>Explanation</h4>
             <ol>
               <li><code>box-shadow</code>, when only using spread, adds a pseudo-border which can use subpixels*.</li>
               <li>Use <code>@media (min-resolution: ...)</code> to check the device pixel ratio (<code>1dppx</code> equals 96 DPI), setting the spread of the <code>box-shadow</code> equal to <code>1 / dppx</code>.</li>
             </ol>
-            <h4 data-type="Browser Support">Browser Support</h4>
+            <h4>Browser Support</h4>
             <div>
               <div class="snippet__browser-support">
-                95.0%
+                95.5%
               </div>
             </div>
             <p><span class="snippet__support-note">⚠️ Needs alternate syntax and JavaScript user agent checking for full support.</span></p>
@@ -748,55 +1002,11 @@ If no link is provided, it defaults to 99+%. -->
             </ul>
             <hr>
             <p>*Chrome does not support subpixel values on <code>border</code>. Safari does not support subpixel values on <code>box-shadow</code>. Firefox supports subpixel values on both.</p>
+
+            <!-- tags: visual -->
           </div>
           <div class="snippet">
-            <h3 id="horizontal-and-vertical-centering">Horizontal and vertical centering</h3>
-            <p>Horizontally and vertically centers a child element within a parent element.</p>
-            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="horizontal-and-vertical-centering"&gt;
-  &lt;div class="child"&gt;&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.horizontal-and-vertical-centering {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-</code></pre>
-            <h4 data-type="Demo">Demo</h4>
-            <div class="snippet-demo">
-              <div class="snippet-demo__horizontal-and-vertical-centering">
-                <p class="snippet-demo__horizontal-and-vertical-centering__child">Centered content.</p>
-              </div>
-            </div>
-            <style>
-              .snippet-demo__horizontal-and-vertical-centering {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 200px;
-              }
-            </style>
-            <h4 data-type="Explanation">Explanation</h4>
-            <ol>
-              <li><code>display: flex</code> enables flexbox.</li>
-              <li><code>justify-content: center</code> centers the child horizontally.</li>
-              <li><code>align-items: center</code> centers the child vertically.</li>
-            </ol>
-            <h4 data-type="Browser support">Browser support</h4>
-            <div>
-              <div class="snippet__browser-support">
-                97.8%
-              </div>
-            </div>
-            <p><span class="snippet__support-note">⚠️ Needs prefixes for full support.</span></p>
-            <ul>
-              <li>
-                <a href="https://caniuse.com/#feat=flexbox" target="_blank">https://caniuse.com/#feat=flexbox</a>
-              </li>
-            </ul>
-          </div>
-          <div class="snippet">
-            <h3 id="hover-underline-animation">Hover underline animation</h3>
+            <h3 id="hover-underline-animation"><span>Hover underline animation</span><span class="tags__tag snippet__tag" data-type="animation"><i data-feather="loader"></i>animation</span></h3>
             <p>Creates an animated underline effect when the text is hovered over.</p>
             <p>
               <small><strong>Credit:</strong>
@@ -827,7 +1037,7 @@ If no link is provided, it defaults to 99+%. -->
   transform-origin: bottom left;
 }
 </code></pre>
-            <h4 data-type="Demo">Demo</h4>
+            <h4>Demo</h4>
             <div class="snippet-demo">
               <p class="snippet-demo__hover-underline-animation">Hover this text to see the effect!</p>
             </div>
@@ -854,7 +1064,7 @@ If no link is provided, it defaults to 99+%. -->
                 transform-origin: bottom left;
               }
             </style>
-            <h4 data-type="Explanation">Explanation</h4>
+            <h4>Explanation</h4>
             <ol>
               <li><code>display: inline-block</code> makes the block <code>p</code> an <code>inline-block</code> to prevent the underline from spanning the entire parent width rather than just the content (text).</li>
               <li><code>position: relative</code> on the element establishes a Cartesian positioning context for pseudo-elements.</li>
@@ -868,10 +1078,10 @@ If no link is provided, it defaults to 99+%. -->
               <li><code>:hover::after</code> then uses <code>scaleX(1)</code> to transition the width to 100%, then changes the <code>transform-origin</code> to <code>bottom left</code> so that the anchor point is reversed, allowing it transition out in the
                 other direction when hovered off.</li>
             </ol>
-            <h4 data-type="Browser support">Browser support</h4>
+            <h4>Browser support</h4>
             <div>
               <div class="snippet__browser-support">
-                94.9%
+                95.4%
               </div>
             </div>
             <p><span class="snippet__support-note">✅ No caveats.</span></p>
@@ -883,9 +1093,11 @@ If no link is provided, it defaults to 99+%. -->
                 <a href="https://caniuse.com/#feat=css-transitions" target="_blank">https://caniuse.com/#feat=css-transitions</a>
               </li>
             </ul>
+
+            <!-- tags: animation -->
           </div>
           <div class="snippet">
-            <h3 id="mouse-cursor-gradient-tracking">Mouse cursor gradient tracking</h3>
+            <h3 id="mouse-cursor-gradient-tracking"><span>Mouse cursor gradient tracking</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span><span class="tags__tag snippet__tag" data-type="interactivity"><i data-feather="edit-2"></i>interactivity</span></h3>
             <p>A hover effect where the gradient follows the mouse cursor.</p>
             <p>
               <small class="snippet__credit"><strong>Credit:</strong>
@@ -920,21 +1132,21 @@ If no link is provided, it defaults to 99+%. -->
   height: var(--size);
   background: radial-gradient(circle closest-side, pink, transparent);
   transform: translate(-50%, -50%);
-  transition: width .2s ease, height .2s ease;
+  transition: width 0.2s ease, height 0.2s ease;
 }
 .mouse-cursor-gradient-tracking:hover::before {
   --size: 200px;
 }
 </code></pre>
             <h4 data-type="JavaScript">JavaScript</h4><pre><code class="lang-js">var btn = document.querySelector('.mouse-cursor-gradient-tracking')
-btn.onmousemove = function (e) {
+btn.onmousemove = function(e) {
   var x = e.pageX - btn.offsetLeft
   var y = e.pageY - btn.offsetTop
   btn.style.setProperty('--x', x + 'px')
   btn.style.setProperty('--y', y + 'px')
 }
 </code></pre>
-            <h4 data-type="Demo">Demo</h4>
+            <h4>Demo</h4>
             <div class="snippet-demo">
               <button class="snippet-demo__mouse-cursor-gradient-tracking">
                 <span>Hover me</span>
@@ -982,17 +1194,17 @@ btn.onmousemove = function (e) {
                 }
               })()
             </script>
-            <h4 data-type="Explanation">Explanation</h4>
+            <h4>Explanation</h4>
             <p><em>TODO</em></p>
             <p><strong>Note!</strong></p>
             <p>If the element's parent has a positioning context (<code>position: relative</code>), you will need to subtract its offsets as well.</p>
             <pre><code class="lang-js">var x = e.pageX - btn.offsetLeft - btn.offsetParent.offsetLeft
 var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
 </code></pre>
-            <h4 data-type="Browser support">Browser support</h4>
+            <h4>Browser support</h4>
             <div>
               <div class="snippet__browser-support">
-                87.2%
+                88.0%
               </div>
             </div>
             <p></p>
@@ -1004,9 +1216,11 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 <a href="https://caniuse.com/#feat=css-variables" target="_blank">https://caniuse.com/#feat=css-variables</a>
               </li>
             </ul>
+
+            <!-- tags: visual, interactivity -->
           </div>
           <div class="snippet">
-            <h3 id="overflow-scroll-gradient">Overflow scroll gradient</h3>
+            <h3 id="overflow-scroll-gradient"><span>Overflow scroll gradient</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
             <p>Adds a fading gradient to an overflowing element to better indicate there is more content to be scrolled.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="overflow-scroll-gradient"&gt;
   &lt;div class="overflow-scroll-gradient__scroller"&gt;
@@ -1021,22 +1235,25 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
   content: '';
   position: absolute;
   bottom: 0;
-  width: 300px;
+  width: 240px;
   height: 25px;
-  background: linear-gradient(rgba(255, 255, 255, 0.001), white); /* transparent keyword is broken in Safari */
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.001),
+    white
+  ); /* transparent keyword is broken in Safari */
   pointer-events: none;
 }
 .overflow-scroll-gradient__scroller {
   overflow-y: scroll;
   background: white;
-  width: 300px;
-  height: 250px;
+  width: 240px;
+  height: 200px;
   padding: 15px 0;
   line-height: 1.2;
   text-align: center;
 }
 </code></pre>
-            <h4 data-type="Demo">Demo</h4>
+            <h4>Demo</h4>
             <div class="snippet-demo">
               <div class="snippet-demo__overflow-scroll-gradient">
                 <div class="snippet-demo__overflow-scroll-gradient__scroller">
@@ -1052,7 +1269,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 content: '';
                 background: linear-gradient(rgba(255, 255, 255, 0.001), white);
                 position: absolute;
-                width: 300px;
+                width: 240px;
                 height: 25px;
                 bottom: 0;
                 pointer-events: none;
@@ -1060,31 +1277,31 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
               .snippet-demo__overflow-scroll-gradient__scroller {
                 overflow-y: scroll;
                 background: white;
-                width: 300px;
-                height: 250px;
+                width: 240px;
+                height: 200px;
                 padding: 15px 0;
                 line-height: 1.2;
                 text-align: center;
               }
             </style>
             <script>
-              document.querySelector('.snippet-demo__overflow-scroll-gradient__scroller').innerHTML = 'content '.repeat(200)
+              document.querySelector('.snippet-demo__overflow-scroll-gradient__scroller').innerHTML = 'content '.repeat(100)
             </script>
-            <h4 data-type="Explanation">Explanation</h4>
+            <h4>Explanation</h4>
             <ol>
               <li><code>position: relative</code> on the parent establishes a Cartesian positioning context for pseudo-elements.</li>
               <li><code>::after</code> defines a pseudo element.</li>
               <li><code>background-image: linear-gradient(...)</code> adds a linear gradient that fades from transparent to white (top to bottom).</li>
               <li><code>position: absolute</code> takes the pseudo element out of the flow of the document and positions it in relation to the parent.</li>
-              <li><code>width: 300px</code> matches the size of the scrolling element (which is a child of the parent that has the pseudo element).</li>
+              <li><code>width: 240px</code> matches the size of the scrolling element (which is a child of the parent that has the pseudo element).</li>
               <li><code>height: 25px</code> is the height of the fading gradient pseudo-element, which should be kept relatively small.</li>
               <li><code>bottom: 0</code> positions the pseudo-element at the bottom of the parent.</li>
               <li><code>pointer-events: none</code> specifies that the pseudo-element cannot be a target of mouse events, allowing text behind it to still be selectable/interactive.</li>
             </ol>
-            <h4 data-type="Browser support">Browser support</h4>
+            <h4>Browser support</h4>
             <div>
               <div class="snippet__browser-support">
-                94.8%
+                95.4%
               </div>
             </div>
             <p><span class="snippet__support-note">✅ No caveats.</span></p>
@@ -1093,9 +1310,11 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 <a href="https://caniuse.com/#feat=css-gradients" target="_blank">https://caniuse.com/#feat=css-gradients</a>
               </li>
             </ul>
+
+            <!-- tags: visual -->
           </div>
           <div class="snippet">
-            <h3 id="popout-menu">Popout menu</h3>
+            <h3 id="popout-menu"><span>Popout menu</span><span class="tags__tag snippet__tag" data-type="interactivity"><i data-feather="edit-2"></i>interactivity</span></h3>
             <p>Reveals an interactive popout menu on hover.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="reference"&gt;
   &lt;div class="popout-menu"&gt;
@@ -1115,7 +1334,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
   visibility: visible;
 }
 </code></pre>
-            <h4 data-type="Demo">Demo</h4>
+            <h4>Demo</h4>
             <div class="snippet-demo">
               <div class="snippet-demo__reference">
                 <div class="snippet-demo__popout-menu">
@@ -1146,7 +1365,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 visibility: visible;
               }
             </style>
-            <h4 data-type="Explanation">Explanation</h4>
+            <h4>Explanation</h4>
             <ol>
               <li><code>position: relative</code> on the reference parent establishes a Cartesian positioning context for its child.</li>
               <li><code>position: absolute</code> takes the popout menu out of the flow of the document and positions it in relation to the parent.</li>
@@ -1155,16 +1374,18 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
               <li><code>.reference:hover &gt; .popout-menu</code> means that when <code>.reference</code> is hovered over, select immediate children with a class of <code>.popout-menu</code> and change their <code>visibility</code> to <code>visible</code>,
                 which shows the popout.</li>
             </ol>
-            <h4 data-type="Browser support">Browser support</h4>
+            <h4>Browser support</h4>
             <div>
               <div class="snippet__browser-support">
                 99+%
               </div>
             </div>
             <p><span class="snippet__support-note">✅ No caveats.</span></p>
+
+            <!-- tags: interactivity -->
           </div>
           <div class="snippet">
-            <h3 id="pretty-text-underline">Pretty text underline</h3>
+            <h3 id="pretty-text-underline"><span>Pretty text underline</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
             <p>A nicer alternative to <code>text-decoration: underline</code> where descenders do not clip the underline. Natively implemented as <code>text-decoration-skip-ink: auto</code> but it has less control over the underline.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p class="pretty-text-underline"&gt;Pretty text underline without clipping descending letters.&lt;/p&gt;
 </code></pre>
@@ -1172,10 +1393,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
   font-family: Arial, sans-serif;
   display: inline;
   font-size: 18px;
-  text-shadow: 1px 1px 0 #f5f6f9,
-    -1px 1px 0 #f5f6f9,
-    -1px -1px 0 #f5f6f9,
-    1px -1px 0 #f5f6f9;
+  text-shadow: 1px 1px 0 #f5f6f9, -1px 1px 0 #f5f6f9, -1px -1px 0 #f5f6f9, 1px -1px 0 #f5f6f9;
   background-image: linear-gradient(90deg, currentColor 100%, transparent 100%);
   background-position: 0 0.98em;
   background-repeat: repeat-x;
@@ -1190,7 +1408,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
   text-shadow: none;
 }
 </code></pre>
-            <h4 data-type="Demo">Demo</h4>
+            <h4>Demo</h4>
             <div class="snippet-demo">
               <p class="snippet-demo__pretty-text-underline">Pretty text underline without clipping descending letters.</p>
             </div>
@@ -1214,7 +1432,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 text-shadow: none;
               }
             </style>
-            <h4 data-type="Explanation">Explanation</h4>
+            <h4>Explanation</h4>
             <ol>
               <li><code>text-shadow: ...</code> has 4 values with offsets that cover a 4x4 px area to ensure the underline has a "thick" shadow that covers the line where descenders clip it. Use a color that matches the background. For a larger font, use
                 a larger <code>px</code> size.</li>
@@ -1223,10 +1441,10 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
               <li>The <code>::selection</code> pseudo selector ensures the text shadow does not interfere with text selection.
               </li>
             </ol>
-            <h4 data-type="Browser support">Browser support</h4>
+            <h4>Browser support</h4>
             <div>
               <div class="snippet__browser-support">
-                94.8%
+                95.4%
               </div>
             </div>
             <p><span class="snippet__support-note">⚠️ The distance of the underline from the text depends on the internal metrics of a font, so you must ensure everyone sees the same font (i.e. no system fonts which will change based on the OS).</span></p>
@@ -1238,15 +1456,59 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 <a href="https://caniuse.com/#feat=css-gradients" target="_blank">https://caniuse.com/#feat=css-gradients</a>
               </li>
             </ul>
+
+            <!-- tags: visual -->
           </div>
           <div class="snippet">
-            <h3 id="shape-separator">Shape separator</h3>
+            <h3 id="reset-all-styles"><span>Reset all styles</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
+            <p>Resets all styles to default values with one property. This will not affect <code>direction</code> and <code>unicode-bidi</code> properties.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="reset-all-styles"&gt;
+  &lt;h4&gt;Title&lt;/h4&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui iure, consequatur velit sit?&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.reset-all-styles {
+  all: initial;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo">
+              <div class="snippet-demo__reset-all-styles">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui iure, consequatur velit sit?</p>
+              </div>
+            </div>
+            <style>
+              .snippet-demo__reset-all-styles {
+                all: initial;
+              }
+            </style>
+            <h4>Explanation</h4>
+            <p>The <code>all</code> property allows you to reset all styles (inherited or not) to default values.</p>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                88.3%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">⚠️ MS Edge status is under consideration.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=css-all" target="_blank">https://caniuse.com/#feat=css-all</a>
+              </li>
+            </ul>
+
+            <!-- tags: visual -->
+          </div>
+          <div class="snippet">
+            <h3 id="shape-separator"><span>Shape separator</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
             <p>Uses an SVG shape to separate two different blocks to create more a interesting visual appearance compared to standard horizontal separation.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="shape-separator"&gt;&lt;/div&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.shape-separator {
   position: relative;
   height: 48px;
+  background: #333;
 }
 .shape-separator::after {
   content: '';
@@ -1257,7 +1519,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
   bottom: 0;
 }
 </code></pre>
-            <h4 data-type="Demo">Demo</h4>
+            <h4>Demo</h4>
             <div class="snippet-demo is-distinct">
               <div class="snippet-demo__shape-separator"></div>
             </div>
@@ -1276,7 +1538,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 bottom: 0;
               }
             </style>
-            <h4 data-type="Explanation">Explanation</h4>
+            <h4>Explanation</h4>
             <ol>
               <li><code>position: relative</code> on the element establishes a Cartesian positioning context for pseudo elements.</li>
               <li><code>::after</code> defines a pseudo element.</li>
@@ -1287,10 +1549,10 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
               <li><code>height: 24px</code> is the same height as the shape.</li>
               <li><code>bottom: 0</code> positions the pseudo element at the bottom of the parent.</li>
             </ol>
-            <h4 data-type="Browser support">Browser support</h4>
+            <h4>Browser support</h4>
             <div>
               <div class="snippet__browser-support">
-                98.0%
+                98.3%
               </div>
             </div>
             <p><span class="snippet__support-note">✅ No caveats.</span></p>
@@ -1299,17 +1561,88 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 <a href="https://caniuse.com/#feat=svg" target="_blank">https://caniuse.com/#feat=svg</a>
               </li>
             </ul>
+
+            <!-- tags: visual -->
           </div>
           <div class="snippet">
-            <h3 id="system-font-stack">System font stack</h3>
+            <h3 id="sibling-fade"><span>Sibling fade</span><span class="tags__tag snippet__tag" data-type="interactivity"><i data-feather="edit-2"></i>interactivity</span></h3>
+            <p>Fades out the siblings of a hovered item.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="sibling-fade"&gt;
+  &lt;span&gt;Item 1&lt;/span&gt;
+  &lt;span&gt;Item 2&lt;/span&gt;
+  &lt;span&gt;Item 3&lt;/span&gt;
+  &lt;span&gt;Item 4&lt;/span&gt;
+  &lt;span&gt;Item 5&lt;/span&gt;
+  &lt;span&gt;Item 6&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">span {
+  padding: 0 1rem;
+  transition: opacity 0.2s;
+}
+.sibling-fade:hover span:not(:hover) {
+  opacity: 0.5;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo">
+              <nav class="snippet-demo__sibling-fade">
+                <span>Item 1</span>
+                <span>Item 2</span>
+                <span>Item 3</span>
+                <span>Item 4</span>
+                <span>Item 5</span>
+                <span>Item 6</span>
+              </nav>
+            </div>
+            <style>
+              .snippet-demo__sibling-fade {
+                cursor: default;
+                line-height: 2;
+                vertical-align: middle;
+              }
+              .snippet-demo__sibling-fade span {
+                padding: 1rem;
+                transition: opacity 0.2s;
+              }
+              .snippet-demo__sibling-fade:hover span:not(:hover) {
+                opacity: 0.5;
+              }
+            </style>
+            <h4>Explanation</h4>
+            <ol>
+              <li><code>transition: opacity 0.2s</code> specifies that changes to opacity will be transitioned over 0.2 seconds.</li>
+              <li><code>.sibling-fade:hover span:not(:hover)</code> specifies that when the parent is hovered, select any <code>span</code> children that are not currently being hovered and change their opacity to <code>0.5</code>.</li>
+            </ol>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                95.4%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=css-sel3" target="_blank">https://caniuse.com/#feat=css-sel3</a>
+              </li>
+              <li>
+                <a href="https://caniuse.com/#feat=css-transitions" target="_blank">https://caniuse.com/#feat=css-transitions</a>
+              </li>
+            </ul>
+
+            <!-- tags: interactivity -->
+          </div>
+          <div class="snippet">
+            <h3 id="system-font-stack"><span>System font stack</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
             <p>Uses the native font of the operating system to get close to a native app feel.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p class="system-font-stack"&gt;This text uses the system font.&lt;/p&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.system-font-stack {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,
+    Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 </code></pre>
-            <h4 data-type="Demo">Demo</h4>
+            <h4>Demo</h4>
             <div class="snippet-demo">
               <p class="snippet-demo__system-font-stack">This text uses the system font.</p>
             </div>
@@ -1318,7 +1651,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
               }
             </style>
-            <h4 data-type="Explanation">Explanation</h4>
+            <h4>Explanation</h4>
             <p>The browser looks for each successive font, preferring the first one if possible, and falls back to the next if it cannot find the font (on the system or defined in CSS).</p>
             <ol>
               <li><code>-apple-system</code> is San Francisco, used on iOS and macOS (not Chrome however)</li>
@@ -1331,16 +1664,18 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
               <li><code>Arial</code> is a font widely supported by all operating systems</li>
               <li><code>sans-serif</code> is the fallback sans-serif font if none of the other fonts are supported</li>
             </ol>
-            <h4 data-type="Browser support">Browser support</h4>
+            <h4>Browser support</h4>
             <div>
               <div class="snippet__browser-support">
                 99+%
               </div>
             </div>
             <p><span class="snippet__support-note">✅ No caveats.</span></p>
+
+            <!-- tags: visual -->
           </div>
           <div class="snippet">
-            <h3 id="triangle">Triangle</h3>
+            <h3 id="triangle"><span>Triangle</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
             <p>Creates a triangle shape with pure CSS.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="triangle"&gt;&lt;/div&gt;
 </code></pre>
@@ -1352,7 +1687,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
   border-right: 20px solid transparent;
 }
 </code></pre>
-            <h4 data-type="Demo">Demo</h4>
+            <h4>Demo</h4>
             <div class="snippet-demo">
               <div class="snippet-demo__triangles">
                 <div class="snippet-demo__triangle snippet-demo__triangle-1"></div>
@@ -1399,22 +1734,24 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 border-right: 15px solid transparent;
               }
             </style>
-            <h4 data-type="Explanation">Explanation</h4>
+            <h4>Explanation</h4>
             <p>
               <a href="https://stackoverflow.com/q/7073484" target="_blank">View this link for a detailed explanation.</a>
             </p>
             <p>The color of the border is the color of the triangle. The side the triangle tip points corresponds to the opposite <code>border-*</code> property. For example, a color on <code>border-top</code> means the arrow points downward.</p>
             <p>Experiment with the <code>px</code> values to change the proportion of the triangle.</p>
-            <h4 data-type="Browser support">Browser support</h4>
+            <h4>Browser support</h4>
             <div>
               <div class="snippet__browser-support">
                 99+%
               </div>
             </div>
             <p><span class="snippet__support-note">✅ No caveats.</span></p>
+
+            <!-- tags: visual -->
           </div>
           <div class="snippet">
-            <h3 id="truncate-text">Truncate text</h3>
+            <h3 id="truncate-text"><span>Truncate text</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
             <p>If the text is longer than one line, it will be truncated and end with an ellipsis <code>…</code>.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p class="truncate-text"&gt;If I exceed one line's width, I will be truncated.&lt;/p&gt;
 </code></pre>
@@ -1425,7 +1762,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
   width: 200px;
 }
 </code></pre>
-            <h4 data-type="Demo">Demo</h4>
+            <h4>Demo</h4>
             <div class="snippet-demo">
               <p class="snippet-demo__truncate-text">
                 This text will be truncated if it exceeds 200px in width.
@@ -1440,17 +1777,17 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 margin: 0;
               }
             </style>
-            <h4 data-type="Explanation">Explanation</h4>
+            <h4>Explanation</h4>
             <ol>
               <li><code>overflow: hidden</code> prevents the text from overflowing its dimensions (for a block, 100% width and auto height).</li>
               <li><code>white-space: nowrap</code> prevents the text from exceeding one line in height.</li>
               <li><code>text-overflow: ellipsis</code> makes it so that if the text exceeds its dimensions, it will end with an ellipsis.</li>
               <li><code>width: 200px;</code> ensures the element has a dimension, to know when to get ellipsis</li>
             </ol>
-            <h4 data-type="Browser support">Browser support</h4>
+            <h4>Browser support</h4>
             <div>
               <div class="snippet__browser-support">
-                98.1%
+                98.4%
               </div>
             </div>
             <p><span class="snippet__support-note">⚠️ Only works for single line elements.</span></p>
@@ -1459,10 +1796,11 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                 <a href="https://caniuse.com/#feat=text-overflow" target="_blank">https://caniuse.com/#feat=text-overflow</a>
               </li>
             </ul>
+
+            <!-- tags: layout -->
           </div>
         </div>
       </main>
     </div>
-    <footer class="footer"></footer>
   </body>
 </html>

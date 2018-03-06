@@ -89,3 +89,5 @@ Experiment with the `px` values to change the proportion of the triangle.
 #### Browser support
 
 <span class="snippet__support-note">✅ No caveats.</span>
+
+<!-- tags: visual -->

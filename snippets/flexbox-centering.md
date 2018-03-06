@@ -1,19 +1,19 @@
-### Horizontal and vertical centering
+### Flexbox centering
 
-Horizontally and vertically centers a child element within a parent element.
+Horizontally and vertically centers a child element within a parent element using `flexbox`.
 
 #### HTML
 
 ```html
-<div class="horizontal-and-vertical-centering">
-  <div class="child"></div>
+<div class="flexbox-centering">
+  <div class="child">Centered content.</div>
 </div>
 ```
 
 #### CSS
 
 ```css
-.horizontal-and-vertical-centering {
+.flexbox-centering {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,13 +23,13 @@ Horizontally and vertically centers a child element within a parent element.
 #### Demo
 
 <div class="snippet-demo">
-  <div class="snippet-demo__horizontal-and-vertical-centering">
-    <p class="snippet-demo__horizontal-and-vertical-centering__child">Centered content.</p>
+  <div class="snippet-demo__flexbox-centering">
+    <p class="snippet-demo__flexbox-centering__child">Centered content.</p>
   </div>
 </div>
 
 <style>
-.snippet-demo__horizontal-and-vertical-centering {
+.snippet-demo__flexbox-centering {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,3 +48,5 @@ Horizontally and vertically centers a child element within a parent element.
 <span class="snippet__support-note">⚠️ Needs prefixes for full support.</span>
 
 * https://caniuse.com/#feat=flexbox
+
+<!-- tags: layout -->
