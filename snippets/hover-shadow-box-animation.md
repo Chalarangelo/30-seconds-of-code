@@ -32,7 +32,8 @@ Creates a shadow box around the text whern it is hovered.
 #### Demo
 
 <div class = "snippet-demo">
-  < h4 class = snippet-demo_hover-shadow-box-animation"> Box it! </h4>
+  < h4 class = "snippet-demo_hover-shadow-box-animation"> Box it! 
+</h4>
 </div>
                                                        
 <style>
