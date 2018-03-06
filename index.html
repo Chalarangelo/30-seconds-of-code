@@ -57,6 +57,10 @@
           <a class="sidebar__link" href="#popout-menu"><span>Popout menu</span></a>
           <a class="sidebar__link" href="#sibling-fade"><span>Sibling fade</span></a>
         </section>
+        <section data-type="other" class="sidebar__section">
+          <h4 class="sidebar__section-heading">other</h4>
+          <a class="sidebar__link" href="#custom-variables"><span>Custom variables</span></a>
+        </section>
       </div>
     </nav>
     <div class="content-wrapper">
@@ -83,6 +87,8 @@
               <i data-feather="loader"></i>animation</button>
             <button class="tags__tag is-large " data-type="interactivity">
               <i data-feather="edit-2"></i>interactivity</button>
+            <button class="tags__tag is-large " data-type="other">
+              <i data-feather="tag"></i>other</button>
           </nav>
           <div class="snippet">
             <h3 id="bouncing-loader"><span>Bouncing loader</span><span class="tags__tag snippet__tag" data-type="animation"><i data-feather="loader"></i>animation</span></h3>
@@ -496,6 +502,63 @@ in any specification.</span></p>
             </ul>
 
             <!-- tags: visual -->
+          </div>
+          <div class="snippet">
+            <h3 id="custom-variables"><span>Custom variables</span><span class="tags__tag snippet__tag" data-type="other"><i data-feather="tag"></i>other</span></h3>
+            <p>CSS variables that contain specific values to be reused throughout a document.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p class="custom-variables"&gt;CSS is awesome!&lt;/p&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">:root {
+  --some-color: #da7800;
+  --some-keyword: italic;
+  --some-size: 1.25em;
+  --some-complex-value: 1px 1px 2px whitesmoke, 0 0 1em slategray, 0 0 0.2em slategray;
+}
+.custom-variables {
+  color: var(--some-color);
+  font-size: var(--some-size);
+  font-style: var(--some-keyword);
+  text-shadow: var(--some-complex-value);
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo">
+              <div class="snippet-demo__custom-variables">
+                <p>CSS is awesome!</p>
+              </div>
+            </div>
+            <style>
+              .snippet-demo__custom-variables {
+                --some-color: #686868;
+                --some-keyword: italic;
+                --some-size: 1.25em;
+                --some-complex-value: 1px 1px 2px whitesmoke, 0 0 1em slategray, 0 0 0.2em slategray;
+              }
+              .snippet-demo__custom-variables p {
+                color: var(--some-color);
+                font-size: var(--some-size);
+                font-style: var(--some-keyword);
+                text-shadow: var(--some-complex-value);
+              }
+            </style>
+            <h4>Explanation</h4>
+            <p>The variables are defined globally within the <code>:root</code> CSS pseudo-class which matches the root element of a tree representing the document. Variables can also be scoped to a selector if defined within the block.</p>
+            <p>Declare a variable with <code>--variable-name:</code>.</p>
+            <p>Reuse variables throughout the document using the <code>var(--variable-name)</code> function.</p>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                88.0%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=css-variables" target="_blank">https://caniuse.com/#feat=css-variables</a>
+              </li>
+            </ul>
+
+            <!-- tags: other -->
           </div>
           <div class="snippet">
             <h3 id="disable-selection"><span>Disable selection</span><span class="tags__tag snippet__tag" data-type="interactivity"><i data-feather="edit-2"></i>interactivity</span></h3>

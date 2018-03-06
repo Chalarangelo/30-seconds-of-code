@@ -26,6 +26,10 @@ const TAGS = [
   {
     name: 'interactivity',
     icon: 'edit-2'
+  },
+  {
+    name: 'other',
+    icon: 'tag'
   }
 ]
 
