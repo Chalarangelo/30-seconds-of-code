@@ -1114,12 +1114,14 @@ in any specification.</span></p>
             <h3 id="grid-layout"><span>Grid layout</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
             <p>Basic website layout using <code>grid</code>.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="grid-layout"&gt;
-  &lt;div class="box header"&gt;Header&lt;/div&gt;
-  &lt;div class="box sidebar"&gt;Sidebar&lt;/div&gt;
-  &lt;div class="box content"&gt;Content
-    &lt;br /&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti modi sed accusamus vero laborum? Ut ducimus doloremque perspiciatis labore velit, nostrum, molestias animi, nulla odit illum voluptas est explicabo non!
+  &lt;div class="header"&gt;Header&lt;/div&gt;
+  &lt;div class="sidebar"&gt;Sidebar&lt;/div&gt;
+  &lt;div class="content"&gt;
+    Content
+    &lt;br&gt;
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
   &lt;/div&gt;
-  &lt;div class="box footer"&gt;Footer&lt;/div&gt;
+  &lt;div class="footer"&gt;Footer&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.grid-layout {
@@ -1130,6 +1132,11 @@ in any specification.</span></p>
     'sidebar header header'
     'sidebar content content'
     'sidebar footer  footer';
+  color: white;
+}
+.grid-layout &gt; div {
+  background: #333;
+  padding: 10px;
 }
 .sidebar {
   grid-area: sidebar;
@@ -1163,14 +1170,11 @@ in any specification.</span></p>
                 grid-template-columns: repeat(3, 1fr);
                 grid-template-areas: "sidebar header header" "sidebar content content" "sidebar  footer  footer";
                 background-color: #fff;
-                color: #444;
+                color: white;
               }
-              .box {
-                background-color: #444;
-                color: #fff;
-                border-radius: 5px;
+              .snippet-demo__grid-layout>div {
+                background: #333;
                 padding: 10px;
-                font-size: 150%;
               }
               .snippet-demo__grid-layout__sidebar {
                 grid-area: sidebar;

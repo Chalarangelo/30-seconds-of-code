@@ -6,12 +6,14 @@ Basic website layout using `grid`.
 
 ```html
 <div class="grid-layout">
-  <div class="box header">Header</div>
-  <div class="box sidebar">Sidebar</div>
-  <div class="box content">Content
-    <br /> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti modi sed accusamus vero laborum? Ut ducimus doloremque perspiciatis labore velit, nostrum, molestias animi, nulla odit illum voluptas est explicabo non!
+  <div class="header">Header</div>
+  <div class="sidebar">Sidebar</div>
+  <div class="content">
+    Content
+    <br>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
   </div>
-  <div class="box footer">Footer</div>
+  <div class="footer">Footer</div>
 </div>
 ```
 
@@ -26,6 +28,11 @@ Basic website layout using `grid`.
     'sidebar header header'
     'sidebar content content'
     'sidebar footer  footer';
+  color: white;
+}
+.grid-layout > div {
+  background: #333;
+  padding: 10px;
 }
 .sidebar {
   grid-area: sidebar;
@@ -45,34 +52,31 @@ Basic website layout using `grid`.
 
 <div class="snippet-demo">
   <div class="snippet-demo__grid-layout">
-        <div class="box snippet-demo__grid-layout__header">Header</div>
-        <div class="box snippet-demo__grid-layout__sidebar">Sidebar</div>
-        <div class="box snippet-demo__grid-layout__content">Content
-            <br /> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        </div>
-        <div class="box snippet-demo__grid-layout__footer">Footer</div>
+    <div class="box snippet-demo__grid-layout__header">Header</div>
+    <div class="box snippet-demo__grid-layout__sidebar">Sidebar</div>
+    <div class="box snippet-demo__grid-layout__content">Content
+      <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    </div>
+    <div class="box snippet-demo__grid-layout__footer">Footer</div>
   </div>
 </div>
 
 <style>
 .snippet-demo__grid-layout {
-        margin: 1em;
-        display: grid;
-        grid-gap: 10px;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-areas:
-        "sidebar header header"
-        "sidebar content content"
-        "sidebar  footer  footer";
-        background-color: #fff;
-        color: #444;
+  margin: 1em;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "sidebar header header"
+    "sidebar content content"
+    "sidebar  footer  footer";
+  background-color: #fff;
+  color: white;
 }
-.box {
-  background-color: #444;
-  color: #fff;
-  border-radius: 5px;
+.snippet-demo__grid-layout > div {
+  background: #333;
   padding: 10px;
-  font-size: 150%;
 }
 .snippet-demo__grid-layout__sidebar {
     grid-area: sidebar;
