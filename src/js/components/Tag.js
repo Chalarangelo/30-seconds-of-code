@@ -3,35 +3,20 @@ import { select, selectAll, on } from '../deps/utils'
 const tagButtons = selectAll('button.tags__tag')
 let isShiftSelected = false;
 const onClick = function() {
-  let currentElements = [...document.querySelector('button.tags__tag.is-active')]
   if(isShiftSelected && this.dataset.type === 'all'){
-    tagButtons.forEach(button => button.classList.remove('is-active'))
-  }
-  else if(isShiftSelected){
-    document.querySelector('button[type=all]').classList.remove('is-active')
-  }
-  else {
-    tagButtons.forEach(button => button.classList.remove('is-active'))
-  }
-  if(this.classList.contains('is-active') && this.dataset.type === 'all'){
-    this.classList.add('is-active')
-    currentElements = [this]
-  }
-  else if(this.classList.contains('is-active')){
-    this.classList.remove('is-active')
-    currentElements.splice(currentElements.indexOf(this),1)
-  }
-  else {
+    tagButtons.forEach(button => button.classList.remove('is-active'));
     this.classList.add('is-active');
-    if(isShiftSelected){
-      currentElements.push(this)
-    }
-    else{
-      currentElements = [this]
-    }
+  }
+  else if(isShiftSelected) {
+    this.classList.add('is-active');
+    select('button[data-type=all]').classList.reomove('is-active');
+  }
+  else {
+    tagButtons.forEach(button => button.classList.remove('is-active'));
+    this.classList.add('is-active');
   }
   EventHub.emit('Tag.click', {
-    type: currentElements.map(el => el.dataset.type)
+    type: [...selectAll('button.tags__tag.is-avtive')]
   })
 }
 onkeydown = e => (
