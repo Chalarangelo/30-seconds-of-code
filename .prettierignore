@@ -1,1 +1,4 @@
 docs/
+.gitignore
+.cache/
+.github/
