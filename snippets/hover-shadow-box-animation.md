@@ -6,7 +6,7 @@ Creates a shadow box around the text whern it is hovered.
 #### HTML
 
 ```html
-<h4 class = "hover-shadow-box-animation"> Box it! </h4>
+<p class = "hover-shadow-box-animation"> Box it! </p>
 ```
 
 #### CSS
@@ -15,26 +15,22 @@ Creates a shadow box around the text whern it is hovered.
 .hover-shadow-box-animation{
   display: inline-block;
   vertical-align: middle;
-  -webkit-transform:perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px transparent;
   margin: 10px;
-  -webkit-transition-duration : 0.3s;
   transition-duration: 0.3s;
-  -webkit-transition-property: box-shadow, transform;
   transition-property: box-shadow, transform;
 }
 .hover-shadow-box-animation:hover, .hover-shadow-box-animation:focus, .hover-shadow-box-animation:active{
   box-shadow: 1px 10px 10px -10px rgba(0,0,24,0.5);
-  -webkit-transform: scale(1.2);
   transform: scale(1.2); 
 }
 ```
 #### Demo
 
 <div class = "snippet-demo">
-  <h4 class = "snippet-demo_hover-shadow-box-animation"> Box it! 
-</h4>
+  <p class = "snippet-demo_hover-shadow-box-animation"> Box it! 
+</p>
 </div>
                                                        
 <style>
@@ -43,17 +39,13 @@ Creates a shadow box around the text whern it is hovered.
   color: #0087ca;
   margin: 10px;
   vertical-align: middle;
-  -webkit-transform:perspective(1px) translateZ(45);
-  transform: perspective(1px) translateZ(45);
+  transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px transparent;
-  -webkit-transition-duration : 0.3s;
   transition-duration: 0.3s;
-  -webkit-transition-property: box-shadow, transform;
   transition-property: box-shadow, transform;
 }
 .snippet-demo_hover-shadow-box-animation:hover, .snippet-demo_hover-shadow-box-animation:focus, .snippet-demo_hover-shadow-box-animation:active{
   box-shadow: 1px 10px 10px -10px rgba(0,0,24,0.1);
-  -webkit-transform: scale(1.2);
   transform: scale(1.2); 
 }                                                       
 </style>                                
@@ -76,3 +68,6 @@ Creates a shadow box around the text whern it is hovered.
 
 * https://caniuse.com/#feat=transforms3d
 * https://caniuse.com/#feat=css-transitions
+
+
+<!-- tags: animation -->
