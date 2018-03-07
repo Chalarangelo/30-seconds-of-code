@@ -3,7 +3,6 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  font-size: 2rem;
   font-weight: bold;
   background: white;
   width: 4rem;
@@ -20,6 +19,7 @@
   z-index: 1;
   border: 1px solid rgba(0, 32, 128, 0.1);
   outline: 0;
+  color: inherit;
 
   &:hover,
   &:focus {
@@ -36,5 +36,10 @@
   &.is-visible {
     visibility: visible;
     opacity: 1;
+  }
+
+  .feather {
+    width: 2rem;
+    height: 2rem;
   }
 }
