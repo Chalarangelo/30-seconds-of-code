@@ -16,5 +16,5 @@ def bubbleSort(arr):
 ```python
 arr = [54,26,93,17,77,31,44,55,20]
 bubbleSort(arr)
-print("sorted %s" arr) # sorted via bubble sort
+print("sorted %s" %arr) # sorted via bubble sort
 ```
