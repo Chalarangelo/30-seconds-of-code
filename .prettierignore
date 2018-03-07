@@ -1,4 +1,4 @@
 docs/
-.gitignore
+dist/
 .cache/
 .github/
