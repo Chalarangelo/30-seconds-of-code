@@ -18,7 +18,6 @@ Given an element of variable width, it will ensure its height remains proportion
 }
 .constant-width-to-height-ratio::before {
   content: '';
-  display: block;
   padding-top: 100%;
   float: left;
 }
@@ -44,7 +43,6 @@ Resize your browser window to see the proportion of the element remain the same.
 }
 .snippet-demo__constant-width-to-height-ratio::before {
   content: '';
-  display: block;
   padding-top: 100%;
   float: left;
 }
