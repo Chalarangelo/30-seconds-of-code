@@ -7,7 +7,7 @@
     "dev": "nodemon -e md,js ./scripts/build.js & parcel",
     "build": "node ./scripts/build.js && npm run prettier && npm run parcel",
     "parcel": "parcel build index.html -d docs/ --public-url ./",
-    "prettier": "prettier --ignore-path .gitignore --write \"**/*.{js,json,md,css,scss}\""
+    "prettier": "prettier --write \"**/*.{js,json,md,css,scss}\""
   },
   "author": "atomiks",
   "license": "MIT",
