@@ -124,6 +124,7 @@ isEmpty:type,array,object,string
 isEven:math
 isFunction:type,function
 isLowerCase:string,utility
+isNaN:type
 isNil:type
 isNull:type
 isNumber:type,math
