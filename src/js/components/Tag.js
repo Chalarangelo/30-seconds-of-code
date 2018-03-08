@@ -16,7 +16,7 @@ const onClick = function() {
     this.classList.add('is-active');
   }
   EventHub.emit('Tag.click', {
-    type: [...selectAll('button.tags__tag.is-avtive')]
+    type: [...selectAll('button.tags__tag.is-active')]
   })
 }
 onkeydown = e => (
