@@ -1,4 +1,4 @@
-Test log for: Wed Mar 07 2018 20:33:39 GMT+0000 (UTC)
+Test log for: Thu Mar 08 2018 20:34:08 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.2 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1962,8 +1962,8 @@ Test log for: Wed Mar 07 2018 20:33:39 GMT+0000 (UTC)
     ✔ Sends a GET request
     ✔ Runs the function provided
     ✔ Runs promises in series
-    ✔ Works as expecting, passing arguments properly
     ✔ Sends a POST request
+    ✔ Works as expecting, passing arguments properly
     ✔ Works with multiple promises
 
 
