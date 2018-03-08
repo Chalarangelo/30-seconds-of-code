@@ -1,6 +1,6 @@
 ### prefix
 
-Automatically prefixes a property to the one supported by the browser.
+Returns the prefixed version (if necessary) of a CSS property that the browser supports.
 
 Use an array of vendor prefix strings and loop through them, testing if `document.body` has one 
 of them defined in its CSSStyleDeclaration object, otherwise return `null`. Use `String.charAt()`
