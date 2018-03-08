@@ -189,6 +189,7 @@ pipeAsyncFunctions:adapter,function,promise
 pipeFunctions:adapter,function
 pluralize:string
 powerset:math
+prefix:browser,utility
 prettyBytes:utility,string,math
 primes:math,array
 promisify:adapter,function,promise
