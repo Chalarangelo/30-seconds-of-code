@@ -1,6 +1,6 @@
-### CSS :not selector
+### CSS :not selector shortcut
 
-Lots of code just to space each item evenly, except for the last one. One great use for the `:not` psuedo selector.
+Lots of code just to space each item evenly, except for the last one is just one great example for the `:not` psuedo selector.
 
 #### HTML
 
