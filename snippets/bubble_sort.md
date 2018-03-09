@@ -1,5 +1,5 @@
 ### bubble_sort
-
+Bubble_sort uses the technique of comparing and swapping
 
 ```python
 def bubble_sort(arr):
