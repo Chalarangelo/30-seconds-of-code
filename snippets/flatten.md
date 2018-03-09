@@ -9,9 +9,11 @@ Omit the second argument, `depth` to flatten only to a depth of `1` (single flat
 
 ```js
 const flatten = (arr, depth = 1) =>
-  depth !== 1
-    ? arr.reduce((a, v) => a.concat(Array.isArray(v) ? flatten(v, depth - 1) : v), [])
-    : arr.reduce((a, v) => a.concat(v), []);
+  arr.reduce(
+    (a, v) =>
+      a.concat(depth > 1 && Array.isArray(v) ? flatten(v, depth - 1) : v),
+    [],
+  );
 ```
 
 ```js
