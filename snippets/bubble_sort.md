@@ -1,6 +1,5 @@
 ### bubble_sort
 
-bubble sort also makes it too simple for sorting any list or array. It simply compares the two neighbouring values and swap them.
 
 ```python
 def bubble_sort(arr):
