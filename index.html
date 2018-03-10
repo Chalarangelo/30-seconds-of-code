@@ -366,7 +366,6 @@
 }
 .constant-width-to-height-ratio::before {
   content: '';
-  display: block;
   padding-top: 100%;
   float: left;
 }
@@ -388,7 +387,6 @@
               }
               .snippet-demo__constant-width-to-height-ratio::before {
                 content: '';
-                display: block;
                 padding-top: 100%;
                 float: left;
               }
@@ -437,14 +435,14 @@
 &lt;/section&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.countable-section {
-    counter-reset: counter1;
+  counter-reset: counter1;
 }
 .countable-item p {
-    counter-increment: counter1;
+  counter-increment: counter1;
 }
 .countable-item p:before {
-    content: counters(counter1, '-') ' ';
-    font-weight: bold; /* for better visualization on demo */
+  content: counters(counter1, '-') ' ';
+  font-weight: bold; /* for better visualization on demo */
 }
 </code></pre>
             <h4>Demo</h4>
