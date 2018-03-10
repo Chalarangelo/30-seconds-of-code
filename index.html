@@ -34,13 +34,13 @@
         <section data-type="visual" class="sidebar__section">
           <h4 class="sidebar__section-heading">visual</h4>
           <a class="sidebar__link" href="#circle"><span>Circle</span></a>
-          <a class="sidebar__link" href="#counter"><span>Counter</span></a>
           <a class="sidebar__link" href="#custom-scrollbar"><span>Custom scrollbar</span></a>
           <a class="sidebar__link" href="#custom-text-selection"><span>Custom text selection</span></a>
           <a class="sidebar__link" href="#dynamic-shadow"><span>Dynamic shadow</span></a>
           <a class="sidebar__link" href="#etched-text"><span>Etched text</span></a>
           <a class="sidebar__link" href="#gradient-text"><span>Gradient text</span></a>
           <a class="sidebar__link" href="#hairline-border"><span>Hairline border</span></a>
+          <a class="sidebar__link" href="#not-selector"><span>:not selector</span></a>
           <a class="sidebar__link" href="#overflow-scroll-gradient"><span>Overflow scroll gradient</span></a>
           <a class="sidebar__link" href="#pretty-text-underline"><span>Pretty text underline</span></a>
           <a class="sidebar__link" href="#reset-all-styles"><span>Reset all styles</span></a>
@@ -64,6 +64,7 @@
         </section>
         <section data-type="other" class="sidebar__section">
           <h4 class="sidebar__section-heading">other</h4>
+          <a class="sidebar__link" href="#counter"><span>Counter</span></a>
           <a class="sidebar__link" href="#custom-variables"><span>Custom variables</span></a>
         </section>
       </div>
@@ -413,15 +414,15 @@
             <!-- tags: layout -->
           </div>
           <div class="snippet">
-            <h3 id="counter"><span>Counter</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
+            <h3 id="counter"><span>Counter</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span><span class="tags__tag snippet__tag" data-type="other"><i data-feather="tag"></i>other</span></h3>
             <p>Counters are, in essence, variables maintained by CSS whose values may be incremented by CSS rules to track how many times they're used.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;section class="countable-section"&gt;
     &lt;div class="countable-item"&gt;
         &lt;p&gt;Some item&lt;/p&gt;
         &lt;div class="countable-section"&gt;
-                &lt;p&gt;First sub item&lt;/p&gt;
-                &lt;p&gt;Second sub item&lt;/p&gt;
-                &lt;p&gt;Third sub item&lt;/p&gt;
+            &lt;p&gt;First sub item&lt;/p&gt;
+            &lt;p&gt;Second sub item&lt;/p&gt;
+            &lt;p&gt;Third sub item&lt;/p&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class="countable-item"&gt;
@@ -447,36 +448,37 @@
 }
 </code></pre>
             <h4>Demo</h4>
-            <section class="countable-section">
-              <div class="countable-item">
-                <p>Some item</p>
-                <div class="countable-section">
-                  <p>First sub item</p>
-                  <p>Second sub item</p>
-                  <p>Third sub item</p>
+            <div class="snippet-demo">
+              <section class="snippet-demo__countable-section">
+                <div class="snippet-demo__countable-item">
+                  <p>Some item</p>
+                  <div class="snippet-demo__countable-section">
+                    <p>First sub item</p>
+                    <p>Second sub item</p>
+                    <p>Third sub item</p>
+                  </div>
                 </div>
-              </div>
-              <div class="countable-item">
-                <p>Second other item</p>
-              </div>
-              <div class="countable-item">
-                <p>Third item</p>
-              </div>
-              <div class="countable-item">
-                <p>Fourth item</p>
-              </div>
-            </section>
+                <div class="snippet-demo__countable-item">
+                  <p>Second other item</p>
+                </div>
+                <div class="snippet-demo__countable-item">
+                  <p>Third item</p>
+                </div>
+                <div class="snippet-demo__countable-item">
+                  <p>Fourth item</p>
+                </div>
+              </section>
+            </div>
             <style>
-              .countable-section {
+              .snippet-demo__countable-section {
                 counter-reset: counter1;
               }
-              .countable-item p {
+              .snippet-demo__countable-item p {
                 counter-increment: counter1;
               }
-              .countable-item p:before {
+              .snippet-demo__countable-item p:before {
                 content: counters(counter1, '.') ' ';
                 font-weight: bold;
-                /* for better visualization on demo */
               }
             </style>
             <h4>Explanation</h4>
@@ -514,7 +516,7 @@
               </li>
             </ul>
 
-            <!-- tags: visual -->
+            <!-- tags: visual, other -->
           </div>
           <div class="snippet">
             <h3 id="custom-scrollbar"><span>Custom scrollbar</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
@@ -1605,6 +1607,70 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
             </ul>
 
             <!-- tags: visual, interactivity -->
+          </div>
+          <div class="snippet">
+            <h3 id="not-selector"><span>:not selector</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
+            <p>The <code>:not</code> psuedo selector is useful for styling a group of elements, while leaving the last (or specified) element unstyled.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;ul class="css-not-selector-shortcut"&gt;
+  &lt;li&gt;One&lt;/li&gt;
+  &lt;li&gt;Two&lt;/li&gt;
+  &lt;li&gt;Three&lt;/li&gt;
+  &lt;li&gt;Four&lt;/li&gt;
+  &lt;li&gt;Five&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.css-not-selector-shortcut {
+  display: flex;
+}
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 0.75rem;
+}
+li:not(:last-child) {
+  border-right: 2px solid #d2d5e4;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo">
+              <ul class="snippet-demo__css-not-selector-shortcut">
+                <li>One</li>
+                <li>Two</li>
+                <li>Three</li>
+                <li>Four</li>
+                <li>Five</li>
+              </ul>
+            </div>
+            <style>
+              .snippet-demo__css-not-selector-shortcut {
+                display: flex;
+                padding: 0;
+              }
+              .snippet-demo__css-not-selector-shortcut li {
+                list-style-type: none;
+                margin: 0;
+                padding: 0 0.75rem;
+              }
+              .snippet-demo__css-not-selector-shortcut li:not(:last-child) {
+                border-right: 2px solid #d2d5e4
+              }
+            </style>
+            <h4>Explanation</h4>
+            <p><code>li:not(:last-child)</code> specifies that the styles should apply to all <code>li</code> elements except the <code>:last-child</code>.</p>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                98.4%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=css-sel3" target="_blank">https://caniuse.com/#feat=css-sel3</a>
+              </li>
+            </ul>
+
+            <!-- tags: visual -->
           </div>
           <div class="snippet">
             <h3 id="overflow-scroll-gradient"><span>Overflow scroll gradient</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>

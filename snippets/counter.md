@@ -30,14 +30,14 @@ Counters are, in essence, variables maintained by CSS whose values may be increm
 
 ```css
 .countable-section {
-	counter-reset: counter1;
+  counter-reset: counter1;
 }
 .countable-item p {
-	counter-increment: counter1;
+  counter-increment: counter1;
 }
 .countable-item p:before {
-	content: counters(counter1, '-') ' ';
-	font-weight: bold; /* for better visualization on demo */
+  content: counters(counter1, '-') ' ';
+  font-weight: bold; /* for better visualization on demo */
 }
 ```
 
