@@ -53,8 +53,8 @@ Creates a shadow box around the text whern it is hovered.
 
 #### Explanation 
 
-1. `display: inline-block`  for giving width and length for `h4` element thus making it as an `inline-block`.
-2. setting the `transform: perspective(1px)` for giving element a 3-D space by affecting the distance between the Z plane and the user and `translate(0)` for repositioning `h4` element along z-axis in 3-D Space.
+1. `display: inline-block`  for giving width and length for `p` element thus making it as an `inline-block`.
+2. setting the `transform: perspective(1px)` for giving element a 3-D space by affecting the distance between the Z plane and the user and `translate(0)` for repositioning `p` element along z-axis in 3-D Space.
 3. `box-shadow:` for setting up the box.
 4. `transparent` to make box transparent 
 5.`transition-property` for enabling both box-shadow and transform
