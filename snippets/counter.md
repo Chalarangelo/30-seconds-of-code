@@ -9,9 +9,9 @@ Counters are, in essence, variables maintained by CSS whose values may be increm
 	<div class="countable-item">
 		<p>Some item</p>
 		<div class="countable-section">
-				<p>First sub item</p>
-				<p>Second sub item</p>
-				<p>Third sub item</p>
+			<p>First sub item</p>
+			<p>Second sub item</p>
+			<p>Third sub item</p>
 		</div>
 	</div>
 	<div class="countable-item">
@@ -43,36 +43,38 @@ Counters are, in essence, variables maintained by CSS whose values may be increm
 
 #### Demo
 
-<section class="countable-section">
-	<div class="countable-item">
-		<p>Some item</p>
-		<div class="countable-section">
-				<p>First sub item</p>
-				<p>Second sub item</p>
-				<p>Third sub item</p>
+<div class="snippet-demo">
+	<section class="snippet-demo__countable-section">
+		<div class="snippet-demo__countable-item">
+			<p>Some item</p>
+			<div class="snippet-demo__countable-section">
+					<p>First sub item</p>
+					<p>Second sub item</p>
+					<p>Third sub item</p>
+			</div>
 		</div>
-	</div>
-	<div class="countable-item">
-		<p>Second other item</p>
-	</div>
-	<div class="countable-item">
-		<p>Third item</p>
-	</div>
-	<div class="countable-item">
-		<p>Fourth item</p>
-	</div>
-</section>
+		<div class="snippet-demo__countable-item">
+			<p>Second other item</p>
+		</div>
+		<div class="snippet-demo__countable-item">
+			<p>Third item</p>
+		</div>
+		<div class="snippet-demo__countable-item">
+			<p>Fourth item</p>
+		</div>
+	</section>
+</div>
 
 <style>
-.countable-section {
+.snippet-demo__countable-section {
   counter-reset: counter1;
 }
-.countable-item p {
+.snippet-demo__countable-item p {
   counter-increment: counter1;
 }
-.countable-item p:before {
+.snippet-demo__countable-item p:before {
   content: counters(counter1, '.') ' ';
-	font-weight: bold; /* for better visualization on demo */
+	font-weight: bold;
 }
 </style>
 
@@ -96,4 +98,4 @@ You can create a ordered list using any type of HTML.
 
 * https://caniuse.com/#search=counters
 
-<!-- tags: visual -->
+<!-- tags: visual, other -->
