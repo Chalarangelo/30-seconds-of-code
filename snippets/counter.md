@@ -6,23 +6,23 @@ Counters are, in essence, variables maintained by CSS whose values may be increm
 
 ```html
 <section class="countable-section">
-	<div class="countable-item">
-		<p>Some item</p>
-		<div class="countable-section">
-			<p>First sub item</p>
-			<p>Second sub item</p>
-			<p>Third sub item</p>
-		</div>
-	</div>
-	<div class="countable-item">
-		<p>Second other item</p>
-	</div>
-	<div class="countable-item">
-		<p>Third item</p>
-	</div>
-	<div class="countable-item">
-		<p>Fourth item</p>
-	</div>
+  <div class="countable-item">
+    <p>Some item</p>
+    <div class="countable-section">
+      <p>First sub item</p>
+      <p>Second sub item</p>
+      <p>Third sub item</p>
+    </div>
+  </div>
+  <div class="countable-item">
+    <p>Second other item</p>
+  </div>
+  <div class="countable-item">
+    <p>Third item</p>
+  </div>
+  <div class="countable-item">
+    <p>Fourth item</p>
+  </div>
 </section>
 ```
 
@@ -96,6 +96,6 @@ You can create a ordered list using any type of HTML.
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
-* https://caniuse.com/#search=counters
+* https://caniuse.com/#feat=css-counters
 
 <!-- tags: visual, other -->
