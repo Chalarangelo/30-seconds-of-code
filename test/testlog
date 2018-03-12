@@ -1,4 +1,4 @@
-Test log for: Sun Mar 11 2018 20:35:52 GMT+0000 (UTC)
+Test log for: Mon Mar 12 2018 20:37:06 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.2 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1298,6 +1298,10 @@ Test log for: Sun Mar 11 2018 20:35:52 GMT+0000 (UTC)
     ✔ powerset is a Function
     ✔ Returns the powerset of a given array of numbers.
 
+  Testing prefix
+
+    ✔ prefix is a Function
+
   Testing prettyBytes
 
     ✔ prettyBytes is a Function
@@ -1959,8 +1963,8 @@ Test log for: Sun Mar 11 2018 20:35:52 GMT+0000 (UTC)
     ✔ Works with multiple promises
 
 
-  total:     997
-  passing:   997
-  duration:  2.4s
+  total:     998
+  passing:   998
+  duration:  2.5s
 
 
