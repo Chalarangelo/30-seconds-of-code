@@ -2324,7 +2324,7 @@ Use `Array.reverse()` and `Array.findIndex()` to find the appropriate last index
 const sortedLastIndex = (arr, n) => {
   const isDescending = arr[0] > arr[arr.length - 1];
   const index = arr.reverse().findIndex(el => (isDescending ? n <= el : n >= el));
-  return index === -1 ? 0 : arr.length - index - 1;
+  return index === -1 ? 0 : arr.length - index;
 };
 ```
 
@@ -2332,7 +2332,7 @@ const sortedLastIndex = (arr, n) => {
 <summary>Examples</summary>
 
 ```js
-sortedLastIndex([10, 20, 30, 30, 40], 30); // 3
+sortedLastIndex([10, 20, 30, 30, 40], 30); // 4
 ```
 
 </details>
