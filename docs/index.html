@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head><link rel="stylesheet" href="./mini.css"><title>30 seconds of code</title><meta charset="utf-8"><meta name="description" content="Curated collection of useful Javascript snippets that you can understand in 30 seconds or less."><meta name="keywords" content="javascript, snippets, code, programming"><meta name="author" content="Angelos Chalaris (chalarangelo@gmail.com)"><meta name="viewport" content="width=device-width,initial-scale=1"><meta property="og:title" content="30 seconds of code"><meta property="og:description" content="Curated collection of useful Javascript snippets that you can understand in 30 seconds or less."/><meta property="og:type" content="website"/><meta property="og:image" content="favicon.png"><link rel="icon" type="image/png" href="favicon.png"><script>const search = (node) => {
         let matchingTags = [];
         Array.from(node.parentElement.parentElement.getElementsByTagName('a')).forEach(x => {
-          let data = [x.innerText.toLowerCase(), ...x.getAttribute('tags').split(',')].map(v => !!(v.indexOf(node.value.toLowerCase()) + 1));
+          let data = [x.textContent.toLowerCase(), ...x.getAttribute('tags').split(',')].map(v => !!(v.indexOf(node.value.toLowerCase()) + 1));
           if(data.includes(true)){
             x.style.display = '';
             matchingTags.push(x.getAttribute('tags').split(',')[0]);
@@ -9,7 +9,7 @@
           else x.style.display = 'none';
         });
         Array.from(node.parentElement.parentElement.getElementsByTagName('h3')).forEach(x => {
-          x.style.display = matchingTags.includes(x.innerText.toLowerCase()) ? '' : 'none';
+          x.style.display = matchingTags.includes(x.textContent.toLowerCase()) ? '' : 'none';
         })
       }
       function scrollToTop(){
