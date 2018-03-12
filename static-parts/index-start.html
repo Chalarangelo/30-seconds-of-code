@@ -16,7 +16,7 @@
       const search = (node) => {
         let matchingTags = [];
         Array.from(node.parentElement.parentElement.getElementsByTagName('a')).forEach(x => {
-          let data = [x.innerText.toLowerCase(), ...x.getAttribute('tags').split(',')].map(v => !!(v.indexOf(node.value.toLowerCase()) + 1));
+          let data = [x.textContent.toLowerCase(), ...x.getAttribute('tags').split(',')].map(v => !!(v.indexOf(node.value.toLowerCase()) + 1));
           if(data.includes(true)){
             x.style.display = '';
             matchingTags.push(x.getAttribute('tags').split(',')[0]);
@@ -24,7 +24,7 @@
           else x.style.display = 'none';
         });
         Array.from(node.parentElement.parentElement.getElementsByTagName('h3')).forEach(x => {
-          x.style.display = matchingTags.includes(x.innerText.toLowerCase()) ? '' : 'none';
+          x.style.display = matchingTags.includes(x.textContent.toLowerCase()) ? '' : 'none';
         })
       }
       function scrollToTop(){
