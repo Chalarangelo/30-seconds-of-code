@@ -14,5 +14,5 @@ const sortedLastIndex = (arr, n) => {
 ```
 
 ```js
-sortedLastIndex([10, 20, 30, 30, 40], 30); // 3
+sortedLastIndex([10, 20, 30, 30, 40], 30); // 4
 ```
