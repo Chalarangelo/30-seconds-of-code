@@ -147,6 +147,7 @@ lcm:math,recursion
 longestItem:array,string,utility
 lowercaseKeys:object
 luhnCheck:math,utility
+mapAsync:array,function
 mapKeys:object,function
 mapObject:array,object,advanced
 mapValues:object,function
