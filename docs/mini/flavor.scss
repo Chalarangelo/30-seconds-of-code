@@ -434,3 +434,33 @@ button.scroll-to-top {
     background: var(#{$secondary-back-color-var});
   }
 }
+
+.#{$card-name}#disclaimer {
+  position: fixed;
+  bottom: 0;
+  z-index: 1100;
+  max-width: 100vw;
+  width: 100vw;
+  left: 0;
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 0;
+  @media screen and (min-width: 768px){
+    width: 60vw;
+    left: 20vw;
+    bottom: 1rem;
+  }
+  @media screen and (min-width: 1280px){
+    width: 40vw;
+    left: 30vw;
+    bottom: 1.5rem;
+  }
+}
+
+button#disclaimer-close{
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  font-size: 0.85rem;
+  background: 0;
+}
