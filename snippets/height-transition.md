@@ -20,7 +20,7 @@ Transitions an element's height from `0` to `auto` when its height is unknown.
   max-height: 0;
 }
 
-.target:hover > .el {
+.trigger:hover > .el {
   max-height: var(--max-height);
 }
 ```
