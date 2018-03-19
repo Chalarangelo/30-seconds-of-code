@@ -8,10 +8,10 @@ browser environment unless they were explicitly defined), which will return `tru
 `typeof` allows globals to be checked for existence without throwing a ReferenceError. If both of them are not `undefined`, then the current environment is assumed to be a browser.
 
 ```js
-const isBrowser = () => ![typeof window, typeof document].includes('undefined')
+const isBrowser = () => ![typeof window, typeof document].includes('undefined');
 ```
 
 ```js
-isBrowser() // true (browser)
-isBrowser() // false (Node)
+isBrowser(); // true (browser)
+isBrowser(); // false (Node)
 ```
