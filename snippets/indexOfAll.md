@@ -2,14 +2,12 @@
 
 Returns all indices of `val` in an array. If `val` never occurs, returns `[]`.
 
-Use `Array.forEach()` to loop over elements and `Array.push()` to store indices for matching elements.
-Return the array of indices.
+Use `Array.reduce()` to loop over elements and `[...acc, index]` to store indices for matching elements.
+Return the last `acc`.
 
 ```js
 const indexOfAll = (arr, val) => {
-  const indices = [];
-  arr.forEach((el, i) => el === val && indices.push(i));
-  return indices;
+  return arr.reduce((acc, el, index) => el === val ? [...acc, index] : acc, []);
 };
 ```
 
