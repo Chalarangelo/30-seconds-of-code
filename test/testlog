@@ -1,4 +1,4 @@
-Test log for: Sun Mar 18 2018 20:40:36 GMT+0000 (UTC)
+Test log for: Thu Mar 22 2018 20:41:55 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.2 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -811,6 +811,10 @@ Test log for: Sun Mar 18 2018 20:40:36 GMT+0000 (UTC)
     ✔ isBoolean is a Function
     ✔ passed value is not a boolean
     ✔ passed value is not a boolean
+
+  Testing isBrowser
+
+    ✔ isBrowser is a Function
 
   Testing isDivisible
 
@@ -1963,8 +1967,8 @@ Test log for: Sun Mar 18 2018 20:40:36 GMT+0000 (UTC)
     ✔ Works with multiple promises
 
 
-  total:     998
-  passing:   998
-  duration:  2.7s
+  total:     999
+  passing:   999
+  duration:  2.4s
 
 
