@@ -6,7 +6,7 @@ Use `Array.reduce()` to loop over elements and `[...acc, index]` to store indice
 Return the last `acc`.
 
 ```js
-const indexOfAll = (arr, val) => arr.reduce((acc, el, index) => el === val ? [...acc, index] : acc, []);
+const indexOfAll = (arr, val) => arr.reduce((acc, el, i) => el === val ? [...acc, i] : acc, []);
 ```
 
 ```js
