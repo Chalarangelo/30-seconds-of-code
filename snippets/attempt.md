@@ -7,7 +7,7 @@ Use a `try... catch` block to return either the result of the function or an app
 ```js
 const attempt = (fn, ...args) => {
   try {
-    return fn(args);
+    return fn(...args);
   } catch (e) {
     return e instanceof Error ? e : new Error(e);
   }
