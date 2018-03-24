@@ -58,7 +58,7 @@ el.style.setProperty('--max-height', height + 'px')
 </style>
 
 <script>
-(function () {
+;(function () {
   var el = document.querySelector('.snippet-demo__height-transition__el')
   var height = el.scrollHeight
   el.style.setProperty('--max-height', height + 'px')
