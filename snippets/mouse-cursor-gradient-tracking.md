@@ -105,7 +105,7 @@ btn.onmousemove = function(e) {
 </style>
 
 <script>
-(function () {
+;(function () {
   var btn = document.querySelector('.snippet-demo__mouse-cursor-gradient-tracking')
   btn.onmousemove = function (e) {
     var x = e.pageX - btn.offsetLeft - btn.offsetParent.offsetLeft
