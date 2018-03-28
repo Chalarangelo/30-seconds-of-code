@@ -1907,14 +1907,12 @@ li:not(:last-child) {
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p class="pretty-text-underline"&gt;Pretty text underline without clipping descending letters.&lt;/p&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.pretty-text-underline {
-  font-family: Arial, sans-serif;
   display: inline;
-  font-size: 18px;
-  text-shadow: 1px 1px 0 #f5f6f9, -1px 1px 0 #f5f6f9, -1px -1px 0 #f5f6f9, 1px -1px 0 #f5f6f9;
+  text-shadow: 1px 1px #f5f6f9, -1px 1px #f5f6f9, -1px -1px #f5f6f9, 1px -1px #f5f6f9;
   background-image: linear-gradient(90deg, currentColor 100%, transparent 100%);
-  background-position: 0 0.98em;
-  background-repeat: repeat-x;
-  background-size: 1px 1px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
 }
 .pretty-text-underline::-moz-selection {
   background-color: rgba(0, 150, 255, 0.3);
@@ -1931,14 +1929,12 @@ li:not(:last-child) {
             </div>
             <style>
               .snippet-demo__pretty-text-underline {
-                font-family: Arial, sans-serif;
                 display: inline;
-                font-size: 18px !important;
                 text-shadow: 1px 1px 0 #f5f6f9, -1px 1px 0 #f5f6f9, -1px -1px 0 #f5f6f9, 1px -1px 0 #f5f6f9;
                 background-image: linear-gradient(90deg, currentColor 100%, transparent 100%);
-                background-position: 0 0.98em;
-                background-repeat: repeat-x;
-                background-size: 1px 1px;
+                background-position: bottom;
+                background-repeat: no-repeat;
+                background-size: 100% 1px;
               }
               .snippet-demo__pretty-text-underline::-moz-selection {
                 background-color: rgba(0, 150, 255, 0.3);
@@ -1951,11 +1947,11 @@ li:not(:last-child) {
             </style>
             <h4>Explanation</h4>
             <ol>
-              <li><code>text-shadow: ...</code> has 4 values with offsets that cover a 4x4 px area to ensure the underline has a "thick" shadow that covers the line where descenders clip it. Use a color that matches the background. For a larger font, use
-                a larger <code>px</code> size.</li>
-              <li><code>background-image: linear-gradient(...)</code> creates a 90deg gradient with the current text color (<code>currentColor</code>).</li>
-              <li>The <code>background-*</code> properties size the gradient as 1x1px at the bottom and repeats it along the x-axis.</li>
-              <li>The <code>::selection</code> pseudo selector ensures the text shadow does not interfere with text selection.
+              <li><code>text-shadow</code> uses 4 values with offsets that cover a 4x4 px area to ensure the underline has a "thick" shadow that covers the line where descenders clip it. Use a color that matches the background. For a larger font, use a larger
+                <code>px</code> size. Additional values can create an even thicker shadow, and subpixel values can also be used.</li>
+              <li><code>background-image: linear-gradient(...)</code> creates a 90deg gradient using the text color (<code>currentColor</code>).</li>
+              <li>The <code>background-*</code> properties size the gradient as 100% of the width of the block and 1px in height at the bottom and disables repetition, which creates a 1px underline beneath the text.</li>
+              <li>The <code>::selection</code> pseudo selector rule ensures the text shadow does not interfere with text selection.
               </li>
             </ol>
             <h4>Browser support</h4>
@@ -1964,7 +1960,7 @@ li:not(:last-child) {
                 95.4%
               </div>
             </div>
-            <p><span class="snippet__support-note">⚠️ The distance of the underline from the text depends on the internal metrics of a font, so you must ensure everyone sees the same font (i.e. no system fonts which will change based on the OS).</span></p>
+            <p><span class="snippet__support-note">✅ No caveats.</span></p>
             <ul>
               <li>
                 <a href="https://caniuse.com/#feat=css-textshadow" target="_blank">https://caniuse.com/#feat=css-textshadow</a>

@@ -13,14 +13,12 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
 
 ```css
 .pretty-text-underline {
-  font-family: Arial, sans-serif;
   display: inline;
-  font-size: 18px;
-  text-shadow: 1px 1px 0 #f5f6f9, -1px 1px 0 #f5f6f9, -1px -1px 0 #f5f6f9, 1px -1px 0 #f5f6f9;
+  text-shadow: 1px 1px #f5f6f9, -1px 1px #f5f6f9, -1px -1px #f5f6f9, 1px -1px #f5f6f9;
   background-image: linear-gradient(90deg, currentColor 100%, transparent 100%);
-  background-position: 0 0.98em;
-  background-repeat: repeat-x;
-  background-size: 1px 1px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
 }
 .pretty-text-underline::-moz-selection {
   background-color: rgba(0, 150, 255, 0.3);
@@ -40,17 +38,15 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
 
 <style>
 .snippet-demo__pretty-text-underline {
-  font-family: Arial, sans-serif;
   display: inline;
-  font-size: 18px !important;
   text-shadow: 1px 1px 0 #f5f6f9,
     -1px 1px 0 #f5f6f9,
     -1px -1px 0 #f5f6f9,
     1px -1px 0 #f5f6f9;
   background-image: linear-gradient(90deg, currentColor 100%, transparent 100%);
-  background-position: 0 0.98em;
-  background-repeat: repeat-x;
-  background-size: 1px 1px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
 }
 
 .snippet-demo__pretty-text-underline::-moz-selection {
@@ -66,18 +62,21 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
 
 #### Explanation
 
-1. `text-shadow: ...` has 4 values with offsets that cover a 4x4 px area to ensure the underline
+1. `text-shadow` uses 4 values with offsets that cover a 4x4 px area to ensure the underline
    has a "thick" shadow that covers the line where descenders clip it. Use a color
-   that matches the background. For a larger font, use a larger `px` size.
-2. `background-image: linear-gradient(...)` creates a 90deg gradient with the current
+   that matches the background. For a larger font, use a larger `px` size. Additional values
+   can create an even thicker shadow, and subpixel values can also be used.
+2. `background-image: linear-gradient(...)` creates a 90deg gradient using the
    text color (`currentColor`).
-3. The `background-*` properties size the gradient as 1x1px at the bottom and repeats it along the x-axis.
-4. The `::selection` pseudo selector ensures the text shadow does not interfere with text
+3. The `background-*` properties size the gradient as 100% of the width of the block and 1px
+   in height at the bottom and disables repetition, which creates a 1px underline beneath
+   the text.
+4. The `::selection` pseudo selector rule ensures the text shadow does not interfere with text
    selection.
 
 #### Browser support
 
-<span class="snippet__support-note">⚠️ The distance of the underline from the text depends on the internal metrics of a font, so you must ensure everyone sees the same font (i.e. no system fonts which will change based on the OS).</span>
+<span class="snippet__support-note">✅ No caveats.</span>
 
 * https://caniuse.com/#feat=css-textshadow
 * https://caniuse.com/#feat=css-gradients
