@@ -779,19 +779,14 @@ in any specification.</span></p>
           <div class="snippet">
             <h3 id="dynamic-shadow"><span>Dynamic shadow</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
             <p>Creates a shadow similar to <code>box-shadow</code> but based on the colors of the element itself.</p>
-            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="dynamic-shadow-parent"&gt;
-  &lt;div class="dynamic-shadow"&gt;&lt;/div&gt;
-&lt;/div&gt;
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="dynamic-shadow"&gt;&lt;/div&gt;
 </code></pre>
-            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.dynamic-shadow-parent {
-  position: relative;
-  z-index: 1;
-}
-.dynamic-shadow {
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.dynamic-shadow {
   position: relative;
   width: 10rem;
   height: 10rem;
   background: linear-gradient(75deg, #6d78ff, #00ffb8);
+  z-index: 1;
 }
 .dynamic-shadow::after {
   content: '';
@@ -807,20 +802,15 @@ in any specification.</span></p>
 </code></pre>
             <h4>Demo</h4>
             <div class="snippet-demo">
-              <div class="snippet-demo__dynamic-shadow-parent">
-                <div class="snippet-demo__dynamic-shadow"></div>
-              </div>
+              <div class="snippet-demo__dynamic-shadow"></div>
             </div>
             <style>
-              .snippet-demo__dynamic-shadow-parent {
-                position: relative;
-                z-index: 1;
-              }
               .snippet-demo__dynamic-shadow {
                 position: relative;
                 width: 10rem;
                 height: 10rem;
                 background: linear-gradient(75deg, #6d78ff, #00ffb8);
+                z-index: 1;
               }
               .snippet-demo__dynamic-shadow::after {
                 content: '';
@@ -835,11 +825,9 @@ in any specification.</span></p>
               }
             </style>
             <h4>Explanation</h4>
-            <p>The snippet requires a somewhat complex case of stacking contexts to get right, such that the pseudo-element will be positioned underneath the element itself while still being visible.</p>
             <ol>
-              <li><code>position: relative</code> on the parent establishes a Cartesian positioning context for child elements.</li>
+              <li><code>position: relative</code> on the element establishes a Cartesian positioning context for psuedo-elements.</li>
               <li><code>z-index: 1</code> establishes a new stacking context.</li>
-              <li><code>position: relative</code> on the child establishes a positioning context for pseudo-elements.</li>
               <li><code>::after</code> defines a pseudo-element.</li>
               <li><code>position: absolute</code> takes the pseudo element out of the flow of the document and positions it in relation to the parent.</li>
               <li><code>width: 100%</code> and <code>height: 100%</code> sizes the pseudo-element to fill its parent's dimensions, making it equal in size.</li>
@@ -847,7 +835,7 @@ in any specification.</span></p>
               <li><code>top: 0.5rem</code> offsets the pseudo-element down slightly from its parent.</li>
               <li><code>filter: blur(0.4rem)</code> will blur the pseudo-element to create the appearance of a shadow underneath.</li>
               <li><code>opacity: 0.7</code> makes the pseudo-element partially transparent.</li>
-              <li><code>z-index: -1</code> positions the pseudo-element behind the parent.</li>
+              <li><code>z-index: -1</code> positions the pseudo-element behind the parent but in front of the background.</li>
             </ol>
             <h4>Browser support</h4>
             <div>
