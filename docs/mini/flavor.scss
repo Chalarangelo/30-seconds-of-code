@@ -464,3 +464,179 @@ button#disclaimer-close{
   font-size: 0.85rem;
   background: 0;
 }
+
+// New styles for landing page
+
+#splash {
+  height: auto;
+  padding-bottom: 1.5rem;
+  background: linear-gradient(135deg, rgba(255,174,39,1) 0%,rgba(222,73,109,1) 100%);
+  #logo {
+    margin-top: 0;
+    margin-left: -0.5rem;
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 2.25rem;
+    line-height: 2;
+    img {
+      vertical-align: top;
+      height: 4.5rem;
+    }
+  }
+  #tagline {
+    text-align: center;
+    padding: 0.5rem 25%;
+  }
+  #doc-link {
+    text-align: center;
+    margin-left: -0.5rem;
+    > a {
+      background: transparent;
+      border: 0.0625rem solid rgba(17,17,17,0.95);
+      transition: all 0.3s;
+      &:hover, &:focus {
+        background: rgba(17,17,17,0.95);
+        color: #e86957;
+      }
+    }
+  }
+  @media screen and (max-width:767px){
+    #logo {
+      font-size: 1.75rem;
+      img {
+        height: 3.5rem;
+      }
+    }
+    #tagline {
+      padding: 0.25rem 17.5%;
+      font-size: 0.875rem;
+    }
+    #doc-link {
+      font-size: 0.875rem;
+    }
+  }
+  @media screen and (max-width: 383px){
+    #logo {
+      font-size: 1.5rem;
+      img {
+        height: 3rem;
+      }
+    }
+    #tagline {
+      padding: 0.125rem 5%;
+    }
+  }
+  @media screen and (max-width: 479px){
+    #tagline #tagline-lg {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .col-md-offset-1 {
+    margin-left: 8.33333%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .col-lg-offset-2 {
+    margin-left: 16.66667%;
+  }
+}
+
+h2.index-section {
+  border-left: 0.3125rem solid #de4a6d;
+  padding-left: 0.625rem;
+  margin-top: 2rem;
+}
+
+#license-icon {
+  text-align: center;
+  @media screen and (min-width: 768px){
+    position: relative;
+    top: calc(50% - 40px);
+  }
+  > svg {
+    border: 0.03125rem solid #444;
+    border-radius: 100%;
+    padding: 0.5rem;
+    fill: #444;
+  }
+}
+
+#license {
+  vertical-align: middle;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+#in-numbers {
+  background: #111; //#3f88c5; //#e15554;
+  padding-top: 1.25rem;
+  @media screen and (max-width: 767px){
+    padding-bottom: 1rem;
+  }
+  color: #fff;
+  svg {
+    fill: #fff;
+  }
+}
+
+#snippet-count, #contrib-count, #commit-count, #test-count {
+  font-size: 1.5rem;
+}
+
+ul#links {
+  list-style: none;
+  padding-left: 0;
+  li + li {
+    padding-top: 0.625rem;
+  }
+}
+
+.pick:not(.selected) {
+  display: none;
+}
+
+.pick.selected {
+  overflow: visible;
+  button.next {
+    position: absolute;
+    top: 50%;
+    right: -1rem;
+    > svg {
+      margin-right: -0.0625rem;
+    }
+  }
+  button.previous {
+    position: absolute;
+    top: 50%;
+    left: -1rem;
+    > svg {
+      margin-left: -0.0625rem;
+    }
+  }
+  button.previous, button.next {
+    border-radius: 100%;
+    background: #f8f8f8;
+    border: 0.03125rem solid #ddd;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s;
+    > svg {
+      fill: #888;
+      transition: all 0.3s;
+    }
+    &:hover, &:focus {
+      border-color: #aaa;
+      > svg {
+        fill: #444;
+      }
+    }
+  }
+}
