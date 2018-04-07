@@ -14,154 +14,185 @@
     <link rel="icon" type="image/png" href="favicon.png">
   </head>
   <body>
-<div id="splash">
-  <h1 id="logo"><img src="https://30secondsofcode.org/favicon.png" alt="logo"> 30 seconds of code</h1>
-  <p id="tagline">Curated collection of useful JavaScript snippets<br id="tagline-lg"/> that you can understand in 30 seconds or less.</p>
-  <p id="doc-link"><a href="#" class="button">View collection</a></p>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
-      <h2 class="index-section">Our philosophy</h2>
-      <p style="text-align: justify">The core goal of <strong>30 seconds of code</strong> is to provide a quality resource for beginner and advanced JavaScript developers alike. We want to help improve the JavaScript ecosystem, by lowering the barrier of entry for newcomers and help seasoned veterans pick up new tricks and remember old ones. In order to achieve this, we have collected hundreds of snippets that can be of use in a wide range of situations. We welcome new contributors and we like fresh ideas, as long as the code is short and easy to grasp in about 30 seconds. The only catch, if you may, is that many of our snippets are not perfectly suited for large, enterprise applications and they might not be deemed production-ready.</p><br/>
+    <div id="splash">
+      <h1 id="logo"><img src="https://30secondsofcode.org/favicon.png" alt="logo"> 30 seconds of code</h1>
+      <p id="tagline">Curated collection of useful JavaScript snippets<br id="tagline-lg"/> that you can understand in 30 seconds or less.</p>
+      <p id="doc-link"><a href="#" class="button">View collection</a></p>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
-      <div class="card fluid">
-        <div class="section row">
-          <div class="col-sm-12 col-md-2 col-lg-3 no-padding" id="license-icon"><svg version="1.1" width="64" height="64" viewBox="0 0 14 16" class="octicon octicon-law" aria-hidden="true"><path fill-rule="evenodd" d="M7 4c-.83 0-1.5-.67-1.5-1.5S6.17 1 7 1s1.5.67 1.5 1.5S7.83 4 7 4zm7 6c0 1.11-.89 2-2 2h-1c-1.11 0-2-.89-2-2l2-4h-1c-.55 0-1-.45-1-1H8v8c.42 0 1 .45 1 1h1c.42 0 1 .45 1 1H3c0-.55.58-1 1-1h1c0-.55.58-1 1-1h.03L6 5H5c0 .55-.45 1-1 1H3l2 4c0 1.11-.89 2-2 2H2c-1.11 0-2-.89-2-2l2-4H1V5h3c0-.55.45-1 1-1h4c.55 0 1 .45 1 1h3v1h-1l2 4zM2.5 7L1 10h3L2.5 7zM13 10l-1.5-3-1.5 3h3z"/></svg>
+    <div id="in-numbers">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3 no-padding" style="text-align: center">
+            <svg version="1.1" width="24" height="24" viewBox="0 0 14 16" class="octicon octicon-code" aria-hidden="true"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"/></svg>
+            <p><span id="snippet-count">295</span><br/>snippets</p>
           </div>
-          <div class="col-sm-12 col-md-10 col-lg-9 no-padding" style="padding:0"><p style="text-align: justify" id="license">In order for <strong>30 seconds of code</strong> to be as accessible and useful as possible, all of the snippets in the collection are licensed under the <a href="https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE">CC0-1.0 License</a>, meaning they are absolutely free to use in any project you like. If you like what we do, you can always credit us, but that is not mandatory.</p></div>
+          <div class="col-sm-3 no-padding" style="text-align: center">
+            <svg version="1.1" width="24" height="24" viewBox="0 0 16 16" class="octicon octicon-organization" aria-hidden="true"><path fill-rule="evenodd" d="M16 12.999c0 .439-.45 1-1 1H7.995c-.539 0-.994-.447-.995-.999H1c-.54 0-1-.561-1-1 0-2.634 3-4 3-4s.229-.409 0-1c-.841-.621-1.058-.59-1-3 .058-2.419 1.367-3 2.5-3s2.442.58 2.5 3c.058 2.41-.159 2.379-1 3-.229.59 0 1 0 1s1.549.711 2.42 2.088A6.78 6.78 0 0 1 10 8.999s.229-.409 0-1c-.841-.62-1.058-.59-1-3 .058-2.419 1.367-3 2.5-3s2.437.581 2.495 3c.059 2.41-.158 2.38-1 3-.229.59 0 1 0 1s3.005 1.366 3.005 4z"/></svg>
+            <p><span id="contrib-count">114</span><br/>contributors</p>
+          </div>
+          <div class="col-sm-3 no-padding" style="text-align: center">
+            <svg version="1.1" width="24" height="24" viewBox="0 0 10 16" class="octicon octicon-git-branch" aria-hidden="true"><path fill-rule="evenodd" d="M10 5c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v.3c-.02.52-.23.98-.63 1.38-.4.4-.86.61-1.38.63-.83.02-1.48.16-2 .45V4.72a1.993 1.993 0 0 0-1-3.72C.88 1 0 1.89 0 3a2 2 0 0 0 1 1.72v6.56c-.59.35-1 .99-1 1.72 0 1.11.89 2 2 2 1.11 0 2-.89 2-2 0-.53-.2-1-.53-1.36.09-.06.48-.41.59-.47.25-.11.56-.17.94-.17 1.05-.05 1.95-.45 2.75-1.25S8.95 7.77 9 6.73h-.02C9.59 6.37 10 5.73 10 5zM2 1.8c.66 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2C1.35 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2zm0 12.41c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm6-8c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+            <p><span id="commit-count">3028</span><br/>commits</p>
+          </div>
+          <div class="col-sm-3 no-padding" style="text-align: center">
+            <svg version="1.1" width="24" height="24" viewBox="0 0 16 16" class="octicon octicon-dashboard" aria-hidden="true"><path fill-rule="evenodd" d="M9 5H8V4h1v1zm4 3h-1v1h1V8zM6 5H5v1h1V5zM5 8H4v1h1V8zm11-5.5l-.5-.5L9 7c-.06-.02-1 0-1 0-.55 0-1 .45-1 1v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-.92l6-5.58zm-1.59 4.09c.19.61.3 1.25.3 1.91 0 3.42-2.78 6.2-6.2 6.2-3.42 0-6.21-2.78-6.21-6.2 0-3.42 2.78-6.2 6.2-6.2 1.2 0 2.31.34 3.27.94l.94-.94A7.459 7.459 0 0 0 8.51 1C4.36 1 1 4.36 1 8.5 1 12.64 4.36 16 8.5 16c4.14 0 7.5-3.36 7.5-7.5 0-1.03-.2-2.02-.59-2.91l-1 1z"/></svg>
+            <p><span id="test-count">999</span><br/>tests</p>
+          </div>
         </div>
-      </div><br/>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
-      <h2 class="index-section">Today's picks</h2>
-      <div class="card fluid pick selected">
-      <button class="next"><svg version="1.1" width="8" height="16" viewBox="0 0 8 16" class="octicon octicon-chevron-right" aria-hidden="true"><path fill-rule="evenodd" d="M7.5 8l-5 5L1 11.5 4.75 8 1 4.5 2.5 3l5 5z"/></svg></button>
-      <button class="previous"><svg version="1.1" width="8" height="16" viewBox="0 0 8 16" class="octicon octicon-chevron-left" aria-hidden="true"><path fill-rule="evenodd" d="M6 3l1.5 1.5L3.75 8l3.75 3.5L6 13 1 8l5-5z"/></svg></button><h3 id="bottomvisible" class="section double-padded">bottomVisible</h3><div class="section double-padded"><p>Returns <code>true</code> if the bottom of the page is visible, <code>false</code> otherwise.</p><p>Use <code>scrollY</code>, <code>scrollHeight</code> and <code>clientHeight</code> to determine if the bottom of the page is visible.</p><pre class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">bottomVisible</span> <span class="token operator">=</span> <span class="token punctuation">()</span> <span class="token operator">=&gt;</span>
-  document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>clientHeight <span class="token operator">+</span> window<span class="token punctuation">.</span>scrollY <span class="token operator">&gt;=</span>
-  <span class="token punctuation">(</span>document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>scrollHeight <span class="token operator">||</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>clientHeight<span class="token punctuation">);</span>
-</pre><label class="collapse">Show examples</label><pre class="language-js"><span class="token function">bottomVisible</span><span class="token punctuation">();</span> <span class="token comment">// true</span>
-</pre></div></div>
-      <div class="card fluid pick"><h3 id="ary" class="section double-padded">ary</h3><div class="section double-padded"><p>Creates a function that accepts up to <code>n</code> arguments, ignoring any additional arguments.</p><p>Call the provided function, <code>fn</code>, with up to <code>n</code> arguments, using <code>Array.slice(0,n)</code> and the spread operator (<code>...</code>).</p><pre class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">ary</span> <span class="token operator">=</span> <span class="token punctuation">(</span>fn<span class="token punctuation">,</span> n<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> n<span class="token punctuation">));</span>
-</pre><label class="collapse">Show examples</label><pre class="language-js"><span class="token keyword">const</span> firstTwoMax <span class="token operator">=</span> <span class="token function">ary</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span>max<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">);
-[[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">], [</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">], [</span><span class="token number">10</span><span class="token punctuation">]].</span><span class="token function">map</span><span class="token punctuation">(</span>x <span class="token operator">=&gt;</span> <span class="token function">firstTwoMax</span><span class="token punctuation">(</span><span class="token operator">...</span>x<span class="token punctuation">));</span> <span class="token comment">// [6, 8, 10]</span>
-</pre><button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div></div>
-      <br/>
-    </div>
-  </div>
-</div>
-<div id="in-numbers">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6 col-md-3 no-padding" style="text-align: center">
-        <svg version="1.1" width="48" height="48" viewBox="0 0 14 16" class="octicon octicon-code" aria-hidden="true"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"/></svg>
-        <p><span id="snippet-count">295</span><br/>snippets</p><br/>
-      </div>
-      <div class="col-sm-6 col-md-3 no-padding" style="text-align: center">
-        <svg version="1.1" width="48" height="48" viewBox="0 0 16 16" class="octicon octicon-organization" aria-hidden="true"><path fill-rule="evenodd" d="M16 12.999c0 .439-.45 1-1 1H7.995c-.539 0-.994-.447-.995-.999H1c-.54 0-1-.561-1-1 0-2.634 3-4 3-4s.229-.409 0-1c-.841-.621-1.058-.59-1-3 .058-2.419 1.367-3 2.5-3s2.442.58 2.5 3c.058 2.41-.159 2.379-1 3-.229.59 0 1 0 1s1.549.711 2.42 2.088A6.78 6.78 0 0 1 10 8.999s.229-.409 0-1c-.841-.62-1.058-.59-1-3 .058-2.419 1.367-3 2.5-3s2.437.581 2.495 3c.059 2.41-.158 2.38-1 3-.229.59 0 1 0 1s3.005 1.366 3.005 4z"/></svg>
-        <p><span id="contrib-count">114</span><br/>contributors</p><br/>
-      </div>
-      <div class="col-sm-6 col-md-3 no-padding" style="text-align: center">
-        <svg version="1.1" width="48" height="48" viewBox="0 0 10 16" class="octicon octicon-git-branch" aria-hidden="true"><path fill-rule="evenodd" d="M10 5c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v.3c-.02.52-.23.98-.63 1.38-.4.4-.86.61-1.38.63-.83.02-1.48.16-2 .45V4.72a1.993 1.993 0 0 0-1-3.72C.88 1 0 1.89 0 3a2 2 0 0 0 1 1.72v6.56c-.59.35-1 .99-1 1.72 0 1.11.89 2 2 2 1.11 0 2-.89 2-2 0-.53-.2-1-.53-1.36.09-.06.48-.41.59-.47.25-.11.56-.17.94-.17 1.05-.05 1.95-.45 2.75-1.25S8.95 7.77 9 6.73h-.02C9.59 6.37 10 5.73 10 5zM2 1.8c.66 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2C1.35 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2zm0 12.41c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm6-8c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
-        <p><span id="commit-count">3028</span><br/>commits</p>
-      </div>
-      <div class="col-sm-6 col-md-3 no-padding" style="text-align: center">
-        <svg version="1.1" width="48" height="48" viewBox="0 0 16 16" class="octicon octicon-dashboard" aria-hidden="true"><path fill-rule="evenodd" d="M9 5H8V4h1v1zm4 3h-1v1h1V8zM6 5H5v1h1V5zM5 8H4v1h1V8zm11-5.5l-.5-.5L9 7c-.06-.02-1 0-1 0-.55 0-1 .45-1 1v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-.92l6-5.58zm-1.59 4.09c.19.61.3 1.25.3 1.91 0 3.42-2.78 6.2-6.2 6.2-3.42 0-6.21-2.78-6.21-6.2 0-3.42 2.78-6.2 6.2-6.2 1.2 0 2.31.34 3.27.94l.94-.94A7.459 7.459 0 0 0 8.51 1C4.36 1 1 4.36 1 8.5 1 12.64 4.36 16 8.5 16c4.14 0 7.5-3.36 7.5-7.5 0-1.03-.2-2.02-.59-2.91l-1 1z"/></svg>
-        <p><span id="test-count">999</span><br/>tests</p>
       </div>
     </div>
-  </div>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
-      <h2 class="index-section">Getting started</h2>
-      <ul id="links">
-        <li>If you are new to JavaScript, we suggest you start by taking a look at the <a href="#">Beginner's snippets</a></li>
-        <li>If you want to level up tour JavaScript skills, check out the full <a href="#">Snippet collection</a></li>
-        <li>If you want to see how the project was built and contribute, visit our <a href="#">Github repository</a></li>
-        <li>If you want to check out some more complex snippets, you can visit the <a href="#">Archive</a></li>
-      </ul><br/>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
-      <h2 class="index-section">Related projects</h2>
-      <p style="text-align: justify">The idea behind <strong>30 seconds of code</strong> has inspired some people to create similar collections in other programming languages and environments. Here are the ones we like the most:</p>
-      <ul>
-        <li><a href="https://atomiks.github.io/30-seconds-of-css/">30 seconds of CSS</a> by <strong>atomiks</strong></li>
-        <li><a href="https://github.com/kriadmin/30-seconds-of-python-code">30 seconds of Python</a> by <strong>kriadmin</strong></li>
-      </ul><br/>
-    </div>
-  </div>
-  <div class="row">
-  <div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
-    <h2 class="index-section">Top contributors</h2>
+    <div class="container">
       <div class="row">
-        <div class="col-sm-6 col-md-3 col-lg no-padding"><div class="card fluid contributor">
-          <img class="section media" src="https://github.com/Chalarangelo.png"/>
-          <a href="https://github.com/Chalarangelo" class="section button">Angelos Chalaris</a>
-          </div>
+        <div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
+          <h2 class="index-section">Our philosophy</h2>
+          <p style="text-align: justify">The core goal of <strong>30 seconds of code</strong> is to provide a quality resource for beginner and advanced JavaScript developers alike. We want to help improve the JavaScript ecosystem, by lowering the barrier of entry for newcomers and help seasoned veterans pick up new tricks and remember old ones. In order to achieve this, we have collected hundreds of snippets that can be of use in a wide range of situations. We welcome new contributors and we like fresh ideas, as long as the code is short and easy to grasp in about 30 seconds. The only catch, if you may, is that many of our snippets are not perfectly suited for large, enterprise applications and they might not be deemed production-ready.</p><br/>
         </div>
-        <div class="col-sm-6 col-md-3 col-lg no-padding"><div class="card fluid contributor">
-          <img class="section media" src="https://github.com/fejes713.png"/>
-          <a href="https://github.com/fejes713" class="section button">Stefan Feješ</a>
-          </div></div>
-        <div class="col-sm-6 col-md-3 col-lg no-padding"><div class="card fluid contributor">
-          <img class="section media" src="https://github.com/flxwu.png"/>
-          <a href="https://github.com/flxwu" class="section button">Felix Wu</a>
-          </div></div>
-        <div class="col-sm-6 col-md-3 col-lg no-padding"><div class="card fluid contributor">
-          <img class="section media" src="https://github.com/atomiks.png"/>
-          <a href="https://github.com/atomiks" class="section button">atomiks</a>
-          </div></div>
-        <div class="col-sm-6 col-md-3 col-lg no-padding"><div class="card fluid contributor">
-          <img class="section media" src="https://github.com/kingdavidmartins.png"/>
-          <a href="https://github.com/kingdavidmartins" class="section button">King David Martins</a>
-          </div></div>
-        <div class="col-sm-6 col-md-3 col-lg no-padding"><div class="card fluid contributor">
-          <img class="section media" src="https://github.com/kriadmin.png"/>
-          <a href="https://github.com/kriadmin" class="section button">Rohit Tanwar</a>
-          </div></div>
-        <div class="col-sm-6 col-md-3 col-lg no-padding"><div class="card fluid contributor">
-          <img class="section media" src="https://github.com/iamsoorena.png"/>
-          <a href="https://github.com/iamsoorena" class="section button">Soorena Soleimani</a>
-          </div></div>
-        <div class="col-sm-6 col-md-3 col-lg no-padding"><div class="card fluid contributor">
-          <img class="section media" src="https://github.com/skatcat31.png"/>
-          <a href="https://github.com/skatcat31" class="section button">Robert Mennell</a>
-          </div></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
+          <div class="card fluid">
+            <div class="section row">
+              <div class="col-sm-12 col-md-2 col-lg-3 no-padding" id="license-icon"><svg version="1.1" width="64" height="64" viewBox="0 0 14 16" class="octicon octicon-law" aria-hidden="true"><path fill-rule="evenodd" d="M7 4c-.83 0-1.5-.67-1.5-1.5S6.17 1 7 1s1.5.67 1.5 1.5S7.83 4 7 4zm7 6c0 1.11-.89 2-2 2h-1c-1.11 0-2-.89-2-2l2-4h-1c-.55 0-1-.45-1-1H8v8c.42 0 1 .45 1 1h1c.42 0 1 .45 1 1H3c0-.55.58-1 1-1h1c0-.55.58-1 1-1h.03L6 5H5c0 .55-.45 1-1 1H3l2 4c0 1.11-.89 2-2 2H2c-1.11 0-2-.89-2-2l2-4H1V5h3c0-.55.45-1 1-1h4c.55 0 1 .45 1 1h3v1h-1l2 4zM2.5 7L1 10h3L2.5 7zM13 10l-1.5-3-1.5 3h3z"/></svg>
+              </div>
+              <div class="col-sm-12 col-md-10 col-lg-9 no-padding" style="padding:0"><p style="text-align: justify" id="license">In order for <strong>30 seconds of code</strong> to be as accessible and useful as possible, all of the snippets in the collection are licensed under the <a href="https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE">CC0-1.0 License</a>, meaning they are absolutely free to use in any project you like. If you like what we do, you can always credit us, but that is not mandatory.</p></div>
+            </div>
+          </div><br/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
+          <h2 class="index-section">Today's picks</h2>
+          <div class="card fluid pick selected">
+          <button class="next"><svg version="1.1" width="8" height="16" viewBox="0 0 8 16" class="octicon octicon-chevron-right" aria-hidden="true"><path fill-rule="evenodd" d="M7.5 8l-5 5L1 11.5 4.75 8 1 4.5 2.5 3l5 5z"/></svg></button>
+          <button class="previous"><svg version="1.1" width="8" height="16" viewBox="0 0 8 16" class="octicon octicon-chevron-left" aria-hidden="true"><path fill-rule="evenodd" d="M6 3l1.5 1.5L3.75 8l3.75 3.5L6 13 1 8l5-5z"/></svg></button><h3 id="bottomvisible" class="section double-padded">bottomVisible</h3><div class="section double-padded"><p>Returns <code>true</code> if the bottom of the page is visible, <code>false</code> otherwise.</p><p>Use <code>scrollY</code>, <code>scrollHeight</code> and <code>clientHeight</code> to determine if the bottom of the page is visible.</p><pre class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">bottomVisible</span> <span class="token operator">=</span> <span class="token punctuation">()</span> <span class="token operator">=&gt;</span>
+      document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>clientHeight <span class="token operator">+</span> window<span class="token punctuation">.</span>scrollY <span class="token operator">&gt;=</span>
+      <span class="token punctuation">(</span>document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>scrollHeight <span class="token operator">||</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>clientHeight<span class="token punctuation">);</span>
+    </pre><label class="collapse">Show examples</label><pre class="language-js"><span class="token function">bottomVisible</span><span class="token punctuation">();</span> <span class="token comment">// true</span>
+    </pre></div></div>
+          <div class="card fluid pick"><h3 id="ary" class="section double-padded">ary</h3><div class="section double-padded"><p>Creates a function that accepts up to <code>n</code> arguments, ignoring any additional arguments.</p><p>Call the provided function, <code>fn</code>, with up to <code>n</code> arguments, using <code>Array.slice(0,n)</code> and the spread operator (<code>...</code>).</p><pre class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">ary</span> <span class="token operator">=</span> <span class="token punctuation">(</span>fn<span class="token punctuation">,</span> n<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> n<span class="token punctuation">));</span>
+    </pre><label class="collapse">Show examples</label><pre class="language-js"><span class="token keyword">const</span> firstTwoMax <span class="token operator">=</span> <span class="token function">ary</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span>max<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">);
+    [[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">], [</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">], [</span><span class="token number">10</span><span class="token punctuation">]].</span><span class="token function">map</span><span class="token punctuation">(</span>x <span class="token operator">=&gt;</span> <span class="token function">firstTwoMax</span><span class="token punctuation">(</span><span class="token operator">...</span>x<span class="token punctuation">));</span> <span class="token comment">// [6, 8, 10]</span>
+    </pre><button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div></div>
+          <br/>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-  <div class="row">
-    <div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
-      <h2 class="index-section">How to contribute</h2>
-      <p style="text-align: justify">TODO</p><br/>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
+          <h2 class="index-section">Getting started</h2>
+          <ul id="links">
+            <li>If you are new to JavaScript, we suggest you start by taking a look at the <a href="#">Beginner's snippets</a></li>
+            <li>If you want to level up tour JavaScript skills, check out the full <a href="#">Snippet collection</a></li>
+            <li>If you want to see how the project was built and contribute, visit our <a href="#">Github repository</a></li>
+            <li>If you want to check out some more complex snippets, you can visit the <a href="#">Archive</a></li>
+          </ul><br/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
+          <h2 class="index-section">Related projects</h2>
+          <p style="text-align: justify">The idea behind <strong>30 seconds of code</strong> has inspired some people to create similar collections in other programming languages and environments. Here are the ones we like the most:</p>
+          <ul>
+            <li><a href="https://atomiks.github.io/30-seconds-of-css/">30 seconds of CSS</a> by <strong>atomiks</strong></li>
+            <li><a href="https://github.com/kriadmin/30-seconds-of-python-code">30 seconds of Python</a> by <strong>kriadmin</strong></li>
+          </ul><br/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
+          <h2 class="index-section">Top contributors</h2>
+          <div class="row">
+            <div class="col-sm-6 col-md-3 col-lg no-padding"><div class="card fluid contributor">
+              <img class="section media" src="https://github.com/Chalarangelo.png"/>
+              <a href="https://github.com/Chalarangelo" class="section button">Angelos Chalaris</a>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg no-padding"><div class="card fluid contributor">
+              <img class="section media" src="https://github.com/fejes713.png"/>
+              <a href="https://github.com/fejes713" class="section button">Stefan Feješ</a>
+              </div></div>
+            <div class="col-sm-6 col-md-3 col-lg no-padding"><div class="card fluid contributor">
+              <img class="section media" src="https://github.com/flxwu.png"/>
+              <a href="https://github.com/flxwu" class="section button">Felix Wu</a>
+              </div></div>
+            <div class="col-sm-6 col-md-3 col-lg no-padding"><div class="card fluid contributor">
+              <img class="section media" src="https://github.com/atomiks.png"/>
+              <a href="https://github.com/atomiks" class="section button">atomiks</a>
+              </div></div>
+            <div class="col-sm-6 col-md-3 col-lg no-padding"><div class="card fluid contributor">
+              <img class="section media" src="https://github.com/kingdavidmartins.png"/>
+              <a href="https://github.com/kingdavidmartins" class="section button">King David Martins</a>
+              </div></div>
+            <div class="col-sm-6 col-md-3 col-lg no-padding"><div class="card fluid contributor">
+              <img class="section media" src="https://github.com/kriadmin.png"/>
+              <a href="https://github.com/kriadmin" class="section button">Rohit Tanwar</a>
+              </div></div>
+            <div class="col-sm-6 col-md-3 col-lg no-padding"><div class="card fluid contributor">
+              <img class="section media" src="https://github.com/iamsoorena.png"/>
+              <a href="https://github.com/iamsoorena" class="section button">Soorena Soleimani</a>
+              </div></div>
+            <div class="col-sm-6 col-md-3 col-lg no-padding"><div class="card fluid contributor">
+              <img class="section media" src="https://github.com/skatcat31.png"/>
+              <a href="https://github.com/skatcat31" class="section button">Robert Mennell</a>
+              </div></div>
+        </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
+          <h2 class="index-section">How to contribute</h2>
+          <p style="text-align: justify">Do you have a cool idea for a new snippet? Maybe some code you use often and is not part of our collection? Contributing to <strong>30 seconds of code</strong> is as simple as 1,2,3,4!</p>
+              <div class="card fluid contribution-guideline">
+                <span class="contribution-number">1</span>
+                <div class="section">
+                  <h3>Create</h3>
+                  <p style="text-align: justify">Start by creating a snippet, according to the <a href="https://github.com/Chalarangelo/30-seconds-of-code/blob/master/snippet-template.md">snippet template. Make sure to follow these simple guidelines:</a></p>
+                  <ul style="text-align: justify">
+                    <li>Your snippet title must be unique and the same as the name of the implemented function.</li>
+                    <li>Use the snippet description to explain what your snippet does and how it works.</li>
+                    <li>Try to keep the snippet's code short and to the point. Use modern techniques and features.</li>
+                    <li>Remember to provide an example of how your snippet works.</li>
+                    <li>Your snippet should solve a real-world problem, no matter how simple.</li>
+                    <li>Never modify README.md or any of the HTML files.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card fluid contribution-guideline">
+                <span class="contribution-number">2</span>
+                <div class="section">
+                  <h3>Tag</h3>
+                  <p style="text-align: justify">Run <code>npm run tagger</code> from your terminal, then open the tag_database file and tag your snippet appropriately. Multitagging is also supported, just make sure the first tag you specify is on of the major tags and the one that is most relevant to the implemneted function.</p>
+                </div>
+              </div>
+              <div class="card fluid contribution-guideline">
+                <span class="contribution-number">3</span>
+                <div class="section">
+                  <h3>Test</h3>
+                  <p style="text-align: justify">You can optionally test your snippet to make our job easier. Simply run <code>npm run tester</code> to generate the test files for your snippet. Find the related folder for you snippet under the test directory and write some tests. Remember to run <code>npm run tester</code> again to make sure your tests are passing.</p>
+                </div>
+              </div>
+              <div class="card fluid contribution-guideline">
+                <span class="contribution-number">4</span>
+                <div class="section">
+                  <h3>Pull request</h3>
+                  <p style="text-align: justify">If you have done everything mentioned above, you should now have an awesome snippet to add to our collection. Simply start a pull request and follow the guidelines provided. Remember to only submit one snippet per pull request, so that we can quickly evaluate and merge your code into the collection.</p>
+                </div>
+              </div>
+      <p>If you need additional pointers about writing a snippet, be sure to read the complete <a href="https://github.com/Chalarangelo/30-seconds-of-code/blob/master/CONTRIBUTING.md">contribution guidelines</a>.</p>
+            </div>
+      </div>
     </div>
-  </div>
-</div>
-<footer class="container"><div class="row"><div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2"><p style="display:inline-block"><strong>30 seconds of code</strong> is licensed under the <a href="https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE">CC0-1.0</a> license.<br>Icons made by <a href="https://www.flaticon.com/authors/smashicons">Smashicons</a> from <a href="https://www.flaticon.com/">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/">CC 3.0 BY</a>.<br>Ribbon made by <a href="https://github.com/tholman/github-corners">Tim Holman</a> is licensed by <a href="https://opensource.org/licenses/MIT">The MIT License</a><br>Built with the <a href="https://minicss.org">mini.css framework</a>.</p></div></div></footer>
+    <footer class="container"><div class="row"><div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2"><p style="display:inline-block"><strong>30 seconds of code</strong> is licensed under the <a href="https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE">CC0-1.0</a> license.<br>Icons made by <a href="https://www.flaticon.com/authors/smashicons">Smashicons</a> from <a href="https://www.flaticon.com/">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/">CC 3.0 BY</a>.<br>Ribbon made by <a href="https://github.com/tholman/github-corners">Tim Holman</a> is licensed by <a href="https://opensource.org/licenses/MIT">The MIT License</a><br>Built with the <a href="https://minicss.org">mini.css framework</a>.</p></div></div></footer>
 <script>
 window.onload = function(){
-  document.addEventListener('scroll', function(e){
-    if(animated) return;
     let counters = ['#snippet-count', '#contrib-count', '#commit-count', '#test-count'];
     let values = [295,114,3028,999];
     let steps = [1,1,8,3];
-    if(counters.some(v => elementIsVisibleInViewport(document.body.querySelector(v), false))) {
-      animated = true;
-      runCounter(counters[0],0,values[0],steps[0]);
-      runCounter(counters[1],0,values[1],steps[1]);
-      runCounter(counters[2],0,values[2],steps[2]);
-      runCounter(counters[3],0,values[3],steps[3]);
-    }
-  });
+    runCounter(counters[0],0,values[0],steps[0]);
+    runCounter(counters[1],0,values[1],steps[1]);
+    runCounter(counters[2],0,values[2],steps[2]);
+    runCounter(counters[3],0,values[3],steps[3]);
 }
 const runCounter = (selector, start, end, increment = 1, duration = 2000) => {
 	let current = start,
@@ -182,8 +213,6 @@ const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
         ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
     : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
 };
-
-let animated = false;
 
 </script>
 </body>
