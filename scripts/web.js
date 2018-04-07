@@ -159,7 +159,7 @@ try {
         `</h3>`;
       for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
         output += md
-          .render(`[${taggedSnippet[0]}](./${tag}.html#${taggedSnippet[0].toLowerCase()})\n`)
+          .render(`[${taggedSnippet[0]}](./${tag}#${taggedSnippet[0].toLowerCase()})\n`)
           .replace(/<p>/g, '')
           .replace(/<\/p>/g, '')
           .replace(/<a/g, `<a class="sublink-1" tags="${taggedSnippet[1].join(',')}"`);
@@ -171,7 +171,7 @@ try {
   for (let tag of [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
     .filter(v => v)
     .sort((a, b) => util.capitalize(a, true) === 'Uncategorized' ? 1 : util.capitalize(b, true) === 'Uncategorized' ? -1 : a.localeCompare(b))) {
-      let localOutput = output.replace(/\$tag/g, util.capitalize(tag)).replace(new RegExp(`./${tag}.html#`,'g'),'#');
+      let localOutput = output.replace(/\$tag/g, util.capitalize(tag)).replace(new RegExp(`./${tag}#`,'g'),'#');
       localOutput += md
         .render(`## ${util.capitalize(tag, true)}\n`)
         .replace(/<h2>/g, '<h2 style="text-align:center;">');
