@@ -193,14 +193,14 @@
 <script>
 window.onload = function(){
   let counters = ['#snippet-count', '#contrib-count', '#commit-count', '#star-count'];
-  let values = [$snippet-count,$contrib-count,$commit-count,$star-count];
+  let values = [295,113,3029,19462];
   let steps = [1,1,8,42];
     runCounter(counters[0],0,values[0],steps[0]);
     runCounter(counters[1],0,values[1],steps[1]);
     runCounter(counters[2],0,values[2],steps[2]);
     runCounter(counters[3],0,values[3],steps[3]);
     document.querySelector('button.next').addEventListener('click', e => {
-      let selected = e.target.parentElement.querySelector('.selected');
+      let selected = document.getElementById('pick-slider').querySelector('.selected');
       if(selected == Array.from(document.querySelectorAll('.card.fluid.pick')).slice(-1)[0])
       {
         document.querySelector('.card.fluid.pick').className = 'card fluid pick selected';
@@ -212,7 +212,7 @@ window.onload = function(){
     });
 
     document.querySelector('button.previous').addEventListener('click', e => {
-      let selected = e.target.parentElement.querySelector('.selected');
+      let selected = document.getElementById('pick-slider').querySelector('.selected');
      if(selected == document.querySelector('.card.fluid.pick'))
       {
         Array.from(document.querySelectorAll('.card.fluid.pick')).slice(-1)[0].className = 'card fluid pick selected';
@@ -267,11 +267,6 @@ const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
         ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
     : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
 };
-
-document.querySelector('button.next').addEventListener('click', e => {
-  e.target.parentElement.querySelector('.selected').nextElementSibling.className  +=' selected';
-});
-
 </script>
 </body>
 </html>
