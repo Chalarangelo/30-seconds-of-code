@@ -62,6 +62,15 @@ const optimizeNodes = (data, regexp, replacer) => {
   } while (count > 0);
   return output;
 };
+// Randomizes the order of the values of an array, returning a new array.
+const shuffle = ([...arr]) => {
+  let m = arr.length;
+  while (m) {
+    const i = Math.floor(Math.random() * m--);
+    [arr[m], arr[i]] = [arr[i], arr[m]];
+  }
+  return arr;
+};
 // Capitalizes the first letter of a string
 const capitalize = (str, lowerRest = false) =>
   str.slice(0, 1).toUpperCase() + (lowerRest ? str.slice(1).toLowerCase() : str.slice(1));
@@ -69,4 +78,4 @@ const capitalize = (str, lowerRest = false) =>
 const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
 // Creates a hash for a value using the SHA-256 algorithm.
 const hashData = val => crypto.createHash('sha256').update(val).digest('hex');
-module.exports = {readSnippets, readTags, optimizeNodes, capitalize, objectFromPairs, isTravisCI, hashData};
+module.exports = {readSnippets, readTags, optimizeNodes, capitalize, objectFromPairs, isTravisCI, hashData, shuffle};
