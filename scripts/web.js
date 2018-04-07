@@ -55,8 +55,8 @@ let snippets = {},
   startPart = '',
   endPart = '',
   output = '',
-  startBeginnerPart = '',
-  endBegginerPart = '',
+  beginnerStartPart = '',
+  beginnerEndPart = '',
   beginnerOutput = '',
   pagesOutput = [];
   tagDbData = {};
@@ -70,8 +70,8 @@ try {
   startPart = fs.readFileSync(path.join(staticPartsPath, 'page-start.html'), 'utf8');
   endPart = fs.readFileSync(path.join(staticPartsPath, 'page-end.html'), 'utf8');
 
-  startBeginnerPart = fs.readFileSync(path.join(staticPartsPath, 'beginner-page-start.html'), 'utf8');
-  endBeginnerPart = fs.readFileSync(path.join(staticPartsPath, 'beginner-page-end.html'), 'utf8');
+  beginnerStartPart = fs.readFileSync(path.join(staticPartsPath, 'beginner-page-start.html'), 'utf8');
+  beginnerEndPart = fs.readFileSync(path.join(staticPartsPath, 'beginner-page-end.html'), 'utf8');
 } catch (err) {
   // Handle errors (hopefully not!)
   console.log(`${chalk.red('ERROR!')} During static part loading: ${err}`);
@@ -170,7 +170,7 @@ try {
 
 try {
   // Add the static part
-  beginnerOutput += `${startBeginnerPart + '\n'}`;
+  beginnerOutput += `${beginnerStartPart + '\n'}`;
 
   // Filter begginer snippets
   const filteredBeginnerSnippets = Object.keys(snippets)
@@ -180,7 +180,6 @@ try {
     return obj;
   }, {});
 
-  console.log(filteredBeginnerSnippets);
   for (let snippet of Object.entries(filteredBeginnerSnippets))
         beginnerOutput +=
         '<div class="row">' +
@@ -197,13 +196,7 @@ try {
           '</div></div></div></div>';
 
 
-  beginnerOutput +=
-  '<div class="card fluid">' +
-  // begginer snippet goes here.
-  '<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button>' +
-  '</div></div>';
-
-  beginnerOutput += `${endBeginnerPart}`;
+  beginnerOutput += `${beginnerEndPart}`;
 
   // Generate 'beginner.html' file
   fs.writeFileSync(path.join(docsPath, 'beginner.html'), beginnerOutput);

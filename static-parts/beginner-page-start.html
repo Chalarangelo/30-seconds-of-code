@@ -12,6 +12,47 @@
     <meta property="og:description" content="Curated collection of useful Javascript snippets that you can understand in 30 seconds or less." />
     <meta property="og:type" content="website" /><meta property="og:image" content="favicon.png">
     <link rel="icon" type="image/png" href="favicon.png">
+    <script>
+          function registerClickListener() {
+        document.addEventListener('click', function (event) {
+          if( document.getElementById('doc-drawer-checkbox').checked ) {
+            if(!document.querySelector('nav').contains(event.target) && !event.target.classList.contains('drawer-toggle') && !event.target.classList.contains('drawer')) {
+              document.getElementById('doc-drawer-checkbox').checked = false;
+            }
+          }
+          if ( event.target.classList.contains('collapse') ) {
+            event.target.classList = event.target.classList.contains('toggled') ? 'collapse' : 'collapse toggled';
+          }
+          else if (event.target.classList.contains('clipboard-copy')) {
+            const text = event.target.parentElement.parentElement.querySelector(':not(pre) + pre').textContent;
+            const textArea = document.createElement("textarea");
+            textArea.value = text.trim();
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("Copy");
+            document.body.removeChild(textArea);
+            let tst = document.createElement('div');
+            tst.classList = 'toast';
+            tst.innerHTML = 'Snippet copied to clipboard!';
+            document.body.appendChild(tst);
+            setTimeout(function() {
+              tst.style.opacity = 0;
+              setTimeout(function() {
+                document.body.removeChild(tst);
+              },300);
+            },1700);
+          }
+          else if (event.target.classList.contains('scroll-to-top')){
+            scrollToTop();
+          }
+          else if (event.target.classList.contains('sublink-1')){
+            if(event.target.getAttribute("href").includes('./')) return;
+            event.preventDefault();
+            scrollTo(document.querySelector('main'), document.getElementById(event.target.href.split('#')[1]).parentElement.offsetTop - 60, event.target.href.split('#')[1], 400);
+            document.getElementById('doc-drawer-checkbox').checked = false;
+          }
+        }, false)};
+    </script>
   </head>
   <body>
     <div id="splash">
