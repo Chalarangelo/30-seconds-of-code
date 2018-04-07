@@ -35,8 +35,8 @@
         <p><span id="commit-count">3028</span><br/>commits</p>
       </div>
       <div class="col-sm-3 no-padding" style="text-align: center">
-        <svg version="1.1" width="24" height="24" viewBox="0 0 16 16" class="octicon octicon-dashboard" aria-hidden="true"><path fill-rule="evenodd" d="M9 5H8V4h1v1zm4 3h-1v1h1V8zM6 5H5v1h1V5zM5 8H4v1h1V8zm11-5.5l-.5-.5L9 7c-.06-.02-1 0-1 0-.55 0-1 .45-1 1v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-.92l6-5.58zm-1.59 4.09c.19.61.3 1.25.3 1.91 0 3.42-2.78 6.2-6.2 6.2-3.42 0-6.21-2.78-6.21-6.2 0-3.42 2.78-6.2 6.2-6.2 1.2 0 2.31.34 3.27.94l.94-.94A7.459 7.459 0 0 0 8.51 1C4.36 1 1 4.36 1 8.5 1 12.64 4.36 16 8.5 16c4.14 0 7.5-3.36 7.5-7.5 0-1.03-.2-2.02-.59-2.91l-1 1z"/></svg>
-        <p><span id="test-count">999</span><br/>tests</p>
+        <svg version="1.1" width="24" height="24" viewBox="0 0 14 16" class="octicon octicon-star" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
+        <p><span id="star-count">19459</span><br/>stars</p>
       </div>
     </div>
   </div>
@@ -190,9 +190,9 @@
 <footer class="container"><div class="row"><div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2"><p style="display:inline-block"><strong>30 seconds of code</strong> is licensed under the <a href="https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE">CC0-1.0</a> license.<br>Icons made by <a href="https://www.flaticon.com/authors/smashicons">Smashicons</a> from <a href="https://www.flaticon.com/">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/">CC 3.0 BY</a>.<br>Ribbon made by <a href="https://github.com/tholman/github-corners">Tim Holman</a> is licensed by <a href="https://opensource.org/licenses/MIT">The MIT License</a><br>Built with the <a href="https://minicss.org">mini.css framework</a>.</p></div></div></footer>
 <script>
 window.onload = function(){
-    let counters = ['#snippet-count', '#contrib-count', '#commit-count', '#test-count'];
-    let values = [295,114,3028,999];
-    let steps = [1,1,8,3];
+  let counters = ['#snippet-count', '#contrib-count', '#commit-count', '#star-count'];
+  let values = [295,114,3028,19459];
+  let steps = [1,1,8,42];
     runCounter(counters[0],0,values[0],steps[0]);
     runCounter(counters[1],0,values[1],steps[1]);
     runCounter(counters[2],0,values[2],steps[2]);
