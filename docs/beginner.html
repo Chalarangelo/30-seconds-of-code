@@ -14,10 +14,10 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <script>
       function scrollToTop(){
-        const c = document.querySelector('body').scrollTop;
+        const c = document.querySelector('html').scrollTop;
         if (c > 0) {
           window.requestAnimationFrame(scrollToTop);
-          document.querySelector('body').scrollTo(0, c - c / 4);
+          document.querySelector('html').scrollTo(0, c - c / 4);
         }
       };
       function scrollTo(element, to, id, duration) {
