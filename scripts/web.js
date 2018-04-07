@@ -132,7 +132,15 @@ if(!util.isTravisCI() || (util.isTravisCI() && (process.env['TRAVIS_EVENT_TYPE']
     indexStaticFile = indexStaticFile.replace('$daily-picks',indexDailyPicks);
     // Use the Github API to get the needed data
     const githubApi = 'api.github.com';
-    const headers = { 'User-Agent' : '30-seconds-of-code'};
+    const headers = util.isTravisCI()
+      ? { 'User-Agent' : '30-seconds-of-code', 'Authorization': 'token '+process.env['GH_TOKEN']}
+      : { 'User-Agent' : '30-seconds-of-code'};
+    // Test the API's rate limit (keep for various reasons)
+    https.get({host: githubApi, path: '/rate_limit?', headers: headers}, res =>{
+      res.on('data', function (chunk) {
+          console.log('Remaining requests: '+JSON.parse(chunk).resources.core.remaining);
+      });
+    });
     // Send requests and wait for responses, write to the page
     https.get({host: githubApi, path: '/repos/chalarangelo/30-seconds-of-code/commits?per_page=1', headers: headers}, resCommits =>{
       https.get({host: githubApi, path: '/repos/chalarangelo/30-seconds-of-code/contributors?per_page=1', headers: headers}, resContributors => {
