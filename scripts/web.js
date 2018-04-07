@@ -64,6 +64,9 @@ snippets = util.readSnippets(snippetsPath);
 try {
   startPart = fs.readFileSync(path.join(staticPartsPath, 'page-start.html'), 'utf8');
   endPart = fs.readFileSync(path.join(staticPartsPath, 'page-end.html'), 'utf8');
+
+  beginnerStaticPart = fs.readFileSync(path.join(staticPartsPath, 'beginner-page-start.html'), 'utf8');
+  endStaticPart = fs.readFileSync(path.join(staticPartsPath, 'beginner-page-end.html'), 'utf8');
 } catch (err) {
   // Handle errors (hopefully not!)
   console.log(`${chalk.red('ERROR!')} During static part loading: ${err}`);
