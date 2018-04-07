@@ -76,42 +76,32 @@
       <div id="pick-slider">
         <button class="next" aria-label="next"><svg version="1.1" width="8" height="16" viewBox="0 0 8 16" class="octicon octicon-chevron-right" aria-hidden="true"><path fill-rule="evenodd" d="M7.5 8l-5 5L1 11.5 4.75 8 1 4.5 2.5 3l5 5z"/></svg></button>
       <button class="previous" aria-label="previous"><svg version="1.1" width="8" height="16" viewBox="0 0 8 16" class="octicon octicon-chevron-left" aria-hidden="true"><path fill-rule="evenodd" d="M6 3l1.5 1.5L3.75 8l3.75 3.5L6 13 1 8l5-5z"/></svg></button>
-      <div class="card fluid pick selected"><h3 id="createelement.md" class="section double-padded">createElement</h3><div class="section double-padded">
-<p>Creates an element from a string (without appending it to the document).
-If the given string contains multiple elements, only the first one will be returned.</p>
-<p>Use <code>document.createElement()</code> to create a new element.
-Set its <code>innerHTML</code> to the string supplied as the argument.
-Use <code>ParentNode.firstElementChild</code> to return the element version of the string.</p>
-<pre class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">createElement</span> <span class="token operator">=</span> str <span class="token operator">=></span> <span class="token punctuation">{</span>
-  <span class="token keyword">const</span> el <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">);</span>
-  el<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> str<span class="token punctuation">;</span>
-  <span class="token keyword">return</span> el<span class="token punctuation">.</span>firstElementChild<span class="token punctuation">;
+      <div class="card fluid pick selected"><h3 id="difference.md" class="section double-padded">difference</h3><div class="section double-padded">
+<p>Returns the difference between two arrays.</p>
+<p>Create a <code>Set</code> from <code>b</code>, then use <code>Array.filter()</code> on <code>a</code> to only keep values not contained in <code>b</code>.</p>
+<pre class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">difference</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span>b<span class="token punctuation">);</span>
+  <span class="token keyword">return</span> a<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>x <span class="token operator">=> !</span>s<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>x<span class="token punctuation">));
 };</span>
-</pre><label class="collapse">Show examples</label><pre class="language-js"><span class="token keyword">const</span> el <span class="token operator">=</span> <span class="token function">createElement</span><span class="token punctuation">(</span>
-  <span class="token template-string"><span class="token string">`&lt;div class="container">
-    &lt;p>Hello!&lt;/p>
-  &lt;/div>`</span></span>
-<span class="token punctuation">);</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>el<span class="token punctuation">.</span>className<span class="token punctuation">);</span> <span class="token comment">// 'container'</span>
+</pre><label class="collapse">Show examples</label><pre class="language-js"><span class="token function">difference</span><span class="token punctuation">([</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">], [</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]);</span> <span class="token comment">// [3]</span>
 </pre>
-<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button></div></div><div class="card fluid pick"><h3 id="issymbol.md" class="section double-padded">isSymbol</h3><div class="section double-padded">
-<p>Checks if the given argument is a symbol.</p>
-<p>Use <code>typeof</code> to check if a value is classified as a symbol primitive.</p>
-<pre class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">isSymbol</span> <span class="token operator">=</span> val <span class="token operator">=></span> <span class="token keyword">typeof</span> val <span class="token operator">===</span> <span class="token string">'symbol'</span><span class="token punctuation">;</span>
-</pre><label class="collapse">Show examples</label><pre class="language-js"><span class="token function">isSymbol</span><span class="token punctuation">(</span><span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token string">'x'</span><span class="token punctuation">));</span> <span class="token comment">// true</span>
+<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button></div></div><div class="card fluid pick"><h3 id="hasflags.md" class="section double-padded">hasFlags</h3><div class="section double-padded">
+<p>Check if the current process's arguments contain the specified flags.</p>
+<p>Use <code>Array.every()</code> and <code>Array.includes()</code> to check if <code>process.argv</code> contains all the specified flags.
+Use a regular expression to test if the specified flags are prefixed with <code>-</code> or <code>--</code> and prefix them accordingly.</p>
+<pre class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">hasFlags</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">...</span>flags<span class="token punctuation">)</span> <span class="token operator">=></span>
+  flags<span class="token punctuation">.</span><span class="token function">every</span><span class="token punctuation">(</span>flag <span class="token operator">=></span> process<span class="token punctuation">.</span>argv<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token regex">/^-{1,2}/</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span> <span class="token operator">?</span> flag <span class="token punctuation">:</span> <span class="token string">'--'</span> <span class="token operator">+</span> flag<span class="token punctuation">));</span>
+</pre><label class="collapse">Show examples</label><pre class="language-js"><span class="token comment">// node myScript.js -s --test --cool=true</span>
+<span class="token function">hasFlags</span><span class="token punctuation">(</span><span class="token string">'-s'</span><span class="token punctuation">);</span> <span class="token comment">// true</span>
+<span class="token function">hasFlags</span><span class="token punctuation">(</span><span class="token string">'--test'</span><span class="token punctuation">,</span> <span class="token string">'cool=true'</span><span class="token punctuation">,</span> <span class="token string">'-s'</span><span class="token punctuation">);</span> <span class="token comment">// true</span>
+<span class="token function">hasFlags</span><span class="token punctuation">(</span><span class="token string">'special'</span><span class="token punctuation">);</span> <span class="token comment">// false</span>
 </pre>
-<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button></div></div><div class="card fluid pick"><h3 id="scrolltotop.md" class="section double-padded">scrollToTop</h3><div class="section double-padded">
-<p>Smooth-scrolls to the top of the page.</p>
-<p>Get distance from top using <code>document.documentElement.scrollTop</code> or <code>document.body.scrollTop</code>.
-Scroll by a fraction of the distance from the top. Use <code>window.requestAnimationFrame()</code> to animate the scrolling.</p>
-<pre class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">scrollToTop</span> <span class="token operator">=</span> <span class="token punctuation">()</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-  <span class="token keyword">const</span> c <span class="token operator">=</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>scrollTop <span class="token operator">||</span> document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>scrollTop<span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>c <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">) {</span>
-    window<span class="token punctuation">.</span><span class="token function">requestAnimationFrame</span><span class="token punctuation">(</span>scrollToTop<span class="token punctuation">);</span>
-    window<span class="token punctuation">.</span><span class="token function">scrollTo</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> c <span class="token operator">-</span> c <span class="token operator">/</span> <span class="token number">8</span><span class="token punctuation">);
-  }
-};</span>
-</pre><label class="collapse">Show examples</label><pre class="language-js"><span class="token function">scrollToTop</span><span class="token punctuation">();</span>
+<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button></div></div><div class="card fluid pick"><h3 id="isplainobject.md" class="section double-padded">isPlainObject</h3><div class="section double-padded">
+<p>Checks if the provided value is an object created by the Object constructor.</p>
+<p>Check if the provided value is truthy, use <code>typeof</code> to check if it is an object and <code>Object.constructor</code> to make sure the constructor is equal to <code>Object</code>.</p>
+<pre class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">isPlainObject</span> <span class="token operator">=</span> val <span class="token operator">=> !!</span>val <span class="token operator">&amp;&amp;</span> <span class="token keyword">typeof</span> val <span class="token operator">===</span> <span class="token string">'object'</span> <span class="token operator">&amp;&amp;</span> val<span class="token punctuation">.</span>constructor <span class="token operator">===</span> Object<span class="token punctuation">;</span>
+</pre><label class="collapse">Show examples</label><pre class="language-js"><span class="token function">isPlainObject</span><span class="token punctuation">({</span> a<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token punctuation">});</span> <span class="token comment">// true</span>
+<span class="token function">isPlainObject</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">());</span> <span class="token comment">// false</span>
 </pre>
 <button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button></div></div>
       <br/>
