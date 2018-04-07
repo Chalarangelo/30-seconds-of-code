@@ -1,6 +1,6 @@
-Test log for: Sat Apr 07 2018 17:30:09 GMT+0000 (UTC)
+Test log for: Sat Apr 07 2018 20:49:47 GMT+0000 (UTC)
 
-> 30-seconds-of-code@0.0.2 test /home/travis/build/Chalarangelo/30-seconds-of-code
+> 30-seconds-of-code@0.0.3 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
 
 
