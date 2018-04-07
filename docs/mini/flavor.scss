@@ -774,6 +774,10 @@ body {
   overflow-x: hidden;
 }
 
-header {
-
+label.button.drawer-toggle {
+  background: transparent;
+  color: #111;
+  &:hover, &:focus {
+    background: transparent;
+  }
 }
