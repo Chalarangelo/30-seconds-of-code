@@ -183,6 +183,8 @@ try {
   console.log(filteredBeginnerSnippets);
   for (let snippet of Object.entries(filteredBeginnerSnippets))
         beginnerOutput +=
+        '<div class="row">' +
+        '<div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">' +
           '<div class="card fluid">' +
           md
             .render(`\n${snippets[snippet[0]]}`)
@@ -192,7 +194,7 @@ try {
             .replace(/<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm, (match, p1) => `<pre class="language-js">${Prism.highlight(unescapeHTML(p1), Prism.languages.javascript)}</pre>`)
             .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
           '<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button>' +
-          '</div></div>';
+          '</div></div></div></div>';
 
 
   beginnerOutput +=
