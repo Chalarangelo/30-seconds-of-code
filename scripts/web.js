@@ -51,7 +51,7 @@ const snippetsPath = './snippets',
   docsPath = './docs';
 // Set variables for script
 let snippets = {},
-  beginnerSnippetNames = ['everyNth', 'filterNonUnique', 'last.md', 'maxN', 'minN', 'nthElement', 'sample', 'similarity', 'tail', 'currentURL', 'hasClass', 'getMeridiemSuffixOfInteger', 'factorial', 'fibonacci', 'gcd', 'isDivisible', 'isEven', 'isPrime', 'lcm', 'randomIntegerInRange', 'sum', 'reverseString', 'truncateString'],
+  beginnerSnippetNames = ['everyNth', 'filterNonUnique', 'last', 'maxN', 'minN', 'nthElement', 'sample', 'similarity', 'tail', 'currentURL', 'hasClass', 'getMeridiemSuffixOfInteger', 'factorial', 'fibonacci', 'gcd', 'isDivisible', 'isEven', 'isPrime', 'lcm', 'randomIntegerInRange', 'sum', 'reverseString', 'truncateString'],
   startPart = '',
   endPart = '',
   output = '',
