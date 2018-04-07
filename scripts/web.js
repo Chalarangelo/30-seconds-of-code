@@ -281,8 +281,24 @@ try {
 
   beginnerOutput += `${beginnerEndPart}`;
 
-  // Generate 'beginner.html' file
-  fs.writeFileSync(path.join(docsPath, 'beginner.html'), beginnerOutput);
+  // Generate and minify 'beginner.html' file
+  const minifiedBeginnerOutput =  minify(beginnerOutput, {
+    collapseBooleanAttributes: true,
+    collapseWhitespace: true,
+    decodeEntities: false,
+    minifyCSS: true,
+    minifyJS: true,
+    keepClosingSlash: true,
+    processConditionalComments: true,
+    removeAttributeQuotes: false,
+    removeComments: true,
+    removeEmptyAttributes: false,
+    removeOptionalTags: false,
+    removeScriptTypeAttributes: false,
+    removeStyleLinkTypeAttributes: false,
+    trimCustomFragments: true
+  });
+  fs.writeFileSync(path.join(docsPath, 'beginner.html'), minifiedBeginnerOutput);
   console.log(`${chalk.green('SUCCESS!')} beginner.html file generated!`);
 
 } catch (err) {
@@ -330,8 +346,27 @@ try {
 
         archivedOutput += `${archivedEndPart}`;
 
-  // Generate 'beginner.html' file
-  fs.writeFileSync(path.join(docsPath, 'archive.html'), archivedOutput);
+
+
+  // Generate and minify 'archive.html' file
+  const minifiedArchivedOutput =  minify(archivedOutput, {
+      collapseBooleanAttributes: true,
+      collapseWhitespace: true,
+      decodeEntities: false,
+      minifyCSS: true,
+      minifyJS: true,
+      keepClosingSlash: true,
+      processConditionalComments: true,
+      removeAttributeQuotes: false,
+      removeComments: true,
+      removeEmptyAttributes: false,
+      removeOptionalTags: false,
+      removeScriptTypeAttributes: false,
+      removeStyleLinkTypeAttributes: false,
+      trimCustomFragments: true
+    });
+
+  fs.writeFileSync(path.join(docsPath, 'archive.html'), minifiedArchivedOutput);
   console.log(`${chalk.green('SUCCESS!')} archive.html file generated!`);
 
 } catch (err) {
