@@ -149,6 +149,22 @@ if(!util.isTravisCI() || (util.isTravisCI() && (process.env['TRAVIS_EVENT_TYPE']
               contribs = resContributors.headers.link.split('&').slice(-1)[0].replace(/[^\d]/g,''),
               stars = resStars.headers.link.split('&').slice(-1)[0].replace(/[^\d]/g,'');
           indexStaticFile = indexStaticFile.replace(/\$snippet-count/g, Object.keys(snippets).length).replace(/\$commit-count/g,commits).replace(/\$contrib-count/g,contribs).replace(/\$star-count/g,stars);
+          indexStaticFile =  minify(indexStaticFile, {
+            collapseBooleanAttributes: true,
+            collapseWhitespace: true,
+            decodeEntities: false,
+            minifyCSS: true,
+            minifyJS: true,
+            keepClosingSlash: true,
+            processConditionalComments: true,
+            removeAttributeQuotes: false,
+            removeComments: true,
+            removeEmptyAttributes: false,
+            removeOptionalTags: false,
+            removeScriptTypeAttributes: false,
+            removeStyleLinkTypeAttributes: false,
+            trimCustomFragments: true
+          });
           // Generate 'index.html' file
           fs.writeFileSync(path.join(docsPath, 'index.html'), indexStaticFile);
           console.log(`${chalk.green('SUCCESS!')} index.html file generated!`);

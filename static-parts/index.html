@@ -109,36 +109,36 @@
       <h2 class="index-section">Top contributors</h2>
       <div class="row">
         <div class="col-sm-6 col-md-3 col-lg no-padding"><div class="card fluid contributor">
-          <img class="section media" src="https://github.com/Chalarangelo.png"/ alt="chalarangelo">
+          <img class="section media" src="https://github.com/Chalarangelo.png" alt="chalarangelo"/>
           <a href="https://github.com/Chalarangelo" class="section button">Angelos Chalaris</a>
           </div>
         </div>
         <div class="col-sm-6 col-md-3 col-lg no-padding"><div class="card fluid contributor">
-          <img class="section media" src="https://github.com/fejes713.png"/ alt="fejes713">
+          <img class="section media" src="https://github.com/fejes713.png" alt="fejes713"/>
           <a href="https://github.com/fejes713" class="section button">Stefan Feješ</a>
           </div></div>
         <div class="col-sm-6 col-md-3 col-lg no-padding"><div class="card fluid contributor">
-          <img class="section media" src="https://github.com/flxwu.png"/ alt="flxwu">
+          <img class="section media" src="https://github.com/flxwu.png" alt="flxwu"/>
           <a href="https://github.com/flxwu" class="section button">Felix Wu</a>
           </div></div>
         <div class="col-sm-6 col-md-3 col-lg no-padding"><div class="card fluid contributor">
-          <img class="section media" src="https://github.com/atomiks.png"/ alt="atomiks">
+          <img class="section media" src="https://github.com/atomiks.png" alt="atomiks"/>
           <a href="https://github.com/atomiks" class="section button">atomiks</a>
           </div></div>
         <div class="col-sm-6 col-md-3 col-lg no-padding"><div class="card fluid contributor">
-          <img class="section media" src="https://github.com/kingdavidmartins.png"/ alt="kingdavidmartins">
+          <img class="section media" src="https://github.com/kingdavidmartins.png" alt="kingdavidmartins"/>
           <a href="https://github.com/kingdavidmartins" class="section button">King David Martins</a>
           </div></div>
         <div class="col-sm-6 col-md-3 col-lg no-padding"><div class="card fluid contributor">
-          <img class="section media" src="https://github.com/kriadmin.png"/ alt="kriadmin">
+          <img class="section media" src="https://github.com/kriadmin.png" alt="kriadmin"/>
           <a href="https://github.com/kriadmin" class="section button">Rohit Tanwar</a>
           </div></div>
         <div class="col-sm-6 col-md-3 col-lg no-padding"><div class="card fluid contributor">
-          <img class="section media" src="https://github.com/iamsoorena.png"/ alt="iamsoorena">
+          <img class="section media" src="https://github.com/iamsoorena.png" alt="iamsoorena"/>
           <a href="https://github.com/iamsoorena" class="section button">Soorena Soleimani</a>
           </div></div>
         <div class="col-sm-6 col-md-3 col-lg no-padding"><div class="card fluid contributor">
-          <img class="section media" src="https://github.com/skatcat31.png"/ alt="skatcat31">
+          <img class="section media" src="https://github.com/skatcat31.png" alt="skatcat31"/>
           <a href="https://github.com/skatcat31" class="section button">Robert Mennell</a>
           </div></div>
     </div>
@@ -199,7 +199,7 @@ window.onload = function(){
     runCounter(counters[1],0,values[1],steps[1]);
     runCounter(counters[2],0,values[2],steps[2]);
     runCounter(counters[3],0,values[3],steps[3]);
-    document.querySelector('button.next').addEventListener('click', e => {
+    document.querySelector('button.next').addEventListener('click', function(e){
       let selected = document.getElementById('pick-slider').querySelector('.selected');
       if(selected == Array.from(document.querySelectorAll('.card.fluid.pick')).slice(-1)[0])
       {
@@ -211,7 +211,7 @@ window.onload = function(){
       selected.className = 'card fluid pick';
     });
 
-    document.querySelector('button.previous').addEventListener('click', e => {
+    document.querySelector('button.previous').addEventListener('click', function(e){
       let selected = document.getElementById('pick-slider').querySelector('.selected');
      if(selected == document.querySelector('.card.fluid.pick'))
       {
@@ -248,7 +248,7 @@ window.onload = function(){
 
     }, false);
 }
-const runCounter = (selector, start, end, increment = 1, duration = 2000) => {
+function runCounter(selector, start, end, increment = 1, duration = 2000){
 	let current = start,
 		step = end > start ? increment : -increment,
 		timer = setInterval(function() {
@@ -259,7 +259,7 @@ const runCounter = (selector, start, end, increment = 1, duration = 2000) => {
 	}, Math.abs(Math.floor(duration / (end - start))));
 };
 
-const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
+function elementIsVisibleInViewport(el, partiallyVisible = false) {
   const { top, left, bottom, right } = el.getBoundingClientRect();
   const { innerHeight, innerWidth } = window;
   return partiallyVisible
