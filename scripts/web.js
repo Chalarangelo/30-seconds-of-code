@@ -132,12 +132,6 @@ try {
           localOutput = util.optimizeNodes(localOutput, /<span class="token keyword">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token keyword">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token keyword">${p1}${p2}${p3}</span>`);
           pagesOutput.push({'tag': tag,'content': localOutput});
   }
-  // // Optimize punctuation nodes
-  // output = util.optimizeNodes(output, /<span class="token punctuation">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token punctuation">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token punctuation">${p1}${p2}${p3}</span>`);
-  // // Optimize operator nodes
-  // output = util.optimizeNodes(output, /<span class="token operator">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token operator">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token operator">${p1}${p2}${p3}</span>`);
-  // // Optimize keyword nodes
-  // output = util.optimizeNodes(output, /<span class="token keyword">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token keyword">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token keyword">${p1}${p2}${p3}</span>`);
   // Minify output
   pagesOutput.forEach(page => {
     page.content = minify(page.content, {
@@ -157,12 +151,13 @@ try {
       trimCustomFragments: true
     });
     fs.writeFileSync(path.join(docsPath, page.tag+'.html'), page.content);
+    console.log(`${chalk.green('SUCCESS!')} ${page.tag}.html file generated!`);
   })
   // Write to the index.html file
   //fs.writeFileSync(path.join(docsPath, 'index.html'), output);
 } catch (err) {
   // Handle errors (hopefully not!)
-  console.log(`${chalk.red('ERROR!')} During index.html generation: ${err}`);
+  console.log(`${chalk.red('ERROR!')} During category page generation: ${err}`);
   process.exit(1);
 }
 
@@ -206,14 +201,12 @@ try {
 
   // Generate 'beginner.html' file
   fs.writeFileSync(path.join(docsPath, 'beginner.html'), beginnerOutput);
-
+  console.log(`${chalk.green('SUCCESS!')} beginner.html file generated!`);
 
 } catch (err) {
   console.log(`${chalk.red('ERROR!')} During beginner.html generation: ${err}`);
   process.exit(1);
 }
 
-// Log a success message
-console.log(`${chalk.green('SUCCESS!')} index.html file generated!`);
 // Log the time taken
 console.timeEnd('Webber');
