@@ -170,8 +170,16 @@ try {
 try {
   // Add the static part
   beginnerOutput += `${startBeginnerPart + '\n'}`;
+
+  beginnerOutput +=
+  '<div class="card fluid">' +
+  // begginer snippet goes here.
+  '<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button>' +
+  '</div></div>';
+
   beginnerOutput += `${endBeginnerPart}`;
 
+  // Generate
   fs.writeFileSync(path.join(docsPath, 'beginner.html'), beginnerOutput);
 
 
