@@ -51,11 +51,11 @@ const snippetsPath = './snippets',
   docsPath = './docs';
 // Set variables for script
 let snippets = {},
-  beginnerSnippets = ['everyNth', 'filterNonUnique', 'last', 'maxN', 'minN', 'nthElement', 'sample', 'similarity', 'tail', 'currentURL', 'hasClass', 'getMeridiemSuffixOfInteger', 'factorial', 'fibonacci', 'gcd', 'isDivisible', 'isEven', 'isPrime', 'lcm', 'randomIntegerInRange', 'sum', 'reverseString', 'truncateString'],
+  beginnerSnippetNames = ['everyNth', 'filterNonUnique', 'last.md', 'maxN', 'minN', 'nthElement', 'sample', 'similarity', 'tail', 'currentURL', 'hasClass', 'getMeridiemSuffixOfInteger', 'factorial', 'fibonacci', 'gcd', 'isDivisible', 'isEven', 'isPrime', 'lcm', 'randomIntegerInRange', 'sum', 'reverseString', 'truncateString'],
   startPart = '',
   endPart = '',
   output = '',
-  startBegginerPart = '',
+  startBeginnerPart = '',
   endBegginerPart = '',
   beginnerOutput = '',
   pagesOutput = [];
@@ -64,6 +64,7 @@ let snippets = {},
 console.time('Webber');
 // Synchronously read all snippets and sort them as necessary (case-insensitive)
 snippets = util.readSnippets(snippetsPath);
+
 // Load static parts for the index.html file
 try {
   startPart = fs.readFileSync(path.join(staticPartsPath, 'page-start.html'), 'utf8');
@@ -171,6 +172,29 @@ try {
   // Add the static part
   beginnerOutput += `${startBeginnerPart + '\n'}`;
 
+  // Filter begginer snippets
+  const filteredBeginnerSnippets = Object.keys(snippets)
+    .filter(key => beginnerSnippetNames.map(name => name+'.md').includes(key))
+    .reduce((obj, key) => {
+      obj[key] = snippets[key];
+    return obj;
+  }, {});
+
+  console.log(filteredBeginnerSnippets);
+  for (let snippet of Object.entries(filteredBeginnerSnippets))
+        beginnerOutput +=
+          '<div class="card fluid">' +
+          md
+            .render(`\n${snippets[snippet[0]]}`)
+            .replace(/<h3/g, `<h3 id="${snippet[0].toLowerCase()}" class="section double-padded"`)
+            .replace(/<\/h3>/g, `${snippet[1].includes('advanced')?'<mark class="tag">advanced</mark>':''}</h3>`)
+            .replace(/<\/h3>/g, '</h3><div class="section double-padded">')
+            .replace(/<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm, (match, p1) => `<pre class="language-js">${Prism.highlight(unescapeHTML(p1), Prism.languages.javascript)}</pre>`)
+            .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
+          '<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button>' +
+          '</div></div>';
+
+
   beginnerOutput +=
   '<div class="card fluid">' +
   // begginer snippet goes here.
@@ -179,7 +203,7 @@ try {
 
   beginnerOutput += `${endBeginnerPart}`;
 
-  // Generate
+  // Generate 'beginner.html' file
   fs.writeFileSync(path.join(docsPath, 'beginner.html'), beginnerOutput);
 
 
