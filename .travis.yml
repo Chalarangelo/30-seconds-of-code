@@ -10,8 +10,8 @@ before_install:
 script:
 - npm run tagger
 - npm run linter
-- npm run builder
 - npm run webber
+- npm run builder
 - npm run packager
 - npm run tester
 after_success:

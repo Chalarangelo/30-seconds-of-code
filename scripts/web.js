@@ -4,6 +4,7 @@
 */
 // Load modules
 const fs = require('fs-extra'),
+  https = require('https'),
   path = require('path'),
   chalk = require('chalk'),
   md = require('markdown-it')(),
@@ -58,6 +59,7 @@ let snippets = {},
   beginnerStartPart = '',
   beginnerEndPart = '',
   beginnerOutput = '',
+  indexStaticFile = '',
   pagesOutput = [];
   tagDbData = {};
 // Start the timer of the script
@@ -65,13 +67,15 @@ console.time('Webber');
 // Synchronously read all snippets and sort them as necessary (case-insensitive)
 snippets = util.readSnippets(snippetsPath);
 
-// Load static parts for the index.html file
+// Load static parts for all pages
 try {
   startPart = fs.readFileSync(path.join(staticPartsPath, 'page-start.html'), 'utf8');
   endPart = fs.readFileSync(path.join(staticPartsPath, 'page-end.html'), 'utf8');
 
   beginnerStartPart = fs.readFileSync(path.join(staticPartsPath, 'beginner-page-start.html'), 'utf8');
   beginnerEndPart = fs.readFileSync(path.join(staticPartsPath, 'beginner-page-end.html'), 'utf8');
+
+  indexStaticFile = fs.readFileSync(path.join(staticPartsPath, 'index.html'), 'utf8');
 } catch (err) {
   // Handle errors (hopefully not!)
   console.log(`${chalk.red('ERROR!')} During static part loading: ${err}`);
@@ -79,7 +83,67 @@ try {
 }
 // Load tag data from the database
 tagDbData = util.readTags();
-// Create the output for the index.html file
+// Create the output for the index.html file (only locally or on Travis CRON or custom job)
+if(!util.isTravisCI() || (util.isTravisCI() && (process.env['TRAVIS_EVENT_TYPE'] === 'cron' || process.env['TRAVIS_EVENT_TYPE'] === 'api'))) {
+  try {
+    // Shuffle the array of snippets, pick 3
+    let indexDailyPicks = '';
+    let shuffledSnippets = util.shuffle(Object.keys(snippets)).slice(0,3);
+    const dailyPicks =  Object.keys(snippets)
+      .filter(key => shuffledSnippets.includes(key))
+      .reduce((obj, key) => {
+        obj[key] = snippets[key];
+      return obj;
+    }, {});
+
+    // Generate the html for the picked snippets
+    for (let snippet of Object.entries(dailyPicks))
+          indexDailyPicks +=
+          '<div class="card fluid pick">' +
+            md
+              .render(`\n${snippets[snippet[0]]}`)
+              .replace(/<h3/g, `<h3 id="${snippet[0].toLowerCase()}" class="section double-padded"`)
+              .replace(/<\/h3>/g, `${snippet[1].includes('advanced')?'<mark class="tag">advanced</mark>':''}</h3>`)
+              .replace(/<\/h3>/g, '</h3><div class="section double-padded">')
+              .replace(/<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm, (match, p1) => `<pre class="language-js">${Prism.highlight(unescapeHTML(p1), Prism.languages.javascript)}</pre>`)
+              .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
+            '<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button>' +
+            '</div></div>';
+    // Select the first snippet from today's picks
+    indexDailyPicks = indexDailyPicks.replace('card fluid pick', 'card fluid pick selected');
+    // Optimize punctuation nodes
+    indexDailyPicks = util.optimizeNodes(indexDailyPicks, /<span class="token punctuation">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token punctuation">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token punctuation">${p1}${p2}${p3}</span>`);
+    // Optimize operator nodes
+    indexDailyPicks = util.optimizeNodes(indexDailyPicks, /<span class="token operator">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token operator">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token operator">${p1}${p2}${p3}</span>`);
+    // Optimize keyword nodes
+    indexDailyPicks = util.optimizeNodes(indexDailyPicks, /<span class="token keyword">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token keyword">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token keyword">${p1}${p2}${p3}</span>`);
+    // Put the daily picks into the page
+    indexStaticFile = indexStaticFile.replace('$daily-picks',indexDailyPicks);
+    // Use the Github API to get the needed data
+    const githubApi = 'api.github.com';
+    const headers = { 'User-Agent' : '30-seconds-of-code'};
+    // Send requests and wait for responses, write to the page
+    https.get({host: githubApi, path: '/repos/chalarangelo/30-seconds-of-code/commits?per_page=1', headers: headers}, resCommits =>{
+      https.get({host: githubApi, path: '/repos/chalarangelo/30-seconds-of-code/contributors?per_page=1', headers: headers}, resContributors => {
+        https.get({host: githubApi, path: '/repos/chalarangelo/30-seconds-of-code/stargazers?per_page=1', headers: headers}, resStars => {
+          let commits = resCommits.headers.link.split('&').slice(-1)[0].replace(/[^\d]/g,''),
+              contribs = resContributors.headers.link.split('&').slice(-1)[0].replace(/[^\d]/g,''),
+              stars = resStars.headers.link.split('&').slice(-1)[0].replace(/[^\d]/g,'');
+          indexStaticFile = indexStaticFile.replace(/\$snippet-count/g, Object.keys(snippets).length).replace(/\$commit-count/g,commits).replace(/\$contrib-count/g,contribs).replace(/\$star-count/g,stars);
+          // Generate 'index.html' file
+          fs.writeFileSync(path.join(docsPath, 'index.html'), indexStaticFile);
+          console.log(`${chalk.green('SUCCESS!')} index.html file generated!`);
+        });
+      });
+    });
+
+  } catch (err) {
+    console.log(`${chalk.red('ERROR!')} During index.html generation: ${err}`);
+    process.exit(1);
+  }
+}
+
+// Create the output for individual category pages
 try {
   // Add the start static part
   output += `${startPart + '\n'}`;
@@ -125,6 +189,7 @@ try {
           '</div></div>';
           // Add the ending static part
           localOutput += `\n${endPart + '\n'}`;
+          // Optimize punctuation nodes
           localOutput = util.optimizeNodes(localOutput, /<span class="token punctuation">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token punctuation">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token punctuation">${p1}${p2}${p3}</span>`);
           // Optimize operator nodes
           localOutput = util.optimizeNodes(localOutput, /<span class="token operator">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token operator">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token operator">${p1}${p2}${p3}</span>`);
@@ -153,8 +218,6 @@ try {
     fs.writeFileSync(path.join(docsPath, page.tag+'.html'), page.content);
     console.log(`${chalk.green('SUCCESS!')} ${page.tag}.html file generated!`);
   })
-  // Write to the index.html file
-  //fs.writeFileSync(path.join(docsPath, 'index.html'), output);
 } catch (err) {
   // Handle errors (hopefully not!)
   console.log(`${chalk.red('ERROR!')} During category page generation: ${err}`);
@@ -162,7 +225,6 @@ try {
 }
 
 // Create the output for the beginner.html file
-
 try {
   // Add the static part
   beginnerOutput += `${beginnerStartPart + '\n'}`;
@@ -190,6 +252,7 @@ try {
           '<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button>' +
           '</div></div></div></div>';
 
+        // Optimize punctuation nodes
         beginnerOutput = util.optimizeNodes(beginnerOutput, /<span class="token punctuation">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token punctuation">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token punctuation">${p1}${p2}${p3}</span>`);
         // Optimize operator nodes
         beginnerOutput = util.optimizeNodes(beginnerOutput, /<span class="token operator">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token operator">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token operator">${p1}${p2}${p3}</span>`);
