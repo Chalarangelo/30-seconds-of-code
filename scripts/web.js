@@ -195,6 +195,12 @@ try {
           '<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button>' +
           '</div></div></div></div>';
 
+        beginnerOutput = util.optimizeNodes(beginnerOutput, /<span class="token punctuation">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token punctuation">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token punctuation">${p1}${p2}${p3}</span>`);
+        // Optimize operator nodes
+        beginnerOutput = util.optimizeNodes(beginnerOutput, /<span class="token operator">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token operator">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token operator">${p1}${p2}${p3}</span>`);
+        // Optimize keyword nodes
+        beginnerOutput = util.optimizeNodes(beginnerOutput, /<span class="token keyword">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token keyword">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token keyword">${p1}${p2}${p3}</span>`);
+
 
   beginnerOutput += `${beginnerEndPart}`;
 
