@@ -282,28 +282,30 @@ try {
   process.exit(1);
 }
 
-// Create the output for the beginner.html file
+// Create the output for the archive.html file
 try {
   // Add the static part
-  beginnerOutput += `${beginnerStartPart + '\n'}`;
+  archivedOutput += `${archivedStartPart + '\n'}`;
 
-  // Filter begginer snippets
-  const filteredBeginnerSnippets = Object.keys(snippets)
-    .filter(key => beginnerSnippetNames.map(name => name+'.md').includes(key))
+  // Filter README.md from folder
+  const excludeFiles = ['README.md'];
+
+  const filteredArchivedSnippets = Object.keys(archivedSnippets)
+    .filter(key => !excludeFiles.includes(key))
     .reduce((obj, key) => {
-      obj[key] = snippets[key];
+      obj[key] = archivedSnippets[key];
     return obj;
   }, {});
 
-  for (let snippet of Object.entries(filteredBeginnerSnippets))
-        beginnerOutput +=
+  // Generate archived snippets from md files
+  for (let snippet of Object.entries(filteredArchivedSnippets))
+        archivedOutput +=
         '<div class="row">' +
         '<div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">' +
           '<div class="card fluid">' +
           md
-            .render(`\n${snippets[snippet[0]]}`)
+            .render(`\n${filteredArchivedSnippets[snippet[0]]}`)
             .replace(/<h3/g, `<h3 id="${snippet[0].toLowerCase()}" class="section double-padded"`)
-            .replace(/<\/h3>/g, `${snippet[1].includes('advanced')?'<mark class="tag">advanced</mark>':''}</h3>`)
             .replace(/<\/h3>/g, '</h3><div class="section double-padded">')
             .replace(/<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm, (match, p1) => `<pre class="language-js">${Prism.highlight(unescapeHTML(p1), Prism.languages.javascript)}</pre>`)
             .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
@@ -311,21 +313,21 @@ try {
           '</div></div></div></div>';
 
         // Optimize punctuation nodes
-        beginnerOutput = util.optimizeNodes(beginnerOutput, /<span class="token punctuation">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token punctuation">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token punctuation">${p1}${p2}${p3}</span>`);
+        archivedOutput = util.optimizeNodes(archivedOutput, /<span class="token punctuation">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token punctuation">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token punctuation">${p1}${p2}${p3}</span>`);
         // Optimize operator nodes
-        beginnerOutput = util.optimizeNodes(beginnerOutput, /<span class="token operator">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token operator">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token operator">${p1}${p2}${p3}</span>`);
+        archivedOutput = util.optimizeNodes(archivedOutput, /<span class="token operator">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token operator">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token operator">${p1}${p2}${p3}</span>`);
         // Optimize keyword nodes
-        beginnerOutput = util.optimizeNodes(beginnerOutput, /<span class="token keyword">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token keyword">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token keyword">${p1}${p2}${p3}</span>`);
+        archivedOutput = util.optimizeNodes(archivedOutput, /<span class="token keyword">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token keyword">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token keyword">${p1}${p2}${p3}</span>`);
 
 
-  beginnerOutput += `${beginnerEndPart}`;
+        archivedOutput += `${archivedEndPart}`;
 
   // Generate 'beginner.html' file
-  fs.writeFileSync(path.join(docsPath, 'beginner.html'), beginnerOutput);
-  console.log(`${chalk.green('SUCCESS!')} beginner.html file generated!`);
+  fs.writeFileSync(path.join(docsPath, 'archive.html'), archivedOutput);
+  console.log(`${chalk.green('SUCCESS!')} archive.html file generated!`);
 
 } catch (err) {
-  console.log(`${chalk.red('ERROR!')} During beginner.html generation: ${err}`);
+  console.log(`${chalk.red('ERROR!')} During archive.html generation: ${err}`);
   process.exit(1);
 }
 
