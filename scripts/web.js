@@ -51,9 +51,13 @@ const snippetsPath = './snippets',
   docsPath = './docs';
 // Set variables for script
 let snippets = {},
+  beginnerSnippets = ['everyNth', 'filterNonUnique', 'last', 'maxN', 'minN', 'nthElement', 'sample', 'similarity', 'tail', 'currentURL', 'hasClass', 'getMeridiemSuffixOfInteger', 'factorial', 'fibonacci', 'gcd', 'isDivisible', 'isEven', 'isPrime', 'lcm', 'randomIntegerInRange', 'sum', 'reverseString', 'truncateString'],
   startPart = '',
   endPart = '',
   output = '',
+  startBegginerPart = '',
+  endBegginerPart = '',
+  beginnerOutput = '',
   pagesOutput = [];
   tagDbData = {};
 // Start the timer of the script
@@ -65,8 +69,8 @@ try {
   startPart = fs.readFileSync(path.join(staticPartsPath, 'page-start.html'), 'utf8');
   endPart = fs.readFileSync(path.join(staticPartsPath, 'page-end.html'), 'utf8');
 
-  beginnerStaticPart = fs.readFileSync(path.join(staticPartsPath, 'beginner-page-start.html'), 'utf8');
-  endStaticPart = fs.readFileSync(path.join(staticPartsPath, 'beginner-page-end.html'), 'utf8');
+  startBeginnerPart = fs.readFileSync(path.join(staticPartsPath, 'beginner-page-start.html'), 'utf8');
+  endBeginnerPart = fs.readFileSync(path.join(staticPartsPath, 'beginner-page-end.html'), 'utf8');
 } catch (err) {
   // Handle errors (hopefully not!)
   console.log(`${chalk.red('ERROR!')} During static part loading: ${err}`);
@@ -160,6 +164,22 @@ try {
   console.log(`${chalk.red('ERROR!')} During index.html generation: ${err}`);
   process.exit(1);
 }
+
+// Create the output for the beginner.html file
+
+try {
+  // Add the static part
+  beginnerOutput += `${startBeginnerPart + '\n'}`;
+  beginnerOutput += `${endBeginnerPart}`;
+
+  fs.writeFileSync(path.join(docsPath, 'beginner.html'), beginnerOutput);
+
+
+} catch (err) {
+  console.log(`${chalk.red('ERROR!')} During beginner.html generation: ${err}`);
+  process.exit(1);
+}
+
 // Log a success message
 console.log(`${chalk.green('SUCCESS!')} index.html file generated!`);
 // Log the time taken
