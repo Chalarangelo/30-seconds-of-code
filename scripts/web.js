@@ -51,19 +51,27 @@ const snippetsPath = './snippets',
   docsPath = './docs';
 // Set variables for script
 let snippets = {},
+  beginnerSnippetNames = ['everyNth', 'filterNonUnique', 'last', 'maxN', 'minN', 'nthElement', 'sample', 'similarity', 'tail', 'currentURL', 'hasClass', 'getMeridiemSuffixOfInteger', 'factorial', 'fibonacci', 'gcd', 'isDivisible', 'isEven', 'isPrime', 'lcm', 'randomIntegerInRange', 'sum', 'reverseString', 'truncateString'],
   startPart = '',
   endPart = '',
   output = '',
+  beginnerStartPart = '',
+  beginnerEndPart = '',
+  beginnerOutput = '',
   pagesOutput = [];
   tagDbData = {};
 // Start the timer of the script
 console.time('Webber');
 // Synchronously read all snippets and sort them as necessary (case-insensitive)
 snippets = util.readSnippets(snippetsPath);
+
 // Load static parts for the index.html file
 try {
   startPart = fs.readFileSync(path.join(staticPartsPath, 'page-start.html'), 'utf8');
   endPart = fs.readFileSync(path.join(staticPartsPath, 'page-end.html'), 'utf8');
+
+  beginnerStartPart = fs.readFileSync(path.join(staticPartsPath, 'beginner-page-start.html'), 'utf8');
+  beginnerEndPart = fs.readFileSync(path.join(staticPartsPath, 'beginner-page-end.html'), 'utf8');
 } catch (err) {
   // Handle errors (hopefully not!)
   console.log(`${chalk.red('ERROR!')} During static part loading: ${err}`);
@@ -124,12 +132,6 @@ try {
           localOutput = util.optimizeNodes(localOutput, /<span class="token keyword">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token keyword">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token keyword">${p1}${p2}${p3}</span>`);
           pagesOutput.push({'tag': tag,'content': localOutput});
   }
-  // // Optimize punctuation nodes
-  // output = util.optimizeNodes(output, /<span class="token punctuation">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token punctuation">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token punctuation">${p1}${p2}${p3}</span>`);
-  // // Optimize operator nodes
-  // output = util.optimizeNodes(output, /<span class="token operator">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token operator">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token operator">${p1}${p2}${p3}</span>`);
-  // // Optimize keyword nodes
-  // output = util.optimizeNodes(output, /<span class="token keyword">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token keyword">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token keyword">${p1}${p2}${p3}</span>`);
   // Minify output
   pagesOutput.forEach(page => {
     page.content = minify(page.content, {
@@ -149,15 +151,62 @@ try {
       trimCustomFragments: true
     });
     fs.writeFileSync(path.join(docsPath, page.tag+'.html'), page.content);
+    console.log(`${chalk.green('SUCCESS!')} ${page.tag}.html file generated!`);
   })
   // Write to the index.html file
   //fs.writeFileSync(path.join(docsPath, 'index.html'), output);
 } catch (err) {
   // Handle errors (hopefully not!)
-  console.log(`${chalk.red('ERROR!')} During index.html generation: ${err}`);
+  console.log(`${chalk.red('ERROR!')} During category page generation: ${err}`);
   process.exit(1);
 }
-// Log a success message
-console.log(`${chalk.green('SUCCESS!')} index.html file generated!`);
+
+// Create the output for the beginner.html file
+
+try {
+  // Add the static part
+  beginnerOutput += `${beginnerStartPart + '\n'}`;
+
+  // Filter begginer snippets
+  const filteredBeginnerSnippets = Object.keys(snippets)
+    .filter(key => beginnerSnippetNames.map(name => name+'.md').includes(key))
+    .reduce((obj, key) => {
+      obj[key] = snippets[key];
+    return obj;
+  }, {});
+
+  for (let snippet of Object.entries(filteredBeginnerSnippets))
+        beginnerOutput +=
+        '<div class="row">' +
+        '<div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">' +
+          '<div class="card fluid">' +
+          md
+            .render(`\n${snippets[snippet[0]]}`)
+            .replace(/<h3/g, `<h3 id="${snippet[0].toLowerCase()}" class="section double-padded"`)
+            .replace(/<\/h3>/g, `${snippet[1].includes('advanced')?'<mark class="tag">advanced</mark>':''}</h3>`)
+            .replace(/<\/h3>/g, '</h3><div class="section double-padded">')
+            .replace(/<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm, (match, p1) => `<pre class="language-js">${Prism.highlight(unescapeHTML(p1), Prism.languages.javascript)}</pre>`)
+            .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
+          '<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button>' +
+          '</div></div></div></div>';
+
+        beginnerOutput = util.optimizeNodes(beginnerOutput, /<span class="token punctuation">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token punctuation">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token punctuation">${p1}${p2}${p3}</span>`);
+        // Optimize operator nodes
+        beginnerOutput = util.optimizeNodes(beginnerOutput, /<span class="token operator">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token operator">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token operator">${p1}${p2}${p3}</span>`);
+        // Optimize keyword nodes
+        beginnerOutput = util.optimizeNodes(beginnerOutput, /<span class="token keyword">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token keyword">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token keyword">${p1}${p2}${p3}</span>`);
+
+
+  beginnerOutput += `${beginnerEndPart}`;
+
+  // Generate 'beginner.html' file
+  fs.writeFileSync(path.join(docsPath, 'beginner.html'), beginnerOutput);
+  console.log(`${chalk.green('SUCCESS!')} beginner.html file generated!`);
+
+} catch (err) {
+  console.log(`${chalk.red('ERROR!')} During beginner.html generation: ${err}`);
+  process.exit(1);
+}
+
 // Log the time taken
 console.timeEnd('Webber');
