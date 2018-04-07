@@ -209,14 +209,15 @@ header h1.logo {
   position: relative;
   top: 0;
   transition: top 0.3s;
-  a {
+  color: #111;
+}
+
+h1 a, h1 a:link, h1 a:visited {
   text-decoration:none;
   color: #111;
-  }
-  @media screen and (min-width: 769px) {
-    &:hover {
-      top: -3.5rem;
-    }
+  &:hover, &:focus {
+    text-decoration:none;
+    color: #111;
   }
 }
 
@@ -224,6 +225,14 @@ header #title {
   position:relative;
   top: -1rem;
   @media screen and (max-width: 768px) { display: none; }
+}
+
+header {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 174, 39, 1) 0%,
+    rgba(222, 73, 109, 1) 100%
+  );
 }
 
 header h1 small {
@@ -550,7 +559,7 @@ button#disclaimer-close{
   }
 }
 
-h2 {
+h2.index-section {
   border-left: 0.3125rem solid #de4a6d;
   padding-left: 0.625rem;
   margin-top: 2rem;
@@ -763,4 +772,8 @@ button.next {
 
 body {
   overflow-x: hidden;
+}
+
+header {
+
 }
