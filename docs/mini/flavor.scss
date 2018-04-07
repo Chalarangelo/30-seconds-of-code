@@ -640,3 +640,21 @@ ul#links {
     }
   }
 }
+
+.card.contributor {
+  height: calc(100% - 1rem);
+  justify-content: left;
+  > .section.media {
+    height: auto;
+  }
+  > .section.button {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-align: center;
+    transition: color 0.3s;
+    &:hover, &:focus {
+      color: var(--a-l-col);
+      background: #f8f8f8;
+    }
+  }
+}
