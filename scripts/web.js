@@ -23,8 +23,8 @@ const unescapeHTML = str =>
         '&quot;': '"'
       }[tag] || tag)
   );
-if(util.isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
-  console.log(`${chalk.green('NOBUILD')} index build terminated, parent commit is a Travis build!`);
+if(util.isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE']) && process.env['TRAVIS_EVENT_TYPE'] !== 'cron' && process.env['TRAVIS_EVENT_TYPE'] !== 'api') {
+  console.log(`${chalk.green('NOBUILD')} website build terminated, parent commit is a Travis build!`);
   process.exit(0);
 }
 // Compile the mini.css framework and custom CSS styles, using `node-sass`.
