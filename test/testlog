@@ -1,4 +1,4 @@
-Test log for: Mon Apr 09 2018 07:29:12 GMT+0000 (UTC)
+Test log for: Mon Apr 09 2018 07:34:30 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.3 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1969,6 +1969,6 @@ Test log for: Mon Apr 09 2018 07:29:12 GMT+0000 (UTC)
 
   total:     999
   passing:   999
-  duration:  2.5s
+  duration:  2.4s
 
 
