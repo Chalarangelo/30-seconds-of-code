@@ -781,3 +781,11 @@ label.button.drawer-toggle {
     background: transparent;
   }
 }
+
+nav .input-group.vertical {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #f8f8f8;
+  border-bottom: 0.0625rem solid var(--nv-br-col);
+}
