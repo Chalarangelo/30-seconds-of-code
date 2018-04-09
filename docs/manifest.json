@@ -6,9 +6,31 @@
   "background_color": "#f8f8f8",
   "theme_color": "#111",
   "description": "Curated collection of useful JavaScript snippets that you can understand in 30 seconds or less.",
-  "icons": [{
-    "src": "favicon.png",
-    "sizes": "128x128",
-    "type": "image/png"
-  }]
+  "icons": [
+    {
+      "src": "./logos/logo_32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "./logos/logo_64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "./logos/logo_128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "./logos/logo_256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "./logos/logo_512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
