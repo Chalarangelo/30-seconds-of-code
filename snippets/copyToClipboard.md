@@ -1,5 +1,7 @@
 ### copyToClipboard
 
+> **:warning: This is easily achievable by using the new Async Clipboard Api, which is still experimental by now but should be used in the future instead of this snippet. Find out more about it [here](https://github.com/w3c/clipboard-apis/blob/master/explainer.adoc#writing-to-the-clipboard).**
+
 Copy a string to the clipboard. Only works as a result of user action (i.e. inside a `click` event listener).
 
 Create a new `<textarea>` element, fill it with the supplied data and add it to the HTML document.
