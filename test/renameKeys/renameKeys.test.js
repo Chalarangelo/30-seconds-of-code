@@ -1,7 +1,7 @@
 const test = require('tape');
 const renameKeys = require('./renameKeys.js');
 
-test.only('Testing renameKeys', (t) => {
+test('Testing renameKeys', (t) => {
   //For more information on all the methods supported by tape
   //Please go to https://github.com/substack/tape
   t.true(typeof renameKeys === 'function', 'renameKeys is a Function');
