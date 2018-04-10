@@ -145,6 +145,7 @@ average(1, 2, 3);
 * [`minN`](#minn)
 * [`none`](#none)
 * [`nthElement`](#nthelement)
+* [`offset`](#offset)
 * [`partition`](#partition)
 * [`permutations`](#permutations)
 * [`pull`](#pull)
@@ -1826,6 +1827,31 @@ const nthElement = (arr, n = 0) => (n > 0 ? arr.slice(n, n + 1) : arr.slice(n))[
 ```js
 nthElement(['a', 'b', 'c'], 1); // 'b'
 nthElement(['a', 'b', 'b'], -3); // 'a'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### offset
+
+Moves the specified amount of elements to the end of the array.
+
+Use `Array.slice()` twice to get the elements after the specified index and the elements before that.
+Use the spread operator(`...`) to combine the two into one array.
+If `offset` is negative, the elements will be moved from end to start.
+
+```js
+const offset = (arr, offset) => [...arr.slice(offset), ...arr.slice(0, offset)];
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+offset([1, 2, 3, 4, 5], 2); // [3, 4, 5, 1, 2]
+offset([1, 2, 3, 4, 5], -2); // [4, 5, 1, 2, 3]
 ```
 
 </details>
