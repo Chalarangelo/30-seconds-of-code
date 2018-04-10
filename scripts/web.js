@@ -54,7 +54,7 @@ const snippetsPath = './snippets',
 // Set variables for script
 let snippets = {},
   archivedSnippets = {},
-  beginnerSnippetNames = ['everyNth', 'filterNonUnique', 'last', 'maxN', 'minN', 'nthElement', 'sample', 'similarity', 'tail', 'currentURL', 'hasClass', 'getMeridiemSuffixOfInteger', 'factorial', 'fibonacci', 'gcd', 'isDivisible', 'isEven', 'isPrime', 'lcm', 'randomIntegerInRange', 'sum', 'reverseString', 'truncateString'],
+  beginnerSnippetNames = ['everyNth', 'filterNonUnique', 'last', 'maxN', 'minN', 'nthElement', 'offset', 'sample', 'similarity', 'tail', 'currentURL', 'hasClass', 'getMeridiemSuffixOfInteger', 'factorial', 'fibonacci', 'gcd', 'isDivisible', 'isEven', 'isPrime', 'lcm', 'randomIntegerInRange', 'sum', 'reverseString', 'truncateString'],
   startPart = '',
   endPart = '',
   output = '',

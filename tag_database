@@ -168,6 +168,7 @@ objectFromPairs:object,array
 objectToPairs:object,array
 observeMutations:browser,event,advanced
 off:browser,event
+offset:array
 omit:object,array
 omitBy:object,array,function
 on:browser,event
