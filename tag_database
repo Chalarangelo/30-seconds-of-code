@@ -214,6 +214,7 @@ reduceSuccessive:array,function
 reduceWhich:array,function
 remove:array
 removeNonASCII:string,regexp
+renameKeys:object
 reverseString:string,array
 RGBToHex:utility
 round:math
