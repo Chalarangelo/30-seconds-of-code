@@ -144,6 +144,7 @@ average(1, 2, 3);
 * [`minN`](#minn)
 * [`none`](#none)
 * [`nthElement`](#nthelement)
+* [`offset`](#offset)
 * [`partition`](#partition)
 * [`permutations`](#permutations)
 * [`pull`](#pull)
@@ -1832,6 +1833,31 @@ nthElement(['a', 'b', 'b'], -3); // 'a'
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### offset
+
+Moves the specified amount of elements to the end of the array.
+
+Use `Array.slice()` twice to get the elements after the specified index and the elements before that.
+Use the spread operator(`...`) to combine the two into one array.
+If `offset` is negative, the elements will be moved from end to start.
+
+```js
+const offset = (arr, offset) => [...arr.slice(offset), ...arr.slice(0, offset)];
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+offset([1, 2, 3, 4, 5], 2); // [3, 4, 5, 1, 2]
+offset([1, 2, 3, 4, 5], -2); // [4, 5, 1, 2, 3]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### partition
 
 Groups the elements into two arrays, depending on the provided function's truthiness for each element.
@@ -2951,6 +2977,8 @@ bottomVisible(); // true
 
 
 ### copyToClipboard ![advanced](/advanced.svg)
+
+⚠️ **NOTICE:** The same functionality can be easily implemented by using the new asynchronous Clipboard API, which is still experimental but should be used in the future instead of this snippet. Find out more about it [here](https://github.com/w3c/clipboard-apis/blob/master/explainer.adoc#writing-to-the-clipboard).
 
 Copy a string to the clipboard. Only works as a result of user action (i.e. inside a `click` event listener).
 
