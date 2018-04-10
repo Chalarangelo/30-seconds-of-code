@@ -1,5 +1,6 @@
 Test log for: Tue Apr 10 2018 19:05:56 GMT+0300 (GTB Daylight Time)
 
+
 > 30-seconds-of-code@0.0.3 test H:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
 
