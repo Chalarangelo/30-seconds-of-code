@@ -11,9 +11,5 @@ test('Testing renameKeys', (t) => {
 
 	t.deepEqual(renamedObj, { firstName: 'Bobo', passion: 'Front-End Master', shoeSize: 100 });
 
-  //t.deepEqual(renameKeys(args..), 'Expected');
-  //t.equal(renameKeys(args..), 'Expected');
-  //t.false(renameKeys(args..), 'Expected');
-  //t.throws(renameKeys(args..), 'Expected');
   t.end();
 });
