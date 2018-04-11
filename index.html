@@ -63,6 +63,7 @@
         </section>
         <section data-type="other" class="sidebar__section">
           <h4 class="sidebar__section-heading">other</h4>
+          <a class="sidebar__link" href="#calc"><span>Calc()</span></a>
           <a class="sidebar__link" href="#custom-variables"><span>Custom variables</span></a>
         </section>
       </div>
@@ -257,6 +258,52 @@
             </ul>
 
             <!-- tags: layout -->
+          </div>
+          <div class="snippet">
+            <h3 id="calc"><span>Calc()</span><span class="tags__tag snippet__tag" data-type="other"><i data-feather="tag"></i>other</span></h3>
+            <p>The function calc() allows to define CSS values with the use of mathematical expressions, the value adopted for the property is the result of a mathematical expression.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="box-example"&gt;&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.box-example {
+  width: calc(100% - 60px);
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo">
+              <div class="snippet-demo__calc">Box Example</div>
+            </div>
+            <style>
+              .snippet-demo__calc {
+                width: calc(100% - 60px);
+                height: 80px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #666;
+                color: #fff;
+              }
+            </style>
+            <h4>Explanation</h4>
+            <ol>
+              <li>It allows addition, subtraction, multiplication and division.</li>
+              <li>Can use different units (pixel and percent together, for example) for each value in your expression.</li>
+              <li>It is permitted to nest calc() functions.</li>
+              <li>It can be used in any property that <code>&lt;length&gt;</code>, <code>&lt;frequency&gt;</code>, <code>&lt;angle&gt;</code>, <code>&lt;time&gt;</code>, <code>&lt;number&gt;</code>, <code>&lt;color&gt;</code>, or <code>&lt;integer&gt;</code>                is allowed, like width, height, font-size, top, left, etc.</li>
+            </ol>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                94.9%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=calc" target="_blank">https://caniuse.com/#feat=calc</a>
+              </li>
+            </ul>
+
+            <!-- tags: other -->
           </div>
           <div class="snippet">
             <h3 id="circle"><span>Circle</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
