@@ -100,6 +100,7 @@ hide:browser,css
 httpGet:utility,url,browser
 httpPost:utility,url,browser
 httpsRedirect:browser,url
+hz:function
 indexOfAll:array
 initial:array
 initialize2DArray:array
