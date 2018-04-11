@@ -1,11 +1,11 @@
 ### is
 
-Checks if the provided value is of the specified type (doesn't work with literals).
+Checks if the provided value is of the specified type.
 
-Use the `instanceof` operator to check if the provided value is of the specified `type`.
+Ensure the value is not `undefined` or `null` and compare the `constructor` property on the value with `type` to check if the provided value is of the specified `type`.
 
 ```js
-const is = (type, val) => val instanceof type;
+const is = (type, val) => ![, null].includes(val) && val.constructor === type;
 ```
 
 ```js
@@ -16,10 +16,10 @@ is(RegExp, /./g); // true
 is(Set, new Set()); // true
 is(WeakMap, new WeakMap()); // true
 is(WeakSet, new WeakSet()); // true
-is(String, ''); // false
+is(String, ''); // true
 is(String, new String('')); // true
-is(Number, 1); // false
+is(Number, 1); // true
 is(Number, new Number(1)); // true
-is(Boolean, true); // false
+is(Boolean, true); // true
 is(Boolean, new Boolean(true)); // true
 ```
