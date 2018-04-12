@@ -5,8 +5,8 @@ Checks if a string is lower case.
 Convert the given string to lower case, using `str.lower()` method and compare it to the original.
 
 ```python
-def is_lower_case(str):
-    return str == str.lower()
+def is_lower_case(string):
+    return string == string.lower()
 ```
 
 ```python

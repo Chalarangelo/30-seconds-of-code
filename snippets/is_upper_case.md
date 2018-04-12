@@ -5,8 +5,8 @@ Checks if a string is upper case.
 Convert the given string to upper case, using `str.upper()` method and compare it to the original.
 
 ```python
-def is_upper_case(str):
-    return str == str.upper()
+def is_upper_case(string):
+    return string == string.upper()
 ```
 
 ```python
