@@ -1,4 +1,4 @@
-Test log for: Wed Apr 11 2018 20:51:38 GMT+0000 (UTC)
+Test log for: Thu Apr 12 2018 20:52:44 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.3 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -691,6 +691,10 @@ Test log for: Wed Apr 11 2018 20:51:38 GMT+0000 (UTC)
     ✔ httpsRedirect is a Function
     ✔ Tested on 09/02/2018 by @chalarangelo
 
+  Testing hz
+
+    ✔ hz is a Function
+
   Testing inRange
 
     ✔ inRange is a Function
@@ -762,11 +766,35 @@ Test log for: Wed Apr 11 2018 20:51:38 GMT+0000 (UTC)
     ✔ Works for sets
     ✔ Works for weak maps
     ✔ Works for weak sets
-    ✔ Works for strings - returns false for primitive
+
+    ✖ Works for strings - returns false for primitive
+    --------------------------------------------------
+      operator: notOk
+      expected: false
+      actual:   true
+      at: Test.test (/home/travis/build/Chalarangelo/30-seconds-of-code/test/is/is.test.js:17:10)
+      stack: |-
+
     ✔ Works for strings - returns true when using constructor
-    ✔ Works for numbers - returns false for primitive
+
+    ✖ Works for numbers - returns false for primitive
+    --------------------------------------------------
+      operator: notOk
+      expected: false
+      actual:   true
+      at: Test.test (/home/travis/build/Chalarangelo/30-seconds-of-code/test/is/is.test.js:19:10)
+      stack: |-
+
     ✔ Works for numbers - returns true when using constructor
-    ✔ Works for booleans - returns false for primitive
+
+    ✖ Works for booleans - returns false for primitive
+    ---------------------------------------------------
+      operator: notOk
+      expected: false
+      actual:   true
+      at: Test.test (/home/travis/build/Chalarangelo/30-seconds-of-code/test/is/is.test.js:21:10)
+      stack: |-
+
     ✔ Works for booleans - returns true when using constructor
     ✔ Works for functions
 
@@ -1448,6 +1476,11 @@ Test log for: Wed Apr 11 2018 20:51:38 GMT+0000 (UTC)
 
     ✔ removeVowels is a Function
 
+  Testing renameKeys
+
+    ✔ renameKeys is a Function
+    ✔ should be equivalent
+
   Testing reverseString
 
     ✔ reverseString is a Function
@@ -1970,15 +2003,27 @@ Test log for: Wed Apr 11 2018 20:51:38 GMT+0000 (UTC)
 
     ✔ zipWith is a Function
     ✔ Sends a GET request
-    ✔ Sends a POST request
     ✔ Runs the function provided
+    ✔ Sends a POST request
     ✔ Runs promises in series
     ✔ Works as expecting, passing arguments properly
     ✔ Works with multiple promises
 
 
-  total:     1006
+
+  Failed Tests: There were 3 failures
+
+    Testing is
+
+      ✖ Works for strings - returns false for primitive
+      ✖ Works for numbers - returns false for primitive
+      ✖ Works for booleans - returns false for primitive
+
+
+  total:     1009
   passing:   1006
-  duration:  2.4s
+  failing:   3
+  duration:  2.5s
 
 
+undefined
