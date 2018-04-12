@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block content %}<div class="row" style="height:calc(100vh - 5.875rem);overflow:hidden"><input id="doc-drawer-checkbox" class="drawer" value="on" type="checkbox"><nav class="col-md-4 col-lg-3" style="border-top:0"><div class="group"><input class="search" id="searchInput" onkeyup="search(this)" type="text"><label id="search-label">Search for snippet...</label></div><label for="doc-drawer-checkbox" class="button drawer-close"></label><h3 style = "">Math</h3><a class="sublink-1" tags="math" href="#average" style="">average</a><a class="sublink-1" tags="math" href="#factorial" style="">factorial</a><a class="sublink-1" tags="math" href="#gcd" style="">gcd</a><a class="sublink-1" tags="math" href="#lcm" style="">lcm</a><a class="sublink-1" tags="math" href="#max_n" style="">max_n</a><a class="sublink-1" tags="math" href="#min_n" style="">min_n</a><h3 style = "">List</h3><a class="sublink-1" tags="list" href="#chunk" style="">chunk</a><a class="sublink-1" tags="list" href="#compact" style="">compact</a><a class="sublink-1" tags="list" href="#count_occurences" style="">count_occurences</a><a class="sublink-1" tags="list" href="#deep_flatten" style="">deep_flatten</a><a class="sublink-1" tags="list" href="#difference" style="">difference</a><a class="sublink-1" tags="list" href="#shuffle" style="">shuffle</a><a class="sublink-1" tags="list" href="#spread" style="">spread</a><a class="sublink-1" tags="list" href="#zip" style="">zip</a><a class="sublink-1" tags="list" href="#count_by" style="">count_by</a><a class="sublink-1" tags="list" href="#difference_by" style="">difference_by</a><a class="sublink-1" tags="list" href="#insertion_sort" style="">insertion_sort</a><h3 style = "">String</h3><a class="sublink-1" tags="string" href="#count_vowels" style="">count_vowels</a><a class="sublink-1" tags="string" href="#byte_size" style="">byte_size</a><a class="sublink-1" tags="string" href="#capitalize" style="">capitalize</a><a class="sublink-1" tags="string" href="#capitalize_every_word" style="">capitalize_every_word</a><a class="sublink-1" tags="string" href="#decapitalize" style="">decapitalize</a><a class="sublink-1" tags="string" href="#palindrome" style="">palindrome</a><a class="sublink-1" tags="string" href="#is_upper_case" style="">is_upper_case</a><a class="sublink-1" tags="string" href="#is_lower_case" style="">is_lower_case</a></nav><main class="col-sm-12 col-md-8 col-lg-9" style="height:100%;overflow-y:auto;background:#eceef2;padding:0"><a id="top"></a><h2 style="text-align:center">Math</h2><div class="card fluid"><h3 id="average" class="section double-padded">average</h3><!--<form action="" method="post"><button type="submit" value="average" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+{% block content %}<div class="row" style="height:calc(100vh - 5.875rem);overflow:hidden"><input id="doc-drawer-checkbox" class="drawer" value="on" type="checkbox"><nav class="col-md-4 col-lg-3" style="border-top:0"><div class="group"><input class="search" id="searchInput" onkeyup="search(this)" type="text"><label id="search-label">Search for snippet...</label></div><label for="doc-drawer-checkbox" class="button drawer-close"></label><h3 style = "">Math</h3><a class="sublink-1" tags="math" href="#average" style="">average</a><a class="sublink-1" tags="math" href="#factorial" style="">factorial</a><a class="sublink-1" tags="math" href="#gcd" style="">gcd</a><a class="sublink-1" tags="math" href="#lcm" style="">lcm</a><a class="sublink-1" tags="math" href="#max_n" style="">max_n</a><a class="sublink-1" tags="math" href="#min_n" style="">min_n</a><h3 style = "">List</h3><a class="sublink-1" tags="list" href="#chunk" style="">chunk</a><a class="sublink-1" tags="list" href="#compact" style="">compact</a><a class="sublink-1" tags="list" href="#count_occurences" style="">count_occurences</a><a class="sublink-1" tags="list" href="#deep_flatten" style="">deep_flatten</a><a class="sublink-1" tags="list" href="#difference" style="">difference</a><a class="sublink-1" tags="list" href="#shuffle" style="">shuffle</a><a class="sublink-1" tags="list" href="#spread" style="">spread</a><a class="sublink-1" tags="list" href="#zip" style="">zip</a><a class="sublink-1" tags="list" href="#count_by" style="">count_by</a><a class="sublink-1" tags="list" href="#difference_by" style="">difference_by</a><a class="sublink-1" tags="list" href="#insertion_sort" style="">insertion_sort</a><h3 style = "">String</h3><a class="sublink-1" tags="string" href="#count_vowels" style="">count_vowels</a><a class="sublink-1" tags="string" href="#byte_size" style="">byte_size</a><a class="sublink-1" tags="string" href="#capitalize" style="">capitalize</a><a class="sublink-1" tags="string" href="#capitalize_every_word" style="">capitalize_every_word</a><a class="sublink-1" tags="string" href="#decapitalize" style="">decapitalize</a><a class="sublink-1" tags="string" href="#palindrome" style="">palindrome</a><a class="sublink-1" tags="string" href="#is_upper_case" style="">is_upper_case</a><a class="sublink-1" tags="string" href="#is_lower_case" style="">is_lower_case</a><h3 style = ""> list</h3><a class="sublink-1" tags=" list" href="#bubble_sort" style="">bubble_sort</a></nav><main class="col-sm-12 col-md-8 col-lg-9" style="height:100%;overflow-y:auto;background:#eceef2;padding:0"><a id="top"></a><h2 style="text-align:center">Math</h2><div class="card fluid"><h3 id="average" class="section double-padded">average</h3><!--<form action="" method="post"><button type="submit" value="average" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
 <p><emoji>ℹ</emoji> Already implemented via <code>statistics.mean</code>. <code>statistics.mean</code> takes an array as an argument whereas this function takes variadic arguments.</p>
 <p>Returns the average of two or more numbers.</p>
 <p>Takes the sum of all the <code>args</code> and divides it by <code>len(args)</code>. The second argument <code>0.0</code> in sum is to handle floating point division in <code>python2</code>.</p>
@@ -99,8 +99,7 @@ lcm([1, 3, 4], 5) # 60</pre>
 
 def max_n(arr, n=1):
     numbers = deepcopy(arr)
-    numbers.sort()
-    numbers.reverse()
+    numbers.sort(reverse=True)
     return numbers[:n]</pre>
 <label class="collapse">Show examples</label>
 <pre class="language-python">max_n([1, 2, 3]) # [3]
@@ -143,7 +142,7 @@ def chunk(arr, size):
 <p>Use <code>filter()</code> to filter out falsey values (False, None, 0, and "").</p>
 
 <pre class="language-python">def compact(arr):
-    return list(filter(lambda x: bool(x), arr))</pre>
+    return list(filter(bool, arr))</pre>
 <label class="collapse">Show examples</label>
 <pre class="language-python">compact([0, 1, False, 2, '', 3, 'a', 's', 34]) # [ 1, 2, 3, 'a', 's', 34 ]</pre>
 <button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
@@ -151,15 +150,10 @@ def chunk(arr, size):
 </div><div class="card fluid"><h3 id="count_occurences" class="section double-padded">count_occurences</h3><!--<form action="" method="post"><button type="submit" value="count_occurences" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
 <p><emoji>ℹ</emoji> Already implemented via <code>list.count()</code>.</p>
 <p>Counts the occurrences of a value in an list.</p>
-<p>Uses the <code>reduce</code> functin from built-in module <code>functools</code> to increment a counter each time you encounter the specific value inside the list.</p>
+<p>Uses the list comprehension to increment a counter each time you encounter the specific value inside the list.</p>
 
-<pre class="language-python">from functools import reduce
-
-
-def count_occurences(arr, val):
-    return reduce(
-        (lambda x, y: x + 1 if y == val and type(y) == type(val) else x + 0),
-        arr)</pre>
+<pre class="language-python">def count_occurrences(lst, val):
+    return len([x for x in lst if x == val and type(x) == type(val)])</pre>
 <label class="collapse">Show examples</label>
 <pre class="language-python">count_occurrences([1, 1, 2, 1, 2, 3], 1) # 3</pre>
 <button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
@@ -188,11 +182,10 @@ def deep_flatten(arr):
 <button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
 
 </div><div class="card fluid"><h3 id="difference" class="section double-padded">difference</h3><!--<form action="" method="post"><button type="submit" value="difference" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
-<p>Returns the difference between two arrays.</p>
-<p>Create a <code>set</code> from <code>b</code>, then use list comprehension to only keep values not contained in <code>b</code></p>
+<p>Returns the difference between two iterables.</p>
+<p>Use list comprehension to only keep values not contained in <code>b</code></p>
 
 <pre class="language-python">def difference(a, b):
-    b = set(b)
     return [item for item in a if item not in b]</pre>
 <label class="collapse">Show examples</label>
 <pre class="language-python">difference([1, 2, 3], [1, 2, 4]) # [3]</pre>
@@ -323,7 +316,7 @@ count_vowels('gym') # 0</pre>
 <pre class="language-python">def byte_size(string):
     return(len(string.encode('utf-8')))</pre>
 <label class="collapse">Show examples</label>
-<pre class="language-python">byte_size('😀') # 4
+<pre class="language-python">byte_size('ðŸ˜€') # 4
 byte_size('Hello World') # 11</pre>
 <button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
 
@@ -375,8 +368,8 @@ decapitalize('FooBar', True) # 'fOOBAR'</pre>
 <p>Checks if a string is upper case.</p>
 <p>Convert the given string to upper case, using <code>str.upper()</code> method and compare it to the original.</p>
 
-<pre class="language-python">def is_upper_case(str):
-    return str == str.upper()</pre>
+<pre class="language-python">def is_upper_case(string):
+    return string == string.upper()</pre>
 <label class="collapse">Show examples</label>
 <pre class="language-python">is_upper_case('ABC') # True
 is_upper_case('a3@$') # True
@@ -387,12 +380,28 @@ is_upper_case('aB4') # False</pre>
 <p>Checks if a string is lower case.</p>
 <p>Convert the given string to lower case, using <code>str.lower()</code> method and compare it to the original.</p>
 
-<pre class="language-python">def is_lower_case(str):
-    return str == str.lower()</pre>
+<pre class="language-python">def is_lower_case(string):
+    return string == string.lower()</pre>
 <label class="collapse">Show examples</label>
 <pre class="language-python">is_lower_case('abc') # True
 is_lower_case('a3@$') # True
 is_lower_case('Ab4') # False</pre>
+<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
+
+</div><h2 style="text-align:center"> list</h2><div class="card fluid"><h3 id="bubble_sort" class="section double-padded">bubble_sort</h3><!--<form action="" method="post"><button type="submit" value="bubble_sort" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+<p>Bubble_sort uses the technique of comparing and swapping</p>
+
+<pre class="language-python">def bubble_sort(arr):
+    for passnum in range(len(arr) - 1, 0, -1):
+        for i in range(passnum):
+            if arr[i] &gt; arr[i + 1]:
+                temp = arr[i]
+                arr[i] = arr[i + 1]
+                arr[i + 1] = temp</pre>
+<label class="collapse">Show examples</label>
+<pre class="language-python">arr = [54,26,93,17,77,31,44,55,20]
+bubble_sort(arr)
+print("sorted %s" %arr) # [17,20,26,31,44,54,55,77,91]</pre>
 <button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
 
 </div><button class="scroll-to-top">↑</button>

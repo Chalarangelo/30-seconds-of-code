@@ -8,7 +8,7 @@ codeRe = "```\s*python([\s\S]*?)```"
 def tagger():
     tag_data = open('tag_database').read()
     tag_dict = {}
-    tag_list = tag_data.split('\n')
+    tag_list = filter(lambda x:x.strip() != '',tag_data.split('\n'))
     for tag in tag_list:
         category = tag.split(':')[1]
         snippet = tag.split(':')[0]
