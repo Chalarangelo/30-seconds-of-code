@@ -34,7 +34,7 @@ const readTags = () => {
       fs
         .readFileSync('tag_database', 'utf8')
         .split('\n')
-        .slice(0, -1)
+        .filter(v => v.trim() !== '')
         .map(v => {
           let data = v.split(':').slice(0, 2);
           data[1] = data[1].split(',').map(t => t.trim());
