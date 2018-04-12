@@ -8,7 +8,7 @@ Uses the list comprehension to increment a counter each time you encounter the s
 
 ```python
 def count_occurrences(lst, val):
-	return len([x for x in lst if x == val and type(x) == type(val)])
+    return len([x for x in lst if x == val and type(x) == type(val)])
 ```
 
 ```python

@@ -11,7 +11,8 @@
 ### Table of contents
 ### :books: List
 
-<details><summary>View contents</summary> <ul><li><a href = "#chunk"><code>chunk</code></a></li>
+<details><summary>View contents</summary> <ul><li><a href = "#bubble_sort"><code>bubble_sort</code></a></li>
+<li><a href = "#chunk"><code>chunk</code></a></li>
 <li><a href = "#compact"><code>compact</code></a></li>
 <li><a href = "#count_by"><code>count_by</code></a></li>
 <li><a href = "#count_occurences"><code>count_occurences</code></a></li>
@@ -49,6 +50,32 @@
 <hr></hr> 
 
 ## :books: List
+
+### bubble_sort 
+<span style="color:grey">Author:-</span> [Shobhit Sachan](https://www.github.com/sachans) 
+
+ <span style="color:grey">Contributors:-</span> [Shobhit Sachan](https://www.github.com/sachans)
+
+Bubble_sort uses the technique of comparing and swapping
+```py
+def bubble_sort(arr):
+    for passnum in range(len(arr) - 1, 0, -1):
+        for i in range(passnum):
+            if arr[i] > arr[i + 1]:
+                temp = arr[i]
+                arr[i] = arr[i + 1]
+                arr[i + 1] = temp
+```
+<details><summary>View Examples</summary>
+
+```py
+arr = [54,26,93,17,77,31,44,55,20]
+bubble_sort(arr)
+print("sorted %s" %arr) # [17,20,26,31,44,54,55,77,91]
+```
+</details>
+
+<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
 
 ### chunk 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
@@ -129,21 +156,16 @@ count_by(['one', 'two', 'three'], len) # {3: 2, 5: 1}
 ### count_occurences 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
 
- <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin)
+ <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin),  [Hui Binyuan](https://www.github.com/huybery)
 
 :information_source: Already implemented via `list.count()`.
 
 Counts the occurrences of a value in an list.
 
-Uses the `reduce` functin from built-in module `functools` to increment a counter each time you encounter the specific value inside the list.
+Uses the list comprehension to increment a counter each time you encounter the specific value inside the list.
 ```py
-from functools import reduce
-
-
-def count_occurences(arr, val):
-    return reduce(
-        (lambda x, y: x + 1 if y == val and type(y) == type(val) else x + 0),
-        arr)
+def count_occurrences(lst, val):
+    return len([x for x in lst if x == val and type(x) == type(val)])
 ```
 <details><summary>View Examples</summary>
 
@@ -405,7 +427,7 @@ factorial(6) # 720
 ### gcd 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
 
- <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin), [cclauss][@cclauss]
+ <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin), [cclauss](https://www.github.com/cclauss)
 
 :information_source: `math.gcd` works with only two numbers
 
