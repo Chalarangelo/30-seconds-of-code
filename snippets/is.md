@@ -2,7 +2,7 @@
 
 Checks if the provided value is of the specified type.
 
-Ensure the value is not `undefined` or `null` and compare the `constructor` property on the value with `type` to check if the provided value is of the specified `type`.
+Ensure the value is not `undefined` or `null` using `Array.includes()`, and compare the `constructor` property on the value with `type` to check if the provided value is of the specified `type`.
 
 ```js
 const is = (type, val) => ![, null].includes(val) && val.constructor === type;
