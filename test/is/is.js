@@ -1,2 +1,2 @@
-const is = (type, val) => val instanceof type;
+const is = (type, val) => ![, null].includes(val) && val.constructor === type;
 module.exports = is;
