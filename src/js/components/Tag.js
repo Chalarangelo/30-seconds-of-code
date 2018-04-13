@@ -19,13 +19,13 @@ const onClick = function() {
     type: [...selectAll('button.tags__tag.is-active')]
   })
 }
-onkeydown = e => (
+onkeydown = e => {
   if(e.shiftKey){
     isShiftSelected = true;
-});
+}};
 
-onkeyup = e => (
+onkeyup = e => {
   if(e.shiftKey){
     isShiftSelected = false;
-});
+}};
 tagButtons.forEach(button => on(button, 'click', onClick))
