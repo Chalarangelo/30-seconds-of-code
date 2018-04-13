@@ -269,22 +269,25 @@
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="box-example"&gt;&lt;/div&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.box-example {
-  width: calc(100% - 60px);
+  height: 280px;
+  background: #222 url('https://image.ibb.co/fUL9nS/wolf.png') no-repeat;
+  background-position: calc(100% - 20px) calc(100% - 20px);
 }
 </code></pre>
             <h4>Demo</h4>
+            <p>If you want to align a background-image from right and bottom wasn't possible with just straight length values. So now it's possible using calc():</p>
             <div class="snippet-demo">
-              <div class="snippet-demo__calc">Box Example</div>
+              <div class="snippet-demo__calc">Background-image in the right/bottom</div>
             </div>
             <style>
               .snippet-demo__calc {
-                width: calc(100% - 60px);
-                height: 80px;
+                height: 280px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                background: #666;
                 color: #fff;
+                background: #222 url('https://image.ibb.co/fUL9nS/wolf.png') no-repeat;
+                background-position: calc(100% - 20px) calc(100% - 40px);
               }
             </style>
             <h4>Explanation</h4>
