@@ -12,25 +12,30 @@ The function calc() allows to define CSS values with the use of mathematical exp
 
 ```css
 .box-example {
-  width: calc(100% - 60px);
+  height: 280px;
+  background: #222 url('https://image.ibb.co/fUL9nS/wolf.png') no-repeat;
+  background-position: calc(100% - 20px) calc(100% - 20px);
 }
 ```
 
 #### Demo
 
+If you want to align a background-image from right and bottom wasn't possible with just straight length values.
+So now it's possible using calc():
+
 <div class="snippet-demo">
-  <div class="snippet-demo__calc">Box Example</div>
+  <div class="snippet-demo__calc">Background-image in the right/bottom</div>
 </div>
 
 <style>
 .snippet-demo__calc {
-  width: calc(100% - 60px);
-  height: 80px;
+  height: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #666;
   color: #fff;
+  background: #222 url('https://image.ibb.co/fUL9nS/wolf.png') no-repeat;
+  background-position: calc(100% - 20px) calc(100% - 40px);
 }
 </style>
 
