@@ -2,7 +2,7 @@
 
 Deep flattens a list.
 
-Use recursion. Use `list.extend()` with an empty array (`result`) and the spread function to flatten a list. Recursively flatten each element that is a list.
+Use recursion. Use `list.extend()` with an empty list (`result`) and the spread function to flatten a list. Recursively flatten each element that is a list.
 
 ```python
 def spread(arg):
@@ -15,10 +15,10 @@ def spread(arg):
     return ret
 
 
-def deep_flatten(arr):
+def deep_flatten(lst):
     result = []
     result.extend(
-        spread(list(map(lambda x: deep_flatten(x) if type(x) == list else x, arr))))
+        spread(list(map(lambda x: deep_flatten(x) if type(x) == list else x, lst))))
     return result
 ```
 
