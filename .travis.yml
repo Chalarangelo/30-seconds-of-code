@@ -6,6 +6,7 @@ python:
 - "3.6"
 before_install:
 - sudo pip install -r requirements.txt
+- pip install flake8
 script:
 - python scripts/lint.py
 - python scripts/readme.py
