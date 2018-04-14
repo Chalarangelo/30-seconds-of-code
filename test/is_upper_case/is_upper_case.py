@@ -1,2 +1,2 @@
-def is_upper_case(str):
-    return str == str.upper()
+def is_upper_case(string):
+    return string == string.upper()

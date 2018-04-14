@@ -8,8 +8,8 @@ def spread(arg):
     return ret
 
 
-def deep_flatten(arr):
+def deep_flatten(lst):
     result = []
     result.extend(
-        spread(list(map(lambda x: deep_flatten(x) if type(x) == list else x, arr))))
+        spread(list(map(lambda x: deep_flatten(x) if type(x) == list else x, lst))))
     return result

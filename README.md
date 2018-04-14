@@ -1,7 +1,8 @@
 ![Logo](/icon.png)
 
 # 30-seconds-of-python-code [![Tweet](http://jpillora.com/github-twitter-button/img/tweet.png)](http://www.twitter.com/share?text=%2330secondsofcode+30-seconds-of-python-code+-+Python+Implementation+of+30+seconds+of+code%0Ahttps://github.com/kriadmin/30-seconds-of-python-code&url=a")
-[![License](https://img.shields.io/aur/license/yaourt.svg)](https://github.com/kriadmin/30-seconds-of-python-code/blob/master/LICENSE) [![Gitter chat](https://img.shields.io/badge/chat-on%20gitter-4FB999.svg)](https://gitter.im/30-seconds-of-python-code/Lobby) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Travis Build](https://travis-ci.org/kriadmin/30-seconds-of-python-code.svg?branch=master)](https://travis-ci.org/kriadmin/30-seconds-of-python-code) [![Insight.io](https://img.shields.io/badge/insight.io-Ready-brightgreen.svg)](https://insight.io/github.com/kriadmin/30-seconds-of-python-code/tree/master/?source=0) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard)
+[![License](https://img.shields.io/aur/license/yaourt.svg)](https://github.com/kriadmin/30-seconds-of-python-code/blob/master/LICENSE)
+[![first-timers-only](http://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](http://www.firsttimersonly.com/) [![Gitter chat](https://img.shields.io/badge/chat-on%20gitter-4FB999.svg)](https://gitter.im/30-seconds-of-python-code/Lobby) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Travis Build](https://travis-ci.org/kriadmin/30-seconds-of-python-code.svg?branch=master)](https://travis-ci.org/kriadmin/30-seconds-of-python-code) [![Insight.io](https://img.shields.io/badge/insight.io-Ready-brightgreen.svg)](https://insight.io/github.com/kriadmin/30-seconds-of-python-code/tree/master/?source=0) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkriadmin%2F30-seconds-of-python-code.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkriadmin%2F30-seconds-of-python-code?ref=badge_shield)
 
 >Python implementation of 30-seconds-of-code.
@@ -58,20 +59,20 @@
 
 Bubble_sort uses the technique of comparing and swapping
 ```py
-def bubble_sort(arr):
-    for passnum in range(len(arr) - 1, 0, -1):
+def bubble_sort(lst):
+    for passnum in range(len(lst) - 1, 0, -1):
         for i in range(passnum):
-            if arr[i] > arr[i + 1]:
-                temp = arr[i]
-                arr[i] = arr[i + 1]
-                arr[i + 1] = temp
+            if lst[i] > lst[i + 1]:
+                temp = lst[i]
+                lst[i] = lst[i + 1]
+                lst[i + 1] = temp
 ```
 <details><summary>View Examples</summary>
 
 ```py
-arr = [54,26,93,17,77,31,44,55,20]
-bubble_sort(arr)
-print("sorted %s" %arr) # [17,20,26,31,44,54,55,77,91]
+lst = [54,26,93,17,77,31,44,55,20]
+bubble_sort(lst)
+print("sorted %s" %lst) # [17,20,26,31,44,54,55,77,91]
 ```
 </details>
 
@@ -82,17 +83,17 @@ print("sorted %s" %arr) # [17,20,26,31,44,54,55,77,91]
 
  <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin)
 
-Chunks an array into smaller lists of a specified size.
+Chunks an list into smaller lists of a specified size.
 
-Uses `range` to create a list of desired size. Then use `map` on this list and fill it with splices of `arr`.
+Uses `range` to create a list of desired size. Then use `map` on this list and fill it with splices of `lst`.
 ```py
 from math import ceil
 
 
-def chunk(arr, size):
+def chunk(lst, size):
     return list(
-        map(lambda x: arr[x * size:x * size + size],
-            list(range(0, ceil(len(arr) / size)))))
+        map(lambda x: lst[x * size:x * size + size],
+            list(range(0, ceil(len(lst) / size)))))
 ```
 <details><summary>View Examples</summary>
 
@@ -112,8 +113,8 @@ Removes falsey values from a list.
 
 Use `filter()` to filter out falsey values (False, None, 0, and "").
 ```py
-def compact(arr):
-    return list(filter(lambda x: bool(x), arr))
+def compact(lst):
+    return list(filter(bool, lst))
 ```
 <details><summary>View Examples</summary>
 
@@ -183,7 +184,7 @@ count_occurrences([1, 1, 2, 1, 2, 3], 1) # 3
 
 Deep flattens a list.
 
-Use recursion. Use `list.extend()` with an empty array (`result`) and the spread function to flatten a list. Recursively flatten each element that is a list.
+Use recursion. Use `list.extend()` with an empty list (`result`) and the spread function to flatten a list. Recursively flatten each element that is a list.
 ```py
 def spread(arg):
     ret = []
@@ -195,10 +196,10 @@ def spread(arg):
     return ret
 
 
-def deep_flatten(arr):
+def deep_flatten(lst):
     result = []
     result.extend(
-        spread(list(map(lambda x: deep_flatten(x) if type(x) == list else x, arr))))
+        spread(list(map(lambda x: deep_flatten(x) if type(x) == list else x, lst))))
     return result
 ```
 <details><summary>View Examples</summary>
@@ -215,12 +216,11 @@ deep_flatten([1, [2], [[3], 4], 5]) # [1,2,3,4,5]
 
  <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin)
 
-Returns the difference between two arrays.
+Returns the difference between two iterables.
 
-Create a `set` from `b`, then use list comprehension to only keep values not contained in `b`
+Use list comprehension to only keep values not contained in `b`
 ```py
 def difference(a, b):
-    b = set(b)
     return [item for item in a if item not in b]
 ```
 <details><summary>View Examples</summary>
@@ -263,22 +263,22 @@ difference_by([{ 'x': 2 }, { 'x': 1 }], [{ 'x': 1 }], lambda v : v['x']) # [ { x
 
 On a very basic level, an insertion sort algorithm contains the logic of shifting around and inserting elements in order to sort an unordered list of any size. The way that it goes about inserting elements, however, is what makes insertion sort so very interesting!
 ```py
-def insertion_sort(arr):
+def insertion_sort(lst):
 
-    for i in range(1, len(arr)):
-        key = arr[i]
+    for i in range(1, len(lst)):
+        key = lst[i]
         j = i - 1
-        while j >= 0 and key < arr[j]:
-            arr[j + 1] = arr[j]
+        while j >= 0 and key < lst[j]:
+            lst[j + 1] = lst[j]
             j -= 1
-            arr[j + 1] = key
+            lst[j + 1] = key
 ```
 <details><summary>View Examples</summary>
 
 ```py
-arr = [7,4,9,2,6,3]
-insertionsort(arr)
-print('Sorted %s'  %arr) # sorted [2, 3, 4, 6, 7, 9]
+lst = [7,4,9,2,6,3]
+insertionsort(lst)
+print('Sorted %s'  %lst) # sorted [2, 3, 4, 6, 7, 9]
 ```
 </details>
 
@@ -299,14 +299,14 @@ from copy import deepcopy
 from random import randint
 
 
-def shuffle(arr):
-    temp_arr = deepcopy(arr)
-    m = len(temp_arr)
+def shuffle(lst):
+    temp_lst = deepcopy(lst)
+    m = len(temp_lst)
     while (m):
         m -= 1
         i = randint(0, m)
-        temp_arr[m], temp_arr[i] = temp_arr[i], temp_arr[m]
-    return temp_arr
+        temp_lst[m], temp_lst[i] = temp_lst[i], temp_lst[m]
+    return temp_lst
 ```
 <details><summary>View Examples</summary>
 
@@ -355,7 +355,7 @@ Creates a list of elements, grouped based on the position in the original lists.
 Use `max` combined with `list comprehension` to get the length of the longest list in the arguments. Loops for `max_length` times grouping elements. If lengths of `lists` vary `fill_value` is used. By default `fill_value` is `None`.
 ```py
 def zip(*args, fillvalue=None):
-    max_length = max([len(arr) for arr in args])
+    max_length = max([len(lst) for lst in args])
     result = []
     for i in range(max_length):
         result.append([
@@ -521,16 +521,10 @@ lcm([1, 3, 4], 5) # 60
 
 Returns the `n` maximum elements from the provided list. If `n` is greater than or equal to the provided list's length, then return the original list(sorted in descending order).
 
-Use `list.sort()` combined with the `deepcopy` function from the inbuilt `copy` module to create a shallow clone of the list and sort it in ascending order and then use `list.reverse()` reverse it to make it descending order. Use `[:n]` to get the specified number of elements. Omit the second argument, `n`, to get a one-element array
+Use `list.sort()` combined with the `deepcopy` function from the inbuilt `copy` module to create a shallow clone of the list and sort it in ascending order and then use `list.reverse()` reverse it to make it descending order. Use `[:n]` to get the specified number of elements. Omit the second argument, `n`, to get a one-element list
 ```py
-from copy import deepcopy
-
-
-def max_n(arr, n=1):
-    numbers = deepcopy(arr)
-    numbers.sort()
-    numbers.reverse()
-    return numbers[:n]
+def max_n(lst, n=1, reverse=True):
+    return sorted(lst, reverse=reverse)[:n]
 ```
 <details><summary>View Examples</summary>
 
@@ -549,13 +543,13 @@ max_n([1, 2, 3], 2) # [3,2]
 
 Returns the `n` minimum elements from the provided list. If `n` is greater than or equal to the provided list's length, then return the original list(sorted in ascending order).
 
-Use `list.sort()` combined with the `deepcopy` function from the inbuilt `copy` module to create a shallow clone of the list and sort it in ascending order. Use `[:n]` to get the specified number of elements. Omit the second argument, `n`, to get a one-element array
+Use `list.sort()` combined with the `deepcopy` function from the inbuilt `copy` module to create a shallow clone of the list and sort it in ascending order. Use `[:n]` to get the specified number of elements. Omit the second argument, `n`, to get a one-element list
 ```py
 from copy import deepcopy
 
 
-def min_n(arr, n=1):
-    numbers = deepcopy(arr)
+def min_n(lst, n=1):
+    numbers = deepcopy(lst)
     numbers.sort()
     return numbers[:n]
 ```
@@ -692,8 +686,8 @@ Checks if a string is lower case.
 
 Convert the given string to lower case, using `str.lower()` method and compare it to the original.
 ```py
-def is_lower_case(str):
-    return str == str.lower()
+def is_lower_case(string):
+    return string == string.lower()
 ```
 <details><summary>View Examples</summary>
 
@@ -715,8 +709,8 @@ Checks if a string is upper case.
 
 Convert the given string to upper case, using `str.upper()` method and compare it to the original.
 ```py
-def is_upper_case(str):
-    return str == str.upper()
+def is_upper_case(string):
+    return string == string.upper()
 ```
 <details><summary>View Examples</summary>
 
