@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block content %}<div class="row" style="height:calc(100vh - 5.875rem);overflow:hidden"><input id="doc-drawer-checkbox" class="drawer" value="on" type="checkbox"><nav class="col-md-4 col-lg-3" style="border-top:0"><div class="group"><input class="search" id="searchInput" onkeyup="search(this)" type="text"><label id="search-label">Search for snippet...</label></div><label for="doc-drawer-checkbox" class="button drawer-close"></label><h3 style = "">Math</h3><a class="sublink-1" tags="math" href="#average" style="">average</a><a class="sublink-1" tags="math" href="#factorial" style="">factorial</a><a class="sublink-1" tags="math" href="#gcd" style="">gcd</a><a class="sublink-1" tags="math" href="#lcm" style="">lcm</a><a class="sublink-1" tags="math" href="#max_n" style="">max_n</a><a class="sublink-1" tags="math" href="#min_n" style="">min_n</a><h3 style = "">List</h3><a class="sublink-1" tags="list" href="#chunk" style="">chunk</a><a class="sublink-1" tags="list" href="#compact" style="">compact</a><a class="sublink-1" tags="list" href="#count_occurences" style="">count_occurences</a><a class="sublink-1" tags="list" href="#deep_flatten" style="">deep_flatten</a><a class="sublink-1" tags="list" href="#difference" style="">difference</a><a class="sublink-1" tags="list" href="#shuffle" style="">shuffle</a><a class="sublink-1" tags="list" href="#spread" style="">spread</a><a class="sublink-1" tags="list" href="#zip" style="">zip</a><a class="sublink-1" tags="list" href="#count_by" style="">count_by</a><a class="sublink-1" tags="list" href="#difference_by" style="">difference_by</a><a class="sublink-1" tags="list" href="#insertion_sort" style="">insertion_sort</a><h3 style = "">String</h3><a class="sublink-1" tags="string" href="#count_vowels" style="">count_vowels</a><a class="sublink-1" tags="string" href="#byte_size" style="">byte_size</a><a class="sublink-1" tags="string" href="#capitalize" style="">capitalize</a><a class="sublink-1" tags="string" href="#capitalize_every_word" style="">capitalize_every_word</a><a class="sublink-1" tags="string" href="#decapitalize" style="">decapitalize</a><a class="sublink-1" tags="string" href="#palindrome" style="">palindrome</a><a class="sublink-1" tags="string" href="#is_upper_case" style="">is_upper_case</a><a class="sublink-1" tags="string" href="#is_lower_case" style="">is_lower_case</a><h3 style = ""> list</h3><a class="sublink-1" tags=" list" href="#bubble_sort" style="">bubble_sort</a></nav><main class="col-sm-12 col-md-8 col-lg-9" style="height:100%;overflow-y:auto;background:#eceef2;padding:0"><a id="top"></a><h2 style="text-align:center">Math</h2><div class="card fluid"><h3 id="average" class="section double-padded">average</h3><!--<form action="" method="post"><button type="submit" value="average" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+{% block content %}<div class="row" style="height:calc(100vh - 5.875rem);overflow:hidden"><input id="doc-drawer-checkbox" class="drawer" value="on" type="checkbox"><nav class="col-md-4 col-lg-3" style="border-top:0"><div class="group"><input class="search" id="searchInput" onkeyup="search(this)" type="text"><label id="search-label">Search for snippet...</label></div><label for="doc-drawer-checkbox" class="button drawer-close"></label><h3 style = "">Math</h3><a class="sublink-1" tags="math" href="#average" style="">average</a><a class="sublink-1" tags="math" href="#factorial" style="">factorial</a><a class="sublink-1" tags="math" href="#gcd" style="">gcd</a><a class="sublink-1" tags="math" href="#lcm" style="">lcm</a><a class="sublink-1" tags="math" href="#max_n" style="">max_n</a><a class="sublink-1" tags="math" href="#min_n" style="">min_n</a><h3 style = "">List</h3><a class="sublink-1" tags="list" href="#chunk" style="">chunk</a><a class="sublink-1" tags="list" href="#compact" style="">compact</a><a class="sublink-1" tags="list" href="#count_occurences" style="">count_occurences</a><a class="sublink-1" tags="list" href="#deep_flatten" style="">deep_flatten</a><a class="sublink-1" tags="list" href="#difference" style="">difference</a><a class="sublink-1" tags="list" href="#shuffle" style="">shuffle</a><a class="sublink-1" tags="list" href="#spread" style="">spread</a><a class="sublink-1" tags="list" href="#zip" style="">zip</a><a class="sublink-1" tags="list" href="#count_by" style="">count_by</a><a class="sublink-1" tags="list" href="#difference_by" style="">difference_by</a><a class="sublink-1" tags="list" href="#insertion_sort" style="">insertion_sort</a><a class="sublink-1" tags="list" href="#bubble_sort" style="">bubble_sort</a><h3 style = "">String</h3><a class="sublink-1" tags="string" href="#count_vowels" style="">count_vowels</a><a class="sublink-1" tags="string" href="#byte_size" style="">byte_size</a><a class="sublink-1" tags="string" href="#capitalize" style="">capitalize</a><a class="sublink-1" tags="string" href="#capitalize_every_word" style="">capitalize_every_word</a><a class="sublink-1" tags="string" href="#decapitalize" style="">decapitalize</a><a class="sublink-1" tags="string" href="#palindrome" style="">palindrome</a><a class="sublink-1" tags="string" href="#is_upper_case" style="">is_upper_case</a><a class="sublink-1" tags="string" href="#is_lower_case" style="">is_lower_case</a></nav><main class="col-sm-12 col-md-8 col-lg-9" style="height:100%;overflow-y:auto;background:#eceef2;padding:0"><a id="top"></a><h2 style="text-align:center">Math</h2><div class="card fluid"><h3 id="average" class="section double-padded">average</h3><!--<form action="" method="post"><button type="submit" value="average" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
 <p><emoji>ℹ</emoji> Already implemented via <code>statistics.mean</code>. <code>statistics.mean</code> takes an array as an argument whereas this function takes variadic arguments.</p>
 <p>Returns the average of two or more numbers.</p>
 <p>Takes the sum of all the <code>args</code> and divides it by <code>len(args)</code>. The second argument <code>0.0</code> in sum is to handle floating point division in <code>python2</code>.</p>
@@ -290,6 +290,22 @@ insertionsort(lst)
 print('Sorted %s'  %lst) # sorted [2, 3, 4, 6, 7, 9]</pre>
 <button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
 
+</div><div class="card fluid"><h3 id="bubble_sort" class="section double-padded">bubble_sort</h3><!--<form action="" method="post"><button type="submit" value="bubble_sort" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
+<p>Bubble_sort uses the technique of comparing and swapping</p>
+
+<pre class="language-python">def bubble_sort(lst):
+    for passnum in range(len(lst) - 1, 0, -1):
+        for i in range(passnum):
+            if lst[i] &gt; lst[i + 1]:
+                temp = lst[i]
+                lst[i] = lst[i + 1]
+                lst[i + 1] = temp</pre>
+<label class="collapse">Show examples</label>
+<pre class="language-python">lst = [54,26,93,17,77,31,44,55,20]
+bubble_sort(lst)
+print("sorted %s" %lst) # [17,20,26,31,44,54,55,77,91]</pre>
+<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
+
 </div><h2 style="text-align:center">String</h2><div class="card fluid"><h3 id="count_vowels" class="section double-padded">count_vowels</h3><!--<form action="" method="post"><button type="submit" value="count_vowels" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
 <p>Retuns <code>number</code> of vowels in provided <code>string</code>.</p>
 <p>Use a regular expression to count the number of vowels <code>(A, E, I, O, U)</code> in a string.</p>
@@ -381,22 +397,6 @@ is_upper_case('aB4') # False</pre>
 <pre class="language-python">is_lower_case('abc') # True
 is_lower_case('a3@$') # True
 is_lower_case('Ab4') # False</pre>
-<button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
-
-</div><h2 style="text-align:center"> list</h2><div class="card fluid"><h3 id="bubble_sort" class="section double-padded">bubble_sort</h3><!--<form action="" method="post"><button type="submit" value="bubble_sort" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
-<p>Bubble_sort uses the technique of comparing and swapping</p>
-
-<pre class="language-python">def bubble_sort(lst):
-    for passnum in range(len(lst) - 1, 0, -1):
-        for i in range(passnum):
-            if lst[i] &gt; lst[i + 1]:
-                temp = lst[i]
-                lst[i] = lst[i + 1]
-                lst[i + 1] = temp</pre>
-<label class="collapse">Show examples</label>
-<pre class="language-python">lst = [54,26,93,17,77,31,44,55,20]
-bubble_sort(lst)
-print("sorted %s" %lst) # [17,20,26,31,44,54,55,77,91]</pre>
 <button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
 
 </div><button class="scroll-to-top">↑</button>
