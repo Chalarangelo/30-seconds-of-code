@@ -39,10 +39,15 @@ document.addEventListener('click', e => {
 })
 
 EventHub.on('Tag.click', data => {
+  data.type_new = data.type.map(el => el.dataset.type)
   sections.forEach(section => {
     section.style.display = 'block'
-    if (section.dataset.type !== data.type && data.type !== 'all') {
+    //console.log(data.type_new.includes('all'))
+    if(!data.type_new.includes(section.dataset.type) && !data.type_new.includes('all')) {
       section.style.display = 'none'
+    }
+    else{
+      section.style.display = ''
     }
   })
 })
