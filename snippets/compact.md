@@ -5,8 +5,8 @@ Removes falsey values from a list.
 Use `filter()` to filter out falsey values (False, None, 0, and "").
 
 ```python
-def compact(arr):
-    return list(filter(bool, arr))
+def compact(lst):
+    return list(filter(bool, lst))
 ```
 
 ``` python

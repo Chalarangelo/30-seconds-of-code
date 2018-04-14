@@ -1,17 +1,17 @@
-### chunk 
+### chunk
 
-Chunks an array into smaller lists of a specified size.
+Chunks an list into smaller lists of a specified size.
 
-Uses `range` to create a list of desired size. Then use `map` on this list and fill it with splices of `arr`.
+Uses `range` to create a list of desired size. Then use `map` on this list and fill it with splices of `lst`.
 
 ```python
 from math import ceil
 
 
-def chunk(arr, size):
+def chunk(lst, size):
     return list(
-        map(lambda x: arr[x * size:x * size + size],
-            list(range(0, ceil(len(arr) / size)))))
+        map(lambda x: lst[x * size:x * size + size],
+            list(range(0, ceil(len(lst) / size)))))
 ```
 
 ``` python
