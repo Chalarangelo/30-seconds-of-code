@@ -92,15 +92,10 @@ lcm([1, 3, 4], 5) # 60</pre>
 
 </div><div class="card fluid"><h3 id="max_n" class="section double-padded">max_n</h3><!--<form action="" method="post"><button type="submit" value="max_n" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
 <p>Returns the <code>n</code> maximum elements from the provided list. If <code>n</code> is greater than or equal to the provided list's length, then return the original list(sorted in descending order).</p>
-<p>Use <code>list.sort()</code> combined with the <code>deepcopy</code> function from the inbuilt <code>copy</code> module to create a shallow clone of the list and sort it in ascending order and then use <code>list.reverse()</code> reverse it to make it descending order. Use <code>[:n]</code> to get the specified number of elements. Omit the second argument, <code>n</code>, to get a one-element array</p>
+<p>Use <code>list.sort()</code> combined with the <code>deepcopy</code> function from the inbuilt <code>copy</code> module to create a shallow clone of the list and sort it in ascending order and then use <code>list.reverse()</code> reverse it to make it descending order. Use <code>[:n]</code> to get the specified number of elements. Omit the second argument, <code>n</code>, to get a one-element list</p>
 
-<pre class="language-python">from copy import deepcopy
-
-
-def max_n(arr, n=1):
-    numbers = deepcopy(arr)
-    numbers.sort(reverse=True)
-    return numbers[:n]</pre>
+<pre class="language-python">def max_n(lst, n=1, reverse=True):
+    return sorted(lst, reverse=reverse)[:n]</pre>
 <label class="collapse">Show examples</label>
 <pre class="language-python">max_n([1, 2, 3]) # [3]
 max_n([1, 2, 3], 2) # [3,2]</pre>
@@ -108,13 +103,13 @@ max_n([1, 2, 3], 2) # [3,2]</pre>
 
 </div><div class="card fluid"><h3 id="min_n" class="section double-padded">min_n</h3><!--<form action="" method="post"><button type="submit" value="min_n" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
 <p>Returns the <code>n</code> minimum elements from the provided list. If <code>n</code> is greater than or equal to the provided list's length, then return the original list(sorted in ascending order).</p>
-<p>Use <code>list.sort()</code> combined with the <code>deepcopy</code> function from the inbuilt <code>copy</code> module to create a shallow clone of the list and sort it in ascending order. Use <code>[:n]</code> to get the specified number of elements. Omit the second argument, <code>n</code>, to get a one-element array</p>
+<p>Use <code>list.sort()</code> combined with the <code>deepcopy</code> function from the inbuilt <code>copy</code> module to create a shallow clone of the list and sort it in ascending order. Use <code>[:n]</code> to get the specified number of elements. Omit the second argument, <code>n</code>, to get a one-element list</p>
 
 <pre class="language-python">from copy import deepcopy
 
 
-def min_n(arr, n=1):
-    numbers = deepcopy(arr)
+def min_n(lst, n=1):
+    numbers = deepcopy(lst)
     numbers.sort()
     return numbers[:n]</pre>
 <label class="collapse">Show examples</label>
@@ -123,16 +118,16 @@ min_n([1, 2, 3], 2) # [1,2]</pre>
 <button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
 
 </div><h2 style="text-align:center">List</h2><div class="card fluid"><h3 id="chunk" class="section double-padded">chunk</h3><!--<form action="" method="post"><button type="submit" value="chunk" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
-<p>Chunks an array into smaller lists of a specified size.</p>
-<p>Uses <code>range</code> to create a list of desired size. Then use <code>map</code> on this list and fill it with splices of <code>arr</code>.</p>
+<p>Chunks an list into smaller lists of a specified size.</p>
+<p>Uses <code>range</code> to create a list of desired size. Then use <code>map</code> on this list and fill it with splices of <code>lst</code>.</p>
 
 <pre class="language-python">from math import ceil
 
 
-def chunk(arr, size):
+def chunk(lst, size):
     return list(
-        map(lambda x: arr[x * size:x * size + size],
-            list(range(0, ceil(len(arr) / size)))))</pre>
+        map(lambda x: lst[x * size:x * size + size],
+            list(range(0, ceil(len(lst) / size)))))</pre>
 <label class="collapse">Show examples</label>
 <pre class="language-python">chunk([1,2,3,4,5],2) # [[1,2],[3,4],5]</pre>
 <button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
@@ -141,8 +136,8 @@ def chunk(arr, size):
 <p>Removes falsey values from a list.</p>
 <p>Use <code>filter()</code> to filter out falsey values (False, None, 0, and "").</p>
 
-<pre class="language-python">def compact(arr):
-    return list(filter(bool, arr))</pre>
+<pre class="language-python">def compact(lst):
+    return list(filter(bool, lst))</pre>
 <label class="collapse">Show examples</label>
 <pre class="language-python">compact([0, 1, False, 2, '', 3, 'a', 's', 34]) # [ 1, 2, 3, 'a', 's', 34 ]</pre>
 <button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
@@ -160,7 +155,7 @@ def chunk(arr, size):
 
 </div><div class="card fluid"><h3 id="deep_flatten" class="section double-padded">deep_flatten</h3><!--<form action="" method="post"><button type="submit" value="deep_flatten" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
 <p>Deep flattens a list.</p>
-<p>Use recursion. Use <code>list.extend()</code> with an empty array (<code>result</code>) and the spread function to flatten a list. Recursively flatten each element that is a list.</p>
+<p>Use recursion. Use <code>list.extend()</code> with an empty list (<code>result</code>) and the spread function to flatten a list. Recursively flatten each element that is a list.</p>
 
 <pre class="language-python">def spread(arg):
     ret = []
@@ -172,10 +167,10 @@ def chunk(arr, size):
     return ret
 
 
-def deep_flatten(arr):
+def deep_flatten(lst):
     result = []
     result.extend(
-        spread(list(map(lambda x: deep_flatten(x) if type(x) == list else x, arr))))
+        spread(list(map(lambda x: deep_flatten(x) if type(x) == list else x, lst))))
     return result</pre>
 <label class="collapse">Show examples</label>
 <pre class="language-python">deep_flatten([1, [2], [[3], 4], 5]) # [1,2,3,4,5]</pre>
@@ -200,14 +195,14 @@ def deep_flatten(arr):
 from random import randint
 
 
-def shuffle(arr):
-    temp_arr = deepcopy(arr)
-    m = len(temp_arr)
+def shuffle(lst):
+    temp_lst = deepcopy(lst)
+    m = len(temp_lst)
     while (m):
         m -= 1
         i = randint(0, m)
-        temp_arr[m], temp_arr[i] = temp_arr[i], temp_arr[m]
-    return temp_arr</pre>
+        temp_lst[m], temp_lst[i] = temp_lst[i], temp_lst[m]
+    return temp_lst</pre>
 <label class="collapse">Show examples</label>
 <pre class="language-python">foo = [1,2,3]
 shuffle(foo) # [2,3,1] , foo = [1,2,3]</pre>
@@ -234,7 +229,7 @@ shuffle(foo) # [2,3,1] , foo = [1,2,3]</pre>
 <p>Use <code>max</code> combined with <code>list comprehension</code> to get the length of the longest list in the arguments. Loops for <code>max_length</code> times grouping elements. If lengths of <code>lists</code> vary <code>fill_value</code> is used. By default <code>fill_value</code> is <code>None</code>.</p>
 
 <pre class="language-python">def zip(*args, fillvalue=None):
-    max_length = max([len(arr) for arr in args])
+    max_length = max([len(lst) for lst in args])
     result = []
     for i in range(max_length):
         result.append([
@@ -280,19 +275,19 @@ difference_by([{ 'x': 2 }, { 'x': 1 }], [{ 'x': 1 }], lambda v : v['x']) # [ { x
 </div><div class="card fluid"><h3 id="insertion_sort" class="section double-padded">insertion_sort</h3><!--<form action="" method="post"><button type="submit" value="insertion_sort" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
 <p>On a very basic level, an insertion sort algorithm contains the logic of shifting around and inserting elements in order to sort an unordered list of any size. The way that it goes about inserting elements, however, is what makes insertion sort so very interesting!</p>
 
-<pre class="language-python">def insertion_sort(arr):
+<pre class="language-python">def insertion_sort(lst):
 
-    for i in range(1, len(arr)):
-        key = arr[i]
+    for i in range(1, len(lst)):
+        key = lst[i]
         j = i - 1
-        while j &gt;= 0 and key &lt; arr[j]:
-            arr[j + 1] = arr[j]
+        while j &gt;= 0 and key &lt; lst[j]:
+            lst[j + 1] = lst[j]
             j -= 1
-            arr[j + 1] = key</pre>
+            lst[j + 1] = key</pre>
 <label class="collapse">Show examples</label>
-<pre class="language-python">arr = [7,4,9,2,6,3]
-insertionsort(arr)
-print('Sorted %s'  %arr) # sorted [2, 3, 4, 6, 7, 9]</pre>
+<pre class="language-python">lst = [7,4,9,2,6,3]
+insertionsort(lst)
+print('Sorted %s'  %lst) # sorted [2, 3, 4, 6, 7, 9]</pre>
 <button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
 
 </div><h2 style="text-align:center">String</h2><div class="card fluid"><h3 id="count_vowels" class="section double-padded">count_vowels</h3><!--<form action="" method="post"><button type="submit" value="count_vowels" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
@@ -316,7 +311,7 @@ count_vowels('gym') # 0</pre>
 <pre class="language-python">def byte_size(string):
     return(len(string.encode('utf-8')))</pre>
 <label class="collapse">Show examples</label>
-<pre class="language-python">byte_size('ðŸ˜€') # 4
+<pre class="language-python">byte_size('😀') # 4
 byte_size('Hello World') # 11</pre>
 <button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
 
@@ -391,17 +386,17 @@ is_lower_case('Ab4') # False</pre>
 </div><h2 style="text-align:center"> list</h2><div class="card fluid"><h3 id="bubble_sort" class="section double-padded">bubble_sort</h3><!--<form action="" method="post"><button type="submit" value="bubble_sort" name="submit">Vote</button></form><p></p>--><div class="section double-padded">
 <p>Bubble_sort uses the technique of comparing and swapping</p>
 
-<pre class="language-python">def bubble_sort(arr):
-    for passnum in range(len(arr) - 1, 0, -1):
+<pre class="language-python">def bubble_sort(lst):
+    for passnum in range(len(lst) - 1, 0, -1):
         for i in range(passnum):
-            if arr[i] &gt; arr[i + 1]:
-                temp = arr[i]
-                arr[i] = arr[i + 1]
-                arr[i + 1] = temp</pre>
+            if lst[i] &gt; lst[i + 1]:
+                temp = lst[i]
+                lst[i] = lst[i + 1]
+                lst[i + 1] = temp</pre>
 <label class="collapse">Show examples</label>
-<pre class="language-python">arr = [54,26,93,17,77,31,44,55,20]
-bubble_sort(arr)
-print("sorted %s" %arr) # [17,20,26,31,44,54,55,77,91]</pre>
+<pre class="language-python">lst = [54,26,93,17,77,31,44,55,20]
+bubble_sort(lst)
+print("sorted %s" %lst) # [17,20,26,31,44,54,55,77,91]</pre>
 <button class="primary clipboard-copy">📋&nbsp;Copy to clipboard</button></div>
 
 </div><button class="scroll-to-top">↑</button>

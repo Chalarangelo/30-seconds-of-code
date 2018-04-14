@@ -1,2 +1,2 @@
-def is_lower_case(str):
-    return str == str.lower()
+def is_lower_case(string):
+    return string == string.lower()

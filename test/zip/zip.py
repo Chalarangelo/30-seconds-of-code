@@ -1,5 +1,5 @@
 def zip(*args, fillvalue=None):
-    max_length = max([len(arr) for arr in args])
+    max_length = max([len(lst) for lst in args])
     result = []
     for i in range(max_length):
         result.append([
