@@ -1,2 +1,2 @@
-def compact(arr):
-    return list(filter(lambda x: bool(x), arr))
+def compact(lst):
+    return list(filter(bool, lst))
