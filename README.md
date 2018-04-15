@@ -205,6 +205,7 @@ average(1, 2, 3);
 * [`hashBrowser`](#hashbrowser-)
 * [`hide`](#hide)
 * [`httpsRedirect`](#httpsredirect)
+* [`isBrowserTabFocused`](#isbrowsertabfocused)
 * [`observeMutations`](#observemutations-)
 * [`off`](#off)
 * [`on`](#on)
@@ -3329,6 +3330,28 @@ const httpsRedirect = () => {
 
 ```js
 httpsRedirect(); // If you are on http://mydomain.com, you are redirected to https://mydomain.com
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### isBrowserTabFocused
+
+Returns `true` if the browser tab of the page is focused, `false` otherwise.
+
+Use the `Document.hidden` property, introduced by the Page Visibility API to check if the browser tab of the page is visible or hidden.
+
+```js
+const isBrowserTabFocused = () => !document.hidden;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isBrowserTabFocused(); // true
 ```
 
 </details>
