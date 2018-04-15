@@ -18,6 +18,5 @@ ages = {
      "Isabel": 11,
      "Anna": 9,
 }
-keys_only(ages) # result
-['Peter', 'Isabel', 'Anna']
+keys_only(ages) # ['Peter', 'Isabel', 'Anna']
 ```

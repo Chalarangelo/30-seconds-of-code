@@ -11,6 +11,7 @@ def all_unique(lst):
 
 ``` python
 x = [1,2,3,4,5,6]
-all_unique(x) # result
-True
+y = [1,2,2,3,4,5]
+all_unique(x) # True
+all_unique(y) # False
 ```

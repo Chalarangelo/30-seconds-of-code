@@ -18,6 +18,5 @@ ages = {
      "Isabel": 11,
      "Anna": 9,
 }
-values_only(ages) # result
-[10, 11, 9]
+values_only(ages) # [10, 11, 9]
 ```
