@@ -14,11 +14,11 @@ test('Testing is', (t) => {
   t.true(is(Set, new Set()), `Works for sets`);
   t.true(is(WeakMap, new WeakMap()), `Works for weak maps`);
   t.true(is(WeakSet, new WeakSet()), `Works for weak sets`);
-  t.false(is(String, ''), `Works for strings - returns false for primitive`);
+  t.true(is(String, ''), `Works for strings - returns true for primitive`);
   t.true(is(String, new String('')), `Works for strings - returns true when using constructor`);
-  t.false(is(Number, 1), `Works for numbers - returns false for primitive`);
+  t.true(is(Number, 1), `Works for numbers - returns true for primitive`);
   t.true(is(Number, new Number('10')), `Works for numbers - returns true when using constructor`);
-  t.false(is(Boolean, false), `Works for booleans - returns false for primitive`);
+  t.true(is(Boolean, false), `Works for booleans - returns true for primitive`);
   t.true(is(Boolean, new Boolean(false)), `Works for booleans - returns true when using constructor`);
   t.true(is(Function, () => null), `Works for functions`);
   //t.deepEqual(is(args..), 'Expected');
