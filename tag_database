@@ -118,6 +118,7 @@ isAnagram:string,regexp
 isArrayLike:type,array
 isBoolean:type
 isBrowser:utility,browser
+isBrowserTabFocused:browser
 isDivisible:math
 isEmpty:type,array,object,string
 isEven:math
