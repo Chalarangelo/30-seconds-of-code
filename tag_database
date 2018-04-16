@@ -107,7 +107,7 @@ initialize2DArray:array
 initializeArrayWithRange:array,math
 initializeArrayWithRangeRight:array,math
 initializeArrayWithValues:array,math
-initializeNDArray:array
+initializeNDArray:array,recursion
 inRange:math
 intersection:array,math
 intersectionBy:array,function
