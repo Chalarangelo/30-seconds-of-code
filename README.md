@@ -132,6 +132,7 @@ average(1, 2, 3);
 * [`initializeArrayWithRange`](#initializearraywithrange)
 * [`initializeArrayWithRangeRight`](#initializearraywithrangeright)
 * [`initializeArrayWithValues`](#initializearraywithvalues)
+* [`initializeNDArray`](#initializendarray)
 * [`intersection`](#intersection)
 * [`intersectionBy`](#intersectionby)
 * [`intersectionWith`](#intersectionwith)
@@ -1519,6 +1520,33 @@ const initializeArrayWithValues = (n, val = 0) => Array(n).fill(val);
 
 ```js
 initializeArrayWithValues(5, 2); // [2,2,2,2,2]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### initializeNDArray
+
+Create a n-dimensional array with given value.
+
+Use recursion.
+Use `Array.map()` to generate rows where each is a new array initialized using `initializeNDArray`.
+
+```js
+const initializeNDArray = (val, ...args) =>
+  args.length === 0
+    ? val
+    : Array.from({ length: args[0] }).map(() => initializeNDArray(val, ...args.slice(1)));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+initializeNDArray(1, 3); // [1,1,1]
+initializeNDArray(5, 2, 2, 2); // [[[5,5],[5,5]],[[5,5],[5,5]]]
 ```
 
 </details>
