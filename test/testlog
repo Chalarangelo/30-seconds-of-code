@@ -1,4 +1,4 @@
-Test log for: Sun Apr 15 2018 20:54:30 GMT+0000 (UTC)
+Test log for: Mon Apr 16 2018 20:54:57 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.3 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -732,6 +732,10 @@ Test log for: Sun Apr 15 2018 20:54:30 GMT+0000 (UTC)
 
     ✔ initializeArrayWithValues is a Function
     ✔ Initializes and fills an array with the specified values
+
+  Testing initializeNDArray
+
+    ✔ initializeNDArray is a Function
 
   Testing intersection
 
@@ -1983,15 +1987,15 @@ Test log for: Sun Apr 15 2018 20:54:30 GMT+0000 (UTC)
 
     ✔ zipWith is a Function
     ✔ Sends a GET request
-    ✔ Sends a POST request
     ✔ Runs the function provided
     ✔ Runs promises in series
+    ✔ Sends a POST request
     ✔ Works as expecting, passing arguments properly
     ✔ Works with multiple promises
 
 
-  total:     1010
-  passing:   1010
+  total:     1011
+  passing:   1011
   duration:  2.4s
 
 
