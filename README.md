@@ -43,7 +43,7 @@ This project contains plenty of useful snippets which can help beginners and new
 <li><a href = "#min_n"><code>min_n</code></a></li>
 </ul></details>
 
-### card_file_box Object
+### :card_file_box: Object
 
 <details><summary>View contents</summary> <ul><li><a href = "#all_unique"><code>all_unique</code></a></li>
 <li><a href = "#keys_only"><code>keys_only</code></a></li>
@@ -601,7 +601,7 @@ min_n([1, 2, 3], 2) # [1,2]
 
 <br><a href = "#table-of-contents">:arrow_up: Back to top</a>
 
-## card_file_box Object
+## :card_file_box: Object
 
 ### all_unique 
 <span style="color:grey">Author:-</span> [Rob-Rychs](@Rob-Rychs) 
