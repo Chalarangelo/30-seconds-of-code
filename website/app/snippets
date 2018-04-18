@@ -1,8 +1,3 @@
-count_vowels
-byte_size
-capitalize
-capitalize_every_word
-decapitalize
-palindrome
-is_upper_case
-is_lower_case
+keys_only
+values_only
+all_unique
