@@ -1,13 +1,19 @@
 ![Logo](/icon.png)
 
-# 30-seconds-of-python-code [![Tweet](http://jpillora.com/github-twitter-button/img/tweet.png)](http://www.twitter.com/share?text=%2330secondsofcode+30-seconds-of-python-code+-+Python+Implementation+of+30+seconds+of+code%0Ahttps://github.com/kriadmin/30-seconds-of-python-code&url=a")
+# 30-seconds-of-python-code [![Tweet](https://jpillora.com/github-twitter-button/img/tweet.png)](http://www.twitter.com/share?text=%2330secondsofcode+30-seconds-of-python-code+-+Python+Implementation+of+30+seconds+of+code%0Ahttps://github.com/kriadmin/30-seconds-of-python-code&url=a")
 [![License](https://img.shields.io/aur/license/yaourt.svg)](https://github.com/kriadmin/30-seconds-of-python-code/blob/master/LICENSE)
-[![first-timers-only](http://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](http://www.firsttimersonly.com/) [![Gitter chat](https://img.shields.io/badge/chat-on%20gitter-4FB999.svg)](https://gitter.im/30-seconds-of-python-code/Lobby) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Travis Build](https://travis-ci.org/kriadmin/30-seconds-of-python-code.svg?branch=master)](https://travis-ci.org/kriadmin/30-seconds-of-python-code) [![Insight.io](https://img.shields.io/badge/insight.io-Ready-brightgreen.svg)](https://insight.io/github.com/kriadmin/30-seconds-of-python-code/tree/master/?source=0) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard)
+[![first-timers-only](https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](http://www.firsttimersonly.com/) [![Gitter chat](https://img.shields.io/badge/chat-on%20gitter-4FB999.svg)](https://gitter.im/30-seconds-of-python-code/Lobby) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Travis Build](https://travis-ci.org/kriadmin/30-seconds-of-python-code.svg?branch=master)](https://travis-ci.org/kriadmin/30-seconds-of-python-code) [![Insight.io](https://img.shields.io/badge/insight.io-Ready-brightgreen.svg)](https://insight.io/github.com/kriadmin/30-seconds-of-python-code/tree/master/?source=0) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkriadmin%2F30-seconds-of-python-code.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkriadmin%2F30-seconds-of-python-code?ref=badge_shield)
 
->Python implementation of 30-seconds-of-code.
+## Welcome to 30-seconds-of-🐍-code!
+
+>A Python implementation of 30-seconds-of-code.
 
 **Note**:- This is in no way affiliated with the original [30-seconds-of-code](https://github.com/Chalarangelo/30-seconds-of-code/).
+
+If you've come here from javascript land then you should be aware that this project uses `python 3`, therefore not all snippets will work as expected in every python interpreter or on system. You'll need to check your python version with the command `python -v`. If you need help installing the latest stable release of python 3 on your system checkout docs.python.org if you run into trouble make sure you research stackoverflow. Eventually it might be worth looking into how to set up a virtual environment for python projects with virtualenv or even a tool like anaconda.
+
+This project contains plenty of useful snippets which can help beginners and newcomers quickly ramp-up on grasping python 3's syntax.
 
 ### Table of contents
 ### :books: List
@@ -20,6 +26,7 @@
 <li><a href = "#deep_flatten"><code>deep_flatten</code></a></li>
 <li><a href = "#difference"><code>difference</code></a></li>
 <li><a href = "#difference_by"><code>difference_by</code></a></li>
+<li><a href = "#has_duplicates"><code>has_duplicates</code></a></li>
 <li><a href = "#insertion_sort"><code>insertion_sort</code></a></li>
 <li><a href = "#shuffle"><code>shuffle</code></a></li>
 <li><a href = "#spread"><code>spread</code></a></li>
@@ -34,6 +41,13 @@
 <li><a href = "#lcm"><code>lcm</code></a></li>
 <li><a href = "#max_n"><code>max_n</code></a></li>
 <li><a href = "#min_n"><code>min_n</code></a></li>
+</ul></details>
+
+### :card_file_box: Object
+
+<details><summary>View contents</summary> <ul><li><a href = "#all_unique"><code>all_unique</code></a></li>
+<li><a href = "#keys_only"><code>keys_only</code></a></li>
+<li><a href = "#values_only"><code>values_only</code></a></li>
 </ul></details>
 
 ### :scroll: String
@@ -256,6 +270,30 @@ difference_by([{ 'x': 2 }, { 'x': 1 }], [{ 'x': 1 }], lambda v : v['x']) # [ { x
 
 <br><a href = "#table-of-contents">:arrow_up: Back to top</a>
 
+### has_duplicates 
+<span style="color:grey">Author:-</span> [Rob-Rychs](@Rob-Rychs) 
+
+ <span style="color:grey">Contributors:-</span> [Rob-Rychs](@Rob-Rychs)
+
+Checks a flat list for duplicate values. Returns True if duplicate values exist and False if values are all unique.
+
+This function compares the length of the list with length of the set() of the list. set() removes duplicate values from the list.
+```py
+def has_duplicates(lst):
+    return len(lst) != len(set(lst))
+```
+<details><summary>View Examples</summary>
+
+```py
+x = [1,2,3,4,5,5]
+y = [1,2,3,4,5]
+has_duplicates(x) # True
+has_duplicates(y) # False
+```
+</details>
+
+<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
+
 ### insertion_sort 
 <span style="color:grey">Author:-</span> [Meet Zaveri](https://www.github.com/meetzaveri) 
 
@@ -385,7 +423,7 @@ zip(['a'], [1, 2], [True, False], fill_value = '_') # [['a', 1, True], ['_', 2, 
 
 Returns the average of two or more numbers.
 
-Takes the sum of all the `args` and divides it by `len(args)`. The second argument `0.0` in sum is to handle floating point division in `python2`.
+Takes the sum of all the `args` and divides it by `len(args)`. The second argument `0.0` in sum is to handle floating point division in `python3`.
 ```py
 def average(*args):
     return sum(args, 0.0) / len(args)
@@ -558,6 +596,90 @@ def min_n(lst, n=1):
 ```py
 min_n([1, 2, 3]) # [1]
 min_n([1, 2, 3], 2) # [1,2]
+```
+</details>
+
+<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
+
+## :card_file_box: Object
+
+### all_unique 
+<span style="color:grey">Author:-</span> [Rob-Rychs](@Rob-Rychs) 
+
+ <span style="color:grey">Contributors:-</span> [Rob-Rychs](@Rob-Rychs)
+
+Checks a flat list for all unique values. Returns True if list values are all unique and False if list values aren't all unique.
+
+This function compares the length of the list with length of the set() of the list. set() removes duplicate values from the list.
+```py
+def all_unique(lst):
+    return len(lst) == len(set(lst))
+```
+<details><summary>View Examples</summary>
+
+```py
+x = [1,2,3,4,5,6]
+y = [1,2,2,3,4,5]
+all_unique(x) # True
+all_unique(y) # False
+```
+</details>
+
+<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
+
+### keys_only 
+<span style="color:grey">Author:-</span> [Rob-Rychs](@Rob-Rychs) 
+
+ <span style="color:grey">Contributors:-</span> [Rob-Rychs](@Rob-Rychs)
+
+Function which accepts a dictionary of key value pairs and returns a new flat list of only the keys.
+
+Uses the .items() function with a for loop on the dictionary to track both the key and value and returns a new list by appending the keys to it. Best used on 1 level-deep key:value pair dictionaries (a flat dictionary) and not nested data-structures which are also commonly used with dictionaries. (a flat dictionary resembles a json and a flat list an array for javascript people).
+```py
+def keys_only(flat_dict):
+    lst = []
+    for k, v in flat_dict.items():
+        lst.append(k)
+    return lst
+```
+<details><summary>View Examples</summary>
+
+```py
+ages = {
+     "Peter": 10,
+     "Isabel": 11,
+     "Anna": 9,
+}
+keys_only(ages) # ['Peter', 'Isabel', 'Anna']
+```
+</details>
+
+<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
+
+### values_only 
+<span style="color:grey">Author:-</span> [Rob-Rychs](@Rob-Rychs) 
+
+ <span style="color:grey">Contributors:-</span> [Rob-Rychs](@Rob-Rychs)
+
+Function which accepts a dictionary of key value pairs and returns a new flat list of only the values.
+
+Uses the .items() function with a for loop on the dictionary to track both the key and value of the iteration and returns a new list by appending the values to it. Best used on 1 level-deep key:value pair dictionaries and not nested data-structures.
+```py
+def values_only(dict):
+    lst = []
+    for k, v in dict.items():
+        lst.append(v)
+    return lst
+```
+<details><summary>View Examples</summary>
+
+```py
+ages = {
+     "Peter": 10,
+     "Isabel": 11,
+     "Anna": 9,
+}
+values_only(ages) # [10, 11, 9]
 ```
 </details>
 
