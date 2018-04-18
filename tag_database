@@ -24,3 +24,7 @@ count_by:list
 difference_by:list
 insertion_sort:list
 bubble_sort:list
+has_duplicates:list
+keys_only:object
+values_only:object
+all_unique:object
