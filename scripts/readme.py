@@ -12,7 +12,7 @@ EMOJIS = {
   'math': ':heavy_division_sign:',
   'media': ':tv:',
   'node': ':package:',
-  'object': 'card_file_box',
+  'object': ':card_file_box:',
   'string': ':scroll:',
   'type': ':page_with_curl:',
   'utility': ':wrench:'
