@@ -288,6 +288,7 @@ URLJoin:string,utility,regexp
 UUIDGeneratorBrowser:browser,utility,random
 UUIDGeneratorNode:node,utility,random
 validateNumber:utility,math
+when:function
 without:array
 words:string,regexp
 xProd:array,math
