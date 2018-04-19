@@ -1,7 +1,7 @@
 ### when
 
 Tests a value, `x`, against a predicate function. If `true`, return `fn(x)`. Else, return `x`.
-`when(pred, whenTrue)` returns another function expecting `x` for better composability.
+`when(pred, whenTrue)` returns a function expecting `x` for better composability.
 
 ```js
 const when = (pred, whenTrue) => (x) => pred(x) ? whenTrue(x) : x;
