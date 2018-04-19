@@ -266,6 +266,7 @@ average(1, 2, 3);
 * [`times`](#times)
 * [`uncurry`](#uncurry)
 * [`unfold`](#unfold)
+* [`when`](#when)
 
 </details>
 
@@ -4687,6 +4688,30 @@ const unfold = (fn, seed) => {
 ```js
 var f = n => (n > 50 ? false : [-n, n + 10]);
 unfold(f, 10); // [-10, -20, -30, -40, -50]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### when
+
+Tests a value, `x`, against a predicate function. If `true`, return `fn(x)`. Else, return `x`. 
+
+Return a function expecting a single value, `x`, that returns the appropriate value based on `pred`.
+
+```js
+const when = (pred, whenTrue) => x => (pred(x) ? whenTrue(x) : x);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const doubleEvenNumbers = when(x => x % 2 === 0, x => x * 2);
+doubleEvenNumbers(2); // 4
+doubleEvenNumbers(1); // 1
 ```
 
 </details>

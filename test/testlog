@@ -1,4 +1,4 @@
-Test log for: Wed Apr 18 2018 20:55:18 GMT+0000 (UTC)
+Test log for: Tue Apr 24 2018 21:02:35 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.3 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1911,6 +1911,12 @@ Test log for: Wed Apr 18 2018 20:55:18 GMT+0000 (UTC)
     ✔ validateNumber(null) returns false
     ✔ validateNumber(123 * asd) returns false
 
+  Testing when
+
+    ✔ when is a Function
+    ✔ should be truthy
+    ✔ should be truthy
+
   Testing without
 
     ✔ without is a Function
@@ -1987,15 +1993,15 @@ Test log for: Wed Apr 18 2018 20:55:18 GMT+0000 (UTC)
 
     ✔ zipWith is a Function
     ✔ Sends a GET request
-    ✔ Sends a POST request
     ✔ Runs the function provided
+    ✔ Sends a POST request
     ✔ Runs promises in series
     ✔ Works as expecting, passing arguments properly
     ✔ Works with multiple promises
 
 
-  total:     1011
-  passing:   1011
-  duration:  2.3s
+  total:     1014
+  passing:   1014
+  duration:  2.4s
 
 
