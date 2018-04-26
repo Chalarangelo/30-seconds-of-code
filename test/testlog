@@ -1,6 +1,6 @@
-Test log for: Wed Apr 25 2018 21:00:18 GMT+0000 (UTC)
+Test log for: Thu Apr 26 2018 19:20:53 GMT+0200 (CEST)
 
-> 30-seconds-of-code@0.0.3 test /home/travis/build/Chalarangelo/30-seconds-of-code
+> 30-seconds-of-code@0.0.3 test /Users/stefanfejes/Projects/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
 
 
@@ -982,7 +982,7 @@ Test log for: Wed Apr 25 2018 21:00:18 GMT+0000 (UTC)
   Testing isTravisCI
 
     ✔ isTravisCI is a Function
-    ✔ Running on Travis, correctly evaluates
+    ✔ Not running on Travis, correctly evaluates
 
   Testing isTypedArray
 
@@ -1724,9 +1724,25 @@ Test log for: Wed Apr 25 2018 21:00:18 GMT+0000 (UTC)
   Testing toCurrency
 
     ✔ toCurrency is a Function
-    ✔ currency: Euro | currencyLangFormat: Local
+
+    ✖ currency: Euro | currencyLangFormat: Local
+    ---------------------------------------------
+      operator: equal
+      expected: '€ 123,456.79'
+      actual:   '€123,456.79'
+      at: Test.test (/Users/stefanfejes/Projects/30-seconds-of-code/test/toCurrency/toCurrency.test.js:8:5)
+      stack: |-
+
     ✔ currency: US Dollar | currencyLangFormat: English (United States)
-    ✔ currency: Japanese Yen | currencyLangFormat: Local
+
+    ✖ currency: Japanese Yen | currencyLangFormat: Local
+    -----------------------------------------------------
+      operator: equal
+      expected: 'JP¥ 322,342,436,423'
+      actual:   '¥322,342,436,423'
+      at: Test.test (/Users/stefanfejes/Projects/30-seconds-of-code/test/toCurrency/toCurrency.test.js:11:5)
+      stack: |-
+
 
   Testing toDecimalMark
 
@@ -1995,13 +2011,24 @@ Test log for: Wed Apr 25 2018 21:00:18 GMT+0000 (UTC)
     ✔ Sends a GET request
     ✔ Runs the function provided
     ✔ Runs promises in series
-    ✔ Works as expecting, passing arguments properly
     ✔ Sends a POST request
+    ✔ Works as expecting, passing arguments properly
     ✔ Works with multiple promises
 
 
+
+  Failed Tests: There were 2 failures
+
+    Testing toCurrency
+
+      ✖ currency: Euro | currencyLangFormat: Local
+      ✖ currency: Japanese Yen | currencyLangFormat: Local
+
+
   total:     1014
-  passing:   1014
-  duration:  2.3s
+  passing:   1012
+  failing:   2
+  duration:  2.4s
 
 
+undefined
