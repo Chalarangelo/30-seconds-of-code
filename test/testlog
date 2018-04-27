@@ -1,4 +1,4 @@
-Test log for: Thu Apr 26 2018 21:00:40 GMT+0000 (UTC)
+Test log for: Fri Apr 27 2018 21:01:40 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.3 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1446,6 +1446,12 @@ Test log for: Thu Apr 26 2018 21:00:40 GMT+0000 (UTC)
     ✔ reducedFilter is a Function
     ✔ Filter an array of objects based on a condition while also filtering out unspecified keys.
 
+  Testing reject
+
+    ✔ reject is a Function
+    ✔ should be equivalent
+    ✔ should be equivalent
+
   Testing remove
 
     ✔ remove is a Function
@@ -2000,8 +2006,8 @@ Test log for: Thu Apr 26 2018 21:00:40 GMT+0000 (UTC)
     ✔ Works with multiple promises
 
 
-  total:     1014
-  passing:   1014
+  total:     1017
+  passing:   1017
   duration:  2.5s
 
 
