@@ -214,6 +214,7 @@ redirect:browser,url
 reducedFilter:array
 reduceSuccessive:array,function
 reduceWhich:array,function
+reject:array
 remove:array
 removeNonASCII:string,regexp
 renameKeys:object
