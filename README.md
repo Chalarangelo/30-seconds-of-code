@@ -155,6 +155,7 @@ average(1, 2, 3);
 * [`reducedFilter`](#reducedfilter)
 * [`reduceSuccessive`](#reducesuccessive)
 * [`reduceWhich`](#reducewhich)
+* [`reject`](#reject)
 * [`remove`](#remove)
 * [`sample`](#sample)
 * [`sampleSize`](#samplesize)
@@ -2174,6 +2175,27 @@ reduceWhich(
   [{ name: 'Tom', age: 12 }, { name: 'Jack', age: 18 }, { name: 'Lucy', age: 9 }],
   (a, b) => a.age - b.age
 ); // {name: "Lucy", age: 9}
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### reject
+
+Takes a predicate and array, like `Array.filter()`, but only keeps `x` if `pred(x) === false`.
+
+```js
+const reject = (pred, array) => array.filter((...args) => !pred(...args));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+reject(x => x % 2 === 0, [1, 2, 3, 4, 5]); // [1, 3, 5]
+reject(word => word.length > 4, ['Apple', 'Pear', 'Kiwi', 'Banana']); // ['Pear', 'Kiwi']
 ```
 
 </details>
