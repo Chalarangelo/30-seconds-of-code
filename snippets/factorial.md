@@ -13,7 +13,9 @@ const factorial = n =>
     ? (() => {
         throw new TypeError('Negative numbers are not allowed!');
       })()
-    : n <= 1 ? 1 : n * factorial(n - 1);
+    : n <= 1
+      ? 1
+      : n * factorial(n - 1);
 ```
 
 ```js
