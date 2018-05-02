@@ -2,7 +2,7 @@
   "devDependencies": {
     "babel-preset-env": "^1.6.1",
     "chalk": "^2.3.0",
-    "fs-extra": "^4.0.2",
+    "fs-extra": "^6.0.0",
     "html-minifier": "^3.5.7",
     "jsdom": "^11.6.1",
     "markdown-it": "^8.4.0",
@@ -10,10 +10,10 @@
     "node-sass": "^4.7.2",
     "prettier": "^1.9.2",
     "prismjs": "^1.9.0",
-    "rollup": "^0.53.2",
+    "rollup": "^0.58.2",
     "rollup-plugin-babel": "^3.0.3",
-    "rollup-plugin-babel-minify": "^3.1.2",
-    "semistandard": "^11.0.0",
+    "rollup-plugin-babel-minify": "^4.0.0",
+    "semistandard": "^12.0.1",
     "tap-spec": "^4.1.1",
     "tape": "^4.8.0",
     "octicons": "^7.2.0"
