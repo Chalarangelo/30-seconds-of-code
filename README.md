@@ -1676,7 +1676,9 @@ const join = (arr, separator = ',', end = separator) =>
     (acc, val, i) =>
       i === arr.length - 2
         ? acc + val + end
-        : i === arr.length - 1 ? acc + val : acc + val + separator,
+        : i === arr.length - 1
+          ? acc + val
+          : acc + val + separator,
     ''
   );
 ```
@@ -3950,7 +3952,11 @@ Use the modulo operator (`%`) and conditional checks to transform an integer to 
 const getMeridiemSuffixOfInteger = num =>
   num === 0 || num === 24
     ? 12 + 'am'
-    : num === 12 ? 12 + 'pm' : num < 12 ? num % 12 + 'am' : num % 12 + 'pm';
+    : num === 12
+      ? 12 + 'pm'
+      : num < 12
+        ? num % 12 + 'am'
+        : num % 12 + 'pm';
 ```
 
 <details>
@@ -5009,7 +5015,9 @@ const factorial = n =>
     ? (() => {
         throw new TypeError('Negative numbers are not allowed!');
       })()
-    : n <= 1 ? 1 : n * factorial(n - 1);
+    : n <= 1
+      ? 1
+      : n * factorial(n - 1);
 ```
 
 <details>
@@ -6830,7 +6838,9 @@ const size = val =>
     ? val.length
     : val && typeof val === 'object'
       ? val.size || val.length || Object.keys(val).length
-      : typeof val === 'string' ? new Blob([val]).size : 0;
+      : typeof val === 'string'
+        ? new Blob([val]).size
+        : 0;
 ```
 
 <details>
