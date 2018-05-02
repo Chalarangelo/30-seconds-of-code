@@ -5,8 +5,12 @@ cache:
 node_js:
 - node
 before_install:
+- npm install -g npm@latest
+- npm install -g greenkeeper-lockfile@1
 - npm install -g semistandard
 - npm install -g prettier
+before_script:
+- greenkeeper-lockfile-update
 script:
 - npm run tagger
 - npm run linter
@@ -14,6 +18,8 @@ script:
 - npm run builder
 - npm run packager
 - npm run tester
+after_script:
+- greenkeeper-lockfile-upload
 after_success:
 - chmod +x .travis/push.sh
 - .travis/push.sh

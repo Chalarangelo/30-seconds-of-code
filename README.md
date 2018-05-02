@@ -2,9 +2,7 @@
 
 # 30 seconds of code
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/Chalarangelo/30-seconds-of-code.svg)](https://greenkeeper.io/)
-
-[![License](https://img.shields.io/badge/license-CC0--1.0-blue.svg)](https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE) [![npm Downloads](https://img.shields.io/npm/dt/30-seconds-of-code.svg)](https://www.npmjs.com/package/30-seconds-of-code) [![npm Version](https://img.shields.io/npm/v/30-seconds-of-code.svg)](https://www.npmjs.com/package/30-seconds-of-code) [![Gitter chat](https://img.shields.io/badge/chat-on%20gitter-4FB999.svg)](https://gitter.im/30-seconds-of-code/Lobby) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Travis Build](https://travis-ci.org/Chalarangelo/30-seconds-of-code.svg?branch=master)](https://travis-ci.org/Chalarangelo/30-seconds-of-code) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/207ea6fa2c204ccda61dc3047986e144)](https://www.codacy.com/app/Chalarangelo/30-seconds-of-code?utm_source=github.com&utm_medium=referral&utm_content=Chalarangelo/30-seconds-of-code&utm_campaign=badger) [![Maintainability](https://api.codeclimate.com/v1/badges/e9020d1c963a91c0c8a2/maintainability)](https://codeclimate.com/github/Chalarangelo/30-seconds-of-code/maintainability)  [![Insight.io](https://img.shields.io/badge/insight.io-Ready-brightgreen.svg)](https://insight.io/github.com/Chalarangelo/30-seconds-of-code/tree/master/?source=0) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard) [![ProductHunt](https://img.shields.io/badge/producthunt-vote-orange.svg)](https://www.producthunt.com/posts/30-seconds-of-code)
+[![License](https://img.shields.io/badge/license-CC0--1.0-blue.svg)](https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE) [![npm Downloads](https://img.shields.io/npm/dt/30-seconds-of-code.svg)](https://www.npmjs.com/package/30-seconds-of-code) [![npm Version](https://img.shields.io/npm/v/30-seconds-of-code.svg)](https://www.npmjs.com/package/30-seconds-of-code) [![Gitter chat](https://img.shields.io/badge/chat-on%20gitter-4FB999.svg)](https://gitter.im/30-seconds-of-code/Lobby) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Travis Build](https://travis-ci.org/Chalarangelo/30-seconds-of-code.svg?branch=master)](https://travis-ci.org/Chalarangelo/30-seconds-of-code) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/207ea6fa2c204ccda61dc3047986e144)](https://www.codacy.com/app/Chalarangelo/30-seconds-of-code?utm_source=github.com&utm_medium=referral&utm_content=Chalarangelo/30-seconds-of-code&utm_campaign=badger) [![Maintainability](https://api.codeclimate.com/v1/badges/e9020d1c963a91c0c8a2/maintainability)](https://codeclimate.com/github/Chalarangelo/30-seconds-of-code/maintainability)  [![Insight.io](https://img.shields.io/badge/insight.io-Ready-brightgreen.svg)](https://insight.io/github.com/Chalarangelo/30-seconds-of-code/tree/master/?source=0) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard) [![ProductHunt](https://img.shields.io/badge/producthunt-vote-orange.svg)](https://www.producthunt.com/posts/30-seconds-of-code) [![Greenkeeper badge](https://badges.greenkeeper.io/Chalarangelo/30-seconds-of-code.svg)](https://greenkeeper.io/)
 
 
 > Curated collection of useful JavaScript snippets that you can understand in 30 seconds or less.
@@ -2458,10 +2456,10 @@ sortedLastIndexBy([{ x: 4 }, { x: 5 }], { x: 4 }, o => o.x); // 1
 
 ### stableSort ![advanced](/advanced.svg)
 
-Performs stable sorting of an array, preserving the initial indexes of items when their values are the same. 
+Performs stable sorting of an array, preserving the initial indexes of items when their values are the same.
 Does not mutate the original array, but returns a new array instead.
 
-Use `Array.map()` to pair each element of the input array with its corresponding index. 
+Use `Array.map()` to pair each element of the input array with its corresponding index.
 Use `Array.sort()` and a `compare` function to sort the list, preserving their initial order if the items compared are equal.
 Use `Array.map()` to convert back to the initial array items.
 
@@ -3553,7 +3551,7 @@ onUserInputChange(type => {
 
 Returns the prefixed version (if necessary) of a CSS property that the browser supports.
 
-Use `Array.findIndex()` on an array of vendor prefix strings to test if `document.body` has one of them defined in its `CSSStyleDeclaration` object, otherwise return `null`. 
+Use `Array.findIndex()` on an array of vendor prefix strings to test if `document.body` has one of them defined in its `CSSStyleDeclaration` object, otherwise return `null`.
 Use `String.charAt()` and `String.toUpperCase()` to capitalize the property, which will be appended to the vendor prefix string.
 
 ```js
@@ -3583,9 +3581,9 @@ prefix('appearance'); // 'appearance' on a supported browser, otherwise 'webkitA
 
 Invokes the provided callback on each animation frame.
 
-Use recursion. 
-Provided that `running` is `true`, continue invoking `window.requestAnimationFrame()` which invokes the provided callback. 
-Return an object with two methods `start` and `stop` to allow manual control of the recording. 
+Use recursion.
+Provided that `running` is `true`, continue invoking `window.requestAnimationFrame()` which invokes the provided callback.
+Return an object with two methods `start` and `stop` to allow manual control of the recording.
 Omit the second argument, `autoStart`, to implicitly call `start` when the function is invoked.
 
 ```js
@@ -3785,7 +3783,7 @@ show(...document.querySelectorAll('img')); // Shows all <img> elements on the pa
 
 Smoothly scrolls the element on which it's called into the visible area of the browser window.
 
-Use `.scrollIntoView` method to scroll the element. 
+Use `.scrollIntoView` method to scroll the element.
 Pass `{ behavior: 'smooth' }` to `.scrollIntoView` so it scrolls smoothly.
 
 ```js
@@ -4351,11 +4349,11 @@ functionName(Math.max); // max (logged in debug channel of console)
 
 ### hz
 
-Returns the number of times a function executed per second. 
+Returns the number of times a function executed per second.
 `hz` is the unit for `hertz`, the unit of frequency defined as one cycle per second.
 
-Use `performance.now()` to get the difference in milliseconds before and after the iteration loop to calculate the time elapsed executing the function `iterations` times. 
-Return the number of cycles per second by converting milliseconds to seconds and dividing it by the time elapsed. 
+Use `performance.now()` to get the difference in milliseconds before and after the iteration loop to calculate the time elapsed executing the function `iterations` times.
+Return the number of cycles per second by converting milliseconds to seconds and dividing it by the time elapsed.
 Omit the second argument, `iterations`, to use the default of 100 iterations.
 
 ```js
@@ -4721,7 +4719,7 @@ unfold(f, 10); // [-10, -20, -30, -40, -50]
 
 ### when
 
-Tests a value, `x`, against a predicate function. If `true`, return `fn(x)`. Else, return `x`. 
+Tests a value, `x`, against a predicate function. If `true`, return `fn(x)`. Else, return `x`.
 
 Return a function expecting a single value, `x`, that returns the appropriate value based on `pred`.
 
@@ -6549,9 +6547,9 @@ merge(object, other); // { a: [ { x: 2 }, { y: 4 }, { z: 3 } ], b: [ 1, 2, 3 ], 
 Given a flat array of objects linked to one another, it will nest them recursively.
 Useful for nesting comments, such as the ones on reddit.com.
 
-Use recursion. 
-Use `Array.filter()` to filter the items where the `id` matches the `link`, then `Array.map()` to map each one to a new object that has a `children` property which recursively nests the items based on which ones are children of the current item. 
-Omit the second argument, `id`, to default to `null` which indicates the object is not linked to another one (i.e. it is a top level object). 
+Use recursion.
+Use `Array.filter()` to filter the items where the `id` matches the `link`, then `Array.map()` to map each one to a new object that has a `children` property which recursively nests the items based on which ones are children of the current item.
+Omit the second argument, `id`, to default to `null` which indicates the object is not linked to another one (i.e. it is a top level object).
 Omit the third argument, `link`, to use `'parent_id'` as the default property which links the object to another one by its `id`.
 
 ```js
@@ -8459,8 +8457,8 @@ Logs: {
 
 Determines if the current runtime environment is a browser so that front-end modules can run on the server (Node) without throwing errors.
 
-Use `Array.includes()` on the `typeof` values of both `window` and `document` (globals usually only available in a browser environment unless they were explicitly defined), which will return `true` if one of them is `undefined`. 
-`typeof` allows globals to be checked for existence without throwing a `ReferenceError`. 
+Use `Array.includes()` on the `typeof` values of both `window` and `document` (globals usually only available in a browser environment unless they were explicitly defined), which will return `true` if one of them is `undefined`.
+`typeof` allows globals to be checked for existence without throwing a `ReferenceError`.
 If both of them are not `undefined`, then the current environment is assumed to be a browser.
 
 ```js
@@ -8485,7 +8483,7 @@ isBrowser(); // false (Node)
 Returns the index of the function in an array of functions which executed the fastest.
 
 Use `Array.map()` to generate an array where each value is the total time taken to execute the function after `iterations` times. Use the difference in `performance.now()` values before and after to get the total time in milliseconds to a high degree of accuracy.
-Use `Math.min()` to find the minimum execution time, and return the index of that shortest time which corresponds to the index of the most performant function. 
+Use `Math.min()` to find the minimum execution time, and return the index of that shortest time which corresponds to the index of the most performant function.
 Omit the second argument, `iterations`, to use a default of 10,000 iterations. The more iterations, the more reliable the result but the longer it will take.
 
 ```js
@@ -8848,4 +8846,3 @@ yesNo('Foo', true); // true
 ## Credits
 
 *Icons made by [Smashicons](https://www.flaticon.com/authors/smashicons) from [www.flaticon.com](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).*
-
