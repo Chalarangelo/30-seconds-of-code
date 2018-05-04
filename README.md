@@ -2994,7 +2994,8 @@ Use `Array.map()` and `document.querySelector()` to create a list of html tags.
 
 ```js
 const arrayToHtmlList = (arr, listID) =>
-  (el => (el = document.querySelector('#' + listID), el.innerHTML += arr.map(item => `<li>${item}</li>`).join('')))();
+  (el => (el = document.querySelector('#' + listID),
+    el.innerHTML += arr.map(item => `<li>${item}</li>`).join('')))();
 ```
 
 <details>
