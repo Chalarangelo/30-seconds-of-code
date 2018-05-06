@@ -165,6 +165,7 @@ minN:array,math
 mostPerformant:utility,function
 negate:function
 nest:object
+nodeListToArray:browser,array
 none:array,function
 nthArg:utility,function
 nthElement:array

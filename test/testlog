@@ -1,4 +1,4 @@
-Test log for: Sun May 06 2018 17:55:09 GMT+0300 (GTB Daylight Time)
+Test log for: Sun May 06 2018 18:11:06 GMT+0300 (GTB Daylight Time)
 
 > 30-seconds-of-code@0.0.3 test H:\My Files\git Repositories\30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1135,6 +1135,10 @@ Test log for: Sun May 06 2018 17:55:09 GMT+0300 (GTB Daylight Time)
 
     √ nest is a Function
 
+  Testing nodeListToArray
+
+    √ nodeListToArray is a Function
+
   Testing none
 
     √ none is a Function
@@ -2002,16 +2006,16 @@ Test log for: Sun May 06 2018 17:55:09 GMT+0300 (GTB Daylight Time)
   Testing zipWith
 
     √ zipWith is a Function
-    √ Runs the function provided
     √ Sends a GET request
+    √ Runs the function provided
     √ Runs promises in series
     √ Sends a POST request
     √ Works as expecting, passing arguments properly
     √ Works with multiple promises
 
 
-  total:     1018
-  passing:   1018
-  duration:  2.7s
+  total:     1019
+  passing:   1019
+  duration:  2.5s
 
 
