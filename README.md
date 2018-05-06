@@ -209,6 +209,7 @@ average(1, 2, 3);
 * [`hide`](#hide)
 * [`httpsRedirect`](#httpsredirect)
 * [`isBrowserTabFocused`](#isbrowsertabfocused)
+* [`nodeListToArray`](#nodelisttoarray)
 * [`observeMutations`](#observemutations-)
 * [`off`](#off)
 * [`on`](#on)
@@ -3442,6 +3443,28 @@ const isBrowserTabFocused = () => !document.hidden;
 
 ```js
 isBrowserTabFocused(); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### nodeListToArray
+
+Converts a `NodeList` to an array.
+
+Use `Array.prototype.slice()` and `Function.prototype.call()` to convert a `NodeList` to an array.
+
+```js
+const nodeListToArray = nodeList => Array.prototype.slice.call(nodeList);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+nodeListToArray(document.childNodes); // [ <!DOCTYPE html>, html ]
 ```
 
 </details>
