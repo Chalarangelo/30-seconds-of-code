@@ -34,7 +34,6 @@ composeRight:function
 converge:function
 copyToClipboard:browser,string,advanced
 countBy:array,object
-counter:browser,advanced
 countOccurrences:array
 createElement:browser,utility
 createEventHub:browser,event,advanced
