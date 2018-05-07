@@ -1,3 +1,6 @@
 const arrayToHtmlList = (arr, listID) =>
-arr.map(item => (document.querySelector('#' + listID).innerHTML += `<li>${item}</li>`));
+(el => (
+(el = document.querySelector('#' + listID)),
+(el.innerHTML += arr.map(item => `<li>${item}</li>`).join(''))
+))();
 module.exports = arrayToHtmlList;
