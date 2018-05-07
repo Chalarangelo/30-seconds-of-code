@@ -2,7 +2,7 @@
 
 Converts the given array elements into `<li>` tags and appends them to the list of the given id.
 
-Use `Array.map()` and `document.querySelector()` to create a list of html tags.
+Use `Array.map()` , `document.querySelector()` and an anonymous inner closure that is self executed to declare a variable in a local context to create a list of html tags.
 
 ```js
  const arrayToHtmlList = (arr, listID) =>
