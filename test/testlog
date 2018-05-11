@@ -1,4 +1,4 @@
-Test log for: Thu May 10 2018 21:06:46 GMT+0000 (UTC)
+Test log for: Mon May 14 2018 21:09:17 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.3 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -335,6 +335,8 @@ Test log for: Thu May 10 2018 21:06:46 GMT+0000 (UTC)
     ✔ deepClone is a Function
     ✔ Shallow cloning works
     ✔ Deep cloning works
+    ✔ Array shallow cloning works
+    ✔ Array deep cloning works
 
   Testing deepFlatten
 
@@ -2006,16 +2008,16 @@ Test log for: Thu May 10 2018 21:06:46 GMT+0000 (UTC)
   Testing zipWith
 
     ✔ zipWith is a Function
-    ✔ Sends a GET request
     ✔ Runs the function provided
-    ✔ Sends a POST request
     ✔ Runs promises in series
+    ✔ Sends a POST request
     ✔ Works as expecting, passing arguments properly
+    ✔ Sends a GET request
     ✔ Works with multiple promises
 
 
-  total:     1019
-  passing:   1019
-  duration:  2.3s
+  total:     1021
+  passing:   1021
+  duration:  2.4s
 
 

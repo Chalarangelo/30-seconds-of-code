@@ -1231,10 +1231,10 @@ filterNonUnique([1, 2, 2, 3, 4, 4, 5]); // [1,3,5]
 
 Returns the last element for which the provided function returns a truthy value.
 
-Use `Array.filter()` to remove elements for which `fn` returns falsey values, `Array.slice(-1)` to get the last one.
+Use `Array.filter()` to remove elements for which `fn` returns falsey values, `Array.pop()` to get the last one.
 
 ```js
-const findLast = (arr, fn) => arr.filter(fn).slice(-1)[0];
+const findLast = (arr, fn) => arr.filter(fn).pop();
 ```
 
 <details>
