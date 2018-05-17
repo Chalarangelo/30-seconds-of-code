@@ -1,5 +1,5 @@
 const takeWhile = (arr, func) => {
-for (let i of arr.keys()) if (func(arr[i])) return arr.slice(0, i);
+for (const [i, val] of arr.entries()) if (func(val)) return arr.slice(0, i);
 return arr;
 };
 module.exports = takeWhile;
