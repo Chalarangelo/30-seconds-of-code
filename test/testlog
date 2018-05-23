@@ -1,4 +1,4 @@
-Test log for: Tue May 22 2018 21:12:52 GMT+0000 (UTC)
+Test log for: Tue May 29 2018 21:17:53 GMT+0000 (UTC)
 
 > 30-seconds-of-code@0.0.3 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -1740,9 +1740,25 @@ Test log for: Tue May 22 2018 21:12:52 GMT+0000 (UTC)
   Testing toCurrency
 
     ✔ toCurrency is a Function
-    ✔ currency: Euro | currencyLangFormat: Local
+
+    ✖ currency: Euro | currencyLangFormat: Local
+    ---------------------------------------------
+      operator: equal
+      expected: '€ 123,456.79'
+      actual:   '€123,456.79'
+      at: Test.test (/home/travis/build/Chalarangelo/30-seconds-of-code/test/toCurrency/toCurrency.test.js:8:5)
+      stack: |-
+
     ✔ currency: US Dollar | currencyLangFormat: English (United States)
-    ✔ currency: Japanese Yen | currencyLangFormat: Local
+
+    ✖ currency: Japanese Yen | currencyLangFormat: Local
+    -----------------------------------------------------
+      operator: equal
+      expected: 'JP¥ 322,342,436,423'
+      actual:   '¥322,342,436,423'
+      at: Test.test (/home/travis/build/Chalarangelo/30-seconds-of-code/test/toCurrency/toCurrency.test.js:11:5)
+      stack: |-
+
 
   Testing toDecimalMark
 
@@ -2016,8 +2032,19 @@ Test log for: Tue May 22 2018 21:12:52 GMT+0000 (UTC)
     ✔ Works with multiple promises
 
 
+
+  Failed Tests: There were 2 failures
+
+    Testing toCurrency
+
+      ✖ currency: Euro | currencyLangFormat: Local
+      ✖ currency: Japanese Yen | currencyLangFormat: Local
+
+
   total:     1021
-  passing:   1021
-  duration:  2.5s
+  passing:   1019
+  failing:   2
+  duration:  2.4s
 
 
+undefined
