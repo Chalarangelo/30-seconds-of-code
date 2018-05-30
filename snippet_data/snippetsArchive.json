@@ -5,16 +5,16 @@
       "type": "snippet",
       "attributes": {
         "fileName": "binarySearch.md",
-        "text": "Use recursion. Similar to `Array.indexOf()` that finds the index of a value within an array.\r\nThe difference being this operation only works with sorted arrays which offers a major performance boost due to it's logarithmic nature when compared to a linear search or `Array.indexOf()`.\r\n\r\nSearch a sorted array by repeatedly dividing the search interval in half.\r\nBegin with an interval covering the whole array.\r\nIf the value of the search is less than the item in the middle of the interval, recurse into the lower half. Otherwise recurse into the upper half.\r\nRepeatedly recurse until the value is found which is the mid or you've recursed to a point that is greater than the length which means the value doesn't exist and return `-1`.",
+        "text": "Use recursion. Similar to `Array.indexOf()` that finds the index of a value within an array.\nThe difference being this operation only works with sorted arrays which offers a major performance boost due to it's logarithmic nature when compared to a linear search or `Array.indexOf()`.\n\nSearch a sorted array by repeatedly dividing the search interval in half.\nBegin with an interval covering the whole array.\nIf the value of the search is less than the item in the middle of the interval, recurse into the lower half. Otherwise recurse into the upper half.\nRepeatedly recurse until the value is found which is the mid or you've recursed to a point that is greater than the length which means the value doesn't exist and return `-1`.",
         "codeBlocks": [
-          "const binarySearch = (arr, val, start = 0, end = arr.length - 1) => {\r\n  if (start > end) return -1;\r\n  const mid = Math.floor((start + end) / 2);\r\n  if (arr[mid] > val) return binarySearch(arr, val, start, mid - 1);\r\n  if (arr[mid] < val) return binarySearch(arr, val, mid + 1, end);\r\n  return mid;\r\n};",
-          "binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 6); // 2\r\nbinarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 21); // -1"
+          "const binarySearch = (arr, val, start = 0, end = arr.length - 1) => {\n  if (start > end) return -1;\n  const mid = Math.floor((start + end) / 2);\n  if (arr[mid] > val) return binarySearch(arr, val, start, mid - 1);\n  if (arr[mid] < val) return binarySearch(arr, val, mid + 1, end);\n  return mid;\n};",
+          "binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 6); // 2\nbinarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 21); // -1"
         ],
         "tags": []
       },
       "meta": {
         "archived": true,
-        "hash": "fd5edfe1f6470f29d6bf41aada1e630de7c19b51e38973468c2a467f419cb08c"
+        "hash": "2e9aff504a7716c4b49b30702ee3b922c707fac70efc099422ae5ba5a7d0e009"
       }
     },
     {
@@ -22,16 +22,16 @@
       "type": "snippet",
       "attributes": {
         "fileName": "cleanObj.md",
-        "text": "Removes any properties except the ones specified from a JSON object.\r\n\r\nUse `Object.keys()` method to loop over given JSON object and deleting keys that are not included in given array.\r\nIf you pass a special key,`childIndicator`, it will search deeply apply the function to inner objects, too.",
+        "text": "Removes any properties except the ones specified from a JSON object.\n\nUse `Object.keys()` method to loop over given JSON object and deleting keys that are not included in given array.\nIf you pass a special key,`childIndicator`, it will search deeply apply the function to inner objects, too.",
         "codeBlocks": [
-          "const cleanObj = (obj, keysToKeep = [], childIndicator) => {\r\n  Object.keys(obj).forEach(key => {\r\n    if (key === childIndicator) {\r\n      cleanObj(obj[key], keysToKeep, childIndicator);\r\n    } else if (!keysToKeep.includes(key)) {\r\n      delete obj[key];\r\n    }\r\n  });\r\n  return obj;\r\n};",
-          "const testObj = { a: 1, b: 2, children: { a: 1, b: 2 } };\r\ncleanObj(testObj, ['a'], 'children'); // { a: 1, children : { a: 1}}"
+          "const cleanObj = (obj, keysToKeep = [], childIndicator) => {\n  Object.keys(obj).forEach(key => {\n    if (key === childIndicator) {\n      cleanObj(obj[key], keysToKeep, childIndicator);\n    } else if (!keysToKeep.includes(key)) {\n      delete obj[key];\n    }\n  });\n  return obj;\n};",
+          "const testObj = { a: 1, b: 2, children: { a: 1, b: 2 } };\ncleanObj(testObj, ['a'], 'children'); // { a: 1, children : { a: 1}}"
         ],
         "tags": []
       },
       "meta": {
         "archived": true,
-        "hash": "66cf60e71546519e93d751ce363a10f755997faa792394e84e9f60c56d843f24"
+        "hash": "ec33abb9423c49520400becb5183d87b37bbf6eb60012673c8df5a0a672a6af0"
       }
     },
     {
@@ -39,7 +39,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "collatz.md",
-        "text": "Applies the Collatz algorithm.\r\n\r\nIf `n` is even, return `n/2`. Otherwise, return `3n+1`.",
+        "text": "Applies the Collatz algorithm.\n\nIf `n` is even, return `n/2`. Otherwise, return `3n+1`.",
         "codeBlocks": [
           "const collatz = n => (n % 2 === 0 ? n / 2 : 3 * n + 1);",
           "collatz(8); // 4"
@@ -48,7 +48,7 @@
       },
       "meta": {
         "archived": true,
-        "hash": "df0a454dda6ddcb7eba46db54ed886f2f7bfbf71560aa401ea41249b64107a2a"
+        "hash": "650c91d557244ee0e3f64a00d457d63b47271aa0b963728bfc37dc5c3c88c67e"
       }
     },
     {
@@ -56,16 +56,16 @@
       "type": "snippet",
       "attributes": {
         "fileName": "countVowels.md",
-        "text": "Retuns `number` of vowels in provided string.\r\n\r\nUse a regular expression to count the number of vowels `(A, E, I, O, U)` in a `string`.",
+        "text": "Retuns `number` of vowels in provided string.\n\nUse a regular expression to count the number of vowels `(A, E, I, O, U)` in a `string`.",
         "codeBlocks": [
           "const countVowels = str => (str.match(/[aeiou]/gi) || []).length;",
-          "countVowels('foobar'); // 3\r\ncountVowels('gym'); // 0"
+          "countVowels('foobar'); // 3\ncountVowels('gym'); // 0"
         ],
         "tags": []
       },
       "meta": {
         "archived": true,
-        "hash": "18385086893ea0a1374288df5111493894047a9c72b12be4bba515da2b4e5dd0"
+        "hash": "333c7a72864d3249f1f409dee1f23214ec47701a54d561a69078e0092137fa4c"
       }
     },
     {
@@ -73,16 +73,16 @@
       "type": "snippet",
       "attributes": {
         "fileName": "factors.md",
-        "text": "Returns the array of factors of the given `num`. \r\nIf the second argument is set to `true` returns only the prime factors of `num`.\r\nIf `num` is `1` or `0` returns an empty array.\r\nIf `num` is less than `0` returns all the factors of `-int` together with their additive inverses.\r\n\r\nUse `Array.from()`, `Array.map()` and `Array.filter()` to find all the factors of `num`.\r\nIf given `num` is negative, use `Array.reduce()` to add the additive inverses to the array.\r\nReturn all results if `primes` is `false`, else determine and return only the prime factors using `isPrime` and `Array.filter()`.\r\nOmit the second argument, `primes`, to return prime and non-prime factors by default.\r\n\r\n**Note**:- _Negative numbers are not considered prime._",
+        "text": "Returns the array of factors of the given `num`. \nIf the second argument is set to `true` returns only the prime factors of `num`.\nIf `num` is `1` or `0` returns an empty array.\nIf `num` is less than `0` returns all the factors of `-int` together with their additive inverses.\n\nUse `Array.from()`, `Array.map()` and `Array.filter()` to find all the factors of `num`.\nIf given `num` is negative, use `Array.reduce()` to add the additive inverses to the array.\nReturn all results if `primes` is `false`, else determine and return only the prime factors using `isPrime` and `Array.filter()`.\nOmit the second argument, `primes`, to return prime and non-prime factors by default.\n\n**Note**:- _Negative numbers are not considered prime._",
         "codeBlocks": [
-          "const factors = (num, primes = false) => {\r\n  const isPrime = num => {\r\n    const boundary = Math.floor(Math.sqrt(num));\r\n    for (var i = 2; i <= boundary; i++) if (num % i === 0) return false;\r\n    return num >= 2;\r\n  };\r\n  const isNeg = num < 0;\r\n  num = isNeg ? -num : num;\r\n  let array = Array.from({ length: num - 1 })\r\n    .map((val, i) => (num % (i + 2) === 0 ? i + 2 : false))\r\n    .filter(val => val);\r\n  if (isNeg)\r\n    array = array.reduce((acc, val) => {\r\n      acc.push(val);\r\n      acc.push(-val);\r\n      return acc;\r\n    }, []);\r\n  return primes ? array.filter(isPrime) : array;\r\n};",
-          "factors(12); // [2,3,4,6,12]\r\nfactors(12, true); // [2,3]\r\nfactors(-12); // [2, -2, 3, -3, 4, -4, 6, -6, 12, -12]\r\nfactors(-12, true); // [2,3]"
+          "const factors = (num, primes = false) => {\n  const isPrime = num => {\n    const boundary = Math.floor(Math.sqrt(num));\n    for (var i = 2; i <= boundary; i++) if (num % i === 0) return false;\n    return num >= 2;\n  };\n  const isNeg = num < 0;\n  num = isNeg ? -num : num;\n  let array = Array.from({ length: num - 1 })\n    .map((val, i) => (num % (i + 2) === 0 ? i + 2 : false))\n    .filter(val => val);\n  if (isNeg)\n    array = array.reduce((acc, val) => {\n      acc.push(val);\n      acc.push(-val);\n      return acc;\n    }, []);\n  return primes ? array.filter(isPrime) : array;\n};",
+          "factors(12); // [2,3,4,6,12]\nfactors(12, true); // [2,3]\nfactors(-12); // [2, -2, 3, -3, 4, -4, 6, -6, 12, -12]\nfactors(-12, true); // [2,3]"
         ],
         "tags": []
       },
       "meta": {
         "archived": true,
-        "hash": "1a1d3fc1378fe445abdda3c546f72571cdd860bd49f69ecdeeac22c69ce62830"
+        "hash": "dcef8352bcfcbbd210467de2541b2d3b55c9c06b207c1253cf44ae8ea865559b"
       }
     },
     {
@@ -90,16 +90,16 @@
       "type": "snippet",
       "attributes": {
         "fileName": "fibonacciCountUntilNum.md",
-        "text": "Returns the number of fibonnacci numbers up to `num`(`0` and `num` inclusive).\r\n\r\nUse a mathematical formula to calculate the number of fibonacci numbers until `num`.",
+        "text": "Returns the number of fibonnacci numbers up to `num`(`0` and `num` inclusive).\n\nUse a mathematical formula to calculate the number of fibonacci numbers until `num`.",
         "codeBlocks": [
-          "const fibonacciCountUntilNum = num =>\r\n  Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));",
+          "const fibonacciCountUntilNum = num =>\n  Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));",
           "fibonacciCountUntilNum(10); // 7"
         ],
         "tags": []
       },
       "meta": {
         "archived": true,
-        "hash": "a905797a88f8f9a83aeee8150e13da9c0ea1d7ad80291a1e85d2dab7f374956b"
+        "hash": "d93d0af81aeca41981ed58548672652f9c5ca4b2a6bb887c2c7e0595112dd035"
       }
     },
     {
@@ -107,16 +107,16 @@
       "type": "snippet",
       "attributes": {
         "fileName": "fibonacciUntilNum.md",
-        "text": "Generates an array, containing the Fibonacci sequence, up until the nth term.\r\n\r\nCreate an empty array of the specific length, initializing the first two values (`0` and `1`).\r\nUse `Array.reduce()` to add values into the array, using the sum of the last two values, except for the first two.\r\nUses a mathematical formula to calculate the length of the array required.",
+        "text": "Generates an array, containing the Fibonacci sequence, up until the nth term.\n\nCreate an empty array of the specific length, initializing the first two values (`0` and `1`).\nUse `Array.reduce()` to add values into the array, using the sum of the last two values, except for the first two.\nUses a mathematical formula to calculate the length of the array required.",
         "codeBlocks": [
-          "const fibonacciUntilNum = num => {\r\n  let n = Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));\r\n  return Array.from({ length: n }).reduce(\r\n    (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),\r\n    []\r\n  );\r\n};",
+          "const fibonacciUntilNum = num => {\n  let n = Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));\n  return Array.from({ length: n }).reduce(\n    (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),\n    []\n  );\n};",
           "fibonacciUntilNum(10); // [ 0, 1, 1, 2, 3, 5, 8 ]"
         ],
         "tags": []
       },
       "meta": {
         "archived": true,
-        "hash": "96623778c79a6fee5506bced5f1355cebe62c2a648551cfd4d9f062520b35e0c"
+        "hash": "1c765ad82aedd1cc090d1c33498ce8426825ab5cb8a74882516ce07343f77f8d"
       }
     },
     {
@@ -124,16 +124,16 @@
       "type": "snippet",
       "attributes": {
         "fileName": "howManyTimes.md",
-        "text": "Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.\r\nWorks for both negative and positive integers.\r\n\r\nIf `divisor` is `-1` or `1` return `Infinity`.\r\nIf `divisor` is `-0` or `0` return `0`.\r\nOtherwise, keep dividing `num` with `divisor` and incrementing `i`, while the result is an integer.\r\nReturn the number of times the loop was executed, `i`.",
+        "text": "Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.\nWorks for both negative and positive integers.\n\nIf `divisor` is `-1` or `1` return `Infinity`.\nIf `divisor` is `-0` or `0` return `0`.\nOtherwise, keep dividing `num` with `divisor` and incrementing `i`, while the result is an integer.\nReturn the number of times the loop was executed, `i`.",
         "codeBlocks": [
-          "const howManyTimes = (num, divisor) => {\r\n  if (divisor === 1 || divisor === -1) return Infinity;\r\n  if (divisor === 0) return 0;\r\n  let i = 0;\r\n  while (Number.isInteger(num / divisor)) {\r\n    i++;\r\n    num = num / divisor;\r\n  }\r\n  return i;\r\n};",
-          "howManyTimes(100, 2); // 2\r\nhowManyTimes(100, 2.5); // 2\r\nhowManyTimes(100, 0); // 0\r\nhowManyTimes(100, -1); // Infinity"
+          "const howManyTimes = (num, divisor) => {\n  if (divisor === 1 || divisor === -1) return Infinity;\n  if (divisor === 0) return 0;\n  let i = 0;\n  while (Number.isInteger(num / divisor)) {\n    i++;\n    num = num / divisor;\n  }\n  return i;\n};",
+          "howManyTimes(100, 2); // 2\nhowManyTimes(100, 2.5); // 2\nhowManyTimes(100, 0); // 0\nhowManyTimes(100, -1); // Infinity"
         ],
         "tags": []
       },
       "meta": {
         "archived": true,
-        "hash": "91cc5a7f2f61b5f5245e385e4f18012a274ee79a955cc970d957be4e774ca9d4"
+        "hash": "41f76138f7e673020c6eecd592baea18016869d7d0161edd9d7669f3a991c398"
       }
     },
     {
@@ -141,16 +141,16 @@
       "type": "snippet",
       "attributes": {
         "fileName": "httpDelete.md",
-        "text": "Makes a `DELETE` request to the passed URL.\r\n\r\nUse `XMLHttpRequest` web api to make a `delete` request to the given `url`.\r\nHandle the `onload` event, by running the provided `callback` function.\r\nHandle the `onerror` event, by running the provided `err` function.\r\nOmit the third argument, `err` to log the request to the console's error stream by default.",
+        "text": "Makes a `DELETE` request to the passed URL.\n\nUse `XMLHttpRequest` web api to make a `delete` request to the given `url`.\nHandle the `onload` event, by running the provided `callback` function.\nHandle the `onerror` event, by running the provided `err` function.\nOmit the third argument, `err` to log the request to the console's error stream by default.",
         "codeBlocks": [
-          "const httpDelete = (url, callback, err = console.error) => {\r\n  const request = new XMLHttpRequest();\r\n  request.open(\"DELETE\", url, true);\r\n  request.onload = () => callback(request);\r\n  request.onerror = () => err(request);\r\n  request.send();\r\n};",
-          "httpDelete('https://website.com/users/123', request => {\r\n  console.log(request.responseText);\r\n}); // 'Deletes a user from the database'"
+          "const httpDelete = (url, callback, err = console.error) => {\n  const request = new XMLHttpRequest();\n  request.open(\"DELETE\", url, true);\n  request.onload = () => callback(request);\n  request.onerror = () => err(request);\n  request.send();\n};",
+          "httpDelete('https://website.com/users/123', request => {\n  console.log(request.responseText);\n}); // 'Deletes a user from the database'"
         ],
         "tags": []
       },
       "meta": {
         "archived": true,
-        "hash": "b70a2e188d55bf5f1ea3989544b1adfdcef83d794ed18d31840f97ba0b4ea126"
+        "hash": "552bc0487c1bf8e4ff89a0a439840b32b6688e47c8e9a551bf924f91e856aa5d"
       }
     },
     {
@@ -158,16 +158,16 @@
       "type": "snippet",
       "attributes": {
         "fileName": "httpPut.md",
-        "text": "Makes a `PUT` request to the passed URL.\r\n\r\nUse `XMLHttpRequest` web api to make a `put` request to the given `url`.\r\nSet the value of an `HTTP` request header with `setRequestHeader` method.\r\nHandle the `onload` event, by running the provided `callback` function.\r\nHandle the `onerror` event, by running the provided `err` function.\r\nOmit the last argument, `err` to log the request to the console's error stream by default.",
+        "text": "Makes a `PUT` request to the passed URL.\n\nUse `XMLHttpRequest` web api to make a `put` request to the given `url`.\nSet the value of an `HTTP` request header with `setRequestHeader` method.\nHandle the `onload` event, by running the provided `callback` function.\nHandle the `onerror` event, by running the provided `err` function.\nOmit the last argument, `err` to log the request to the console's error stream by default.",
         "codeBlocks": [
-          "const httpPut = (url, data, callback, err = console.error) => {\r\n    const request = new XMLHttpRequest();\r\n    request.open(\"PUT\", url, true);\r\n    request.setRequestHeader('Content-type','application/json; charset=utf-8');\r\n    request.onload = () => callback(request);\r\n    request.onerror = () => err(request);\r\n    request.send(data);\r\n};",
-          "const password = \"fooBaz\";\r\nconst data = JSON.stringify(password);\r\nhttpPut('https://website.com/users/123', data, request => {\r\n  console.log(request.responseText);\r\n}); // 'Updates a user's password in database'"
+          "const httpPut = (url, data, callback, err = console.error) => {\n    const request = new XMLHttpRequest();\n    request.open(\"PUT\", url, true);\n    request.setRequestHeader('Content-type','application/json; charset=utf-8');\n    request.onload = () => callback(request);\n    request.onerror = () => err(request);\n    request.send(data);\n};",
+          "const password = \"fooBaz\";\nconst data = JSON.stringify(password);\nhttpPut('https://website.com/users/123', data, request => {\n  console.log(request.responseText);\n}); // 'Updates a user's password in database'"
         ],
         "tags": []
       },
       "meta": {
         "archived": true,
-        "hash": "b072e5a39d48d6efb264957db303fc7484882ce1d6afc8af321dc3676904a5c2"
+        "hash": "8ef860126cb08a63458f113653502ee2eb53d42e39128459cad1ebc92ed55639"
       }
     },
     {
@@ -175,16 +175,16 @@
       "type": "snippet",
       "attributes": {
         "fileName": "isArmstrongNumber.md",
-        "text": "Checks if the given number is an Armstrong number or not.\r\n\r\nConvert the given number into an array of digits. Use the exponent operator (`**`) to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return `true` otherwise `false`.",
+        "text": "Checks if the given number is an Armstrong number or not.\n\nConvert the given number into an array of digits. Use the exponent operator (`**`) to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return `true` otherwise `false`.",
         "codeBlocks": [
-          "const isArmstrongNumber = digits =>\r\n  (arr => arr.reduce((a, d) => a + parseInt(d) ** arr.length, 0) == digits)(\r\n    (digits + '').split('')\r\n  );",
-          "isArmstrongNumber(1634); // true\r\nisArmstrongNumber(56); // false"
+          "const isArmstrongNumber = digits =>\n  (arr => arr.reduce((a, d) => a + parseInt(d) ** arr.length, 0) == digits)(\n    (digits + '').split('')\n  );",
+          "isArmstrongNumber(1634); // true\nisArmstrongNumber(56); // false"
         ],
         "tags": []
       },
       "meta": {
         "archived": true,
-        "hash": "58775e2141232e9e0fe9b57248561dc3171c89e027ad3bf423c90656aedb3f0b"
+        "hash": "28a3c44cfc4ec7d34e00b2866b67bff9b3fb100f6f72c767b893159b869fd8f4"
       }
     },
     {
@@ -192,16 +192,16 @@
       "type": "snippet",
       "attributes": {
         "fileName": "isSimilar.md",
-        "text": "Determines if the `pattern` matches with `str`.\r\n\r\nUse `String.toLowerCase()` to convert both strings to lowercase, then loop through `str` and determine if it contains all characters of `pattern` and in the correct order.\r\nAdapted from [here](https://github.com/forrestthewoods/lib_fts/blob/80f3f8c52db53428247e741b9efe2cde9667050c/code/fts_fuzzy_match.js#L18).",
+        "text": "Determines if the `pattern` matches with `str`.\n\nUse `String.toLowerCase()` to convert both strings to lowercase, then loop through `str` and determine if it contains all characters of `pattern` and in the correct order.\nAdapted from [here](https://github.com/forrestthewoods/lib_fts/blob/80f3f8c52db53428247e741b9efe2cde9667050c/code/fts_fuzzy_match.js#L18).",
         "codeBlocks": [
-          "``` js\r\nconst isSimilar = (pattern, str) =>\r\n\t[...str].reduce(\r\n\t\t(matchIndex, char) => char.toLowerCase() === (pattern[matchIndex]  || '').toLowerCase() ? matchIndex + 1 : matchIndex, 0\r\n\t) === pattern.length ? true : false;\r\n```",
-          "``` js\r\nisSimilar('rt','Rohit'); // true\r\nisSimilar('tr','Rohit'); // false\r\n```"
+          "``` js\nconst isSimilar = (pattern, str) =>\n\t[...str].reduce(\n\t\t(matchIndex, char) => char.toLowerCase() === (pattern[matchIndex]  || '').toLowerCase() ? matchIndex + 1 : matchIndex, 0\n\t) === pattern.length ? true : false;\n```",
+          "``` js\nisSimilar('rt','Rohit'); // true\nisSimilar('tr','Rohit'); // false\n```"
         ],
         "tags": []
       },
       "meta": {
         "archived": true,
-        "hash": "0cbfe5bb5668912903bf2d293bfbb57881d4a2ac09171fad52de87fa173313b3"
+        "hash": "b821ad7f7e34c6905f88e1618b629506e265e1a3459288ab7d7b3501b2476dd2"
       }
     },
     {
@@ -209,16 +209,16 @@
       "type": "snippet",
       "attributes": {
         "fileName": "JSONToDate.md",
-        "text": "Converts a JSON object to a date.\r\n\r\nUse `Date()`, to convert dates in JSON format to readable format (`dd/mm/yyyy`).",
+        "text": "Converts a JSON object to a date.\n\nUse `Date()`, to convert dates in JSON format to readable format (`dd/mm/yyyy`).",
         "codeBlocks": [
-          "const JSONToDate = arr => {\r\n  const dt = new Date(parseInt(arr.toString().substr(6)));\r\n  return `${dt.getDate()}/${dt.getMonth() + 1}/${dt.getFullYear()}`;\r\n};",
+          "const JSONToDate = arr => {\n  const dt = new Date(parseInt(arr.toString().substr(6)));\n  return `${dt.getDate()}/${dt.getMonth() + 1}/${dt.getFullYear()}`;\n};",
           "JSONToDate(/Date(1489525200000)/); // \"14/3/2017\""
         ],
         "tags": []
       },
       "meta": {
         "archived": true,
-        "hash": "a1b8e5a615907cb7603fb6079d31a4182d8dbfa2479a2b55f48669515442a1a9"
+        "hash": "eb80d886a67c11c9395bcb414beb1e684c875b1318025609b7e12c44a58d99e9"
       }
     },
     {
@@ -226,16 +226,16 @@
       "type": "snippet",
       "attributes": {
         "fileName": "levenshteinDistance.md",
-        "text": "Calculates the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) between two strings.\r\n\r\nCalculates the number of changes (substitutions, deletions or additions) required to convert `string1` to `string2`. \r\nCan also be used to compare two strings as shown in the second example.",
+        "text": "Calculates the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) between two strings.\n\nCalculates the number of changes (substitutions, deletions or additions) required to convert `string1` to `string2`. \nCan also be used to compare two strings as shown in the second example.",
         "codeBlocks": [
-          "``` js\r\nconst levenshteinDistance  = (string1, string2) => {\r\n    if(string1.length === 0) return string2.length;\r\n    if(string2.length === 0) return string1.length;\r\n    let matrix = Array(string2.length + 1).fill(0).map((x,i) => [i]);\r\n    matrix[0] = Array(string1.length + 1).fill(0).map((x,i) => i);\r\n    for(let i = 1; i <= string2.length; i++){\r\n        for(let j = 1; j<=string1.length; j++){\r\n            if(string2[i-1] === string1[j-1]){\r\n                matrix[i][j] = matrix[i-1][j-1];\r\n            }\r\n            else{\r\n                matrix[i][j] = Math.min(matrix[i-1][j-1]+1, matrix[i][j-1]+1, matrix[i-1][j]+1);\r\n            }\r\n        }\r\n    }\r\n    return matrix[string2.length][string1.length];\r\n};\r\n```",
-          "levenshteinDistance('30-seconds-of-code','30-seconds-of-python-code'); // 7\r\nconst compareStrings = (string1,string2) => (100 - levenshteinDistance(string1,string2) / Math.max(string1.length,string2.length));\r\ncompareStrings('30-seconds-of-code', '30-seconds-of-python-code'); // 99.72 (%)"
+          "``` js\nconst levenshteinDistance  = (string1, string2) => {\n    if(string1.length === 0) return string2.length;\n    if(string2.length === 0) return string1.length;\n    let matrix = Array(string2.length + 1).fill(0).map((x,i) => [i]);\n    matrix[0] = Array(string1.length + 1).fill(0).map((x,i) => i);\n    for(let i = 1; i <= string2.length; i++){\n        for(let j = 1; j<=string1.length; j++){\n            if(string2[i-1] === string1[j-1]){\n                matrix[i][j] = matrix[i-1][j-1];\n            }\n            else{\n                matrix[i][j] = Math.min(matrix[i-1][j-1]+1, matrix[i][j-1]+1, matrix[i-1][j]+1);\n            }\n        }\n    }\n    return matrix[string2.length][string1.length];\n};\n```",
+          "levenshteinDistance('30-seconds-of-code','30-seconds-of-python-code'); // 7\nconst compareStrings = (string1,string2) => (100 - levenshteinDistance(string1,string2) / Math.max(string1.length,string2.length));\ncompareStrings('30-seconds-of-code', '30-seconds-of-python-code'); // 99.72 (%)"
         ],
         "tags": []
       },
       "meta": {
         "archived": true,
-        "hash": "28a44692feb488c48d9025201521cba6668dfdf55d2abbf0a4c03ffc12e9492f"
+        "hash": "78b4ba08e503af63ca7811cd174218c55db9e0f726439a8c429dedeff0731d80"
       }
     },
     {
@@ -243,16 +243,16 @@
       "type": "snippet",
       "attributes": {
         "fileName": "quickSort.md",
-        "text": "QuickSort an Array (ascending sort by default).\r\n\r\nUse recursion. \r\nUse `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it. \r\nIf the parameter `desc` is truthy, return array sorts in descending order.",
+        "text": "QuickSort an Array (ascending sort by default).\n\nUse recursion. \nUse `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it. \nIf the parameter `desc` is truthy, return array sorts in descending order.",
         "codeBlocks": [
-          "const quickSort = ([n, ...nums], desc) =>\r\n  isNaN(n)\r\n    ? []\r\n    : [\r\n        ...quickSort(nums.filter(v => (desc ? v > n : v <= n)), desc),\r\n        n,\r\n        ...quickSort(nums.filter(v => (!desc ? v > n : v <= n)), desc)\r\n      ];",
-          "quickSort([4, 1, 3, 2]); // [1,2,3,4]\r\nquickSort([4, 1, 3, 2], true); // [4,3,2,1]"
+          "const quickSort = ([n, ...nums], desc) =>\n  isNaN(n)\n    ? []\n    : [\n        ...quickSort(nums.filter(v => (desc ? v > n : v <= n)), desc),\n        n,\n        ...quickSort(nums.filter(v => (!desc ? v > n : v <= n)), desc)\n      ];",
+          "quickSort([4, 1, 3, 2]); // [1,2,3,4]\nquickSort([4, 1, 3, 2], true); // [4,3,2,1]"
         ],
         "tags": []
       },
       "meta": {
         "archived": true,
-        "hash": "fb77be94171de3c7ed270286f546b907aa9d45ac059680f875c351caac20404e"
+        "hash": "396d8fec22d42453b2556d4428fb35e7ef06b9844f7d6ad163923f292a96a6b5"
       }
     },
     {
@@ -260,50 +260,50 @@
       "type": "snippet",
       "attributes": {
         "fileName": "README.md",
-        "text": "Converts a JSON object to a date.\r\n\r\nUse `Date()`, to convert dates in JSON format to readable format (`dd/mm/yyyy`).",
+        "text": "Converts a JSON object to a date.\n\nUse `Date()`, to convert dates in JSON format to readable format (`dd/mm/yyyy`).",
         "codeBlocks": [
-          "const JSONToDate = arr => {\r\n  const dt = new Date(parseInt(arr.toString().substr(6)));\r\n  return `${dt.getDate()}/${dt.getMonth() + 1}/${dt.getFullYear()}`;\r\n};",
+          "const JSONToDate = arr => {\n  const dt = new Date(parseInt(arr.toString().substr(6)));\n  return `${dt.getDate()}/${dt.getMonth() + 1}/${dt.getFullYear()}`;\n};",
           "JSONToDate(/Date(1489525200000)/); // \"14/3/2017\"",
-          "const speechSynthesis = message => {\r\n  const msg = new SpeechSynthesisUtterance(message);\r\n  msg.voice = window.speechSynthesis.getVoices()[0];\r\n  window.speechSynthesis.speak(msg);\r\n};",
+          "const speechSynthesis = message => {\n  const msg = new SpeechSynthesisUtterance(message);\n  msg.voice = window.speechSynthesis.getVoices()[0];\n  window.speechSynthesis.speak(msg);\n};",
           "speechSynthesis('Hello, World'); // // plays the message",
-          "const binarySearch = (arr, val, start = 0, end = arr.length - 1) => {\r\n  if (start > end) return -1;\r\n  const mid = Math.floor((start + end) / 2);\r\n  if (arr[mid] > val) return binarySearch(arr, val, start, mid - 1);\r\n  if (arr[mid] < val) return binarySearch(arr, val, mid + 1, end);\r\n  return mid;\r\n};",
-          "binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 6); // 2\r\nbinarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 21); // -1",
-          "const cleanObj = (obj, keysToKeep = [], childIndicator) => {\r\n  Object.keys(obj).forEach(key => {\r\n    if (key === childIndicator) {\r\n      cleanObj(obj[key], keysToKeep, childIndicator);\r\n    } else if (!keysToKeep.includes(key)) {\r\n      delete obj[key];\r\n    }\r\n  });\r\n  return obj;\r\n};",
-          "const testObj = { a: 1, b: 2, children: { a: 1, b: 2 } };\r\ncleanObj(testObj, ['a'], 'children'); // { a: 1, children : { a: 1}}",
+          "const binarySearch = (arr, val, start = 0, end = arr.length - 1) => {\n  if (start > end) return -1;\n  const mid = Math.floor((start + end) / 2);\n  if (arr[mid] > val) return binarySearch(arr, val, start, mid - 1);\n  if (arr[mid] < val) return binarySearch(arr, val, mid + 1, end);\n  return mid;\n};",
+          "binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 6); // 2\nbinarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 21); // -1",
+          "const cleanObj = (obj, keysToKeep = [], childIndicator) => {\n  Object.keys(obj).forEach(key => {\n    if (key === childIndicator) {\n      cleanObj(obj[key], keysToKeep, childIndicator);\n    } else if (!keysToKeep.includes(key)) {\n      delete obj[key];\n    }\n  });\n  return obj;\n};",
+          "const testObj = { a: 1, b: 2, children: { a: 1, b: 2 } };\ncleanObj(testObj, ['a'], 'children'); // { a: 1, children : { a: 1}}",
           "const collatz = n => (n % 2 === 0 ? n / 2 : 3 * n + 1);",
           "collatz(8); // 4",
           "const countVowels = str => (str.match(/[aeiou]/gi) || []).length;",
-          "countVowels('foobar'); // 3\r\ncountVowels('gym'); // 0",
-          "const factors = (num, primes = false) => {\r\n  const isPrime = num => {\r\n    const boundary = Math.floor(Math.sqrt(num));\r\n    for (var i = 2; i <= boundary; i++) if (num % i === 0) return false;\r\n    return num >= 2;\r\n  };\r\n  const isNeg = num < 0;\r\n  num = isNeg ? -num : num;\r\n  let array = Array.from({ length: num - 1 })\r\n    .map((val, i) => (num % (i + 2) === 0 ? i + 2 : false))\r\n    .filter(val => val);\r\n  if (isNeg)\r\n    array = array.reduce((acc, val) => {\r\n      acc.push(val);\r\n      acc.push(-val);\r\n      return acc;\r\n    }, []);\r\n  return primes ? array.filter(isPrime) : array;\r\n};",
-          "factors(12); // [2,3,4,6,12]\r\nfactors(12, true); // [2,3]\r\nfactors(-12); // [2, -2, 3, -3, 4, -4, 6, -6, 12, -12]\r\nfactors(-12, true); // [2,3]",
-          "const fibonacciCountUntilNum = num =>\r\n  Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));",
+          "countVowels('foobar'); // 3\ncountVowels('gym'); // 0",
+          "const factors = (num, primes = false) => {\n  const isPrime = num => {\n    const boundary = Math.floor(Math.sqrt(num));\n    for (var i = 2; i <= boundary; i++) if (num % i === 0) return false;\n    return num >= 2;\n  };\n  const isNeg = num < 0;\n  num = isNeg ? -num : num;\n  let array = Array.from({ length: num - 1 })\n    .map((val, i) => (num % (i + 2) === 0 ? i + 2 : false))\n    .filter(val => val);\n  if (isNeg)\n    array = array.reduce((acc, val) => {\n      acc.push(val);\n      acc.push(-val);\n      return acc;\n    }, []);\n  return primes ? array.filter(isPrime) : array;\n};",
+          "factors(12); // [2,3,4,6,12]\nfactors(12, true); // [2,3]\nfactors(-12); // [2, -2, 3, -3, 4, -4, 6, -6, 12, -12]\nfactors(-12, true); // [2,3]",
+          "const fibonacciCountUntilNum = num =>\n  Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));",
           "fibonacciCountUntilNum(10); // 7",
-          "const fibonacciUntilNum = num => {\r\n  let n = Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));\r\n  return Array.from({ length: n }).reduce(\r\n    (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),\r\n    []\r\n  );\r\n};",
+          "const fibonacciUntilNum = num => {\n  let n = Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));\n  return Array.from({ length: n }).reduce(\n    (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),\n    []\n  );\n};",
           "fibonacciUntilNum(10); // [ 0, 1, 1, 2, 3, 5, 8 ]",
-          "const httpDelete = (url, callback, err = console.error) => {\r\n  const request = new XMLHttpRequest();\r\n  request.open(\"DELETE\", url, true);\r\n  request.onload = () => callback(request);\r\n  request.onerror = () => err(request);\r\n  request.send();\r\n};",
-          "httpDelete('https://website.com/users/123', request => {\r\n  console.log(request.responseText);\r\n}); // 'Deletes a user from the database'",
-          "const httpPut = (url, data, callback, err = console.error) => {\r\n    const request = new XMLHttpRequest();\r\n    request.open(\"PUT\", url, true);\r\n    request.setRequestHeader('Content-type','application/json; charset=utf-8');\r\n    request.onload = () => callback(request);\r\n    request.onerror = () => err(request);\r\n    request.send(data);\r\n};",
-          "const password = \"fooBaz\";\r\nconst data = JSON.stringify(password);\r\nhttpPut('https://website.com/users/123', data, request => {\r\n  console.log(request.responseText);\r\n}); // 'Updates a user's password in database'",
-          "const isArmstrongNumber = digits =>\r\n  (arr => arr.reduce((a, d) => a + parseInt(d) ** arr.length, 0) == digits)(\r\n    (digits + '').split('')\r\n  );",
-          "isArmstrongNumber(1634); // true\r\nisArmstrongNumber(56); // false",
-          "``` js\r\nconst isSimilar = (pattern, str) =>\r\n\t[...str].reduce(\r\n\t\t(matchIndex, char) => char.toLowerCase() === (pattern[matchIndex]  || '').toLowerCase() ? matchIndex + 1 : matchIndex, 0\r\n\t) === pattern.length ? true : false;\r\n```",
-          "``` js\r\nisSimilar('rt','Rohit'); // true\r\nisSimilar('tr','Rohit'); // false\r\n```",
-          "```\r\n\r\n</details>\r\n\r\n<br>[⬆ Back to top](#table-of-contents)\r\n\r\n\r\n### levenshteinDistance\r\n\r\nCalculates the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) between two strings.\r\n\r\nCalculates the number of changes (substitutions, deletions or additions) required to convert `string1` to `string2`. \r\nCan also be used to compare two strings as shown in the second example.\r\n\r\n```",
-          "```\r\n\r\n<details>\r\n<summary>Examples</summary>\r\n\r\n```",
-          "```\r\n\r\n</details>\r\n\r\n<br>[⬆ Back to top](#table-of-contents)\r\n\r\n\r\n### quickSort\r\n\r\nQuickSort an Array (ascending sort by default).\r\n\r\nUse recursion. \r\nUse `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it. \r\nIf the parameter `desc` is truthy, return array sorts in descending order.\r\n\r\n```",
-          "```\r\n\r\n<details>\r\n<summary>Examples</summary>\r\n\r\n```",
-          "```\r\n\r\n</details>\r\n\r\n<br>[⬆ Back to top](#table-of-contents)\r\n\r\n\r\n### removeVowels\r\n\r\nReturns all the vowels in a `str` replaced by `repl`.\r\n\r\nUse `String.replace()` with a regexp to replace all vowels in `str`.\r\nOmot `repl` to use a default value of `''`.\r\n\r\n```",
-          "```\r\n\r\n<details>\r\n<summary>Examples</summary>\r\n\r\n```",
-          "```\r\n\r\n</details>\r\n\r\n<br>[⬆ Back to top](#table-of-contents)\r\n\r\n\r\n### solveRPN\r\n\r\nSolves the given mathematical expression in [reverse polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation).\r\nThrows appropriate errors if there are unrecognized symbols or the expression is wrong. The valid operators are :- `+`,`-`,`*`,`/`,`^`,`**` (`^`&`**` are the exponential symbols and are same). This snippet does not supports any unary operators.\r\n\r\nUse a dictionary, `OPERATORS` to specify each operator's matching mathematical operation.\r\nUse `String.replace()` with a regular expression to replace `^` with `**`, `String.split()` to tokenize the string and `Array.filter()` to remove empty tokens.\r\nUse `Array.forEach()` to parse each `symbol`, evaluate it as a numeric value or operator and solve the mathematical expression.\r\nNumeric values are converted to floating point numbers and pushed to a `stack`, while operators are evaluated using the `OPERATORS` dictionary and pop elements from the `stack` to apply operations.\r\n\r\n```",
-          "```\r\n\r\n<details>\r\n<summary>Examples</summary>\r\n\r\n```",
-          "```\r\n\r\n</details>\r\n\r\n<br>[⬆ Back to top](#table-of-contents)\r\n\r\n\r\n### howManyTimes\r\n\r\nReturns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.\r\nWorks for both negative and positive integers.\r\n\r\nIf `divisor` is `-1` or `1` return `Infinity`.\r\nIf `divisor` is `-0` or `0` return `0`.\r\nOtherwise, keep dividing `num` with `divisor` and incrementing `i`, while the result is an integer.\r\nReturn the number of times the loop was executed, `i`.\r\n\r\n```",
-          "```\r\n\r\n<details>\r\n<summary>Examples</summary>\r\n\r\n```"
+          "const httpDelete = (url, callback, err = console.error) => {\n  const request = new XMLHttpRequest();\n  request.open(\"DELETE\", url, true);\n  request.onload = () => callback(request);\n  request.onerror = () => err(request);\n  request.send();\n};",
+          "httpDelete('https://website.com/users/123', request => {\n  console.log(request.responseText);\n}); // 'Deletes a user from the database'",
+          "const httpPut = (url, data, callback, err = console.error) => {\n    const request = new XMLHttpRequest();\n    request.open(\"PUT\", url, true);\n    request.setRequestHeader('Content-type','application/json; charset=utf-8');\n    request.onload = () => callback(request);\n    request.onerror = () => err(request);\n    request.send(data);\n};",
+          "const password = \"fooBaz\";\nconst data = JSON.stringify(password);\nhttpPut('https://website.com/users/123', data, request => {\n  console.log(request.responseText);\n}); // 'Updates a user's password in database'",
+          "const isArmstrongNumber = digits =>\n  (arr => arr.reduce((a, d) => a + parseInt(d) ** arr.length, 0) == digits)(\n    (digits + '').split('')\n  );",
+          "isArmstrongNumber(1634); // true\nisArmstrongNumber(56); // false",
+          "``` js\nconst isSimilar = (pattern, str) =>\n\t[...str].reduce(\n\t\t(matchIndex, char) => char.toLowerCase() === (pattern[matchIndex]  || '').toLowerCase() ? matchIndex + 1 : matchIndex, 0\n\t) === pattern.length ? true : false;\n```",
+          "``` js\nisSimilar('rt','Rohit'); // true\nisSimilar('tr','Rohit'); // false\n```",
+          "```\n\n</details>\n\n<br>[⬆ Back to top](#table-of-contents)\n\n\n### levenshteinDistance\n\nCalculates the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) between two strings.\n\nCalculates the number of changes (substitutions, deletions or additions) required to convert `string1` to `string2`. \nCan also be used to compare two strings as shown in the second example.\n\n```",
+          "```\n\n<details>\n<summary>Examples</summary>\n\n```",
+          "```\n\n</details>\n\n<br>[⬆ Back to top](#table-of-contents)\n\n\n### quickSort\n\nQuickSort an Array (ascending sort by default).\n\nUse recursion. \nUse `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it. \nIf the parameter `desc` is truthy, return array sorts in descending order.\n\n```",
+          "```\n\n<details>\n<summary>Examples</summary>\n\n```",
+          "```\n\n</details>\n\n<br>[⬆ Back to top](#table-of-contents)\n\n\n### removeVowels\n\nReturns all the vowels in a `str` replaced by `repl`.\n\nUse `String.replace()` with a regexp to replace all vowels in `str`.\nOmot `repl` to use a default value of `''`.\n\n```",
+          "```\n\n<details>\n<summary>Examples</summary>\n\n```",
+          "```\n\n</details>\n\n<br>[⬆ Back to top](#table-of-contents)\n\n\n### solveRPN\n\nSolves the given mathematical expression in [reverse polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation).\nThrows appropriate errors if there are unrecognized symbols or the expression is wrong. The valid operators are :- `+`,`-`,`*`,`/`,`^`,`**` (`^`&`**` are the exponential symbols and are same). This snippet does not supports any unary operators.\n\nUse a dictionary, `OPERATORS` to specify each operator's matching mathematical operation.\nUse `String.replace()` with a regular expression to replace `^` with `**`, `String.split()` to tokenize the string and `Array.filter()` to remove empty tokens.\nUse `Array.forEach()` to parse each `symbol`, evaluate it as a numeric value or operator and solve the mathematical expression.\nNumeric values are converted to floating point numbers and pushed to a `stack`, while operators are evaluated using the `OPERATORS` dictionary and pop elements from the `stack` to apply operations.\n\n```",
+          "```\n\n<details>\n<summary>Examples</summary>\n\n```",
+          "```\n\n</details>\n\n<br>[⬆ Back to top](#table-of-contents)\n\n\n### howManyTimes\n\nReturns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.\nWorks for both negative and positive integers.\n\nIf `divisor` is `-1` or `1` return `Infinity`.\nIf `divisor` is `-0` or `0` return `0`.\nOtherwise, keep dividing `num` with `divisor` and incrementing `i`, while the result is an integer.\nReturn the number of times the loop was executed, `i`.\n\n```",
+          "```\n\n<details>\n<summary>Examples</summary>\n\n```"
         ],
         "tags": []
       },
       "meta": {
         "archived": true,
-        "hash": "0cad5b494e11acec46400e341b9c0a754c22093027495d9c189b11b27251c3eb"
+        "hash": "f654dce947e6e48d66ba5d29452c35c6031e59add0a0124ffed1239317c40ebe"
       }
     },
     {
@@ -311,16 +311,16 @@
       "type": "snippet",
       "attributes": {
         "fileName": "removeVowels.md",
-        "text": "Returns all the vowels in a `str` replaced by `repl`.\r\n\r\nUse `String.replace()` with a regexp to replace all vowels in `str`.\r\nOmot `repl` to use a default value of `''`.",
+        "text": "Returns all the vowels in a `str` replaced by `repl`.\n\nUse `String.replace()` with a regexp to replace all vowels in `str`.\nOmot `repl` to use a default value of `''`.",
         "codeBlocks": [
           "const removeVowels = (str, repl = '') => str.replace(/[aeiou]/gi,repl);",
-          "removeVowels(\"foobAr\"); // \"fbr\"\r\nremoveVowels(\"foobAr\",\"*\"); // \"f**b*r\""
+          "removeVowels(\"foobAr\"); // \"fbr\"\nremoveVowels(\"foobAr\",\"*\"); // \"f**b*r\""
         ],
         "tags": []
       },
       "meta": {
         "archived": true,
-        "hash": "482df7532f3670022a6baccd3b33ddff8654f05e87c46741192026fbbb7e94f0"
+        "hash": "00040c26975307a1be29e9a933ef09c2b3d92bc986d8798b56339dbefce4d6fa"
       }
     },
     {
@@ -328,16 +328,16 @@
       "type": "snippet",
       "attributes": {
         "fileName": "solveRPN.md",
-        "text": "Solves the given mathematical expression in [reverse polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation).\r\nThrows appropriate errors if there are unrecognized symbols or the expression is wrong. The valid operators are :- `+`,`-`,`*`,`/`,`^`,`**` (`^`&`**` are the exponential symbols and are same). This snippet does not supports any unary operators.\r\n\r\nUse a dictionary, `OPERATORS` to specify each operator's matching mathematical operation.\r\nUse `String.replace()` with a regular expression to replace `^` with `**`, `String.split()` to tokenize the string and `Array.filter()` to remove empty tokens.\r\nUse `Array.forEach()` to parse each `symbol`, evaluate it as a numeric value or operator and solve the mathematical expression.\r\nNumeric values are converted to floating point numbers and pushed to a `stack`, while operators are evaluated using the `OPERATORS` dictionary and pop elements from the `stack` to apply operations.",
+        "text": "Solves the given mathematical expression in [reverse polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation).\nThrows appropriate errors if there are unrecognized symbols or the expression is wrong. The valid operators are :- `+`,`-`,`*`,`/`,`^`,`**` (`^`&`**` are the exponential symbols and are same). This snippet does not supports any unary operators.\n\nUse a dictionary, `OPERATORS` to specify each operator's matching mathematical operation.\nUse `String.replace()` with a regular expression to replace `^` with `**`, `String.split()` to tokenize the string and `Array.filter()` to remove empty tokens.\nUse `Array.forEach()` to parse each `symbol`, evaluate it as a numeric value or operator and solve the mathematical expression.\nNumeric values are converted to floating point numbers and pushed to a `stack`, while operators are evaluated using the `OPERATORS` dictionary and pop elements from the `stack` to apply operations.",
         "codeBlocks": [
-          "const solveRPN = rpn => {\r\n  const OPERATORS = {\r\n    '*': (a, b) => a * b,\r\n    '+': (a, b) => a + b,\r\n    '-': (a, b) => a - b,\r\n    '/': (a, b) => a / b,\r\n    '**': (a, b) => a ** b\r\n  };\r\n  const [stack, solve] = [\r\n    [],\r\n    rpn\r\n      .replace(/\\^/g, '**')\r\n      .split(/\\s+/g)\r\n      .filter(el => !/\\s+/.test(el) && el !== '')\r\n  ];\r\n  solve.forEach(symbol => {\r\n    if (!isNaN(parseFloat(symbol)) && isFinite(symbol)) {\r\n      stack.push(symbol);\r\n    } else if (Object.keys(OPERATORS).includes(symbol)) {\r\n      const [a, b] = [stack.pop(), stack.pop()];\r\n      stack.push(OPERATORS[symbol](parseFloat(b), parseFloat(a)));\r\n    } else {\r\n      throw `${symbol} is not a recognized symbol`;\r\n    }\r\n  });\r\n  if (stack.length === 1) return stack.pop();\r\n  else throw `${rpn} is not a proper RPN. Please check it and try again`;\r\n};",
-          "solveRPN('15 7 1 1 + - / 3 * 2 1 1 + + -'); // 5\r\nsolveRPN('2 3 ^'); // 8"
+          "const solveRPN = rpn => {\n  const OPERATORS = {\n    '*': (a, b) => a * b,\n    '+': (a, b) => a + b,\n    '-': (a, b) => a - b,\n    '/': (a, b) => a / b,\n    '**': (a, b) => a ** b\n  };\n  const [stack, solve] = [\n    [],\n    rpn\n      .replace(/\\^/g, '**')\n      .split(/\\s+/g)\n      .filter(el => !/\\s+/.test(el) && el !== '')\n  ];\n  solve.forEach(symbol => {\n    if (!isNaN(parseFloat(symbol)) && isFinite(symbol)) {\n      stack.push(symbol);\n    } else if (Object.keys(OPERATORS).includes(symbol)) {\n      const [a, b] = [stack.pop(), stack.pop()];\n      stack.push(OPERATORS[symbol](parseFloat(b), parseFloat(a)));\n    } else {\n      throw `${symbol} is not a recognized symbol`;\n    }\n  });\n  if (stack.length === 1) return stack.pop();\n  else throw `${rpn} is not a proper RPN. Please check it and try again`;\n};",
+          "solveRPN('15 7 1 1 + - / 3 * 2 1 1 + + -'); // 5\nsolveRPN('2 3 ^'); // 8"
         ],
         "tags": []
       },
       "meta": {
         "archived": true,
-        "hash": "2c8cc81d549f536da19b6035c8863e7fcf69ff70ef58796a6f8e19e5f6b587f7"
+        "hash": "6b02ad139d3edcc41e767b6768cc53439c5316f5c14e00a4e2a56b2da102d1e9"
       }
     },
     {
@@ -345,16 +345,16 @@
       "type": "snippet",
       "attributes": {
         "fileName": "speechSynthesis.md",
-        "text": "Performs speech synthesis (experimental).\r\n\r\nUse `SpeechSynthesisUtterance.voice` and `window.speechSynthesis.getVoices()` to convert a message to speech.\r\nUse `window.speechSynthesis.speak()` to play the message.\r\n\r\nLearn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).",
+        "text": "Performs speech synthesis (experimental).\n\nUse `SpeechSynthesisUtterance.voice` and `window.speechSynthesis.getVoices()` to convert a message to speech.\nUse `window.speechSynthesis.speak()` to play the message.\n\nLearn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).",
         "codeBlocks": [
-          "const speechSynthesis = message => {\r\n  const msg = new SpeechSynthesisUtterance(message);\r\n  msg.voice = window.speechSynthesis.getVoices()[0];\r\n  window.speechSynthesis.speak(msg);\r\n};",
+          "const speechSynthesis = message => {\n  const msg = new SpeechSynthesisUtterance(message);\n  msg.voice = window.speechSynthesis.getVoices()[0];\n  window.speechSynthesis.speak(msg);\n};",
           "speechSynthesis('Hello, World'); // // plays the message"
         ],
         "tags": []
       },
       "meta": {
         "archived": true,
-        "hash": "b556b1d2bb7b2dc2c42f8b7c4d63f9fb80a6685ca742029f26c1575fb8aa4649"
+        "hash": "21409f3b5ea7aaa9ad0041508b14c64dcaeff234121aca148e14fe26cf8b5f93"
       }
     }
   ],
