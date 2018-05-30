@@ -15,5 +15,13 @@ toHash([ { a: 'label' } ], 'a'); // { label: { a: 'label' } }
 let users = [ { id: 1, first: 'Jon' }, { id: 2, first: 'Joe' }, { id: 3, first: 'Moe' } ];
 let managers = [ { manager: 1, employees: [ 2, 3 ] } ];
 // We use function here because we need a bindable reference
-managers.forEach( manager => manager.employees = manager.employees.map( function( id ){ return this[id]; }, toHash( users, 'id' ) ) ); // [ { manager:1, employees: [ { id: 2, first: "Joe" }, { id: 3, first: "Moe" } ] } ]
+managers.forEach( manager =>
+  manager.employees = manager.employees.map(
+    function( id ){
+      return this[id];
+    },
+    toHash( users, 'id' )
+  )
+);
+managers // [ { manager:1, employees: [ { id: 2, first: "Joe" }, { id: 3, first: "Moe" } ] } ]
 ```
