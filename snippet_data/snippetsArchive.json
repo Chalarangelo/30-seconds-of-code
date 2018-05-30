@@ -357,5 +357,8 @@
         "hash": "b556b1d2bb7b2dc2c42f8b7c4d63f9fb80a6685ca742029f26c1575fb8aa4649"
       }
     }
-  ]
+  ],
+  "meta": {
+    "specification": "http://jsonapi.org/format/"
+  }
 }

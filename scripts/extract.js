@@ -38,8 +38,11 @@ let snippetData = {
         archived: false,
         hash: util.hashData(snippets[key])
       }
-    }
-  })
+    };
+  }),
+  meta: {
+    specification: 'http://jsonapi.org/format/'
+  }
 };
 // Extract archived snippet data
 let snippetArchiveData = {
@@ -57,8 +60,11 @@ let snippetArchiveData = {
         archived: true,
         hash: util.hashData(archivedSnippets[key])
       }
-    }
-  })
+    };
+  }),
+  meta: {
+    specification: 'http://jsonapi.org/format/'
+  }
 };
 // Write files
 fs.writeFileSync(path.join(OUTPUT_PATH, 'snippets.json'), JSON.stringify(snippetData, null, 2));
