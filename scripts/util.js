@@ -89,10 +89,10 @@ const getCodeBlocks = str => {
     }
     m.forEach((match, groupIndex) => {
       results.push(match);
-    })
+    });
   }
   return results;
-}
+};
 // Gets the textual content for a snippet file.
 const getTextualContent = str => {
   const regex = /###.*\n*([\s\S]*?)```/g;
@@ -104,8 +104,8 @@ const getTextualContent = str => {
     }
     m.forEach((match, groupIndex) => {
       results.push(match);
-    })
+    });
   }
   return results[1];
-}
+};
 module.exports = {readSnippets, readTags, optimizeNodes, capitalize, objectFromPairs, isTravisCI, hashData, shuffle, getCodeBlocks, getTextualContent};
