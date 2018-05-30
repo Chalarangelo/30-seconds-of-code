@@ -14,6 +14,7 @@ script:
 - npm run builder
 - npm run packager
 - npm run tester
+- npm run extractor
 after_success:
 - chmod +x .travis/push.sh
 - .travis/push.sh
