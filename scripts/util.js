@@ -78,4 +78,34 @@ const capitalize = (str, lowerRest = false) =>
 const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
 // Creates a hash for a value using the SHA-256 algorithm.
 const hashData = val => crypto.createHash('sha256').update(val).digest('hex');
-module.exports = {readSnippets, readTags, optimizeNodes, capitalize, objectFromPairs, isTravisCI, hashData, shuffle};
+// Gets the code blocks for a snippet file.
+const getCodeBlocks = str => {
+  const regex = /```[.\S\s]*?```/g;
+  const results = [];
+  let m = null;
+  while ((m = regex.exec(str)) !== null) {
+    if (m.index === regex.lastIndex) {
+      regex.lastIndex += 1;
+    }
+    m.forEach((match, groupIndex) => {
+      results.push(match);
+    })
+  }
+  return results;
+}
+// Gets the textual content for a snippet file.
+const getTextualContent = str => {
+  const regex = /###.*\n*([\s\S]*?)```/g;
+  const results = [];
+  let m = null;
+  while ((m = regex.exec(str)) !== null) {
+    if (m.index === regex.lastIndex) {
+      regex.lastIndex += 1;
+    }
+    m.forEach((match, groupIndex) => {
+      results.push(match);
+    })
+  }
+  return results[1];
+}
+module.exports = {readSnippets, readTags, optimizeNodes, capitalize, objectFromPairs, isTravisCI, hashData, shuffle, getCodeBlocks, getTextualContent};
