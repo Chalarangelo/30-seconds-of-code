@@ -5400,6 +5400,26 @@
       }
     },
     {
+      "id": "toHash",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "toHash.md",
+        "text": "Reduces a given Array-like into a value hash (keyed data store).\n\nGiven an Iterable or Array-like structure, call `Array.prototype.reduce.call()` on the provided object to step over it and return an Object, keyed by the reference value.",
+        "codeBlocks": [
+          "const toHash = (object, key) =>\n  Array.prototype.reduce.call(\n    object,\n    (acc, data, index) => ((acc[!key ? index : data[key]] = data), acc),\n    {}\n  );",
+          "toHash([4, 3, 2, 1]); // { 0: 4, 1: 3, 2: 2, 1: 1 }\ntoHash([{ a: 'label' }], 'a'); // { label: { a: 'label' } }\n// A more in depth example:\nlet users = [{ id: 1, first: 'Jon' }, { id: 2, first: 'Joe' }, { id: 3, first: 'Moe' }];\nlet managers = [{ manager: 1, employees: [2, 3] }];\n// We use function here because we want a bindable reference, but a closure referencing the hash would work, too.\nmanagers.forEach(\n  manager =>\n    (manager.employees = manager.employees.map(function(id) {\n      return this[id];\n    }, toHash(users, 'id')))\n);\nmanagers; // [ { manager:1, employees: [ { id: 2, first: \"Joe\" }, { id: 3, first: \"Moe\" } ] } ]"
+        ],
+        "tags": [
+          "array",
+          "object"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "c7a62b55b5a90661bf3f9c956f075906439a50151a3aee4023ad8fe878cae2e6"
+      }
+    },
+    {
       "id": "toKebabCase",
       "type": "snippet",
       "attributes": {
