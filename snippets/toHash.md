@@ -6,7 +6,7 @@ Given an Iterable or Array like structure we call Array.prototype.reduce.call on
 
 ```js
 const toHash = ( object, key ) =>
-  Array.prototype.reduce.call( object, ( acc, data, index ) => ( ( acc[ !key ? index : data[ key ] ] = data ), acc ), {} ) )
+  Array.prototype.reduce.call( object, ( acc, data, index ) => ( ( acc[ !key ? index : data[ key ] ] = data ), acc ), {} )
 ```
 
 ```js
