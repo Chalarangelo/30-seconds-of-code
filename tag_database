@@ -267,7 +267,7 @@ toCamelCase:string,regexp
 toCurrency:utility
 toDecimalMark:utility,math
 toggleClass:browser
-toHash:array,object
+toHash:array
 toKebabCase:string,regexp
 tomorrow:date
 toOrdinalSuffix:utility,math
@@ -300,4 +300,3 @@ yesNo:utility,regexp
 zip:array
 zipObject:array,object
 zipWith:array,function,advanced
-toHash:array
