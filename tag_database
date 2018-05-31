@@ -267,6 +267,7 @@ toCamelCase:string,regexp
 toCurrency:utility
 toDecimalMark:utility,math
 toggleClass:browser
+toHash:uncategorized
 toKebabCase:string,regexp
 tomorrow:date
 toOrdinalSuffix:utility,math
