@@ -5410,8 +5410,7 @@
           "toHash([4, 3, 2, 1]); // { 0: 4, 1: 3, 2: 2, 1: 1 }\ntoHash([{ a: 'label' }], 'a'); // { label: { a: 'label' } }\n// A more in depth example:\nlet users = [{ id: 1, first: 'Jon' }, { id: 2, first: 'Joe' }, { id: 3, first: 'Moe' }];\nlet managers = [{ manager: 1, employees: [2, 3] }];\n// We use function here because we want a bindable reference, but a closure referencing the hash would work, too.\nmanagers.forEach(\n  manager =>\n    (manager.employees = manager.employees.map(function(id) {\n      return this[id];\n    }, toHash(users, 'id')))\n);\nmanagers; // [ { manager:1, employees: [ { id: 2, first: \"Joe\" }, { id: 3, first: \"Moe\" } ] } ]"
         ],
         "tags": [
-          "array",
-          "object"
+          "array"
         ]
       },
       "meta": {
