@@ -739,7 +739,7 @@
         "fileName": "countOccurrences.md",
         "text": "Counts the occurrences of a value in an array.\n\nUse `Array.reduce()` to increment a counter each time you encounter the specific value inside the array.",
         "codeBlocks": [
-          "const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a + 0), 0);",
+          "const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);",
           "countOccurrences([1, 1, 2, 1, 2, 3], 1); // 3"
         ],
         "tags": [
@@ -748,7 +748,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "0c33f328b89ba8b79ab2b6c5fe3b75653110e36b155227729a69247c2c0b4ee3"
+        "hash": "8d268b66806bbfee8a6bf73bd4979d061fcdc77f23729acca7a3d30b454bd70c"
       }
     },
     {
