@@ -7,6 +7,9 @@
 
 > Curated collection of useful JavaScript snippets that you can understand in 30 seconds or less.
 
+[![Sponsored by DigitalOcean](/sponsored_by_DigitalOcean.png)](https://www.digitalocean.com)
+
+
 - Use <kbd>Ctrl</kbd> + <kbd>F</kbd> or <kbd>command</kbd> + <kbd>F</kbd> to search for a snippet.
 - Contributions welcome, please read the [contribution guide](CONTRIBUTING.md).
 - Snippets are written in ES6, use the [Babel transpiler](https://babeljs.io/) to ensure backwards-compatibility.
@@ -2097,7 +2100,7 @@ pullBy(myArray, [{ x: 1 }, { x: 3 }], o => o.x); // myArray = [{ x: 2 }]
 
 Filter an array of objects based on a condition while also filtering out unspecified keys.
 
-Use `Array.filter()` to filter the array based on the predicate `fn` so that it returns the objects for which the condition returned a truthy value. 
+Use `Array.filter()` to filter the array based on the predicate `fn` so that it returns the objects for which the condition returned a truthy value.
 On the filtered array, use `Array.map()` to return the new object using `Array.reduce()` to filter out the keys which were not supplied as the `keys` argument.
 
 ```js
@@ -2461,10 +2464,10 @@ sortedLastIndexBy([{ x: 4 }, { x: 5 }], { x: 4 }, o => o.x); // 1
 
 ### stableSort ![advanced](/advanced.svg)
 
-Performs stable sorting of an array, preserving the initial indexes of items when their values are the same. 
+Performs stable sorting of an array, preserving the initial indexes of items when their values are the same.
 Does not mutate the original array, but returns a new array instead.
 
-Use `Array.map()` to pair each element of the input array with its corresponding index. 
+Use `Array.map()` to pair each element of the input array with its corresponding index.
 Use `Array.sort()` and a `compare` function to sort the list, preserving their initial order if the items compared are equal.
 Use `Array.map()` to convert back to the initial array items.
 
@@ -3159,11 +3162,11 @@ counter('#my-id', 1, 1000, 5, 2000); // Creates a 2-second timer for the element
 
 ### createElement
 
-Creates an element from a string (without appending it to the document). 
+Creates an element from a string (without appending it to the document).
 If the given string contains multiple elements, only the first one will be returned.
 
 Use `document.createElement()` to create a new element.
-Set its `innerHTML` to the string supplied as the argument. 
+Set its `innerHTML` to the string supplied as the argument.
 Use `ParentNode.firstElementChild` to return the element version of the string.
 
 ```js
@@ -3561,7 +3564,7 @@ obs.disconnect(); // Disconnects the observer and stops logging mutations on the
 
 Removes an event listener from an element.
 
-Use `EventTarget.removeEventListener()` to remove an event listener from an element. 
+Use `EventTarget.removeEventListener()` to remove an event listener from an element.
 Omit the fourth argument `opts` to use `false` or specify it based on the options used when the event listener was added.
 
 ```js
@@ -3617,7 +3620,7 @@ on(document.body, 'click', fn, { options: true }); // use capturing instead of b
 
 Run the callback whenever the user input type changes (`mouse` or `touch`). Useful for enabling/disabling code depending on the input device. This process is dynamic and works with hybrid devices (e.g. touchscreen laptops).
 
-Use two event listeners. Assume `mouse` input initially and bind a `touchstart` event listener to the document. 
+Use two event listeners. Assume `mouse` input initially and bind a `touchstart` event listener to the document.
 On `touchstart`, add a `mousemove` event listener to listen for two consecutive `mousemove` events firing within 20ms, using `performance.now()`.
 Run the callback with the input type as an argument in either of these situations.
 
@@ -3656,7 +3659,7 @@ onUserInputChange(type => {
 
 Returns the prefixed version (if necessary) of a CSS property that the browser supports.
 
-Use `Array.findIndex()` on an array of vendor prefix strings to test if `document.body` has one of them defined in its `CSSStyleDeclaration` object, otherwise return `null`. 
+Use `Array.findIndex()` on an array of vendor prefix strings to test if `document.body` has one of them defined in its `CSSStyleDeclaration` object, otherwise return `null`.
 Use `String.charAt()` and `String.toUpperCase()` to capitalize the property, which will be appended to the vendor prefix string.
 
 ```js
@@ -3686,9 +3689,9 @@ prefix('appearance'); // 'appearance' on a supported browser, otherwise 'webkitA
 
 Invokes the provided callback on each animation frame.
 
-Use recursion. 
-Provided that `running` is `true`, continue invoking `window.requestAnimationFrame()` which invokes the provided callback. 
-Return an object with two methods `start` and `stop` to allow manual control of the recording. 
+Use recursion.
+Provided that `running` is `true`, continue invoking `window.requestAnimationFrame()` which invokes the provided callback.
+Return an object with two methods `start` and `stop` to allow manual control of the recording.
 Omit the second argument, `autoStart`, to implicitly call `start` when the function is invoked.
 
 ```js
@@ -3888,7 +3891,7 @@ show(...document.querySelectorAll('img')); // Shows all <img> elements on the pa
 
 Smoothly scrolls the element on which it's called into the visible area of the browser window.
 
-Use `.scrollIntoView` method to scroll the element. 
+Use `.scrollIntoView` method to scroll the element.
 Pass `{ behavior: 'smooth' }` to `.scrollIntoView` so it scrolls smoothly.
 
 ```js
@@ -4458,11 +4461,11 @@ functionName(Math.max); // max (logged in debug channel of console)
 
 ### hz
 
-Returns the number of times a function executed per second. 
+Returns the number of times a function executed per second.
 `hz` is the unit for `hertz`, the unit of frequency defined as one cycle per second.
 
-Use `performance.now()` to get the difference in milliseconds before and after the iteration loop to calculate the time elapsed executing the function `iterations` times. 
-Return the number of cycles per second by converting milliseconds to seconds and dividing it by the time elapsed. 
+Use `performance.now()` to get the difference in milliseconds before and after the iteration loop to calculate the time elapsed executing the function `iterations` times.
+Return the number of cycles per second by converting milliseconds to seconds and dividing it by the time elapsed.
 Omit the second argument, `iterations`, to use the default of 100 iterations.
 
 ```js
@@ -4828,7 +4831,7 @@ unfold(f, 10); // [-10, -20, -30, -40, -50]
 
 ### when
 
-Tests a value, `x`, against a predicate function. If `true`, return `fn(x)`. Else, return `x`. 
+Tests a value, `x`, against a predicate function. If `true`, return `fn(x)`. Else, return `x`.
 
 Return a function expecting a single value, `x`, that returns the appropriate value based on `pred`.
 
@@ -5057,7 +5060,7 @@ The array should be ordered from best performer to worst performer (winner -> lo
 
 Use the exponent `**` operator and math operators to compute the expected score (chance of winning).
 of each opponent and compute the new rating for each.
-Loop through the ratings, using each permutation to compute the post-Elo rating for each player in a pairwise fashion. 
+Loop through the ratings, using each permutation to compute the post-Elo rating for each player in a pairwise fashion.
 Omit the second argument to use the default `kFactor` of 32.
 
 ```js
@@ -6658,9 +6661,9 @@ merge(object, other); // { a: [ { x: 2 }, { y: 4 }, { z: 3 } ], b: [ 1, 2, 3 ], 
 Given a flat array of objects linked to one another, it will nest them recursively.
 Useful for nesting comments, such as the ones on reddit.com.
 
-Use recursion. 
-Use `Array.filter()` to filter the items where the `id` matches the `link`, then `Array.map()` to map each one to a new object that has a `children` property which recursively nests the items based on which ones are children of the current item. 
-Omit the second argument, `id`, to default to `null` which indicates the object is not linked to another one (i.e. it is a top level object). 
+Use recursion.
+Use `Array.filter()` to filter the items where the `id` matches the `link`, then `Array.map()` to map each one to a new object that has a `children` property which recursively nests the items based on which ones are children of the current item.
+Omit the second argument, `id`, to default to `null` which indicates the object is not linked to another one (i.e. it is a top level object).
 Omit the third argument, `link`, to use `'parent_id'` as the default property which links the object to another one by its `id`.
 
 ```js
@@ -6927,7 +6930,7 @@ const b = shallowClone(a); // a !== b
 
 Get size of arrays, objects or strings.
 
-Get type of `val` (`array`, `object` or `string`). 
+Get type of `val` (`array`, `object` or `string`).
 Use `length` property for arrays.
 Use `length` or `size` value if available or number of keys for objects.
 Use `size` of a [`Blob` object](https://developer.mozilla.org/en-US/docs/Web/API/Blob) created from `val` for strings.
@@ -8042,7 +8045,7 @@ isNumber(1); // true
 
 Returns a boolean determining if the passed value is an object or not.
 
-Uses the  `Object` constructor to create an object wrapper for the given value. 
+Uses the  `Object` constructor to create an object wrapper for the given value.
 If the value is `null` or `undefined`, create and return an empty object. Οtherwise, return an object of a type that corresponds to the given value.
 
 ```js
@@ -8490,7 +8493,7 @@ const httpGet = (url, callback, err = console.error) => {
 httpGet(
   'https://jsonplaceholder.typicode.com/posts/1',
   console.log
-); /* 
+); /*
 Logs: {
   "userId": 1,
   "id": 1,
@@ -8570,8 +8573,8 @@ Logs: {
 
 Determines if the current runtime environment is a browser so that front-end modules can run on the server (Node) without throwing errors.
 
-Use `Array.includes()` on the `typeof` values of both `window` and `document` (globals usually only available in a browser environment unless they were explicitly defined), which will return `true` if one of them is `undefined`. 
-`typeof` allows globals to be checked for existence without throwing a `ReferenceError`. 
+Use `Array.includes()` on the `typeof` values of both `window` and `document` (globals usually only available in a browser environment unless they were explicitly defined), which will return `true` if one of them is `undefined`.
+`typeof` allows globals to be checked for existence without throwing a `ReferenceError`.
 If both of them are not `undefined`, then the current environment is assumed to be a browser.
 
 ```js
@@ -8596,7 +8599,7 @@ isBrowser(); // false (Node)
 Returns the index of the function in an array of functions which executed the fastest.
 
 Use `Array.map()` to generate an array where each value is the total time taken to execute the function after `iterations` times. Use the difference in `performance.now()` values before and after to get the total time in milliseconds to a high degree of accuracy.
-Use `Math.min()` to find the minimum execution time, and return the index of that shortest time which corresponds to the index of the most performant function. 
+Use `Math.min()` to find the minimum execution time, and return the index of that shortest time which corresponds to the index of the most performant function.
 Omit the second argument, `iterations`, to use a default of 10,000 iterations. The more iterations, the more reliable the result but the longer it will take.
 
 ```js
