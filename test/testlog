@@ -1,4 +1,4 @@
-Test log for: Thu Jun 14 2018 21:23:39 GMT+0000 (Coordinated Universal Time)
+Test log for: Fri Jun 15 2018 21:24:22 GMT+0000 (Coordinated Universal Time)
 
 > 30-seconds-of-code@0.0.3 test /home/travis/build/Chalarangelo/30-seconds-of-code
 > tape test/**/*.test.js | tap-spec
@@ -2029,8 +2029,8 @@ Test log for: Thu Jun 14 2018 21:23:39 GMT+0000 (Coordinated Universal Time)
 
     ✔ zipWith is a Function
     ✔ Sends a GET request
-    ✔ Runs the function provided
     ✔ Sends a POST request
+    ✔ Runs the function provided
     ✔ Runs promises in series
     ✔ Works as expecting, passing arguments properly
     ✔ Works with multiple promises
@@ -2048,7 +2048,7 @@ Test log for: Thu Jun 14 2018 21:23:39 GMT+0000 (Coordinated Universal Time)
   total:     1022
   passing:   1020
   failing:   2
-  duration:  2.4s
+  duration:  2.3s
 
 
 undefined
