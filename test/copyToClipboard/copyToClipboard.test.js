@@ -1,8 +1,10 @@
 const expect = require('expect');
 const copyToClipboard = require('./copyToClipboard.js');
 
-test('Testing copyToClipboard', () => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  expect(typeof copyToClipboard === 'function').toBeTruthy();
+
+  test('copyToClipboard is a Function', () => {
+  expect(copyToClipboard).toBeInstanceOf(Function);
 });
+  t.pass('Tested on 09/02/2018 by @chalarangelo');
+  
+

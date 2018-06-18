@@ -34,7 +34,7 @@
     "packager": "node ./scripts/module.js",
     "localizer": "node ./scripts/localize.js",
     "test": "tape test/**/*.test.js | tap-spec",
-    "test2": "jest ./jesttest/**/*.test.js"
+    "test2": "jest test/**/*.test.js"
   },
   "repository": {
     "type": "git",
