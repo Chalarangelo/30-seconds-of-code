@@ -622,7 +622,7 @@
         "text": "Performs right-to-left function composition.\n\nUse `Array.reduce()` to perform right-to-left function composition.\nThe last (rightmost) function can accept one or more arguments; the remaining functions must be unary.",
         "codeBlocks": [
           "const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));",
-          "const add5 = x => x + 5;\nconst multiply = (x, y) => x * y;\nconst multiplyAndAdd5 = compose(add5, multiply);\nmultiplyAndAdd5(5, 2); // 15"
+          "const add5 = x => x + 5;\nconst multiply = (x, y) => x * y;\nconst multiplyAndAdd5 = compose(\n  add5,\n  multiply\n);\nmultiplyAndAdd5(5, 2); // 15"
         ],
         "tags": [
           "function"
@@ -630,7 +630,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "bfef53f1a55158c29e8905e825723fc7b4de07f2e07865c151be2207a9563048"
+        "hash": "99383d2b505d6afcd239d6369ab28b319b0ea0b1bcf2cc9176ac5762516e4413"
       }
     },
     {
@@ -956,7 +956,7 @@
         "fileName": "degreesToRads.md",
         "text": "Converts an angle from degrees to radians.\n\nUse `Math.PI` and the degree to radian formula to convert the angle from degrees to radians.",
         "codeBlocks": [
-          "const degreesToRads = deg => deg * Math.PI / 180.0;",
+          "const degreesToRads = deg => (deg * Math.PI) / 180.0;",
           "degreesToRads(90.0); // ~1.5708"
         ],
         "tags": [
@@ -965,7 +965,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "1016ee8ef7038434a7e2d338dd0cf4a6fa763cc71e6a85bb2d09c0a310706487"
+        "hash": "7f34bce958e51235318edc3a1fba0acf0fa110e533f3e92f87d27e74d7c1532b"
       }
     },
     {
@@ -1764,7 +1764,7 @@
         "fileName": "getMeridiemSuffixOfInteger.md",
         "text": "Converts an integer to a suffixed string, adding `am` or `pm` based on its value.\n\nUse the modulo operator (`%`) and conditional checks to transform an integer to a stringified 12-hour format with meridiem suffix.",
         "codeBlocks": [
-          "const getMeridiemSuffixOfInteger = num =>\n  num === 0 || num === 24\n    ? 12 + 'am'\n    : num === 12\n      ? 12 + 'pm'\n      : num < 12\n        ? num % 12 + 'am'\n        : num % 12 + 'pm';",
+          "const getMeridiemSuffixOfInteger = num =>\n  num === 0 || num === 24\n    ? 12 + 'am'\n    : num === 12\n      ? 12 + 'pm'\n      : num < 12\n        ? (num % 12) + 'am'\n        : (num % 12) + 'pm';",
           "getMeridiemSuffixOfInteger(0); // \"12am\"\ngetMeridiemSuffixOfInteger(11); // \"11am\"\ngetMeridiemSuffixOfInteger(13); // \"1pm\"\ngetMeridiemSuffixOfInteger(25); // \"1pm\""
         ],
         "tags": [
@@ -1773,7 +1773,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "e4e4bb48a502ea8c982d24a23be3aef80d91b98823ceb18ee74b59a245278604"
+        "hash": "561d55a2f839596b336a04badbd160a3b895e9ebb9c1d392998ecccdbe5fb98d"
       }
     },
     {
@@ -2107,7 +2107,7 @@
         "fileName": "hz.md",
         "text": "Returns the number of times a function executed per second. \n`hz` is the unit for `hertz`, the unit of frequency defined as one cycle per second.\n\nUse `performance.now()` to get the difference in milliseconds before and after the iteration loop to calculate the time elapsed executing the function `iterations` times. \nReturn the number of cycles per second by converting milliseconds to seconds and dividing it by the time elapsed. \nOmit the second argument, `iterations`, to use the default of 100 iterations.",
         "codeBlocks": [
-          "const hz = (fn, iterations = 100) => {\n  const before = performance.now();\n  for (let i = 0; i < iterations; i++) fn();\n  return 1000 * iterations / (performance.now() - before);\n};",
+          "const hz = (fn, iterations = 100) => {\n  const before = performance.now();\n  for (let i = 0; i < iterations; i++) fn();\n  return (1000 * iterations) / (performance.now() - before);\n};",
           "// 10,000 element array\nconst numbers = Array(10000)\n  .fill()\n  .map((_, i) => i);\n\n// Test functions with the same goal: sum up the elements in the array\nconst sumReduce = () => numbers.reduce((acc, n) => acc + n, 0);\nconst sumForLoop = () => {\n  let sum = 0;\n  for (let i = 0; i < numbers.length; i++) sum += numbers[i];\n  return sum;\n};\n\n// `sumForLoop` is nearly 10 times faster\nMath.round(hz(sumReduce)); // 572\nMath.round(hz(sumForLoop)); // 4784"
         ],
         "tags": [
@@ -2116,7 +2116,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "727a458711693ea50770e99edabb873778991e981557ac1306ea98ef6e2fc956"
+        "hash": "4c8c44d8677b7b591d36d043e3c1347b50ad21e2b24aa371ea50b515ee98254f"
       }
     },
     {
@@ -2977,7 +2977,7 @@
         "fileName": "lcm.md",
         "text": "Returns the least common multiple of two or more numbers.\n\nUse the greatest common divisor (GCD) formula and the fact that `lcm(x,y) = x * y / gcd(x,y)` to determine the least common multiple.\nThe GCD formula uses recursion.",
         "codeBlocks": [
-          "const lcm = (...arr) => {\n  const gcd = (x, y) => (!y ? x : gcd(y, x % y));\n  const _lcm = (x, y) => x * y / gcd(x, y);\n  return [...arr].reduce((a, b) => _lcm(a, b));\n};",
+          "const lcm = (...arr) => {\n  const gcd = (x, y) => (!y ? x : gcd(y, x % y));\n  const _lcm = (x, y) => (x * y) / gcd(x, y);\n  return [...arr].reduce((a, b) => _lcm(a, b));\n};",
           "lcm(12, 7); // 84\nlcm(...[1, 3, 4, 5]); // 60"
         ],
         "tags": [
@@ -2987,7 +2987,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "cfc907dfcb9ce1b525d83767a4f29796f4211a14dd0f6bcc7f73f29a3053bab3"
+        "hash": "ac4ec1ff763b005ddd65e6ed5bdb49b18a4ce53f8b7ccf79536fa49ebeb6efa8"
       }
     },
     {
@@ -3037,7 +3037,7 @@
         "fileName": "luhnCheck.md",
         "text": "Implementation of the [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) used to validate a variety of identification numbers, such as credit card numbers, IMEI numbers, National Provider Identifier numbers etc.\n\nUse `String.split('')`, `Array.reverse()` and `Array.map()` in combination with `parseInt()` to obtain an array of digits.\nUse `Array.splice(0,1)` to obtain the last digit.\nUse `Array.reduce()` to implement the Luhn Algorithm.\nReturn `true` if `sum` is divisible by `10`, `false` otherwise.",
         "codeBlocks": [
-          "const luhnCheck = num => {\n  let arr = (num + '')\n    .split('')\n    .reverse()\n    .map(x => parseInt(x));\n  let lastDigit = arr.splice(0, 1)[0];\n  let sum = arr.reduce((acc, val, i) => (i % 2 !== 0 ? acc + val : acc + (val * 2) % 9 || 9), 0);\n  sum += lastDigit;\n  return sum % 10 === 0;\n};",
+          "const luhnCheck = num => {\n  let arr = (num + '')\n    .split('')\n    .reverse()\n    .map(x => parseInt(x));\n  let lastDigit = arr.splice(0, 1)[0];\n  let sum = arr.reduce((acc, val, i) => (i % 2 !== 0 ? acc + val : acc + ((val * 2) % 9) || 9), 0);\n  sum += lastDigit;\n  return sum % 10 === 0;\n};",
           "luhnCheck('4485275742308327'); // true\nluhnCheck(6011329933655299); //  false\nluhnCheck(123456789); // false"
         ],
         "tags": [
@@ -3047,7 +3047,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "9f818bb01725b7656b7d705bab52f432d939e2fd40ed49e1299c5bdaffffa143"
+        "hash": "874ac349f65a3787c4579dfe94efc068441b1b4cd38892a35352d43ece8e7ca4"
       }
     },
     {
@@ -3836,7 +3836,7 @@
         "fileName": "percentile.md",
         "text": "Uses the percentile formula to calculate how many numbers in the given array are less or equal to the given value.\n\nUse `Array.reduce()` to calculate how many numbers are below the value and how many are the same value and apply the percentile formula.",
         "codeBlocks": [
-          "const percentile = (arr, val) =>\n  100 * arr.reduce((acc, v) => acc + (v < val ? 1 : 0) + (v === val ? 0.5 : 0), 0) / arr.length;",
+          "const percentile = (arr, val) =>\n  (100 * arr.reduce((acc, v) => acc + (v < val ? 1 : 0) + (v === val ? 0.5 : 0), 0)) / arr.length;",
           "percentile([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 6); // 55"
         ],
         "tags": [
@@ -3845,7 +3845,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "6677f20c214645c69e54fd97551b67dcf0e25251b3460bae82c4a20b20cf84ef"
+        "hash": "5d181e4f610b1dd80004f022c7db0162c77fb8be96a7b250f4b9bbbc58287ec3"
       }
     },
     {
@@ -4155,7 +4155,7 @@
         "fileName": "radsToDegrees.md",
         "text": "Converts an angle from radians to degrees.\n\nUse `Math.PI` and the radian to degree formula to convert the angle from radians to degrees.",
         "codeBlocks": [
-          "const radsToDegrees = rad => rad * 180.0 / Math.PI;",
+          "const radsToDegrees = rad => (rad * 180.0) / Math.PI;",
           "radsToDegrees(Math.PI / 2); // 90"
         ],
         "tags": [
@@ -4164,7 +4164,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "72c17510c9b9b7b926cda9e22f998c5ce906119bd7b26a20e8229802e02c59bb"
+        "hash": "b749df623cb50779135ffb38d968cc58d9a8d5d1eadeacfa1d9eec43641c8e9e"
       }
     },
     {
