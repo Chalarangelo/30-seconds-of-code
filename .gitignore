@@ -8,3 +8,5 @@ test.sh
 dist/flavor\.min\.css
 
 dist/flavor\.css
+
+test_old/
