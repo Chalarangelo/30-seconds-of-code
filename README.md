@@ -4060,8 +4060,8 @@ const getMeridiemSuffixOfInteger = num =>
     : num === 12
       ? 12 + 'pm'
       : num < 12
-        ? num % 12 + 'am'
-        : num % 12 + 'pm';
+        ? (num % 12) + 'am'
+        : (num % 12) + 'pm';
 ```
 
 <details>
@@ -4256,7 +4256,10 @@ const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));
 ```js
 const add5 = x => x + 5;
 const multiply = (x, y) => x * y;
-const multiplyAndAdd5 = compose(add5, multiply);
+const multiplyAndAdd5 = compose(
+  add5,
+  multiply
+);
 multiplyAndAdd5(5, 2); // 15
 ```
 
@@ -4472,7 +4475,7 @@ Omit the second argument, `iterations`, to use the default of 100 iterations.
 const hz = (fn, iterations = 100) => {
   const before = performance.now();
   for (let i = 0; i < iterations; i++) fn();
-  return 1000 * iterations / (performance.now() - before);
+  return (1000 * iterations) / (performance.now() - before);
 };
 ```
 
@@ -4992,7 +4995,7 @@ Converts an angle from degrees to radians.
 Use `Math.PI` and the degree to radian formula to convert the angle from degrees to radians.
 
 ```js
-const degreesToRads = deg => deg * Math.PI / 180.0;
+const degreesToRads = deg => (deg * Math.PI) / 180.0;
 ```
 
 <details>
@@ -5356,7 +5359,7 @@ The GCD formula uses recursion.
 ```js
 const lcm = (...arr) => {
   const gcd = (x, y) => (!y ? x : gcd(y, x % y));
-  const _lcm = (x, y) => x * y / gcd(x, y);
+  const _lcm = (x, y) => (x * y) / gcd(x, y);
   return [...arr].reduce((a, b) => _lcm(a, b));
 };
 ```
@@ -5391,7 +5394,7 @@ const luhnCheck = num => {
     .reverse()
     .map(x => parseInt(x));
   let lastDigit = arr.splice(0, 1)[0];
-  let sum = arr.reduce((acc, val, i) => (i % 2 !== 0 ? acc + val : acc + (val * 2) % 9 || 9), 0);
+  let sum = arr.reduce((acc, val, i) => (i % 2 !== 0 ? acc + val : acc + ((val * 2) % 9) || 9), 0);
   sum += lastDigit;
   return sum % 10 === 0;
 };
@@ -5492,7 +5495,7 @@ Use `Array.reduce()` to calculate how many numbers are below the value and how m
 
 ```js
 const percentile = (arr, val) =>
-  100 * arr.reduce((acc, v) => acc + (v < val ? 1 : 0) + (v === val ? 0.5 : 0), 0) / arr.length;
+  (100 * arr.reduce((acc, v) => acc + (v < val ? 1 : 0) + (v === val ? 0.5 : 0), 0)) / arr.length;
 ```
 
 <details>
@@ -5564,7 +5567,7 @@ Converts an angle from radians to degrees.
 Use `Math.PI` and the radian to degree formula to convert the angle from radians to degrees.
 
 ```js
-const radsToDegrees = rad => rad * 180.0 / Math.PI;
+const radsToDegrees = rad => (rad * 180.0) / Math.PI;
 ```
 
 <details>
