@@ -1,9 +1,9 @@
 const expect = require('expect');
 const coalesce = require('./coalesce.js');
 
-test('Testing coalesce', () => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  expect(typeof coalesce === 'function').toBeTruthy();
-  expect(coalesce(null, undefined, '', NaN, 'Waldo')).toEqual('');
+
+  test('coalesce is a Function', () => {
+  expect(coalesce).toBeInstanceOf(Function);
 });
+  t.deepEqual(coalesce(null, undefined, '', NaN, 'Waldo'), '', "Returns the first non-null/undefined argument");
+  

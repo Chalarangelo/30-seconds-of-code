@@ -1,8 +1,10 @@
 const expect = require('expect');
 const createEventHub = require('./createEventHub.js');
 
-test('Testing createEventHub', () => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  expect(typeof createEventHub === 'function').toBeTruthy();
+
+  test('createEventHub is a Function', () => {
+  expect(createEventHub).toBeInstanceOf(Function);
 });
+  t.pass('Tested by @chalarangelo on 16/02/2018');
+  
+
