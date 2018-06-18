@@ -5,7 +5,7 @@
 
 // Load modules
 const fs = require('fs-extra'), path = require('path');
-const child_process = require('child_process');
+const childProcess = require('child_process');
 const chalk = require('chalk');
 const util = require('./util');
 if(util.isTravisCI() && process.env['TRAVIS_EVENT_TYPE'] !== 'cron' && process.env['TRAVIS_EVENT_TYPE'] !== 'api') {
@@ -84,7 +84,7 @@ snippetFiles
   });
 try {
   fs.writeFileSync(path.join(TEST_PATH,'testlog'),`Test log for: ${new Date().toString()}\n`);
-  child_process.execSync(`npm test`);
+  childProcess.execSync(`npm test`);
 }
 catch (e) {
   fs.appendFileSync(path.join(TEST_PATH,'testlog'));

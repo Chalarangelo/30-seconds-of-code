@@ -12,5 +12,5 @@ const freddy = {
 };
 const freddyBound = bindKey(freddy, 'greet');
 test('Binds function to an object context', () => {
-  expect(freddyBound('hi', '!')).toBe('hi fred!')
+  expect(freddyBound('hi', '!')).toBe('hi fred!');
 });

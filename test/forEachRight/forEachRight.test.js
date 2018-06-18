@@ -7,5 +7,5 @@ test('forEachRight is a Function', () => {
 let output = '';
 forEachRight([1, 2, 3, 4], val => output+=val);
 test('Iterates over the array in reverse', () => {
-  expect(output).toBe('4321')
+  expect(output).toBe('4321');
 });
