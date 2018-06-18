@@ -14,7 +14,7 @@ test('toSnakeCase(\'some-mixed_string With spaces_underscores-and-hyphens\') ret
   expect(toSnakeCase('some-mixed_string With spaces_underscores-and-hyphens')).toBe('some_mixed_string_with_spaces_underscores_and_hyphens');
 });
 test('toSnakeCase(\'IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML\') returns i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html', () => {
-  expect(toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML')).toBe('i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html')
+  expect(toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML')).toBe('i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html');
 });
 test('toSnakeCase() returns undefined', () => {
   expect(toSnakeCase()).toBe(undefined);

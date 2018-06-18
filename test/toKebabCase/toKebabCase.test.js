@@ -14,10 +14,10 @@ test('toKebabCase(\'some-mixed-string With spaces-underscores-and-hyphens\') ret
   expect(toKebabCase('some-mixed-string With spaces-underscores-and-hyphens')).toBe('some-mixed-string-with-spaces-underscores-and-hyphens');
 });
 test('toKebabCase(\'IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML\') returns i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html', () => {
-  expect(toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML')).toBe('i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html')
+  expect(toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML')).toBe('i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html');
 });
 test('toKebabCase() returns undefined', () => {
-  expect(toKebabCase()).toBe(undefined)
+  expect(toKebabCase()).toBe(undefined);
 });
 test('toKebabCase([]) throws an erro', () => {
   expect(() => { toKebabCase([]); }).toThrow();

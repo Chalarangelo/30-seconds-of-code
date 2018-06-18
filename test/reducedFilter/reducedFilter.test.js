@@ -17,5 +17,5 @@ const data = [
 }
 ];
 test('Filter an array of objects based on a condition while also filtering out unspecified keys.', () => {
-  expect(reducedFilter(data, ['id', 'name'], item => item.age > 24)).toEqual([{ id: 2, name: 'mike'}])
+  expect(reducedFilter(data, ['id', 'name'], item => item.age > 24)).toEqual([{ id: 2, name: 'mike'}]);
 });

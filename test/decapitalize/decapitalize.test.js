@@ -8,5 +8,5 @@ test('Works with default parameter', () => {
   expect(decapitalize('FooBar')).toBe('fooBar');
 });
 test('Works with second parameter set to true', () => {
-  expect(decapitalize('FooBar', true)).toBe('fOOBAR')
+  expect(decapitalize('FooBar', true)).toBe('fOOBAR');
 });

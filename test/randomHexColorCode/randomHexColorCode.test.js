@@ -6,7 +6,7 @@ test('randomHexColorCode is a Function', () => {
 });
 test('randomHexColorCode has to proper length', () => {
   expect(randomHexColorCode().length).toBe(7);
-})
+});
 test('The color code starts with "#"', () => {
   expect(randomHexColorCode().startsWith('#')).toBeTruthy();
 });

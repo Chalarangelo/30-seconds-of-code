@@ -12,5 +12,5 @@ var view = {
 };
 bindAll(view, 'click');
 test('Binds to an object context', () => {
-  expect(view.click()).toBe('clicked docs')
+  expect(view.click()).toBe('clicked docs');
 });

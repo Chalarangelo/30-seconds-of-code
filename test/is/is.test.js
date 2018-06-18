@@ -8,7 +8,7 @@ test('Works for arrays with data', () => {
   expect(is(Array, [1])).toBeTruthy();
 });
 test('Works for empty arrays', () => {
-  expect(is(Array, [])).toBeTruthy()
+  expect(is(Array, [])).toBeTruthy();
 });
 test('Works for arrays, not objects', () => {
   expect(is(Array, {})).toBeFalsy();
@@ -41,10 +41,10 @@ test('Works for numbers - returns true for primitive', () => {
   expect(is(Number, 1)).toBeTruthy();
 });
 test('Works for numbers - returns true when using constructor', () => {
-  expect(is(Number, new Number('10'))).toBeTruthy()
+  expect(is(Number, new Number('10'))).toBeTruthy();
 });
 test('Works for booleans - returns true for primitive', () => {
-  expect(is(Boolean, false)).toBeTruthy()
+  expect(is(Boolean, false)).toBeTruthy();
 });
 test('Works for booleans - returns true when using constructor', () => {
   expect(is(Boolean, new Boolean(false))).toBeTruthy();

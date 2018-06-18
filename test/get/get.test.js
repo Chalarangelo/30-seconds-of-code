@@ -6,5 +6,5 @@ test('get is a Function', () => {
 });
 const obj = { selector: { to: { val: 'val to get' } } };
 test('Retrieve a property indicated by the selector from an object.', () => {
-  expect(get(obj, 'selector.to.val')).toEqual(['val to get'])
+  expect(get(obj, 'selector.to.val')).toEqual(['val to get']);
 });
