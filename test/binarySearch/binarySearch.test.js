@@ -1,16 +1,18 @@
-const test = require('tape');
+const expect = require('expect');
 const binarySearch = require('./binarySearch.js');
 
-test('Testing binarySearch', (t) => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  t.true(typeof binarySearch === 'function', 'binarySearch is a Function');
-  //t.deepEqual(binarySearch(args..), 'Expected');
-  t.equal(binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 6), 2, 'Finds item in array');
-  t.equal(binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 21), -1, 'Returns -1 when not found');
-  t.equal(binarySearch([], 21), -1, 'Works with empty arrays');
-  t.equal(binarySearch([1], 1), 0, "Works for one element arrays");
-  //t.false(binarySearch(args..), 'Expected');
-  //t.throws(binarySearch(args..), 'Expected');
-  t.end();
+test('binarySearch is a Function', () => {
+  expect(binarySearch).toBeInstanceOf(Function);
+});
+test('Finds item in array', () => {
+  expect(binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 6)).toBe(2);
+});
+test('Returns -1 when not found', () => {
+  expect(binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 21)).toBe(-1);
+});
+test('Works with empty arrays', () => {
+  expect(binarySearch([], 21)).toBe(-1);
+});
+test('Works for one element arrays', () => {
+  expect(binarySearch([1], 1)).toBe(0);
 });

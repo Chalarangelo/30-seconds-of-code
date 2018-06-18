@@ -1,14 +1,9 @@
-const test = require('tape');
+const expect = require('expect');
 const fibonacci = require('./fibonacci.js');
 
-test('Testing fibonacci', (t) => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  t.true(typeof fibonacci === 'function', 'fibonacci is a Function');
-  t.deepEqual(fibonacci(6), [0, 1, 1, 2, 3, 5], "Generates an array, containing the Fibonacci sequence");
-  //t.deepEqual(fibonacci(args..), 'Expected');
-  //t.equal(fibonacci(args..), 'Expected');
-  //t.false(fibonacci(args..), 'Expected');
-  //t.throws(fibonacci(args..), 'Expected');
-  t.end();
+test('fibonacci is a Function', () => {
+  expect(fibonacci).toBeInstanceOf(Function);
+});
+test('Generates an array, containing the Fibonacci sequence', () => {
+  expect(fibonacci(6)).toEqual([0, 1, 1, 2, 3, 5]);
 });

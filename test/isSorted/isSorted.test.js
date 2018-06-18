@@ -1,23 +1,39 @@
-const test = require('tape');
+const expect = require('expect');
 const isSorted = require('./isSorted.js');
 
-test('Testing isSorted', (t) => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  t.true(typeof isSorted === 'function', 'isSorted is a Function');
-  //t.deepEqual(isSorted(args..), 'Expected');
-  t.equal(isSorted([0, 1, 2]), 1, 'Array is sorted in ascending order');
-  t.equal(isSorted([0, 1, 2, 2]), 1, 'Array is sorted in ascending order');
-  t.equal(isSorted([-4, -3, -2]), 1, 'Array is sorted in ascending order');
-  t.equal(isSorted([0, 0, 1, 2]), 1, 'Array is sorted in ascending order');
-  t.equal(isSorted([2, 1, 0]), -1, 'Array is sorted in descending order');
-  t.equal(isSorted([2, 2, 1, 0]), -1, 'Array is sorted in descending order');
-  t.equal(isSorted([-2, -3, -4]), -1, 'Array is sorted in descending order');
-  t.equal(isSorted([2, 1, 0, 0]), -1, 'Array is sorted in descending order');
-  t.equal(isSorted([]), undefined, 'Array is empty');
-  t.equal(isSorted([1]), 0, 'Array is not sorted, direction changed in array');
-  t.equal(isSorted([1, 2, 1]), 0, 'Array is not sorted, direction changed in array');
-  //t.false(isSorted(args..), 'Expected');
-  //t.throws(isSorted(args..), 'Expected');
-  t.end();
+test('isSorted is a Function', () => {
+  expect(isSorted).toBeInstanceOf(Function);
+});
+test('Array is sorted in ascending order', () => {
+  expect(isSorted([0, 1, 2])).toBe(1);
+});
+test('Array is sorted in ascending order', () => {
+  expect(isSorted([0, 1, 2, 2])).toBe(1);
+});
+test('Array is sorted in ascending order', () => {
+  expect(isSorted([-4, -3, -2])).toBe(1);
+});
+test('Array is sorted in ascending order', () => {
+  expect(isSorted([0, 0, 1, 2])).toBe(1);
+});
+test('Array is sorted in descending order', () => {
+  expect(isSorted([2, 1, 0])).toBe(-1);
+});
+test('Array is sorted in descending order', () => {
+  expect(isSorted([2, 2, 1, 0])).toBe(-1);
+});
+test('Array is sorted in descending order', () => {
+  expect(isSorted([-2, -3, -4])).toBe(-1);
+});
+test('Array is sorted in descending order', () => {
+  expect(isSorted([2, 1, 0, 0])).toBe(-1);
+});
+test('Array is empty', () => {
+  expect(isSorted([])).toBe(undefined);
+});
+test('Array is not sorted, direction changed in array', () => {
+  expect(isSorted([1])).toBe(0);
+});
+test('Array is not sorted, direction changed in array', () => {
+  expect(isSorted([1, 2, 1])).toBe(0);
 });

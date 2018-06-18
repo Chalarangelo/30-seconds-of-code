@@ -1,19 +1,33 @@
-const test = require('tape');
+const expect = require('expect');
 const words = require('./words.js');
 
-test('Testing words', (t) => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  t.true(typeof words === 'function', 'words is a Function');
-  t.deepEqual(words('I love javaScript!!'), ["I", "love", "javaScript"], "words('I love javaScript!!') returns [I, love, javaScript]");
-  t.deepEqual(words('python, javaScript & coffee'), ["python", "javaScript", "coffee"], "words('python, javaScript & coffee') returns [python, javaScript, coffee]");
-  t.true(Array.isArray(words('I love javaScript!!')), 'words(I love javaScript!!) returns an array');
-  t.throws(() => words(), 'words() throws a error');
-  t.throws(() => words(null), 'words(null) throws a error');
-  t.throws(() => words(undefined), 'words(undefined) throws a error');
-  t.throws(() => words({}), 'words({}) throws a error');
-  t.throws(() => words([]), 'words([]) throws a error');
-  t.throws(() => words(1234), 'words(1234) throws a error');
-
-  t.end();
+test('words is a Function', () => {
+  expect(words).toBeInstanceOf(Function);
+});
+test('words(\'I love javaScript!!\') returns [I, love, javaScript]', () => {
+  expect(words('I love javaScript!!')).toEqual(["I", "love", "javaScript"]);
+});
+test('words(\'python, javaScript & coffee\') returns [python, javaScript, coffee]', () => {
+  expect(words('python, javaScript & coffee')).toEqual(["python", "javaScript", "coffee"]);
+});
+test('words(I love javaScript!!) returns an array', () => {
+  expect(Array.isArray(words('I love javaScript!!'))).toBeTruthy();
+});
+test('words() throws an error', () => {
+  expect(() => { words(); }).toThrow();
+});
+test('words(null) throws an error', () => {
+  expect(() => { words(null); }).toThrow();
+});
+test('words(undefined) throws an error', () => {
+  expect(() => { words(undefined); }).toThrow();
+});
+test('words({}) throws an error', () => {
+  expect(() => { words({}); }).toThrow();
+});
+test('words([]) throws an error', () => {
+  expect(() => { words([]); }).toThrow();
+});
+test('words(1234) throws an error', () => {
+  expect(() => { words(1234); }).toThrow();
 });

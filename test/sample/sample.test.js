@@ -1,17 +1,16 @@
-const test = require('tape');
+const expect = require('expect');
 const sample = require('./sample.js');
 
-test('Testing sample', (t) => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  t.true(typeof sample === 'function', 'sample is a Function');
-  const arr = [3,7,9,11];
-  t.true(arr.includes(sample(arr)), 'Returns a random element from the array');
-  t.equal(sample([1]), 1, 'Works for single-element arrays');
-  t.equal(sample([]), undefined, 'Returns undefined for empty array');
-  //t.deepEqual(sample(args..), 'Expected');
-  //t.equal(sample(args..), 'Expected');
-  //t.false(sample(args..), 'Expected');
-  //t.throws(sample(args..), 'Expected');
-  t.end();
+test('sample is a Function', () => {
+  expect(sample).toBeInstanceOf(Function);
+});
+const arr = [3,7,9,11];
+test('Returns a random element from the array', () => {
+  expect(arr.includes(sample(arr))).toBeTruthy();
+});
+test('Works for single-element arrays', () => {
+  expect(sample([1])).toBe(1);
+});
+test('Returns undefined for empty array', () => {
+  expect(sample([])).toBe(undefined);
 });

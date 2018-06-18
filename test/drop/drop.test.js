@@ -1,16 +1,15 @@
-const test = require('tape');
+const expect = require('expect');
 const drop = require('./drop.js');
 
-test('Testing drop', (t) => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  t.true(typeof drop === 'function', 'drop is a Function');
-  t.deepEqual(drop([1, 2, 3]), [2,3], 'Works without the last argument');
-  t.deepEqual(drop([1, 2, 3], 2), [3], 'Removes appropriate element count as specified');
-  t.deepEqual(drop([1, 2, 3], 42), [], 'Empties array given a count greater than length');
-  //t.deepEqual(drop(args..), 'Expected');
-  //t.equal(drop(args..), 'Expected');
-  //t.false(drop(args..), 'Expected');
-  //t.throws(drop(args..), 'Expected');
-  t.end();
+test('drop is a Function', () => {
+  expect(drop).toBeInstanceOf(Function);
+});
+test('Works without the last argument', () => {
+  expect(drop([1, 2, 3])).toEqual([2,3]);
+});
+test('Removes appropriate element count as specified', () => {
+  expect(drop([1, 2, 3], 2)).toEqual([3]);
+});
+test('Empties array given a count greater than length', () => {
+  expect(drop([1, 2, 3], 42)).toEqual([]);
 });

@@ -1,17 +1,18 @@
-const test = require('tape');
+const expect = require('expect');
 const capitalize = require('./capitalize.js');
 
-test('Testing capitalize', (t) => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  t.true(typeof capitalize === 'function', 'capitalize is a Function');
-  t.equal(capitalize('fooBar'), 'FooBar', "Capitalizes the first letter of a string");
-  t.equal(capitalize('fooBar', true), 'Foobar', "Capitalizes the first letter of a string");
-  t.equal(capitalize('#!#', true), '#!#', "Works with characters");
-  t.equal(capitalize('a', true), 'A', "Works with single character words");
-  //t.deepEqual(capitalize(args..), 'Expected');
-  //t.equal(capitalize(args..), 'Expected');
-  //t.false(capitalize(args..), 'Expected');
-  //t.throws(capitalize(args..), 'Expected');
-  t.end();
+test('capitalize is a Function', () => {
+  expect(capitalize).toBeInstanceOf(Function);
+});
+test('Capitalizes the first letter of a string', () => {
+  expect(capitalize('fooBar')).toBe('FooBar');
+});
+test('Capitalizes the first letter of a string', () => {
+  expect(capitalize('fooBar', true)).toBe('Foobar');
+});
+test('Works with characters', () => {
+  expect(capitalize('#!#', true)).toBe('#!#');
+});
+test('"Works with single character words', () => {
+  expect(capitalize('a', true)).toBe('A');
 });

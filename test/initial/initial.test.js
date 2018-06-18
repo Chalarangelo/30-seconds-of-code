@@ -1,14 +1,9 @@
-const test = require('tape');
+const expect = require('expect');
 const initial = require('./initial.js');
 
-test('Testing initial', (t) => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  t.true(typeof initial === 'function', 'initial is a Function');
-  t.deepEqual(initial([1, 2, 3]), [1, 2], "Returns all the elements of an array except the last one");
-  //t.deepEqual(initial(args..), 'Expected');
-  //t.equal(initial(args..), 'Expected');
-  //t.false(initial(args..), 'Expected');
-  //t.throws(initial(args..), 'Expected');
-  t.end();
+test('initial is a Function', () => {
+  expect(initial).toBeInstanceOf(Function);
+});
+test('Returns all the elements of an array except the last one', () => {
+  expect(initial([1, 2, 3])).toEqual([1, 2]);
 });

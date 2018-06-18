@@ -1,19 +1,18 @@
-const test = require('tape');
+const expect = require('expect');
 const reduceWhich = require('./reduceWhich.js');
 
-test('Testing reduceWhich', (t) => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  t.true(typeof reduceWhich === 'function', 'reduceWhich is a Function');
-  t.equal(reduceWhich([1, 3, 2]), 1, 'Returns the minimum of an array');
-  t.equal(reduceWhich([1, 3, 2], (a, b) => b - a), 3, 'Returns the maximum of an array');
-  t.deepEqual(reduceWhich(
+test('reduceWhich is a Function', () => {
+  expect(reduceWhich).toBeInstanceOf(Function);
+});
+test('Returns the minimum of an array', () => {
+  expect(reduceWhich([1, 3, 2])).toBe(1);
+});
+test('Returns the maximum of an array', () => {
+  expect(reduceWhich([1, 3, 2], (a, b) => b - a)).toBe(3);
+});
+test('Returns the object with the minimum specified value in an array', () => {
+  expect(reduceWhich(
   [{ name: 'Tom', age: 12 }, { name: 'Jack', age: 18 }, { name: 'Lucy', age: 9 }],
   (a, b) => a.age - b.age
-), {name: "Lucy", age: 9}, 'Returns the object with the minimum specified value in an array');
-  //t.deepEqual(reduceWhich(args..), 'Expected');
-  //t.equal(reduceWhich(args..), 'Expected');
-  //t.false(reduceWhich(args..), 'Expected');
-  //t.throws(reduceWhich(args..), 'Expected');
-  t.end();
+)).toEqual({name: "Lucy", age: 9});
 });

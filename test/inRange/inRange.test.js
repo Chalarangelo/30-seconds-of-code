@@ -1,17 +1,18 @@
-const test = require('tape');
+const expect = require('expect');
 const inRange = require('./inRange.js');
 
-test('Testing inRange', (t) => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  t.true(typeof inRange === 'function', 'inRange is a Function');
-  t.equal(inRange(3, 2, 5), true, "The given number falls within the given range");
-  t.equal(inRange(3, 4), true, "The given number falls within the given range");
-  t.equal(inRange(2, 3, 5), false, "The given number does not falls within the given range");
-  t.equal(inRange(3, 2), false, "The given number does not falls within the given range");
-  //t.deepEqual(inRange(args..), 'Expected');
-  //t.equal(inRange(args..), 'Expected');
-  //t.false(inRange(args..), 'Expected');
-  //t.throws(inRange(args..), 'Expected');
-  t.end();
+test('inRange is a Function', () => {
+  expect(inRange).toBeInstanceOf(Function);
+});
+test('The given number falls within the given range', () => {
+  expect(inRange(3, 2, 5)).toBeTruthy();
+});
+test('The given number falls within the given range', () => {
+  expect(inRange(3, 4)).toBeTruthy();
+});
+test('The given number does not falls within the given range', () => {
+  expect(inRange(2, 3, 5)).toBeFalsy();
+});
+test('The given number does not falls within the given range', () => {
+  expect(inRange(3, 2)).toBeFalsy();
 });

@@ -1,16 +1,15 @@
-const test = require('tape');
+const expect = require('expect');
 const isArrayLike = require('./isArrayLike.js');
 
-test('Testing isArrayLike', (t) => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  t.true(typeof isArrayLike === 'function', 'isArrayLike is a Function');
-  t.equal(isArrayLike('abc'), true, 'Returns true for a string');
-  t.equal(isArrayLike([1,2,3]), true, 'Returns true for an array');
-  t.equal(isArrayLike(null), false, 'Returns false for null');
-  //t.deepEqual(isArrayLike(args..), 'Expected');
-  //t.equal(isArrayLike(args..), 'Expected');
-  //t.false(isArrayLike(args..), 'Expected');
-  //t.throws(isArrayLike(args..), 'Expected');
-  t.end();
+test('isArrayLike is a Function', () => {
+  expect(isArrayLike).toBeInstanceOf(Function);
+});
+test('Returns true for a string', () => {
+  expect(isArrayLike('abc')).toBeTruthy();
+});
+test('Returns true for an array', () => {
+  expect(isArrayLike([1,2,3])).toBeTruthy();
+});
+test('Returns false for null', () => {
+  expect(isArrayLike(null)).toBeFalsy();
 });

@@ -1,10 +1,11 @@
-const test = require('tape');
+const expect = require('expect');
 const chainAsync = require('./chainAsync.js');
 
-test('Testing chainAsync', (t) => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  t.true(typeof chainAsync === 'function', 'chainAsync is a Function');
+test('chainAsync is a Function', () => {
+  expect(chainAsync).toBeInstanceOf(Function);
+});
+
+test('Calls all functions in an array', () => {
   chainAsync([
     next => {
       next();
@@ -15,13 +16,7 @@ test('Testing chainAsync', (t) => {
       })();
     },
     next => {
-      t.pass("Calls all functions in an array");
+      expect(true).toBeTruthy();
     }
   ]);
-  // // Ensure we wait for the 2nd assertion to be made
-  // t.plan(2);
-
-  //t.false(chainAsync(args..), 'Expected');
-  //t.throws(chainAsync(args..), 'Expected');
-  t.end();
 });

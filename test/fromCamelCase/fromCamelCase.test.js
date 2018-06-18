@@ -1,16 +1,15 @@
-const test = require('tape');
+const expect = require('expect');
 const fromCamelCase = require('./fromCamelCase.js');
 
-test('Testing fromCamelCase', (t) => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  t.true(typeof fromCamelCase === 'function', 'fromCamelCase is a Function');
-  t.equal(fromCamelCase('someDatabaseFieldName', ' '), 'some database field name', "Converts a string from camelcase");
-  t.equal(fromCamelCase('someLabelThatNeedsToBeCamelized', '-'), 'some-label-that-needs-to-be-camelized', "Converts a string from camelcase");
-  t.equal(fromCamelCase('someJavascriptProperty', '_'), 'some_javascript_property', "Converts a string from camelcase");
-  //t.deepEqual(fromCamelCase(args..), 'Expected');
-  //t.equal(fromCamelCase(args..), 'Expected');
-  //t.false(fromCamelCase(args..), 'Expected');
-  //t.throws(fromCamelCase(args..), 'Expected');
-  t.end();
+test('fromCamelCase is a Function', () => {
+  expect(fromCamelCase).toBeInstanceOf(Function);
+});
+test('Converts a string from camelcase', () => {
+  expect(fromCamelCase('someDatabaseFieldName', ' ')).toBe('some database field name');
+});
+test('Converts a string from camelcase', () => {
+  expect(fromCamelCase('someLabelThatNeedsToBeCamelized', '-')).toBe('some-label-that-needs-to-be-camelized');
+});
+test('Converts a string from camelcase', () => {
+  expect(fromCamelCase('someJavascriptProperty', '_')).toBe('some_javascript_property');
 });

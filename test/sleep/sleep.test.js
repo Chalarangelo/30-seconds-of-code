@@ -1,17 +1,12 @@
-const test = require('tape');
+const expect = require('expect');
 const sleep = require('./sleep.js');
 
-test('Testing sleep', (t) => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  t.true(typeof sleep === 'function', 'sleep is a Function');
+test('sleep is a Function', () => {
+  expect(sleep).toBeInstanceOf(Function);
+});
+test('Works as expected', () => {
   async function sleepyWork() {
     await sleep(1000);
-    t.pass('Works as expected');
+    expect(true).toBeTruthy();
   }
-  //t.deepEqual(sleep(args..), 'Expected');
-  //t.equal(sleep(args..), 'Expected');
-  //t.false(sleep(args..), 'Expected');
-  //t.throws(sleep(args..), 'Expected');
-  t.end();
 });
