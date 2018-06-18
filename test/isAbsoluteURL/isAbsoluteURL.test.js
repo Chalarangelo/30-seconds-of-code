@@ -7,5 +7,7 @@ const isAbsoluteURL = require('./isAbsoluteURL.js');
 });
   t.equal(isAbsoluteURL('https:
   t.equal(isAbsoluteURL('ftp:
-  t.equal(isAbsoluteURL('/foo/bar'), false, "Given string is not an absolute URL");
+  test('Given string is not an absolute URL', () => {
+  expect(isAbsoluteURL('/foo/bar')).toBe(false)
+});
   

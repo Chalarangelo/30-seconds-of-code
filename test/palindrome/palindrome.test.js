@@ -5,6 +5,10 @@ const palindrome = require('./palindrome.js');
   test('palindrome is a Function', () => {
   expect(palindrome).toBeInstanceOf(Function);
 });
-  t.equal(palindrome('taco cat'), true, "Given string is a palindrome");
-  t.equal(palindrome('foobar'), false, "Given string is not a palindrome");
+  test('Given string is a palindrome', () => {
+  expect(palindrome('taco cat')).toBe(true)
+});
+  test('Given string is not a palindrome', () => {
+  expect(palindrome('foobar')).toBe(false)
+});
   

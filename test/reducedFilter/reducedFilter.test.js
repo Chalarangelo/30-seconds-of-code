@@ -17,5 +17,7 @@ const reducedFilter = require('./reducedFilter.js');
       age: 50
     }
     ];
-    t.deepEqual(reducedFilter(data, ['id', 'name'], item => item.age > 24), [{ id: 2, name: 'mike'}], "Filter an array of objects based on a condition while also filtering out unspecified keys.");
+    test('Filter an array of objects based on a condition while also filtering out unspecified keys.', () => {
+  expect(reducedFilter(data, ['id', 'name'], item => item.age > 24), [{ id: 2).toEqual(name: 'mike'}])
+});
   

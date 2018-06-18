@@ -5,10 +5,18 @@ const union = require('./union.js');
   test('union is a Function', () => {
   expect(union).toBeInstanceOf(Function);
 });
-  t.deepEqual(union([1, 2, 3], [4, 3, 2]), [1, 2, 3, 4], "union([1, 2, 3], [4, 3, 2]) returns [1, 2, 3, 4]");
-  t.deepEqual(union('str', 'asd'), [ 's', 't', 'r', 'a', 'd' ], "union('str', 'asd') returns [ 's', 't', 'r', 'a', 'd' ]");
-  t.deepEqual(union([[], {}], [1, 2, 3]), [[], {}, 1, 2, 3], "union([[], {}], [1, 2, 3]) returns [[], {}, 1, 2, 3]");
-  t.deepEqual(union([], []), [], "union([], []) returns []");
+  test('union([1, 2, 3], [4, 3, 2]) returns [1, 2, 3, 4]', () => {
+  expect(union([1, 2, 3], [4, 3, 2]), [1, 2, 3).toEqual(4])
+});
+  test('union('str', 'asd') returns [ 's', 't', 'r', 'a', 'd' ]', () => {
+  expect(union('str', 'asd'), [ 's', 't', 'r', 'a').toEqual('d' ])
+});
+  test('union([[], {}], [1, 2, 3]) returns [[], {}, 1, 2, 3]', () => {
+  expect(union([[], {}], [1, 2, 3]), [[], {}, 1, 2).toEqual(3])
+});
+  test('union([], []) returns []', () => {
+  expect(union([], [])).toEqual([])
+});
   t.throws(() => union(), 'union() throws an error');
   t.throws(() => union(true, 'str'), 'union(true, str) throws an error');
   t.throws(() => union('false', true), 'union(false, true) throws an error');

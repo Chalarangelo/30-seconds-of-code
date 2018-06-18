@@ -8,7 +8,9 @@ const last = require('./last.js');
   test('last({ a: 1234}) returns undefined', () => {
   expect(last({ a: 1234}) === undefined).toBeTruthy();
 });
-  t.equal(last([1, 2, 3]), 3, "last([1, 2, 3]) returns 3");
+  test('last([1, 2, 3]) returns 3', () => {
+  expect(last([1, 2, 3])).toBe(3)
+});
   test('last({ 0: false}) returns undefined', () => {
   expect(last({ 0: false}), undefined).toBe()
 });

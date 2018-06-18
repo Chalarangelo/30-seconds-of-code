@@ -8,7 +8,9 @@ const head = require('./head.js');
   test('head({ a: 1234}) returns undefined', () => {
   expect(head({ a: 1234}) === undefined).toBeTruthy();
 });
-  t.equal(head([1, 2, 3]), 1, "head([1, 2, 3]) returns 1");
+  test('head([1, 2, 3]) returns 1', () => {
+  expect(head([1, 2, 3])).toBe(1)
+});
   test('head({ 0: false}) returns false', () => {
   expect(head({ 0: false}), false).toBe()
 });
