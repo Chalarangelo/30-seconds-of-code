@@ -5,10 +5,18 @@ const toKebabCase = require('./toKebabCase.js');
   test('toKebabCase is a Function', () => {
   expect(toKebabCase).toBeInstanceOf(Function);
 });
-  t.equal(toKebabCase('camelCase'), 'camel-case', "toKebabCase('camelCase') returns camel-case");
-  t.equal(toKebabCase('some text'), 'some-text', "toKebabCase('some text') returns some-text");
-  t.equal(toKebabCase('some-mixed-string With spaces-underscores-and-hyphens'), 'some-mixed-string-with-spaces-underscores-and-hyphens', "toKebabCase('some-mixed-string With spaces-underscores-and-hyphens') returns some-mixed-string-with-spaces-underscores-and-hyphens");
-  t.equal(toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'), 'i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html', "toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') returns i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html");
+  test('toKebabCase('camelCase') returns camel-case', () => {
+  expect(toKebabCase('camelCase')).toBe('camel-case')
+});
+  test('toKebabCase('some text') returns some-text', () => {
+  expect(toKebabCase('some text')).toBe('some-text')
+});
+  test('toKebabCase('some-mixed-string With spaces-underscores-and-hyphens') returns some-mixed-string-with-spaces-underscores-and-hyphens', () => {
+  expect(toKebabCase('some-mixed-string With spaces-underscores-and-hyphens')).toBe('some-mixed-string-with-spaces-underscores-and-hyphens')
+});
+  test('toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') returns i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html', () => {
+  expect(toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML')).toBe('i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html')
+});
   test('toKebabCase() return undefined', () => {
   expect(toKebabCase(), undefined).toBe()
 });

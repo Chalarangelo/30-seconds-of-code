@@ -5,7 +5,13 @@ const join = require('./join.js');
   test('join is a Function', () => {
   expect(join).toBeInstanceOf(Function);
 });
-  t.deepEqual(join(['pen', 'pineapple', 'apple', 'pen'], ',', '&'), "pen,pineapple,apple&pen", "Joins all elements of an array into a string and returns this string");
-  t.deepEqual(join(['pen', 'pineapple', 'apple', 'pen'], ','), "pen,pineapple,apple,pen", "Joins all elements of an array into a string and returns this string");
-  t.deepEqual(join(['pen', 'pineapple', 'apple', 'pen']), "pen,pineapple,apple,pen", "Joins all elements of an array into a string and returns this string");
+  test('Joins all elements of an array into a string and returns this string', () => {
+  expect(join(['pen', 'pineapple', 'apple', 'pen'], ',', '&'), "pen,pineapple).toEqual(apple&pen")
+});
+  test('Joins all elements of an array into a string and returns this string', () => {
+  expect(join(['pen', 'pineapple', 'apple', 'pen'], ','), "pen,pineapple,apple).toEqual(pen")
+});
+  test('Joins all elements of an array into a string and returns this string', () => {
+  expect(join(['pen', 'pineapple', 'apple', 'pen']), "pen,pineapple,apple).toEqual(pen")
+});
   

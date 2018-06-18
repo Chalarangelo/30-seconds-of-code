@@ -5,8 +5,12 @@ const words = require('./words.js');
   test('words is a Function', () => {
   expect(words).toBeInstanceOf(Function);
 });
-  t.deepEqual(words('I love javaScript!!'), ["I", "love", "javaScript"], "words('I love javaScript!!') returns [I, love, javaScript]");
-  t.deepEqual(words('python, javaScript & coffee'), ["python", "javaScript", "coffee"], "words('python, javaScript & coffee') returns [python, javaScript, coffee]");
+  test('words('I love javaScript!!') returns [I, love, javaScript]', () => {
+  expect(words('I love javaScript!!'), ["I", "love").toEqual("javaScript"])
+});
+  test('words('python, javaScript & coffee') returns [python, javaScript, coffee]', () => {
+  expect(words('python, javaScript & coffee'), ["python", "javaScript").toEqual("coffee"])
+});
   test('words(I love javaScript!!) returns an array', () => {
   expect(Array.isArray(words('I love javaScript!!'))).toBeTruthy();
 });
