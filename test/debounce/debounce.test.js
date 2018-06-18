@@ -1,14 +1,9 @@
-const test = require('tape');
+const expect = require('expect');
 const debounce = require('./debounce.js');
 
-test('Testing debounce', (t) => {
+test('Testing debounce', () => {
   //For more information on all the methods supported by tape
   //Please go to https://github.com/substack/tape
-  t.true(typeof debounce === 'function', 'debounce is a Function');
-  debounce(() => {t.pass('Works as expected');}, 250);
-  //t.deepEqual(debounce(args..), 'Expected');
-  //t.equal(debounce(args..), 'Expected');
-  //t.false(debounce(args..), 'Expected');
-  //t.throws(debounce(args..), 'Expected');
-  t.end();
+  expect(typeof debounce === 'function').toBeTruthy();
+  debounce(() => {}, 250);
 });
