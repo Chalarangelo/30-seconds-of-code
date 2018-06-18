@@ -7,21 +7,20 @@ const httpGet = (url, callback, err = console.error) => {
   request.send();
 };
 
-
-  test('httpGet is a Function', () => {
+test('httpGet is a Function', () => {
   expect(httpGet).toBeInstanceOf(Function);
 });
-  httpGet('https:
-    t.deepEqual(JSON.parse(response), {
-      userId: 1,
-      id: 1,
-      title:
-        'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
-      body:
-        'quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto',
-    }, 'Sends a GET request');
-  
-  
+test('Sends a GET request', () => {
+httpGet('https://jsonplaceholder.typicode.com/posts/1', response => {
+  expect(JSON.parse(response)),toEqual({
+    userId: 1,
+    id: 1,
+    title:
+      'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
+    body:
+      'quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto',
+  });
+});  
 
 var Url = require("url");
 var spawn = require("child_process").spawn;
@@ -289,7 +288,7 @@ XMLHttpRequest = function() {
             self.responseText = data;
             setState(self.DONE);
           }
-        
+
       } else {
         try {
           this.responseText = fs.readFileSync(url.pathname, "utf8");
@@ -377,18 +376,18 @@ XMLHttpRequest = function() {
           if (sendFlag) {
             setState(self.LOADING);
           }
-        
+
 
         response.on("end", function() {
           if (sendFlag) {
             setState(self.DONE);
             sendFlag = false;
           }
-        
+
 
         response.on("error", function(error) {
           self.handleError(error);
-        
+
       };
       var errorHandler = function errorHandler(error) {
         self.handleError(error);
@@ -502,7 +501,7 @@ XMLHttpRequest = function() {
     if (event in listeners) {
       listeners[event] = listeners[event].filter(function(ev) {
         return ev !== callback;
-      
+
     }
   };
 
