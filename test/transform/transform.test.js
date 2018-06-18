@@ -10,5 +10,5 @@ test('Transforms an object', () => {
   (r, v, k) => {
     (r[v] || (r[v] = [])).push(k);
     return r;
-  },{}).toEqual({ '1': ['a', 'c'], '2': ['b'] });
+  },{})).toEqual({ '1': ['a', 'c'], '2': ['b'] });
 });

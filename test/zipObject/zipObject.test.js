@@ -17,17 +17,17 @@ test('zipObject([a], string) returns { a: s }', () => {
   expect(zipObject(['a'], 'string')).toEqual({ a: 's' });
 });
 test('zipObject() throws an error', () => {
-  expect(zipObject()).toThrow();
+  expect(() => {zipObject();}).toThrow();
 });
 test('zipObject(([\'string\'], null) throws an error', () => {
-  expect(zipObject((['string'], null)).toThrow();
+  expect(() => {zipObject(['string'], null);}).toThrow();
 });
 test('zipObject(null, [1]) throws an error', () => {
-  expect(zipObject(null, [1])).toThrow();
+  expect(() => {zipObject(null, [1]);}).toThrow();
 });
 test('zipObject(\'string\') throws an error', () => {
-  expect(zipObject('string')).toThrow();
+  expect(() => {zipObject('string');}).toThrow();
 });
 test('zipObject(\'test\', \'string\') throws an error', () => {
-  expect(zipObject('test', 'string')).toThrow();
+  expect(() => {zipObject('test', 'string');}).toThrow();
 });

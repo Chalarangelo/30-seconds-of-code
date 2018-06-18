@@ -10,7 +10,7 @@ test('Number(toSafeInteger(3.2)) is a number', () => {
 test('Converts a value to a safe integer', () => {
   expect(toSafeInteger(3.2)).toBe(3);
 });
-test('toSafeInteger('4.2') returns 4', () => {
+test('toSafeInteger(\'4.2\') returns 4', () => {
   expect(toSafeInteger('4.2')).toBe(4);
 });
 test('toSafeInteger(4.6) returns 5', () => {
@@ -22,7 +22,7 @@ test('toSafeInteger([]) returns 0', () => {
 test('isNaN(toSafeInteger([1.5, 3124])) is true', () => {
   expect(isNaN(toSafeInteger([1.5, 3124]))).toBeTruthy();
 });
-test('isNaN(toSafeInteger('string')) is true', () => {
+test('isNaN(toSafeInteger(\'string\')) is true', () => {
   expect(isNaN(toSafeInteger('string'))).toBeTruthy();
 });
 test('isNaN(toSafeInteger({})) is true', () => {

@@ -11,5 +11,5 @@ test('Returns the appropriate key', () => {
     fred: { age: 40, active: false },
     pebbles: { age: 1, active: true }
   },
-  o => o['active']).toBe('barney');
+  o => o['active'])).toBe('barney');
 });

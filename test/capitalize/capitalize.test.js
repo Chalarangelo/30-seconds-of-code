@@ -8,7 +8,7 @@ test('Capitalizes the first letter of a string', () => {
   expect(capitalize('fooBar')).toBe('FooBar');
 });
 test('Capitalizes the first letter of a string', () => {
-  expect(capitalize('fooBar', true)).toBe('FooBar');
+  expect(capitalize('fooBar', true)).toBe('Foobar');
 });
 test('Works with characters', () => {
   expect(capitalize('#!#', true)).toBe('#!#');

@@ -5,6 +5,7 @@
     "fs-extra": "^6.0.0",
     "html-minifier": "^3.5.15",
     "jest": "^23.1.0",
+    "jest-tap-reporter": "^1.9.0",
     "jsdom": "^11.10.0",
     "markdown-it": "^8.4.1",
     "mini.css": "^2.3.7",
@@ -16,8 +17,6 @@
     "rollup-plugin-babel": "^3.0.4",
     "rollup-plugin-babel-minify": "^4.0.0",
     "semistandard": "^12.0.1",
-    "tap-spec": "^4.1.1",
-    "tape": "^4.9.0"
   },
   "name": "30-seconds-of-code",
   "description": "A collection of useful JavaScript snippets.",
@@ -33,8 +32,7 @@
     "extractor": "node ./scripts/extract.js",
     "packager": "node ./scripts/module.js",
     "localizer": "node ./scripts/localize.js",
-    "testold": "tape test/**/*.test.js | tap-spec",
-    "test": "jest test/**/*.test.js"
+    "test": "jest --verbose"
   },
   "repository": {
     "type": "git",
@@ -51,5 +49,14 @@
     "url": "https://github.com/Chalarangelo/30-seconds-of-code/issues"
   },
   "homepage": "https://github.com/Chalarangelo/30-seconds-of-code#readme",
-  "dependencies": {}
+  "dependencies": {},
+  "jest": {
+    "reporters": [
+          ["jest-tap-reporter", {
+          "logLevel": "INFO",
+          "showInternalStackTraces": false,
+          "filePath": "test/testlog"
+        }]
+      ]
+  }
 }
