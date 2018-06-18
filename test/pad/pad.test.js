@@ -1,21 +1,18 @@
 const expect = require('expect');
 const pad = require('./pad.js');
 
-
-  test('pad is a Function', () => {
+test('pad is a Function', () => {
   expect(pad).toBeInstanceOf(Function);
 });
-  test('cat is padded on both sides', () => {
-  expect(pad('cat',8), '  cat   ').toBe()
+test('cat is padded on both sides', () => {
+  expect(pad('cat',8)).toBe('  cat   ');
 });
   test('length of string is 8', () => {
-  expect(pad('cat',8).length, 8).toBe()
+  expect(pad('cat',8).length).toBe(8);
 });
   test('pads 42 with "0"', () => {
-  expect(pad(String(42), 6, '0'), '004200').toBe()
+  expect(pad(String(42), 6, '0')).toBe('004200');
 });
   test('does not truncates if string exceeds length', () => {
-  expect(pad('foobar', 3), 'foobar').toBe()
+  expect(pad('foobar', 3)).toBe('foobar');
 });
-  
-
