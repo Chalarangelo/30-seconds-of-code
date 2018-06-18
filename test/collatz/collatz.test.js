@@ -1,19 +1,20 @@
 const expect = require('expect');
 const collatz = require('./collatz.js');
 
-test('Testing collatz', () => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  expect(typeof collatz === 'function').toBeTruthy();
-  //t.deepEqual(collatz(args..), 'Expected');
-  expect(collatz(8)).toBe(4);
-  expect(collatz(9)).toBe(28);
+
+  test('collatz is a Function', () => {
+  expect(collatz).toBeInstanceOf(Function);
+});
+  t.equal(collatz(8), 4, 'When n is even, divide by 2');
+  t.equal(collatz(9), 28, 'When n is odd, times by 3 and add 1');
 
   let n = 9;
   while(true){
     if (n === 1){
+      t.pass('Eventually reaches 1');
       break;
     }
     n = collatz(n);
   }
-});
+  
+

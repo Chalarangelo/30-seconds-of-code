@@ -1,9 +1,12 @@
 const expect = require('expect');
 const btoa = require('./btoa.js');
 
-test('Testing btoa', () => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  expect(typeof btoa === 'function').toBeTruthy();
-  expect(btoa('foobar')).toBe('Zm9vYmFy');
+
+  test('btoa is a Function', () => {
+  expect(btoa).toBeInstanceOf(Function);
 });
+  test('btoa("foobar") equals "Zm9vYmFy"', () => {
+  expect(btoa('foobar'), 'Zm9vYmFy').toBe()
+});
+  
+

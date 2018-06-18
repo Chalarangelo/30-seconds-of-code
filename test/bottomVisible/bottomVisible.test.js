@@ -1,8 +1,10 @@
 const expect = require('expect');
 const bottomVisible = require('./bottomVisible.js');
 
-test('Testing bottomVisible', () => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  expect(typeof bottomVisible === 'function').toBeTruthy();
+
+  test('bottomVisible is a Function', () => {
+  expect(bottomVisible).toBeInstanceOf(Function);
 });
+  t.pass('Tested on 09/02/2018 by @chalarangelo');
+  
+

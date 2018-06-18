@@ -1,0 +1,10 @@
+const expect = require('expect');
+const permutations = require('./permutations.js');
+
+
+  test('permutations is a Function', () => {
+  expect(permutations).toBeInstanceOf(Function);
+});
+  t.deepEqual(permutations([1, 33, 5]), [ [ 1, 33, 5 ], [ 1, 5, 33 ], [ 33, 1, 5 ], [ 33, 5, 1 ], [ 5, 1, 33 ], [ 5, 33, 1 ] ], 'Generates all permutations of an array');
+  
+

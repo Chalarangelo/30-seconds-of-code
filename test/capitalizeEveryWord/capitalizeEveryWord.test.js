@@ -1,11 +1,11 @@
 const expect = require('expect');
 const capitalizeEveryWord = require('./capitalizeEveryWord.js');
 
-test('Testing capitalizeEveryWord', () => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  expect(typeof capitalizeEveryWord === 'function').toBeTruthy();
-  expect(capitalizeEveryWord('hello world!')).toBe('Hello World!');
-  expect(capitalizeEveryWord('$# @!')).toBe('$# @!');
-  expect(capitalizeEveryWord('a')).toBe('A');
+
+  test('capitalizeEveryWord is a Function', () => {
+  expect(capitalizeEveryWord).toBeInstanceOf(Function);
 });
+  t.equal(capitalizeEveryWord('hello world!'), 'Hello World!', "Capitalizes the first letter of every word in a string");
+  t.equal(capitalizeEveryWord('$# @!'), '$# @!', "Works with characters");
+  t.equal(capitalizeEveryWord('a'), 'A', "Works with one word string");
+  
