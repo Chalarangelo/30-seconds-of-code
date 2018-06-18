@@ -17,13 +17,13 @@ test('head(String) returns S', () => {
   expect(head('String')).toBe('S');
 });
 test('head(null) throws an Error', () => {
-  expect(head(null)).toThrow();
+  expect(() => { head(null); }).toThrow();
 });
 test('head(undefined) throws an Error', () => {
-  expect(head(undefined)).toThrow();
+  expect(() => { head(undefined); }).toThrow();
 });
 test('head() throws an Error', () => {
-  expect(head()).toThrow();
+  expect(() => { head(); }).toThrow();
 });
 let start = new Date().getTime();
 head([1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 1122, 32124, 23232]);

@@ -17,13 +17,13 @@ test('last(String) returns g', () => {
   expect(last('String')).toBe('g');
 });
 test('last(null) throws an Error', () => {
-  expect(last(null)).toThrow();
+  expect(() => { last(null); }).toThrow();
 });
 test('last(undefined) throws an Error', () => {
-  expect(last(undefined)).toThrow();
+  expect(() => { last(undefined); }).toThrow();
 });
 test('last() throws an Error', () => {
-  expect(last()).toThrow();
+  expect(() => { last(); }).toThrow();
 });
 let start = new Date().getTime();
 last([1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 1122, 32124, 23232]);

@@ -24,8 +24,8 @@ test('zip([a], [1, 2], [true, false]) returns an Array', () => {
   expect(Array.isArray(zip(['a'], [1, 2], [true, false]))).toBeTruthy();
 });
 test('zip(null) throws an error', () => {
-  expect(zip(null)).toThrow();
+  expect(() => {zip(null);}).toThrow();
 });
 test('zip(undefined) throws an error', () => {
-  expect(zip(undefined)).toThrow();
+  expect(() => {zip(undefined);}).toThrow();
 });

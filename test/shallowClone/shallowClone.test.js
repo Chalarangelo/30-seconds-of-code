@@ -6,7 +6,9 @@ test('shallowClone is a Function', () => {
 });
 const a = { foo: 'bar', obj: { a: 1, b: 2 } };
 const b = shallowClone(a);
-t.notEqual(a, b, 'Shallow cloning works');
+test('Shallow cloning works', () => {
+  expect(a).not.toBe(b);
+});
 test('Does not clone deeply', () => {
   expect(a.obj).toBe(b.obj);
 });

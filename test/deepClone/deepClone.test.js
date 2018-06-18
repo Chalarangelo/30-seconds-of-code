@@ -9,14 +9,14 @@ const b = deepClone(a);
 const c = [{foo: "bar"}];
 const d = deepClone(c);
 test('Shallow cloning works', () => {
-  expect(a).not.toEqual(b);
+  expect(a).not.toBe(b);
 });
 test('Deep cloning works', () => {
-  expect(a.obj).not.toEqual(b.obj);
+  expect(a.obj).not.toBe(b.obj);
 });
 test('Array shallow cloning works', () => {
-  expect(c).not.toEqual(d);
+  expect(c).not.toBe(d);
 });
 test('Array deep cloning works', () => {
-  expect(c[0]).not.toEqual(d[0]);
+  expect(c[0]).not.toBe(d[0]);
 });

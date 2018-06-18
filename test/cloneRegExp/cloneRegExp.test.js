@@ -6,5 +6,5 @@ test('cloneRegExp is a Function', () => {
 });
 const rgTest = /./g;
 test('Clones regular expressions properly', () => {
-  expect(cloneRegExp(rgTest).not.toEqual(rgTest);
+  expect(cloneRegExp(rgTest)).not.toBe(rgTest);
 });

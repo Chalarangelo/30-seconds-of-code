@@ -14,5 +14,5 @@ test('The given number does not falls within the given range', () => {
   expect(inRange(2, 3, 5)).toBeFalsy();
 });
 test('The given number does not falls within the given range', () => {
-  expect(inRange(3, 2)).toBeTruthy();
+  expect(inRange(3, 2)).toBeFalsy();
 });

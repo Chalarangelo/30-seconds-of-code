@@ -4,7 +4,7 @@ const toSnakeCase = require('./toSnakeCase.js');
 test('toSnakeCase is a Function', () => {
   expect(toSnakeCase).toBeInstanceOf(Function);
 });
-test('toSnakeCase('\camelCase\') returns camel_case', () => {
+test('toSnakeCase(\'camelCase\') returns camel_case', () => {
   expect(toSnakeCase('camelCase')).toBe('camel_case');
 });
 test('toSnakeCase(\'some text\') returns some_text', () => {
@@ -20,13 +20,13 @@ test('toSnakeCase() returns undefined', () => {
   expect(toSnakeCase()).toBe(undefined);
 });
 test('toSnakeCase([]) throws an error', () => {
-  expect(toSnakeCase([])).toThrow();
+  expect(() => {toSnakeCase([]);}).toThrow();
 });
 test('toSnakeCase({}) throws an error', () => {
-  expect(toSnakeCase({})).toThrow();
+  expect(() => {toSnakeCase({});}).toThrow();
 });
 test('toSnakeCase(123) throws an error', () => {
-  expect(toSnakeCase(123)).toThrow();
+  expect(() => {toSnakeCase(123);}).toThrow();
 });
 let start = new Date().getTime();
 toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML');

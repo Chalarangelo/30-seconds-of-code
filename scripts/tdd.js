@@ -84,7 +84,7 @@ snippetFiles
   });
 try {
   fs.writeFileSync(path.join(TEST_PATH,'testlog'),`Test log for: ${new Date().toString()}\n`);
-  child_process.execSync(`npm test >> ${TEST_PATH}/testlog`);
+  child_process.execSync(`npm test`);
 }
 catch (e) {
   fs.appendFileSync(path.join(TEST_PATH,'testlog'));
