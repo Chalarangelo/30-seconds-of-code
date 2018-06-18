@@ -6,7 +6,9 @@ const UUIDGeneratorNode = require('./UUIDGeneratorNode.js');
   expect(UUIDGeneratorNode).toBeInstanceOf(Function);
 });
   const uuid = UUIDGeneratorNode();
-  t.deepEqual([uuid[8], uuid[13], uuid[18], uuid[23]], ['-', '-', '-', '-'], 'Contains dashes in the proper places');
+  test('Contains dashes in the proper places', () => {
+  expect([uuid[8], uuid[13], uuid[18], uuid[23]], ['-', '-', '-', '-']).toEqual()
+});
   test('Only contains hexadecimal digits', () => {
   expect(/^[0-9A-Fa-f-]+$/.test(uuid)).toBeTruthy();
 });

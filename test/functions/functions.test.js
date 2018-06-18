@@ -10,7 +10,11 @@ const functions = require('./functions.js');
     this.b = () => 2;
   }
   Foo.prototype.c = () => 3;
-  t.deepEqual(functions(new Foo()), ['a', 'b'], 'Returns own methods');
-  t.deepEqual(functions(new Foo(), true), ['a', 'b', 'c'], 'Returns own and inherited methods');
+  test('Returns own methods', () => {
+  expect(functions(new Foo()), ['a', 'b']).toEqual()
+});
+  test('Returns own and inherited methods', () => {
+  expect(functions(new Foo(), true), ['a', 'b', 'c']).toEqual()
+});
   
 

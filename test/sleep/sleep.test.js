@@ -7,7 +7,7 @@ const sleep = require('./sleep.js');
 });
   async function sleepyWork() {
     await sleep(1000);
-    t.pass('Works as expected');
+    
   }
   
 

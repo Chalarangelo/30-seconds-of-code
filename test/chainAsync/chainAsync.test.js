@@ -15,7 +15,7 @@ const chainAsync = require('./chainAsync.js');
       })();
     },
     next => {
-      t.pass("Calls all functions in an array");
+      
     }
   ]);
   

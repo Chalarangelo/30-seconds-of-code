@@ -7,6 +7,8 @@ const forOwnRight = require('./forOwnRight.js');
 });
   let output = [];
   forOwnRight({ foo: 'bar', a: 1 }, v => output.push(v));
-  t.deepEqual(output, [1, 'bar'], 'Iterates over an element\'s key-value pairs in reverse');
+  test('Iterates over an element\'s key-value pairs in reverse', () => {
+  expect(output, [1, 'bar']).toEqual()
+});
   
 

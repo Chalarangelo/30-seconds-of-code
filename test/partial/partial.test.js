@@ -9,6 +9,8 @@ const partial = require('./partial.js');
     return greeting + ' ' + name + '!';
   }
   const greetHello = partial(greet, 'Hello');
-  t.equal(greetHello('John'), 'Hello John!', 'Prepends arguments');
+  test('Prepends arguments', () => {
+  expect(greetHello('John'), 'Hello John!').toBe()
+});
   
 

@@ -5,8 +5,14 @@ const isNil = require('./isNil.js');
   test('isNil is a Function', () => {
   expect(isNil).toBeInstanceOf(Function);
 });
-  t.equal(isNil(null), true, 'Returns true for null');
-  t.equal(isNil(undefined), true, 'Returns true for undefined');
-  t.equal(isNil(''), false, 'Returns false for an empty string');
+  test('Returns true for null', () => {
+  expect(isNil(null), true).toBe()
+});
+  test('Returns true for undefined', () => {
+  expect(isNil(undefined), true).toBe()
+});
+  test('Returns false for an empty string', () => {
+  expect(isNil(''), false).toBe()
+});
   
 

@@ -5,8 +5,16 @@ const toOrdinalSuffix = require('./toOrdinalSuffix.js');
   test('toOrdinalSuffix is a Function', () => {
   expect(toOrdinalSuffix).toBeInstanceOf(Function);
 });
-  t.equal(toOrdinalSuffix('123'), '123rd', 'Adds an ordinal suffix to a number');
-  t.equal(toOrdinalSuffix(5), '5th', 'Adds an ordinal suffix to a number');
-  t.equal(toOrdinalSuffix(1), '1st', 'Adds an ordinal suffix to a number');
-  t.equal(toOrdinalSuffix(0), '0th', 'Adds an ordinal suffix to a number');
+  test('Adds an ordinal suffix to a number', () => {
+  expect(toOrdinalSuffix('123'), '123rd').toBe()
+});
+  test('Adds an ordinal suffix to a number', () => {
+  expect(toOrdinalSuffix(5), '5th').toBe()
+});
+  test('Adds an ordinal suffix to a number', () => {
+  expect(toOrdinalSuffix(1), '1st').toBe()
+});
+  test('Adds an ordinal suffix to a number', () => {
+  expect(toOrdinalSuffix(0), '0th').toBe()
+});
   

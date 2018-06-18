@@ -8,12 +8,18 @@ const functionName = fn => (console.debug(fn.name), fn);
   expect(functionName).toBeInstanceOf(Function);
 });
   functionName(Math.max);
-  t.equal(output, 'max', 'Works for native functions');
+  test('Works for native functions', () => {
+  expect(output, 'max').toBe()
+});
   function fun(x) {return x;}
   functionName(fun);
-  t.equal(output, 'fun', 'Works for functions');
+  test('Works for functions', () => {
+  expect(output, 'fun').toBe()
+});
   const fn = x => x;
   functionName(fn);
-  t.equal(output, 'fn', 'Works for arrow functions');
+  test('Works for arrow functions', () => {
+  expect(output, 'fn').toBe()
+});
   
 

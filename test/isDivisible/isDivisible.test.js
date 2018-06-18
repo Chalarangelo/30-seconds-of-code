@@ -5,5 +5,7 @@ const isDivisible = require('./isDivisible.js');
   test('isDivisible is a Function', () => {
   expect(isDivisible).toBeInstanceOf(Function);
 });
-  t.equal(isDivisible(6, 3), true, 'The number 6 is divisible by 3');
+  test('The number 6 is divisible by 3', () => {
+  expect(isDivisible(6, 3), true).toBe()
+});
   

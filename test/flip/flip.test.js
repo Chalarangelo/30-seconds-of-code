@@ -9,6 +9,8 @@ const flip = require('./flip.js');
   let b = {};
   const mergeFrom = flip(Object.assign);
   let mergePerson = mergeFrom.bind(null, a);
-  t.deepEqual(mergePerson(b), a, 'Flips argument order');
+  test('Flips argument order', () => {
+  expect(mergePerson(b), a).toEqual()
+});
   
 

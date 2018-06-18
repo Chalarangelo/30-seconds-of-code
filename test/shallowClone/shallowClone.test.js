@@ -8,6 +8,8 @@ const shallowClone = require('./shallowClone.js');
   const a = { foo: 'bar', obj: { a: 1, b: 2 } };
   const b = shallowClone(a);
   t.notEqual(a, b, 'Shallow cloning works');
-  t.equal(a.obj, b.obj, 'Does not clone deeply');
+  test('Does not clone deeply', () => {
+  expect(a.obj, b.obj).toBe()
+});
   
 

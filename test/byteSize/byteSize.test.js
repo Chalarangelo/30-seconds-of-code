@@ -8,11 +8,15 @@ const Blob = class{
 };
 const byteSize = str => new Blob([str]).size;
 
-  test('byteSize is a Function', () => {
+test('byteSize is a Function', () => {
   expect(byteSize).toBeInstanceOf(Function);
 });
-  t.equal(byteSize('a'), 1, 'Works for a single letter');
-  t.equal(byteSize('Hello World'), 11, 'Works for a common string');
-  t.equal(byteSize('😀'), 4, 'Works for emoji');
-  
-
+test('Works for a single letter', () => {
+  expect(byteSize('a')).toBe(1);
+});
+test('Works for a common string', () => {
+  expect(byteSize('Hello World')).toBe(11);
+});
+test('Works for emoji', () => {
+  expect(byteSize('😀')).toBe(4);
+});

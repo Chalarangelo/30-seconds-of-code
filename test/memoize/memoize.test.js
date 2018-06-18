@@ -7,8 +7,14 @@ const memoize = require('./memoize.js');
 });
   const f = x => x * x;
   const square = memoize(f);
-  t.equal(square(2), 4, 'Function works properly');
-  t.equal(square(3), 9, 'Function works properly');
-  t.deepEqual(Array.from(square.cache), [[2,4],[3,9]], 'Cache stores values');
+  test('Function works properly', () => {
+  expect(square(2), 4).toBe()
+});
+  test('Function works properly', () => {
+  expect(square(3), 9).toBe()
+});
+  test('Cache stores values', () => {
+  expect(Array.from(square.cache), [[2,4],[3,9]]).toEqual()
+});
   
 

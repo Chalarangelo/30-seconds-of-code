@@ -7,7 +7,11 @@ const lowercaseKeys = require('./lowercaseKeys.js');
 });
   const myObj = { Name: 'Adam', sUrnAME: 'Smith' };
   const myObjLower = lowercaseKeys(myObj);
-  t.deepEqual(myObjLower, {name: 'Adam', surname: 'Smith'}, 'Lowercases object keys');
-  t.deepEqual(myObj, { Name: 'Adam', sUrnAME: 'Smith' }, 'Does not mutate original object');
+  test('Lowercases object keys', () => {
+  expect(myObjLower, {name: 'Adam', surname: 'Smith'}).toEqual()
+});
+  test('Does not mutate original object', () => {
+  expect(myObj, { Name: 'Adam', sUrnAME: 'Smith' }).toEqual()
+});
   
 

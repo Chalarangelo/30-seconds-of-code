@@ -5,8 +5,12 @@ const quickSort = require('./quickSort.js');
   test('quickSort is a Function', () => {
   expect(quickSort).toBeInstanceOf(Function);
 });
-  t.deepEqual(quickSort([5, 6, 4, 3, 1, 2]), [1, 2, 3, 4, 5, 6], 'quickSort([5, 6, 4, 3, 1, 2]) returns [1, 2, 3, 4, 5, 6]');
-  t.deepEqual(quickSort([-1, 0, -2]), [-2, -1, 0], 'quickSort([-1, 0, -2]) returns [-2, -1, 0]');
+  test('quickSort([5, 6, 4, 3, 1, 2]) returns [1, 2, 3, 4, 5, 6]', () => {
+  expect(quickSort([5, 6, 4, 3, 1, 2]), [1, 2, 3, 4, 5, 6]).toEqual()
+});
+  test('quickSort([-1, 0, -2]) returns [-2, -1, 0]', () => {
+  expect(quickSort([-1, 0, -2]), [-2, -1, 0]).toEqual()
+});
   t.throws(() => quickSort(), 'quickSort() throws an error');
   t.throws(() => quickSort(123), 'quickSort(123) throws an error');
   t.throws(() => quickSort({ 234: string}), 'quickSort({ 234: string}) throws an error');

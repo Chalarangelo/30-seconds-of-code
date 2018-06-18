@@ -6,6 +6,6 @@ const runPromisesInSeries = require('./runPromisesInSeries.js');
   expect(runPromisesInSeries).toBeInstanceOf(Function);
 });
   const delay = d => new Promise(r => setTimeout(r, d));
-  runPromisesInSeries([() => delay(100), () => delay(200).then(() => t.pass('Runs promises in series'))]);
+  runPromisesInSeries([() => delay(100), () => delay(200).then(() => 
   
 
