@@ -1,14 +1,8 @@
-const test = require('tape');
+const expect = require('expect');
 const colorize = require('./colorize.js');
 
-test('Testing colorize', (t) => {
+test('Testing colorize', () => {
   //For more information on all the methods supported by tape
   //Please go to https://github.com/substack/tape
-  t.true(typeof colorize === 'function', 'colorize is a Function');
-  t.pass('Tested on 09/02/2018 by @chalarangelo');
-  //t.deepEqual(colorize(args..), 'Expected');
-  //t.equal(colorize(args..), 'Expected');
-  //t.false(colorize(args..), 'Expected');
-  //t.throws(colorize(args..), 'Expected');
-  t.end();
+  expect(typeof colorize === 'function').toBeTruthy();
 });

@@ -1,10 +1,10 @@
-const test = require('tape');
+const expect = require('expect');
 const bindAll = require('./bindAll.js');
 
-test('Testing bindAll', (t) => {
+test('Testing bindAll', () => {
   //For more information on all the methods supported by tape
   //Please go to https://github.com/substack/tape
-  t.true(typeof bindAll === 'function', 'bindAll is a Function');
+  expect(typeof bindAll === 'function').toBeTruthy();
   var view = {
     label: 'docs',
     'click': function() {
@@ -12,10 +12,5 @@ test('Testing bindAll', (t) => {
     }
   };
   bindAll(view, 'click');
-  t.equal(view.click(), 'clicked docs', 'Binds to an object context');
-  //t.deepEqual(bindAll(args..), 'Expected');
-  //t.equal(bindAll(args..), 'Expected');
-  //t.false(bindAll(args..), 'Expected');
-  //t.throws(bindAll(args..), 'Expected');
-  t.end();
+  expect(view.click()).toBe('clicked docs');
 });

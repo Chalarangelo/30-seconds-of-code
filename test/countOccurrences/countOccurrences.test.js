@@ -1,14 +1,9 @@
-const test = require('tape');
+const expect = require('expect');
 const countOccurrences = require('./countOccurrences.js');
 
-test('Testing countOccurrences', (t) => {
+test('Testing countOccurrences', () => {
   //For more information on all the methods supported by tape
   //Please go to https://github.com/substack/tape
-  t.true(typeof countOccurrences === 'function', 'countOccurrences is a Function');
-  t.deepEqual(countOccurrences([1, 1, 2, 1, 2, 3], 1), 3, "Counts the occurrences of a value in an array");
-  //t.deepEqual(countOccurrences(args..), 'Expected');
-  //t.equal(countOccurrences(args..), 'Expected');
-  //t.false(countOccurrences(args..), 'Expected');
-  //t.throws(countOccurrences(args..), 'Expected');
-  t.end();
+  expect(typeof countOccurrences === 'function').toBeTruthy();
+  expect(countOccurrences([1, 1, 2, 1, 2, 3], 1)).toEqual(3);
 });

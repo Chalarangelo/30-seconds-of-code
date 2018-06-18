@@ -1,10 +1,10 @@
-const test = require('tape');
+const expect = require('expect');
 const bindKey = require('./bindKey.js');
 
-test('Testing bindKey', (t) => {
+test('Testing bindKey', () => {
   //For more information on all the methods supported by tape
   //Please go to https://github.com/substack/tape
-  t.true(typeof bindKey === 'function', 'bindKey is a Function');
+  expect(typeof bindKey === 'function').toBeTruthy();
   const freddy = {
     user: 'fred',
     greet: function(greeting, punctuation) {
@@ -12,10 +12,5 @@ test('Testing bindKey', (t) => {
     }
   };
   const freddyBound = bindKey(freddy, 'greet');
-  t.equal(freddyBound('hi', '!'), 'hi fred!', 'Binds function to an object context');
-  //t.deepEqual(bindKey(args..), 'Expected');
-  //t.equal(bindKey(args..), 'Expected');
-  //t.false(bindKey(args..), 'Expected');
-  //t.throws(bindKey(args..), 'Expected');
-  t.end();
+  expect(freddyBound('hi', '!')).toBe('hi fred!');
 });
