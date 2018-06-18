@@ -1,11 +1,15 @@
 const expect = require('expect');
 const dropRight = require('./dropRight.js');
 
-
-  test('dropRight is a Function', () => {
+test('dropRight is a Function', () => {
   expect(dropRight).toBeInstanceOf(Function);
 });
-  t.deepEqual(dropRight([1, 2, 3]), [1,2], "Returns a new array with n elements removed from the right");
-  t.deepEqual(dropRight([1, 2, 3], 2), [1], "Returns a new array with n elements removed from the right");
-  t.deepEqual(dropRight([1, 2, 3], 42), [], "Returns a new array with n elements removed from the right");
-  
+test('Returns a new array with n elements removed from the right', () => {
+  expect(dropRight([1, 2, 3])).toEqual([1, 2])
+});
+test('Returns a new array with n elements removed from the right', () => {
+  expect(dropRight([1, 2, 3], 2)).toEqual([1]);
+});
+test('Returns a new array with n elements removed from the right', () => {
+  expect(dropRight([1, 2, 3], 42)).toEqual([]);
+});

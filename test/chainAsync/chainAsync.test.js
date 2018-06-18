@@ -1,10 +1,11 @@
 const expect = require('expect');
 const chainAsync = require('./chainAsync.js');
 
-
-  test('chainAsync is a Function', () => {
+test('chainAsync is a Function', () => {
   expect(chainAsync).toBeInstanceOf(Function);
 });
+
+test('Calls all functions in an array', () => {
   chainAsync([
     next => {
       next();
@@ -15,8 +16,7 @@ const chainAsync = require('./chainAsync.js');
       })();
     },
     next => {
-      t.pass("Calls all functions in an array");
+      expect(true).toBeTruthy();
     }
   ]);
-  
-
+});

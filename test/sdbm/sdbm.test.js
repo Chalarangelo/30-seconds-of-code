@@ -1,9 +1,9 @@
 const expect = require('expect');
 const sdbm = require('./sdbm.js');
 
-
-  test('sdbm is a Function', () => {
+test('sdbm is a Function', () => {
   expect(sdbm).toBeInstanceOf(Function);
 });
-  t.equal(sdbm('name'), -3521204949, "Hashes the input string into a whole number.");
-  
+test('Hashes the input string into a whole number.', () => {
+  expect(sdbm('name')).toBe(-3521204949);
+});

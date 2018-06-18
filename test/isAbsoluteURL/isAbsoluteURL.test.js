@@ -1,11 +1,15 @@
 const expect = require('expect');
 const isAbsoluteURL = require('./isAbsoluteURL.js');
 
-
-  test('isAbsoluteURL is a Function', () => {
+test('isAbsoluteURL is a Function', () => {
   expect(isAbsoluteURL).toBeInstanceOf(Function);
 });
-  t.equal(isAbsoluteURL('https:
-  t.equal(isAbsoluteURL('ftp:
-  t.equal(isAbsoluteURL('/foo/bar'), false, "Given string is not an absolute URL");
-  
+test('Given string is an absolute URL', () => {
+  expect(isAbsoluteURL('https://google.com')).toBeTruthy();
+});
+test('Given string is an absolute URL', () => {
+  expect(isAbsoluteURL('ftp://www.myserver.net')).toBeTruthy();
+});
+test('Given string is not an absolute URL', () => {
+  expect(isAbsoluteURL('/foo/bar')).toBeFalsy();
+});

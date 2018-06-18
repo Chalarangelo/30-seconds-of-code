@@ -1,9 +1,9 @@
 const expect = require('expect');
 const unescapeHTML = require('./unescapeHTML.js');
 
-
-  test('unescapeHTML is a Function', () => {
+test('unescapeHTML is a Function', () => {
   expect(unescapeHTML).toBeInstanceOf(Function);
 });
-  t.equal(unescapeHTML('&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;'),  '<a href="#">Me & you</a>', 'Unescapes escaped HTML characters.');
-  
+test('Unescapes escaped HTML characters.', () => {
+  expect(unescapeHTML('&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;')).toBe('<a href="#">Me & you</a>');
+});

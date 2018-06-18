@@ -1,13 +1,21 @@
 const expect = require('expect');
 const isString = require('./isString.js');
 
-
-  test('isString is a Function', () => {
+test('isString is a Function', () => {
   expect(isString).toBeInstanceOf(Function);
 });
-  t.equal(isString('foo'), true, 'foo is a string');
-  t.equal(isString('10'), true, '"10" is a string');
-  t.equal(isString(''), true, 'Empty string is a string');
-  t.equal(isString(10), false, '10 is not a string');
-  t.equal(isString(true), false, 'true is not string');
-  
+test('foo is a string', () => {
+  expect(isString('foo')).toBeTruthy();
+});
+test('"10" is a string', () => {
+  expect(isString('10')).toBeTruthy();
+});
+test('Empty string is a string', () => {
+  expect(isString('')).toBeTruthy();
+});
+test('10 is not a string', () => {
+  expect(isString(10)).toBeFalsy();
+});
+test('true is not string', () => {
+  expect(isString(true)).toBeFalsy();
+});

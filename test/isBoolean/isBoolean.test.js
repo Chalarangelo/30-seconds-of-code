@@ -1,10 +1,12 @@
 const expect = require('expect');
 const isBoolean = require('./isBoolean.js');
 
-
-  test('isBoolean is a Function', () => {
+test('isBoolean is a Function', () => {
   expect(isBoolean).toBeInstanceOf(Function);
 });
-  t.equal(isBoolean(null), false, "passed value is not a boolean");
-  t.equal(isBoolean(false), true, "passed value is not a boolean");
-  
+test('passed value is not a boolean', () => {
+  expect(isBoolean(null)).toBeFalsy();
+});
+test('passed value is not a boolean', () => {
+  expect(isBoolean(false)).toBeTruthy();
+});

@@ -1,8 +1,6 @@
 const expect = require('expect');
 const fibonacciCountUntilNum = require('./fibonacciCountUntilNum.js');
 
-
-  test('fibonacciCountUntilNum is a Function', () => {
+test('fibonacciCountUntilNum is a Function', () => {
   expect(fibonacciCountUntilNum).toBeInstanceOf(Function);
 });
-  

@@ -8,18 +8,19 @@ const httpPost = (url, data, callback, err = console.error) => {
   request.send(data);
 };
 
-  test('httpPost is a Function', () => {
+test('httpPost is a Function', () => {
   expect(httpPost).toBeInstanceOf(Function);
 });
-  const data = {
-    title: 'foo',
-    body: 'bar',
-    userId: 1
-  };
-  httpPost('https:
-    t.deepEqual(JSON.parse(response).id, 101, 'Sends a POST request');
-  
-  
+const data = {
+  title: 'foo',
+  body: 'bar',
+  userId: 1
+};
+test('Sends a POST request', () => {
+  httpPost('https://jsonplaceholder.typicode.com/posts', JSON.stringify(data), response => {
+    expect(JSON.parse(response).id).toEqual(101);
+  });
+});
 
 var Url = require("url");
 var spawn = require("child_process").spawn;
@@ -287,7 +288,7 @@ XMLHttpRequest = function() {
             self.responseText = data;
             setState(self.DONE);
           }
-        
+
       } else {
         try {
           this.responseText = fs.readFileSync(url.pathname, "utf8");
@@ -375,18 +376,18 @@ XMLHttpRequest = function() {
           if (sendFlag) {
             setState(self.LOADING);
           }
-        
+
 
         response.on("end", function() {
           if (sendFlag) {
             setState(self.DONE);
             sendFlag = false;
           }
-        
+
 
         response.on("error", function(error) {
           self.handleError(error);
-        
+
       };
       var errorHandler = function errorHandler(error) {
         self.handleError(error);
@@ -500,7 +501,7 @@ XMLHttpRequest = function() {
     if (event in listeners) {
       listeners[event] = listeners[event].filter(function(ev) {
         return ev !== callback;
-      
+
     }
   };
 

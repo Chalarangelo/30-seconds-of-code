@@ -1,10 +1,9 @@
 const expect = require('expect');
 const debounce = require('./debounce.js');
 
-
-  test('debounce is a Function', () => {
+test('debounce is a Function', () => {
   expect(debounce).toBeInstanceOf(Function);
 });
-  debounce(() => {t.pass('Works as expected');}, 250);
-  
-
+test('Works as expected', () => {
+  debounce(() => { expect(true).toBeTruthy(); });
+}); 

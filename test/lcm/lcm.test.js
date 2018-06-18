@@ -1,10 +1,12 @@
 const expect = require('expect');
 const lcm = require('./lcm.js');
 
-
-  test('lcm is a Function', () => {
+test('lcm is a Function', () => {
   expect(lcm).toBeInstanceOf(Function);
 });
-  t.equal(lcm(12, 7), 84, "Returns the least common multiple of two or more numbers.");
-  t.equal(lcm(...[1, 3, 4, 5]), 60, "Returns the least common multiple of two or more numbers.");
-  
+test('Returns the least common multiple of two or more numbers.', () => {
+  expect(lcm(12, 7)).toBe(84);
+});
+test('Returns the least common multiple of two or more numbers.', () => {
+  expect(lcm(...[1, 3, 4, 5])).toBe(60);
+});
