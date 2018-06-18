@@ -7,6 +7,8 @@ const forEachRight = require('./forEachRight.js');
 });
   let output = '';
   forEachRight([1, 2, 3, 4], val => output+=val);
-  t.equal(output, '4321', 'Iterates over the array in reverse');
+  test('Iterates over the array in reverse', () => {
+  expect(output, '4321').toBe()
+});
   
 

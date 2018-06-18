@@ -11,6 +11,8 @@ const rearg = require('./rearg.js');
     },
     [2, 0, 1]
   );
-  t.deepEqual(rearged('b', 'c', 'a'), ['a', 'b', 'c'], 'Reorders arguments in invoked function');
+  test('Reorders arguments in invoked function', () => {
+  expect(rearged('b', 'c', 'a'), ['a', 'b', 'c']).toEqual()
+});
   
 

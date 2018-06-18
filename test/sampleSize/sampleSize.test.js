@@ -6,12 +6,20 @@ const sampleSize = require('./sampleSize.js');
   expect(sampleSize).toBeInstanceOf(Function);
 });
   const arr = [3,7,9,11];
-  t.equal(sampleSize(arr).length, 1, 'Returns a single element without n specified');
+  test('Returns a single element without n specified', () => {
+  expect(sampleSize(arr).length, 1).toBe()
+});
   test('Returns a random sample of specified size from an array', () => {
   expect(sampleSize(arr, 2).every(x => arr.includes(x))).toBeTruthy();
 });
-  t.equal(sampleSize(arr, 5).length, 4, 'Returns all elements in an array if n >= length');
-  t.deepEqual(sampleSize([], 2), [], 'Returns an empty array if original array is empty');
-  t.deepEqual(sampleSize(arr, 0), [], 'Returns an empty array if n = 0');
+  test('Returns all elements in an array if n >= length', () => {
+  expect(sampleSize(arr, 5).length, 4).toBe()
+});
+  test('Returns an empty array if original array is empty', () => {
+  expect(sampleSize([], 2), []).toEqual()
+});
+  test('Returns an empty array if n = 0', () => {
+  expect(sampleSize(arr, 0), []).toEqual()
+});
   
 

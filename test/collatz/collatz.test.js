@@ -5,13 +5,17 @@ const collatz = require('./collatz.js');
   test('collatz is a Function', () => {
   expect(collatz).toBeInstanceOf(Function);
 });
-  t.equal(collatz(8), 4, 'When n is even, divide by 2');
-  t.equal(collatz(9), 28, 'When n is odd, times by 3 and add 1');
+  test('When n is even, divide by 2', () => {
+  expect(collatz(8), 4).toBe()
+});
+  test('When n is odd, times by 3 and add 1', () => {
+  expect(collatz(9), 28).toBe()
+});
 
   let n = 9;
   while(true){
     if (n === 1){
-      t.pass('Eventually reaches 1');
+      
       break;
     }
     n = collatz(n);

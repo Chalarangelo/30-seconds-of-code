@@ -5,5 +5,7 @@ const truncateString = require('./truncateString.js');
   test('truncateString is a Function', () => {
   expect(truncateString).toBeInstanceOf(Function);
 });
-  t.equal(truncateString('boomerang', 7), 'boom...', 'Truncates a "boomerang" up to a specified length.');
+  test('Truncates a "boomerang" up to a specified length.', () => {
+  expect(truncateString('boomerang', 7), 'boom...').toBe()
+});
   

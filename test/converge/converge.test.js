@@ -9,11 +9,15 @@ const converge = require('./converge.js');
     arr => arr.reduce((a, v) => a + v, 0),
     arr => arr.length,
   ]);
-  t.equal(average([1, 2, 3, 4, 5, 6, 7]), 4, 'Produces the average of the array');
+  test('Produces the average of the array', () => {
+  expect(average([1, 2, 3, 4, 5, 6, 7]), 4).toBe()
+});
   const strangeConcat = converge((a, b) => a + b, [
     x => x.toUpperCase(),
     x => x.toLowerCase()]
   );
-  t.equal(strangeConcat('Yodel'), "YODELyodel", 'Produces the strange concatenation');
+  test('Produces the strange concatenation', () => {
+  expect(strangeConcat('Yodel'), "YODELyodel").toBe()
+});
   
 

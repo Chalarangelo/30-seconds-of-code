@@ -7,6 +7,8 @@ const pullBy = require('./pullBy.js');
 });
   var myArray = [{ x: 1 }, { x: 2 }, { x: 3 }, { x: 1 }];
   pullBy(myArray, [{ x: 1 }, { x: 3 }], o => o.x);
-  t.deepEqual(myArray, [{ x: 2 }], 'Pulls the specified values');
+  test('Pulls the specified values', () => {
+  expect(myArray, [{ x: 2 }]).toEqual()
+});
   
 

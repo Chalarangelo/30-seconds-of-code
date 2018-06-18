@@ -8,7 +8,11 @@ const untildify = require('./untildify.js');
   test('Contains no tildes', () => {
   expect(untildify('~/test/dir/file.f').indexOf('~') === -1).toBeTruthy();
 });
-  t.equal(untildify('~/test/dir/file.f').slice(-16), '/test/dir/file.f', 'Does not alter the rest of the path');
-  t.equal(untildify('test/dir/file.f'), 'test/dir/file.f', 'Does not alter paths without tildes');
+  test('Does not alter the rest of the path', () => {
+  expect(untildify('~/test/dir/file.f').slice(-16), '/test/dir/file.f').toBe()
+});
+  test('Does not alter paths without tildes', () => {
+  expect(untildify('test/dir/file.f'), 'test/dir/file.f').toBe()
+});
   
 

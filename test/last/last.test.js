@@ -9,8 +9,12 @@ const last = require('./last.js');
   expect(last({ a: 1234}) === undefined).toBeTruthy();
 });
   t.equal(last([1, 2, 3]), 3, "last([1, 2, 3]) returns 3");
-  t.equal(last({ 0: false}), undefined, 'last({ 0: false}) returns undefined');
-  t.equal(last('String'), 'g', 'last(String) returns g');
+  test('last({ 0: false}) returns undefined', () => {
+  expect(last({ 0: false}), undefined).toBe()
+});
+  test('last(String) returns g', () => {
+  expect(last('String'), 'g').toBe()
+});
   t.throws(() => last(null), 'last(null) throws an Error');
   t.throws(() => last(undefined), 'last(undefined) throws an Error');
   t.throws(() => last(), 'last() throws an Error');

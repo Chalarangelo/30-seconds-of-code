@@ -11,7 +11,9 @@ const randomIntArrayInRange = require('./randomIntArrayInRange.js');
   test('The returned array contains only integers', () => {
   expect(arr.every(x => typeof x === 'number')).toBeTruthy();
 });
-  t.equal(arr.length, 10, 'The returned array has the proper length');
+  test('The returned array has the proper length', () => {
+  expect(arr.length, 10).toBe()
+});
   test('The returned array\'s values lie between provided lowerLimit and upperLimit (both inclusive).', () => {
   expect(arr.every(x => (x >= lowerLimit) && (x <= upperLimit))).toBeTruthy();
 });

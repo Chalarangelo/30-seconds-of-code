@@ -10,7 +10,11 @@ const isPromiseLike = require('./isPromiseLike.js');
       return '';
     }
   }), true, 'Returns true for a promise-like object');
-  t.equal(isPromiseLike(null), false, 'Returns false for null');
-  t.equal(isPromiseLike({}), false, 'Returns false for an empty object');
+  test('Returns false for null', () => {
+  expect(isPromiseLike(null), false).toBe()
+});
+  test('Returns false for an empty object', () => {
+  expect(isPromiseLike({}), false).toBe()
+});
   
 

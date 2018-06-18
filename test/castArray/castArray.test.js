@@ -5,10 +5,20 @@ const castArray = require('./castArray.js');
   test('castArray is a Function', () => {
   expect(castArray).toBeInstanceOf(Function);
 });
-  t.deepEqual(castArray(1), [1], 'Works for single values');
-  t.deepEqual(castArray([1]), [1], 'Works for arrays with one value');
-  t.deepEqual(castArray([1,2,3]), [1,2,3], 'Works for arrays with multiple value');
-  t.deepEqual(castArray('test'), ['test'], 'Works for strings');
-  t.deepEqual(castArray({}), [{}], 'Works for objects');
+  test('Works for single values', () => {
+  expect(castArray(1), [1]).toEqual()
+});
+  test('Works for arrays with one value', () => {
+  expect(castArray([1]), [1]).toEqual()
+});
+  test('Works for arrays with multiple value', () => {
+  expect(castArray([1,2,3]), [1,2,3]).toEqual()
+});
+  test('Works for strings', () => {
+  expect(castArray('test'), ['test']).toEqual()
+});
+  test('Works for objects', () => {
+  expect(castArray({}), [{}]).toEqual()
+});
   
 

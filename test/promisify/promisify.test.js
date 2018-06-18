@@ -10,6 +10,6 @@ const promisify = require('./promisify.js');
   expect(x() instanceof Promise).toBeTruthy();
 });
   const delay = promisify((d, cb) => setTimeout(cb, d));
-  delay(200).then(() => t.pass('Runs the function provided'));
+  delay(200).then(() => 
   
 

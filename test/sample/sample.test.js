@@ -9,7 +9,11 @@ const sample = require('./sample.js');
   test('Returns a random element from the array', () => {
   expect(arr.includes(sample(arr))).toBeTruthy();
 });
-  t.equal(sample([1]), 1, 'Works for single-element arrays');
-  t.equal(sample([]), undefined, 'Returns undefined for empty array');
+  test('Works for single-element arrays', () => {
+  expect(sample([1]), 1).toBe()
+});
+  test('Returns undefined for empty array', () => {
+  expect(sample([]), undefined).toBe()
+});
   
 

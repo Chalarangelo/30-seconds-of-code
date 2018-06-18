@@ -5,15 +5,25 @@ const pluralize = require('./pluralize.js');
   test('pluralize is a Function', () => {
   expect(pluralize).toBeInstanceOf(Function);
 });
-  t.equal(pluralize(0, 'apple'), 'apples', 'Produces the plural of the word');
-  t.equal(pluralize(1, 'apple'), 'apple', 'Produces the singular of the word');
-  t.equal(pluralize(2, 'apple'), 'apples', 'Produces the plural of the word');
-  t.equal(pluralize(2, 'person', 'people'), 'people', 'Prodices the defined plural of the word');
+  test('Produces the plural of the word', () => {
+  expect(pluralize(0, 'apple'), 'apples').toBe()
+});
+  test('Produces the singular of the word', () => {
+  expect(pluralize(1, 'apple'), 'apple').toBe()
+});
+  test('Produces the plural of the word', () => {
+  expect(pluralize(2, 'apple'), 'apples').toBe()
+});
+  test('Prodices the defined plural of the word', () => {
+  expect(pluralize(2, 'person', 'people'), 'people').toBe()
+});
   const PLURALS = {
     person: 'people',
     radius: 'radii'
   };
   const autoPluralize = pluralize(PLURALS);
-  t.equal(autoPluralize(2, 'person'), 'people', 'Works with a dictionary');
+  test('Works with a dictionary', () => {
+  expect(autoPluralize(2, 'person'), 'people').toBe()
+});
   
 

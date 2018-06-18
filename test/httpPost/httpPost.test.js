@@ -17,7 +17,9 @@ const httpPost = (url, data, callback, err = console.error) => {
     userId: 1
   };
   httpPost('https:
-    t.deepEqual(JSON.parse(response).id, 101, 'Sends a POST request');
+    test('Sends a POST request', () => {
+  expect(JSON.parse(response).id, 101).toEqual()
+});
   
   
 

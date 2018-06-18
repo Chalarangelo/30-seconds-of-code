@@ -7,7 +7,11 @@ const pullAtValue = require('./pullAtValue.js');
 });
   let myArray = ['a', 'b', 'c', 'd'];
   let pulled = pullAtValue(myArray, ['b', 'd']);
-  t.deepEqual(myArray, [ 'a', 'c' ], 'Pulls the specified values');
-  t.deepEqual(pulled, [ 'b', 'd' ], 'Pulls the specified values');
+  test('Pulls the specified values', () => {
+  expect(myArray, [ 'a', 'c' ]).toEqual()
+});
+  test('Pulls the specified values', () => {
+  expect(pulled, [ 'b', 'd' ]).toEqual()
+});
   
 

@@ -9,6 +9,8 @@ const partialRight = require('./partialRight.js');
     return greeting + ' ' + name + '!';
   }
   const greetJohn = partialRight(greet, 'John');
-  t.equal(greetJohn('Hello'), 'Hello John!', 'Appends arguments');
+  test('Appends arguments', () => {
+  expect(greetJohn('Hello'), 'Hello John!').toBe()
+});
   
 

@@ -1,10 +1,6 @@
 const expect = require('expect');
 const bottomVisible = require('./bottomVisible.js');
 
-
-  test('bottomVisible is a Function', () => {
+test('bottomVisible is a Function', () => {
   expect(bottomVisible).toBeInstanceOf(Function);
 });
-  t.pass('Tested on 09/02/2018 by @chalarangelo');
-  
-

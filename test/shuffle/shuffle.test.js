@@ -10,7 +10,11 @@ const shuffle = require('./shuffle.js');
   test('New array contains all original elements', () => {
   expect(shuffle(arr).every(x => arr.includes(x))).toBeTruthy();
 });
-  t.deepEqual(shuffle([]),[],'Works for empty arrays');
-  t.deepEqual(shuffle([1]),[1],'Works for single-element arrays');
+  test('Works for empty arrays', () => {
+  expect(shuffle([]),[]).toEqual()
+});
+  test('Works for single-element arrays', () => {
+  expect(shuffle([1]),[1]).toEqual()
+});
   
 

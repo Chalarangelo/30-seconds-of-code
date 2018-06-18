@@ -6,10 +6,18 @@ const chunk = require('./chunk.js');
   expect(chunk).toBeInstanceOf(Function);
 });
   t.deepEqual(chunk([1, 2, 3, 4, 5], 2), [[1,2],[3,4],[5]], "chunk([1, 2, 3, 4, 5], 2) returns [[1,2],[3,4],[5]] ");
-  t.deepEqual(chunk([]), [], 'chunk([]) returns []');
-  t.deepEqual(chunk(123), [], 'chunk(123) returns []');
-  t.deepEqual(chunk({ a: 123}), [], 'chunk({ a: 123}) returns []');
-  t.deepEqual(chunk('string', 2), [ 'st', 'ri', 'ng' ], 'chunk(string, 2) returns [ st, ri, ng ]');
+  test('chunk([]) returns []', () => {
+  expect(chunk([]), []).toEqual()
+});
+  test('chunk(123) returns []', () => {
+  expect(chunk(123), []).toEqual()
+});
+  test('chunk({ a: 123}) returns []', () => {
+  expect(chunk({ a: 123}), []).toEqual()
+});
+  test('chunk(string, 2) returns [ st, ri, ng ]', () => {
+  expect(chunk('string', 2), [ 'st', 'ri', 'ng' ]).toEqual()
+});
   t.throws(() => chunk(), 'chunk() throws an error');
   t.throws(() => chunk(undefined), 'chunk(undefined) throws an error');
   t.throws(() => chunk(null), 'chunk(null) throws an error');
