@@ -4,6 +4,7 @@
     "chalk": "^2.4.1",
     "fs-extra": "^6.0.0",
     "html-minifier": "^3.5.15",
+    "jest": "^23.1.0",
     "jsdom": "^11.10.0",
     "markdown-it": "^8.4.1",
     "mini.css": "^2.3.7",
@@ -32,7 +33,8 @@
     "extractor": "node ./scripts/extract.js",
     "packager": "node ./scripts/module.js",
     "localizer": "node ./scripts/localize.js",
-    "test": "tape test/**/*.test.js | tap-spec"
+    "test": "tape test/**/*.test.js | tap-spec",
+    "test2": "jest ./jesttest/**/*.test.js"
   },
   "repository": {
     "type": "git",
