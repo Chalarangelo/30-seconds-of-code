@@ -11,6 +11,6 @@ res(data), worker.terminate();
 worker.onerror = err => {
 rej(err), worker.terminate();
 };
-
+});
 };
 module.exports = runAsync;
