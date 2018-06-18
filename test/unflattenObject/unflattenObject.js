@@ -13,5 +13,5 @@ obj[k] +
 );
 } else acc[k] = obj[k];
 return acc;
-}, {
+}, {});
 module.exports = unflattenObject;

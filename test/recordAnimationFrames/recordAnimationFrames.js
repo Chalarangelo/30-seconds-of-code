@@ -13,7 +13,7 @@ const run = () => {
 raf = requestAnimationFrame(() => {
 callback();
 if (running) run();
-
+});
 };
 if (autoStart) start();
 return { start, stop };
