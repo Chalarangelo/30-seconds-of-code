@@ -12,7 +12,7 @@ test('Returns a random sample of specified size from an array', () => {
   expect(sampleSize(arr, 2).every(x => arr.includes(x))).toBeTruthy();
 });
 test('Returns all elements in an array if n >= length', () => {
-  expect(sampleSize(arr, 5).length).toBe(4)
+  expect(sampleSize(arr, 5).length).toBe(4);
 });
 test('Returns an empty array if original array is empty', () => {
   expect(sampleSize([], 2)).toEqual([]);

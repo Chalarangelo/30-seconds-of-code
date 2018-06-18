@@ -14,8 +14,8 @@ test('Works for arrays with multiple value', () => {
   expect(castArray([1,2,3])).toEqual( [1,2,3]);
 });
 test('Works for strings', () => {
-  expect(castArray('test')).toEqual(['test'])
+  expect(castArray('test')).toEqual(['test']);
 });
 test('Works for objects', () => {
-  expect(castArray({})).toEqual([{}])
+  expect(castArray({})).toEqual([{}]);
 });

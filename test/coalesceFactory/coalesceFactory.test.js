@@ -6,5 +6,5 @@ test('coalesceFactory is a Function', () => {
 });
 const customCoalesce = coalesceFactory(_ => ![null, undefined, '', NaN].includes(_));
 test('Returns a customized coalesce function', () => {
-  expect(customCoalesce(undefined, null, NaN, '', 'Waldo')).toEqual('Waldo')
+  expect(customCoalesce(undefined, null, NaN, '', 'Waldo')).toEqual('Waldo');
 });
