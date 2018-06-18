@@ -1,23 +1,26 @@
-const test = require('tape');
+const expect = require('expect');
 const pluralize = require('./pluralize.js');
 
-test('Testing pluralize', (t) => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  t.true(typeof pluralize === 'function', 'pluralize is a Function');
-  t.equal(pluralize(0, 'apple'), 'apples', 'Produces the plural of the word');
-  t.equal(pluralize(1, 'apple'), 'apple', 'Produces the singular of the word');
-  t.equal(pluralize(2, 'apple'), 'apples', 'Produces the plural of the word');
-  t.equal(pluralize(2, 'person', 'people'), 'people', 'Prodices the defined plural of the word');
-  const PLURALS = {
-    person: 'people',
-    radius: 'radii'
-  };
-  const autoPluralize = pluralize(PLURALS);
-  t.equal(autoPluralize(2, 'person'), 'people', 'Works with a dictionary');
-  //t.deepEqual(pluralize(args..), 'Expected');
-  //t.equal(pluralize(args..), 'Expected');
-  //t.false(pluralize(args..), 'Expected');
-  //t.throws(pluralize(args..), 'Expected');
-  t.end();
+test('pluralize is a Function', () => {
+  expect(pluralize).toBeInstanceOf(Function);
+});
+test('Produces the plural of the word', () => {
+  expect(pluralize(0, 'apple')).toBe('apples');
+});
+test('Produces the singular of the word', () => {
+  expect(pluralize(1, 'apple')).toBe('apple');
+});
+test('Produces the plural of the word', () => {
+  expect(pluralize(2, 'apple')).toBe('apples');
+});
+test('Prodices the defined plural of the word', () => {
+  expect(pluralize(2, 'person', 'people')).toBe('people');
+});
+const PLURALS = {
+  person: 'people',
+  radius: 'radii'
+};
+const autoPluralize = pluralize(PLURALS);
+test('Works with a dictionary', () => {
+  expect(autoPluralize(2, 'person')).toBe('people');
 });

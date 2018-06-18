@@ -1,14 +1,9 @@
-const test = require('tape');
+const expect = require('expect');
 const initializeArrayWithValues = require('./initializeArrayWithValues.js');
 
-test('Testing initializeArrayWithValues', (t) => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  t.true(typeof initializeArrayWithValues === 'function', 'initializeArrayWithValues is a Function');
-  t.deepEqual(initializeArrayWithValues(5, 2), [2, 2, 2, 2, 2], "Initializes and fills an array with the specified values");
-  //t.deepEqual(initializeArrayWithValues(args..), 'Expected');
-  //t.equal(initializeArrayWithValues(args..), 'Expected');
-  //t.false(initializeArrayWithValues(args..), 'Expected');
-  //t.throws(initializeArrayWithValues(args..), 'Expected');
-  t.end();
+test('initializeArrayWithValues is a Function', () => {
+  expect(initializeArrayWithValues).toBeInstanceOf(Function);
+});
+test('Initializes and fills an array with the specified values', () => {
+  expect(initializeArrayWithValues(5, 2)).toEqual([2, 2, 2, 2, 2]);
 });

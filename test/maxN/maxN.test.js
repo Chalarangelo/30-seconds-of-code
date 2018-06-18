@@ -1,15 +1,12 @@
-const test = require('tape');
+const expect = require('expect');
 const maxN = require('./maxN.js');
 
-test('Testing maxN', (t) => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  t.true(typeof maxN === 'function', 'maxN is a Function');
-  t.deepEqual(maxN([1, 2, 3]), [3], "Returns the n maximum elements from the provided array");
-  t.deepEqual(maxN([1, 2, 3], 2), [3, 2], "Returns the n maximum elements from the provided array");
-  //t.deepEqual(maxN(args..), 'Expected');
-  //t.equal(maxN(args..), 'Expected');
-  //t.false(maxN(args..), 'Expected');
-  //t.throws(maxN(args..), 'Expected');
-  t.end();
+test('maxN is a Function', () => {
+  expect(maxN).toBeInstanceOf(Function);
+});
+test('Returns the n maximum elements from the provided array', () => {
+  expect(maxN([1, 2, 3])).toEqual([3]);
+});
+test('Returns the n maximum elements from the provided array', () => {
+  expect(maxN([1, 2, 3], 2)).toEqual([3, 2]);
 });

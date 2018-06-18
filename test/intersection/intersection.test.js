@@ -1,14 +1,9 @@
-const test = require('tape');
+const expect = require('expect');
 const intersection = require('./intersection.js');
 
-test('Testing intersection', (t) => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  t.true(typeof intersection === 'function', 'intersection is a Function');
-  t.deepEqual(intersection([1, 2, 3], [4, 3, 2]), [2, 3], "Returns a list of elements that exist in both arrays");
-  //t.deepEqual(intersection(args..), 'Expected');
-  //t.equal(intersection(args..), 'Expected');
-  //t.false(intersection(args..), 'Expected');
-  //t.throws(intersection(args..), 'Expected');
-  t.end();
+test('intersection is a Function', () => {
+  expect(intersection).toBeInstanceOf(Function);
+});
+test('Returns a list of elements that exist in both arrays', () => {
+  expect(intersection([1, 2, 3], [4, 3, 2])).toEqual([2, 3]);
 });

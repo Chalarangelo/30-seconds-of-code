@@ -1,15 +1,12 @@
-const test = require('tape');
+const expect = require('expect');
 const tail = require('./tail.js');
 
-test('Testing tail', (t) => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  t.true(typeof tail === 'function', 'tail is a Function');
-  t.deepEqual(tail([1, 2, 3]), [2, 3], "Returns tail");
-  t.deepEqual(tail([1]), [1], "Returns tail");
-  //t.deepEqual(tail(args..), 'Expected');
-  //t.equal(tail(args..), 'Expected');
-  //t.false(tail(args..), 'Expected');
-  //t.throws(tail(args..), 'Expected');
-  t.end();
+test('tail is a Function', () => {
+  expect(tail).toBeInstanceOf(Function);
+});
+test('Returns tail', () => {
+  expect(tail([1, 2, 3])).toEqual([2, 3]);
+});
+test('Returns tail', () => {
+  expect(tail([1])).toEqual([1]);
 });

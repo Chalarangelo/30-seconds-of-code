@@ -1,21 +1,22 @@
-const test = require('tape');
+const expect = require('expect');
 const deepClone = require('./deepClone.js');
 
-test('Testing deepClone', (t) => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  t.true(typeof deepClone === 'function', 'deepClone is a Function');
-  const a = { foo: 'bar', obj: { a: 1, b: 2 } };
-  const b = deepClone(a);
-  const c = [{foo: "bar"}];
-  const d = deepClone(c);
-  t.notEqual(a, b, 'Shallow cloning works');
-  t.notEqual(a.obj, b.obj, 'Deep cloning works');
-  t.notEqual(c, d, "Array shallow cloning works");
-  t.notEqual(c[0], d[0], "Array deep cloning works");
-  //t.deepEqual(deepClone(args..), 'Expected');
-  //t.equal(deepClone(args..), 'Expected');
-  //t.false(deepClone(args..), 'Expected');
-  //t.throws(deepClone(args..), 'Expected');
-  t.end();
+test('deepClone is a Function', () => {
+  expect(deepClone).toBeInstanceOf(Function);
+});
+const a = { foo: 'bar', obj: { a: 1, b: 2 } };
+const b = deepClone(a);
+const c = [{foo: "bar"}];
+const d = deepClone(c);
+test('Shallow cloning works', () => {
+  expect(a).not.toBe(b);
+});
+test('Deep cloning works', () => {
+  expect(a.obj).not.toBe(b.obj);
+});
+test('Array shallow cloning works', () => {
+  expect(c).not.toBe(d);
+});
+test('Array deep cloning works', () => {
+  expect(c[0]).not.toBe(d[0]);
 });

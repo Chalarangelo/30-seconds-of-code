@@ -1,15 +1,12 @@
-const test = require('tape');
+const expect = require('expect');
 const URLJoin = require('./URLJoin.js');
 
-test('Testing URLJoin', (t) => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  t.true(typeof URLJoin === 'function', 'URLJoin is a Function');
-  t.equal(URLJoin('http://www.google.com', 'a', '/b/cd', '?foo=123', '?bar=foo'), 'http://www.google.com/a/b/cd?foo=123&bar=foo', 'Returns proper URL');
-  t.equal(URLJoin('file://www.google.com', 'a', '/b/cd', '?foo=123', '?bar=foo'), 'file:///www.google.com/a/b/cd?foo=123&bar=foo', 'Returns proper URL');
-  //t.deepEqual(URLJoin(args..), 'Expected');
-  //t.equal(URLJoin(args..), 'Expected');
-  //t.false(URLJoin(args..), 'Expected');
-  //t.throws(URLJoin(args..), 'Expected');
-  t.end();
+test('URLJoin is a Function', () => {
+  expect(URLJoin).toBeInstanceOf(Function);
+});
+test('Returns proper URL', () => {
+  expect(URLJoin('http://www.google.com', 'a', '/b/cd', '?foo=123', '?bar=foo')).toBe('http://www.google.com/a/b/cd?foo=123&bar=foo');
+});
+test('Returns proper URL', () => {
+  expect(URLJoin('file://www.google.com', 'a', '/b/cd', '?foo=123', '?bar=foo')).toBe('file:///www.google.com/a/b/cd?foo=123&bar=foo');
 });

@@ -1,15 +1,12 @@
-const test = require('tape');
+const expect = require('expect');
 const flattenObject = require('./flattenObject.js');
 
-test('Testing flattenObject', (t) => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  t.true(typeof flattenObject === 'function', 'flattenObject is a Function');
-  t.deepEqual(flattenObject({ a: { b: { c: 1 } }, d: 1 }), { 'a.b.c': 1, d: 1 }, 'Flattens an object with the paths for keys');
-  t.deepEqual(flattenObject([0,1,[2,[1]],1]), { 0: 0, 1: 1, 3: 1, '2.0': 2, '2.1.0': 1 }, 'Works with arrays');
-  //t.deepEqual(flattenObject(args..), 'Expected');
-  //t.equal(flattenObject(args..), 'Expected');
-  //t.false(flattenObject(args..), 'Expected');
-  //t.throws(flattenObject(args..), 'Expected');
-  t.end();
+test('flattenObject is a Function', () => {
+  expect(flattenObject).toBeInstanceOf(Function);
+});
+test('Flattens an object with the paths for keys', () => {
+  expect(flattenObject({ a: { b: { c: 1 } }, d: 1 })).toEqual({ 'a.b.c': 1, d: 1 });
+});
+test('Works with arrays', () => {
+  expect(flattenObject([0,1,[2,[1]],1])).toEqual({ 0: 0, 1: 1, 3: 1, '2.0': 2, '2.1.0': 1 });
 });

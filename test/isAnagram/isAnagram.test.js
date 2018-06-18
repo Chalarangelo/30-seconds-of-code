@@ -1,17 +1,18 @@
-const test = require('tape');
+const expect = require('expect');
 const isAnagram = require('./isAnagram.js');
 
-test('Testing isAnagram', (t) => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  t.true(typeof isAnagram === 'function', 'isAnagram is a Function');
-  t.true(isAnagram('iceman', 'cinema'), 'Checks valid anagram');
-  t.true(isAnagram('rail safety', 'fairy tales'), 'Works with spaces');
-  t.true(isAnagram('roast beef', 'eat for BSE'), 'Ignores case');
-  t.true(isAnagram('Regera Dowdy', 'E. G. Deadworry'), 'Ignores special characters');
-  //t.deepEqual(isAnagram(args..), 'Expected');
-  //t.equal(isAnagram(args..), 'Expected');
-  //t.false(isAnagram(args..), 'Expected');
-  //t.throws(isAnagram(args..), 'Expected');
-  t.end();
+test('isAnagram is a Function', () => {
+  expect(isAnagram).toBeInstanceOf(Function);
+});
+test('Checks valid anagram', () => {
+  expect(isAnagram('iceman', 'cinema')).toBeTruthy();
+});
+test('Works with spaces', () => {
+  expect(isAnagram('rail safety', 'fairy tales')).toBeTruthy();
+});
+test('Ignores case', () => {
+  expect(isAnagram('roast beef', 'eat for BSE')).toBeTruthy();
+});
+test('Ignores special characters', () => {
+  expect(isAnagram('Regera Dowdy', 'E. G. Deadworry')).toBeTruthy();
 });

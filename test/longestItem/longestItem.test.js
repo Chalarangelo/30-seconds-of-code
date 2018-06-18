@@ -1,14 +1,9 @@
-const test = require('tape');
+const expect = require('expect');
 const longestItem = require('./longestItem.js');
 
-test('Testing longestItem', (t) => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  t.true(typeof longestItem === 'function', 'longestItem is a Function');
-  t.deepEqual(longestItem('this', 'is', 'a', 'testcase'), 'testcase', "Returns the longest object");
-  //t.deepEqual(longestItem(args..), 'Expected');
-  //t.equal(longestItem(args..), 'Expected');
-  //t.false(longestItem(args..), 'Expected');
-  //t.throws(longestItem(args..), 'Expected');
-  t.end();
+test('longestItem is a Function', () => {
+  expect(longestItem).toBeInstanceOf(Function);
+});
+test('Returns the longest object', () => {
+  expect(longestItem('this', 'is', 'a', 'testcase')).toEqual('testcase');
 });

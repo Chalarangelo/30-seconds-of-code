@@ -1,15 +1,12 @@
-const test = require('tape');
+const expect = require('expect');
 const unzip = require('./unzip.js');
 
-test('Testing unzip', (t) => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  t.true(typeof unzip === 'function', 'unzip is a Function');
-  t.deepEqual(unzip([['a', 1, true], ['b', 2, false]]), [['a', 'b'], [1, 2], [true, false]], `unzip([['a', 1, true], ['b', 2, false]]) equals [['a', 'b'], [1, 2], [true, false]]`);
-  t.deepEqual(unzip([['a', 1, true], ['b', 2]]), [['a', 'b'], [1, 2], [true]], `unzip([['a', 1, true], ['b', 2]]) equals [['a', 'b'], [1, 2], [true]]`);
-  //t.deepEqual(unzip(args..), 'Expected');
-  //t.equal(unzip(args..), 'Expected');
-  //t.false(unzip(args..), 'Expected');
-  //t.throws(unzip(args..), 'Expected');
-  t.end();
+test('unzip is a Function', () => {
+  expect(unzip).toBeInstanceOf(Function);
+});
+test('unzip([[\'a\', 1, true], [\'b\', 2, false]]) equals [[\'a\',\'b\'], [1, 2], [true, false]]', () => {
+  expect(unzip([['a', 1, true], ['b', 2, false]])).toEqual([['a', 'b'], [1, 2], [true, false]]);
+});
+test('unzip([[\'a\', 1, true], [\'b\', 2]]) equals [[\'a\',\'b\'], [1, 2], [true]]', () => {
+  expect(unzip([['a', 1, true], ['b', 2]])).toEqual([['a', 'b'], [1, 2], [true]]);
 });

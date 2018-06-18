@@ -1,14 +1,9 @@
-const test = require('tape');
+const expect = require('expect');
 const dropRightWhile = require('./dropRightWhile.js');
 
-test('Testing dropRightWhile', (t) => {
-  //For more information on all the methods supported by tape
-  //Please go to https://github.com/substack/tape
-  t.true(typeof dropRightWhile === 'function', 'dropRightWhile is a Function');
-  t.deepEqual(dropRightWhile([1, 2, 3, 4], n => n < 3), [1, 2], 'Removes elements from the end of an array until the passed function returns true.');
-  //t.deepEqual(dropRightWhile(args..), 'Expected');
-  //t.equal(dropRightWhile(args..), 'Expected');
-  //t.false(dropRightWhile(args..), 'Expected');
-  //t.throws(dropRightWhile(args..), 'Expected');
-  t.end();
+test('dropRightWhile is a Function', () => {
+  expect(dropRightWhile).toBeInstanceOf(Function);
+});
+test('Removes elements from the end of an array until the passed function returns true.', () => {
+  expect(dropRightWhile([1, 2, 3, 4], n => n < 3)).toEqual([1, 2]);
 });
