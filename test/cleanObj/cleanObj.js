@@ -5,7 +5,7 @@ cleanObj(obj[key], keysToKeep, childIndicator);
 } else if (!keysToKeep.includes(key)) {
 delete obj[key];
 }
-
+});
 return obj;
 };
 module.exports = cleanObj;
