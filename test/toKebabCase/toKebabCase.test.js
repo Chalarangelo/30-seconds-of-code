@@ -20,13 +20,13 @@ test('toKebabCase() returns undefined', () => {
   expect(toKebabCase()).toBe(undefined)
 });
 test('toKebabCase([]) throws an erro', () => {
-  expect(toKebabCase([])).toThrow();
+  expect(() => { toKebabCase([]); }).toThrow();
 });
 test('toKebabCase({}) throws an erro', () => {
-  expect(toKebabCase({})).toThrow();
+  expect(() => { toKebabCase({}); }).toThrow();
 });
 test('toKebabCase(123) throws an erro', () => {
-  expect(toKebabCase(123)).toThrow();
+  expect(() => { toKebabCase(123); }).toThrow();
 });
 let start = new Date().getTime();
 toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML');

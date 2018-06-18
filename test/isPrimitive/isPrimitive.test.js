@@ -19,7 +19,7 @@ test('isPrimitive(true) is primitive', () => {
 test('isPrimitive(50) is primitive', () => {
   expect(isPrimitive(50)).toBeTruthy();
 });
-test('isPrimitive('Hello') is primitive', () => {
+test('isPrimitive(\'Hello\') is primitive', () => {
   expect(isPrimitive('Hello')).toBeTruthy();
 });
 test('isPrimitive(false) is primitive', () => {
@@ -35,7 +35,7 @@ test('isPrimitive({ a: 123 }) is not primitive', () => {
   expect(isPrimitive({ a: 123 })).toBeFalsy();
 });
 let start = new Date().getTime();
-isPrimitive({ a: 123
+isPrimitive({ a: 123 });
 let end = new Date().getTime();
 test('isPrimitive({ a: 123 }) takes less than 2s to run', () => {
   expect((end - start) < 2000).toBeTruthy();

@@ -5,7 +5,7 @@ test('capitalizeEveryWord is a Function', () => {
   expect(capitalizeEveryWord).toBeInstanceOf(Function);
 });
 test('Capitalizes the first letter of every word in a string', () => {
-  expect(capitalizeEveryWord('hello world!'), 'Hello World!').toBe();
+  expect(capitalizeEveryWord('hello world!')).toBe('Hello World!');
 });
 test('Works with characters', () => {
   expect(capitalizeEveryWord('$# @!')).toBe('$# @!');
