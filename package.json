@@ -33,8 +33,8 @@
     "extractor": "node ./scripts/extract.js",
     "packager": "node ./scripts/module.js",
     "localizer": "node ./scripts/localize.js",
-    "test": "tape test/**/*.test.js | tap-spec",
-    "test2": "jest test/**/*.test.js"
+    "testold": "tape test/**/*.test.js | tap-spec",
+    "test": "jest test/**/*.test.js"
   },
   "repository": {
     "type": "git",
