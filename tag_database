@@ -55,6 +55,7 @@ drop:array
 dropRight:array
 dropRightWhile:array,function
 dropWhile:array,function
+elementContains:browser
 elementIsVisibleInViewport:browser
 elo:math,array,advanced
 equals:object,array,type,advanced
@@ -110,6 +111,8 @@ initializeArrayWithRangeRight:array,math
 initializeArrayWithValues:array,math
 initializeNDArray:array,recursion
 inRange:math
+insertAfter:browser
+insertBefore:browser
 intersection:array,math
 intersectionBy:array,function
 intersectionWith:array,function
@@ -274,6 +277,7 @@ toOrdinalSuffix:utility,math
 toSafeInteger:math
 toSnakeCase:string,regexp
 transform:object,array
+triggerEvent:browser,event
 truncateString:string
 truthCheckCollection:object,logic,array
 unary:adapter,function
