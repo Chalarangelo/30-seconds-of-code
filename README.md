@@ -205,6 +205,7 @@ average(1, 2, 3);
 * [`createEventHub`](#createeventhub-)
 * [`currentURL`](#currenturl)
 * [`detectDeviceType`](#detectdevicetype)
+* [`elementContains`](#elementcontains)
 * [`elementIsVisibleInViewport`](#elementisvisibleinviewport)
 * [`getScrollPosition`](#getscrollposition)
 * [`getStyle`](#getstyle)
@@ -212,6 +213,8 @@ average(1, 2, 3);
 * [`hashBrowser`](#hashbrowser-)
 * [`hide`](#hide)
 * [`httpsRedirect`](#httpsredirect)
+* [`insertAfter`](#insertafter)
+* [`insertBefore`](#insertbefore)
 * [`isBrowserTabFocused`](#isbrowsertabfocused)
 * [`nodeListToArray`](#nodelisttoarray)
 * [`observeMutations`](#observemutations-)
@@ -227,6 +230,7 @@ average(1, 2, 3);
 * [`show`](#show)
 * [`smoothScroll`](#smoothscroll)
 * [`toggleClass`](#toggleclass)
+* [`triggerEvent`](#triggerevent)
 * [`UUIDGeneratorBrowser`](#uuidgeneratorbrowser)
 
 </details>
@@ -3295,6 +3299,29 @@ detectDeviceType(); // "Mobile" or "Desktop"
 <br>[⬆ Back to top](#table-of-contents)
 
 
+### elementContains
+
+Returns `true` if the `parent` element contains the `child` element, `false` otherwise.
+
+Check that `parent` is not the same element as `child`, use `parent.contains(child)` to check if the `parent` element contains the `child` element.
+
+```js
+const elementContains = (parent, child) => parent !== child && parent.contains(child);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+elementContains(document.querySelector('head'), document.querySelector('title')); // true
+elementContains(document.querySelector('body'), document.querySelector('body')); // false
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ### elementIsVisibleInViewport
 
 Returns `true` if the element specified is visible in the viewport, `false` otherwise.
@@ -3467,6 +3494,50 @@ const httpsRedirect = () => {
 
 ```js
 httpsRedirect(); // If you are on http://mydomain.com, you are redirected to https://mydomain.com
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### insertAfter
+
+Inserts an HTML string after the end of the specified element.
+
+Use `el.insertAdjacentHTML()` with a position of `'afterend'` to parse `htmlString` and insert it after the end of `el`.
+
+```js
+const insertAfter = (el, htmlString) => el.insertAdjacentHTML('afterend', htmlString);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+insertAfter(document.getElementById('myId'), '<p>after</p>'); // <div id="myId">...</div> <p>after</p>
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### insertBefore
+
+Inserts an HTML string before the start of the specified element.
+
+Use `el.insertAdjacentHTML()` with a position of `'beforebegin'` to parse `htmlString` and insert it before the start of `el`.
+
+```js
+const insertBefore = (el, htmlString) => el.insertAdjacentHTML('beforebegin', htmlString);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+insertBefore(document.getElementById('myId'), '<p>before</p>'); // <p>before</p> <div id="myId">...</div>
 ```
 
 </details>
@@ -3929,6 +4000,32 @@ const toggleClass = (el, className) => el.classList.toggle(className);
 
 ```js
 toggleClass(document.querySelector('p.special'), 'special'); // The paragraph will not have the 'special' class anymore
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### triggerEvent
+
+Triggers a specific event on a given element, optionally passing custom data.
+
+Use `new CustomEvent()` to create an event from the specified `eventType` and details.
+Use `el.dispatchEvent()` to trigger the newly created event on the given element.
+Omit the third argument, `detail`, if you do not want to pass custom data to the triggered event.
+
+```js
+const triggerEvent = (el, eventType, detail = undefined) =>
+  el.dispatchEvent(new CustomEvent(eventType, { detail: detail }));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+triggerEvent(document.getElementById('myId'), 'click');
+triggerEvent(document.getElementById('myId'), 'click', { username: 'bob' });
 ```
 
 </details>
