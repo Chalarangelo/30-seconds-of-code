@@ -1184,6 +1184,25 @@
       }
     },
     {
+      "id": "elementContains",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "elementContains.md",
+        "text": "Returns `true` if the `parent` element contains the `child` element, `false` otherwise.\n\nCheck that `parent` is not the same element as `child`, use `parent.contains(child)` to check if the `parent` element contains the `child` element.",
+        "codeBlocks": [
+          "const elementContains = (parent, child) => parent !== child && parent.contains(child);",
+          "elementContains(document.querySelector('head'), document.querySelector('title')); // true\nelementContains(document.querySelector('body'), document.querySelector('body')); // false"
+        ],
+        "tags": [
+          "browser"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "2f2c68c3368f5658fd54cb70b6264dce87ee68b23e805a95c62d55eef1854958"
+      }
+    },
+    {
       "id": "elementIsVisibleInViewport",
       "type": "snippet",
       "attributes": {
@@ -2273,6 +2292,44 @@
       "meta": {
         "archived": false,
         "hash": "fe2b9483c3a173e426aba3e834d6b97008b840ea40e54c8eabb06e1da9832872"
+      }
+    },
+    {
+      "id": "insertAfter",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "insertAfter.md",
+        "text": "Inserts an HTML string after the end of the specified element.\n\nUse `el.insertAdjacentHTML()` with a position of `'afterend'` to parse `htmlString` and insert it after the end of `el`.",
+        "codeBlocks": [
+          "const insertAfter = (el, htmlString) => el.insertAdjacentHTML('afterend', htmlString);",
+          "insertAfter(document.getElementById('myId'), '<p>after</p>'); // <div id=\"myId\">...</div> <p>after</p>"
+        ],
+        "tags": [
+          "browser"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "6fb50a82d884c18e13fce553a0027ab6816697d3be1dd4c5e22d0c8f833744bf"
+      }
+    },
+    {
+      "id": "insertBefore",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "insertBefore.md",
+        "text": "Inserts an HTML string before the start of the specified element.\n\nUse `el.insertAdjacentHTML()` with a position of `'beforebegin'` to parse `htmlString` and insert it before the start of `el`.",
+        "codeBlocks": [
+          "const insertBefore = (el, htmlString) => el.insertAdjacentHTML('beforebegin', htmlString);",
+          "insertBefore(document.getElementById('myId'), '<p>before</p>'); // <p>before</p> <div id=\"myId\">...</div>"
+        ],
+        "tags": [
+          "browser"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "bd45d57d669eeecd55bb507ab12c09839dc35ee90f99bcc182dae0a41649a19d"
       }
     },
     {
@@ -5534,6 +5591,26 @@
       "meta": {
         "archived": false,
         "hash": "8f844b53d1104ae0169235916fe2f1bcce82e4f2503b4009e842078e8611405c"
+      }
+    },
+    {
+      "id": "triggerEvent",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "triggerEvent.md",
+        "text": "Triggers a specific event on a given element, optionally passing custom data.\n\nUse `new CustomEvent()` to create an event from the specified `eventType` and details.\nUse `el.dispatchEvent()` to trigger the newly created event on the given element.\nOmit the third argument, `detail`, if you do not want to pass custom data to the triggered event.",
+        "codeBlocks": [
+          "const triggerEvent = (el, eventType, detail = undefined) =>\n  el.dispatchEvent(new CustomEvent(eventType, { detail: detail }));",
+          "triggerEvent(document.getElementById('myId'), 'click');\ntriggerEvent(document.getElementById('myId'), 'click', { username: 'bob' });"
+        ],
+        "tags": [
+          "browser",
+          "event"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "0089f0db0ccfaae631ff2935a1eb7b5ff38d789255777a8f05188552a527520c"
       }
     },
     {
