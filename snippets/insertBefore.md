@@ -9,5 +9,5 @@ const insertBefore = (el, htmlString) => el.insertAdjacentHTML('beforebegin', ht
 ```
 
 ```js
-insertBefore(document.getElementById('myId'),'<p>before</p>'); // <p>before</p> <div id="myId">...</div>
+insertBefore(document.getElementById('myId'), '<p>before</p>'); // <p>before</p> <div id="myId">...</div>
 ```

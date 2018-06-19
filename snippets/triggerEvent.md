@@ -7,10 +7,11 @@ Use `el.dispatchEvent()` to trigger the newly created event on the given element
 Omit the third argument, `detail`, if you do not want to pass custom data to the triggered event.
 
 ```js
-const triggerEvent = (el, eventType, detail = undefined) => el.dispatchEvent(new CustomEvent(eventType, {detail: detail}));
+const triggerEvent = (el, eventType, detail = undefined) =>
+  el.dispatchEvent(new CustomEvent(eventType, { detail: detail }));
 ```
 
 ```js
-triggerEvent(document.getElementById('myId'),'click');
-triggerEvent(document.getElementById('myId'),'click', {username: 'bob'});
+triggerEvent(document.getElementById('myId'), 'click');
+triggerEvent(document.getElementById('myId'), 'click', { username: 'bob' });
 ```
