@@ -22,7 +22,7 @@ const elo = ([...ratings], kFactor = 32, selfRating) => {
     let j = i;
     while (j < len - 1) {
       j++;
-      [ratings[i], ratings[j + 1]] = elo([ratings[i], ratings[j + 1]], kFactor);
+      [ratings[i], ratings[j]] = elo([ratings[i], ratings[j]], kFactor);
     }
   }
   
