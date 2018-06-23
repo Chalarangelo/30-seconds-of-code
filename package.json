@@ -31,6 +31,7 @@
     "extractor": "node ./scripts/extract.js",
     "packager": "node ./scripts/module.js",
     "localizer": "node ./scripts/localize.js",
+    "analyzer": "node ./scripts/analyze.js",
     "test": "jest --verbose"
   },
   "repository": {

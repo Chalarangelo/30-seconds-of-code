@@ -1,0 +1,292 @@
+{
+  "data": [
+    {
+      "id": "binarySearch",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 297,
+        "tokenCount": 127,
+        "functionCount": 3,
+        "operatorCount": 14,
+        "keywordCount": 9,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "2e9aff504a7716c4b49b30702ee3b922c707fac70efc099422ae5ba5a7d0e009"
+      }
+    },
+    {
+      "id": "cleanObj",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 280,
+        "tokenCount": 95,
+        "functionCount": 4,
+        "operatorCount": 6,
+        "keywordCount": 6,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "ec33abb9423c49520400becb5183d87b37bbf6eb60012673c8df5a0a672a6af0"
+      }
+    },
+    {
+      "id": "collatz",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 55,
+        "tokenCount": 35,
+        "functionCount": 0,
+        "operatorCount": 8,
+        "keywordCount": 1,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "650c91d557244ee0e3f64a00d457d63b47271aa0b963728bfc37dc5c3c88c67e"
+      }
+    },
+    {
+      "id": "countVowels",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 65,
+        "tokenCount": 24,
+        "functionCount": 1,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "333c7a72864d3249f1f409dee1f23214ec47701a54d561a69078e0092137fa4c"
+      }
+    },
+    {
+      "id": "factors",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 580,
+        "tokenCount": 236,
+        "functionCount": 8,
+        "operatorCount": 30,
+        "keywordCount": 14,
+        "distinctFunctionCount": 6
+      },
+      "meta": {
+        "hash": "dcef8352bcfcbbd210467de2541b2d3b55c9c06b207c1253cf44ae8ea865559b"
+      }
+    },
+    {
+      "id": "fibonacciCountUntilNum",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 123,
+        "tokenCount": 57,
+        "functionCount": 5,
+        "operatorCount": 8,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "d93d0af81aeca41981ed58548672652f9c5ca4b2a6bb887c2c7e0595112dd035"
+      }
+    },
+    {
+      "id": "fibonacciUntilNum",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 256,
+        "tokenCount": 128,
+        "functionCount": 7,
+        "operatorCount": 15,
+        "keywordCount": 4,
+        "distinctFunctionCount": 5
+      },
+      "meta": {
+        "hash": "1c765ad82aedd1cc090d1c33498ce8426825ab5cb8a74882516ce07343f77f8d"
+      }
+    },
+    {
+      "id": "howManyTimes",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 237,
+        "tokenCount": 90,
+        "functionCount": 1,
+        "operatorCount": 12,
+        "keywordCount": 8,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "41f76138f7e673020c6eecd592baea18016869d7d0161edd9d7669f3a991c398"
+      }
+    },
+    {
+      "id": "httpDelete",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 242,
+        "tokenCount": 85,
+        "functionCount": 4,
+        "operatorCount": 8,
+        "keywordCount": 3,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "552bc0487c1bf8e4ff89a0a439840b32b6688e47c8e9a551bf924f91e856aa5d"
+      }
+    },
+    {
+      "id": "httpPut",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 336,
+        "tokenCount": 97,
+        "functionCount": 5,
+        "operatorCount": 8,
+        "keywordCount": 3,
+        "distinctFunctionCount": 5
+      },
+      "meta": {
+        "hash": "8ef860126cb08a63458f113653502ee2eb53d42e39128459cad1ebc92ed55639"
+      }
+    },
+    {
+      "id": "isArmstrongNumber",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 145,
+        "tokenCount": 58,
+        "functionCount": 3,
+        "operatorCount": 8,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "28a3c44cfc4ec7d34e00b2866b67bff9b3fb100f6f72c767b893159b869fd8f4"
+      }
+    },
+    {
+      "id": "isSimilar",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 225,
+        "tokenCount": 3,
+        "functionCount": 0,
+        "operatorCount": 0,
+        "keywordCount": 0,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "b821ad7f7e34c6905f88e1618b629506e265e1a3459288ab7d7b3501b2476dd2"
+      }
+    },
+    {
+      "id": "JSONToDate",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 158,
+        "tokenCount": 41,
+        "functionCount": 3,
+        "operatorCount": 3,
+        "keywordCount": 4,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "eb80d886a67c11c9395bcb414beb1e684c875b1318025609b7e12c44a58d99e9"
+      }
+    },
+    {
+      "id": "levenshteinDistance",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 707,
+        "tokenCount": 3,
+        "functionCount": 0,
+        "operatorCount": 0,
+        "keywordCount": 0,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "78b4ba08e503af63ca7811cd174218c55db9e0f726439a8c429dedeff0731d80"
+      }
+    },
+    {
+      "id": "quickSort",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 231,
+        "tokenCount": 92,
+        "functionCount": 5,
+        "operatorCount": 15,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "396d8fec22d42453b2556d4428fb35e7ef06b9844f7d6ad163923f292a96a6b5"
+      }
+    },
+    {
+      "id": "README",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 158,
+        "tokenCount": 41,
+        "functionCount": 3,
+        "operatorCount": 3,
+        "keywordCount": 4,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "f654dce947e6e48d66ba5d29452c35c6031e59add0a0124ffed1239317c40ebe"
+      }
+    },
+    {
+      "id": "removeVowels",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 71,
+        "tokenCount": 23,
+        "functionCount": 1,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "00040c26975307a1be29e9a933ef09c2b3d92bc986d8798b56339dbefce4d6fa"
+      }
+    },
+    {
+      "id": "solveRPN",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 816,
+        "tokenCount": 300,
+        "functionCount": 17,
+        "operatorCount": 23,
+        "keywordCount": 13,
+        "distinctFunctionCount": 12
+      },
+      "meta": {
+        "hash": "6b02ad139d3edcc41e767b6768cc53439c5316f5c14e00a4e2a56b2da102d1e9"
+      }
+    },
+    {
+      "id": "speechSynthesis",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 182,
+        "tokenCount": 48,
+        "functionCount": 2,
+        "operatorCount": 4,
+        "keywordCount": 3,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "21409f3b5ea7aaa9ad0041508b14c64dcaeff234121aca148e14fe26cf8b5f93"
+      }
+    }
+  ],
+  "meta": {
+    "specification": "http://jsonapi.org/format/"
+  }
+}
