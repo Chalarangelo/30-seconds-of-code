@@ -1,4 +1,5 @@
 /*
+  THIS SCRIPT IS EXPERIMENTAL AND NOT USED IN PRODUCTION.
   This is the localizer script that generates the localization files.
   Run using `npm run localizer`.
 */
