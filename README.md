@@ -6694,7 +6694,7 @@ const matchesWith = (obj, source, fn) =>
     key =>
       obj.hasOwnProperty(key) && fn
         ? fn(obj[key], source[key], key, obj, source)
-        : obj[key] === source[key]
+        : obj[key] == source[key]
   );
 ```
 
