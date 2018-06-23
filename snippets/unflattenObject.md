@@ -1,6 +1,6 @@
 ### unflattenObject
 
-Unlatten an object with the paths for keys.
+Unflatten an object with the paths for keys.
 
 Use `Object.keys(obj)` combined with `Array.reduce()` to convert flattened path node to a leaf node.
 If the value of a key contains a dot delimiter (`.`), use `Array.split('.')`, string transformations and `JSON.parse()` to create an object, then `Object.assign()` to create the leaf node.
