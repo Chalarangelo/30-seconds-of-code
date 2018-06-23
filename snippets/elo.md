@@ -25,7 +25,6 @@ const elo = ([...ratings], kFactor = 32, selfRating) => {
       [ratings[i], ratings[j]] = elo([ratings[i], ratings[j]], kFactor);
     }
   }
-  
   return ratings;
 };
 ```
