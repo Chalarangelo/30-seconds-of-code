@@ -60,6 +60,27 @@
       }
     },
     {
+      "id": "arrayToCSV",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "arrayToCSV.md",
+        "text": "Converts a 2D array to a comma-separated values (CSV) string.\n\nUse `Array.map()` and `String.join(delimiter)` to combine individual 1D arrays (rows) into strings.\nUse `String.join('\\n')` to combine all rows into a CSV string, separating each row with a newline.\nOmit the second argument, `delimiter` to use a default delimiter of `,`.",
+        "codeBlocks": [
+          "const arrayToCSV = (arr, delimiter = ',') => arr.map(v => v.join(delimiter)).join('\\n');",
+          "arrayToCSV([['a', 'b'], ['c', 'd']]); // 'a,b\\nc,d'\narrayToCSV([['a', 'b'], ['c', 'd']], ';'); // 'a;b\\nc;d'"
+        ],
+        "tags": [
+          "array",
+          "string",
+          "utility"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "a4b4c5a8bd490da8fa4c065beb88014541bf71e7ff6a875123f297ff06bacd12"
+      }
+    },
+    {
       "id": "arrayToHtmlList",
       "type": "snippet",
       "attributes": {
@@ -1228,7 +1249,7 @@
         "fileName": "elo.md",
         "text": "Computes the new ratings between two or more opponents using the [Elo rating system](https://en.wikipedia.org/wiki/Elo_rating_system). It takes an array\nof pre-ratings and returns an array containing post-ratings.\nThe array should be ordered from best performer to worst performer (winner -> loser).\n\nUse the exponent `**` operator and math operators to compute the expected score (chance of winning).\nof each opponent and compute the new rating for each.\nLoop through the ratings, using each permutation to compute the post-Elo rating for each player in a pairwise fashion. \nOmit the second argument to use the default `kFactor` of 32.",
         "codeBlocks": [
-          "const elo = ([...ratings], kFactor = 32, selfRating) => {\n  const [a, b] = ratings;\n  const expectedScore = (self, opponent) => 1 / (1 + 10 ** ((opponent - self) / 400));\n  const newRating = (rating, i) =>\n    (selfRating || rating) + kFactor * (i - expectedScore(i ? a : b, i ? b : a));\n  if (ratings.length === 2) {\n    return [newRating(a, 1), newRating(b, 0)];\n  } else {\n    for (let i = 0; i < ratings.length; i++) {\n      let j = i;\n      while (j < ratings.length - 1) {\n        [ratings[i], ratings[j + 1]] = elo([ratings[i], ratings[j + 1]], kFactor);\n        j++;\n      }\n    }\n  }\n  return ratings;\n};",
+          "const elo = ([...ratings], kFactor = 32, selfRating) => {\n  const [a, b] = ratings;\n  const expectedScore = (self, opponent) => 1 / (1 + 10 ** ((opponent - self) / 400));\n  const newRating = (rating, i) =>\n    (selfRating || rating) + kFactor * (i - expectedScore(i ? a : b, i ? b : a));\n  if (ratings.length === 2) {\n    return [newRating(a, 1), newRating(b, 0)];\n  }\n  for (let i = 0, len = ratings.length; i < len; i++) {\n    let j = i;\n    while (j < len - 1) {\n      j++;\n      [ratings[i], ratings[j]] = elo([ratings[i], ratings[j]], kFactor);\n    }\n  }\n  return ratings;\n};",
           "// Standard 1v1s\nelo([1200, 1200]); // [1216, 1184]\nelo([1200, 1200], 64); // [1232, 1168]\n// 4 player FFA, all same rank\nelo([1200, 1200, 1200, 1200]).map(Math.round); // [1246, 1215, 1185, 1154]\n/*\nFor teams, each rating can adjusted based on own team's average rating vs.\naverage rating of opposing team, with the score being added to their\nown individual rating by supplying it as the third argument.\n*/"
         ],
         "tags": [
@@ -1239,7 +1260,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "c345e1ea4c044879d78a3f141d76dc90b311d7a78818d3a16e4f7335a9d0c779"
+        "hash": "3fc1fe2b64b13a3064c547933e759c0782bd43f357056a467d0ce2cc7e9a38e3"
       }
     },
     {
@@ -1249,7 +1270,7 @@
         "fileName": "equals.md",
         "text": "Performs a deep comparison between two values to determine if they are equivalent.\n\nCheck if the two values are identical, if they are both `Date` objects with the same time, using `Date.getTime()` or if they are both non-object values with an equivalent value (strict comparison).\nCheck if only one value is `null` or `undefined` or if their prototypes differ.\nIf none of the above conditions are met, use `Object.keys()` to check if both values have the same number of keys, then use `Array.every()` to check if every key in the first value exists in the second one and if they are equivalent by calling this method recursively.",
         "codeBlocks": [
-          "const equals = (a, b) => {\n  if (a === b) return true;\n  if (a instanceof Date && b instanceof Date) return a.getTime() === b.getTime();\n  if (!a || !b || (typeof a != 'object' && typeof b !== 'object')) return a === b;\n  if (a === null || a === undefined || b === null || b === undefined) return false;\n  if (a.prototype !== b.prototype) return false;\n  let keys = Object.keys(a);\n  if (keys.length !== Object.keys(b).length) return false;\n  return keys.every(k => equals(a[k], b[k]));\n};",
+          "const equals = (a, b) => {\n  if (a === b) return true;\n  if (a instanceof Date && b instanceof Date) return a.getTime() === b.getTime();\n  if (!a || !b || (typeof a !== 'object' && typeof b !== 'object')) return a === b;\n  if (a === null || a === undefined || b === null || b === undefined) return false;\n  if (a.prototype !== b.prototype) return false;\n  let keys = Object.keys(a);\n  if (keys.length !== Object.keys(b).length) return false;\n  return keys.every(k => equals(a[k], b[k]));\n};",
           "equals({ a: [2, { e: 3 }], b: [4], c: 'foo' }, { a: [2, { e: 3 }], b: [4], c: 'foo' }); // true"
         ],
         "tags": [
@@ -1261,7 +1282,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "ebb0ab118f56fb88df192400decf89e9cb27074a4e86eccf0b145f373082701e"
+        "hash": "7682a58d7745903fc19aa4341b8594d85714d563cfda1b44779bc0663338c3cf"
       }
     },
     {
@@ -5717,7 +5738,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "unflattenObject.md",
-        "text": "Unlatten an object with the paths for keys.\n\nUse `Object.keys(obj)` combined with `Array.reduce()` to convert flattened path node to a leaf node.\nIf the value of a key contains a dot delimiter (`.`), use `Array.split('.')`, string transformations and `JSON.parse()` to create an object, then `Object.assign()` to create the leaf node.\nOtherwise, add the appropriate key-value pair to the accumulator object.",
+        "text": "Unflatten an object with the paths for keys.\n\nUse `Object.keys(obj)` combined with `Array.reduce()` to convert flattened path node to a leaf node.\nIf the value of a key contains a dot delimiter (`.`), use `Array.split('.')`, string transformations and `JSON.parse()` to create an object, then `Object.assign()` to create the leaf node.\nOtherwise, add the appropriate key-value pair to the accumulator object.",
         "codeBlocks": [
           "const unflattenObject = obj =>\n  Object.keys(obj).reduce((acc, k) => {\n    if (k.indexOf('.') !== -1) {\n      const keys = k.split('.');\n      Object.assign(\n        acc,\n        JSON.parse(\n          '{' +\n            keys.map((v, i) => (i !== keys.length - 1 ? `\"${v}\":{` : `\"${v}\":`)).join('') +\n            obj[k] +\n            '}'.repeat(keys.length)\n        )\n      );\n    } else acc[k] = obj[k];\n    return acc;\n  }, {});",
           "unflattenObject({ 'a.b.c': 1, d: 1 }); // { a: { b: { c: 1 } }, d: 1 }"
@@ -5729,7 +5750,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "30a3f0e6f8386104c06eedd1dc1ab44e3c3c4c2a150b920b4093ae4234ea03f5"
+        "hash": "aee8b10b831e676337688628f9204cea2019a008c30005f0760432d86498fc3f"
       }
     },
     {
