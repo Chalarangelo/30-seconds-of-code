@@ -1,0 +1,4642 @@
+{
+  "data": [
+    {
+      "id": "all",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 49,
+        "tokenCount": 22,
+        "functionCount": 1,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "8a036b5ffee127e5456d59e36f3c9abb24f1692f6a398b61c20ebacaae8380e4"
+      }
+    },
+    {
+      "id": "any",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 48,
+        "tokenCount": 22,
+        "functionCount": 1,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "15bee4484e96a2d052368ef9dd743819b30d8d883b52575bee65fdc194dc9e93"
+      }
+    },
+    {
+      "id": "approximatelyEqual",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 84,
+        "tokenCount": 30,
+        "functionCount": 1,
+        "operatorCount": 5,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "4fa8b87ac30ec67afe40c80101a702986dd1e5cab3cd8b9653f1b7c8cbac7540"
+      }
+    },
+    {
+      "id": "arrayToHtmlList",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 175,
+        "tokenCount": 61,
+        "functionCount": 3,
+        "operatorCount": 7,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "71d7b2d9a38cff92cda899e1be04c7995f097781b48ef89e3f766e27d9272fa7"
+      }
+    },
+    {
+      "id": "ary",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 60,
+        "tokenCount": 34,
+        "functionCount": 2,
+        "operatorCount": 5,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "41109ef32647c55ece0a9dba06c840250979124e790c944d732683d27ac26f1f"
+      }
+    },
+    {
+      "id": "atob",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 65,
+        "tokenCount": 23,
+        "functionCount": 1,
+        "operatorCount": 2,
+        "keywordCount": 2,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "b0f4a972f1e217c5f558359fa17693140a8b97a04a48ec1261691f10fb0c2a3e"
+      }
+    },
+    {
+      "id": "attempt",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 139,
+        "tokenCount": 63,
+        "functionCount": 1,
+        "operatorCount": 5,
+        "keywordCount": 7,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "ac8ac4dc2ac7d0e2de1cf9f6afff46350aa530a51275658e8b34072740d10b0f"
+      }
+    },
+    {
+      "id": "average",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 88,
+        "tokenCount": 40,
+        "functionCount": 1,
+        "operatorCount": 7,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "684bb67aac10990814a49d1d1878d98ec6d2161bd71f769a128e3195f9aeb632"
+      }
+    },
+    {
+      "id": "averageBy",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 139,
+        "tokenCount": 56,
+        "functionCount": 2,
+        "operatorCount": 8,
+        "keywordCount": 2,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "0ad10d648c24e0c27cfbb5cf65f18ad3fc7e072e6459c0bfc2d9936a0e497a03"
+      }
+    },
+    {
+      "id": "bifurcate",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 116,
+        "tokenCount": 63,
+        "functionCount": 2,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "dd427f7304a3c161c95f9b1ae11f0adbe0d687076a5ed16ce2404ed29c136067"
+      }
+    },
+    {
+      "id": "bifurcateBy",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 115,
+        "tokenCount": 65,
+        "functionCount": 3,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "65534a8995d70358bf0faeb62cfa1e241147c8142e0bb62dd9015219cf367f9f"
+      }
+    },
+    {
+      "id": "bind",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 115,
+        "tokenCount": 43,
+        "functionCount": 2,
+        "operatorCount": 4,
+        "keywordCount": 3,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "e9d5d908df4751e5765b1e7d5a5f883261bdfad521b01023a81d616cac3b3cc1"
+      }
+    },
+    {
+      "id": "bindAll",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 159,
+        "tokenCount": 64,
+        "functionCount": 2,
+        "operatorCount": 6,
+        "keywordCount": 3,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "791096ce761f35096c86403c6bc290381982d7a9bfc9bda4b70270aaf6ec4df2"
+      }
+    },
+    {
+      "id": "bindKey",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 127,
+        "tokenCount": 46,
+        "functionCount": 2,
+        "operatorCount": 4,
+        "keywordCount": 3,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "561c7894f3ca7df0b3874ea749320b7d97eb3118c07c2636f4c4215377697927"
+      }
+    },
+    {
+      "id": "binomialCoefficient",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 328,
+        "tokenCount": 164,
+        "functionCount": 3,
+        "operatorCount": 25,
+        "keywordCount": 14,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "0fca1b134c1a13fef45cde62e8f04c70361b477be88222aa7d81ac5d153b3a13"
+      }
+    },
+    {
+      "id": "bottomVisible",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 171,
+        "tokenCount": 35,
+        "functionCount": 0,
+        "operatorCount": 5,
+        "keywordCount": 1,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "a40dc0094d62d44e7d086513bca6afb74734dd1e5e56a0ce66e91517b459f50c"
+      }
+    },
+    {
+      "id": "btoa",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 65,
+        "tokenCount": 23,
+        "functionCount": 1,
+        "operatorCount": 2,
+        "keywordCount": 2,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "ddbab0e7190004d5240469256d66629aa2fcf3c22348818edc01a8beb64831a6"
+      }
+    },
+    {
+      "id": "byteSize",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 45,
+        "tokenCount": 19,
+        "functionCount": 0,
+        "operatorCount": 2,
+        "keywordCount": 2,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "5a7936489c66b541e2e1caf4254540a75557e049d1a10c7da0b38bd3b247f00b"
+      }
+    },
+    {
+      "id": "call",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 64,
+        "tokenCount": 26,
+        "functionCount": 0,
+        "operatorCount": 5,
+        "keywordCount": 1,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "732d63737f940a76c33a42ae3a1dcbf72b93149f57e14e34e301dad7ce245236"
+      }
+    },
+    {
+      "id": "capitalize",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 142,
+        "tokenCount": 53,
+        "functionCount": 4,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "6f2f03a62a2b6f4a1a79d9864543d87297a1e2550ca5988d23b110fbc5c6a870"
+      }
+    },
+    {
+      "id": "capitalizeEveryWord",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 87,
+        "tokenCount": 22,
+        "functionCount": 2,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "a5d1dd83d8cceafaa3d628655b8595942b549835f90e587202ef972c31e2ca3a"
+      }
+    },
+    {
+      "id": "castArray",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 60,
+        "tokenCount": 25,
+        "functionCount": 1,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "b746ad19e2ea713891fb4c625a4c0cbaaad08e2189ecfbb1763ecaf8f2802ec7"
+      }
+    },
+    {
+      "id": "chainAsync",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 96,
+        "tokenCount": 44,
+        "functionCount": 1,
+        "operatorCount": 6,
+        "keywordCount": 3,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "8c245a7fc94edffaf5cae4c28f37ed2e989772a9663a5f5bce98147f708a712e"
+      }
+    },
+    {
+      "id": "chunk",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 139,
+        "tokenCount": 58,
+        "functionCount": 2,
+        "operatorCount": 7,
+        "keywordCount": 2,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "ae5220ae568a7482ee8f82b1af8816f5be99211ff99d7f290a0408d41ca58014"
+      }
+    },
+    {
+      "id": "clampNumber",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 91,
+        "tokenCount": 45,
+        "functionCount": 4,
+        "operatorCount": 2,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "8e63c143d08d73cae1038ca8c6622ddf728b661528b246b55d6eb3b1ae41fe76"
+      }
+    },
+    {
+      "id": "cloneRegExp",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 70,
+        "tokenCount": 21,
+        "functionCount": 0,
+        "operatorCount": 2,
+        "keywordCount": 2,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "57532d74214897181db46b09dc0be86d26e9877785ec85c3acd1113d5371fa95"
+      }
+    },
+    {
+      "id": "coalesce",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 77,
+        "tokenCount": 33,
+        "functionCount": 2,
+        "operatorCount": 5,
+        "keywordCount": 2,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "9b2c0c5b8dda71c75580f5f7214e93fffddf6ac872f39206fe26793ab60403ce"
+      }
+    },
+    {
+      "id": "coalesceFactory",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 63,
+        "tokenCount": 21,
+        "functionCount": 1,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "3f2182bea1d9f17e2f315f6e8d72b3c31a42ff427e2a90d38fe50d6b86483f2e"
+      }
+    },
+    {
+      "id": "collectInto",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 48,
+        "tokenCount": 20,
+        "functionCount": 1,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "6b57cac68ad177d8fbb30e9c586f8f9c088acf755c6c956b5387441ea3850fce"
+      }
+    },
+    {
+      "id": "colorize",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 713,
+        "tokenCount": 98,
+        "functionCount": 0,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "30fc60a8ab8c8005f7d31b82f4386ba17caa9fed690916581b2c18fa0a125215"
+      }
+    },
+    {
+      "id": "compact",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 43,
+        "tokenCount": 14,
+        "functionCount": 1,
+        "operatorCount": 2,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "2b349628df5c87359dfe7b113c4002212490693bb1dc1342f25775018764efd7"
+      }
+    },
+    {
+      "id": "compose",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 77,
+        "tokenCount": 41,
+        "functionCount": 3,
+        "operatorCount": 7,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "99383d2b505d6afcd239d6369ab28b319b0ea0b1bcf2cc9176ac5762516e4413"
+      }
+    },
+    {
+      "id": "composeRight",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 82,
+        "tokenCount": 41,
+        "functionCount": 3,
+        "operatorCount": 7,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "dd019505c88315f8744dd12bc7a66f5bd2aac07e2bbb3f6b3be100a1c1b96484"
+      }
+    },
+    {
+      "id": "converge",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 100,
+        "tokenCount": 41,
+        "functionCount": 3,
+        "operatorCount": 6,
+        "keywordCount": 2,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "12ac9307e4f8d368f6c1fa85caa9a16365fbbbd09ede026992155067f18b20f9"
+      }
+    },
+    {
+      "id": "copyToClipboard",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 541,
+        "tokenCount": 150,
+        "functionCount": 13,
+        "operatorCount": 9,
+        "keywordCount": 4,
+        "distinctFunctionCount": 10
+      },
+      "meta": {
+        "hash": "9d6a47c41fe4f5e0c006e29daef0c3eb7d9df37fa98c3498f938a6d2e4daf197"
+      }
+    },
+    {
+      "id": "countBy",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 174,
+        "tokenCount": 81,
+        "functionCount": 2,
+        "operatorCount": 9,
+        "keywordCount": 3,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "3d377baf4b065d0780e77bbded1bd2eac67ee72161bf3ff6fea061bb0e852453"
+      }
+    },
+    {
+      "id": "counter",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 461,
+        "tokenCount": 144,
+        "functionCount": 6,
+        "operatorCount": 20,
+        "keywordCount": 5,
+        "distinctFunctionCount": 5
+      },
+      "meta": {
+        "hash": "5bf0c865aba5b748d185b9415c3b66ed61c77a0c5c052d44cfb745661f9a5802"
+      }
+    },
+    {
+      "id": "countOccurrences",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 88,
+        "tokenCount": 43,
+        "functionCount": 1,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "8d268b66806bbfee8a6bf73bd4979d061fcdc77f23729acca7a3d30b454bd70c"
+      }
+    },
+    {
+      "id": "createElement",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 130,
+        "tokenCount": 35,
+        "functionCount": 1,
+        "operatorCount": 4,
+        "keywordCount": 3,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "90ce0d4ef6e6fece19d008d21e0201864dafbe48a62dbc7226f31f4b9c834090"
+      }
+    },
+    {
+      "id": "createEventHub",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 407,
+        "tokenCount": 179,
+        "functionCount": 9,
+        "operatorCount": 12,
+        "keywordCount": 11,
+        "distinctFunctionCount": 9
+      },
+      "meta": {
+        "hash": "e952a30a27c1465ea9ac465d4b7de3f9dda6e58279c176bc7c0e98fb6d99f1fc"
+      }
+    },
+    {
+      "id": "currentURL",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 46,
+        "tokenCount": 16,
+        "functionCount": 0,
+        "operatorCount": 2,
+        "keywordCount": 1,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "965397215e067e73b7c7bbd8f376f5773c79bb82f370747603647b01dee09a28"
+      }
+    },
+    {
+      "id": "curry",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 126,
+        "tokenCount": 50,
+        "functionCount": 2,
+        "operatorCount": 8,
+        "keywordCount": 2,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "e3b0d5ff10d79034d6ccc448282097089b084ed71c608bc8f3468c0a8533ec14"
+      }
+    },
+    {
+      "id": "debounce",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 177,
+        "tokenCount": 65,
+        "functionCount": 3,
+        "operatorCount": 6,
+        "keywordCount": 5,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "2c956f3d572d8d1a8534827e4ff3e8c41f47ca6e4e899715146413162d8cd72a"
+      }
+    },
+    {
+      "id": "decapitalize",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 144,
+        "tokenCount": 53,
+        "functionCount": 4,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "c787309273fe531dcbc4ebc32b078cef19b3205c78f1e5c3863acac06ce23df4"
+      }
+    },
+    {
+      "id": "deepClone",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 278,
+        "tokenCount": 107,
+        "functionCount": 5,
+        "operatorCount": 10,
+        "keywordCount": 5,
+        "distinctFunctionCount": 5
+      },
+      "meta": {
+        "hash": "348cfded2d11812e84ba6416f258b90bf01ec50515f0aa97052c1f166b51a489"
+      }
+    },
+    {
+      "id": "deepFlatten",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 95,
+        "tokenCount": 42,
+        "functionCount": 4,
+        "operatorCount": 5,
+        "keywordCount": 1,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "31714831376eeddd863a295af778632f584468745fbeb4e9a6f62b5275ea3562"
+      }
+    },
+    {
+      "id": "defaults",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 82,
+        "tokenCount": 35,
+        "functionCount": 2,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "067c820cb1b4afca0eca5ff9c3f9a835360224ac513fc50b247118adf54fea2b"
+      }
+    },
+    {
+      "id": "defer",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 58,
+        "tokenCount": 28,
+        "functionCount": 1,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "eeeaf78d587fe1afdef8eb4b8c3f9f7887e364894d4efb1beecc0adf59250009"
+      }
+    },
+    {
+      "id": "degreesToRads",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 53,
+        "tokenCount": 20,
+        "functionCount": 0,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "7f34bce958e51235318edc3a1fba0acf0fa110e533f3e92f87d27e74d7c1532b"
+      }
+    },
+    {
+      "id": "delay",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 67,
+        "tokenCount": 29,
+        "functionCount": 1,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "818427da43b193ebf9f10dccd7399c405c437cc5d0040add0df40fd25e940218"
+      }
+    },
+    {
+      "id": "detectDeviceType",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 155,
+        "tokenCount": 28,
+        "functionCount": 1,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "2262275b7adcd7d9b2dd8f31da2a3a2dbcc663584928f46131a0d273b587403b"
+      }
+    },
+    {
+      "id": "difference",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 92,
+        "tokenCount": 48,
+        "functionCount": 2,
+        "operatorCount": 5,
+        "keywordCount": 4,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "e516410de0d0625f9673ba17858a2aeaea84918ebd58e27f53cd300519992ffd"
+      }
+    },
+    {
+      "id": "differenceBy",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 118,
+        "tokenCount": 64,
+        "functionCount": 5,
+        "operatorCount": 6,
+        "keywordCount": 4,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "34b876f5bf471d60d20a0e04c8e489de256ce0d5cef28de3bd70789d1b93d919"
+      }
+    },
+    {
+      "id": "differenceWith",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 98,
+        "tokenCount": 42,
+        "functionCount": 3,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "e80b6619b9690e2a5d5cfd9d5fbe77fc25b6698e580e4b36e2c3c5fc54e3e572"
+      }
+    },
+    {
+      "id": "digitize",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 56,
+        "tokenCount": 24,
+        "functionCount": 2,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "24c310daf1753360f1227331a36b1bfa6e1a165a65ca1c74acd9d90050b67bbe"
+      }
+    },
+    {
+      "id": "distance",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 66,
+        "tokenCount": 30,
+        "functionCount": 1,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "7023fa4063eaa53d06b0efd531455be981b3a14e6e0443cb9a04a639653103cc"
+      }
+    },
+    {
+      "id": "drop",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 42,
+        "tokenCount": 23,
+        "functionCount": 1,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "d890ae5478fb895bf8dd02c48afd2ba157a8a10953459486a1ef1a3907960344"
+      }
+    },
+    {
+      "id": "dropRight",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 51,
+        "tokenCount": 27,
+        "functionCount": 1,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "363950cfd962ab27b0a0e8cac684d67a6e2b68e889af62e01ab1b4723ec0e2aa"
+      }
+    },
+    {
+      "id": "dropRightWhile",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 135,
+        "tokenCount": 62,
+        "functionCount": 2,
+        "operatorCount": 8,
+        "keywordCount": 3,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "78b914b8c51d1cfdac70746979b8e25d8649c4543d14da14e2950f63f889e2e4"
+      }
+    },
+    {
+      "id": "dropWhile",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 113,
+        "tokenCount": 53,
+        "functionCount": 2,
+        "operatorCount": 6,
+        "keywordCount": 3,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "5d6353c95ab328b21e84f4a5cf2c49bea9516e4945a91658bed14309c8919990"
+      }
+    },
+    {
+      "id": "elementContains",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 86,
+        "tokenCount": 24,
+        "functionCount": 1,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "2f2c68c3368f5658fd54cb70b6264dce87ee68b23e805a95c62d55eef1854958"
+      }
+    },
+    {
+      "id": "elementIsVisibleInViewport",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 450,
+        "tokenCount": 137,
+        "functionCount": 1,
+        "operatorCount": 28,
+        "keywordCount": 4,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "d38bc0cd234c57cb95db1e60c47eb11a4d89775a4694acc520a8f113d03e3a39"
+      }
+    },
+    {
+      "id": "elo",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 613,
+        "tokenCount": 258,
+        "functionCount": 4,
+        "operatorCount": 31,
+        "keywordCount": 12,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "c345e1ea4c044879d78a3f141d76dc90b311d7a78818d3a16e4f7335a9d0c779"
+      }
+    },
+    {
+      "id": "equals",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 489,
+        "tokenCount": 197,
+        "functionCount": 6,
+        "operatorCount": 24,
+        "keywordCount": 21,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "ebb0ab118f56fb88df192400decf89e9cb27074a4e86eccf0b145f373082701e"
+      }
+    },
+    {
+      "id": "escapeHTML",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 210,
+        "tokenCount": 60,
+        "functionCount": 1,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "ae852a538f18374cd16ddd80cbac643bcbd6ed1ff70c49fa01b59e517fad69c9"
+      }
+    },
+    {
+      "id": "escapeRegExp",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 71,
+        "tokenCount": 17,
+        "functionCount": 1,
+        "operatorCount": 2,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "d328f5aca40c6ee25ff1d6ad4fe813a6bdd2e7dc2bf01567ba8cf8fd2470be83"
+      }
+    },
+    {
+      "id": "everyNth",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 73,
+        "tokenCount": 34,
+        "functionCount": 1,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "bcf1b2900f8cd6ca9b62cc02e102cb94b494ab142d8f1d6f99dbaae0677d0fe9"
+      }
+    },
+    {
+      "id": "extendHex",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 144,
+        "tokenCount": 53,
+        "functionCount": 5,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 5
+      },
+      "meta": {
+        "hash": "f0f0a6da4c1fc17507cc956b0fa76d12efa81379b5626eb5ab739714ba139864"
+      }
+    },
+    {
+      "id": "factorial",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 175,
+        "tokenCount": 59,
+        "functionCount": 1,
+        "operatorCount": 9,
+        "keywordCount": 3,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "319e1a8fb41490965ee6e28db3e139e65c4ea5b7f43e332bc7216cd790e5d409"
+      }
+    },
+    {
+      "id": "fibonacci",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 140,
+        "tokenCount": 67,
+        "functionCount": 2,
+        "operatorCount": 8,
+        "keywordCount": 2,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "51d2fb1f44adfb7dde99fbe118ed9101b6e8848512cfd29324cccff15c4e3c1d"
+      }
+    },
+    {
+      "id": "filterNonUnique",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 86,
+        "tokenCount": 29,
+        "functionCount": 3,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "8f319457b4350e041ba31cd4b4d02135013d8ea6716d0a4d00cf1b1bfd214ffa"
+      }
+    },
+    {
+      "id": "findKey",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 82,
+        "tokenCount": 38,
+        "functionCount": 3,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "3ffa31973db7065ca8be2e550838839b555e07e8022647f8288da7ae3dc9680c"
+      }
+    },
+    {
+      "id": "findLast",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 51,
+        "tokenCount": 24,
+        "functionCount": 2,
+        "operatorCount": 2,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "5ee9242026e09ac101ace1edb4c5b1d01ab00dd5c718118ab2bf5cb38193abab"
+      }
+    },
+    {
+      "id": "findLastIndex",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 129,
+        "tokenCount": 63,
+        "functionCount": 4,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "1af02f52c6aef95d92a27280477d30d4a677600433809267a04ed8bcb5b8f549"
+      }
+    },
+    {
+      "id": "findLastKey",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 108,
+        "tokenCount": 44,
+        "functionCount": 4,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "c06e83c16f06394a29a029019a33c3ce0eb942f84ad6f1ef2b149ef09f836837"
+      }
+    },
+    {
+      "id": "flatten",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 132,
+        "tokenCount": 65,
+        "functionCount": 4,
+        "operatorCount": 8,
+        "keywordCount": 1,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "976416611eef7ea7ec02cfa6ddc08711f633e2a87d4f04b3b255cf5cd6bd9b9f"
+      }
+    },
+    {
+      "id": "flattenObject",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 280,
+        "tokenCount": 110,
+        "functionCount": 4,
+        "operatorCount": 11,
+        "keywordCount": 6,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "445459e7eb304ee9069d72088883128e487c8bbac8f5b13f518b0332a99758a4"
+      }
+    },
+    {
+      "id": "flip",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 58,
+        "tokenCount": 26,
+        "functionCount": 1,
+        "operatorCount": 5,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "57a42eb12cc7d4535c25d9945db9abb115ca9520e298fbaed64549ee22ac76aa"
+      }
+    },
+    {
+      "id": "forEachRight",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 98,
+        "tokenCount": 31,
+        "functionCount": 3,
+        "operatorCount": 2,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "c1d57024a1a572f9b8a4f7449aae2065e62fbd942709b9f4f6f09b64f518a1ca"
+      }
+    },
+    {
+      "id": "formatDuration",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 427,
+        "tokenCount": 182,
+        "functionCount": 9,
+        "operatorCount": 22,
+        "keywordCount": 4,
+        "distinctFunctionCount": 5
+      },
+      "meta": {
+        "hash": "79051bd95886abf6856585481e3c9cb0685e197bad764a56eb583bd3421f3449"
+      }
+    },
+    {
+      "id": "forOwn",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 84,
+        "tokenCount": 38,
+        "functionCount": 3,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "9f0a397890471bc6cab05493ae03780a0edca56e684c896a7f2e3fc773ab4642"
+      }
+    },
+    {
+      "id": "forOwnRight",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 111,
+        "tokenCount": 44,
+        "functionCount": 4,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "6f320512c0362081df614d61e17ed8562bb7ee07bbcb62def3f3ac459b5be6bf"
+      }
+    },
+    {
+      "id": "fromCamelCase",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 198,
+        "tokenCount": 50,
+        "functionCount": 3,
+        "operatorCount": 7,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "09fc37c37860d58380c6ce23d61f872193415d1cfe7446fe7ff6943d0b7d9968"
+      }
+    },
+    {
+      "id": "functionName",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 56,
+        "tokenCount": 21,
+        "functionCount": 1,
+        "operatorCount": 2,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "66e540b754a02d3deba942aa9854d1051ec54c81f22e0dea859c5d3305b89fec"
+      }
+    },
+    {
+      "id": "functions",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 204,
+        "tokenCount": 71,
+        "functionCount": 5,
+        "operatorCount": 8,
+        "keywordCount": 2,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "89af4f514247f8d9702dfa3d6a77df187ca7ab5994dd8074da1f293cec24ff61"
+      }
+    },
+    {
+      "id": "gcd",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 127,
+        "tokenCount": 75,
+        "functionCount": 3,
+        "operatorCount": 10,
+        "keywordCount": 3,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "1e35c8e3f0346e387fd97c25ecd0560270860bae65cc4a2d333b949f8187fa92"
+      }
+    },
+    {
+      "id": "geometricProgression",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 181,
+        "tokenCount": 74,
+        "functionCount": 4,
+        "operatorCount": 10,
+        "keywordCount": 2,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "b94f3a44fb67360e307a17096a743c8616f1a194ba08a549064d090ef86c31ee"
+      }
+    },
+    {
+      "id": "get",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 215,
+        "tokenCount": 75,
+        "functionCount": 5,
+        "operatorCount": 9,
+        "keywordCount": 3,
+        "distinctFunctionCount": 5
+      },
+      "meta": {
+        "hash": "85d56939e95b4f3015a2ee7b7a74ed2855e4e387ce5eb03d7d3c6c3a071dcf5c"
+      }
+    },
+    {
+      "id": "getColonTimeFromDate",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 69,
+        "tokenCount": 21,
+        "functionCount": 2,
+        "operatorCount": 2,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "757e7f51ea8c8b5803769c92b60966580c3fa3a227036cb3ca41406c22c6632b"
+      }
+    },
+    {
+      "id": "getDaysDiffBetweenDates",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 109,
+        "tokenCount": 34,
+        "functionCount": 0,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "baeec5f4220f1e457b11034e29d84277dbdc9fc5c9e69c1a225bb22f13b843ec"
+      }
+    },
+    {
+      "id": "getMeridiemSuffixOfInteger",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 192,
+        "tokenCount": 72,
+        "functionCount": 0,
+        "operatorCount": 16,
+        "keywordCount": 1,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "561d55a2f839596b336a04badbd160a3b895e9ebb9c1d392998ecccdbe5fb98d"
+      }
+    },
+    {
+      "id": "getScrollPosition",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 183,
+        "tokenCount": 50,
+        "functionCount": 0,
+        "operatorCount": 7,
+        "keywordCount": 1,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "4033549c80f649c2a9b9b50d1af42410811ff72914c5eb576445219bddfc792f"
+      }
+    },
+    {
+      "id": "getStyle",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 66,
+        "tokenCount": 22,
+        "functionCount": 1,
+        "operatorCount": 2,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "b9668334e0fd077c4e43d616765e4343b3770a0a3bd6b846ecc743ca7d65a804"
+      }
+    },
+    {
+      "id": "getType",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 110,
+        "tokenCount": 35,
+        "functionCount": 1,
+        "operatorCount": 6,
+        "keywordCount": 2,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "7fb09e3f807459959cae5fcb87ac323286e0a36ed4500b699c292c19b709af38"
+      }
+    },
+    {
+      "id": "getURLParameters",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 177,
+        "tokenCount": 79,
+        "functionCount": 6,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "1083da3e052cd8a654bc85150a434fe1a31729be0b78c2fa573887a9a7318ba3"
+      }
+    },
+    {
+      "id": "groupBy",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 186,
+        "tokenCount": 86,
+        "functionCount": 3,
+        "operatorCount": 8,
+        "keywordCount": 3,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "16d1dadd1272a4627adf5788c6419a8c0ea578db3769f13995471067e621198e"
+      }
+    },
+    {
+      "id": "hammingDistance",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 93,
+        "tokenCount": 38,
+        "functionCount": 2,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "e75b1c53cb28dce1ac4f8e1d1289f96da22e2b24e6c3a28bd5fd5adc5f4ec5de"
+      }
+    },
+    {
+      "id": "hasClass",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 69,
+        "tokenCount": 22,
+        "functionCount": 1,
+        "operatorCount": 2,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "edb16de35e0a033f7dece0ff7854b17cb6c5ed0ed68438556ee38b68b219e7fe"
+      }
+    },
+    {
+      "id": "hasFlags",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 119,
+        "tokenCount": 42,
+        "functionCount": 3,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "3ea93481e9752f37b1b4fae54740a49df11068de7fea73e7a90db2d79019eb29"
+      }
+    },
+    {
+      "id": "hashBrowser",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 317,
+        "tokenCount": 115,
+        "functionCount": 8,
+        "operatorCount": 10,
+        "keywordCount": 7,
+        "distinctFunctionCount": 8
+      },
+      "meta": {
+        "hash": "aa8ba51d9419e05e0d2962221c0a65311ad54b4b38f278a1d4ab546ca5b29bc9"
+      }
+    },
+    {
+      "id": "hashNode",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 260,
+        "tokenCount": 63,
+        "functionCount": 6,
+        "operatorCount": 5,
+        "keywordCount": 3,
+        "distinctFunctionCount": 6
+      },
+      "meta": {
+        "hash": "80adea6b33dacdfc5f2d25ce270472f232208fa688794b71ba042ea368e1ad63"
+      }
+    },
+    {
+      "id": "head",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 27,
+        "tokenCount": 12,
+        "functionCount": 0,
+        "operatorCount": 2,
+        "keywordCount": 1,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "cd65a1dea363ab1e3773705c33b30afd44fd1ab2ecb57f732c35fd4e737ada11"
+      }
+    },
+    {
+      "id": "hexToRGB",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 521,
+        "tokenCount": 238,
+        "functionCount": 5,
+        "operatorCount": 34,
+        "keywordCount": 6,
+        "distinctFunctionCount": 5
+      },
+      "meta": {
+        "hash": "181b4df31bcbafebd7960725d19c945925a2dc5ee79ef30668d4becae0c82518"
+      }
+    },
+    {
+      "id": "hide",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 73,
+        "tokenCount": 35,
+        "functionCount": 1,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "936ca95ab4a3a012580a45574f77cb8f8c2b70d60e8506627bf4eb2ef8743fa2"
+      }
+    },
+    {
+      "id": "httpGet",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 249,
+        "tokenCount": 87,
+        "functionCount": 4,
+        "operatorCount": 8,
+        "keywordCount": 3,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "beb6cc37601ceaae4203ff5a6dbd6f8bf9ba83cb24b159e5e6d7d18a7d0efb2a"
+      }
+    },
+    {
+      "id": "httpPost",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 340,
+        "tokenCount": 100,
+        "functionCount": 5,
+        "operatorCount": 8,
+        "keywordCount": 3,
+        "distinctFunctionCount": 5
+      },
+      "meta": {
+        "hash": "a74182199fce00d578629f774e05c256a30a624e254da6ea6aee532803ad08d6"
+      }
+    },
+    {
+      "id": "httpsRedirect",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 131,
+        "tokenCount": 46,
+        "functionCount": 2,
+        "operatorCount": 4,
+        "keywordCount": 2,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "15f1d0142c25cc971b11c18db69dbc7cc4492877661a7b7b471add15dd6c5316"
+      }
+    },
+    {
+      "id": "hz",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 183,
+        "tokenCount": 76,
+        "functionCount": 3,
+        "operatorCount": 10,
+        "keywordCount": 5,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "4c8c44d8677b7b591d36d043e3c1347b50ad21e2b24aa371ea50b515ee98254f"
+      }
+    },
+    {
+      "id": "indexOfAll",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 134,
+        "tokenCount": 53,
+        "functionCount": 2,
+        "operatorCount": 6,
+        "keywordCount": 3,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "e2842e376c747f02bce3cddbcbbc55ca9ed8a06701b2e0f4fb4215b97951ff13"
+      }
+    },
+    {
+      "id": "initial",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 40,
+        "tokenCount": 18,
+        "functionCount": 1,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "fbb48fd534c60e0b78ddc84eb7dcdc74e0cb8487545da6a49ca53149915af632"
+      }
+    },
+    {
+      "id": "initialize2DArray",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 123,
+        "tokenCount": 52,
+        "functionCount": 2,
+        "operatorCount": 4,
+        "keywordCount": 4,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "bb9a475bb49367ff2cb0a58f47992d69f2fecbc5f614c1a6e41c469495e93af3"
+      }
+    },
+    {
+      "id": "initializeArrayWithRange",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 157,
+        "tokenCount": 65,
+        "functionCount": 2,
+        "operatorCount": 10,
+        "keywordCount": 2,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "dcd2209a400e3bc7df0157df52faf794c628b80c625b9f5d9f15625f269890b0"
+      }
+    },
+    {
+      "id": "initializeArrayWithRangeRight",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 194,
+        "tokenCount": 79,
+        "functionCount": 2,
+        "operatorCount": 12,
+        "keywordCount": 2,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "25359e2d70e26266be459ea522d6272581c099089ae79b5bc48116cfb88cc088"
+      }
+    },
+    {
+      "id": "initializeArrayWithValues",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 69,
+        "tokenCount": 27,
+        "functionCount": 2,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "f6e42080918660d432e391965815f7e2106ba2be536432f6c4aefdd658324d0b"
+      }
+    },
+    {
+      "id": "initializeNDArray",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 164,
+        "tokenCount": 62,
+        "functionCount": 3,
+        "operatorCount": 7,
+        "keywordCount": 2,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "30158adba400501632e1ac4d55a5f0fcc2d9416f77aee9156844450689c929dc"
+      }
+    },
+    {
+      "id": "inRange",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 173,
+        "tokenCount": 76,
+        "functionCount": 0,
+        "operatorCount": 15,
+        "keywordCount": 5,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "fe2b9483c3a173e426aba3e834d6b97008b840ea40e54c8eabb06e1da9832872"
+      }
+    },
+    {
+      "id": "insertAfter",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 86,
+        "tokenCount": 22,
+        "functionCount": 1,
+        "operatorCount": 2,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "6fb50a82d884c18e13fce553a0027ab6816697d3be1dd4c5e22d0c8f833744bf"
+      }
+    },
+    {
+      "id": "insertBefore",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 90,
+        "tokenCount": 22,
+        "functionCount": 1,
+        "operatorCount": 2,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "bd45d57d669eeecd55bb507ab12c09839dc35ee90f99bcc182dae0a41649a19d"
+      }
+    },
+    {
+      "id": "intersection",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 93,
+        "tokenCount": 46,
+        "functionCount": 2,
+        "operatorCount": 4,
+        "keywordCount": 4,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "3a8920e513726008197584769c01a4fffd26e93d945e40a944189872c7585730"
+      }
+    },
+    {
+      "id": "intersectionBy",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 119,
+        "tokenCount": 62,
+        "functionCount": 5,
+        "operatorCount": 5,
+        "keywordCount": 4,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "4df9daee1b38b51d92741ea763fdfb42e85331c1cb747ec413c45543243f1f48"
+      }
+    },
+    {
+      "id": "intersectionWith",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 92,
+        "tokenCount": 42,
+        "functionCount": 3,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "66050987342924eff56a42b04bb50287f8d46d8f504d186478141dbcd2fb1f4b"
+      }
+    },
+    {
+      "id": "invertKeyValues",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 205,
+        "tokenCount": 90,
+        "functionCount": 4,
+        "operatorCount": 7,
+        "keywordCount": 3,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "9a0cd8cae3d3901bf78fad156e810f80738e7ee3e51b288dc89fa7b9eb54c866"
+      }
+    },
+    {
+      "id": "is",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 78,
+        "tokenCount": 33,
+        "functionCount": 1,
+        "operatorCount": 5,
+        "keywordCount": 2,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "b89d0ccfdf527ef90c49a4b4e54b9d5106691abe8c94a94ba8fda3a43c77391b"
+      }
+    },
+    {
+      "id": "isAbsoluteURL",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 61,
+        "tokenCount": 15,
+        "functionCount": 1,
+        "operatorCount": 2,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "74e18a4c018b09d172b04daec6aeab29297b83986bb846028fc20ab1300c84a5"
+      }
+    },
+    {
+      "id": "isAnagram",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 222,
+        "tokenCount": 73,
+        "functionCount": 7,
+        "operatorCount": 5,
+        "keywordCount": 3,
+        "distinctFunctionCount": 6
+      },
+      "meta": {
+        "hash": "2bda59143e64383a94ba8fd9c519db16b50566b2810030493a1d77d229ce7841"
+      }
+    },
+    {
+      "id": "isArrayLike",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 104,
+        "tokenCount": 44,
+        "functionCount": 0,
+        "operatorCount": 3,
+        "keywordCount": 5,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "0d30400ab43a3e2706c3684495c9ae80361b50ca0606c7bbd4f96ca423c89c18"
+      }
+    },
+    {
+      "id": "isBoolean",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 50,
+        "tokenCount": 14,
+        "functionCount": 0,
+        "operatorCount": 3,
+        "keywordCount": 2,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "e1adac3af11702cb65c30ecaf573659d215b3e2c2b5825e9993d36d889c5fd52"
+      }
+    },
+    {
+      "id": "isBrowser",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 80,
+        "tokenCount": 26,
+        "functionCount": 1,
+        "operatorCount": 3,
+        "keywordCount": 3,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "b207815a1a26a3161f3c79e64052e8feac65e44a34cef545851300c8b9f08d0d"
+      }
+    },
+    {
+      "id": "isBrowserTabFocused",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 51,
+        "tokenCount": 16,
+        "functionCount": 0,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "af819966e11f4832bfc0129d1d0e148fa0157775d9a07d26f4c17f7096c6a176"
+      }
+    },
+    {
+      "id": "isDivisible",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 68,
+        "tokenCount": 20,
+        "functionCount": 0,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "660aff9a5f540384603a2ab18d24e933b37e71972bd6bbc708b7bfb77ac13a50"
+      }
+    },
+    {
+      "id": "isEmpty",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 72,
+        "tokenCount": 29,
+        "functionCount": 1,
+        "operatorCount": 6,
+        "keywordCount": 2,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "55954fcfb879542225f7d1861ae7de6faac288e28ca857367b6a2eeba9a54786"
+      }
+    },
+    {
+      "id": "isEven",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 36,
+        "tokenCount": 16,
+        "functionCount": 0,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "1c88249edc75925e83e8a4abc28f300c27bf9be1440bcc30b1b798b7d7ea8596"
+      }
+    },
+    {
+      "id": "isFunction",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 52,
+        "tokenCount": 14,
+        "functionCount": 0,
+        "operatorCount": 3,
+        "keywordCount": 2,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "22009c1df55cca53bc9b227d4f8f2e3d475abe5f5eecfbf9ab3cb30948c9d783"
+      }
+    },
+    {
+      "id": "isLowerCase",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 53,
+        "tokenCount": 15,
+        "functionCount": 1,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "e23c295c6c1d85cbeae2cfad15be98d3d8093ba59266f14af7dc47d19a68f43b"
+      }
+    },
+    {
+      "id": "isNil",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 55,
+        "tokenCount": 16,
+        "functionCount": 0,
+        "operatorCount": 5,
+        "keywordCount": 2,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "8a0c679926f99b1f710ad093e3ca2ae845eea383740b4aa655e2e3beb99472ca"
+      }
+    },
+    {
+      "id": "isNull",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 35,
+        "tokenCount": 12,
+        "functionCount": 0,
+        "operatorCount": 3,
+        "keywordCount": 2,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "e38f39701757feb6e2515736d446b2de580f19c77f9eaacb5d0d5b3e787209f8"
+      }
+    },
+    {
+      "id": "isNumber",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 48,
+        "tokenCount": 14,
+        "functionCount": 0,
+        "operatorCount": 3,
+        "keywordCount": 2,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "446ed50e100f18a606c8443be196992b74b235ed98646632463fdc3d01f9eb04"
+      }
+    },
+    {
+      "id": "isObject",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 44,
+        "tokenCount": 15,
+        "functionCount": 1,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "64de55a580b3db52f79f2bc3168e312d4087891216853e51f8585e30c6eb3d3d"
+      }
+    },
+    {
+      "id": "isObjectLike",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 68,
+        "tokenCount": 20,
+        "functionCount": 0,
+        "operatorCount": 5,
+        "keywordCount": 3,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "5388bdd5320b8b68511c1a6b77683e8320177a9c6561e5e952a60193c1b73844"
+      }
+    },
+    {
+      "id": "isPlainObject",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 92,
+        "tokenCount": 26,
+        "functionCount": 0,
+        "operatorCount": 8,
+        "keywordCount": 2,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "f57c53ec6964e15510cd9bf9ad53429721c6a6547b59bd302ebcbc4cd19557ea"
+      }
+    },
+    {
+      "id": "isPrime",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 164,
+        "tokenCount": 68,
+        "functionCount": 2,
+        "operatorCount": 9,
+        "keywordCount": 7,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "023b7e9fded22fad9cd776f01c60c8238236cb2921523d7d612034bb465cba7d"
+      }
+    },
+    {
+      "id": "isPrimitive",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 88,
+        "tokenCount": 28,
+        "functionCount": 1,
+        "operatorCount": 5,
+        "keywordCount": 3,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "f71ccc907c6ffd6bc29d461f12529872a78a78f871633fceeceed4e60a666c6f"
+      }
+    },
+    {
+      "id": "isPromiseLike",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 140,
+        "tokenCount": 40,
+        "functionCount": 0,
+        "operatorCount": 9,
+        "keywordCount": 5,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "fa8bfc91bfa09eb76f7131c3cc7b890598f8a30ec9e9872f7ffd9c282d37ba72"
+      }
+    },
+    {
+      "id": "isSorted",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 299,
+        "tokenCount": 135,
+        "functionCount": 1,
+        "operatorCount": 19,
+        "keywordCount": 10,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "2dfe9101a9ab2945ffddb46ecbca0fdd5dea384683d310e8adb852ac9c51970f"
+      }
+    },
+    {
+      "id": "isString",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 48,
+        "tokenCount": 14,
+        "functionCount": 0,
+        "operatorCount": 3,
+        "keywordCount": 2,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "1292c2a3504428962a0851e2f433aac67bfdd581f5abf08df967f5c8fef0954b"
+      }
+    },
+    {
+      "id": "isSymbol",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 48,
+        "tokenCount": 14,
+        "functionCount": 0,
+        "operatorCount": 3,
+        "keywordCount": 2,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "680fe44539f63a13c6586153e9ffdddd2a9a9b83c2736a69eaf5fe24080675e3"
+      }
+    },
+    {
+      "id": "isTravisCI",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 72,
+        "tokenCount": 26,
+        "functionCount": 0,
+        "operatorCount": 3,
+        "keywordCount": 3,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "1528bcadc4afcb7240a9f5d53b49243d512d8c98814b3fe841889d0772ad2030"
+      }
+    },
+    {
+      "id": "isUndefined",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 45,
+        "tokenCount": 11,
+        "functionCount": 0,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "00eca9d29a66b8b8cee4b059a88bdae8f60cdc557cdff52817edd811cde5281b"
+      }
+    },
+    {
+      "id": "isUpperCase",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 53,
+        "tokenCount": 15,
+        "functionCount": 1,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "b4fea8a827ecac55b823edbeac26371b6ab29321180ca71bf3a47fa2fedcabb6"
+      }
+    },
+    {
+      "id": "isValidJSON",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 115,
+        "tokenCount": 46,
+        "functionCount": 1,
+        "operatorCount": 2,
+        "keywordCount": 5,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "b4417a972f391836241e88587797a8cd995f32ee71fbfcfe9e590c8fa8675558"
+      }
+    },
+    {
+      "id": "join",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 243,
+        "tokenCount": 73,
+        "functionCount": 1,
+        "operatorCount": 16,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "05c13ad111a5815d05ba0d2ca0bb17a7ab7e02fc3b33f0e5e049acc25fc2cbb4"
+      }
+    },
+    {
+      "id": "JSONToFile",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 129,
+        "tokenCount": 44,
+        "functionCount": 3,
+        "operatorCount": 3,
+        "keywordCount": 3,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "1428086b630fa917dbb5a4ecd2854e9371b07244b3968bc3eb3184b4b589ea0c"
+      }
+    },
+    {
+      "id": "last",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 40,
+        "tokenCount": 17,
+        "functionCount": 0,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "49eb0b667109a372349e32fbcb809894ed62b5a1a3dab305876b810f8adfef29"
+      }
+    },
+    {
+      "id": "lcm",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 172,
+        "tokenCount": 105,
+        "functionCount": 4,
+        "operatorCount": 14,
+        "keywordCount": 4,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "ac4ec1ff763b005ddd65e6ed5bdb49b18a4ce53f8b7ccf79536fa49ebeb6efa8"
+      }
+    },
+    {
+      "id": "longestItem",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 82,
+        "tokenCount": 39,
+        "functionCount": 1,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "dae3111792b57ac2ac698374e2eb0e568e8910041940fd0240053387a8dd72e3"
+      }
+    },
+    {
+      "id": "lowercaseKeys",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 135,
+        "tokenCount": 52,
+        "functionCount": 3,
+        "operatorCount": 4,
+        "keywordCount": 2,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "683925a82b5ff50494e589d9e1aa6ac66696263718613bf29ab03203c1247bdb"
+      }
+    },
+    {
+      "id": "luhnCheck",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 294,
+        "tokenCount": 137,
+        "functionCount": 6,
+        "operatorCount": 19,
+        "keywordCount": 5,
+        "distinctFunctionCount": 6
+      },
+      "meta": {
+        "hash": "874ac349f65a3787c4579dfe94efc068441b1b4cd38892a35352d43ece8e7ca4"
+      }
+    },
+    {
+      "id": "mapKeys",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 132,
+        "tokenCount": 64,
+        "functionCount": 3,
+        "operatorCount": 4,
+        "keywordCount": 2,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "a0d5ec06ceb092d7473d95ce8f4124edcdf7d3659969f2f1e7d21834fc682ee6"
+      }
+    },
+    {
+      "id": "mapObject",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 144,
+        "tokenCount": 83,
+        "functionCount": 2,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "c7f0f9b6b22590a17c41057c56ea5cf14e74dfbbd4fb7e4bc5c08db3760ef76d"
+      }
+    },
+    {
+      "id": "mapValues",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 129,
+        "tokenCount": 62,
+        "functionCount": 3,
+        "operatorCount": 4,
+        "keywordCount": 2,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "c98a3dde46797b4d6c38d7bac7689bbfbcf24892a62de06f4aaeb665f1e9607c"
+      }
+    },
+    {
+      "id": "mask",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 113,
+        "tokenCount": 58,
+        "functionCount": 3,
+        "operatorCount": 9,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "c229055a0698ea0a36daa96a36172d1401e80ca98012752804d86f007cf721d3"
+      }
+    },
+    {
+      "id": "matches",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 121,
+        "tokenCount": 44,
+        "functionCount": 3,
+        "operatorCount": 5,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "b8b36705d0f588dca63c57c248d0683852d6f14aab68831595be5f2f1568c9df"
+      }
+    },
+    {
+      "id": "matchesWith",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 209,
+        "tokenCount": 70,
+        "functionCount": 4,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "c1fd11b1c4376ec9a31d3e1ed3f9910e97ffa20db06ce2ecf3a3afc1d25daff9"
+      }
+    },
+    {
+      "id": "maxBy",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 96,
+        "tokenCount": 40,
+        "functionCount": 2,
+        "operatorCount": 6,
+        "keywordCount": 2,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "1e428e3359905eca8f86da81afcbcca3b93c44ac7500c1736ca9c83f9c66a135"
+      }
+    },
+    {
+      "id": "maxN",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 72,
+        "tokenCount": 43,
+        "functionCount": 2,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "a6b2f1c58b863814ad76a4b98a3ed995d17ce7b19ee01fe4d7455ef5d35b704c"
+      }
+    },
+    {
+      "id": "median",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 188,
+        "tokenCount": 91,
+        "functionCount": 2,
+        "operatorCount": 14,
+        "keywordCount": 3,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "a6b933371f622f4dde77359e73c6d12ba14b3c21171a86830e59c4e620be8cb1"
+      }
+    },
+    {
+      "id": "memoize",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 231,
+        "tokenCount": 91,
+        "functionCount": 2,
+        "operatorCount": 7,
+        "keywordCount": 11,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "b0de7050159a7c0fab5a089e2118d3e20d48d96a4aae6a0ddb98f489882bb80f"
+      }
+    },
+    {
+      "id": "merge",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 236,
+        "tokenCount": 104,
+        "functionCount": 6,
+        "operatorCount": 8,
+        "keywordCount": 2,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "6ed1518bf260b792cb9e06eec51cc88ad4d81aca1ec59c2bf5d0bf9bb57d47fa"
+      }
+    },
+    {
+      "id": "minBy",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 96,
+        "tokenCount": 40,
+        "functionCount": 2,
+        "operatorCount": 6,
+        "keywordCount": 2,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "b6ccebafe03f65d47a1e6036043ea279a540e7056a5cc4a0917e007bc2a0e460"
+      }
+    },
+    {
+      "id": "minN",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 72,
+        "tokenCount": 43,
+        "functionCount": 2,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "f780a2df19c5fc40d2663314d2a7a7244971aa76f0efb6d73b64fab055fafdb7"
+      }
+    },
+    {
+      "id": "mostPerformant",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 262,
+        "tokenCount": 95,
+        "functionCount": 6,
+        "operatorCount": 11,
+        "keywordCount": 7,
+        "distinctFunctionCount": 5
+      },
+      "meta": {
+        "hash": "741dc61327ac90180fbc751011539c34c25e8ed70740cf4033a3acddee573530"
+      }
+    },
+    {
+      "id": "negate",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 51,
+        "tokenCount": 22,
+        "functionCount": 1,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "7cc8011d1cb158b7371144dff98b6243752e862d9dc3786caac77e50539060ed"
+      }
+    },
+    {
+      "id": "nest",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 166,
+        "tokenCount": 62,
+        "functionCount": 3,
+        "operatorCount": 8,
+        "keywordCount": 2,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "923043e5861c743a77b182f90ad810f57b866d14470ac0337435287768ee2919"
+      }
+    },
+    {
+      "id": "nodeListToArray",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 73,
+        "tokenCount": 18,
+        "functionCount": 1,
+        "operatorCount": 2,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "c11457d105eebd90dbaabc970dd03a4d3868b740e0a52f4d813957bae7324740"
+      }
+    },
+    {
+      "id": "none",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 50,
+        "tokenCount": 24,
+        "functionCount": 1,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "84dab3ab837bb27a0470097336a8f0c843052e722dbb7af86895dc5e588d2137"
+      }
+    },
+    {
+      "id": "nthArg",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 50,
+        "tokenCount": 24,
+        "functionCount": 1,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "3cf559381bdbb30631347fa1e02c5552c47963737da6737455992f6fb39652af"
+      }
+    },
+    {
+      "id": "nthElement",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 83,
+        "tokenCount": 48,
+        "functionCount": 2,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "8d86827300570ea124917756dd740f33f5d12b59487e889ebcad2e1172bf1993"
+      }
+    },
+    {
+      "id": "objectFromPairs",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 79,
+        "tokenCount": 44,
+        "functionCount": 1,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "c19c3608e7a51b5b67046bc49b59e3e70e1161d0c5df0d77c8904a8e2bfa1c71"
+      }
+    },
+    {
+      "id": "objectToPairs",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 68,
+        "tokenCount": 29,
+        "functionCount": 2,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "9d0834d532c92f02e06428a693600b65c293803175398d0d2549bf965dbc3b0a"
+      }
+    },
+    {
+      "id": "observeMutations",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 437,
+        "tokenCount": 98,
+        "functionCount": 4,
+        "operatorCount": 5,
+        "keywordCount": 4,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "184249efedeae899be6f64b8a514f5ecdede5caa73add1973172351e9b129c6b"
+      }
+    },
+    {
+      "id": "off",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 81,
+        "tokenCount": 31,
+        "functionCount": 1,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "875854e1205203c8e8bff08adbf474ff88cbca4d33d49cb68417a72620096171"
+      }
+    },
+    {
+      "id": "offset",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 80,
+        "tokenCount": 35,
+        "functionCount": 2,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "ac3331392815f5a6496304df0d9b25aca464dd3b1cb5d01396c233b5f179f722"
+      }
+    },
+    {
+      "id": "omit",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 141,
+        "tokenCount": 68,
+        "functionCount": 4,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "047964b4409ac519c62909c0ca6f50b4db18bdf3cfb9bfc645d43e6438858b99"
+      }
+    },
+    {
+      "id": "omitBy",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 140,
+        "tokenCount": 71,
+        "functionCount": 4,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "c9087e8945c10e2e0cc951fc9e2bcd62316347aebb0e127bc7f6c6dbf52cd11c"
+      }
+    },
+    {
+      "id": "on",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 247,
+        "tokenCount": 91,
+        "functionCount": 3,
+        "operatorCount": 8,
+        "keywordCount": 4,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "9baea961cebb81bcaec83515bc98ca1e77affc03b2550c88e5d559973025d3d7"
+      }
+    },
+    {
+      "id": "once",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 155,
+        "tokenCount": 57,
+        "functionCount": 1,
+        "operatorCount": 5,
+        "keywordCount": 8,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "66051661cb13aa6295a539dda924cb6d55964fc0a438448414decaadbcc64637"
+      }
+    },
+    {
+      "id": "onUserInputChange",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 493,
+        "tokenCount": 140,
+        "functionCount": 6,
+        "operatorCount": 14,
+        "keywordCount": 7,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "f42b7a49b6b92be7da1537a058588818c05d1110150fcad063c4325665a4d4e3"
+      }
+    },
+    {
+      "id": "orderBy",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 311,
+        "tokenCount": 142,
+        "functionCount": 2,
+        "operatorCount": 16,
+        "keywordCount": 4,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "22503211c50141af520926b607fb38527e2667ce22de64f07942db9ef2de3ff1"
+      }
+    },
+    {
+      "id": "over",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 74,
+        "tokenCount": 35,
+        "functionCount": 2,
+        "operatorCount": 6,
+        "keywordCount": 2,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "247a0bbb83498d826178298d52a73ee8720e958e1f8afea599a3727217a45ed6"
+      }
+    },
+    {
+      "id": "overArgs",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 98,
+        "tokenCount": 45,
+        "functionCount": 2,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "af95e891903e7ee7aff4f5cf8254b2ad904086938ae1058482fd599b08824deb"
+      }
+    },
+    {
+      "id": "pad",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 110,
+        "tokenCount": 42,
+        "functionCount": 2,
+        "operatorCount": 5,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "9a7c678e67831c68d0589a63a2928d4b68e4defa7a015d598dda253710401902"
+      }
+    },
+    {
+      "id": "palindrome",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 125,
+        "tokenCount": 49,
+        "functionCount": 4,
+        "operatorCount": 5,
+        "keywordCount": 3,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "f57075c283729a7585935df63d6e7a24c25b16865a28058e0973d42a314dadd9"
+      }
+    },
+    {
+      "id": "parseCookie",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 210,
+        "tokenCount": 80,
+        "functionCount": 8,
+        "operatorCount": 5,
+        "keywordCount": 2,
+        "distinctFunctionCount": 5
+      },
+      "meta": {
+        "hash": "73024d687cf93478ce209b0f0ccc81f5841ca785effdd664d07a31fade8340b3"
+      }
+    },
+    {
+      "id": "partial",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 75,
+        "tokenCount": 33,
+        "functionCount": 1,
+        "operatorCount": 7,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "b57e228d9f4be72f0b54e613db0d03f8f580c79e48cd7ba43673eaac874fd057"
+      }
+    },
+    {
+      "id": "partialRight",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 80,
+        "tokenCount": 33,
+        "functionCount": 1,
+        "operatorCount": 7,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "907872c83c8820b239838c65f4d5174783e372275e85fd96050d9218932325b4"
+      }
+    },
+    {
+      "id": "partition",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 161,
+        "tokenCount": 75,
+        "functionCount": 3,
+        "operatorCount": 4,
+        "keywordCount": 2,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "34b5219f73fd8ec4733a6fe59b9995782c4788b2a33f09acc21c7b925e837c6a"
+      }
+    },
+    {
+      "id": "percentile",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 131,
+        "tokenCount": 70,
+        "functionCount": 1,
+        "operatorCount": 11,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "5d181e4f610b1dd80004f022c7db0162c77fb8be96a7b250f4b9bbbc58287ec3"
+      }
+    },
+    {
+      "id": "permutations",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 285,
+        "tokenCount": 124,
+        "functionCount": 6,
+        "operatorCount": 11,
+        "keywordCount": 4,
+        "distinctFunctionCount": 5
+      },
+      "meta": {
+        "hash": "81aa651d55dd837cf9e2f39185fd5b1594c180eb80a6dd4fbab884e393fb3b6b"
+      }
+    },
+    {
+      "id": "pick",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 106,
+        "tokenCount": 52,
+        "functionCount": 1,
+        "operatorCount": 5,
+        "keywordCount": 2,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "6d0f02cf40092134297d3ffc37a91bacc72f320b17740aed41b53241c5f7eace"
+      }
+    },
+    {
+      "id": "pickBy",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 139,
+        "tokenCount": 70,
+        "functionCount": 4,
+        "operatorCount": 5,
+        "keywordCount": 1,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "a40f7c3f340322bd9d951d6ceb90984c279854a728417857c4c0fbb0098c96b3"
+      }
+    },
+    {
+      "id": "pipeAsyncFunctions",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 100,
+        "tokenCount": 40,
+        "functionCount": 3,
+        "operatorCount": 5,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "23257e36931b9d7dea6102e9cc92c4735be4dd5725d8bfa55200b84aeb08c134"
+      }
+    },
+    {
+      "id": "pipeFunctions",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 83,
+        "tokenCount": 41,
+        "functionCount": 3,
+        "operatorCount": 7,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "ab0f2bb919fa16a54af9bbef603aafb02415db196df198f50d4f2b02b627600f"
+      }
+    },
+    {
+      "id": "pluralize",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 293,
+        "tokenCount": 109,
+        "functionCount": 4,
+        "operatorCount": 12,
+        "keywordCount": 6,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "9270afe4dfddee1974a2535ea2625e6130c41cbb890784ca837dd34df4efd030"
+      }
+    },
+    {
+      "id": "powerset",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 88,
+        "tokenCount": 47,
+        "functionCount": 4,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "17fa313ab2e105ddcf0ca9b557534a5f84ce79187f33ae1aadb7ce4bf2f1e606"
+      }
+    },
+    {
+      "id": "prefix",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 365,
+        "tokenCount": 121,
+        "functionCount": 4,
+        "operatorCount": 16,
+        "keywordCount": 7,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "a529eb02a24025131ea7efa345a07d66186a8bddc0b94e298031631144a651e8"
+      }
+    },
+    {
+      "id": "prettyBytes",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 470,
+        "tokenCount": 218,
+        "functionCount": 6,
+        "operatorCount": 27,
+        "keywordCount": 7,
+        "distinctFunctionCount": 6
+      },
+      "meta": {
+        "hash": "5f269ecc2da6d263be94fb94725167f0a2002e1eeb3fd2123ffc9403a2ef2933"
+      }
+    },
+    {
+      "id": "primes",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 305,
+        "tokenCount": 127,
+        "functionCount": 6,
+        "operatorCount": 18,
+        "keywordCount": 5,
+        "distinctFunctionCount": 5
+      },
+      "meta": {
+        "hash": "c330b6020332343dab6980f9a42a85f7871e60da28ddb23b26dd7a60e143519a"
+      }
+    },
+    {
+      "id": "promisify",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 152,
+        "tokenCount": 61,
+        "functionCount": 3,
+        "operatorCount": 8,
+        "keywordCount": 2,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "d269b5a8124cd646189075c2679331bbadbb3cd535a1e3135d12f7de46836dda"
+      }
+    },
+    {
+      "id": "pull",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 207,
+        "tokenCount": 89,
+        "functionCount": 5,
+        "operatorCount": 10,
+        "keywordCount": 3,
+        "distinctFunctionCount": 5
+      },
+      "meta": {
+        "hash": "3169f10481f6c589961d19d4c23ba0fc25f104a2cbe299bc9a94e5ab6fd2b384"
+      }
+    },
+    {
+      "id": "pullAtIndex",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 262,
+        "tokenCount": 108,
+        "functionCount": 7,
+        "operatorCount": 10,
+        "keywordCount": 4,
+        "distinctFunctionCount": 5
+      },
+      "meta": {
+        "hash": "e2aa1ead7e75caf768128d168ec9ebc1972c2f13fd89d28ea74ff3f4c6db31f9"
+      }
+    },
+    {
+      "id": "pullAtValue",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 282,
+        "tokenCount": 109,
+        "functionCount": 7,
+        "operatorCount": 11,
+        "keywordCount": 3,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "c6826dfdd96e9325603138fa82cf71bb80766a058a163eccb009827d1ef51cb8"
+      }
+    },
+    {
+      "id": "pullBy",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 382,
+        "tokenCount": 159,
+        "functionCount": 9,
+        "operatorCount": 19,
+        "keywordCount": 6,
+        "distinctFunctionCount": 8
+      },
+      "meta": {
+        "hash": "b47f00777e924d7f7afa8c879bdf1e84ff74f8b67aca91ade9b86444b658a336"
+      }
+    },
+    {
+      "id": "radsToDegrees",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 53,
+        "tokenCount": 20,
+        "functionCount": 0,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "b749df623cb50779135ffb38d968cc58d9a8d5d1eadeacfa1d9eec43641c8e9e"
+      }
+    },
+    {
+      "id": "randomHexColorCode",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 127,
+        "tokenCount": 57,
+        "functionCount": 3,
+        "operatorCount": 6,
+        "keywordCount": 3,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "038ef05a24294c7bb16d04d465628066418099465e99c020a21d073372ebe0cc"
+      }
+    },
+    {
+      "id": "randomIntArrayInRange",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 136,
+        "tokenCount": 59,
+        "functionCount": 2,
+        "operatorCount": 8,
+        "keywordCount": 2,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "f5c5c857e9d57ef7c22734163098e058d050ad0a9e3f28c57b307695ee982514"
+      }
+    },
+    {
+      "id": "randomIntegerInRange",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 93,
+        "tokenCount": 38,
+        "functionCount": 2,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "791ff20ffbb7736f586cafa1106f6e77e8e89d497bc8a479c0a0cd708fb907ce"
+      }
+    },
+    {
+      "id": "randomNumberInRange",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 76,
+        "tokenCount": 30,
+        "functionCount": 1,
+        "operatorCount": 5,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "0ebc2c972fac7d4a8438188025158e0f75456b3787ecf2faae9d3db8d12ee677"
+      }
+    },
+    {
+      "id": "readFileLines",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 132,
+        "tokenCount": 36,
+        "functionCount": 4,
+        "operatorCount": 3,
+        "keywordCount": 2,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "8463ee2c8b3e9165b105ee90b59e143a4f1c8b60f8080770d94ec0bbcb455bb6"
+      }
+    },
+    {
+      "id": "rearg",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 188,
+        "tokenCount": 76,
+        "functionCount": 3,
+        "operatorCount": 7,
+        "keywordCount": 2,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "4117e1a4abc2008657ac12d2ca949d05dceb9f3c303feb1828605b6010441fe5"
+      }
+    },
+    {
+      "id": "recordAnimationFrames",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 408,
+        "tokenCount": 150,
+        "functionCount": 6,
+        "operatorCount": 14,
+        "keywordCount": 8,
+        "distinctFunctionCount": 5
+      },
+      "meta": {
+        "hash": "461445d77d76f9f3bc05c2bc534cfb551689a99b1b73995ba7f4066a38c60fc7"
+      }
+    },
+    {
+      "id": "redirect",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 112,
+        "tokenCount": 39,
+        "functionCount": 1,
+        "operatorCount": 5,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "dba349eee909dff1e13e6708ac067e1e7e776ff5862e79097aca630548846ed6"
+      }
+    },
+    {
+      "id": "reducedFilter",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 161,
+        "tokenCount": 64,
+        "functionCount": 3,
+        "operatorCount": 5,
+        "keywordCount": 2,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "1ff03e381cda89ab13128f4df776de43967f09470520ad8e850cea8d7284dafc"
+      }
+    },
+    {
+      "id": "reduceSuccessive",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 137,
+        "tokenCount": 66,
+        "functionCount": 4,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "1953f4b4dd3e22e6c17c40dd0f34269662b10bd8610f19b0bc5b428d810c42a6"
+      }
+    },
+    {
+      "id": "reduceWhich",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 115,
+        "tokenCount": 56,
+        "functionCount": 2,
+        "operatorCount": 8,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "1f27b4d91e5f0141d4c2c712ac04d7633f759426e2703eba5627782e563b300d"
+      }
+    },
+    {
+      "id": "reject",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 74,
+        "tokenCount": 32,
+        "functionCount": 2,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "34e33d53f3671741d428581c1915599dca98524ee5dee0d45567e8b817ca28f4"
+      }
+    },
+    {
+      "id": "remove",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 192,
+        "tokenCount": 76,
+        "functionCount": 6,
+        "operatorCount": 4,
+        "keywordCount": 2,
+        "distinctFunctionCount": 6
+      },
+      "meta": {
+        "hash": "baf94ec265ffb8bd14950cb76022a483f6d6a0a1f840fea7774ac40db1fb237e"
+      }
+    },
+    {
+      "id": "removeNonASCII",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 63,
+        "tokenCount": 17,
+        "functionCount": 1,
+        "operatorCount": 2,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "00483703389f0ba2b0ed4bdb8ef9f68e4de1a19b209655d85e4fcef0a16a660c"
+      }
+    },
+    {
+      "id": "renameKeys",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 163,
+        "tokenCount": 67,
+        "functionCount": 2,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "082d9c8f508ca5870d652e905bf9556d2ffa6681f5342edd807a596393ed6a3a"
+      }
+    },
+    {
+      "id": "reverseString",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 57,
+        "tokenCount": 22,
+        "functionCount": 2,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "7f3ec1d135d7ab73d9f83d89e03945302dc08746037d132f7ce753f923c7e242"
+      }
+    },
+    {
+      "id": "RGBToHex",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 87,
+        "tokenCount": 50,
+        "functionCount": 2,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "92e4282492b80dbbd7efa34ae308bcda2c8c6865615e64049bf34dd8eb3f4810"
+      }
+    },
+    {
+      "id": "round",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 92,
+        "tokenCount": 31,
+        "functionCount": 1,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "6170ee4eec91a2bf73961a9cc15ce90c48fbf15caf11363c12b3d6478efa48ea"
+      }
+    },
+    {
+      "id": "runAsync",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 384,
+        "tokenCount": 121,
+        "functionCount": 5,
+        "operatorCount": 8,
+        "keywordCount": 6,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "bc05700c2010133ef91894f88b2cfa3bb71fce55d1a54626e262b522d64821dc"
+      }
+    },
+    {
+      "id": "runPromisesInSeries",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 90,
+        "tokenCount": 32,
+        "functionCount": 3,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "93cd98db49ec69efe8565f94e1305b4ff7724eaccd9fa58a88ac6474c4f2e74e"
+      }
+    },
+    {
+      "id": "sample",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 66,
+        "tokenCount": 26,
+        "functionCount": 2,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "675b72d4bac05f71773ba4d1c1e95e085fed9f7020e2e8edd0e418fb06501d96"
+      }
+    },
+    {
+      "id": "sampleSize",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 198,
+        "tokenCount": 99,
+        "functionCount": 3,
+        "operatorCount": 9,
+        "keywordCount": 5,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "80c6cab3caeedd2dd971a1a5999999c1f181c643d0aa68c3202aa55ad9a574fb"
+      }
+    },
+    {
+      "id": "scrollToTop",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 206,
+        "tokenCount": 65,
+        "functionCount": 2,
+        "operatorCount": 7,
+        "keywordCount": 3,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "9d097840156322f4316042fe727f6887b9cef948a92ffdbda4c92e0161f3389d"
+      }
+    },
+    {
+      "id": "sdbm",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 206,
+        "tokenCount": 75,
+        "functionCount": 3,
+        "operatorCount": 10,
+        "keywordCount": 3,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "acbcb526b3937b1d17e6736f361d8ed444311882f47b0895f3e966695bdde67a"
+      }
+    },
+    {
+      "id": "serializeCookie",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 96,
+        "tokenCount": 16,
+        "functionCount": 0,
+        "operatorCount": 2,
+        "keywordCount": 1,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "a69e2913ccc5c7ca2100de571087a44c14b7ca475154740bace342852357b379"
+      }
+    },
+    {
+      "id": "setStyle",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 67,
+        "tokenCount": 28,
+        "functionCount": 0,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "12eb5e821413b38e0e5d19ed1c12b7dcdf47071d1e795e9e72ffb71e693e922b"
+      }
+    },
+    {
+      "id": "shallowClone",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 51,
+        "tokenCount": 17,
+        "functionCount": 1,
+        "operatorCount": 2,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "a5a49641c0de1a0a80f192c5be195c448ab0fe0856bba4e1f246fe70af7b5431"
+      }
+    },
+    {
+      "id": "show",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 69,
+        "tokenCount": 35,
+        "functionCount": 1,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "c2a9e0ec75d7c2268bf40bd02f7542d294fc2b273ac156e49968f6e77e6b3491"
+      }
+    },
+    {
+      "id": "shuffle",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 176,
+        "tokenCount": 87,
+        "functionCount": 2,
+        "operatorCount": 8,
+        "keywordCount": 5,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "df6c93b6e25c87f12c6ee57a8c4d1b877119bdc422588b4cb2db230b91be3ca2"
+      }
+    },
+    {
+      "id": "similarity",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 72,
+        "tokenCount": 27,
+        "functionCount": 2,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "e1b495505ee844027b53e2537560373d9c341bccf6743beb3129e82fe7408131"
+      }
+    },
+    {
+      "id": "size",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 228,
+        "tokenCount": 69,
+        "functionCount": 2,
+        "operatorCount": 10,
+        "keywordCount": 4,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "ac93ebf2905bbaeec36266cb011753e11c3895f78771e332c6694e05c62a3535"
+      }
+    },
+    {
+      "id": "sleep",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 68,
+        "tokenCount": 23,
+        "functionCount": 1,
+        "operatorCount": 3,
+        "keywordCount": 2,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "cf97f402b25ec7ffd2b670d4b541093b567334595439167c0c7a5534962ad2a1"
+      }
+    },
+    {
+      "id": "smoothScroll",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 111,
+        "tokenCount": 25,
+        "functionCount": 2,
+        "operatorCount": 2,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "160e603850eac9489b210f1a3de5486944e23c0f799eb06936c6524af117fd06"
+      }
+    },
+    {
+      "id": "sortCharactersInString",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 91,
+        "tokenCount": 35,
+        "functionCount": 3,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "48dcaf1f31d3e112630071392fcb9a8736f3bf198ac28c0683887ba1955d05cd"
+      }
+    },
+    {
+      "id": "sortedIndex",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 206,
+        "tokenCount": 77,
+        "functionCount": 1,
+        "operatorCount": 13,
+        "keywordCount": 4,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "63136a5f7c3ae51bea360baa0b2177f7c8cd5e83eabe48be531507e94ba6ac2a"
+      }
+    },
+    {
+      "id": "sortedIndexBy",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 253,
+        "tokenCount": 106,
+        "functionCount": 6,
+        "operatorCount": 14,
+        "keywordCount": 5,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "36e338d577b307113b69192c9ee3a64a1fd50967270810dc5eb9f0710cfbbe29"
+      }
+    },
+    {
+      "id": "sortedLastIndex",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 224,
+        "tokenCount": 85,
+        "functionCount": 2,
+        "operatorCount": 14,
+        "keywordCount": 4,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "3b00265cc1c52e964c97fa3b393ad3b4f9eb1c529839d77352582719a396d39c"
+      }
+    },
+    {
+      "id": "sortedLastIndexBy",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 286,
+        "tokenCount": 112,
+        "functionCount": 6,
+        "operatorCount": 15,
+        "keywordCount": 5,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "66a8b09b9f50d22778c339a3e71242f802d98bd8ec56bdc2c56e9213c49f9f2b"
+      }
+    },
+    {
+      "id": "splitLines",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 45,
+        "tokenCount": 14,
+        "functionCount": 1,
+        "operatorCount": 2,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "fa5d75df025039e77d627019f675c6bb458d340716c44d9692298028750857be"
+      }
+    },
+    {
+      "id": "spreadOver",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 51,
+        "tokenCount": 16,
+        "functionCount": 1,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "9a79940f01badd37efb5156b8e3d220c85601c99a6908b79fe9508d0cd4d8ff5"
+      }
+    },
+    {
+      "id": "stableSort",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 183,
+        "tokenCount": 79,
+        "functionCount": 4,
+        "operatorCount": 7,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "517ae5281131d9360320c187499754b5e45a7251865cce556a7aa614671cd251"
+      }
+    },
+    {
+      "id": "standardDeviation",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 301,
+        "tokenCount": 125,
+        "functionCount": 5,
+        "operatorCount": 15,
+        "keywordCount": 3,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "610461bbbe050f9ce1bbfbf58f4553bb465b1fd6a14059d9fa266492bb451eda"
+      }
+    },
+    {
+      "id": "stringPermutations",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 303,
+        "tokenCount": 120,
+        "functionCount": 7,
+        "operatorCount": 11,
+        "keywordCount": 4,
+        "distinctFunctionCount": 6
+      },
+      "meta": {
+        "hash": "46ef6d1d747d34b10276f4ac721c56b1fe9176d69da6437b942d3f2035a473b0"
+      }
+    },
+    {
+      "id": "stripHTMLTags",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 57,
+        "tokenCount": 17,
+        "functionCount": 1,
+        "operatorCount": 2,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "a46d835b66eead91516d7c00db7e80bd396a7d410ee8dddb1a79a0aad8666036"
+      }
+    },
+    {
+      "id": "sum",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 68,
+        "tokenCount": 35,
+        "functionCount": 1,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "1f18c078a7be8d03ea320ae44b5216206c6fd59b0bd4606368c4752c38d4a09a"
+      }
+    },
+    {
+      "id": "sumBy",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 120,
+        "tokenCount": 51,
+        "functionCount": 2,
+        "operatorCount": 7,
+        "keywordCount": 2,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "0ce76ed4d6b2e6da5027e3ae193467472d70c74c1399fcc48c53632cc61e3a29"
+      }
+    },
+    {
+      "id": "sumPower",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 159,
+        "tokenCount": 78,
+        "functionCount": 4,
+        "operatorCount": 11,
+        "keywordCount": 1,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "7eb9a2618de13c069bfecdd0a575a8fc2371bc82c416128e119f8d6c262e154d"
+      }
+    },
+    {
+      "id": "symmetricDifference",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 159,
+        "tokenCount": 80,
+        "functionCount": 4,
+        "operatorCount": 10,
+        "keywordCount": 5,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "a353d35fc5fb8ec4ebbf0856079a823a598a5023ca908a7b1ddca55b4b3b60fe"
+      }
+    },
+    {
+      "id": "symmetricDifferenceBy",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 205,
+        "tokenCount": 110,
+        "functionCount": 10,
+        "operatorCount": 12,
+        "keywordCount": 5,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "f96bf0b07e98ad829a138e224fad50ceff771b4dd9beac6e10a553805fb33ead"
+      }
+    },
+    {
+      "id": "symmetricDifferenceWith",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 177,
+        "tokenCount": 77,
+        "functionCount": 6,
+        "operatorCount": 12,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "7242f560cae759c6f157a3619ff7333f666bc3fbccf1d538aa2e3c39c5abc671"
+      }
+    },
+    {
+      "id": "tail",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 58,
+        "tokenCount": 28,
+        "functionCount": 1,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "d51becdc0cd038245800933f698c5555bcef7660de1805231411a75883289f43"
+      }
+    },
+    {
+      "id": "take",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 45,
+        "tokenCount": 25,
+        "functionCount": 1,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "6400f64dd09e23349b302091c0bf6e01f8fe052e5c3d4bacf005c2ccfbb5184b"
+      }
+    },
+    {
+      "id": "takeRight",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 72,
+        "tokenCount": 31,
+        "functionCount": 1,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "7c1d00488af4859ff33f72472699f083036f936a84240cded84e3f18f2ff0916"
+      }
+    },
+    {
+      "id": "takeRightWhile",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 172,
+        "tokenCount": 72,
+        "functionCount": 5,
+        "operatorCount": 3,
+        "keywordCount": 7,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "2abf3aa16fb21b9694ef54dbece79ab9c49e8e5292f6eac7d3815c1afd21e3b1"
+      }
+    },
+    {
+      "id": "takeWhile",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 130,
+        "tokenCount": 61,
+        "functionCount": 3,
+        "operatorCount": 2,
+        "keywordCount": 7,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "9983a71a3b6930d02ef5508d3f0cce2107fc19ec4a16b10d68ef0ae634a932cc"
+      }
+    },
+    {
+      "id": "throttle",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 507,
+        "tokenCount": 157,
+        "functionCount": 8,
+        "operatorCount": 13,
+        "keywordCount": 10,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "87909289c906a7a48b2d2b11eb976c501ed903080b7a2a1d473d852d8dbc53ad"
+      }
+    },
+    {
+      "id": "times",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 117,
+        "tokenCount": 56,
+        "functionCount": 1,
+        "operatorCount": 8,
+        "keywordCount": 3,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "90ab922b56f62b3eafff4a31b2a1f1345d2126e712f02360cb8a6e8b31adee96"
+      }
+    },
+    {
+      "id": "timeTaken",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 131,
+        "tokenCount": 39,
+        "functionCount": 3,
+        "operatorCount": 3,
+        "keywordCount": 3,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "48d1e866b152eacd9fa16d8bf5c3136d01072522a58ad005a13d9b1792a3c37f"
+      }
+    },
+    {
+      "id": "toCamelCase",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 283,
+        "tokenCount": 87,
+        "functionCount": 10,
+        "operatorCount": 7,
+        "keywordCount": 3,
+        "distinctFunctionCount": 6
+      },
+      "meta": {
+        "hash": "870a6ab0b2c7a69e26af06ce5f1cb2bd1706ae678139d2c2c3f59ce277c0cea3"
+      }
+    },
+    {
+      "id": "toCurrency",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 145,
+        "tokenCount": 41,
+        "functionCount": 2,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "85a601168285577950b9fd0f28fa0d0283261dda12a2cb0e1a0e1cc78a6e81ae"
+      }
+    },
+    {
+      "id": "toDecimalMark",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 57,
+        "tokenCount": 14,
+        "functionCount": 1,
+        "operatorCount": 2,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "37225304d6109741f6ccb03fc845b2dbe84e0e2142861dfc73f5d3b5d770bde7"
+      }
+    },
+    {
+      "id": "toggleClass",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 70,
+        "tokenCount": 22,
+        "functionCount": 1,
+        "operatorCount": 2,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "c1fec7508780ad0ceacbf58c049668201e9f88eee043234394e11666530cfb21"
+      }
+    },
+    {
+      "id": "toHash",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 159,
+        "tokenCount": 62,
+        "functionCount": 1,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "c7a62b55b5a90661bf3f9c956f075906439a50151a3aee4023ad8fe878cae2e6"
+      }
+    },
+    {
+      "id": "toKebabCase",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 169,
+        "tokenCount": 34,
+        "functionCount": 4,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "40bb52f6eb89e1b796af964316c93bee286e44952d8d2e410ac7f8124b6cd8ac"
+      }
+    },
+    {
+      "id": "tomorrow",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 262,
+        "tokenCount": 63,
+        "functionCount": 2,
+        "operatorCount": 8,
+        "keywordCount": 5,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "55531d99aa0019593ea79a1bf0a3383857d88f6c7fdb33399a7812c0d184eb72"
+      }
+    },
+    {
+      "id": "toOrdinalSuffix",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 355,
+        "tokenCount": 148,
+        "functionCount": 3,
+        "operatorCount": 15,
+        "keywordCount": 3,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "9e162528df1b8dd803a71a770f3c5e1555ca5995005e26e416f5652024b3fd1e"
+      }
+    },
+    {
+      "id": "toSafeInteger",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 117,
+        "tokenCount": 32,
+        "functionCount": 3,
+        "operatorCount": 2,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "9f1ec1d236c7cd6787078f8eb21ac9076a2049b9e63b99bb67017be40a0f833b"
+      }
+    },
+    {
+      "id": "toSnakeCase",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 169,
+        "tokenCount": 34,
+        "functionCount": 4,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "07be50b2d41b64458085b8f48a361023061fff8cc6db5813ce56cb3e5d22ccfa"
+      }
+    },
+    {
+      "id": "transform",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 98,
+        "tokenCount": 49,
+        "functionCount": 3,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "8f844b53d1104ae0169235916fe2f1bcce82e4f2503b4009e842078e8611405c"
+      }
+    },
+    {
+      "id": "triggerEvent",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 127,
+        "tokenCount": 36,
+        "functionCount": 1,
+        "operatorCount": 3,
+        "keywordCount": 2,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "0089f0db0ccfaae631ff2935a1eb7b5ff38d789255777a8f05188552a527520c"
+      }
+    },
+    {
+      "id": "truncateString",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 110,
+        "tokenCount": 47,
+        "functionCount": 1,
+        "operatorCount": 8,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "656e754cd1a8ef1a738557d1453b8f6c65e5f0f67e829179c88f3d9b6d3c4ee7"
+      }
+    },
+    {
+      "id": "truthCheckCollection",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 84,
+        "tokenCount": 25,
+        "functionCount": 1,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "680b063587a145c90b3072bc7e775ebe93b5527ad3f91bba5e5b575811895b9c"
+      }
+    },
+    {
+      "id": "unary",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 35,
+        "tokenCount": 15,
+        "functionCount": 1,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "522df418a2b451115c7514afc7480a2f5a0f813dd320faf6e577c9eff71d379b"
+      }
+    },
+    {
+      "id": "uncurry",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 216,
+        "tokenCount": 96,
+        "functionCount": 4,
+        "operatorCount": 10,
+        "keywordCount": 6,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "7f7774fd60e664bf1d12c9ae36f498cf22d303ef72f51f8b8e2e2d7630bc4c61"
+      }
+    },
+    {
+      "id": "unescapeHTML",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 233,
+        "tokenCount": 60,
+        "functionCount": 1,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "15f1da1fe7a39443d4a3a09f7d43e3fb253f9b3dd9cea31d71599ce9a8609f8d"
+      }
+    },
+    {
+      "id": "unflattenObject",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 428,
+        "tokenCount": 154,
+        "functionCount": 9,
+        "operatorCount": 14,
+        "keywordCount": 5,
+        "distinctFunctionCount": 9
+      },
+      "meta": {
+        "hash": "30a3f0e6f8386104c06eedd1dc1ab44e3c3c4c2a150b920b4093ae4234ea03f5"
+      }
+    },
+    {
+      "id": "unfold",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 143,
+        "tokenCount": 66,
+        "functionCount": 2,
+        "operatorCount": 5,
+        "keywordCount": 5,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "ccc6b2e5db6224ca96a835f8242e6a5934b99b011b62b69e7e10f7cb494c5593"
+      }
+    },
+    {
+      "id": "union",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 58,
+        "tokenCount": 32,
+        "functionCount": 0,
+        "operatorCount": 4,
+        "keywordCount": 3,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "89bdbb02f2dd1c5bc9d1272ff3f2d5249af763115b596e9f8bc801d0f2256ac3"
+      }
+    },
+    {
+      "id": "unionBy",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 145,
+        "tokenCount": 81,
+        "functionCount": 5,
+        "operatorCount": 8,
+        "keywordCount": 6,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "e77db9a39dfcae80c2a0d79dee802a05de9811c28f35e732300ce5144c61be00"
+      }
+    },
+    {
+      "id": "unionWith",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 119,
+        "tokenCount": 59,
+        "functionCount": 3,
+        "operatorCount": 8,
+        "keywordCount": 3,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "8fae842111490c84497f36491833532e4b03e838b79e08f01d1aa72d15c36d99"
+      }
+    },
+    {
+      "id": "uniqueElements",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 48,
+        "tokenCount": 18,
+        "functionCount": 0,
+        "operatorCount": 3,
+        "keywordCount": 2,
+        "distinctFunctionCount": 0
+      },
+      "meta": {
+        "hash": "e45f1af52564b0b1d91ce8bce53fe98ce888f3c943e1c1828682893393540256"
+      }
+    },
+    {
+      "id": "untildify",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 84,
+        "tokenCount": 17,
+        "functionCount": 1,
+        "operatorCount": 2,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "152bde711895999ed98d4ee19cf6564b1a70a2ea358060ebdd3c1f8fbcfbf5d8"
+      }
+    },
+    {
+      "id": "unzip",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 190,
+        "tokenCount": 84,
+        "functionCount": 6,
+        "operatorCount": 7,
+        "keywordCount": 2,
+        "distinctFunctionCount": 5
+      },
+      "meta": {
+        "hash": "941c783ce75bd3bf53b13a5641d26f275c16dbbf87170ddea41d5b4570d4bf31"
+      }
+    },
+    {
+      "id": "unzipWith",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 243,
+        "tokenCount": 103,
+        "functionCount": 8,
+        "operatorCount": 9,
+        "keywordCount": 2,
+        "distinctFunctionCount": 6
+      },
+      "meta": {
+        "hash": "90e4fd44654dd3cc7ad2a78fc0aa28bbb57d4215f5b984a4265c12a47dfe1f81"
+      }
+    },
+    {
+      "id": "URLJoin",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 232,
+        "tokenCount": 73,
+        "functionCount": 7,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "c1f6ed028c9da75a21b93485f56d04cf2f10a512998ebeaa44f33377ab42139b"
+      }
+    },
+    {
+      "id": "UUIDGeneratorBrowser",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 189,
+        "tokenCount": 88,
+        "functionCount": 3,
+        "operatorCount": 15,
+        "keywordCount": 2,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "f43ad3f7f82d15a02cacb2b93c6324c64b55de1c630398ae501ff9b65bd9cb35"
+      }
+    },
+    {
+      "id": "UUIDGeneratorNode",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 200,
+        "tokenCount": 93,
+        "functionCount": 4,
+        "operatorCount": 16,
+        "keywordCount": 2,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "119c813d32e4aa4faed7a497cbf1806e98da0f7c9090656ae02297fe9224b6a1"
+      }
+    },
+    {
+      "id": "validateNumber",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 83,
+        "tokenCount": 34,
+        "functionCount": 4,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "8fb993b0cf78fa83a170aca132bf5eb13430e2cef5ae06f85b9763f286bb792c"
+      }
+    },
+    {
+      "id": "when",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 66,
+        "tokenCount": 33,
+        "functionCount": 2,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "4c3fb917581972b732dbf8a998c377df247721790afa904956420d0e75b3b40a"
+      }
+    },
+    {
+      "id": "without",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 69,
+        "tokenCount": 31,
+        "functionCount": 2,
+        "operatorCount": 5,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "0f0a7a5960cb9b6523950d582434f55f63bc3cf4802d60aaf22a29f563d00549"
+      }
+    },
+    {
+      "id": "words",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 83,
+        "tokenCount": 26,
+        "functionCount": 2,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "e89bcf45e8a87a5e69462152727960e050cc3236f6e30cb26dc2a5bbb35cf32c"
+      }
+    },
+    {
+      "id": "xProd",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 81,
+        "tokenCount": 48,
+        "functionCount": 3,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "1261dc9be854efaec6064c397b19fe09ec65f04002b63e057f25bf7afc33c398"
+      }
+    },
+    {
+      "id": "yesNo",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 106,
+        "tokenCount": 44,
+        "functionCount": 2,
+        "operatorCount": 5,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "86e7f2674d08de8520abe029aa6be760449367102a6578bb8efd9703508c63a2"
+      }
+    },
+    {
+      "id": "zip",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 230,
+        "tokenCount": 97,
+        "functionCount": 3,
+        "operatorCount": 8,
+        "keywordCount": 6,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "66cedb84131bd3704fc8dc3f9a8692d7a08a990ae749ff8cff688ced18239126"
+      }
+    },
+    {
+      "id": "zipObject",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 114,
+        "tokenCount": 49,
+        "functionCount": 1,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "3d01158c9146610c3ae1661b0681fb46db677426e7d614cb7b8f295c8defbdfd"
+      }
+    },
+    {
+      "id": "zipWith",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 273,
+        "tokenCount": 121,
+        "functionCount": 6,
+        "operatorCount": 14,
+        "keywordCount": 5,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "c30a9938878dbc4f535c16d16c59e0a7c09643164332f7790345f95557b44303"
+      }
+    }
+  ],
+  "meta": {
+    "specification": "http://jsonapi.org/format/"
+  }
+}
