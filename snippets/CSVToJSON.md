@@ -10,12 +10,15 @@ Omit the second argument, `delimiter`, to use a default delimiter of `,`.
 
 ```js
 const CSVToJSON = (data, delimiter = ',') => {
-  const titles = data.slice(0,data.indexOf('\n')).split(delimiter);
-  return data.slice(data.indexOf('\n')+1).split('\n').map(v => {
-    const values = v.split(delimiter);
-    return titles.reduce((obj, title, index) => ((obj[title] = values[index]), obj), {});
-  });
-}
+  const titles = data.slice(0, data.indexOf('\n')).split(delimiter);
+  return data
+    .slice(data.indexOf('\n') + 1)
+    .split('\n')
+    .map(v => {
+      const values = v.split(delimiter);
+      return titles.reduce((obj, title, index) => ((obj[title] = values[index]), obj), {});
+    });
+};
 ```
 
 ```js
