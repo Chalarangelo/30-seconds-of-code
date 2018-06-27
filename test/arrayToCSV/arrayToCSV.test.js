@@ -1,0 +1,12 @@
+const expect = require('expect');
+const arrayToCSV = require('./arrayToCSV.js');
+
+test('arrayToCSV is a Function', () => {
+  expect(arrayToCSV).toBeInstanceOf(Function);
+});
+test('arrayToCSV works with default delimiter', () => {
+  expect(arrayToCSV([['a','b'],['c','d']])).toBe('a,b\nc,d');
+});
+test('arrayToCSV works with custom delimiter', () => {
+  expect(arrayToCSV([['a','b'],['c','d']], ';')).toBe('a;b\nc;d');
+});
