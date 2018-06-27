@@ -11,6 +11,6 @@ const arrayToCSV = (arr, delimiter = ',') => arr.map(v => v.join(delimiter)).joi
 ```
 
 ```js
-arrayToCSV([['a','b'],['c','d']]); // 'a,b\nc,d'
-arrayToCSV([['a','b'],['c','d']], ';'); // 'a;b\nc;d'
+arrayToCSV([['a', 'b'], ['c', 'd']]); // 'a,b\nc,d'
+arrayToCSV([['a', 'b'], ['c', 'd']], ';'); // 'a;b\nc;d'
 ```
