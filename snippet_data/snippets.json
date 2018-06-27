@@ -64,7 +64,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "arrayToCSV.md",
-        "text": "Converts a 2D array to a comma-separated values (CSV) string.\n\nUse `Array.map()` and `String.join(delimiter)` to combine individual 1D arrays (rows) into strings.\nUse `String.join('\\n')` to combine all rows into a CSV string, separating each row with a newline.\nOmit the second argument, `delimiter` to use a default delimiter of `,`.",
+        "text": "Converts a 2D array to a comma-separated values (CSV) string.\n\nUse `Array.map()` and `String.join(delimiter)` to combine individual 1D arrays (rows) into strings.\nUse `String.join('\\n')` to combine all rows into a CSV string, separating each row with a newline.\nOmit the second argument, `delimiter`, to use a default delimiter of `,`.",
         "codeBlocks": [
           "const arrayToCSV = (arr, delimiter = ',') => arr.map(v => v.join(delimiter)).join('\\n');",
           "arrayToCSV([['a', 'b'], ['c', 'd']]); // 'a,b\\nc,d'\narrayToCSV([['a', 'b'], ['c', 'd']], ';'); // 'a;b\\nc;d'"
@@ -77,7 +77,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "a4b4c5a8bd490da8fa4c065beb88014541bf71e7ff6a875123f297ff06bacd12"
+        "hash": "9a67eb5b20f6df42a6ea4781b1d7fe14430f9a5e01a510fdb39e737eca9199f1"
       }
     },
     {
@@ -811,6 +811,49 @@
       "meta": {
         "archived": false,
         "hash": "e952a30a27c1465ea9ac465d4b7de3f9dda6e58279c176bc7c0e98fb6d99f1fc"
+      }
+    },
+    {
+      "id": "CSVToArray",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "CSVToArray.md",
+        "text": "Converts a comma-separated values (CSV) string to a 2D array.\n\nUse `Array.slice()` and `Array.indexOf('\\n')` to remove the first row (title row) if `omitFirstRow` is `true`.\nUse `String.split('\\n')` to create a string for each row, then `String.split(delimiter)` to separate the values in each row.\nOmit the second argument, `delimiter`, to use a default delimiter of `,`.\nOmit the third argument, `omitFirstRow`, to include the first row (title row) of the CSV string.",
+        "codeBlocks": [
+          "const CSVToArray = (data, delimiter = ',', omitFirstRow = false) =>\n  data\n    .slice(omitFirstRow ? data.indexOf('\\n') + 1 : 0)\n    .split('\\n')\n    .map(v => v.split(delimiter));",
+          "CSVToArray('a,b\\nc,d'); // [['a','b'],['c','d']];\nCSVToArray('a;b\\nc;d', ';'); // [['a','b'],['c','d']];\nCSVToArray('col1,col2\\na,b\\nc,d', ',', true); // [['a','b'],['c','d']];"
+        ],
+        "tags": [
+          "string",
+          "array",
+          "utility"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "323a85ce03cc446dcfc3dfd8a89b4501b217b0e846fa73b99a6c3e2ee51a1caf"
+      }
+    },
+    {
+      "id": "CSVToJSON",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "CSVToJSON.md",
+        "text": "Converts a comma-separated values (CSV) string to a 2D array of objects.\nThe first row of the string is used as the title row.\n\nUse `Array.slice()` and `Array.indexOf('\\n')` and `String.split(delimiter)` to separate the first row (title row) into values.\nUse `String.split('\\n')` to create a string for each row, then `Array.map()` and `String.split(delimiter)` to separate the values in each row.\nUse `Array.reduce()` to create an object for each row's values, with the keys parsed from the title row.\nOmit the second argument, `delimiter`, to use a default delimiter of `,`.",
+        "codeBlocks": [
+          "const CSVToJSON = (data, delimiter = ',') => {\n  const titles = data.slice(0, data.indexOf('\\n')).split(delimiter);\n  return data\n    .slice(data.indexOf('\\n') + 1)\n    .split('\\n')\n    .map(v => {\n      const values = v.split(delimiter);\n      return titles.reduce((obj, title, index) => ((obj[title] = values[index]), obj), {});\n    });\n};",
+          "CSVToJSON('col1,col2\\na,b\\nc,d'); // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];\nCSVToJSON('col1;col2\\na;b\\nc;d', ';'); // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];"
+        ],
+        "tags": [
+          "string",
+          "array",
+          "object",
+          "advanced"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "de42726725b56d870fa0a7b16dc327589bbeba5a6d821d5f43d09b8a478a139a"
       }
     },
     {
