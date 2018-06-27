@@ -39,6 +39,7 @@ counter:browser,advanced
 countOccurrences:array
 createElement:browser,utility
 createEventHub:browser,event,advanced
+CSVToArray:string,array,utility
 currentURL:browser,url
 curry:function,recursion
 debounce:function
