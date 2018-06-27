@@ -9,7 +9,10 @@ Omit the third argument, `omitFirstRow`, to include the first row (title row) of
 
 ```js
 const CSVToArray = (data, delimiter = ',', omitFirstRow = false) =>
-  data.slice(omitFirstRow ? data.indexOf('\n')+1 : 0).split('\n').map(v => v.split(delimiter));
+  data
+    .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0)
+    .split('\n')
+    .map(v => v.split(delimiter));
 ```
 
 ```js

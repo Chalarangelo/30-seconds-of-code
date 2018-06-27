@@ -393,6 +393,7 @@ average(1, 2, 3);
 * [`byteSize`](#bytesize)
 * [`capitalize`](#capitalize)
 * [`capitalizeEveryWord`](#capitalizeeveryword)
+* [`CSVToArray`](#csvtoarray)
 * [`decapitalize`](#decapitalize)
 * [`escapeHTML`](#escapehtml)
 * [`escapeRegExp`](#escaperegexp)
@@ -856,7 +857,7 @@ Converts a 2D array to a comma-separated values (CSV) string.
 
 Use `Array.map()` and `String.join(delimiter)` to combine individual 1D arrays (rows) into strings.
 Use `String.join('\n')` to combine all rows into a CSV string, separating each row with a newline.
-Omit the second argument, `delimiter` to use a default delimiter of `,`.
+Omit the second argument, `delimiter`, to use a default delimiter of `,`.
 
 ```js
 const arrayToCSV = (arr, delimiter = ',') => arr.map(v => v.join(delimiter)).join('\n');
@@ -7242,6 +7243,37 @@ const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperC
 
 ```js
 capitalizeEveryWord('hello world!'); // 'Hello World!'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### CSVToArray
+
+Converts a comma-separated values (CSV) string to a 2D array.
+
+Use `Array.slice()` and `Array.indexOf('\n')` to remove the first row (title row) if `omitFirstRow` is `true`.
+Use `String.split('\n')` to create a string for each row, then `String.split(delimiter)` to separate the values in each row.
+Omit the second argument, `delimiter`, to use a default delimiter of `,`.
+Omit the third argument, `omitFirstRow`, to include the first row (title row) of the CSV string.
+
+```js
+const CSVToArray = (data, delimiter = ',', omitFirstRow = false) =>
+  data
+    .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0)
+    .split('\n')
+    .map(v => v.split(delimiter));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+CSVToArray('a,b\nc,d'); // [['a','b'],['c','d']];
+CSVToArray('a;b\nc;d', ';'); // [['a','b'],['c','d']];
+CSVToArray('col1,col2\na,b\nc,d', ',', true); // [['a','b'],['c','d']];
 ```
 
 </details>
