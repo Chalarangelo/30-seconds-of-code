@@ -40,6 +40,7 @@ countOccurrences:array
 createElement:browser,utility
 createEventHub:browser,event,advanced
 CSVToArray:string,array,utility
+CSVToJSON:string,array,object,advanced
 currentURL:browser,url
 curry:function,recursion
 debounce:function
