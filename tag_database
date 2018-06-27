@@ -1,3 +1,7 @@
+all:array,function
+any:array,function
+approximatelyEqual:math
+arrayToCSV:array,string,utility
 arrayToHtmlList:browser,array
 ary:adapter,function
 atob:node,string,utility
