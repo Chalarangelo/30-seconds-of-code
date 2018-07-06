@@ -19,11 +19,12 @@
 #### Related
 
 - [30 Seconds of CSS](https://atomiks.github.io/30-seconds-of-css/)
+- [30 Seconds of Interviews](https://30secondsofinterviews.org/)
 - [30 Seconds of Python](https://github.com/kriadmin/30-seconds-of-python-code)
 
 #### Package
 
-⚠️ **WARNING:** Snippets are not production ready.
+⚠️ **NOTICE:** A few of our snippets are not yet optimized for production (see disclaimers for individual snippet issues).
 
 You can find a package with all the snippets on [npm](https://www.npmjs.com/package/30-seconds-of-code).
 
@@ -862,15 +863,16 @@ Use `Array.join('\n')` to combine all rows into a CSV string, separating each ro
 Omit the second argument, `delimiter`, to use a default delimiter of `,`.
 
 ```js
-const arrayToCSV = (arr, delimiter = ',') => arr.map(v => v.join(delimiter)).join('\n');
+const arrayToCSV = (arr, delimiter = ',') =>
+  arr.map(v => v.map(x => `"${x}"`).join(delimiter)).join('\n');
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```js
-arrayToCSV([['a', 'b'], ['c', 'd']]); // 'a,b\nc,d'
-arrayToCSV([['a', 'b'], ['c', 'd']], ';'); // 'a;b\nc;d'
+arrayToCSV([['a', 'b'], ['c', 'd']]); // '"a","b"\n"c","d"'
+arrayToCSV([['a', 'b'], ['c', 'd']], ';'); // '"a";"b"\n"c";"d"'
 ```
 
 </details>
