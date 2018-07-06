@@ -19,11 +19,12 @@
 #### Related
 
 - [30 Seconds of CSS](https://atomiks.github.io/30-seconds-of-css/)
+- [30 Seconds of Interviews](https://30secondsofinterviews.org/)
 - [30 Seconds of Python](https://github.com/kriadmin/30-seconds-of-python-code)
 
 #### Package
 
-⚠️ **WARNING:** Snippets are not production ready.
+⚠️ **NOTICE:** A few of our snippets are not yet optimized for production (see disclaimers for individual snippet issues).
 
 You can find a package with all the snippets on [npm](https://www.npmjs.com/package/30-seconds-of-code).
 
