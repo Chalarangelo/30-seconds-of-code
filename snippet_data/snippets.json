@@ -64,10 +64,10 @@
       "type": "snippet",
       "attributes": {
         "fileName": "arrayToCSV.md",
-        "text": "Converts a 2D array to a comma-separated values (CSV) string.\n\nUse `Array.map()` and `String.join(delimiter)` to combine individual 1D arrays (rows) into strings.\nUse `String.join('\\n')` to combine all rows into a CSV string, separating each row with a newline.\nOmit the second argument, `delimiter`, to use a default delimiter of `,`.",
+        "text": "Converts a 2D array to a comma-separated values (CSV) string.\n\nUse `Array.map()` and `Array.join(delimiter)` to combine individual 1D arrays (rows) into strings.\nUse `Array.join('\\n')` to combine all rows into a CSV string, separating each row with a newline.\nOmit the second argument, `delimiter`, to use a default delimiter of `,`.",
         "codeBlocks": [
-          "const arrayToCSV = (arr, delimiter = ',') => arr.map(v => v.join(delimiter)).join('\\n');",
-          "arrayToCSV([['a', 'b'], ['c', 'd']]); // 'a,b\\nc,d'\narrayToCSV([['a', 'b'], ['c', 'd']], ';'); // 'a;b\\nc;d'"
+          "const arrayToCSV = (arr, delimiter = ',') =>\n  arr.map(v => v.map(x => `\"${x}\"`).join(delimiter)).join('\\n');",
+          "arrayToCSV([['a', 'b'], ['c', 'd']]); // '\"a\",\"b\"\\n\"c\",\"d\"'\narrayToCSV([['a', 'b'], ['c', 'd']], ';'); // '\"a\";\"b\"\\n\"c\";\"d\"'"
         ],
         "tags": [
           "array",
@@ -77,7 +77,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "9a67eb5b20f6df42a6ea4781b1d7fe14430f9a5e01a510fdb39e737eca9199f1"
+        "hash": "47f27df615f87cf59e53ae3a618249f8413dd9d9c8939296a8b8f3785697de3d"
       }
     },
     {
@@ -3050,6 +3050,28 @@
       "meta": {
         "archived": false,
         "hash": "05c13ad111a5815d05ba0d2ca0bb17a7ab7e02fc3b33f0e5e049acc25fc2cbb4"
+      }
+    },
+    {
+      "id": "JSONtoCSV",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "JSONtoCSV.md",
+        "text": "Converts an array of objects to a comma-separated values (CSV) string that contains only the `columns` specified.\n\nUse `Array.join(demiliter)` to combine all the names in `columns` to create the first row.\nUse `Array.map()` and `Array.reduce()` to create a row for each object, substituting non-existent values with empty strings and only mapping values in `columns`.\nUse `Array.join('\\n')` to combine all rows into a string.\nOmit the third argument, `delimiter`, to use a default delimiter of `,`.",
+        "codeBlocks": [
+          "const JSONtoCSV = (arr, columns, delimiter = ',') =>\n  [\n    columns.join(delimiter),\n    ...arr.map(obj =>\n      columns.reduce(\n        (acc, key) => `${acc}${!acc.length ? '' : delimiter}\"${!obj[key] ? '' : obj[key]}\"`,\n        ''\n      )\n    )\n  ].join('\\n');",
+          "JSONtoCSV([{ a: 1, b: 2 }, { a: 3, b: 4, c: 5 }, { a: 6 }, { b: 7 }], ['a', 'b']); // 'a,b\\n\"1\",\"2\"\\n\"3\",\"4\"\\n\"6\",\"\"\\n\"\",\"7\"'\nJSONtoCSV([{ a: 1, b: 2 }, { a: 3, b: 4, c: 5 }, { a: 6 }, { b: 7 }], ['a', 'b'], ';'); // 'a;b\\n\"1\";\"2\"\\n\"3\";\"4\"\\n\"6\";\"\"\\n\"\";\"7\"'"
+        ],
+        "tags": [
+          "array",
+          "string",
+          "object",
+          "advanced"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "65457b943f03456c28e947f21177ffd0c9d8a00eb37aab7f7f76cb666f8c0acc"
       }
     },
     {
