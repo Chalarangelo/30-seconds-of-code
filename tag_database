@@ -152,6 +152,7 @@ isUndefined:type
 isUpperCase:string,utility
 isValidJSON:type,json
 join:array
+JSONtoCSV:array,string,object,advanced
 JSONToFile:node,json
 last:array
 lcm:math,recursion
