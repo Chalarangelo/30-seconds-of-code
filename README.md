@@ -142,6 +142,7 @@ average(1, 2, 3);
 * [`intersectionWith`](#intersectionwith)
 * [`isSorted`](#issorted)
 * [`join`](#join)
+* [`JSONtoCSV`](#jsontocsv-)
 * [`last`](#last)
 * [`longestItem`](#longestitem)
 * [`mapObject`](#mapobject-)
@@ -856,8 +857,8 @@ any([0, 0, 1, 0]); // true
 
 Converts a 2D array to a comma-separated values (CSV) string.
 
-Use `Array.map()` and `String.join(delimiter)` to combine individual 1D arrays (rows) into strings.
-Use `String.join('\n')` to combine all rows into a CSV string, separating each row with a newline.
+Use `Array.map()` and `Array.join(delimiter)` to combine individual 1D arrays (rows) into strings.
+Use `Array.join('\n')` to combine all rows into a CSV string, separating each row with a newline.
 Omit the second argument, `delimiter`, to use a default delimiter of `,`.
 
 ```js
@@ -1727,6 +1728,41 @@ const join = (arr, separator = ',', end = separator) =>
 join(['pen', 'pineapple', 'apple', 'pen'], ',', '&'); // "pen,pineapple,apple&pen"
 join(['pen', 'pineapple', 'apple', 'pen'], ','); // "pen,pineapple,apple,pen"
 join(['pen', 'pineapple', 'apple', 'pen']); // "pen,pineapple,apple,pen"
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### JSONtoCSV ![advanced](/advanced.svg)
+
+Converts an array of objects to a comma-separated values (CSV) string that contains only the `columns` specified.
+
+Use `Array.join(demiliter)` to combine all the names in `columns` to create the first row.
+Use `Array.map()` and `Array.reduce()` to create a row for each object, substituting non-existent values with empty strings and only mapping values in `columns`.
+Use `Array.join('\n')` to combine all rows into a string.
+Omit the third argument, `delimiter`, to use a default delimiter of `,`.
+
+```js
+const JSONtoCSV = (arr, columns, delimiter = ',') =>
+  [
+    columns.join(delimiter),
+    ...arr.map(obj =>
+      columns.reduce(
+        (acc, key) => `${acc}${!acc.length ? '' : delimiter}"${!obj[key] ? '' : obj[key]}"`,
+        ''
+      )
+    )
+  ].join('\n');
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+JSONtoCSV([{ a: 1, b: 2 }, { a: 3, b: 4, c: 5 }, { a: 6 }, { b: 7 }], ['a', 'b']); // 'a,b\n"1","2"\n"3","4"\n"6",""\n"","7"'
+JSONtoCSV([{ a: 1, b: 2 }, { a: 3, b: 4, c: 5 }, { a: 6 }, { b: 7 }], ['a', 'b'], ';'); // 'a;b\n"1";"2"\n"3";"4"\n"6";""\n"";"7"'
 ```
 
 </details>
