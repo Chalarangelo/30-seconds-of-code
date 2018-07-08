@@ -55,6 +55,7 @@ detectDeviceType:browser
 difference:array,math
 differenceBy:array,function
 differenceWith:array,function
+dig:object,recursion
 digitize:math,array
 distance:math
 drop:array
