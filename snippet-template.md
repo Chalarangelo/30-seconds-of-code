@@ -1,56 +1,14 @@
-### dig
+### functionName
 
-Return the value in a nested JSON object by the key.
+Explain briefly what the snippet does.
 
-Given the key name (or target), it will look up the key in the object recursively and return the first value if found.
+Explain briefly how the snippet works.
 
-```
-const dig = (obj, target) => {
-  if (!obj) return;
-
-  if (obj[target]) return obj[target];
-  else {
-    return( Object.keys(obj).map(key => {
-     if (typeof(obj[key]) === "object") {
-        return dig(obj[key], target);
-      }
-    }).filter(item => item !== undefined)[0] );
-  }
-};
+```js
+const functionName = arguments =>
+  {functionBody}
 ```
 
-```
-const data = {
-  name: "John Doe",
-  details: {
-    phone: "9876543210",
-    email: "john@example.com",
-    address: {
-      street: "123 ABC St.",
-      state: "CA",
-      zip: "98765"
-    },
-    extra1: {
-      nickName: "Johnny"
-    },
-    extra2: {
-      nickName: "JD"
-    },
-    hobby: "coding",
-    snacks: ["chips", 'candy', 'coke']
-  },
-  l1:{
-    l2:{
-      l3:{
-        l4: "4 levels deep."
-      }
-    }
-  }
-};
-
-const hobby = dig(data, 'hobby');    // "coding"
-const name  = dig(data, 'nickName'); // "Johnny"
-const food  = dig(data, 'snacks');   // ["chips","candy","coke"]
-const level4= dig(data, 'l4');       // "4 levels deep."
-const nada  = dig(data, 'blahblah')  // undefined
+```js
+functionName('sampleInput'); // 'sampleOutput'
 ```
