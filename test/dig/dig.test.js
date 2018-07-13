@@ -1,5 +1,5 @@
-const expect = require('expect');
-const dig = require('./dig.js');
+const expect = require("expect");
+const dig = require("./dig.js");
 
 const data = {
   level1:{
@@ -11,22 +11,22 @@ const data = {
   }
 };
 
-test('dig is a Function', () => {
+test("dig is a Function", () => {
   expect(dig).toBeInstanceOf(Function);
 });
 
-test('Dig target success', () => {
-  expect(dig(data, 'level3')).toEqual('some data');
+test("Dig target success", () => {
+  expect(dig(data, "level3")).toEqual("some data");
 });
 
-test('Dig target with falsey value', () => {
-  expect(dig(data, 'level3f')).toEqual(false);
+test("Dig target with falsey value", () => {
+  expect(dig(data, "level3f")).toEqual(false);
 });
 
-test('Dig target with array', () => {
-  expect(dig(data, 'level3a')).toEqual([1,2,3,4]);
+test("Dig target with array", () => {
+  expect(dig(data, "level3a")).toEqual([1,2,3,4]);
 });
 
-test('Unknown target return undefined', () => {
-  expect(dig(data, 'level4')).toEqual(undefined);
+test("Unknown target return undefined", () => {
+  expect(dig(data, "level4")).toEqual(undefined);
 });
