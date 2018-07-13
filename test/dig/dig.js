@@ -5,11 +5,11 @@ const dig = (obj, target) =>
         .values(obj)
         .reduce((acc, val) => {
           if (acc !== undefined) {
-            return acc
-          };
+            return acc;
+          }
           if (typeof val === "object") {
-            return dig(val, target)
-          };
+            return dig(val, target);
+          }
         }, undefined);
 
 module.exports = dig;
