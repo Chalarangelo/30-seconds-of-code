@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewbox="0 0 512 512">
+  <defs>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:600);
+    </style>
+  </defs>
+  <ellipse id="yellow-bg" cx="256" cy="256" fill="#f7df1e" stroke-linecap="round" rx="224" ry="224"/>
+  <path id="left-outline" fill="none" stroke="#060606" stroke-linecap="round" stroke-width="15" d="M107.75 427.164c-46.086-41.619-75.262-102.447-76.632-170.59-.298-19.408 1.73-38.295 5.816-56.375"/>
+  <path id="right-outline" fill="none" stroke="#060606" stroke-linecap="round" stroke-width="13.803" d="M211.607 35.363A224.31 224.31 0 0 1 256 30.95c123.712 0 224 100.632 224 224.768 0 124.135-100.288 224.767-224 224.767-16.58 0-32.74-1.807-48.293-5.237"/>
+  <path id="left-detail" fill="none" stroke="#060606" stroke-linecap="round" stroke-width="14" d="M76.974 122.656a83.03 83.03 0 0 1 6.014-8.151"/>
+  <path id="right-line" fill="none" stroke="#060606" stroke-linecap="round" stroke-width="10" d="M32 256h20"/>
+  <path id="left-line" fill="none" stroke="#060606" stroke-linecap="round" stroke-width="10" d="M460 256h20"/>
+  <path id="top-line" fill="none" stroke="#060606" stroke-linecap="round" stroke-width="10" d="M256 32v20"/>
+  <path id="bottom-line" fill="none" stroke="#060606" stroke-linecap="round" stroke-width="10" d="M256 460v20"/>
+  <path id="right-bottom-line" fill="none" stroke="#060606" stroke-linecap="round" stroke-width="10" d="M72 384l12-10"/>
+  <path id="left-mid-bt-line" fill="none" stroke="#060606" stroke-linecap="round" stroke-width="10" d="M440 384l-12-10"/>
+  <path id="left-mid-line" fill="none" stroke="#060606" stroke-linecap="round" stroke-width="10" d="M430 118l-12 10"/>
+  <path id="top-left-line" fill="none" stroke="#060606" stroke-linecap="round" stroke-width="10" d="M350 70l9-14"/>
+  <path id="bottom-left-line" fill="none" stroke="#060606" stroke-linecap="round" stroke-width="10" d="M350 442l9 14"/>
+  <path id="hand" fill="rgba(170,170,170,1)" stroke="#060606" stroke-width="9.584" d="M279.967 249.94c-3.009-14.768-16.44-24.085-30-20.808-13.56 3.276-22.114 17.905-19.106 32.674 3.008 14.769 50.44 120.443 50.57 118.892.068-.81 1.544-115.988-1.464-130.757z"/>
+  <text x="196" y="188" fill="#060606" font-family="Source Sans Pro" font-size="120">
+    JS
+  </text>
+</svg>
