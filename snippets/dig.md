@@ -9,18 +9,16 @@ If found, return the value of `obj[target]`, otherwise use `Object.values(obj)` 
 const dig = (obj, target) =>
   target in obj
     ? obj[target]
-    : Object
-        .values(obj)
-        .reduce((acc, val) => {
-          if (acc !== undefined) return acc;
-          if (typeof val === 'object') return dig(val, target);
-        }, undefined);
+    : Object.values(obj).reduce((acc, val) => {
+        if (acc !== undefined) return acc;
+        if (typeof val === 'object') return dig(val, target);
+      }, undefined);
 ```
 
 ```js
 const data = {
-  level1:{
-    level2:{
+  level1: {
+    level2: {
       level3: 'some data'
     }
   }
