@@ -1,9 +1,9 @@
 ### dig
 
-Return the value in a nested JSON object by the key.
+Returns the target value in a nested JSON object, based on the given key.
 
-Given the key name (or target), it will loop through each key/value in the object and look for object type.
-If value is an object, dig is called recusively until the first matching key/value is found.
+Use the `in` operator to check if `target` exists in `obj`.
+If found, return the value of `obj[target]`, otherwise use `Object.values(obj)` and `Array.reduce()` to recursively call `dig` on each nested object until the first matching key/value pair is found.
 
 ```
 const dig = (obj, target) =>
@@ -21,11 +21,10 @@ const dig = (obj, target) =>
 const data = {
   level1:{
     level2:{
-      level3: "some data"
+      level3: 'some data'
     }
   }
 };
-
-dig(data, 'level3'); // "some data"
+dig(data, 'level3'); // 'some data'
 dig(data, 'level4'); // undefined
 ```
