@@ -1131,6 +1131,26 @@
       }
     },
     {
+      "id": "dig",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "dig.md",
+        "text": "Returns the target value in a nested JSON object, based on the given key.\n\nUse the `in` operator to check if `target` exists in `obj`.\nIf found, return the value of `obj[target]`, otherwise use `Object.values(obj)` and `Array.reduce()` to recursively call `dig` on each nested object until the first matching key/value pair is found.",
+        "codeBlocks": [
+          "const dig = (obj, target) =>\n  target in obj\n    ? obj[target]\n    : Object.values(obj).reduce((acc, val) => {\n        if (acc !== undefined) return acc;\n        if (typeof val === 'object') return dig(val, target);\n      }, undefined);",
+          "const data = {\n  level1: {\n    level2: {\n      level3: 'some data'\n    }\n  }\n};\ndig(data, 'level3'); // 'some data'\ndig(data, 'level4'); // undefined"
+        ],
+        "tags": [
+          "object",
+          "recursion"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "0f53175b7bf367b55e612ccca6061c8e2a3db68af00950af2fda92746055cc05"
+      }
+    },
+    {
       "id": "digitize",
       "type": "snippet",
       "attributes": {
@@ -3232,6 +3252,28 @@
       "meta": {
         "archived": false,
         "hash": "c7f0f9b6b22590a17c41057c56ea5cf14e74dfbbd4fb7e4bc5c08db3760ef76d"
+      }
+    },
+    {
+      "id": "mapString",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "mapString.md",
+        "text": "Creates a new string with the results of calling a provided function on every character in the calling string.\n\nUse `String.split('')` and `Array.map()` to call the provided function, `fn`, for each character in `str`.\nUse `Array.join('')` to recombine the array of characters into a string.\nThe callback function, `fn`, takes three arguments (the current character, the index of the current character and the string `mapString` was called upon).",
+        "codeBlocks": [
+          "const mapString = (str, fn) =>\n  str\n    .split('')\n    .map((c, i) => fn(c, i, str))\n    .join('');",
+          "mapString('lorem ipsum', c => c.toUpperCase()); // 'LOREM IPSUM'"
+        ],
+        "tags": [
+          "string",
+          "array",
+          "function",
+          "utility"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "828991c05b86fc84f46155e1452cada09bd3cb64f734533af7bf4cabe3077aab"
       }
     },
     {
