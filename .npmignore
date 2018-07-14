@@ -10,6 +10,7 @@ CODE_OF_CONDUCT.md
 .codeclimate.yml
 test/*
 static-parts/*
+snippet_data/*
 snippets_archive/*
 scripts/*
 locale/*
