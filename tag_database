@@ -162,6 +162,7 @@ lowercaseKeys:object
 luhnCheck:math,utility
 mapKeys:object,function
 mapObject:array,object,advanced
+mapString:string,array,function,utility
 mapValues:object,function
 mask:string,utility,regexp
 matches:object,type
