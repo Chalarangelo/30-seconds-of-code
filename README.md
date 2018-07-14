@@ -355,6 +355,7 @@ average(1, 2, 3);
 * [`bindAll`](#bindall)
 * [`deepClone`](#deepclone)
 * [`defaults`](#defaults)
+* [`dig`](#dig)
 * [`equals`](#equals-)
 * [`findKey`](#findkey)
 * [`findLastKey`](#findlastkey)
@@ -6362,6 +6363,45 @@ const defaults = (obj, ...defs) => Object.assign({}, obj, ...defs.reverse(), obj
 
 ```js
 defaults({ a: 1 }, { b: 2 }, { b: 6 }, { a: 3 }); // { a: 1, b: 2 }
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### dig
+
+Returns the target value in a nested JSON object, based on the given key.
+
+Use the `in` operator to check if `target` exists in `obj`.
+If found, return the value of `obj[target]`, otherwise use `Object.values(obj)` and `Array.reduce()` to recursively call `dig` on each nested object until the first matching key/value pair is found.
+
+```
+const dig = (obj, target) =>
+  target in obj
+    ? obj[target]
+    : Object
+        .values(obj)
+        .reduce((acc, val) => {
+          if (acc !== undefined) return acc;
+          if (typeof val === 'object') return dig(val, target);
+        }, undefined);
+```
+
+```
+const data = {
+  level1:{
+    level2:{
+      level3: 'some data'
+    }
+  }
+};
+dig(data, 'level3'); // 'some data'
+dig(data, 'level4'); // undefined
+```<details>
+<summary>Examples</summary>
+
 ```
 
 </details>
