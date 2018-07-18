@@ -19,6 +19,6 @@ filterNonUniqueBy(
 		{ id: 1, value: 'd' },
 		{ id: 0, value: 'e' },
 	],
-	(a, b) => a.id != b.id
-); // [{id: 2, value: 'c'}]
+	(a, b) => a.id == b.id
+); // [ { id: 2, value: 'c' } ]
 ```
