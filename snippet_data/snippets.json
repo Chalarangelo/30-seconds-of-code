@@ -1488,6 +1488,26 @@
       }
     },
     {
+      "id": "filterNonUniqueBy",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "filterNonUniqueBy.md",
+        "text": "Filters out the non-unique values in an array, based on a provided comparator function.\n\nUse `Array.filter()` and `Array.every()` for an array containing only the unique values, based on the comparator function, `fn`.\nThe comparator function takes four arguments: the values of the two elements being compared and their indexes.",
+        "codeBlocks": [
+          "const filterNonUniqueBy = (arr, fn) =>\n  arr.filter((v, i) => arr.every((x, j) => (i == j) == fn(v, x, i, j)));",
+          "filterNonUniqueBy(\n  [\n    { id: 0, value: 'a' },\n    { id: 1, value: 'b' },\n    { id: 2, value: 'c' },\n    { id: 1, value: 'd' },\n    { id: 0, value: 'e' }\n  ],\n  (a, b) => a.id == b.id\n); // [ { id: 2, value: 'c' } ]"
+        ],
+        "tags": [
+          "array",
+          "function"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "617e1a689baf11f30c1922cdd94bd7c3b4457aa97c60dcac81b7b2906620cbda"
+      }
+    },
+    {
       "id": "findKey",
       "type": "snippet",
       "attributes": {
@@ -5957,6 +5977,46 @@
       "meta": {
         "archived": false,
         "hash": "e45f1af52564b0b1d91ce8bce53fe98ce888f3c943e1c1828682893393540256"
+      }
+    },
+    {
+      "id": "uniqueElementsBy",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "uniqueElementsBy.md",
+        "text": "Returns all unique values of an array, based on a provided comparator function.\n\nUse `Array.reduce()` and `Array.some()` for an array containing only the first unique occurence of each value, based on the comparator function, `fn`.\nThe comparator function takes two arguments: the values of the two elements being compared.",
+        "codeBlocks": [
+          "const uniqueElementsBy = (arr, fn) =>\n  arr.reduce((acc, v) => {\n    if (!acc.some(x => fn(v, x))) acc.push(v);\n    return acc;\n  }, []);",
+          "uniqueElementsBy(\n  [\n    { id: 0, value: 'a' },\n    { id: 1, value: 'b' },\n    { id: 2, value: 'c' },\n    { id: 1, value: 'd' },\n    { id: 0, value: 'e' }\n  ],\n  (a, b) => a.id == b.id\n); // [ { id: 0, value: 'a' }, { id: 1, value: 'b' }, { id: 2, value: 'c' } ]"
+        ],
+        "tags": [
+          "array",
+          "function"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "8640aeb79ced5defcc89555176a88acd66bca74f4359dc41388b5687f2050015"
+      }
+    },
+    {
+      "id": "uniqueElementsByRight",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "uniqueElementsByRight.md",
+        "text": "Returns all unique values of an array, based on a provided comparator function.\n\nUse `Array.reduce()` and `Array.some()` for an array containing only the last unique occurence of each value, based on the comparator function, `fn`.\nThe comparator function takes two arguments: the values of the two elements being compared.",
+        "codeBlocks": [
+          "const uniqueElementsByRight = (arr, fn) =>\n  arr.reduceRight((acc, v) => {\n    if (!acc.some(x => fn(v, x))) acc.push(v);\n    return acc;\n  }, []);",
+          "uniqueElementsByRight(\n  [\n    { id: 0, value: 'a' },\n    { id: 1, value: 'b' },\n    { id: 2, value: 'c' },\n    { id: 1, value: 'd' },\n    { id: 0, value: 'e' }\n  ],\n  (a, b) => a.id == b.id\n); // [ { id: 0, value: 'e' }, { id: 1, value: 'd' }, { id: 2, value: 'c' } ]"
+        ],
+        "tags": [
+          "array",
+          "function"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "853887ad00b7c39a719c5b7e16dd3464a85f08da43d9d1bd1e7b7ebeaa897c95"
       }
     },
     {
