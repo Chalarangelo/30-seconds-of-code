@@ -73,6 +73,7 @@ extendHex:utility,string
 factorial:math,recursion
 fibonacci:math,array
 filterNonUnique:array
+filterNonUniqueBy:array,function
 findKey:object,function
 findLast:array
 findLastIndex:array,function
@@ -298,6 +299,8 @@ union:array,math
 unionBy:array,function
 unionWith:array,function
 uniqueElements:array
+uniqueElementsBy:array,function
+uniqueElementsByRight:array,function
 untildify:node,string
 unzip:array
 unzipWith:array,function,advanced
