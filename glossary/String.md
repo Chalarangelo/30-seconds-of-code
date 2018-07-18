@@ -1,4 +1,4 @@
 ### String
 
-String is one of the primitive values in JavaScript.
-String is a sequence of characters used to represent text.
+Strings are one of the primitive data types in JavaScript.
+They are sequences of characters and are used to represent text.
