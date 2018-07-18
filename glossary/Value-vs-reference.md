@@ -1,5 +1,5 @@
 ### Value vs reference
 
-When passing by value we pass a copy of actual variables in the function as a parameter.
-When passing by reference we pass a memory address of actual variables in function as a parameter ,therefore any modification on parameters inside the function will reflect in the actual variable.
-In JavaScript primitive values are passed by value while objects are passed by reference.
+When passing a variable by value, a copy of the variable is made, meaning that any changes made to the contents of the variable will not be reflected in the original variable.
+When passing a variable by reference, the memory address of the actual variable is passed to the function or variable, meaning that modifying the variable's contents will be reflected in the original variable.
+In JavaScript primitive data types are passed by value while objects are passed by reference.
