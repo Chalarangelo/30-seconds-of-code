@@ -125,6 +125,7 @@ average(1, 2, 3);
 * [`dropWhile`](#dropwhile)
 * [`everyNth`](#everynth)
 * [`filterNonUnique`](#filternonunique)
+* [`filterNonUniqueBy`](#filternonuniqueby)
 * [`findLast`](#findlast)
 * [`findLastIndex`](#findlastindex)
 * [`flatten`](#flatten)
@@ -185,6 +186,8 @@ average(1, 2, 3);
 * [`unionBy`](#unionby)
 * [`unionWith`](#unionwith)
 * [`uniqueElements`](#uniqueelements)
+* [`uniqueElementsBy`](#uniqueelementsby)
+* [`uniqueElementsByRight`](#uniqueelementsbyright)
 * [`unzip`](#unzip)
 * [`unzipWith`](#unzipwith-)
 * [`without`](#without)
@@ -1261,6 +1264,39 @@ const filterNonUnique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexO
 
 ```js
 filterNonUnique([1, 2, 2, 3, 4, 4, 5]); // [1,3,5]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### filterNonUniqueBy
+
+Filters out the non-unique values in an array, based on a provided comparator function.
+
+Use `Array.filter()` and `Array.every()` for an array containing only the unique values, based on the comparator function, `fn`.
+The comparator function takes four arguments: the values of the two elements being compared and their indexes.
+
+```js
+const filterNonUniqueBy = (arr, fn) =>
+  arr.filter((v, i) => arr.every((x, j) => (i == j) == fn(v, x, i, j)));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+filterNonUniqueBy(
+  [
+    { id: 0, value: 'a' },
+    { id: 1, value: 'b' },
+    { id: 2, value: 'c' },
+    { id: 1, value: 'd' },
+    { id: 0, value: 'e' }
+  ],
+  (a, b) => a.id == b.id
+); // [ { id: 2, value: 'c' } ]
 ```
 
 </details>
@@ -2893,6 +2929,78 @@ const uniqueElements = arr => [...new Set(arr)];
 
 ```js
 uniqueElements([1, 2, 2, 3, 4, 4, 5]); // [1,2,3,4,5]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### uniqueElementsBy
+
+Returns all unique values of an array, based on a provided comparator function.
+
+Use `Array.reduce()` and `Array.some()` for an array containing only the first unique occurence of each value, based on the comparator function, `fn`.
+The comparator function takes two arguments: the values of the two elements being compared.
+
+```js
+const uniqueElementsBy = (arr, fn) =>
+  arr.reduce((acc, v) => {
+    if (!acc.some(x => fn(v, x))) acc.push(v);
+    return acc;
+  }, []);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+uniqueElementsBy(
+  [
+    { id: 0, value: 'a' },
+    { id: 1, value: 'b' },
+    { id: 2, value: 'c' },
+    { id: 1, value: 'd' },
+    { id: 0, value: 'e' }
+  ],
+  (a, b) => a.id == b.id
+); // [ { id: 0, value: 'a' }, { id: 1, value: 'b' }, { id: 2, value: 'c' } ]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### uniqueElementsByRight
+
+Returns all unique values of an array, based on a provided comparator function.
+
+Use `Array.reduce()` and `Array.some()` for an array containing only the last unique occurence of each value, based on the comparator function, `fn`.
+The comparator function takes two arguments: the values of the two elements being compared.
+
+```js
+const uniqueElementsByRight = (arr, fn) =>
+  arr.reduceRight((acc, v) => {
+    if (!acc.some(x => fn(v, x))) acc.push(v);
+    return acc;
+  }, []);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+uniqueElementsByRight(
+  [
+    { id: 0, value: 'a' },
+    { id: 1, value: 'b' },
+    { id: 2, value: 'c' },
+    { id: 1, value: 'd' },
+    { id: 0, value: 'e' }
+  ],
+  (a, b) => a.id == b.id
+); // [ { id: 0, value: 'e' }, { id: 1, value: 'd' }, { id: 2, value: 'c' } ]
 ```
 
 </details>
