@@ -7,7 +7,7 @@ The comparator function takes two arguments: the values of the two elements bein
 
 ```js
 const uniqueElementsByRight = (arr, fn) =>
-	arr.reduce((acc, v) => {
+	arr.reduceRight((acc, v) => {
 		if (!acc.some(x => fn(v, x))) acc.push(v);
 		return acc;
 	}, []);
