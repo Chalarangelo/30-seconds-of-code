@@ -118,6 +118,7 @@ initializeArrayWithRange:array,math
 initializeArrayWithRangeRight:array,math
 initializeArrayWithValues:array,math
 initializeNDArray:array,recursion
+initializeOrderedArray:array
 inRange:math
 insertAfter:browser
 insertBefore:browser
