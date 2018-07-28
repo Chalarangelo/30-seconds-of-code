@@ -4,6 +4,7 @@
 */
 
 const fs = require('fs-extra');
+const chalk = require('chalk');
 const util = require('../util');
 
 const glossaryFiles = util.getFilesInDir('./glossary', false);
