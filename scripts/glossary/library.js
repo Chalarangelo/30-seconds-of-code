@@ -12,11 +12,13 @@ const fileTitles = [];
 
 const getGlossaryTermMarkdownBlock = (fileName) => {
 	let fileContent = fs.readFileSync(fileName, 'utf8');
-	let title = fileContent.match(/###[^\n]*/)[0].replace('### ', '');
-
+	
+	let title = fileContent.match(/###[^\n]*/)[0].replace('### ', '').trim();
+	// let description = fileContent.replace(title, '').trim();
 	fileTitles.push(title);
+
 	return fileContent.trim() + "\n";
-}
+};
 
 const glossaryFilesContentReducer = (accumulator, currentFilename) => {
 	// handle first array item
@@ -24,19 +26,19 @@ const glossaryFilesContentReducer = (accumulator, currentFilename) => {
 		return getGlossaryTermMarkdownBlock(accumulator) + "\n" + getGlossaryTermMarkdownBlock(currentFilename);
 	}
 	return accumulator + "\n" + getGlossaryTermMarkdownBlock(currentFilename);
-}
+};
 
 const getTermLinkMarkdownBlock = (termTitle) => {
 	let anchor = util.getMarkDownAnchor(termTitle);
 	return `* [\`${termTitle}\`](#${anchor})` + "\n";
-}
+};
 
 const glossaryTableOfContentsReducer = (accumulator, currentFile) => {
 	if (accumulator === fileTitles[0]) {
 		return getTermLinkMarkdownBlock(accumulator) + getTermLinkMarkdownBlock(currentFile);
 	}
 	return accumulator + getTermLinkMarkdownBlock(currentFile);
-}
+};
 
 try {
 	const fileContents = glossaryFiles.reduce(glossaryFilesContentReducer);

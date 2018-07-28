@@ -33,7 +33,7 @@ const getFilesInDir = (directoryPath, withPath, exclude = null) => {
     console.log(`${chalk.red('ERROR!')} During snippet loading: ${err}`);
     process.exit(1);
   }
-}
+};
 
 // Synchronously read all snippets and sort them as necessary (case-insensitive)
 const readSnippets = snippetsPath => {
