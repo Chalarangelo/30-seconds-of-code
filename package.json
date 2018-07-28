@@ -23,6 +23,8 @@
   "main": "dist/_30s.js",
   "module": "dist/_30s.esm.js",
   "scripts": {
+    "glossary:librarian": "node ./scripts/glossary/library.js",
+    "glossary:keymaker": "node ./scripts/glossary/keyword.js",
     "builder": "node ./scripts/build.js",
     "linter": "node ./scripts/lint.js",
     "tagger": "node ./scripts/tag.js",
