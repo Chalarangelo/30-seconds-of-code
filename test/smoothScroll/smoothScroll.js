@@ -1,5 +1,6 @@
 const smoothScroll = element =>
-document.querySelector(element).scrollIntoView({
-behavior: 'smooth'
-});
+  document.querySelector(element).scrollIntoView({
+    behavior: 'smooth'
+  });
+
 module.exports = smoothScroll;

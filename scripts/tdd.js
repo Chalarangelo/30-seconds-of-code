@@ -22,8 +22,8 @@ const snippetFiles = [];
 
 const snippetFilesActive = fs.readdirSync(SNIPPETS_ACTIVE, 'utf8').map(fileName => fileName.slice(0, -3));
 const snippetFilesArchive = fs.readdirSync(SNIPPETS_ARCHIVE, 'utf8')
-                              .filter(fileName => !fileName.includes('README')) // -> Filters out main README.md file in Archieve which isn't a snippet
-                              .map(fileName => fileName.slice(0, -3));
+  .filter(fileName => !fileName.includes('README')) // -> Filters out main README.md file in Archieve which isn't a snippet
+  .map(fileName => fileName.slice(0, -3));
 
 snippetFiles.push(...snippetFilesActive);
 snippetFiles.push(...snippetFilesArchive);
@@ -45,19 +45,19 @@ snippetFiles
     const fileCode = fileData.slice(fileData.search(/```\s*js/i), fileData.lastIndexOf('```') + 3);
     // Split code based on code markers
     const blockMarkers = fileCode
-                            .split('\n')
-                            .map((line, lineIndex) => (line.slice(0, 3) === '```' ? lineIndex : '//CLEAR//'))
-                            .filter(x => !(x === '//CLEAR//'));
+      .split('\n')
+      .map((line, lineIndex) => (line.slice(0, 3) === '```' ? lineIndex : '//CLEAR//'))
+      .filter(x => !(x === '//CLEAR//'));
     // Grab snippet function based on code markers
     const fileFunction = fileCode
-                            .split('\n')
-                            .map(line => line.trim())
-                            .filter((_, i) => blockMarkers[0] < i && i < blockMarkers[1]);
+      .split('\n')
+      .map(line => line)
+      .filter((_, i) => blockMarkers[0] < i && i < blockMarkers[1]).concat('');
     // Grab snippet example based on code markers
     const fileExample = fileCode
-                            .split('\n')
-                            .map(line => line.trim())
-                            .filter((_, i) => blockMarkers[2] < i && i < blockMarkers[3]);
+      .split('\n')
+      .map(line => line)
+      .filter((_, i) => blockMarkers[2] < i && i < blockMarkers[3]).concat('');
 
     // Export template for snippetName.js
     const exportFile = `${fileFunction.join('\n')}\nmodule.exports = ${fileName};`.trim();
