@@ -3,5 +3,4 @@ const chainAsync = fns => {
   const next = () => fns[curr++](next);
   next();
 };
-
 module.exports = chainAsync;

@@ -6,5 +6,4 @@ const tomorrow = (long = false) => {
   ).padStart(2, '0')}`;
   return !long ? ret : `${ret}T00:00:00`;
 };
-
 module.exports = tomorrow;

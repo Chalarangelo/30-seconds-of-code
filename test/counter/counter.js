@@ -9,5 +9,4 @@ const counter = (selector, start, end, step = 1, duration = 2000) => {
     }, Math.abs(Math.floor(duration / (end - start))));
   return timer;
 };
-
 module.exports = counter;

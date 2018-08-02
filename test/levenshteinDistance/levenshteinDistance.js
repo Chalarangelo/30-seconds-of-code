@@ -15,5 +15,4 @@ const levenshteinDistance  = (string1, string2) => {
     }
     return matrix[string2.length][string1.length];
 };
-
 module.exports = levenshteinDistance;

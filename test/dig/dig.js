@@ -5,5 +5,4 @@ const dig = (obj, target) =>
         if (acc !== undefined) return acc;
         if (typeof val === 'object') return dig(val, target);
       }, undefined);
-
 module.exports = dig;

@@ -6,5 +6,4 @@ const sdbm = str => {
     0
   );
 };
-
 module.exports = sdbm;

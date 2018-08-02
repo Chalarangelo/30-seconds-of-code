@@ -18,5 +18,4 @@ const throttle = (fn, wait) => {
     }
   };
 };
-
 module.exports = throttle;

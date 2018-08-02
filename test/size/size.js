@@ -6,5 +6,4 @@ const size = val =>
       : typeof val === 'string'
         ? new Blob([val]).size
         : 0;
-
 module.exports = size;

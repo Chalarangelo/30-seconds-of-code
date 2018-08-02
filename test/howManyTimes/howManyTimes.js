@@ -8,5 +8,4 @@ const howManyTimes = (num, divisor) => {
   }
   return i;
 };
-
 module.exports = howManyTimes;

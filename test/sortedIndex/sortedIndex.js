@@ -3,5 +3,4 @@ const sortedIndex = (arr, n) => {
   const index = arr.findIndex(el => (isDescending ? n >= el : n <= el));
   return index === -1 ? arr.length : index;
 };
-
 module.exports = sortedIndex;

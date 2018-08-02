@@ -12,5 +12,4 @@ const createEventHub = () => ({
     if (i > -1) this.hub[event].splice(i, 1);
   }
 });
-
 module.exports = createEventHub;

@@ -4,5 +4,4 @@ const pluralize = (val, word, plural = word + 's') => {
   if (typeof val === 'object') return (num, word) => _pluralize(num, word, val[word]);
   return _pluralize(val, word, plural);
 };
-
 module.exports = pluralize;

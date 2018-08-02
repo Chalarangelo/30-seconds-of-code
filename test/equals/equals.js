@@ -8,5 +8,4 @@ const equals = (a, b) => {
   if (keys.length !== Object.keys(b).length) return false;
   return keys.every(k => equals(a[k], b[k]));
 };
-
 module.exports = equals;

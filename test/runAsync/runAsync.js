@@ -13,5 +13,4 @@ const runAsync = fn => {
     };
   });
 };
-
 module.exports = runAsync;

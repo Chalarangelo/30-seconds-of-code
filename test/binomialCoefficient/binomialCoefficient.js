@@ -8,5 +8,4 @@ const binomialCoefficient = (n, k) => {
   for (let j = 2; j <= k; j++) res *= (n - j + 1) / j;
   return Math.round(res);
 };
-
 module.exports = binomialCoefficient;

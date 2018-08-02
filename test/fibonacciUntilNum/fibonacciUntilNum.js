@@ -5,5 +5,4 @@ const fibonacciUntilNum = num => {
     []
   );
 };
-
 module.exports = fibonacciUntilNum;

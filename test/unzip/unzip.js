@@ -5,5 +5,4 @@ const unzip = arr =>
       length: Math.max(...arr.map(x => x.length))
     }).map(x => [])
   );
-
 module.exports = unzip;

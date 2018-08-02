@@ -4,5 +4,4 @@ const toHash = (object, key) =>
     (acc, data, index) => ((acc[!key ? index : data[key]] = data), acc),
     {}
   );
-
 module.exports = toHash;

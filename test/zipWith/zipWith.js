@@ -5,5 +5,4 @@ const zipWith = (...array) => {
     (_, i) => (fn ? fn(...array.map(a => a[i])) : array.map(a => a[i]))
   );
 };
-
 module.exports = zipWith;

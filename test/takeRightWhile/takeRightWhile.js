@@ -3,5 +3,4 @@ const takeRightWhile = (arr, func) => {
     if (func(arr[i])) return arr.reverse().slice(arr.length - i, arr.length);
   return arr;
 };
-
 module.exports = takeRightWhile;

@@ -3,5 +3,4 @@ const groupBy = (arr, fn) =>
     acc[val] = (acc[val] || []).concat(arr[i]);
     return acc;
   }, {});
-
 module.exports = groupBy;
