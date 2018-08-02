@@ -273,32 +273,32 @@ try {
     }, {});
 
   for (let snippet of Object.entries(filteredBeginnerSnippets))
-        beginnerOutput +=
-        '<div class="row">' +
-        '<div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">' +
-          '<div class="card fluid">' +
-          md
-            .render(`\n${snippets[snippet[0]]}`)
-            .replace(/<h3/g, `<h3 id="${snippet[0].toLowerCase()}" class="section double-padded"`)
-            .replace(/<\/h3>/g, `${snippet[1].includes('advanced') ? '<mark class="tag">advanced</mark>' : ''}</h3>`)
-            .replace(/<\/h3>/g, '</h3><div class="section double-padded">')
-            .replace(/<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm, (match, p1) => `<pre class="language-js">${Prism.highlight(unescapeHTML(p1), Prism.languages.javascript)}</pre>`)
-            .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
-          '<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button>' +
-          '</div></div></div></div>';
+    beginnerOutput +=
+    '<div class="row">' +
+    '<div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">' +
+      '<div class="card fluid">' +
+      md
+        .render(`\n${snippets[snippet[0]]}`)
+        .replace(/<h3/g, `<h3 id="${snippet[0].toLowerCase()}" class="section double-padded"`)
+        .replace(/<\/h3>/g, `${snippet[1].includes('advanced') ? '<mark class="tag">advanced</mark>' : ''}</h3>`)
+        .replace(/<\/h3>/g, '</h3><div class="section double-padded">')
+        .replace(/<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm, (match, p1) => `<pre class="language-js">${Prism.highlight(unescapeHTML(p1), Prism.languages.javascript)}</pre>`)
+        .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
+      '<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button>' +
+      '</div></div></div></div>';
 
-        // Optimize punctuation nodes
-        beginnerOutput = util.optimizeNodes(beginnerOutput, /<span class="token punctuation">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token punctuation">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token punctuation">${p1}${p2}${p3}</span>`);
-        // Optimize operator nodes
-        beginnerOutput = util.optimizeNodes(beginnerOutput, /<span class="token operator">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token operator">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token operator">${p1}${p2}${p3}</span>`);
-        // Optimize keyword nodes
-        beginnerOutput = util.optimizeNodes(beginnerOutput, /<span class="token keyword">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token keyword">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token keyword">${p1}${p2}${p3}</span>`);
+    // Optimize punctuation nodes
+    beginnerOutput = util.optimizeNodes(beginnerOutput, /<span class="token punctuation">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token punctuation">([^\0]*?)<\/span>/gm, (match, p1, p2, p3) => `<span class="token punctuation">${p1}${p2}${p3}</span>`);
+    // Optimize operator nodes
+    beginnerOutput = util.optimizeNodes(beginnerOutput, /<span class="token operator">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token operator">([^\0]*?)<\/span>/gm, (match, p1, p2, p3) => `<span class="token operator">${p1}${p2}${p3}</span>`);
+    // Optimize keyword nodes
+    beginnerOutput = util.optimizeNodes(beginnerOutput, /<span class="token keyword">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token keyword">([^\0]*?)<\/span>/gm, (match, p1, p2, p3) => `<span class="token keyword">${p1}${p2}${p3}</span>`);
 
 
   beginnerOutput += `${beginnerEndPart}`;
 
   // Generate and minify 'beginner.html' file
-  const minifiedBeginnerOutput =  minify(beginnerOutput, {
+  const minifiedBeginnerOutput = minify(beginnerOutput, {
     collapseBooleanAttributes: true,
     collapseWhitespace: true,
     decodeEntities: false,
@@ -339,48 +339,45 @@ try {
 
   // Generate archived snippets from md files
   for (let snippet of Object.entries(filteredArchivedSnippets))
-        archivedOutput +=
-        '<div class="row">' +
-        '<div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">' +
-          '<div class="card fluid">' +
-          md
-            .render(`\n${filteredArchivedSnippets[snippet[0]]}`)
-            .replace(/<h3/g, `<h3 id="${snippet[0].toLowerCase()}" class="section double-padded"`)
-            .replace(/<\/h3>/g, '</h3><div class="section double-padded">')
-            .replace(/<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm, (match, p1) => `<pre class="language-js">${Prism.highlight(unescapeHTML(p1), Prism.languages.javascript)}</pre>`)
-            .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
-          '<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button>' +
-          '</div></div></div></div>';
+    archivedOutput +=
+    '<div class="row">' +
+    '<div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">' +
+      '<div class="card fluid">' +
+      md
+        .render(`\n${filteredArchivedSnippets[snippet[0]]}`)
+        .replace(/<h3/g, `<h3 id="${snippet[0].toLowerCase()}" class="section double-padded"`)
+        .replace(/<\/h3>/g, '</h3><div class="section double-padded">')
+        .replace(/<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm, (match, p1) => `<pre class="language-js">${Prism.highlight(unescapeHTML(p1), Prism.languages.javascript)}</pre>`)
+        .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
+      '<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button>' +
+      '</div></div></div></div>';
 
-        // Optimize punctuation nodes
-        archivedOutput = util.optimizeNodes(archivedOutput, /<span class="token punctuation">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token punctuation">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token punctuation">${p1}${p2}${p3}</span>`);
-        // Optimize operator nodes
-        archivedOutput = util.optimizeNodes(archivedOutput, /<span class="token operator">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token operator">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token operator">${p1}${p2}${p3}</span>`);
-        // Optimize keyword nodes
-        archivedOutput = util.optimizeNodes(archivedOutput, /<span class="token keyword">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token keyword">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token keyword">${p1}${p2}${p3}</span>`);
+    // Optimize punctuation nodes
+    archivedOutput = util.optimizeNodes(archivedOutput, /<span class="token punctuation">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token punctuation">([^\0]*?)<\/span>/gm, (match, p1, p2, p3) => `<span class="token punctuation">${p1}${p2}${p3}</span>`);
+    // Optimize operator nodes
+    archivedOutput = util.optimizeNodes(archivedOutput, /<span class="token operator">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token operator">([^\0]*?)<\/span>/gm, (match, p1, p2, p3) => `<span class="token operator">${p1}${p2}${p3}</span>`);
+    // Optimize keyword nodes
+    archivedOutput = util.optimizeNodes(archivedOutput, /<span class="token keyword">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token keyword">([^\0]*?)<\/span>/gm, (match, p1, p2, p3) => `<span class="token keyword">${p1}${p2}${p3}</span>`);
 
-
-        archivedOutput += `${archivedEndPart}`;
-
-
+    archivedOutput += `${archivedEndPart}`;
 
   // Generate and minify 'archive.html' file
-  const minifiedArchivedOutput =  minify(archivedOutput, {
-      collapseBooleanAttributes: true,
-      collapseWhitespace: true,
-      decodeEntities: false,
-      minifyCSS: true,
-      minifyJS: true,
-      keepClosingSlash: true,
-      processConditionalComments: true,
-      removeAttributeQuotes: false,
-      removeComments: true,
-      removeEmptyAttributes: false,
-      removeOptionalTags: false,
-      removeScriptTypeAttributes: false,
-      removeStyleLinkTypeAttributes: false,
-      trimCustomFragments: true
-    });
+  const minifiedArchivedOutput = minify(archivedOutput, {
+    collapseBooleanAttributes: true,
+    collapseWhitespace: true,
+    decodeEntities: false,
+    minifyCSS: true,
+    minifyJS: true,
+    keepClosingSlash: true,
+    processConditionalComments: true,
+    removeAttributeQuotes: false,
+    removeComments: true,
+    removeEmptyAttributes: false,
+    removeOptionalTags: false,
+    removeScriptTypeAttributes: false,
+    removeStyleLinkTypeAttributes: false,
+    trimCustomFragments: true
+  });
 
   fs.writeFileSync(path.join(docsPath, 'archive.html'), minifiedArchivedOutput);
   console.log(`${chalk.green('SUCCESS!')} archive.html file generated!`);

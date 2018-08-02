@@ -23,7 +23,7 @@ locales.forEach(locale => {
   Object.keys(snippets).forEach(snippet => {
     const snippetName = snippet.split('.')[0];
     const snippetHash = util.hashData(snippets[snippet]);
-    if(locData.hasOwnProperty(snippetName)){
+    if(locData.hasOwnProperty(snippetName)) {
       if (locData[snippetName].hash !== snippetHash) {
         existingData = existingData.indexOf(' => '+snippetHash) !== -1 ? existingData : existingData.replace(locData[snippetName].hash, locData[snippetName].hash+' => '+snippetHash);
         hashChanges.push({snippetName, oldHash: locData[snippetName].hash.split(' => ')[0], newHash: snippetHash});

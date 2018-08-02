@@ -48,7 +48,7 @@ let snippetArchiveTokens = {data: snippetsArchiveData.data.map(snippet => {
     meta: {
       hash: snippet.meta.hash
     }
-  }
+  };
 }), meta: { specification: "http://jsonapi.org/format/"}};
 // Write data
 fs.writeFileSync(path.join(OUTPUT_PATH, 'snippetAnalytics.json'), JSON.stringify(snippetTokens, null, 2));

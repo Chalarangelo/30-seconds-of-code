@@ -2,11 +2,11 @@ const expect = require("expect");
 const dig = require("./dig.js");
 
 const data = {
-  level1:{
-    level2:{
+  level1: {
+    level2: {
       level3: "some data",
       level3f: false,
-      level3a: [1,2,3,4]
+      level3a: [1, 2, 3, 4]
     }
   }
 };

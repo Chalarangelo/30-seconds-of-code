@@ -12,8 +12,8 @@ test('When n is odd, times by 3 and add 1', () => {
 });
 test('Eventually reaches 1', () => {
   let n = 9;
-  while(true){
-    if (n === 1){
+  while(true) {
+    if (n === 1) {
       expect(n).toBe(1);
       break;
     }
