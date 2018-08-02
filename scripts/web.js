@@ -114,7 +114,7 @@ if(!util.isTravisCI() || (util.isTravisCI() && (process.env['TRAVIS_EVENT_TYPE']
             md
               .render(`\n${snippets[snippet[0]]}`)
               .replace(/<h3/g, `<h3 id="${snippet[0].toLowerCase()}" class="section double-padded"`)
-              .replace(/<\/h3>/g, `${snippet[1].includes('advanced')?'<mark class="tag">advanced</mark>':''}</h3>`)
+              .replace(/<\/h3>/g, `${snippet[1].includes('advanced') ? '<mark class="tag">advanced</mark>' : ''}</h3>`)
               .replace(/<\/h3>/g, '</h3><div class="section double-padded">')
               .replace(/<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm, (match, p1) => `<pre class="language-js">${Prism.highlight(unescapeHTML(p1), Prism.languages.javascript)}</pre>`)
               .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
