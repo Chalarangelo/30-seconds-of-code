@@ -40,10 +40,10 @@ let snippetArchiveTokens = {data: snippetsArchiveData.data.map(snippet => {
     attributes: {
       codeLength: snippet.attributes.codeBlocks[0].trim().length,
       tokenCount: tokens.length,
-      functionCount: tokens.filter(t => t.type == 'function').length,
-      operatorCount: tokens.filter(t => t.type == 'operator').length,
-      keywordCount: tokens.filter(t => t.type == 'keyword').length,
-      distinctFunctionCount: [...new Set(tokens.filter(t => t.type == 'function').map(t => t.content))].length
+      functionCount: tokens.filter(t => t.type === 'function').length,
+      operatorCount: tokens.filter(t => t.type === 'operator').length,
+      keywordCount: tokens.filter(t => t.type === 'keyword').length,
+      distinctFunctionCount: [...new Set(tokens.filter(t => t.type === 'function').map(t => t.content))].length
     },
     meta: {
       hash: snippet.meta.hash
