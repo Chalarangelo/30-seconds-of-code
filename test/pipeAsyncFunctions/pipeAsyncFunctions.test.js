@@ -9,7 +9,7 @@ test('pipeAsyncFunctions result should be 15', () => {
     (x) => x + 1,
     (x) => new Promise((resolve) => setTimeout(() => resolve(x + 2), 0)),
     (x) => x + 3,
-    async (x) => await x + 4,
+    async(x) => await x + 4,
   )
   (5)).resolves.toBe(15); 
 });

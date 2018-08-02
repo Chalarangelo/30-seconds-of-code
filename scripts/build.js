@@ -15,7 +15,7 @@ if (util.isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_M
   console.log(`${chalk.green('NOBUILD')} README build terminated, parent commit is a Travis build!`);
   process.exit(0);
 }
-if (util.isTravisCI() && (process.env['TRAVIS_EVENT_TYPE'] === 'cron' || process.env['TRAVIS_EVENT_TYPE'] === 'api')){
+if (util.isTravisCI() && (process.env['TRAVIS_EVENT_TYPE'] === 'cron' || process.env['TRAVIS_EVENT_TYPE'] === 'api')) {
   console.log(`${chalk.green('ARCHIVE')} Cron job or custom build, building archive README!`);
   console.time('Builder');
   let snippets = {};
@@ -46,7 +46,7 @@ These snippets, while useful and interesting, didn\'t quite make it into the rep
     for(const snippet of Object.entries(snippets))
       output += `* [\`${snippet[0].slice(0,-3)}\`](#${snippet[0].toLowerCase().slice(0,-3)})\n`;
     output += '\n---\n';
-    for (const snippet of Object.entries(snippets)){
+    for (const snippet of Object.entries(snippets)) {
       let data = snippet[1];
       data =
         data.slice(0, data.lastIndexOf('```js')) +
@@ -140,7 +140,7 @@ try {
     for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
       let data = snippets[taggedSnippet[0] + '.md'];
       // Add advanced tag
-      if(taggedSnippet[1].includes('advanced')){
+      if(taggedSnippet[1].includes('advanced')) {
         data = data.split(/\r?\n/);
         data[0] = data[0] +' ![advanced](/advanced.svg)';
         data = data.join('\n');

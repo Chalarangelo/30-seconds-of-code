@@ -13,7 +13,7 @@ try {
 	const output = glossaryFiles.reduce(
 		(accumulator, currentFilename) => 
 			accumulator.toLowerCase().replace(/\.[^/.]+$/, "") + "\n" + 
-			currentFilename.toLowerCase().replace(/\.[^/.]+$/, ""));
+			currentFilename.toLowerCase().replace(/\.[^/.]+$/, ""))+'\n';
   fs.writeFileSync('glossary/keyword_database', output);	
 } catch (err) {
 	console.log(`${chalk.red('ERROR!')} During glossary keyword_database generation: ${err}`);
