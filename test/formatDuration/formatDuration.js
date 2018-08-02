@@ -12,5 +12,4 @@ const formatDuration = ms => {
     .map(val => val[1] + ' ' + (val[1] !== 1 ? val[0] + 's' : val[0]))
     .join(', ');
 };
-
 module.exports = formatDuration;

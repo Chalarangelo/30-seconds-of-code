@@ -7,5 +7,4 @@ const pullAtIndex = (arr, pullArr) => {
   pulled.forEach(v => arr.push(v));
   return removed;
 };
-
 module.exports = pullAtIndex;

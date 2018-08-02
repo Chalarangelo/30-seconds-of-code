@@ -10,5 +10,4 @@ const unescapeHTML = str =>
         '&quot;': '"'
       }[tag] || tag)
   );
-
 module.exports = unescapeHTML;

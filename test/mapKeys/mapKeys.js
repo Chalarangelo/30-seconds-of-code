@@ -3,5 +3,4 @@ const mapKeys = (obj, fn) =>
     acc[fn(obj[k], k, obj)] = obj[k];
     return acc;
   }, {});
-
 module.exports = mapKeys;

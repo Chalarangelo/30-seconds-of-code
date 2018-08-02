@@ -3,5 +3,4 @@ const createElement = str => {
   el.innerHTML = str;
   return el.firstElementChild;
 };
-
 module.exports = createElement;

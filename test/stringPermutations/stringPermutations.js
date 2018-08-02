@@ -8,5 +8,4 @@ const stringPermutations = str => {
       []
     );
 };
-
 module.exports = stringPermutations;

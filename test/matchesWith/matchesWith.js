@@ -5,5 +5,4 @@ const matchesWith = (obj, source, fn) =>
         ? fn(obj[key], source[key], key, obj, source)
         : obj[key] == source[key]
   );
-
 module.exports = matchesWith;

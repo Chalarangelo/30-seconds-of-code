@@ -5,5 +5,4 @@ const rearg = (fn, indexes) => (...args) =>
       Array.from({ length: indexes.length })
     )
   );
-
 module.exports = rearg;

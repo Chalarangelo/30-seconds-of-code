@@ -8,5 +8,4 @@ const JSONtoCSV = (arr, columns, delimiter = ',') =>
       )
     )
   ].join('\n');
-
 module.exports = JSONtoCSV;

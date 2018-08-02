@@ -7,5 +7,4 @@ const sortedLastIndexBy = (arr, n, fn) => {
     .findIndex(el => (isDescending ? val <= el : val >= el));
   return index === -1 ? 0 : arr.length - index;
 };
-
 module.exports = sortedLastIndexBy;

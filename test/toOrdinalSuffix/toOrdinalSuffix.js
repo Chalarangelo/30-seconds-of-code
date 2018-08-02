@@ -8,5 +8,4 @@ const toOrdinalSuffix = num => {
     ? int + ordinals[digits[0] - 1]
     : int + ordinals[3];
 };
-
 module.exports = toOrdinalSuffix;

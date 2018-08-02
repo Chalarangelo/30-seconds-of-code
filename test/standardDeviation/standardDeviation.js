@@ -5,5 +5,4 @@ const standardDeviation = (arr, usePopulation = false) => {
       (arr.length - (usePopulation ? 0 : 1))
   );
 };
-
 module.exports = standardDeviation;

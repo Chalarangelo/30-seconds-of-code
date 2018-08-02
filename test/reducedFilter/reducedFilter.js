@@ -5,5 +5,4 @@ const reducedFilter = (data, keys, fn) =>
       return acc;
     }, {})
   );
-
 module.exports = reducedFilter;

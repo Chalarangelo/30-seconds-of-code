@@ -3,5 +3,4 @@ const forEachRight = (arr, callback) =>
     .slice(0)
     .reverse()
     .forEach(callback);
-
 module.exports = forEachRight;

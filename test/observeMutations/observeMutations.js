@@ -16,5 +16,4 @@ const observeMutations = (element, callback, options) => {
   );
   return observer;
 };
-
 module.exports = observeMutations;

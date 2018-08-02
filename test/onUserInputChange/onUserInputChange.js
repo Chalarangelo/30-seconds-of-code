@@ -12,5 +12,4 @@ const onUserInputChange = callback => {
     (type = 'touch'), callback(type), document.addEventListener('mousemove', mousemoveHandler);
   });
 };
-
 module.exports = onUserInputChange;

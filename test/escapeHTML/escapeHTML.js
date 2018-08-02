@@ -10,5 +10,4 @@ const escapeHTML = str =>
         '"': '&quot;'
       }[tag] || tag)
   );
-
 module.exports = escapeHTML;

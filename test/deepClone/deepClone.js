@@ -5,5 +5,4 @@ const deepClone = obj => {
   );
   return Array.isArray(obj) ? (clone.length = obj.length) && Array.from(clone) : clone;
 };
-
 module.exports = deepClone;

@@ -6,5 +6,4 @@ const prefix = prop => {
   );
   return i !== -1 ? (i === 0 ? prop : prefixes[i] + capitalizedProp) : null;
 };
-
 module.exports = prefix;

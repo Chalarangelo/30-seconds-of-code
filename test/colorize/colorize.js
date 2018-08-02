@@ -16,5 +16,4 @@ const colorize = (...args) => ({
   bgCyan: `\x1b[46m${args.join(' ')}\x1b[0m`,
   bgWhite: `\x1b[47m${args.join(' ')}\x1b[0m`
 });
-
 module.exports = colorize;

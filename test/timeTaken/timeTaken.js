@@ -4,5 +4,4 @@ const timeTaken = callback => {
   console.timeEnd('timeTaken');
   return r;
 };
-
 module.exports = timeTaken;

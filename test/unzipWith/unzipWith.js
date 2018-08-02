@@ -7,5 +7,4 @@ const unzipWith = (arr, fn) =>
       }).map(x => [])
     )
     .map(val => fn(...val));
-
 module.exports = unzipWith;

@@ -17,5 +17,4 @@ const factors = (num, primes = false) => {
     }, []);
   return primes ? array.filter(isPrime) : array;
 };
-
 module.exports = factors;

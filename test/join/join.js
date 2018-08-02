@@ -8,5 +8,4 @@ const join = (arr, separator = ',', end = separator) =>
           : acc + val + separator,
     ''
   );
-
 module.exports = join;

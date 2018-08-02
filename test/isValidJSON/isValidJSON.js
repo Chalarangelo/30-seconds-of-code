@@ -6,5 +6,4 @@ const isValidJSON = obj => {
     return false;
   }
 };
-
 module.exports = isValidJSON;

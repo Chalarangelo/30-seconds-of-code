@@ -15,5 +15,4 @@ const elo = ([...ratings], kFactor = 32, selfRating) => {
   }
   return ratings;
 };
-
 module.exports = elo;

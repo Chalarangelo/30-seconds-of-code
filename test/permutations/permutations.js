@@ -8,5 +8,4 @@ const permutations = arr => {
     []
   );
 };
-
 module.exports = permutations;

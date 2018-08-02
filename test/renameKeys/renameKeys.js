@@ -6,5 +6,4 @@ const renameKeys = (keysMap, obj) =>
     }),
     {}
   );
-
 module.exports = renameKeys;

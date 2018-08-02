@@ -7,5 +7,4 @@ const merge = (...objs) =>
       }, {}),
     {}
   );
-
 module.exports = merge;

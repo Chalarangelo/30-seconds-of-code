@@ -3,5 +3,4 @@ const uniqueElementsBy = (arr, fn) =>
     if (!acc.some(x => fn(v, x))) acc.push(v);
     return acc;
   }, []);
-
 module.exports = uniqueElementsBy;

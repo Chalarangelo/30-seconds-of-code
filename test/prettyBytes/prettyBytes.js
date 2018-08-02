@@ -5,5 +5,4 @@ const prettyBytes = (num, precision = 3, addSpace = true) => {
   const n = Number(((num < 0 ? -num : num) / 1000 ** exponent).toPrecision(precision));
   return (num < 0 ? '-' : '') + n + (addSpace ? ' ' : '') + UNITS[exponent];
 };
-
 module.exports = prettyBytes;

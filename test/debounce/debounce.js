@@ -5,5 +5,4 @@ const debounce = (fn, ms = 0) => {
     timeoutId = setTimeout(() => fn.apply(this, args), ms);
   };
 };
-
 module.exports = debounce;

@@ -3,5 +3,4 @@ const mapValues = (obj, fn) =>
     acc[k] = fn(obj[k], k, obj);
     return acc;
   }, {});
-
 module.exports = mapValues;

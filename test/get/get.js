@@ -6,5 +6,4 @@ const get = (from, ...selectors) =>
       .filter(t => t !== '')
       .reduce((prev, cur) => prev && prev[cur], from)
   );
-
 module.exports = get;

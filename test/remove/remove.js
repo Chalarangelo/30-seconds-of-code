@@ -5,5 +5,4 @@ const remove = (arr, func) =>
         return acc.concat(val);
       }, [])
     : [];
-
 module.exports = remove;

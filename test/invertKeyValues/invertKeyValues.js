@@ -5,5 +5,4 @@ const invertKeyValues = (obj, fn) =>
     acc[val].push(key);
     return acc;
   }, {});
-
 module.exports = invertKeyValues;

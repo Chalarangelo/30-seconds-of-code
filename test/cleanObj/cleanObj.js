@@ -8,5 +8,4 @@ const cleanObj = (obj, keysToKeep = [], childIndicator) => {
   });
   return obj;
 };
-
 module.exports = cleanObj;

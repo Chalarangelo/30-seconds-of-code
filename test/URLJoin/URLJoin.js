@@ -7,5 +7,4 @@ const URLJoin = (...args) =>
     .replace(/\/(\?|&|#[^!])/g, '$1')
     .replace(/\?/g, '&')
     .replace('&', '?');
-
 module.exports = URLJoin;

@@ -18,5 +18,4 @@ const recordAnimationFrames = (callback, autoStart = true) => {
   if (autoStart) start();
   return { start, stop };
 };
-
 module.exports = recordAnimationFrames;

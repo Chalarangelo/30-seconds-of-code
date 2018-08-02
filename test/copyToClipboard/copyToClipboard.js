@@ -15,5 +15,4 @@ const copyToClipboard = str => {
     document.getSelection().addRange(selected);
   }
 };
-
 module.exports = copyToClipboard;

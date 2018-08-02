@@ -5,5 +5,4 @@ const primes = num => {
   numsTillSqroot.forEach(x => (arr = arr.filter(y => y % x !== 0 || y === x)));
   return arr;
 };
-
 module.exports = primes;

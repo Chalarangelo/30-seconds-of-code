@@ -6,5 +6,4 @@ const isSorted = arr => {
     else if ((val - arr[i + 1]) * direction > 0) return 0;
   }
 };
-
 module.exports = isSorted;
