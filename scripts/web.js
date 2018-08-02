@@ -148,7 +148,7 @@ if(!util.isTravisCI() || (util.isTravisCI() && (process.env['TRAVIS_EVENT_TYPE']
           let commits = resCommits.headers.link.split('&').slice(-1)[0].replace(/[^\d]/g, ''),
             contribs = resContributors.headers.link.split('&').slice(-1)[0].replace(/[^\d]/g, ''),
             stars = resStars.headers.link.split('&').slice(-1)[0].replace(/[^\d]/g, '');
-          indexStaticFile = indexStaticFile.replace(/\$snippet-count/g, Object.keys(snippets).length).replace(/\$commit-count/g, commits).replace(/\$contrib-count/g,contribs).replace(/\$star-count/g, stars);
+          indexStaticFile = indexStaticFile.replace(/\$snippet-count/g, Object.keys(snippets).length).replace(/\$commit-count/g, commits).replace(/\$contrib-count/g, contribs).replace(/\$star-count/g, stars);
           indexStaticFile = minify(indexStaticFile, {
             collapseBooleanAttributes: true,
             collapseWhitespace: true,
@@ -186,12 +186,12 @@ try {
   for (let tag of [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
     .filter(v => v)
     .sort((a, b) => util.capitalize(a, true) === 'Uncategorized' ? 1 : util.capitalize(b, true) === 'Uncategorized' ? -1 : a.localeCompare(b))) {
-      output += '<h3>' +
-      md
-        .render(`${util.capitalize(tag, true)}\n`)
-        .replace(/<p>/g, '')
-        .replace(/<\/p>/g, '') +
-      '</h3>';
+    output += '<h3>' +
+    md
+      .render(`${util.capitalize(tag, true)}\n`)
+      .replace(/<p>/g, '')
+      .replace(/<\/p>/g, '') +
+    '</h3>';
     for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
       output += md
         .render(`[${taggedSnippet[0]}](./${tag}#${taggedSnippet[0].toLowerCase()})\n`)
@@ -206,7 +206,7 @@ try {
   for (let tag of [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
     .filter(v => v)
     .sort((a, b) => util.capitalize(a, true) === 'Uncategorized' ? 1 : util.capitalize(b, true) === 'Uncategorized' ? -1 : a.localeCompare(b))) {
-    let localOutput = output.replace(/\$tag/g, util.capitalize(tag)).replace(new RegExp(`./${tag}#`,'g'),'#');
+    let localOutput = output.replace(/\$tag/g, util.capitalize(tag)).replace(new RegExp(`./${tag}#`, 'g'), '#');
     localOutput += md
       .render(`## ${util.capitalize(tag, true)}\n`)
       .replace(/<h2>/g, '<h2 style="text-align:center;">');
@@ -216,21 +216,21 @@ try {
         md
           .render(`\n${snippets[taggedSnippet[0] + '.md']}`)
           .replace(/<h3/g, `<h3 id="${taggedSnippet[0].toLowerCase()}" class="section double-padded"`)
-          .replace(/<\/h3>/g, `${taggedSnippet[1].includes('advanced')?'<mark class="tag">advanced</mark>':''}</h3>`)
+          .replace(/<\/h3>/g, `${taggedSnippet[1].includes('advanced') ? '<mark class="tag">advanced</mark>' : ''}</h3>`)
           .replace(/<\/h3>/g, '</h3><div class="section double-padded">')
           .replace(/<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm, (match, p1) => `<pre class="language-js">${Prism.highlight(unescapeHTML(p1), Prism.languages.javascript)}</pre>`)
           .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
         '<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button>' +
         '</div></div>';
-        // Add the ending static part
-        localOutput += `\n${endPart + '\n'}`;
-        // Optimize punctuation nodes
-        localOutput = util.optimizeNodes(localOutput, /<span class="token punctuation">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token punctuation">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token punctuation">${p1}${p2}${p3}</span>`);
-        // Optimize operator nodes
-        localOutput = util.optimizeNodes(localOutput, /<span class="token operator">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token operator">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token operator">${p1}${p2}${p3}</span>`);
-        // Optimize keyword nodes
-        localOutput = util.optimizeNodes(localOutput, /<span class="token keyword">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token keyword">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token keyword">${p1}${p2}${p3}</span>`);
-        pagesOutput.push({'tag': tag,'content': localOutput});
+    // Add the ending static part
+    localOutput += `\n${endPart + '\n'}`;
+    // Optimize punctuation nodes
+    localOutput = util.optimizeNodes(localOutput, /<span class="token punctuation">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token punctuation">([^\0]*?)<\/span>/gm, (match, p1, p2, p3) => `<span class="token punctuation">${p1}${p2}${p3}</span>`);
+    // Optimize operator nodes
+    localOutput = util.optimizeNodes(localOutput, /<span class="token operator">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token operator">([^\0]*?)<\/span>/gm, (match, p1, p2, p3) => `<span class="token operator">${p1}${p2}${p3}</span>`);
+    // Optimize keyword nodes
+    localOutput = util.optimizeNodes(localOutput, /<span class="token keyword">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token keyword">([^\0]*?)<\/span>/gm, (match, p1, p2, p3) => `<span class="token keyword">${p1}${p2}${p3}</span>`);
+    pagesOutput.push({'tag': tag, 'content': localOutput});
   }
   // Minify output
   pagesOutput.forEach(page => {
