@@ -1,5 +1,5 @@
 /*
-  This is the web builder script that generates the README file.
+  This is the web builder script that generates the web files.
   Run using `npm run webber`.
 */
 // Load modules
