@@ -1280,7 +1280,7 @@ The comparator function takes four arguments: the values of the two elements bei
 
 ```js
 const filterNonUniqueBy = (arr, fn) =>
-  arr.filter((v, i) => arr.every((x, j) => (i == j) == fn(v, x, i, j)));
+  arr.filter((v, i) => arr.every((x, j) => (i === j) === fn(v, x, i, j)));
 ```
 
 <details>
