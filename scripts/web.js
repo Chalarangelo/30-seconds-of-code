@@ -19,7 +19,7 @@ const unescapeHTML = str =>
         '&amp;': '&',
         '&lt;': '<',
         '&gt;': '>',
-        '&#39;': "'",
+        '&#39;': '\'',
         '&quot;': '"'
       }[tag] || tag)
   );
@@ -35,7 +35,7 @@ sass.render(
     outFile: path.join('docs', 'mini.css'),
     outputStyle: 'compressed'
   },
-  function(err, result) {
+  function (err, result) {
     if (!err) {
       fs.writeFile(path.join('docs', 'mini.css'), result.css, function(err2) {
         if (!err2) console.log(`${chalk.green('SUCCESS!')} mini.css file generated!`);
@@ -66,7 +66,7 @@ let snippets = {},
   archivedOutput = '',
 
   indexStaticFile = '',
-  pagesOutput = [];
+  pagesOutput = [],
   tagDbData = {};
 // Start the timer of the script
 console.time('Webber');
@@ -99,56 +99,56 @@ if(!util.isTravisCI() || (util.isTravisCI() && (process.env['TRAVIS_EVENT_TYPE']
   try {
     // Shuffle the array of snippets, pick 3
     let indexDailyPicks = '';
-    let shuffledSnippets = util.shuffle(Object.keys(snippets)).slice(0,3);
-    const dailyPicks =  Object.keys(snippets)
+    let shuffledSnippets = util.shuffle(Object.keys(snippets)).slice(0, 3);
+    const dailyPicks = Object.keys(snippets)
       .filter(key => shuffledSnippets.includes(key))
       .reduce((obj, key) => {
         obj[key] = snippets[key];
-      return obj;
-    }, {});
+        return obj;
+      }, {});
 
     // Generate the html for the picked snippets
     for (let snippet of Object.entries(dailyPicks))
-          indexDailyPicks +=
-          '<div class="card fluid pick">' +
-            md
-              .render(`\n${snippets[snippet[0]]}`)
-              .replace(/<h3/g, `<h3 id="${snippet[0].toLowerCase()}" class="section double-padded"`)
-              .replace(/<\/h3>/g, `${snippet[1].includes('advanced') ? '<mark class="tag">advanced</mark>' : ''}</h3>`)
-              .replace(/<\/h3>/g, '</h3><div class="section double-padded">')
-              .replace(/<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm, (match, p1) => `<pre class="language-js">${Prism.highlight(unescapeHTML(p1), Prism.languages.javascript)}</pre>`)
-              .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
-            '<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button>' +
-            '</div></div>';
+      indexDailyPicks +=
+      '<div class="card fluid pick">' +
+        md
+          .render(`\n${snippets[snippet[0]]}`)
+          .replace(/<h3/g, `<h3 id="${snippet[0].toLowerCase()}" class="section double-padded"`)
+          .replace(/<\/h3>/g, `${snippet[1].includes('advanced') ? '<mark class="tag">advanced</mark>' : ''}</h3>`)
+          .replace(/<\/h3>/g, '</h3><div class="section double-padded">')
+          .replace(/<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm, (match, p1) => `<pre class="language-js">${Prism.highlight(unescapeHTML(p1), Prism.languages.javascript)}</pre>`)
+          .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
+        '<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button>' +
+        '</div></div>';
     // Select the first snippet from today's picks
     indexDailyPicks = indexDailyPicks.replace('card fluid pick', 'card fluid pick selected');
     // Optimize punctuation nodes
-    indexDailyPicks = util.optimizeNodes(indexDailyPicks, /<span class="token punctuation">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token punctuation">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token punctuation">${p1}${p2}${p3}</span>`);
+    indexDailyPicks = util.optimizeNodes(indexDailyPicks, /<span class="token punctuation">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token punctuation">([^\0]*?)<\/span>/gm, (match, p1, p2, p3) => `<span class="token punctuation">${p1}${p2}${p3}</span>`);
     // Optimize operator nodes
-    indexDailyPicks = util.optimizeNodes(indexDailyPicks, /<span class="token operator">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token operator">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token operator">${p1}${p2}${p3}</span>`);
+    indexDailyPicks = util.optimizeNodes(indexDailyPicks, /<span class="token operator">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token operator">([^\0]*?)<\/span>/gm, (match, p1, p2, p3) => `<span class="token operator">${p1}${p2}${p3}</span>`);
     // Optimize keyword nodes
-    indexDailyPicks = util.optimizeNodes(indexDailyPicks, /<span class="token keyword">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token keyword">([^\0]*?)<\/span>/gm, (match, p1, p2, p3)  => `<span class="token keyword">${p1}${p2}${p3}</span>`);
+    indexDailyPicks = util.optimizeNodes(indexDailyPicks, /<span class="token keyword">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token keyword">([^\0]*?)<\/span>/gm, (match, p1, p2, p3) => `<span class="token keyword">${p1}${p2}${p3}</span>`);
     // Put the daily picks into the page
-    indexStaticFile = indexStaticFile.replace('$daily-picks',indexDailyPicks);
+    indexStaticFile = indexStaticFile.replace('$daily-picks', indexDailyPicks);
     // Use the Github API to get the needed data
     const githubApi = 'api.github.com';
     const headers = util.isTravisCI()
-      ? { 'User-Agent' : '30-seconds-of-code', 'Authorization': 'token '+process.env['GH_TOKEN']}
-      : { 'User-Agent' : '30-seconds-of-code'};
+      ? { 'User-Agent': '30-seconds-of-code', 'Authorization': 'token ' + process.env['GH_TOKEN']}
+      : { 'User-Agent': '30-seconds-of-code'};
     // Test the API's rate limit (keep for various reasons)
-    https.get({host: githubApi, path: '/rate_limit?', headers: headers}, res =>{
+    https.get({host: githubApi, path: '/rate_limit?', headers: headers}, res => {
       res.on('data', function (chunk) {
           console.log('Remaining requests: '+JSON.parse(chunk).resources.core.remaining);
       });
     });
     // Send requests and wait for responses, write to the page
-    https.get({host: githubApi, path: '/repos/chalarangelo/30-seconds-of-code/commits?per_page=1', headers: headers}, resCommits =>{
+    https.get({host: githubApi, path: '/repos/chalarangelo/30-seconds-of-code/commits?per_page=1', headers: headers}, resCommits => {
       https.get({host: githubApi, path: '/repos/chalarangelo/30-seconds-of-code/contributors?per_page=1', headers: headers}, resContributors => {
         https.get({host: githubApi, path: '/repos/chalarangelo/30-seconds-of-code/stargazers?per_page=1', headers: headers}, resStars => {
-          let commits = resCommits.headers.link.split('&').slice(-1)[0].replace(/[^\d]/g,''),
-              contribs = resContributors.headers.link.split('&').slice(-1)[0].replace(/[^\d]/g,''),
-              stars = resStars.headers.link.split('&').slice(-1)[0].replace(/[^\d]/g,'');
-          indexStaticFile = indexStaticFile.replace(/\$snippet-count/g, Object.keys(snippets).length).replace(/\$commit-count/g,commits).replace(/\$contrib-count/g,contribs).replace(/\$star-count/g,stars);
+          let commits = resCommits.headers.link.split('&').slice(-1)[0].replace(/[^\d]/g, ''),
+              contribs = resContributors.headers.link.split('&').slice(-1)[0].replace(/[^\d]/g, ''),
+              stars = resStars.headers.link.split('&').slice(-1)[0].replace(/[^\d]/g, '');
+          indexStaticFile = indexStaticFile.replace(/\$snippet-count/g, Object.keys(snippets).length).replace(/\$commit-count/g,commits).replace(/\$contrib-count/g,contribs).replace(/\$star-count/g, stars);
           indexStaticFile =  minify(indexStaticFile, {
             collapseBooleanAttributes: true,
             collapseWhitespace: true,
@@ -252,7 +252,7 @@ try {
     });
     fs.writeFileSync(path.join(docsPath, page.tag+'.html'), page.content);
     console.log(`${chalk.green('SUCCESS!')} ${page.tag}.html file generated!`);
-  })
+  });
 } catch (err) {
   // Handle errors (hopefully not!)
   console.log(`${chalk.red('ERROR!')} During category page generation: ${err}`);
@@ -280,7 +280,7 @@ try {
           md
             .render(`\n${snippets[snippet[0]]}`)
             .replace(/<h3/g, `<h3 id="${snippet[0].toLowerCase()}" class="section double-padded"`)
-            .replace(/<\/h3>/g, `${snippet[1].includes('advanced')?'<mark class="tag">advanced</mark>':''}</h3>`)
+            .replace(/<\/h3>/g, `${snippet[1].includes('advanced') ? '<mark class="tag">advanced</mark>' : ''}</h3>`)
             .replace(/<\/h3>/g, '</h3><div class="section double-padded">')
             .replace(/<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm, (match, p1) => `<pre class="language-js">${Prism.highlight(unescapeHTML(p1), Prism.languages.javascript)}</pre>`)
             .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
