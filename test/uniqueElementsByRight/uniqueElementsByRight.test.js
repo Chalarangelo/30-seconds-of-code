@@ -14,7 +14,7 @@ test('uniqueElementsByRight works for properties', () => {
   		{ id: 1, value: 'd' },
   		{ id: 0, value: 'e' },
   	],
-  	(a, b) => a.id == b.id
+  	(a, b) => a.id === b.id
   )).toEqual([ { id: 0, value: 'e' }, { id: 1, value: 'd' }, { id: 2, value: 'c' } ]);
 });
 
@@ -27,6 +27,6 @@ test('uniqueElementsByRight works for nested properties', () => {
   		{ id: 1, value: 'd', n: {p: 0} },
   		{ id: 0, value: 'e', n: {p: 1} },
   	],
-  	(a, b) => a.id == b.id
+  	(a, b) => a.id === b.id
   )).toEqual([ { id: 0, value: 'e', n: {p: 1} }, { id: 1, value: 'd', n: {p: 0} }, { id: 2, value: 'c', n: {p: 2} } ]);
 });
