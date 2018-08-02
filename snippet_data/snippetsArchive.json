@@ -228,14 +228,14 @@
         "fileName": "levenshteinDistance.md",
         "text": "Calculates the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) between two strings.\n\nCalculates the number of changes (substitutions, deletions or additions) required to convert `string1` to `string2`. \nCan also be used to compare two strings as shown in the second example.",
         "codeBlocks": [
-          "``` js\nconst levenshteinDistance  = (string1, string2) => {\n    if(string1.length === 0) return string2.length;\n    if(string2.length === 0) return string1.length;\n    let matrix = Array(string2.length + 1).fill(0).map((x,i) => [i]);\n    matrix[0] = Array(string1.length + 1).fill(0).map((x,i) => i);\n    for(let i = 1; i <= string2.length; i++){\n        for(let j = 1; j<=string1.length; j++){\n            if(string2[i-1] === string1[j-1]){\n                matrix[i][j] = matrix[i-1][j-1];\n            }\n            else{\n                matrix[i][j] = Math.min(matrix[i-1][j-1]+1, matrix[i][j-1]+1, matrix[i-1][j]+1);\n            }\n        }\n    }\n    return matrix[string2.length][string1.length];\n};\n```",
+          "``` js\nconst levenshteinDistance = (string1, string2) => {\n    if(string1.length === 0) return string2.length;\n    if(string2.length === 0) return string1.length;\n    let matrix = Array(string2.length + 1).fill(0).map((x,i) => [i]);\n    matrix[0] = Array(string1.length + 1).fill(0).map((x,i) => i);\n    for(let i = 1; i <= string2.length; i++) {\n        for(let j = 1; j<=string1.length; j++) {\n            if(string2[i-1] === string1[j-1]) {\n                matrix[i][j] = matrix[i-1][j-1];\n            }\n            else{\n                matrix[i][j] = Math.min(matrix[i-1][j-1]+1, matrix[i][j-1]+1, matrix[i-1][j]+1);\n            }\n        }\n    }\n    return matrix[string2.length][string1.length];\n};\n```",
           "levenshteinDistance('30-seconds-of-code','30-seconds-of-python-code'); // 7\nconst compareStrings = (string1,string2) => (100 - levenshteinDistance(string1,string2) / Math.max(string1.length,string2.length));\ncompareStrings('30-seconds-of-code', '30-seconds-of-python-code'); // 99.72 (%)"
         ],
         "tags": []
       },
       "meta": {
         "archived": true,
-        "hash": "78b4ba08e503af63ca7811cd174218c55db9e0f726439a8c429dedeff0731d80"
+        "hash": "170ef4eafeb5ac639c721f1a8e02d309e1ad62941c613ce60462fa72274f4c25"
       }
     },
     {
@@ -303,7 +303,7 @@
       },
       "meta": {
         "archived": true,
-        "hash": "f654dce947e6e48d66ba5d29452c35c6031e59add0a0124ffed1239317c40ebe"
+        "hash": "878970d0bdefe60f7f61db64b85bbb36b6869e2875a2c278fb269b8cff3b42b4"
       }
     },
     {
