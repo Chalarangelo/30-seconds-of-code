@@ -6,5 +6,4 @@ const httpPut = (url, data, callback, err = console.error) => {
     request.onerror = () => err(request);
     request.send(data);
 };
-
 module.exports = httpPut;

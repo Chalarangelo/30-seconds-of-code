@@ -6,5 +6,4 @@ const once = fn => {
     return fn.apply(this, args);
   };
 };
-
 module.exports = once;

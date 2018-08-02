@@ -3,5 +3,4 @@ const lcm = (...arr) => {
   const _lcm = (x, y) => (x * y) / gcd(x, y);
   return [...arr].reduce((a, b) => _lcm(a, b));
 };
-
 module.exports = lcm;

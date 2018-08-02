@@ -5,5 +5,4 @@ const extendHex = shortHex =>
     .split('')
     .map(x => x + x)
     .join('');
-
 module.exports = extendHex;

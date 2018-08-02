@@ -5,5 +5,4 @@ const flattenObject = (obj, prefix = '') =>
     else acc[pre + k] = obj[k];
     return acc;
   }, {});
-
 module.exports = flattenObject;

@@ -6,5 +6,4 @@ const partition = (arr, fn) =>
     },
     [[], []]
   );
-
 module.exports = partition;

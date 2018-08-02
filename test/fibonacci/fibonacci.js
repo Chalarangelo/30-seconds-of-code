@@ -3,5 +3,4 @@ const fibonacci = n =>
     (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),
     []
   );
-
 module.exports = fibonacci;

@@ -8,5 +8,4 @@ const CSVToJSON = (data, delimiter = ',') => {
       return titles.reduce((obj, title, index) => ((obj[title] = values[index]), obj), {});
     });
 };
-
 module.exports = CSVToJSON;

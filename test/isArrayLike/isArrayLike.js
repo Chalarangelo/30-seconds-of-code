@@ -5,5 +5,4 @@ const isArrayLike = val => {
     return false;
   }
 };
-
 module.exports = isArrayLike;

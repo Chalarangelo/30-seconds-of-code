@@ -6,5 +6,4 @@ const shuffle = ([...arr]) => {
   }
   return arr;
 };
-
 module.exports = shuffle;

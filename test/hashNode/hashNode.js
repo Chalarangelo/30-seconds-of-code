@@ -12,5 +12,4 @@ const hashNode = val =>
       0
     )
   );
-
 module.exports = hashNode;

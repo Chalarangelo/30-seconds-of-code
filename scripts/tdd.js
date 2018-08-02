@@ -52,15 +52,15 @@ snippetFiles
     const fileFunction = fileCode
       .split('\n')
       .map(line => line)
-      .filter((_, i) => blockMarkers[0] < i && i < blockMarkers[1]).concat('');
+      .filter((_, i) => blockMarkers[0] < i && i < blockMarkers[1]);
     // Grab snippet example based on code markers
     const fileExample = fileCode
       .split('\n')
       .map(line => line)
-      .filter((_, i) => blockMarkers[2] < i && i < blockMarkers[3]).concat('');
+      .filter((_, i) => blockMarkers[2] < i && i < blockMarkers[3]);
 
     // Export template for snippetName.js
-    const exportFile = `${fileFunction.join('\n')}\nmodule.exports = ${fileName};`.trim();
+    const exportFile = `${fileFunction.join('\n')}\nmodule.exports = ${fileName};\n`;
 
     // Export template for snippetName.test.js which generates a example test & other information
     const exportTest = [
@@ -68,7 +68,7 @@ snippetFiles
       `const ${fileName} = require('./${fileName}.js');`,
       `\ntest('${fileName} is a Function', () => {`,
       `  expect(${fileName}).toBeInstanceOf(Function);`,
-      `});`
+      `});\n`
     ].join('\n');
 
     // Write/Update exportFile which is snippetName.js in respective dir

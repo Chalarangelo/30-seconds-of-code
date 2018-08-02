@@ -6,5 +6,4 @@ const mostPerformant = (fns, iterations = 10000) => {
   });
   return times.indexOf(Math.min(...times));
 };
-
 module.exports = mostPerformant;

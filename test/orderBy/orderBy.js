@@ -8,5 +8,4 @@ const orderBy = (arr, props, orders) =>
       return acc;
     }, 0)
   );
-
 module.exports = orderBy;

@@ -8,5 +8,4 @@ const luhnCheck = num => {
   sum += lastDigit;
   return sum % 10 === 0;
 };
-
 module.exports = luhnCheck;

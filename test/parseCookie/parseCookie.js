@@ -6,5 +6,4 @@ const parseCookie = str =>
       acc[decodeURIComponent(v[0].trim())] = decodeURIComponent(v[1].trim());
       return acc;
     }, {});
-
 module.exports = parseCookie;

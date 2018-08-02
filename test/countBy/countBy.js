@@ -3,5 +3,4 @@ const countBy = (arr, fn) =>
     acc[val] = (acc[val] || 0) + 1;
     return acc;
   }, {});
-
 module.exports = countBy;

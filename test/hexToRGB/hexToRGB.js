@@ -17,5 +17,4 @@ const hexToRGB = hex => {
     ')'
   );
 };
-
 module.exports = hexToRGB;

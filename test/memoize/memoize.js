@@ -6,5 +6,4 @@ const memoize = fn => {
   cached.cache = cache;
   return cached;
 };
-
 module.exports = memoize;

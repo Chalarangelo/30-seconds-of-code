@@ -6,5 +6,4 @@ const getMeridiemSuffixOfInteger = num =>
       : num < 12
         ? (num % 12) + 'am'
         : (num % 12) + 'pm';
-
 module.exports = getMeridiemSuffixOfInteger;

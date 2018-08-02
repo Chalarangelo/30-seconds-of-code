@@ -7,5 +7,4 @@ const pullBy = (arr, ...args) => {
   arr.length = 0;
   pulled.forEach(v => arr.push(v));
 };
-
 module.exports = pullBy;

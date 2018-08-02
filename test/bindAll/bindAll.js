@@ -7,5 +7,4 @@ const bindAll = (obj, ...fns) =>
       })
     )
   );
-
 module.exports = bindAll;

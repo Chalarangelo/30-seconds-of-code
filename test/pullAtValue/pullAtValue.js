@@ -6,5 +6,4 @@ const pullAtValue = (arr, pullArr) => {
   mutateTo.forEach(v => arr.push(v));
   return removed;
 };
-
 module.exports = pullAtValue;

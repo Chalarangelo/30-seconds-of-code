@@ -3,5 +3,4 @@ const lowercaseKeys = obj =>
     acc[key.toLowerCase()] = obj[key];
     return acc;
   }, {});
-
 module.exports = lowercaseKeys;

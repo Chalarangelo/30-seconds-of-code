@@ -14,5 +14,4 @@ const unflattenObject = obj =>
     } else acc[k] = obj[k];
     return acc;
   }, {});
-
 module.exports = unflattenObject;

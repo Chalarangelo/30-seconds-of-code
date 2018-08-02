@@ -4,5 +4,4 @@ const readFileLines = filename =>
     .readFileSync(filename)
     .toString('UTF8')
     .split('\n');
-
 module.exports = readFileLines;
