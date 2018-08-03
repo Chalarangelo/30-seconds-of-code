@@ -9,4 +9,4 @@ test('curries a Math.pow', () => {
 });
 test('curries a Math.min', () => {
   expect(curry(Math.min, 3)(10)(50)(2)).toBe(2);
-});  
+});

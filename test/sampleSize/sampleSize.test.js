@@ -4,7 +4,7 @@ const sampleSize = require('./sampleSize.js');
 test('sampleSize is a Function', () => {
   expect(sampleSize).toBeInstanceOf(Function);
 });
-const arr = [3,7,9,11];
+const arr = [3, 7, 9, 11];
 test('Returns a single element without n specified', () => {
   expect(sampleSize(arr).length).toBe(1);
 });
