@@ -8,7 +8,9 @@ test('functionName is a Function', () => {
 test('Works for native functions', () => {
   expect(functionName(Math.max)).toBe('max');
 });
-function fun(x) {return x;}
+function fun(x) {
+  return x;
+}
 test('Works for functions', () => {
   expect(functionName(fun)).toBe('fun');
 });
