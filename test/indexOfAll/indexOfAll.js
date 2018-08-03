@@ -1,6 +1,3 @@
-const indexOfAll = (arr, val) => {
-  const indices = [];
-  arr.forEach((el, i) => el === val && indices.push(i));
-  return indices;
-};
+const indexOfAll = (arr, val) => (arr, val) =>
+  arr.reduce((acc, el, i) => (el === val ? [...acc, i] : acc), []);
 module.exports = indexOfAll;
