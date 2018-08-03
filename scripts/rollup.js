@@ -16,7 +16,7 @@ if (!fs.existsSync(DIST)) fs.mkdirSync(DIST);
 const es5 = babel({ presets: [['env', { modules: false }]] });
 const min = minify({ comments: false });
 // Create the bundles
-(async() => {
+(async () => {
   const bundle = await rollup({ input: INPUT_FILE });
   const bundleES5 = await rollup({ input: INPUT_FILE, plugins: [es5] });
   const bundleMin = await rollup({ input: INPUT_FILE, plugins: [min] });

@@ -7,8 +7,14 @@ const cp = require('child_process');
 const path = require('path');
 const chalk = require('chalk');
 const util = require('./util');
-if(util.isTravisCI() && process.env['TRAVIS_EVENT_TYPE'] !== 'cron' && process.env['TRAVIS_EVENT_TYPE'] !== 'api') {
-  console.log(`${chalk.green('NOBUILD')} Module build terminated, not a cron job or a custom build!`);
+if (
+  util.isTravisCI() &&
+  process.env['TRAVIS_EVENT_TYPE'] !== 'cron' &&
+  process.env['TRAVIS_EVENT_TYPE'] !== 'api'
+) {
+  console.log(
+    `${chalk.green('NOBUILD')} Module build terminated, not a cron job or a custom build!`
+  );
   process.exit(0);
 }
 // Set variables for paths
@@ -32,10 +38,7 @@ try {
   let exportStr = 'export default {';
   // Read all snippets and store them appropriately
   for (const snippet of snippets) {
-    const snippetData = fs.readFileSync(
-      path.join(SNIPPETS_PATH, snippet),
-      'utf8'
-    );
+    const snippetData = fs.readFileSync(path.join(SNIPPETS_PATH, snippet), 'utf8');
     const snippetName = snippet.replace('.md', '');
     // Check if a snippet is Node-only
     const isNodeSnippet = tagDatabase

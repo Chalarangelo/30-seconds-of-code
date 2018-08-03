@@ -3,8 +3,10 @@ const fs = require('fs-extra'),
   chalk = require('chalk'),
   crypto = require('crypto');
 
-const getMarkDownAnchor = (paragraphTitle) =>
-  paragraphTitle.trim().toLowerCase()
+const getMarkDownAnchor = paragraphTitle =>
+  paragraphTitle
+    .trim()
+    .toLowerCase()
     .replace(/[^\w\- ]+/g, '')
     .replace(/\s/g, '-')
     .replace(/\-+$/, '');
@@ -28,7 +30,7 @@ const getFilesInDir = (directoryPath, withPath, exclude = null) => {
         return fileNames;
       }, []);
     }
-    return directoryFilenames;    
+    return directoryFilenames;
   } catch (err) {
     console.log(`${chalk.red('ERROR!')} During snippet loading: ${err}`);
     process.exit(1);
@@ -66,7 +68,6 @@ const readTags = () => {
           return data;
         })
     );
-
   } catch (err) {
     // Handle errors (hopefully not!)
     console.log(`${chalk.red('ERROR!')} During tag database loading: ${err}`);
@@ -102,7 +103,11 @@ const capitalize = (str, lowerRest = false) =>
 // Checks if current environment is Travis CI
 const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
 // Creates a hash for a value using the SHA-256 algorithm.
-const hashData = val => crypto.createHash('sha256').update(val).digest('hex');
+const hashData = val =>
+  crypto
+    .createHash('sha256')
+    .update(val)
+    .digest('hex');
 // Gets the code blocks for a snippet file.
 const getCodeBlocks = str => {
   const regex = /```[.\S\s]*?```/g;
@@ -135,15 +140,15 @@ const getTextualContent = str => {
 };
 module.exports = {
   getMarkDownAnchor,
-  getFilesInDir, 
-  readSnippets, 
-  readTags, 
-  optimizeNodes, 
-  capitalize, 
-  objectFromPairs, 
-  isTravisCI, 
-  hashData, 
-  shuffle, 
-  getCodeBlocks, 
+  getFilesInDir,
+  readSnippets,
+  readTags,
+  optimizeNodes,
+  capitalize,
+  objectFromPairs,
+  isTravisCI,
+  hashData,
+  shuffle,
+  getCodeBlocks,
   getTextualContent
 };

@@ -12,10 +12,15 @@ const SNIPPETS_PATH = './snippets';
 const SNIPPETS_ARCHIVE_PATH = './snippets_archive';
 const STATIC_PARTS_PATH = './static-parts';
 if (util.isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
-  console.log(`${chalk.green('NOBUILD')} README build terminated, parent commit is a Travis build!`);
+  console.log(
+    `${chalk.green('NOBUILD')} README build terminated, parent commit is a Travis build!`
+  );
   process.exit(0);
 }
-if (util.isTravisCI() && (process.env['TRAVIS_EVENT_TYPE'] === 'cron' || process.env['TRAVIS_EVENT_TYPE'] === 'api')) {
+if (
+  util.isTravisCI() &&
+  (process.env['TRAVIS_EVENT_TYPE'] === 'cron' || process.env['TRAVIS_EVENT_TYPE'] === 'api')
+) {
   console.log(`${chalk.green('ARCHIVE')} Cron job or custom build, building archive README!`);
   console.time('Builder');
   let snippets = {};
@@ -43,8 +48,8 @@ These snippets, while useful and interesting, didn\'t quite make it into the rep
 ## Table of Contents
 
 `;
-    for(const snippet of Object.entries(snippets))
-      output += `* [\`${snippet[0].slice(0,-3)}\`](#${snippet[0].toLowerCase().slice(0,-3)})\n`;
+    for (const snippet of Object.entries(snippets))
+      output += `* [\`${snippet[0].slice(0, -3)}\`](#${snippet[0].toLowerCase().slice(0, -3)})\n`;
     output += '\n---\n';
     for (const snippet of Object.entries(snippets)) {
       let data = snippet[1];
@@ -58,7 +63,7 @@ These snippets, while useful and interesting, didn\'t quite make it into the rep
     }
 
     // Write to the README file of the archive
-    fs.writeFileSync(path.join(SNIPPETS_ARCHIVE_PATH,'README.md'), output);
+    fs.writeFileSync(path.join(SNIPPETS_ARCHIVE_PATH, 'README.md'), output);
   } catch (err) {
     console.log(`${chalk.red('ERROR!')} During README generation for snippets archive: ${err}`);
     process.exit(1);
@@ -113,7 +118,15 @@ try {
       Object.entries(tagDbData)
         .map(t => t[1][0])
         .filter(v => v)
-        .sort((a, b) => util.capitalize(a, true) === 'Uncategorized' ? 1 : util.capitalize(b, true) === 'Uncategorized' ? -1 : a.localeCompare(b)))
+        .sort(
+          (a, b) =>
+            util.capitalize(a, true) === 'Uncategorized'
+              ? 1
+              : util.capitalize(b, true) === 'Uncategorized'
+                ? -1
+                : a.localeCompare(b)
+        )
+    )
   ];
 
   console.log(tags);
@@ -124,11 +137,12 @@ try {
   // Loop over tags and snippets to create the table of contents
   for (const tag of tags) {
     const capitalizedTag = util.capitalize(tag, true);
-    output += `### ${
-      EMOJIS[tag] || ''
-    } ${capitalizedTag}\n\n<details>\n<summary>View contents</summary>\n\n`;
+    output += `### ${EMOJIS[tag] ||
+      ''} ${capitalizedTag}\n\n<details>\n<summary>View contents</summary>\n\n`;
     for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
-      output += `* [\`${taggedSnippet[0]}\`](#${taggedSnippet[0].toLowerCase()}${taggedSnippet[1].includes('advanced')?'-':''})\n`;
+      output += `* [\`${taggedSnippet[0]}\`](#${taggedSnippet[0].toLowerCase()}${
+        taggedSnippet[1].includes('advanced') ? '-' : ''
+      })\n`;
     }
     output += '\n</details>\n\n';
   }
@@ -140,9 +154,9 @@ try {
     for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
       let data = snippets[taggedSnippet[0] + '.md'];
       // Add advanced tag
-      if(taggedSnippet[1].includes('advanced')) {
+      if (taggedSnippet[1].includes('advanced')) {
         data = data.split(/\r?\n/);
-        data[0] = data[0] +' ![advanced](/advanced.svg)';
+        data[0] = data[0] + ' ![advanced](/advanced.svg)';
         data = data.join('\n');
       }
       data =
