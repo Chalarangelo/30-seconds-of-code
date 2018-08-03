@@ -1,4 +1,5 @@
 all:array,function
+allEqual:array,function
 any:array,function
 approximatelyEqual:math
 arrayToCSV:array,string,utility
