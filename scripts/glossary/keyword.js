@@ -10,12 +10,15 @@ const util = require('../util');
 const glossaryFiles = util.getFilesInDir('./glossary', false);
 
 try {
-	const output = glossaryFiles.reduce(
-		(accumulator, currentFilename) => 
-			accumulator.toLowerCase().replace(/\.[^/.]+$/, "") + "\n" + 
-			currentFilename.toLowerCase().replace(/\.[^/.]+$/, ""))+'\n';
-  fs.writeFileSync('glossary/keyword_database', output);	
+  const output =
+    glossaryFiles.reduce(
+      (accumulator, currentFilename) =>
+        accumulator.toLowerCase().replace(/\.[^/.]+$/, '') +
+        '\n' +
+        currentFilename.toLowerCase().replace(/\.[^/.]+$/, '')
+    ) + '\n';
+  fs.writeFileSync('glossary/keyword_database', output);
 } catch (err) {
-	console.log(`${chalk.red('ERROR!')} During glossary keyword_database generation: ${err}`);
+  console.log(`${chalk.red('ERROR!')} During glossary keyword_database generation: ${err}`);
   process.exit(1);
 }
