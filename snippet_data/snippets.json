@@ -2249,7 +2249,7 @@
         "fileName": "indexOfAll.md",
         "text": "Returns all indices of `val` in an array. If `val` never occurs, returns `[]`.\n\nUse `Array.reduce()` to loop over elements and store indices for matching elements.\nReturn the array of indices.",
         "codeBlocks": [
-          "const indexOfAll = (arr, val) => (arr, val) =>\n  arr.reduce((acc, el, i) => (el === val ? [...acc, i] : acc), []);",
+          "const indexOfAll = (arr, val) => arr.reduce((acc, el, i) => (el === val ? [...acc, i] : acc), []);",
           "indexOfAll([1, 2, 3, 1, 2, 3], 1); // [0,3]\nindexOfAll([1, 2, 3], 4); // []"
         ],
         "tags": [
@@ -2258,7 +2258,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "785b13b5ab3ecdeab0c40e4b4103818daf5e1ef9c2213eb19f9a41d77bfd6734"
+        "hash": "643cb7b5df16c9da268e21b65b4cf73bb572e7b93a5859d09bb3bc949665f65b"
       }
     },
     {
