@@ -12,4 +12,4 @@ test('Joins all elements of an array into a string and returns this string', () 
 });
 test('Joins all elements of an array into a string and returns this string', () => {
   expect(join(['pen', 'pineapple', 'apple', 'pen'])).toEqual('pen,pineapple,apple,pen');
-});  
+});

@@ -11,5 +11,9 @@ test('The color code starts with "#"', () => {
   expect(randomHexColorCode().startsWith('#')).toBeTruthy();
 });
 test('The color code contains only valid hex-digits', () => {
-  expect(randomHexColorCode().slice(1).match(/[^0123456789abcdef]/i) === null).toBeTruthy();
+  expect(
+    randomHexColorCode()
+      .slice(1)
+      .match(/[^0123456789abcdef]/i) === null
+  ).toBeTruthy();
 });

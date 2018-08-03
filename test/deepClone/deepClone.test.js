@@ -6,7 +6,7 @@ test('deepClone is a Function', () => {
 });
 const a = { foo: 'bar', obj: { a: 1, b: 2 } };
 const b = deepClone(a);
-const c = [{foo: "bar"}];
+const c = [{ foo: 'bar' }];
 const d = deepClone(c);
 test('Shallow cloning works', () => {
   expect(a).not.toBe(b);
