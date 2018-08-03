@@ -5,7 +5,7 @@ test('approximatelyEqual is a Function', () => {
   expect(approximatelyEqual).toBeInstanceOf(Function);
 });
 test('Works for PI / 2', () => {
-  expect(approximatelyEqual(Math.PI / 2.0 , 1.5708)).toBeTruthy();
+  expect(approximatelyEqual(Math.PI / 2.0, 1.5708)).toBeTruthy();
 });
 test('Works for 0.1 + 0.2 === 0.3', () => {
   expect(approximatelyEqual(0.1 + 0.2, 0.3)).toBeTruthy();

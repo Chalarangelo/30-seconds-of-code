@@ -6,9 +6,11 @@ test('matchesWith is a Function', () => {
 });
 const isGreeting = val => /^h(?:i|ello)$/.test(val);
 test('Returns true for two objects with similar values, based on the provided function', () => {
-  expect(matchesWith(
-    { greeting: 'hello' },
-    { greeting: 'hi' },
-    (oV, sV) => isGreeting(oV) && isGreeting(sV)
-  )).toBeTruthy();
+  expect(
+    matchesWith(
+      { greeting: 'hello' },
+      { greeting: 'hi' },
+      (oV, sV) => isGreeting(oV) && isGreeting(sV)
+    )
+  ).toBeTruthy();
 });
