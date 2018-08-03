@@ -7,8 +7,8 @@ test('pullAtValue is a Function', () => {
 let myArray = ['a', 'b', 'c', 'd'];
 let pulled = pullAtValue(myArray, ['b', 'd']);
 test('Pulls the specified values', () => {
-  expect(myArray).toEqual([ 'a', 'c' ]);
+  expect(myArray).toEqual(['a', 'c']);
 });
-  test('Pulls the specified values', () => {
-  expect(pulled).toEqual([ 'b', 'd' ]);
+test('Pulls the specified values', () => {
+  expect(pulled).toEqual(['b', 'd']);
 });

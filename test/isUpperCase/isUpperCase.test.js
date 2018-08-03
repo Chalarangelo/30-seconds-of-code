@@ -7,9 +7,9 @@ test('isUpperCase is a Function', () => {
 test('ABC is all upper case', () => {
   expect(isUpperCase('ABC')).toBeTruthy();
 });
-  test('abc is not all upper case', () => {
+test('abc is not all upper case', () => {
   expect(isUpperCase('abc')).toBeFalsy();
 });
-  test('A3@$ is all uppercase', () => {
+test('A3@$ is all uppercase', () => {
   expect(isUpperCase('A3@$')).toBeTruthy();
 });

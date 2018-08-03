@@ -1,2 +1,2 @@
 const isSet = val => val instanceof Set;
- module.exports = isSet;
+module.exports = isSet;

@@ -7,5 +7,5 @@ test('pull is a Function', () => {
 let myArray = ['a', 'b', 'c', 'a', 'b', 'c'];
 pull(myArray, 'a', 'c');
 test('Pulls the specified values', () => {
-  expect(myArray).toEqual(['b','b']);
+  expect(myArray).toEqual(['b', 'b']);
 });

@@ -12,8 +12,8 @@ test('Works without a provided value for n', () => {
   expect(add1(1)(2)(3)).toBe(6);
 });
 test('Works with n = 2', () => {
-  expect(add2(1,2)(3)).toBe(6);
+  expect(add2(1, 2)(3)).toBe(6);
 });
-  test('Works with n = 3', () => {
-  expect(add3(1,2,3)).toBe(6);
+test('Works with n = 3', () => {
+  expect(add3(1, 2, 3)).toBe(6);
 });

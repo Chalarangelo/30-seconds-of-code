@@ -16,4 +16,3 @@ test('isObject({ a:1 }) is a object', () => {
 test('isObject(true) is not a object', () => {
   expect(isObject(true)).toBeFalsy();
 });
-  

@@ -6,8 +6,16 @@ test('orderBy is a Function', () => {
 });
 const users = [{ name: 'fred', age: 48 }, { name: 'barney', age: 36 }, { name: 'fred', age: 40 }];
 test('Returns a sorted array of objects ordered by properties and orders.', () => {
-  expect(orderBy(users, ['name', 'age'], ['asc', 'desc'])).toEqual([{name: 'barney', age: 36}, {name: 'fred', age: 48}, {name: 'fred', age: 40}]);
+  expect(orderBy(users, ['name', 'age'], ['asc', 'desc'])).toEqual([
+    { name: 'barney', age: 36 },
+    { name: 'fred', age: 48 },
+    { name: 'fred', age: 40 }
+  ]);
 });
 test('Returns a sorted array of objects ordered by properties and orders.', () => {
-  expect(orderBy(users, ['name', 'age'])).toEqual( [{name: 'barney', age: 36}, {name: 'fred', age: 40}, {name: 'fred', age: 48}]);
+  expect(orderBy(users, ['name', 'age'])).toEqual([
+    { name: 'barney', age: 36 },
+    { name: 'fred', age: 40 },
+    { name: 'fred', age: 48 }
+  ]);
 });

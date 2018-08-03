@@ -15,4 +15,3 @@ const last = nthArg(-1);
 test('Works for negative values', () => {
   expect(last(1, 2, 3, 4, 5)).toBe(5);
 });
-  

@@ -6,7 +6,10 @@ test('compose is a Function', () => {
 });
 const add5 = x => x + 5;
 const multiply = (x, y) => x * y;
-const multiplyAndAdd5 = compose(add5, multiply);
+const multiplyAndAdd5 = compose(
+  add5,
+  multiply
+);
 test('Performs right-to-left function composition', () => {
   expect(multiplyAndAdd5(5, 2)).toBe(15);
 });

@@ -10,7 +10,7 @@ function Foo() {
 }
 Foo.prototype.c = () => 3;
 test('Returns own methods', () => {
-  expect(functions(new Foo())).toEqual( ['a', 'b']);
+  expect(functions(new Foo())).toEqual(['a', 'b']);
 });
 test('Returns own and inherited methods', () => {
   expect(functions(new Foo(), true)).toEqual(['a', 'b', 'c']);

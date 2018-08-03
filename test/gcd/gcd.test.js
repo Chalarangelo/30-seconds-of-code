@@ -9,4 +9,4 @@ test('Calculates the greatest common divisor between two or more numbers/arrays'
 });
 test('Calculates the greatest common divisor between two or more numbers/arrays', () => {
   expect(gcd(...[12, 8, 32])).toEqual(4);
-});  
+});

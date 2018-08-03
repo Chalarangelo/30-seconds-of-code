@@ -11,23 +11,33 @@ test('quickSort([-1, 0, -2]) returns [-2, -1, 0]', () => {
   expect(quickSort([-1, 0, -2])).toEqual([-2, -1, 0]);
 });
 test('quickSort() throws an error', () => {
-  expect(() => { quickSort(); }).toThrow();
+  expect(() => {
+    quickSort();
+  }).toThrow();
 });
 test('quickSort(123) throws an error', () => {
-  expect(() => { quickSort(123); }).toThrow();
+  expect(() => {
+    quickSort(123);
+  }).toThrow();
 });
 test('quickSort({ 234: string}) throws an error', () => {
-  expect(() => { quickSort({ 234: string}); }).toThrow();
+  expect(() => {
+    quickSort({ 234: string });
+  }).toThrow();
 });
 test('quickSort(null) throws an error', () => {
-  expect(() => { quickSort(null); }).toThrow();
+  expect(() => {
+    quickSort(null);
+  }).toThrow();
 });
 test('quickSort(undefined) throws an error', () => {
-  expect(() => { quickSort(undefined); }).toThrow();
+  expect(() => {
+    quickSort(undefined);
+  }).toThrow();
 });
 let start = new Date().getTime();
 quickSort([11, 1, 324, 23232, -1, 53, 2, 524, 32, 13, 156, 133, 62, 12, 4]);
 let end = new Date().getTime();
 test('quickSort([11, 1, 324, 23232, -1, 53, 2, 524, 32, 13, 156, 133, 62, 12, 4]) takes less than 2s to run', () => {
-  expect((end - start) < 2000).toBeTruthy();
+  expect(end - start < 2000).toBeTruthy();
 });

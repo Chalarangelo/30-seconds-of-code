@@ -11,7 +11,7 @@ test('Works for arrays with one value', () => {
   expect(castArray([1])).toEqual([1]);
 });
 test('Works for arrays with multiple value', () => {
-  expect(castArray([1,2,3])).toEqual( [1,2,3]);
+  expect(castArray([1, 2, 3])).toEqual([1, 2, 3]);
 });
 test('Works for strings', () => {
   expect(castArray('test')).toEqual(['test']);

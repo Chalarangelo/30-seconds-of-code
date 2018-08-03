@@ -4,7 +4,7 @@ const shuffle = require('./shuffle.js');
 test('shuffle is a Function', () => {
   expect(shuffle).toBeInstanceOf(Function);
 });
-const arr = [1,2,3,4,5,6];
+const arr = [1, 2, 3, 4, 5, 6];
 test('Shuffles the array', () => {
   expect(shuffle(arr)).not.toEqual(arr);
 });

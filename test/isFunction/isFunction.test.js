@@ -10,4 +10,3 @@ test('passed value is a function', () => {
 test('passed value is not a function', () => {
   expect(isFunction('x')).toBeFalsy();
 });
-  

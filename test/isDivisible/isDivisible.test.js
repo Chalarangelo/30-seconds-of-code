@@ -7,4 +7,3 @@ test('isDivisible is a Function', () => {
 test('The number 6 is divisible by 3', () => {
   expect(isDivisible(6, 3)).toBeTruthy();
 });
-  

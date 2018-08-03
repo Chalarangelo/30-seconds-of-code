@@ -1,7 +1,6 @@
 const expect = require('expect');
 const runPromisesInSeries = require('./runPromisesInSeries.js');
 
-
 test('runPromisesInSeries is a Function', () => {
   expect(runPromisesInSeries).toBeInstanceOf(Function);
 });

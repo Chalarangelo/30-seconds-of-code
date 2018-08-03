@@ -14,5 +14,9 @@ const other = {
   c: 'foo'
 };
 test('Merges two objects', () => {
-  expect(merge(object, other)).toEqual({ a: [ { x: 2 }, { y: 4 }, { z: 3 } ], b: [ 1, 2, 3 ], c: 'foo' });
+  expect(merge(object, other)).toEqual({
+    a: [{ x: 2 }, { y: 4 }, { z: 3 }],
+    b: [1, 2, 3],
+    c: 'foo'
+  });
 });

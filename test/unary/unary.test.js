@@ -7,4 +7,3 @@ test('unary is a Function', () => {
 test('Discards arguments after the first one', () => {
   expect(['6', '8', '10'].map(unary(parseInt))).toEqual([6, 8, 10]);
 });
-  

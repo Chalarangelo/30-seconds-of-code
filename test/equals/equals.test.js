@@ -4,8 +4,10 @@ const equals = require('./equals.js');
 test('equals is a Function', () => {
   expect(equals).toBeInstanceOf(Function);
 });
-test('{ a: [2, {e: 3}], b: [4], c: \'foo\' } is equal to { a: [2, {e: 3}], b: [4], c: \'foo\' }', () => {
-  expect(equals({ a: [2, {e: 3}], b: [4], c: 'foo' }, { a: [2, {e: 3}], b: [4], c: 'foo' })).toBeTruthy();
+test("{ a: [2, {e: 3}], b: [4], c: 'foo' } is equal to { a: [2, {e: 3}], b: [4], c: 'foo' }", () => {
+  expect(
+    equals({ a: [2, { e: 3 }], b: [4], c: 'foo' }, { a: [2, { e: 3 }], b: [4], c: 'foo' })
+  ).toBeTruthy();
 });
 test('[1,2,3] is equal to [1,2,3]', () => {
   expect(equals([1, 2, 3], [1, 2, 3])).toBeTruthy();

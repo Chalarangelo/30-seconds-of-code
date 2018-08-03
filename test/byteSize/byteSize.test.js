@@ -1,5 +1,5 @@
 const expect = require('expect');
-const Blob = class{
+const Blob = class {
   constructor(s) {
     return {
       size: Buffer.byteLength(s.toString())
