@@ -36,3 +36,4 @@ test('Falsy trues', () => {
 test('Falsy falses', () => {
   expect(allEqual([false, false, true])).toBeFalsy();
 });
+
