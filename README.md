@@ -107,6 +107,7 @@ average(1, 2, 3);
 <summary>View contents</summary>
 
 * [`all`](#all)
+* [`allEqual`](#allequal)
 * [`any`](#any)
 * [`arrayToCSV`](#arraytocsv)
 * [`bifurcate`](#bifurcate)
@@ -828,6 +829,29 @@ const all = (arr, fn = Boolean) => arr.every(fn);
 ```js
 all([4, 2, 3], x => x > 1); // true
 all([1, 2, 3]); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### allEqual
+
+Check if all elements are equal
+
+Use `Array.every()` to check if all the elements of the array are the same as the first one.
+
+```js
+const allEqual = arr => arr.every(val => val === arr[0]);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+allEqual([1, 2, 3, 4, 5, 6]); // false
+allEqual([1, 1, 1, 1]); // true
 ```
 
 </details>
