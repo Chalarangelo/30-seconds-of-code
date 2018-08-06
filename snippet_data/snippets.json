@@ -21,6 +21,26 @@
       }
     },
     {
+      "id": "allEqual",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "allEqual.md",
+        "text": "Check if all elements are equal\n\nUse `Array.every()` to check if all the elements of the array are the same as the first one.",
+        "codeBlocks": [
+          "const allEqual = arr => arr.every(val => val === arr[0]);",
+          "allEqual([1, 2, 3, 4, 5, 6]); // false\nallEqual([1, 1, 1, 1]); // true"
+        ],
+        "tags": [
+          "array",
+          "function"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "aa5122e8272d9ef81a634e960da9b0ddbe6d670cb3e801d7ffd17ba36cd1630a"
+      }
+    },
+    {
       "id": "any",
       "type": "snippet",
       "attributes": {
