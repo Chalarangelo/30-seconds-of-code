@@ -62,6 +62,7 @@ const snippetsPath = './snippets',
 let snippets = {},
   archivedSnippets = {},
   beginnerSnippetNames = [
+    'allEqual',
     'everyNth',
     'filterNonUnique',
     'last',
