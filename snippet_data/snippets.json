@@ -187,7 +187,7 @@
         "fileName": "average.md",
         "text": "Returns the average of two or more numbers.\n\nUse `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`, divide by the `length` of the array.",
         "codeBlocks": [
-          "const average = (...nums) => [...nums].reduce((acc, val) => acc + val, 0) / nums.length;",
+          "const average = (...nums) => nums.reduce((acc, val) => acc + val, 0) / nums.length;",
           "average(...[1, 2, 3]); // 2\naverage(1, 2, 3); // 2"
         ],
         "tags": [
@@ -197,7 +197,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "684bb67aac10990814a49d1d1878d98ec6d2161bd71f769a128e3195f9aeb632"
+        "hash": "992835ed744ef767f4cdf46f9881cca57a73695e2a8637a383490bf44369d31b"
       }
     },
     {
