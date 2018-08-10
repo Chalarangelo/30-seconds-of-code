@@ -4442,10 +4442,7 @@ Return a `function` that uses `Function.apply()` to apply the given `context` to
 Use `Array.concat()` to prepend any additional supplied parameters to the arguments.
 
 ```js
-const bind = (fn, context, ...args) =>
-  function() {
-    return fn.apply(context, args.concat(...arguments));
-  };
+const bind = (fn, context, ...boundArgs) => (...args) => fn.apply(context, [...boundArgs, ...args]);
 ```
 
 <details>
