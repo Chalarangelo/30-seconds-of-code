@@ -1,5 +1,2 @@
-const bindKey = (context, fn, ...args) =>
-  function() {
-    return context[fn].apply(context, args.concat(...arguments));
-  };
+const bindKey = (context, fn, ...boundArgs) => (...args) => context[fn].apply(context, [...boundArgs, ...args]);
 module.exports = bindKey;
