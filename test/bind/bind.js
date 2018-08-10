@@ -1,5 +1,2 @@
-const bind = (fn, context, ...args) =>
-  function() {
-    return fn.apply(context, args.concat(...arguments));
-  };
+const bind = (fn, context, ...boundArgs) => (...args) => fn.apply(context, [...boundArgs, ...args]);
 module.exports = bind;
