@@ -267,7 +267,7 @@
         "fileName": "bind.md",
         "text": "Creates a function that invokes `fn` with a given context, optionally adding any additional supplied parameters to the beginning of the arguments.\n\nReturn a `function` that uses `Function.apply()` to apply the given `context` to `fn`.\nUse `Array.concat()` to prepend any additional supplied parameters to the arguments.",
         "codeBlocks": [
-          "const bind = (fn, context, ...args) =>\n  function() {\n    return fn.apply(context, args.concat(...arguments));\n  };",
+          "const bind = (fn, context, ...boundArgs) => (...args) => fn.apply(context, [...boundArgs, ...args]);",
           "function greet(greeting, punctuation) {\n  return greeting + ' ' + this.user + punctuation;\n}\nconst freddy = { user: 'fred' };\nconst freddyBound = bind(greet, freddy);\nconsole.log(freddyBound('hi', '!')); // 'hi fred!'"
         ],
         "tags": [
@@ -277,7 +277,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "e9d5d908df4751e5765b1e7d5a5f883261bdfad521b01023a81d616cac3b3cc1"
+        "hash": "4909c73d0435a32df36abef06a58c21362ed3991aedc95421516a5d0ea83264a"
       }
     },
     {
@@ -305,9 +305,9 @@
       "type": "snippet",
       "attributes": {
         "fileName": "bindKey.md",
-        "text": "Creates a function that invokes the method at a given key of an object, optionally adding any additional supplied parameters to the beginning of the arguments.\n\nReturn a `function` that uses `Function.apply()` to bind `context[fn]` to `context`.\nUse `Array.concat()` to prepend any additional supplied parameters to the arguments.",
+        "text": "Creates a function that invokes the method at a given key of an object, optionally adding any additional supplied parameters to the beginning of the arguments.\n\nReturn a `function` that uses `Function.apply()` to bind `context[fn]` to `context`.\nUse the spread operator (`...`) to prepend any additional supplied parameters to the arguments.",
         "codeBlocks": [
-          "const bindKey = (context, fn, ...args) =>\n  function() {\n    return context[fn].apply(context, args.concat(...arguments));\n  };",
+          "const bindKey = (context, fn, ...boundArgs) => (...args) =>\n  context[fn].apply(context, [...boundArgs, ...args]);",
           "const freddy = {\n  user: 'fred',\n  greet: function(greeting, punctuation) {\n    return greeting + ' ' + this.user + punctuation;\n  }\n};\nconst freddyBound = bindKey(freddy, 'greet');\nconsole.log(freddyBound('hi', '!')); // 'hi fred!'"
         ],
         "tags": [
@@ -317,7 +317,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "561c7894f3ca7df0b3874ea749320b7d97eb3118c07c2636f4c4215377697927"
+        "hash": "cfbb9759a71b09d9351a02f39f828578290e389aeb5390ce760957ee43be0297"
       }
     },
     {

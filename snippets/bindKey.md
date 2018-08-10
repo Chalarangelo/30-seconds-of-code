@@ -6,7 +6,8 @@ Return a `function` that uses `Function.apply()` to bind `context[fn]` to `conte
 Use the spread operator (`...`) to prepend any additional supplied parameters to the arguments.
 
 ```js
-const bindKey = (context, fn, ...boundArgs) => (...args) => context[fn].apply(context, [...boundArgs, ...args]);
+const bindKey = (context, fn, ...boundArgs) => (...args) =>
+  context[fn].apply(context, [...boundArgs, ...args]);
 ```
 
 ```js
