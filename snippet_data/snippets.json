@@ -2324,9 +2324,9 @@
       "type": "snippet",
       "attributes": {
         "fileName": "initializeArrayWithRange.md",
-        "text": "Initializes an array containing the numbers in the specified range where `start` and `end` are inclusive with their common difference `step`.\n\nUse `Array.from(Math.ceil((end+1-start)/step))` to create an array of the desired length(the amounts of elements is equal to `(end-start)/step` or `(end+1-start)/step` for inclusive end), `Array.map()` to fill with the desired values in a range.\nYou can omit `start` to use a default value of `0`.\nYou can omit `step` to use a default value of `1`.",
+        "text": "Initializes an array containing the numbers in the specified range where `start` and `end` are inclusive with their common difference `step`.\n\nUse `Array.from()` to create an array of the desired length, `(end - start + 1)/step`, and a map function to fill it with the desired values in the given range.\nYou can omit `start` to use a default value of `0`.\nYou can omit `step` to use a default value of `1`.",
         "codeBlocks": [
-          "const initializeArrayWithRange = (end, start = 0, step = 1) =>\n  Array.from({ length: Math.ceil((end + 1 - start) / step) }).map((v, i) => i * step + start);",
+          "const initializeArrayWithRange = (end, start = 0, step = 1) =>\n  Array.from({ length: Math.ceil((end - start + 1) / step) }, (v, i) => i * step + start);",
           "initializeArrayWithRange(5); // [0,1,2,3,4,5]\ninitializeArrayWithRange(7, 3); // [3,4,5,6,7]\ninitializeArrayWithRange(9, 0, 2); // [0,2,4,6,8]"
         ],
         "tags": [
@@ -2336,7 +2336,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "dcd2209a400e3bc7df0157df52faf794c628b80c625b9f5d9f15625f269890b0"
+        "hash": "f2cb7d6d0d34691affe17f7c06ee5c45944bd9515298560a18543f0798b4fe13"
       }
     },
     {
@@ -3198,9 +3198,9 @@
       "type": "snippet",
       "attributes": {
         "fileName": "longestItem.md",
-        "text": "Takes any number of iterable objects or objects with a `length` property and returns the longest one.\n\nUse `Array.sort()` to sort all arguments by `length`, return the first (longest) one.",
+        "text": "Takes any number of iterable objects or objects with a `length` property and returns the longest one.\n\nUse `Array.reduce()` to collect the longest element.  Returns [] for empty array.",
         "codeBlocks": [
-          "const longestItem = (...vals) => [...vals].sort((a, b) => b.length - a.length)[0];",
+          "const longestItem = (...vals) => [...vals].reduce((a, x) => (a.length > x.length ? a : x), []);",
           "longestItem('this', 'is', 'a', 'testcase'); // 'testcase'\nlongestItem(...['a', 'ab', 'abc']); // 'abc'\nlongestItem(...['a', 'ab', 'abc'], 'abcd'); // 'abcd'\nlongestItem([1, 2, 3], [1, 2], [1, 2, 3, 4, 5]); // [1, 2, 3, 4, 5]\nlongestItem([1, 2, 3], 'foobar'); // 'foobar'"
         ],
         "tags": [
@@ -3211,7 +3211,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "dae3111792b57ac2ac698374e2eb0e568e8910041940fd0240053387a8dd72e3"
+        "hash": "255f7c6b0838d0f587c7e361535eedd09d56abce74aa7d6e59e4e224e42869fc"
       }
     },
     {
@@ -4501,9 +4501,9 @@
       "type": "snippet",
       "attributes": {
         "fileName": "rearg.md",
-        "text": "Creates a function that invokes the provided function with its arguments arranged according to the specified indexes.\n\nUse `Array.reduce()` and `Array.indexOf()` to reorder arguments based on `indexes` in combination with the spread operator (`...`) to pass the transformed arguments to `fn`.",
+        "text": "Creates a function that invokes the provided function with its arguments arranged according to the specified indexes.\n\nUse `Array.map()` to reorder arguments based on `indexes` in combination with the spread operator (`...`) to pass the transformed arguments to `fn`.",
         "codeBlocks": [
-          "const rearg = (fn, indexes) => (...args) =>\n  fn(\n    ...args.reduce(\n      (acc, val, i) => ((acc[indexes.indexOf(i)] = val), acc),\n      Array.from({ length: indexes.length })\n    )\n  );",
+          "const rearg = (fn, indexes) => (...args) => fn(...indexes.map(i => args[i]));",
           "var rearged = rearg(\n  function(a, b, c) {\n    return [a, b, c];\n  },\n  [2, 0, 1]\n);\nrearged('b', 'c', 'a'); // ['a', 'b', 'c']"
         ],
         "tags": [
@@ -4513,7 +4513,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "4117e1a4abc2008657ac12d2ca949d05dceb9f3c303feb1828605b6010441fe5"
+        "hash": "ed859f031cdc8a778bcec23817f79dab36f7607424fedda33d8d997172404de1"
       }
     },
     {
