@@ -1856,10 +1856,10 @@ last([1, 2, 3]); // 3
 
 Takes any number of iterable objects or objects with a `length` property and returns the longest one.
 
-Use `Array.sort()` to sort all arguments by `length`, return the first (longest) one.
+Use `Array.reduce()` to collect the longest element.  Returns [] for empty array.
 
 ```js
-const longestItem = (...vals) => [...vals].sort((a, b) => b.length - a.length)[0];
+const longestItem = (...vals) => [...vals].reduce((a, x) => (a.length > x.length ? a : x), []);
 ```
 
 <details>
