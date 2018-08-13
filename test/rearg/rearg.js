@@ -1,8 +1,2 @@
-const rearg = (fn, indexes) => (...args) =>
-  fn(
-    ...args.reduce(
-      (acc, val, i) => ((acc[indexes.indexOf(i)] = val), acc),
-      Array.from({ length: indexes.length })
-    )
-  );
+const rearg = (fn, indexes) => (...args) => fn(...indexes.map(i => args[i]));
 module.exports = rearg;
