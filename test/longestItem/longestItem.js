@@ -1,2 +1,2 @@
-const longestItem = (...vals) => [...vals].sort((a, b) => b.length - a.length)[0];
+const longestItem = (...vals) => [...vals].reduce((a, x) => (a.length > x.length ? a : x), []);
 module.exports = longestItem;
