@@ -735,16 +735,10 @@ delay(2000).then(() => console.log('Hi!')); // // Promise resolves after 2s
 
 Creates a function that invokes the provided function with its arguments arranged according to the specified indexes.
 
-Use `Array.reduce()` and `Array.indexOf()` to reorder arguments based on `indexes` in combination with the spread operator (`...`) to pass the transformed arguments to `fn`.
+Use `Array.map()` to reorder arguments based on `indexes` in combination with the spread operator (`...`) to pass the transformed arguments to `fn`.
 
 ```js
-const rearg = (fn, indexes) => (...args) =>
-  fn(
-    ...args.reduce(
-      (acc, val, i) => ((acc[indexes.indexOf(i)] = val), acc),
-      Array.from({ length: indexes.length })
-    )
-  );
+const rearg = (fn, indexes) => (...args) => fn(...indexes.map(i => args[i]));
 ```
 
 <details>
