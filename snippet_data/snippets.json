@@ -2604,9 +2604,9 @@
       "type": "snippet",
       "attributes": {
         "fileName": "isArrayLike.md",
-        "text": "Checks if the provided argument is array-like (i.e. is iterable).\n\nUse the spread operator (`...`) to check if the provided argument is iterable inside a `try... catch` block and the comma operator (`,`) to return the appropriate value.",
+        "text": "Checks if the provided argument is array-like (i.e. is iterable).\n\nCheck if the provided argument is not `null` and that its `Symbol.iterator` property is a function.",
         "codeBlocks": [
-          "const isArrayLike = val => {\n  try {\n    return [...val], true;\n  } catch (e) {\n    return false;\n  }\n};",
+          "const isArrayLike = obj => obj != null && typeof obj[Symbol.iterator] === 'function';",
           "isArrayLike(document.querySelectorAll('.className')); // true\nisArrayLike('abc'); // true\nisArrayLike(null); // false"
         ],
         "tags": [
@@ -2616,7 +2616,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "0d30400ab43a3e2706c3684495c9ae80361b50ca0606c7bbd4f96ca423c89c18"
+        "hash": "00b43a2b430d5d9205046ad6fbf7442f0d4507895c82545753253b5b5f97fa3a"
       }
     },
     {
