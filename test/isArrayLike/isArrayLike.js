@@ -1,8 +1,2 @@
-const isArrayLike = val => {
-  try {
-    return [...val], true;
-  } catch (e) {
-    return false;
-  }
-};
+const isArrayLike = obj => obj != null && typeof obj[Symbol.iterator] === 'function';
 module.exports = isArrayLike;
