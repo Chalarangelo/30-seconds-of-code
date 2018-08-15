@@ -7,7 +7,8 @@ Returns `undefined` if no arguments are provided.
 Use `Array.reduce()`, comparing the `length` of objects to find the longest one.  
 
 ```js
-const longestItem = (val, ...vals) => [val, ...vals].reduce((a, x) => x.length > a.length ? x : a);
+const longestItem = (val, ...vals) =>
+  [val, ...vals].reduce((a, x) => (x.length > a.length ? x : a));
 ```
 
 ```js
