@@ -3198,9 +3198,9 @@
       "type": "snippet",
       "attributes": {
         "fileName": "longestItem.md",
-        "text": "Takes any number of iterable objects or objects with a `length` property and returns the longest one.\n\nUse `Array.reduce()` to collect the longest element.  Returns [] for empty array.",
+        "text": "Takes any number of iterable objects or objects with a `length` property and returns the longest one.\nIf multiple objects have the same length, the first one will be returned.\nReturns `undefined` if no arguments are provided.\n\nUse `Array.reduce()`, comparing the `length` of objects to find the longest one.",
         "codeBlocks": [
-          "const longestItem = (...vals) => [...vals].reduce((a, x) => (a.length > x.length ? a : x), []);",
+          "const longestItem = (val, ...vals) =>\n  [val, ...vals].reduce((a, x) => (x.length > a.length ? x : a));",
           "longestItem('this', 'is', 'a', 'testcase'); // 'testcase'\nlongestItem(...['a', 'ab', 'abc']); // 'abc'\nlongestItem(...['a', 'ab', 'abc'], 'abcd'); // 'abcd'\nlongestItem([1, 2, 3], [1, 2], [1, 2, 3, 4, 5]); // [1, 2, 3, 4, 5]\nlongestItem([1, 2, 3], 'foobar'); // 'foobar'"
         ],
         "tags": [
@@ -3211,7 +3211,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "255f7c6b0838d0f587c7e361535eedd09d56abce74aa7d6e59e4e224e42869fc"
+        "hash": "cb9de7acf3a94ee67a24d7d5926944124ad0bd3459126c2f740f868fbffc655b"
       }
     },
     {
