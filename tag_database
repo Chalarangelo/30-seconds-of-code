@@ -302,6 +302,7 @@ unionWith:array,function
 uniqueElements:array
 uniqueElementsBy:array,function
 uniqueElementsByRight:array,function
+uniqueSymmetricDifference:array,math
 untildify:node,string
 unzip:array
 unzipWith:array,function,advanced
