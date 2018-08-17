@@ -189,6 +189,7 @@ average(1, 2, 3);
 * [`uniqueElements`](#uniqueelements)
 * [`uniqueElementsBy`](#uniqueelementsby)
 * [`uniqueElementsByRight`](#uniqueelementsbyright)
+* [`uniqueSymmetricDifference`](#uniquesymmetricdifference)
 * [`unzip`](#unzip)
 * [`unzipWith`](#unzipwith-)
 * [`without`](#without)
@@ -2619,7 +2620,7 @@ const stable = stableSort(arr, () => 0); // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 ### symmetricDifference
 
-Returns the symmetric difference between two arrays.
+Returns the symmetric difference between two arrays, without filtering out duplicate values.
 
 Create a `Set` from each array, then use `Array.filter()` on each of them to only keep values not contained in the other.
 
@@ -2635,7 +2636,8 @@ const symmetricDifference = (a, b) => {
 <summary>Examples</summary>
 
 ```js
-symmetricDifference([1, 2, 3], [1, 2, 4]); // [3,4]
+symmetricDifference([1, 2, 3], [1, 2, 4]); // [3, 4]
+symmetricDifference([1, 2, 2], [1, 3, 1]); // [2, 2, 3]
 ```
 
 </details>
@@ -3018,6 +3020,31 @@ uniqueElementsByRight(
   ],
   (a, b) => a.id == b.id
 ); // [ { id: 0, value: 'e' }, { id: 1, value: 'd' }, { id: 2, value: 'c' } ]
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### uniqueSymmetricDifference
+
+Returns the unique symmetric difference between two arrays, not containing duplicate values from either array.
+
+Use `Array.filter()` and `Array.includes()` on each array to remove values contained in the other, then create a `Set` from the results, removing duplicate values.
+
+```js
+const uniqueSymmetricDifference = (a, b) => [
+  ...new Set([...a.filter(v => !b.includes(v)), ...b.filter(v => !a.includes(v))])
+];
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+uniqueSymmetricDifference([1, 2, 3], [1, 2, 4]); // [3, 4]
+uniqueSymmetricDifference([1, 2, 2], [1, 3, 1]); // [2, 3]
 ```
 
 </details>
