@@ -1,6 +1,6 @@
 ### symmetricDifference
 
-Returns the symmetric difference between two arrays.
+Returns the symmetric difference between two arrays, without filtering out duplicate values.
 
 Create a `Set` from each array, then use `Array.filter()` on each of them to only keep values not contained in the other.
 
