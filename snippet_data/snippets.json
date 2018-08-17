@@ -3662,9 +3662,9 @@
       "type": "snippet",
       "attributes": {
         "fileName": "nthElement.md",
-        "text": "Returns the nth element of an array.\n\nUse `Array.slice()` to get an array containing the nth element at the first place.\nIf the index is out of bounds, return `[]`.\nOmit the second argument, `n`, to get the first element of the array.",
+        "text": "Returns the nth element of an array.\n\nUse `Array.slice()` to get an array containing the nth element at the first place.\nIf the index is out of bounds, return `undefined`.\nOmit the second argument, `n`, to get the first element of the array.",
         "codeBlocks": [
-          "const nthElement = (arr, n = 0) => (n > 0 ? arr.slice(n, n + 1) : arr.slice(n))[0];",
+          "const nthElement = (arr, n = 0) => (n === -1 ? arr.slice(n) : arr.slice(n, n + 1))[0];",
           "nthElement(['a', 'b', 'c'], 1); // 'b'\nnthElement(['a', 'b', 'b'], -3); // 'a'"
         ],
         "tags": [
@@ -3673,7 +3673,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "8d86827300570ea124917756dd740f33f5d12b59487e889ebcad2e1172bf1993"
+        "hash": "94f23b748d064fc620e820b9f858e0b191c68be84c9af6d8740fe48618005870"
       }
     },
     {
@@ -5337,10 +5337,10 @@
       "type": "snippet",
       "attributes": {
         "fileName": "symmetricDifference.md",
-        "text": "Returns the symmetric difference between two arrays.\n\nCreate a `Set` from each array, then use `Array.filter()` on each of them to only keep values not contained in the other.",
+        "text": "Returns the symmetric difference between two arrays, without filtering out duplicate values.\n\nCreate a `Set` from each array, then use `Array.filter()` on each of them to only keep values not contained in the other.",
         "codeBlocks": [
           "const symmetricDifference = (a, b) => {\n  const sA = new Set(a),\n    sB = new Set(b);\n  return [...a.filter(x => !sB.has(x)), ...b.filter(x => !sA.has(x))];\n};",
-          "symmetricDifference([1, 2, 3], [1, 2, 4]); // [3,4]"
+          "symmetricDifference([1, 2, 3], [1, 2, 4]); // [3, 4]\nsymmetricDifference([1, 2, 2], [1, 3, 1]); // [2, 2, 3]"
         ],
         "tags": [
           "array",
@@ -5349,7 +5349,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "a353d35fc5fb8ec4ebbf0856079a823a598a5023ca908a7b1ddca55b4b3b60fe"
+        "hash": "476d7ee29bd0750a4c0f428c7e17a612ea50ee002eb865733f8d312b79a0c5a3"
       }
     },
     {
@@ -6037,6 +6037,26 @@
       "meta": {
         "archived": false,
         "hash": "853887ad00b7c39a719c5b7e16dd3464a85f08da43d9d1bd1e7b7ebeaa897c95"
+      }
+    },
+    {
+      "id": "uniqueSymmetricDifference",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "uniqueSymmetricDifference.md",
+        "text": "Returns the unique symmetric difference between two arrays, not containing duplicate values from either array.\n\nUse `Array.filter()` and `Array.includes()` on each array to remove values contained in the other, then create a `Set` from the results, removing duplicate values.",
+        "codeBlocks": [
+          "const uniqueSymmetricDifference = (a, b) => [\n  ...new Set([...a.filter(v => !b.includes(v)), ...b.filter(v => !a.includes(v))])\n];",
+          "uniqueSymmetricDifference([1, 2, 3], [1, 2, 4]); // [3, 4]\nuniqueSymmetricDifference([1, 2, 2], [1, 3, 1]); // [2, 3]"
+        ],
+        "tags": [
+          "array",
+          "math"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "58712a3aee2c952a18d9f0d2f21d0002ac720d0d0f8fe082d02f891e3912bf1d"
       }
     },
     {
