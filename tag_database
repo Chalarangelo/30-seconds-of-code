@@ -48,6 +48,7 @@ debounce:function
 decapitalize:string,array
 deepClone:object,recursion
 deepFlatten:array,recursion
+deepFreeze:object,recursion
 defaults:object
 defer:function
 degreesToRads:math
