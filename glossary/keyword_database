@@ -2,6 +2,7 @@ argument
 array
 boolean
 callback
+class
 constant
 cross-site-scripting-xss
 currying
