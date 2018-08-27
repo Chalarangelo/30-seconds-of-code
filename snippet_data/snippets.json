@@ -1692,7 +1692,7 @@
         "fileName": "formatDuration.md",
         "text": "Returns the human readable format of the given number of milliseconds.\n\nDivide `ms` with the appropriate values to obtain the appropriate values for `day`, `hour`, `minute`, `second` and `millisecond`.\nUse `Object.entries()` with `Array.filter()` to keep only non-zero values.\nUse `Array.map()` to create the string for each value, pluralizing appropriately.\nUse `String.join(', ')` to combine the values into a string.",
         "codeBlocks": [
-          "const formatDuration = ms => {\n  if (ms < 0) ms = -ms;\n  const time = {\n    day: Math.floor(ms / 86400000),\n    hour: Math.floor(ms / 3600000) % 24,\n    minute: Math.floor(ms / 60000) % 60,\n    second: Math.floor(ms / 1000) % 60,\n    millisecond: Math.floor(ms) % 1000\n  };\n  return Object.entries(time)\n    .filter(val => val[1] !== 0)\n    .map(val => val[1] + ' ' + (val[1] !== 1 ? val[0] + 's' : val[0]))\n    .join(', ');\n};",
+          "const formatDuration = ms => {\n  if (ms < 0) ms = -ms;\n  const time = {\n    day: Math.floor(ms / 86400000),\n    hour: Math.floor(ms / 3600000) % 24,\n    minute: Math.floor(ms / 60000) % 60,\n    second: Math.floor(ms / 1000) % 60,\n    millisecond: Math.floor(ms) % 1000\n  };\n  return Object.entries(time)\n    .filter(val => val[1] !== 0)\n    .map(([key, val]) => `${val} ${key}${val !== 1 ? 's' : ''}`)\n    .join(', ');\n};",
           "formatDuration(1001); // '1 second, 1 millisecond'\nformatDuration(34325055574); // '397 days, 6 hours, 44 minutes, 15 seconds, 574 milliseconds'"
         ],
         "tags": [
@@ -1704,7 +1704,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "79051bd95886abf6856585481e3c9cb0685e197bad764a56eb583bd3421f3449"
+        "hash": "fcaccacf92e1a1e5f8610cf78b840a6b897fc5e6cadb54d7a32efadb71b99f80"
       }
     },
     {
