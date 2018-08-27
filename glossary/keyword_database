@@ -35,6 +35,7 @@ regular-expressions
 repository
 selector
 string
+svg
 template-literals
 value-vs-reference
 variable
