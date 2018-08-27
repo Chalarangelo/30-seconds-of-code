@@ -18,6 +18,7 @@ functor
 git
 html
 http-and-https
+integer
 ip
 json
 keyword_database
