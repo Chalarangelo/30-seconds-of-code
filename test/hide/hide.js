@@ -1,2 +1,2 @@
-const hide = els => els.forEach(e => e.style.display = 'none');
+const hide = els => els.forEach(e => (e.style.display = 'none'));
 module.exports = hide;

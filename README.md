@@ -359,6 +359,7 @@ average(1, 2, 3);
 
 * [`bindAll`](#bindall)
 * [`deepClone`](#deepclone)
+* [`deepFreeze`](#deepfreeze)
 * [`defaults`](#defaults)
 * [`dig`](#dig)
 * [`equals`](#equals-)
@@ -3679,17 +3680,17 @@ hashBrowser(JSON.stringify({ a: 'a', b: [1, 2, 3, 4], foo: { c: 'bar' } })).then
 
 Hides all the elements specified.
 
-Use the spread operator (`...`) and `Array.forEach()` to apply `display: none` to each element specified.
+Use `NodeList.prototype.forEach()` to apply `display: none` to each element specified.
 
 ```js
-const hide = (...el) => [...el].forEach(e => (e.style.display = 'none'));
+const hide = els => els.forEach(e => (e.style.display = 'none'));
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```js
-hide(...document.querySelectorAll('img')); // Hides all <img> elements on the page
+hide(document.querySelectorAll('img')); // Hides all <img> elements on the page
 ```
 
 </details>
@@ -6489,6 +6490,37 @@ const deepClone = obj => {
 ```js
 const a = { foo: 'bar', obj: { a: 1, b: 2 } };
 const b = deepClone(a); // a !== b, a.obj !== b.obj
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
+### deepFreeze
+
+Deep freezes an object.
+
+Calls `Object.freeze(obj)` recursively on all unfrozen properties of passed object that are `instanceof` object.
+
+```js
+const deepFreeze = obj =>
+  Object.keys(obj).forEach(
+    prop =>
+      !obj[prop] instanceof Object || Object.isFrozen(obj[prop]) ? null : deepFreeze(obj[prop])
+  ) || Object.freeze(obj);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+'use strict';
+
+const o = deepFreeze([1, [2, 3]]);
+
+o[0] = 3; // not allowed
+o[1][0] = 4; // not allowed as well
 ```
 
 </details>
