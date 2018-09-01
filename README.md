@@ -3679,17 +3679,17 @@ hashBrowser(JSON.stringify({ a: 'a', b: [1, 2, 3, 4], foo: { c: 'bar' } })).then
 
 Hides all the elements specified.
 
-Use the spread operator (`...`) and `Array.forEach()` to apply `display: none` to each element specified.
+Use `NodeList.prototype.forEach()` to apply `display: none` to each element specified.
 
 ```js
-const hide = (...el) => [...el].forEach(e => (e.style.display = 'none'));
+const hide = els => els.forEach(e => (e.style.display = 'none'));
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```js
-hide(...document.querySelectorAll('img')); // Hides all <img> elements on the page
+hide(document.querySelectorAll('img')); // Hides all <img> elements on the page
 ```
 
 </details>
@@ -4301,7 +4301,7 @@ const formatDuration = ms => {
   };
   return Object.entries(time)
     .filter(val => val[1] !== 0)
-    .map(val => val[1] + ' ' + (val[1] !== 1 ? val[0] + 's' : val[0]))
+    .map(([key, val]) => `${val} ${key}${val !== 1 ? 's' : ''}`)
     .join(', ');
 };
 ```
