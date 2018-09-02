@@ -2,8 +2,10 @@ argument
 array
 boolean
 callback
+class
 constant
 cross-site-scripting-xss
+css
 currying
 dns
 dom
@@ -18,11 +20,13 @@ functor
 git
 html
 http-and-https
+integer
 ip
 json
 keyword_database
 npm
 object-oriented-programming
+object
 promise
 react
 readme
@@ -31,6 +35,7 @@ regular-expressions
 repository
 selector
 string
+svg
 template-literals
 value-vs-reference
 variable
