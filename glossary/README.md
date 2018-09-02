@@ -2,26 +2,32 @@
 
 ## Table of Contents
 
+* [`AJAX`](#ajax)
 * [`API`](#api)
 * [`Argument`](#argument)
 * [`Array`](#array)
 * [`Boolean`](#boolean)
 * [`Callback`](#callback)
 * [`Class`](#class)
+* [`Closure`](#closure)
 * [`Constant`](#constant)
+* [`CORS`](#cors)
 * [`Cross-site scripting (XSS)`](#cross-site-scripting-xss)
 * [`CSS`](#css)
 * [`Currying`](#currying)
 * [`DNS`](#dns)
 * [`DOM`](#dom)
+* [`Domain name registrar`](#domain-name-registrar)
 * [`Domain name`](#domain-name)
 * [`Element`](#element)
 * [`ES6`](#es6)
 * [`Event loop`](#event-loop)
 * [`Express`](#express)
+* [`Flexbox`](#flexbox)
 * [`Function`](#function)
 * [`Functional programming`](#functional-programming)
 * [`Functor`](#functor)
+* [`Garbage collection`](#garbage-collection)
 * [`Git`](#git)
 * [`HTML`](#html)
 * [`HTTP and HTTPS`](#http-and-https)
@@ -30,6 +36,8 @@
 * [`IP`](#ip)
 * [`jQuery`](#jquery)
 * [`JSON`](#json)
+* [`MongoDB`](#mongodb)
+* [`Mutable value`](#mutable-value)
 * [`MVC`](#mvc)
 * [`Npm`](#npm)
 * [`Object-oriented programming`](#object-oriented-programming)
@@ -37,12 +45,16 @@
 * [`Promise`](#promise)
 * [`Pseudo-class`](#pseudo-class)
 * [`Pseudo-element`](#pseudo-element)
+* [`PWA`](#pwa)
 * [`React`](#react)
 * [`Recursion`](#recursion)
 * [`Regular expressions`](#regular-expressions)
 * [`Repository`](#repository)
+* [`Scope`](#scope)
 * [`Selector`](#selector)
+* [`SQL injection`](#sql-injection)
 * [`SQL`](#sql)
+* [`SSL`](#ssl)
 * [`String`](#string)
 * [`SVG`](#svg)
 * [`Template literals`](#template-literals)
@@ -56,6 +68,10 @@
 * [`XML`](#xml)
 * [`Yarn`](#yarn)
 
+
+### AJAX
+
+Asynchronous JavaScript and XML (known as AJAX) is a term that describes a new approach to using multiple technologies together in order to enable web applications to make quick updates to the user interface without reloading the entire browser page.
 
 ### API
 
@@ -87,10 +103,19 @@ Callbacks can be synchronous or asynchronous.
 
 In object-oriented programming, a class is a template definition of an object's properties and methods.
 
+### Closure
+
+A closure is the combination of a function and the lexical environment within which that function was declared.
+The closure allows a function to access the contents of that environment.
+
 ### Constant
 
 A constant is a value, associated with an identifier.
 The value of a constant can be accessed using the identifier and cannot be altered during execution.
+
+### CORS
+
+Cross-Origin Resource Sharing (known as CORS) is a mechanism that uses extra HTTP headers to tell a browser to let a web application running at one domain have permission to access resources from a server at a different domain.
 
 ### Cross-site scripting (XSS)
 
@@ -116,6 +141,11 @@ A DNS (Domain Name System) translates domain names to the IP addresses needed to
 The DOM (Document Object Model) is a cross-platform API that treats HTML and XML documents as a tree structure consisting of nodes. 
 These nodes (such as elements and text nodes) are objects that can be programmatically manipulated and any visible changes made to them are reflected live in the document. 
 In a browser, this API is available to JavaScript where DOM nodes can be manipulated to change their styles, contents, placement in the document, or interacted with through event listeners.
+
+### Domain name registrar
+
+A domain name registrar is a company that manages the reservation of internet domain names.
+A domain name registrar must be approved by a general top-level domain (gTLD) registry or a country code top-level domain (ccTLD) registry.
 
 ### Domain name
 
@@ -143,6 +173,10 @@ The event loop allows JavaScript to perform non-blocking I/O operations, despite
 Express is a backend framework, that provides a layer of fundamental web application features for Node.js.
 Some of its key features are routing, middleware, template engines and error handling.
 
+### Flexbox
+
+Flexbox is a one-dimensional layout model used to style websites as a property that could advance space distribution between items and provide powerful alignment capabilities.
+
 ### Function
 
 Functions are self-contained blocks of code with their own scope, that can be called by other code and are usually associated with a unique identifier.
@@ -159,6 +193,11 @@ Functions that always return the same value for the same input and don't produce
 A Functor is a data type common in functional programming that implements a `map` method. 
 The `map` method takes a function and applies it to the data in the Functor, returning a new instance of the Functor with the result.
 JavaScript `Array`s are an example of the Functor data type.
+
+### Garbage collection
+
+Garbage collection is a form of automatic memory management.
+It attempts to reclaim memory occupied by objects that are no longer used by the program.
 
 ### Git
 
@@ -200,6 +239,16 @@ jQuery uses its globally defined function, `$()`, to select and manipulate DOM e
 JSON (JavaScript Object Notation) is a format for storing and exchanging data.
 It closely resembles the JavaScript object syntax, however some data types, such as dates and functions, cannot be natively represented and need to be serialized first.
 
+### MongoDB
+
+MongoDB is a NoSQL database model that stores data in flexible, JSON-like documents, meaning fields can vary from document to document and data structure can be changed over time
+
+### Mutable value
+
+Mutable value is a type of variable that can be changed once created.
+Objects are mutable as their state can be modified after they are created.
+Primitive values are not mutable as we perform reassignment once we change them.
+
 ### MVC
 
 MVC stands for Model-View-Controller and is a software design pattern, emphasizing separation of concerns (logic and display).
@@ -234,6 +283,10 @@ In CSS, a pseudo-class is used to define a special state of an element and can b
 
 In CSS, a pseudo-element is used to style specific parts of an element and can be used as a selector in combination with an id, element or class selector.
 
+### PWA
+
+Progressive Web App (known as PWA) is a term used to describe web applications that load like regular websites but can offer the user functionality such as working offline, push notifications, and device hardware access that were traditionally available only to native mobile applications.
+
 ### React
 
 React is a frontend framework, that allows developers to create dynamic, component-based user interfaces.
@@ -255,15 +308,29 @@ JavaScript provides a regular expression implementation through the `RegExp` obj
 
 In a version control system, a repository (or repo for short) is a data structure that stores metadata for a set of files (i.e. a project).
 
+### Scope
+
+Each function has its own scope, and any variable declared within that function is only accessible from that function and any nested functions.
+
 ### Selector
 
 A CSS selector is a pattern that is used to select and/or style one or more elements in a document, based on certain rules.
 The order in which CSS selectors apply styles to elements is based on the rules of CSS specificity.
 
+### SQL injection
+
+SQL injection is a code injection technique, used to attack data-driven applications.
+SQL injections get their name from the SQL language and mainly target data stored in relational databases.
+
 ### SQL
 
 SQL stands for Structured Query Language and is a language used to create, update, retrieve and calculate data in table-based databases.
 SQL databases use a relational database model and are particularly useful in handlind structured data with relations between different entities.
+
+### SSL
+
+Secure Sockets Layer, commonly known as SSL or TLS, is a set of protocols and standards for transferring private data across the Internet.
+SSL uses a cryptographic system that uses two keys to encrypt data.
 
 ### String
 
