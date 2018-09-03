@@ -7,7 +7,7 @@ If the second parameter, `end`, is not specified, the range is considered to be 
 
 ```js
 const inRange = (n, start, end = null) => {
-  if (end && start > end) end = [start, (start = end)][0];
+  if (end && start > end) [end, start] = [start, end];
   return end == null ? n >= 0 && n < start : n >= start && n < end;
 };
 ```
@@ -16,5 +16,5 @@ const inRange = (n, start, end = null) => {
 inRange(3, 2, 5); // true
 inRange(3, 4); // true
 inRange(2, 3, 5); // false
-inrange(3, 2); // false
+inRange(3, 2); // false
 ```
