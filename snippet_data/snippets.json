@@ -2426,8 +2426,8 @@
         "fileName": "inRange.md",
         "text": "Checks if the given number falls within the given range.\n\nUse arithmetic comparison to check if the given number is in the specified range.\nIf the second parameter, `end`, is not specified, the range is considered to be from `0` to `start`.",
         "codeBlocks": [
-          "const inRange = (n, start, end = null) => {\n  if (end && start > end) end = [start, (start = end)][0];\n  return end == null ? n >= 0 && n < start : n >= start && n < end;\n};",
-          "inRange(3, 2, 5); // true\ninRange(3, 4); // true\ninRange(2, 3, 5); // false\ninrange(3, 2); // false"
+          "const inRange = (n, start, end = null) => {\n  if (end && start > end) [end, start] = [start, end];\n  return end == null ? n >= 0 && n < start : n >= start && n < end;\n};",
+          "inRange(3, 2, 5); // true\ninRange(3, 4); // true\ninRange(2, 3, 5); // false\ninRange(3, 2); // false"
         ],
         "tags": [
           "math"
@@ -2435,7 +2435,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "fe2b9483c3a173e426aba3e834d6b97008b840ea40e54c8eabb06e1da9832872"
+        "hash": "cb00d1c23e02506fc968515ce8c18dcec8837d447cd47a99f73777574308fb49"
       }
     },
     {
