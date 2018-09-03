@@ -8,7 +8,7 @@ $fore-color-var: '--fore-color';
 $back-color-var: '--back-color';
 $secondary-fore-color-var: '--secondary-fore-color';
 $secondary-back-color-var: '--secondary-back-color';
-$tertiary-back-color-var: '--tertiary-back-color';
+$tertiary-fore-color-var: '--tertiary-fore-color';
 $border-color-var: '--border-color';
 $universal-margin-var: '--universal-margin';
 $universal-padding-var: '--universal-padding';
@@ -27,65 +27,65 @@ $token-color-e-var: '--token-color-e';
 $token-color-f-var: '--token-color-f';
 $token-color-g-var: '--token-color-g';
 $token-color-h-var: '--token-color-h';
-$token-color-a: #7a8490;
-$token-color-b: #666;
-$token-color-c: #005cc5;
-$token-color-d: #832ed2;
-$token-color-e: #067e36;
-$token-color-f: #d73a49;
-$token-color-g: #097cab;
-$token-color-h: #e90;
+$token-color-a: #80cbc4;
+$token-color-b: #bdbdbd;
+$token-color-c: #81d4fa;
+$token-color-d: #b388ff;
+$token-color-e: #c5e1a5;
+$token-color-f: #ff7043;
+$token-color-g: #4dd0e1;
+$token-color-h: #ffd54f;
 $universal-margin: 0.5rem;
 $universal-padding: 0.5rem;
 $universal-border-radius: 0.125rem;
 $heading-line-height: 1.2;
-$code-font-size:  0.8125em;
+$code-font-size:  0.875em;
 
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fBBc4.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
   font-display: swap;
 }
 @font-face {
   font-family: 'Roboto';
   font-style: italic;
-  font-weight: 400;
-  src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1Mu51xIIzI.woff2) format('woff2');
+  font-weight: 300;
+  src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOjCnqEu92Fr1Mu51TjASc6CsQ.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
   font-display: swap;
 }
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
-  font-weight: 700;
-  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBBc4.woff2) format('woff2');
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
   font-display: swap;
 }
 @font-face {
   font-family: 'Roboto Mono';
   font-style: normal;
-  font-weight: 400;
-  src: local('Roboto Mono'), local('RobotoMono-Regular'), url(https://fonts.gstatic.com/s/robotomono/v5/L0x5DF4xlVMF-BfR8bXMIjhLq38.woff2) format('woff2');
+  font-weight: 300;
+  src: local('Roboto Mono Light'), local('RobotoMono-Light'), url(https://fonts.gstatic.com/s/robotomono/v5/L0xkDF4xlVMF-BfR8bXMIjDgiWqxf78.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
   font-display: swap;
 }
 @font-face {
   font-family: 'Roboto Mono';
   font-style: italic;
-  font-weight: 400;
-  src: local('Roboto Mono Italic'), local('RobotoMono-Italic'), url(https://fonts.gstatic.com/s/robotomono/v5/L0x7DF4xlVMF-BfR8bXMIjhOm32WWg.woff2) format('woff2');
+  font-weight: 300;
+  src: local('Roboto Mono Light Italic'), local('RobotoMono-LightItalic'), url(https://fonts.gstatic.com/s/robotomono/v5/L0xmDF4xlVMF-BfR8bXMIjhOk9a0T72jBg.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
   font-display: swap;
 }
 @font-face {
   font-family: 'Roboto Mono';
   font-style: normal;
-  font-weight: 700;
-  src: local('Roboto Mono Bold'), local('RobotoMono-Bold'), url(https://fonts.gstatic.com/s/robotomono/v5/L0xkDF4xlVMF-BfR8bXMIjDwjmqxf78.woff2) format('woff2');
+  font-weight: 500;
+  src: local('Roboto Mono Medium'), local('RobotoMono-Medium'), url(https://fonts.gstatic.com/s/robotomono/v5/L0xkDF4xlVMF-BfR8bXMIjC4iGqxf78.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
   font-display: swap;
 }
@@ -122,7 +122,7 @@ html, * {
 }
 * {
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 a, b, del, em, i, ins, q, span, strong, u {
@@ -197,7 +197,7 @@ ol, ul {
 }
 
 b, strong {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 hr {
@@ -205,15 +205,18 @@ hr {
   box-sizing: content-box;
   border: 0;
   // Actual styling using variables
-  line-height: $horizontal-rule-line-height;
+  line-height: 1.25em;
   margin: var(#{$universal-margin-var});
   height: $__1px;
   background: linear-gradient(to right, transparent, var(#{$border-color-var}) 20%, var(#{$border-color-var}) 80%, transparent);
 }
 
+code, kbd, pre {
+  font-size: $code-font-size;
+}
+
 code, kbd, pre, code *, pre *, kbd *, code[class*="language-"], pre[class*="language-"] {
   font-family: #{$code-font-family}; 
-  font-size: $code-font-size;
 }
 
 sup, sub, code, kbd {
@@ -237,11 +240,13 @@ kbd {
 
 pre {
   overflow: auto; // Responsiveness
-  background: var(#{$secondary-back-color-var});
   padding: calc(1.5 * var(#{$universal-padding-var}));
   margin: var(#{$universal-margin-var});
-  border: $__1px solid var(#{$secondary-border-color-var});
-  border-radius: var(#{$universal-border-radius-var});
+
+  border-radius: 0 0 var(#{$universal-border-radius-var}) var(#{$universal-border-radius-var});
+  background: #263238;
+  border: 0;
+  color: #fafafa;
 }
 
 code[class*="language-"],
@@ -262,6 +267,8 @@ pre[class*="language-"] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
+
+  color: #fafafa;
 }
 
 pre[class*="language-"] {
@@ -290,11 +297,11 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: var(#{$token-color-a});
+  color: var(#{$token-color-a-var});
 }
 
 .token.punctuation {
-  color: var(#{$token-color-b});
+  color: var(#{$token-color-b-var});
 }
 
 .namespace {
@@ -308,13 +315,13 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 .token.symbol,
 .token.deleted,
 .token.function {
-  color: var(#{$token-color-c});
+  color: var(#{$token-color-c-var});
 }
 
 
 .token.number,
 .token.class-name {
-  color: var(#{$token-color-d});
+  color: var(#{$token-color-d-var});
 }
 
 .token.selector,
@@ -323,7 +330,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 .token.char,
 .token.builtin,
 .token.inserted {
-  color: var(#{$token-color-e});
+  color: var(#{$token-color-e-var});
 }
 
 .token.operator,
@@ -334,20 +341,20 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-  color: var(#{$token-color-f});
+  color: var(#{$token-color-f-var});
 }
 
 .token.regex {
-  color: var(#{$token-color-g});
+  color: var(#{$token-color-g-var});
 }
 .token.important,
 .token.variable {
-  color: var(#{$token-color-h});
+  color: var(#{$token-color-h-var});
 }
 
 .token.important,
 .token.bold {
-  font-weight: 700;
+  font-weight: 500;
 }
 .token.italic {
   font-style: italic;
@@ -412,6 +419,17 @@ $grid-large-breakpoint: 768px;
 }
 // TODO: Missing the menu system layout - probably all JS, effects and slide over
 // TODO: Redesign cards from scratch
+
+.card {
+  margin: var(#{$universal-margin-var});
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+  .section {
+    &.card-content{
+      padding: calc(1.5 * var(#{$universal-padding-var}));
+    }
+  }
+}
+
 // TODO: Buttons and search form only
 // TODO: Top bar - header
 // TODO: Side bar - nav
