@@ -1,0 +1,317 @@
+$base-font-size: 16px;
+$base-line-height: 1.5;
+$__1px: (1px/$base-font-size) * 1rem;
+$base-font-family: '"Roboto", Helvetica, sans-serif';
+$code-font-family: '"Roboto Mono", Menlo, Consolas, monospace';
+$_body-margin: 0;
+$fore-color-var: '--fore-color';
+$back-color-var: '--back-color';
+$secondary-fore-color-var: '--secondary-fore-color';
+$secondary-back-color-var: '--secondary-back-color';
+$tertiary-back-color-var: '--tertiary-back-color';
+$border-color-var: '--border-color';
+$universal-margin-var: '--universal-margin';
+$universal-padding-var: '--universal-padding';
+$universal-border-radius-var: '--universal-border-radius';
+$fore-color: #212121;
+$secondary-fore-color: #444;
+$tertiary-fore-color: #222;
+$back-color: #fff;
+$secondary-back-color: #f0f0f0;
+$border-color: #fff;
+$token-color-a-var: '--token-color-a';
+$token-color-b-var: '--token-color-b';
+$token-color-c-var: '--token-color-c';
+$token-color-d-var: '--token-color-d';
+$token-color-e-var: '--token-color-e';
+$token-color-f-var: '--token-color-f';
+$token-color-g-var: '--token-color-g';
+$token-color-h-var: '--token-color-h';
+$token-color-a: #7a8490;
+$token-color-b: #666;
+$token-color-c: #005cc5;
+$token-color-d: #832ed2;
+$token-color-e: #067e36;
+$token-color-f: #d73a49;
+$token-color-g: #097cab;
+$token-color-h: #e90;
+$universal-margin: 0.5rem;
+$universal-padding: 0.5rem;
+$universal-border-radius: 0.125rem;
+$heading-line-height: 1.2;
+$code-font-size:  0.8125em;
+
+:root {
+  #{$fore-color-var}: $fore-color;
+  #{$back-color-var}: $back-color;
+  #{$border-color-var}: $border-color;
+  #{$secondary-fore-color-var}: $secondary-fore-color;
+  #{$tertiary-fore-color-var}: $tertiary-fore-color;
+  #{$secondary-back-color-var}: $secondary-back-color;
+  #{$universal-margin-var}: $universal-margin;
+  #{$universal-padding-var}: $universal-padding;
+  #{$universal-border-radius-var}: $universal-border-radius;
+  #{$token-color-a-var}: $token-color-a;
+  #{$token-color-b-var}: $token-color-b;
+  #{$token-color-c-var}: $token-color-c;
+  #{$token-color-d-var}: $token-color-d;
+  #{$token-color-e-var}: $token-color-e;
+  #{$token-color-f-var}: $token-color-f;
+  #{$token-color-g-var}: $token-color-g;
+  #{$token-color-h-var}: $token-color-h;
+}
+
+html {
+  font-size: $base-font-size;
+}
+
+html, * {
+  font-family: #{$base-font-family};
+  line-height: $base-line-height;
+  // Prevent adjustments of font size after orientation changes in mobile.
+  -webkit-text-size-adjust: 100%;
+}
+* {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+a, b, del, em, i, ins, q, span, strong, u {
+  font-size: 1em; // Fix for elements inside headings not displaying properly.
+}
+
+body {
+  margin: $_body-margin;
+  color: var(#{$fore-color-var});
+  background: var(#{$back-color-var});
+  overflow-x: hidden;
+}
+
+// Correct display for Edge & Firefox.
+details {
+  display: block;
+}
+
+// Correct display in all browsers.
+summary {
+  display: list-item;
+}
+
+// Abbreviations
+abbr[title] {
+  border-bottom: none;           // Remove bottom border in Firefox 39-.
+  text-decoration: underline dotted;  // Opinionated style-fix for all browsers.
+}
+
+// Show overflow in Edge.
+input {
+  overflow: visible;
+}
+
+// Make images responsive by default.
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: $heading-line-height;
+  margin: calc(1.5 * var(#{$universal-margin-var})) var(#{$universal-margin-var});
+}
+
+h1 {
+  font-size: 6rem;
+}
+h2 {
+  font-size: 3.75rem;
+}
+h3 {
+  font-size: 3rem;
+}
+h4 { 
+  font-size: 2.125rem;
+}
+h5 {
+  font-size: 1.5rem;
+}
+h6 {
+  font-size: 1.25rem;
+}
+
+p {
+  margin: var(#{$universal-margin-var});
+}
+
+ol, ul {
+  margin: var(#{$universal-margin-var});
+  padding-left: calc(2 * var(#{$universal-margin-var}));
+}
+
+b, strong {
+  font-weight: 700;
+}
+
+hr {
+  // Fixes and defaults for styling
+  box-sizing: content-box;
+  border: 0;
+  // Actual styling using variables
+  line-height: $horizontal-rule-line-height;
+  margin: var(#{$universal-margin-var});
+  height: $__1px;
+  background: linear-gradient(to right, transparent, var(#{$border-color-var}) 20%, var(#{$border-color-var}) 80%, transparent);
+}
+
+code, kbd, pre, code *, pre *, kbd *, code[class*="language-"], pre[class*="language-"] {
+  font-family: #{$code-font-family}; 
+  font-size: $code-font-size;
+}
+
+sup, sub, code, kbd {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+code {
+  background: var(#{$secondary-back-color-var});
+  padding: calc(var(#{$universal-padding-var}) / 4) calc(var(#{$universal-padding-var}) / 2);
+  border-radius: var(#{$universal-border-radius-var});
+}
+
+kbd {
+  background: var(#{$fore-color-var});
+  color: var(#{$back-color-var});
+  border-radius: var(#{$universal-border-radius-var});
+  padding: calc(var(#{$universal-padding-var}) / 4) calc(var(#{$universal-padding-var}) / 2);
+}
+
+pre {
+  overflow: auto; // Responsiveness
+  background: var(#{$secondary-back-color-var});
+  padding: calc(1.5 * var(#{$universal-padding-var}));
+  margin: var(#{$universal-margin-var});
+  border: $__1px solid var(#{$secondary-border-color-var});
+  border-radius: var(#{$universal-border-radius-var});
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: var(#{$tertiary-fore-color-var});
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.8;
+
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+
+  -webkit-hypens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre[class*="language-"] {
+  padding: calc(2 * var(#{$universal-padding-var}));
+  overflow: auto;
+  margin: var(#{$universal-margin-var}) 0;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+  background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+  background: #b3d4fc;
+}
+
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(#{$token-color-a});
+}
+
+.token.punctuation {
+  color: var(#{$token-color-b});
+}
+
+.namespace {
+  opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.constant,
+.token.symbol,
+.token.deleted,
+.token.function {
+  color: var(#{$token-color-c});
+}
+
+
+.token.number,
+.token.class-name {
+  color: var(#{$token-color-d});
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: var(#{$token-color-e});
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: var(#{$token-color-f});
+}
+
+.token.regex {
+  color: var(#{$token-color-g});
+}
+.token.important,
+.token.variable {
+  color: var(#{$token-color-h});
+}
+
+.token.important,
+.token.bold {
+  font-weight: 700;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+/*
+blockquote {}
+sup {}
+sub {}
+figure {}
+figcaption {}
+*/
