@@ -315,3 +315,50 @@ sub {}
 figure {}
 figcaption {}
 */
+
+// ===================================================
+// Layout
+// ===================================================
+$grid-medium-breakpoint: 768px;
+$grid-large-breakpoint: 768px;
+// Grid container
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: calc(0.5 * var(#{$universal-margin-var}));
+}
+// Generic centered column
+.col-centered {
+  grid-column: span 12;
+  @media screen and (min-width: #{$grid-medium-breakpoint}) {
+    grid-column: 2/12;
+  }
+  @media screen and (min-width: #{$grid-large-breakpoint}) {
+    grid-column: 3/11;
+  }
+}
+// 25% width - For the 'in numbers' section
+.col-quarter {
+  grid-column: span 3;
+}
+// For the contributors section
+.flex-row {
+  display: flex;
+  flex: 0 1 auto;
+  flex-flow: row wrap;
+  .flex-item {
+    flex: 0 0 auto;
+    max-width: 50%;
+    flex-basis: 50%;
+    @media screen and (min-width: #{$grid-medium-breakpoint}) {
+      max-width: 25%;
+      flex-basis: 25%;
+    }
+    @media screen and (min-width: #{$grid-large-breakpoint}) {
+      max-width: 100%;
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+  }
+}
+// Missing the menu system - probably all JS, effects and slide over
