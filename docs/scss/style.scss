@@ -1,8 +1,8 @@
 $base-font-size: 16px;
 $base-line-height: 1.5;
 $__1px: (1px/$base-font-size) * 1rem;
-$base-font-family: '"Roboto", Helvetica, sans-serif';
-$code-font-family: '"Roboto Mono", Menlo, Consolas, monospace';
+$base-font-family: 'Roboto, Helvetica, sans-serif';
+$code-font-family: 'Roboto Mono, Menlo, Consolas, monospace';
 $_body-margin: 0;
 $fore-color-var: '--fore-color';
 $back-color-var: '--back-color';
@@ -40,6 +40,55 @@ $universal-padding: 0.5rem;
 $universal-border-radius: 0.125rem;
 $heading-line-height: 1.2;
 $code-font-size:  0.8125em;
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1Mu51xIIzI.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBBc4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Mono'), local('RobotoMono-Regular'), url(https://fonts.gstatic.com/s/robotomono/v5/L0x5DF4xlVMF-BfR8bXMIjhLq38.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Roboto Mono Italic'), local('RobotoMono-Italic'), url(https://fonts.gstatic.com/s/robotomono/v5/L0x7DF4xlVMF-BfR8bXMIjhOm32WWg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Mono Bold'), local('RobotoMono-Bold'), url(https://fonts.gstatic.com/s/robotomono/v5/L0xkDF4xlVMF-BfR8bXMIjDwjmqxf78.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-display: swap;
+}
 
 :root {
   #{$fore-color-var}: $fore-color;
@@ -361,4 +410,13 @@ $grid-large-breakpoint: 768px;
     }
   }
 }
-// Missing the menu system - probably all JS, effects and slide over
+// TODO: Missing the menu system layout - probably all JS, effects and slide over
+// TODO: Redesign cards from scratch
+// TODO: Buttons and search form only
+// TODO: Top bar - header
+// TODO: Side bar - nav
+// TODO: Bottom area - footer
+// TODO: JS + CSS for side bar functionality
+// TODO: New toast
+// TODO: New marks
+// TODO: Components for statistics
