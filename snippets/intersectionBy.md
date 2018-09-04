@@ -6,7 +6,7 @@ Create a `Set` by applying `fn` to all elements in `b`, then use `Array.filter()
 
 ```js
 const intersectionBy = (a, b, fn) => {
-  const s = new Set(b.map(x => fn(x)));
+  const s = new Set(b.map(fn));
   return a.filter(x => s.has(fn(x)));
 };
 ```
