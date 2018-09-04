@@ -2503,7 +2503,7 @@
         "fileName": "intersectionBy.md",
         "text": "Returns a list of elements that exist in both arrays, after applying the provided function to each array element of both.\n\nCreate a `Set` by applying `fn` to all elements in `b`, then use `Array.filter()` on `a` to only keep elements, which produce values contained in `b` when `fn` is applied to them.",
         "codeBlocks": [
-          "const intersectionBy = (a, b, fn) => {\n  const s = new Set(b.map(x => fn(x)));\n  return a.filter(x => s.has(fn(x)));\n};",
+          "const intersectionBy = (a, b, fn) => {\n  const s = new Set(b.map(fn));\n  return a.filter(x => s.has(fn(x)));\n};",
           "intersectionBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [2.1]"
         ],
         "tags": [
@@ -2513,7 +2513,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "4df9daee1b38b51d92741ea763fdfb42e85331c1cb747ec413c45543243f1f48"
+        "hash": "78c90426a81372be83af6ef2bdee0147263361673ab99fa2315ead2720d991b8"
       }
     },
     {
