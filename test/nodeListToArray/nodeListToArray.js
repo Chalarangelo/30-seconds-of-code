@@ -1,2 +1,2 @@
-const nodeListToArray = nodeList => Array.prototype.slice.call(nodeList);
+const nodeListToArray = nodeList => [...nodeList];
 module.exports = nodeListToArray;
