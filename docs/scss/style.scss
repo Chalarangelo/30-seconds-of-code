@@ -396,6 +396,10 @@ $grid-large-breakpoint: 768px;
 .col-quarter {
   grid-column: span 3;
 }
+
+.col-full-width {
+  grid-column: span 12;
+}
 // For the contributors section
 .flex-row {
   display: flex;
@@ -421,6 +425,7 @@ $grid-large-breakpoint: 768px;
 
 .card {
   &.code-card {
+    margin-top: calc(2.5 * var(#{$universal-margin-var}));
     background: #263238;
     .section.card-content{
       background: var(#{$back-color-var});
@@ -565,9 +570,80 @@ $grid-large-breakpoint: 768px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
   }
 
+// TODO: Links colors
 
 // TODO: Buttons and search form only
 // TODO: Top bar - header
 // TODO: Side bar - nav
 // TODO: Bottom area - footer
 // TODO: JS + CSS for side bar functionality
+// TODO: New toast
+// TODO: New marks
+// TODO: Components for statistics
+
+header h1.logo {
+  margin-top: 0rem;
+  font-size: 1.625rem;
+  text-align: center;
+  position: relative;
+  top: 0;
+  transition: top 0.3s;
+  color: #111;
+}
+
+h1 a, h1 a:link, h1 a:visited {
+  text-decoration:none;
+  color: #111;
+  &:hover, &:focus {
+    text-decoration:none;
+    color: #111;
+  }
+}
+
+header #title {
+  position:relative;
+  top: -1.125rem;
+  @media screen and (max-width: 768px) { display: none; }
+}
+
+header {
+  z-index: 5;
+  position: fixed;
+  width: 110%;
+  left: -5%;
+  background: linear-gradient(
+    135deg,
+    #ffb300 0%,
+    #ec407a 100%
+  );
+  box-shadow: 0 2px 4px rgba(0,0,0,.5);
+}
+
+header h1 small {
+  display:block;
+  font-size: 0.875rem;
+  color: #888;
+  margin-top: 0.75rem;
+}
+
+.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}
+
+header {
+  background: #202124;
+  h1 a, h1 a:link, h1 a:visited {
+    color: #fff;
+    &:hover, &:focus {
+      color: #fff;
+    }
+  }
+}
+footer {
+  color: #616161;
+  * {
+    font-size: 0.875rem;
+  }
+  padding-top: calc(2 * var(#{$universal-padding-var}));
+  padding-bottom: calc(3 * var(#{$universal-padding-var}));
+  margin-top: calc(6 * var(#{$universal-margin-var}));
+  background: #e0e0e0;
+}
