@@ -420,6 +420,13 @@ $grid-large-breakpoint: 768px;
 // TODO: Redesign cards from scratch
 
 .card {
+  &.code-card {
+    background: #263238;
+    .section.card-content{
+      background: var(#{$back-color-var});
+    }
+  }
+  overflow: hidden;
   position: relative;
   margin: var(#{$universal-margin-var});
   border-radius: calc(4 * var(#{$universal-border-radius-var}));
@@ -427,6 +434,34 @@ $grid-large-breakpoint: 768px;
   .section {
     &.card-content{
       padding: calc(1.5 * var(#{$universal-padding-var}));
+    }
+  }
+  .collapse {
+    background: #263238;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23607D8B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-plus-square'%3E%3Crect x='3' y='3' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='12' y1='8' x2='12' y2='16'%3E%3C/line%3E%3Cline x1='8' y1='12' x2='16' y2='12'%3E%3C/line%3E%3C/svg%3E");
+      background-position: 0.25rem 0.9rem;
+      background-repeat: no-repeat;
+    text-transform: uppercase;
+    padding: calc(1.5 * var(#{$universal-padding-var}));
+    padding-left: calc(2.25 * var(#{$universal-padding-var}));
+    display: block;
+    font-size: 0.75rem;
+    padding-bottom: calc(2 * var(#{$universal-padding-var}));
+    color: #607D8B;
+    cursor: pointer;
+    + pre.card-examples {
+      position: absolute;
+      transform: scaleY(0);    
+      transform-origin: top;
+      transition: transform 0.2s ease;
+    }
+    &.toggled{
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23607D8B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-minus-square'%3E%3Crect x='3' y='3' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='8' y1='12' x2='16' y2='12'%3E%3C/line%3E%3C/svg%3E");
+      padding-bottom: calc(0.125 * var(#{$universal-padding-var}));
+      + pre.card-examples {
+        position: relative;
+        transform: scaleY(1);
+      }
     }
   }
   pre.section {
@@ -437,14 +472,17 @@ $grid-large-breakpoint: 768px;
     }
     &.card-examples {
       margin-top: 0;
+      margin-bottom: 0;
       border-radius: 0 0 calc(4 * var(#{$universal-border-radius-var})) calc(4 * var(#{$universal-border-radius-var}));
+      padding-top: 0;
       &:before {
-        content: 'Examples';
-        text-transform: uppercase;
+        content: '';
         display: block;
-        font-size: 0.75rem;
-        padding-bottom: calc(0.125 * var(#{$universal-padding-var}));
-        color: #607D8B;
+        position: absolute;
+        top: 0;
+        left: 9px;
+        border-left: 1px solid #607D8B;
+        height: calc(100% - 18px);
       }
     }
   }
@@ -459,7 +497,7 @@ $grid-large-breakpoint: 768px;
     z-index: 2;
     .copy-button {
       background: #1E88E5;
-      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' style='background-color:%231E88E5' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='1' stroke-linecap='round' stroke-linejoin='round' class='feather feather-clipboard'%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'%3E%3C/path%3E%3Crect x='8' y='2' width='8' height='4' rx='1' ry='1'%3E%3C/rect%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' style='background-color:%231E88E5' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23f0f0f0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-clipboard'%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'%3E%3C/path%3E%3Crect x='8' y='2' width='8' height='4' rx='1' ry='1'%3E%3C/rect%3E%3C/svg%3E");
       background-position: center center;
       background-repeat: no-repeat;
       box-sizing: border-box;
@@ -487,6 +525,24 @@ $grid-large-breakpoint: 768px;
       }
     }
   }
+}
+
+.advanced-corner {
+    text-align: center;
+    //text-transform: uppercase;
+    box-sizing: border-box;
+    padding-top: 32px;
+    font-size: 0.75rem;
+    position: absolute;
+    top: -8px;
+    right: -34px;
+    transform: rotate(45deg);
+    color: #fff;
+    font-weight: 500;
+    width: 104px;
+    height: 52px;
+    background: #E53935;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.07),0 3px 1px -2px rgba(0,0,0,0.06),0 1px 5px 0 rgba(0,0,0,0.1);
 }
 
 
