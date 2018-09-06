@@ -455,7 +455,6 @@ nav.col-nav {
     }
     + main.col-centered + footer.col-full-width {
       grid-column: 4/13;
-      padding-left: 8vw;
     }
   }
 }
@@ -679,6 +678,7 @@ header {
   position: fixed;
   width: 110%;
   left: -5%;
+  top: 0;
   background: linear-gradient(
     135deg,
     #ffb300 0%,
@@ -698,6 +698,7 @@ header h1 small {
 
 header {
   background: #202124;
+  transition: top 0.3s ease;
   h1 a, h1 a:link, h1 a:visited {
     color: #fff;
     &:hover, &:focus {
@@ -820,4 +821,130 @@ nav {
   &:hover {
     box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14),0 1px 7px 0 rgba(0,0,0,0.12),0 3px 1px -1px rgba(0,0,0,0.2);
   }
+}
+
+// Landing page
+
+#splash {
+  height: auto;
+  padding-bottom: 1.5rem;
+  background: linear-gradient(
+    135deg,
+    #ffb300 0%,
+    #ec407a 100%
+  );
+  #logo {
+    margin-top: 0;
+    margin-left: -0.5rem;
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 2.25rem;
+    line-height: 2;
+    img {
+      vertical-align: top;
+      height: 4.5rem;
+    }
+  }
+  #tagline {
+    text-align: center;
+    padding: 0.5rem 25%;
+  }
+  #doc-link {
+    text-align: center;
+    margin-left: -0.5rem;
+    > a {
+      background: transparent;
+      border: 0.0625rem solid rgba(17, 17, 17, 0.95);
+      transition: all 0.3s;
+      border-radius: 0.25rem;
+      padding: var(#{$universal-padding-var}) calc(1.5 * var(#{$universal-padding-var}));
+      color: #212121;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        background: rgba(17, 17, 17, 0.95);
+        color: #e86957;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14),0 1px 7px 0 rgba(0,0,0,0.12),0 3px 1px -1px rgba(0,0,0,0.2);
+      }
+    }
+  }
+  @media screen and (max-width: 767px) {
+    #logo {
+      font-size: 1.75rem;
+      img {
+        height: 3.5rem;
+      }
+    }
+    #tagline {
+      padding: 0.25rem 17.5%;
+      font-size: 0.875rem;
+    }
+    #doc-link {
+      font-size: 0.875rem;
+    }
+  }
+  @media screen and (max-width: 383px) {
+    #logo {
+      font-size: 1.5rem;
+      img {
+        height: 3rem;
+      }
+    }
+    #tagline {
+      padding: 0.125rem 5%;
+    }
+  }
+  @media screen and (max-width: 479px) {
+    #tagline #tagline-lg {
+      display: none;
+    }
+  }
+}
+
+#in-numbers {
+  background: #111; //#3f88c5; //#e15554;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  color: #fff;
+  svg {
+    fill: #fff;
+    @media screen and (min-width: 768px) {
+      position: relative;
+      top: 20px;
+      left: -34px;
+      width: 32px;
+      height: 32px;
+    }
+  }
+  p {
+    overflow-wrap: break-word;
+    @media screen and (min-width: 768px) {
+      position: relative;
+      top: -24px;
+      left: 22px;
+      font-size: 0.75rem;
+    }
+    margin-top: 0;
+    font-size: 0.625rem;
+    margin-bottom: 0;
+  }
+}
+
+#snippet-count,
+#contrib-count,
+#commit-count,
+#star-count {
+  font-size: 1rem;
+  @media screen and (min-width: 768px) {
+    font-size: 1.25rem;
+  }
+}
+
+header.hidden {
+  top: -3.5rem;
+  box-shadow: none;
+}
+
+.menu-button.hidden {
+  display: none;
 }
