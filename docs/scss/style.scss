@@ -13,12 +13,16 @@ $border-color-var: '--border-color';
 $universal-margin-var: '--universal-margin';
 $universal-padding-var: '--universal-padding';
 $universal-border-radius-var: '--universal-border-radius';
+$a-link-color-var: '--a-link-color';
+$a-visited-color-var: '--a-visited-color';
 $fore-color: #212121;
 $secondary-fore-color: #444;
 $tertiary-fore-color: #222;
 $back-color: #fff;
 $secondary-back-color: #f0f0f0;
 $border-color: #eee;
+$a-link-color: #0277bd;
+$a-visited-color: #01579b;
 $token-color-a-var: '--token-color-a';
 $token-color-b-var: '--token-color-b';
 $token-color-c-var: '--token-color-c';
@@ -100,6 +104,8 @@ $code-font-size:  0.875em;
   #{$universal-margin-var}: $universal-margin;
   #{$universal-padding-var}: $universal-padding;
   #{$universal-border-radius-var}: $universal-border-radius;
+  #{$a-link-color-var} : $a-link-color;
+  #{$a-visited-color-var} : $a-visited-color;
   #{$token-color-a-var}: $token-color-a;
   #{$token-color-b-var}: $token-color-b;
   #{$token-color-c-var}: $token-color-c;
@@ -362,6 +368,19 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
   cursor: help;
 }
 
+a {
+  text-decoration: none;
+  &:link{
+    color: var(#{$a-link-color-var});
+  }
+  &:visited {
+    color: var(#{$a-visited-color-var});
+  }
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
+}
+
 /*
 blockquote {}
 sup {}
@@ -374,7 +393,7 @@ figcaption {}
 // Layout
 // ===================================================
 $grid-medium-breakpoint: 768px;
-$grid-large-breakpoint: 768px;
+$grid-large-breakpoint: 1280px;
 // Grid container
 .container {
   display: grid;
@@ -390,6 +409,50 @@ $grid-large-breakpoint: 768px;
   }
   @media screen and (min-width: #{$grid-large-breakpoint}) {
     grid-column: 3/11;
+  }
+}
+nav {
+  display: block;
+  position: fixed;
+  background: #fafafa;
+  border-right: $__1px solid #e0e0e0;
+  
+  top: 0;
+  left: -320px;
+  width: 320px;
+  transition: left 0.3s ease;
+  z-index: 1100;
+  height: 100vh;
+  box-sizing: border-box;
+  @media screen and (max-width: 320px) {
+    width: 100%;
+  }
+  @media screen and (min-width: #{$grid-medium-breakpoint}) {
+    top: 3.5rem;
+    height: calc(100vh - 3.5rem);
+    width: 33vw;
+    left: -33vw;
+  }
+  @media screen and (min-width: #{$grid-large-breakpoint}) {
+    width: 25vw;
+    left: -25vw;
+  }
+}
+
+nav.col-nav {
+  box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14),0 3px 14px 2px rgba(0,0,0,0.12),0 5px 5px -3px rgba(0,0,0,0.2);
+  left: 0;
+  // Also apply the main content style to the footer
+  @media screen and (min-width: #{$grid-medium-breakpoint}) {
+    + main.col-centered, + main.col-centered + footer.col-full-width {
+      grid-column: 5/13;
+    }
+  }
+  @media screen and (min-width: #{$grid-large-breakpoint}) {
+    + main.col-centered, + main.col-centered + footer.col-full-width  {
+      grid-column: 4/12;
+      padding-left: 8vw;
+    }
   }
 }
 // 25% width - For the 'in numbers' section
@@ -647,4 +710,83 @@ footer {
   padding-bottom: calc(3 * var(#{$universal-padding-var}));
   margin-top: calc(6 * var(#{$universal-margin-var}));
   background: #e0e0e0;
+}
+
+.menu-button {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  height: 3.5rem;
+  width: 3.5rem;
+  border: 0;
+  background: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23fafafa' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-more-horizontal'%3E%3Ccircle cx='12' cy='12' r='1'%3E%3C/circle%3E%3Ccircle cx='19' cy='12' r='1'%3E%3C/circle%3E%3Ccircle cx='5' cy='12' r='1'%3E%3C/circle%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 0.875rem 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: rgba(255,255,255, 0.08);
+  }
+  &.toggled {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23fafafa' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-more-vertical'%3E%3Ccircle cx='12' cy='12' r='1'%3E%3C/circle%3E%3Ccircle cx='12' cy='5' r='1'%3E%3C/circle%3E%3Ccircle cx='12' cy='19' r='1'%3E%3C/circle%3E%3C/svg%3E");
+  }
+}
+
+// Correct the cursor style of increment and decrement buttons in Chrome.
+[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+// Correct style in Chrome and Safari.
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+// Correct style in Chrome and Safari.
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+[type="search"] {
+  box-sizing: border-box;
+  background: transparent;
+  border: none;
+  border-bottom: $__1px solid #9e9e9e;
+  width: calc(100% - 1rem);
+  margin: var(#{$universal-margin-var});
+  padding: var(#{$universal-padding-var}) calc(1.5 * var(#{$universal-padding-var}));
+  transition: all 0.3s ease;
+  &:hover, &:focus {
+    border-bottom: $__1px solid #26a69a;
+  }
+  &:focus {
+    box-shadow: 0 1px 0 0 #26a69a;
+  }
+}
+
+nav {
+  overflow-y: auto;
+  h4 {
+    margin: var(#{$universal-margin-var});
+    padding: var(#{$universal-padding-var}) calc(1.5 * var(#{$universal-padding-var}));
+    padding-left: 0;
+  }
+  a {
+    display: block;
+    margin: calc(0.5 * var(#{$universal-margin-var}));
+    margin-left: var(#{$universal-margin-var});
+    margin-bottom: 0;
+    padding: calc(2 * var(#{$universal-padding-var})) calc(1.5 * var(#{$universal-padding-var}));
+    border-left: $__1px solid #e5e5e5;
+    &:hover {
+      text-decoration: none;
+      background: #f0f0f0;
+    }
+    + a {
+      margin-top: 0;
+    }
+  }
 }
