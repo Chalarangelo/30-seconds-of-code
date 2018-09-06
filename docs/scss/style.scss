@@ -948,3 +948,119 @@ header.hidden {
 .menu-button.hidden {
   display: none;
 }
+
+.license-section {
+  padding: 1rem;
+}
+
+.container {
+  .col-license-icon {
+    text-align: center;
+    grid-column: span 12;
+    @media screen and (min-width: #{$grid-medium-breakpoint}) {
+      grid-column: span 2;
+      position: relative;
+      top: calc(50% - 40px);
+    }
+    @media screen and (min-width: #{$grid-large-breakpoint}) {
+      grid-column: span 3;
+    }
+    > svg {
+      border: 0.03125rem solid #444;
+      border-radius: 100%;
+      padding: 0.5rem;
+      fill: #444;
+    }
+  }
+  .col-license-text {
+    vertical-align: middle;
+    grid-column: span 12;
+    @media screen and (min-width: #{$grid-medium-breakpoint}) {
+      grid-column: span 10;
+    }
+    @media screen and (min-width: #{$grid-large-breakpoint}) {
+      grid-column: span 9;
+    }
+  }
+}
+
+h2.index-section {
+  font-size: 2.25rem;
+  border-left: 0.3125rem solid #de4a6d;
+  padding-left: 0.625rem;
+  margin-top: 2rem;
+}
+
+.card.contributor {
+  height: calc(100% - 1rem);
+  justify-content: left;
+  > .section.media {
+    height: auto;
+  }
+  > .section.button {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-align: center;
+    transition: color 0.3s;
+    &:hover,
+    &:focus {
+      color: var(--a-l-col);
+      background: #f8f8f8;
+    }
+  }
+}
+
+.card.fluid.contribution-guideline {
+  overflow: visible;
+  margin-top: 3rem;
+  padding: 8px;
+  padding-bottom: 0.25rem;
+  h3 {
+    font-size: 1.5rem;
+    padding-top: 0.5rem;
+    text-align: center;
+  }
+}
+
+.contribution-guideline + .contribution-guideline {
+  &:before,
+  &:after {
+    content: "";
+    position: relative;
+    top: -2.75rem;
+    width: 0.375rem;
+    height: 0.375rem;
+    background: #ddd;
+    border: 0.03125rem solid #d0d0d0;
+    border-radius: 100%;
+    left: calc(50% - 0.25rem);
+    box-shadow: inset -0.03125rem -0.03125rem 0.03125rem rgba(0, 0, 0, 0.05);
+  }
+  &:after {
+    position: absolute;
+    top: - 1.875rem;
+  }
+  &:before {
+    position: absolute;
+    top: -2.75rem;
+  }
+}
+
+.contribution-number {
+  position: absolute;
+  top: -1.125rem;
+  left: calc(50% - 1.125rem);
+  font-size: 1.5rem;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 174, 39, 1) 0%,
+    rgba(222, 73, 109, 1) 100%
+  );
+  border: 0.03125 solid #ddd;
+  width: 2.25rem;
+  text-align: center;
+  height: 2.25rem;
+  border-radius: 100%;
+  font-weight: 700;
+  color: #fff;
+}
