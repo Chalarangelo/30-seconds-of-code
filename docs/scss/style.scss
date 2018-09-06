@@ -450,7 +450,7 @@ nav.col-nav {
   }
   @media screen and (min-width: #{$grid-large-breakpoint}) {
     + main.col-centered, + main.col-centered + footer.col-full-width  {
-      grid-column: 4/12;
+      grid-column: 4/13;
       padding-left: 8vw;
     }
   }
@@ -788,5 +788,32 @@ nav {
     + a {
       margin-top: 0;
     }
+  }
+}
+
+.scroll-to-top {
+  box-sizing: border-box;
+  z-index: 1100;
+  height: 3.5rem;
+  width: 3.5rem;
+  border: 0;
+  background: #B3E5FC;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23607D8B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-arrow-up'%3E%3Cline x1='12' y1='19' x2='12' y2='5'%3E%3C/line%3E%3Cpolyline points='5 12 12 5 19 12'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+  border-radius: 100%;
+  font-size: 1.5rem;
+  line-height: 1;
+  box-sizing: border-box;
+  width: 2.75rem;
+  height: 2.75rem;
+  position: fixed;
+  bottom: 1rem;
+  right: 1.3125rem;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  &:hover {
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14),0 1px 7px 0 rgba(0,0,0,0.12),0 3px 1px -1px rgba(0,0,0,0.2);
   }
 }
