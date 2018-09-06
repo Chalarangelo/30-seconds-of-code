@@ -449,7 +449,11 @@ nav.col-nav {
     }
   }
   @media screen and (min-width: #{$grid-large-breakpoint}) {
-    + main.col-centered, + main.col-centered + footer.col-full-width  {
+    + main.col-centered  {
+      grid-column: 4/12;
+      padding-left: 8vw;
+    }
+    + main.col-centered + footer.col-full-width {
       grid-column: 4/13;
       padding-left: 8vw;
     }
