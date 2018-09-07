@@ -3,48 +3,60 @@ $base-line-height: 1.5;
 $__1px: (1px/$base-font-size) * 1rem;
 $base-font-family: 'Roboto, Helvetica, sans-serif';
 $code-font-family: 'Roboto Mono, Menlo, Consolas, monospace';
-$_body-margin: 0;
-$fore-color-var: '--fore-color';
-$back-color-var: '--back-color';
-$secondary-fore-color-var: '--secondary-fore-color';
-$secondary-back-color-var: '--secondary-back-color';
-$tertiary-fore-color-var: '--tertiary-fore-color';
-$border-color-var: '--border-color';
-$universal-margin-var: '--universal-margin';
-$universal-padding-var: '--universal-padding';
-$universal-border-radius-var: '--universal-border-radius';
-$a-link-color-var: '--a-link-color';
-$a-visited-color-var: '--a-visited-color';
-$fore-color: #212121;
-$secondary-fore-color: #444;
-$tertiary-fore-color: #222;
-$back-color: #fff;
-$secondary-back-color: #f0f0f0;
-$border-color: #eee;
-$a-link-color: #0277bd;
-$a-visited-color: #01579b;
-$token-color-a-var: '--token-color-a';
-$token-color-b-var: '--token-color-b';
-$token-color-c-var: '--token-color-c';
-$token-color-d-var: '--token-color-d';
-$token-color-e-var: '--token-color-e';
-$token-color-f-var: '--token-color-f';
-$token-color-g-var: '--token-color-g';
-$token-color-h-var: '--token-color-h';
-$token-color-a: #80cbc4;
-$token-color-b: #bdbdbd;
-$token-color-c: #81d4fa;
-$token-color-d: #b388ff;
-$token-color-e: #c5e1a5;
-$token-color-f: #ff7043;
-$token-color-g: #4dd0e1;
-$token-color-h: #ffd54f;
-$universal-margin: 0.5rem;
-$universal-padding: 0.5rem;
-$universal-border-radius: 0.125rem;
-$heading-line-height: 1.2;
 $code-font-size:  0.875em;
+$_body-margin: 0;
+$heading-line-height: 1.2;
+$fore-color-var: '--fore-color';
+$fore-color: #212121;
+$back-color-var: '--back-color';
+$back-color: #fff;
+$border-color-var: '--border-color';
+$border-color: #eee;
+$a-link-color-var: '--a-link-color';
+$a-link-color: #0277bd;
+$a-visited-color-var: '--a-visited-color';
+$a-visited-color: #01579b;
+$code-fore-color-var: '--code-fore-color';
+$code-fore-color: #8e24aa;
+$code-back-color-var: '--code-back-color';
+$code-back-color: #f0f0f0;
+$code-selected-color-var: '--code-selected-color';
+$code-selected-color: #37474f;
+$pre-fore-color-var: '--pre-fore-color';
+$pre-fore-color: #e57373;
+$pre-back-color-var: '--pre-back-color';
+$pre-back-color: #263238;
+$token-color-a-var: '--token-color-a';  // Comments
+$token-color-a: #7f99a5;
+$token-color-b-var: '--token-color-b';  // Punctuation
+$token-color-b: #bdbdbd;
+$token-color-c-var: '--token-color-c';  // Functions
+$token-color-c: #64b5f6;
+$token-color-d-var: '--token-color-d';  // Numbers
+$token-color-d: #ff8f00;
+$token-color-e-var: '--token-color-e';  // Strings
+$token-color-e: #c5e1a5;
+$token-color-f-var: '--token-color-f';  // Keywords
+$token-color-f: #ce93d8;
+$token-color-g-var: '--token-color-g';  // Regular expressions
+$token-color-g: #26c6da;
+$token-color-h-var: '--token-color-h';  // Variables
+$token-color-h: #e57373;
+$universal-margin-var: '--universal-margin';
+$universal-margin: 0.5rem;
+$universal-padding-var: '--universal-padding';
+$universal-padding: 0.5rem;
+$universal-border-radius-var: '--universal-border-radius';
+$universal-border-radius: 0.125rem;
+// =================
+$secondary-fore-color-var: '--secondary-fore-color'; // No use yet
+$secondary-fore-color: #444;
+$secondary-back-color-var: '--secondary-back-color'; // No use yet
+$secondary-back-color: #f0f0f0;
+$tertiary-fore-color-var: '--tertiary-fore-color';  // No use yet
+$tertiary-fore-color: #222;
 
+// Load external fonts - progressive loading should help alleviate performance issues
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -93,7 +105,7 @@ $code-font-size:  0.875em;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
   font-display: swap;
 }
-
+// Set up variables for everything
 :root {
   #{$fore-color-var}: $fore-color;
   #{$back-color-var}: $back-color;
@@ -106,6 +118,11 @@ $code-font-size:  0.875em;
   #{$universal-border-radius-var}: $universal-border-radius;
   #{$a-link-color-var} : $a-link-color;
   #{$a-visited-color-var} : $a-visited-color;
+  #{$code-fore-color-var}: $code-fore-color;
+  #{$code-back-color-var}: $code-back-color;
+  #{$code-selected-color-var}: $code-selected-color;
+  #{$pre-fore-color-var}: $pre-fore-color;
+  #{$pre-back-color-var}: $pre-back-color;
   #{$token-color-a-var}: $token-color-a;
   #{$token-color-b-var}: $token-color-b;
   #{$token-color-c-var}: $token-color-c;
@@ -115,11 +132,10 @@ $code-font-size:  0.875em;
   #{$token-color-g-var}: $token-color-g;
   #{$token-color-h-var}: $token-color-h;
 }
-
+// Set up some basic styling for everything
 html {
   font-size: $base-font-size;
 }
-
 html, * {
   font-family: #{$base-font-family};
   line-height: $base-line-height;
@@ -130,50 +146,43 @@ html, * {
   font-size: 1rem;
   font-weight: 300;
 }
-
+// Apply fixes and defaults as necessary for modern browsers only
 a, b, del, em, i, ins, q, span, strong, u {
   font-size: 1em; // Fix for elements inside headings not displaying properly.
 }
-
 body {
   margin: $_body-margin;
   color: var(#{$fore-color-var});
   background: var(#{$back-color-var});
   overflow-x: hidden;
 }
-
 // Correct display for Edge & Firefox.
 details {
   display: block;
 }
-
 // Correct display in all browsers.
 summary {
   display: list-item;
 }
-
 // Abbreviations
 abbr[title] {
   border-bottom: none;           // Remove bottom border in Firefox 39-.
   text-decoration: underline dotted;  // Opinionated style-fix for all browsers.
 }
-
 // Show overflow in Edge.
 input {
   overflow: visible;
 }
-
 // Make images responsive by default.
 img {
   max-width: 100%;
   height: auto;
 }
-
+// Style headings according to material design guidelines
 h1, h2, h3, h4, h5, h6 {
   line-height: $heading-line-height;
   margin: calc(1.5 * var(#{$universal-margin-var})) var(#{$universal-margin-var});
 }
-
 h1 {
   font-size: 6rem;
 }
@@ -192,20 +201,17 @@ h5 {
 h6 {
   font-size: 1.25rem;
 }
-
+// Style textual elements
 p {
   margin: var(#{$universal-margin-var});
 }
-
 ol, ul {
   margin: var(#{$universal-margin-var});
   padding-left: calc(2 * var(#{$universal-margin-var}));
 }
-
 b, strong {
   font-weight: 500;
 }
-
 hr {
   // Fixes and defaults for styling
   box-sizing: content-box;
@@ -216,15 +222,13 @@ hr {
   height: $__1px;
   background: linear-gradient(to right, transparent, var(#{$border-color-var}) 20%, var(#{$border-color-var}) 80%, transparent);
 }
-
+// Style code
 code, kbd, pre {
   font-size: $code-font-size;
 }
-
 code, kbd, pre, code *, pre *, kbd *, code[class*="language-"], pre[class*="language-"] {
   font-family: #{$code-font-family}; 
 }
-
 sup, sub, code, kbd {
   line-height: 0;
   position: relative;
@@ -232,30 +236,31 @@ sup, sub, code, kbd {
 }
 
 code {
-  background: var(#{$secondary-back-color-var});
+  background: var(#{$code-back-color-var});
+  color: var(#{$code-fore-color-var});
   padding: calc(var(#{$universal-padding-var}) / 4) calc(var(#{$universal-padding-var}) / 2);
   border-radius: var(#{$universal-border-radius-var});
 }
-
+/*  === Unused so far ===
 kbd {
   background: var(#{$fore-color-var});
   color: var(#{$back-color-var});
   border-radius: var(#{$universal-border-radius-var});
   padding: calc(var(#{$universal-padding-var}) / 4) calc(var(#{$universal-padding-var}) / 2);
 }
-
+*/
 pre {
   overflow: auto; // Responsiveness
+  background: var(#{$pre-back-color-var});
+  color: var(#{$pre-fore-color-var});
   padding: calc(1.5 * var(#{$universal-padding-var}));
   margin: var(#{$universal-margin-var});
-  background: #263238;
   border: 0;
-  color: #fafafa;
 }
 
-code[class*="language-"],
-pre[class*="language-"] {
-  color: var(#{$tertiary-fore-color-var});
+code[class*="language-"], pre[class*="language-"] {
+  color: var(#{$pre-fore-color-var});
+
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -271,8 +276,6 @@ pre[class*="language-"] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
-
-  color: #fafafa;
 }
 
 pre[class*="language-"] {
@@ -283,12 +286,12 @@ pre[class*="language-"] {
 
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-  background: #b3d4fc;
+  background: var(#{$code-selected-color-var});
 }
 
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
 code[class*="language-"]::selection, code[class*="language-"] ::selection {
-  background: #b3d4fc;
+  background: var(#{$code-selected-color-var});
 }
 
 :not(pre) > code[class*="language-"] {
@@ -297,75 +300,47 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
   white-space: normal;
 }
 
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: var(#{$token-color-a-var});
-}
-
-.token.punctuation {
-  color: var(#{$token-color-b-var});
-}
-
 .namespace {
   opacity: .7;
 }
 
-.token.property,
-.token.tag,
-.token.boolean,
-.token.constant,
-.token.symbol,
-.token.deleted,
-.token.function {
-  color: var(#{$token-color-c-var});
+.token {
+  &.comment, &.prolog, &.doctype, &.cdata {
+    color: var(#{$token-color-a-var});
+  }
+  &.punctuation {
+    color: var(#{$token-color-b-var});
+  }
+  &.property, &.tag, &.boolean, &.constant, &.symbol, &.deleted, &.function {
+    color: var(#{$token-color-c-var});
+  }
+  &.number, &.class-name {
+    color: var(#{$token-color-d-var});
+  }
+  &.selector, &.attr-name, &.string, &.char, &.builtin, &.inserted {
+    color: var(#{$token-color-e-var});
+  }
+  &.operator, &.entity, &.url, &.atrule, &.attr-value, &.keyword, &.interpolation-punctuation {
+    color: var(#{$token-color-f-var});
+  }
+  &.regex {
+    color: var(#{$token-color-g-var});
+  }
+  &.important, &.variable {
+    color: var(#{$token-color-h-var});
+  }
+  &.italic, &.comment {
+    font-style: italic;
+  }
+  &.important, &.bold {
+    font-weight: 500;
+  }
+  &.entity {
+    cursor: help;
+  }
 }
-
-
-.token.number,
-.token.class-name {
-  color: var(#{$token-color-d-var});
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-  color: var(#{$token-color-e-var});
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string,
-.token.atrule,
-.token.attr-value,
-.token.keyword {
+.language-css .token.string, .style .token.string {
   color: var(#{$token-color-f-var});
-}
-
-.token.regex {
-  color: var(#{$token-color-g-var});
-}
-.token.important,
-.token.variable {
-  color: var(#{$token-color-h-var});
-}
-
-.token.important,
-.token.bold {
-  font-weight: 500;
-}
-.token.italic {
-  font-style: italic;
-}
-
-.token.entity {
-  cursor: help;
 }
 
 a {
@@ -411,6 +386,39 @@ $grid-large-breakpoint: 1280px;
     grid-column: 3/11;
   }
 }
+// 25% width - For the 'in numbers' section
+.col-quarter {
+  grid-column: span 3;
+}
+// 100% width
+.col-full-width {
+  grid-column: span 12;
+}
+// For the contributors section
+.flex-row {
+  display: flex;
+  flex: 0 1 auto;
+  flex-flow: row wrap;
+  .flex-item {
+    flex: 0 0 auto;
+    max-width: 50%;
+    flex-basis: 50%;
+    @media screen and (min-width: #{$grid-medium-breakpoint}) {
+      max-width: 25%;
+      flex-basis: 25%;
+    }
+    @media screen and (min-width: #{$grid-large-breakpoint}) {
+      max-width: 100%;
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+  }
+}
+// ===================================================
+// Cards
+// ===================================================
+
+
 nav {
   display: block;
   position: fixed;
@@ -458,34 +466,7 @@ nav.col-nav {
     }
   }
 }
-// 25% width - For the 'in numbers' section
-.col-quarter {
-  grid-column: span 3;
-}
 
-.col-full-width {
-  grid-column: span 12;
-}
-// For the contributors section
-.flex-row {
-  display: flex;
-  flex: 0 1 auto;
-  flex-flow: row wrap;
-  .flex-item {
-    flex: 0 0 auto;
-    max-width: 50%;
-    flex-basis: 50%;
-    @media screen and (min-width: #{$grid-medium-breakpoint}) {
-      max-width: 25%;
-      flex-basis: 25%;
-    }
-    @media screen and (min-width: #{$grid-large-breakpoint}) {
-      max-width: 100%;
-      flex-grow: 1;
-      flex-basis: 0;
-    }
-  }
-}
 // TODO: Missing the menu system layout - probably all JS, effects and slide over
 // TODO: Redesign cards from scratch
 
@@ -756,6 +737,7 @@ footer {
 }
 
 [type="search"] {
+  outline: none;
   box-sizing: border-box;
   background: transparent;
   border: none;
@@ -1033,7 +1015,7 @@ h2.index-section {
     background: #ddd;
     border: 0.03125rem solid #d0d0d0;
     border-radius: 100%;
-    left: calc(50% - 0.25rem);
+    left: calc(50% - 0.1875rem);
     box-shadow: inset -0.03125rem -0.03125rem 0.03125rem rgba(0, 0, 0, 0.05);
   }
   &:after {
