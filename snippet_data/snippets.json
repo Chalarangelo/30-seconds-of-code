@@ -3622,9 +3622,9 @@
       "type": "snippet",
       "attributes": {
         "fileName": "nodeListToArray.md",
-        "text": "Converts a `NodeList` to an array.\n\nUse `Array.prototype.slice()` and `Function.prototype.call()` to convert a `NodeList` to an array.",
+        "text": "Converts a `NodeList` to an array.\n\nUse spread operator inside new array to convert a `NodeList` to an array.",
         "codeBlocks": [
-          "const nodeListToArray = nodeList => Array.prototype.slice.call(nodeList);",
+          "const nodeListToArray = nodeList => [...nodeList];",
           "nodeListToArray(document.childNodes); // [ <!DOCTYPE html>, html ]"
         ],
         "tags": [
@@ -3634,7 +3634,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "c11457d105eebd90dbaabc970dd03a4d3868b740e0a52f4d813957bae7324740"
+        "hash": "50e0b97be1cc2256f34991c379bae0bba8c99db160dcd5842112752074de92ec"
       }
     },
     {
