@@ -529,13 +529,13 @@ h2.category-name {
       background: var(#{$pre-back-color-var});
       color: var(#{$collapse-color-var});
       padding: calc(1.5 * var(#{$universal-padding-var})) calc(1.5 * var(#{$universal-padding-var})) calc(2 * var(#{$universal-padding-var})) calc(2.25 * var(#{$universal-padding-var})); 
-      margin-left: calc(3 * #{$universal-margin-var});
+      margin-left: calc(3 * var(#{$universal-margin-var}));
       cursor: pointer;
       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23607D8B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-plus-square'%3E%3Crect x='3' y='3' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='12' y1='8' x2='12' y2='16'%3E%3C/line%3E%3Cline x1='8' y1='12' x2='16' y2='12'%3E%3C/line%3E%3C/svg%3E");
       background-position: 0.25rem 0.9375rem;
       background-repeat: no-repeat;
       + pre.card-examples {
-        margin-left: calc(3 * #{$universal-margin-var});
+        margin-left: calc(3 * var(#{$universal-margin-var}));
         position: absolute;
         transform: scaleY(0);    
         transform-origin: top;
