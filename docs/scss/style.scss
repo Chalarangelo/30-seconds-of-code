@@ -491,6 +491,9 @@ $grid-large-breakpoint: 1280px;
 // ===================================================
 // Cards
 // ===================================================
+h2.category-name {
+  text-align: center;
+}
 .card {
   overflow: hidden;
   position: relative;

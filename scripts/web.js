@@ -34,22 +34,22 @@ if (
   );
   process.exit(0);
 }
-// Compile the mini.css framework and custom CSS styles, using `node-sass`.
+// Compile the SCSS file, using `node-sass`.
 const sass = require('node-sass');
 sass.render(
   {
-    file: path.join('docs', 'mini', 'flavor.scss'),
-    outFile: path.join('docs', 'mini.css'),
+    file: path.join('docs', 'scss', 'style.scss'),
+    outFile: path.join('docs', 'style.css'),
     outputStyle: 'compressed'
   },
   function(err, result) {
     if (!err) {
-      fs.writeFile(path.join('docs', 'mini.css'), result.css, function(err2) {
-        if (!err2) console.log(`${chalk.green('SUCCESS!')} mini.css file generated!`);
-        else console.log(`${chalk.red('ERROR!')} During mini.css file generation: ${err}`);
+      fs.writeFile(path.join('docs', 'style.css'), result.css, function(err2) {
+        if (!err2) console.log(`${chalk.green('SUCCESS!')} style.css file generated!`);
+        else console.log(`${chalk.red('ERROR!')} During style.css file generation: ${err}`);
       });
     } else {
-      console.log(`${chalk.red('ERROR!')} During mini.css file generation: ${err}`);
+      console.log(`${chalk.red('ERROR!')} During style.css file generation: ${err}`);
     }
   }
 );
@@ -131,6 +131,7 @@ try {
 }
 // Load tag data from the database
 tagDbData = util.readTags();
+/*
 // Create the output for the index.html file (only locally or on Travis CRON or custom job)
 if (
   !util.isTravisCI() ||
@@ -273,7 +274,7 @@ if (
     process.exit(1);
   }
 }
-
+*/
 // Create the output for individual category pages
 try {
   // Add the start static part
@@ -290,22 +291,22 @@ try {
             : a.localeCompare(b)
     )) {
     output +=
-      '<h3>' +
+      '<h4>' +
       md
         .render(`${util.capitalize(tag, true)}\n`)
         .replace(/<p>/g, '')
         .replace(/<\/p>/g, '') +
-      '</h3>';
+      '</h4>';
     for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
       output += md
         .render(`[${taggedSnippet[0]}](./${tag}#${taggedSnippet[0].toLowerCase()})\n`)
         .replace(/<p>/g, '')
         .replace(/<\/p>/g, '')
-        .replace(/<a/g, `<a class="sublink-1" tags="${taggedSnippet[1].join(',')}"`);
+        .replace(/<a/g, `<a tags="${taggedSnippet[1].join(',')}"`);
     output += '\n';
   }
   output +=
-    '</nav><main class="col-sm-12 col-md-8 col-lg-9" style="height: 100%;overflow-y: auto; background: #eceef2; padding: 0;">';
+    '</nav><main class="col-centered">';
   output += '<a id="top">&nbsp;</a>';
   // Loop over tags and snippets to create the list of snippets
   for (let tag of [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
@@ -323,23 +324,25 @@ try {
       .replace(new RegExp(`./${tag}#`, 'g'), '#');
     localOutput += md
       .render(`## ${util.capitalize(tag, true)}\n`)
-      .replace(/<h2>/g, '<h2 style="text-align:center;">');
+      .replace(/<h2>/g, '<h2 class="category-name">');
     for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
       localOutput +=
-        '<div class="card fluid">' +
+        '<div class="card code-card">' +
+       `<div class="corner ${taggedSnippet[1].includes('advanced') ? 'advanced' : taggedSnippet[1].includes('beginner') ? 'beginner' : 'intermediate'}">${taggedSnippet[1].includes('advanced') ? 'advanced' : taggedSnippet[1].includes('beginner') ? 'beginner' : 'intermediate'}</div>` +
         md
           .render(`\n${snippets[taggedSnippet[0] + '.md']}`)
           .replace(
             /<h3/g,
-            `<h3 id="${taggedSnippet[0].toLowerCase()}" class="section double-padded"`
+            `<div class="section card-content"><h4 id="${taggedSnippet[0].toLowerCase()}"`
           )
           .replace(
             /<\/h3>/g,
-            `${
-              taggedSnippet[1].includes('advanced') ? '<mark class="tag">advanced</mark>' : ''
-            }</h3>`
+            '</h4>'
           )
-          .replace(/<\/h3>/g, '</h3><div class="section double-padded">')
+          .replace(
+            /<pre><code class="language-js">/m,
+            '</div><div class="copy-button-container"><button class="copy-button"></button></div><pre><code class="language-js">'
+          )
           .replace(
             /<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm,
             (match, p1) =>
@@ -348,9 +351,9 @@ try {
                 Prism.languages.javascript
               )}</pre>`
           )
-          .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
-        '<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button>' +
-        '</div></div>';
+          .replace(/<\/div>\s*<pre class="/g, '</div><pre class="section card-code ')
+          .replace(/<\/pre>\s+<pre class="/g, '</pre><label class="collapse">examples</label><pre class="section card-examples ') +
+        '</div>';
     // Add the ending static part
     localOutput += `\n${endPart + '\n'}`;
     // Optimize punctuation nodes
@@ -391,8 +394,8 @@ try {
       removeStyleLinkTypeAttributes: false,
       trimCustomFragments: true
     });
-    fs.writeFileSync(path.join(docsPath, page.tag + '.html'), page.content);
-    console.log(`${chalk.green('SUCCESS!')} ${page.tag}.html file generated!`);
+    fs.writeFileSync(path.join(docsPath, (page.tag == 'array' ? 'index' : page.tag) + '.html'), page.content);
+    console.log(`${chalk.green('SUCCESS!')} ${page.tag == 'array' ? 'index' : page.tag}.html file generated!`);
   });
 } catch (err) {
   // Handle errors (hopefully not!)
@@ -400,6 +403,7 @@ try {
   process.exit(1);
 }
 
+/*
 // Create the output for the beginner.html file
 try {
   // Add the static part
@@ -565,6 +569,7 @@ try {
   console.log(`${chalk.red('ERROR!')} During archive.html generation: ${err}`);
   process.exit(1);
 }
+*/
 
 // Log the time taken
 console.timeEnd('Webber');
