@@ -42,6 +42,18 @@ $token-color-g-var: '--token-color-g';  // Regular expressions
 $token-color-g: #26c6da;
 $token-color-h-var: '--token-color-h';  // Variables
 $token-color-h: #e57373;
+$collapse-color-var: '--collapse-color';
+$collapse-color: #607d8b;
+$copy-button-color-var: '--copy-button-color';
+$copy-button-color: #1e88e5;
+$copy-button-hover-color-var: '--copy-button-hover-color';
+$copy-button-hover-color: #2196f3;
+$beginner-color-var: '--beginner-color';
+$beginner-color: #7cb342;
+$intermediate-color-var: '--intermediate-color';
+$intermediate-color: #ffb300;
+$advanced-color-var: '--advanced-color';
+$advanced-color: #e53935;
 $universal-margin-var: '--universal-margin';
 $universal-margin: 0.5rem;
 $universal-padding-var: '--universal-padding';
@@ -131,6 +143,12 @@ $tertiary-fore-color: #222;
   #{$token-color-f-var}: $token-color-f;
   #{$token-color-g-var}: $token-color-g;
   #{$token-color-h-var}: $token-color-h;
+  #{$collapse-color-var}: $collapse-color;
+  #{$copy-button-color-var}: $copy-button-color;
+  #{$copy-button-hover-color-var}: $copy-button-hover-color;
+  #{$beginner-color-var}: $beginner-color;
+  #{$intermediate-color-var}: $intermediate-color;
+  #{$advanced-color-var}: $advanced-color;
 }
 // Set up some basic styling for everything
 html {
@@ -172,6 +190,19 @@ abbr[title] {
 // Show overflow in Edge.
 input {
   overflow: visible;
+}
+// Correct the cursor style of increment and decrement buttons in Chrome.
+[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+// Correct style in Chrome and Safari.
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+// Correct style in Chrome and Safari.
+[type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 // Make images responsive by default.
 img {
@@ -356,6 +387,9 @@ a {
   }
 }
 
+// Github Corner styles - Do not alter
+.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}
+
 /*
 blockquote {}
 sup {}
@@ -417,6 +451,158 @@ $grid-large-breakpoint: 1280px;
 // ===================================================
 // Cards
 // ===================================================
+.card {
+  overflow: hidden;
+  position: relative;
+  margin: var(#{$universal-margin-var});
+  border-radius: calc(4 * var(#{$universal-border-radius-var}));
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+  h4 {
+    text-align: center;
+    padding-bottom: calc(0.75 * var(#{$universal-padding-var}));
+    margin-bottom: calc(2 * var(#{$universal-margin-var}));
+    border-bottom: $__1px solid var(#{$border-color-var});
+  }
+  &.code-card {
+    margin-top: calc(5 * var(#{$universal-margin-var}));
+    background: var(#{$pre-back-color-var});
+    .section.card-content{
+      background: var(#{$back-color-var});
+      padding: calc(1.5 * var(#{$universal-padding-var}));
+    }
+    .collapse {
+      display: block;
+      font-size: 0.75rem;
+      font-family: #{$code-font-family}; 
+      text-transform: uppercase;
+      background: var(#{$pre-back-color-var});
+      color: var(#{$collapse-color-var});
+      padding: calc(1.5 * var(#{$universal-padding-var})) calc(1.5 * var(#{$universal-padding-var})) calc(2 * var(#{$universal-padding-var})) calc(2.25 * var(#{$universal-padding-var}));
+      cursor: pointer;
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23607D8B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-plus-square'%3E%3Crect x='3' y='3' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='12' y1='8' x2='12' y2='16'%3E%3C/line%3E%3Cline x1='8' y1='12' x2='16' y2='12'%3E%3C/line%3E%3C/svg%3E");
+      background-position: 0.25rem 0.9375rem;
+      background-repeat: no-repeat;
+      + pre.card-examples {
+        position: absolute;
+        transform: scaleY(0);    
+        transform-origin: top;
+        transition: transform 0.3s ease;
+      }
+      &.toggled{
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23607D8B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-minus-square'%3E%3Crect x='3' y='3' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='8' y1='12' x2='16' y2='12'%3E%3C/line%3E%3C/svg%3E");
+        padding-bottom: calc(0.125 * var(#{$universal-padding-var}));
+        + pre.card-examples {
+          position: relative;
+          transform: scaleY(1);
+        }
+      }
+    }
+    pre.section {
+      &.card-code {
+        position: relative;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      &.card-examples {
+        margin-top: 0;
+        margin-bottom: 0;
+        border-radius: 0 0 calc(4 * var(#{$universal-border-radius-var})) calc(4 * var(#{$universal-border-radius-var}));
+        padding-top: 0;
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0.5625rem;
+          border-left: $__1px solid var(#{$collapse-color-var});
+          height: calc(100% - 18px);
+        }
+      }
+    }
+    .copy-button-container {
+      position: relative;
+      z-index: 2;
+      .copy-button {
+        background: var(#{$copy-button-color-var});
+        box-sizing: border-box;
+        position: absolute;
+        top: -1.75rem;
+        right: 0;
+        margin: calc(2 * var(#{$universal-margin-var}));
+        padding: calc(2.5 * var(#{$universal-padding-var}));
+        border-radius: 50%;
+        border: 0;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23f0f0f0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-clipboard'%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'%3E%3C/path%3E%3Crect x='8' y='2' width='8' height='4' rx='1' ry='1'%3E%3C/rect%3E%3C/svg%3E");
+        background-position: center center;
+        background-repeat: no-repeat;
+        &:hover, &:focus {
+          background-color: var(#{$copy-button-hover-color-var});
+          box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+        }
+        &:before {
+          background: var(#{$back-color-var});
+          position: absolute;
+          top: -0.25rem;
+          right: -0.25rem;
+          content: '';
+          display: block;
+          box-sizing: border-box;
+          padding: calc(2.5 * var(#{$universal-padding-var}));
+          border-radius: 50%;
+          border: 0.25rem solid var(#{$back-color-var});
+          z-index: -1;
+        }
+      }
+    }
+    .corner {
+      box-sizing: border-box;
+      position: absolute;
+      top: -0.5rem;
+      right: -2.125rem;
+      width: 6.5rem;
+      height: 3.25rem;
+      padding-top: 2rem;
+      transform: rotate(45deg);
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(#{$back-color-var});
+      box-shadow: 0 2px 2px 0 rgba(0,0,0,0.07),0 3px 1px -2px rgba(0,0,0,0.06),0 1px 5px 0 rgba(0,0,0,0.1);
+      &.beginner {
+        background: var(#{$beginner-color-var});
+      }
+      &.intermediate {
+        background: var(#{$intermediate-color-var});
+      }
+      &.advanced {
+        background: var(#{$advanced-color-var});
+      }
+    }
+  }
+}
+// ===================================================
+// Toast
+// ===================================================
+.toast {
+  position: fixed;
+  bottom: calc(var(#{$universal-margin-var}) * 2);
+  margin-bottom: 0;
+  font-size: 0.8125rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1111;
+  color: var(#{$back-color-var});
+  background: var(#{$fore-color-var});
+  border-radius: calc(var(#{$universal-border-radius-var}) * 16);
+  padding: var(#{$universal-padding-var}) calc(var(#{$universal-padding-var}) * 2);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+}
+// ===================================================
+// Navigation
+// ===================================================
 
 
 nav {
@@ -467,167 +653,6 @@ nav.col-nav {
   }
 }
 
-// TODO: Missing the menu system layout - probably all JS, effects and slide over
-// TODO: Redesign cards from scratch
-
-.card {
-  &.code-card {
-    margin-top: calc(5 * var(#{$universal-margin-var}));
-    background: #263238;
-    .section.card-content{
-      background: var(#{$back-color-var});
-    }
-  }
-  overflow: hidden;
-  position: relative;
-  margin: var(#{$universal-margin-var});
-  border-radius: calc(4 * var(#{$universal-border-radius-var}));
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
-  .section {
-    &.card-content{
-      padding: calc(1.5 * var(#{$universal-padding-var}));
-    }
-  }
-  .collapse {
-    font-family: #{$code-font-family}; 
-    background: #263238;
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23607D8B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-plus-square'%3E%3Crect x='3' y='3' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='12' y1='8' x2='12' y2='16'%3E%3C/line%3E%3Cline x1='8' y1='12' x2='16' y2='12'%3E%3C/line%3E%3C/svg%3E");
-      background-position: 0.25rem 0.9375rem;
-      background-repeat: no-repeat;
-    text-transform: uppercase;
-    padding: calc(1.5 * var(#{$universal-padding-var}));
-    padding-left: calc(2.25 * var(#{$universal-padding-var}));
-    display: block;
-    font-size: 0.75rem;
-    padding-bottom: calc(2 * var(#{$universal-padding-var}));
-    color: #607D8B;
-    cursor: pointer;
-    + pre.card-examples {
-      position: absolute;
-      transform: scaleY(0);    
-      transform-origin: top;
-      transition: transform 0.2s ease;
-    }
-    &.toggled{
-      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23607D8B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-minus-square'%3E%3Crect x='3' y='3' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='8' y1='12' x2='16' y2='12'%3E%3C/line%3E%3C/svg%3E");
-      padding-bottom: calc(0.125 * var(#{$universal-padding-var}));
-      + pre.card-examples {
-        position: relative;
-        transform: scaleY(1);
-      }
-    }
-  }
-  pre.section {
-    &.card-code {
-      position: relative;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-    &.card-examples {
-      margin-top: 0;
-      margin-bottom: 0;
-      border-radius: 0 0 calc(4 * var(#{$universal-border-radius-var})) calc(4 * var(#{$universal-border-radius-var}));
-      padding-top: 0;
-      &:before {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 9px;
-        border-left: 1px solid #607D8B;
-        height: calc(100% - 18px);
-      }
-    }
-  }
-  h4 {
-    text-align: center;
-    padding-bottom: calc(0.75 * var(#{$universal-padding-var}));
-    margin-bottom: calc(2 * var(#{$universal-margin-var}));
-    border-bottom: $__1px solid var(#{$border-color-var});
-  }
-  .copy-button-container {
-    position: relative;
-    z-index: 2;
-    .copy-button {
-      background: #1E88E5;
-      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23f0f0f0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-clipboard'%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'%3E%3C/path%3E%3Crect x='8' y='2' width='8' height='4' rx='1' ry='1'%3E%3C/rect%3E%3C/svg%3E");
-      background-position: center center;
-      background-repeat: no-repeat;
-      box-sizing: border-box;
-      padding: calc(2.5 * var(#{$universal-padding-var}));
-      border-radius: 50%;
-      position: absolute;
-      border: 0;
-      top: -1.75rem;
-      right: 0;
-      margin: calc(2 * var(#{$universal-margin-var}));
-      box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
-      transition: all 0.3s ease;
-      cursor: pointer;
-      &:hover {
-        background-color: #2196F3;
-        box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14),0 1px 10px 0 rgba(0,0,0,0.12),0 2px 4px -1px rgba(0,0,0,0.3);
-      }
-      &:before {
-        background: #fff;
-        position: absolute;
-        top: -4px;
-        right: -4px;
-        content: '';
-        display: block;
-        box-sizing: border-box;
-        padding: calc(2.5 * var(#{$universal-padding-var}));
-        border-radius: 50%;
-        border: 4px solid #fff;
-        z-index: -1;
-      }
-    }
-  }
-}
-
-.advanced-corner {
-    text-align: center;
-    //text-transform: uppercase;
-    box-sizing: border-box;
-    padding-top: 32px;
-    font-size: 0.75rem;
-    position: absolute;
-    top: -8px;
-    right: -34px;
-    transform: rotate(45deg);
-    color: #fff;
-    font-weight: 500;
-    width: 104px;
-    height: 52px;
-    background: #E53935;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.07),0 3px 1px -2px rgba(0,0,0,0.06),0 1px 5px 0 rgba(0,0,0,0.1);
-}
-
-.toast {
-  position: fixed;
-  bottom: calc(var(#{$universal-margin-var}) * 2);
-  margin-bottom: 0;
-  font-size: 0.8125rem;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1111;
-  color: #fff;
-  background: #212121;
-  border-radius: calc(var(#{$universal-border-radius-var}) * 16);
-  padding: var(#{$universal-padding-var}) calc(var(#{$universal-padding-var}) * 2);
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
-  }
-
-// TODO: Links colors
-
-// TODO: Buttons and search form only
-// TODO: Top bar - header
-// TODO: Side bar - nav
-// TODO: Bottom area - footer
-// TODO: JS + CSS for side bar functionality
-// TODO: New toast
-// TODO: New marks
-// TODO: Components for statistics
 
 header h1.logo {
   margin-top: 0rem;
@@ -675,7 +700,7 @@ header h1 small {
   margin-top: 0.75rem;
 }
 
-.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}
+
 
 header {
   background: #202124;
@@ -721,20 +746,7 @@ footer {
   }
 }
 
-// Correct the cursor style of increment and decrement buttons in Chrome.
-[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-// Correct style in Chrome and Safari.
-[type="search"] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
-}
-// Correct style in Chrome and Safari.
-[type="search"]::-webkit-search-cancel-button,
-[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
+
 
 [type="search"] {
   outline: none;
