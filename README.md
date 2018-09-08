@@ -155,10 +155,10 @@ average(1, 2, 3);
 * [`nthElement`](#nthelement)
 * [`offset`](#offset)
 * [`partition`](#partition)
-* [`permutations`](#permutations)
+* [`permutations`](#permutations-)
 * [`pull`](#pull)
-* [`pullAtIndex`](#pullatindex)
-* [`pullAtValue`](#pullatvalue)
+* [`pullAtIndex`](#pullatindex-)
+* [`pullAtValue`](#pullatvalue-)
 * [`pullBy`](#pullby-)
 * [`reducedFilter`](#reducedfilter)
 * [`reduceSuccessive`](#reducesuccessive)
@@ -214,7 +214,7 @@ average(1, 2, 3);
 * [`currentURL`](#currenturl)
 * [`detectDeviceType`](#detectdevicetype)
 * [`elementContains`](#elementcontains)
-* [`elementIsVisibleInViewport`](#elementisvisibleinviewport)
+* [`elementIsVisibleInViewport`](#elementisvisibleinviewport-)
 * [`getScrollPosition`](#getscrollposition)
 * [`getStyle`](#getstyle)
 * [`hasClass`](#hasclass)
@@ -274,14 +274,14 @@ average(1, 2, 3);
 * [`delay`](#delay)
 * [`functionName`](#functionname)
 * [`hz`](#hz)
-* [`memoize`](#memoize)
+* [`memoize`](#memoize-)
 * [`negate`](#negate)
 * [`once`](#once)
 * [`partial`](#partial)
 * [`partialRight`](#partialright)
 * [`runPromisesInSeries`](#runpromisesinseries)
 * [`sleep`](#sleep)
-* [`throttle`](#throttle)
+* [`throttle`](#throttle-)
 * [`times`](#times)
 * [`uncurry`](#uncurry)
 * [`unfold`](#unfold)
@@ -313,7 +313,7 @@ average(1, 2, 3);
 * [`isEven`](#iseven)
 * [`isPrime`](#isprime)
 * [`lcm`](#lcm)
-* [`luhnCheck`](#luhncheck)
+* [`luhnCheck`](#luhncheck-)
 * [`maxBy`](#maxby)
 * [`median`](#median)
 * [`minBy`](#minby)
@@ -421,14 +421,14 @@ average(1, 2, 3);
 * [`reverseString`](#reversestring)
 * [`sortCharactersInString`](#sortcharactersinstring)
 * [`splitLines`](#splitlines)
-* [`stringPermutations`](#stringpermutations)
+* [`stringPermutations`](#stringpermutations-)
 * [`stripHTMLTags`](#striphtmltags)
 * [`toCamelCase`](#tocamelcase)
 * [`toKebabCase`](#tokebabcase)
 * [`toSnakeCase`](#tosnakecase)
 * [`truncateString`](#truncatestring)
 * [`unescapeHTML`](#unescapehtml)
-* [`URLJoin`](#urljoin)
+* [`URLJoin`](#urljoin-)
 * [`words`](#words)
 
 </details>
@@ -477,7 +477,7 @@ average(1, 2, 3);
 * [`mostPerformant`](#mostperformant)
 * [`nthArg`](#ntharg)
 * [`parseCookie`](#parsecookie)
-* [`prettyBytes`](#prettybytes)
+* [`prettyBytes`](#prettybytes-)
 * [`randomHexColorCode`](#randomhexcolorcode)
 * [`RGBToHex`](#rgbtohex)
 * [`serializeCookie`](#serializecookie)
@@ -2057,7 +2057,7 @@ partition(users, o => o.active); // [[{ 'user': 'fred',    'age': 40, 'active': 
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### permutations
+### permutations ![advanced](/advanced.svg)
 
 ⚠️ **WARNING**: This function's execution time increases exponentially with each array element. Anything more than 8 to 10 entries will cause your browser to hang as it tries to solve all the different combinations.
 
@@ -2124,7 +2124,7 @@ pull(myArray, 'a', 'c'); // myArray = [ 'b', 'b' ]
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### pullAtIndex
+### pullAtIndex ![advanced](/advanced.svg)
 
 Mutates the original array to filter out the values at the specified indexes.
 
@@ -2157,7 +2157,7 @@ let pulled = pullAtIndex(myArray, [1, 3]); // myArray = [ 'a', 'c' ] , pulled = 
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### pullAtValue
+### pullAtValue ![advanced](/advanced.svg)
 
 Mutates the original array to filter out the values specified. Returns the removed elements.
 
@@ -3543,7 +3543,7 @@ elementContains(document.querySelector('body'), document.querySelector('body'));
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### elementIsVisibleInViewport
+### elementIsVisibleInViewport ![advanced](/advanced.svg)
 
 Returns `true` if the element specified is visible in the viewport, `false` otherwise.
 
@@ -4819,7 +4819,7 @@ Math.round(hz(sumForLoop)); // 4784
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### memoize
+### memoize ![advanced](/advanced.svg)
 
 Returns the memoized (cached) function.
 
@@ -5006,7 +5006,7 @@ async function sleepyWork() {
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### throttle
+### throttle ![advanced](/advanced.svg)
 
 Creates a throttled function that only invokes the provided function at most once per every `wait` milliseconds
 
@@ -5689,7 +5689,7 @@ lcm(...[1, 3, 4, 5]); // 60
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### luhnCheck
+### luhnCheck ![advanced](/advanced.svg)
 
 Implementation of the [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) used to validate a variety of identification numbers, such as credit card numbers, IMEI numbers, National Provider Identifier numbers etc.
 
@@ -8021,7 +8021,7 @@ splitLines('This\nis a\nmultiline\nstring.\n'); // ['This', 'is a', 'multiline',
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### stringPermutations
+### stringPermutations ![advanced](/advanced.svg)
 
 ⚠️ **WARNING**: This function's execution time increases exponentially with each character. Anything more than 8 to 10 characters will cause your browser to hang as it tries to solve all the different combinations.
 
@@ -8231,7 +8231,7 @@ unescapeHTML('&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;'); // '<a href=
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### URLJoin
+### URLJoin ![advanced](/advanced.svg)
 
 Joins all given URL segments together, then normalizes the resulting URL.
 
@@ -9163,7 +9163,7 @@ parseCookie('foo=bar; equation=E%3Dmc%5E2'); // { foo: 'bar', equation: 'E=mc^2'
 <br>[⬆ Back to top](#table-of-contents)
 
 
-### prettyBytes
+### prettyBytes ![advanced](/advanced.svg)
 
 Converts a number in bytes to a human-readable string.
 
