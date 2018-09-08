@@ -10,6 +10,8 @@ $fore-color-var: '--fore-color';
 $fore-color: #212121;
 $back-color-var: '--back-color';
 $back-color: #fff;
+$card-page-back-color-var: '--card-page-back-color';
+$card-page-back-color: #eee;
 $border-color-var: '--border-color';
 $border-color: #eee;
 $a-link-color-var: '--a-link-color';
@@ -90,13 +92,6 @@ $universal-padding-var: '--universal-padding';
 $universal-padding: 0.5rem;
 $universal-border-radius-var: '--universal-border-radius';
 $universal-border-radius: 0.125rem;
-// =================
-$secondary-fore-color-var: '--secondary-fore-color'; // No use yet
-$secondary-fore-color: #444;
-$secondary-back-color-var: '--secondary-back-color'; // No use yet
-$secondary-back-color: #f0f0f0;
-$tertiary-fore-color-var: '--tertiary-fore-color';  // No use yet
-$tertiary-fore-color: #222;
 
 // Load external fonts - progressive loading should help alleviate performance issues
 @font-face {
@@ -151,6 +146,7 @@ $tertiary-fore-color: #222;
 :root {
   #{$fore-color-var}: $fore-color;
   #{$back-color-var}: $back-color;
+  #{$card-page-back-color-var}: $card-page-back-color;
   #{$border-color-var}: $border-color;
   #{$secondary-fore-color-var}: $secondary-fore-color;
   #{$tertiary-fore-color-var}: $tertiary-fore-color;
@@ -219,6 +215,9 @@ body {
   color: var(#{$fore-color-var});
   background: var(#{$back-color-var});
   overflow-x: hidden;
+  &.card-page {
+    background: var(#{$card-page-back-color-var});
+  }
 }
 // Correct display for Edge & Firefox.
 details {
