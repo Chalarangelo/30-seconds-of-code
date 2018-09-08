@@ -359,6 +359,7 @@ pre[class*="language-"] {
   padding: calc(2 * var(#{$universal-padding-var}));
   overflow: auto;
   margin: var(#{$universal-margin-var}) 0;
+  white-space: pre-wrap;
 }
 
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
