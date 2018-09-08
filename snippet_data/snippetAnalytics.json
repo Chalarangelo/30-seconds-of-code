@@ -16,6 +16,21 @@
       }
     },
     {
+      "id": "allEqual",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 57,
+        "tokenCount": 21,
+        "functionCount": 1,
+        "operatorCount": 4,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
+      },
+      "meta": {
+        "hash": "aa5122e8272d9ef81a634e960da9b0ddbe6d670cb3e801d7ffd17ba36cd1630a"
+      }
+    },
+    {
       "id": "any",
       "type": "snippetAnalysis",
       "attributes": {
@@ -43,6 +58,21 @@
       },
       "meta": {
         "hash": "4fa8b87ac30ec67afe40c80101a702986dd1e5cab3cd8b9653f1b7c8cbac7540"
+      }
+    },
+    {
+      "id": "arrayToCSV",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 109,
+        "tokenCount": 41,
+        "functionCount": 4,
+        "operatorCount": 5,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "47f27df615f87cf59e53ae3a618249f8413dd9d9c8939296a8b8f3785697de3d"
       }
     },
     {
@@ -109,15 +139,15 @@
       "id": "average",
       "type": "snippetAnalysis",
       "attributes": {
-        "codeLength": 88,
-        "tokenCount": 40,
+        "codeLength": 83,
+        "tokenCount": 36,
         "functionCount": 1,
-        "operatorCount": 7,
+        "operatorCount": 6,
         "keywordCount": 1,
         "distinctFunctionCount": 1
       },
       "meta": {
-        "hash": "684bb67aac10990814a49d1d1878d98ec6d2161bd71f769a128e3195f9aeb632"
+        "hash": "992835ed744ef767f4cdf46f9881cca57a73695e2a8637a383490bf44369d31b"
       }
     },
     {
@@ -169,15 +199,15 @@
       "id": "bind",
       "type": "snippetAnalysis",
       "attributes": {
-        "codeLength": 115,
-        "tokenCount": 43,
-        "functionCount": 2,
-        "operatorCount": 4,
-        "keywordCount": 3,
-        "distinctFunctionCount": 2
+        "codeLength": 100,
+        "tokenCount": 41,
+        "functionCount": 1,
+        "operatorCount": 7,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
       },
       "meta": {
-        "hash": "e9d5d908df4751e5765b1e7d5a5f883261bdfad521b01023a81d616cac3b3cc1"
+        "hash": "4909c73d0435a32df36abef06a58c21362ed3991aedc95421516a5d0ea83264a"
       }
     },
     {
@@ -199,15 +229,15 @@
       "id": "bindKey",
       "type": "snippetAnalysis",
       "attributes": {
-        "codeLength": 127,
-        "tokenCount": 46,
-        "functionCount": 2,
-        "operatorCount": 4,
-        "keywordCount": 3,
-        "distinctFunctionCount": 2
+        "codeLength": 114,
+        "tokenCount": 44,
+        "functionCount": 1,
+        "operatorCount": 7,
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
       },
       "meta": {
-        "hash": "561c7894f3ca7df0b3874ea749320b7d97eb3118c07c2636f4c4215377697927"
+        "hash": "cfbb9759a71b09d9351a02f39f828578290e389aeb5390ce760957ee43be0297"
       }
     },
     {
@@ -601,6 +631,36 @@
       }
     },
     {
+      "id": "CSVToArray",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 180,
+        "tokenCount": 60,
+        "functionCount": 5,
+        "operatorCount": 7,
+        "keywordCount": 1,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "323a85ce03cc446dcfc3dfd8a89b4501b217b0e846fa73b99a6c3e2ee51a1caf"
+      }
+    },
+    {
+      "id": "CSVToJSON",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 341,
+        "tokenCount": 126,
+        "functionCount": 9,
+        "operatorCount": 9,
+        "keywordCount": 5,
+        "distinctFunctionCount": 5
+      },
+      "meta": {
+        "hash": "de42726725b56d870fa0a7b16dc327589bbeba5a6d821d5f43d09b8a478a139a"
+      }
+    },
+    {
       "id": "currentURL",
       "type": "snippetAnalysis",
       "attributes": {
@@ -688,6 +748,21 @@
       },
       "meta": {
         "hash": "31714831376eeddd863a295af778632f584468745fbeb4e9a6f62b5275ea3562"
+      }
+    },
+    {
+      "id": "deepFreeze",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 188,
+        "tokenCount": 64,
+        "functionCount": 5,
+        "operatorCount": 7,
+        "keywordCount": 3,
+        "distinctFunctionCount": 5
+      },
+      "meta": {
+        "hash": "24b3dd66c4b69577d70917ba4f0c119a7ad21497d18704b7150c3693673b5e53"
       }
     },
     {
@@ -808,6 +883,21 @@
       },
       "meta": {
         "hash": "e80b6619b9690e2a5d5cfd9d5fbe77fc25b6698e580e4b36e2c3c5fc54e3e572"
+      }
+    },
+    {
+      "id": "dig",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 236,
+        "tokenCount": 79,
+        "functionCount": 3,
+        "operatorCount": 6,
+        "keywordCount": 7,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "0f53175b7bf367b55e612ccca6061c8e2a3db68af00950af2fda92746055cc05"
       }
     },
     {
@@ -934,22 +1024,22 @@
       "id": "elo",
       "type": "snippetAnalysis",
       "attributes": {
-        "codeLength": 613,
-        "tokenCount": 258,
+        "codeLength": 580,
+        "tokenCount": 248,
         "functionCount": 4,
-        "operatorCount": 31,
-        "keywordCount": 12,
+        "operatorCount": 30,
+        "keywordCount": 11,
         "distinctFunctionCount": 3
       },
       "meta": {
-        "hash": "c345e1ea4c044879d78a3f141d76dc90b311d7a78818d3a16e4f7335a9d0c779"
+        "hash": "3fc1fe2b64b13a3064c547933e759c0782bd43f357056a467d0ce2cc7e9a38e3"
       }
     },
     {
       "id": "equals",
       "type": "snippetAnalysis",
       "attributes": {
-        "codeLength": 489,
+        "codeLength": 490,
         "tokenCount": 197,
         "functionCount": 6,
         "operatorCount": 24,
@@ -957,7 +1047,7 @@
         "distinctFunctionCount": 4
       },
       "meta": {
-        "hash": "ebb0ab118f56fb88df192400decf89e9cb27074a4e86eccf0b145f373082701e"
+        "hash": "7682a58d7745903fc19aa4341b8594d85714d563cfda1b44779bc0663338c3cf"
       }
     },
     {
@@ -1063,6 +1153,21 @@
       },
       "meta": {
         "hash": "8f319457b4350e041ba31cd4b4d02135013d8ea6716d0a4d00cf1b1bfd214ffa"
+      }
+    },
+    {
+      "id": "filterNonUniqueBy",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 113,
+        "tokenCount": 57,
+        "functionCount": 3,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "39812240e9f09488915843a8ecb6373908513a7a469c00b120779ca462c651c5"
       }
     },
     {
@@ -1189,15 +1294,15 @@
       "id": "formatDuration",
       "type": "snippetAnalysis",
       "attributes": {
-        "codeLength": 427,
-        "tokenCount": 182,
+        "codeLength": 421,
+        "tokenCount": 154,
         "functionCount": 9,
-        "operatorCount": 22,
+        "operatorCount": 17,
         "keywordCount": 4,
         "distinctFunctionCount": 5
       },
       "meta": {
-        "hash": "79051bd95886abf6856585481e3c9cb0685e197bad764a56eb583bd3421f3449"
+        "hash": "fcaccacf92e1a1e5f8610cf78b840a6b897fc5e6cadb54d7a32efadb71b99f80"
       }
     },
     {
@@ -1549,15 +1654,15 @@
       "id": "hide",
       "type": "snippetAnalysis",
       "attributes": {
-        "codeLength": 73,
-        "tokenCount": 35,
+        "codeLength": 65,
+        "tokenCount": 26,
         "functionCount": 1,
-        "operatorCount": 6,
+        "operatorCount": 4,
         "keywordCount": 1,
         "distinctFunctionCount": 1
       },
       "meta": {
-        "hash": "936ca95ab4a3a012580a45574f77cb8f8c2b70d60e8506627bf4eb2ef8743fa2"
+        "hash": "8b7b70809f93fd9392315a5c63aa4cbbf9b45eb1165a7d44db314186d407816b"
       }
     },
     {
@@ -1624,15 +1729,15 @@
       "id": "indexOfAll",
       "type": "snippetAnalysis",
       "attributes": {
-        "codeLength": 134,
-        "tokenCount": 53,
-        "functionCount": 2,
+        "codeLength": 98,
+        "tokenCount": 49,
+        "functionCount": 1,
         "operatorCount": 6,
-        "keywordCount": 3,
-        "distinctFunctionCount": 2
+        "keywordCount": 1,
+        "distinctFunctionCount": 1
       },
       "meta": {
-        "hash": "e2842e376c747f02bce3cddbcbbc55ca9ed8a06701b2e0f4fb4215b97951ff13"
+        "hash": "643cb7b5df16c9da268e21b65b4cf73bb572e7b93a5859d09bb3bc949665f65b"
       }
     },
     {
@@ -1669,15 +1774,15 @@
       "id": "initializeArrayWithRange",
       "type": "snippetAnalysis",
       "attributes": {
-        "codeLength": 157,
-        "tokenCount": 65,
-        "functionCount": 2,
+        "codeLength": 153,
+        "tokenCount": 62,
+        "functionCount": 1,
         "operatorCount": 10,
         "keywordCount": 2,
-        "distinctFunctionCount": 2
+        "distinctFunctionCount": 1
       },
       "meta": {
-        "hash": "dcd2209a400e3bc7df0157df52faf794c628b80c625b9f5d9f15625f269890b0"
+        "hash": "f2cb7d6d0d34691affe17f7c06ee5c45944bd9515298560a18543f0798b4fe13"
       }
     },
     {
@@ -1729,15 +1834,15 @@
       "id": "inRange",
       "type": "snippetAnalysis",
       "attributes": {
-        "codeLength": 173,
-        "tokenCount": 76,
+        "codeLength": 169,
+        "tokenCount": 74,
         "functionCount": 0,
-        "operatorCount": 15,
+        "operatorCount": 14,
         "keywordCount": 5,
         "distinctFunctionCount": 0
       },
       "meta": {
-        "hash": "fe2b9483c3a173e426aba3e834d6b97008b840ea40e54c8eabb06e1da9832872"
+        "hash": "cb00d1c23e02506fc968515ce8c18dcec8837d447cd47a99f73777574308fb49"
       }
     },
     {
@@ -1789,15 +1894,15 @@
       "id": "intersectionBy",
       "type": "snippetAnalysis",
       "attributes": {
-        "codeLength": 119,
-        "tokenCount": 62,
-        "functionCount": 5,
-        "operatorCount": 5,
+        "codeLength": 111,
+        "tokenCount": 56,
+        "functionCount": 4,
+        "operatorCount": 4,
         "keywordCount": 4,
         "distinctFunctionCount": 4
       },
       "meta": {
-        "hash": "4df9daee1b38b51d92741ea763fdfb42e85331c1cb747ec413c45543243f1f48"
+        "hash": "78c90426a81372be83af6ef2bdee0147263361673ab99fa2315ead2720d991b8"
       }
     },
     {
@@ -1879,15 +1984,15 @@
       "id": "isArrayLike",
       "type": "snippetAnalysis",
       "attributes": {
-        "codeLength": 104,
-        "tokenCount": 44,
+        "codeLength": 85,
+        "tokenCount": 26,
         "functionCount": 0,
-        "operatorCount": 3,
-        "keywordCount": 5,
+        "operatorCount": 5,
+        "keywordCount": 3,
         "distinctFunctionCount": 0
       },
       "meta": {
-        "hash": "0d30400ab43a3e2706c3684495c9ae80361b50ca0606c7bbd4f96ca423c89c18"
+        "hash": "00b43a2b430d5d9205046ad6fbf7442f0d4507895c82545753253b5b5f97fa3a"
       }
     },
     {
@@ -2266,6 +2371,21 @@
       }
     },
     {
+      "id": "JSONtoCSV",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 263,
+        "tokenCount": 62,
+        "functionCount": 4,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 3
+      },
+      "meta": {
+        "hash": "65457b943f03456c28e947f21177ffd0c9d8a00eb37aab7f7f76cb666f8c0acc"
+      }
+    },
+    {
       "id": "JSONToFile",
       "type": "snippetAnalysis",
       "attributes": {
@@ -2314,15 +2434,15 @@
       "id": "longestItem",
       "type": "snippetAnalysis",
       "attributes": {
-        "codeLength": 82,
-        "tokenCount": 39,
+        "codeLength": 103,
+        "tokenCount": 49,
         "functionCount": 1,
-        "operatorCount": 6,
+        "operatorCount": 7,
         "keywordCount": 1,
         "distinctFunctionCount": 1
       },
       "meta": {
-        "hash": "dae3111792b57ac2ac698374e2eb0e568e8910041940fd0240053387a8dd72e3"
+        "hash": "cb9de7acf3a94ee67a24d7d5926944124ad0bd3459126c2f740f868fbffc655b"
       }
     },
     {
@@ -2383,6 +2503,21 @@
       },
       "meta": {
         "hash": "c7f0f9b6b22590a17c41057c56ea5cf14e74dfbbd4fb7e4bc5c08db3760ef76d"
+      }
+    },
+    {
+      "id": "mapString",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 100,
+        "tokenCount": 47,
+        "functionCount": 4,
+        "operatorCount": 3,
+        "keywordCount": 1,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "828991c05b86fc84f46155e1452cada09bd3cb64f734533af7bf4cabe3077aab"
       }
     },
     {
@@ -2599,15 +2734,15 @@
       "id": "nodeListToArray",
       "type": "snippetAnalysis",
       "attributes": {
-        "codeLength": 73,
-        "tokenCount": 18,
-        "functionCount": 1,
-        "operatorCount": 2,
+        "codeLength": 50,
+        "tokenCount": 13,
+        "functionCount": 0,
+        "operatorCount": 3,
         "keywordCount": 1,
-        "distinctFunctionCount": 1
+        "distinctFunctionCount": 0
       },
       "meta": {
-        "hash": "c11457d105eebd90dbaabc970dd03a4d3868b740e0a52f4d813957bae7324740"
+        "hash": "50e0b97be1cc2256f34991c379bae0bba8c99db160dcd5842112752074de92ec"
       }
     },
     {
@@ -2644,15 +2779,15 @@
       "id": "nthElement",
       "type": "snippetAnalysis",
       "attributes": {
-        "codeLength": 83,
-        "tokenCount": 48,
+        "codeLength": 86,
+        "tokenCount": 49,
         "functionCount": 2,
-        "operatorCount": 6,
+        "operatorCount": 7,
         "keywordCount": 1,
         "distinctFunctionCount": 1
       },
       "meta": {
-        "hash": "8d86827300570ea124917756dd740f33f5d12b59487e889ebcad2e1172bf1993"
+        "hash": "94f23b748d064fc620e820b9f858e0b191c68be84c9af6d8740fe48618005870"
       }
     },
     {
@@ -3274,15 +3409,15 @@
       "id": "rearg",
       "type": "snippetAnalysis",
       "attributes": {
-        "codeLength": 188,
-        "tokenCount": 76,
-        "functionCount": 3,
-        "operatorCount": 7,
-        "keywordCount": 2,
-        "distinctFunctionCount": 3
+        "codeLength": 77,
+        "tokenCount": 37,
+        "functionCount": 2,
+        "operatorCount": 6,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
       },
       "meta": {
-        "hash": "4117e1a4abc2008657ac12d2ca949d05dceb9f3c303feb1828605b6010441fe5"
+        "hash": "ed859f031cdc8a778bcec23817f79dab36f7607424fedda33d8d997172404de1"
       }
     },
     {
@@ -3457,7 +3592,7 @@
         "codeLength": 92,
         "tokenCount": 31,
         "functionCount": 1,
-        "operatorCount": 4,
+        "operatorCount": 3,
         "keywordCount": 1,
         "distinctFunctionCount": 1
       },
@@ -3912,7 +4047,7 @@
         "distinctFunctionCount": 2
       },
       "meta": {
-        "hash": "a353d35fc5fb8ec4ebbf0856079a823a598a5023ca908a7b1ddca55b4b3b60fe"
+        "hash": "476d7ee29bd0750a4c0f428c7e17a612ea50ee002eb865733f8d312b79a0c5a3"
       }
     },
     {
@@ -4332,7 +4467,7 @@
         "distinctFunctionCount": 9
       },
       "meta": {
-        "hash": "30a3f0e6f8386104c06eedd1dc1ab44e3c3c4c2a150b920b4093ae4234ea03f5"
+        "hash": "aee8b10b831e676337688628f9204cea2019a008c30005f0760432d86498fc3f"
       }
     },
     {
@@ -4408,6 +4543,51 @@
       },
       "meta": {
         "hash": "e45f1af52564b0b1d91ce8bce53fe98ce888f3c943e1c1828682893393540256"
+      }
+    },
+    {
+      "id": "uniqueElementsBy",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 137,
+        "tokenCount": 65,
+        "functionCount": 4,
+        "operatorCount": 5,
+        "keywordCount": 3,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "8640aeb79ced5defcc89555176a88acd66bca74f4359dc41388b5687f2050015"
+      }
+    },
+    {
+      "id": "uniqueElementsByRight",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 147,
+        "tokenCount": 65,
+        "functionCount": 4,
+        "operatorCount": 5,
+        "keywordCount": 3,
+        "distinctFunctionCount": 4
+      },
+      "meta": {
+        "hash": "853887ad00b7c39a719c5b7e16dd3464a85f08da43d9d1bd1e7b7ebeaa897c95"
+      }
+    },
+    {
+      "id": "uniqueSymmetricDifference",
+      "type": "snippetAnalysis",
+      "attributes": {
+        "codeLength": 131,
+        "tokenCount": 61,
+        "functionCount": 4,
+        "operatorCount": 9,
+        "keywordCount": 2,
+        "distinctFunctionCount": 2
+      },
+      "meta": {
+        "hash": "58712a3aee2c952a18d9f0d2f21d0002ac720d0d0f8fe082d02f891e3912bf1d"
       }
     },
     {
