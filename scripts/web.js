@@ -307,7 +307,7 @@ try {
   }
   output +=
     '</nav><main class="col-centered">';
-  output += '<a id="top">&nbsp;</a>';
+  output += '<span id="top"><br/><br/></span>';
   // Loop over tags and snippets to create the list of snippets
   for (let tag of [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
     .filter(v => v)

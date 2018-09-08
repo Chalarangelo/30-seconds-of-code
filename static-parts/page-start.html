@@ -96,14 +96,6 @@
               },300);
             },1700);
           }
-          else if (event.target.classList.contains('scroll-to-top')){
-            scrollToTop();
-          }
-          else if (event.target.matches('nav a')){
-            if(event.target.getAttribute("href").includes('./')) return;
-            event.preventDefault();
-            scrollTo(document.querySelector('.card-container'), document.getElementById(event.target.href.split('#')[1]).parentElement.offsetTop - 60, event.target.href.split('#')[1], 400);
-          }
         }, false);
       }
     </script>

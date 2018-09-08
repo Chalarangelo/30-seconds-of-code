@@ -62,14 +62,20 @@ $header-fore-color-var: '--header-fore-color';
 $header-fore-color: #fff;
 $header-back-color-var: '--header-back-color';
 $header-back-color: #202124;
-$nav-border-color-var: '--nav-border-color';
-$nav-border-color: #e0e0e0;
+$nav-fore-color-var: '--nav-fore-color';
+$nav-fore-color: #f0f0f0;
 $nav-back-color-var: '--nav-back-color';
-$nav-back-color: #fafafa;
+$nav-back-color: #202124;
 $nav-link-border-color-var: '--nav-link-border-color';
-$nav-link-border-color: #e5e5e5;
+$nav-link-border-color: #455a64;
+$nav-link-fore-color-var: '--nav-link-fore-color';
+$nav-link-fore-color: #e0e0e0;
 $nav-link-hover-color-var: '--nav-link-hover-color';
-$nav-link-hover-color: #f0f0f0;
+$nav-link-hover-color: #2b2c30;
+$search-fore-color-var: '--search-fore-color';
+$search-fore-color: #fafafa;
+$search-back-color-var: '--search-back-color';
+$search-back-color: #111;
 $search-border-color-var: '--search-border-color';
 $search-border-color: #9e9e9e;
 $search-hover-border-color-var: '--search-hover-border-color';
@@ -177,18 +183,22 @@ $tertiary-fore-color: #222;
   #{$advanced-color-var}: $advanced-color;
   #{$header-fore-color-var}: $header-fore-color;
   #{$header-back-color-var}: $header-back-color;
-  #{$nav-border-color-var}: $nav-border-color;
+  #{$nav-fore-color-var}: $nav-fore-color;
   #{$nav-back-color-var}: $nav-back-color;
   #{$footer-fore-color-var}: $footer-fore-color;
   #{$footer-back-color-var}: $footer-back-color;
+  #{$nav-link-fore-color-var}: $nav-link-fore-color;
   #{$nav-link-border-color-var}: $nav-link-border-color;
   #{$nav-link-hover-color-var}: $nav-link-hover-color;
+  #{$search-fore-color-var}: $search-fore-color;
+  #{$search-back-color-var}: $search-back-color;
   #{$search-border-color-var}: $search-border-color;
   #{$search-hover-border-color-var}: $search-hover-border-color;
 }
 // Set up some basic styling for everything
 html {
   font-size: $base-font-size;
+  scroll-behavior: smooth;
 }
 html, * {
   font-family: #{$base-font-family};
@@ -445,6 +455,7 @@ $grid-large-breakpoint: 1280px;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: calc(0.5 * var(#{$universal-margin-var}));
   &.card-container {
+    position: absolute;
     padding-top: 3.5rem; 
     height: calc(100vh - 3.5rem);
   }
@@ -695,23 +706,21 @@ header {
 
 nav {
   position: fixed;
-  top: 0;
+  top: 3.5rem;
   left: -320px;
   width: 320px;
   transition: left 0.3s ease;
   z-index: 1100;
-  height: 100vh;
+  height: calc(100vh - 3.5rem);
   box-sizing: border-box;
   display: block;
   background: var(#{$nav-back-color-var});
-  border-right: $__1px solid var(#{$nav-border-color-var});
+  border: 0;
   overflow-y: auto;
   @media screen and (max-width: 320px) {
     width: 100%;
   }
   @media screen and (min-width: #{$grid-medium-breakpoint}) {
-    top: 3.5rem;
-    height: calc(100vh - 3.5rem);
     width: 33vw;
     left: -33vw;
   }
@@ -742,6 +751,7 @@ nav {
     margin: var(#{$universal-margin-var});
     padding: var(#{$universal-padding-var}) calc(1.5 * var(#{$universal-padding-var}));
     padding-left: 0;
+    color:  var(#{$nav-fore-color-var});
   }
   a {
     display: block;
@@ -757,18 +767,22 @@ nav {
     + a {
       margin-top: 0;
     }
+    &:link, &:visited {
+      color: var(#{$nav-link-fore-color-var});
+    }
   }
 }
 
 [type="search"] {
+  color: var(#{$search-fore-color-var});
+  background: var(#{$search-back-color-var});
   outline: none;
   box-sizing: border-box;
-  background: transparent;
   border: none;
   border-bottom: $__1px solid var(#{$search-border-color-var});
-  width: calc(100% - 1rem);
-  margin: var(#{$universal-margin-var});
-  padding: var(#{$universal-padding-var}) calc(1.5 * var(#{$universal-padding-var}));
+  width: 100%;
+  margin-bottom: var(#{$universal-margin-var});
+  padding: calc(2 * var(#{$universal-padding-var})) calc(1.5 * var(#{$universal-padding-var})) var(#{$universal-padding-var}) calc(1.5 * var(#{$universal-padding-var}));
   transition: all 0.3s ease;
   &:hover, &:focus {
     border-bottom: $__1px solid var(#{$search-hover-border-color-var});
