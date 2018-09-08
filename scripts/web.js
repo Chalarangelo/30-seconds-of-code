@@ -122,8 +122,6 @@ try {
     'utf8'
   );
   archivedEndPart = fs.readFileSync(path.join(staticPartsPath, 'archived-page-end.html'), 'utf8');
-
-  indexStaticFile = fs.readFileSync(path.join(staticPartsPath, 'index.html'), 'utf8');
 } catch (err) {
   // Handle errors (hopefully not!)
   console.log(`${chalk.red('ERROR!')} During static part loading: ${err}`);
@@ -435,6 +433,14 @@ try {
   console.log(`${chalk.green('SUCCESS!')} archive.html file generated!`);
 } catch (err) {
   console.log(`${chalk.red('ERROR!')} During archive.html generation: ${err}`);
+  process.exit(1);
+}
+// Copy about.html
+try {
+  fs.copyFileSync(path.join(staticPartsPath, 'about.html'), path.join(docsPath, 'about.html'));
+  console.log(`${chalk.green('SUCCESS!')} about.html file copied!`);
+} catch (err) {
+  console.log(`${chalk.red('ERROR!')} During about.html copying: ${err}`);
   process.exit(1);
 }
 
