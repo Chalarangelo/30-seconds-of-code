@@ -56,6 +56,7 @@ sass.render(
 // Set variables for paths
 const snippetsPath = './snippets',
   archivedSnippetsPath = './snippets_archive',
+  glossarySnippetsPath = './glossary',
   staticPartsPath = './static-parts',
   docsPath = './docs';
 // Set variables for script
@@ -97,6 +98,9 @@ let snippets = {},
   archivedStartPart = '',
   archivedEndPart = '',
   archivedOutput = '',
+  glossaryStartPart = '',
+  glossaryEndPart = '',
+  glossaryOutput = '',
   indexStaticFile = '',
   pagesOutput = [],
   tagDbData = {};
@@ -105,6 +109,7 @@ console.time('Webber');
 // Synchronously read all snippets and sort them as necessary (case-insensitive)
 snippets = util.readSnippets(snippetsPath);
 archivedSnippets = util.readSnippets(archivedSnippetsPath);
+glossarySnippets = util.readSnippets(glossarySnippetsPath);
 
 // Load static parts for all pages
 try {
@@ -122,6 +127,12 @@ try {
     'utf8'
   );
   archivedEndPart = fs.readFileSync(path.join(staticPartsPath, 'archived-page-end.html'), 'utf8');
+
+  glossaryStartPart = fs.readFileSync(
+    path.join(staticPartsPath, 'glossary-page-start.html'),
+    'utf8'
+  );
+  glossaryEndPart = fs.readFileSync(path.join(staticPartsPath, 'glossary-page-end.html'), 'utf8');
 } catch (err) {
   // Handle errors (hopefully not!)
   console.log(`${chalk.red('ERROR!')} During static part loading: ${err}`);
@@ -435,6 +446,65 @@ try {
   console.log(`${chalk.red('ERROR!')} During archive.html generation: ${err}`);
   process.exit(1);
 }
+
+// Create the output for the glossary.html file
+try {
+  // Add the static part
+  glossaryOutput += `${glossaryStartPart + '\n'}`;
+
+  // Filter README.md from folder
+  const excludeFiles = ['README.md'];
+
+  const filteredGlossarySnippets = Object.keys(glossarySnippets)
+    .filter(key => !excludeFiles.includes(key))
+    .reduce((obj, key) => {
+      obj[key] = glossarySnippets[key];
+      return obj;
+    }, {});
+
+  // Generate glossary snippets from md files
+  for (let snippet of Object.entries(filteredGlossarySnippets))
+    glossaryOutput +=
+      '<div class="card code-card"><div class="section card-content">' +
+      md
+      .render(`\n${filteredGlossarySnippets[snippet[0]]}`)
+        .replace(
+          /<h3/g,
+          `<h4 id="${snippet[0].toLowerCase()}"`
+        )
+        .replace(
+          /<\/h3>/g,
+          '</h4>'
+        ) +
+      '</div></div>';
+
+  glossaryOutput += `${glossaryEndPart}`;
+
+  // Generate and minify 'glossary.html' file
+  const minifiedGlossaryOutput = minify(glossaryOutput, {
+    collapseBooleanAttributes: true,
+    collapseWhitespace: true,
+    decodeEntities: false,
+    minifyCSS: true,
+    minifyJS: true,
+    keepClosingSlash: true,
+    processConditionalComments: true,
+    removeAttributeQuotes: false,
+    removeComments: true,
+    removeEmptyAttributes: false,
+    removeOptionalTags: false,
+    removeScriptTypeAttributes: false,
+    removeStyleLinkTypeAttributes: false,
+    trimCustomFragments: true
+  });
+
+  fs.writeFileSync(path.join(docsPath, 'glossary.html'), minifiedGlossaryOutput);
+  console.log(`${chalk.green('SUCCESS!')} glossary.html file generated!`);
+} catch (err) {
+  console.log(`${chalk.red('ERROR!')} During glossary.html generation: ${err}`);
+  process.exit(1);
+}
+
 // Copy about.html
 try {
   fs.copyFileSync(path.join(staticPartsPath, 'about.html'), path.join(docsPath, 'about.html'));
