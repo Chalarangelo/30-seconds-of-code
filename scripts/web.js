@@ -34,28 +34,29 @@ if (
   );
   process.exit(0);
 }
-// Compile the mini.css framework and custom CSS styles, using `node-sass`.
+// Compile the SCSS file, using `node-sass`.
 const sass = require('node-sass');
 sass.render(
   {
-    file: path.join('docs', 'mini', 'flavor.scss'),
-    outFile: path.join('docs', 'mini.css'),
+    file: path.join('docs', 'scss', 'style.scss'),
+    outFile: path.join('docs', 'style.css'),
     outputStyle: 'compressed'
   },
   function(err, result) {
     if (!err) {
-      fs.writeFile(path.join('docs', 'mini.css'), result.css, function(err2) {
-        if (!err2) console.log(`${chalk.green('SUCCESS!')} mini.css file generated!`);
-        else console.log(`${chalk.red('ERROR!')} During mini.css file generation: ${err}`);
+      fs.writeFile(path.join('docs', 'style.css'), result.css, function(err2) {
+        if (!err2) console.log(`${chalk.green('SUCCESS!')} style.css file generated!`);
+        else console.log(`${chalk.red('ERROR!')} During style.css file generation: ${err}`);
       });
     } else {
-      console.log(`${chalk.red('ERROR!')} During mini.css file generation: ${err}`);
+      console.log(`${chalk.red('ERROR!')} During style.css file generation: ${err}`);
     }
   }
 );
 // Set variables for paths
 const snippetsPath = './snippets',
   archivedSnippetsPath = './snippets_archive',
+  glossarySnippetsPath = './glossary',
   staticPartsPath = './static-parts',
   docsPath = './docs';
 // Set variables for script
@@ -97,6 +98,9 @@ let snippets = {},
   archivedStartPart = '',
   archivedEndPart = '',
   archivedOutput = '',
+  glossaryStartPart = '',
+  glossaryEndPart = '',
+  glossaryOutput = '',
   indexStaticFile = '',
   pagesOutput = [],
   tagDbData = {};
@@ -105,6 +109,7 @@ console.time('Webber');
 // Synchronously read all snippets and sort them as necessary (case-insensitive)
 snippets = util.readSnippets(snippetsPath);
 archivedSnippets = util.readSnippets(archivedSnippetsPath);
+glossarySnippets = util.readSnippets(glossarySnippetsPath);
 
 // Load static parts for all pages
 try {
@@ -123,7 +128,11 @@ try {
   );
   archivedEndPart = fs.readFileSync(path.join(staticPartsPath, 'archived-page-end.html'), 'utf8');
 
-  indexStaticFile = fs.readFileSync(path.join(staticPartsPath, 'index.html'), 'utf8');
+  glossaryStartPart = fs.readFileSync(
+    path.join(staticPartsPath, 'glossary-page-start.html'),
+    'utf8'
+  );
+  glossaryEndPart = fs.readFileSync(path.join(staticPartsPath, 'glossary-page-end.html'), 'utf8');
 } catch (err) {
   // Handle errors (hopefully not!)
   console.log(`${chalk.red('ERROR!')} During static part loading: ${err}`);
@@ -131,148 +140,6 @@ try {
 }
 // Load tag data from the database
 tagDbData = util.readTags();
-// Create the output for the index.html file (only locally or on Travis CRON or custom job)
-if (
-  !util.isTravisCI() ||
-  (util.isTravisCI() &&
-    (process.env['TRAVIS_EVENT_TYPE'] === 'cron' || process.env['TRAVIS_EVENT_TYPE'] === 'api'))
-) {
-  try {
-    // Shuffle the array of snippets, pick 3
-    let indexDailyPicks = '';
-    let shuffledSnippets = util.shuffle(Object.keys(snippets)).slice(0, 3);
-    const dailyPicks = Object.keys(snippets)
-      .filter(key => shuffledSnippets.includes(key))
-      .reduce((obj, key) => {
-        obj[key] = snippets[key];
-        return obj;
-      }, {});
-
-    // Generate the html for the picked snippets
-    for (let snippet of Object.entries(dailyPicks))
-      indexDailyPicks +=
-        '<div class="card fluid pick">' +
-        md
-          .render(`\n${snippets[snippet[0]]}`)
-          .replace(/<h3/g, `<h3 id="${snippet[0].toLowerCase()}" class="section double-padded"`)
-          .replace(
-            /<\/h3>/g,
-            `${snippet[1].includes('advanced') ? '<mark class="tag">advanced</mark>' : ''}</h3>`
-          )
-          .replace(/<\/h3>/g, '</h3><div class="section double-padded">')
-          .replace(
-            /<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm,
-            (match, p1) =>
-              `<pre class="language-js">${Prism.highlight(
-                unescapeHTML(p1),
-                Prism.languages.javascript
-              )}</pre>`
-          )
-          .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
-        '<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button>' +
-        '</div></div>';
-    // Select the first snippet from today's picks
-    indexDailyPicks = indexDailyPicks.replace('card fluid pick', 'card fluid pick selected');
-    // Optimize punctuation nodes
-    indexDailyPicks = util.optimizeNodes(
-      indexDailyPicks,
-      /<span class="token punctuation">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token punctuation">([^\0]*?)<\/span>/gm,
-      (match, p1, p2, p3) => `<span class="token punctuation">${p1}${p2}${p3}</span>`
-    );
-    // Optimize operator nodes
-    indexDailyPicks = util.optimizeNodes(
-      indexDailyPicks,
-      /<span class="token operator">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token operator">([^\0]*?)<\/span>/gm,
-      (match, p1, p2, p3) => `<span class="token operator">${p1}${p2}${p3}</span>`
-    );
-    // Optimize keyword nodes
-    indexDailyPicks = util.optimizeNodes(
-      indexDailyPicks,
-      /<span class="token keyword">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token keyword">([^\0]*?)<\/span>/gm,
-      (match, p1, p2, p3) => `<span class="token keyword">${p1}${p2}${p3}</span>`
-    );
-    // Put the daily picks into the page
-    indexStaticFile = indexStaticFile.replace('$daily-picks', indexDailyPicks);
-    // Use the Github API to get the needed data
-    const githubApi = 'api.github.com';
-    const headers = util.isTravisCI()
-      ? { 'User-Agent': '30-seconds-of-code', Authorization: 'token ' + process.env['GH_TOKEN'] }
-      : { 'User-Agent': '30-seconds-of-code' };
-    // Test the API's rate limit (keep for various reasons)
-    https.get({ host: githubApi, path: '/rate_limit?', headers: headers }, res => {
-      res.on('data', function(chunk) {
-        console.log(`Remaining requests: ${JSON.parse(chunk).resources.core.remaining}`);
-      });
-    });
-    // Send requests and wait for responses, write to the page
-    https.get(
-      {
-        host: githubApi,
-        path: '/repos/chalarangelo/30-seconds-of-code/commits?per_page=1',
-        headers: headers
-      },
-      resCommits => {
-        https.get(
-          {
-            host: githubApi,
-            path: '/repos/chalarangelo/30-seconds-of-code/contributors?per_page=1',
-            headers: headers
-          },
-          resContributors => {
-            https.get(
-              {
-                host: githubApi,
-                path: '/repos/chalarangelo/30-seconds-of-code/stargazers?per_page=1',
-                headers: headers
-              },
-              resStars => {
-                let commits = resCommits.headers.link
-                    .split('&')
-                    .slice(-1)[0]
-                    .replace(/[^\d]/g, ''),
-                  contribs = resContributors.headers.link
-                    .split('&')
-                    .slice(-1)[0]
-                    .replace(/[^\d]/g, ''),
-                  stars = resStars.headers.link
-                    .split('&')
-                    .slice(-1)[0]
-                    .replace(/[^\d]/g, '');
-                indexStaticFile = indexStaticFile
-                  .replace(/\$snippet-count/g, Object.keys(snippets).length)
-                  .replace(/\$commit-count/g, commits)
-                  .replace(/\$contrib-count/g, contribs)
-                  .replace(/\$star-count/g, stars);
-                indexStaticFile = minify(indexStaticFile, {
-                  collapseBooleanAttributes: true,
-                  collapseWhitespace: true,
-                  decodeEntities: false,
-                  minifyCSS: true,
-                  minifyJS: true,
-                  keepClosingSlash: true,
-                  processConditionalComments: true,
-                  removeAttributeQuotes: false,
-                  removeComments: true,
-                  removeEmptyAttributes: false,
-                  removeOptionalTags: false,
-                  removeScriptTypeAttributes: false,
-                  removeStyleLinkTypeAttributes: false,
-                  trimCustomFragments: true
-                });
-                // Generate 'index.html' file
-                fs.writeFileSync(path.join(docsPath, 'index.html'), indexStaticFile);
-                console.log(`${chalk.green('SUCCESS!')} index.html file generated!`);
-              }
-            );
-          }
-        );
-      }
-    );
-  } catch (err) {
-    console.log(`${chalk.red('ERROR!')} During index.html generation: ${err}`);
-    process.exit(1);
-  }
-}
 
 // Create the output for individual category pages
 try {
@@ -290,23 +157,24 @@ try {
             : a.localeCompare(b)
     )) {
     output +=
-      '<h3>' +
+      '<h4>' +
       md
         .render(`${util.capitalize(tag, true)}\n`)
         .replace(/<p>/g, '')
         .replace(/<\/p>/g, '') +
-      '</h3>';
+      '</h4>';
     for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
       output += md
-        .render(`[${taggedSnippet[0]}](./${tag}#${taggedSnippet[0].toLowerCase()})\n`)
+        .render(`[${taggedSnippet[0]}](./${tag == 'array' ?'index' : tag}#${taggedSnippet[0].toLowerCase()})\n`)
         .replace(/<p>/g, '')
         .replace(/<\/p>/g, '')
-        .replace(/<a/g, `<a class="sublink-1" tags="${taggedSnippet[1].join(',')}"`);
+        .replace(/<a/g, `<a tags="${taggedSnippet[1].join(',')}"`)
+        ;
     output += '\n';
   }
   output +=
-    '</nav><main class="col-sm-12 col-md-8 col-lg-9" style="height: 100%;overflow-y: auto; background: #eceef2; padding: 0;">';
-  output += '<a id="top">&nbsp;</a>';
+    '</nav><main class="col-centered">';
+  output += '<span id="top"><br/><br/></span>';
   // Loop over tags and snippets to create the list of snippets
   for (let tag of [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
     .filter(v => v)
@@ -321,25 +189,28 @@ try {
     let localOutput = output
       .replace(/\$tag/g, util.capitalize(tag))
       .replace(new RegExp(`./${tag}#`, 'g'), '#');
+    if (tag === 'array') localOutput = localOutput.replace(new RegExp(`./index#`, 'g'), '#');
     localOutput += md
       .render(`## ${util.capitalize(tag, true)}\n`)
-      .replace(/<h2>/g, '<h2 style="text-align:center;">');
+      .replace(/<h2>/g, '<h2 class="category-name">');
     for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
       localOutput +=
-        '<div class="card fluid">' +
+        '<div class="card code-card">' +
+       `<div class="corner ${taggedSnippet[1].includes('advanced') ? 'advanced' : taggedSnippet[1].includes('beginner') ? 'beginner' : 'intermediate'}">${taggedSnippet[1].includes('advanced') ? 'advanced' : taggedSnippet[1].includes('beginner') ? 'beginner' : 'intermediate'}</div>` +
         md
           .render(`\n${snippets[taggedSnippet[0] + '.md']}`)
           .replace(
             /<h3/g,
-            `<h3 id="${taggedSnippet[0].toLowerCase()}" class="section double-padded"`
+            `<div class="section card-content"><h4 id="${taggedSnippet[0].toLowerCase()}"`
           )
           .replace(
             /<\/h3>/g,
-            `${
-              taggedSnippet[1].includes('advanced') ? '<mark class="tag">advanced</mark>' : ''
-            }</h3>`
+            '</h4>'
           )
-          .replace(/<\/h3>/g, '</h3><div class="section double-padded">')
+          .replace(
+            /<pre><code class="language-js">/m,
+            '</div><div class="copy-button-container"><button class="copy-button"></button></div><pre><code class="language-js">'
+          )
           .replace(
             /<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm,
             (match, p1) =>
@@ -348,9 +219,9 @@ try {
                 Prism.languages.javascript
               )}</pre>`
           )
-          .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
-        '<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button>' +
-        '</div></div>';
+          .replace(/<\/div>\s*<pre class="/g, '</div><pre class="section card-code ')
+          .replace(/<\/pre>\s+<pre class="/g, '</pre><label class="collapse">examples</label><pre class="section card-examples ') +
+        '</div>';
     // Add the ending static part
     localOutput += `\n${endPart + '\n'}`;
     // Optimize punctuation nodes
@@ -391,8 +262,8 @@ try {
       removeStyleLinkTypeAttributes: false,
       trimCustomFragments: true
     });
-    fs.writeFileSync(path.join(docsPath, page.tag + '.html'), page.content);
-    console.log(`${chalk.green('SUCCESS!')} ${page.tag}.html file generated!`);
+    fs.writeFileSync(path.join(docsPath, (page.tag == 'array' ? 'index' : page.tag) + '.html'), page.content);
+    console.log(`${chalk.green('SUCCESS!')} ${page.tag == 'array' ? 'index' : page.tag}.html file generated!`);
   });
 } catch (err) {
   // Handle errors (hopefully not!)
@@ -400,6 +271,7 @@ try {
   process.exit(1);
 }
 
+/*
 // Create the output for the beginner.html file
 try {
   // Add the static part
@@ -482,6 +354,7 @@ try {
   console.log(`${chalk.red('ERROR!')} During beginner.html generation: ${err}`);
   process.exit(1);
 }
+*/
 
 // Create the output for the archive.html file
 try {
@@ -501,13 +374,21 @@ try {
   // Generate archived snippets from md files
   for (let snippet of Object.entries(filteredArchivedSnippets))
     archivedOutput +=
-      '<div class="row">' +
-      '<div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">' +
-      '<div class="card fluid">' +
+      '<div class="card code-card">' +
       md
-        .render(`\n${filteredArchivedSnippets[snippet[0]]}`)
-        .replace(/<h3/g, `<h3 id="${snippet[0].toLowerCase()}" class="section double-padded"`)
-        .replace(/<\/h3>/g, '</h3><div class="section double-padded">')
+      .render(`\n${filteredArchivedSnippets[snippet[0]]}`)
+        .replace(
+          /<h3/g,
+      `<div class="section card-content"><h4 id="${snippet[0].toLowerCase()}"`
+        )
+        .replace(
+          /<\/h3>/g,
+          '</h4>'
+        )
+        .replace(
+          /<pre><code class="language-js">/m,
+          '</div><div class="copy-button-container"><button class="copy-button"></button></div><pre><code class="language-js">'
+        )
         .replace(
           /<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm,
           (match, p1) =>
@@ -516,9 +397,9 @@ try {
               Prism.languages.javascript
             )}</pre>`
         )
-        .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
-      '<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button>' +
-      '</div></div></div></div>';
+        .replace(/<\/div>\s*<pre class="/g, '</div><pre class="section card-code ')
+        .replace(/<\/pre>\s+<pre class="/g, '</pre><label class="collapse">examples</label><pre class="section card-examples ') +
+      '</div>';
 
   // Optimize punctuation nodes
   archivedOutput = util.optimizeNodes(
@@ -563,6 +444,81 @@ try {
   console.log(`${chalk.green('SUCCESS!')} archive.html file generated!`);
 } catch (err) {
   console.log(`${chalk.red('ERROR!')} During archive.html generation: ${err}`);
+  process.exit(1);
+}
+
+// Create the output for the glossary.html file
+try {
+  // Add the static part
+  glossaryOutput += `${glossaryStartPart + '\n'}`;
+
+  // Filter README.md from folder
+  const excludeFiles = ['README.md'];
+
+  const filteredGlossarySnippets = Object.keys(glossarySnippets)
+    .filter(key => !excludeFiles.includes(key))
+    .reduce((obj, key) => {
+      obj[key] = glossarySnippets[key];
+      return obj;
+    }, {});
+
+  // Generate glossary snippets from md files
+  for (let snippet of Object.entries(filteredGlossarySnippets))
+    glossaryOutput +=
+      '<div class="card code-card"><div class="section card-content">' +
+      md
+      .render(`\n${filteredGlossarySnippets[snippet[0]]}`)
+        .replace(
+          /<h3/g,
+          `<h4 id="${snippet[0].toLowerCase()}"`
+        )
+        .replace(
+          /<\/h3>/g,
+          '</h4>'
+        ) +
+      '</div></div>';
+
+  glossaryOutput += `${glossaryEndPart}`;
+
+  // Generate and minify 'glossary.html' file
+  const minifiedGlossaryOutput = minify(glossaryOutput, {
+    collapseBooleanAttributes: true,
+    collapseWhitespace: true,
+    decodeEntities: false,
+    minifyCSS: true,
+    minifyJS: true,
+    keepClosingSlash: true,
+    processConditionalComments: true,
+    removeAttributeQuotes: false,
+    removeComments: true,
+    removeEmptyAttributes: false,
+    removeOptionalTags: false,
+    removeScriptTypeAttributes: false,
+    removeStyleLinkTypeAttributes: false,
+    trimCustomFragments: true
+  });
+
+  fs.writeFileSync(path.join(docsPath, 'glossary.html'), minifiedGlossaryOutput);
+  console.log(`${chalk.green('SUCCESS!')} glossary.html file generated!`);
+} catch (err) {
+  console.log(`${chalk.red('ERROR!')} During glossary.html generation: ${err}`);
+  process.exit(1);
+}
+
+// Copy about.html
+try {
+  fs.copyFileSync(path.join(staticPartsPath, 'about.html'), path.join(docsPath, 'about.html'));
+  console.log(`${chalk.green('SUCCESS!')} about.html file copied!`);
+} catch (err) {
+  console.log(`${chalk.red('ERROR!')} During about.html copying: ${err}`);
+  process.exit(1);
+}
+// Copy contributing.html
+try {
+  fs.copyFileSync(path.join(staticPartsPath, 'contributing.html'), path.join(docsPath, 'contributing.html'));
+  console.log(`${chalk.green('SUCCESS!')} contributing.html file copied!`);
+} catch (err) {
+  console.log(`${chalk.red('ERROR!')} During contributing.html copying: ${err}`);
   process.exit(1);
 }
 
