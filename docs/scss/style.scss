@@ -553,6 +553,7 @@ h2.category-name {
         position: relative;
         margin-bottom: 0;
         padding-bottom: 0;
+        padding-top: calc(3 * var(--universal-padding));
       }
       &.card-examples {
         margin-top: 0;
