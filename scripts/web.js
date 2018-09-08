@@ -443,6 +443,14 @@ try {
   console.log(`${chalk.red('ERROR!')} During about.html copying: ${err}`);
   process.exit(1);
 }
+// Copy contributing.html
+try {
+  fs.copyFileSync(path.join(staticPartsPath, 'contributing.html'), path.join(docsPath, 'contributing.html'));
+  console.log(`${chalk.green('SUCCESS!')} contributing.html file copied!`);
+} catch (err) {
+  console.log(`${chalk.red('ERROR!')} During contributing.html copying: ${err}`);
+  process.exit(1);
+}
 
 // Log the time taken
 console.timeEnd('Webber');
