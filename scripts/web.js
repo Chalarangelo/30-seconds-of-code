@@ -196,7 +196,7 @@ try {
     for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
       localOutput +=
         '<div class="card code-card">' +
-       `<div class="corner ${taggedSnippet[1].includes('advanced') ? 'advanced' : taggedSnippet[1].includes('beginner') ? 'beginner' : 'intermediate'}">${taggedSnippet[1].includes('advanced') ? 'advanced' : taggedSnippet[1].includes('beginner') ? 'beginner' : 'intermediate'}</div>` +
+       `<div class="corner ${taggedSnippet[1].includes('advanced') ? 'advanced' : taggedSnippet[1].includes('beginner') ? 'beginner' : 'intermediate'}"></div>` +
         md
           .render(`\n${snippets[taggedSnippet[0] + '.md']}`)
           .replace(
@@ -209,7 +209,7 @@ try {
           )
           .replace(
             /<pre><code class="language-js">/m,
-            '</div><div class="copy-button-container"><button class="copy-button"></button></div><pre><code class="language-js">'
+            '</div><div class="copy-button-container"><button class="copy-button" aria-label="Copy to clipboard"></button></div><pre><code class="language-js">'
           )
           .replace(
             /<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm,
@@ -387,7 +387,7 @@ try {
         )
         .replace(
           /<pre><code class="language-js">/m,
-          '</div><div class="copy-button-container"><button class="copy-button"></button></div><pre><code class="language-js">'
+          '</div><div class="copy-button-container"><button class="copy-button" aria-label="Copy to clipboard"></button></div><pre><code class="language-js">'
         )
         .replace(
           /<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm,
