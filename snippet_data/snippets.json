@@ -3880,7 +3880,7 @@
         "fileName": "objectFromPairs.md",
         "text": "Creates an object from the given key-value pairs.\n\nUse `Array.reduce()` to create and combine key-value pairs.",
         "codeBlocks": [
-          "const objectFromPairs = arr => arr.reduce((a, v) => ((a[v[0]] = v[1]), a), {});",
+          "const objectFromPairs = arr => arr.reduce((a, [key, val]) => ((a[key] = val), a), {});",
           "objectFromPairs([['a', 1], ['b', 2]]); // {a: 1, b: 2}"
         ],
         "tags": [
@@ -3891,7 +3891,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "c19c3608e7a51b5b67046bc49b59e3e70e1161d0c5df0d77c8904a8e2bfa1c71"
+        "hash": "5dac82c5ca1e0d36ddc13bd1d3e643676c271f86eebf8aa4fb1afb382e07e771"
       }
     },
     {
