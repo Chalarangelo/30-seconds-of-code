@@ -27,10 +27,9 @@ if (
   process.exit(0);
 }
 if (
-  // util.isTravisCI() &&
-  // (process.env['TRAVIS_EVENT_TYPE'] === 'cron' ||
-  //   process.env['TRAVIS_EVENT_TYPE'] === 'api')
-  true
+  util.isTravisCI() &&
+  (process.env['TRAVIS_EVENT_TYPE'] === 'cron' ||
+    process.env['TRAVIS_EVENT_TYPE'] === 'api')
 ) {
   console.log(
     `${chalk.green(
