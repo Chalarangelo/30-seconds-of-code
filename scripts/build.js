@@ -7,21 +7,36 @@ const fs = require('fs-extra');
 const path = require('path');
 const chalk = require('chalk');
 const util = require('./util');
+const markdown = require('markdown-builder');
+const { headers, misc, lists } = markdown;
+
 // Paths
 const SNIPPETS_PATH = './snippets';
 const SNIPPETS_ARCHIVE_PATH = './snippets_archive';
 const STATIC_PARTS_PATH = './static-parts';
-if (util.isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
+
+if (
+  util.isTravisCI() &&
+  /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])
+) {
   console.log(
-    `${chalk.green('NOBUILD')} README build terminated, parent commit is a Travis build!`
+    `${chalk.green(
+      'NOBUILD'
+    )} README build terminated, parent commit is a Travis build!`
   );
   process.exit(0);
 }
 if (
-  util.isTravisCI() &&
-  (process.env['TRAVIS_EVENT_TYPE'] === 'cron' || process.env['TRAVIS_EVENT_TYPE'] === 'api')
+  // util.isTravisCI() &&
+  // (process.env['TRAVIS_EVENT_TYPE'] === 'cron' ||
+  //   process.env['TRAVIS_EVENT_TYPE'] === 'api')
+  true
 ) {
-  console.log(`${chalk.green('ARCHIVE')} Cron job or custom build, building archive README!`);
+  console.log(
+    `${chalk.green(
+      'ARCHIVE'
+    )} Cron job or custom build, building archive README!`
+  );
   console.time('Builder');
   let snippets = {};
   // Synchronously read all snippets from snippets_archive folder and sort them as necessary (case-insensitive)
@@ -31,7 +46,10 @@ if (
       .sort((a, b) => a.toLowerCase() - b.toLowerCase());
     // Store the data read from each snippet in the appropriate object
     for (const name of snippetFilenames.filter(s => s !== 'README.md')) {
-      snippets[name] = fs.readFileSync(path.join(SNIPPETS_ARCHIVE_PATH, name), 'utf8');
+      snippets[name] = fs.readFileSync(
+        path.join(SNIPPETS_ARCHIVE_PATH, name),
+        'utf8'
+      );
     }
   } catch (err) {
     console.log(`${chalk.red('ERROR!')} During snippet loading: ${err}`);
@@ -39,37 +57,43 @@ if (
   }
   try {
     // Add the start static part
-    let output = `![Logo](/logo.png)
+    let output =
+      misc.image('Logo', '/logo.png') +
+      headers.h1('Snippets Archive') +
+      "These snippets, while useful and interesting, didn't quite make it into the repository due to either having very specific use-cases or being outdated. However we felt like they might still be useful to some readers, so here they are." +
+      headers.h2('Table of Contents');
 
-# Snippets Archive
+    output += lists.ul(Object.entries(snippets), snippet =>
+      misc.link(`\`${snippet[0].slice(0, -3)}\``, misc.anchor(snippet[0].slice(0, -3)))
+    );
+    output += misc.hr();
 
-These snippets, while useful and interesting, didn\'t quite make it into the repository due to either having very specific use-cases or being outdated. However we felt like they might still be useful to some readers, so here they are.
-
-## Table of Contents
-
-`;
-    for (const snippet of Object.entries(snippets))
-      output += `* [\`${snippet[0].slice(0, -3)}\`](#${snippet[0].toLowerCase().slice(0, -3)})\n`;
-    output += '\n---\n';
     for (const snippet of Object.entries(snippets)) {
       let data = snippet[1];
       data =
-        data.slice(0, data.lastIndexOf('```js')) +
-        '<details>\n<summary>Examples</summary>\n\n' +
-        data.slice(data.lastIndexOf('```js'), data.lastIndexOf('```')) +
-        data.slice(data.lastIndexOf('```')) +
-        '\n</details>\n';
-      output += `\n${data + '\n<br>[⬆ Back to top](#table-of-contents)\n\n'}`;
+        data.slice(0, data.lastIndexOf('```js')).trim() +
+        misc.collapsible(
+          'Examples',
+          '\n' + data.slice(data.lastIndexOf('```js'), data.lastIndexOf('```')) +
+            data.slice(data.lastIndexOf('```'))
+        );
+      output += data + '\n' + misc.link('⬆ Back to top', misc.anchor('Table of Contents')) + '\n\n';
     }
 
     // Write to the README file of the archive
     fs.writeFileSync(path.join(SNIPPETS_ARCHIVE_PATH, 'README.md'), output);
   } catch (err) {
-    console.log(`${chalk.red('ERROR!')} During README generation for snippets archive: ${err}`);
+    console.log(
+      `${chalk.red(
+        'ERROR!'
+      )} During README generation for snippets archive: ${err}`
+    );
     process.exit(1);
   }
 
-  console.log(`${chalk.green('SUCCESS!')} README file generated for snippets archive!`);
+  console.log(
+    `${chalk.green('SUCCESS!')} README file generated for snippets archive!`
+  );
   console.timeEnd('Builder');
 }
 let snippets = {};
@@ -101,8 +125,14 @@ snippets = util.readSnippets(SNIPPETS_PATH);
 
 // Load static parts for the README file
 try {
-  startPart = fs.readFileSync(path.join(STATIC_PARTS_PATH, 'README-start.md'), 'utf8');
-  endPart = fs.readFileSync(path.join(STATIC_PARTS_PATH, 'README-end.md'), 'utf8');
+  startPart = fs.readFileSync(
+    path.join(STATIC_PARTS_PATH, 'README-start.md'),
+    'utf8'
+  );
+  endPart = fs.readFileSync(
+    path.join(STATIC_PARTS_PATH, 'README-end.md'),
+    'utf8'
+  );
 } catch (err) {
   console.log(`${chalk.red('ERROR!')} During static part loading: ${err}`);
   process.exit(1);
@@ -139,8 +169,12 @@ try {
     const capitalizedTag = util.capitalize(tag, true);
     output += `### ${EMOJIS[tag] ||
       ''} ${capitalizedTag}\n\n<details>\n<summary>View contents</summary>\n\n`;
-    for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
-      output += `* [\`${taggedSnippet[0]}\`](#${taggedSnippet[0].toLowerCase()}${
+    for (const taggedSnippet of Object.entries(tagDbData).filter(
+      v => v[1][0] === tag
+    )) {
+      output += `* [\`${
+        taggedSnippet[0]
+      }\`](#${taggedSnippet[0].toLowerCase()}${
         taggedSnippet[1].includes('advanced') ? '-' : ''
       })\n`;
     }
@@ -151,7 +185,9 @@ try {
   for (const tag of tags) {
     const capitalizedTag = util.capitalize(tag, true);
     output += `---\n ## ${EMOJIS[tag] || ''} ${capitalizedTag}\n`;
-    for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
+    for (const taggedSnippet of Object.entries(tagDbData).filter(
+      v => v[1][0] === tag
+    )) {
       let data = snippets[taggedSnippet[0] + '.md'];
       // Add advanced tag
       if (taggedSnippet[1].includes('advanced')) {
