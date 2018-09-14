@@ -194,14 +194,14 @@
         "fileName": "isSimilar.md",
         "text": "Determines if the `pattern` matches with `str`.\n\nUse `String.toLowerCase()` to convert both strings to lowercase, then loop through `str` and determine if it contains all characters of `pattern` and in the correct order.\nAdapted from [here](https://github.com/forrestthewoods/lib_fts/blob/80f3f8c52db53428247e741b9efe2cde9667050c/code/fts_fuzzy_match.js#L18).",
         "codeBlocks": [
-          "``` js\nconst isSimilar = (pattern, str) =>\n\t[...str].reduce(\n\t\t(matchIndex, char) => char.toLowerCase() === (pattern[matchIndex]  || '').toLowerCase() ? matchIndex + 1 : matchIndex, 0\n\t) === pattern.length ? true : false;\n```",
-          "``` js\nisSimilar('rt','Rohit'); // true\nisSimilar('tr','Rohit'); // false\n```"
+          "const isSimilar = (pattern, str) =>\n\t[...str].reduce(\n\t\t(matchIndex, char) => char.toLowerCase() === (pattern[matchIndex]  || '').toLowerCase() ? matchIndex + 1 : matchIndex, 0\n\t) === pattern.length ? true : false;",
+          "isSimilar('rt','Rohit'); // true\nisSimilar('tr','Rohit'); // false"
         ],
         "tags": []
       },
       "meta": {
         "archived": true,
-        "hash": "b821ad7f7e34c6905f88e1618b629506e265e1a3459288ab7d7b3501b2476dd2"
+        "hash": "669cc6d3a6f96a65b6e4bf678bb0b95cde711baaabe206db66d69599f6e93a51"
       }
     },
     {
@@ -288,22 +288,22 @@
           "isArmstrongNumber(1634); // true\nisArmstrongNumber(56); // false",
           "``` js\nconst isSimilar = (pattern, str) =>\n\t[...str].reduce(\n\t\t(matchIndex, char) => char.toLowerCase() === (pattern[matchIndex]  || '').toLowerCase() ? matchIndex + 1 : matchIndex, 0\n\t) === pattern.length ? true : false;\n```",
           "``` js\nisSimilar('rt','Rohit'); // true\nisSimilar('tr','Rohit'); // false\n```",
-          "```\n\n</details>\n\n<br>[⬆ Back to top](#table-of-contents)\n\n\n### levenshteinDistance\n\nCalculates the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) between two strings.\n\nCalculates the number of changes (substitutions, deletions or additions) required to convert `string1` to `string2`. \nCan also be used to compare two strings as shown in the second example.\n\n```",
-          "```\n\n<details>\n<summary>Examples</summary>\n\n```",
-          "```\n\n</details>\n\n<br>[⬆ Back to top](#table-of-contents)\n\n\n### quickSort\n\nQuickSort an Array (ascending sort by default).\n\nUse recursion. \nUse `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it. \nIf the parameter `desc` is truthy, return array sorts in descending order.\n\n```",
-          "```\n\n<details>\n<summary>Examples</summary>\n\n```",
-          "```\n\n</details>\n\n<br>[⬆ Back to top](#table-of-contents)\n\n\n### removeVowels\n\nReturns all the vowels in a `str` replaced by `repl`.\n\nUse `String.replace()` with a regexp to replace all vowels in `str`.\nOmot `repl` to use a default value of `''`.\n\n```",
-          "```\n\n<details>\n<summary>Examples</summary>\n\n```",
-          "```\n\n</details>\n\n<br>[⬆ Back to top](#table-of-contents)\n\n\n### solveRPN\n\nSolves the given mathematical expression in [reverse polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation).\nThrows appropriate errors if there are unrecognized symbols or the expression is wrong. The valid operators are :- `+`,`-`,`*`,`/`,`^`,`**` (`^`&`**` are the exponential symbols and are same). This snippet does not supports any unary operators.\n\nUse a dictionary, `OPERATORS` to specify each operator's matching mathematical operation.\nUse `String.replace()` with a regular expression to replace `^` with `**`, `String.split()` to tokenize the string and `Array.filter()` to remove empty tokens.\nUse `Array.forEach()` to parse each `symbol`, evaluate it as a numeric value or operator and solve the mathematical expression.\nNumeric values are converted to floating point numbers and pushed to a `stack`, while operators are evaluated using the `OPERATORS` dictionary and pop elements from the `stack` to apply operations.\n\n```",
-          "```\n\n<details>\n<summary>Examples</summary>\n\n```",
-          "```\n\n</details>\n\n<br>[⬆ Back to top](#table-of-contents)\n\n\n### howManyTimes\n\nReturns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.\nWorks for both negative and positive integers.\n\nIf `divisor` is `-1` or `1` return `Infinity`.\nIf `divisor` is `-0` or `0` return `0`.\nOtherwise, keep dividing `num` with `divisor` and incrementing `i`, while the result is an integer.\nReturn the number of times the loop was executed, `i`.\n\n```",
-          "```\n\n<details>\n<summary>Examples</summary>\n\n```"
+          "```\n\n</details>\n  \n[⬆ Back to top](#table-of-contents)\n\n### levenshteinDistance\n\nCalculates the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) between two strings.\n\nCalculates the number of changes (substitutions, deletions or additions) required to convert `string1` to `string2`. \nCan also be used to compare two strings as shown in the second example.\n\n```",
+          "```  \n\n<details>\n  <summary>Examples</summary>\n  \n```",
+          "```\n\n</details>\n  \n[⬆ Back to top](#table-of-contents)\n\n### quickSort\n\nQuickSort an Array (ascending sort by default).\n\nUse recursion. \nUse `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it. \nIf the parameter `desc` is truthy, return array sorts in descending order.\n\n```",
+          "```  \n\n<details>\n  <summary>Examples</summary>\n  \n```",
+          "```\n\n</details>\n  \n[⬆ Back to top](#table-of-contents)\n\n### removeVowels\n\nReturns all the vowels in a `str` replaced by `repl`.\n\nUse `String.replace()` with a regexp to replace all vowels in `str`.\nOmot `repl` to use a default value of `''`.\n\n```",
+          "```  \n\n<details>\n  <summary>Examples</summary>\n  \n```",
+          "```\n\n</details>\n  \n[⬆ Back to top](#table-of-contents)\n\n### solveRPN\n\nSolves the given mathematical expression in [reverse polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation).\nThrows appropriate errors if there are unrecognized symbols or the expression is wrong. The valid operators are :- `+`,`-`,`*`,`/`,`^`,`**` (`^`&`**` are the exponential symbols and are same). This snippet does not supports any unary operators.\n\nUse a dictionary, `OPERATORS` to specify each operator's matching mathematical operation.\nUse `String.replace()` with a regular expression to replace `^` with `**`, `String.split()` to tokenize the string and `Array.filter()` to remove empty tokens.\nUse `Array.forEach()` to parse each `symbol`, evaluate it as a numeric value or operator and solve the mathematical expression.\nNumeric values are converted to floating point numbers and pushed to a `stack`, while operators are evaluated using the `OPERATORS` dictionary and pop elements from the `stack` to apply operations.\n\n```",
+          "```  \n\n<details>\n  <summary>Examples</summary>\n  \n```",
+          "```\n\n</details>\n  \n[⬆ Back to top](#table-of-contents)\n\n### howManyTimes\n\nReturns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.\nWorks for both negative and positive integers.\n\nIf `divisor` is `-1` or `1` return `Infinity`.\nIf `divisor` is `-0` or `0` return `0`.\nOtherwise, keep dividing `num` with `divisor` and incrementing `i`, while the result is an integer.\nReturn the number of times the loop was executed, `i`.\n\n```",
+          "```  \n\n<details>\n  <summary>Examples</summary>\n  \n```"
         ],
         "tags": []
       },
       "meta": {
         "archived": true,
-        "hash": "878970d0bdefe60f7f61db64b85bbb36b6869e2875a2c278fb269b8cff3b42b4"
+        "hash": "4c776a716fd3fd197ce7d6bf3f18e73e647f0363a8668b72cb980b53d355fe20"
       }
     },
     {
