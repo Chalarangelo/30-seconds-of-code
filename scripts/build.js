@@ -74,7 +74,7 @@ if (
         data.slice(0, data.lastIndexOf('```js')).trim() +
         misc.collapsible(
           'Examples',
-          '\n' + data.slice(data.lastIndexOf('```js'), data.lastIndexOf('```')) +
+          data.slice(data.lastIndexOf('```js'), data.lastIndexOf('```')) +
             data.slice(data.lastIndexOf('```'))
         );
       output += data + '\n' + misc.link('⬆ Back to top', misc.anchor('Table of Contents')) + '\n\n';
@@ -141,6 +141,7 @@ try {
 // Load tag data from the database
 tagDbData = util.readTags();
 console.log(tagDbData);
+
 // Create the output for the README file
 try {
   const tags = [
@@ -162,46 +163,51 @@ try {
   console.log(tags);
 
   // Add the start static part
-  output += `${startPart + '\n'}`;
+  output += `${startPart}\n`;
 
   // Loop over tags and snippets to create the table of contents
   for (const tag of tags) {
     const capitalizedTag = util.capitalize(tag, true);
-    output += `### ${EMOJIS[tag] ||
-      ''} ${capitalizedTag}\n\n<details>\n<summary>View contents</summary>\n\n`;
-    for (const taggedSnippet of Object.entries(tagDbData).filter(
-      v => v[1][0] === tag
-    )) {
-      output += `* [\`${
-        taggedSnippet[0]
-      }\`](#${taggedSnippet[0].toLowerCase()}${
-        taggedSnippet[1].includes('advanced') ? '-' : ''
-      })\n`;
-    }
-    output += '\n</details>\n\n';
+    const taggedSnippets = Object.entries(tagDbData).filter(v => v[1][0] === tag);
+    output += headers.h3((EMOJIS[tag] || '') + ' ' + capitalizedTag).trim();
+
+    output += misc.collapsible(
+      'View contents',
+      lists.ul(taggedSnippets, (snippet) =>
+        misc.link(
+          `\`${snippet[0]}\``,
+          misc.anchor(snippet[0])
+        )
+      )
+    ) + '\n';
   }
 
   // Loop over tags and snippets to create the list of snippets
   for (const tag of tags) {
     const capitalizedTag = util.capitalize(tag, true);
-    output += `---\n ## ${EMOJIS[tag] || ''} ${capitalizedTag}\n`;
-    for (const taggedSnippet of Object.entries(tagDbData).filter(
-      v => v[1][0] === tag
-    )) {
-      let data = snippets[taggedSnippet[0] + '.md'];
+    const taggedSnippets = Object.entries(tagDbData).filter(v => v[1][0] === tag);
+
+    output += misc.hr() + headers.h2((EMOJIS[tag] || '') + ' ' + capitalizedTag).trim();
+
+    for (const taggedSnippet of taggedSnippets) {
+      let snippet = snippets[taggedSnippet[0] + '.md'];
+
       // Add advanced tag
       if (taggedSnippet[1].includes('advanced')) {
-        data = data.split(/\r?\n/);
-        data[0] = data[0] + ' ![advanced](/advanced.svg)';
-        data = data.join('\n');
+        snippet = snippet.split(/\r?\n/);
+        // add label to snippet title (first line)
+        snippet[0] += ' ' + misc.image('advanced', '/advanced.svg');
+        snippet = snippet.join('\n');
       }
-      data =
-        data.slice(0, data.lastIndexOf('```js')) +
-        '<details>\n<summary>Examples</summary>\n\n' +
-        data.slice(data.lastIndexOf('```js'), data.lastIndexOf('```')) +
-        data.slice(data.lastIndexOf('```')) +
-        '\n</details>\n';
-      output += `\n${data + '\n<br>[⬆ Back to top](#table-of-contents)\n\n'}`;
+
+      snippet = snippet.slice(0, snippet.lastIndexOf('```js')).trim() +
+        misc.collapsible(
+          'Examples',
+          snippet.slice(snippet.lastIndexOf('```js'), snippet.lastIndexOf('```')) +
+          snippet.slice(snippet.lastIndexOf('```'))
+        );
+
+      output += snippet + '\n' + misc.link('⬆ Back to top', misc.anchor('Table of Contents')) + '\n\n';
     }
   }
 
