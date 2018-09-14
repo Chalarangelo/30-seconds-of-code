@@ -84,9 +84,9 @@ average(1, 2, 3);
 ### 🔌 Adapter  
 
 <details>
-  <summary>View contents</summary>
-  
-  * [`ary`](#ary)
+<summary>View contents</summary>
+
+* [`ary`](#ary)
 * [`call`](#call)
 * [`collectInto`](#collectinto)
 * [`flip`](#flip)
@@ -104,9 +104,9 @@ average(1, 2, 3);
 ### 📚 Array  
 
 <details>
-  <summary>View contents</summary>
-  
-  * [`all`](#all)
+<summary>View contents</summary>
+
+* [`all`](#all)
 * [`allEqual`](#allequal)
 * [`any`](#any)
 * [`arrayToCSV`](#arraytocsv)
@@ -203,9 +203,9 @@ average(1, 2, 3);
 ### 🌐 Browser  
 
 <details>
-  <summary>View contents</summary>
-  
-  * [`arrayToHtmlList`](#arraytohtmllist)
+<summary>View contents</summary>
+
+* [`arrayToHtmlList`](#arraytohtmllist)
 * [`bottomVisible`](#bottomvisible)
 * [`copyToClipboard`](#copytoclipboard-)
 * [`counter`](#counter-)
@@ -246,9 +246,9 @@ average(1, 2, 3);
 ### ⏱️ Date  
 
 <details>
-  <summary>View contents</summary>
-  
-  * [`formatDuration`](#formatduration)
+<summary>View contents</summary>
+
+* [`formatDuration`](#formatduration)
 * [`getColonTimeFromDate`](#getcolontimefromdate)
 * [`getDaysDiffBetweenDates`](#getdaysdiffbetweendates)
 * [`getMeridiemSuffixOfInteger`](#getmeridiemsuffixofinteger)
@@ -259,9 +259,9 @@ average(1, 2, 3);
 ### 🎛️ Function  
 
 <details>
-  <summary>View contents</summary>
-  
-  * [`attempt`](#attempt)
+<summary>View contents</summary>
+
+* [`attempt`](#attempt)
 * [`bind`](#bind)
 * [`bindKey`](#bindkey)
 * [`chainAsync`](#chainasync)
@@ -292,9 +292,9 @@ average(1, 2, 3);
 ### ➗ Math  
 
 <details>
-  <summary>View contents</summary>
-  
-  * [`approximatelyEqual`](#approximatelyequal)
+<summary>View contents</summary>
+
+* [`approximatelyEqual`](#approximatelyequal)
 * [`average`](#average)
 * [`averageBy`](#averageby)
 * [`binomialCoefficient`](#binomialcoefficient)
@@ -337,9 +337,9 @@ average(1, 2, 3);
 ### 📦 Node  
 
 <details>
-  <summary>View contents</summary>
-  
-  * [`atob`](#atob)
+<summary>View contents</summary>
+
+* [`atob`](#atob)
 * [`btoa`](#btoa)
 * [`colorize`](#colorize)
 * [`hasFlags`](#hasflags)
@@ -355,9 +355,9 @@ average(1, 2, 3);
 ### 🗃️ Object  
 
 <details>
-  <summary>View contents</summary>
-  
-  * [`bindAll`](#bindall)
+<summary>View contents</summary>
+
+* [`bindAll`](#bindall)
 * [`deepClone`](#deepclone)
 * [`deepFreeze`](#deepfreeze)
 * [`defaults`](#defaults)
@@ -397,9 +397,9 @@ average(1, 2, 3);
 ### 📜 String  
 
 <details>
-  <summary>View contents</summary>
-  
-  * [`byteSize`](#bytesize)
+<summary>View contents</summary>
+
+* [`byteSize`](#bytesize)
 * [`capitalize`](#capitalize)
 * [`capitalizeEveryWord`](#capitalizeeveryword)
 * [`CSVToArray`](#csvtoarray)
@@ -436,9 +436,9 @@ average(1, 2, 3);
 ### 📃 Type  
 
 <details>
-  <summary>View contents</summary>
-  
-  * [`getType`](#gettype)
+<summary>View contents</summary>
+
+* [`getType`](#gettype)
 * [`is`](#is)
 * [`isArrayLike`](#isarraylike)
 * [`isBoolean`](#isboolean)
@@ -462,9 +462,9 @@ average(1, 2, 3);
 ### 🔧 Utility  
 
 <details>
-  <summary>View contents</summary>
-  
-  * [`castArray`](#castarray)
+<summary>View contents</summary>
+
+* [`castArray`](#castarray)
 * [`cloneRegExp`](#cloneregexp)
 * [`coalesce`](#coalesce)
 * [`coalesceFactory`](#coalescefactory)
@@ -506,9 +506,9 @@ const ary = (fn, n) => (...args) => fn(...args.slice(0, n));
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const firstTwoMax = ary(Math.max, 2);
 [[2, 6, 'a'], [8, 4, 6], [10]].map(x => firstTwoMax(...x)); // [6, 8, 10]
 ```
@@ -528,9 +528,9 @@ const call = (key, ...args) => context => context[key](...args);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 Promise.resolve([1, 2, 3])
   .then(call('map', x => 2 * x))
   .then(console.log); //[ 2, 4, 6 ]
@@ -555,9 +555,9 @@ const collectInto = fn => (...args) => fn(args);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const Pall = collectInto(Promise.all.bind(Promise));
 let p1 = Promise.resolve(1);
 let p2 = Promise.resolve(2);
@@ -580,9 +580,9 @@ const flip = fn => (first, ...rest) => fn(...rest, first);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 let a = { name: 'John Smith' };
 let b = {};
 const mergeFrom = flip(Object.assign);
@@ -607,9 +607,9 @@ const over = (...fns) => (...args) => fns.map(fn => fn.apply(null, args));
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const minMax = over(Math.min, Math.max);
 minMax(1, 2, 3, 4, 5); // [1,5]
 ```
@@ -629,9 +629,9 @@ const overArgs = (fn, transforms) => (...args) => fn(...args.map((val, i) => tra
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const square = n => n * n;
 const double = n => n * 2;
 const fn = overArgs((x, y) => [x, y], [square, double]);
@@ -655,9 +655,9 @@ const pipeAsyncFunctions = (...fns) => arg => fns.reduce((p, f) => p.then(f), Pr
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const sum = pipeAsyncFunctions(
   x => x + 1,
   x => new Promise(resolve => setTimeout(() => resolve(x + 2), 1000)),
@@ -685,9 +685,9 @@ const pipeFunctions = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const add5 = x => x + 5;
 const multiply = (x, y) => x * y;
 const multiplyAndAdd5 = pipeFunctions(multiply, add5);
@@ -715,9 +715,9 @@ const promisify = func => (...args) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const delay = promisify((d, cb) => setTimeout(cb, d));
 delay(2000).then(() => console.log('Hi!')); // // Promise resolves after 2s
 ```
@@ -737,9 +737,9 @@ const rearg = (fn, indexes) => (...args) => fn(...indexes.map(i => args[i]));
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 var rearged = rearg(
   function(a, b, c) {
     return [a, b, c];
@@ -764,9 +764,9 @@ const spreadOver = fn => argsArr => fn(...argsArr);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const arrayMax = spreadOver(Math.max);
 arrayMax([1, 2, 3]); // 3
 ```
@@ -786,9 +786,9 @@ const unary = fn => val => fn(val);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 ['6', '8', '10'].map(unary(parseInt)); // [6, 8, 10]
 ```
 
@@ -813,9 +813,9 @@ const all = (arr, fn = Boolean) => arr.every(fn);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 all([4, 2, 3], x => x > 1); // true
 all([1, 2, 3]); // true
 ```
@@ -835,9 +835,9 @@ const allEqual = arr => arr.every(val => val === arr[0]);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 allEqual([1, 2, 3, 4, 5, 6]); // false
 allEqual([1, 1, 1, 1]); // true
 ```
@@ -858,9 +858,9 @@ const any = (arr, fn = Boolean) => arr.some(fn);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 any([0, 1, 2, 0], x => x >= 2); // true
 any([0, 0, 1, 0]); // true
 ```
@@ -883,9 +883,9 @@ const arrayToCSV = (arr, delimiter = ',') =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 arrayToCSV([['a', 'b'], ['c', 'd']]); // '"a","b"\n"c","d"'
 arrayToCSV([['a', 'b'], ['c', 'd']], ';'); // '"a";"b"\n"c";"d"'
 ```
@@ -906,9 +906,9 @@ const bifurcate = (arr, filter) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 bifurcate(['beep', 'boop', 'foo', 'bar'], [true, true, false, true]); // [ ['beep', 'boop', 'bar'], ['foo'] ]
 ```
 
@@ -928,9 +928,9 @@ const bifurcateBy = (arr, fn) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 bifurcateBy(['beep', 'boop', 'foo', 'bar'], x => x[0] === 'b'); // [ ['beep', 'boop', 'bar'], ['foo'] ]
 ```
 
@@ -954,9 +954,9 @@ const chunk = (arr, size) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 chunk([1, 2, 3, 4, 5], 2); // [[1,2],[3,4],[5]]
 ```
 
@@ -975,9 +975,9 @@ const compact = arr => arr.filter(Boolean);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 compact([0, 1, false, 2, '', 3, 'a', 'e' * 23, NaN, 's', 34]); // [ 1, 2, 3, 'a', 's', 34 ]
 ```
 
@@ -1001,9 +1001,9 @@ const countBy = (arr, fn) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 countBy([6.1, 4.2, 6.3], Math.floor); // {4: 1, 6: 2}
 countBy(['one', 'two', 'three'], 'length'); // {3: 2, 5: 1}
 ```
@@ -1023,9 +1023,9 @@ const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 :
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 countOccurrences([1, 1, 2, 1, 2, 3], 1); // 3
 ```
 
@@ -1046,9 +1046,9 @@ const deepFlatten = arr => [].concat(...arr.map(v => (Array.isArray(v) ? deepFla
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 deepFlatten([1, [2], [[3], 4], 5]); // [1,2,3,4,5]
 ```
 
@@ -1070,9 +1070,9 @@ const difference = (a, b) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 difference([1, 2, 3], [1, 2, 4]); // [3]
 ```
 
@@ -1094,9 +1094,9 @@ const differenceBy = (a, b, fn) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [1.2]
 differenceBy([{ x: 2 }, { x: 1 }], [{ x: 1 }], v => v.x); // [ { x: 2 } ]
 ```
@@ -1116,9 +1116,9 @@ const differenceWith = (arr, val, comp) => arr.filter(a => val.findIndex(b => co
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 differenceWith([1, 1.2, 1.5, 3, 0], [1.9, 3, 0], (a, b) => Math.round(a) === Math.round(b)); // [1, 1.2]
 ```
 
@@ -1137,9 +1137,9 @@ const drop = (arr, n = 1) => arr.slice(n);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 drop([1, 2, 3]); // [2,3]
 drop([1, 2, 3], 2); // [3]
 drop([1, 2, 3], 42); // []
@@ -1160,9 +1160,9 @@ const dropRight = (arr, n = 1) => arr.slice(0, -n);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 dropRight([1, 2, 3]); // [1,2]
 dropRight([1, 2, 3], 2); // [1]
 dropRight([1, 2, 3], 42); // []
@@ -1187,9 +1187,9 @@ const dropRightWhile = (arr, func) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 dropRightWhile([1, 2, 3, 4], n => n < 3); // [1, 2]
 ```
 
@@ -1212,9 +1212,9 @@ const dropWhile = (arr, func) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 dropWhile([1, 2, 3, 4], n => n >= 3); // [3,4]
 ```
 
@@ -1233,9 +1233,9 @@ const everyNth = (arr, nth) => arr.filter((e, i) => i % nth === nth - 1);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 everyNth([1, 2, 3, 4, 5, 6], 2); // [ 2, 4, 6 ]
 ```
 
@@ -1254,9 +1254,9 @@ const filterNonUnique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexO
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 filterNonUnique([1, 2, 2, 3, 4, 4, 5]); // [1,3,5]
 ```
 
@@ -1277,9 +1277,9 @@ const filterNonUniqueBy = (arr, fn) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 filterNonUniqueBy(
   [
     { id: 0, value: 'a' },
@@ -1307,9 +1307,9 @@ const findLast = (arr, fn) => arr.filter(fn).pop();
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 findLast([1, 2, 3, 4], n => n % 2 === 1); // 3
 ```
 
@@ -1333,9 +1333,9 @@ const findLastIndex = (arr, fn) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 findLastIndex([1, 2, 3, 4], n => n % 2 === 1); // 2 (index of the value 3)
 ```
 
@@ -1358,9 +1358,9 @@ const flatten = (arr, depth = 1) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 flatten([1, [2], 3, 4]); // [1, 2, 3, 4]
 flatten([1, [2, [3, [4, 5], 6], 7], 8], 2); // [1, 2, 3, [4, 5], 6, 7, 8]
 ```
@@ -1384,9 +1384,9 @@ const forEachRight = (arr, callback) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 forEachRight([1, 2, 3, 4], val => console.log(val)); // '4', '3', '2', '1'
 ```
 
@@ -1410,9 +1410,9 @@ const groupBy = (arr, fn) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 groupBy([6.1, 4.2, 6.3], Math.floor); // {4: [4.2], 6: [6.1, 6.3]}
 groupBy(['one', 'two', 'three'], 'length'); // {3: ['one', 'two'], 5: ['three']}
 ```
@@ -1432,9 +1432,9 @@ const head = arr => arr[0];
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 head([1, 2, 3]); // 1
 ```
 
@@ -1454,9 +1454,9 @@ const indexOfAll = (arr, val) => arr.reduce((acc, el, i) => (el === val ? [...ac
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 indexOfAll([1, 2, 3, 1, 2, 3], 1); // [0,3]
 indexOfAll([1, 2, 3], 4); // []
 ```
@@ -1476,9 +1476,9 @@ const initial = arr => arr.slice(0, -1);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 initial([1, 2, 3]); // [1,2]
 ```
 
@@ -1498,9 +1498,9 @@ const initialize2DArray = (w, h, val = null) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 initialize2DArray(2, 2, 0); // [[0,0], [0,0]]
 ```
 
@@ -1522,9 +1522,9 @@ const initializeArrayWithRange = (end, start = 0, step = 1) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 initializeArrayWithRange(5); // [0,1,2,3,4,5]
 initializeArrayWithRange(7, 3); // [3,4,5,6,7]
 initializeArrayWithRange(9, 0, 2); // [0,2,4,6,8]
@@ -1550,9 +1550,9 @@ const initializeArrayWithRangeRight = (end, start = 0, step = 1) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 initializeArrayWithRangeRight(5); // [5,4,3,2,1,0]
 initializeArrayWithRangeRight(7, 3); // [7,6,5,4,3]
 initializeArrayWithRangeRight(9, 0, 2); // [8,6,4,2,0]
@@ -1574,9 +1574,9 @@ const initializeArrayWithValues = (n, val = 0) => Array(n).fill(val);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 initializeArrayWithValues(5, 2); // [2,2,2,2,2]
 ```
 
@@ -1599,9 +1599,9 @@ const initializeNDArray = (val, ...args) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 initializeNDArray(1, 3); // [1,1,1]
 initializeNDArray(5, 2, 2, 2); // [[[5,5],[5,5]],[[5,5],[5,5]]]
 ```
@@ -1624,9 +1624,9 @@ const intersection = (a, b) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 intersection([1, 2, 3], [4, 3, 2]); // [2,3]
 ```
 
@@ -1648,9 +1648,9 @@ const intersectionBy = (a, b, fn) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 intersectionBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [2.1]
 ```
 
@@ -1669,9 +1669,9 @@ const intersectionWith = (a, b, comp) => a.filter(x => b.findIndex(y => comp(x, 
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 intersectionWith([1, 1.2, 1.5, 3, 0], [1.9, 3, 0, 3.9], (a, b) => Math.round(a) === Math.round(b)); // [1.5, 3, 0]
 ```
 
@@ -1699,9 +1699,9 @@ const isSorted = arr => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 isSorted([0, 1, 2, 2]); // 1
 isSorted([4, 3, 2]); // -1
 isSorted([4, 3, 5]); // 0
@@ -1733,9 +1733,9 @@ const join = (arr, separator = ',', end = separator) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 join(['pen', 'pineapple', 'apple', 'pen'], ',', '&'); // "pen,pineapple,apple&pen"
 join(['pen', 'pineapple', 'apple', 'pen'], ','); // "pen,pineapple,apple,pen"
 join(['pen', 'pineapple', 'apple', 'pen']); // "pen,pineapple,apple,pen"
@@ -1768,9 +1768,9 @@ const JSONtoCSV = (arr, columns, delimiter = ',') =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 JSONtoCSV([{ a: 1, b: 2 }, { a: 3, b: 4, c: 5 }, { a: 6 }, { b: 7 }], ['a', 'b']); // 'a,b\n"1","2"\n"3","4"\n"6",""\n"","7"'
 JSONtoCSV([{ a: 1, b: 2 }, { a: 3, b: 4, c: 5 }, { a: 6 }, { b: 7 }], ['a', 'b'], ';'); // 'a;b\n"1";"2"\n"3";"4"\n"6";""\n"";"7"'
 ```
@@ -1790,9 +1790,9 @@ const last = arr => arr[arr.length - 1];
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 last([1, 2, 3]); // 3
 ```
 
@@ -1814,9 +1814,9 @@ const longestItem = (val, ...vals) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 longestItem('this', 'is', 'a', 'testcase'); // 'testcase'
 longestItem(...['a', 'ab', 'abc']); // 'abc'
 longestItem(...['a', 'ab', 'abc'], 'abcd'); // 'abcd'
@@ -1842,9 +1842,9 @@ const mapObject = (arr, fn) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const squareIt = arr => mapObject(arr, a => a * a);
 squareIt([1, 2, 3]); // { 1: 1, 2: 4, 3: 9 }
 ```
@@ -1866,9 +1866,9 @@ const maxN = (arr, n = 1) => [...arr].sort((a, b) => b - a).slice(0, n);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 maxN([1, 2, 3]); // [3]
 maxN([1, 2, 3], 2); // [3,2]
 ```
@@ -1890,9 +1890,9 @@ const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 minN([1, 2, 3]); // [1]
 minN([1, 2, 3], 2); // [1,2]
 ```
@@ -1913,9 +1913,9 @@ const none = (arr, fn = Boolean) => !arr.some(fn);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 none([0, 1, 3, 0], x => x == 2); // true
 none([0, 0, 0]); // true
 ```
@@ -1937,9 +1937,9 @@ const nthElement = (arr, n = 0) => (n === -1 ? arr.slice(n) : arr.slice(n, n + 1
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 nthElement(['a', 'b', 'c'], 1); // 'b'
 nthElement(['a', 'b', 'b'], -3); // 'a'
 ```
@@ -1961,9 +1961,9 @@ const offset = (arr, offset) => [...arr.slice(offset), ...arr.slice(0, offset)];
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 offset([1, 2, 3, 4, 5], 2); // [3, 4, 5, 1, 2]
 offset([1, 2, 3, 4, 5], -2); // [4, 5, 1, 2, 3]
 ```
@@ -1991,9 +1991,9 @@ const partition = (arr, fn) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const users = [{ user: 'barney', age: 36, active: false }, { user: 'fred', age: 40, active: true }];
 partition(users, o => o.active); // [[{ 'user': 'fred',    'age': 40, 'active': true }],[{ 'user': 'barney',  'age': 36, 'active': false }]]
 ```
@@ -2027,9 +2027,9 @@ const permutations = arr => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 permutations([1, 33, 5]); // [ [ 1, 33, 5 ], [ 1, 5, 33 ], [ 33, 1, 5 ], [ 33, 5, 1 ], [ 5, 1, 33 ], [ 5, 33, 1 ] ]
 ```
 
@@ -2056,9 +2056,9 @@ const pull = (arr, ...args) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 let myArray = ['a', 'b', 'c', 'a', 'b', 'c'];
 pull(myArray, 'a', 'c'); // myArray = [ 'b', 'b' ]
 ```
@@ -2088,9 +2088,9 @@ const pullAtIndex = (arr, pullArr) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 let myArray = ['a', 'b', 'c', 'd'];
 let pulled = pullAtIndex(myArray, [1, 3]); // myArray = [ 'a', 'c' ] , pulled = [ 'b', 'd' ]
 ```
@@ -2119,9 +2119,9 @@ const pullAtValue = (arr, pullArr) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 let myArray = ['a', 'b', 'c', 'd'];
 let pulled = pullAtValue(myArray, ['b', 'd']); // myArray = [ 'a', 'c' ] , pulled = [ 'b', 'd' ]
 ```
@@ -2152,9 +2152,9 @@ const pullBy = (arr, ...args) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 var myArray = [{ x: 1 }, { x: 2 }, { x: 3 }, { x: 1 }];
 pullBy(myArray, [{ x: 1 }, { x: 3 }], o => o.x); // myArray = [{ x: 2 }]
 ```
@@ -2181,9 +2181,9 @@ const reducedFilter = (data, keys, fn) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const data = [
   {
     id: 1,
@@ -2216,9 +2216,9 @@ const reduceSuccessive = (arr, fn, acc) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 reduceSuccessive([1, 2, 3, 4, 5, 6], (acc, val) => acc + val, 0); // [0, 1, 3, 6, 10, 15, 21]
 ```
 
@@ -2239,9 +2239,9 @@ const reduceWhich = (arr, comparator = (a, b) => a - b) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 reduceWhich([1, 3, 2]); // 1
 reduceWhich([1, 3, 2], (a, b) => b - a); // 3
 reduceWhich(
@@ -2263,9 +2263,9 @@ const reject = (pred, array) => array.filter((...args) => !pred(...args));
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 reject(x => x % 2 === 0, [1, 2, 3, 4, 5]); // [1, 3, 5]
 reject(word => word.length > 4, ['Apple', 'Pear', 'Kiwi', 'Banana']); // ['Pear', 'Kiwi']
 ```
@@ -2292,9 +2292,9 @@ const remove = (arr, func) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 remove([1, 2, 3, 4], n => n % 2 === 0); // [2, 4]
 ```
 
@@ -2314,9 +2314,9 @@ const sample = arr => arr[Math.floor(Math.random() * arr.length)];
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 sample([3, 7, 9, 11]); // 9
 ```
 
@@ -2344,9 +2344,9 @@ const sampleSize = ([...arr], n = 1) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 sampleSize([1, 2, 3], 2); // [3,1]
 sampleSize([1, 2, 3], 4); // [2,3,1]
 ```
@@ -2373,9 +2373,9 @@ const shuffle = ([...arr]) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const foo = [1, 2, 3];
 shuffle(foo); // [2,3,1], foo = [1,2,3]
 ```
@@ -2395,9 +2395,9 @@ const similarity = (arr, values) => arr.filter(v => values.includes(v));
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 similarity([1, 2, 3], [1, 2, 4]); // [1,2]
 ```
 
@@ -2421,9 +2421,9 @@ const sortedIndex = (arr, n) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 sortedIndex([5, 3, 2, 1], 4); // 1
 sortedIndex([30, 50], 40); // 1
 ```
@@ -2449,9 +2449,9 @@ const sortedIndexBy = (arr, n, fn) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 sortedIndexBy([{ x: 4 }, { x: 5 }], { x: 4 }, o => o.x); // 0
 ```
 
@@ -2475,9 +2475,9 @@ const sortedLastIndex = (arr, n) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 sortedLastIndex([10, 20, 30, 30, 40], 30); // 4
 ```
 
@@ -2506,9 +2506,9 @@ const sortedLastIndexBy = (arr, n, fn) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 sortedLastIndexBy([{ x: 4 }, { x: 5 }], { x: 4 }, o => o.x); // 1
 ```
 
@@ -2534,9 +2534,9 @@ const stableSort = (arr, compare) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const stable = stableSort(arr, () => 0); // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
@@ -2560,9 +2560,9 @@ const symmetricDifference = (a, b) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 symmetricDifference([1, 2, 3], [1, 2, 4]); // [3, 4]
 symmetricDifference([1, 2, 2], [1, 3, 1]); // [2, 2, 3]
 ```
@@ -2586,9 +2586,9 @@ const symmetricDifferenceBy = (a, b, fn) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 symmetricDifferenceBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [ 1.2, 3.4 ]
 ```
 
@@ -2610,9 +2610,9 @@ const symmetricDifferenceWith = (arr, val, comp) => [
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 symmetricDifferenceWith(
   [1, 1.2, 1.5, 3, 0],
   [1.9, 3, 0, 3.9],
@@ -2635,9 +2635,9 @@ const tail = arr => (arr.length > 1 ? arr.slice(1) : arr);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 tail([1, 2, 3]); // [2,3]
 tail([1]); // [1]
 ```
@@ -2657,9 +2657,9 @@ const take = (arr, n = 1) => arr.slice(0, n);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 take([1, 2, 3], 5); // [1, 2, 3]
 take([1, 2, 3], 0); // []
 ```
@@ -2679,9 +2679,9 @@ const takeRight = (arr, n = 1) => arr.slice(arr.length - n, arr.length);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 takeRight([1, 2, 3], 2); // [ 2, 3 ]
 takeRight([1, 2, 3]); // [3]
 ```
@@ -2706,9 +2706,9 @@ const takeRightWhile = (arr, func) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 takeRightWhile([1, 2, 3, 4], n => n < 3); // [3, 4]
 ```
 
@@ -2731,9 +2731,9 @@ const takeWhile = (arr, func) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 takeWhile([1, 2, 3, 4], n => n >= 3); // [1, 2]
 ```
 
@@ -2757,9 +2757,9 @@ const toHash = (object, key) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 toHash([4, 3, 2, 1]); // { 0: 4, 1: 3, 2: 2, 1: 1 }
 toHash([{ a: 'label' }], 'a'); // { label: { a: 'label' } }
 // A more in depth example:
@@ -2790,9 +2790,9 @@ const union = (a, b) => Array.from(new Set([...a, ...b]));
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 union([1, 2, 3], [4, 3, 2]); // [1,2,3,4]
 ```
 
@@ -2816,9 +2816,9 @@ const unionBy = (a, b, fn) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 unionBy([2.1], [1.2, 2.3], Math.floor); // [2.1, 1.2]
 ```
 
@@ -2838,9 +2838,9 @@ const unionWith = (a, b, comp) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 unionWith([1, 1.2, 1.5, 3, 0], [1.9, 3, 0, 3.9], (a, b) => Math.round(a) === Math.round(b)); // [1, 1.2, 1.5, 3, 0, 3.9]
 ```
 
@@ -2859,9 +2859,9 @@ const uniqueElements = arr => [...new Set(arr)];
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 uniqueElements([1, 2, 2, 3, 4, 4, 5]); // [1,2,3,4,5]
 ```
 
@@ -2885,9 +2885,9 @@ const uniqueElementsBy = (arr, fn) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 uniqueElementsBy(
   [
     { id: 0, value: 'a' },
@@ -2920,9 +2920,9 @@ const uniqueElementsByRight = (arr, fn) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 uniqueElementsByRight(
   [
     { id: 0, value: 'a' },
@@ -2952,9 +2952,9 @@ const uniqueSymmetricDifference = (a, b) => [
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 uniqueSymmetricDifference([1, 2, 3], [1, 2, 4]); // [3, 4]
 uniqueSymmetricDifference([1, 2, 2], [1, 3, 1]); // [2, 3]
 ```
@@ -2981,9 +2981,9 @@ const unzip = arr =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 unzip([['a', 1, true], ['b', 2, false]]); //[['a', 'b'], [1, 2], [true, false]]
 unzip([['a', 1, true], ['b', 2]]); //[['a', 'b'], [1, 2], [true]]
 ```
@@ -3013,9 +3013,9 @@ const unzipWith = (arr, fn) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 unzipWith([[1, 10, 100], [2, 20, 200]], (...args) => args.reduce((acc, v) => acc + v, 0)); // [3, 30, 300]
 ```
 
@@ -3036,9 +3036,9 @@ const without = (arr, ...args) => arr.filter(v => !args.includes(v));
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 without([2, 1, 2, 3], 1, 2); // [3]
 ```
 
@@ -3057,9 +3057,9 @@ const xProd = (a, b) => a.reduce((acc, x) => acc.concat(b.map(y => [x, y])), [])
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 xProd([1, 2], ['a', 'b']); // [[1, 'a'], [1, 'b'], [2, 'a'], [2, 'b']]
 ```
 
@@ -3085,9 +3085,9 @@ const zip = (...arrays) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 zip(['a', 'b'], [1, 2], [true, false]); // [['a', 1, true], ['b', 2, false]]
 zip(['a'], [1, 2], [true, false]); // [['a', 1, true], [undefined, 2, false]]
 ```
@@ -3108,9 +3108,9 @@ const zipObject = (props, values) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 zipObject(['a', 'b', 'c'], [1, 2]); // {a: 1, b: 2, c: undefined}
 zipObject(['a', 'b'], [1, 2, 3]); // {a: 1, b: 2}
 ```
@@ -3140,9 +3140,9 @@ const zipWith = (...array) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 zipWith([1, 2], [10, 20], [100, 200], (a, b, c) => a + b + c); // [111,222]
 zipWith(
   [1, 2, 3],
@@ -3176,9 +3176,9 @@ const arrayToHtmlList = (arr, listID) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 arrayToHtmlList(['item 1', 'item 2'], 'myListID');
 ```
 
@@ -3199,9 +3199,9 @@ const bottomVisible = () =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 bottomVisible(); // true
 ```
 
@@ -3242,9 +3242,9 @@ const copyToClipboard = str => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 copyToClipboard('Lorem ipsum'); // 'Lorem ipsum' copied to clipboard.
 ```
 
@@ -3277,9 +3277,9 @@ const counter = (selector, start, end, step = 1, duration = 2000) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 counter('#my-id', 1, 1000, 5, 2000); // Creates a 2-second timer for the element with id="my-id"
 ```
 
@@ -3305,9 +3305,9 @@ const createElement = str => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const el = createElement(
   `<div class="container">
     <p>Hello!</p>
@@ -3348,9 +3348,9 @@ const createEventHub = () => ({
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const handler = data => console.log(data);
 const hub = createEventHub();
 let increment = 0;
@@ -3384,9 +3384,9 @@ const currentURL = () => window.location.href;
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 currentURL(); // 'https://google.com'
 ```
 
@@ -3408,9 +3408,9 @@ const detectDeviceType = () =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 detectDeviceType(); // "Mobile" or "Desktop"
 ```
 
@@ -3429,9 +3429,9 @@ const elementContains = (parent, child) => parent !== child && parent.contains(c
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 elementContains(document.querySelector('head'), document.querySelector('title')); // true
 elementContains(document.querySelector('body'), document.querySelector('body')); // false
 ```
@@ -3461,9 +3461,9 @@ const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 // e.g. 100x100 viewport and a 10x10px element at position {top: -1, left: 0, bottom: 9, right: 10}
 elementIsVisibleInViewport(el); // false - (not fully visible)
 elementIsVisibleInViewport(el, true); // true - (partially visible)
@@ -3488,9 +3488,9 @@ const getScrollPosition = (el = window) => ({
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 getScrollPosition(); // {x: 0, y: 200}
 ```
 
@@ -3509,9 +3509,9 @@ const getStyle = (el, ruleName) => getComputedStyle(el)[ruleName];
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 getStyle(document.querySelector('p'), 'font-size'); // '16px'
 ```
 
@@ -3530,9 +3530,9 @@ const hasClass = (el, className) => el.classList.contains(className);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 hasClass(document.querySelector('p.special'), 'special'); // true
 ```
 
@@ -3558,9 +3558,9 @@ const hashBrowser = val =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 hashBrowser(JSON.stringify({ a: 'a', b: [1, 2, 3, 4], foo: { c: 'bar' } })).then(console.log); // '04aa106279f5977f59f9067fa9712afc4aedc6f5862a8defc34552d8c7206393'
 ```
 
@@ -3579,9 +3579,9 @@ const hide = els => els.forEach(e => (e.style.display = 'none'));
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 hide(document.querySelectorAll('img')); // Hides all <img> elements on the page
 ```
 
@@ -3602,9 +3602,9 @@ const httpsRedirect = () => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 httpsRedirect(); // If you are on http://mydomain.com, you are redirected to https://mydomain.com
 ```
 
@@ -3623,9 +3623,9 @@ const insertAfter = (el, htmlString) => el.insertAdjacentHTML('afterend', htmlSt
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 insertAfter(document.getElementById('myId'), '<p>after</p>'); // <div id="myId">...</div> <p>after</p>
 ```
 
@@ -3644,9 +3644,9 @@ const insertBefore = (el, htmlString) => el.insertAdjacentHTML('beforebegin', ht
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 insertBefore(document.getElementById('myId'), '<p>before</p>'); // <p>before</p> <div id="myId">...</div>
 ```
 
@@ -3665,9 +3665,9 @@ const isBrowserTabFocused = () => !document.hidden;
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 isBrowserTabFocused(); // true
 ```
 
@@ -3686,9 +3686,9 @@ const nodeListToArray = nodeList => [...nodeList];
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 nodeListToArray(document.childNodes); // [ <!DOCTYPE html>, html ]
 ```
 
@@ -3726,9 +3726,9 @@ const observeMutations = (element, callback, options) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const obs = observeMutations(document, console.log); // Logs all mutations that happen on the page
 obs.disconnect(); // Disconnects the observer and stops logging mutations on the page
 ```
@@ -3749,9 +3749,9 @@ const off = (el, evt, fn, opts = false) => el.removeEventListener(evt, fn, opts)
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const fn = () => console.log('!');
 document.body.addEventListener('click', fn);
 off(document.body, 'click', fn); // no longer logs '!' upon clicking on the page
@@ -3778,9 +3778,9 @@ const on = (el, evt, fn, opts = {}) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const fn = () => console.log('!');
 on(document.body, 'click', fn); // logs '!' upon clicking the body
 on(document.body, 'click', fn, { target: 'p' }); // logs '!' upon clicking a `p` element child of the body
@@ -3817,9 +3817,9 @@ const onUserInputChange = callback => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 onUserInputChange(type => {
   console.log('The user is now using', type, 'as an input method.');
 });
@@ -3848,9 +3848,9 @@ const prefix = prop => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 prefix('appearance'); // 'appearance' on a supported browser, otherwise 'webkitAppearance', 'mozAppearance', 'msAppearance' or 'oAppearance'
 ```
 
@@ -3891,9 +3891,9 @@ const recordAnimationFrames = (callback, autoStart = true) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const cb = () => console.log('Animation frame fired');
 const recorder = recordAnimationFrames(cb); // logs 'Animation frame fired' on each animation frame
 recorder.stop(); // stops logging
@@ -3918,9 +3918,9 @@ const redirect = (url, asLink = true) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 redirect('https://google.com');
 ```
 
@@ -3955,9 +3955,9 @@ const runAsync = fn => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const longRunningFunction = () => {
   let result = 0;
   for (let i = 0; i < 1000; i++) {
@@ -4002,9 +4002,9 @@ const scrollToTop = () => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 scrollToTop();
 ```
 
@@ -4023,9 +4023,9 @@ const setStyle = (el, ruleName, val) => (el.style[ruleName] = val);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 setStyle(document.querySelector('p'), 'font-size', '20px'); // The first <p> element on the page will have a font-size of 20px
 ```
 
@@ -4044,9 +4044,9 @@ const show = (...el) => [...el].forEach(e => (e.style.display = ''));
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 show(...document.querySelectorAll('img')); // Shows all <img> elements on the page
 ```
 
@@ -4069,9 +4069,9 @@ const smoothScroll = element =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 smoothScroll('#fooBar'); // scrolls smoothly to the element with the id fooBar
 smoothScroll('.fooBar'); // scrolls smoothly to the first element with a class of fooBar
 ```
@@ -4091,9 +4091,9 @@ const toggleClass = (el, className) => el.classList.toggle(className);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 toggleClass(document.querySelector('p.special'), 'special'); // The paragraph will not have the 'special' class anymore
 ```
 
@@ -4115,9 +4115,9 @@ const triggerEvent = (el, eventType, detail = undefined) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 triggerEvent(document.getElementById('myId'), 'click');
 triggerEvent(document.getElementById('myId'), 'click', { username: 'bob' });
 ```
@@ -4140,9 +4140,9 @@ const UUIDGeneratorBrowser = () =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 UUIDGeneratorBrowser(); // '7982fcfe-5721-4632-bede-6000885be57d'
 ```
 
@@ -4182,9 +4182,9 @@ const formatDuration = ms => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 formatDuration(1001); // '1 second, 1 millisecond'
 formatDuration(34325055574); // '397 days, 6 hours, 44 minutes, 15 seconds, 574 milliseconds'
 ```
@@ -4204,9 +4204,9 @@ const getColonTimeFromDate = date => date.toTimeString().slice(0, 8);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 getColonTimeFromDate(new Date()); // "08:38:00"
 ```
 
@@ -4226,9 +4226,9 @@ const getDaysDiffBetweenDates = (dateInitial, dateFinal) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 getDaysDiffBetweenDates(new Date('2017-12-13'), new Date('2017-12-22')); // 9
 ```
 
@@ -4254,9 +4254,9 @@ const getMeridiemSuffixOfInteger = num =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 getMeridiemSuffixOfInteger(0); // "12am"
 getMeridiemSuffixOfInteger(11); // "11am"
 getMeridiemSuffixOfInteger(13); // "1pm"
@@ -4284,9 +4284,9 @@ const tomorrow = (long = false) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 tomorrow(); // 2017-12-27 (if current date is 2017-12-26)
 tomorrow(true); // 2017-12-27T00:00:00 (if current date is 2017-12-26)
 ```
@@ -4317,9 +4317,9 @@ const attempt = (fn, ...args) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 var elements = attempt(function(selector) {
   return document.querySelectorAll(selector);
 }, '>_>');
@@ -4342,9 +4342,9 @@ const bind = (fn, context, ...boundArgs) => (...args) => fn.apply(context, [...b
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 function greet(greeting, punctuation) {
   return greeting + ' ' + this.user + punctuation;
 }
@@ -4370,9 +4370,9 @@ const bindKey = (context, fn, ...boundArgs) => (...args) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const freddy = {
   user: 'fred',
   greet: function(greeting, punctuation) {
@@ -4402,9 +4402,9 @@ const chainAsync = fns => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 chainAsync([
   next => {
     console.log('0 seconds');
@@ -4432,9 +4432,9 @@ const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const add5 = x => x + 5;
 const multiply = (x, y) => x * y;
 const multiplyAndAdd5 = compose(
@@ -4460,9 +4460,9 @@ const composeRight = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args))
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const add = (x, y) => x + y;
 const square = x => x * x;
 const addAndSquare = composeRight(add, square);
@@ -4485,9 +4485,9 @@ const converge = (converger, fns) => (...args) => converger(...fns.map(fn => fn.
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const average = converge((a, b) => a / b, [
   arr => arr.reduce((a, v) => a + v, 0),
   arr => arr.length
@@ -4514,9 +4514,9 @@ const curry = (fn, arity = fn.length, ...args) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 curry(Math.pow)(2)(10); // 1024
 curry(Math.min, 3)(10)(50)(2); // 2
 ```
@@ -4543,9 +4543,9 @@ const debounce = (fn, ms = 0) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 window.addEventListener(
   'resize',
   debounce(() => {
@@ -4570,9 +4570,9 @@ const defer = (fn, ...args) => setTimeout(fn, 1, ...args);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 // Example A:
 defer(console.log, 'a'), console.log('b'); // logs 'b' then 'a'
 
@@ -4598,9 +4598,9 @@ const delay = (fn, wait, ...args) => setTimeout(fn, wait, ...args);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 delay(
   function(text) {
     console.log(text);
@@ -4625,9 +4625,9 @@ const functionName = fn => (console.debug(fn.name), fn);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 functionName(Math.max); // max (logged in debug channel of console)
 ```
 
@@ -4653,9 +4653,9 @@ const hz = (fn, iterations = 100) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 // 10,000 element array
 const numbers = Array(10000)
   .fill()
@@ -4698,9 +4698,9 @@ const memoize = fn => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 // See the `anagrams` snippet.
 const anagramsCached = memoize(anagrams);
 anagramsCached('javascript'); // takes a long time
@@ -4723,9 +4723,9 @@ const negate = func => (...args) => !func(...args);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 [1, 2, 3, 4, 5, 6].filter(negate(n => n % 2 === 0)); // [ 1, 3, 5 ]
 ```
 
@@ -4752,9 +4752,9 @@ const once = fn => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const startApp = function(event) {
   console.log(this, event); // document.body, MouseEvent
 };
@@ -4776,9 +4776,9 @@ const partial = (fn, ...partials) => (...args) => fn(...partials, ...args);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const greet = (greeting, name) => greeting + ' ' + name + '!';
 const greetHello = partial(greet, 'Hello');
 greetHello('John'); // 'Hello John!'
@@ -4799,9 +4799,9 @@ const partialRight = (fn, ...partials) => (...args) => fn(...args, ...partials);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const greet = (greeting, name) => greeting + ' ' + name + '!';
 const greetJohn = partialRight(greet, 'John');
 greetJohn('Hello'); // 'Hello John!'
@@ -4822,9 +4822,9 @@ const runPromisesInSeries = ps => ps.reduce((p, next) => p.then(next), Promise.r
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const delay = d => new Promise(r => setTimeout(r, d));
 runPromisesInSeries([() => delay(1000), () => delay(2000)]); // Executes each promise sequentially, taking a total of 3 seconds to complete
 ```
@@ -4844,9 +4844,9 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 async function sleepyWork() {
   console.log("I'm going to sleep for 1 second.");
   await sleep(1000);
@@ -4891,9 +4891,9 @@ const throttle = (fn, wait) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 window.addEventListener(
   'resize',
   throttle(function(evt) {
@@ -4922,9 +4922,9 @@ const times = (n, fn, context = undefined) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 var output = '';
 times(5, i => (output += i));
 console.log(output); // 01234
@@ -4953,9 +4953,9 @@ const uncurry = (fn, n = 1) => (...args) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const add = x => y => z => x + y + z;
 const uncurriedAdd = uncurry(add, 3);
 uncurriedAdd(1, 2, 3); // 6
@@ -4982,9 +4982,9 @@ const unfold = (fn, seed) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 var f = n => (n > 50 ? false : [-n, n + 10]);
 unfold(f, 10); // [-10, -20, -30, -40, -50]
 ```
@@ -5004,9 +5004,9 @@ const when = (pred, whenTrue) => x => (pred(x) ? whenTrue(x) : x);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const doubleEvenNumbers = when(x => x % 2 === 0, x => x * 2);
 doubleEvenNumbers(2); // 4
 doubleEvenNumbers(1); // 1
@@ -5033,9 +5033,9 @@ const approximatelyEqual = (v1, v2, epsilon = 0.001) => Math.abs(v1 - v2) < epsi
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 approximatelyEqual(Math.PI / 2.0, 1.5708); // true
 ```
 
@@ -5054,9 +5054,9 @@ const average = (...nums) => nums.reduce((acc, val) => acc + val, 0) / nums.leng
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 average(...[1, 2, 3]); // 2
 average(1, 2, 3); // 2
 ```
@@ -5078,9 +5078,9 @@ const averageBy = (arr, fn) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 averageBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n); // 5
 averageBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n'); // 5
 ```
@@ -5113,9 +5113,9 @@ const binomialCoefficient = (n, k) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 binomialCoefficient(8, 2); // 28
 ```
 
@@ -5135,9 +5135,9 @@ const clampNumber = (num, a, b) => Math.max(Math.min(num, Math.max(a, b)), Math.
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 clampNumber(2, 3, 5); // 3
 clampNumber(1, -1, -5); // -1
 ```
@@ -5157,9 +5157,9 @@ const degreesToRads = deg => (deg * Math.PI) / 180.0;
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 degreesToRads(90.0); // ~1.5708
 ```
 
@@ -5179,9 +5179,9 @@ const digitize = n => [...`${n}`].map(i => parseInt(i));
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 digitize(123); // [1, 2, 3]
 ```
 
@@ -5200,9 +5200,9 @@ const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 distance(1, 1, 2, 3); // 2.23606797749979
 ```
 
@@ -5242,9 +5242,9 @@ const elo = ([...ratings], kFactor = 32, selfRating) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 // Standard 1v1s
 elo([1200, 1200]); // [1216, 1184]
 elo([1200, 1200], 64); // [1232, 1168]
@@ -5282,9 +5282,9 @@ const factorial = n =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 factorial(6); // 720
 ```
 
@@ -5308,9 +5308,9 @@ const fibonacci = n =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 fibonacci(6); // [0, 1, 1, 2, 3, 5]
 ```
 
@@ -5334,9 +5334,9 @@ const gcd = (...arr) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 gcd(8, 36); // 4
 gcd(...[12, 8, 32]); // 4
 ```
@@ -5362,9 +5362,9 @@ const geometricProgression = (end, start = 1, step = 2) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 geometricProgression(256); // [1, 2, 4, 8, 16, 32, 64, 128, 256]
 geometricProgression(256, 3); // [3, 6, 12, 24, 48, 96, 192]
 geometricProgression(256, 1, 4); // [1, 4, 16, 64, 256]
@@ -5386,9 +5386,9 @@ const hammingDistance = (num1, num2) => ((num1 ^ num2).toString(2).match(/1/g) |
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 hammingDistance(2, 3); // 1
 ```
 
@@ -5411,9 +5411,9 @@ const inRange = (n, start, end = null) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 inRange(3, 2, 5); // true
 inRange(3, 4); // true
 inRange(2, 3, 5); // false
@@ -5435,9 +5435,9 @@ const isDivisible = (dividend, divisor) => dividend % divisor === 0;
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 isDivisible(6, 3); // true
 ```
 
@@ -5457,9 +5457,9 @@ const isEven = num => num % 2 === 0;
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 isEven(3); // false
 ```
 
@@ -5483,9 +5483,9 @@ const isPrime = num => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 isPrime(11); // true
 ```
 
@@ -5509,9 +5509,9 @@ const lcm = (...arr) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 lcm(12, 7); // 84
 lcm(...[1, 3, 4, 5]); // 60
 ```
@@ -5544,9 +5544,9 @@ const luhnCheck = num => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 luhnCheck('4485275742308327'); // true
 luhnCheck(6011329933655299); //  false
 luhnCheck(123456789); // false
@@ -5567,9 +5567,9 @@ const maxBy = (arr, fn) => Math.max(...arr.map(typeof fn === 'function' ? fn : v
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 maxBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n); // 8
 maxBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n'); // 8
 ```
@@ -5594,9 +5594,9 @@ const median = arr => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 median([5, 6, 50, 1, -5]); // 5
 ```
 
@@ -5615,9 +5615,9 @@ const minBy = (arr, fn) => Math.min(...arr.map(typeof fn === 'function' ? fn : v
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 minBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n); // 2
 minBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n'); // 2
 ```
@@ -5638,9 +5638,9 @@ const percentile = (arr, val) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 percentile([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 6); // 55
 ```
 
@@ -5659,9 +5659,9 @@ const powerset = arr => arr.reduce((a, v) => a.concat(a.map(r => [v].concat(r)))
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 powerset([1, 2]); // [[], [1], [2], [2,1]]
 ```
 
@@ -5686,9 +5686,9 @@ const primes = num => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 primes(10); // [2,3,5,7]
 ```
 
@@ -5707,9 +5707,9 @@ const radsToDegrees = rad => (rad * 180.0) / Math.PI;
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 radsToDegrees(Math.PI / 2); // 90
 ```
 
@@ -5729,9 +5729,9 @@ const randomIntArrayInRange = (min, max, n = 1) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 randomIntArrayInRange(12, 35, 10); // [ 34, 14, 27, 17, 30, 27, 20, 26, 21, 14 ]
 ```
 
@@ -5750,9 +5750,9 @@ const randomIntegerInRange = (min, max) => Math.floor(Math.random() * (max - min
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 randomIntegerInRange(0, 5); // 2
 ```
 
@@ -5771,9 +5771,9 @@ const randomNumberInRange = (min, max) => Math.random() * (max - min) + min;
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 randomNumberInRange(2, 10); // 6.0211363285087005
 ```
 
@@ -5793,9 +5793,9 @@ const round = (n, decimals = 0) => Number(`${Math.round(`${n}e${decimals}`)}e-${
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 round(1.005, 2); // 1.01
 ```
 
@@ -5821,9 +5821,9 @@ const sdbm = str => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 sdbm('name'); // -3521204949
 ```
 
@@ -5850,9 +5850,9 @@ const standardDeviation = (arr, usePopulation = false) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 standardDeviation([10, 2, 38, 23, 38, 23, 21]); // 13.284434142114991 (sample)
 standardDeviation([10, 2, 38, 23, 38, 23, 21], true); // 12.29899614287479 (population)
 ```
@@ -5872,9 +5872,9 @@ const sum = (...arr) => [...arr].reduce((acc, val) => acc + val, 0);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 sum(...[1, 2, 3, 4]); // 10
 ```
 
@@ -5894,9 +5894,9 @@ const sumBy = (arr, fn) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 sumBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n); // 20
 sumBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n'); // 20
 ```
@@ -5922,9 +5922,9 @@ const sumPower = (end, power = 2, start = 1) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 sumPower(10); // 385
 sumPower(10, 3); //3025
 sumPower(10, 3, 5); //2925
@@ -5947,9 +5947,9 @@ const toSafeInteger = num =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 toSafeInteger('3.2'); // 3
 toSafeInteger(Infinity); // 9007199254740991
 ```
@@ -5974,9 +5974,9 @@ const atob = str => new Buffer(str, 'base64').toString('binary');
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 atob('Zm9vYmFy'); // 'foobar'
 ```
 
@@ -5995,9 +5995,9 @@ const btoa = str => new Buffer(str, 'binary').toString('base64');
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 btoa('foobar'); // 'Zm9vYmFy'
 ```
 
@@ -6034,9 +6034,9 @@ const colorize = (...args) => ({
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 console.log(colorize('foo').red); // 'foo' (red letters)
 console.log(colorize('foo', 'bar').bgBlue); // 'foo bar' (blue background)
 console.log(colorize(colorize('foo').yellow, colorize('foo').green).bgWhite); // 'foo bar' (first word in yellow letters, second word in green letters, white background for both)
@@ -6059,9 +6059,9 @@ const hasFlags = (...flags) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 // node myScript.js -s --test --cool=true
 hasFlags('-s'); // true
 hasFlags('--test', 'cool=true', '-s'); // true
@@ -6096,9 +6096,9 @@ const hashNode = val =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 hashNode(JSON.stringify({ a: 'a', b: [1, 2, 3, 4], foo: { c: 'bar' } })).then(console.log); // '04aa106279f5977f59f9067fa9712afc4aedc6f5862a8defc34552d8c7206393'
 ```
 
@@ -6117,9 +6117,9 @@ const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 isTravisCI(); // true (if code is running on Travis CI)
 ```
 
@@ -6140,9 +6140,9 @@ const JSONToFile = (obj, filename) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 JSONToFile({ test: 'is passed' }, 'testJsonFile'); // writes the object to 'testJsonFile.json'
 ```
 
@@ -6168,9 +6168,9 @@ const readFileLines = filename =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 /*
 contents of test.txt :
   line1
@@ -6198,9 +6198,9 @@ const untildify = str => str.replace(/^~($|\/|\\)/, `${require('os').homedir()}$
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 untildify('~/node'); // '/Users/aUser/node'
 ```
 
@@ -6223,9 +6223,9 @@ const UUIDGeneratorNode = () =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 UUIDGeneratorNode(); // '79c7c136-60ee-40a2-beb2-856f1feabefc'
 ```
 
@@ -6257,9 +6257,9 @@ const bindAll = (obj, ...fns) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 var view = {
   label: 'docs',
   click: function() {
@@ -6293,9 +6293,9 @@ const deepClone = obj => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const a = { foo: 'bar', obj: { a: 1, b: 2 } };
 const b = deepClone(a); // a !== b, a.obj !== b.obj
 ```
@@ -6319,9 +6319,9 @@ const deepFreeze = obj =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 'use strict';
 
 const o = deepFreeze([1, [2, 3]]);
@@ -6345,9 +6345,9 @@ const defaults = (obj, ...defs) => Object.assign({}, obj, ...defs.reverse(), obj
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 defaults({ a: 1 }, { b: 2 }, { b: 6 }, { a: 3 }); // { a: 1, b: 2 }
 ```
 
@@ -6373,9 +6373,9 @@ const dig = (obj, target) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const data = {
   level1: {
     level2: {
@@ -6413,9 +6413,9 @@ const equals = (a, b) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 equals({ a: [2, { e: 3 }], b: [4], c: 'foo' }, { a: [2, { e: 3 }], b: [4], c: 'foo' }); // true
 ```
 
@@ -6434,9 +6434,9 @@ const findKey = (obj, fn) => Object.keys(obj).find(key => fn(obj[key], key, obj)
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 findKey(
   {
     barney: { age: 36, active: true },
@@ -6465,9 +6465,9 @@ const findLastKey = (obj, fn) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 findLastKey(
   {
     barney: { age: 36, active: true },
@@ -6503,9 +6503,9 @@ const flattenObject = (obj, prefix = '') =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 flattenObject({ a: { b: { c: 1 } }, d: 1 }); // { 'a.b.c': 1, d: 1 }
 ```
 
@@ -6524,9 +6524,9 @@ const forOwn = (obj, fn) => Object.keys(obj).forEach(key => fn(obj[key], key, ob
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 forOwn({ foo: 'bar', a: 1 }, v => console.log(v)); // 'bar', 1
 ```
 
@@ -6548,9 +6548,9 @@ const forOwnRight = (obj, fn) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 forOwnRight({ foo: 'bar', a: 1 }, v => console.log(v)); // 1, 'bar'
 ```
 
@@ -6576,9 +6576,9 @@ const functions = (obj, inherited = false) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 function Foo() {
   this.a = () => 1;
   this.b = () => 2;
@@ -6610,9 +6610,9 @@ const get = (from, ...selectors) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const obj = { selector: { to: { val: 'val to select' } }, target: [1, 2, { a: 'test' }] };
 get(obj, 'selector.to.val', 'target[0]', 'target[2].a'); // ['val to select', 1, 'test']
 ```
@@ -6639,9 +6639,9 @@ const invertKeyValues = (obj, fn) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 invertKeyValues({ a: 1, b: 2, c: 1 }); // { 1: [ 'a', 'c' ], 2: [ 'b' ] }
 invertKeyValues({ a: 1, b: 2, c: 1 }, value => 'group' + value); // { group1: [ 'a', 'c' ], group2: [ 'b' ] }
 ```
@@ -6666,9 +6666,9 @@ const lowercaseKeys = obj =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const myObj = { Name: 'Adam', sUrnAME: 'Smith' };
 const myObjLower = lowercaseKeys(myObj); // {name: 'Adam', surname: 'Smith'};
 ```
@@ -6693,9 +6693,9 @@ const mapKeys = (obj, fn) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 mapKeys({ a: 1, b: 2 }, (val, key) => key + val); // { a1: 1, b2: 2 }
 ```
 
@@ -6719,9 +6719,9 @@ const mapValues = (obj, fn) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const users = {
   fred: { user: 'fred', age: 40 },
   pebbles: { user: 'pebbles', age: 1 }
@@ -6745,9 +6745,9 @@ const matches = (obj, source) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 matches({ age: 25, hair: 'long', beard: true }, { hair: 'long', beard: true }); // true
 matches({ hair: 'long', beard: true }, { age: 25, hair: 'long', beard: true }); // false
 ```
@@ -6774,9 +6774,9 @@ const matchesWith = (obj, source, fn) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const isGreeting = val => /^h(?:i|ello)$/.test(val);
 matchesWith(
   { greeting: 'hello' },
@@ -6809,9 +6809,9 @@ const merge = (...objs) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const object = {
   a: [{ x: 2 }, { y: 4 }],
   b: 1
@@ -6846,9 +6846,9 @@ const nest = (items, id = null, link = 'parent_id') =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 // One top level comment
 const comments = [
   { id: 1, parent_id: null },
@@ -6876,9 +6876,9 @@ const objectFromPairs = arr => arr.reduce((a, [key, val]) => ((a[key] = val), a)
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 objectFromPairs([['a', 1], ['b', 2]]); // {a: 1, b: 2}
 ```
 
@@ -6897,9 +6897,9 @@ const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 objectToPairs({ a: 1, b: 2 }); // [['a',1],['b',2]]
 ```
 
@@ -6922,9 +6922,9 @@ const omit = (obj, arr) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 omit({ a: 1, b: '2', c: 3 }, ['b']); // { 'a': 1, 'c': 3 }
 ```
 
@@ -6947,9 +6947,9 @@ const omitBy = (obj, fn) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 omitBy({ a: 1, b: '2', c: 3 }, x => typeof x === 'number'); // { b: '2' }
 ```
 
@@ -6978,9 +6978,9 @@ const orderBy = (arr, props, orders) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const users = [{ name: 'fred', age: 48 }, { name: 'barney', age: 36 }, { name: 'fred', age: 40 }];
 orderBy(users, ['name', 'age'], ['asc', 'desc']); // [{name: 'barney', age: 36}, {name: 'fred', age: 48}, {name: 'fred', age: 40}]
 orderBy(users, ['name', 'age']); // [{name: 'barney', age: 36}, {name: 'fred', age: 40}, {name: 'fred', age: 48}]
@@ -7002,9 +7002,9 @@ const pick = (obj, arr) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 pick({ a: 1, b: '2', c: 3 }, ['a', 'c']); // { 'a': 1, 'c': 3 }
 ```
 
@@ -7027,9 +7027,9 @@ const pickBy = (obj, fn) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 pickBy({ a: 1, b: '2', c: 3 }, x => typeof x === 'number'); // { 'a': 1, 'c': 3 }
 ```
 
@@ -7055,9 +7055,9 @@ const renameKeys = (keysMap, obj) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const obj = { name: 'Bobo', job: 'Front-End Master', shoeSize: 100 };
 renameKeys({ name: 'firstName', job: 'passion' }, obj); // { firstName: 'Bobo', passion: 'Front-End Master', shoeSize: 100 }
 ```
@@ -7077,9 +7077,9 @@ const shallowClone = obj => Object.assign({}, obj);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const a = { x: true, y: 1 };
 const b = shallowClone(a); // a !== b
 ```
@@ -7111,9 +7111,9 @@ const size = val =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 size([1, 2, 3, 4, 5]); // 5
 size('size'); // 4
 size({ one: 1, two: 2, three: 3 }); // 3
@@ -7134,9 +7134,9 @@ const transform = (obj, fn, acc) => Object.keys(obj).reduce((a, k) => fn(a, obj[
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 transform(
   { a: 1, b: 2, c: 1 },
   (r, v, k) => {
@@ -7162,9 +7162,9 @@ const truthCheckCollection = (collection, pre) => collection.every(obj => obj[pr
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 truthCheckCollection([{ user: 'Tinky-Winky', sex: 'male' }, { user: 'Dipsy', sex: 'male' }], 'sex'); // true
 ```
 
@@ -7200,9 +7200,9 @@ const unflattenObject = obj =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 unflattenObject({ 'a.b.c': 1, d: 1 }); // { a: { b: { c: 1 } }, d: 1 }
 ```
 
@@ -7226,9 +7226,9 @@ const byteSize = str => new Blob([str]).size;
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 byteSize('😀'); // 4
 byteSize('Hello World'); // 11
 ```
@@ -7250,9 +7250,9 @@ const capitalize = ([first, ...rest], lowerRest = false) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 capitalize('fooBar'); // 'FooBar'
 capitalize('fooBar', true); // 'Foobar'
 ```
@@ -7272,9 +7272,9 @@ const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperC
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 capitalizeEveryWord('hello world!'); // 'Hello World!'
 ```
 
@@ -7300,9 +7300,9 @@ const CSVToArray = (data, delimiter = ',', omitFirstRow = false) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 CSVToArray('a,b\nc,d'); // [['a','b'],['c','d']];
 CSVToArray('a;b\nc;d', ';'); // [['a','b'],['c','d']];
 CSVToArray('col1,col2\na,b\nc,d', ',', true); // [['a','b'],['c','d']];
@@ -7336,9 +7336,9 @@ const CSVToJSON = (data, delimiter = ',') => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 CSVToJSON('col1,col2\na,b\nc,d'); // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
 CSVToJSON('col1;col2\na;b\nc;d', ';'); // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
 ```
@@ -7360,9 +7360,9 @@ const decapitalize = ([first, ...rest], upperRest = false) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 decapitalize('FooBar'); // 'fooBar'
 decapitalize('FooBar', true); // 'fOOBAR'
 ```
@@ -7393,9 +7393,9 @@ const escapeHTML = str =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 escapeHTML('<a href="#">Me & you</a>'); // '&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;'
 ```
 
@@ -7414,9 +7414,9 @@ const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 escapeRegExp('(test)'); // \\(test\\)
 ```
 
@@ -7440,9 +7440,9 @@ const fromCamelCase = (str, separator = '_') =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 fromCamelCase('someDatabaseFieldName', ' '); // 'some database field name'
 fromCamelCase('someLabelThatNeedsToBeCamelized', '-'); // 'some-label-that-needs-to-be-camelized'
 fromCamelCase('someJavascriptProperty', '_'); // 'some_javascript_property'
@@ -7463,9 +7463,9 @@ const isAbsoluteURL = str => /^[a-z][a-z0-9+.-]*:/.test(str);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 isAbsoluteURL('https://google.com'); // true
 isAbsoluteURL('ftp://www.myserver.net'); // true
 isAbsoluteURL('/foo/bar'); // false
@@ -7495,9 +7495,9 @@ const isAnagram = (str1, str2) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 isAnagram('iceman', 'cinema'); // true
 ```
 
@@ -7516,9 +7516,9 @@ const isLowerCase = str => str === str.toLowerCase();
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 isLowerCase('abc'); // true
 isLowerCase('a3@$'); // true
 isLowerCase('Ab4'); // false
@@ -7540,9 +7540,9 @@ const isUpperCase = str => str === str.toUpperCase();
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 isUpperCase('ABC'); // true
 isLowerCase('A3@$'); // true
 isLowerCase('aB4'); // false
@@ -7569,9 +7569,9 @@ const mapString = (str, fn) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 mapString('lorem ipsum', c => c.toUpperCase()); // 'LOREM IPSUM'
 ```
 
@@ -7594,9 +7594,9 @@ const mask = (cc, num = 4, mask = '*') =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 mask(1234567890); // '******7890'
 mask(1234567890, 3); // '*******890'
 mask(1234567890, -4, '$'); // '$$$$567890'
@@ -7619,9 +7619,9 @@ const pad = (str, length, char = ' ') =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 pad('cat', 8); // '  cat   '
 pad(String(42), 6, '0'); // '004200'
 pad('foobar', 3); // 'foobar'
@@ -7646,9 +7646,9 @@ const palindrome = str => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 palindrome('taco cat'); // true
 ```
 
@@ -7672,9 +7672,9 @@ const pluralize = (val, word, plural = word + 's') => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 pluralize(0, 'apple'); // 'apples'
 pluralize(1, 'apple'); // 'apple'
 pluralize(2, 'apple'); // 'apples'
@@ -7703,9 +7703,9 @@ const removeNonASCII = str => str.replace(/[^\x20-\x7E]/g, '');
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 removeNonASCII('äÄçÇéÉêlorem-ipsumöÖÐþúÚ'); // 'lorem-ipsum'
 ```
 
@@ -7725,9 +7725,9 @@ const reverseString = str => [...str].reverse().join('');
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 reverseString('foobar'); // 'raboof'
 ```
 
@@ -7746,9 +7746,9 @@ const sortCharactersInString = str => [...str].sort((a, b) => a.localeCompare(b)
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 sortCharactersInString('cabbage'); // 'aabbceg'
 ```
 
@@ -7767,9 +7767,9 @@ const splitLines = str => str.split(/\r?\n/);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 splitLines('This\nis a\nmultiline\nstring.\n'); // ['This', 'is a', 'multiline', 'string.' , '']
 ```
 
@@ -7802,9 +7802,9 @@ const stringPermutations = str => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 stringPermutations('abc'); // ['abc','acb','bac','bca','cab','cba']
 ```
 
@@ -7823,9 +7823,9 @@ const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 stripHTMLTags('<p><em>lorem</em> <strong>ipsum</strong></p>'); // 'lorem ipsum'
 ```
 
@@ -7852,9 +7852,9 @@ const toCamelCase = str => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 toCamelCase('some_database_field_name'); // 'someDatabaseFieldName'
 toCamelCase('Some label that needs to be camelized'); // 'someLabelThatNeedsToBeCamelized'
 toCamelCase('some-javascript-property'); // 'someJavascriptProperty'
@@ -7881,9 +7881,9 @@ const toKebabCase = str =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 toKebabCase('camelCase'); // 'camel-case'
 toKebabCase('some text'); // 'some-text'
 toKebabCase('some-mixed_string With spaces_underscores-and-hyphens'); // 'some-mixed-string-with-spaces-underscores-and-hyphens'
@@ -7911,9 +7911,9 @@ const toSnakeCase = str =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 toSnakeCase('camelCase'); // 'camel_case'
 toSnakeCase('some text'); // 'some_text'
 toSnakeCase('some-mixed_string With spaces_underscores-and-hyphens'); // 'some_mixed_string_with_spaces_underscores_and_hyphens'
@@ -7938,9 +7938,9 @@ const truncateString = (str, num) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 truncateString('boomerang', 7); // 'boom...'
 ```
 
@@ -7970,9 +7970,9 @@ const unescapeHTML = str =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 unescapeHTML('&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;'); // '<a href="#">Me & you</a>'
 ```
 
@@ -7999,9 +7999,9 @@ const URLJoin = (...args) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 URLJoin('http://www.google.com', 'a', '/b/cd', '?foo=123', '?bar=foo'); // 'http://www.google.com/a/b/cd?foo=123&bar=foo'
 ```
 
@@ -8021,9 +8021,9 @@ const words = (str, pattern = /[^a-zA-Z-]+/) => str.split(pattern).filter(Boolea
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 words('I love javaScript!!'); // ["I", "love", "javaScript"]
 words('python, javaScript & coffee'); // ["python", "javaScript", "coffee"]
 ```
@@ -8049,9 +8049,9 @@ const getType = v =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 getType(new Set([1, 2, 3])); // 'set'
 ```
 
@@ -8070,9 +8070,9 @@ const is = (type, val) => ![, null].includes(val) && val.constructor === type;
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 is(Array, [1]); // true
 is(ArrayBuffer, new ArrayBuffer()); // true
 is(Map, new Map()); // true
@@ -8103,9 +8103,9 @@ const isArrayLike = obj => obj != null && typeof obj[Symbol.iterator] === 'funct
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 isArrayLike(document.querySelectorAll('.className')); // true
 isArrayLike('abc'); // true
 isArrayLike(null); // false
@@ -8126,9 +8126,9 @@ const isBoolean = val => typeof val === 'boolean';
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 isBoolean(null); // false
 isBoolean(false); // true
 ```
@@ -8148,9 +8148,9 @@ const isEmpty = val => val == null || !(Object.keys(val) || val).length;
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 isEmpty(new Map()); // true
 isEmpty(new Set()); // true
 isEmpty([]); // true
@@ -8178,9 +8178,9 @@ const isFunction = val => typeof val === 'function';
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 isFunction('x'); // false
 isFunction(x => x); // true
 ```
@@ -8200,9 +8200,9 @@ const isNil = val => val === undefined || val === null;
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 isNil(null); // true
 isNil(undefined); // true
 ```
@@ -8222,9 +8222,9 @@ const isNull = val => val === null;
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 isNull(null); // true
 ```
 
@@ -8243,9 +8243,9 @@ const isNumber = val => typeof val === 'number';
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 isNumber('1'); // false
 isNumber(1); // true
 ```
@@ -8266,9 +8266,9 @@ const isObject = obj => obj === Object(obj);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 isObject([1, 2, 3, 4]); // true
 isObject([]); // true
 isObject(['Hello!']); // true
@@ -8292,9 +8292,9 @@ const isObjectLike = val => val !== null && typeof val === 'object';
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 isObjectLike({}); // true
 isObjectLike([1, 2, 3]); // true
 isObjectLike(x => x); // false
@@ -8316,9 +8316,9 @@ const isPlainObject = val => !!val && typeof val === 'object' && val.constructor
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 isPlainObject({ a: 1 }); // true
 isPlainObject(new Map()); // false
 ```
@@ -8340,9 +8340,9 @@ const isPrimitive = val => !['object', 'function'].includes(typeof val) || val =
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 isPrimitive(null); // true
 isPrimitive(50); // true
 isPrimitive('Hello!'); // true
@@ -8369,9 +8369,9 @@ const isPromiseLike = obj =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 isPromiseLike({
   then: function() {
     return '';
@@ -8396,9 +8396,9 @@ const isString = val => typeof val === 'string';
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 isString('10'); // true
 ```
 
@@ -8417,9 +8417,9 @@ const isSymbol = val => typeof val === 'symbol';
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 isSymbol(Symbol('x')); // true
 ```
 
@@ -8438,9 +8438,9 @@ const isUndefined = val => val === undefined;
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 isUndefined(undefined); // true
 ```
 
@@ -8466,9 +8466,9 @@ const isValidJSON = obj => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 isValidJSON('{"name":"Adam","age":20}'); // true
 isValidJSON('{"name":"Adam",age:"20"}'); // false
 isValidJSON(null); // true
@@ -8494,9 +8494,9 @@ const castArray = val => (Array.isArray(val) ? val : [val]);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 castArray('foo'); // ['foo']
 castArray([1]); // [1]
 ```
@@ -8516,9 +8516,9 @@ const cloneRegExp = regExp => new RegExp(regExp.source, regExp.flags);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const regExp = /lorem ipsum/gi;
 const regExp2 = cloneRegExp(regExp); // /lorem ipsum/gi
 ```
@@ -8538,9 +8538,9 @@ const coalesce = (...args) => args.find(_ => ![undefined, null].includes(_));
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 coalesce(null, undefined, '', NaN, 'Waldo'); // ""
 ```
 
@@ -8559,9 +8559,9 @@ const coalesceFactory = valid => (...args) => args.find(valid);
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const customCoalesce = coalesceFactory(_ => ![null, undefined, '', NaN].includes(_));
 customCoalesce(undefined, null, NaN, '', 'Waldo'); // "Waldo"
 ```
@@ -8588,9 +8588,9 @@ const extendHex = shortHex =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 extendHex('#03f'); // '#0033ff'
 extendHex('05a'); // '#0055aa'
 ```
@@ -8615,9 +8615,9 @@ const getURLParameters = url =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 getURLParameters('http://url.com/page?name=Adam&surname=Smith'); // {name: 'Adam', surname: 'Smith'}
 getURLParameters('google.com'); // {}
 ```
@@ -8655,9 +8655,9 @@ const hexToRGB = hex => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 hexToRGB('#27ae60ff'); // 'rgba(39, 174, 96, 255)'
 hexToRGB('27ae60'); // 'rgb(39, 174, 96)'
 hexToRGB('#fff'); // 'rgb(255, 255, 255)'
@@ -8687,9 +8687,9 @@ const httpGet = (url, callback, err = console.error) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 httpGet(
   'https://jsonplaceholder.typicode.com/posts/1',
   console.log
@@ -8730,9 +8730,9 @@ const httpPost = (url, data, callback, err = console.error) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const newPost = {
   userId: 1,
   id: 1337,
@@ -8780,9 +8780,9 @@ const isBrowser = () => ![typeof window, typeof document].includes('undefined');
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 isBrowser(); // true (browser)
 isBrowser(); // false (Node)
 ```
@@ -8811,9 +8811,9 @@ const mostPerformant = (fns, iterations = 10000) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 mostPerformant([
   () => {
     // Loops through the entire array before returning `false`
@@ -8841,9 +8841,9 @@ const nthArg = n => (...args) => args.slice(n)[0];
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 const third = nthArg(2);
 third(1, 2, 3); // 3
 third(1, 2); // undefined
@@ -8875,9 +8875,9 @@ const parseCookie = str =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 parseCookie('foo=bar; equation=E%3Dmc%5E2'); // { foo: 'bar', equation: 'E=mc^2' }
 ```
 
@@ -8906,9 +8906,9 @@ const prettyBytes = (num, precision = 3, addSpace = true) => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 prettyBytes(1000); // "1 KB"
 prettyBytes(-27145424323.5821, 5); // "-27.145 GB"
 prettyBytes(123456789, 3, false); // "123MB"
@@ -8932,9 +8932,9 @@ const randomHexColorCode = () => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 randomHexColorCode(); // "#e34155"
 ```
 
@@ -8953,9 +8953,9 @@ const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 RGBToHex(255, 165, 1); // 'ffa501'
 ```
 
@@ -8974,9 +8974,9 @@ const serializeCookie = (name, val) => `${encodeURIComponent(name)}=${encodeURIC
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 serializeCookie('foo', 'bar'); // 'foo=bar'
 ```
 
@@ -9000,9 +9000,9 @@ const timeTaken = callback => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 timeTaken(() => Math.pow(2, 10)); // 1024, (logged): timeTaken: 0.02099609375ms
 ```
 
@@ -9022,9 +9022,9 @@ const toCurrency = (n, curr, LanguageFormat = undefined) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 toCurrency(123456.789, 'EUR'); // €123,456.79  | currency: Euro | currencyLangFormat: Local
 toCurrency(123456.789, 'USD', 'en-us'); // $123,456.79  | currency: US Dollar | currencyLangFormat: English (United States)
 toCurrency(123456.789, 'USD', 'fa'); // ۱۲۳٬۴۵۶٫۷۹ ؜$ | currency: US Dollar | currencyLangFormat: Farsi
@@ -9045,9 +9045,9 @@ const toDecimalMark = num => num.toLocaleString('en-US');
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 toDecimalMark(12305030388.9087); // "12,305,030,388.909"
 ```
 
@@ -9077,9 +9077,9 @@ const toOrdinalSuffix = num => {
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 toOrdinalSuffix('123'); // "123rd"
 ```
 
@@ -9100,9 +9100,9 @@ const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) ==
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 validateNumber('10'); // true
 ```
 
@@ -9123,9 +9123,9 @@ const yesNo = (val, def = false) =>
 ```  
 
 <details>
-  <summary>Examples</summary>
-  
-  ```js
+<summary>Examples</summary>
+
+```js
 yesNo('Y'); // true
 yesNo('yes'); // true
 yesNo('No'); // false
