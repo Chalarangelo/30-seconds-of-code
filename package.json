@@ -15,7 +15,8 @@
     "rollup": "^0.58.2",
     "rollup-plugin-babel": "^3.0.4",
     "rollup-plugin-babel-minify": "^4.0.0",
-    "semistandard": "^12.0.1"
+    "semistandard": "^12.0.1",
+    "markdown-builder": "^0.8.3-dev"
   },
   "name": "30-seconds-of-code",
   "description": "A collection of useful JavaScript snippets.",
@@ -51,9 +52,7 @@
     "url": "https://github.com/Chalarangelo/30-seconds-of-code/issues"
   },
   "homepage": "https://github.com/Chalarangelo/30-seconds-of-code#readme",
-  "dependencies": {
-    "markdown-builder": "^0.8.3-dev"
-  },
+  "dependencies": {},
   "jest": {
     "reporters": [
       [
