@@ -187,7 +187,7 @@ try {
     const capitalizedTag = util.capitalize(tag, true);
     const taggedSnippets = Object.entries(tagDbData).filter(v => v[1][0] === tag);
 
-    output += misc.hr() + headers.h2((EMOJIS[tag] || '') + ' ' + capitalizedTag).trim();
+    output += misc.hr() + headers.h2((EMOJIS[tag] || '') + ' ' + capitalizedTag) + '\n';
 
     for (const taggedSnippet of taggedSnippets) {
       let snippet = snippets[taggedSnippet[0] + '.md'];
