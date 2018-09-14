@@ -81,7 +81,7 @@ average(1, 2, 3);
 
 ## Table of Contents
 
-### 🔌 Adapter  
+### 🔌 Adapter
 
 <details>
 <summary>View contents</summary>
@@ -101,7 +101,7 @@ average(1, 2, 3);
 
 </details>
 
-### 📚 Array  
+### 📚 Array
 
 <details>
 <summary>View contents</summary>
@@ -200,7 +200,7 @@ average(1, 2, 3);
 
 </details>
 
-### 🌐 Browser  
+### 🌐 Browser
 
 <details>
 <summary>View contents</summary>
@@ -243,7 +243,7 @@ average(1, 2, 3);
 
 </details>
 
-### ⏱️ Date  
+### ⏱️ Date
 
 <details>
 <summary>View contents</summary>
@@ -256,7 +256,7 @@ average(1, 2, 3);
 
 </details>
 
-### 🎛️ Function  
+### 🎛️ Function
 
 <details>
 <summary>View contents</summary>
@@ -289,7 +289,7 @@ average(1, 2, 3);
 
 </details>
 
-### ➗ Math  
+### ➗ Math
 
 <details>
 <summary>View contents</summary>
@@ -334,7 +334,7 @@ average(1, 2, 3);
 
 </details>
 
-### 📦 Node  
+### 📦 Node
 
 <details>
 <summary>View contents</summary>
@@ -352,7 +352,7 @@ average(1, 2, 3);
 
 </details>
 
-### 🗃️ Object  
+### 🗃️ Object
 
 <details>
 <summary>View contents</summary>
@@ -394,7 +394,7 @@ average(1, 2, 3);
 
 </details>
 
-### 📜 String  
+### 📜 String
 
 <details>
 <summary>View contents</summary>
@@ -433,7 +433,7 @@ average(1, 2, 3);
 
 </details>
 
-### 📃 Type  
+### 📃 Type
 
 <details>
 <summary>View contents</summary>
@@ -459,7 +459,7 @@ average(1, 2, 3);
 
 </details>
 
-### 🔧 Utility  
+### 🔧 Utility
 
 <details>
 <summary>View contents</summary>
@@ -490,10 +490,10 @@ average(1, 2, 3);
 
 </details>
 
-  
----  
-  
-## 🔌 Adapter  
+
+---
+
+## 🔌 Adapter
 
 ### ary
 
@@ -503,7 +503,7 @@ Call the provided function, `fn`, with up to `n` arguments, using `Array.slice(0
 
 ```js
 const ary = (fn, n) => (...args) => fn(...args.slice(0, n));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -525,7 +525,7 @@ Use a closure to call a stored key with stored arguments.
 
 ```js
 const call = (key, ...args) => context => context[key](...args);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -552,7 +552,7 @@ Given a function, return a closure that collects all inputs into an array-accept
 
 ```js
 const collectInto = fn => (...args) => fn(args);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -577,7 +577,7 @@ Return a closure that takes variadic inputs, and splices the last argument to ma
 
 ```js
 const flip = fn => (first, ...rest) => fn(...rest, first);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -604,7 +604,7 @@ Use `Array.map()` and `Function.apply()` to apply each function to the given arg
 
 ```js
 const over = (...fns) => (...args) => fns.map(fn => fn.apply(null, args));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -626,7 +626,7 @@ Use `Array.map()` to apply `transforms` to `args` in combination with the spread
 
 ```js
 const overArgs = (fn, transforms) => (...args) => fn(...args.map((val, i) => transforms[i](val)));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -652,7 +652,7 @@ All functions must be unary.
 
 ```js
 const pipeAsyncFunctions = (...fns) => arg => fns.reduce((p, f) => p.then(f), Promise.resolve(arg));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -682,7 +682,7 @@ The first (leftmost) function can accept one or more arguments; the remaining fu
 
 ```js
 const pipeFunctions = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -712,7 +712,7 @@ const promisify = func => (...args) =>
   new Promise((resolve, reject) =>
     func(...args, (err, result) => (err ? reject(err) : resolve(result)))
   );
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -734,7 +734,7 @@ Use `Array.map()` to reorder arguments based on `indexes` in combination with th
 
 ```js
 const rearg = (fn, indexes) => (...args) => fn(...indexes.map(i => args[i]));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -761,7 +761,7 @@ Use closures and the spread operator (`...`) to map the array of arguments to th
 
 ```js
 const spreadOver = fn => argsArr => fn(...argsArr);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -783,7 +783,7 @@ Call the provided function, `fn`, with just the first argument given.
 
 ```js
 const unary = fn => val => fn(val);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -796,10 +796,10 @@ const unary = fn => val => fn(val);
 
 <br>[⬆ Back to top](#table-of-contents)
 
-  
----  
-  
-## 📚 Array  
+
+---
+
+## 📚 Array
 
 ### all
 
@@ -810,7 +810,7 @@ Omit the second argument, `fn`, to use `Boolean` as a default.
 
 ```js
 const all = (arr, fn = Boolean) => arr.every(fn);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -832,7 +832,7 @@ Use `Array.every()` to check if all the elements of the array are the same as th
 
 ```js
 const allEqual = arr => arr.every(val => val === arr[0]);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -855,7 +855,7 @@ Omit the second argument, `fn`, to use `Boolean` as a default.
 
 ```js
 const any = (arr, fn = Boolean) => arr.some(fn);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -880,7 +880,7 @@ Omit the second argument, `delimiter`, to use a default delimiter of `,`.
 ```js
 const arrayToCSV = (arr, delimiter = ',') =>
   arr.map(v => v.map(x => `"${x}"`).join(delimiter)).join('\n');
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -903,7 +903,7 @@ Use `Array.reduce()` and `Array.push()` to add elements to groups, based on `fil
 ```js
 const bifurcate = (arr, filter) =>
   arr.reduce((acc, val, i) => (acc[filter[i] ? 0 : 1].push(val), acc), [[], []]);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -925,7 +925,7 @@ Use `Array.reduce()` and `Array.push()` to add elements to groups, based on the 
 ```js
 const bifurcateBy = (arr, fn) =>
   arr.reduce((acc, val, i) => (acc[fn(val, i) ? 0 : 1].push(val), acc), [[], []]);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -951,7 +951,7 @@ const chunk = (arr, size) =>
   Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
     arr.slice(i * size, i * size + size)
   );
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -972,7 +972,7 @@ Use `Array.filter()` to filter out falsey values (`false`, `null`, `0`, `""`, `u
 
 ```js
 const compact = arr => arr.filter(Boolean);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -998,7 +998,7 @@ const countBy = (arr, fn) =>
     acc[val] = (acc[val] || 0) + 1;
     return acc;
   }, {});
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1020,7 +1020,7 @@ Use `Array.reduce()` to increment a counter each time you encounter the specific
 
 ```js
 const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1043,7 +1043,7 @@ Recursively flatten each element that is an array.
 
 ```js
 const deepFlatten = arr => [].concat(...arr.map(v => (Array.isArray(v) ? deepFlatten(v) : v)));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1067,7 +1067,7 @@ const difference = (a, b) => {
   const s = new Set(b);
   return a.filter(x => !s.has(x));
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1091,7 +1091,7 @@ const differenceBy = (a, b, fn) => {
   const s = new Set(b.map(v => fn(v)));
   return a.filter(x => !s.has(fn(x)));
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1113,7 +1113,7 @@ Use `Array.filter()` and `Array.findIndex()` to find the appropriate values.
 
 ```js
 const differenceWith = (arr, val, comp) => arr.filter(a => val.findIndex(b => comp(a, b)) === -1);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1134,7 +1134,7 @@ Use `Array.slice()` to slice the remove the specified number of elements from th
 
 ```js
 const drop = (arr, n = 1) => arr.slice(n);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1157,7 +1157,7 @@ Use `Array.slice()` to slice the remove the specified number of elements from th
 
 ```js
 const dropRight = (arr, n = 1) => arr.slice(0, -n);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1184,7 +1184,7 @@ const dropRightWhile = (arr, func) => {
   while (arr.length > 0 && !func(arr[arr.length - 1])) arr = arr.slice(0, -1);
   return arr;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1209,7 +1209,7 @@ const dropWhile = (arr, func) => {
   while (arr.length > 0 && !func(arr[0])) arr = arr.slice(1);
   return arr;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1230,7 +1230,7 @@ Use `Array.filter()` to create a new array that contains every nth element of a 
 
 ```js
 const everyNth = (arr, nth) => arr.filter((e, i) => i % nth === nth - 1);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1251,7 +1251,7 @@ Use `Array.filter()` for an array containing only the unique values.
 
 ```js
 const filterNonUnique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexOf(i));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1274,7 +1274,7 @@ The comparator function takes four arguments: the values of the two elements bei
 ```js
 const filterNonUniqueBy = (arr, fn) =>
   arr.filter((v, i) => arr.every((x, j) => (i === j) === fn(v, x, i, j)));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1304,7 +1304,7 @@ Use `Array.filter()` to remove elements for which `fn` returns falsey values, `A
 
 ```js
 const findLast = (arr, fn) => arr.filter(fn).pop();
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1330,7 +1330,7 @@ const findLastIndex = (arr, fn) =>
     .map((val, i) => [i, val])
     .filter(([i, val]) => fn(val, i, arr))
     .pop()[0];
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1355,7 +1355,7 @@ Omit the second argument, `depth` to flatten only to a depth of `1` (single flat
 ```js
 const flatten = (arr, depth = 1) =>
   arr.reduce((a, v) => a.concat(depth > 1 && Array.isArray(v) ? flatten(v, depth - 1) : v), []);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1381,7 +1381,7 @@ const forEachRight = (arr, callback) =>
     .slice(0)
     .reverse()
     .forEach(callback);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1407,7 +1407,7 @@ const groupBy = (arr, fn) =>
     acc[val] = (acc[val] || []).concat(arr[i]);
     return acc;
   }, {});
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1429,7 +1429,7 @@ Use `arr[0]` to return the first element of the passed array.
 
 ```js
 const head = arr => arr[0];
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1451,7 +1451,7 @@ Return the array of indices.
 
 ```js
 const indexOfAll = (arr, val) => arr.reduce((acc, el, i) => (el === val ? [...acc, i] : acc), []);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1473,7 +1473,7 @@ Use `arr.slice(0,-1)` to return all but the last element of the array.
 
 ```js
 const initial = arr => arr.slice(0, -1);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1495,7 +1495,7 @@ Use `Array.map()` to generate h rows where each is a new array of size w initial
 ```js
 const initialize2DArray = (w, h, val = null) =>
   Array.from({ length: h }).map(() => Array.from({ length: w }).fill(val));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1519,7 +1519,7 @@ You can omit `step` to use a default value of `1`.
 ```js
 const initializeArrayWithRange = (end, start = 0, step = 1) =>
   Array.from({ length: Math.ceil((end - start + 1) / step) }, (v, i) => i * step + start);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1547,7 +1547,7 @@ const initializeArrayWithRangeRight = (end, start = 0, step = 1) =>
   Array.from({ length: Math.ceil((end + 1 - start) / step) }).map(
     (v, i, arr) => (arr.length - i - 1) * step + start
   );
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1571,7 +1571,7 @@ You can omit `val` to use a default value of `0`.
 
 ```js
 const initializeArrayWithValues = (n, val = 0) => Array(n).fill(val);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1596,7 +1596,7 @@ const initializeNDArray = (val, ...args) =>
   args.length === 0
     ? val
     : Array.from({ length: args[0] }).map(() => initializeNDArray(val, ...args.slice(1)));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1621,7 +1621,7 @@ const intersection = (a, b) => {
   const s = new Set(b);
   return a.filter(x => s.has(x));
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1645,7 +1645,7 @@ const intersectionBy = (a, b, fn) => {
   const s = new Set(b.map(fn));
   return a.filter(x => s.has(fn(x)));
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1666,7 +1666,7 @@ Use `Array.filter()` and `Array.findIndex()` in combination with the provided co
 
 ```js
 const intersectionWith = (a, b, comp) => a.filter(x => b.findIndex(y => comp(x, y)) !== -1);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1696,7 +1696,7 @@ const isSorted = arr => {
     else if ((val - arr[i + 1]) * direction > 0) return 0;
   }
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1730,7 +1730,7 @@ const join = (arr, separator = ',', end = separator) =>
           : acc + val + separator,
     ''
   );
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1765,7 +1765,7 @@ const JSONtoCSV = (arr, columns, delimiter = ',') =>
       )
     )
   ].join('\n');
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1787,7 +1787,7 @@ Use `arr.length - 1` to compute the index of the last element of the given array
 
 ```js
 const last = arr => arr[arr.length - 1];
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1811,7 +1811,7 @@ Use `Array.reduce()`, comparing the `length` of objects to find the longest one.
 ```js
 const longestItem = (val, ...vals) =>
   [val, ...vals].reduce((a, x) => (x.length > a.length ? x : a));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1839,7 +1839,7 @@ const mapObject = (arr, fn) =>
   (a => (
     (a = [arr, arr.map(fn)]), a[0].reduce((acc, val, ind) => ((acc[val] = a[1][ind]), acc), {})
   ))();
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1863,7 +1863,7 @@ Omit the second argument, `n`, to get a one-element array.
 
 ```js
 const maxN = (arr, n = 1) => [...arr].sort((a, b) => b - a).slice(0, n);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1887,7 +1887,7 @@ Omit the second argument, `n`, to get a one-element array.
 
 ```js
 const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1910,7 +1910,7 @@ Omit the second argument, `fn`, to use `Boolean` as a default.
 
 ```js
 const none = (arr, fn = Boolean) => !arr.some(fn);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1934,7 +1934,7 @@ Omit the second argument, `n`, to get the first element of the array.
 
 ```js
 const nthElement = (arr, n = 0) => (n === -1 ? arr.slice(n) : arr.slice(n, n + 1))[0];
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1958,7 +1958,7 @@ If `offset` is negative, the elements will be moved from end to start.
 
 ```js
 const offset = (arr, offset) => [...arr.slice(offset), ...arr.slice(0, offset)];
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -1988,7 +1988,7 @@ const partition = (arr, fn) =>
     },
     [[], []]
   );
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2024,7 +2024,7 @@ const permutations = arr => {
     []
   );
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2053,7 +2053,7 @@ const pull = (arr, ...args) => {
   arr.length = 0;
   pulled.forEach(v => arr.push(v));
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2085,7 +2085,7 @@ const pullAtIndex = (arr, pullArr) => {
   pulled.forEach(v => arr.push(v));
   return removed;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2116,7 +2116,7 @@ const pullAtValue = (arr, pullArr) => {
   mutateTo.forEach(v => arr.push(v));
   return removed;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2149,7 +2149,7 @@ const pullBy = (arr, ...args) => {
   arr.length = 0;
   pulled.forEach(v => arr.push(v));
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2178,7 +2178,7 @@ const reducedFilter = (data, keys, fn) =>
       return acc;
     }, {})
   );
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2213,7 +2213,7 @@ Use `Array.reduce()` to apply the given function to the given array, storing eac
 ```js
 const reduceSuccessive = (arr, fn, acc) =>
   arr.reduce((res, val, i, arr) => (res.push(fn(res.slice(-1)[0], val, i, arr)), res), [acc]);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2236,7 +2236,7 @@ You can omit the second parameter, `comparator`, to use the default one that ret
 ```js
 const reduceWhich = (arr, comparator = (a, b) => a - b) =>
   arr.reduce((a, b) => (comparator(a, b) >= 0 ? b : a));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2260,7 +2260,7 @@ Takes a predicate and array, like `Array.filter()`, but only keeps `x` if `pred(
 
 ```js
 const reject = (pred, array) => array.filter((...args) => !pred(...args));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2289,7 +2289,7 @@ const remove = (arr, func) =>
         return acc.concat(val);
       }, [])
     : [];
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2311,7 +2311,7 @@ This method also works with strings.
 
 ```js
 const sample = arr => arr[Math.floor(Math.random() * arr.length)];
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2341,7 +2341,7 @@ const sampleSize = ([...arr], n = 1) => {
   }
   return arr.slice(0, n);
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2370,7 +2370,7 @@ const shuffle = ([...arr]) => {
   }
   return arr;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2392,7 +2392,7 @@ Use `Array.filter()` to remove values that are not part of `values`, determined 
 
 ```js
 const similarity = (arr, values) => arr.filter(v => values.includes(v));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2418,7 +2418,7 @@ const sortedIndex = (arr, n) => {
   const index = arr.findIndex(el => (isDescending ? n >= el : n <= el));
   return index === -1 ? arr.length : index;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2446,7 +2446,7 @@ const sortedIndexBy = (arr, n, fn) => {
   const index = arr.findIndex(el => (isDescending ? val >= fn(el) : val <= fn(el)));
   return index === -1 ? arr.length : index;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2472,7 +2472,7 @@ const sortedLastIndex = (arr, n) => {
   const index = arr.reverse().findIndex(el => (isDescending ? n <= el : n >= el));
   return index === -1 ? 0 : arr.length - index;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2503,7 +2503,7 @@ const sortedLastIndexBy = (arr, n, fn) => {
     .findIndex(el => (isDescending ? val <= el : val >= el));
   return index === -1 ? 0 : arr.length - index;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2531,7 +2531,7 @@ const stableSort = (arr, compare) =>
     .map((item, index) => ({ item, index }))
     .sort((a, b) => compare(a.item, b.item) || a.index - b.index)
     .map(({ item }) => item);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2557,7 +2557,7 @@ const symmetricDifference = (a, b) => {
     sB = new Set(b);
   return [...a.filter(x => !sB.has(x)), ...b.filter(x => !sA.has(x))];
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2583,7 +2583,7 @@ const symmetricDifferenceBy = (a, b, fn) => {
     sB = new Set(b.map(v => fn(v)));
   return [...a.filter(x => !sB.has(fn(x))), ...b.filter(x => !sA.has(fn(x)))];
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2607,7 +2607,7 @@ const symmetricDifferenceWith = (arr, val, comp) => [
   ...arr.filter(a => val.findIndex(b => comp(a, b)) === -1),
   ...val.filter(a => arr.findIndex(b => comp(a, b)) === -1)
 ];
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2632,7 +2632,7 @@ Return `Array.slice(1)` if the array's `length` is more than `1`, otherwise, ret
 
 ```js
 const tail = arr => (arr.length > 1 ? arr.slice(1) : arr);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2654,7 +2654,7 @@ Use `Array.slice()` to create a slice of the array with `n` elements taken from 
 
 ```js
 const take = (arr, n = 1) => arr.slice(0, n);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2676,7 +2676,7 @@ Use `Array.slice()` to create a slice of the array with `n` elements taken from 
 
 ```js
 const takeRight = (arr, n = 1) => arr.slice(arr.length - n, arr.length);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2703,7 +2703,7 @@ const takeRightWhile = (arr, func) => {
     if (func(arr[i])) return arr.reverse().slice(arr.length - i, arr.length);
   return arr;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2728,7 +2728,7 @@ const takeWhile = (arr, func) => {
   for (const [i, val] of arr.entries()) if (func(val)) return arr.slice(0, i);
   return arr;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2754,7 +2754,7 @@ const toHash = (object, key) =>
     (acc, data, index) => ((acc[!key ? index : data[key]] = data), acc),
     {}
   );
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2787,7 +2787,7 @@ Create a `Set` with all values of `a` and `b` and convert to an array.
 
 ```js
 const union = (a, b) => Array.from(new Set([...a, ...b]));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2813,7 +2813,7 @@ const unionBy = (a, b, fn) => {
   const s = new Set(a.map(v => fn(v)));
   return Array.from(new Set([...a, ...b.filter(x => !s.has(fn(x)))]));
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2835,7 +2835,7 @@ Create a `Set` with all values of `a` and values in `b` for which the comparator
 ```js
 const unionWith = (a, b, comp) =>
   Array.from(new Set([...a, ...b.filter(x => a.findIndex(y => comp(x, y)) === -1)]));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2856,7 +2856,7 @@ Use ES6 `Set` and the `...rest` operator to discard all duplicated values.
 
 ```js
 const uniqueElements = arr => [...new Set(arr)];
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2882,7 +2882,7 @@ const uniqueElementsBy = (arr, fn) =>
     if (!acc.some(x => fn(v, x))) acc.push(v);
     return acc;
   }, []);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2917,7 +2917,7 @@ const uniqueElementsByRight = (arr, fn) =>
     if (!acc.some(x => fn(v, x))) acc.push(v);
     return acc;
   }, []);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2949,7 +2949,7 @@ Use `Array.filter()` and `Array.includes()` on each array to remove values conta
 const uniqueSymmetricDifference = (a, b) => [
   ...new Set([...a.filter(v => !b.includes(v)), ...b.filter(v => !a.includes(v))])
 ];
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -2978,7 +2978,7 @@ const unzip = arr =>
       length: Math.max(...arr.map(x => x.length))
     }).map(x => [])
   );
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3010,7 +3010,7 @@ const unzipWith = (arr, fn) =>
       }).map(x => [])
     )
     .map(val => fn(...val));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3033,7 +3033,7 @@ _(For a snippet that mutates the original array see [`pull`](#pull))_
 
 ```js
 const without = (arr, ...args) => arr.filter(v => !args.includes(v));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3054,7 +3054,7 @@ Use `Array.reduce()`, `Array.map()` and `Array.concat()` to produce every possib
 
 ```js
 const xProd = (a, b) => a.reduce((acc, x) => acc.concat(b.map(y => [x, y])), []);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3082,7 +3082,7 @@ const zip = (...arrays) => {
     return Array.from({ length: arrays.length }, (_, k) => arrays[k][i]);
   });
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3105,7 +3105,7 @@ Since an object can have undefined values but not undefined property pointers, t
 ```js
 const zipObject = (props, values) =>
   props.reduce((obj, prop, index) => ((obj[prop] = values[index]), obj), {});
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3137,7 +3137,7 @@ const zipWith = (...array) => {
     (_, i) => (fn ? fn(...array.map(a => a[i])) : array.map(a => a[i]))
   );
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3156,10 +3156,10 @@ zipWith(
 
 <br>[⬆ Back to top](#table-of-contents)
 
-  
----  
-  
-## 🌐 Browser  
+
+---
+
+## 🌐 Browser
 
 ### arrayToHtmlList
 
@@ -3173,7 +3173,7 @@ const arrayToHtmlList = (arr, listID) =>
     (el = document.querySelector('#' + listID)),
     (el.innerHTML += arr.map(item => `<li>${item}</li>`).join(''))
   ))();
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3196,7 +3196,7 @@ Use `scrollY`, `scrollHeight` and `clientHeight` to determine if the bottom of t
 const bottomVisible = () =>
   document.documentElement.clientHeight + window.scrollY >=
   (document.documentElement.scrollHeight || document.documentElement.clientHeight);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3239,7 +3239,7 @@ const copyToClipboard = str => {
     document.getSelection().addRange(selected);
   }
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3274,7 +3274,7 @@ const counter = (selector, start, end, step = 1, duration = 2000) => {
     }, Math.abs(Math.floor(duration / (end - start))));
   return timer;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3302,7 +3302,7 @@ const createElement = str => {
   el.innerHTML = str;
   return el.firstElementChild;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3345,7 +3345,7 @@ const createEventHub = () => ({
     if (i > -1) this.hub[event].splice(i, 1);
   }
 });
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3381,7 +3381,7 @@ Use `window.location.href` to get current URL.
 
 ```js
 const currentURL = () => window.location.href;
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3405,7 +3405,7 @@ const detectDeviceType = () =>
   /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
     ? 'Mobile'
     : 'Desktop';
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3426,7 +3426,7 @@ Check that `parent` is not the same element as `child`, use `parent.contains(chi
 
 ```js
 const elementContains = (parent, child) => parent !== child && parent.contains(child);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3458,7 +3458,7 @@ const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
         ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
     : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3485,7 +3485,7 @@ const getScrollPosition = (el = window) => ({
   x: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,
   y: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop
 });
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3506,7 +3506,7 @@ Use `Window.getComputedStyle()` to get the value of the CSS rule for the specifi
 
 ```js
 const getStyle = (el, ruleName) => getComputedStyle(el)[ruleName];
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3527,7 +3527,7 @@ Use `element.classList.contains()` to check if the element has the specified cla
 
 ```js
 const hasClass = (el, className) => el.classList.contains(className);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3555,7 +3555,7 @@ const hashBrowser = val =>
       hexes.push(('00000000' + view.getUint32(i).toString(16)).slice(-8));
     return hexes.join('');
   });
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3576,7 +3576,7 @@ Use `NodeList.prototype.forEach()` to apply `display: none` to each element spec
 
 ```js
 const hide = els => els.forEach(e => (e.style.display = 'none'));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3599,7 +3599,7 @@ Use `location.protocol` to get the protocol currently being used. If it's not HT
 const httpsRedirect = () => {
   if (location.protocol !== 'https:') location.replace('https://' + location.href.split('//')[1]);
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3620,7 +3620,7 @@ Use `el.insertAdjacentHTML()` with a position of `'afterend'` to parse `htmlStri
 
 ```js
 const insertAfter = (el, htmlString) => el.insertAdjacentHTML('afterend', htmlString);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3641,7 +3641,7 @@ Use `el.insertAdjacentHTML()` with a position of `'beforebegin'` to parse `htmlS
 
 ```js
 const insertBefore = (el, htmlString) => el.insertAdjacentHTML('beforebegin', htmlString);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3662,7 +3662,7 @@ Use the `Document.hidden` property, introduced by the Page Visibility API to che
 
 ```js
 const isBrowserTabFocused = () => !document.hidden;
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3683,7 +3683,7 @@ Use spread operator inside new array to convert a `NodeList` to an array.
 
 ```js
 const nodeListToArray = nodeList => [...nodeList];
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3723,7 +3723,7 @@ const observeMutations = (element, callback, options) => {
   );
   return observer;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3746,7 +3746,7 @@ Omit the fourth argument `opts` to use `false` or specify it based on the option
 
 ```js
 const off = (el, evt, fn, opts = false) => el.removeEventListener(evt, fn, opts);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3775,7 +3775,7 @@ const on = (el, evt, fn, opts = {}) => {
   el.addEventListener(evt, opts.target ? delegatorFn : fn, opts.options || false);
   if (opts.target) return delegatorFn;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3814,7 +3814,7 @@ const onUserInputChange = callback => {
     (type = 'touch'), callback(type), document.addEventListener('mousemove', mousemoveHandler);
   });
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3845,7 +3845,7 @@ const prefix = prop => {
   );
   return i !== -1 ? (i === 0 ? prop : prefixes[i] + capitalizedProp) : null;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3888,7 +3888,7 @@ const recordAnimationFrames = (callback, autoStart = true) => {
   if (autoStart) start();
   return { start, stop };
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3915,7 +3915,7 @@ Pass a second argument to simulate a link click (`true` - default) or an HTTP re
 ```js
 const redirect = (url, asLink = true) =>
   asLink ? (window.location.href = url) : window.location.replace(url);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3952,7 +3952,7 @@ const runAsync = fn => {
     };
   });
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -3999,7 +3999,7 @@ const scrollToTop = () => {
     window.scrollTo(0, c - c / 8);
   }
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4020,7 +4020,7 @@ Use `element.style` to set the value of the CSS rule for the specified element t
 
 ```js
 const setStyle = (el, ruleName, val) => (el.style[ruleName] = val);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4041,7 +4041,7 @@ Use the spread operator (`...`) and `Array.forEach()` to clear the `display` pro
 
 ```js
 const show = (...el) => [...el].forEach(e => (e.style.display = ''));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4066,7 +4066,7 @@ const smoothScroll = element =>
   document.querySelector(element).scrollIntoView({
     behavior: 'smooth'
   });
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4088,7 +4088,7 @@ Use `element.classList.toggle()` to toggle the specified class for the element.
 
 ```js
 const toggleClass = (el, className) => el.classList.toggle(className);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4112,7 +4112,7 @@ Omit the third argument, `detail`, if you do not want to pass custom data to the
 ```js
 const triggerEvent = (el, eventType, detail = undefined) =>
   el.dispatchEvent(new CustomEvent(eventType, { detail: detail }));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4137,7 +4137,7 @@ const UUIDGeneratorBrowser = () =>
   ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
     (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)
   );
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4150,10 +4150,10 @@ UUIDGeneratorBrowser(); // '7982fcfe-5721-4632-bede-6000885be57d'
 
 <br>[⬆ Back to top](#table-of-contents)
 
-  
----  
-  
-## ⏱️ Date  
+
+---
+
+## ⏱️ Date
 
 ### formatDuration
 
@@ -4179,7 +4179,7 @@ const formatDuration = ms => {
     .map(([key, val]) => `${val} ${key}${val !== 1 ? 's' : ''}`)
     .join(', ');
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4201,7 +4201,7 @@ Use `Date.toString()` and `String.slice()` to get the `HH:MM:SS` part of a given
 
 ```js
 const getColonTimeFromDate = date => date.toTimeString().slice(0, 8);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4223,7 +4223,7 @@ Calculate the difference (in days) between two `Date` objects.
 ```js
 const getDaysDiffBetweenDates = (dateInitial, dateFinal) =>
   (dateFinal - dateInitial) / (1000 * 3600 * 24);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4251,7 +4251,7 @@ const getMeridiemSuffixOfInteger = num =>
       : num < 12
         ? (num % 12) + 'am'
         : (num % 12) + 'pm';
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4281,7 +4281,7 @@ const tomorrow = (long = false) => {
   ).padStart(2, '0')}`;
   return !long ? ret : `${ret}T00:00:00`;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4295,10 +4295,10 @@ tomorrow(true); // 2017-12-27T00:00:00 (if current date is 2017-12-26)
 
 <br>[⬆ Back to top](#table-of-contents)
 
-  
----  
-  
-## 🎛️ Function  
+
+---
+
+## 🎛️ Function
 
 ### attempt
 
@@ -4314,7 +4314,7 @@ const attempt = (fn, ...args) => {
     return e instanceof Error ? e : new Error(e);
   }
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4339,7 +4339,7 @@ Use `Array.concat()` to prepend any additional supplied parameters to the argume
 
 ```js
 const bind = (fn, context, ...boundArgs) => (...args) => fn.apply(context, [...boundArgs, ...args]);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4367,7 +4367,7 @@ Use the spread operator (`...`) to prepend any additional supplied parameters to
 ```js
 const bindKey = (context, fn, ...boundArgs) => (...args) =>
   context[fn].apply(context, [...boundArgs, ...args]);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4399,7 +4399,7 @@ const chainAsync = fns => {
   const next = () => fns[curr++](next);
   next();
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4429,7 +4429,7 @@ The last (rightmost) function can accept one or more arguments; the remaining fu
 
 ```js
 const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4457,7 +4457,7 @@ The first (leftmost) function can accept one or more arguments; the remaining fu
 
 ```js
 const composeRight = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4482,7 +4482,7 @@ Use the spread operator (`...`) to call `coverger` with the results of all other
 
 ```js
 const converge = (converger, fns) => (...args) => converger(...fns.map(fn => fn.apply(null, args)));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4511,7 +4511,7 @@ If you want to curry a function that accepts a variable number of arguments (a v
 ```js
 const curry = (fn, arity = fn.length, ...args) =>
   arity <= args.length ? fn(...args) : curry.bind(null, fn, arity, ...args);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4540,7 +4540,7 @@ const debounce = (fn, ms = 0) => {
     timeoutId = setTimeout(() => fn.apply(this, args), ms);
   };
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4567,7 +4567,7 @@ Use `setTimeout()` with a timeout of 1ms to add a new event to the browser event
 
 ```js
 const defer = (fn, ...args) => setTimeout(fn, 1, ...args);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4595,7 +4595,7 @@ Use the spread (`...`) operator to supply the function with an arbitrary number 
 
 ```js
 const delay = (fn, wait, ...args) => setTimeout(fn, wait, ...args);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4622,7 +4622,7 @@ Use `console.debug()` and the `name` property of the passed method to log the me
 
 ```js
 const functionName = fn => (console.debug(fn.name), fn);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4650,7 +4650,7 @@ const hz = (fn, iterations = 100) => {
   for (let i = 0; i < iterations; i++) fn();
   return (1000 * iterations) / (performance.now() - before);
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4695,7 +4695,7 @@ const memoize = fn => {
   cached.cache = cache;
   return cached;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4720,7 +4720,7 @@ Take a predicate function and apply the not operator (`!`) to it with its argume
 
 ```js
 const negate = func => (...args) => !func(...args);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4749,7 +4749,7 @@ const once = fn => {
     return fn.apply(this, args);
   };
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4773,7 +4773,7 @@ Use the spread operator (`...`) to prepend `partials` to the list of arguments o
 
 ```js
 const partial = (fn, ...partials) => (...args) => fn(...partials, ...args);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4796,7 +4796,7 @@ Use the spread operator (`...`) to append `partials` to the list of arguments of
 
 ```js
 const partialRight = (fn, ...partials) => (...args) => fn(...args, ...partials);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4819,7 +4819,7 @@ Use `Array.reduce()` to create a promise chain, where each promise returns the n
 
 ```js
 const runPromisesInSeries = ps => ps.reduce((p, next) => p.then(next), Promise.resolve());
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4841,7 +4841,7 @@ Delay executing part of an `async` function, by putting it to sleep, returning a
 
 ```js
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4888,7 +4888,7 @@ const throttle = (fn, wait) => {
     }
   };
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4919,7 +4919,7 @@ const times = (n, fn, context = undefined) => {
   let i = 0;
   while (fn.call(context, i) !== false && ++i < n) {}
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4950,7 +4950,7 @@ const uncurry = (fn, n = 1) => (...args) => {
   if (n > args.length) throw new RangeError('Arguments too few!');
   return next(fn)(args.slice(0, n));
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -4979,7 +4979,7 @@ const unfold = (fn, seed) => {
   while ((val = fn(val[1]))) result.push(val[0]);
   return result;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5001,7 +5001,7 @@ Return a function expecting a single value, `x`, that returns the appropriate va
 
 ```js
 const when = (pred, whenTrue) => x => (pred(x) ? whenTrue(x) : x);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5016,10 +5016,10 @@ doubleEvenNumbers(1); // 1
 
 <br>[⬆ Back to top](#table-of-contents)
 
-  
----  
-  
-## ➗ Math  
+
+---
+
+## ➗ Math
 
 ### approximatelyEqual
 
@@ -5030,7 +5030,7 @@ Omit the third parameter, `epsilon`, to use a default value of `0.001`.
 
 ```js
 const approximatelyEqual = (v1, v2, epsilon = 0.001) => Math.abs(v1 - v2) < epsilon;
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5051,7 +5051,7 @@ Use `Array.reduce()` to add each value to an accumulator, initialized with a val
 
 ```js
 const average = (...nums) => nums.reduce((acc, val) => acc + val, 0) / nums.length;
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5075,7 +5075,7 @@ Use `Array.map()` to map each element to the value returned by `fn`, `Array.redu
 const averageBy = (arr, fn) =>
   arr.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val) => acc + val, 0) /
   arr.length;
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5110,7 +5110,7 @@ const binomialCoefficient = (n, k) => {
   for (let j = 2; j <= k; j++) res *= (n - j + 1) / j;
   return Math.round(res);
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5132,7 +5132,7 @@ Otherwise, return the nearest number in the range.
 
 ```js
 const clampNumber = (num, a, b) => Math.max(Math.min(num, Math.max(a, b)), Math.min(a, b));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5154,7 +5154,7 @@ Use `Math.PI` and the degree to radian formula to convert the angle from degrees
 
 ```js
 const degreesToRads = deg => (deg * Math.PI) / 180.0;
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5176,7 +5176,7 @@ Use `Array.map()` and `parseInt()` to transform each value to an integer.
 
 ```js
 const digitize = n => [...`${n}`].map(i => parseInt(i));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5197,7 +5197,7 @@ Use `Math.hypot()` to calculate the Euclidean distance between two points.
 
 ```js
 const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5239,7 +5239,7 @@ const elo = ([...ratings], kFactor = 32, selfRating) => {
   }
   return ratings;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5279,7 +5279,7 @@ const factorial = n =>
     : n <= 1
       ? 1
       : n * factorial(n - 1);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5305,7 +5305,7 @@ const fibonacci = n =>
     (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),
     []
   );
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5331,7 +5331,7 @@ const gcd = (...arr) => {
   const _gcd = (x, y) => (!y ? x : gcd(y, x % y));
   return [...arr].reduce((a, b) => _gcd(a, b));
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5359,7 +5359,7 @@ const geometricProgression = (end, start = 1, step = 2) =>
   Array.from({ length: Math.floor(Math.log(end / start) / Math.log(step)) + 1 }).map(
     (v, i) => start * step ** i
   );
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5383,7 +5383,7 @@ Count and return the number of `1`s in the string, using `match(/1/g)`.
 
 ```js
 const hammingDistance = (num1, num2) => ((num1 ^ num2).toString(2).match(/1/g) || '').length;
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5408,7 +5408,7 @@ const inRange = (n, start, end = null) => {
   if (end && start > end) [end, start] = [start, end];
   return end == null ? n >= 0 && n < start : n >= start && n < end;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5432,7 +5432,7 @@ Use the modulo operator (`%`) to check if the remainder is equal to `0`.
 
 ```js
 const isDivisible = (dividend, divisor) => dividend % divisor === 0;
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5454,7 +5454,7 @@ Returns `true` if the number is even, `false` if the number is odd.
 
 ```js
 const isEven = num => num % 2 === 0;
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5480,7 +5480,7 @@ const isPrime = num => {
   for (var i = 2; i <= boundary; i++) if (num % i === 0) return false;
   return num >= 2;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5506,7 +5506,7 @@ const lcm = (...arr) => {
   const _lcm = (x, y) => (x * y) / gcd(x, y);
   return [...arr].reduce((a, b) => _lcm(a, b));
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5541,7 +5541,7 @@ const luhnCheck = num => {
   sum += lastDigit;
   return sum % 10 === 0;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5564,7 +5564,7 @@ Use `Array.map()` to map each element to the value returned by `fn`, `Math.max()
 
 ```js
 const maxBy = (arr, fn) => Math.max(...arr.map(typeof fn === 'function' ? fn : val => val[fn]));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5591,7 +5591,7 @@ const median = arr => {
     nums = [...arr].sort((a, b) => a - b);
   return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5612,7 +5612,7 @@ Use `Array.map()` to map each element to the value returned by `fn`, `Math.min()
 
 ```js
 const minBy = (arr, fn) => Math.min(...arr.map(typeof fn === 'function' ? fn : val => val[fn]));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5635,7 +5635,7 @@ Use `Array.reduce()` to calculate how many numbers are below the value and how m
 ```js
 const percentile = (arr, val) =>
   (100 * arr.reduce((acc, v) => acc + (v < val ? 1 : 0) + (v === val ? 0.5 : 0), 0)) / arr.length;
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5656,7 +5656,7 @@ Use `Array.reduce()` combined with `Array.map()` to iterate over elements and co
 
 ```js
 const powerset = arr => arr.reduce((a, v) => a.concat(a.map(r => [v].concat(r))), [[]]);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5683,7 +5683,7 @@ const primes = num => {
   numsTillSqroot.forEach(x => (arr = arr.filter(y => y % x !== 0 || y === x)));
   return arr;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5704,7 +5704,7 @@ Use `Math.PI` and the radian to degree formula to convert the angle from radians
 
 ```js
 const radsToDegrees = rad => (rad * 180.0) / Math.PI;
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5726,7 +5726,7 @@ Use `Array.from()` to create an empty array of the specific length, `Math.random
 ```js
 const randomIntArrayInRange = (min, max, n = 1) =>
   Array.from({ length: n }, () => Math.floor(Math.random() * (max - min + 1)) + min);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5747,7 +5747,7 @@ Use `Math.random()` to generate a random number and map it to the desired range,
 
 ```js
 const randomIntegerInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5768,7 +5768,7 @@ Use `Math.random()` to generate a random value, map it to the desired range usin
 
 ```js
 const randomNumberInRange = (min, max) => Math.random() * (max - min) + min;
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5790,7 +5790,7 @@ Omit the second argument, `decimals` to round to an integer.
 
 ```js
 const round = (n, decimals = 0) => Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5818,7 +5818,7 @@ const sdbm = str => {
     0
   );
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5847,7 +5847,7 @@ const standardDeviation = (arr, usePopulation = false) => {
       (arr.length - (usePopulation ? 0 : 1))
   );
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5869,7 +5869,7 @@ Use `Array.reduce()` to add each value to an accumulator, initialized with a val
 
 ```js
 const sum = (...arr) => [...arr].reduce((acc, val) => acc + val, 0);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5891,7 +5891,7 @@ Use `Array.map()` to map each element to the value returned by `fn`, `Array.redu
 ```js
 const sumBy = (arr, fn) =>
   arr.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val) => acc + val, 0);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5919,7 +5919,7 @@ const sumPower = (end, power = 2, start = 1) =>
     .fill(0)
     .map((x, i) => (i + start) ** power)
     .reduce((a, b) => a + b, 0);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5944,7 +5944,7 @@ Use `Math.round()` to convert to an integer.
 ```js
 const toSafeInteger = num =>
   Math.round(Math.max(Math.min(num, Number.MAX_SAFE_INTEGER), Number.MIN_SAFE_INTEGER));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5958,10 +5958,10 @@ toSafeInteger(Infinity); // 9007199254740991
 
 <br>[⬆ Back to top](#table-of-contents)
 
-  
----  
-  
-## 📦 Node  
+
+---
+
+## 📦 Node
 
 ### atob
 
@@ -5971,7 +5971,7 @@ Create a `Buffer` for the given string with base-64 encoding and use `Buffer.toS
 
 ```js
 const atob = str => new Buffer(str, 'base64').toString('binary');
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -5992,7 +5992,7 @@ Create a `Buffer` for the given string with binary encoding and use `Buffer.toSt
 
 ```js
 const btoa = str => new Buffer(str, 'binary').toString('base64');
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6031,7 +6031,7 @@ const colorize = (...args) => ({
   bgCyan: `\x1b[46m${args.join(' ')}\x1b[0m`,
   bgWhite: `\x1b[47m${args.join(' ')}\x1b[0m`
 });
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6056,7 +6056,7 @@ Use a regular expression to test if the specified flags are prefixed with `-` or
 ```js
 const hasFlags = (...flags) =>
   flags.every(flag => process.argv.includes(/^-{1,2}/.test(flag) ? flag : '--' + flag));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6093,7 +6093,7 @@ const hashNode = val =>
       0
     )
   );
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6114,7 +6114,7 @@ Checks if the current environment has the `TRAVIS` and `CI` environment variable
 
 ```js
 const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6137,7 +6137,7 @@ Use `fs.writeFile()`, template literals and `JSON.stringify()` to write a `json`
 const fs = require('fs');
 const JSONToFile = (obj, filename) =>
   fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6165,7 +6165,7 @@ const readFileLines = filename =>
     .readFileSync(filename)
     .toString('UTF8')
     .split('\n');
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6195,7 +6195,7 @@ Use `String.replace()` with a regular expression and `OS.homedir()` to replace t
 
 ```js
 const untildify = str => str.replace(/^~($|\/|\\)/, `${require('os').homedir()}$1`);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6220,7 +6220,7 @@ const UUIDGeneratorNode = () =>
   ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
     (c ^ (crypto.randomBytes(1)[0] & (15 >> (c / 4)))).toString(16)
   );
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6233,10 +6233,10 @@ UUIDGeneratorNode(); // '79c7c136-60ee-40a2-beb2-856f1feabefc'
 
 <br>[⬆ Back to top](#table-of-contents)
 
-  
----  
-  
-## 🗃️ Object  
+
+---
+
+## 🗃️ Object
 
 ### bindAll
 
@@ -6254,7 +6254,7 @@ const bindAll = (obj, ...fns) =>
       })
     )
   );
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6290,7 +6290,7 @@ const deepClone = obj => {
   );
   return Array.isArray(obj) ? (clone.length = obj.length) && Array.from(clone) : clone;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6316,7 +6316,7 @@ const deepFreeze = obj =>
     prop =>
       !obj[prop] instanceof Object || Object.isFrozen(obj[prop]) ? null : deepFreeze(obj[prop])
   ) || Object.freeze(obj);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6342,7 +6342,7 @@ Use `Object.assign()` to create a new empty object and copy the original one to 
 
 ```js
 const defaults = (obj, ...defs) => Object.assign({}, obj, ...defs.reverse(), obj);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6370,7 +6370,7 @@ const dig = (obj, target) =>
         if (acc !== undefined) return acc;
         if (typeof val === 'object') return dig(val, target);
       }, undefined);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6410,7 +6410,7 @@ const equals = (a, b) => {
   if (keys.length !== Object.keys(b).length) return false;
   return keys.every(k => equals(a[k], b[k]));
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6431,7 +6431,7 @@ Use `Object.keys(obj)` to get all the properties of the object, `Array.find()` t
 
 ```js
 const findKey = (obj, fn) => Object.keys(obj).find(key => fn(obj[key], key, obj));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6462,7 +6462,7 @@ const findLastKey = (obj, fn) =>
   Object.keys(obj)
     .reverse()
     .find(key => fn(obj[key], key, obj));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6500,7 +6500,7 @@ const flattenObject = (obj, prefix = '') =>
     else acc[pre + k] = obj[k];
     return acc;
   }, {});
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6521,7 +6521,7 @@ Use `Object.keys(obj)` to get all the properties of the object, `Array.forEach()
 
 ```js
 const forOwn = (obj, fn) => Object.keys(obj).forEach(key => fn(obj[key], key, obj));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6545,7 +6545,7 @@ const forOwnRight = (obj, fn) =>
   Object.keys(obj)
     .reverse()
     .forEach(key => fn(obj[key], key, obj));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6573,7 +6573,7 @@ const functions = (obj, inherited = false) =>
     ? [...Object.keys(obj), ...Object.keys(Object.getPrototypeOf(obj))]
     : Object.keys(obj)
   ).filter(key => typeof obj[key] === 'function');
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6607,7 +6607,7 @@ const get = (from, ...selectors) =>
       .filter(t => t !== '')
       .reduce((prev, cur) => prev && prev[cur], from)
   );
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6636,7 +6636,7 @@ const invertKeyValues = (obj, fn) =>
     acc[val].push(key);
     return acc;
   }, {});
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6663,7 +6663,7 @@ const lowercaseKeys = obj =>
     acc[key.toLowerCase()] = obj[key];
     return acc;
   }, {});
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6690,7 +6690,7 @@ const mapKeys = (obj, fn) =>
     acc[fn(obj[k], k, obj)] = obj[k];
     return acc;
   }, {});
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6716,7 +6716,7 @@ const mapValues = (obj, fn) =>
     acc[k] = fn(obj[k], k, obj);
     return acc;
   }, {});
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6742,7 +6742,7 @@ Use `Object.keys(source)` to get all the keys of the second object, then `Array.
 ```js
 const matches = (obj, source) =>
   Object.keys(source).every(key => obj.hasOwnProperty(key) && obj[key] === source[key]);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6771,7 +6771,7 @@ const matchesWith = (obj, source, fn) =>
         ? fn(obj[key], source[key], key, obj, source)
         : obj[key] == source[key]
   );
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6806,7 +6806,7 @@ const merge = (...objs) =>
       }, {}),
     {}
   );
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6843,7 +6843,7 @@ const nest = (items, id = null, link = 'parent_id') =>
   items
     .filter(item => item[link] === id)
     .map(item => ({ ...item, children: nest(items, item.id) }));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6873,7 +6873,7 @@ Use `Array.reduce()` to create and combine key-value pairs.
 
 ```js
 const objectFromPairs = arr => arr.reduce((a, [key, val]) => ((a[key] = val), a), {});
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6894,7 +6894,7 @@ Use `Object.keys()` and `Array.map()` to iterate over the object's keys and prod
 
 ```js
 const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6919,7 +6919,7 @@ const omit = (obj, arr) =>
   Object.keys(obj)
     .filter(k => !arr.includes(k))
     .reduce((acc, key) => ((acc[key] = obj[key]), acc), {});
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6944,7 +6944,7 @@ const omitBy = (obj, fn) =>
   Object.keys(obj)
     .filter(k => !fn(obj[k], k))
     .reduce((acc, key) => ((acc[key] = obj[key]), acc), {});
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6975,7 +6975,7 @@ const orderBy = (arr, props, orders) =>
       return acc;
     }, 0)
   );
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -6999,7 +6999,7 @@ Use `Array.reduce()` to convert the filtered/picked keys back to an object with 
 ```js
 const pick = (obj, arr) =>
   arr.reduce((acc, curr) => (curr in obj && (acc[curr] = obj[curr]), acc), {});
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7024,7 +7024,7 @@ const pickBy = (obj, fn) =>
   Object.keys(obj)
     .filter(k => fn(obj[k], k))
     .reduce((acc, key) => ((acc[key] = obj[key]), acc), {});
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7052,7 +7052,7 @@ const renameKeys = (keysMap, obj) =>
     }),
     {}
   );
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7074,7 +7074,7 @@ Use `Object.assign()` and an empty object (`{}`) to create a shallow clone of th
 
 ```js
 const shallowClone = obj => Object.assign({}, obj);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7108,7 +7108,7 @@ const size = val =>
       : typeof val === 'string'
         ? new Blob([val]).size
         : 0;
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7131,7 +7131,7 @@ Use `Object.keys(obj)` to iterate over each key in the object, `Array.reduce()` 
 
 ```js
 const transform = (obj, fn, acc) => Object.keys(obj).reduce((a, k) => fn(a, obj[k], k, obj), acc);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7159,7 +7159,7 @@ Use `Array.every()` to check if each passed object has the specified property an
 
 ```js
 const truthCheckCollection = (collection, pre) => collection.every(obj => obj[pre]);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7197,7 +7197,7 @@ const unflattenObject = obj =>
     } else acc[k] = obj[k];
     return acc;
   }, {});
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7210,10 +7210,10 @@ unflattenObject({ 'a.b.c': 1, d: 1 }); // { a: { b: { c: 1 } }, d: 1 }
 
 <br>[⬆ Back to top](#table-of-contents)
 
-  
----  
-  
-## 📜 String  
+
+---
+
+## 📜 String
 
 ### byteSize
 
@@ -7223,7 +7223,7 @@ Convert a given string to a [`Blob` Object](https://developer.mozilla.org/en-US/
 
 ```js
 const byteSize = str => new Blob([str]).size;
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7247,7 +7247,7 @@ Omit the `lowerRest` parameter to keep the rest of the string intact, or set it 
 ```js
 const capitalize = ([first, ...rest], lowerRest = false) =>
   first.toUpperCase() + (lowerRest ? rest.join('').toLowerCase() : rest.join(''));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7269,7 +7269,7 @@ Use `String.replace()` to match the first character of each word and `String.toU
 
 ```js
 const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperCase());
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7297,7 +7297,7 @@ const CSVToArray = (data, delimiter = ',', omitFirstRow = false) =>
     .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0)
     .split('\n')
     .map(v => v.split(delimiter));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7333,7 +7333,7 @@ const CSVToJSON = (data, delimiter = ',') => {
       return titles.reduce((obj, title, index) => ((obj[title] = values[index]), obj), {});
     });
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7357,7 +7357,7 @@ Omit the `upperRest` parameter to keep the rest of the string intact, or set it 
 ```js
 const decapitalize = ([first, ...rest], upperRest = false) =>
   first.toLowerCase() + (upperRest ? rest.join('').toUpperCase() : rest.join(''));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7390,7 +7390,7 @@ const escapeHTML = str =>
         '"': '&quot;'
       }[tag] || tag)
   );
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7411,7 +7411,7 @@ Use `String.replace()` to escape special characters.
 
 ```js
 const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7437,7 +7437,7 @@ const fromCamelCase = (str, separator = '_') =>
     .replace(/([a-z\d])([A-Z])/g, '$1' + separator + '$2')
     .replace(/([A-Z]+)([A-Z][a-z\d]+)/g, '$1' + separator + '$2')
     .toLowerCase();
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7460,7 +7460,7 @@ Use a regular expression to test if the string is an absolute URL.
 
 ```js
 const isAbsoluteURL = str => /^[a-z][a-z0-9+.-]*:/.test(str);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7492,7 +7492,7 @@ const isAnagram = (str1, str2) => {
       .join('');
   return normalize(str1) === normalize(str2);
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7513,7 +7513,7 @@ Convert the given string to lower case, using `String.toLowerCase()` and compare
 
 ```js
 const isLowerCase = str => str === str.toLowerCase();
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7537,7 +7537,7 @@ Convert the given string to upper case, using `String.toUpperCase()` and compare
 
 ```js
 const isUpperCase = str => str === str.toUpperCase();
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7566,7 +7566,7 @@ const mapString = (str, fn) =>
     .split('')
     .map((c, i) => fn(c, i, str))
     .join('');
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7591,7 +7591,7 @@ Omit the third argument, `mask`, to use a default character of `'*'` for the mas
 ```js
 const mask = (cc, num = 4, mask = '*') =>
   ('' + cc).slice(0, -num).replace(/./g, mask) + ('' + cc).slice(-num);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7616,7 +7616,7 @@ Omit the third argument, `char`, to use the whitespace character as the default 
 ```js
 const pad = (str, length, char = ' ') =>
   str.padStart((str.length + length) / 2, char).padEnd(length, char);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7643,7 +7643,7 @@ const palindrome = str => {
   const s = str.toLowerCase().replace(/[\W_]/g, '');
   return s === [...s].reverse().join('');
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7669,7 +7669,7 @@ const pluralize = (val, word, plural = word + 's') => {
   if (typeof val === 'object') return (num, word) => _pluralize(num, word, val[word]);
   return _pluralize(val, word, plural);
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7700,7 +7700,7 @@ Use a regular expression to remove non-printable ASCII characters.
 
 ```js
 const removeNonASCII = str => str.replace(/[^\x20-\x7E]/g, '');
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7722,7 +7722,7 @@ Combine characters to get a string using `String.join('')`.
 
 ```js
 const reverseString = str => [...str].reverse().join('');
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7743,7 +7743,7 @@ Use the spread operator (`...`), `Array.sort()` and  `String.localeCompare()` to
 
 ```js
 const sortCharactersInString = str => [...str].sort((a, b) => a.localeCompare(b)).join('');
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7764,7 +7764,7 @@ Use `String.split()` and a regular expression to match line breaks and create an
 
 ```js
 const splitLines = str => str.split(/\r?\n/);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7799,7 +7799,7 @@ const stringPermutations = str => {
       []
     );
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7820,7 +7820,7 @@ Use a regular expression to remove HTML/XML tags from a string.
 
 ```js
 const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7849,7 +7849,7 @@ const toCamelCase = str => {
       .join('');
   return s.slice(0, 1).toLowerCase() + s.slice(1);
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7878,7 +7878,7 @@ const toKebabCase = str =>
     .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
     .map(x => x.toLowerCase())
     .join('-');
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7908,7 +7908,7 @@ const toSnakeCase = str =>
     .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
     .map(x => x.toLowerCase())
     .join('_');
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7935,7 +7935,7 @@ Return the string truncated to the desired length, with `'...'` appended to the 
 ```js
 const truncateString = (str, num) =>
   str.length > num ? str.slice(0, num > 3 ? num - 3 : num) + '...' : str;
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7967,7 +7967,7 @@ const unescapeHTML = str =>
         '&quot;': '"'
       }[tag] || tag)
   );
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -7996,7 +7996,7 @@ const URLJoin = (...args) =>
     .replace(/\/(\?|&|#[^!])/g, '$1')
     .replace(/\?/g, '&')
     .replace('&', '?');
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8018,7 +8018,7 @@ Omit the second argument to use the default regexp.
 
 ```js
 const words = (str, pattern = /[^a-zA-Z-]+/) => str.split(pattern).filter(Boolean);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8032,10 +8032,10 @@ words('python, javaScript & coffee'); // ["python", "javaScript", "coffee"]
 
 <br>[⬆ Back to top](#table-of-contents)
 
-  
----  
-  
-## 📃 Type  
+
+---
+
+## 📃 Type
 
 ### getType
 
@@ -8046,7 +8046,7 @@ Returns lowercased constructor name of value, `"undefined"` or `"null"` if value
 ```js
 const getType = v =>
   v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name.toLowerCase();
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8067,7 +8067,7 @@ Ensure the value is not `undefined` or `null` using `Array.includes()`, and comp
 
 ```js
 const is = (type, val) => ![, null].includes(val) && val.constructor === type;
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8100,7 +8100,7 @@ Check if the provided argument is not `null` and that its `Symbol.iterator` prop
 
 ```js
 const isArrayLike = obj => obj != null && typeof obj[Symbol.iterator] === 'function';
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8123,7 +8123,7 @@ Use `typeof` to check if a value is classified as a boolean primitive.
 
 ```js
 const isBoolean = val => typeof val === 'boolean';
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8145,7 +8145,7 @@ Check if the provided value is `null` or if its `length` is equal to `0`.
 
 ```js
 const isEmpty = val => val == null || !(Object.keys(val) || val).length;
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8175,7 +8175,7 @@ Use `typeof` to check if a value is classified as a function primitive.
 
 ```js
 const isFunction = val => typeof val === 'function';
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8197,7 +8197,7 @@ Use the strict equality operator to check if the value and of `val` are equal to
 
 ```js
 const isNil = val => val === undefined || val === null;
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8219,7 +8219,7 @@ Use the strict equality operator to check if the value and of `val` are equal to
 
 ```js
 const isNull = val => val === null;
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8240,7 +8240,7 @@ Use `typeof` to check if a value is classified as a number primitive.
 
 ```js
 const isNumber = val => typeof val === 'number';
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8263,7 +8263,7 @@ If the value is `null` or `undefined`, create and return an empty object. Οther
 
 ```js
 const isObject = obj => obj === Object(obj);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8289,7 +8289,7 @@ Check if the provided value is not `null` and its `typeof` is equal to `'object'
 
 ```js
 const isObjectLike = val => val !== null && typeof val === 'object';
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8313,7 +8313,7 @@ Check if the provided value is truthy, use `typeof` to check if it is an object 
 
 ```js
 const isPlainObject = val => !!val && typeof val === 'object' && val.constructor === Object;
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8337,7 +8337,7 @@ Since `typeof null` evaluates to `'object'`, it needs to be directly compared.
 
 ```js
 const isPrimitive = val => !['object', 'function'].includes(typeof val) || val === null;
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8366,7 +8366,7 @@ const isPromiseLike = obj =>
   obj !== null &&
   (typeof obj === 'object' || typeof obj === 'function') &&
   typeof obj.then === 'function';
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8393,7 +8393,7 @@ Use `typeof` to check if a value is classified as a string primitive.
 
 ```js
 const isString = val => typeof val === 'string';
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8414,7 +8414,7 @@ Use `typeof` to check if a value is classified as a symbol primitive.
 
 ```js
 const isSymbol = val => typeof val === 'symbol';
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8435,7 +8435,7 @@ Use the strict equality operator to check if the value and of `val` are equal to
 
 ```js
 const isUndefined = val => val === undefined;
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8463,7 +8463,7 @@ const isValidJSON = obj => {
     return false;
   }
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8478,10 +8478,10 @@ isValidJSON(null); // true
 
 <br>[⬆ Back to top](#table-of-contents)
 
-  
----  
-  
-## 🔧 Utility  
+
+---
+
+## 🔧 Utility
 
 ### castArray
 
@@ -8491,7 +8491,7 @@ Use `Array.isArray()` to determine if `val` is an array and return it as-is or e
 
 ```js
 const castArray = val => (Array.isArray(val) ? val : [val]);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8513,7 +8513,7 @@ Use `new RegExp()`, `RegExp.source` and `RegExp.flags` to clone the given regula
 
 ```js
 const cloneRegExp = regExp => new RegExp(regExp.source, regExp.flags);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8535,7 +8535,7 @@ Use `Array.find()` to return the first non `null`/`undefined` argument.
 
 ```js
 const coalesce = (...args) => args.find(_ => ![undefined, null].includes(_));
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8556,7 +8556,7 @@ Use `Array.find()` to return the first argument that returns `true` from the pro
 
 ```js
 const coalesceFactory = valid => (...args) => args.find(valid);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8585,7 +8585,7 @@ const extendHex = shortHex =>
     .split('')
     .map(x => x + x)
     .join('');
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8612,7 +8612,7 @@ const getURLParameters = url =>
     (a, v) => ((a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a),
     {}
   );
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8652,7 +8652,7 @@ const hexToRGB = hex => {
     ')'
   );
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8684,7 +8684,7 @@ const httpGet = (url, callback, err = console.error) => {
   request.onerror = () => err(request);
   request.send();
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8727,7 +8727,7 @@ const httpPost = (url, data, callback, err = console.error) => {
   request.onerror = () => err(request);
   request.send(data);
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8777,7 +8777,7 @@ If both of them are not `undefined`, then the current environment is assumed to 
 
 ```js
 const isBrowser = () => ![typeof window, typeof document].includes('undefined');
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8808,7 +8808,7 @@ const mostPerformant = (fns, iterations = 10000) => {
   });
   return times.indexOf(Math.min(...times));
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8838,7 +8838,7 @@ Use `Array.slice()` to get the desired argument at index `n`.
 
 ```js
 const nthArg = n => (...args) => args.slice(n)[0];
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8872,7 +8872,7 @@ const parseCookie = str =>
       acc[decodeURIComponent(v[0].trim())] = decodeURIComponent(v[1].trim());
       return acc;
     }, {});
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8903,7 +8903,7 @@ const prettyBytes = (num, precision = 3, addSpace = true) => {
   const n = Number(((num < 0 ? -num : num) / 1000 ** exponent).toPrecision(precision));
   return (num < 0 ? '-' : '') + n + (addSpace ? ' ' : '') + UNITS[exponent];
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8929,7 +8929,7 @@ const randomHexColorCode = () => {
   let n = (Math.random() * 0xfffff * 1000000).toString(16);
   return '#' + n.slice(0, 6);
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8950,7 +8950,7 @@ Convert given RGB parameters to hexadecimal string using bitwise left-shift oper
 
 ```js
 const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8971,7 +8971,7 @@ Use template literals and `encodeURIComponent()` to create the appropriate strin
 
 ```js
 const serializeCookie = (name, val) => `${encodeURIComponent(name)}=${encodeURIComponent(val)}`;
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -8997,7 +8997,7 @@ const timeTaken = callback => {
   console.timeEnd('timeTaken');
   return r;
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -9019,7 +9019,7 @@ Use `Intl.NumberFormat` to enable country / currency sensitive formatting.
 ```js
 const toCurrency = (n, curr, LanguageFormat = undefined) =>
   Intl.NumberFormat(LanguageFormat, { style: 'currency', currency: curr }).format(n);
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -9042,7 +9042,7 @@ Use `toLocaleString()` to convert a float-point arithmetic to the [Decimal mark]
 
  ```js
 const toDecimalMark = num => num.toLocaleString('en-US');
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -9074,7 +9074,7 @@ const toOrdinalSuffix = num => {
     ? int + ordinals[digits[0] - 1]
     : int + ordinals[3];
 };
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -9097,7 +9097,7 @@ Use `Number()` to check if the coercion holds.
 
 ```js
 const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
-```  
+```
 
 <details>
 <summary>Examples</summary>
@@ -9120,7 +9120,7 @@ Omit the second argument, `def` to set the default answer as `no`.
 ```js
 const yesNo = (val, def = false) =>
   /^(y|yes)$/i.test(val) ? true : /^(n|no)$/i.test(val) ? false : def;
-```  
+```
 
 <details>
 <summary>Examples</summary>
