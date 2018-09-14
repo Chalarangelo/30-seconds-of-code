@@ -492,7 +492,10 @@ average(1, 2, 3);
   
   
 ---  
-## 🔌 Adapter### ary
+  
+## 🔌 Adapter  
+
+### ary
 
 Creates a function that accepts up to `n` arguments, ignoring any additional arguments.
 
@@ -795,7 +798,10 @@ const unary = fn => val => fn(val);
 
   
 ---  
-## 📚 Array### all
+  
+## 📚 Array  
+
+### all
 
 Returns `true` if the provided predicate function returns `true` for all elements in a collection, `false` otherwise.
 
@@ -3152,7 +3158,10 @@ zipWith(
 
   
 ---  
-## 🌐 Browser### arrayToHtmlList
+  
+## 🌐 Browser  
+
+### arrayToHtmlList
 
 Converts the given array elements into `<li>` tags and appends them to the list of the given id.
 
@@ -4143,7 +4152,10 @@ UUIDGeneratorBrowser(); // '7982fcfe-5721-4632-bede-6000885be57d'
 
   
 ---  
-## ⏱️ Date### formatDuration
+  
+## ⏱️ Date  
+
+### formatDuration
 
 Returns the human readable format of the given number of milliseconds.
 
@@ -4285,7 +4297,10 @@ tomorrow(true); // 2017-12-27T00:00:00 (if current date is 2017-12-26)
 
   
 ---  
-## 🎛️ Function### attempt
+  
+## 🎛️ Function  
+
+### attempt
 
 Attempts to invoke a function with the provided arguments, returning either the result or the caught error object.
 
@@ -5003,7 +5018,10 @@ doubleEvenNumbers(1); // 1
 
   
 ---  
-## ➗ Math### approximatelyEqual
+  
+## ➗ Math  
+
+### approximatelyEqual
 
 Checks if two numbers are approximately equal to each other.
 
@@ -5942,7 +5960,10 @@ toSafeInteger(Infinity); // 9007199254740991
 
   
 ---  
-## 📦 Node### atob
+  
+## 📦 Node  
+
+### atob
 
 Decodes a string of data which has been encoded using base-64 encoding.
 
@@ -6214,7 +6235,10 @@ UUIDGeneratorNode(); // '79c7c136-60ee-40a2-beb2-856f1feabefc'
 
   
 ---  
-## 🗃️ Object### bindAll
+  
+## 🗃️ Object  
+
+### bindAll
 
 Binds methods of an object to the object itself, overwriting the existing method.
 
@@ -7188,7 +7212,10 @@ unflattenObject({ 'a.b.c': 1, d: 1 }); // { a: { b: { c: 1 } }, d: 1 }
 
   
 ---  
-## 📜 String### byteSize
+  
+## 📜 String  
+
+### byteSize
 
 Returns the length of a string in bytes.
 
@@ -8007,7 +8034,10 @@ words('python, javaScript & coffee'); // ["python", "javaScript", "coffee"]
 
   
 ---  
-## 📃 Type### getType
+  
+## 📃 Type  
+
+### getType
 
 Returns the native type of a value.
 
@@ -8450,7 +8480,10 @@ isValidJSON(null); // true
 
   
 ---  
-## 🔧 Utility### castArray
+  
+## 🔧 Utility  
+
+### castArray
 
 Casts the provided value as an array if it's not one.
 
