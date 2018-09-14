@@ -1,11 +1,7 @@
-![Logo](/logo.png)
-
-# Snippets Archive
-
-These snippets, while useful and interesting, didn't quite make it into the repository due to either having very specific use-cases or being outdated. However we felt like they might still be useful to some readers, so here they are.
-
-## Table of Contents
-
+![Logo](/logo.png)  
+# Snippets Archive  
+These snippets, while useful and interesting, didn't quite make it into the repository due to either having very specific use-cases or being outdated. However we felt like they might still be useful to some readers, so here they are.  
+## Table of Contents  
 * [`JSONToDate`](#jsontodate)
 * [`speechSynthesis`](#speechsynthesis)
 * [`binarySearch`](#binarysearch)
@@ -24,9 +20,8 @@ These snippets, while useful and interesting, didn't quite make it into the repo
 * [`removeVowels`](#removevowels)
 * [`solveRPN`](#solverpn)
 * [`howManyTimes`](#howmanytimes)
-
----
-
+  
+---  
 ### JSONToDate
 
 Converts a JSON object to a date.
@@ -38,19 +33,18 @@ const JSONToDate = arr => {
   const dt = new Date(parseInt(arr.toString().substr(6)));
   return `${dt.getDate()}/${dt.getMonth() + 1}/${dt.getFullYear()}`;
 };
-```
+```  
 
 <details>
-<summary>Examples</summary>
-
-```js
+  <summary>Examples</summary>
+  
+  ```js
 JSONToDate(/Date(1489525200000)/); // "14/3/2017"
 ```
 
 </details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
+  
+[⬆ Back to top](#table-of-contents)
 
 ### speechSynthesis
 
@@ -67,19 +61,18 @@ const speechSynthesis = message => {
   msg.voice = window.speechSynthesis.getVoices()[0];
   window.speechSynthesis.speak(msg);
 };
-```
+```  
 
 <details>
-<summary>Examples</summary>
-
-```js
+  <summary>Examples</summary>
+  
+  ```js
 speechSynthesis('Hello, World'); // // plays the message
 ```
 
 </details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
+  
+[⬆ Back to top](#table-of-contents)
 
 ### binarySearch
 
@@ -99,20 +92,19 @@ const binarySearch = (arr, val, start = 0, end = arr.length - 1) => {
   if (arr[mid] < val) return binarySearch(arr, val, mid + 1, end);
   return mid;
 };
-```
+```  
 
 <details>
-<summary>Examples</summary>
-
-```js
+  <summary>Examples</summary>
+  
+  ```js
 binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 6); // 2
 binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 21); // -1
 ```
 
 </details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
+  
+[⬆ Back to top](#table-of-contents)
 
 ### cleanObj
 
@@ -132,20 +124,19 @@ const cleanObj = (obj, keysToKeep = [], childIndicator) => {
   });
   return obj;
 };
-```
+```  
 
 <details>
-<summary>Examples</summary>
-
-```js
+  <summary>Examples</summary>
+  
+  ```js
 const testObj = { a: 1, b: 2, children: { a: 1, b: 2 } };
 cleanObj(testObj, ['a'], 'children'); // { a: 1, children : { a: 1}}
 ```
 
 </details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
+  
+[⬆ Back to top](#table-of-contents)
 
 ### collatz
 
@@ -155,19 +146,18 @@ If `n` is even, return `n/2`. Otherwise, return `3n+1`.
 
 ```js
 const collatz = n => (n % 2 === 0 ? n / 2 : 3 * n + 1);
-```
+```  
 
 <details>
-<summary>Examples</summary>
-
-```js
+  <summary>Examples</summary>
+  
+  ```js
 collatz(8); // 4
 ```
 
 </details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
+  
+[⬆ Back to top](#table-of-contents)
 
 ### countVowels
 
@@ -177,20 +167,19 @@ Use a regular expression to count the number of vowels `(A, E, I, O, U)` in a `s
 
 ```js
 const countVowels = str => (str.match(/[aeiou]/gi) || []).length;
-```
+```  
 
 <details>
-<summary>Examples</summary>
-
-```js
+  <summary>Examples</summary>
+  
+  ```js
 countVowels('foobar'); // 3
 countVowels('gym'); // 0
 ```
 
 </details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
+  
+[⬆ Back to top](#table-of-contents)
 
 ### factors
 
@@ -226,12 +215,12 @@ const factors = (num, primes = false) => {
     }, []);
   return primes ? array.filter(isPrime) : array;
 };
-```
+```  
 
 <details>
-<summary>Examples</summary>
-
-```js
+  <summary>Examples</summary>
+  
+  ```js
 factors(12); // [2,3,4,6,12]
 factors(12, true); // [2,3]
 factors(-12); // [2, -2, 3, -3, 4, -4, 6, -6, 12, -12]
@@ -239,9 +228,8 @@ factors(-12, true); // [2,3]
 ```
 
 </details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
+  
+[⬆ Back to top](#table-of-contents)
 
 ### fibonacciCountUntilNum
 
@@ -252,19 +240,18 @@ Use a mathematical formula to calculate the number of fibonacci numbers until `n
 ```js
 const fibonacciCountUntilNum = num =>
   Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));
-```
+```  
 
 <details>
-<summary>Examples</summary>
-
-```js
+  <summary>Examples</summary>
+  
+  ```js
 fibonacciCountUntilNum(10); // 7
 ```
 
 </details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
+  
+[⬆ Back to top](#table-of-contents)
 
 ### fibonacciUntilNum
 
@@ -282,19 +269,18 @@ const fibonacciUntilNum = num => {
     []
   );
 };
-```
+```  
 
 <details>
-<summary>Examples</summary>
-
-```js
+  <summary>Examples</summary>
+  
+  ```js
 fibonacciUntilNum(10); // [ 0, 1, 1, 2, 3, 5, 8 ]
 ```
 
 </details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
+  
+[⬆ Back to top](#table-of-contents)
 
 ### httpDelete
 
@@ -313,21 +299,20 @@ const httpDelete = (url, callback, err = console.error) => {
   request.onerror = () => err(request);
   request.send();
 };
-```
+```  
 
 <details>
-<summary>Examples</summary>
-
-```js
+  <summary>Examples</summary>
+  
+  ```js
 httpDelete('https://website.com/users/123', request => {
   console.log(request.responseText);
 }); // 'Deletes a user from the database'
 ```
 
 </details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
+  
+[⬆ Back to top](#table-of-contents)
 
 ### httpPut
 
@@ -348,12 +333,12 @@ const httpPut = (url, data, callback, err = console.error) => {
     request.onerror = () => err(request);
     request.send(data);
 };
-```
+```  
 
 <details>
-<summary>Examples</summary>
-
-```js
+  <summary>Examples</summary>
+  
+  ```js
 const password = "fooBaz";
 const data = JSON.stringify(password);
 httpPut('https://website.com/users/123', data, request => {
@@ -362,9 +347,8 @@ httpPut('https://website.com/users/123', data, request => {
 ```
 
 </details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
+  
+[⬆ Back to top](#table-of-contents)
 
 ### isArmstrongNumber
 
@@ -377,20 +361,19 @@ const isArmstrongNumber = digits =>
   (arr => arr.reduce((a, d) => a + parseInt(d) ** arr.length, 0) == digits)(
     (digits + '').split('')
   );
-```
+```  
 
 <details>
-<summary>Examples</summary>
-
-```js
+  <summary>Examples</summary>
+  
+  ```js
 isArmstrongNumber(1634); // true
 isArmstrongNumber(56); // false
 ```
 
 </details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
+  
+[⬆ Back to top](#table-of-contents)
 
 ### isSimilar
 
@@ -399,26 +382,24 @@ Determines if the `pattern` matches with `str`.
 Use `String.toLowerCase()` to convert both strings to lowercase, then loop through `str` and determine if it contains all characters of `pattern` and in the correct order.
 Adapted from [here](https://github.com/forrestthewoods/lib_fts/blob/80f3f8c52db53428247e741b9efe2cde9667050c/code/fts_fuzzy_match.js#L18).
 
-``` js
+```js
 const isSimilar = (pattern, str) =>
 	[...str].reduce(
 		(matchIndex, char) => char.toLowerCase() === (pattern[matchIndex]  || '').toLowerCase() ? matchIndex + 1 : matchIndex, 0
 	) === pattern.length ? true : false;
-```
+```  
 
-
-``` js
+<details>
+  <summary>Examples</summary>
+  
+  ```js
 isSimilar('rt','Rohit'); // true
 isSimilar('tr','Rohit'); // false
-```<details>
-<summary>Examples</summary>
-
 ```
 
 </details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
+  
+[⬆ Back to top](#table-of-contents)
 
 ### levenshteinDistance
 
@@ -445,21 +426,20 @@ const levenshteinDistance = (string1, string2) => {
     }
     return matrix[string2.length][string1.length];
 };
-```
+```  
 
 <details>
-<summary>Examples</summary>
-
-```js
+  <summary>Examples</summary>
+  
+  ```js
 levenshteinDistance('30-seconds-of-code','30-seconds-of-python-code'); // 7
 const compareStrings = (string1,string2) => (100 - levenshteinDistance(string1,string2) / Math.max(string1.length,string2.length));
 compareStrings('30-seconds-of-code', '30-seconds-of-python-code'); // 99.72 (%)
 ```
 
 </details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
+  
+[⬆ Back to top](#table-of-contents)
 
 ### quickSort
 
@@ -478,20 +458,19 @@ const quickSort = ([n, ...nums], desc) =>
         n,
         ...quickSort(nums.filter(v => (!desc ? v > n : v <= n)), desc)
       ];
-```
+```  
 
 <details>
-<summary>Examples</summary>
-
-```js
+  <summary>Examples</summary>
+  
+  ```js
 quickSort([4, 1, 3, 2]); // [1,2,3,4]
 quickSort([4, 1, 3, 2], true); // [4,3,2,1]
 ```
 
 </details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
+  
+[⬆ Back to top](#table-of-contents)
 
 ### removeVowels
 
@@ -502,20 +481,19 @@ Omot `repl` to use a default value of `''`.
 
 ```js
 const removeVowels = (str, repl = '') => str.replace(/[aeiou]/gi,repl);
-```
+```  
 
 <details>
-<summary>Examples</summary>
-
-```js
+  <summary>Examples</summary>
+  
+  ```js
 removeVowels("foobAr"); // "fbr"
 removeVowels("foobAr","*"); // "f**b*r"
 ```
 
 </details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
+  
+[⬆ Back to top](#table-of-contents)
 
 ### solveRPN
 
@@ -556,20 +534,19 @@ const solveRPN = rpn => {
   if (stack.length === 1) return stack.pop();
   else throw `${rpn} is not a proper RPN. Please check it and try again`;
 };
-```
+```  
 
 <details>
-<summary>Examples</summary>
-
-```js
+  <summary>Examples</summary>
+  
+  ```js
 solveRPN('15 7 1 1 + - / 3 * 2 1 1 + + -'); // 5
 solveRPN('2 3 ^'); // 8
 ```
 
 </details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
+  
+[⬆ Back to top](#table-of-contents)
 
 ### howManyTimes
 
@@ -592,12 +569,12 @@ const howManyTimes = (num, divisor) => {
   }
   return i;
 };
-```
+```  
 
 <details>
-<summary>Examples</summary>
-
-```js
+  <summary>Examples</summary>
+  
+  ```js
 howManyTimes(100, 2); // 2
 howManyTimes(100, 2.5); // 2
 howManyTimes(100, 0); // 0
@@ -605,6 +582,6 @@ howManyTimes(100, -1); // Infinity
 ```
 
 </details>
-
-<br>[⬆ Back to top](#table-of-contents)
+  
+[⬆ Back to top](#table-of-contents)
 
