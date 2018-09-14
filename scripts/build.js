@@ -176,7 +176,7 @@ try {
       lists.ul(taggedSnippets, (snippet) =>
         misc.link(
           `\`${snippet[0]}\``,
-          misc.anchor(snippet[0])
+          `${misc.anchor(snippet[0])}${snippet[1].includes('advanced') ? '-' : ''}`
         )
       )
     ) + '\n';
