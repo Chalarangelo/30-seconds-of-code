@@ -100,7 +100,7 @@ average(1, 2, 3);
 * [`unary`](#unary)
 
 </details>
-  
+
 ### 📚 Array  
 
 <details>
@@ -199,7 +199,7 @@ average(1, 2, 3);
 * [`zipWith`](#zipwith-)
 
 </details>
-  
+
 ### 🌐 Browser  
 
 <details>
@@ -242,7 +242,7 @@ average(1, 2, 3);
 * [`UUIDGeneratorBrowser`](#uuidgeneratorbrowser)
 
 </details>
-  
+
 ### ⏱️ Date  
 
 <details>
@@ -255,7 +255,7 @@ average(1, 2, 3);
 * [`tomorrow`](#tomorrow)
 
 </details>
-  
+
 ### 🎛️ Function  
 
 <details>
@@ -288,7 +288,7 @@ average(1, 2, 3);
 * [`when`](#when)
 
 </details>
-  
+
 ### ➗ Math  
 
 <details>
@@ -333,7 +333,7 @@ average(1, 2, 3);
 * [`toSafeInteger`](#tosafeinteger)
 
 </details>
-  
+
 ### 📦 Node  
 
 <details>
@@ -351,7 +351,7 @@ average(1, 2, 3);
 * [`UUIDGeneratorNode`](#uuidgeneratornode)
 
 </details>
-  
+
 ### 🗃️ Object  
 
 <details>
@@ -393,7 +393,7 @@ average(1, 2, 3);
 * [`unflattenObject`](#unflattenobject-)
 
 </details>
-  
+
 ### 📜 String  
 
 <details>
@@ -432,7 +432,7 @@ average(1, 2, 3);
 * [`words`](#words)
 
 </details>
-  
+
 ### 📃 Type  
 
 <details>
@@ -458,7 +458,7 @@ average(1, 2, 3);
 * [`isValidJSON`](#isvalidjson)
 
 </details>
-  
+
 ### 🔧 Utility  
 
 <details>
@@ -489,7 +489,7 @@ average(1, 2, 3);
 * [`yesNo`](#yesno)
 
 </details>
-  
+
   
 ---  
   
@@ -514,7 +514,7 @@ const firstTwoMax = ary(Math.max, 2);
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### call
@@ -541,7 +541,7 @@ Promise.resolve([1, 2, 3])
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### collectInto
@@ -566,7 +566,7 @@ Pall(p1, p2, p3).then(console.log); // [1, 2, 3] (after about 2 seconds)
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### flip
@@ -593,7 +593,7 @@ Object.assign(b, a); // == b
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### over
@@ -615,7 +615,7 @@ minMax(1, 2, 3, 4, 5); // [1,5]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### overArgs
@@ -639,7 +639,7 @@ fn(9, 3); // [81, 6]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### pipeAsyncFunctions
@@ -670,7 +670,7 @@ const sum = pipeAsyncFunctions(
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### pipeFunctions
@@ -695,7 +695,7 @@ multiplyAndAdd5(5, 2); // 15
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### promisify
@@ -723,7 +723,7 @@ delay(2000).then(() => console.log('Hi!')); // // Promise resolves after 2s
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### rearg
@@ -750,7 +750,7 @@ rearged('b', 'c', 'a'); // ['a', 'b', 'c']
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### spreadOver
@@ -772,7 +772,7 @@ arrayMax([1, 2, 3]); // 3
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### unary
@@ -793,7 +793,7 @@ const unary = fn => val => fn(val);
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
   
@@ -821,7 +821,7 @@ all([1, 2, 3]); // true
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### allEqual
@@ -843,7 +843,7 @@ allEqual([1, 1, 1, 1]); // true
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### any
@@ -866,7 +866,7 @@ any([0, 0, 1, 0]); // true
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### arrayToCSV
@@ -891,7 +891,7 @@ arrayToCSV([['a', 'b'], ['c', 'd']], ';'); // '"a";"b"\n"c";"d"'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### bifurcate
@@ -913,7 +913,7 @@ bifurcate(['beep', 'boop', 'foo', 'bar'], [true, true, false, true]); // [ ['bee
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### bifurcateBy
@@ -935,7 +935,7 @@ bifurcateBy(['beep', 'boop', 'foo', 'bar'], x => x[0] === 'b'); // [ ['beep', 'b
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### chunk
@@ -961,7 +961,7 @@ chunk([1, 2, 3, 4, 5], 2); // [[1,2],[3,4],[5]]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### compact
@@ -982,7 +982,7 @@ compact([0, 1, false, 2, '', 3, 'a', 'e' * 23, NaN, 's', 34]); // [ 1, 2, 3, 'a'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### countBy
@@ -1009,7 +1009,7 @@ countBy(['one', 'two', 'three'], 'length'); // {3: 2, 5: 1}
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### countOccurrences
@@ -1030,7 +1030,7 @@ countOccurrences([1, 1, 2, 1, 2, 3], 1); // 3
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### deepFlatten
@@ -1053,7 +1053,7 @@ deepFlatten([1, [2], [[3], 4], 5]); // [1,2,3,4,5]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### difference
@@ -1077,7 +1077,7 @@ difference([1, 2, 3], [1, 2, 4]); // [3]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### differenceBy
@@ -1102,7 +1102,7 @@ differenceBy([{ x: 2 }, { x: 1 }], [{ x: 1 }], v => v.x); // [ { x: 2 } ]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### differenceWith
@@ -1123,7 +1123,7 @@ differenceWith([1, 1.2, 1.5, 3, 0], [1.9, 3, 0], (a, b) => Math.round(a) === Mat
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### drop
@@ -1146,7 +1146,7 @@ drop([1, 2, 3], 42); // []
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### dropRight
@@ -1169,7 +1169,7 @@ dropRight([1, 2, 3], 42); // []
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### dropRightWhile
@@ -1194,7 +1194,7 @@ dropRightWhile([1, 2, 3, 4], n => n < 3); // [1, 2]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### dropWhile
@@ -1219,7 +1219,7 @@ dropWhile([1, 2, 3, 4], n => n >= 3); // [3,4]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### everyNth
@@ -1240,7 +1240,7 @@ everyNth([1, 2, 3, 4, 5, 6], 2); // [ 2, 4, 6 ]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### filterNonUnique
@@ -1261,7 +1261,7 @@ filterNonUnique([1, 2, 2, 3, 4, 4, 5]); // [1,3,5]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### filterNonUniqueBy
@@ -1293,7 +1293,7 @@ filterNonUniqueBy(
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### findLast
@@ -1314,7 +1314,7 @@ findLast([1, 2, 3, 4], n => n % 2 === 1); // 3
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### findLastIndex
@@ -1340,7 +1340,7 @@ findLastIndex([1, 2, 3, 4], n => n % 2 === 1); // 2 (index of the value 3)
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### flatten
@@ -1366,7 +1366,7 @@ flatten([1, [2, [3, [4, 5], 6], 7], 8], 2); // [1, 2, 3, [4, 5], 6, 7, 8]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### forEachRight
@@ -1391,7 +1391,7 @@ forEachRight([1, 2, 3, 4], val => console.log(val)); // '4', '3', '2', '1'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### groupBy
@@ -1418,7 +1418,7 @@ groupBy(['one', 'two', 'three'], 'length'); // {3: ['one', 'two'], 5: ['three']}
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### head
@@ -1439,7 +1439,7 @@ head([1, 2, 3]); // 1
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### indexOfAll
@@ -1462,7 +1462,7 @@ indexOfAll([1, 2, 3], 4); // []
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### initial
@@ -1483,7 +1483,7 @@ initial([1, 2, 3]); // [1,2]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### initialize2DArray
@@ -1505,7 +1505,7 @@ initialize2DArray(2, 2, 0); // [[0,0], [0,0]]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### initializeArrayWithRange
@@ -1531,7 +1531,7 @@ initializeArrayWithRange(9, 0, 2); // [0,2,4,6,8]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### initializeArrayWithRangeRight
@@ -1559,7 +1559,7 @@ initializeArrayWithRangeRight(9, 0, 2); // [8,6,4,2,0]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### initializeArrayWithValues
@@ -1581,7 +1581,7 @@ initializeArrayWithValues(5, 2); // [2,2,2,2,2]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### initializeNDArray
@@ -1607,7 +1607,7 @@ initializeNDArray(5, 2, 2, 2); // [[[5,5],[5,5]],[[5,5],[5,5]]]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### intersection
@@ -1631,7 +1631,7 @@ intersection([1, 2, 3], [4, 3, 2]); // [2,3]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### intersectionBy
@@ -1655,7 +1655,7 @@ intersectionBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [2.1]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### intersectionWith
@@ -1676,7 +1676,7 @@ intersectionWith([1, 1.2, 1.5, 3, 0], [1.9, 3, 0, 3.9], (a, b) => Math.round(a) 
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### isSorted
@@ -1708,7 +1708,7 @@ isSorted([4, 3, 5]); // 0
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### join
@@ -1742,7 +1742,7 @@ join(['pen', 'pineapple', 'apple', 'pen']); // "pen,pineapple,apple,pen"
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### JSONtoCSV ![advanced](/advanced.svg)
@@ -1776,7 +1776,7 @@ JSONtoCSV([{ a: 1, b: 2 }, { a: 3, b: 4, c: 5 }, { a: 6 }, { b: 7 }], ['a', 'b']
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### last
@@ -1797,7 +1797,7 @@ last([1, 2, 3]); // 3
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### longestItem
@@ -1825,7 +1825,7 @@ longestItem([1, 2, 3], 'foobar'); // 'foobar'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### mapObject ![advanced](/advanced.svg)
@@ -1850,7 +1850,7 @@ squareIt([1, 2, 3]); // { 1: 1, 2: 4, 3: 9 }
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### maxN
@@ -1874,7 +1874,7 @@ maxN([1, 2, 3], 2); // [3,2]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### minN
@@ -1898,7 +1898,7 @@ minN([1, 2, 3], 2); // [1,2]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### none
@@ -1921,7 +1921,7 @@ none([0, 0, 0]); // true
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### nthElement
@@ -1945,7 +1945,7 @@ nthElement(['a', 'b', 'b'], -3); // 'a'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### offset
@@ -1969,7 +1969,7 @@ offset([1, 2, 3, 4, 5], -2); // [4, 5, 1, 2, 3]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### partition
@@ -1999,7 +1999,7 @@ partition(users, o => o.active); // [[{ 'user': 'fred',    'age': 40, 'active': 
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### permutations ![advanced](/advanced.svg)
@@ -2034,7 +2034,7 @@ permutations([1, 33, 5]); // [ [ 1, 33, 5 ], [ 1, 5, 33 ], [ 33, 1, 5 ], [ 33, 5
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### pull
@@ -2064,7 +2064,7 @@ pull(myArray, 'a', 'c'); // myArray = [ 'b', 'b' ]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### pullAtIndex ![advanced](/advanced.svg)
@@ -2096,7 +2096,7 @@ let pulled = pullAtIndex(myArray, [1, 3]); // myArray = [ 'a', 'c' ] , pulled = 
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### pullAtValue ![advanced](/advanced.svg)
@@ -2127,7 +2127,7 @@ let pulled = pullAtValue(myArray, ['b', 'd']); // myArray = [ 'a', 'c' ] , pulle
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### pullBy ![advanced](/advanced.svg)
@@ -2160,7 +2160,7 @@ pullBy(myArray, [{ x: 1 }, { x: 3 }], o => o.x); // myArray = [{ x: 2 }]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### reducedFilter
@@ -2201,7 +2201,7 @@ reducedFilter(data, ['id', 'name'], item => item.age > 24); // [{ id: 2, name: '
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### reduceSuccessive
@@ -2223,7 +2223,7 @@ reduceSuccessive([1, 2, 3, 4, 5, 6], (acc, val) => acc + val, 0); // [0, 1, 3, 6
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### reduceWhich
@@ -2251,7 +2251,7 @@ reduceWhich(
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### reject
@@ -2271,7 +2271,7 @@ reject(word => word.length > 4, ['Apple', 'Pear', 'Kiwi', 'Banana']); // ['Pear'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### remove
@@ -2299,7 +2299,7 @@ remove([1, 2, 3, 4], n => n % 2 === 0); // [2, 4]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### sample
@@ -2321,7 +2321,7 @@ sample([3, 7, 9, 11]); // 9
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### sampleSize
@@ -2352,7 +2352,7 @@ sampleSize([1, 2, 3], 4); // [2,3,1]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### shuffle
@@ -2381,7 +2381,7 @@ shuffle(foo); // [2,3,1], foo = [1,2,3]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### similarity
@@ -2402,7 +2402,7 @@ similarity([1, 2, 3], [1, 2, 4]); // [1,2]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### sortedIndex
@@ -2429,7 +2429,7 @@ sortedIndex([30, 50], 40); // 1
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### sortedIndexBy
@@ -2456,7 +2456,7 @@ sortedIndexBy([{ x: 4 }, { x: 5 }], { x: 4 }, o => o.x); // 0
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### sortedLastIndex
@@ -2482,7 +2482,7 @@ sortedLastIndex([10, 20, 30, 30, 40], 30); // 4
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### sortedLastIndexBy
@@ -2513,7 +2513,7 @@ sortedLastIndexBy([{ x: 4 }, { x: 5 }], { x: 4 }, o => o.x); // 1
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### stableSort ![advanced](/advanced.svg)
@@ -2542,7 +2542,7 @@ const stable = stableSort(arr, () => 0); // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### symmetricDifference
@@ -2568,7 +2568,7 @@ symmetricDifference([1, 2, 2], [1, 3, 1]); // [2, 2, 3]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### symmetricDifferenceBy
@@ -2593,7 +2593,7 @@ symmetricDifferenceBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [ 1.2, 3.4 ]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### symmetricDifferenceWith
@@ -2621,7 +2621,7 @@ symmetricDifferenceWith(
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### tail
@@ -2643,7 +2643,7 @@ tail([1]); // [1]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### take
@@ -2665,7 +2665,7 @@ take([1, 2, 3], 0); // []
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### takeRight
@@ -2687,7 +2687,7 @@ takeRight([1, 2, 3]); // [3]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### takeRightWhile
@@ -2713,7 +2713,7 @@ takeRightWhile([1, 2, 3, 4], n => n < 3); // [3, 4]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### takeWhile
@@ -2738,7 +2738,7 @@ takeWhile([1, 2, 3, 4], n => n >= 3); // [1, 2]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### toHash
@@ -2776,7 +2776,7 @@ managers; // [ { manager:1, employees: [ { id: 2, first: "Joe" }, { id: 3, first
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### union
@@ -2797,7 +2797,7 @@ union([1, 2, 3], [4, 3, 2]); // [1,2,3,4]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### unionBy
@@ -2823,7 +2823,7 @@ unionBy([2.1], [1.2, 2.3], Math.floor); // [2.1, 1.2]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### unionWith
@@ -2845,7 +2845,7 @@ unionWith([1, 1.2, 1.5, 3, 0], [1.9, 3, 0, 3.9], (a, b) => Math.round(a) === Mat
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### uniqueElements
@@ -2866,7 +2866,7 @@ uniqueElements([1, 2, 2, 3, 4, 4, 5]); // [1,2,3,4,5]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### uniqueElementsBy
@@ -2901,7 +2901,7 @@ uniqueElementsBy(
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### uniqueElementsByRight
@@ -2936,7 +2936,7 @@ uniqueElementsByRight(
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### uniqueSymmetricDifference
@@ -2960,7 +2960,7 @@ uniqueSymmetricDifference([1, 2, 2], [1, 3, 1]); // [2, 3]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### unzip
@@ -2989,7 +2989,7 @@ unzip([['a', 1, true], ['b', 2]]); //[['a', 'b'], [1, 2], [true]]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### unzipWith ![advanced](/advanced.svg)
@@ -3020,7 +3020,7 @@ unzipWith([[1, 10, 100], [2, 20, 200]], (...args) => args.reduce((acc, v) => acc
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### without
@@ -3043,7 +3043,7 @@ without([2, 1, 2, 3], 1, 2); // [3]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### xProd
@@ -3064,7 +3064,7 @@ xProd([1, 2], ['a', 'b']); // [[1, 'a'], [1, 'b'], [2, 'a'], [2, 'b']]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### zip
@@ -3093,7 +3093,7 @@ zip(['a'], [1, 2], [true, false]); // [['a', 1, true], [undefined, 2, false]]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### zipObject
@@ -3116,7 +3116,7 @@ zipObject(['a', 'b'], [1, 2, 3]); // {a: 1, b: 2}
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### zipWith ![advanced](/advanced.svg)
@@ -3153,7 +3153,7 @@ zipWith(
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
   
@@ -3183,7 +3183,7 @@ arrayToHtmlList(['item 1', 'item 2'], 'myListID');
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### bottomVisible
@@ -3206,7 +3206,7 @@ bottomVisible(); // true
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### copyToClipboard ![advanced](/advanced.svg)
@@ -3249,7 +3249,7 @@ copyToClipboard('Lorem ipsum'); // 'Lorem ipsum' copied to clipboard.
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### counter ![advanced](/advanced.svg)
@@ -3284,7 +3284,7 @@ counter('#my-id', 1, 1000, 5, 2000); // Creates a 2-second timer for the element
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### createElement
@@ -3317,7 +3317,7 @@ console.log(el.className); // 'container'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### createEventHub ![advanced](/advanced.svg)
@@ -3370,7 +3370,7 @@ hub.off('message', handler);
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### currentURL
@@ -3391,7 +3391,7 @@ currentURL(); // 'https://google.com'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### detectDeviceType
@@ -3415,7 +3415,7 @@ detectDeviceType(); // "Mobile" or "Desktop"
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### elementContains
@@ -3437,7 +3437,7 @@ elementContains(document.querySelector('body'), document.querySelector('body'));
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### elementIsVisibleInViewport ![advanced](/advanced.svg)
@@ -3470,7 +3470,7 @@ elementIsVisibleInViewport(el, true); // true - (partially visible)
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### getScrollPosition
@@ -3495,7 +3495,7 @@ getScrollPosition(); // {x: 0, y: 200}
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### getStyle
@@ -3516,7 +3516,7 @@ getStyle(document.querySelector('p'), 'font-size'); // '16px'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### hasClass
@@ -3537,7 +3537,7 @@ hasClass(document.querySelector('p.special'), 'special'); // true
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### hashBrowser ![advanced](/advanced.svg)
@@ -3565,7 +3565,7 @@ hashBrowser(JSON.stringify({ a: 'a', b: [1, 2, 3, 4], foo: { c: 'bar' } })).then
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### hide
@@ -3586,7 +3586,7 @@ hide(document.querySelectorAll('img')); // Hides all <img> elements on the page
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### httpsRedirect
@@ -3609,7 +3609,7 @@ httpsRedirect(); // If you are on http://mydomain.com, you are redirected to htt
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### insertAfter
@@ -3630,7 +3630,7 @@ insertAfter(document.getElementById('myId'), '<p>after</p>'); // <div id="myId">
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### insertBefore
@@ -3651,7 +3651,7 @@ insertBefore(document.getElementById('myId'), '<p>before</p>'); // <p>before</p>
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### isBrowserTabFocused
@@ -3672,7 +3672,7 @@ isBrowserTabFocused(); // true
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### nodeListToArray
@@ -3693,7 +3693,7 @@ nodeListToArray(document.childNodes); // [ <!DOCTYPE html>, html ]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### observeMutations ![advanced](/advanced.svg)
@@ -3734,7 +3734,7 @@ obs.disconnect(); // Disconnects the observer and stops logging mutations on the
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### off
@@ -3758,7 +3758,7 @@ off(document.body, 'click', fn); // no longer logs '!' upon clicking on the page
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### on
@@ -3788,7 +3788,7 @@ on(document.body, 'click', fn, { options: true }); // use capturing instead of b
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### onUserInputChange ![advanced](/advanced.svg)
@@ -3826,7 +3826,7 @@ onUserInputChange(type => {
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### prefix
@@ -3855,7 +3855,7 @@ prefix('appearance'); // 'appearance' on a supported browser, otherwise 'webkitA
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### recordAnimationFrames
@@ -3902,7 +3902,7 @@ const recorder2 = recordAnimationFrames(cb, false); // `start` needs to be expli
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### redirect
@@ -3925,7 +3925,7 @@ redirect('https://google.com');
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### runAsync ![advanced](/advanced.svg)
@@ -3981,7 +3981,7 @@ runAsync(() => typeof outsideVariable).then(console.log); // 'undefined'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### scrollToTop
@@ -4009,7 +4009,7 @@ scrollToTop();
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### setStyle
@@ -4030,7 +4030,7 @@ setStyle(document.querySelector('p'), 'font-size', '20px'); // The first <p> ele
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### show
@@ -4051,7 +4051,7 @@ show(...document.querySelectorAll('img')); // Shows all <img> elements on the pa
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### smoothScroll
@@ -4077,7 +4077,7 @@ smoothScroll('.fooBar'); // scrolls smoothly to the first element with a class o
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### toggleClass
@@ -4098,7 +4098,7 @@ toggleClass(document.querySelector('p.special'), 'special'); // The paragraph wi
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### triggerEvent
@@ -4123,7 +4123,7 @@ triggerEvent(document.getElementById('myId'), 'click', { username: 'bob' });
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### UUIDGeneratorBrowser
@@ -4147,7 +4147,7 @@ UUIDGeneratorBrowser(); // '7982fcfe-5721-4632-bede-6000885be57d'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
   
@@ -4190,7 +4190,7 @@ formatDuration(34325055574); // '397 days, 6 hours, 44 minutes, 15 seconds, 574 
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### getColonTimeFromDate
@@ -4211,7 +4211,7 @@ getColonTimeFromDate(new Date()); // "08:38:00"
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### getDaysDiffBetweenDates
@@ -4233,7 +4233,7 @@ getDaysDiffBetweenDates(new Date('2017-12-13'), new Date('2017-12-22')); // 9
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### getMeridiemSuffixOfInteger
@@ -4264,7 +4264,7 @@ getMeridiemSuffixOfInteger(25); // "1pm"
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### tomorrow
@@ -4292,7 +4292,7 @@ tomorrow(true); // 2017-12-27T00:00:00 (if current date is 2017-12-26)
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
   
@@ -4327,7 +4327,7 @@ if (elements instanceof Error) elements = []; // elements = []
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### bind
@@ -4354,7 +4354,7 @@ console.log(freddyBound('hi', '!')); // 'hi fred!'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### bindKey
@@ -4384,7 +4384,7 @@ console.log(freddyBound('hi', '!')); // 'hi fred!'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### chainAsync
@@ -4417,7 +4417,7 @@ chainAsync([
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### compose
@@ -4445,7 +4445,7 @@ multiplyAndAdd5(5, 2); // 15
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### composeRight
@@ -4470,7 +4470,7 @@ addAndSquare(1, 2); // 9
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### converge
@@ -4496,7 +4496,7 @@ average([1, 2, 3, 4, 5, 6, 7]); // 4
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### curry
@@ -4522,7 +4522,7 @@ curry(Math.min, 3)(10)(50)(2); // 2
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### debounce
@@ -4556,7 +4556,7 @@ window.addEventListener(
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### defer
@@ -4583,7 +4583,7 @@ defer(longRunningFunction); // Browser will update the HTML then run the functio
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### delay
@@ -4611,7 +4611,7 @@ delay(
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### functionName
@@ -4632,7 +4632,7 @@ functionName(Math.max); // max (logged in debug channel of console)
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### hz
@@ -4675,7 +4675,7 @@ Math.round(hz(sumForLoop)); // 4784
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### memoize ![advanced](/advanced.svg)
@@ -4709,7 +4709,7 @@ console.log(anagramsCached.cache); // The cached anagrams map
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### negate
@@ -4730,7 +4730,7 @@ const negate = func => (...args) => !func(...args);
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### once
@@ -4762,7 +4762,7 @@ document.body.addEventListener('click', once(startApp)); // only runs `startApp`
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### partial
@@ -4785,7 +4785,7 @@ greetHello('John'); // 'Hello John!'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### partialRight
@@ -4808,7 +4808,7 @@ greetJohn('Hello'); // 'Hello John!'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### runPromisesInSeries
@@ -4830,7 +4830,7 @@ runPromisesInSeries([() => delay(1000), () => delay(2000)]); // Executes each pr
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### sleep
@@ -4855,7 +4855,7 @@ async function sleepyWork() {
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### throttle ![advanced](/advanced.svg)
@@ -4904,7 +4904,7 @@ window.addEventListener(
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### times
@@ -4931,7 +4931,7 @@ console.log(output); // 01234
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### uncurry
@@ -4962,7 +4962,7 @@ uncurriedAdd(1, 2, 3); // 6
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### unfold
@@ -4990,7 +4990,7 @@ unfold(f, 10); // [-10, -20, -30, -40, -50]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### when
@@ -5013,7 +5013,7 @@ doubleEvenNumbers(1); // 1
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
   
@@ -5040,7 +5040,7 @@ approximatelyEqual(Math.PI / 2.0, 1.5708); // true
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### average
@@ -5062,7 +5062,7 @@ average(1, 2, 3); // 2
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### averageBy
@@ -5086,7 +5086,7 @@ averageBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n'); // 5
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### binomialCoefficient
@@ -5120,7 +5120,7 @@ binomialCoefficient(8, 2); // 28
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### clampNumber
@@ -5143,7 +5143,7 @@ clampNumber(1, -1, -5); // -1
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### degreesToRads
@@ -5164,7 +5164,7 @@ degreesToRads(90.0); // ~1.5708
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### digitize
@@ -5186,7 +5186,7 @@ digitize(123); // [1, 2, 3]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### distance
@@ -5207,7 +5207,7 @@ distance(1, 1, 2, 3); // 2.23606797749979
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### elo ![advanced](/advanced.svg)
@@ -5258,7 +5258,7 @@ own individual rating by supplying it as the third argument.
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### factorial
@@ -5289,7 +5289,7 @@ factorial(6); // 720
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### fibonacci
@@ -5315,7 +5315,7 @@ fibonacci(6); // [0, 1, 1, 2, 3, 5]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### gcd
@@ -5342,7 +5342,7 @@ gcd(...[12, 8, 32]); // 4
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### geometricProgression
@@ -5371,7 +5371,7 @@ geometricProgression(256, 1, 4); // [1, 4, 16, 64, 256]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### hammingDistance
@@ -5393,7 +5393,7 @@ hammingDistance(2, 3); // 1
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### inRange
@@ -5421,7 +5421,7 @@ inRange(3, 2); // false
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### isDivisible
@@ -5442,7 +5442,7 @@ isDivisible(6, 3); // true
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### isEven
@@ -5464,7 +5464,7 @@ isEven(3); // false
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### isPrime
@@ -5490,7 +5490,7 @@ isPrime(11); // true
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### lcm
@@ -5517,7 +5517,7 @@ lcm(...[1, 3, 4, 5]); // 60
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### luhnCheck ![advanced](/advanced.svg)
@@ -5553,7 +5553,7 @@ luhnCheck(123456789); // false
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### maxBy
@@ -5575,7 +5575,7 @@ maxBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n'); // 8
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### median
@@ -5601,7 +5601,7 @@ median([5, 6, 50, 1, -5]); // 5
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### minBy
@@ -5623,7 +5623,7 @@ minBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n'); // 2
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### percentile
@@ -5645,7 +5645,7 @@ percentile([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 6); // 55
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### powerset
@@ -5666,7 +5666,7 @@ powerset([1, 2]); // [[], [1], [2], [2,1]]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### primes
@@ -5693,7 +5693,7 @@ primes(10); // [2,3,5,7]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### radsToDegrees
@@ -5714,7 +5714,7 @@ radsToDegrees(Math.PI / 2); // 90
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### randomIntArrayInRange
@@ -5736,7 +5736,7 @@ randomIntArrayInRange(12, 35, 10); // [ 34, 14, 27, 17, 30, 27, 20, 26, 21, 14 ]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### randomIntegerInRange
@@ -5757,7 +5757,7 @@ randomIntegerInRange(0, 5); // 2
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### randomNumberInRange
@@ -5778,7 +5778,7 @@ randomNumberInRange(2, 10); // 6.0211363285087005
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### round
@@ -5800,7 +5800,7 @@ round(1.005, 2); // 1.01
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### sdbm
@@ -5828,7 +5828,7 @@ sdbm('name'); // -3521204949
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### standardDeviation
@@ -5858,7 +5858,7 @@ standardDeviation([10, 2, 38, 23, 38, 23, 21], true); // 12.29899614287479 (popu
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### sum
@@ -5879,7 +5879,7 @@ sum(...[1, 2, 3, 4]); // 10
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### sumBy
@@ -5902,7 +5902,7 @@ sumBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n'); // 20
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### sumPower
@@ -5931,7 +5931,7 @@ sumPower(10, 3, 5); //2925
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### toSafeInteger
@@ -5955,7 +5955,7 @@ toSafeInteger(Infinity); // 9007199254740991
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
   
@@ -5981,7 +5981,7 @@ atob('Zm9vYmFy'); // 'foobar'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### btoa
@@ -6002,7 +6002,7 @@ btoa('foobar'); // 'Zm9vYmFy'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### colorize
@@ -6043,7 +6043,7 @@ console.log(colorize(colorize('foo').yellow, colorize('foo').green).bgWhite); //
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### hasFlags
@@ -6069,7 +6069,7 @@ hasFlags('special'); // false
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### hashNode
@@ -6103,7 +6103,7 @@ hashNode(JSON.stringify({ a: 'a', b: [1, 2, 3, 4], foo: { c: 'bar' } })).then(co
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### isTravisCI
@@ -6124,7 +6124,7 @@ isTravisCI(); // true (if code is running on Travis CI)
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### JSONToFile
@@ -6147,7 +6147,7 @@ JSONToFile({ test: 'is passed' }, 'testJsonFile'); // writes the object to 'test
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### readFileLines
@@ -6184,7 +6184,7 @@ console.log(arr); // ['line1', 'line2', 'line3']
 
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### untildify
@@ -6205,7 +6205,7 @@ untildify('~/node'); // '/Users/aUser/node'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### UUIDGeneratorNode
@@ -6230,7 +6230,7 @@ UUIDGeneratorNode(); // '79c7c136-60ee-40a2-beb2-856f1feabefc'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
   
@@ -6271,7 +6271,7 @@ jQuery(element).on('click', view.click); // Logs 'clicked docs' when clicked.
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### deepClone
@@ -6301,7 +6301,7 @@ const b = deepClone(a); // a !== b, a.obj !== b.obj
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### deepFreeze
@@ -6331,7 +6331,7 @@ o[1][0] = 4; // not allowed as well
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### defaults
@@ -6352,7 +6352,7 @@ defaults({ a: 1 }, { b: 2 }, { b: 6 }, { a: 3 }); // { a: 1, b: 2 }
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### dig
@@ -6388,7 +6388,7 @@ dig(data, 'level4'); // undefined
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### equals ![advanced](/advanced.svg)
@@ -6420,7 +6420,7 @@ equals({ a: [2, { e: 3 }], b: [4], c: 'foo' }, { a: [2, { e: 3 }], b: [4], c: 'f
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### findKey
@@ -6448,7 +6448,7 @@ findKey(
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### findLastKey
@@ -6479,7 +6479,7 @@ findLastKey(
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### flattenObject
@@ -6510,7 +6510,7 @@ flattenObject({ a: { b: { c: 1 } }, d: 1 }); // { 'a.b.c': 1, d: 1 }
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### forOwn
@@ -6531,7 +6531,7 @@ forOwn({ foo: 'bar', a: 1 }, v => console.log(v)); // 'bar', 1
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### forOwnRight
@@ -6555,7 +6555,7 @@ forOwnRight({ foo: 'bar', a: 1 }, v => console.log(v)); // 1, 'bar'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### functions
@@ -6589,7 +6589,7 @@ functions(new Foo(), true); // ['a', 'b', 'c']
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### get
@@ -6618,7 +6618,7 @@ get(obj, 'selector.to.val', 'target[0]', 'target[2].a'); // ['val to select', 1,
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### invertKeyValues
@@ -6647,7 +6647,7 @@ invertKeyValues({ a: 1, b: 2, c: 1 }, value => 'group' + value); // { group1: [ 
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### lowercaseKeys
@@ -6674,7 +6674,7 @@ const myObjLower = lowercaseKeys(myObj); // {name: 'Adam', surname: 'Smith'};
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### mapKeys
@@ -6700,7 +6700,7 @@ mapKeys({ a: 1, b: 2 }, (val, key) => key + val); // { a1: 1, b2: 2 }
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### mapValues
@@ -6730,7 +6730,7 @@ mapValues(users, u => u.age); // { fred: 40, pebbles: 1 }
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### matches
@@ -6753,7 +6753,7 @@ matches({ hair: 'long', beard: true }, { age: 25, hair: 'long', beard: true }); 
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### matchesWith
@@ -6786,7 +6786,7 @@ matchesWith(
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### merge
@@ -6825,7 +6825,7 @@ merge(object, other); // { a: [ { x: 2 }, { y: 4 }, { z: 3 } ], b: [ 1, 2, 3 ], 
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### nest
@@ -6862,7 +6862,7 @@ const nestedComments = nest(comments); // [{ id: 1, parent_id: null, children: [
 
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### objectFromPairs
@@ -6883,7 +6883,7 @@ objectFromPairs([['a', 1], ['b', 2]]); // {a: 1, b: 2}
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### objectToPairs
@@ -6904,7 +6904,7 @@ objectToPairs({ a: 1, b: 2 }); // [['a',1],['b',2]]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### omit
@@ -6929,7 +6929,7 @@ omit({ a: 1, b: '2', c: 3 }, ['b']); // { 'a': 1, 'c': 3 }
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### omitBy
@@ -6954,7 +6954,7 @@ omitBy({ a: 1, b: '2', c: 3 }, x => typeof x === 'number'); // { b: '2' }
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### orderBy
@@ -6987,7 +6987,7 @@ orderBy(users, ['name', 'age']); // [{name: 'barney', age: 36}, {name: 'fred', a
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### pick
@@ -7009,7 +7009,7 @@ pick({ a: 1, b: '2', c: 3 }, ['a', 'c']); // { 'a': 1, 'c': 3 }
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### pickBy
@@ -7034,7 +7034,7 @@ pickBy({ a: 1, b: '2', c: 3 }, x => typeof x === 'number'); // { 'a': 1, 'c': 3 
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### renameKeys
@@ -7063,7 +7063,7 @@ renameKeys({ name: 'firstName', job: 'passion' }, obj); // { firstName: 'Bobo', 
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### shallowClone
@@ -7085,7 +7085,7 @@ const b = shallowClone(a); // a !== b
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### size
@@ -7120,7 +7120,7 @@ size({ one: 1, two: 2, three: 3 }); // 3
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### transform
@@ -7148,7 +7148,7 @@ transform(
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### truthCheckCollection
@@ -7169,7 +7169,7 @@ truthCheckCollection([{ user: 'Tinky-Winky', sex: 'male' }, { user: 'Dipsy', sex
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### unflattenObject ![advanced](/advanced.svg)
@@ -7207,7 +7207,7 @@ unflattenObject({ 'a.b.c': 1, d: 1 }); // { a: { b: { c: 1 } }, d: 1 }
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
   
@@ -7234,7 +7234,7 @@ byteSize('Hello World'); // 11
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### capitalize
@@ -7258,7 +7258,7 @@ capitalize('fooBar', true); // 'Foobar'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### capitalizeEveryWord
@@ -7279,7 +7279,7 @@ capitalizeEveryWord('hello world!'); // 'Hello World!'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### CSVToArray
@@ -7309,7 +7309,7 @@ CSVToArray('col1,col2\na,b\nc,d', ',', true); // [['a','b'],['c','d']];
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### CSVToJSON ![advanced](/advanced.svg)
@@ -7344,7 +7344,7 @@ CSVToJSON('col1;col2\na;b\nc;d', ';'); // [{'col1': 'a', 'col2': 'b'}, {'col1': 
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### decapitalize
@@ -7368,7 +7368,7 @@ decapitalize('FooBar', true); // 'fOOBAR'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### escapeHTML
@@ -7400,7 +7400,7 @@ escapeHTML('<a href="#">Me & you</a>'); // '&lt;a href=&quot;#&quot;&gt;Me &amp;
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### escapeRegExp
@@ -7421,7 +7421,7 @@ escapeRegExp('(test)'); // \\(test\\)
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### fromCamelCase
@@ -7449,7 +7449,7 @@ fromCamelCase('someJavascriptProperty', '_'); // 'some_javascript_property'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### isAbsoluteURL
@@ -7472,7 +7472,7 @@ isAbsoluteURL('/foo/bar'); // false
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### isAnagram
@@ -7502,7 +7502,7 @@ isAnagram('iceman', 'cinema'); // true
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### isLowerCase
@@ -7525,7 +7525,7 @@ isLowerCase('Ab4'); // false
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### isUpperCase
@@ -7549,7 +7549,7 @@ isLowerCase('aB4'); // false
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### mapString
@@ -7576,7 +7576,7 @@ mapString('lorem ipsum', c => c.toUpperCase()); // 'LOREM IPSUM'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### mask
@@ -7603,7 +7603,7 @@ mask(1234567890, -4, '$'); // '$$$$567890'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### pad
@@ -7628,7 +7628,7 @@ pad('foobar', 3); // 'foobar'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### palindrome
@@ -7653,7 +7653,7 @@ palindrome('taco cat'); // true
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### pluralize
@@ -7689,7 +7689,7 @@ autoPluralize(2, 'person'); // 'people'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### removeNonASCII
@@ -7710,7 +7710,7 @@ removeNonASCII('äÄçÇéÉêlorem-ipsumöÖÐþúÚ'); // 'lorem-ipsum'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### reverseString
@@ -7732,7 +7732,7 @@ reverseString('foobar'); // 'raboof'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### sortCharactersInString
@@ -7753,7 +7753,7 @@ sortCharactersInString('cabbage'); // 'aabbceg'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### splitLines
@@ -7774,7 +7774,7 @@ splitLines('This\nis a\nmultiline\nstring.\n'); // ['This', 'is a', 'multiline',
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### stringPermutations ![advanced](/advanced.svg)
@@ -7809,7 +7809,7 @@ stringPermutations('abc'); // ['abc','acb','bac','bca','cab','cba']
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### stripHTMLTags
@@ -7830,7 +7830,7 @@ stripHTMLTags('<p><em>lorem</em> <strong>ipsum</strong></p>'); // 'lorem ipsum'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### toCamelCase
@@ -7862,7 +7862,7 @@ toCamelCase('some-mixed_string with spaces_underscores-and-hyphens'); // 'someMi
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### toKebabCase
@@ -7892,7 +7892,7 @@ toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSo
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### toSnakeCase
@@ -7922,7 +7922,7 @@ toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSo
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### truncateString
@@ -7945,7 +7945,7 @@ truncateString('boomerang', 7); // 'boom...'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### unescapeHTML
@@ -7977,7 +7977,7 @@ unescapeHTML('&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;'); // '<a href=
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### URLJoin ![advanced](/advanced.svg)
@@ -8006,7 +8006,7 @@ URLJoin('http://www.google.com', 'a', '/b/cd', '?foo=123', '?bar=foo'); // 'http
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### words
@@ -8029,7 +8029,7 @@ words('python, javaScript & coffee'); // ["python", "javaScript", "coffee"]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
   
@@ -8056,7 +8056,7 @@ getType(new Set([1, 2, 3])); // 'set'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### is
@@ -8089,7 +8089,7 @@ is(Boolean, new Boolean(true)); // true
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### isArrayLike
@@ -8112,7 +8112,7 @@ isArrayLike(null); // false
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### isBoolean
@@ -8134,7 +8134,7 @@ isBoolean(false); // true
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### isEmpty
@@ -8164,7 +8164,7 @@ isEmpty(true); // true - type is not considered a collection
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### isFunction
@@ -8186,7 +8186,7 @@ isFunction(x => x); // true
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### isNil
@@ -8208,7 +8208,7 @@ isNil(undefined); // true
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### isNull
@@ -8229,7 +8229,7 @@ isNull(null); // true
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### isNumber
@@ -8251,7 +8251,7 @@ isNumber(1); // true
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### isObject
@@ -8278,7 +8278,7 @@ isObject(true); // false
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### isObjectLike
@@ -8302,7 +8302,7 @@ isObjectLike(null); // false
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### isPlainObject
@@ -8324,7 +8324,7 @@ isPlainObject(new Map()); // false
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### isPrimitive
@@ -8352,7 +8352,7 @@ isPrimitive([]); // false
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### isPromiseLike
@@ -8382,7 +8382,7 @@ isPromiseLike({}); // false
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### isString
@@ -8403,7 +8403,7 @@ isString('10'); // true
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### isSymbol
@@ -8424,7 +8424,7 @@ isSymbol(Symbol('x')); // true
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### isUndefined
@@ -8445,7 +8445,7 @@ isUndefined(undefined); // true
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### isValidJSON
@@ -8475,7 +8475,7 @@ isValidJSON(null); // true
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
   
@@ -8502,7 +8502,7 @@ castArray([1]); // [1]
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### cloneRegExp
@@ -8524,7 +8524,7 @@ const regExp2 = cloneRegExp(regExp); // /lorem ipsum/gi
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### coalesce
@@ -8545,7 +8545,7 @@ coalesce(null, undefined, '', NaN, 'Waldo'); // ""
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### coalesceFactory
@@ -8567,7 +8567,7 @@ customCoalesce(undefined, null, NaN, '', 'Waldo'); // "Waldo"
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### extendHex
@@ -8596,7 +8596,7 @@ extendHex('05a'); // '#0055aa'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### getURLParameters
@@ -8623,7 +8623,7 @@ getURLParameters('google.com'); // {}
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### hexToRGB ![advanced](/advanced.svg)
@@ -8664,7 +8664,7 @@ hexToRGB('#fff'); // 'rgb(255, 255, 255)'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### httpGet
@@ -8704,7 +8704,7 @@ Logs: {
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### httpPost
@@ -8764,7 +8764,7 @@ Logs: {
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### isBrowser
@@ -8788,7 +8788,7 @@ isBrowser(); // false (Node)
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### mostPerformant
@@ -8827,7 +8827,7 @@ mostPerformant([
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### nthArg
@@ -8852,7 +8852,7 @@ last(1, 2, 3, 4, 5); // 5
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### parseCookie
@@ -8882,7 +8882,7 @@ parseCookie('foo=bar; equation=E%3Dmc%5E2'); // { foo: 'bar', equation: 'E=mc^2'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### prettyBytes ![advanced](/advanced.svg)
@@ -8915,7 +8915,7 @@ prettyBytes(123456789, 3, false); // "123MB"
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### randomHexColorCode
@@ -8939,7 +8939,7 @@ randomHexColorCode(); // "#e34155"
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### RGBToHex
@@ -8960,7 +8960,7 @@ RGBToHex(255, 165, 1); // 'ffa501'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### serializeCookie
@@ -8981,7 +8981,7 @@ serializeCookie('foo', 'bar'); // 'foo=bar'
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### timeTaken
@@ -9007,7 +9007,7 @@ timeTaken(() => Math.pow(2, 10)); // 1024, (logged): timeTaken: 0.02099609375ms
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### toCurrency
@@ -9033,7 +9033,7 @@ toCurrency(322342436423.2435, 'JPY', 'fi'); // 322 342 436 423 ¥ | currency: Ja
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### toDecimalMark
@@ -9052,7 +9052,7 @@ toDecimalMark(12305030388.9087); // "12,305,030,388.909"
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### toOrdinalSuffix
@@ -9084,7 +9084,7 @@ toOrdinalSuffix('123'); // "123rd"
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### validateNumber
@@ -9107,7 +9107,7 @@ validateNumber('10'); // true
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 ### yesNo
@@ -9133,7 +9133,7 @@ yesNo('Foo', true); // true
 ```
 
 </details>
-  
+
 <br>[⬆ Back to top](#table-of-contents)
 
 
