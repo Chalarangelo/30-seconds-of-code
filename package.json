@@ -52,7 +52,7 @@
   },
   "homepage": "https://github.com/Chalarangelo/30-seconds-of-code#readme",
   "dependencies": {
-    "markdown-builder": "^0.8.1"
+    "markdown-builder": "^0.8.3-dev"
   },
   "jest": {
     "reporters": [

@@ -1,4 +1,4 @@
-![Logo](/logo.png "")  
+![Logo](/logo.png)  
 # Snippets Archive  
 These snippets, while useful and interesting, didn't quite make it into the repository due to either having very specific use-cases or being outdated. However we felt like they might still be useful to some readers, so here they are.  
 ## Table of Contents  
@@ -38,13 +38,12 @@ const JSONToDate = arr => {
 <details>
   <summary>Examples</summary>
   
-```js
+  ```js
 JSONToDate(/Date(1489525200000)/); // "14/3/2017"
 ```
 
 </details>
   
-
 [⬆ Back to top](#table-of-contents)
 
 ### speechSynthesis
@@ -67,13 +66,12 @@ const speechSynthesis = message => {
 <details>
   <summary>Examples</summary>
   
-```js
+  ```js
 speechSynthesis('Hello, World'); // // plays the message
 ```
 
 </details>
   
-
 [⬆ Back to top](#table-of-contents)
 
 ### binarySearch
@@ -99,14 +97,13 @@ const binarySearch = (arr, val, start = 0, end = arr.length - 1) => {
 <details>
   <summary>Examples</summary>
   
-```js
+  ```js
 binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 6); // 2
 binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 21); // -1
 ```
 
 </details>
   
-
 [⬆ Back to top](#table-of-contents)
 
 ### cleanObj
@@ -132,14 +129,13 @@ const cleanObj = (obj, keysToKeep = [], childIndicator) => {
 <details>
   <summary>Examples</summary>
   
-```js
+  ```js
 const testObj = { a: 1, b: 2, children: { a: 1, b: 2 } };
 cleanObj(testObj, ['a'], 'children'); // { a: 1, children : { a: 1}}
 ```
 
 </details>
   
-
 [⬆ Back to top](#table-of-contents)
 
 ### collatz
@@ -155,13 +151,12 @@ const collatz = n => (n % 2 === 0 ? n / 2 : 3 * n + 1);
 <details>
   <summary>Examples</summary>
   
-```js
+  ```js
 collatz(8); // 4
 ```
 
 </details>
   
-
 [⬆ Back to top](#table-of-contents)
 
 ### countVowels
@@ -177,14 +172,13 @@ const countVowels = str => (str.match(/[aeiou]/gi) || []).length;
 <details>
   <summary>Examples</summary>
   
-```js
+  ```js
 countVowels('foobar'); // 3
 countVowels('gym'); // 0
 ```
 
 </details>
   
-
 [⬆ Back to top](#table-of-contents)
 
 ### factors
@@ -435,7 +429,7 @@ const factors = (num, primes = false) => {
 <details>
   <summary>Examples</summary>
   
-```js
+  ```js
 factors(12); // [2,3,4,6,12]
 factors(12, true); // [2,3]
 factors(-12); // [2, -2, 3, -3, 4, -4, 6, -6, 12, -12]
@@ -444,7 +438,6 @@ factors(-12, true); // [2,3]
 
 </details>
   
-
 [⬆ Back to top](#table-of-contents)
 
 ### fibonacciCountUntilNum
@@ -461,13 +454,12 @@ const fibonacciCountUntilNum = num =>
 <details>
   <summary>Examples</summary>
   
-```js
+  ```js
 fibonacciCountUntilNum(10); // 7
 ```
 
 </details>
   
-
 [⬆ Back to top](#table-of-contents)
 
 ### fibonacciUntilNum
@@ -491,13 +483,12 @@ const fibonacciUntilNum = num => {
 <details>
   <summary>Examples</summary>
   
-```js
+  ```js
 fibonacciUntilNum(10); // [ 0, 1, 1, 2, 3, 5, 8 ]
 ```
 
 </details>
   
-
 [⬆ Back to top](#table-of-contents)
 
 ### httpDelete
@@ -522,7 +513,7 @@ const httpDelete = (url, callback, err = console.error) => {
 <details>
   <summary>Examples</summary>
   
-```js
+  ```js
 httpDelete('https://website.com/users/123', request => {
   console.log(request.responseText);
 }); // 'Deletes a user from the database'
@@ -530,7 +521,6 @@ httpDelete('https://website.com/users/123', request => {
 
 </details>
   
-
 [⬆ Back to top](#table-of-contents)
 
 ### httpPut
@@ -557,7 +547,7 @@ const httpPut = (url, data, callback, err = console.error) => {
 <details>
   <summary>Examples</summary>
   
-```js
+  ```js
 const password = "fooBaz";
 const data = JSON.stringify(password);
 httpPut('https://website.com/users/123', data, request => {
@@ -567,7 +557,6 @@ httpPut('https://website.com/users/123', data, request => {
 
 </details>
   
-
 [⬆ Back to top](#table-of-contents)
 
 ### isArmstrongNumber
@@ -586,14 +575,13 @@ const isArmstrongNumber = digits =>
 <details>
   <summary>Examples</summary>
   
-```js
+  ```js
 isArmstrongNumber(1634); // true
 isArmstrongNumber(56); // false
 ```
 
 </details>
   
-
 [⬆ Back to top](#table-of-contents)
 
 ### isSimilar
@@ -613,14 +601,13 @@ const isSimilar = (pattern, str) =>
 <details>
   <summary>Examples</summary>
   
-```js
+  ```js
 isSimilar('rt','Rohit'); // true
 isSimilar('tr','Rohit'); // false
 ```
 
 </details>
   
-
 [⬆ Back to top](#table-of-contents)
 
 ### levenshteinDistance
@@ -653,7 +640,7 @@ const levenshteinDistance = (string1, string2) => {
 <details>
   <summary>Examples</summary>
   
-```js
+  ```js
 levenshteinDistance('30-seconds-of-code','30-seconds-of-python-code'); // 7
 const compareStrings = (string1,string2) => (100 - levenshteinDistance(string1,string2) / Math.max(string1.length,string2.length));
 compareStrings('30-seconds-of-code', '30-seconds-of-python-code'); // 99.72 (%)
@@ -661,7 +648,6 @@ compareStrings('30-seconds-of-code', '30-seconds-of-python-code'); // 99.72 (%)
 
 </details>
   
-
 [⬆ Back to top](#table-of-contents)
 
 ### quickSort
@@ -1112,14 +1098,13 @@ const quickSort = ([n, ...nums], desc) =>
 <details>
   <summary>Examples</summary>
   
-```js
+  ```js
 quickSort([4, 1, 3, 2]); // [1,2,3,4]
 quickSort([4, 1, 3, 2], true); // [4,3,2,1]
 ```
 
 </details>
   
-
 [⬆ Back to top](#table-of-contents)
 
 ### removeVowels
@@ -1136,14 +1121,13 @@ const removeVowels = (str, repl = '') => str.replace(/[aeiou]/gi,repl);
 <details>
   <summary>Examples</summary>
   
-```js
+  ```js
 removeVowels("foobAr"); // "fbr"
 removeVowels("foobAr","*"); // "f**b*r"
 ```
 
 </details>
   
-
 [⬆ Back to top](#table-of-contents)
 
 ### solveRPN
@@ -1190,14 +1174,13 @@ const solveRPN = rpn => {
 <details>
   <summary>Examples</summary>
   
-```js
+  ```js
 solveRPN('15 7 1 1 + - / 3 * 2 1 1 + + -'); // 5
 solveRPN('2 3 ^'); // 8
 ```
 
 </details>
   
-
 [⬆ Back to top](#table-of-contents)
 
 ### howManyTimes
@@ -1226,7 +1209,7 @@ const howManyTimes = (num, divisor) => {
 <details>
   <summary>Examples</summary>
   
-```js
+  ```js
 howManyTimes(100, 2); // 2
 howManyTimes(100, 2.5); // 2
 howManyTimes(100, 0); // 0
@@ -1235,6 +1218,5 @@ howManyTimes(100, -1); // Infinity
 
 </details>
   
-
 [⬆ Back to top](#table-of-contents)
 
