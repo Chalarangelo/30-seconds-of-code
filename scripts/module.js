@@ -57,9 +57,9 @@ try {
     // Store the data to be written
     const toWrite = isNodeSnippet
       ? `${code
-          .replace('const ' + snippetName, 'export const ' + snippetName)
-          // Prevents errors from being thrown in browser environment
-          .replace('require(', 'typeof require !== "undefined" && require(')}`
+        .replace(`const ${snippetName}`,`export const ${snippetName}`)
+        // Prevents errors from being thrown in browser environment
+        .replace('require(', 'typeof require !== "undefined" && require(')}`
       : `export ${code}`;
     // Write data to the proper file
     fs.writeFileSync(`${TEMP_PATH}/${snippetName}.js`, toWrite);
