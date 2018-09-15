@@ -165,15 +165,17 @@ try {
       '</h4>';
     for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
       output += md
-        .render(`[${taggedSnippet[0]}](./${tag == 'array' ?'index' : tag}#${taggedSnippet[0].toLowerCase()})\n`)
+        .render(
+          `[${taggedSnippet[0]}](./${
+            tag == 'array' ? 'index' : tag
+          }#${taggedSnippet[0].toLowerCase()})\n`
+        )
         .replace(/<p>/g, '')
         .replace(/<\/p>/g, '')
-        .replace(/<a/g, `<a tags="${taggedSnippet[1].join(',')}"`)
-        ;
+        .replace(/<a/g, `<a tags="${taggedSnippet[1].join(',')}"`);
     output += '\n';
   }
-  output +=
-    '</nav><main class="col-centered">';
+  output += '</nav><main class="col-centered">';
   output += '<span id="top"><br/><br/></span>';
   // Loop over tags and snippets to create the list of snippets
   for (let tag of [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
@@ -196,17 +198,20 @@ try {
     for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
       localOutput +=
         '<div class="card code-card">' +
-       `<div class="corner ${taggedSnippet[1].includes('advanced') ? 'advanced' : taggedSnippet[1].includes('beginner') ? 'beginner' : 'intermediate'}"></div>` +
+        `<div class="corner ${
+          taggedSnippet[1].includes('advanced')
+            ? 'advanced'
+            : taggedSnippet[1].includes('beginner')
+              ? 'beginner'
+              : 'intermediate'
+        }"></div>` +
         md
           .render(`\n${snippets[taggedSnippet[0] + '.md']}`)
           .replace(
             /<h3/g,
             `<div class="section card-content"><h4 id="${taggedSnippet[0].toLowerCase()}"`
           )
-          .replace(
-            /<\/h3>/g,
-            '</h4>'
-          )
+          .replace(/<\/h3>/g, '</h4>')
           .replace(
             /<pre><code class="language-js">/m,
             '</div><div class="copy-button-container"><button class="copy-button" aria-label="Copy to clipboard"></button></div><pre><code class="language-js">'
@@ -220,7 +225,10 @@ try {
               )}</pre>`
           )
           .replace(/<\/div>\s*<pre class="/g, '</div><pre class="section card-code ')
-          .replace(/<\/pre>\s+<pre class="/g, '</pre><label class="collapse">examples</label><pre class="section card-examples ') +
+          .replace(
+            /<\/pre>\s+<pre class="/g,
+            '</pre><label class="collapse">examples</label><pre class="section card-examples '
+          ) +
         '</div>';
     // Add the ending static part
     localOutput += `\n${endPart + '\n'}`;
@@ -262,8 +270,13 @@ try {
       removeStyleLinkTypeAttributes: false,
       trimCustomFragments: true
     });
-    fs.writeFileSync(path.join(docsPath, (page.tag == 'array' ? 'index' : page.tag) + '.html'), page.content);
-    console.log(`${chalk.green('SUCCESS!')} ${page.tag == 'array' ? 'index' : page.tag}.html file generated!`);
+    fs.writeFileSync(
+      path.join(docsPath, (page.tag == 'array' ? 'index' : page.tag) + '.html'),
+      page.content
+    );
+    console.log(
+      `${chalk.green('SUCCESS!')} ${page.tag == 'array' ? 'index' : page.tag}.html file generated!`
+    );
   });
 } catch (err) {
   // Handle errors (hopefully not!)
@@ -376,15 +389,9 @@ try {
     archivedOutput +=
       '<div class="card code-card">' +
       md
-      .render(`\n${filteredArchivedSnippets[snippet[0]]}`)
-        .replace(
-          /<h3/g,
-      `<div class="section card-content"><h4 id="${snippet[0].toLowerCase()}"`
-        )
-        .replace(
-          /<\/h3>/g,
-          '</h4>'
-        )
+        .render(`\n${filteredArchivedSnippets[snippet[0]]}`)
+        .replace(/<h3/g, `<div class="section card-content"><h4 id="${snippet[0].toLowerCase()}"`)
+        .replace(/<\/h3>/g, '</h4>')
         .replace(
           /<pre><code class="language-js">/m,
           '</div><div class="copy-button-container"><button class="copy-button" aria-label="Copy to clipboard"></button></div><pre><code class="language-js">'
@@ -398,7 +405,10 @@ try {
             )}</pre>`
         )
         .replace(/<\/div>\s*<pre class="/g, '</div><pre class="section card-code ')
-        .replace(/<\/pre>\s+<pre class="/g, '</pre><label class="collapse">examples</label><pre class="section card-examples ') +
+        .replace(
+          /<\/pre>\s+<pre class="/g,
+          '</pre><label class="collapse">examples</label><pre class="section card-examples '
+        ) +
       '</div>';
 
   // Optimize punctuation nodes
@@ -467,15 +477,9 @@ try {
     glossaryOutput +=
       '<div class="card code-card"><div class="section card-content">' +
       md
-      .render(`\n${filteredGlossarySnippets[snippet[0]]}`)
-        .replace(
-          /<h3/g,
-          `<h4 id="${snippet[0].toLowerCase()}"`
-        )
-        .replace(
-          /<\/h3>/g,
-          '</h4>'
-        ) +
+        .render(`\n${filteredGlossarySnippets[snippet[0]]}`)
+        .replace(/<h3/g, `<h4 id="${snippet[0].toLowerCase()}"`)
+        .replace(/<\/h3>/g, '</h4>') +
       '</div></div>';
 
   glossaryOutput += `${glossaryEndPart}`;
@@ -523,7 +527,10 @@ try {
 }
 // Copy contributing.html
 try {
-  fs.copyFileSync(path.join(staticPartsPath, 'contributing.html'), path.join(docsPath, 'contributing.html'));
+  fs.copyFileSync(
+    path.join(staticPartsPath, 'contributing.html'),
+    path.join(docsPath, 'contributing.html')
+  );
   console.log(`${chalk.green('SUCCESS!')} contributing.html file copied!`);
 } catch (err) {
   console.log(`${chalk.red('ERROR!')} During contributing.html copying: ${err}`);
