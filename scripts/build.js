@@ -206,12 +206,12 @@ try {
           snippet.slice(snippet.lastIndexOf('```'))
         );
 
-      output += snippet + '\n<br>' + misc.link('⬆ Back to top', misc.anchor('Table of Contents')) + '\n\n';
+      output += `${snippet}\n<br>${misc.link('⬆ Back to top', misc.anchor('Table of Contents'))}\n\n`;
     }
   }
 
   // Add the ending static part
-  output += `\n${endPart + '\n'}`;
+  output += `\n${endPart}\n`;
   // Write to the README file
   fs.writeFileSync('README.md', output);
 } catch (err) {
