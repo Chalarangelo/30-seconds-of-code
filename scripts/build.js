@@ -63,7 +63,7 @@ if (
           data.slice(data.lastIndexOf('```js'), data.lastIndexOf('```')) +
             data.slice(data.lastIndexOf('```'))
         );
-      output += `${data}\n<br>${misc.link('⬆ Back to top', misc.anchor('Table of Contents'))}\n\n`
+      output += `${data}\n<br>${misc.link('⬆ Back to top', misc.anchor('Table of Contents'))}\n\n`;
     }
 
     // Write to the README file of the archive

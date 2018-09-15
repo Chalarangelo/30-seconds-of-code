@@ -87,12 +87,6 @@ try {
   startPart = fs.readFileSync(path.join(staticPartsPath, 'page-start.html'), 'utf8');
   endPart = fs.readFileSync(path.join(staticPartsPath, 'page-end.html'), 'utf8');
 
-  beginnerStartPart = fs.readFileSync(
-    path.join(staticPartsPath, 'beginner-page-start.html'),
-    'utf8'
-  );
-  beginnerEndPart = fs.readFileSync(path.join(staticPartsPath, 'beginner-page-end.html'), 'utf8');
-
   archivedStartPart = fs.readFileSync(
     path.join(staticPartsPath, 'archived-page-start.html'),
     'utf8'
@@ -395,7 +389,7 @@ try {
   process.exit(1);
 }
 
-// Copy static files 
+// Copy static files
 staticFiles.forEach(f => {
   try {
     fs.copyFileSync(path.join(staticPartsPath, f), path.join(docsPath, f));
