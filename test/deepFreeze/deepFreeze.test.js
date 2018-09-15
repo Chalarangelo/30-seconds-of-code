@@ -6,7 +6,7 @@ test('deepFreeze is a Function', () => {
 });
 
 test('modifying deeply freezed object prop throws an error in strict mode', () => {
-  let freezedObj = deepFreeze({a: 42});
+  let freezedObj = deepFreeze({ a: 42 });
 
   expect(() => {
     'use strict';
