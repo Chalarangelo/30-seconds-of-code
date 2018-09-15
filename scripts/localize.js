@@ -6,7 +6,6 @@
 // Load modules
 const fs = require('fs-extra');
 const path = require('path');
-const chalk = require('chalk');
 const util = require('./util');
 
 const LOCALE_PATH = 'locale';

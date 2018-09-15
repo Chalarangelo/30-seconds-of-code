@@ -169,15 +169,15 @@
       "id": "isSimilar",
       "type": "snippetAnalysis",
       "attributes": {
-        "codeLength": 225,
-        "tokenCount": 3,
-        "functionCount": 0,
-        "operatorCount": 0,
-        "keywordCount": 0,
-        "distinctFunctionCount": 0
+        "codeLength": 214,
+        "tokenCount": 78,
+        "functionCount": 3,
+        "operatorCount": 10,
+        "keywordCount": 1,
+        "distinctFunctionCount": 2
       },
       "meta": {
-        "hash": "b821ad7f7e34c6905f88e1618b629506e265e1a3459288ab7d7b3501b2476dd2"
+        "hash": "669cc6d3a6f96a65b6e4bf678bb0b95cde711baaabe206db66d69599f6e93a51"
       }
     },
     {
@@ -237,7 +237,7 @@
         "distinctFunctionCount": 3
       },
       "meta": {
-        "hash": "878970d0bdefe60f7f61db64b85bbb36b6869e2875a2c278fb269b8cff3b42b4"
+        "hash": "1f1d7def5d8b149626518181acb9f0e7fd0b44b31e5b42ce1e2f53e07eb01bc0"
       }
     },
     {

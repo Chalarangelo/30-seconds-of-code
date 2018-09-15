@@ -4,7 +4,6 @@
 */
 // Load modules
 const fs = require('fs-extra'),
-  path = require('path'),
   chalk = require('chalk');
 const util = require('./util');
 if (util.isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
@@ -19,9 +18,6 @@ let snippets = {},
   tagDbData = {},
   missingTags = 0,
   tagDbStats = {};
-// Load helper functions (these are from existing snippets in 30 seconds of code!)
-const objectFromPairs = arr => arr.reduce((a, v) => ((a[v[0]] = v[1]), a), {});
-const countOccurrences = (arr, value) => arr.reduce((a, v) => (v === value ? a + 1 : a + 0), 0);
 // Start the timer of the script
 console.time('Tagger');
 // Synchronously read all snippets and sort them as necessary (case-insensitive)
