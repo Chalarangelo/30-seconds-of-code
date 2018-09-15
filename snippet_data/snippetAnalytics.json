@@ -2794,15 +2794,15 @@
       "id": "objectFromPairs",
       "type": "snippetAnalysis",
       "attributes": {
-        "codeLength": 79,
-        "tokenCount": 44,
+        "codeLength": 86,
+        "tokenCount": 43,
         "functionCount": 1,
         "operatorCount": 4,
         "keywordCount": 1,
         "distinctFunctionCount": 1
       },
       "meta": {
-        "hash": "c19c3608e7a51b5b67046bc49b59e3e70e1161d0c5df0d77c8904a8e2bfa1c71"
+        "hash": "5dac82c5ca1e0d36ddc13bd1d3e643676c271f86eebf8aa4fb1afb382e07e771"
       }
     },
     {
@@ -3592,7 +3592,7 @@
         "codeLength": 92,
         "tokenCount": 31,
         "functionCount": 1,
-        "operatorCount": 3,
+        "operatorCount": 4,
         "keywordCount": 1,
         "distinctFunctionCount": 1
       },

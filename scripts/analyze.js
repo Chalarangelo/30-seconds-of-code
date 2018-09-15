@@ -7,7 +7,6 @@ const fs = require('fs-extra');
 const path = require('path');
 const chalk = require('chalk');
 const prism = require('prismjs');
-const util = require('./util');
 let snippetsData = require('../snippet_data/snippets.json');
 let snippetsArchiveData = require('../snippet_data/snippetsArchive.json');
 // Paths

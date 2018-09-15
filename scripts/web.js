@@ -4,7 +4,6 @@
 */
 // Load modules
 const fs = require('fs-extra'),
-  https = require('https'),
   path = require('path'),
   chalk = require('chalk'),
   md = require('markdown-it')(),
