@@ -19,7 +19,7 @@ const unescapeHTML = str =>
         '&amp;': '&',
         '&lt;': '<',
         '&gt;': '>',
-        '&#39;': "'",
+        '&#39;': '\'',
         '&quot;': '"'
       }[tag] || tag)
   );
@@ -58,50 +58,21 @@ const snippetsPath = './snippets',
   archivedSnippetsPath = './snippets_archive',
   glossarySnippetsPath = './glossary',
   staticPartsPath = './static-parts',
-  docsPath = './docs';
+  docsPath = './docs',
+  staticFiles = ['about.html', 'contributing.html', 'array.html'];
 // Set variables for script
 let snippets = {},
   archivedSnippets = {},
-  beginnerSnippetNames = [
-    'allEqual',
-    'everyNth',
-    'filterNonUnique',
-    'last',
-    'maxN',
-    'minN',
-    'nthElement',
-    'offset',
-    'sample',
-    'similarity',
-    'tail',
-    'currentURL',
-    'hasClass',
-    'getMeridiemSuffixOfInteger',
-    'factorial',
-    'fibonacci',
-    'gcd',
-    'isDivisible',
-    'isEven',
-    'isPrime',
-    'lcm',
-    'randomIntegerInRange',
-    'sum',
-    'reverseString',
-    'truncateString'
-  ],
+  glossarySnippets = {},
   startPart = '',
   endPart = '',
   output = '',
-  beginnerStartPart = '',
-  beginnerEndPart = '',
-  beginnerOutput = '',
   archivedStartPart = '',
   archivedEndPart = '',
   archivedOutput = '',
   glossaryStartPart = '',
   glossaryEndPart = '',
   glossaryOutput = '',
-  indexStaticFile = '',
   pagesOutput = [],
   tagDbData = {};
 // Start the timer of the script
@@ -167,7 +138,7 @@ try {
       output += md
         .render(
           `[${taggedSnippet[0]}](./${
-            tag == 'array' ? 'index' : tag
+            tag === 'array' ? 'index' : tag
           }#${taggedSnippet[0].toLowerCase()})\n`
         )
         .replace(/<p>/g, '')
@@ -191,7 +162,7 @@ try {
     let localOutput = output
       .replace(/\$tag/g, util.capitalize(tag))
       .replace(new RegExp(`./${tag}#`, 'g'), '#');
-    if (tag === 'array') localOutput = localOutput.replace(new RegExp(`./index#`, 'g'), '#');
+    if (tag === 'array') localOutput = localOutput.replace(new RegExp('./index#', 'g'), '#');
     localOutput += md
       .render(`## ${util.capitalize(tag, true)}\n`)
       .replace(/<h2>/g, '<h2 class="category-name">');
@@ -271,11 +242,11 @@ try {
       trimCustomFragments: true
     });
     fs.writeFileSync(
-      path.join(docsPath, (page.tag == 'array' ? 'index' : page.tag) + '.html'),
+      path.join(docsPath, (page.tag === 'array' ? 'index' : page.tag) + '.html'),
       page.content
     );
     console.log(
-      `${chalk.green('SUCCESS!')} ${page.tag == 'array' ? 'index' : page.tag}.html file generated!`
+      `${chalk.green('SUCCESS!')} ${page.tag === 'array' ? 'index' : page.tag}.html file generated!`
     );
   });
 } catch (err) {
@@ -284,95 +255,10 @@ try {
   process.exit(1);
 }
 
-/*
-// Create the output for the beginner.html file
-try {
-  // Add the static part
-  beginnerOutput += `${beginnerStartPart + '\n'}`;
-
-  // Filter begginer snippets
-  const filteredBeginnerSnippets = Object.keys(snippets)
-    .filter(key => beginnerSnippetNames.map(name => name + '.md').includes(key))
-    .reduce((obj, key) => {
-      obj[key] = snippets[key];
-      return obj;
-    }, {});
-
-  for (let snippet of Object.entries(filteredBeginnerSnippets))
-    beginnerOutput +=
-      '<div class="row">' +
-      '<div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">' +
-      '<div class="card fluid">' +
-      md
-        .render(`\n${snippets[snippet[0]]}`)
-        .replace(/<h3/g, `<h3 id="${snippet[0].toLowerCase()}" class="section double-padded"`)
-        .replace(
-          /<\/h3>/g,
-          `${snippet[1].includes('advanced') ? '<mark class="tag">advanced</mark>' : ''}</h3>`
-        )
-        .replace(/<\/h3>/g, '</h3><div class="section double-padded">')
-        .replace(
-          /<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm,
-          (match, p1) =>
-            `<pre class="language-js">${Prism.highlight(
-              unescapeHTML(p1),
-              Prism.languages.javascript
-            )}</pre>`
-        )
-        .replace(/<\/pre>\s+<pre/g, '</pre><label class="collapse">Show examples</label><pre') +
-      '<button class="primary clipboard-copy">&#128203;&nbsp;Copy to clipboard</button>' +
-      '</div></div></div></div>';
-
-  // Optimize punctuation nodes
-  beginnerOutput = util.optimizeNodes(
-    beginnerOutput,
-    /<span class="token punctuation">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token punctuation">([^\0]*?)<\/span>/gm,
-    (match, p1, p2, p3) => `<span class="token punctuation">${p1}${p2}${p3}</span>`
-  );
-  // Optimize operator nodes
-  beginnerOutput = util.optimizeNodes(
-    beginnerOutput,
-    /<span class="token operator">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token operator">([^\0]*?)<\/span>/gm,
-    (match, p1, p2, p3) => `<span class="token operator">${p1}${p2}${p3}</span>`
-  );
-  // Optimize keyword nodes
-  beginnerOutput = util.optimizeNodes(
-    beginnerOutput,
-    /<span class="token keyword">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token keyword">([^\0]*?)<\/span>/gm,
-    (match, p1, p2, p3) => `<span class="token keyword">${p1}${p2}${p3}</span>`
-  );
-
-  beginnerOutput += `${beginnerEndPart}`;
-
-  // Generate and minify 'beginner.html' file
-  const minifiedBeginnerOutput = minify(beginnerOutput, {
-    collapseBooleanAttributes: true,
-    collapseWhitespace: true,
-    decodeEntities: false,
-    minifyCSS: true,
-    minifyJS: true,
-    keepClosingSlash: true,
-    processConditionalComments: true,
-    removeAttributeQuotes: false,
-    removeComments: true,
-    removeEmptyAttributes: false,
-    removeOptionalTags: false,
-    removeScriptTypeAttributes: false,
-    removeStyleLinkTypeAttributes: false,
-    trimCustomFragments: true
-  });
-  fs.writeFileSync(path.join(docsPath, 'beginner.html'), minifiedBeginnerOutput);
-  console.log(`${chalk.green('SUCCESS!')} beginner.html file generated!`);
-} catch (err) {
-  console.log(`${chalk.red('ERROR!')} During beginner.html generation: ${err}`);
-  process.exit(1);
-}
-*/
-
 // Create the output for the archive.html file
 try {
   // Add the static part
-  archivedOutput += `${archivedStartPart + '\n'}`;
+  archivedOutput += `${archivedStartPart}\n`;
 
   // Filter README.md from folder
   const excludeFiles = ['README.md'];
@@ -460,7 +346,7 @@ try {
 // Create the output for the glossary.html file
 try {
   // Add the static part
-  glossaryOutput += `${glossaryStartPart + '\n'}`;
+  glossaryOutput += `${glossaryStartPart}\n`;
 
   // Filter README.md from folder
   const excludeFiles = ['README.md'];
@@ -509,33 +395,16 @@ try {
   process.exit(1);
 }
 
-// Copy about.html
-try {
-  fs.copyFileSync(path.join(staticPartsPath, 'about.html'), path.join(docsPath, 'about.html'));
-  console.log(`${chalk.green('SUCCESS!')} about.html file copied!`);
-} catch (err) {
-  console.log(`${chalk.red('ERROR!')} During about.html copying: ${err}`);
-  process.exit(1);
-}
-// Copy array.html
-try {
-  fs.copyFileSync(path.join(staticPartsPath, 'array.html'), path.join(docsPath, 'array.html'));
-  console.log(`${chalk.green('SUCCESS!')} array.html file copied!`);
-} catch (err) {
-  console.log(`${chalk.red('ERROR!')} During array.html copying: ${err}`);
-  process.exit(1);
-}
-// Copy contributing.html
-try {
-  fs.copyFileSync(
-    path.join(staticPartsPath, 'contributing.html'),
-    path.join(docsPath, 'contributing.html')
-  );
-  console.log(`${chalk.green('SUCCESS!')} contributing.html file copied!`);
-} catch (err) {
-  console.log(`${chalk.red('ERROR!')} During contributing.html copying: ${err}`);
-  process.exit(1);
-}
+// Copy static files 
+staticFiles.forEach(f => {
+  try {
+    fs.copyFileSync(path.join(staticPartsPath, f), path.join(docsPath, f));
+    console.log(`${chalk.green('SUCCESS!')} ${f} file copied!`);
+  } catch (err) {
+    console.log(`${chalk.red('ERROR!')} During ${f} copying: ${err}`);
+    process.exit(1);
+  }
+});
 
 // Log the time taken
 console.timeEnd('Webber');
