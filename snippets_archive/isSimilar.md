@@ -7,9 +7,15 @@ Adapted from [here](https://github.com/forrestthewoods/lib_fts/blob/80f3f8c52db5
 
 ```js
 const isSimilar = (pattern, str) =>
-	[...str].reduce(
-		(matchIndex, char) => char.toLowerCase() === (pattern[matchIndex]  || '').toLowerCase() ? matchIndex + 1 : matchIndex, 0
-	) === pattern.length ? true : false;
+  [...str].reduce(
+    (matchIndex, char) =>
+      char.toLowerCase() === (pattern[matchIndex] || '').toLowerCase()
+        ? matchIndex + 1
+        : matchIndex,
+    0
+  ) === pattern.length
+    ? true
+    : false;
 ```
 
 ```js

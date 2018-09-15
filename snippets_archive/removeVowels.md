@@ -6,7 +6,7 @@ Use `String.replace()` with a regexp to replace all vowels in `str`.
 Omot `repl` to use a default value of `''`.
 
 ```js
-const removeVowels = (str, repl = '') => str.replace(/[aeiou]/gi,repl);
+const removeVowels = (str, repl = '') => str.replace(/[aeiou]/gi, repl);
 ```
 
 ```js
