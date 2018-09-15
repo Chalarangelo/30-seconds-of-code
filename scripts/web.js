@@ -513,6 +513,14 @@ try {
   console.log(`${chalk.red('ERROR!')} During about.html copying: ${err}`);
   process.exit(1);
 }
+// Copy array.html
+try {
+  fs.copyFileSync(path.join(staticPartsPath, 'array.html'), path.join(docsPath, 'array.html'));
+  console.log(`${chalk.green('SUCCESS!')} array.html file copied!`);
+} catch (err) {
+  console.log(`${chalk.red('ERROR!')} During array.html copying: ${err}`);
+  process.exit(1);
+}
 // Copy contributing.html
 try {
   fs.copyFileSync(path.join(staticPartsPath, 'contributing.html'), path.join(docsPath, 'contributing.html'));
