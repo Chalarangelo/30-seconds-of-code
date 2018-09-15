@@ -15,27 +15,17 @@ const SNIPPETS_PATH = './snippets';
 const SNIPPETS_ARCHIVE_PATH = './snippets_archive';
 const STATIC_PARTS_PATH = './static-parts';
 
-if (
-  util.isTravisCI() &&
-  /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])
-) {
+if (util.isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
   console.log(
-    `${chalk.green(
-      'NOBUILD'
-    )} README build terminated, parent commit is a Travis build!`
+    `${chalk.green('NOBUILD')} README build terminated, parent commit is a Travis build!`
   );
   process.exit(0);
 }
 if (
   util.isTravisCI() &&
-  (process.env['TRAVIS_EVENT_TYPE'] === 'cron' ||
-    process.env['TRAVIS_EVENT_TYPE'] === 'api')
+  (process.env['TRAVIS_EVENT_TYPE'] === 'cron' || process.env['TRAVIS_EVENT_TYPE'] === 'api')
 ) {
-  console.log(
-    `${chalk.green(
-      'ARCHIVE'
-    )} Cron job or custom build, building archive README!`
-  );
+  console.log(`${chalk.green('ARCHIVE')} Cron job or custom build, building archive README!`);
   console.time('Builder');
   let snippets = {};
   // Synchronously read all snippets from snippets_archive folder and sort them as necessary (case-insensitive)
@@ -45,10 +35,7 @@ if (
       .sort((a, b) => a.toLowerCase() - b.toLowerCase());
     // Store the data read from each snippet in the appropriate object
     for (const name of snippetFilenames.filter(s => s !== 'README.md')) {
-      snippets[name] = fs.readFileSync(
-        path.join(SNIPPETS_ARCHIVE_PATH, name),
-        'utf8'
-      );
+      snippets[name] = fs.readFileSync(path.join(SNIPPETS_ARCHIVE_PATH, name), 'utf8');
     }
   } catch (err) {
     console.log(`${chalk.red('ERROR!')} During snippet loading: ${err}`);
@@ -76,23 +63,18 @@ if (
           data.slice(data.lastIndexOf('```js'), data.lastIndexOf('```')) +
             data.slice(data.lastIndexOf('```'))
         );
-      output += data + '\n<br>' + misc.link('⬆ Back to top', misc.anchor('Table of Contents')) + '\n\n';
+      output +=
+        data + '\n<br>' + misc.link('⬆ Back to top', misc.anchor('Table of Contents')) + '\n\n';
     }
 
     // Write to the README file of the archive
     fs.writeFileSync(path.join(SNIPPETS_ARCHIVE_PATH, 'README.md'), output);
   } catch (err) {
-    console.log(
-      `${chalk.red(
-        'ERROR!'
-      )} During README generation for snippets archive: ${err}`
-    );
+    console.log(`${chalk.red('ERROR!')} During README generation for snippets archive: ${err}`);
     process.exit(1);
   }
 
-  console.log(
-    `${chalk.green('SUCCESS!')} README file generated for snippets archive!`
-  );
+  console.log(`${chalk.green('SUCCESS!')} README file generated for snippets archive!`);
   console.timeEnd('Builder');
 }
 let snippets = {};
@@ -124,14 +106,8 @@ snippets = util.readSnippets(SNIPPETS_PATH);
 
 // Load static parts for the README file
 try {
-  startPart = fs.readFileSync(
-    path.join(STATIC_PARTS_PATH, 'README-start.md'),
-    'utf8'
-  );
-  endPart = fs.readFileSync(
-    path.join(STATIC_PARTS_PATH, 'README-end.md'),
-    'utf8'
-  );
+  startPart = fs.readFileSync(path.join(STATIC_PARTS_PATH, 'README-start.md'), 'utf8');
+  endPart = fs.readFileSync(path.join(STATIC_PARTS_PATH, 'README-end.md'), 'utf8');
 } catch (err) {
   console.log(`${chalk.red('ERROR!')} During static part loading: ${err}`);
   process.exit(1);
@@ -170,15 +146,16 @@ try {
     const taggedSnippets = Object.entries(tagDbData).filter(v => v[1][0] === tag);
     output += headers.h3((EMOJIS[tag] || '') + ' ' + capitalizedTag).trim();
 
-    output += misc.collapsible(
-      'View contents',
-      lists.ul(taggedSnippets, (snippet) =>
-        misc.link(
-          `\`${snippet[0]}\``,
-          `${misc.anchor(snippet[0])}${snippet[1].includes('advanced') ? '-' : ''}`
+    output +=
+      misc.collapsible(
+        'View contents',
+        lists.ul(taggedSnippets, snippet =>
+          misc.link(
+            `\`${snippet[0]}\``,
+            `${misc.anchor(snippet[0])}${snippet[1].includes('advanced') ? '-' : ''}`
+          )
         )
-      )
-    ) + '\n';
+      ) + '\n';
   }
 
   // Loop over tags and snippets to create the list of snippets
@@ -199,14 +176,18 @@ try {
         snippet = snippet.join('\n');
       }
 
-      snippet = snippet.slice(0, snippet.lastIndexOf('```js')).trim() +
+      snippet =
+        snippet.slice(0, snippet.lastIndexOf('```js')).trim() +
         misc.collapsible(
           'Examples',
           snippet.slice(snippet.lastIndexOf('```js'), snippet.lastIndexOf('```')) +
-          snippet.slice(snippet.lastIndexOf('```'))
+            snippet.slice(snippet.lastIndexOf('```'))
         );
 
-      output += `${snippet}\n<br>${misc.link('⬆ Back to top', misc.anchor('Table of Contents'))}\n\n`;
+      output += `${snippet}\n<br>${misc.link(
+        '⬆ Back to top',
+        misc.anchor('Table of Contents')
+      )}\n\n`;
     }
   }
 
