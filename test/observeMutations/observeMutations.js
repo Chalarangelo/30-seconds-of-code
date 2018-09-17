@@ -1,5 +1,5 @@
 const observeMutations = (element, callback, options) => {
-  const observer = new MutationObserver(mutations => mutations.forEach(m => callback(m)));
+  const observer = new MutationObserver(mutations => mutations.forEach(callback));
   observer.observe(
     element,
     Object.assign(
