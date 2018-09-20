@@ -1,6 +1,2 @@
-const takeRightWhile = (arr, func) => {
-  for (let i of arr.reverse().keys())
-    if (func(arr[i])) return arr.reverse().slice(arr.length - i, arr.length);
-  return arr;
-};
+const takeRightWhile = (arr, func) => arr.reduceRight((acc, el) => func(el) ? acc : [el, ...acc], []);
 module.exports = takeRightWhile;
