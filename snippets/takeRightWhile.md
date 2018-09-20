@@ -2,15 +2,10 @@
 
 Removes elements from the end of an array until the passed function returns `true`. Returns the removed elements.
 
-Loop through the array, using a `for...of` loop over `Array.keys()` until the returned value from the function is `true`.
-Return the removed elements, using `Array.reverse()` and `Array.slice()`.
+Loop through the array, using a `Array.prototype.reduceRight` and accumulate element if function returns falsy value.
 
 ```js
-const takeRightWhile = (arr, func) => {
-  for (let i of arr.reverse().keys())
-    if (func(arr[i])) return arr.reverse().slice(arr.length - i, arr.length);
-  return arr;
-};
+const takeRightWhile = (arr, func) => arr.reduceRight((acc, el) => func(el) ? acc : [el, ...acc], []);
 ```
 
 ```js
