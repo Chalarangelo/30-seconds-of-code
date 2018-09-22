@@ -39,38 +39,43 @@ const unescapeHTML = str =>
         '&quot;': '"'
       }[tag] || tag)
   );
-const generateSnippetCard = (snippetList, snippetKey, addCornerTag = false) => `<div class="card code-card">
-${addCornerTag ? `<div class="corner ${
-    snippetKey[1].includes('advanced')
-      ? 'advanced'
-      : snippetKey[1].includes('beginner')
-        ? 'beginner'
-        : 'intermediate'
-  }"></div>`: ''}
+const generateSnippetCard = (
+  snippetList,
+  snippetKey,
+  addCornerTag = false
+) => `<div class="card code-card">
+${
+  addCornerTag
+    ? `<div class="corner ${
+        snippetKey[1].includes('advanced')
+          ? 'advanced'
+          : snippetKey[1].includes('beginner')
+            ? 'beginner'
+            : 'intermediate'
+      }"></div>`
+    : ''
+}
   ${md
-  .render(`\n${addCornerTag ? snippetList[snippetKey[0] + '.md'] : snippetList[snippetKey[0]]}`)
-  .replace(
-    /<h3/g,
-  `<div class="section card-content"><h4 id="${snippetKey[0].toLowerCase()}"`
-  )
-  .replace(/<\/h3>/g, '</h4>')
-  .replace(
-    /<pre><code class="language-js">/m,
-    '</div><div class="copy-button-container"><button class="copy-button" aria-label="Copy to clipboard"></button></div><pre><code class="language-js">'
-  )
-  .replace(
-    /<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm,
-    (match, p1) =>
-      `<pre class="language-js">${Prism.highlight(
-        unescapeHTML(p1),
-        Prism.languages.javascript
-      )}</pre>`
-  )
-  .replace(/<\/div>\s*<pre class="/g, '</div><pre class="section card-code ')
-  .replace(
-    /<\/pre>\s+<pre class="/g,
-    '</pre><label class="collapse">examples</label><pre class="section card-examples '
-  )}
+    .render(`\n${addCornerTag ? snippetList[snippetKey[0] + '.md'] : snippetList[snippetKey[0]]}`)
+    .replace(/<h3/g, `<div class="section card-content"><h4 id="${snippetKey[0].toLowerCase()}"`)
+    .replace(/<\/h3>/g, '</h4>')
+    .replace(
+      /<pre><code class="language-js">/m,
+      '</div><div class="copy-button-container"><button class="copy-button" aria-label="Copy to clipboard"></button></div><pre><code class="language-js">'
+    )
+    .replace(
+      /<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm,
+      (match, p1) =>
+        `<pre class="language-js">${Prism.highlight(
+          unescapeHTML(p1),
+          Prism.languages.javascript
+        )}</pre>`
+    )
+    .replace(/<\/div>\s*<pre class="/g, '</div><pre class="section card-code ')
+    .replace(
+      /<\/pre>\s+<pre class="/g,
+      '</pre><label class="collapse">examples</label><pre class="section card-examples '
+    )}
   </div>`;
 const filterSnippets = (snippetList, excludedFiles) =>
   Object.keys(snippetList)
@@ -286,7 +291,7 @@ try {
 
   // Generate glossary snippets from md files
   for (let snippet of Object.entries(filteredGlossarySnippets))
-    glossaryOutput += 
+    glossaryOutput +=
       '<div class="card code-card"><div class="section card-content">' +
       md
         .render(`\n${filteredGlossarySnippets[snippet[0]]}`)
