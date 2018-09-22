@@ -5,7 +5,7 @@ Use `console.log` in a pipeline as this function simply encloses it and returns 
 Logs a value and returns it.
 
 ```js
-const pipeLog = data => console.log(data) || data
+const pipeLog = data => console.log(data) || data;
 ```
 
 ```js

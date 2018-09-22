@@ -209,6 +209,7 @@ pick:object,array,intermediate
 pickBy:object,array,function,intermediate
 pipeAsyncFunctions:adapter,function,promise,intermediate
 pipeFunctions:adapter,function,intermediate
+pipeLog:uncategorized
 pluralize:string,intermediate
 powerset:math,beginner
 prefix:browser,utility,intermediate
