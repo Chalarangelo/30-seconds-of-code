@@ -5068,7 +5068,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "sampleSize.md",
-        "text": "Gets `n` random elements at unique keys from `array` up to the size of `array`.\n\nShuffle the array using the [Fisher-Yates algorithm](https://github.com/chalarangelo/30-seconds-of-code#shuffle).\nUse `Array.slice()` to get the first `n` elements.\nOmit the second argument, `n` to get only one element at random from the array.",
+        "text": "Gets `n` random elements at unique keys from `array` up to the size of `array`.\n\nShuffle the array using the [Fisher-Yates algorithm](https://github.com/30-seconds/30-seconds-of-code#shuffle).\nUse `Array.slice()` to get the first `n` elements.\nOmit the second argument, `n` to get only one element at random from the array.",
         "codeBlocks": [
           "const sampleSize = ([...arr], n = 1) => {\n  let m = arr.length;\n  while (m) {\n    const i = Math.floor(Math.random() * m--);\n    [arr[m], arr[i]] = [arr[i], arr[m]];\n  }\n  return arr.slice(0, n);\n};",
           "sampleSize([1, 2, 3], 2); // [3,1]\nsampleSize([1, 2, 3], 4); // [2,3,1]"
@@ -5081,7 +5081,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "80c6cab3caeedd2dd971a1a5999999c1f181c643d0aa68c3202aa55ad9a574fb"
+        "hash": "b05cc00e600b631b56453969afe18d84e0ee7e27c523f22e00c7c81f5e9b6e84"
       }
     },
     {
@@ -5212,7 +5212,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "shuffle.md",
-        "text": "Randomizes the order of the values of an array, returning a new array.\n\nUses the [Fisher-Yates algorithm](https://github.com/chalarangelo/30-seconds-of-code#shuffle) to reorder the elements of the array.",
+        "text": "Randomizes the order of the values of an array, returning a new array.\n\nUses the [Fisher-Yates algorithm](https://github.com/30-seconds/30-seconds-of-code#shuffle) to reorder the elements of the array.",
         "codeBlocks": [
           "const shuffle = ([...arr]) => {\n  let m = arr.length;\n  while (m) {\n    const i = Math.floor(Math.random() * m--);\n    [arr[m], arr[i]] = [arr[i], arr[m]];\n  }\n  return arr;\n};",
           "const foo = [1, 2, 3];\nshuffle(foo); // [2,3,1], foo = [1,2,3]"
@@ -5225,7 +5225,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "df6c93b6e25c87f12c6ee57a8c4d1b877119bdc422588b4cb2db230b91be3ca2"
+        "hash": "0edbf4eb8433058722c7b8ff2aef2a088be5d9e9688fd997617355141a418161"
       }
     },
     {

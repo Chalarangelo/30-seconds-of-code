@@ -20,8 +20,8 @@
 
 - [30 Seconds of CSS](https://30-seconds.github.io/30-seconds-of-css/)
 - [30 Seconds of Interviews](https://30secondsofinterviews.org/) 
-- [30 Seconds of Python](https://github.com/kriadmin/30-seconds-of-python-code) *unofficial*
-= [30 Seconds of PHP](https://github.com/appzcoder/30-seconds-of-php-code) *unofficial*
+- [30 Seconds of Python](https://github.com/kriadmin/30-seconds-of-python-code) *(unofficial)*
+- [30 Seconds of PHP](https://github.com/appzcoder/30-seconds-of-php-code) *(unofficial)*
 
 #### Package
 

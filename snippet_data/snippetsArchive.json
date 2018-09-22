@@ -239,6 +239,23 @@
       }
     },
     {
+      "id": "pipeLog",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "pipeLog.md",
+        "text": "Logs a value and returns it.\n\nUse `console.log` to log the supplied value, combined with the `||` operator to return it.",
+        "codeBlocks": [
+          "const pipeLog = data => console.log(data) || data;",
+          "pipeLog(1); // logs `1` and returns `1`"
+        ],
+        "tags": []
+      },
+      "meta": {
+        "archived": true,
+        "hash": "da9808c8ba24ab48b5407ccf48053281bf12627cbe6e24c1b820bfb1216384cb"
+      }
+    },
+    {
       "id": "quickSort",
       "type": "snippet",
       "attributes": {
