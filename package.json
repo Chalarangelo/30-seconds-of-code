@@ -39,7 +39,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Chalarangelo/30-seconds-of-code.git"
+    "url": "git+https://github.com/30-seconds/30-seconds-of-code.git"
   },
   "keywords": [
     "javascript",
@@ -49,9 +49,9 @@
   "author": "Chalarangelo (chalarangelo@gmail.com)",
   "license": "CC0-1.0",
   "bugs": {
-    "url": "https://github.com/Chalarangelo/30-seconds-of-code/issues"
+    "url": "https://github.com/30-seconds/30-seconds-of-code/issues"
   },
-  "homepage": "https://github.com/Chalarangelo/30-seconds-of-code#readme",
+  "homepage": "https://github.com/30-seconds/30-seconds-of-code#readme",
   "dependencies": {},
   "jest": {
     "reporters": [
