@@ -121,21 +121,7 @@ console.log(tagDbData);
 
 // Create the output for the README file
 try {
-  const tags = [
-    ...new Set(
-      Object.entries(tagDbData)
-        .map(t => t[1][0])
-        .filter(v => v)
-        .sort(
-          (a, b) =>
-            util.capitalize(a, true) === 'Uncategorized'
-              ? 1
-              : util.capitalize(b, true) === 'Uncategorized'
-                ? -1
-                : a.localeCompare(b)
-        )
-    )
-  ];
+  const tags = util.prepTaggedData(tagDbData);
 
   // Add the start static part
   output += `${startPart}\n`;
