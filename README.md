@@ -20,8 +20,8 @@
 
 - [30 Seconds of CSS](https://30-seconds.github.io/30-seconds-of-css/)
 - [30 Seconds of Interviews](https://30secondsofinterviews.org/) 
-- [30 Seconds of Python](https://github.com/kriadmin/30-seconds-of-python-code) *unofficial*
-= [30 Seconds of PHP](https://github.com/appzcoder/30-seconds-of-php-code) *unofficial*
+- [30 Seconds of Python](https://github.com/kriadmin/30-seconds-of-python-code) *(unofficial)*
+- [30 Seconds of PHP](https://github.com/appzcoder/30-seconds-of-php-code) *(unofficial)*
 
 #### Package
 
@@ -488,15 +488,6 @@ average(1, 2, 3);
 * [`toOrdinalSuffix`](#toordinalsuffix)
 * [`validateNumber`](#validatenumber)
 * [`yesNo`](#yesno)
-
-</details>
-
-###  Uncategorized
-
-<details>
-<summary>View contents</summary>
-
-* [`pipeLog`](#pipelog)
 
 </details>
 
@@ -9140,32 +9131,6 @@ yesNo('Y'); // true
 yesNo('yes'); // true
 yesNo('No'); // false
 yesNo('Foo', true); // true
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-
----
-
-##  Uncategorized
-
-### pipeLog
-
-Use `console.log` in a pipeline as this function simply encloses it and returns the passed value. This is especially useful for debugging when you want to log a variable's value before its usage.
-
-Logs a value and returns it.
-
-```js
-const pipeLog = data => console.log(data) || data;
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-pipeLog(1); // logs `1` and returns `1`
 ```
 
 </details>
