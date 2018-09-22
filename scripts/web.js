@@ -10,6 +10,23 @@ const fs = require('fs-extra'),
   minify = require('html-minifier').minify;
 const util = require('./util');
 var Prism = require('prismjs');
+const minifyHTML = str =>
+  minify(str, {
+    collapseBooleanAttributes: true,
+    collapseWhitespace: true,
+    decodeEntities: false,
+    minifyCSS: true,
+    minifyJS: true,
+    keepClosingSlash: true,
+    processConditionalComments: true,
+    removeAttributeQuotes: false,
+    removeComments: true,
+    removeEmptyAttributes: false,
+    removeOptionalTags: false,
+    removeScriptTypeAttributes: false,
+    removeStyleLinkTypeAttributes: false,
+    trimCustomFragments: true
+  });
 const unescapeHTML = str =>
   str.replace(
     /&amp;|&lt;|&gt;|&#39;|&quot;/g,
@@ -18,7 +35,7 @@ const unescapeHTML = str =>
         '&amp;': '&',
         '&lt;': '<',
         '&gt;': '>',
-        '&#39;': '\'',
+        '&#39;': "'",
         '&quot;': '"'
       }[tag] || tag)
   );
@@ -83,20 +100,14 @@ glossarySnippets = util.readSnippets(glossarySnippetsPath);
 
 // Load static parts for all pages
 try {
-  startPart = fs.readFileSync(path.join(staticPartsPath, 'page-start.html'), 'utf8');
-  endPart = fs.readFileSync(path.join(staticPartsPath, 'page-end.html'), 'utf8');
-
-  archivedStartPart = fs.readFileSync(
-    path.join(staticPartsPath, 'archived-page-start.html'),
-    'utf8'
-  );
-  archivedEndPart = fs.readFileSync(path.join(staticPartsPath, 'archived-page-end.html'), 'utf8');
-
-  glossaryStartPart = fs.readFileSync(
-    path.join(staticPartsPath, 'glossary-page-start.html'),
-    'utf8'
-  );
-  glossaryEndPart = fs.readFileSync(path.join(staticPartsPath, 'glossary-page-end.html'), 'utf8');
+  [startPart, endPart, archivedStartPart, archivedEndPart, glossaryStartPart, glossaryEndPart] = [
+    'page-start.html',
+    'page-end.html',
+    'archived-page-start.html',
+    'archived-page-end.html',
+    'glossary-page-start.html',
+    'glossary-page-end.html'
+  ].map(filename => fs.readFileSync(path.join(staticPartsPath, filename), 'utf8'));
 } catch (err) {
   // Handle errors (hopefully not!)
   console.log(`${chalk.red('ERROR!')} During static part loading: ${err}`);
@@ -107,10 +118,7 @@ tagDbData = util.readTags();
 
 // Create the output for individual category pages
 try {
-  // Add the start static part
-  output += `${startPart}${'\n'}`;
-  // Loop over tags and snippets to create the table of contents
-  for (let tag of [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
+  let taggedData = [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
     .filter(v => v)
     .sort(
       (a, b) =>
@@ -119,7 +127,11 @@ try {
           : util.capitalize(b, true) === 'Uncategorized'
             ? -1
             : a.localeCompare(b)
-    )) {
+    );
+  // Add the start static part
+  output += `${startPart}${'\n'}`;
+  // Loop over tags and snippets to create the table of contents
+  for (let tag of taggedData) {
     output +=
       '<h4>' +
       md
@@ -139,19 +151,9 @@ try {
         .replace(/<a/g, `<a tags="${taggedSnippet[1].join(',')}"`);
     output += '\n';
   }
-  output += '</nav><main class="col-centered">';
-  output += '<span id="top"><br/><br/></span>';
+  output += '</nav><main class="col-centered"><span id="top"><br/><br/></span>';
   // Loop over tags and snippets to create the list of snippets
-  for (let tag of [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
-    .filter(v => v)
-    .sort(
-      (a, b) =>
-        util.capitalize(a, true) === 'Uncategorized'
-          ? 1
-          : util.capitalize(b, true) === 'Uncategorized'
-            ? -1
-            : a.localeCompare(b)
-    )) {
+  for (let tag of taggedData) {
     let localOutput = output
       .replace(/\$tag/g, util.capitalize(tag))
       .replace(new RegExp(`./${tag}#`, 'g'), '#');
@@ -218,22 +220,7 @@ try {
   }
   // Minify output
   pagesOutput.forEach(page => {
-    page.content = minify(page.content, {
-      collapseBooleanAttributes: true,
-      collapseWhitespace: true,
-      decodeEntities: false,
-      minifyCSS: true,
-      minifyJS: true,
-      keepClosingSlash: true,
-      processConditionalComments: true,
-      removeAttributeQuotes: false,
-      removeComments: true,
-      removeEmptyAttributes: false,
-      removeOptionalTags: false,
-      removeScriptTypeAttributes: false,
-      removeStyleLinkTypeAttributes: false,
-      trimCustomFragments: true
-    });
+    page.content = minifyHTML(page.content);
     fs.writeFileSync(
       path.join(docsPath, (page.tag === 'array' ? 'index' : page.tag) + '.html'),
       page.content
@@ -312,22 +299,7 @@ try {
   archivedOutput += `${archivedEndPart}`;
 
   // Generate and minify 'archive.html' file
-  const minifiedArchivedOutput = minify(archivedOutput, {
-    collapseBooleanAttributes: true,
-    collapseWhitespace: true,
-    decodeEntities: false,
-    minifyCSS: true,
-    minifyJS: true,
-    keepClosingSlash: true,
-    processConditionalComments: true,
-    removeAttributeQuotes: false,
-    removeComments: true,
-    removeEmptyAttributes: false,
-    removeOptionalTags: false,
-    removeScriptTypeAttributes: false,
-    removeStyleLinkTypeAttributes: false,
-    trimCustomFragments: true
-  });
+  const minifiedArchivedOutput = minifyHTML(archivedOutput);
 
   fs.writeFileSync(path.join(docsPath, 'archive.html'), minifiedArchivedOutput);
   console.log(`${chalk.green('SUCCESS!')} archive.html file generated!`);
@@ -364,22 +336,7 @@ try {
   glossaryOutput += `${glossaryEndPart}`;
 
   // Generate and minify 'glossary.html' file
-  const minifiedGlossaryOutput = minify(glossaryOutput, {
-    collapseBooleanAttributes: true,
-    collapseWhitespace: true,
-    decodeEntities: false,
-    minifyCSS: true,
-    minifyJS: true,
-    keepClosingSlash: true,
-    processConditionalComments: true,
-    removeAttributeQuotes: false,
-    removeComments: true,
-    removeEmptyAttributes: false,
-    removeOptionalTags: false,
-    removeScriptTypeAttributes: false,
-    removeStyleLinkTypeAttributes: false,
-    trimCustomFragments: true
-  });
+  const minifiedGlossaryOutput = minifyHTML(glossaryOutput);
 
   fs.writeFileSync(path.join(docsPath, 'glossary.html'), minifiedGlossaryOutput);
   console.log(`${chalk.green('SUCCESS!')} glossary.html file generated!`);
