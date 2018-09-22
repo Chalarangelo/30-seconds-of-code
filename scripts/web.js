@@ -39,6 +39,13 @@ const unescapeHTML = str =>
         '&quot;': '"'
       }[tag] || tag)
   );
+const filterSnippets = (snippetList, excludedFiles) =>
+  Object.keys(snippetList)
+    .filter(key => !excludedFiles.includes(key))
+    .reduce((obj, key) => {
+      obj[key] = snippetList[key];
+      return obj;
+    }, {});
 if (
   util.isTravisCI() &&
   /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE']) &&
@@ -241,14 +248,7 @@ try {
   archivedOutput += `${archivedStartPart}\n`;
 
   // Filter README.md from folder
-  const excludeFiles = ['README.md'];
-
-  const filteredArchivedSnippets = Object.keys(archivedSnippets)
-    .filter(key => !excludeFiles.includes(key))
-    .reduce((obj, key) => {
-      obj[key] = archivedSnippets[key];
-      return obj;
-    }, {});
+  const filteredArchivedSnippets = filterSnippets(archivedSnippets, ['README.md']);
 
   // Generate archived snippets from md files
   for (let snippet of Object.entries(filteredArchivedSnippets))
@@ -314,14 +314,7 @@ try {
   glossaryOutput += `${glossaryStartPart}\n`;
 
   // Filter README.md from folder
-  const excludeFiles = ['README.md'];
-
-  const filteredGlossarySnippets = Object.keys(glossarySnippets)
-    .filter(key => !excludeFiles.includes(key))
-    .reduce((obj, key) => {
-      obj[key] = glossarySnippets[key];
-      return obj;
-    }, {});
+  const filteredGlossarySnippets = filterSnippets(glossarySnippets, ['README.md']);
 
   // Generate glossary snippets from md files
   for (let snippet of Object.entries(filteredGlossarySnippets))
