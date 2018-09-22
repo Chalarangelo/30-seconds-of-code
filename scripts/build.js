@@ -15,6 +15,17 @@ const SNIPPETS_PATH = './snippets';
 const SNIPPETS_ARCHIVE_PATH = './snippets_archive';
 const STATIC_PARTS_PATH = './static-parts';
 
+const makeExamples = data => {
+  data =
+    data.slice(0, data.lastIndexOf('```js')).trim() +
+    misc.collapsible(
+      'Examples',
+      data.slice(data.lastIndexOf('```js'), data.lastIndexOf('```')) +
+      data.slice(data.lastIndexOf('```'))
+    );
+  return `${data}\n<br>${misc.link('⬆ Back to top', misc.anchor('Table of Contents'))}\n\n`;
+}
+
 if (util.isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
   console.log(
     `${chalk.green('NOBUILD')} README build terminated, parent commit is a Travis build!`
@@ -55,15 +66,7 @@ if (
     output += misc.hr();
 
     for (const snippet of Object.entries(snippets)) {
-      let data = snippet[1];
-      data =
-        data.slice(0, data.lastIndexOf('```js')).trim() +
-        misc.collapsible(
-          'Examples',
-          data.slice(data.lastIndexOf('```js'), data.lastIndexOf('```')) +
-            data.slice(data.lastIndexOf('```'))
-        );
-      output += `${data}\n<br>${misc.link('⬆ Back to top', misc.anchor('Table of Contents'))}\n\n`;
+      output += makeExamples(snippet[1]);
     }
 
     // Write to the README file of the archive
@@ -134,8 +137,6 @@ try {
     )
   ];
 
-  console.log(tags);
-
   // Add the start static part
   output += `${startPart}\n`;
 
@@ -175,18 +176,7 @@ try {
         snippet = snippet.join('\n');
       }
 
-      snippet =
-        snippet.slice(0, snippet.lastIndexOf('```js')).trim() +
-        misc.collapsible(
-          'Examples',
-          snippet.slice(snippet.lastIndexOf('```js'), snippet.lastIndexOf('```')) +
-            snippet.slice(snippet.lastIndexOf('```'))
-        );
-
-      output += `${snippet}\n<br>${misc.link(
-        '⬆ Back to top',
-        misc.anchor('Table of Contents')
-      )}\n\n`;
+      output += makeExamples(snippet);
     }
   }
 
