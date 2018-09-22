@@ -61,11 +61,6 @@ snippetFiles
       .split('\n')
       .map(line => line)
       .filter((_, i) => blockMarkers[0] < i && i < blockMarkers[1]);
-    // Grab snippet example based on code markers
-    const fileExample = fileCode
-      .split('\n')
-      .map(line => line)
-      .filter((_, i) => blockMarkers[2] < i && i < blockMarkers[3]);
 
     // Export template for snippetName.js
     const exportFile = `${fileFunction.join('\n')}\nmodule.exports = ${fileName};\n`;
