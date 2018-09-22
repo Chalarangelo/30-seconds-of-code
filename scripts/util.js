@@ -140,6 +140,16 @@ const getTextualContent = str => {
   }
   return results[1];
 };
+const prepTaggedData = tagDbData => [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
+  .filter(v => v)
+  .sort(
+    (a, b) =>
+      capitalize(a, true) === 'Uncategorized'
+        ? 1
+        : capitalize(b, true) === 'Uncategorized'
+          ? -1
+          : a.localeCompare(b)
+  );
 module.exports = {
   getMarkDownAnchor,
   getFilesInDir,
@@ -153,5 +163,6 @@ module.exports = {
   shuffle,
   getCodeBlocks,
   getTextualContent,
-  isNotTravisCronOrAPI
+  isNotTravisCronOrAPI,
+  prepTaggedData
 };

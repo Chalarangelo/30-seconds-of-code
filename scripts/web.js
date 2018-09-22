@@ -158,16 +158,7 @@ tagDbData = util.readTags();
 
 // Create the output for individual category pages
 try {
-  let taggedData = [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
-    .filter(v => v)
-    .sort(
-      (a, b) =>
-        util.capitalize(a, true) === 'Uncategorized'
-          ? 1
-          : util.capitalize(b, true) === 'Uncategorized'
-            ? -1
-            : a.localeCompare(b)
-    );
+  let taggedData = util.prepTaggedData(tagDbData);
   // Add the start static part
   output += `${startPart}${'\n'}`;
   // Loop over tags and snippets to create the table of contents
