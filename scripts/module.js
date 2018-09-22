@@ -8,7 +8,7 @@ const path = require('path');
 const chalk = require('chalk');
 const util = require('./util');
 if (
-  util.isTravisCI() && util.isNotTravisCronOrApi()
+  util.isTravisCI() && util.isNotTravisCronOrAPI()
 ) {
   console.log(
     `${chalk.green('NOBUILD')} Module build terminated, not a cron job or a custom build!`
