@@ -152,5 +152,6 @@ module.exports = {
   hashData,
   shuffle,
   getCodeBlocks,
-  getTextualContent
+  getTextualContent,
+  isNotTravisCronOrAPI
 };
