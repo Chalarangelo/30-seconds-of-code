@@ -9,9 +9,7 @@ const fs = require('fs-extra'),
 const childProcess = require('child_process');
 const chalk = require('chalk');
 const util = require('./util');
-if (
-  util.isTravisCI() && util.isNotTravisCronOrAPI()
-) {
+if (util.isTravisCI() && util.isNotTravisCronOrAPI()) {
   console.log(`${chalk.green('NOBUILD')} Testing terminated, not a cron job or a custom build!`);
   process.exit(0);
 }

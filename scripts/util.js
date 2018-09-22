@@ -102,8 +102,8 @@ const capitalize = (str, lowerRest = false) =>
   str.slice(0, 1).toUpperCase() + (lowerRest ? str.slice(1).toLowerCase() : str.slice(1));
 // Checks if current environment is Travis CI
 const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
-const isNotTravisCronOrAPI = () => process.env['TRAVIS_EVENT_TYPE'] !== 'cron' &&
-  process.env['TRAVIS_EVENT_TYPE'] !== 'api';
+const isNotTravisCronOrAPI = () =>
+  process.env['TRAVIS_EVENT_TYPE'] !== 'cron' && process.env['TRAVIS_EVENT_TYPE'] !== 'api';
 // Creates a hash for a value using the SHA-256 algorithm.
 const hashData = val =>
   crypto
@@ -140,16 +140,17 @@ const getTextualContent = str => {
   }
   return results[1];
 };
-const prepTaggedData = tagDbData => [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
-  .filter(v => v)
-  .sort(
-    (a, b) =>
-      capitalize(a, true) === 'Uncategorized'
-        ? 1
-        : capitalize(b, true) === 'Uncategorized'
-          ? -1
-          : a.localeCompare(b)
-  );
+const prepTaggedData = tagDbData =>
+  [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
+    .filter(v => v)
+    .sort(
+      (a, b) =>
+        capitalize(a, true) === 'Uncategorized'
+          ? 1
+          : capitalize(b, true) === 'Uncategorized'
+            ? -1
+            : a.localeCompare(b)
+    );
 module.exports = {
   getMarkDownAnchor,
   getFilesInDir,

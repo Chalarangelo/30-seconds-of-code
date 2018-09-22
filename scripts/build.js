@@ -21,10 +21,10 @@ const makeExamples = data => {
     misc.collapsible(
       'Examples',
       data.slice(data.lastIndexOf('```js'), data.lastIndexOf('```')) +
-      data.slice(data.lastIndexOf('```'))
+        data.slice(data.lastIndexOf('```'))
     );
   return `${data}\n<br>${misc.link('⬆ Back to top', misc.anchor('Table of Contents'))}\n\n`;
-}
+};
 
 if (util.isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
   console.log(

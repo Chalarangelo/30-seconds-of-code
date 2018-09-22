@@ -28,9 +28,9 @@ locales.forEach(locale => {
           existingData.indexOf(` => ${snippetHash}`) !== -1
             ? existingData
             : existingData.replace(
-              locData[snippetName].hash,
-              `${locData[snippetName].hash} => ${snippetHash}`
-            );
+                locData[snippetName].hash,
+                `${locData[snippetName].hash} => ${snippetHash}`
+              );
         hashChanges.push({
           snippetName,
           oldHash: locData[snippetName].hash.split(' => ')[0],
@@ -57,6 +57,14 @@ locales.forEach(locale => {
   fs.writeFileSync(
     path.join(LOCALE_PATH, locale + '_log'),
     `${new Date()}\nHash changes: ${hashChanges.length}\n${
-      hashChanges.length ? hashChanges.map(v => `Snippet name: ${v.snippetName}\n Old hash: ${v.oldHash}\n New hash: ${v.newHash}\n`).join('\n') : ''}`
+      hashChanges.length
+        ? hashChanges
+            .map(
+              v =>
+                `Snippet name: ${v.snippetName}\n Old hash: ${v.oldHash}\n New hash: ${v.newHash}\n`
+            )
+            .join('\n')
+        : ''
+    }`
   );
 });
