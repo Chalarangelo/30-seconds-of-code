@@ -29,6 +29,7 @@ Vertically and horitonally centers a child element within its parent element usi
 ```
 
 #### Demo
+
 <div class="snippet-demo">
   <div class="snippet-demo__parent">
     <div class="snippet-demo__child">Centered content</div>
