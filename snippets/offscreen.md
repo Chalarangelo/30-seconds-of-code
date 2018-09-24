@@ -27,6 +27,7 @@ A bulletproof way to completely hide an element visually and positionally in the
 ```
 
 #### Demo
+
 <div class="snippet-demo">
   <a class="button" href="javascript:;">
     Learn More

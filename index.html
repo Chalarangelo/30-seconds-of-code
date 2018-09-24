@@ -25,10 +25,12 @@
           <a class="sidebar__link" href="#box-sizing-reset"><span>Box-sizing reset</span></a>
           <a class="sidebar__link" href="#clearfix"><span>Clearfix</span></a>
           <a class="sidebar__link" href="#constant-width-to-height-ratio"><span>Constant width to height ratio</span></a>
+          <a class="sidebar__link" href="#display-table-centering"><span>Display Table Centering</span></a>
           <a class="sidebar__link" href="#evenly-distributed-children"><span>Evenly distributed children</span></a>
           <a class="sidebar__link" href="#flexbox-centering"><span>Flexbox centering</span></a>
           <a class="sidebar__link" href="#grid-centering"><span>Grid centering</span></a>
           <a class="sidebar__link" href="#grid-layout"><span>Grid layout</span></a>
+          <a class="sidebar__link" href="#transform-centering"><span>Transform Centering</span></a>
           <a class="sidebar__link" href="#truncate-text"><span>Truncate text</span></a>
         </section>
         <section data-type="visual" class="sidebar__section">
@@ -41,6 +43,7 @@
           <a class="sidebar__link" href="#gradient-text"><span>Gradient text</span></a>
           <a class="sidebar__link" href="#hairline-border"><span>Hairline border</span></a>
           <a class="sidebar__link" href="#not-selector"><span>:not selector</span></a>
+          <a class="sidebar__link" href="#offscreen"><span>Offscreen</span></a>
           <a class="sidebar__link" href="#overflow-scroll-gradient"><span>Overflow scroll gradient</span></a>
           <a class="sidebar__link" href="#pretty-text-underline"><span>Pretty text underline</span></a>
           <a class="sidebar__link" href="#reset-all-styles"><span>Reset all styles</span></a>
@@ -79,7 +82,7 @@
             A curated collection of useful CSS snippets you can understand in 30 seconds or less.
           </p>
           <div class="header__github-button-wrapper">
-            <a class="github-button header__github-button" href="https://github.com/atomiks/30-seconds-of-css" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star atomiks/30-seconds-of-css on GitHub">Star</a>
+            <a class="github-button header__github-button" href="https://github.com/30-seconds/30-seconds-of-css" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star 30-seconds/30-seconds-of-css on GitHub">Star</a>
           </div>
         </div>
       </header>
@@ -758,6 +761,80 @@ in any specification.</span></p>
             </ul>
 
             <!-- tags: interactivity -->
+          </div>
+          <div class="snippet">
+            <h3 id="display-table-centering"><span>Display Table Centering</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
+            <p>Vertically and horitonally centers a child element within its parent element using <code>display: table</code> (as an alternative to <code>flexbox</code>).</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="container"&gt;
+  &lt;div class="center"&gt;
+    &lt;span&gt;Centered content&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.container {
+  border: 1px solid #333;
+  height: 250px;
+  width: 250px;
+}
+.center {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.center &gt; span {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo">
+              <div class="snippet-demo__container">
+                <div class="snippet-demo__center">
+                  <span>Centered content</span>
+                </div>
+              </div>
+            </div>
+            <style>
+              .snippet-demo__container {
+                border: 1px solid #333;
+                height: 250px;
+                width: 250px;
+              }
+              .snippet-demo__center {
+                display: table;
+                height: 100%;
+                width: 100%;
+              }
+              .snippet-demo__center>span {
+                display: table-cell;
+                text-align: center;
+                vertical-align: middle;
+              }
+            </style>
+            <h4>Explanation</h4>
+            <ol>
+              <li><code>display: table</code> on '.center' allows the element to behave like a <code>&lt;table&gt;</code> HTML element.</li>
+              <li>100% height and width on '.center' allows the element to fill the available space within its parent element.</li>
+              <li><code>display: table-cell</code> on '.center &gt; span' allows the element to behave like an HTML element.</li>
+              <li><code>text-align: center</code> on '.center &gt; span' centers the child element horizontally.</li>
+              <li><code>vertical-align: middle</code> on '.center &gt; span' centers the child element vertically.</li>
+            </ol>
+            <p>The outer parent ('.container' in this case) must have a fixed height and width.</p>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                99+%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#search=display%3A%20table" target="_blank">https://caniuse.com/#search=display%3A%20table</a>
+              </li>
+            </ul>
+
+            <!-- tags: layout -->
           </div>
           <div class="snippet">
             <h3 id="donut-spinner"><span>Donut spinner</span><span class="tags__tag snippet__tag" data-type="animation"><i data-feather="loader"></i>animation</span></h3>
@@ -1774,6 +1851,93 @@ li:not(:last-child) {
             <!-- tags: visual -->
           </div>
           <div class="snippet">
+            <h3 id="offscreen"><span>Offscreen</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
+            <p>A bulletproof way to completely hide an element visually and positionally in the DOM while still allowing it to be accessed by JavaScript and readable by screen readers. This method is very useful for accessibility (
+              <a href="https://adata.org/learn-about-ada"
+                target="_blank">ADA</a>) development when more context is needed for visually-impaired users. As an alternative to <code>display: none</code> which is not readable by screen readers or <code>visibility: hidden</code> which takes up physical space in the
+              DOM.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;a class="button" href="http://pantswebsite.com"&gt;
+  Learn More
+  &lt;span class="offscreen"&gt; about pants&lt;/span&gt;
+&lt;/a&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.offscreen {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo">
+              <a class="button" href="javascript:;">
+                Learn More
+                <span class="offscreen"> about pants</span>
+              </a>
+            </div>
+            <style>
+              .snippet-demo__button {
+                -webkit-appearance: none;
+                appearance: none;
+                background-color: #7983ff;
+                border: none;
+                border-radius: 0.25rem;
+                color: #fff;
+                cursor: pointer;
+                display: inline-block;
+                font-family: sans-serif;
+                font-size: 1rem;
+                padding: 0.8rem 1rem;
+                text-align: center;
+                text-decoration: none;
+                transition: background-color 0.3s;
+                width: auto;
+              }
+              .snippet-demo__button:hover {
+                background-color: #717aef;
+              }
+              .snippet-demo__offscreen {
+                border: 0;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                width: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+              }
+            </style>
+            <h4>Explanation</h4>
+            <ol>
+              <li>Remove all borders.</li>
+              <li>Use <code>clip</code> to indicate that no part of the element should be shown.</li>
+              <li>Make the height and width of the element 1px.</li>
+              <li>Negate the elements height and width using <code>margin: -1px</code>.</li>
+              <li>Hide the element's overflow.</li>
+              <li>Remove all padding.</li>
+              <li>Position the element absolutely so that it does not take up space in the DOM.</li>
+            </ol>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                99+%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <p>(Although <code>clip</code> technically has been depreciated, the newer <code>clip-path</code> currently has very limited browser support.)</p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#search=clip" target="_blank">https://caniuse.com/#search=clip</a>
+              </li>
+            </ul>
+
+            <!-- tags: layout, visual -->
+          </div>
+          <div class="snippet">
             <h3 id="overflow-scroll-gradient"><span>Overflow scroll gradient</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
             <p>Adds a fading gradient to an overflowing element to better indicate there is more content to be scrolled.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="overflow-scroll-gradient"&gt;
@@ -2223,6 +2387,69 @@ li:not(:last-child) {
             <p><span class="snippet__support-note">✅ No caveats.</span></p>
 
             <!-- tags: visual -->
+          </div>
+          <div class="snippet">
+            <h3 id="transform-centering"><span>Transform Centering</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
+            <p>Vertically and horitonally centers a child element within its parent element using <code>position: absolute</code> and <code>transform: translate()</code> (as an alternative to <code>flexbox</code> or <code>display: table</code>). Similar
+              to <code>flexbox</code>, this method does not require you to know the height or width of your parent or child so it is ideal for responsive applications.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="parent"&gt;
+  &lt;div class="child"&gt;Centered content&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.parent {
+  border: 1px solid #333;
+  height: 250px;
+  position: relative;
+  width: 250px;
+}
+.child {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo">
+              <div class="snippet-demo__parent">
+                <div class="snippet-demo__child">Centered content</div>
+              </div>
+            </div>
+            <style>
+              .snippet-demo__parent {
+                border: 1px solid #333;
+                height: 250px;
+                position: relative;
+                width: 250px;
+              }
+              .snippet-demo__child {
+                left: 50%;
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%, -50%);
+              }
+            </style>
+            <h4>Explanation</h4>
+            <ol>
+              <li><code>position: absolute</code> on the child element allows it to be positioned based on its containing block.</li>
+              <li><code>left: 50%</code> and <code>top: 50%</code> offsets the child 50% from the left and top edge of its containing block.</li>
+              <li><code>transform: translate(-50%, -50%)</code> allows the height and width of the child element to be negated so that it is vertically and horizontally centered.</li>
+            </ol>
+            <p>Note: Fixed height and width on parent element is for the demo only.</p>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                99+%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">⚠️ Requires prefix for full support.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#search=transform" target="_blank">https://caniuse.com/#search=transform</a>
+              </li>
+            </ul>
+
+            <!-- tags: layout -->
           </div>
           <div class="snippet">
             <h3 id="triangle"><span>Triangle</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
