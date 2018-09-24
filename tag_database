@@ -113,6 +113,7 @@ httpGet:utility,url,browser,intermediate
 httpPost:utility,url,browser,intermediate
 httpsRedirect:browser,url,intermediate
 hz:function,intermediate
+indentString:string,utility,beginner
 indexOfAll:array,intermediate
 initial:array,beginner
 initialize2DArray:array,intermediate
