@@ -1,28 +1,15 @@
-<!--- Provide a general summary of your changes in the Title above -->
-
-<!--- Add the prefix [FIX: #(issue number)], [FEATURE] or [ENHANCEMENT] to the Title -->
+<!-- Use a descriptive title, prefix it with [FIX], [FEATURE] or [ENHANCEMENT] if applicable (use only one) -->
 
 ## Description
-<!--- Describe your changes in detail -->
-**Resolves** #(issue number) <!--- Delete if not a issue fix-->
+<!-- Write a detailed description of your changes/additions here -->
+<!-- If your PR resolves an issue, please state "Resolves #(issue number)" to help maintainers process it faster -->
+<!-- If you think your PR will cause breaking changes, require changes in the documention etc, please be so kind as to explain what, where and how -->
 
-## What does your PR belong to?
-- [ ] Website
-- [ ] Snippets
-- [ ] General / Things regarding the repository (like CI Integration)
-- [ ] Tests
+## PR Type
+- [ ] Snippets, Tests & Tags (new snippets, updated snippets, re-tagging of snippets, added/updated tests)
+- [ ] Scripts & Website & Meta (anything related to files in the [scripts folder](https://github.com/30-seconds/30-seconds-of-code/tree/master/scripts), how the repository's automated procedures work and the website)
+- [ ] Glossary & Secondary Features (anything related to the glossary, such as new or updated terms or other secondary features)
+- [ ] General, Typos, Misc. & Meta (everything else, typos, general stuff and meta files in the repository - e.g. the issue template)
 
-## Types of changes
-- [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] Enhancement (non-breaking improvement of a snippet)
-- [ ] New feature (non-breaking change which adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to change)
-
-## Checklist:
-<!--- If you're unsure about any of these, don't hesitate to ask. We're here to help! -->
-- [ ] My code follows the code style of this project.
-- [ ] My change requires a change to the documentation.
-- [ ] I have updated the documentation accordingly.
-- [ ] I have checked that the changes are working properly
-- [ ] I have checked that there isn't any PR doing the same
-- [ ] I have read the **CONTRIBUTING** document.
+## Guidelines
+- [ ] I pinky swear that I have read the guidelines in the [CONTRIBUTING](https://github.com/30-seconds/30-seconds-of-code/blob/master/CONTRIBUTING.md) document, meaning that I know what I am doing and not wasting the maintainers' time. 
