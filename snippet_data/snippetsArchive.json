@@ -297,8 +297,8 @@
           "fibonacciCountUntilNum(10); // 7",
           "const fibonacciUntilNum = num => {\n  let n = Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));\n  return Array.from({ length: n }).reduce(\n    (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),\n    []\n  );\n};",
           "fibonacciUntilNum(10); // [ 0, 1, 1, 2, 3, 5, 8 ]",
-          "const httpDelete = (url, callback, err = console.error) => {\n  const request = new XMLHttpRequest();\n  request.open('DELETE', url, true);\n  request.onload = () => callback(request);\n  request.onerror = () => err(request);\n  request.send();\n};",
-          "httpDelete('https://website.com/users/123', request => {\n  console.log(request.responseText);\n}); // 'Deletes a user from the database'",
+          "const howManyTimes = (num, divisor) => {\n  if (divisor === 1 || divisor === -1) return Infinity;\n  if (divisor === 0) return 0;\n  let i = 0;\n  while (Number.isInteger(num / divisor)) {\n    i++;\n    num = num / divisor;\n  }\n  return i;\n};",
+          "howManyTimes(100, 2); // 2\nhowManyTimes(100, 2.5); // 2\nhowManyTimes(100, 0); // 0\nhowManyTimes(100, -1); // Infinity",
           "const httpPut = (url, data, callback, err = console.error) => {\n  const request = new XMLHttpRequest();\n  request.open(\"PUT\", url, true);\n  request.setRequestHeader('Content-type','application/json; charset=utf-8');\n  request.onload = () => callback(request);\n  request.onerror = () => err(request);\n  request.send(data);\n};",
           "const password = \"fooBaz\";\nconst data = JSON.stringify(password);\nhttpPut('https://website.com/users/123', data, request => {\n  console.log(request.responseText);\n}); // 'Updates a user's password in database'",
           "const isArmstrongNumber = digits =>\n  (arr => arr.reduce((a, d) => a + parseInt(d) ** arr.length, 0) == digits)(\n    (digits + '').split('')\n  );",
@@ -307,20 +307,22 @@
           "isSimilar('rt','Rohit'); // true\nisSimilar('tr','Rohit'); // false",
           "``` js\nconst levenshteinDistance = (string1, string2) => {\n  if (string1.length === 0) return string2.length;\n  if (string2.length === 0) return string1.length;\n  let matrix = Array(string2.length + 1)\n    .fill(0)\n    .map((x, i) => [i]);\n  matrix[0] = Array(string1.length + 1)\n    .fill(0)\n    .map((x, i) => i);\n  for (let i = 1; i <= string2.length; i++) {\n    for (let j = 1; j <= string1.length; j++) {\n      if (string2[i - 1] === string1[j - 1]) {\n        matrix[i][j] = matrix[i - 1][j - 1];\n      } else {\n        matrix[i][j] = Math.min(\n          matrix[i - 1][j - 1] + 1,\n          matrix[i][j - 1] + 1,\n          matrix[i - 1][j] + 1\n        );\n      }\n    }\n  }\n  return matrix[string2.length][string1.length];\n};\n```",
           "levenshteinDistance('30-seconds-of-code','30-seconds-of-python-code'); // 7\nconst compareStrings = (string1,string2) => (100 - levenshteinDistance(string1,string2) / Math.max(string1.length,string2.length));\ncompareStrings('30-seconds-of-code', '30-seconds-of-python-code'); // 99.72 (%)",
+          "const pipeLog = data => console.log(data) || data;",
+          "pipeLog(1); // logs `1` and returns `1`",
           "const quickSort = ([n, ...nums], desc) =>\n  isNaN(n)\n    ? []\n    : [\n        ...quickSort(nums.filter(v => (desc ? v > n : v <= n)), desc),\n        n,\n        ...quickSort(nums.filter(v => (!desc ? v > n : v <= n)), desc)\n      ];",
           "quickSort([4, 1, 3, 2]); // [1,2,3,4]\nquickSort([4, 1, 3, 2], true); // [4,3,2,1]",
           "const removeVowels = (str, repl = '') => str.replace(/[aeiou]/gi, repl);",
           "removeVowels(\"foobAr\"); // \"fbr\"\nremoveVowels(\"foobAr\",\"*\"); // \"f**b*r\"",
           "const solveRPN = rpn => {\n  const OPERATORS = {\n    '*': (a, b) => a * b,\n    '+': (a, b) => a + b,\n    '-': (a, b) => a - b,\n    '/': (a, b) => a / b,\n    '**': (a, b) => a ** b\n  };\n  const [stack, solve] = [\n    [],\n    rpn\n      .replace(/\\^/g, '**')\n      .split(/\\s+/g)\n      .filter(el => !/\\s+/.test(el) && el !== '')\n  ];\n  solve.forEach(symbol => {\n    if (!isNaN(parseFloat(symbol)) && isFinite(symbol)) {\n      stack.push(symbol);\n    } else if (Object.keys(OPERATORS).includes(symbol)) {\n      const [a, b] = [stack.pop(), stack.pop()];\n      stack.push(OPERATORS[symbol](parseFloat(b), parseFloat(a)));\n    } else {\n      throw `${symbol} is not a recognized symbol`;\n    }\n  });\n  if (stack.length === 1) return stack.pop();\n  else throw `${rpn} is not a proper RPN. Please check it and try again`;\n};",
           "solveRPN('15 7 1 1 + - / 3 * 2 1 1 + + -'); // 5\nsolveRPN('2 3 ^'); // 8",
-          "const howManyTimes = (num, divisor) => {\n  if (divisor === 1 || divisor === -1) return Infinity;\n  if (divisor === 0) return 0;\n  let i = 0;\n  while (Number.isInteger(num / divisor)) {\n    i++;\n    num = num / divisor;\n  }\n  return i;\n};",
-          "howManyTimes(100, 2); // 2\nhowManyTimes(100, 2.5); // 2\nhowManyTimes(100, 0); // 0\nhowManyTimes(100, -1); // Infinity"
+          "const httpDelete = (url, callback, err = console.error) => {\n  const request = new XMLHttpRequest();\n  request.open('DELETE', url, true);\n  request.onload = () => callback(request);\n  request.onerror = () => err(request);\n  request.send();\n};",
+          "httpDelete('https://website.com/users/123', request => {\n  console.log(request.responseText);\n}); // 'Deletes a user from the database'"
         ],
         "tags": []
       },
       "meta": {
         "archived": true,
-        "hash": "86af9032bb3fd1afc0b6e32aeca6a25c69549594804ff93f9eb0fe6e9e37236b"
+        "hash": "14c205af84a94bb26db5af2bd4b61a5169d48cc90e36e0aea4fae08d24a630c0"
       }
     },
     {
