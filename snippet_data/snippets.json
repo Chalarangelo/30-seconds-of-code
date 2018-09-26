@@ -5187,6 +5187,17 @@
       }
     },
     {
+      "id": "shank",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "shank.md",
+        "text": "Duplicates Array.prototype.splice, except it returns a new array rather than mutating the original array in place.",
+        "tags": [
+          "array"
+        ]
+      },
+    },
+    {
       "id": "show",
       "type": "snippet",
       "attributes": {
