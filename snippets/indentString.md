@@ -6,8 +6,7 @@ Use `String.replace` and a regular expression to add the character specified by 
 Omit the third parameter, `indent`, to use a default indentation character of `' '`.
 
 ```js
-const indentString = (str, count, indent = ' ') =>
-  str.replace(/^/mg, indent.repeat(count));
+const indentString = (str, count, indent = ' ') => str.replace(/^/gm, indent.repeat(count));
 ```
 
 ```js
