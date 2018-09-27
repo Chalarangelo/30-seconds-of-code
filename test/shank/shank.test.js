@@ -5,24 +5,18 @@ test("shank is a Function", () => {
   expect(shank).toBeInstanceOf(Function);
 });
 
-const names = ["alpha", "bravo", "charlie"];
-const secondNames = shank(names, 1, 0, "john");
-const thirdNames = shank(secondNames, 2, 1, "jacob", "jingleheimer");
+const names = ['alpha', 'bravo', 'charlie'];
 
-test("does not mutate original array", () => {
-  expect(names).toEqual(["alpha", "bravo", "charlie"]);
+test("Returns an array with the added elements.", () => {
+  expect(shank(names, 1, 0, 'delta')).toEqual(['alpha', 'delta', 'bravo', 'charlie']);
 });
 
-test("returns a new array with concatinations", () => {
-  expect(secondNames).toEqual(["alpha", "john", "bravo", "charlie"]);
+test("Returns an array with the removed elements.", () => {
+  expect(shank(names, 1, 1)).toEqual(['alpha', 'charlie']);
 });
 
-test("returns a new array with omissions and concatinations", () => {
-  expect(thirdNames).toEqual([
-    "alpha",
-    "john",
-    "jacob",
-    "jingleheimer",
-    "charlie"
-  ]);
+test("Does not mutate the original array", () => {
+  shank(names, 1, 0, 'delta');
+  expect(names).toEqual(['alpha', 'bravo', 'charlie']);
 });
+
