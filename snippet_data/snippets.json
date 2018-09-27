@@ -753,7 +753,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "copyToClipboard.md",
-        "text": "⚠️ **NOTICE:** The same functionality can be easily implemented by using the new asynchronous Clipboard API, which is still experimental but should be used in the future instead of this snippet. Find out more about it [here](https://github.com/w3c/clipboard-apis/blob/master/explainer.adoc#writing-to-the-clipboard).\n\nCopy a string to the clipboard. Only works as a result of user action (i.e. inside a `click` event listener).\n\nCreate a new `<textarea>` element, fill it with the supplied data and add it to the HTML document.\nUse `Selection.getRangeAt()`to store the selected range (if any).\nUse `document.execCommand('copy')` to copy to the clipboard.\nRemove the `<textarea>` element from the HTML document.\nFinally, use `Selection().addRange()` to recover the original selected range (if any).",
+        "text": "⚠️ **NOTICE:** The same functionality can be easily implemented by using the new asynchronous Clipboard API, which is still experimental but should be used in the future instead of this snippet. Find out more about it [here](https://github.com/w3c/clipboard-apis/blob/master/explainer.adoc#writing-to-the-clipboard).\n\nCopy a string to the clipboard. \nOnly works as a result of user action (i.e. inside a `click` event listener).\n\nCreate a new `<textarea>` element, fill it with the supplied data and add it to the HTML document.\nUse `Selection.getRangeAt()`to store the selected range (if any).\nUse `document.execCommand('copy')` to copy to the clipboard.\nRemove the `<textarea>` element from the HTML document.\nFinally, use `Selection().addRange()` to recover the original selected range (if any).",
         "codeBlocks": [
           "const copyToClipboard = str => {\n  const el = document.createElement('textarea');\n  el.value = str;\n  el.setAttribute('readonly', '');\n  el.style.position = 'absolute';\n  el.style.left = '-9999px';\n  document.body.appendChild(el);\n  const selected =\n    document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false;\n  el.select();\n  document.execCommand('copy');\n  document.body.removeChild(el);\n  if (selected) {\n    document.getSelection().removeAllRanges();\n    document.getSelection().addRange(selected);\n  }\n};",
           "copyToClipboard('Lorem ipsum'); // 'Lorem ipsum' copied to clipboard."
@@ -766,7 +766,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "9d6a47c41fe4f5e0c006e29daef0c3eb7d9df37fa98c3498f938a6d2e4daf197"
+        "hash": "09ef1e582db77aa67e9f8741636876f27be2b39b67494bb46905181f570fa1aa"
       }
     },
     {
@@ -1586,7 +1586,7 @@
         "text": "Filters out the non-unique values in an array.\n\nUse `Array.filter()` for an array containing only the unique values.",
         "codeBlocks": [
           "const filterNonUnique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexOf(i));",
-          "filterNonUnique([1, 2, 2, 3, 4, 4, 5]); // [1,3,5]"
+          "filterNonUnique([1, 2, 2, 3, 4, 4, 5]); // [1, 3, 5]"
         ],
         "tags": [
           "array",
@@ -1595,7 +1595,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "8f319457b4350e041ba31cd4b4d02135013d8ea6716d0a4d00cf1b1bfd214ffa"
+        "hash": "877b483838474be7c56214009f8bc87fb53cdbef9c194839eee5c14a413d28ab"
       }
     },
     {
@@ -1686,7 +1686,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "findLastKey.md",
-        "text": "Returns the last key that satisfies the provided testing function. Otherwise `undefined` is returned.\n\nUse `Object.keys(obj)` to get all the properties of the object, `Array.reverse()` to reverse their order and `Array.find()` to test the provided function for each key-value pair. The callback receives three arguments - the value, the key and the object.",
+        "text": "Returns the last key that satisfies the provided testing function. \nOtherwise `undefined` is returned.\n\nUse `Object.keys(obj)` to get all the properties of the object, `Array.reverse()` to reverse their order and `Array.find()` to test the provided function for each key-value pair. \nThe callback receives three arguments - the value, the key and the object.",
         "codeBlocks": [
           "const findLastKey = (obj, fn) =>\n  Object.keys(obj)\n    .reverse()\n    .find(key => fn(obj[key], key, obj));",
           "findLastKey(\n  {\n    barney: { age: 36, active: true },\n    fred: { age: 40, active: false },\n    pebbles: { age: 1, active: true }\n  },\n  o => o['active']\n); // 'pebbles'"
@@ -1699,7 +1699,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "c06e83c16f06394a29a029019a33c3ce0eb942f84ad6f1ef2b149ef09f836837"
+        "hash": "17bc347fe95237440b4a583687347cc0b002f8d90c2570166afea3e2a63c777e"
       }
     },
     {
@@ -2391,11 +2391,32 @@
       }
     },
     {
+      "id": "indentString",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "indentString.md",
+        "text": "Indents each line in the provided string.\n\nUse `String.replace` and a regular expression to add the character specified by `indent` `count` times at the start of each line.\nOmit the third parameter, `indent`, to use a default indentation character of `' '`.",
+        "codeBlocks": [
+          "const indentString = (str, count, indent = ' ') => str.replace(/^/gm, indent.repeat(count));",
+          "indentString('Lorem\\nIpsum', 2); // '  Lorem\\n  Ipsum'\nindentString('Lorem\\nIpsum', 2, '_'); // '__Lorem\\n__Ipsum'"
+        ],
+        "tags": [
+          "string",
+          "utility",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "2249bdeaa8327b70492049e43d049bd3a0c6b147cafb80504d59a9199f57d0d2"
+      }
+    },
+    {
       "id": "indexOfAll",
       "type": "snippet",
       "attributes": {
         "fileName": "indexOfAll.md",
-        "text": "Returns all indices of `val` in an array. If `val` never occurs, returns `[]`.\n\nUse `Array.reduce()` to loop over elements and store indices for matching elements.\nReturn the array of indices.",
+        "text": "Returns all indices of `val` in an array. \nIf `val` never occurs, returns `[]`.\n\nUse `Array.reduce()` to loop over elements and store indices for matching elements.\nReturn the array of indices.",
         "codeBlocks": [
           "const indexOfAll = (arr, val) => arr.reduce((acc, el, i) => (el === val ? [...acc, i] : acc), []);",
           "indexOfAll([1, 2, 3, 1, 2, 3], 1); // [0,3]\nindexOfAll([1, 2, 3], 4); // []"
@@ -2407,7 +2428,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "643cb7b5df16c9da268e21b65b4cf73bb572e7b93a5859d09bb3bc949665f65b"
+        "hash": "2db4f4d3ab61ceefe294bc6399d0fc5558dcde87f659381bc0caed52de6be663"
       }
     },
     {
@@ -2500,7 +2521,7 @@
         "text": "Initializes and fills an array with the specified values.\n\nUse `Array(n)` to create an array of the desired length, `fill(v)` to fill it with the desired values.\nYou can omit `val` to use a default value of `0`.",
         "codeBlocks": [
           "const initializeArrayWithValues = (n, val = 0) => Array(n).fill(val);",
-          "initializeArrayWithValues(5, 2); // [2,2,2,2,2]"
+          "initializeArrayWithValues(5, 2); // [2, 2, 2, 2, 2]"
         ],
         "tags": [
           "array",
@@ -2510,7 +2531,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "f6e42080918660d432e391965815f7e2106ba2be536432f6c4aefdd658324d0b"
+        "hash": "67fe7e3ed8f8866b3669541f28a13b5a2b0c3719edcff68a3284884f3f39dca8"
       }
     },
     {
@@ -2602,7 +2623,7 @@
         "text": "Returns a list of elements that exist in both arrays.\n\nCreate a `Set` from `b`, then use `Array.filter()` on `a` to only keep values contained in `b`.",
         "codeBlocks": [
           "const intersection = (a, b) => {\n  const s = new Set(b);\n  return a.filter(x => s.has(x));\n};",
-          "intersection([1, 2, 3], [4, 3, 2]); // [2,3]"
+          "intersection([1, 2, 3], [4, 3, 2]); // [2, 3]"
         ],
         "tags": [
           "array",
@@ -2612,7 +2633,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "3a8920e513726008197584769c01a4fffd26e93d945e40a944189872c7585730"
+        "hash": "6881cbf9db3aea50022a0413b840f4d378e9e98e10de1a0abddca5a7f7282050"
       }
     },
     {
@@ -3269,7 +3290,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "join.md",
-        "text": "Joins all elements of an array into a string and returns this string. Uses a separator and an end separator.\n\nUse `Array.reduce()` to combine elements into a string.\nOmit the second argument, `separator`, to use a default separator of `','`.\nOmit the third argument, `end`, to use the same value as `separator` by default.",
+        "text": "Joins all elements of an array into a string and returns this string. \nUses a separator and an end separator.\n\nUse `Array.reduce()` to combine elements into a string.\nOmit the second argument, `separator`, to use a default separator of `','`.\nOmit the third argument, `end`, to use the same value as `separator` by default.",
         "codeBlocks": [
           "const join = (arr, separator = ',', end = separator) =>\n  arr.reduce(\n    (acc, val, i) =>\n      i === arr.length - 2\n        ? acc + val + end\n        : i === arr.length - 1\n          ? acc + val\n          : acc + val + separator,\n    ''\n  );",
           "join(['pen', 'pineapple', 'apple', 'pen'], ',', '&'); // \"pen,pineapple,apple&pen\"\njoin(['pen', 'pineapple', 'apple', 'pen'], ','); // \"pen,pineapple,apple,pen\"\njoin(['pen', 'pineapple', 'apple', 'pen']); // \"pen,pineapple,apple,pen\""
@@ -3281,7 +3302,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "05c13ad111a5815d05ba0d2ca0bb17a7ab7e02fc3b33f0e5e049acc25fc2cbb4"
+        "hash": "e1f4c93facee0793169305ebe0080f5d60b232e282bc518a54da89be37279429"
       }
     },
     {
@@ -3609,7 +3630,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "maxN.md",
-        "text": "Returns the `n` maximum elements from the provided array. If `n` is greater than or equal to the provided array's length, then return the original array(sorted in descending order).\n\nUse `Array.sort()` combined with the spread operator (`...`) to create a shallow clone of the array and sort it in descending order.\nUse `Array.slice()` to get the specified number of elements.\nOmit the second argument, `n`, to get a one-element array.",
+        "text": "Returns the `n` maximum elements from the provided array. \nIf `n` is greater than or equal to the provided array's length, then return the original array (sorted in descending order).\n\nUse `Array.sort()` combined with the spread operator (`...`) to create a shallow clone of the array and sort it in descending order.\nUse `Array.slice()` to get the specified number of elements.\nOmit the second argument, `n`, to get a one-element array.",
         "codeBlocks": [
           "const maxN = (arr, n = 1) => [...arr].sort((a, b) => b - a).slice(0, n);",
           "maxN([1, 2, 3]); // [3]\nmaxN([1, 2, 3], 2); // [3,2]"
@@ -3622,7 +3643,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "a6b2f1c58b863814ad76a4b98a3ed995d17ce7b19ee01fe4d7455ef5d35b704c"
+        "hash": "3bee579215f244423855f852e4d211ea26ad7cb8747e96c36252855ccd093a5f"
       }
     },
     {
@@ -3714,7 +3735,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "minN.md",
-        "text": "Returns the `n` minimum elements from the provided array. If `n` is greater than or equal to the provided array's length, then return the original array(sorted in ascending order).\n\nUse `Array.sort()` combined with the spread operator (`...`) to create a shallow clone of the array and sort it in ascending order.\nUse `Array.slice()` to get the specified number of elements.\nOmit the second argument, `n`, to get a one-element array.",
+        "text": "Returns the `n` minimum elements from the provided array. \nIf `n` is greater than or equal to the provided array's length, then return the original array (sorted in ascending order).\n\nUse `Array.sort()` combined with the spread operator (`...`) to create a shallow clone of the array and sort it in ascending order.\nUse `Array.slice()` to get the specified number of elements.\nOmit the second argument, `n`, to get a one-element array.",
         "codeBlocks": [
           "const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);",
           "minN([1, 2, 3]); // [1]\nminN([1, 2, 3], 2); // [1,2]"
@@ -3727,7 +3748,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "f780a2df19c5fc40d2663314d2a7a7244971aa76f0efb6d73b64fab055fafdb7"
+        "hash": "9dcaa91174d9c4be4837342b9f10f6f9cc9e5f9add113cc81c3248bd1659ea4c"
       }
     },
     {
@@ -3902,7 +3923,7 @@
         "text": "Creates an array of key-value pair arrays from an object.\n\nUse `Object.keys()` and `Array.map()` to iterate over the object's keys and produce an array with key-value pairs.",
         "codeBlocks": [
           "const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);",
-          "objectToPairs({ a: 1, b: 2 }); // [['a',1],['b',2]]"
+          "objectToPairs({ a: 1, b: 2 }); // [ ['a', 1], ['b', 2] ]"
         ],
         "tags": [
           "object",
@@ -3912,7 +3933,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "9d0834d532c92f02e06428a693600b65c293803175398d0d2549bf965dbc3b0a"
+        "hash": "b5dc718a33f92c4684e9ff63aa5e8dd1bd8d90b1dd35aead029cd3c3b06d54e6"
       }
     },
     {
@@ -4423,7 +4444,7 @@
         "text": "Returns the powerset of a given array of numbers.\n\nUse `Array.reduce()` combined with `Array.map()` to iterate over elements and combine into an array containing all combinations.",
         "codeBlocks": [
           "const powerset = arr => arr.reduce((a, v) => a.concat(a.map(r => [v].concat(r))), [[]]);",
-          "powerset([1, 2]); // [[], [1], [2], [2,1]]"
+          "powerset([1, 2]); // [[], [1], [2], [2, 1]]"
         ],
         "tags": [
           "math",
@@ -4432,7 +4453,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "17fa313ab2e105ddcf0ca9b557534a5f84ce79187f33ae1aadb7ce4bf2f1e606"
+        "hash": "0e6d6e9b25937f9667dafc9a745df14b78658adc920045b79379781025732119"
       }
     },
     {
@@ -5191,11 +5212,20 @@
       "type": "snippet",
       "attributes": {
         "fileName": "shank.md",
-        "text": "Duplicates Array.prototype.splice, except it returns a new array rather than mutating the original array in place.",
+        "text": "Has the same functionality as [`Array.prototype.splice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice), but returning a new array instead of mutating the original array.\n\nUse `Array.slice()` and `Array.concat()` to get a new array with the new contents after removing existing elements and/or adding new elements.\nOmit the second argument, `index`, to start at `0`.\nOmit the third argument, `delCount`, to remove `0` elements.\nOmit the fourth argument, `elements`, in order to not add any new elements.",
+        "codeBlocks": [
+          "const shank = (arr, index = 0, delCount = 0, ...elements) =>\n  arr\n    .slice(0, index)\n    .concat(elements)\n    .concat(arr.slice(index + delCount));",
+          "const names = ['alpha', 'bravo', 'charlie'];\nconst namesAndDelta = shank(names, 1, 0, 'delta'); // [ 'alpha', 'delta', 'bravo', 'charlie' ]\nconst namesNoBravo = shank(names, 1, 1); // [ 'alpha', 'charlie' ]\nconsole.log(names); // ['alpha', 'bravo', 'charlie']"
+        ],
         "tags": [
-          "array"
+          "array",
+          "intermediate"
         ]
       },
+      "meta": {
+        "archived": false,
+        "hash": "79bdd7bfbbea409c669eb2386d342e8badbd9f08fbfa13a941f94b4929833d50"
+      }
     },
     {
       "id": "show",
@@ -5226,7 +5256,7 @@
         "text": "Randomizes the order of the values of an array, returning a new array.\n\nUses the [Fisher-Yates algorithm](https://github.com/30-seconds/30-seconds-of-code#shuffle) to reorder the elements of the array.",
         "codeBlocks": [
           "const shuffle = ([...arr]) => {\n  let m = arr.length;\n  while (m) {\n    const i = Math.floor(Math.random() * m--);\n    [arr[m], arr[i]] = [arr[i], arr[m]];\n  }\n  return arr;\n};",
-          "const foo = [1, 2, 3];\nshuffle(foo); // [2,3,1], foo = [1,2,3]"
+          "const foo = [1, 2, 3];\nshuffle(foo); // [2, 3, 1], foo = [1, 2, 3]"
         ],
         "tags": [
           "array",
@@ -5236,7 +5266,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "0edbf4eb8433058722c7b8ff2aef2a088be5d9e9688fd997617355141a418161"
+        "hash": "c9dda34ebe6e4f24ce3cc310bea23011208d050ae227000a347ac4e681b21171"
       }
     },
     {
@@ -5247,7 +5277,7 @@
         "text": "Returns an array of elements that appear in both arrays.\n\nUse `Array.filter()` to remove values that are not part of `values`, determined using `Array.includes()`.",
         "codeBlocks": [
           "const similarity = (arr, values) => arr.filter(v => values.includes(v));",
-          "similarity([1, 2, 3], [1, 2, 4]); // [1,2]"
+          "similarity([1, 2, 3], [1, 2, 4]); // [1, 2]"
         ],
         "tags": [
           "array",
@@ -5257,7 +5287,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "e1b495505ee844027b53e2537560373d9c341bccf6743beb3129e82fe7408131"
+        "hash": "bfa5013d12b51262711b1b9b06e639d95aaeb0d3b535824e9c29c2c162ec68b0"
       }
     },
     {
@@ -6307,7 +6337,7 @@
         "text": "Returns all unique values of an array.\n\nUse ES6 `Set` and the `...rest` operator to discard all duplicated values.",
         "codeBlocks": [
           "const uniqueElements = arr => [...new Set(arr)];",
-          "uniqueElements([1, 2, 2, 3, 4, 4, 5]); // [1,2,3,4,5]"
+          "uniqueElements([1, 2, 2, 3, 4, 4, 5]); // [1, 2, 3, 4, 5]"
         ],
         "tags": [
           "array",
@@ -6316,7 +6346,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "e45f1af52564b0b1d91ce8bce53fe98ce888f3c943e1c1828682893393540256"
+        "hash": "a58f3cb936234ebae488f907b8bf82f80a2966007cdff2972f658a969c250f46"
       }
     },
     {
