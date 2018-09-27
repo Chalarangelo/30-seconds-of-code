@@ -409,6 +409,7 @@ average(1, 2, 3);
 * [`escapeHTML`](#escapehtml)
 * [`escapeRegExp`](#escaperegexp)
 * [`fromCamelCase`](#fromcamelcase)
+* [`indentString`](#indentstring)
 * [`isAbsoluteURL`](#isabsoluteurl)
 * [`isAnagram`](#isanagram)
 * [`isLowerCase`](#islowercase)
@@ -7447,6 +7448,29 @@ const fromCamelCase = (str, separator = '_') =>
 fromCamelCase('someDatabaseFieldName', ' '); // 'some database field name'
 fromCamelCase('someLabelThatNeedsToBeCamelized', '-'); // 'some-label-that-needs-to-be-camelized'
 fromCamelCase('someJavascriptProperty', '_'); // 'some_javascript_property'
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+### indentString
+
+Indents each line in the provided string.
+
+Use `String.replace` and a regular expression to add the character specified by `indent` `count` times at the start of each line.
+Omit the third parameter, `indent`, to use a default indentation character of `' '`.
+
+```js
+const indentString = (str, count, indent = ' ') => str.replace(/^/gm, indent.repeat(count));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+indentString('Lorem\nIpsum', 2); // '  Lorem\n  Ipsum'
+indentString('Lorem\nIpsum', 2, '_'); // '__Lorem\n__Ipsum'
 ```
 
 </details>
