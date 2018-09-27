@@ -168,6 +168,7 @@ average(1, 2, 3);
 * [`remove`](#remove)
 * [`sample`](#sample)
 * [`sampleSize`](#samplesize)
+* [`shank`](#shank)
 * [`shuffle`](#shuffle)
 * [`similarity`](#similarity)
 * [`sortedIndex`](#sortedindex)
@@ -2352,6 +2353,38 @@ const sampleSize = ([...arr], n = 1) => {
 sampleSize([1, 2, 3], 2); // [3,1]
 sampleSize([1, 2, 3], 4); // [2,3,1]
 ```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+### shank
+
+Has the same functionality as [`Array.prototype.splice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice), but returning a new array instead of mutating the original array.
+
+Use `Array.slice()` and `Array.concat()` to get a new array with the new contents after removing existing elements and/or adding new elements.
+Omit the second argument, `index`, to start at `0`.
+Omit the third argument, `delCount`, to remove `0` elements.
+Omit the fourth argument, `elements`, in order to not add any new elements.
+
+```js
+const shank = (arr, index = 0, delCount = 0, ...elements) =>
+  arr
+    .slice(0, index)
+    .concat(elements)
+    .concat(arr.slice(index + delCount));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const names = ['alpha', 'bravo', 'charlie'];
+const namesAndDelta = shank(names, 1, 0, 'delta'); // [ 'alpha', 'delta', 'bravo', 'charlie' ]
+const namesNoBravo = shank(names, 1, 1); // [ 'alpha', 'charlie' ]
+console.log(names); // ['alpha', 'bravo', 'charlie']
+```
+
 
 </details>
 
