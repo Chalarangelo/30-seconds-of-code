@@ -1260,7 +1260,7 @@ const filterNonUnique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexO
 <summary>Examples</summary>
 
 ```js
-filterNonUnique([1, 2, 2, 3, 4, 4, 5]); // [1,3,5]
+filterNonUnique([1, 2, 2, 3, 4, 4, 5]); // [1, 3, 5]
 ```
 
 </details>
@@ -1447,7 +1447,8 @@ head([1, 2, 3]); // 1
 
 ### indexOfAll
 
-Returns all indices of `val` in an array. If `val` never occurs, returns `[]`.
+Returns all indices of `val` in an array. 
+If `val` never occurs, returns `[]`.
 
 Use `Array.reduce()` to loop over elements and store indices for matching elements.
 Return the array of indices.
@@ -1580,7 +1581,7 @@ const initializeArrayWithValues = (n, val = 0) => Array(n).fill(val);
 <summary>Examples</summary>
 
 ```js
-initializeArrayWithValues(5, 2); // [2,2,2,2,2]
+initializeArrayWithValues(5, 2); // [2, 2, 2, 2, 2]
 ```
 
 </details>
@@ -1630,7 +1631,7 @@ const intersection = (a, b) => {
 <summary>Examples</summary>
 
 ```js
-intersection([1, 2, 3], [4, 3, 2]); // [2,3]
+intersection([1, 2, 3], [4, 3, 2]); // [2, 3]
 ```
 
 </details>
@@ -1716,7 +1717,8 @@ isSorted([4, 3, 5]); // 0
 
 ### join
 
-Joins all elements of an array into a string and returns this string. Uses a separator and an end separator.
+Joins all elements of an array into a string and returns this string. 
+Uses a separator and an end separator.
 
 Use `Array.reduce()` to combine elements into a string.
 Omit the second argument, `separator`, to use a default separator of `','`.
@@ -1858,7 +1860,8 @@ squareIt([1, 2, 3]); // { 1: 1, 2: 4, 3: 9 }
 
 ### maxN
 
-Returns the `n` maximum elements from the provided array. If `n` is greater than or equal to the provided array's length, then return the original array(sorted in descending order).
+Returns the `n` maximum elements from the provided array. 
+If `n` is greater than or equal to the provided array's length, then return the original array (sorted in descending order).
 
 Use `Array.sort()` combined with the spread operator (`...`) to create a shallow clone of the array and sort it in descending order.
 Use `Array.slice()` to get the specified number of elements.
@@ -1882,7 +1885,8 @@ maxN([1, 2, 3], 2); // [3,2]
 
 ### minN
 
-Returns the `n` minimum elements from the provided array. If `n` is greater than or equal to the provided array's length, then return the original array(sorted in ascending order).
+Returns the `n` minimum elements from the provided array. 
+If `n` is greater than or equal to the provided array's length, then return the original array (sorted in ascending order).
 
 Use `Array.sort()` combined with the spread operator (`...`) to create a shallow clone of the array and sort it in ascending order.
 Use `Array.slice()` to get the specified number of elements.
@@ -2412,7 +2416,7 @@ const shuffle = ([...arr]) => {
 
 ```js
 const foo = [1, 2, 3];
-shuffle(foo); // [2,3,1], foo = [1,2,3]
+shuffle(foo); // [2, 3, 1], foo = [1, 2, 3]
 ```
 
 </details>
@@ -2433,7 +2437,7 @@ const similarity = (arr, values) => arr.filter(v => values.includes(v));
 <summary>Examples</summary>
 
 ```js
-similarity([1, 2, 3], [1, 2, 4]); // [1,2]
+similarity([1, 2, 3], [1, 2, 4]); // [1, 2]
 ```
 
 </details>
@@ -2897,7 +2901,7 @@ const uniqueElements = arr => [...new Set(arr)];
 <summary>Examples</summary>
 
 ```js
-uniqueElements([1, 2, 2, 3, 4, 4, 5]); // [1,2,3,4,5]
+uniqueElements([1, 2, 2, 3, 4, 4, 5]); // [1, 2, 3, 4, 5]
 ```
 
 </details>
@@ -3248,7 +3252,8 @@ bottomVisible(); // true
 
 ⚠️ **NOTICE:** The same functionality can be easily implemented by using the new asynchronous Clipboard API, which is still experimental but should be used in the future instead of this snippet. Find out more about it [here](https://github.com/w3c/clipboard-apis/blob/master/explainer.adoc#writing-to-the-clipboard).
 
-Copy a string to the clipboard. Only works as a result of user action (i.e. inside a `click` event listener).
+Copy a string to the clipboard. 
+Only works as a result of user action (i.e. inside a `click` event listener).
 
 Create a new `<textarea>` element, fill it with the supplied data and add it to the HTML document.
 Use `Selection.getRangeAt()`to store the selected range (if any).
@@ -5697,7 +5702,7 @@ const powerset = arr => arr.reduce((a, v) => a.concat(a.map(r => [v].concat(r)))
 <summary>Examples</summary>
 
 ```js
-powerset([1, 2]); // [[], [1], [2], [2,1]]
+powerset([1, 2]); // [[], [1], [2], [2, 1]]
 ```
 
 </details>
@@ -6488,9 +6493,11 @@ findKey(
 
 ### findLastKey
 
-Returns the last key that satisfies the provided testing function. Otherwise `undefined` is returned.
+Returns the last key that satisfies the provided testing function. 
+Otherwise `undefined` is returned.
 
-Use `Object.keys(obj)` to get all the properties of the object, `Array.reverse()` to reverse their order and `Array.find()` to test the provided function for each key-value pair. The callback receives three arguments - the value, the key and the object.
+Use `Object.keys(obj)` to get all the properties of the object, `Array.reverse()` to reverse their order and `Array.find()` to test the provided function for each key-value pair. 
+The callback receives three arguments - the value, the key and the object.
 
 ```js
 const findLastKey = (obj, fn) =>
@@ -6935,7 +6942,7 @@ const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
 <summary>Examples</summary>
 
 ```js
-objectToPairs({ a: 1, b: 2 }); // [['a',1],['b',2]]
+objectToPairs({ a: 1, b: 2 }); // [ ['a', 1], ['b', 2] ]
 ```
 
 </details>
