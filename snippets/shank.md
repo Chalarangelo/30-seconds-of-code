@@ -8,10 +8,11 @@ Omit the third argument, `delCount`, to remove `0` elements.
 Omit the fourth argument, `elements`, in order to not add any new elements.
 
 ```js
-const shank = (arr, index = 0, delCount = 0, ...elements) => 
-  arr.slice(0, index)
-     .concat(elements)
-     .concat(arr.slice(index + delCount));
+const shank = (arr, index = 0, delCount = 0, ...elements) =>
+  arr
+    .slice(0, index)
+    .concat(elements)
+    .concat(arr.slice(index + delCount));
 ```
 
 ```js
