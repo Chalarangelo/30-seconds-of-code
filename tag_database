@@ -248,6 +248,7 @@ sdbm:math,utility,intermediate
 serializeCookie:utility,string,intermediate
 setStyle:browser,beginner
 shallowClone:object,beginner
+shank:array,intermediate
 show:browser,css,beginner
 shuffle:array,random,intermediate
 similarity:array,math,beginner
