@@ -9,5 +9,5 @@ const powerset = arr => arr.reduce((a, v) => a.concat(a.map(r => [v].concat(r)))
 ```
 
 ```js
-powerset([1, 2]); // [[], [1], [2], [2,1]]
+powerset([1, 2]); // [[], [1], [2], [2, 1]]
 ```

@@ -1,6 +1,7 @@
 ### join
 
-Joins all elements of an array into a string and returns this string. Uses a separator and an end separator.
+Joins all elements of an array into a string and returns this string. 
+Uses a separator and an end separator.
 
 Use `Array.reduce()` to combine elements into a string.
 Omit the second argument, `separator`, to use a default separator of `','`.

@@ -1,6 +1,7 @@
 ### indexOfAll
 
-Returns all indices of `val` in an array. If `val` never occurs, returns `[]`.
+Returns all indices of `val` in an array. 
+If `val` never occurs, returns `[]`.
 
 Use `Array.reduce()` to loop over elements and store indices for matching elements.
 Return the array of indices.
