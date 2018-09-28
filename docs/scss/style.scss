@@ -706,12 +706,12 @@ header {
 
 nav {
   position: fixed;
-  top: 3.5rem;
+  top: 6.5rem;
   left: -320px;
   width: 320px;
   transition: left 0.3s ease;
   z-index: 1100;
-  height: calc(100vh - 3.5rem);
+  height: calc(100vh - 6.5rem);
   box-sizing: border-box;
   display: block;
   background: var(#{$nav-back-color-var});
@@ -748,13 +748,51 @@ nav {
     }
   }
   h4 {
-    margin: var(#{$universal-margin-var});
-    padding: var(#{$universal-padding-var}) calc(1.5 * var(#{$universal-padding-var}));
-    padding-left: 0;
-    color:  var(#{$nav-fore-color-var});
+    margin: 0;
+    padding: calc(2.5 * var(#{$universal-padding-var})) calc(2 * var(#{$universal-padding-var})) calc(1 * var(#{$universal-padding-var})) calc(1 * var(#{$universal-padding-var}));
+    color: var(#{$nav-fore-color-var});
+    font-size: 1.5rem;
+    &.collapse {
+      display: block;
+      cursor: pointer;
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23f0f0f0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      //background-position: 0rem 1.25rem;
+      background-position: right 0.5rem top 1.5rem;
+      background-repeat: no-repeat;
+      + ul {
+        position: absolute;
+        transform: scaleY(0);    
+        transform-origin: top;
+        transition: transform 0.3s ease;
+      }
+      &.toggled{
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23f0f0f0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-up'%3E%3Cpolyline points='18 15 12 9 6 15'%3E%3C/polyline%3E%3C/svg%3E");
+        padding-bottom: calc(0.125 * var(#{$universal-padding-var}));
+        + ul {
+          position: relative;
+          transform: scaleY(1);
+        }
+      }
+    }
+    + h4 {
+      border-top: $__1px solid var(#{$nav-link-border-color-var});
+    }
+    > a {
+      display: block;
+      line-height: 1;
+      &:hover, &:focus {
+        text-decoration: none;
+      }
+    }
   }
-  a {
-    display: block;
+  ul {
+    margin-left: -0.75rem;
+    background: var(#{$nav-back-color-var});
+    + h4 {
+      border-top: $__1px solid var(#{$nav-link-border-color-var});
+    }
+  }
+  li {
     margin: calc(0.5 * var(#{$universal-margin-var}));
     margin-left: var(#{$universal-margin-var});
     margin-bottom: 0;
@@ -764,9 +802,11 @@ nav {
       text-decoration: none;
       background: var(#{$nav-link-hover-color-var});
     }
-    + a {
+    + li {
       margin-top: 0;
     }
+  }
+  a {
     &:link, &:visited {
       color: var(#{$nav-link-fore-color-var});
     }
@@ -774,21 +814,56 @@ nav {
 }
 
 [type="search"] {
+  z-index: 1000;
+  position: fixed;
+  top: 3.5rem;
+  height: 3rem;
+  left: -320px;
+  width: 320px;
   color: var(#{$search-fore-color-var});
   background: var(#{$search-back-color-var});
   outline: none;
   box-sizing: border-box;
   border: none;
   border-bottom: $__1px solid var(#{$search-border-color-var});
-  width: 100%;
   margin-bottom: var(#{$universal-margin-var});
   padding: calc(2 * var(#{$universal-padding-var})) calc(1.5 * var(#{$universal-padding-var})) var(#{$universal-padding-var}) calc(1.5 * var(#{$universal-padding-var}));
   transition: all 0.3s ease;
+  @media screen and (max-width: 320px) {
+    width: 100%;
+  }
+  @media screen and (min-width: #{$grid-medium-breakpoint}) {
+    width: 33vw;
+    left: -33vw;
+  }
+  @media screen and (min-width: #{$grid-large-breakpoint}) {
+    width: 25vw;
+    left: -25vw;
+  }
+  &.col-nav {
+    box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14),0 3px 14px 2px rgba(0,0,0,0.12),0 5px 5px -3px rgba(0,0,0,0.2);
+    left: 0;
+    // Also apply the main content style to the footer
+    @media screen and (min-width: #{$grid-medium-breakpoint}) {
+      + main.col-centered, + main.col-centered + footer.col-full-width {
+        grid-column: 5/13;
+      }
+    }
+    @media screen and (min-width: #{$grid-large-breakpoint}) {
+      + main.col-centered  {
+        grid-column: 4/12;
+        padding-left: 8vw;
+      }
+      + main.col-centered + footer.col-full-width {
+        grid-column: 4/13;
+      }
+    }
+  }
   &:hover, &:focus {
     border-bottom: $__1px solid var(#{$search-hover-border-color-var});
   }
   &:focus {
-    box-shadow: 0 $__1px 0 0 var(#{$search-hover-border-color-var});
+    box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14),0 3px 14px 2px rgba(0,0,0,0.12),0 5px 5px -3px rgba(0,0,0,0.2), inset 0 0-$__1px 0 0 var(#{$search-hover-border-color-var});
   }
 }
 

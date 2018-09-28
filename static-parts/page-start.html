@@ -63,10 +63,12 @@
           }
           else if (event.target.classList.contains('menu-button')) {
             document.querySelector('nav').classList = event.target.classList.contains('toggled') ? '' : 'col-nav';
+            document.querySelector('[type="search"]').classList = event.target.classList.contains('toggled') ? '' : 'col-nav';
             event.target.classList = event.target.classList.contains('toggled') ? 'menu-button' : 'menu-button toggled';
           }
-          else if (!document.querySelector('nav').contains(event.target) && window.innerWidth < '768') {
+          else if (!document.querySelector('nav').contains(event.target) && !document.querySelector('[type="search"]').contains(event.target) && window.innerWidth < '768') {
             document.querySelector('nav').classList = '';
+            document.querySelector('[type="search"]').classList = '';
             document.querySelector('.menu-button').classList = 'menu-button';
           }
           else if (event.target.classList.contains('copy-button')) {
@@ -101,5 +103,5 @@
       </a></h1>
     </header>
     <div class="container card-container">
+      <input class="search" type="search" id="searchInput" onkeyup="search(this)" placeholder="Search..." aria-label="Snippet search">
       <nav>
-        <input class="search" type="search" id="searchInput" onkeyup="search(this)" placeholder="Search..."  aria-label="Snippet search">
