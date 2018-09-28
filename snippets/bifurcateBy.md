@@ -2,7 +2,7 @@
 
 Splits values into two groups according to a predicate function, which specifies which group an element in the input collection belongs to. If the predicate function returns a truthy value, the collection element belongs to the first group; otherwise, it belongs to the second group.
 
-Use `Array.reduce()` and `Array.push()` to add elements to groups, based on the value returned by `fn` for each element.
+Use `Array.prototype.reduce()` and `Array.prototype.push()` to add elements to groups, based on the value returned by `fn` for each element.
 
 ```js
 const bifurcateBy = (arr, fn) =>
