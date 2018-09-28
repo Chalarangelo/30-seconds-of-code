@@ -14,11 +14,25 @@
     <meta property="og:type" content="website" /><meta property="og:image" content="https://30secondsofcode.org/logos/logo_512.png">
     <link rel="icon" type="image/png" href="./logos/logo_128.png"><link rel="manifest" href="manifest.json">
     <script>
-      function scrollToTop(){
-        const c = document.querySelector('html').scrollTop;
+      const search = (node) => {
+        let matchingTags = [];
+        Array.from(node.parentElement.getElementsByTagName('a')).forEach(x => {
+          let data = [x.textContent.toLowerCase(), ...x.getAttribute('tags').split(',')].map(v => !!(v.indexOf(node.value.toLowerCase()) + 1));
+          if (data.includes(true)) {
+            x.style.display = '';
+            matchingTags.push(x.getAttribute('tags').split(',')[0]);
+          }
+          else x.style.display = 'none';
+        });
+        Array.from(node.parentElement.getElementsByTagName('h4')).forEach(x => {
+          x.style.display = matchingTags.includes(x.textContent.toLowerCase()) ? '' : 'none';
+        })
+      }
+      function scrollToTop() {
+        const c = document.querySelector('.card-container').scrollTop;
         if (c > 0) {
           window.requestAnimationFrame(scrollToTop);
-          document.querySelector('html').scrollTo(0, c - c / 4);
+          document.querySelector('.card-container').scrollTo(0, c - c / 4);
         }
       };
       function scrollTo(element, to, id, duration) {
@@ -26,24 +40,38 @@
         var difference = to - element.scrollTop;
         var perTick = difference / duration * 40;
 
-        setTimeout(function() {
-            element.scrollTop = element.scrollTop + perTick;
-            if (element.scrollTop === to) {
-              window.location.href = "#"+id;
-              return;
-            }
-            scrollTo(element, to, id, duration - 40);
+        setTimeout(function () {
+          element.scrollTop = element.scrollTop + perTick;
+          if (element.scrollTop === to) {
+            window.location.href = "#" + id;
+            return;
+          }
+          scrollTo(element, to, id, duration - 40);
         }, 40);
       };
       function loader() {
         registerClickListener();
+        if (window.innerWidth >= '768')
+          document.querySelector('nav').scrollTop = Array.from(document.querySelectorAll('h4')).filter(v => v.innerHTML === '$tag')[0].offsetTop;
+        else
+          document.querySelector('nav').scrollTop = Array.from(document.querySelectorAll('h4')).filter(v => v.innerHTML === '$tag')[0].offsetTop;
       }
       function registerClickListener() {
         document.addEventListener('click', function (event) {
-          if ( event.target.classList.contains('collapse') ) {
+          if (event.target.classList.contains('collapse')) {
             event.target.classList = event.target.classList.contains('toggled') ? 'collapse' : 'collapse toggled';
           }
-          else if (event.target.classList.contains('clipboard-copy')) {
+          else if (event.target.classList.contains('menu-button')) {
+            document.querySelector('nav').classList = event.target.classList.contains('toggled') ? '' : 'col-nav';
+            document.querySelector('[type="search"]').classList = event.target.classList.contains('toggled') ? '' : 'col-nav';
+            event.target.classList = event.target.classList.contains('toggled') ? 'menu-button' : 'menu-button toggled';
+          }
+          else if (!document.querySelector('nav').contains(event.target) && !document.querySelector('[type="search"]').contains(event.target) && window.innerWidth < '768') {
+            document.querySelector('nav').classList = '';
+            document.querySelector('[type="search"]').classList = '';
+            document.querySelector('.menu-button').classList = 'menu-button';
+          }
+          else if (event.target.classList.contains('copy-button')) {
             const text = event.target.parentElement.parentElement.querySelector(':not(pre) + pre').textContent;
             const textArea = document.createElement("textarea");
             textArea.value = text.trim();
@@ -55,21 +83,12 @@
             tst.classList = 'toast';
             tst.innerHTML = 'Snippet copied to clipboard!';
             document.body.appendChild(tst);
-            setTimeout(function() {
+            setTimeout(function () {
               tst.style.opacity = 0;
-              setTimeout(function() {
+              setTimeout(function () {
                 document.body.removeChild(tst);
-              },300);
-            },1700);
-          }
-          else if (event.target.classList.contains('scroll-to-top')){
-            scrollToTop();
-          }
-          else if (event.target.classList.contains('sublink-1')){
-            if(event.target.getAttribute("href").includes('./')) return;
-            event.preventDefault();
-            scrollTo(document.querySelector('main'), document.getElementById(event.target.href.split('#')[1]).parentElement.offsetTop - 60, event.target.href.split('#')[1], 400);
-            document.getElementById('doc-drawer-checkbox').checked = false;
+              }, 300);
+            }, 1700);
           }
         }, false);
       }

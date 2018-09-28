@@ -18,7 +18,7 @@
         let matchingTags = [];
         Array.from(node.parentElement.getElementsByTagName('a')).forEach(x => {
           let data = [x.textContent.toLowerCase(), ...x.getAttribute('tags').split(',')].map(v => !!(v.indexOf(node.value.toLowerCase()) + 1));
-          if(data.includes(true)){
+          if (data.includes(true)) {
             x.style.display = '';
             matchingTags.push(x.getAttribute('tags').split(',')[0]);
           }
@@ -28,7 +28,7 @@
           x.style.display = matchingTags.includes(x.textContent.toLowerCase()) ? '' : 'none';
         })
       }
-      function scrollToTop(){
+      function scrollToTop() {
         const c = document.querySelector('.card-container').scrollTop;
         if (c > 0) {
           window.requestAnimationFrame(scrollToTop);
@@ -40,33 +40,35 @@
         var difference = to - element.scrollTop;
         var perTick = difference / duration * 40;
 
-        setTimeout(function() {
-            element.scrollTop = element.scrollTop + perTick;
-            if (element.scrollTop === to) {
-              window.location.href = "#"+id;
-              return;
-            }
-            scrollTo(element, to, id, duration - 40);
+        setTimeout(function () {
+          element.scrollTop = element.scrollTop + perTick;
+          if (element.scrollTop === to) {
+            window.location.href = "#" + id;
+            return;
+          }
+          scrollTo(element, to, id, duration - 40);
         }, 40);
       };
       function loader() {
         registerClickListener();
-        if(window.innerWidth >= '768')
+        if (window.innerWidth >= '768')
           document.querySelector('nav').scrollTop = Array.from(document.querySelectorAll('h4')).filter(v => v.innerHTML === '$tag')[0].offsetTop;
         else
           document.querySelector('nav').scrollTop = Array.from(document.querySelectorAll('h4')).filter(v => v.innerHTML === '$tag')[0].offsetTop;
       }
       function registerClickListener() {
         document.addEventListener('click', function (event) {
-          if ( event.target.classList.contains('collapse') ) {
+          if (event.target.classList.contains('collapse')) {
             event.target.classList = event.target.classList.contains('toggled') ? 'collapse' : 'collapse toggled';
           }
           else if (event.target.classList.contains('menu-button')) {
             document.querySelector('nav').classList = event.target.classList.contains('toggled') ? '' : 'col-nav';
+            document.querySelector('[type="search"]').classList = event.target.classList.contains('toggled') ? '' : 'col-nav';
             event.target.classList = event.target.classList.contains('toggled') ? 'menu-button' : 'menu-button toggled';
           }
-          else if (!document.querySelector('nav').contains(event.target) && window.innerWidth < '768') {
+          else if (!document.querySelector('nav').contains(event.target) && !document.querySelector('[type="search"]').contains(event.target) && window.innerWidth < '768') {
             document.querySelector('nav').classList = '';
+            document.querySelector('[type="search"]').classList = '';
             document.querySelector('.menu-button').classList = 'menu-button';
           }
           else if (event.target.classList.contains('copy-button')) {
@@ -81,12 +83,12 @@
             tst.classList = 'toast';
             tst.innerHTML = 'Snippet copied to clipboard!';
             document.body.appendChild(tst);
-            setTimeout(function() {
+            setTimeout(function () {
               tst.style.opacity = 0;
-              setTimeout(function() {
+              setTimeout(function () {
                 document.body.removeChild(tst);
-              },300);
-            },1700);
+              }, 300);
+            }, 1700);
           }
         }, false);
       }
