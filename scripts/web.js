@@ -187,10 +187,10 @@ try {
         .replace(/<a/g, `<li><a tags="${taggedSnippet[1].join(',')}"`);
     output += '</ul>\n';
   }
-  output += `<h4><a href="./archive">Archive</a></h4>
-  <h4><a href="./glossary">Glossary</a></h4>
-  <h4><a href="./contributing">Contributing</a></h4>
-  <h4><a href="./about">About</a></h4>
+  output += `<h4 class="static-link"><a href="./archive">Archive</a></h4>
+  <h4 class="static-link"><a href="./glossary">Glossary</a></h4>
+  <h4 class="static-link"><a href="./contributing">Contributing</a></h4>
+  <h4 class="static-link"><a href="./about">About</a></h4>
   </nav><main class="col-centered"><span id="top"><br/><br/></span>`;
   // Loop over tags and snippets to create the list of snippets
   for (let tag of taggedData) {

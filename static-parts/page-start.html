@@ -15,17 +15,22 @@
     <link rel="icon" type="image/png" href="./logos/logo_128.png"><link rel="manifest" href="manifest.json">
     <script>
       const search = (node) => {
+        if(node.value.toLowerCase().trim() === ''){
+          document.querySelector('nav').querySelectorAll('li > a').forEach(x => x.style.display = ''); 
+          document.querySelector('nav').querySelectorAll('h4:not(.static-link)').forEach(x => x.classList = 'collapse');
+          return;
+        }
         let matchingTags = [];
-        Array.from(node.parentElement.getElementsByTagName('a')).forEach(x => {
-          let data = [x.textContent.toLowerCase(), ...x.getAttribute('tags').split(',')].map(v => !!(v.indexOf(node.value.toLowerCase()) + 1));
+        Array.from(document.querySelector('nav').querySelectorAll('li')).forEach(x => {
+          let data = [x.textContent.toLowerCase(), ...x.querySelector('a').getAttribute('tags').split(',')].map(v => !!(v.indexOf(node.value.toLowerCase()) + 1));
           if(data.includes(true)){
             x.style.display = '';
-            matchingTags.push(x.getAttribute('tags').split(',')[0]);
+            matchingTags.push(x.querySelector('a').getAttribute('tags').split(',')[0]);
           }
           else x.style.display = 'none';
         });
-        Array.from(node.parentElement.getElementsByTagName('h4')).forEach(x => {
-          x.style.display = matchingTags.includes(x.textContent.toLowerCase()) ? '' : 'none';
+        Array.from(document.querySelector('nav').querySelectorAll('h4:not(.static-link)')).forEach(x => {
+          x.classList = matchingTags.includes(x.textContent.toLowerCase()) ? 'collapse toggled' : 'collapse';
         })
       }
       function scrollToTop(){
