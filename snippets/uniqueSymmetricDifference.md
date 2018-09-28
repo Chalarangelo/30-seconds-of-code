@@ -2,7 +2,7 @@
 
 Returns the unique symmetric difference between two arrays, not containing duplicate values from either array.
 
-Use `Array.filter()` and `Array.includes()` on each array to remove values contained in the other, then create a `Set` from the results, removing duplicate values.
+Use `Array.prototype.filter()` and `Array.prototype.includes()` on each array to remove values contained in the other, then create a `Set` from the results, removing duplicate values.
 
 ```js
 const uniqueSymmetricDifference = (a, b) => [

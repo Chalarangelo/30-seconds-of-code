@@ -77,8 +77,8 @@ speechSynthesis('Hello, World'); // // plays the message
 
 ### binarySearch
 
-Use recursion. Similar to `Array.indexOf()` that finds the index of a value within an array.
-The difference being this operation only works with sorted arrays which offers a major performance boost due to it's logarithmic nature when compared to a linear search or `Array.indexOf()`.
+Use recursion. Similar to `Array.prototype.indexOf()` that finds the index of a value within an array.
+The difference being this operation only works with sorted arrays which offers a major performance boost due to it's logarithmic nature when compared to a linear search or `Array.prototype.indexOf()`.
 
 Search a sorted array by repeatedly dividing the search interval in half.
 Begin with an interval covering the whole array.
@@ -184,14 +184,14 @@ countVowels('gym'); // 0
 
 ### factors
 
-Returns the array of factors of the given `num`. 
+Returns the array of factors of the given `num`.
 If the second argument is set to `true` returns only the prime factors of `num`.
 If `num` is `1` or `0` returns an empty array.
 If `num` is less than `0` returns all the factors of `-int` together with their additive inverses.
 
-Use `Array.from()`, `Array.map()` and `Array.filter()` to find all the factors of `num`.
-If given `num` is negative, use `Array.reduce()` to add the additive inverses to the array.
-Return all results if `primes` is `false`, else determine and return only the prime factors using `isPrime` and `Array.filter()`.
+Use `Array.from()`, `Array.prototype.map()` and `Array.prototype.filter()` to find all the factors of `num`.
+If given `num` is negative, use `Array.prototype.reduce()` to add the additive inverses to the array.
+Return all results if `primes` is `false`, else determine and return only the prime factors using `isPrime` and `Array.prototype.filter()`.
 Omit the second argument, `primes`, to return prime and non-prime factors by default.
 
 **Note**:- _Negative numbers are not considered prime._
@@ -259,7 +259,7 @@ fibonacciCountUntilNum(10); // 7
 Generates an array, containing the Fibonacci sequence, up until the nth term.
 
 Create an empty array of the specific length, initializing the first two values (`0` and `1`).
-Use `Array.reduce()` to add values into the array, using the sum of the last two values, except for the first two.
+Use `Array.prototype.reduce()` to add values into the array, using the sum of the last two values, except for the first two.
 Uses a mathematical formula to calculate the length of the array required.
 
 ```js
@@ -417,7 +417,7 @@ isSimilar('tr','Rohit'); // false
 
 Calculates the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) between two strings.
 
-Calculates the number of changes (substitutions, deletions or additions) required to convert `string1` to `string2`. 
+Calculates the number of changes (substitutions, deletions or additions) required to convert `string1` to `string2`.
 Can also be used to compare two strings as shown in the second example.
 
 ``` js
@@ -487,8 +487,8 @@ pipeLog(1); // logs `1` and returns `1`
 
 QuickSort an Array (ascending sort by default).
 
-Use recursion. 
-Use `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it. 
+Use recursion.
+Use `Array.prototype.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it.
 If the parameter `desc` is truthy, return array sorts in descending order.
 
 ```js
@@ -518,7 +518,7 @@ quickSort([4, 1, 3, 2], true); // [4,3,2,1]
 
 Returns all the vowels in a `str` replaced by `repl`.
 
-Use `String.replace()` with a regexp to replace all vowels in `str`.
+Use `String.prototype.replace()` with a regexp to replace all vowels in `str`.
 Omot `repl` to use a default value of `''`.
 
 ```js
@@ -543,8 +543,8 @@ Solves the given mathematical expression in [reverse polish notation](https://en
 Throws appropriate errors if there are unrecognized symbols or the expression is wrong. The valid operators are :- `+`,`-`,`*`,`/`,`^`,`**` (`^`&`**` are the exponential symbols and are same). This snippet does not supports any unary operators.
 
 Use a dictionary, `OPERATORS` to specify each operator's matching mathematical operation.
-Use `String.replace()` with a regular expression to replace `^` with `**`, `String.split()` to tokenize the string and `Array.filter()` to remove empty tokens.
-Use `Array.forEach()` to parse each `symbol`, evaluate it as a numeric value or operator and solve the mathematical expression.
+Use `String.prototype.replace()` with a regular expression to replace `^` with `**`, `String.prototype.split()` to tokenize the string and `Array.prototype.filter()` to remove empty tokens.
+Use `Array.prototype.forEach()` to parse each `symbol`, evaluate it as a numeric value or operator and solve the mathematical expression.
 Numeric values are converted to floating point numbers and pushed to a `stack`, while operators are evaluated using the `OPERATORS` dictionary and pop elements from the `stack` to apply operations.
 
 ```js
