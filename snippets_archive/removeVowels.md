@@ -2,7 +2,7 @@
 
 Returns all the vowels in a `str` replaced by `repl`.
 
-Use `String.replace()` with a regexp to replace all vowels in `str`.
+Use `String.prototype.replace()` with a regexp to replace all vowels in `str`.
 Omot `repl` to use a default value of `''`.
 
 ```js

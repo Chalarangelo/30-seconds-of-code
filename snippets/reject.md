@@ -1,6 +1,6 @@
 ### reject
 
-Takes a predicate and array, like `Array.filter()`, but only keeps `x` if `pred(x) === false`.
+Takes a predicate and array, like `Array.prototype.filter()`, but only keeps `x` if `pred(x) === false`.
 
 ```js
 const reject = (pred, array) => array.filter((...args) => !pred(...args));

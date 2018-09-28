@@ -1,9 +1,9 @@
 ### findLastKey
 
-Returns the last key that satisfies the provided testing function. 
+Returns the last key that satisfies the provided testing function.
 Otherwise `undefined` is returned.
 
-Use `Object.keys(obj)` to get all the properties of the object, `Array.reverse()` to reverse their order and `Array.find()` to test the provided function for each key-value pair. 
+Use `Object.keys(obj)` to get all the properties of the object, `Array.prototype.reverse()` to reverse their order and `Array.prototype.find()` to test the provided function for each key-value pair.
 The callback receives three arguments - the value, the key and the object.
 
 ```js

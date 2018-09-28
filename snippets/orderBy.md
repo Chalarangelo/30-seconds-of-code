@@ -2,7 +2,7 @@
 
 Returns a sorted array of objects ordered by properties and orders.
 
-Uses `Array.sort()`, `Array.reduce()` on the `props` array with a default value of `0`, use array destructuring to swap the properties position depending on the order passed.
+Uses `Array.prototype.sort()`, `Array.prototype.reduce()` on the `props` array with a default value of `0`, use array destructuring to swap the properties position depending on the order passed.
 If no `orders` array is passed it sort by `'asc'` by default.
 
 ```js
