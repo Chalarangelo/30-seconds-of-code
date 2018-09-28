@@ -191,6 +191,7 @@ try {
   <h4 class="static-link"><a href="./glossary">Glossary</a></h4>
   <h4 class="static-link"><a href="./contributing">Contributing</a></h4>
   <h4 class="static-link"><a href="./about">About</a></h4>
+  <div><button class="social fb"></button><button class="social instagram"></button><button class="social twitter"></button></div>
   </nav><main class="col-centered"><span id="top"><br/><br/></span>`;
   // Loop over tags and snippets to create the list of snippets
   for (let tag of taggedData) {
