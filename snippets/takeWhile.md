@@ -2,8 +2,8 @@
 
 Removes elements in an array until the passed function returns `true`. Returns the removed elements.
 
-Loop through the array, using a `for...of` loop over `Array.entries()` until the returned value from the function is `true`.
-Return the removed elements, using `Array.slice()`.
+Loop through the array, using a `for...of` loop over `Array.prototype.entries()` until the returned value from the function is `true`.
+Return the removed elements, using `Array.prototype.slice()`.
 
 ```js
 const takeWhile = (arr, func) => {

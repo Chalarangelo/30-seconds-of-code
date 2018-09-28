@@ -2,8 +2,8 @@
 
 Returns the prefixed version (if necessary) of a CSS property that the browser supports.
 
-Use `Array.findIndex()` on an array of vendor prefix strings to test if `document.body` has one of them defined in its `CSSStyleDeclaration` object, otherwise return `null`. 
-Use `String.charAt()` and `String.toUpperCase()` to capitalize the property, which will be appended to the vendor prefix string.
+Use `Array.prototype.findIndex()` on an array of vendor prefix strings to test if `document.body` has one of them defined in its `CSSStyleDeclaration` object, otherwise return `null`.
+Use `String.prototype.charAt()` and `String.prototype.toUpperCase()` to capitalize the property, which will be appended to the vendor prefix string.
 
 ```js
 const prefix = prop => {

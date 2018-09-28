@@ -2,8 +2,8 @@
 
 Performs right-to-left function composition.
 
-Use the `...rest` operator to gather all function arguments into an array. Return a function which takes
-a single argument and uses `Array.reduceRight()` to return the result of applying each function.
+Use `Array.prototype.reduce()` to perform right-to-left function composition.
+The last (rightmost) function can accept one or more arguments; the remaining functions must be unary.
 
 ```js
 const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));

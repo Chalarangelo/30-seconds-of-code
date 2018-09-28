@@ -2,7 +2,7 @@
 
 Hashes the input string into a whole number.
 
-Use `String.split('')` and `Array.reduce()` to create a hash of the input string, utilizing bit shifting.
+Use `String.prototype.split('')` and `Array.prototype.reduce()` to create a hash of the input string, utilizing bit shifting.
 
 ```js
 const sdbm = str => {

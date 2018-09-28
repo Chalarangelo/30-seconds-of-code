@@ -2,7 +2,7 @@
 
 Converts a string from camelcase.
 
-Use `String.replace()` to remove underscores, hyphens, and spaces and convert words to camelcase.
+Use `String.prototype.replace()` to remove underscores, hyphens, and spaces and convert words to camelcase.
 Omit the second argument to use a default `separator` of `_`.
 
 ```js

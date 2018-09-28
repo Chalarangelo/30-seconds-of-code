@@ -2,7 +2,7 @@
 
 Returns a list of elements that exist in both arrays.
 
-Create a `Set` from `b`, then use `Array.filter()` on `a` to only keep values contained in `b`.
+Create a `Set` from `b`, then use `Array.prototype.filter()` on `a` to only keep values contained in `b`.
 
 ```js
 const intersection = (a, b) => {

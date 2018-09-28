@@ -1,7 +1,7 @@
 ### binarySearch
 
-Use recursion. Similar to `Array.indexOf()` that finds the index of a value within an array.
-The difference being this operation only works with sorted arrays which offers a major performance boost due to it's logarithmic nature when compared to a linear search or `Array.indexOf()`.
+Use recursion. Similar to `Array.prototype.indexOf()` that finds the index of a value within an array.
+The difference being this operation only works with sorted arrays which offers a major performance boost due to it's logarithmic nature when compared to a linear search or `Array.prototype.indexOf()`.
 
 Search a sorted array by repeatedly dividing the search interval in half.
 Begin with an interval covering the whole array.

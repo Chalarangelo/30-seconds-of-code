@@ -52,7 +52,7 @@ Here's what you can do to help:
 
 ### Additional guidelines and conventions regarding snippets
 
-- When describing snippets, refer to methods, using their full name. For example, use `Array.reduce()`, instead of `reduce()`.
+- When describing snippets, refer to methods, using their full name. For example, use `Array.prototype.reduce()`, instead of `reduce()`.
 - If your snippet contains argument with default parameters, explain what happens if they are omitted when calling the function and what the default case is.
 - If your snippet uses recursion, explain the base cases.
 - Always use `const functionName` for function definitions.
@@ -64,13 +64,13 @@ Here's what you can do to help:
   - `num` or `n` for a numeric value (usually as the snippet function's argument).
   - `el` for DOM elements (usually as the snippet function's argument).
   - `val` or `v` for value (usually when iterating a list, mapping, sorting etc.).
-  - `acc` for accumulators in `Array.reduce()`.
-  - `(a,b)` for the two values compared when using `Array.sort()`.
+  - `acc` for accumulators in `Array.prototype.reduce()`.
+  - `(a,b)` for the two values compared when using `Array.prototype.sort()`.
   - `i` for indexes.
   - `fn` for function arguments.
   - `nums` for arrays of numbers.
 - Use `()` if your function takes no arguments.
-- Use `_` if an argument inside some function (e.g. `Array.reduce()`) is not used anywhere in your code.
+- Use `_` if an argument inside some function (e.g. `Array.prototype.reduce()`) is not used anywhere in your code.
 - Specify default parameters for arguments, if necessary. It is preferred to put default parameters last unless you have pretty good reason not to.
 - If your snippet's function takes variadic arguments, use `...args` (although in certain cases, it might be needed to use a different name).
 - If your snippet function's body is a single statement, omit the `return` keyword and use an expression instead.
@@ -79,7 +79,7 @@ Here's what you can do to help:
 - Always use single quotes for string literals. Use template literals, instead, if necessary.
 - If your snippet's code is short enough (around 80 characters), you can make it a single-line function (although not mandatory). Otherwise, use multiple lines.
 - Prefer using `Array` methods whenever possible.
-- Prefer `Array.concat()` instead of `Array.push()` when working with `Array.reduce()`.
+- Prefer `Array.prototype.concat()` instead of `Array.prototype.push()` when working with `Array.prototype.reduce()`.
 - Use strict equality checking (`===` and `!==` instead of `==` and `!=`), unless you specifically have reason not to.
 - Prefer using the ternary operator (`condition ? trueResult : falseResult`) instead of `if else` statements whenever possible.
 - Avoid nesting ternary operators (but you can do it if you feel like you should).

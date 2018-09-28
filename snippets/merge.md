@@ -2,8 +2,8 @@
 
 Creates a new object from the combination of two or more objects.
 
-Use `Array.reduce()` combined with `Object.keys(obj)` to iterate over all objects and keys.
-Use `hasOwnProperty()` and `Array.concat()` to append values for keys existing in multiple objects.
+Use `Array.prototype.reduce()` combined with `Object.keys(obj)` to iterate over all objects and keys.
+Use `hasOwnProperty()` and `Array.prototype.concat()` to append values for keys existing in multiple objects.
 
 ```js
 const merge = (...objs) =>

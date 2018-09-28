@@ -6,7 +6,7 @@ Generates all permutations of an array's elements (contains duplicates).
 
 Use recursion.
 For each element in the given array, create all the partial permutations for the rest of its elements.
-Use `Array.map()` to combine the element with each partial permutation, then `Array.reduce()` to combine all permutations in one array.
+Use `Array.prototype.map()` to combine the element with each partial permutation, then `Array.prototype.reduce()` to combine all permutations in one array.
 Base cases are for array `length` equal to `2` or `1`.
 
 ```js

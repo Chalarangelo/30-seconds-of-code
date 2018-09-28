@@ -20,7 +20,7 @@
 #### Related projects
 
 - [30 Seconds of CSS](https://30-seconds.github.io/30-seconds-of-css/)
-- [30 Seconds of Interviews](https://30secondsofinterviews.org/) 
+- [30 Seconds of Interviews](https://30secondsofinterviews.org/)
 - [30 Seconds of Python](https://github.com/kriadmin/30-seconds-of-python-code) *(unofficial)*
 - [30 Seconds of PHP](https://github.com/appzcoder/30-seconds-of-php-code) *(unofficial)*
 
@@ -1448,7 +1448,7 @@ head([1, 2, 3]); // 1
 
 ### indexOfAll
 
-Returns all indices of `val` in an array. 
+Returns all indices of `val` in an array.
 If `val` never occurs, returns `[]`.
 
 Use `Array.reduce()` to loop over elements and store indices for matching elements.
@@ -1718,7 +1718,7 @@ isSorted([4, 3, 5]); // 0
 
 ### join
 
-Joins all elements of an array into a string and returns this string. 
+Joins all elements of an array into a string and returns this string.
 Uses a separator and an end separator.
 
 Use `Array.reduce()` to combine elements into a string.
@@ -1812,7 +1812,7 @@ Takes any number of iterable objects or objects with a `length` property and ret
 If multiple objects have the same length, the first one will be returned.
 Returns `undefined` if no arguments are provided.
 
-Use `Array.reduce()`, comparing the `length` of objects to find the longest one.  
+Use `Array.reduce()`, comparing the `length` of objects to find the longest one.
 
 ```js
 const longestItem = (val, ...vals) =>
@@ -1861,7 +1861,7 @@ squareIt([1, 2, 3]); // { 1: 1, 2: 4, 3: 9 }
 
 ### maxN
 
-Returns the `n` maximum elements from the provided array. 
+Returns the `n` maximum elements from the provided array.
 If `n` is greater than or equal to the provided array's length, then return the original array (sorted in descending order).
 
 Use `Array.sort()` combined with the spread operator (`...`) to create a shallow clone of the array and sort it in descending order.
@@ -1886,7 +1886,7 @@ maxN([1, 2, 3], 2); // [3,2]
 
 ### minN
 
-Returns the `n` minimum elements from the provided array. 
+Returns the `n` minimum elements from the provided array.
 If `n` is greater than or equal to the provided array's length, then return the original array (sorted in ascending order).
 
 Use `Array.sort()` combined with the spread operator (`...`) to create a shallow clone of the array and sort it in ascending order.
@@ -3253,7 +3253,7 @@ bottomVisible(); // true
 
 ⚠️ **NOTICE:** The same functionality can be easily implemented by using the new asynchronous Clipboard API, which is still experimental but should be used in the future instead of this snippet. Find out more about it [here](https://github.com/w3c/clipboard-apis/blob/master/explainer.adoc#writing-to-the-clipboard).
 
-Copy a string to the clipboard. 
+Copy a string to the clipboard.
 Only works as a result of user action (i.e. inside a `click` event listener).
 
 Create a new `<textarea>` element, fill it with the supplied data and add it to the HTML document.
@@ -6232,7 +6232,7 @@ console.log(arr); // ['line1', 'line2', 'line3']
 
 Converts a tilde path to an absolute path.
 
-Use `String.replace()` with a regular expression and `OS.homedir()` to replace the `~` in the start of the path with the home directory.
+Use `String.prototype.replace()` with a regular expression and `OS.homedir()` to replace the `~` in the start of the path with the home directory.
 
 ```js
 const untildify = str => str.replace(/^~($|\/|\\)/, `${require('os').homedir()}$1`);
@@ -6494,10 +6494,10 @@ findKey(
 
 ### findLastKey
 
-Returns the last key that satisfies the provided testing function. 
+Returns the last key that satisfies the provided testing function.
 Otherwise `undefined` is returned.
 
-Use `Object.keys(obj)` to get all the properties of the object, `Array.reverse()` to reverse their order and `Array.find()` to test the provided function for each key-value pair. 
+Use `Object.keys(obj)` to get all the properties of the object, `Array.reverse()` to reverse their order and `Array.find()` to test the provided function for each key-value pair.
 The callback receives three arguments - the value, the key and the object.
 
 ```js
@@ -6639,7 +6639,7 @@ functions(new Foo(), true); // ['a', 'b', 'c']
 
 Retrieve a set of properties indicated by the given selectors from an object.
 
-Use `Array.map()` for each selector, `String.replace()` to replace square brackets with dots, `String.split('.')` to split each selector, `Array.filter()` to remove empty values and `Array.reduce()` to get the value indicated by it.
+Use `Array.map()` for each selector, `String.prototype.replace()` to replace square brackets with dots, `String.split('.')` to split each selector, `Array.filter()` to remove empty values and `Array.reduce()` to get the value indicated by it.
 
 ```js
 const get = (from, ...selectors) =>
@@ -7308,7 +7308,7 @@ capitalize('fooBar', true); // 'Foobar'
 
 Capitalizes the first letter of every word in a string.
 
-Use `String.replace()` to match the first character of each word and `String.toUpperCase()` to capitalize it.
+Use `String.prototype.replace()` to match the first character of each word and `String.toUpperCase()` to capitalize it.
 
 ```js
 const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperCase());
@@ -7418,7 +7418,7 @@ decapitalize('FooBar', true); // 'fOOBAR'
 
 Escapes a string for use in HTML.
 
-Use `String.replace()` with a regexp that matches the characters that need to be escaped, using a callback function to replace each character instance with its associated escaped character using a dictionary (object).
+Use `String.prototype.replace()` with a regexp that matches the characters that need to be escaped, using a callback function to replace each character instance with its associated escaped character using a dictionary (object).
 
 ```js
 const escapeHTML = str =>
@@ -7450,7 +7450,7 @@ escapeHTML('<a href="#">Me & you</a>'); // '&lt;a href=&quot;#&quot;&gt;Me &amp;
 
 Escapes a string to use in a regular expression.
 
-Use `String.replace()` to escape special characters.
+Use `String.prototype.replace()` to escape special characters.
 
 ```js
 const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -7471,7 +7471,7 @@ escapeRegExp('(test)'); // \\(test\\)
 
 Converts a string from camelcase.
 
-Use `String.replace()` to remove underscores, hyphens, and spaces and convert words to camelcase.
+Use `String.prototype.replace()` to remove underscores, hyphens, and spaces and convert words to camelcase.
 Omit the second argument to use a default `separator` of `_`.
 
 ```js
@@ -7545,7 +7545,7 @@ isAbsoluteURL('/foo/bar'); // false
 
 Checks if a string is an anagram of another string (case-insensitive, ignores spaces, punctuation and special characters).
 
-Use `String.toLowerCase()`, `String.replace()` with an appropriate regular expression to remove unnecessary characters, `String.split('')`, `Array.sort()` and `Array.join('')` on both strings to normalize them, then check if their normalized forms are equal.
+Use `String.toLowerCase()`, `String.prototype.replace()` with an appropriate regular expression to remove unnecessary characters, `String.split('')`, `Array.sort()` and `Array.join('')` on both strings to normalize them, then check if their normalized forms are equal.
 
 ```js
 const isAnagram = (str1, str2) => {
@@ -7699,7 +7699,7 @@ pad('foobar', 3); // 'foobar'
 
 Returns `true` if the given string is a palindrome, `false` otherwise.
 
-Convert string `String.toLowerCase()` and use `String.replace()` to remove non-alphanumeric characters from it.
+Convert string `String.toLowerCase()` and use `String.prototype.replace()` to remove non-alphanumeric characters from it.
 Then, use the spread operator (`...`) to split string into individual characters, `Array.reverse()`, `String.join('')` and compare to the original, unreversed string, after converting it `String.tolowerCase()`.
 
 ```js
@@ -8016,7 +8016,7 @@ truncateString('boomerang', 7); // 'boom...'
 
 Unescapes escaped HTML characters.
 
-Use `String.replace()` with a regex that matches the characters that need to be unescaped, using a callback function to replace each escaped character instance with its associated unescaped character using a dictionary (object).
+Use `String.prototype.replace()` with a regex that matches the characters that need to be unescaped, using a callback function to replace each escaped character instance with its associated unescaped character using a dictionary (object).
 
 ```js
 const unescapeHTML = str =>
@@ -8048,7 +8048,7 @@ unescapeHTML('&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;'); // '<a href=
 
 Joins all given URL segments together, then normalizes the resulting URL.
 
-Use `String.join('/')` to combine URL segments, then a series of `String.replace()` calls with various regexps to normalize the resulting URL (remove double slashes, add proper slashes for protocol, remove slashes before parameters, combine parameters with `'&'` and normalize first parameter delimiter).
+Use `String.join('/')` to combine URL segments, then a series of `String.prototype.replace()` calls with various regexps to normalize the resulting URL (remove double slashes, add proper slashes for protocol, remove slashes before parameters, combine parameters with `'&'` and normalize first parameter delimiter).
 
 ```js
 const URLJoin = (...args) =>
