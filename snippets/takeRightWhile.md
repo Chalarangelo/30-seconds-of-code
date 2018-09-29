@@ -6,7 +6,8 @@ Loop through the array, using a `for...of` loop over `Array.prototype.keys()` un
 Return the removed elements, using `Array.prototype.reverse()` and `Array.prototype.slice()`.
 
 ```js
-const takeRightWhile = (arr, func) => arr.reduceRight((acc, el) => func(el) ? acc : [el, ...acc], []);
+const takeRightWhile = (arr, func) =>
+  arr.reduceRight((acc, el) => (func(el) ? acc : [el, ...acc]), []);
 ```
 
 ```js

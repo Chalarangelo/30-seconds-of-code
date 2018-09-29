@@ -959,6 +959,26 @@
       }
     },
     {
+      "id": "dayOfYear",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "dayOfYear.md",
+        "text": "Gets the day of the year from a `Date` object.\n\nUse `new Date()` and `Date.prototype.getFullYear()` to get the first day of the year as a `Date` object, subtract it from the provided `date` and divide with the milliseconds in each day to get the result.\nUse `Math.floor()` to appropriately round the resulting day count to an integer.",
+        "codeBlocks": [
+          "const dayOfYear = date =>\n  Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);",
+          "dayOfYear(new Date()); // 272"
+        ],
+        "tags": [
+          "date",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "389ee2f96db160f9ab0ed4aa38c69a1eebf93d785c8baf82afe0ee84c611a57d"
+      }
+    },
+    {
       "id": "debounce",
       "type": "snippet",
       "attributes": {
@@ -2745,6 +2765,27 @@
       }
     },
     {
+      "id": "isAfterDate",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "isAfterDate.md",
+        "text": "Check if a date is after another date.\n\nUse the greater than operator (`>`) to check if the first date comes after the second one.",
+        "codeBlocks": [
+          "const isAfterDate = (dateA, dateB) => dateA > dateB;",
+          "isAfterDate(new Date(2010, 10, 21), new Date(2010, 10, 20)); // true"
+        ],
+        "tags": [
+          "date",
+          "utility",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "78974cc479b0d3a51b7795c5679cbab9601cdd90716a69947799ebe302a7d515"
+      }
+    },
+    {
       "id": "isAnagram",
       "type": "snippet",
       "attributes": {
@@ -2784,6 +2825,27 @@
       "meta": {
         "archived": false,
         "hash": "00b43a2b430d5d9205046ad6fbf7442f0d4507895c82545753253b5b5f97fa3a"
+      }
+    },
+    {
+      "id": "isBeforeDate",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "isBeforeDate.md",
+        "text": "Check if a date is before another date.\n\nUse the less than operator (`<`) to check if the first date comes before the second one.",
+        "codeBlocks": [
+          "const isBeforeDate = (dateA, dateB) => dateA < dateB;",
+          "isBeforeDate(new Date(2010, 10, 20), new Date(2010, 10, 21)); // true"
+        ],
+        "tags": [
+          "date",
+          "utility",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "947340a879922379186ddecda22c625bc4db21948dc619e445abd95da21d0a1c"
       }
     },
     {
@@ -3140,6 +3202,27 @@
       "meta": {
         "archived": false,
         "hash": "fa8bfc91bfa09eb76f7131c3cc7b890598f8a30ec9e9872f7ffd9c282d37ba72"
+      }
+    },
+    {
+      "id": "isSameDate",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "isSameDate.md",
+        "text": "Check if a date is the same as another date.\n\nUse `Date.prototype.toISOString()` and strict equality checking (`===`) to check if the first date is the same as the second one.",
+        "codeBlocks": [
+          "const isSameDate = (dateA, dateB) => dateA.toISOString() === dateB.toISOString();",
+          "isSameDate(new Date(2010, 10, 20), new Date(2010, 10, 20)); // true"
+        ],
+        "tags": [
+          "date",
+          "utility",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "a57a8fe6a89b45bd11bcfeb71321839b5ae9c6a3789dfc6670be4a71d705f703"
       }
     },
     {
@@ -3626,6 +3709,27 @@
       }
     },
     {
+      "id": "maxDate",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "maxDate.md",
+        "text": "Returns the maximum of the given dates.\n\nUse `Math.max.apply()` to find the maximum date value, `new Date()` to convert it to a `Date` object.",
+        "codeBlocks": [
+          "const maxDate = (...dates) => new Date(Math.max.apply(null, ...dates));",
+          "const array = [\n  new Date(2017, 4, 13),\n  new Date(2018, 2, 12),\n  new Date(2016, 0, 10),\n  new Date(2016, 0, 9)\n];\nmaxDate(array); // 2018-03-11T22:00:00.000Z"
+        ],
+        "tags": [
+          "date",
+          "math",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "8d1b95da3bac65bf8a1801edfd1efce94ea17902669a7612c5a0138fad9d0b12"
+      }
+    },
+    {
       "id": "maxN",
       "type": "snippet",
       "attributes": {
@@ -3728,6 +3832,27 @@
       "meta": {
         "archived": false,
         "hash": "58be8a0dc3e56ec09b0bb927c2c575c033c70ac3a8b612e993fdcbf6d5a99d51"
+      }
+    },
+    {
+      "id": "minDate",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "minDate.md",
+        "text": "Returns the minimum of the given dates.\n\nUse `Math.min.apply()` to find the minimum date value, `new Date()` to convert it to a `Date` object.",
+        "codeBlocks": [
+          "const minDate = (...dates) => new Date(Math.min.apply(null, ...dates));",
+          "const array = [\n  new Date(2017, 4, 13),\n  new Date(2018, 2, 12),\n  new Date(2016, 0, 10),\n  new Date(2016, 0, 9)\n];\nminDate(array); // 2016-01-08T22:00:00.000Z"
+        ],
+        "tags": [
+          "date",
+          "math",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "436e070c2961cd8cbeffbc05fae7b3fa978eefe1e048de248bc17b86a2b06705"
       }
     },
     {
@@ -6002,7 +6127,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "tomorrow.md",
-        "text": "Results in a string representation of tomorrow's date.\nUse `new Date()` to get today's date, adding one day using `Date.getDate()` and `Date.setDate()`, and converting the Date object to a string.",
+        "text": "Results in a string representation of tomorrow's date.\n\nUse `new Date()` to get today's date, adding one day using `Date.getDate()` and `Date.setDate()`, and converting the Date object to a string.",
         "codeBlocks": [
           "const tomorrow = (long = false) => {\n  let t = new Date();\n  t.setDate(t.getDate() + 1);\n  const ret = `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, '0')}-${String(\n    t.getDate()\n  ).padStart(2, '0')}`;\n  return !long ? ret : `${ret}T00:00:00`;\n};",
           "tomorrow(); // 2017-12-27 (if current date is 2017-12-26)\ntomorrow(true); // 2017-12-27T00:00:00 (if current date is 2017-12-26)"
@@ -6014,7 +6139,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "55531d99aa0019593ea79a1bf0a3383857d88f6c7fdb33399a7812c0d184eb72"
+        "hash": "4794ae637e65b9c1ac43f6c964555a98cda83e1410684e11ed34753c81db35fb"
       }
     },
     {
