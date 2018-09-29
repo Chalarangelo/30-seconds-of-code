@@ -44,6 +44,7 @@ CSVToArray:string,array,utility,intermediate
 CSVToJSON:string,array,object,advanced
 currentURL:browser,url,beginner
 curry:function,recursion,intermediate
+dayOfYear:date,beginner
 debounce:function,intermediate
 decapitalize:string,array,intermediate
 deepClone:object,recursion,intermediate
@@ -130,8 +131,10 @@ intersectionWith:array,function,intermediate
 invertKeyValues:object,function,intermediate
 is:type,array,regexp,beginner
 isAbsoluteURL:string,utility,browser,url,intermediate
+isAfterDate:date,utility,beginner
 isAnagram:string,regexp,intermediate
 isArrayLike:type,array,intermediate
+isBeforeDate:date,utility,beginner
 isBoolean:type,beginner
 isBrowser:utility,browser,intermediate
 isBrowserTabFocused:browser,beginner
@@ -149,6 +152,7 @@ isPlainObject:type,object,intermediate
 isPrime:math,beginner,intermediate
 isPrimitive:type,function,array,string,intermediate
 isPromiseLike:type,function,promise,intermediate
+isSameDate:date,utility,beginner
 isSorted:array,intermediate
 isString:type,string,beginner
 isSymbol:type,beginner
@@ -172,11 +176,13 @@ mask:string,utility,regexp,intermediate
 matches:object,type,intermediate
 matchesWith:object,type,function,intermediate
 maxBy:math,array,function,beginner
+maxDate:date,math,beginner
 maxN:array,math,beginner
 median:math,array,intermediate
 memoize:function,advanced
 merge:object,array,intermediate
 minBy:math,array,function,beginner
+minDate:date,math,beginner
 minN:array,math,beginner
 mostPerformant:utility,function
 negate:function,beginner
