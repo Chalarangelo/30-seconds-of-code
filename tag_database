@@ -44,6 +44,7 @@ CSVToArray:string,array,utility,intermediate
 CSVToJSON:string,array,object,advanced
 currentURL:browser,url,beginner
 curry:function,recursion,intermediate
+dayOfYear:date,beginner
 debounce:function,intermediate
 decapitalize:string,array,intermediate
 deepClone:object,recursion,intermediate
