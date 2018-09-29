@@ -4457,6 +4457,7 @@ minDate(array); // 2016-01-08T22:00:00.000Z
 ### tomorrow
 
 Results in a string representation of tomorrow's date.
+
 Use `new Date()` to get today's date, adding one day using `Date.getDate()` and `Date.setDate()`, and converting the Date object to a string.
 
 ```js
