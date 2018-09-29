@@ -131,8 +131,10 @@ intersectionWith:array,function,intermediate
 invertKeyValues:object,function,intermediate
 is:type,array,regexp,beginner
 isAbsoluteURL:string,utility,browser,url,intermediate
+isAfterDate:date,utility,beginner
 isAnagram:string,regexp,intermediate
 isArrayLike:type,array,intermediate
+isBeforeDate:date,utility,beginner
 isBoolean:type,beginner
 isBrowser:utility,browser,intermediate
 isBrowserTabFocused:browser,beginner
@@ -150,6 +152,7 @@ isPlainObject:type,object,intermediate
 isPrime:math,beginner,intermediate
 isPrimitive:type,function,array,string,intermediate
 isPromiseLike:type,function,promise,intermediate
+isSameDate:date,utility,beginner
 isSorted:array,intermediate
 isString:type,string,beginner
 isSymbol:type,beginner
