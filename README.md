@@ -251,10 +251,16 @@ average(1, 2, 3);
 <details>
 <summary>View contents</summary>
 
+* [`dayOfYear`](#dayofyear)
 * [`formatDuration`](#formatduration)
 * [`getColonTimeFromDate`](#getcolontimefromdate)
 * [`getDaysDiffBetweenDates`](#getdaysdiffbetweendates)
 * [`getMeridiemSuffixOfInteger`](#getmeridiemsuffixofinteger)
+* [`isAfterDate`](#isafterdate)
+* [`isBeforeDate`](#isbeforedate)
+* [`isSameDate`](#issamedate)
+* [`maxDate`](#maxdate)
+* [`minDate`](#mindate)
 * [`tomorrow`](#tomorrow)
 
 </details>
@@ -4196,6 +4202,29 @@ UUIDGeneratorBrowser(); // '7982fcfe-5721-4632-bede-6000885be57d'
 
 ## ⏱️ Date
 
+### dayOfYear
+
+Gets the day of the year from a `Date` object.
+
+Use `new Date()` and `Date.prototype.getFullYear()` to get the first day of the year as a `Date` object, subtract it from the provided `date` and divide with the milliseconds in each day to get the result.
+Use `Math.floor()` to appropriately round the resulting day count to an integer.
+
+```js
+const dayOfYear = date =>
+  Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+dayOfYear(new Date()); // 272
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 ### formatDuration
 
 Returns the human readable format of the given number of milliseconds.
@@ -4302,6 +4331,123 @@ getMeridiemSuffixOfInteger(0); // "12am"
 getMeridiemSuffixOfInteger(11); // "11am"
 getMeridiemSuffixOfInteger(13); // "1pm"
 getMeridiemSuffixOfInteger(25); // "1pm"
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+### isAfterDate
+
+Check if a date is after another date.
+
+Use the greater than operator (`>`) to check if the first date comes after the second one.
+
+```js
+const isAfterDate = (dateA, dateB) => dateA > dateB;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isAfterDate(new Date(2010, 10, 21), new Date(2010, 10, 20)); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+### isBeforeDate
+
+Check if a date is before another date.
+
+Use the less than operator (`<`) to check if the first date comes before the second one.
+
+```js
+const isBeforeDate = (dateA, dateB) => dateA < dateB;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isBeforeDate(new Date(2010, 10, 20), new Date(2010, 10, 21)); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+### isSameDate
+
+Check if a date is the same as another date.
+
+Use `Date.prototype.toISOString()` and strict equality checking (`===`) to check if the first date is the same as the second one.
+
+```js
+const isSameDate = (dateA, dateB) => dateA.toISOString() === dateB.toISOString();
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isSameDate(new Date(2010, 10, 20), new Date(2010, 10, 20)); // true
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+### maxDate
+
+Returns the maximum of the given dates.
+
+Use `Math.max.apply()` to find the maximum date value, `new Date()` to convert it to a `Date` object.
+
+```js
+const maxDate = (...dates) => new Date(Math.max.apply(null, ...dates));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const array = [
+  new Date(2017, 4, 13),
+  new Date(2018, 2, 12),
+  new Date(2016, 0, 10),
+  new Date(2016, 0, 9)
+];
+maxDate(array); // 2018-03-11T22:00:00.000Z
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+### minDate
+
+Returns the minimum of the given dates.
+
+Use `Math.min.apply()` to find the minimum date value, `new Date()` to convert it to a `Date` object.
+
+```js
+const minDate = (...dates) => new Date(Math.min.apply(null, ...dates));
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+const array = [
+  new Date(2017, 4, 13),
+  new Date(2018, 2, 12),
+  new Date(2016, 0, 10),
+  new Date(2016, 0, 9)
+];
+minDate(array); // 2016-01-08T22:00:00.000Z
 ```
 
 </details>
