@@ -173,11 +173,13 @@ mask:string,utility,regexp,intermediate
 matches:object,type,intermediate
 matchesWith:object,type,function,intermediate
 maxBy:math,array,function,beginner
+maxDate:date,math,beginner
 maxN:array,math,beginner
 median:math,array,intermediate
 memoize:function,advanced
 merge:object,array,intermediate
 minBy:math,array,function,beginner
+minDate:date,math,beginner
 minN:array,math,beginner
 mostPerformant:utility,function
 negate:function,beginner
