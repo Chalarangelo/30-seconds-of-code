@@ -6,9 +6,8 @@ Use `new Date()` and `Date.prototype.getFullYear()` to get the first day of the 
 Use `Math.floor()` to appropriately round the resulting day count to an integer.
 
 ```js
-const dayOfYear = date => Math.floor(
-  (date - new Date(date.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24
-);
+const dayOfYear = date =>
+  Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
 ```
 
 ```js
