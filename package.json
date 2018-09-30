@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon -e md,js ./scripts/build.js & parcel index.html",
     "build": "node ./scripts/build.js && npm run prettier && npm run parcel",
-    "parcel": "parcel build index.html -d docs/ --public-url ./",
+    "parcel": "npx rimraf docs && parcel build index.html -d docs/ --public-url ./",
     "prettier": "prettier --write \"**/*.{js,json,md,css,scss}\""
   },
   "author": "atomiks",
@@ -29,7 +29,8 @@
     "parcel-bundler": "^1.9.7",
     "prettier": "^1.10.2",
     "pretty": "^2.0.0",
-    "prismjs": "^1.11.0"
+    "prismjs": "^1.11.0",
+    "rimraf": "^2.6.2"
   },
   "dependencies": {
     "feather-icons": "^4.7.0",
