@@ -59,22 +59,23 @@
       border-bottom-color: darken(#c6d6ea, 5);
       background: white;
       box-shadow: 0 0.25rem 0.5rem -0.1rem rgba(0, 32, 64, 0.15);
+      background-repeat: no-repeat;
     }
 
     &[data-type='HTML'] {
       color: white;
       border: none;
-      background: linear-gradient(135deg, #ff4c9f, #ff7b74);
+      background-image: linear-gradient(135deg, #ff4c9f, #ff7b74);
     }
     &[data-type='CSS'] {
       color: white;
       border: none;
-      background: linear-gradient(135deg, #7983ff, #5f9de9);
+      background-image: linear-gradient(135deg, #7983ff, #5f9de9);
     }
     &[data-type='JavaScript'] {
       color: white;
       border: none;
-      background: linear-gradient(135deg, #ffb000, #f58818);
+      background-image: linear-gradient(135deg, #ffb000, #f58818);
     }
   }
 
