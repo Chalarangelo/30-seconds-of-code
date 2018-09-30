@@ -1,6 +1,6 @@
 ### Pretty text underline
 
-A nicer alternative to `text-decoration: underline` where descenders do not clip the underline.
+A nicer alternative to `text-decoration: underline` or `<u></u>` where descenders do not clip the underline.
 Natively implemented as `text-decoration-skip-ink: auto` but it has less control over the underline.
 
 #### HTML
