@@ -4,7 +4,7 @@
   "description": "A curated collection of useful CSS snippets.",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon -e md,js ./scripts/build.js & parcel",
+    "dev": "nodemon -e md,js ./scripts/build.js & parcel index.html",
     "build": "node ./scripts/build.js && npm run prettier && npm run parcel",
     "parcel": "parcel build index.html -d docs/ --public-url ./",
     "prettier": "prettier --write \"**/*.{js,json,md,css,scss}\""
