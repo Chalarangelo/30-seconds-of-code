@@ -29,7 +29,7 @@ body {
 
 .container > div:last-child {
   background-color: #333;
-  flex: 1;
+  flex-grow: 1;
 }
 ```
 
