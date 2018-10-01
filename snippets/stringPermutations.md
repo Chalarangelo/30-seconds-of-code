@@ -6,7 +6,7 @@ Generates all permutations of a string (contains duplicates).
 
 Use recursion.
 For each letter in the given string, create all the partial permutations for the rest of its letters.
-Use `Array.map()` to combine the letter with each partial permutation, then `Array.reduce()` to combine all permutations in one array.
+Use `Array.prototype.map()` to combine the letter with each partial permutation, then `Array.prototype.reduce()` to combine all permutations in one array.
 Base cases are for string `length` equal to `2` or `1`.
 
 ```js
