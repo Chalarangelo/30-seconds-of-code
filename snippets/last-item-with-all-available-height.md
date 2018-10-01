@@ -1,6 +1,6 @@
-### Last item with all available height
+### Last item with remaining available height
 
-Avoid vertical scrollbar and take advantage of current viewport space. Given the last element with all available space in current viewport, even when resizing window.
+Take advantage of available viewport space. Give the last element the remaining available space in current viewport, even when resizing the window.
 
 #### HTML
 
@@ -59,9 +59,9 @@ body {
 
 #### Explanation
 
-1. `height: 100%` set the height of container as viewport height
+1. `height: 100%` set the height of container as viewport height.
 2. `display: flex` enables flexbox.
-3. `flex-direction: column` set the direction of flex items' order from top to down
+3. `flex-direction: column` set the direction of flex items' order from top to down.
 4. `flex-grow: 1` the flexbox will apply remaining available space of container to last child element.
 
 The parent must have a viewport height. `flex-grow: 1` could be applied to the first or second element, which will have all available space.
