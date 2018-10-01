@@ -1,6 +1,34 @@
+const CSVToArray = (data, delimiter = ',', omitFirstRow = false) =>
+  data
+    .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0)
+    .split('\n')
+    .map(v => v.split(delimiter));
+
+const CSVToJSON = (data, delimiter = ',') => {
+  const titles = data.slice(0, data.indexOf('\n')).split(delimiter);
+  return data
+    .slice(data.indexOf('\n') + 1)
+    .split('\n')
+    .map(v => {
+      const values = v.split(delimiter);
+      return titles.reduce((obj, title, index) => ((obj[title] = values[index]), obj), {});
+    });
+};
+
 const fs = typeof require !== "undefined" && require('fs');
 const JSONToFile = (obj, filename) =>
   fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2));
+
+const JSONtoCSV = (arr, columns, delimiter = ',') =>
+  [
+    columns.join(delimiter),
+    ...arr.map(obj =>
+      columns.reduce(
+        (acc, key) => `${acc}${!acc.length ? '' : delimiter}"${!obj[key] ? '' : obj[key]}"`,
+        ''
+      )
+    )
+  ].join('\n');
 
 const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
 
@@ -27,12 +55,20 @@ const UUIDGeneratorNode = () =>
 
 const all = (arr, fn = Boolean) => arr.every(fn);
 
+const allEqual = arr => arr.every(val => val === arr[0]);
+
 const any = (arr, fn = Boolean) => arr.some(fn);
 
 const approximatelyEqual = (v1, v2, epsilon = 0.001) => Math.abs(v1 - v2) < epsilon;
 
+const arrayToCSV = (arr, delimiter = ',') =>
+  arr.map(v => v.map(x => `"${x}"`).join(delimiter)).join('\n');
+
 const arrayToHtmlList = (arr, listID) =>
-  arr.map(item => (document.querySelector('#' + listID).innerHTML += `<li>${item}</li>`));
+  (el => (
+    (el = document.querySelector('#' + listID)),
+    (el.innerHTML += arr.map(item => `<li>${item}</li>`).join(''))
+  ))();
 
 const ary = (fn, n) => (...args) => fn(...args.slice(0, n));
 
@@ -40,13 +76,13 @@ const atob = str => new Buffer(str, 'base64').toString('binary');
 
 const attempt = (fn, ...args) => {
   try {
-    return fn(args);
+    return fn(...args);
   } catch (e) {
     return e instanceof Error ? e : new Error(e);
   }
 };
 
-const average = (...nums) => [...nums].reduce((acc, val) => acc + val, 0) / nums.length;
+const average = (...nums) => nums.reduce((acc, val) => acc + val, 0) / nums.length;
 
 const averageBy = (arr, fn) =>
   arr.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val) => acc + val, 0) /
@@ -58,23 +94,20 @@ const bifurcate = (arr, filter) =>
 const bifurcateBy = (arr, fn) =>
   arr.reduce((acc, val, i) => (acc[fn(val, i) ? 0 : 1].push(val), acc), [[], []]);
 
-const bind = (fn, context, ...args) =>
-  function() {
-    return fn.apply(context, args.concat(...arguments));
-  };
+const bind = (fn, context, ...boundArgs) => (...args) => fn.apply(context, [...boundArgs, ...args]);
 
 const bindAll = (obj, ...fns) =>
   fns.forEach(
     fn => (
-      f = obj[fn], obj[fn] = function() {
+      (f = obj[fn]),
+      (obj[fn] = function() {
         return f.apply(obj);
       })
+    )
   );
 
-const bindKey = (context, fn, ...args) =>
-  function() {
-    return context[fn].apply(context, args.concat(...arguments));
-  };
+const bindKey = (context, fn, ...boundArgs) => (...args) =>
+  context[fn].apply(context, [...boundArgs, ...args]);
 
 const binomialCoefficient = (n, k) => {
   if (Number.isNaN(n) || Number.isNaN(k)) return NaN;
@@ -176,7 +209,19 @@ const countBy = (arr, fn) =>
     return acc;
   }, {});
 
-const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a + 0), 0);
+const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
+
+const counter = (selector, start, end, step = 1, duration = 2000) => {
+  let current = start,
+    _step = (end - start) * step < 0 ? -step : step,
+    timer = setInterval(() => {
+      current += _step;
+      document.querySelector(selector).innerHTML = current;
+      if (current >= end) document.querySelector(selector).innerHTML = end;
+      if (current >= end) clearInterval(timer);
+    }, Math.abs(Math.floor(duration / (end - start))));
+  return timer;
+};
 
 const createElement = str => {
   const el = document.createElement('div');
@@ -204,6 +249,9 @@ const currentURL = () => window.location.href;
 const curry = (fn, arity = fn.length, ...args) =>
   arity <= args.length ? fn(...args) : curry.bind(null, fn, arity, ...args);
 
+const dayOfYear = date =>
+  Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
+
 const debounce = (fn, ms = 0) => {
   let timeoutId;
   return function(...args) {
@@ -220,16 +268,22 @@ const deepClone = obj => {
   Object.keys(clone).forEach(
     key => (clone[key] = typeof obj[key] === 'object' ? deepClone(obj[key]) : obj[key])
   );
-  return clone;
+  return Array.isArray(obj) ? (clone.length = obj.length) && Array.from(clone) : clone;
 };
 
 const deepFlatten = arr => [].concat(...arr.map(v => (Array.isArray(v) ? deepFlatten(v) : v)));
+
+const deepFreeze = obj =>
+  Object.keys(obj).forEach(
+    prop =>
+      !obj[prop] instanceof Object || Object.isFrozen(obj[prop]) ? null : deepFreeze(obj[prop])
+  ) || Object.freeze(obj);
 
 const defaults = (obj, ...defs) => Object.assign({}, obj, ...defs.reverse(), obj);
 
 const defer = (fn, ...args) => setTimeout(fn, 1, ...args);
 
-const degreesToRads = deg => deg * Math.PI / 180.0;
+const degreesToRads = deg => (deg * Math.PI) / 180.0;
 
 const delay = (fn, wait, ...args) => setTimeout(fn, wait, ...args);
 
@@ -250,6 +304,14 @@ const differenceBy = (a, b, fn) => {
 
 const differenceWith = (arr, val, comp) => arr.filter(a => val.findIndex(b => comp(a, b)) === -1);
 
+const dig = (obj, target) =>
+  target in obj
+    ? obj[target]
+    : Object.values(obj).reduce((acc, val) => {
+        if (acc !== undefined) return acc;
+        if (typeof val === 'object') return dig(val, target);
+      }, undefined);
+
 const digitize = n => [...`${n}`].map(i => parseInt(i));
 
 const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
@@ -268,6 +330,8 @@ const dropWhile = (arr, func) => {
   return arr;
 };
 
+const elementContains = (parent, child) => parent !== child && parent.contains(child);
+
 const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
   const { top, left, bottom, right } = el.getBoundingClientRect();
   const { innerHeight, innerWidth } = window;
@@ -284,13 +348,12 @@ const elo = ([...ratings], kFactor = 32, selfRating) => {
     (selfRating || rating) + kFactor * (i - expectedScore(i ? a : b, i ? b : a));
   if (ratings.length === 2) {
     return [newRating(a, 1), newRating(b, 0)];
-  } else {
-    for (let i = 0; i < ratings.length; i++) {
-      let j = i;
-      while (j < ratings.length - 1) {
-        [ratings[i], ratings[j + 1]] = elo([ratings[i], ratings[j + 1]], kFactor);
-        j++;
-      }
+  }
+  for (let i = 0, len = ratings.length; i < len; i++) {
+    let j = i;
+    while (j < len - 1) {
+      j++;
+      [ratings[i], ratings[j]] = elo([ratings[i], ratings[j]], kFactor);
     }
   }
   return ratings;
@@ -299,7 +362,7 @@ const elo = ([...ratings], kFactor = 32, selfRating) => {
 const equals = (a, b) => {
   if (a === b) return true;
   if (a instanceof Date && b instanceof Date) return a.getTime() === b.getTime();
-  if (!a || !b || (typeof a != 'object' && typeof b !== 'object')) return a === b;
+  if (!a || !b || (typeof a !== 'object' && typeof b !== 'object')) return a === b;
   if (a === null || a === undefined || b === null || b === undefined) return false;
   if (a.prototype !== b.prototype) return false;
   let keys = Object.keys(a);
@@ -337,7 +400,9 @@ const factorial = n =>
     ? (() => {
         throw new TypeError('Negative numbers are not allowed!');
       })()
-    : n <= 1 ? 1 : n * factorial(n - 1);
+    : n <= 1
+      ? 1
+      : n * factorial(n - 1);
 
 const fibonacci = n =>
   Array.from({ length: n }).reduce(
@@ -347,15 +412,18 @@ const fibonacci = n =>
 
 const filterNonUnique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexOf(i));
 
+const filterNonUniqueBy = (arr, fn) =>
+  arr.filter((v, i) => arr.every((x, j) => (i === j) === fn(v, x, i, j)));
+
 const findKey = (obj, fn) => Object.keys(obj).find(key => fn(obj[key], key, obj));
 
-const findLast = (arr, fn) => arr.filter(fn).slice(-1)[0];
+const findLast = (arr, fn) => arr.filter(fn).pop();
 
 const findLastIndex = (arr, fn) =>
   arr
     .map((val, i) => [i, val])
-    .filter(val => fn(val[1], val[0], arr))
-    .slice(-1)[0][0];
+    .filter(([i, val]) => fn(val, i, arr))
+    .pop()[0];
 
 const findLastKey = (obj, fn) =>
   Object.keys(obj)
@@ -363,9 +431,7 @@ const findLastKey = (obj, fn) =>
     .find(key => fn(obj[key], key, obj));
 
 const flatten = (arr, depth = 1) =>
-  depth !== 1
-    ? arr.reduce((a, v) => a.concat(Array.isArray(v) ? flatten(v, depth - 1) : v), [])
-    : arr.reduce((a, v) => a.concat(v), []);
+  arr.reduce((a, v) => a.concat(depth > 1 && Array.isArray(v) ? flatten(v, depth - 1) : v), []);
 
 const flattenObject = (obj, prefix = '') =>
   Object.keys(obj).reduce((acc, k) => {
@@ -401,7 +467,7 @@ const formatDuration = ms => {
   };
   return Object.entries(time)
     .filter(val => val[1] !== 0)
-    .map(val => val[1] + ' ' + (val[1] !== 1 ? val[0] + 's' : val[0]))
+    .map(([key, val]) => `${val} ${key}${val !== 1 ? 's' : ''}`)
     .join(', ');
 };
 
@@ -446,7 +512,11 @@ const getDaysDiffBetweenDates = (dateInitial, dateFinal) =>
 const getMeridiemSuffixOfInteger = num =>
   num === 0 || num === 24
     ? 12 + 'am'
-    : num === 12 ? 12 + 'pm' : num < 12 ? num % 12 + 'am' : num % 12 + 'pm';
+    : num === 12
+      ? 12 + 'pm'
+      : num < 12
+        ? (num % 12) + 'am'
+        : (num % 12) + 'pm';
 
 const getScrollPosition = (el = window) => ({
   x: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,
@@ -460,7 +530,7 @@ const getType = v =>
 
 const getURLParameters = url =>
   (url.match(/([^?=&]+)(=([^&]*))/g) || []).reduce(
-    (a, v) => (a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1), a),
+    (a, v) => ((a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a),
     {}
   );
 
@@ -523,7 +593,7 @@ const hexToRGB = hex => {
   );
 };
 
-const hide = (...el) => [...el].forEach(e => (e.style.display = 'none'));
+const hide = els => els.forEach(e => (e.style.display = 'none'));
 
 const httpGet = (url, callback, err = console.error) => {
   const request = new XMLHttpRequest();
@@ -546,16 +616,20 @@ const httpsRedirect = () => {
   if (location.protocol !== 'https:') location.replace('https://' + location.href.split('//')[1]);
 };
 
+const hz = (fn, iterations = 100) => {
+  const before = performance.now();
+  for (let i = 0; i < iterations; i++) fn();
+  return (1000 * iterations) / (performance.now() - before);
+};
+
 const inRange = (n, start, end = null) => {
-  if (end && start > end) end = [start, (start = end)][0];
+  if (end && start > end) [end, start] = [start, end];
   return end == null ? n >= 0 && n < start : n >= start && n < end;
 };
 
-const indexOfAll = (arr, val) => {
-  const indices = [];
-  arr.forEach((el, i) => el === val && indices.push(i));
-  return indices;
-};
+const indentString = (str, count, indent = ' ') => str.replace(/^/gm, indent.repeat(count));
+
+const indexOfAll = (arr, val) => arr.reduce((acc, el, i) => (el === val ? [...acc, i] : acc), []);
 
 const initial = arr => arr.slice(0, -1);
 
@@ -563,7 +637,7 @@ const initialize2DArray = (w, h, val = null) =>
   Array.from({ length: h }).map(() => Array.from({ length: w }).fill(val));
 
 const initializeArrayWithRange = (end, start = 0, step = 1) =>
-  Array.from({ length: Math.ceil((end + 1 - start) / step) }).map((v, i) => i * step + start);
+  Array.from({ length: Math.ceil((end - start + 1) / step) }, (v, i) => i * step + start);
 
 const initializeArrayWithRangeRight = (end, start = 0, step = 1) =>
   Array.from({ length: Math.ceil((end + 1 - start) / step) }).map(
@@ -572,13 +646,22 @@ const initializeArrayWithRangeRight = (end, start = 0, step = 1) =>
 
 const initializeArrayWithValues = (n, val = 0) => Array(n).fill(val);
 
+const initializeNDArray = (val, ...args) =>
+  args.length === 0
+    ? val
+    : Array.from({ length: args[0] }).map(() => initializeNDArray(val, ...args.slice(1)));
+
+const insertAfter = (el, htmlString) => el.insertAdjacentHTML('afterend', htmlString);
+
+const insertBefore = (el, htmlString) => el.insertAdjacentHTML('beforebegin', htmlString);
+
 const intersection = (a, b) => {
   const s = new Set(b);
   return a.filter(x => s.has(x));
 };
 
 const intersectionBy = (a, b, fn) => {
-  const s = new Set(b.map(x => fn(x)));
+  const s = new Set(b.map(fn));
   return a.filter(x => s.has(fn(x)));
 };
 
@@ -592,9 +675,11 @@ const invertKeyValues = (obj, fn) =>
     return acc;
   }, {});
 
-const is = (type, val) => val instanceof type;
+const is = (type, val) => ![, null].includes(val) && val.constructor === type;
 
 const isAbsoluteURL = str => /^[a-z][a-z0-9+.-]*:/.test(str);
+
+const isAfterDate = (dateA, dateB) => dateA > dateB;
 
 const isAnagram = (str1, str2) => {
   const normalize = str =>
@@ -607,15 +692,15 @@ const isAnagram = (str1, str2) => {
   return normalize(str1) === normalize(str2);
 };
 
-const isArrayLike = val => {
-  try {
-    return [...val], true;
-  } catch (e) {
-    return false;
-  }
-};
+const isArrayLike = obj => obj != null && typeof obj[Symbol.iterator] === 'function';
+
+const isBeforeDate = (dateA, dateB) => dateA < dateB;
 
 const isBoolean = val => typeof val === 'boolean';
+
+const isBrowser = () => ![typeof window, typeof document].includes('undefined');
+
+const isBrowserTabFocused = () => !document.hidden;
 
 const isDivisible = (dividend, divisor) => dividend % divisor === 0;
 
@@ -652,11 +737,15 @@ const isPromiseLike = obj =>
   (typeof obj === 'object' || typeof obj === 'function') &&
   typeof obj.then === 'function';
 
+const isSameDate = (dateA, dateB) => dateA.toISOString() === dateB.toISOString();
+
 const isSorted = arr => {
-  const direction = arr[0] > arr[1] ? -1 : 1;
-  for (let [i, val] of arr.entries())
-    if (i === arr.length - 1) return direction;
+  let direction = -(arr[0] - arr[1]);
+  for (let [i, val] of arr.entries()) {
+    direction = !direction ? -(arr[i - 1] - arr[i]) : direction;
+    if (i === arr.length - 1) return !direction ? 0 : direction;
     else if ((val - arr[i + 1]) * direction > 0) return 0;
+  }
 };
 
 const isString = val => typeof val === 'string';
@@ -683,7 +772,9 @@ const join = (arr, separator = ',', end = separator) =>
     (acc, val, i) =>
       i === arr.length - 2
         ? acc + val + end
-        : i === arr.length - 1 ? acc + val : acc + val + separator,
+        : i === arr.length - 1
+          ? acc + val
+          : acc + val + separator,
     ''
   );
 
@@ -691,11 +782,12 @@ const last = arr => arr[arr.length - 1];
 
 const lcm = (...arr) => {
   const gcd = (x, y) => (!y ? x : gcd(y, x % y));
-  const _lcm = (x, y) => x * y / gcd(x, y);
+  const _lcm = (x, y) => (x * y) / gcd(x, y);
   return [...arr].reduce((a, b) => _lcm(a, b));
 };
 
-const longestItem = (...vals) => [...vals].sort((a, b) => b.length - a.length)[0];
+const longestItem = (val, ...vals) =>
+  [val, ...vals].reduce((a, x) => (x.length > a.length ? x : a));
 
 const lowercaseKeys = obj =>
   Object.keys(obj).reduce((acc, key) => {
@@ -709,7 +801,7 @@ const luhnCheck = num => {
     .reverse()
     .map(x => parseInt(x));
   let lastDigit = arr.splice(0, 1)[0];
-  let sum = arr.reduce((acc, val, i) => (i % 2 !== 0 ? acc + val : acc + (val * 2) % 9 || 9), 0);
+  let sum = arr.reduce((acc, val, i) => (i % 2 !== 0 ? acc + val : acc + ((val * 2) % 9) || 9), 0);
   sum += lastDigit;
   return sum % 10 === 0;
 };
@@ -722,7 +814,14 @@ const mapKeys = (obj, fn) =>
 
 const mapObject = (arr, fn) =>
   (a => (
-    a = [arr, arr.map(fn)], a[0].reduce((acc, val, ind) => (acc[val] = a[1][ind], acc), {})))();
+    (a = [arr, arr.map(fn)]), a[0].reduce((acc, val, ind) => ((acc[val] = a[1][ind]), acc), {})
+  ))();
+
+const mapString = (str, fn) =>
+  str
+    .split('')
+    .map((c, i) => fn(c, i, str))
+    .join('');
 
 const mapValues = (obj, fn) =>
   Object.keys(obj).reduce((acc, k) => {
@@ -730,8 +829,7 @@ const mapValues = (obj, fn) =>
     return acc;
   }, {});
 
-const mask = (cc, num = 4, mask = '*') =>
-  ('' + cc).slice(0, -num).replace(/./g, mask) + ('' + cc).slice(-num);
+const mask = (cc, num = 4, mask = '*') => `${cc}`.slice(-num).padStart(`${cc}`.length, mask);
 
 const matches = (obj, source) =>
   Object.keys(source).every(key => obj.hasOwnProperty(key) && obj[key] === source[key]);
@@ -745,6 +843,8 @@ const matchesWith = (obj, source, fn) =>
   );
 
 const maxBy = (arr, fn) => Math.max(...arr.map(typeof fn === 'function' ? fn : val => val[fn]));
+
+const maxDate = (...dates) => new Date(Math.max.apply(null, ...dates));
 
 const maxN = (arr, n = 1) => [...arr].sort((a, b) => b - a).slice(0, n);
 
@@ -775,6 +875,8 @@ const merge = (...objs) =>
 
 const minBy = (arr, fn) => Math.min(...arr.map(typeof fn === 'function' ? fn : val => val[fn]));
 
+const minDate = (...dates) => new Date(Math.min.apply(null, ...dates));
+
 const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
 
 const mostPerformant = (fns, iterations = 10000) => {
@@ -788,13 +890,20 @@ const mostPerformant = (fns, iterations = 10000) => {
 
 const negate = func => (...args) => !func(...args);
 
+const nest = (items, id = null, link = 'parent_id') =>
+  items
+    .filter(item => item[link] === id)
+    .map(item => ({ ...item, children: nest(items, item.id) }));
+
+const nodeListToArray = nodeList => [...nodeList];
+
 const none = (arr, fn = Boolean) => !arr.some(fn);
 
 const nthArg = n => (...args) => args.slice(n)[0];
 
-const nthElement = (arr, n = 0) => (n > 0 ? arr.slice(n, n + 1) : arr.slice(n))[0];
+const nthElement = (arr, n = 0) => (n === -1 ? arr.slice(n) : arr.slice(n, n + 1))[0];
 
-const objectFromPairs = arr => arr.reduce((a, v) => (a[v[0]] = v[1], a), {});
+const objectFromPairs = arr => arr.reduce((a, [key, val]) => ((a[key] = val), a), {});
 
 const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
 
@@ -819,15 +928,17 @@ const observeMutations = (element, callback, options) => {
 
 const off = (el, evt, fn, opts = false) => el.removeEventListener(evt, fn, opts);
 
+const offset = (arr, offset) => [...arr.slice(offset), ...arr.slice(0, offset)];
+
 const omit = (obj, arr) =>
   Object.keys(obj)
     .filter(k => !arr.includes(k))
-    .reduce((acc, key) => (acc[key] = obj[key], acc), {});
+    .reduce((acc, key) => ((acc[key] = obj[key]), acc), {});
 
 const omitBy = (obj, fn) =>
   Object.keys(obj)
     .filter(k => !fn(obj[k], k))
-    .reduce((acc, key) => (acc[key] = obj[key], acc), {});
+    .reduce((acc, key) => ((acc[key] = obj[key]), acc), {});
 
 const on = (el, evt, fn, opts = {}) => {
   const delegatorFn = e => e.target.matches(opts.target) && fn.call(e.target, e);
@@ -841,12 +952,12 @@ const onUserInputChange = callback => {
   const mousemoveHandler = () => {
     const now = performance.now();
     if (now - lastTime < 20)
-      type = 'mouse', callback(type), document.removeEventListener('mousemove', mousemoveHandler);
+      (type = 'mouse'), callback(type), document.removeEventListener('mousemove', mousemoveHandler);
     lastTime = now;
   };
   document.addEventListener('touchstart', () => {
     if (type === 'touch') return;
-    type = 'touch', callback(type), document.addEventListener('mousemove', mousemoveHandler);
+    (type = 'touch'), callback(type), document.addEventListener('mousemove', mousemoveHandler);
   });
 };
 
@@ -874,15 +985,12 @@ const over = (...fns) => (...args) => fns.map(fn => fn.apply(null, args));
 
 const overArgs = (fn, transforms) => (...args) => fn(...args.map((val, i) => transforms[i](val)));
 
+const pad = (str, length, char = ' ') =>
+  str.padStart((str.length + length) / 2, char).padEnd(length, char);
+
 const palindrome = str => {
   const s = str.toLowerCase().replace(/[\W_]/g, '');
-  return (
-    s ===
-    s
-      .split('')
-      .reverse()
-      .join('')
-  );
+  return s === [...s].reverse().join('');
 };
 
 const parseCookie = str =>
@@ -908,7 +1016,7 @@ const partition = (arr, fn) =>
   );
 
 const percentile = (arr, val) =>
-  100 * arr.reduce((acc, v) => acc + (v < val ? 1 : 0) + (v === val ? 0.5 : 0), 0) / arr.length;
+  (100 * arr.reduce((acc, v) => acc + (v < val ? 1 : 0) + (v === val ? 0.5 : 0), 0)) / arr.length;
 
 const permutations = arr => {
   if (arr.length <= 2) return arr.length === 2 ? [arr, [arr[1], arr[0]]] : arr;
@@ -927,7 +1035,7 @@ const pick = (obj, arr) =>
 const pickBy = (obj, fn) =>
   Object.keys(obj)
     .filter(k => fn(obj[k], k))
-    .reduce((acc, key) => (acc[key] = obj[key], acc), {});
+    .reduce((acc, key) => ((acc[key] = obj[key]), acc), {});
 
 const pipeAsyncFunctions = (...fns) => arg => fns.reduce((p, f) => p.then(f), Promise.resolve(arg));
 
@@ -941,6 +1049,15 @@ const pluralize = (val, word, plural = word + 's') => {
 };
 
 const powerset = arr => arr.reduce((a, v) => a.concat(a.map(r => [v].concat(r))), [[]]);
+
+const prefix = prop => {
+  const capitalizedProp = prop.charAt(0).toUpperCase() + prop.slice(1);
+  const prefixes = ['', 'webkit', 'moz', 'ms', 'o'];
+  const i = prefixes.findIndex(
+    prefix => typeof document.body.style[prefix ? prefix + capitalizedProp : prop] !== 'undefined'
+  );
+  return i !== -1 ? (i === 0 ? prop : prefixes[i] + capitalizedProp) : null;
+};
 
 const prettyBytes = (num, precision = 3, addSpace = true) => {
   const UNITS = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
@@ -999,7 +1116,7 @@ const pullBy = (arr, ...args) => {
   pulled.forEach(v => arr.push(v));
 };
 
-const radsToDegrees = rad => rad * 180.0 / Math.PI;
+const radsToDegrees = rad => (rad * 180.0) / Math.PI;
 
 const randomHexColorCode = () => {
   let n = (Math.random() * 0xfffff * 1000000).toString(16);
@@ -1020,13 +1137,28 @@ const readFileLines = filename =>
     .toString('UTF8')
     .split('\n');
 
-const rearg = (fn, indexes) => (...args) =>
-  fn(
-    ...args.reduce(
-      (acc, val, i) => (acc[indexes.indexOf(i)] = val, acc),
-      Array.from({ length: indexes.length })
-    )
-  );
+const rearg = (fn, indexes) => (...args) => fn(...indexes.map(i => args[i]));
+
+const recordAnimationFrames = (callback, autoStart = true) => {
+  let running = true,
+    raf;
+  const stop = () => {
+    running = false;
+    cancelAnimationFrame(raf);
+  };
+  const start = () => {
+    running = true;
+    run();
+  };
+  const run = () => {
+    raf = requestAnimationFrame(() => {
+      callback();
+      if (running) run();
+    });
+  };
+  if (autoStart) start();
+  return { start, stop };
+};
 
 const redirect = (url, asLink = true) =>
   asLink ? (window.location.href = url) : window.location.replace(url);
@@ -1045,6 +1177,8 @@ const reducedFilter = (data, keys, fn) =>
     }, {})
   );
 
+const reject = (pred, array) => array.filter((...args) => !pred(...args));
+
 const remove = (arr, func) =>
   Array.isArray(arr)
     ? arr.filter(func).reduce((acc, val) => {
@@ -1054,6 +1188,15 @@ const remove = (arr, func) =>
     : [];
 
 const removeNonASCII = str => str.replace(/[^\x20-\x7E]/g, '');
+
+const renameKeys = (keysMap, obj) =>
+  Object.keys(obj).reduce(
+    (acc, key) => ({
+      ...acc,
+      ...{ [keysMap[key] || key]: obj[key] }
+    }),
+    {}
+  );
 
 const reverseString = str => [...str].reverse().join('');
 
@@ -1111,6 +1254,12 @@ const setStyle = (el, ruleName, val) => (el.style[ruleName] = val);
 
 const shallowClone = obj => Object.assign({}, obj);
 
+const shank = (arr, index = 0, delCount = 0, ...elements) =>
+  arr
+    .slice(0, index)
+    .concat(elements)
+    .concat(arr.slice(index + delCount));
+
 const show = (...el) => [...el].forEach(e => (e.style.display = ''));
 
 const shuffle = ([...arr]) => {
@@ -1129,9 +1278,16 @@ const size = val =>
     ? val.length
     : val && typeof val === 'object'
       ? val.size || val.length || Object.keys(val).length
-      : typeof val === 'string' ? new Blob([val]).size : 0;
+      : typeof val === 'string'
+        ? new Blob([val]).size
+        : 0;
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+const smoothScroll = element =>
+  document.querySelector(element).scrollIntoView({
+    behavior: 'smooth'
+  });
 
 const sortCharactersInString = str => [...str].sort((a, b) => a.localeCompare(b)).join('');
 
@@ -1150,20 +1306,17 @@ const sortedIndexBy = (arr, n, fn) => {
 
 const sortedLastIndex = (arr, n) => {
   const isDescending = arr[0] > arr[arr.length - 1];
-  const index = arr
-    .map((val, i) => [i, val])
-    .reverse()
-    .findIndex(el => (isDescending ? n <= el[1] : n >= el[1]));
-  return index === -1 ? 0 : arr.length - index - 1;
+  const index = arr.reverse().findIndex(el => (isDescending ? n <= el : n >= el));
+  return index === -1 ? 0 : arr.length - index;
 };
 
 const sortedLastIndexBy = (arr, n, fn) => {
   const isDescending = fn(arr[0]) > fn(arr[arr.length - 1]);
   const val = fn(n);
   const index = arr
-    .map((val, i) => [i, fn(val)])
+    .map(fn)
     .reverse()
-    .findIndex(el => (isDescending ? val <= el[1] : val >= el[1]));
+    .findIndex(el => (isDescending ? val <= el : val >= el));
   return index === -1 ? 0 : arr.length - index;
 };
 
@@ -1239,7 +1392,7 @@ const takeRightWhile = (arr, func) => {
 };
 
 const takeWhile = (arr, func) => {
-  for (let i of arr.keys()) if (func(arr[i])) return arr.slice(0, i);
+  for (const [i, val] of arr.entries()) if (func(val)) return arr.slice(0, i);
   return arr;
 };
 
@@ -1291,6 +1444,13 @@ const toCurrency = (n, curr, LanguageFormat = undefined) =>
 
 const toDecimalMark = num => num.toLocaleString('en-US');
 
+const toHash = (object, key) =>
+  Array.prototype.reduce.call(
+    object,
+    (acc, data, index) => ((acc[!key ? index : data[key]] = data), acc),
+    {}
+  );
+
 const toKebabCase = str =>
   str &&
   str
@@ -1321,15 +1481,19 @@ const toSnakeCase = str =>
 
 const toggleClass = (el, className) => el.classList.toggle(className);
 
-const tomorrow = () => {
+const tomorrow = (long = false) => {
   let t = new Date();
   t.setDate(t.getDate() + 1);
-  return `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, '0')}-${String(
+  const ret = `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, '0')}-${String(
     t.getDate()
   ).padStart(2, '0')}`;
+  return !long ? ret : `${ret}T00:00:00`;
 };
 
 const transform = (obj, fn, acc) => Object.keys(obj).reduce((a, k) => fn(a, obj[k], k, obj), acc);
+
+const triggerEvent = (el, eventType, detail = undefined) =>
+  el.dispatchEvent(new CustomEvent(eventType, { detail: detail }));
 
 const truncateString = (str, num) =>
   str.length > num ? str.slice(0, num > 3 ? num - 3 : num) + '...' : str;
@@ -1393,6 +1557,22 @@ const unionWith = (a, b, comp) =>
 
 const uniqueElements = arr => [...new Set(arr)];
 
+const uniqueElementsBy = (arr, fn) =>
+  arr.reduce((acc, v) => {
+    if (!acc.some(x => fn(v, x))) acc.push(v);
+    return acc;
+  }, []);
+
+const uniqueElementsByRight = (arr, fn) =>
+  arr.reduceRight((acc, v) => {
+    if (!acc.some(x => fn(v, x))) acc.push(v);
+    return acc;
+  }, []);
+
+const uniqueSymmetricDifference = (a, b) => [
+  ...new Set([...a.filter(v => !b.includes(v)), ...b.filter(v => !a.includes(v))])
+];
+
 const untildify = str => str.replace(/^~($|\/|\\)/, `${typeof require !== "undefined" && require('os').homedir()}$1`);
 
 const unzip = arr =>
@@ -1415,6 +1595,8 @@ const unzipWith = (arr, fn) =>
 
 const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
 
+const when = (pred, whenTrue) => x => (pred(x) ? whenTrue(x) : x);
+
 const without = (arr, ...args) => arr.filter(v => !args.includes(v));
 
 const words = (str, pattern = /[^a-zA-Z-]+/) => str.split(pattern).filter(Boolean);
@@ -1432,19 +1614,14 @@ const zip = (...arrays) => {
 };
 
 const zipObject = (props, values) =>
-  props.reduce((obj, prop, index) => (obj[prop] = values[index], obj), {});
+  props.reduce((obj, prop, index) => ((obj[prop] = values[index]), obj), {});
 
-const zipWith = (...arrays) => {
-  const length = arrays.length;
-  let fn = length > 1 ? arrays[length - 1] : undefined;
-  fn = typeof fn == 'function' ? (arrays.pop(), fn) : undefined;
-  const maxLength = Math.max(...arrays.map(x => x.length));
-  const result = Array.from({ length: maxLength }).map((_, i) => {
-    return Array.from({ length: arrays.length }, (_, k) => arrays[k][i]);
-  });
-  return fn ? result.map(arr => fn(...arr)) : result;
+const zipWith = (...array) => {
+  const fn = typeof array[array.length - 1] === 'function' ? array.pop() : undefined;
+  return Array.from(
+    { length: Math.max(...array.map(a => a.length)) },
+    (_, i) => (fn ? fn(...array.map(a => a[i])) : array.map(a => a[i]))
+  );
 };
 
-var imports = {JSONToFile,RGBToHex,URLJoin,UUIDGeneratorBrowser,UUIDGeneratorNode,all,any,approximatelyEqual,arrayToHtmlList,ary,atob,attempt,average,averageBy,bifurcate,bifurcateBy,bind,bindAll,bindKey,binomialCoefficient,bottomVisible,btoa,byteSize,call,capitalize,capitalizeEveryWord,castArray,chainAsync,chunk,clampNumber,cloneRegExp,coalesce,coalesceFactory,collectInto,colorize,compact,compose,composeRight,converge,copyToClipboard,countBy,countOccurrences,createElement,createEventHub,currentURL,curry,debounce,decapitalize,deepClone,deepFlatten,defaults,defer,degreesToRads,delay,detectDeviceType,difference,differenceBy,differenceWith,digitize,distance,drop,dropRight,dropRightWhile,dropWhile,elementIsVisibleInViewport,elo,equals,escapeHTML,escapeRegExp,everyNth,extendHex,factorial,fibonacci,filterNonUnique,findKey,findLast,findLastIndex,findLastKey,flatten,flattenObject,flip,forEachRight,forOwn,forOwnRight,formatDuration,fromCamelCase,functionName,functions,gcd,geometricProgression,get,getColonTimeFromDate,getDaysDiffBetweenDates,getMeridiemSuffixOfInteger,getScrollPosition,getStyle,getType,getURLParameters,groupBy,hammingDistance,hasClass,hasFlags,hashBrowser,hashNode,head,hexToRGB,hide,httpGet,httpPost,httpsRedirect,inRange,indexOfAll,initial,initialize2DArray,initializeArrayWithRange,initializeArrayWithRangeRight,initializeArrayWithValues,intersection,intersectionBy,intersectionWith,invertKeyValues,is,isAbsoluteURL,isAnagram,isArrayLike,isBoolean,isDivisible,isEmpty,isEven,isFunction,isLowerCase,isNil,isNull,isNumber,isObject,isObjectLike,isPlainObject,isPrime,isPrimitive,isPromiseLike,isSorted,isString,isSymbol,isTravisCI,isUndefined,isUpperCase,isValidJSON,join,last,lcm,longestItem,lowercaseKeys,luhnCheck,mapKeys,mapObject,mapValues,mask,matches,matchesWith,maxBy,maxN,median,memoize,merge,minBy,minN,mostPerformant,negate,none,nthArg,nthElement,objectFromPairs,objectToPairs,observeMutations,off,omit,omitBy,on,onUserInputChange,once,orderBy,over,overArgs,palindrome,parseCookie,partial,partialRight,partition,percentile,permutations,pick,pickBy,pipeAsyncFunctions,pipeFunctions,pluralize,powerset,prettyBytes,primes,promisify,pull,pullAtIndex,pullAtValue,pullBy,radsToDegrees,randomHexColorCode,randomIntArrayInRange,randomIntegerInRange,randomNumberInRange,readFileLines,rearg,redirect,reduceSuccessive,reduceWhich,reducedFilter,remove,removeNonASCII,reverseString,round,runAsync,runPromisesInSeries,sample,sampleSize,scrollToTop,sdbm,serializeCookie,setStyle,shallowClone,show,shuffle,similarity,size,sleep,sortCharactersInString,sortedIndex,sortedIndexBy,sortedLastIndex,sortedLastIndexBy,splitLines,spreadOver,stableSort,standardDeviation,stringPermutations,stripHTMLTags,sum,sumBy,sumPower,symmetricDifference,symmetricDifferenceBy,symmetricDifferenceWith,tail,take,takeRight,takeRightWhile,takeWhile,throttle,timeTaken,times,toCamelCase,toCurrency,toDecimalMark,toKebabCase,toOrdinalSuffix,toSafeInteger,toSnakeCase,toggleClass,tomorrow,transform,truncateString,truthCheckCollection,unary,uncurry,unescapeHTML,unflattenObject,unfold,union,unionBy,unionWith,uniqueElements,untildify,unzip,unzipWith,validateNumber,without,words,xProd,yesNo,zip,zipObject,zipWith,}
-
-export default imports;
+export { CSVToArray, CSVToJSON, JSONToFile, JSONtoCSV, RGBToHex, URLJoin, UUIDGeneratorBrowser, UUIDGeneratorNode, all, allEqual, any, approximatelyEqual, arrayToCSV, arrayToHtmlList, ary, atob, attempt, average, averageBy, bifurcate, bifurcateBy, bind, bindAll, bindKey, binomialCoefficient, bottomVisible, btoa, byteSize, call, capitalize, capitalizeEveryWord, castArray, chainAsync, chunk, clampNumber, cloneRegExp, coalesce, coalesceFactory, collectInto, colorize, compact, compose, composeRight, converge, copyToClipboard, countBy, countOccurrences, counter, createElement, createEventHub, currentURL, curry, dayOfYear, debounce, decapitalize, deepClone, deepFlatten, deepFreeze, defaults, defer, degreesToRads, delay, detectDeviceType, difference, differenceBy, differenceWith, dig, digitize, distance, drop, dropRight, dropRightWhile, dropWhile, elementContains, elementIsVisibleInViewport, elo, equals, escapeHTML, escapeRegExp, everyNth, extendHex, factorial, fibonacci, filterNonUnique, filterNonUniqueBy, findKey, findLast, findLastIndex, findLastKey, flatten, flattenObject, flip, forEachRight, forOwn, forOwnRight, formatDuration, fromCamelCase, functionName, functions, gcd, geometricProgression, get, getColonTimeFromDate, getDaysDiffBetweenDates, getMeridiemSuffixOfInteger, getScrollPosition, getStyle, getType, getURLParameters, groupBy, hammingDistance, hasClass, hasFlags, hashBrowser, hashNode, head, hexToRGB, hide, httpGet, httpPost, httpsRedirect, hz, inRange, indentString, indexOfAll, initial, initialize2DArray, initializeArrayWithRange, initializeArrayWithRangeRight, initializeArrayWithValues, initializeNDArray, insertAfter, insertBefore, intersection, intersectionBy, intersectionWith, invertKeyValues, is, isAbsoluteURL, isAfterDate, isAnagram, isArrayLike, isBeforeDate, isBoolean, isBrowser, isBrowserTabFocused, isDivisible, isEmpty, isEven, isFunction, isLowerCase, isNil, isNull, isNumber, isObject, isObjectLike, isPlainObject, isPrime, isPrimitive, isPromiseLike, isSameDate, isSorted, isString, isSymbol, isTravisCI, isUndefined, isUpperCase, isValidJSON, join, last, lcm, longestItem, lowercaseKeys, luhnCheck, mapKeys, mapObject, mapString, mapValues, mask, matches, matchesWith, maxBy, maxDate, maxN, median, memoize, merge, minBy, minDate, minN, mostPerformant, negate, nest, nodeListToArray, none, nthArg, nthElement, objectFromPairs, objectToPairs, observeMutations, off, offset, omit, omitBy, on, onUserInputChange, once, orderBy, over, overArgs, pad, palindrome, parseCookie, partial, partialRight, partition, percentile, permutations, pick, pickBy, pipeAsyncFunctions, pipeFunctions, pluralize, powerset, prefix, prettyBytes, primes, promisify, pull, pullAtIndex, pullAtValue, pullBy, radsToDegrees, randomHexColorCode, randomIntArrayInRange, randomIntegerInRange, randomNumberInRange, readFileLines, rearg, recordAnimationFrames, redirect, reduceSuccessive, reduceWhich, reducedFilter, reject, remove, removeNonASCII, renameKeys, reverseString, round, runAsync, runPromisesInSeries, sample, sampleSize, scrollToTop, sdbm, serializeCookie, setStyle, shallowClone, shank, show, shuffle, similarity, size, sleep, smoothScroll, sortCharactersInString, sortedIndex, sortedIndexBy, sortedLastIndex, sortedLastIndexBy, splitLines, spreadOver, stableSort, standardDeviation, stringPermutations, stripHTMLTags, sum, sumBy, sumPower, symmetricDifference, symmetricDifferenceBy, symmetricDifferenceWith, tail, take, takeRight, takeRightWhile, takeWhile, throttle, timeTaken, times, toCamelCase, toCurrency, toDecimalMark, toHash, toKebabCase, toOrdinalSuffix, toSafeInteger, toSnakeCase, toggleClass, tomorrow, transform, triggerEvent, truncateString, truthCheckCollection, unary, uncurry, unescapeHTML, unflattenObject, unfold, union, unionBy, unionWith, uniqueElements, uniqueElementsBy, uniqueElementsByRight, uniqueSymmetricDifference, untildify, unzip, unzipWith, validateNumber, when, without, words, xProd, yesNo, zip, zipObject, zipWith };
