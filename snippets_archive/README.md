@@ -417,7 +417,7 @@ isSimilar('tr','Rohit'); // false
 
 Calculates the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) between two strings.
 
-Calculates the number of changes (substitutions, deletions or additions) required to convert `string1` to `string2`.
+Calculates the number of changes (substitutions, deletions or additions) required to convert `string1` to `string2`. 
 Can also be used to compare two strings as shown in the second example.
 
 ``` js
