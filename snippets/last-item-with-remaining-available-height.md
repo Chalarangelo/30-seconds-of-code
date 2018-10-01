@@ -1,6 +1,6 @@
 ### Last item with remaining available height
 
-Take advantage of available viewport space. Give the last element the remaining available space in current viewport, even when resizing the window.
+Take advantage of available viewport space by giving the last element the remaining available space in current viewport, even when resizing the window.
 
 #### HTML
 
