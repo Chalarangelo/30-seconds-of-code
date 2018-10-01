@@ -22,6 +22,7 @@ call:adapter,function,intermediate
 capitalize:string,array,intermediate
 capitalizeEveryWord:string,regexp,intermediate
 castArray:utility,array,type,beginner
+celsiusToFahrenheit:utility,beginner
 chainAsync:function,intermediate
 chunk:array,intermediate
 clampNumber:math,beginner
@@ -74,6 +75,7 @@ escapeRegExp:string,regexp,intermediate
 everyNth:array,beginner
 extendHex:utility,string,intermediate
 factorial:math,recursion,beginner
+fahrenheitToCelsius:utility,beginner
 fibonacci:math,array,beginner
 filterNonUnique:array,beginner
 filterNonUniqueBy:array,function,intermediate
