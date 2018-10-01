@@ -53,10 +53,8 @@
   }
 
   &__css {
-    background: -webkit-linear-gradient(-45deg, #f8ffc0, #88f4ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     font-size: 4rem;
+    font-weight: bold;
   }
 
   &__github-button-wrapper {
