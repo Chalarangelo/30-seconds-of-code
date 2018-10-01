@@ -31,7 +31,6 @@ try {
   }
   // Write `imports.js`
   fs.writeFileSync(IMPORTS, '');
-  let exportStr = 'export default {';
   // Read all snippets and store them appropriately
   for (const snippet of snippets) {
     const snippetData = fs.readFileSync(path.join(SNIPPETS_PATH, snippet), 'utf8');
@@ -42,12 +41,11 @@ try {
       .split('\n')[0]
       .includes('node');
     // Read `imports.js` and write the data
-    const importData = fs.readFileSync(IMPORTS);
+    const importData = fs.readFileSync(IMPORTS, 'utf8');
     fs.writeFileSync(
       IMPORTS,
-      importData + `\nimport { ${snippetName} } from './temp/${snippetName}.js'`
+      importData + `\nexport { ${snippetName} } from './temp/${snippetName}.js'`
     );
-    exportStr += `${snippetName},`;
     // Find the code in each snippet
     const code = snippetData.match(codeRE)[1].replace('\n', '');
     // Store the data to be written
@@ -61,8 +59,6 @@ try {
     fs.writeFileSync(`${TEMP_PATH}/${snippetName}.js`, toWrite);
   }
   // Write to the proper files and start the `rollup` script
-  exportStr += '}';
-  fs.appendFileSync(IMPORTS, `\n${exportStr}`);
   cp.execSync('node ./scripts/rollup.js');
   // Clean up temporary data
   fs.removeSync(TEMP_PATH);

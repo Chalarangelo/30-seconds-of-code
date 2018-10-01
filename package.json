@@ -1,6 +1,7 @@
 {
   "devDependencies": {
-    "babel-preset-env": "^1.7.0",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
     "chalk": "^2.4.1",
     "fs-extra": "^6.0.0",
     "html-minifier": "^3.5.20",
@@ -14,7 +15,7 @@
     "prettier": "^1.14.2",
     "prismjs": "^1.15.0",
     "rollup": "^0.58.2",
-    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-babel-minify": "^4.0.0",
     "semistandard": "^12.0.1"
   },

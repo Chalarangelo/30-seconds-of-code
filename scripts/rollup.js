@@ -13,30 +13,31 @@ const DIST = './dist';
 // Create `dist` folder if not existing
 if (!fs.existsSync(DIST)) fs.mkdirSync(DIST);
 // Setup babel and minification
-const es5 = babel({ presets: [['env', { modules: false }]] });
+const es5 = babel({
+  presets: ['@babel/preset-env']
+});
 const min = minify({ comments: false });
 // Create the bundles
 (async () => {
   const bundle = await rollup({ input: INPUT_FILE });
   const bundleES5 = await rollup({ input: INPUT_FILE, plugins: [es5] });
-  const bundleMin = await rollup({ input: INPUT_FILE, plugins: [min] });
   const bundleES5Min = await rollup({
     input: INPUT_FILE,
     plugins: [es5, min]
   });
 
-  // UMD ES2017
+  // UMD ES2018
   await bundle.write({
     file: `${DIST}/${MODULE_NAME}.js`,
     name: MODULE_NAME,
     format: 'umd'
   });
 
-  // UMD ES2017 minified
-  await bundleMin.write({
-    file: `${DIST}/${MODULE_NAME}.min.js`,
+  // ESM ES2018
+  await bundle.write({
+    file: `${DIST}/${MODULE_NAME}.esm.js`,
     name: MODULE_NAME,
-    format: 'umd'
+    format: 'es'
   });
 
   // UMD ES5
@@ -51,12 +52,5 @@ const min = minify({ comments: false });
     file: `${DIST}/${MODULE_NAME}.es5.min.js`,
     name: MODULE_NAME,
     format: 'umd'
-  });
-
-  // ESM ES2017
-  await bundle.write({
-    file: `${DIST}/${MODULE_NAME}.esm.js`,
-    name: MODULE_NAME,
-    format: 'es'
   });
 })();
