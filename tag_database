@@ -154,6 +154,7 @@ isPrimitive:type,function,array,string,intermediate
 isPromiseLike:type,function,promise,intermediate
 isSameDate:date,utility,beginner
 isSorted:array,intermediate
+isStream:type,stream,intermediate
 isString:type,string,beginner
 isSymbol:type,beginner
 isTravisCI:node,intermediate
