@@ -2,7 +2,7 @@
 
 Returns the last element for which the provided function returns a truthy value.
 
-Use `Array.filter()` to remove elements for which `fn` returns falsey values, `Array.pop()` to get the last one.
+Use `Array.prototype.filter()` to remove elements for which `fn` returns falsey values, `Array.prototype.pop()` to get the last one.
 
 ```js
 const findLast = (arr, fn) => arr.filter(fn).pop();

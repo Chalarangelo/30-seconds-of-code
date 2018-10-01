@@ -1,8 +1,8 @@
 ### allEqual
 
-Check if all elements are equal
+Check if all elements in an array are equal.
 
-Use `Array.every()` to check if all the elements of the array are the same as the first one.
+Use `Array.prototype.every()` to check if all the elements of the array are the same as the first one.
 
 ```js
 const allEqual = arr => arr.every(val => val === arr[0]);

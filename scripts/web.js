@@ -10,6 +10,23 @@ const fs = require('fs-extra'),
   minify = require('html-minifier').minify;
 const util = require('./util');
 var Prism = require('prismjs');
+const minifyHTML = str =>
+  minify(str, {
+    collapseBooleanAttributes: true,
+    collapseWhitespace: true,
+    decodeEntities: false,
+    minifyCSS: true,
+    minifyJS: true,
+    keepClosingSlash: true,
+    processConditionalComments: true,
+    removeAttributeQuotes: false,
+    removeComments: true,
+    removeEmptyAttributes: false,
+    removeOptionalTags: false,
+    removeScriptTypeAttributes: false,
+    removeStyleLinkTypeAttributes: false,
+    trimCustomFragments: true
+  });
 const unescapeHTML = str =>
   str.replace(
     /&amp;|&lt;|&gt;|&#39;|&quot;/g,
@@ -18,10 +35,55 @@ const unescapeHTML = str =>
         '&amp;': '&',
         '&lt;': '<',
         '&gt;': '>',
-        '&#39;': '\'',
+        '&#39;': "'",
         '&quot;': '"'
       }[tag] || tag)
   );
+const generateSnippetCard = (
+  snippetList,
+  snippetKey,
+  addCornerTag = false
+) => `<div class="card code-card">
+${
+  addCornerTag
+    ? `<div class="corner ${
+        snippetKey[1].includes('advanced')
+          ? 'advanced'
+          : snippetKey[1].includes('beginner')
+            ? 'beginner'
+            : 'intermediate'
+      }"></div>`
+    : ''
+}
+  ${md
+    .render(`\n${addCornerTag ? snippetList[snippetKey[0] + '.md'] : snippetList[snippetKey[0]]}`)
+    .replace(/<h3/g, `<div class="section card-content"><h4 id="${snippetKey[0].toLowerCase()}"`)
+    .replace(/<\/h3>/g, '</h4>')
+    .replace(
+      /<pre><code class="language-js">/m,
+      '</div><div class="copy-button-container"><button class="copy-button" aria-label="Copy to clipboard"></button></div><pre><code class="language-js">'
+    )
+    .replace(
+      /<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm,
+      (match, p1) =>
+        `<pre class="language-js">${Prism.highlight(
+          unescapeHTML(p1),
+          Prism.languages.javascript
+        )}</pre>`
+    )
+    .replace(/<\/div>\s*<pre class="/g, '</div><pre class="section card-code ')
+    .replace(
+      /<\/pre>\s+<pre class="/g,
+      '</pre><label class="collapse">examples</label><pre class="section card-examples '
+    )}
+  </div>`;
+const filterSnippets = (snippetList, excludedFiles) =>
+  Object.keys(snippetList)
+    .filter(key => !excludedFiles.includes(key))
+    .reduce((obj, key) => {
+      obj[key] = snippetList[key];
+      return obj;
+    }, {});
 if (
   util.isTravisCI() &&
   /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE']) &&
@@ -83,20 +145,14 @@ glossarySnippets = util.readSnippets(glossarySnippetsPath);
 
 // Load static parts for all pages
 try {
-  startPart = fs.readFileSync(path.join(staticPartsPath, 'page-start.html'), 'utf8');
-  endPart = fs.readFileSync(path.join(staticPartsPath, 'page-end.html'), 'utf8');
-
-  archivedStartPart = fs.readFileSync(
-    path.join(staticPartsPath, 'archived-page-start.html'),
-    'utf8'
-  );
-  archivedEndPart = fs.readFileSync(path.join(staticPartsPath, 'archived-page-end.html'), 'utf8');
-
-  glossaryStartPart = fs.readFileSync(
-    path.join(staticPartsPath, 'glossary-page-start.html'),
-    'utf8'
-  );
-  glossaryEndPart = fs.readFileSync(path.join(staticPartsPath, 'glossary-page-end.html'), 'utf8');
+  [startPart, endPart, archivedStartPart, archivedEndPart, glossaryStartPart, glossaryEndPart] = [
+    'page-start.html',
+    'page-end.html',
+    'archived-page-start.html',
+    'archived-page-end.html',
+    'glossary-page-start.html',
+    'glossary-page-end.html'
+  ].map(filename => fs.readFileSync(path.join(staticPartsPath, filename), 'utf8'));
 } catch (err) {
   // Handle errors (hopefully not!)
   console.log(`${chalk.red('ERROR!')} During static part loading: ${err}`);
@@ -107,26 +163,18 @@ tagDbData = util.readTags();
 
 // Create the output for individual category pages
 try {
+  let taggedData = util.prepTaggedData(tagDbData);
   // Add the start static part
   output += `${startPart}${'\n'}`;
   // Loop over tags and snippets to create the table of contents
-  for (let tag of [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
-    .filter(v => v)
-    .sort(
-      (a, b) =>
-        util.capitalize(a, true) === 'Uncategorized'
-          ? 1
-          : util.capitalize(b, true) === 'Uncategorized'
-            ? -1
-            : a.localeCompare(b)
-    )) {
+  for (let tag of taggedData) {
     output +=
-      '<h4>' +
+      '<h4 class="collapse">' +
       md
         .render(`${util.capitalize(tag, true)}\n`)
         .replace(/<p>/g, '')
         .replace(/<\/p>/g, '') +
-      '</h4>';
+      '</h4><ul>';
     for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
       output += md
         .render(
@@ -135,23 +183,18 @@ try {
           }#${taggedSnippet[0].toLowerCase()})\n`
         )
         .replace(/<p>/g, '')
-        .replace(/<\/p>/g, '')
-        .replace(/<a/g, `<a tags="${taggedSnippet[1].join(',')}"`);
-    output += '\n';
+        .replace(/<\/p>/g, '</li>')
+        .replace(/<a/g, `<li><a tags="${taggedSnippet[1].join(',')}"`);
+    output += '</ul>\n';
   }
-  output += '</nav><main class="col-centered">';
-  output += '<span id="top"><br/><br/></span>';
+  output += `<h4 class="static-link"><a href="./archive">Archive</a></h4>
+  <h4 class="static-link"><a href="./glossary">Glossary</a></h4>
+  <h4 class="static-link"><a href="./contributing">Contributing</a></h4>
+  <h4 class="static-link"><a href="./about">About</a></h4>
+  <div><button class="social fb"></button><button class="social instagram"></button><button class="social twitter"></button></div>
+  </nav><main class="col-centered"><span id="top"><br/><br/></span>`;
   // Loop over tags and snippets to create the list of snippets
-  for (let tag of [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
-    .filter(v => v)
-    .sort(
-      (a, b) =>
-        util.capitalize(a, true) === 'Uncategorized'
-          ? 1
-          : util.capitalize(b, true) === 'Uncategorized'
-            ? -1
-            : a.localeCompare(b)
-    )) {
+  for (let tag of taggedData) {
     let localOutput = output
       .replace(/\$tag/g, util.capitalize(tag))
       .replace(new RegExp(`./${tag}#`, 'g'), '#');
@@ -160,40 +203,7 @@ try {
       .render(`## ${util.capitalize(tag, true)}\n`)
       .replace(/<h2>/g, '<h2 class="category-name">');
     for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
-      localOutput +=
-        '<div class="card code-card">' +
-        `<div class="corner ${
-          taggedSnippet[1].includes('advanced')
-            ? 'advanced'
-            : taggedSnippet[1].includes('beginner')
-              ? 'beginner'
-              : 'intermediate'
-        }"></div>` +
-        md
-          .render(`\n${snippets[taggedSnippet[0] + '.md']}`)
-          .replace(
-            /<h3/g,
-            `<div class="section card-content"><h4 id="${taggedSnippet[0].toLowerCase()}"`
-          )
-          .replace(/<\/h3>/g, '</h4>')
-          .replace(
-            /<pre><code class="language-js">/m,
-            '</div><div class="copy-button-container"><button class="copy-button" aria-label="Copy to clipboard"></button></div><pre><code class="language-js">'
-          )
-          .replace(
-            /<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm,
-            (match, p1) =>
-              `<pre class="language-js">${Prism.highlight(
-                unescapeHTML(p1),
-                Prism.languages.javascript
-              )}</pre>`
-          )
-          .replace(/<\/div>\s*<pre class="/g, '</div><pre class="section card-code ')
-          .replace(
-            /<\/pre>\s+<pre class="/g,
-            '</pre><label class="collapse">examples</label><pre class="section card-examples '
-          ) +
-        '</div>';
+      localOutput += generateSnippetCard(snippets, taggedSnippet, true);
     // Add the ending static part
     localOutput += `\n${endPart + '\n'}`;
     // Optimize punctuation nodes
@@ -218,22 +228,7 @@ try {
   }
   // Minify output
   pagesOutput.forEach(page => {
-    page.content = minify(page.content, {
-      collapseBooleanAttributes: true,
-      collapseWhitespace: true,
-      decodeEntities: false,
-      minifyCSS: true,
-      minifyJS: true,
-      keepClosingSlash: true,
-      processConditionalComments: true,
-      removeAttributeQuotes: false,
-      removeComments: true,
-      removeEmptyAttributes: false,
-      removeOptionalTags: false,
-      removeScriptTypeAttributes: false,
-      removeStyleLinkTypeAttributes: false,
-      trimCustomFragments: true
-    });
+    page.content = minifyHTML(page.content);
     fs.writeFileSync(
       path.join(docsPath, (page.tag === 'array' ? 'index' : page.tag) + '.html'),
       page.content
@@ -254,41 +249,11 @@ try {
   archivedOutput += `${archivedStartPart}\n`;
 
   // Filter README.md from folder
-  const excludeFiles = ['README.md'];
-
-  const filteredArchivedSnippets = Object.keys(archivedSnippets)
-    .filter(key => !excludeFiles.includes(key))
-    .reduce((obj, key) => {
-      obj[key] = archivedSnippets[key];
-      return obj;
-    }, {});
+  const filteredArchivedSnippets = filterSnippets(archivedSnippets, ['README.md']);
 
   // Generate archived snippets from md files
   for (let snippet of Object.entries(filteredArchivedSnippets))
-    archivedOutput +=
-      '<div class="card code-card">' +
-      md
-        .render(`\n${filteredArchivedSnippets[snippet[0]]}`)
-        .replace(/<h3/g, `<div class="section card-content"><h4 id="${snippet[0].toLowerCase()}"`)
-        .replace(/<\/h3>/g, '</h4>')
-        .replace(
-          /<pre><code class="language-js">/m,
-          '</div><div class="copy-button-container"><button class="copy-button" aria-label="Copy to clipboard"></button></div><pre><code class="language-js">'
-        )
-        .replace(
-          /<pre><code class="language-js">([^\0]*?)<\/code><\/pre>/gm,
-          (match, p1) =>
-            `<pre class="language-js">${Prism.highlight(
-              unescapeHTML(p1),
-              Prism.languages.javascript
-            )}</pre>`
-        )
-        .replace(/<\/div>\s*<pre class="/g, '</div><pre class="section card-code ')
-        .replace(
-          /<\/pre>\s+<pre class="/g,
-          '</pre><label class="collapse">examples</label><pre class="section card-examples '
-        ) +
-      '</div>';
+    archivedOutput += generateSnippetCard(filteredArchivedSnippets, snippet, false);
 
   // Optimize punctuation nodes
   archivedOutput = util.optimizeNodes(
@@ -312,22 +277,7 @@ try {
   archivedOutput += `${archivedEndPart}`;
 
   // Generate and minify 'archive.html' file
-  const minifiedArchivedOutput = minify(archivedOutput, {
-    collapseBooleanAttributes: true,
-    collapseWhitespace: true,
-    decodeEntities: false,
-    minifyCSS: true,
-    minifyJS: true,
-    keepClosingSlash: true,
-    processConditionalComments: true,
-    removeAttributeQuotes: false,
-    removeComments: true,
-    removeEmptyAttributes: false,
-    removeOptionalTags: false,
-    removeScriptTypeAttributes: false,
-    removeStyleLinkTypeAttributes: false,
-    trimCustomFragments: true
-  });
+  const minifiedArchivedOutput = minifyHTML(archivedOutput);
 
   fs.writeFileSync(path.join(docsPath, 'archive.html'), minifiedArchivedOutput);
   console.log(`${chalk.green('SUCCESS!')} archive.html file generated!`);
@@ -342,14 +292,7 @@ try {
   glossaryOutput += `${glossaryStartPart}\n`;
 
   // Filter README.md from folder
-  const excludeFiles = ['README.md'];
-
-  const filteredGlossarySnippets = Object.keys(glossarySnippets)
-    .filter(key => !excludeFiles.includes(key))
-    .reduce((obj, key) => {
-      obj[key] = glossarySnippets[key];
-      return obj;
-    }, {});
+  const filteredGlossarySnippets = filterSnippets(glossarySnippets, ['README.md']);
 
   // Generate glossary snippets from md files
   for (let snippet of Object.entries(filteredGlossarySnippets))
@@ -364,22 +307,7 @@ try {
   glossaryOutput += `${glossaryEndPart}`;
 
   // Generate and minify 'glossary.html' file
-  const minifiedGlossaryOutput = minify(glossaryOutput, {
-    collapseBooleanAttributes: true,
-    collapseWhitespace: true,
-    decodeEntities: false,
-    minifyCSS: true,
-    minifyJS: true,
-    keepClosingSlash: true,
-    processConditionalComments: true,
-    removeAttributeQuotes: false,
-    removeComments: true,
-    removeEmptyAttributes: false,
-    removeOptionalTags: false,
-    removeScriptTypeAttributes: false,
-    removeStyleLinkTypeAttributes: false,
-    trimCustomFragments: true
-  });
+  const minifiedGlossaryOutput = minifyHTML(glossaryOutput);
 
   fs.writeFileSync(path.join(docsPath, 'glossary.html'), minifiedGlossaryOutput);
   console.log(`${chalk.green('SUCCESS!')} glossary.html file generated!`);

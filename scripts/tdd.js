@@ -9,11 +9,7 @@ const fs = require('fs-extra'),
 const childProcess = require('child_process');
 const chalk = require('chalk');
 const util = require('./util');
-if (
-  util.isTravisCI() &&
-  process.env['TRAVIS_EVENT_TYPE'] !== 'cron' &&
-  process.env['TRAVIS_EVENT_TYPE'] !== 'api'
-) {
+if (util.isTravisCI() && util.isNotTravisCronOrAPI()) {
   console.log(`${chalk.green('NOBUILD')} Testing terminated, not a cron job or a custom build!`);
   process.exit(0);
 }
@@ -63,11 +59,6 @@ snippetFiles
       .split('\n')
       .map(line => line)
       .filter((_, i) => blockMarkers[0] < i && i < blockMarkers[1]);
-    // Grab snippet example based on code markers
-    const fileExample = fileCode
-      .split('\n')
-      .map(line => line)
-      .filter((_, i) => blockMarkers[2] < i && i < blockMarkers[3]);
 
     // Export template for snippetName.js
     const exportFile = `${fileFunction.join('\n')}\nmodule.exports = ${fileName};\n`;

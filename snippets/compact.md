@@ -2,7 +2,7 @@
 
 Removes falsey values from an array.
 
-Use `Array.filter()` to filter out falsey values (`false`, `null`, `0`, `""`, `undefined`, and `NaN`).
+Use `Array.prototype.filter()` to filter out falsey values (`false`, `null`, `0`, `""`, `undefined`, and `NaN`).
 
 ```js
 const compact = arr => arr.filter(Boolean);
