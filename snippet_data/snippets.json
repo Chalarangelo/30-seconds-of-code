@@ -3250,7 +3250,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "isString.md",
-        "text": "Checks if the given argument is a string.\n\nUse `typeof` to check if a value is classified as a string primitive.",
+        "text": "Checks if the given argument is a string. Only works for string primitives.\n\nUse `typeof` to check if a value is classified as a string primitive.",
         "codeBlocks": [
           "const isString = val => typeof val === 'string';",
           "isString('10'); // true"
@@ -3263,7 +3263,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "1292c2a3504428962a0851e2f433aac67bfdd581f5abf08df967f5c8fef0954b"
+        "hash": "8cb7af2bd0a103563eee4e09266219630bf50c22048ad243d9456a24277ba615"
       }
     },
     {
@@ -5902,9 +5902,9 @@
       "type": "snippet",
       "attributes": {
         "fileName": "takeRightWhile.md",
-        "text": "Removes elements from the end of an array until the passed function returns `true`. Returns the removed elements.\n\nLoop through the array, using a `for...of` loop over `Array.prototype.keys()` until the returned value from the function is `true`.\nReturn the removed elements, using `Array.prototype.reverse()` and `Array.prototype.slice()`.",
+        "text": "Removes elements from the end of an array until the passed function returns `true`. Returns the removed elements.\n\nLoop through the array, using a `Array.prototype.reduceRight()` and accumulating elements while the function returns falsy value.",
         "codeBlocks": [
-          "const takeRightWhile = (arr, func) => {\n  for (let i of arr.reverse().keys())\n    if (func(arr[i])) return arr.reverse().slice(arr.length - i, arr.length);\n  return arr;\n};",
+          "const takeRightWhile = (arr, func) =>\n  arr.reduceRight((acc, el) => (func(el) ? acc : [el, ...acc]), []);",
           "takeRightWhile([1, 2, 3, 4], n => n < 3); // [3, 4]"
         ],
         "tags": [
@@ -5915,7 +5915,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "2b6b9c3c5e3e096c8b43ac7dfc389f8637e7eaf5cb77baea6e01f6506772fcc1"
+        "hash": "e229ed3f9dfffee8681ff978f7b1417b1a07b3820af0350f0c8b0332147a8525"
       }
     },
     {
