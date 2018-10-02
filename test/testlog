@@ -3,873 +3,873 @@
 # Starting...
 # 356 test suites found.
 
-#  PASS  test/uniqueElements/uniqueElements.test.js
-
-ok 1 — uniqueElements is a Function
-ok 2 — uniqueElements([1, 2, 2, 3, 4, 4, 5]) returns [1,2,3,4,5]
-ok 3 — uniqueElements([1, 23, 53]) returns [1, 23, 53]
-ok 4 — uniqueElements([true, 0, 1, false, false, undefined, null, '']) returns [true, 0, 1, false, false, undefined, null, '']
-ok 5 — uniqueElements() returns []
-ok 6 — uniqueElements(null) returns []
-ok 7 — uniqueElements(undefined) returns []
-ok 8 — uniqueElements('strt') returns ['s', 't', 'r']
-ok 9 — uniqueElements(1, 1, 2543, 534, 5) throws an error
-ok 10 — uniqueElements({}) throws an error
-ok 11 — uniqueElements(true) throws an error
-ok 12 — uniqueElements(false) throws an error
-ok 13 — uniqueElements([true, 0, 1, false, false, undefined, null]) takes less than 2s to run
-
-#  PASS  test/toSnakeCase/toSnakeCase.test.js
-
-ok 14 — toSnakeCase is a Function
-ok 15 — toSnakeCase('camelCase') returns camel_case
-ok 16 — toSnakeCase('some text') returns some_text
-ok 17 — toSnakeCase('some-mixed_string With spaces_underscores-and-hyphens') returns some_mixed_string_with_spaces_underscores_and_hyphens
-ok 18 — toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') returns i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html
-ok 19 — toSnakeCase() returns undefined
-ok 20 — toSnakeCase([]) throws an error
-ok 21 — toSnakeCase({}) throws an error
-ok 22 — toSnakeCase(123) throws an error
-ok 23 — toSnakeCase(IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML) takes less than 2s to run
-
-#  PASS  test/toKebabCase/toKebabCase.test.js
-
-ok 24 — toKebabCase is a Function
-ok 25 — toKebabCase('camelCase') returns camel-case
-ok 26 — toKebabCase('some text') returns some-text
-ok 27 — toKebabCase('some-mixed-string With spaces-underscores-and-hyphens') returns some-mixed-string-with-spaces-underscores-and-hyphens
-ok 28 — toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') returns i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html
-ok 29 — toKebabCase() returns undefined
-ok 30 — toKebabCase([]) throws an erro
-ok 31 — toKebabCase({}) throws an erro
-ok 32 — toKebabCase(123) throws an erro
-ok 33 — toKebabCase(IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML) takes less than 2s to run
-
-#  PASS  test/toCamelCase/toCamelCase.test.js
-
-ok 34 — toCamelCase is a Function
-ok 35 — toCamelCase('some_database_field_name') returns someDatabaseFieldName
-ok 36 — toCamelCase('Some label that needs to be camelized') returns someLabelThatNeedsToBeCamelized
-ok 37 — toCamelCase('some-javascript-property') return someJavascriptProperty
-ok 38 — toCamelCase('some-mixed_string with spaces_underscores-and-hyphens') returns someMixedStringWithSpacesUnderscoresAndHyphens
-ok 39 — toCamelCase() throws a error
-ok 40 — toCamelCase([]) throws a error
-ok 41 — toCamelCase({}) throws a error
-ok 42 — toCamelCase(123) throws a error
-ok 43 — toCamelCase(some-mixed_string with spaces_underscores-and-hyphens) takes less than 2s to run
-
-#  PASS  test/is/is.test.js
-
-ok 44 — is is a Function
-ok 45 — Works for arrays with data
-ok 46 — Works for empty arrays
-ok 47 — Works for arrays, not objects
-ok 48 — Works for objects
-ok 49 — Works for maps
-ok 50 — Works for regular expressions
-ok 51 — Works for sets
-ok 52 — Works for weak maps
-ok 53 — Works for weak sets
-ok 54 — Works for strings - returns true for primitive
-ok 55 — Works for strings - returns true when using constructor
-ok 56 — Works for numbers - returns true for primitive
-ok 57 — Works for numbers - returns true when using constructor
-ok 58 — Works for booleans - returns true for primitive
-ok 59 — Works for booleans - returns true when using constructor
-ok 60 — Works for functions
-
-#  PASS  test/average/average.test.js
-
-ok 61 — average is a Function
-ok 62 — average(true) returns 0
-ok 63 — average(false) returns 1
-ok 64 — average(9, 1) returns 5
-ok 65 — average(153, 44, 55, 64, 71, 1122, 322774, 2232, 23423, 234, 3631) returns 32163.909090909092
-ok 66 — average(1, 2, 3) returns 2
-ok 67 — average(null) returns 0
-ok 68 — average(1, 2, 3) returns NaN
-ok 69 — average(String) returns NaN
-ok 70 — average({ a: 123}) returns NaN
-ok 71 — average([undefined, 0, string]) returns NaN
-ok 72 — average([1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 1122, 32124, 23232]) takes less than 2s to run
-
-#  PASS  test/union/union.test.js
-
-ok 73 — union is a Function
-ok 74 — union([1, 2, 3], [4, 3, 2]) returns [1, 2, 3, 4]
-ok 75 — union('str', 'asd') returns [ 's', 't', 'r', 'a', 'd' ]
-ok 76 — union([[], {}], [1, 2, 3]) returns [[], {}, 1, 2, 3]
-ok 77 — union([], []) returns []
-ok 78 — union() throws an error
-ok 79 — union(true, 'str') throws an error
-ok 80 — union('false', true) throws an error
-ok 81 — union((123, {}) throws an error
-ok 82 — union([], {}) throws an error
-ok 83 — union(undefined, null) throws an error
-ok 84 — union([1, 2, 3], [4, 3, 2]) takes less than 2s to run
-
-#  PASS  test/validateNumber/validateNumber.test.js
-
-ok 85 — validateNumber is a Function
-ok 86 — validateNumber(9) returns true
-ok 87 — validateNumber(234asd.slice(0, 2)) returns true
-ok 88 — validateNumber(1232) returns true
-ok 89 — validateNumber(1232 + 13423) returns true
-ok 90 — validateNumber(1232 * 2342 * 123) returns true
-ok 91 — validateNumber(1232.23423536) returns true
-ok 92 — validateNumber(234asd) returns false
-ok 93 — validateNumber(e234d) returns false
-ok 94 — validateNumber(false) returns false
-ok 95 — validateNumber(true) returns false
-ok 96 — validateNumber(null) returns false
-ok 97 — validateNumber(123 * asd) returns false
-
-#  PASS  test/toSafeInteger/toSafeInteger.test.js
-
-ok 98 — toSafeInteger is a Function
-ok 99 — Number(toSafeInteger(3.2)) is a number
-ok 100 — Converts a value to a safe integer
-ok 101 — toSafeInteger('4.2') returns 4
-ok 102 — toSafeInteger(4.6) returns 5
-ok 103 — toSafeInteger([]) returns 0
-ok 104 — isNaN(toSafeInteger([1.5, 3124])) is true
-ok 105 — isNaN(toSafeInteger('string')) is true
-ok 106 — isNaN(toSafeInteger({})) is true
-ok 107 — isNaN(toSafeInteger()) is true
-ok 108 — toSafeInteger(Infinity) returns 9007199254740991
-ok 109 — toSafeInteger(3.2) takes less than 2s to run
-
-#  PASS  test/isPrimitive/isPrimitive.test.js
-
-ok 110 — isPrimitive is a Function
-ok 111 — isPrimitive(null) is primitive
-ok 112 — isPrimitive(undefined) is primitive
-ok 113 — isPrimitive(string) is primitive
-ok 114 — isPrimitive(true) is primitive
-ok 115 — isPrimitive(50) is primitive
-ok 116 — isPrimitive('Hello') is primitive
-ok 117 — isPrimitive(false) is primitive
-ok 118 — isPrimitive(Symbol()) is primitive
-ok 119 — isPrimitive([1, 2, 3]) is not primitive
-ok 120 — isPrimitive({ a: 123 }) is not primitive
-ok 121 — isPrimitive({ a: 123 }) takes less than 2s to run
-
-#  PASS  test/zipObject/zipObject.test.js
-
-ok 122 — zipObject is a Function
-ok 123 — zipObject([a, b, c], [1, 2]) returns {a: 1, b: 2, c: undefined}
-ok 124 — zipObject([a, b], [1, 2, 3]) returns {a: 1, b: 2}
-ok 125 — zipObject([a, b, c], string) returns { a: s, b: t, c: r }
-ok 126 — zipObject([a], string) returns { a: s }
-ok 127 — zipObject() throws an error
-ok 128 — zipObject((['string'], null) throws an error
-ok 129 — zipObject(null, [1]) throws an error
-ok 130 — zipObject('string') throws an error
-ok 131 — zipObject('test', 'string') throws an error
-
-#  PASS  test/quickSort/quickSort.test.js
-
-ok 132 — quickSort is a Function
-ok 133 — quickSort([5, 6, 4, 3, 1, 2]) returns [1, 2, 3, 4, 5, 6]
-ok 134 — quickSort([-1, 0, -2]) returns [-2, -1, 0]
-ok 135 — quickSort() throws an error
-ok 136 — quickSort(123) throws an error
-ok 137 — quickSort({ 234: string}) throws an error
-ok 138 — quickSort(null) throws an error
-ok 139 — quickSort(undefined) throws an error
-ok 140 — quickSort([11, 1, 324, 23232, -1, 53, 2, 524, 32, 13, 156, 133, 62, 12, 4]) takes less than 2s to run
-
-#  PASS  test/round/round.test.js
-
-ok 141 — round is a Function
-ok 142 — round(1.005, 2) returns 1.01
-ok 143 — round(123.3423345345345345344, 11) returns 123.34233453453
-ok 144 — round(3.342, 11) returns 3.342
-ok 145 — round(1.005) returns 1
-ok 146 — round([1.005, 2]) returns NaN
-ok 147 — round(string) returns NaN
-ok 148 — round() returns NaN
-ok 149 — round(132, 413, 4134) returns NaN
-ok 150 — round({a: 132}, 413) returns NaN
-ok 151 — round(123.3423345345345345344, 11) takes less than 2s to run
-
-#  PASS  test/yesNo/yesNo.test.js
-
-ok 152 — yesNo is a Function
-ok 153 — yesNo(Y) returns true
-ok 154 — yesNo(yes) returns true
-ok 155 — yesNo(foo, true) returns true
-ok 156 — yesNo(No) returns false
-ok 157 — yesNo() returns false
-ok 158 — yesNo(null) returns false
-ok 159 — yesNo(undefined) returns false
-ok 160 — yesNo([123, null]) returns false
-ok 161 — yesNo([Yes, No]) returns false
-ok 162 — yesNo({ 2: Yes }) returns false
-ok 163 — yesNo([Yes, No], true) returns true
-ok 164 — yesNo({ 2: Yes }, true) returns true
-
-#  PASS  test/isSorted/isSorted.test.js
-
-ok 165 — isSorted is a Function
-ok 166 — Array is sorted in ascending order
-ok 167 — Array is sorted in ascending order
-ok 168 — Array is sorted in ascending order
-ok 169 — Array is sorted in ascending order
-ok 170 — Array is sorted in descending order
-ok 171 — Array is sorted in descending order
-ok 172 — Array is sorted in descending order
-ok 173 — Array is sorted in descending order
-ok 174 — Array is empty
-ok 175 — Array is not sorted, direction changed in array
-ok 176 — Array is not sorted, direction changed in array
-
-#  PASS  test/words/words.test.js
-
-ok 177 — words is a Function
-ok 178 — words('I love javaScript!!') returns [I, love, javaScript]
-ok 179 — words('python, javaScript & coffee') returns [python, javaScript, coffee]
-ok 180 — words(I love javaScript!!) returns an array
-ok 181 — words() throws an error
-ok 182 — words(null) throws an error
-ok 183 — words(undefined) throws an error
-ok 184 — words({}) throws an error
-ok 185 — words([]) throws an error
-ok 186 — words(1234) throws an error
-
-#  PASS  test/longestItem/longestItem.test.js
-
-ok 187 — longestItem is a Function
-ok 188 — Returns the longest object from plain values
-ok 189 — Returns the longest object from a spread array
-ok 190 — Returns the longest object from mixed input
-ok 191 — Returns the longest array
-ok 192 — Returns the longest object when comparing arrays and strings
-ok 193 — Returns undefined without any input
-ok 194 — Returns first found of all similar
-ok 195 — Throws TypeError if all inputs are undefined
-
-#  PASS  test/without/without.test.js
-
-ok 196 — without is a Function
-ok 197 — without([2, 1, 2, 3], 1, 2) returns [3]
-ok 198 — without([]) returns []
-ok 199 — without([3, 1, true, '3', true], '3', true) returns [3, 1]
-ok 200 — without('string'.split(''), 's', 't', 'g') returns ['r', 'i', 'n']
-ok 201 — without() throws an error
-ok 202 — without(null) throws an error
-ok 203 — without(undefined) throws an error
-ok 204 — without(123) throws an error
-ok 205 — without({}) throws an error
-
-#  PASS  test/chunk/chunk.test.js
-
-ok 206 — chunk is a Function
-ok 207 — chunk([1, 2, 3, 4, 5], 2) returns [[1,2],[3,4],[5]]
-ok 208 — chunk([]) returns []
-ok 209 — chunk(123) returns []
-ok 210 — chunk({ a: 123}) returns []
-ok 211 — chunk(string, 2) returns [ st, ri, ng ]
-ok 212 — chunk() throws an error
-ok 213 — chunk(undefined) throws an error
-ok 214 — chunk(null) throws an error
-ok 215 — chunk(This is a string, 2) takes less than 2s to run
-
-#  PASS  test/zip/zip.test.js
-
-ok 216 — zip is a Function
-ok 217 — zip([a, b], [1, 2], [true, false]) returns [[a, 1, true], [b, 2, false]]
-ok 218 — zip([a], [1, 2], [true, false]) returns [[a, 1, true], [undefined, 2, false]]
-ok 219 — zip([]) returns []
-ok 220 — zip(123) returns []
-ok 221 — zip([a, b], [1, 2], [true, false]) returns an Array
-ok 222 — zip([a], [1, 2], [true, false]) returns an Array
-ok 223 — zip(null) throws an error
-ok 224 — zip(undefined) throws an error
-
-#  PASS  test/uniqueElementsByRight/uniqueElementsByRight.test.js
-
-ok 225 — uniqueElementsByRight is a Function
-ok 226 — uniqueElementsByRight works for properties
-ok 227 — uniqueElementsByRight works for nested properties
-
-#  PASS  test/isEmpty/isEmpty.test.js
-
-ok 228 — isEmpty is a Function
-ok 229 — Returns true for empty Map
-ok 230 — Returns true for empty Set
-ok 231 — Returns true for empty array
-ok 232 — Returns true for empty object
-ok 233 — Returns true for empty string
-ok 234 — Returns false for non-empty array
-ok 235 — Returns false for non-empty object
-ok 236 — Returns false for non-empty string
-ok 237 — Returns true - type is not considered a collection
-ok 238 — Returns true - type is not considered a collection
-
 #  PASS  test/uniqueElementsBy/uniqueElementsBy.test.js
 
-ok 239 — uniqueElementsBy is a Function
-ok 240 — uniqueElementsBy works for properties
-ok 241 — uniqueElementsBy works for nested properties
-
-#  PASS  test/last/last.test.js
-
-ok 242 — last is a Function
-ok 243 — last({ a: 1234}) returns undefined
-ok 244 — last([1, 2, 3]) returns 3
-ok 245 — last({ 0: false}) returns undefined
-ok 246 — last(String) returns g
-ok 247 — last(null) throws an Error
-ok 248 — last(undefined) throws an Error
-ok 249 — last() throws an Error
-ok 250 — last([1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 1122, 32124, 23232]) takes less than 2s to run
-
-#  PASS  test/head/head.test.js
-
-ok 251 — head is a Function
-ok 252 — head({ a: 1234}) returns undefined
-ok 253 — head([1, 2, 3]) returns 1
-ok 254 — head({ 0: false}) returns false
-ok 255 — head(String) returns S
-ok 256 — head(null) throws an Error
-ok 257 — head(undefined) throws an Error
-ok 258 — head() throws an Error
-ok 259 — head([1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 1122, 32124, 23232]) takes less than 2s to run
-
-#  PASS  test/filterNonUniqueBy/filterNonUniqueBy.test.js
-
-ok 260 — filterNonUniqueBy is a Function
-ok 261 — filterNonUniqueBy works for properties
-ok 262 — filterNonUniqueBy works for nested properties
-
-#  PASS  test/all/all.test.js
-
-ok 263 — all is a Function
-ok 264 — Returns true for arrays with no falsey values
-ok 265 — Returns false for arrays with 0
-ok 266 — Returns false for arrays with NaN
-ok 267 — Returns false for arrays with undefined
-ok 268 — Returns false for arrays with null
-ok 269 — Returns false for arrays with empty strings
-ok 270 — Returns true with predicate function
-ok 271 — Returns false with a predicate function
-
-#  PASS  test/offset/offset.test.js
-
-ok 272 — offset is a Function
-ok 273 — Offset of 0 returns the same array.
-ok 274 — Offset > 0 returns the offsetted array.
-ok 275 — Offset < 0 returns the reverse offsetted array.
-ok 276 — Offset greater than the length of the array returns the same array.
-ok 277 — Offset less than the negative length of the array returns the same array.
-ok 278 — Offsetting empty array returns an empty array.
-
-#  PASS  test/equals/equals.test.js
-
-ok 279 — equals is a Function
-ok 280 — { a: [2, {e: 3}], b: [4], c: 'foo' } is equal to { a: [2, {e: 3}], b: [4], c: 'foo' }
-ok 281 — [1,2,3] is equal to [1,2,3]
-ok 282 — { a: [2, 3], b: [4] } is not equal to { a: [2, 3], b: [6] }
-ok 283 — [1,2,3] is not equal to [1,2,4]
-ok 284 — [1, 2, 3] should be equal to { 0: 1, 1: 2, 2: 3 }) - type is different, but their enumerable properties match.
-
-#  PASS  test/allEqual/allEqual.test.js
-
-ok 285 — allEqual is a Function
-ok 286 — Truthy numbers
-ok 287 — Falsy numbers
-ok 288 — Truthy strings
-ok 289 — Falsy numbers
-ok 290 — Truthy trues
-ok 291 — Truthy falses
-ok 292 — Falsy trues
-ok 293 — Falsy falses
-
-#  PASS  test/randomIntArrayInRange/randomIntArrayInRange.test.js
-
-ok 294 — randomIntArrayInRange is a Function
-ok 295 — The returned array contains only integers
-ok 296 — The returned array has the proper length
-ok 297 — The returned array's values lie between provided lowerLimit and upperLimit (both inclusive).
+ok 1 — uniqueElementsBy is a Function
+ok 2 — uniqueElementsBy works for properties
+ok 3 — uniqueElementsBy works for nested properties
 
 #  PASS  test/pluralize/pluralize.test.js
 
-ok 298 — pluralize is a Function
-ok 299 — Produces the plural of the word
-ok 300 — Produces the singular of the word
-ok 301 — Produces the plural of the word
-ok 302 — Prodices the defined plural of the word
-ok 303 — Works with a dictionary
+ok 4 — pluralize is a Function
+ok 5 — Produces the plural of the word
+ok 6 — Produces the singular of the word
+ok 7 — Produces the plural of the word
+ok 8 — Prodices the defined plural of the word
+ok 9 — Works with a dictionary
 
 #  PASS  test/sampleSize/sampleSize.test.js
 
-ok 304 — sampleSize is a Function
-ok 305 — Returns a single element without n specified
-ok 306 — Returns a random sample of specified size from an array
-ok 307 — Returns all elements in an array if n >= length
-ok 308 — Returns an empty array if original array is empty
-ok 309 — Returns an empty array if n = 0
+ok 10 — sampleSize is a Function
+ok 11 — Returns a single element without n specified
+ok 12 — Returns a random sample of specified size from an array
+ok 13 — Returns all elements in an array if n >= length
+ok 14 — Returns an empty array if original array is empty
+ok 15 — Returns an empty array if n = 0
 
 #  PASS  test/orderBy/orderBy.test.js
 
-ok 310 — orderBy is a Function
-ok 311 — Returns a sorted array of objects ordered by properties and orders.
-ok 312 — Returns a sorted array of objects ordered by properties and orders.
+ok 16 — orderBy is a Function
+ok 17 — Returns a sorted array of objects ordered by properties and orders.
+ok 18 — Returns a sorted array of objects ordered by properties and orders.
 
 #  PASS  test/deepFreeze/deepFreeze.test.js
 
-ok 313 — deepFreeze is a Function
-ok 314 — modifying deeply freezed object prop throws an error in strict mode
-ok 315 — should not modify deeply freezed object inside another object
-ok 316 — should not add prop to deeply freezed empty object
+ok 19 — deepFreeze is a Function
+ok 20 — modifying deeply freezed object prop throws an error in strict mode
+ok 21 — should not modify deeply freezed object inside another object
+ok 22 — should not add prop to deeply freezed empty object
+
+#  PASS  test/toSnakeCase/toSnakeCase.test.js
+
+ok 23 — toSnakeCase is a Function
+ok 24 — toSnakeCase('camelCase') returns camel_case
+ok 25 — toSnakeCase('some text') returns some_text
+ok 26 — toSnakeCase('some-mixed_string With spaces_underscores-and-hyphens') returns some_mixed_string_with_spaces_underscores_and_hyphens
+ok 27 — toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') returns i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html
+ok 28 — toSnakeCase() returns undefined
+ok 29 — toSnakeCase([]) throws an error
+ok 30 — toSnakeCase({}) throws an error
+ok 31 — toSnakeCase(123) throws an error
+ok 32 — toSnakeCase(IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML) takes less than 2s to run
 
 #  PASS  test/CSVToArray/CSVToArray.test.js
 
-ok 317 — CSVToArray is a Function
-ok 318 — CSVToArray works with default delimiter
-ok 319 — CSVToArray works with custom delimiter
-ok 320 — CSVToArray omits the first row
-ok 321 — CSVToArray omits the first row and works with a custom delimiter
+ok 33 — CSVToArray is a Function
+ok 34 — CSVToArray works with default delimiter
+ok 35 — CSVToArray works with custom delimiter
+ok 36 — CSVToArray omits the first row
+ok 37 — CSVToArray omits the first row and works with a custom delimiter
+
+#  PASS  test/validateNumber/validateNumber.test.js
+
+ok 38 — validateNumber is a Function
+ok 39 — validateNumber(9) returns true
+ok 40 — validateNumber(234asd.slice(0, 2)) returns true
+ok 41 — validateNumber(1232) returns true
+ok 42 — validateNumber(1232 + 13423) returns true
+ok 43 — validateNumber(1232 * 2342 * 123) returns true
+ok 44 — validateNumber(1232.23423536) returns true
+ok 45 — validateNumber(234asd) returns false
+ok 46 — validateNumber(e234d) returns false
+ok 47 — validateNumber(false) returns false
+ok 48 — validateNumber(true) returns false
+ok 49 — validateNumber(null) returns false
+ok 50 — validateNumber(123 * asd) returns false
+
+#  PASS  test/union/union.test.js
+
+ok 51 — union is a Function
+ok 52 — union([1, 2, 3], [4, 3, 2]) returns [1, 2, 3, 4]
+ok 53 — union('str', 'asd') returns [ 's', 't', 'r', 'a', 'd' ]
+ok 54 — union([[], {}], [1, 2, 3]) returns [[], {}, 1, 2, 3]
+ok 55 — union([], []) returns []
+ok 56 — union() throws an error
+ok 57 — union(true, 'str') throws an error
+ok 58 — union('false', true) throws an error
+ok 59 — union((123, {}) throws an error
+ok 60 — union([], {}) throws an error
+ok 61 — union(undefined, null) throws an error
+ok 62 — union([1, 2, 3], [4, 3, 2]) takes less than 2s to run
+
+#  PASS  test/longestItem/longestItem.test.js
+
+ok 63 — longestItem is a Function
+ok 64 — Returns the longest object from plain values
+ok 65 — Returns the longest object from a spread array
+ok 66 — Returns the longest object from mixed input
+ok 67 — Returns the longest array
+ok 68 — Returns the longest object when comparing arrays and strings
+ok 69 — Returns undefined without any input
+ok 70 — Returns first found of all similar
+ok 71 — Throws TypeError if all inputs are undefined
+
+#  PASS  test/zipObject/zipObject.test.js
+
+ok 72 — zipObject is a Function
+ok 73 — zipObject([a, b, c], [1, 2]) returns {a: 1, b: 2, c: undefined}
+ok 74 — zipObject([a, b], [1, 2, 3]) returns {a: 1, b: 2}
+ok 75 — zipObject([a, b, c], string) returns { a: s, b: t, c: r }
+ok 76 — zipObject([a], string) returns { a: s }
+ok 77 — zipObject() throws an error
+ok 78 — zipObject((['string'], null) throws an error
+ok 79 — zipObject(null, [1]) throws an error
+ok 80 — zipObject('string') throws an error
+ok 81 — zipObject('test', 'string') throws an error
+
+#  PASS  test/without/without.test.js
+
+ok 82 — without is a Function
+ok 83 — without([2, 1, 2, 3], 1, 2) returns [3]
+ok 84 — without([]) returns []
+ok 85 — without([3, 1, true, '3', true], '3', true) returns [3, 1]
+ok 86 — without('string'.split(''), 's', 't', 'g') returns ['r', 'i', 'n']
+ok 87 — without() throws an error
+ok 88 — without(null) throws an error
+ok 89 — without(undefined) throws an error
+ok 90 — without(123) throws an error
+ok 91 — without({}) throws an error
+
+#  PASS  test/uniqueElementsByRight/uniqueElementsByRight.test.js
+
+ok 92 — uniqueElementsByRight is a Function
+ok 93 — uniqueElementsByRight works for properties
+ok 94 — uniqueElementsByRight works for nested properties
+
+#  PASS  test/last/last.test.js
+
+ok 95 — last is a Function
+ok 96 — last({ a: 1234}) returns undefined
+ok 97 — last([1, 2, 3]) returns 3
+ok 98 — last({ 0: false}) returns undefined
+ok 99 — last(String) returns g
+ok 100 — last(null) throws an Error
+ok 101 — last(undefined) throws an Error
+ok 102 — last() throws an Error
+ok 103 — last([1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 1122, 32124, 23232]) takes less than 2s to run
+
+#  PASS  test/chunk/chunk.test.js
+
+ok 104 — chunk is a Function
+ok 105 — chunk([1, 2, 3, 4, 5], 2) returns [[1,2],[3,4],[5]]
+ok 106 — chunk([]) returns []
+ok 107 — chunk(123) returns []
+ok 108 — chunk({ a: 123}) returns []
+ok 109 — chunk(string, 2) returns [ st, ri, ng ]
+ok 110 — chunk() throws an error
+ok 111 — chunk(undefined) throws an error
+ok 112 — chunk(null) throws an error
+ok 113 — chunk(This is a string, 2) takes less than 2s to run
 
 #  PASS  test/initializeArrayWithRange/initializeArrayWithRange.test.js
 
-ok 322 — initializeArrayWithRange is a Function
-ok 323 — Initializes an array containing the numbers in the specified range (witout start value)
-ok 324 — Initializes an array containing the numbers in the specified range
-ok 325 — Initializes an array containing the numbers in the specified range (with step)
+ok 114 — initializeArrayWithRange is a Function
+ok 115 — Initializes an array containing the numbers in the specified range (witout start value)
+ok 116 — Initializes an array containing the numbers in the specified range
+ok 117 — Initializes an array containing the numbers in the specified range (with step)
 
 #  PASS  test/randomIntegerInRange/randomIntegerInRange.test.js
 
-ok 326 — randomIntegerInRange is a Function
-ok 327 — The returned value is an integer
-ok 328 — The returned value lies between provided lowerLimit and upperLimit (both inclusive).
+ok 118 — randomIntegerInRange is a Function
+ok 119 — The returned value is an integer
+ok 120 — The returned value lies between provided lowerLimit and upperLimit (both inclusive).
+
+#  PASS  test/head/head.test.js
+
+ok 121 — head is a Function
+ok 122 — head({ a: 1234}) returns undefined
+ok 123 — head([1, 2, 3]) returns 1
+ok 124 — head({ 0: false}) returns false
+ok 125 — head(String) returns S
+ok 126 — head(null) throws an Error
+ok 127 — head(undefined) throws an Error
+ok 128 — head() throws an Error
+ok 129 — head([1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 1122, 32124, 23232]) takes less than 2s to run
+
+#  PASS  test/average/average.test.js
+
+ok 130 — average is a Function
+ok 131 — average(true) returns 0
+ok 132 — average(false) returns 1
+ok 133 — average(9, 1) returns 5
+ok 134 — average(153, 44, 55, 64, 71, 1122, 322774, 2232, 23423, 234, 3631) returns 32163.909090909092
+ok 135 — average(1, 2, 3) returns 2
+ok 136 — average(null) returns 0
+ok 137 — average(1, 2, 3) returns NaN
+ok 138 — average(String) returns NaN
+ok 139 — average({ a: 123}) returns NaN
+ok 140 — average([undefined, 0, string]) returns NaN
+ok 141 — average([1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 1122, 32124, 23232]) takes less than 2s to run
+
+#  PASS  test/is/is.test.js
+
+ok 142 — is is a Function
+ok 143 — Works for arrays with data
+ok 144 — Works for empty arrays
+ok 145 — Works for arrays, not objects
+ok 146 — Works for objects
+ok 147 — Works for maps
+ok 148 — Works for regular expressions
+ok 149 — Works for sets
+ok 150 — Works for weak maps
+ok 151 — Works for weak sets
+ok 152 — Works for strings - returns true for primitive
+ok 153 — Works for strings - returns true when using constructor
+ok 154 — Works for numbers - returns true for primitive
+ok 155 — Works for numbers - returns true when using constructor
+ok 156 — Works for booleans - returns true for primitive
+ok 157 — Works for booleans - returns true when using constructor
+ok 158 — Works for functions
+
+#  PASS  test/isPrimitive/isPrimitive.test.js
+
+ok 159 — isPrimitive is a Function
+ok 160 — isPrimitive(null) is primitive
+ok 161 — isPrimitive(undefined) is primitive
+ok 162 — isPrimitive(string) is primitive
+ok 163 — isPrimitive(true) is primitive
+ok 164 — isPrimitive(50) is primitive
+ok 165 — isPrimitive('Hello') is primitive
+ok 166 — isPrimitive(false) is primitive
+ok 167 — isPrimitive(Symbol()) is primitive
+ok 168 — isPrimitive([1, 2, 3]) is not primitive
+ok 169 — isPrimitive({ a: 123 }) is not primitive
+ok 170 — isPrimitive({ a: 123 }) takes less than 2s to run
+
+#  PASS  test/quickSort/quickSort.test.js
+
+ok 171 — quickSort is a Function
+ok 172 — quickSort([5, 6, 4, 3, 1, 2]) returns [1, 2, 3, 4, 5, 6]
+ok 173 — quickSort([-1, 0, -2]) returns [-2, -1, 0]
+ok 174 — quickSort() throws an error
+ok 175 — quickSort(123) throws an error
+ok 176 — quickSort({ 234: string}) throws an error
+ok 177 — quickSort(null) throws an error
+ok 178 — quickSort(undefined) throws an error
+ok 179 — quickSort([11, 1, 324, 23232, -1, 53, 2, 524, 32, 13, 156, 133, 62, 12, 4]) takes less than 2s to run
+
+#  PASS  test/filterNonUniqueBy/filterNonUniqueBy.test.js
+
+ok 180 — filterNonUniqueBy is a Function
+ok 181 — filterNonUniqueBy works for properties
+ok 182 — filterNonUniqueBy works for nested properties
+
+#  PASS  test/uniqueElements/uniqueElements.test.js
+
+ok 183 — uniqueElements is a Function
+ok 184 — uniqueElements([1, 2, 2, 3, 4, 4, 5]) returns [1,2,3,4,5]
+ok 185 — uniqueElements([1, 23, 53]) returns [1, 23, 53]
+ok 186 — uniqueElements([true, 0, 1, false, false, undefined, null, '']) returns [true, 0, 1, false, false, undefined, null, '']
+ok 187 — uniqueElements() returns []
+ok 188 — uniqueElements(null) returns []
+ok 189 — uniqueElements(undefined) returns []
+ok 190 — uniqueElements('strt') returns ['s', 't', 'r']
+ok 191 — uniqueElements(1, 1, 2543, 534, 5) throws an error
+ok 192 — uniqueElements({}) throws an error
+ok 193 — uniqueElements(true) throws an error
+ok 194 — uniqueElements(false) throws an error
+ok 195 — uniqueElements([true, 0, 1, false, false, undefined, null]) takes less than 2s to run
+
+#  PASS  test/toSafeInteger/toSafeInteger.test.js
+
+ok 196 — toSafeInteger is a Function
+ok 197 — Number(toSafeInteger(3.2)) is a number
+ok 198 — Converts a value to a safe integer
+ok 199 — toSafeInteger('4.2') returns 4
+ok 200 — toSafeInteger(4.6) returns 5
+ok 201 — toSafeInteger([]) returns 0
+ok 202 — isNaN(toSafeInteger([1.5, 3124])) is true
+ok 203 — isNaN(toSafeInteger('string')) is true
+ok 204 — isNaN(toSafeInteger({})) is true
+ok 205 — isNaN(toSafeInteger()) is true
+ok 206 — toSafeInteger(Infinity) returns 9007199254740991
+ok 207 — toSafeInteger(3.2) takes less than 2s to run
+
+#  PASS  test/yesNo/yesNo.test.js
+
+ok 208 — yesNo is a Function
+ok 209 — yesNo(Y) returns true
+ok 210 — yesNo(yes) returns true
+ok 211 — yesNo(foo, true) returns true
+ok 212 — yesNo(No) returns false
+ok 213 — yesNo() returns false
+ok 214 — yesNo(null) returns false
+ok 215 — yesNo(undefined) returns false
+ok 216 — yesNo([123, null]) returns false
+ok 217 — yesNo([Yes, No]) returns false
+ok 218 — yesNo({ 2: Yes }) returns false
+ok 219 — yesNo([Yes, No], true) returns true
+ok 220 — yesNo({ 2: Yes }, true) returns true
+
+#  PASS  test/toKebabCase/toKebabCase.test.js
+
+ok 221 — toKebabCase is a Function
+ok 222 — toKebabCase('camelCase') returns camel-case
+ok 223 — toKebabCase('some text') returns some-text
+ok 224 — toKebabCase('some-mixed-string With spaces-underscores-and-hyphens') returns some-mixed-string-with-spaces-underscores-and-hyphens
+ok 225 — toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML') returns i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html
+ok 226 — toKebabCase() returns undefined
+ok 227 — toKebabCase([]) throws an erro
+ok 228 — toKebabCase({}) throws an erro
+ok 229 — toKebabCase(123) throws an erro
+ok 230 — toKebabCase(IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML) takes less than 2s to run
+
+#  PASS  test/round/round.test.js
+
+ok 231 — round is a Function
+ok 232 — round(1.005, 2) returns 1.01
+ok 233 — round(123.3423345345345345344, 11) returns 123.34233453453
+ok 234 — round(3.342, 11) returns 3.342
+ok 235 — round(1.005) returns 1
+ok 236 — round([1.005, 2]) returns NaN
+ok 237 — round(string) returns NaN
+ok 238 — round() returns NaN
+ok 239 — round(132, 413, 4134) returns NaN
+ok 240 — round({a: 132}, 413) returns NaN
+ok 241 — round(123.3423345345345345344, 11) takes less than 2s to run
+
+#  PASS  test/isSorted/isSorted.test.js
+
+ok 242 — isSorted is a Function
+ok 243 — Array is sorted in ascending order
+ok 244 — Array is sorted in ascending order
+ok 245 — Array is sorted in ascending order
+ok 246 — Array is sorted in ascending order
+ok 247 — Array is sorted in descending order
+ok 248 — Array is sorted in descending order
+ok 249 — Array is sorted in descending order
+ok 250 — Array is sorted in descending order
+ok 251 — Array is empty
+ok 252 — Array is not sorted, direction changed in array
+ok 253 — Array is not sorted, direction changed in array
+
+#  PASS  test/toCamelCase/toCamelCase.test.js
+
+ok 254 — toCamelCase is a Function
+ok 255 — toCamelCase('some_database_field_name') returns someDatabaseFieldName
+ok 256 — toCamelCase('Some label that needs to be camelized') returns someLabelThatNeedsToBeCamelized
+ok 257 — toCamelCase('some-javascript-property') return someJavascriptProperty
+ok 258 — toCamelCase('some-mixed_string with spaces_underscores-and-hyphens') returns someMixedStringWithSpacesUnderscoresAndHyphens
+ok 259 — toCamelCase() throws a error
+ok 260 — toCamelCase([]) throws a error
+ok 261 — toCamelCase({}) throws a error
+ok 262 — toCamelCase(123) throws a error
+ok 263 — toCamelCase(some-mixed_string with spaces_underscores-and-hyphens) takes less than 2s to run
 
 #  PASS  test/randomNumberInRange/randomNumberInRange.test.js
 
-ok 329 — randomNumberInRange is a Function
-ok 330 — The returned value is a number
-ok 331 — The returned value lies between provided lowerLimit and upperLimit (both inclusive).
-
-#  PASS  test/any/any.test.js
-
-ok 332 — any is a Function
-ok 333 — Returns true for arrays with at least one truthy value
-ok 334 — Returns false for arrays with no truthy values
-ok 335 — Returns false for arrays with no truthy values
-ok 336 — Returns true with predicate function
-ok 337 — Returns false with a predicate function
+ok 264 — randomNumberInRange is a Function
+ok 265 — The returned value is a number
+ok 266 — The returned value lies between provided lowerLimit and upperLimit (both inclusive).
 
 #  PASS  test/geometricProgression/geometricProgression.test.js
 
-ok 338 — geometricProgression is a Function
-ok 339 — Initializes an array containing the numbers in the specified range
-ok 340 — Initializes an array containing the numbers in the specified range
-ok 341 — Initializes an array containing the numbers in the specified range
+ok 267 — geometricProgression is a Function
+ok 268 — Initializes an array containing the numbers in the specified range
+ok 269 — Initializes an array containing the numbers in the specified range
+ok 270 — Initializes an array containing the numbers in the specified range
 
-#  PASS  test/toCurrency/toCurrency.test.js
+#  PASS  test/any/any.test.js
 
-ok 342 — toCurrency is a Function
-ok 343 — currency: Euro | currencyLangFormat: Local
-ok 344 —  currency: US Dollar | currencyLangFormat: English (United States)
-ok 345 — currency: Japanese Yen | currencyLangFormat: Local
-
-#  PASS  test/mapObject/mapObject.test.js
-
-ok 346 — mapObject is a Function
-ok 347 — mapObject([1, 2, 3], a => a * a) returns { 1: 1, 2: 4, 3: 9 }
-ok 348 — mapObject([1, 2, 3, 4], (a, b) => b - a) returns { 1: -1, 2: -1, 3: -1, 4: -1 }
-ok 349 — mapObject([1, 2, 3, 4], (a, b) => a - b) returns { 1: 1, 2: 1, 3: 1, 4: 1 }
-
-#  PASS  test/join/join.test.js
-
-ok 350 — join is a Function
-ok 351 — Joins all elements of an array into a string and returns this string
-ok 352 — Joins all elements of an array into a string and returns this string
-ok 353 — Joins all elements of an array into a string and returns this string
+ok 271 — any is a Function
+ok 272 — Returns true for arrays with at least one truthy value
+ok 273 — Returns false for arrays with no truthy values
+ok 274 — Returns false for arrays with no truthy values
+ok 275 — Returns true with predicate function
+ok 276 — Returns false with a predicate function
 
 #  PASS  test/binomialCoefficient/binomialCoefficient.test.js
 
-ok 354 — binomialCoefficient is a Function
-ok 355 — Returns the appropriate value
-ok 356 — Returns the appropriate value
-ok 357 — Returns the appropriate value
-ok 358 — Returns NaN
-ok 359 — Returns NaN
+ok 277 — binomialCoefficient is a Function
+ok 278 — Returns the appropriate value
+ok 279 — Returns the appropriate value
+ok 280 — Returns the appropriate value
+ok 281 — Returns NaN
+ok 282 — Returns NaN
 
-#  PASS  test/mapString/mapString.test.js
+#  PASS  test/zip/zip.test.js
 
-ok 360 — mapString is a Function
-ok 361 — mapString returns a capitalized string
-ok 362 — mapString can deal with indexes
-ok 363 — mapString can deal with the full string
+ok 283 — zip is a Function
+ok 284 — zip([a, b], [1, 2], [true, false]) returns [[a, 1, true], [b, 2, false]]
+ok 285 — zip([a], [1, 2], [true, false]) returns [[a, 1, true], [undefined, 2, false]]
+ok 286 — zip([]) returns []
+ok 287 — zip(123) returns []
+ok 288 — zip([a, b], [1, 2], [true, false]) returns an Array
+ok 289 — zip([a], [1, 2], [true, false]) returns an Array
+ok 290 — zip(null) throws an error
+ok 291 — zip(undefined) throws an error
+
+#  PASS  test/toCurrency/toCurrency.test.js
+
+ok 292 — toCurrency is a Function
+ok 293 — currency: Euro | currencyLangFormat: Local
+ok 294 —  currency: US Dollar | currencyLangFormat: English (United States)
+ok 295 — currency: Japanese Yen | currencyLangFormat: Local
+
+#  PASS  test/mapObject/mapObject.test.js
+
+ok 296 — mapObject is a Function
+ok 297 — mapObject([1, 2, 3], a => a * a) returns { 1: 1, 2: 4, 3: 9 }
+ok 298 — mapObject([1, 2, 3, 4], (a, b) => b - a) returns { 1: -1, 2: -1, 3: -1, 4: -1 }
+ok 299 — mapObject([1, 2, 3, 4], (a, b) => a - b) returns { 1: 1, 2: 1, 3: 1, 4: 1 }
+
+#  PASS  test/words/words.test.js
+
+ok 300 — words is a Function
+ok 301 — words('I love javaScript!!') returns [I, love, javaScript]
+ok 302 — words('python, javaScript & coffee') returns [python, javaScript, coffee]
+ok 303 — words(I love javaScript!!) returns an array
+ok 304 — words() throws an error
+ok 305 — words(null) throws an error
+ok 306 — words(undefined) throws an error
+ok 307 — words({}) throws an error
+ok 308 — words([]) throws an error
+ok 309 — words(1234) throws an error
+
+#  PASS  test/allEqual/allEqual.test.js
+
+ok 310 — allEqual is a Function
+ok 311 — Truthy numbers
+ok 312 — Falsy numbers
+ok 313 — Truthy strings
+ok 314 — Falsy numbers
+ok 315 — Truthy trues
+ok 316 — Truthy falses
+ok 317 — Falsy trues
+ok 318 — Falsy falses
 
 #  PASS  test/dig/dig.test.js
 
-ok 364 — dig is a Function
-ok 365 — Dig target success
-ok 366 — Dig target with falsey value
-ok 367 — Dig target with array
-ok 368 — Unknown target return undefined
+ok 319 — dig is a Function
+ok 320 — Dig target success
+ok 321 — Dig target with falsey value
+ok 322 — Dig target with array
+ok 323 — Unknown target return undefined
 
 #  PASS  test/reduceWhich/reduceWhich.test.js
 
-ok 369 — reduceWhich is a Function
-ok 370 — Returns the minimum of an array
-ok 371 — Returns the maximum of an array
-ok 372 — Returns the object with the minimum specified value in an array
+ok 324 — reduceWhich is a Function
+ok 325 — Returns the minimum of an array
+ok 326 — Returns the maximum of an array
+ok 327 — Returns the object with the minimum specified value in an array
 
-#  PASS  test/invertKeyValues/invertKeyValues.test.js
+#  PASS  test/mapString/mapString.test.js
 
-ok 373 — invertKeyValues is a Function
-ok 374 — invertKeyValues({ a: 1, b: 2, c: 1 }) returns { 1: [ 'a', 'c' ], 2: [ 'b' ] }
-ok 375 — invertKeyValues({ a: 1, b: 2, c: 1 }, value => 'group' + value) returns { group1: [ 'a', 'c' ], group2: [ 'b' ] }
+ok 328 — mapString is a Function
+ok 329 — mapString returns a capitalized string
+ok 330 — mapString can deal with indexes
+ok 331 — mapString can deal with the full string
+
+#  PASS  test/join/join.test.js
+
+ok 332 — join is a Function
+ok 333 — Joins all elements of an array into a string and returns this string
+ok 334 — Joins all elements of an array into a string and returns this string
+ok 335 — Joins all elements of an array into a string and returns this string
 
 #  PASS  test/fromCamelCase/fromCamelCase.test.js
 
-ok 376 — fromCamelCase is a Function
-ok 377 — Converts a string from camelcase
-ok 378 — Converts a string from camelcase
-ok 379 — Converts a string from camelcase
+ok 336 — fromCamelCase is a Function
+ok 337 — Converts a string from camelcase
+ok 338 — Converts a string from camelcase
+ok 339 — Converts a string from camelcase
+
+#  PASS  test/invertKeyValues/invertKeyValues.test.js
+
+ok 340 — invertKeyValues is a Function
+ok 341 — invertKeyValues({ a: 1, b: 2, c: 1 }) returns { 1: [ 'a', 'c' ], 2: [ 'b' ] }
+ok 342 — invertKeyValues({ a: 1, b: 2, c: 1 }, value => 'group' + value) returns { group1: [ 'a', 'c' ], group2: [ 'b' ] }
+
+#  PASS  test/equals/equals.test.js
+
+ok 343 — equals is a Function
+ok 344 — { a: [2, {e: 3}], b: [4], c: 'foo' } is equal to { a: [2, {e: 3}], b: [4], c: 'foo' }
+ok 345 — [1,2,3] is equal to [1,2,3]
+ok 346 — { a: [2, 3], b: [4] } is not equal to { a: [2, 3], b: [6] }
+ok 347 — [1,2,3] is not equal to [1,2,4]
+ok 348 — [1, 2, 3] should be equal to { 0: 1, 1: 2, 2: 3 }) - type is different, but their enumerable properties match.
 
 #  PASS  test/approximatelyEqual/approximatelyEqual.test.js
 
-ok 380 — approximatelyEqual is a Function
-ok 381 — Works for PI / 2
-ok 382 — Works for 0.1 + 0.2 === 0.3
-ok 383 — Works for exactly equal values
-ok 384 — Works for a custom epsilon
+ok 349 — approximatelyEqual is a Function
+ok 350 — Works for PI / 2
+ok 351 — Works for 0.1 + 0.2 === 0.3
+ok 352 — Works for exactly equal values
+ok 353 — Works for a custom epsilon
 
 #  PASS  test/shank/shank.test.js
 
-ok 385 — shank is a Function
-ok 386 — Returns an array with the added elements.
-ok 387 — Returns an array with the removed elements.
-ok 388 — Does not mutate the original array
+ok 354 — shank is a Function
+ok 355 — Returns an array with the added elements.
+ok 356 — Returns an array with the removed elements.
+ok 357 — Does not mutate the original array
 
-#  PASS  test/none/none.test.js
+#  PASS  test/isEmpty/isEmpty.test.js
 
-ok 389 — none is a Function
-ok 390 — Returns true for arrays with no truthy values
-ok 391 — Returns false for arrays with at least one truthy value
-ok 392 — Returns true with a predicate function
-ok 393 — Returns false with predicate function
+ok 358 — isEmpty is a Function
+ok 359 — Returns true for empty Map
+ok 360 — Returns true for empty Set
+ok 361 — Returns true for empty array
+ok 362 — Returns true for empty object
+ok 363 — Returns true for empty string
+ok 364 — Returns false for non-empty array
+ok 365 — Returns false for non-empty object
+ok 366 — Returns false for non-empty string
+ok 367 — Returns true - type is not considered a collection
+ok 368 — Returns true - type is not considered a collection
 
-#  PASS  test/castArray/castArray.test.js
+#  PASS  test/all/all.test.js
 
-ok 394 — castArray is a Function
-ok 395 — Works for single values
-ok 396 — Works for arrays with one value
-ok 397 — Works for arrays with multiple value
-ok 398 — Works for strings
-ok 399 — Works for objects
-
-#  PASS  test/binarySearch/binarySearch.test.js
-
-ok 400 — binarySearch is a Function
-ok 401 — Finds item in array
-ok 402 — Returns -1 when not found
-ok 403 — Works with empty arrays
-ok 404 — Works for one element arrays
-
-#  PASS  test/randomHexColorCode/randomHexColorCode.test.js
-
-ok 405 — randomHexColorCode is a Function
-ok 406 — randomHexColorCode has to proper length
-ok 407 — The color code starts with "#"
-ok 408 — The color code contains only valid hex-digits
-
-#  PASS  test/inRange/inRange.test.js
-
-ok 409 — inRange is a Function
-ok 410 — The given number falls within the given range
-ok 411 — The given number falls within the given range
-ok 412 — The given number does not falls within the given range
-ok 413 — The given number does not falls within the given range
-
-#  PASS  test/mask/mask.test.js
-
-ok 414 — mask is a Function
-ok 415 — Replaces all but the last num of characters with the specified mask character
-ok 416 — Replaces all but the last num of characters with the specified mask character
-ok 417 — Replaces all but the last num of characters with the specified mask character
+ok 369 — all is a Function
+ok 370 — Returns true for arrays with no falsey values
+ok 371 — Returns false for arrays with 0
+ok 372 — Returns false for arrays with NaN
+ok 373 — Returns false for arrays with undefined
+ok 374 — Returns false for arrays with null
+ok 375 — Returns false for arrays with empty strings
+ok 376 — Returns true with predicate function
+ok 377 — Returns false with a predicate function
 
 #  PASS  test/factorial/factorial.test.js
 
-ok 418 — factorial is a Function
-ok 419 — Calculates the factorial of 720
-ok 420 — Calculates the factorial of 0
-ok 421 — Calculates the factorial of 1
-ok 422 — Calculates the factorial of 4
-ok 423 — Calculates the factorial of 10
+ok 378 — factorial is a Function
+ok 379 — Calculates the factorial of 720
+ok 380 — Calculates the factorial of 0
+ok 381 — Calculates the factorial of 1
+ok 382 — Calculates the factorial of 4
+ok 383 — Calculates the factorial of 10
 
-#  PASS  test/toOrdinalSuffix/toOrdinalSuffix.test.js
+#  PASS  test/mask/mask.test.js
 
-ok 424 — toOrdinalSuffix is a Function
-ok 425 — Adds an ordinal suffix to a number
-ok 426 — Adds an ordinal suffix to a number
-ok 427 — Adds an ordinal suffix to a number
-ok 428 — Adds an ordinal suffix to a number
+ok 384 — mask is a Function
+ok 385 — Replaces all but the last num of characters with the specified mask character
+ok 386 — Replaces all but the last num of characters with the specified mask character
+ok 387 — Replaces all but the last num of characters with the specified mask character
 
-#  PASS  test/JSONtoCSV/JSONtoCSV.test.js
+#  PASS  test/binarySearch/binarySearch.test.js
 
-ok 429 — JSONtoCSV is a Function
-ok 430 — JSONtoCSV works with default delimiter
-ok 431 — JSONtoCSV works with custom delimiter
+ok 388 — binarySearch is a Function
+ok 389 — Finds item in array
+ok 390 — Returns -1 when not found
+ok 391 — Works with empty arrays
+ok 392 — Works for one element arrays
 
-#  PASS  test/capitalize/capitalize.test.js
+#  PASS  test/none/none.test.js
 
-ok 432 — capitalize is a Function
-ok 433 — Capitalizes the first letter of a string
-ok 434 — Capitalizes the first letter of a string
-ok 435 — Works with characters
-ok 436 — "Works with single character words
+ok 393 — none is a Function
+ok 394 — Returns true for arrays with no truthy values
+ok 395 — Returns false for arrays with at least one truthy value
+ok 396 — Returns true with a predicate function
+ok 397 — Returns false with predicate function
 
-#  PASS  test/converge/converge.test.js
+#  PASS  test/randomHexColorCode/randomHexColorCode.test.js
 
-ok 437 — converge is a Function
-ok 438 — Produces the average of the array
-ok 439 — Produces the strange concatenation
+ok 398 — randomHexColorCode is a Function
+ok 399 — randomHexColorCode has to proper length
+ok 400 — The color code starts with "#"
+ok 401 — The color code contains only valid hex-digits
+
+#  PASS  test/randomIntArrayInRange/randomIntArrayInRange.test.js
+
+ok 402 — randomIntArrayInRange is a Function
+ok 403 — The returned array contains only integers
+ok 404 — The returned array has the proper length
+ok 405 — The returned array's values lie between provided lowerLimit and upperLimit (both inclusive).
+
+#  PASS  test/castArray/castArray.test.js
+
+ok 406 — castArray is a Function
+ok 407 — Works for single values
+ok 408 — Works for arrays with one value
+ok 409 — Works for arrays with multiple value
+ok 410 — Works for strings
+ok 411 — Works for objects
+
+#  PASS  test/inRange/inRange.test.js
+
+ok 412 — inRange is a Function
+ok 413 — The given number falls within the given range
+ok 414 — The given number falls within the given range
+ok 415 — The given number does not falls within the given range
+ok 416 — The given number does not falls within the given range
 
 #  PASS  test/deepClone/deepClone.test.js
 
-ok 440 — deepClone is a Function
-ok 441 — Shallow cloning works
-ok 442 — Deep cloning works
-ok 443 — Array shallow cloning works
-ok 444 — Array deep cloning works
+ok 417 — deepClone is a Function
+ok 418 — Shallow cloning works
+ok 419 — Deep cloning works
+ok 420 — Array shallow cloning works
+ok 421 — Array deep cloning works
 
-#  PASS  test/isAnagram/isAnagram.test.js
+#  PASS  test/capitalize/capitalize.test.js
 
-ok 445 — isAnagram is a Function
-ok 446 — Checks valid anagram
-ok 447 — Works with spaces
-ok 448 — Ignores case
-ok 449 — Ignores special characters
+ok 422 — capitalize is a Function
+ok 423 — Capitalizes the first letter of a string
+ok 424 — Capitalizes the first letter of a string
+ok 425 — Works with characters
+ok 426 — "Works with single character words
+
+#  PASS  test/toOrdinalSuffix/toOrdinalSuffix.test.js
+
+ok 427 — toOrdinalSuffix is a Function
+ok 428 — Adds an ordinal suffix to a number
+ok 429 — Adds an ordinal suffix to a number
+ok 430 — Adds an ordinal suffix to a number
+ok 431 — Adds an ordinal suffix to a number
+
+#  PASS  test/offset/offset.test.js
+
+ok 432 — offset is a Function
+ok 433 — Offset of 0 returns the same array.
+ok 434 — Offset > 0 returns the offsetted array.
+ok 435 — Offset < 0 returns the reverse offsetted array.
+ok 436 — Offset greater than the length of the array returns the same array.
+ok 437 — Offset less than the negative length of the array returns the same array.
+ok 438 — Offsetting empty array returns an empty array.
 
 #  PASS  test/tomorrow/tomorrow.test.js
 
-ok 450 — tomorrow is a Function
-ok 451 — Returns the correct year
-ok 452 — Returns the correct month
-ok 453 — Returns the correct date
+ok 439 — tomorrow is a Function
+ok 440 — Returns the correct year
+ok 441 — Returns the correct month
+ok 442 — Returns the correct date
 
-#  PASS  test/shuffle/shuffle.test.js
+#  PASS  test/JSONtoCSV/JSONtoCSV.test.js
 
-ok 454 — shuffle is a Function
-ok 455 — Shuffles the array
-ok 456 — New array contains all original elements
-ok 457 — Works for empty arrays
-ok 458 — Works for single-element arrays
+ok 443 — JSONtoCSV is a Function
+ok 444 — JSONtoCSV works with default delimiter
+ok 445 — JSONtoCSV works with custom delimiter
 
-#  PASS  test/prettyBytes/prettyBytes.test.js
+#  PASS  test/isAnagram/isAnagram.test.js
 
-ok 459 — prettyBytes is a Function
-ok 460 — Converts a number in bytes to a human-readable string.
-ok 461 — Converts a number in bytes to a human-readable string.
-ok 462 — Converts a number in bytes to a human-readable string.
+ok 446 — isAnagram is a Function
+ok 447 — Checks valid anagram
+ok 448 — Works with spaces
+ok 449 — Ignores case
+ok 450 — Ignores special characters
 
 #  PASS  test/stringPermutations/stringPermutations.test.js
 
-ok 463 — stringPermutations is a Function
-ok 464 — Generates all stringPermutations of a string
-ok 465 — Works for single-letter strings
-ok 466 — Works for empty strings
+ok 451 — stringPermutations is a Function
+ok 452 — Generates all stringPermutations of a string
+ok 453 — Works for single-letter strings
+ok 454 — Works for empty strings
 
 #  PASS  test/isString/isString.test.js
 
-ok 467 — isString is a Function
-ok 468 — foo is a string
-ok 469 — "10" is a string
-ok 470 — Empty string is a string
-ok 471 — 10 is not a string
-ok 472 — true is not string
+ok 455 — isString is a Function
+ok 456 — foo is a string
+ok 457 — "10" is a string
+ok 458 — Empty string is a string
+ok 459 — 10 is not a string
+ok 460 — true is not string
 
-#  PASS  test/dropRight/dropRight.test.js
+#  PASS  test/converge/converge.test.js
 
-ok 473 — dropRight is a Function
-ok 474 — Returns a new array with n elements removed from the right
-ok 475 — Returns a new array with n elements removed from the right
-ok 476 — Returns a new array with n elements removed from the right
-
-#  PASS  test/hexToRGB/hexToRGB.test.js
-
-ok 477 — hexToRGB is a Function
-ok 478 — Converts a color code to a rgb() or rgba() string
-ok 479 — Converts a color code to a rgb() or rgba() string
-ok 480 — Converts a color code to a rgb() or rgba() string
-
-#  PASS  test/formatDuration/formatDuration.test.js
-
-ok 481 — formatDuration is a Function
-ok 482 — Returns the human readable format of the given number of milliseconds
-ok 483 — Returns the human readable format of the given number of milliseconds
-
-#  PASS  test/partition/partition.test.js
-
-ok 484 — partition is a Function
-ok 485 — Groups the elements into two arrays, depending on the provided function's truthiness for each element.
-
-#  PASS  test/isObjectLike/isObjectLike.test.js
-
-ok 486 — isObjectLike is a Function
-ok 487 — Returns true for an object
-ok 488 — Returns true for an array
-ok 489 — Returns false for a function
-ok 490 — Returns false for null
+ok 461 — converge is a Function
+ok 462 — Produces the average of the array
+ok 463 — Produces the strange concatenation
 
 #  PASS  test/capitalizeEveryWord/capitalizeEveryWord.test.js
 
-ok 491 — capitalizeEveryWord is a Function
-ok 492 — Capitalizes the first letter of every word in a string
-ok 493 — Works with characters
-ok 494 — Works with one word string
+ok 464 — capitalizeEveryWord is a Function
+ok 465 — Capitalizes the first letter of every word in a string
+ok 466 — Works with characters
+ok 467 — Works with one word string
 
-#  PASS  test/standardDeviation/standardDeviation.test.js
+#  PASS  test/prettyBytes/prettyBytes.test.js
 
-ok 495 — standardDeviation is a Function
-ok 496 — Returns the standard deviation of an array of numbers
-ok 497 — Returns the standard deviation of an array of numbers
+ok 468 — prettyBytes is a Function
+ok 469 — Converts a number in bytes to a human-readable string.
+ok 470 — Converts a number in bytes to a human-readable string.
+ok 471 — Converts a number in bytes to a human-readable string.
+
+#  PASS  test/hexToRGB/hexToRGB.test.js
+
+ok 472 — hexToRGB is a Function
+ok 473 — Converts a color code to a rgb() or rgba() string
+ok 474 — Converts a color code to a rgb() or rgba() string
+ok 475 — Converts a color code to a rgb() or rgba() string
+
+#  PASS  test/shuffle/shuffle.test.js
+
+ok 476 — shuffle is a Function
+ok 477 — Shuffles the array
+ok 478 — New array contains all original elements
+ok 479 — Works for empty arrays
+ok 480 — Works for single-element arrays
+
+#  PASS  test/dropRight/dropRight.test.js
+
+ok 481 — dropRight is a Function
+ok 482 — Returns a new array with n elements removed from the right
+ok 483 — Returns a new array with n elements removed from the right
+ok 484 — Returns a new array with n elements removed from the right
+
+#  PASS  test/partition/partition.test.js
+
+ok 485 — partition is a Function
+ok 486 — Groups the elements into two arrays, depending on the provided function's truthiness for each element.
+
+#  PASS  test/formatDuration/formatDuration.test.js
+
+ok 487 — formatDuration is a Function
+ok 488 — Returns the human readable format of the given number of milliseconds
+ok 489 — Returns the human readable format of the given number of milliseconds
+
+#  PASS  test/isObjectLike/isObjectLike.test.js
+
+ok 490 — isObjectLike is a Function
+ok 491 — Returns true for an object
+ok 492 — Returns true for an array
+ok 493 — Returns false for a function
+ok 494 — Returns false for null
 
 #  PASS  test/sumPower/sumPower.test.js
 
-ok 498 — sumPower is a Function
-ok 499 — Returns the sum of the powers of all the numbers from start to end
-ok 500 — Returns the sum of the powers of all the numbers from start to end
-ok 501 — Returns the sum of the powers of all the numbers from start to end
+ok 495 — sumPower is a Function
+ok 496 — Returns the sum of the powers of all the numbers from start to end
+ok 497 — Returns the sum of the powers of all the numbers from start to end
+ok 498 — Returns the sum of the powers of all the numbers from start to end
 
 #  PASS  test/untildify/untildify.test.js
 
-ok 502 — untildify is a Function
-ok 503 — Contains no tildes
-ok 504 — Does not alter the rest of the path
-ok 505 — Does not alter paths without tildes
+ok 499 — untildify is a Function
+ok 500 — Contains no tildes
+ok 501 — Does not alter the rest of the path
+ok 502 — Does not alter paths without tildes
+
+#  PASS  test/standardDeviation/standardDeviation.test.js
+
+ok 503 — standardDeviation is a Function
+ok 504 — Returns the standard deviation of an array of numbers
+ok 505 — Returns the standard deviation of an array of numbers
+
+#  PASS  test/URLJoin/URLJoin.test.js
+
+ok 506 — URLJoin is a Function
+ok 507 — Returns proper URL
+ok 508 — Returns proper URL
 
 #  PASS  test/isObject/isObject.test.js
 
-ok 506 — isObject is a Function
-ok 507 — isObject([1, 2, 3, 4]) is a object
-ok 508 — isObject([]) is a object
-ok 509 — isObject({ a:1 }) is a object
-ok 510 — isObject(true) is not a object
-
-#  PASS  test/CSVToJSON/CSVToJSON.test.js
-
-ok 511 — CSVToJSON is a Function
-ok 512 — CSVToJSON works with default delimiter
-ok 513 — CSVToJSON works with custom delimiter
+ok 509 — isObject is a Function
+ok 510 — isObject([1, 2, 3, 4]) is a object
+ok 511 — isObject([]) is a object
+ok 512 — isObject({ a:1 }) is a object
+ok 513 — isObject(true) is not a object
 
 #  PASS  test/reducedFilter/reducedFilter.test.js
 
 ok 514 — reducedFilter is a Function
 ok 515 — Filter an array of objects based on a condition while also filtering out unspecified keys.
 
-#  PASS  test/URLJoin/URLJoin.test.js
-
-ok 516 — URLJoin is a Function
-ok 517 — Returns proper URL
-ok 518 — Returns proper URL
-
 #  PASS  test/unzip/unzip.test.js
 
-ok 519 — unzip is a Function
-ok 520 — unzip([['a', 1, true], ['b', 2, false]]) equals [['a','b'], [1, 2], [true, false]]
-ok 521 — unzip([['a', 1, true], ['b', 2]]) equals [['a','b'], [1, 2], [true]]
+ok 516 — unzip is a Function
+ok 517 — unzip([['a', 1, true], ['b', 2, false]]) equals [['a','b'], [1, 2], [true, false]]
+ok 518 — unzip([['a', 1, true], ['b', 2]]) equals [['a','b'], [1, 2], [true]]
 
 #  PASS  test/sortedIndex/sortedIndex.test.js
 
-ok 522 — sortedIndex is a Function
-ok 523 — Returns the lowest index at which value should be inserted into array in order to maintain its sort order.
-ok 524 — Returns the lowest index at which value should be inserted into array in order to maintain its sort order.
+ok 519 — sortedIndex is a Function
+ok 520 — Returns the lowest index at which value should be inserted into array in order to maintain its sort order.
+ok 521 — Returns the lowest index at which value should be inserted into array in order to maintain its sort order.
 
 #  PASS  test/byteSize/byteSize.test.js
 
-ok 525 — byteSize is a Function
-ok 526 — Works for a single letter
-ok 527 — Works for a common string
-ok 528 — Works for emoji
+ok 522 — byteSize is a Function
+ok 523 — Works for a single letter
+ok 524 — Works for a common string
+ok 525 — Works for emoji
 
 #  PASS  test/isAbsoluteURL/isAbsoluteURL.test.js
 
-ok 529 — isAbsoluteURL is a Function
-ok 530 — Given string is an absolute URL
-ok 531 — Given string is an absolute URL
-ok 532 — Given string is not an absolute URL
+ok 526 — isAbsoluteURL is a Function
+ok 527 — Given string is an absolute URL
+ok 528 — Given string is an absolute URL
+ok 529 — Given string is not an absolute URL
 
-#  PASS  test/uniqueSymmetricDifference/uniqueSymmetricDifference.test.js
+#  PASS  test/CSVToJSON/CSVToJSON.test.js
 
-ok 533 — uniqueSymmetricDifference is a Function
-ok 534 — Returns the symmetric difference between two arrays.
-ok 535 — Does not return duplicates from one array
+ok 530 — CSVToJSON is a Function
+ok 531 — CSVToJSON works with default delimiter
+ok 532 — CSVToJSON works with custom delimiter
 
 #  PASS  test/matches/matches.test.js
 
-ok 536 — matches is a Function
-ok 537 — Matches returns true for two similar objects
-ok 538 — Matches returns false for two non-similar objects
+ok 533 — matches is a Function
+ok 534 — Matches returns true for two similar objects
+ok 535 — Matches returns false for two non-similar objects
+
+#  PASS  test/uniqueSymmetricDifference/uniqueSymmetricDifference.test.js
+
+ok 536 — uniqueSymmetricDifference is a Function
+ok 537 — Returns the symmetric difference between two arrays.
+ok 538 — Does not return duplicates from one array
 
 #  PASS  test/collectInto/collectInto.test.js
 
 ok 539 — collectInto is a Function
 ok 540 — Works with multiple promises
 
-#  PASS  test/uncurry/uncurry.test.js
-
-ok 541 — uncurry is a Function
-ok 542 — Works without a provided value for n
-ok 543 — Works with n = 2
-ok 544 — Works with n = 3
-
 #  PASS  test/isValidJSON/isValidJSON.test.js
 
-ok 545 — isValidJSON is a Function
-ok 546 — {"name":"Adam","age":20} is a valid JSON
-ok 547 — {"name":"Adam",age:"20"} is not a valid JSON
-ok 548 — null is a valid JSON
-
-#  PASS  test/symmetricDifferenceWith/symmetricDifferenceWith.test.js
-
-ok 549 — symmetricDifferenceWith is a Function
-ok 550 — Returns the symmetric difference between two arrays, using a provided function as a comparator
+ok 541 — isValidJSON is a Function
+ok 542 — {"name":"Adam","age":20} is a valid JSON
+ok 543 — {"name":"Adam",age:"20"} is not a valid JSON
+ok 544 — null is a valid JSON
 
 #  PASS  test/pad/pad.test.js
 
-ok 551 — pad is a Function
-ok 552 — cat is padded on both sides
-ok 553 — length of string is 8
-ok 554 — pads 42 with "0"
-ok 555 — does not truncates if string exceeds length
-
-#  PASS  test/groupBy/groupBy.test.js
-
-ok 556 — groupBy is a Function
-ok 557 — Groups the elements of an array based on the given function
-ok 558 — Groups the elements of an array based on the given function
-
-#  PASS  test/lowercaseKeys/lowercaseKeys.test.js
-
-ok 559 — lowercaseKeys is a Function
-ok 560 — Lowercases object keys
-ok 561 — Does not mutate original object
+ok 545 — pad is a Function
+ok 546 — cat is padded on both sides
+ok 547 — length of string is 8
+ok 548 — pads 42 with "0"
+ok 549 — does not truncates if string exceeds length
 
 #  PASS  test/functionName/functionName.test.js
 
-ok 562 — functionName is a Function
-ok 563 — Works for native functions
-ok 564 — Works for functions
-ok 565 — Works for arrow functions
+ok 550 — functionName is a Function
+ok 551 — Works for native functions
+ok 552 — Works for functions
+ok 553 — Works for arrow functions
 
-#  PASS  test/matchesWith/matchesWith.test.js
+#  PASS  test/uncurry/uncurry.test.js
 
-ok 566 — matchesWith is a Function
-ok 567 — Returns true for two objects with similar values, based on the provided function
+ok 554 — uncurry is a Function
+ok 555 — Works without a provided value for n
+ok 556 — Works with n = 2
+ok 557 — Works with n = 3
+
+#  PASS  test/groupBy/groupBy.test.js
+
+ok 558 — groupBy is a Function
+ok 559 — Groups the elements of an array based on the given function
+ok 560 — Groups the elements of an array based on the given function
+
+#  PASS  test/lowercaseKeys/lowercaseKeys.test.js
+
+ok 561 — lowercaseKeys is a Function
+ok 562 — Lowercases object keys
+ok 563 — Does not mutate original object
+
+#  PASS  test/symmetricDifferenceWith/symmetricDifferenceWith.test.js
+
+ok 564 — symmetricDifferenceWith is a Function
+ok 565 — Returns the symmetric difference between two arrays, using a provided function as a comparator
 
 #  PASS  test/collatz/collatz.test.js
 
-ok 568 — collatz is a Function
-ok 569 — When n is even, divide by 2
-ok 570 — When n is odd, times by 3 and add 1
-ok 571 — Eventually reaches 1
+ok 566 — collatz is a Function
+ok 567 — When n is even, divide by 2
+ok 568 — When n is odd, times by 3 and add 1
+ok 569 — Eventually reaches 1
+
+#  PASS  test/matchesWith/matchesWith.test.js
+
+ok 570 — matchesWith is a Function
+ok 571 — Returns true for two objects with similar values, based on the provided function
 
 #  PASS  test/reject/reject.test.js
 
@@ -877,42 +877,42 @@ ok 572 — reject is a Function
 ok 573 — Works with numbers
 ok 574 — Works with strings
 
+#  PASS  test/isBeforeDate/isBeforeDate.test.js
+
+ok 575 — isBeforeDate is a Function
+ok 576 — isBeforeDate produces the correct result
+ok 577 — isBeforeDate produces the correct result
+
 #  PASS  test/UUIDGeneratorNode/UUIDGeneratorNode.test.js
 
-ok 575 — UUIDGeneratorNode is a Function
-ok 576 — Contains dashes in the proper places
-ok 577 — Only contains hexadecimal digits
+ok 578 — UUIDGeneratorNode is a Function
+ok 579 — Contains dashes in the proper places
+ok 580 — Only contains hexadecimal digits
 
 #  PASS  test/symmetricDifference/symmetricDifference.test.js
 
-ok 578 — symmetricDifference is a Function
-ok 579 — Returns the symmetric difference between two arrays.
-ok 580 — Returns duplicates from one array
-
-#  PASS  test/luhnCheck/luhnCheck.test.js
-
-ok 581 — luhnCheck is a Function
-ok 582 — validates identification number
-ok 583 — validates identification number
-ok 584 — validates identification number
-
-#  PASS  test/isBeforeDate/isBeforeDate.test.js
-
-ok 585 — isBeforeDate is a Function
-ok 586 — isBeforeDate produces the correct result
-ok 587 — isBeforeDate produces the correct result
+ok 581 — symmetricDifference is a Function
+ok 582 — Returns the symmetric difference between two arrays.
+ok 583 — Returns duplicates from one array
 
 #  PASS  test/intersectionWith/intersectionWith.test.js
 
-ok 588 — intersectionWith is a Function
-ok 589 — Returns a list of elements that exist in both arrays, using a provided comparator function
+ok 584 — intersectionWith is a Function
+ok 585 — Returns a list of elements that exist in both arrays, using a provided comparator function
 
 #  PASS  test/sample/sample.test.js
 
-ok 590 — sample is a Function
-ok 591 — Returns a random element from the array
-ok 592 — Works for single-element arrays
-ok 593 — Returns undefined for empty array
+ok 586 — sample is a Function
+ok 587 — Returns a random element from the array
+ok 588 — Works for single-element arrays
+ok 589 — Returns undefined for empty array
+
+#  PASS  test/luhnCheck/luhnCheck.test.js
+
+ok 590 — luhnCheck is a Function
+ok 591 — validates identification number
+ok 592 — validates identification number
+ok 593 — validates identification number
 
 #  PASS  test/nthArg/nthArg.test.js
 
@@ -932,62 +932,62 @@ ok 600 — flattenObject is a Function
 ok 601 — Flattens an object with the paths for keys
 ok 602 — Works with arrays
 
-#  PASS  test/drop/drop.test.js
-
-ok 603 — drop is a Function
-ok 604 — Works without the last argument
-ok 605 — Removes appropriate element count as specified
-ok 606 — Empties array given a count greater than length
-
 #  PASS  test/isAfterDate/isAfterDate.test.js
 
-ok 607 — isAfterDate is a Function
-ok 608 — isAfterDate produces the correct result
-ok 609 — isBeforeDate produces the correct result
-
-#  PASS  test/differenceBy/differenceBy.test.js
-
-ok 610 — differenceBy is a Function
-ok 611 — Works using a native function and numbers
-ok 612 — Works with arrow function and objects
-
-#  PASS  test/functions/functions.test.js
-
-ok 613 — functions is a Function
-ok 614 — Returns own methods
-ok 615 — Returns own and inherited methods
-
-#  PASS  test/renameKeys/renameKeys.test.js
-
-ok 616 — renameKeys is a Function
-ok 617 — renameKeys is a Function
-
-#  PASS  test/memoize/memoize.test.js
-
-ok 618 — memoize is a Function
-ok 619 — Function works properly
-ok 620 — Function works properly
-ok 621 — Cache stores values
-
-#  PASS  test/elo/elo.test.js
-
-ok 622 — elo is a Function
-ok 623 — Standard 1v1s
-ok 624 — Standard 1v1s
-ok 625 — 4 player FFA, all same rank
+ok 603 — isAfterDate is a Function
+ok 604 — isAfterDate produces the correct result
+ok 605 — isBeforeDate produces the correct result
 
 #  PASS  test/isLowerCase/isLowerCase.test.js
 
-ok 626 — isLowerCase is a Function
-ok 627 — passed string is a lowercase
-ok 628 — passed string is a lowercase
-ok 629 — passed value is not a lowercase
+ok 606 — isLowerCase is a Function
+ok 607 — passed string is a lowercase
+ok 608 — passed string is a lowercase
+ok 609 — passed value is not a lowercase
+
+#  PASS  test/renameKeys/renameKeys.test.js
+
+ok 610 — renameKeys is a Function
+ok 611 — renameKeys is a Function
+
+#  PASS  test/memoize/memoize.test.js
+
+ok 612 — memoize is a Function
+ok 613 — Function works properly
+ok 614 — Function works properly
+ok 615 — Cache stores values
+
+#  PASS  test/functions/functions.test.js
+
+ok 616 — functions is a Function
+ok 617 — Returns own methods
+ok 618 — Returns own and inherited methods
 
 #  PASS  test/isSameDate/isSameDate.test.js
 
-ok 630 — isSameDate is a Function
-ok 631 — isSameDate produces the correct result
-ok 632 — isSameDate produces the correct result
+ok 619 — isSameDate is a Function
+ok 620 — isSameDate produces the correct result
+ok 621 — isSameDate produces the correct result
+
+#  PASS  test/differenceBy/differenceBy.test.js
+
+ok 622 — differenceBy is a Function
+ok 623 — Works using a native function and numbers
+ok 624 — Works with arrow function and objects
+
+#  PASS  test/drop/drop.test.js
+
+ok 625 — drop is a Function
+ok 626 — Works without the last argument
+ok 627 — Removes appropriate element count as specified
+ok 628 — Empties array given a count greater than length
+
+#  PASS  test/elo/elo.test.js
+
+ok 629 — elo is a Function
+ok 630 — Standard 1v1s
+ok 631 — Standard 1v1s
+ok 632 — 4 player FFA, all same rank
 
 #  PASS  test/averageBy/averageBy.test.js
 
@@ -995,167 +995,167 @@ ok 633 — averageBy is a Function
 ok 634 — Produces the right result with a function
 ok 635 — Produces the right result with a property name
 
-#  PASS  test/bindKey/bindKey.test.js
-
-ok 636 — bindKey is a Function
-ok 637 — Binds function to an object context
-
-#  PASS  test/isPromiseLike/isPromiseLike.test.js
-
-ok 638 — isPromiseLike is a Function
-ok 639 — Returns true for a promise-like object
-ok 640 — Returns false for an empty object
-
-#  PASS  test/symmetricDifferenceBy/symmetricDifferenceBy.test.js
-
-ok 641 — symmetricDifferenceBy is a Function
-ok 642 — Returns the symmetric difference between two arrays, after applying the provided function to each array element of both
-
 #  PASS  test/findLastKey/findLastKey.test.js
 
-ok 643 — findLastKey is a Function
-ok 644 — eturns the appropriate key
-
-#  PASS  test/arrayToCSV/arrayToCSV.test.js
-
-ok 645 — arrayToCSV is a Function
-ok 646 — arrayToCSV works with default delimiter
-ok 647 — arrayToCSV works with custom delimiter
-
-#  PASS  test/isArrayLike/isArrayLike.test.js
-
-ok 648 — isArrayLike is a Function
-ok 649 — Returns true for a string
-ok 650 — Returns true for an array
-ok 651 — Returns false for null
-
-#  PASS  test/promisify/promisify.test.js
-
-ok 652 — promisify is a Function
-ok 653 — Returns a promise
-ok 654 — Runs the function provided
+ok 636 — findLastKey is a Function
+ok 637 — eturns the appropriate key
 
 #  PASS  test/truthCheckCollection/truthCheckCollection.test.js
 
-ok 655 — truthCheckCollection is a Function
-ok 656 — second argument is truthy on all elements of a collection
+ok 638 — truthCheckCollection is a Function
+ok 639 — second argument is truthy on all elements of a collection
 
-#  PASS  test/isUpperCase/isUpperCase.test.js
+#  PASS  test/bindKey/bindKey.test.js
 
-ok 657 — isUpperCase is a Function
-ok 658 — ABC is all upper case
-ok 659 — abc is not all upper case
-ok 660 — A3@$ is all uppercase
+ok 640 — bindKey is a Function
+ok 641 — Binds function to an object context
 
-#  PASS  test/maxBy/maxBy.test.js
+#  PASS  test/isArrayLike/isArrayLike.test.js
 
-ok 661 — maxBy is a Function
-ok 662 — Produces the right result with a function
-ok 663 — Produces the right result with a property name
+ok 642 — isArrayLike is a Function
+ok 643 — Returns true for a string
+ok 644 — Returns true for an array
+ok 645 — Returns false for null
 
-#  PASS  test/pullAtValue/pullAtValue.test.js
+#  PASS  test/arrayToCSV/arrayToCSV.test.js
 
-ok 664 — pullAtValue is a Function
-ok 665 — Pulls the specified values
-ok 666 — Pulls the specified values
+ok 646 — arrayToCSV is a Function
+ok 647 — arrayToCSV works with default delimiter
+ok 648 — arrayToCSV works with custom delimiter
+
+#  PASS  test/isPromiseLike/isPromiseLike.test.js
+
+ok 649 — isPromiseLike is a Function
+ok 650 — Returns true for a promise-like object
+ok 651 — Returns false for an empty object
+
+#  PASS  test/symmetricDifferenceBy/symmetricDifferenceBy.test.js
+
+ok 652 — symmetricDifferenceBy is a Function
+ok 653 — Returns the symmetric difference between two arrays, after applying the provided function to each array element of both
+
+#  PASS  test/promisify/promisify.test.js
+
+ok 654 — promisify is a Function
+ok 655 — Returns a promise
+ok 656 — Runs the function provided
 
 #  PASS  test/minBy/minBy.test.js
 
-ok 667 — minBy is a Function
+ok 657 — minBy is a Function
+ok 658 — Produces the right result with a function
+ok 659 — Produces the right result with a property name
+
+#  PASS  test/pullAtValue/pullAtValue.test.js
+
+ok 660 — pullAtValue is a Function
+ok 661 — Pulls the specified values
+ok 662 — Pulls the specified values
+
+#  PASS  test/isUpperCase/isUpperCase.test.js
+
+ok 663 — isUpperCase is a Function
+ok 664 — ABC is all upper case
+ok 665 — abc is not all upper case
+ok 666 — A3@$ is all uppercase
+
+#  PASS  test/maxBy/maxBy.test.js
+
+ok 667 — maxBy is a Function
 ok 668 — Produces the right result with a function
 ok 669 — Produces the right result with a property name
 
-#  PASS  test/unzipWith/unzipWith.test.js
-
-ok 670 — unzipWith is a Function
-ok 671 — unzipWith([[1, 10, 100], [2, 20, 200]], (...args) => args.reduce((acc, v) => acc + v, 0)) equals [3, 30, 300]
-
-#  PASS  test/findKey/findKey.test.js
-
-ok 672 — findKey is a Function
-ok 673 — Returns the appropriate key
-
 #  PASS  test/merge/merge.test.js
 
-ok 674 — merge is a Function
-ok 675 — Merges two objects
+ok 670 — merge is a Function
+ok 671 — Merges two objects
 
-#  PASS  test/pullAtIndex/pullAtIndex.test.js
+#  PASS  test/unzipWith/unzipWith.test.js
 
-ok 676 — pullAtIndex is a Function
-ok 677 — Pulls the given values
-ok 678 — Pulls the given values
+ok 672 — unzipWith is a Function
+ok 673 — unzipWith([[1, 10, 100], [2, 20, 200]], (...args) => args.reduce((acc, v) => acc + v, 0)) equals [3, 30, 300]
 
 #  PASS  test/coalesceFactory/coalesceFactory.test.js
 
-ok 679 — coalesceFactory is a Function
-ok 680 — Returns a customized coalesce function
+ok 674 — coalesceFactory is a Function
+ok 675 — Returns a customized coalesce function
+
+#  PASS  test/findKey/findKey.test.js
+
+ok 676 — findKey is a Function
+ok 677 — Returns the appropriate key
 
 #  PASS  test/indentString/indentString.test.js
 
-ok 681 — indentString is a Function
-ok 682 — indentString is a Function
-ok 683 — indentString is a Function
+ok 678 — indentString is a Function
+ok 679 — indentString is a Function
+ok 680 — indentString is a Function
 
-#  PASS  test/bind/bind.test.js
+#  PASS  test/pullAtIndex/pullAtIndex.test.js
 
-ok 684 — bind is a Function
-ok 685 — Binds to an object context
+ok 681 — pullAtIndex is a Function
+ok 682 — Pulls the given values
+ok 683 — Pulls the given values
 
 #  PASS  test/takeRight/takeRight.test.js
 
-ok 686 — takeRight is a Function
-ok 687 — Returns an array with n elements removed from the end
-ok 688 — Returns an array with n elements removed from the end
+ok 684 — takeRight is a Function
+ok 685 — Returns an array with n elements removed from the end
+ok 686 — Returns an array with n elements removed from the end
 
 #  PASS  test/transform/transform.test.js
 
-ok 689 — transform is a Function
-ok 690 — Transforms an object
+ok 687 — transform is a Function
+ok 688 — Transforms an object
+
+#  PASS  test/bind/bind.test.js
+
+ok 689 — bind is a Function
+ok 690 — Binds to an object context
 
 #  PASS  test/getURLParameters/getURLParameters.test.js
 
 ok 691 — getURLParameters is a Function
 ok 692 — Returns an object containing the parameters of the current URL
 
-#  PASS  test/reduceSuccessive/reduceSuccessive.test.js
+#  PASS  test/runPromisesInSeries/runPromisesInSeries.test.js
 
-ok 693 — reduceSuccessive is a Function
-ok 694 — Returns the array of successively reduced values
+ok 693 — runPromisesInSeries is a Function
+ok 694 — Runs promises in series
 
 #  PASS  test/intersectionBy/intersectionBy.test.js
 
 ok 695 — intersectionBy is a Function
 ok 696 — Returns a list of elements that exist in both arrays, after applying the provided function to each array element of both
 
-#  PASS  test/isPlainObject/isPlainObject.test.js
-
-ok 697 — isPlainObject is a Function
-ok 698 — Returns true for a plain object
-ok 699 — Returns false for a Map (example of non-plain object)
-
-#  PASS  test/runPromisesInSeries/runPromisesInSeries.test.js
-
-ok 700 — runPromisesInSeries is a Function
-ok 701 — Runs promises in series
-
-#  PASS  test/indexOfAll/indexOfAll.test.js
-
-ok 702 — indexOfAll is a Function
-ok 703 — Returns all indices of val in an array
-ok 704 — When val is not found, return an empty array
-
 #  PASS  test/isNil/isNil.test.js
 
-ok 705 — isNil is a Function
-ok 706 — Returns true for null
-ok 707 — Returns true for undefined
-ok 708 — Returns false for an empty string
+ok 697 — isNil is a Function
+ok 698 — Returns true for null
+ok 699 — Returns true for undefined
+ok 700 — Returns false for an empty string
+
+#  PASS  test/reduceSuccessive/reduceSuccessive.test.js
+
+ok 701 — reduceSuccessive is a Function
+ok 702 — Returns the array of successively reduced values
 
 #  PASS  test/pipeFunctions/pipeFunctions.test.js
 
-ok 709 — pipeFunctions is a Function
-ok 710 — Performs left-to-right function composition
+ok 703 — pipeFunctions is a Function
+ok 704 — Performs left-to-right function composition
+
+#  PASS  test/isPlainObject/isPlainObject.test.js
+
+ok 705 — isPlainObject is a Function
+ok 706 — Returns true for a plain object
+ok 707 — Returns false for a Map (example of non-plain object)
+
+#  PASS  test/indexOfAll/indexOfAll.test.js
+
+ok 708 — indexOfAll is a Function
+ok 709 — Returns all indices of val in an array
+ok 710 — When val is not found, return an empty array
 
 #  PASS  test/gcd/gcd.test.js
 
@@ -1169,270 +1169,270 @@ ok 714 — extendHex is a Function
 ok 715 — Extends a 3-digit color code to a 6-digit color code
 ok 716 — Extends a 3-digit color code to a 6-digit color code
 
-#  PASS  test/isTravisCI/isTravisCI.test.js
-
-ok 717 — isTravisCI is a Function
-ok 718 — Running on Travis, correctly evaluates
-
 #  PASS  test/take/take.test.js
 
-ok 719 — take is a Function
-ok 720 — Returns an array with n elements removed from the beginning.
-ok 721 — Returns an array with n elements removed from the beginning.
-
-#  PASS  test/maxDate/maxDate.test.js
-
-ok 722 — maxDate is a Function
-ok 723 — maxDate produces the maximum date
+ok 717 — take is a Function
+ok 718 — Returns an array with n elements removed from the beginning.
+ok 719 — Returns an array with n elements removed from the beginning.
 
 #  PASS  test/minDate/minDate.test.js
 
-ok 724 — minDate is a Function
-ok 725 — minDate produces the maximum date
+ok 720 — minDate is a Function
+ok 721 — minDate produces the maximum date
 
 #  PASS  test/chainAsync/chainAsync.test.js
 
-ok 726 — chainAsync is a Function
-ok 727 — Calls all functions in an array
+ok 722 — chainAsync is a Function
+ok 723 — Calls all functions in an array
 
-#  PASS  test/cleanObj/cleanObj.test.js
+#  PASS  test/isTravisCI/isTravisCI.test.js
 
-ok 728 — cleanObj is a Function
-ok 729 — Removes any properties except the ones specified from a JSON object
+ok 724 — isTravisCI is a Function
+ok 725 — Running on Travis, correctly evaluates
 
-#  PASS  test/countBy/countBy.test.js
+#  PASS  test/maxDate/maxDate.test.js
 
-ok 730 — countBy is a Function
-ok 731 — Works for functions
-ok 732 — Works for property names
+ok 726 — maxDate is a Function
+ok 727 — maxDate produces the maximum date
 
 #  PASS  test/overArgs/overArgs.test.js
 
-ok 733 — overArgs is a Function
-ok 734 — Invokes the provided function with its arguments transformed
-
-#  PASS  test/decapitalize/decapitalize.test.js
-
-ok 735 — decapitalize is a Function
-ok 736 — Works with default parameter
-ok 737 — Works with second parameter set to true
-
-#  PASS  test/shallowClone/shallowClone.test.js
-
-ok 738 — shallowClone is a Function
-ok 739 — Shallow cloning works
-ok 740 — Does not clone deeply
+ok 728 — overArgs is a Function
+ok 729 — Invokes the provided function with its arguments transformed
 
 #  PASS  test/nthElement/nthElement.test.js
 
-ok 741 — nthElement is a Function
-ok 742 — Returns the nth element of an array.
-ok 743 — Returns the nth element of an array.
+ok 730 — nthElement is a Function
+ok 731 — Returns the nth element of an array.
+ok 732 — Returns the nth element of an array.
 
-#  PASS  test/hashNode/hashNode.test.js
+#  PASS  test/decapitalize/decapitalize.test.js
 
-ok 744 — hashNode is a Function
-ok 745 — Produces the appropriate hash
+ok 733 — decapitalize is a Function
+ok 734 — Works with default parameter
+ok 735 — Works with second parameter set to true
+
+#  PASS  test/countBy/countBy.test.js
+
+ok 736 — countBy is a Function
+ok 737 — Works for functions
+ok 738 — Works for property names
 
 #  PASS  test/spreadOver/spreadOver.test.js
 
-ok 746 — spreadOver is a Function
-ok 747 — Takes a variadic function and returns a closure that accepts an array of arguments to map to the inputs of the function.
+ok 739 — spreadOver is a Function
+ok 740 — Takes a variadic function and returns a closure that accepts an array of arguments to map to the inputs of the function.
 
 #  PASS  test/partialRight/partialRight.test.js
 
-ok 748 — partialRight is a Function
-ok 749 — Appends arguments
+ok 741 — partialRight is a Function
+ok 742 — Appends arguments
 
-#  PASS  test/composeRight/composeRight.test.js
+#  PASS  test/shallowClone/shallowClone.test.js
 
-ok 750 — composeRight is a Function
-ok 751 — Performs left-to-right function composition
+ok 743 — shallowClone is a Function
+ok 744 — Shallow cloning works
+ok 745 — Does not clone deeply
 
-#  PASS  test/permutations/permutations.test.js
+#  PASS  test/cleanObj/cleanObj.test.js
 
-ok 752 — permutations is a Function
-ok 753 — Generates all permutations of an array
+ok 746 — cleanObj is a Function
+ok 747 — Removes any properties except the ones specified from a JSON object
+
+#  PASS  test/hashNode/hashNode.test.js
+
+ok 748 — hashNode is a Function
+ok 749 — Produces the appropriate hash
 
 #  PASS  test/getDaysDiffBetweenDates/getDaysDiffBetweenDates.test.js
 
-ok 754 — getDaysDiffBetweenDates is a Function
-ok 755 — Returns the difference in days between two dates
+ok 750 — getDaysDiffBetweenDates is a Function
+ok 751 — Returns the difference in days between two dates
 
-#  PASS  test/minN/minN.test.js
+#  PASS  test/composeRight/composeRight.test.js
 
-ok 756 — minN is a Function
-ok 757 — Returns the n minimum elements from the provided array
-ok 758 — Returns the n minimum elements from the provided array
+ok 752 — composeRight is a Function
+ok 753 — Performs left-to-right function composition
+
+#  PASS  test/permutations/permutations.test.js
+
+ok 754 — permutations is a Function
+ok 755 — Generates all permutations of an array
 
 #  PASS  test/maxN/maxN.test.js
 
-ok 759 — maxN is a Function
-ok 760 — Returns the n maximum elements from the provided array
-ok 761 — Returns the n maximum elements from the provided array
+ok 756 — maxN is a Function
+ok 757 — Returns the n maximum elements from the provided array
+ok 758 — Returns the n maximum elements from the provided array
 
-#  PASS  test/flatten/flatten.test.js
+#  PASS  test/minN/minN.test.js
 
-ok 762 — flatten is a Function
-ok 763 — Flattens an array
-ok 764 — Flattens an array
-
-#  PASS  test/when/when.test.js
-
-ok 765 — when is a Function
-ok 766 — Returns the proper result
-ok 767 — Returns the proper result
+ok 759 — minN is a Function
+ok 760 — Returns the n minimum elements from the provided array
+ok 761 — Returns the n minimum elements from the provided array
 
 #  PASS  test/sortedLastIndexBy/sortedLastIndexBy.test.js
 
-ok 768 — sortedLastIndexBy is a Function
-ok 769 — Returns the highest index to insert the element without messing up the list order
+ok 762 — sortedLastIndexBy is a Function
+ok 763 — Returns the highest index to insert the element without messing up the list order
+
+#  PASS  test/when/when.test.js
+
+ok 764 — when is a Function
+ok 765 — Returns the proper result
+ok 766 — Returns the proper result
+
+#  PASS  test/flatten/flatten.test.js
+
+ok 767 — flatten is a Function
+ok 768 — Flattens an array
+ok 769 — Flattens an array
 
 #  PASS  test/compose/compose.test.js
 
 ok 770 — compose is a Function
 ok 771 — Performs right-to-left function composition
 
-#  PASS  test/splitLines/splitLines.test.js
-
-ok 772 — splitLines is a Function
-ok 773 — Splits a multiline string into an array of lines.
-
 #  PASS  test/initializeArrayWithValues/initializeArrayWithValues.test.js
 
-ok 774 — initializeArrayWithValues is a Function
-ok 775 — Initializes and fills an array with the specified values
+ok 772 — initializeArrayWithValues is a Function
+ok 773 — Initializes and fills an array with the specified values
+
+#  PASS  test/splitLines/splitLines.test.js
+
+ok 774 — splitLines is a Function
+ok 775 — Splits a multiline string into an array of lines.
 
 #  PASS  test/percentile/percentile.test.js
 
 ok 776 — percentile is a Function
 ok 777 — Uses the percentile formula to calculate how many numbers in the given array are less or equal to the given value.
 
-#  PASS  test/differenceWith/differenceWith.test.js
-
-ok 778 — differenceWith is a Function
-ok 779 — Filters out all values from an array
-
-#  PASS  test/lcm/lcm.test.js
-
-ok 780 — lcm is a Function
-ok 781 — Returns the least common multiple of two or more numbers.
-ok 782 — Returns the least common multiple of two or more numbers.
-
 #  PASS  test/bindAll/bindAll.test.js
 
-ok 783 — bindAll is a Function
-ok 784 — Binds to an object context
+ok 778 — bindAll is a Function
+ok 779 — Binds to an object context
+
+#  PASS  test/differenceWith/differenceWith.test.js
+
+ok 780 — differenceWith is a Function
+ok 781 — Filters out all values from an array
 
 #  PASS  test/mapValues/mapValues.test.js
 
-ok 785 — mapValues is a Function
-ok 786 — Maps values
+ok 782 — mapValues is a Function
+ok 783 — Maps values
 
-#  PASS  test/partial/partial.test.js
+#  PASS  test/lcm/lcm.test.js
 
-ok 787 — partial is a Function
-ok 788 — Prepends arguments
-
-#  PASS  test/unionWith/unionWith.test.js
-
-ok 789 — unionWith is a Function
-ok 790 — Produces the appropriate results
-
-#  PASS  test/palindrome/palindrome.test.js
-
-ok 791 — palindrome is a Function
-ok 792 — Given string is a palindrome
-ok 793 — Given string is not a palindrome
-
-#  PASS  test/degreesToRads/degreesToRads.test.js
-
-ok 794 — degreesToRads is a Function
-ok 795 — Returns the appropriate value
-
-#  PASS  test/bifurcateBy/bifurcateBy.test.js
-
-ok 796 — bifurcateBy is a Function
-ok 797 — Splits the collection into two groups
-
-#  PASS  test/size/size.test.js
-
-ok 798 — size is a Function
-ok 799 — Get size of arrays, objects or strings.
-ok 800 — Get size of arrays, objects or strings.
+ok 784 — lcm is a Function
+ok 785 — Returns the least common multiple of two or more numbers.
+ok 786 — Returns the least common multiple of two or more numbers.
 
 #  PASS  test/bifurcate/bifurcate.test.js
 
-ok 801 — bifurcate is a Function
-ok 802 — Splits the collection into two groups
-
-#  PASS  test/median/median.test.js
-
-ok 803 — median is a Function
-ok 804 — Returns the median of an array of numbers
-ok 805 — Returns the median of an array of numbers
+ok 787 — bifurcate is a Function
+ok 788 — Splits the collection into two groups
 
 #  PASS  test/forOwnRight/forOwnRight.test.js
 
-ok 806 — forOwnRight is a Function
-ok 807 — Iterates over an element's key-value pairs in reverse
-
-#  PASS  test/sortedIndexBy/sortedIndexBy.test.js
-
-ok 808 — sortedIndexBy is a Function
-ok 809 — Returns the lowest index to insert the element without messing up the list order
-
-#  PASS  test/dropRightWhile/dropRightWhile.test.js
-
-ok 810 — dropRightWhile is a Function
-ok 811 — Removes elements from the end of an array until the passed function returns true.
-
-#  PASS  test/attempt/attempt.test.js
-
-ok 812 — attempt is a Function
-ok 813 — Returns a value
-ok 814 — Returns an error
+ok 789 — forOwnRight is a Function
+ok 790 — Iterates over an element's key-value pairs in reverse
 
 #  PASS  test/rearg/rearg.test.js
 
-ok 815 — rearg is a Function
-ok 816 — Reorders arguments in invoked function
+ok 791 — rearg is a Function
+ok 792 — Reorders arguments in invoked function
 
-#  PASS  test/sortedLastIndex/sortedLastIndex.test.js
+#  PASS  test/partial/partial.test.js
 
-ok 817 — sortedLastIndex is a Function
-ok 818 — Returns the highest index to insert the element without messing up the list order
+ok 793 — partial is a Function
+ok 794 — Prepends arguments
+
+#  PASS  test/dropRightWhile/dropRightWhile.test.js
+
+ok 795 — dropRightWhile is a Function
+ok 796 — Removes elements from the end of an array until the passed function returns true.
 
 #  PASS  test/unescapeHTML/unescapeHTML.test.js
 
-ok 819 — unescapeHTML is a Function
-ok 820 — Unescapes escaped HTML characters.
+ok 797 — unescapeHTML is a Function
+ok 798 — Unescapes escaped HTML characters.
+
+#  PASS  test/sortedIndexBy/sortedIndexBy.test.js
+
+ok 799 — sortedIndexBy is a Function
+ok 800 — Returns the lowest index to insert the element without messing up the list order
 
 #  PASS  test/pickBy/pickBy.test.js
 
-ok 821 — pickBy is a Function
-ok 822 — Creates an object composed of the properties the given function returns truthy for.
+ok 801 — pickBy is a Function
+ok 802 — Creates an object composed of the properties the given function returns truthy for.
 
 #  PASS  test/flip/flip.test.js
 
-ok 823 — flip is a Function
-ok 824 — Flips argument order
+ok 803 — flip is a Function
+ok 804 — Flips argument order
+
+#  PASS  test/attempt/attempt.test.js
+
+ok 805 — attempt is a Function
+ok 806 — Returns a value
+ok 807 — Returns an error
+
+#  PASS  test/unionWith/unionWith.test.js
+
+ok 808 — unionWith is a Function
+ok 809 — Produces the appropriate results
+
+#  PASS  test/bifurcateBy/bifurcateBy.test.js
+
+ok 810 — bifurcateBy is a Function
+ok 811 — Splits the collection into two groups
+
+#  PASS  test/median/median.test.js
+
+ok 812 — median is a Function
+ok 813 — Returns the median of an array of numbers
+ok 814 — Returns the median of an array of numbers
+
+#  PASS  test/degreesToRads/degreesToRads.test.js
+
+ok 815 — degreesToRads is a Function
+ok 816 — Returns the appropriate value
+
+#  PASS  test/palindrome/palindrome.test.js
+
+ok 817 — palindrome is a Function
+ok 818 — Given string is a palindrome
+ok 819 — Given string is not a palindrome
+
+#  PASS  test/size/size.test.js
+
+ok 820 — size is a Function
+ok 821 — Get size of arrays, objects or strings.
+ok 822 — Get size of arrays, objects or strings.
 
 #  PASS  test/isFunction/isFunction.test.js
 
-ok 825 — isFunction is a Function
-ok 826 — passed value is a function
-ok 827 — passed value is not a function
-
-#  PASS  test/compact/compact.test.js
-
-ok 828 — compact is a Function
-ok 829 — Removes falsey values from an array
+ok 823 — isFunction is a Function
+ok 824 — passed value is a function
+ok 825 — passed value is not a function
 
 #  PASS  test/sortCharactersInString/sortCharactersInString.test.js
 
-ok 830 — sortCharactersInString is a Function
-ok 831 — Alphabetically sorts the characters in a string.
+ok 826 — sortCharactersInString is a Function
+ok 827 — Alphabetically sorts the characters in a string.
+
+#  PASS  test/sortedLastIndex/sortedLastIndex.test.js
+
+ok 828 — sortedLastIndex is a Function
+ok 829 — Returns the highest index to insert the element without messing up the list order
+
+#  PASS  test/compact/compact.test.js
+
+ok 830 — compact is a Function
+ok 831 — Removes falsey values from an array
 
 #  PASS  test/omitBy/omitBy.test.js
 
@@ -1445,180 +1445,180 @@ ok 834 — isBoolean is a Function
 ok 835 — passed value is not a boolean
 ok 836 — passed value is not a boolean
 
-#  PASS  test/pullBy/pullBy.test.js
-
-ok 837 — pullBy is a Function
-ok 838 — Pulls the specified values
-
 #  PASS  test/get/get.test.js
 
-ok 839 — get is a Function
-ok 840 — Retrieve a property indicated by the selector from an object.
-
-#  PASS  test/unflattenObject/unflattenObject.test.js
-
-ok 841 — unflattenObject is a Function
-ok 842 — Unflattens an object with the paths for keys
-
-#  PASS  test/initialize2DArray/initialize2DArray.test.js
-
-ok 843 — initialize2DArray is a Function
-ok 844 — Initializes a 2D array of given width and height and value
-
-#  PASS  test/escapeHTML/escapeHTML.test.js
-
-ok 845 — escapeHTML is a Function
-ok 846 — Escapes a string for use in HTML
-
-#  PASS  test/stableSort/stableSort.test.js
-
-ok 847 — stableSort is a Function
-ok 848 — Array is properly sorted
-
-#  PASS  test/isNumber/isNumber.test.js
-
-ok 849 — isNumber is a Function
-ok 850 — passed argument is a number
-ok 851 — passed argument is not a number
-
-#  PASS  test/forEachRight/forEachRight.test.js
-
-ok 852 — forEachRight is a Function
-ok 853 — Iterates over the array in reverse
-
-#  PASS  test/objectFromPairs/objectFromPairs.test.js
-
-ok 854 — objectFromPairs is a Function
-ok 855 — Creates an object from the given key-value pairs.
-
-#  PASS  test/xProd/xProd.test.js
-
-ok 856 — xProd is a Function
-ok 857 — xProd([1, 2], ['a', 'b']) returns [[1, 'a'], [1, 'b'], [2, 'a'], [2, 'b']]
+ok 837 — get is a Function
+ok 838 — Retrieve a property indicated by the selector from an object.
 
 #  PASS  test/stripHTMLTags/stripHTMLTags.test.js
 
-ok 858 — stripHTMLTags is a Function
-ok 859 — Removes HTML tags
+ok 839 — stripHTMLTags is a Function
+ok 840 — Removes HTML tags
+
+#  PASS  test/xProd/xProd.test.js
+
+ok 841 — xProd is a Function
+ok 842 — xProd([1, 2], ['a', 'b']) returns [[1, 'a'], [1, 'b'], [2, 'a'], [2, 'b']]
 
 #  PASS  test/objectToPairs/objectToPairs.test.js
 
-ok 860 — objectToPairs is a Function
-ok 861 — Creates an array of key-value pair arrays from an object.
+ok 843 — objectToPairs is a Function
+ok 844 — Creates an array of key-value pair arrays from an object.
 
-#  PASS  test/toDecimalMark/toDecimalMark.test.js
+#  PASS  test/pullBy/pullBy.test.js
 
-ok 862 — toDecimalMark is a Function
-ok 863 — convert a float-point arithmetic to the Decimal mark form
+ok 845 — pullBy is a Function
+ok 846 — Pulls the specified values
 
 #  PASS  test/isArray/isArray.test.js
 
-ok 864 — isArray is a Function
-ok 865 — passed value is an array
-ok 866 — passed value is not an array
+ok 847 — isArray is a Function
+ok 848 — passed value is an array
+ok 849 — passed value is not an array
+
+#  PASS  test/toDecimalMark/toDecimalMark.test.js
+
+ok 850 — toDecimalMark is a Function
+ok 851 — convert a float-point arithmetic to the Decimal mark form
 
 #  PASS  test/unfold/unfold.test.js
 
-ok 867 — unfold is a Function
-ok 868 — Works with a given function, producing an array
-
-#  PASS  test/findLastIndex/findLastIndex.test.js
-
-ok 869 — findLastIndex is a Function
-ok 870 — Finds last index for which the given function returns true
-
-#  PASS  test/filterNonUnique/filterNonUnique.test.js
-
-ok 871 — filterNonUnique is a Function
-ok 872 — Filters out the non-unique values in an array
-
-#  PASS  test/ary/ary.test.js
-
-ok 873 — ary is a Function
-ok 874 — Discards arguments with index >=n
-
-#  PASS  test/forOwn/forOwn.test.js
-
-ok 875 — forOwn is a Function
-ok 876 — Iterates over an element's key-value pairs
-
-#  PASS  test/takeRightWhile/takeRightWhile.test.js
-
-ok 877 — takeRightWhile is a Function
-ok 878 — Removes elements until the function returns true
-
-#  PASS  test/removeNonASCII/removeNonASCII.test.js
-
-ok 879 — removeNonASCII is a Function
-ok 880 — Removes non-ASCII characters
+ok 852 — unfold is a Function
+ok 853 — Works with a given function, producing an array
 
 #  PASS  test/countOccurrences/countOccurrences.test.js
 
-ok 881 — countOccurrences is a Function
-ok 882 — Counts the occurrences of a value in an array
+ok 854 — countOccurrences is a Function
+ok 855 — Counts the occurrences of a value in an array
 
-#  PASS  test/curry/curry.test.js
+#  PASS  test/forEachRight/forEachRight.test.js
 
-ok 883 — curry is a Function
-ok 884 — curries a Math.pow
-ok 885 — curries a Math.min
+ok 856 — forEachRight is a Function
+ok 857 — Iterates over the array in reverse
 
-#  PASS  test/dropWhile/dropWhile.test.js
+#  PASS  test/filterNonUnique/filterNonUnique.test.js
 
-ok 886 — dropWhile is a Function
-ok 887 — Removes elements in an array until the passed function returns true.
+ok 858 — filterNonUnique is a Function
+ok 859 — Filters out the non-unique values in an array
 
-#  PASS  test/isNull/isNull.test.js
+#  PASS  test/unflattenObject/unflattenObject.test.js
 
-ok 888 — isNull is a Function
-ok 889 — passed argument is a null
-ok 890 — passed argument is a null
+ok 860 — unflattenObject is a Function
+ok 861 — Unflattens an object with the paths for keys
+
+#  PASS  test/escapeHTML/escapeHTML.test.js
+
+ok 862 — escapeHTML is a Function
+ok 863 — Escapes a string for use in HTML
+
+#  PASS  test/ary/ary.test.js
+
+ok 864 — ary is a Function
+ok 865 — Discards arguments with index >=n
+
+#  PASS  test/takeRightWhile/takeRightWhile.test.js
+
+ok 866 — takeRightWhile is a Function
+ok 867 — Removes elements until the function returns true
 
 #  PASS  test/pick/pick.test.js
 
-ok 891 — pick is a Function
-ok 892 — Picks the key-value pairs corresponding to the given keys from an object.
+ok 868 — pick is a Function
+ok 869 — Picks the key-value pairs corresponding to the given keys from an object.
 
-#  PASS  test/defaults/defaults.test.js
+#  PASS  test/initialize2DArray/initialize2DArray.test.js
 
-ok 893 — defaults is a Function
-ok 894 — Assigns default values for undefined properties
+ok 870 — initialize2DArray is a Function
+ok 871 — Initializes a 2D array of given width and height and value
 
-#  PASS  test/truncateString/truncateString.test.js
+#  PASS  test/forOwn/forOwn.test.js
 
-ok 895 — truncateString is a Function
-ok 896 — Truncates a "boomerang" up to a specified length.
+ok 872 — forOwn is a Function
+ok 873 — Iterates over an element's key-value pairs
+
+#  PASS  test/isNumber/isNumber.test.js
+
+ok 874 — isNumber is a Function
+ok 875 — passed argument is a number
+ok 876 — passed argument is not a number
+
+#  PASS  test/objectFromPairs/objectFromPairs.test.js
+
+ok 877 — objectFromPairs is a Function
+ok 878 — Creates an object from the given key-value pairs.
+
+#  PASS  test/findLastIndex/findLastIndex.test.js
+
+ok 879 — findLastIndex is a Function
+ok 880 — Finds last index for which the given function returns true
+
+#  PASS  test/stableSort/stableSort.test.js
+
+ok 881 — stableSort is a Function
+ok 882 — Array is properly sorted
 
 #  PASS  test/remove/remove.test.js
 
-ok 897 — remove is a Function
-ok 898 — Removes elements from an array for which the given function returns false
+ok 883 — remove is a Function
+ok 884 — Removes elements from an array for which the given function returns false
 
-#  PASS  test/intersection/intersection.test.js
+#  PASS  test/removeNonASCII/removeNonASCII.test.js
 
-ok 899 — intersection is a Function
-ok 900 — Returns a list of elements that exist in both arrays
+ok 885 — removeNonASCII is a Function
+ok 886 — Removes non-ASCII characters
+
+#  PASS  test/isNull/isNull.test.js
+
+ok 887 — isNull is a Function
+ok 888 — passed argument is a null
+ok 889 — passed argument is a null
+
+#  PASS  test/curry/curry.test.js
+
+ok 890 — curry is a Function
+ok 891 — curries a Math.pow
+ok 892 — curries a Math.min
+
+#  PASS  test/dropWhile/dropWhile.test.js
+
+ok 893 — dropWhile is a Function
+ok 894 — Removes elements in an array until the passed function returns true.
+
+#  PASS  test/defaults/defaults.test.js
+
+ok 895 — defaults is a Function
+ok 896 — Assigns default values for undefined properties
 
 #  PASS  test/delay/delay.test.js
 
-ok 901 — delay is a Function
-ok 902 — Works as expecting, passing arguments properly
+ok 897 — delay is a Function
+ok 898 — Works as expecting, passing arguments properly
 
-#  PASS  test/clampNumber/clampNumber.test.js
+#  PASS  test/truncateString/truncateString.test.js
 
-ok 903 — clampNumber is a Function
-ok 904 — Clamps num within the inclusive range specified by the boundary values a and b
+ok 899 — truncateString is a Function
+ok 900 — Truncates a "boomerang" up to a specified length.
 
 #  PASS  test/atob/atob.test.js
 
-ok 905 — atob is a Function
-ok 906 — atob("Zm9vYmFy") equals "foobar"
-ok 907 — atob("Z") returns ""
+ok 901 — atob is a Function
+ok 902 — atob("Zm9vYmFy") equals "foobar"
+ok 903 — atob("Z") returns ""
+
+#  PASS  test/intersection/intersection.test.js
+
+ok 904 — intersection is a Function
+ok 905 — Returns a list of elements that exist in both arrays
 
 #  PASS  test/parseCookie/parseCookie.test.js
 
-ok 908 — parseCookie is a Function
-ok 909 — Parses the cookie
+ok 906 — parseCookie is a Function
+ok 907 — Parses the cookie
+
+#  PASS  test/clampNumber/clampNumber.test.js
+
+ok 908 — clampNumber is a Function
+ok 909 — Clamps num within the inclusive range specified by the boundary values a and b
 
 #  PASS  test/omit/omit.test.js
 
@@ -1635,505 +1635,505 @@ ok 913 — Returns an array of elements that appear in both arrays.
 ok 914 — over is a Function
 ok 915 — Applies given functions over multiple arguments
 
-#  PASS  test/findLast/findLast.test.js
-
-ok 916 — findLast is a Function
-ok 917 — Finds last element for which the given function returns true
-
-#  PASS  test/pull/pull.test.js
-
-ok 918 — pull is a Function
-ok 919 — Pulls the specified values
-
-#  PASS  test/isEven/isEven.test.js
-
-ok 920 — isEven is a Function
-ok 921 — 4 is even number
-ok 922 — 5 is not an even number
-
 #  PASS  test/escapeRegExp/escapeRegExp.test.js
 
-ok 923 — escapeRegExp is a Function
-ok 924 — Escapes a string to use in a regular expression
-
-#  PASS  test/cloneRegExp/cloneRegExp.test.js
-
-ok 925 — cloneRegExp is a Function
-ok 926 — Clones regular expressions properly
-
-#  PASS  test/takeWhile/takeWhile.test.js
-
-ok 927 — takeWhile is a Function
-ok 928 — Removes elements until the function returns true
-
-#  PASS  test/coalesce/coalesce.test.js
-
-ok 929 — coalesce is a Function
-ok 930 — Returns the first non-null/undefined argument
-
-#  PASS  test/times/times.test.js
-
-ok 931 — times is a Function
-ok 932 — Runs a function the specified amount of times
-
-#  PASS  test/powerset/powerset.test.js
-
-ok 933 — powerset is a Function
-ok 934 — Returns the powerset of a given array of numbers.
-
-#  PASS  test/fibonacci/fibonacci.test.js
-
-ok 935 — fibonacci is a Function
-ok 936 — Generates an array, containing the Fibonacci sequence
+ok 916 — escapeRegExp is a Function
+ok 917 — Escapes a string to use in a regular expression
 
 #  PASS  test/hammingDistance/hammingDistance.test.js
 
-ok 937 — hammingDistance is a Function
-ok 938 — retuns hamming disance between 2 values
+ok 918 — hammingDistance is a Function
+ok 919 — retuns hamming disance between 2 values
 
-#  PASS  test/distance/distance.test.js
+#  PASS  test/takeWhile/takeWhile.test.js
 
-ok 939 — distance is a Function
-ok 940 — Calculates the distance between two points
+ok 920 — takeWhile is a Function
+ok 921 — Removes elements until the function returns true
 
-#  PASS  test/primes/primes.test.js
+#  PASS  test/times/times.test.js
 
-ok 941 — primes is a Function
-ok 942 — Generates primes up to a given number, using the Sieve of Eratosthenes.
+ok 922 — times is a Function
+ok 923 — Runs a function the specified amount of times
 
-#  PASS  test/difference/difference.test.js
+#  PASS  test/isEven/isEven.test.js
 
-ok 943 — difference is a Function
-ok 944 — Returns the difference between two arrays
+ok 924 — isEven is a Function
+ok 925 — 4 is even number
+ok 926 — 5 is not an even number
+
+#  PASS  test/powerset/powerset.test.js
+
+ok 927 — powerset is a Function
+ok 928 — Returns the powerset of a given array of numbers.
+
+#  PASS  test/fibonacci/fibonacci.test.js
+
+ok 929 — fibonacci is a Function
+ok 930 — Generates an array, containing the Fibonacci sequence
+
+#  PASS  test/pull/pull.test.js
+
+ok 931 — pull is a Function
+ok 932 — Pulls the specified values
+
+#  PASS  test/RGBToHex/RGBToHex.test.js
+
+ok 933 — RGBToHex is a Function
+ok 934 — Converts the values of RGB components to a color code.
+
+#  PASS  test/initial/initial.test.js
+
+ok 935 — initial is a Function
+ok 936 — Returns all the elements of an array except the last one
+
+#  PASS  test/deepFlatten/deepFlatten.test.js
+
+ok 937 — deepFlatten is a Function
+ok 938 — Deep flattens an array
+
+#  PASS  test/coalesce/coalesce.test.js
+
+ok 939 — coalesce is a Function
+ok 940 — Returns the first non-null/undefined argument
+
+#  PASS  test/findLast/findLast.test.js
+
+ok 941 — findLast is a Function
+ok 942 — Finds last element for which the given function returns true
+
+#  PASS  test/cloneRegExp/cloneRegExp.test.js
+
+ok 943 — cloneRegExp is a Function
+ok 944 — Clones regular expressions properly
 
 #  PASS  test/serializeCookie/serializeCookie.test.js
 
 ok 945 — serializeCookie is a Function
 ok 946 — Serializes the cookie
 
+#  PASS  test/distance/distance.test.js
+
+ok 947 — distance is a Function
+ok 948 — Calculates the distance between two points
+
+#  PASS  test/primes/primes.test.js
+
+ok 949 — primes is a Function
+ok 950 — Generates primes up to a given number, using the Sieve of Eratosthenes.
+
 #  PASS  test/tail/tail.test.js
 
-ok 947 — tail is a Function
-ok 948 — Returns tail
-ok 949 — Returns tail
+ok 951 — tail is a Function
+ok 952 — Returns tail
+ok 953 — Returns tail
 
-#  PASS  test/deepFlatten/deepFlatten.test.js
+#  PASS  test/difference/difference.test.js
 
-ok 950 — deepFlatten is a Function
-ok 951 — Deep flattens an array
+ok 954 — difference is a Function
+ok 955 — Returns the difference between two arrays
 
-#  PASS  test/negate/negate.test.js
+#  PASS  test/unary/unary.test.js
 
-ok 952 — negate is a Function
-ok 953 — Negates a predicate function
-
-#  PASS  test/RGBToHex/RGBToHex.test.js
-
-ok 954 — RGBToHex is a Function
-ok 955 — Converts the values of RGB components to a color code.
-
-#  PASS  test/everyNth/everyNth.test.js
-
-ok 956 — everyNth is a Function
-ok 957 — Returns every nth element in an array
+ok 956 — unary is a Function
+ok 957 — Discards arguments after the first one
 
 #  PASS  test/unionBy/unionBy.test.js
 
 ok 958 — unionBy is a Function
 ok 959 — Produces the appropriate results
 
-#  PASS  test/initial/initial.test.js
+#  PASS  test/negate/negate.test.js
 
-ok 960 — initial is a Function
-ok 961 — Returns all the elements of an array except the last one
+ok 960 — negate is a Function
+ok 961 — Negates a predicate function
 
-#  PASS  test/radsToDegrees/radsToDegrees.test.js
+#  PASS  test/everyNth/everyNth.test.js
 
-ok 962 — radsToDegrees is a Function
-ok 963 — Returns the appropriate value
-
-#  PASS  test/sleep/sleep.test.js
-
-ok 964 — sleep is a Function
-ok 965 — Works as expected
-
-#  PASS  test/unary/unary.test.js
-
-ok 966 — unary is a Function
-ok 967 — Discards arguments after the first one
-
-#  PASS  test/mapKeys/mapKeys.test.js
-
-ok 968 — mapKeys is a Function
-ok 969 — Maps keys
-
-#  PASS  test/reverseString/reverseString.test.js
-
-ok 970 — reverseString is a Function
-ok 971 — Reverses a string.
-
-#  PASS  test/isSymbol/isSymbol.test.js
-
-ok 972 — isSymbol is a Function
-ok 973 — Checks if the given argument is a symbol
-
-#  PASS  test/isUndefined/isUndefined.test.js
-
-ok 974 — isUndefined is a Function
-ok 975 — Returns true for undefined
-
-#  PASS  test/isDivisible/isDivisible.test.js
-
-ok 976 — isDivisible is a Function
-ok 977 — The number 6 is divisible by 3
-
-#  PASS  test/digitize/digitize.test.js
-
-ok 978 — digitize is a Function
-ok 979 — Converts a number to an array of digits
-
-#  PASS  test/getType/getType.test.js
-
-ok 980 — getType is a Function
-ok 981 — Returns the native type of a value
-
-#  PASS  test/call/call.test.js
-
-ok 982 — call is a Function
-ok 983 — Calls function on given object
-
-#  PASS  test/debounce/debounce.test.js
-
-ok 984 — debounce is a Function
-ok 985 — Works as expected
-
-#  PASS  test/sdbm/sdbm.test.js
-
-ok 986 — sdbm is a Function
-ok 987 — Hashes the input string into a whole number.
-
-#  PASS  test/sum/sum.test.js
-
-ok 988 — sum is a Function
-ok 989 — Returns the sum of two or more numbers/arrays.
-
-#  PASS  test/initializeArrayWithRangeRight/initializeArrayWithRangeRight.test.js
-
-ok 990 — initializeArrayWithRangeRight is a Function
-
-#  PASS  test/btoa/btoa.test.js
-
-ok 991 — btoa is a Function
-ok 992 — btoa("foobar") equals "Zm9vYmFy"
-
-#  PASS  test/isPrime/isPrime.test.js
-
-ok 993 — isPrime is a Function
-ok 994 — passed number is a prime
-
-#  PASS  test/getMeridiemSuffixOfInteger/getMeridiemSuffixOfInteger.test.js
-
-ok 995 — getMeridiemSuffixOfInteger is a Function
-
-#  PASS  test/elementIsVisibleInViewport/elementIsVisibleInViewport.test.js
-
-ok 996 — elementIsVisibleInViewport is a Function
-
-#  PASS  test/fibonacciCountUntilNum/fibonacciCountUntilNum.test.js
-
-ok 997 — fibonacciCountUntilNum is a Function
-
-#  PASS  test/recordAnimationFrames/recordAnimationFrames.test.js
-
-ok 998 — recordAnimationFrames is a Function
+ok 962 — everyNth is a Function
+ok 963 — Returns every nth element in an array
 
 #  PASS  test/getColonTimeFromDate/getColonTimeFromDate.test.js
 
-ok 999 — getColonTimeFromDate is a Function
+ok 964 — getColonTimeFromDate is a Function
 
-#  PASS  test/UUIDGeneratorBrowser/UUIDGeneratorBrowser.test.js
+#  PASS  test/isUndefined/isUndefined.test.js
 
-ok 1000 — UUIDGeneratorBrowser is a Function
+ok 965 — isUndefined is a Function
+ok 966 — Returns true for undefined
 
-#  PASS  test/isBrowserTabFocused/isBrowserTabFocused.test.js
+#  PASS  test/radsToDegrees/radsToDegrees.test.js
 
-ok 1001 — isBrowserTabFocused is a Function
+ok 967 — radsToDegrees is a Function
+ok 968 — Returns the appropriate value
+
+#  PASS  test/sdbm/sdbm.test.js
+
+ok 969 — sdbm is a Function
+ok 970 — Hashes the input string into a whole number.
+
+#  PASS  test/call/call.test.js
+
+ok 971 — call is a Function
+ok 972 — Calls function on given object
+
+#  PASS  test/reverseString/reverseString.test.js
+
+ok 973 — reverseString is a Function
+ok 974 — Reverses a string.
+
+#  PASS  test/isPrime/isPrime.test.js
+
+ok 975 — isPrime is a Function
+ok 976 — passed number is a prime
+
+#  PASS  test/btoa/btoa.test.js
+
+ok 977 — btoa is a Function
+ok 978 — btoa("foobar") equals "Zm9vYmFy"
+
+#  PASS  test/isSymbol/isSymbol.test.js
+
+ok 979 — isSymbol is a Function
+ok 980 — Checks if the given argument is a symbol
+
+#  PASS  test/mapKeys/mapKeys.test.js
+
+ok 981 — mapKeys is a Function
+ok 982 — Maps keys
+
+#  PASS  test/sum/sum.test.js
+
+ok 983 — sum is a Function
+ok 984 — Returns the sum of two or more numbers/arrays.
+
+#  PASS  test/initializeArrayWithRangeRight/initializeArrayWithRangeRight.test.js
+
+ok 985 — initializeArrayWithRangeRight is a Function
+
+#  PASS  test/recordAnimationFrames/recordAnimationFrames.test.js
+
+ok 986 — recordAnimationFrames is a Function
+
+#  PASS  test/debounce/debounce.test.js
+
+ok 987 — debounce is a Function
+ok 988 — Works as expected
+
+#  PASS  test/digitize/digitize.test.js
+
+ok 989 — digitize is a Function
+ok 990 — Converts a number to an array of digits
+
+#  PASS  test/isDivisible/isDivisible.test.js
+
+ok 991 — isDivisible is a Function
+ok 992 — The number 6 is divisible by 3
+
+#  PASS  test/fibonacciCountUntilNum/fibonacciCountUntilNum.test.js
+
+ok 993 — fibonacciCountUntilNum is a Function
+
+#  PASS  test/sleep/sleep.test.js
+
+ok 994 — sleep is a Function
+ok 995 — Works as expected
+
+#  PASS  test/getMeridiemSuffixOfInteger/getMeridiemSuffixOfInteger.test.js
+
+ok 996 — getMeridiemSuffixOfInteger is a Function
+
+#  PASS  test/elementIsVisibleInViewport/elementIsVisibleInViewport.test.js
+
+ok 997 — elementIsVisibleInViewport is a Function
+
+#  PASS  test/initializeNDArray/initializeNDArray.test.js
+
+ok 998 — initializeNDArray is a Function
+
+#  PASS  test/fibonacciUntilNum/fibonacciUntilNum.test.js
+
+ok 999 — fibonacciUntilNum is a Function
+
+#  PASS  test/getType/getType.test.js
+
+ok 1000 — getType is a Function
+ok 1001 — Returns the native type of a value
 
 #  PASS  test/levenshteinDistance/levenshteinDistance.test.js
 
 ok 1002 — levenshteinDistance is a Function
 
-#  PASS  test/getScrollPosition/getScrollPosition.test.js
+#  PASS  test/UUIDGeneratorBrowser/UUIDGeneratorBrowser.test.js
 
-ok 1003 — getScrollPosition is a Function
-
-#  PASS  test/isArmstrongNumber/isArmstrongNumber.test.js
-
-ok 1004 — isArmstrongNumber is a Function
-
-#  PASS  test/fibonacciUntilNum/fibonacciUntilNum.test.js
-
-ok 1005 — fibonacciUntilNum is a Function
+ok 1003 — UUIDGeneratorBrowser is a Function
 
 #  PASS  test/onUserInputChange/onUserInputChange.test.js
 
-ok 1006 — onUserInputChange is a Function
+ok 1004 — onUserInputChange is a Function
 
-#  PASS  test/initializeNDArray/initializeNDArray.test.js
+#  PASS  test/getScrollPosition/getScrollPosition.test.js
 
-ok 1007 — initializeNDArray is a Function
+ok 1005 — getScrollPosition is a Function
+
+#  PASS  test/isBrowserTabFocused/isBrowserTabFocused.test.js
+
+ok 1006 — isBrowserTabFocused is a Function
+
+#  PASS  test/detectDeviceType/detectDeviceType.test.js
+
+ok 1007 — detectDeviceType is a Function
 
 #  PASS  test/observeMutations/observeMutations.test.js
 
 ok 1008 — observeMutations is a Function
 
-#  PASS  test/detectDeviceType/detectDeviceType.test.js
+#  PASS  test/isArmstrongNumber/isArmstrongNumber.test.js
 
-ok 1009 — detectDeviceType is a Function
-
-#  PASS  test/speechSynthesis/speechSynthesis.test.js
-
-ok 1010 — speechSynthesis is a Function
-
-#  PASS  test/arrayToHtmlList/arrayToHtmlList.test.js
-
-ok 1011 — arrayToHtmlList is a Function
-
-#  PASS  test/copyToClipboard/copyToClipboard.test.js
-
-ok 1012 — copyToClipboard is a Function
-
-#  PASS  test/nodeListToArray/nodeListToArray.test.js
-
-ok 1013 — nodeListToArray is a Function
+ok 1009 — isArmstrongNumber is a Function
 
 #  PASS  test/elementContains/elementContains.test.js
 
-ok 1014 — elementContains is a Function
+ok 1010 — elementContains is a Function
 
-#  PASS  test/mostPerformant/mostPerformant.test.js
+#  PASS  test/nodeListToArray/nodeListToArray.test.js
 
-ok 1015 — mostPerformant is a Function
+ok 1011 — nodeListToArray is a Function
 
-#  PASS  test/createEventHub/createEventHub.test.js
+#  PASS  test/speechSynthesis/speechSynthesis.test.js
 
-ok 1016 — createEventHub is a Function
+ok 1012 — speechSynthesis is a Function
 
-#  PASS  test/readFileLines/readFileLines.test.js
+#  PASS  test/copyToClipboard/copyToClipboard.test.js
 
-ok 1017 — readFileLines is a Function
-
-#  PASS  test/httpsRedirect/httpsRedirect.test.js
-
-ok 1018 — httpsRedirect is a Function
-
-#  PASS  test/createElement/createElement.test.js
-
-ok 1019 — createElement is a Function
+ok 1013 — copyToClipboard is a Function
 
 #  PASS  test/bottomVisible/bottomVisible.test.js
 
-ok 1020 — bottomVisible is a Function
+ok 1014 — bottomVisible is a Function
 
-#  PASS  test/isArrayBuffer/isArrayBuffer.test.js
+#  PASS  test/arrayToHtmlList/arrayToHtmlList.test.js
 
-ok 1021 — isArrayBuffer is a Function
+ok 1015 — arrayToHtmlList is a Function
 
-#  PASS  test/howManyTimes/howManyTimes.test.js
+#  PASS  test/mostPerformant/mostPerformant.test.js
 
-ok 1022 — howManyTimes is a Function
+ok 1016 — mostPerformant is a Function
 
-#  PASS  test/removeVowels/removeVowels.test.js
+#  PASS  test/createEventHub/createEventHub.test.js
 
-ok 1023 — removeVowels is a Function
+ok 1017 — createEventHub is a Function
 
-#  PASS  test/triggerEvent/triggerEvent.test.js
+#  PASS  test/createElement/createElement.test.js
 
-ok 1024 — triggerEvent is a Function
-
-#  PASS  test/smoothScroll/smoothScroll.test.js
-
-ok 1025 — smoothScroll is a Function
+ok 1018 — createElement is a Function
 
 #  PASS  test/insertBefore/insertBefore.test.js
 
-ok 1026 — insertBefore is a Function
+ok 1019 — insertBefore is a Function
+
+#  PASS  test/isArrayBuffer/isArrayBuffer.test.js
+
+ok 1020 — isArrayBuffer is a Function
+
+#  PASS  test/httpsRedirect/httpsRedirect.test.js
+
+ok 1021 — httpsRedirect is a Function
+
+#  PASS  test/triggerEvent/triggerEvent.test.js
+
+ok 1022 — triggerEvent is a Function
+
+#  PASS  test/readFileLines/readFileLines.test.js
+
+ok 1023 — readFileLines is a Function
 
 #  PASS  test/isTypedArray/isTypedArray.test.js
 
-ok 1027 — isTypedArray is a Function
+ok 1024 — isTypedArray is a Function
 
 #  PASS  test/insertAfter/insertAfter.test.js
 
-ok 1028 — insertAfter is a Function
+ok 1025 — insertAfter is a Function
 
-#  PASS  test/toggleClass/toggleClass.test.js
+#  PASS  test/smoothScroll/smoothScroll.test.js
 
-ok 1029 — toggleClass is a Function
-
-#  PASS  test/countVowels/countVowels.test.js
-
-ok 1030 — countVowels is a Function
-
-#  PASS  test/hashBrowser/hashBrowser.test.js
-
-ok 1031 — hashBrowser is a Function
-
-#  PASS  test/scrollToTop/scrollToTop.test.js
-
-ok 1032 — scrollToTop is a Function
-
-#  PASS  test/JSONToFile/JSONToFile.test.js
-
-ok 1033 — JSONToFile is a Function
-
-#  PASS  test/httpDelete/httpDelete.test.js
-
-ok 1034 — httpDelete is a Function
-
-#  PASS  test/JSONToDate/JSONToDate.test.js
-
-ok 1035 — JSONToDate is a Function
+ok 1026 — smoothScroll is a Function
 
 #  PASS  test/currentURL/currentURL.test.js
 
-ok 1036 — currentURL is a Function
+ok 1027 — currentURL is a Function
+
+#  PASS  test/howManyTimes/howManyTimes.test.js
+
+ok 1028 — howManyTimes is a Function
+
+#  PASS  test/removeVowels/removeVowels.test.js
+
+ok 1029 — removeVowels is a Function
+
+#  PASS  test/hashBrowser/hashBrowser.test.js
+
+ok 1030 — hashBrowser is a Function
+
+#  PASS  test/toggleClass/toggleClass.test.js
+
+ok 1031 — toggleClass is a Function
+
+#  PASS  test/countVowels/countVowels.test.js
+
+ok 1032 — countVowels is a Function
+
+#  PASS  test/scrollToTop/scrollToTop.test.js
+
+ok 1033 — scrollToTop is a Function
+
+#  PASS  test/JSONToFile/JSONToFile.test.js
+
+ok 1034 — JSONToFile is a Function
+
+#  PASS  test/dayOfYear/dayOfYear.test.js
+
+ok 1035 — dayOfYear is a Function
 
 #  PASS  test/timeTaken/timeTaken.test.js
 
-ok 1037 — timeTaken is a Function
+ok 1036 — timeTaken is a Function
 
-#  PASS  test/isSimilar/isSimilar.test.js
+#  PASS  test/JSONToDate/JSONToDate.test.js
 
-ok 1038 — isSimilar is a Function
+ok 1037 — JSONToDate is a Function
 
 #  PASS  test/isBrowser/isBrowser.test.js
 
-ok 1039 — isBrowser is a Function
+ok 1038 — isBrowser is a Function
+
+#  PASS  test/httpDelete/httpDelete.test.js
+
+ok 1039 — httpDelete is a Function
 
 #  PASS  test/isWeakMap/isWeakMap.test.js
 
 ok 1040 — isWeakMap is a Function
 
-#  PASS  test/dayOfYear/dayOfYear.test.js
+#  PASS  test/isRegExp/isRegExp.test.js
 
-ok 1041 — dayOfYear is a Function
+ok 1041 — isRegExp is a Function
 
 #  PASS  test/isWeakSet/isWeakSet.test.js
 
 ok 1042 — isWeakSet is a Function
 
-#  PASS  test/hasClass/hasClass.test.js
+#  PASS  test/isSimilar/isSimilar.test.js
 
-ok 1043 — hasClass is a Function
-
-#  PASS  test/redirect/redirect.test.js
-
-ok 1044 — redirect is a Function
-
-#  PASS  test/colorize/colorize.test.js
-
-ok 1045 — colorize is a Function
-
-#  PASS  test/getStyle/getStyle.test.js
-
-ok 1046 — getStyle is a Function
-
-#  PASS  test/runAsync/runAsync.test.js
-
-ok 1047 — runAsync is a Function
-
-#  PASS  test/solveRPN/solveRPN.test.js
-
-ok 1048 — solveRPN is a Function
+ok 1043 — isSimilar is a Function
 
 #  PASS  test/httpPost/httpPost.test.js
 
-ok 1049 — httpPost is a Function
+ok 1044 — httpPost is a Function
 
-#  PASS  test/isRegExp/isRegExp.test.js
+#  PASS  test/runAsync/runAsync.test.js
 
-ok 1050 — isRegExp is a Function
+ok 1045 — runAsync is a Function
 
-#  PASS  test/hasFlags/hasFlags.test.js
+#  PASS  test/redirect/redirect.test.js
 
-ok 1051 — hasFlags is a Function
+ok 1046 — redirect is a Function
+
+#  PASS  test/getStyle/getStyle.test.js
+
+ok 1047 — getStyle is a Function
 
 #  PASS  test/setStyle/setStyle.test.js
 
-ok 1052 — setStyle is a Function
+ok 1048 — setStyle is a Function
 
-#  PASS  test/throttle/throttle.test.js
+#  PASS  test/solveRPN/solveRPN.test.js
 
-ok 1053 — throttle is a Function
+ok 1049 — solveRPN is a Function
 
-#  PASS  test/httpGet/httpGet.test.js
+#  PASS  test/hasFlags/hasFlags.test.js
 
-ok 1054 — httpGet is a Function
+ok 1050 — hasFlags is a Function
 
-#  PASS  test/counter/counter.test.js
+#  PASS  test/hasClass/hasClass.test.js
 
-ok 1055 — counter is a Function
-
-#  PASS  test/zipWith/zipWith.test.js
-
-ok 1056 — zipWith is a Function
+ok 1051 — hasClass is a Function
 
 #  PASS  test/factors/factors.test.js
 
-ok 1057 — factors is a Function
+ok 1052 — factors is a Function
+
+#  PASS  test/counter/counter.test.js
+
+ok 1053 — counter is a Function
 
 #  PASS  test/pipeLog/pipeLog.test.js
 
-ok 1058 — pipeLog is a Function
+ok 1054 — pipeLog is a Function
 
 #  PASS  test/httpPut/httpPut.test.js
 
-ok 1059 — httpPut is a Function
+ok 1055 — httpPut is a Function
 
 #  PASS  test/prefix/prefix.test.js
 
-ok 1060 — prefix is a Function
+ok 1056 — prefix is a Function
 
-#  PASS  test/toHash/toHash.test.js
+#  PASS  test/throttle/throttle.test.js
 
-ok 1061 — toHash is a Function
+ok 1057 — throttle is a Function
 
-#  PASS  test/defer/defer.test.js
+#  PASS  test/httpGet/httpGet.test.js
 
-ok 1062 — defer is a Function
+ok 1058 — httpGet is a Function
 
-#  PASS  test/isMap/isMap.test.js
+#  PASS  test/zipWith/zipWith.test.js
 
-ok 1063 — isMap is a Function
+ok 1059 — zipWith is a Function
 
-#  PASS  test/sumBy/sumBy.test.js
+#  PASS  test/colorize/colorize.test.js
 
-ok 1064 — sumBy is a Function
+ok 1060 — colorize is a Function
 
 #  PASS  test/isSet/isSet.test.js
 
-ok 1065 — isSet is a Function
+ok 1061 — isSet is a Function
+
+#  PASS  test/toHash/toHash.test.js
+
+ok 1062 — toHash is a Function
 
 #  PASS  test/show/show.test.js
 
-ok 1066 — show is a Function
-
-#  PASS  test/nest/nest.test.js
-
-ok 1067 — nest is a Function
+ok 1063 — show is a Function
 
 #  PASS  test/hide/hide.test.js
 
-ok 1068 — hide is a Function
+ok 1064 — hide is a Function
 
-#  PASS  test/once/once.test.js
+#  PASS  test/nest/nest.test.js
 
-ok 1069 — once is a Function
+ok 1065 — nest is a Function
 
 #  PASS  test/off/off.test.js
 
-ok 1070 — off is a Function
+ok 1066 — off is a Function
+
+#  PASS  test/sumBy/sumBy.test.js
+
+ok 1067 — sumBy is a Function
+
+#  PASS  test/isMap/isMap.test.js
+
+ok 1068 — isMap is a Function
+
+#  PASS  test/defer/defer.test.js
+
+ok 1069 — defer is a Function
+
+#  PASS  test/once/once.test.js
+
+ok 1070 — once is a Function
 
 #  PASS  test/on/on.test.js
 
@@ -2147,7 +2147,7 @@ ok 1072 — hz is a Function
 
 # Test Suites: 100% ██████████, 356 passed, 356 total
 # Tests:       100% ██████████, 1072 passed, 1072 total
-# Time:        28.695s
+# Time:        79.484s
 
 # Ran all test suites.
 

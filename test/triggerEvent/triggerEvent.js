@@ -1,3 +1,3 @@
-const triggerEvent = (el, eventType, detail) =>
-  el.dispatchEvent(new CustomEvent(eventType, { detail }));
+const triggerEvent = (el, eventType, detail = undefined) =>
+  el.dispatchEvent(new CustomEvent(eventType, { detail: detail }));
 module.exports = triggerEvent;
