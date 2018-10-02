@@ -17,6 +17,7 @@ bindKey:function,object,intermediate
 binomialCoefficient:math,intermediate
 bottomVisible:browser,intermediate
 btoa:node,string,utility,beginner
+bubbleSort:uncategorized
 byteSize:string,beginner
 call:adapter,function,intermediate
 capitalize:string,array,intermediate
