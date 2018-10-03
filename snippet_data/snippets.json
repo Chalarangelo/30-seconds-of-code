@@ -2930,6 +2930,27 @@
       }
     },
     {
+      "id": "isDuplexStream",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "isDuplexStream.md",
+        "text": "Checks if the given argument is a duplex (readable and writable) stream.\n\nCheck if the value is different from `null`, use `typeof` to check if a value is of type `object` and the `pipe` property is of type `function`.\nAdditionally check if the `typeof` the `_read`, `_write` and `_readableState`, `_writableState` properties are `function` and `object` respectively.",
+        "codeBlocks": [
+          "const isDuplexStream = val =>\n  val !== null &&\n  typeof val === 'object' &&\n  typeof val.pipe === 'function' &&\n  typeof val._read === 'function' &&\n  typeof val._readableState === 'object' &&\n  typeof val._write === 'function' &&\n  typeof val._writableState === 'object';",
+          "const Stream = require('stream');\nisDuplexStream(new Stream.Duplex()); // true"
+        ],
+        "tags": [
+          "node",
+          "type",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "b774dbb0eb7647839be1b680627c1890fa4e1dee70b1a627fc6a1c9c0e9f3415"
+      }
+    },
+    {
       "id": "isEmpty",
       "type": "snippet",
       "attributes": {
@@ -3205,6 +3226,27 @@
       }
     },
     {
+      "id": "isReadableStream",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "isReadableStream.md",
+        "text": "Checks if the given argument is a readable stream.\n\nCheck if the value is different from `null`, use `typeof` to check if the value is of type `object` and the `pipe` property is of type `function`.\nAdditionally check if the `typeof` the `_read` and `_readableState` properties are `function` and `object` respectively.",
+        "codeBlocks": [
+          "const isReadableStream = val =>\n  val !== null &&\n  typeof val === 'object' &&\n  typeof val.pipe === 'function' &&\n  typeof val._read === 'function' &&\n  typeof val._readableState === 'object';",
+          "const fs = require('fs');\nisReadableStream(fs.createReadStream('test.txt')); // true"
+        ],
+        "tags": [
+          "node",
+          "type",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "80e8196a7d4a8b335b30d050608b3d901178ba931ce1e51b7f44a9991a53b825"
+      }
+    },
+    {
       "id": "isSameDate",
       "type": "snippet",
       "attributes": {
@@ -3243,6 +3285,27 @@
       "meta": {
         "archived": false,
         "hash": "2dfe9101a9ab2945ffddb46ecbca0fdd5dea384683d310e8adb852ac9c51970f"
+      }
+    },
+    {
+      "id": "isStream",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "isStream.md",
+        "text": "Checks if the given argument is a stream.\n\nCheck if the value is different from `null`, use `typeof` to check if the value is of type `object` and the `pipe` property is of type `function`.",
+        "codeBlocks": [
+          "const isStream = val => val !== null && typeof val === 'object' && typeof val.pipe === 'function';",
+          "const fs = require('fs');\nisStream(fs.createReadStream('test.txt')); // true"
+        ],
+        "tags": [
+          "node",
+          "type",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "926ac2fcee035747468a7dd0bbb57074b33242a2b65eff839b5b4ed47c6341e3"
       }
     },
     {
@@ -3366,6 +3429,27 @@
       "meta": {
         "archived": false,
         "hash": "b4417a972f391836241e88587797a8cd995f32ee71fbfcfe9e590c8fa8675558"
+      }
+    },
+    {
+      "id": "isWritableStream",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "isWritableStream.md",
+        "text": "Checks if the given argument is a writable stream.\n\nCheck if the value is different from `null`, use `typeof` to check if the value is of type `object` and the `pipe` property is of type `function`.\nAdditionally check if the `typeof` the `_write` and `_writableState` properties are `function` and `object` respectively.",
+        "codeBlocks": [
+          "const isWritableStream = val =>\n  val !== null &&\n  typeof val === 'object' &&\n  typeof val.pipe === 'function' &&\n  typeof val._write === 'function' &&\n  typeof val._writableState === 'object';",
+          "const fs = require('fs');\nisWritableStream(fs.createWriteStream('test.txt')); // true"
+        ],
+        "tags": [
+          "node",
+          "type",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "8334e570a144bb5cb8cf971d734b15c70b0912c32c3103ff05b0c1ee60e0c353"
       }
     },
     {
@@ -6232,7 +6316,7 @@
         "fileName": "triggerEvent.md",
         "text": "Triggers a specific event on a given element, optionally passing custom data.\n\nUse `new CustomEvent()` to create an event from the specified `eventType` and details.\nUse `el.dispatchEvent()` to trigger the newly created event on the given element.\nOmit the third argument, `detail`, if you do not want to pass custom data to the triggered event.",
         "codeBlocks": [
-          "const triggerEvent = (el, eventType, detail = undefined) =>\n  el.dispatchEvent(new CustomEvent(eventType, { detail: detail }));",
+          "const triggerEvent = (el, eventType, detail) =>\n  el.dispatchEvent(new CustomEvent(eventType, { detail }));",
           "triggerEvent(document.getElementById('myId'), 'click');\ntriggerEvent(document.getElementById('myId'), 'click', { username: 'bob' });"
         ],
         "tags": [
@@ -6243,7 +6327,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "0089f0db0ccfaae631ff2935a1eb7b5ff38d789255777a8f05188552a527520c"
+        "hash": "f7aec80ce75a7058fe94c36ea21c4db37aa46bcf114817b2d9dc4a71c16b62ba"
       }
     },
     {

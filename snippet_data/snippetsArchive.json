@@ -194,14 +194,14 @@
         "fileName": "isSimilar.md",
         "text": "Determines if the `pattern` matches with `str`.\n\nUse `String.toLowerCase()` to convert both strings to lowercase, then loop through `str` and determine if it contains all characters of `pattern` and in the correct order.\nAdapted from [here](https://github.com/forrestthewoods/lib_fts/blob/80f3f8c52db53428247e741b9efe2cde9667050c/code/fts_fuzzy_match.js#L18).",
         "codeBlocks": [
-          "const isSimilar = (pattern, str) =>\n  [...str].reduce(\n    (matchIndex, char) =>\n      char.toLowerCase() === (pattern[matchIndex] || '').toLowerCase()\n        ? matchIndex + 1\n        : matchIndex,\n    0\n  ) === pattern.length\n    ? true\n    : false;",
+          "const isSimilar = (pattern, str) =>\n  [...str].reduce(\n      (matchIndex, char) =>\n          char.toLowerCase() === (pattern[matchIndex] || '').toLowerCase()\n              ? matchIndex + 1\n              : matchIndex,\n      0\n  ) === pattern.length;",
           "isSimilar('rt','Rohit'); // true\nisSimilar('tr','Rohit'); // false"
         ],
         "tags": []
       },
       "meta": {
         "archived": true,
-        "hash": "570b1b21e29f3793d7c1f001958ec68a7c27b913d65e37cf5f078b1e6a839437"
+        "hash": "7a3643ea48d34cc34e33f256cb41ca6a8ad1b8a8830ba2ed3e2354aea3a7bb52"
       }
     },
     {
