@@ -5,7 +5,7 @@ test('tomorrow is a Function', () => {
   expect(tomorrow).toBeInstanceOf(Function);
 });
 const t1 = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() + 1);
-const t2 = new Date(tomorrow());
+const t2 = new Date(tomorrow(true));
 test('Returns the correct year', () => {
   expect(t1.getFullYear()).toBe(t2.getFullYear());
 });
