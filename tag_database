@@ -139,6 +139,7 @@ isBoolean:type,beginner
 isBrowser:utility,browser,intermediate
 isBrowserTabFocused:browser,beginner
 isDivisible:math,beginner
+isDuplexStream:node,type,intermediate
 isEmpty:type,array,object,string,beginner
 isEven:math,beginner
 isFunction:type,function,beginner
@@ -152,6 +153,7 @@ isPlainObject:type,object,intermediate
 isPrime:math,beginner,intermediate
 isPrimitive:type,function,array,string,intermediate
 isPromiseLike:type,function,promise,intermediate
+isReadableStream:node,type,intermediate
 isSameDate:date,utility,beginner
 isSorted:array,intermediate
 isStream:node,type,intermediate
@@ -161,6 +163,7 @@ isTravisCI:node,intermediate
 isUndefined:type,beginner
 isUpperCase:string,utility,beginner
 isValidJSON:type,json,intermediate
+isWritableStream:node,type,intermediate
 join:array,intermediate
 JSONtoCSV:array,string,object,advanced
 JSONToFile:node,json,intermediate
