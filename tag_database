@@ -235,6 +235,7 @@ randomHexColorCode:utility,random,beginner
 randomIntArrayInRange:math,utility,random,intermediate
 randomIntegerInRange:math,utility,random,beginner
 randomNumberInRange:math,utility,random,beginner
+range:math,utility,beginner,array
 readFileLines:node,array,string,beginner
 rearg:adapter,function,intermediate
 recordAnimationFrames:browser,utility,intermediate
