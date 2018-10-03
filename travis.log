@@ -65,7 +65,7 @@ Unknown parameter: "encrypt".
 
     If only one argument is specified, it is assumed to be the name of a trajectory file.
     If argument is specified at all, TRAVIS asks for the trajectory file to open.
-
+//
 
     Note: To show a list of all persons who contributed to TRAVIS,
           please add "-credits" to your command line arguments, or set the
