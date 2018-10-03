@@ -73,6 +73,7 @@ To import snippets directly:
 ```js
 // CommonJS
 const { average } = require('30-seconds-of-code');
+
 average(1, 2, 3);
 
 // ES Modules
@@ -84,6 +85,8 @@ average(1, 2, 3);
 ## Table of Contents
 
 ### 🔌 Adapter
+### buhhaahah
+
 
 <details>
 <summary>View contents</summary>
