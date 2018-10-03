@@ -2740,15 +2740,11 @@ takeRight([1, 2, 3]); // [3]
 
 Removes elements from the end of an array until the passed function returns `true`. Returns the removed elements.
 
-Loop through the array, using a `for...of` loop over `Array.prototype.keys()` until the returned value from the function is `true`.
-Return the removed elements, using `Array.prototype.reverse()` and `Array.prototype.slice()`.
+Loop through the array, using a `Array.prototype.reduceRight()` and accumulating elements while the function returns falsy value.
 
 ```js
-const takeRightWhile = (arr, func) => {
-  for (let i of arr.reverse().keys())
-    if (func(arr[i])) return arr.reverse().slice(arr.length - i, arr.length);
-  return arr;
-};
+const takeRightWhile = (arr, func) =>
+  arr.reduceRight((acc, el) => (func(el) ? acc : [el, ...acc]), []);
 ```
 
 <details>
@@ -4157,8 +4153,8 @@ Use `el.dispatchEvent()` to trigger the newly created event on the given element
 Omit the third argument, `detail`, if you do not want to pass custom data to the triggered event.
 
 ```js
-const triggerEvent = (el, eventType, detail = undefined) =>
-  el.dispatchEvent(new CustomEvent(eventType, { detail: detail }));
+const triggerEvent = (el, eventType, detail) =>
+  el.dispatchEvent(new CustomEvent(eventType, { detail }));
 ```
 
 <details>
@@ -8598,7 +8594,7 @@ isPromiseLike({}); // false
 
 ### isString
 
-Checks if the given argument is a string.
+Checks if the given argument is a string. Only works for string primitives.
 
 Use `typeof` to check if a value is classified as a string primitive.
 

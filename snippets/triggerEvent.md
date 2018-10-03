@@ -7,8 +7,8 @@ Use `el.dispatchEvent()` to trigger the newly created event on the given element
 Omit the third argument, `detail`, if you do not want to pass custom data to the triggered event.
 
 ```js
-const triggerEvent = (el, eventType, detail = undefined) =>
-  el.dispatchEvent(new CustomEvent(eventType, { detail: detail }));
+const triggerEvent = (el, eventType, detail) =>
+  el.dispatchEvent(new CustomEvent(eventType, { detail }));
 ```
 
 ```js
