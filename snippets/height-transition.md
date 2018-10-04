@@ -35,36 +35,6 @@ el.style.setProperty('--max-height', height + 'px')
 
 #### Demo
 
-<div class="snippet-demo">
-  <div class="snippet-demo__height-transition">
-    Hover me to see a height transition.
-    <div class="snippet-demo__height-transition__el">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque congue placerat nunc a volutpat. Etiam placerat libero porttitor purus facilisis vehicula. Mauris risus mauris, varius ac consequat eget, iaculis non enim. Proin ut nunc ac massa iaculis sodales id mattis enim. Cras non diam ac quam pharetra fermentum vel ac nulla. Suspendisse ligula urna, porta non lobortis non, lobortis vel velit. Fusce lectus justo, aliquet eu fringilla auctor, sodales eu orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-    </div>
-  </div>
-</div>
-
-<style>
-
-.snippet-demo__height-transition__el {
-  transition: max-height 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-  overflow: hidden;
-  max-height: 0;
-}
-
-.snippet-demo__height-transition:hover > .snippet-demo__height-transition__el {
-  max-height: var(--max-height);
-}
-</style>
-
-<script>
-;(function () {
-  var el = document.querySelector('.snippet-demo__height-transition__el')
-  var height = el.scrollHeight
-  el.style.setProperty('--max-height', height + 'px')
-})()
-</script>
-
 #### Explanation
 
 ##### CSS

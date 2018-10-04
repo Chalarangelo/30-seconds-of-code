@@ -25,31 +25,11 @@ Vertically and horizontally centers a child element within its parent element us
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
 }
 ```
 
 #### Demo
-
-<div class="snippet-demo">
-  <div class="snippet-demo__parent">
-    <div class="snippet-demo__child">Centered content</div>
-  </div>
-</div>
-
-<style>
-.snippet-demo__parent {
-  border: 1px solid #333;
-  height: 250px;
-  position: relative;
-  width: 250px;
-}
-.snippet-demo__child {
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-</style>
 
 #### Explanation
 

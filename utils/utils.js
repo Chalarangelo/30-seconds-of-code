@@ -18,3 +18,6 @@ exports.createElement = str => {
   el.innerHTML = str
   return el.firstElementChild
 }
+
+exports.getCode = (type, str) =>
+  (str.match(new RegExp('```' + type + '([\\s\\S]*?)```')) || [])[1] || ''

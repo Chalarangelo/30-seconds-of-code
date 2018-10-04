@@ -16,17 +16,7 @@ Brief description
 
 #### Demo
 
-<!-- You must create a `snippet-demo` parent block and use it as a namespace with BEM syntax. -->
-
-<div class="snippet-demo">
-  <some-element class="snippet-demo__snippet-name"></some-element>
-</div>
-
-<!-- Add your style rules here. -->
-
-<style>
-
-</style>
+<!-- Leave this blank, the build script will generate the demo for you. -->
 
 #### Explanation
 

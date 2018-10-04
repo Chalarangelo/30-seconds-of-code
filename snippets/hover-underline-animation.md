@@ -38,34 +38,6 @@ Creates an animated underline effect when the text is hovered over.
 
 #### Demo
 
-<div class="snippet-demo">
-  <p class="snippet-demo__hover-underline-animation">Hover this text to see the effect!</p>
-</div>
-
-<style>
-.snippet-demo__hover-underline-animation {
-  display: inline-block;
-  position: relative;
-  color: #0087ca;
-}
-.snippet-demo__hover-underline-animation::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #0087ca;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-.snippet-demo__hover-underline-animation:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-</style>
-
 #### Explanation
 
 1. `display: inline-block` makes the block `p` an `inline-block` to prevent the underline from

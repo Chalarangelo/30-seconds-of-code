@@ -1,11 +1,11 @@
 ### Popout menu
 
-Reveals an interactive popout menu on hover.
+Reveals an interactive popout menu on hover and focus.
 
 #### HTML
 
 ```html
-<div class="reference">
+<div class="reference" tabindex="0">
   <div class="popout-menu">
     Popout menu
   </div>
@@ -17,50 +17,25 @@ Reveals an interactive popout menu on hover.
 ```css
 .reference {
   position: relative;
+  background: tomato;
+  width: 100px;
+  height: 100px;
 }
 .popout-menu {
   position: absolute;
   visibility: hidden;
   left: 100%;
+  background: #333;
+  color: white;
+  padding: 15px;
 }
-.reference:hover > .popout-menu {
+.reference:hover > .popout-menu,
+.reference:focus > .popout-menu {
   visibility: visible;
 }
 ```
 
 #### Demo
-
-<div class="snippet-demo">
-  <div class="snippet-demo__reference">
-    <div class="snippet-demo__popout-menu">
-      Popout menu
-    </div>
-  </div>
-</div>
-
-<style>
-.snippet-demo__reference {
-  background: linear-gradient(135deg, #ff4c9f, #ff7b74);
-  height: 75px;
-  width: 75px;
-  position: relative;
-  will-change: transform;
-}
-.snippet-demo__popout-menu {
-  position: absolute;
-  visibility: hidden;
-  left: 100%;
-  background: #333;
-  color: white;
-  font-size: 0.9rem;
-  padding: 0.4rem 0.8rem;
-  width: 100px;
-  text-align: center;
-}
-.snippet-demo__reference:hover > .snippet-demo__popout-menu {
-  visibility: visible;
-}
-</style>
 
 #### Explanation
 

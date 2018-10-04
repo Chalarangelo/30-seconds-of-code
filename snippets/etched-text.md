@@ -21,19 +21,6 @@ Creates an effect where text appears to be "etched" or engraved into the backgro
 
 #### Demo
 
-<div class="snippet-demo">
-  <p class="snippet-demo__etched-text">I appear etched into the background.</p>
-</div>
-
-<style>
-.snippet-demo__etched-text {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #b8bec5;
-  text-shadow: 0 2px 0 white;
-}
-</style>
-
 #### Explanation
 
 `text-shadow: 0 2px white` creates a white shadow offset `0px` horizontally and `2px` vertically

@@ -32,34 +32,6 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
 
 #### Demo
 
-<div class="snippet-demo">
-  <p class="snippet-demo__pretty-text-underline">Pretty text underline without clipping descending letters.</p>
-</div>
-
-<style>
-.snippet-demo__pretty-text-underline {
-  display: inline;
-  text-shadow: 1px 1px 0 #f5f6f9,
-    -1px 1px 0 #f5f6f9,
-    -1px -1px 0 #f5f6f9,
-    1px -1px 0 #f5f6f9;
-  background-image: linear-gradient(90deg, currentColor 100%, transparent 100%);
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: 100% 1px;
-}
-
-.snippet-demo__pretty-text-underline::-moz-selection {
-  background-color: rgba(0, 150, 255, 0.3);
-  text-shadow: none;
-}
-
-.snippet-demo__pretty-text-underline::selection {
-  background-color: rgba(0, 150, 255, 0.3);
-  text-shadow: none;
-}
-</style>
-
 #### Explanation
 
 1. `text-shadow` uses 4 values with offsets that cover a 4x4 px area to ensure the underline

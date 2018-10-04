@@ -34,35 +34,6 @@ li::before {
 
 #### Demo
 
-<div class="snippet-demo">
-	<div class="snippet-demo__countable-section">
-    <ul>
-      <li>List item</li>
-      <li>List item</li>
-      <li>
-        List item
-        <ul>
-          <li>List item</li>
-          <li>List item</li>
-          <li>List item</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</div>
-
-<style>
-  .snippet-demo__countable-section ul {
-    counter-reset: counter;
-    list-style-type: none;
-  }
-
-  .snippet-demo__countable-section li::before {
-    counter-increment: counter;
-    content: counters(counter, '.') ' ';
-  }
-</style>
-
 #### Explanation
 
 You can create a ordered list using any type of HTML.

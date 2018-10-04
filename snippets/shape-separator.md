@@ -28,26 +28,6 @@ Uses an SVG shape to separate two different blocks to create more a interesting 
 
 #### Demo
 
-<div class="snippet-demo is-distinct">
-  <div class="snippet-demo__shape-separator"></div>
-</div>
-
-<style>
-.snippet-demo__shape-separator {
-  position: relative;
-  height: 48px;
-  margin: -0.75rem -1.25rem;
-}
-.snippet-demo__shape-separator::after {
-  content: '';
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 12'%3E%3Cpath d='m12 0l12 12h-24z' fill='%23fff'/%3E%3C/svg%3E");
-  position: absolute;
-  width: 100%;
-  height: 12px;
-  bottom: 0;
-}
-</style>
-
 #### Explanation
 
 1. `position: relative` on the element establishes a Cartesian positioning context for pseudo elements.

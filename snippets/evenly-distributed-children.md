@@ -23,22 +23,6 @@ Evenly distributes child elements within a parent element.
 
 #### Demo
 
-<div class="snippet-demo">
-  <div class="snippet-demo__evenly-distributed-children">
-    <p>Item1</p>
-    <p>Item2</p>
-    <p>Item3</p>
-  </div>
-</div>
-
-<style>
-.snippet-demo__evenly-distributed-children {
-  display: flex;
-  width: 100%;  
-  justify-content: space-between;
-}
-</style>
-
 #### Explanation
 
 1. `display: flex` enables flexbox.

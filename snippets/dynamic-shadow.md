@@ -33,31 +33,6 @@ Creates a shadow similar to `box-shadow` but based on the colors of the element 
 
 #### Demo
 
-<div class="snippet-demo">
-  <div class="snippet-demo__dynamic-shadow"></div>
-</div>
-
-<style>
-.snippet-demo__dynamic-shadow {
-  position: relative;
-  width: 10rem;
-  height: 10rem;
-  background: linear-gradient(75deg, #6d78ff, #00ffb8);
-  z-index: 1;
-}
-.snippet-demo__dynamic-shadow::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: inherit;
-  top: 0.5rem;
-  filter: blur(0.4rem);
-  opacity: 0.7;
-  z-index: -1;
-}
-</style>
-
 #### Explanation
 
 1. `position: relative` on the element establishes a Cartesian positioning context for psuedo-elements.

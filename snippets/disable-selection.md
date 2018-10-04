@@ -19,17 +19,6 @@ Makes the content unselectable.
 
 #### Demo
 
-<div class="snippet-demo">
-  <p>You can select me.</p>
-  <p class="snippet-demo__disable-selection">You can't select me!</p>
-</div>
-
-<style>
-.snippet-demo__disable-selection {
-  user-select: none;
-}
-</style>
-
 #### Explanation
 
 `user-select: none` specifies that the text cannot be selected.

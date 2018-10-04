@@ -23,21 +23,6 @@ Changes the styling of text selection.
 
 #### Demo
 
-<div class="snippet-demo">
-  <p class="snippet-demo__custom-text-selection">Select some of this text.</p>
-</div>
-
-<style>
-.snippet-demo__custom-text-selection::selection {
-  background: deeppink;
-  color: white;
-}
-.snippet-demo__custom-text-selection::-moz-selection {
-  background: deeppink;
-  color: white;
-}
-</style>
-
 #### Explanation
 
 `::selection` defines a pseudo selector on an element to style text within it when selected. Note that if you don't combine any other selector your style will be applied at document root level, to any selectable element.
