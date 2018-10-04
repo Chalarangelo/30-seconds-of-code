@@ -31,6 +31,6 @@ Gives text a gradient color.
 
 <span class="snippet__support-note">⚠️ Uses non-standard properties.</span>
 
-* https://caniuse.com/#feat=text-stroke
+- https://caniuse.com/#feat=text-stroke
 
 <!-- tags: visual -->

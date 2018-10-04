@@ -59,7 +59,7 @@ el.style.setProperty('--max-height', height + 'px')
   beneath the element that is transitioning in height.
 </span>
 
-* https://caniuse.com/#feat=css-variables
-* https://caniuse.com/#feat=css-transitions
+- https://caniuse.com/#feat=css-variables
+- https://caniuse.com/#feat=css-transitions
 
 <!-- tags: animation -->

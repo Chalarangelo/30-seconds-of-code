@@ -32,6 +32,6 @@ values will create an ellipse.
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
-* https://caniuse.com/#feat=border-radius
+- https://caniuse.com/#feat=border-radius
 
 <!-- tags: visual -->

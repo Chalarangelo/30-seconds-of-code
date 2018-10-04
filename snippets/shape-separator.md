@@ -42,6 +42,6 @@ Uses an SVG shape to separate two different blocks to create more a interesting 
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
-* https://caniuse.com/#feat=svg
+- https://caniuse.com/#feat=svg
 
 <!-- tags: visual -->

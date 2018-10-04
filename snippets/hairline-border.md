@@ -47,8 +47,8 @@ very sharp and crisp.
 
 <span class="snippet__support-note">⚠️ Needs alternate syntax and JavaScript user agent checking for full support.</span>
 
-* https://caniuse.com/#feat=css-boxshadow
-* https://caniuse.com/#feat=css-media-resolution
+- https://caniuse.com/#feat=css-boxshadow
+- https://caniuse.com/#feat=css-media-resolution
 
 <hr>
 

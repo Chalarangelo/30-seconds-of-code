@@ -50,7 +50,7 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
-* https://caniuse.com/#feat=css-textshadow
-* https://caniuse.com/#feat=css-gradients
+- https://caniuse.com/#feat=css-textshadow
+- https://caniuse.com/#feat=css-gradients
 
 <!-- tags: visual -->
