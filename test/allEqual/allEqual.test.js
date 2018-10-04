@@ -36,3 +36,7 @@ test('Falsy trues', () => {
 test('Falsy falses', () => {
   expect(allEqual([false, false, true])).toBeFalsy();
 });
+
+test('False when there are different types', () => {
+  expect(allEqual([1, '1', true])).toBeFalsy();
+});
