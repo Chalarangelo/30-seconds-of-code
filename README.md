@@ -6158,7 +6158,7 @@ Decodes a string of data which has been encoded using base-64 encoding.
 Create a `Buffer` for the given string with base-64 encoding and use `Buffer.toString('binary')` to return the decoded string.
 
 ```js
-const atob = str => new Buffer(str, 'base64').toString('binary');
+const atob = str => Buffer.from(str, 'base64').toString('binary');
 ```
 
 <details>
@@ -6179,7 +6179,7 @@ Creates a base-64 encoded ASCII string from a String object in which each charac
 Create a `Buffer` for the given string with binary encoding and use `Buffer.toString('base64')` to return the encoded string.
 
 ```js
-const btoa = str => new Buffer(str, 'binary').toString('base64');
+const btoa = str => new Buffer.from(str, 'binary').toString('base64');
 ```
 
 <details>
