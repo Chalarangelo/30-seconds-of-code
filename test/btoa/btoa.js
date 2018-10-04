@@ -1,2 +1,2 @@
-const btoa = str => new Buffer.from(str, 'binary').toString('base64');
+const btoa = str => Buffer.from(str, 'binary').toString('base64');
 module.exports = btoa;
