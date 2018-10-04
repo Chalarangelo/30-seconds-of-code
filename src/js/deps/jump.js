@@ -1,7 +1,9 @@
 ;(function(global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined'
     ? (module.exports = factory())
-    : typeof define === 'function' && define.amd ? define(factory) : (global.Jump = factory())
+    : typeof define === 'function' && define.amd
+      ? define(factory)
+      : (global.Jump = factory())
 })(this, function() {
   'use strict'
 
@@ -12,9 +14,9 @@
 
   var easeInOutQuad = function easeInOutQuad(t, b, c, d) {
     t /= d / 2
-    if (t < 1) return c / 2 * t * t + b
+    if (t < 1) return (c / 2) * t * t + b
     t--
-    return -c / 2 * (t * (t - 2) - 1) + b
+    return (-c / 2) * (t * (t - 2) - 1) + b
   }
 
   var _typeof =

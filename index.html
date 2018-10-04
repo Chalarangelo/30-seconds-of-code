@@ -29,7 +29,6 @@
           <a class="sidebar__link" href="#evenly-distributed-children"><span>Evenly distributed children</span></a>
           <a class="sidebar__link" href="#flexbox-centering"><span>Flexbox centering</span></a>
           <a class="sidebar__link" href="#grid-centering"><span>Grid centering</span></a>
-          <a class="sidebar__link" href="#grid-layout"><span>Grid layout</span></a>
           <a class="sidebar__link" href="#last-item-with-remaining-available-height"><span>Last item with remaining available height</span></a>
           <a class="sidebar__link" href="#transform-centering"><span>Transform centering</span></a>
           <a class="sidebar__link" href="#truncate-text"><span>Truncate text</span></a>
@@ -66,6 +65,7 @@
           <a class="sidebar__link" href="#mouse-cursor-gradient-tracking"><span>Mouse cursor gradient tracking</span></a>
           <a class="sidebar__link" href="#popout-menu"><span>Popout menu</span></a>
           <a class="sidebar__link" href="#sibling-fade"><span>Sibling fade</span></a>
+          <a class="sidebar__link" href="#toggle-switch"><span>Toggle switch</span></a>
         </section>
         <section data-type="other" class="sidebar__section">
           <h4 class="sidebar__section-heading">other</h4>
@@ -142,8 +142,8 @@
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <div class="snippet-demo__bouncing-loader">
+            <div class="snippet-demo" data-scope="bouncing-loader.md">
+              <div class="bouncing-loader">
                 <div></div>
                 <div></div>
                 <div></div>
@@ -160,11 +160,11 @@
                   transform: translateY(-1rem);
                 }
               }
-              .snippet-demo__bouncing-loader {
+              [data-scope="bouncing-loader.md"] .bouncing-loader {
                 display: flex;
                 justify-content: center;
               }
-              .snippet-demo__bouncing-loader>div {
+              [data-scope="bouncing-loader.md"] .bouncing-loader>div {
                 width: 1rem;
                 height: 1rem;
                 margin: 3rem 0.2rem;
@@ -172,10 +172,10 @@
                 border-radius: 50%;
                 animation: bouncing-loader 0.6s infinite alternate;
               }
-              .snippet-demo__bouncing-loader>div:nth-child(2) {
+              [data-scope="bouncing-loader.md"] .bouncing-loader>div:nth-child(2) {
                 animation-delay: 0.2s;
               }
-              .snippet-demo__bouncing-loader>div:nth-child(3) {
+              [data-scope="bouncing-loader.md"] .bouncing-loader>div:nth-child(3) {
                 animation-delay: 0.4s;
               }
             </style>
@@ -223,6 +223,9 @@
           <div class="snippet">
             <h3 id="box-sizing-reset"><span>Box-sizing reset</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
             <p>Resets the box-model so that <code>width</code>s and <code>height</code>s are not affected by their <code>border</code>s or <code>padding</code>.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="box"&gt;border-box&lt;/div&gt;
+&lt;div class="box content-box"&gt;content-box&lt;/div&gt;
+</code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">html {
   box-sizing: border-box;
 }
@@ -231,20 +234,44 @@
 *::after {
   box-sizing: inherit;
 }
+.box {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  background: tomato;
+  color: white;
+  border: 10px solid red;
+}
+.content-box {
+  box-sizing: content-box;
+}
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <div class="snippet-demo__box-sizing-reset">Demo</div>
+            <div class="snippet-demo" data-scope="box-sizing-reset.md">
+              <div class="box">border-box</div>
+              <div class="box content-box">content-box</div>
             </div>
             <style>
-              .snippet-demo__box-sizing-reset {
+              [data-scope="box-sizing-reset.md"] html {
                 box-sizing: border-box;
-                width: 200px;
-                padding: 1.5em;
-                color: #7983ff;
-                font-family: sans-serif;
-                background-color: white;
-                border: 5px solid;
+              }
+              [data-scope="box-sizing-reset.md"] *,
+              [data-scope="box-sizing-reset.md"] *::before,
+              [data-scope="box-sizing-reset.md"] *::after {
+                box-sizing: inherit;
+              }
+              [data-scope="box-sizing-reset.md"] .box {
+                display: inline-block;
+                width: 150px;
+                height: 150px;
+                padding: 10px;
+                background: tomato;
+                color: white;
+                border: 10px solid red;
+              }
+              [data-scope="box-sizing-reset.md"] .content-box {
+                box-sizing: content-box;
               }
             </style>
             <h4>Explanation</h4>
@@ -329,11 +356,11 @@
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <div class="snippet-demo__circle"></div>
+            <div class="snippet-demo" data-scope="circle.md">
+              <div class="circle"></div>
             </div>
             <style>
-              .snippet-demo__circle {
+              [data-scope="circle.md"] .circle {
                 border-radius: 50%;
                 width: 2rem;
                 height: 2rem;
@@ -378,20 +405,20 @@
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <div class="snippet-demo__clearfix">
-                <div class="snippet-demo__floated">float a</div>
-                <div class="snippet-demo__floated">float b</div>
-                <div class="snippet-demo__floated">float c</div>
+            <div class="snippet-demo" data-scope="clearfix.md">
+              <div class="clearfix">
+                <div class="floated">float a</div>
+                <div class="floated">float b</div>
+                <div class="floated">float c</div>
               </div>
             </div>
             <style>
-              .snippet-demo__clearfix::after {
+              [data-scope="clearfix.md"] .clearfix::after {
                 content: '';
                 display: block;
                 clear: both;
               }
-              .snippet-demo__floated {
+              [data-scope="clearfix.md"] .floated {
                 float: left;
               }
             </style>
@@ -432,21 +459,20 @@
 }
 </code></pre>
             <h4>Demo</h4>
-            <p>Resize your browser window to see the proportion of the element remain the same.</p>
-            <div class="snippet-demo">
-              <div class="snippet-demo__constant-width-to-height-ratio"></div>
+            <div class="snippet-demo" data-scope="constant-width-to-height-ratio.md">
+              <div class="constant-width-to-height-ratio"></div>
             </div>
             <style>
-              .snippet-demo__constant-width-to-height-ratio {
+              [data-scope="constant-width-to-height-ratio.md"] .constant-width-to-height-ratio {
                 background: #333;
                 width: 50%;
               }
-              .snippet-demo__constant-width-to-height-ratio::before {
+              [data-scope="constant-width-to-height-ratio.md"] .constant-width-to-height-ratio::before {
                 content: '';
                 padding-top: 100%;
                 float: left;
               }
-              .snippet-demo__constant-width-to-height-ratio::after {
+              [data-scope="constant-width-to-height-ratio.md"] .constant-width-to-height-ratio::after {
                 content: '';
                 display: block;
                 clear: both;
@@ -473,7 +499,14 @@
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;ul&gt;
   &lt;li&gt;List item&lt;/li&gt;
   &lt;li&gt;List item&lt;/li&gt;
-  &lt;li&gt;List item&lt;/li&gt;
+  &lt;li&gt;
+    List item
+    &lt;ul&gt;
+      &lt;li&gt;List item&lt;/li&gt;
+      &lt;li&gt;List item&lt;/li&gt;
+      &lt;li&gt;List item&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">ul {
@@ -485,30 +518,27 @@ li::before {
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <div class="snippet-demo__countable-section">
-                <ul>
-                  <li>List item</li>
-                  <li>List item</li>
-                  <li>
-                    List item
-                    <ul>
-                      <li>List item</li>
-                      <li>List item</li>
-                      <li>List item</li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
+            <div class="snippet-demo" data-scope="counter.md">
+              <ul>
+                <li>List item</li>
+                <li>List item</li>
+                <li>
+                  List item
+                  <ul>
+                    <li>List item</li>
+                    <li>List item</li>
+                    <li>List item</li>
+                  </ul>
+                </li>
+              </ul>
             </div>
             <style>
-              .snippet-demo__countable-section ul {
+              [data-scope="counter.md"] ul {
                 counter-reset: counter;
-                list-style-type: none;
               }
-              .snippet-demo__countable-section li::before {
+              [data-scope="counter.md"] li::before {
                 counter-increment: counter;
-                content: counters(counter, '.') ' ';
+                content: counters(counter, ".") " ";
               }
             </style>
             <h4>Explanation</h4>
@@ -521,10 +551,10 @@ li::before {
                 <p><code>counter-increment</code> Used in element that will be countable. Once <code>counter-reset</code> initialized, a counter's value can be increased or decreased.</p>
               </li>
               <li>
-                <p><code>counter(name, style)</code> Displays the value of a section counter. Generally used in a <code>content</code> property. This function can recieve two parameters, the first as the name of the counter and the second one can be <code>decimal</code>                  or <code>upper-roman</code> (<code>decimal</code> by default).</p>
+                <p><code>counter(name, style)</code> Displays the value of a section counter. Generally used in a <code>content</code> property. This function can receive two parameters, the first as the name of the counter and the second one can be <code>decimal</code>                  or <code>upper-roman</code> (<code>decimal</code> by default).</p>
               </li>
               <li>
-                <p><code>counters(counter, string, style)</code> Displays the value of a section counter. Generally used in a <code>content</code> property. This function can recieve three parameters, the first as the name of the counter, the second one
+                <p><code>counters(counter, string, style)</code> Displays the value of a section counter. Generally used in a <code>content</code> property. This function can receive three parameters, the first as the name of the counter, the second one
                   you can include a string which comes after the counter and the third one can be <code>decimal</code> or <code>upper-roman</code> (<code>decimal</code> by default).</p>
               </li>
               <li>
@@ -551,49 +581,58 @@ li::before {
             <h3 id="custom-scrollbar"><span>Custom scrollbar</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
             <p>Customizes the scrollbar style for the document and elements with scrollable overflow, on WebKit platforms.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="custom-scrollbar"&gt;
-  &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui iure, consequatur velit sit?&lt;/p&gt;
+  &lt;p&gt;
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.&lt;br&gt;
+    Iure id exercitationem nulla qui repellat laborum vitae, &lt;br&gt;
+    molestias tempora velit natus. Quas, assumenda nisi. &lt;br&gt;
+    Quisquam enim qui iure, consequatur velit sit?
+  &lt;/p&gt;
 &lt;/div&gt;
 </code></pre>
-            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">/* Document scrollbar */
-::-webkit-scrollbar {
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.custom-scrollbar {
+  height: 70px;
+  overflow-y: scroll;
+}
+/* To style the document scrollbar, remove `.custom-scrollbar` */
+.custom-scrollbar::-webkit-scrollbar {
   width: 8px;
 }
-::-webkit-scrollbar-track {
+.custom-scrollbar::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
 }
-::-webkit-scrollbar-thumb {
+.custom-scrollbar::-webkit-scrollbar-thumb {
   border-radius: 10px;
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
-/* Scrollable element */
-.some-element::webkit-scrollbar {
-}
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <div class="snippet-demo__custom-scrollbar">
+            <div class="snippet-demo" data-scope="custom-scrollbar.md">
+              <div class="custom-scrollbar">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui iure, consequatur velit sit?
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui iure, consequatur velit sit?
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  <br> Iure id exercitationem nulla qui repellat laborum vitae,
+                  <br> molestias tempora velit natus. Quas, assumenda nisi.
+                  <br> Quisquam enim qui iure, consequatur velit sit?
                 </p>
               </div>
             </div>
             <style>
-              .snippet-demo__custom-scrollbar {
-                height: 100px;
-                overflow: auto;
+              [data-scope="custom-scrollbar.md"] {
+                /* To style the document scrollbar, remove `.custom-scrollbar` */
               }
-              .snippet-demo__custom-scrollbar::-webkit-scrollbar {
+              [data-scope="custom-scrollbar.md"] .custom-scrollbar {
+                height: 70px;
+                overflow-y: scroll;
+              }
+              [data-scope="custom-scrollbar.md"] .custom-scrollbar::-webkit-scrollbar {
                 width: 8px;
               }
-              .snippet-demo__custom-scrollbar::-webkit-scrollbar-track {
+              [data-scope="custom-scrollbar.md"] .custom-scrollbar::-webkit-scrollbar-track {
                 box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
                 border-radius: 10px;
               }
-              .snippet-demo__custom-scrollbar::-webkit-scrollbar-thumb {
+              [data-scope="custom-scrollbar.md"] .custom-scrollbar::-webkit-scrollbar-thumb {
                 border-radius: 10px;
                 box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
               }
@@ -605,8 +644,7 @@ li::before {
               <li><code>::-webkit-scrollbar-thumb</code> targets the scrollbar thumb.</li>
             </ol>
             <p>There are many other pseudo-elements that you can use to style scrollbars. For more info, visit the
-              <a href="https://webkit.org/blog/363/styling-scrollbars/" target="_blank">WebKit Blog</a>
-            </p>
+              <a href="https://webkit.org/blog/363/styling-scrollbars/" target="_blank">WebKit Blog</a>.</p>
             <h4>Browser support</h4>
             <div>
               <div class="snippet__browser-support">
@@ -637,15 +675,15 @@ li::before {
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <p class="snippet-demo__custom-text-selection">Select some of this text.</p>
+            <div class="snippet-demo" data-scope="custom-text-selection.md">
+              <p class="custom-text-selection">Select some of this text.</p>
             </div>
             <style>
-              .snippet-demo__custom-text-selection::selection {
-                background: deeppink;
-                color: white;
+              [data-scope="custom-text-selection.md"] ::selection {
+                background: aquamarine;
+                color: black;
               }
-              .snippet-demo__custom-text-selection::-moz-selection {
+              [data-scope="custom-text-selection.md"] .custom-text-selection::selection {
                 background: deeppink;
                 color: white;
               }
@@ -674,12 +712,13 @@ in any specification.</span></p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p class="custom-variables"&gt;CSS is awesome!&lt;/p&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">:root {
+  /* Place variables within here to use the variables globally. */
+}
+.custom-variables {
   --some-color: #da7800;
   --some-keyword: italic;
   --some-size: 1.25em;
   --some-complex-value: 1px 1px 2px whitesmoke, 0 0 1em slategray, 0 0 0.2em slategray;
-}
-.custom-variables {
   color: var(--some-color);
   font-size: var(--some-size);
   font-style: var(--some-keyword);
@@ -687,19 +726,18 @@ in any specification.</span></p>
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <div class="snippet-demo__custom-variables">
-                <p>CSS is awesome!</p>
-              </div>
+            <div class="snippet-demo" data-scope="custom-variables.md">
+              <p class="custom-variables">CSS is awesome!</p>
             </div>
             <style>
-              .snippet-demo__custom-variables {
-                --some-color: #686868;
+              [data-scope="custom-variables.md"] :root {
+                /* Place variables within here to use the variables globally. */
+              }
+              [data-scope="custom-variables.md"] .custom-variables {
+                --some-color: #da7800;
                 --some-keyword: italic;
                 --some-size: 1.25em;
                 --some-complex-value: 1px 1px 2px whitesmoke, 0 0 1em slategray, 0 0 0.2em slategray;
-              }
-              .snippet-demo__custom-variables p {
                 color: var(--some-color);
                 font-size: var(--some-size);
                 font-style: var(--some-keyword);
@@ -736,12 +774,12 @@ in any specification.</span></p>
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
+            <div class="snippet-demo" data-scope="disable-selection.md">
               <p>You can select me.</p>
-              <p class="snippet-demo__disable-selection">You can't select me!</p>
+              <p class="unselectable">You can't select me!</p>
             </div>
             <style>
-              .snippet-demo__disable-selection {
+              [data-scope="disable-selection.md"] .unselectable {
                 user-select: none;
               }
             </style>
@@ -789,25 +827,25 @@ in any specification.</span></p>
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <div class="snippet-demo__container">
-                <div class="snippet-demo__center">
+            <div class="snippet-demo" data-scope="display-table-centering.md">
+              <div class="container">
+                <div class="center">
                   <span>Centered content</span>
                 </div>
               </div>
             </div>
             <style>
-              .snippet-demo__container {
+              [data-scope="display-table-centering.md"] .container {
                 border: 1px solid #333;
                 height: 250px;
                 width: 250px;
               }
-              .snippet-demo__center {
+              [data-scope="display-table-centering.md"] .center {
                 display: table;
                 height: 100%;
                 width: 100%;
               }
-              .snippet-demo__center>span {
+              [data-scope="display-table-centering.md"] .center>span {
                 display: table-cell;
                 text-align: center;
                 vertical-align: middle;
@@ -861,11 +899,11 @@ in any specification.</span></p>
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <div class="snippet-demo__donut-spinner"></div>
+            <div class="snippet-demo" data-scope="donut-spinner.md">
+              <div class="donut"></div>
             </div>
             <style>
-              @keyframes snippet-demo__donut-spin {
+              @keyframes donut-spin {
                 0% {
                   transform: rotate(0deg);
                 }
@@ -873,14 +911,14 @@ in any specification.</span></p>
                   transform: rotate(360deg);
                 }
               }
-              .snippet-demo__donut-spinner {
+              [data-scope="donut-spinner.md"] .donut {
                 display: inline-block;
                 border: 4px solid rgba(0, 0, 0, 0.1);
                 border-left-color: #7983ff;
                 border-radius: 50%;
                 width: 30px;
                 height: 30px;
-                animation: snippet-demo__donut-spin 1.2s linear infinite;
+                animation: donut-spin 1.2s linear infinite;
               }
             </style>
             <h4>Explanation</h4>
@@ -928,22 +966,22 @@ in any specification.</span></p>
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <div class="snippet-demo__dynamic-shadow"></div>
+            <div class="snippet-demo" data-scope="dynamic-shadow.md">
+              <div class="dynamic-shadow"></div>
             </div>
             <style>
-              .snippet-demo__dynamic-shadow {
+              [data-scope="dynamic-shadow.md"] .dynamic-shadow {
                 position: relative;
                 width: 10rem;
                 height: 10rem;
                 background: linear-gradient(75deg, #6d78ff, #00ffb8);
                 z-index: 1;
               }
-              .snippet-demo__dynamic-shadow::after {
+              [data-scope="dynamic-shadow.md"] .dynamic-shadow::after {
                 content: '';
-                position: absolute;
                 width: 100%;
                 height: 100%;
+                position: absolute;
                 background: inherit;
                 top: 0.5rem;
                 filter: blur(0.4rem);
@@ -982,9 +1020,12 @@ in any specification.</span></p>
           <div class="snippet">
             <h3 id="easing-variables"><span>Easing variables</span><span class="tags__tag snippet__tag" data-type="animation"><i data-feather="loader"></i>animation</span></h3>
             <p>Variables that can be reused for <code>transition-timing-function</code> properties, more powerful than the built-in <code>ease</code>, <code>ease-in</code>, <code>ease-out</code> and <code>ease-in-out</code>.</p>
-            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="easing-variables"&gt;&lt;/div&gt;
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="easing-variables"&gt;Hover&lt;/div&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">:root {
+  /* Place variables in here to use globally */
+}
+.easing-variables {
   --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
   --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
@@ -1003,10 +1044,13 @@ in any specification.</span></p>
   --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
   --ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
   --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
-}
-.easing-variables {
-  width: 50px;
-  height: 50px;
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+  padding: 10px;
+  color: white;
+  line-height: 50px;
+  text-align: center;
   background: #333;
   transition: transform 1s var(--ease-out-quart);
 }
@@ -1015,11 +1059,14 @@ in any specification.</span></p>
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <div class="snippet-demo__easing-variables">Hover</div>
+            <div class="snippet-demo" data-scope="easing-variables.md">
+              <div class="easing-variables">Hover</div>
             </div>
             <style>
-              :root {
+              [data-scope="easing-variables.md"] :root {
+                /* Place variables in here to use globally */
+              }
+              [data-scope="easing-variables.md"] .easing-variables {
                 --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
                 --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
                 --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
@@ -1038,20 +1085,17 @@ in any specification.</span></p>
                 --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
                 --ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
                 --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
-              }
-              .snippet-demo__easing-variables {
+                display: inline-block;
                 width: 75px;
                 height: 75px;
-                background: #333;
+                padding: 10px;
                 color: white;
-                font-size: 0.8rem;
-                font-weight: bold;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                line-height: 50px;
+                text-align: center;
+                background: #333;
                 transition: transform 1s var(--ease-out-quart);
               }
-              .snippet-demo__easing-variables:hover {
+              [data-scope="easing-variables.md"] .easing-variables:hover {
                 transform: rotate(45deg);
               }
             </style>
@@ -1086,15 +1130,15 @@ in any specification.</span></p>
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <p class="snippet-demo__etched-text">I appear etched into the background.</p>
+            <div class="snippet-demo" data-scope="etched-text.md">
+              <p class="etched-text">I appear etched into the background.</p>
             </div>
             <style>
-              .snippet-demo__etched-text {
+              [data-scope="etched-text.md"] .etched-text {
+                text-shadow: 0 2px white;
                 font-size: 1.5rem;
                 font-weight: bold;
                 color: #b8bec5;
-                text-shadow: 0 2px 0 white;
               }
             </style>
             <h4>Explanation</h4>
@@ -1131,17 +1175,16 @@ in any specification.</span></p>
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <div class="snippet-demo__evenly-distributed-children">
+            <div class="snippet-demo" data-scope="evenly-distributed-children.md">
+              <div class="evenly-distributed-children">
                 <p>Item1</p>
                 <p>Item2</p>
                 <p>Item3</p>
               </div>
             </div>
             <style>
-              .snippet-demo__evenly-distributed-children {
+              [data-scope="evenly-distributed-children.md"] .evenly-distributed-children {
                 display: flex;
-                width: 100%;
                 justify-content: space-between;
               }
             </style>
@@ -1177,20 +1220,21 @@ in any specification.</span></p>
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100px;
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <div class="snippet-demo__flexbox-centering">
-                <p class="snippet-demo__flexbox-centering__child">Centered content.</p>
+            <div class="snippet-demo" data-scope="flexbox-centering.md">
+              <div class="flexbox-centering">
+                <div class="child">Centered content.</div>
               </div>
             </div>
             <style>
-              .snippet-demo__flexbox-centering {
+              [data-scope="flexbox-centering.md"] .flexbox-centering {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                height: 200px;
+                height: 100px;
               }
             </style>
             <h4>Explanation</h4>
@@ -1226,19 +1270,14 @@ in any specification.</span></p>
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <p class="snippet-demo__gradient-text">
-                Gradient text
-              </p>
+            <div class="snippet-demo" data-scope="gradient-text.md">
+              <p class="gradient-text">Gradient text</p>
             </div>
             <style>
-              .snippet-demo__gradient-text {
+              [data-scope="gradient-text.md"] .gradient-text {
                 background: -webkit-linear-gradient(pink, red);
                 -webkit-text-fill-color: transparent;
                 -webkit-background-clip: text;
-                font-size: 2rem;
-                font-weight: bold;
-                margin: 0;
               }
             </style>
             <h4>Explanation</h4>
@@ -1273,20 +1312,21 @@ in any specification.</span></p>
   display: grid;
   justify-content: center;
   align-items: center;
+  height: 100px;
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <div class="snippet-demo__grid-centering">
-                <p class="snippet-demo__grid-centering__child">Centered content.</p>
+            <div class="snippet-demo" data-scope="grid-centering.md">
+              <div class="grid-centering">
+                <div class="child">Centered content.</div>
               </div>
             </div>
             <style>
-              .snippet-demo__grid-centering {
+              [data-scope="grid-centering.md"] .grid-centering {
                 display: grid;
                 justify-content: center;
                 align-items: center;
-                height: 200px;
+                height: 100px;
               }
             </style>
             <h4>Explanation</h4>
@@ -1294,108 +1334,6 @@ in any specification.</span></p>
               <li><code>display: grid</code> enables grid.</li>
               <li><code>justify-content: center</code> centers the child horizontally.</li>
               <li><code>align-items: center</code> centers the child vertically.</li>
-            </ol>
-            <h4>Browser support</h4>
-            <div>
-              <div class="snippet__browser-support">
-                87.6%
-              </div>
-            </div>
-            <p><span class="snippet__support-note">✅ No caveats.</span></p>
-            <ul>
-              <li>
-                <a href="https://caniuse.com/#feat=css-grid" target="_blank">https://caniuse.com/#feat=css-grid</a>
-              </li>
-            </ul>
-
-            <!-- tags: layout -->
-          </div>
-          <div class="snippet">
-            <h3 id="grid-layout"><span>Grid layout</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
-            <p>Basic website layout using <code>grid</code>.</p>
-            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="grid-layout"&gt;
-  &lt;div class="header"&gt;Header&lt;/div&gt;
-  &lt;div class="sidebar"&gt;Sidebar&lt;/div&gt;
-  &lt;div class="content"&gt;
-    Content
-    &lt;br&gt;
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-  &lt;/div&gt;
-  &lt;div class="footer"&gt;Footer&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.grid-layout {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-areas:
-    'sidebar header header'
-    'sidebar content content'
-    'sidebar footer  footer';
-  color: white;
-}
-.grid-layout &gt; div {
-  background: #333;
-  padding: 10px;
-}
-.sidebar {
-  grid-area: sidebar;
-}
-.content {
-  grid-area: content;
-}
-.header {
-  grid-area: header;
-}
-.footer {
-  grid-area: footer;
-}
-</code></pre>
-            <h4>Demo</h4>
-            <div class="snippet-demo">
-              <div class="snippet-demo__grid-layout">
-                <div class="box snippet-demo__grid-layout__header">Header</div>
-                <div class="box snippet-demo__grid-layout__sidebar">Sidebar</div>
-                <div class="box snippet-demo__grid-layout__content">Content
-                  <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                </div>
-                <div class="box snippet-demo__grid-layout__footer">Footer</div>
-              </div>
-            </div>
-            <style>
-              .snippet-demo__grid-layout {
-                margin: 1em;
-                display: grid;
-                grid-gap: 10px;
-                grid-template-columns: repeat(3, 1fr);
-                grid-template-areas: "sidebar header header" "sidebar content content" "sidebar  footer  footer";
-                background-color: #fff;
-                color: white;
-              }
-              .snippet-demo__grid-layout>div {
-                background: #333;
-                padding: 10px;
-              }
-              .snippet-demo__grid-layout__sidebar {
-                grid-area: sidebar;
-              }
-              .snippet-demo__grid-layout__content {
-                grid-area: content;
-              }
-              .snippet-demo__grid-layout__header {
-                grid-area: header;
-              }
-              .snippet-demo__grid-layout__footer {
-                grid-area: footer;
-              }
-            </style>
-            <h4>Explanation</h4>
-            <ol>
-              <li><code>display: grid</code> enables grid.</li>
-              <li><code>grid-gap: 10px</code> defines spacing between the elements.</li>
-              <li><code>grid-template-columns: repeat(3, 1fr)</code> defines 3 columns of the same size.</li>
-              <li><code>grid-template-areas</code> defines the names of grid areas.</li>
-              <li><code>grid-area: sidebar</code> makes the element use the area with the name <code>sidebar</code>.</li>
             </ol>
             <h4>Browser support</h4>
             <div>
@@ -1437,25 +1375,25 @@ in any specification.</span></p>
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <p class="snippet-demo__hairline-border">Text with a hairline border around it.</p>
+            <div class="snippet-demo" data-scope="hairline-border.md">
+              <div class="hairline-border">text</div>
             </div>
             <style>
-              .snippet-demo__hairline-border {
+              [data-scope="hairline-border.md"] .hairline-border {
                 box-shadow: 0 0 0 1px;
               }
               @media (min-resolution: 2dppx) {
-                .snippet-demo__hairline-border {
+                [data-scope="hairline-border.md"] .hairline-border {
                   box-shadow: 0 0 0 0.5px;
                 }
               }
               @media (min-resolution: 3dppx) {
-                .snippet-demo__hairline-border {
+                [data-scope="hairline-border.md"] .hairline-border {
                   box-shadow: 0 0 0 0.33333333px;
                 }
               }
               @media (min-resolution: 4dppx) {
-                .snippet-demo__hairline-border {
+                [data-scope="hairline-border.md"] .hairline-border {
                   box-shadow: 0 0 0 0.25px;
                 }
               }
@@ -1507,33 +1445,28 @@ var height = el.scrollHeight
 el.style.setProperty('--max-height', height + 'px')
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <div class="snippet-demo__height-transition">
+            <div class="snippet-demo" data-scope="height-transition.md">
+              <div class="trigger">
                 Hover me to see a height transition.
-                <div class="snippet-demo__height-transition__el">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque congue placerat nunc a volutpat. Etiam placerat libero porttitor purus facilisis vehicula. Mauris risus mauris, varius ac consequat eget, iaculis non enim. Proin ut nunc ac massa iaculis
-                  sodales id mattis enim. Cras non diam ac quam pharetra fermentum vel ac nulla. Suspendisse ligula urna, porta non lobortis non, lobortis vel velit. Fusce lectus justo, aliquet eu fringilla auctor, sodales eu orci. Pellentesque habitant
-                  morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                </div>
+                <div class="el">content</div>
               </div>
             </div>
             <style>
-              .snippet-demo__height-transition__el {
-                transition: max-height 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+              [data-scope="height-transition.md"] .el {
+                transition: max-height 0.5s;
                 overflow: hidden;
                 max-height: 0;
               }
-              .snippet-demo__height-transition:hover>.snippet-demo__height-transition__el {
+              [data-scope="height-transition.md"] .trigger:hover>.el {
                 max-height: var(--max-height);
               }
             </style>
             <script>
-              ;
               (function() {
-                var el = document.querySelector('.snippet-demo__height-transition__el')
+                var el = document.querySelector('.el')
                 var height = el.scrollHeight
                 el.style.setProperty('--max-height', height + 'px')
-              })()
+              })();
             </script>
             <h4>Explanation</h4>
             <h5 data-type="CSS">CSS</h5>
@@ -1605,16 +1538,16 @@ el.style.setProperty('--max-height', height + 'px')
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <p class="snippet-demo__hover-underline-animation">Hover this text to see the effect!</p>
+            <div class="snippet-demo" data-scope="hover-underline-animation.md">
+              <p class="hover-underline-animation">Hover this text to see the effect!</p>
             </div>
             <style>
-              .snippet-demo__hover-underline-animation {
+              [data-scope="hover-underline-animation.md"] .hover-underline-animation {
                 display: inline-block;
                 position: relative;
                 color: #0087ca;
               }
-              .snippet-demo__hover-underline-animation::after {
+              [data-scope="hover-underline-animation.md"] .hover-underline-animation::after {
                 content: '';
                 position: absolute;
                 width: 100%;
@@ -1626,7 +1559,7 @@ el.style.setProperty('--max-height', height + 'px')
                 transform-origin: bottom right;
                 transition: transform 0.25s ease-out;
               }
-              .snippet-demo__hover-underline-animation:hover::after {
+              [data-scope="hover-underline-animation.md"] .hover-underline-animation:hover::after {
                 transform: scaleX(1);
                 transform-origin: bottom left;
               }
@@ -1683,28 +1616,32 @@ body {
   flex-direction: column;
 }
 .container &gt; div:last-child {
-  background-color: #333;
+  background-color: tomato;
   flex: 1;
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <div class="snippet-demo__last-time-with-all-available-height">
+            <div class="snippet-demo" data-scope="last-item-with-remaining-available-height.md">
+              <div class="container">
                 <div>Div 1</div>
                 <div>Div 2</div>
                 <div>Div 3</div>
               </div>
             </div>
             <style>
-              .snippet-demo__last-time-with-all-available-height {
-                height: 300px;
+              [data-scope="last-item-with-remaining-available-height.md"] html,
+              [data-scope="last-item-with-remaining-available-height.md"] body {
+                height: 100%;
+                margin: 0;
+              }
+              [data-scope="last-item-with-remaining-available-height.md"] .container {
+                height: 100%;
                 display: flex;
                 flex-direction: column;
               }
-              .snippet-demo__last-time-with-all-available-height>div:last-child {
-                background-color: #333;
-                flex-grow: 1;
-                color: white;
+              [data-scope="last-item-with-remaining-available-height.md"] .container>div:last-child {
+                background-color: tomato;
+                flex: 1;
               }
             </style>
             <h4>Explanation</h4>
@@ -1774,20 +1711,20 @@ body {
 </code></pre>
             <h4 data-type="JavaScript">JavaScript</h4><pre><code class="lang-js">var btn = document.querySelector('.mouse-cursor-gradient-tracking')
 btn.onmousemove = function(e) {
-  var x = e.pageX - btn.offsetLeft
-  var y = e.pageY - btn.offsetTop
+  var x = e.pageX - btn.offsetLeft - btn.offsetParent.offsetLeft
+  var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
   btn.style.setProperty('--x', x + 'px')
   btn.style.setProperty('--y', y + 'px')
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <button class="snippet-demo__mouse-cursor-gradient-tracking">
+            <div class="snippet-demo" data-scope="mouse-cursor-gradient-tracking.md">
+              <button class="mouse-cursor-gradient-tracking">
                 <span>Hover me</span>
               </button>
             </div>
             <style>
-              .snippet-demo__mouse-cursor-gradient-tracking {
+              [data-scope="mouse-cursor-gradient-tracking.md"] .mouse-cursor-gradient-tracking {
                 position: relative;
                 background: #7983ff;
                 padding: 0.5rem 1rem;
@@ -1798,10 +1735,10 @@ btn.onmousemove = function(e) {
                 outline: none;
                 overflow: hidden;
               }
-              .snippet-demo__mouse-cursor-gradient-tracking span {
+              [data-scope="mouse-cursor-gradient-tracking.md"] .mouse-cursor-gradient-tracking span {
                 position: relative;
               }
-              .snippet-demo__mouse-cursor-gradient-tracking::before {
+              [data-scope="mouse-cursor-gradient-tracking.md"] .mouse-cursor-gradient-tracking::before {
                 --size: 0;
                 content: '';
                 position: absolute;
@@ -1809,33 +1746,27 @@ btn.onmousemove = function(e) {
                 top: var(--y);
                 width: var(--size);
                 height: var(--size);
-                background: radial-gradient(circle closest-side, aqua, rgba(0, 255, 255, 0.0001));
+                background: radial-gradient(circle closest-side, pink, transparent);
                 transform: translate(-50%, -50%);
-                transition: width .2s ease, height .2s ease;
+                transition: width 0.2s ease, height 0.2s ease;
               }
-              .snippet-demo__mouse-cursor-gradient-tracking:hover::before {
+              [data-scope="mouse-cursor-gradient-tracking.md"] .mouse-cursor-gradient-tracking:hover::before {
                 --size: 200px;
               }
             </style>
             <script>
-              ;
               (function() {
-                var btn = document.querySelector('.snippet-demo__mouse-cursor-gradient-tracking')
+                var btn = document.querySelector('.mouse-cursor-gradient-tracking')
                 btn.onmousemove = function(e) {
                   var x = e.pageX - btn.offsetLeft - btn.offsetParent.offsetLeft
                   var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
                   btn.style.setProperty('--x', x + 'px')
                   btn.style.setProperty('--y', y + 'px')
                 }
-              })()
+              })();
             </script>
             <h4>Explanation</h4>
             <p><em>TODO</em></p>
-            <p><strong>Note!</strong></p>
-            <p>If the element's parent has a positioning context (<code>position: relative</code>), you will need to subtract its offsets as well.</p>
-            <pre><code class="lang-js">var x = e.pageX - btn.offsetLeft - btn.offsetParent.offsetLeft
-var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
-</code></pre>
             <h4>Browser support</h4>
             <div>
               <div class="snippet__browser-support">
@@ -1868,6 +1799,9 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.css-not-selector-shortcut {
   display: flex;
 }
+ul {
+  padding-left: 0;
+}
 li {
   list-style-type: none;
   margin: 0;
@@ -1878,8 +1812,8 @@ li:not(:last-child) {
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <ul class="snippet-demo__css-not-selector-shortcut">
+            <div class="snippet-demo" data-scope="not-selector.md">
+              <ul class="css-not-selector-shortcut">
                 <li>One</li>
                 <li>Two</li>
                 <li>Three</li>
@@ -1888,17 +1822,19 @@ li:not(:last-child) {
               </ul>
             </div>
             <style>
-              .snippet-demo__css-not-selector-shortcut {
+              [data-scope="not-selector.md"] .css-not-selector-shortcut {
                 display: flex;
-                padding: 0;
               }
-              .snippet-demo__css-not-selector-shortcut li {
+              [data-scope="not-selector.md"] ul {
+                padding-left: 0;
+              }
+              [data-scope="not-selector.md"] li {
                 list-style-type: none;
                 margin: 0;
                 padding: 0 0.75rem;
               }
-              .snippet-demo__css-not-selector-shortcut li:not(:last-child) {
-                border-right: 2px solid #d2d5e4
+              [data-scope="not-selector.md"] li:not(:last-child) {
+                border-right: 2px solid #d2d5e4;
               }
             </style>
             <h4>Explanation</h4>
@@ -1941,42 +1877,22 @@ li:not(:last-child) {
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <a class="button" href="javascript:;">
+            <div class="snippet-demo" data-scope="offscreen.md">
+              <a class="button" href="http://pantswebsite.com">
                 Learn More
                 <span class="offscreen"> about pants</span>
               </a>
             </div>
             <style>
-              .snippet-demo__button {
-                -webkit-appearance: none;
-                appearance: none;
-                background-color: #7983ff;
-                border: none;
-                border-radius: 0.25rem;
-                color: #fff;
-                cursor: pointer;
-                display: inline-block;
-                font-family: sans-serif;
-                font-size: 1rem;
-                padding: 0.8rem 1rem;
-                text-align: center;
-                text-decoration: none;
-                transition: background-color 0.3s;
-                width: auto;
-              }
-              .snippet-demo__button:hover {
-                background-color: #717aef;
-              }
-              .snippet-demo__offscreen {
+              [data-scope="offscreen.md"] .offscreen {
                 border: 0;
                 clip: rect(0 0 0 0);
                 height: 1px;
-                width: 1px;
                 margin: -1px;
                 overflow: hidden;
                 padding: 0;
                 position: absolute;
+                width: 1px;
               }
             </style>
             <h4>Explanation</h4>
@@ -2010,7 +1926,14 @@ li:not(:last-child) {
             <p>Adds a fading gradient to an overflowing element to better indicate there is more content to be scrolled.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="overflow-scroll-gradient"&gt;
   &lt;div class="overflow-scroll-gradient__scroller"&gt;
-    Content to be scrolled
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. &lt;br&gt;
+    Iure id exercitationem nulla qui repellat laborum vitae, &lt;br&gt;
+    molestias tempora velit natus. Quas, assumenda nisi. &lt;br&gt;
+    Quisquam enim qui iure, consequatur velit sit? &lt;br&gt;
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.&lt;br&gt;
+    Iure id exercitationem nulla qui repellat laborum vitae, &lt;br&gt;
+    molestias tempora velit natus. Quas, assumenda nisi. &lt;br&gt;
+    Quisquam enim qui iure, consequatur velit sit?
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -2034,45 +1957,48 @@ li:not(:last-child) {
   background: white;
   width: 240px;
   height: 200px;
-  padding: 15px 0;
+  padding: 15px;
   line-height: 1.2;
-  text-align: center;
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <div class="snippet-demo__overflow-scroll-gradient">
-                <div class="snippet-demo__overflow-scroll-gradient__scroller">
-                  Content to be scrolled
+            <div class="snippet-demo" data-scope="overflow-scroll-gradient.md">
+              <div class="overflow-scroll-gradient">
+                <div class="overflow-scroll-gradient__scroller">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  <br> Iure id exercitationem nulla qui repellat laborum vitae,
+                  <br> molestias tempora velit natus. Quas, assumenda nisi.
+                  <br> Quisquam enim qui iure, consequatur velit sit?
+                  <br> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  <br> Iure id exercitationem nulla qui repellat laborum vitae,
+                  <br> molestias tempora velit natus. Quas, assumenda nisi.
+                  <br> Quisquam enim qui iure, consequatur velit sit?
                 </div>
               </div>
             </div>
             <style>
-              .snippet-demo__overflow-scroll-gradient {
+              [data-scope="overflow-scroll-gradient.md"] .overflow-scroll-gradient {
                 position: relative;
               }
-              .snippet-demo__overflow-scroll-gradient::after {
+              [data-scope="overflow-scroll-gradient.md"] .overflow-scroll-gradient::after {
                 content: '';
-                background: linear-gradient(rgba(255, 255, 255, 0.001), white);
                 position: absolute;
+                bottom: 0;
                 width: 240px;
                 height: 25px;
-                bottom: 0;
+                background: linear-gradient(rgba(255, 255, 255, 0.001), white);
+                /* transparent keyword is broken in Safari */
                 pointer-events: none;
               }
-              .snippet-demo__overflow-scroll-gradient__scroller {
+              [data-scope="overflow-scroll-gradient.md"] .overflow-scroll-gradient__scroller {
                 overflow-y: scroll;
                 background: white;
                 width: 240px;
                 height: 200px;
-                padding: 15px 0;
+                padding: 15px;
                 line-height: 1.2;
-                text-align: center;
               }
             </style>
-            <script>
-              document.querySelector('.snippet-demo__overflow-scroll-gradient__scroller').innerHTML = 'content '.repeat(100)
-            </script>
             <h4>Explanation</h4>
             <ol>
               <li><code>position: relative</code> on the parent establishes a Cartesian positioning context for pseudo-elements.</li>
@@ -2101,8 +2027,8 @@ li:not(:last-child) {
           </div>
           <div class="snippet">
             <h3 id="popout-menu"><span>Popout menu</span><span class="tags__tag snippet__tag" data-type="interactivity"><i data-feather="edit-2"></i>interactivity</span></h3>
-            <p>Reveals an interactive popout menu on hover.</p>
-            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="reference"&gt;
+            <p>Reveals an interactive popout menu on hover and focus.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="reference" tabindex="0"&gt;
   &lt;div class="popout-menu"&gt;
     Popout menu
   &lt;/div&gt;
@@ -2110,44 +2036,48 @@ li:not(:last-child) {
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.reference {
   position: relative;
+  background: tomato;
+  width: 100px;
+  height: 100px;
 }
 .popout-menu {
   position: absolute;
   visibility: hidden;
   left: 100%;
+  background: #333;
+  color: white;
+  padding: 15px;
 }
-.reference:hover &gt; .popout-menu {
+.reference:hover &gt; .popout-menu,
+.reference:focus &gt; .popout-menu {
   visibility: visible;
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <div class="snippet-demo__reference">
-                <div class="snippet-demo__popout-menu">
+            <div class="snippet-demo" data-scope="popout-menu.md">
+              <div class="reference" tabindex="0">
+                <div class="popout-menu">
                   Popout menu
                 </div>
               </div>
             </div>
             <style>
-              .snippet-demo__reference {
-                background: linear-gradient(135deg, #ff4c9f, #ff7b74);
-                height: 75px;
-                width: 75px;
+              [data-scope="popout-menu.md"] .reference {
                 position: relative;
-                will-change: transform;
+                background: tomato;
+                width: 100px;
+                height: 100px;
               }
-              .snippet-demo__popout-menu {
+              [data-scope="popout-menu.md"] .popout-menu {
                 position: absolute;
                 visibility: hidden;
                 left: 100%;
                 background: #333;
                 color: white;
-                font-size: 0.9rem;
-                padding: 0.4rem 0.8rem;
-                width: 100px;
-                text-align: center;
+                padding: 15px;
               }
-              .snippet-demo__reference:hover>.snippet-demo__popout-menu {
+              [data-scope="popout-menu.md"] .reference:hover>.popout-menu,
+              [data-scope="popout-menu.md"] .reference:focus>.popout-menu {
                 visibility: visible;
               }
             </style>
@@ -2193,23 +2123,23 @@ li:not(:last-child) {
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <p class="snippet-demo__pretty-text-underline">Pretty text underline without clipping descending letters.</p>
+            <div class="snippet-demo" data-scope="pretty-text-underline.md">
+              <p class="pretty-text-underline">Pretty text underline without clipping descending letters.</p>
             </div>
             <style>
-              .snippet-demo__pretty-text-underline {
+              [data-scope="pretty-text-underline.md"] .pretty-text-underline {
                 display: inline;
-                text-shadow: 1px 1px 0 #f5f6f9, -1px 1px 0 #f5f6f9, -1px -1px 0 #f5f6f9, 1px -1px 0 #f5f6f9;
+                text-shadow: 1px 1px #f5f6f9, -1px 1px #f5f6f9, -1px -1px #f5f6f9, 1px -1px #f5f6f9;
                 background-image: linear-gradient(90deg, currentColor 100%, transparent 100%);
                 background-position: bottom;
                 background-repeat: no-repeat;
                 background-size: 100% 1px;
               }
-              .snippet-demo__pretty-text-underline::-moz-selection {
+              [data-scope="pretty-text-underline.md"] .pretty-text-underline::-moz-selection {
                 background-color: rgba(0, 150, 255, 0.3);
                 text-shadow: none;
               }
-              .snippet-demo__pretty-text-underline::selection {
+              [data-scope="pretty-text-underline.md"] .pretty-text-underline::selection {
                 background-color: rgba(0, 150, 255, 0.3);
                 text-shadow: none;
               }
@@ -2245,7 +2175,7 @@ li:not(:last-child) {
             <h3 id="reset-all-styles"><span>Reset all styles</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
             <p>Resets all styles to default values with one property. This will not affect <code>direction</code> and <code>unicode-bidi</code> properties.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="reset-all-styles"&gt;
-  &lt;h4&gt;Title&lt;/h4&gt;
+  &lt;h5&gt;Title&lt;/h5&gt;
   &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui iure, consequatur velit sit?&lt;/p&gt;
 &lt;/div&gt;
 </code></pre>
@@ -2254,14 +2184,14 @@ li:not(:last-child) {
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <div class="snippet-demo__reset-all-styles">
-                <h3>Title</h3>
+            <div class="snippet-demo" data-scope="reset-all-styles.md">
+              <div class="reset-all-styles">
+                <h5>Title</h5>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui iure, consequatur velit sit?</p>
               </div>
             </div>
             <style>
-              .snippet-demo__reset-all-styles {
+              [data-scope="reset-all-styles.md"] .reset-all-styles {
                 all: initial;
               }
             </style>
@@ -2302,16 +2232,16 @@ li:not(:last-child) {
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo is-distinct">
-              <div class="snippet-demo__shape-separator"></div>
+            <div class="snippet-demo" data-scope="shape-separator.md">
+              <div class="shape-separator"></div>
             </div>
             <style>
-              .snippet-demo__shape-separator {
+              [data-scope="shape-separator.md"] .shape-separator {
                 position: relative;
                 height: 48px;
-                margin: -0.75rem -1.25rem;
+                background: #333;
               }
-              .snippet-demo__shape-separator::after {
+              [data-scope="shape-separator.md"] .shape-separator::after {
                 content: '';
                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 12'%3E%3Cpath d='m12 0l12 12h-24z' fill='%23fff'/%3E%3C/svg%3E");
                 position: absolute;
@@ -2368,27 +2298,22 @@ li:not(:last-child) {
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <nav class="snippet-demo__sibling-fade">
+            <div class="snippet-demo" data-scope="sibling-fade.md">
+              <div class="sibling-fade">
                 <span>Item 1</span>
                 <span>Item 2</span>
                 <span>Item 3</span>
                 <span>Item 4</span>
                 <span>Item 5</span>
                 <span>Item 6</span>
-              </nav>
+              </div>
             </div>
             <style>
-              .snippet-demo__sibling-fade {
-                cursor: default;
-                line-height: 2;
-                vertical-align: middle;
-              }
-              .snippet-demo__sibling-fade span {
-                padding: 1rem;
+              [data-scope="sibling-fade.md"] span {
+                padding: 0 1rem;
                 transition: opacity 0.2s;
               }
-              .snippet-demo__sibling-fade:hover span:not(:hover) {
+              [data-scope="sibling-fade.md"] .sibling-fade:hover span:not(:hover) {
                 opacity: 0.5;
               }
             </style>
@@ -2426,12 +2351,12 @@ li:not(:last-child) {
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <p class="snippet-demo__system-font-stack">This text uses the system font.</p>
+            <div class="snippet-demo" data-scope="system-font-stack.md">
+              <p class="system-font-stack">This text uses the system font.</p>
             </div>
             <style>
-              .snippet-demo__system-font-stack {
-                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+              [data-scope="system-font-stack.md"] .system-font-stack {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
               }
             </style>
             <h4>Explanation</h4>
@@ -2458,6 +2383,107 @@ li:not(:last-child) {
             <!-- tags: visual -->
           </div>
           <div class="snippet">
+            <h3 id="toggle-switch"><span>Toggle switch</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span><span class="tags__tag snippet__tag" data-type="interactivity"><i data-feather="edit-2"></i>interactivity</span></h3>
+            <p>Creates a toggle switch with CSS only.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;input type="checkbox" id="toggle" class="offscreen" /&gt;
+&lt;label for="toggle" class="switch"&gt;&lt;/label&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+.switch::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 18px;
+  background-color: white;
+  top: 1px;
+  left: 1px;
+  transition: all 0.3s;
+}
+input[type='checkbox']:checked + .switch::after {
+  transform: translateX(20px);
+}
+input[type='checkbox']:checked + .switch {
+  background-color: #7983ff;
+}
+.offscreen {
+  position: absolute;
+  left: -9999px;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo" data-scope="toggle-switch.md">
+              <input type="checkbox" id="toggle" class="offscreen">
+              <label for="toggle" class="switch"></label>
+            </div>
+            <style>
+              [data-scope="toggle-switch.md"] .switch {
+                position: relative;
+                display: inline-block;
+                width: 40px;
+                height: 20px;
+                background-color: rgba(0, 0, 0, 0.25);
+                border-radius: 20px;
+                transition: all 0.3s;
+              }
+              [data-scope="toggle-switch.md"] .switch::after {
+                content: '';
+                position: absolute;
+                width: 18px;
+                height: 18px;
+                border-radius: 18px;
+                background-color: white;
+                top: 1px;
+                left: 1px;
+                transition: all 0.3s;
+              }
+              [data-scope="toggle-switch.md"] input[type='checkbox']:checked+.switch::after {
+                transform: translateX(20px);
+              }
+              [data-scope="toggle-switch.md"] input[type='checkbox']:checked+.switch {
+                background-color: #7983ff;
+              }
+              [data-scope="toggle-switch.md"] .offscreen {
+                position: absolute;
+                left: -9999px;
+              }
+            </style>
+            <h4>Explanation</h4>
+            <p>This effect is styling only the <code>&lt;label&gt;</code> element to look like a toggle switch, and hiding the actual <code>&lt;input&gt;</code> checkbox by positioning it offscreen. When clicking the label associated with the <code>&lt;input&gt;</code>              element, it sets the <code>&lt;input&gt;</code> checkbox into the <code>:checked</code> state.</p>
+            <ol>
+              <li>The <code>for</code> attribute associates the <code>&lt;label&gt;</code> with the appropriate <code>&lt;input&gt;</code> checkbox element by its <code>id</code>.</li>
+              <li><code>.switch::after</code> defines a pseudo-element for the <code>&lt;label&gt;</code> to create the circular knob.</li>
+              <li><code>input[type='checkbox']:checked + .switch::after</code> targets the <code>&lt;label&gt;</code>'s pseudo-element's style when the checkbox is <code>checked</code>.</li>
+              <li><code>transform: translateX(20px)</code> moves the pseudo-element (knob) 20px to the right when the checkbox is <code>checked</code>.</li>
+              <li><code>background-color: #7983ff;</code> sets the background-color of the switch to a different color when the checkbox is <code>checked</code>.</li>
+              <li><code>.offscreen</code> moves the <code>&lt;input&gt;</code> checkbox element, which does not comprise any part of the actual toggle switch, out of the flow of document and positions it far away from the view, but does not hide it so it
+                is accessible via keyboard and screen readers.</li>
+              <li><code>transition: all 0.3s</code> specifies all property changes will be transitioned over 0.3 seconds, therefore transitioning the <code>&lt;label&gt;</code>'s <code>background-color</code> and the pseudo-element's <code>transform</code>                property when the checkbox is checked.</li>
+            </ol>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                95.5%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">⚠️ Requires prefixes for full support.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=transforms2d" target="_blank">https://caniuse.com/#feat=transforms2d</a>
+              </li>
+            </ul>
+
+            <!-- tags: visual, interactivity -->
+          </div>
+          <div class="snippet">
             <h3 id="transform-centering"><span>Transform centering</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
             <p>Vertically and horizontally centers a child element within its parent element using <code>position: absolute</code> and <code>transform: translate()</code> (as an alternative to <code>flexbox</code> or <code>display: table</code>). Similar
               to <code>flexbox</code>, this method does not require you to know the height or width of your parent or child so it is ideal for responsive applications.</p>
@@ -2476,26 +2502,28 @@ li:not(:last-child) {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <div class="snippet-demo__parent">
-                <div class="snippet-demo__child">Centered content</div>
+            <div class="snippet-demo" data-scope="transform-centering.md">
+              <div class="parent">
+                <div class="child">Centered content</div>
               </div>
             </div>
             <style>
-              .snippet-demo__parent {
+              [data-scope="transform-centering.md"] .parent {
                 border: 1px solid #333;
                 height: 250px;
                 position: relative;
                 width: 250px;
               }
-              .snippet-demo__child {
+              [data-scope="transform-centering.md"] .child {
                 left: 50%;
                 position: absolute;
                 top: 50%;
                 transform: translate(-50%, -50%);
+                text-align: center;
               }
             </style>
             <h4>Explanation</h4>
@@ -2534,50 +2562,16 @@ li:not(:last-child) {
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <div class="snippet-demo__triangles">
-                <div class="snippet-demo__triangle snippet-demo__triangle-1"></div>
-                <div class="snippet-demo__triangle snippet-demo__triangle-2"></div>
-                <div class="snippet-demo__triangle snippet-demo__triangle-3"></div>
-                <div class="snippet-demo__triangle snippet-demo__triangle-4"></div>
-                <div class="snippet-demo__triangle snippet-demo__triangle-5"></div>
-              </div>
+            <div class="snippet-demo" data-scope="triangle.md">
+              <div class="triangle"></div>
             </div>
             <style>
-              .snippet-demo__triangles {
-                display: flex;
-                align-items: center;
-              }
-              .snippet-demo__triangle {
-                display: inline-block;
+              [data-scope="triangle.md"] .triangle {
                 width: 0;
                 height: 0;
-                margin-right: 0.25rem;
-              }
-              .snippet-demo__triangle-1 {
                 border-top: 20px solid #333;
                 border-left: 20px solid transparent;
                 border-right: 20px solid transparent;
-              }
-              .snippet-demo__triangle-2 {
-                border-bottom: 20px solid #333;
-                border-left: 20px solid transparent;
-                border-right: 20px solid transparent;
-              }
-              .snippet-demo__triangle-3 {
-                border-left: 20px solid #333;
-                border-top: 20px solid transparent;
-                border-bottom: 20px solid transparent;
-              }
-              .snippet-demo__triangle-4 {
-                border-right: 20px solid #333;
-                border-top: 20px solid transparent;
-                border-bottom: 20px solid transparent;
-              }
-              .snippet-demo__triangle-5 {
-                border-top: 40px solid #333;
-                border-left: 15px solid transparent;
-                border-right: 15px solid transparent;
               }
             </style>
             <h4>Explanation</h4>
@@ -2609,18 +2603,15 @@ li:not(:last-child) {
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo">
-              <p class="snippet-demo__truncate-text">
-                This text will be truncated if it exceeds 200px in width.
-              </p>
+            <div class="snippet-demo" data-scope="truncate-text.md">
+              <p class="truncate-text">If I exceed one line's width, I will be truncated.</p>
             </div>
             <style>
-              .snippet-demo__truncate-text {
+              [data-scope="truncate-text.md"] .truncate-text {
                 overflow: hidden;
                 white-space: nowrap;
                 text-overflow: ellipsis;
                 width: 200px;
-                margin: 0;
               }
             </style>
             <h4>Explanation</h4>
