@@ -20,23 +20,6 @@ Gives text a gradient color.
 
 #### Demo
 
-<div class="snippet-demo">
-  <p class="snippet-demo__gradient-text">
-    Gradient text
-  </p>
-</div>
-
-<style>
-.snippet-demo__gradient-text {
-  background: -webkit-linear-gradient(pink, red);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  font-size: 2rem;
-  font-weight: bold;
-  margin: 0;
-}
-</style>
-
 #### Explanation
 
 1. `background: -webkit-linear-gradient(...)` gives the text element a gradient background.

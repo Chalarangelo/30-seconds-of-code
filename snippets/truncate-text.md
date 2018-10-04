@@ -21,22 +21,6 @@ If the text is longer than one line, it will be truncated and end with an ellips
 
 #### Demo
 
-<div class="snippet-demo">
-  <p class="snippet-demo__truncate-text">
-    This text will be truncated if it exceeds 200px in width.
-  </p>
-</div>
-
-<style>
-.snippet-demo__truncate-text {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  width: 200px;
-  margin: 0;
-}
-</style>
-
 #### Explanation
 
 1. `overflow: hidden` prevents the text from overflowing its dimensions

@@ -50,48 +50,6 @@ input[type='checkbox']:checked + .switch {
 
 #### Demo
 
-<div class="snippet-demo">
-  <input type="checkbox" id="toggle" class="snippet-demo__offscreen" />
-  <label for="toggle" class="snippet-demo__switch"></label>
-</div>
-
-<style>
-.snippet-demo__switch {
-  display: inline-block;
-  width: 40px;
-  height: 20px;
-  background-color: rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
-  position: relative;
-  transition: all 0.3s;
-}
-
-.snippet-demo__switch::after {
-  content: '';
-  width: 18px;
-  height: 18px;
-  border-radius: 18px;
-  background-color: white;
-  position: absolute;
-  top: 1px;
-  left: 1px;
-  transition: all 0.3s;
-}
-
-input[type="checkbox"]:checked + .snippet-demo__switch::after {
-  transform: translateX(20px);
-}
-
-input[type="checkbox"]:checked + .snippet-demo__switch {
-  background-color: #7983ff;
-}
-
-.snippet-demo__offscreen {
-  position: absolute;
-  left: -9999px;
-}
-</style>
-
 #### Explanation
 
 This effect is styling only the `<label>` element to look like a toggle switch, and hiding the actual `<input>` checkbox by positioning it offscreen. When clicking the label associated with the `<input>` element, it sets the `<input>` checkbox into the `:checked` state.

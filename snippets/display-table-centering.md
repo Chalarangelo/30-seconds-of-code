@@ -36,32 +36,6 @@ Vertically and horizontally centers a child element within its parent element us
 
 #### Demo
 
-<div class="snippet-demo">
-  <div class="snippet-demo__container">
-    <div class="snippet-demo__center">
-      <span>Centered content</span>
-    </div>
-  </div>
-</div>
-
-<style>
-.snippet-demo__container {
-  border: 1px solid #333;
-  height: 250px;
-  width: 250px;
-}
-.snippet-demo__center {
-  display: table;
-  height: 100%;
-  width: 100%;
-}
-.snippet-demo__center > span {
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
-}
-</style>
-
 #### Explanation
 
 1. `display: table` on '.center' allows the element to behave like a `<table>` HTML element.

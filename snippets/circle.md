@@ -21,19 +21,6 @@ Creates a circle shape with pure CSS.
 
 #### Demo
 
-<div class="snippet-demo">
-  <div class="snippet-demo__circle"></div>
-</div>
-
-<style>
-.snippet-demo__circle {
-  border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
-  background: #333;
-}
-</style>
-
 #### Explanation
 
 `border-radius: 50%` curves the borders of an element to create a circle.

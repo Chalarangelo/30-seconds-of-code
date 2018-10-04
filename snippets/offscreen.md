@@ -28,44 +28,6 @@ A bulletproof way to completely hide an element visually and positionally in the
 
 #### Demo
 
-<div class="snippet-demo">
-  <a class="button" href="javascript:;">
-    Learn More
-    <span class="offscreen"> about pants</span>
-  </a>
-</div>
-
-<style>
-.snippet-demo__button {
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: #7983ff;
-  border: none;
-  border-radius: 0.25rem;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-family: sans-serif;
-  font-size: 1rem;
-  padding: 0.8rem 1rem;
-  text-align: center;
-  text-decoration: none;
-  transition: background-color 0.3s;
-  width: auto;
-}
-.snippet-demo__button:hover { background-color: #717aef; }
-.snippet-demo__offscreen {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-}
-</style>
-
 #### Explanation
 
 1. Remove all borders.
