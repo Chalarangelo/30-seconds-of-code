@@ -52,7 +52,7 @@ fs.writeFileSync(
 // Display messages and time
 console.log(
   `${chalk.green(
-    'SUCCESS!'
+    'Succes'
   )} snippetAnalyticss.json and snippetArchiveAnalytics.json files generated!`
 );
 console.timeEnd('Analyzer');
