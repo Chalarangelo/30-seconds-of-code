@@ -41,7 +41,7 @@ serve as the loading indicator for the donut. Use `animation` to rotate the elem
 
 <span class="snippet__support-note">⚠️ Requires prefixes for full support.</span>
 
-* https://caniuse.com/#feat=css-animation
-* https://caniuse.com/#feat=transforms2d
+- https://caniuse.com/#feat=css-animation
+- https://caniuse.com/#feat=transforms2d
 
 <!-- tags: animation -->

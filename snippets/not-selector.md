@@ -47,6 +47,6 @@ the `:last-child`.
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
-* https://caniuse.com/#feat=css-sel3
+- https://caniuse.com/#feat=css-sel3
 
 <!-- tags: visual -->

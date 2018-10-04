@@ -32,6 +32,6 @@ Changes the styling of text selection.
 <span class="snippet__support-note">⚠️ Requires prefixes for full support and is not actually
 in any specification.</span>
 
-* https://caniuse.com/#feat=css-selection
+- https://caniuse.com/#feat=css-selection
 
 <!-- tags: visual -->

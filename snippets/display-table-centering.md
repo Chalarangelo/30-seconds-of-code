@@ -50,6 +50,6 @@ The outer parent ('.container' in this case) must have a fixed height and width.
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
-* https://caniuse.com/#search=display%3A%20table
+- https://caniuse.com/#search=display%3A%20table
 
 <!-- tags: layout -->

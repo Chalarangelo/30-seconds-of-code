@@ -66,6 +66,6 @@ This effect is styling only the `<label>` element to look like a toggle switch, 
 
 <span class="snippet__support-note">⚠️ Requires prefixes for full support.</span>
 
-* https://caniuse.com/#feat=transforms2d
+- https://caniuse.com/#feat=transforms2d
 
 <!-- tags: visual, interactivity -->

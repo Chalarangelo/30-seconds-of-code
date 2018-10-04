@@ -11,7 +11,6 @@ Brief description
 #### CSS
 
 ```css
-
 ```
 
 #### Demo
@@ -31,6 +30,6 @@ Brief description
 <!-- Whenever possible, link a `caniuse` feature which allows the browser support percentage to be displayed.
 If no link is provided, it defaults to 99+%. -->
 
-* https://caniuse.com/#feat=some-feature
+- https://caniuse.com/#feat=some-feature
 
 <!-- tags: (separate each by a comma) -->

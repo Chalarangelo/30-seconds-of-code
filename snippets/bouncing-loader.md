@@ -71,6 +71,6 @@ Note: `1rem` is usually `16px`.
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
-* https://caniuse.com/#feat=css-animation
+- https://caniuse.com/#feat=css-animation
 
 <!-- tags: animation -->
