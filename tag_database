@@ -97,6 +97,7 @@ get:object,intermediate
 getColonTimeFromDate:date,intermediate
 getDaysDiffBetweenDates:date,intermediate
 getMeridiemSuffixOfInteger:date,beginner
+getQueryString:browser
 getScrollPosition:browser,intermediate
 getStyle:browser,css,beginner
 getType:type,beginner
