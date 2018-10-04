@@ -303,7 +303,7 @@
           "const password = \"fooBaz\";\nconst data = JSON.stringify(password);\nhttpPut('https://website.com/users/123', data, request => {\n  console.log(request.responseText);\n}); // 'Updates a user's password in database'",
           "const isArmstrongNumber = digits =>\n  (arr => arr.reduce((a, d) => a + parseInt(d) ** arr.length, 0) == digits)(\n    (digits + '').split('')\n  );",
           "isArmstrongNumber(1634); // true\nisArmstrongNumber(56); // false",
-          "const isSimilar = (pattern, str) =>\n  [...str].reduce(\n    (matchIndex, char) =>\n      char.toLowerCase() === (pattern[matchIndex] || '').toLowerCase()\n        ? matchIndex + 1\n        : matchIndex,\n    0\n  ) === pattern.length\n    ? true\n    : false;",
+          "const isSimilar = (pattern, str) =>\n  [...str].reduce(\n      (matchIndex, char) =>\n          char.toLowerCase() === (pattern[matchIndex] || '').toLowerCase()\n              ? matchIndex + 1\n              : matchIndex,\n      0\n  ) === pattern.length;",
           "isSimilar('rt','Rohit'); // true\nisSimilar('tr','Rohit'); // false",
           "``` js\nconst levenshteinDistance = (string1, string2) => {\n  if (string1.length === 0) return string2.length;\n  if (string2.length === 0) return string1.length;\n  let matrix = Array(string2.length + 1)\n    .fill(0)\n    .map((x, i) => [i]);\n  matrix[0] = Array(string1.length + 1)\n    .fill(0)\n    .map((x, i) => i);\n  for (let i = 1; i <= string2.length; i++) {\n    for (let j = 1; j <= string1.length; j++) {\n      if (string2[i - 1] === string1[j - 1]) {\n        matrix[i][j] = matrix[i - 1][j - 1];\n      } else {\n        matrix[i][j] = Math.min(\n          matrix[i - 1][j - 1] + 1,\n          matrix[i][j - 1] + 1,\n          matrix[i - 1][j] + 1\n        );\n      }\n    }\n  }\n  return matrix[string2.length][string1.length];\n};\n```",
           "levenshteinDistance('30-seconds-of-code','30-seconds-of-python-code'); // 7\nconst compareStrings = (string1,string2) => (100 - levenshteinDistance(string1,string2) / Math.max(string1.length,string2.length));\ncompareStrings('30-seconds-of-code', '30-seconds-of-python-code'); // 99.72 (%)",
@@ -322,7 +322,7 @@
       },
       "meta": {
         "archived": true,
-        "hash": "93e8862a89acd7be83ffbbb3f732759a84c9e9e7ebd5763251bcd265f8e7fbce"
+        "hash": "923a1f48f03450680f6150058f7ae52edf8a08a0d00d57cf26aa803f707643c9"
       }
     },
     {

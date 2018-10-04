@@ -154,7 +154,7 @@
         "fileName": "atob.md",
         "text": "Decodes a string of data which has been encoded using base-64 encoding.\n\nCreate a `Buffer` for the given string with base-64 encoding and use `Buffer.toString('binary')` to return the decoded string.",
         "codeBlocks": [
-          "const atob = str => new Buffer(str, 'base64').toString('binary');",
+          "const atob = str => Buffer.from(str, 'base64').toString('binary');",
           "atob('Zm9vYmFy'); // 'foobar'"
         ],
         "tags": [
@@ -166,7 +166,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "b0f4a972f1e217c5f558359fa17693140a8b97a04a48ec1261691f10fb0c2a3e"
+        "hash": "a1cdc6db4c91c17ea5f072fa38f40505a7500c1d142c33a9f7e8280fb9357fb5"
       }
     },
     {
@@ -383,7 +383,7 @@
         "fileName": "btoa.md",
         "text": "Creates a base-64 encoded ASCII string from a String object in which each character in the string is treated as a byte of binary data.\n\nCreate a `Buffer` for the given string with binary encoding and use `Buffer.toString('base64')` to return the encoded string.",
         "codeBlocks": [
-          "const btoa = str => new Buffer(str, 'binary').toString('base64');",
+          "const btoa = str => Buffer.from(str, 'binary').toString('base64');",
           "btoa('foobar'); // 'Zm9vYmFy'"
         ],
         "tags": [
@@ -395,7 +395,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "ddbab0e7190004d5240469256d66629aa2fcf3c22348818edc01a8beb64831a6"
+        "hash": "021ec24497f79ba1e18b01f1fc5a7498d21adbb4f556ac026afa817f10d46ae9"
       }
     },
     {
