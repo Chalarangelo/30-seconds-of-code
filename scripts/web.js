@@ -128,11 +128,7 @@ let snippets = {},
   startPart = '',
   endPart = '',
   output = '',
-  archivedStartPart = '',
-  archivedEndPart = '',
   archivedOutput = '',
-  glossaryStartPart = '',
-  glossaryEndPart = '',
   glossaryOutput = '',
   pagesOutput = [],
   tagDbData = {};
@@ -145,13 +141,11 @@ glossarySnippets = util.readSnippets(glossarySnippetsPath);
 
 // Load static parts for all pages
 try {
-  [startPart, endPart, archivedStartPart, archivedEndPart, glossaryStartPart, glossaryEndPart] = [
+  [startPart, endPart, staticPageStartPart, staticPageEndPart] = [
     'page-start.html',
     'page-end.html',
-    'archived-page-start.html',
-    'archived-page-end.html',
-    'glossary-page-start.html',
-    'glossary-page-end.html'
+    'static-page-start.html',
+    'static-page-end.html'
   ].map(filename => fs.readFileSync(path.join(staticPartsPath, filename), 'utf8'));
 } catch (err) {
   // Handle errors (hopefully not!)
@@ -243,10 +237,51 @@ try {
   process.exit(1);
 }
 
+const staticPageStartGenerator = (staticPart, heading, description) => {
+  let taggedData = util.prepTaggedData(tagDbData);
+  // Add the start static part
+  let htmlCode = `${staticPart}\n`;
+
+  // Loop over tags and snippets to create the table of contents
+  for (let tag of taggedData) {
+    htmlCode +=
+      '<h4 class="collapse">' +
+      md
+        .render(`${util.capitalize(tag, true)}\n`)
+        .replace(/<p>/g, '')
+        .replace(/<\/p>/g, '') +
+      '</h4><ul>';
+    for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
+      htmlCode += md
+        .render(
+          `[${taggedSnippet[0]}](./${
+            tag === 'array' ? 'index' : tag
+          }#${taggedSnippet[0].toLowerCase()})\n`
+        )
+        .replace(/<p>/g, '')
+        .replace(/<\/p>/g, '</li>')
+        .replace(/<a/g, `<li><a tags="${taggedSnippet[1].join(',')}"`);
+    htmlCode += '</ul>\n';
+  }
+  htmlCode += `<h4 class="static-link"><a href="./archive">Archive</a></h4>
+  <h4 class="static-link"><a href="./glossary">Glossary</a></h4>
+  <h4 class="static-link"><a href="./contributing">Contributing</a></h4>
+  <h4 class="static-link"><a href="./about">About</a></h4>
+  <div><button class="social fb"></button><button class="social instagram"></button><button class="social twitter"></button></div>
+  </nav><main class="col-centered"><span id="top"><br/><br/></span><h2 class="category-name">${heading}</h2>
+        <p style="text-align: justify">${description}</p><br />`;
+  return htmlCode;
+}
+
+
 // Create the output for the archive.html file
 try {
   // Add the static part
-  archivedOutput += `${archivedStartPart}\n`;
+  let heading = "Snippets Archive";
+  let description = "These snippets, while useful and interesting, didn't quite make it into the repository due to either having very specific use-cases or being outdated. However we felt like they might still be useful to some readers, so here they are.";
+  let htmlCode = staticPageStartGenerator(staticPageStartPart, heading, description);
+
+  archivedOutput += htmlCode;
 
   // Filter README.md from folder
   const filteredArchivedSnippets = filterSnippets(archivedSnippets, ['README.md']);
@@ -274,7 +309,7 @@ try {
     (match, p1, p2, p3) => `<span class="token keyword">${p1}${p2}${p3}</span>`
   );
 
-  archivedOutput += `${archivedEndPart}`;
+  archivedOutput += `${staticPageEndPart}`;
 
   // Generate and minify 'archive.html' file
   const minifiedArchivedOutput = minifyHTML(archivedOutput);
@@ -289,7 +324,10 @@ try {
 // Create the output for the glossary.html file
 try {
   // Add the static part
-  glossaryOutput += `${glossaryStartPart}\n`;
+  let heading = "Glossary";
+  let description = "Developers use a lot of terminology daily. Every once in a while, you might find a term you do not know. We know how frustrating that can get, so we provide you with a handy glossary of frequently used web development terms.";
+  let htmlCode = staticPageStartGenerator(staticPageStartPart, heading, description);
+  glossaryOutput += htmlCode;
 
   // Filter README.md from folder
   const filteredGlossarySnippets = filterSnippets(glossarySnippets, ['README.md']);
@@ -304,11 +342,10 @@ try {
         .replace(/<\/h3>/g, '</h4>') +
       '</div></div>';
 
-  glossaryOutput += `${glossaryEndPart}`;
+  glossaryOutput += `${staticPageEndPart}`;
 
   // Generate and minify 'glossary.html' file
   const minifiedGlossaryOutput = minifyHTML(glossaryOutput);
-
   fs.writeFileSync(path.join(docsPath, 'glossary.html'), minifiedGlossaryOutput);
   console.log(`${chalk.green('SUCCESS!')} glossary.html file generated!`);
 } catch (err) {
