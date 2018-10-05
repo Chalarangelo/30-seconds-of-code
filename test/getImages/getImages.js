@@ -1,13 +1,7 @@
-const getImages = (elem) => {
-    const pageImages = elem.getElementsByTagName('img');
-    let imageList = [];
+const getImages = (elem, duplicates) => {
+    const imgElements = [...elem.getElementsByTagName("img")];
+    const images = imgElements.map(img => img.getAttribute("src"));
 
-    for (i=0, l=pageImages.length; i < l; i++) {
-        const imgSrc = pageImages[i].getAttribute('src');
-
-        if (!imageList.includes(imgSrc)) { imageList.push(imgSrc); }
-    }
-
-    return imageList;
+    return duplicates ? images : [...(new Set(images))];
 };
 module.exports = getImages;
