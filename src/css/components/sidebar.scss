@@ -1,5 +1,5 @@
 .sidebar {
-  background: #202e4e;
+  background: #273149;
   position: fixed;
   z-index: 2;
   width: 100%;
@@ -23,7 +23,7 @@
   }
 
   &__links {
-    background: #202e4e;
+    background: #273149;
     overflow-y: auto;
     transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     transform-origin: 0% 0%;
@@ -47,10 +47,11 @@
   &__link {
     display: block;
     color: #e3f5ff;
-    padding: 0.5rem 0.75rem;
+    padding: 0.75rem;
+    padding-right: 1.5rem;
+    margin-right: -0.75rem;
     transition: all 0.1s ease-out;
     border-left: 2px solid #576a85;
-    margin: 0.5rem;
     font-weight: 500;
     font-size: 0.95rem;
 
@@ -77,26 +78,15 @@
     left: 0;
     top: 0;
     bottom: 0;
-    width: 15%;
-    max-width: 250px;
-    min-width: 200px;
+    width: 20%;
     height: 100%;
-    background: linear-gradient(-30deg, #2a3d67, #14264e);
+    background: linear-gradient(-30deg, #273149, #1c273f);
     box-shadow: 0.4rem 0.4rem 0.8rem rgba(0, 32, 64, 0.1);
     overflow-y: auto;
     color: white;
 
-    &::-webkit-scrollbar-track {
-      background-color: rgba(0, 0, 0, 0.6);
-    }
-
-    &::-webkit-scrollbar {
-      width: 10px;
-      background-color: #4b6191;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: #4b6191;
+    @media (min-width: 1400px) {
+      width: 275px;
     }
 
     &__links {
@@ -111,6 +101,23 @@
 
     &__menu {
       display: none;
+    }
+  }
+}
+
+html:not(.macOS) {
+  .sidebar {
+    &::-webkit-scrollbar-track {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    &::-webkit-scrollbar {
+      width: 10px;
+      background-color: #505b76;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #505b76;
     }
   }
 }

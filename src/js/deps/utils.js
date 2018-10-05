@@ -36,6 +36,10 @@ if (/iPhone|iPad|iPod/.test(navigator.platform) && !window.MSStream) {
   document.body.style.cursor = 'pointer'
 }
 
+if (/Mac/.test(navigator.platform)) {
+  document.documentElement.classList.add('macOS')
+}
+
 /*
 * A small utility to fix the letter kerning on macOS Chrome and Firefox when using the system font
 * (San Francisco). It is now fixed in the text rendering engine in FF 58 and Chrome 64.

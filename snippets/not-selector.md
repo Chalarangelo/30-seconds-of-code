@@ -10,7 +10,6 @@ The `:not` psuedo selector is useful for styling a group of elements, while leav
   <li>Two</li>
   <li>Three</li>
   <li>Four</li>
-  <li>Five</li>
 </ul>
 ```
 
