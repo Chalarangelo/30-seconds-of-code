@@ -29,7 +29,8 @@
           <a class="sidebar__link" href="#evenly-distributed-children"><span>Evenly distributed children</span></a>
           <a class="sidebar__link" href="#flexbox-centering"><span>Flexbox centering</span></a>
           <a class="sidebar__link" href="#grid-centering"><span>Grid centering</span></a>
-          <a class="sidebar__link" href="#last-item-with-remaining-available-height"><span>Last item with remaining available height</span></a>
+          <a class="sidebar__link" href="#last-item-with-remaining-available-height">
+            <img alt="New" draggable="false" class="sidebar__new" src="./src/img/new.svg"><span>Last item with remaining available height</span></a>
           <a class="sidebar__link" href="#transform-centering"><span>Transform centering</span></a>
           <a class="sidebar__link" href="#truncate-text"><span>Truncate text</span></a>
         </section>
@@ -65,7 +66,8 @@
           <a class="sidebar__link" href="#mouse-cursor-gradient-tracking"><span>Mouse cursor gradient tracking</span></a>
           <a class="sidebar__link" href="#popout-menu"><span>Popout menu</span></a>
           <a class="sidebar__link" href="#sibling-fade"><span>Sibling fade</span></a>
-          <a class="sidebar__link" href="#toggle-switch"><span>Toggle switch</span></a>
+          <a class="sidebar__link" href="#toggle-switch">
+            <img alt="New" draggable="false" class="sidebar__new" src="./src/img/new.svg"><span>Toggle switch</span></a>
         </section>
         <section data-type="other" class="sidebar__section">
           <h4 class="sidebar__section-heading">other</h4>
@@ -77,13 +79,18 @@
     <div class="content-wrapper">
       <header class="header">
         <div class="container">
-          <img class="header__logo" draggable="false" src="./src/img/logo.png">
-          <h1 class="header__heading">30 Seconds of <strong class="header__css">CSS</strong></h1>
-          <p class="header__description">
-            A curated collection of useful CSS snippets you can understand in 30 seconds or less.
-          </p>
-          <div class="header__github-button-wrapper">
-            <a class="github-button header__github-button" href="https://github.com/30-seconds/30-seconds-of-css" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star 30-seconds/30-seconds-of-css on GitHub">Star</a>
+          <img class="header__leaves" draggable="false" id="header__leaves1" src="./src/img/leaves.svg" alt="">
+          <img class="header__leaves" draggable="false" id="header__leaves2" src="./src/img/leaves.svg" alt="">
+          <img id="header__blob" draggable="false" src="./src/img/blob.png" alt="">
+          <div class="header__content">
+            <img class="header__logo" draggable="false" src="./src/img/logo.png">
+            <h1 class="header__heading">30 Seconds of <strong class="header__css">CSS</strong></h1>
+            <p class="header__description">
+              A curated collection of useful CSS snippets you can understand in 30 seconds or less.
+            </p>
+            <div class="header__github-button-wrapper">
+              <a class="github-button header__github-button" href="https://github.com/30-seconds/30-seconds-of-css" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star 30-seconds/30-seconds-of-css on GitHub">Star</a>
+            </div>
           </div>
         </div>
       </header>
@@ -1597,6 +1604,7 @@ el.style.setProperty('--max-height', height + 'px')
             <!-- tags: animation -->
           </div>
           <div class="snippet">
+            <img alt="New" draggable="false" class="snippet__new" src="./src/img/new.svg">
             <h3 id="last-item-with-remaining-available-height"><span>Last item with remaining available height</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
             <p>Take advantage of available viewport space by giving the last element the remaining available space in current viewport, even when resizing the window.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="container"&gt;
@@ -1666,6 +1674,8 @@ body {
             </ul>
 
             <!-- tags: layout -->
+
+            <!-- date: 2018-09-30 -->
           </div>
           <div class="snippet">
             <h3 id="mouse-cursor-gradient-tracking"><span>Mouse cursor gradient tracking</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span><span class="tags__tag snippet__tag" data-type="interactivity"><i data-feather="edit-2"></i>interactivity</span></h3>
@@ -1793,7 +1803,6 @@ btn.onmousemove = function(e) {
   &lt;li&gt;Two&lt;/li&gt;
   &lt;li&gt;Three&lt;/li&gt;
   &lt;li&gt;Four&lt;/li&gt;
-  &lt;li&gt;Five&lt;/li&gt;
 &lt;/ul&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.css-not-selector-shortcut {
@@ -1818,7 +1827,6 @@ li:not(:last-child) {
                 <li>Two</li>
                 <li>Three</li>
                 <li>Four</li>
-                <li>Five</li>
               </ul>
             </div>
             <style>
@@ -2383,6 +2391,7 @@ li:not(:last-child) {
             <!-- tags: visual -->
           </div>
           <div class="snippet">
+            <img alt="New" draggable="false" class="snippet__new" src="./src/img/new.svg">
             <h3 id="toggle-switch"><span>Toggle switch</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span><span class="tags__tag snippet__tag" data-type="interactivity"><i data-feather="edit-2"></i>interactivity</span></h3>
             <p>Creates a toggle switch with CSS only.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;input type="checkbox" id="toggle" class="offscreen" /&gt;
@@ -2482,6 +2491,8 @@ input[type='checkbox']:checked + .switch {
             </ul>
 
             <!-- tags: visual, interactivity -->
+
+            <!-- date: 2018-10-03 -->
           </div>
           <div class="snippet">
             <h3 id="transform-centering"><span>Transform centering</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
