@@ -21,6 +21,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-2": "^6.24.1",
     "caniuse-db": "^1.0.30000813",
+    "date-fns": "^1.29.0",
     "jsdom": "^11.6.2",
     "marked": "^0.3.16",
     "node-sass": "^4.9.3",

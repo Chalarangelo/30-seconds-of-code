@@ -5,6 +5,7 @@ const pretty = require('pretty')
 const caniuseDb = require('caniuse-db/data.json')
 const sass = require('node-sass')
 const { toKebabCase, createElement, template, dom, getCode } = require('../utils/utils.js')
+const { differenceInDays } = require('date-fns')
 
 const SNIPPETS_PATH = './snippets'
 const TAGS = [
@@ -114,6 +115,21 @@ for (const snippetFile of fs.readdirSync(SNIPPETS_PATH)) {
       snippetEl.querySelector('h3').innerHTML
     }</a>`
   )
+
+  // new icon = less than 31 days old
+  const date = (snippetData.match(/<!--\s*date:\s*(.+?)-->/) || [, ''])[1]
+  if (date && differenceInDays(new Date(date), new Date()) < 31) {
+    snippetEl.prepend(
+      createElement(
+        '<img alt="New" draggable="false" class="snippet__new" src="./src/img/new.svg">'
+      )
+    )
+    link.prepend(
+      createElement(
+        '<img alt="New" draggable="false" class="sidebar__new" src="./src/img/new.svg">'
+      )
+    )
+  }
 
   // tags
   const tags = (snippetData.match(/<!--\s*tags:\s*(.+?)-->/) || [, ''])[1]
