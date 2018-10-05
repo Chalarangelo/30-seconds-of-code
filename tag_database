@@ -96,6 +96,7 @@ geometricProgression:math,intermediate
 get:object,intermediate
 getColonTimeFromDate:date,intermediate
 getDaysDiffBetweenDates:date,intermediate
+getImages:browser,beginner
 getMeridiemSuffixOfInteger:date,beginner
 getScrollPosition:browser,intermediate
 getStyle:browser,css,beginner
