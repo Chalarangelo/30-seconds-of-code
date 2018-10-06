@@ -6,8 +6,7 @@ Use `Element.getElementsByTagName()` to fetch all `<img>` elements inside `Eleme
 
 ```js
 const getImages = (elem, duplicates) => {
-    const imgElements = [...elem.getElementsByTagName("img")];
-    const images = imgElements.map(img => img.getAttribute("src"));
+    const images = [...elem.getElementsByTagName("img")].map(img => img.getAttribute("src"));
 
     return duplicates ? images : [...(new Set(images))];
 };
