@@ -270,7 +270,7 @@ const staticPageStartGenerator = (staticPart, heading, description) => {
   <div><button class="social fb"></button><button class="social instagram"></button><button class="social twitter"></button></div>
   </nav><main class="col-centered"><span id="top"><br/><br/></span><h2 class="category-name">${heading}</h2>
         <p style="text-align: justify">${description}</p><br />`;
-  return htmlCode;
+  return htmlCode.replace(/\$page_name/g, util.capitalize(heading));
 }
 
 
