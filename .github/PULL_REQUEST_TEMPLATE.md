@@ -12,4 +12,5 @@
 - [ ] General, Typos, Misc. & Meta (everything else, typos, general stuff and meta files in the repository - e.g. the issue template)
 
 ## Guidelines
-- [ ] I have read the guidelines in the [CONTRIBUTING](https://github.com/30-seconds/30-seconds-of-code/blob/master/CONTRIBUTING.md) document. 
+- [ ] I have read the guidelines in the [CONTRIBUTING](https://github.com/30-seconds/30-seconds-of-code/blob/master/CONTRIBUTING.md) document.
+- [ ] My PR doesn't include any `testlog` changes. 
