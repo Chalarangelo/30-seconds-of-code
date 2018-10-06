@@ -108,6 +108,7 @@ hasFlags:node,intermediate
 hashBrowser:browser,utility,advanced,promise,advanced
 hashNode:node,utility,promise,intermediate
 head:array,beginner
+heronArea:math,beginner
 hexToRGB:utility,string,math,advanced
 hide:browser,css,beginner
 httpGet:utility,url,browser,intermediate
