@@ -1,6 +1,5 @@
-const getImages = (elem, duplicates) => {
-    const images = [...elem.getElementsByTagName("img")].map(img => img.getAttribute("src"));
-
-    return duplicates ? images : [...(new Set(images))];
+const getImages = (el, includeDuplicates = false) => {
+    const images = [...el.getElementsByTagName("img")].map(img => img.getAttribute("src"));
+    return includeDuplicates ? images : [...(new Set(images))];
 };
 module.exports = getImages;

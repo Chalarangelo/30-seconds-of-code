@@ -2,13 +2,12 @@
 
 Fetches all images from within an element and puts them into an array
 
-Use `Element.getElementsByTagName()` to fetch all `<img>` elements inside `Element`, `Array.prototype.map()` to map every `src` attribute of their respective `<img>` element. `New Set()` creates a `Set` of unique images which is then converted into an `Array` with the `...` operator.
+Use `Element.getElementsByTagName()` to fetch all `<img>` elements inside the provided element, `Array.prototype.map()` to map every `src` attribute of their respective `<img>` element, then create a `Set` to eliminate duplicates and return the array.
 
 ```js
-const getImages = (elem, duplicates) => {
-    const images = [...elem.getElementsByTagName("img")].map(img => img.getAttribute("src"));
-
-    return duplicates ? images : [...(new Set(images))];
+const getImages = (el, includeDuplicates = false) => {
+    const images = [...el.getElementsByTagName("img")].map(img => img.getAttribute("src"));
+    return includeDuplicates ? images : [...(new Set(images))];
 };
 ```
 
