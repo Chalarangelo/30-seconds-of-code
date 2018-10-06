@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "feather-icons": "^4.7.0",
-    "focus-visible": "^4.1.0"
+    "focus-visible": "^4.1.0",
+    "jump.js": "^1.0.2"
   }
 }
