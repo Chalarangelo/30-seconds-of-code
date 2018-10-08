@@ -8,9 +8,8 @@ Return a promise, listening for `onmessage` and `onerror` events and resolving t
 
 ```js
 const runAsync = fn => {
-  const blob = `var fn = ${fn.toString()}; postMessage(fn());`;
   const worker = new Worker(
-    URL.createObjectURL(new Blob([blob]), {
+    URL.createObjectURL(new Blob([`postMessage((${fn})());`]), {
       type: 'application/javascript; charset=utf-8'
     })
   );

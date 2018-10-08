@@ -9,7 +9,6 @@ const isFunction = val => typeof val === 'function';
 ```
 
 ```js
-isFunction(null); // false
 isFunction('x'); // false
 isFunction(x => x); // true
 ```

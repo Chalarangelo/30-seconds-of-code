@@ -3,9 +3,9 @@
 Returns the human readable format of the given number of milliseconds.
 
 Divide `ms` with the appropriate values to obtain the appropriate values for `day`, `hour`, `minute`, `second` and `millisecond`.
-Use `Object.entries()` with `Array.filter()` to keep only non-zero values.
-Use `Array.map()` to create the string for each value, pluralizing appropriately.
-Use `String.join(', ')` to combine the values into a string.
+Use `Object.entries()` with `Array.prototype.filter()` to keep only non-zero values.
+Use `Array.prototype.map()` to create the string for each value, pluralizing appropriately.
+Use `String.prototype.join(', ')` to combine the values into a string.
 
 ```js
 const formatDuration = ms => {
@@ -19,7 +19,7 @@ const formatDuration = ms => {
   };
   return Object.entries(time)
     .filter(val => val[1] !== 0)
-    .map(val => val[1] + ' ' + (val[1] !== 1 ? val[0] + 's' : val[0]))
+    .map(([key, val]) => `${val} ${key}${val !== 1 ? 's' : ''}`)
     .join(', ');
 };
 ```

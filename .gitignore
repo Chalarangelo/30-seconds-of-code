@@ -3,4 +3,10 @@ currentSnippet\.js
 *.md.temp.js
 .idea
 test.sh
-test/
+/*.log
+
+dist/flavor\.min\.css
+
+dist/flavor\.css
+
+test_old/
