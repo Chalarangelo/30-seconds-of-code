@@ -2032,6 +2032,26 @@
       }
     },
     {
+      "id": "getImages",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "getImages.md",
+        "text": "Fetches all images from within an element and puts them into an array\n\nUse `Element.prototype.getElementsByTagName()` to fetch all `<img>` elements inside the provided element, `Array.prototype.map()` to map every `src` attribute of their respective `<img>` element, then create a `Set` to eliminate duplicates and return the array.",
+        "codeBlocks": [
+          "const getImages = (el, includeDuplicates = false) => {\n  const images = [...el.getElementsByTagName('img')].map(img => img.getAttribute('src'));\n  return includeDuplicates ? images : [...new Set(images)];\n};",
+          "getImages(document, true); // ['image1.jpg', 'image2.png', 'image1.png', '...']\ngetImages(document, false); // ['image1.jpg', 'image2.png', '...']"
+        ],
+        "tags": [
+          "browser",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "0f2ba02c6de1e9396abbef584139bea4dc379a6d465f4bebb151ad3b0f77ff6f"
+      }
+    },
+    {
       "id": "getMeridiemSuffixOfInteger",
       "type": "snippet",
       "attributes": {
