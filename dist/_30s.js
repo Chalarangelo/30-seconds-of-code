@@ -78,7 +78,7 @@
 
   const ary = (fn, n) => (...args) => fn(...args.slice(0, n));
 
-  const atob = str => new Buffer(str, 'base64').toString('binary');
+  const atob = str => Buffer.from(str, 'base64').toString('binary');
 
   const attempt = (fn, ...args) => {
     try {
@@ -130,7 +130,7 @@
     document.documentElement.clientHeight + window.scrollY >=
     (document.documentElement.scrollHeight || document.documentElement.clientHeight);
 
-  const btoa = str => new Buffer(str, 'binary').toString('base64');
+  const btoa = str => Buffer.from(str, 'binary').toString('base64');
 
   const byteSize = str => new Blob([str]).size;
 
@@ -515,6 +515,11 @@
   const getDaysDiffBetweenDates = (dateInitial, dateFinal) =>
     (dateFinal - dateInitial) / (1000 * 3600 * 24);
 
+  const getImages = (el, includeDuplicates = false) => {
+    const images = [...el.getElementsByTagName('img')].map(img => img.getAttribute('src'));
+    return includeDuplicates ? images : [...new Set(images)];
+  };
+
   const getMeridiemSuffixOfInteger = num =>
     num === 0 || num === 24
       ? 12 + 'am'
@@ -710,6 +715,15 @@
 
   const isDivisible = (dividend, divisor) => dividend % divisor === 0;
 
+  const isDuplexStream = val =>
+    val !== null &&
+    typeof val === 'object' &&
+    typeof val.pipe === 'function' &&
+    typeof val._read === 'function' &&
+    typeof val._readableState === 'object' &&
+    typeof val._write === 'function' &&
+    typeof val._writableState === 'object';
+
   const isEmpty = val => val == null || !(Object.keys(val) || val).length;
 
   const isEven = num => num % 2 === 0;
@@ -743,6 +757,13 @@
     (typeof obj === 'object' || typeof obj === 'function') &&
     typeof obj.then === 'function';
 
+  const isReadableStream = val =>
+    val !== null &&
+    typeof val === 'object' &&
+    typeof val.pipe === 'function' &&
+    typeof val._read === 'function' &&
+    typeof val._readableState === 'object';
+
   const isSameDate = (dateA, dateB) => dateA.toISOString() === dateB.toISOString();
 
   const isSorted = arr => {
@@ -753,6 +774,8 @@
       else if ((val - arr[i + 1]) * direction > 0) return 0;
     }
   };
+
+  const isStream = val => val !== null && typeof val === 'object' && typeof val.pipe === 'function';
 
   const isString = val => typeof val === 'string';
 
@@ -772,6 +795,13 @@
       return false;
     }
   };
+
+  const isWritableStream = val =>
+    val !== null &&
+    typeof val === 'object' &&
+    typeof val.pipe === 'function' &&
+    typeof val._write === 'function' &&
+    typeof val._writableState === 'object';
 
   const join = (arr, separator = ',', end = separator) =>
     arr.reduce(
@@ -1391,11 +1421,8 @@
 
   const takeRight = (arr, n = 1) => arr.slice(arr.length - n, arr.length);
 
-  const takeRightWhile = (arr, func) => {
-    for (let i of arr.reverse().keys())
-      if (func(arr[i])) return arr.reverse().slice(arr.length - i, arr.length);
-    return arr;
-  };
+  const takeRightWhile = (arr, func) =>
+    arr.reduceRight((acc, el) => (func(el) ? acc : [el, ...acc]), []);
 
   const takeWhile = (arr, func) => {
     for (const [i, val] of arr.entries()) if (func(val)) return arr.slice(0, i);
@@ -1498,8 +1525,8 @@
 
   const transform = (obj, fn, acc) => Object.keys(obj).reduce((a, k) => fn(a, obj[k], k, obj), acc);
 
-  const triggerEvent = (el, eventType, detail = undefined) =>
-    el.dispatchEvent(new CustomEvent(eventType, { detail: detail }));
+  const triggerEvent = (el, eventType, detail) =>
+    el.dispatchEvent(new CustomEvent(eventType, { detail }));
 
   const truncateString = (str, num) =>
     str.length > num ? str.slice(0, num > 3 ? num - 3 : num) + '...' : str;
@@ -1734,6 +1761,7 @@
   exports.get = get;
   exports.getColonTimeFromDate = getColonTimeFromDate;
   exports.getDaysDiffBetweenDates = getDaysDiffBetweenDates;
+  exports.getImages = getImages;
   exports.getMeridiemSuffixOfInteger = getMeridiemSuffixOfInteger;
   exports.getScrollPosition = getScrollPosition;
   exports.getStyle = getStyle;
@@ -1777,6 +1805,7 @@
   exports.isBrowser = isBrowser;
   exports.isBrowserTabFocused = isBrowserTabFocused;
   exports.isDivisible = isDivisible;
+  exports.isDuplexStream = isDuplexStream;
   exports.isEmpty = isEmpty;
   exports.isEven = isEven;
   exports.isFunction = isFunction;
@@ -1790,14 +1819,17 @@
   exports.isPrime = isPrime;
   exports.isPrimitive = isPrimitive;
   exports.isPromiseLike = isPromiseLike;
+  exports.isReadableStream = isReadableStream;
   exports.isSameDate = isSameDate;
   exports.isSorted = isSorted;
+  exports.isStream = isStream;
   exports.isString = isString;
   exports.isSymbol = isSymbol;
   exports.isTravisCI = isTravisCI;
   exports.isUndefined = isUndefined;
   exports.isUpperCase = isUpperCase;
   exports.isValidJSON = isValidJSON;
+  exports.isWritableStream = isWritableStream;
   exports.join = join;
   exports.last = last;
   exports.lcm = lcm;
