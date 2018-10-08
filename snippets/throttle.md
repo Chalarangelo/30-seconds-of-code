@@ -19,12 +19,14 @@ const throttle = (fn, wait) => {
       inThrottle = true;
     } else {
       clearTimeout(lastFn);
+      let time = 0;
       lastFn = setTimeout(function() {
         if (Date.now() - lastTime >= wait) {
           fn.apply(context, args);
           lastTime = Date.now();
         }
-      }, wait - (Date.now() - lastTime));
+        time = wait - (Date.now() - lastTime)
+      }, time>0 ? time : 0);
     }
   };
 };
