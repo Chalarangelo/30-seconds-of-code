@@ -1,41 +1,54 @@
 /*
   This is the tdd script that creates & updates your TDD environment .
-  Run using `npm run tagger`.
+  Run using `npm run tdd`.
 */
 
 // Load modules
-const fs = require('fs-extra');
+const fs = require('fs-extra'),
+  path = require('path');
+const childProcess = require('child_process');
 const chalk = require('chalk');
-// Load helper functions (these are from existing snippets in 30 seconds of code!)
-const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
-if(isTravisCI() && process.env['TRAVIS_EVENT_TYPE'] !== 'cron' && process.env['TRAVIS_EVENT_TYPE'] !== 'api') {
+const util = require('./util');
+if (util.isTravisCI() && util.isNotTravisCronOrAPI()) {
   console.log(`${chalk.green('NOBUILD')} Testing terminated, not a cron job or a custom build!`);
   process.exit(0);
 }
 // Declare paths
-const SNIPPETS_PATH = './snippets';
+const SNIPPETS_ACTIVE = './snippets';
+const SNIPPETS_ARCHIVE = './snippets_archive';
 const TEST_PATH = './test';
 
 // Array of snippet names
-const snippetFiles = fs.readdirSync(SNIPPETS_PATH, 'utf8').map(fileName => fileName.slice(0, -3));
+const snippetFiles = [];
 
-// Current Snippet that depend on node_modules
-const errSnippets = ['JSONToFile', 'readFileLines', 'UUIDGeneratorNode'];
+const snippetFilesActive = fs
+  .readdirSync(SNIPPETS_ACTIVE, 'utf8')
+  .map(fileName => fileName.slice(0, -3));
+const snippetFilesArchive = fs
+  .readdirSync(SNIPPETS_ARCHIVE, 'utf8')
+  .filter(fileName => !fileName.includes('README')) // -> Filters out main README.md file in Archieve which isn't a snippet
+  .map(fileName => fileName.slice(0, -3));
 
+snippetFiles.push(...snippetFilesActive);
+snippetFiles.push(...snippetFilesArchive);
+
+console.time('Tester');
 snippetFiles
-  .filter(fileName => !errSnippets.includes(fileName))
   .map(fileName => {
     // Check if fileName for snippet exist in test/ dir, if doesnt create
-    fs.ensureDirSync(`${TEST_PATH}/${fileName}`);
+    fs.ensureDirSync(path.join(TEST_PATH, fileName));
 
     // return fileName for later use
     return fileName;
   })
   .map(fileName => {
+    const activeOrArchive = snippetFilesActive.includes(fileName)
+      ? SNIPPETS_ACTIVE
+      : SNIPPETS_ARCHIVE;
     // Grab snippetData
-    const fileData = fs.readFileSync(`${SNIPPETS_PATH}/${fileName}.md`, 'utf8');
+    const fileData = fs.readFileSync(path.join(activeOrArchive, `${fileName}.md`), 'utf8');
     // Grab snippet Code blocks
-    const fileCode = fileData.slice(fileData.indexOf('```js'), fileData.lastIndexOf('```') + 3);
+    const fileCode = fileData.slice(fileData.search(/```\s*js/i), fileData.lastIndexOf('```') + 3);
     // Split code based on code markers
     const blockMarkers = fileCode
       .split('\n')
@@ -44,41 +57,36 @@ snippetFiles
     // Grab snippet function based on code markers
     const fileFunction = fileCode
       .split('\n')
-      .map(line => line.trim())
+      .map(line => line)
       .filter((_, i) => blockMarkers[0] < i && i < blockMarkers[1]);
-    // Grab snippet example based on code markers 
-    const fileExample = fileCode
-      .split('\n')
-      .map(line => line.trim())
-      .filter((_, i) => blockMarkers[2] < i && i < blockMarkers[3]);
 
-    // Export template for snippetName.js which takes into account snippet name.length when generating snippetName.js file
-    const exportFile = `module.exports = ${fileFunction.join('\n').slice(9 + fileName.length)}`;
+    // Export template for snippetName.js
+    const exportFile = `${fileFunction.join('\n')}\nmodule.exports = ${fileName};\n`;
 
-    // Export template for snippetName.test.js which generates a example test & other information 
+    // Export template for snippetName.test.js which generates a example test & other information
     const exportTest = [
-      `const test = require('tape');`,
+      `const expect = require('expect');`,
       `const ${fileName} = require('./${fileName}.js');`,
-      `\ntest('Testing ${fileName}', (t) => {`,
-      `\t//For more information on all the methods supported by tape\n\t//Please go to https://github.com/substack/tape`,
-      `\tt.true(typeof ${fileName} === 'function', '${fileName} is a Function');`,   
-      `\t//t.deepEqual(${fileName}(args..), 'Expected');`,
-      `\t//t.equal(${fileName}(args..), 'Expected');`,
-      `\t//t.false(${fileName}(args..), 'Expected');`,
-      `\t//t.throws(${fileName}(args..), 'Expected');`,
-      `\tt.end();`,
-      `});`
+      `\ntest('${fileName} is a Function', () => {`,
+      `  expect(${fileName}).toBeInstanceOf(Function);`,
+      `});\n`
     ].join('\n');
 
     // Write/Update exportFile which is snippetName.js in respective dir
-    fs.writeFileSync(`${TEST_PATH}/${fileName}/${fileName}.js`, exportFile);
+    fs.writeFileSync(path.join(TEST_PATH, fileName, `${fileName}.js`), exportFile);
 
-    if ( !fs.existsSync(`${TEST_PATH}/${fileName}/${fileName}.test.js`) ) {
-      // if snippetName.test.js doesn't exist inrespective dir exportTest 
+    if (!fs.existsSync(path.join(TEST_PATH, fileName, `${fileName}.test.js`))) {
+      // if snippetName.test.js doesn't exist inrespective dir exportTest
       fs.writeFileSync(`${TEST_PATH}/${fileName}/${fileName}.test.js`, exportTest);
     }
 
     // return fileName for later use
     return fileName;
   });
-  
+try {
+  fs.writeFileSync(path.join(TEST_PATH, 'testlog'), `Test log for: ${new Date().toString()}\n`);
+  childProcess.execSync('npm test');
+} catch (e) {
+  fs.appendFileSync(path.join(TEST_PATH, 'testlog'));
+}
+console.timeEnd('Tester');

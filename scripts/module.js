@@ -6,10 +6,11 @@ const fs = require('fs-extra');
 const cp = require('child_process');
 const path = require('path');
 const chalk = require('chalk');
-// Load helper functions (these are from existing snippets in 30 seconds of code!)
-const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
-if(isTravisCI() && process.env['TRAVIS_EVENT_TYPE'] !== 'cron' && process.env['TRAVIS_EVENT_TYPE'] !== 'api') {
-  console.log(`${chalk.green('NOBUILD')} Module build terminated, not a cron job or a custom build!`);
+const util = require('./util');
+if (util.isTravisCI() && util.isNotTravisCronOrAPI()) {
+  console.log(
+    `${chalk.green('NOBUILD')} Module build terminated, not a cron job or a custom build!`
+  );
   process.exit(0);
 }
 // Set variables for paths
@@ -19,7 +20,7 @@ const IMPORTS = './imports.js';
 // Regex for selecting code blocks
 const codeRE = /```\s*js([\s\S]*?)```/;
 // Start the timer of the script
-console.time('Module');
+console.time('Packager');
 // Load tag data from the database and snippets from their folder
 try {
   const tagDatabase = fs.readFileSync('tag_database', 'utf8');
@@ -33,10 +34,7 @@ try {
   let exportStr = 'export default {';
   // Read all snippets and store them appropriately
   for (const snippet of snippets) {
-    const snippetData = fs.readFileSync(
-      path.join(SNIPPETS_PATH, snippet),
-      'utf8'
-    );
+    const snippetData = fs.readFileSync(path.join(SNIPPETS_PATH, snippet), 'utf8');
     const snippetName = snippet.replace('.md', '');
     // Check if a snippet is Node-only
     const isNodeSnippet = tagDatabase
@@ -55,7 +53,7 @@ try {
     // Store the data to be written
     const toWrite = isNodeSnippet
       ? `${code
-          .replace('const ' + snippetName, 'export const ' + snippetName)
+          .replace(`const ${snippetName}`, `export const ${snippetName}`)
           // Prevents errors from being thrown in browser environment
           .replace('require(', 'typeof require !== "undefined" && require(')}`
       : `export ${code}`;
@@ -72,7 +70,7 @@ try {
   // Log a success message
   console.log(`${chalk.green('SUCCESS!')} Snippet module built!`);
   // Log the time taken
-  console.timeEnd('Module');
+  console.timeEnd('Packager');
 } catch (err) {
   // Handle errors (hopefully not!)
   console.log(`${chalk.red('ERROR!')} During module creation: ${err}`);

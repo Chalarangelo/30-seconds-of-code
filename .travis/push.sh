@@ -1,3 +1,4 @@
+#!/bin/bash
 setup_git() {
   git config --global user.email "30secondsofcode@gmail.com"
   git config --global user.name "30secondsofcode"
@@ -24,7 +25,7 @@ upload_files() {
   if [ $TRAVIS_EVENT_TYPE != "pull_request" ]; then
     if [ $TRAVIS_BRANCH == "master" ]; then
       echo "Pushing to master branch..."
-      git push --force --quiet "https://${GH_TOKEN}@github.com/Chalarangelo/30-seconds-of-code.git" master > /dev/null 2>&1
+      git push --force --quiet "https://${GH_TOKEN}@github.com/30-seconds/30-seconds-of-code.git" master > /dev/null 2>&1
     fi
   fi
 }

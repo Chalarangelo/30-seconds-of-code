@@ -2,8 +2,7 @@
 
 Converts a string to camelcase.
 
-Break the string into words and combine them capitalizing the first letter of each word.
-For more detailed explanation of this Regex, [visit this Site](https://regex101.com/r/bMCgAB/1).
+Break the string into words and combine them capitalizing the first letter of each word, using a regexp.
 
 ```js
 const toCamelCase = str => {

@@ -1,8 +1,8 @@
-### sbdm
+### sdbm
 
-This algorithm is a simple hash-algorithm that hashes it input string `s` into a whole number.
+Hashes the input string into a whole number.
 
-Use `split('')` and `Array.reduce()` to create a hash of the input string, utilizing bit shifting.
+Use `String.prototype.split('')` and `Array.prototype.reduce()` to create a hash of the input string, utilizing bit shifting.
 
 ```js
 const sdbm = str => {
@@ -16,5 +16,5 @@ const sdbm = str => {
 ```
 
 ```js
-console.log(sdbm('name')); // -3521204949
+sdbm('name'); // -3521204949
 ```
