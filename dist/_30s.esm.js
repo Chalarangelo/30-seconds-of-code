@@ -72,7 +72,7 @@ const arrayToHtmlList = (arr, listID) =>
 
 const ary = (fn, n) => (...args) => fn(...args.slice(0, n));
 
-const atob = str => new Buffer(str, 'base64').toString('binary');
+const atob = str => Buffer.from(str, 'base64').toString('binary');
 
 const attempt = (fn, ...args) => {
   try {
@@ -124,7 +124,7 @@ const bottomVisible = () =>
   document.documentElement.clientHeight + window.scrollY >=
   (document.documentElement.scrollHeight || document.documentElement.clientHeight);
 
-const btoa = str => new Buffer(str, 'binary').toString('base64');
+const btoa = str => Buffer.from(str, 'binary').toString('base64');
 
 const byteSize = str => new Blob([str]).size;
 
@@ -509,6 +509,11 @@ const getColonTimeFromDate = date => date.toTimeString().slice(0, 8);
 const getDaysDiffBetweenDates = (dateInitial, dateFinal) =>
   (dateFinal - dateInitial) / (1000 * 3600 * 24);
 
+const getImages = (el, includeDuplicates = false) => {
+  const images = [...el.getElementsByTagName('img')].map(img => img.getAttribute('src'));
+  return includeDuplicates ? images : [...new Set(images)];
+};
+
 const getMeridiemSuffixOfInteger = num =>
   num === 0 || num === 24
     ? 12 + 'am'
@@ -704,6 +709,15 @@ const isBrowserTabFocused = () => !document.hidden;
 
 const isDivisible = (dividend, divisor) => dividend % divisor === 0;
 
+const isDuplexStream = val =>
+  val !== null &&
+  typeof val === 'object' &&
+  typeof val.pipe === 'function' &&
+  typeof val._read === 'function' &&
+  typeof val._readableState === 'object' &&
+  typeof val._write === 'function' &&
+  typeof val._writableState === 'object';
+
 const isEmpty = val => val == null || !(Object.keys(val) || val).length;
 
 const isEven = num => num % 2 === 0;
@@ -737,6 +751,13 @@ const isPromiseLike = obj =>
   (typeof obj === 'object' || typeof obj === 'function') &&
   typeof obj.then === 'function';
 
+const isReadableStream = val =>
+  val !== null &&
+  typeof val === 'object' &&
+  typeof val.pipe === 'function' &&
+  typeof val._read === 'function' &&
+  typeof val._readableState === 'object';
+
 const isSameDate = (dateA, dateB) => dateA.toISOString() === dateB.toISOString();
 
 const isSorted = arr => {
@@ -747,6 +768,8 @@ const isSorted = arr => {
     else if ((val - arr[i + 1]) * direction > 0) return 0;
   }
 };
+
+const isStream = val => val !== null && typeof val === 'object' && typeof val.pipe === 'function';
 
 const isString = val => typeof val === 'string';
 
@@ -766,6 +789,13 @@ const isValidJSON = obj => {
     return false;
   }
 };
+
+const isWritableStream = val =>
+  val !== null &&
+  typeof val === 'object' &&
+  typeof val.pipe === 'function' &&
+  typeof val._write === 'function' &&
+  typeof val._writableState === 'object';
 
 const join = (arr, separator = ',', end = separator) =>
   arr.reduce(
@@ -1385,11 +1415,8 @@ const take = (arr, n = 1) => arr.slice(0, n);
 
 const takeRight = (arr, n = 1) => arr.slice(arr.length - n, arr.length);
 
-const takeRightWhile = (arr, func) => {
-  for (let i of arr.reverse().keys())
-    if (func(arr[i])) return arr.reverse().slice(arr.length - i, arr.length);
-  return arr;
-};
+const takeRightWhile = (arr, func) =>
+  arr.reduceRight((acc, el) => (func(el) ? acc : [el, ...acc]), []);
 
 const takeWhile = (arr, func) => {
   for (const [i, val] of arr.entries()) if (func(val)) return arr.slice(0, i);
@@ -1492,8 +1519,8 @@ const tomorrow = (long = false) => {
 
 const transform = (obj, fn, acc) => Object.keys(obj).reduce((a, k) => fn(a, obj[k], k, obj), acc);
 
-const triggerEvent = (el, eventType, detail = undefined) =>
-  el.dispatchEvent(new CustomEvent(eventType, { detail: detail }));
+const triggerEvent = (el, eventType, detail) =>
+  el.dispatchEvent(new CustomEvent(eventType, { detail }));
 
 const truncateString = (str, num) =>
   str.length > num ? str.slice(0, num > 3 ? num - 3 : num) + '...' : str;
@@ -1624,4 +1651,4 @@ const zipWith = (...array) => {
   );
 };
 
-export { CSVToArray, CSVToJSON, JSONToFile, JSONtoCSV, RGBToHex, URLJoin, UUIDGeneratorBrowser, UUIDGeneratorNode, all, allEqual, any, approximatelyEqual, arrayToCSV, arrayToHtmlList, ary, atob, attempt, average, averageBy, bifurcate, bifurcateBy, bind, bindAll, bindKey, binomialCoefficient, bottomVisible, btoa, byteSize, call, capitalize, capitalizeEveryWord, castArray, chainAsync, chunk, clampNumber, cloneRegExp, coalesce, coalesceFactory, collectInto, colorize, compact, compose, composeRight, converge, copyToClipboard, countBy, countOccurrences, counter, createElement, createEventHub, currentURL, curry, dayOfYear, debounce, decapitalize, deepClone, deepFlatten, deepFreeze, defaults, defer, degreesToRads, delay, detectDeviceType, difference, differenceBy, differenceWith, dig, digitize, distance, drop, dropRight, dropRightWhile, dropWhile, elementContains, elementIsVisibleInViewport, elo, equals, escapeHTML, escapeRegExp, everyNth, extendHex, factorial, fibonacci, filterNonUnique, filterNonUniqueBy, findKey, findLast, findLastIndex, findLastKey, flatten, flattenObject, flip, forEachRight, forOwn, forOwnRight, formatDuration, fromCamelCase, functionName, functions, gcd, geometricProgression, get, getColonTimeFromDate, getDaysDiffBetweenDates, getMeridiemSuffixOfInteger, getScrollPosition, getStyle, getType, getURLParameters, groupBy, hammingDistance, hasClass, hasFlags, hashBrowser, hashNode, head, hexToRGB, hide, httpGet, httpPost, httpsRedirect, hz, inRange, indentString, indexOfAll, initial, initialize2DArray, initializeArrayWithRange, initializeArrayWithRangeRight, initializeArrayWithValues, initializeNDArray, insertAfter, insertBefore, intersection, intersectionBy, intersectionWith, invertKeyValues, is, isAbsoluteURL, isAfterDate, isAnagram, isArrayLike, isBeforeDate, isBoolean, isBrowser, isBrowserTabFocused, isDivisible, isEmpty, isEven, isFunction, isLowerCase, isNil, isNull, isNumber, isObject, isObjectLike, isPlainObject, isPrime, isPrimitive, isPromiseLike, isSameDate, isSorted, isString, isSymbol, isTravisCI, isUndefined, isUpperCase, isValidJSON, join, last, lcm, longestItem, lowercaseKeys, luhnCheck, mapKeys, mapObject, mapString, mapValues, mask, matches, matchesWith, maxBy, maxDate, maxN, median, memoize, merge, minBy, minDate, minN, mostPerformant, negate, nest, nodeListToArray, none, nthArg, nthElement, objectFromPairs, objectToPairs, observeMutations, off, offset, omit, omitBy, on, onUserInputChange, once, orderBy, over, overArgs, pad, palindrome, parseCookie, partial, partialRight, partition, percentile, permutations, pick, pickBy, pipeAsyncFunctions, pipeFunctions, pluralize, powerset, prefix, prettyBytes, primes, promisify, pull, pullAtIndex, pullAtValue, pullBy, radsToDegrees, randomHexColorCode, randomIntArrayInRange, randomIntegerInRange, randomNumberInRange, readFileLines, rearg, recordAnimationFrames, redirect, reduceSuccessive, reduceWhich, reducedFilter, reject, remove, removeNonASCII, renameKeys, reverseString, round, runAsync, runPromisesInSeries, sample, sampleSize, scrollToTop, sdbm, serializeCookie, setStyle, shallowClone, shank, show, shuffle, similarity, size, sleep, smoothScroll, sortCharactersInString, sortedIndex, sortedIndexBy, sortedLastIndex, sortedLastIndexBy, splitLines, spreadOver, stableSort, standardDeviation, stringPermutations, stripHTMLTags, sum, sumBy, sumPower, symmetricDifference, symmetricDifferenceBy, symmetricDifferenceWith, tail, take, takeRight, takeRightWhile, takeWhile, throttle, timeTaken, times, toCamelCase, toCurrency, toDecimalMark, toHash, toKebabCase, toOrdinalSuffix, toSafeInteger, toSnakeCase, toggleClass, tomorrow, transform, triggerEvent, truncateString, truthCheckCollection, unary, uncurry, unescapeHTML, unflattenObject, unfold, union, unionBy, unionWith, uniqueElements, uniqueElementsBy, uniqueElementsByRight, uniqueSymmetricDifference, untildify, unzip, unzipWith, validateNumber, when, without, words, xProd, yesNo, zip, zipObject, zipWith };
+export { CSVToArray, CSVToJSON, JSONToFile, JSONtoCSV, RGBToHex, URLJoin, UUIDGeneratorBrowser, UUIDGeneratorNode, all, allEqual, any, approximatelyEqual, arrayToCSV, arrayToHtmlList, ary, atob, attempt, average, averageBy, bifurcate, bifurcateBy, bind, bindAll, bindKey, binomialCoefficient, bottomVisible, btoa, byteSize, call, capitalize, capitalizeEveryWord, castArray, chainAsync, chunk, clampNumber, cloneRegExp, coalesce, coalesceFactory, collectInto, colorize, compact, compose, composeRight, converge, copyToClipboard, countBy, countOccurrences, counter, createElement, createEventHub, currentURL, curry, dayOfYear, debounce, decapitalize, deepClone, deepFlatten, deepFreeze, defaults, defer, degreesToRads, delay, detectDeviceType, difference, differenceBy, differenceWith, dig, digitize, distance, drop, dropRight, dropRightWhile, dropWhile, elementContains, elementIsVisibleInViewport, elo, equals, escapeHTML, escapeRegExp, everyNth, extendHex, factorial, fibonacci, filterNonUnique, filterNonUniqueBy, findKey, findLast, findLastIndex, findLastKey, flatten, flattenObject, flip, forEachRight, forOwn, forOwnRight, formatDuration, fromCamelCase, functionName, functions, gcd, geometricProgression, get, getColonTimeFromDate, getDaysDiffBetweenDates, getImages, getMeridiemSuffixOfInteger, getScrollPosition, getStyle, getType, getURLParameters, groupBy, hammingDistance, hasClass, hasFlags, hashBrowser, hashNode, head, hexToRGB, hide, httpGet, httpPost, httpsRedirect, hz, inRange, indentString, indexOfAll, initial, initialize2DArray, initializeArrayWithRange, initializeArrayWithRangeRight, initializeArrayWithValues, initializeNDArray, insertAfter, insertBefore, intersection, intersectionBy, intersectionWith, invertKeyValues, is, isAbsoluteURL, isAfterDate, isAnagram, isArrayLike, isBeforeDate, isBoolean, isBrowser, isBrowserTabFocused, isDivisible, isDuplexStream, isEmpty, isEven, isFunction, isLowerCase, isNil, isNull, isNumber, isObject, isObjectLike, isPlainObject, isPrime, isPrimitive, isPromiseLike, isReadableStream, isSameDate, isSorted, isStream, isString, isSymbol, isTravisCI, isUndefined, isUpperCase, isValidJSON, isWritableStream, join, last, lcm, longestItem, lowercaseKeys, luhnCheck, mapKeys, mapObject, mapString, mapValues, mask, matches, matchesWith, maxBy, maxDate, maxN, median, memoize, merge, minBy, minDate, minN, mostPerformant, negate, nest, nodeListToArray, none, nthArg, nthElement, objectFromPairs, objectToPairs, observeMutations, off, offset, omit, omitBy, on, onUserInputChange, once, orderBy, over, overArgs, pad, palindrome, parseCookie, partial, partialRight, partition, percentile, permutations, pick, pickBy, pipeAsyncFunctions, pipeFunctions, pluralize, powerset, prefix, prettyBytes, primes, promisify, pull, pullAtIndex, pullAtValue, pullBy, radsToDegrees, randomHexColorCode, randomIntArrayInRange, randomIntegerInRange, randomNumberInRange, readFileLines, rearg, recordAnimationFrames, redirect, reduceSuccessive, reduceWhich, reducedFilter, reject, remove, removeNonASCII, renameKeys, reverseString, round, runAsync, runPromisesInSeries, sample, sampleSize, scrollToTop, sdbm, serializeCookie, setStyle, shallowClone, shank, show, shuffle, similarity, size, sleep, smoothScroll, sortCharactersInString, sortedIndex, sortedIndexBy, sortedLastIndex, sortedLastIndexBy, splitLines, spreadOver, stableSort, standardDeviation, stringPermutations, stripHTMLTags, sum, sumBy, sumPower, symmetricDifference, symmetricDifferenceBy, symmetricDifferenceWith, tail, take, takeRight, takeRightWhile, takeWhile, throttle, timeTaken, times, toCamelCase, toCurrency, toDecimalMark, toHash, toKebabCase, toOrdinalSuffix, toSafeInteger, toSnakeCase, toggleClass, tomorrow, transform, triggerEvent, truncateString, truthCheckCollection, unary, uncurry, unescapeHTML, unflattenObject, unfold, union, unionBy, unionWith, uniqueElements, uniqueElementsBy, uniqueElementsByRight, uniqueSymmetricDifference, untildify, unzip, unzipWith, validateNumber, when, without, words, xProd, yesNo, zip, zipObject, zipWith };

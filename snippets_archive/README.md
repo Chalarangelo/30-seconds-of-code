@@ -11,7 +11,8 @@ These snippets, while useful and interesting, didn't quite make it into the repo
 * [`factors`](#factors)
 * [`fibonacciCountUntilNum`](#fibonaccicountuntilnum)
 * [`fibonacciUntilNum`](#fibonacciuntilnum)
-* [`howManyTimes`](#howmanytimes)
+* [`heronArea`](#heronarea)
+* [`httpDelete`](#httpdelete)
 * [`httpPut`](#httpput)
 * [`isArmstrongNumber`](#isarmstrongnumber)
 * [`isSimilar`](#issimilar)
@@ -20,7 +21,7 @@ These snippets, while useful and interesting, didn't quite make it into the repo
 * [`quickSort`](#quicksort)
 * [`removeVowels`](#removevowels)
 * [`solveRPN`](#solverpn)
-* [`httpDelete`](#httpdelete)
+* [`howManyTimes`](#howmanytimes)
 
 ---
 ### JSONToDate
@@ -283,26 +284,49 @@ fibonacciUntilNum(10); // [ 0, 1, 1, 2, 3, 5, 8 ]
 
 <br>[⬆ Back to top](#table-of-contents)
 
-### howManyTimes
+### heronArea
 
-Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.
-Works for both negative and positive integers.
+Returns the area of a triangle using only the 3 side lengths, Heron's formula. Assumes that the sides define a valid triangle. Does NOT assume it is a right triangle.
 
-If `divisor` is `-1` or `1` return `Infinity`.
-If `divisor` is `-0` or `0` return `0`.
-Otherwise, keep dividing `num` with `divisor` and incrementing `i`, while the result is an integer.
-Return the number of times the loop was executed, `i`.
+More information on what Heron's formula is and why it works available here: https://en.wikipedia.org/wiki/Heron%27s_formula.
+
+Uses `Math.sqrt()` to find the square root of a value.
+
 
 ```js
-const howManyTimes = (num, divisor) => {
-  if (divisor === 1 || divisor === -1) return Infinity;
-  if (divisor === 0) return 0;
-  let i = 0;
-  while (Number.isInteger(num / divisor)) {
-    i++;
-    num = num / divisor;
-  }
-  return i;
+const heronArea = (side_a, side_b, side_c) => {
+    const p = (side_a + side_b + side_c) / 2
+    return Math.sqrt(p * (p-side_a) * (p-side_b) * (p-side_c))
+  };
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+heronArea(3, 4, 5); // 6
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+### httpDelete
+
+Makes a `DELETE` request to the passed URL.
+
+Use `XMLHttpRequest` web api to make a `delete` request to the given `url`.
+Handle the `onload` event, by running the provided `callback` function.
+Handle the `onerror` event, by running the provided `err` function.
+Omit the third argument, `err` to log the request to the console's error stream by default.
+
+```js
+const httpDelete = (url, callback, err = console.error) => {
+  const request = new XMLHttpRequest();
+  request.open('DELETE', url, true);
+  request.onload = () => callback(request);
+  request.onerror = () => err(request);
+  request.send();
 };
 ```
 
@@ -310,10 +334,9 @@ const howManyTimes = (num, divisor) => {
 <summary>Examples</summary>
 
 ```js
-howManyTimes(100, 2); // 2
-howManyTimes(100, 2.5); // 2
-howManyTimes(100, 0); // 0
-howManyTimes(100, -1); // Infinity
+httpDelete('https://website.com/users/123', request => {
+  console.log(request.responseText);
+}); // 'Deletes a user from the database'
 ```
 
 </details>
@@ -588,22 +611,26 @@ solveRPN('2 3 ^'); // 8
 
 <br>[⬆ Back to top](#table-of-contents)
 
-### httpDelete
+### howManyTimes
 
-Makes a `DELETE` request to the passed URL.
+Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.
+Works for both negative and positive integers.
 
-Use `XMLHttpRequest` web api to make a `delete` request to the given `url`.
-Handle the `onload` event, by running the provided `callback` function.
-Handle the `onerror` event, by running the provided `err` function.
-Omit the third argument, `err` to log the request to the console's error stream by default.
+If `divisor` is `-1` or `1` return `Infinity`.
+If `divisor` is `-0` or `0` return `0`.
+Otherwise, keep dividing `num` with `divisor` and incrementing `i`, while the result is an integer.
+Return the number of times the loop was executed, `i`.
 
 ```js
-const httpDelete = (url, callback, err = console.error) => {
-  const request = new XMLHttpRequest();
-  request.open('DELETE', url, true);
-  request.onload = () => callback(request);
-  request.onerror = () => err(request);
-  request.send();
+const howManyTimes = (num, divisor) => {
+  if (divisor === 1 || divisor === -1) return Infinity;
+  if (divisor === 0) return 0;
+  let i = 0;
+  while (Number.isInteger(num / divisor)) {
+    i++;
+    num = num / divisor;
+  }
+  return i;
 };
 ```
 
@@ -611,9 +638,10 @@ const httpDelete = (url, callback, err = console.error) => {
 <summary>Examples</summary>
 
 ```js
-httpDelete('https://website.com/users/123', request => {
-  console.log(request.responseText);
-}); // 'Deletes a user from the database'
+howManyTimes(100, 2); // 2
+howManyTimes(100, 2.5); // 2
+howManyTimes(100, 0); // 0
+howManyTimes(100, -1); // Infinity
 ```
 
 </details>
