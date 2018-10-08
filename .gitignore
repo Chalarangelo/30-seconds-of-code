@@ -1,5 +1,4 @@
 node_modules/
-dist/
 currentSnippet\.js
 *.md.temp.js
 .idea
