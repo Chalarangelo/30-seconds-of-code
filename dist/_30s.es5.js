@@ -223,7 +223,7 @@
   };
 
   var atob = function atob(str) {
-    return new Buffer(str, 'base64').toString('binary');
+    return Buffer.from(str, 'base64').toString('binary');
   };
 
   var attempt = function attempt(fn) {
@@ -328,7 +328,7 @@
   };
 
   var btoa = function btoa(str) {
-    return new Buffer(str, 'binary').toString('base64');
+    return Buffer.from(str, 'binary').toString('base64');
   };
 
   var byteSize = function byteSize(str) {
@@ -1007,6 +1007,16 @@
     return (dateFinal - dateInitial) / (1000 * 3600 * 24);
   };
 
+  var getImages = function getImages(el) {
+    var includeDuplicates = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+    var images = _toConsumableArray(el.getElementsByTagName('img')).map(function (img) {
+      return img.getAttribute('src');
+    });
+
+    return includeDuplicates ? images : _toConsumableArray(new Set(images));
+  };
+
   var getMeridiemSuffixOfInteger = function getMeridiemSuffixOfInteger(num) {
     return num === 0 || num === 24 ? 12 + 'am' : num === 12 ? 12 + 'pm' : num < 12 ? num % 12 + 'am' : num % 12 + 'pm';
   };
@@ -1309,6 +1319,10 @@
     return dividend % divisor === 0;
   };
 
+  var isDuplexStream = function isDuplexStream(val) {
+    return val !== null && _typeof(val) === 'object' && typeof val.pipe === 'function' && typeof val._read === 'function' && _typeof(val._readableState) === 'object' && typeof val._write === 'function' && _typeof(val._writableState) === 'object';
+  };
+
   var isEmpty = function isEmpty(val) {
     return val == null || !(Object.keys(val) || val).length;
   };
@@ -1367,6 +1381,10 @@
     return obj !== null && (_typeof(obj) === 'object' || typeof obj === 'function') && typeof obj.then === 'function';
   };
 
+  var isReadableStream = function isReadableStream(val) {
+    return val !== null && _typeof(val) === 'object' && typeof val.pipe === 'function' && typeof val._read === 'function' && _typeof(val._readableState) === 'object';
+  };
+
   var isSameDate = function isSameDate(dateA, dateB) {
     return dateA.toISOString() === dateB.toISOString();
   };
@@ -1402,6 +1420,10 @@
     }
   };
 
+  var isStream = function isStream(val) {
+    return val !== null && _typeof(val) === 'object' && typeof val.pipe === 'function';
+  };
+
   var isString = function isString(val) {
     return typeof val === 'string';
   };
@@ -1429,6 +1451,10 @@
     } catch (e) {
       return false;
     }
+  };
+
+  var isWritableStream = function isWritableStream(val) {
+    return val !== null && _typeof(val) === 'object' && typeof val.pipe === 'function' && typeof val._write === 'function' && _typeof(val._writableState) === 'object';
   };
 
   var join = function join(arr) {
@@ -2493,31 +2519,9 @@
   };
 
   var takeRightWhile = function takeRightWhile(arr, func) {
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
-
-    try {
-      for (var _iterator = arr.reverse().keys()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-        var i = _step.value;
-        if (func(arr[i])) return arr.reverse().slice(arr.length - i, arr.length);
-      }
-    } catch (err) {
-      _didIteratorError = true;
-      _iteratorError = err;
-    } finally {
-      try {
-        if (!_iteratorNormalCompletion && _iterator.return != null) {
-          _iterator.return();
-        }
-      } finally {
-        if (_didIteratorError) {
-          throw _iteratorError;
-        }
-      }
-    }
-
-    return arr;
+    return arr.reduceRight(function (acc, el) {
+      return func(el) ? acc : [el].concat(_toConsumableArray(acc));
+    }, []);
   };
 
   var takeWhile = function takeWhile(arr, func) {
@@ -2655,8 +2659,7 @@
     }, acc);
   };
 
-  var triggerEvent = function triggerEvent(el, eventType) {
-    var detail = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : undefined;
+  var triggerEvent = function triggerEvent(el, eventType, detail) {
     return el.dispatchEvent(new CustomEvent(eventType, {
       detail: detail
     }));
@@ -3005,6 +3008,7 @@
   exports.get = get;
   exports.getColonTimeFromDate = getColonTimeFromDate;
   exports.getDaysDiffBetweenDates = getDaysDiffBetweenDates;
+  exports.getImages = getImages;
   exports.getMeridiemSuffixOfInteger = getMeridiemSuffixOfInteger;
   exports.getScrollPosition = getScrollPosition;
   exports.getStyle = getStyle;
@@ -3048,6 +3052,7 @@
   exports.isBrowser = isBrowser;
   exports.isBrowserTabFocused = isBrowserTabFocused;
   exports.isDivisible = isDivisible;
+  exports.isDuplexStream = isDuplexStream;
   exports.isEmpty = isEmpty;
   exports.isEven = isEven;
   exports.isFunction = isFunction;
@@ -3061,14 +3066,17 @@
   exports.isPrime = isPrime;
   exports.isPrimitive = isPrimitive;
   exports.isPromiseLike = isPromiseLike;
+  exports.isReadableStream = isReadableStream;
   exports.isSameDate = isSameDate;
   exports.isSorted = isSorted;
+  exports.isStream = isStream;
   exports.isString = isString;
   exports.isSymbol = isSymbol;
   exports.isTravisCI = isTravisCI;
   exports.isUndefined = isUndefined;
   exports.isUpperCase = isUpperCase;
   exports.isValidJSON = isValidJSON;
+  exports.isWritableStream = isWritableStream;
   exports.join = join;
   exports.last = last;
   exports.lcm = lcm;
