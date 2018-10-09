@@ -2,7 +2,7 @@
   This is the tagger script that updates the tag_databse file and logs stats for snippet tags.
   Run using `npm run tagger`.
 */
-// Load modules
+//Loading modules
 const fs = require('fs-extra'),
   chalk = require('chalk');
 const util = require('./util');
@@ -28,7 +28,7 @@ tagDbStats = Object.entries(tagDbData).reduce((acc, val) => {
   val[1].forEach(v => (acc.hasOwnProperty(v) ? acc[v]++ : (acc[v] = 1)));
   return acc;
 }, {});
-// Update the listing of snippets in tag_database and log the statistics, along with missing scripts
+//Updating the listing of snippets in tag_database and log the statistics, along with missing scripts
 try {
   for (let snippet of Object.entries(snippets))
     if (
