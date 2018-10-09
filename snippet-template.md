@@ -1,22 +1,26 @@
-### componentName
+### ComponentName
 
 Explain briefly what the snippet does.
 
 Explain briefly how the snippet works.
 
 ```jsx
-function componentName(props) {
+function ComponentName(props) {
   return <div>{props}</div>;
 };
 ```
 <!-- OR -->
 ```jsx
-class componentName extends React.Component {
+class ComponentName extends React.Component {
   constructor(props){}
   render(){
     return <div>{props}</div>;
   }
 }
+```
+
+```jsx
+ReactDOM.render(<ComponentName />, mountNode);
 ```
 
 <!-- tags: (separate each by a comma) -->
