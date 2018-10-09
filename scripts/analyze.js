@@ -2,7 +2,7 @@
   This is the analyzer script that generates the snippetAnalytics.json and snippetArchiveAnalytics.json files.
   Run using `npm run analyzer`.
 */
-// Load modules
+//Loading modules
 const fs = require('fs-extra');
 const path = require('path');
 const chalk = require('chalk');
@@ -12,7 +12,7 @@ let snippetsArchiveData = require('../snippet_data/snippetsArchive.json');
 // Paths
 const OUTPUT_PATH = './snippet_data';
 console.time('Analyzer');
-// Read data
+//Reading data
 let [snippetTokens, snippetArchiveTokens] = [snippetsData, snippetsArchiveData].map(v => ({
   data: v.data.map(snippet => {
     let tokens = prism.tokenize(
