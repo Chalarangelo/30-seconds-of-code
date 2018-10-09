@@ -30,7 +30,8 @@ Reveals an interactive popout menu on hover and focus.
   padding: 15px;
 }
 .reference:hover > .popout-menu,
-.reference:focus > .popout-menu {
+.reference:focus > .popout-menu,
+.reference:focus-within > .popout-menu {
   visibility: visible;
 }
 ```
@@ -40,12 +41,12 @@ Reveals an interactive popout menu on hover and focus.
 #### Explanation
 
 1. `position: relative` on the reference parent establishes a Cartesian positioning context for its child.
-2. `position: absolute` takes the popout menu out of the flow of the document and positions it
-   in relation to the parent.
+2. `position: absolute` takes the popout menu out of the flow of the document and positions it in relation to the parent.
 3. `left: 100%` moves the the popout menu 100% of its parent's width from the left.
 4. `visibility: hidden` hides the popout menu initially and allows for transitions (unlike `display: none`).
-5. `.reference:hover > .popout-menu` means that when `.reference` is hovered over, select immediate
-   children with a class of `.popout-menu` and change their `visibility` to `visible`, which shows the popout.
+5. `.reference:hover > .popout-menu` means that when `.reference` is hovered over, select immediate children with a class of `.popout-menu` and change their `visibility` to `visible`, which shows the popout.
+6. `.reference:focus > .popout-menu` means that when `.reference` is focused, the popout would be shown.
+7. `.reference:focus-within > .popout-menu` ensures that the popout is shown when the focus is *within* the reference.
 
 #### Browser support
 
