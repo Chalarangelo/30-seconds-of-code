@@ -2057,7 +2057,8 @@ li:not(:last-child) {
   padding: 15px;
 }
 .reference:hover &gt; .popout-menu,
-.reference:focus &gt; .popout-menu {
+.reference:focus &gt; .popout-menu,
+.reference:focus-within &gt; .popout-menu {
   visibility: visible;
 }
 </code></pre>
@@ -2085,7 +2086,8 @@ li:not(:last-child) {
                 padding: 15px;
               }
               [data-scope="popout-menu.md"] .reference:hover>.popout-menu,
-              [data-scope="popout-menu.md"] .reference:focus>.popout-menu {
+              [data-scope="popout-menu.md"] .reference:focus>.popout-menu,
+              [data-scope="popout-menu.md"] .reference:focus-within>.popout-menu {
                 visibility: visible;
               }
             </style>
@@ -2097,6 +2099,8 @@ li:not(:last-child) {
               <li><code>visibility: hidden</code> hides the popout menu initially and allows for transitions (unlike <code>display: none</code>).</li>
               <li><code>.reference:hover &gt; .popout-menu</code> means that when <code>.reference</code> is hovered over, select immediate children with a class of <code>.popout-menu</code> and change their <code>visibility</code> to <code>visible</code>,
                 which shows the popout.</li>
+              <li><code>.reference:focus &gt; .popout-menu</code> means that when <code>.reference</code> is focused, the popout would be shown.</li>
+              <li><code>.reference:focus-within &gt; .popout-menu</code> ensures that the popout is shown when the focus is <em>within</em> the reference.</li>
             </ol>
             <h4>Browser support</h4>
             <div>
