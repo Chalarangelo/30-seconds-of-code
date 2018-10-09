@@ -9,6 +9,7 @@ const functionName = arguments =>
   {functionBody}
 ```
 
+Add an example describing that function's purpose and how it works
 ```js
 functionName('sampleInput'); // 'sampleOutput'
 ```
