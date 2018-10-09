@@ -269,7 +269,7 @@ document<span class="token punctuation">.</span>body<span class="token punctuati
           fn<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> args<span class="token punctuation">);</span>
           lastTime <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">();
         }
-      },</span> wait <span class="token operator">-</span> <span class="token punctuation">(</span>Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">()</span> <span class="token operator">-</span> lastTime<span class="token punctuation">));
+      },</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>wait <span class="token operator">-</span> <span class="token punctuation">(</span>Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">()</span> <span class="token operator">-</span> lastTime<span class="token punctuation">),</span> <span class="token number">0</span><span class="token punctuation">));
     }
   };
 };</span>
