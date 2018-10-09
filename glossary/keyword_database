@@ -73,6 +73,7 @@ scope
 selector
 seo
 serialization
+shadowdom
 sql-injection
 sql
 ssl
@@ -91,6 +92,7 @@ variable
 viewport
 vue
 webassembly
+webcomponents
 webgl
 webrtc
 websockets
