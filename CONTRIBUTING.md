@@ -39,7 +39,7 @@ Here's what you can do to help:
 - You can start creating a new snippet, by using the [snippet template](snippet_template.md) to format your snippets.
 - Updating the README.md file should only be done by altering the scripts in the **scripts** folder or altering their relative static parts in the **static-parts** folder.
 - You may tag your snippet in tag_databse although it is _not_ necessary.
-- You may add your name as `[Name][@github_username]` to the contributor database. If the snippet already exists and you are making changes to it you can add your name at the laste seperated by a comma.
+- You may add your name as `[Name][@github_username]` to the contributor database. If the snippet already exists and you are making changes to it you can add your name at the last seperated by a comma.
 <!--
 ### Additional guidelines and conventions regarding snippets
 
