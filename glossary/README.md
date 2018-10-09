@@ -75,6 +75,7 @@
 * [`Selector`](#selector)
 * [`SEO`](#seo)
 * [`Serialization`](#serialization)
+* [`Shadow DOM`](#shadow-dom)
 * [`SQL injection`](#sql-injection)
 * [`SQL`](#sql)
 * [`SSL`](#ssl)
@@ -93,6 +94,7 @@
 * [`Viewport`](#viewport)
 * [`Vue`](#vue)
 * [`WebAssembly`](#webassembly)
+* [`Web Components`](#web-components)
 * [`WebGL`](#webgl)
 * [`WebRTC`](#webrtc)
 * [`WebSockets`](#websockets)
@@ -458,6 +460,12 @@ SEO stands for Search Engine Optimization and refers to the process of improving
 Serialization is the process of converting an object or data structure into a format suitable for transfer over a network and/or storage.
 A common type of serialization in JavaScript is the conversion of an object into a JSON string.
 
+### Shadow DOM
+
+Shadow DOM allows you to attach hidden DOM trees to elements in the normal DOM tree, which are included in the document rendering, but excluded from the main document DOM tree. 
+A shadow DOM tree will start with a shadow root, to which you can attach any elements you want, just like in a regular DOM.
+Examples of shadow DOM uses are the `<video>`/`<audio>` elements and the simple `<input type="range">` element.
+
 ### SQL injection
 
 SQL injection is a code injection technique, used to attack data-driven applications.
@@ -547,6 +555,11 @@ Vue.js separates view and state, utilizing a virtual DOM to update the user inte
 
 WebAssembly (WA) is a web standard that defines an assembly-like text format and corresponding binary format for executalbe code in web pages.
 WebAssembly is meant to complement JavaScript and improve its performance to match native code performance.
+
+### Web Components
+
+Web Components are a set of web platform APIs that allow you to create new custom, reusable, encapsulated HTML tags to use on web pages and apps.
+Building custom components using these standards means that you can use them across modern browsers regardless of any JavaScript library or framework.
 
 ### WebGL
 
