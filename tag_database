@@ -62,6 +62,7 @@ dig:object,recursion,intermediate
 digitize:math,array,beginner
 distance:math,beginner
 drop:array,beginner
+dropProperties:array,object
 dropRight:array,beginner
 dropRightWhile:array,function,intermediate
 dropWhile:array,function,intermediate
