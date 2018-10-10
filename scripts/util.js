@@ -105,8 +105,9 @@ const capitalize = (str, lowerRest = false) =>
   str.slice(0, 1).toUpperCase() + (lowerRest ? str.slice(1).toLowerCase() : str.slice(1));
 // Checks if current environment is Travis CI
 const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
-const isNotTravisCronOrAPI = () =>
-  process.env['TRAVIS_EVENT_TYPE'] !== 'cron' && process.env['TRAVIS_EVENT_TYPE'] !== 'api';
+const isTravisCronOrAPI = () =>
+  process.env['TRAVIS_EVENT_TYPE'] === 'cron' && process.env['TRAVIS_EVENT_TYPE'] === 'api';
+const isNotTravisCronOrAPI = () => !isTravisCronOrAPI();
 // Creates a hash for a value using the SHA-256 algorithm.
 const hashData = val =>
   crypto
@@ -167,6 +168,7 @@ module.exports = {
   shuffle,
   getCodeBlocks,
   getTextualContent,
+  isTravisCronOrAPI,
   isNotTravisCronOrAPI,
   prepTaggedData
 };
