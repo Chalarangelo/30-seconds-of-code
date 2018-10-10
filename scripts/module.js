@@ -19,7 +19,6 @@ if (util.isTravisCI() && util.isNotTravisCronOrAPI()) {
 // Set variables for paths
 const SNIPPETS_PATH = './snippets';
 const SNIPPETS_ARCHIVE_PATH = './snippets_archive';
-const TEMP_PATH = './temp';
 const IMPORTS = './imports.js';
 const MODULE_NAME = '_30s';
 const DIST = './dist';
@@ -38,7 +37,6 @@ const codeRE = /```\s*js([\s\S]*?)```/;
     let importData = '';
     const archivedSnippets = fs.readdirSync(SNIPPETS_ARCHIVE_PATH);
     // Create `temp` and `dist` folders if they don't already exist.
-    if (!fs.existsSync(TEMP_PATH)) fs.mkdirSync(TEMP_PATH);
     if (!fs.existsSync(DIST)) fs.mkdirSync(DIST);
     // Write `imports.js`
     fs.writeFileSync(IMPORTS, '');
@@ -97,7 +95,6 @@ const codeRE = /```\s*js([\s\S]*?)```/;
     });
 
     // Clean up temporary data
-    fs.removeSync(TEMP_PATH);
     fs.unlink(IMPORTS);
     // Log a success message
     console.log(`${chalk.green('SUCCESS!')} Snippet module built!`);
