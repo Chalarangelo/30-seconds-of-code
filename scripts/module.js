@@ -33,6 +33,9 @@ const codeRE = /```\s*js([\s\S]*?)```/;
     const tagDatabase = fs.readFileSync('tag_database', 'utf8');
     const nodeSnippets = tagDatabase.split('\n').filter(v => v.search(/:.*node/g) !== -1).map(v => v.slice(0,v.indexOf(':')));
     const snippets = fs.readdirSync(SNIPPETS_PATH);
+    const snippetExports = `module.exports = {${snippets.map(v => v.replace('.md', '')).join(',')}}`;
+    let requires = [];
+    let importData = '';
     const archivedSnippets = fs.readdirSync(SNIPPETS_ARCHIVE_PATH);
     // Create `temp` and `dist` folders if they don't already exist.
     if (!fs.existsSync(TEMP_PATH)) fs.mkdirSync(TEMP_PATH);
@@ -43,17 +46,16 @@ const codeRE = /```\s*js([\s\S]*?)```/;
     snippets.forEach(snippet => {
       const snippetData = fs.readFileSync(path.join(SNIPPETS_PATH, snippet), 'utf8');
       const snippetName = snippet.replace('.md', '');
-      const code = snippetData.match(codeRE)[1].replace('\n', '');
-      const toWrite = nodeSnippets.includes(snippetName)
-        ? `${code
-          .replace(`const ${snippetName}`, `export const ${snippetName}`)
-          // Prevents errors from being thrown in browser environment
-          .replace('require(', 'typeof require !== "undefined" && require(')}`
-        : `export ${code}`;
-      // Write data to file and append to the imports file
-      fs.writeFileSync(`${TEMP_PATH}/${snippetName}.js`, toWrite);
-      fs.appendFileSync(IMPORTS, `\nexport { ${snippetName} } from './temp/${snippetName}.js'`);
-    })
+      let code = snippetData.match(codeRE)[1].replace('\n', '');
+      if (nodeSnippets.includes(snippetName)) {
+        requires.push(code.match(/const.*=.*require\(([^\)]*)\);/g));
+        code = code.replace(/const.*=.*require\(([^\)]*)\);/g,'');
+      }
+      importData += code;
+    });
+    // Write the data to the imports file
+    requires = [...new Set(requires.filter(Boolean).map(v => v[0].replace('require(', 'typeof require !== "undefined" && require(')))].join('\n');
+    fs.writeFileSync(IMPORTS, `${requires}\n\n${importData}\n\n${snippetExports}`)
 
     // Write to the proper files and start the `rollup` script
     const es5 = babel({
