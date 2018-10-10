@@ -982,9 +982,9 @@ chunk([1, 2, 3, 4, 5], 2); // [[1,2],[3,4],[5]]
 
 ### compact
 
-Removes falsey values from an array.
+Removes false values from an array.
 
-Use `Array.prototype.filter()` to filter out falsey values (`false`, `null`, `0`, `""`, `undefined`, and `NaN`).
+Use `Array.prototype.filter()` to filter out false values (`false`, `null`, `0`, `""`, `undefined`, and `NaN`).
 
 ```js
 const compact = arr => arr.filter(Boolean);
@@ -1316,7 +1316,7 @@ filterNonUniqueBy(
 
 Returns the last element for which the provided function returns a truthy value.
 
-Use `Array.prototype.filter()` to remove elements for which `fn` returns falsey values, `Array.prototype.pop()` to get the last one.
+Use `Array.prototype.filter()` to remove elements for which `fn` returns false values, `Array.prototype.pop()` to get the last one.
 
 ```js
 const findLast = (arr, fn) => arr.filter(fn).pop();
@@ -1338,7 +1338,7 @@ findLast([1, 2, 3, 4], n => n % 2 === 1); // 3
 Returns the index of the last element for which the provided function returns a truthy value.
 
 Use `Array.prototype.map()` to map each element to an array with its index and value.
-Use `Array.prototype.filter()` to remove elements for which `fn` returns falsey values, `Array.prototype.pop()` to get the last one.
+Use `Array.prototype.filter()` to remove elements for which `fn` returns false values, `Array.prototype.pop()` to get the last one.
 
 ```js
 const findLastIndex = (arr, fn) =>
@@ -3445,7 +3445,7 @@ currentURL(); // 'https://google.com'
 
 ### detectDeviceType
 
-Detects wether the website is being opened in a mobile device or a desktop/laptop.
+Detects whether the website is being opened in a mobile device or a desktop/laptop.
 
 Use a regular expression to test the `navigator.userAgent` property to figure out if the device is a mobile device or a desktop/laptop.
 
@@ -7259,7 +7259,7 @@ omit({ a: 1, b: '2', c: 3 }, ['b']); // { 'a': 1, 'c': 3 }
 
 ### omitBy
 
-Creates an object composed of the properties the given function returns falsey for. The function is invoked with two arguments: (value, key).
+Creates an object composed of the properties the given function returns false for. The function is invoked with two arguments: (value, key).
 
 Use `Object.keys(obj)` and `Array.prototype.filter()`to remove the keys for which `fn` returns a truthy value.
 Use `Array.prototype.reduce()` to convert the filtered keys back to an object with the corresponding key-value pairs.
@@ -7341,7 +7341,7 @@ pick({ a: 1, b: '2', c: 3 }, ['a', 'c']); // { 'a': 1, 'c': 3 }
 
 Creates an object composed of the properties the given function returns truthy for. The function is invoked with two arguments: (value, key).
 
-Use `Object.keys(obj)` and `Array.prototype.filter()`to remove the keys for which `fn` returns a falsey value.
+Use `Object.keys(obj)` and `Array.prototype.filter()`to remove the keys for which `fn` returns a false value.
 Use `Array.prototype.reduce()` to convert the filtered keys back to an object with the corresponding key-value pairs.
 
 ```js
