@@ -7,7 +7,7 @@ supplying the type using `typeof`.
 Since `typeof null` evaluates to `'object'`, it needs to be directly compared.
 
 ```js
-const isPrimitive = val => !['object', 'function'].includes(typeof val) || val === null;
+const isPrimitive = val => Object(val) !== val;
 ```
 
 ```js
