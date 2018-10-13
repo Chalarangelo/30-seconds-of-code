@@ -1,22 +1,32 @@
 ### MappedTable
 
-Generate a table with dynamic rows based on passed array of data. Optionally include headers.
+Renders a table with rows dynamically created from an array of data.
 
-Conditionaly check weather to include table headers or not. Use `Array.prototype.map` to map over array of data and return `<tr>` for each entry.
+Use the value of the `headers` prop to conditionally render a table with a header. Use `Array.prototype.map` to render every item in `data` as a `<tr>` element and give it a `key`. `data` can either be an array of objects with the `id` and `value` properties or an array of primitives. Omit the `headers` prop to render a `table` without headers.
 
 ```jsx
 function MappedTable(props) {
   return (
-    <tbody>
-      {props.headers ? return(<tr>{props.headers.map((h, i)=> (<th key={i}>h</th>))}</tr>) : return null}
-      {props.data.map((v, i) => {
-        return (
-          <tr obj={v} key={v.id ? v.id : i}>
-            <td>v.name</td>
+    <table>
+      <thead>
+        {props.headers ? (
+          <tr>
+            {props.headers.map((h, i) => (
+              <th key={i}>h</th>
+            ))}
           </tr>
-        );
-      })}
-    </tbody>
+        ) : null}
+      </thead>
+      <tbody>
+        {props.data.map((v, i) => {
+          return (
+            <tr obj={v} key={v.id ? v.id : i}>
+              <td>v.name</td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
   );
 }
 ```
@@ -30,6 +40,6 @@ ReactDOM.render(
 );
 ```
 
-<!-- tags: (functional,array) -->
+<!-- tags: (array,functional) -->
 
-<!-- expertise: (0) -->
+<!-- expertise: (1) -->
