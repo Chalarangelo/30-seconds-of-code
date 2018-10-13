@@ -31,7 +31,7 @@ p:first-child::first-letter {
   color: blue;
   float: left;
   margin: 0 12px 3px 0;
-  font-size: 72px;
+  font-size: 4rem;
   font-weight: bold;
   line-height: 1;
 }
