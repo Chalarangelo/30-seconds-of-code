@@ -9,21 +9,30 @@ Omit the `isOrderedList` prop to render a `<ul>` list by default.
 
 ```jsx
 function MappedList(props) {
-  return props.isOrderedList ?
+  return props.isOrderedList ? (
     <ol>
-      {props.data.map((v,i) => <li key={v.id ? v.id : i}>{v.value ? v.value : v}</li>)}
-    </ol> :
+      {props.data.map((v, i) => (
+        <li key={v.id ? v.id : i}>{v.value ? v.value : v}</li>
+      ))}
+    </ol>
+  ) : (
     <ul>
-      {props.data.map((v,i) => <li key={v.id ? v.id : i}>{v.value ? v.value : v}</li>)}
+      {props.data.map((v, i) => (
+        <li key={v.id ? v.id : i}>{v.value ? v.value : v}</li>
+      ))}
     </ul>
-};
+  );
+}
 ```
 
 ```jsx
 const names = ['John', 'Paul', 'Mary'];
 ReactDOM.render(<MappedList data={names}/>, document.getElementById('root'));
 const users = [ { id: 8, value: 'john' }, { id: 3, value: 'paul' }];
-ReactDOM.render(<MappedList data={users} isOrderedList/>, document.getElementById('root'));
+ReactDOM.render(
+  <MappedList data={users} isOrderedList />,
+  document.getElementById('root')
+);
 ```
 
 <!-- tags: array,functional -->
