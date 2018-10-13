@@ -18,13 +18,13 @@ function MappedTable(props) {
         ) : null}
       </thead>
       <tbody>
-        {props.data.map((v, i) => {
-          return (
+        {props.data.map((v, i) =>
+          (
             <tr obj={v} key={v.id ? v.id : i}>
               <td>v.name</td>
             </tr>
           );
-        })}
+        )}
       </tbody>
     </table>
   );
