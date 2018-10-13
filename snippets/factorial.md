@@ -6,7 +6,7 @@ Use recursion.
 If `n` is less than or equal to `1`, return `1`.
 Otherwise, return the product of `n` and the factorial of `n - 1`.
 Throws an exception if `n` is a negative number.
-
+ 
 ```js
 const factorial = n =>
   n < 0
@@ -18,6 +18,13 @@ const factorial = n =>
       : n * factorial(n - 1);
 ```
 
+Explanation of above program - 
+
+--> n is checked if it is greater than 0.
+--> if n is greater than 0 -
+    --> checks if n is greater than 1 (if true)-
+        --> multiply n with recursion of factorial function with argunment n-1.
+        
 ```js
 factorial(6); // 720
 ```
