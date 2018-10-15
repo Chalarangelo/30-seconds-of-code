@@ -14,3 +14,9 @@ https://30-seconds.github.io/30-seconds-of-css/
 ## Contributing
 
 See CONTRIBUTING.md for the snippet template.
+
+#### Related projects
+
+* [30 Seconds of CSS](https://30-seconds.github.io/30-seconds-of-css/)
+* [30 Seconds of Interviews](https://30secondsofinterviews.org/)
+* [30 Seconds of React](https://github.com/30-seconds/30-seconds-of-react)
