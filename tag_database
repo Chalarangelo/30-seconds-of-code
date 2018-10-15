@@ -273,6 +273,7 @@ sortedLastIndex:array,math,intermediate
 sortedLastIndexBy:array,math,function,intermediate
 splitLines:string,beginner
 spreadOver:adapter,intermediate
+squareSum:array,function,intermediate
 stableSort:array,sort,advanced,intermediate
 standardDeviation:math,array,intermediate
 stringPermutations:string,recursion,advanced
