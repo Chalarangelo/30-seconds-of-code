@@ -2,25 +2,26 @@
 
 Renders a table with rows dynamically created from an array of data.
 
-Use the value of the `headers` prop to conditionally render a table with a header. Use `Array.prototype.map` to render every item in `data` as a `<tr>` element and give it a `key`. `data` can either be an array of objects with the `id` and `value` properties or an array of primitives. Omit the `headers` prop to render a `table` without headers.
+Use the value of the `headers` prop to conditionally render a table with a header. Use `Array.prototype.map` to render every item in `data` as a `<tr>` element and give it a `key`. `data` can either be an array of objects with the `id` and `name` properties or an array of primitives. Omit the `headers` prop to render a `table` without headers.
 
 ```jsx
-function MappedTable(props) {
+function MappedTable({ headers, data }) {
   return (
     <table>
       <thead>
-        {props.headers ? (
+        {headers && (
           <tr>
-            {props.headers.map((h, i) => (
+            {headers.map((h, i) => (
               <th key={i}>h</th>
             ))}
           </tr>
-        ) : null}
+        )}
       </thead>
       <tbody>
-        {props.data.map((v, i) =>
+        {data.map((v, i) =>
           (
             <tr obj={v} key={v.id ? v.id : i}>
+              <td>v.id</td>
               <td>v.name</td>
             </tr>
           );
