@@ -35,6 +35,7 @@ compose:function,intermediate
 composeRight:function,intermediate
 converge:function,intermediate
 copyToClipboard:browser,string,advanced
+copyToClipboardAsync:browser,string,intermediate
 countBy:array,object,intermediate
 counter:browser,advanced
 countOccurrences:array,intermediate
