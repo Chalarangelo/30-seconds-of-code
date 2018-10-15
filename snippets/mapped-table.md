@@ -20,7 +20,7 @@ function MappedTable({ headers, data }) {
       <tbody>
         {data.map((v, i) =>
           (
-            <tr obj={v} key={v.id ? v.id : i}>
+            <tr obj={v} key={v.id || i}>
               <td>v.id</td>
               <td>v.name</td>
             </tr>
