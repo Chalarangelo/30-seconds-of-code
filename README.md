@@ -1010,7 +1010,7 @@ Use `Array.prototype.reduce()` to create an object, where the keys are produced 
 
 ```js
 const countBy = (arr, fn) =>
-  arr.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val, i) => {
+  arr.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val) => {
     acc[val] = (acc[val] || 0) + 1;
     return acc;
   }, {});
