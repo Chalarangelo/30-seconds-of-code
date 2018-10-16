@@ -168,7 +168,6 @@ isWritableStream:node,type,intermediate
 join:array,intermediate
 JSONtoCSV:array,string,object,advanced
 JSONToFile:node,json,intermediate
-kphToMph:utility,beginner
 last:array,beginner
 lcm:math,recursion,beginner
 longestItem:array,string,utility,intermediate
@@ -191,7 +190,6 @@ minBy:math,array,function,beginner
 minDate:date,math,beginner
 minN:array,math,beginner
 mostPerformant:utility,function
-mphToKph:utility,beginner
 negate:function,beginner
 nest:object,intermediate
 nodeListToArray:browser,array,beginner
