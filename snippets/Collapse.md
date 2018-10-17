@@ -64,6 +64,6 @@ ReactDOM.render(
 );
 ```
 
-<!-- tags: visual,children,state,class -->
+<!-- tags: visual,children,state,fragment,class -->
 
 <!-- expertise: 2 -->
