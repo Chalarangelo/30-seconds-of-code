@@ -4,6 +4,10 @@ const {tomorrow} = require('./_30s.js');
 test('tomorrow is a Function', () => {
   expect(tomorrow).toBeInstanceOf(Function);
 });
+test('Returns the correct type', () => {
+  expect(typeof tomorrow()).toBe('string');
+});
+
 const t1 = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() + 1);
 const t2 = new Date(tomorrow());
 test('Returns the correct year', () => {
