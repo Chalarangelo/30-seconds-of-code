@@ -38,7 +38,7 @@ class Collapse extends React.Component {
   
   render() {
     return (
-      <React.Fragment>
+      <div>
         <button style={this.style.buttonStyle} onClick={this.toggleCollapse}>
           Show/Hide Content
         </button>
