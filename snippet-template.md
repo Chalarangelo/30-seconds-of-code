@@ -25,8 +25,8 @@ ReactDOM.render(<ComponentName />, mountNode);
 
 <!-- tags: (separate each by a comma) -->
 
-<!-- expertise: (0,1,2) -->
-<!-- Expertise levels:
+<!-- expertise: (0,1,2,3) -->
+<!-- Expertise levels (pick only one, no parentheses):
   0: beginner
   1: intermediate
   2: advanced
