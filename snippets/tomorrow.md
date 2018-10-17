@@ -2,7 +2,7 @@
 
 Results in a string representation of tomorrow's date.
 
-First we use `new Date()` to get today's date, then add one day using `Date.getDate()` and mutate the initial `Date` via `Date.setDate()`. The we use `.toISOString` to get the date part of the string – discarding the time part.
+First we use `new Date()` to get today's date, then add one day using `Date.getDate()` and mutate the initial `Date` via `Date.setDate()`. Then we use construct the date string in `yyyy-mm-dd` format.
 
 ```js
 const tomorrow = () => {
