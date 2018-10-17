@@ -48,7 +48,7 @@ class Collapse extends React.Component {
         >
           {this.props.children}
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 }
