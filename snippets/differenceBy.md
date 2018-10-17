@@ -6,7 +6,7 @@ Create a `Set` by applying `fn` to each element in `b`, then use `Array.prototyp
 
 ```js
 const differenceBy = (a, b, fn) => {
-  const s = new Set(b.map(v => fn(v)));
+  const s = new Set(b.map(fn));
   return a.filter(x => !s.has(fn(x)));
 };
 ```

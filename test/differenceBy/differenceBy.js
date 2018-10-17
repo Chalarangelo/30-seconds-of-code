@@ -1,5 +1,5 @@
 const differenceBy = (a, b, fn) => {
-  const s = new Set(b.map(v => fn(v)));
+  const s = new Set(b.map(fn));
   return a.filter(x => !s.has(fn(x)));
 };
 module.exports = differenceBy;
