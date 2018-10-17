@@ -8,7 +8,7 @@ Use `Array.prototype.map` to render every item in `data` as a `<li>` element and
 Omit the `isOrderedList` prop to render a `<ul>` list by default.
 
 ```jsx
-function MappedList({ isOrderedList, data}) {
+function MappedList({ isOrderedList, data }) {
   const list = data.map((v, i) => (
     <li key={v.id ? v.id : i}>{v.value ? v.value : v}</li>
   ));
