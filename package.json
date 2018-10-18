@@ -3,6 +3,7 @@
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
     "chalk": "^2.4.1",
+    "eslint": "^5.7.0",
     "fs-extra": "^6.0.0",
     "html-minifier": "^3.5.20",
     "jest": "^23.6.0",
