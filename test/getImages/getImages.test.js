@@ -15,4 +15,4 @@ test("getImages returns an Array", () => {
 test("getImages removes duplicates from images Array", () => {
     expect(getImages(TEST_HTML, false).length).toBeLessThanOrEqual(getImages(TEST_HTML, true).length);
     expect(getImages(TEST_HTML, true)).toEqual(expect.arrayContaining(getImages(TEST_HTML, false)));
-});\n
+});

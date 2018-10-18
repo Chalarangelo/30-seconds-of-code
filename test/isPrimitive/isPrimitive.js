@@ -1,2 +1,2 @@
-const isPrimitive = val => !['object', 'function'].includes(typeof val) || val === null;
+const isPrimitive = val => Object(val) !== val;
 module.exports = isPrimitive;

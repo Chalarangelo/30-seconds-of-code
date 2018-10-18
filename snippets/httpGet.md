@@ -21,7 +21,7 @@ const httpGet = (url, callback, err = console.error) => {
 httpGet(
   'https://jsonplaceholder.typicode.com/posts/1',
   console.log
-); /* 
+); /*
 Logs: {
   "userId": 1,
   "id": 1,
