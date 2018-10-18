@@ -28,9 +28,9 @@ try {
     // turn it into an object so we can add data to it to be used in a different scope
     .map(name => ({ name }));
 
-  if (!fs.existsSync(TEMP_PATH)) {
+  if (!fs.existsSync(TEMP_PATH))
     fs.mkdirSync(TEMP_PATH);
-  }
+
 
   for (const snippet of snippets) {
     snippet.data = fs.readFileSync(path.join(SNIPPETS_PATH, snippet.name), 'utf8');
@@ -55,7 +55,7 @@ try {
     `semistandard "${TEMP_PATH}" --fix & ` +
     `prettier "${TEMP_PATH}/*.js" --single-quote --print-width=100 --write`;
 
-  cp.exec(cmd, {}, (err, stdout, stderr) => {
+  cp.exec(cmd, {}, () => {
     // Loop through each snippet now that semistandard and prettier did their job
     for (const snippet of snippets) {
       // an array to store each linted code block (definition + example)
@@ -77,7 +77,8 @@ try {
     console.log(`${chalk.green('SUCCESS!')} Snippet files linted!`);
     console.timeEnd('Linter');
   });
-} catch (err) {
+}
+catch (err) {
   console.log(`${chalk.red('ERROR!')} During linting: ${err}`);
   process.exit(1);
 }
