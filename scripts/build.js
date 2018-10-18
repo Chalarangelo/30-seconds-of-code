@@ -45,10 +45,10 @@ if (
       .readdirSync(SNIPPETS_ARCHIVE_PATH)
       .sort((a, b) => a.toLowerCase() - b.toLowerCase());
     // Store the data read from each snippet in the appropriate object
-    for (const name of snippetFilenames.filter(s => s !== 'README.md')) {
+    for (const name of snippetFilenames.filter(s => s !== 'README.md'))
       snippets[name] = fs.readFileSync(path.join(SNIPPETS_ARCHIVE_PATH, name), 'utf8');
-    }
-  } catch (err) {
+  }
+  catch (err) {
     console.log(`${chalk.red('ERROR!')} During snippet loading: ${err}`);
     process.exit(1);
   }
@@ -65,13 +65,13 @@ if (
     );
     output += misc.hr();
 
-    for (const snippet of Object.entries(snippets)) {
+    for (const snippet of Object.entries(snippets))
       output += makeExamples(snippet[1]);
-    }
 
     // Write to the README file of the archive
     fs.writeFileSync(path.join(SNIPPETS_ARCHIVE_PATH, 'README.md'), output);
-  } catch (err) {
+  }
+  catch (err) {
     console.log(`${chalk.red('ERROR!')} During README generation for snippets archive: ${err}`);
     process.exit(1);
   }
@@ -110,7 +110,8 @@ snippets = util.readSnippets(SNIPPETS_PATH);
 try {
   startPart = fs.readFileSync(path.join(STATIC_PARTS_PATH, 'README-start.md'), 'utf8');
   endPart = fs.readFileSync(path.join(STATIC_PARTS_PATH, 'README-end.md'), 'utf8');
-} catch (err) {
+}
+catch (err) {
   console.log(`${chalk.red('ERROR!')} During static part loading: ${err}`);
   process.exit(1);
 }
@@ -170,7 +171,8 @@ try {
   output += `\n${endPart}\n`;
   // Write to the README file
   fs.writeFileSync('README.md', output);
-} catch (err) {
+}
+catch (err) {
   console.log(`${chalk.red('ERROR!')} During README generation: ${err}`);
   process.exit(1);
 }
