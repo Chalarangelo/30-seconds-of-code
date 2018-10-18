@@ -33,7 +33,7 @@ class Collapse extends React.Component {
   }
   
   toggleCollapse() {
-    this.setState(state => ({ collapsed: !state.collapsed });
+    this.setState(state => ({ collapsed: !state.collapsed }));
   }
   
   render() {
