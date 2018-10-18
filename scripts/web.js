@@ -47,12 +47,12 @@ const generateSnippetCard = (
 ${
   addCornerTag
     ? `<div class="corner ${
-        snippetKey[1].includes('advanced')
-          ? 'advanced'
-          : snippetKey[1].includes('beginner')
-            ? 'beginner'
-            : 'intermediate'
-      }"></div>`
+      snippetKey[1].includes('advanced')
+        ? 'advanced'
+        : snippetKey[1].includes('beginner')
+          ? 'beginner'
+          : 'intermediate'
+    }"></div>`
     : ''
 }
   ${md
@@ -109,9 +109,10 @@ sass.render(
         if (!err2) console.log(`${chalk.green('SUCCESS!')} style.css file generated!`);
         else console.log(`${chalk.red('ERROR!')} During style.css file generation: ${err}`);
       });
-    } else {
-      console.log(`${chalk.red('ERROR!')} During style.css file generation: ${err}`);
     }
+    else
+      console.log(`${chalk.red('ERROR!')} During style.css file generation: ${err}`);
+
   }
 );
 // Set variables for paths
@@ -147,7 +148,8 @@ try {
     'static-page-start.html',
     'static-page-end.html'
   ].map(filename => fs.readFileSync(path.join(staticPartsPath, filename), 'utf8'));
-} catch (err) {
+}
+catch (err) {
   // Handle errors (hopefully not!)
   console.log(`${chalk.red('ERROR!')} During static part loading: ${err}`);
   process.exit(1);
@@ -169,7 +171,7 @@ try {
         .replace(/<p>/g, '')
         .replace(/<\/p>/g, '') +
       '</h4><ul>';
-    for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
+    for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
       output += md
         .render(
           `[${taggedSnippet[0]}](./${
@@ -179,6 +181,7 @@ try {
         .replace(/<p>/g, '')
         .replace(/<\/p>/g, '</li>')
         .replace(/<a/g, `<li><a tags="${taggedSnippet[1].join(',')}"`);
+    }
     output += '</ul>\n';
   }
   output += `<h4 class="static-link"><a href="./archive">Archive</a></h4>
@@ -218,7 +221,7 @@ try {
       /<span class="token keyword">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token keyword">([^\0]*?)<\/span>/gm,
       (match, p1, p2, p3) => `<span class="token keyword">${p1}${p2}${p3}</span>`
     );
-    pagesOutput.push({ tag: tag, content: localOutput });
+    pagesOutput.push({ tag, content: localOutput });
   }
   // Minify output
   pagesOutput.forEach(page => {
@@ -231,7 +234,8 @@ try {
       `${chalk.green('SUCCESS!')} ${page.tag === 'array' ? 'index' : page.tag}.html file generated!`
     );
   });
-} catch (err) {
+}
+catch (err) {
   // Handle errors (hopefully not!)
   console.log(`${chalk.red('ERROR!')} During category page generation: ${err}`);
   process.exit(1);
@@ -251,7 +255,7 @@ const staticPageStartGenerator = (staticPart, heading, description) => {
         .replace(/<p>/g, '')
         .replace(/<\/p>/g, '') +
       '</h4><ul>';
-    for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
+    for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
       htmlCode += md
         .render(
           `[${taggedSnippet[0]}](./${
@@ -261,6 +265,7 @@ const staticPageStartGenerator = (staticPart, heading, description) => {
         .replace(/<p>/g, '')
         .replace(/<\/p>/g, '</li>')
         .replace(/<a/g, `<li><a tags="${taggedSnippet[1].join(',')}"`);
+    }
     htmlCode += '</ul>\n';
   }
   htmlCode += `<h4 class="static-link"><a href="./archive">Archive</a></h4>
@@ -271,13 +276,13 @@ const staticPageStartGenerator = (staticPart, heading, description) => {
   </nav><main class="col-centered"><span id="top"><br/><br/></span><h2 class="category-name">${heading}</h2>
         <p style="text-align: justify">${description}</p><br />`;
   return htmlCode.replace(/\$page_name/g, util.capitalize(heading));
-}
+};
 
 
 // Create the output for the archive.html file
 try {
   // Add the static part
-  let heading = "Snippets Archive";
+  let heading = 'Snippets Archive';
   let description = "These snippets, while useful and interesting, didn't quite make it into the repository due to either having very specific use-cases or being outdated. However we felt like they might still be useful to some readers, so here they are.";
   let htmlCode = staticPageStartGenerator(staticPageStartPart, heading, description);
 
@@ -316,7 +321,8 @@ try {
 
   fs.writeFileSync(path.join(docsPath, 'archive.html'), minifiedArchivedOutput);
   console.log(`${chalk.green('SUCCESS!')} archive.html file generated!`);
-} catch (err) {
+}
+catch (err) {
   console.log(`${chalk.red('ERROR!')} During archive.html generation: ${err}`);
   process.exit(1);
 }
@@ -324,8 +330,8 @@ try {
 // Create the output for the glossary.html file
 try {
   // Add the static part
-  let heading = "Glossary";
-  let description = "Developers use a lot of terminology daily. Every once in a while, you might find a term you do not know. We know how frustrating that can get, so we provide you with a handy glossary of frequently used web development terms.";
+  let heading = 'Glossary';
+  let description = 'Developers use a lot of terminology daily. Every once in a while, you might find a term you do not know. We know how frustrating that can get, so we provide you with a handy glossary of frequently used web development terms.';
   let htmlCode = staticPageStartGenerator(staticPageStartPart, heading, description);
   glossaryOutput += htmlCode;
 
@@ -333,7 +339,7 @@ try {
   const filteredGlossarySnippets = filterSnippets(glossarySnippets, ['README.md']);
 
   // Generate glossary snippets from md files
-  for (let snippet of Object.entries(filteredGlossarySnippets))
+  for (let snippet of Object.entries(filteredGlossarySnippets)) {
     glossaryOutput +=
       '<div class="card code-card"><div class="section card-content">' +
       md
@@ -341,6 +347,7 @@ try {
         .replace(/<h3/g, `<h4 id="${snippet[0].toLowerCase()}"`)
         .replace(/<\/h3>/g, '</h4>') +
       '</div></div>';
+  }
 
   glossaryOutput += `${staticPageEndPart}`;
 
@@ -348,7 +355,8 @@ try {
   const minifiedGlossaryOutput = minifyHTML(glossaryOutput);
   fs.writeFileSync(path.join(docsPath, 'glossary.html'), minifiedGlossaryOutput);
   console.log(`${chalk.green('SUCCESS!')} glossary.html file generated!`);
-} catch (err) {
+}
+catch (err) {
   console.log(`${chalk.red('ERROR!')} During glossary.html generation: ${err}`);
   process.exit(1);
 }
@@ -358,7 +366,8 @@ staticFiles.forEach(f => {
   try {
     fs.copyFileSync(path.join(staticPartsPath, f), path.join(docsPath, f));
     console.log(`${chalk.green('SUCCESS!')} ${f} file copied!`);
-  } catch (err) {
+  }
+  catch (err) {
     console.log(`${chalk.red('ERROR!')} During ${f} copying: ${err}`);
     process.exit(1);
   }

@@ -30,22 +30,25 @@ tagDbStats = Object.entries(tagDbData).reduce((acc, val) => {
 }, {});
 // Update the listing of snippets in tag_database and log the statistics, along with missing scripts
 try {
-  for (let snippet of Object.entries(snippets))
+  for (let snippet of Object.entries(snippets)) {
     if (
       tagDbData.hasOwnProperty(snippet[0].slice(0, -3)) &&
       tagDbData[snippet[0].slice(0, -3)].join(',').trim()
-    )
+    ) {
       output += `${snippet[0].slice(0, -3)}:${tagDbData[snippet[0].slice(0, -3)]
         .join(',')
         .trim()}\n`;
+    }
     else {
       output += `${snippet[0].slice(0, -3)}:uncategorized\n`;
       missingTags++;
       console.log(`${chalk.yellow('Tagged uncategorized:')} ${snippet[0].slice(0, -3)}`);
     }
+  }
   // Write to tag_database
   fs.writeFileSync('tag_database', output);
-} catch (err) {
+}
+catch (err) {
   // Handle errors (hopefully not!)
   console.log(`${chalk.red('ERROR!')} During tag_database generation: ${err}`);
   process.exit(1);
