@@ -30,18 +30,18 @@ class StarRating extends React.Component {
       selection: 0
     };
     this.hoverOver = this.hoverOver.bind(this);
-    this.setRating = this.setRating.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
   hoverOver(val) {
     this.setState(state => ({ selection: val }));
   }
-  setRating(event) {
+  handleClick(event) {
     const val = event.target.getAttribute('star-id') || this.state.rating;
     this.setState(state => ({ rating: val }));
   }
   render() {
     return (
-      <div onMouseOut={() => this.hoverOver(0)} onClick={this.setRating}>
+      <div onMouseOut={() => this.hoverOver(0)} onClick={this.handleClick}>
         {Array.from({ length: 5 }, (v, i) => i + 1).map(v => (
           <Star
             starId={v}
