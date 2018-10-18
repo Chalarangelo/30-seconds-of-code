@@ -52,8 +52,8 @@ try {
   }
 
   const cmd =
-    `semistandard "${TEMP_PATH}" --fix & ` +
-    `prettier "${TEMP_PATH}/*.js" --single-quote --print-width=100 --write`;
+    `prettier "${TEMP_PATH}/*.js" --single-quote --print-width=100 --write & ` +
+    `eslint "${TEMP_PATH}/*.js" --quiet --fix --rule "no-undef: 0, no-unused-vars: 0, no-multiple-empty-lines: 0" -o eslint_errors.log -f table`;
 
   cp.exec(cmd, {}, () => {
     // Loop through each snippet now that semistandard and prettier did their job
