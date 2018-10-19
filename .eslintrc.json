@@ -4,6 +4,9 @@
     "es6": true,
     "node": true
   },
+  "globals": {
+    "test": false
+  },
   "extends": "eslint:recommended",
   "parserOptions": {
     "ecmaVersion": 2018,
