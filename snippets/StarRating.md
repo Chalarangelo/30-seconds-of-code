@@ -47,7 +47,7 @@ const StarRating = (function() {
           onClick={this.handleClick}
           onMouseOver={this.hoverOver}
         >
-          {Array.from({ length: 5 }, (v, i) => i + 1).map(v => (
+          {Array.from({ length: 5 }, (v, i) => (
             <Star
               starId={v}
               key={`star_${v} `}
