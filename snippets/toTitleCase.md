@@ -2,10 +2,7 @@
 
 Converts a string to title case.
 
-The algorithm featured here breaks down as follows:
-1. Break the string into words, using a [Regular Expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-2. Capitalize each of them
-3. Stich them back together, using the whitespace `' '` character as a separator
+Break the string into words, using a regexp, and combine them capitalizing the first letter of each word and adding a whitespace between them.
 
 ```js
 const toTitleCase = str => str
