@@ -51,6 +51,23 @@ const codeRE = /```\s*js([\s\S]*?)```/;
     requires = [...new Set(requires.filter(Boolean).map(v => v[0].replace('require(', 'typeof require !== "undefined" && require(')))].join('\n');
     fs.writeFileSync(IMPORTS, `${requires}\n\n${importData}\n\n${snippetExports}`)
 
+    archivedSnippets.forEach(snippet => {
+      const snippetData = fs.readFileSync(path.join(SNIPPETS_ARCHIVE_PATH, snippet), 'utf8');
+      let code = snippetData.match(codeRE)[1].replace('\n', '');
+      importData += code;
+    });
+    fs.writeFileSync(TEST_PACKAGE, `${requires}\n\n${importData}\n\n${testExports}`);
+
+    // Check Travis builds - Will skip builds on Travis if not CRON/API
+    if (util.isTravisCI() && util.isNotTravisCronOrAPI()) {
+      fs.unlink(IMPORTS);
+      console.log(
+        `${chalk.green('NOBUILD')} Module build terminated, not a cron job or a custom build!`
+      );
+      console.timeEnd('Packager');
+      process.exit(0);
+    }
+
     // Write to the proper files and start the `rollup` script
     const es5 = babel({
       presets: ['@babel/preset-env']

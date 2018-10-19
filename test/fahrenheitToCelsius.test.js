@@ -1,5 +1,5 @@
 const expect = require('expect');
-const fahrenheitToCelsius = require('./fahrenheitToCelsius.js');
+const {fahrenheitToCelsius} = require('./_30s.js');
 
 test('fahrenheitToCelsius is a Function', () => {
   expect(fahrenheitToCelsius).toBeInstanceOf(Function);

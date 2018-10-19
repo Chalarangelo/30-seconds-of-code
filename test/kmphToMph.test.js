@@ -1,5 +1,5 @@
 const expect = require('expect');
-const kmphToMph = require('./kmphToMph.js');
+const {kmphToMph} = require('./_30s.js');
 
 test('kmphToMph is a Function', () => {
   expect(kmphToMph).toBeInstanceOf(Function);
