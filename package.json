@@ -10,7 +10,6 @@
     "jest-tap-reporter": "^1.9.0",
     "markdown-builder": "^0.8.4",
     "markdown-it": "^8.4.2",
-    "mini.css": "^2.3.7",
     "node-sass": "^4.9.3",
     "octicons": "^7.4.0",
     "prettier": "^1.14.2",

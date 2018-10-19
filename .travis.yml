@@ -7,15 +7,16 @@ node_js:
 before_install:
 - npm install -g semistandard
 - npm install -g prettier
+- npm install -g eslint
 script:
 - npm run tagger
 - npm run linter
-- npm run webber
-- npm run builder
 - npm run packager
 - npm run tester
 - npm run extractor
 - npm run glossary:keymaker
+- npm run webber
+- npm run builder
 - npm run glossary:librarian
 after_success:
 - chmod +x .travis/push.sh
