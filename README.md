@@ -550,11 +550,11 @@ const call = (key, ...args) => context => context[key](...args);
 ```js
 Promise.resolve([1, 2, 3])
   .then(call('map', x => 2 * x))
-  .then(console.log); //[ 2, 4, 6 ]
+  .then(console.log); // [ 2, 4, 6 ]
 const map = call.bind(null, 'map');
 Promise.resolve([1, 2, 3])
   .then(map(x => 2 * x))
-  .then(console.log); //[ 2, 4, 6 ]
+  .then(console.log); // [ 2, 4, 6 ]
 ```
 
 </details>
@@ -681,7 +681,7 @@ const sum = pipeAsyncFunctions(
   x => x + 3,
   async x => (await x) + 4
 );
-(async () => {
+(async() => {
   console.log(await sum(5)); // 15 (after one second)
 })();
 ```
@@ -2306,9 +2306,9 @@ The `func` is invoked with three arguments (`value, index, array`).
 const remove = (arr, func) =>
   Array.isArray(arr)
     ? arr.filter(func).reduce((acc, val) => {
-        arr.splice(arr.indexOf(val), 1);
-        return acc.concat(val);
-      }, [])
+      arr.splice(arr.indexOf(val), 1);
+      return acc.concat(val);
+    }, [])
     : [];
 ```
 
@@ -3033,8 +3033,8 @@ const unzip = arr =>
 <summary>Examples</summary>
 
 ```js
-unzip([['a', 1, true], ['b', 2, false]]); //[['a', 'b'], [1, 2], [true, false]]
-unzip([['a', 1, true], ['b', 2]]); //[['a', 'b'], [1, 2], [true]]
+unzip([['a', 1, true], ['b', 2, false]]); // [['a', 'b'], [1, 2], [true, false]]
+unzip([['a', 1, true], ['b', 2]]); // [['a', 'b'], [1, 2], [true]]
 ```
 
 </details>
@@ -4036,11 +4036,9 @@ const runAsync = fn => {
 const longRunningFunction = () => {
   let result = 0;
   for (let i = 0; i < 1000; i++) {
-    for (let j = 0; j < 700; j++) {
-      for (let k = 0; k < 300; k++) {
-        result = result + i + j + k;
-      }
-    }
+    for (let j = 0; j < 700; j++)
+      for (let k = 0; k < 300; k++) result = result + i + j + k;
+
   }
   return result;
 };
@@ -4794,7 +4792,7 @@ defer(console.log, 'a'), console.log('b'); // logs 'b' then 'a'
 
 // Example B:
 document.querySelector('#someElement').innerHTML = 'Hello';
-longRunningFunction(); //Browser will not update the HTML until this has finished
+longRunningFunction(); // Browser will not update the HTML until this has finished
 defer(longRunningFunction); // Browser will update the HTML then run the function
 ```
 
@@ -5443,9 +5441,8 @@ const elo = ([...ratings], kFactor = 32, selfRating) => {
   const expectedScore = (self, opponent) => 1 / (1 + 10 ** ((opponent - self) / 400));
   const newRating = (rating, i) =>
     (selfRating || rating) + kFactor * (i - expectedScore(i ? a : b, i ? b : a));
-  if (ratings.length === 2) {
-    return [newRating(a, 1), newRating(b, 0)];
-  }
+  if (ratings.length === 2) return [newRating(a, 1), newRating(b, 0)];
+
   for (let i = 0, len = ratings.length; i < len; i++) {
     let j = i;
     while (j < len - 1) {
@@ -5490,8 +5487,8 @@ Throws an exception if `n` is a negative number.
 const factorial = n =>
   n < 0
     ? (() => {
-        throw new TypeError('Negative numbers are not allowed!');
-      })()
+      throw new TypeError('Negative numbers are not allowed!');
+    })()
     : n <= 1
       ? 1
       : n * factorial(n - 1);
@@ -6142,8 +6139,8 @@ const sumPower = (end, power = 2, start = 1) =>
 
 ```js
 sumPower(10); // 385
-sumPower(10, 3); //3025
-sumPower(10, 3, 5); //2925
+sumPower(10, 3); // 3025
+sumPower(10, 3, 5); // 2925
 ```
 
 </details>
@@ -6638,7 +6635,7 @@ Calls `Object.freeze(obj)` recursively on all unfrozen properties of passed obje
 const deepFreeze = obj =>
   Object.keys(obj).forEach(
     prop =>
-      !obj[prop] instanceof Object || Object.isFrozen(obj[prop]) ? null : deepFreeze(obj[prop])
+      !(obj[prop] instanceof Object) || Object.isFrozen(obj[prop]) ? null : deepFreeze(obj[prop])
   ) || Object.freeze(obj);
 ```
 
@@ -6691,9 +6688,9 @@ const dig = (obj, target) =>
   target in obj
     ? obj[target]
     : Object.values(obj).reduce((acc, val) => {
-        if (acc !== undefined) return acc;
-        if (typeof val === 'object') return dig(val, target);
-      }, undefined);
+      if (acc !== undefined) return acc;
+      if (typeof val === 'object') return dig(val, target);
+    }, undefined);
 ```
 
 <details>
@@ -9038,7 +9035,7 @@ const httpGet = (url, callback, err = console.error) => {
 httpGet(
   'https://jsonplaceholder.typicode.com/posts/1',
   console.log
-); /* 
+); /*
 Logs: {
   "userId": 1,
   "id": 1,
@@ -9099,7 +9096,7 @@ Logs: {
 */
 httpPost(
   'https://jsonplaceholder.typicode.com/posts',
-  null, //does not send a body
+  null, // does not send a body
   console.log
 ); /*
 Logs: {
