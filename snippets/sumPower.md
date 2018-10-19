@@ -16,6 +16,6 @@ const sumPower = (end, power = 2, start = 1) =>
 
 ```js
 sumPower(10); // 385
-sumPower(10, 3); //3025
-sumPower(10, 3, 5); //2925
+sumPower(10, 3); // 3025
+sumPower(10, 3, 5); // 2925
 ```
