@@ -301,6 +301,7 @@ tomorrow:date,intermediate
 toOrdinalSuffix:utility,math,intermediate
 toSafeInteger:math,beginner
 toSnakeCase:string,regexp,intermediate
+toTitleCase:string,regepx,intermediate
 transform:object,array,intermediate
 triggerEvent:browser,event,intermediate
 truncateString:string,beginner
