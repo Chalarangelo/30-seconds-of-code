@@ -14,79 +14,38 @@ if (util.isTravisCI() && util.isNotTravisCronOrAPI()) {
   process.exit(0);
 }
 // Declare paths
-const SNIPPETS_ACTIVE = './snippets';
-const SNIPPETS_ARCHIVE = './snippets_archive';
+const SNIPPETS_PATH = './snippets';
+const SNIPPETS_ARCHIVE_PATH = './snippets_archive';
 const TEST_PATH = './test';
 
-// Array of snippet names
-const snippetFiles = [];
-
-const snippetFilesActive = fs
-  .readdirSync(SNIPPETS_ACTIVE, 'utf8')
-  .map(fileName => fileName.slice(0, -3));
-const snippetFilesArchive = fs
-  .readdirSync(SNIPPETS_ARCHIVE, 'utf8')
-  .filter(fileName => !fileName.includes('README')) // -> Filters out main README.md file in Archieve which isn't a snippet
-  .map(fileName => fileName.slice(0, -3));
-
-snippetFiles.push(...snippetFilesActive);
-snippetFiles.push(...snippetFilesArchive);
-
 console.time('Tester');
-snippetFiles
-  .map(fileName => {
-    // Check if fileName for snippet exist in test/ dir, if doesnt create
-    fs.ensureDirSync(path.join(TEST_PATH, fileName));
-
-    // return fileName for later use
-    return fileName;
+try {
+  // Read snippets, archive and tests, find which tests are not defined
+  const snippets = fs.readdirSync(SNIPPETS_PATH).map(v => v.replace('.md', ''));
+  const archivedSnippets = fs.readdirSync(SNIPPETS_ARCHIVE_PATH).filter(v => v !== 'README.md').map(v => v.replace('.md', ''));
+  const definedTests = fs.readdirSync(TEST_PATH).map(v => v.replace('.test.js', '')).filter(v => v !== '_30s.js' && v !== 'testlog');
+  const undefinedTests = [...snippets, ...archivedSnippets].filter(v => !definedTests.includes(v));
+  const orphanedTests = [...definedTests.filter(v => ![...snippets, ...archivedSnippets].includes(v))];
+  orphanedTests.forEach(snippet => {
+    console.log(`${chalk.yellow('WARNING!')} Orphaned test: ${snippet}`);
   })
-  .map(fileName => {
-    const activeOrArchive = snippetFilesActive.includes(fileName)
-      ? SNIPPETS_ACTIVE
-      : SNIPPETS_ARCHIVE;
-    // Grab snippetData
-    const fileData = fs.readFileSync(path.join(activeOrArchive, `${fileName}.md`), 'utf8');
-    // Grab snippet Code blocks
-    const fileCode = fileData.slice(fileData.search(/```\s*js/i), fileData.lastIndexOf('```') + 3);
-    // Split code based on code markers
-    const blockMarkers = fileCode
-      .split('\n')
-      .map((line, lineIndex) => (line.slice(0, 3) === '```' ? lineIndex : '//CLEAR//'))
-      .filter(x => !(x === '//CLEAR//'));
-    // Grab snippet function based on code markers
-    const fileFunction = fileCode
-      .split('\n')
-      .map(line => line)
-      .filter((_, i) => blockMarkers[0] < i && i < blockMarkers[1]);
-
-    // Export template for snippetName.js
-    const exportFile = `${fileFunction.join('\n')}\nmodule.exports = ${fileName};\n`;
-
-    // Export template for snippetName.test.js which generates a example test & other information
+  // Create files for undefined tests
+  undefinedTests.forEach(snippet => {
     const exportTest = [
       `const expect = require('expect');`,
-      `const ${fileName} = require('./${fileName}.js');`,
-      `\ntest('${fileName} is a Function', () => {`,
-      `  expect(${fileName}).toBeInstanceOf(Function);`,
+      `const {${snippet}} = require('._30s.js');`,
+      `\ntest('${snippet} is a Function', () => {`,
+      `  expect(${snippet}).toBeInstanceOf(Function);`,
       `});\n`
     ].join('\n');
-
-    // Write/Update exportFile which is snippetName.js in respective dir
-    fs.writeFileSync(path.join(TEST_PATH, fileName, `${fileName}.js`), exportFile);
-
-    if (!fs.existsSync(path.join(TEST_PATH, fileName, `${fileName}.test.js`))) {
-      // if snippetName.test.js doesn't exist inrespective dir exportTest
-      fs.writeFileSync(`${TEST_PATH}/${fileName}/${fileName}.test.js`, exportTest);
-    }
-
-    // return fileName for later use
-    return fileName;
+    fs.writeFileSync(path.join(TEST_PATH, `${snippet}.test.js`), exportTest);
   });
-try {
+  // Run tests
   fs.writeFileSync(path.join(TEST_PATH, 'testlog'), `Test log for: ${new Date().toString()}\n`);
   childProcess.execSync('npm test');
-} catch (e) {
-  fs.appendFileSync(path.join(TEST_PATH, 'testlog'));
+  console.log(`${chalk.green('SUCCESS!')} All tests ran successfully!`);
+} catch (err) {
+  console.log(`${chalk.red('ERROR!')} During test runs: ${err}`);
+  process.exit(1);
 }
 console.timeEnd('Tester');

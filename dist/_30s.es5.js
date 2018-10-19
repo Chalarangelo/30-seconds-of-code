@@ -1,33 +1,8 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-  typeof define === 'function' && define.amd ? define(['exports'], factory) :
-  (factory((global._30s = {})));
-}(this, (function (exports) { 'use strict';
-
-  var CSVToArray = function CSVToArray(data) {
-    var delimiter = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ',';
-    var omitFirstRow = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-    return data.slice(omitFirstRow ? data.indexOf('\n') + 1 : 0).split('\n').map(function (v) {
-      return v.split(delimiter);
-    });
-  };
-
-  var CSVToJSON = function CSVToJSON(data) {
-    var delimiter = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ',';
-    var titles = data.slice(0, data.indexOf('\n')).split(delimiter);
-    return data.slice(data.indexOf('\n') + 1).split('\n').map(function (v) {
-      var values = v.split(delimiter);
-      return titles.reduce(function (obj, title, index) {
-        return obj[title] = values[index], obj;
-      }, {});
-    });
-  };
-
-  var fs = typeof require !== "undefined" && require('fs');
-
-  var JSONToFile = function JSONToFile(obj, filename) {
-    return fs.writeFile("".concat(filename, ".json"), JSON.stringify(obj, null, 2));
-  };
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory() :
+  typeof define === 'function' && define.amd ? define(factory) :
+  (factory());
+}(this, (function () { 'use strict';
 
   function _typeof(obj) {
     if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
@@ -139,40 +114,9 @@
     throw new TypeError("Invalid attempt to destructure non-iterable instance");
   }
 
-  var JSONtoCSV = function JSONtoCSV(arr, columns) {
-    var delimiter = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : ',';
-    return [columns.join(delimiter)].concat(_toConsumableArray(arr.map(function (obj) {
-      return columns.reduce(function (acc, key) {
-        return "".concat(acc).concat(!acc.length ? '' : delimiter, "\"").concat(!obj[key] ? '' : obj[key], "\"");
-      }, '');
-    }))).join('\n');
-  };
+  var crypto = typeof require !== "undefined" && require('crypto');
 
-  var RGBToHex = function RGBToHex(r, g, b) {
-    return ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
-  };
-
-  var URLJoin = function URLJoin() {
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return args.join('/').replace(/[\/]+/g, '/').replace(/^(.+):\//, '$1://').replace(/^file:/, 'file:/').replace(/\/(\?|&|#[^!])/g, '$1').replace(/\?/g, '&').replace('&', '?');
-  };
-
-  var UUIDGeneratorBrowser = function UUIDGeneratorBrowser() {
-    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, function (c) {
-      return (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16);
-    });
-  };
-
-  var crypto$1 = typeof require !== "undefined" && require('crypto');
-
-  var UUIDGeneratorNode = function UUIDGeneratorNode() {
-    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, function (c) {
-      return (c ^ crypto$1.randomBytes(1)[0] & 15 >> c / 4).toString(16);
-    });
-  };
+  var fs = typeof require !== "undefined" && require('fs');
 
   var all = function all(arr) {
     var fn = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Boolean;
@@ -228,8 +172,8 @@
 
   var attempt = function attempt(fn) {
     try {
-      for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-        args[_key - 1] = arguments[_key];
+      for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+        args[_key2 - 1] = arguments[_key2];
       }
 
       return fn.apply(void 0, args);
@@ -239,8 +183,8 @@
   };
 
   var average = function average() {
-    for (var _len = arguments.length, nums = new Array(_len), _key = 0; _key < _len; _key++) {
-      nums[_key] = arguments[_key];
+    for (var _len3 = arguments.length, nums = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+      nums[_key3] = arguments[_key3];
     }
 
     return nums.reduce(function (acc, val) {
@@ -269,13 +213,13 @@
   };
 
   var bind = function bind(fn, context) {
-    for (var _len = arguments.length, boundArgs = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
-      boundArgs[_key - 2] = arguments[_key];
+    for (var _len4 = arguments.length, boundArgs = new Array(_len4 > 2 ? _len4 - 2 : 0), _key4 = 2; _key4 < _len4; _key4++) {
+      boundArgs[_key4 - 2] = arguments[_key4];
     }
 
     return function () {
-      for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-        args[_key2] = arguments[_key2];
+      for (var _len5 = arguments.length, args = new Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
+        args[_key5] = arguments[_key5];
       }
 
       return fn.apply(context, boundArgs.concat(args));
@@ -283,8 +227,8 @@
   };
 
   var bindAll = function bindAll(obj) {
-    for (var _len = arguments.length, fns = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      fns[_key - 1] = arguments[_key];
+    for (var _len6 = arguments.length, fns = new Array(_len6 > 1 ? _len6 - 1 : 0), _key6 = 1; _key6 < _len6; _key6++) {
+      fns[_key6 - 1] = arguments[_key6];
     }
 
     return fns.forEach(function (fn) {
@@ -295,13 +239,13 @@
   };
 
   var bindKey = function bindKey(context, fn) {
-    for (var _len = arguments.length, boundArgs = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
-      boundArgs[_key - 2] = arguments[_key];
+    for (var _len7 = arguments.length, boundArgs = new Array(_len7 > 2 ? _len7 - 2 : 0), _key7 = 2; _key7 < _len7; _key7++) {
+      boundArgs[_key7 - 2] = arguments[_key7];
     }
 
     return function () {
-      for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-        args[_key2] = arguments[_key2];
+      for (var _len8 = arguments.length, args = new Array(_len8), _key8 = 0; _key8 < _len8; _key8++) {
+        args[_key8] = arguments[_key8];
       }
 
       return context[fn].apply(context, boundArgs.concat(args));
@@ -336,8 +280,8 @@
   };
 
   var call = function call(key) {
-    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
+    for (var _len9 = arguments.length, args = new Array(_len9 > 1 ? _len9 - 1 : 0), _key9 = 1; _key9 < _len9; _key9++) {
+      args[_key9 - 1] = arguments[_key9];
     }
 
     return function (context) {
@@ -391,8 +335,8 @@
   };
 
   var coalesce = function coalesce() {
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
+    for (var _len10 = arguments.length, args = new Array(_len10), _key10 = 0; _key10 < _len10; _key10++) {
+      args[_key10] = arguments[_key10];
     }
 
     return args.find(function (_) {
@@ -402,8 +346,8 @@
 
   var coalesceFactory = function coalesceFactory(valid) {
     return function () {
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
+      for (var _len11 = arguments.length, args = new Array(_len11), _key11 = 0; _key11 < _len11; _key11++) {
+        args[_key11] = arguments[_key11];
       }
 
       return args.find(valid);
@@ -412,8 +356,8 @@
 
   var collectInto = function collectInto(fn) {
     return function () {
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
+      for (var _len12 = arguments.length, args = new Array(_len12), _key12 = 0; _key12 < _len12; _key12++) {
+        args[_key12] = arguments[_key12];
       }
 
       return fn(args);
@@ -421,8 +365,8 @@
   };
 
   var colorize = function colorize() {
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
+    for (var _len13 = arguments.length, args = new Array(_len13), _key13 = 0; _key13 < _len13; _key13++) {
+      args[_key13] = arguments[_key13];
     }
 
     return {
@@ -450,8 +394,8 @@
   };
 
   var compose = function compose() {
-    for (var _len = arguments.length, fns = new Array(_len), _key = 0; _key < _len; _key++) {
-      fns[_key] = arguments[_key];
+    for (var _len14 = arguments.length, fns = new Array(_len14), _key14 = 0; _key14 < _len14; _key14++) {
+      fns[_key14] = arguments[_key14];
     }
 
     return fns.reduce(function (f, g) {
@@ -462,8 +406,8 @@
   };
 
   var composeRight = function composeRight() {
-    for (var _len = arguments.length, fns = new Array(_len), _key = 0; _key < _len; _key++) {
-      fns[_key] = arguments[_key];
+    for (var _len15 = arguments.length, fns = new Array(_len15), _key15 = 0; _key15 < _len15; _key15++) {
+      fns[_key15] = arguments[_key15];
     }
 
     return fns.reduce(function (f, g) {
@@ -475,8 +419,8 @@
 
   var converge = function converge(converger, fns) {
     return function () {
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
+      for (var _len16 = arguments.length, args = new Array(_len16), _key16 = 0; _key16 < _len16; _key16++) {
+        args[_key16] = arguments[_key16];
       }
 
       return converger.apply(void 0, _toConsumableArray(fns.map(function (fn) {
@@ -506,16 +450,10 @@
   var countBy = function countBy(arr, fn) {
     return arr.map(typeof fn === 'function' ? fn : function (val) {
       return val[fn];
-    }).reduce(function (acc, val, i) {
+    }).reduce(function (acc, val) {
       acc[val] = (acc[val] || 0) + 1;
       return acc;
     }, {});
-  };
-
-  var countOccurrences = function countOccurrences(arr, val) {
-    return arr.reduce(function (a, v) {
-      return v === val ? a + 1 : a;
-    }, 0);
   };
 
   var counter = function counter(selector, start, end) {
@@ -532,6 +470,12 @@
     }, Math.abs(Math.floor(duration / (end - start))));
 
     return timer;
+  };
+
+  var countOccurrences = function countOccurrences(arr, val) {
+    return arr.reduce(function (a, v) {
+      return v === val ? a + 1 : a;
+    }, 0);
   };
 
   var createElement = function createElement(str) {
@@ -561,6 +505,25 @@
     };
   };
 
+  var CSVToArray = function CSVToArray(data) {
+    var delimiter = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ',';
+    var omitFirstRow = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+    return data.slice(omitFirstRow ? data.indexOf('\n') + 1 : 0).split('\n').map(function (v) {
+      return v.split(delimiter);
+    });
+  };
+
+  var CSVToJSON = function CSVToJSON(data) {
+    var delimiter = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ',';
+    var titles = data.slice(0, data.indexOf('\n')).split(delimiter);
+    return data.slice(data.indexOf('\n') + 1).split('\n').map(function (v) {
+      var values = v.split(delimiter);
+      return titles.reduce(function (obj, title, index) {
+        return obj[title] = values[index], obj;
+      }, {});
+    });
+  };
+
   var currentURL = function currentURL() {
     return window.location.href;
   };
@@ -568,8 +531,8 @@
   var curry = function curry(fn) {
     var arity = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : fn.length;
 
-    for (var _len = arguments.length, args = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
-      args[_key - 2] = arguments[_key];
+    for (var _len17 = arguments.length, args = new Array(_len17 > 2 ? _len17 - 2 : 0), _key17 = 2; _key17 < _len17; _key17++) {
+      args[_key17 - 2] = arguments[_key17];
     }
 
     return arity <= args.length ? fn.apply(void 0, args) : curry.bind.apply(curry, [null, fn, arity].concat(args));
@@ -585,8 +548,8 @@
     return function () {
       var _this = this;
 
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
+      for (var _len18 = arguments.length, args = new Array(_len18), _key18 = 0; _key18 < _len18; _key18++) {
+        args[_key18] = arguments[_key18];
       }
 
       clearTimeout(timeoutId);
@@ -596,10 +559,10 @@
     };
   };
 
-  var decapitalize = function decapitalize(_ref) {
-    var _ref2 = _toArray(_ref),
-        first = _ref2[0],
-        rest = _ref2.slice(1);
+  var decapitalize = function decapitalize(_ref3) {
+    var _ref4 = _toArray(_ref3),
+        first = _ref4[0],
+        rest = _ref4.slice(1);
 
     var upperRest = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
     return first.toLowerCase() + (upperRest ? rest.join('').toUpperCase() : rest.join(''));
@@ -614,30 +577,30 @@
   };
 
   var deepFlatten = function deepFlatten(arr) {
-    var _ref;
+    var _ref5;
 
-    return (_ref = []).concat.apply(_ref, _toConsumableArray(arr.map(function (v) {
+    return (_ref5 = []).concat.apply(_ref5, _toConsumableArray(arr.map(function (v) {
       return Array.isArray(v) ? deepFlatten(v) : v;
     })));
   };
 
   var deepFreeze = function deepFreeze(obj) {
     return Object.keys(obj).forEach(function (prop) {
-      return !obj[prop] instanceof Object || Object.isFrozen(obj[prop]) ? null : deepFreeze(obj[prop]);
+      return !(obj[prop] instanceof Object) || Object.isFrozen(obj[prop]) ? null : deepFreeze(obj[prop]);
     }) || Object.freeze(obj);
   };
 
   var defaults = function defaults(obj) {
-    for (var _len = arguments.length, defs = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      defs[_key - 1] = arguments[_key];
+    for (var _len19 = arguments.length, defs = new Array(_len19 > 1 ? _len19 - 1 : 0), _key19 = 1; _key19 < _len19; _key19++) {
+      defs[_key19 - 1] = arguments[_key19];
     }
 
     return Object.assign.apply(Object, [{}, obj].concat(_toConsumableArray(defs.reverse()), [obj]));
   };
 
   var defer = function defer(fn) {
-    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
+    for (var _len20 = arguments.length, args = new Array(_len20 > 1 ? _len20 - 1 : 0), _key20 = 1; _key20 < _len20; _key20++) {
+      args[_key20 - 1] = arguments[_key20];
     }
 
     return setTimeout.apply(void 0, [fn, 1].concat(args));
@@ -648,8 +611,8 @@
   };
 
   var delay = function delay(fn, wait) {
-    for (var _len = arguments.length, args = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
-      args[_key - 2] = arguments[_key];
+    for (var _len21 = arguments.length, args = new Array(_len21 > 2 ? _len21 - 2 : 0), _key21 = 2; _key21 < _len21; _key21++) {
+      args[_key21 - 2] = arguments[_key21];
     }
 
     return setTimeout.apply(void 0, [fn, wait].concat(args));
@@ -667,9 +630,7 @@
   };
 
   var differenceBy = function differenceBy(a, b, fn) {
-    var s = new Set(b.map(function (v) {
-      return fn(v);
-    }));
+    var s = new Set(b.map(fn));
     return a.filter(function (x) {
       return !s.has(fn(x));
     });
@@ -745,9 +706,9 @@
     return partiallyVisible ? (top > 0 && top < innerHeight || bottom > 0 && bottom < innerHeight) && (left > 0 && left < innerWidth || right > 0 && right < innerWidth) : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
   };
 
-  var elo = function elo(_ref) {
-    var _ref2 = _toArray(_ref),
-        ratings = _ref2.slice(0);
+  var elo = function elo(_ref6) {
+    var _ref7 = _toArray(_ref6),
+        ratings = _ref7.slice(0);
 
     var kFactor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 32;
     var selfRating = arguments.length > 2 ? arguments[2] : undefined;
@@ -764,9 +725,7 @@
       return (selfRating || rating) + kFactor * (i - expectedScore(i ? a : b, i ? b : a));
     };
 
-    if (ratings.length === 2) {
-      return [newRating(a, 1), newRating(b, 0)];
-    }
+    if (ratings.length === 2) return [newRating(a, 1), newRating(b, 0)];
 
     for (var i = 0, len = ratings.length; i < len; i++) {
       var j = i;
@@ -868,10 +827,10 @@
   var findLastIndex = function findLastIndex(arr, fn) {
     return arr.map(function (val, i) {
       return [i, val];
-    }).filter(function (_ref) {
-      var _ref2 = _slicedToArray(_ref, 2),
-          i = _ref2[0],
-          val = _ref2[1];
+    }).filter(function (_ref8) {
+      var _ref9 = _slicedToArray(_ref8, 2),
+          i = _ref9[0],
+          val = _ref9[1];
 
       return fn(val, i, arr);
     }).pop()[0];
@@ -901,8 +860,8 @@
 
   var flip = function flip(fn) {
     return function (first) {
-      for (var _len = arguments.length, rest = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-        rest[_key - 1] = arguments[_key];
+      for (var _len22 = arguments.length, rest = new Array(_len22 > 1 ? _len22 - 1 : 0), _key22 = 1; _key22 < _len22; _key22++) {
+        rest[_key22 - 1] = arguments[_key22];
       }
 
       return fn.apply(void 0, rest.concat([first]));
@@ -911,18 +870,6 @@
 
   var forEachRight = function forEachRight(arr, callback) {
     return arr.slice(0).reverse().forEach(callback);
-  };
-
-  var forOwn = function forOwn(obj, fn) {
-    return Object.keys(obj).forEach(function (key) {
-      return fn(obj[key], key, obj);
-    });
-  };
-
-  var forOwnRight = function forOwnRight(obj, fn) {
-    return Object.keys(obj).reverse().forEach(function (key) {
-      return fn(obj[key], key, obj);
-    });
   };
 
   var formatDuration = function formatDuration(ms) {
@@ -936,13 +883,25 @@
     };
     return Object.entries(time).filter(function (val) {
       return val[1] !== 0;
-    }).map(function (_ref) {
-      var _ref2 = _slicedToArray(_ref, 2),
-          key = _ref2[0],
-          val = _ref2[1];
+    }).map(function (_ref10) {
+      var _ref11 = _slicedToArray(_ref10, 2),
+          key = _ref11[0],
+          val = _ref11[1];
 
       return "".concat(val, " ").concat(key).concat(val !== 1 ? 's' : '');
     }).join(', ');
+  };
+
+  var forOwn = function forOwn(obj, fn) {
+    return Object.keys(obj).forEach(function (key) {
+      return fn(obj[key], key, obj);
+    });
+  };
+
+  var forOwnRight = function forOwnRight(obj, fn) {
+    return Object.keys(obj).reverse().forEach(function (key) {
+      return fn(obj[key], key, obj);
+    });
   };
 
   var fromCamelCase = function fromCamelCase(str) {
@@ -966,8 +925,8 @@
       return !y ? x : gcd(y, x % y);
     };
 
-    for (var _len = arguments.length, arr = new Array(_len), _key = 0; _key < _len; _key++) {
-      arr[_key] = arguments[_key];
+    for (var _len23 = arguments.length, arr = new Array(_len23), _key23 = 0; _key23 < _len23; _key23++) {
+      arr[_key23] = arguments[_key23];
     }
 
     return arr.concat().reduce(function (a, b) {
@@ -986,8 +945,8 @@
   };
 
   var get = function get(from) {
-    for (var _len = arguments.length, selectors = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      selectors[_key - 1] = arguments[_key];
+    for (var _len24 = arguments.length, selectors = new Array(_len24 > 1 ? _len24 - 1 : 0), _key24 = 1; _key24 < _len24; _key24++) {
+      selectors[_key24 - 1] = arguments[_key24];
     }
 
     return selectors.concat().map(function (s) {
@@ -1061,8 +1020,8 @@
   };
 
   var hasFlags = function hasFlags() {
-    for (var _len = arguments.length, flags = new Array(_len), _key = 0; _key < _len; _key++) {
-      flags[_key] = arguments[_key];
+    for (var _len25 = arguments.length, flags = new Array(_len25), _key25 = 0; _key25 < _len25; _key25++) {
+      flags[_key25] = arguments[_key25];
     }
 
     return flags.every(function (flag) {
@@ -1083,12 +1042,10 @@
     });
   };
 
-  var crypto$2 = typeof require !== "undefined" && require('crypto');
-
   var hashNode = function hashNode(val) {
     return new Promise(function (resolve) {
       return setTimeout(function () {
-        return resolve(crypto$2.createHash('sha256').update(val).digest('hex'));
+        return resolve(crypto.createHash('sha256').update(val).digest('hex'));
       }, 0);
     });
   };
@@ -1161,18 +1118,6 @@
     return 1000 * iterations / (performance.now() - before);
   };
 
-  var inRange = function inRange(n, start) {
-    var end = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
-
-    if (end && start > end) {
-      var _ref = [start, end];
-      end = _ref[0];
-      start = _ref[1];
-    }
-
-    return end == null ? n >= 0 && n < start : n >= start && n < end;
-  };
-
   var indentString = function indentString(str, count) {
     var indent = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : ' ';
     return str.replace(/^/gm, indent.repeat(count));
@@ -1225,8 +1170,8 @@
   };
 
   var initializeNDArray = function initializeNDArray(val) {
-    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
+    for (var _len26 = arguments.length, args = new Array(_len26 > 1 ? _len26 - 1 : 0), _key26 = 1; _key26 < _len26; _key26++) {
+      args[_key26 - 1] = arguments[_key26];
     }
 
     return args.length === 0 ? val : Array.from({
@@ -1234,6 +1179,18 @@
     }).map(function () {
       return initializeNDArray.apply(void 0, [val].concat(_toConsumableArray(args.slice(1))));
     });
+  };
+
+  var inRange = function inRange(n, start) {
+    var end = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+
+    if (end && start > end) {
+      var _ref12 = [start, end];
+      end = _ref12[0];
+      start = _ref12[1];
+    }
+
+    return end == null ? n >= 0 && n < start : n >= start && n < end;
   };
 
   var insertAfter = function insertAfter(el, htmlString) {
@@ -1374,7 +1331,7 @@
   };
 
   var isPrimitive = function isPrimitive(val) {
-    return !['object', 'function'].includes(_typeof(val)) || val === null;
+    return Object(val) !== val;
   };
 
   var isPromiseLike = function isPromiseLike(obj) {
@@ -1396,10 +1353,10 @@
     var _iteratorError = undefined;
 
     try {
-      for (var _iterator = arr.entries()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-        var _step$value = _slicedToArray(_step.value, 2),
-            i = _step$value[0],
-            val = _step$value[1];
+      for (var _iterator = arr.entries()[Symbol.iterator](), _step2; !(_iteratorNormalCompletion = (_step2 = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        var _step2$value = _slicedToArray(_step2.value, 2),
+            i = _step2$value[0],
+            val = _step2$value[1];
 
         direction = !direction ? -(arr[i - 1] - arr[i]) : direction;
         if (i === arr.length - 1) return !direction ? 0 : direction;else if ((val - arr[i + 1]) * direction > 0) return 0;
@@ -1465,6 +1422,19 @@
     }, '');
   };
 
+  var JSONtoCSV = function JSONtoCSV(arr, columns) {
+    var delimiter = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : ',';
+    return [columns.join(delimiter)].concat(_toConsumableArray(arr.map(function (obj) {
+      return columns.reduce(function (acc, key) {
+        return "".concat(acc).concat(!acc.length ? '' : delimiter, "\"").concat(!obj[key] ? '' : obj[key], "\"");
+      }, '');
+    }))).join('\n');
+  };
+
+  var JSONToFile = function JSONToFile(obj, filename) {
+    return fs.writeFile("".concat(filename, ".json"), JSON.stringify(obj, null, 2));
+  };
+
   var last = function last(arr) {
     return arr[arr.length - 1];
   };
@@ -1478,8 +1448,8 @@
       return x * y / gcd(x, y);
     };
 
-    for (var _len = arguments.length, arr = new Array(_len), _key = 0; _key < _len; _key++) {
-      arr[_key] = arguments[_key];
+    for (var _len27 = arguments.length, arr = new Array(_len27), _key27 = 0; _key27 < _len27; _key27++) {
+      arr[_key27] = arguments[_key27];
     }
 
     return arr.concat().reduce(function (a, b) {
@@ -1488,8 +1458,8 @@
   };
 
   var longestItem = function longestItem(val) {
-    for (var _len = arguments.length, vals = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      vals[_key - 1] = arguments[_key];
+    for (var _len28 = arguments.length, vals = new Array(_len28 > 1 ? _len28 - 1 : 0), _key28 = 1; _key28 < _len28; _key28++) {
+      vals[_key28 - 1] = arguments[_key28];
     }
 
     return [val].concat(vals).reduce(function (a, x) {
@@ -1571,8 +1541,8 @@
   var maxDate = function maxDate() {
     var _Math$max;
 
-    for (var _len = arguments.length, dates = new Array(_len), _key = 0; _key < _len; _key++) {
-      dates[_key] = arguments[_key];
+    for (var _len29 = arguments.length, dates = new Array(_len29), _key29 = 0; _key29 < _len29; _key29++) {
+      dates[_key29] = arguments[_key29];
     }
 
     return new Date((_Math$max = Math.max).apply.apply(_Math$max, [null].concat(dates)));
@@ -1606,8 +1576,8 @@
   };
 
   var merge = function merge() {
-    for (var _len = arguments.length, objs = new Array(_len), _key = 0; _key < _len; _key++) {
-      objs[_key] = arguments[_key];
+    for (var _len30 = arguments.length, objs = new Array(_len30), _key30 = 0; _key30 < _len30; _key30++) {
+      objs[_key30] = arguments[_key30];
     }
 
     return objs.concat().reduce(function (acc, obj) {
@@ -1627,8 +1597,8 @@
   var minDate = function minDate() {
     var _Math$min;
 
-    for (var _len = arguments.length, dates = new Array(_len), _key = 0; _key < _len; _key++) {
-      dates[_key] = arguments[_key];
+    for (var _len31 = arguments.length, dates = new Array(_len31), _key31 = 0; _key31 < _len31; _key31++) {
+      dates[_key31] = arguments[_key31];
     }
 
     return new Date((_Math$min = Math.min).apply.apply(_Math$min, [null].concat(dates)));
@@ -1684,8 +1654,8 @@
 
   var nthArg = function nthArg(n) {
     return function () {
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
+      for (var _len32 = arguments.length, args = new Array(_len32), _key32 = 0; _key32 < _len32; _key32++) {
+        args[_key32] = arguments[_key32];
       }
 
       return args.slice(n)[0];
@@ -1698,10 +1668,10 @@
   };
 
   var objectFromPairs = function objectFromPairs(arr) {
-    return arr.reduce(function (a, _ref) {
-      var _ref2 = _slicedToArray(_ref, 2),
-          key = _ref2[0],
-          val = _ref2[1];
+    return arr.reduce(function (a, _ref13) {
+      var _ref14 = _slicedToArray(_ref13, 2),
+          key = _ref14[0],
+          val = _ref14[1];
 
       return a[key] = val, a;
     }, {});
@@ -1766,6 +1736,20 @@
     if (opts.target) return delegatorFn;
   };
 
+  var once = function once(fn) {
+    var called = false;
+    return function () {
+      if (called) return;
+      called = true;
+
+      for (var _len33 = arguments.length, args = new Array(_len33), _key33 = 0; _key33 < _len33; _key33++) {
+        args[_key33] = arguments[_key33];
+      }
+
+      return fn.apply(this, args);
+    };
+  };
+
   var onUserInputChange = function onUserInputChange(callback) {
     var type = 'mouse',
         lastTime = 0;
@@ -1782,28 +1766,14 @@
     });
   };
 
-  var once = function once(fn) {
-    var called = false;
-    return function () {
-      if (called) return;
-      called = true;
-
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-
-      return fn.apply(this, args);
-    };
-  };
-
   var orderBy = function orderBy(arr, props, orders) {
     return _toConsumableArray(arr).sort(function (a, b) {
       return props.reduce(function (acc, prop, i) {
         if (acc === 0) {
-          var _ref = orders && orders[i] === 'desc' ? [b[prop], a[prop]] : [a[prop], b[prop]],
-              _ref2 = _slicedToArray(_ref, 2),
-              p1 = _ref2[0],
-              p2 = _ref2[1];
+          var _ref15 = orders && orders[i] === 'desc' ? [b[prop], a[prop]] : [a[prop], b[prop]],
+              _ref16 = _slicedToArray(_ref15, 2),
+              p1 = _ref16[0],
+              p2 = _ref16[1];
 
           acc = p1 > p2 ? 1 : p1 < p2 ? -1 : 0;
         }
@@ -1814,13 +1784,13 @@
   };
 
   var over = function over() {
-    for (var _len = arguments.length, fns = new Array(_len), _key = 0; _key < _len; _key++) {
-      fns[_key] = arguments[_key];
+    for (var _len34 = arguments.length, fns = new Array(_len34), _key34 = 0; _key34 < _len34; _key34++) {
+      fns[_key34] = arguments[_key34];
     }
 
     return function () {
-      for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-        args[_key2] = arguments[_key2];
+      for (var _len35 = arguments.length, args = new Array(_len35), _key35 = 0; _key35 < _len35; _key35++) {
+        args[_key35] = arguments[_key35];
       }
 
       return fns.map(function (fn) {
@@ -1831,8 +1801,8 @@
 
   var overArgs = function overArgs(fn, transforms) {
     return function () {
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
+      for (var _len36 = arguments.length, args = new Array(_len36), _key36 = 0; _key36 < _len36; _key36++) {
+        args[_key36] = arguments[_key36];
       }
 
       return fn.apply(void 0, _toConsumableArray(args.map(function (val, i) {
@@ -1861,13 +1831,13 @@
   };
 
   var partial = function partial(fn) {
-    for (var _len = arguments.length, partials = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      partials[_key - 1] = arguments[_key];
+    for (var _len37 = arguments.length, partials = new Array(_len37 > 1 ? _len37 - 1 : 0), _key37 = 1; _key37 < _len37; _key37++) {
+      partials[_key37 - 1] = arguments[_key37];
     }
 
     return function () {
-      for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-        args[_key2] = arguments[_key2];
+      for (var _len38 = arguments.length, args = new Array(_len38), _key38 = 0; _key38 < _len38; _key38++) {
+        args[_key38] = arguments[_key38];
       }
 
       return fn.apply(void 0, partials.concat(args));
@@ -1875,13 +1845,13 @@
   };
 
   var partialRight = function partialRight(fn) {
-    for (var _len = arguments.length, partials = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      partials[_key - 1] = arguments[_key];
+    for (var _len39 = arguments.length, partials = new Array(_len39 > 1 ? _len39 - 1 : 0), _key39 = 1; _key39 < _len39; _key39++) {
+      partials[_key39 - 1] = arguments[_key39];
     }
 
     return function () {
-      for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-        args[_key2] = arguments[_key2];
+      for (var _len40 = arguments.length, args = new Array(_len40), _key40 = 0; _key40 < _len40; _key40++) {
+        args[_key40] = arguments[_key40];
       }
 
       return fn.apply(void 0, args.concat(partials));
@@ -1925,8 +1895,8 @@
   };
 
   var pipeAsyncFunctions = function pipeAsyncFunctions() {
-    for (var _len = arguments.length, fns = new Array(_len), _key = 0; _key < _len; _key++) {
-      fns[_key] = arguments[_key];
+    for (var _len41 = arguments.length, fns = new Array(_len41), _key41 = 0; _key41 < _len41; _key41++) {
+      fns[_key41] = arguments[_key41];
     }
 
     return function (arg) {
@@ -1937,8 +1907,8 @@
   };
 
   var pipeFunctions = function pipeFunctions() {
-    for (var _len = arguments.length, fns = new Array(_len), _key = 0; _key < _len; _key++) {
-      fns[_key] = arguments[_key];
+    for (var _len42 = arguments.length, fns = new Array(_len42), _key42 = 0; _key42 < _len42; _key42++) {
+      fns[_key42] = arguments[_key42];
     }
 
     return fns.reduce(function (f, g) {
@@ -2011,8 +1981,8 @@
 
   var promisify = function promisify(func) {
     return function () {
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
+      for (var _len43 = arguments.length, args = new Array(_len43), _key43 = 0; _key43 < _len43; _key43++) {
+        args[_key43] = arguments[_key43];
       }
 
       return new Promise(function (resolve, reject) {
@@ -2024,8 +1994,8 @@
   };
 
   var pull = function pull(arr) {
-    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
+    for (var _len44 = arguments.length, args = new Array(_len44 > 1 ? _len44 - 1 : 0), _key44 = 1; _key44 < _len44; _key44++) {
+      args[_key44 - 1] = arguments[_key44];
     }
 
     var argState = Array.isArray(args[0]) ? args[0] : args;
@@ -2068,8 +2038,8 @@
   };
 
   var pullBy = function pullBy(arr) {
-    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
+    for (var _len45 = arguments.length, args = new Array(_len45 > 1 ? _len45 - 1 : 0), _key45 = 1; _key45 < _len45; _key45++) {
+      args[_key45 - 1] = arguments[_key45];
     }
 
     var length = args.length;
@@ -2113,16 +2083,14 @@
     return Math.random() * (max - min) + min;
   };
 
-  var fs$1 = typeof require !== "undefined" && require('fs');
-
   var readFileLines = function readFileLines(filename) {
-    return fs$1.readFileSync(filename).toString('UTF8').split('\n');
+    return fs.readFileSync(filename).toString('UTF8').split('\n');
   };
 
   var rearg = function rearg(fn, indexes) {
     return function () {
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
+      for (var _len46 = arguments.length, args = new Array(_len46), _key46 = 0; _key46 < _len46; _key46++) {
+        args[_key46] = arguments[_key46];
       }
 
       return fn.apply(void 0, _toConsumableArray(indexes.map(function (i) {
@@ -2165,6 +2133,15 @@
     return asLink ? window.location.href = url : window.location.replace(url);
   };
 
+  var reducedFilter = function reducedFilter(data, keys, fn) {
+    return data.filter(fn).map(function (el) {
+      return keys.reduce(function (acc, key) {
+        acc[key] = el[key];
+        return acc;
+      }, {});
+    });
+  };
+
   var reduceSuccessive = function reduceSuccessive(arr, fn, acc) {
     return arr.reduce(function (res, val, i, arr) {
       return res.push(fn(res.slice(-1)[0], val, i, arr)), res;
@@ -2177,15 +2154,6 @@
     };
     return arr.reduce(function (a, b) {
       return comparator(a, b) >= 0 ? b : a;
-    });
-  };
-
-  var reducedFilter = function reducedFilter(data, keys, fn) {
-    return data.filter(fn).map(function (el) {
-      return keys.reduce(function (acc, key) {
-        acc[key] = el[key];
-        return acc;
-      }, {});
     });
   };
 
@@ -2216,6 +2184,10 @@
     return _toConsumableArray(str).reverse().join('');
   };
 
+  var RGBToHex = function RGBToHex(r, g, b) {
+    return ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
+  };
+
   var round = function round(n) {
     var decimals = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
     return Number("".concat(Math.round("".concat(n, "e").concat(decimals)), "e-").concat(decimals));
@@ -2226,8 +2198,8 @@
       type: 'application/javascript; charset=utf-8'
     }));
     return new Promise(function (res, rej) {
-      worker.onmessage = function (_ref) {
-        var data = _ref.data;
+      worker.onmessage = function (_ref17) {
+        var data = _ref17.data;
         res(data), worker.terminate();
       };
 
@@ -2247,18 +2219,18 @@
     return arr[Math.floor(Math.random() * arr.length)];
   };
 
-  var sampleSize = function sampleSize(_ref) {
-    var _ref2 = _toArray(_ref),
-        arr = _ref2.slice(0);
+  var sampleSize = function sampleSize(_ref18) {
+    var _ref19 = _toArray(_ref18),
+        arr = _ref19.slice(0);
 
     var n = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
     var m = arr.length;
 
     while (m) {
       var i = Math.floor(Math.random() * m--);
-      var _ref3 = [arr[i], arr[m]];
-      arr[m] = _ref3[0];
-      arr[i] = _ref3[1];
+      var _ref20 = [arr[i], arr[m]];
+      arr[m] = _ref20[0];
+      arr[i] = _ref20[1];
     }
 
     return arr.slice(0, n);
@@ -2296,16 +2268,16 @@
     var index = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
     var delCount = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
 
-    for (var _len = arguments.length, elements = new Array(_len > 3 ? _len - 3 : 0), _key = 3; _key < _len; _key++) {
-      elements[_key - 3] = arguments[_key];
+    for (var _len47 = arguments.length, elements = new Array(_len47 > 3 ? _len47 - 3 : 0), _key47 = 3; _key47 < _len47; _key47++) {
+      elements[_key47 - 3] = arguments[_key47];
     }
 
     return arr.slice(0, index).concat(elements).concat(arr.slice(index + delCount));
   };
 
   var show = function show() {
-    for (var _len = arguments.length, el = new Array(_len), _key = 0; _key < _len; _key++) {
-      el[_key] = arguments[_key];
+    for (var _len48 = arguments.length, el = new Array(_len48), _key48 = 0; _key48 < _len48; _key48++) {
+      el[_key48] = arguments[_key48];
     }
 
     return el.concat().forEach(function (e) {
@@ -2313,17 +2285,17 @@
     });
   };
 
-  var shuffle = function shuffle(_ref) {
-    var _ref2 = _toArray(_ref),
-        arr = _ref2.slice(0);
+  var shuffle = function shuffle(_ref21) {
+    var _ref22 = _toArray(_ref21),
+        arr = _ref22.slice(0);
 
     var m = arr.length;
 
     while (m) {
       var i = Math.floor(Math.random() * m--);
-      var _ref3 = [arr[i], arr[m]];
-      arr[m] = _ref3[0];
-      arr[i] = _ref3[1];
+      var _ref23 = [arr[i], arr[m]];
+      arr[m] = _ref23[0];
+      arr[i] = _ref23[1];
     }
 
     return arr;
@@ -2409,8 +2381,8 @@
       };
     }).sort(function (a, b) {
       return compare(a.item, b.item) || a.index - b.index;
-    }).map(function (_ref) {
-      var item = _ref.item;
+    }).map(function (_ref24) {
+      var item = _ref24.item;
       return item;
     });
   };
@@ -2441,8 +2413,8 @@
   };
 
   var sum = function sum() {
-    for (var _len = arguments.length, arr = new Array(_len), _key = 0; _key < _len; _key++) {
-      arr[_key] = arguments[_key];
+    for (var _len49 = arguments.length, arr = new Array(_len49), _key49 = 0; _key49 < _len49; _key49++) {
+      arr[_key49] = arguments[_key49];
     }
 
     return arr.concat().reduce(function (acc, val) {
@@ -2525,29 +2497,29 @@
   };
 
   var takeWhile = function takeWhile(arr, func) {
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
+    var _iteratorNormalCompletion2 = true;
+    var _didIteratorError2 = false;
+    var _iteratorError2 = undefined;
 
     try {
-      for (var _iterator = arr.entries()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-        var _step$value = _slicedToArray(_step.value, 2),
-            i = _step$value[0],
-            val = _step$value[1];
+      for (var _iterator2 = arr.entries()[Symbol.iterator](), _step3; !(_iteratorNormalCompletion2 = (_step3 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+        var _step3$value = _slicedToArray(_step3.value, 2),
+            i = _step3$value[0],
+            val = _step3$value[1];
 
         if (func(val)) return arr.slice(0, i);
       }
     } catch (err) {
-      _didIteratorError = true;
-      _iteratorError = err;
+      _didIteratorError2 = true;
+      _iteratorError2 = err;
     } finally {
       try {
-        if (!_iteratorNormalCompletion && _iterator.return != null) {
-          _iterator.return();
+        if (!_iteratorNormalCompletion2 && _iterator2.return != null) {
+          _iterator2.return();
         }
       } finally {
-        if (_didIteratorError) {
-          throw _iteratorError;
+        if (_didIteratorError2) {
+          throw _iteratorError2;
         }
       }
     }
@@ -2572,16 +2544,9 @@
             fn.apply(context, args);
             lastTime = Date.now();
           }
-        }, wait - (Date.now() - lastTime));
+        }, Math.max(wait - (Date.now() - lastTime), 0));
       }
     };
-  };
-
-  var timeTaken = function timeTaken(callback) {
-    console.time('timeTaken');
-    var r = callback();
-    console.timeEnd('timeTaken');
-    return r;
   };
 
   var times = function times(n, fn) {
@@ -2589,6 +2554,13 @@
     var i = 0;
 
     while (fn.call(context, i) !== false && ++i < n) {}
+  };
+
+  var timeTaken = function timeTaken(callback) {
+    console.time('timeTaken');
+    var r = callback();
+    console.timeEnd('timeTaken');
+    return r;
   };
 
   var toCamelCase = function toCamelCase(str) {
@@ -2610,6 +2582,10 @@
     return num.toLocaleString('en-US');
   };
 
+  var toggleClass = function toggleClass(el, className) {
+    return el.classList.toggle(className);
+  };
+
   var toHash = function toHash(object, key) {
     return Array.prototype.reduce.call(object, function (acc, data, index) {
       return acc[!key ? index : data[key]] = data, acc;
@@ -2620,6 +2596,14 @@
     return str && str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g).map(function (x) {
       return x.toLowerCase();
     }).join('-');
+  };
+
+  var tomorrow = function tomorrow() {
+    var long = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+    var t = new Date();
+    t.setDate(t.getDate() + 1);
+    var ret = "".concat(t.getFullYear(), "-").concat(String(t.getMonth() + 1).padStart(2, '0'), "-").concat(String(t.getDate()).padStart(2, '0'));
+    return !long ? ret : "".concat(ret, "T00:00:00");
   };
 
   var toOrdinalSuffix = function toOrdinalSuffix(num) {
@@ -2639,18 +2623,6 @@
     return str && str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g).map(function (x) {
       return x.toLowerCase();
     }).join('_');
-  };
-
-  var toggleClass = function toggleClass(el, className) {
-    return el.classList.toggle(className);
-  };
-
-  var tomorrow = function tomorrow() {
-    var long = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
-    var t = new Date();
-    t.setDate(t.getDate() + 1);
-    var ret = "".concat(t.getFullYear(), "-").concat(String(t.getMonth() + 1).padStart(2, '0'), "-").concat(String(t.getDate()).padStart(2, '0'));
-    return !long ? ret : "".concat(ret, "T00:00:00");
   };
 
   var transform = function transform(obj, fn, acc) {
@@ -2692,8 +2664,8 @@
         };
       };
 
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
+      for (var _len50 = arguments.length, args = new Array(_len50), _key50 = 0; _key50 < _len50; _key50++) {
+        args[_key50] = arguments[_key50];
       }
 
       if (n > args.length) throw new RangeError('Arguments too few!');
@@ -2742,9 +2714,7 @@
   };
 
   var unionBy = function unionBy(a, b, fn) {
-    var s = new Set(a.map(function (v) {
-      return fn(v);
-    }));
+    var s = new Set(a.map(fn));
     return Array.from(new Set(_toConsumableArray(a).concat(_toConsumableArray(b.filter(function (x) {
       return !s.has(fn(x));
     })))));
@@ -2789,7 +2759,7 @@
   };
 
   var untildify = function untildify(str) {
-    return str.replace(/^~($|\/|\\)/, "".concat(typeof require !== "undefined" && require('os').homedir(), "$1"));
+    return str.replace(/^~($|\/|\\)/, "".concat(require('os').homedir(), "$1"));
   };
 
   var unzip = function unzip(arr) {
@@ -2822,6 +2792,26 @@
     });
   };
 
+  var URLJoin = function URLJoin() {
+    for (var _len51 = arguments.length, args = new Array(_len51), _key51 = 0; _key51 < _len51; _key51++) {
+      args[_key51] = arguments[_key51];
+    }
+
+    return args.join('/').replace(/[\/]+/g, '/').replace(/^(.+):\//, '$1://').replace(/^file:/, 'file:/').replace(/\/(\?|&|#[^!])/g, '$1').replace(/\?/g, '&').replace('&', '?');
+  };
+
+  var UUIDGeneratorBrowser = function UUIDGeneratorBrowser() {
+    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, function (c) {
+      return (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16);
+    });
+  };
+
+  var UUIDGeneratorNode = function UUIDGeneratorNode() {
+    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, function (c) {
+      return (c ^ crypto.randomBytes(1)[0] & 15 >> c / 4).toString(16);
+    });
+  };
+
   var validateNumber = function validateNumber(n) {
     return !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
   };
@@ -2833,8 +2823,8 @@
   };
 
   var without = function without(arr) {
-    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
+    for (var _len52 = arguments.length, args = new Array(_len52 > 1 ? _len52 - 1 : 0), _key52 = 1; _key52 < _len52; _key52++) {
+      args[_key52 - 1] = arguments[_key52];
     }
 
     return arr.filter(function (v) {
@@ -2861,8 +2851,8 @@
   };
 
   var zip = function zip() {
-    for (var _len = arguments.length, arrays = new Array(_len), _key = 0; _key < _len; _key++) {
-      arrays[_key] = arguments[_key];
+    for (var _len53 = arguments.length, arrays = new Array(_len53), _key53 = 0; _key53 < _len53; _key53++) {
+      arrays[_key53] = arguments[_key53];
     }
 
     var maxLength = Math.max.apply(Math, _toConsumableArray(arrays.map(function (x) {
@@ -2886,8 +2876,8 @@
   };
 
   var zipWith = function zipWith() {
-    for (var _len = arguments.length, array = new Array(_len), _key = 0; _key < _len; _key++) {
-      array[_key] = arguments[_key];
+    for (var _len54 = arguments.length, array = new Array(_len54), _key54 = 0; _key54 < _len54; _key54++) {
+      array[_key54] = arguments[_key54];
     }
 
     var fn = typeof array[array.length - 1] === 'function' ? array.pop() : undefined;
@@ -2904,341 +2894,341 @@
     });
   };
 
-  exports.CSVToArray = CSVToArray;
-  exports.CSVToJSON = CSVToJSON;
-  exports.JSONToFile = JSONToFile;
-  exports.JSONtoCSV = JSONtoCSV;
-  exports.RGBToHex = RGBToHex;
-  exports.URLJoin = URLJoin;
-  exports.UUIDGeneratorBrowser = UUIDGeneratorBrowser;
-  exports.UUIDGeneratorNode = UUIDGeneratorNode;
-  exports.all = all;
-  exports.allEqual = allEqual;
-  exports.any = any;
-  exports.approximatelyEqual = approximatelyEqual;
-  exports.arrayToCSV = arrayToCSV;
-  exports.arrayToHtmlList = arrayToHtmlList;
-  exports.ary = ary;
-  exports.atob = atob;
-  exports.attempt = attempt;
-  exports.average = average;
-  exports.averageBy = averageBy;
-  exports.bifurcate = bifurcate;
-  exports.bifurcateBy = bifurcateBy;
-  exports.bind = bind;
-  exports.bindAll = bindAll;
-  exports.bindKey = bindKey;
-  exports.binomialCoefficient = binomialCoefficient;
-  exports.bottomVisible = bottomVisible;
-  exports.btoa = btoa;
-  exports.byteSize = byteSize;
-  exports.call = call;
-  exports.capitalize = capitalize;
-  exports.capitalizeEveryWord = capitalizeEveryWord;
-  exports.castArray = castArray;
-  exports.chainAsync = chainAsync;
-  exports.chunk = chunk;
-  exports.clampNumber = clampNumber;
-  exports.cloneRegExp = cloneRegExp;
-  exports.coalesce = coalesce;
-  exports.coalesceFactory = coalesceFactory;
-  exports.collectInto = collectInto;
-  exports.colorize = colorize;
-  exports.compact = compact;
-  exports.compose = compose;
-  exports.composeRight = composeRight;
-  exports.converge = converge;
-  exports.copyToClipboard = copyToClipboard;
-  exports.countBy = countBy;
-  exports.countOccurrences = countOccurrences;
-  exports.counter = counter;
-  exports.createElement = createElement;
-  exports.createEventHub = createEventHub;
-  exports.currentURL = currentURL;
-  exports.curry = curry;
-  exports.dayOfYear = dayOfYear;
-  exports.debounce = debounce;
-  exports.decapitalize = decapitalize;
-  exports.deepClone = deepClone;
-  exports.deepFlatten = deepFlatten;
-  exports.deepFreeze = deepFreeze;
-  exports.defaults = defaults;
-  exports.defer = defer;
-  exports.degreesToRads = degreesToRads;
-  exports.delay = delay;
-  exports.detectDeviceType = detectDeviceType;
-  exports.difference = difference;
-  exports.differenceBy = differenceBy;
-  exports.differenceWith = differenceWith;
-  exports.dig = dig;
-  exports.digitize = digitize;
-  exports.distance = distance;
-  exports.drop = drop;
-  exports.dropRight = dropRight;
-  exports.dropRightWhile = dropRightWhile;
-  exports.dropWhile = dropWhile;
-  exports.elementContains = elementContains;
-  exports.elementIsVisibleInViewport = elementIsVisibleInViewport;
-  exports.elo = elo;
-  exports.equals = equals;
-  exports.escapeHTML = escapeHTML;
-  exports.escapeRegExp = escapeRegExp;
-  exports.everyNth = everyNth;
-  exports.extendHex = extendHex;
-  exports.factorial = factorial;
-  exports.fibonacci = fibonacci;
-  exports.filterNonUnique = filterNonUnique;
-  exports.filterNonUniqueBy = filterNonUniqueBy;
-  exports.findKey = findKey;
-  exports.findLast = findLast;
-  exports.findLastIndex = findLastIndex;
-  exports.findLastKey = findLastKey;
-  exports.flatten = flatten;
-  exports.flattenObject = flattenObject;
-  exports.flip = flip;
-  exports.forEachRight = forEachRight;
-  exports.forOwn = forOwn;
-  exports.forOwnRight = forOwnRight;
-  exports.formatDuration = formatDuration;
-  exports.fromCamelCase = fromCamelCase;
-  exports.functionName = functionName;
-  exports.functions = functions;
-  exports.gcd = gcd;
-  exports.geometricProgression = geometricProgression;
-  exports.get = get;
-  exports.getColonTimeFromDate = getColonTimeFromDate;
-  exports.getDaysDiffBetweenDates = getDaysDiffBetweenDates;
-  exports.getImages = getImages;
-  exports.getMeridiemSuffixOfInteger = getMeridiemSuffixOfInteger;
-  exports.getScrollPosition = getScrollPosition;
-  exports.getStyle = getStyle;
-  exports.getType = getType;
-  exports.getURLParameters = getURLParameters;
-  exports.groupBy = groupBy;
-  exports.hammingDistance = hammingDistance;
-  exports.hasClass = hasClass;
-  exports.hasFlags = hasFlags;
-  exports.hashBrowser = hashBrowser;
-  exports.hashNode = hashNode;
-  exports.head = head;
-  exports.hexToRGB = hexToRGB;
-  exports.hide = hide;
-  exports.httpGet = httpGet;
-  exports.httpPost = httpPost;
-  exports.httpsRedirect = httpsRedirect;
-  exports.hz = hz;
-  exports.inRange = inRange;
-  exports.indentString = indentString;
-  exports.indexOfAll = indexOfAll;
-  exports.initial = initial;
-  exports.initialize2DArray = initialize2DArray;
-  exports.initializeArrayWithRange = initializeArrayWithRange;
-  exports.initializeArrayWithRangeRight = initializeArrayWithRangeRight;
-  exports.initializeArrayWithValues = initializeArrayWithValues;
-  exports.initializeNDArray = initializeNDArray;
-  exports.insertAfter = insertAfter;
-  exports.insertBefore = insertBefore;
-  exports.intersection = intersection;
-  exports.intersectionBy = intersectionBy;
-  exports.intersectionWith = intersectionWith;
-  exports.invertKeyValues = invertKeyValues;
-  exports.is = is;
-  exports.isAbsoluteURL = isAbsoluteURL;
-  exports.isAfterDate = isAfterDate;
-  exports.isAnagram = isAnagram;
-  exports.isArrayLike = isArrayLike;
-  exports.isBeforeDate = isBeforeDate;
-  exports.isBoolean = isBoolean;
-  exports.isBrowser = isBrowser;
-  exports.isBrowserTabFocused = isBrowserTabFocused;
-  exports.isDivisible = isDivisible;
-  exports.isDuplexStream = isDuplexStream;
-  exports.isEmpty = isEmpty;
-  exports.isEven = isEven;
-  exports.isFunction = isFunction;
-  exports.isLowerCase = isLowerCase;
-  exports.isNil = isNil;
-  exports.isNull = isNull;
-  exports.isNumber = isNumber;
-  exports.isObject = isObject;
-  exports.isObjectLike = isObjectLike;
-  exports.isPlainObject = isPlainObject;
-  exports.isPrime = isPrime;
-  exports.isPrimitive = isPrimitive;
-  exports.isPromiseLike = isPromiseLike;
-  exports.isReadableStream = isReadableStream;
-  exports.isSameDate = isSameDate;
-  exports.isSorted = isSorted;
-  exports.isStream = isStream;
-  exports.isString = isString;
-  exports.isSymbol = isSymbol;
-  exports.isTravisCI = isTravisCI;
-  exports.isUndefined = isUndefined;
-  exports.isUpperCase = isUpperCase;
-  exports.isValidJSON = isValidJSON;
-  exports.isWritableStream = isWritableStream;
-  exports.join = join;
-  exports.last = last;
-  exports.lcm = lcm;
-  exports.longestItem = longestItem;
-  exports.lowercaseKeys = lowercaseKeys;
-  exports.luhnCheck = luhnCheck;
-  exports.mapKeys = mapKeys;
-  exports.mapObject = mapObject;
-  exports.mapString = mapString;
-  exports.mapValues = mapValues;
-  exports.mask = mask;
-  exports.matches = matches;
-  exports.matchesWith = matchesWith;
-  exports.maxBy = maxBy;
-  exports.maxDate = maxDate;
-  exports.maxN = maxN;
-  exports.median = median;
-  exports.memoize = memoize;
-  exports.merge = merge;
-  exports.minBy = minBy;
-  exports.minDate = minDate;
-  exports.minN = minN;
-  exports.mostPerformant = mostPerformant;
-  exports.negate = negate;
-  exports.nest = nest;
-  exports.nodeListToArray = nodeListToArray;
-  exports.none = none;
-  exports.nthArg = nthArg;
-  exports.nthElement = nthElement;
-  exports.objectFromPairs = objectFromPairs;
-  exports.objectToPairs = objectToPairs;
-  exports.observeMutations = observeMutations;
-  exports.off = off;
-  exports.offset = offset;
-  exports.omit = omit;
-  exports.omitBy = omitBy;
-  exports.on = on;
-  exports.onUserInputChange = onUserInputChange;
-  exports.once = once;
-  exports.orderBy = orderBy;
-  exports.over = over;
-  exports.overArgs = overArgs;
-  exports.pad = pad;
-  exports.palindrome = palindrome;
-  exports.parseCookie = parseCookie;
-  exports.partial = partial;
-  exports.partialRight = partialRight;
-  exports.partition = partition;
-  exports.percentile = percentile;
-  exports.permutations = permutations;
-  exports.pick = pick;
-  exports.pickBy = pickBy;
-  exports.pipeAsyncFunctions = pipeAsyncFunctions;
-  exports.pipeFunctions = pipeFunctions;
-  exports.pluralize = pluralize;
-  exports.powerset = powerset;
-  exports.prefix = prefix;
-  exports.prettyBytes = prettyBytes;
-  exports.primes = primes;
-  exports.promisify = promisify;
-  exports.pull = pull;
-  exports.pullAtIndex = pullAtIndex;
-  exports.pullAtValue = pullAtValue;
-  exports.pullBy = pullBy;
-  exports.radsToDegrees = radsToDegrees;
-  exports.randomHexColorCode = randomHexColorCode;
-  exports.randomIntArrayInRange = randomIntArrayInRange;
-  exports.randomIntegerInRange = randomIntegerInRange;
-  exports.randomNumberInRange = randomNumberInRange;
-  exports.readFileLines = readFileLines;
-  exports.rearg = rearg;
-  exports.recordAnimationFrames = recordAnimationFrames;
-  exports.redirect = redirect;
-  exports.reduceSuccessive = reduceSuccessive;
-  exports.reduceWhich = reduceWhich;
-  exports.reducedFilter = reducedFilter;
-  exports.reject = reject;
-  exports.remove = remove;
-  exports.removeNonASCII = removeNonASCII;
-  exports.renameKeys = renameKeys;
-  exports.reverseString = reverseString;
-  exports.round = round;
-  exports.runAsync = runAsync;
-  exports.runPromisesInSeries = runPromisesInSeries;
-  exports.sample = sample;
-  exports.sampleSize = sampleSize;
-  exports.scrollToTop = scrollToTop;
-  exports.sdbm = sdbm;
-  exports.serializeCookie = serializeCookie;
-  exports.setStyle = setStyle;
-  exports.shallowClone = shallowClone;
-  exports.shank = shank;
-  exports.show = show;
-  exports.shuffle = shuffle;
-  exports.similarity = similarity;
-  exports.size = size;
-  exports.sleep = sleep;
-  exports.smoothScroll = smoothScroll;
-  exports.sortCharactersInString = sortCharactersInString;
-  exports.sortedIndex = sortedIndex;
-  exports.sortedIndexBy = sortedIndexBy;
-  exports.sortedLastIndex = sortedLastIndex;
-  exports.sortedLastIndexBy = sortedLastIndexBy;
-  exports.splitLines = splitLines;
-  exports.spreadOver = spreadOver;
-  exports.stableSort = stableSort;
-  exports.standardDeviation = standardDeviation;
-  exports.stringPermutations = stringPermutations;
-  exports.stripHTMLTags = stripHTMLTags;
-  exports.sum = sum;
-  exports.sumBy = sumBy;
-  exports.sumPower = sumPower;
-  exports.symmetricDifference = symmetricDifference;
-  exports.symmetricDifferenceBy = symmetricDifferenceBy;
-  exports.symmetricDifferenceWith = symmetricDifferenceWith;
-  exports.tail = tail;
-  exports.take = take;
-  exports.takeRight = takeRight;
-  exports.takeRightWhile = takeRightWhile;
-  exports.takeWhile = takeWhile;
-  exports.throttle = throttle;
-  exports.timeTaken = timeTaken;
-  exports.times = times;
-  exports.toCamelCase = toCamelCase;
-  exports.toCurrency = toCurrency;
-  exports.toDecimalMark = toDecimalMark;
-  exports.toHash = toHash;
-  exports.toKebabCase = toKebabCase;
-  exports.toOrdinalSuffix = toOrdinalSuffix;
-  exports.toSafeInteger = toSafeInteger;
-  exports.toSnakeCase = toSnakeCase;
-  exports.toggleClass = toggleClass;
-  exports.tomorrow = tomorrow;
-  exports.transform = transform;
-  exports.triggerEvent = triggerEvent;
-  exports.truncateString = truncateString;
-  exports.truthCheckCollection = truthCheckCollection;
-  exports.unary = unary;
-  exports.uncurry = uncurry;
-  exports.unescapeHTML = unescapeHTML;
-  exports.unflattenObject = unflattenObject;
-  exports.unfold = unfold;
-  exports.union = union;
-  exports.unionBy = unionBy;
-  exports.unionWith = unionWith;
-  exports.uniqueElements = uniqueElements;
-  exports.uniqueElementsBy = uniqueElementsBy;
-  exports.uniqueElementsByRight = uniqueElementsByRight;
-  exports.uniqueSymmetricDifference = uniqueSymmetricDifference;
-  exports.untildify = untildify;
-  exports.unzip = unzip;
-  exports.unzipWith = unzipWith;
-  exports.validateNumber = validateNumber;
-  exports.when = when;
-  exports.without = without;
-  exports.words = words;
-  exports.xProd = xProd;
-  exports.yesNo = yesNo;
-  exports.zip = zip;
-  exports.zipObject = zipObject;
-  exports.zipWith = zipWith;
-
-  Object.defineProperty(exports, '__esModule', { value: true });
+  module.exports = {
+    all: all,
+    allEqual: allEqual,
+    any: any,
+    approximatelyEqual: approximatelyEqual,
+    arrayToCSV: arrayToCSV,
+    arrayToHtmlList: arrayToHtmlList,
+    ary: ary,
+    atob: atob,
+    attempt: attempt,
+    average: average,
+    averageBy: averageBy,
+    bifurcate: bifurcate,
+    bifurcateBy: bifurcateBy,
+    bind: bind,
+    bindAll: bindAll,
+    bindKey: bindKey,
+    binomialCoefficient: binomialCoefficient,
+    bottomVisible: bottomVisible,
+    btoa: btoa,
+    byteSize: byteSize,
+    call: call,
+    capitalize: capitalize,
+    capitalizeEveryWord: capitalizeEveryWord,
+    castArray: castArray,
+    chainAsync: chainAsync,
+    chunk: chunk,
+    clampNumber: clampNumber,
+    cloneRegExp: cloneRegExp,
+    coalesce: coalesce,
+    coalesceFactory: coalesceFactory,
+    collectInto: collectInto,
+    colorize: colorize,
+    compact: compact,
+    compose: compose,
+    composeRight: composeRight,
+    converge: converge,
+    copyToClipboard: copyToClipboard,
+    countBy: countBy,
+    counter: counter,
+    countOccurrences: countOccurrences,
+    createElement: createElement,
+    createEventHub: createEventHub,
+    CSVToArray: CSVToArray,
+    CSVToJSON: CSVToJSON,
+    currentURL: currentURL,
+    curry: curry,
+    dayOfYear: dayOfYear,
+    debounce: debounce,
+    decapitalize: decapitalize,
+    deepClone: deepClone,
+    deepFlatten: deepFlatten,
+    deepFreeze: deepFreeze,
+    defaults: defaults,
+    defer: defer,
+    degreesToRads: degreesToRads,
+    delay: delay,
+    detectDeviceType: detectDeviceType,
+    difference: difference,
+    differenceBy: differenceBy,
+    differenceWith: differenceWith,
+    dig: dig,
+    digitize: digitize,
+    distance: distance,
+    drop: drop,
+    dropRight: dropRight,
+    dropRightWhile: dropRightWhile,
+    dropWhile: dropWhile,
+    elementContains: elementContains,
+    elementIsVisibleInViewport: elementIsVisibleInViewport,
+    elo: elo,
+    equals: equals,
+    escapeHTML: escapeHTML,
+    escapeRegExp: escapeRegExp,
+    everyNth: everyNth,
+    extendHex: extendHex,
+    factorial: factorial,
+    fibonacci: fibonacci,
+    filterNonUnique: filterNonUnique,
+    filterNonUniqueBy: filterNonUniqueBy,
+    findKey: findKey,
+    findLast: findLast,
+    findLastIndex: findLastIndex,
+    findLastKey: findLastKey,
+    flatten: flatten,
+    flattenObject: flattenObject,
+    flip: flip,
+    forEachRight: forEachRight,
+    formatDuration: formatDuration,
+    forOwn: forOwn,
+    forOwnRight: forOwnRight,
+    fromCamelCase: fromCamelCase,
+    functionName: functionName,
+    functions: functions,
+    gcd: gcd,
+    geometricProgression: geometricProgression,
+    get: get,
+    getColonTimeFromDate: getColonTimeFromDate,
+    getDaysDiffBetweenDates: getDaysDiffBetweenDates,
+    getImages: getImages,
+    getMeridiemSuffixOfInteger: getMeridiemSuffixOfInteger,
+    getScrollPosition: getScrollPosition,
+    getStyle: getStyle,
+    getType: getType,
+    getURLParameters: getURLParameters,
+    groupBy: groupBy,
+    hammingDistance: hammingDistance,
+    hasClass: hasClass,
+    hasFlags: hasFlags,
+    hashBrowser: hashBrowser,
+    hashNode: hashNode,
+    head: head,
+    hexToRGB: hexToRGB,
+    hide: hide,
+    httpGet: httpGet,
+    httpPost: httpPost,
+    httpsRedirect: httpsRedirect,
+    hz: hz,
+    indentString: indentString,
+    indexOfAll: indexOfAll,
+    initial: initial,
+    initialize2DArray: initialize2DArray,
+    initializeArrayWithRange: initializeArrayWithRange,
+    initializeArrayWithRangeRight: initializeArrayWithRangeRight,
+    initializeArrayWithValues: initializeArrayWithValues,
+    initializeNDArray: initializeNDArray,
+    inRange: inRange,
+    insertAfter: insertAfter,
+    insertBefore: insertBefore,
+    intersection: intersection,
+    intersectionBy: intersectionBy,
+    intersectionWith: intersectionWith,
+    invertKeyValues: invertKeyValues,
+    is: is,
+    isAbsoluteURL: isAbsoluteURL,
+    isAfterDate: isAfterDate,
+    isAnagram: isAnagram,
+    isArrayLike: isArrayLike,
+    isBeforeDate: isBeforeDate,
+    isBoolean: isBoolean,
+    isBrowser: isBrowser,
+    isBrowserTabFocused: isBrowserTabFocused,
+    isDivisible: isDivisible,
+    isDuplexStream: isDuplexStream,
+    isEmpty: isEmpty,
+    isEven: isEven,
+    isFunction: isFunction,
+    isLowerCase: isLowerCase,
+    isNil: isNil,
+    isNull: isNull,
+    isNumber: isNumber,
+    isObject: isObject,
+    isObjectLike: isObjectLike,
+    isPlainObject: isPlainObject,
+    isPrime: isPrime,
+    isPrimitive: isPrimitive,
+    isPromiseLike: isPromiseLike,
+    isReadableStream: isReadableStream,
+    isSameDate: isSameDate,
+    isSorted: isSorted,
+    isStream: isStream,
+    isString: isString,
+    isSymbol: isSymbol,
+    isTravisCI: isTravisCI,
+    isUndefined: isUndefined,
+    isUpperCase: isUpperCase,
+    isValidJSON: isValidJSON,
+    isWritableStream: isWritableStream,
+    join: join,
+    JSONtoCSV: JSONtoCSV,
+    JSONToFile: JSONToFile,
+    last: last,
+    lcm: lcm,
+    longestItem: longestItem,
+    lowercaseKeys: lowercaseKeys,
+    luhnCheck: luhnCheck,
+    mapKeys: mapKeys,
+    mapObject: mapObject,
+    mapString: mapString,
+    mapValues: mapValues,
+    mask: mask,
+    matches: matches,
+    matchesWith: matchesWith,
+    maxBy: maxBy,
+    maxDate: maxDate,
+    maxN: maxN,
+    median: median,
+    memoize: memoize,
+    merge: merge,
+    minBy: minBy,
+    minDate: minDate,
+    minN: minN,
+    mostPerformant: mostPerformant,
+    negate: negate,
+    nest: nest,
+    nodeListToArray: nodeListToArray,
+    none: none,
+    nthArg: nthArg,
+    nthElement: nthElement,
+    objectFromPairs: objectFromPairs,
+    objectToPairs: objectToPairs,
+    observeMutations: observeMutations,
+    off: off,
+    offset: offset,
+    omit: omit,
+    omitBy: omitBy,
+    on: on,
+    once: once,
+    onUserInputChange: onUserInputChange,
+    orderBy: orderBy,
+    over: over,
+    overArgs: overArgs,
+    pad: pad,
+    palindrome: palindrome,
+    parseCookie: parseCookie,
+    partial: partial,
+    partialRight: partialRight,
+    partition: partition,
+    percentile: percentile,
+    permutations: permutations,
+    pick: pick,
+    pickBy: pickBy,
+    pipeAsyncFunctions: pipeAsyncFunctions,
+    pipeFunctions: pipeFunctions,
+    pluralize: pluralize,
+    powerset: powerset,
+    prefix: prefix,
+    prettyBytes: prettyBytes,
+    primes: primes,
+    promisify: promisify,
+    pull: pull,
+    pullAtIndex: pullAtIndex,
+    pullAtValue: pullAtValue,
+    pullBy: pullBy,
+    radsToDegrees: radsToDegrees,
+    randomHexColorCode: randomHexColorCode,
+    randomIntArrayInRange: randomIntArrayInRange,
+    randomIntegerInRange: randomIntegerInRange,
+    randomNumberInRange: randomNumberInRange,
+    readFileLines: readFileLines,
+    rearg: rearg,
+    recordAnimationFrames: recordAnimationFrames,
+    redirect: redirect,
+    reducedFilter: reducedFilter,
+    reduceSuccessive: reduceSuccessive,
+    reduceWhich: reduceWhich,
+    reject: reject,
+    remove: remove,
+    removeNonASCII: removeNonASCII,
+    renameKeys: renameKeys,
+    reverseString: reverseString,
+    RGBToHex: RGBToHex,
+    round: round,
+    runAsync: runAsync,
+    runPromisesInSeries: runPromisesInSeries,
+    sample: sample,
+    sampleSize: sampleSize,
+    scrollToTop: scrollToTop,
+    sdbm: sdbm,
+    serializeCookie: serializeCookie,
+    setStyle: setStyle,
+    shallowClone: shallowClone,
+    shank: shank,
+    show: show,
+    shuffle: shuffle,
+    similarity: similarity,
+    size: size,
+    sleep: sleep,
+    smoothScroll: smoothScroll,
+    sortCharactersInString: sortCharactersInString,
+    sortedIndex: sortedIndex,
+    sortedIndexBy: sortedIndexBy,
+    sortedLastIndex: sortedLastIndex,
+    sortedLastIndexBy: sortedLastIndexBy,
+    splitLines: splitLines,
+    spreadOver: spreadOver,
+    stableSort: stableSort,
+    standardDeviation: standardDeviation,
+    stringPermutations: stringPermutations,
+    stripHTMLTags: stripHTMLTags,
+    sum: sum,
+    sumBy: sumBy,
+    sumPower: sumPower,
+    symmetricDifference: symmetricDifference,
+    symmetricDifferenceBy: symmetricDifferenceBy,
+    symmetricDifferenceWith: symmetricDifferenceWith,
+    tail: tail,
+    take: take,
+    takeRight: takeRight,
+    takeRightWhile: takeRightWhile,
+    takeWhile: takeWhile,
+    throttle: throttle,
+    times: times,
+    timeTaken: timeTaken,
+    toCamelCase: toCamelCase,
+    toCurrency: toCurrency,
+    toDecimalMark: toDecimalMark,
+    toggleClass: toggleClass,
+    toHash: toHash,
+    toKebabCase: toKebabCase,
+    tomorrow: tomorrow,
+    toOrdinalSuffix: toOrdinalSuffix,
+    toSafeInteger: toSafeInteger,
+    toSnakeCase: toSnakeCase,
+    transform: transform,
+    triggerEvent: triggerEvent,
+    truncateString: truncateString,
+    truthCheckCollection: truthCheckCollection,
+    unary: unary,
+    uncurry: uncurry,
+    unescapeHTML: unescapeHTML,
+    unflattenObject: unflattenObject,
+    unfold: unfold,
+    union: union,
+    unionBy: unionBy,
+    unionWith: unionWith,
+    uniqueElements: uniqueElements,
+    uniqueElementsBy: uniqueElementsBy,
+    uniqueElementsByRight: uniqueElementsByRight,
+    uniqueSymmetricDifference: uniqueSymmetricDifference,
+    untildify: untildify,
+    unzip: unzip,
+    unzipWith: unzipWith,
+    URLJoin: URLJoin,
+    UUIDGeneratorBrowser: UUIDGeneratorBrowser,
+    UUIDGeneratorNode: UUIDGeneratorNode,
+    validateNumber: validateNumber,
+    when: when,
+    without: without,
+    words: words,
+    xProd: xProd,
+    yesNo: yesNo,
+    zip: zip,
+    zipObject: zipObject,
+    zipWith: zipWith
+  };
 
 })));
