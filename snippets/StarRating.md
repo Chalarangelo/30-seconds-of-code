@@ -53,7 +53,7 @@ const StarRating = (function() {
               key={`star_${i+1} `}
               marked={
                 this.state.selection
-                  ? this.state.selection >= v
+                  ? this.state.selection >= i+1
                   : this.state.rating >= v
               }
             />
