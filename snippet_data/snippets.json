@@ -426,7 +426,7 @@
         "text": "Given a key and a set of arguments, call them when given a context. Primarily useful in composition.\r\n\r\nUse a closure to call a stored key with stored arguments.",
         "codeBlocks": [
           "const call = (key, ...args) => context => context[key](...args);",
-          "Promise.resolve([1, 2, 3])\n  .then(call('map', x => 2 * x))\n  .then(console.log); //[ 2, 4, 6 ]\nconst map = call.bind(null, 'map');\nPromise.resolve([1, 2, 3])\n  .then(map(x => 2 * x))\n  .then(console.log); //[ 2, 4, 6 ]"
+          "Promise.resolve([1, 2, 3])\n  .then(call('map', x => 2 * x))\n  .then(console.log); // [ 2, 4, 6 ]\nconst map = call.bind(null, 'map');\nPromise.resolve([1, 2, 3])\n  .then(map(x => 2 * x))\n  .then(console.log); // [ 2, 4, 6 ]"
         ],
         "tags": [
           "adapter",
@@ -436,7 +436,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "732d63737f940a76c33a42ae3a1dcbf72b93149f57e14e34e301dad7ce245236"
+        "hash": "302f71c01eddd94edd597dc50e9f76115c6117d9a06df54bf69813ef2728ba12"
       }
     },
     {
@@ -776,7 +776,7 @@
         "fileName": "countBy.md",
         "text": "Groups the elements of an array based on the given function and returns the count of elements in each group.\n\nUse `Array.prototype.map()` to map the values of an array to a function or property name.\nUse `Array.prototype.reduce()` to create an object, where the keys are produced from the mapped results.",
         "codeBlocks": [
-          "const countBy = (arr, fn) =>\n  arr.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val, i) => {\n    acc[val] = (acc[val] || 0) + 1;\n    return acc;\n  }, {});",
+          "const countBy = (arr, fn) =>\n  arr.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val) => {\n    acc[val] = (acc[val] || 0) + 1;\n    return acc;\n  }, {});",
           "countBy([6.1, 4.2, 6.3], Math.floor); // {4: 1, 6: 2}\ncountBy(['one', 'two', 'three'], 'length'); // {3: 2, 5: 1}"
         ],
         "tags": [
@@ -787,7 +787,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "aa72dce75869846337dd22e5cd3aa1f587ca3b37d07dc376082a77542793cb86"
+        "hash": "cab7fc0cdd2b41758fb18e17986b0e3cc2b17a5ab79014530c9134a41ada9469"
       }
     },
     {
@@ -1068,7 +1068,7 @@
         "fileName": "deepFreeze.md",
         "text": "Deep freezes an object.\n\nCalls `Object.freeze(obj)` recursively on all unfrozen properties of passed object that are `instanceof` object.",
         "codeBlocks": [
-          "const deepFreeze = obj =>\n  Object.keys(obj).forEach(\n    prop =>\n      !obj[prop] instanceof Object || Object.isFrozen(obj[prop]) ? null : deepFreeze(obj[prop])\n  ) || Object.freeze(obj);",
+          "const deepFreeze = obj =>\n  Object.keys(obj).forEach(\n    prop =>\n      !(obj[prop] instanceof Object) || Object.isFrozen(obj[prop]) ? null : deepFreeze(obj[prop])\n  ) || Object.freeze(obj);",
           "'use strict';\n\nconst o = deepFreeze([1, [2, 3]]);\n\no[0] = 3; // not allowed\no[1][0] = 4; // not allowed as well"
         ],
         "tags": [
@@ -1079,7 +1079,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "24b3dd66c4b69577d70917ba4f0c119a7ad21497d18704b7150c3693673b5e53"
+        "hash": "9cf10fcda51ff8e1d130b0efa7971549a0d0bb4c24090c5766b82c12e9958604"
       }
     },
     {
@@ -1110,7 +1110,7 @@
         "text": "Defers invoking a function until the current call stack has cleared.\n\nUse `setTimeout()` with a timeout of 1ms to add a new event to the browser event queue and allow the rendering engine to complete its work. Use the spread (`...`) operator to supply the function with an arbitrary number of arguments.",
         "codeBlocks": [
           "const defer = (fn, ...args) => setTimeout(fn, 1, ...args);",
-          "// Example A:\ndefer(console.log, 'a'), console.log('b'); // logs 'b' then 'a'\n\n// Example B:\ndocument.querySelector('#someElement').innerHTML = 'Hello';\nlongRunningFunction(); //Browser will not update the HTML until this has finished\ndefer(longRunningFunction); // Browser will update the HTML then run the function"
+          "// Example A:\ndefer(console.log, 'a'), console.log('b'); // logs 'b' then 'a'\n\n// Example B:\ndocument.querySelector('#someElement').innerHTML = 'Hello';\nlongRunningFunction(); // Browser will not update the HTML until this has finished\ndefer(longRunningFunction); // Browser will update the HTML then run the function"
         ],
         "tags": [
           "function",
@@ -1119,7 +1119,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "eeeaf78d587fe1afdef8eb4b8c3f9f7887e364894d4efb1beecc0adf59250009"
+        "hash": "a1ccac5c1c24abe79c129563811b536eb2cd5c27a533bd93d967afa54dcad550"
       }
     },
     {
@@ -1210,7 +1210,7 @@
         "fileName": "differenceBy.md",
         "text": "Returns the difference between two arrays, after applying the provided function to each array element of both.\n\nCreate a `Set` by applying `fn` to each element in `b`, then use `Array.prototype.filter()` in combination with `fn` on `a` to only keep values not contained in the previously created set.",
         "codeBlocks": [
-          "const differenceBy = (a, b, fn) => {\n  const s = new Set(b.map(v => fn(v)));\n  return a.filter(x => !s.has(fn(x)));\n};",
+          "const differenceBy = (a, b, fn) => {\n  const s = new Set(b.map(fn));\n  return a.filter(x => !s.has(fn(x)));\n};",
           "differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [1.2]\ndifferenceBy([{ x: 2 }, { x: 1 }], [{ x: 1 }], v => v.x); // [ { x: 2 } ]"
         ],
         "tags": [
@@ -1221,7 +1221,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "66f4d7780b5cd3da5359db05c86afb19b3329499bc2ba7277225f01fd1829fb6"
+        "hash": "92abc752f5d3a659467e3dde7a3890000f4b72d1fdfd66086092494b688506ae"
       }
     },
     {
@@ -1252,7 +1252,7 @@
         "fileName": "dig.md",
         "text": "Returns the target value in a nested JSON object, based on the given key.\n\nUse the `in` operator to check if `target` exists in `obj`.\nIf found, return the value of `obj[target]`, otherwise use `Object.values(obj)` and `Array.prototype.reduce()` to recursively call `dig` on each nested object until the first matching key/value pair is found.",
         "codeBlocks": [
-          "const dig = (obj, target) =>\n  target in obj\n    ? obj[target]\n    : Object.values(obj).reduce((acc, val) => {\n        if (acc !== undefined) return acc;\n        if (typeof val === 'object') return dig(val, target);\n      }, undefined);",
+          "const dig = (obj, target) =>\n  target in obj\n    ? obj[target]\n    : Object.values(obj).reduce((acc, val) => {\n      if (acc !== undefined) return acc;\n      if (typeof val === 'object') return dig(val, target);\n    }, undefined);",
           "const data = {\n  level1: {\n    level2: {\n      level3: 'some data'\n    }\n  }\n};\ndig(data, 'level3'); // 'some data'\ndig(data, 'level4'); // undefined"
         ],
         "tags": [
@@ -1263,7 +1263,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "f982b4e8e3ec3c8b0c2ef4f19b38dac90df6ebe2dd4daa0126c917ebc07d3e62"
+        "hash": "828a6f2f3b94cc537ef0ee30c5ebda28fff688fea65030e47d5721831bdb48ce"
       }
     },
     {
@@ -1436,7 +1436,7 @@
         "fileName": "elo.md",
         "text": "Computes the new ratings between two or more opponents using the [Elo rating system](https://en.wikipedia.org/wiki/Elo_rating_system). It takes an array\nof pre-ratings and returns an array containing post-ratings.\nThe array should be ordered from best performer to worst performer (winner -> loser).\n\nUse the exponent `**` operator and math operators to compute the expected score (chance of winning).\nof each opponent and compute the new rating for each.\nLoop through the ratings, using each permutation to compute the post-Elo rating for each player in a pairwise fashion. \nOmit the second argument to use the default `kFactor` of 32.",
         "codeBlocks": [
-          "const elo = ([...ratings], kFactor = 32, selfRating) => {\n  const [a, b] = ratings;\n  const expectedScore = (self, opponent) => 1 / (1 + 10 ** ((opponent - self) / 400));\n  const newRating = (rating, i) =>\n    (selfRating || rating) + kFactor * (i - expectedScore(i ? a : b, i ? b : a));\n  if (ratings.length === 2) {\n    return [newRating(a, 1), newRating(b, 0)];\n  }\n  for (let i = 0, len = ratings.length; i < len; i++) {\n    let j = i;\n    while (j < len - 1) {\n      j++;\n      [ratings[i], ratings[j]] = elo([ratings[i], ratings[j]], kFactor);\n    }\n  }\n  return ratings;\n};",
+          "const elo = ([...ratings], kFactor = 32, selfRating) => {\n  const [a, b] = ratings;\n  const expectedScore = (self, opponent) => 1 / (1 + 10 ** ((opponent - self) / 400));\n  const newRating = (rating, i) =>\n    (selfRating || rating) + kFactor * (i - expectedScore(i ? a : b, i ? b : a));\n  if (ratings.length === 2) return [newRating(a, 1), newRating(b, 0)];\n\n  for (let i = 0, len = ratings.length; i < len; i++) {\n    let j = i;\n    while (j < len - 1) {\n      j++;\n      [ratings[i], ratings[j]] = elo([ratings[i], ratings[j]], kFactor);\n    }\n  }\n  return ratings;\n};",
           "// Standard 1v1s\nelo([1200, 1200]); // [1216, 1184]\nelo([1200, 1200], 64); // [1232, 1168]\n// 4 player FFA, all same rank\nelo([1200, 1200, 1200, 1200]).map(Math.round); // [1246, 1215, 1185, 1154]\n/*\nFor teams, each rating can adjusted based on own team's average rating vs.\naverage rating of opposing team, with the score being added to their\nown individual rating by supplying it as the third argument.\n*/"
         ],
         "tags": [
@@ -1447,7 +1447,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "3fc1fe2b64b13a3064c547933e759c0782bd43f357056a467d0ce2cc7e9a38e3"
+        "hash": "905993ba8666f6b76fb806f959dad3f043e875686885fdbf2b6b0a0a080d675c"
       }
     },
     {
@@ -1563,7 +1563,7 @@
         "fileName": "factorial.md",
         "text": "Calculates the factorial of a number.\n\nUse recursion.\nIf `n` is less than or equal to `1`, return `1`.\nOtherwise, return the product of `n` and the factorial of `n - 1`.\nThrows an exception if `n` is a negative number.",
         "codeBlocks": [
-          "const factorial = n =>\n  n < 0\n    ? (() => {\n        throw new TypeError('Negative numbers are not allowed!');\n      })()\n    : n <= 1\n      ? 1\n      : n * factorial(n - 1);",
+          "const factorial = n =>\n  n < 0\n    ? (() => {\n      throw new TypeError('Negative numbers are not allowed!');\n    })()\n    : n <= 1\n      ? 1\n      : n * factorial(n - 1);",
           "factorial(6); // 720"
         ],
         "tags": [
@@ -1574,7 +1574,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "319e1a8fb41490965ee6e28db3e139e65c4ea5b7f43e332bc7216cd790e5d409"
+        "hash": "383ed61e69b8f63ae42d0746a1995057f4f65b4af6ca7778d8f1771144802acd"
       }
     },
     {
@@ -2353,7 +2353,7 @@
         "text": "Makes a `GET` request to the passed URL.\n\nUse [`XMLHttpRequest`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest) web api to make a `get` request to the given `url`.\nHandle the `onload` event, by calling the given `callback` the `responseText`.\nHandle the `onerror` event, by running the provided `err` function.\nOmit the third argument, `err`, to log errors to the console's `error` stream by default.",
         "codeBlocks": [
           "const httpGet = (url, callback, err = console.error) => {\n  const request = new XMLHttpRequest();\n  request.open('GET', url, true);\n  request.onload = () => callback(request.responseText);\n  request.onerror = () => err(request);\n  request.send();\n};",
-          "httpGet(\n  'https://jsonplaceholder.typicode.com/posts/1',\n  console.log\n); /* \nLogs: {\n  \"userId\": 1,\n  \"id\": 1,\n  \"title\": \"sunt aut facere repellat provident occaecati excepturi optio reprehenderit\",\n  \"body\": \"quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto\"\n}\n*/"
+          "httpGet(\n  'https://jsonplaceholder.typicode.com/posts/1',\n  console.log\n); /*\nLogs: {\n  \"userId\": 1,\n  \"id\": 1,\n  \"title\": \"sunt aut facere repellat provident occaecati excepturi optio reprehenderit\",\n  \"body\": \"quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto\"\n}\n*/"
         ],
         "tags": [
           "utility",
@@ -2364,7 +2364,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "beb6cc37601ceaae4203ff5a6dbd6f8bf9ba83cb24b159e5e6d7d18a7d0efb2a"
+        "hash": "2ce890e49f107cfefbcd752721c447416c350e8e1fd3ee1befc3f154c5d5adc4"
       }
     },
     {
@@ -2375,7 +2375,7 @@
         "text": "Makes a `POST` request to the passed URL.\n\nUse [`XMLHttpRequest`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest) web api to make a `post` request to the given `url`.\nSet the value of an `HTTP` request header with `setRequestHeader` method.\nHandle the `onload` event, by calling the given `callback` the `responseText`.\nHandle the `onerror` event, by running the provided `err` function.\nOmit the third argument, `data`, to send no data to the provided `url`.\nOmit the fourth argument, `err`, to log errors to the console's `error` stream by default.",
         "codeBlocks": [
           "const httpPost = (url, data, callback, err = console.error) => {\n  const request = new XMLHttpRequest();\n  request.open('POST', url, true);\n  request.setRequestHeader('Content-type', 'application/json; charset=utf-8');\n  request.onload = () => callback(request.responseText);\n  request.onerror = () => err(request);\n  request.send(data);\n};",
-          "const newPost = {\n  userId: 1,\n  id: 1337,\n  title: 'Foo',\n  body: 'bar bar bar'\n};\nconst data = JSON.stringify(newPost);\nhttpPost(\n  'https://jsonplaceholder.typicode.com/posts',\n  data,\n  console.log\n); /*\nLogs: {\n  \"userId\": 1,\n  \"id\": 1337,\n  \"title\": \"Foo\",\n  \"body\": \"bar bar bar\"\n}\n*/\nhttpPost(\n  'https://jsonplaceholder.typicode.com/posts',\n  null, //does not send a body\n  console.log\n); /*\nLogs: {\n  \"id\": 101\n}\n*/"
+          "const newPost = {\n  userId: 1,\n  id: 1337,\n  title: 'Foo',\n  body: 'bar bar bar'\n};\nconst data = JSON.stringify(newPost);\nhttpPost(\n  'https://jsonplaceholder.typicode.com/posts',\n  data,\n  console.log\n); /*\nLogs: {\n  \"userId\": 1,\n  \"id\": 1337,\n  \"title\": \"Foo\",\n  \"body\": \"bar bar bar\"\n}\n*/\nhttpPost(\n  'https://jsonplaceholder.typicode.com/posts',\n  null, // does not send a body\n  console.log\n); /*\nLogs: {\n  \"id\": 101\n}\n*/"
         ],
         "tags": [
           "utility",
@@ -2386,7 +2386,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "a74182199fce00d578629f774e05c256a30a624e254da6ea6aee532803ad08d6"
+        "hash": "c243abb2f47bce90c1afdeaab78cacc1a5997e8124d8588f446c2e33ec5166f7"
       }
     },
     {
@@ -3205,9 +3205,9 @@
       "type": "snippet",
       "attributes": {
         "fileName": "isPrimitive.md",
-        "text": "Returns a boolean determining if the passed value is primitive or not.\n\nUse `Array.prototype.includes()` on an array of type strings which are not primitive,\nsupplying the type using `typeof`.\nSince `typeof null` evaluates to `'object'`, it needs to be directly compared.",
+        "text": "Returns a boolean determining if the passed value is primitive or not.\n\nCreate an object from `val` and compare it with `val` to determine if the passed value is primitive (i.e. not equal to the created object).",
         "codeBlocks": [
-          "const isPrimitive = val => !['object', 'function'].includes(typeof val) || val === null;",
+          "const isPrimitive = val => Object(val) !== val;",
           "isPrimitive(null); // true\nisPrimitive(50); // true\nisPrimitive('Hello!'); // true\nisPrimitive(false); // true\nisPrimitive(Symbol()); // true\nisPrimitive([]); // false"
         ],
         "tags": [
@@ -3220,7 +3220,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "de4e7c79386daeb68e23c3fa2c8ce8065e6dcdfdf32c423d4ad63bdfa7149a1a"
+        "hash": "c7d8ae1c152c6e7aa21c893d9bc3b581007004e88e4a77df0695a3b957c3d2a0"
       }
     },
     {
@@ -3497,7 +3497,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "JSONtoCSV.md",
-        "text": "Converts an array of objects to a comma-separated values (CSV) string that contains only the `columns` specified.\n\nUse `Array.prototype.join(demiliter)` to combine all the names in `columns` to create the first row.\nUse `Array.prototype.map()` and `Array.prototype.reduce()` to create a row for each object, substituting non-existent values with empty strings and only mapping values in `columns`.\nUse `Array.prototype.join('\\n')` to combine all rows into a string.\nOmit the third argument, `delimiter`, to use a default delimiter of `,`.",
+        "text": "Converts an array of objects to a comma-separated values (CSV) string that contains only the `columns` specified.\n\nUse `Array.prototype.join(delimiter)` to combine all the names in `columns` to create the first row.\nUse `Array.prototype.map()` and `Array.prototype.reduce()` to create a row for each object, substituting non-existent values with empty strings and only mapping values in `columns`.\nUse `Array.prototype.join('\\n')` to combine all rows into a string.\nOmit the third argument, `delimiter`, to use a default delimiter of `,`.",
         "codeBlocks": [
           "const JSONtoCSV = (arr, columns, delimiter = ',') =>\n  [\n    columns.join(delimiter),\n    ...arr.map(obj =>\n      columns.reduce(\n        (acc, key) => `${acc}${!acc.length ? '' : delimiter}\"${!obj[key] ? '' : obj[key]}\"`,\n        ''\n      )\n    )\n  ].join('\\n');",
           "JSONtoCSV([{ a: 1, b: 2 }, { a: 3, b: 4, c: 5 }, { a: 6 }, { b: 7 }], ['a', 'b']); // 'a,b\\n\"1\",\"2\"\\n\"3\",\"4\"\\n\"6\",\"\"\\n\"\",\"7\"'\nJSONtoCSV([{ a: 1, b: 2 }, { a: 3, b: 4, c: 5 }, { a: 6 }, { b: 7 }], ['a', 'b'], ';'); // 'a;b\\n\"1\";\"2\"\\n\"3\";\"4\"\\n\"6\";\"\"\\n\"\";\"7\"'"
@@ -3511,7 +3511,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "48300abf81d331fb086e0267e5a1ef4e021f236b1b5bc6f3ea334eb87a4069a6"
+        "hash": "8a9b52f4f29b9c52572e2577cffdf93d00278aa7eb661f8af62625c7652c663c"
       }
     },
     {
@@ -4420,7 +4420,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "palindrome.md",
-        "text": "Returns `true` if the given string is a palindrome, `false` otherwise.\n\nConvert string `String.toLowerCase()` and use `String.prototype.replace()` to remove non-alphanumeric characters from it.\nThen, use the spread operator (`...`) to split string into individual characters, `Array.prototype.reverse()`, `String.prototype.join('')` and compare to the original, unreversed string, after converting it `String.tolowerCase()`.",
+        "text": "Returns `true` if the given string is a palindrome, `false` otherwise.\n\nConvert the string to `String.prototype.toLowerCase()` and use `String.prototype.replace()` to remove non-alphanumeric characters from it.\nThen, use the spread operator (`...`) to split the string into individual characters, `Array.prototype.reverse()`, `String.prototype.join('')` and compare it to the original, unreversed string, after converting it to `String.prototype.toLowerCase()`.",
         "codeBlocks": [
           "const palindrome = str => {\n  const s = str.toLowerCase().replace(/[\\W_]/g, '');\n  return s === [...s].reverse().join('');\n};",
           "palindrome('taco cat'); // true"
@@ -4432,7 +4432,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "4b1f0c701fde160a480314674c974d8b6c7a6114d1d5772981ca7fa097f1d7e7"
+        "hash": "497b0275ae10369768d3c3c1db1b4de53ff82f64be838e5fd38ba469a88b4de9"
       }
     },
     {
@@ -4610,7 +4610,7 @@
         "text": "Performs left-to-right function composition for asynchronous functions.\n\nUse `Array.prototype.reduce()` with the spread operator (`...`) to perform left-to-right function composition using `Promise.then()`.\nThe functions can return a combination of: simple values, `Promise`'s, or they can be defined as `async` ones returning through `await`.\nAll functions must be unary.",
         "codeBlocks": [
           "const pipeAsyncFunctions = (...fns) => arg => fns.reduce((p, f) => p.then(f), Promise.resolve(arg));",
-          "const sum = pipeAsyncFunctions(\n  x => x + 1,\n  x => new Promise(resolve => setTimeout(() => resolve(x + 2), 1000)),\n  x => x + 3,\n  async x => (await x) + 4\n);\n(async () => {\n  console.log(await sum(5)); // 15 (after one second)\n})();"
+          "const sum = pipeAsyncFunctions(\n  x => x + 1,\n  x => new Promise(resolve => setTimeout(() => resolve(x + 2), 1000)),\n  x => x + 3,\n  async x => (await x) + 4\n);\n(async() => {\n  console.log(await sum(5)); // 15 (after one second)\n})();"
         ],
         "tags": [
           "adapter",
@@ -4621,7 +4621,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "dcdf66e8d0eb4a1761c6b767b8cc350757087ae817ec371436faab0fff7c0051"
+        "hash": "4815876fd6dbb17ad34c0d8918e7a72d837104f9beee7dc51b0fa73057b9e83e"
       }
     },
     {
@@ -5133,7 +5133,7 @@
         "fileName": "remove.md",
         "text": "Removes elements from an array for which the given function returns `false`.\n\nUse `Array.prototype.filter()` to find array elements that return truthy values and `Array.prototype.reduce()` to remove elements using `Array.prototype.splice()`.\nThe `func` is invoked with three arguments (`value, index, array`).",
         "codeBlocks": [
-          "const remove = (arr, func) =>\n  Array.isArray(arr)\n    ? arr.filter(func).reduce((acc, val) => {\n        arr.splice(arr.indexOf(val), 1);\n        return acc.concat(val);\n      }, [])\n    : [];",
+          "const remove = (arr, func) =>\n  Array.isArray(arr)\n    ? arr.filter(func).reduce((acc, val) => {\n      arr.splice(arr.indexOf(val), 1);\n      return acc.concat(val);\n    }, [])\n    : [];",
           "remove([1, 2, 3, 4], n => n % 2 === 0); // [2, 4]"
         ],
         "tags": [
@@ -5143,7 +5143,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "2fd54c9fc1fb5b0a981df69501b518d5830ea77544d4d5290c7cc13745ca00ea"
+        "hash": "ec9cb9384817f84cf0bacd62a23b69b2304fa2cf0352b16d3950b21d48c04f11"
       }
     },
     {
@@ -5256,7 +5256,7 @@
         "text": "Runs a function in a separate thread by using a [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), allowing long running functions to not block the UI.\n\nCreate a new `Worker` using a `Blob` object URL, the contents of which should be the stringified version of the supplied function.\nImmediately post the return value of calling the function back.\nReturn a promise, listening for `onmessage` and `onerror` events and resolving the data posted back from the worker, or throwing an error.",
         "codeBlocks": [
           "const runAsync = fn => {\n  const worker = new Worker(\n    URL.createObjectURL(new Blob([`postMessage((${fn})());`]), {\n      type: 'application/javascript; charset=utf-8'\n    })\n  );\n  return new Promise((res, rej) => {\n    worker.onmessage = ({ data }) => {\n      res(data), worker.terminate();\n    };\n    worker.onerror = err => {\n      rej(err), worker.terminate();\n    };\n  });\n};",
-          "const longRunningFunction = () => {\n  let result = 0;\n  for (let i = 0; i < 1000; i++) {\n    for (let j = 0; j < 700; j++) {\n      for (let k = 0; k < 300; k++) {\n        result = result + i + j + k;\n      }\n    }\n  }\n  return result;\n};\n/*\n  NOTE: Since the function is running in a different context, closures are not supported.\n  The function supplied to `runAsync` gets stringified, so everything becomes literal.\n  All variables and functions must be defined inside.\n*/\nrunAsync(longRunningFunction).then(console.log); // 209685000000\nrunAsync(() => 10 ** 3).then(console.log); // 1000\nlet outsideVariable = 50;\nrunAsync(() => typeof outsideVariable).then(console.log); // 'undefined'"
+          "const longRunningFunction = () => {\n  let result = 0;\n  for (let i = 0; i < 1000; i++)\n    for (let j = 0; j < 700; j++) for (let k = 0; k < 300; k++) result = result + i + j + k;\n\n  return result;\n};\n/*\n  NOTE: Since the function is running in a different context, closures are not supported.\n  The function supplied to `runAsync` gets stringified, so everything becomes literal.\n  All variables and functions must be defined inside.\n*/\nrunAsync(longRunningFunction).then(console.log); // 209685000000\nrunAsync(() => 10 ** 3).then(console.log); // 1000\nlet outsideVariable = 50;\nrunAsync(() => typeof outsideVariable).then(console.log); // 'undefined'"
         ],
         "tags": [
           "browser",
@@ -5268,7 +5268,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "bc05700c2010133ef91894f88b2cfa3bb71fce55d1a54626e262b522d64821dc"
+        "hash": "39ed2d279733ad4061a381d85afccd111f56d15053132858991daf02e2c7fb36"
       }
     },
     {
@@ -5297,7 +5297,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "sample.md",
-        "text": "Returns a random element from an array.\n\nUse `Math.random()` to generate a random number, multiply it by `length` and round it of to the nearest whole number using `Math.floor()`.\nThis method also works with strings.",
+        "text": "Returns a random element from an array.\n\nUse `Math.random()` to generate a random number, multiply it by `length` and round it off to the nearest whole number using `Math.floor()`.\nThis method also works with strings.",
         "codeBlocks": [
           "const sample = arr => arr[Math.floor(Math.random() * arr.length)];",
           "sample([3, 7, 9, 11]); // 9"
@@ -5310,7 +5310,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "675b72d4bac05f71773ba4d1c1e95e085fed9f7020e2e8edd0e418fb06501d96"
+        "hash": "42ed9355cd80aaaa2370363e05913b04d89cb6daf46ac7459ea6a0f2bec2b93c"
       }
     },
     {
@@ -5866,7 +5866,7 @@
         "text": "Returns the sum of the powers of all the numbers from `start` to `end` (both inclusive).\n\nUse `Array.prototype.fill()` to create an array of all the numbers in the target range, `Array.prototype.map()` and the exponent operator (`**`) to raise them to `power` and `Array.prototype.reduce()` to add them together.\nOmit the second argument, `power`, to use a default power of `2`.\nOmit the third argument, `start`, to use a default starting value of `1`.",
         "codeBlocks": [
           "const sumPower = (end, power = 2, start = 1) =>\n  Array(end + 1 - start)\n    .fill(0)\n    .map((x, i) => (i + start) ** power)\n    .reduce((a, b) => a + b, 0);",
-          "sumPower(10); // 385\nsumPower(10, 3); //3025\nsumPower(10, 3, 5); //2925"
+          "sumPower(10); // 385\nsumPower(10, 3); // 3025\nsumPower(10, 3, 5); // 2925"
         ],
         "tags": [
           "math",
@@ -5875,7 +5875,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "b6d973cfe1e17ddc8a7dfb9f522d005520e9cb54e4ea89ee894ba9e70781cb0b"
+        "hash": "bc4cdf47b99e2ace6163d4fde6adea551f06362bae92cac8c7fda67712912391"
       }
     },
     {
@@ -6050,7 +6050,7 @@
         "fileName": "throttle.md",
         "text": "Creates a throttled function that only invokes the provided function at most once per every `wait` milliseconds\n\nUse `setTimeout()` and `clearTimeout()` to throttle the given method, `fn`.\nUse `Function.prototype.apply()` to apply the `this` context to the function and provide the necessary `arguments`.\nUse `Date.now()` to keep track of the last time the throttled function was invoked.\nOmit the second argument, `wait`, to set the timeout at a default of 0 ms.",
         "codeBlocks": [
-          "const throttle = (fn, wait) => {\n  let inThrottle, lastFn, lastTime;\n  return function() {\n    const context = this,\n      args = arguments;\n    if (!inThrottle) {\n      fn.apply(context, args);\n      lastTime = Date.now();\n      inThrottle = true;\n    } else {\n      clearTimeout(lastFn);\n      lastFn = setTimeout(function() {\n        if (Date.now() - lastTime >= wait) {\n          fn.apply(context, args);\n          lastTime = Date.now();\n        }\n      }, wait - (Date.now() - lastTime));\n    }\n  };\n};",
+          "const throttle = (fn, wait) => {\n  let inThrottle, lastFn, lastTime;\n  return function() {\n    const context = this,\n      args = arguments;\n    if (!inThrottle) {\n      fn.apply(context, args);\n      lastTime = Date.now();\n      inThrottle = true;\n    } else {\n      clearTimeout(lastFn);\n      lastFn = setTimeout(function() {\n        if (Date.now() - lastTime >= wait) {\n          fn.apply(context, args);\n          lastTime = Date.now();\n        }\n      }, Math.max(wait - (Date.now() - lastTime), 0));\n    }\n  };\n};",
           "window.addEventListener(\n  'resize',\n  throttle(function(evt) {\n    console.log(window.innerWidth);\n    console.log(window.innerHeight);\n  }, 250)\n); // Will log the window dimensions at most every 250ms"
         ],
         "tags": [
@@ -6060,7 +6060,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "8969c61164ca8d6d23857fae9f7a757ee7a985038de3133c61942df0860965b1"
+        "hash": "8eece384966f81ded39d67601ec6d6e320e2ffb750cc5f026e4158c439bf2815"
       }
     },
     {
@@ -6523,7 +6523,7 @@
         "fileName": "unionBy.md",
         "text": "Returns every element that exists in any of the two arrays once, after applying the provided function to each array element of both.\n\nCreate a `Set` by applying all `fn` to all values of `a`.\nCreate a `Set` from `a` and all elements in `b` whose value, after applying `fn` does not match a value in the previously created set.\nReturn the last set converted to an array.",
         "codeBlocks": [
-          "const unionBy = (a, b, fn) => {\n  const s = new Set(a.map(v => fn(v)));\n  return Array.from(new Set([...a, ...b.filter(x => !s.has(fn(x)))]));\n};",
+          "const unionBy = (a, b, fn) => {\n  const s = new Set(a.map(fn));\n  return Array.from(new Set([...a, ...b.filter(x => !s.has(fn(x)))]));\n};",
           "unionBy([2.1], [1.2, 2.3], Math.floor); // [2.1, 1.2]"
         ],
         "tags": [
@@ -6534,7 +6534,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "e77db9a39dfcae80c2a0d79dee802a05de9811c28f35e732300ce5144c61be00"
+        "hash": "6311c46f59dfe85022a091d395293fc8afe353b8f6c23bc0d535cf8c90d7df27"
       }
     },
     {
@@ -6670,7 +6670,7 @@
         "text": "Creates an array of arrays, ungrouping the elements in an array produced by [zip](#zip).\n\nUse `Math.max.apply()` to get the longest subarray in the array, `Array.prototype.map()` to make each element an array.\nUse `Array.prototype.reduce()` and `Array.prototype.forEach()` to map grouped values to individual arrays.",
         "codeBlocks": [
           "const unzip = arr =>\n  arr.reduce(\n    (acc, val) => (val.forEach((v, i) => acc[i].push(v)), acc),\n    Array.from({\n      length: Math.max(...arr.map(x => x.length))\n    }).map(x => [])\n  );",
-          "unzip([['a', 1, true], ['b', 2, false]]); //[['a', 'b'], [1, 2], [true, false]]\nunzip([['a', 1, true], ['b', 2]]); //[['a', 'b'], [1, 2], [true]]"
+          "unzip([['a', 1, true], ['b', 2, false]]); // [['a', 'b'], [1, 2], [true, false]]\nunzip([['a', 1, true], ['b', 2]]); // [['a', 'b'], [1, 2], [true]]"
         ],
         "tags": [
           "array",
@@ -6679,7 +6679,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "9d414805f29e1b49a6e93cba49fd38d9bc985ba0930394ffb0341665113353b4"
+        "hash": "dbd21f42d2200f504459f4ce7d1b39e31be3a30373b4ce4feec5afa2c85b7ef7"
       }
     },
     {
