@@ -28,6 +28,7 @@ const StarRating = (function() {
         selection: 0
       };
       this.hoverOver = this.hoverOver.bind(this);
+      this.hoverOut = this.hoverOver.bind(this, null);
       this.handleClick = this.handleClick.bind(this);
     }
     hoverOver(event) {
