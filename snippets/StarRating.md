@@ -44,7 +44,7 @@ const StarRating = (function() {
     render() {
       return (
         <div
-          onMouseOut={() => this.hoverOver(null)}
+          onMouseOut={this.hoverOut}
           onClick={this.handleClick}
           onMouseOver={this.hoverOver}
         >
