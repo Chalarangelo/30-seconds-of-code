@@ -59,7 +59,7 @@ const codeRE = /```\s*js([\s\S]*?)```/;
     fs.writeFileSync(TEST_PACKAGE, `${requires}\n\n${importData}\n\n${testExports}`);
 
     // Check Travis builds - Will skip builds on Travis if not CRON/API
-    if (!util.isTravisCI() && util.isNotTravisCronOrAPI()) {
+    if (util.isTravisCI() && util.isNotTravisCronOrAPI()) {
       fs.unlink(IMPORTS);
       console.log(
         `${chalk.green('NOBUILD')} Module build terminated, not a cron job or a custom build!`
