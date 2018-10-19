@@ -49,7 +49,7 @@ const StarRating = (function() {
         >
           {Array.from({ length: 5 }, (v, i) => (
             <Star
-              starId={v}
+              starId={i+1}
               key={`star_${v} `}
               marked={
                 this.state.selection
