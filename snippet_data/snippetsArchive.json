@@ -18,6 +18,23 @@
       }
     },
     {
+      "id": "celsiusToFahrenheit",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "celsiusToFahrenheit.md",
+        "text": "Celsius to Fahrenheit temperature conversion.\n\nFollows the conversion formula `F =  1.8C + 32`.",
+        "codeBlocks": [
+          "const celsiusToFahrenheit = degrees => 1.8 * degrees + 32;",
+          "celsiusToFahrenheit(33) // 91.4"
+        ],
+        "tags": []
+      },
+      "meta": {
+        "archived": true,
+        "hash": "8289007c7b10777d68d346e0ef02a58a44472cee41d5fb2f3bafaec4f1dd148b"
+      }
+    },
+    {
       "id": "cleanObj",
       "type": "snippet",
       "attributes": {
@@ -83,6 +100,23 @@
       "meta": {
         "archived": true,
         "hash": "e0056bb031e8df0565daddb6200df1fa9675e2c538e71f354ceeeee164c2b8a9"
+      }
+    },
+    {
+      "id": "fahrenheitToCelsius",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "fahrenheitToCelsius.md",
+        "text": "Fahrenheit to Celsius temperature conversion.\n\nFollows the conversion formula `C = (F - 32) * 5/9`.",
+        "codeBlocks": [
+          "const fahrenheitToCelsius = degrees => (degrees - 32) * 5/9;",
+          "fahrenheitToCelsius(32); // 0"
+        ],
+        "tags": []
+      },
+      "meta": {
+        "archived": true,
+        "hash": "89d58eda3d03f8fc8d2fe61fb36376f92a0443435552d063d4fbf5b623fc4314"
       }
     },
     {
@@ -239,6 +273,23 @@
       }
     },
     {
+      "id": "kmphToMph",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "kmphToMph.md",
+        "text": "Convert kilometers/hour to miles/hour.\n\nMultiply the constant of proportionality with the argument.",
+        "codeBlocks": [
+          "const kmphToMph = (kmph) => 0.621371192 * kmph;",
+          "kmphToMph(10); // 16.09344000614692\nkmphToMph(345.4); // 138.24264965280207"
+        ],
+        "tags": []
+      },
+      "meta": {
+        "archived": true,
+        "hash": "eb96ed6f8063723296da25db7282ad732b35c21cfef2bb1424068ff6a789311c"
+      }
+    },
+    {
       "id": "levenshteinDistance",
       "type": "snippet",
       "attributes": {
@@ -253,6 +304,23 @@
       "meta": {
         "archived": true,
         "hash": "3cc34a842404de0aea2752a6b1398b8a0825cb1a359ff36ab5275f7d15eff107"
+      }
+    },
+    {
+      "id": "mphToKmph",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "mphToKmph.md",
+        "text": "Convert miles/hour to kilometers/hour.\n\nMultiply the constant of proportionality with the argument.",
+        "codeBlocks": [
+          "const mphToKmph = (mph) => 1.6093440006146922 * mph;",
+          "mphToKmph(10); // 16.09344000614692\nmphToKmph(85.9); // 138.24264965280207"
+        ],
+        "tags": []
+      },
+      "meta": {
+        "archived": true,
+        "hash": "174fc1687b3d809f2984e6e7e3e73af321c2bc0030ab1c05c1b1e2a817664e95"
       }
     },
     {
@@ -393,6 +461,23 @@
       "meta": {
         "archived": true,
         "hash": "21409f3b5ea7aaa9ad0041508b14c64dcaeff234121aca148e14fe26cf8b5f93"
+      }
+    },
+    {
+      "id": "squareSum",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "squareSum.md",
+        "text": "Squares each number in an array and then sums the results together.\n\nUse `Array.prototype.reduce()` in combination with `Math.pow()` to iterate over numbers and sum their squares into an accumulator.",
+        "codeBlocks": [
+          "const squareSum = (...args) => args.reduce((squareSum, number) => squareSum + Math.pow(number, 2), 0);",
+          "squareSum(1, 2, 2); // 9"
+        ],
+        "tags": []
+      },
+      "meta": {
+        "archived": true,
+        "hash": "5d7d8623e504377f07ac9827eaec17c309a37aefc2346f0dd0a889f4f716f499"
       }
     }
   ],

@@ -3,25 +3,30 @@
 These snippets, while useful and interesting, didn't quite make it into the repository due to either having very specific use-cases or being outdated. However we felt like they might still be useful to some readers, so here they are.
 ## Table of Contents
 * [`JSONToDate`](#jsontodate)
-* [`speechSynthesis`](#speechsynthesis)
+* [`squareSum`](#squaresum)
 * [`binarySearch`](#binarysearch)
+* [`celsiusToFahrenheit`](#celsiustofahrenheit)
 * [`cleanObj`](#cleanobj)
 * [`collatz`](#collatz)
 * [`countVowels`](#countvowels)
 * [`factors`](#factors)
+* [`fahrenheitToCelsius`](#fahrenheittocelsius)
 * [`fibonacciCountUntilNum`](#fibonaccicountuntilnum)
 * [`fibonacciUntilNum`](#fibonacciuntilnum)
 * [`heronArea`](#heronarea)
-* [`httpDelete`](#httpdelete)
+* [`howManyTimes`](#howmanytimes)
 * [`httpPut`](#httpput)
 * [`isArmstrongNumber`](#isarmstrongnumber)
 * [`isSimilar`](#issimilar)
+* [`kmphToMph`](#kmphtomph)
 * [`levenshteinDistance`](#levenshteindistance)
+* [`mphToKmph`](#mphtokmph)
 * [`pipeLog`](#pipelog)
 * [`quickSort`](#quicksort)
 * [`removeVowels`](#removevowels)
 * [`solveRPN`](#solverpn)
-* [`howManyTimes`](#howmanytimes)
+* [`speechSynthesis`](#speechsynthesis)
+* [`httpDelete`](#httpdelete)
 
 ---
 ### JSONToDate
@@ -48,28 +53,21 @@ JSONToDate(/Date(1489525200000)/); // "14/3/2017"
 
 <br>[⬆ Back to top](#table-of-contents)
 
-### speechSynthesis
+### squareSum
 
-Performs speech synthesis (experimental).
+Squares each number in an array and then sums the results together.
 
-Use `SpeechSynthesisUtterance.voice` and `window.speechSynthesis.getVoices()` to convert a message to speech.
-Use `window.speechSynthesis.speak()` to play the message.
-
-Learn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
+Use `Array.prototype.reduce()` in combination with `Math.pow()` to iterate over numbers and sum their squares into an accumulator.
 
 ```js
-const speechSynthesis = message => {
-  const msg = new SpeechSynthesisUtterance(message);
-  msg.voice = window.speechSynthesis.getVoices()[0];
-  window.speechSynthesis.speak(msg);
-};
+const squareSum = (...args) => args.reduce((squareSum, number) => squareSum + Math.pow(number, 2), 0);
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```js
-speechSynthesis('Hello, World'); // // plays the message
+squareSum(1, 2, 2); // 9
 ```
 
 </details>
@@ -102,6 +100,27 @@ const binarySearch = (arr, val, start = 0, end = arr.length - 1) => {
 ```js
 binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 6); // 2
 binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 21); // -1
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+### celsiusToFahrenheit
+
+Celsius to Fahrenheit temperature conversion.
+
+Follows the conversion formula `F =  1.8C + 32`.
+
+```js
+const celsiusToFahrenheit = degrees => 1.8 * degrees + 32;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+celsiusToFahrenheit(33) // 91.4
 ```
 
 </details>
@@ -233,6 +252,27 @@ factors(-12, true); // [2,3]
 
 <br>[⬆ Back to top](#table-of-contents)
 
+### fahrenheitToCelsius
+
+Fahrenheit to Celsius temperature conversion.
+
+Follows the conversion formula `C = (F - 32) * 5/9`.
+
+```js
+const fahrenheitToCelsius = degrees => (degrees - 32) * 5/9;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+fahrenheitToCelsius(32); // 0
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 ### fibonacciCountUntilNum
 
 Returns the number of fibonnacci numbers up to `num`(`0` and `num` inclusive).
@@ -311,22 +351,26 @@ heronArea(3, 4, 5); // 6
 
 <br>[⬆ Back to top](#table-of-contents)
 
-### httpDelete
+### howManyTimes
 
-Makes a `DELETE` request to the passed URL.
+Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.
+Works for both negative and positive integers.
 
-Use `XMLHttpRequest` web api to make a `delete` request to the given `url`.
-Handle the `onload` event, by running the provided `callback` function.
-Handle the `onerror` event, by running the provided `err` function.
-Omit the third argument, `err` to log the request to the console's error stream by default.
+If `divisor` is `-1` or `1` return `Infinity`.
+If `divisor` is `-0` or `0` return `0`.
+Otherwise, keep dividing `num` with `divisor` and incrementing `i`, while the result is an integer.
+Return the number of times the loop was executed, `i`.
 
 ```js
-const httpDelete = (url, callback, err = console.error) => {
-  const request = new XMLHttpRequest();
-  request.open('DELETE', url, true);
-  request.onload = () => callback(request);
-  request.onerror = () => err(request);
-  request.send();
+const howManyTimes = (num, divisor) => {
+  if (divisor === 1 || divisor === -1) return Infinity;
+  if (divisor === 0) return 0;
+  let i = 0;
+  while (Number.isInteger(num / divisor)) {
+    i++;
+    num = num / divisor;
+  }
+  return i;
 };
 ```
 
@@ -334,9 +378,10 @@ const httpDelete = (url, callback, err = console.error) => {
 <summary>Examples</summary>
 
 ```js
-httpDelete('https://website.com/users/123', request => {
-  console.log(request.responseText);
-}); // 'Deletes a user from the database'
+howManyTimes(100, 2); // 2
+howManyTimes(100, 2.5); // 2
+howManyTimes(100, 0); // 0
+howManyTimes(100, -1); // Infinity
 ```
 
 </details>
@@ -434,6 +479,28 @@ isSimilar('tr','Rohit'); // false
 
 <br>[⬆ Back to top](#table-of-contents)
 
+### kmphToMph
+
+Convert kilometers/hour to miles/hour.
+
+Multiply the constant of proportionality with the argument.
+
+```js
+const kmphToMph = (kmph) => 0.621371192 * kmph;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+kmphToMph(10); // 16.09344000614692
+kmphToMph(345.4); // 138.24264965280207
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
 ### levenshteinDistance
 
 Calculates the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) between two strings.
@@ -475,6 +542,28 @@ const levenshteinDistance = (string1, string2) => {
 levenshteinDistance('30-seconds-of-code','30-seconds-of-python-code'); // 7
 const compareStrings = (string1,string2) => (100 - levenshteinDistance(string1,string2) / Math.max(string1.length,string2.length));
 compareStrings('30-seconds-of-code', '30-seconds-of-python-code'); // 99.72 (%)
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+### mphToKmph
+
+Convert miles/hour to kilometers/hour.
+
+Multiply the constant of proportionality with the argument.
+
+```js
+const mphToKmph = (mph) => 1.6093440006146922 * mph;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+mphToKmph(10); // 16.09344000614692
+mphToKmph(85.9); // 138.24264965280207
 ```
 
 </details>
@@ -611,26 +700,20 @@ solveRPN('2 3 ^'); // 8
 
 <br>[⬆ Back to top](#table-of-contents)
 
-### howManyTimes
+### speechSynthesis
 
-Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.
-Works for both negative and positive integers.
+Performs speech synthesis (experimental).
 
-If `divisor` is `-1` or `1` return `Infinity`.
-If `divisor` is `-0` or `0` return `0`.
-Otherwise, keep dividing `num` with `divisor` and incrementing `i`, while the result is an integer.
-Return the number of times the loop was executed, `i`.
+Use `SpeechSynthesisUtterance.voice` and `window.speechSynthesis.getVoices()` to convert a message to speech.
+Use `window.speechSynthesis.speak()` to play the message.
+
+Learn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
 
 ```js
-const howManyTimes = (num, divisor) => {
-  if (divisor === 1 || divisor === -1) return Infinity;
-  if (divisor === 0) return 0;
-  let i = 0;
-  while (Number.isInteger(num / divisor)) {
-    i++;
-    num = num / divisor;
-  }
-  return i;
+const speechSynthesis = message => {
+  const msg = new SpeechSynthesisUtterance(message);
+  msg.voice = window.speechSynthesis.getVoices()[0];
+  window.speechSynthesis.speak(msg);
 };
 ```
 
@@ -638,10 +721,39 @@ const howManyTimes = (num, divisor) => {
 <summary>Examples</summary>
 
 ```js
-howManyTimes(100, 2); // 2
-howManyTimes(100, 2.5); // 2
-howManyTimes(100, 0); // 0
-howManyTimes(100, -1); // Infinity
+speechSynthesis('Hello, World'); // // plays the message
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+### httpDelete
+
+Makes a `DELETE` request to the passed URL.
+
+Use `XMLHttpRequest` web api to make a `delete` request to the given `url`.
+Handle the `onload` event, by running the provided `callback` function.
+Handle the `onerror` event, by running the provided `err` function.
+Omit the third argument, `err` to log the request to the console's error stream by default.
+
+```js
+const httpDelete = (url, callback, err = console.error) => {
+  const request = new XMLHttpRequest();
+  request.open('DELETE', url, true);
+  request.onload = () => callback(request);
+  request.onerror = () => err(request);
+  request.send();
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+httpDelete('https://website.com/users/123', request => {
+  console.log(request.responseText);
+}); // 'Deletes a user from the database'
 ```
 
 </details>
