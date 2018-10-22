@@ -66,3 +66,4 @@ console.log(
 console.log(`${chalk.green('SUCCESS!')} tag_database file updated!`);
 // Log the time taken
 console.timeEnd('Tagger');
+//comment
