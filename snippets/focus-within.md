@@ -1,6 +1,6 @@
 ### Focus Within
 
-The psuedo class `:focus-within` gives focus to a parent element like a `form` element when `input` elements receive focus.
+The psuedo class `:focus-within` applies styles to a parent element if any child element gets focused. For example, an `input` element inside a `form` element.
 
 #### HTML
 
