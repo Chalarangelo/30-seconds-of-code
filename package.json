@@ -1,0 +1,27 @@
+{
+  "name": "30-seconds-of-react",
+  "version": "1.0.0",
+  "repository": "git@github.com:30-seconds/30-seconds-of-react.git",
+  "scripts": {
+    "prettier": "prettier **/*.{js,json,css,md}"
+  },
+  "devDependencies": {
+    "husky": "^1.1.2",
+    "lint-staged": "^7.3.0",
+    "prettier": "^1.14.3"
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
