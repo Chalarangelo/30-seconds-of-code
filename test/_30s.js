@@ -642,8 +642,7 @@ const lcm = (...arr) => {
   const _lcm = (x, y) => (x * y) / gcd(x, y);
   return [...arr].reduce((a, b) => _lcm(a, b));
 };
-const longestItem = (val, ...vals) =>
-  [val, ...vals].reduce((a, x) => (x.length > a.length ? x : a));
+const longestItem = (...vals) => vals.reduce((a, x) => (x.length > a.length ? x : a));
 const lowercaseKeys = obj =>
   Object.keys(obj).reduce((acc, key) => {
     acc[key.toLowerCase()] = obj[key];
