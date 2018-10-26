@@ -3,6 +3,7 @@
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
     "chalk": "^2.4.1",
+    "codacy-coverage": "^3.2.0",
     "eslint": "^5.7.0",
     "fs-extra": "^6.0.0",
     "html-minifier": "^3.5.20",
@@ -35,7 +36,8 @@
     "vscoder": "node ./scripts/vscodegen.js",
     "packager": "node ./scripts/module.js",
     "localizer": "node ./scripts/localize.js",
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+    "test-with-coverage": "jest --coverage && cat ./coverage/lcov.info | codacy-coverage"
   },
   "repository": {
     "type": "git",
