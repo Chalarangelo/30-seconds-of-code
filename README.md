@@ -676,7 +676,6 @@ const pipeAsyncFunctions = (...fns) => arg => fns.reduce((p, f) => p.then(f), Pr
 <summary>Examples</summary>
 
 ```js
-
 const sum = pipeAsyncFunctions(
   x => x + 1,
   x => new Promise(resolve => setTimeout(() => resolve(x + 2), 1000)),
@@ -2304,7 +2303,6 @@ Use `Array.prototype.filter()` to find array elements that return truthy values 
 The `func` is invoked with three arguments (`value, index, array`).
 
 ```js
-
 const remove = (arr, func) =>
   Array.isArray(arr)
     ? arr.filter(func).reduce((acc, val) => {
@@ -5484,7 +5482,6 @@ Otherwise, return the product of `n` and the factorial of `n - 1`.
 Throws an exception if `n` is a negative number.
 
 ```js
-
 const factorial = n =>
   n < 0
     ? (() => {
@@ -6685,7 +6682,6 @@ Use the `in` operator to check if `target` exists in `obj`.
 If found, return the value of `obj[target]`, otherwise use `Object.values(obj)` and `Array.prototype.reduce()` to recursively call `dig` on each nested object until the first matching key/value pair is found.
 
 ```js
-
 const dig = (obj, target) =>
   target in obj
     ? obj[target]
