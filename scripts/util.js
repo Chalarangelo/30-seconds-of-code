@@ -2,6 +2,7 @@ const fs = require('fs-extra'),
   path = require('path'),
   chalk = require('chalk'),
   crypto = require('crypto');
+const babel = require('@babel/core');
 
 const getMarkDownAnchor = paragraphTitle =>
   paragraphTitle
@@ -117,7 +118,7 @@ const hashData = val =>
 // Gets the code blocks for a snippet file.
 const getCodeBlocks = str => {
   const regex = /```[.\S\s]*?```/g;
-  const results = [];
+  let results = [];
   let m = null;
   while ((m = regex.exec(str)) !== null) {
     if (m.index === regex.lastIndex)
@@ -127,7 +128,12 @@ const getCodeBlocks = str => {
       results.push(match);
     });
   }
-  return results;
+  results = results.map(v => v.replace(/```js([\s\S]*?)```/g, '$1').trim());
+  return {
+    es6: results[0],
+    es5: babel.transformSync(results[0], { presets: ['@babel/preset-env'] }).code,
+    example: results[1]
+  }
 };
 // Gets the textual content for a snippet file.
 const getTextualContent = str => {
