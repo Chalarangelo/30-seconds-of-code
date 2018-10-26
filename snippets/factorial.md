@@ -8,7 +8,6 @@ Otherwise, return the product of `n` and the factorial of `n - 1`.
 Throws an exception if `n` is a negative number.
 
 ```js
-
 const factorial = n =>
   n < 0
     ? (() => {
