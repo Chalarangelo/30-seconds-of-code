@@ -90,5 +90,5 @@ let listingData = {
 fs.writeFileSync(path.join(OUTPUT_PATH, 'snippets.json'), JSON.stringify(completeData, null, 2));
 fs.writeFileSync(path.join(OUTPUT_PATH, 'snippetList.json'), JSON.stringify(listingData, null, 2));
 // Display messages and time
-console.log(`${chalk.green('SUCCESS!')} snippets.json and snippetsArchive.json files generated!`);
+console.log(`${chalk.green('SUCCESS!')} snippets.json and snippetList.json files generated!`);
 console.timeEnd('Extractor');

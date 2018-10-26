@@ -131,7 +131,7 @@ const getCodeBlocks = str => {
   results = results.map(v => v.replace(/```js([\s\S]*?)```/g, '$1').trim());
   return {
     es6: results[0],
-    es5: babel.transformSync(results[0], { presets: ['@babel/preset-env'] }).code,
+    es5: babel.transformSync(results[0], { presets: ['@babel/preset-env'] }).code.replace('"use strict";\n\n',''),
     example: results[1]
   }
 };

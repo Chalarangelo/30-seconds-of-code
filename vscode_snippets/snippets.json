@@ -1,0 +1,3334 @@
+{
+  "all": {
+    "prefix": "30s_all",
+    "body": [
+      "const all = (arr, fn = Boolean) => arr.every(fn);"
+    ],
+    "description": "Returns `true` if the provided predicate function returns `true` for all elements in a collection, `false` otherwise."
+  },
+  "allEqual": {
+    "prefix": "30s_allEqual",
+    "body": [
+      "const allEqual = arr => arr.every(val => val === arr[0]);"
+    ],
+    "description": "Check if all elements in an array are equal."
+  },
+  "any": {
+    "prefix": "30s_any",
+    "body": [
+      "const any = (arr, fn = Boolean) => arr.some(fn);"
+    ],
+    "description": "Returns `true` if the provided predicate function returns `true` for at least one element in a collection, `false` otherwise."
+  },
+  "approximatelyEqual": {
+    "prefix": "30s_approximatelyEqual",
+    "body": [
+      "const approximatelyEqual = (v1, v2, epsilon = 0.001) => Math.abs(v1 - v2) < epsilon;"
+    ],
+    "description": "Checks if two numbers are approximately equal to each other."
+  },
+  "arrayToCSV": {
+    "prefix": "30s_arrayToCSV",
+    "body": [
+      "const arrayToCSV = (arr, delimiter = ',') =>",
+      "  arr.map(v => v.map(x => `\"${x}\"`).join(delimiter)).join('\\n');"
+    ],
+    "description": "Converts a 2D array to a comma-separated values (CSV) string."
+  },
+  "arrayToHtmlList": {
+    "prefix": "30s_arrayToHtmlList",
+    "body": [
+      "const arrayToHtmlList = (arr, listID) =>",
+      "  (el => (",
+      "    (el = document.querySelector('#' + listID)),",
+      "    (el.innerHTML += arr.map(item => `<li>${item}</li>`).join(''))",
+      "  ))();"
+    ],
+    "description": "Converts the given array elements into `<li>` tags and appends them to the list of the given id."
+  },
+  "ary": {
+    "prefix": "30s_ary",
+    "body": [
+      "const ary = (fn, n) => (...args) => fn(...args.slice(0, n));"
+    ],
+    "description": "Creates a function that accepts up to `n` arguments, ignoring any additional arguments."
+  },
+  "atob": {
+    "prefix": "30s_atob",
+    "body": [
+      "const atob = str => Buffer.from(str, 'base64').toString('binary');"
+    ],
+    "description": "Decodes a string of data which has been encoded using base-64 encoding."
+  },
+  "attempt": {
+    "prefix": "30s_attempt",
+    "body": [
+      "const attempt = (fn, ...args) => {",
+      "  try {",
+      "    return fn(...args);",
+      "  } catch (e) {",
+      "    return e instanceof Error ? e : new Error(e);",
+      "  }",
+      "};"
+    ],
+    "description": "Attempts to invoke a function with the provided arguments, returning either the result or the caught error object."
+  },
+  "average": {
+    "prefix": "30s_average",
+    "body": [
+      "const average = (...nums) => nums.reduce((acc, val) => acc + val, 0) / nums.length;"
+    ],
+    "description": "Returns the average of two or more numbers."
+  },
+  "averageBy": {
+    "prefix": "30s_averageBy",
+    "body": [
+      "const averageBy = (arr, fn) =>",
+      "  arr.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val) => acc + val, 0) /",
+      "  arr.length;"
+    ],
+    "description": "Returns the average of an array, after mapping each element to a value using the provided function."
+  },
+  "bifurcate": {
+    "prefix": "30s_bifurcate",
+    "body": [
+      "const bifurcate = (arr, filter) =>",
+      "  arr.reduce((acc, val, i) => (acc[filter[i] ? 0 : 1].push(val), acc), [[], []]);"
+    ],
+    "description": "Splits values into two groups. If an element in `filter` is truthy, the corresponding element in the collection belongs to the first group; otherwise, it belongs to the second group."
+  },
+  "bifurcateBy": {
+    "prefix": "30s_bifurcateBy",
+    "body": [
+      "const bifurcateBy = (arr, fn) =>",
+      "  arr.reduce((acc, val, i) => (acc[fn(val, i) ? 0 : 1].push(val), acc), [[], []]);"
+    ],
+    "description": "Splits values into two groups according to a predicate function, which specifies which group an element in the input collection belongs to. If the predicate function returns a truthy value, the collection element belongs to the first group; otherwise, it belongs to the second group."
+  },
+  "bind": {
+    "prefix": "30s_bind",
+    "body": [
+      "const bind = (fn, context, ...boundArgs) => (...args) => fn.apply(context, [...boundArgs, ...args]);"
+    ],
+    "description": "Creates a function that invokes `fn` with a given context, optionally adding any additional supplied parameters to the beginning of the arguments."
+  },
+  "bindAll": {
+    "prefix": "30s_bindAll",
+    "body": [
+      "const bindAll = (obj, ...fns) =>",
+      "  fns.forEach(",
+      "    fn => (",
+      "      (f = obj[fn]),",
+      "      (obj[fn] = function() {",
+      "        return f.apply(obj);",
+      "      })",
+      "    )",
+      "  );"
+    ],
+    "description": "Binds methods of an object to the object itself, overwriting the existing method."
+  },
+  "bindKey": {
+    "prefix": "30s_bindKey",
+    "body": [
+      "const bindKey = (context, fn, ...boundArgs) => (...args) =>",
+      "  context[fn].apply(context, [...boundArgs, ...args]);"
+    ],
+    "description": "Creates a function that invokes the method at a given key of an object, optionally adding any additional supplied parameters to the beginning of the arguments."
+  },
+  "binomialCoefficient": {
+    "prefix": "30s_binomialCoefficient",
+    "body": [
+      "const binomialCoefficient = (n, k) => {",
+      "  if (Number.isNaN(n) || Number.isNaN(k)) return NaN;",
+      "  if (k < 0 || k > n) return 0;",
+      "  if (k === 0 || k === n) return 1;",
+      "  if (k === 1 || k === n - 1) return n;",
+      "  if (n - k < k) k = n - k;",
+      "  let res = n;",
+      "  for (let j = 2; j <= k; j++) res *= (n - j + 1) / j;",
+      "  return Math.round(res);",
+      "};"
+    ],
+    "description": "Evaluates the binomial coefficient of two integers `n` and `k`."
+  },
+  "bottomVisible": {
+    "prefix": "30s_bottomVisible",
+    "body": [
+      "const bottomVisible = () =>",
+      "  document.documentElement.clientHeight + window.scrollY >=",
+      "  (document.documentElement.scrollHeight || document.documentElement.clientHeight);"
+    ],
+    "description": "Returns `true` if the bottom of the page is visible, `false` otherwise."
+  },
+  "btoa": {
+    "prefix": "30s_btoa",
+    "body": [
+      "const btoa = str => Buffer.from(str, 'binary').toString('base64');"
+    ],
+    "description": "Creates a base-64 encoded ASCII string from a String object in which each character in the string is treated as a byte of binary data."
+  },
+  "byteSize": {
+    "prefix": "30s_byteSize",
+    "body": [
+      "const byteSize = str => new Blob([str]).size;"
+    ],
+    "description": "Returns the length of a string in bytes."
+  },
+  "call": {
+    "prefix": "30s_call",
+    "body": [
+      "const call = (key, ...args) => context => context[key](...args);"
+    ],
+    "description": "Given a key and a set of arguments, call them when given a context. Primarily useful in composition."
+  },
+  "capitalize": {
+    "prefix": "30s_capitalize",
+    "body": [
+      "const capitalize = ([first, ...rest], lowerRest = false) =>",
+      "  first.toUpperCase() + (lowerRest ? rest.join('').toLowerCase() : rest.join(''));"
+    ],
+    "description": "Capitalizes the first letter of a string."
+  },
+  "capitalizeEveryWord": {
+    "prefix": "30s_capitalizeEveryWord",
+    "body": [
+      "const capitalizeEveryWord = str => str.replace(/\\b[a-z]/g, char => char.toUpperCase());"
+    ],
+    "description": "Capitalizes the first letter of every word in a string."
+  },
+  "castArray": {
+    "prefix": "30s_castArray",
+    "body": [
+      "const castArray = val => (Array.isArray(val) ? val : [val]);"
+    ],
+    "description": "Casts the provided value as an array if it's not one."
+  },
+  "chainAsync": {
+    "prefix": "30s_chainAsync",
+    "body": [
+      "const chainAsync = fns => {",
+      "  let curr = 0;",
+      "  const next = () => fns[curr++](next);",
+      "  next();",
+      "};"
+    ],
+    "description": "Chains asynchronous functions."
+  },
+  "chunk": {
+    "prefix": "30s_chunk",
+    "body": [
+      "const chunk = (arr, size) =>",
+      "  Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>",
+      "    arr.slice(i * size, i * size + size)",
+      "  );"
+    ],
+    "description": "Chunks an array into smaller arrays of a specified size."
+  },
+  "clampNumber": {
+    "prefix": "30s_clampNumber",
+    "body": [
+      "const clampNumber = (num, a, b) => Math.max(Math.min(num, Math.max(a, b)), Math.min(a, b));"
+    ],
+    "description": "Clamps `num` within the inclusive range specified by the boundary values `a` and `b`."
+  },
+  "cloneRegExp": {
+    "prefix": "30s_cloneRegExp",
+    "body": [
+      "const cloneRegExp = regExp => new RegExp(regExp.source, regExp.flags);"
+    ],
+    "description": "Clones a regular expression."
+  },
+  "coalesce": {
+    "prefix": "30s_coalesce",
+    "body": [
+      "const coalesce = (...args) => args.find(_ => ![undefined, null].includes(_));"
+    ],
+    "description": "Returns the first non-null/undefined argument."
+  },
+  "coalesceFactory": {
+    "prefix": "30s_coalesceFactory",
+    "body": [
+      "const coalesceFactory = valid => (...args) => args.find(valid);"
+    ],
+    "description": "Returns a customized coalesce function that returns the first argument that returns `true` from the provided argument validation function."
+  },
+  "collectInto": {
+    "prefix": "30s_collectInto",
+    "body": [
+      "const collectInto = fn => (...args) => fn(args);"
+    ],
+    "description": "Changes a function that accepts an array into a variadic function."
+  },
+  "colorize": {
+    "prefix": "30s_colorize",
+    "body": [
+      "const colorize = (...args) => ({",
+      "  black: `\\x1b[30m${args.join(' ')}`,",
+      "  red: `\\x1b[31m${args.join(' ')}`,",
+      "  green: `\\x1b[32m${args.join(' ')}`,",
+      "  yellow: `\\x1b[33m${args.join(' ')}`,",
+      "  blue: `\\x1b[34m${args.join(' ')}`,",
+      "  magenta: `\\x1b[35m${args.join(' ')}`,",
+      "  cyan: `\\x1b[36m${args.join(' ')}`,",
+      "  white: `\\x1b[37m${args.join(' ')}`,",
+      "  bgBlack: `\\x1b[40m${args.join(' ')}\\x1b[0m`,",
+      "  bgRed: `\\x1b[41m${args.join(' ')}\\x1b[0m`,",
+      "  bgGreen: `\\x1b[42m${args.join(' ')}\\x1b[0m`,",
+      "  bgYellow: `\\x1b[43m${args.join(' ')}\\x1b[0m`,",
+      "  bgBlue: `\\x1b[44m${args.join(' ')}\\x1b[0m`,",
+      "  bgMagenta: `\\x1b[45m${args.join(' ')}\\x1b[0m`,",
+      "  bgCyan: `\\x1b[46m${args.join(' ')}\\x1b[0m`,",
+      "  bgWhite: `\\x1b[47m${args.join(' ')}\\x1b[0m`",
+      "});"
+    ],
+    "description": "Add special characters to text to print in color in the console (combined with `console.log()`)."
+  },
+  "compact": {
+    "prefix": "30s_compact",
+    "body": [
+      "const compact = arr => arr.filter(Boolean);"
+    ],
+    "description": "Removes falsey values from an array."
+  },
+  "compose": {
+    "prefix": "30s_compose",
+    "body": [
+      "const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));"
+    ],
+    "description": "Performs right-to-left function composition."
+  },
+  "composeRight": {
+    "prefix": "30s_composeRight",
+    "body": [
+      "const composeRight = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));"
+    ],
+    "description": "Performs left-to-right function composition."
+  },
+  "converge": {
+    "prefix": "30s_converge",
+    "body": [
+      "const converge = (converger, fns) => (...args) => converger(...fns.map(fn => fn.apply(null, args)));"
+    ],
+    "description": "Accepts a converging function and a list of branching functions and returns a function that applies each branching function to the arguments and the results of the branching functions are passed as arguments to the converging function."
+  },
+  "copyToClipboard": {
+    "prefix": "30s_copyToClipboard",
+    "body": [
+      "const copyToClipboard = str => {",
+      "  const el = document.createElement('textarea');",
+      "  el.value = str;",
+      "  el.setAttribute('readonly', '');",
+      "  el.style.position = 'absolute';",
+      "  el.style.left = '-9999px';",
+      "  document.body.appendChild(el);",
+      "  const selected =",
+      "    document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false;",
+      "  el.select();",
+      "  document.execCommand('copy');",
+      "  document.body.removeChild(el);",
+      "  if (selected) {",
+      "    document.getSelection().removeAllRanges();",
+      "    document.getSelection().addRange(selected);",
+      "  }",
+      "};"
+    ],
+    "description": "⚠️ **NOTICE:** The same functionality can be easily implemented by using the new asynchronous Clipboard API, which is still experimental but should be used in the future instead of this snippet. Find out more about it [here](https://github.com/w3c/clipboard-apis/blob/master/explainer.adoc#writing-to-the-clipboard)."
+  },
+  "countBy": {
+    "prefix": "30s_countBy",
+    "body": [
+      "const countBy = (arr, fn) =>",
+      "  arr.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val) => {",
+      "    acc[val] = (acc[val] || 0) + 1;",
+      "    return acc;",
+      "  }, {});"
+    ],
+    "description": "Groups the elements of an array based on the given function and returns the count of elements in each group."
+  },
+  "counter": {
+    "prefix": "30s_counter",
+    "body": [
+      "const counter = (selector, start, end, step = 1, duration = 2000) => {",
+      "  let current = start,",
+      "    _step = (end - start) * step < 0 ? -step : step,",
+      "    timer = setInterval(() => {",
+      "      current += _step;",
+      "      document.querySelector(selector).innerHTML = current;",
+      "      if (current >= end) document.querySelector(selector).innerHTML = end;",
+      "      if (current >= end) clearInterval(timer);",
+      "    }, Math.abs(Math.floor(duration / (end - start))));",
+      "  return timer;",
+      "};"
+    ],
+    "description": "Creates a counter with the specified range, step and duration for the specified selector."
+  },
+  "countOccurrences": {
+    "prefix": "30s_countOccurrences",
+    "body": [
+      "const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);"
+    ],
+    "description": "Counts the occurrences of a value in an array."
+  },
+  "createElement": {
+    "prefix": "30s_createElement",
+    "body": [
+      "const createElement = str => {",
+      "  const el = document.createElement('div');",
+      "  el.innerHTML = str;",
+      "  return el.firstElementChild;",
+      "};"
+    ],
+    "description": "Creates an element from a string (without appending it to the document). \r\nIf the given string contains multiple elements, only the first one will be returned."
+  },
+  "createEventHub": {
+    "prefix": "30s_createEventHub",
+    "body": [
+      "const createEventHub = () => ({",
+      "  hub: Object.create(null),",
+      "  emit(event, data) {",
+      "    (this.hub[event] || []).forEach(handler => handler(data));",
+      "  },",
+      "  on(event, handler) {",
+      "    if (!this.hub[event]) this.hub[event] = [];",
+      "    this.hub[event].push(handler);",
+      "  },",
+      "  off(event, handler) {",
+      "    const i = (this.hub[event] || []).findIndex(h => h === handler);",
+      "    if (i > -1) this.hub[event].splice(i, 1);",
+      "  }",
+      "});"
+    ],
+    "description": "Creates a pub/sub ([publish–subscribe](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)) event hub with `emit`, `on`, and `off` methods."
+  },
+  "CSVToArray": {
+    "prefix": "30s_CSVToArray",
+    "body": [
+      "const CSVToArray = (data, delimiter = ',', omitFirstRow = false) =>",
+      "  data",
+      "    .slice(omitFirstRow ? data.indexOf('\\n') + 1 : 0)",
+      "    .split('\\n')",
+      "    .map(v => v.split(delimiter));"
+    ],
+    "description": "Converts a comma-separated values (CSV) string to a 2D array."
+  },
+  "CSVToJSON": {
+    "prefix": "30s_CSVToJSON",
+    "body": [
+      "const CSVToJSON = (data, delimiter = ',') => {",
+      "  const titles = data.slice(0, data.indexOf('\\n')).split(delimiter);",
+      "  return data",
+      "    .slice(data.indexOf('\\n') + 1)",
+      "    .split('\\n')",
+      "    .map(v => {",
+      "      const values = v.split(delimiter);",
+      "      return titles.reduce((obj, title, index) => ((obj[title] = values[index]), obj), {});",
+      "    });",
+      "};"
+    ],
+    "description": "Converts a comma-separated values (CSV) string to a 2D array of objects.\r\nThe first row of the string is used as the title row."
+  },
+  "currentURL": {
+    "prefix": "30s_currentURL",
+    "body": [
+      "const currentURL = () => window.location.href;"
+    ],
+    "description": "Returns the current URL."
+  },
+  "curry": {
+    "prefix": "30s_curry",
+    "body": [
+      "const curry = (fn, arity = fn.length, ...args) =>",
+      "  arity <= args.length ? fn(...args) : curry.bind(null, fn, arity, ...args);"
+    ],
+    "description": "Curries a function."
+  },
+  "dayOfYear": {
+    "prefix": "30s_dayOfYear",
+    "body": [
+      "const dayOfYear = date =>",
+      "  Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);"
+    ],
+    "description": "Gets the day of the year from a `Date` object."
+  },
+  "debounce": {
+    "prefix": "30s_debounce",
+    "body": [
+      "const debounce = (fn, ms = 0) => {",
+      "  let timeoutId;",
+      "  return function(...args) {",
+      "    clearTimeout(timeoutId);",
+      "    timeoutId = setTimeout(() => fn.apply(this, args), ms);",
+      "  };",
+      "};"
+    ],
+    "description": "Creates a debounced function that delays invoking the provided function until at least `ms` milliseconds have elapsed since the last time it was invoked."
+  },
+  "decapitalize": {
+    "prefix": "30s_decapitalize",
+    "body": [
+      "const decapitalize = ([first, ...rest], upperRest = false) =>",
+      "  first.toLowerCase() + (upperRest ? rest.join('').toUpperCase() : rest.join(''));"
+    ],
+    "description": "Decapitalizes the first letter of a string."
+  },
+  "deepClone": {
+    "prefix": "30s_deepClone",
+    "body": [
+      "const deepClone = obj => {",
+      "  let clone = Object.assign({}, obj);",
+      "  Object.keys(clone).forEach(",
+      "    key => (clone[key] = typeof obj[key] === 'object' ? deepClone(obj[key]) : obj[key])",
+      "  );",
+      "  return Array.isArray(obj) ? (clone.length = obj.length) && Array.from(clone) : clone;",
+      "};"
+    ],
+    "description": "Creates a deep clone of an object."
+  },
+  "deepFlatten": {
+    "prefix": "30s_deepFlatten",
+    "body": [
+      "const deepFlatten = arr => [].concat(...arr.map(v => (Array.isArray(v) ? deepFlatten(v) : v)));"
+    ],
+    "description": "Deep flattens an array."
+  },
+  "deepFreeze": {
+    "prefix": "30s_deepFreeze",
+    "body": [
+      "const deepFreeze = obj =>",
+      "  Object.keys(obj).forEach(",
+      "    prop =>",
+      "      !(obj[prop] instanceof Object) || Object.isFrozen(obj[prop]) ? null : deepFreeze(obj[prop])",
+      "  ) || Object.freeze(obj);"
+    ],
+    "description": "Deep freezes an object."
+  },
+  "defaults": {
+    "prefix": "30s_defaults",
+    "body": [
+      "const defaults = (obj, ...defs) => Object.assign({}, obj, ...defs.reverse(), obj);"
+    ],
+    "description": "Assigns default values for all properties in an object that are `undefined`."
+  },
+  "defer": {
+    "prefix": "30s_defer",
+    "body": [
+      "const defer = (fn, ...args) => setTimeout(fn, 1, ...args);"
+    ],
+    "description": "Defers invoking a function until the current call stack has cleared."
+  },
+  "degreesToRads": {
+    "prefix": "30s_degreesToRads",
+    "body": [
+      "const degreesToRads = deg => (deg * Math.PI) / 180.0;"
+    ],
+    "description": "Converts an angle from degrees to radians."
+  },
+  "delay": {
+    "prefix": "30s_delay",
+    "body": [
+      "const delay = (fn, wait, ...args) => setTimeout(fn, wait, ...args);"
+    ],
+    "description": "Invokes the provided function after `wait` milliseconds."
+  },
+  "detectDeviceType": {
+    "prefix": "30s_detectDeviceType",
+    "body": [
+      "const detectDeviceType = () =>",
+      "  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)",
+      "    ? 'Mobile'",
+      "    : 'Desktop';"
+    ],
+    "description": "Detects wether the website is being opened in a mobile device or a desktop/laptop."
+  },
+  "difference": {
+    "prefix": "30s_difference",
+    "body": [
+      "const difference = (a, b) => {",
+      "  const s = new Set(b);",
+      "  return a.filter(x => !s.has(x));",
+      "};"
+    ],
+    "description": "Returns the difference between two arrays."
+  },
+  "differenceBy": {
+    "prefix": "30s_differenceBy",
+    "body": [
+      "const differenceBy = (a, b, fn) => {",
+      "  const s = new Set(b.map(fn));",
+      "  return a.filter(x => !s.has(fn(x)));",
+      "};"
+    ],
+    "description": "Returns the difference between two arrays, after applying the provided function to each array element of both."
+  },
+  "differenceWith": {
+    "prefix": "30s_differenceWith",
+    "body": [
+      "const differenceWith = (arr, val, comp) => arr.filter(a => val.findIndex(b => comp(a, b)) === -1);"
+    ],
+    "description": "Filters out all values from an array for which the comparator function does not return `true`."
+  },
+  "dig": {
+    "prefix": "30s_dig",
+    "body": [
+      "const dig = (obj, target) =>",
+      "  target in obj",
+      "    ? obj[target]",
+      "    : Object.values(obj).reduce((acc, val) => {",
+      "      if (acc !== undefined) return acc;",
+      "      if (typeof val === 'object') return dig(val, target);",
+      "    }, undefined);"
+    ],
+    "description": "Returns the target value in a nested JSON object, based on the given key."
+  },
+  "digitize": {
+    "prefix": "30s_digitize",
+    "body": [
+      "const digitize = n => [...`${n}`].map(i => parseInt(i));"
+    ],
+    "description": "Converts a number to an array of digits."
+  },
+  "distance": {
+    "prefix": "30s_distance",
+    "body": [
+      "const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);"
+    ],
+    "description": "Returns the distance between two points."
+  },
+  "drop": {
+    "prefix": "30s_drop",
+    "body": [
+      "const drop = (arr, n = 1) => arr.slice(n);"
+    ],
+    "description": "Returns a new array with `n` elements removed from the left."
+  },
+  "dropRight": {
+    "prefix": "30s_dropRight",
+    "body": [
+      "const dropRight = (arr, n = 1) => arr.slice(0, -n);"
+    ],
+    "description": "Returns a new array with `n` elements removed from the right."
+  },
+  "dropRightWhile": {
+    "prefix": "30s_dropRightWhile",
+    "body": [
+      "const dropRightWhile = (arr, func) => {",
+      "  while (arr.length > 0 && !func(arr[arr.length - 1])) arr = arr.slice(0, -1);",
+      "  return arr;",
+      "};"
+    ],
+    "description": "Removes elements from the end of an array until the passed function returns `true`. Returns the remaining elements in the array."
+  },
+  "dropWhile": {
+    "prefix": "30s_dropWhile",
+    "body": [
+      "const dropWhile = (arr, func) => {",
+      "  while (arr.length > 0 && !func(arr[0])) arr = arr.slice(1);",
+      "  return arr;",
+      "};"
+    ],
+    "description": "Removes elements in an array until the passed function returns `true`. Returns the remaining elements in the array."
+  },
+  "elementContains": {
+    "prefix": "30s_elementContains",
+    "body": [
+      "const elementContains = (parent, child) => parent !== child && parent.contains(child);"
+    ],
+    "description": "Returns `true` if the `parent` element contains the `child` element, `false` otherwise."
+  },
+  "elementIsVisibleInViewport": {
+    "prefix": "30s_elementIsVisibleInViewport",
+    "body": [
+      "const elementIsVisibleInViewport = (el, partiallyVisible = false) => {",
+      "  const { top, left, bottom, right } = el.getBoundingClientRect();",
+      "  const { innerHeight, innerWidth } = window;",
+      "  return partiallyVisible",
+      "    ? ((top > 0 && top < innerHeight) || (bottom > 0 && bottom < innerHeight)) &&",
+      "        ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))",
+      "    : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;",
+      "};"
+    ],
+    "description": "Returns `true` if the element specified is visible in the viewport, `false` otherwise."
+  },
+  "elo": {
+    "prefix": "30s_elo",
+    "body": [
+      "const elo = ([...ratings], kFactor = 32, selfRating) => {",
+      "  const [a, b] = ratings;",
+      "  const expectedScore = (self, opponent) => 1 / (1 + 10 ** ((opponent - self) / 400));",
+      "  const newRating = (rating, i) =>",
+      "    (selfRating || rating) + kFactor * (i - expectedScore(i ? a : b, i ? b : a));",
+      "  if (ratings.length === 2) return [newRating(a, 1), newRating(b, 0)];",
+      "",
+      "  for (let i = 0, len = ratings.length; i < len; i++) {",
+      "    let j = i;",
+      "    while (j < len - 1) {",
+      "      j++;",
+      "      [ratings[i], ratings[j]] = elo([ratings[i], ratings[j]], kFactor);",
+      "    }",
+      "  }",
+      "  return ratings;",
+      "};"
+    ],
+    "description": "Computes the new ratings between two or more opponents using the [Elo rating system](https://en.wikipedia.org/wiki/Elo_rating_system). It takes an array\r\nof pre-ratings and returns an array containing post-ratings.\r\nThe array should be ordered from best performer to worst performer (winner -> loser)."
+  },
+  "equals": {
+    "prefix": "30s_equals",
+    "body": [
+      "const equals = (a, b) => {",
+      "  if (a === b) return true;",
+      "  if (a instanceof Date && b instanceof Date) return a.getTime() === b.getTime();",
+      "  if (!a || !b || (typeof a !== 'object' && typeof b !== 'object')) return a === b;",
+      "  if (a === null || a === undefined || b === null || b === undefined) return false;",
+      "  if (a.prototype !== b.prototype) return false;",
+      "  let keys = Object.keys(a);",
+      "  if (keys.length !== Object.keys(b).length) return false;",
+      "  return keys.every(k => equals(a[k], b[k]));",
+      "};"
+    ],
+    "description": "Performs a deep comparison between two values to determine if they are equivalent."
+  },
+  "escapeHTML": {
+    "prefix": "30s_escapeHTML",
+    "body": [
+      "const escapeHTML = str =>",
+      "  str.replace(",
+      "    /[&<>'\"]/g,",
+      "    tag =>",
+      "      ({",
+      "        '&': '&amp;',",
+      "        '<': '&lt;',",
+      "        '>': '&gt;',",
+      "        \"'\": '&#39;',",
+      "        '\"': '&quot;'",
+      "      }[tag] || tag)",
+      "  );"
+    ],
+    "description": "Escapes a string for use in HTML."
+  },
+  "escapeRegExp": {
+    "prefix": "30s_escapeRegExp",
+    "body": [
+      "const escapeRegExp = str => str.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&');"
+    ],
+    "description": "Escapes a string to use in a regular expression."
+  },
+  "everyNth": {
+    "prefix": "30s_everyNth",
+    "body": [
+      "const everyNth = (arr, nth) => arr.filter((e, i) => i % nth === nth - 1);"
+    ],
+    "description": "Returns every nth element in an array."
+  },
+  "extendHex": {
+    "prefix": "30s_extendHex",
+    "body": [
+      "const extendHex = shortHex =>",
+      "  '#' +",
+      "  shortHex",
+      "    .slice(shortHex.startsWith('#') ? 1 : 0)",
+      "    .split('')",
+      "    .map(x => x + x)",
+      "    .join('');"
+    ],
+    "description": "Extends a 3-digit color code to a 6-digit color code."
+  },
+  "factorial": {
+    "prefix": "30s_factorial",
+    "body": [
+      "const factorial = n =>",
+      "  n < 0",
+      "    ? (() => {",
+      "      throw new TypeError('Negative numbers are not allowed!');",
+      "    })()",
+      "    : n <= 1",
+      "      ? 1",
+      "      : n * factorial(n - 1);"
+    ],
+    "description": "Calculates the factorial of a number."
+  },
+  "fibonacci": {
+    "prefix": "30s_fibonacci",
+    "body": [
+      "const fibonacci = n =>",
+      "  Array.from({ length: n }).reduce(",
+      "    (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),",
+      "    []",
+      "  );"
+    ],
+    "description": "Generates an array, containing the Fibonacci sequence, up until the nth term."
+  },
+  "filterNonUnique": {
+    "prefix": "30s_filterNonUnique",
+    "body": [
+      "const filterNonUnique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexOf(i));"
+    ],
+    "description": "Filters out the non-unique values in an array."
+  },
+  "filterNonUniqueBy": {
+    "prefix": "30s_filterNonUniqueBy",
+    "body": [
+      "const filterNonUniqueBy = (arr, fn) =>",
+      "  arr.filter((v, i) => arr.every((x, j) => (i === j) === fn(v, x, i, j)));"
+    ],
+    "description": "Filters out the non-unique values in an array, based on a provided comparator function."
+  },
+  "findKey": {
+    "prefix": "30s_findKey",
+    "body": [
+      "const findKey = (obj, fn) => Object.keys(obj).find(key => fn(obj[key], key, obj));"
+    ],
+    "description": "Returns the first key that satisfies the provided testing function. Otherwise `undefined` is returned."
+  },
+  "findLast": {
+    "prefix": "30s_findLast",
+    "body": [
+      "const findLast = (arr, fn) => arr.filter(fn).pop();"
+    ],
+    "description": "Returns the last element for which the provided function returns a truthy value."
+  },
+  "findLastIndex": {
+    "prefix": "30s_findLastIndex",
+    "body": [
+      "const findLastIndex = (arr, fn) =>",
+      "  arr",
+      "    .map((val, i) => [i, val])",
+      "    .filter(([i, val]) => fn(val, i, arr))",
+      "    .pop()[0];"
+    ],
+    "description": "Returns the index of the last element for which the provided function returns a truthy value."
+  },
+  "findLastKey": {
+    "prefix": "30s_findLastKey",
+    "body": [
+      "const findLastKey = (obj, fn) =>",
+      "  Object.keys(obj)",
+      "    .reverse()",
+      "    .find(key => fn(obj[key], key, obj));"
+    ],
+    "description": "Returns the last key that satisfies the provided testing function.\r\nOtherwise `undefined` is returned."
+  },
+  "flatten": {
+    "prefix": "30s_flatten",
+    "body": [
+      "const flatten = (arr, depth = 1) =>",
+      "  arr.reduce((a, v) => a.concat(depth > 1 && Array.isArray(v) ? flatten(v, depth - 1) : v), []);"
+    ],
+    "description": "Flattens an array up to the specified depth."
+  },
+  "flattenObject": {
+    "prefix": "30s_flattenObject",
+    "body": [
+      "const flattenObject = (obj, prefix = '') =>",
+      "  Object.keys(obj).reduce((acc, k) => {",
+      "    const pre = prefix.length ? prefix + '.' : '';",
+      "    if (typeof obj[k] === 'object') Object.assign(acc, flattenObject(obj[k], pre + k));",
+      "    else acc[pre + k] = obj[k];",
+      "    return acc;",
+      "  }, {});"
+    ],
+    "description": "Flatten an object with the paths for keys."
+  },
+  "flip": {
+    "prefix": "30s_flip",
+    "body": [
+      "const flip = fn => (first, ...rest) => fn(...rest, first);"
+    ],
+    "description": "Flip takes a function as an argument, then makes the first argument the last."
+  },
+  "forEachRight": {
+    "prefix": "30s_forEachRight",
+    "body": [
+      "const forEachRight = (arr, callback) =>",
+      "  arr",
+      "    .slice(0)",
+      "    .reverse()",
+      "    .forEach(callback);"
+    ],
+    "description": "Executes a provided function once for each array element, starting from the array's last element."
+  },
+  "formatDuration": {
+    "prefix": "30s_formatDuration",
+    "body": [
+      "const formatDuration = ms => {",
+      "  if (ms < 0) ms = -ms;",
+      "  const time = {",
+      "    day: Math.floor(ms / 86400000),",
+      "    hour: Math.floor(ms / 3600000) % 24,",
+      "    minute: Math.floor(ms / 60000) % 60,",
+      "    second: Math.floor(ms / 1000) % 60,",
+      "    millisecond: Math.floor(ms) % 1000",
+      "  };",
+      "  return Object.entries(time)",
+      "    .filter(val => val[1] !== 0)",
+      "    .map(([key, val]) => `${val} ${key}${val !== 1 ? 's' : ''}`)",
+      "    .join(', ');",
+      "};"
+    ],
+    "description": "Returns the human readable format of the given number of milliseconds."
+  },
+  "forOwn": {
+    "prefix": "30s_forOwn",
+    "body": [
+      "const forOwn = (obj, fn) => Object.keys(obj).forEach(key => fn(obj[key], key, obj));"
+    ],
+    "description": "Iterates over all own properties of an object, running a callback for each one."
+  },
+  "forOwnRight": {
+    "prefix": "30s_forOwnRight",
+    "body": [
+      "const forOwnRight = (obj, fn) =>",
+      "  Object.keys(obj)",
+      "    .reverse()",
+      "    .forEach(key => fn(obj[key], key, obj));"
+    ],
+    "description": "Iterates over all own properties of an object in reverse, running a callback for each one."
+  },
+  "fromCamelCase": {
+    "prefix": "30s_fromCamelCase",
+    "body": [
+      "const fromCamelCase = (str, separator = '_') =>",
+      "  str",
+      "    .replace(/([a-z\\d])([A-Z])/g, '$1' + separator + '$2')",
+      "    .replace(/([A-Z]+)([A-Z][a-z\\d]+)/g, '$1' + separator + '$2')",
+      "    .toLowerCase();"
+    ],
+    "description": "Converts a string from camelcase."
+  },
+  "functionName": {
+    "prefix": "30s_functionName",
+    "body": [
+      "const functionName = fn => (console.debug(fn.name), fn);"
+    ],
+    "description": "Logs the name of a function."
+  },
+  "functions": {
+    "prefix": "30s_functions",
+    "body": [
+      "const functions = (obj, inherited = false) =>",
+      "  (inherited",
+      "    ? [...Object.keys(obj), ...Object.keys(Object.getPrototypeOf(obj))]",
+      "    : Object.keys(obj)",
+      "  ).filter(key => typeof obj[key] === 'function');"
+    ],
+    "description": "Returns an array of function property names from own (and optionally inherited) enumerable properties of an object."
+  },
+  "gcd": {
+    "prefix": "30s_gcd",
+    "body": [
+      "const gcd = (...arr) => {",
+      "  const _gcd = (x, y) => (!y ? x : gcd(y, x % y));",
+      "  return [...arr].reduce((a, b) => _gcd(a, b));",
+      "};"
+    ],
+    "description": "Calculates the greatest common divisor between two or more numbers/arrays."
+  },
+  "geometricProgression": {
+    "prefix": "30s_geometricProgression",
+    "body": [
+      "const geometricProgression = (end, start = 1, step = 2) =>",
+      "  Array.from({ length: Math.floor(Math.log(end / start) / Math.log(step)) + 1 }).map(",
+      "    (v, i) => start * step ** i",
+      "  );"
+    ],
+    "description": "Initializes an array containing the numbers in the specified range where `start` and `end` are inclusive and the ratio between two terms is `step`.\r\nReturns an error if `step` equals `1`."
+  },
+  "get": {
+    "prefix": "30s_get",
+    "body": [
+      "const get = (from, ...selectors) =>",
+      "  [...selectors].map(s =>",
+      "    s",
+      "      .replace(/\\[([^\\[\\]]*)\\]/g, '.$1.')",
+      "      .split('.')",
+      "      .filter(t => t !== '')",
+      "      .reduce((prev, cur) => prev && prev[cur], from)",
+      "  );"
+    ],
+    "description": "Retrieve a set of properties indicated by the given selectors from an object."
+  },
+  "getColonTimeFromDate": {
+    "prefix": "30s_getColonTimeFromDate",
+    "body": [
+      "const getColonTimeFromDate = date => date.toTimeString().slice(0, 8);"
+    ],
+    "description": "Returns a string of the form `HH:MM:SS` from a `Date` object."
+  },
+  "getDaysDiffBetweenDates": {
+    "prefix": "30s_getDaysDiffBetweenDates",
+    "body": [
+      "const getDaysDiffBetweenDates = (dateInitial, dateFinal) =>",
+      "  (dateFinal - dateInitial) / (1000 * 3600 * 24);"
+    ],
+    "description": "Returns the difference (in days) between two dates."
+  },
+  "getImages": {
+    "prefix": "30s_getImages",
+    "body": [
+      "const getImages = (el, includeDuplicates = false) => {",
+      "  const images = [...el.getElementsByTagName('img')].map(img => img.getAttribute('src'));",
+      "  return includeDuplicates ? images : [...new Set(images)];",
+      "};"
+    ],
+    "description": "Fetches all images from within an element and puts them into an array"
+  },
+  "getMeridiemSuffixOfInteger": {
+    "prefix": "30s_getMeridiemSuffixOfInteger",
+    "body": [
+      "const getMeridiemSuffixOfInteger = num =>",
+      "  num === 0 || num === 24",
+      "    ? 12 + 'am'",
+      "    : num === 12",
+      "      ? 12 + 'pm'",
+      "      : num < 12",
+      "        ? (num % 12) + 'am'",
+      "        : (num % 12) + 'pm';"
+    ],
+    "description": "Converts an integer to a suffixed string, adding `am` or `pm` based on its value."
+  },
+  "getScrollPosition": {
+    "prefix": "30s_getScrollPosition",
+    "body": [
+      "const getScrollPosition = (el = window) => ({",
+      "  x: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,",
+      "  y: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop",
+      "});"
+    ],
+    "description": "Returns the scroll position of the current page."
+  },
+  "getStyle": {
+    "prefix": "30s_getStyle",
+    "body": [
+      "const getStyle = (el, ruleName) => getComputedStyle(el)[ruleName];"
+    ],
+    "description": "Returns the value of a CSS rule for the specified element."
+  },
+  "getType": {
+    "prefix": "30s_getType",
+    "body": [
+      "const getType = v =>",
+      "  v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name.toLowerCase();"
+    ],
+    "description": "Returns the native type of a value."
+  },
+  "getURLParameters": {
+    "prefix": "30s_getURLParameters",
+    "body": [
+      "const getURLParameters = url =>",
+      "  (url.match(/([^?=&]+)(=([^&]*))/g) || []).reduce(",
+      "    (a, v) => ((a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a),",
+      "    {}",
+      "  );"
+    ],
+    "description": "Returns an object containing the parameters of the current URL."
+  },
+  "groupBy": {
+    "prefix": "30s_groupBy",
+    "body": [
+      "const groupBy = (arr, fn) =>",
+      "  arr.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val, i) => {",
+      "    acc[val] = (acc[val] || []).concat(arr[i]);",
+      "    return acc;",
+      "  }, {});"
+    ],
+    "description": "Groups the elements of an array based on the given function."
+  },
+  "hammingDistance": {
+    "prefix": "30s_hammingDistance",
+    "body": [
+      "const hammingDistance = (num1, num2) => ((num1 ^ num2).toString(2).match(/1/g) || '').length;"
+    ],
+    "description": "Calculates the Hamming distance between two values."
+  },
+  "hasClass": {
+    "prefix": "30s_hasClass",
+    "body": [
+      "const hasClass = (el, className) => el.classList.contains(className);"
+    ],
+    "description": "Returns `true` if the element has the specified class, `false` otherwise."
+  },
+  "hasFlags": {
+    "prefix": "30s_hasFlags",
+    "body": [
+      "const hasFlags = (...flags) =>",
+      "  flags.every(flag => process.argv.includes(/^-{1,2}/.test(flag) ? flag : '--' + flag));"
+    ],
+    "description": "Check if the current process's arguments contain the specified flags."
+  },
+  "hashBrowser": {
+    "prefix": "30s_hashBrowser",
+    "body": [
+      "const hashBrowser = val =>",
+      "  crypto.subtle.digest('SHA-256', new TextEncoder('utf-8').encode(val)).then(h => {",
+      "    let hexes = [],",
+      "      view = new DataView(h);",
+      "    for (let i = 0; i < view.byteLength; i += 4)",
+      "      hexes.push(('00000000' + view.getUint32(i).toString(16)).slice(-8));",
+      "    return hexes.join('');",
+      "  });"
+    ],
+    "description": "Creates a hash for a value using the [SHA-256](https://en.wikipedia.org/wiki/SHA-2) algorithm. Returns a promise."
+  },
+  "hashNode": {
+    "prefix": "30s_hashNode",
+    "body": [
+      "const crypto = require('crypto');",
+      "const hashNode = val =>",
+      "  new Promise(resolve =>",
+      "    setTimeout(",
+      "      () =>",
+      "        resolve(",
+      "          crypto",
+      "            .createHash('sha256')",
+      "            .update(val)",
+      "            .digest('hex')",
+      "        ),",
+      "      0",
+      "    )",
+      "  );"
+    ],
+    "description": "Creates a hash for a value using the [SHA-256](https://en.wikipedia.org/wiki/SHA-2) algorithm. Returns a promise."
+  },
+  "head": {
+    "prefix": "30s_head",
+    "body": [
+      "const head = arr => arr[0];"
+    ],
+    "description": "Returns the head of a list."
+  },
+  "hexToRGB": {
+    "prefix": "30s_hexToRGB",
+    "body": [
+      "const hexToRGB = hex => {",
+      "  let alpha = false,",
+      "    h = hex.slice(hex.startsWith('#') ? 1 : 0);",
+      "  if (h.length === 3) h = [...h].map(x => x + x).join('');",
+      "  else if (h.length === 8) alpha = true;",
+      "  h = parseInt(h, 16);",
+      "  return (",
+      "    'rgb' +",
+      "    (alpha ? 'a' : '') +",
+      "    '(' +",
+      "    (h >>> (alpha ? 24 : 16)) +",
+      "    ', ' +",
+      "    ((h & (alpha ? 0x00ff0000 : 0x00ff00)) >>> (alpha ? 16 : 8)) +",
+      "    ', ' +",
+      "    ((h & (alpha ? 0x0000ff00 : 0x0000ff)) >>> (alpha ? 8 : 0)) +",
+      "    (alpha ? `, ${h & 0x000000ff}` : '') +",
+      "    ')'",
+      "  );",
+      "};"
+    ],
+    "description": "Converts a color code to a `rgb()` or `rgba()` string if alpha value is provided."
+  },
+  "hide": {
+    "prefix": "30s_hide",
+    "body": [
+      "const hide = els => els.forEach(e => (e.style.display = 'none'));"
+    ],
+    "description": "Hides all the elements specified."
+  },
+  "httpGet": {
+    "prefix": "30s_httpGet",
+    "body": [
+      "const httpGet = (url, callback, err = console.error) => {",
+      "  const request = new XMLHttpRequest();",
+      "  request.open('GET', url, true);",
+      "  request.onload = () => callback(request.responseText);",
+      "  request.onerror = () => err(request);",
+      "  request.send();",
+      "};"
+    ],
+    "description": "Makes a `GET` request to the passed URL."
+  },
+  "httpPost": {
+    "prefix": "30s_httpPost",
+    "body": [
+      "const httpPost = (url, data, callback, err = console.error) => {",
+      "  const request = new XMLHttpRequest();",
+      "  request.open('POST', url, true);",
+      "  request.setRequestHeader('Content-type', 'application/json; charset=utf-8');",
+      "  request.onload = () => callback(request.responseText);",
+      "  request.onerror = () => err(request);",
+      "  request.send(data);",
+      "};"
+    ],
+    "description": "Makes a `POST` request to the passed URL."
+  },
+  "httpsRedirect": {
+    "prefix": "30s_httpsRedirect",
+    "body": [
+      "const httpsRedirect = () => {",
+      "  if (location.protocol !== 'https:') location.replace('https://' + location.href.split('//')[1]);",
+      "};"
+    ],
+    "description": "Redirects the page to HTTPS if its currently in HTTP. Also, pressing the back button doesn't take it back to the HTTP page as its replaced in the history."
+  },
+  "hz": {
+    "prefix": "30s_hz",
+    "body": [
+      "const hz = (fn, iterations = 100) => {",
+      "  const before = performance.now();",
+      "  for (let i = 0; i < iterations; i++) fn();",
+      "  return (1000 * iterations) / (performance.now() - before);",
+      "};"
+    ],
+    "description": "Returns the number of times a function executed per second. \r\n`hz` is the unit for `hertz`, the unit of frequency defined as one cycle per second."
+  },
+  "indentString": {
+    "prefix": "30s_indentString",
+    "body": [
+      "const indentString = (str, count, indent = ' ') => str.replace(/^/gm, indent.repeat(count));"
+    ],
+    "description": "Indents each line in the provided string."
+  },
+  "indexOfAll": {
+    "prefix": "30s_indexOfAll",
+    "body": [
+      "const indexOfAll = (arr, val) => arr.reduce((acc, el, i) => (el === val ? [...acc, i] : acc), []);"
+    ],
+    "description": "Returns all indices of `val` in an array.\r\nIf `val` never occurs, returns `[]`."
+  },
+  "initial": {
+    "prefix": "30s_initial",
+    "body": [
+      "const initial = arr => arr.slice(0, -1);"
+    ],
+    "description": "Returns all the elements of an array except the last one."
+  },
+  "initialize2DArray": {
+    "prefix": "30s_initialize2DArray",
+    "body": [
+      "const initialize2DArray = (w, h, val = null) =>",
+      "  Array.from({ length: h }).map(() => Array.from({ length: w }).fill(val));"
+    ],
+    "description": "Initializes a 2D array of given width and height and value."
+  },
+  "initializeArrayWithRange": {
+    "prefix": "30s_initializeArrayWithRange",
+    "body": [
+      "const initializeArrayWithRange = (end, start = 0, step = 1) =>",
+      "  Array.from({ length: Math.ceil((end - start + 1) / step) }, (v, i) => i * step + start);"
+    ],
+    "description": "Initializes an array containing the numbers in the specified range where `start` and `end` are inclusive with their common difference `step`."
+  },
+  "initializeArrayWithRangeRight": {
+    "prefix": "30s_initializeArrayWithRangeRight",
+    "body": [
+      "const initializeArrayWithRangeRight = (end, start = 0, step = 1) =>",
+      "  Array.from({ length: Math.ceil((end + 1 - start) / step) }).map(",
+      "    (v, i, arr) => (arr.length - i - 1) * step + start",
+      "  );"
+    ],
+    "description": "Initializes an array containing the numbers in the specified range (in reverse) where `start` and `end` are inclusive with their common difference `step`."
+  },
+  "initializeArrayWithValues": {
+    "prefix": "30s_initializeArrayWithValues",
+    "body": [
+      "const initializeArrayWithValues = (n, val = 0) => Array(n).fill(val);"
+    ],
+    "description": "Initializes and fills an array with the specified values."
+  },
+  "initializeNDArray": {
+    "prefix": "30s_initializeNDArray",
+    "body": [
+      "const initializeNDArray = (val, ...args) =>",
+      "  args.length === 0",
+      "    ? val",
+      "    : Array.from({ length: args[0] }).map(() => initializeNDArray(val, ...args.slice(1)));"
+    ],
+    "description": "Create a n-dimensional array with given value."
+  },
+  "inRange": {
+    "prefix": "30s_inRange",
+    "body": [
+      "const inRange = (n, start, end = null) => {",
+      "  if (end && start > end) [end, start] = [start, end];",
+      "  return end == null ? n >= 0 && n < start : n >= start && n < end;",
+      "};"
+    ],
+    "description": "Checks if the given number falls within the given range."
+  },
+  "insertAfter": {
+    "prefix": "30s_insertAfter",
+    "body": [
+      "const insertAfter = (el, htmlString) => el.insertAdjacentHTML('afterend', htmlString);"
+    ],
+    "description": "Inserts an HTML string after the end of the specified element."
+  },
+  "insertBefore": {
+    "prefix": "30s_insertBefore",
+    "body": [
+      "const insertBefore = (el, htmlString) => el.insertAdjacentHTML('beforebegin', htmlString);"
+    ],
+    "description": "Inserts an HTML string before the start of the specified element."
+  },
+  "intersection": {
+    "prefix": "30s_intersection",
+    "body": [
+      "const intersection = (a, b) => {",
+      "  const s = new Set(b);",
+      "  return a.filter(x => s.has(x));",
+      "};"
+    ],
+    "description": "Returns a list of elements that exist in both arrays."
+  },
+  "intersectionBy": {
+    "prefix": "30s_intersectionBy",
+    "body": [
+      "const intersectionBy = (a, b, fn) => {",
+      "  const s = new Set(b.map(fn));",
+      "  return a.filter(x => s.has(fn(x)));",
+      "};"
+    ],
+    "description": "Returns a list of elements that exist in both arrays, after applying the provided function to each array element of both."
+  },
+  "intersectionWith": {
+    "prefix": "30s_intersectionWith",
+    "body": [
+      "const intersectionWith = (a, b, comp) => a.filter(x => b.findIndex(y => comp(x, y)) !== -1);"
+    ],
+    "description": "Returns a list of elements that exist in both arrays, using a provided comparator function."
+  },
+  "invertKeyValues": {
+    "prefix": "30s_invertKeyValues",
+    "body": [
+      "const invertKeyValues = (obj, fn) =>",
+      "  Object.keys(obj).reduce((acc, key) => {",
+      "    const val = fn ? fn(obj[key]) : obj[key];",
+      "    acc[val] = acc[val] || [];",
+      "    acc[val].push(key);",
+      "    return acc;",
+      "  }, {});"
+    ],
+    "description": "Inverts the key-value pairs of an object, without mutating it. The corresponding inverted value of each inverted key is an array of keys responsible for generating the inverted value. If a function is supplied, it is applied to each inverted key."
+  },
+  "is": {
+    "prefix": "30s_is",
+    "body": [
+      "const is = (type, val) => ![, null].includes(val) && val.constructor === type;"
+    ],
+    "description": "Checks if the provided value is of the specified type."
+  },
+  "isAbsoluteURL": {
+    "prefix": "30s_isAbsoluteURL",
+    "body": [
+      "const isAbsoluteURL = str => /^[a-z][a-z0-9+.-]*:/.test(str);"
+    ],
+    "description": "Returns `true` if the given string is an absolute URL, `false` otherwise."
+  },
+  "isAfterDate": {
+    "prefix": "30s_isAfterDate",
+    "body": [
+      "const isAfterDate = (dateA, dateB) => dateA > dateB;"
+    ],
+    "description": "Check if a date is after another date."
+  },
+  "isAnagram": {
+    "prefix": "30s_isAnagram",
+    "body": [
+      "const isAnagram = (str1, str2) => {",
+      "  const normalize = str =>",
+      "    str",
+      "      .toLowerCase()",
+      "      .replace(/[^a-z0-9]/gi, '')",
+      "      .split('')",
+      "      .sort()",
+      "      .join('');",
+      "  return normalize(str1) === normalize(str2);",
+      "};"
+    ],
+    "description": "Checks if a string is an anagram of another string (case-insensitive, ignores spaces, punctuation and special characters)."
+  },
+  "isArrayLike": {
+    "prefix": "30s_isArrayLike",
+    "body": [
+      "const isArrayLike = obj => obj != null && typeof obj[Symbol.iterator] === 'function';"
+    ],
+    "description": "Checks if the provided argument is array-like (i.e. is iterable)."
+  },
+  "isBeforeDate": {
+    "prefix": "30s_isBeforeDate",
+    "body": [
+      "const isBeforeDate = (dateA, dateB) => dateA < dateB;"
+    ],
+    "description": "Check if a date is before another date."
+  },
+  "isBoolean": {
+    "prefix": "30s_isBoolean",
+    "body": [
+      "const isBoolean = val => typeof val === 'boolean';"
+    ],
+    "description": "Checks if the given argument is a native boolean element."
+  },
+  "isBrowser": {
+    "prefix": "30s_isBrowser",
+    "body": [
+      "const isBrowser = () => ![typeof window, typeof document].includes('undefined');"
+    ],
+    "description": "Determines if the current runtime environment is a browser so that front-end modules can run on the server (Node) without throwing errors."
+  },
+  "isBrowserTabFocused": {
+    "prefix": "30s_isBrowserTabFocused",
+    "body": [
+      "const isBrowserTabFocused = () => !document.hidden;"
+    ],
+    "description": "Returns `true` if the browser tab of the page is focused, `false` otherwise."
+  },
+  "isDivisible": {
+    "prefix": "30s_isDivisible",
+    "body": [
+      "const isDivisible = (dividend, divisor) => dividend % divisor === 0;"
+    ],
+    "description": "Checks if the first numeric argument is divisible by the second one."
+  },
+  "isDuplexStream": {
+    "prefix": "30s_isDuplexStream",
+    "body": [
+      "const isDuplexStream = val =>",
+      "  val !== null &&",
+      "  typeof val === 'object' &&",
+      "  typeof val.pipe === 'function' &&",
+      "  typeof val._read === 'function' &&",
+      "  typeof val._readableState === 'object' &&",
+      "  typeof val._write === 'function' &&",
+      "  typeof val._writableState === 'object';"
+    ],
+    "description": "Checks if the given argument is a duplex (readable and writable) stream."
+  },
+  "isEmpty": {
+    "prefix": "30s_isEmpty",
+    "body": [
+      "const isEmpty = val => val == null || !(Object.keys(val) || val).length;"
+    ],
+    "description": "Returns true if the a value is an empty object, collection, map or set, has no enumerable properties or is any type that is not considered a collection."
+  },
+  "isEven": {
+    "prefix": "30s_isEven",
+    "body": [
+      "const isEven = num => num % 2 === 0;"
+    ],
+    "description": "Returns `true` if the given number is even, `false` otherwise."
+  },
+  "isFunction": {
+    "prefix": "30s_isFunction",
+    "body": [
+      "const isFunction = val => typeof val === 'function';"
+    ],
+    "description": "Checks if the given argument is a function."
+  },
+  "isLowerCase": {
+    "prefix": "30s_isLowerCase",
+    "body": [
+      "const isLowerCase = str => str === str.toLowerCase();"
+    ],
+    "description": "Checks if a string is lower case."
+  },
+  "isNil": {
+    "prefix": "30s_isNil",
+    "body": [
+      "const isNil = val => val === undefined || val === null;"
+    ],
+    "description": "Returns `true` if the specified value is `null` or `undefined`, `false` otherwise."
+  },
+  "isNull": {
+    "prefix": "30s_isNull",
+    "body": [
+      "const isNull = val => val === null;"
+    ],
+    "description": "Returns `true` if the specified value is `null`, `false` otherwise."
+  },
+  "isNumber": {
+    "prefix": "30s_isNumber",
+    "body": [
+      "const isNumber = val => typeof val === 'number';"
+    ],
+    "description": "Checks if the given argument is a number."
+  },
+  "isObject": {
+    "prefix": "30s_isObject",
+    "body": [
+      "const isObject = obj => obj === Object(obj);"
+    ],
+    "description": "Returns a boolean determining if the passed value is an object or not."
+  },
+  "isObjectLike": {
+    "prefix": "30s_isObjectLike",
+    "body": [
+      "const isObjectLike = val => val !== null && typeof val === 'object';"
+    ],
+    "description": "Checks if a value is object-like."
+  },
+  "isPlainObject": {
+    "prefix": "30s_isPlainObject",
+    "body": [
+      "const isPlainObject = val => !!val && typeof val === 'object' && val.constructor === Object;"
+    ],
+    "description": "Checks if the provided value is an object created by the Object constructor."
+  },
+  "isPrime": {
+    "prefix": "30s_isPrime",
+    "body": [
+      "const isPrime = num => {",
+      "  const boundary = Math.floor(Math.sqrt(num));",
+      "  for (var i = 2; i <= boundary; i++) if (num % i === 0) return false;",
+      "  return num >= 2;",
+      "};"
+    ],
+    "description": "Checks if the provided integer is a prime number."
+  },
+  "isPrimitive": {
+    "prefix": "30s_isPrimitive",
+    "body": [
+      "const isPrimitive = val => Object(val) !== val;"
+    ],
+    "description": "Returns a boolean determining if the passed value is primitive or not."
+  },
+  "isPromiseLike": {
+    "prefix": "30s_isPromiseLike",
+    "body": [
+      "const isPromiseLike = obj =>",
+      "  obj !== null &&",
+      "  (typeof obj === 'object' || typeof obj === 'function') &&",
+      "  typeof obj.then === 'function';"
+    ],
+    "description": "Returns `true` if an object looks like a [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), `false` otherwise."
+  },
+  "isReadableStream": {
+    "prefix": "30s_isReadableStream",
+    "body": [
+      "const isReadableStream = val =>",
+      "  val !== null &&",
+      "  typeof val === 'object' &&",
+      "  typeof val.pipe === 'function' &&",
+      "  typeof val._read === 'function' &&",
+      "  typeof val._readableState === 'object';"
+    ],
+    "description": "Checks if the given argument is a readable stream."
+  },
+  "isSameDate": {
+    "prefix": "30s_isSameDate",
+    "body": [
+      "const isSameDate = (dateA, dateB) => dateA.toISOString() === dateB.toISOString();"
+    ],
+    "description": "Check if a date is the same as another date."
+  },
+  "isSorted": {
+    "prefix": "30s_isSorted",
+    "body": [
+      "const isSorted = arr => {",
+      "  let direction = -(arr[0] - arr[1]);",
+      "  for (let [i, val] of arr.entries()) {",
+      "    direction = !direction ? -(arr[i - 1] - arr[i]) : direction;",
+      "    if (i === arr.length - 1) return !direction ? 0 : direction;",
+      "    else if ((val - arr[i + 1]) * direction > 0) return 0;",
+      "  }",
+      "};"
+    ],
+    "description": "Returns `1` if the array is sorted in ascending order, `-1` if it is sorted in descending order or `0` if it is not sorted."
+  },
+  "isStream": {
+    "prefix": "30s_isStream",
+    "body": [
+      "const isStream = val => val !== null && typeof val === 'object' && typeof val.pipe === 'function';"
+    ],
+    "description": "Checks if the given argument is a stream."
+  },
+  "isString": {
+    "prefix": "30s_isString",
+    "body": [
+      "const isString = val => typeof val === 'string';"
+    ],
+    "description": "Checks if the given argument is a string. Only works for string primitives."
+  },
+  "isSymbol": {
+    "prefix": "30s_isSymbol",
+    "body": [
+      "const isSymbol = val => typeof val === 'symbol';"
+    ],
+    "description": "Checks if the given argument is a symbol."
+  },
+  "isTravisCI": {
+    "prefix": "30s_isTravisCI",
+    "body": [
+      "const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;"
+    ],
+    "description": "Checks if the current environment is [Travis CI](https://travis-ci.org/)."
+  },
+  "isUndefined": {
+    "prefix": "30s_isUndefined",
+    "body": [
+      "const isUndefined = val => val === undefined;"
+    ],
+    "description": "Returns `true` if the specified value is `undefined`, `false` otherwise."
+  },
+  "isUpperCase": {
+    "prefix": "30s_isUpperCase",
+    "body": [
+      "const isUpperCase = str => str === str.toUpperCase();"
+    ],
+    "description": "Checks if a string is upper case."
+  },
+  "isValidJSON": {
+    "prefix": "30s_isValidJSON",
+    "body": [
+      "const isValidJSON = obj => {",
+      "  try {",
+      "    JSON.parse(obj);",
+      "    return true;",
+      "  } catch (e) {",
+      "    return false;",
+      "  }",
+      "};"
+    ],
+    "description": "Checks if the provided argument is a valid JSON."
+  },
+  "isWritableStream": {
+    "prefix": "30s_isWritableStream",
+    "body": [
+      "const isWritableStream = val =>",
+      "  val !== null &&",
+      "  typeof val === 'object' &&",
+      "  typeof val.pipe === 'function' &&",
+      "  typeof val._write === 'function' &&",
+      "  typeof val._writableState === 'object';"
+    ],
+    "description": "Checks if the given argument is a writable stream."
+  },
+  "join": {
+    "prefix": "30s_join",
+    "body": [
+      "const join = (arr, separator = ',', end = separator) =>",
+      "  arr.reduce(",
+      "    (acc, val, i) =>",
+      "      i === arr.length - 2",
+      "        ? acc + val + end",
+      "        : i === arr.length - 1",
+      "          ? acc + val",
+      "          : acc + val + separator,",
+      "    ''",
+      "  );"
+    ],
+    "description": "Joins all elements of an array into a string and returns this string.\r\nUses a separator and an end separator."
+  },
+  "JSONtoCSV": {
+    "prefix": "30s_JSONtoCSV",
+    "body": [
+      "const JSONtoCSV = (arr, columns, delimiter = ',') =>",
+      "  [",
+      "    columns.join(delimiter),",
+      "    ...arr.map(obj =>",
+      "      columns.reduce(",
+      "        (acc, key) => `${acc}${!acc.length ? '' : delimiter}\"${!obj[key] ? '' : obj[key]}\"`,",
+      "        ''",
+      "      )",
+      "    )",
+      "  ].join('\\n');"
+    ],
+    "description": "Converts an array of objects to a comma-separated values (CSV) string that contains only the `columns` specified."
+  },
+  "JSONToFile": {
+    "prefix": "30s_JSONToFile",
+    "body": [
+      "const fs = require('fs');",
+      "const JSONToFile = (obj, filename) =>",
+      "  fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2));"
+    ],
+    "description": "Writes a JSON object to a file."
+  },
+  "last": {
+    "prefix": "30s_last",
+    "body": [
+      "const last = arr => arr[arr.length - 1];"
+    ],
+    "description": "Returns the last element in an array."
+  },
+  "lcm": {
+    "prefix": "30s_lcm",
+    "body": [
+      "const lcm = (...arr) => {",
+      "  const gcd = (x, y) => (!y ? x : gcd(y, x % y));",
+      "  const _lcm = (x, y) => (x * y) / gcd(x, y);",
+      "  return [...arr].reduce((a, b) => _lcm(a, b));",
+      "};"
+    ],
+    "description": "Returns the least common multiple of two or more numbers."
+  },
+  "longestItem": {
+    "prefix": "30s_longestItem",
+    "body": [
+      "const longestItem = (...vals) => vals.reduce((a, x) => (x.length > a.length ? x : a));"
+    ],
+    "description": "Takes any number of iterable objects or objects with a `length` property and returns the longest one.\r\nIf multiple objects have the same length, the first one will be returned.\r\nReturns `undefined` if no arguments are provided."
+  },
+  "lowercaseKeys": {
+    "prefix": "30s_lowercaseKeys",
+    "body": [
+      "const lowercaseKeys = obj =>",
+      "  Object.keys(obj).reduce((acc, key) => {",
+      "    acc[key.toLowerCase()] = obj[key];",
+      "    return acc;",
+      "  }, {});"
+    ],
+    "description": "Creates a new object from the specified object, where all the keys are in lowercase."
+  },
+  "luhnCheck": {
+    "prefix": "30s_luhnCheck",
+    "body": [
+      "const luhnCheck = num => {",
+      "  let arr = (num + '')",
+      "    .split('')",
+      "    .reverse()",
+      "    .map(x => parseInt(x));",
+      "  let lastDigit = arr.splice(0, 1)[0];",
+      "  let sum = arr.reduce((acc, val, i) => (i % 2 !== 0 ? acc + val : acc + ((val * 2) % 9) || 9), 0);",
+      "  sum += lastDigit;",
+      "  return sum % 10 === 0;",
+      "};"
+    ],
+    "description": "Implementation of the [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) used to validate a variety of identification numbers, such as credit card numbers, IMEI numbers, National Provider Identifier numbers etc."
+  },
+  "mapKeys": {
+    "prefix": "30s_mapKeys",
+    "body": [
+      "const mapKeys = (obj, fn) =>",
+      "  Object.keys(obj).reduce((acc, k) => {",
+      "    acc[fn(obj[k], k, obj)] = obj[k];",
+      "    return acc;",
+      "  }, {});"
+    ],
+    "description": "Creates an object with keys generated by running the provided function for each key and the same values as the provided object."
+  },
+  "mapObject": {
+    "prefix": "30s_mapObject",
+    "body": [
+      "const mapObject = (arr, fn) =>",
+      "  (a => (",
+      "    (a = [arr, arr.map(fn)]), a[0].reduce((acc, val, ind) => ((acc[val] = a[1][ind]), acc), {})",
+      "  ))();"
+    ],
+    "description": "Maps the values of an array to an object using a function, where the key-value pairs consist of the original value as the key and the mapped value."
+  },
+  "mapString": {
+    "prefix": "30s_mapString",
+    "body": [
+      "const mapString = (str, fn) =>",
+      "  str",
+      "    .split('')",
+      "    .map((c, i) => fn(c, i, str))",
+      "    .join('');"
+    ],
+    "description": "Creates a new string with the results of calling a provided function on every character in the calling string."
+  },
+  "mapValues": {
+    "prefix": "30s_mapValues",
+    "body": [
+      "const mapValues = (obj, fn) =>",
+      "  Object.keys(obj).reduce((acc, k) => {",
+      "    acc[k] = fn(obj[k], k, obj);",
+      "    return acc;",
+      "  }, {});"
+    ],
+    "description": "Creates an object with the same keys as the provided object and values generated by running the provided function for each value."
+  },
+  "mask": {
+    "prefix": "30s_mask",
+    "body": [
+      "const mask = (cc, num = 4, mask = '*') => `${cc}`.slice(-num).padStart(`${cc}`.length, mask);"
+    ],
+    "description": "Replaces all but the last `num` of characters with the specified mask character."
+  },
+  "matches": {
+    "prefix": "30s_matches",
+    "body": [
+      "const matches = (obj, source) =>",
+      "  Object.keys(source).every(key => obj.hasOwnProperty(key) && obj[key] === source[key]);"
+    ],
+    "description": "Compares two objects to determine if the first one contains equivalent property values to the second one."
+  },
+  "matchesWith": {
+    "prefix": "30s_matchesWith",
+    "body": [
+      "const matchesWith = (obj, source, fn) =>",
+      "  Object.keys(source).every(",
+      "    key =>",
+      "      obj.hasOwnProperty(key) && fn",
+      "        ? fn(obj[key], source[key], key, obj, source)",
+      "        : obj[key] == source[key]",
+      "  );"
+    ],
+    "description": "Compares two objects to determine if the first one contains equivalent property values to the second one, based on a provided function."
+  },
+  "maxBy": {
+    "prefix": "30s_maxBy",
+    "body": [
+      "const maxBy = (arr, fn) => Math.max(...arr.map(typeof fn === 'function' ? fn : val => val[fn]));"
+    ],
+    "description": "Returns the maximum value of an array, after mapping each element to a value using the provided function."
+  },
+  "maxDate": {
+    "prefix": "30s_maxDate",
+    "body": [
+      "const maxDate = (...dates) => new Date(Math.max.apply(null, ...dates));"
+    ],
+    "description": "Returns the maximum of the given dates."
+  },
+  "maxN": {
+    "prefix": "30s_maxN",
+    "body": [
+      "const maxN = (arr, n = 1) => [...arr].sort((a, b) => b - a).slice(0, n);"
+    ],
+    "description": "Returns the `n` maximum elements from the provided array.\r\nIf `n` is greater than or equal to the provided array's length, then return the original array (sorted in descending order)."
+  },
+  "median": {
+    "prefix": "30s_median",
+    "body": [
+      "const median = arr => {",
+      "  const mid = Math.floor(arr.length / 2),",
+      "    nums = [...arr].sort((a, b) => a - b);",
+      "  return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;",
+      "};"
+    ],
+    "description": "Returns the median of an array of numbers."
+  },
+  "memoize": {
+    "prefix": "30s_memoize",
+    "body": [
+      "const memoize = fn => {",
+      "  const cache = new Map();",
+      "  const cached = function(val) {",
+      "    return cache.has(val) ? cache.get(val) : cache.set(val, fn.call(this, val)) && cache.get(val);",
+      "  };",
+      "  cached.cache = cache;",
+      "  return cached;",
+      "};"
+    ],
+    "description": "Returns the memoized (cached) function."
+  },
+  "merge": {
+    "prefix": "30s_merge",
+    "body": [
+      "const merge = (...objs) =>",
+      "  [...objs].reduce(",
+      "    (acc, obj) =>",
+      "      Object.keys(obj).reduce((a, k) => {",
+      "        acc[k] = acc.hasOwnProperty(k) ? [].concat(acc[k]).concat(obj[k]) : obj[k];",
+      "        return acc;",
+      "      }, {}),",
+      "    {}",
+      "  );"
+    ],
+    "description": "Creates a new object from the combination of two or more objects."
+  },
+  "minBy": {
+    "prefix": "30s_minBy",
+    "body": [
+      "const minBy = (arr, fn) => Math.min(...arr.map(typeof fn === 'function' ? fn : val => val[fn]));"
+    ],
+    "description": "Returns the minimum value of an array, after mapping each element to a value using the provided function."
+  },
+  "minDate": {
+    "prefix": "30s_minDate",
+    "body": [
+      "const minDate = (...dates) => new Date(Math.min.apply(null, ...dates));"
+    ],
+    "description": "Returns the minimum of the given dates."
+  },
+  "minN": {
+    "prefix": "30s_minN",
+    "body": [
+      "const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);"
+    ],
+    "description": "Returns the `n` minimum elements from the provided array.\r\nIf `n` is greater than or equal to the provided array's length, then return the original array (sorted in ascending order)."
+  },
+  "mostPerformant": {
+    "prefix": "30s_mostPerformant",
+    "body": [
+      "const mostPerformant = (fns, iterations = 10000) => {",
+      "  const times = fns.map(fn => {",
+      "    const before = performance.now();",
+      "    for (let i = 0; i < iterations; i++) fn();",
+      "    return performance.now() - before;",
+      "  });",
+      "  return times.indexOf(Math.min(...times));",
+      "};"
+    ],
+    "description": "Returns the index of the function in an array of functions which executed the fastest."
+  },
+  "negate": {
+    "prefix": "30s_negate",
+    "body": [
+      "const negate = func => (...args) => !func(...args);"
+    ],
+    "description": "Negates a predicate function."
+  },
+  "nest": {
+    "prefix": "30s_nest",
+    "body": [
+      "const nest = (items, id = null, link = 'parent_id') =>",
+      "  items",
+      "    .filter(item => item[link] === id)",
+      "    .map(item => ({ ...item, children: nest(items, item.id) }));"
+    ],
+    "description": "Given a flat array of objects linked to one another, it will nest them recursively.\r\nUseful for nesting comments, such as the ones on reddit.com."
+  },
+  "nodeListToArray": {
+    "prefix": "30s_nodeListToArray",
+    "body": [
+      "const nodeListToArray = nodeList => [...nodeList];"
+    ],
+    "description": "Converts a `NodeList` to an array."
+  },
+  "none": {
+    "prefix": "30s_none",
+    "body": [
+      "const none = (arr, fn = Boolean) => !arr.some(fn);"
+    ],
+    "description": "Returns `true` if the provided predicate function returns `false` for all elements in a collection, `false` otherwise."
+  },
+  "nthArg": {
+    "prefix": "30s_nthArg",
+    "body": [
+      "const nthArg = n => (...args) => args.slice(n)[0];"
+    ],
+    "description": "Creates a function that gets the argument at index `n`. If `n` is negative, the nth argument from the end is returned."
+  },
+  "nthElement": {
+    "prefix": "30s_nthElement",
+    "body": [
+      "const nthElement = (arr, n = 0) => (n === -1 ? arr.slice(n) : arr.slice(n, n + 1))[0];"
+    ],
+    "description": "Returns the nth element of an array."
+  },
+  "objectFromPairs": {
+    "prefix": "30s_objectFromPairs",
+    "body": [
+      "const objectFromPairs = arr => arr.reduce((a, [key, val]) => ((a[key] = val), a), {});"
+    ],
+    "description": "Creates an object from the given key-value pairs."
+  },
+  "objectToPairs": {
+    "prefix": "30s_objectToPairs",
+    "body": [
+      "const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);"
+    ],
+    "description": "Creates an array of key-value pair arrays from an object."
+  },
+  "observeMutations": {
+    "prefix": "30s_observeMutations",
+    "body": [
+      "const observeMutations = (element, callback, options) => {",
+      "  const observer = new MutationObserver(mutations => mutations.forEach(m => callback(m)));",
+      "  observer.observe(",
+      "    element,",
+      "    Object.assign(",
+      "      {",
+      "        childList: true,",
+      "        attributes: true,",
+      "        attributeOldValue: true,",
+      "        characterData: true,",
+      "        characterDataOldValue: true,",
+      "        subtree: true",
+      "      },",
+      "      options",
+      "    )",
+      "  );",
+      "  return observer;",
+      "};"
+    ],
+    "description": "Returns a new MutationObserver and runs the provided callback for each mutation on the specified element."
+  },
+  "off": {
+    "prefix": "30s_off",
+    "body": [
+      "const off = (el, evt, fn, opts = false) => el.removeEventListener(evt, fn, opts);"
+    ],
+    "description": "Removes an event listener from an element."
+  },
+  "offset": {
+    "prefix": "30s_offset",
+    "body": [
+      "const offset = (arr, offset) => [...arr.slice(offset), ...arr.slice(0, offset)];"
+    ],
+    "description": "Moves the specified amount of elements to the end of the array."
+  },
+  "omit": {
+    "prefix": "30s_omit",
+    "body": [
+      "const omit = (obj, arr) =>",
+      "  Object.keys(obj)",
+      "    .filter(k => !arr.includes(k))",
+      "    .reduce((acc, key) => ((acc[key] = obj[key]), acc), {});"
+    ],
+    "description": "Omits the key-value pairs corresponding to the given keys from an object."
+  },
+  "omitBy": {
+    "prefix": "30s_omitBy",
+    "body": [
+      "const omitBy = (obj, fn) =>",
+      "  Object.keys(obj)",
+      "    .filter(k => !fn(obj[k], k))",
+      "    .reduce((acc, key) => ((acc[key] = obj[key]), acc), {});"
+    ],
+    "description": "Creates an object composed of the properties the given function returns falsey for. The function is invoked with two arguments: (value, key)."
+  },
+  "on": {
+    "prefix": "30s_on",
+    "body": [
+      "const on = (el, evt, fn, opts = {}) => {",
+      "  const delegatorFn = e => e.target.matches(opts.target) && fn.call(e.target, e);",
+      "  el.addEventListener(evt, opts.target ? delegatorFn : fn, opts.options || false);",
+      "  if (opts.target) return delegatorFn;",
+      "};"
+    ],
+    "description": "Adds an event listener to an element with the ability to use event delegation."
+  },
+  "once": {
+    "prefix": "30s_once",
+    "body": [
+      "const once = fn => {",
+      "  let called = false;",
+      "  return function(...args) {",
+      "    if (called) return;",
+      "    called = true;",
+      "    return fn.apply(this, args);",
+      "  };",
+      "};"
+    ],
+    "description": "Ensures a function is called only once."
+  },
+  "onUserInputChange": {
+    "prefix": "30s_onUserInputChange",
+    "body": [
+      "const onUserInputChange = callback => {",
+      "  let type = 'mouse',",
+      "    lastTime = 0;",
+      "  const mousemoveHandler = () => {",
+      "    const now = performance.now();",
+      "    if (now - lastTime < 20)",
+      "      (type = 'mouse'), callback(type), document.removeEventListener('mousemove', mousemoveHandler);",
+      "    lastTime = now;",
+      "  };",
+      "  document.addEventListener('touchstart', () => {",
+      "    if (type === 'touch') return;",
+      "    (type = 'touch'), callback(type), document.addEventListener('mousemove', mousemoveHandler);",
+      "  });",
+      "};"
+    ],
+    "description": "Run the callback whenever the user input type changes (`mouse` or `touch`). Useful for enabling/disabling code depending on the input device. This process is dynamic and works with hybrid devices (e.g. touchscreen laptops)."
+  },
+  "orderBy": {
+    "prefix": "30s_orderBy",
+    "body": [
+      "const orderBy = (arr, props, orders) =>",
+      "  [...arr].sort((a, b) =>",
+      "    props.reduce((acc, prop, i) => {",
+      "      if (acc === 0) {",
+      "        const [p1, p2] = orders && orders[i] === 'desc' ? [b[prop], a[prop]] : [a[prop], b[prop]];",
+      "        acc = p1 > p2 ? 1 : p1 < p2 ? -1 : 0;",
+      "      }",
+      "      return acc;",
+      "    }, 0)",
+      "  );"
+    ],
+    "description": "Returns a sorted array of objects ordered by properties and orders."
+  },
+  "over": {
+    "prefix": "30s_over",
+    "body": [
+      "const over = (...fns) => (...args) => fns.map(fn => fn.apply(null, args));"
+    ],
+    "description": "Creates a function that invokes each provided function with the arguments it receives and returns the results."
+  },
+  "overArgs": {
+    "prefix": "30s_overArgs",
+    "body": [
+      "const overArgs = (fn, transforms) => (...args) => fn(...args.map((val, i) => transforms[i](val)));"
+    ],
+    "description": "Creates a function that invokes the provided function with its arguments transformed."
+  },
+  "pad": {
+    "prefix": "30s_pad",
+    "body": [
+      "const pad = (str, length, char = ' ') =>",
+      "  str.padStart((str.length + length) / 2, char).padEnd(length, char);"
+    ],
+    "description": "Pads a string on both sides with the specified character, if it's shorter than the specified length."
+  },
+  "palindrome": {
+    "prefix": "30s_palindrome",
+    "body": [
+      "const palindrome = str => {",
+      "  const s = str.toLowerCase().replace(/[\\W_]/g, '');",
+      "  return s === [...s].reverse().join('');",
+      "};"
+    ],
+    "description": "Returns `true` if the given string is a palindrome, `false` otherwise."
+  },
+  "parseCookie": {
+    "prefix": "30s_parseCookie",
+    "body": [
+      "const parseCookie = str =>",
+      "  str",
+      "    .split(';')",
+      "    .map(v => v.split('='))",
+      "    .reduce((acc, v) => {",
+      "      acc[decodeURIComponent(v[0].trim())] = decodeURIComponent(v[1].trim());",
+      "      return acc;",
+      "    }, {});"
+    ],
+    "description": "Parse an HTTP Cookie header string and return an object of all cookie name-value pairs."
+  },
+  "partial": {
+    "prefix": "30s_partial",
+    "body": [
+      "const partial = (fn, ...partials) => (...args) => fn(...partials, ...args);"
+    ],
+    "description": "Creates a function that invokes `fn` with `partials` prepended to the arguments it receives."
+  },
+  "partialRight": {
+    "prefix": "30s_partialRight",
+    "body": [
+      "const partialRight = (fn, ...partials) => (...args) => fn(...args, ...partials);"
+    ],
+    "description": "Creates a function that invokes `fn` with `partials` appended to the arguments it receives."
+  },
+  "partition": {
+    "prefix": "30s_partition",
+    "body": [
+      "const partition = (arr, fn) =>",
+      "  arr.reduce(",
+      "    (acc, val, i, arr) => {",
+      "      acc[fn(val, i, arr) ? 0 : 1].push(val);",
+      "      return acc;",
+      "    },",
+      "    [[], []]",
+      "  );"
+    ],
+    "description": "Groups the elements into two arrays, depending on the provided function's truthiness for each element."
+  },
+  "percentile": {
+    "prefix": "30s_percentile",
+    "body": [
+      "const percentile = (arr, val) =>",
+      "  (100 * arr.reduce((acc, v) => acc + (v < val ? 1 : 0) + (v === val ? 0.5 : 0), 0)) / arr.length;"
+    ],
+    "description": "Uses the percentile formula to calculate how many numbers in the given array are less or equal to the given value."
+  },
+  "permutations": {
+    "prefix": "30s_permutations",
+    "body": [
+      "const permutations = arr => {",
+      "  if (arr.length <= 2) return arr.length === 2 ? [arr, [arr[1], arr[0]]] : arr;",
+      "  return arr.reduce(",
+      "    (acc, item, i) =>",
+      "      acc.concat(",
+      "        permutations([...arr.slice(0, i), ...arr.slice(i + 1)]).map(val => [item, ...val])",
+      "      ),",
+      "    []",
+      "  );",
+      "};"
+    ],
+    "description": "⚠️ **WARNING**: This function's execution time increases exponentially with each array element. Anything more than 8 to 10 entries will cause your browser to hang as it tries to solve all the different combinations."
+  },
+  "pick": {
+    "prefix": "30s_pick",
+    "body": [
+      "const pick = (obj, arr) =>",
+      "  arr.reduce((acc, curr) => (curr in obj && (acc[curr] = obj[curr]), acc), {});"
+    ],
+    "description": "Picks the key-value pairs corresponding to the given keys from an object."
+  },
+  "pickBy": {
+    "prefix": "30s_pickBy",
+    "body": [
+      "const pickBy = (obj, fn) =>",
+      "  Object.keys(obj)",
+      "    .filter(k => fn(obj[k], k))",
+      "    .reduce((acc, key) => ((acc[key] = obj[key]), acc), {});"
+    ],
+    "description": "Creates an object composed of the properties the given function returns truthy for. The function is invoked with two arguments: (value, key)."
+  },
+  "pipeAsyncFunctions": {
+    "prefix": "30s_pipeAsyncFunctions",
+    "body": [
+      "const pipeAsyncFunctions = (...fns) => arg => fns.reduce((p, f) => p.then(f), Promise.resolve(arg));"
+    ],
+    "description": "Performs left-to-right function composition for asynchronous functions."
+  },
+  "pipeFunctions": {
+    "prefix": "30s_pipeFunctions",
+    "body": [
+      "const pipeFunctions = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));"
+    ],
+    "description": "Performs left-to-right function composition."
+  },
+  "pluralize": {
+    "prefix": "30s_pluralize",
+    "body": [
+      "const pluralize = (val, word, plural = word + 's') => {",
+      "  const _pluralize = (num, word, plural = word + 's') =>",
+      "    [1, -1].includes(Number(num)) ? word : plural;",
+      "  if (typeof val === 'object') return (num, word) => _pluralize(num, word, val[word]);",
+      "  return _pluralize(val, word, plural);",
+      "};"
+    ],
+    "description": "Returns the singular or plural form of the word based on the input number. If the first argument is an `object`, it will use a closure by returning a function that can auto-pluralize words that don't simply end in `s` if the supplied dictionary contains the word."
+  },
+  "powerset": {
+    "prefix": "30s_powerset",
+    "body": [
+      "const powerset = arr => arr.reduce((a, v) => a.concat(a.map(r => [v].concat(r))), [[]]);"
+    ],
+    "description": "Returns the powerset of a given array of numbers."
+  },
+  "prefix": {
+    "prefix": "30s_prefix",
+    "body": [
+      "const prefix = prop => {",
+      "  const capitalizedProp = prop.charAt(0).toUpperCase() + prop.slice(1);",
+      "  const prefixes = ['', 'webkit', 'moz', 'ms', 'o'];",
+      "  const i = prefixes.findIndex(",
+      "    prefix => typeof document.body.style[prefix ? prefix + capitalizedProp : prop] !== 'undefined'",
+      "  );",
+      "  return i !== -1 ? (i === 0 ? prop : prefixes[i] + capitalizedProp) : null;",
+      "};"
+    ],
+    "description": "Returns the prefixed version (if necessary) of a CSS property that the browser supports."
+  },
+  "prettyBytes": {
+    "prefix": "30s_prettyBytes",
+    "body": [
+      "const prettyBytes = (num, precision = 3, addSpace = true) => {",
+      "  const UNITS = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];",
+      "  if (Math.abs(num) < 1) return num + (addSpace ? ' ' : '') + UNITS[0];",
+      "  const exponent = Math.min(Math.floor(Math.log10(num < 0 ? -num : num) / 3), UNITS.length - 1);",
+      "  const n = Number(((num < 0 ? -num : num) / 1000 ** exponent).toPrecision(precision));",
+      "  return (num < 0 ? '-' : '') + n + (addSpace ? ' ' : '') + UNITS[exponent];",
+      "};"
+    ],
+    "description": "Converts a number in bytes to a human-readable string."
+  },
+  "primes": {
+    "prefix": "30s_primes",
+    "body": [
+      "const primes = num => {",
+      "  let arr = Array.from({ length: num - 1 }).map((x, i) => i + 2),",
+      "    sqroot = Math.floor(Math.sqrt(num)),",
+      "    numsTillSqroot = Array.from({ length: sqroot - 1 }).map((x, i) => i + 2);",
+      "  numsTillSqroot.forEach(x => (arr = arr.filter(y => y % x !== 0 || y === x)));",
+      "  return arr;",
+      "};"
+    ],
+    "description": "Generates primes up to a given number, using the Sieve of Eratosthenes."
+  },
+  "promisify": {
+    "prefix": "30s_promisify",
+    "body": [
+      "const promisify = func => (...args) =>",
+      "  new Promise((resolve, reject) =>",
+      "    func(...args, (err, result) => (err ? reject(err) : resolve(result)))",
+      "  );"
+    ],
+    "description": "Converts an asynchronous function to return a promise."
+  },
+  "pull": {
+    "prefix": "30s_pull",
+    "body": [
+      "const pull = (arr, ...args) => {",
+      "  let argState = Array.isArray(args[0]) ? args[0] : args;",
+      "  let pulled = arr.filter((v, i) => !argState.includes(v));",
+      "  arr.length = 0;",
+      "  pulled.forEach(v => arr.push(v));",
+      "};"
+    ],
+    "description": "Mutates the original array to filter out the values specified."
+  },
+  "pullAtIndex": {
+    "prefix": "30s_pullAtIndex",
+    "body": [
+      "const pullAtIndex = (arr, pullArr) => {",
+      "  let removed = [];",
+      "  let pulled = arr",
+      "    .map((v, i) => (pullArr.includes(i) ? removed.push(v) : v))",
+      "    .filter((v, i) => !pullArr.includes(i));",
+      "  arr.length = 0;",
+      "  pulled.forEach(v => arr.push(v));",
+      "  return removed;",
+      "};"
+    ],
+    "description": "Mutates the original array to filter out the values at the specified indexes."
+  },
+  "pullAtValue": {
+    "prefix": "30s_pullAtValue",
+    "body": [
+      "const pullAtValue = (arr, pullArr) => {",
+      "  let removed = [],",
+      "    pushToRemove = arr.forEach((v, i) => (pullArr.includes(v) ? removed.push(v) : v)),",
+      "    mutateTo = arr.filter((v, i) => !pullArr.includes(v));",
+      "  arr.length = 0;",
+      "  mutateTo.forEach(v => arr.push(v));",
+      "  return removed;",
+      "};"
+    ],
+    "description": "Mutates the original array to filter out the values specified. Returns the removed elements."
+  },
+  "pullBy": {
+    "prefix": "30s_pullBy",
+    "body": [
+      "const pullBy = (arr, ...args) => {",
+      "  const length = args.length;",
+      "  let fn = length > 1 ? args[length - 1] : undefined;",
+      "  fn = typeof fn == 'function' ? (args.pop(), fn) : undefined;",
+      "  let argState = (Array.isArray(args[0]) ? args[0] : args).map(val => fn(val));",
+      "  let pulled = arr.filter((v, i) => !argState.includes(fn(v)));",
+      "  arr.length = 0;",
+      "  pulled.forEach(v => arr.push(v));",
+      "};"
+    ],
+    "description": "Mutates the original array to filter out the values specified, based on a given iterator function."
+  },
+  "radsToDegrees": {
+    "prefix": "30s_radsToDegrees",
+    "body": [
+      "const radsToDegrees = rad => (rad * 180.0) / Math.PI;"
+    ],
+    "description": "Converts an angle from radians to degrees."
+  },
+  "randomHexColorCode": {
+    "prefix": "30s_randomHexColorCode",
+    "body": [
+      "const randomHexColorCode = () => {",
+      "  let n = (Math.random() * 0xfffff * 1000000).toString(16);",
+      "  return '#' + n.slice(0, 6);",
+      "};"
+    ],
+    "description": "Generates a random hexadecimal color code."
+  },
+  "randomIntArrayInRange": {
+    "prefix": "30s_randomIntArrayInRange",
+    "body": [
+      "const randomIntArrayInRange = (min, max, n = 1) =>",
+      "  Array.from({ length: n }, () => Math.floor(Math.random() * (max - min + 1)) + min);"
+    ],
+    "description": "Returns an array of n random integers in the specified range."
+  },
+  "randomIntegerInRange": {
+    "prefix": "30s_randomIntegerInRange",
+    "body": [
+      "const randomIntegerInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;"
+    ],
+    "description": "Returns a random integer in the specified range."
+  },
+  "randomNumberInRange": {
+    "prefix": "30s_randomNumberInRange",
+    "body": [
+      "const randomNumberInRange = (min, max) => Math.random() * (max - min) + min;"
+    ],
+    "description": "Returns a random number in the specified range."
+  },
+  "readFileLines": {
+    "prefix": "30s_readFileLines",
+    "body": [
+      "const fs = require('fs');",
+      "const readFileLines = filename =>",
+      "  fs",
+      "    .readFileSync(filename)",
+      "    .toString('UTF8')",
+      "    .split('\\n');"
+    ],
+    "description": "Returns an array of lines from the specified file."
+  },
+  "rearg": {
+    "prefix": "30s_rearg",
+    "body": [
+      "const rearg = (fn, indexes) => (...args) => fn(...indexes.map(i => args[i]));"
+    ],
+    "description": "Creates a function that invokes the provided function with its arguments arranged according to the specified indexes."
+  },
+  "recordAnimationFrames": {
+    "prefix": "30s_recordAnimationFrames",
+    "body": [
+      "const recordAnimationFrames = (callback, autoStart = true) => {",
+      "  let running = true,",
+      "    raf;",
+      "  const stop = () => {",
+      "    running = false;",
+      "    cancelAnimationFrame(raf);",
+      "  };",
+      "  const start = () => {",
+      "    running = true;",
+      "    run();",
+      "  };",
+      "  const run = () => {",
+      "    raf = requestAnimationFrame(() => {",
+      "      callback();",
+      "      if (running) run();",
+      "    });",
+      "  };",
+      "  if (autoStart) start();",
+      "  return { start, stop };",
+      "};"
+    ],
+    "description": "Invokes the provided callback on each animation frame."
+  },
+  "redirect": {
+    "prefix": "30s_redirect",
+    "body": [
+      "const redirect = (url, asLink = true) =>",
+      "  asLink ? (window.location.href = url) : window.location.replace(url);"
+    ],
+    "description": "Redirects to a specified URL."
+  },
+  "reducedFilter": {
+    "prefix": "30s_reducedFilter",
+    "body": [
+      "const reducedFilter = (data, keys, fn) =>",
+      "  data.filter(fn).map(el =>",
+      "    keys.reduce((acc, key) => {",
+      "      acc[key] = el[key];",
+      "      return acc;",
+      "    }, {})",
+      "  );"
+    ],
+    "description": "Filter an array of objects based on a condition while also filtering out unspecified keys."
+  },
+  "reduceSuccessive": {
+    "prefix": "30s_reduceSuccessive",
+    "body": [
+      "const reduceSuccessive = (arr, fn, acc) =>",
+      "  arr.reduce((res, val, i, arr) => (res.push(fn(res.slice(-1)[0], val, i, arr)), res), [acc]);"
+    ],
+    "description": "Applies a function against an accumulator and each element in the array (from left to right), returning an array of successively reduced values."
+  },
+  "reduceWhich": {
+    "prefix": "30s_reduceWhich",
+    "body": [
+      "const reduceWhich = (arr, comparator = (a, b) => a - b) =>",
+      "  arr.reduce((a, b) => (comparator(a, b) >= 0 ? b : a));"
+    ],
+    "description": "Returns the minimum/maximum value of an array, after applying the provided function to set comparing rule."
+  },
+  "reject": {
+    "prefix": "30s_reject",
+    "body": [
+      "const reject = (pred, array) => array.filter((...args) => !pred(...args));"
+    ],
+    "description": "Takes a predicate and array, like `Array.prototype.filter()`, but only keeps `x` if `pred(x) === false`"
+  },
+  "remove": {
+    "prefix": "30s_remove",
+    "body": [
+      "const remove = (arr, func) =>",
+      "  Array.isArray(arr)",
+      "    ? arr.filter(func).reduce((acc, val) => {",
+      "      arr.splice(arr.indexOf(val), 1);",
+      "      return acc.concat(val);",
+      "    }, [])",
+      "    : [];"
+    ],
+    "description": "Removes elements from an array for which the given function returns `false`."
+  },
+  "removeNonASCII": {
+    "prefix": "30s_removeNonASCII",
+    "body": [
+      "const removeNonASCII = str => str.replace(/[^\\x20-\\x7E]/g, '');"
+    ],
+    "description": "Removes non-printable ASCII characters."
+  },
+  "renameKeys": {
+    "prefix": "30s_renameKeys",
+    "body": [
+      "const renameKeys = (keysMap, obj) =>",
+      "  Object.keys(obj).reduce(",
+      "    (acc, key) => ({",
+      "      ...acc,",
+      "      ...{ [keysMap[key] || key]: obj[key] }",
+      "    }),",
+      "    {}",
+      "  );"
+    ],
+    "description": "Replaces the names of multiple object keys with the values provided."
+  },
+  "reverseString": {
+    "prefix": "30s_reverseString",
+    "body": [
+      "const reverseString = str => [...str].reverse().join('');"
+    ],
+    "description": "Reverses a string."
+  },
+  "RGBToHex": {
+    "prefix": "30s_RGBToHex",
+    "body": [
+      "const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');"
+    ],
+    "description": "Converts the values of RGB components to a color code."
+  },
+  "round": {
+    "prefix": "30s_round",
+    "body": [
+      "const round = (n, decimals = 0) => Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`);"
+    ],
+    "description": "Rounds a number to a specified amount of digits."
+  },
+  "runAsync": {
+    "prefix": "30s_runAsync",
+    "body": [
+      "const runAsync = fn => {",
+      "  const worker = new Worker(",
+      "    URL.createObjectURL(new Blob([`postMessage((${fn})());`]), {",
+      "      type: 'application/javascript; charset=utf-8'",
+      "    })",
+      "  );",
+      "  return new Promise((res, rej) => {",
+      "    worker.onmessage = ({ data }) => {",
+      "      res(data), worker.terminate();",
+      "    };",
+      "    worker.onerror = err => {",
+      "      rej(err), worker.terminate();",
+      "    };",
+      "  });",
+      "};"
+    ],
+    "description": "Runs a function in a separate thread by using a [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), allowing long running functions to not block the UI."
+  },
+  "runPromisesInSeries": {
+    "prefix": "30s_runPromisesInSeries",
+    "body": [
+      "const runPromisesInSeries = ps => ps.reduce((p, next) => p.then(next), Promise.resolve());"
+    ],
+    "description": "Runs an array of promises in series."
+  },
+  "sample": {
+    "prefix": "30s_sample",
+    "body": [
+      "const sample = arr => arr[Math.floor(Math.random() * arr.length)];"
+    ],
+    "description": "Returns a random element from an array."
+  },
+  "sampleSize": {
+    "prefix": "30s_sampleSize",
+    "body": [
+      "const sampleSize = ([...arr], n = 1) => {",
+      "  let m = arr.length;",
+      "  while (m) {",
+      "    const i = Math.floor(Math.random() * m--);",
+      "    [arr[m], arr[i]] = [arr[i], arr[m]];",
+      "  }",
+      "  return arr.slice(0, n);",
+      "};"
+    ],
+    "description": "Gets `n` random elements at unique keys from `array` up to the size of `array`."
+  },
+  "scrollToTop": {
+    "prefix": "30s_scrollToTop",
+    "body": [
+      "const scrollToTop = () => {",
+      "  const c = document.documentElement.scrollTop || document.body.scrollTop;",
+      "  if (c > 0) {",
+      "    window.requestAnimationFrame(scrollToTop);",
+      "    window.scrollTo(0, c - c / 8);",
+      "  }",
+      "};"
+    ],
+    "description": "Smooth-scrolls to the top of the page."
+  },
+  "sdbm": {
+    "prefix": "30s_sdbm",
+    "body": [
+      "const sdbm = str => {",
+      "  let arr = str.split('');",
+      "  return arr.reduce(",
+      "    (hashCode, currentVal) =>",
+      "      (hashCode = currentVal.charCodeAt(0) + (hashCode << 6) + (hashCode << 16) - hashCode),",
+      "    0",
+      "  );",
+      "};"
+    ],
+    "description": "Hashes the input string into a whole number."
+  },
+  "serializeCookie": {
+    "prefix": "30s_serializeCookie",
+    "body": [
+      "const serializeCookie = (name, val) => `${encodeURIComponent(name)}=${encodeURIComponent(val)}`;"
+    ],
+    "description": "Serialize a cookie name-value pair into a Set-Cookie header string."
+  },
+  "setStyle": {
+    "prefix": "30s_setStyle",
+    "body": [
+      "const setStyle = (el, ruleName, val) => (el.style[ruleName] = val);"
+    ],
+    "description": "Sets the value of a CSS rule for the specified element."
+  },
+  "shallowClone": {
+    "prefix": "30s_shallowClone",
+    "body": [
+      "const shallowClone = obj => Object.assign({}, obj);"
+    ],
+    "description": "Creates a shallow clone of an object."
+  },
+  "shank": {
+    "prefix": "30s_shank",
+    "body": [
+      "const shank = (arr, index = 0, delCount = 0, ...elements) =>",
+      "  arr",
+      "    .slice(0, index)",
+      "    .concat(elements)",
+      "    .concat(arr.slice(index + delCount));"
+    ],
+    "description": "Has the same functionality as [`Array.prototype.prototype.splice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice), but returning a new array instead of mutating the original array."
+  },
+  "show": {
+    "prefix": "30s_show",
+    "body": [
+      "const show = (...el) => [...el].forEach(e => (e.style.display = ''));"
+    ],
+    "description": "Shows all the elements specified."
+  },
+  "shuffle": {
+    "prefix": "30s_shuffle",
+    "body": [
+      "const shuffle = ([...arr]) => {",
+      "  let m = arr.length;",
+      "  while (m) {",
+      "    const i = Math.floor(Math.random() * m--);",
+      "    [arr[m], arr[i]] = [arr[i], arr[m]];",
+      "  }",
+      "  return arr;",
+      "};"
+    ],
+    "description": "Randomizes the order of the values of an array, returning a new array."
+  },
+  "similarity": {
+    "prefix": "30s_similarity",
+    "body": [
+      "const similarity = (arr, values) => arr.filter(v => values.includes(v));"
+    ],
+    "description": "Returns an array of elements that appear in both arrays."
+  },
+  "size": {
+    "prefix": "30s_size",
+    "body": [
+      "const size = val =>",
+      "  Array.isArray(val)",
+      "    ? val.length",
+      "    : val && typeof val === 'object'",
+      "      ? val.size || val.length || Object.keys(val).length",
+      "      : typeof val === 'string'",
+      "        ? new Blob([val]).size",
+      "        : 0;"
+    ],
+    "description": "Get size of arrays, objects or strings."
+  },
+  "sleep": {
+    "prefix": "30s_sleep",
+    "body": [
+      "const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));"
+    ],
+    "description": "Delays the execution of an asynchronous function."
+  },
+  "smoothScroll": {
+    "prefix": "30s_smoothScroll",
+    "body": [
+      "const smoothScroll = element =>",
+      "  document.querySelector(element).scrollIntoView({",
+      "    behavior: 'smooth'",
+      "  });"
+    ],
+    "description": "Smoothly scrolls the element on which it's called into the visible area of the browser window."
+  },
+  "sortCharactersInString": {
+    "prefix": "30s_sortCharactersInString",
+    "body": [
+      "const sortCharactersInString = str => [...str].sort((a, b) => a.localeCompare(b)).join('');"
+    ],
+    "description": "Alphabetically sorts the characters in a string."
+  },
+  "sortedIndex": {
+    "prefix": "30s_sortedIndex",
+    "body": [
+      "const sortedIndex = (arr, n) => {",
+      "  const isDescending = arr[0] > arr[arr.length - 1];",
+      "  const index = arr.findIndex(el => (isDescending ? n >= el : n <= el));",
+      "  return index === -1 ? arr.length : index;",
+      "};"
+    ],
+    "description": "Returns the lowest index at which value should be inserted into array in order to maintain its sort order."
+  },
+  "sortedIndexBy": {
+    "prefix": "30s_sortedIndexBy",
+    "body": [
+      "const sortedIndexBy = (arr, n, fn) => {",
+      "  const isDescending = fn(arr[0]) > fn(arr[arr.length - 1]);",
+      "  const val = fn(n);",
+      "  const index = arr.findIndex(el => (isDescending ? val >= fn(el) : val <= fn(el)));",
+      "  return index === -1 ? arr.length : index;",
+      "};"
+    ],
+    "description": "Returns the lowest index at which value should be inserted into array in order to maintain its sort order, based on a provided iterator function."
+  },
+  "sortedLastIndex": {
+    "prefix": "30s_sortedLastIndex",
+    "body": [
+      "const sortedLastIndex = (arr, n) => {",
+      "  const isDescending = arr[0] > arr[arr.length - 1];",
+      "  const index = arr.reverse().findIndex(el => (isDescending ? n <= el : n >= el));",
+      "  return index === -1 ? 0 : arr.length - index;",
+      "};"
+    ],
+    "description": "Returns the highest index at which value should be inserted into array in order to maintain its sort order."
+  },
+  "sortedLastIndexBy": {
+    "prefix": "30s_sortedLastIndexBy",
+    "body": [
+      "const sortedLastIndexBy = (arr, n, fn) => {",
+      "  const isDescending = fn(arr[0]) > fn(arr[arr.length - 1]);",
+      "  const val = fn(n);",
+      "  const index = arr",
+      "    .map(fn)",
+      "    .reverse()",
+      "    .findIndex(el => (isDescending ? val <= el : val >= el));",
+      "  return index === -1 ? 0 : arr.length - index;",
+      "};"
+    ],
+    "description": "Returns the highest index at which value should be inserted into array in order to maintain its sort order, based on a provided iterator function."
+  },
+  "splitLines": {
+    "prefix": "30s_splitLines",
+    "body": [
+      "const splitLines = str => str.split(/\\r?\\n/);"
+    ],
+    "description": "Splits a multiline string into an array of lines."
+  },
+  "spreadOver": {
+    "prefix": "30s_spreadOver",
+    "body": [
+      "const spreadOver = fn => argsArr => fn(...argsArr);"
+    ],
+    "description": "Takes a variadic function and returns a closure that accepts an array of arguments to map to the inputs of the function."
+  },
+  "stableSort": {
+    "prefix": "30s_stableSort",
+    "body": [
+      "const stableSort = (arr, compare) =>",
+      "  arr",
+      "    .map((item, index) => ({ item, index }))",
+      "    .sort((a, b) => compare(a.item, b.item) || a.index - b.index)",
+      "    .map(({ item }) => item);"
+    ],
+    "description": "Performs stable sorting of an array, preserving the initial indexes of items when their values are the same.\r\nDoes not mutate the original array, but returns a new array instead."
+  },
+  "standardDeviation": {
+    "prefix": "30s_standardDeviation",
+    "body": [
+      "const standardDeviation = (arr, usePopulation = false) => {",
+      "  const mean = arr.reduce((acc, val) => acc + val, 0) / arr.length;",
+      "  return Math.sqrt(",
+      "    arr.reduce((acc, val) => acc.concat((val - mean) ** 2), []).reduce((acc, val) => acc + val, 0) /",
+      "      (arr.length - (usePopulation ? 0 : 1))",
+      "  );",
+      "};"
+    ],
+    "description": "Returns the standard deviation of an array of numbers."
+  },
+  "stringPermutations": {
+    "prefix": "30s_stringPermutations",
+    "body": [
+      "const stringPermutations = str => {",
+      "  if (str.length <= 2) return str.length === 2 ? [str, str[1] + str[0]] : [str];",
+      "  return str",
+      "    .split('')",
+      "    .reduce(",
+      "      (acc, letter, i) =>",
+      "        acc.concat(stringPermutations(str.slice(0, i) + str.slice(i + 1)).map(val => letter + val)),",
+      "      []",
+      "    );",
+      "};"
+    ],
+    "description": "⚠️ **WARNING**: This function's execution time increases exponentially with each character. Anything more than 8 to 10 characters will cause your browser to hang as it tries to solve all the different combinations."
+  },
+  "stripHTMLTags": {
+    "prefix": "30s_stripHTMLTags",
+    "body": [
+      "const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');"
+    ],
+    "description": "Removes HTML/XML tags from string."
+  },
+  "sum": {
+    "prefix": "30s_sum",
+    "body": [
+      "const sum = (...arr) => [...arr].reduce((acc, val) => acc + val, 0);"
+    ],
+    "description": "Returns the sum of two or more numbers/arrays."
+  },
+  "sumBy": {
+    "prefix": "30s_sumBy",
+    "body": [
+      "const sumBy = (arr, fn) =>",
+      "  arr.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val) => acc + val, 0);"
+    ],
+    "description": "Returns the sum of an array, after mapping each element to a value using the provided function."
+  },
+  "sumPower": {
+    "prefix": "30s_sumPower",
+    "body": [
+      "const sumPower = (end, power = 2, start = 1) =>",
+      "  Array(end + 1 - start)",
+      "    .fill(0)",
+      "    .map((x, i) => (i + start) ** power)",
+      "    .reduce((a, b) => a + b, 0);"
+    ],
+    "description": "Returns the sum of the powers of all the numbers from `start` to `end` (both inclusive)."
+  },
+  "symmetricDifference": {
+    "prefix": "30s_symmetricDifference",
+    "body": [
+      "const symmetricDifference = (a, b) => {",
+      "  const sA = new Set(a),",
+      "    sB = new Set(b);",
+      "  return [...a.filter(x => !sB.has(x)), ...b.filter(x => !sA.has(x))];",
+      "};"
+    ],
+    "description": "Returns the symmetric difference between two arrays, without filtering out duplicate values."
+  },
+  "symmetricDifferenceBy": {
+    "prefix": "30s_symmetricDifferenceBy",
+    "body": [
+      "const symmetricDifferenceBy = (a, b, fn) => {",
+      "  const sA = new Set(a.map(v => fn(v))),",
+      "    sB = new Set(b.map(v => fn(v)));",
+      "  return [...a.filter(x => !sB.has(fn(x))), ...b.filter(x => !sA.has(fn(x)))];",
+      "};"
+    ],
+    "description": "Returns the symmetric difference between two arrays, after applying the provided function to each array element of both."
+  },
+  "symmetricDifferenceWith": {
+    "prefix": "30s_symmetricDifferenceWith",
+    "body": [
+      "const symmetricDifferenceWith = (arr, val, comp) => [",
+      "  ...arr.filter(a => val.findIndex(b => comp(a, b)) === -1),",
+      "  ...val.filter(a => arr.findIndex(b => comp(a, b)) === -1)",
+      "];"
+    ],
+    "description": "Returns the symmetric difference between two arrays, using a provided function as a comparator."
+  },
+  "tail": {
+    "prefix": "30s_tail",
+    "body": [
+      "const tail = arr => (arr.length > 1 ? arr.slice(1) : arr);"
+    ],
+    "description": "Returns all elements in an array except for the first one."
+  },
+  "take": {
+    "prefix": "30s_take",
+    "body": [
+      "const take = (arr, n = 1) => arr.slice(0, n);"
+    ],
+    "description": "Returns an array with n elements removed from the beginning."
+  },
+  "takeRight": {
+    "prefix": "30s_takeRight",
+    "body": [
+      "const takeRight = (arr, n = 1) => arr.slice(arr.length - n, arr.length);"
+    ],
+    "description": "Returns an array with n elements removed from the end."
+  },
+  "takeRightWhile": {
+    "prefix": "30s_takeRightWhile",
+    "body": [
+      "const takeRightWhile = (arr, func) =>",
+      "  arr.reduceRight((acc, el) => (func(el) ? acc : [el, ...acc]), []);"
+    ],
+    "description": "Removes elements from the end of an array until the passed function returns `true`. Returns the removed elements."
+  },
+  "takeWhile": {
+    "prefix": "30s_takeWhile",
+    "body": [
+      "const takeWhile = (arr, func) => {",
+      "  for (const [i, val] of arr.entries()) if (func(val)) return arr.slice(0, i);",
+      "  return arr;",
+      "};"
+    ],
+    "description": "Removes elements in an array until the passed function returns `true`. Returns the removed elements."
+  },
+  "throttle": {
+    "prefix": "30s_throttle",
+    "body": [
+      "const throttle = (fn, wait) => {",
+      "  let inThrottle, lastFn, lastTime;",
+      "  return function() {",
+      "    const context = this,",
+      "      args = arguments;",
+      "    if (!inThrottle) {",
+      "      fn.apply(context, args);",
+      "      lastTime = Date.now();",
+      "      inThrottle = true;",
+      "    } else {",
+      "      clearTimeout(lastFn);",
+      "      lastFn = setTimeout(function() {",
+      "        if (Date.now() - lastTime >= wait) {",
+      "          fn.apply(context, args);",
+      "          lastTime = Date.now();",
+      "        }",
+      "      }, Math.max(wait - (Date.now() - lastTime), 0));",
+      "    }",
+      "  };",
+      "};"
+    ],
+    "description": "Creates a throttled function that only invokes the provided function at most once per every `wait` milliseconds"
+  },
+  "times": {
+    "prefix": "30s_times",
+    "body": [
+      "const times = (n, fn, context = undefined) => {",
+      "  let i = 0;",
+      "  while (fn.call(context, i) !== false && ++i < n) {}",
+      "};"
+    ],
+    "description": "Iterates over a callback `n` times"
+  },
+  "timeTaken": {
+    "prefix": "30s_timeTaken",
+    "body": [
+      "const timeTaken = callback => {",
+      "  console.time('timeTaken');",
+      "  const r = callback();",
+      "  console.timeEnd('timeTaken');",
+      "  return r;",
+      "};"
+    ],
+    "description": "Measures the time taken by a function to execute."
+  },
+  "toCamelCase": {
+    "prefix": "30s_toCamelCase",
+    "body": [
+      "const toCamelCase = str => {",
+      "  let s =",
+      "    str &&",
+      "    str",
+      "      .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)",
+      "      .map(x => x.slice(0, 1).toUpperCase() + x.slice(1).toLowerCase())",
+      "      .join('');",
+      "  return s.slice(0, 1).toLowerCase() + s.slice(1);",
+      "};"
+    ],
+    "description": "Converts a string to camelcase."
+  },
+  "toCurrency": {
+    "prefix": "30s_toCurrency",
+    "body": [
+      "const toCurrency = (n, curr, LanguageFormat = undefined) =>",
+      "  Intl.NumberFormat(LanguageFormat, { style: 'currency', currency: curr }).format(n);"
+    ],
+    "description": "Take a number and return specified currency formatting."
+  },
+  "toDecimalMark": {
+    "prefix": "30s_toDecimalMark",
+    "body": [
+      "const toDecimalMark = num => num.toLocaleString('en-US');"
+    ],
+    "description": "Use `toLocaleString()` to convert a float-point arithmetic to the [Decimal mark](https://en.wikipedia.org/wiki/Decimal_mark) form. It makes a comma separated string from a number"
+  },
+  "toggleClass": {
+    "prefix": "30s_toggleClass",
+    "body": [
+      "const toggleClass = (el, className) => el.classList.toggle(className);"
+    ],
+    "description": "Toggle a class for an element."
+  },
+  "toHash": {
+    "prefix": "30s_toHash",
+    "body": [
+      "const toHash = (object, key) =>",
+      "  Array.prototype.reduce.call(",
+      "    object,",
+      "    (acc, data, index) => ((acc[!key ? index : data[key]] = data), acc),",
+      "    {}",
+      "  );"
+    ],
+    "description": "Reduces a given Array-like into a value hash (keyed data store)."
+  },
+  "toKebabCase": {
+    "prefix": "30s_toKebabCase",
+    "body": [
+      "const toKebabCase = str =>",
+      "  str &&",
+      "  str",
+      "    .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)",
+      "    .map(x => x.toLowerCase())",
+      "    .join('-');"
+    ],
+    "description": "Converts a string to kebab case."
+  },
+  "tomorrow": {
+    "prefix": "30s_tomorrow",
+    "body": [
+      "const tomorrow = (long = false) => {",
+      "  let t = new Date();",
+      "  t.setDate(t.getDate() + 1);",
+      "  const ret = `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, '0')}-${String(",
+      "    t.getDate()",
+      "  ).padStart(2, '0')}`;",
+      "  return !long ? ret : `${ret}T00:00:00`;",
+      "};"
+    ],
+    "description": "Results in a string representation of tomorrow's date."
+  },
+  "toOrdinalSuffix": {
+    "prefix": "30s_toOrdinalSuffix",
+    "body": [
+      "const toOrdinalSuffix = num => {",
+      "  const int = parseInt(num),",
+      "    digits = [int % 10, int % 100],",
+      "    ordinals = ['st', 'nd', 'rd', 'th'],",
+      "    oPattern = [1, 2, 3, 4],",
+      "    tPattern = [11, 12, 13, 14, 15, 16, 17, 18, 19];",
+      "  return oPattern.includes(digits[0]) && !tPattern.includes(digits[1])",
+      "    ? int + ordinals[digits[0] - 1]",
+      "    : int + ordinals[3];",
+      "};"
+    ],
+    "description": "Adds an ordinal suffix to a number."
+  },
+  "toSafeInteger": {
+    "prefix": "30s_toSafeInteger",
+    "body": [
+      "const toSafeInteger = num =>",
+      "  Math.round(Math.max(Math.min(num, Number.MAX_SAFE_INTEGER), Number.MIN_SAFE_INTEGER));"
+    ],
+    "description": "Converts a value to a safe integer."
+  },
+  "toSnakeCase": {
+    "prefix": "30s_toSnakeCase",
+    "body": [
+      "const toSnakeCase = str =>",
+      "  str &&",
+      "  str",
+      "    .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)",
+      "    .map(x => x.toLowerCase())",
+      "    .join('_');"
+    ],
+    "description": "Converts a string to snake case."
+  },
+  "toTitleCase": {
+    "prefix": "30s_toTitleCase",
+    "body": [
+      "const toTitleCase = str =>",
+      "  str",
+      "    .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)",
+      "    .map(x => x.charAt(0).toUpperCase() + x.slice(1))",
+      "    .join(' ');"
+    ],
+    "description": "Converts a string to title case."
+  },
+  "transform": {
+    "prefix": "30s_transform",
+    "body": [
+      "const transform = (obj, fn, acc) => Object.keys(obj).reduce((a, k) => fn(a, obj[k], k, obj), acc);"
+    ],
+    "description": "Applies a function against an accumulator and each key in the object (from left to right)."
+  },
+  "triggerEvent": {
+    "prefix": "30s_triggerEvent",
+    "body": [
+      "const triggerEvent = (el, eventType, detail) =>",
+      "  el.dispatchEvent(new CustomEvent(eventType, { detail }));"
+    ],
+    "description": "Triggers a specific event on a given element, optionally passing custom data."
+  },
+  "truncateString": {
+    "prefix": "30s_truncateString",
+    "body": [
+      "const truncateString = (str, num) =>",
+      "  str.length > num ? str.slice(0, num > 3 ? num - 3 : num) + '...' : str;"
+    ],
+    "description": "Truncates a string up to a specified length."
+  },
+  "truthCheckCollection": {
+    "prefix": "30s_truthCheckCollection",
+    "body": [
+      "const truthCheckCollection = (collection, pre) => collection.every(obj => obj[pre]);"
+    ],
+    "description": "Checks if the predicate (second argument) is truthy on all elements of a collection (first argument)."
+  },
+  "unary": {
+    "prefix": "30s_unary",
+    "body": [
+      "const unary = fn => val => fn(val);"
+    ],
+    "description": "Creates a function that accepts up to one argument, ignoring any additional arguments."
+  },
+  "uncurry": {
+    "prefix": "30s_uncurry",
+    "body": [
+      "const uncurry = (fn, n = 1) => (...args) => {",
+      "  const next = acc => args => args.reduce((x, y) => x(y), acc);",
+      "  if (n > args.length) throw new RangeError('Arguments too few!');",
+      "  return next(fn)(args.slice(0, n));",
+      "};"
+    ],
+    "description": "Uncurries a function up to depth `n`."
+  },
+  "unescapeHTML": {
+    "prefix": "30s_unescapeHTML",
+    "body": [
+      "const unescapeHTML = str =>",
+      "  str.replace(",
+      "    /&amp;|&lt;|&gt;|&#39;|&quot;/g,",
+      "    tag =>",
+      "      ({",
+      "        '&amp;': '&',",
+      "        '&lt;': '<',",
+      "        '&gt;': '>',",
+      "        '&#39;': \"'\",",
+      "        '&quot;': '\"'",
+      "      }[tag] || tag)",
+      "  );"
+    ],
+    "description": "Unescapes escaped HTML characters."
+  },
+  "unflattenObject": {
+    "prefix": "30s_unflattenObject",
+    "body": [
+      "const unflattenObject = obj =>",
+      "  Object.keys(obj).reduce((acc, k) => {",
+      "    if (k.indexOf('.') !== -1) {",
+      "      const keys = k.split('.');",
+      "      Object.assign(",
+      "        acc,",
+      "        JSON.parse(",
+      "          '{' +",
+      "            keys.map((v, i) => (i !== keys.length - 1 ? `\"${v}\":{` : `\"${v}\":`)).join('') +",
+      "            obj[k] +",
+      "            '}'.repeat(keys.length)",
+      "        )",
+      "      );",
+      "    } else acc[k] = obj[k];",
+      "    return acc;",
+      "  }, {});"
+    ],
+    "description": "Unflatten an object with the paths for keys."
+  },
+  "unfold": {
+    "prefix": "30s_unfold",
+    "body": [
+      "const unfold = (fn, seed) => {",
+      "  let result = [],",
+      "    val = [null, seed];",
+      "  while ((val = fn(val[1]))) result.push(val[0]);",
+      "  return result;",
+      "};"
+    ],
+    "description": "Builds an array, using an iterator function and an initial seed value."
+  },
+  "union": {
+    "prefix": "30s_union",
+    "body": [
+      "const union = (a, b) => Array.from(new Set([...a, ...b]));"
+    ],
+    "description": "Returns every element that exists in any of the two arrays once."
+  },
+  "unionBy": {
+    "prefix": "30s_unionBy",
+    "body": [
+      "const unionBy = (a, b, fn) => {",
+      "  const s = new Set(a.map(fn));",
+      "  return Array.from(new Set([...a, ...b.filter(x => !s.has(fn(x)))]));",
+      "};"
+    ],
+    "description": "Returns every element that exists in any of the two arrays once, after applying the provided function to each array element of both."
+  },
+  "unionWith": {
+    "prefix": "30s_unionWith",
+    "body": [
+      "const unionWith = (a, b, comp) =>",
+      "  Array.from(new Set([...a, ...b.filter(x => a.findIndex(y => comp(x, y)) === -1)]));"
+    ],
+    "description": "Returns every element that exists in any of the two arrays once, using a provided comparator function."
+  },
+  "uniqueElements": {
+    "prefix": "30s_uniqueElements",
+    "body": [
+      "const uniqueElements = arr => [...new Set(arr)];"
+    ],
+    "description": "Returns all unique values of an array."
+  },
+  "uniqueElementsBy": {
+    "prefix": "30s_uniqueElementsBy",
+    "body": [
+      "const uniqueElementsBy = (arr, fn) =>",
+      "  arr.reduce((acc, v) => {",
+      "    if (!acc.some(x => fn(v, x))) acc.push(v);",
+      "    return acc;",
+      "  }, []);"
+    ],
+    "description": "Returns all unique values of an array, based on a provided comparator function."
+  },
+  "uniqueElementsByRight": {
+    "prefix": "30s_uniqueElementsByRight",
+    "body": [
+      "const uniqueElementsByRight = (arr, fn) =>",
+      "  arr.reduceRight((acc, v) => {",
+      "    if (!acc.some(x => fn(v, x))) acc.push(v);",
+      "    return acc;",
+      "  }, []);"
+    ],
+    "description": "Returns all unique values of an array, based on a provided comparator function."
+  },
+  "uniqueSymmetricDifference": {
+    "prefix": "30s_uniqueSymmetricDifference",
+    "body": [
+      "const uniqueSymmetricDifference = (a, b) => [",
+      "  ...new Set([...a.filter(v => !b.includes(v)), ...b.filter(v => !a.includes(v))])",
+      "];"
+    ],
+    "description": "Returns the unique symmetric difference between two arrays, not containing duplicate values from either array."
+  },
+  "untildify": {
+    "prefix": "30s_untildify",
+    "body": [
+      "const untildify = str => str.replace(/^~($|\\/|\\\\)/, `${require('os').homedir()}$1`);"
+    ],
+    "description": "Converts a tilde path to an absolute path."
+  },
+  "unzip": {
+    "prefix": "30s_unzip",
+    "body": [
+      "const unzip = arr =>",
+      "  arr.reduce(",
+      "    (acc, val) => (val.forEach((v, i) => acc[i].push(v)), acc),",
+      "    Array.from({",
+      "      length: Math.max(...arr.map(x => x.length))",
+      "    }).map(x => [])",
+      "  );"
+    ],
+    "description": "Creates an array of arrays, ungrouping the elements in an array produced by [zip](#zip)."
+  },
+  "unzipWith": {
+    "prefix": "30s_unzipWith",
+    "body": [
+      "const unzipWith = (arr, fn) =>",
+      "  arr",
+      "    .reduce(",
+      "      (acc, val) => (val.forEach((v, i) => acc[i].push(v)), acc),",
+      "      Array.from({",
+      "        length: Math.max(...arr.map(x => x.length))",
+      "      }).map(x => [])",
+      "    )",
+      "    .map(val => fn(...val));"
+    ],
+    "description": "Creates an array of elements, ungrouping the elements in an array produced by [zip](#zip) and applying the provided function."
+  },
+  "URLJoin": {
+    "prefix": "30s_URLJoin",
+    "body": [
+      "const URLJoin = (...args) =>",
+      "  args",
+      "    .join('/')",
+      "    .replace(/[\\/]+/g, '/')",
+      "    .replace(/^(.+):\\//, '$1://')",
+      "    .replace(/^file:/, 'file:/')",
+      "    .replace(/\\/(\\?|&|#[^!])/g, '$1')",
+      "    .replace(/\\?/g, '&')",
+      "    .replace('&', '?');"
+    ],
+    "description": "Joins all given URL segments together, then normalizes the resulting URL."
+  },
+  "UUIDGeneratorBrowser": {
+    "prefix": "30s_UUIDGeneratorBrowser",
+    "body": [
+      "const UUIDGeneratorBrowser = () =>",
+      "  ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>",
+      "    (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)",
+      "  );"
+    ],
+    "description": "Generates a UUID in a browser."
+  },
+  "UUIDGeneratorNode": {
+    "prefix": "30s_UUIDGeneratorNode",
+    "body": [
+      "const crypto = require('crypto');",
+      "const UUIDGeneratorNode = () =>",
+      "  ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>",
+      "    (c ^ (crypto.randomBytes(1)[0] & (15 >> (c / 4)))).toString(16)",
+      "  );"
+    ],
+    "description": "Generates a UUID in Node.JS."
+  },
+  "validateNumber": {
+    "prefix": "30s_validateNumber",
+    "body": [
+      "const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;"
+    ],
+    "description": "Returns `true` if the given value is a number, `false` otherwise."
+  },
+  "when": {
+    "prefix": "30s_when",
+    "body": [
+      "const when = (pred, whenTrue) => x => (pred(x) ? whenTrue(x) : x);"
+    ],
+    "description": "Tests a value, `x`, against a predicate function. If `true`, return `fn(x)`. Else, return `x`. "
+  },
+  "without": {
+    "prefix": "30s_without",
+    "body": [
+      "const without = (arr, ...args) => arr.filter(v => !args.includes(v));"
+    ],
+    "description": "Filters out the elements of an array, that have one of the specified values."
+  },
+  "words": {
+    "prefix": "30s_words",
+    "body": [
+      "const words = (str, pattern = /[^a-zA-Z-]+/) => str.split(pattern).filter(Boolean);"
+    ],
+    "description": "Converts a given string into an array of words."
+  },
+  "xProd": {
+    "prefix": "30s_xProd",
+    "body": [
+      "const xProd = (a, b) => a.reduce((acc, x) => acc.concat(b.map(y => [x, y])), []);"
+    ],
+    "description": "Creates a new array out of the two supplied by creating each possible pair from the arrays."
+  },
+  "yesNo": {
+    "prefix": "30s_yesNo",
+    "body": [
+      "const yesNo = (val, def = false) =>",
+      "  /^(y|yes)$/i.test(val) ? true : /^(n|no)$/i.test(val) ? false : def;"
+    ],
+    "description": "Returns `true` if the string is `y`/`yes` or `false` if the string is `n`/`no`."
+  },
+  "zip": {
+    "prefix": "30s_zip",
+    "body": [
+      "const zip = (...arrays) => {",
+      "  const maxLength = Math.max(...arrays.map(x => x.length));",
+      "  return Array.from({ length: maxLength }).map((_, i) => {",
+      "    return Array.from({ length: arrays.length }, (_, k) => arrays[k][i]);",
+      "  });",
+      "};"
+    ],
+    "description": "Creates an array of elements, grouped based on the position in the original arrays."
+  },
+  "zipObject": {
+    "prefix": "30s_zipObject",
+    "body": [
+      "const zipObject = (props, values) =>",
+      "  props.reduce((obj, prop, index) => ((obj[prop] = values[index]), obj), {});"
+    ],
+    "description": "Given an array of valid property identifiers and an array of values, return an object associating the properties to the values."
+  },
+  "zipWith": {
+    "prefix": "30s_zipWith",
+    "body": [
+      "const zipWith = (...array) => {",
+      "  const fn = typeof array[array.length - 1] === 'function' ? array.pop() : undefined;",
+      "  return Array.from(",
+      "    { length: Math.max(...array.map(a => a.length)) },",
+      "    (_, i) => (fn ? fn(...array.map(a => a[i])) : array.map(a => a[i]))",
+      "  );",
+      "};"
+    ],
+    "description": "Creates an array of elements, grouped based on the position in the original arrays and using function as the last value to specify how grouped values should be combined."
+  }
+}
