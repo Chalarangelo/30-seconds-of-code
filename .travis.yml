@@ -13,7 +13,6 @@ script:
 - npm run linter
 - npm run packager
 - npm run tester
-- npm run test-with-coverage
 - npm run extractor
 - npm run vscoder
 - npm run glossary:keymaker
