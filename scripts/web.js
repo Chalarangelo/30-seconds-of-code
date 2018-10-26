@@ -241,6 +241,35 @@ catch (err) {
   process.exit(1);
 }
 
+const generateMenuForStaticPage = (staticPart) => {
+  let taggedData = util.prepTaggedData(tagDbData);
+  // Add the start static part
+  let htmlCode;
+
+  for (let tag of taggedData) {
+    htmlCode +=
+      '<h4 class="collapse">' +
+      md
+        .render(`${util.capitalize(tag, true)}\n`)
+        .replace(/<p>/g, '')
+        .replace(/<\/p>/g, '') +
+      '</h4><ul>';
+    for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
+      htmlCode += md
+        .render(
+          `[${taggedSnippet[0]}](./${
+          tag === 'array' ? 'index' : tag
+          }#${taggedSnippet[0].toLowerCase()})\n`
+        )
+        .replace(/<p>/g, '')
+        .replace(/<\/p>/g, '</li>')
+        .replace(/<a/g, `<li><a tags="${taggedSnippet[1].join(',')}"`);
+    }
+    htmlCode += '</ul>\n';
+  }
+  return staticPart.replace('$nav-menu-data', htmlCode);
+}
+
 const staticPageStartGenerator = (staticPart, heading, description) => {
   let taggedData = util.prepTaggedData(tagDbData);
   // Add the start static part
@@ -364,7 +393,12 @@ catch (err) {
 // Copy static files
 staticFiles.forEach(f => {
   try {
-    fs.copyFileSync(path.join(staticPartsPath, f), path.join(docsPath, f));
+    if(f !== 'array.html') {
+      let fileData = fs.readFileSync(path.join(staticPartsPath, f), 'utf8');
+      fs.writeFileSync(path.join(docsPath, f), generateMenuForStaticPage(fileData));
+    }
+    else 
+      fs.copyFileSync(path.join(staticPartsPath, f), path.join(docsPath, f));
     console.log(`${chalk.green('SUCCESS!')} ${f} file copied!`);
   }
   catch (err) {
