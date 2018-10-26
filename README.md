@@ -443,6 +443,7 @@ average(1, 2, 3);
 * [`toCamelCase`](#tocamelcase)
 * [`toKebabCase`](#tokebabcase)
 * [`toSnakeCase`](#tosnakecase)
+* [`toTitleCase`](#totitlecase)
 * [`truncateString`](#truncatestring)
 * [`unescapeHTML`](#unescapehtml)
 * [`URLJoin`](#urljoin-)
@@ -681,7 +682,7 @@ const sum = pipeAsyncFunctions(
   x => x + 3,
   async x => (await x) + 4
 );
-(async() => {
+(async () => {
   console.log(await sum(5)); // 15 (after one second)
 })();
 ```
@@ -2305,9 +2306,9 @@ The `func` is invoked with three arguments (`value, index, array`).
 const remove = (arr, func) =>
   Array.isArray(arr)
     ? arr.filter(func).reduce((acc, val) => {
-      arr.splice(arr.indexOf(val), 1);
-      return acc.concat(val);
-    }, [])
+        arr.splice(arr.indexOf(val), 1);
+        return acc.concat(val);
+      }, [])
     : [];
 ```
 
@@ -5484,8 +5485,8 @@ Throws an exception if `n` is a negative number.
 const factorial = n =>
   n < 0
     ? (() => {
-      throw new TypeError('Negative numbers are not allowed!');
-    })()
+        throw new TypeError('Negative numbers are not allowed!');
+      })()
     : n <= 1
       ? 1
       : n * factorial(n - 1);
@@ -6685,9 +6686,9 @@ const dig = (obj, target) =>
   target in obj
     ? obj[target]
     : Object.values(obj).reduce((acc, val) => {
-      if (acc !== undefined) return acc;
-      if (typeof val === 'object') return dig(val, target);
-    }, undefined);
+        if (acc !== undefined) return acc;
+        if (typeof val === 'object') return dig(val, target);
+      }, undefined);
 ```
 
 <details>
@@ -8260,6 +8261,34 @@ toSnakeCase('some text'); // 'some_text'
 toSnakeCase('some-mixed_string With spaces_underscores-and-hyphens'); // 'some_mixed_string_with_spaces_underscores_and_hyphens'
 toSnakeCase('AllThe-small Things'); // "all_the_smal_things"
 toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'); // "i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html"
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+### toTitleCase
+
+Converts a string to title case.
+
+Break the string into words, using a regexp, and combine them capitalizing the first letter of each word and adding a whitespace between them.
+
+```js
+const toTitleCase = str =>
+  str
+    .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+    .map(x => x.charAt(0).toUpperCase() + x.slice(1))
+    .join(' ');
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+toTitleCase('some_database_field_name'); // 'Some Database Field Name'
+toTitleCase('Some label that needs to be title-cased'); // 'Some Label That Needs To Be Title Cased'
+toTitleCase('some-package-name'); // 'Some Package Name'
+toTitleCase('some-mixed_string with spaces_underscores-and-hyphens'); // 'Some Mixed String With Spaces Underscores And Hyphens'
 ```
 
 </details>
