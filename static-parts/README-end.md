@@ -7,4 +7,5 @@
 
 ## Credits
 
+*Logos made by [Angelos Chalaris](https://github.com/Chalarangelo) are licensed under the [MIT](https://opensource.org/licenses/MIT) license.*
 *This README is built using [markdown-builder](https://github.com/30-seconds/markdown-builder).*

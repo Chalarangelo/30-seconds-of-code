@@ -14,6 +14,7 @@ script:
 - npm run packager
 - npm run tester
 - npm run extractor
+- npm run vscoder
 - npm run glossary:keymaker
 - npm run webber
 - npm run builder
