@@ -1,4 +1,4 @@
-import jump from '../deps/jump'
+import jump from 'jump.js'
 import { select, scrollY, easeOutQuint } from '../deps/utils'
 
 const backToTopButton = select('.back-to-top-button')

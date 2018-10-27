@@ -12,7 +12,7 @@ html {
 body {
   font-family: -apple-system, BlinkMacSystemFont, Roboto, Segoe UI, 'Helvetica Neue', Helvetica,
     Arial, sans-serif;
-  background: #f6f7fd;
+  background: #f2f3f8;
   color: rgb(50, 75, 100);
   line-height: 1.5;
 }
@@ -62,6 +62,12 @@ ol {
 
 @media (min-width: 992px) {
   .content-wrapper {
-    margin-left: 200px;
+    margin-left: 20%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .content-wrapper {
+    margin-left: 275px;
   }
 }

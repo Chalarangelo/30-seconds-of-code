@@ -17,25 +17,11 @@ Horizontally and vertically centers a child element within a parent element usin
   display: grid;
   justify-content: center;
   align-items: center;
+  height: 100px;
 }
 ```
 
 #### Demo
-
-<div class="snippet-demo">
-  <div class="snippet-demo__grid-centering">
-    <p class="snippet-demo__grid-centering__child">Centered content.</p>
-  </div>
-</div>
-
-<style>
-.snippet-demo__grid-centering {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-}
-</style>
 
 #### Explanation
 
@@ -47,6 +33,6 @@ Horizontally and vertically centers a child element within a parent element usin
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
-* https://caniuse.com/#feat=css-grid
+- https://caniuse.com/#feat=css-grid
 
 <!-- tags: layout -->

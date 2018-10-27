@@ -1,4 +1,4 @@
-import jump from '../deps/jump'
+import jump from 'jump.js'
 import { select, selectAll, easeOutQuint } from '../deps/utils'
 
 const menu = select('.hamburger')

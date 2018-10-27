@@ -5,6 +5,7 @@
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 1rem;
+  padding: 0 1rem;
 
   &__tag {
     display: inline-block;
@@ -20,7 +21,7 @@
     vertical-align: middle;
     line-height: 2;
     padding: 0 0.5rem;
-    margin-right: 0.5rem;
+    margin: 0 0.1rem;
     transition: all 0.1s ease-out;
     outline: 0;
 

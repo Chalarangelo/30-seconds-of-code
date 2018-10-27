@@ -37,34 +37,6 @@ very sharp and crisp.
 
 #### Demo
 
-<div class="snippet-demo">
-  <p class="snippet-demo__hairline-border">Text with a hairline border around it.</p>
-</div>
-
-<style>
-.snippet-demo__hairline-border {
-  box-shadow: 0 0 0 1px;
-}
-
-@media (min-resolution: 2dppx) {
-  .snippet-demo__hairline-border {
-    box-shadow: 0 0 0 0.5px;
-  }
-}
-
-@media (min-resolution: 3dppx) {
-  .snippet-demo__hairline-border {
-    box-shadow: 0 0 0 0.33333333px;
-  }
-}
-
-@media (min-resolution: 4dppx) {
-  .snippet-demo__hairline-border {
-    box-shadow: 0 0 0 0.25px;
-  }
-}
-</style>
-
 #### Explanation
 
 1. `box-shadow`, when only using spread, adds a pseudo-border which can use subpixels\*.
@@ -75,8 +47,8 @@ very sharp and crisp.
 
 <span class="snippet__support-note">⚠️ Needs alternate syntax and JavaScript user agent checking for full support.</span>
 
-* https://caniuse.com/#feat=css-boxshadow
-* https://caniuse.com/#feat=css-media-resolution
+- https://caniuse.com/#feat=css-boxshadow
+- https://caniuse.com/#feat=css-media-resolution
 
 <hr>
 
