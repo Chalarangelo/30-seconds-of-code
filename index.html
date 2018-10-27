@@ -313,6 +313,16 @@
 }
 </code></pre>
             <h4>Demo</h4>
+            <div class="snippet-demo" data-scope="calc.md">
+              <div class="box-example"></div>
+            </div>
+            <style>
+              [data-scope="calc.md"] .box-example {
+                height: 280px;
+                background: #222 url("https://image.ibb.co/fUL9nS/wolf.png") no-repeat;
+                background-position: calc(100% - 20px) calc(100% - 20px);
+              }
+            </style>
             <p>If you want to align a background-image from right and bottom wasn't possible with just straight length values. So now it's possible using calc():</p>
             <div class="snippet-demo">
               <div class="snippet-demo__calc">Background-image in the right/bottom</div>
@@ -2114,7 +2124,8 @@ li:not(:last-child) {
           </div>
           <div class="snippet">
             <h3 id="pretty-text-underline"><span>Pretty text underline</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
-            <p>A nicer alternative to <code>text-decoration: underline</code> where descenders do not clip the underline. Natively implemented as <code>text-decoration-skip-ink: auto</code> but it has less control over the underline.</p>
+            <p>A nicer alternative to <code>text-decoration: underline</code> or <code>&lt;u&gt;&lt;/u&gt;</code> where descenders do not clip the underline. Natively implemented as <code>text-decoration-skip-ink: auto</code> but it has less control over
+              the underline.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p class="pretty-text-underline"&gt;Pretty text underline without clipping descending letters.&lt;/p&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.pretty-text-underline {
