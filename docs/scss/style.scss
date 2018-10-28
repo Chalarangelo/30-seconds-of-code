@@ -799,7 +799,6 @@ nav {
     margin: calc(0.5 * var(#{$universal-margin-var}));
     margin-left: var(#{$universal-margin-var});
     margin-bottom: 0;
-    padding: calc(2 * var(#{$universal-padding-var})) calc(1.5 * var(#{$universal-padding-var}));
     border-left: $__1px solid var(#{$nav-link-border-color-var});
     &:hover {
       text-decoration: none;
@@ -810,6 +809,8 @@ nav {
     }
   }
   a {
+    display: block;
+    padding: calc(2 * var(#{$universal-padding-var})) calc(1.5 * var(#{$universal-padding-var}));
     &:link, &:visited {
       color: var(#{$nav-link-fore-color-var});
     }
