@@ -23,7 +23,7 @@
 * [30 Seconds of Python](https://github.com/kriadmin/30-seconds-of-python-code) _(unofficial)_
 * [30 Seconds of PHP](https://github.com/appzcoder/30-seconds-of-php-code) _(unofficial)_
 
-#### Package
+### Package
 
 ⚠️ **NOTICE:** A few of our snippets are not yet optimized for production (see disclaimers for individual snippet issues).
 
