@@ -42,7 +42,14 @@
         </section>
         <section data-type="interactivity" class="sidebar__section">
           <h4 class="sidebar__section-heading">interactivity</h4>
-          <a class="sidebar__link" href="#disable-selection"><span>Disable selection</span></a><a class="sidebar__link" href="#focus-within"><span>Focus Within</span></a><a class="sidebar__link" href="#mouse-cursor-gradient-tracking"><span>Mouse cursor gradient tracking</span></a><a class="sidebar__link" href="#popout-menu"><span>Popout menu</span></a><a class="sidebar__link" href="#sibling-fade"><span>Sibling fade</span></a><a class="sidebar__link" href="#toggle-switch"><span>Toggle switch</span></a>
+          <a class="sidebar__link" href="#button-border">
+            <img alt="New" draggable="false" class="sidebar__new" src="./src/img/new.svg"><span>Toggle switch</span></a>
+          <a class="sidebar__link" href="#disable-selection"><span>Disable selection</span></a>
+          <a class="sidebar__link" href="#mouse-cursor-gradient-tracking"><span>Mouse cursor gradient tracking</span></a>
+          <a class="sidebar__link" href="#popout-menu"><span>Popout menu</span></a>
+          <a class="sidebar__link" href="#sibling-fade"><span>Sibling fade</span></a>
+          <a class="sidebar__link" href="#toggle-switch">
+            <img alt="New" draggable="false" class="sidebar__new" src="./src/img/new.svg"><span>Toggle switch</span></a>
         </section>
         <section data-type="other" class="sidebar__section">
           <h4 class="sidebar__section-heading">other</h4>
@@ -238,6 +245,140 @@
             </ul>
 
             <!-- tags: layout -->
+          </div>
+          <div class="snippet">
+            <img alt="New" draggable="false" class="snippet__new" src="./src/img/new.svg">
+            <h3 id="toggle-switch"><span>Toggle switch</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span><span class="tags__tag snippet__tag" data-type="interactivity"><i data-feather="edit-2"></i>interactivity</span></h3>
+            <p>Creates a border animation on hover.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;button class="button"&gt;Submit&lt;/button&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">@import url(https://fonts.googleapis.com/css?family=BenchNine:700);
+.button {
+  background-color: #c47135;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'BenchNine', Arial, sans-serif;
+  font-size: 1em;
+  font-size: 22px;
+  line-height: 1em;
+  margin: 15px 40px;
+  outline: none;
+  padding: 12px 40px 10px;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.button:before,
+.button:after {
+  border-color: transparent;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  border-style: solid;
+  border-width: 0;
+  content: '';
+  height: 24px;
+  position: absolute;
+  width: 24px;
+}
+.button:before {
+  border-color: #c47135;
+  border-top-width: 2px;
+  left: 0px;
+  top: -5px;
+}
+.button:after {
+  border-bottom-width: 2px;
+  border-color: #c47135;
+  bottom: -5px;
+  right: 0px;
+}
+.button:hover,
+.button.hover {
+  background-color: #c47135;
+}
+.button:hover:before,
+.button.hover:before,
+.button:hover:after,
+.button.hover:after {
+  height: 100%;
+  width: 100%;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo" data-scope="button-border.md">
+              <button class="button">Submit</button>
+            </div>
+            <style>
+              @import url(https://fonts.googleapis.com/css?family=BenchNine:700);
+              [data-scope="button-border.md"] {}
+              [data-scope="button-border.md"] .button {
+                background-color: #c47135;
+                border: none;
+                color: #ffffff;
+                cursor: pointer;
+                display: inline-block;
+                font-family: 'BenchNine', Arial, sans-serif;
+                font-size: 1em;
+                font-size: 22px;
+                line-height: 1em;
+                margin: 15px 40px;
+                outline: none;
+                padding: 12px 40px 10px;
+                position: relative;
+                text-transform: uppercase;
+                font-weight: 700;
+              }
+              [data-scope="button-border.md"] .button:before,
+              [data-scope="button-border.md"] .button:after {
+                border-color: transparent;
+                -webkit-transition: all 0.25s;
+                transition: all 0.25s;
+                border-style: solid;
+                border-width: 0;
+                content: '';
+                height: 24px;
+                position: absolute;
+                width: 24px;
+              }
+              [data-scope="button-border.md"] .button:before {
+                border-color: #c47135;
+                border-top-width: 2px;
+                left: 0px;
+                top: -5px;
+              }
+              [data-scope="button-border.md"] .button:after {
+                border-bottom-width: 2px;
+                border-color: #c47135;
+                bottom: -5px;
+                right: 0px;
+              }
+              [data-scope="button-border.md"] .button:hover,
+              [data-scope="button-border.md"] .button.hover {
+                background-color: #c47135;
+              }
+              [data-scope="button-border.md"] .button:hover:before,
+              [data-scope="button-border.md"] .button.hover:before,
+              [data-scope="button-border.md"] .button:hover:after,
+              [data-scope="button-border.md"] .button.hover:after {
+                height: 100%;
+                width: 100%;
+              }
+            </style>
+            <h4>Explanation</h4>
+            <p>This effect is uses before and after selectors to make the border full width on hover.</p>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                99+%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+
+            <!-- tags: visual, interactivity -->
+
+            <!-- date: 2018-10-30 -->
           </div>
           <div class="snippet">
             <h3 id="calc"><span>Calc()</span><span class="tags__tag snippet__tag" data-type="other"><i data-feather="tag"></i>other</span></h3>
