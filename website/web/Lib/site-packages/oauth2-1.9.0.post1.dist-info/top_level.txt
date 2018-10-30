@@ -1,2 +1,0 @@
-oauth2
-tests
