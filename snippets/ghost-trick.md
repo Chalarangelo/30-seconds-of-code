@@ -31,6 +31,8 @@ p {
 }
 ```
 
+#### Demo
+
 #### Explanation
 
 In some cases you can use this simple method to vertically align inline elements without touching position property.
