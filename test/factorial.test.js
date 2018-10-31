@@ -19,3 +19,8 @@ test('Calculates the factorial of 4', () => {
 test('Calculates the factorial of 10', () => {
   expect(factorial(10)).toBe(3628800);
 });
+test('Throws TypeError if n < 0', () => {
+  expect(() => {
+    factorial(-1);
+  }).toThrow(TypeError);
+});
