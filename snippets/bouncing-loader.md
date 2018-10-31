@@ -16,13 +16,9 @@ Creates a bouncing loader animation.
 
 ```css
 @keyframes bouncing-loader {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
   to {
     opacity: 0.1;
-    transform: translateY(-1rem);
+    transform: translate3d(0, -1rem, 0);
   }
 }
 .bouncing-loader {
@@ -51,7 +47,7 @@ Creates a bouncing loader animation.
 
 Note: `1rem` is usually `16px`.
 
-1. `@keyframes` defines an animation that has two states, where the element changes `opacity` and is translated up on the 2D plane using `transform: translateY()`.
+1. `@keyframes` defines an animation that has two states, where the element changes `opacity` and is translated up on the 2D plane using `transform: translate3d()`. Using a single axis translation on `transform: translate3d()` improves the performance of the animation.
 
 2. `.bouncing-loader` is the parent container of the bouncing circles and uses `display: flex`
    and `justify-content: center` to position them in the center.
