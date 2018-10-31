@@ -13,5 +13,5 @@ test('Converts a string from camelcase', () => {
   );
 });
 test('Converts a string from camelcase', () => {
-  expect(fromCamelCase('someJavascriptProperty', '_')).toBe('some_javascript_property');
+  expect(fromCamelCase('someJavascriptProperty')).toBe('some_javascript_property');
 });
