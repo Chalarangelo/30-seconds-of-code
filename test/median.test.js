@@ -10,3 +10,6 @@ test('Returns the median of an array of numbers', () => {
 test('Returns the median of an array of numbers', () => {
   expect(median([1, 2, 3])).toBe(2);
 });
+test('Returns the median of an array of numbers', () => {
+  expect(median([1, 2, 3, 4])).toBe(2.5);
+});
