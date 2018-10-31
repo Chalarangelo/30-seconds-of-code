@@ -21,3 +21,16 @@ test('[1,2,3] is not equal to [1,2,4]', () => {
 test('[1, 2, 3] should be equal to { 0: 1, 1: 2, 2: 3 }) - type is different, but their enumerable properties match.', () => {
   expect(equals([1, 2, 3], { 0: 1, 1: 2, 2: 3 })).toBeTruthy();
 });
+const date = new Date();
+test('Two of the same date are equal', () => {
+  expect(equals(date, date)).toBeTruthy();
+});
+test('null should not be equal to anything', () => {
+  expect(equals(null, 'test')).toBeFalsy();
+});
+test('undefined should not be equal to anything', () => {
+  expect(equals(undefined, 'test')).toBeFalsy();
+});
+test('{a: ""} should not be equal to {a: "", b: ""}', () => {
+  expect(equals({a: ''}, {a: '', b: ''})).toBeFalsy();
+});
