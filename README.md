@@ -678,7 +678,7 @@ const sum = pipeAsyncFunctions(
   x => x + 3,
   async x => (await x) + 4
 );
-(async () => {
+(async() => {
   console.log(await sum(5)); // 15 (after one second)
 })();
 ```
@@ -2302,9 +2302,9 @@ The `func` is invoked with three arguments (`value, index, array`).
 const remove = (arr, func) =>
   Array.isArray(arr)
     ? arr.filter(func).reduce((acc, val) => {
-        arr.splice(arr.indexOf(val), 1);
-        return acc.concat(val);
-      }, [])
+      arr.splice(arr.indexOf(val), 1);
+      return acc.concat(val);
+    }, [])
     : [];
 ```
 
@@ -2374,7 +2374,7 @@ sampleSize([1, 2, 3], 4); // [2,3,1]
 
 ### shank
 
-Has the same functionality as [`Array.prototype.prototype.splice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice), but returning a new array instead of mutating the original array.
+Has the same functionality as [`Array.prototype.splice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice), but returning a new array instead of mutating the original array.
 
 Use `Array.prototype.slice()` and `Array.prototype.concat()` to get a new array with the new contents after removing existing elements and/or adding new elements.
 Omit the second argument, `index`, to start at `0`.
@@ -2398,7 +2398,6 @@ const namesAndDelta = shank(names, 1, 0, 'delta'); // [ 'alpha', 'delta', 'bravo
 const namesNoBravo = shank(names, 1, 1); // [ 'alpha', 'charlie' ]
 console.log(names); // ['alpha', 'bravo', 'charlie']
 ```
-
 
 </details>
 
@@ -2790,7 +2789,7 @@ takeWhile([1, 2, 3, 4], n => n >= 3); // [1, 2]
 
 Reduces a given Array-like into a value hash (keyed data store).
 
-Given an Iterable or Array-like structure, call `Array.prototype.prototype.reduce.call()` on the provided object to step over it and return an Object, keyed by the reference value.
+Given an Iterable or Array-like structure, call `Array.prototype.reduce.call()` on the provided object to step over it and return an Object, keyed by the reference value.
 
 ```js
 const toHash = (object, key) =>
@@ -5481,8 +5480,8 @@ Throws an exception if `n` is a negative number.
 const factorial = n =>
   n < 0
     ? (() => {
-        throw new TypeError('Negative numbers are not allowed!');
-      })()
+      throw new TypeError('Negative numbers are not allowed!');
+    })()
     : n <= 1
       ? 1
       : n * factorial(n - 1);
@@ -6682,9 +6681,9 @@ const dig = (obj, target) =>
   target in obj
     ? obj[target]
     : Object.values(obj).reduce((acc, val) => {
-        if (acc !== undefined) return acc;
-        if (typeof val === 'object') return dig(val, target);
-      }, undefined);
+      if (acc !== undefined) return acc;
+      if (typeof val === 'object') return dig(val, target);
+    }, undefined);
 ```
 
 <details>
