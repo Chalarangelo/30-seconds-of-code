@@ -10,3 +10,6 @@ test('Returns an array with n elements removed from the beginning.', () => {
 test('Returns an array with n elements removed from the beginning.', () => {
   expect(take([1, 2, 3], 0)).toEqual([]);
 });
+test('Returns an array with n elements removed from the beginning.', () => {
+  expect(take([1, 2, 3])).toEqual([1]);
+});
