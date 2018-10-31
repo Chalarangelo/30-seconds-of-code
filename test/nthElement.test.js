@@ -10,3 +10,9 @@ test('Returns the nth element of an array.', () => {
 test('Returns the nth element of an array.', () => {
   expect(nthElement(['a', 'b', 'c'], -3)).toBe('a');
 });
+test('Returns the nth element of an array.', () => {
+  expect(nthElement(['a', 'b', 'c'], -1)).toBe('c');
+});
+test('Returns the nth element of an array.', () => {
+  expect(nthElement(['a', 'b', 'c'])).toBe('a');
+});
