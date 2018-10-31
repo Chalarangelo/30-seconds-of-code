@@ -1,6 +1,6 @@
 ### shank
 
-Has the same functionality as [`Array.prototype.prototype.splice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice), but returning a new array instead of mutating the original array.
+Has the same functionality as [`Array.prototype.splice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice), but returning a new array instead of mutating the original array.
 
 Use `Array.prototype.slice()` and `Array.prototype.concat()` to get a new array with the new contents after removing existing elements and/or adding new elements.
 Omit the second argument, `index`, to start at `0`.
@@ -21,4 +21,3 @@ const namesAndDelta = shank(names, 1, 0, 'delta'); // [ 'alpha', 'delta', 'bravo
 const namesNoBravo = shank(names, 1, 1); // [ 'alpha', 'charlie' ]
 console.log(names); // ['alpha', 'bravo', 'charlie']
 ```
-
