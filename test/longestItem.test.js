@@ -19,8 +19,10 @@ test('Returns the longest array', () => {
 test('Returns the longest object when comparing arrays and strings', () => {
   expect(longestItem([1, 2, 3], 'foobar')).toEqual('foobar');
 });
-test('Returns undefined without any input', () => {
-  expect(longestItem()).toEqual(undefined);
+test('Returns TypeError without any input', () => {
+  expect(() => {
+    longestItem();
+  }).toThrow(TypeError);
 });
 test('Returns first found of all similar', () => {
   expect(longestItem('a', 'b', 'c')).toEqual('a');
