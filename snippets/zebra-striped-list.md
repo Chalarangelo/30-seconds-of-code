@@ -24,7 +24,6 @@ li:nth-child(odd) {
 
 #### Demo
 
-
 #### Explanation
 
 1. Use the `:nth-child(odd)` or `:nth-child(even)` pseudo-class to apply a different background color to elements that match based on their position in a group of siblings.

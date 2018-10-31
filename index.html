@@ -41,6 +41,8 @@
           <a class="sidebar__link" href="#custom-text-selection"><span>Custom text selection</span></a>
           <a class="sidebar__link" href="#dynamic-shadow"><span>Dynamic shadow</span></a>
           <a class="sidebar__link" href="#etched-text"><span>Etched text</span></a>
+          <a class="sidebar__link" href="#fit-image-in-container">
+            <img alt="New" draggable="false" class="sidebar__new" src="./src/img/new.svg"><span>Fit image in container</span></a>
           <a class="sidebar__link" href="#gradient-text"><span>Gradient text</span></a>
           <a class="sidebar__link" href="#hairline-border"><span>Hairline border</span></a>
           <a class="sidebar__link" href="#not-selector"><span>:not selector</span></a>
@@ -51,6 +53,8 @@
           <a class="sidebar__link" href="#shape-separator"><span>Shape separator</span></a>
           <a class="sidebar__link" href="#system-font-stack"><span>System font stack</span></a>
           <a class="sidebar__link" href="#triangle"><span>Triangle</span></a>
+          <a class="sidebar__link" href="#zebra-striped-list">
+            <img alt="New" draggable="false" class="sidebar__new" src="./src/img/new.svg"><span>Zebra striped list</span></a>
         </section>
         <section data-type="animation" class="sidebar__section">
           <h4 class="sidebar__section-heading">animation</h4>
@@ -120,13 +124,9 @@
 &lt;/div&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">@keyframes bouncing-loader {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
   to {
     opacity: 0.1;
-    transform: translateY(-1rem);
+    transform: translate3d(0, -1rem, 0);
   }
 }
 .bouncing-loader {
@@ -158,13 +158,9 @@
             </div>
             <style>
               @keyframes bouncing-loader {
-                from {
-                  opacity: 1;
-                  transform: translateY(0);
-                }
                 to {
                   opacity: 0.1;
-                  transform: translateY(-1rem);
+                  transform: translate3d(0, -1rem, 0);
                 }
               }
               [data-scope="bouncing-loader.md"] .bouncing-loader {
@@ -190,7 +186,7 @@
             <p>Note: <code>1rem</code> is usually <code>16px</code>.</p>
             <ol>
               <li>
-                <p><code>@keyframes</code> defines an animation that has two states, where the element changes <code>opacity</code> and is translated up on the 2D plane using <code>transform: translateY()</code>.</p>
+                <p><code>@keyframes</code> defines an animation that has two states, where the element changes <code>opacity</code> and is translated up on the 2D plane using <code>transform: translate3d()</code>. Using a single axis translation on <code>transform: translate3d()</code>                  improves the performance of the animation.</p>
               </li>
               <li>
                 <p><code>.bouncing-loader</code> is the parent container of the bouncing circles and uses <code>display: flex</code> and <code>justify-content: center</code> to position them in the center.</p>
@@ -1225,6 +1221,72 @@ in any specification.</span></p>
             </ul>
 
             <!-- tags: layout -->
+          </div>
+          <div class="snippet">
+            <img alt="New" draggable="false" class="snippet__new" src="./src/img/new.svg">
+            <h3 id="fit-image-in-container"><span>Fit image in container</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
+            <p>Changes the fit and position of an image within its container while preserving its aspect ratio. Previously only possible using a background image and the <code>background-size</code> property.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;img class="image image-contain" src="https://picsum.photos/600/200"&gt;
+&lt;img class="image image-cover" src="https://picsum.photos/600/200"&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.image {
+  background: #34495e;
+  border: 1px solid #34495e;
+  width: 200px;
+  height: 200px;
+}
+.image-contain {
+  object-fit: contain;
+  object-position: center;
+}
+.image-cover {
+  object-fit: cover;
+  object-position: right top;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo" data-scope="fit-image-in-container.md">
+              <img class="image image-contain" src="https://picsum.photos/600/200">
+              <img class="image image-cover" src="https://picsum.photos/600/200">
+            </div>
+            <style>
+              [data-scope="fit-image-in-container.md"] .image {
+                background: #34495e;
+                border: 1px solid #34495e;
+                width: 200px;
+                height: 200px;
+              }
+              [data-scope="fit-image-in-container.md"] .image-contain {
+                object-fit: contain;
+                object-position: center;
+              }
+              [data-scope="fit-image-in-container.md"] .image-cover {
+                object-fit: cover;
+                object-position: right top;
+              }
+            </style>
+            <h4>Explanation</h4>
+            <ul>
+              <li><code>object-fit: contain</code> fits the entire image within the container while preserving its aspect ratio.</li>
+              <li><code>object-fit: cover</code> fills the container with the image while preserving its aspect ratio.</li>
+              <li><code>object-position: [x] [y]</code> positions the image within the container.</li>
+            </ul>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                92.9%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=object-fit" target="_blank">https://caniuse.com/#feat=object-fit</a>
+              </li>
+            </ul>
+
+            <!-- tags: layout, visual -->
+
+            <!-- date: 2018-10-31 -->
           </div>
           <div class="snippet">
             <h3 id="flexbox-centering"><span>Flexbox centering</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
@@ -2661,6 +2723,57 @@ input[type='checkbox']:checked + .switch {
             </ul>
 
             <!-- tags: layout -->
+          </div>
+          <div class="snippet">
+            <img alt="New" draggable="false" class="snippet__new" src="./src/img/new.svg">
+            <h3 id="zebra-striped-list"><span>Zebra striped list</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
+            <p>Creates a striped list with alternating background colors, which is useful for differentiating siblings that have content spread across a wide row.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;ul&gt;
+  &lt;li&gt;Item 01&lt;/li&gt;
+  &lt;li&gt;Item 02&lt;/li&gt;
+  &lt;li&gt;Item 03&lt;/li&gt;
+  &lt;li&gt;Item 04&lt;/li&gt;
+  &lt;li&gt;Item 05&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">li:nth-child(odd) {
+  background-color: #eee;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo" data-scope="zebra-striped-list.md">
+              <ul>
+                <li>Item 01</li>
+                <li>Item 02</li>
+                <li>Item 03</li>
+                <li>Item 04</li>
+                <li>Item 05</li>
+              </ul>
+            </div>
+            <style>
+              [data-scope="zebra-striped-list.md"] li:nth-child(odd) {
+                background-color: #eee;
+              }
+            </style>
+            <h4>Explanation</h4>
+            <ol>
+              <li>Use the <code>:nth-child(odd)</code> or <code>:nth-child(even)</code> pseudo-class to apply a different background color to elements that match based on their position in a group of siblings.</li>
+            </ol>
+            <p>Note that you can use it to apply different styles to other HTML elements like div, tr, p, ol, etc.</p>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                98.4%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <p>
+              <a href="https://caniuse.com/#feat=css-sel3" target="_blank">https://caniuse.com/#feat=css-sel3</a>
+            </p>
+
+            <!-- tags: visual -->
+
+            <!-- date: 2018-10-31 -->
           </div>
         </div>
       </main>
