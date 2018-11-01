@@ -13,6 +13,12 @@ test('Returns the appropriate value', () => {
 test('Returns the appropriate value', () => {
   expect(binomialCoefficient(5, 3)).toBe(10);
 });
+test('Returns the appropriate value', () => {
+  expect(binomialCoefficient(8, -1)).toBe(0);
+});
+test('Returns the appropriate value', () => {
+  expect(binomialCoefficient(8, 1)).toBe(8);
+});
 test('Returns NaN', () => {
   expect(Number.isNaN(binomialCoefficient(NaN, 3))).toBeTruthy();
 });
