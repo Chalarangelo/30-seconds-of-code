@@ -7,3 +7,6 @@ test('initializeArrayWithValues is a Function', () => {
 test('Initializes and fills an array with the specified values', () => {
   expect(initializeArrayWithValues(5, 2)).toEqual([2, 2, 2, 2, 2]);
 });
+test('Initializes and fills an array with the specified values (no fill)', () => {
+  expect(initializeArrayWithValues(5)).toEqual([0, 0, 0, 0, 0]);
+});

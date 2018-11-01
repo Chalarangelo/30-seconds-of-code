@@ -7,6 +7,9 @@ test('inRange is a Function', () => {
 test('The given number falls within the given range', () => {
   expect(inRange(3, 2, 5)).toBeTruthy();
 });
+test('The given number falls within the given range (reverse)', () => {
+  expect(inRange(3, 5, 2)).toBeTruthy();
+});
 test('The given number falls within the given range', () => {
   expect(inRange(3, 4)).toBeTruthy();
 });
