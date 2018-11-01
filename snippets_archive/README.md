@@ -3,7 +3,6 @@
 These snippets, while useful and interesting, didn't quite make it into the repository due to either having very specific use-cases or being outdated. However we felt like they might still be useful to some readers, so here they are.
 ## Table of Contents
 * [`JSONToDate`](#jsontodate)
-* [`squareSum`](#squaresum)
 * [`binarySearch`](#binarysearch)
 * [`celsiusToFahrenheit`](#celsiustofahrenheit)
 * [`cleanObj`](#cleanobj)
@@ -15,6 +14,7 @@ These snippets, while useful and interesting, didn't quite make it into the repo
 * [`fibonacciUntilNum`](#fibonacciuntilnum)
 * [`heronArea`](#heronarea)
 * [`howManyTimes`](#howmanytimes)
+* [`httpDelete`](#httpdelete)
 * [`httpPut`](#httpput)
 * [`isArmstrongNumber`](#isarmstrongnumber)
 * [`isSimilar`](#issimilar)
@@ -26,7 +26,7 @@ These snippets, while useful and interesting, didn't quite make it into the repo
 * [`removeVowels`](#removevowels)
 * [`solveRPN`](#solverpn)
 * [`speechSynthesis`](#speechsynthesis)
-* [`httpDelete`](#httpdelete)
+* [`squareSum`](#squaresum)
 
 ---
 ### JSONToDate
@@ -47,27 +47,6 @@ const JSONToDate = arr => {
 
 ```js
 JSONToDate(/Date(1489525200000)/); // "14/3/2017"
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
-### squareSum
-
-Squares each number in an array and then sums the results together.
-
-Use `Array.prototype.reduce()` in combination with `Math.pow()` to iterate over numbers and sum their squares into an accumulator.
-
-```js
-const squareSum = (...args) => args.reduce((squareSum, number) => squareSum + Math.pow(number, 2), 0);
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-squareSum(1, 2, 2); // 9
 ```
 
 </details>
@@ -382,6 +361,38 @@ howManyTimes(100, 2); // 2
 howManyTimes(100, 2.5); // 2
 howManyTimes(100, 0); // 0
 howManyTimes(100, -1); // Infinity
+```
+
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+### httpDelete
+
+Makes a `DELETE` request to the passed URL.
+
+Use `XMLHttpRequest` web api to make a `delete` request to the given `url`.
+Handle the `onload` event, by running the provided `callback` function.
+Handle the `onerror` event, by running the provided `err` function.
+Omit the third argument, `err` to log the request to the console's error stream by default.
+
+```js
+const httpDelete = (url, callback, err = console.error) => {
+  const request = new XMLHttpRequest();
+  request.open('DELETE', url, true);
+  request.onload = () => callback(request);
+  request.onerror = () => err(request);
+  request.send();
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+httpDelete('https://website.com/users/123', request => {
+  console.log(request.responseText);
+}); // 'Deletes a user from the database'
 ```
 
 </details>
@@ -728,32 +739,21 @@ speechSynthesis('Hello, World'); // // plays the message
 
 <br>[⬆ Back to top](#table-of-contents)
 
-### httpDelete
+### squareSum
 
-Makes a `DELETE` request to the passed URL.
+Squares each number in an array and then sums the results together.
 
-Use `XMLHttpRequest` web api to make a `delete` request to the given `url`.
-Handle the `onload` event, by running the provided `callback` function.
-Handle the `onerror` event, by running the provided `err` function.
-Omit the third argument, `err` to log the request to the console's error stream by default.
+Use `Array.prototype.reduce()` in combination with `Math.pow()` to iterate over numbers and sum their squares into an accumulator.
 
 ```js
-const httpDelete = (url, callback, err = console.error) => {
-  const request = new XMLHttpRequest();
-  request.open('DELETE', url, true);
-  request.onload = () => callback(request);
-  request.onerror = () => err(request);
-  request.send();
-};
+const squareSum = (...args) => args.reduce((squareSum, number) => squareSum + Math.pow(number, 2), 0);
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```js
-httpDelete('https://website.com/users/123', request => {
-  console.log(request.responseText);
-}); // 'Deletes a user from the database'
+squareSum(1, 2, 2); // 9
 ```
 
 </details>
