@@ -23,13 +23,13 @@ test('[1, 2, 3] should be equal to { 0: 1, 1: 2, 2: 3 }) - type is different, bu
 });
 const date = new Date();
 test('Two of the same date are equal', () => {
-  expect(equals(date, date)).toBeTruthy();
+  expect(equals(date, new Date(0))).toBeFalsy();
 });
 test('null should not be equal to anything', () => {
-  expect(equals(null, 'test')).toBeFalsy();
+  expect(equals(null, { a: 'test' })).toBeFalsy();
 });
 test('undefined should not be equal to anything', () => {
-  expect(equals(undefined, 'test')).toBeFalsy();
+  expect(equals(undefined, { a: 'test' })).toBeFalsy();
 });
 test('{a: ""} should not be equal to {a: "", b: ""}', () => {
   expect(equals({a: ''}, {a: '', b: ''})).toBeFalsy();
