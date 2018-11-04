@@ -2092,7 +2092,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "getColonTimeFromDate.md",
-        "text": "Returns a string of the form `HH:MM:SS` from a `Date` object.\n\nUse `Date.prototype.toString()` and `String.prototype.slice()` to get the `HH:MM:SS` part of a given `Date` object.",
+        "text": "Returns a string of the form `HH:MM:SS` from a `Date` object.\n\nUse `Date.prototype.toTimeString()` and `String.prototype.slice()` to get the `HH:MM:SS` part of a given `Date` object.",
         "codeBlocks": {
           "es6": "const getColonTimeFromDate = date => date.toTimeString().slice(0, 8);",
           "es5": "var getColonTimeFromDate = function getColonTimeFromDate(date) {\n  return date.toTimeString().slice(0, 8);\n};",
@@ -2105,7 +2105,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "4a8abb281739c1b068d979b8d49038ea063ece4aa570cc8444926ebd30306ff1"
+        "hash": "047d7aa6776b48b392054fc0addcffa4485904f6281f277426911f3ef475b079"
       }
     },
     {
