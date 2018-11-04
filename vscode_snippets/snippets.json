@@ -951,7 +951,7 @@
     "body": [
       "const getColonTimeFromDate = date => date.toTimeString().slice(0, 8);"
     ],
-    "description": "Returns a string of the form `HH:MM:SS` from a `Date` object.\n\nUse `Date.prototype.toString()` and `String.prototype.slice()` to get the `HH:MM:SS` part of a given `Date` object"
+    "description": "Returns a string of the form `HH:MM:SS` from a `Date` object.\n\nUse `Date.prototype.toTimeString()` and `String.prototype.slice()` to get the `HH:MM:SS` part of a given `Date` object"
   },
   "getDaysDiffBetweenDates": {
     "prefix": "30s_getDaysDiffBetweenDates",
