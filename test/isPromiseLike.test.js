@@ -16,3 +16,6 @@ test('Returns true for a promise-like object', () => {
 test('Returns false for an empty object', () => {
   expect(isPromiseLike({})).toBeFalsy();
 });
+test('Returns false for a normal function', () => {
+  expect(isPromiseLike(Math.max)).toBeFalsy();
+});
