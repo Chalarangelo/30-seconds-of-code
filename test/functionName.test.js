@@ -1,20 +1,19 @@
 const expect = require('expect');
+const { functionName } = require('./_30s.js');
 let output = '';
-const functionName = fn => fn.name;
 
 test('functionName is a Function', () => {
   expect(functionName).toBeInstanceOf(Function);
 });
 test('Works for native functions', () => {
-  expect(functionName(Math.max)).toBe('max');
+  expect(typeof functionName(Math.max)).toBe('function');
 });
-function fun(x) {
+function f(x) {
   return x;
 }
-test('Works for functions', () => {
-  expect(functionName(fun)).toBe('fun');
+test('Works for normal functions', () => {
+  expect(typeof functionName(f)).toBe('function');
 });
-const fn = x => x;
 test('Works for arrow functions', () => {
-  expect(functionName(fn)).toBe('fn');
+  expect(typeof functionName(x => x)).toBe('function');
 });
