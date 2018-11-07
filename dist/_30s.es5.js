@@ -1481,12 +1481,12 @@
     });
   };
 
-  var longestItem = function longestItem(val) {
-    for (var _len29 = arguments.length, vals = new Array(_len29 > 1 ? _len29 - 1 : 0), _key29 = 1; _key29 < _len29; _key29++) {
-      vals[_key29 - 1] = arguments[_key29];
+  var longestItem = function longestItem() {
+    for (var _len29 = arguments.length, vals = new Array(_len29), _key29 = 0; _key29 < _len29; _key29++) {
+      vals[_key29] = arguments[_key29];
     }
 
-    return [val].concat(vals).reduce(function (a, x) {
+    return vals.reduce(function (a, x) {
       return x.length > a.length ? x : a;
     });
   };
@@ -2633,6 +2633,12 @@
     }).join('_');
   };
 
+  var toTitleCase = function toTitleCase(str) {
+    return str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g).map(function (x) {
+      return x.charAt(0).toUpperCase() + x.slice(1);
+    }).join(' ');
+  };
+
   var toggleClass = function toggleClass(el, className) {
     return el.classList.toggle(className);
   };
@@ -3199,6 +3205,7 @@
     toOrdinalSuffix: toOrdinalSuffix,
     toSafeInteger: toSafeInteger,
     toSnakeCase: toSnakeCase,
+    toTitleCase: toTitleCase,
     toggleClass: toggleClass,
     tomorrow: tomorrow,
     transform: transform,
