@@ -51,7 +51,7 @@ JSONToDate(/Date(1489525200000)/); // "14/3/2017"
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### binarySearch
 
@@ -83,7 +83,7 @@ binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 21); // -1
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### celsiusToFahrenheit
 
@@ -104,7 +104,7 @@ celsiusToFahrenheit(33) // 91.4
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### cleanObj
 
@@ -136,7 +136,7 @@ cleanObj(testObj, ['a'], 'children'); // { a: 1, children : { a: 1}}
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### collatz
 
@@ -157,7 +157,7 @@ collatz(8); // 4
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### countVowels
 
@@ -179,7 +179,7 @@ countVowels('gym'); // 0
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### factors
 
@@ -229,7 +229,7 @@ factors(-12, true); // [2,3]
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### fahrenheitToCelsius
 
@@ -250,7 +250,7 @@ fahrenheitToCelsius(32); // 0
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### fibonacciCountUntilNum
 
@@ -272,7 +272,7 @@ fibonacciCountUntilNum(10); // 7
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### fibonacciUntilNum
 
@@ -301,7 +301,7 @@ fibonacciUntilNum(10); // [ 0, 1, 1, 2, 3, 5, 8 ]
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### heronArea
 
@@ -328,7 +328,7 @@ heronArea(3, 4, 5); // 6
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### howManyTimes
 
@@ -365,7 +365,7 @@ howManyTimes(100, -1); // Infinity
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### httpDelete
 
@@ -397,7 +397,7 @@ httpDelete('https://website.com/users/123', request => {
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### httpPut
 
@@ -433,7 +433,7 @@ httpPut('https://website.com/users/123', data, request => {
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### isArmstrongNumber
 
@@ -458,7 +458,7 @@ isArmstrongNumber(56); // false
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### isSimilar
 
@@ -488,7 +488,7 @@ isSimilar('tr','Rohit'); // false
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### kmphToMph
 
@@ -510,7 +510,7 @@ kmphToMph(345.4); // 138.24264965280207
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### levenshteinDistance
 
@@ -557,7 +557,7 @@ compareStrings('30-seconds-of-code', '30-seconds-of-python-code'); // 99.72 (%)
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### mphToKmph
 
@@ -579,7 +579,7 @@ mphToKmph(85.9); // 138.24264965280207
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### pipeLog
 
@@ -602,7 +602,7 @@ pipeLog(1); // logs `1` and returns `1`
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### quickSort
 
@@ -633,7 +633,7 @@ quickSort([4, 1, 3, 2], true); // [4,3,2,1]
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### removeVowels
 
@@ -656,7 +656,7 @@ removeVowels("foobAr","*"); // "f**b*r"
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### solveRPN
 
@@ -709,7 +709,7 @@ solveRPN('2 3 ^'); // 8
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### speechSynthesis
 
@@ -737,7 +737,7 @@ speechSynthesis('Hello, World'); // // plays the message
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### squareSum
 
@@ -758,5 +758,5 @@ squareSum(1, 2, 2); // 9
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
