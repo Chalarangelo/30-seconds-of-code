@@ -2,19 +2,22 @@
 
 Renders a dialog component with modal.
 
-This is a simple React ModalDialog Component.It owns 4 props: `show`、`close`、`title` and `clickModal2Hide`.
+This is a simple React ModalDialog Component.It owns only one prop: `closeOnClick`.
 
-* `close` prop defines the method for closing the dialog.
-* `title` prop determines the title of the dialog.
 * `closeOnClick` prop determines whether we can close the dialog via clicking on modal.
 
-Create 3 methods and bind them to component:
+Benefits from the CustomEvent API,this ModalDialog component supports single instance usage.We just need import `Dialog` once time,and can call the dialog everywhere.Every time we wanna show the dialog,we just call the static function `Dialog.show`.Passing our jsx templates and data as the parameter and then the dialog will show with the data and templates rendered.
 
-* `close` used to call the `close` prop to close the dialog.
-* `modalClick` used to define the click event handler of the modal.When `clickModal2Hide` prop passed as `true`,the `modalClick` will close the dialog when modal clicked.
-* `dialogClick` used to stop propagation of the modal click event.You can define more logics in this method.
+After the component mounted,Dialog binds a custom event called 'modal' to document element.The event handler defined in our component named `modalHandler`.It accepts and renders the data passed by users.When document node captured a `modal` event,`modalHandler` works.
 
-Use `children` prop to get the content of the dialog passed by Component User.Render the content in `dialog-content` class div.
+Before the component unmounted,Dialog removes the custom event from document element in case of memory leaks.
+
+Dialog exposed the `show` method via using `static` reserved keyword so that we can call it through Dialog class.The `show` method accepts a object parameter that contains two properties:`title` and `content`.
+
+* `title` is the text you wanna show as the title of the dialog,passed as a String.
+* `content` is a jsx element.Dialog will render it.You can pass any content you want to show in the dialog.
+
+See the live demo on [stackblitz.com](https://stackblitz.com/edit/react-7yg2gr).
 
 ```css
   .modal {
