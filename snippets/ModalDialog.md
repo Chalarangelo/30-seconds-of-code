@@ -124,7 +124,7 @@ class Dialog extends React.Component {
 
 // every time you wanna call the dialog
 // content is a jsx element
-ModalDialog.show({
+Dialog.show({
   title: 'Test', 
   content: <img src="https://github.com/zhongdeming428/30-seconds-of-react/raw/master/logo.png"/>
 });  
