@@ -61,44 +61,71 @@ Use `children` prop to get the content of the dialog passed by Component User.Re
 ```
 
 ```jsx
-  class Dialog extends React.Component {
-    constructor() {
-      super();
-      this.close = this.close.bind(this);
-      this.modalClick = this.modalClick.bind(this);
-      this.dialogClick = this.dialogClick.bind(this);
-    }
-    render() {
-      return <div className="modal" onClick={this.modalClick} style={{ display: this.props.show ? '' : 'none'}}>
-        <div className="dialog" onClick={this.dialogClick}>
-          <div className="dialog-title">{ this.props.title }<span className="dialog-close" onClick={this.close}>+</span></div>
-          <div className="dialog-content">
-            {
-              this.props.children
-            }
-          </div>
+class Dialog extends React.Component {
+  constructor() {
+    super();
+    this.modalHandler = (e) => {
+      this.setState({
+        data: e.detail.data,
+        visible: true
+      });
+    };
+    this.state = {
+      data: {
+        title: '',
+        content: ''
+      },
+      visible: false
+    };
+    this.close = this.close.bind(this);
+    this.modalClick = this.modalClick.bind(this);
+  }
+  render() {
+    return <div className="modal" onClick={this.modalClick} style={{ display: this.state.visible ? '' : 'none'}}>
+      <div className="dialog">
+        <div className="dialog-title">{ this.state.data.title }<span className="dialog-close" onClick={this.close}>+</span></div>
+        <div className="dialog-content">
+          {
+            this.state.data.content
+          }
         </div>
       </div>
-    }
-    close() {
-      this.props.close();
-    }
-    modalClick() {
-      if (this.props.clickModal2Hide) {
-        this.close();
-      }
-    }
-    dialogClick(e) {
-      e.stopPropagation();
-    }
+    </div>
   }
+  componentDidMount() {
+    document.addEventListener('modal', this.modalHandler);
+  }
+  componentWillUnmount() {
+    document.removeEventListener('modal', this.modalHandler);
+  }
+  close() {
+    this.setState({
+      visible: false
+    });
+  }
+  static show(data) {
+    document.dispatchEvent(new CustomEvent('modal', {
+      detail: {
+        data
+      }
+    }));
+  }
+  modalClick() {
+    if (this.props.clickModal2Hide) this.close();
+  }
+}
 ```
 
 ```jsx
-  let ModalDialog = <Dialog show={this.state.visible} title="Test" clickModal2Hide={true} close={()=>{this.setState({visible: false})}}>
-                      <img src="https://github.com/30-seconds/30-seconds-of-react/blob/master/logo.png?raw=true"></img>
-                    </Dialog>;
-  ReactDOM.render(<ModalDialog />, Node);
+// add to render function
+<Dialog clickModal2Hide={true} show={true}/>
+
+// every time you wanna call the dialog
+// content is a jsx element
+ModalDialog.show({
+  title: 'Test', 
+  content: <img src="https://github.com/zhongdeming428/30-seconds-of-react/raw/master/logo.png"/>
+});  
 ```
 
 <!-- tags: props,children,class -->
