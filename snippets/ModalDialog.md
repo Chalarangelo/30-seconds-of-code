@@ -110,7 +110,7 @@ class Dialog extends React.Component {
     }));
   }
   modalClick() {
-    if (this.props.clickModal2Hide) this.close();
+    if (this.props.closeOnClick) this.close();
   }
 }
 ```
