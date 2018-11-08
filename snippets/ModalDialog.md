@@ -4,7 +4,6 @@ Renders a dialog component with modal.
 
 This is a simple React ModalDialog Component.It owns 4 props: `show`、`close`、`title` and `clickModal2Hide`.
 
-* `show` prop determines the initial state of the dialog(show/hide).It can influence the `display` css property of `modal` class div.E
 * `close` prop defines the method for closing the dialog.
 * `title` prop determines the title of the dialog.
 * `clickModal2Hide` prop determines whether we can close the dialog via clicking on modal.
