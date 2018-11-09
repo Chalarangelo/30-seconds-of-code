@@ -103,7 +103,12 @@ class Dialog extends React.Component {
   }
   close() {
     this.setState({
-      visible: false
+      visible: false,
+      data: {
+        title: '',
+        closeOnClick: false,
+        content: ''
+      }
     });
   }
   static show(data) {
