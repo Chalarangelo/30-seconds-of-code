@@ -2,12 +2,12 @@
 
 Renders a dialog component with modal.
 
-This is a simple React ModalDialog Component that is called and controlled through events
+This is a simple React ModalDialog Component that is called and controlled through events.
 
 
 Benefits from the CustomEvent API,this ModalDialog component supports single instance usage.We just need import `Dialog` once time,and can call the dialog everywhere.Every time we wanna show the dialog,we just call the static function `Dialog.show`.Passing our jsx templates and data as the parameter and then the dialog will show with the data and templates rendered.
 
-After the component mounted,Dialog binds a custom event called 'modal' to document element.The event handler defined in our component named `modalHandler`.It accepts and renders the data passed by users.When document node captured a `modal` event,`modalHandler` works.
+After the component mounted,Dialog binds a custom event called `modal` to document element.The event handler defined in our component named `modalHandler`.It accepts and renders the data passed by users.When document node captured a `modal` event,`modalHandler` works.
 
 Before the component unmounted,Dialog removes the custom event from document element in case of memory leaks.
 
