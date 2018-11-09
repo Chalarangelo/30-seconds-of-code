@@ -2,7 +2,7 @@
 
 Renders a dialog component with modal.
 
-This is a simple React ModalDialog Component.It owns only one prop: `closeOnClick`.
+This is a simple React ModalDialog Component that is called and controlled through events
 
 * `closeOnClick` prop determines whether we can close the dialog via clicking on modal.
 
