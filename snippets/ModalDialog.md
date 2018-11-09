@@ -14,6 +14,7 @@ Before the component unmounted,Dialog removes the custom event from document ele
 Dialog exposed the `show` method via using `static` reserved keyword so that we can call it through Dialog class.The `show` method accepts a object parameter that contains three properties: `title`, `closeOnClick`, and `content`.
 
 * `title` is the text you wanna show as the title of the dialog,passed as a String.
+* `closeOnClick` is a boolean to determine if the modal should close when clicked on(true), or only when the X button is pressed(false).
 * `content` is a jsx element.Dialog will render it.You can pass any content you want to show in the dialog.
 
 See the live demo on [stackblitz.com](https://stackblitz.com/edit/react-7yg2gr).
