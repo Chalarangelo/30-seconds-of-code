@@ -126,7 +126,7 @@ class Dialog extends React.Component {
 
 ```jsx
 // add to render function
-<Dialog closeOnClick={true} />
+<Dialog />
 
 // every time you wanna call the dialog
 // content is a jsx element
