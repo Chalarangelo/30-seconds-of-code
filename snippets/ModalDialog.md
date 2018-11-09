@@ -11,7 +11,7 @@ After the component mounted,Dialog binds a custom event called 'modal' to docume
 
 Before the component unmounted,Dialog removes the custom event from document element in case of memory leaks.
 
-Dialog exposed the `show` method via using `static` reserved keyword so that we can call it through Dialog class.The `show` method accepts a object parameter that contains two properties:`title` and `content`.
+Dialog exposed the `show` method via using `static` reserved keyword so that we can call it through Dialog class.The `show` method accepts a object parameter that contains three properties: `title`, `closeOnClick`, and `content`.
 
 * `title` is the text you wanna show as the title of the dialog,passed as a String.
 * `content` is a jsx element.Dialog will render it.You can pass any content you want to show in the dialog.
