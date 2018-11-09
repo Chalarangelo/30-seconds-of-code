@@ -75,6 +75,7 @@ class Dialog extends React.Component {
     this.state = {
       data: {
         title: '',
+        closeOnClick: false,
         content: ''
       },
       visible: false
