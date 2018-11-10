@@ -77,8 +77,7 @@ try {
     console.log(`${chalk.green('SUCCESS!')} Snippet files linted!`);
     console.timeEnd('Linter');
   });
-}
-catch (err) {
+} catch (err) {
   console.log(`${chalk.red('ERROR!')} During linting: ${err}`);
   process.exit(1);
 }

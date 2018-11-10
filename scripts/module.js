@@ -19,18 +19,18 @@ const DIST = './dist';
 // Regex for selecting code blocks
 const codeRE = /```\s*js([\s\S]*?)```/;
 // Read snippets, build packages
-(async () => {
+(async() => {
   // Start the timer of the script
   console.time('Packager');
   try {
     const tagDatabase = fs.readFileSync('tag_database', 'utf8');
-    const nodeSnippets = tagDatabase.split('\n').filter(v => v.search(/:.*node/g) !== -1).map(v => v.slice(0,v.indexOf(':')));
+    const nodeSnippets = tagDatabase.split('\n').filter(v => v.search(/:.*node/g) !== -1).map(v => v.slice(0, v.indexOf(':')));
     const snippets = fs.readdirSync(SNIPPETS_PATH);
     const snippetExports = `module.exports = {${snippets.map(v => v.replace('.md', '')).join(',')}}`;
     let requires = [];
     let importData = '';
     const archivedSnippets = fs.readdirSync(SNIPPETS_ARCHIVE_PATH).filter(v => v !== 'README.md');
-    const testExports = `module.exports = {${[...snippets,...archivedSnippets].map(v => v.replace('.md', '')).join(',')}}`;
+    const testExports = `module.exports = {${[...snippets, ...archivedSnippets].map(v => v.replace('.md', '')).join(',')}}`;
     // Create `temp` and `dist` folders if they don't already exist.
     if (!fs.existsSync(DIST)) fs.mkdirSync(DIST);
     // Write `imports.js`
@@ -43,7 +43,7 @@ const codeRE = /```\s*js([\s\S]*?)```/;
       let code = snippetData.match(codeRE)[1].replace('\n', '');
       if (nodeSnippets.includes(snippetName)) {
         requires.push(code.match(/const.*=.*require\(([^\)]*)\);/g));
-        code = code.replace(/const.*=.*require\(([^\)]*)\);/g,'');
+        code = code.replace(/const.*=.*require\(([^\)]*)\);/g, '');
       }
       importData += code;
     });

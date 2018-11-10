@@ -41,9 +41,9 @@ const getTermLinkMarkdownBlock = termTitle => {
 };
 
 const glossaryTableOfContentsReducer = (accumulator, currentFile) => {
-  if (accumulator === fileTitles[0]) {
+  if (accumulator === fileTitles[0])
     return getTermLinkMarkdownBlock(accumulator) + getTermLinkMarkdownBlock(currentFile);
-  }
+
   return accumulator + getTermLinkMarkdownBlock(currentFile);
 };
 

@@ -11,10 +11,10 @@ let snippetsData = require('../snippet_data/snippets.json');
 const OUTPUT_PATH = './vscode_snippets';
 console.time('VSCoder');
 // Read and format data
-let vscodeData = snippetsData.data.filter(v => !v.meta.archived ).reduce((acc,v) => {
+let vscodeData = snippetsData.data.filter(v => !v.meta.archived ).reduce((acc, v) => {
   acc[v.id] = {
     prefix: `30s_${v.id}`,
-    body: v.attributes.codeBlocks.es6.replace(/\r/g,'').split('\n'),
+    body: v.attributes.codeBlocks.es6.replace(/\r/g, '').split('\n'),
     description: v.attributes.text.slice(0, v.attributes.text.indexOf('\r\n\r\n'))
   };
   return acc;
