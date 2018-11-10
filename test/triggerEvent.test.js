@@ -9,6 +9,6 @@ test('triggerEvent triggers an event', () => {
   let val = false;
   const fn = () => val = true;
   el.addEventListener('click', fn);
-  triggerEvent(el, 'click', {})
+  triggerEvent(el, 'click', {});
   expect(val).toBeTruthy();
 });
