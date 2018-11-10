@@ -38,7 +38,7 @@ try {
   });
   // Run tests
   if (util.isTravisCI()) {
-    childProcess.execSync('npm test-with-coverage');
+    childProcess.execSync('npm run test-with-coverage');
   }
   else {
     childProcess.execSync('npm test');
