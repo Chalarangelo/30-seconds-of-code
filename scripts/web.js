@@ -109,8 +109,7 @@ sass.render(
         if (!err2) console.log(`${chalk.green('SUCCESS!')} style.css file generated!`);
         else console.log(`${chalk.red('ERROR!')} During style.css file generation: ${err}`);
       });
-    }
-    else
+    } else
       console.log(`${chalk.red('ERROR!')} During style.css file generation: ${err}`);
 
   }
@@ -148,8 +147,7 @@ try {
     'static-page-start.html',
     'static-page-end.html'
   ].map(filename => fs.readFileSync(path.join(staticPartsPath, filename), 'utf8'));
-}
-catch (err) {
+} catch (err) {
   // Handle errors (hopefully not!)
   console.log(`${chalk.red('ERROR!')} During static part loading: ${err}`);
   process.exit(1);
@@ -234,14 +232,13 @@ try {
       `${chalk.green('SUCCESS!')} ${page.tag === 'array' ? 'index' : page.tag}.html file generated!`
     );
   });
-}
-catch (err) {
+} catch (err) {
   // Handle errors (hopefully not!)
   console.log(`${chalk.red('ERROR!')} During category page generation: ${err}`);
   process.exit(1);
 }
 
-const generateMenuForStaticPage = (staticPart) => {
+const generateMenuForStaticPage = staticPart => {
   let taggedData = util.prepTaggedData(tagDbData);
   // Add the start static part
   let htmlCode;
@@ -258,7 +255,7 @@ const generateMenuForStaticPage = (staticPart) => {
       htmlCode += md
         .render(
           `[${taggedSnippet[0]}](./${
-          tag === 'array' ? 'index' : tag
+            tag === 'array' ? 'index' : tag
           }#${taggedSnippet[0].toLowerCase()})\n`
         )
         .replace(/<p>/g, '')
@@ -268,7 +265,7 @@ const generateMenuForStaticPage = (staticPart) => {
     htmlCode += '</ul>\n';
   }
   return staticPart.replace('$nav-menu-data', htmlCode);
-}
+};
 
 const staticPageStartGenerator = (staticPart, heading, description) => {
   let taggedData = util.prepTaggedData(tagDbData);
@@ -350,8 +347,7 @@ try {
 
   fs.writeFileSync(path.join(docsPath, 'archive.html'), minifiedArchivedOutput);
   console.log(`${chalk.green('SUCCESS!')} archive.html file generated!`);
-}
-catch (err) {
+} catch (err) {
   console.log(`${chalk.red('ERROR!')} During archive.html generation: ${err}`);
   process.exit(1);
 }
@@ -384,8 +380,7 @@ try {
   const minifiedGlossaryOutput = minifyHTML(glossaryOutput);
   fs.writeFileSync(path.join(docsPath, 'glossary.html'), minifiedGlossaryOutput);
   console.log(`${chalk.green('SUCCESS!')} glossary.html file generated!`);
-}
-catch (err) {
+} catch (err) {
   console.log(`${chalk.red('ERROR!')} During glossary.html generation: ${err}`);
   process.exit(1);
 }
@@ -396,12 +391,10 @@ staticFiles.forEach(f => {
     if(f !== 'array.html') {
       let fileData = fs.readFileSync(path.join(staticPartsPath, f), 'utf8');
       fs.writeFileSync(path.join(docsPath, f), generateMenuForStaticPage(fileData));
-    }
-    else 
+    } else
       fs.copyFileSync(path.join(staticPartsPath, f), path.join(docsPath, f));
     console.log(`${chalk.green('SUCCESS!')} ${f} file copied!`);
-  }
-  catch (err) {
+  } catch (err) {
     console.log(`${chalk.red('ERROR!')} During ${f} copying: ${err}`);
     process.exit(1);
   }

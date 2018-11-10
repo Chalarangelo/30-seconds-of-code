@@ -38,8 +38,7 @@ try {
       output += `${snippet[0].slice(0, -3)}:${tagDbData[snippet[0].slice(0, -3)]
         .join(',')
         .trim()}\n`;
-    }
-    else {
+    } else {
       output += `${snippet[0].slice(0, -3)}:uncategorized\n`;
       missingTags++;
       console.log(`${chalk.yellow('Tagged uncategorized:')} ${snippet[0].slice(0, -3)}`);
@@ -47,8 +46,7 @@ try {
   }
   // Write to tag_database
   fs.writeFileSync('tag_database', output);
-}
-catch (err) {
+} catch (err) {
   // Handle errors (hopefully not!)
   console.log(`${chalk.red('ERROR!')} During tag_database generation: ${err}`);
   process.exit(1);

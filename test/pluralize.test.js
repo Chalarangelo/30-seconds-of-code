@@ -13,8 +13,11 @@ test('Produces the singular of the word', () => {
 test('Produces the plural of the word', () => {
   expect(pluralize(2, 'apple')).toBe('apples');
 });
-test('Prodices the defined plural of the word', () => {
+test('Produces the defined plural of the word', () => {
   expect(pluralize(2, 'person', 'people')).toBe('people');
+});
+test('Produces the defined plural of the word', () => {
+  expect(pluralize(1, 'person', 'people')).toBe('person');
 });
 const PLURALS = {
   person: 'people',

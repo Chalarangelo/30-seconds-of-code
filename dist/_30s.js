@@ -488,7 +488,7 @@
       ')'
     );
   };
-  const hide = els => els.forEach(e => (e.style.display = 'none'));
+  const hide = (...el) => [...el].forEach(e => (e.style.display = 'none'));
   const httpGet = (url, callback, err = console.error) => {
     const request = new XMLHttpRequest();
     request.open('GET', url, true);

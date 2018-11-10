@@ -8,7 +8,6 @@
     "fs-extra": "^6.0.0",
     "html-minifier": "^3.5.20",
     "jest": "^23.6.0",
-    "jest-tap-reporter": "^1.9.0",
     "markdown-builder": "^0.8.4",
     "markdown-it": "^8.4.2",
     "node-sass": "^4.9.3",
@@ -21,9 +20,10 @@
   },
   "name": "30-seconds-of-code",
   "description": "A collection of useful JavaScript snippets.",
-  "version": "1.1.0",
+  "version": "1.2.2",
   "main": "dist/_30s.js",
   "module": "dist/_30s.esm.js",
+  "sideEffects": false,
   "scripts": {
     "glossary:librarian": "node ./scripts/glossary/library.js",
     "glossary:keymaker": "node ./scripts/glossary/keyword.js",
@@ -36,7 +36,7 @@
     "vscoder": "node ./scripts/vscodegen.js",
     "packager": "node ./scripts/module.js",
     "localizer": "node ./scripts/localize.js",
-    "test": "jest --verbose",
+    "test": "jest --verbose --coverage",
     "test-with-coverage": "jest --coverage && cat ./coverage/lcov.info | codacy-coverage"
   },
   "repository": {
@@ -53,18 +53,6 @@
   "bugs": {
     "url": "https://github.com/30-seconds/30-seconds-of-code/issues"
   },
-  "homepage": "https://github.com/30-seconds/30-seconds-of-code#readme",
-  "dependencies": {},
-  "jest": {
-    "reporters": [
-      [
-        "jest-tap-reporter",
-        {
-          "logLevel": "INFO",
-          "showInternalStackTraces": false,
-          "filePath": "test/testlog"
-        }
-      ]
-    ]
-  }
+  "homepage": "https://30secondsofcode.org/",
+  "dependencies": {}
 }
