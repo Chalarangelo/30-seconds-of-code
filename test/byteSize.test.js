@@ -1,4 +1,5 @@
 const expect = require('expect');
+const { byteSize } = require('./_30s.js');
 const Blob = class {
   constructor(s) {
     return {
@@ -6,7 +7,6 @@ const Blob = class {
     };
   }
 };
-const byteSize = str => new Blob([str]).size;
 
 test('byteSize is a Function', () => {
   expect(byteSize).toBeInstanceOf(Function);

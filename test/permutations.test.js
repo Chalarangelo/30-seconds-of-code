@@ -14,3 +14,6 @@ test('Generates all permutations of an array', () => {
     [5, 33, 1]
   ]);
 });
+test('Generates all permutations of an array', () => {
+  expect(permutations([1])).toEqual([1]);
+});
