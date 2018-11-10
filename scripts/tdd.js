@@ -28,7 +28,7 @@ try {
   const orphanedTests = [...definedTests.filter(v => ![...snippets, ...archivedSnippets].includes(v))];
   orphanedTests.forEach(snippet => {
     console.log(`${chalk.yellow('WARNING!')} Orphaned test: ${snippet}`);
-  })
+  });
   // Create files for undefined tests
   undefinedTests.forEach(snippet => {
     const exportTest = [
