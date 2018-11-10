@@ -41,8 +41,12 @@ try {
     fs.writeFileSync(path.join(TEST_PATH, `${snippet}.test.js`), exportTest);
   });
   // Run tests
-  fs.writeFileSync(path.join(TEST_PATH, 'testlog'), `Test log for: ${new Date().toString()}\n`);
-  childProcess.execSync('npm test');
+  if (util.isTravisCI()) {
+    childProcess.execSync('npm test-with-coverage');
+  }
+  else {
+    childProcess.execSync('npm test');
+  }
   console.log(`${chalk.green('SUCCESS!')} All tests ran successfully!`);
 } catch (err) {
   console.log(`${chalk.red('ERROR!')} During test runs: ${err}`);
