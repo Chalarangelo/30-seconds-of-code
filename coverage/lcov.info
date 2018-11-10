@@ -1,5 +1,5 @@
 TN:
-SF:H:\My Files\git Repositories\30-seconds-of-code\test\_30s.js
+SF:/home/travis/build/30-seconds/30-seconds-of-code/test/_30s.js
 FN:4,(anonymous_0)
 FN:8,(anonymous_1)
 FN:9,(anonymous_2)
@@ -988,9 +988,9 @@ FNDA:2,(anonymous_307)
 FNDA:4,(anonymous_308)
 FNDA:1,(anonymous_309)
 FNDA:2,(anonymous_310)
-FNDA:6,(anonymous_311)
+FNDA:4,(anonymous_311)
 FNDA:3,(anonymous_312)
-FNDA:14,(anonymous_313)
+FNDA:13,(anonymous_313)
 FNDA:1,(anonymous_314)
 FNDA:3,(anonymous_315)
 FNDA:1,(anonymous_316)
@@ -1036,8 +1036,8 @@ FNDA:0,(anonymous_355)
 FNDA:2,(anonymous_356)
 FNDA:2,(anonymous_357)
 FNDA:2,(anonymous_358)
-FNDA:5,(anonymous_359)
-FNDA:10,(anonymous_360)
+FNDA:7,(anonymous_359)
+FNDA:14,(anonymous_360)
 FNDA:1,(anonymous_361)
 FNDA:1,(anonymous_362)
 FNDA:2,(anonymous_363)
@@ -1162,7 +1162,7 @@ FNDA:0,(anonymous_481)
 FNDA:0,(anonymous_482)
 FNDA:0,(anonymous_483)
 FNDA:1,(anonymous_484)
-FNDA:12,(anonymous_485)
+FNDA:14,(anonymous_485)
 FNDA:3,(anonymous_486)
 FNDA:6,(anonymous_487)
 FNDA:3,(anonymous_488)
@@ -1176,7 +1176,7 @@ FNDA:1,(anonymous_495)
 FNDA:1,(anonymous_496)
 FNDA:1,(anonymous_497)
 FNDA:11,(anonymous_498)
-FNDA:22,(anonymous_499)
+FNDA:10,(anonymous_499)
 FNDA:11,(anonymous_500)
 FNDA:2,(anonymous_501)
 FNDA:14,(anonymous_502)
@@ -1810,7 +1810,7 @@ DA:691,360
 DA:692,360
 DA:693,360
 DA:694,3
-DA:695,14
+DA:695,13
 DA:696,3
 DA:698,360
 DA:699,1
@@ -1880,11 +1880,11 @@ DA:788,1
 DA:789,1
 DA:792,360
 DA:793,2
-DA:794,5
-DA:795,10
-DA:796,7
-DA:797,7
-DA:799,10
+DA:794,7
+DA:795,14
+DA:796,9
+DA:797,9
+DA:799,14
 DA:802,360
 DA:803,360
 DA:804,360
@@ -2087,7 +2087,7 @@ DA:1079,360
 DA:1080,360
 DA:1081,1
 DA:1082,11
-DA:1083,22
+DA:1083,10
 DA:1084,11
 DA:1085,360
 DA:1086,14
@@ -2691,7 +2691,7 @@ BRDA:609,165,0,4
 BRDA:609,165,1,4
 BRDA:609,165,2,4
 BRDA:612,166,0,2
-BRDA:612,166,1,0
+BRDA:612,166,1,2
 BRDA:624,167,0,4
 BRDA:624,167,1,4
 BRDA:624,167,2,4
@@ -2756,15 +2756,15 @@ BRDA:780,202,0,0
 BRDA:780,202,1,0
 BRDA:787,203,0,1
 BRDA:787,203,1,1
-BRDA:795,204,0,7
-BRDA:795,204,1,3
+BRDA:795,204,0,9
+BRDA:795,204,1,5
 BRDA:796,205,0,1
-BRDA:796,205,1,6
-BRDA:796,206,0,7
-BRDA:796,206,1,3
-BRDA:797,207,0,3
-BRDA:797,207,1,4
-BRDA:797,208,0,2
+BRDA:796,205,1,8
+BRDA:796,206,0,9
+BRDA:796,206,1,4
+BRDA:797,207,0,4
+BRDA:797,207,1,5
+BRDA:797,208,0,3
 BRDA:797,208,1,2
 BRDA:804,209,0,3
 BRDA:823,210,0,1
@@ -2872,8 +2872,8 @@ BRDA:1075,266,0,2
 BRDA:1075,266,1,4
 BRDA:1076,267,0,1
 BRDA:1076,267,1,2
-BRDA:1083,268,0,22
-BRDA:1083,268,1,22
+BRDA:1083,268,0,10
+BRDA:1083,268,1,10
 BRDA:1085,269,0,1
 BRDA:1089,270,0,1
 BRDA:1089,270,1,1
@@ -3016,5 +3016,5 @@ BRDA:1474,346,1,0
 BRDA:1481,347,0,2
 BRDA:1481,347,1,0
 BRF:644
-BRH:569
+BRH:570
 end_of_record
