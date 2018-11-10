@@ -7,3 +7,6 @@ test('isPrime is a Function', () => {
 test('passed number is a prime', () => {
   expect(isPrime(11)).toBeTruthy();
 });
+test('passed number is not a prime', () => {
+  expect(isPrime(10)).toBeFalsy();
+});
