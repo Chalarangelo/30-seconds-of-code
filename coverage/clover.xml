@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1541853541650" clover="3.2.0">
-  <project timestamp="1541853541651" name="All files">
+<coverage generated="1541853784655" clover="3.2.0">
+  <project timestamp="1541853784655" name="All files">
     <metrics statements="1017" coveredstatements="945" conditionals="644" coveredconditionals="570" methods="675" coveredmethods="623" elements="2336" coveredelements="2138" complexity="0" loc="1017" ncloc="1017" packages="1" files="1" classes="1">
       <file name="_30s.js" path="/home/travis/build/30-seconds/30-seconds-of-code/test/_30s.js">
         <metrics statements="1017" coveredstatements="945" conditionals="644" coveredconditionals="570" methods="675" coveredmethods="623"/>

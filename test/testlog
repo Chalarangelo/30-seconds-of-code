@@ -2321,7 +2321,7 @@ ok 1234 — defer is a Function
 
 # Test Suites: 100% ██████████, 360 passed, 360 total
 # Tests:       100% ██████████, 1234 passed, 1234 total
-# Time:        53.433s
+# Time:        52.713s
 
 # Ran all test suites.
 
