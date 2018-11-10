@@ -8,7 +8,6 @@
     "fs-extra": "^6.0.0",
     "html-minifier": "^3.5.20",
     "jest": "^23.6.0",
-    "jest-tap-reporter": "^1.9.0",
     "markdown-builder": "^0.8.4",
     "markdown-it": "^8.4.2",
     "node-sass": "^4.9.3",
@@ -54,17 +53,5 @@
     "url": "https://github.com/30-seconds/30-seconds-of-code/issues"
   },
   "homepage": "https://github.com/30-seconds/30-seconds-of-code#readme",
-  "dependencies": {},
-  "jest": {
-    "reporters": [
-      [
-        "jest-tap-reporter",
-        {
-          "logLevel": "INFO",
-          "showInternalStackTraces": false,
-          "filePath": "test/testlog"
-        }
-      ]
-    ]
-  }
+  "dependencies": {}
 }
