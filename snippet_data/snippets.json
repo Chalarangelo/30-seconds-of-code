@@ -2443,8 +2443,8 @@
         "fileName": "hide.md",
         "text": "Hides all the elements specified.\n\nUse `NodeList.prototype.forEach()` to apply `display: none` to each element specified.",
         "codeBlocks": {
-          "es6": "const hide = els => els.forEach(e => (e.style.display = 'none'));",
-          "es5": "var hide = function hide(els) {\n  return els.forEach(function (e) {\n    return e.style.display = 'none';\n  });\n};",
+          "es6": "const hide = (...el) => [...el].forEach(e => (e.style.display = 'none'));",
+          "es5": "var hide = function hide() {\n  for (var _len = arguments.length, el = new Array(_len), _key = 0; _key < _len; _key++) {\n    el[_key] = arguments[_key];\n  }\n\n  return el.concat().forEach(function (e) {\n    return e.style.display = 'none';\n  });\n};",
           "example": "hide(document.querySelectorAll('img')); // Hides all <img> elements on the page"
         },
         "tags": [
@@ -2455,7 +2455,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "8b7b70809f93fd9392315a5c63aa4cbbf9b45eb1165a7d44db314186d407816b"
+        "hash": "40558410bed6e9e2866362dc86898fd28a97073f798d8dd5c566eea2ccec2f8f"
       }
     },
     {
@@ -6491,7 +6491,7 @@
         "codeBlocks": {
           "es6": "const toHash = (object, key) =>\n  Array.prototype.reduce.call(\n    object,\n    (acc, data, index) => ((acc[!key ? index : data[key]] = data), acc),\n    {}\n  );",
           "es5": "var toHash = function toHash(object, key) {\n  return Array.prototype.reduce.call(object, function (acc, data, index) {\n    return acc[!key ? index : data[key]] = data, acc;\n  }, {});\n};",
-          "example": "toHash([4, 3, 2, 1]); // { 0: 4, 1: 3, 2: 2, 1: 1 }\ntoHash([{ a: 'label' }], 'a'); // { label: { a: 'label' } }\n// A more in depth example:\nlet users = [{ id: 1, first: 'Jon' }, { id: 2, first: 'Joe' }, { id: 3, first: 'Moe' }];\nlet managers = [{ manager: 1, employees: [2, 3] }];\n// We use function here because we want a bindable reference, but a closure referencing the hash would work, too.\nmanagers.forEach(\n  manager =>\n    (manager.employees = manager.employees.map(function(id) {\n      return this[id];\n    }, toHash(users, 'id')))\n);\nmanagers; // [ { manager:1, employees: [ { id: 2, first: \"Joe\" }, { id: 3, first: \"Moe\" } ] } ]"
+          "example": "toHash([4, 3, 2, 1]); // { 0: 4, 1: 3, 2: 2, 3: 1 }\ntoHash([{ a: 'label' }], 'a'); // { label: { a: 'label' } }\n// A more in depth example:\nlet users = [{ id: 1, first: 'Jon' }, { id: 2, first: 'Joe' }, { id: 3, first: 'Moe' }];\nlet managers = [{ manager: 1, employees: [2, 3] }];\n// We use function here because we want a bindable reference, but a closure referencing the hash would work, too.\nmanagers.forEach(\n  manager =>\n    (manager.employees = manager.employees.map(function(id) {\n      return this[id];\n    }, toHash(users, 'id')))\n);\nmanagers; // [ { manager:1, employees: [ { id: 2, first: \"Joe\" }, { id: 3, first: \"Moe\" } ] } ]"
         },
         "tags": [
           "array",
@@ -6500,7 +6500,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "c7a62b55b5a90661bf3f9c956f075906439a50151a3aee4023ad8fe878cae2e6"
+        "hash": "2fd449a2a993bdbc2b93d185ef09aea72af7845152de46d6050db82efe912130"
       }
     },
     {
