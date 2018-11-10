@@ -1123,7 +1123,7 @@
   "hide": {
     "prefix": "30s_hide",
     "body": [
-      "const hide = els => els.forEach(e => (e.style.display = 'none'));"
+      "const hide = (...el) => [...el].forEach(e => (e.style.display = 'none'));"
     ],
     "description": "Hides all the elements specified.\n\nUse `NodeList.prototype.forEach()` to apply `display: none` to each element specified"
   },
