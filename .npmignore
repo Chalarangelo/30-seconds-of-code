@@ -16,6 +16,7 @@ snippet_data/*
 snippets_archive/*
 scripts/*
 locale/*
+coverage/*
 docs/*
 .travis/*
 .github/*

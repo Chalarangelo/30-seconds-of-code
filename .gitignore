@@ -4,7 +4,6 @@ currentSnippet\.js
 .idea
 test.sh
 /*.log
-coverage/
 dist/flavor\.min\.css
 
 dist/flavor\.css
