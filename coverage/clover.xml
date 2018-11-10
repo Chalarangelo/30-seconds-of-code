@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1541859693884" clover="3.2.0">
-  <project timestamp="1541859693884" name="All files">
-    <metrics statements="1017" coveredstatements="945" conditionals="644" coveredconditionals="569" methods="675" coveredmethods="623" elements="2336" coveredelements="2137" complexity="0" loc="1017" ncloc="1017" packages="1" files="1" classes="1">
-      <file name="_30s.js" path="H:\My Files\git Repositories\30-seconds-of-code\test\_30s.js">
-        <metrics statements="1017" coveredstatements="945" conditionals="644" coveredconditionals="569" methods="675" coveredmethods="623"/>
+<coverage generated="1541860088875" clover="3.2.0">
+  <project timestamp="1541860088875" name="All files">
+    <metrics statements="1017" coveredstatements="945" conditionals="644" coveredconditionals="570" methods="675" coveredmethods="623" elements="2336" coveredelements="2138" complexity="0" loc="1017" ncloc="1017" packages="1" files="1" classes="1">
+      <file name="_30s.js" path="/home/travis/build/30-seconds/30-seconds-of-code/test/_30s.js">
+        <metrics statements="1017" coveredstatements="945" conditionals="644" coveredconditionals="570" methods="675" coveredmethods="623"/>
         <line num="1" count="360" type="cond" truecount="2" falsecount="0"/>
         <line num="2" count="360" type="cond" truecount="2" falsecount="0"/>
         <line num="4" count="360" type="cond" truecount="2" falsecount="0"/>
@@ -407,7 +407,7 @@
         <line num="609" count="360" type="cond" truecount="3" falsecount="0"/>
         <line num="610" count="360" type="stmt"/>
         <line num="611" count="360" type="stmt"/>
-        <line num="612" count="360" type="cond" truecount="1" falsecount="1"/>
+        <line num="612" count="360" type="cond" truecount="2" falsecount="0"/>
         <line num="613" count="360" type="stmt"/>
         <line num="614" count="360" type="stmt"/>
         <line num="615" count="360" type="stmt"/>
@@ -462,7 +462,7 @@
         <line num="692" count="360" type="cond" truecount="1" falsecount="0"/>
         <line num="693" count="360" type="stmt"/>
         <line num="694" count="3" type="stmt"/>
-        <line num="695" count="14" type="stmt"/>
+        <line num="695" count="13" type="stmt"/>
         <line num="696" count="3" type="cond" truecount="2" falsecount="0"/>
         <line num="698" count="360" type="stmt"/>
         <line num="699" count="1" type="stmt"/>
@@ -532,11 +532,11 @@
         <line num="789" count="1" type="stmt"/>
         <line num="792" count="360" type="stmt"/>
         <line num="793" count="2" type="stmt"/>
-        <line num="794" count="5" type="stmt"/>
-        <line num="795" count="10" type="cond" truecount="2" falsecount="0"/>
-        <line num="796" count="7" type="cond" truecount="4" falsecount="0"/>
-        <line num="797" count="7" type="cond" truecount="4" falsecount="0"/>
-        <line num="799" count="10" type="stmt"/>
+        <line num="794" count="7" type="stmt"/>
+        <line num="795" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="796" count="9" type="cond" truecount="4" falsecount="0"/>
+        <line num="797" count="9" type="cond" truecount="4" falsecount="0"/>
+        <line num="799" count="14" type="stmt"/>
         <line num="802" count="360" type="stmt"/>
         <line num="803" count="360" type="stmt"/>
         <line num="804" count="360" type="cond" truecount="1" falsecount="0"/>
@@ -739,7 +739,7 @@
         <line num="1080" count="360" type="stmt"/>
         <line num="1081" count="1" type="stmt"/>
         <line num="1082" count="11" type="stmt"/>
-        <line num="1083" count="22" type="cond" truecount="2" falsecount="0"/>
+        <line num="1083" count="10" type="cond" truecount="2" falsecount="0"/>
         <line num="1084" count="11" type="stmt"/>
         <line num="1085" count="360" type="cond" truecount="1" falsecount="0"/>
         <line num="1086" count="14" type="stmt"/>
