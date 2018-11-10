@@ -12,6 +12,9 @@ test('Function works properly', () => {
 test('Function works properly', () => {
   expect(square(3)).toBe(9);
 });
+test('Function works properly, cache stores values (coverage)', () => {
+  expect(square(3)).toBe(9);
+});
 test('Cache stores values', () => {
   expect(Array.from(square.cache)).toEqual([[2, 4], [3, 9]]);
 });
