@@ -23,6 +23,7 @@
   "version": "1.2.2",
   "main": "dist/_30s.js",
   "module": "dist/_30s.esm.js",
+  "sideEffects": false,
   "scripts": {
     "glossary:librarian": "node ./scripts/glossary/library.js",
     "glossary:keymaker": "node ./scripts/glossary/keyword.js",
