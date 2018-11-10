@@ -32,8 +32,7 @@ const getFilesInDir = (directoryPath, withPath, exclude = null) => {
       }, []);
     }
     return directoryFilenames;
-  }
-  catch (err) {
+  } catch (err) {
     console.log(`${chalk.red('ERROR!')} During snippet loading: ${err}`);
     process.exit(1);
   }
@@ -47,8 +46,7 @@ const readSnippets = snippetsPath => {
   try {
     for (let snippet of snippetFilenames)
       snippets[snippet] = fs.readFileSync(path.join(snippetsPath, snippet), 'utf8');
-  }
-  catch (err) {
+  } catch (err) {
     console.log(`${chalk.red('ERROR!')} During snippet loading: ${err}`);
     process.exit(1);
   }
@@ -71,8 +69,7 @@ const readTags = () => {
           return data;
         })
     );
-  }
-  catch (err) {
+  } catch (err) {
     // Handle errors (hopefully not!)
     console.log(`${chalk.red('ERROR!')} During tag database loading: ${err}`);
     process.exit(1);
@@ -131,9 +128,9 @@ const getCodeBlocks = str => {
   results = results.map(v => v.replace(/```js([\s\S]*?)```/g, '$1').trim());
   return {
     es6: results[0],
-    es5: babel.transformSync(results[0], { presets: ['@babel/preset-env'] }).code.replace('"use strict";\n\n',''),
+    es5: babel.transformSync(results[0], { presets: ['@babel/preset-env'] }).code.replace('"use strict";\n\n', ''),
     example: results[1]
-  }
+  };
 };
 // Gets the textual content for a snippet file.
 const getTextualContent = str => {

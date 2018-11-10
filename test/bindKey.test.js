@@ -6,7 +6,7 @@ test('bindKey is a Function', () => {
 });
 const freddy = {
   user: 'fred',
-  greet: function(greeting, punctuation) {
+  greet(greeting, punctuation) {
     return greeting + ' ' + this.user + punctuation;
   }
 };

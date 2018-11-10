@@ -5,7 +5,7 @@ test('insertBefore is a Function', () => {
   expect(insertBefore).toBeInstanceOf(Function);
 });
 let e = document.createElement('div');
-e.setAttribute("id", "test");
+e.setAttribute('id', 'test');
 test('Does not throw error if the element exists', () => {
   expect(() => {
     insertBefore(e, '<span>test</span>');

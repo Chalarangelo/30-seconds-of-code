@@ -7,7 +7,7 @@ test('isPromiseLike is a Function', () => {
 test('Returns true for a promise-like object', () => {
   expect(
     isPromiseLike({
-      then: function() {
+      then() {
         return '';
       }
     })

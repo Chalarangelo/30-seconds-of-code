@@ -17,3 +17,8 @@ test('Works with n = 2', () => {
 test('Works with n = 3', () => {
   expect(add3(1, 2, 3)).toBe(6);
 });
+test('Throws RangeError if arguments are too few', () => {
+  expect(() => {
+    add2(2);
+  }).toThrow(RangeError);
+});

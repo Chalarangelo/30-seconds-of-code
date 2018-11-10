@@ -69,7 +69,7 @@ const completeData = {
   }
 };
 let listingData = {
-  data: 
+  data:
     completeData.data.map(v => ({
       id: v.id,
       type: 'snippetListing',
@@ -80,8 +80,7 @@ let listingData = {
       meta: {
         hash: v.meta.hash
       }
-    }))
-  ,
+    })),
   meta: {
     specification: 'http://jsonapi.org/format/'
   }
