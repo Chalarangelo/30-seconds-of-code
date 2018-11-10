@@ -13,3 +13,9 @@ test('Converts a number in bytes to a human-readable string.', () => {
 test('Converts a number in bytes to a human-readable string.', () => {
   expect(prettyBytes(123456789, 3, false)).toBe('123MB');
 });
+test('Converts a number in bytes to a human-readable string.', () => {
+  expect(prettyBytes(0, 3, false)).toBe('0B');
+});
+test('Converts a number in bytes to a human-readable string.', () => {
+  expect(prettyBytes(0, 3, true)).toBe('0 B');
+});
