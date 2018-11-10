@@ -6,7 +6,7 @@ test('bindAll is a Function', () => {
 });
 var view = {
   label: 'docs',
-  click: function() {
+  click() {
     return 'clicked ' + this.label;
   }
 };
