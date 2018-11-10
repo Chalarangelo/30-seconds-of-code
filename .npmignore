@@ -9,6 +9,8 @@ CODE_OF_CONDUCT.md
 .mdlrc
 .codeclimate.yml
 test/*
+glossary/*
+snippets/*
 static-parts/*
 snippet_data/*
 snippets_archive/*
@@ -17,3 +19,8 @@ locale/*
 docs/*
 .travis/*
 .github/*
+advanced.svg
+package-lock.json
+yarn.lock
+advanced.svg
+sponsored_by_DigitalOcean.png
