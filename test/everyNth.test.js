@@ -11,6 +11,6 @@ test('When N is bigger than array size, return nothing', () => {
   expect(everyNth([1, 2, 3, 4], 5)).toEqual([]);
 });
 test('Works with different variable types in the same array', () => {
-  expect(everyNth([1, "two", 3, false, 5, 6.1], 2)).toEqual(["two", false, 6.1]);
+  expect(everyNth([1, 'two', 3, false, 5, 6.1], 2)).toEqual(['two', false, 6.1]);
 });
 
