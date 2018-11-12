@@ -145,6 +145,7 @@ isEmpty:type,array,object,string,beginner
 isEven:math,beginner
 isFunction:type,function,beginner
 isLowerCase:string,utility,beginner
+isNegativeZero:math,utility,beginner
 isNil:type,beginner
 isNull:type,beginner
 isNumber:type,math,beginner
