@@ -35,6 +35,8 @@ class Tooltip extends React.Component {
         visibility: "visible"
       }
     };
+    this.showTooltip = this.toggleTooltip.bind(this, true);
+    this.hideTooltip = this.toggleTooltip.bind(this, false);
   }
 
   toggleTooltip = tooltipState => {
@@ -55,8 +57,8 @@ class Tooltip extends React.Component {
         </div>
         {React.cloneElement(children, {
           ...rest,
-          onMouseEnter: () => this.toggleTooltip(true),
-          onMouseLeave: () => this.toggleTooltip(false)
+          onMouseEnter: this.showTooltip,
+          onMouseLeave: this.hideTooltip
         })}
       </div>
     );
