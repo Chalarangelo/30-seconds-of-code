@@ -1,7 +1,6 @@
 ### Tooltip
 
 Renders a tooltip component.
-<br/><br/>
 
  The `show` property on the component state is set to `false` as default.
  
