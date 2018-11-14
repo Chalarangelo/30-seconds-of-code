@@ -24,6 +24,7 @@ class Tooltip extends React.Component {
     };
     this.style = {
       tooltip: {
+        position: 'relative',
         backgroundColor: "rgba(0,0,0,0.7)",
         color: "white",
         visibility: "hidden",
@@ -31,9 +32,17 @@ class Tooltip extends React.Component {
         padding: 5,
         borderRadius: 5
       },
+      tooltipArrow: {
+        position: 'absolute',
+        top: '100%',
+        left: '50%',
+        borderWidth: 5,
+        borderStyle: 'solid',
+        borderColor: "rgba(0,0,0,0.7) transparent transparent",
+      },
       visible: {
         visibility: "visible"
-      }
+      },
     };
     this.showTooltip = this.toggleTooltip.bind(this, true);
     this.hideTooltip = this.toggleTooltip.bind(this, false);
@@ -46,25 +55,29 @@ class Tooltip extends React.Component {
   };
 
   render() {
-    const { children, ...rest } = this.props;
+    const { children, text, ...rest } = this.props;
     const { show } = this.state;
-    const { visible, tooltip } = this.style;
+    const { visible, tooltip, tooltipArrow } = this.style;
     const showTooltip = show ? visible : {};
     return (
       <div>
         <div style={{ ...tooltip, ...showTooltip }}>
-          This is a simple tooltip
+          {text}
+          <span style={tooltipArrow}/>
         </div>
-        {React.cloneElement(children, {
-          ...rest,
-          onMouseEnter: this.showTooltip,
-          onMouseLeave: this.hideTooltip
-        })}
+        <div {...rest} onMouseEnter={this.showTooltip} onMouseLeave={this.hideTooltip}>
+          {children}
+        </div>
       </div>
     );
   }
 }
 ```
 ```jsx
- ReactDOM.render(<Tooltip />, document.getElementById('root'));
+ ReactDOM.render(
+     <Tooltip text='Simple tooltip'>
+       <button>Hover me!</button>
+     </Tooltip>,
+     document.getElementById('root')
+ );
  ```
