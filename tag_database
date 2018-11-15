@@ -194,7 +194,7 @@ negate:function,beginner
 nest:object,intermediate
 nodeListToArray:browser,array,beginner
 none:array,function,beginner
-normalizeVector:beginner,vector
+normalizeVector:math,vector,beginner
 nthArg:utility,function,beginner
 nthElement:array,beginner
 objectFromPairs:object,array,beginner
