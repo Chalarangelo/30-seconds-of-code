@@ -84,7 +84,7 @@ class Dialog extends React.Component {
     this.modalClick = this.modalClick.bind(this);
   }
   render() {
-    return <div className="modal" onClick={this.modalClick} style={{ display: this.state.visible ? '' : 'none'}}>
+    return !this.state.visible ? null : <div className="modal" onClick={this.modalClick}>
       <div className="dialog">
         <div className="dialog-title">{ this.state.data.title }<span className="dialog-close" onClick={this.close}>+</span></div>
         <div className="dialog-content">
