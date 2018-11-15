@@ -188,6 +188,7 @@ maxN:array,math,beginner
 median:math,array,intermediate
 memoize:function,advanced
 merge:object,array,intermediate
+midpoint:math,array,beginner
 minBy:math,array,function,beginner
 minDate:date,math,beginner
 minN:array,math,beginner
