@@ -18,9 +18,9 @@ var user = {
     phone: '123456789',
     address: {
         country: 'Turkey'
-    //  ,country_code: '+90'
+    // ,country_code: '+90'
     }
 }
 
-defaultValue('+90',user,'address','country_code'); // return +90 because country_code is undefined
+defaultValue('+90', user, 'address', 'country_code'); // return +90 because country_code is undefined
 ```
