@@ -51,6 +51,7 @@ deepClone:object,recursion,intermediate
 deepFlatten:array,recursion,intermediate
 deepFreeze:object,recursion,intermediate
 defaults:object,intermediate
+defaultValue:uncategorized
 defer:function,intermediate
 degreesToRads:math,beginner
 delay:function,intermediate
