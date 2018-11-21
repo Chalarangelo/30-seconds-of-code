@@ -2174,6 +2174,21 @@
       }
     },
     {
+      "id": "isNegativeZero",
+      "type": "snippetListing",
+      "attributes": {
+        "tags": [
+          "math",
+          "utility",
+          "beginner"
+        ],
+        "archived": false
+      },
+      "meta": {
+        "hash": "c70f4e3b631a99000fc48ff1f7716b9b32652e707c2421b688715533ad316e6c"
+      }
+    },
+    {
       "id": "isNil",
       "type": "snippetListing",
       "attributes": {
