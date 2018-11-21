@@ -1,5 +1,5 @@
 const expect = require('expect');
-const { isNegativeZero } = require('._30s.js');
+const { isNegativeZero } = require('./_30s.js');
 
 test('isNegativeZero is a Function', () => {
   expect(isNegativeZero).toBeInstanceOf(Function);
