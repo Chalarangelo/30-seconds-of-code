@@ -38,7 +38,7 @@ li::before {
 
 You can create a ordered list using any type of HTML.
 
-1. `counter-reset` Initializes a counter, the value is the name of the counter. By default, the counter starts in 0. This property can also be used to change its value to any specific number.
+1. `counter-reset` Initializes a counter, the value is the name of the counter. By default, the counter starts at 0. This property can also be used to change its value to any specific number.
 
 2. `counter-increment` Used in element that will be countable. Once `counter-reset` initialized, a counter's value can be increased or decreased.
 
