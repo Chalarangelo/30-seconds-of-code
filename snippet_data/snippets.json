@@ -3203,6 +3203,28 @@
       }
     },
     {
+      "id": "isNegativeZero",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "isNegativeZero.md",
+        "text": "Checks if the given value is equal to negative zero (`-0`).\n\nChecks whether a passed value is equal to `0` and if `1` divided by the value equals `-Infinity`.",
+        "codeBlocks": {
+          "es6": "const isNegativeZero = val => val === 0 && 1 / val === -Infinity;",
+          "es5": "var isNegativeZero = function isNegativeZero(val) {\n  return val === 0 && 1 / val === -Infinity;\n};",
+          "example": "isNegativeZero(-0); // true\nisNegativeZero(0); // false"
+        },
+        "tags": [
+          "math",
+          "utility",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "c70f4e3b631a99000fc48ff1f7716b9b32652e707c2421b688715533ad316e6c"
+      }
+    },
+    {
       "id": "isNil",
       "type": "snippet",
       "attributes": {

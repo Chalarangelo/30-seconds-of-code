@@ -1184,6 +1184,9 @@
   var isLowerCase = function isLowerCase(str) {
     return str === str.toLowerCase();
   };
+  var isNegativeZero = function isNegativeZero(val) {
+    return val === 0 && 1 / val === -Infinity;
+  };
   var isNil = function isNil(val) {
     return val === undefined || val === null;
   };
@@ -2723,6 +2726,7 @@
   exports.isEven = isEven;
   exports.isFunction = isFunction;
   exports.isLowerCase = isLowerCase;
+  exports.isNegativeZero = isNegativeZero;
   exports.isNil = isNil;
   exports.isNull = isNull;
   exports.isNumber = isNumber;
