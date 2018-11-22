@@ -578,6 +578,7 @@
   const isEven = num => num % 2 === 0;
   const isFunction = val => typeof val === 'function';
   const isLowerCase = str => str === str.toLowerCase();
+  const isNegativeZero = val => val === 0 && 1 / val === -Infinity;
   const isNil = val => val === undefined || val === null;
   const isNull = val => val === null;
   const isNumber = val => typeof val === 'number';
@@ -1479,6 +1480,7 @@
   exports.isEven = isEven;
   exports.isFunction = isFunction;
   exports.isLowerCase = isLowerCase;
+  exports.isNegativeZero = isNegativeZero;
   exports.isNil = isNil;
   exports.isNull = isNull;
   exports.isNumber = isNumber;
