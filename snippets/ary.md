@@ -2,7 +2,7 @@
 
 Creates a function that accepts up to `n` arguments, ignoring any additional arguments.
 
-Call the provided function, `fn`, with up to `n` arguments, using `Array.slice(0,n)` and the spread operator (`...`).
+Call the provided function, `fn`, with up to `n` arguments, using `Array.prototype.slice(0,n)` and the spread operator (`...`).
 
 ```js
 const ary = (fn, n) => (...args) => fn(...args.slice(0, n));

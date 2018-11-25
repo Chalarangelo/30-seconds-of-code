@@ -1,30 +1,34 @@
 ![Logo](/logo.png)
-
 # Snippets Archive
-
 These snippets, while useful and interesting, didn't quite make it into the repository due to either having very specific use-cases or being outdated. However we felt like they might still be useful to some readers, so here they are.
-
 ## Table of Contents
-
 * [`JSONToDate`](#jsontodate)
-* [`speechSynthesis`](#speechsynthesis)
 * [`binarySearch`](#binarysearch)
+* [`celsiusToFahrenheit`](#celsiustofahrenheit)
 * [`cleanObj`](#cleanobj)
 * [`collatz`](#collatz)
 * [`countVowels`](#countvowels)
 * [`factors`](#factors)
+* [`fahrenheitToCelsius`](#fahrenheittocelsius)
 * [`fibonacciCountUntilNum`](#fibonaccicountuntilnum)
+* [`fibonacciUntilNum`](#fibonacciuntilnum)
+* [`heronArea`](#heronarea)
 * [`howManyTimes`](#howmanytimes)
 * [`httpDelete`](#httpdelete)
 * [`httpPut`](#httpput)
 * [`isArmstrongNumber`](#isarmstrongnumber)
+* [`isSimilar`](#issimilar)
+* [`kmphToMph`](#kmphtomph)
+* [`levenshteinDistance`](#levenshteindistance)
+* [`mphToKmph`](#mphtokmph)
+* [`pipeLog`](#pipelog)
 * [`quickSort`](#quicksort)
 * [`removeVowels`](#removevowels)
 * [`solveRPN`](#solverpn)
-* [`fibonacciUntilNum`](#fibonacciuntilnum)
+* [`speechSynthesis`](#speechsynthesis)
+* [`squareSum`](#squaresum)
 
 ---
-
 ### JSONToDate
 
 Converts a JSON object to a date.
@@ -47,42 +51,12 @@ JSONToDate(/Date(1489525200000)/); // "14/3/2017"
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
-
-
-### speechSynthesis
-
-Performs speech synthesis (experimental).
-
-Use `SpeechSynthesisUtterance.voice` and `window.speechSynthesis.getVoices()` to convert a message to speech.
-Use `window.speechSynthesis.speak()` to play the message.
-
-Learn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
-
-```js
-const speechSynthesis = message => {
-  const msg = new SpeechSynthesisUtterance(message);
-  msg.voice = window.speechSynthesis.getVoices()[0];
-  window.speechSynthesis.speak(msg);
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-speechSynthesis('Hello, World'); // // plays the message
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
-
+<br>[⬆ Back to top](#contents)
 
 ### binarySearch
 
-Use recursion. Similar to `Array.indexOf()` that finds the index of a value within an array.
-The difference being this operation only works with sorted arrays which offers a major performance boost due to it's logarithmic nature when compared to a linear search or `Array.indexOf()`.
+Use recursion. Similar to `Array.prototype.indexOf()` that finds the index of a value within an array.
+The difference being this operation only works with sorted arrays which offers a major performance boost due to it's logarithmic nature when compared to a linear search or `Array.prototype.indexOf()`.
 
 Search a sorted array by repeatedly dividing the search interval in half.
 Begin with an interval covering the whole array.
@@ -109,8 +83,28 @@ binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 21); // -1
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
+### celsiusToFahrenheit
+
+Celsius to Fahrenheit temperature conversion.
+
+Follows the conversion formula `F =  1.8C + 32`.
+
+```js
+const celsiusToFahrenheit = degrees => 1.8 * degrees + 32;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+celsiusToFahrenheit(33) // 91.4
+```
+
+</details>
+
+<br>[⬆ Back to top](#contents)
 
 ### cleanObj
 
@@ -142,8 +136,7 @@ cleanObj(testObj, ['a'], 'children'); // { a: 1, children : { a: 1}}
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
-
+<br>[⬆ Back to top](#contents)
 
 ### collatz
 
@@ -164,8 +157,7 @@ collatz(8); // 4
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
-
+<br>[⬆ Back to top](#contents)
 
 ### countVowels
 
@@ -187,19 +179,18 @@ countVowels('gym'); // 0
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
-
+<br>[⬆ Back to top](#contents)
 
 ### factors
 
-Returns the array of factors of the given `num`. 
+Returns the array of factors of the given `num`.
 If the second argument is set to `true` returns only the prime factors of `num`.
 If `num` is `1` or `0` returns an empty array.
 If `num` is less than `0` returns all the factors of `-int` together with their additive inverses.
 
-Use `Array.from()`, `Array.map()` and `Array.filter()` to find all the factors of `num`.
-If given `num` is negative, use `Array.reduce()` to add the additive inverses to the array.
-Return all results if `primes` is `false`, else determine and return only the prime factors using `isPrime` and `Array.filter()`.
+Use `Array.from()`, `Array.prototype.map()` and `Array.prototype.filter()` to find all the factors of `num`.
+If given `num` is negative, use `Array.prototype.reduce()` to add the additive inverses to the array.
+Return all results if `primes` is `false`, else determine and return only the prime factors using `isPrime` and `Array.prototype.filter()`.
 Omit the second argument, `primes`, to return prime and non-prime factors by default.
 
 **Note**:- _Negative numbers are not considered prime._
@@ -238,8 +229,28 @@ factors(-12, true); // [2,3]
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
+### fahrenheitToCelsius
+
+Fahrenheit to Celsius temperature conversion.
+
+Follows the conversion formula `C = (F - 32) * 5/9`.
+
+```js
+const fahrenheitToCelsius = degrees => (degrees - 32) * 5/9;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+fahrenheitToCelsius(32); // 0
+```
+
+</details>
+
+<br>[⬆ Back to top](#contents)
 
 ### fibonacciCountUntilNum
 
@@ -261,8 +272,63 @@ fibonacciCountUntilNum(10); // 7
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
+### fibonacciUntilNum
+
+Generates an array, containing the Fibonacci sequence, up until the nth term.
+
+Create an empty array of the specific length, initializing the first two values (`0` and `1`).
+Use `Array.prototype.reduce()` to add values into the array, using the sum of the last two values, except for the first two.
+Uses a mathematical formula to calculate the length of the array required.
+
+```js
+const fibonacciUntilNum = num => {
+  let n = Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));
+  return Array.from({ length: n }).reduce(
+    (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),
+    []
+  );
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+fibonacciUntilNum(10); // [ 0, 1, 1, 2, 3, 5, 8 ]
+```
+
+</details>
+
+<br>[⬆ Back to top](#contents)
+
+### heronArea
+
+Returns the area of a triangle using only the 3 side lengths, Heron's formula. Assumes that the sides define a valid triangle. Does NOT assume it is a right triangle.
+
+More information on what Heron's formula is and why it works available here: https://en.wikipedia.org/wiki/Heron%27s_formula.
+
+Uses `Math.sqrt()` to find the square root of a value.
+
+
+```js
+const heronArea = (side_a, side_b, side_c) => {
+    const p = (side_a + side_b + side_c) / 2
+    return Math.sqrt(p * (p-side_a) * (p-side_b) * (p-side_c))
+  };
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+heronArea(3, 4, 5); // 6
+```
+
+</details>
+
+<br>[⬆ Back to top](#contents)
 
 ### howManyTimes
 
@@ -299,8 +365,7 @@ howManyTimes(100, -1); // Infinity
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
-
+<br>[⬆ Back to top](#contents)
 
 ### httpDelete
 
@@ -314,7 +379,7 @@ Omit the third argument, `err` to log the request to the console's error stream 
 ```js
 const httpDelete = (url, callback, err = console.error) => {
   const request = new XMLHttpRequest();
-  request.open("DELETE", url, true);
+  request.open('DELETE', url, true);
   request.onload = () => callback(request);
   request.onerror = () => err(request);
   request.send();
@@ -332,8 +397,7 @@ httpDelete('https://website.com/users/123', request => {
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
-
+<br>[⬆ Back to top](#contents)
 
 ### httpPut
 
@@ -347,12 +411,12 @@ Omit the last argument, `err` to log the request to the console's error stream b
 
 ```js
 const httpPut = (url, data, callback, err = console.error) => {
-    const request = new XMLHttpRequest();
-    request.open("PUT", url, true);
-    request.setRequestHeader('Content-type','application/json; charset=utf-8');
-    request.onload = () => callback(request);
-    request.onerror = () => err(request);
-    request.send(data);
+  const request = new XMLHttpRequest();
+  request.open("PUT", url, true);
+  request.setRequestHeader('Content-type','application/json; charset=utf-8');
+  request.onload = () => callback(request);
+  request.onerror = () => err(request);
+  request.send(data);
 };
 ```
 
@@ -369,8 +433,7 @@ httpPut('https://website.com/users/123', data, request => {
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
-
+<br>[⬆ Back to top](#contents)
 
 ### isArmstrongNumber
 
@@ -395,15 +458,158 @@ isArmstrongNumber(56); // false
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
+### isSimilar
+
+Determines if the `pattern` matches with `str`.
+
+Use `String.toLowerCase()` to convert both strings to lowercase, then loop through `str` and determine if it contains all characters of `pattern` and in the correct order.
+Adapted from [here](https://github.com/forrestthewoods/lib_fts/blob/80f3f8c52db53428247e741b9efe2cde9667050c/code/fts_fuzzy_match.js#L18).
+
+```js
+const isSimilar = (pattern, str) =>
+  [...str].reduce(
+      (matchIndex, char) =>
+          char.toLowerCase() === (pattern[matchIndex] || '').toLowerCase()
+              ? matchIndex + 1
+              : matchIndex,
+      0
+  ) === pattern.length;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isSimilar('rt','Rohit'); // true
+isSimilar('tr','Rohit'); // false
+```
+
+</details>
+
+<br>[⬆ Back to top](#contents)
+
+### kmphToMph
+
+Convert kilometers/hour to miles/hour.
+
+Multiply the constant of proportionality with the argument.
+
+```js
+const kmphToMph = (kmph) => 0.621371192 * kmph;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+kmphToMph(10); // 16.09344000614692
+kmphToMph(345.4); // 138.24264965280207
+```
+
+</details>
+
+<br>[⬆ Back to top](#contents)
+
+### levenshteinDistance
+
+Calculates the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) between two strings.
+
+Calculates the number of changes (substitutions, deletions or additions) required to convert `string1` to `string2`. 
+Can also be used to compare two strings as shown in the second example.
+
+``` js
+const levenshteinDistance = (string1, string2) => {
+  if (string1.length === 0) return string2.length;
+  if (string2.length === 0) return string1.length;
+  let matrix = Array(string2.length + 1)
+    .fill(0)
+    .map((x, i) => [i]);
+  matrix[0] = Array(string1.length + 1)
+    .fill(0)
+    .map((x, i) => i);
+  for (let i = 1; i <= string2.length; i++) {
+    for (let j = 1; j <= string1.length; j++) {
+      if (string2[i - 1] === string1[j - 1]) {
+        matrix[i][j] = matrix[i - 1][j - 1];
+      } else {
+        matrix[i][j] = Math.min(
+          matrix[i - 1][j - 1] + 1,
+          matrix[i][j - 1] + 1,
+          matrix[i - 1][j] + 1
+        );
+      }
+    }
+  }
+  return matrix[string2.length][string1.length];
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+levenshteinDistance('30-seconds-of-code','30-seconds-of-python-code'); // 7
+const compareStrings = (string1,string2) => (100 - levenshteinDistance(string1,string2) / Math.max(string1.length,string2.length));
+compareStrings('30-seconds-of-code', '30-seconds-of-python-code'); // 99.72 (%)
+```
+
+</details>
+
+<br>[⬆ Back to top](#contents)
+
+### mphToKmph
+
+Convert miles/hour to kilometers/hour.
+
+Multiply the constant of proportionality with the argument.
+
+```js
+const mphToKmph = (mph) => 1.6093440006146922 * mph;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+mphToKmph(10); // 16.09344000614692
+mphToKmph(85.9); // 138.24264965280207
+```
+
+</details>
+
+<br>[⬆ Back to top](#contents)
+
+### pipeLog
+
+Logs a value and returns it.
+
+Use `console.log` to log the supplied value, combined with the `||` operator to return it.
+
+
+
+```js
+const pipeLog = data => console.log(data) || data;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+pipeLog(1); // logs `1` and returns `1`
+```
+
+</details>
+
+<br>[⬆ Back to top](#contents)
 
 ### quickSort
 
 QuickSort an Array (ascending sort by default).
 
-Use recursion. 
-Use `Array.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it. 
+Use recursion.
+Use `Array.prototype.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it.
 If the parameter `desc` is truthy, return array sorts in descending order.
 
 ```js
@@ -427,18 +633,17 @@ quickSort([4, 1, 3, 2], true); // [4,3,2,1]
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
-
+<br>[⬆ Back to top](#contents)
 
 ### removeVowels
 
 Returns all the vowels in a `str` replaced by `repl`.
 
-Use `String.replace()` with a regexp to replace all vowels in `str`.
+Use `String.prototype.replace()` with a regexp to replace all vowels in `str`.
 Omot `repl` to use a default value of `''`.
 
 ```js
-const removeVowels = (str, repl = '') => str.replace(/[aeiou]/gi,repl);
+const removeVowels = (str, repl = '') => str.replace(/[aeiou]/gi, repl);
 ```
 
 <details>
@@ -451,8 +656,7 @@ removeVowels("foobAr","*"); // "f**b*r"
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
-
+<br>[⬆ Back to top](#contents)
 
 ### solveRPN
 
@@ -460,8 +664,8 @@ Solves the given mathematical expression in [reverse polish notation](https://en
 Throws appropriate errors if there are unrecognized symbols or the expression is wrong. The valid operators are :- `+`,`-`,`*`,`/`,`^`,`**` (`^`&`**` are the exponential symbols and are same). This snippet does not supports any unary operators.
 
 Use a dictionary, `OPERATORS` to specify each operator's matching mathematical operation.
-Use `String.replace()` with a regular expression to replace `^` with `**`, `String.split()` to tokenize the string and `Array.filter()` to remove empty tokens.
-Use `Array.forEach()` to parse each `symbol`, evaluate it as a numeric value or operator and solve the mathematical expression.
+Use `String.prototype.replace()` with a regular expression to replace `^` with `**`, `String.prototype.split()` to tokenize the string and `Array.prototype.filter()` to remove empty tokens.
+Use `Array.prototype.forEach()` to parse each `symbol`, evaluate it as a numeric value or operator and solve the mathematical expression.
 Numeric values are converted to floating point numbers and pushed to a `stack`, while operators are evaluated using the `OPERATORS` dictionary and pop elements from the `stack` to apply operations.
 
 ```js
@@ -505,24 +709,22 @@ solveRPN('2 3 ^'); // 8
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
+### speechSynthesis
 
-### fibonacciUntilNum
+Performs speech synthesis (experimental).
 
-Generates an array, containing the Fibonacci sequence, up until the nth term.
+Use `SpeechSynthesisUtterance.voice` and `window.speechSynthesis.getVoices()` to convert a message to speech.
+Use `window.speechSynthesis.speak()` to play the message.
 
-Create an empty array of the specific length, initializing the first two values (`0` and `1`).
-Use `Array.reduce()` to add values into the array, using the sum of the last two values, except for the first two.
-Uses a mathematical formula to calculate the length of the array required.
+Learn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
 
 ```js
-const fibonacciUntilNum = num => {
-  let n = Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));
-  return Array.from({ length: n }).reduce(
-    (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),
-    []
-  );
+const speechSynthesis = message => {
+  const msg = new SpeechSynthesisUtterance(message);
+  msg.voice = window.speechSynthesis.getVoices()[0];
+  window.speechSynthesis.speak(msg);
 };
 ```
 
@@ -530,10 +732,31 @@ const fibonacciUntilNum = num => {
 <summary>Examples</summary>
 
 ```js
-fibonacciUntilNum(10); // [ 0, 1, 1, 2, 3, 5, 8 ]
+speechSynthesis('Hello, World'); // // plays the message
 ```
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
+
+### squareSum
+
+Squares each number in an array and then sums the results together.
+
+Use `Array.prototype.reduce()` in combination with `Math.pow()` to iterate over numbers and sum their squares into an accumulator.
+
+```js
+const squareSum = (...args) => args.reduce((squareSum, number) => squareSum + Math.pow(number, 2), 0);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+squareSum(1, 2, 2); // 9
+```
+
+</details>
+
+<br>[⬆ Back to top](#contents)
 

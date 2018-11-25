@@ -1,11 +1,13 @@
 ### longestItem
 
 Takes any number of iterable objects or objects with a `length` property and returns the longest one.
+If multiple objects have the same length, the first one will be returned.
+Returns `undefined` if no arguments are provided.
 
-Use `Array.sort()` to sort all arguments by `length`, return the first (longest) one.
+Use `Array.prototype.reduce()`, comparing the `length` of objects to find the longest one.
 
 ```js
-const longestItem = (...vals) => [...vals].sort((a, b) => b.length - a.length)[0];
+const longestItem = (...vals) => vals.reduce((a, x) => (x.length > a.length ? x : a));
 ```
 
 ```js

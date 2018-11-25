@@ -2,7 +2,7 @@
 
 Creates a function that invokes each provided function with the arguments it receives and returns the results.
 
-Use `Array.map()` and `Function.apply()` to apply each function to the given arguments.
+Use `Array.prototype.map()` and `Function.prototype.apply()` to apply each function to the given arguments.
 
 ```js
 const over = (...fns) => (...args) => fns.map(fn => fn.apply(null, args));

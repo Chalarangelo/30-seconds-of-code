@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./style.css">
+    <title>Contributing - 30 seconds of code</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Curated collection of useful Javascript snippets that you can understand in 30 seconds or less.">
+    <meta name="keywords" content="javascript, snippets, code, programming">
+    <meta name="author" content="Angelos Chalaris (chalarangelo@gmail.com)">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111">
+    <meta property="og:title" content="30 seconds of code">
+    <meta property="og:description" content="Curated collection of useful Javascript snippets that you can understand in 30 seconds or less." />
+    <meta property="og:type" content="website" /><meta property="og:image" content="https://30secondsofcode.org/logos/logo_512.png">
+    <link rel="icon" type="image/png" href="./logos/logo_128.png"><link rel="manifest" href="manifest.json">
+    <script>
+      const search = (node) => {
+        if (node.value.toLowerCase().trim() === '') {
+          document.querySelector('nav').querySelectorAll('li > a').forEach(x => x.style.display = '');
+          document.querySelector('nav').querySelectorAll('h4:not(.static-link)').forEach(x => x.classList = 'collapse');
+          return;
+        }
+        let matchingTags = [];
+        Array.from(document.querySelector('nav').querySelectorAll('li')).forEach(x => {
+          let data = [x.textContent.toLowerCase(), ...x.querySelector('a').getAttribute('tags').split(',')].map(v => !!(v.indexOf(node.value.toLowerCase()) + 1));
+          if (data.includes(true)) {
+            x.style.display = '';
+            matchingTags.push(x.querySelector('a').getAttribute('tags').split(',')[0]);
+          }
+          else x.style.display = 'none';
+        });
+        Array.from(document.querySelector('nav').querySelectorAll('h4:not(.static-link)')).forEach(x => {
+          x.classList = matchingTags.includes(x.textContent.toLowerCase()) ? 'collapse toggled' : 'collapse';
+        })
+      }
+      function scrollToTop() {
+        const c = document.querySelector('.card-container').scrollTop;
+        if (c > 0) {
+          window.requestAnimationFrame(scrollToTop);
+          document.querySelector('.card-container').scrollTo(0, c - c / 4);
+        }
+      };
+      function scrollTo(element, to, id, duration) {
+        if (duration <= 0) return;
+        var difference = to - element.scrollTop;
+        var perTick = difference / duration * 40;
+
+        setTimeout(function () {
+          element.scrollTop = element.scrollTop + perTick;
+          if (element.scrollTop === to) {
+            window.location.href = "#" + id;
+            return;
+          }
+          scrollTo(element, to, id, duration - 40);
+        }, 40);
+      };
+      function loader() {
+        registerClickListener();
+        if (window.innerWidth >= '768')
+          document.querySelector('nav').scrollTop = Array.from(document.querySelectorAll('h4')).filter(v => v.innerHTML === '$tag')[0].offsetTop;
+        else
+          document.querySelector('nav').scrollTop = Array.from(document.querySelectorAll('h4')).filter(v => v.innerHTML === '$tag')[0].offsetTop;
+      }
+      function registerClickListener() {
+        document.addEventListener('click', function (event) {
+          if (event.target.classList.contains('collapse')) {
+            event.target.classList = event.target.classList.contains('toggled') ? 'collapse' : 'collapse toggled';
+          }
+          else if (event.target.classList.contains('menu-button')) {
+            document.querySelector('nav').classList = event.target.classList.contains('toggled') ? '' : 'col-nav';
+            document.querySelector('[type="search"]').classList = event.target.classList.contains('toggled') ? '' : 'col-nav';
+            event.target.classList = event.target.classList.contains('toggled') ? 'menu-button' : 'menu-button toggled';
+          }
+          else if (!document.querySelector('nav').contains(event.target) && !document.querySelector('[type="search"]').contains(event.target) && window.innerWidth < '768') {
+            document.querySelector('nav').classList = '';
+            document.querySelector('[type="search"]').classList = '';
+            document.querySelector('.menu-button').classList = 'menu-button';
+          }
+          else if (event.target.classList.contains('social')) {
+            if (event.target.classList.contains('fb')) {
+              window.location = "https://www.facebook.com/30secondsofcode";
+            }
+            else if (event.target.classList.contains('instagram')) {
+              window.location = "https://www.instagram.com/30secondsofcode";
+            }
+            else if (event.target.classList.contains('twitter')) {
+              window.location = "https://twitter.com/30secondsofcode";
+            }
+          }
+          else if (event.target.classList.contains('copy-button')) {
+            const text = event.target.parentElement.parentElement.querySelector(':not(pre) + pre').textContent;
+            const textArea = document.createElement("textarea");
+            textArea.value = text.trim();
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("Copy");
+            document.body.removeChild(textArea);
+            let tst = document.createElement('div');
+            tst.classList = 'toast';
+            tst.innerHTML = 'Snippet copied to clipboard!';
+            document.body.appendChild(tst);
+            setTimeout(function () {
+              tst.style.opacity = 0;
+              setTimeout(function () {
+                document.body.removeChild(tst);
+              }, 300);
+            }, 1700);
+          }
+        }, false);
+      }
+    </script>
+  </head>
+  <body onload="loader()">
+    <a href="https://github.com/30-seconds/30-seconds-of-code" 
+      class="github-corner" aria-label="View source on Github"><svg width="56" height="56" viewBox="0 0 250 250" style="fill:#009688; color:#fff; position: fixed; top: 0; border: 0; right: 0; z-index: 1000"
+        aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor" class="octo-body"></path>
+      </svg></a>
+    <button class="menu-button"></button>
+    <header>
+      <h1 class="logo"><a href="./index"><img src="https://30secondsofcode.org/logos/logo_256.png" alt="logo" /><span id="title">&nbsp;30
+            seconds of code</span>
+          <small>Curated collection of useful JavaScript snippets that you can understand in 30 seconds or less.</small>
+        </a></h1>
+    </header>
+    <div class="container card-container">
+      <input class="search" type="search" id="searchInput" onkeyup="search(this)" placeholder="Search..." aria-label="Snippet search">
+      <nav>
+        $nav-menu-data
+        <h4 class="static-link"><a href="./archive">Archive</a></h4>
+        <h4 class="static-link"><a href="./glossary">Glossary</a></h4>
+        <h4 class="static-link"><a href="./contributing">Contributing</a></h4>
+        <h4 class="static-link"><a href="./about">About</a></h4>
+        <div><button class="social fb"></button><button class="social instagram"></button><button class="social twitter"></button></div>
+      </nav>
+      <main class="col-centered">
+        <span id="top"><br><br></span>
+        <h2 class="category-name">How to contribute</h2>
+        <p style="text-align: justify">Do you have a cool idea for a new snippet? Maybe some code you use often and is not part of our collection? Contributing to <strong>30 seconds of code</strong> is as simple as 1,2,3,4!</p><br/>
+        <h3 class="category-name">1. Create</h3>
+        <p style="text-align: justify">Start by creating a snippet, according to the <a href="https://github.com/30-seconds/30-seconds-of-code/blob/master/snippet-template.md">snippet template</a>. Make sure to follow these simple guidelines:</p>
+        <ul style="text-align: justify">
+          <li>Your snippet title must be unique and the same as the name of the implemented function.</li>
+          <li>Use the snippet description to explain what your snippet does and how it works.</li>
+          <li>Try to keep the snippet's code short and to the point. Use modern techniques and features.</li>
+          <li>Remember to provide an example of how your snippet works.</li>
+          <li>Your snippet should solve a real-world problem, no matter how simple.</li>
+          <li>Never modify README.md or any of the HTML files.</li>
+        </ul><br />
+        <h3 class="category-name">2. Tag</h3>
+        <p style="text-align: justify">Run <code>npm run tagger</code> from your terminal, then open the tag_database file and tag your snippet appropriately. Multitagging is also supported, just make sure the first tag you specify is on of the major tags and the one that is most relevant to the implemented function.</p><br />
+        <h3 class="category-name">3. Test</h3>
+        <p style="text-align: justify">You can optionally test your snippet to make our job easier. Simply run <code>npm run tester</code> to generate the test files for your snippet. Find the related folder for you snippet under the test directory and write some tests. Remember to run <code>npm run tester</code> again to make sure your tests are passing.</p><br />
+        <h3 class="category-name">4. Pull request</h3>
+        <p style="text-align: justify">If you have done everything mentioned above, you should now have an awesome snippet to add to our collection. Simply start a pull request and follow the guidelines provided. Remember to only submit one snippet per pull request, so that we can quickly evaluate and merge your code into the collection.</p><br />
+      </main>
+      <footer class="col-full-width container">
+        <div class="col-centered">
+          <p style="display: inline-block;"><strong>30 seconds of code</strong> is licensed under the <a href="https://github.com/30-seconds/30-seconds-of-code/blob/master/LICENSE">CC0-1.0</a>
+            license.<br>Logos made by <a href="https://github.com/Chalarangelo">Angelos Chalaris</a> and ribbon made by <a
+              href="https://github.com/tholman/github-corners">Tim Holman</a> are licensed under the <a href="https://opensource.org/licenses/MIT">MIT</a>
+            license.<br>Sponsored by <img src="https://30secondsofcode.org/sponsors/DO_Logo_icon_blue.svg" style="vertical-align: sub; padding-right: 2px; padding-left: 2px;"
+              width="20px" height="20px" alt="DigitalOcean"><a href="https://www.digitalocean.com"><span style="color:#0080ff">DigitalOcean</span></a>.</p>
+          <br />
+          <p style="display: inline-block;"><a href="./about">About</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="./contributing">Contributing</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
+              href="./archive">Archive</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="./glossary">Glossary</a></p>
+        </div>
+      </footer>
+      <a class="scroll-to-top" href="#top"></a></div>
+      </div>
+      </body>
+      
+      </html>

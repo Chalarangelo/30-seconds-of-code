@@ -2,7 +2,7 @@
 
 Filters out the elements of an array, that have one of the specified values.
 
-Use `Array.filter()` to create an array excluding(using `!Array.includes()`) all given values.
+Use `Array.prototype.filter()` to create an array excluding(using `!Array.includes()`) all given values.
 
 _(For a snippet that mutates the original array see [`pull`](#pull))_
 

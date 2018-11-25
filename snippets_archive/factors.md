@@ -1,13 +1,13 @@
 ### factors
 
-Returns the array of factors of the given `num`. 
+Returns the array of factors of the given `num`.
 If the second argument is set to `true` returns only the prime factors of `num`.
 If `num` is `1` or `0` returns an empty array.
 If `num` is less than `0` returns all the factors of `-int` together with their additive inverses.
 
-Use `Array.from()`, `Array.map()` and `Array.filter()` to find all the factors of `num`.
-If given `num` is negative, use `Array.reduce()` to add the additive inverses to the array.
-Return all results if `primes` is `false`, else determine and return only the prime factors using `isPrime` and `Array.filter()`.
+Use `Array.from()`, `Array.prototype.map()` and `Array.prototype.filter()` to find all the factors of `num`.
+If given `num` is negative, use `Array.prototype.reduce()` to add the additive inverses to the array.
+Return all results if `primes` is `false`, else determine and return only the prime factors using `isPrime` and `Array.prototype.filter()`.
 Omit the second argument, `primes`, to return prime and non-prime factors by default.
 
 **Note**:- _Negative numbers are not considered prime._

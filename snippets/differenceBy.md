@@ -2,11 +2,11 @@
 
 Returns the difference between two arrays, after applying the provided function to each array element of both.
 
-Create a `Set` by applying `fn` to each element in `b`, then use `Array.filter()` in combination with `fn` on `a` to only keep values not contained in the previously created set.
+Create a `Set` by applying `fn` to each element in `b`, then use `Array.prototype.filter()` in combination with `fn` on `a` to only keep values not contained in the previously created set.
 
 ```js
 const differenceBy = (a, b, fn) => {
-  const s = new Set(b.map(v => fn(v)));
+  const s = new Set(b.map(fn));
   return a.filter(x => !s.has(fn(x)));
 };
 ```

@@ -1,40 +1,47 @@
 {
   "devDependencies": {
-    "babel-preset-env": "^1.6.1",
-    "chalk": "^2.3.0",
-    "fs-extra": "^4.0.2",
-    "html-minifier": "^3.5.7",
-    "jsdom": "^11.6.1",
-    "markdown-it": "^8.4.0",
-    "mini.css": "^2.3.7",
-    "node-sass": "^4.7.2",
-    "prettier": "^1.9.2",
-    "prismjs": "^1.9.0",
-    "rollup": "^0.53.2",
-    "rollup-plugin-babel": "^3.0.3",
-    "rollup-plugin-babel-minify": "^3.1.2",
-    "semistandard": "^11.0.0",
-    "tap-spec": "^4.1.1",
-    "tape": "^4.8.0"
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "chalk": "^2.4.1",
+    "codacy-coverage": "^3.2.0",
+    "eslint": "^5.7.0",
+    "fs-extra": "^6.0.0",
+    "html-minifier": "^3.5.20",
+    "jest": "^23.6.0",
+    "markdown-builder": "^0.8.4",
+    "markdown-it": "^8.4.2",
+    "node-sass": "^4.9.3",
+    "octicons": "^7.4.0",
+    "prettier": "^1.14.2",
+    "prismjs": "^1.15.0",
+    "rollup": "^0.58.2",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-babel-minify": "^4.0.0"
   },
   "name": "30-seconds-of-code",
   "description": "A collection of useful JavaScript snippets.",
-  "version": "0.0.2",
+  "version": "1.2.2",
   "main": "dist/_30s.js",
   "module": "dist/_30s.esm.js",
+  "sideEffects": false,
   "scripts": {
+    "glossary:librarian": "node ./scripts/glossary/library.js",
+    "glossary:keymaker": "node ./scripts/glossary/keyword.js",
     "builder": "node ./scripts/build.js",
     "linter": "node ./scripts/lint.js",
     "tagger": "node ./scripts/tag.js",
     "webber": "node ./scripts/web.js",
     "tester": "node ./scripts/tdd.js",
+    "extractor": "node ./scripts/extract.js",
+    "vscoder": "node ./scripts/vscodegen.js",
     "packager": "node ./scripts/module.js",
     "localizer": "node ./scripts/localize.js",
-    "test": "tape test/**/*.test.js | tap-spec"
+    "test": "jest --verbose --coverage",
+    "test-with-coverage": "jest --coverage && cat ./coverage/lcov.info | codacy-coverage"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Chalarangelo/30-seconds-of-code.git"
+    "url": "git+https://github.com/30-seconds/30-seconds-of-code.git"
   },
   "keywords": [
     "javascript",
@@ -42,10 +49,10 @@
     "list"
   ],
   "author": "Chalarangelo (chalarangelo@gmail.com)",
-  "license": "MIT",
+  "license": "CC0-1.0",
   "bugs": {
-    "url": "https://github.com/Chalarangelo/30-seconds-of-code/issues"
+    "url": "https://github.com/30-seconds/30-seconds-of-code/issues"
   },
-  "homepage": "https://github.com/Chalarangelo/30-seconds-of-code#readme",
+  "homepage": "https://30secondsofcode.org/",
   "dependencies": {}
 }

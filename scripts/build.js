@@ -7,15 +7,35 @@ const fs = require('fs-extra');
 const path = require('path');
 const chalk = require('chalk');
 const util = require('./util');
+const markdown = require('markdown-builder');
+const { headers, misc, lists } = markdown;
+
 // Paths
 const SNIPPETS_PATH = './snippets';
 const SNIPPETS_ARCHIVE_PATH = './snippets_archive';
 const STATIC_PARTS_PATH = './static-parts';
-if(util.isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
-  console.log(`${chalk.green('NOBUILD')} README build terminated, parent commit is a Travis build!`);
+
+const makeExamples = data => {
+  data =
+    data.slice(0, data.lastIndexOf('```js')).trim() +
+    misc.collapsible(
+      'Examples',
+      data.slice(data.lastIndexOf('```js'), data.lastIndexOf('```')) +
+        data.slice(data.lastIndexOf('```'))
+    );
+  return `${data}\n<br>${misc.link('⬆ Back to top', misc.anchor('Contents'))}\n\n`;
+};
+
+if (util.isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
+  console.log(
+    `${chalk.green('NOBUILD')} README build terminated, parent commit is a Travis build!`
+  );
   process.exit(0);
 }
-if(util.isTravisCI() && (process.env['TRAVIS_EVENT_TYPE'] === 'cron' || process.env['TRAVIS_EVENT_TYPE'] === 'api')){
+if (
+  util.isTravisCI() &&
+  (process.env['TRAVIS_EVENT_TYPE'] === 'cron' || process.env['TRAVIS_EVENT_TYPE'] === 'api')
+) {
   console.log(`${chalk.green('ARCHIVE')} Cron job or custom build, building archive README!`);
   console.time('Builder');
   let snippets = {};
@@ -25,40 +45,30 @@ if(util.isTravisCI() && (process.env['TRAVIS_EVENT_TYPE'] === 'cron' || process.
       .readdirSync(SNIPPETS_ARCHIVE_PATH)
       .sort((a, b) => a.toLowerCase() - b.toLowerCase());
     // Store the data read from each snippet in the appropriate object
-    for (const name of snippetFilenames.filter(s => s !== 'README.md')) {
+    for (const name of snippetFilenames.filter(s => s !== 'README.md'))
       snippets[name] = fs.readFileSync(path.join(SNIPPETS_ARCHIVE_PATH, name), 'utf8');
-    }
   } catch (err) {
     console.log(`${chalk.red('ERROR!')} During snippet loading: ${err}`);
     process.exit(1);
   }
   try {
     // Add the start static part
-    let output = `![Logo](/logo.png)
+    let output =
+      misc.image('Logo', '/logo.png') +
+      headers.h1('Snippets Archive') +
+      "These snippets, while useful and interesting, didn't quite make it into the repository due to either having very specific use-cases or being outdated. However we felt like they might still be useful to some readers, so here they are." +
+      headers.h2('Table of Contents');
 
-# Snippets Archive
+    output += lists.ul(Object.entries(snippets), snippet =>
+      misc.link(`\`${snippet[0].slice(0, -3)}\``, misc.anchor(snippet[0].slice(0, -3)))
+    );
+    output += misc.hr();
 
-These snippets, while useful and interesting, didn\'t quite make it into the repository due to either having very specific use-cases or being outdated. However we felt like they might still be useful to some readers, so here they are.
-
-## Table of Contents
-
-`;
-    for(const snippet of Object.entries(snippets))
-      output += `* [\`${snippet[0].slice(0,-3)}\`](#${snippet[0].toLowerCase().slice(0,-3)})\n`;
-    output += '\n---\n';
-    for(const snippet of Object.entries(snippets)){
-      let data = snippet[1];
-      data =
-        data.slice(0, data.lastIndexOf('```js')) +
-        '<details>\n<summary>Examples</summary>\n\n' +
-        data.slice(data.lastIndexOf('```js'), data.lastIndexOf('```')) +
-        data.slice(data.lastIndexOf('```')) +
-        '\n</details>\n';
-      output += `\n${data + '\n<br>[⬆ Back to top](#table-of-contents)\n\n'}`;
-    }
+    for (const snippet of Object.entries(snippets))
+      output += makeExamples(snippet[1]);
 
     // Write to the README file of the archive
-    fs.writeFileSync(path.join(SNIPPETS_ARCHIVE_PATH,'README.md'), output);
+    fs.writeFileSync(path.join(SNIPPETS_ARCHIVE_PATH, 'README.md'), output);
   } catch (err) {
     console.log(`${chalk.red('ERROR!')} During README generation for snippets archive: ${err}`);
     process.exit(1);
@@ -106,57 +116,56 @@ try {
 // Load tag data from the database
 tagDbData = util.readTags();
 console.log(tagDbData);
+
 // Create the output for the README file
 try {
-  const tags = [
-    ...new Set(
-      Object.entries(tagDbData)
-        .map(t => t[1][0])
-        .filter(v => v)
-        .sort((a, b) => util.capitalize(a, true) === 'Uncategorized' ? 1 : util.capitalize(b, true) === 'Uncategorized' ? -1 : a.localeCompare(b)))
-  ];
-
-  console.log(tags);
+  const tags = util.prepTaggedData(tagDbData);
 
   // Add the start static part
-  output += `${startPart + '\n'}`;
+  output += `${startPart}\n`;
 
   // Loop over tags and snippets to create the table of contents
   for (const tag of tags) {
     const capitalizedTag = util.capitalize(tag, true);
-    output += `### ${
-      EMOJIS[tag] || ''
-    } ${capitalizedTag}\n\n<details>\n<summary>View contents</summary>\n\n`;
-    for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
-      output += `* [\`${taggedSnippet[0]}\`](#${taggedSnippet[0].toLowerCase()}${taggedSnippet[1].includes('advanced')?'-':''})\n`;
-    }
-    output += '\n</details>\n\n';
+    const taggedSnippets = Object.entries(tagDbData).filter(v => v[1][0] === tag);
+    output += headers.h3((EMOJIS[tag] || '') + ' ' + capitalizedTag).trim();
+
+    output +=
+      misc.collapsible(
+        'View contents',
+        lists.ul(taggedSnippets, snippet =>
+          misc.link(
+            `\`${snippet[0]}\``,
+            `${misc.anchor(snippet[0])}${snippet[1].includes('advanced') ? '-' : ''}`
+          )
+        )
+      ) + '\n';
   }
 
   // Loop over tags and snippets to create the list of snippets
   for (const tag of tags) {
     const capitalizedTag = util.capitalize(tag, true);
-    output += `---\n ## ${EMOJIS[tag] || ''} ${capitalizedTag}\n`;
-    for (const taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
-      let data = snippets[taggedSnippet[0] + '.md'];
+    const taggedSnippets = Object.entries(tagDbData).filter(v => v[1][0] === tag);
+
+    output += misc.hr() + headers.h2((EMOJIS[tag] || '') + ' ' + capitalizedTag) + '\n';
+
+    for (const taggedSnippet of taggedSnippets) {
+      let snippet = snippets[taggedSnippet[0] + '.md'];
+
       // Add advanced tag
-      if(taggedSnippet[1].includes('advanced')){
-        data = data.split(/\r?\n/);
-        data[0] = data[0] +' ![advanced](/advanced.svg)';
-        data = data.join('\n');
+      if (taggedSnippet[1].includes('advanced')) {
+        snippet = snippet.split(/\r?\n/);
+        // add label to snippet title (first line)
+        snippet[0] += ' ' + misc.image('advanced', '/advanced.svg');
+        snippet = snippet.join('\n');
       }
-      data =
-        data.slice(0, data.lastIndexOf('```js')) +
-        '<details>\n<summary>Examples</summary>\n\n' +
-        data.slice(data.lastIndexOf('```js'), data.lastIndexOf('```')) +
-        data.slice(data.lastIndexOf('```')) +
-        '\n</details>\n';
-      output += `\n${data + '\n<br>[⬆ Back to top](#table-of-contents)\n\n'}`;
+
+      output += makeExamples(snippet);
     }
   }
 
   // Add the ending static part
-  output += `\n${endPart + '\n'}`;
+  output += `\n${endPart}\n`;
   // Write to the README file
   fs.writeFileSync('README.md', output);
 } catch (err) {
