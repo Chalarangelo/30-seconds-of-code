@@ -23,6 +23,12 @@ class ComponentName extends React.Component {
 ReactDOM.render(<ComponentName />, mountNode);
 ```
 
+<!-- OPTIONAL -->
+#### Notes:
+* Things to remember when using this
+* Other options that might be less appealing or have lower compatibility
+* Common mistakes and issues
+
 <!-- tags: (separate each by a comma) -->
 
 <!-- expertise: (0,1,2,3) -->
