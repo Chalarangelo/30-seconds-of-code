@@ -133,7 +133,7 @@ ModalDialog.show({
 ```
 
 #### Notes:
-* This component includes a lot of CSS, which might conflict with other CSS in your project.
+* This component includes a lot of CSS, which might conflict with other CSS in your project. It is recomended that the modal a direct child of the body tag.
 * A more up-to-date method with lower compatibility is to use [Portals](https://reactjs.org/docs/portals.html) in React 16+.
 
 <!-- tags: visual,static,children,state,class -->
