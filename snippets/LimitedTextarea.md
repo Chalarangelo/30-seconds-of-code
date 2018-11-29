@@ -26,7 +26,12 @@ class LimitedTextarea extends React.Component {
   render() {
     return (
       <div>
-        <textarea rows={this.props.rows} cols={this.props.cols} onChange={this.handleChange} value={this.state.content}>
+        <textarea 
+          rows={this.props.rows} 
+          cols={this.props.cols} 
+          onChange={this.handleChange} 
+          value={this.state.content}
+        >
         </textarea>
         <p>{this.state.characterCount}/{this.props.limit}</p>
       </div>
