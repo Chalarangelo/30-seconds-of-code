@@ -1,23 +1,18 @@
-### Modal/Dialog
+### ModalDialog
 
-Renders a dialog component with modal.
+Renders a dialog component in a modal, controllable through events. 
+To use the component, import `ModalDialog` only once and then display it using `ModalDialog.show()`, passing the JSX templates and data as parameters.
 
-This is a simple React ModalDialog Component that is called and controlled through events.
+Define `modalHandler`, a method that will handle showing the modal dialog, set `state` to the default values initially and bind the `close` and `modalClick` methods to the component's context.
+Define `close` and `modalClick` to toggle the visibility of the modal dialog, based on `state.closeOnClick`.
+Use the CustomEvent API to listen for `modal` events, that can be dispatched from the `static` `show()` method, handle listeners appropriately from `componentDidMount` and `componentWillUnmount`.
 
+The `show()` method accepts an argument, that should contain three parameters:
+* `title`, a string for the dialog's title
+* `closeOnClick`, `true` if the modal should close on click or `false` if it should only close when clicking the *X* button
+* `content`, which is the JSX content to be rendered inside the dialog
 
-Benefits from the CustomEvent API,this ModalDialog component supports single instance usage.We just need import `Dialog` once time,and can call the dialog everywhere.Every time we wanna show the dialog,we just call the static function `Dialog.show`.Passing our jsx templates and data as the parameter and then the dialog will show with the data and templates rendered.
-
-After the component mounted,Dialog binds a custom event called `modal` to document element.The event handler defined in our component named `modalHandler`.It accepts and renders the data passed by users.When document node captured a `modal` event,`modalHandler` works.
-
-Before the component unmounted,Dialog removes the custom event from document element in case of memory leaks.
-
-Dialog exposed the `show` method via using `static` reserved keyword so that we can call it through Dialog class.The `show` method accepts a object parameter that contains three properties: `title`, `closeOnClick`, and `content`.
-
-* `title` is the text you wanna show as the title of the dialog,passed as a String.
-* `closeOnClick` is a boolean to determine if the modal should close when clicked on(true), or only when the X button is pressed(false).
-* `content` is a jsx element.Dialog will render it.You can pass any content you want to show in the dialog.
-
-See the live demo on [stackblitz.com](https://stackblitz.com/edit/react-7yg2gr).
+Finally, in the `render()` method, use a `<div>` to wrap everything and render the modal dialog with the content passed to `show()`.
 
 ```css
   .modal {
@@ -63,7 +58,7 @@ See the live demo on [stackblitz.com](https://stackblitz.com/edit/react-7yg2gr).
 ```
 
 ```jsx
-class Dialog extends React.Component {
+class ModalDialog extends React.Component {
   constructor() {
     super();
     this.modalHandler = (e) => {
@@ -126,17 +121,21 @@ class Dialog extends React.Component {
 
 ```jsx
 // add to render function
-<Dialog />
+<ModalDialog />
 
 // every time you wanna call the dialog
 // content is a jsx element
-Dialog.show({
-  title: 'Test',
+ModalDialog.show({
+  title: 'Hello, world!',
   closeOnClick: true,
-  content: <img src="https://github.com/zhongdeming428/30-seconds-of-react/raw/master/logo.png"/>
+  content: <img src="https://github.com/30-seconds/30-seconds-of-react/blob/master/logo.png"/>
 });  
 ```
 
-<!-- tags: props,children,class -->
+#### Notes:
+* This component includes a lot of CSS, which might conflict with other CSS in your project.
+* A more up-to-date method with lower compatibility is to use [Portals](https://reactjs.org/docs/portals.html) in React 16+.
+
+<!-- tags: visual,static,children,state,class -->
 
 <!-- expertise: 1 -->
