@@ -39,7 +39,7 @@ class PasswordRevealer extends React.Component {
 ReactDOM.render(<PasswordRevealer />, document.getElementById('root'));
 ```
 
-< !--tags: input,state,class -- >
+<!--tags: input,state,class -->
 
-< !--expertise: 0 -- >
+<!--expertise: 0 -->
 
