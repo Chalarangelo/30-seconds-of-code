@@ -4,10 +4,10 @@ const {average} = require('./_30s.js');
 test('average is a Function', () => {
   expect(average).toBeInstanceOf(Function);
 });
-test('average(true) returns 0', () => {
+test('average(true) returns 1', () => {
   expect(average(true) === 1).toBeTruthy();
 });
-test('average(false) returns 1', () => {
+test('average(false) returns 0', () => {
   expect(average(false) === 0).toBeTruthy();
 });
 test('average(9, 1) returns 5', () => {
@@ -25,10 +25,10 @@ test('average(1, 2, 3) returns 2', () => {
 test('average(null) returns 0', () => {
   expect(average(null)).toBe(0);
 });
-test('average(1, 2, 3) returns NaN', () => {
+test('average(undefined) returns NaN', () => {
   expect(isNaN(average(undefined))).toBeTruthy();
 });
-test('average(String) returns NaN', () => {
+test('average("String") returns NaN', () => {
   expect(isNaN(average('String'))).toBeTruthy();
 });
 test('average({ a: 123}) returns NaN', () => {
