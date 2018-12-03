@@ -1423,6 +1423,13 @@
     ],
     "description": "Checks if a string is lower case.\n\nConvert the given string to lower case, using `String.toLowerCase()` and compare it to the original"
   },
+  "isNegativeZero": {
+    "prefix": "30s_isNegativeZero",
+    "body": [
+      "const isNegativeZero = val => val === 0 && 1 / val === -Infinity;"
+    ],
+    "description": "Checks if the given value is equal to negative zero (`-0`).\n\nChecks whether a passed value is equal to `0` and if `1` divided by the value equals `-Infinity`"
+  },
   "isNil": {
     "prefix": "30s_isNil",
     "body": [
