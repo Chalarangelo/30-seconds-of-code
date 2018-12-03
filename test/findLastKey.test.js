@@ -4,7 +4,7 @@ const {findLastKey} = require('./_30s.js');
 test('findLastKey is a Function', () => {
   expect(findLastKey).toBeInstanceOf(Function);
 });
-test('eturns the appropriate key', () => {
+test('returns the appropriate key', () => {
   expect(
     findLastKey(
       {
