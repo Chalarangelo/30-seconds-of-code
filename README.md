@@ -321,6 +321,7 @@ average(1, 2, 3);
 * [`inRange`](#inrange)
 * [`isDivisible`](#isdivisible)
 * [`isEven`](#iseven)
+* [`isNegativeZero`](#isnegativezero)
 * [`isPrime`](#isprime)
 * [`lcm`](#lcm)
 * [`luhnCheck`](#luhncheck-)
@@ -5669,6 +5670,28 @@ const isEven = num => num % 2 === 0;
 
 ```js
 isEven(3); // false
+```
+
+</details>
+
+<br>[⬆ Back to top](#contents)
+
+### isNegativeZero
+
+Checks if the given value is equal to negative zero (`-0`).
+
+Checks whether a passed value is equal to `0` and if `1` divided by the value equals `-Infinity`.
+
+```js
+const isNegativeZero = val => val === 0 && 1 / val === -Infinity;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+isNegativeZero(-0); // true
+isNegativeZero(0); // false
 ```
 
 </details>
