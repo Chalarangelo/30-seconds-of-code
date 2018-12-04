@@ -610,9 +610,9 @@ const isSymbol = val => typeof val === 'symbol';
 const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
 const isUndefined = val => val === undefined;
 const isUpperCase = str => str === str.toUpperCase();
-const isValidJSON = obj => {
+const isValidJSON = str => {
   try {
-    JSON.parse(obj);
+    JSON.parse(str);
     return true;
   } catch (e) {
     return false;

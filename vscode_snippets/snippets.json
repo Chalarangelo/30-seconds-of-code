@@ -1578,16 +1578,16 @@
   "isValidJSON": {
     "prefix": "30s_isValidJSON",
     "body": [
-      "const isValidJSON = obj => {",
+      "const isValidJSON = str => {",
       "  try {",
-      "    JSON.parse(obj);",
+      "    JSON.parse(str);",
       "    return true;",
       "  } catch (e) {",
       "    return false;",
       "  }",
       "};"
     ],
-    "description": "Checks if the provided argument is a valid JSON.\n\nUse `JSON.parse()` and a `try... catch` block to check if the provided argument is a valid JSON"
+    "description": "Checks if the provided string is a valid JSON.\n\nUse `JSON.parse()` and a `try... catch` block to check if the provided string is a valid JSON"
   },
   "isWritableStream": {
     "prefix": "30s_isWritableStream",

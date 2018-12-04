@@ -1274,9 +1274,9 @@
   var isUpperCase = function isUpperCase(str) {
     return str === str.toUpperCase();
   };
-  var isValidJSON = function isValidJSON(obj) {
+  var isValidJSON = function isValidJSON(str) {
     try {
-      JSON.parse(obj);
+      JSON.parse(str);
       return true;
     } catch (e) {
       return false;
