@@ -8838,14 +8838,14 @@ isUndefined(undefined); // true
 
 ### isValidJSON
 
-Checks if the provided argument is a valid JSON.
+Checks if the provided string is a valid JSON.
 
-Use `JSON.parse()` and a `try... catch` block to check if the provided argument is a valid JSON.
+Use `JSON.parse()` and a `try... catch` block to check if the provided string is a valid JSON.
 
 ```js
-const isValidJSON = obj => {
+const isValidJSON = str => {
   try {
-    JSON.parse(obj);
+    JSON.parse(str);
     return true;
   } catch (e) {
     return false;
