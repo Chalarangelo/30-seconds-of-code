@@ -3622,10 +3622,10 @@
       "type": "snippet",
       "attributes": {
         "fileName": "isValidJSON.md",
-        "text": "Checks if the provided argument is a valid JSON.\n\nUse `JSON.parse()` and a `try... catch` block to check if the provided argument is a valid JSON.",
+        "text": "Checks if the provided string is a valid JSON.\n\nUse `JSON.parse()` and a `try... catch` block to check if the provided string is a valid JSON.",
         "codeBlocks": {
-          "es6": "const isValidJSON = obj => {\n  try {\n    JSON.parse(obj);\n    return true;\n  } catch (e) {\n    return false;\n  }\n};",
-          "es5": "var isValidJSON = function isValidJSON(obj) {\n  try {\n    JSON.parse(obj);\n    return true;\n  } catch (e) {\n    return false;\n  }\n};",
+          "es6": "const isValidJSON = str => {\n  try {\n    JSON.parse(str);\n    return true;\n  } catch (e) {\n    return false;\n  }\n};",
+          "es5": "var isValidJSON = function isValidJSON(str) {\n  try {\n    JSON.parse(str);\n    return true;\n  } catch (e) {\n    return false;\n  }\n};",
           "example": "isValidJSON('{\"name\":\"Adam\",\"age\":20}'); // true\nisValidJSON('{\"name\":\"Adam\",age:\"20\"}'); // false\nisValidJSON(null); // true"
         },
         "tags": [
@@ -3636,7 +3636,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "b4417a972f391836241e88587797a8cd995f32ee71fbfcfe9e590c8fa8675558"
+        "hash": "9a304bb4dbaddc9c5e0cdc56606ee8286c891d6f82076e5742514f251b30a891"
       }
     },
     {
