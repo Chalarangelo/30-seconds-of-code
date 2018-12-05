@@ -6125,7 +6125,7 @@
         "codeBlocks": {
           "es6": "const sum = (...arr) => [...arr].reduce((acc, val) => acc + val, 0);",
           "es5": "var sum = function sum() {\n  for (var _len = arguments.length, arr = new Array(_len), _key = 0; _key < _len; _key++) {\n    arr[_key] = arguments[_key];\n  }\n\n  return arr.concat().reduce(function (acc, val) {\n    return acc + val;\n  }, 0);\n};",
-          "example": "sum(...[1, 2, 3, 4]); // 10"
+          "example": "sum(1, 2, 3, 4); // 10\nsum(...[1, 2, 3, 4]); // 10"
         },
         "tags": [
           "math",
@@ -6135,7 +6135,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "c19982a92698e82e05f0f903aeac184191a6371efc35459475bbf2177e64c6e9"
+        "hash": "9f18c29d189a684f99ec3801aef007891c2e8dd7c876b4e4701249ebd8e92061"
       }
     },
     {
