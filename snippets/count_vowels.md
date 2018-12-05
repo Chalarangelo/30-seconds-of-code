@@ -13,6 +13,6 @@ def count_vowels(str):
 ```
 
 ``` python
-count_vowels('foobar')  # 3
-count_vowels('gym')  # 0
+count_vowels('foobar') # 3
+count_vowels('gym') # 0
 ```
