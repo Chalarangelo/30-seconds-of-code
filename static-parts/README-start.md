@@ -39,17 +39,15 @@ npm install 30-seconds-of-code
 yarn add 30-seconds-of-code
 ```
 
-[CDN link](https://unpkg.com/30-seconds-of-code/)
+[CDN link](https://unpkg.com/30-seconds-of-code@2/)
 
 <details>
 <summary>Details</summary>
 
 **Browser**
 
-> IMPORTANT: replace the `src` with the full version link and desired target spec (such as ES5 minified)):
-
 ```html
-<script src="https://unpkg.com/30-seconds-of-code"></script>
+<script src="https://unpkg.com/30-seconds-of-code@2"></script>
 <script>
   _30s.average(1, 2, 3);
 </script>
@@ -62,19 +60,7 @@ yarn add 30-seconds-of-code
 const _30s = require('30-seconds-of-code');
 _30s.average(1, 2, 3);
 
-// ES Modules
-import _30s from '30-seconds-of-code';
-_30s.average(1, 2, 3);
-```
-
-To import snippets directly:
-
-```js
-// CommonJS
-const { average } = require('30-seconds-of-code');
-average(1, 2, 3);
-
-// ES Modules
+// ES Modules (tree-shaking support)
 import { average } from '30-seconds-of-code';
 average(1, 2, 3);
 ```
