@@ -12,7 +12,7 @@ def count_vowels(str):
     return len(re.findall(r'[aeiou]', str, re.IGNORECASE))
 ```
 
-```python
-count_vowels('foobar') # 3
-count_vowels('gym') # 0
+``` python
+count_vowels('foobar')  # 3
+count_vowels('gym')  # 0
 ```
