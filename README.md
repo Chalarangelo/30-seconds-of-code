@@ -113,6 +113,7 @@ _30s.average(1, 2, 3);
 * [`dropRightWhile`](#droprightwhile)
 * [`dropWhile`](#dropwhile)
 * [`everyNth`](#everynth)
+* [`filterFalsy`](#filterfalsy)
 * [`filterNonUnique`](#filternonunique)
 * [`filterNonUniqueBy`](#filternonuniqueby)
 * [`findLast`](#findlast)
@@ -667,7 +668,7 @@ const sum = pipeAsyncFunctions(
   x => x + 3,
   async x => (await x) + 4
 );
-(async () => {
+(async() => {
   console.log(await sum(5)); // 15 (after one second)
 })();
 ```
@@ -1240,6 +1241,27 @@ const everyNth = (arr, nth) => arr.filter((e, i) => i % nth === nth - 1);
 
 ```js
 everyNth([1, 2, 3, 4, 5, 6], 2); // [ 2, 4, 6 ]
+```
+
+</details>
+
+<br>[⬆ Back to top](#contents)
+
+### filterFalsy
+
+Filters out the falsy values in an array.
+
+Use `Array.prototype.filter()` to get an array containing only truthy values.
+
+```js
+const filterFalsy = arr => arr.filter(Boolean);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+filterFalsy(['', true, {}, false, 'sample', 1, 0]); // [true, {}, 'sample', 1]
 ```
 
 </details>
@@ -2291,9 +2313,9 @@ The `func` is invoked with three arguments (`value, index, array`).
 const remove = (arr, func) =>
   Array.isArray(arr)
     ? arr.filter(func).reduce((acc, val) => {
-        arr.splice(arr.indexOf(val), 1);
-        return acc.concat(val);
-      }, [])
+      arr.splice(arr.indexOf(val), 1);
+      return acc.concat(val);
+    }, [])
     : [];
 ```
 
