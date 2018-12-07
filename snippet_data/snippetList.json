@@ -1137,6 +1137,20 @@
       }
     },
     {
+      "id": "filterFalsy",
+      "type": "snippetListing",
+      "attributes": {
+        "tags": [
+          "array",
+          "beginner"
+        ],
+        "archived": false
+      },
+      "meta": {
+        "hash": "313401bff0dc161b9bfb2b123f7a98eb6630dc5d2ae1bb31400a340203a50255"
+      }
+    },
+    {
       "id": "filterNonUnique",
       "type": "snippetListing",
       "attributes": {
@@ -2804,6 +2818,21 @@
       }
     },
     {
+      "id": "midpoint",
+      "type": "snippetListing",
+      "attributes": {
+        "tags": [
+          "math",
+          "array",
+          "beginner"
+        ],
+        "archived": false
+      },
+      "meta": {
+        "hash": "799134f9e026da20af240ed4d97b418bfac198394cd559cca19b143d3f7d4fb7"
+      }
+    },
+    {
       "id": "minBy",
       "type": "snippetListing",
       "attributes": {
@@ -3304,7 +3333,7 @@
         "archived": false
       },
       "meta": {
-        "hash": "dcdf66e8d0eb4a1761c6b767b8cc350757087ae817ec371436faab0fff7c0051"
+        "hash": "4815876fd6dbb17ad34c0d8918e7a72d837104f9beee7dc51b0fa73057b9e83e"
       }
     },
     {
@@ -3676,7 +3705,7 @@
         "archived": false
       },
       "meta": {
-        "hash": "2fd54c9fc1fb5b0a981df69501b518d5830ea77544d4d5290c7cc13745ca00ea"
+        "hash": "ec9cb9384817f84cf0bacd62a23b69b2304fa2cf0352b16d3950b21d48c04f11"
       }
     },
     {

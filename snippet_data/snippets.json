@@ -1676,6 +1676,27 @@
       }
     },
     {
+      "id": "filterFalsy",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "filterFalsy.md",
+        "text": "Filters out the falsy values in an array.\r\n\r\nUse `Array.prototype.filter()` to get an array containing only truthy values.",
+        "codeBlocks": {
+          "es6": "const filterFalsy = arr => arr.filter(Boolean);",
+          "es5": "var filterFalsy = function filterFalsy(arr) {\n  return arr.filter(Boolean);\n};",
+          "example": "filterFalsy(['', true, {}, false, 'sample', 1, 0]); // [true, {}, 'sample', 1]"
+        },
+        "tags": [
+          "array",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "313401bff0dc161b9bfb2b123f7a98eb6630dc5d2ae1bb31400a340203a50255"
+      }
+    },
+    {
       "id": "filterNonUnique",
       "type": "snippet",
       "attributes": {
@@ -4127,6 +4148,28 @@
       }
     },
     {
+      "id": "midpoint",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "midpoint.md",
+        "text": "Calculates the midpoint between two pairs of (x,y) points.\n\nDestructure the array to get `x1`, `y1`, `x2` and `y2`, calculate the midpoint for each dimension by dividing the sum of the two endpoints by `2`.",
+        "codeBlocks": {
+          "es6": "const midpoint = ([x1, y1], [x2, y2]) => [(x1 + x2) / 2, (y1 + y2) / 2];",
+          "es5": "function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }\n\nfunction _nonIterableRest() { throw new TypeError(\"Invalid attempt to destructure non-iterable instance\"); }\n\nfunction _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i[\"return\"] != null) _i[\"return\"](); } finally { if (_d) throw _e; } } return _arr; }\n\nfunction _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }\n\nvar midpoint = function midpoint(_ref, _ref2) {\n  var _ref3 = _slicedToArray(_ref, 2),\n      x1 = _ref3[0],\n      y1 = _ref3[1];\n\n  var _ref4 = _slicedToArray(_ref2, 2),\n      x2 = _ref4[0],\n      y2 = _ref4[1];\n\n  return [(x1 + x2) / 2, (y1 + y2) / 2];\n};",
+          "example": "midpoint([2, 2], [4, 4]); // [3, 3]\nmidpoint([4, 4], [6, 6]); // [5, 5]\nmidpoint([1, 3], [2, 4]); // [1.5, 3.5]"
+        },
+        "tags": [
+          "math",
+          "array",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "799134f9e026da20af240ed4d97b418bfac198394cd559cca19b143d3f7d4fb7"
+      }
+    },
+    {
       "id": "minBy",
       "type": "snippet",
       "attributes": {
@@ -4854,7 +4897,7 @@
         "codeBlocks": {
           "es6": "const pipeAsyncFunctions = (...fns) => arg => fns.reduce((p, f) => p.then(f), Promise.resolve(arg));",
           "es5": "var pipeAsyncFunctions = function pipeAsyncFunctions() {\n  for (var _len = arguments.length, fns = new Array(_len), _key = 0; _key < _len; _key++) {\n    fns[_key] = arguments[_key];\n  }\n\n  return function (arg) {\n    return fns.reduce(function (p, f) {\n      return p.then(f);\n    }, Promise.resolve(arg));\n  };\n};",
-          "example": "const sum = pipeAsyncFunctions(\n  x => x + 1,\n  x => new Promise(resolve => setTimeout(() => resolve(x + 2), 1000)),\n  x => x + 3,\n  async x => (await x) + 4\n);\n(async () => {\n  console.log(await sum(5)); // 15 (after one second)\n})();"
+          "example": "const sum = pipeAsyncFunctions(\n  x => x + 1,\n  x => new Promise(resolve => setTimeout(() => resolve(x + 2), 1000)),\n  x => x + 3,\n  async x => (await x) + 4\n);\n(async() => {\n  console.log(await sum(5)); // 15 (after one second)\n})();"
         },
         "tags": [
           "adapter",
@@ -4865,7 +4908,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "dcdf66e8d0eb4a1761c6b767b8cc350757087ae817ec371436faab0fff7c0051"
+        "hash": "4815876fd6dbb17ad34c0d8918e7a72d837104f9beee7dc51b0fa73057b9e83e"
       }
     },
     {
@@ -5401,7 +5444,7 @@
         "fileName": "remove.md",
         "text": "Removes elements from an array for which the given function returns `false`.\n\nUse `Array.prototype.filter()` to find array elements that return truthy values and `Array.prototype.reduce()` to remove elements using `Array.prototype.splice()`.\nThe `func` is invoked with three arguments (`value, index, array`).",
         "codeBlocks": {
-          "es6": "const remove = (arr, func) =>\n  Array.isArray(arr)\n    ? arr.filter(func).reduce((acc, val) => {\n        arr.splice(arr.indexOf(val), 1);\n        return acc.concat(val);\n      }, [])\n    : [];",
+          "es6": "const remove = (arr, func) =>\n  Array.isArray(arr)\n    ? arr.filter(func).reduce((acc, val) => {\n      arr.splice(arr.indexOf(val), 1);\n      return acc.concat(val);\n    }, [])\n    : [];",
           "es5": "var remove = function remove(arr, func) {\n  return Array.isArray(arr) ? arr.filter(func).reduce(function (acc, val) {\n    arr.splice(arr.indexOf(val), 1);\n    return acc.concat(val);\n  }, []) : [];\n};",
           "example": "remove([1, 2, 3, 4], n => n % 2 === 0); // [2, 4]"
         },
@@ -5412,7 +5455,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "2fd54c9fc1fb5b0a981df69501b518d5830ea77544d4d5290c7cc13745ca00ea"
+        "hash": "ec9cb9384817f84cf0bacd62a23b69b2304fa2cf0352b16d3950b21d48c04f11"
       }
     },
     {

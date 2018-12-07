@@ -757,6 +757,13 @@
     ],
     "description": "Generates an array, containing the Fibonacci sequence, up until the nth term.\n\nCreate an empty array of the specific length, initializing the first two values (`0` and `1`).\nUse `Array.prototype.reduce()` to add values into the array, using the sum of the last two values, except for the first two"
   },
+  "filterFalsy": {
+    "prefix": "30s_filterFalsy",
+    "body": [
+      "const filterFalsy = arr => arr.filter(Boolean);"
+    ],
+    "description": "Filters out the falsy values in an array."
+  },
   "filterNonUnique": {
     "prefix": "30s_filterNonUnique",
     "body": [
@@ -1826,6 +1833,13 @@
     ],
     "description": "Creates a new object from the combination of two or more objects.\n\nUse `Array.prototype.reduce()` combined with `Object.keys(obj)` to iterate over all objects and keys.\nUse `hasOwnProperty()` and `Array.prototype.concat()` to append values for keys existing in multiple objects"
   },
+  "midpoint": {
+    "prefix": "30s_midpoint",
+    "body": [
+      "const midpoint = ([x1, y1], [x2, y2]) => [(x1 + x2) / 2, (y1 + y2) / 2];"
+    ],
+    "description": "Calculates the midpoint between two pairs of (x,y) points.\n\nDestructure the array to get `x1`, `y1`, `x2` and `y2`, calculate the midpoint for each dimension by dividing the sum of the two endpoints by `2`"
+  },
   "minBy": {
     "prefix": "30s_minBy",
     "body": [
@@ -2428,9 +2442,9 @@
       "const remove = (arr, func) =>",
       "  Array.isArray(arr)",
       "    ? arr.filter(func).reduce((acc, val) => {",
-      "        arr.splice(arr.indexOf(val), 1);",
-      "        return acc.concat(val);",
-      "      }, [])",
+      "      arr.splice(arr.indexOf(val), 1);",
+      "      return acc.concat(val);",
+      "    }, [])",
       "    : [];"
     ],
     "description": "Removes elements from an array for which the given function returns `false`.\n\nUse `Array.prototype.filter()` to find array elements that return truthy values and `Array.prototype.reduce()` to remove elements using `Array.prototype.splice()`.\nThe `func` is invoked with three arguments (`value, index, array`)"

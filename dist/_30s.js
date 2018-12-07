@@ -333,6 +333,7 @@
       (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),
       []
     );
+  const filterFalsy = arr => arr.filter(Boolean);
   const filterNonUnique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexOf(i));
   const filterNonUniqueBy = (arr, fn) =>
     arr.filter((v, i) => arr.every((x, j) => (i === j) === fn(v, x, i, j)));
@@ -716,6 +717,7 @@
         }, {}),
       {}
     );
+  const midpoint = ([x1, y1], [x2, y2]) => [(x1 + x2) / 2, (y1 + y2) / 2];
   const minBy = (arr, fn) => Math.min(...arr.map(typeof fn === 'function' ? fn : val => val[fn]));
   const minDate = (...dates) => new Date(Math.min.apply(null, ...dates));
   const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
@@ -966,9 +968,9 @@
   const remove = (arr, func) =>
     Array.isArray(arr)
       ? arr.filter(func).reduce((acc, val) => {
-          arr.splice(arr.indexOf(val), 1);
-          return acc.concat(val);
-        }, [])
+        arr.splice(arr.indexOf(val), 1);
+        return acc.concat(val);
+      }, [])
       : [];
   const removeNonASCII = str => str.replace(/[^\x20-\x7E]/g, '');
   const renameKeys = (keysMap, obj) =>
@@ -1410,6 +1412,7 @@
   exports.extendHex = extendHex;
   exports.factorial = factorial;
   exports.fibonacci = fibonacci;
+  exports.filterFalsy = filterFalsy;
   exports.filterNonUnique = filterNonUnique;
   exports.filterNonUniqueBy = filterNonUniqueBy;
   exports.findKey = findKey;
@@ -1520,6 +1523,7 @@
   exports.median = median;
   exports.memoize = memoize;
   exports.merge = merge;
+  exports.midpoint = midpoint;
   exports.minBy = minBy;
   exports.minDate = minDate;
   exports.minN = minN;
