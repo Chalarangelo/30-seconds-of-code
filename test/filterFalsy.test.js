@@ -1,5 +1,5 @@
 const expect = require('expect');
-const {filterFalsy} = require('._30s.js');
+const { filterFalsy } = require('./_30s.js');
 
 test('filterFalsy is a Function', () => {
   expect(filterFalsy).toBeInstanceOf(Function);
