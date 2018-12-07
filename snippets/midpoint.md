@@ -1,24 +1,16 @@
 ### midpoint
 
-Calculates the midpoint between two pairs of x and y points.
+Calculates the midpoint between two pairs of (x,y) points.
 
-Takes in two pairs of (x,y) points, calculates the midpoint between the x's, the midpoint between the y's, and returns the coordinates in an array.
+Destructure the array to get `x1`, `y1`, `x2` and `y2`, calculate the midpoint for each dimension by dividing the sum of the two endpoints by `2`.
 
 ```js
-const midpoint = (x1, y1, x2, y2) => {
-  let points = new Array(2);
-  let first_point = (x1 + x2) / 2;
-  let second_point = (y1 + y2) / 2;
-
-  points[0] = first_point;
-  points[1] = second_point;
-  return points;
-};
+const midpoint = ([x1, y1], [x2, y2]) => [(x1 + x2) / 2, (y1 + y2) / 2];
 ```
 
 ```js
-midpoint(2, 2, 4, 4); // [3, 3]
-midpoint(4, 4, 6, 6); // [5, 5]
-midpoint(1, 3, 2, 4); // [1.5, 3.5]
+midpoint([2, 2], [4, 4]); // [3, 3]
+midpoint([4, 4], [6, 6]); // [5, 5]
+midpoint([1, 3], [2, 4]); // [1.5, 3.5]
 ```
 
