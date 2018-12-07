@@ -1,12 +1,12 @@
 ### normalizeVector
 
-Returns a list consisting of a 3-element array representing a vector that is the normalized version of another vector.
+Returns a 3-element array, representing a vector that is the normalized version of another vector.
 
 Use `Math.sqrt()` to calculate `magnitude`, divide components by `magnitude`.
 
 ```js
 const normalize = ([x, y, z]) => {
-  magnitude = Math.sqrt(x*x + y*y + z*z);
+  let magnitude = Math.sqrt(x*x + y*y + z*z);
   return [x/magnitude, y/magnitude, z/magnitude];
 }
 ```
