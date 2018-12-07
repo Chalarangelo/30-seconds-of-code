@@ -6,8 +6,11 @@ Loop through an array of functions containing asynchronous events, calling `next
 
 ```js
 const chainAsync = fns => {
-  let curr = 0;
-  const next = () => fns[curr++](next);
+  let curr = 0, last = fns[fns.length - 1];
+  const next = () => {
+    const fn = fns[curr++]
+    fn(fn === last ? null : next)
+  }
   next();
 };
 ```
@@ -20,6 +23,10 @@ chainAsync([
   },
   next => {
     console.log('1 second');
+    setTimeout(next, 1000);
+  },
+  () => {
+    console.log('2 second');
   }
 ]);
 ```
