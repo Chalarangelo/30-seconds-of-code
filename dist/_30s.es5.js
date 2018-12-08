@@ -754,6 +754,9 @@
       return acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i);
     }, []);
   };
+  var filterFalsy = function filterFalsy(arr) {
+    return arr.filter(Boolean);
+  };
   var filterNonUnique = function filterNonUnique(arr) {
     return arr.filter(function (i) {
       return arr.indexOf(i) === arr.lastIndexOf(i);
@@ -1427,6 +1430,17 @@
       }, {});
     }, {});
   };
+  var midpoint = function midpoint(_ref13, _ref14) {
+    var _ref15 = _slicedToArray(_ref13, 2),
+        x1 = _ref15[0],
+        y1 = _ref15[1];
+
+    var _ref16 = _slicedToArray(_ref14, 2),
+        x2 = _ref16[0],
+        y2 = _ref16[1];
+
+    return [(x1 + x2) / 2, (y1 + y2) / 2];
+  };
   var minBy = function minBy(arr, fn) {
     return Math.min.apply(Math, _toConsumableArray(arr.map(typeof fn === 'function' ? fn : function (val) {
       return val[fn];
@@ -1497,10 +1511,10 @@
     return (n === -1 ? arr.slice(n) : arr.slice(n, n + 1))[0];
   };
   var objectFromPairs = function objectFromPairs(arr) {
-    return arr.reduce(function (a, _ref13) {
-      var _ref14 = _slicedToArray(_ref13, 2),
-          key = _ref14[0],
-          val = _ref14[1];
+    return arr.reduce(function (a, _ref17) {
+      var _ref18 = _slicedToArray(_ref17, 2),
+          key = _ref18[0],
+          val = _ref18[1];
 
       return a[key] = val, a;
     }, {});
@@ -1589,10 +1603,10 @@
     return _toConsumableArray(arr).sort(function (a, b) {
       return props.reduce(function (acc, prop, i) {
         if (acc === 0) {
-          var _ref15 = orders && orders[i] === 'desc' ? [b[prop], a[prop]] : [a[prop], b[prop]],
-              _ref16 = _slicedToArray(_ref15, 2),
-              p1 = _ref16[0],
-              p2 = _ref16[1];
+          var _ref19 = orders && orders[i] === 'desc' ? [b[prop], a[prop]] : [a[prop], b[prop]],
+              _ref20 = _slicedToArray(_ref19, 2),
+              p1 = _ref20[0],
+              p2 = _ref20[1];
 
           acc = p1 > p2 ? 1 : p1 < p2 ? -1 : 0;
         }
@@ -1970,8 +1984,8 @@
       type: 'application/javascript; charset=utf-8'
     }));
     return new Promise(function (res, rej) {
-      worker.onmessage = function (_ref17) {
-        var data = _ref17.data;
+      worker.onmessage = function (_ref21) {
+        var data = _ref21.data;
         res(data), worker.terminate();
       };
 
@@ -1988,18 +2002,18 @@
   var sample = function sample(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
   };
-  var sampleSize = function sampleSize(_ref18) {
-    var _ref19 = _toArray(_ref18),
-        arr = _ref19.slice(0);
+  var sampleSize = function sampleSize(_ref22) {
+    var _ref23 = _toArray(_ref22),
+        arr = _ref23.slice(0);
 
     var n = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
     var m = arr.length;
 
     while (m) {
       var i = Math.floor(Math.random() * m--);
-      var _ref20 = [arr[i], arr[m]];
-      arr[m] = _ref20[0];
-      arr[i] = _ref20[1];
+      var _ref24 = [arr[i], arr[m]];
+      arr[m] = _ref24[0];
+      arr[i] = _ref24[1];
     }
 
     return arr.slice(0, n);
@@ -2046,17 +2060,17 @@
       return e.style.display = '';
     });
   };
-  var shuffle = function shuffle(_ref21) {
-    var _ref22 = _toArray(_ref21),
-        arr = _ref22.slice(0);
+  var shuffle = function shuffle(_ref25) {
+    var _ref26 = _toArray(_ref25),
+        arr = _ref26.slice(0);
 
     var m = arr.length;
 
     while (m) {
       var i = Math.floor(Math.random() * m--);
-      var _ref23 = [arr[i], arr[m]];
-      arr[m] = _ref23[0];
-      arr[i] = _ref23[1];
+      var _ref27 = [arr[i], arr[m]];
+      arr[m] = _ref27[0];
+      arr[i] = _ref27[1];
     }
 
     return arr;
@@ -2130,8 +2144,8 @@
       };
     }).sort(function (a, b) {
       return compare(a.item, b.item) || a.index - b.index;
-    }).map(function (_ref24) {
-      var item = _ref24.item;
+    }).map(function (_ref28) {
+      var item = _ref28.item;
       return item;
     });
   };
@@ -2656,6 +2670,7 @@
   exports.extendHex = extendHex;
   exports.factorial = factorial;
   exports.fibonacci = fibonacci;
+  exports.filterFalsy = filterFalsy;
   exports.filterNonUnique = filterNonUnique;
   exports.filterNonUniqueBy = filterNonUniqueBy;
   exports.findKey = findKey;
@@ -2766,6 +2781,7 @@
   exports.median = median;
   exports.memoize = memoize;
   exports.merge = merge;
+  exports.midpoint = midpoint;
   exports.minBy = minBy;
   exports.minDate = minDate;
   exports.minN = minN;
