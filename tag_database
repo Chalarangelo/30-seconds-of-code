@@ -50,7 +50,6 @@ decapitalize:string,array,intermediate
 deepClone:object,recursion,intermediate
 deepFlatten:array,recursion,intermediate
 deepFreeze:object,recursion,intermediate
-deepMapKeys:object,recursion
 defaults:object,intermediate
 defer:function,intermediate
 degreesToRads:math,beginner
