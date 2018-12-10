@@ -228,6 +228,17 @@
       prop =>
         !(obj[prop] instanceof Object) || Object.isFrozen(obj[prop]) ? null : deepFreeze(obj[prop])
     ) || Object.freeze(obj);
+  const deepMapKeys = (obj, f) =>
+    Array.isArray(obj)
+      ? obj.map(val => deepMapKeys(val, f))
+      : typeof obj === 'object'
+        ? Object.keys(obj).reduce((acc, current) => {
+          const val = obj[current];
+          acc[f(current)] =
+              val !== null && typeof val === 'object' ? deepMapKeys(val, f) : (acc[f(current)] = val);
+          return acc;
+        }, {})
+        : obj;
   const defaults = (obj, ...defs) => Object.assign({}, obj, ...defs.reverse(), obj);
   const defer = (fn, ...args) => setTimeout(fn, 1, ...args);
   const degreesToRads = deg => (deg * Math.PI) / 180.0;
@@ -1387,6 +1398,7 @@
   exports.deepClone = deepClone;
   exports.deepFlatten = deepFlatten;
   exports.deepFreeze = deepFreeze;
+  exports.deepMapKeys = deepMapKeys;
   exports.defaults = defaults;
   exports.defer = defer;
   exports.degreesToRads = degreesToRads;
