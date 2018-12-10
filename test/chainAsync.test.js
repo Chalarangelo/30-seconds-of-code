@@ -5,15 +5,15 @@ test('chainAsync is a Function', () => {
   expect(chainAsync).toBeInstanceOf(Function);
 });
 
-let incrementer = 0
+let incrementer = 0;
 test('Calls all functions in an array', () => {
   chainAsync([
     next => {
-      incrementer += 1
+      incrementer += 1;
       next();
     },
     next => {
-      incrementer += 1
+      incrementer += 1;
       next();
     },
     next => {
@@ -31,4 +31,4 @@ test('Last function does not receive "next" argument', () => {
       expect(next).toBe(null);
     }
   ]);
-})
+});
