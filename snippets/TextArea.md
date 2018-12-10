@@ -1,4 +1,4 @@
-### Textarea
+### TextArea
 
 Renders a `<textarea>` element that uses a callback function to pass its value to the parent component.
 
