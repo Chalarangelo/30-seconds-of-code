@@ -22,7 +22,7 @@ function TextArea ({ callback, cols = 20, rows = 2, disabled = false, readOnly =
 
 ```jsx
 ReactDOM.render(
-  <TextArea type='text' placeholder='Insert some text here...' callback={(val) => console.log(val)}/>,
+  <TextArea placeholder='Insert some text here...' callback={(val) => console.log(val)}/>,
   document.getElementById('root')
 );
 ```
