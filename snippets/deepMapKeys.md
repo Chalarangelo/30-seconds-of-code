@@ -8,35 +8,33 @@ Use `Object.keys(obj)` to iterate over the object's keys.
 Use `Array.prototype.reduce()` to create a new object with the same values and mapped keys using `fn`.
 
 ```js
-const deepMapKeys = (obj, f) => (
+const deepMapKeys = (obj, f) =>
   Array.isArray(obj)
     ? obj.map(val => deepMapKeys(val, f))
-    : (typeof obj === 'object')
-    ? Object.keys(obj).reduce((acc, current) => {
-      const val = obj[current];
-      acc[f(current)] = (val !== null && typeof val === 'object')
-        ? deepMapKeys(val, f)
-        : acc[f(current)] = val;
-      return acc;
-    }, {})
-    : obj
-);
+    : typeof obj === 'object'
+      ? Object.keys(obj).reduce((acc, current) => {
+        const val = obj[current];
+        acc[f(current)] =
+            val !== null && typeof val === 'object' ? deepMapKeys(val, f) : (acc[f(current)] = val);
+        return acc;
+      }, {})
+      : obj;
 ```
 
 ```js
 const obj = {
-  foo:'1',
-  nested:{
-    child:{
-      withArray:[
+  foo: '1',
+  nested: {
+    child: {
+      withArray: [
         {
-          grandChild:[ 'hello' ]
+          grandChild: ['hello']
         }
       ]
     }
   }
 };
-const upperKeysObj = deepMapKeys(obj, (key) => key.toUpperCase());
+const upperKeysObj = deepMapKeys(obj, key => key.toUpperCase());
 /*
 {
   "FOO":"1",
