@@ -569,6 +569,15 @@
       return !(obj[prop] instanceof Object) || Object.isFrozen(obj[prop]) ? null : deepFreeze(obj[prop]);
     }) || Object.freeze(obj);
   };
+  var deepMapKeys = function deepMapKeys(obj, f) {
+    return Array.isArray(obj) ? obj.map(function (val) {
+      return deepMapKeys(val, f);
+    }) : _typeof(obj) === 'object' ? Object.keys(obj).reduce(function (acc, current) {
+      var val = obj[current];
+      acc[f(current)] = val !== null && _typeof(val) === 'object' ? deepMapKeys(val, f) : acc[f(current)] = val;
+      return acc;
+    }, {}) : obj;
+  };
   var defaults = function defaults(obj) {
     for (var _len20 = arguments.length, defs = new Array(_len20 > 1 ? _len20 - 1 : 0), _key20 = 1; _key20 < _len20; _key20++) {
       defs[_key20 - 1] = arguments[_key20];
@@ -2645,6 +2654,7 @@
   exports.deepClone = deepClone;
   exports.deepFlatten = deepFlatten;
   exports.deepFreeze = deepFreeze;
+  exports.deepMapKeys = deepMapKeys;
   exports.defaults = defaults;
   exports.defer = defer;
   exports.degreesToRads = degreesToRads;
