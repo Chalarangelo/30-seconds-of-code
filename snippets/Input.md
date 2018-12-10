@@ -6,14 +6,13 @@ Use object destructuring to set defaults for certain attributes of the `<input>`
 Render an `<input>` element with the appropriate attributes and use the `callback` function in the `onChange` event to pass the value of the input to the parent.
 
 ```jsx
-function Input ({ callback, type = 'text', disabled = false, readonly = false, placeholder = '', value = '' }) {
+function Input ({ callback, type = 'text', disabled = false, readonly = false, placeholder = '' }) {
   return (
     <input 
       type={type} 
       disabled={disabled} 
       readonly={readonly} 
       placeholder={placeholder}
-      value={value}
       onChange={(event) => callback(event.target.value)} 
     />
   );
