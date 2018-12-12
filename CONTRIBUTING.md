@@ -38,26 +38,22 @@ Here's what you can do to help:
 - You can start creating a new snippet, by using the [snippet template](snippet-template.md) to format your snippets.
 
 ### Writing tests
-- Before writing any tests run `npm run tester` script. It will update test directory to include new snippets as well as update old ones if needed.
-- **DO NOT MODIFY THE snippetName.js files** under test directory.
-- We are using [tape](https://github.com/substack/tape) for testing.
+- Before writing any tests run `npm run packager` script. It will update test directory to include new snippets as well as update old ones if needed.
+- **DO NOT MODIFY THE _30s.js file** under test directory.
+- We are using [Jest](https://jestjs.io/) for testing.
 - Write tests under `snippetName.test.js` file. If you have trouble doing so, check out tests of other snippets.
 - Be sure to run `npm run test`. It is going to run all tests for all snippets.
 - Make a new pull request **only if all the tests are passing**.
-
-#### Browser specific tests
-- If your snippet belongs to `browser` category, then you will need to modify the tests to make them work.
-- By default, `Node.js` isn't browser environment. That said we have to use an external package to help us simulate the browser for our tests.
-- We use [jsdom](https://www.npmjs.com/package/jsdom) for our browser specific tests. You can find their [documentation](https://github.com/jsdom/jsdom) on GitHub as well.
+- If your snippet belongs in the `browser` category, some tests might not work exactly as expected. Check [Jest's Docs](https://jestjs.io/docs/en/getting-started) for additional information.
 
 ### Additional guidelines and conventions regarding snippets
 
 - When describing snippets, refer to methods, using their full name. For example, use `Array.prototype.reduce()`, instead of `reduce()`.
-- If your snippet contains argument with default parameters, explain what happens if they are omitted when calling the function and what the default case is.
+- If your snippet contains arguments with default parameters, explain what happens if they are omitted when calling the function and what the default case is.
 - If your snippet uses recursion, explain the base cases.
 - Always use `const functionName` for function definitions.
 - Use variables only when necessary. Prefer `const` when the values are not altered after assignment, otherwise, use `let`. Avoid using `var`.
-- Use `camelCase` for function and variable names if they consist of more than one word.
+- Use `camelCase` for function and variable names, if they consist of more than one word.
 - Try to give meaningful names to variables. For example use `letter`, instead of `lt`. Some exceptions to convention are:
   - `arr` for arrays (usually as the snippet function's argument).
   - `str` for strings.
@@ -71,7 +67,7 @@ Here's what you can do to help:
   - `nums` for arrays of numbers.
 - Use `()` if your function takes no arguments.
 - Use `_` if an argument inside some function (e.g. `Array.prototype.reduce()`) is not used anywhere in your code.
-- Specify default parameters for arguments, if necessary. It is preferred to put default parameters last unless you have pretty good reason not to.
+- Specify default parameters for arguments, if necessary. It is preferred to put default parameters last unless you have pretty a good reason not to.
 - If your snippet's function takes variadic arguments, use `...args` (although in certain cases, it might be needed to use a different name).
 - If your snippet function's body is a single statement, omit the `return` keyword and use an expression instead.
 - Always use soft tabs (2 spaces), never hard tabs.
