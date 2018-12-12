@@ -370,7 +370,7 @@
         "archived": false
       },
       "meta": {
-        "hash": "8c245a7fc94edffaf5cae4c28f37ed2e989772a9663a5f5bce98147f708a712e"
+        "hash": "ae8f373cb6c661896ce4256e9f8a2f7f9c14f1699651d366af038f66a938f70e"
       }
     },
     {
@@ -488,6 +488,21 @@
       },
       "meta": {
         "hash": "0f631b67b8460ed99917ff1468051e1e075ef02b280838ec14ad3fede2f48c7f"
+      }
+    },
+    {
+      "id": "compactWhitespace",
+      "type": "snippetListing",
+      "attributes": {
+        "tags": [
+          "string",
+          "regexp",
+          "beginner"
+        ],
+        "archived": false
+      },
+      "meta": {
+        "hash": "c1e8ff69ac01f5be0595f6adf8b0df11dd8b8e557beb71f5faefb7a119282780"
       }
     },
     {

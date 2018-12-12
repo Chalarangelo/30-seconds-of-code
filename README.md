@@ -406,6 +406,7 @@ _30s.average(1, 2, 3);
 * [`byteSize`](#bytesize)
 * [`capitalize`](#capitalize)
 * [`capitalizeEveryWord`](#capitalizeeveryword)
+* [`compactWhitespace`](#compactwhitespace)
 * [`CSVToArray`](#csvtoarray)
 * [`CSVToJSON`](#csvtojson-)
 * [`decapitalize`](#decapitalize)
@@ -670,7 +671,7 @@ const sum = pipeAsyncFunctions(
   x => x + 3,
   async x => (await x) + 4
 );
-(async () => {
+(async() => {
   console.log(await sum(5)); // 15 (after one second)
 })();
 ```
@@ -2315,9 +2316,9 @@ The `func` is invoked with three arguments (`value, index, array`).
 const remove = (arr, func) =>
   Array.isArray(arr)
     ? arr.filter(func).reduce((acc, val) => {
-        arr.splice(arr.indexOf(val), 1);
-        return acc.concat(val);
-      }, [])
+      arr.splice(arr.indexOf(val), 1);
+      return acc.concat(val);
+    }, [])
     : [];
 ```
 
@@ -4616,7 +4617,11 @@ Loop through an array of functions containing asynchronous events, calling `next
 ```js
 const chainAsync = fns => {
   let curr = 0;
-  const next = () => fns[curr++](next);
+  const last = fns[fns.length - 1];
+  const next = () => {
+    const fn = fns[curr++];
+    fn === last ? fn() : fn(next);
+  };
   next();
 };
 ```
@@ -4632,6 +4637,10 @@ chainAsync([
   },
   next => {
     console.log('1 second');
+    setTimeout(next, 1000);
+  },
+  () => {
+    console.log('2 second');
   }
 ]);
 ```
@@ -7712,6 +7721,28 @@ const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperC
 
 ```js
 capitalizeEveryWord('hello world!'); // 'Hello World!'
+```
+
+</details>
+
+<br>[⬆ Back to top](#contents)
+
+### compactWhitespace
+
+Returns a string with whitespaces compacted.
+
+Use `String.prototype.replace()` with a regular expression to replace all occurences of 2 or more whitespace characters with a single space.
+
+```js
+const compactWhitespace = str => str.replace(/\s{2,}/g, ' ');
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+compactWhitespace('Lorem    Ipsum'); // 'Lorem Ipsum'
+compactWhitespace('Lorem \n Ipsum'); // 'Lorem Ipsum'
 ```
 
 </details>

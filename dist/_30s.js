@@ -114,7 +114,11 @@
   const castArray = val => (Array.isArray(val) ? val : [val]);
   const chainAsync = fns => {
     let curr = 0;
-    const next = () => fns[curr++](next);
+    const last = fns[fns.length - 1];
+    const next = () => {
+      const fn = fns[curr++];
+      fn === last ? fn() : fn(next);
+    };
     next();
   };
   const chunk = (arr, size) =>
@@ -145,6 +149,7 @@
     bgWhite: `\x1b[47m${args.join(' ')}\x1b[0m`
   });
   const compact = arr => arr.filter(Boolean);
+  const compactWhitespace = str => str.replace(/\s{2,}/g, ' ');
   const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));
   const composeRight = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
   const converge = (converger, fns) => (...args) => converger(...fns.map(fn => fn.apply(null, args)));
@@ -1381,6 +1386,7 @@
   exports.collectInto = collectInto;
   exports.colorize = colorize;
   exports.compact = compact;
+  exports.compactWhitespace = compactWhitespace;
   exports.compose = compose;
   exports.composeRight = composeRight;
   exports.converge = converge;

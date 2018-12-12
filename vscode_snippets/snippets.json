@@ -208,7 +208,11 @@
     "body": [
       "const chainAsync = fns => {",
       "  let curr = 0;",
-      "  const next = () => fns[curr++](next);",
+      "  const last = fns[fns.length - 1];",
+      "  const next = () => {",
+      "    const fn = fns[curr++];",
+      "    fn === last ? fn() : fn(next);",
+      "  };",
       "  next();",
       "};"
     ],
@@ -289,6 +293,13 @@
       "const compact = arr => arr.filter(Boolean);"
     ],
     "description": "Removes falsey values from an array.\n\nUse `Array.prototype.filter()` to filter out falsey values (`false`, `null`, `0`, `\"\"`, `undefined`, and `NaN`)"
+  },
+  "compactWhitespace": {
+    "prefix": "30s_compactWhitespace",
+    "body": [
+      "const compactWhitespace = str => str.replace(/\\s{2,}/g, ' ');"
+    ],
+    "description": "Returns a string with whitespaces compacted.\n\nUse `String.prototype.replace()` with a regular expression to replace all occurences of 2 or more whitespace characters with a single space"
   },
   "compose": {
     "prefix": "30s_compose",

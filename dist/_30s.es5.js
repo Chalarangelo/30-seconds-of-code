@@ -334,9 +334,11 @@
   };
   var chainAsync = function chainAsync(fns) {
     var curr = 0;
+    var last = fns[fns.length - 1];
 
     var next = function next() {
-      return fns[curr++](next);
+      var fn = fns[curr++];
+      fn === last ? fn() : fn(next);
     };
 
     next();
@@ -407,6 +409,9 @@
   };
   var compact = function compact(arr) {
     return arr.filter(Boolean);
+  };
+  var compactWhitespace = function compactWhitespace(str) {
+    return str.replace(/\s{2,}/g, ' ');
   };
   var compose = function compose() {
     for (var _len15 = arguments.length, fns = new Array(_len15), _key15 = 0; _key15 < _len15; _key15++) {
@@ -2637,6 +2642,7 @@
   exports.collectInto = collectInto;
   exports.colorize = colorize;
   exports.compact = compact;
+  exports.compactWhitespace = compactWhitespace;
   exports.compose = compose;
   exports.composeRight = composeRight;
   exports.converge = converge;
