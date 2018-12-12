@@ -29,7 +29,7 @@ try {
   undefinedTests.forEach(snippet => {
     const exportTest = [
       `const expect = require('expect');`,
-      `const {${snippet}} = require('._30s.js');`,
+      `const {${snippet}} = require('./_30s.js');`,
       `\ntest('${snippet} is a Function', () => {`,
       `  expect(${snippet}).toBeInstanceOf(Function);`,
       `});\n`
