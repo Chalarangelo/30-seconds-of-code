@@ -12,7 +12,7 @@ function Select ({ values, callback, disabled = false, readonly = false, selecte
     <select
       disabled={disabled}
       readOnly={readonly}
-      onChange={({ target : { value }}) => callback(value)}
+      onChange={({ target : { value } }) => callback(value)}
     >
       {values.map(([value, text]) => <option selected={selected === value}value={value}>{text}</option>)}
     </select>
