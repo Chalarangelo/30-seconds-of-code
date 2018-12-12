@@ -9,12 +9,12 @@ Use the `values` array to pass an array of `[value, text]` elements and the `sel
 ```jsx
 function Select ({ values, callback, disabled = false, readonly = false, selected }) {
   return (
-    <select 
-      disabled={disabled} 
-      readOnly={readonly} 
-      onChange={(event) => callback(event.target.value)} 
+    <select
+      disabled={disabled}
+      readOnly={readonly}
+      onChange={({ target : { value }}) => callback(value)}
     >
-      {values.map(v => <option selected={selected === v[0]}value={v[0]}>{v[1]}</option>)}
+      {values.map(([value, text]) => <option selected={selected === value}value={value}>{text}</option>)}
     </select>
   );
 }
