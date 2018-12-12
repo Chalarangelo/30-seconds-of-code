@@ -8,12 +8,12 @@ Render an `<input>` element with the appropriate attributes and use the `callbac
 ```jsx
 function Input ({ callback, type = 'text', disabled = false, readOnly = false, placeholder = '' }) {
   return (
-    <input 
-      type={type} 
-      disabled={disabled} 
-      readOnly={readOnly} 
+    <input
+      type={type}
+      disabled={disabled}
+      readOnly={readOnly}
       placeholder={placeholder}
-      onChange={(event) => callback(event.target.value)} 
+      onChange={({ target: { value } }) => callback(value)}
     />
   );
 }
