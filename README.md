@@ -670,7 +670,7 @@ const sum = pipeAsyncFunctions(
   x => x + 3,
   async x => (await x) + 4
 );
-(async () => {
+(async() => {
   console.log(await sum(5)); // 15 (after one second)
 })();
 ```
@@ -2315,9 +2315,9 @@ The `func` is invoked with three arguments (`value, index, array`).
 const remove = (arr, func) =>
   Array.isArray(arr)
     ? arr.filter(func).reduce((acc, val) => {
-        arr.splice(arr.indexOf(val), 1);
-        return acc.concat(val);
-      }, [])
+      arr.splice(arr.indexOf(val), 1);
+      return acc.concat(val);
+    }, [])
     : [];
 ```
 
@@ -5493,8 +5493,8 @@ Throws an exception if `n` is a negative number.
 const factorial = n =>
   n < 0
     ? (() => {
-      throw new TypeError('Negative numbers are not allowed!');
-    })()
+        throw new TypeError('Negative numbers are not allowed!');
+      })()
     : n <= 1
       ? 1
       : n * factorial(n - 1);
@@ -6723,11 +6723,11 @@ const deepMapKeys = (obj, f) =>
     ? obj.map(val => deepMapKeys(val, f))
     : typeof obj === 'object'
       ? Object.keys(obj).reduce((acc, current) => {
-        const val = obj[current];
-        acc[f(current)] =
+          const val = obj[current];
+          acc[f(current)] =
             val !== null && typeof val === 'object' ? deepMapKeys(val, f) : (acc[f(current)] = val);
-        return acc;
-      }, {})
+          return acc;
+        }, {})
       : obj;
 ```
 
@@ -6801,9 +6801,9 @@ const dig = (obj, target) =>
   target in obj
     ? obj[target]
     : Object.values(obj).reduce((acc, val) => {
-      if (acc !== undefined) return acc;
-      if (typeof val === 'object') return dig(val, target);
-    }, undefined);
+        if (acc !== undefined) return acc;
+        if (typeof val === 'object') return dig(val, target);
+      }, undefined);
 ```
 
 <details>
