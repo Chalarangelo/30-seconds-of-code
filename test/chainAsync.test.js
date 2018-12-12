@@ -28,7 +28,7 @@ test('Last function does not receive "next" argument', () => {
       next();
     },
     next => {
-      expect(next).toBe(null);
+      expect(next).toBe(undefined);
     }
   ]);
 });
