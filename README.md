@@ -5490,7 +5490,6 @@ Otherwise, return the product of `n` and the factorial of `n - 1`.
 Throws an exception if `n` is a negative number.
 
 ```js
-
 const factorial = n =>
   n < 0
     ? (() => {
@@ -6719,7 +6718,6 @@ Use `Object.keys(obj)` to iterate over the object's keys.
 Use `Array.prototype.reduce()` to create a new object with the same values and mapped keys using `fn`.
 
 ```js
-
 const deepMapKeys = (obj, f) =>
   Array.isArray(obj)
     ? obj.map(val => deepMapKeys(val, f))
@@ -6799,7 +6797,6 @@ Use the `in` operator to check if `target` exists in `obj`.
 If found, return the value of `obj[target]`, otherwise use `Object.values(obj)` and `Array.prototype.reduce()` to recursively call `dig` on each nested object until the first matching key/value pair is found.
 
 ```js
-
 const dig = (obj, target) =>
   target in obj
     ? obj[target]
