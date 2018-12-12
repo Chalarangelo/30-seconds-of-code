@@ -8,13 +8,13 @@ Render a `<textarea>` element with the appropriate attributes and use the `callb
 ```jsx
 function TextArea ({ callback, cols = 20, rows = 2, disabled = false, readOnly = false, placeholder='' }) {
   return (
-    <textarea 
+    <textarea
       cols={cols}
       rows={rows}
-      disabled={disabled} 
-      readOnly={readOnly} 
+      disabled={disabled}
+      readOnly={readOnly}
       placeholder={placeholder}
-      onChange={(event) => callback(event.target.value)} 
+      onChange={({ target : { value } }) => callback(value)}
     />
   );
 }

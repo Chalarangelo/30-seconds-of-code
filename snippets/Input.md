@@ -13,7 +13,7 @@ function Input ({ callback, type = 'text', disabled = false, readOnly = false, p
       disabled={disabled}
       readOnly={readOnly}
       placeholder={placeholder}
-      onChange={({ target: { value }}) => callback(value)}
+      onChange={({ target: { value } }) => callback(value)}
     />
   );
 }
