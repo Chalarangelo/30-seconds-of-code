@@ -14,5 +14,5 @@ test('compactWhitespace returns a string with compacted whitespaces', () => {
   expect(compactWhitespace('Lorem \t Ipsum')).toBe('Lorem Ipsum');
 });
 test('compactWhitespace returns a string with compacted whitespaces', () => {
-  expect(compactWhitespace('\t   Lorem \n\n  \n Ipsum  ')).toBe('Lorem Ipsum');
+  expect(compactWhitespace('\t   Lorem \n\n  \n Ipsum  ')).toBe(' Lorem Ipsum ');
 });
