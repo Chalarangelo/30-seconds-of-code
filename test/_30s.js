@@ -224,7 +224,6 @@ const deepFreeze = obj =>
     prop =>
       !(obj[prop] instanceof Object) || Object.isFrozen(obj[prop]) ? null : deepFreeze(obj[prop])
   ) || Object.freeze(obj);
-
 const deepMapKeys = (obj, f) =>
   Array.isArray(obj)
     ? obj.map(val => deepMapKeys(val, f))
@@ -253,7 +252,6 @@ const differenceBy = (a, b, fn) => {
   return a.filter(x => !s.has(fn(x)));
 };
 const differenceWith = (arr, val, comp) => arr.filter(a => val.findIndex(b => comp(a, b)) === -1);
-
 const dig = (obj, target) =>
   target in obj
     ? obj[target]
@@ -329,7 +327,6 @@ const extendHex = shortHex =>
     .split('')
     .map(x => x + x)
     .join('');
-
 const factorial = n =>
   n < 0
     ? (() => {
@@ -980,9 +977,9 @@ const reject = (pred, array) => array.filter((...args) => !pred(...args));
 const remove = (arr, func) =>
   Array.isArray(arr)
     ? arr.filter(func).reduce((acc, val) => {
-        arr.splice(arr.indexOf(val), 1);
-        return acc.concat(val);
-      }, [])
+      arr.splice(arr.indexOf(val), 1);
+      return acc.concat(val);
+    }, [])
     : [];
 const removeNonASCII = str => str.replace(/[^\x20-\x7E]/g, '');
 const renameKeys = (keysMap, obj) =>
