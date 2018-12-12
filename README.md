@@ -664,13 +664,14 @@ const pipeAsyncFunctions = (...fns) => arg => fns.reduce((p, f) => p.then(f), Pr
 <summary>Examples</summary>
 
 ```js
+
 const sum = pipeAsyncFunctions(
   x => x + 1,
   x => new Promise(resolve => setTimeout(() => resolve(x + 2), 1000)),
   x => x + 3,
   async x => (await x) + 4
 );
-(async () => {
+(async() => {
   console.log(await sum(5)); // 15 (after one second)
 })();
 ```
@@ -2312,12 +2313,13 @@ Use `Array.prototype.filter()` to find array elements that return truthy values 
 The `func` is invoked with three arguments (`value, index, array`).
 
 ```js
+
 const remove = (arr, func) =>
   Array.isArray(arr)
     ? arr.filter(func).reduce((acc, val) => {
-        arr.splice(arr.indexOf(val), 1);
-        return acc.concat(val);
-      }, [])
+      arr.splice(arr.indexOf(val), 1);
+      return acc.concat(val);
+    }, [])
     : [];
 ```
 
@@ -4616,7 +4618,11 @@ Loop through an array of functions containing asynchronous events, calling `next
 ```js
 const chainAsync = fns => {
   let curr = 0;
-  const next = () => fns[curr++](next);
+  const last = fns[fns.length - 1];
+  const next = () => {
+    const fn = fns[curr++];
+    fn === last ? fn() : fn(next);
+  };
   next();
 };
 ```
@@ -4632,6 +4638,10 @@ chainAsync([
   },
   next => {
     console.log('1 second');
+    setTimeout(next, 1000);
+  },
+  () => {
+    console.log('2 second');
   }
 ]);
 ```

@@ -110,7 +110,11 @@ const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperC
 const castArray = val => (Array.isArray(val) ? val : [val]);
 const chainAsync = fns => {
   let curr = 0;
-  const next = () => fns[curr++](next);
+  const last = fns[fns.length - 1];
+  const next = () => {
+    const fn = fns[curr++];
+    fn === last ? fn() : fn(next);
+  };
   next();
 };
 const chunk = (arr, size) =>
@@ -974,12 +978,13 @@ const reducedFilter = (data, keys, fn) =>
     }, {})
   );
 const reject = (pred, array) => array.filter((...args) => !pred(...args));
+
 const remove = (arr, func) =>
   Array.isArray(arr)
     ? arr.filter(func).reduce((acc, val) => {
-        arr.splice(arr.indexOf(val), 1);
-        return acc.concat(val);
-      }, [])
+      arr.splice(arr.indexOf(val), 1);
+      return acc.concat(val);
+    }, [])
     : [];
 const removeNonASCII = str => str.replace(/[^\x20-\x7E]/g, '');
 const renameKeys = (keysMap, obj) =>
