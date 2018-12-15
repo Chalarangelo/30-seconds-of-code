@@ -12,7 +12,11 @@ test('Runs the function provided', () => {
   const delay = promisify((d, cb) => setTimeout(cb, d));
   return delay(200).then(() => expect(true).toBeTruthy());
 });
-test('Returns a promise wrapped result', () => {
-  const return1 = promisify(cb => cb(null, 1));
-  return return1().then(result => expect(result).toBe(1));
+test('Resolve a callback result', () => {
+  const resolve1 = promisify(cb => cb(null, 1));
+  return expect(resolve1()).resolves.toBe(1);
+});
+test('Reject on error', () => {
+  const reject = promisify(cb => cb('error', null));
+  return expect(reject()).rejects.toMatch('error');
 });
