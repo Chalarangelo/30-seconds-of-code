@@ -114,7 +114,11 @@
   const castArray = val => (Array.isArray(val) ? val : [val]);
   const chainAsync = fns => {
     let curr = 0;
-    const next = () => fns[curr++](next);
+    const last = fns[fns.length - 1];
+    const next = () => {
+      const fn = fns[curr++];
+      fn === last ? fn() : fn(next);
+    };
     next();
   };
   const chunk = (arr, size) =>
