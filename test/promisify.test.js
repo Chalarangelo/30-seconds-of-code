@@ -10,5 +10,9 @@ test('Returns a promise', () => {
 });
 test('Runs the function provided', () => {
   const delay = promisify((d, cb) => setTimeout(cb, d));
-  delay(200).then(() => expect(true).toBeTruthy());
+  return delay(200).then(() => expect(true).toBeTruthy());
+});
+test('Returns a promise wrapped result', () => {
+  const return1 = promisify(cb => cb(null, 1));
+  return return1().then(result => expect(result).toBe(1));
 });
