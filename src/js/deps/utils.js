@@ -30,8 +30,8 @@ export const createEventHub = () => ({
 window.EventHub = createEventHub()
 
 /*
-* Make iOS behave normally.
-*/
+ * Make iOS behave normally.
+ */
 if (/iPhone|iPad|iPod/.test(navigator.platform) && !window.MSStream) {
   document.body.style.cursor = 'pointer'
 }
@@ -41,11 +41,11 @@ if (/Mac/.test(navigator.platform)) {
 }
 
 /*
-* A small utility to fix the letter kerning on macOS Chrome and Firefox when using the system font
-* (San Francisco). It is now fixed in the text rendering engine in FF 58 and Chrome 64.
-* UPDATE: It appears the applied fix doesn't work when the font is in italics. New fix has been added.
-* Must be applied to all browsers for now.
-*/
+ * A small utility to fix the letter kerning on macOS Chrome and Firefox when using the system font
+ * (San Francisco). It is now fixed in the text rendering engine in FF 58 and Chrome 64.
+ * UPDATE: It appears the applied fix doesn't work when the font is in italics. New fix has been added.
+ * Must be applied to all browsers for now.
+ */
 ;(() => {
   const ua = navigator.userAgent
 

@@ -7,9 +7,7 @@ A hover effect where the gradient follows the mouse cursor.
 #### HTML
 
 ```html
-<button class="mouse-cursor-gradient-tracking">
-  <span>Hover me</span>
-</button>
+<button class="mouse-cursor-gradient-tracking"><span>Hover me</span></button>
 ```
 
 #### CSS

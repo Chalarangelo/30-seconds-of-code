@@ -5,9 +5,7 @@ Horizontally and vertically centers a child element within a parent element usin
 #### HTML
 
 ```html
-<div class="flexbox-centering">
-  <div class="child">Centered content.</div>
-</div>
+<div class="flexbox-centering"><div class="child">Centered content.</div></div>
 ```
 
 #### CSS

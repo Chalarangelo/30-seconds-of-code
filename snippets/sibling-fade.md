@@ -6,12 +6,8 @@ Fades out the siblings of a hovered item.
 
 ```html
 <div class="sibling-fade">
-  <span>Item 1</span>
-  <span>Item 2</span>
-  <span>Item 3</span>
-  <span>Item 4</span>
-  <span>Item 5</span>
-  <span>Item 6</span>
+  <span>Item 1</span> <span>Item 2</span> <span>Item 3</span> <span>Item 4</span>
+  <span>Item 5</span> <span>Item 6</span>
 </div>
 ```
 

@@ -7,13 +7,13 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
 ```html
 <div class="overflow-scroll-gradient">
   <div class="overflow-scroll-gradient__scroller">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
-    Iure id exercitationem nulla qui repellat laborum vitae, <br>
-    molestias tempora velit natus. Quas, assumenda nisi. <br>
-    Quisquam enim qui iure, consequatur velit sit? <br>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
-    Iure id exercitationem nulla qui repellat laborum vitae, <br>
-    molestias tempora velit natus. Quas, assumenda nisi. <br>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />
+    Iure id exercitationem nulla qui repellat laborum vitae, <br />
+    molestias tempora velit natus. Quas, assumenda nisi. <br />
+    Quisquam enim qui iure, consequatur velit sit? <br />
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.<br />
+    Iure id exercitationem nulla qui repellat laborum vitae, <br />
+    molestias tempora velit natus. Quas, assumenda nisi. <br />
     Quisquam enim qui iure, consequatur velit sit?
   </div>
 </div>

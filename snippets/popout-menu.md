@@ -5,11 +5,7 @@ Reveals an interactive popout menu on hover and focus.
 #### HTML
 
 ```html
-<div class="reference" tabindex="0">
-  <div class="popout-menu">
-    Popout menu
-  </div>
-</div>
+<div class="reference" tabindex="0"><div class="popout-menu">Popout menu</div></div>
 ```
 
 #### CSS
