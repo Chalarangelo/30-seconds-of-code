@@ -334,9 +334,11 @@
   };
   var chainAsync = function chainAsync(fns) {
     var curr = 0;
+    var last = fns[fns.length - 1];
 
     var next = function next() {
-      return fns[curr++](next);
+      var fn = fns[curr++];
+      fn === last ? fn() : fn(next);
     };
 
     next();
