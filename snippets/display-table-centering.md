@@ -6,9 +6,7 @@ Vertically and horizontally centers a child element within its parent element us
 
 ```html
 <div class="container">
-  <div class="center">
-    <span>Centered content</span>
-  </div>
+  <div class="center"><span>Centered content</span></div>
 </div>
 ```
 

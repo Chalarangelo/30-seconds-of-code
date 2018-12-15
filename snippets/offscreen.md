@@ -6,8 +6,7 @@ A bulletproof way to completely hide an element visually and positionally in the
 
 ```html
 <a class="button" href="http://pantswebsite.com">
-  Learn More
-  <span class="offscreen"> about pants</span>
+  Learn More <span class="offscreen"> about pants</span>
 </a>
 ```
 

@@ -5,9 +5,7 @@ Vertically and horizontally centers a child element within its parent element us
 #### HTML
 
 ```html
-<div class="parent">
-  <div class="child">Centered content</div>
-</div>
+<div class="parent"><div class="child">Centered content</div></div>
 ```
 
 #### CSS

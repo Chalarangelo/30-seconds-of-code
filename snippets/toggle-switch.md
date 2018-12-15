@@ -5,8 +5,7 @@ Creates a toggle switch with CSS only.
 #### HTML
 
 ```html
-<input type="checkbox" id="toggle" class="offscreen" />
-<label for="toggle" class="switch"></label>
+<input type="checkbox" id="toggle" class="offscreen" /> <label for="toggle" class="switch"></label>
 ```
 
 #### CSS

@@ -5,8 +5,8 @@ Changes the fit and position of an image within its container while preserving i
 #### HTML
 
 ```html
-<img class="image image-contain" src="https://picsum.photos/600/200">
-<img class="image image-cover" src="https://picsum.photos/600/200">
+<img class="image image-contain" src="https://picsum.photos/600/200" />
+<img class="image image-cover" src="https://picsum.photos/600/200" />
 ```
 
 #### CSS

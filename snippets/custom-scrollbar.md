@@ -7,9 +7,9 @@ Customizes the scrollbar style for the document and elements with scrollable ove
 ```html
 <div class="custom-scrollbar">
   <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
-    Iure id exercitationem nulla qui repellat laborum vitae, <br>
-    molestias tempora velit natus. Quas, assumenda nisi. <br>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.<br />
+    Iure id exercitationem nulla qui repellat laborum vitae, <br />
+    molestias tempora velit natus. Quas, assumenda nisi. <br />
     Quisquam enim qui iure, consequatur velit sit?
   </p>
 </div>
