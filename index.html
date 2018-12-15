@@ -4,8 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>30 Seconds of CSS</title>
-    <meta name="description" content="A curated collection of useful CSS snippets you can understand in 30 seconds or less. From foundational elements such as clearfix to gradient text color and gradient cursor tracking to CSS easing and far beyond.">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <meta name="description" content="A curated collection of useful CSS snippets you can understand in 30 seconds or less. From foundational elements such as clearfix to gradient text color and gradient cursor tracking to CSS easing and far beyond.">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://30-seconds.github.io/30-seconds-of-css/">
+    <meta property="twitter:title" content="30 Seconds of CSS - Useful CSS snippets">
+    <meta property="twitter:description" content="A curated collection of useful CSS snippets you can understand in 30 seconds or less. ">
+    <meta property="twitter:image" content="./src/img/opengraph.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://30-seconds.github.io/30-seconds-of-css/">
+    <meta property="og:title" content="30 Seconds of CSS - Useful CSS snippets">
+    <meta property="og:description" content="A curated collection of useful CSS snippets you can understand in 30 seconds or less.">
+    <meta property="og:image" content="./src/img/opengraph.png">
     <script src="./src/js/index.js" defer=""></script>
     <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
   </head>
@@ -52,6 +62,7 @@
           <a class="sidebar__link" href="#reset-all-styles"><span>Reset all styles</span></a>
           <a class="sidebar__link" href="#shape-separator"><span>Shape separator</span></a>
           <a class="sidebar__link" href="#system-font-stack"><span>System font stack</span></a>
+          <a class="sidebar__link" href="#text-decoration-wavy"><span>Text decoration wavy</span></a>
           <a class="sidebar__link" href="#triangle"><span>Triangle</span></a>
           <a class="sidebar__link" href="#zebra-striped-list">
             <img alt="New" draggable="false" class="sidebar__new" src="./src/img/new.svg"><span>Zebra striped list</span></a>
@@ -2464,6 +2475,49 @@ li:not(:last-child) {
               </div>
             </div>
             <p><span class="snippet__support-note">✅ No caveats.</span></p>
+
+            <!-- tags: visual -->
+          </div>
+          <div class="snippet">
+            <h3 id="text-decoration-wavy"><span>Text decoration wavy</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
+            <p>Creates a Text decoration wavy.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;a href="#"&gt;I'm a link&lt;/a&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">a {
+  text-decoration: underline wavy orange;
+}
+a:hover {
+  text-decoration: underline wavy orangered;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo" data-scope="text-decoration-wavy.md">
+              <a href="#">I'm a link</a>
+            </div>
+            <style>
+              [data-scope="text-decoration-wavy.md"] a {
+                text-decoration: underline wavy orange;
+              }
+              [data-scope="text-decoration-wavy.md"] a:hover {
+                text-decoration: underline wavy orangered;
+              }
+            </style>
+            <h4>Explanation</h4>
+            <p><code>wavy</code> draws a wavy line.</p>
+            <p><code>wavy</code> is a value of text-decoration-style CSS property that sets the style of the lines specified by text-decoration-line.</p>
+            <p><code>text-decoration</code> is a shorthand property for the various text decoration properties: <code>text-decoration-color</code>, <code>text-decoration-style</code> and<code>text-decoration-line</code> are used.</p>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                83.1%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <ul>
+              <li>
+                <a href="https://caniuse.com/#feat=text-decoration" target="_blank">https://caniuse.com/#feat=text-decoration</a>
+              </li>
+            </ul>
 
             <!-- tags: visual -->
           </div>
