@@ -118,17 +118,10 @@ for (const snippetFile of fs.readdirSync(SNIPPETS_PATH)) {
 
   // new icon = less than 31 days old
   const date = (snippetData.match(/<!--\s*date:\s*(.+?)-->/) || [, ''])[1]
-  if (date && differenceInDays(new Date(date), new Date()) < 31) {
-    snippetEl.prepend(
-      createElement(
-        '<img alt="New" draggable="false" class="snippet__new" src="./src/img/new.svg">'
-      )
-    )
-    link.prepend(
-      createElement(
-        '<img alt="New" draggable="false" class="sidebar__new" src="./src/img/new.svg">'
-      )
-    )
+  if (date && differenceInDays(new Date(), new Date(date)) < 31) {
+    const newIcon = '<img alt="New" draggable="false" class="snippet__new" src="./src/img/new.svg">'
+    snippetEl.prepend(createElement(newIcon))
+    link.prepend(createElement(newIcon))
   }
 
   // tags
