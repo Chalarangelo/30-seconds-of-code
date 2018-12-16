@@ -519,9 +519,9 @@ li::before {
             <p>Customizes the scrollbar style for the document and elements with scrollable overflow, on WebKit platforms.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="custom-scrollbar"&gt;
   &lt;p&gt;
-    Lorem ipsum dolor sit amet consectetur adipisicing elit.&lt;br&gt;
-    Iure id exercitationem nulla qui repellat laborum vitae, &lt;br&gt;
-    molestias tempora velit natus. Quas, assumenda nisi. &lt;br&gt;
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.&lt;br /&gt;
+    Iure id exercitationem nulla qui repellat laborum vitae, &lt;br /&gt;
+    molestias tempora velit natus. Quas, assumenda nisi. &lt;br /&gt;
     Quisquam enim qui iure, consequatur velit sit?
   &lt;/p&gt;
 &lt;/div&gt;
@@ -719,9 +719,7 @@ in any specification.</span></p>
             <h3 id="display-table-centering"><span>Display table centering</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
             <p>Vertically and horizontally centers a child element within its parent element using <code>display: table</code> (as an alternative to <code>flexbox</code>).</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="container"&gt;
-  &lt;div class="center"&gt;
-    &lt;span&gt;Centered content&lt;/span&gt;
-  &lt;/div&gt;
+  &lt;div class="center"&gt;&lt;span&gt;Centered content&lt;/span&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.container {
@@ -743,9 +741,7 @@ in any specification.</span></p>
             <h4>Demo</h4>
             <div class="snippet-demo" data-scope="display-table-centering.md">
               <div class="container">
-                <div class="center">
-                  <span>Centered content</span>
-                </div>
+                <div class="center"><span>Centered content</span></div>
               </div>
             </div>
             <style>[data-scope="display-table-centering.md"] .container {
@@ -1095,8 +1091,8 @@ in any specification.</span></p>
           <div class="snippet">
             <h3 id="fit-image-in-container"><span>Fit image in container</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
             <p>Changes the fit and position of an image within its container while preserving its aspect ratio. Previously only possible using a background image and the <code>background-size</code> property.</p>
-            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;img class="image image-contain" src="https://picsum.photos/600/200"&gt;
-&lt;img class="image image-cover" src="https://picsum.photos/600/200"&gt;
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;img class="image image-contain" src="https://picsum.photos/600/200" /&gt;
+&lt;img class="image image-cover" src="https://picsum.photos/600/200" /&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.image {
   background: #34495e;
@@ -1152,9 +1148,7 @@ in any specification.</span></p>
           <div class="snippet">
             <h3 id="flexbox-centering"><span>Flexbox centering</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
             <p>Horizontally and vertically centers a child element within a parent element using <code>flexbox</code>.</p>
-            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="flexbox-centering"&gt;
-  &lt;div class="child"&gt;Centered content.&lt;/div&gt;
-&lt;/div&gt;
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="flexbox-centering"&gt;&lt;div class="child"&gt;Centered content.&lt;/div&gt;&lt;/div&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.flexbox-centering {
   display: flex;
@@ -1237,9 +1231,7 @@ in any specification.</span></p>
           <div class="snippet">
             <h3 id="grid-centering"><span>Grid centering</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
             <p>Horizontally and vertically centers a child element within a parent element using <code>grid</code>.</p>
-            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="grid-centering"&gt;
-  &lt;div class="child"&gt;Centered content.&lt;/div&gt;
-&lt;/div&gt;
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="grid-centering"&gt;&lt;div class="child"&gt;Centered content.&lt;/div&gt;&lt;/div&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.grid-centering {
   display: grid;
@@ -1570,9 +1562,7 @@ body {
             <h3 id="mouse-cursor-gradient-tracking"><span>Mouse cursor gradient tracking</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span><span class="tags__tag snippet__tag" data-type="interactivity"><i data-feather="edit-2"></i>interactivity</span></h3>
             <p>A hover effect where the gradient follows the mouse cursor.</p>
             <p><small class="snippet__credit"><strong>Credit:</strong> <a href="https://codepen.io/electerious/pen/MQrRxX" target="_blank">Tobias Reich</a></small></p>
-            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;button class="mouse-cursor-gradient-tracking"&gt;
-  &lt;span&gt;Hover me&lt;/span&gt;
-&lt;/button&gt;
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;button class="mouse-cursor-gradient-tracking"&gt;&lt;span&gt;Hover me&lt;/span&gt;&lt;/button&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.mouse-cursor-gradient-tracking {
   position: relative;
@@ -1613,9 +1603,7 @@ btn.onmousemove = function(e) {
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo" data-scope="mouse-cursor-gradient-tracking.md"><button class="mouse-cursor-gradient-tracking">
-                <span>Hover me</span>
-              </button></div>
+            <div class="snippet-demo" data-scope="mouse-cursor-gradient-tracking.md"><button class="mouse-cursor-gradient-tracking"><span>Hover me</span></button></div>
             <style>[data-scope="mouse-cursor-gradient-tracking.md"] .mouse-cursor-gradient-tracking {
   position: relative;
   background: #7983ff;
@@ -1734,8 +1722,7 @@ li:not(:last-child) {
             <h3 id="offscreen"><span>Offscreen</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
             <p>A bulletproof way to completely hide an element visually and positionally in the DOM while still allowing it to be accessed by JavaScript and readable by screen readers. This method is very useful for accessibility (<a href="https://adata.org/learn-about-ada" target="_blank">ADA</a>) development when more context is needed for visually-impaired users. As an alternative to <code>display: none</code> which is not readable by screen readers or <code>visibility: hidden</code> which takes up physical space in the DOM.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;a class="button" href="http://pantswebsite.com"&gt;
-  Learn More
-  &lt;span class="offscreen"&gt; about pants&lt;/span&gt;
+  Learn More &lt;span class="offscreen"&gt; about pants&lt;/span&gt;
 &lt;/a&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.offscreen {
@@ -1751,8 +1738,7 @@ li:not(:last-child) {
 </code></pre>
             <h4>Demo</h4>
             <div class="snippet-demo" data-scope="offscreen.md"><a class="button" href="http://pantswebsite.com">
-                Learn More
-                <span class="offscreen"> about pants</span>
+                Learn More <span class="offscreen"> about pants</span>
               </a></div>
             <style>[data-scope="offscreen.md"] .offscreen {
   border: 0;
@@ -1793,13 +1779,13 @@ li:not(:last-child) {
             <p>Adds a fading gradient to an overflowing element to better indicate there is more content to be scrolled.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="overflow-scroll-gradient"&gt;
   &lt;div class="overflow-scroll-gradient__scroller"&gt;
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. &lt;br&gt;
-    Iure id exercitationem nulla qui repellat laborum vitae, &lt;br&gt;
-    molestias tempora velit natus. Quas, assumenda nisi. &lt;br&gt;
-    Quisquam enim qui iure, consequatur velit sit? &lt;br&gt;
-    Lorem ipsum dolor sit amet consectetur adipisicing elit.&lt;br&gt;
-    Iure id exercitationem nulla qui repellat laborum vitae, &lt;br&gt;
-    molestias tempora velit natus. Quas, assumenda nisi. &lt;br&gt;
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. &lt;br /&gt;
+    Iure id exercitationem nulla qui repellat laborum vitae, &lt;br /&gt;
+    molestias tempora velit natus. Quas, assumenda nisi. &lt;br /&gt;
+    Quisquam enim qui iure, consequatur velit sit? &lt;br /&gt;
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.&lt;br /&gt;
+    Iure id exercitationem nulla qui repellat laborum vitae, &lt;br /&gt;
+    molestias tempora velit natus. Quas, assumenda nisi. &lt;br /&gt;
     Quisquam enim qui iure, consequatur velit sit?
   &lt;/div&gt;
 &lt;/div&gt;
@@ -1891,11 +1877,7 @@ li:not(:last-child) {
           <div class="snippet">
             <h3 id="popout-menu"><span>Popout menu</span><span class="tags__tag snippet__tag" data-type="interactivity"><i data-feather="edit-2"></i>interactivity</span></h3>
             <p>Reveals an interactive popout menu on hover and focus.</p>
-            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="reference" tabindex="0"&gt;
-  &lt;div class="popout-menu"&gt;
-    Popout menu
-  &lt;/div&gt;
-&lt;/div&gt;
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="reference" tabindex="0"&gt;&lt;div class="popout-menu"&gt;Popout menu&lt;/div&gt;&lt;/div&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.reference {
   position: relative;
@@ -1920,9 +1902,7 @@ li:not(:last-child) {
             <h4>Demo</h4>
             <div class="snippet-demo" data-scope="popout-menu.md">
               <div class="reference" tabindex="0">
-                <div class="popout-menu">
-                  Popout menu
-                </div>
+                <div class="popout-menu">Popout menu</div>
               </div>
             </div>
             <style>[data-scope="popout-menu.md"] .reference {
@@ -2036,7 +2016,11 @@ li:not(:last-child) {
             <p>Resets all styles to default values with one property. This will not affect <code>direction</code> and <code>unicode-bidi</code> properties.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="reset-all-styles"&gt;
   &lt;h5&gt;Title&lt;/h5&gt;
-  &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui iure, consequatur velit sit?&lt;/p&gt;
+  &lt;p&gt;
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui
+    repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui
+    iure, consequatur velit sit?
+  &lt;/p&gt;
 &lt;/div&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.reset-all-styles {
@@ -2047,7 +2031,11 @@ li:not(:last-child) {
             <div class="snippet-demo" data-scope="reset-all-styles.md">
               <div class="reset-all-styles">
                 <h5>Title</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui iure, consequatur velit sit?</p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui
+                  repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui
+                  iure, consequatur velit sit?
+                </p>
               </div>
             </div>
             <style>[data-scope="reset-all-styles.md"] .reset-all-styles {
@@ -2130,12 +2118,8 @@ li:not(:last-child) {
             <h3 id="sibling-fade"><span>Sibling fade</span><span class="tags__tag snippet__tag" data-type="interactivity"><i data-feather="edit-2"></i>interactivity</span></h3>
             <p>Fades out the siblings of a hovered item.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="sibling-fade"&gt;
-  &lt;span&gt;Item 1&lt;/span&gt;
-  &lt;span&gt;Item 2&lt;/span&gt;
-  &lt;span&gt;Item 3&lt;/span&gt;
-  &lt;span&gt;Item 4&lt;/span&gt;
-  &lt;span&gt;Item 5&lt;/span&gt;
-  &lt;span&gt;Item 6&lt;/span&gt;
+  &lt;span&gt;Item 1&lt;/span&gt; &lt;span&gt;Item 2&lt;/span&gt; &lt;span&gt;Item 3&lt;/span&gt; &lt;span&gt;Item 4&lt;/span&gt;
+  &lt;span&gt;Item 5&lt;/span&gt; &lt;span&gt;Item 6&lt;/span&gt;
 &lt;/div&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">span {
@@ -2149,12 +2133,8 @@ li:not(:last-child) {
             <h4>Demo</h4>
             <div class="snippet-demo" data-scope="sibling-fade.md">
               <div class="sibling-fade">
-                <span>Item 1</span>
-                <span>Item 2</span>
-                <span>Item 3</span>
-                <span>Item 4</span>
-                <span>Item 5</span>
-                <span>Item 6</span>
+                <span>Item 1</span> <span>Item 2</span> <span>Item 3</span> <span>Item 4</span>
+                <span>Item 5</span> <span>Item 6</span>
               </div>
             </div>
             <style>[data-scope="sibling-fade.md"] span {
@@ -2227,8 +2207,7 @@ li:not(:last-child) {
           <div class="snippet">
             <h3 id="toggle-switch"><span>Toggle switch</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span><span class="tags__tag snippet__tag" data-type="interactivity"><i data-feather="edit-2"></i>interactivity</span></h3>
             <p>Creates a toggle switch with CSS only.</p>
-            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;input type="checkbox" id="toggle" class="offscreen" /&gt;
-&lt;label for="toggle" class="switch"&gt;&lt;/label&gt;
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;input type="checkbox" id="toggle" class="offscreen" /&gt; &lt;label for="toggle" class="switch"&gt;&lt;/label&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.switch {
   position: relative;
@@ -2262,8 +2241,7 @@ input[type='checkbox']:checked + .switch {
 }
 </code></pre>
             <h4>Demo</h4>
-            <div class="snippet-demo" data-scope="toggle-switch.md"><input type="checkbox" id="toggle" class="offscreen">
-              <label for="toggle" class="switch"></label></div>
+            <div class="snippet-demo" data-scope="toggle-switch.md"><input type="checkbox" id="toggle" class="offscreen"> <label for="toggle" class="switch"></label></div>
             <style>
               [data-scope="toggle-switch.md"] .switch {
                 position: relative;
@@ -2325,9 +2303,7 @@ input[type='checkbox']:checked + .switch {
           <div class="snippet">
             <h3 id="transform-centering"><span>Transform centering</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
             <p>Vertically and horizontally centers a child element within its parent element using <code>position: absolute</code> and <code>transform: translate()</code> (as an alternative to <code>flexbox</code> or <code>display: table</code>). Similar to <code>flexbox</code>, this method does not require you to know the height or width of your parent or child so it is ideal for responsive applications.</p>
-            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="parent"&gt;
-  &lt;div class="child"&gt;Centered content&lt;/div&gt;
-&lt;/div&gt;
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="parent"&gt;&lt;div class="child"&gt;Centered content&lt;/div&gt;&lt;/div&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.parent {
   border: 1px solid #333;
