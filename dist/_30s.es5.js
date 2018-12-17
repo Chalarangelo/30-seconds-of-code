@@ -410,6 +410,9 @@
   var compact = function compact(arr) {
     return arr.filter(Boolean);
   };
+  var compactWhitespace = function compactWhitespace(str) {
+    return str.replace(/\s{2,}/g, ' ');
+  };
   var compose = function compose() {
     for (var _len15 = arguments.length, fns = new Array(_len15), _key15 = 0; _key15 < _len15; _key15++) {
       fns[_key15] = arguments[_key15];
@@ -2639,6 +2642,7 @@
   exports.collectInto = collectInto;
   exports.colorize = colorize;
   exports.compact = compact;
+  exports.compactWhitespace = compactWhitespace;
   exports.compose = compose;
   exports.composeRight = composeRight;
   exports.converge = converge;

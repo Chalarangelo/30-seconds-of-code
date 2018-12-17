@@ -722,6 +722,28 @@
       }
     },
     {
+      "id": "compactWhitespace",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "compactWhitespace.md",
+        "text": "Returns a string with whitespaces compacted.\n\nUse `String.prototype.replace()` with a regular expression to replace all occurences of 2 or more whitespace characters with a single space.",
+        "codeBlocks": {
+          "es6": "const compactWhitespace = str => str.replace(/\\s{2,}/g, ' ');",
+          "es5": "var compactWhitespace = function compactWhitespace(str) {\n  return str.replace(/\\s{2,}/g, ' ');\n};",
+          "example": "compactWhitespace('Lorem    Ipsum'); // 'Lorem Ipsum'\ncompactWhitespace('Lorem \\n Ipsum'); // 'Lorem Ipsum'"
+        },
+        "tags": [
+          "string",
+          "regexp",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "c1e8ff69ac01f5be0595f6adf8b0df11dd8b8e557beb71f5faefb7a119282780"
+      }
+    },
+    {
       "id": "compose",
       "type": "snippet",
       "attributes": {
@@ -4930,7 +4952,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "0b04f5fe668888db0dc360535cd999669258019f0682eb6e4ad3a1164e408d13"
+        "hash": "4815876fd6dbb17ad34c0d8918e7a72d837104f9beee7dc51b0fa73057b9e83e"
       }
     },
     {
@@ -5477,7 +5499,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "536833a64ce0c000b82327ed1bb9bcb82e35b237f75aefcca0e0d2def4e9cb63"
+        "hash": "ec9cb9384817f84cf0bacd62a23b69b2304fa2cf0352b16d3950b21d48c04f11"
       }
     },
     {
