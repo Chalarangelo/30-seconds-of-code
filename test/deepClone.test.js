@@ -8,6 +8,8 @@ const a = { foo: 'bar', obj: { a: 1, b: 2 } };
 const b = deepClone(a);
 const c = [{ foo: 'bar' }];
 const d = deepClone(c);
+const e = 'this is a primitive';
+const f = deepClone(e);
 test('Shallow cloning works', () => {
   expect(a).not.toBe(b);
 });
@@ -19,4 +21,7 @@ test('Array shallow cloning works', () => {
 });
 test('Array deep cloning works', () => {
   expect(c[0]).not.toBe(d[0]);
+});
+test('Deep cloning primitive doesn\'t mangle result', () => {
+  expect(f).toBe(e);
 });
