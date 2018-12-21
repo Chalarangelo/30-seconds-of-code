@@ -8,6 +8,7 @@ Use `Object.keys()` and `Array.prototype.forEach()` to determine which key-value
 
 ```js
 const deepClone = obj => {
+  if (typeof obj !== 'object') return obj;
   let clone = Object.assign({}, obj);
   Object.keys(clone).forEach(
     key => (clone[key] = typeof obj[key] === 'object' ? deepClone(obj[key]) : obj[key])
