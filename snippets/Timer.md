@@ -9,7 +9,7 @@ Renders a timer component.
 - `time` and `interval` are the required props
 
 ```jsx
-class App extends Component {
+class Timer extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {timer: 0}
