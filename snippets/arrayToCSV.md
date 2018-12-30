@@ -9,7 +9,8 @@ Omit the second argument, `delimiter`, to use a default delimiter of `,`.
 
 ```js
 const arrayToCSV = (arr, delimiter = ',') =>
-  arr.map(row => row.map(val => `"${val.replace(/"/g, '""')}"`).join(delimiter)).join('\n');
+  arr.map(row => row.map(val =>
+    `"${val.replace(/"/g, '""')}"`).join(delimiter)).join('\n');
 ```
 
 ```js
