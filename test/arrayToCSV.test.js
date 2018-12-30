@@ -10,3 +10,6 @@ test('arrayToCSV works with default delimiter', () => {
 test('arrayToCSV works with custom delimiter', () => {
   expect(arrayToCSV([['a', 'b'], ['c', 'd']], ';')).toBe('"a";"b"\n"c";"d"');
 });
+test('arrayToCSV replaces double quotes', () => {
+  expect(arrayToCSV([['a', 'b'], ['c', '"d"']])).toBe('"a","b"\n"c","""d"""');
+});
