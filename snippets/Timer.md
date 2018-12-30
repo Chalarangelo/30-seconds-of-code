@@ -20,7 +20,7 @@ class Timer extends Component {
 		this.reset()
 		this.interval = setInterval(() => {
 			if (this.state.timer < this.props.time) {
-				this.setState({timer: this.state.timer + 1})
+				this.setState(({ timer }) => ({timer: timer + 1}))
 			}else{
 				clearInterval(this.interval)
 			}
