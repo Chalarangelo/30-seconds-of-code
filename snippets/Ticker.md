@@ -1,15 +1,15 @@
-### Timer
+### Ticker
 
-Renders a timer component.
+Renders a ticker component.
 
-- The timer state is initially set to zero 
+- The ticker state is initially set to zero 
 - When the `Tick!` button is clicked, `timer` is incremented periodically at the given `interval`
 - When the `Reset` button is clicked, the value of the timer is set to zero and the `setInterval` is cleared
 - The `setInterval` is cleared once the desired `time` is reached
 - `time` and `interval` are the required props
 
 ```jsx
-class Timer extends Component {
+class Ticker extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {timer: 0}
@@ -45,5 +45,5 @@ class Timer extends Component {
 ```
 
 ```jsx
-ReactDOM.render(<Timer time={5} interval={1000} />, document.getElementById('root'));
+ReactDOM.render(<Ticker time={5} interval={1000} />, document.getElementById('root'));
 ```
