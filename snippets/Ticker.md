@@ -12,15 +12,15 @@ Renders a ticker component.
 class Ticker extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {timer: 0}
+		this.state = {ticker: 0}
 		this.interval = null
 	}
 
 	tick = () => {
 		this.reset()
 		this.interval = setInterval(() => {
-			if (this.state.timer < this.props.time) {
-				this.setState(({ timer }) => ({timer: timer + 1}))
+			if (this.state.ticker < this.props.times) {
+				this.setState(({ ticker }) => ({ticker: ticker + 1}))
 			}else{
 				clearInterval(this.interval)
 			}
@@ -28,14 +28,14 @@ class Ticker extends Component {
 	}
 
 	reset = () => {
-		this.setState({timer: 0})
+		this.setState({ticker: 0})
 		clearInterval(this.interval)
 	}
 
 	render() {
 		return (
 			<div>
-				<span style={{fontSize: 100}}>{this.state.timer}</span>       
+				<span style={{fontSize: 100}}>{this.state.ticker}</span>       
 				<button onClick={this.tick}>Tick!</button>
 				<button onClick={this.reset}>Reset</button>
 			</div>
@@ -45,5 +45,5 @@ class Ticker extends Component {
 ```
 
 ```jsx
-ReactDOM.render(<Ticker time={5} interval={1000} />, document.getElementById('root'));
+ReactDOM.render(<Ticker times={5} interval={1000} />, document.getElementById('root'));
 ```
