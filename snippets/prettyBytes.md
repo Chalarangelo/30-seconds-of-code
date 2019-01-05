@@ -12,14 +12,17 @@ Omit the third argument, `addSpace`, to add space between the number and unit by
 const prettyBytes = (num, precision = 3, addSpace = true) => {
   const UNITS = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
   if (Math.abs(num) < 1) return num + (addSpace ? ' ' : '') + UNITS[0];
-  const exponent = Math.min(Math.floor(Math.log10(num < 0 ? -num : num) / 3), UNITS.length - 1);
-  const n = Number(((num < 0 ? -num : num) / 1000 ** exponent).toPrecision(precision));
+  const exponent = Math.min(
+    Math.floor(Math.log(num < 0 ? -num : num) / Math.log(1024)),
+    UNITS.length - 1
+  );
+  const n = Number(((num < 0 ? -num : num) / 1024 ** exponent).toPrecision(precision));
   return (num < 0 ? '-' : '') + n + (addSpace ? ' ' : '') + UNITS[exponent];
 };
 ```
 
 ```js
-prettyBytes(1000); // "1 KB"
-prettyBytes(-27145424323.5821, 5); // "-27.145 GB"
-prettyBytes(123456789, 3, false); // "123MB"
+prettyBytes(1024); // "1 KB"
+prettyBytes(-27145424323.5821, 5); // "-25.281 GB"
+prettyBytes(123456789, 3, false); // "118MB"
 ```
