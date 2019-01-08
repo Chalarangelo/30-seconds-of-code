@@ -522,6 +522,11 @@ h2.category-name {
     .section.card-content{
       background: var(#{$back-color-var});
       padding: calc(1.5 * var(#{$universal-padding-var}));
+      .anchor{
+        position: absolute;
+        left: 0px;
+        top: -56px; // trick for hash link, should be same as header height
+      }
     }
     .collapse {
       display: block;

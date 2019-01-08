@@ -57,7 +57,7 @@ ${
 }
   ${md
     .render(`\n${addCornerTag ? snippetList[snippetKey[0] + '.md'] : snippetList[snippetKey[0]]}`)
-    .replace(/<h3/g, `<div class="section card-content"><h4 id="${snippetKey[0].toLowerCase()}"`)
+    .replace(/<h3/g, `<div class="section card-content"><div class="anchor" id="${snippetKey[0].toLowerCase()}"></div><h4`)
     .replace(/<\/h3>/g, '</h4>')
     .replace(
       /<pre><code class="language-js">/m,
@@ -369,7 +369,7 @@ try {
       '<div class="card code-card"><div class="section card-content">' +
       md
         .render(`\n${filteredGlossarySnippets[snippet[0]]}`)
-        .replace(/<h3/g, `<h4 id="${snippet[0].toLowerCase()}"`)
+        .replace(/<h3/g, `<div class="anchor" id="${snippet[0].toLowerCase()}"></div> <h4`)
         .replace(/<\/h3>/g, '</h4>') +
       '</div></div>';
   }
