@@ -1228,13 +1228,10 @@ const toTitleCase = str =>
     .map(x => x.charAt(0).toUpperCase() + x.slice(1))
     .join(' ');
 const toggleClass = (el, className) => el.classList.toggle(className);
-const tomorrow = (long = false) => {
+const tomorrow = () => {
   let t = new Date();
   t.setDate(t.getDate() + 1);
-  const ret = `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, '0')}-${String(
-    t.getDate()
-  ).padStart(2, '0')}`;
-  return !long ? ret : `${ret}T00:00:00`;
+  return t.toISOString().split('T')[0];
 };
 const transform = (obj, fn, acc) => Object.keys(obj).reduce((a, k) => fn(a, obj[k], k, obj), acc);
 const triggerEvent = (el, eventType, detail) =>
