@@ -55,6 +55,8 @@
         }, 40);
       };
       function loader() {
+        if (window.location.href.split('#').length > 1)
+          setTimeout(() => document.getElementById(window.location.href.split('#')[1]).scrollIntoView(), 0);
         registerClickListener();
         if(window.innerWidth >= '768')
           document.querySelector('nav').scrollTop = Array.from(document.querySelectorAll('h4')).filter(v => v.innerHTML === '$tag')[0].offsetTop;
