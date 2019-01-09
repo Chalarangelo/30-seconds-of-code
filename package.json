@@ -36,8 +36,7 @@
     "vscoder": "node ./scripts/vscodegen.js",
     "packager": "node ./scripts/module.js",
     "localizer": "node ./scripts/localize.js",
-    "test": "jest --verbose --coverage",
-    "test-with-coverage": "jest --coverage && cat ./coverage/lcov.info | codacy-coverage"
+    "test": "jest --verbose --coverage"
   },
   "repository": {
     "type": "git",
