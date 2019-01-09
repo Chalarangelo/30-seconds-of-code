@@ -341,6 +341,7 @@ _30s.average(1, 2, 3);
 * [`atob`](#atob)
 * [`btoa`](#btoa)
 * [`colorize`](#colorize)
+* [`createDirIfNotExists`](#createdirifnotexists)
 * [`hasFlags`](#hasflags)
 * [`hashNode`](#hashnode)
 * [`isDuplexStream`](#isduplexstream)
@@ -2316,9 +2317,9 @@ The `func` is invoked with three arguments (`value, index, array`).
 const remove = (arr, func) =>
   Array.isArray(arr)
     ? arr.filter(func).reduce((acc, val) => {
-      arr.splice(arr.indexOf(val), 1);
-      return acc.concat(val);
-    }, [])
+        arr.splice(arr.indexOf(val), 1);
+        return acc.concat(val);
+      }, [])
     : [];
 ```
 
@@ -6312,6 +6313,28 @@ const colorize = (...args) => ({
 console.log(colorize('foo').red); // 'foo' (red letters)
 console.log(colorize('foo', 'bar').bgBlue); // 'foo bar' (blue background)
 console.log(colorize(colorize('foo').yellow, colorize('foo').green).bgWhite); // 'foo bar' (first word in yellow letters, second word in green letters, white background for both)
+```
+
+</details>
+
+<br>[⬆ Back to top](#contents)
+
+### createDirIfNotExists
+
+Creates a directory, if it does not exist.
+
+Use `fs.existsSync()` to check if the directory exists, `fs.mkdirSync()` to create it.
+
+```js
+const fs = require('fs');
+const createDirIfNotExists = dir => (!fs.existsSync(dir) ? fs.mkdirSync(dir) : undefined);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+createDirIfNotExists('test'); // creates the directory 'test', if it doesn't exist
 ```
 
 </details>
