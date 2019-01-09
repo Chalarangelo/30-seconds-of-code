@@ -6,7 +6,7 @@ Use `fs.existsSync()` to check if the directory exists, `fs.mkdirSync()` to crea
 
 ```js
 const fs = require('fs');
-const createDirIfNotExists = dir => !fs.existsSync(dir) ? fs.mkdirSync(dir) : undefined;
+const createDirIfNotExists = dir => (!fs.existsSync(dir) ? fs.mkdirSync(dir) : undefined);
 ```
 
 ```js
