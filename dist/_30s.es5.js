@@ -491,6 +491,9 @@
 
     return timer;
   };
+  var createDirIfNotExists = function createDirIfNotExists(dir) {
+    return !fs.existsSync(dir) ? fs.mkdirSync(dir) : undefined;
+  };
   var createElement = function createElement(str) {
     var el = document.createElement('div');
     el.innerHTML = str;
@@ -2373,11 +2376,9 @@
     return el.classList.toggle(className);
   };
   var tomorrow = function tomorrow() {
-    var long = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
     var t = new Date();
     t.setDate(t.getDate() + 1);
-    var ret = "".concat(t.getFullYear(), "-").concat(String(t.getMonth() + 1).padStart(2, '0'), "-").concat(String(t.getDate()).padStart(2, '0'));
-    return !long ? ret : "".concat(ret, "T00:00:00");
+    return t.toISOString().split('T')[0];
   };
   var transform = function transform(obj, fn, acc) {
     return Object.keys(obj).reduce(function (a, k) {
@@ -2650,6 +2651,7 @@
   exports.countBy = countBy;
   exports.countOccurrences = countOccurrences;
   exports.counter = counter;
+  exports.createDirIfNotExists = createDirIfNotExists;
   exports.createElement = createElement;
   exports.createEventHub = createEventHub;
   exports.currentURL = currentURL;

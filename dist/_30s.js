@@ -187,6 +187,7 @@
       }, Math.abs(Math.floor(duration / (end - start))));
     return timer;
   };
+  const createDirIfNotExists = dir => (!fs.existsSync(dir) ? fs.mkdirSync(dir) : undefined);
   const createElement = str => {
     const el = document.createElement('div');
     el.innerHTML = str;
@@ -265,9 +266,9 @@
     target in obj
       ? obj[target]
       : Object.values(obj).reduce((acc, val) => {
-        if (acc !== undefined) return acc;
-        if (typeof val === 'object') return dig(val, target);
-      }, undefined);
+          if (acc !== undefined) return acc;
+          if (typeof val === 'object') return dig(val, target);
+        }, undefined);
   const digitize = n => [...`${n}`].map(i => parseInt(i));
   const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
   const drop = (arr, n = 1) => arr.slice(n);
@@ -339,8 +340,8 @@
   const factorial = n =>
     n < 0
       ? (() => {
-        throw new TypeError('Negative numbers are not allowed!');
-      })()
+          throw new TypeError('Negative numbers are not allowed!');
+        })()
       : n <= 1
         ? 1
         : n * factorial(n - 1);
@@ -1230,13 +1231,10 @@
       .map(x => x.charAt(0).toUpperCase() + x.slice(1))
       .join(' ');
   const toggleClass = (el, className) => el.classList.toggle(className);
-  const tomorrow = (long = false) => {
+  const tomorrow = () => {
     let t = new Date();
     t.setDate(t.getDate() + 1);
-    const ret = `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, '0')}-${String(
-    t.getDate()
-  ).padStart(2, '0')}`;
-    return !long ? ret : `${ret}T00:00:00`;
+    return t.toISOString().split('T')[0];
   };
   const transform = (obj, fn, acc) => Object.keys(obj).reduce((a, k) => fn(a, obj[k], k, obj), acc);
   const triggerEvent = (el, eventType, detail) =>
@@ -1394,6 +1392,7 @@
   exports.countBy = countBy;
   exports.countOccurrences = countOccurrences;
   exports.counter = counter;
+  exports.createDirIfNotExists = createDirIfNotExists;
   exports.createElement = createElement;
   exports.createEventHub = createEventHub;
   exports.currentURL = currentURL;

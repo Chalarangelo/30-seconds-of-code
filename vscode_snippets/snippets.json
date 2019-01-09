@@ -380,6 +380,14 @@
     ],
     "description": "Counts the occurrences of a value in an array.\n\nUse `Array.prototype.reduce()` to increment a counter each time you encounter the specific value inside the array"
   },
+  "createDirIfNotExists": {
+    "prefix": "30s_createDirIfNotExists",
+    "body": [
+      "const fs = require('fs');",
+      "const createDirIfNotExists = dir => (!fs.existsSync(dir) ? fs.mkdirSync(dir) : undefined);"
+    ],
+    "description": "Creates a directory, if it does not exist.\n\nUse `fs.existsSync()` to check if the directory exists, `fs.mkdirSync()` to create it"
+  },
   "createElement": {
     "prefix": "30s_createElement",
     "body": [
@@ -602,9 +610,9 @@
       "  target in obj",
       "    ? obj[target]",
       "    : Object.values(obj).reduce((acc, val) => {",
-      "      if (acc !== undefined) return acc;",
-      "      if (typeof val === 'object') return dig(val, target);",
-      "    }, undefined);"
+      "        if (acc !== undefined) return acc;",
+      "        if (typeof val === 'object') return dig(val, target);",
+      "      }, undefined);"
     ],
     "description": "Returns the target value in a nested JSON object, based on the given key.\n\nUse the `in` operator to check if `target` exists in `obj`.\nIf found, return the value of `obj[target]`, otherwise use `Object.values(obj)` and `Array.prototype.reduce()` to recursively call `dig` on each nested object until the first matching key/value pair is found"
   },
@@ -766,8 +774,8 @@
       "const factorial = n =>",
       "  n < 0",
       "    ? (() => {",
-      "      throw new TypeError('Negative numbers are not allowed!');",
-      "    })()",
+      "        throw new TypeError('Negative numbers are not allowed!');",
+      "      })()",
       "    : n <= 1",
       "      ? 1",
       "      : n * factorial(n - 1);"
@@ -3012,16 +3020,13 @@
   "tomorrow": {
     "prefix": "30s_tomorrow",
     "body": [
-      "const tomorrow = (long = false) => {",
+      "const tomorrow = () => {",
       "  let t = new Date();",
       "  t.setDate(t.getDate() + 1);",
-      "  const ret = `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, '0')}-${String(",
-      "    t.getDate()",
-      "  ).padStart(2, '0')}`;",
-      "  return !long ? ret : `${ret}T00:00:00`;",
+      "  return t.toISOString().split('T')[0];",
       "};"
     ],
-    "description": "Results in a string representation of tomorrow's date.\n\nUse `new Date()` to get today's date, adding one day using `Date.getDate()` and `Date.setDate()`, and converting the Date object to a string"
+    "description": "Results in a string representation of tomorrow's date.\n\nUse `new Date()` to get the current date, increment by one using `Date.getDate()` and set the value to the result using `Date.setDate()`. \nUse `Date.prototype.toISOString()` to return a string in `yyyy-mm-dd` format"
   },
   "toOrdinalSuffix": {
     "prefix": "30s_toOrdinalSuffix",

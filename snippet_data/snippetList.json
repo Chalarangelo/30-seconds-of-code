@@ -606,6 +606,20 @@
       }
     },
     {
+      "id": "createDirIfNotExists",
+      "type": "snippetListing",
+      "attributes": {
+        "tags": [
+          "node",
+          "beginner"
+        ],
+        "archived": false
+      },
+      "meta": {
+        "hash": "62317874ea1df5043926b63d6ff24e861b2f23ab76e5de79af10766844f4f9c7"
+      }
+    },
+    {
       "id": "createElement",
       "type": "snippetListing",
       "attributes": {
@@ -927,7 +941,7 @@
         "archived": false
       },
       "meta": {
-        "hash": "828a6f2f3b94cc537ef0ee30c5ebda28fff688fea65030e47d5721831bdb48ce"
+        "hash": "f982b4e8e3ec3c8b0c2ef4f19b38dac90df6ebe2dd4daa0126c917ebc07d3e62"
       }
     },
     {
@@ -1148,7 +1162,7 @@
         "archived": false
       },
       "meta": {
-        "hash": "383ed61e69b8f63ae42d0746a1995057f4f65b4af6ca7778d8f1771144802acd"
+        "hash": "319e1a8fb41490965ee6e28db3e139e65c4ea5b7f43e332bc7216cd790e5d409"
       }
     },
     {
@@ -3363,7 +3377,7 @@
         "archived": false
       },
       "meta": {
-        "hash": "4815876fd6dbb17ad34c0d8918e7a72d837104f9beee7dc51b0fa73057b9e83e"
+        "hash": "dcdf66e8d0eb4a1761c6b767b8cc350757087ae817ec371436faab0fff7c0051"
       }
     },
     {
@@ -3735,7 +3749,7 @@
         "archived": false
       },
       "meta": {
-        "hash": "ec9cb9384817f84cf0bacd62a23b69b2304fa2cf0352b16d3950b21d48c04f11"
+        "hash": "536833a64ce0c000b82327ed1bb9bcb82e35b237f75aefcca0e0d2def4e9cb63"
       }
     },
     {
@@ -4517,7 +4531,7 @@
         "archived": false
       },
       "meta": {
-        "hash": "4794ae637e65b9c1ac43f6c964555a98cda83e1410684e11ed34753c81db35fb"
+        "hash": "ab65540435058b1e9dbe3f42bed312ad9095254065f8d711d4211e20fed371a7"
       }
     },
     {
