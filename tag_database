@@ -39,6 +39,7 @@ copyToClipboard:browser,string,advanced
 countBy:array,object,intermediate
 counter:browser,advanced
 countOccurrences:array,intermediate
+createDirIfNotExists:node,beginner
 createElement:browser,utility,beginner
 createEventHub:browser,event,advanced
 CSVToArray:string,array,utility,intermediate
