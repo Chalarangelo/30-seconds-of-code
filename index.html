@@ -30,7 +30,7 @@
       <div class="sidebar__links">
         <section data-type="layout" class="sidebar__section">
           <h4 class="sidebar__section-heading">layout</h4>
-          <a class="sidebar__link" href="#box-sizing-reset"><span>Box-sizing reset</span></a><a class="sidebar__link" href="#clearfix"><span>Clearfix</span></a><a class="sidebar__link" href="#constant-width-to-height-ratio"><span>Constant width to height ratio</span></a><a class="sidebar__link" href="#display-table-centering"><span>Display table centering</span></a><a class="sidebar__link" href="#evenly-distributed-children"><span>Evenly distributed children</span></a><a class="sidebar__link" href="#flexbox-centering"><span>Flexbox centering</span></a><a class="sidebar__link" href="#grid-centering"><span>Grid centering</span></a><a class="sidebar__link" href="#last-item-with-remaining-available-height"><span>Last item with remaining available height</span></a><a class="sidebar__link" href="#transform-centering"><span>Transform centering</span></a><a class="sidebar__link" href="#truncate-text"><span>Truncate text</span></a>
+          <a class="sidebar__link" href="#box-sizing-reset"><span>Box-sizing reset</span></a><a class="sidebar__link" href="#clearfix"><span>Clearfix</span></a><a class="sidebar__link" href="#constant-width-to-height-ratio"><span>Constant width to height ratio</span></a><a class="sidebar__link" href="#display-table-centering"><span>Display table centering</span></a><a class="sidebar__link" href="#evenly-distributed-children"><span>Evenly distributed children</span></a><a class="sidebar__link" href="#flexbox-centering"><span>Flexbox centering</span></a><a class="sidebar__link" href="#ghost-trick"><span>Ghost trick</span></a><a class="sidebar__link" href="#grid-centering"><span>Grid centering</span></a><a class="sidebar__link" href="#last-item-with-remaining-available-height"><span>Last item with remaining available height</span></a><a class="sidebar__link" href="#transform-centering"><span>Transform centering</span></a><a class="sidebar__link" href="#truncate-text"><span>Truncate text</span></a>
         </section>
         <section data-type="visual" class="sidebar__section">
           <h4 class="sidebar__section-heading">visual</h4>
@@ -1193,17 +1193,14 @@ in any specification.</span></p>
             <p>Changes the appearance of a form if any of its children are focused.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="focus-within"&gt;
   &lt;form&gt;
-    &lt;label for="given_name"&gt;Given Name:&lt;/label&gt;
-    &lt;input id="given_name" type="text"&gt;
-    &lt;br&gt;
-    &lt;label for="family_name"&gt;Family Name:&lt;/label&gt;
-    &lt;input id="family_name" type="text"&gt;
+    &lt;label for="given_name"&gt;Given Name:&lt;/label&gt; &lt;input id="given_name" type="text" /&gt; &lt;br /&gt;
+    &lt;label for="family_name"&gt;Family Name:&lt;/label&gt; &lt;input id="family_name" type="text" /&gt;
   &lt;/form&gt;
 &lt;/div&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">form {
   border: 3px solid #2d98da;
-  color:  #000000;
+  color: #000000;
   padding: 4px;
 }
 form:focus-within {
@@ -1215,11 +1212,8 @@ form:focus-within {
             <div class="snippet-demo" data-scope="focus-within.md">
               <div class="focus-within">
                 <form>
-                  <label for="given_name">Given Name:</label>
-                  <input id="given_name" type="text">
-                  <br>
-                  <label for="family_name">Family Name:</label>
-                  <input id="family_name" type="text">
+                  <label for="given_name">Given Name:</label> <input id="given_name" type="text"> <br>
+                  <label for="family_name">Family Name:</label> <input id="family_name" type="text">
                 </form>
               </div>
             </div>
@@ -1335,6 +1329,64 @@ If no link is provided, it defaults to 99+%. -->
             </ul>
 
             <!-- tags: visual -->
+          </div>
+          <div class="snippet">
+            <h3 id="ghost-trick"><span>Ghost trick</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
+            <p>Vertically centers an element in another.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="ghost-trick"&gt;
+  &lt;div class="ghosting"&gt;
+    &lt;p&gt;Vertically centered without changing the position property.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.ghosting {
+  height: 300px;
+  background: #0ff;
+}
+.ghosting:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+p {
+  display: inline-block;
+  vertical-align: middle;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo" data-scope="ghost-trick.md">
+              <div class="ghost-trick">
+                <div class="ghosting">
+                  <p>Vertically centered without changing the position property.</p>
+                </div>
+              </div>
+            </div>
+            <style>[data-scope="ghost-trick.md"] .ghosting {
+  height: 300px;
+  background: #0ff; }
+[data-scope="ghost-trick.md"] .ghosting:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle; }
+[data-scope="ghost-trick.md"] p {
+  display: inline-block;
+  vertical-align: middle; }
+</style>
+            <h4>Explanation</h4>
+            <p>Use the style of a <code>:before</code> pseudo-element to vertically align inline elements without changing their <code>position</code> property.</p>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                95.9%
+              </div>
+            </div>
+            <ul>
+              <li><a href="https://caniuse.com/#feat=inline-block" target="_blank">https://caniuse.com/#feat=inline-block</a></li>
+            </ul>
+
+            <!-- tags: layout -->
           </div>
           <div class="snippet">
             <h3 id="gradient-text"><span>Gradient text</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
