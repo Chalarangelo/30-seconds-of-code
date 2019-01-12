@@ -54,11 +54,7 @@
         </section>
         <section data-type="animation" class="sidebar__section">
           <h4 class="sidebar__section-heading">animation</h4>
-          <a class="sidebar__link" href="#bouncing-loader"><span>Bouncing loader</span></a>
-          <a class="sidebar__link" href="#donut-spinner"><span>Donut spinner</span></a>
-          <a class="sidebar__link" href="#easing-variables"><span>Easing variables</span></a>
-          <a class="sidebar__link" href="#height-transition"><span>Height transition</span></a>
-          <a class="sidebar__link" href="#hover-underline-animation"><span>Hover underline animation</span></a>
+          <a class="sidebar__link" href="#bouncing-loader"><span>Bouncing loader</span></a><a class="sidebar__link" href="#button-border"><span>Button border animation</span></a><a class="sidebar__link" href="#donut-spinner"><span>Donut spinner</span></a><a class="sidebar__link" href="#easing-variables"><span>Easing variables</span></a><a class="sidebar__link" href="#height-transition"><span>Height transition</span></a><a class="sidebar__link" href="#hover-shadow-box-animation"><span>Hover Shadow Box Animation</span></a><a class="sidebar__link" href="#hover-underline-animation"><span>Hover underline animation</span></a>
         </section>
         <section data-type="interactivity" class="sidebar__section">
           <h4 class="sidebar__section-heading">interactivity</h4>
@@ -301,6 +297,95 @@
             </ul>
 
             <!-- tags: layout -->
+          </div>
+          <div class="snippet">
+            <h3 id="button-border-animation"><span>Button border animation</span><span class="tags__tag snippet__tag" data-type="animation"><i data-feather="loader"></i>animation</span></h3>
+            <p>Creates a border animation on hover.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="button-border"&gt;&lt;button class="button"&gt;Submit&lt;/button&gt;&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.button {
+  background-color: #c47135;
+  border: none;
+  color: #ffffff;
+  outline: none;
+  padding: 12px 40px 10px;
+  position: relative;
+}
+.button:before,
+.button:after {
+  border: 0 solid transparent;
+  transition: all 0.25s;
+  content: '';
+  height: 24px;
+  position: absolute;
+  width: 24px;
+}
+.button:before {
+  border-top: 2px solid #c47135;
+  left: 0px;
+  top: -5px;
+}
+.button:after {
+  border-bottom: 2px solid #c47135;
+  bottom: -5px;
+  right: 0px;
+}
+.button:hover {
+  background-color: #c47135;
+}
+.button:hover:before,
+.button:hover:after {
+  height: 100%;
+  width: 100%;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo" data-scope="button-border.md">
+              <div class="button-border"><button class="button">Submit</button></div>
+            </div>
+            <style>[data-scope="button-border.md"] .button {
+  background-color: #c47135;
+  border: none;
+  color: #ffffff;
+  outline: none;
+  padding: 12px 40px 10px;
+  position: relative; }
+[data-scope="button-border.md"] .button:before,
+[data-scope="button-border.md"] .button:after {
+  border: 0 solid transparent;
+  transition: all 0.25s;
+  content: '';
+  height: 24px;
+  position: absolute;
+  width: 24px; }
+[data-scope="button-border.md"] .button:before {
+  border-top: 2px solid #c47135;
+  left: 0px;
+  top: -5px; }
+[data-scope="button-border.md"] .button:after {
+  border-bottom: 2px solid #c47135;
+  bottom: -5px;
+  right: 0px; }
+[data-scope="button-border.md"] .button:hover {
+  background-color: #c47135; }
+[data-scope="button-border.md"] .button:hover:before,
+[data-scope="button-border.md"] .button:hover:after {
+  height: 100%;
+  width: 100%; }
+</style>
+            <h4>Explanation</h4>
+            <p>Use the <code>:before</code> and <code>:after</code> pseduo-elements as borders that animate on hover.</p>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                99+%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+
+            <!-- tags: animation -->
+
+            <!-- date: 2018-10-30 -->
           </div>
           <div class="snippet">
             <h3 id="calc"><span>Calc()</span><span class="tags__tag snippet__tag" data-type="other"><i data-feather="tag"></i>other</span></h3>
@@ -1269,9 +1354,205 @@ in any specification.</span></p>
             </div>
             <p><span class="snippet__support-note">⚠️ Needs prefixes for full support.</span></p>
             <ul>
-              <li>
-                <a href="https://caniuse.com/#feat=flexbox" target="_blank">https://caniuse.com/#feat=flexbox</a>
-              </li>
+              <li><a href="https://caniuse.com/#feat=flexbox" target="_blank">https://caniuse.com/#feat=flexbox</a></li>
+            </ul>
+
+            <!-- tags: layout -->
+          </div>
+          <div class="snippet">
+            <h3 id="focus-within"><span>Focus Within</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span><span class="tags__tag snippet__tag" data-type="interactivity"><i data-feather="edit-2"></i>interactivity</span></h3>
+            <p>Changes the appearance of a form if any of its children are focused.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="focus-within"&gt;
+  &lt;form&gt;
+    &lt;label for="given_name"&gt;Given Name:&lt;/label&gt; &lt;input id="given_name" type="text" /&gt; &lt;br /&gt;
+    &lt;label for="family_name"&gt;Family Name:&lt;/label&gt; &lt;input id="family_name" type="text" /&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">form {
+  border: 3px solid #2d98da;
+  color: #000000;
+  padding: 4px;
+}
+form:focus-within {
+  background: #f7b731;
+  color: #000000;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo" data-scope="focus-within.md">
+              <div class="focus-within">
+                <form>
+                  <label for="given_name">Given Name:</label> <input id="given_name" type="text"> <br>
+                  <label for="family_name">Family Name:</label> <input id="family_name" type="text">
+                </form>
+              </div>
+            </div>
+            <style>[data-scope="focus-within.md"] form {
+  border: 3px solid #2d98da;
+  color: #000000;
+  padding: 4px; }
+[data-scope="focus-within.md"] form:focus-within {
+  background: #f7b731;
+  color: #000000; }
+</style>
+<!-- Leave this blank, the build script will generate the demo for you. -->
+            <h4>Explanation</h4>
+            <p>The psuedo class <code>:focus-within</code> applies styles to a parent element if any child element gets focused. For example, an <code>input</code> element inside a <code>form</code> element.</p>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                78.9%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">⚠️ Not supported in IE11 or the current version of Edge.</span></p>
+
+            <!-- Whenever possible, link a `caniuse` feature which allows the browser support percentage to be displayed.
+If no link is provided, it defaults to 99+%. -->
+            <ul>
+              <li><a href="https://caniuse.com/#feat=css-focus-within" target="_blank">https://caniuse.com/#feat=css-focus-within</a></li>
+            </ul>
+
+            <!-- tags: visual, interactivity -->
+          </div>
+          <div class="snippet">
+            <h3 id="fullscreen"><span>Fullscreen</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
+            <p>The :fullscreen CSS pseudo-class represents an element that's displayed when the browser is in fullscreen mode.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="container"&gt;
+  &lt;p&gt;&lt;em&gt;Click the button below to enter the element into fullscreen mode. &lt;/em&gt;&lt;/p&gt;
+  &lt;div class="element" id="element"&gt;&lt;p&gt;I change color in fullscreen mode!&lt;/p&gt;&lt;/div&gt;
+  &lt;br /&gt;
+  &lt;button onclick="var el = document.getElementById('element'); el.requestFullscreen();"&gt;
+    Go Full Screen!
+  &lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.container {
+  margin: 40px auto;
+  max-width: 700px;
+}
+.element {
+  padding: 20px;
+  height: 300px;
+  width: 100%;
+  background-color: skyblue;
+}
+.element p {
+  text-align: center;
+  color: white;
+  font-size: 3em;
+}
+.element:-ms-fullscreen p {
+  visibility: visible;
+}
+.element:fullscreen {
+  background-color: #e4708a;
+  width: 100vw;
+  height: 100vh;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo" data-scope="fullscreen.md">
+              <div class="container">
+                <p><em>Click the button below to enter the element into fullscreen mode. </em></p>
+                <div class="element" id="element">
+                  <p>I change color in fullscreen mode!</p>
+                </div>
+                <br>
+                <button onclick="var el = document.getElementById('element'); el.requestFullscreen();">
+                  Go Full Screen!
+                </button>
+              </div>
+            </div>
+            <style>[data-scope="fullscreen.md"] .container {
+  margin: 40px auto;
+  max-width: 700px; }
+[data-scope="fullscreen.md"] .element {
+  padding: 20px;
+  height: 300px;
+  width: 100%;
+  background-color: skyblue; }
+[data-scope="fullscreen.md"] .element p {
+  text-align: center;
+  color: white;
+  font-size: 3em; }
+[data-scope="fullscreen.md"] .element:-ms-fullscreen p {
+  visibility: visible; }
+[data-scope="fullscreen.md"] .element:fullscreen {
+  background-color: #e4708a;
+  width: 100vw;
+  height: 100vh; }
+</style>
+            <h4>Explanation</h4>
+            <ol>
+              <li><code>fullscreen</code> CSS pseudo-class selector is used to select and style an element that is being displayed in fullscreen mode.</li>
+            </ol>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                81.6%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">83.38</span></p>
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen" target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen</a></li>
+              <li><a href="https://caniuse.com/#feat=fullscreen" target="_blank">https://caniuse.com/#feat=fullscreen</a></li>
+            </ul>
+
+            <!-- tags: visual -->
+          </div>
+          <div class="snippet">
+            <h3 id="ghost-trick"><span>Ghost trick</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
+            <p>Vertically centers an element in another.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="ghost-trick"&gt;
+  &lt;div class="ghosting"&gt;&lt;p&gt;Vertically centered without changing the position property.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.ghosting {
+  height: 300px;
+  background: #0ff;
+}
+.ghosting:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+p {
+  display: inline-block;
+  vertical-align: middle;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo" data-scope="ghost-trick.md">
+              <div class="ghost-trick">
+                <div class="ghosting">
+                  <p>Vertically centered without changing the position property.</p>
+                </div>
+              </div>
+            </div>
+            <style>[data-scope="ghost-trick.md"] .ghosting {
+  height: 300px;
+  background: #0ff; }
+[data-scope="ghost-trick.md"] .ghosting:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle; }
+[data-scope="ghost-trick.md"] p {
+  display: inline-block;
+  vertical-align: middle; }
+</style>
+            <h4>Explanation</h4>
+            <p>Use the style of a <code>:before</code> pseudo-element to vertically align inline elements without changing their <code>position</code> property.</p>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                95.9%
+              </div>
+            </div>
+            <ul>
+              <li><a href="https://caniuse.com/#feat=inline-block" target="_blank">https://caniuse.com/#feat=inline-block</a></li>
             </ul>
 
             <!-- tags: layout -->
