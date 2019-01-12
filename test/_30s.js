@@ -1,6 +1,53 @@
 const fs = typeof require !== "undefined" && require('fs');
 const crypto = typeof require !== "undefined" && require('crypto');
 
+const CSVToArray = (data, delimiter = ',', omitFirstRow = false) =>
+  data
+    .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0)
+    .split('\n')
+    .map(v => v.split(delimiter));
+const CSVToJSON = (data, delimiter = ',') => {
+  const titles = data.slice(0, data.indexOf('\n')).split(delimiter);
+  return data
+    .slice(data.indexOf('\n') + 1)
+    .split('\n')
+    .map(v => {
+      const values = v.split(delimiter);
+      return titles.reduce((obj, title, index) => ((obj[title] = values[index]), obj), {});
+    });
+};
+
+const JSONToFile = (obj, filename) =>
+  fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2));
+const JSONtoCSV = (arr, columns, delimiter = ',') =>
+  [
+    columns.join(delimiter),
+    ...arr.map(obj =>
+      columns.reduce(
+        (acc, key) => `${acc}${!acc.length ? '' : delimiter}"${!obj[key] ? '' : obj[key]}"`,
+        ''
+      )
+    )
+  ].join('\n');
+const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
+const URLJoin = (...args) =>
+  args
+    .join('/')
+    .replace(/[\/]+/g, '/')
+    .replace(/^(.+):\//, '$1://')
+    .replace(/^file:/, 'file:/')
+    .replace(/\/(\?|&|#[^!])/g, '$1')
+    .replace(/\?/g, '&')
+    .replace('&', '?');
+const UUIDGeneratorBrowser = () =>
+  ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+    (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)
+  );
+
+const UUIDGeneratorNode = () =>
+  ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+    (c ^ (crypto.randomBytes(1)[0] & (15 >> (c / 4)))).toString(16)
+  );
 const all = (arr, fn = Boolean) => arr.every(fn);
 const allEqual = arr => arr.every(val => val === arr[0]);
 const any = (arr, fn = Boolean) => arr.some(fn);
@@ -13,7 +60,7 @@ const arrayToHtmlList = (arr, listID) =>
     (el.innerHTML += arr.map(item => `<li>${item}</li>`).join(''))
   ))();
 const ary = (fn, n) => (...args) => fn(...args.slice(0, n));
-const atob = str => Buffer.from(str, 'base64').toString('binary');
+const atob = str => Buffer.from(str, 'base64').toString('binary');
 const attempt = (fn, ...args) => {
   try {
     return fn(...args);
@@ -54,14 +101,14 @@ const binomialCoefficient = (n, k) => {
 const bottomVisible = () =>
   document.documentElement.clientHeight + window.scrollY >=
   (document.documentElement.scrollHeight || document.documentElement.clientHeight);
-const btoa = str => Buffer.from(str, 'binary').toString('base64');
+const btoa = str => Buffer.from(str, 'binary').toString('base64');
 const byteSize = str => new Blob([str]).size;
 const call = (key, ...args) => context => context[key](...args);
 const capitalize = ([first, ...rest], lowerRest = false) =>
   first.toUpperCase() + (lowerRest ? rest.join('').toLowerCase() : rest.join(''));
 const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperCase());
 const castArray = val => (Array.isArray(val) ? val : [val]);
-const chainAsync = fns => {
+const chainAsync = fns => {
   let curr = 0;
   const last = fns[fns.length - 1];
   const next = () => {
@@ -98,8 +145,8 @@ const colorize = (...args) => ({
   bgWhite: `\x1b[47m${args.join(' ')}\x1b[0m`
 });
 const compact = arr => arr.filter(Boolean);
-const compactWhitespace = str => str.replace(/\s{2,}/g, ' ');
-const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));
+const compactWhitespace = str => str.replace(/\s{2,}/g, ' ');
+const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));
 const composeRight = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
 const converge = (converger, fns) => (...args) => converger(...fns.map(fn => fn.apply(null, args)));
 const copyToClipboard = str => {
@@ -119,11 +166,12 @@ const copyToClipboard = str => {
     document.getSelection().addRange(selected);
   }
 };
-const countBy = (arr, fn) =>
+const countBy = (arr, fn) =>
   arr.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val) => {
     acc[val] = (acc[val] || 0) + 1;
     return acc;
   }, {});
+const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
 const counter = (selector, start, end, step = 1, duration = 2000) => {
   let current = start,
     _step = (end - start) * step < 0 ? -step : step,
@@ -135,8 +183,7 @@ const counter = (selector, start, end, step = 1, duration = 2000) => {
     }, Math.abs(Math.floor(duration / (end - start))));
   return timer;
 };
-const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
-
+
 const createDirIfNotExists = dir => (!fs.existsSync(dir) ? fs.mkdirSync(dir) : undefined);
 const createElement = str => {
   const el = document.createElement('div');
@@ -157,25 +204,10 @@ const createEventHub = () => ({
     if (i > -1) this.hub[event].splice(i, 1);
   }
 });
-const CSVToArray = (data, delimiter = ',', omitFirstRow = false) =>
-  data
-    .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0)
-    .split('\n')
-    .map(v => v.split(delimiter));
-const CSVToJSON = (data, delimiter = ',') => {
-  const titles = data.slice(0, data.indexOf('\n')).split(delimiter);
-  return data
-    .slice(data.indexOf('\n') + 1)
-    .split('\n')
-    .map(v => {
-      const values = v.split(delimiter);
-      return titles.reduce((obj, title, index) => ((obj[title] = values[index]), obj), {});
-    });
-};
 const currentURL = () => window.location.href;
 const curry = (fn, arity = fn.length, ...args) =>
   arity <= args.length ? fn(...args) : curry.bind(null, fn, arity, ...args);
-const dayOfYear = date =>
+const dayOfYear = date =>
   Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
 const debounce = (fn, ms = 0) => {
   let timeoutId;
@@ -186,20 +218,24 @@ const debounce = (fn, ms = 0) => {
 };
 const decapitalize = ([first, ...rest], upperRest = false) =>
   first.toLowerCase() + (upperRest ? rest.join('').toUpperCase() : rest.join(''));
-const deepClone = obj => {
+const deepClone = obj => {
   let clone = Object.assign({}, obj);
   Object.keys(clone).forEach(
     key => (clone[key] = typeof obj[key] === 'object' ? deepClone(obj[key]) : obj[key])
   );
-  return Array.isArray(obj) && obj.length ? (clone.length = obj.length) && Array.from(clone) : Array.isArray(obj) ? Array.from(obj) : clone;
+  return Array.isArray(obj) && obj.length
+    ? (clone.length = obj.length) && Array.from(clone)
+    : Array.isArray(obj)
+      ? Array.from(obj)
+      : clone;
 };
 const deepFlatten = arr => [].concat(...arr.map(v => (Array.isArray(v) ? deepFlatten(v) : v)));
-const deepFreeze = obj =>
+const deepFreeze = obj =>
   Object.keys(obj).forEach(
     prop =>
       !(obj[prop] instanceof Object) || Object.isFrozen(obj[prop]) ? null : deepFreeze(obj[prop])
   ) || Object.freeze(obj);
-const deepMapKeys = (obj, f) =>
+const deepMapKeys = (obj, f) =>
   Array.isArray(obj)
     ? obj.map(val => deepMapKeys(val, f))
     : typeof obj === 'object'
@@ -211,8 +247,8 @@ const deepFlatten = arr => [].concat(...arr.map(v => (Array.isArray(v) ? deepFla
       }, {})
       : obj;
 const defaults = (obj, ...defs) => Object.assign({}, obj, ...defs.reverse(), obj);
-const defer = (fn, ...args) => setTimeout(fn, 1, ...args);
-const degreesToRads = deg => (deg * Math.PI) / 180.0;
+const defer = (fn, ...args) => setTimeout(fn, 1, ...args);
+const degreesToRads = deg => (deg * Math.PI) / 180.0;
 const delay = (fn, wait, ...args) => setTimeout(fn, wait, ...args);
 const detectDeviceType = () =>
   /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
@@ -222,18 +258,18 @@ const difference = (a, b) => {
   const s = new Set(b);
   return a.filter(x => !s.has(x));
 };
-const differenceBy = (a, b, fn) => {
+const differenceBy = (a, b, fn) => {
   const s = new Set(b.map(fn));
   return a.filter(x => !s.has(fn(x)));
 };
 const differenceWith = (arr, val, comp) => arr.filter(a => val.findIndex(b => comp(a, b)) === -1);
-const dig = (obj, target) =>
+const dig = (obj, target) =>
   target in obj
     ? obj[target]
     : Object.values(obj).reduce((acc, val) => {
-        if (acc !== undefined) return acc;
-        if (typeof val === 'object') return dig(val, target);
-      }, undefined);
+      if (acc !== undefined) return acc;
+      if (typeof val === 'object') return dig(val, target);
+    }, undefined);
 const digitize = n => [...`${n}`].map(i => parseInt(i));
 const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
 const drop = (arr, n = 1) => arr.slice(n);
@@ -255,7 +291,7 @@ const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
         ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
     : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
 };
-const elo = ([...ratings], kFactor = 32, selfRating) => {
+const elo = ([...ratings], kFactor = 32, selfRating) => {
   const [a, b] = ratings;
   const expectedScore = (self, opponent) => 1 / (1 + 10 ** ((opponent - self) / 400));
   const newRating = (rating, i) =>
@@ -302,11 +338,11 @@ const extendHex = shortHex =>
     .split('')
     .map(x => x + x)
     .join('');
-const factorial = n =>
+const factorial = n =>
   n < 0
     ? (() => {
-        throw new TypeError('Negative numbers are not allowed!');
-      })()
+      throw new TypeError('Negative numbers are not allowed!');
+    })()
     : n <= 1
       ? 1
       : n * factorial(n - 1);
@@ -345,6 +381,11 @@ const forEachRight = (arr, callback) =>
     .slice(0)
     .reverse()
     .forEach(callback);
+const forOwn = (obj, fn) => Object.keys(obj).forEach(key => fn(obj[key], key, obj));
+const forOwnRight = (obj, fn) =>
+  Object.keys(obj)
+    .reverse()
+    .forEach(key => fn(obj[key], key, obj));
 const formatDuration = ms => {
   if (ms < 0) ms = -ms;
   const time = {
@@ -359,11 +400,6 @@ const formatDuration = ms => {
     .map(([key, val]) => `${val} ${key}${val !== 1 ? 's' : ''}`)
     .join(', ');
 };
-const forOwn = (obj, fn) => Object.keys(obj).forEach(key => fn(obj[key], key, obj));
-const forOwnRight = (obj, fn) =>
-  Object.keys(obj)
-    .reverse()
-    .forEach(key => fn(obj[key], key, obj));
 const fromCamelCase = (str, separator = '_') =>
   str
     .replace(/([a-z\d])([A-Z])/g, '$1' + separator + '$2')
@@ -391,14 +427,14 @@ const get = (from, ...selectors) =>
       .filter(t => t !== '')
       .reduce((prev, cur) => prev && prev[cur], from)
   );
-const getColonTimeFromDate = date => date.toTimeString().slice(0, 8);
+const getColonTimeFromDate = date => date.toTimeString().slice(0, 8);
 const getDaysDiffBetweenDates = (dateInitial, dateFinal) =>
   (dateFinal - dateInitial) / (1000 * 3600 * 24);
-const getImages = (el, includeDuplicates = false) => {
+const getImages = (el, includeDuplicates = false) => {
   const images = [...el.getElementsByTagName('img')].map(img => img.getAttribute('src'));
   return includeDuplicates ? images : [...new Set(images)];
 };
-const getMeridiemSuffixOfInteger = num =>
+const getMeridiemSuffixOfInteger = num =>
   num === 0 || num === 24
     ? 12 + 'am'
     : num === 12
@@ -469,15 +505,15 @@ const hexToRGB = hex => {
     ')'
   );
 };
-const hide = (...el) => [...el].forEach(e => (e.style.display = 'none'));
-const httpGet = (url, callback, err = console.error) => {
+const hide = (...el) => [...el].forEach(e => (e.style.display = 'none'));
+const httpGet = (url, callback, err = console.error) => {
   const request = new XMLHttpRequest();
   request.open('GET', url, true);
   request.onload = () => callback(request.responseText);
   request.onerror = () => err(request);
   request.send();
 };
-const httpPost = (url, data, callback, err = console.error) => {
+const httpPost = (url, data, callback, err = console.error) => {
   const request = new XMLHttpRequest();
   request.open('POST', url, true);
   request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
@@ -488,10 +524,14 @@ const hexToRGB = hex => {
 const httpsRedirect = () => {
   if (location.protocol !== 'https:') location.replace('https://' + location.href.split('//')[1]);
 };
-const hz = (fn, iterations = 100) => {
+const hz = (fn, iterations = 100) => {
   const before = performance.now();
   for (let i = 0; i < iterations; i++) fn();
   return (1000 * iterations) / (performance.now() - before);
+};
+const inRange = (n, start, end = null) => {
+  if (end && start > end) [end, start] = [start, end];
+  return end == null ? n >= 0 && n < start : n >= start && n < end;
 };
 const indentString = (str, count, indent = ' ') => str.replace(/^/gm, indent.repeat(count));
 const indexOfAll = (arr, val) => arr.reduce((acc, el, i) => (el === val ? [...acc, i] : acc), []);
@@ -509,10 +549,6 @@ const initializeNDArray = (val, ...args) =>
   args.length === 0
     ? val
     : Array.from({ length: args[0] }).map(() => initializeNDArray(val, ...args.slice(1)));
-const inRange = (n, start, end = null) => {
-  if (end && start > end) [end, start] = [start, end];
-  return end == null ? n >= 0 && n < start : n >= start && n < end;
-};
 const insertAfter = (el, htmlString) => el.insertAdjacentHTML('afterend', htmlString);
 const insertBefore = (el, htmlString) => el.insertAdjacentHTML('beforebegin', htmlString);
 const intersection = (a, b) => {
@@ -533,7 +569,7 @@ const invertKeyValues = (obj, fn) =>
   }, {});
 const is = (type, val) => ![, null].includes(val) && val.constructor === type;
 const isAbsoluteURL = str => /^[a-z][a-z0-9+.-]*:/.test(str);
-const isAfterDate = (dateA, dateB) => dateA > dateB;
+const isAfterDate = (dateA, dateB) => dateA > dateB;
 const isAnagram = (str1, str2) => {
   const normalize = str =>
     str
@@ -545,12 +581,12 @@ const isAnagram = (str1, str2) => {
   return normalize(str1) === normalize(str2);
 };
 const isArrayLike = obj => obj != null && typeof obj[Symbol.iterator] === 'function';
-const isBeforeDate = (dateA, dateB) => dateA < dateB;
+const isBeforeDate = (dateA, dateB) => dateA < dateB;
 const isBoolean = val => typeof val === 'boolean';
 const isBrowser = () => ![typeof window, typeof document].includes('undefined');
 const isBrowserTabFocused = () => !document.hidden;
 const isDivisible = (dividend, divisor) => dividend % divisor === 0;
-const isDuplexStream = val =>
+const isDuplexStream = val =>
   val !== null &&
   typeof val === 'object' &&
   typeof val.pipe === 'function' &&
@@ -562,7 +598,7 @@ const isEmpty = val => val == null || !(Object.keys(val) || val).length;
 const isEven = num => num % 2 === 0;
 const isFunction = val => typeof val === 'function';
 const isLowerCase = str => str === str.toLowerCase();
-const isNegativeZero = val => val === 0 && 1 / val === -Infinity;
+const isNegativeZero = val => val === 0 && 1 / val === -Infinity;
 const isNil = val => val === undefined || val === null;
 const isNull = val => val === null;
 const isNumber = val => typeof val === 'number';
@@ -574,18 +610,18 @@ const isPrime = num => {
   for (var i = 2; i <= boundary; i++) if (num % i === 0) return false;
   return num >= 2;
 };
-const isPrimitive = val => Object(val) !== val;
+const isPrimitive = val => Object(val) !== val;
 const isPromiseLike = obj =>
   obj !== null &&
   (typeof obj === 'object' || typeof obj === 'function') &&
   typeof obj.then === 'function';
-const isReadableStream = val =>
+const isReadableStream = val =>
   val !== null &&
   typeof val === 'object' &&
   typeof val.pipe === 'function' &&
   typeof val._read === 'function' &&
   typeof val._readableState === 'object';
-const isSameDate = (dateA, dateB) => dateA.toISOString() === dateB.toISOString();
+const isSameDate = (dateA, dateB) => dateA.toISOString() === dateB.toISOString();
 const isSorted = arr => {
   let direction = -(arr[0] - arr[1]);
   for (let [i, val] of arr.entries()) {
@@ -594,13 +630,13 @@ const isSorted = arr => {
     else if ((val - arr[i + 1]) * direction > 0) return 0;
   }
 };
-const isStream = val => val !== null && typeof val === 'object' && typeof val.pipe === 'function';
-const isString = val => typeof val === 'string';
+const isStream = val => val !== null && typeof val === 'object' && typeof val.pipe === 'function';
+const isString = val => typeof val === 'string';
 const isSymbol = val => typeof val === 'symbol';
 const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
 const isUndefined = val => val === undefined;
 const isUpperCase = str => str === str.toUpperCase();
-const isValidJSON = str => {
+const isValidJSON = str => {
   try {
     JSON.parse(str);
     return true;
@@ -608,7 +644,7 @@ const isUpperCase = str => str === str.toUpperCase();
     return false;
   }
 };
-const isWritableStream = val =>
+const isWritableStream = val =>
   val !== null &&
   typeof val === 'object' &&
   typeof val.pipe === 'function' &&
@@ -624,32 +660,19 @@ const join = (arr, separator = ',', end = separator) =>
           : acc + val + separator,
     ''
   );
-const JSONtoCSV = (arr, columns, delimiter = ',') =>
-  [
-    columns.join(delimiter),
-    ...arr.map(obj =>
-      columns.reduce(
-        (acc, key) => `${acc}${!acc.length ? '' : delimiter}"${!obj[key] ? '' : obj[key]}"`,
-        ''
-      )
-    )
-  ].join('\n');
-
-const JSONToFile = (obj, filename) =>
-  fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2));
 const last = arr => arr[arr.length - 1];
-const lcm = (...arr) => {
+const lcm = (...arr) => {
   const gcd = (x, y) => (!y ? x : gcd(y, x % y));
   const _lcm = (x, y) => (x * y) / gcd(x, y);
   return [...arr].reduce((a, b) => _lcm(a, b));
 };
-const longestItem = (...vals) => vals.reduce((a, x) => (x.length > a.length ? x : a));
+const longestItem = (...vals) => vals.reduce((a, x) => (x.length > a.length ? x : a));
 const lowercaseKeys = obj =>
   Object.keys(obj).reduce((acc, key) => {
     acc[key.toLowerCase()] = obj[key];
     return acc;
   }, {});
-const luhnCheck = num => {
+const luhnCheck = num => {
   let arr = (num + '')
     .split('')
     .reverse()
@@ -689,7 +712,7 @@ const matchesWith = (obj, source, fn) =>
         : obj[key] == source[key]
   );
 const maxBy = (arr, fn) => Math.max(...arr.map(typeof fn === 'function' ? fn : val => val[fn]));
-const maxDate = (...dates) => new Date(Math.max.apply(null, ...dates));
+const maxDate = (...dates) => new Date(Math.max.apply(null, ...dates));
 const maxN = (arr, n = 1) => [...arr].sort((a, b) => b - a).slice(0, n);
 const median = arr => {
   const mid = Math.floor(arr.length / 2),
@@ -713,9 +736,9 @@ const merge = (...objs) =>
       }, {}),
     {}
   );
-const midpoint = ([x1, y1], [x2, y2]) => [(x1 + x2) / 2, (y1 + y2) / 2];
+const midpoint = ([x1, y1], [x2, y2]) => [(x1 + x2) / 2, (y1 + y2) / 2];
 const minBy = (arr, fn) => Math.min(...arr.map(typeof fn === 'function' ? fn : val => val[fn]));
-const minDate = (...dates) => new Date(Math.min.apply(null, ...dates));
+const minDate = (...dates) => new Date(Math.min.apply(null, ...dates));
 const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
 const mostPerformant = (fns, iterations = 10000) => {
   const times = fns.map(fn => {
@@ -769,14 +792,6 @@ const on = (el, evt, fn, opts = {}) => {
   el.addEventListener(evt, opts.target ? delegatorFn : fn, opts.options || false);
   if (opts.target) return delegatorFn;
 };
-const once = fn => {
-  let called = false;
-  return function(...args) {
-    if (called) return;
-    called = true;
-    return fn.apply(this, args);
-  };
-};
 const onUserInputChange = callback => {
   let type = 'mouse',
     lastTime = 0;
@@ -790,6 +805,14 @@ const onUserInputChange = callback => {
     if (type === 'touch') return;
     (type = 'touch'), callback(type), document.addEventListener('mousemove', mousemoveHandler);
   });
+};
+const once = fn => {
+  let called = false;
+  return function(...args) {
+    if (called) return;
+    called = true;
+    return fn.apply(this, args);
+  };
 };
 const orderBy = (arr, props, orders) =>
   [...arr].sort((a, b) =>
@@ -805,7 +828,7 @@ const over = (...fns) => (...args) => fns.map(fn => fn.apply(null, args));
 const overArgs = (fn, transforms) => (...args) => fn(...args.map((val, i) => transforms[i](val)));
 const pad = (str, length, char = ' ') =>
   str.padStart((str.length + length) / 2, char).padEnd(length, char);
-const palindrome = str => {
+const palindrome = str => {
   const s = str.toLowerCase().replace(/[\W_]/g, '');
   return s === [...s].reverse().join('');
 };
@@ -827,7 +850,7 @@ const partition = (arr, fn) =>
     },
     [[], []]
   );
-const percentile = (arr, val) =>
+const percentile = (arr, val) =>
   (100 * arr.reduce((acc, v) => acc + (v < val ? 1 : 0) + (v === val ? 0.5 : 0), 0)) / arr.length;
 const permutations = arr => {
   if (arr.length <= 2) return arr.length === 2 ? [arr, [arr[1], arr[0]]] : arr;
@@ -845,7 +868,7 @@ const pickBy = (obj, fn) =>
   Object.keys(obj)
     .filter(k => fn(obj[k], k))
     .reduce((acc, key) => ((acc[key] = obj[key]), acc), {});
-const pipeAsyncFunctions = (...fns) => arg => fns.reduce((p, f) => p.then(f), Promise.resolve(arg));
+const pipeAsyncFunctions = (...fns) => arg => fns.reduce((p, f) => p.then(f), Promise.resolve(arg));
 const pipeFunctions = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
 const pluralize = (val, word, plural = word + 's') => {
   const _pluralize = (num, word, plural = word + 's') =>
@@ -912,7 +935,7 @@ const pullBy = (arr, ...args) => {
   arr.length = 0;
   pulled.forEach(v => arr.push(v));
 };
-const radsToDegrees = rad => (rad * 180.0) / Math.PI;
+const radsToDegrees = rad => (rad * 180.0) / Math.PI;
 const randomHexColorCode = () => {
   let n = (Math.random() * 0xfffff * 1000000).toString(16);
   return '#' + n.slice(0, 6);
@@ -950,6 +973,10 @@ const recordAnimationFrames = (callback, autoStart = true) => {
 };
 const redirect = (url, asLink = true) =>
   asLink ? (window.location.href = url) : window.location.replace(url);
+const reduceSuccessive = (arr, fn, acc) =>
+  arr.reduce((res, val, i, arr) => (res.push(fn(res.slice(-1)[0], val, i, arr)), res), [acc]);
+const reduceWhich = (arr, comparator = (a, b) => a - b) =>
+  arr.reduce((a, b) => (comparator(a, b) >= 0 ? b : a));
 const reducedFilter = (data, keys, fn) =>
   data.filter(fn).map(el =>
     keys.reduce((acc, key) => {
@@ -957,12 +984,7 @@ const reducedFilter = (data, keys, fn) =>
       return acc;
     }, {})
   );
-const reduceSuccessive = (arr, fn, acc) =>
-  arr.reduce((res, val, i, arr) => (res.push(fn(res.slice(-1)[0], val, i, arr)), res), [acc]);
-const reduceWhich = (arr, comparator = (a, b) => a - b) =>
-  arr.reduce((a, b) => (comparator(a, b) >= 0 ? b : a));
 const reject = (pred, array) => array.filter((...args) => !pred(...args));
-
 const remove = (arr, func) =>
   Array.isArray(arr)
     ? arr.filter(func).reduce((acc, val) => {
@@ -980,9 +1002,8 @@ const renameKeys = (keysMap, obj) =>
     {}
   );
 const reverseString = str => [...str].reverse().join('');
-const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
 const round = (n, decimals = 0) => Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`);
-const runAsync = fn => {
+const runAsync = fn => {
   const worker = new Worker(
     URL.createObjectURL(new Blob([`postMessage((${fn})());`]), {
       type: 'application/javascript; charset=utf-8'
@@ -998,7 +1019,7 @@ const round = (n, decimals = 0) => Number(`${Math.round(`${n}e${decimals}`)}e-${
   });
 };
 const runPromisesInSeries = ps => ps.reduce((p, next) => p.then(next), Promise.resolve());
-const sample = arr => arr[Math.floor(Math.random() * arr.length)];
+const sample = arr => arr[Math.floor(Math.random() * arr.length)];
 const sampleSize = ([...arr], n = 1) => {
   let m = arr.length;
   while (m) {
@@ -1025,7 +1046,7 @@ const sdbm = str => {
 const serializeCookie = (name, val) => `${encodeURIComponent(name)}=${encodeURIComponent(val)}`;
 const setStyle = (el, ruleName, val) => (el.style[ruleName] = val);
 const shallowClone = obj => Object.assign({}, obj);
-const shank = (arr, index = 0, delCount = 0, ...elements) =>
+const shank = (arr, index = 0, delCount = 0, ...elements) =>
   arr
     .slice(0, index)
     .concat(elements)
@@ -1104,10 +1125,10 @@ const stringPermutations = str => {
     );
 };
 const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');
-const sum = (...arr) => [...arr].reduce((acc, val) => acc + val, 0);
+const sum = (...arr) => [...arr].reduce((acc, val) => acc + val, 0);
 const sumBy = (arr, fn) =>
   arr.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val) => acc + val, 0);
-const sumPower = (end, power = 2, start = 1) =>
+const sumPower = (end, power = 2, start = 1) =>
   Array(end + 1 - start)
     .fill(0)
     .map((x, i) => (i + start) ** power)
@@ -1129,13 +1150,13 @@ const symmetricDifferenceWith = (arr, val, comp) => [
 const tail = arr => (arr.length > 1 ? arr.slice(1) : arr);
 const take = (arr, n = 1) => arr.slice(0, n);
 const takeRight = (arr, n = 1) => arr.slice(arr.length - n, arr.length);
-const takeRightWhile = (arr, func) =>
+const takeRightWhile = (arr, func) =>
   arr.reduceRight((acc, el) => (func(el) ? acc : [el, ...acc]), []);
 const takeWhile = (arr, func) => {
   for (const [i, val] of arr.entries()) if (func(val)) return arr.slice(0, i);
   return arr;
 };
-const throttle = (fn, wait) => {
+const throttle = (fn, wait) => {
   let inThrottle, lastFn, lastTime;
   return function() {
     const context = this,
@@ -1155,15 +1176,15 @@ const takeWhile = (arr, func) => {
     }
   };
 };
-const times = (n, fn, context = undefined) => {
-  let i = 0;
-  while (fn.call(context, i) !== false && ++i < n) {}
-};
 const timeTaken = callback => {
   console.time('timeTaken');
   const r = callback();
   console.timeEnd('timeTaken');
   return r;
+};
+const times = (n, fn, context = undefined) => {
+  let i = 0;
+  while (fn.call(context, i) !== false && ++i < n) {}
 };
 const toCamelCase = str => {
   let s =
@@ -1177,8 +1198,7 @@ const toCamelCase = str => {
 const toCurrency = (n, curr, LanguageFormat = undefined) =>
   Intl.NumberFormat(LanguageFormat, { style: 'currency', currency: curr }).format(n);
 const toDecimalMark = num => num.toLocaleString('en-US');
-const toggleClass = (el, className) => el.classList.toggle(className);
-const toHash = (object, key) =>
+const toHash = (object, key) =>
   Array.prototype.reduce.call(
     object,
     (acc, data, index) => ((acc[!key ? index : data[key]] = data), acc),
@@ -1190,11 +1210,6 @@ const toKebabCase = str =>
     .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
     .map(x => x.toLowerCase())
     .join('-');
-const tomorrow = () => {
-  let t = new Date();
-  t.setDate(t.getDate() + 1);
-  return t.toISOString().split('T')[0];
-};
 const toOrdinalSuffix = num => {
   const int = parseInt(num),
     digits = [int % 10, int % 100],
@@ -1213,13 +1228,19 @@ const toSnakeCase = str =>
     .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
     .map(x => x.toLowerCase())
     .join('_');
-const toTitleCase = str =>
+const toTitleCase = str =>
   str
     .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
     .map(x => x.charAt(0).toUpperCase() + x.slice(1))
     .join(' ');
+const toggleClass = (el, className) => el.classList.toggle(className);
+const tomorrow = () => {
+  let t = new Date();
+  t.setDate(t.getDate() + 1);
+  return t.toISOString().split('T')[0];
+};
 const transform = (obj, fn, acc) => Object.keys(obj).reduce((a, k) => fn(a, obj[k], k, obj), acc);
-const triggerEvent = (el, eventType, detail) =>
+const triggerEvent = (el, eventType, detail) =>
   el.dispatchEvent(new CustomEvent(eventType, { detail }));
 const truncateString = (str, num) =>
   str.length > num ? str.slice(0, num > 3 ? num - 3 : num) + '...' : str;
@@ -1265,7 +1286,7 @@ const unfold = (fn, seed) => {
   return result;
 };
 const union = (a, b) => Array.from(new Set([...a, ...b]));
-const unionBy = (a, b, fn) => {
+const unionBy = (a, b, fn) => {
   const s = new Set(a.map(fn));
   return Array.from(new Set([...a, ...b.filter(x => !s.has(fn(x)))]));
 };
@@ -1286,7 +1307,7 @@ const uniqueSymmetricDifference = (a, b) => [
   ...new Set([...a.filter(v => !b.includes(v)), ...b.filter(v => !a.includes(v))])
 ];
 const untildify = str => str.replace(/^~($|\/|\\)/, `${require('os').homedir()}$1`);
-const unzip = arr =>
+const unzip = arr =>
   arr.reduce(
     (acc, val) => (val.forEach((v, i) => acc[i].push(v)), acc),
     Array.from({
@@ -1302,24 +1323,6 @@ const unzipWith = (arr, fn) =>
       }).map(x => [])
     )
     .map(val => fn(...val));
-const URLJoin = (...args) =>
-  args
-    .join('/')
-    .replace(/[\/]+/g, '/')
-    .replace(/^(.+):\//, '$1://')
-    .replace(/^file:/, 'file:/')
-    .replace(/\/(\?|&|#[^!])/g, '$1')
-    .replace(/\?/g, '&')
-    .replace('&', '?');
-const UUIDGeneratorBrowser = () =>
-  ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
-    (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)
-  );
-
-const UUIDGeneratorNode = () =>
-  ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
-    (c ^ (crypto.randomBytes(1)[0] & (15 >> (c / 4)))).toString(16)
-  );
 const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
 const when = (pred, whenTrue) => x => (pred(x) ? whenTrue(x) : x);
 const without = (arr, ...args) => arr.filter(v => !args.includes(v));
@@ -1342,15 +1345,19 @@ const zipWith = (...array) => {
     (_, i) => (fn ? fn(...array.map(a => a[i])) : array.map(a => a[i]))
   );
 };
-const binarySearch = (arr, val, start = 0, end = arr.length - 1) => {
+const JSONToDate = arr => {
+  const dt = new Date(parseInt(arr.toString().substr(6)));
+  return `${dt.getDate()}/${dt.getMonth() + 1}/${dt.getFullYear()}`;
+};
+const binarySearch = (arr, val, start = 0, end = arr.length - 1) => {
   if (start > end) return -1;
   const mid = Math.floor((start + end) / 2);
   if (arr[mid] > val) return binarySearch(arr, val, start, mid - 1);
   if (arr[mid] < val) return binarySearch(arr, val, mid + 1, end);
   return mid;
 };
-const celsiusToFahrenheit = degrees => 1.8 * degrees + 32;
-const cleanObj = (obj, keysToKeep = [], childIndicator) => {
+const celsiusToFahrenheit = degrees => 1.8 * degrees + 32;
+const cleanObj = (obj, keysToKeep = [], childIndicator) => {
   Object.keys(obj).forEach(key => {
     if (key === childIndicator) {
       cleanObj(obj[key], keysToKeep, childIndicator);
@@ -1360,9 +1367,9 @@ const zipWith = (...array) => {
   });
   return obj;
 };
-const collatz = n => (n % 2 === 0 ? n / 2 : 3 * n + 1);
-const countVowels = str => (str.match(/[aeiou]/gi) || []).length;
-const factors = (num, primes = false) => {
+const collatz = n => (n % 2 === 0 ? n / 2 : 3 * n + 1);
+const countVowels = str => (str.match(/[aeiou]/gi) || []).length;
+const factors = (num, primes = false) => {
   const isPrime = num => {
     const boundary = Math.floor(Math.sqrt(num));
     for (var i = 2; i <= boundary; i++) if (num % i === 0) return false;
@@ -1381,21 +1388,21 @@ const zipWith = (...array) => {
     }, []);
   return primes ? array.filter(isPrime) : array;
 };
-const fahrenheitToCelsius = degrees => (degrees - 32) * 5/9;
-const fibonacciCountUntilNum = num =>
+const fahrenheitToCelsius = degrees => (degrees - 32) * 5/9;
+const fibonacciCountUntilNum = num =>
   Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));
-const fibonacciUntilNum = num => {
+const fibonacciUntilNum = num => {
   let n = Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));
   return Array.from({ length: n }).reduce(
     (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),
     []
   );
 };
-const heronArea = (side_a, side_b, side_c) => {
+const heronArea = (side_a, side_b, side_c) => {
     const p = (side_a + side_b + side_c) / 2
     return Math.sqrt(p * (p-side_a) * (p-side_b) * (p-side_c))
   };
-const howManyTimes = (num, divisor) => {
+const howManyTimes = (num, divisor) => {
   if (divisor === 1 || divisor === -1) return Infinity;
   if (divisor === 0) return 0;
   let i = 0;
@@ -1405,14 +1412,14 @@ const zipWith = (...array) => {
   }
   return i;
 };
-const httpDelete = (url, callback, err = console.error) => {
+const httpDelete = (url, callback, err = console.error) => {
   const request = new XMLHttpRequest();
   request.open('DELETE', url, true);
   request.onload = () => callback(request);
   request.onerror = () => err(request);
   request.send();
 };
-const httpPut = (url, data, callback, err = console.error) => {
+const httpPut = (url, data, callback, err = console.error) => {
   const request = new XMLHttpRequest();
   request.open("PUT", url, true);
   request.setRequestHeader('Content-type','application/json; charset=utf-8');
@@ -1420,11 +1427,11 @@ const zipWith = (...array) => {
   request.onerror = () => err(request);
   request.send(data);
 };
-const isArmstrongNumber = digits =>
+const isArmstrongNumber = digits =>
   (arr => arr.reduce((a, d) => a + parseInt(d) ** arr.length, 0) == digits)(
     (digits + '').split('')
   );
-const isSimilar = (pattern, str) =>
+const isSimilar = (pattern, str) =>
   [...str].reduce(
       (matchIndex, char) =>
           char.toLowerCase() === (pattern[matchIndex] || '').toLowerCase()
@@ -1432,12 +1439,8 @@ const zipWith = (...array) => {
               : matchIndex,
       0
   ) === pattern.length;
-const JSONToDate = arr => {
-  const dt = new Date(parseInt(arr.toString().substr(6)));
-  return `${dt.getDate()}/${dt.getMonth() + 1}/${dt.getFullYear()}`;
-};
-const kmphToMph = (kmph) => 0.621371192 * kmph;
-const levenshteinDistance = (string1, string2) => {
+const kmphToMph = (kmph) => 0.621371192 * kmph;
+const levenshteinDistance = (string1, string2) => {
   if (string1.length === 0) return string2.length;
   if (string2.length === 0) return string1.length;
   let matrix = Array(string2.length + 1)
@@ -1461,9 +1464,9 @@ const zipWith = (...array) => {
   }
   return matrix[string2.length][string1.length];
 };
-const mphToKmph = (mph) => 1.6093440006146922 * mph;
-const pipeLog = data => console.log(data) || data;
-const quickSort = ([n, ...nums], desc) =>
+const mphToKmph = (mph) => 1.6093440006146922 * mph;
+const pipeLog = data => console.log(data) || data;
+const quickSort = ([n, ...nums], desc) =>
   isNaN(n)
     ? []
     : [
@@ -1471,8 +1474,8 @@ const zipWith = (...array) => {
         n,
         ...quickSort(nums.filter(v => (!desc ? v > n : v <= n)), desc)
       ];
-const removeVowels = (str, repl = '') => str.replace(/[aeiou]/gi, repl);
-const solveRPN = rpn => {
+const removeVowels = (str, repl = '') => str.replace(/[aeiou]/gi, repl);
+const solveRPN = rpn => {
   const OPERATORS = {
     '*': (a, b) => a * b,
     '+': (a, b) => a + b,
@@ -1500,12 +1503,12 @@ const zipWith = (...array) => {
   if (stack.length === 1) return stack.pop();
   else throw `${rpn} is not a proper RPN. Please check it and try again`;
 };
-const speechSynthesis = message => {
+const speechSynthesis = message => {
   const msg = new SpeechSynthesisUtterance(message);
   msg.voice = window.speechSynthesis.getVoices()[0];
   window.speechSynthesis.speak(msg);
 };
-const squareSum = (...args) => args.reduce((squareSum, number) => squareSum + Math.pow(number, 2), 0);
+const squareSum = (...args) => args.reduce((squareSum, number) => squareSum + Math.pow(number, 2), 0);
 
 
-module.exports = {all,allEqual,any,approximatelyEqual,arrayToCSV,arrayToHtmlList,ary,atob,attempt,average,averageBy,bifurcate,bifurcateBy,bind,bindAll,bindKey,binomialCoefficient,bottomVisible,btoa,byteSize,call,capitalize,capitalizeEveryWord,castArray,chainAsync,chunk,clampNumber,cloneRegExp,coalesce,coalesceFactory,collectInto,colorize,compact,compactWhitespace,compose,composeRight,converge,copyToClipboard,countBy,counter,countOccurrences,createDirIfNotExists,createElement,createEventHub,CSVToArray,CSVToJSON,currentURL,curry,dayOfYear,debounce,decapitalize,deepClone,deepFlatten,deepFreeze,deepMapKeys,defaults,defer,degreesToRads,delay,detectDeviceType,difference,differenceBy,differenceWith,dig,digitize,distance,drop,dropRight,dropRightWhile,dropWhile,elementContains,elementIsVisibleInViewport,elo,equals,escapeHTML,escapeRegExp,everyNth,extendHex,factorial,fibonacci,filterFalsy,filterNonUnique,filterNonUniqueBy,findKey,findLast,findLastIndex,findLastKey,flatten,flattenObject,flip,forEachRight,formatDuration,forOwn,forOwnRight,fromCamelCase,functionName,functions,gcd,geometricProgression,get,getColonTimeFromDate,getDaysDiffBetweenDates,getImages,getMeridiemSuffixOfInteger,getScrollPosition,getStyle,getType,getURLParameters,groupBy,hammingDistance,hasClass,hasFlags,hashBrowser,hashNode,head,hexToRGB,hide,httpGet,httpPost,httpsRedirect,hz,indentString,indexOfAll,initial,initialize2DArray,initializeArrayWithRange,initializeArrayWithRangeRight,initializeArrayWithValues,initializeNDArray,inRange,insertAfter,insertBefore,intersection,intersectionBy,intersectionWith,invertKeyValues,is,isAbsoluteURL,isAfterDate,isAnagram,isArrayLike,isBeforeDate,isBoolean,isBrowser,isBrowserTabFocused,isDivisible,isDuplexStream,isEmpty,isEven,isFunction,isLowerCase,isNegativeZero,isNil,isNull,isNumber,isObject,isObjectLike,isPlainObject,isPrime,isPrimitive,isPromiseLike,isReadableStream,isSameDate,isSorted,isStream,isString,isSymbol,isTravisCI,isUndefined,isUpperCase,isValidJSON,isWritableStream,join,JSONtoCSV,JSONToFile,last,lcm,longestItem,lowercaseKeys,luhnCheck,mapKeys,mapObject,mapString,mapValues,mask,matches,matchesWith,maxBy,maxDate,maxN,median,memoize,merge,midpoint,minBy,minDate,minN,mostPerformant,negate,nest,nodeListToArray,none,nthArg,nthElement,objectFromPairs,objectToPairs,observeMutations,off,offset,omit,omitBy,on,once,onUserInputChange,orderBy,over,overArgs,pad,palindrome,parseCookie,partial,partialRight,partition,percentile,permutations,pick,pickBy,pipeAsyncFunctions,pipeFunctions,pluralize,powerset,prefix,prettyBytes,primes,promisify,pull,pullAtIndex,pullAtValue,pullBy,radsToDegrees,randomHexColorCode,randomIntArrayInRange,randomIntegerInRange,randomNumberInRange,readFileLines,rearg,recordAnimationFrames,redirect,reducedFilter,reduceSuccessive,reduceWhich,reject,remove,removeNonASCII,renameKeys,reverseString,RGBToHex,round,runAsync,runPromisesInSeries,sample,sampleSize,scrollToTop,sdbm,serializeCookie,setStyle,shallowClone,shank,show,shuffle,similarity,size,sleep,smoothScroll,sortCharactersInString,sortedIndex,sortedIndexBy,sortedLastIndex,sortedLastIndexBy,splitLines,spreadOver,stableSort,standardDeviation,stringPermutations,stripHTMLTags,sum,sumBy,sumPower,symmetricDifference,symmetricDifferenceBy,symmetricDifferenceWith,tail,take,takeRight,takeRightWhile,takeWhile,throttle,times,timeTaken,toCamelCase,toCurrency,toDecimalMark,toggleClass,toHash,toKebabCase,tomorrow,toOrdinalSuffix,toSafeInteger,toSnakeCase,toTitleCase,transform,triggerEvent,truncateString,truthCheckCollection,unary,uncurry,unescapeHTML,unflattenObject,unfold,union,unionBy,unionWith,uniqueElements,uniqueElementsBy,uniqueElementsByRight,uniqueSymmetricDifference,untildify,unzip,unzipWith,URLJoin,UUIDGeneratorBrowser,UUIDGeneratorNode,validateNumber,when,without,words,xProd,yesNo,zip,zipObject,zipWith,binarySearch,celsiusToFahrenheit,cleanObj,collatz,countVowels,factors,fahrenheitToCelsius,fibonacciCountUntilNum,fibonacciUntilNum,heronArea,howManyTimes,httpDelete,httpPut,isArmstrongNumber,isSimilar,JSONToDate,kmphToMph,levenshteinDistance,mphToKmph,pipeLog,quickSort,removeVowels,solveRPN,speechSynthesis,squareSum}
+module.exports = {CSVToArray,CSVToJSON,JSONToFile,JSONtoCSV,RGBToHex,URLJoin,UUIDGeneratorBrowser,UUIDGeneratorNode,all,allEqual,any,approximatelyEqual,arrayToCSV,arrayToHtmlList,ary,atob,attempt,average,averageBy,bifurcate,bifurcateBy,bind,bindAll,bindKey,binomialCoefficient,bottomVisible,btoa,byteSize,call,capitalize,capitalizeEveryWord,castArray,chainAsync,chunk,clampNumber,cloneRegExp,coalesce,coalesceFactory,collectInto,colorize,compact,compactWhitespace,compose,composeRight,converge,copyToClipboard,countBy,countOccurrences,counter,createDirIfNotExists,createElement,createEventHub,currentURL,curry,dayOfYear,debounce,decapitalize,deepClone,deepFlatten,deepFreeze,deepMapKeys,defaults,defer,degreesToRads,delay,detectDeviceType,difference,differenceBy,differenceWith,dig,digitize,distance,drop,dropRight,dropRightWhile,dropWhile,elementContains,elementIsVisibleInViewport,elo,equals,escapeHTML,escapeRegExp,everyNth,extendHex,factorial,fibonacci,filterFalsy,filterNonUnique,filterNonUniqueBy,findKey,findLast,findLastIndex,findLastKey,flatten,flattenObject,flip,forEachRight,forOwn,forOwnRight,formatDuration,fromCamelCase,functionName,functions,gcd,geometricProgression,get,getColonTimeFromDate,getDaysDiffBetweenDates,getImages,getMeridiemSuffixOfInteger,getScrollPosition,getStyle,getType,getURLParameters,groupBy,hammingDistance,hasClass,hasFlags,hashBrowser,hashNode,head,hexToRGB,hide,httpGet,httpPost,httpsRedirect,hz,inRange,indentString,indexOfAll,initial,initialize2DArray,initializeArrayWithRange,initializeArrayWithRangeRight,initializeArrayWithValues,initializeNDArray,insertAfter,insertBefore,intersection,intersectionBy,intersectionWith,invertKeyValues,is,isAbsoluteURL,isAfterDate,isAnagram,isArrayLike,isBeforeDate,isBoolean,isBrowser,isBrowserTabFocused,isDivisible,isDuplexStream,isEmpty,isEven,isFunction,isLowerCase,isNegativeZero,isNil,isNull,isNumber,isObject,isObjectLike,isPlainObject,isPrime,isPrimitive,isPromiseLike,isReadableStream,isSameDate,isSorted,isStream,isString,isSymbol,isTravisCI,isUndefined,isUpperCase,isValidJSON,isWritableStream,join,last,lcm,longestItem,lowercaseKeys,luhnCheck,mapKeys,mapObject,mapString,mapValues,mask,matches,matchesWith,maxBy,maxDate,maxN,median,memoize,merge,midpoint,minBy,minDate,minN,mostPerformant,negate,nest,nodeListToArray,none,nthArg,nthElement,objectFromPairs,objectToPairs,observeMutations,off,offset,omit,omitBy,on,onUserInputChange,once,orderBy,over,overArgs,pad,palindrome,parseCookie,partial,partialRight,partition,percentile,permutations,pick,pickBy,pipeAsyncFunctions,pipeFunctions,pluralize,powerset,prefix,prettyBytes,primes,promisify,pull,pullAtIndex,pullAtValue,pullBy,radsToDegrees,randomHexColorCode,randomIntArrayInRange,randomIntegerInRange,randomNumberInRange,readFileLines,rearg,recordAnimationFrames,redirect,reduceSuccessive,reduceWhich,reducedFilter,reject,remove,removeNonASCII,renameKeys,reverseString,round,runAsync,runPromisesInSeries,sample,sampleSize,scrollToTop,sdbm,serializeCookie,setStyle,shallowClone,shank,show,shuffle,similarity,size,sleep,smoothScroll,sortCharactersInString,sortedIndex,sortedIndexBy,sortedLastIndex,sortedLastIndexBy,splitLines,spreadOver,stableSort,standardDeviation,stringPermutations,stripHTMLTags,sum,sumBy,sumPower,symmetricDifference,symmetricDifferenceBy,symmetricDifferenceWith,tail,take,takeRight,takeRightWhile,takeWhile,throttle,timeTaken,times,toCamelCase,toCurrency,toDecimalMark,toHash,toKebabCase,toOrdinalSuffix,toSafeInteger,toSnakeCase,toTitleCase,toggleClass,tomorrow,transform,triggerEvent,truncateString,truthCheckCollection,unary,uncurry,unescapeHTML,unflattenObject,unfold,union,unionBy,unionWith,uniqueElements,uniqueElementsBy,uniqueElementsByRight,uniqueSymmetricDifference,untildify,unzip,unzipWith,validateNumber,when,without,words,xProd,yesNo,zip,zipObject,zipWith,JSONToDate,binarySearch,celsiusToFahrenheit,cleanObj,collatz,countVowels,factors,fahrenheitToCelsius,fibonacciCountUntilNum,fibonacciUntilNum,heronArea,howManyTimes,httpDelete,httpPut,isArmstrongNumber,isSimilar,kmphToMph,levenshteinDistance,mphToKmph,pipeLog,quickSort,removeVowels,solveRPN,speechSynthesis,squareSum}
