@@ -34,7 +34,7 @@
         </section>
         <section data-type="visual" class="sidebar__section">
           <h4 class="sidebar__section-heading">visual</h4>
-          <a class="sidebar__link" href="#circle"><span>Circle</span></a><a class="sidebar__link" href="#custom-scrollbar"><span>Custom scrollbar</span></a><a class="sidebar__link" href="#custom-text-selection"><span>Custom text selection</span></a><a class="sidebar__link" href="#dynamic-shadow"><span>Dynamic shadow</span></a><a class="sidebar__link" href="#etched-text"><span>Etched text</span></a><a class="sidebar__link" href="#fit-image-in-container"><span>Fit image in container</span></a><a class="sidebar__link" href="#gradient-text"><span>Gradient text</span></a><a class="sidebar__link" href="#hairline-border"><span>Hairline border</span></a><a class="sidebar__link" href="#not-selector"><span>:not selector</span></a><a class="sidebar__link" href="#offscreen"><span>Offscreen</span></a><a class="sidebar__link" href="#overflow-scroll-gradient"><span>Overflow scroll gradient</span></a><a class="sidebar__link" href="#pretty-text-underline"><span>Pretty text underline</span></a><a class="sidebar__link" href="#reset-all-styles"><span>Reset all styles</span></a><a class="sidebar__link" href="#shape-separator"><span>Shape separator</span></a><a class="sidebar__link" href="#system-font-stack"><span>System font stack</span></a><a class="sidebar__link" href="#triangle"><span>Triangle</span></a><a class="sidebar__link" href="#zebra-striped-list"><span>Zebra striped list</span></a>
+          <a class="sidebar__link" href="#circle"><span>Circle</span></a><a class="sidebar__link" href="#custom-scrollbar"><span>Custom scrollbar</span></a><a class="sidebar__link" href="#custom-text-selection"><span>Custom text selection</span></a><a class="sidebar__link" href="#dynamic-shadow"><span>Dynamic shadow</span></a><a class="sidebar__link" href="#etched-text"><span>Etched text</span></a><a class="sidebar__link" href="#fit-image-in-container"><span>Fit image in container</span></a><a class="sidebar__link" href="#fullscreen"><span>Fullscreen</span></a><a class="sidebar__link" href="#gradient-text"><span>Gradient text</span></a><a class="sidebar__link" href="#hairline-border"><span>Hairline border</span></a><a class="sidebar__link" href="#not-selector"><span>:not selector</span></a><a class="sidebar__link" href="#offscreen"><span>Offscreen</span></a><a class="sidebar__link" href="#overflow-scroll-gradient"><span>Overflow scroll gradient</span></a><a class="sidebar__link" href="#pretty-text-underline"><span>Pretty text underline</span></a><a class="sidebar__link" href="#reset-all-styles"><span>Reset all styles</span></a><a class="sidebar__link" href="#shape-separator"><span>Shape separator</span></a><a class="sidebar__link" href="#system-font-stack"><span>System font stack</span></a><a class="sidebar__link" href="#triangle"><span>Triangle</span></a><a class="sidebar__link" href="#zebra-striped-list"><span>Zebra striped list</span></a>
         </section>
         <section data-type="animation" class="sidebar__section">
           <h4 class="sidebar__section-heading">animation</h4>
@@ -1187,6 +1187,90 @@ in any specification.</span></p>
             </ul>
 
             <!-- tags: layout -->
+          </div>
+          <div class="snippet">
+            <h3 id="fullscreen"><span>Fullscreen</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
+            <p>The :fullscreen CSS pseudo-class represents an element that's displayed when the browser is in fullscreen mode.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="container"&gt;
+  &lt;p&gt;&lt;em&gt;Click the button below to enter the element into fullscreen mode. &lt;/em&gt;&lt;/p&gt;
+  &lt;div class="element" id="element"&gt;
+    &lt;p&gt;I change color in fullscreen mode!&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;br&gt;
+  &lt;button onclick="var el = document.getElementById('element'); el.requestFullscreen();"&gt;Go Full Screen!&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.container {
+    margin: 40px auto;
+    max-width: 700px;
+}
+.element {
+    padding: 20px;
+    height: 300px;
+    width: 100%;
+    background-color: skyblue;
+}
+.element p {
+    text-align: center;
+    color: white;
+    font-size: 3em;
+}
+.element:-ms-fullscreen p {
+    visibility: visible;
+}
+.element:fullscreen {
+    background-color: #e4708a;
+    width: 100vw;
+    height: 100vh;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo" data-scope="fullscreen.md">
+              <div class="container">
+                <p><em>Click the button below to enter the element into fullscreen mode. </em></p>
+                <div class="element" id="element">
+                  <p>I change color in fullscreen mode!</p>
+                </div>
+                <br>
+                <button onclick="var el = document.getElementById('element'); el.requestFullscreen();">Go Full Screen!</button>
+              </div>
+            </div>
+            <style>[data-scope="fullscreen.md"] .container {
+  margin: 40px auto;
+  max-width: 700px; }
+[data-scope="fullscreen.md"] .element {
+  padding: 20px;
+  height: 300px;
+  width: 100%;
+  background-color: skyblue; }
+[data-scope="fullscreen.md"] .element p {
+  text-align: center;
+  color: white;
+  font-size: 3em; }
+[data-scope="fullscreen.md"] .element:-ms-fullscreen p {
+  visibility: visible; }
+[data-scope="fullscreen.md"] .element:fullscreen {
+  background-color: #e4708a;
+  width: 100vw;
+  height: 100vh; }
+</style>
+            <h4>Explanation</h4>
+            <ol>
+              <li><code>fullscreen</code> CSS pseudo-class selector is used to select and style an element that is being displayed in fullscreen mode.</li>
+            </ol>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                81.6%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">83.38</span></p>
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen" target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen</a></li>
+              <li><a href="https://caniuse.com/#feat=fullscreen" target="_blank">https://caniuse.com/#feat=fullscreen</a></li>
+            </ul>
+
+            <!-- tags: visual -->
           </div>
           <div class="snippet">
             <h3 id="gradient-text"><span>Gradient text</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
