@@ -9,8 +9,7 @@ EventHub.on('Tag.click', data => {
     const tags = selectAll('.tags__tag', snippet)
     if (!tags.some(el => data.type_new.includes(el.dataset.type))) {
       snippet.style.display = 'none'
-    }
-    else {
+    } else {
       snippet.style.display = ''
     }
   })
