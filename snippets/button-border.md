@@ -1,4 +1,4 @@
-### Toggle switch
+### Button border animation
 
 Creates a border animation on hover.
 
