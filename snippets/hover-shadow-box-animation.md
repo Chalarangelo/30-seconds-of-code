@@ -1,6 +1,5 @@
 ### Hover Shadow Box Animation
 
-
 Creates a shadow box around the text whern it is hovered.
 
 #### HTML
@@ -32,7 +31,7 @@ Creates a shadow box around the text whern it is hovered.
   <p class = "snippet-demo_hover-shadow-box-animation"> Box it! 
 </p>
 </div>
-                                                       
+
 <style>
 .snippet-demo_hover-shadow-box-animation{
   display: inline-block;
@@ -48,18 +47,17 @@ Creates a shadow box around the text whern it is hovered.
   box-shadow: 1px 10px 10px -10px rgba(0,0,24,0.1);
   transform: scale(1.2); 
 }                                                       
-</style>                                
-
+</style>               
 
 #### Explanation 
 
-1. `display: inline-block`  for giving width and length for `p` element thus making it as an `inline-block`.
-2. setting the `transform: perspective(1px)` for giving element a 3-D space by affecting the distance between the Z plane and the user and `translate(0)` for repositioning `p` element along z-axis in 3-D Space.
-3. `box-shadow:` for setting up the box.
-4. `transparent` to make box transparent 
-5.`transition-property` for enabling both box-shadow and transform
-6. `:hover` to activate whole css when hovering is done  till  `active`.
-7. `transform: scale(1.2)` for changing the scale to 1.2. Now text looks for 1.2 times magnified with shadow Box Effect
+1. `display: inline-block` to set width and length for `p` element thus making it an `inline-block`.
+2. Set `transform: perspective(1px)` to give element a 3D space by affecting the distance between the Z plane and the user and `translate(0)` to reposition the `p` element along z-axis in 3D space.
+3. `box-shadow:` to set up the box.
+4. `transparent` to make box transparent.
+5. `transition-property` to enable transitions for both `box-shadow` and `transform`.
+6. `:hover` to activate whole css when hovering is done until `active`.
+7. `transform: scale(1.2)` to change the scale, magnifying the text.
 
 
 #### Browser Support
