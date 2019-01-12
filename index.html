@@ -1412,9 +1412,9 @@ el.style.setProperty('--max-height', height + 'px')
           <div class="snippet">
             <h3 id="hover-shadow-box-animation"><span>Hover Shadow Box Animation</span><span class="tags__tag snippet__tag" data-type="animation"><i data-feather="loader"></i>animation</span></h3>
             <p>Creates a shadow box around the text whern it is hovered.</p>
-            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p class = "hover-shadow-box-animation"&gt; Box it! &lt;/p&gt;
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p class="hover-shadow-box-animation"&gt;Box it!&lt;/p&gt;
 </code></pre>
-            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.hover-shadow-box-animation{
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.hover-shadow-box-animation {
   display: inline-block;
   vertical-align: middle;
   transform: perspective(1px) translateZ(0);
@@ -1423,14 +1423,16 @@ el.style.setProperty('--max-height', height + 'px')
   transition-duration: 0.3s;
   transition-property: box-shadow, transform;
 }
-.hover-shadow-box-animation:hover, .hover-shadow-box-animation:focus, .hover-shadow-box-animation:active{
-  box-shadow: 1px 10px 10px -10px rgba(0,0,24,0.5);
-  transform: scale(1.2); 
+.hover-shadow-box-animation:hover,
+.hover-shadow-box-animation:focus,
+.hover-shadow-box-animation:active {
+  box-shadow: 1px 10px 10px -10px rgba(0, 0, 24, 0.5);
+  transform: scale(1.2);
 }
 </code></pre>
             <h4>Demo</h4>
             <div class="snippet-demo" data-scope="hover-shadow-box-animation.md">
-              <p class="hover-shadow-box-animation"> Box it! </p>
+              <p class="hover-shadow-box-animation">Box it!</p>
             </div>
             <style>[data-scope="hover-shadow-box-animation.md"] .hover-shadow-box-animation {
   display: inline-block;
@@ -1440,29 +1442,11 @@ el.style.setProperty('--max-height', height + 'px')
   margin: 10px;
   transition-duration: 0.3s;
   transition-property: box-shadow, transform; }
-[data-scope="hover-shadow-box-animation.md"] .hover-shadow-box-animation:hover, [data-scope="hover-shadow-box-animation.md"] .hover-shadow-box-animation:focus, [data-scope="hover-shadow-box-animation.md"] .hover-shadow-box-animation:active {
+[data-scope="hover-shadow-box-animation.md"] .hover-shadow-box-animation:hover,
+[data-scope="hover-shadow-box-animation.md"] .hover-shadow-box-animation:focus,
+[data-scope="hover-shadow-box-animation.md"] .hover-shadow-box-animation:active {
   box-shadow: 1px 10px 10px -10px rgba(0, 0, 24, 0.5);
   transform: scale(1.2); }
-</style>
-            <div class="snippet-demo">
-              <p class="snippet-demo_hover-shadow-box-animation"> Box it!
-              </p>
-            </div>
-            <style>
-              .snippet-demo_hover-shadow-box-animation{
-  display: inline-block;
-  color: #0087ca;
-  margin: 10px;
-  vertical-align: middle;
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px transparent;
-  transition-duration: 0.3s;
-  transition-property: box-shadow, transform;
-}
-.snippet-demo_hover-shadow-box-animation:hover, .snippet-demo_hover-shadow-box-animation:focus, .snippet-demo_hover-shadow-box-animation:active{
-  box-shadow: 1px 10px 10px -10px rgba(0,0,24,0.1);
-  transform: scale(1.2); 
-}                                                       
 </style>
             <h4>Explanation</h4>
             <ol>
