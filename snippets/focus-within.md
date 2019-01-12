@@ -1,10 +1,11 @@
 ### Focus Within
 
-The psuedo class `:focus-within` applies styles to a parent element if any child element gets focused. For example, an `input` element inside a `form` element.
+Changes the appearance of a form if any of its children are focused.
 
 #### HTML
 
 ```html
+<div class="focus-within">
   <form>
     <label for="given_name">Given Name:</label>
     <input id="given_name" type="text">
@@ -12,7 +13,7 @@ The psuedo class `:focus-within` applies styles to a parent element if any child
     <label for="family_name">Family Name:</label>
     <input id="family_name" type="text">
   </form>
-
+</div>
 ```
 
 #### CSS
@@ -28,7 +29,6 @@ form:focus-within {
   background: #f7b731;
   color: #000000;
 }
-
 ```
 
 #### Demo
@@ -37,7 +37,7 @@ form:focus-within {
 
 #### Explanation
 
-<!-- Use a step-by-step (ordered) list if possible. Keep it concise. -->
+The psuedo class `:focus-within` applies styles to a parent element if any child element gets focused. For example, an `input` element inside a `form` element.
 
 #### Browser support
 
@@ -48,4 +48,4 @@ If no link is provided, it defaults to 99+%. -->
 
 - https://caniuse.com/#feat=css-focus-within
 
-<!-- tags: (separate each by a comma) -->
+<!-- tags: visual, interactivity -->
