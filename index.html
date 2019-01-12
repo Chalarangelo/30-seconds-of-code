@@ -42,7 +42,7 @@
         </section>
         <section data-type="interactivity" class="sidebar__section">
           <h4 class="sidebar__section-heading">interactivity</h4>
-          <a class="sidebar__link" href="#disable-selection"><span>Disable selection</span></a><a class="sidebar__link" href="#mouse-cursor-gradient-tracking"><span>Mouse cursor gradient tracking</span></a><a class="sidebar__link" href="#popout-menu"><span>Popout menu</span></a><a class="sidebar__link" href="#sibling-fade"><span>Sibling fade</span></a><a class="sidebar__link" href="#toggle-switch"><span>Toggle switch</span></a>
+          <a class="sidebar__link" href="#disable-selection"><span>Disable selection</span></a><a class="sidebar__link" href="#focus-within"><span>Focus Within</span></a><a class="sidebar__link" href="#mouse-cursor-gradient-tracking"><span>Mouse cursor gradient tracking</span></a><a class="sidebar__link" href="#popout-menu"><span>Popout menu</span></a><a class="sidebar__link" href="#sibling-fade"><span>Sibling fade</span></a><a class="sidebar__link" href="#toggle-switch"><span>Toggle switch</span></a>
         </section>
         <section data-type="other" class="sidebar__section">
           <h4 class="sidebar__section-heading">other</h4>
@@ -1189,39 +1189,101 @@ in any specification.</span></p>
             <!-- tags: layout -->
           </div>
           <div class="snippet">
+            <h3 id="focus-within"><span>Focus Within</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span><span class="tags__tag snippet__tag" data-type="interactivity"><i data-feather="edit-2"></i>interactivity</span></h3>
+            <p>Changes the appearance of a form if any of its children are focused.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="focus-within"&gt;
+  &lt;form&gt;
+    &lt;label for="given_name"&gt;Given Name:&lt;/label&gt;
+    &lt;input id="given_name" type="text"&gt;
+    &lt;br&gt;
+    &lt;label for="family_name"&gt;Family Name:&lt;/label&gt;
+    &lt;input id="family_name" type="text"&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">form {
+  border: 3px solid #2d98da;
+  color:  #000000;
+  padding: 4px;
+}
+form:focus-within {
+  background: #f7b731;
+  color: #000000;
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo" data-scope="focus-within.md">
+              <div class="focus-within">
+                <form>
+                  <label for="given_name">Given Name:</label>
+                  <input id="given_name" type="text">
+                  <br>
+                  <label for="family_name">Family Name:</label>
+                  <input id="family_name" type="text">
+                </form>
+              </div>
+            </div>
+            <style>[data-scope="focus-within.md"] form {
+  border: 3px solid #2d98da;
+  color: #000000;
+  padding: 4px; }
+[data-scope="focus-within.md"] form:focus-within {
+  background: #f7b731;
+  color: #000000; }
+</style>
+<!-- Leave this blank, the build script will generate the demo for you. -->
+            <h4>Explanation</h4>
+            <p>The psuedo class <code>:focus-within</code> applies styles to a parent element if any child element gets focused. For example, an <code>input</code> element inside a <code>form</code> element.</p>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                78.9%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">⚠️ Not supported in IE11 or the current version of Edge.</span></p>
+
+            <!-- Whenever possible, link a `caniuse` feature which allows the browser support percentage to be displayed.
+If no link is provided, it defaults to 99+%. -->
+            <ul>
+              <li><a href="https://caniuse.com/#feat=css-focus-within" target="_blank">https://caniuse.com/#feat=css-focus-within</a></li>
+            </ul>
+
+            <!-- tags: visual, interactivity -->
+          </div>
+          <div class="snippet">
             <h3 id="fullscreen"><span>Fullscreen</span><span class="tags__tag snippet__tag" data-type="visual"><i data-feather="eye"></i>visual</span></h3>
             <p>The :fullscreen CSS pseudo-class represents an element that's displayed when the browser is in fullscreen mode.</p>
             <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;div class="container"&gt;
   &lt;p&gt;&lt;em&gt;Click the button below to enter the element into fullscreen mode. &lt;/em&gt;&lt;/p&gt;
-  &lt;div class="element" id="element"&gt;
-    &lt;p&gt;I change color in fullscreen mode!&lt;/p&gt;
-  &lt;/div&gt;
-  &lt;br&gt;
-  &lt;button onclick="var el = document.getElementById('element'); el.requestFullscreen();"&gt;Go Full Screen!&lt;/button&gt;
+  &lt;div class="element" id="element"&gt;&lt;p&gt;I change color in fullscreen mode!&lt;/p&gt;&lt;/div&gt;
+  &lt;br /&gt;
+  &lt;button onclick="var el = document.getElementById('element'); el.requestFullscreen();"&gt;
+    Go Full Screen!
+  &lt;/button&gt;
 &lt;/div&gt;
 </code></pre>
             <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.container {
-    margin: 40px auto;
-    max-width: 700px;
+  margin: 40px auto;
+  max-width: 700px;
 }
 .element {
-    padding: 20px;
-    height: 300px;
-    width: 100%;
-    background-color: skyblue;
+  padding: 20px;
+  height: 300px;
+  width: 100%;
+  background-color: skyblue;
 }
 .element p {
-    text-align: center;
-    color: white;
-    font-size: 3em;
+  text-align: center;
+  color: white;
+  font-size: 3em;
 }
 .element:-ms-fullscreen p {
-    visibility: visible;
+  visibility: visible;
 }
 .element:fullscreen {
-    background-color: #e4708a;
-    width: 100vw;
-    height: 100vh;
+  background-color: #e4708a;
+  width: 100vw;
+  height: 100vh;
 }
 </code></pre>
             <h4>Demo</h4>
@@ -1232,7 +1294,9 @@ in any specification.</span></p>
                   <p>I change color in fullscreen mode!</p>
                 </div>
                 <br>
-                <button onclick="var el = document.getElementById('element'); el.requestFullscreen();">Go Full Screen!</button>
+                <button onclick="var el = document.getElementById('element'); el.requestFullscreen();">
+                  Go Full Screen!
+                </button>
               </div>
             </div>
             <style>[data-scope="fullscreen.md"] .container {
