@@ -5,9 +5,7 @@ Creates a border animation on hover.
 #### HTML
 
 ```html
-<div class="button-border">
-  <button class="button">Submit</button>
-</div>
+<div class="button-border"><button class="button">Submit</button></div>
 ```
 
 #### CSS
