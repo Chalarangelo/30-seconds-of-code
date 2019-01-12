@@ -43,10 +43,9 @@ EventHub.on('Tag.click', data => {
   sections.forEach(section => {
     section.style.display = 'block'
     //console.log(data.type_new.includes('all'))
-    if(!data.type_new.includes(section.dataset.type) && !data.type_new.includes('all')) {
+    if (!data.type_new.includes(section.dataset.type) && !data.type_new.includes('all')) {
       section.style.display = 'none'
-    }
-    else{
+    } else {
       section.style.display = ''
     }
   })

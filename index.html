@@ -38,7 +38,7 @@
         </section>
         <section data-type="animation" class="sidebar__section">
           <h4 class="sidebar__section-heading">animation</h4>
-          <a class="sidebar__link" href="#bouncing-loader"><span>Bouncing loader</span></a><a class="sidebar__link" href="#donut-spinner"><span>Donut spinner</span></a><a class="sidebar__link" href="#easing-variables"><span>Easing variables</span></a><a class="sidebar__link" href="#height-transition"><span>Height transition</span></a><a class="sidebar__link" href="#hover-underline-animation"><span>Hover underline animation</span></a>
+          <a class="sidebar__link" href="#bouncing-loader"><span>Bouncing loader</span></a><a class="sidebar__link" href="#donut-spinner"><span>Donut spinner</span></a><a class="sidebar__link" href="#easing-variables"><span>Easing variables</span></a><a class="sidebar__link" href="#height-transition"><span>Height transition</span></a><a class="sidebar__link" href="#hover-shadow-box-animation"><span>Hover Shadow Box Animation</span></a><a class="sidebar__link" href="#hover-underline-animation"><span>Hover underline animation</span></a>
         </section>
         <section data-type="interactivity" class="sidebar__section">
           <h4 class="sidebar__section-heading">interactivity</h4>
@@ -1404,6 +1404,85 @@ el.style.setProperty('--max-height', height + 'px')
             <p></p>
             <ul>
               <li><a href="https://caniuse.com/#feat=css-variables" target="_blank">https://caniuse.com/#feat=css-variables</a></li>
+              <li><a href="https://caniuse.com/#feat=css-transitions" target="_blank">https://caniuse.com/#feat=css-transitions</a></li>
+            </ul>
+
+            <!-- tags: animation -->
+          </div>
+          <div class="snippet">
+            <h3 id="hover-shadow-box-animation"><span>Hover Shadow Box Animation</span><span class="tags__tag snippet__tag" data-type="animation"><i data-feather="loader"></i>animation</span></h3>
+            <p>Creates a shadow box around the text whern it is hovered.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p class = "hover-shadow-box-animation"&gt; Box it! &lt;/p&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.hover-shadow-box-animation{
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  margin: 10px;
+  transition-duration: 0.3s;
+  transition-property: box-shadow, transform;
+}
+.hover-shadow-box-animation:hover, .hover-shadow-box-animation:focus, .hover-shadow-box-animation:active{
+  box-shadow: 1px 10px 10px -10px rgba(0,0,24,0.5);
+  transform: scale(1.2); 
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo" data-scope="hover-shadow-box-animation.md">
+              <p class="hover-shadow-box-animation"> Box it! </p>
+            </div>
+            <style>[data-scope="hover-shadow-box-animation.md"] .hover-shadow-box-animation {
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  margin: 10px;
+  transition-duration: 0.3s;
+  transition-property: box-shadow, transform; }
+[data-scope="hover-shadow-box-animation.md"] .hover-shadow-box-animation:hover, [data-scope="hover-shadow-box-animation.md"] .hover-shadow-box-animation:focus, [data-scope="hover-shadow-box-animation.md"] .hover-shadow-box-animation:active {
+  box-shadow: 1px 10px 10px -10px rgba(0, 0, 24, 0.5);
+  transform: scale(1.2); }
+</style>
+            <div class="snippet-demo">
+              <p class="snippet-demo_hover-shadow-box-animation"> Box it!
+              </p>
+            </div>
+            <style>
+              .snippet-demo_hover-shadow-box-animation{
+  display: inline-block;
+  color: #0087ca;
+  margin: 10px;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  transition-duration: 0.3s;
+  transition-property: box-shadow, transform;
+}
+.snippet-demo_hover-shadow-box-animation:hover, .snippet-demo_hover-shadow-box-animation:focus, .snippet-demo_hover-shadow-box-animation:active{
+  box-shadow: 1px 10px 10px -10px rgba(0,0,24,0.1);
+  transform: scale(1.2); 
+}                                                       
+</style>
+            <h4>Explanation</h4>
+            <ol>
+              <li><code>display: inline-block</code> to set width and length for <code>p</code> element thus making it an <code>inline-block</code>.</li>
+              <li>Set <code>transform: perspective(1px)</code> to give element a 3D space by affecting the distance between the Z plane and the user and <code>translate(0)</code> to reposition the <code>p</code> element along z-axis in 3D space.</li>
+              <li><code>box-shadow:</code> to set up the box.</li>
+              <li><code>transparent</code> to make box transparent.</li>
+              <li><code>transition-property</code> to enable transitions for both <code>box-shadow</code> and <code>transform</code>.</li>
+              <li><code>:hover</code> to activate whole css when hovering is done until <code>active</code>.</li>
+              <li><code>transform: scale(1.2)</code> to change the scale, magnifying the text.</li>
+            </ol>
+            <h4>Browser Support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                93.3%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+            <ul>
+              <li><a href="https://caniuse.com/#feat=transforms3d" target="_blank">https://caniuse.com/#feat=transforms3d</a></li>
               <li><a href="https://caniuse.com/#feat=css-transitions" target="_blank">https://caniuse.com/#feat=css-transitions</a></li>
             </ul>
 
