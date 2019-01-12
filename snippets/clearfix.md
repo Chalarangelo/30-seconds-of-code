@@ -30,26 +30,6 @@ Ensures that an element self-clears its children.
 
 #### Demo
 
-<div class="snippet-demo">
-  <div class="snippet-demo__clearfix">
-    <div class="snippet-demo__floated">float a</div>
-    <div class="snippet-demo__floated">float b</div>
-    <div class="snippet-demo__floated">float c</div>
-  </div>
-</div>
-
-<style>
-.snippet-demo__clearfix::after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-.snippet-demo__floated {
-  float: left;
-}
-</style>
-
 #### Explanation
 
 1. `.clearfix::after` defines a pseudo-element.

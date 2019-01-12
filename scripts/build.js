@@ -3,7 +3,9 @@ const path = require('path')
 const marked = require('marked')
 const pretty = require('pretty')
 const caniuseDb = require('caniuse-db/data.json')
-const { toKebabCase, createElement, template, dom } = require('../utils/utils.js')
+const sass = require('node-sass')
+const { toKebabCase, createElement, template, dom, getCode } = require('../utils/utils.js')
+const { differenceInDays } = require('date-fns')
 
 const SNIPPETS_PATH = './snippets'
 const TAGS = [
@@ -69,7 +71,23 @@ TAGS.slice(1).forEach(tag => {
 for (const snippetFile of fs.readdirSync(SNIPPETS_PATH)) {
   const snippetPath = path.join(SNIPPETS_PATH, snippetFile)
   const snippetData = fs.readFileSync(snippetPath, 'utf8')
-  const markdown = marked(snippetData, { renderer })
+
+  const html = getCode('html', snippetData).trim()
+  const css = getCode('css', snippetData)
+  const scopedCSS = sass.renderSync({
+    data: `[data-scope="${snippetFile}"] { ${css} }`
+  })
+  const js = getCode('js', snippetData)
+
+  const demo =
+    `<div class="snippet-demo" data-scope="${snippetFile}">${html}</div>` +
+    `<style>${scopedCSS.css.toString()}</style>` +
+    `${js ? `<script>(function(){${js}})();</script>` : ''}`
+
+  const markdown = marked(snippetData, { renderer }).replace(
+    '<h4>Demo</h4>',
+    `<h4>Demo</h4>${demo}`
+  )
   const snippetEl = createElement(`<div class="snippet">${markdown}</div>`)
   snippetContainer.append(snippetEl)
 
@@ -97,6 +115,14 @@ for (const snippetFile of fs.readdirSync(SNIPPETS_PATH)) {
       snippetEl.querySelector('h3').innerHTML
     }</a>`
   )
+
+  // new icon = less than 31 days old
+  const date = (snippetData.match(/<!--\s*date:\s*(.+?)-->/) || [, ''])[1]
+  if (date && differenceInDays(new Date(), new Date(date)) < 31) {
+    const newIcon = '<img alt="New" draggable="false" class="snippet__new" src="./src/img/new.svg">'
+    snippetEl.prepend(createElement(newIcon))
+    link.prepend(createElement(newIcon))
+  }
 
   // tags
   const tags = (snippetData.match(/<!--\s*tags:\s*(.+?)-->/) || [, ''])[1]

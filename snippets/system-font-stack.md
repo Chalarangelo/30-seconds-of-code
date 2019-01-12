@@ -19,16 +19,6 @@ Uses the native font of the operating system to get close to a native app feel.
 
 #### Demo
 
-<div class="snippet-demo">
-  <p class="snippet-demo__system-font-stack">This text uses the system font.</p>
-</div>
-
-<style>
-.snippet-demo__system-font-stack {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-</style>
-
 #### Explanation
 
 The browser looks for each successive font, preferring the first one if possible, and

@@ -30,29 +30,6 @@ Given an element of variable width, it will ensure its height remains proportion
 
 #### Demo
 
-Resize your browser window to see the proportion of the element remain the same.
-
-<div class="snippet-demo">
-  <div class="snippet-demo__constant-width-to-height-ratio"></div>
-</div>
-
-<style>
-.snippet-demo__constant-width-to-height-ratio {
-  background: #333;
-  width: 50%;
-}
-.snippet-demo__constant-width-to-height-ratio::before {
-  content: '';
-  padding-top: 100%;
-  float: left;
-}
-.snippet-demo__constant-width-to-height-ratio::after {
-  content: '';
-  display: block;
-  clear: both;
-}
-</style>
-
 #### Explanation
 
 `padding-top` on the `::before` pseudo-element causes the height of the element to equal a percentage of
