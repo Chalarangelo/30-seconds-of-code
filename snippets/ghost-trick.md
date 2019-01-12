@@ -1,12 +1,14 @@
 ### Ghost trick
 
-Vertically centering an element in another
+Vertically centers an element in another.
 
 #### HTML
 
 ```html
-<div class="ghosting">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem itaque, natus? Ab aliquid animi asperiores delectus dolor error expedita ipsam iste nihil pariatur provident quae quia, quis soluta suscipit tempora.</p>
+<div class="ghost-trick">
+  <div class="ghosting">
+    <p>Vertically centered without changing the position property.</p>
+  </div>
 </div>
 ```
 
@@ -14,20 +16,20 @@ Vertically centering an element in another
 
 ```css
 .ghosting {
-    height: 300px;
-    background: #0ff;
+  height: 300px;
+  background: #0ff;
 }
 
 .ghosting:before {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
 }
 
 p {
-    display: inline-block;
-    vertical-align: middle;
+  display: inline-block;
+  vertical-align: middle;
 }
 ```
 
@@ -35,7 +37,7 @@ p {
 
 #### Explanation
 
-In some cases you can use this simple method to vertically align inline elements without touching position property.
+Use the style of a `:before` pseudo-element to vertically align inline elements without changing their `position` property.
 
 #### Browser support
 
