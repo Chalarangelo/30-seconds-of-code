@@ -6,9 +6,7 @@ Vertically centers an element in another.
 
 ```html
 <div class="ghost-trick">
-  <div class="ghosting">
-    <p>Vertically centered without changing the position property.</p>
-  </div>
+  <div class="ghosting"><p>Vertically centered without changing the position property.</p></div>
 </div>
 ```
 
@@ -21,7 +19,7 @@ Vertically centers an element in another.
 }
 
 .ghosting:before {
-  content: "";
+  content: '';
   display: inline-block;
   height: 100%;
   vertical-align: middle;
