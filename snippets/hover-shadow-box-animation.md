@@ -30,28 +30,6 @@ Creates a shadow box around the text whern it is hovered.
 
 #### Demo
 
-<div class = "snippet-demo">
-  <p class = "snippet-demo_hover-shadow-box-animation"> Box it! 
-</p>
-</div>
-
-<style>
-.snippet-demo_hover-shadow-box-animation{
-  display: inline-block;
-  color: #0087ca;
-  margin: 10px;
-  vertical-align: middle;
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px transparent;
-  transition-duration: 0.3s;
-  transition-property: box-shadow, transform;
-}
-.snippet-demo_hover-shadow-box-animation:hover, .snippet-demo_hover-shadow-box-animation:focus, .snippet-demo_hover-shadow-box-animation:active{
-  box-shadow: 1px 10px 10px -10px rgba(0,0,24,0.1);
-  transform: scale(1.2); 
-}                                                       
-</style>
-
 #### Explanation
 
 1. `display: inline-block` to set width and length for `p` element thus making it an `inline-block`.
