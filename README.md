@@ -24,6 +24,7 @@
 * [30 Seconds of React](https://github.com/30-seconds/30-seconds-of-react)
 * [30 Seconds of Python](https://github.com/kriadmin/30-seconds-of-python-code) _(unofficial)_
 * [30 Seconds of PHP](https://github.com/appzcoder/30-seconds-of-php-code) _(unofficial)_
+* [30 Seconds of Kotlin](https://github.com/IvanMwiruki/30-seconds-of-kotlin) _(unofficial)_
 
 #### Package
 
