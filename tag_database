@@ -2,6 +2,7 @@ all:array,function,beginner
 allEqual:array,function,beginner
 any:array,function,beginner
 approximatelyEqual:math,beginner
+arrayDelimiter:array,function
 arrayToCSV:array,string,utility,intermediate
 arrayToHtmlList:browser,array,intermediate
 ary:adapter,function,intermediate
