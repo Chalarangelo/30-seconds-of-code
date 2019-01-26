@@ -56,6 +56,10 @@
   const allEqual = arr => arr.every(val => val === arr[0]);
   const any = (arr, fn = Boolean) => arr.some(fn);
   const approximatelyEqual = (v1, v2, epsilon = 0.001) => Math.abs(v1 - v2) < epsilon;
+  const arrayDelimiter = (arr, string) =>
+    [arr.slice(0, -1).join(", "), arr.slice(-1)[0]].join(
+      arr.length < 2 ? "" : " " + string + " "
+    );
   const arrayToCSV = (arr, delimiter = ',') =>
     arr.map(v => v.map(x => `"${x}"`).join(delimiter)).join('\n');
   const arrayToHtmlList = (arr, listID) =>
@@ -1359,6 +1363,7 @@
   exports.allEqual = allEqual;
   exports.any = any;
   exports.approximatelyEqual = approximatelyEqual;
+  exports.arrayDelimiter = arrayDelimiter;
   exports.arrayToCSV = arrayToCSV;
   exports.arrayToHtmlList = arrayToHtmlList;
   exports.ary = ary;

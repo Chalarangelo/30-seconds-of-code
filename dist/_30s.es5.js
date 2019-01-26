@@ -183,6 +183,9 @@
     var epsilon = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0.001;
     return Math.abs(v1 - v2) < epsilon;
   };
+  var arrayDelimiter = function arrayDelimiter(arr, string) {
+    return [arr.slice(0, -1).join(", "), arr.slice(-1)[0]].join(arr.length < 2 ? "" : " " + string + " ");
+  };
   var arrayToCSV = function arrayToCSV(arr) {
     var delimiter = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ',';
     return arr.map(function (v) {
@@ -2614,6 +2617,7 @@
   exports.allEqual = allEqual;
   exports.any = any;
   exports.approximatelyEqual = approximatelyEqual;
+  exports.arrayDelimiter = arrayDelimiter;
   exports.arrayToCSV = arrayToCSV;
   exports.arrayToHtmlList = arrayToHtmlList;
   exports.ary = ary;
