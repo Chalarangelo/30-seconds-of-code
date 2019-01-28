@@ -78,7 +78,7 @@ ReactDOM.render(
       <div>carousel item 3</div>
     ]}
   />,
-  document.getElementById("app")
+  document.getElementById("root")
 );
  ```
 
