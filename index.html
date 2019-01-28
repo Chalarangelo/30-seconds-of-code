@@ -22,17 +22,7 @@
       <div class="sidebar__links">
         <section data-type="layout" class="sidebar__section">
           <h4 class="sidebar__section-heading">layout</h4>
-          <a class="sidebar__link" href="#box-sizing-reset"><span>Box-sizing reset</span></a>
-          <a class="sidebar__link" href="#clearfix"><span>Clearfix</span></a>
-          <a class="sidebar__link" href="#constant-width-to-height-ratio"><span>Constant width to height ratio</span></a>
-          <a class="sidebar__link" href="#display-table-centering"><span>Display table centering</span></a>
-          <a class="sidebar__link" href="#evenly-distributed-children"><span>Evenly distributed children</span></a>
-          <a class="sidebar__link" href="#flexbox-centering"><span>Flexbox centering</span></a>
-          <a class="sidebar__link" href="#grid-centering"><span>Grid centering</span></a>
-          <a class="sidebar__link" href="#last-item-with-remaining-available-height">
-            <img alt="New" draggable="false" class="sidebar__new" src="./src/img/new.svg"><span>Last item with remaining available height</span></a>
-          <a class="sidebar__link" href="#transform-centering"><span>Transform centering</span></a>
-          <a class="sidebar__link" href="#truncate-text"><span>Truncate text</span></a>
+          <a class="sidebar__link" href="#box-sizing-reset"><span>Box-sizing reset</span></a><a class="sidebar__link" href="#clearfix"><span>Clearfix</span></a><a class="sidebar__link" href="#constant-width-to-height-ratio"><span>Constant width to height ratio</span></a><a class="sidebar__link" href="#display-table-centering"><span>Display table centering</span></a><a class="sidebar__link" href="#evenly-distributed-children"><span>Evenly distributed children</span></a><a class="sidebar__link" href="#flexbox-centering"><span>Flexbox centering</span></a><a class="sidebar__link" href="#ghost-trick"><span>Ghost trick</span></a><a class="sidebar__link" href="#grid-centering"><span>Grid centering</span></a><a class="sidebar__link" href="#last-item-with-remaining-available-height"><span>Last item with remaining available height</span></a><a class="sidebar__link" href="#transform-centering"><span>Transform centering</span></a><a class="sidebar__link" href="#truncate-text-multiline"><span>Truncate text multiline</span></a><a class="sidebar__link" href="#truncate-text"><span>Truncate text</span></a>
         </section>
         <section data-type="visual" class="sidebar__section">
           <h4 class="sidebar__section-heading">visual</h4>
@@ -2898,6 +2888,81 @@ input[type='checkbox']:checked + .switch {
             <p><span class="snippet__support-note">✅ No caveats.</span></p>
 
             <!-- tags: visual -->
+          </div>
+          <div class="snippet">
+            <h3 id="truncate-text-multiline"><span>Truncate text multiline</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
+            <p>If the text is longer than one line, it will be truncated for <code>n</code> lines and end with an gradient fade.</p>
+            <h4 data-type="HTML">HTML</h4><pre><code class="lang-html">&lt;p class="truncate-text-multiline"&gt;
+  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+  labore et.
+&lt;/p&gt;
+</code></pre>
+            <h4 data-type="CSS">CSS</h4><pre><code class="lang-css">.truncate-text-multiline {
+  overflow: hidden;
+  display: block;
+  height: 109.2px;
+  margin: 0 auto;
+  font-size: 26px;
+  line-height: 1.4;
+  width: 400px;
+  position: relative;
+}
+.truncate-text-multiline:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 150px;
+  height: 36.4px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), #f5f6f9 50%);
+}
+</code></pre>
+            <h4>Demo</h4>
+            <div class="snippet-demo" data-scope="truncate-text-multiline.md">
+              <p class="truncate-text-multiline">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                labore et.
+              </p>
+            </div>
+            <style>
+              [data-scope="truncate-text-multiline.md"] .truncate-text-multiline {
+                overflow: hidden;
+                display: block;
+                height: 109.2px;
+                margin: 0 auto;
+                font-size: 26px;
+                line-height: 1.4;
+                width: 400px;
+                position: relative;
+              }
+              [data-scope="truncate-text-multiline.md"] .truncate-text-multiline:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 150px;
+                height: 36.4px;
+                background: linear-gradient(to right, rgba(0, 0, 0, 0), #f5f6f9 50%);
+              }
+            </style>
+            <h4>Explanation</h4>
+            <ol>
+              <li><code>overflow: hidden</code> prevents the text from overflowing its dimensions
+                (for a block, 100% width and auto height).</li>
+              <li><code>width: 400px</code> ensures the element has a dimension.</li>
+              <li><code>height: 109.2px</code> calculated value for height, it equals <code>font-size * line-height * numberOfLines</code> (in this case <code>26 * 1.4 * 3 = 109.2</code>)</li>
+              <li><code>height: 36.4px</code> calculated value for gradient container, it equals <code>font-size * line-height</code> (in this case <code>26 * 1.4 = 36.4</code>)</li>
+              <li><code>background: linear-gradient(to right, rgba(0, 0, 0, 0), #f5f6f9 50%)</code> gradient from <code>transparent</code> to <code>#f5f6f9</code></li>
+            </ol>
+            <h4>Browser support</h4>
+            <div>
+              <div class="snippet__browser-support">
+                99+%
+              </div>
+            </div>
+            <p><span class="snippet__support-note">✅ No caveats.</span></p>
+
+            <!-- tags: layout -->
           </div>
           <div class="snippet">
             <h3 id="truncate-text"><span>Truncate text</span><span class="tags__tag snippet__tag" data-type="layout"><i data-feather="layout"></i>layout</span></h3>
