@@ -84,22 +84,21 @@ try {
         output += `\n${snippet.notes}`;
       }
       output += misc.collapsible('Examples', snippet.codeBlocks.slice(-1));
-      //output += detailsQuestion("View answer", question)
       output += `\n<br>${misc.link(
         "⬆ Back to top",
         misc.anchor("Table of Contents")
       )}\n\n`
     })
-  })
+  });
 
   // add static part for end
-  output += `\n${endPart}\n`
+  output += `\n${endPart}\n`;
 
-  fs.writeFileSync("README.md", output)
+  fs.writeFileSync("README.md", output);
 } catch (err) {
-  console.log(`${chalk.red("ERROR!")} During README generation: ${err}`)
-  process.exit(1)
+  console.log(`${chalk.red("ERROR!")} During README generation: ${err}`);
+  process.exit(1);
 }
 
-console.log(`${chalk.green("SUCCESS!")} README file generated!`)
-console.timeEnd("Builder")
+console.log(`${chalk.green("SUCCESS!")} README file generated!`);
+console.timeEnd("Builder");
