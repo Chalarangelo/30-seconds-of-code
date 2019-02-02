@@ -47,3 +47,7 @@ class Ticker extends Component {
 ```jsx
 ReactDOM.render(<Ticker times={5} interval={1000} />, document.getElementById('root'));
 ```
+
+<!-- tags: visual,state,class -->
+
+<!-- expertise: 1 -->
