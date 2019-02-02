@@ -78,7 +78,7 @@ try {
     const taggedSnippets = snippetsInTag[tag];
     taggedSnippets.forEach(snippet => {
       output += headers.h3(snippet.title).trim();
-      output += `\n\n${snippet.text}${snippet.codeBlocks.slice(0,-1)}`;
+      output += `\n\n${snippet.text}${snippet.codeBlocks.slice(0,-1).join('\n\n')}`;
       if (snippet.notes && snippet.notes.length) {
         output += headers.h4('Notes');
         output += `\n${snippet.notes}`;
