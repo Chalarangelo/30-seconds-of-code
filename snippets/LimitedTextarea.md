@@ -47,7 +47,7 @@ ReactDOM.render(
 );
 ```
 
-< !--tags: input,state,class -- >
+<!-- tags: input,state,class -->
 
-< !--expertise: 0 -- >
+<!-- expertise: 0 -->
 
