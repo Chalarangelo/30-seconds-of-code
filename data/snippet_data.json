@@ -80,6 +80,24 @@
     "notes": []
   },
   {
+    "name": "FileDrop.md",
+    "title": "FileDrop",
+    "text": "Renders a file drag and drop component for a single file.\n\nCreate a ref called `dropRef` for this component.\nInitialize `state.drag` and `state.filename` to `false` and `''` respectively.\nThe variables `dragCounter` and `state.drag` are used to determine if a file is being dragged, while `state.filename` is used to store the dropped file's name.\nCreate the `handleDrag`, `handleDragIn`, `handleDragOut` and `handleDrop` methods to handle drag and drop functionality,  bind them to the component's context.\nEach of the methods will handle a specific event, the listeners for which are created and removed in `componentDidMount` and `componentWillUnmount` respectively.\n`handleDrag` prevents the browser from opening the dragged file, `handleDragIn` and `handleDragOut` handle the dragged file entering and exiting the component, while `handleDrop` handles the file being dropped and passes it to `this.props.handleDrop`.\nIn the `render()` method, create an appropriately styled `<div>` and use `state.drag` and `state.filename` to determine its contents and style. \nFinally, bind the `ref` of the created `<div>` to `dropRef`.\n\n\n",
+    "codeBlocks": [
+      "```css\n.filedrop {\n  min-height: 120px;\n  border: 3px solid #D3D3D3;\n  text-align: center;\n  font-size: 24px;\n  padding: 32px;\n  border-radius: 4px;\n}\n\n.filedrop.drag {\n  border: 3px dashed #1E90FF;\n}\n\n.filedrop.ready {\n  border: 3px solid #32CD32;\n}\n```",
+      "```jsx\nclass FileDrop extends React.Component {\n  constructor(props) {\n    super(props);\n    this.dropRef = React.createRef();\n    this.state = {\n      drag: false,\n      filename: ''\n    }\n    this.handleDrag = this.handleDrag.bind(this);\n    this.handleDragIn = this.handleDragIn.bind(this);\n    this.handleDragOut = this.handleDragOut.bind(this);\n    this.handleDrop = this.handleDrop.bind(this);\n  }\n\n  handleDrag(e) {\n    e.preventDefault();\n    e.stopPropagation();\n  }\n\n  handleDragIn(e) {\n    e.preventDefault();\n    e.stopPropagation();\n    this.dragCounter++;\n    if (e.dataTransfer.items && e.dataTransfer.items.length > 0) \n      this.setState({ drag: true });\n  }\n\n  handleDragOut(e) {\n    e.preventDefault();\n    e.stopPropagation();\n    this.dragCounter--;\n    if (this.dragCounter === 0) \n      this.setState({ drag: false });\n  }\n\n  handleDrop(e) {\n    e.preventDefault();\n    e.stopPropagation();\n    this.setState({ drag: false });\n    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {\n      this.props.handleDrop(e.dataTransfer.files[0]);\n      this.setState({ filename : e.dataTransfer.files[0].name});\n      e.dataTransfer.clearData();\n      this.dragCounter = 0;\n    }\n  }\n\n  componentDidMount() {\n    let div = this.dropRef.current;\n    div.addEventListener('dragenter', this.handleDragIn);\n    div.addEventListener('dragleave', this.handleDragOut);\n    div.addEventListener('dragover', this.handleDrag);\n    div.addEventListener('drop', this.handleDrop);\n  }\n\n  componentWillUnmount() {\n    let div = this.dropRef.current;\n    div.removeEventListener('dragenter', this.handleDragIn);\n    div.removeEventListener('dragleave', this.handleDragOut);\n    div.removeEventListener('dragover', this.handleDrag);\n    div.removeEventListener('drop', this.handleDrop);\n  }\n\n  render() {\n    return (\n      <div ref={this.dropRef} className={this.state.drag ? 'filedrop drag' : this.state.filename ? 'filedrop ready' : 'filedrop'}>\n        {this.state.filename && !this.state.drag ? \n          <div>{this.state.filename}</div>\n          : <div>Drop files here!</div>\n        }\n      </div>\n    )\n  }\n}\n```",
+      "```jsx\nReactDOM.render(<FileDrop handleDrop={console.log}/>, document.getElementById('root'));\n```"
+    ],
+    "expertise": 2,
+    "tags": [
+      "visual",
+      "input",
+      "state",
+      "class"
+    ],
+    "notes": []
+  },
+  {
     "name": "Input.md",
     "title": "Input",
     "text": "Renders an `<input>` element that uses a callback function to pass its value to the parent component.\n\nUse object destructuring to set defaults for certain attributes of the `<input>` element.\nRender an `<input>` element with the appropriate attributes and use the `callback` function in the `onChange` event to pass the value of the input to the parent.\n\n",
@@ -295,6 +313,25 @@
       "visual",
       "state",
       "children",
+      "class"
+    ],
+    "notes": []
+  },
+  {
+    "name": "TreeView.md",
+    "title": "TreeView",
+    "text": "Renders a tree view of a JSON object or array with collapsible content.\n\nUse `defaultProps` to set the default values of certain props.\nUse the value of the `toggled` prop to determine the initial state of the content (collapsed/expanded).\nSet the `state` of the component to the value of the `toggled` prop and bind the `toggle` method to the component's context.\nCreate a method, `toggle`, which uses `Component.prototype.setState` to change the component's `state` from collapsed to expanded and vice versa.\nIn the `render()` method, use a `<div>` to wrap the contents of the component and the `<span>` element, used to alter the component's `state`.\nDetermine the appearance of the component, based on `this.props.isParentToggled`, `this.state.toggled`, `this.props.name` and `Array.isArray()` on `this.props.data`. \nFor each child in `this.props.data`, determine if it is an object or array and recursively render a sub-tree.\nOtherwise, render a `<p>` element with the appropriate style.\n\n",
+    "codeBlocks": [
+      "```css\n.tree-element {\n  margin: 0;\n  position: relative;\n}\n\ndiv.tree-element:before {\n  content: '';\n  position: absolute;\n  top: 24px;\n  left: 1px;\n  height: calc(100% - 48px);\n  border-left: 1px solid gray;\n}\n\n.toggler {\n  position: absolute;\n  top: 10px;\n  left: 0px;\n  width: 0; \n  height: 0; \n  border-top: 4px solid transparent;\n  border-bottom: 4px solid transparent;\n  border-left: 5px solid gray;\n  cursor: pointer;\n}\n\n.toggler.closed {\n  transform: rotate(90deg);\n}\n\n.collapsed {\n  display: none;\n}\n```",
+      "```jsx\nclass TreeView extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      toggled: props.toggled\n    }\n    this.toggle = this.toggle.bind(this);\n  }\n\n  toggle() {\n    this.setState(state => ({ toggled: !state.toggled }));\n  }\n\n  render() {\n    return (\n      <div style={{ 'marginLeft': this.props.isChildElement ? 16 : 4 + 'px' }} className={this.props.isParentToggled ? 'tree-element' : 'tree-element collapsed'}>\n        <span className={this.state.toggled ? \"toggler\" : \"toggler closed\" } onClick={this.toggle}></span>\n        {this.props.name ? <strong>&nbsp;&nbsp;{this.props.name}: </strong> : <span>&nbsp;&nbsp;</span>}\n        {Array.isArray(this.props.data) ? '[' : '{'}\n        {!this.state.toggled && '...'}\n        {Object.keys(this.props.data).map(\n          (v, i, a) =>\n            typeof this.props.data[v] == \"object\" ? (\n              <TreeView data={this.props.data[v]} isLast={i === a.length - 1} name={Array.isArray(this.props.data) ? null : v} isChildElement isParentToggled={this.props.isParentToggled && this.state.toggled} />\n            ) : (\n                <p style={{ 'marginLeft': 16 + 'px' }} className={this.state.toggled ? 'tree-element' : 'tree-element collapsed'}>\n                  {Array.isArray(this.props.data) ? '' : <strong>{v}: </strong>}\n                  {this.props.data[v]}{i === a.length - 1 ? '' : ','}\n                </p>\n              )\n        )}\n        {Array.isArray(this.props.data) ? ']' : '}'}\n        {!this.props.isLast ? ',' : ''}\n      </div>\n    )\n  }\n}\n\nTreeView.defaultProps = {\n  isLast: true,\n  toggled: true,\n  name: null,\n  isChildElement: false,\n  isParentToggled: true\n}\n```",
+      "```jsx\nlet data = {\n  lorem: {\n    ipsum: \"dolor sit\",\n    amet: {\n      consectetur: \"adipiscing\",\n      elit: [\n        \"duis\",\n        \"vitae\",\n        {\n          semper: \"orci\"\n        },\n        {\n          est: \"sed ornare\"\n        },\n        \"etiam\",\n        [\"laoreet\", \"tincidunt\"],\n        [\"vestibulum\", \"ante\"]\n      ]\n    },\n    ipsum: \"primis\"\n  }\n};\nReactDOM.render(<TreeView data={data} name='data'/>, document.getElementById(\"root\"));\n```"
+    ],
+    "expertise": 2,
+    "tags": [
+      "object",
+      "visual",
+      "children",
+      "state",
       "class"
     ],
     "notes": []
