@@ -37,6 +37,15 @@
 </details>
 
 
+### Object
+
+<details>
+<summary>View contents</summary>
+
+* [TreeView](#treeview)
+</details>
+
+
 ### String
 
 <details>
@@ -53,6 +62,7 @@
 
 * [Carousel](#carousel)
 * [Collapse](#collapse)
+* [FileDrop](#filedrop)
 * [Mailto](#mailto)
 * [ModalDialog](#modaldialog)
 * [StarRating](#starrating)
@@ -408,6 +418,137 @@ ReactDOM.render(
 <br>[⬆ Back to top](#table-of-contents)
 
 
+## Object
+### TreeView
+
+Renders a tree view of a JSON object or array with collapsible content.
+
+Use `defaultProps` to set the default values of certain props.
+Use the value of the `toggled` prop to determine the initial state of the content (collapsed/expanded).
+Set the `state` of the component to the value of the `toggled` prop and bind the `toggle` method to the component's context.
+Create a method, `toggle`, which uses `Component.prototype.setState` to change the component's `state` from collapsed to expanded and vice versa.
+In the `render()` method, use a `<div>` to wrap the contents of the component and the `<span>` element, used to alter the component's `state`.
+Determine the appearance of the component, based on `this.props.isParentToggled`, `this.state.toggled`, `this.props.name` and `Array.isArray()` on `this.props.data`. 
+For each child in `this.props.data`, determine if it is an object or array and recursively render a sub-tree.
+Otherwise, render a `<p>` element with the appropriate style.
+
+```css
+.tree-element {
+  margin: 0;
+  position: relative;
+}
+
+div.tree-element:before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 1px;
+  height: calc(100% - 48px);
+  border-left: 1px solid gray;
+}
+
+.toggler {
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  width: 0; 
+  height: 0; 
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 5px solid gray;
+  cursor: pointer;
+}
+
+.toggler.closed {
+  transform: rotate(90deg);
+}
+
+.collapsed {
+  display: none;
+}
+```
+
+```jsx
+class TreeView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      toggled: props.toggled
+    }
+    this.toggle = this.toggle.bind(this);
+  }
+
+  toggle() {
+    this.setState(state => ({ toggled: !state.toggled }));
+  }
+
+  render() {
+    return (
+      <div style={{ 'marginLeft': this.props.isChildElement ? 16 : 4 + 'px' }} className={this.props.isParentToggled ? 'tree-element' : 'tree-element collapsed'}>
+        <span className={this.state.toggled ? "toggler" : "toggler closed" } onClick={this.toggle}></span>
+        {this.props.name ? <strong>&nbsp;&nbsp;{this.props.name}: </strong> : <span>&nbsp;&nbsp;</span>}
+        {Array.isArray(this.props.data) ? '[' : '{'}
+        {!this.state.toggled && '...'}
+        {Object.keys(this.props.data).map(
+          (v, i, a) =>
+            typeof this.props.data[v] == "object" ? (
+              <TreeView data={this.props.data[v]} isLast={i === a.length - 1} name={Array.isArray(this.props.data) ? null : v} isChildElement isParentToggled={this.props.isParentToggled && this.state.toggled} />
+            ) : (
+                <p style={{ 'marginLeft': 16 + 'px' }} className={this.state.toggled ? 'tree-element' : 'tree-element collapsed'}>
+                  {Array.isArray(this.props.data) ? '' : <strong>{v}: </strong>}
+                  {this.props.data[v]}{i === a.length - 1 ? '' : ','}
+                </p>
+              )
+        )}
+        {Array.isArray(this.props.data) ? ']' : '}'}
+        {!this.props.isLast ? ',' : ''}
+      </div>
+    )
+  }
+}
+
+TreeView.defaultProps = {
+  isLast: true,
+  toggled: true,
+  name: null,
+  isChildElement: false,
+  isParentToggled: true
+}
+```
+
+<details>
+<summary>Examples</summary>
+
+```jsx
+let data = {
+  lorem: {
+    ipsum: "dolor sit",
+    amet: {
+      consectetur: "adipiscing",
+      elit: [
+        "duis",
+        "vitae",
+        {
+          semper: "orci"
+        },
+        {
+          est: "sed ornare"
+        },
+        "etiam",
+        ["laoreet", "tincidunt"],
+        ["vestibulum", "ante"]
+      ]
+    },
+    ipsum: "primis"
+  }
+};
+ReactDOM.render(<TreeView data={data} name='data'/>, document.getElementById("root"));
+```
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+
 ## String
 ### AutoLink
 
@@ -609,6 +750,126 @@ ReactDOM.render(
   </Collapse>,
   document.getElementById('root')
 );
+```
+</details>
+
+<br>[⬆ Back to top](#table-of-contents)
+
+### FileDrop
+
+Renders a file drag and drop component for a single file.
+
+Create a ref called `dropRef` for this component.
+Initialize `state.drag` and `state.filename` to `false` and `''` respectively.
+The variables `dragCounter` and `state.drag` are used to determine if a file is being dragged, while `state.filename` is used to store the dropped file's name.
+Create the `handleDrag`, `handleDragIn`, `handleDragOut` and `handleDrop` methods to handle drag and drop functionality,  bind them to the component's context.
+Each of the methods will handle a specific event, the listeners for which are created and removed in `componentDidMount` and `componentWillUnmount` respectively.
+`handleDrag` prevents the browser from opening the dragged file, `handleDragIn` and `handleDragOut` handle the dragged file entering and exiting the component, while `handleDrop` handles the file being dropped and passes it to `this.props.handleDrop`.
+In the `render()` method, create an appropriately styled `<div>` and use `state.drag` and `state.filename` to determine its contents and style. 
+Finally, bind the `ref` of the created `<div>` to `dropRef`.
+
+
+```css
+.filedrop {
+  min-height: 120px;
+  border: 3px solid #D3D3D3;
+  text-align: center;
+  font-size: 24px;
+  padding: 32px;
+  border-radius: 4px;
+}
+
+.filedrop.drag {
+  border: 3px dashed #1E90FF;
+}
+
+.filedrop.ready {
+  border: 3px solid #32CD32;
+}
+```
+
+```jsx
+class FileDrop extends React.Component {
+  constructor(props) {
+    super(props);
+    this.dropRef = React.createRef();
+    this.state = {
+      drag: false,
+      filename: ''
+    }
+    this.handleDrag = this.handleDrag.bind(this);
+    this.handleDragIn = this.handleDragIn.bind(this);
+    this.handleDragOut = this.handleDragOut.bind(this);
+    this.handleDrop = this.handleDrop.bind(this);
+  }
+
+  handleDrag(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+
+  handleDragIn(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.dragCounter++;
+    if (e.dataTransfer.items && e.dataTransfer.items.length > 0) 
+      this.setState({ drag: true });
+  }
+
+  handleDragOut(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.dragCounter--;
+    if (this.dragCounter === 0) 
+      this.setState({ drag: false });
+  }
+
+  handleDrop(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.setState({ drag: false });
+    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+      this.props.handleDrop(e.dataTransfer.files[0]);
+      this.setState({ filename : e.dataTransfer.files[0].name});
+      e.dataTransfer.clearData();
+      this.dragCounter = 0;
+    }
+  }
+
+  componentDidMount() {
+    let div = this.dropRef.current;
+    div.addEventListener('dragenter', this.handleDragIn);
+    div.addEventListener('dragleave', this.handleDragOut);
+    div.addEventListener('dragover', this.handleDrag);
+    div.addEventListener('drop', this.handleDrop);
+  }
+
+  componentWillUnmount() {
+    let div = this.dropRef.current;
+    div.removeEventListener('dragenter', this.handleDragIn);
+    div.removeEventListener('dragleave', this.handleDragOut);
+    div.removeEventListener('dragover', this.handleDrag);
+    div.removeEventListener('drop', this.handleDrop);
+  }
+
+  render() {
+    return (
+      <div ref={this.dropRef} className={this.state.drag ? 'filedrop drag' : this.state.filename ? 'filedrop ready' : 'filedrop'}>
+        {this.state.filename && !this.state.drag ? 
+          <div>{this.state.filename}</div>
+          : <div>Drop files here!</div>
+        }
+      </div>
+    )
+  }
+}
+```
+
+<details>
+<summary>Examples</summary>
+
+```jsx
+ReactDOM.render(<FileDrop handleDrop={console.log}/>, document.getElementById('root'));
 ```
 </details>
 
