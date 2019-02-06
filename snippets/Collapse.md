@@ -40,7 +40,7 @@ class Collapse extends React.Component {
     return (
       <div>
         <button style={this.style.buttonStyle} onClick={this.toggleCollapse}>
-          {this.state.collapsed ? 'Show' : 'Hide'} content
+          Show/Hide Content
         </button>
         <div 
           style= {this.state.collapsed ? this.style.collapsed : this.style.expanded} 

@@ -24,6 +24,6 @@ ReactDOM.render(
 );
 ```
 
-<!-- tags: visual,functional -->
+<!-- tags: functional -->
 
 <!-- expertise: 0 -->
