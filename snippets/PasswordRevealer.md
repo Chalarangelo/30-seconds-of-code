@@ -8,30 +8,24 @@ In the`render()` method, use a`<div>` to wrap both the`<input>` and the `<button
 Finally, bind the `<button>`'s `onClick` event to the `toggleShown` method.
 
 ```jsx
-class PasswordRevealer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      shown: false
-    };
-    this.toggleShown = this.toggleShown.bind(this);
-  }
+function PasswordRevealer(props) {
+  const { value } = props;
 
-  toggleShown() {
-    this.setState(state => ({ shown: !state.shown }));
-  }
+  const [shown, setShown] = useState(false);
+  const toggleShown = () => {
+    setShown(!shown);
+  };
 
-  render() {
-    return (
-      <div>
-        <input
-          type={this.state.shown ? 'text' : 'password'}
-          value={this.props.value}
-        />
-        <button onClick={this.toggleShown}>Show/Hide</button>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <input
+        type={shown ? "text" : "password"}
+        value={value}
+        onChange={() => {}}
+      />
+      <button onClick={() => toggleShown()}>Show/Hide</button>
+    </div>
+  );
 }
 ```
 
