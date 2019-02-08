@@ -251,6 +251,7 @@ reduceSuccessive:array,function,intermediate
 reduceWhich:array,function,intermediate
 reject:array,beginner
 remove:array,intermediate
+removeDuplicates: array, beginner
 removeNonASCII:string,regexp,intermediate
 renameKeys:object,intermediate
 reverseString:string,array,beginner
