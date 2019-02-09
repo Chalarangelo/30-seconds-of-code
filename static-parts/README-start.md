@@ -25,6 +25,7 @@
 * [30 Seconds of Python](https://github.com/kriadmin/30-seconds-of-python-code) _(unofficial)_
 * [30 Seconds of PHP](https://github.com/appzcoder/30-seconds-of-php-code) _(unofficial)_
 * [30 Seconds of Kotlin](https://github.com/IvanMwiruki/30-seconds-of-kotlin) _(unofficial)_
+* [30 Seconds of Knowledge](https://chrome.google.com/webstore/detail/30-seconds-of-knowledge/mmgplondnjekobonklacmemikcnhklla) _(unofficial)_
 
 #### Package
 
