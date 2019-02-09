@@ -77,6 +77,13 @@ ${
       '</pre><label class="collapse">examples</label><pre class="section card-examples '
     )}
   </div>`;
+const embedCard = tag => `<div class="card code-card"><div class="section card-content">
+${['adapter','array','function','object'].includes(tag) ? 
+'<h4><a href="https://frontendmasters.com/courses/es6-right-parts/" target="_blank" rel="noopener noreferrer">Recommended Resource - ES6: The Right Parts</a></h4><p>Learn new ES6 JavaScript language features like arrow function, destructuring, generators & more to write cleaner and more productive, readable programs.</p>' 
+: ['browser', 'node', 'date'].includes(tag) ? 
+'<h4><a href="https://frontendmasters.com/courses/javascript-hard-parts/" target="_blank" rel="noopener noreferrer">Recommended Resource - JavaScript: The Hard Parts</a></h4><p>Take your JavaScript to the next level. Gain an understanding of callbacks, higher order functions, closure, asynchronous and object-oriented JavaScript!</p>' 
+: '<h4><a href="https://frontendmasters.com/courses/js-fundamentals-functional-v2/" target="_blank" rel="noopener noreferrer">Recommended Resource - JavaScript: From Fundamentals to Functional JS</a></h4><p>Learn higher-order functions, closures, scope, master key functional methods like map, reduce and filter and promises and ES6+ asynchronous JavaScript.</p>'
+}</div></div>`;
 const filterSnippets = (snippetList, excludedFiles) =>
   Object.keys(snippetList)
     .filter(key => !excludedFiles.includes(key))
@@ -190,6 +197,7 @@ try {
   </nav><main class="col-centered"><span id="top"><br/><br/></span>`;
   // Loop over tags and snippets to create the list of snippets
   for (let tag of taggedData) {
+    let notEmbedded = true;
     let localOutput = output
       .replace(/\$tag/g, util.capitalize(tag))
       .replace(new RegExp(`./${tag}#`, 'g'), '#');
@@ -197,8 +205,13 @@ try {
     localOutput += md
       .render(`## ${util.capitalize(tag, true)}\n`)
       .replace(/<h2>/g, '<h2 class="category-name">');
-    for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
+    for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
       localOutput += generateSnippetCard(snippets, taggedSnippet, true);
+      if (Object.entries(tagDbData).filter(v => v[1][0] === tag).findIndex(v => v[0] === taggedSnippet[0]) >= Object.entries(tagDbData).filter(v => v[1][0] === tag).length * 0.5 && notEmbedded) {
+        notEmbedded = !notEmbedded;
+        localOutput += embedCard(tag);
+      }
+    }
     // Add the ending static part
     localOutput += `\n${endPart + '\n'}`;
     // Optimize punctuation nodes
