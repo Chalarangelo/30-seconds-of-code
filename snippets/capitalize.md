@@ -2,7 +2,7 @@
 
 Capitalizes the first letter of a string.
 
-Capitalizes the fist letter of the sring and then adds it with rest of the string. Omit the `lower_rest` parameter to keep the rest of the string intact, or set it to `true` to convert to lowercase.
+Capitalizes the first letter of the string and then adds it with rest of the string. Omit the `lower_rest` parameter to keep the rest of the string intact, or set it to `true` to convert to lowercase.
 
 ```python
 def capitalize(string, lower_rest=False):

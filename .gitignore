@@ -1,3 +1,5 @@
 __pycache__/
 .vscode
-web/
+*.iml
+.idea/codeStyles/Project.xml
+*.xml
