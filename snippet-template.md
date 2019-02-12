@@ -12,9 +12,10 @@ function ComponentName(props) {
   });
   return <div>{props}</div>;
 };
+```
 
 ```jsx
-ReactDOM.render(<ComponentName />, mountNode);
+ReactDOM.render(<ComponentName />, document.getElementById("root"));
 ```
 
 <!-- OPTIONAL -->
