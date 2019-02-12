@@ -243,41 +243,36 @@ ReactDOM.render(
 
 Renders a textarea component with a character limit.
 
-Use the value of the `value` prop to determine the initial `state.content` and `state.characterCount` and the value of the `limit` props to determine the value of `state.limit`.
-Create a method, `handleChange`, which trims the `event.target.value` data if necessary and uses `Component.prototype.setState` to update `state.content` and `state.characterCount`, and bind it to the component's context.
-In the`render()` method, use a`<div>` to wrap both the`<textarea>` and the `<p>` element that displays the character count and bind the `onChange` event of the `<textarea>` to the `handleChange` method.
+Use the `React.useState()` hook to create the `content` state variable and set its value to `value`.
+Create a method `setFormattedContent`, which trims the content of the input if it's longer than `limit`.
+Use the `React.useEffect()` hook to call the `setFormattedContent` method on the value of the `content` state variable.
+Use a`<div>` to wrap both the`<textarea>` and the `<p>` element that displays the character count and bind the `onChange` event of the `<textarea>` to call `setFormattedContent` with the value of `event.target.value`.
 
 ```jsx
-class LimitedTextarea extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      content: props.value,
-      characterCount: props.value.length,
-      limit: props.limit
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
-  
-  handleChange(event) {
-    let newContent = event.target.value;
-    if(newContent.length >= this.state.limit) newContent = newContent.slice(0, this.state.limit);
-    this.setState(state => ({ content: newContent, characterCount: newContent.length }));
-  }
-  render() {
-    return (
-      <div>
-        <textarea 
-          rows={this.props.rows} 
-          cols={this.props.cols} 
-          onChange={this.handleChange} 
-          value={this.state.content}
-        >
-        </textarea>
-        <p>{this.state.characterCount}/{this.props.limit}</p>
-      </div>
-    );
-  }
+function LimitedTextarea({ rows, cols, value, limit }) {
+  const [content, setContent] = React.useState(value);
+
+  const setFormattedContent = text => {
+    text.length > limit ? setContent(text.slice(0, limit)) : setContent(text);
+  };
+
+  React.useEffect(() => {
+    setFormattedContent(content);
+  }, []);
+
+  return (
+    <div>
+      <textarea
+        rows={rows}
+        cols={cols}
+        onChange={event => setFormattedContent(event.target.value)}
+        value={content}
+      />
+      <p>
+        {content.length}/{limit}
+      </p>
+    </div>
+  );
 }
 ```
 
@@ -298,36 +293,23 @@ ReactDOM.render(
 
 Renders a password input field with a reveal button.
 
-Initially set `state.shown` to `false` to ensure that the password is not shown by default.
-Create a method, `toggleShown`, which uses `Component.prototype.setState` to change the input's state from shown to hidden and vice versa, bind it to the component's context.
-In the`render()` method, use a`<div>` to wrap both the`<input>` and the `<button>` element that toggles the type of the input field.
-Finally, bind the `<button>`'s `onClick` event to the `toggleShown` method.
+Use the `React.useState()` hook to create the `shown` state vairable and set its value to `false`.
+Use a`<div>` to wrap both the`<input>` and the `<button>` element that toggles the type of the input field between `"text"` and `"password"`.
 
 ```jsx
-class PasswordRevealer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      shown: false
-    };
-    this.toggleShown = this.toggleShown.bind(this);
-  }
+function PasswordRevealer({ value }) {
+  const [shown, setShown] = React.useState(false);
 
-  toggleShown() {
-    this.setState(state => ({ shown: !state.shown }));
-  }
-
-  render() {
-    return (
-      <div>
-        <input
-          type={this.state.shown ? 'text' : 'password'}
-          value={this.props.value}
-        />
-        <button onClick={this.toggleShown}>Show/Hide</button>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <input
+        type={shown ? "text" : "password"}
+        value={value}
+        onChange={() => {}}
+      />
+      <button onClick={() => setShown(!shown)}>Show/Hide</button>
+    </div>
+  );
 }
 ```
 
@@ -423,13 +405,12 @@ ReactDOM.render(
 
 Renders a tree view of a JSON object or array with collapsible content.
 
-Use `defaultProps` to set the default values of certain props.
+Use object destructuring to set defaults for certain props. 
 Use the value of the `toggled` prop to determine the initial state of the content (collapsed/expanded).
-Set the `state` of the component to the value of the `toggled` prop and bind the `toggle` method to the component's context.
-Create a method, `toggle`, which uses `Component.prototype.setState` to change the component's `state` from collapsed to expanded and vice versa.
-In the `render()` method, use a `<div>` to wrap the contents of the component and the `<span>` element, used to alter the component's `state`.
-Determine the appearance of the component, based on `this.props.isParentToggled`, `this.state.toggled`, `this.props.name` and `Array.isArray()` on `this.props.data`. 
-For each child in `this.props.data`, determine if it is an object or array and recursively render a sub-tree.
+Use the `React.setState()` hook to create the `isToggled` state variable and give it the value of the `toggled` prop initially.
+Return a `<div>` to wrap the contents of the component and the `<span>` element, used to alter the component's `isToggled` state.
+Determine the appearance of the component, based on `isParentToggled`, `isToggled`, `name` and `Array.isArray()` on `data`. 
+For each child in `data`, determine if it is an object or array and recursively render a sub-tree.
 Otherwise, render a `<p>` element with the appropriate style.
 
 ```css
@@ -469,76 +450,53 @@ div.tree-element:before {
 ```
 
 ```jsx
-class TreeView extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      toggled: props.toggled
-    };
-    this.toggle = this.toggle.bind(this);
-  }
+function TreeView({
+  data,
+  toggled = true,
+  name = null,
+  isLast = true,
+  isChildElement = false,
+  isParentToggled = true
+}) {
+  const [isToggled, setIsToggled] = React.useState(toggled);
 
-  toggle() {
-    this.setState(state => ({ toggled: !state.toggled }));
-  }
-
-  render() {
-    return (
-      <div
-        style={{ marginLeft: this.props.isChildElement ? 16 : 4 + "px" }}
-        className={
-          this.props.isParentToggled ? "tree-element" : "tree-element collapsed"
-        }
-      >
-        <span
-          className={this.state.toggled ? "toggler" : "toggler closed"}
-          onClick={this.toggle}
-        />
-        {this.props.name ? (
-          <strong>&nbsp;&nbsp;{this.props.name}: </strong>
-        ) : (
-          <span>&nbsp;&nbsp;</span>
-        )}
-        {Array.isArray(this.props.data) ? "[" : "{"}
-        {!this.state.toggled && "..."}
-        {Object.keys(this.props.data).map(
-          (v, i, a) =>
-            typeof this.props.data[v] == "object" ? (
-              <TreeView
-                data={this.props.data[v]}
-                isLast={i === a.length - 1}
-                name={Array.isArray(this.props.data) ? null : v}
-                isChildElement
-                isParentToggled={
-                  this.props.isParentToggled && this.state.toggled
-                }
-              />
-            ) : (
-              <p
-                style={{ marginLeft: 16 + "px" }}
-                className={
-                  this.state.toggled ? "tree-element" : "tree-element collapsed"
-                }
-              >
-                {Array.isArray(this.props.data) ? "" : <strong>{v}: </strong>}
-                {this.props.data[v]}
-                {i === a.length - 1 ? "" : ","}
-              </p>
-            )
-        )}
-        {Array.isArray(this.props.data) ? "]" : "}"}
-        {!this.props.isLast ? "," : ""}
-      </div>
-    );
-  }
-}
-
-TreeView.defaultProps = {
-  isLast: true,
-  toggled: true,
-  name: null,
-  isChildElement: false,
-  isParentToggled: true
+  return (
+    <div
+      style={{ marginLeft: isChildElement ? 16 : 4 + "px" }}
+      className={isParentToggled ? "tree-element" : "tree-element collapsed"}
+    >
+      <span
+        className={isToggled ? "toggler" : "toggler closed"}
+        onClick={() => setIsToggled(!isToggled)}
+      />
+      {name ? <strong>&nbsp;&nbsp;{name}: </strong> : <span>&nbsp;&nbsp;</span>}
+      {Array.isArray(data) ? "[" : "{"}
+      {!isToggled && "..."}
+      {Object.keys(data).map(
+        (v, i, a) =>
+          typeof data[v] == "object" ? (
+            <TreeView
+              data={data[v]}
+              isLast={i === a.length - 1}
+              name={Array.isArray(data) ? null : v}
+              isChildElement
+              isParentToggled={isParentToggled && isToggled}
+            />
+          ) : (
+            <p
+              style={{ marginLeft: 16 + "px" }}
+              className={isToggled ? "tree-element" : "tree-element collapsed"}
+            >
+              {Array.isArray(data) ? "" : <strong>{v}: </strong>}
+              {data[v]}
+              {i === a.length - 1 ? "" : ","}
+            </p>
+          )
+      )}
+      {Array.isArray(data) ? "]" : "}"}
+      {!isLast ? "," : ""}
+    </div>
+  );
 }
 ```
 
@@ -623,70 +581,49 @@ ReactDOM.render(
 
 Renders a carousel component.
 
-Initially set `state.active` to `0` (index of the first item).
+Use the `React.setState()` hook to create the `active` state variable and give it a value of `0` (index of the first item).
 Use an object, `style`, to hold the styles for the individual components.
-Define a method, `setActiveItem`, which uses `this.setState` to change the state's `active` property to the index of the next item.
-Define another method, `changeItem`, which is called by `setActiveItem` after updating the state each time and also when the component
-first renders (on `ComponentDidMount`).
-In the `render()` method, destructure `state`, `style` and `props`, compute if visibility style should be set to `visible` or not for each carousel item while mapping over and applying the combined style to the carousel item component accordingly.
-Render the carousel items using [React.cloneElement](https://reactjs.org/docs/react-api.html#cloneelement) and pass down rest
-`props` along with the computed styles.
+Use the `React.setEffect()` hook to update the value of `active` to the index of the next item, using `setTimeout`.
+Destructure `props`, compute if visibility style should be set to `visible` or not for each carousel item while mapping over and applying the combined style to the carousel item component accordingly.
+Render the carousel items using `React.cloneElement()` and pass down rest `props` along with the computed styles.
 
 ```jsx
-class Carousel extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      active: 0
-    };
-    this.scrollInterval = null;
-    this.style = {
-      carousel: {
-        position: "relative"
-      },
-      carouselItem: {
-        position: "absolute",
-        visibility: "hidden"
-      },
-      visible: {
-        visibility: "visible"
-      }
-    };
-  }
-  componentDidMount() {
-    this.changeItem();
-  }
-  setActiveItem = () => {
-    const { carouselItems } = this.props;
-    this.setState(
-      prevState => ({
-        active: (prevState.active + 1) % carouselItems.length
-      }),
-      this.changeItem
-    );
+function Carousel(props) {
+  const [active, setActive] = React.useState(0);
+  let scrollInterval = null;
+  const style = {
+    carousel: {
+      position: "relative"
+    },
+    carouselItem: {
+      position: "absolute",
+      visibility: "hidden"
+    },
+    visible: {
+      visibility: "visible"
+    }
   };
-  changeItem = () => {
-    this.scrollInterval = setTimeout(this.setActiveItem, 2000);
-  };
-  render() {
-    const { carouselItems, ...rest } = this.props;
-    const { active } = this.state;
-    const { visible, carousel, carouselItem } = this.style;
-    return (
-      <div style={carousel}>
-        {carouselItems.map((item, index) => {
-          const activeStyle = active === index ? visible : {};
-          return React.cloneElement(item, {
-            ...rest,
-            style: {
-              ...carouselItem,
-              ...activeStyle
-            }
-          });
-        })}
-      </div>
-    );
-  }
+  React.useEffect(() => {
+    scrollInterval = setTimeout(() => {
+      const { carouselItems } = props;
+      setActive((active + 1) % carouselItems.length);
+    }, 2000);
+  });
+  const { carouselItems, ...rest } = props;
+  return (
+    <div style={style.carousel}>
+      {carouselItems.map((item, index) => {
+        const activeStyle = active === index ? style.visible : {};
+        return React.cloneElement(item, {
+          ...rest,
+          style: {
+            ...style.carouselItem,
+            ...activeStyle
+          }
+        });
+      })}
+    </div>
+  );
 }
 ```
 
@@ -713,55 +650,46 @@ ReactDOM.render(
 
 Renders a component with collapsible content.
 
-Use the value of the `collapsed` prop to determine the initial state of the content (collapsed/expanded).
-Set the `state` of the component to the value of the `collapsed` prop (cast to a boolean value) and bind the `toggleCollapse` method to the component's context.
+Use the `React.setState()` hook to create the `isCollapsed` state variable with an initial value of `props.collapsed`.
 Use an object, `style`, to hold the styles for individual components and their states.
-Create a method, `toggleCollapse`, which uses `Component.prototype.setState` to change the component's `state` from collapsed to expanded and vice versa.
-In the `render()` method, use a `<div>` to wrap both the `<button>` that alters the component's `state` and the content of the component, passed down via `props.children`.
-Determine the appearance of the content, based on `state.collapsed` and apply the appropriate CSS rules from the `style` object.
-Finally, update the value of the `aria-expanded` attribute based on `state.collapsed` to make the component accessible.
+Use a `<div>` to wrap both the `<button>` that alters the component's `isCollapsed` state and the content of the component, passed down via `props.children`.
+Determine the appearance of the content, based on `isCollapsed` and apply the appropriate CSS rules from the `style` object.
+Finally, update the value of the `aria-expanded` attribute based on `isCollapsed` to make the component accessible.
 
 ```jsx
-class Collapse extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      collapsed: !!props.collapsed
-    };
-    this.style = {
-      collapsed: {
-        display: 'none'
-      },
-      expanded: {
-        display: 'block'
-      },
-      buttonStyle: {
-        display: 'block',
-        width: '100%'
-      }
-    };
-    this.toggleCollapse = this.toggleCollapse.bind(this);
-  }
-  
-  toggleCollapse() {
-    this.setState(state => ({ collapsed: !state.collapsed }));
-  }
-  
-  render() {
-    return (
-      <div>
-        <button style={this.style.buttonStyle} onClick={this.toggleCollapse}>
-          {this.state.collapsed ? 'Show' : 'Hide'} content
-        </button>
-        <div 
-          style= {this.state.collapsed ? this.style.collapsed : this.style.expanded} 
-          aria-expanded = {this.state.collapsed}
-        >
-          {this.props.children}
-        </div>
+function Collapse(props) {
+  const [isCollapsed, setIsCollapsed] = React.useState(props.collapsed);
+
+  const style = {
+    collapsed: {
+      display: "none"
+    },
+    expanded: {
+      display: "block"
+    },
+    buttonStyle: {
+      display: "block",
+      width: "100%"
+    }
+  };
+
+  return (
+    <div>
+      <button
+        style={style.buttonStyle}
+        onClick={() => setIsCollapsed(!isCollapsed)}
+      >
+        {isCollapsed ? "Show" : "Hide"} content
+      </button>
+      <div
+        className="collapse-content"
+        style={isCollapsed ? style.collapsed : style.expanded}
+        aria-expanded={isCollapsed}
+      >
+        {props.children}
       </div>
-    );
-  }
+    </div>
+  );
 }
 ```
 
