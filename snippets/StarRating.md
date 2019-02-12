@@ -53,6 +53,6 @@ ReactDOM.render(<StarRating/>, document.getElementById('root'));
 ReactDOM.render(<StarRating rating={2} />, document.getElementById('root'));
 ```
 
-<!-- tags: visual,children,input,state,class -->
+<!-- tags: visual,children,input,state -->
 
 <!-- expertise: 2 -->

@@ -123,6 +123,6 @@ let data = {
 ReactDOM.render(<TreeView data={data} name='data'/>, document.getElementById("root"));
 ```
 
-<!-- tags: object,visual,children,state,class -->
+<!-- tags: object,visual,state,recursion -->
 
 <!-- expertise: 2 -->

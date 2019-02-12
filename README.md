@@ -182,7 +182,7 @@ function MappedTable({ data, propertyNames }) {
 ```
 #### Notes
 
-This component does not work with nested objects and will break if there are nested objects inside any of the properties specified in `propertyNames`.,<!-tags: array,object,functional -->,<!-expertise: 1 -->
+This component does not work with nested objects and will break if there are nested objects inside any of the properties specified in `propertyNames`.,<!-tags: array,object -->,<!-expertise: 1 -->
 
 <details>
 <summary>Examples</summary>
