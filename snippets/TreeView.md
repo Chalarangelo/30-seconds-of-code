@@ -2,13 +2,12 @@
 
 Renders a tree view of a JSON object or array with collapsible content.
 
-Use `defaultProps` to set the default values of certain props.
+Use object destructuring to set defaults for certain props. 
 Use the value of the `toggled` prop to determine the initial state of the content (collapsed/expanded).
-Set the `state` of the component to the value of the `toggled` prop and bind the `toggle` method to the component's context.
-Create a method, `toggle`, which uses `Component.prototype.setState` to change the component's `state` from collapsed to expanded and vice versa.
-In the `render()` method, use a `<div>` to wrap the contents of the component and the `<span>` element, used to alter the component's `state`.
-Determine the appearance of the component, based on `this.props.isParentToggled`, `this.state.toggled`, `this.props.name` and `Array.isArray()` on `this.props.data`. 
-For each child in `this.props.data`, determine if it is an object or array and recursively render a sub-tree.
+Use the `React.setState()` hook to create the `isToggled` state variable and give it the value of the `toggled` prop initially.
+Return a `<div>` to wrap the contents of the component and the `<span>` element, used to alter the component's `isToggled` state.
+Determine the appearance of the component, based on `isParentToggled`, `isToggled`, `name` and `Array.isArray()` on `data`. 
+For each child in `data`, determine if it is an object or array and recursively render a sub-tree.
 Otherwise, render a `<p>` element with the appropriate style.
 
 ```css
@@ -48,76 +47,53 @@ div.tree-element:before {
 ```
 
 ```jsx
-class TreeView extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      toggled: props.toggled
-    };
-    this.toggle = this.toggle.bind(this);
-  }
+function TreeView({
+  data,
+  toggled = true,
+  name = null,
+  isLast = true,
+  isChildElement = false,
+  isParentToggled = true
+}) {
+  const [isToggled, setIsToggled] = React.useState(toggled);
 
-  toggle() {
-    this.setState(state => ({ toggled: !state.toggled }));
-  }
-
-  render() {
-    return (
-      <div
-        style={{ marginLeft: this.props.isChildElement ? 16 : 4 + "px" }}
-        className={
-          this.props.isParentToggled ? "tree-element" : "tree-element collapsed"
-        }
-      >
-        <span
-          className={this.state.toggled ? "toggler" : "toggler closed"}
-          onClick={this.toggle}
-        />
-        {this.props.name ? (
-          <strong>&nbsp;&nbsp;{this.props.name}: </strong>
-        ) : (
-          <span>&nbsp;&nbsp;</span>
-        )}
-        {Array.isArray(this.props.data) ? "[" : "{"}
-        {!this.state.toggled && "..."}
-        {Object.keys(this.props.data).map(
-          (v, i, a) =>
-            typeof this.props.data[v] == "object" ? (
-              <TreeView
-                data={this.props.data[v]}
-                isLast={i === a.length - 1}
-                name={Array.isArray(this.props.data) ? null : v}
-                isChildElement
-                isParentToggled={
-                  this.props.isParentToggled && this.state.toggled
-                }
-              />
-            ) : (
-              <p
-                style={{ marginLeft: 16 + "px" }}
-                className={
-                  this.state.toggled ? "tree-element" : "tree-element collapsed"
-                }
-              >
-                {Array.isArray(this.props.data) ? "" : <strong>{v}: </strong>}
-                {this.props.data[v]}
-                {i === a.length - 1 ? "" : ","}
-              </p>
-            )
-        )}
-        {Array.isArray(this.props.data) ? "]" : "}"}
-        {!this.props.isLast ? "," : ""}
-      </div>
-    );
-  }
-}
-
-TreeView.defaultProps = {
-  isLast: true,
-  toggled: true,
-  name: null,
-  isChildElement: false,
-  isParentToggled: true
+  return (
+    <div
+      style={{ marginLeft: isChildElement ? 16 : 4 + "px" }}
+      className={isParentToggled ? "tree-element" : "tree-element collapsed"}
+    >
+      <span
+        className={isToggled ? "toggler" : "toggler closed"}
+        onClick={() => setIsToggled(!isToggled)}
+      />
+      {name ? <strong>&nbsp;&nbsp;{name}: </strong> : <span>&nbsp;&nbsp;</span>}
+      {Array.isArray(data) ? "[" : "{"}
+      {!isToggled && "..."}
+      {Object.keys(data).map(
+        (v, i, a) =>
+          typeof data[v] == "object" ? (
+            <TreeView
+              data={data[v]}
+              isLast={i === a.length - 1}
+              name={Array.isArray(data) ? null : v}
+              isChildElement
+              isParentToggled={isParentToggled && isToggled}
+            />
+          ) : (
+            <p
+              style={{ marginLeft: 16 + "px" }}
+              className={isToggled ? "tree-element" : "tree-element collapsed"}
+            >
+              {Array.isArray(data) ? "" : <strong>{v}: </strong>}
+              {data[v]}
+              {i === a.length - 1 ? "" : ","}
+            </p>
+          )
+      )}
+      {Array.isArray(data) ? "]" : "}"}
+      {!isLast ? "," : ""}
+    </div>
+  );
 }
 ```
 
