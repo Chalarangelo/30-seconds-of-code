@@ -1001,45 +1001,37 @@ ReactDOM.render(
 
 Renders a ticker component.
 
-- The ticker state is initially set to zero 
-- When the `Tick!` button is clicked, `timer` is incremented periodically at the given `interval`
-- When the `Reset` button is clicked, the value of the timer is set to zero and the `setInterval` is cleared
-- The `setInterval` is cleared once the desired `time` is reached
-- `time` and `interval` are the required props
+Use the `React.useState()` hook to initialize the `ticker` state variable to `0`.
+Define two methods, `tick` and `reset`, that will periodically increment `timer` based on `interval` and reset `interval` respectively.
+Return a `<div>` with two `<button>` elements, each of which calls `tick` and `reset` respectively.
 
 ```jsx
-class Ticker extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {ticker: 0}
-		this.interval = null
-	}
+function Ticker(props) {
+  const [ticker, setTicker] = React.useState(0);
+  let interval = null;
 
-	tick = () => {
-		this.reset()
-		this.interval = setInterval(() => {
-			if (this.state.ticker < this.props.times) {
-				this.setState(({ ticker }) => ({ticker: ticker + 1}))
-			}else{
-				clearInterval(this.interval)
-			}
-		}, this.props.interval)
-	}
+  const tick = () => {
+    reset();
+    interval = setInterval(() => {
+      if (ticker < props.times) 
+        setTicker(ticker + 1);
+      else 
+        clearInterval(interval);
+    }, props.interval);
+  }
 
-	reset = () => {
-		this.setState({ticker: 0})
-		clearInterval(this.interval)
-	}
+  const reset = () => {
+    setTicker(0);
+    clearInterval(interval);
+  }
 
-	render() {
-		return (
-			<div>
-				<span style={{fontSize: 100}}>{this.state.ticker}</span>       
-				<button onClick={this.tick}>Tick!</button>
-				<button onClick={this.reset}>Reset</button>
-			</div>
-		);
-	}
+  return (
+    <div>
+      <span style={{ fontSize: 100 }}>{this.state.ticker}</span>
+      <button onClick={this.tick}>Tick!</button>
+      <button onClick={this.reset}>Reset</button>
+    </div>
+  );
 }
 ```
 
@@ -1057,49 +1049,30 @@ ReactDOM.render(<Ticker times={5} interval={1000} />, document.getElementById('r
 
 Renders a toggle component.
 
-Initialize `state.isToggleOn` to `false`, bind the `handleClick` method to the component's context.
+Use the `React.useState()` to initialize the `isToggleOn` state variable to `false`.
 Use an object, `style`, to hold the styles for individual components and their states.
-Create a method, `handleClick`, which uses `Component.prototype.setState` to change the component's `state.toggleOn`.
-In the `render()` method, destructure `state` and `style`, create a `<button>` that alters the component's `state` and determine the appearance of the content based on `state.isToggleOn`, applying the appropriate CSS rules from the `style` object.
+Return a `<button>` that alters the component's `isToggledOn` when its `onClick` event is fired and determine the appearance of the content based on `isToggleOn`, applying the appropriate CSS rules from the `style` object.
 
 ```jsx
-class Toggle extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isToggleOn: false
-    };
-    this.style = {
-      on: {
-        backgroundColor: 'green'
-      },
-      off: {
-        backgroundColor: 'grey'
-      }
-    };
+function Toggle(props) {
+  const [isToggleOn, setIsToggleOn] = React.useState(false);
+  style = {
+    on: {
+      backgroundColor: "green"
+    },
+    off: {
+      backgroundColor: "grey"
+    }
+  };
 
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick() {
-    this.setState(state => ({
-      isToggleOn: !state.isToggleOn
-    }));
-  }
-
-  render() {
-    const { isToggleOn } = this.state;
-    const { on, off } = this.style;
-
-    return (
-      <button
-        onClick={this.handleClick}
-        style={isToggleOn ? on : off}
-      >
-        {isToggleOn ? 'ON' : 'OFF'}
-      </button>
-    );
-  }
+  return (
+    <button
+      onClick={() => setIsToggleOn(!isToggleOn)}
+      style={isToggleOn ? style.on : style.off}
+    >
+      {isToggleOn ? "ON" : "OFF"}
+    </button>
+  );
 }
 ```
 
@@ -1117,67 +1090,48 @@ ReactDOM.render(<Toggle />, document.getElementById('root'));
 
 Renders a tooltip component.
 
-Set the `state` of the component to `show: false` initially, define an object, `style`, to hold the styles for individual components and their states.
-Create a method, `toggleTooltip`, which uses `this.setState` to change the state's `show` property from `true` to `false` and vice versa.
-Bind `showTooltip` and `hideTooltip` to the component's context with the respective values of `true` and `false`.
-In the `render()` method, compute if the tooltip should be shown or hidden, render the content of the tooltip and bind the `onMouseEnter` and `onMouseLeave` events to `showTooltip` and `hideTooltip` respectively.
+Use the `React.useState()` hook to create the `show` variable and initialize it to `false`.
+Return a `<div>` element that contains the `<div>` that will be the tooltip and the `children` passed to the component.
+Handle the `onMouseEnter` and `onMouseLeave` methods, by altering the value of the `show` variable.
  
+```css
+.tooltip {
+  position: relative;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  visibility: hidden;
+  padding: 5px;
+  border-radius: 5px;
+}
+.tooltip-arrow {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.7) transparent transparent;
+}
+```
+
 ```jsx
-class Tooltip extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      show: false
-    };
-    this.style = {
-      tooltip: {
-        position: 'relative',
-        backgroundColor: "rgba(0,0,0,0.7)",
-        color: "white",
-        visibility: "hidden",
-        width: "fit-content",
-        padding: 5,
-        borderRadius: 5
-      },
-      tooltipArrow: {
-        position: 'absolute',
-        top: '100%',
-        left: '50%',
-        borderWidth: 5,
-        borderStyle: 'solid',
-        borderColor: "rgba(0,0,0,0.7) transparent transparent",
-      },
-      visible: {
-        visibility: "visible"
-      },
-    };
-    this.showTooltip = this.toggleTooltip.bind(this, true);
-    this.hideTooltip = this.toggleTooltip.bind(this, false);
-  }
+function Tooltip({ children, text, ...rest }) {
+  const [show, setShow] = React.useState(false);
 
-  toggleTooltip = tooltipState => {
-    this.setState({
-      show: tooltipState
-    });
-  };
-
-  render() {
-    const { children, text, ...rest } = this.props;
-    const { show } = this.state;
-    const { visible, tooltip, tooltipArrow } = this.style;
-    const showTooltip = show ? visible : {};
-    return (
-      <div>
-        <div style={{ ...tooltip, ...showTooltip }}>
-          {text}
-          <span style={tooltipArrow}/>
-        </div>
-        <div {...rest} onMouseEnter={this.showTooltip} onMouseLeave={this.hideTooltip}>
-          {children}
-        </div>
+  return (
+    <div>
+      <div className="tooltip" style={show ? { visibility: "visible" } : {}}>
+        {text}
+        <span className="tooltip-arrow" />
       </div>
-    );
-  }
+      <div
+        {...rest}
+        onMouseEnter={() => setShow(true)}
+        onMouseLeave={() => setShow(false)}
+      >
+        {children}
+      </div>
+    </div>
+  );
 }
 ```
 
