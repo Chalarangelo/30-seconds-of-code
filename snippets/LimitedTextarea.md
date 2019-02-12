@@ -41,7 +41,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-<!-- tags: input,state,class -->
+<!-- tags: input,state,effect -->
 
 <!-- expertise: 0 -->
 

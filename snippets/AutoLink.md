@@ -33,6 +33,6 @@ ReactDOM.render(
 );
 ```
 
-<!-- tags: string,fragment,functional -->
+<!-- tags: string,fragment,regexp -->
 
 <!-- expertise: 2 -->

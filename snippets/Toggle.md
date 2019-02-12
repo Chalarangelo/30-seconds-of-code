@@ -33,6 +33,6 @@ function Toggle(props) {
 ReactDOM.render(<Toggle />, document.getElementById('root'));
 ```
 
-<!-- tags: visual,state,class  -->
+<!-- tags: visual,state  -->
 
 <!-- expertise: 0 -->

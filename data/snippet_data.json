@@ -11,7 +11,7 @@
     "tags": [
       "string",
       "fragment",
-      "functional"
+      "regexp"
     ],
     "notes": []
   },
@@ -28,7 +28,7 @@
       "visual",
       "children",
       "state",
-      "class"
+      "effect"
     ],
     "notes": []
   },
@@ -44,8 +44,7 @@
     "tags": [
       "visual",
       "children",
-      "state",
-      "class"
+      "state"
     ],
     "notes": []
   },
@@ -59,8 +58,7 @@
     ],
     "expertise": 0,
     "tags": [
-      "array",
-      "functional"
+      "array"
     ],
     "notes": []
   },
@@ -74,8 +72,7 @@
     ],
     "expertise": 0,
     "tags": [
-      "array",
-      "functional"
+      "array"
     ],
     "notes": []
   },
@@ -93,7 +90,7 @@
       "visual",
       "input",
       "state",
-      "class"
+      "effect"
     ],
     "notes": []
   },
@@ -107,8 +104,7 @@
     ],
     "expertise": 0,
     "tags": [
-      "input",
-      "functional"
+      "input"
     ],
     "notes": []
   },
@@ -124,7 +120,7 @@
     "tags": [
       "input",
       "state",
-      "class"
+      "effect"
     ],
     "notes": []
   },
@@ -138,8 +134,7 @@
     ],
     "expertise": 0,
     "tags": [
-      "visual",
-      "functional"
+      "visual"
     ],
     "notes": []
   },
@@ -154,12 +149,11 @@
     "expertise": 1,
     "tags": [
       "array",
-      "object",
-      "functional"
+      "object"
     ],
     "notes": [
       "This component does not work with nested objects and will break if there are nested objects inside any of the properties specified in `propertyNames`.",
-      "<!-tags: array,object,functional -->",
+      "<!-tags: array,object -->",
       "<!-expertise: 1 -->"
     ]
   },
@@ -174,8 +168,7 @@
     "expertise": 0,
     "tags": [
       "input",
-      "state",
-      "class"
+      "state"
     ],
     "notes": []
   },
@@ -189,8 +182,7 @@
     ],
     "expertise": 0,
     "tags": [
-      "input",
-      "functional"
+      "input"
     ],
     "notes": []
   },
@@ -207,8 +199,7 @@
       "visual",
       "children",
       "input",
-      "state",
-      "class"
+      "state"
     ],
     "notes": []
   },
@@ -224,8 +215,8 @@
     "expertise": 1,
     "tags": [
       "visual",
-      "children",
-      "class"
+      "state",
+      "children"
     ],
     "notes": []
   },
@@ -239,8 +230,7 @@
     ],
     "expertise": 0,
     "tags": [
-      "input",
-      "functional"
+      "input"
     ],
     "notes": []
   },
@@ -255,8 +245,7 @@
     "expertise": 1,
     "tags": [
       "visual",
-      "state",
-      "class"
+      "state"
     ],
     "notes": []
   },
@@ -271,8 +260,7 @@
     "expertise": 0,
     "tags": [
       "visual",
-      "state",
-      "class"
+      "state"
     ],
     "notes": []
   },
@@ -289,8 +277,7 @@
     "tags": [
       "visual",
       "state",
-      "children",
-      "class"
+      "children"
     ],
     "notes": []
   },
@@ -307,9 +294,8 @@
     "tags": [
       "object",
       "visual",
-      "children",
       "state",
-      "class"
+      "recursion"
     ],
     "notes": []
   }

@@ -36,6 +36,6 @@ ReactDOM.render(
 );
 ```
 
-<!-- tags: array,functional -->
+<!-- tags: array -->
 
 <!-- expertise: 0 -->

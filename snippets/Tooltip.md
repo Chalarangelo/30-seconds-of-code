@@ -55,6 +55,6 @@ function Tooltip({ children, text, ...rest }) {
  );
 ```
  
-<!-- tags: visual,state,children,class -->
+<!-- tags: visual,state,children -->
 
 <!-- expertise: 1 -->

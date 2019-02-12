@@ -101,6 +101,6 @@ function FileDrop(props) {
 ReactDOM.render(<FileDrop handleDrop={console.log}/>, document.getElementById('root'));
 ```
 
-<!-- tags: visual,input,state,class -->
+<!-- tags: visual,input,state,effect -->
 
 <!-- expertise: 2 -->

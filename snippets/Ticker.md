@@ -40,6 +40,6 @@ function Ticker(props) {
 ReactDOM.render(<Ticker times={5} interval={1000} />, document.getElementById('root'));
 ```
 
-<!-- tags: visual,state,class -->
+<!-- tags: visual,state -->
 
 <!-- expertise: 1 -->

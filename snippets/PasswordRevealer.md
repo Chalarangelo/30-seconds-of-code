@@ -26,7 +26,7 @@ function PasswordRevealer({ value }) {
 ReactDOM.render(<PasswordRevealer />, document.getElementById('root'));
 ```
 
-<!--tags: input,state,class -->
+<!--tags: input,state -->
 
 <!--expertise: 0 -->
 
