@@ -79,7 +79,7 @@ Here's what you can do to help:
 - Use strict equality checking (`===` and `!==` instead of `==` and `!=`), unless you specifically have reason not to.
 - Prefer using the ternary operator (`condition ? trueResult : falseResult`) instead of `if else` statements whenever possible.
 - Avoid nesting ternary operators (but you can do it if you feel like you should).
-- You should define multiple variables on the same line (e.g. `const x = 0, y = 0`) on the same line whenever possible.
+- You should define multiple variables on the same line (e.g. `const x = 0, y = 0`) whenever possible.
 - Do not use trailing or leading underscores in variable names.
 - Use dot notation (`object.property`) for object properties, when possible. Use bracket notation (`object[variable]`) when accessing object properties using a variable.
 - Use arrow functions as much as possible, except when you can't.
