@@ -2,34 +2,29 @@
 
 Renders a textarea component with a character limit.
 
-Use the `value` and `limit` props to pass in the initial `content` and the `limit` values for the LimitedTextArea component.
-Create a method, `handleChange`, which trims the `event.target.value` data if necessary and updates `content` with the new entered content.
-In the`render()` method, use a`<div>` to wrap both the`<textarea>` and the `<p>` element that displays the character count and bind the `onChange` event of the `<textarea>` to the `handleChange` method.
+Use the `React.useState()` hook to create the `content` state variable and set its value to `value`.
+Create a method `setFormattedContent`, which trims the content of the input if it's longer than `limit`.
+Use the `React.useEffect()` hook to call the `setFormattedContent` method on the value of the `content` state variable.
+Use a`<div>` to wrap both the`<textarea>` and the `<p>` element that displays the character count and bind the `onChange` event of the `<textarea>` to call `setFormattedContent` with the value of `event.target.value`.
 
 ```jsx
-function LimitedTextArea(props) {
-  const { rows, cols, value, limit } = props;
+function LimitedTextarea({ rows, cols, value, limit }) {
+  const [content, setContent] = React.useState(value);
 
   const setFormattedContent = text => {
     text.length > limit ? setContent(text.slice(0, limit)) : setContent(text);
   };
 
-  const [content, setContent] = useState(value);
-  // Run once to test if the initial value is greater than the limit
-  useEffect(() => {
+  React.useEffect(() => {
     setFormattedContent(content);
   }, []);
-
-  const handleChange = event => {
-    setFormattedContent(event.target.value);
-  };
 
   return (
     <div>
       <textarea
         rows={rows}
         cols={cols}
-        onChange={handleChange}
+        onChange={event => setFormattedContent(event.target.value)}
         value={content}
       />
       <p>
