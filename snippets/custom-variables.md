@@ -39,8 +39,6 @@ Reuse variables throughout the document using the `var(--variable-name)` functio
 
 #### Browser support
 
-<span class="snippet__support-note">✅ No caveats.</span>
-
 - https://caniuse.com/#feat=css-variables
 
 <!-- tags: other -->

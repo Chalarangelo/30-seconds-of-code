@@ -46,6 +46,4 @@ Reveals an interactive popout menu on hover and focus.
 
 #### Browser support
 
-<span class="snippet__support-note">✅ No caveats.</span>
-
 <!-- tags: interactivity -->

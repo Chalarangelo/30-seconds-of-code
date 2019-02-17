@@ -37,6 +37,4 @@ falls back to the next if it cannot find the font (on the system or defined in C
 
 #### Browser support
 
-<span class="snippet__support-note">✅ No caveats.</span>
-
 <!-- tags: visual -->

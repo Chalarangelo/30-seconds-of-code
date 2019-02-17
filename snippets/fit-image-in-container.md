@@ -40,8 +40,6 @@ Changes the fit and position of an image within its container while preserving i
 
 #### Browser support
 
-<span class="snippet__support-note">✅ No caveats.</span>
-
 - https://caniuse.com/#feat=object-fit
 
 <!-- tags: layout, visual -->

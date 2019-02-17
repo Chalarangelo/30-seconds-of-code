@@ -55,8 +55,6 @@ The :fullscreen CSS pseudo-class represents an element that's displayed when the
 
 #### Browser support
 
-<span class="snippet__support-note">83.38</span>
-
 - https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen
 - https://caniuse.com/#feat=fullscreen
 

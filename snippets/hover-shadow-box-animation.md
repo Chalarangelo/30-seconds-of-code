@@ -42,8 +42,6 @@ Creates a shadow box around the text whern it is hovered.
 
 #### Browser Support
 
-<span class="snippet__support-note">✅ No caveats.</span>
-
 - https://caniuse.com/#feat=transforms3d
 - https://caniuse.com/#feat=css-transitions
 

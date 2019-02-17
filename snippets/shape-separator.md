@@ -40,8 +40,6 @@ Uses an SVG shape to separate two different blocks to create more a interesting 
 
 #### Browser support
 
-<span class="snippet__support-note">✅ No caveats.</span>
-
 - https://caniuse.com/#feat=svg
 
 <!-- tags: visual -->

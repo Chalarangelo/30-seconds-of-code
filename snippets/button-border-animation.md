@@ -56,7 +56,5 @@ Use the `:before` and `:after` pseduo-elements as borders that animate on hover.
 
 #### Browser support
 
-<span class="snippet__support-note">✅ No caveats.</span>
-
 <!-- tags: animation -->
 <!-- date: 2018-10-30 -->
