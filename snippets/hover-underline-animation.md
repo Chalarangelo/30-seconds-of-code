@@ -57,8 +57,6 @@ Creates an animated underline effect when the text is hovered over.
 
 #### Browser support
 
-<span class="snippet__support-note">✅ No caveats.</span>
-
 - https://caniuse.com/#feat=transforms2d
 - https://caniuse.com/#feat=css-transitions
 

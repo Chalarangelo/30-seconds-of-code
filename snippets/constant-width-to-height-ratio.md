@@ -40,6 +40,4 @@ This method also allows content to be placed inside the element normally.
 
 #### Browser support
 
-<span class="snippet__support-note">✅ No caveats.</span>
-
 <!-- tags: layout -->

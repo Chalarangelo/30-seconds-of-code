@@ -28,7 +28,7 @@
     "node-sass": "^4.9.3",
     "nodemon": "^1.18.4",
     "normalize.css": "^8.0.0",
-    "parcel-bundler": "^1.10.3",
+    "parcel-bundler": "^1.11.0",
     "prettier": "^1.14.3",
     "pretty": "^2.0.0",
     "prismjs": "^1.11.0",

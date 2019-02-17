@@ -41,6 +41,6 @@ Note: Fixed height and width on parent element is for the demo only.
 
 <span class="snippet__support-note">⚠️ Requires prefix for full support.</span>
 
-- https://caniuse.com/#search=transform
+- https://caniuse.com/#feat=transforms2d
 
 <!-- tags: layout -->

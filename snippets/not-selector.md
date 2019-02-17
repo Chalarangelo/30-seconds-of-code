@@ -44,8 +44,6 @@ the `:last-child`.
 
 #### Browser support
 
-<span class="snippet__support-note">✅ No caveats.</span>
-
 - https://caniuse.com/#feat=css-sel3
 
 <!-- tags: visual -->

@@ -39,8 +39,6 @@ A bulletproof way to completely hide an element visually and positionally in the
 
 #### Browser support
 
-<span class="snippet__support-note">✅ No caveats.</span>
-
 (Although `clip` technically has been depreciated, the newer `clip-path` currently has very limited browser support.)
 
 - https://caniuse.com/#search=clip

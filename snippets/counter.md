@@ -50,8 +50,6 @@ You can create a ordered list using any type of HTML.
 
 #### Browser support
 
-<span class="snippet__support-note">✅ No caveats.</span>
-
 - https://caniuse.com/#feat=css-counters
 
 <!-- tags: visual, other -->

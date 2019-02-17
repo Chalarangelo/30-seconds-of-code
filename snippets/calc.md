@@ -48,8 +48,6 @@ So now it's possible using calc():
 
 #### Browser support
 
-<span class="snippet__support-note">✅ No caveats.</span>
-
 - https://caniuse.com/#feat=calc
 
 <!-- tags: other -->

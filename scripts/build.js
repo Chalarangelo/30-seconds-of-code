@@ -95,7 +95,16 @@ for (const snippetFile of fs.readdirSync(SNIPPETS_PATH)) {
   const featUsageShares = (snippetData.match(/https?:\/\/caniuse\.com\/#feat=.*/g) || []).map(
     feat => {
       const featData = caniuseDb.data[feat.match(/#feat=(.*)/)[1]]
-      return featData ? Number(featData.usage_perc_y + featData.usage_perc_a) : 100
+      // caniuse doesn't count "untracked" users, which makes the overall share appear much lower
+      // than it probably is. Most of these untracked browsers probably support these features.
+      // Currently it's around 5.3% untracked, so we'll use 4% as probably supporting the feature.
+      // Also the npm package appears to be show higher usage % than the main website, this shows
+      // about 0.2% lower than the main website when selecting "tracked users" (as of Feb 2019).
+      const UNTRACKED_PERCENT = 4
+      const usage = featData
+        ? Number(featData.usage_perc_y + featData.usage_perc_a) + UNTRACKED_PERCENT
+        : 100
+      return Math.min(100, usage)
     }
   )
   const browserSupportHeading = snippetEl.querySelector('h4:last-of-type')
@@ -103,7 +112,7 @@ for (const snippetFile of fs.readdirSync(SNIPPETS_PATH)) {
     createElement(`
       <div>
         <div class="snippet__browser-support">
-          ${featUsageShares.length ? Math.min(...featUsageShares).toPrecision(3) : '99+'}%
+          ${featUsageShares.length ? Math.min(...featUsageShares).toPrecision(3) : 100}%
         </div>
       </div>
     `)

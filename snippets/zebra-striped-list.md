@@ -32,8 +32,6 @@ Note that you can use it to apply different styles to other HTML elements like d
 
 #### Browser support
 
-<span class="snippet__support-note">✅ No caveats.</span>
-
 https://caniuse.com/#feat=css-sel3
 
 <!-- tags: visual -->
