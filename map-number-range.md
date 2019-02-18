@@ -2,7 +2,7 @@
 
 Maps a number from one range to another range.
 
-Returns a mapped num from the in range to the out range. 
+Returns the mapped num from the in range to the out range. 
 
 ```js
 const mapNumRange = (num, in_min, in_max, out_min, out_max) => {
