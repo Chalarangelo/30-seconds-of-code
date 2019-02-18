@@ -160,7 +160,7 @@
   {
     "name": "PasswordRevealer.md",
     "title": "PasswordRevealer",
-    "text": "Renders a password input field with a reveal button.\n\nUse the `React.useState()` hook to create the `shown` state vairable and set its value to `false`.\nUse a`<div>` to wrap both the`<input>` and the `<button>` element that toggles the type of the input field between `\"text\"` and `\"password\"`.\n\n",
+    "text": "Renders a password input field with a reveal button.\n\nUse the `React.useState()` hook to create the `shown` state variable and set its value to `false`.\nUse a`<div>` to wrap both the`<input>` and the `<button>` element that toggles the type of the input field between `\"text\"` and `\"password\"`.\n\n",
     "codeBlocks": [
       "```jsx\nfunction PasswordRevealer({ value }) {\n  const [shown, setShown] = React.useState(false);\n\n  return (\n    <div>\n      <input\n        type={shown ? \"text\" : \"password\"}\n        value={value}\n        onChange={() => {}}\n      />\n      <button onClick={() => setShown(!shown)}>Show/Hide</button>\n    </div>\n  );\n}\n```",
       "```jsx\nReactDOM.render(<PasswordRevealer />, document.getElementById('root'));\n```"
