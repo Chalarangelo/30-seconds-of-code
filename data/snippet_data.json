@@ -125,6 +125,22 @@
     "notes": []
   },
   {
+    "name": "LimitedWordTextarea.md",
+    "title": "LimitedWordTextarea",
+    "text": "Renders a textarea component with a word limit.\n\nUse the `React.useState()` hook to create the `content` and `wordCount` state variables and set their values to `value` and `0` respectively.\nCreate a method `setFormattedContent`, which uses `String.prototype.split(' ')` to turn the input into an array of words and check if the result of applying `Array.prototype.filter(Boolean)` has a `length` longer than `limit`.\nIf the afforementioned `length` exceeds the `limit`, trim the input, otherwise return the raw input, updating `content` and `wordCount` accordingly in both cases.\nUse the `React.useEffect()` hook to call the `setFormattedContent` method on the value of the `content` state variable.\nUse a`<div>` to wrap both the`<textarea>` and the `<p>` element that displays the character count and bind the `onChange` event of the `<textarea>` to call `setFormattedContent` with the value of `event.target.value`.\n\n",
+    "codeBlocks": [
+      "```jsx\nfunction LimitedWordTextarea({ rows, cols, value, limit }) {\n  const [content, setContent] = React.useState(value);\n  const [wordCount, setWordCount] = React.useState(0);\n\n  const setFormattedContent = text => {\n    let words = text.split(\" \");\n    if (words.filter(Boolean).length > limit) {\n      setContent(\n        text\n          .split(\" \")\n          .slice(0, limit)\n          .join(\" \")\n      );\n      setWordCount(limit);\n    } else {\n      setContent(text);\n      setWordCount(words.filter(Boolean).length);\n    }\n  };\n\n  React.useEffect(() => {\n    setFormattedContent(content);\n  }, []);\n\n  return (\n    <div>\n      <textarea\n        rows={rows}\n        cols={cols}\n        onChange={event => setFormattedContent(event.target.value)}\n        value={content}\n      />\n      <p>\n        {wordCount}/{limit}\n      </p>\n    </div>\n  );\n}\n```",
+      "```jsx\nReactDOM.render(\n  <LimitedWordTextArea limit={5} value='Hello there!' />,\n  document.getElementById('root')\n);\n```"
+    ],
+    "expertise": 0,
+    "tags": [
+      "input",
+      "state",
+      "effect"
+    ],
+    "notes": []
+  },
+  {
     "name": "Mailto.md",
     "title": "Mailto",
     "text": "Renders a link formatted to send an email.\n\nDestructure the component's props, use `email`, `subject` and `body` to create a `<a>` element with an appropriate `href` attribute.\nRender the link with `props.children` as its content.\n\n",
