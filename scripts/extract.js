@@ -21,23 +21,7 @@ attempt("snippet_data.json generation", () => {
       .split("\n")
       .map(v => v.replace(/[*-] /g, ""))
       .filter(v => v.trim() !== "")
-    // const answer = getSection("#### Answer", contents)
-
-    // const goodToHear = getSection("#### Good to hear", contents, false)
-    //   .split("\n")
-    //   .map(v => v.replace(/[*-] /g, ""))
-    //   .filter(v => v.trim() !== "")
-
-    // const links = getSection("##### Additional links", contents)
-    //   .split("\n")
-    //   .filter(v =>
-    //     /(\/\*[\w\'\s\r\n\*]*\*\/)|(\/\/[\w\s\']*)|(\<![\-\-\s\w\>\/]*\>)/.test(
-    //       v
-    //     )
-    //   )
-    //   .map(v => v.replace(/[*-] /g, ""))
-    //   .filter(v => v.trim() !== "" && !v.includes("tags"))
-
+    
     return {
       name,
       title,
