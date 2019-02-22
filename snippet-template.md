@@ -6,21 +6,16 @@ Explain briefly how the snippet works.
 
 ```jsx
 function ComponentName(props) {
+  const [state, setState] = React.useState(null);
+  React.useEffect(() => {
+    setState(0);
+  });
   return <div>{props}</div>;
 };
 ```
-<!-- OR -->
-```jsx
-class ComponentName extends React.Component {
-  constructor(props){}
-  render(){
-    return <div>{props}</div>;
-  }
-}
-```
 
 ```jsx
-ReactDOM.render(<ComponentName />, mountNode);
+ReactDOM.render(<ComponentName />, document.getElementById("root"));
 ```
 
 <!-- OPTIONAL -->

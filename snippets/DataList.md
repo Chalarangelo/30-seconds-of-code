@@ -21,6 +21,6 @@ ReactDOM.render(<DataList data={names}/>, document.getElementById('root'));
 ReactDOM.render(<DataList data={names} isOrdered/>, document.getElementById('root'));
 ```
 
-<!-- tags: array,functional -->
+<!-- tags: array -->
 
 <!-- expertise: 0 -->

@@ -2,36 +2,23 @@
 
 Renders a password input field with a reveal button.
 
-Initially set `state.shown` to `false` to ensure that the password is not shown by default.
-Create a method, `toggleShown`, which uses `Component.prototype.setState` to change the input's state from shown to hidden and vice versa, bind it to the component's context.
-In the`render()` method, use a`<div>` to wrap both the`<input>` and the `<button>` element that toggles the type of the input field.
-Finally, bind the `<button>`'s `onClick` event to the `toggleShown` method.
+Use the `React.useState()` hook to create the `shown` state variable and set its value to `false`.
+Use a`<div>` to wrap both the`<input>` and the `<button>` element that toggles the type of the input field between `"text"` and `"password"`.
 
 ```jsx
-class PasswordRevealer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      shown: false
-    };
-    this.toggleShown = this.toggleShown.bind(this);
-  }
+function PasswordRevealer({ value }) {
+  const [shown, setShown] = React.useState(false);
 
-  toggleShown() {
-    this.setState(state => ({ shown: !state.shown }));
-  }
-
-  render() {
-    return (
-      <div>
-        <input
-          type={this.state.shown ? 'text' : 'password'}
-          value={this.props.value}
-        />
-        <button onClick={this.toggleShown}>Show/Hide</button>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <input
+        type={shown ? "text" : "password"}
+        value={value}
+        onChange={() => {}}
+      />
+      <button onClick={() => setShown(!shown)}>Show/Hide</button>
+    </div>
+  );
 }
 ```
 
@@ -39,7 +26,7 @@ class PasswordRevealer extends React.Component {
 ReactDOM.render(<PasswordRevealer />, document.getElementById('root'));
 ```
 
-<!--tags: input,state,class -->
+<!--tags: input,state -->
 
 <!--expertise: 0 -->
 
