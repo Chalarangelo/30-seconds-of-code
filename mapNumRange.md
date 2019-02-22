@@ -2,10 +2,9 @@
 
 Maps a number from one range to another range.
 
-Returns the mapped num from the in range to the out range. 
-
+Returns `num` mapped between `out_min` to `out_max` from `in_min` to `in_max` 
 ```js
-const mapNumRange = (num, in_min, in_max, out_min, out_max) => {return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;}
+const distance = (num, in_min, in_max, out_min, out_max) => (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 ```
 
 ```js
