@@ -49,6 +49,21 @@
     "notes": []
   },
   {
+    "name": "CountDown.md",
+    "title": "CountDown",
+    "text": "Renders a countdown timer that prints a message when it reaches zero.\n\nUse object destructuring to set defaults for the `hours`, `minutes` and `seconds` props.\nUse the `React.useState()` hook to create the `time`, `paused` and `over` state variables and set their values to the values of the passed props, `false` and `false` respectively.\nCreate a method `tick`, that updates the value of `time` based on the current value (i.e. decreasing the time by one second).\nIf `paused` or `over` is `true`, `tick` will return immediately.\nCreate a method `reset`, that resets all state variables to their initial states.\nUse the the `React.useEffect()` hook to call the `tick` method every second via the use of `setInterval()` and use `clearInterval()` to cleanup when the component is unmounted.\nUse a `<div>` to wrap a `<p>` element with the textual representation of the components `time` state variable, as well as two `<button>` elements that will pause/unpause and restart the timer respectively.\nIf `over` is `true`, the timer will display a message instead of the value of `time`.\n\n",
+    "codeBlocks": [
+      "```jsx\nfunction CountDown({ hours = 0, minutes = 0, seconds = 0 }) {\n  const [paused, setPaused] = React.useState(false);\n  const [over, setOver] = React.useState(false);\n  const [time, setTime] = React.useState({\n    hours: parseInt(hours),\n    minutes: parseInt(minutes),\n    seconds: parseInt(seconds)\n  });\n\n  const tick = () => {\n    if (paused || over) return;\n    if (time.hours == 0 && time.minutes == 0 && time.seconds == 0)\n      setOver(true);\n    else if (time.minutes == 0 && time.seconds == 0)\n      setTime({\n        hours: time.hours - 1,\n        minutes: 59,\n        seconds: 59\n      });\n    else if (time.seconds == 0)\n      setTime({\n        hours: time.hours,\n        minutes: time.minutes - 1,\n        seconds: 59\n      });\n    else\n      setTime({\n        hours: time.hours,\n        minutes: time.minutes,\n        seconds: time.seconds - 1\n      });\n  };\n\n  const reset = () => {\n    setTime({\n      hours: parseInt(hours),\n      minutes: parseInt(minutes),\n      seconds: parseInt(seconds)\n    });\n    setPaused(false);\n    setOver(false);\n  };\n\n  React.useEffect(() => {\n    let timerID = setInterval(() => tick(), 1000);\n    return () => clearInterval(timerID);\n  });\n\n  return (\n    <div>\n      <p>{`${time.hours\n        .toString()\n        .padStart(2, \"0\")}:${time.minutes\n        .toString()\n        .padStart(2, \"0\")}:${time.seconds.toString().padStart(2, \"0\")}`}</p>\n      <div>{over ? \"Time's up!\" : \"\"}</div>\n      <button onClick={() => setPaused(!paused)}>\n        {paused ? \"Resume\" : \"Pause\"}\n      </button>\n      <button onClick={() => reset()}>Restart</button>\n    </div>\n  );\n}\n```",
+      "```jsx\nReactDOM.render(\n  <CountDown hours=\"1\" minutes=\"45\" />,\n  document.getElementById('root')\n);\n```"
+    ],
+    "expertise": 2,
+    "tags": [
+      "visual",
+      "state"
+    ],
+    "notes": []
+  },
+  {
     "name": "DataList.md",
     "title": "DataList",
     "text": "Renders a list of elements from an array of primitives.\n\nUse the value of the `isOrdered` prop to conditionally render a `<ol>` or `<ul>` list.\nUse `Array.prototype.map` to render every item in `data` as a `<li>` element, give it a `key` produced from the concatenation of the its index and value.\nOmit the `isOrdered` prop to render a `<ul>` list by default.\n\n",
