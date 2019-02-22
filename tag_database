@@ -179,6 +179,7 @@ longestItem:array,string,utility,intermediate
 lowercaseKeys:object,intermediate
 luhnCheck:math,utility,advanced
 mapKeys:object,function,intermediate
+mapNumRange:math,beginner
 mapObject:array,object,advanced
 mapString:string,array,function,utility,beginner
 mapValues:object,function,intermediate
