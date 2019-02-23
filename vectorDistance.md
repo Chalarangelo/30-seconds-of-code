@@ -2,12 +2,12 @@
 
 Returns the distance between two points.
 
-Splits the arguments array into two points. Use `Array.prototype.reduce()`,`Math.pow()` and `Math.sqrt()` to calculate the Euclidean distance between two vectors.
+Use `Array.prototype.reduce()`,`Math.pow()` and `Math.sqrt()` to calculate the Euclidean distance between two vectors.
 
 ```js
 const vectorDistance = (...coords) => {
-    let length = Math.trunc(coords.length/2);
-    let sum = coords.slice(0,length).reduce((accumulator,currentValue,currentIndex) => accumulator + (Math.pow(currentValue-coords[length+currentIndex],2)),0);
+    let pointLength = Math.trunc(coords.length/2);
+    let sum = coords.slice(0,pointLength).reduce((accumulator,currentValue,currentIndex) => accumulator + (Math.pow(currentValue-coords[pointLength+currentIndex],2)),0);
     return Math.sqrt(sum);
 }
 ```
