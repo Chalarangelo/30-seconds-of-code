@@ -8,17 +8,16 @@ Use `Object.keys(obj)` to iterate over the object's keys.
 Use `Array.prototype.reduce()` to create a new object with the same values and mapped keys using `fn`.
 
 ```js
-
 const deepMapKeys = (obj, f) =>
   Array.isArray(obj)
     ? obj.map(val => deepMapKeys(val, f))
     : typeof obj === 'object'
       ? Object.keys(obj).reduce((acc, current) => {
-        const val = obj[current];
-        acc[f(current)] =
+          const val = obj[current];
+          acc[f(current)] =
             val !== null && typeof val === 'object' ? deepMapKeys(val, f) : (acc[f(current)] = val);
-        return acc;
-      }, {})
+          return acc;
+        }, {})
       : obj;
 ```
 

@@ -314,6 +314,7 @@ _30s.average(1, 2, 3);
 * [`isPrime`](#isprime)
 * [`lcm`](#lcm)
 * [`luhnCheck`](#luhncheck-)
+* [`mapNumRange`](#mapnumrange)
 * [`maxBy`](#maxby)
 * [`median`](#median)
 * [`midpoint`](#midpoint)
@@ -668,14 +669,13 @@ const pipeAsyncFunctions = (...fns) => arg => fns.reduce((p, f) => p.then(f), Pr
 <summary>Examples</summary>
 
 ```js
-
 const sum = pipeAsyncFunctions(
   x => x + 1,
   x => new Promise(resolve => setTimeout(() => resolve(x + 2), 1000)),
   x => x + 3,
   async x => (await x) + 4
 );
-(async() => {
+(async () => {
   console.log(await sum(5)); // 15 (after one second)
 })();
 ```
@@ -2317,13 +2317,12 @@ Use `Array.prototype.filter()` to find array elements that return truthy values 
 The `func` is invoked with three arguments (`value, index, array`).
 
 ```js
-
 const remove = (arr, func) =>
   Array.isArray(arr)
     ? arr.filter(func).reduce((acc, val) => {
-      arr.splice(arr.indexOf(val), 1);
-      return acc.concat(val);
-    }, [])
+        arr.splice(arr.indexOf(val), 1);
+        return acc.concat(val);
+      }, [])
     : [];
 ```
 
@@ -5501,12 +5500,11 @@ Otherwise, return the product of `n` and the factorial of `n - 1`.
 Throws an exception if `n` is a negative number.
 
 ```js
-
 const factorial = n =>
   n < 0
     ? (() => {
-      throw new TypeError('Negative numbers are not allowed!');
-    })()
+        throw new TypeError('Negative numbers are not allowed!');
+      })()
     : n <= 1
       ? 1
       : n * factorial(n - 1);
@@ -5803,6 +5801,29 @@ const luhnCheck = num => {
 luhnCheck('4485275742308327'); // true
 luhnCheck(6011329933655299); //  false
 luhnCheck(123456789); // false
+```
+
+</details>
+
+<br>[⬆ Back to top](#contents)
+
+### mapNumRange
+
+Maps a number from one range to another range.
+
+Returns `num` mapped between `outMin`-`outMax` from `inMin`-`inMax`.
+
+```js
+const mapNumRange = (num, inMin, inMax, outMin, outMax) =>
+  ((num - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+
+mapNumRange(5, 0, 10, 0, 100); // 50
 ```
 
 </details>
@@ -6756,17 +6777,16 @@ Use `Object.keys(obj)` to iterate over the object's keys.
 Use `Array.prototype.reduce()` to create a new object with the same values and mapped keys using `fn`.
 
 ```js
-
 const deepMapKeys = (obj, f) =>
   Array.isArray(obj)
     ? obj.map(val => deepMapKeys(val, f))
     : typeof obj === 'object'
       ? Object.keys(obj).reduce((acc, current) => {
-        const val = obj[current];
-        acc[f(current)] =
+          const val = obj[current];
+          acc[f(current)] =
             val !== null && typeof val === 'object' ? deepMapKeys(val, f) : (acc[f(current)] = val);
-        return acc;
-      }, {})
+          return acc;
+        }, {})
       : obj;
 ```
 
@@ -6836,14 +6856,13 @@ Use the `in` operator to check if `target` exists in `obj`.
 If found, return the value of `obj[target]`, otherwise use `Object.values(obj)` and `Array.prototype.reduce()` to recursively call `dig` on each nested object until the first matching key/value pair is found.
 
 ```js
-
 const dig = (obj, target) =>
   target in obj
     ? obj[target]
     : Object.values(obj).reduce((acc, val) => {
-      if (acc !== undefined) return acc;
-      if (typeof val === 'object') return dig(val, target);
-    }, undefined);
+        if (acc !== undefined) return acc;
+        if (typeof val === 'object') return dig(val, target);
+      }, undefined);
 ```
 
 <details>
