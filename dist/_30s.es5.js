@@ -1364,6 +1364,9 @@
       return acc;
     }, {});
   };
+  var mapNumRange = function mapNumRange(num, inMin, inMax, outMin, outMax) {
+    return (num - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+  };
   var mapObject = function mapObject(arr, fn) {
     return function (a) {
       return a = [arr, arr.map(fn)], a[0].reduce(function (acc, val, ind) {
@@ -2787,6 +2790,7 @@
   exports.lowercaseKeys = lowercaseKeys;
   exports.luhnCheck = luhnCheck;
   exports.mapKeys = mapKeys;
+  exports.mapNumRange = mapNumRange;
   exports.mapObject = mapObject;
   exports.mapString = mapString;
   exports.mapValues = mapValues;
