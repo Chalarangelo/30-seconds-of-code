@@ -314,6 +314,7 @@ _30s.average(1, 2, 3);
 * [`isPrime`](#isprime)
 * [`lcm`](#lcm)
 * [`luhnCheck`](#luhncheck-)
+* [`mapNumRange`](#mapnumrange)
 * [`maxBy`](#maxby)
 * [`median`](#median)
 * [`midpoint`](#midpoint)
@@ -5803,6 +5804,27 @@ const luhnCheck = num => {
 luhnCheck('4485275742308327'); // true
 luhnCheck(6011329933655299); //  false
 luhnCheck(123456789); // false
+```
+
+</details>
+
+<br>[⬆ Back to top](#contents)
+
+### mapNumRange
+
+Maps a number from one range to another range.
+
+Returns `num` mapped between `outMin`-`outMax` from `inMin`-`inMax`.
+
+```js
+const mapNumRange = (num, inMin, inMax, outMin, outMax) => (num - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+mapNumRange(5,0,10,0,100); // 50
 ```
 
 </details>
