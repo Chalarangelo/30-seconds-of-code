@@ -332,6 +332,7 @@ URLJoin:string,utility,regexp,advanced
 UUIDGeneratorBrowser:browser,utility,random,intermediate
 UUIDGeneratorNode:node,utility,random,intermediate
 validateNumber:utility,math,intermediate
+vectorDistance:math,beginner
 when:function,intermediate
 without:array,beginner
 words:string,regexp,intermediate
