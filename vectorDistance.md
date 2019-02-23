@@ -1,8 +1,8 @@
 ### VectorDistance
 
-Explain briefly what the snippet does.
+Returns the distance between two points.
 
-Explain briefly how the snippet works.
+Splits the arguments array into two points. Use `Array.prototype.reduce()`,`Math.pow()` and `Math.sqrt()` to calculate the Euclidean distance between two vectors.
 
 ```js
 const vectorDistance = (...coords) => {
