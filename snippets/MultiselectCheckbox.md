@@ -29,7 +29,7 @@ const MultiCheckbox = ({ options, onChange }) => {
         data[key].checked = !item.checked;
       }
     });
-    updateOptions(data);
+    updateOptions([...data]);
     onChange(data);
   }
 
