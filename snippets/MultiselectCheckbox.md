@@ -65,3 +65,5 @@ ReactDOM.render(
 
 #### Notes:
 * The checkbox input in this case is kept as `readOnly` since click events are handled for the item ( label + input ) and not the `input` alone.
+
+expertise: 0
