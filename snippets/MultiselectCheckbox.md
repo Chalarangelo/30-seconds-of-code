@@ -1,6 +1,4 @@
-### Multiple Checkbox
-
-##
+### MultiselectCheckbox
 
 Renders a checkbox list with the `options` provided through `props`.
 
@@ -9,18 +7,18 @@ Initially, all the items in the `options` array only have label ( and / or other
 An `onChange` prop can be passed to the `MultiCheckbox` component to get the updated list on every change event within the list.
 
 ```jsx
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 const style = {
   listContainer: {
-    listStyle: 'none',
-    paddingLeft: 0,
+    listStyle: "none",
+    paddingLeft: 0
   },
   itemStyle: {
-    cursor: 'pointer',
-    padding: 5,
+    cursor: "pointer",
+    padding: 5
   }
-}
+};
 
 const MultiCheckbox = ({ options, onChange }) => {
   const [data, updateOptions] = useState(options);
@@ -37,14 +35,21 @@ const MultiCheckbox = ({ options, onChange }) => {
 
   return (
     <ul style={style.listContainer}>
-      {
-        data.map(item => {
-          return <li key={item.label} style={style.itemStyle} onClick={() => toggle(item)}><input readOnly type="checkbox" checked={item.checked || false} />{item.label}</li>
-        })
-      }
+      {data.map(item => {
+        return (
+          <li
+            key={item.label}
+            style={style.itemStyle}
+            onClick={() => toggle(item)}
+          >
+            <input readOnly type="checkbox" checked={item.checked || false} />
+            {item.label}
+          </li>
+        );
+      })}
     </ul>
-  )
-}
+  );
+};
 
 export default MultiCheckbox;
 ```
@@ -64,6 +69,7 @@ ReactDOM.render(
 ```
 
 #### Notes:
-* The checkbox input in this case is kept as `readOnly` since click events are handled for the item ( label + input ) and not the `input` alone.
+
+- The checkbox input in this case is kept as `readOnly` since click events are handled for the item ( label + input ) and not the `input` alone.
 
 expertise: 0
