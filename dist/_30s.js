@@ -243,11 +243,11 @@
       ? obj.map(val => deepMapKeys(val, f))
       : typeof obj === 'object'
         ? Object.keys(obj).reduce((acc, current) => {
-            const val = obj[current];
-            acc[f(current)] =
+          const val = obj[current];
+          acc[f(current)] =
               val !== null && typeof val === 'object' ? deepMapKeys(val, f) : (acc[f(current)] = val);
-            return acc;
-          }, {})
+          return acc;
+        }, {})
         : obj;
   const defaults = (obj, ...defs) => Object.assign({}, obj, ...defs.reverse(), obj);
   const defer = (fn, ...args) => setTimeout(fn, 1, ...args);
@@ -270,9 +270,9 @@
     target in obj
       ? obj[target]
       : Object.values(obj).reduce((acc, val) => {
-          if (acc !== undefined) return acc;
-          if (typeof val === 'object') return dig(val, target);
-        }, undefined);
+        if (acc !== undefined) return acc;
+        if (typeof val === 'object') return dig(val, target);
+      }, undefined);
   const digitize = n => [...`${n}`].map(i => parseInt(i));
   const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
   const drop = (arr, n = 1) => arr.slice(n);
@@ -344,8 +344,8 @@
   const factorial = n =>
     n < 0
       ? (() => {
-          throw new TypeError('Negative numbers are not allowed!');
-        })()
+        throw new TypeError('Negative numbers are not allowed!');
+      })()
       : n <= 1
         ? 1
         : n * factorial(n - 1);
@@ -991,9 +991,9 @@
   const remove = (arr, func) =>
     Array.isArray(arr)
       ? arr.filter(func).reduce((acc, val) => {
-          arr.splice(arr.indexOf(val), 1);
-          return acc.concat(val);
-        }, [])
+        arr.splice(arr.indexOf(val), 1);
+        return acc.concat(val);
+      }, [])
       : [];
   const removeNonASCII = str => str.replace(/[^\x20-\x7E]/g, '');
   const renameKeys = (keysMap, obj) =>
@@ -1327,6 +1327,13 @@
       )
       .map(val => fn(...val));
   const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
+  const vectorDistance = (...coords) => {
+    let pointLength = Math.trunc(coords.length / 2);
+    let sum = coords
+      .slice(0, pointLength)
+      .reduce((acc, val, i) => acc + Math.pow(val - coords[pointLength + i], 2), 0);
+    return Math.sqrt(sum);
+  };
   const when = (pred, whenTrue) => x => (pred(x) ? whenTrue(x) : x);
   const without = (arr, ...args) => arr.filter(v => !args.includes(v));
   const words = (str, pattern = /[^a-zA-Z-]+/) => str.split(pattern).filter(Boolean);
@@ -1683,6 +1690,7 @@
   exports.unzip = unzip;
   exports.unzipWith = unzipWith;
   exports.validateNumber = validateNumber;
+  exports.vectorDistance = vectorDistance;
   exports.when = when;
   exports.without = without;
   exports.words = words;
