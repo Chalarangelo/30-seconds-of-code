@@ -10,6 +10,5 @@ const mapNumRange = (num, inMin, inMax, outMin, outMax) =>
 ```
 
 ```js
-
 mapNumRange(5, 0, 10, 0, 100); // 50
 ```
