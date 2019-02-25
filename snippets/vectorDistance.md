@@ -6,9 +6,9 @@ Use `Array.prototype.reduce()`, `Math.pow()` and `Math.sqrt()` to calculate the 
 
 ```js
 const vectorDistance = (...coords) => {
-    let pointLength = Math.trunc(coords.length / 2);
-    let sum = coords.slice(0, pointLength).reduce((acc, val, i) => acc + (Math.pow(val - coords[pointLength + i], 2)), 0);
-    return Math.sqrt(sum);
+  let pointLength = Math.trunc(coords.length / 2);
+  let sum = coords.slice(0, pointLength).reduce((acc, val, i) => acc + (Math.pow(val - coords[pointLength + i], 2)), 0);
+  return Math.sqrt(sum);
 };
 ```
 
