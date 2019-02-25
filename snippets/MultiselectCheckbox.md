@@ -20,7 +20,7 @@ const style = {
   }
 };
 
-export default function MultiCheckbox ({ options, onChange }) {
+export default function MultiselectCheckbox ({ options, onChange }) {
   const [data, setData] = React.useState(options);
 
   function toggle (item) {
@@ -56,7 +56,7 @@ export default function MultiCheckbox ({ options, onChange }) {
 const options = [{ label: "Item One" }, { label: "Item Two" }];
 
 ReactDOM.render(
-  <MultiCheckbox
+  <MultiselectCheckbox
     options={options}
     onChange={data => {
       console.log(data);
