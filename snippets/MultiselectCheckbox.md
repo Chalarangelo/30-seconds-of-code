@@ -7,29 +7,29 @@ Initially, all the items in the `options` array only have label ( and / or other
 An `onChange` prop can be passed to the `MultiCheckbox` component to get the updated list on every change event within the list.
 
 ```jsx
-import React, { useState } from "react";
+import React from 'react';
 
 const style = {
   listContainer: {
-    listStyle: "none",
+    listStyle: 'none',
     paddingLeft: 0
   },
   itemStyle: {
-    cursor: "pointer",
+    cursor: 'pointer',
     padding: 5
   }
 };
 
-const MultiCheckbox = ({ options, onChange }) => {
-  const [data, updateOptions] = useState(options);
+export default function MultiCheckbox ({ options, onChange }) {
+  const [data, setData] = React.useState(options);
 
-  function toggle(item) {
+  function toggle (item) {
     data.map((_, key) => {
       if (data[key].label === item.label) {
         data[key].checked = !item.checked;
       }
     });
-    updateOptions([...data]);
+    setData([...data]);
     onChange(data);
   }
 
@@ -42,16 +42,14 @@ const MultiCheckbox = ({ options, onChange }) => {
             style={style.itemStyle}
             onClick={() => toggle(item)}
           >
-            <input readOnly type="checkbox" checked={item.checked || false} />
+            <input readOnly type='checkbox' checked={item.checked || false} />
             {item.label}
           </li>
         );
       })}
     </ul>
   );
-};
-
-export default MultiCheckbox;
+}
 ```
 
 ```jsx
