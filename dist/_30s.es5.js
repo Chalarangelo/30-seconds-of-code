@@ -2534,14 +2534,25 @@
   var validateNumber = function validateNumber(n) {
     return !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
   };
+  var vectorDistance = function vectorDistance() {
+    for (var _len53 = arguments.length, coords = new Array(_len53), _key53 = 0; _key53 < _len53; _key53++) {
+      coords[_key53] = arguments[_key53];
+    }
+
+    var pointLength = Math.trunc(coords.length / 2);
+    var sum = coords.slice(0, pointLength).reduce(function (acc, val, i) {
+      return acc + Math.pow(val - coords[pointLength + i], 2);
+    }, 0);
+    return Math.sqrt(sum);
+  };
   var when = function when(pred, whenTrue) {
     return function (x) {
       return pred(x) ? whenTrue(x) : x;
     };
   };
   var without = function without(arr) {
-    for (var _len53 = arguments.length, args = new Array(_len53 > 1 ? _len53 - 1 : 0), _key53 = 1; _key53 < _len53; _key53++) {
-      args[_key53 - 1] = arguments[_key53];
+    for (var _len54 = arguments.length, args = new Array(_len54 > 1 ? _len54 - 1 : 0), _key54 = 1; _key54 < _len54; _key54++) {
+      args[_key54 - 1] = arguments[_key54];
     }
 
     return arr.filter(function (v) {
@@ -2564,8 +2575,8 @@
     return /^(y|yes)$/i.test(val) ? true : /^(n|no)$/i.test(val) ? false : def;
   };
   var zip = function zip() {
-    for (var _len54 = arguments.length, arrays = new Array(_len54), _key54 = 0; _key54 < _len54; _key54++) {
-      arrays[_key54] = arguments[_key54];
+    for (var _len55 = arguments.length, arrays = new Array(_len55), _key55 = 0; _key55 < _len55; _key55++) {
+      arrays[_key55] = arguments[_key55];
     }
 
     var maxLength = Math.max.apply(Math, _toConsumableArray(arrays.map(function (x) {
@@ -2587,8 +2598,8 @@
     }, {});
   };
   var zipWith = function zipWith() {
-    for (var _len55 = arguments.length, array = new Array(_len55), _key55 = 0; _key55 < _len55; _key55++) {
-      array[_key55] = arguments[_key55];
+    for (var _len56 = arguments.length, array = new Array(_len56), _key56 = 0; _key56 < _len56; _key56++) {
+      array[_key56] = arguments[_key56];
     }
 
     var fn = typeof array[array.length - 1] === 'function' ? array.pop() : undefined;
@@ -2939,6 +2950,7 @@
   exports.unzip = unzip;
   exports.unzipWith = unzipWith;
   exports.validateNumber = validateNumber;
+  exports.vectorDistance = vectorDistance;
   exports.when = when;
   exports.without = without;
   exports.words = words;

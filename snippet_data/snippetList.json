@@ -811,7 +811,7 @@
         "archived": false
       },
       "meta": {
-        "hash": "03b2d6752610b5912a1e4019ffc7ef9f199636595ffd8c58b14cdd9ffa0ec28a"
+        "hash": "e66191a28aba485589b3b06933c13d999962af982b5b7b1b136c10f4d09abd8d"
       }
     },
     {
@@ -941,7 +941,7 @@
         "archived": false
       },
       "meta": {
-        "hash": "f982b4e8e3ec3c8b0c2ef4f19b38dac90df6ebe2dd4daa0126c917ebc07d3e62"
+        "hash": "828a6f2f3b94cc537ef0ee30c5ebda28fff688fea65030e47d5721831bdb48ce"
       }
     },
     {
@@ -1162,7 +1162,7 @@
         "archived": false
       },
       "meta": {
-        "hash": "319e1a8fb41490965ee6e28db3e139e65c4ea5b7f43e332bc7216cd790e5d409"
+        "hash": "383ed61e69b8f63ae42d0746a1995057f4f65b4af6ca7778d8f1771144802acd"
       }
     },
     {
@@ -2688,7 +2688,7 @@
         "archived": false
       },
       "meta": {
-        "hash": "41e67e7f95334dcb734cf92acea7e1398540a18c2358d85cde5ff82e6149a44f"
+        "hash": "493eaac4ff025739014196f024923baf63e6eba5317c7b364166f3e7087f5bf1"
       }
     },
     {
@@ -3391,7 +3391,7 @@
         "archived": false
       },
       "meta": {
-        "hash": "dcdf66e8d0eb4a1761c6b767b8cc350757087ae817ec371436faab0fff7c0051"
+        "hash": "0b04f5fe668888db0dc360535cd999669258019f0682eb6e4ad3a1164e408d13"
       }
     },
     {
@@ -3763,7 +3763,7 @@
         "archived": false
       },
       "meta": {
-        "hash": "2fd54c9fc1fb5b0a981df69501b518d5830ea77544d4d5290c7cc13745ca00ea"
+        "hash": "536833a64ce0c000b82327ed1bb9bcb82e35b237f75aefcca0e0d2def4e9cb63"
       }
     },
     {
@@ -4949,6 +4949,20 @@
       },
       "meta": {
         "hash": "8fb993b0cf78fa83a170aca132bf5eb13430e2cef5ae06f85b9763f286bb792c"
+      }
+    },
+    {
+      "id": "vectorDistance",
+      "type": "snippetListing",
+      "attributes": {
+        "tags": [
+          "math",
+          "beginner"
+        ],
+        "archived": false
+      },
+      "meta": {
+        "hash": "03d98fe59bf128d50085af5f2948009b08f53f53f72f2bff7421c34f70287b63"
       }
     },
     {
