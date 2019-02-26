@@ -7,8 +7,6 @@ Initially, all the items in the `options` array only have label ( and / or other
 An `onChange` prop can be passed to the `MultiCheckbox` component to get the updated list on every change event within the list.
 
 ```jsx
-import React from 'react';
-
 const style = {
   listContainer: {
     listStyle: 'none',
@@ -20,7 +18,7 @@ const style = {
   }
 };
 
-export default function MultiselectCheckbox ({ options, onChange }) {
+function MultiselectCheckbox ({ options, onChange }) {
   const [data, setData] = React.useState(options);
 
   function toggle (item) {
