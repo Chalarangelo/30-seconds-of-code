@@ -1,6 +1,6 @@
 ### MultiselectCheckbox
 
-Renders a checkbox list that uses a callback function to pass its selected value/values to the parent component. .
+Renders a checkbox list that uses a callback function to pass its selected value/values to the parent component.
 
 Use `React.setState()` to create a `data` state variable and set its initial value equal to the `options` prop.
 Create a function `toggle` that is used to toggle the `checked` to update the `data` state variable and call the `onChange` callbac passed via the component's props.
