@@ -1,10 +1,11 @@
 ### MultiselectCheckbox
 
-Renders a checkbox list with the `options` provided through `props`.
+Renders a checkbox list that uses a callback function to pass its selected value/values to the parent component. .
 
-Initially, all the items in the `options` array only have label ( and / or other data provided by the user ) and `checked` is `undefined` if not provided. On clicking any of the items, the `checked` value for the item is toggled and state is updated with the new list.
-
-An `onChange` prop can be passed to the `MultiCheckbox` component to get the updated list on every change event within the list.
+Use `React.setState()` to create a `data` state variable and set its initial value equal to the `options` prop.
+Create a function `toggle` that is used to toggle the `checked` to update the `data` state variable and call the `onChange` callbac passed via the component's props.
+Render a `<ul>` element and use `Array.prototype.map()` to map the `data` state variable to individual `<li>` elements with `<input>` elements as their children.
+Each `<input>` element has the `type='checkbox'` attribute and is marked as `readOnly`, as its click events are handled by the parent `<li>` element's `onClick` handler.
 
 ```jsx
 const style = {
@@ -21,11 +22,10 @@ const style = {
 function MultiselectCheckbox ({ options, onChange }) {
   const [data, setData] = React.useState(options);
 
-  function toggle (item) {
+  const toggle = (item) => {
     data.map((_, key) => {
-      if (data[key].label === item.label) {
+      if (data[key].label === item.label) 
         data[key].checked = !item.checked;
-      }
     });
     setData([...data]);
     onChange(data);
@@ -64,8 +64,5 @@ ReactDOM.render(
 );
 ```
 
-#### Notes:
-
-- The checkbox input in this case is kept as `readOnly` since click events are handled for the item ( label + input ) and not the `input` alone.
-
-expertise: 0
+<!-- tags: input,state,array -->
+<!-- expertise: 1 -->
