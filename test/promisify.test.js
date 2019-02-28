@@ -10,5 +10,13 @@ test('Returns a promise', () => {
 });
 test('Runs the function provided', () => {
   const delay = promisify((d, cb) => setTimeout(cb, d));
-  delay(200).then(() => expect(true).toBeTruthy());
+  return delay(200).then(() => expect(true).toBeTruthy());
+});
+test('Resolves a callback result', () => {
+  const resolve1 = promisify(cb => cb(null, 1));
+  return expect(resolve1()).resolves.toBe(1);
+});
+test('Rejects on error', () => {
+  const reject = promisify(cb => cb('error', null));
+  return expect(reject()).rejects.toMatch('error');
 });
