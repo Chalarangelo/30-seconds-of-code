@@ -6,7 +6,6 @@ Use `Array.prototype.filter()` to find array elements that return truthy values 
 The `func` is invoked with three arguments (`value, index, array`).
 
 ```js
-
 const remove = (arr, func) =>
   Array.isArray(arr)
     ? arr.filter(func).reduce((acc, val) => {

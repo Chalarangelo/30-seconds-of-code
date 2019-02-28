@@ -987,7 +987,6 @@ const reducedFilter = (data, keys, fn) =>
     }, {})
   );
 const reject = (pred, array) => array.filter((...args) => !pred(...args));
-
 const remove = (arr, func) =>
   Array.isArray(arr)
     ? arr.filter(func).reduce((acc, val) => {
