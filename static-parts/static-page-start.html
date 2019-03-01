@@ -16,7 +16,7 @@
     <script>
        const search = (node) => {
         if(node.value.toLowerCase().trim() === ''){
-          document.querySelector('nav').querySelectorAll('li > a').forEach(x => x.style.display = ''); 
+          document.querySelector('nav').querySelectorAll('li').forEach(x => x.style.display = '');
           document.querySelector('nav').querySelectorAll('h4:not(.static-link)').forEach(x => x.classList = 'collapse');
           return;
         }
