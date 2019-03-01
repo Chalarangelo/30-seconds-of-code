@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><link rel="stylesheet" href="./style.css"><title>Math - 30 seconds of code</title><meta charset="utf-8"><meta name="description" content="Curated collection of useful Javascript snippets that you can understand in 30 seconds or less."><meta name="keywords" content="javascript, snippets, code, programming"><meta name="author" content="Angelos Chalaris (chalarangelo@gmail.com)"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#111"><meta property="og:title" content="30 seconds of code"><meta property="og:description" content="Curated collection of useful Javascript snippets that you can understand in 30 seconds or less."/><meta property="og:type" content="website"/><meta property="og:image" content="https://30secondsofcode.org/logos/logo_512.png"><link rel="icon" type="image/png" href="./logos/logo_128.png"><link rel="manifest" href="manifest.json"><script>const search = (node) => {
         if(node.value.toLowerCase().trim() === ''){
-          document.querySelector('nav').querySelectorAll('li > a').forEach(x => x.style.display = '');
+          document.querySelector('nav').querySelectorAll('li').forEach(x => x.style.display = '');
           document.querySelector('nav').querySelectorAll('h4:not(.static-link)').forEach(x => x.classList = 'collapse');
           return;
         }
@@ -152,8 +152,8 @@ own individual rating by supplying it as the third argument.
 </pre></div><div class="card code-card"><div class="corner beginner"></div><div class="section card-content"><h4 id="factorial">factorial</h4><p>Calculates the factorial of a number.</p><p>Use recursion. If <code>n</code> is less than or equal to <code>1</code>, return <code>1</code>. Otherwise, return the product of <code>n</code> and the factorial of <code>n - 1</code>. Throws an exception if <code>n</code> is a negative number.</p></div><div class="copy-button-container"><button class="copy-button" aria-label="Copy to clipboard"></button></div><pre class="section card-code language-js"><span class="token keyword">const</span> <span class="token function-variable function">factorial</span> <span class="token operator">=</span> n <span class="token operator">=></span>
   n <span class="token operator">&lt;</span> <span class="token number">0</span>
     <span class="token operator">?</span> <span class="token punctuation">(()</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-      <span class="token keyword">throw new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">'Negative numbers are not allowed!'</span><span class="token punctuation">);
-    })()
+        <span class="token keyword">throw new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">'Negative numbers are not allowed!'</span><span class="token punctuation">);
+      })()
     :</span> n <span class="token operator">&lt;=</span> <span class="token number">1</span>
       <span class="token operator">?</span> <span class="token number">1</span>
       <span class="token punctuation">:</span> n <span class="token operator">*</span> <span class="token function">factorial</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">);</span>
