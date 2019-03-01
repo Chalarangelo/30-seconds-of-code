@@ -4994,7 +4994,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "0b04f5fe668888db0dc360535cd999669258019f0682eb6e4ad3a1164e408d13"
+        "hash": "4815876fd6dbb17ad34c0d8918e7a72d837104f9beee7dc51b0fa73057b9e83e"
       }
     },
     {
@@ -5541,7 +5541,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "536833a64ce0c000b82327ed1bb9bcb82e35b237f75aefcca0e0d2def4e9cb63"
+        "hash": "ec9cb9384817f84cf0bacd62a23b69b2304fa2cf0352b16d3950b21d48c04f11"
       }
     },
     {
@@ -7796,15 +7796,15 @@
         "fileName": "levenshteinDistance.md",
         "text": "Calculates the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) between two strings.\n\nCalculates the number of changes (substitutions, deletions or additions) required to convert `string1` to `string2`. \nCan also be used to compare two strings as shown in the second example.",
         "codeBlocks": {
-          "es6": "``` js\nconst levenshteinDistance = (string1, string2) => {\n  if (string1.length === 0) return string2.length;\n  if (string2.length === 0) return string1.length;\n  let matrix = Array(string2.length + 1)\n    .fill(0)\n    .map((x, i) => [i]);\n  matrix[0] = Array(string1.length + 1)\n    .fill(0)\n    .map((x, i) => i);\n  for (let i = 1; i <= string2.length; i++) {\n    for (let j = 1; j <= string1.length; j++) {\n      if (string2[i - 1] === string1[j - 1]) {\n        matrix[i][j] = matrix[i - 1][j - 1];\n      } else {\n        matrix[i][j] = Math.min(\n          matrix[i - 1][j - 1] + 1,\n          matrix[i][j - 1] + 1,\n          matrix[i - 1][j] + 1\n        );\n      }\n    }\n  }\n  return matrix[string2.length][string1.length];\n};\n```",
-          "es5": "function _templateObject2() {\n  var data = _taggedTemplateLiteral([\" js\\nconst levenshteinDistance = (string1, string2) => {\\n  if (string1.length === 0) return string2.length;\\n  if (string2.length === 0) return string1.length;\\n  let matrix = Array(string2.length + 1)\\n    .fill(0)\\n    .map((x, i) => [i]);\\n  matrix[0] = Array(string1.length + 1)\\n    .fill(0)\\n    .map((x, i) => i);\\n  for (let i = 1; i <= string2.length; i++) {\\n    for (let j = 1; j <= string1.length; j++) {\\n      if (string2[i - 1] === string1[j - 1]) {\\n        matrix[i][j] = matrix[i - 1][j - 1];\\n      } else {\\n        matrix[i][j] = Math.min(\\n          matrix[i - 1][j - 1] + 1,\\n          matrix[i][j - 1] + 1,\\n          matrix[i - 1][j] + 1\\n        );\\n      }\\n    }\\n  }\\n  return matrix[string2.length][string1.length];\\n};\\n\"]);\n\n  _templateObject2 = function _templateObject2() {\n    return data;\n  };\n\n  return data;\n}\n\nfunction _templateObject() {\n  var data = _taggedTemplateLiteral([\"\"]);\n\n  _templateObject = function _templateObject() {\n    return data;\n  };\n\n  return data;\n}\n\nfunction _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }\n\n\"\"(_templateObject2())(_templateObject());",
+          "es6": "const levenshteinDistance = (string1, string2) => {\n  if (string1.length === 0) return string2.length;\n  if (string2.length === 0) return string1.length;\n  let matrix = Array(string2.length + 1)\n    .fill(0)\n    .map((x, i) => [i]);\n  matrix[0] = Array(string1.length + 1)\n    .fill(0)\n    .map((x, i) => i);\n  for (let i = 1; i <= string2.length; i++) {\n    for (let j = 1; j <= string1.length; j++) {\n      if (string2[i - 1] === string1[j - 1]) {\n        matrix[i][j] = matrix[i - 1][j - 1];\n      } else {\n        matrix[i][j] = Math.min(\n          matrix[i - 1][j - 1] + 1,\n          matrix[i][j - 1] + 1,\n          matrix[i - 1][j] + 1\n        );\n      }\n    }\n  }\n  return matrix[string2.length][string1.length];\n};",
+          "es5": "var levenshteinDistance = function levenshteinDistance(string1, string2) {\n  if (string1.length === 0) return string2.length;\n  if (string2.length === 0) return string1.length;\n  var matrix = Array(string2.length + 1).fill(0).map(function (x, i) {\n    return [i];\n  });\n  matrix[0] = Array(string1.length + 1).fill(0).map(function (x, i) {\n    return i;\n  });\n\n  for (var i = 1; i <= string2.length; i++) {\n    for (var j = 1; j <= string1.length; j++) {\n      if (string2[i - 1] === string1[j - 1]) {\n        matrix[i][j] = matrix[i - 1][j - 1];\n      } else {\n        matrix[i][j] = Math.min(matrix[i - 1][j - 1] + 1, matrix[i][j - 1] + 1, matrix[i - 1][j] + 1);\n      }\n    }\n  }\n\n  return matrix[string2.length][string1.length];\n};",
           "example": "levenshteinDistance('30-seconds-of-code','30-seconds-of-python-code'); // 7\nconst compareStrings = (string1,string2) => (100 - levenshteinDistance(string1,string2) / Math.max(string1.length,string2.length));\ncompareStrings('30-seconds-of-code', '30-seconds-of-python-code'); // 99.72 (%)"
         },
         "tags": []
       },
       "meta": {
         "archived": true,
-        "hash": "3cc34a842404de0aea2752a6b1398b8a0825cb1a359ff36ab5275f7d15eff107"
+        "hash": "367a5087f8147bb01f2968132ae45dfc5c708c52398ae805292025315d1c7844"
       }
     },
     {
