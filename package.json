@@ -1,11 +1,19 @@
 {
   "name": "30-seconds-of-react",
   "version": "1.0.0",
-  "repository": "git@github.com:30-seconds/30-seconds-of-react.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/30-seconds/30-seconds-of-react.git"
+  },
   "scripts": {
+    "extractor": "node ./scripts/extract.js",
+    "builder": "node ./scripts/build.js",
     "prettier": "prettier **/*.{js,json,css,md}"
   },
   "devDependencies": {
+    "chalk": "^2.4.2",
+    "fs-extra": "^7.0.1",
+    "markdown-builder": "^0.9.0",
     "husky": "^1.1.2",
     "lint-staged": "^7.3.0",
     "prettier": "^1.14.3"
@@ -23,5 +31,18 @@
       "prettier --write",
       "git add"
     ]
-  }
+  },
+  "description": "Curated collection of useful React snippets that you can understand in 30 seconds or less.",
+  "main": "index.js",
+  "keywords": [
+    "react",
+    "snippets",
+    "javascript"
+  ],
+  "author": "30-seconds (30secondsofcode@gmail.com)",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/30-seconds/30-seconds-of-react/issues"
+  },
+  "homepage": "https://github.com/30-seconds/30-seconds-of-react#readme"
 }

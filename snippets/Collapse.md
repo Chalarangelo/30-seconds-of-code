@@ -2,55 +2,46 @@
 
 Renders a component with collapsible content.
 
-Use the value of the `collapsed` prop to determine the initial state of the content (collapsed/expanded).
-Set the `state` of the component to the value of the `collapsed` prop (cast to a boolean value) and bind the `toggleCollapse` method to the component's context.
+Use the `React.setState()` hook to create the `isCollapsed` state variable with an initial value of `props.collapsed`.
 Use an object, `style`, to hold the styles for individual components and their states.
-Create a method, `toggleCollapse`, which uses `Component.prototype.setState` to change the component's `state` from collapsed to expanded and vice versa.
-In the `render()` method, use a `<div>` to wrap both the `<button>` that alters the component's `state` and the content of the component, passed down via `props.children`.
-Determine the appearance of the content, based on `state.collapsed` and apply the appropriate CSS rules from the `style` object.
-Finally, update the value of the `aria-expanded` attribute based on `state.collapsed` to make the component accessible.
+Use a `<div>` to wrap both the `<button>` that alters the component's `isCollapsed` state and the content of the component, passed down via `props.children`.
+Determine the appearance of the content, based on `isCollapsed` and apply the appropriate CSS rules from the `style` object.
+Finally, update the value of the `aria-expanded` attribute based on `isCollapsed` to make the component accessible.
 
 ```jsx
-class Collapse extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      collapsed: !!props.collapsed
-    };
-    this.style = {
-      collapsed: {
-        display: 'none'
-      },
-      expanded: {
-        display: 'block'
-      },
-      buttonStyle: {
-        display: 'block',
-        width: '100%'
-      }
-    };
-    this.toggleCollapse = this.toggleCollapse.bind(this);
-  }
-  
-  toggleCollapse() {
-    this.setState(state => ({ collapsed: !state.collapsed }));
-  }
-  
-  render() {
-    return (
-      <div>
-        <button style={this.style.buttonStyle} onClick={this.toggleCollapse}>
-          Show/Hide Content
-        </button>
-        <div 
-          style= {this.state.collapsed ? this.style.collapsed : this.style.expanded} 
-          aria-expanded = {this.state.collapsed}
-        >
-          {this.props.children}
-        </div>
+function Collapse(props) {
+  const [isCollapsed, setIsCollapsed] = React.useState(props.collapsed);
+
+  const style = {
+    collapsed: {
+      display: "none"
+    },
+    expanded: {
+      display: "block"
+    },
+    buttonStyle: {
+      display: "block",
+      width: "100%"
+    }
+  };
+
+  return (
+    <div>
+      <button
+        style={style.buttonStyle}
+        onClick={() => setIsCollapsed(!isCollapsed)}
+      >
+        {isCollapsed ? "Show" : "Hide"} content
+      </button>
+      <div
+        className="collapse-content"
+        style={isCollapsed ? style.collapsed : style.expanded}
+        aria-expanded={isCollapsed}
+      >
+        {props.children}
       </div>
-    );
-  }
+    </div>
+  );
 }
 ```
 
@@ -64,6 +55,6 @@ ReactDOM.render(
 );
 ```
 
-<!-- tags: visual,children,state,class -->
+<!-- tags: visual,children,state -->
 
 <!-- expertise: 2 -->
