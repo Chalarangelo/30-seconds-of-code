@@ -1,5 +1,21 @@
 [
   {
+    "name": "Accordion.md",
+    "title": "Accordion",
+    "text": "Renders an accordion menu with multiple collapsible content components.\n\nDefine an `AccordionItem` component, pass it to the `Accordion` and remove unnecessary nodes expect for `AccordionItem` by identifying the function's name in `props.children`.\nEach `AccordionItem` component renders a `<button>` that is used to update the `Accordion` via the `props.handleClick` callback and the content of the component, passed down via `props.children`, while its appearance is determined by `props.isCollapsed` and based on `style`.\nIn the `Accordion` component, use the `React.useState()` hook to initialize the value of the `bindIndex` state variable to `props.defaultIndex`.\nUse `Array.prototype.map` on the collected nodes to render the individual collapsiple elements.\nDefine `changeItem`, which will be executed when clicking an `AccordionItem`'s `<button>`.\n`changeItem` executes the passed callback, `onItemClick` and updates `bindIndex` based on the clicked element.\n\n",
+    "codeBlocks": [
+      "```jsx\nfunction AccordionItem(props) {\n  const style = {\n    collapsed: {\n      display: 'none'\n    },\n    expanded: {\n      display: 'block'\n    },\n    buttonStyle: {\n      display: 'block',\n      width: '100%'\n    }\n  };\n\n  return (\n    <div>\n      <button style={style.buttonStyle} onClick={() => props.handleClick()}>\n        {props.label}\n      </button>\n      <div\n        className=\"collapse-content\"\n        style={props.isCollapsed ? style.collapsed : style.expanded}\n        aria-expanded={props.isCollapsed}\n      >\n        {props.children}\n      </div>\n    </div>\n  );\n}\n\nfunction Accordion(props) {\n  const [bindIndex, setBindIndex] = React.useState(props.defaultIndex);\n\n  const changeItem = itemIndex => {\n    if (typeof props.onItemClick === 'function') props.onItemClick(itemIndex);\n    if (itemIndex !== bindIndex) setBindIndex(itemIndex);\n  };\n  const items = props.children.filter(item => item.type.name === 'AccordionItem');\n\n  return (\n    <div className=\"wrapper\">\n      {items.map(({ props }) => (\n        <AccordionItem\n          isCollapsed={bindIndex === props.index}\n          label={props.label}\n          handleClick={() => changeItem(props.index)}\n          children={props.children}\n        />\n      ))}\n    </div>\n  );\n}\n```",
+      "```jsx\nReactDOM.render(\n  <Accordion defaultIndex=\"1\" onItemClick={console.log}>\n    <AccordionItem label=\"A\" index=\"1\">\n      Lorem ipsum\n    </AccordionItem>\n    <AccordionItem label=\"B\" index=\"2\">\n      Dolor sit amet\n    </AccordionItem>\n  </Accordion>,\n  document.getElementById('root')\n);\n```"
+    ],
+    "expertise": 2,
+    "tags": [
+      "visual",
+      "children",
+      "state"
+    ],
+    "notes": []
+  },
+  {
     "name": "AutoLink.md",
     "title": "AutoLink",
     "text": "Renders a string as plaintext, with URLs converted to appropriate `<a>` elements.\n\nUse `String.prototype.split()` and `String.prototype.match()` with a regular expression to find URLs in a string.\nReturn a `<React.Fragment>` with matched URLs rendered as `<a>` elements, dealing with missing protocol prefixes if necessary, and the rest of the string rendered as plaintext.\n\n",
@@ -266,7 +282,7 @@
   },
   {
     "name": "Tabs.md",
-    "title": "Tab",
+    "title": "Tabs",
     "text": "Renders a tabbed menu and view component.\n\nDefine a `TabItem` component, pass it to the `Tab` and remove unnecessary nodes expect for `TabItem` by identifying the function's name in `props.children`.\nUse the `React.useState()` hook to initialize the value of the `bindIndex` state variable to `props.defaultIndex`.\nUse `Array.prototype.map` on the collected nodes to render the `tab-menu` and `tab-view`.\nDefine `changeTab`, which will be executed when clicking a `<button>` from the `tab-menu`.\n`changeTab` executes the passed callback, `onTabClick` and updates `bindIndex`, which in turn causes a re-render, evaluating the `style` and `className` of the `tab-view` items and `tab-menu` buttons according to their `index`.\n\n",
     "codeBlocks": [
       "```css\n.tab-menu > button {\n  cursor: pointer;\n  padding: 8px 16px;\n  border: 0;\n  border-bottom: 2px solid transparent;\n  background: none;\n}\n.tab-menu > button.focus {\n  border-bottom: 2px solid #007bef;\n}\n.tab-menu > button:hover {\n  border-bottom: 2px solid #007bef;\n}\n```",
