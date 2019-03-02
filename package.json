@@ -8,29 +8,17 @@
   "scripts": {
     "extractor": "node ./scripts/extract.js",
     "builder": "node ./scripts/build.js",
-    "prettier": "prettier **/*.{js,json,css,md}"
+    "linter": "prettier **/*.{js,json,css,md} --write"
   },
   "devDependencies": {
     "chalk": "^2.4.2",
     "fs-extra": "^7.0.1",
     "markdown-builder": "^0.9.0",
-    "husky": "^1.1.2",
-    "lint-staged": "^7.3.0",
     "prettier": "^1.14.3"
   },
   "prettier": {
-    "singleQuote": true
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,json,css,md}": [
-      "prettier --write",
-      "git add"
-    ]
+    "singleQuote": true,
+    "printWidth": 100
   },
   "description": "Curated collection of useful React snippets that you can understand in 30 seconds or less.",
   "main": "index.js",
