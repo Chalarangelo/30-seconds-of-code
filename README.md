@@ -40,67 +40,72 @@ import ReactDOM from 'react-dom';
 
 ## Table of Contents
 
+
 ### Array
 
 <details>
 <summary>View contents</summary>
 
-- [DataList](#datalist)
-- [DataTable](#datatable)
-- [MappedTable](#mappedtable)
-  </details>
+* [DataList](#datalist)
+* [DataTable](#datatable)
+* [MappedTable](#mappedtable)
+</details>
+
 
 ### Input
 
 <details>
 <summary>View contents</summary>
 
-- [Input](#input)
-- [LimitedTextarea](#limitedtextarea)
-- [LimitedWordTextarea](#limitedwordtextarea)
-- [MultiselectCheckbox](#multiselectcheckbox)
-- [PasswordRevealer](#passwordrevealer)
-- [Select](#select)
-- [TextArea](#textarea)
-  </details>
+* [Input](#input)
+* [LimitedTextarea](#limitedtextarea)
+* [LimitedWordTextarea](#limitedwordtextarea)
+* [MultiselectCheckbox](#multiselectcheckbox)
+* [PasswordRevealer](#passwordrevealer)
+* [Select](#select)
+* [TextArea](#textarea)
+</details>
+
 
 ### Object
 
 <details>
 <summary>View contents</summary>
 
-- [TreeView](#treeview)
-  </details>
+* [TreeView](#treeview)
+</details>
+
 
 ### String
 
 <details>
 <summary>View contents</summary>
 
-- [AutoLink](#autolink)
-  </details>
+* [AutoLink](#autolink)
+</details>
+
 
 ### Visual
 
 <details>
 <summary>View contents</summary>
 
-- [Carousel](#carousel)
-- [Collapse](#collapse)
-- [CountDown](#countdown)
-- [FileDrop](#filedrop)
-- [Mailto](#mailto)
-- [StarRating](#starrating)
-- [Tab](#tab)
-- [Ticker](#ticker)
-- [Toggle](#toggle)
-- [Tooltip](#tooltip)
-  </details>
+* [Carousel](#carousel)
+* [Collapse](#collapse)
+* [CountDown](#countdown)
+* [FileDrop](#filedrop)
+* [Mailto](#mailto)
+* [StarRating](#starrating)
+* [Tab](#tab)
+* [Ticker](#ticker)
+* [Toggle](#toggle)
+* [Tooltip](#tooltip)
+</details>
+
 
 ---
 
 ## Array
-
 ### DataList
 
 Renders a list of elements from an array of primitives.
@@ -124,7 +129,6 @@ const names = ['John', 'Paul', 'Mary'];
 ReactDOM.render(<DataList data={names} />, document.getElementById('root'));
 ReactDOM.render(<DataList data={names} isOrdered />, document.getElementById('root'));
 ```
-
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -166,7 +170,6 @@ function DataTable({ data }) {
 const people = ['John', 'Jesse'];
 ReactDOM.render(<DataTable data={people} />, document.getElementById('root'));
 ```
-
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -209,7 +212,6 @@ function MappedTable({ data, propertyNames }) {
   );
 }
 ```
-
 #### Notes
 
 This component does not work with nested objects and will break if there are nested objects inside any of the properties specified in `propertyNames`.,<!-tags: array,object -->,<!-expertise: 1 -->
@@ -228,13 +230,12 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Input
 
+## Input
 ### Input
 
 Renders an `<input>` element that uses a callback function to pass its value to the parent component.
@@ -265,7 +266,6 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -313,7 +313,6 @@ function LimitedTextarea({ rows, cols, value, limit }) {
 ```jsx
 ReactDOM.render(<LimitedTextarea limit={32} value="Hello!" />, document.getElementById('root'));
 ```
-
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -378,7 +377,6 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -446,7 +444,6 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -477,7 +474,6 @@ function PasswordRevealer({ value }) {
 ```jsx
 ReactDOM.render(<PasswordRevealer />, document.getElementById('root'));
 ```
-
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -523,7 +519,6 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -566,13 +561,12 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Object
 
+## Object
 ### TreeView
 
 Renders a tree view of a JSON object or array with collapsible content.
@@ -699,13 +693,12 @@ let data = {
 };
 ReactDOM.render(<TreeView data={data} name="data" />, document.getElementById('root'));
 ```
-
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## String
 
+## String
 ### AutoLink
 
 Renders a string as plaintext, with URLs converted to appropriate `<a>` elements.
@@ -741,13 +734,12 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
 
-## Visual
 
+## Visual
 ### Carousel
 
 Renders a carousel component.
@@ -813,7 +805,6 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -874,7 +865,6 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -959,7 +949,6 @@ function CountDown({ hours = 0, minutes = 0, seconds = 0 }) {
 ```jsx
 ReactDOM.render(<CountDown hours="1" minutes="45" />, document.getElementById('root'));
 ```
-
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -1066,7 +1055,6 @@ function FileDrop(props) {
 ```jsx
 ReactDOM.render(<FileDrop handleDrop={console.log} />, document.getElementById('root'));
 ```
-
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -1097,7 +1085,6 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -1155,7 +1142,6 @@ function StarRating(props) {
 ReactDOM.render(<StarRating />, document.getElementById('root'));
 ReactDOM.render(<StarRating rating={2} />, document.getElementById('root'));
 ```
-
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -1239,7 +1225,6 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -1286,7 +1271,6 @@ function Ticker(props) {
 ```jsx
 ReactDOM.render(<Ticker times={5} interval={1000} />, document.getElementById('root'));
 ```
-
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -1325,7 +1309,6 @@ function Toggle(props) {
 ```jsx
 ReactDOM.render(<Toggle />, document.getElementById('root'));
 ```
-
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -1386,13 +1369,14 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
+
 
 ---
 
 _This repository is a work in progress. If you want to contribute, please check the open issues to see where and how you can help out!_
 
 _This README is built using [markdown-builder](https://github.com/30-seconds/markdown-builder)._
+
