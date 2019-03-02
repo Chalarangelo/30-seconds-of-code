@@ -36,12 +36,9 @@ function LimitedTextarea({ rows, cols, value, limit }) {
 ```
 
 ```jsx
-ReactDOM.render(
-  <LimitedTextarea limit={32} value='Hello!' />,
-  document.getElementById('root')
-);
+ReactDOM.render(<LimitedTextarea limit={32} value="Hello!" />, document.getElementById('root'));
 ```
+
 <!-- tags: input,state,effect -->
 
 <!-- expertise: 0 -->
-

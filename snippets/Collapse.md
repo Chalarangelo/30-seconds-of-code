@@ -14,24 +14,21 @@ function Collapse(props) {
 
   const style = {
     collapsed: {
-      display: "none"
+      display: 'none'
     },
     expanded: {
-      display: "block"
+      display: 'block'
     },
     buttonStyle: {
-      display: "block",
-      width: "100%"
+      display: 'block',
+      width: '100%'
     }
   };
 
   return (
     <div>
-      <button
-        style={style.buttonStyle}
-        onClick={() => setIsCollapsed(!isCollapsed)}
-      >
-        {isCollapsed ? "Show" : "Hide"} content
+      <button style={style.buttonStyle} onClick={() => setIsCollapsed(!isCollapsed)}>
+        {isCollapsed ? 'Show' : 'Hide'} content
       </button>
       <div
         className="collapse-content"

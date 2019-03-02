@@ -11,19 +11,16 @@ function Toggle(props) {
   const [isToggleOn, setIsToggleOn] = React.useState(false);
   style = {
     on: {
-      backgroundColor: "green"
+      backgroundColor: 'green'
     },
     off: {
-      backgroundColor: "grey"
+      backgroundColor: 'grey'
     }
   };
 
   return (
-    <button
-      onClick={() => setIsToggleOn(!isToggleOn)}
-      style={isToggleOn ? style.on : style.off}
-    >
-      {isToggleOn ? "ON" : "OFF"}
+    <button onClick={() => setIsToggleOn(!isToggleOn)} style={isToggleOn ? style.on : style.off}>
+      {isToggleOn ? 'ON' : 'OFF'}
     </button>
   );
 }

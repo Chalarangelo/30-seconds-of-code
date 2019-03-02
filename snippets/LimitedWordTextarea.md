@@ -14,13 +14,13 @@ function LimitedWordTextarea({ rows, cols, value, limit }) {
   const [wordCount, setWordCount] = React.useState(0);
 
   const setFormattedContent = text => {
-    let words = text.split(" ");
+    let words = text.split(' ');
     if (words.filter(Boolean).length > limit) {
       setContent(
         text
-          .split(" ")
+          .split(' ')
           .slice(0, limit)
-          .join(" ")
+          .join(' ')
       );
       setWordCount(limit);
     } else {
@@ -51,11 +51,11 @@ function LimitedWordTextarea({ rows, cols, value, limit }) {
 
 ```jsx
 ReactDOM.render(
-  <LimitedWordTextArea limit={5} value='Hello there!' />,
+  <LimitedWordTextArea limit={5} value="Hello there!" />,
   document.getElementById('root')
 );
 ```
+
 <!-- tags: input,state,effect -->
 
 <!-- expertise: 0 -->
-

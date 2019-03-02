@@ -14,17 +14,15 @@ function Ticker(props) {
   const tick = () => {
     reset();
     interval = setInterval(() => {
-      if (ticker < props.times) 
-        setTicker(ticker + 1);
-      else 
-        clearInterval(interval);
+      if (ticker < props.times) setTicker(ticker + 1);
+      else clearInterval(interval);
     }, props.interval);
-  }
+  };
 
   const reset = () => {
     setTicker(0);
     clearInterval(interval);
-  }
+  };
 
   return (
     <div>

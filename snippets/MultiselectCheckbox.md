@@ -19,28 +19,23 @@ const style = {
   }
 };
 
-function MultiselectCheckbox ({ options, onChange }) {
+function MultiselectCheckbox({ options, onChange }) {
   const [data, setData] = React.useState(options);
 
-  const toggle = (item) => {
+  const toggle = item => {
     data.map((_, key) => {
-      if (data[key].label === item.label) 
-        data[key].checked = !item.checked;
+      if (data[key].label === item.label) data[key].checked = !item.checked;
     });
     setData([...data]);
     onChange(data);
-  }
+  };
 
   return (
     <ul style={style.listContainer}>
       {data.map(item => {
         return (
-          <li
-            key={item.label}
-            style={style.itemStyle}
-            onClick={() => toggle(item)}
-          >
-            <input readOnly type='checkbox' checked={item.checked || false} />
+          <li key={item.label} style={style.itemStyle} onClick={() => toggle(item)}>
+            <input readOnly type="checkbox" checked={item.checked || false} />
             {item.label}
           </li>
         );
@@ -51,7 +46,7 @@ function MultiselectCheckbox ({ options, onChange }) {
 ```
 
 ```jsx
-const options = [{ label: "Item One" }, { label: "Item Two" }];
+const options = [{ label: 'Item One' }, { label: 'Item Two' }];
 
 ReactDOM.render(
   <MultiselectCheckbox
@@ -60,7 +55,7 @@ ReactDOM.render(
       console.log(data);
     }}
   />,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 ```
 

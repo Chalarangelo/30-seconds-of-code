@@ -1,9 +1,10 @@
 ### Tab
+
 Renders a tabbed menu and view component.
 
 Define a `TabItem` component, pass it to the `Tab` and remove unnecessary nodes expect for `TabItem` by identifying the function's name in `props.children`.
-Use the `React.useState()` hook to initialize the value of the `bindIndex` state variable to `props.defaultIndex`. 
-Use `Array.prototype.map` on the collected nodes to render the `tab-menu` and `tab-view`. 
+Use the `React.useState()` hook to initialize the value of the `bindIndex` state variable to `props.defaultIndex`.
+Use `Array.prototype.map` on the collected nodes to render the `tab-menu` and `tab-view`.
 Define `changeTab`, which will be executed when clicking a `<button>` from the `tab-menu`.
 `changeTab` executes the passed callback, `onTabClick` and updates `bindIndex`, which in turn causes a re-render, evaluating the `style` and `className` of the `tab-view` items and `tab-menu` buttons according to their `index`.
 
@@ -16,10 +17,10 @@ Define `changeTab`, which will be executed when clicking a `<button>` from the `
   background: none;
 }
 .tab-menu > button.focus {
-  border-bottom: 2px solid #007BEF;
+  border-bottom: 2px solid #007bef;
 }
 .tab-menu > button:hover {
-  border-bottom: 2px solid #007BEF;
+  border-bottom: 2px solid #007bef;
 }
 ```
 
@@ -31,19 +32,16 @@ function TabItem(props) {
 function Tabs(props) {
   const [bindIndex, setBindIndex] = React.useState(props.defaultIndex);
   const changeTab = newIndex => {
-    if (typeof props.onTabClick === "function") props.onTabClick(newIndex);
+    if (typeof props.onTabClick === 'function') props.onTabClick(newIndex);
     setBindIndex(newIndex);
   };
-  const items = props.children.filter(item => item.type.name === "TabItem");
+  const items = props.children.filter(item => item.type.name === 'TabItem');
 
   return (
     <div className="wrapper">
       <div className="tab-menu">
         {items.map(({ props: { index, label } }) => (
-          <button
-            onClick={() => changeTab(index)}
-            className={bindIndex === index ? "focus" : ""}
-          >
+          <button onClick={() => changeTab(index)} className={bindIndex === index ? 'focus' : ''}>
             {label}
           </button>
         ))}
@@ -54,7 +52,7 @@ function Tabs(props) {
             {...props}
             className="tab-view_item"
             key={props.index}
-            style={{ display: bindIndex === props.index ? "block" : "none" }}
+            style={{ display: bindIndex === props.index ? 'block' : 'none' }}
           />
         ))}
       </div>
@@ -62,6 +60,7 @@ function Tabs(props) {
   );
 }
 ```
+
 ```jsx
 ReactDOM.render(
   <Tabs defaultIndex="1" onTabClick={console.log}>
@@ -72,9 +71,8 @@ ReactDOM.render(
       Dolor sit amet
     </TabItem>
   </Tabs>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
-
 ```
 
 <!-- tags: visual,state,children -->
