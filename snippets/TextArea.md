@@ -6,7 +6,14 @@ Use object destructuring to set defaults for certain attributes of the `<textare
 Render a `<textarea>` element with the appropriate attributes and use the `callback` function in the `onChange` event to pass the value of the textarea to the parent.
 
 ```jsx
-function TextArea ({ callback, cols = 20, rows = 2, disabled = false, readOnly = false, placeholder='' }) {
+function TextArea({
+  callback,
+  cols = 20,
+  rows = 2,
+  disabled = false,
+  readOnly = false,
+  placeholder = ''
+}) {
   return (
     <textarea
       cols={cols}
@@ -14,7 +21,7 @@ function TextArea ({ callback, cols = 20, rows = 2, disabled = false, readOnly =
       disabled={disabled}
       readOnly={readOnly}
       placeholder={placeholder}
-      onChange={({ target : { value } }) => callback(value)}
+      onChange={({ target: { value } }) => callback(value)}
     />
   );
 }
@@ -22,7 +29,7 @@ function TextArea ({ callback, cols = 20, rows = 2, disabled = false, readOnly =
 
 ```jsx
 ReactDOM.render(
-  <TextArea placeholder='Insert some text here...' callback={(val) => console.log(val)}/>,
+  <TextArea placeholder="Insert some text here..." callback={val => console.log(val)} />,
   document.getElementById('root')
 );
 ```

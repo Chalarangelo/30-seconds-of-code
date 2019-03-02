@@ -19,7 +19,7 @@ Here's what you can do to help:
   - All snippet titles must be prefixed with `###` and be at the very first line of your snippet.
   - Snippet titles must be unique (although if you cannot find a better title, just add some placeholder at the end of the filename and title and we will figure it out).
   - Follow snippet titles with an empty line.
-- **Snippet descriptions** must be short and to the point. Try to explain *what* the snippet does and *how* the snippet works and what Javascript/React features are used. Remember to include what functions you are using and why.
+- **Snippet descriptions** must be short and to the point. Try to explain _what_ the snippet does and _how_ the snippet works and what Javascript/React features are used. Remember to include what functions you are using and why.
   - Follow snippet descriptions with an empty line.
 - **Snippet code** must be enclosed inside ` ```jsx ` and ` ``` `.
   - If your snippet is accompanied by CSS code, enclose it inside ` ```css ` and ` ``` ` and present it before the JS/JSX code.
@@ -31,8 +31,8 @@ Here's what you can do to help:
   - All snippets must be followed by one (more if necessary) test case after the code, in a new block enclosed inside ` ```jsx ` and ` ``` `. The syntax for this is `ReactDOM.render(<MyComponent />, document.getElementById("root"));`. Use multiline examples only if necessary.
   - Try to make your component name unique, so that it does not conflict with existing snippets.
 - Snippets should be as brief as possible, without sacrificing functionality. If your snippet seems longer than most, you can still submit it, and we can help you shorten it or figure out ways to improve it.
-- Snippets *should* solve real-world problems, no matter how simple.
-- Snippets *should* be abstract enough to be applied to different scenarios.
+- Snippets _should_ solve real-world problems, no matter how simple.
+- Snippets _should_ be abstract enough to be applied to different scenarios.
 - You can start creating a new snippet, by using the [snippet template](snippet-template.md) to format your snippets.
 
 ### Additional guidelines and conventions regarding snippets

@@ -11,11 +11,7 @@ function PasswordRevealer({ value }) {
 
   return (
     <div>
-      <input
-        type={shown ? "text" : "password"}
-        value={value}
-        onChange={() => {}}
-      />
+      <input type={shown ? 'text' : 'password'} value={value} onChange={() => {}} />
       <button onClick={() => setShown(!shown)}>Show/Hide</button>
     </div>
   );
@@ -29,4 +25,3 @@ ReactDOM.render(<PasswordRevealer />, document.getElementById('root'));
 <!--tags: input,state -->
 
 <!--expertise: 0 -->
-

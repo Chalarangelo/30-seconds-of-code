@@ -14,14 +14,14 @@ function Carousel(props) {
   let scrollInterval = null;
   const style = {
     carousel: {
-      position: "relative"
+      position: 'relative'
     },
     carouselItem: {
-      position: "absolute",
-      visibility: "hidden"
+      position: 'absolute',
+      visibility: 'hidden'
     },
     visible: {
-      visibility: "visible"
+      visibility: 'visible'
     }
   };
   React.useEffect(() => {
@@ -57,11 +57,10 @@ ReactDOM.render(
       <div>carousel item 3</div>
     ]}
   />,
-  document.getElementById("root")
+  document.getElementById('root')
 );
- ```
+```
 
 <!-- tags: visual,children,state,effect -->
 
 <!-- expertise: 2 -->
- 

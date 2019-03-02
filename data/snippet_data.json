@@ -8,11 +8,7 @@
       "```jsx\nReactDOM.render(\n  <AutoLink text='foo bar baz http://example.org bar' />,\n  document.getElementById('root')\n);\n```"
     ],
     "expertise": 2,
-    "tags": [
-      "string",
-      "fragment",
-      "regexp"
-    ],
+    "tags": ["string", "fragment", "regexp"],
     "notes": []
   },
   {
@@ -24,12 +20,7 @@
       "```jsx\nReactDOM.render(\n  <Carousel\n    carouselItems={[\n      <div>carousel item 1</div>,\n      <div>carousel item 2</div>,\n      <div>carousel item 3</div>\n    ]}\n  />,\n  document.getElementById(\"root\")\n);\n ```"
     ],
     "expertise": 2,
-    "tags": [
-      "visual",
-      "children",
-      "state",
-      "effect"
-    ],
+    "tags": ["visual", "children", "state", "effect"],
     "notes": []
   },
   {
@@ -41,11 +32,7 @@
       "```jsx\nReactDOM.render(\n  <Collapse>\n    <h1>This is a collapse</h1>\n    <p>Hello world!</p>\n  </Collapse>,\n  document.getElementById('root')\n);\n```"
     ],
     "expertise": 2,
-    "tags": [
-      "visual",
-      "children",
-      "state"
-    ],
+    "tags": ["visual", "children", "state"],
     "notes": []
   },
   {
@@ -57,10 +44,7 @@
       "```jsx\nReactDOM.render(\n  <CountDown hours=\"1\" minutes=\"45\" />,\n  document.getElementById('root')\n);\n```"
     ],
     "expertise": 2,
-    "tags": [
-      "visual",
-      "state"
-    ],
+    "tags": ["visual", "state"],
     "notes": []
   },
   {
@@ -72,9 +56,7 @@
       "```jsx\nconst names = ['John', 'Paul', 'Mary'];\nReactDOM.render(<DataList data={names}/>, document.getElementById('root'));\nReactDOM.render(<DataList data={names} isOrdered/>, document.getElementById('root'));\n```"
     ],
     "expertise": 0,
-    "tags": [
-      "array"
-    ],
+    "tags": ["array"],
     "notes": []
   },
   {
@@ -86,9 +68,7 @@
       "```jsx\nconst people = ['John', 'Jesse'];\nReactDOM.render(\n  <DataTable data={people} />,\n  document.getElementById('root')\n);\n```"
     ],
     "expertise": 0,
-    "tags": [
-      "array"
-    ],
+    "tags": ["array"],
     "notes": []
   },
   {
@@ -101,12 +81,7 @@
       "```jsx\nReactDOM.render(<FileDrop handleDrop={console.log}/>, document.getElementById('root'));\n```"
     ],
     "expertise": 2,
-    "tags": [
-      "visual",
-      "input",
-      "state",
-      "effect"
-    ],
+    "tags": ["visual", "input", "state", "effect"],
     "notes": []
   },
   {
@@ -118,9 +93,7 @@
       "```jsx\nReactDOM.render(\n  <Input type='text' placeholder='Insert some text here...' callback={(val) => console.log(val)}/>,\n  document.getElementById('root')\n);\n```"
     ],
     "expertise": 0,
-    "tags": [
-      "input"
-    ],
+    "tags": ["input"],
     "notes": []
   },
   {
@@ -132,11 +105,7 @@
       "```jsx\nReactDOM.render(\n  <LimitedTextarea limit={32} value='Hello!' />,\n  document.getElementById('root')\n);\n```"
     ],
     "expertise": 0,
-    "tags": [
-      "input",
-      "state",
-      "effect"
-    ],
+    "tags": ["input", "state", "effect"],
     "notes": []
   },
   {
@@ -148,11 +117,7 @@
       "```jsx\nReactDOM.render(\n  <LimitedWordTextArea limit={5} value='Hello there!' />,\n  document.getElementById('root')\n);\n```"
     ],
     "expertise": 0,
-    "tags": [
-      "input",
-      "state",
-      "effect"
-    ],
+    "tags": ["input", "state", "effect"],
     "notes": []
   },
   {
@@ -164,9 +129,7 @@
       "```jsx\nReactDOM.render(\n  <Mailto email=\"foo@bar.baz\" subject=\"Hello\" body=\"Hello world!\">\n    Mail me!\n  </Mailto>,\n  document.getElementById(\"root\")\n);\n```"
     ],
     "expertise": 0,
-    "tags": [
-      "visual"
-    ],
+    "tags": ["visual"],
     "notes": []
   },
   {
@@ -178,10 +141,7 @@
       "```jsx\nconst people = [\n  { name: 'John', surname: 'Smith', age: 42 },\n  { name: 'Adam', surname: 'Smith', gender: 'male' }\n];\nconst propertyNames = ['name', 'surname', 'age'];\nReactDOM.render(\n  <MappedTable data={people} propertyNames={propertyNames} />,\n  document.getElementById('root')\n);\n```"
     ],
     "expertise": 1,
-    "tags": [
-      "array",
-      "object"
-    ],
+    "tags": ["array", "object"],
     "notes": [
       "This component does not work with nested objects and will break if there are nested objects inside any of the properties specified in `propertyNames`.",
       "<!-tags: array,object -->",
@@ -197,11 +157,7 @@
       "```jsx\nconst options = [{ label: \"Item One\" }, { label: \"Item Two\" }];\n\nReactDOM.render(\n  <MultiselectCheckbox\n    options={options}\n    onChange={data => {\n      console.log(data);\n    }}\n  />,\n  document.getElementById(\"root\")\n);\n```"
     ],
     "expertise": 1,
-    "tags": [
-      "input",
-      "state",
-      "array"
-    ],
+    "tags": ["input", "state", "array"],
     "notes": []
   },
   {
@@ -213,10 +169,7 @@
       "```jsx\nReactDOM.render(<PasswordRevealer />, document.getElementById('root'));\n```"
     ],
     "expertise": 0,
-    "tags": [
-      "input",
-      "state"
-    ],
+    "tags": ["input", "state"],
     "notes": []
   },
   {
@@ -228,9 +181,7 @@
       "```jsx\nlet choices = [\n  ['grapefruit', 'Grapefruit'],\n  ['lime', 'Lime'],\n  ['coconut', 'Coconut'],\n  ['mango', 'Mango']\n];\nReactDOM.render(\n  <Select values={choices} selected='lime' callback={(val) => console.log(val)}/>,\n  document.getElementById('root')\n);\n```"
     ],
     "expertise": 0,
-    "tags": [
-      "input"
-    ],
+    "tags": ["input"],
     "notes": []
   },
   {
@@ -242,12 +193,7 @@
       "```jsx\nReactDOM.render(<StarRating/>, document.getElementById('root'));\nReactDOM.render(<StarRating rating={2} />, document.getElementById('root'));\n```"
     ],
     "expertise": 2,
-    "tags": [
-      "visual",
-      "children",
-      "input",
-      "state"
-    ],
+    "tags": ["visual", "children", "input", "state"],
     "notes": []
   },
   {
@@ -260,11 +206,7 @@
       "```jsx\nReactDOM.render(\n  <Tabs defaultIndex=\"1\" onTabClick={console.log}>\n    <TabItem label=\"A\" index=\"1\">\n      Lorem ipsum\n    </TabItem>\n    <TabItem label=\"B\" index=\"2\">\n      Dolor sit amet\n    </TabItem>\n  </Tabs>,\n  document.getElementById(\"root\")\n);\n\n```"
     ],
     "expertise": 1,
-    "tags": [
-      "visual",
-      "state",
-      "children"
-    ],
+    "tags": ["visual", "state", "children"],
     "notes": []
   },
   {
@@ -276,9 +218,7 @@
       "```jsx\nReactDOM.render(\n  <TextArea placeholder='Insert some text here...' callback={(val) => console.log(val)}/>,\n  document.getElementById('root')\n);\n```"
     ],
     "expertise": 0,
-    "tags": [
-      "input"
-    ],
+    "tags": ["input"],
     "notes": []
   },
   {
@@ -290,10 +230,7 @@
       "```jsx\nReactDOM.render(<Ticker times={5} interval={1000} />, document.getElementById('root'));\n```"
     ],
     "expertise": 1,
-    "tags": [
-      "visual",
-      "state"
-    ],
+    "tags": ["visual", "state"],
     "notes": []
   },
   {
@@ -305,10 +242,7 @@
       "```jsx\nReactDOM.render(<Toggle />, document.getElementById('root'));\n```"
     ],
     "expertise": 0,
-    "tags": [
-      "visual",
-      "state"
-    ],
+    "tags": ["visual", "state"],
     "notes": []
   },
   {
@@ -321,11 +255,7 @@
       "```jsx\n ReactDOM.render(\n     <Tooltip text='Simple tooltip'>\n       <button>Hover me!</button>\n     </Tooltip>,\n     document.getElementById('root')\n );\n```"
     ],
     "expertise": 1,
-    "tags": [
-      "visual",
-      "state",
-      "children"
-    ],
+    "tags": ["visual", "state", "children"],
     "notes": []
   },
   {
@@ -338,12 +268,7 @@
       "```jsx\nlet data = {\n  lorem: {\n    ipsum: \"dolor sit\",\n    amet: {\n      consectetur: \"adipiscing\",\n      elit: [\n        \"duis\",\n        \"vitae\",\n        {\n          semper: \"orci\"\n        },\n        {\n          est: \"sed ornare\"\n        },\n        \"etiam\",\n        [\"laoreet\", \"tincidunt\"],\n        [\"vestibulum\", \"ante\"]\n      ]\n    },\n    ipsum: \"primis\"\n  }\n};\nReactDOM.render(<TreeView data={data} name='data'/>, document.getElementById(\"root\"));\n```"
     ],
     "expertise": 2,
-    "tags": [
-      "object",
-      "visual",
-      "state",
-      "recursion"
-    ],
+    "tags": ["object", "visual", "state", "recursion"],
     "notes": []
   }
 ]

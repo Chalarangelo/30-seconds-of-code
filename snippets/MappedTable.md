@@ -17,12 +17,18 @@ function MappedTable({ data, propertyNames }) {
   return (
     <table>
       <thead>
-        <tr>{propertyNames.map(val => <th key={`h_${val}`}>{val}</th>)}</tr>
+        <tr>
+          {propertyNames.map(val => (
+            <th key={`h_${val}`}>{val}</th>
+          ))}
+        </tr>
       </thead>
       <tbody>
         {filteredData.map((val, i) => (
           <tr key={`i_${i}`}>
-            {propertyNames.map(p => <td key={`i_${i}_${p}`}>{val[p]}</td>)}
+            {propertyNames.map(p => (
+              <td key={`i_${i}_${p}`}>{val[p]}</td>
+            ))}
           </tr>
         ))}
       </tbody>
@@ -44,7 +50,8 @@ ReactDOM.render(
 ```
 
 #### Notes:
-* This component does not work with nested objects and will break if there are nested objects inside any of the properties specified in `propertyNames`.
+
+- This component does not work with nested objects and will break if there are nested objects inside any of the properties specified in `propertyNames`.
 
 <!-- tags: array,object -->
 

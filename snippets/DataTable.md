@@ -16,12 +16,12 @@ function DataTable({ data }) {
         </tr>
       </thead>
       <tbody>
-        {data.map((val, i) =>
+        {data.map((val, i) => (
           <tr key={`${i}_${val}`}>
             <td>{i}</td>
             <td>{val}</td>
           </tr>
-        )}
+        ))}
       </tbody>
     </table>
   );
@@ -30,10 +30,7 @@ function DataTable({ data }) {
 
 ```jsx
 const people = ['John', 'Jesse'];
-ReactDOM.render(
-  <DataTable data={people} />,
-  document.getElementById('root')
-);
+ReactDOM.render(<DataTable data={people} />, document.getElementById('root'));
 ```
 
 <!-- tags: array -->

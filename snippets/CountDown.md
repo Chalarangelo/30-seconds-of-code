@@ -23,8 +23,7 @@ function CountDown({ hours = 0, minutes = 0, seconds = 0 }) {
 
   const tick = () => {
     if (paused || over) return;
-    if (time.hours == 0 && time.minutes == 0 && time.seconds == 0)
-      setOver(true);
+    if (time.hours == 0 && time.minutes == 0 && time.seconds == 0) setOver(true);
     else if (time.minutes == 0 && time.seconds == 0)
       setTime({
         hours: time.hours - 1,
@@ -62,15 +61,11 @@ function CountDown({ hours = 0, minutes = 0, seconds = 0 }) {
 
   return (
     <div>
-      <p>{`${time.hours
+      <p>{`${time.hours.toString().padStart(2, '0')}:${time.minutes
         .toString()
-        .padStart(2, "0")}:${time.minutes
-        .toString()
-        .padStart(2, "0")}:${time.seconds.toString().padStart(2, "0")}`}</p>
-      <div>{over ? "Time's up!" : ""}</div>
-      <button onClick={() => setPaused(!paused)}>
-        {paused ? "Resume" : "Pause"}
-      </button>
+        .padStart(2, '0')}:${time.seconds.toString().padStart(2, '0')}`}</p>
+      <div>{over ? "Time's up!" : ''}</div>
+      <button onClick={() => setPaused(!paused)}>{paused ? 'Resume' : 'Pause'}</button>
       <button onClick={() => reset()}>Restart</button>
     </div>
   );
@@ -78,10 +73,7 @@ function CountDown({ hours = 0, minutes = 0, seconds = 0 }) {
 ```
 
 ```jsx
-ReactDOM.render(
-  <CountDown hours="1" minutes="45" />,
-  document.getElementById('root')
-);
+ReactDOM.render(<CountDown hours="1" minutes="45" />, document.getElementById('root'));
 ```
 
 <!-- tags: visual,state -->

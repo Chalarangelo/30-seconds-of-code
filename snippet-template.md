@@ -11,18 +11,20 @@ function ComponentName(props) {
     setState(0);
   });
   return <div>{props}</div>;
-};
+}
 ```
 
 ```jsx
-ReactDOM.render(<ComponentName />, document.getElementById("root"));
+ReactDOM.render(<ComponentName />, document.getElementById('root'));
 ```
 
 <!-- OPTIONAL -->
+
 #### Notes:
-* Things to remember when using this
-* Other options that might be less appealing or have lower compatibility
-* Common mistakes and issues
+
+- Things to remember when using this
+- Other options that might be less appealing or have lower compatibility
+- Common mistakes and issues
 
 <!-- tags: (separate each by a comma) -->
 

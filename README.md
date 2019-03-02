@@ -4,13 +4,14 @@
 
 > Curated collection of useful React snippets that you can understand in 30 seconds or less.
 
-* Use <kbd>Ctrl</kbd> + <kbd>F</kbd> or <kbd>command</kbd> + <kbd>F</kbd> to search for a snippet.
-* Contributions welcome, please read the [contribution guide](CONTRIBUTING.md).
-* Snippets are written in React 16.8+, using hooks.
+- Use <kbd>Ctrl</kbd> + <kbd>F</kbd> or <kbd>command</kbd> + <kbd>F</kbd> to search for a snippet.
+- Contributions welcome, please read the [contribution guide](CONTRIBUTING.md).
+- Snippets are written in React 16.8+, using hooks.
 
 ### Prerequisites
 
 To import a snippet into your project, you must import `React` and copy-paste the component's JavaScript code like this:
+
 ```js
 import React from 'react';
 
@@ -20,89 +21,86 @@ function MyComponent(props) {
 ```
 
 If there is any CSS related to your component, copy-paste it to a new file with the same name and the appropriate extension, then import it like this:
+
 ```js
 import './MyComponent.css';
 ```
 
 To render your component, make sure there is a node with and id of `"root"` present in your element (preferrably a `<div>`) and that you have imported `ReactDOM`, like this:
+
 ```js
 import ReactDOM from 'react-dom';
 ```
 
 #### Related projects
 
-* [30 Seconds of Code](https://30secondsofcode.org)
-* [30 Seconds of CSS](https://30-seconds.github.io/30-seconds-of-css/)
-* [30 Seconds of Interviews](https://30secondsofinterviews.org/)
+- [30 Seconds of Code](https://30secondsofcode.org)
+- [30 Seconds of CSS](https://30-seconds.github.io/30-seconds-of-css/)
+- [30 Seconds of Interviews](https://30secondsofinterviews.org/)
 
 ## Table of Contents
-
 
 ### Array
 
 <details>
 <summary>View contents</summary>
 
-* [DataList](#datalist)
-* [DataTable](#datatable)
-* [MappedTable](#mappedtable)
-</details>
-
+- [DataList](#datalist)
+- [DataTable](#datatable)
+- [MappedTable](#mappedtable)
+  </details>
 
 ### Input
 
 <details>
 <summary>View contents</summary>
 
-* [Input](#input)
-* [LimitedTextarea](#limitedtextarea)
-* [LimitedWordTextarea](#limitedwordtextarea)
-* [MultiselectCheckbox](#multiselectcheckbox)
-* [PasswordRevealer](#passwordrevealer)
-* [Select](#select)
-* [TextArea](#textarea)
-</details>
-
+- [Input](#input)
+- [LimitedTextarea](#limitedtextarea)
+- [LimitedWordTextarea](#limitedwordtextarea)
+- [MultiselectCheckbox](#multiselectcheckbox)
+- [PasswordRevealer](#passwordrevealer)
+- [Select](#select)
+- [TextArea](#textarea)
+  </details>
 
 ### Object
 
 <details>
 <summary>View contents</summary>
 
-* [TreeView](#treeview)
-</details>
-
+- [TreeView](#treeview)
+  </details>
 
 ### String
 
 <details>
 <summary>View contents</summary>
 
-* [AutoLink](#autolink)
-</details>
-
+- [AutoLink](#autolink)
+  </details>
 
 ### Visual
 
 <details>
 <summary>View contents</summary>
 
-* [Carousel](#carousel)
-* [Collapse](#collapse)
-* [CountDown](#countdown)
-* [FileDrop](#filedrop)
-* [Mailto](#mailto)
-* [StarRating](#starrating)
-* [Tab](#tab)
-* [Ticker](#ticker)
-* [Toggle](#toggle)
-* [Tooltip](#tooltip)
-</details>
-
+- [Carousel](#carousel)
+- [Collapse](#collapse)
+- [CountDown](#countdown)
+- [FileDrop](#filedrop)
+- [Mailto](#mailto)
+- [StarRating](#starrating)
+- [Tab](#tab)
+- [Ticker](#ticker)
+- [Toggle](#toggle)
+- [Tooltip](#tooltip)
+  </details>
 
 ---
 
 ## Array
+
 ### DataList
 
 Renders a list of elements from an array of primitives.
@@ -113,9 +111,7 @@ Omit the `isOrdered` prop to render a `<ul>` list by default.
 
 ```jsx
 function DataList({ isOrdered, data }) {
-  const list = data.map((val, i) => (
-    <li key={`${i}_${val}`}>{val}</li>
-  ));
+  const list = data.map((val, i) => <li key={`${i}_${val}`}>{val}</li>);
   return isOrdered ? <ol>{list}</ol> : <ul>{list}</ul>;
 }
 ```
@@ -125,9 +121,10 @@ function DataList({ isOrdered, data }) {
 
 ```jsx
 const names = ['John', 'Paul', 'Mary'];
-ReactDOM.render(<DataList data={names}/>, document.getElementById('root'));
-ReactDOM.render(<DataList data={names} isOrdered/>, document.getElementById('root'));
+ReactDOM.render(<DataList data={names} />, document.getElementById('root'));
+ReactDOM.render(<DataList data={names} isOrdered />, document.getElementById('root'));
 ```
+
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -150,12 +147,12 @@ function DataTable({ data }) {
         </tr>
       </thead>
       <tbody>
-        {data.map((val, i) =>
+        {data.map((val, i) => (
           <tr key={`${i}_${val}`}>
             <td>{i}</td>
             <td>{val}</td>
           </tr>
-        )}
+        ))}
       </tbody>
     </table>
   );
@@ -167,11 +164,9 @@ function DataTable({ data }) {
 
 ```jsx
 const people = ['John', 'Jesse'];
-ReactDOM.render(
-  <DataTable data={people} />,
-  document.getElementById('root')
-);
+ReactDOM.render(<DataTable data={people} />, document.getElementById('root'));
 ```
+
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -195,12 +190,18 @@ function MappedTable({ data, propertyNames }) {
   return (
     <table>
       <thead>
-        <tr>{propertyNames.map(val => <th key={`h_${val}`}>{val}</th>)}</tr>
+        <tr>
+          {propertyNames.map(val => (
+            <th key={`h_${val}`}>{val}</th>
+          ))}
+        </tr>
       </thead>
       <tbody>
         {filteredData.map((val, i) => (
           <tr key={`i_${i}`}>
-            {propertyNames.map(p => <td key={`i_${i}_${p}`}>{val[p]}</td>)}
+            {propertyNames.map(p => (
+              <td key={`i_${i}_${p}`}>{val[p]}</td>
+            ))}
           </tr>
         ))}
       </tbody>
@@ -208,6 +209,7 @@ function MappedTable({ data, propertyNames }) {
   );
 }
 ```
+
 #### Notes
 
 This component does not work with nested objects and will break if there are nested objects inside any of the properties specified in `propertyNames`.,<!-tags: array,object -->,<!-expertise: 1 -->
@@ -226,12 +228,13 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
+
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
 
-
 ## Input
+
 ### Input
 
 Renders an `<input>` element that uses a callback function to pass its value to the parent component.
@@ -240,7 +243,7 @@ Use object destructuring to set defaults for certain attributes of the `<input>`
 Render an `<input>` element with the appropriate attributes and use the `callback` function in the `onChange` event to pass the value of the input to the parent.
 
 ```jsx
-function Input ({ callback, type = 'text', disabled = false, readOnly = false, placeholder = '' }) {
+function Input({ callback, type = 'text', disabled = false, readOnly = false, placeholder = '' }) {
   return (
     <input
       type={type}
@@ -258,10 +261,11 @@ function Input ({ callback, type = 'text', disabled = false, readOnly = false, p
 
 ```jsx
 ReactDOM.render(
-  <Input type='text' placeholder='Insert some text here...' callback={(val) => console.log(val)}/>,
+  <Input type="text" placeholder="Insert some text here..." callback={val => console.log(val)} />,
   document.getElementById('root')
 );
 ```
+
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -307,11 +311,9 @@ function LimitedTextarea({ rows, cols, value, limit }) {
 <summary>Examples</summary>
 
 ```jsx
-ReactDOM.render(
-  <LimitedTextarea limit={32} value='Hello!' />,
-  document.getElementById('root')
-);
+ReactDOM.render(<LimitedTextarea limit={32} value="Hello!" />, document.getElementById('root'));
 ```
+
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -332,13 +334,13 @@ function LimitedWordTextarea({ rows, cols, value, limit }) {
   const [wordCount, setWordCount] = React.useState(0);
 
   const setFormattedContent = text => {
-    let words = text.split(" ");
+    let words = text.split(' ');
     if (words.filter(Boolean).length > limit) {
       setContent(
         text
-          .split(" ")
+          .split(' ')
           .slice(0, limit)
-          .join(" ")
+          .join(' ')
       );
       setWordCount(limit);
     } else {
@@ -372,10 +374,11 @@ function LimitedWordTextarea({ rows, cols, value, limit }) {
 
 ```jsx
 ReactDOM.render(
-  <LimitedWordTextArea limit={5} value='Hello there!' />,
+  <LimitedWordTextArea limit={5} value="Hello there!" />,
   document.getElementById('root')
 );
 ```
+
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -401,28 +404,23 @@ const style = {
   }
 };
 
-function MultiselectCheckbox ({ options, onChange }) {
+function MultiselectCheckbox({ options, onChange }) {
   const [data, setData] = React.useState(options);
 
-  const toggle = (item) => {
+  const toggle = item => {
     data.map((_, key) => {
-      if (data[key].label === item.label) 
-        data[key].checked = !item.checked;
+      if (data[key].label === item.label) data[key].checked = !item.checked;
     });
     setData([...data]);
     onChange(data);
-  }
+  };
 
   return (
     <ul style={style.listContainer}>
       {data.map(item => {
         return (
-          <li
-            key={item.label}
-            style={style.itemStyle}
-            onClick={() => toggle(item)}
-          >
-            <input readOnly type='checkbox' checked={item.checked || false} />
+          <li key={item.label} style={style.itemStyle} onClick={() => toggle(item)}>
+            <input readOnly type="checkbox" checked={item.checked || false} />
             {item.label}
           </li>
         );
@@ -436,7 +434,7 @@ function MultiselectCheckbox ({ options, onChange }) {
 <summary>Examples</summary>
 
 ```jsx
-const options = [{ label: "Item One" }, { label: "Item Two" }];
+const options = [{ label: 'Item One' }, { label: 'Item Two' }];
 
 ReactDOM.render(
   <MultiselectCheckbox
@@ -445,9 +443,10 @@ ReactDOM.render(
       console.log(data);
     }}
   />,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 ```
+
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -465,11 +464,7 @@ function PasswordRevealer({ value }) {
 
   return (
     <div>
-      <input
-        type={shown ? "text" : "password"}
-        value={value}
-        onChange={() => {}}
-      />
+      <input type={shown ? 'text' : 'password'} value={value} onChange={() => {}} />
       <button onClick={() => setShown(!shown)}>Show/Hide</button>
     </div>
   );
@@ -482,6 +477,7 @@ function PasswordRevealer({ value }) {
 ```jsx
 ReactDOM.render(<PasswordRevealer />, document.getElementById('root'));
 ```
+
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -492,17 +488,21 @@ Renders a `<select>` element that uses a callback function to pass its value to 
 
 Use object destructuring to set defaults for certain attributes of the `<select>` element.
 Render a `<select>` element with the appropriate attributes and use the `callback` function in the `onChange` event to pass the value of the textarea to the parent.
-Use destructuring on the `values` array to pass an array of `value` and  `text` elements and the `selected` attribute to define the initial `value` of the `<select>` element.
+Use destructuring on the `values` array to pass an array of `value` and `text` elements and the `selected` attribute to define the initial `value` of the `<select>` element.
 
 ```jsx
-function Select ({ values, callback, disabled = false, readonly = false, selected }) {
+function Select({ values, callback, disabled = false, readonly = false, selected }) {
   return (
     <select
       disabled={disabled}
       readOnly={readonly}
-      onChange={({ target : { value } }) => callback(value)}
+      onChange={({ target: { value } }) => callback(value)}
     >
-      {values.map(([value, text]) => <option selected={selected === value}value={value}>{text}</option>)}
+      {values.map(([value, text]) => (
+        <option selected={selected === value} value={value}>
+          {text}
+        </option>
+      ))}
     </select>
   );
 }
@@ -519,10 +519,11 @@ let choices = [
   ['mango', 'Mango']
 ];
 ReactDOM.render(
-  <Select values={choices} selected='lime' callback={(val) => console.log(val)}/>,
+  <Select values={choices} selected="lime" callback={val => console.log(val)} />,
   document.getElementById('root')
 );
 ```
+
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -535,7 +536,14 @@ Use object destructuring to set defaults for certain attributes of the `<textare
 Render a `<textarea>` element with the appropriate attributes and use the `callback` function in the `onChange` event to pass the value of the textarea to the parent.
 
 ```jsx
-function TextArea ({ callback, cols = 20, rows = 2, disabled = false, readOnly = false, placeholder='' }) {
+function TextArea({
+  callback,
+  cols = 20,
+  rows = 2,
+  disabled = false,
+  readOnly = false,
+  placeholder = ''
+}) {
   return (
     <textarea
       cols={cols}
@@ -543,7 +551,7 @@ function TextArea ({ callback, cols = 20, rows = 2, disabled = false, readOnly =
       disabled={disabled}
       readOnly={readOnly}
       placeholder={placeholder}
-      onChange={({ target : { value } }) => callback(value)}
+      onChange={({ target: { value } }) => callback(value)}
     />
   );
 }
@@ -554,25 +562,26 @@ function TextArea ({ callback, cols = 20, rows = 2, disabled = false, readOnly =
 
 ```jsx
 ReactDOM.render(
-  <TextArea placeholder='Insert some text here...' callback={(val) => console.log(val)}/>,
+  <TextArea placeholder="Insert some text here..." callback={val => console.log(val)} />,
   document.getElementById('root')
 );
 ```
+
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
 
-
 ## Object
+
 ### TreeView
 
 Renders a tree view of a JSON object or array with collapsible content.
 
-Use object destructuring to set defaults for certain props. 
+Use object destructuring to set defaults for certain props.
 Use the value of the `toggled` prop to determine the initial state of the content (collapsed/expanded).
 Use the `React.setState()` hook to create the `isToggled` state variable and give it the value of the `toggled` prop initially.
 Return a `<div>` to wrap the contents of the component and the `<span>` element, used to alter the component's `isToggled` state.
-Determine the appearance of the component, based on `isParentToggled`, `isToggled`, `name` and `Array.isArray()` on `data`. 
+Determine the appearance of the component, based on `isParentToggled`, `isToggled`, `name` and `Array.isArray()` on `data`.
 For each child in `data`, determine if it is an object or array and recursively render a sub-tree.
 Otherwise, render a `<p>` element with the appropriate style.
 
@@ -595,8 +604,8 @@ div.tree-element:before {
   position: absolute;
   top: 10px;
   left: 0px;
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
   border-left: 5px solid gray;
@@ -625,39 +634,38 @@ function TreeView({
 
   return (
     <div
-      style={{ marginLeft: isChildElement ? 16 : 4 + "px" }}
-      className={isParentToggled ? "tree-element" : "tree-element collapsed"}
+      style={{ marginLeft: isChildElement ? 16 : 4 + 'px' }}
+      className={isParentToggled ? 'tree-element' : 'tree-element collapsed'}
     >
       <span
-        className={isToggled ? "toggler" : "toggler closed"}
+        className={isToggled ? 'toggler' : 'toggler closed'}
         onClick={() => setIsToggled(!isToggled)}
       />
       {name ? <strong>&nbsp;&nbsp;{name}: </strong> : <span>&nbsp;&nbsp;</span>}
-      {Array.isArray(data) ? "[" : "{"}
-      {!isToggled && "..."}
-      {Object.keys(data).map(
-        (v, i, a) =>
-          typeof data[v] == "object" ? (
-            <TreeView
-              data={data[v]}
-              isLast={i === a.length - 1}
-              name={Array.isArray(data) ? null : v}
-              isChildElement
-              isParentToggled={isParentToggled && isToggled}
-            />
-          ) : (
-            <p
-              style={{ marginLeft: 16 + "px" }}
-              className={isToggled ? "tree-element" : "tree-element collapsed"}
-            >
-              {Array.isArray(data) ? "" : <strong>{v}: </strong>}
-              {data[v]}
-              {i === a.length - 1 ? "" : ","}
-            </p>
-          )
+      {Array.isArray(data) ? '[' : '{'}
+      {!isToggled && '...'}
+      {Object.keys(data).map((v, i, a) =>
+        typeof data[v] == 'object' ? (
+          <TreeView
+            data={data[v]}
+            isLast={i === a.length - 1}
+            name={Array.isArray(data) ? null : v}
+            isChildElement
+            isParentToggled={isParentToggled && isToggled}
+          />
+        ) : (
+          <p
+            style={{ marginLeft: 16 + 'px' }}
+            className={isToggled ? 'tree-element' : 'tree-element collapsed'}
+          >
+            {Array.isArray(data) ? '' : <strong>{v}: </strong>}
+            {data[v]}
+            {i === a.length - 1 ? '' : ','}
+          </p>
+        )
       )}
-      {Array.isArray(data) ? "]" : "}"}
-      {!isLast ? "," : ""}
+      {Array.isArray(data) ? ']' : '}'}
+      {!isLast ? ',' : ''}
     </div>
   );
 }
@@ -669,40 +677,41 @@ function TreeView({
 ```jsx
 let data = {
   lorem: {
-    ipsum: "dolor sit",
+    ipsum: 'dolor sit',
     amet: {
-      consectetur: "adipiscing",
+      consectetur: 'adipiscing',
       elit: [
-        "duis",
-        "vitae",
+        'duis',
+        'vitae',
         {
-          semper: "orci"
+          semper: 'orci'
         },
         {
-          est: "sed ornare"
+          est: 'sed ornare'
         },
-        "etiam",
-        ["laoreet", "tincidunt"],
-        ["vestibulum", "ante"]
+        'etiam',
+        ['laoreet', 'tincidunt'],
+        ['vestibulum', 'ante']
       ]
     },
-    ipsum: "primis"
+    ipsum: 'primis'
   }
 };
-ReactDOM.render(<TreeView data={data} name='data'/>, document.getElementById("root"));
+ReactDOM.render(<TreeView data={data} name="data" />, document.getElementById('root'));
 ```
+
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
 
-
 ## String
+
 ### AutoLink
 
 Renders a string as plaintext, with URLs converted to appropriate `<a>` elements.
 
 Use `String.prototype.split()` and `String.prototype.match()` with a regular expression to find URLs in a string.
-Return a  `<React.Fragment>` with matched URLs rendered as `<a>` elements, dealing with missing protocol prefixes if necessary, and the rest of the string rendered as plaintext.
+Return a `<React.Fragment>` with matched URLs rendered as `<a>` elements, dealing with missing protocol prefixes if necessary, and the rest of the string rendered as plaintext.
 
 ```jsx
 function AutoLink({ text }) {
@@ -714,9 +723,7 @@ function AutoLink({ text }) {
         let match = word.match(delimiter);
         if (match) {
           let url = match[0];
-          return (
-            <a href={url.startsWith("http") ? url : `http://${url}`}>{url}</a>
-          );
+          return <a href={url.startsWith('http') ? url : `http://${url}`}>{url}</a>;
         }
         return word;
       })}
@@ -730,16 +737,17 @@ function AutoLink({ text }) {
 
 ```jsx
 ReactDOM.render(
-  <AutoLink text='foo bar baz http://example.org bar' />,
+  <AutoLink text="foo bar baz http://example.org bar" />,
   document.getElementById('root')
 );
 ```
+
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
 
-
 ## Visual
+
 ### Carousel
 
 Renders a carousel component.
@@ -756,14 +764,14 @@ function Carousel(props) {
   let scrollInterval = null;
   const style = {
     carousel: {
-      position: "relative"
+      position: 'relative'
     },
     carouselItem: {
-      position: "absolute",
-      visibility: "hidden"
+      position: 'absolute',
+      visibility: 'hidden'
     },
     visible: {
-      visibility: "visible"
+      visibility: 'visible'
     }
   };
   React.useEffect(() => {
@@ -802,9 +810,10 @@ ReactDOM.render(
       <div>carousel item 3</div>
     ]}
   />,
-  document.getElementById("root")
+  document.getElementById('root')
 );
- ```
+```
+
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -825,24 +834,21 @@ function Collapse(props) {
 
   const style = {
     collapsed: {
-      display: "none"
+      display: 'none'
     },
     expanded: {
-      display: "block"
+      display: 'block'
     },
     buttonStyle: {
-      display: "block",
-      width: "100%"
+      display: 'block',
+      width: '100%'
     }
   };
 
   return (
     <div>
-      <button
-        style={style.buttonStyle}
-        onClick={() => setIsCollapsed(!isCollapsed)}
-      >
-        {isCollapsed ? "Show" : "Hide"} content
+      <button style={style.buttonStyle} onClick={() => setIsCollapsed(!isCollapsed)}>
+        {isCollapsed ? 'Show' : 'Hide'} content
       </button>
       <div
         className="collapse-content"
@@ -868,6 +874,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
+
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -897,8 +904,7 @@ function CountDown({ hours = 0, minutes = 0, seconds = 0 }) {
 
   const tick = () => {
     if (paused || over) return;
-    if (time.hours == 0 && time.minutes == 0 && time.seconds == 0)
-      setOver(true);
+    if (time.hours == 0 && time.minutes == 0 && time.seconds == 0) setOver(true);
     else if (time.minutes == 0 && time.seconds == 0)
       setTime({
         hours: time.hours - 1,
@@ -936,15 +942,11 @@ function CountDown({ hours = 0, minutes = 0, seconds = 0 }) {
 
   return (
     <div>
-      <p>{`${time.hours
+      <p>{`${time.hours.toString().padStart(2, '0')}:${time.minutes
         .toString()
-        .padStart(2, "0")}:${time.minutes
-        .toString()
-        .padStart(2, "0")}:${time.seconds.toString().padStart(2, "0")}`}</p>
-      <div>{over ? "Time's up!" : ""}</div>
-      <button onClick={() => setPaused(!paused)}>
-        {paused ? "Resume" : "Pause"}
-      </button>
+        .padStart(2, '0')}:${time.seconds.toString().padStart(2, '0')}`}</p>
+      <div>{over ? "Time's up!" : ''}</div>
+      <button onClick={() => setPaused(!paused)}>{paused ? 'Resume' : 'Pause'}</button>
       <button onClick={() => reset()}>Restart</button>
     </div>
   );
@@ -955,11 +957,9 @@ function CountDown({ hours = 0, minutes = 0, seconds = 0 }) {
 <summary>Examples</summary>
 
 ```jsx
-ReactDOM.render(
-  <CountDown hours="1" minutes="45" />,
-  document.getElementById('root')
-);
+ReactDOM.render(<CountDown hours="1" minutes="45" />, document.getElementById('root'));
 ```
+
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -972,17 +972,16 @@ Create a ref called `dropRef` for this component.
 Use the `React.useState()` hook to create the `drag` and `filename` variables, initialized to `false` and `''` respectively.
 The variables `dragCounter` and `drag` are used to determine if a file is being dragged, while `filename` is used to store the dropped file's name.
 
-Create the `handleDrag`, `handleDragIn`, `handleDragOut` and `handleDrop` methods to handle drag and drop functionality,  bind them to the component's context.
+Create the `handleDrag`, `handleDragIn`, `handleDragOut` and `handleDrop` methods to handle drag and drop functionality, bind them to the component's context.
 Each of the methods will handle a specific event, the listeners for which are created and removed in the `React.useEffect()` hook and its attached `cleanup()` method.
 `handleDrag` prevents the browser from opening the dragged file, `handleDragIn` and `handleDragOut` handle the dragged file entering and exiting the component, while `handleDrop` handles the file being dropped and passes it to `props.handleDrop`.
-Return an appropriately styled `<div>` and use `drag` and `filename` to determine its contents and style. 
+Return an appropriately styled `<div>` and use `drag` and `filename` to determine its contents and style.
 Finally, bind the `ref` of the created `<div>` to `dropRef`.
-
 
 ```css
 .filedrop {
   min-height: 120px;
-  border: 3px solid #D3D3D3;
+  border: 3px solid #d3d3d3;
   text-align: center;
   font-size: 24px;
   padding: 32px;
@@ -990,11 +989,11 @@ Finally, bind the `ref` of the created `<div>` to `dropRef`.
 }
 
 .filedrop.drag {
-  border: 3px dashed #1E90FF;
+  border: 3px dashed #1e90ff;
 }
 
 .filedrop.ready {
-  border: 3px solid #32CD32;
+  border: 3px solid #32cd32;
 }
 ```
 
@@ -1038,24 +1037,22 @@ function FileDrop(props) {
 
   React.useEffect(() => {
     let div = dropRef.current;
-    div.addEventListener("dragenter", handleDragIn);
-    div.addEventListener("dragleave", handleDragOut);
-    div.addEventListener("dragover", handleDrag);
-    div.addEventListener("drop", handleDrop);
+    div.addEventListener('dragenter', handleDragIn);
+    div.addEventListener('dragleave', handleDragOut);
+    div.addEventListener('dragover', handleDrag);
+    div.addEventListener('drop', handleDrop);
     return function cleanup() {
-      div.removeEventListener("dragenter", handleDragIn);
-      div.removeEventListener("dragleave", handleDragOut);
-      div.removeEventListener("dragover", handleDrag);
-      div.removeEventListener("drop", handleDrop);
+      div.removeEventListener('dragenter', handleDragIn);
+      div.removeEventListener('dragleave', handleDragOut);
+      div.removeEventListener('dragover', handleDrag);
+      div.removeEventListener('drop', handleDrop);
     };
   });
 
   return (
     <div
       ref={dropRef}
-      className={
-        drag ? "filedrop drag" : filename ? "filedrop ready" : "filedrop"
-      }
+      className={drag ? 'filedrop drag' : filename ? 'filedrop ready' : 'filedrop'}
     >
       {filename && !drag ? <div>{filename}</div> : <div>Drop files here!</div>}
     </div>
@@ -1067,8 +1064,9 @@ function FileDrop(props) {
 <summary>Examples</summary>
 
 ```jsx
-ReactDOM.render(<FileDrop handleDrop={console.log}/>, document.getElementById('root'));
+ReactDOM.render(<FileDrop handleDrop={console.log} />, document.getElementById('root'));
 ```
+
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -1083,9 +1081,7 @@ Render the link with `props.children` as its content.
 ```jsx
 function Mailto({ email, subject, body, ...props }) {
   return (
-    <a href={`mailto:${email}?subject=${subject || ""}&body=${body || ""}`}>
-      {props.children}
-    </a>
+    <a href={`mailto:${email}?subject=${subject || ''}&body=${body || ''}`}>{props.children}</a>
   );
 }
 ```
@@ -1098,9 +1094,10 @@ ReactDOM.render(
   <Mailto email="foo@bar.baz" subject="Hello" body="Hello world!">
     Mail me!
   </Mailto>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 ```
+
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -1112,35 +1109,31 @@ Renders a star rating component.
 Define a component, called `Star` that will render each individual star with the appropriate appearance, based on the parent component's state.
 In the `StarRating` component, use the `React.setState()` hook to define the `rating` and `selection` state variables with the initial values of `props.rating` (or `0` if invalid or not supplied) and `0`.
 Create a method, `hoverOver`, that updates `selected` and `rating` according to the provided `event`.
-Create a `<div>` to wrap the `<Star>` components, which are created using `Array.prototype.map` on an array of 5 elements, created using `Array.from`, and handle the `onMouseLeave` event to set `selection` to `0`, the `onClick` event to set the `rating` and the `onMouseOver` event to set `selection` to the `star-id` attribute of the `event.target` respectively. 
+Create a `<div>` to wrap the `<Star>` components, which are created using `Array.prototype.map` on an array of 5 elements, created using `Array.from`, and handle the `onMouseLeave` event to set `selection` to `0`, the `onClick` event to set the `rating` and the `onMouseOver` event to set `selection` to the `star-id` attribute of the `event.target` respectively.
 Finally, pass the appropriate values to each `<Star>` component (`starId` and `marked`).
 
 ```jsx
 function Star({ marked, starId }) {
   return (
-    <span star-id={starId} style={{ color: "#ff9933" }} role="button">
-      {marked ? "\u2605" : "\u2606"}
+    <span star-id={starId} style={{ color: '#ff9933' }} role="button">
+      {marked ? '\u2605' : '\u2606'}
     </span>
   );
 }
 
 function StarRating(props) {
-  const [rating, setRating] = React.useState(
-    typeof props.rating == "number" ? props.rating : 0
-  );
+  const [rating, setRating] = React.useState(typeof props.rating == 'number' ? props.rating : 0);
   const [selection, setSelection] = React.useState(0);
   const hoverOver = event => {
     let val = 0;
-    if (event && event.target && event.target.getAttribute("star-id"))
-      val = event.target.getAttribute("star-id");
+    if (event && event.target && event.target.getAttribute('star-id'))
+      val = event.target.getAttribute('star-id');
     setSelection(val);
   };
   return (
     <div
       onMouseOut={() => hoverOver(null)}
-      onClick={() =>
-        setRating(event.target.getAttribute("star-id") || this.state.rating)
-      }
+      onClick={() => setRating(event.target.getAttribute('star-id') || this.state.rating)}
       onMouseOver={hoverOver}
     >
       {Array.from({ length: 5 }, (v, i) => (
@@ -1159,9 +1152,10 @@ function StarRating(props) {
 <summary>Examples</summary>
 
 ```jsx
-ReactDOM.render(<StarRating/>, document.getElementById('root'));
+ReactDOM.render(<StarRating />, document.getElementById('root'));
 ReactDOM.render(<StarRating rating={2} />, document.getElementById('root'));
 ```
+
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -1171,8 +1165,8 @@ ReactDOM.render(<StarRating rating={2} />, document.getElementById('root'));
 Renders a tabbed menu and view component.
 
 Define a `TabItem` component, pass it to the `Tab` and remove unnecessary nodes expect for `TabItem` by identifying the function's name in `props.children`.
-Use the `React.useState()` hook to initialize the value of the `bindIndex` state variable to `props.defaultIndex`. 
-Use `Array.prototype.map` on the collected nodes to render the `tab-menu` and `tab-view`. 
+Use the `React.useState()` hook to initialize the value of the `bindIndex` state variable to `props.defaultIndex`.
+Use `Array.prototype.map` on the collected nodes to render the `tab-menu` and `tab-view`.
 Define `changeTab`, which will be executed when clicking a `<button>` from the `tab-menu`.
 `changeTab` executes the passed callback, `onTabClick` and updates `bindIndex`, which in turn causes a re-render, evaluating the `style` and `className` of the `tab-view` items and `tab-menu` buttons according to their `index`.
 
@@ -1185,10 +1179,10 @@ Define `changeTab`, which will be executed when clicking a `<button>` from the `
   background: none;
 }
 .tab-menu > button.focus {
-  border-bottom: 2px solid #007BEF;
+  border-bottom: 2px solid #007bef;
 }
 .tab-menu > button:hover {
-  border-bottom: 2px solid #007BEF;
+  border-bottom: 2px solid #007bef;
 }
 ```
 
@@ -1200,19 +1194,16 @@ function TabItem(props) {
 function Tabs(props) {
   const [bindIndex, setBindIndex] = React.useState(props.defaultIndex);
   const changeTab = newIndex => {
-    if (typeof props.onTabClick === "function") props.onTabClick(newIndex);
+    if (typeof props.onTabClick === 'function') props.onTabClick(newIndex);
     setBindIndex(newIndex);
   };
-  const items = props.children.filter(item => item.type.name === "TabItem");
+  const items = props.children.filter(item => item.type.name === 'TabItem');
 
   return (
     <div className="wrapper">
       <div className="tab-menu">
         {items.map(({ props: { index, label } }) => (
-          <button
-            onClick={() => changeTab(index)}
-            className={bindIndex === index ? "focus" : ""}
-          >
+          <button onClick={() => changeTab(index)} className={bindIndex === index ? 'focus' : ''}>
             {label}
           </button>
         ))}
@@ -1223,7 +1214,7 @@ function Tabs(props) {
             {...props}
             className="tab-view_item"
             key={props.index}
-            style={{ display: bindIndex === props.index ? "block" : "none" }}
+            style={{ display: bindIndex === props.index ? 'block' : 'none' }}
           />
         ))}
       </div>
@@ -1245,10 +1236,10 @@ ReactDOM.render(
       Dolor sit amet
     </TabItem>
   </Tabs>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
-
 ```
+
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -1269,17 +1260,15 @@ function Ticker(props) {
   const tick = () => {
     reset();
     interval = setInterval(() => {
-      if (ticker < props.times) 
-        setTicker(ticker + 1);
-      else 
-        clearInterval(interval);
+      if (ticker < props.times) setTicker(ticker + 1);
+      else clearInterval(interval);
     }, props.interval);
-  }
+  };
 
   const reset = () => {
     setTicker(0);
     clearInterval(interval);
-  }
+  };
 
   return (
     <div>
@@ -1297,6 +1286,7 @@ function Ticker(props) {
 ```jsx
 ReactDOM.render(<Ticker times={5} interval={1000} />, document.getElementById('root'));
 ```
+
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -1314,19 +1304,16 @@ function Toggle(props) {
   const [isToggleOn, setIsToggleOn] = React.useState(false);
   style = {
     on: {
-      backgroundColor: "green"
+      backgroundColor: 'green'
     },
     off: {
-      backgroundColor: "grey"
+      backgroundColor: 'grey'
     }
   };
 
   return (
-    <button
-      onClick={() => setIsToggleOn(!isToggleOn)}
-      style={isToggleOn ? style.on : style.off}
-    >
-      {isToggleOn ? "ON" : "OFF"}
+    <button onClick={() => setIsToggleOn(!isToggleOn)} style={isToggleOn ? style.on : style.off}>
+      {isToggleOn ? 'ON' : 'OFF'}
     </button>
   );
 }
@@ -1338,6 +1325,7 @@ function Toggle(props) {
 ```jsx
 ReactDOM.render(<Toggle />, document.getElementById('root'));
 ```
+
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
@@ -1349,7 +1337,7 @@ Renders a tooltip component.
 Use the `React.useState()` hook to create the `show` variable and initialize it to `false`.
 Return a `<div>` element that contains the `<div>` that will be the tooltip and the `children` passed to the component.
 Handle the `onMouseEnter` and `onMouseLeave` methods, by altering the value of the `show` variable.
- 
+
 ```css
 .tooltip {
   position: relative;
@@ -1375,15 +1363,11 @@ function Tooltip({ children, text, ...rest }) {
 
   return (
     <div>
-      <div className="tooltip" style={show ? { visibility: "visible" } : {}}>
+      <div className="tooltip" style={show ? { visibility: 'visible' } : {}}>
         {text}
         <span className="tooltip-arrow" />
       </div>
-      <div
-        {...rest}
-        onMouseEnter={() => setShow(true)}
-        onMouseLeave={() => setShow(false)}
-      >
+      <div {...rest} onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
         {children}
       </div>
     </div>
@@ -1395,20 +1379,20 @@ function Tooltip({ children, text, ...rest }) {
 <summary>Examples</summary>
 
 ```jsx
- ReactDOM.render(
-     <Tooltip text='Simple tooltip'>
-       <button>Hover me!</button>
-     </Tooltip>,
-     document.getElementById('root')
- );
+ReactDOM.render(
+  <Tooltip text="Simple tooltip">
+    <button>Hover me!</button>
+  </Tooltip>,
+  document.getElementById('root')
+);
 ```
+
 </details>
 
 <br>[⬆ Back to top](#table-of-contents)
 
+---
 
------
+_This repository is a work in progress. If you want to contribute, please check the open issues to see where and how you can help out!_
 
-*This repository is a work in progress. If you want to contribute, please check the open issues to see where and how you can help out!*
-
-*This README is built using [markdown-builder](https://github.com/30-seconds/markdown-builder).*
+_This README is built using [markdown-builder](https://github.com/30-seconds/markdown-builder)._
