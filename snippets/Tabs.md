@@ -1,4 +1,4 @@
-### Tab
+### Tabs
 
 Renders a tabbed menu and view component.
 
