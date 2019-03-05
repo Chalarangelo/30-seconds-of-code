@@ -1331,11 +1331,11 @@
       "type": "snippet",
       "attributes": {
         "fileName": "differenceBy.md",
-        "text": "Returns the difference between two arrays, after applying the provided function to each array element of both.\n\nCreate a `Set` by applying `fn` to each element in `b`, then use `Array.prototype.filter()` in combination with `fn` on `a` to only keep values not contained in the previously created set.",
+        "text": "Returns the difference between two arrays, after applying the provided function to each array element of both.\n\nCreate a `Set` by applying `fn` to each element in `b`, then use `Array.prototype.map()` to apply `fn` to each element in `a`, then `Array.prototype.filter()`",
         "codeBlocks": {
-          "es6": "const differenceBy = (a, b, fn) => {\n  const s = new Set(b.map(fn));\n  return a.filter(x => !s.has(fn(x)));\n};",
-          "es5": "var differenceBy = function differenceBy(a, b, fn) {\n  var s = new Set(b.map(fn));\n  return a.filter(function (x) {\n    return !s.has(fn(x));\n  });\n};",
-          "example": "differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [1.2]\ndifferenceBy([{ x: 2 }, { x: 1 }], [{ x: 1 }], v => v.x); // [ { x: 2 } ]"
+          "es6": "const differenceBy = (a, b, fn) => {\n  const s = new Set(b.map(fn));\n  return a.map(fn).filter(el => !s.has(el));\n};",
+          "es5": "var differenceBy = function differenceBy(a, b, fn) {\n  var s = new Set(b.map(fn));\n  return a.map(fn).filter(function (el) {\n    return !s.has(el);\n  });\n};",
+          "example": "differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [1]\ndifferenceBy([{ x: 2 }, { x: 1 }], [{ x: 1 }], v => v.x); // [ { x: 2 } ]"
         },
         "tags": [
           "array",
@@ -1345,7 +1345,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "92abc752f5d3a659467e3dde7a3890000f4b72d1fdfd66086092494b688506ae"
+        "hash": "7113e93b67cab271686a7c2f012cdda880ffdbca4125cdbc1d6f87d69ab6e1b0"
       }
     },
     {
