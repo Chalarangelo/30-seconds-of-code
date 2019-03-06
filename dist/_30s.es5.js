@@ -621,8 +621,8 @@
   };
   var differenceBy = function differenceBy(a, b, fn) {
     var s = new Set(b.map(fn));
-    return a.filter(function (x) {
-      return !s.has(fn(x));
+    return a.map(fn).filter(function (el) {
+      return !s.has(el);
     });
   };
   var differenceWith = function differenceWith(arr, val, comp) {
