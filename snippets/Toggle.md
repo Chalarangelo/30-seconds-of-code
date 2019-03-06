@@ -2,9 +2,9 @@
 
 Renders a toggle component.
 
-Use the `React.useState()` to initialize the `isToggleOn` state variable to `false`.
-Use an object, `style`, to hold the styles for individual components and their states.
-Return a `<button>` that alters the component's `isToggledOn` when its `onClick` event is fired and determine the appearance of the content based on `isToggleOn`, applying the appropriate CSS rules from the `style` object.
+* Use the `React.useState()` to initialize the `isToggleOn` state variable to `false`.
+* Use an object, `style`, to hold the styles for individual components and their states.
+* Return a `<button>` that alters the component's `isToggledOn` when its `onClick` event is fired and determine the appearance of the content based on `isToggleOn`, applying the appropriate CSS rules from the `style` object.
 
 ```jsx
 function Toggle(props) {

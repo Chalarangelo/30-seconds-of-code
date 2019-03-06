@@ -2,11 +2,11 @@
 
 Renders an accordion menu with multiple collapsible content components.
 
-Define an `AccordionItem` component, pass it to the `Accordion` and remove unnecessary nodes expect for `AccordionItem` by identifying the function's name in `props.children`.
-Each `AccordionItem` component renders a `<button>` that is used to update the `Accordion` via the `props.handleClick` callback and the content of the component, passed down via `props.children`, while its appearance is determined by `props.isCollapsed` and based on `style`.
-In the `Accordion` component, use the `React.useState()` hook to initialize the value of the `bindIndex` state variable to `props.defaultIndex`.
-Use `Array.prototype.map` on the collected nodes to render the individual collapsiple elements.
-Define `changeItem`, which will be executed when clicking an `AccordionItem`'s `<button>`.
+* Define an `AccordionItem` component, pass it to the `Accordion` and remove unnecessary nodes expect for `AccordionItem` by identifying the function's name in `props.children`.
+* Each `AccordionItem` component renders a `<button>` that is used to update the `Accordion` via the `props.handleClick` callback and the content of the component, passed down via `props.children`, while its appearance is determined by `props.isCollapsed` and based on `style`.
+* In the `Accordion` component, use the `React.useState()` hook to initialize the value of the `bindIndex` state variable to `props.defaultIndex`.
+* Use `Array.prototype.map` on the collected nodes to render the individual collapsiple elements.
+* Define `changeItem`, which will be executed when clicking an `AccordionItem`'s `<button>`.
 `changeItem` executes the passed callback, `onItemClick` and updates `bindIndex` based on the clicked element.
 
 ```jsx
