@@ -2,7 +2,9 @@
 
 Explain briefly what the snippet does.
 
-Explain briefly how the snippet works.
+* Explain briefly how the snippet works.
+* Use bullet points for your snippet's explanation.
+* Try to explain everything briefly but clearly.
 
 ```jsx
 function ComponentName(props) {
