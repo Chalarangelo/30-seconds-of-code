@@ -5,7 +5,6 @@ Brief description
 #### HTML
 
 ```html
-
 ```
 
 #### CSS
@@ -25,10 +24,9 @@ Brief description
 
 <!-- Use the checkmark or the warning emoji, see the existing snippets. -->
 
-<span class="snippet__support-note">✅ No caveats.</span>
+<span class="snippet__support-note">⚠️ Caveat?</span>
 
-<!-- Whenever possible, link a `caniuse` feature which allows the browser support percentage to be displayed.
-If no link is provided, it defaults to 99+%. -->
+<!-- Whenever possible, link a `caniuse` feature which allows the browser support percentage to be displayed. -->
 
 - https://caniuse.com/#feat=some-feature
 
