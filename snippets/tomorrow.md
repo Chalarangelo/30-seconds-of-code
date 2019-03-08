@@ -14,5 +14,5 @@ const tomorrow = () => {
 ```
 
 ```js
-tomorrow(); // 2018-10-18 (if current date is 2018-10-18)
+tomorrow(); // 2018-10-19 (if current date is 2018-10-18)
 ```
