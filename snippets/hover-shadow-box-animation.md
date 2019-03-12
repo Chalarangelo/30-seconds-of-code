@@ -1,4 +1,4 @@
-### Hover Shadow Box Animation
+### Hover shadow box animation
 
 Creates a shadow box around the text when it is hovered.
 
