@@ -1,6 +1,6 @@
 ### Hover Shadow Box Animation
 
-Creates a shadow box around the text whern it is hovered.
+Creates a shadow box around the text when it is hovered.
 
 #### HTML
 
