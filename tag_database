@@ -91,6 +91,7 @@ flattenObject:object,recursion,intermediate
 flip:adapter,function,intermediate
 forEachRight:array,function,intermediate
 formatDuration:date,math,string,utility,intermediate
+formToObject:browser,utility,object
 forOwn:object,intermediate
 forOwnRight:object,intermediate
 fromCamelCase:string,intermediate
@@ -265,7 +266,7 @@ sampleSize:array,random,intermediate
 scrollToTop:browser,intermediate
 sdbm:math,utility,intermediate
 serializeCookie:utility,string,intermediate
-serializeForm:browser,beginner,utility
+serializeForm:browser,beginner,utility,string
 setStyle:browser,beginner
 shallowClone:object,beginner
 shank:array,intermediate
