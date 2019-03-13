@@ -2,15 +2,11 @@
 
 Serializes a form into an object.
 
-First we transform the `form` into `FormData`, then we convert it into an `array` and from the `array` we collect an `object`
+First we transform the `form` into `FormData`, then we convert it into an `array` and from the `array` we collect an `query string`
 
 ```js
 const serializeForm = form =>
-  Array.from(new FormData(form))
-    .reduce((acc, [key, value]) => ({
-      ...acc,
-      [key]: value,
-    }), {})
+  Array.from(new FormData(form), field => field.map(encodeURIComponent).join('=')).join('&')
 ```
 
 ```html
@@ -21,5 +17,5 @@ const serializeForm = form =>
 ```
 
 ```js
-serializeForm(document.querySelector('#form')) // { email: 'test@email.com', name: 'Test Name' }
+serializeForm(document.querySelector('#form')) // email=test%40email.com&name=Test%20Name
 ```
