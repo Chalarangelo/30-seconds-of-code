@@ -123,7 +123,7 @@ function App() {
   
   return (
     <React.Fragment>
-      <button onClick={()=> setModal(true)}>xx</button>
+      <button onClick={()=> setModal(true)}>Click Here</button>
       <Modal 
         isVisible={ isModal }
         title= "Modal Title"
