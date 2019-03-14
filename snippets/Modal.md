@@ -9,10 +9,8 @@ The Modal Component has following attributes:
 - `isVisible`, Boolean describing if the modal should be shown or not.(Required)
 - `title`, String describing title of Modal.(Required)
 - `content`, JSX elements to be rendered in modal body.(Required)
-- `footer`, JSX elements to be rendered in modal footer. (optional)
-- `onClose`,  Function that will be called when Modal needs to be closed like when escape key is pressed.(Required)
-
-
+- `footer`, JSX elements to be rendered in modal footer.(optional)
+- `onClose`, Function that will be called when Modal needs to be closed like when escape key is pressed.(Required)
 
 ```css
 .modal {
@@ -84,16 +82,13 @@ The Modal Component has following attributes:
 }
 ```
 
-
 ```jsx
 function Modal(props){
   const { isVisible, title, content, footer, onClose } = props;
-
-  useEffect(() => {
+  
+  React.useEffect(() => {
     document.addEventListener('keydown', keydownHandler);
-    return () => {
-      document.removeEventListener('keydown', keydownHandler);
-    };
+    return () => document.removeEventListener('keydown', keydownHandler);
   });
 
   function keydownHandler({ key }) {
@@ -105,7 +100,7 @@ function Modal(props){
 
   return !isVisible ? null : (
     <div className="modal" onClick={onClose}>
-        <div className="modal-dialog" onClick={e => e.stopPropagation()}>
+        <div className="modal-dialog"  onClick={e => e.stopPropagation()}>
         <div className="modal-header">
           <h3 className="modal-title">{title}</h3>
           <span className="modal-close" onClick={onClose}>&times;</span>
@@ -123,14 +118,26 @@ function Modal(props){
 ```jsx
 //Add the component to render function
 
-ReactDOM.render(
-  <Modal 
-    isVisible={false}
-    title= "Modal Title"
-    content={<p>The content goes here</p>}
-    footer={<button>Cancel</button>}        
-    onClose ={()=> } //Add action to hide modal
-/>,
-  document.getElementById('root')
-);
+function App() {
+  const [ isModal, setModal] = React.useState(false);
+  
+  return (
+    <React.Fragment>
+      <button onClick={()=> setModal(true)}>xx</button>
+      <Modal 
+        isVisible={ isModal }
+        title= "Modal Title"
+        content = {<p>Add your content here</p>}
+        footer = {<button>Cancel</button>}
+        onClose ={()=> setModal(false)}
+      />
+    </React.Fragment>
+  )
+}
+
+ReactDOM.render( <App/>, document.getElementById('root'));
 ```
+
+<!-- tags: modal -->
+
+<!-- expertise: 1 -->
