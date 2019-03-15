@@ -2,7 +2,12 @@
 
 Encode a set of form elements as a query string.
 
-First we transform the `form` into `FormData`, then we convert it into an `array` and from the `array` we collect an `query string`
+1. Convert the HTML form to `FormData()`
+2. Convert `FormData()` to `Array` using ` Array.prototype.from()`
+3. Use the 2 argument `Array.from()` to pass the `map` function.
+4. On the field of each iteration, we call the map and add `window.encodeURIComponent()` to it to encode all values inside the field
+5. Then on the result map call `Array.prototype.join('=')` to glue the key and value.
+6. Then the result of `Array.from()` is glued together using `Array.prototype.join('&')`
 
 ```js
 const serializeForm = form =>
