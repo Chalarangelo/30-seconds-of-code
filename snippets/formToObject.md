@@ -1,6 +1,6 @@
 ### formToObject
 
-Serializes a form into an object.
+Encode a set of form elements as a `object`.
 
 First we transform the `form` into `FormData`, then we convert it into an `array` and from the `array` we collect an `object`
 
@@ -11,13 +11,6 @@ const formToObject = form =>
       ...acc,
       [key]: value,
     }), {})
-```
-
-```html
-<form id="form">
-  <input name="email" type="email" />
-  <input name="name" />
-</form>
 ```
 
 ```js

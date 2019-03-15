@@ -392,6 +392,12 @@
     Object.keys(obj)
       .reverse()
       .forEach(key => fn(obj[key], key, obj));
+  const formToObject = form =>
+    Array.from(new FormData(form))
+      .reduce((acc, [key, value]) => ({
+        ...acc,
+        [key]: value,
+      }), {});
   const formatDuration = ms => {
     if (ms < 0) ms = -ms;
     const time = {
@@ -1050,6 +1056,8 @@
     );
   };
   const serializeCookie = (name, val) => `${encodeURIComponent(name)}=${encodeURIComponent(val)}`;
+  const serializeForm = form =>
+    Array.from(new FormData(form), field => field.map(encodeURIComponent).join('=')).join('&');
   const setStyle = (el, ruleName, val) => (el.style[ruleName] = val);
   const shallowClone = obj => Object.assign({}, obj);
   const shank = (arr, index = 0, delCount = 0, ...elements) =>
@@ -1459,6 +1467,7 @@
   exports.forEachRight = forEachRight;
   exports.forOwn = forOwn;
   exports.forOwnRight = forOwnRight;
+  exports.formToObject = formToObject;
   exports.formatDuration = formatDuration;
   exports.fromCamelCase = fromCamelCase;
   exports.functionName = functionName;
@@ -1629,6 +1638,7 @@
   exports.scrollToTop = scrollToTop;
   exports.sdbm = sdbm;
   exports.serializeCookie = serializeCookie;
+  exports.serializeForm = serializeForm;
   exports.setStyle = setStyle;
   exports.shallowClone = shallowClone;
   exports.shank = shank;
