@@ -1,8 +1,9 @@
 ### Modal
 
 Renders a Modal component, controllable through events.
+To use the component, import `Modal` only once and then display it by passing a boolean value to attribute `is-isVisible`.
 
-`keydownHandler`, is a method which handles all the Keyboard events.
+Define `keydownHandler`, a method which handles all the Keyboard events and according to your need you can dispatch any action like when Escape is pressed close modal.
 
 The Modal Component has following attributes:
 
@@ -138,6 +139,6 @@ function App() {
 ReactDOM.render( <App/>, document.getElementById('root'));
 ```
 
-<!-- tags: modal -->
+<!-- tags: visual,children,state,effect -->
 
 <!-- expertise: 1 -->
