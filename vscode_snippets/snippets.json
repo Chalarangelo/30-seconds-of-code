@@ -778,8 +778,8 @@
       "const factorial = n =>",
       "  n < 0",
       "    ? (() => {",
-      "        throw new TypeError('Negative numbers are not allowed!');",
-      "      })()",
+      "      throw new TypeError('Negative numbers are not allowed!');",
+      "    })()",
       "    : n <= 1",
       "      ? 1",
       "      : n * factorial(n - 1);"
@@ -2490,9 +2490,9 @@
       "const remove = (arr, func) =>",
       "  Array.isArray(arr)",
       "    ? arr.filter(func).reduce((acc, val) => {",
-      "        arr.splice(arr.indexOf(val), 1);",
-      "        return acc.concat(val);",
-      "      }, [])",
+      "      arr.splice(arr.indexOf(val), 1);",
+      "      return acc.concat(val);",
+      "    }, [])",
       "    : [];"
     ],
     "description": "Removes elements from an array for which the given function returns `false`.\n\nUse `Array.prototype.filter()` to find array elements that return truthy values and `Array.prototype.reduce()` to remove elements using `Array.prototype.splice()`.\nThe `func` is invoked with three arguments (`value, index, array`)"
