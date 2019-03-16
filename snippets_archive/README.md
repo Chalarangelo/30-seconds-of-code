@@ -519,7 +519,7 @@ Calculates the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_
 Calculates the number of changes (substitutions, deletions or additions) required to convert `string1` to `string2`. 
 Can also be used to compare two strings as shown in the second example.
 
-``` js
+```js
 const levenshteinDistance = (string1, string2) => {
   if (string1.length === 0) return string2.length;
   if (string2.length === 0) return string1.length;
