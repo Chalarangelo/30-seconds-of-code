@@ -23,6 +23,7 @@ capitalize:string,array,intermediate
 capitalizeEveryWord:string,regexp,intermediate
 castArray:utility,array,type,beginner
 chainAsync:function,intermediate
+checkProp:function,object,utility,beginner
 chunk:array,intermediate
 clampNumber:math,beginner
 cloneRegExp:utility,regexp,intermediate
