@@ -5,10 +5,11 @@ Given a `predicate` function and a `prop` string this curried function will then
 It summons `prop` on `obj` and passes it to a provided `predicate` function and returns a masked boolean
 
 ```js
-const checkProp = (predicate, prop) => obj => !!predicate(obj[prop])
+const checkProp = (predicate, prop) => obj => !!predicate(obj[prop]);
 ```
 
 ```js
+
 const lengthIs4 = checkProp(l => l === 4, 'length')
 lengthIs4([]) // false
 lengthIs4([1,2,3,4]) // true
