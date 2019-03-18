@@ -218,6 +218,13 @@
     ],
     "description": "Chains asynchronous functions.\n\nLoop through an array of functions containing asynchronous events, calling `next` when each asynchronous event has completed"
   },
+  "checkProp": {
+    "prefix": "30s_checkProp",
+    "body": [
+      "const checkProp = (predicate, prop) => obj => !!predicate(obj[prop]);"
+    ],
+    "description": "Given a `predicate` function and a `prop` string, this curried function will then take an `object` to inspect by calling the property and passing it to the predicate.\n\nSummon `prop` on `obj`, pass it to a provided `predicate` function and return a masked boolean"
+  },
   "chunk": {
     "prefix": "30s_chunk",
     "body": [
@@ -2490,9 +2497,9 @@
       "const remove = (arr, func) =>",
       "  Array.isArray(arr)",
       "    ? arr.filter(func).reduce((acc, val) => {",
-      "      arr.splice(arr.indexOf(val), 1);",
-      "      return acc.concat(val);",
-      "    }, [])",
+      "        arr.splice(arr.indexOf(val), 1);",
+      "        return acc.concat(val);",
+      "      }, [])",
       "    : [];"
     ],
     "description": "Removes elements from an array for which the given function returns `false`.\n\nUse `Array.prototype.filter()` to find array elements that return truthy values and `Array.prototype.reduce()` to remove elements using `Array.prototype.splice()`.\nThe `func` is invoked with three arguments (`value, index, array`)"
