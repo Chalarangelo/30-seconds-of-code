@@ -121,6 +121,7 @@
     };
     next();
   };
+  const checkProp = (predicate, prop) => obj => !!predicate(obj[prop]);
   const chunk = (arr, size) =>
     Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
       arr.slice(i * size, i * size + size)
@@ -991,9 +992,9 @@
   const remove = (arr, func) =>
     Array.isArray(arr)
       ? arr.filter(func).reduce((acc, val) => {
-        arr.splice(arr.indexOf(val), 1);
-        return acc.concat(val);
-      }, [])
+          arr.splice(arr.indexOf(val), 1);
+          return acc.concat(val);
+        }, [])
       : [];
   const removeNonASCII = str => str.replace(/[^\x20-\x7E]/g, '');
   const renameKeys = (keysMap, obj) =>
@@ -1389,6 +1390,7 @@
   exports.capitalizeEveryWord = capitalizeEveryWord;
   exports.castArray = castArray;
   exports.chainAsync = chainAsync;
+  exports.checkProp = checkProp;
   exports.chunk = chunk;
   exports.clampNumber = clampNumber;
   exports.cloneRegExp = cloneRegExp;
