@@ -549,6 +549,29 @@
       }
     },
     {
+      "id": "checkProp",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "checkProp.md",
+        "text": "Given a `predicate` function and a `prop` string, this curried function will then take an `object` to inspect by calling the property and passing it to the predicate.\n\nSummon `prop` on `obj`, pass it to a provided `predicate` function and return a masked boolean.",
+        "codeBlocks": {
+          "es6": "const checkProp = (predicate, prop) => obj => !!predicate(obj[prop]);",
+          "es5": "var checkProp = function checkProp(predicate, prop) {\n  return function (obj) {\n    return !!predicate(obj[prop]);\n  };\n};",
+          "example": "const lengthIs4 = checkProp(l => l === 4, 'length');\nlengthIs4([]); // false\nlengthIs4([1,2,3,4]); // true\nlengthIs4(new Set([1,2,3,4])); // false (Set uses Size, not length)\n\nconst session = { user: {} };\nconst validUserSession = checkProps(u => u.active && !u.disabled, 'user');\n\nvalidUserSession(session); // false\n\nsession.user.active = true;\nvalidUserSession(session); // true\n\nconst noLength(l => l === undefined, 'length');\nnoLength([]); // false\nnoLength({}); // true\nnoLength(new Set()); // true"
+        },
+        "tags": [
+          "function",
+          "object",
+          "utility",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "2051a5037b3830e219c84dae16f72f42a8a8aee5e8f96bd98f506ea7c4f3bb42"
+      }
+    },
+    {
       "id": "chunk",
       "type": "snippet",
       "attributes": {
@@ -4983,7 +5006,7 @@
         "codeBlocks": {
           "es6": "const pipeAsyncFunctions = (...fns) => arg => fns.reduce((p, f) => p.then(f), Promise.resolve(arg));",
           "es5": "var pipeAsyncFunctions = function pipeAsyncFunctions() {\n  for (var _len = arguments.length, fns = new Array(_len), _key = 0; _key < _len; _key++) {\n    fns[_key] = arguments[_key];\n  }\n\n  return function (arg) {\n    return fns.reduce(function (p, f) {\n      return p.then(f);\n    }, Promise.resolve(arg));\n  };\n};",
-          "example": "const sum = pipeAsyncFunctions(\n  x => x + 1,\n  x => new Promise(resolve => setTimeout(() => resolve(x + 2), 1000)),\n  x => x + 3,\n  async x => (await x) + 4\n);\n(async() => {\n  console.log(await sum(5)); // 15 (after one second)\n})();"
+          "example": "const sum = pipeAsyncFunctions(\n  x => x + 1,\n  x => new Promise(resolve => setTimeout(() => resolve(x + 2), 1000)),\n  x => x + 3,\n  async x => (await x) + 4\n);\n(async () => {\n  console.log(await sum(5)); // 15 (after one second)\n})();"
         },
         "tags": [
           "adapter",
@@ -4994,7 +5017,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "0b04f5fe668888db0dc360535cd999669258019f0682eb6e4ad3a1164e408d13"
+        "hash": "dcdf66e8d0eb4a1761c6b767b8cc350757087ae817ec371436faab0fff7c0051"
       }
     },
     {
@@ -5530,7 +5553,7 @@
         "fileName": "remove.md",
         "text": "Removes elements from an array for which the given function returns `false`.\n\nUse `Array.prototype.filter()` to find array elements that return truthy values and `Array.prototype.reduce()` to remove elements using `Array.prototype.splice()`.\nThe `func` is invoked with three arguments (`value, index, array`).",
         "codeBlocks": {
-          "es6": "const remove = (arr, func) =>\n  Array.isArray(arr)\n    ? arr.filter(func).reduce((acc, val) => {\n      arr.splice(arr.indexOf(val), 1);\n      return acc.concat(val);\n    }, [])\n    : [];",
+          "es6": "const remove = (arr, func) =>\n  Array.isArray(arr)\n    ? arr.filter(func).reduce((acc, val) => {\n        arr.splice(arr.indexOf(val), 1);\n        return acc.concat(val);\n      }, [])\n    : [];",
           "es5": "var remove = function remove(arr, func) {\n  return Array.isArray(arr) ? arr.filter(func).reduce(function (acc, val) {\n    arr.splice(arr.indexOf(val), 1);\n    return acc.concat(val);\n  }, []) : [];\n};",
           "example": "remove([1, 2, 3, 4], n => n % 2 === 0); // [2, 4]"
         },
@@ -5541,7 +5564,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "536833a64ce0c000b82327ed1bb9bcb82e35b237f75aefcca0e0d2def4e9cb63"
+        "hash": "2fd54c9fc1fb5b0a981df69501b518d5830ea77544d4d5290c7cc13745ca00ea"
       }
     },
     {
@@ -7876,7 +7899,7 @@
       },
       "meta": {
         "archived": true,
-        "hash": "7af37e0984b5c8bd78d6b224cdc155f8c2bf687e38b5cfee27f32c7c29dcddf5"
+        "hash": "ac13cf4ff52357534c814d458895d6a70a5193a552398f9cac7f86016a5e6544"
       }
     },
     {

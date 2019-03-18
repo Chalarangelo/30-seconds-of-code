@@ -343,6 +343,11 @@
 
     next();
   };
+  var checkProp = function checkProp(predicate, prop) {
+    return function (obj) {
+      return !!predicate(obj[prop]);
+    };
+  };
   var chunk = function chunk(arr, size) {
     return Array.from({
       length: Math.ceil(arr.length / size)
@@ -2649,6 +2654,7 @@
   exports.capitalizeEveryWord = capitalizeEveryWord;
   exports.castArray = castArray;
   exports.chainAsync = chainAsync;
+  exports.checkProp = checkProp;
   exports.chunk = chunk;
   exports.clampNumber = clampNumber;
   exports.cloneRegExp = cloneRegExp;

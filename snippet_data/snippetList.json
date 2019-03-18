@@ -374,6 +374,22 @@
       }
     },
     {
+      "id": "checkProp",
+      "type": "snippetListing",
+      "attributes": {
+        "tags": [
+          "function",
+          "object",
+          "utility",
+          "beginner"
+        ],
+        "archived": false
+      },
+      "meta": {
+        "hash": "2051a5037b3830e219c84dae16f72f42a8a8aee5e8f96bd98f506ea7c4f3bb42"
+      }
+    },
+    {
       "id": "chunk",
       "type": "snippetListing",
       "attributes": {
@@ -3391,7 +3407,7 @@
         "archived": false
       },
       "meta": {
-        "hash": "0b04f5fe668888db0dc360535cd999669258019f0682eb6e4ad3a1164e408d13"
+        "hash": "dcdf66e8d0eb4a1761c6b767b8cc350757087ae817ec371436faab0fff7c0051"
       }
     },
     {
@@ -3763,7 +3779,7 @@
         "archived": false
       },
       "meta": {
-        "hash": "536833a64ce0c000b82327ed1bb9bcb82e35b237f75aefcca0e0d2def4e9cb63"
+        "hash": "2fd54c9fc1fb5b0a981df69501b518d5830ea77544d4d5290c7cc13745ca00ea"
       }
     },
     {
@@ -5321,7 +5337,7 @@
         "archived": true
       },
       "meta": {
-        "hash": "7af37e0984b5c8bd78d6b224cdc155f8c2bf687e38b5cfee27f32c7c29dcddf5"
+        "hash": "ac13cf4ff52357534c814d458895d6a70a5193a552398f9cac7f86016a5e6544"
       }
     },
     {
