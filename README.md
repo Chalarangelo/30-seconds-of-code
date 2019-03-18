@@ -671,14 +671,13 @@ const pipeAsyncFunctions = (...fns) => arg => fns.reduce((p, f) => p.then(f), Pr
 <summary>Examples</summary>
 
 ```js
-
 const sum = pipeAsyncFunctions(
   x => x + 1,
   x => new Promise(resolve => setTimeout(() => resolve(x + 2), 1000)),
   x => x + 3,
   async x => (await x) + 4
 );
-(async() => {
+(async () => {
   console.log(await sum(5)); // 15 (after one second)
 })();
 ```
@@ -2320,13 +2319,12 @@ Use `Array.prototype.filter()` to find array elements that return truthy values 
 The `func` is invoked with three arguments (`value, index, array`).
 
 ```js
-
 const remove = (arr, func) =>
   Array.isArray(arr)
     ? arr.filter(func).reduce((acc, val) => {
-      arr.splice(arr.indexOf(val), 1);
-      return acc.concat(val);
-    }, [])
+        arr.splice(arr.indexOf(val), 1);
+        return acc.concat(val);
+      }, [])
     : [];
 ```
 
@@ -4656,9 +4654,9 @@ chainAsync([
 
 ### checkProp
 
-Given a `predicate` function and a `prop` string this curried function will then take an `object` to inspect by calling the property and passing it to the predicate.
+Given a `predicate` function and a `prop` string, this curried function will then take an `object` to inspect by calling the property and passing it to the predicate.
 
-It summons `prop` on `obj` and passes it to a provided `predicate` function and returns a masked boolean
+Summon `prop` on `obj`, pass it to a provided `predicate` function and return a masked boolean.
 
 ```js
 const checkProp = (predicate, prop) => obj => !!predicate(obj[prop]);
@@ -4669,23 +4667,23 @@ const checkProp = (predicate, prop) => obj => !!predicate(obj[prop]);
 
 ```js
 
-const lengthIs4 = checkProp(l => l === 4, 'length')
-lengthIs4([]) // false
-lengthIs4([1,2,3,4]) // true
-lengthIs4(new Set([1,2,3,4])) // false (Set uses Size, not length)
+const lengthIs4 = checkProp(l => l === 4, 'length');
+lengthIs4([]); // false
+lengthIs4([1,2,3,4]); // true
+lengthIs4(new Set([1,2,3,4])); // false (Set uses Size, not length)
 
-const session = { user: {} }
-const validUserSession = checkProps(u => u.active && !u.disabled, 'user')
+const session = { user: {} };
+const validUserSession = checkProps(u => u.active && !u.disabled, 'user');
 
-validUserSession(session) // false
+validUserSession(session); // false
 
-session.user.active = true
-validUserSession(session) // true
+session.user.active = true;
+validUserSession(session); // true
 
-const noLength(l => l === undefined, 'length')
-noLength([]) // false
-noLength({}) // true
-noLength(new Set()) // true
+const noLength(l => l === undefined, 'length');
+noLength([]); // false
+noLength({}); // true
+noLength(new Set()); // true
 ```
 
 </details>
@@ -5545,8 +5543,8 @@ Throws an exception if `n` is a negative number.
 const factorial = n =>
   n < 0
     ? (() => {
-        throw new TypeError('Negative numbers are not allowed!');
-      })()
+      throw new TypeError('Negative numbers are not allowed!');
+    })()
     : n <= 1
       ? 1
       : n * factorial(n - 1);
@@ -6928,9 +6926,9 @@ const dig = (obj, target) =>
   target in obj
     ? obj[target]
     : Object.values(obj).reduce((acc, val) => {
-        if (acc !== undefined) return acc;
-        if (typeof val === 'object') return dig(val, target);
-      }, undefined);
+      if (acc !== undefined) return acc;
+      if (typeof val === 'object') return dig(val, target);
+    }, undefined);
 ```
 
 <details>
