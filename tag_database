@@ -330,6 +330,7 @@ untildify:node,string,beginner
 unzip:array,intermediate
 unzipWith:array,function,advanced
 URLJoin:string,utility,regexp,advanced
+urlParams:browser,string
 UUIDGeneratorBrowser:browser,utility,random,intermediate
 UUIDGeneratorNode:node,utility,random,intermediate
 validateNumber:utility,math,intermediate
@@ -342,4 +343,3 @@ yesNo:utility,regexp,intermediate
 zip:array,intermediate
 zipObject:array,object,intermediate
 zipWith:array,function,advanced
-urlParams:browser,string
