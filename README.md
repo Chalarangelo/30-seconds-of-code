@@ -1,3 +1,4 @@
+
 [![Logo](/logo.png)](https://30secondsofcode.org/)
 
 # 30 seconds of code
