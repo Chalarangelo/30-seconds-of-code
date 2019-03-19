@@ -4671,6 +4671,7 @@ const checkProp = (predicate, prop) => obj => !!predicate(obj[prop]);
 ```js
 
 
+
 const lengthIs4 = checkProp(l => l === 4, 'length');
 lengthIs4([]); // false
 lengthIs4([1,2,3,4]); // true
@@ -6852,11 +6853,11 @@ const deepMapKeys = (obj, f) =>
     ? obj.map(val => deepMapKeys(val, f))
     : typeof obj === 'object'
       ? Object.keys(obj).reduce((acc, current) => {
-        const val = obj[current];
-        acc[f(current)] =
+          const val = obj[current];
+          acc[f(current)] =
             val !== null && typeof val === 'object' ? deepMapKeys(val, f) : (acc[f(current)] = val);
-        return acc;
-      }, {})
+          return acc;
+        }, {})
       : obj;
 ```
 
@@ -6930,9 +6931,9 @@ const dig = (obj, target) =>
   target in obj
     ? obj[target]
     : Object.values(obj).reduce((acc, val) => {
-      if (acc !== undefined) return acc;
-      if (typeof val === 'object') return dig(val, target);
-    }, undefined);
+        if (acc !== undefined) return acc;
+        if (typeof val === 'object') return dig(val, target);
+      }, undefined);
 ```
 
 <details>
@@ -8872,18 +8873,20 @@ isNull(null); // true
 
 Checks if the given argument is a number.
 
-Use `typeof` to check if a value is classified as a number primitive.
+Use `typeof` to check if a value is classified as a number primitive. 
+To safeguard against `NaN`, check if `val === val` (as `NaN` has a `typeof` equal to `number` and is the only value not equal to itself).
 
 ```js
-const isNumber = val => typeof val === 'number';
+const isNumber = val => typeof val === 'number' && val === val;
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```js
-isNumber('1'); // false
 isNumber(1); // true
+isNumber('1'); // false
+isNumber(NaN); // false
 ```
 
 </details>
