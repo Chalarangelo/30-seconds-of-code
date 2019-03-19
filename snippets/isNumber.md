@@ -2,7 +2,8 @@
 
 Checks if the given argument is a number.
 
-Use `typeof` to check if a value is classified as a number primitive. Because `typeof NaN` is equal to `number`, the `val === val` is for protection. NaN compares unequal (via ==, !=, ===, and !==) to any other value, including to another NaN value.
+Use `typeof` to check if a value is classified as a number primitive. 
+To safeguard against `NaN`, check if `val === val` (as `NaN` has a `typeof` equal to `number` and is the only value not equal to itself).
 
 ```js
 const isNumber = val => typeof val === 'number' && val === val;
