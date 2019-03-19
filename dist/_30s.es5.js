@@ -187,7 +187,7 @@
     var delimiter = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ',';
     return arr.map(function (v) {
       return v.map(function (x) {
-        return "\"".concat(x, "\"");
+        return isNaN(x) ? "\"".concat(x.replace(/"/g, '""'), "\"") : x;
       }).join(delimiter);
     }).join('\n');
   };
@@ -1219,7 +1219,7 @@
     return val === null;
   };
   var isNumber = function isNumber(val) {
-    return typeof val === 'number';
+    return typeof val === 'number' && val === val;
   };
   var isObject = function isObject(obj) {
     return obj === Object(obj);
