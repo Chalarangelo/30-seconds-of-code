@@ -53,7 +53,9 @@ const allEqual = arr => arr.every(val => val === arr[0]);
 const any = (arr, fn = Boolean) => arr.some(fn);
 const approximatelyEqual = (v1, v2, epsilon = 0.001) => Math.abs(v1 - v2) < epsilon;
 const arrayToCSV = (arr, delimiter = ',') =>
-  arr.map(v => v.map(x => `"${x}"`).join(delimiter)).join('\n');
+  arr
+    .map(v => v.map(x => (isNaN(x) ? `"${x.replace(/"/g, '""')}"` : x)).join(delimiter))
+    .join('\n');
 const arrayToHtmlList = (arr, listID) =>
   (el => (
     (el = document.querySelector('#' + listID)),
@@ -991,9 +993,9 @@ const reject = (pred, array) => array.filter((...args) => !pred(...args));
 const remove = (arr, func) =>
   Array.isArray(arr)
     ? arr.filter(func).reduce((acc, val) => {
-        arr.splice(arr.indexOf(val), 1);
-        return acc.concat(val);
-      }, [])
+      arr.splice(arr.indexOf(val), 1);
+      return acc.concat(val);
+    }, [])
     : [];
 const removeNonASCII = str => str.replace(/[^\x20-\x7E]/g, '');
 const renameKeys = (keysMap, obj) =>
