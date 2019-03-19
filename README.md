@@ -677,7 +677,7 @@ const sum = pipeAsyncFunctions(
   x => x + 3,
   async x => (await x) + 4
 );
-(async () => {
+(async() => {
   console.log(await sum(5)); // 15 (after one second)
 })();
 ```
@@ -892,7 +892,9 @@ Omit the second argument, `delimiter`, to use a default delimiter of `,`.
 
 ```js
 const arrayToCSV = (arr, delimiter = ',') =>
-  arr.map(v => v.map(x => `"${x}"`).join(delimiter)).join('\n');
+  arr
+    .map(v => v.map(x => (isNaN(x) ? `"${x.replace(/"/g, '""')}"` : x)).join(delimiter))
+    .join('\n');
 ```
 
 <details>
@@ -901,6 +903,7 @@ const arrayToCSV = (arr, delimiter = ',') =>
 ```js
 arrayToCSV([['a', 'b'], ['c', 'd']]); // '"a","b"\n"c","d"'
 arrayToCSV([['a', 'b'], ['c', 'd']], ';'); // '"a";"b"\n"c";"d"'
+arrayToCSV([['a', '"b" great'], ['c', 3.1415]]); // '"a","""b"" great"\n"c",3.1415'
 ```
 
 </details>
@@ -2322,9 +2325,9 @@ The `func` is invoked with three arguments (`value, index, array`).
 const remove = (arr, func) =>
   Array.isArray(arr)
     ? arr.filter(func).reduce((acc, val) => {
-        arr.splice(arr.indexOf(val), 1);
-        return acc.concat(val);
-      }, [])
+      arr.splice(arr.indexOf(val), 1);
+      return acc.concat(val);
+    }, [])
     : [];
 ```
 
@@ -4666,6 +4669,7 @@ const checkProp = (predicate, prop) => obj => !!predicate(obj[prop]);
 <summary>Examples</summary>
 
 ```js
+
 
 const lengthIs4 = checkProp(l => l === 4, 'length');
 lengthIs4([]); // false
