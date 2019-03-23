@@ -5,5 +5,6 @@ test('JSONToDate is a Function', () => {
   expect(JSONToDate).toBeInstanceOf(Function);
 });
 test('JSONToDate returns the correct date string', () => {
-  expect(JSONToDate(/Date(1489525200000)/)).toBe('14/3/2017');
+  var reg = new RegExp(`Date(${Date.parse('March 14,2017')})`);
+  expect(JSONToDate(reg)).toBe('14/3/2017');
 });
