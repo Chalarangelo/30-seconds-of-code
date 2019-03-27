@@ -1,17 +1,13 @@
 ### Modal
 
 Renders a Modal component, controllable through events.
-To use the component, import `Modal` only once and then display it by passing a boolean value to attribute `is-isVisible`.
+To use the component, import `Modal` only once and then display it by passing a boolean value to the `isVisible` attribute.
 
-Define `keydownHandler`, a method which handles all the Keyboard events and according to your need you can dispatch any action like when Escape is pressed close modal.
-
-The Modal Component has following attributes:
-
-- `isVisible`, Boolean describing if the modal should be shown or not.(Required)
-- `title`, String describing title of Modal.(Required)
-- `content`, JSX elements to be rendered in modal body.(Required)
-- `footer`, JSX elements to be rendered in modal footer.(optional)
-- `onClose`, Function that will be called when Modal needs to be closed like when escape key is pressed.(Required)
+* Use object destructuring to set defaults for certain attributes of the modal component.
+* Define `keydownHandler`, a method which handles all keyboard events, which can be used according to your needs to dispatch actions (e.g. close the modal when <kbd>Esc</kbd> is pressed).
+* Use `React.useEffect()` hook to add or remove the `keydown` event listener, which calls `keydownHandler`.
+* Use the `isVisible` prop to determine if the modal should be shown or not.
+* Use CSS to style and position the modal component.
 
 ```css
 .modal {
@@ -84,9 +80,7 @@ The Modal Component has following attributes:
 ```
 
 ```jsx
-function Modal(props){
-  const { isVisible, title, content, footer, onClose } = props;
-  
+function Modal({ isVisible = false, title, content, footer, onClose }){  
   React.useEffect(() => {
     document.addEventListener('keydown', keydownHandler);
     return () => document.removeEventListener('keydown', keydownHandler);
@@ -117,8 +111,7 @@ function Modal(props){
 ```
 
 ```jsx
-//Add the component to render function
-
+//Add the component to the render function
 function App() {
   const [ isModal, setModal] = React.useState(false);
   
@@ -139,6 +132,6 @@ function App() {
 ReactDOM.render( <App/>, document.getElementById('root'));
 ```
 
-<!-- tags: visual,children,state,effect -->
+<!-- tags: visual,effect -->
 
-<!-- expertise: 1 -->
+<!-- expertise: 2 -->
