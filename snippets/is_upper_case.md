@@ -11,6 +11,6 @@ def is_upper_case(string):
 
 ```python
 is_upper_case('ABC') # True
-is_upper_case('a3@$') # True
+is_upper_case('a3@$') # False
 is_upper_case('aB4') # False
 ```
