@@ -851,15 +851,6 @@
       return fn(obj[key], key, obj);
     });
   };
-  var formToObject = function formToObject(form) {
-    return Array.from(new FormData(form)).reduce(function (acc, _ref10) {
-      var _ref11 = _slicedToArray(_ref10, 2),
-          key = _ref11[0],
-          value = _ref11[1];
-
-      return _objectSpread({}, acc, _defineProperty({}, key, value));
-    }, {});
-  };
   var formatDuration = function formatDuration(ms) {
     if (ms < 0) ms = -ms;
     var time = {
@@ -871,10 +862,10 @@
     };
     return Object.entries(time).filter(function (val) {
       return val[1] !== 0;
-    }).map(function (_ref12) {
-      var _ref13 = _slicedToArray(_ref12, 2),
-          key = _ref13[0],
-          val = _ref13[1];
+    }).map(function (_ref10) {
+      var _ref11 = _slicedToArray(_ref10, 2),
+          key = _ref11[0],
+          val = _ref11[1];
 
       return "".concat(val, " ").concat(key).concat(val !== 1 ? 's' : '');
     }).join(', ');
@@ -1074,9 +1065,9 @@
     var end = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
 
     if (end && start > end) {
-      var _ref14 = [start, end];
-      end = _ref14[0];
-      start = _ref14[1];
+      var _ref12 = [start, end];
+      end = _ref12[0];
+      start = _ref12[1];
     }
 
     return end == null ? n >= 0 && n < start : n >= start && n < end;
@@ -1464,14 +1455,14 @@
       }, {});
     }, {});
   };
-  var midpoint = function midpoint(_ref15, _ref16) {
-    var _ref17 = _slicedToArray(_ref15, 2),
-        x1 = _ref17[0],
-        y1 = _ref17[1];
+  var midpoint = function midpoint(_ref13, _ref14) {
+    var _ref15 = _slicedToArray(_ref13, 2),
+        x1 = _ref15[0],
+        y1 = _ref15[1];
 
-    var _ref18 = _slicedToArray(_ref16, 2),
-        x2 = _ref18[0],
-        y2 = _ref18[1];
+    var _ref16 = _slicedToArray(_ref14, 2),
+        x2 = _ref16[0],
+        y2 = _ref16[1];
 
     return [(x1 + x2) / 2, (y1 + y2) / 2];
   };
@@ -1545,10 +1536,10 @@
     return (n === -1 ? arr.slice(n) : arr.slice(n, n + 1))[0];
   };
   var objectFromPairs = function objectFromPairs(arr) {
-    return arr.reduce(function (a, _ref19) {
-      var _ref20 = _slicedToArray(_ref19, 2),
-          key = _ref20[0],
-          val = _ref20[1];
+    return arr.reduce(function (a, _ref17) {
+      var _ref18 = _slicedToArray(_ref17, 2),
+          key = _ref18[0],
+          val = _ref18[1];
 
       return a[key] = val, a;
     }, {});
@@ -1637,10 +1628,10 @@
     return _toConsumableArray(arr).sort(function (a, b) {
       return props.reduce(function (acc, prop, i) {
         if (acc === 0) {
-          var _ref21 = orders && orders[i] === 'desc' ? [b[prop], a[prop]] : [a[prop], b[prop]],
-              _ref22 = _slicedToArray(_ref21, 2),
-              p1 = _ref22[0],
-              p2 = _ref22[1];
+          var _ref19 = orders && orders[i] === 'desc' ? [b[prop], a[prop]] : [a[prop], b[prop]],
+              _ref20 = _slicedToArray(_ref19, 2),
+              p1 = _ref20[0],
+              p2 = _ref20[1];
 
           acc = p1 > p2 ? 1 : p1 < p2 ? -1 : 0;
         }
@@ -2018,8 +2009,8 @@
       type: 'application/javascript; charset=utf-8'
     }));
     return new Promise(function (res, rej) {
-      worker.onmessage = function (_ref23) {
-        var data = _ref23.data;
+      worker.onmessage = function (_ref21) {
+        var data = _ref21.data;
         res(data), worker.terminate();
       };
 
@@ -2036,18 +2027,18 @@
   var sample = function sample(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
   };
-  var sampleSize = function sampleSize(_ref24) {
-    var _ref25 = _toArray(_ref24),
-        arr = _ref25.slice(0);
+  var sampleSize = function sampleSize(_ref22) {
+    var _ref23 = _toArray(_ref22),
+        arr = _ref23.slice(0);
 
     var n = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
     var m = arr.length;
 
     while (m) {
       var i = Math.floor(Math.random() * m--);
-      var _ref26 = [arr[i], arr[m]];
-      arr[m] = _ref26[0];
-      arr[i] = _ref26[1];
+      var _ref24 = [arr[i], arr[m]];
+      arr[m] = _ref24[0];
+      arr[i] = _ref24[1];
     }
 
     return arr.slice(0, n);
@@ -2068,11 +2059,6 @@
   };
   var serializeCookie = function serializeCookie(name, val) {
     return "".concat(encodeURIComponent(name), "=").concat(encodeURIComponent(val));
-  };
-  var serializeForm = function serializeForm(form) {
-    return Array.from(new FormData(form), function (field) {
-      return field.map(encodeURIComponent).join('=');
-    }).join('&');
   };
   var setStyle = function setStyle(el, ruleName, val) {
     return el.style[ruleName] = val;
@@ -2099,17 +2085,17 @@
       return e.style.display = '';
     });
   };
-  var shuffle = function shuffle(_ref27) {
-    var _ref28 = _toArray(_ref27),
-        arr = _ref28.slice(0);
+  var shuffle = function shuffle(_ref25) {
+    var _ref26 = _toArray(_ref25),
+        arr = _ref26.slice(0);
 
     var m = arr.length;
 
     while (m) {
       var i = Math.floor(Math.random() * m--);
-      var _ref29 = [arr[i], arr[m]];
-      arr[m] = _ref29[0];
-      arr[i] = _ref29[1];
+      var _ref27 = [arr[i], arr[m]];
+      arr[m] = _ref27[0];
+      arr[i] = _ref27[1];
     }
 
     return arr;
@@ -2183,8 +2169,8 @@
       };
     }).sort(function (a, b) {
       return compare(a.item, b.item) || a.index - b.index;
-    }).map(function (_ref30) {
-      var item = _ref30.item;
+    }).map(function (_ref28) {
+      var item = _ref28.item;
       return item;
     });
   };
@@ -2735,7 +2721,6 @@
   exports.forEachRight = forEachRight;
   exports.forOwn = forOwn;
   exports.forOwnRight = forOwnRight;
-  exports.formToObject = formToObject;
   exports.formatDuration = formatDuration;
   exports.fromCamelCase = fromCamelCase;
   exports.functionName = functionName;
@@ -2906,7 +2891,6 @@
   exports.scrollToTop = scrollToTop;
   exports.sdbm = sdbm;
   exports.serializeCookie = serializeCookie;
-  exports.serializeForm = serializeForm;
   exports.setStyle = setStyle;
   exports.shallowClone = shallowClone;
   exports.shank = shank;
