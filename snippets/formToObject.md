@@ -1,10 +1,9 @@
 ### formToObject
 
-Encode a set of form elements as a `object`.
+Encode a set of form elements as an `object`.
 
-1. Convert the HTML form to `FormData()`
-2. Convert `FormData()` to `Array` using ` Array.from()`
-3. We collect an object from an array using `Array.prototype.reduce()`
+Use the `FormData` constructor to convert the HTML `form` to `FormData`, `Array.from()` to convert to an array.
+Collect the object from the array, using `Array.prototype.reduce()`.
 
 ```js
 const formToObject = form =>
