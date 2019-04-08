@@ -8,9 +8,9 @@ Use `Array.prototype.join()` with appropriate argumens to produce an appropriate
 
 ```js
 const serializeForm = form =>
-  Array.from(new FormData(form), field => field.map(encodeURIComponent).join('=')).join('&')
+  Array.from(new FormData(form), field => field.map(encodeURIComponent).join('=')).join('&');
 ```
 
 ```js
-serializeForm(document.querySelector('#form')) // email=test%40email.com&name=Test%20Name
+serializeForm(document.querySelector('#form')); // email=test%40email.com&name=Test%20Name
 ```
