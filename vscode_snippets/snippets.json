@@ -308,7 +308,7 @@
     "body": [
       "const compactWhitespace = str => str.replace(/\\s{2,}/g, ' ');"
     ],
-    "description": "Returns a string with whitespaces compacted.\n\nUse `String.prototype.replace()` with a regular expression to replace all occurences of 2 or more whitespace characters with a single space"
+    "description": "Returns a string with whitespaces compacted.\n\nUse `String.prototype.replace()` with a regular expression to replace all occurrences of 2 or more whitespace characters with a single space"
   },
   "compose": {
     "prefix": "30s_compose",
@@ -3259,7 +3259,7 @@
       "    return acc;",
       "  }, []);"
     ],
-    "description": "Returns all unique values of an array, based on a provided comparator function.\n\nUse `Array.prototype.reduce()` and `Array.prototype.some()` for an array containing only the first unique occurence of each value, based on the comparator function, `fn`.\nThe comparator function takes two arguments: the values of the two elements being compared"
+    "description": "Returns all unique values of an array, based on a provided comparator function.\n\nUse `Array.prototype.reduce()` and `Array.prototype.some()` for an array containing only the first unique occurrence of each value, based on the comparator function, `fn`.\nThe comparator function takes two arguments: the values of the two elements being compared"
   },
   "uniqueElementsByRight": {
     "prefix": "30s_uniqueElementsByRight",
@@ -3270,7 +3270,7 @@
       "    return acc;",
       "  }, []);"
     ],
-    "description": "Returns all unique values of an array, based on a provided comparator function.\n\nUse `Array.prototype.reduce()` and `Array.prototype.some()` for an array containing only the last unique occurence of each value, based on the comparator function, `fn`.\nThe comparator function takes two arguments: the values of the two elements being compared"
+    "description": "Returns all unique values of an array, based on a provided comparator function.\n\nUse `Array.prototype.reduce()` and `Array.prototype.some()` for an array containing only the last unique occurrence of each value, based on the comparator function, `fn`.\nThe comparator function takes two arguments: the values of the two elements being compared"
   },
   "uniqueSymmetricDifference": {
     "prefix": "30s_uniqueSymmetricDifference",
