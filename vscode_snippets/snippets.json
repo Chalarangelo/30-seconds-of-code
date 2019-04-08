@@ -922,6 +922,20 @@
     ],
     "description": "Returns the human readable format of the given number of milliseconds.\n\nDivide `ms` with the appropriate values to obtain the appropriate values for `day`, `hour`, `minute`, `second` and `millisecond`.\nUse `Object.entries()` with `Array.prototype.filter()` to keep only non-zero values.\nUse `Array.prototype.map()` to create the string for each value, pluralizing appropriately.\nUse `String.prototype.join(', ')` to combine the values into a string"
   },
+  "formToObject": {
+    "prefix": "30s_formToObject",
+    "body": [
+      "const formToObject = form =>",
+      "  Array.from(new FormData(form)).reduce(",
+      "    (acc, [key, value]) => ({",
+      "      ...acc,",
+      "      [key]: value",
+      "    }),",
+      "    {}",
+      "  );"
+    ],
+    "description": "Encode a set of form elements as an `object`.\n\nUse the `FormData` constructor to convert the HTML `form` to `FormData`, `Array.from()` to convert to an array.\nCollect the object from the array, using `Array.prototype.reduce()`"
+  },
   "forOwn": {
     "prefix": "30s_forOwn",
     "body": [
@@ -2499,9 +2513,9 @@
       "const remove = (arr, func) =>",
       "  Array.isArray(arr)",
       "    ? arr.filter(func).reduce((acc, val) => {",
-      "        arr.splice(arr.indexOf(val), 1);",
-      "        return acc.concat(val);",
-      "      }, [])",
+      "      arr.splice(arr.indexOf(val), 1);",
+      "      return acc.concat(val);",
+      "    }, [])",
       "    : [];"
     ],
     "description": "Removes elements from an array for which the given function returns `false`.\n\nUse `Array.prototype.filter()` to find array elements that return truthy values and `Array.prototype.reduce()` to remove elements using `Array.prototype.splice()`.\nThe `func` is invoked with three arguments (`value, index, array`)"
@@ -2630,6 +2644,14 @@
       "const serializeCookie = (name, val) => `${encodeURIComponent(name)}=${encodeURIComponent(val)}`;"
     ],
     "description": "Serialize a cookie name-value pair into a Set-Cookie header string.\n\nUse template literals and `encodeURIComponent()` to create the appropriate string"
+  },
+  "serializeForm": {
+    "prefix": "30s_serializeForm",
+    "body": [
+      "const serializeForm = form =>",
+      "  Array.from(new FormData(form), field => field.map(encodeURIComponent).join('=')).join('&');"
+    ],
+    "description": "Encode a set of form elements as a query string.\n\nUse the `FormData` constructor to convert the HTML `form` to `FormData`, `Array.from()` to convert to an array, passing a map function as the second argument.\nUse `Array.prototype.map()` and `window.encodeURIComponent()` to encode each field's value.\nUse `Array.prototype.join()` with appropriate argumens to produce an appropriate query string"
   },
   "setStyle": {
     "prefix": "30s_setStyle",
