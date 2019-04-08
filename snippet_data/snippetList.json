@@ -386,7 +386,7 @@
         "archived": false
       },
       "meta": {
-        "hash": "01f1ea63f0660c6cd189722d2bf4ee10a651649d14338ca6dca7037106faaf61"
+        "hash": "a54a645ae51358e2a652adcd19b465e5da0c39d1ebf7a3a393b92cb2c8762883"
       }
     },
     {
@@ -1372,6 +1372,21 @@
       },
       "meta": {
         "hash": "72c557bd9def493e3a138705f5cb66f993228bd7e51b11fa84f85841bc035524"
+      }
+    },
+    {
+      "id": "formToObject",
+      "type": "snippetListing",
+      "attributes": {
+        "tags": [
+          "browser",
+          "object",
+          "intermediate"
+        ],
+        "archived": false
+      },
+      "meta": {
+        "hash": "2bb4becd71bb5d71e6581e9d944fb44cca6c2c6441fe169fbc1b83e8ed48b4a6"
       }
     },
     {
@@ -3407,7 +3422,7 @@
         "archived": false
       },
       "meta": {
-        "hash": "dcdf66e8d0eb4a1761c6b767b8cc350757087ae817ec371436faab0fff7c0051"
+        "hash": "4815876fd6dbb17ad34c0d8918e7a72d837104f9beee7dc51b0fa73057b9e83e"
       }
     },
     {
@@ -3779,7 +3794,7 @@
         "archived": false
       },
       "meta": {
-        "hash": "2fd54c9fc1fb5b0a981df69501b518d5830ea77544d4d5290c7cc13745ca00ea"
+        "hash": "ec9cb9384817f84cf0bacd62a23b69b2304fa2cf0352b16d3950b21d48c04f11"
       }
     },
     {
@@ -3958,6 +3973,21 @@
       },
       "meta": {
         "hash": "a69e2913ccc5c7ca2100de571087a44c14b7ca475154740bace342852357b379"
+      }
+    },
+    {
+      "id": "serializeForm",
+      "type": "snippetListing",
+      "attributes": {
+        "tags": [
+          "browser",
+          "string",
+          "intermediate"
+        ],
+        "archived": false
+      },
+      "meta": {
+        "hash": "2667730d717644182036005fffd041cb6f44173d1dc64e8d75ccf491a66e1ebb"
       }
     },
     {
