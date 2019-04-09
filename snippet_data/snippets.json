@@ -568,7 +568,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "a54a645ae51358e2a652adcd19b465e5da0c39d1ebf7a3a393b92cb2c8762883"
+        "hash": "819c86516df91f29f5900ca172cd5a92ba3f7dde9562b7f4958fd70b914a108e"
       }
     },
     {
@@ -749,7 +749,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "compactWhitespace.md",
-        "text": "Returns a string with whitespaces compacted.\n\nUse `String.prototype.replace()` with a regular expression to replace all occurences of 2 or more whitespace characters with a single space.",
+        "text": "Returns a string with whitespaces compacted.\n\nUse `String.prototype.replace()` with a regular expression to replace all occurrences of 2 or more whitespace characters with a single space.",
         "codeBlocks": {
           "es6": "const compactWhitespace = str => str.replace(/\\s{2,}/g, ' ');",
           "es5": "var compactWhitespace = function compactWhitespace(str) {\n  return str.replace(/\\s{2,}/g, ' ');\n};",
@@ -763,7 +763,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "c1e8ff69ac01f5be0595f6adf8b0df11dd8b8e557beb71f5faefb7a119282780"
+        "hash": "5b9e921377dd14654bb87eb36a35924fe15957ab98c6adbe88c6b187a7cf37ac"
       }
     },
     {
@@ -7139,7 +7139,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "uniqueElementsBy.md",
-        "text": "Returns all unique values of an array, based on a provided comparator function.\n\nUse `Array.prototype.reduce()` and `Array.prototype.some()` for an array containing only the first unique occurence of each value, based on the comparator function, `fn`.\nThe comparator function takes two arguments: the values of the two elements being compared.",
+        "text": "Returns all unique values of an array, based on a provided comparator function.\n\nUse `Array.prototype.reduce()` and `Array.prototype.some()` for an array containing only the first unique occurrence of each value, based on the comparator function, `fn`.\nThe comparator function takes two arguments: the values of the two elements being compared.",
         "codeBlocks": {
           "es6": "const uniqueElementsBy = (arr, fn) =>\n  arr.reduce((acc, v) => {\n    if (!acc.some(x => fn(v, x))) acc.push(v);\n    return acc;\n  }, []);",
           "es5": "var uniqueElementsBy = function uniqueElementsBy(arr, fn) {\n  return arr.reduce(function (acc, v) {\n    if (!acc.some(function (x) {\n      return fn(v, x);\n    })) acc.push(v);\n    return acc;\n  }, []);\n};",
@@ -7153,7 +7153,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "38bee97eef5e2918ce534d6f25ad2a8b40d4841c7a663d9a9a596dd4687ce5bc"
+        "hash": "f7ac261844dc5146be57a82cdcf7d8dad6990bd4a923eeb8148a6e8b2adabe27"
       }
     },
     {
@@ -7161,7 +7161,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "uniqueElementsByRight.md",
-        "text": "Returns all unique values of an array, based on a provided comparator function.\n\nUse `Array.prototype.reduce()` and `Array.prototype.some()` for an array containing only the last unique occurence of each value, based on the comparator function, `fn`.\nThe comparator function takes two arguments: the values of the two elements being compared.",
+        "text": "Returns all unique values of an array, based on a provided comparator function.\n\nUse `Array.prototype.reduce()` and `Array.prototype.some()` for an array containing only the last unique occurrence of each value, based on the comparator function, `fn`.\nThe comparator function takes two arguments: the values of the two elements being compared.",
         "codeBlocks": {
           "es6": "const uniqueElementsByRight = (arr, fn) =>\n  arr.reduceRight((acc, v) => {\n    if (!acc.some(x => fn(v, x))) acc.push(v);\n    return acc;\n  }, []);",
           "es5": "var uniqueElementsByRight = function uniqueElementsByRight(arr, fn) {\n  return arr.reduceRight(function (acc, v) {\n    if (!acc.some(function (x) {\n      return fn(v, x);\n    })) acc.push(v);\n    return acc;\n  }, []);\n};",
@@ -7175,7 +7175,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "cec8e5f01c8d00c246a12fabb43713a60da510f50c3d548f703f664936373096"
+        "hash": "c21790120505a25f0f75d92591b5ca248fb40dd0b70438fee5ecfa22d4a61399"
       }
     },
     {
