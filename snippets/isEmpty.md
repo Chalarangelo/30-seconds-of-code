@@ -9,8 +9,6 @@ const isEmpty = val => val == null || !(Object.keys(val) || val).length;
 ```
 
 ```js
-isEmpty(new Map()); // true
-isEmpty(new Set()); // true
 isEmpty([]); // true
 isEmpty({}); // true
 isEmpty(''); // true
