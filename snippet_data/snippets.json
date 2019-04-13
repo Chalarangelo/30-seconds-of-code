@@ -568,7 +568,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "819c86516df91f29f5900ca172cd5a92ba3f7dde9562b7f4958fd70b914a108e"
+        "hash": "1757665e21f074496ca23fcd89eea262546dbdab526fb6e281501fca8caaa42b"
       }
     },
     {
@@ -3249,11 +3249,11 @@
       "type": "snippet",
       "attributes": {
         "fileName": "isEmpty.md",
-        "text": "Returns true if the a value is an empty object, collection, map or set, has no enumerable properties or is any type that is not considered a collection.\n\nCheck if the provided value is `null` or if its `length` is equal to `0`.",
+        "text": "Returns true if the a value is an empty object, collection, has no enumerable properties or is any type that is not considered a collection.\n\nCheck if the provided value is `null` or if its `length` is equal to `0`.",
         "codeBlocks": {
           "es6": "const isEmpty = val => val == null || !(Object.keys(val) || val).length;",
           "es5": "var isEmpty = function isEmpty(val) {\n  return val == null || !(Object.keys(val) || val).length;\n};",
-          "example": "isEmpty(new Map()); // true\nisEmpty(new Set()); // true\nisEmpty([]); // true\nisEmpty({}); // true\nisEmpty(''); // true\nisEmpty([1, 2]); // false\nisEmpty({ a: 1, b: 2 }); // false\nisEmpty('text'); // false\nisEmpty(123); // true - type is not considered a collection\nisEmpty(true); // true - type is not considered a collection"
+          "example": "isEmpty([]); // true\nisEmpty({}); // true\nisEmpty(''); // true\nisEmpty([1, 2]); // false\nisEmpty({ a: 1, b: 2 }); // false\nisEmpty('text'); // false\nisEmpty(123); // true - type is not considered a collection\nisEmpty(true); // true - type is not considered a collection"
         },
         "tags": [
           "type",
@@ -3265,7 +3265,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "55954fcfb879542225f7d1861ae7de6faac288e28ca857367b6a2eeba9a54786"
+        "hash": "098b40c2316524eb16f88fcc1d1210e4c285b4d3ae069f93bf3dacaccb84b833"
       }
     },
     {
@@ -5575,7 +5575,7 @@
         "fileName": "remove.md",
         "text": "Removes elements from an array for which the given function returns `false`.\n\nUse `Array.prototype.filter()` to find array elements that return truthy values and `Array.prototype.reduce()` to remove elements using `Array.prototype.splice()`.\nThe `func` is invoked with three arguments (`value, index, array`).",
         "codeBlocks": {
-          "es6": "const remove = (arr, func) =>\n  Array.isArray(arr)\n    ? arr.filter(func).reduce((acc, val) => {\n      arr.splice(arr.indexOf(val), 1);\n      return acc.concat(val);\n    }, [])\n    : [];",
+          "es6": "const remove = (arr, func) =>\n  Array.isArray(arr)\n    ? arr.filter(func).reduce((acc, val) => {\n        arr.splice(arr.indexOf(val), 1);\n        return acc.concat(val);\n      }, [])\n    : [];",
           "es5": "var remove = function remove(arr, func) {\n  return Array.isArray(arr) ? arr.filter(func).reduce(function (acc, val) {\n    arr.splice(arr.indexOf(val), 1);\n    return acc.concat(val);\n  }, []) : [];\n};",
           "example": "remove([1, 2, 3, 4], n => n % 2 === 0); // [2, 4]"
         },
@@ -5586,7 +5586,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "ec9cb9384817f84cf0bacd62a23b69b2304fa2cf0352b16d3950b21d48c04f11"
+        "hash": "2fd54c9fc1fb5b0a981df69501b518d5830ea77544d4d5290c7cc13745ca00ea"
       }
     },
     {

@@ -1470,7 +1470,7 @@
     "body": [
       "const isEmpty = val => val == null || !(Object.keys(val) || val).length;"
     ],
-    "description": "Returns true if the a value is an empty object, collection, map or set, has no enumerable properties or is any type that is not considered a collection.\n\nCheck if the provided value is `null` or if its `length` is equal to `0`"
+    "description": "Returns true if the a value is an empty object, collection, has no enumerable properties or is any type that is not considered a collection.\n\nCheck if the provided value is `null` or if its `length` is equal to `0`"
   },
   "isEven": {
     "prefix": "30s_isEven",
@@ -2513,9 +2513,9 @@
       "const remove = (arr, func) =>",
       "  Array.isArray(arr)",
       "    ? arr.filter(func).reduce((acc, val) => {",
-      "      arr.splice(arr.indexOf(val), 1);",
-      "      return acc.concat(val);",
-      "    }, [])",
+      "        arr.splice(arr.indexOf(val), 1);",
+      "        return acc.concat(val);",
+      "      }, [])",
       "    : [];"
     ],
     "description": "Removes elements from an array for which the given function returns `false`.\n\nUse `Array.prototype.filter()` to find array elements that return truthy values and `Array.prototype.reduce()` to remove elements using `Array.prototype.splice()`.\nThe `func` is invoked with three arguments (`value, index, array`)"
