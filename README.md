@@ -2327,9 +2327,9 @@ The `func` is invoked with three arguments (`value, index, array`).
 const remove = (arr, func) =>
   Array.isArray(arr)
     ? arr.filter(func).reduce((acc, val) => {
-      arr.splice(arr.indexOf(val), 1);
-      return acc.concat(val);
-    }, [])
+        arr.splice(arr.indexOf(val), 1);
+        return acc.concat(val);
+      }, [])
     : [];
 ```
 
@@ -4724,6 +4724,7 @@ const checkProp = (predicate, prop) => obj => !!predicate(obj[prop]);
 <summary>Examples</summary>
 
 ```js
+
 
 
 
@@ -8834,7 +8835,7 @@ isBoolean(false); // true
 
 ### isEmpty
 
-Returns true if the a value is an empty object, collection, map or set, has no enumerable properties or is any type that is not considered a collection.
+Returns true if the a value is an empty object, collection, has no enumerable properties or is any type that is not considered a collection.
 
 Check if the provided value is `null` or if its `length` is equal to `0`.
 
@@ -8846,8 +8847,6 @@ const isEmpty = val => val == null || !(Object.keys(val) || val).length;
 <summary>Examples</summary>
 
 ```js
-isEmpty(new Map()); // true
-isEmpty(new Set()); // true
 isEmpty([]); // true
 isEmpty({}); // true
 isEmpty(''); // true
