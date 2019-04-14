@@ -41,4 +41,3 @@ ReactDOM.render(<Ticker times={5} interval={1000} />, document.getElementById('r
 <!-- tags: visual,state -->
 
 <!-- expertise: 1 -->
-* 
