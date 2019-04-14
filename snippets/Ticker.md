@@ -26,9 +26,9 @@ function Ticker(props) {
 
   return (
     <div>
-      <span style={{ fontSize: 100 }}>{this.state.ticker}</span>
-      <button onClick={this.tick}>Tick!</button>
-      <button onClick={this.reset}>Reset</button>
+      <span style={{ fontSize: 100 }}>{ticker}</span>
+      <button onClick={tick}>Tick!</button>
+      <button onClick={reset}>Reset</button>
     </div>
   );
 }
@@ -41,4 +41,3 @@ ReactDOM.render(<Ticker times={5} interval={1000} />, document.getElementById('r
 <!-- tags: visual,state -->
 
 <!-- expertise: 1 -->
-* 
