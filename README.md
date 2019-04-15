@@ -1148,7 +1148,7 @@ differenceWith([1, 1.2, 1.5, 3, 0], [1.9, 3, 0], (a, b) => Math.round(a) === Mat
 
 Returns a new array with `n` elements removed from the left.
 
-Use `Array.prototype.slice()` to slice the remove the specified number of elements from the left.
+Use `Array.prototype.slice()` to remove the specified number of elements from the left.
 
 ```js
 const drop = (arr, n = 1) => arr.slice(n);
@@ -1171,7 +1171,7 @@ drop([1, 2, 3], 42); // []
 
 Returns a new array with `n` elements removed from the right.
 
-Use `Array.prototype.slice()` to slice the remove the specified number of elements from the right.
+Use `Array.prototype.slice()` to remove the specified number of elements from the right.
 
 ```js
 const dropRight = (arr, n = 1) => arr.slice(0, -n);
@@ -2327,9 +2327,9 @@ The `func` is invoked with three arguments (`value, index, array`).
 const remove = (arr, func) =>
   Array.isArray(arr)
     ? arr.filter(func).reduce((acc, val) => {
-        arr.splice(arr.indexOf(val), 1);
-        return acc.concat(val);
-      }, [])
+      arr.splice(arr.indexOf(val), 1);
+      return acc.concat(val);
+    }, [])
     : [];
 ```
 
@@ -4724,6 +4724,7 @@ const checkProp = (predicate, prop) => obj => !!predicate(obj[prop]);
 <summary>Examples</summary>
 
 ```js
+
 
 
 
