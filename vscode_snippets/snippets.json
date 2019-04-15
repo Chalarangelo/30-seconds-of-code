@@ -648,14 +648,14 @@
     "body": [
       "const drop = (arr, n = 1) => arr.slice(n);"
     ],
-    "description": "Returns a new array with `n` elements removed from the left.\n\nUse `Array.prototype.slice()` to slice the remove the specified number of elements from the left"
+    "description": "Returns a new array with `n` elements removed from the left.\n\nUse `Array.prototype.slice()` to remove the specified number of elements from the left"
   },
   "dropRight": {
     "prefix": "30s_dropRight",
     "body": [
       "const dropRight = (arr, n = 1) => arr.slice(0, -n);"
     ],
-    "description": "Returns a new array with `n` elements removed from the right.\n\nUse `Array.prototype.slice()` to slice the remove the specified number of elements from the right"
+    "description": "Returns a new array with `n` elements removed from the right.\n\nUse `Array.prototype.slice()` to remove the specified number of elements from the right"
   },
   "dropRightWhile": {
     "prefix": "30s_dropRightWhile",
@@ -2513,9 +2513,9 @@
       "const remove = (arr, func) =>",
       "  Array.isArray(arr)",
       "    ? arr.filter(func).reduce((acc, val) => {",
-      "        arr.splice(arr.indexOf(val), 1);",
-      "        return acc.concat(val);",
-      "      }, [])",
+      "      arr.splice(arr.indexOf(val), 1);",
+      "      return acc.concat(val);",
+      "    }, [])",
       "    : [];"
     ],
     "description": "Removes elements from an array for which the given function returns `false`.\n\nUse `Array.prototype.filter()` to find array elements that return truthy values and `Array.prototype.reduce()` to remove elements using `Array.prototype.splice()`.\nThe `func` is invoked with three arguments (`value, index, array`)"
