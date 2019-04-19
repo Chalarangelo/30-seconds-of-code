@@ -174,7 +174,7 @@ count_by(['one', 'two', 'three'], len) # {3: 2, 5: 1}
 
 :information_source: Already implemented via `list.count()`.
 
-Counts the occurrences of a value in an list.
+Counts the occurrences of a value in a list.
 
 Uses the list comprehension to increment a counter each time you encounter the specific value inside the list.
 ```py
@@ -383,7 +383,7 @@ spread([1,2,3,[4,5,6],[7],8,9]) # [1,2,3,4,5,6,7,8,9]
 ### zip 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
 
- <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin)
+ <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin), [Leonardo Galdino](https://www.github.com/LeonardoGaldino)
 
 :information_source: Already implemented via `itertools.zip_longest()`
 
@@ -396,7 +396,7 @@ def zip(*args, fillvalue=None):
     result = []
     for i in range(max_length):
         result.append([
-            args[k][i] if i < len(args[k]) else None for k in range(len(args))
+            args[k][i] if i < len(args[k]) else fillvalue for k in range(len(args))
         ])
     return result
 ```
@@ -489,42 +489,22 @@ fibonnaci_until_num(15) # 610
 ### gcd 
 <span style="color:grey">Author:-</span> [Rohit Tanwar](https://www.github.com/kriadmin) 
 
- <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin), [cclauss](https://www.github.com/cclauss)
+ <span style="color:grey">Contributors:-</span>[Rohit Tanwar](https://www.github.com/kriadmin), [cclauss](https://www.github.com/cclauss), [Sandhya Saravanan](https://www.github.com/sandy9999)
 
-:information_source: `math.gcd` works with only two numbers
+Calculates the greatest common divisor of a list of numbers.
 
-Calculates the greatest common divisor between two or more numbers/lists.
-
-The `helperGcdfunction` uses recursion. Base case is when `y` equals `0`. In this case, return `x`. Otherwise, return the GCD of `y` and the remainder of the division `x/y`.
-
-Uses the reduce function from the inbuilt module `functools`. Also defines a method `spread` for javascript like spreading of lists.
+Uses the reduce function from the inbuilt module `functools`. Also uses the `math.gcd` function over a list.
 ```py
 from functools import reduce
+import math
 
-
-def spread(arg):
-    ret = []
-    for i in arg:
-        if isinstance(i, list):
-            ret.extend(i)
-        else:
-            ret.append(i)
-    return ret
-
-
-def gcd(*args):
-    numbers = []
-    numbers.extend(spread(list(args)))
-
-    def _gcd(x, y):
-        return x if not y else gcd(y, x % y)
-
-    return reduce((lambda x, y: _gcd(x, y)), numbers)
+def gcd(numbers):
+    return reduce(math.gcd, numbers)
 ```
 <details><summary>View Examples</summary>
 
 ```py
-gcd(8,36) # 4
+gcd([8,36,28]) # 4
 ```
 </details>
 
@@ -718,7 +698,7 @@ values_only(ages) # [10, 11, 9]
 
 Returns the length of a string in bytes.
 
-`utf-8` encodes a given string and find its length.
+`utf-8` encodes a given string, then `len` finds the length of the encoded string.
 ```py
 def byte_size(string):
     return(len(string.encode('utf-8')))
@@ -862,7 +842,7 @@ def is_upper_case(string):
 
 ```py
 is_upper_case('ABC') # True
-is_upper_case('a3@$') # True
+is_upper_case('a3@$') # False
 is_upper_case('aB4') # False
 ```
 </details>
