@@ -101,7 +101,7 @@ async function build() {
       const snippetName = snippet.replace('.md', '');
       let code = getCode(rawSnippetString);
       if (nodeSnippets.includes(snippetName)) {
-        requires.push(code.match(/const.*=.*require\(([^\)]*)\);/g));
+        requires = requires.concat(code.match(/const.*=.*require\(([^\)]*)\);/g) || []);
         code = code.replace(/const.*=.*require\(([^\)]*)\);/g, '');
       }
       esmExportString += `export ${code}`;
@@ -118,9 +118,8 @@ async function build() {
     requires = [
       ...new Set(
         requires
-          .filter(Boolean)
           .map(v =>
-            v[0].replace(
+            v.replace(
               'require(',
               'typeof require !== "undefined" && require('
             )

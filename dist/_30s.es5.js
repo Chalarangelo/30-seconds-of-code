@@ -118,6 +118,8 @@
 
   var crypto = typeof require !== "undefined" && require('crypto');
 
+  var util = typeof require !== "undefined" && require('util');
+
   var CSVToArray = function CSVToArray(data) {
     var delimiter = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ',';
     var omitFirstRow = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
@@ -496,9 +498,8 @@
 
     return timer;
   };
-  var createDirIfNotExists = function createDirIfNotExists(dir) {
-    return !fs.existsSync(dir) ? fs.mkdirSync(dir) : undefined;
-  };
+  var mkdirAsync = util.promisify(fs.mkdir);
+
   var createElement = function createElement(str) {
     var el = document.createElement('div');
     el.innerHTML = str;
@@ -2685,7 +2686,7 @@
   exports.countBy = countBy;
   exports.countOccurrences = countOccurrences;
   exports.counter = counter;
-  exports.createDirIfNotExists = createDirIfNotExists;
+  exports.mkdirAsync = mkdirAsync;
   exports.createElement = createElement;
   exports.createEventHub = createEventHub;
   exports.currentURL = currentURL;
