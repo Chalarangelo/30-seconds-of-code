@@ -1,6 +1,5 @@
 const fs = typeof require !== "undefined" && require('fs');
 const crypto = typeof require !== "undefined" && require('crypto');
-const util = typeof require !== "undefined" && require('util');
 
 const CSVToArray = (data, delimiter = ',', omitFirstRow = false) =>
   data
@@ -188,19 +187,7 @@ const counter = (selector, start, end, step = 1, duration = 2000) => {
   return timer;
 };
 
-
-const mkdirAsync = util.promisify(fs.mkdir);
-
-const createDirIfNotExists = dir => {
-  return mkdirAsync(dir)
-    .catch(e => {
-      if (e.code === 'EEXIST')
-        return;
-
-      throw e;
-    });
-};
-
+const createDirIfNotExists = dir => (!fs.existsSync(dir) ? fs.mkdirSync(dir) : undefined);
 const createElement = str => {
   const el = document.createElement('div');
   el.innerHTML = str;
