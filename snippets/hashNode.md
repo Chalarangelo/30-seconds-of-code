@@ -2,7 +2,7 @@
 
 Creates a hash for a value using the [SHA-256](https://en.wikipedia.org/wiki/SHA-2) algorithm. Returns a promise.
 
-Use `crypto` API to create a hash for the given value.
+Use `crypto` API to create a hash for the given value, `setTimeout` to prevent blocking on a long operation, and a `Promise` to give it a familiar interface.
 
 ```js
 const crypto = require('crypto');

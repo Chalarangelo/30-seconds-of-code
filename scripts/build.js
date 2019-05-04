@@ -23,7 +23,7 @@ const makeExamples = data => {
       data.slice(data.lastIndexOf('```js'), data.lastIndexOf('```')) +
         data.slice(data.lastIndexOf('```'))
     );
-  return `${data}\n<br>${misc.link('⬆ Back to top', misc.anchor('Table of Contents'))}\n\n`;
+  return `${data}\n<br>${misc.link('⬆ Back to top', misc.anchor('Contents'))}\n\n`;
 };
 
 if (util.isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
@@ -45,9 +45,8 @@ if (
       .readdirSync(SNIPPETS_ARCHIVE_PATH)
       .sort((a, b) => a.toLowerCase() - b.toLowerCase());
     // Store the data read from each snippet in the appropriate object
-    for (const name of snippetFilenames.filter(s => s !== 'README.md')) {
+    for (const name of snippetFilenames.filter(s => s !== 'README.md'))
       snippets[name] = fs.readFileSync(path.join(SNIPPETS_ARCHIVE_PATH, name), 'utf8');
-    }
   } catch (err) {
     console.log(`${chalk.red('ERROR!')} During snippet loading: ${err}`);
     process.exit(1);
@@ -65,9 +64,8 @@ if (
     );
     output += misc.hr();
 
-    for (const snippet of Object.entries(snippets)) {
+    for (const snippet of Object.entries(snippets))
       output += makeExamples(snippet[1]);
-    }
 
     // Write to the README file of the archive
     fs.writeFileSync(path.join(SNIPPETS_ARCHIVE_PATH, 'README.md'), output);

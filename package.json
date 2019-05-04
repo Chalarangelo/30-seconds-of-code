@@ -1,28 +1,29 @@
 {
   "devDependencies": {
-    "babel-preset-env": "^1.7.0",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
     "chalk": "^2.4.1",
+    "codacy-coverage": "^3.2.0",
+    "eslint": "^5.7.0",
     "fs-extra": "^6.0.0",
     "html-minifier": "^3.5.20",
     "jest": "^23.6.0",
-    "jest-tap-reporter": "^1.9.0",
     "markdown-builder": "^0.8.4",
     "markdown-it": "^8.4.2",
-    "mini.css": "^2.3.7",
     "node-sass": "^4.9.3",
     "octicons": "^7.4.0",
     "prettier": "^1.14.2",
     "prismjs": "^1.15.0",
     "rollup": "^0.58.2",
-    "rollup-plugin-babel": "^3.0.7",
-    "rollup-plugin-babel-minify": "^4.0.0",
-    "semistandard": "^12.0.1"
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-babel-minify": "^4.0.0"
   },
   "name": "30-seconds-of-code",
   "description": "A collection of useful JavaScript snippets.",
-  "version": "1.1.0",
+  "version": "1.2.3",
   "main": "dist/_30s.js",
   "module": "dist/_30s.esm.js",
+  "sideEffects": false,
   "scripts": {
     "glossary:librarian": "node ./scripts/glossary/library.js",
     "glossary:keymaker": "node ./scripts/glossary/keyword.js",
@@ -32,10 +33,10 @@
     "webber": "node ./scripts/web.js",
     "tester": "node ./scripts/tdd.js",
     "extractor": "node ./scripts/extract.js",
+    "vscoder": "node ./scripts/vscodegen.js",
     "packager": "node ./scripts/module.js",
     "localizer": "node ./scripts/localize.js",
-    "analyzer": "node ./scripts/analyze.js",
-    "test": "jest --verbose"
+    "test": "jest --verbose --coverage"
   },
   "repository": {
     "type": "git",
@@ -51,18 +52,6 @@
   "bugs": {
     "url": "https://github.com/30-seconds/30-seconds-of-code/issues"
   },
-  "homepage": "https://github.com/30-seconds/30-seconds-of-code#readme",
-  "dependencies": {},
-  "jest": {
-    "reporters": [
-      [
-        "jest-tap-reporter",
-        {
-          "logLevel": "INFO",
-          "showInternalStackTraces": false,
-          "filePath": "test/testlog"
-        }
-      ]
-    ]
-  }
+  "homepage": "https://30secondsofcode.org/",
+  "dependencies": {}
 }

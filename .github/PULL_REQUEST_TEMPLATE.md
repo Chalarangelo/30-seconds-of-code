@@ -13,4 +13,3 @@
 
 ## Guidelines
 - [ ] I have read the guidelines in the [CONTRIBUTING](https://github.com/30-seconds/30-seconds-of-code/blob/master/CONTRIBUTING.md) document.
-- [ ] My PR doesn't include any `testlog` changes. 

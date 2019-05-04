@@ -23,6 +23,7 @@ capitalize:string,array,intermediate
 capitalizeEveryWord:string,regexp,intermediate
 castArray:utility,array,type,beginner
 chainAsync:function,intermediate
+checkProp:function,object,utility,beginner
 chunk:array,intermediate
 clampNumber:math,beginner
 cloneRegExp:utility,regexp,intermediate
@@ -31,6 +32,7 @@ coalesceFactory:utility,intermediate
 collectInto:adapter,function,array,intermediate
 colorize:node,utility,string,intermediate
 compact:array,beginner
+compactWhitespace:string,regexp,beginner
 compose:function,intermediate
 composeRight:function,intermediate
 converge:function,intermediate
@@ -38,6 +40,7 @@ copyToClipboard:browser,string,advanced
 countBy:array,object,intermediate
 counter:browser,advanced
 countOccurrences:array,intermediate
+createDirIfNotExists:node,beginner
 createElement:browser,utility,beginner
 createEventHub:browser,event,advanced
 CSVToArray:string,array,utility,intermediate
@@ -50,6 +53,7 @@ decapitalize:string,array,intermediate
 deepClone:object,recursion,intermediate
 deepFlatten:array,recursion,intermediate
 deepFreeze:object,recursion,intermediate
+deepMapKeys:object,recursion,advanced
 defaults:object,intermediate
 defer:function,intermediate
 degreesToRads:math,beginner
@@ -75,6 +79,7 @@ everyNth:array,beginner
 extendHex:utility,string,intermediate
 factorial:math,recursion,beginner
 fibonacci:math,array,beginner
+filterFalsy:array,beginner
 filterNonUnique:array,beginner
 filterNonUniqueBy:array,function,intermediate
 findKey:object,function,intermediate
@@ -86,6 +91,7 @@ flattenObject:object,recursion,intermediate
 flip:adapter,function,intermediate
 forEachRight:array,function,intermediate
 formatDuration:date,math,string,utility,intermediate
+formToObject:browser,object,intermediate
 forOwn:object,intermediate
 forOwnRight:object,intermediate
 fromCamelCase:string,intermediate
@@ -145,6 +151,7 @@ isEmpty:type,array,object,string,beginner
 isEven:math,beginner
 isFunction:type,function,beginner
 isLowerCase:string,utility,beginner
+isNegativeZero:math,utility,beginner
 isNil:type,beginner
 isNull:type,beginner
 isNumber:type,math,beginner
@@ -174,6 +181,7 @@ longestItem:array,string,utility,intermediate
 lowercaseKeys:object,intermediate
 luhnCheck:math,utility,advanced
 mapKeys:object,function,intermediate
+mapNumRange:math,beginner
 mapObject:array,object,advanced
 mapString:string,array,function,utility,beginner
 mapValues:object,function,intermediate
@@ -186,6 +194,7 @@ maxN:array,math,beginner
 median:math,array,intermediate
 memoize:function,advanced
 merge:object,array,intermediate
+midpoint:math,array,beginner
 minBy:math,array,function,beginner
 minDate:date,math,beginner
 minN:array,math,beginner
@@ -257,6 +266,7 @@ sampleSize:array,random,intermediate
 scrollToTop:browser,intermediate
 sdbm:math,utility,intermediate
 serializeCookie:utility,string,intermediate
+serializeForm:browser,string,intermediate
 setStyle:browser,beginner
 shallowClone:object,beginner
 shank:array,intermediate
@@ -301,6 +311,7 @@ tomorrow:date,intermediate
 toOrdinalSuffix:utility,math,intermediate
 toSafeInteger:math,beginner
 toSnakeCase:string,regexp,intermediate
+toTitleCase:string,regepx,intermediate
 transform:object,array,intermediate
 triggerEvent:browser,event,intermediate
 truncateString:string,beginner
@@ -324,6 +335,7 @@ URLJoin:string,utility,regexp,advanced
 UUIDGeneratorBrowser:browser,utility,random,intermediate
 UUIDGeneratorNode:node,utility,random,intermediate
 validateNumber:utility,math,intermediate
+vectorDistance:math,beginner
 when:function,intermediate
 without:array,beginner
 words:string,regexp,intermediate
