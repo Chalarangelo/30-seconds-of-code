@@ -47,12 +47,12 @@ const generateSnippetCard = (
 ${
   addCornerTag
     ? `<div class="corner ${
-        snippetKey[1].includes('advanced')
-          ? 'advanced'
-          : snippetKey[1].includes('beginner')
-            ? 'beginner'
-            : 'intermediate'
-      }"></div>`
+      snippetKey[1].includes('advanced')
+        ? 'advanced'
+        : snippetKey[1].includes('beginner')
+          ? 'beginner'
+          : 'intermediate'
+    }"></div>`
     : ''
 }
   ${md
@@ -77,6 +77,13 @@ ${
       '</pre><label class="collapse">examples</label><pre class="section card-examples '
     )}
   </div>`;
+const embedCard = tag => `<div class="card code-card"><div class="section card-content">
+${['adapter','array','function','object'].includes(tag) ? 
+'<h4><a href="https://frontendmasters.com/courses/es6-right-parts/" target="_blank" rel="noopener noreferrer">Recommended Resource - ES6: The Right Parts</a></h4><p>Learn new ES6 JavaScript language features like arrow function, destructuring, generators & more to write cleaner and more productive, readable programs.</p>' 
+: ['browser', 'node', 'date'].includes(tag) ? 
+'<h4><a href="https://frontendmasters.com/courses/javascript-hard-parts/" target="_blank" rel="noopener noreferrer">Recommended Resource - JavaScript: The Hard Parts</a></h4><p>Take your JavaScript to the next level. Gain an understanding of callbacks, higher order functions, closure, asynchronous and object-oriented JavaScript!</p>' 
+: '<h4><a href="https://frontendmasters.com/courses/js-fundamentals-functional-v2/" target="_blank" rel="noopener noreferrer">Recommended Resource - JavaScript: From Fundamentals to Functional JS</a></h4><p>Learn higher-order functions, closures, scope, master key functional methods like map, reduce and filter and promises and ES6+ asynchronous JavaScript.</p>'
+}</div></div>`;
 const filterSnippets = (snippetList, excludedFiles) =>
   Object.keys(snippetList)
     .filter(key => !excludedFiles.includes(key))
@@ -109,9 +116,9 @@ sass.render(
         if (!err2) console.log(`${chalk.green('SUCCESS!')} style.css file generated!`);
         else console.log(`${chalk.red('ERROR!')} During style.css file generation: ${err}`);
       });
-    } else {
+    } else
       console.log(`${chalk.red('ERROR!')} During style.css file generation: ${err}`);
-    }
+
   }
 );
 // Set variables for paths
@@ -169,7 +176,7 @@ try {
         .replace(/<p>/g, '')
         .replace(/<\/p>/g, '') +
       '</h4><ul>';
-    for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
+    for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
       output += md
         .render(
           `[${taggedSnippet[0]}](./${
@@ -179,6 +186,7 @@ try {
         .replace(/<p>/g, '')
         .replace(/<\/p>/g, '</li>')
         .replace(/<a/g, `<li><a tags="${taggedSnippet[1].join(',')}"`);
+    }
     output += '</ul>\n';
   }
   output += `<h4 class="static-link"><a href="./archive">Archive</a></h4>
@@ -189,6 +197,7 @@ try {
   </nav><main class="col-centered"><span id="top"><br/><br/></span>`;
   // Loop over tags and snippets to create the list of snippets
   for (let tag of taggedData) {
+    let notEmbedded = true;
     let localOutput = output
       .replace(/\$tag/g, util.capitalize(tag))
       .replace(new RegExp(`./${tag}#`, 'g'), '#');
@@ -196,8 +205,13 @@ try {
     localOutput += md
       .render(`## ${util.capitalize(tag, true)}\n`)
       .replace(/<h2>/g, '<h2 class="category-name">');
-    for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
+    for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
       localOutput += generateSnippetCard(snippets, taggedSnippet, true);
+      if (Object.entries(tagDbData).filter(v => v[1][0] === tag).findIndex(v => v[0] === taggedSnippet[0]) >= Object.entries(tagDbData).filter(v => v[1][0] === tag).length * 0.5 && notEmbedded) {
+        notEmbedded = !notEmbedded;
+        localOutput += embedCard(tag);
+      }
+    }
     // Add the ending static part
     localOutput += `\n${endPart + '\n'}`;
     // Optimize punctuation nodes
@@ -218,7 +232,7 @@ try {
       /<span class="token keyword">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token keyword">([^\0]*?)<\/span>/gm,
       (match, p1, p2, p3) => `<span class="token keyword">${p1}${p2}${p3}</span>`
     );
-    pagesOutput.push({ tag: tag, content: localOutput });
+    pagesOutput.push({ tag, content: localOutput });
   }
   // Minify output
   pagesOutput.forEach(page => {
@@ -237,6 +251,35 @@ try {
   process.exit(1);
 }
 
+const generateMenuForStaticPage = staticPart => {
+  let taggedData = util.prepTaggedData(tagDbData);
+  // Add the start static part
+  let htmlCode;
+
+  for (let tag of taggedData) {
+    htmlCode +=
+      '<h4 class="collapse">' +
+      md
+        .render(`${util.capitalize(tag, true)}\n`)
+        .replace(/<p>/g, '')
+        .replace(/<\/p>/g, '') +
+      '</h4><ul>';
+    for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
+      htmlCode += md
+        .render(
+          `[${taggedSnippet[0]}](./${
+            tag === 'array' ? 'index' : tag
+          }#${taggedSnippet[0].toLowerCase()})\n`
+        )
+        .replace(/<p>/g, '')
+        .replace(/<\/p>/g, '</li>')
+        .replace(/<a/g, `<li><a tags="${taggedSnippet[1].join(',')}"`);
+    }
+    htmlCode += '</ul>\n';
+  }
+  return staticPart.replace('$nav-menu-data', htmlCode);
+};
+
 const staticPageStartGenerator = (staticPart, heading, description) => {
   let taggedData = util.prepTaggedData(tagDbData);
   // Add the start static part
@@ -251,7 +294,7 @@ const staticPageStartGenerator = (staticPart, heading, description) => {
         .replace(/<p>/g, '')
         .replace(/<\/p>/g, '') +
       '</h4><ul>';
-    for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag))
+    for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
       htmlCode += md
         .render(
           `[${taggedSnippet[0]}](./${
@@ -261,6 +304,7 @@ const staticPageStartGenerator = (staticPart, heading, description) => {
         .replace(/<p>/g, '')
         .replace(/<\/p>/g, '</li>')
         .replace(/<a/g, `<li><a tags="${taggedSnippet[1].join(',')}"`);
+    }
     htmlCode += '</ul>\n';
   }
   htmlCode += `<h4 class="static-link"><a href="./archive">Archive</a></h4>
@@ -271,13 +315,13 @@ const staticPageStartGenerator = (staticPart, heading, description) => {
   </nav><main class="col-centered"><span id="top"><br/><br/></span><h2 class="category-name">${heading}</h2>
         <p style="text-align: justify">${description}</p><br />`;
   return htmlCode.replace(/\$page_name/g, util.capitalize(heading));
-}
+};
 
 
 // Create the output for the archive.html file
 try {
   // Add the static part
-  let heading = "Snippets Archive";
+  let heading = 'Snippets Archive';
   let description = "These snippets, while useful and interesting, didn't quite make it into the repository due to either having very specific use-cases or being outdated. However we felt like they might still be useful to some readers, so here they are.";
   let htmlCode = staticPageStartGenerator(staticPageStartPart, heading, description);
 
@@ -324,8 +368,8 @@ try {
 // Create the output for the glossary.html file
 try {
   // Add the static part
-  let heading = "Glossary";
-  let description = "Developers use a lot of terminology daily. Every once in a while, you might find a term you do not know. We know how frustrating that can get, so we provide you with a handy glossary of frequently used web development terms.";
+  let heading = 'Glossary';
+  let description = 'Developers use a lot of terminology daily. Every once in a while, you might find a term you do not know. We know how frustrating that can get, so we provide you with a handy glossary of frequently used web development terms.';
   let htmlCode = staticPageStartGenerator(staticPageStartPart, heading, description);
   glossaryOutput += htmlCode;
 
@@ -333,7 +377,7 @@ try {
   const filteredGlossarySnippets = filterSnippets(glossarySnippets, ['README.md']);
 
   // Generate glossary snippets from md files
-  for (let snippet of Object.entries(filteredGlossarySnippets))
+  for (let snippet of Object.entries(filteredGlossarySnippets)) {
     glossaryOutput +=
       '<div class="card code-card"><div class="section card-content">' +
       md
@@ -341,6 +385,7 @@ try {
         .replace(/<h3/g, `<h4 id="${snippet[0].toLowerCase()}"`)
         .replace(/<\/h3>/g, '</h4>') +
       '</div></div>';
+  }
 
   glossaryOutput += `${staticPageEndPart}`;
 
@@ -356,7 +401,11 @@ try {
 // Copy static files
 staticFiles.forEach(f => {
   try {
-    fs.copyFileSync(path.join(staticPartsPath, f), path.join(docsPath, f));
+    if(f !== 'array.html') {
+      let fileData = fs.readFileSync(path.join(staticPartsPath, f), 'utf8');
+      fs.writeFileSync(path.join(docsPath, f), generateMenuForStaticPage(fileData));
+    } else
+      fs.copyFileSync(path.join(staticPartsPath, f), path.join(docsPath, f));
     console.log(`${chalk.green('SUCCESS!')} ${f} file copied!`);
   } catch (err) {
     console.log(`${chalk.red('ERROR!')} During ${f} copying: ${err}`);

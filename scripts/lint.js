@@ -28,9 +28,9 @@ try {
     // turn it into an object so we can add data to it to be used in a different scope
     .map(name => ({ name }));
 
-  if (!fs.existsSync(TEMP_PATH)) {
+  if (!fs.existsSync(TEMP_PATH))
     fs.mkdirSync(TEMP_PATH);
-  }
+
 
   for (const snippet of snippets) {
     snippet.data = fs.readFileSync(path.join(SNIPPETS_PATH, snippet.name), 'utf8');
@@ -52,10 +52,10 @@ try {
   }
 
   const cmd =
-    `semistandard "${TEMP_PATH}" --fix & ` +
-    `prettier "${TEMP_PATH}/*.js" --single-quote --print-width=100 --write`;
+    `prettier "${TEMP_PATH}/*.js" --single-quote --print-width=100 --write & ` +
+    `eslint "${TEMP_PATH}/*.js" --quiet --fix --rule "no-undef: 0, no-unused-vars: 0, no-multiple-empty-lines: 0" -o eslint_errors.log -f table`;
 
-  cp.exec(cmd, {}, (err, stdout, stderr) => {
+  cp.exec(cmd, {}, () => {
     // Loop through each snippet now that semistandard and prettier did their job
     for (const snippet of snippets) {
       // an array to store each linted code block (definition + example)

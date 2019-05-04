@@ -3,24 +3,30 @@
 These snippets, while useful and interesting, didn't quite make it into the repository due to either having very specific use-cases or being outdated. However we felt like they might still be useful to some readers, so here they are.
 ## Table of Contents
 * [`JSONToDate`](#jsontodate)
-* [`speechSynthesis`](#speechsynthesis)
 * [`binarySearch`](#binarysearch)
+* [`celsiusToFahrenheit`](#celsiustofahrenheit)
 * [`cleanObj`](#cleanobj)
 * [`collatz`](#collatz)
 * [`countVowels`](#countvowels)
 * [`factors`](#factors)
+* [`fahrenheitToCelsius`](#fahrenheittocelsius)
 * [`fibonacciCountUntilNum`](#fibonaccicountuntilnum)
 * [`fibonacciUntilNum`](#fibonacciuntilnum)
+* [`heronArea`](#heronarea)
 * [`howManyTimes`](#howmanytimes)
+* [`httpDelete`](#httpdelete)
 * [`httpPut`](#httpput)
 * [`isArmstrongNumber`](#isarmstrongnumber)
 * [`isSimilar`](#issimilar)
+* [`kmphToMph`](#kmphtomph)
 * [`levenshteinDistance`](#levenshteindistance)
+* [`mphToKmph`](#mphtokmph)
 * [`pipeLog`](#pipelog)
 * [`quickSort`](#quicksort)
 * [`removeVowels`](#removevowels)
 * [`solveRPN`](#solverpn)
-* [`httpDelete`](#httpdelete)
+* [`speechSynthesis`](#speechsynthesis)
+* [`squareSum`](#squaresum)
 
 ---
 ### JSONToDate
@@ -45,35 +51,7 @@ JSONToDate(/Date(1489525200000)/); // "14/3/2017"
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
-
-### speechSynthesis
-
-Performs speech synthesis (experimental).
-
-Use `SpeechSynthesisUtterance.voice` and `window.speechSynthesis.getVoices()` to convert a message to speech.
-Use `window.speechSynthesis.speak()` to play the message.
-
-Learn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
-
-```js
-const speechSynthesis = message => {
-  const msg = new SpeechSynthesisUtterance(message);
-  msg.voice = window.speechSynthesis.getVoices()[0];
-  window.speechSynthesis.speak(msg);
-};
-```
-
-<details>
-<summary>Examples</summary>
-
-```js
-speechSynthesis('Hello, World'); // // plays the message
-```
-
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### binarySearch
 
@@ -105,7 +83,28 @@ binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 21); // -1
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
+
+### celsiusToFahrenheit
+
+Celsius to Fahrenheit temperature conversion.
+
+Follows the conversion formula `F =  1.8C + 32`.
+
+```js
+const celsiusToFahrenheit = degrees => 1.8 * degrees + 32;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+celsiusToFahrenheit(33) // 91.4
+```
+
+</details>
+
+<br>[⬆ Back to top](#contents)
 
 ### cleanObj
 
@@ -137,7 +136,7 @@ cleanObj(testObj, ['a'], 'children'); // { a: 1, children : { a: 1}}
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### collatz
 
@@ -158,7 +157,7 @@ collatz(8); // 4
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### countVowels
 
@@ -180,7 +179,7 @@ countVowels('gym'); // 0
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### factors
 
@@ -230,7 +229,28 @@ factors(-12, true); // [2,3]
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
+
+### fahrenheitToCelsius
+
+Fahrenheit to Celsius temperature conversion.
+
+Follows the conversion formula `C = (F - 32) * 5/9`.
+
+```js
+const fahrenheitToCelsius = degrees => (degrees - 32) * 5/9;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+fahrenheitToCelsius(32); // 0
+```
+
+</details>
+
+<br>[⬆ Back to top](#contents)
 
 ### fibonacciCountUntilNum
 
@@ -252,7 +272,7 @@ fibonacciCountUntilNum(10); // 7
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### fibonacciUntilNum
 
@@ -281,7 +301,34 @@ fibonacciUntilNum(10); // [ 0, 1, 1, 2, 3, 5, 8 ]
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
+
+### heronArea
+
+Returns the area of a triangle using only the 3 side lengths, Heron's formula. Assumes that the sides define a valid triangle. Does NOT assume it is a right triangle.
+
+More information on what Heron's formula is and why it works available here: https://en.wikipedia.org/wiki/Heron%27s_formula.
+
+Uses `Math.sqrt()` to find the square root of a value.
+
+
+```js
+const heronArea = (side_a, side_b, side_c) => {
+    const p = (side_a + side_b + side_c) / 2
+    return Math.sqrt(p * (p-side_a) * (p-side_b) * (p-side_c))
+  };
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+heronArea(3, 4, 5); // 6
+```
+
+</details>
+
+<br>[⬆ Back to top](#contents)
 
 ### howManyTimes
 
@@ -318,7 +365,39 @@ howManyTimes(100, -1); // Infinity
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
+
+### httpDelete
+
+Makes a `DELETE` request to the passed URL.
+
+Use `XMLHttpRequest` web api to make a `delete` request to the given `url`.
+Handle the `onload` event, by running the provided `callback` function.
+Handle the `onerror` event, by running the provided `err` function.
+Omit the third argument, `err` to log the request to the console's error stream by default.
+
+```js
+const httpDelete = (url, callback, err = console.error) => {
+  const request = new XMLHttpRequest();
+  request.open('DELETE', url, true);
+  request.onload = () => callback(request);
+  request.onerror = () => err(request);
+  request.send();
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+httpDelete('https://website.com/users/123', request => {
+  console.log(request.responseText);
+}); // 'Deletes a user from the database'
+```
+
+</details>
+
+<br>[⬆ Back to top](#contents)
 
 ### httpPut
 
@@ -354,7 +433,7 @@ httpPut('https://website.com/users/123', data, request => {
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### isArmstrongNumber
 
@@ -379,7 +458,7 @@ isArmstrongNumber(56); // false
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### isSimilar
 
@@ -409,7 +488,29 @@ isSimilar('tr','Rohit'); // false
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
+
+### kmphToMph
+
+Convert kilometers/hour to miles/hour.
+
+Multiply the constant of proportionality with the argument.
+
+```js
+const kmphToMph = (kmph) => 0.621371192 * kmph;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+kmphToMph(10); // 16.09344000614692
+kmphToMph(345.4); // 138.24264965280207
+```
+
+</details>
+
+<br>[⬆ Back to top](#contents)
 
 ### levenshteinDistance
 
@@ -418,7 +519,7 @@ Calculates the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_
 Calculates the number of changes (substitutions, deletions or additions) required to convert `string1` to `string2`. 
 Can also be used to compare two strings as shown in the second example.
 
-``` js
+```js
 const levenshteinDistance = (string1, string2) => {
   if (string1.length === 0) return string2.length;
   if (string2.length === 0) return string1.length;
@@ -456,7 +557,29 @@ compareStrings('30-seconds-of-code', '30-seconds-of-python-code'); // 99.72 (%)
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
+
+### mphToKmph
+
+Convert miles/hour to kilometers/hour.
+
+Multiply the constant of proportionality with the argument.
+
+```js
+const mphToKmph = (mph) => 1.6093440006146922 * mph;
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+mphToKmph(10); // 16.09344000614692
+mphToKmph(85.9); // 138.24264965280207
+```
+
+</details>
+
+<br>[⬆ Back to top](#contents)
 
 ### pipeLog
 
@@ -479,7 +602,7 @@ pipeLog(1); // logs `1` and returns `1`
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### quickSort
 
@@ -510,7 +633,7 @@ quickSort([4, 1, 3, 2], true); // [4,3,2,1]
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### removeVowels
 
@@ -533,7 +656,7 @@ removeVowels("foobAr","*"); // "f**b*r"
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### solveRPN
 
@@ -586,24 +709,22 @@ solveRPN('2 3 ^'); // 8
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
-### httpDelete
+### speechSynthesis
 
-Makes a `DELETE` request to the passed URL.
+Performs speech synthesis (experimental).
 
-Use `XMLHttpRequest` web api to make a `delete` request to the given `url`.
-Handle the `onload` event, by running the provided `callback` function.
-Handle the `onerror` event, by running the provided `err` function.
-Omit the third argument, `err` to log the request to the console's error stream by default.
+Use `SpeechSynthesisUtterance.voice` and `window.speechSynthesis.getVoices()` to convert a message to speech.
+Use `window.speechSynthesis.speak()` to play the message.
+
+Learn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
 
 ```js
-const httpDelete = (url, callback, err = console.error) => {
-  const request = new XMLHttpRequest();
-  request.open('DELETE', url, true);
-  request.onload = () => callback(request);
-  request.onerror = () => err(request);
-  request.send();
+const speechSynthesis = message => {
+  const msg = new SpeechSynthesisUtterance(message);
+  msg.voice = window.speechSynthesis.getVoices()[0];
+  window.speechSynthesis.speak(msg);
 };
 ```
 
@@ -611,12 +732,31 @@ const httpDelete = (url, callback, err = console.error) => {
 <summary>Examples</summary>
 
 ```js
-httpDelete('https://website.com/users/123', request => {
-  console.log(request.responseText);
-}); // 'Deletes a user from the database'
+speechSynthesis('Hello, World'); // // plays the message
 ```
 
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
+
+### squareSum
+
+Squares each number in an array and then sums the results together.
+
+Use `Array.prototype.reduce()` in combination with `Math.pow()` to iterate over numbers and sum their squares into an accumulator.
+
+```js
+const squareSum = (...args) => args.reduce((squareSum, number) => squareSum + Math.pow(number, 2), 0);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+squareSum(1, 2, 2); // 9
+```
+
+</details>
+
+<br>[⬆ Back to top](#contents)
 
