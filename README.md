@@ -1378,7 +1378,7 @@ function StarRating(props) {
   return (
     <div
       onMouseOut={() => hoverOver(null)}
-      onClick={(event) => setRating(event.target.getAttribute('star-id') || this.state.rating)}
+      onClick={(event) => setRating(event.target.getAttribute('star-id') || rating)}
       onMouseOver={hoverOver}
     >
       {Array.from({ length: 5 }, (v, i) => (
