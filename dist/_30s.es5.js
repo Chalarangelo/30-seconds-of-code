@@ -582,11 +582,6 @@
       return !(obj[prop] instanceof Object) || Object.isFrozen(obj[prop]) ? null : deepFreeze(obj[prop]);
     }) || Object.freeze(obj);
   };
-  var deepGetter = function deepGetter(obj, keys) {
-    return keys.reduce(function (xs, x) {
-      return xs && xs[x] ? xs[x] : null;
-    }, obj);
-  };
   var deepMapKeys = function deepMapKeys(obj, f) {
     return Array.isArray(obj) ? obj.map(function (val) {
       return deepMapKeys(val, f);
@@ -2701,7 +2696,6 @@
   exports.deepClone = deepClone;
   exports.deepFlatten = deepFlatten;
   exports.deepFreeze = deepFreeze;
-  exports.deepGetter = deepGetter;
   exports.deepMapKeys = deepMapKeys;
   exports.defaults = defaults;
   exports.defer = defer;
