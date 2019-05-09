@@ -53,6 +53,7 @@ decapitalize:string,array,intermediate
 deepClone:object,recursion,intermediate
 deepFlatten:array,recursion,intermediate
 deepFreeze:object,recursion,intermediate
+deepGetter:object,intermediate
 deepMapKeys:object,recursion,advanced
 defaults:object,intermediate
 defer:function,intermediate
