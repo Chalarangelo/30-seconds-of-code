@@ -371,6 +371,7 @@ _30s.average(1, 2, 3);
 * [`bindAll`](#bindall)
 * [`deepClone`](#deepclone)
 * [`deepFreeze`](#deepfreeze)
+* [`deepGet`](#deepget)
 * [`deepMapKeys`](#deepmapkeys-)
 * [`defaults`](#defaults)
 * [`dig`](#dig)
@@ -844,6 +845,7 @@ all([1, 2, 3]); // true
 Check if all elements in an array are equal.
 
 Use `Array.prototype.every()` to check if all the elements of the array are the same as the first one.
+Elements in the array are compared using the strict comparison operator, which does not account for `NaN` self-inequality.
 
 ```js
 const allEqual = arr => arr.every(val => val === arr[0]);
@@ -4732,6 +4734,7 @@ const checkProp = (predicate, prop) => obj => !!predicate(obj[prop]);
 
 
 
+
 const lengthIs4 = checkProp(l => l === 4, 'length');
 lengthIs4([]); // false
 lengthIs4([1,2,3,4]); // true
@@ -6892,6 +6895,39 @@ const o = deepFreeze([1, [2, 3]]);
 
 o[0] = 3; // not allowed
 o[1][0] = 4; // not allowed as well
+```
+
+</details>
+
+<br>[⬆ Back to top](#contents)
+
+### deepGet
+
+Returns the target value in a nested JSON object, based on the `keys` array.
+
+Compare the keys you want in the nested JSON object as an `Array`.
+Use `Array.prototype.reduce()` to get value from nested JSON object one by one. 
+If the key exists in object, return target value, otherwise, return `null`.
+
+```js
+const deepGet = (obj, keys) => keys.reduce((xs, x) => (xs && xs[x] ? xs[x] : null), obj);
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+let index = 2;
+const data = {
+  foo: {
+    foz: [1, 2, 3],
+    bar: {
+      baz: ['a', 'b', 'c']
+    }
+  }
+};
+deepGet(data, ['foo', 'foz', index]); // get 3
+deepGet(data, ['foo', 'bar', 'baz', 8, 'foz']); // null
 ```
 
 </details>
