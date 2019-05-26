@@ -3468,7 +3468,7 @@ currentURL(); // 'https://google.com'
 
 ### detectDeviceType
 
-Detects wether the website is being opened in a mobile device or a desktop/laptop.
+Detects whether the website is being opened in a mobile device or a desktop/laptop.
 
 Use a regular expression to test the `navigator.userAgent` property to figure out if the device is a mobile device or a desktop/laptop.
 
