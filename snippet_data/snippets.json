@@ -27,7 +27,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "allEqual.md",
-        "text": "Check if all elements in an array are equal.\n\nUse `Array.prototype.every()` to check if all the elements of the array are the same as the first one.",
+        "text": "Check if all elements in an array are equal.\n\nUse `Array.prototype.every()` to check if all the elements of the array are the same as the first one.\nElements in the array are compared using the strict comparison operator, which does not account for `NaN` self-inequality.",
         "codeBlocks": {
           "es6": "const allEqual = arr => arr.every(val => val === arr[0]);",
           "es5": "var allEqual = function allEqual(arr) {\n  return arr.every(function (val) {\n    return val === arr[0];\n  });\n};",
@@ -41,7 +41,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "690147b9d4d90d37d9f42ec6596decc3e99eb8104f51d27a392ee3b50041878e"
+        "hash": "0a82f35a23ffb933cfcd29db918081cee7212c80ace6238838a193295f42f60c"
       }
     },
     {
@@ -568,7 +568,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "b9a0897aca121af7d0705cace7673c27b22ffab5e67890a3e1859b7f28df2500"
+        "hash": "ab66ab76096083ad5861e228065926db7b8aee7f240d12ad00467a78b35f089c"
       }
     },
     {
@@ -1201,6 +1201,27 @@
       }
     },
     {
+      "id": "deepGet",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "deepGet.md",
+        "text": "Returns the target value in a nested JSON object, based on the `keys` array.\n\nCompare the keys you want in the nested JSON object as an `Array`.\nUse `Array.prototype.reduce()` to get value from nested JSON object one by one. \nIf the key exists in object, return target value, otherwise, return `null`.",
+        "codeBlocks": {
+          "es6": "const deepGet = (obj, keys) => keys.reduce((xs, x) => (xs && xs[x] ? xs[x] : null), obj);",
+          "es5": "var deepGet = function deepGet(obj, keys) {\n  return keys.reduce(function (xs, x) {\n    return xs && xs[x] ? xs[x] : null;\n  }, obj);\n};",
+          "example": "let index = 2;\nconst data = {\n  foo: {\n    foz: [1, 2, 3],\n    bar: {\n      baz: ['a', 'b', 'c']\n    }\n  }\n};\ndeepGet(data, ['foo', 'foz', index]); // get 3\ndeepGet(data, ['foo', 'bar', 'baz', 8, 'foz']); // null"
+        },
+        "tags": [
+          "object",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "archived": false,
+        "hash": "1f7e933fa6c3e1dee4a9523c6d269a352d6ca2532a2f4a43468dc00da92164d9"
+      }
+    },
+    {
       "id": "deepMapKeys",
       "type": "snippet",
       "attributes": {
@@ -1311,7 +1332,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "detectDeviceType.md",
-        "text": "Detects wether the website is being opened in a mobile device or a desktop/laptop.\n\nUse a regular expression to test the `navigator.userAgent` property to figure out if the device is a mobile device or a desktop/laptop.",
+        "text": "Detects whether the website is being opened in a mobile device or a desktop/laptop.\n\nUse a regular expression to test the `navigator.userAgent` property to figure out if the device is a mobile device or a desktop/laptop.",
         "codeBlocks": {
           "es6": "const detectDeviceType = () =>\n  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)\n    ? 'Mobile'\n    : 'Desktop';",
           "es5": "var detectDeviceType = function detectDeviceType() {\n  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop';\n};",
@@ -1324,7 +1345,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "2262275b7adcd7d9b2dd8f31da2a3a2dbcc663584928f46131a0d273b587403b"
+        "hash": "ab4d8502aa63a33bfc3e7919125a76d55f85158f6b15e22bfe2653b05ea328d1"
       }
     },
     {

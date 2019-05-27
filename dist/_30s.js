@@ -7,6 +7,51 @@
   const fs = typeof require !== "undefined" && require('fs');
   const crypto = typeof require !== "undefined" && require('crypto');
 
+  const CSVToArray = (data, delimiter = ',', omitFirstRow = false) =>
+    data
+      .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0)
+      .split('\n')
+      .map(v => v.split(delimiter));
+  const CSVToJSON = (data, delimiter = ',') => {
+    const titles = data.slice(0, data.indexOf('\n')).split(delimiter);
+    return data
+      .slice(data.indexOf('\n') + 1)
+      .split('\n')
+      .map(v => {
+        const values = v.split(delimiter);
+        return titles.reduce((obj, title, index) => ((obj[title] = values[index]), obj), {});
+      });
+  };
+  const JSONToFile = (obj, filename) =>
+    fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2));
+  const JSONtoCSV = (arr, columns, delimiter = ',') =>
+    [
+      columns.join(delimiter),
+      ...arr.map(obj =>
+        columns.reduce(
+          (acc, key) => `${acc}${!acc.length ? '' : delimiter}"${!obj[key] ? '' : obj[key]}"`,
+          ''
+        )
+      )
+    ].join('\n');
+  const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
+  const URLJoin = (...args) =>
+    args
+      .join('/')
+      .replace(/[\/]+/g, '/')
+      .replace(/^(.+):\//, '$1://')
+      .replace(/^file:/, 'file:/')
+      .replace(/\/(\?|&|#[^!])/g, '$1')
+      .replace(/\?/g, '&')
+      .replace('&', '?');
+  const UUIDGeneratorBrowser = () =>
+    ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+      (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)
+    );
+  const UUIDGeneratorNode = () =>
+    ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+      (c ^ (crypto.randomBytes(1)[0] & (15 >> (c / 4)))).toString(16)
+    );
   const all = (arr, fn = Boolean) => arr.every(fn);
   const allEqual = arr => arr.every(val => val === arr[0]);
   const any = (arr, fn = Boolean) => arr.some(fn);
@@ -133,6 +178,7 @@
       acc[val] = (acc[val] || 0) + 1;
       return acc;
     }, {});
+  const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
   const counter = (selector, start, end, step = 1, duration = 2000) => {
     let current = start,
       _step = (end - start) * step < 0 ? -step : step,
@@ -144,7 +190,6 @@
       }, Math.abs(Math.floor(duration / (end - start))));
     return timer;
   };
-  const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
   const createDirIfNotExists = dir => (!fs.existsSync(dir) ? fs.mkdirSync(dir) : undefined);
   const createElement = str => {
     const el = document.createElement('div');
@@ -165,21 +210,6 @@
       if (i > -1) this.hub[event].splice(i, 1);
     }
   });
-  const CSVToArray = (data, delimiter = ',', omitFirstRow = false) =>
-    data
-      .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0)
-      .split('\n')
-      .map(v => v.split(delimiter));
-  const CSVToJSON = (data, delimiter = ',') => {
-    const titles = data.slice(0, data.indexOf('\n')).split(delimiter);
-    return data
-      .slice(data.indexOf('\n') + 1)
-      .split('\n')
-      .map(v => {
-        const values = v.split(delimiter);
-        return titles.reduce((obj, title, index) => ((obj[title] = values[index]), obj), {});
-      });
-  };
   const currentURL = () => window.location.href;
   const curry = (fn, arity = fn.length, ...args) =>
     arity <= args.length ? fn(...args) : curry.bind(null, fn, arity, ...args);
@@ -358,6 +388,19 @@
       .slice(0)
       .reverse()
       .forEach(callback);
+  const forOwn = (obj, fn) => Object.keys(obj).forEach(key => fn(obj[key], key, obj));
+  const forOwnRight = (obj, fn) =>
+    Object.keys(obj)
+      .reverse()
+      .forEach(key => fn(obj[key], key, obj));
+  const formToObject = form =>
+    Array.from(new FormData(form)).reduce(
+      (acc, [key, value]) => ({
+        ...acc,
+        [key]: value
+      }),
+      {}
+    );
   const formatDuration = ms => {
     if (ms < 0) ms = -ms;
     const time = {
@@ -372,19 +415,6 @@
       .map(([key, val]) => `${val} ${key}${val !== 1 ? 's' : ''}`)
       .join(', ');
   };
-  const formToObject = form =>
-    Array.from(new FormData(form)).reduce(
-      (acc, [key, value]) => ({
-        ...acc,
-        [key]: value
-      }),
-      {}
-    );
-  const forOwn = (obj, fn) => Object.keys(obj).forEach(key => fn(obj[key], key, obj));
-  const forOwnRight = (obj, fn) =>
-    Object.keys(obj)
-      .reverse()
-      .forEach(key => fn(obj[key], key, obj));
   const fromCamelCase = (str, separator = '_') =>
     str
       .replace(/([a-z\d])([A-Z])/g, '$1' + separator + '$2')
@@ -513,6 +543,10 @@
     for (let i = 0; i < iterations; i++) fn();
     return (1000 * iterations) / (performance.now() - before);
   };
+  const inRange = (n, start, end = null) => {
+    if (end && start > end) [end, start] = [start, end];
+    return end == null ? n >= 0 && n < start : n >= start && n < end;
+  };
   const indentString = (str, count, indent = ' ') => str.replace(/^/gm, indent.repeat(count));
   const indexOfAll = (arr, val) => arr.reduce((acc, el, i) => (el === val ? [...acc, i] : acc), []);
   const initial = arr => arr.slice(0, -1);
@@ -529,10 +563,6 @@
     args.length === 0
       ? val
       : Array.from({ length: args[0] }).map(() => initializeNDArray(val, ...args.slice(1)));
-  const inRange = (n, start, end = null) => {
-    if (end && start > end) [end, start] = [start, end];
-    return end == null ? n >= 0 && n < start : n >= start && n < end;
-  };
   const insertAfter = (el, htmlString) => el.insertAdjacentHTML('afterend', htmlString);
   const insertBefore = (el, htmlString) => el.insertAdjacentHTML('beforebegin', htmlString);
   const intersection = (a, b) => {
@@ -644,18 +674,6 @@
             : acc + val + separator,
       ''
     );
-  const JSONtoCSV = (arr, columns, delimiter = ',') =>
-    [
-      columns.join(delimiter),
-      ...arr.map(obj =>
-        columns.reduce(
-          (acc, key) => `${acc}${!acc.length ? '' : delimiter}"${!obj[key] ? '' : obj[key]}"`,
-          ''
-        )
-      )
-    ].join('\n');
-  const JSONToFile = (obj, filename) =>
-    fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2));
   const last = arr => arr[arr.length - 1];
   const lcm = (...arr) => {
     const gcd = (x, y) => (!y ? x : gcd(y, x % y));
@@ -790,14 +808,6 @@
     el.addEventListener(evt, opts.target ? delegatorFn : fn, opts.options || false);
     if (opts.target) return delegatorFn;
   };
-  const once = fn => {
-    let called = false;
-    return function(...args) {
-      if (called) return;
-      called = true;
-      return fn.apply(this, args);
-    };
-  };
   const onUserInputChange = callback => {
     let type = 'mouse',
       lastTime = 0;
@@ -811,6 +821,14 @@
       if (type === 'touch') return;
       (type = 'touch'), callback(type), document.addEventListener('mousemove', mousemoveHandler);
     });
+  };
+  const once = fn => {
+    let called = false;
+    return function(...args) {
+      if (called) return;
+      called = true;
+      return fn.apply(this, args);
+    };
   };
   const orderBy = (arr, props, orders) =>
     [...arr].sort((a, b) =>
@@ -970,6 +988,10 @@
   };
   const redirect = (url, asLink = true) =>
     asLink ? (window.location.href = url) : window.location.replace(url);
+  const reduceSuccessive = (arr, fn, acc) =>
+    arr.reduce((res, val, i, arr) => (res.push(fn(res.slice(-1)[0], val, i, arr)), res), [acc]);
+  const reduceWhich = (arr, comparator = (a, b) => a - b) =>
+    arr.reduce((a, b) => (comparator(a, b) >= 0 ? b : a));
   const reducedFilter = (data, keys, fn) =>
     data.filter(fn).map(el =>
       keys.reduce((acc, key) => {
@@ -977,10 +999,6 @@
         return acc;
       }, {})
     );
-  const reduceSuccessive = (arr, fn, acc) =>
-    arr.reduce((res, val, i, arr) => (res.push(fn(res.slice(-1)[0], val, i, arr)), res), [acc]);
-  const reduceWhich = (arr, comparator = (a, b) => a - b) =>
-    arr.reduce((a, b) => (comparator(a, b) >= 0 ? b : a));
   const reject = (pred, array) => array.filter((...args) => !pred(...args));
   const remove = (arr, func) =>
     Array.isArray(arr)
@@ -999,7 +1017,6 @@
       {}
     );
   const reverseString = str => [...str].reverse().join('');
-  const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
   const round = (n, decimals = 0) => Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`);
   const runAsync = fn => {
     const worker = new Worker(
@@ -1176,15 +1193,15 @@
       }
     };
   };
-  const times = (n, fn, context = undefined) => {
-    let i = 0;
-    while (fn.call(context, i) !== false && ++i < n) {}
-  };
   const timeTaken = callback => {
     console.time('timeTaken');
     const r = callback();
     console.timeEnd('timeTaken');
     return r;
+  };
+  const times = (n, fn, context = undefined) => {
+    let i = 0;
+    while (fn.call(context, i) !== false && ++i < n) {}
   };
   const toCamelCase = str => {
     let s =
@@ -1198,7 +1215,6 @@
   const toCurrency = (n, curr, LanguageFormat = undefined) =>
     Intl.NumberFormat(LanguageFormat, { style: 'currency', currency: curr }).format(n);
   const toDecimalMark = num => num.toLocaleString('en-US');
-  const toggleClass = (el, className) => el.classList.toggle(className);
   const toHash = (object, key) =>
     Array.prototype.reduce.call(
       object,
@@ -1211,11 +1227,6 @@
       .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
       .map(x => x.toLowerCase())
       .join('-');
-  const tomorrow = () => {
-    let t = new Date();
-    t.setDate(t.getDate() + 1);
-    return t.toISOString().split('T')[0];
-  };
   const toOrdinalSuffix = num => {
     const int = parseInt(num),
       digits = [int % 10, int % 100],
@@ -1239,6 +1250,12 @@
       .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
       .map(x => x.charAt(0).toUpperCase() + x.slice(1))
       .join(' ');
+  const toggleClass = (el, className) => el.classList.toggle(className);
+  const tomorrow = () => {
+    let t = new Date();
+    t.setDate(t.getDate() + 1);
+    return t.toISOString().split('T')[0];
+  };
   const transform = (obj, fn, acc) => Object.keys(obj).reduce((a, k) => fn(a, obj[k], k, obj), acc);
   const triggerEvent = (el, eventType, detail) =>
     el.dispatchEvent(new CustomEvent(eventType, { detail }));
@@ -1323,23 +1340,6 @@
         }).map(x => [])
       )
       .map(val => fn(...val));
-  const URLJoin = (...args) =>
-    args
-      .join('/')
-      .replace(/[\/]+/g, '/')
-      .replace(/^(.+):\//, '$1://')
-      .replace(/^file:/, 'file:/')
-      .replace(/\/(\?|&|#[^!])/g, '$1')
-      .replace(/\?/g, '&')
-      .replace('&', '?');
-  const UUIDGeneratorBrowser = () =>
-    ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
-      (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)
-    );
-  const UUIDGeneratorNode = () =>
-    ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
-      (c ^ (crypto.randomBytes(1)[0] & (15 >> (c / 4)))).toString(16)
-    );
   const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
   const vectorDistance = (...coords) => {
     let pointLength = Math.trunc(coords.length / 2);
@@ -1370,6 +1370,14 @@
     );
   };
 
+  exports.CSVToArray = CSVToArray;
+  exports.CSVToJSON = CSVToJSON;
+  exports.JSONToFile = JSONToFile;
+  exports.JSONtoCSV = JSONtoCSV;
+  exports.RGBToHex = RGBToHex;
+  exports.URLJoin = URLJoin;
+  exports.UUIDGeneratorBrowser = UUIDGeneratorBrowser;
+  exports.UUIDGeneratorNode = UUIDGeneratorNode;
   exports.all = all;
   exports.allEqual = allEqual;
   exports.any = any;
@@ -1410,13 +1418,11 @@
   exports.converge = converge;
   exports.copyToClipboard = copyToClipboard;
   exports.countBy = countBy;
-  exports.counter = counter;
   exports.countOccurrences = countOccurrences;
+  exports.counter = counter;
   exports.createDirIfNotExists = createDirIfNotExists;
   exports.createElement = createElement;
   exports.createEventHub = createEventHub;
-  exports.CSVToArray = CSVToArray;
-  exports.CSVToJSON = CSVToJSON;
   exports.currentURL = currentURL;
   exports.curry = curry;
   exports.dayOfYear = dayOfYear;
@@ -1463,10 +1469,10 @@
   exports.flattenObject = flattenObject;
   exports.flip = flip;
   exports.forEachRight = forEachRight;
-  exports.formatDuration = formatDuration;
-  exports.formToObject = formToObject;
   exports.forOwn = forOwn;
   exports.forOwnRight = forOwnRight;
+  exports.formToObject = formToObject;
+  exports.formatDuration = formatDuration;
   exports.fromCamelCase = fromCamelCase;
   exports.functionName = functionName;
   exports.functions = functions;
@@ -1494,6 +1500,7 @@
   exports.httpPost = httpPost;
   exports.httpsRedirect = httpsRedirect;
   exports.hz = hz;
+  exports.inRange = inRange;
   exports.indentString = indentString;
   exports.indexOfAll = indexOfAll;
   exports.initial = initial;
@@ -1502,7 +1509,6 @@
   exports.initializeArrayWithRangeRight = initializeArrayWithRangeRight;
   exports.initializeArrayWithValues = initializeArrayWithValues;
   exports.initializeNDArray = initializeNDArray;
-  exports.inRange = inRange;
   exports.insertAfter = insertAfter;
   exports.insertBefore = insertBefore;
   exports.intersection = intersection;
@@ -1546,8 +1552,6 @@
   exports.isValidJSON = isValidJSON;
   exports.isWritableStream = isWritableStream;
   exports.join = join;
-  exports.JSONtoCSV = JSONtoCSV;
-  exports.JSONToFile = JSONToFile;
   exports.last = last;
   exports.lcm = lcm;
   exports.longestItem = longestItem;
@@ -1586,8 +1590,8 @@
   exports.omit = omit;
   exports.omitBy = omitBy;
   exports.on = on;
-  exports.once = once;
   exports.onUserInputChange = onUserInputChange;
+  exports.once = once;
   exports.orderBy = orderBy;
   exports.over = over;
   exports.overArgs = overArgs;
@@ -1622,15 +1626,14 @@
   exports.rearg = rearg;
   exports.recordAnimationFrames = recordAnimationFrames;
   exports.redirect = redirect;
-  exports.reducedFilter = reducedFilter;
   exports.reduceSuccessive = reduceSuccessive;
   exports.reduceWhich = reduceWhich;
+  exports.reducedFilter = reducedFilter;
   exports.reject = reject;
   exports.remove = remove;
   exports.removeNonASCII = removeNonASCII;
   exports.renameKeys = renameKeys;
   exports.reverseString = reverseString;
-  exports.RGBToHex = RGBToHex;
   exports.round = round;
   exports.runAsync = runAsync;
   exports.runPromisesInSeries = runPromisesInSeries;
@@ -1672,19 +1675,19 @@
   exports.takeRightWhile = takeRightWhile;
   exports.takeWhile = takeWhile;
   exports.throttle = throttle;
-  exports.times = times;
   exports.timeTaken = timeTaken;
+  exports.times = times;
   exports.toCamelCase = toCamelCase;
   exports.toCurrency = toCurrency;
   exports.toDecimalMark = toDecimalMark;
-  exports.toggleClass = toggleClass;
   exports.toHash = toHash;
   exports.toKebabCase = toKebabCase;
-  exports.tomorrow = tomorrow;
   exports.toOrdinalSuffix = toOrdinalSuffix;
   exports.toSafeInteger = toSafeInteger;
   exports.toSnakeCase = toSnakeCase;
   exports.toTitleCase = toTitleCase;
+  exports.toggleClass = toggleClass;
+  exports.tomorrow = tomorrow;
   exports.transform = transform;
   exports.triggerEvent = triggerEvent;
   exports.truncateString = truncateString;
@@ -1704,9 +1707,6 @@
   exports.untildify = untildify;
   exports.unzip = unzip;
   exports.unzipWith = unzipWith;
-  exports.URLJoin = URLJoin;
-  exports.UUIDGeneratorBrowser = UUIDGeneratorBrowser;
-  exports.UUIDGeneratorNode = UUIDGeneratorNode;
   exports.validateNumber = validateNumber;
   exports.vectorDistance = vectorDistance;
   exports.when = when;
