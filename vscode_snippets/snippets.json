@@ -11,7 +11,7 @@
     "body": [
       "const allEqual = arr => arr.every(val => val === arr[0]);"
     ],
-    "description": "Check if all elements in an array are equal.\n\nUse `Array.prototype.every()` to check if all the elements of the array are the same as the first one"
+    "description": "Check if all elements in an array are equal.\n\nUse `Array.prototype.every()` to check if all the elements of the array are the same as the first one.\nElements in the array are compared using the strict comparison operator, which does not account for `NaN` self-inequality"
   },
   "any": {
     "prefix": "30s_any",
@@ -534,6 +534,13 @@
     ],
     "description": "Deep freezes an object.\n\nCalls `Object.freeze(obj)` recursively on all unfrozen properties of passed object that are `instanceof` object"
   },
+  "deepGet": {
+    "prefix": "30s_deepGet",
+    "body": [
+      "const deepGet = (obj, keys) => keys.reduce((xs, x) => (xs && xs[x] ? xs[x] : null), obj);"
+    ],
+    "description": "Returns the target value in a nested JSON object, based on the `keys` array.\n\nCompare the keys you want in the nested JSON object as an `Array`.\nUse `Array.prototype.reduce()` to get value from nested JSON object one by one. \nIf the key exists in object, return target value, otherwise, return `null`"
+  },
   "deepMapKeys": {
     "prefix": "30s_deepMapKeys",
     "body": [
@@ -587,7 +594,7 @@
       "    ? 'Mobile'",
       "    : 'Desktop';"
     ],
-    "description": "Detects wether the website is being opened in a mobile device or a desktop/laptop.\n\nUse a regular expression to test the `navigator.userAgent` property to figure out if the device is a mobile device or a desktop/laptop"
+    "description": "Detects whether the website is being opened in a mobile device or a desktop/laptop.\n\nUse a regular expression to test the `navigator.userAgent` property to figure out if the device is a mobile device or a desktop/laptop"
   },
   "difference": {
     "prefix": "30s_difference",

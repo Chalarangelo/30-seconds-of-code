@@ -1,6 +1,51 @@
 const fs = typeof require !== "undefined" && require('fs');
 const crypto = typeof require !== "undefined" && require('crypto');
 
+const CSVToArray = (data, delimiter = ',', omitFirstRow = false) =>
+  data
+    .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0)
+    .split('\n')
+    .map(v => v.split(delimiter));
+const CSVToJSON = (data, delimiter = ',') => {
+  const titles = data.slice(0, data.indexOf('\n')).split(delimiter);
+  return data
+    .slice(data.indexOf('\n') + 1)
+    .split('\n')
+    .map(v => {
+      const values = v.split(delimiter);
+      return titles.reduce((obj, title, index) => ((obj[title] = values[index]), obj), {});
+    });
+};
+const JSONToFile = (obj, filename) =>
+  fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2));
+const JSONtoCSV = (arr, columns, delimiter = ',') =>
+  [
+    columns.join(delimiter),
+    ...arr.map(obj =>
+      columns.reduce(
+        (acc, key) => `${acc}${!acc.length ? '' : delimiter}"${!obj[key] ? '' : obj[key]}"`,
+        ''
+      )
+    )
+  ].join('\n');
+const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
+const URLJoin = (...args) =>
+  args
+    .join('/')
+    .replace(/[\/]+/g, '/')
+    .replace(/^(.+):\//, '$1://')
+    .replace(/^file:/, 'file:/')
+    .replace(/\/(\?|&|#[^!])/g, '$1')
+    .replace(/\?/g, '&')
+    .replace('&', '?');
+const UUIDGeneratorBrowser = () =>
+  ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+    (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)
+  );
+const UUIDGeneratorNode = () =>
+  ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+    (c ^ (crypto.randomBytes(1)[0] & (15 >> (c / 4)))).toString(16)
+  );
 const all = (arr, fn = Boolean) => arr.every(fn);
 const allEqual = arr => arr.every(val => val === arr[0]);
 const any = (arr, fn = Boolean) => arr.some(fn);
@@ -127,6 +172,7 @@ const countBy = (arr, fn) =>
     acc[val] = (acc[val] || 0) + 1;
     return acc;
   }, {});
+const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
 const counter = (selector, start, end, step = 1, duration = 2000) => {
   let current = start,
     _step = (end - start) * step < 0 ? -step : step,
@@ -138,7 +184,6 @@ const counter = (selector, start, end, step = 1, duration = 2000) => {
     }, Math.abs(Math.floor(duration / (end - start))));
   return timer;
 };
-const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
 const createDirIfNotExists = dir => (!fs.existsSync(dir) ? fs.mkdirSync(dir) : undefined);
 const createElement = str => {
   const el = document.createElement('div');
@@ -159,21 +204,6 @@ const createEventHub = () => ({
     if (i > -1) this.hub[event].splice(i, 1);
   }
 });
-const CSVToArray = (data, delimiter = ',', omitFirstRow = false) =>
-  data
-    .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0)
-    .split('\n')
-    .map(v => v.split(delimiter));
-const CSVToJSON = (data, delimiter = ',') => {
-  const titles = data.slice(0, data.indexOf('\n')).split(delimiter);
-  return data
-    .slice(data.indexOf('\n') + 1)
-    .split('\n')
-    .map(v => {
-      const values = v.split(delimiter);
-      return titles.reduce((obj, title, index) => ((obj[title] = values[index]), obj), {});
-    });
-};
 const currentURL = () => window.location.href;
 const curry = (fn, arity = fn.length, ...args) =>
   arity <= args.length ? fn(...args) : curry.bind(null, fn, arity, ...args);
@@ -352,6 +382,19 @@ const forEachRight = (arr, callback) =>
     .slice(0)
     .reverse()
     .forEach(callback);
+const forOwn = (obj, fn) => Object.keys(obj).forEach(key => fn(obj[key], key, obj));
+const forOwnRight = (obj, fn) =>
+  Object.keys(obj)
+    .reverse()
+    .forEach(key => fn(obj[key], key, obj));
+const formToObject = form =>
+  Array.from(new FormData(form)).reduce(
+    (acc, [key, value]) => ({
+      ...acc,
+      [key]: value
+    }),
+    {}
+  );
 const formatDuration = ms => {
   if (ms < 0) ms = -ms;
   const time = {
@@ -366,19 +409,6 @@ const formatDuration = ms => {
     .map(([key, val]) => `${val} ${key}${val !== 1 ? 's' : ''}`)
     .join(', ');
 };
-const formToObject = form =>
-  Array.from(new FormData(form)).reduce(
-    (acc, [key, value]) => ({
-      ...acc,
-      [key]: value
-    }),
-    {}
-  );
-const forOwn = (obj, fn) => Object.keys(obj).forEach(key => fn(obj[key], key, obj));
-const forOwnRight = (obj, fn) =>
-  Object.keys(obj)
-    .reverse()
-    .forEach(key => fn(obj[key], key, obj));
 const fromCamelCase = (str, separator = '_') =>
   str
     .replace(/([a-z\d])([A-Z])/g, '$1' + separator + '$2')
@@ -507,6 +537,10 @@ const hz = (fn, iterations = 100) => {
   for (let i = 0; i < iterations; i++) fn();
   return (1000 * iterations) / (performance.now() - before);
 };
+const inRange = (n, start, end = null) => {
+  if (end && start > end) [end, start] = [start, end];
+  return end == null ? n >= 0 && n < start : n >= start && n < end;
+};
 const indentString = (str, count, indent = ' ') => str.replace(/^/gm, indent.repeat(count));
 const indexOfAll = (arr, val) => arr.reduce((acc, el, i) => (el === val ? [...acc, i] : acc), []);
 const initial = arr => arr.slice(0, -1);
@@ -523,10 +557,6 @@ const initializeNDArray = (val, ...args) =>
   args.length === 0
     ? val
     : Array.from({ length: args[0] }).map(() => initializeNDArray(val, ...args.slice(1)));
-const inRange = (n, start, end = null) => {
-  if (end && start > end) [end, start] = [start, end];
-  return end == null ? n >= 0 && n < start : n >= start && n < end;
-};
 const insertAfter = (el, htmlString) => el.insertAdjacentHTML('afterend', htmlString);
 const insertBefore = (el, htmlString) => el.insertAdjacentHTML('beforebegin', htmlString);
 const intersection = (a, b) => {
@@ -638,18 +668,6 @@ const join = (arr, separator = ',', end = separator) =>
           : acc + val + separator,
     ''
   );
-const JSONtoCSV = (arr, columns, delimiter = ',') =>
-  [
-    columns.join(delimiter),
-    ...arr.map(obj =>
-      columns.reduce(
-        (acc, key) => `${acc}${!acc.length ? '' : delimiter}"${!obj[key] ? '' : obj[key]}"`,
-        ''
-      )
-    )
-  ].join('\n');
-const JSONToFile = (obj, filename) =>
-  fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2));
 const last = arr => arr[arr.length - 1];
 const lcm = (...arr) => {
   const gcd = (x, y) => (!y ? x : gcd(y, x % y));
@@ -784,14 +802,6 @@ const on = (el, evt, fn, opts = {}) => {
   el.addEventListener(evt, opts.target ? delegatorFn : fn, opts.options || false);
   if (opts.target) return delegatorFn;
 };
-const once = fn => {
-  let called = false;
-  return function(...args) {
-    if (called) return;
-    called = true;
-    return fn.apply(this, args);
-  };
-};
 const onUserInputChange = callback => {
   let type = 'mouse',
     lastTime = 0;
@@ -805,6 +815,14 @@ const onUserInputChange = callback => {
     if (type === 'touch') return;
     (type = 'touch'), callback(type), document.addEventListener('mousemove', mousemoveHandler);
   });
+};
+const once = fn => {
+  let called = false;
+  return function(...args) {
+    if (called) return;
+    called = true;
+    return fn.apply(this, args);
+  };
 };
 const orderBy = (arr, props, orders) =>
   [...arr].sort((a, b) =>
@@ -964,6 +982,10 @@ const recordAnimationFrames = (callback, autoStart = true) => {
 };
 const redirect = (url, asLink = true) =>
   asLink ? (window.location.href = url) : window.location.replace(url);
+const reduceSuccessive = (arr, fn, acc) =>
+  arr.reduce((res, val, i, arr) => (res.push(fn(res.slice(-1)[0], val, i, arr)), res), [acc]);
+const reduceWhich = (arr, comparator = (a, b) => a - b) =>
+  arr.reduce((a, b) => (comparator(a, b) >= 0 ? b : a));
 const reducedFilter = (data, keys, fn) =>
   data.filter(fn).map(el =>
     keys.reduce((acc, key) => {
@@ -971,10 +993,6 @@ const reducedFilter = (data, keys, fn) =>
       return acc;
     }, {})
   );
-const reduceSuccessive = (arr, fn, acc) =>
-  arr.reduce((res, val, i, arr) => (res.push(fn(res.slice(-1)[0], val, i, arr)), res), [acc]);
-const reduceWhich = (arr, comparator = (a, b) => a - b) =>
-  arr.reduce((a, b) => (comparator(a, b) >= 0 ? b : a));
 const reject = (pred, array) => array.filter((...args) => !pred(...args));
 const remove = (arr, func) =>
   Array.isArray(arr)
@@ -993,7 +1011,6 @@ const renameKeys = (keysMap, obj) =>
     {}
   );
 const reverseString = str => [...str].reverse().join('');
-const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
 const round = (n, decimals = 0) => Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`);
 const runAsync = fn => {
   const worker = new Worker(
@@ -1170,15 +1187,15 @@ const throttle = (fn, wait) => {
     }
   };
 };
-const times = (n, fn, context = undefined) => {
-  let i = 0;
-  while (fn.call(context, i) !== false && ++i < n) {}
-};
 const timeTaken = callback => {
   console.time('timeTaken');
   const r = callback();
   console.timeEnd('timeTaken');
   return r;
+};
+const times = (n, fn, context = undefined) => {
+  let i = 0;
+  while (fn.call(context, i) !== false && ++i < n) {}
 };
 const toCamelCase = str => {
   let s =
@@ -1192,7 +1209,6 @@ const toCamelCase = str => {
 const toCurrency = (n, curr, LanguageFormat = undefined) =>
   Intl.NumberFormat(LanguageFormat, { style: 'currency', currency: curr }).format(n);
 const toDecimalMark = num => num.toLocaleString('en-US');
-const toggleClass = (el, className) => el.classList.toggle(className);
 const toHash = (object, key) =>
   Array.prototype.reduce.call(
     object,
@@ -1205,11 +1221,6 @@ const toKebabCase = str =>
     .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
     .map(x => x.toLowerCase())
     .join('-');
-const tomorrow = () => {
-  let t = new Date();
-  t.setDate(t.getDate() + 1);
-  return t.toISOString().split('T')[0];
-};
 const toOrdinalSuffix = num => {
   const int = parseInt(num),
     digits = [int % 10, int % 100],
@@ -1233,6 +1244,12 @@ const toTitleCase = str =>
     .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
     .map(x => x.charAt(0).toUpperCase() + x.slice(1))
     .join(' ');
+const toggleClass = (el, className) => el.classList.toggle(className);
+const tomorrow = () => {
+  let t = new Date();
+  t.setDate(t.getDate() + 1);
+  return t.toISOString().split('T')[0];
+};
 const transform = (obj, fn, acc) => Object.keys(obj).reduce((a, k) => fn(a, obj[k], k, obj), acc);
 const triggerEvent = (el, eventType, detail) =>
   el.dispatchEvent(new CustomEvent(eventType, { detail }));
@@ -1317,23 +1334,6 @@ const unzipWith = (arr, fn) =>
       }).map(x => [])
     )
     .map(val => fn(...val));
-const URLJoin = (...args) =>
-  args
-    .join('/')
-    .replace(/[\/]+/g, '/')
-    .replace(/^(.+):\//, '$1://')
-    .replace(/^file:/, 'file:/')
-    .replace(/\/(\?|&|#[^!])/g, '$1')
-    .replace(/\?/g, '&')
-    .replace('&', '?');
-const UUIDGeneratorBrowser = () =>
-  ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
-    (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)
-  );
-const UUIDGeneratorNode = () =>
-  ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
-    (c ^ (crypto.randomBytes(1)[0] & (15 >> (c / 4)))).toString(16)
-  );
 const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
 const vectorDistance = (...coords) => {
   let pointLength = Math.trunc(coords.length / 2);
@@ -1364,4 +1364,4 @@ const zipWith = (...array) => {
   );
 };
 
-export { all, allEqual, any, approximatelyEqual, arrayToCSV, arrayToHtmlList, ary, atob, attempt, average, averageBy, bifurcate, bifurcateBy, bind, bindAll, bindKey, binomialCoefficient, bottomVisible, btoa, byteSize, call, capitalize, capitalizeEveryWord, castArray, chainAsync, checkProp, chunk, clampNumber, cloneRegExp, coalesce, coalesceFactory, collectInto, colorize, compact, compactWhitespace, compose, composeRight, converge, copyToClipboard, countBy, counter, countOccurrences, createDirIfNotExists, createElement, createEventHub, CSVToArray, CSVToJSON, currentURL, curry, dayOfYear, debounce, decapitalize, deepClone, deepFlatten, deepFreeze, deepGet, deepMapKeys, defaults, defer, degreesToRads, delay, detectDeviceType, difference, differenceBy, differenceWith, dig, digitize, distance, drop, dropRight, dropRightWhile, dropWhile, elementContains, elementIsVisibleInViewport, elo, equals, escapeHTML, escapeRegExp, everyNth, extendHex, factorial, fibonacci, filterFalsy, filterNonUnique, filterNonUniqueBy, findKey, findLast, findLastIndex, findLastKey, flatten, flattenObject, flip, forEachRight, formatDuration, formToObject, forOwn, forOwnRight, fromCamelCase, functionName, functions, gcd, geometricProgression, get, getColonTimeFromDate, getDaysDiffBetweenDates, getImages, getMeridiemSuffixOfInteger, getScrollPosition, getStyle, getType, getURLParameters, groupBy, hammingDistance, hasClass, hasFlags, hashBrowser, hashNode, head, hexToRGB, hide, httpGet, httpPost, httpsRedirect, hz, indentString, indexOfAll, initial, initialize2DArray, initializeArrayWithRange, initializeArrayWithRangeRight, initializeArrayWithValues, initializeNDArray, inRange, insertAfter, insertBefore, intersection, intersectionBy, intersectionWith, invertKeyValues, is, isAbsoluteURL, isAfterDate, isAnagram, isArrayLike, isBeforeDate, isBoolean, isBrowser, isBrowserTabFocused, isDivisible, isDuplexStream, isEmpty, isEven, isFunction, isLowerCase, isNegativeZero, isNil, isNull, isNumber, isObject, isObjectLike, isPlainObject, isPrime, isPrimitive, isPromiseLike, isReadableStream, isSameDate, isSorted, isStream, isString, isSymbol, isTravisCI, isUndefined, isUpperCase, isValidJSON, isWritableStream, join, JSONtoCSV, JSONToFile, last, lcm, longestItem, lowercaseKeys, luhnCheck, mapKeys, mapNumRange, mapObject, mapString, mapValues, mask, matches, matchesWith, maxBy, maxDate, maxN, median, memoize, merge, midpoint, minBy, minDate, minN, mostPerformant, negate, nest, nodeListToArray, none, nthArg, nthElement, objectFromPairs, objectToPairs, observeMutations, off, offset, omit, omitBy, on, once, onUserInputChange, orderBy, over, overArgs, pad, palindrome, parseCookie, partial, partialRight, partition, percentile, permutations, pick, pickBy, pipeAsyncFunctions, pipeFunctions, pluralize, powerset, prefix, prettyBytes, primes, promisify, pull, pullAtIndex, pullAtValue, pullBy, radsToDegrees, randomHexColorCode, randomIntArrayInRange, randomIntegerInRange, randomNumberInRange, readFileLines, rearg, recordAnimationFrames, redirect, reducedFilter, reduceSuccessive, reduceWhich, reject, remove, removeNonASCII, renameKeys, reverseString, RGBToHex, round, runAsync, runPromisesInSeries, sample, sampleSize, scrollToTop, sdbm, serializeCookie, serializeForm, setStyle, shallowClone, shank, show, shuffle, similarity, size, sleep, smoothScroll, sortCharactersInString, sortedIndex, sortedIndexBy, sortedLastIndex, sortedLastIndexBy, splitLines, spreadOver, stableSort, standardDeviation, stringPermutations, stripHTMLTags, sum, sumBy, sumPower, symmetricDifference, symmetricDifferenceBy, symmetricDifferenceWith, tail, take, takeRight, takeRightWhile, takeWhile, throttle, times, timeTaken, toCamelCase, toCurrency, toDecimalMark, toggleClass, toHash, toKebabCase, tomorrow, toOrdinalSuffix, toSafeInteger, toSnakeCase, toTitleCase, transform, triggerEvent, truncateString, truthCheckCollection, unary, uncurry, unescapeHTML, unflattenObject, unfold, union, unionBy, unionWith, uniqueElements, uniqueElementsBy, uniqueElementsByRight, uniqueSymmetricDifference, untildify, unzip, unzipWith, URLJoin, UUIDGeneratorBrowser, UUIDGeneratorNode, validateNumber, vectorDistance, when, without, words, xProd, yesNo, zip, zipObject, zipWith };
+export { CSVToArray, CSVToJSON, JSONToFile, JSONtoCSV, RGBToHex, URLJoin, UUIDGeneratorBrowser, UUIDGeneratorNode, all, allEqual, any, approximatelyEqual, arrayToCSV, arrayToHtmlList, ary, atob, attempt, average, averageBy, bifurcate, bifurcateBy, bind, bindAll, bindKey, binomialCoefficient, bottomVisible, btoa, byteSize, call, capitalize, capitalizeEveryWord, castArray, chainAsync, checkProp, chunk, clampNumber, cloneRegExp, coalesce, coalesceFactory, collectInto, colorize, compact, compactWhitespace, compose, composeRight, converge, copyToClipboard, countBy, countOccurrences, counter, createDirIfNotExists, createElement, createEventHub, currentURL, curry, dayOfYear, debounce, decapitalize, deepClone, deepFlatten, deepFreeze, deepGet, deepMapKeys, defaults, defer, degreesToRads, delay, detectDeviceType, difference, differenceBy, differenceWith, dig, digitize, distance, drop, dropRight, dropRightWhile, dropWhile, elementContains, elementIsVisibleInViewport, elo, equals, escapeHTML, escapeRegExp, everyNth, extendHex, factorial, fibonacci, filterFalsy, filterNonUnique, filterNonUniqueBy, findKey, findLast, findLastIndex, findLastKey, flatten, flattenObject, flip, forEachRight, forOwn, forOwnRight, formToObject, formatDuration, fromCamelCase, functionName, functions, gcd, geometricProgression, get, getColonTimeFromDate, getDaysDiffBetweenDates, getImages, getMeridiemSuffixOfInteger, getScrollPosition, getStyle, getType, getURLParameters, groupBy, hammingDistance, hasClass, hasFlags, hashBrowser, hashNode, head, hexToRGB, hide, httpGet, httpPost, httpsRedirect, hz, inRange, indentString, indexOfAll, initial, initialize2DArray, initializeArrayWithRange, initializeArrayWithRangeRight, initializeArrayWithValues, initializeNDArray, insertAfter, insertBefore, intersection, intersectionBy, intersectionWith, invertKeyValues, is, isAbsoluteURL, isAfterDate, isAnagram, isArrayLike, isBeforeDate, isBoolean, isBrowser, isBrowserTabFocused, isDivisible, isDuplexStream, isEmpty, isEven, isFunction, isLowerCase, isNegativeZero, isNil, isNull, isNumber, isObject, isObjectLike, isPlainObject, isPrime, isPrimitive, isPromiseLike, isReadableStream, isSameDate, isSorted, isStream, isString, isSymbol, isTravisCI, isUndefined, isUpperCase, isValidJSON, isWritableStream, join, last, lcm, longestItem, lowercaseKeys, luhnCheck, mapKeys, mapNumRange, mapObject, mapString, mapValues, mask, matches, matchesWith, maxBy, maxDate, maxN, median, memoize, merge, midpoint, minBy, minDate, minN, mostPerformant, negate, nest, nodeListToArray, none, nthArg, nthElement, objectFromPairs, objectToPairs, observeMutations, off, offset, omit, omitBy, on, onUserInputChange, once, orderBy, over, overArgs, pad, palindrome, parseCookie, partial, partialRight, partition, percentile, permutations, pick, pickBy, pipeAsyncFunctions, pipeFunctions, pluralize, powerset, prefix, prettyBytes, primes, promisify, pull, pullAtIndex, pullAtValue, pullBy, radsToDegrees, randomHexColorCode, randomIntArrayInRange, randomIntegerInRange, randomNumberInRange, readFileLines, rearg, recordAnimationFrames, redirect, reduceSuccessive, reduceWhich, reducedFilter, reject, remove, removeNonASCII, renameKeys, reverseString, round, runAsync, runPromisesInSeries, sample, sampleSize, scrollToTop, sdbm, serializeCookie, serializeForm, setStyle, shallowClone, shank, show, shuffle, similarity, size, sleep, smoothScroll, sortCharactersInString, sortedIndex, sortedIndexBy, sortedLastIndex, sortedLastIndexBy, splitLines, spreadOver, stableSort, standardDeviation, stringPermutations, stripHTMLTags, sum, sumBy, sumPower, symmetricDifference, symmetricDifferenceBy, symmetricDifferenceWith, tail, take, takeRight, takeRightWhile, takeWhile, throttle, timeTaken, times, toCamelCase, toCurrency, toDecimalMark, toHash, toKebabCase, toOrdinalSuffix, toSafeInteger, toSnakeCase, toTitleCase, toggleClass, tomorrow, transform, triggerEvent, truncateString, truthCheckCollection, unary, uncurry, unescapeHTML, unflattenObject, unfold, union, unionBy, unionWith, uniqueElements, uniqueElementsBy, uniqueElementsByRight, uniqueSymmetricDifference, untildify, unzip, unzipWith, validateNumber, vectorDistance, when, without, words, xProd, yesNo, zip, zipObject, zipWith };

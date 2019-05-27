@@ -27,7 +27,7 @@
         "archived": false
       },
       "meta": {
-        "hash": "690147b9d4d90d37d9f42ec6596decc3e99eb8104f51d27a392ee3b50041878e"
+        "hash": "0a82f35a23ffb933cfcd29db918081cee7212c80ace6238838a193295f42f60c"
       }
     },
     {
@@ -386,7 +386,7 @@
         "archived": false
       },
       "meta": {
-        "hash": "b9a0897aca121af7d0705cace7673c27b22ffab5e67890a3e1859b7f28df2500"
+        "hash": "ab66ab76096083ad5861e228065926db7b8aee7f240d12ad00467a78b35f089c"
       }
     },
     {
@@ -816,6 +816,20 @@
       }
     },
     {
+      "id": "deepGet",
+      "type": "snippetListing",
+      "attributes": {
+        "tags": [
+          "object",
+          "intermediate"
+        ],
+        "archived": false
+      },
+      "meta": {
+        "hash": "1f7e933fa6c3e1dee4a9523c6d269a352d6ca2532a2f4a43468dc00da92164d9"
+      }
+    },
+    {
       "id": "deepMapKeys",
       "type": "snippetListing",
       "attributes": {
@@ -897,7 +911,7 @@
         "archived": false
       },
       "meta": {
-        "hash": "2262275b7adcd7d9b2dd8f31da2a3a2dbcc663584928f46131a0d273b587403b"
+        "hash": "ab4d8502aa63a33bfc3e7919125a76d55f85158f6b15e22bfe2653b05ea328d1"
       }
     },
     {
