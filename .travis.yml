@@ -3,7 +3,7 @@ cache:
   directories:
     - node_modules
 node_js:
-- node
+- lts/*
 before_install:
 - npm install -g semistandard
 - npm install -g prettier
