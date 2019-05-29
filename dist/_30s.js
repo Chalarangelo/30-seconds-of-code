@@ -282,8 +282,9 @@
   const drop = (arr, n = 1) => arr.slice(n);
   const dropRight = (arr, n = 1) => arr.slice(0, -n);
   const dropRightWhile = (arr, func) => {
-    while (arr.length > 0 && !func(arr[arr.length - 1])) arr = arr.slice(0, -1);
-    return arr;
+    let rightIndex = arr.length;
+    while (rightIndex-- && !func(arr[rightIndex]));
+    return arr.slice(0, rightIndex + 1);
   };
   const dropWhile = (arr, func) => {
     while (arr.length > 0 && !func(arr[0])) arr = arr.slice(1);
