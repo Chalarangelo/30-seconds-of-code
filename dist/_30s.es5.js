@@ -665,11 +665,12 @@
     return arr.slice(0, -n);
   };
   var dropRightWhile = function dropRightWhile(arr, func) {
-    while (arr.length > 0 && !func(arr[arr.length - 1])) {
-      arr = arr.slice(0, -1);
+    var rightIndex = arr.length;
+
+    while (rightIndex-- && !func(arr[rightIndex])) {
     }
 
-    return arr;
+    return arr.slice(0, rightIndex + 1);
   };
   var dropWhile = function dropWhile(arr, func) {
     while (arr.length > 0 && !func(arr[0])) {
