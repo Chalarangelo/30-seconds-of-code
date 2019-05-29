@@ -1201,8 +1201,9 @@ Returns the remaining elements.
 
 ```js
 const dropRightWhile = (arr, func) => {
-  while (arr.length > 0 && !func(arr[arr.length - 1])) arr = arr.slice(0, -1);
-  return arr;
+  let rightIndex = arr.length;
+  while (rightIndex-- && !func(arr[rightIndex]));
+  return arr.slice(0, rightIndex + 1);
 };
 ```
 
@@ -4726,6 +4727,7 @@ const checkProp = (predicate, prop) => obj => !!predicate(obj[prop]);
 <summary>Examples</summary>
 
 ```js
+
 
 
 
