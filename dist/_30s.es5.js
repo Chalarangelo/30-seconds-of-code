@@ -521,6 +521,7 @@
           return h === handler;
         });
         if (i > -1) this.hub[event].splice(i, 1);
+        if (this.hub[event].length === 0) delete this.hub[event];
       }
     };
   };
