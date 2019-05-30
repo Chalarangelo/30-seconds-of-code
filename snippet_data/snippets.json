@@ -568,7 +568,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "92073a46ed91184fb52d53ecc1ef1265c8eaf3e13f9715796a4c19ebed2e9556"
+        "hash": "f6aaee6ddb2ff7884f5bc5b5d37d1def44b549c3b260f4522ab812f5d163996c"
       }
     },
     {
@@ -965,8 +965,8 @@
         "fileName": "createEventHub.md",
         "text": "Creates a pub/sub ([publish–subscribe](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)) event hub with `emit`, `on`, and `off` methods.\n\nUse `Object.create(null)` to create an empty `hub` object that does not inherit properties from `Object.prototype`.\nFor `emit`, resolve the array of handlers based on the `event` argument and then run each one with `Array.prototype.forEach()` by passing in the data as an argument.\nFor `on`, create an array for the event if it does not yet exist, then use `Array.prototype.push()` to add the handler\nto the array.\nFor `off`, use `Array.prototype.findIndex()` to find the index of the handler in the event array and remove it using `Array.prototype.splice()`.",
         "codeBlocks": {
-          "es6": "const createEventHub = () => ({\n  hub: Object.create(null),\n  emit(event, data) {\n    (this.hub[event] || []).forEach(handler => handler(data));\n  },\n  on(event, handler) {\n    if (!this.hub[event]) this.hub[event] = [];\n    this.hub[event].push(handler);\n  },\n  off(event, handler) {\n    const i = (this.hub[event] || []).findIndex(h => h === handler);\n    if (i > -1) this.hub[event].splice(i, 1);\n    if (this.hub[event].length === 0) delete this.hub[event]\n  }\n});",
-          "es5": "var createEventHub = function createEventHub() {\n  return {\n    hub: Object.create(null),\n    emit: function emit(event, data) {\n      (this.hub[event] || []).forEach(function (handler) {\n        return handler(data);\n      });\n    },\n    on: function on(event, handler) {\n      if (!this.hub[event]) this.hub[event] = [];\n      this.hub[event].push(handler);\n    },\n    off: function off(event, handler) {\n      var i = (this.hub[event] || []).findIndex(function (h) {\n        return h === handler;\n      });\n      if (i > -1) this.hub[event].splice(i, 1);\n      if (this.hub[event].length === 0) delete this.hub[event]\n    }\n  };\n};",
+          "es6": "const createEventHub = () => ({\n  hub: Object.create(null),\n  emit(event, data) {\n    (this.hub[event] || []).forEach(handler => handler(data));\n  },\n  on(event, handler) {\n    if (!this.hub[event]) this.hub[event] = [];\n    this.hub[event].push(handler);\n  },\n  off(event, handler) {\n    const i = (this.hub[event] || []).findIndex(h => h === handler);\n    if (i > -1) this.hub[event].splice(i, 1);\n    if (this.hub[event].length === 0) delete this.hub[event];\n  }\n});",
+          "es5": "var createEventHub = function createEventHub() {\n  return {\n    hub: Object.create(null),\n    emit: function emit(event, data) {\n      (this.hub[event] || []).forEach(function (handler) {\n        return handler(data);\n      });\n    },\n    on: function on(event, handler) {\n      if (!this.hub[event]) this.hub[event] = [];\n      this.hub[event].push(handler);\n    },\n    off: function off(event, handler) {\n      var i = (this.hub[event] || []).findIndex(function (h) {\n        return h === handler;\n      });\n      if (i > -1) this.hub[event].splice(i, 1);\n      if (this.hub[event].length === 0) delete this.hub[event];\n    }\n  };\n};",
           "example": "const handler = data => console.log(data);\nconst hub = createEventHub();\nlet increment = 0;\n\n// Subscribe: listen for different types of events\nhub.on('message', handler);\nhub.on('message', () => console.log('Message event fired'));\nhub.on('increment', () => increment++);\n\n// Publish: emit events to invoke all handlers subscribed to them, passing the data to them as an argument\nhub.emit('message', 'hello world'); // logs 'hello world' and 'Message event fired'\nhub.emit('message', { hello: 'world' }); // logs the object and 'Message event fired'\nhub.emit('increment'); // `increment` variable is now 1\n\n// Unsubscribe: stop a specific handler from listening to the 'message' event\nhub.off('message', handler);"
         },
         "tags": [
@@ -977,7 +977,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "02438b83d413dbd5aede2eed7381f3038c4627135b63130ffdca48fdb6fbbc91"
+        "hash": "04bd2a9cc85162867e958777b84598feecb772344bd1d8d3cc9b319fb14a98f4"
       }
     },
     {
