@@ -2,12 +2,12 @@
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
-    "chalk": "^2.4.1",
     "codacy-coverage": "^3.2.0",
     "eslint": "^5.7.0",
     "fs-extra": "^6.0.0",
     "html-minifier": "^3.5.20",
     "jest": "^23.6.0",
+    "kleur": "^3.0.3",
     "markdown-builder": "^0.8.4",
     "markdown-it": "^8.4.2",
     "node-sass": "^4.9.3",

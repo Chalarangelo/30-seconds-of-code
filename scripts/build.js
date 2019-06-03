@@ -5,7 +5,7 @@
 // Load modules
 const fs = require('fs-extra');
 const path = require('path');
-const chalk = require('chalk');
+const { green, red } = require('kleur');
 const util = require('./util');
 const markdown = require('markdown-builder');
 const { headers, misc, lists } = markdown;
@@ -28,7 +28,7 @@ const makeExamples = data => {
 
 if (util.isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
   console.log(
-    `${chalk.green('NOBUILD')} README build terminated, parent commit is a Travis build!`
+    `${green('NOBUILD')} README build terminated, parent commit is a Travis build!`
   );
   process.exit(0);
 }
@@ -36,7 +36,7 @@ if (
   util.isTravisCI() &&
   (process.env['TRAVIS_EVENT_TYPE'] === 'cron' || process.env['TRAVIS_EVENT_TYPE'] === 'api')
 ) {
-  console.log(`${chalk.green('ARCHIVE')} Cron job or custom build, building archive README!`);
+  console.log(`${green('ARCHIVE')} Cron job or custom build, building archive README!`);
   console.time('Builder');
   let snippets = {};
   // Synchronously read all snippets from snippets_archive folder and sort them as necessary (case-insensitive)
@@ -48,7 +48,7 @@ if (
     for (const name of snippetFilenames.filter(s => s !== 'README.md'))
       snippets[name] = fs.readFileSync(path.join(SNIPPETS_ARCHIVE_PATH, name), 'utf8');
   } catch (err) {
-    console.log(`${chalk.red('ERROR!')} During snippet loading: ${err}`);
+    console.log(`${red('ERROR!')} During snippet loading: ${err}`);
     process.exit(1);
   }
   try {
@@ -70,11 +70,11 @@ if (
     // Write to the README file of the archive
     fs.writeFileSync(path.join(SNIPPETS_ARCHIVE_PATH, 'README.md'), output);
   } catch (err) {
-    console.log(`${chalk.red('ERROR!')} During README generation for snippets archive: ${err}`);
+    console.log(`${red('ERROR!')} During README generation for snippets archive: ${err}`);
     process.exit(1);
   }
 
-  console.log(`${chalk.green('SUCCESS!')} README file generated for snippets archive!`);
+  console.log(`${green('SUCCESS!')} README file generated for snippets archive!`);
   console.timeEnd('Builder');
 }
 let snippets = {};
@@ -109,7 +109,7 @@ try {
   startPart = fs.readFileSync(path.join(STATIC_PARTS_PATH, 'README-start.md'), 'utf8');
   endPart = fs.readFileSync(path.join(STATIC_PARTS_PATH, 'README-end.md'), 'utf8');
 } catch (err) {
-  console.log(`${chalk.red('ERROR!')} During static part loading: ${err}`);
+  console.log(`${red('ERROR!')} During static part loading: ${err}`);
   process.exit(1);
 }
 
@@ -169,9 +169,9 @@ try {
   // Write to the README file
   fs.writeFileSync('README.md', output);
 } catch (err) {
-  console.log(`${chalk.red('ERROR!')} During README generation: ${err}`);
+  console.log(`${red('ERROR!')} During README generation: ${err}`);
   process.exit(1);
 }
 
-console.log(`${chalk.green('SUCCESS!')} README file generated!`);
+console.log(`${green('SUCCESS!')} README file generated!`);
 console.timeEnd('Builder');

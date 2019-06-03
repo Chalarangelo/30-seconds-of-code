@@ -8,10 +8,10 @@
 const fs = require('fs-extra');
 const cp = require('child_process');
 const path = require('path');
-const chalk = require('chalk');
+const { green, red } = require('kleur');
 const util = require('./util');
 if (util.isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
-  console.log(`${chalk.green('NOBUILD')} Linting terminated, parent commit is a Travis build!`);
+  console.log(`${green('NOBUILD')} Linting terminated, parent commit is a Travis build!`);
   process.exit(0);
 }
 const SNIPPETS_PATH = './snippets';
@@ -74,10 +74,10 @@ try {
     }
 
     fs.removeSync(TEMP_PATH);
-    console.log(`${chalk.green('SUCCESS!')} Snippet files linted!`);
+    console.log(`${green('SUCCESS!')} Snippet files linted!`);
     console.timeEnd('Linter');
   });
 } catch (err) {
-  console.log(`${chalk.red('ERROR!')} During linting: ${err}`);
+  console.log(`${red('ERROR!')} During linting: ${err}`);
   process.exit(1);
 }
