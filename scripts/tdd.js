@@ -7,7 +7,7 @@
 const fs = require('fs-extra'),
   path = require('path');
 const childProcess = require('child_process');
-const chalk = require('chalk');
+const { green, yellow, red } = require('kleur');
 const util = require('./util');
 // Declare paths
 const SNIPPETS_PATH = './snippets';
@@ -23,7 +23,7 @@ try {
   const undefinedTests = [...snippets, ...archivedSnippets].filter(v => !definedTests.includes(v));
   const orphanedTests = [...definedTests.filter(v => ![...snippets, ...archivedSnippets].includes(v))];
   orphanedTests.forEach(snippet => {
-    console.log(`${chalk.yellow('WARNING!')} Orphaned test: ${snippet}`);
+    console.log(`${yellow('WARNING!')} Orphaned test: ${snippet}`);
   });
   // Create files for undefined tests
   undefinedTests.forEach(snippet => {
@@ -43,9 +43,9 @@ try {
   else {
     childProcess.execSync('npm test');
   }
-  console.log(`${chalk.green('SUCCESS!')} All tests ran successfully!`);
+  console.log(`${green('SUCCESS!')} All tests ran successfully!`);
 } catch (err) {
-  console.log(`${chalk.red('ERROR!')} During test runs: ${err}`);
+  console.log(`${red('ERROR!')} During test runs: ${err}`);
   process.exit(1);
 }
 console.timeEnd('Tester');

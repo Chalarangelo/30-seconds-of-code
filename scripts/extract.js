@@ -5,7 +5,7 @@
 // Load modules
 const fs = require('fs-extra');
 const path = require('path');
-const chalk = require('chalk');
+const { green } = require('kleur');
 const util = require('./util');
 // Paths
 const SNIPPETS_PATH = './snippets';
@@ -17,7 +17,7 @@ if (
   process.env['TRAVIS_EVENT_TYPE'] !== 'cron' &&
   process.env['TRAVIS_EVENT_TYPE'] !== 'api'
 ) {
-  console.log(`${chalk.green('NOBUILD')} snippet extraction terminated, not a cron or api build!`);
+  console.log(`${green('NOBUILD')} snippet extraction terminated, not a cron or api build!`);
   process.exit(0);
 }
 // Read data
@@ -80,7 +80,8 @@ let listingData = {
       meta: {
         hash: v.meta.hash
       }
-    })),
+    })),
+
   meta: {
     specification: 'http://jsonapi.org/format/'
   }
@@ -89,5 +90,5 @@ let listingData = {
 fs.writeFileSync(path.join(OUTPUT_PATH, 'snippets.json'), JSON.stringify(completeData, null, 2));
 fs.writeFileSync(path.join(OUTPUT_PATH, 'snippetList.json'), JSON.stringify(listingData, null, 2));
 // Display messages and time
-console.log(`${chalk.green('SUCCESS!')} snippets.json and snippetList.json files generated!`);
+console.log(`${green('SUCCESS!')} snippets.json and snippetList.json files generated!`);
 console.timeEnd('Extractor');
