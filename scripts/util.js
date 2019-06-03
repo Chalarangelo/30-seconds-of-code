@@ -1,6 +1,6 @@
 const fs = require('fs-extra'),
   path = require('path'),
-  chalk = require('chalk'),
+  { red } = require('kleur'),
   crypto = require('crypto');
 const babel = require('@babel/core');
 
@@ -33,7 +33,7 @@ const getFilesInDir = (directoryPath, withPath, exclude = null) => {
     }
     return directoryFilenames;
   } catch (err) {
-    console.log(`${chalk.red('ERROR!')} During snippet loading: ${err}`);
+    console.log(`${red('ERROR!')} During snippet loading: ${err}`);
     process.exit(1);
   }
 };
@@ -47,7 +47,7 @@ const readSnippets = snippetsPath => {
     for (let snippet of snippetFilenames)
       snippets[snippet] = fs.readFileSync(path.join(snippetsPath, snippet), 'utf8');
   } catch (err) {
-    console.log(`${chalk.red('ERROR!')} During snippet loading: ${err}`);
+    console.log(`${red('ERROR!')} During snippet loading: ${err}`);
     process.exit(1);
   }
   return snippets;
@@ -71,7 +71,7 @@ const readTags = () => {
     );
   } catch (err) {
     // Handle errors (hopefully not!)
-    console.log(`${chalk.red('ERROR!')} During tag database loading: ${err}`);
+    console.log(`${red('ERROR!')} During tag database loading: ${err}`);
     process.exit(1);
   }
   return tagDbData;
