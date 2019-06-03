@@ -4,7 +4,7 @@
 */
 
 const fs = require('fs-extra');
-const chalk = require('chalk');
+const { red } = require('kleur');
 const util = require('../util');
 
 const glossaryFiles = util.getFilesInDir('./glossary', false);
@@ -19,6 +19,6 @@ try {
     ) + '\n';
   fs.writeFileSync('glossary/keyword_database', output);
 } catch (err) {
-  console.log(`${chalk.red('ERROR!')} During glossary keyword_database generation: ${err}`);
+  console.log(`${red('ERROR!')} During glossary keyword_database generation: ${err}`);
   process.exit(1);
 }

@@ -5,7 +5,7 @@
 // Load modules
 const fs = require('fs-extra'),
   path = require('path'),
-  chalk = require('chalk'),
+  { green, red } = require('kleur'),
   md = require('markdown-it')(),
   minify = require('html-minifier').minify;
 const util = require('./util');
@@ -98,7 +98,7 @@ if (
   process.env['TRAVIS_EVENT_TYPE'] !== 'api'
 ) {
   console.log(
-    `${chalk.green('NOBUILD')} website build terminated, parent commit is a Travis build!`
+    `${green('NOBUILD')} website build terminated, parent commit is a Travis build!`
   );
   process.exit(0);
 }
@@ -113,11 +113,11 @@ sass.render(
   function(err, result) {
     if (!err) {
       fs.writeFile(path.join('docs', 'style.css'), result.css, function(err2) {
-        if (!err2) console.log(`${chalk.green('SUCCESS!')} style.css file generated!`);
-        else console.log(`${chalk.red('ERROR!')} During style.css file generation: ${err}`);
+        if (!err2) console.log(`${green('SUCCESS!')} style.css file generated!`);
+        else console.log(`${red('ERROR!')} During style.css file generation: ${err}`);
       });
     } else
-      console.log(`${chalk.red('ERROR!')} During style.css file generation: ${err}`);
+      console.log(`${red('ERROR!')} During style.css file generation: ${err}`);
 
   }
 );
@@ -156,7 +156,7 @@ try {
   ].map(filename => fs.readFileSync(path.join(staticPartsPath, filename), 'utf8'));
 } catch (err) {
   // Handle errors (hopefully not!)
-  console.log(`${chalk.red('ERROR!')} During static part loading: ${err}`);
+  console.log(`${red('ERROR!')} During static part loading: ${err}`);
   process.exit(1);
 }
 // Load tag data from the database
@@ -242,12 +242,12 @@ try {
       page.content
     );
     console.log(
-      `${chalk.green('SUCCESS!')} ${page.tag === 'array' ? 'index' : page.tag}.html file generated!`
+      `${green('SUCCESS!')} ${page.tag === 'array' ? 'index' : page.tag}.html file generated!`
     );
   });
 } catch (err) {
   // Handle errors (hopefully not!)
-  console.log(`${chalk.red('ERROR!')} During category page generation: ${err}`);
+  console.log(`${red('ERROR!')} During category page generation: ${err}`);
   process.exit(1);
 }
 
@@ -359,9 +359,9 @@ try {
   const minifiedArchivedOutput = minifyHTML(archivedOutput);
 
   fs.writeFileSync(path.join(docsPath, 'archive.html'), minifiedArchivedOutput);
-  console.log(`${chalk.green('SUCCESS!')} archive.html file generated!`);
+  console.log(`${green('SUCCESS!')} archive.html file generated!`);
 } catch (err) {
-  console.log(`${chalk.red('ERROR!')} During archive.html generation: ${err}`);
+  console.log(`${red('ERROR!')} During archive.html generation: ${err}`);
   process.exit(1);
 }
 
@@ -392,9 +392,9 @@ try {
   // Generate and minify 'glossary.html' file
   const minifiedGlossaryOutput = minifyHTML(glossaryOutput);
   fs.writeFileSync(path.join(docsPath, 'glossary.html'), minifiedGlossaryOutput);
-  console.log(`${chalk.green('SUCCESS!')} glossary.html file generated!`);
+  console.log(`${green('SUCCESS!')} glossary.html file generated!`);
 } catch (err) {
-  console.log(`${chalk.red('ERROR!')} During glossary.html generation: ${err}`);
+  console.log(`${red('ERROR!')} During glossary.html generation: ${err}`);
   process.exit(1);
 }
 
@@ -406,9 +406,9 @@ staticFiles.forEach(f => {
       fs.writeFileSync(path.join(docsPath, f), generateMenuForStaticPage(fileData));
     } else
       fs.copyFileSync(path.join(staticPartsPath, f), path.join(docsPath, f));
-    console.log(`${chalk.green('SUCCESS!')} ${f} file copied!`);
+    console.log(`${green('SUCCESS!')} ${f} file copied!`);
   } catch (err) {
-    console.log(`${chalk.red('ERROR!')} During ${f} copying: ${err}`);
+    console.log(`${red('ERROR!')} During ${f} copying: ${err}`);
     process.exit(1);
   }
 });

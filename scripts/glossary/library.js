@@ -4,7 +4,7 @@
 */
 
 const fs = require('fs-extra');
-const chalk = require('chalk');
+const { red } = require('kleur');
 const util = require('../util');
 
 const glossaryFiles = util.getFilesInDir('./glossary', true, ['keyword_database', 'README.md']);
@@ -54,6 +54,6 @@ try {
   const README = '# 30-seconds-of-code JavaScript Glossary\n\n' + TOC + '\n\n' + fileContents;
   fs.writeFileSync('glossary/README.md', README);
 } catch (err) {
-  console.log(`${chalk.red('ERROR!')} During glossary README generation: ${err}`);
+  console.log(`${red('ERROR!')} During glossary README generation: ${err}`);
   process.exit(1);
 }

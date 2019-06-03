@@ -5,7 +5,7 @@
 // Load modules
 const fs = require('fs-extra');
 const path = require('path');
-const chalk = require('chalk');
+const { green } = require('kleur');
 let snippetsData = require('../snippet_data/snippets.json');
 // Paths
 const OUTPUT_PATH = './vscode_snippets';
@@ -26,7 +26,7 @@ fs.writeFileSync(
 );
 // Display messages and time
 console.log(
-  `${chalk.green(
+  `${green(
     'SUCCESS!'
   )} vscode_snippets/snippets.json file generated!`
 );

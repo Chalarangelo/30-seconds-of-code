@@ -4,10 +4,10 @@
 */
 // Load modules
 const fs = require('fs-extra'),
-  chalk = require('chalk');
+  { black, blue, green, yellow, red, bgWhite } = require('kleur');
 const util = require('./util');
 if (util.isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
-  console.log(`${chalk.green('NOBUILD')} Tagging terminated, parent commit is a Travis build!`);
+  console.log(`${green('NOBUILD')} Tagging terminated, parent commit is a Travis build!`);
   process.exit(0);
 }
 // Set variables for paths
@@ -41,26 +41,26 @@ try {
     } else {
       output += `${snippet[0].slice(0, -3)}:uncategorized\n`;
       missingTags++;
-      console.log(`${chalk.yellow('Tagged uncategorized:')} ${snippet[0].slice(0, -3)}`);
+      console.log(`${yellow('Tagged uncategorized:')} ${snippet[0].slice(0, -3)}`);
     }
   }
   // Write to tag_database
   fs.writeFileSync('tag_database', output);
 } catch (err) {
   // Handle errors (hopefully not!)
-  console.log(`${chalk.red('ERROR!')} During tag_database generation: ${err}`);
+  console.log(`${red('ERROR!')} During tag_database generation: ${err}`);
   process.exit(1);
 }
 // Log statistics for the tag_database file
-console.log(`\n${chalk.bgWhite(chalk.black('=== TAG STATS ==='))}`);
+console.log(`\n${bgWhite(black('=== TAG STATS ==='))}`);
 for (let tagData of Object.entries(tagDbStats)
   .filter(v => v[0] !== 'undefined')
   .sort((a, b) => a[0].localeCompare(b[0])))
-  console.log(`${chalk.green(tagData[0])}: ${tagData[1]} snippets`);
+  console.log(`${green(tagData[0])}: ${tagData[1]} snippets`);
 console.log(
-  `${chalk.blue("New untagged snippets (will be tagged as 'uncategorized'):")} ${missingTags}\n`
+  `${blue("New untagged snippets (will be tagged as 'uncategorized'):")} ${missingTags}\n`
 );
 // Log a success message
-console.log(`${chalk.green('SUCCESS!')} tag_database file updated!`);
+console.log(`${green('SUCCESS!')} tag_database file updated!`);
 // Log the time taken
 console.timeEnd('Tagger');

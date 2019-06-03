@@ -4,7 +4,7 @@
  */
 const fs = require('fs-extra');
 const path = require('path');
-const chalk = require('chalk');
+const { green, red } = require('kleur');
 const util = require('./util');
 const { rollup } = require('rollup');
 const babel = require('rollup-plugin-babel');
@@ -143,7 +143,7 @@ async function build() {
     if (util.isTravisCI() && util.isNotTravisCronOrAPI()) {
       fs.unlink(ROLLUP_INPUT_FILE);
       console.log(
-        `${chalk.green(
+        `${green(
           'NOBUILD'
         )} Module build terminated, not a cron job or a custom build!`
       );
@@ -156,10 +156,10 @@ async function build() {
     // Clean up the temporary input file Rollup used for building the module
     fs.unlink(ROLLUP_INPUT_FILE);
 
-    console.log(`${chalk.green('SUCCESS!')} Snippet module built!`);
+    console.log(`${green('SUCCESS!')} Snippet module built!`);
     console.timeEnd('Packager');
   } catch (err) {
-    console.log(`${chalk.red('ERROR!')} During module creation: ${err}`);
+    console.log(`${red('ERROR!')} During module creation: ${err}`);
     process.exit(1);
   }
 }
