@@ -52,7 +52,19 @@ ${
         : snippetKey[1].includes('beginner')
           ? 'beginner'
           : 'intermediate'
-    }"></div>`
+    }" aria-label="${
+      snippetKey[1].includes('advanced')
+        ? 'advanced'
+        : snippetKey[1].includes('beginner')
+          ? 'beginner'
+          : 'intermediate'
+      }" title="${
+      snippetKey[1].includes('advanced')
+        ? 'advanced'
+        : snippetKey[1].includes('beginner')
+          ? 'beginner'
+          : 'intermediate'
+    }" ></div>`
     : ''
 }
   ${md
