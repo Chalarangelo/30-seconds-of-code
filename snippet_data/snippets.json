@@ -568,7 +568,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "3c8137c4ad86cf334aca583fd69bd3859ebc05defcd6ada7c35c876541195818"
+        "hash": "d0eace2a9fcd0b8e056083e8c3e92574d7da0eee62c6897f7d6c5a94e64a3841"
       }
     },
     {
@@ -1421,7 +1421,7 @@
         "fileName": "dig.md",
         "text": "Returns the target value in a nested JSON object, based on the given key.\n\nUse the `in` operator to check if `target` exists in `obj`.\nIf found, return the value of `obj[target]`, otherwise use `Object.values(obj)` and `Array.prototype.reduce()` to recursively call `dig` on each nested object until the first matching key/value pair is found.",
         "codeBlocks": {
-          "es6": "const dig = (obj, target) =>\n  target in obj\n    ? obj[target]\n    : Object.values(obj).reduce((acc, val) => {\n        if (acc !== undefined) return acc;\n        if (typeof val === 'object') return dig(val, target);\n      }, undefined);",
+          "es6": "const dig = (obj, target) =>\n  target in obj\n    ? obj[target]\n    : Object.values(obj).reduce((acc, val) => {\n      if (acc !== undefined) return acc;\n      if (typeof val === 'object') return dig(val, target);\n    }, undefined);",
           "es5": "function _typeof(obj) { if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }; } return _typeof(obj); }\n\nvar dig = function dig(obj, target) {\n  return target in obj ? obj[target] : Object.values(obj).reduce(function (acc, val) {\n    if (acc !== undefined) return acc;\n    if (_typeof(val) === 'object') return dig(val, target);\n  }, undefined);\n};",
           "example": "const data = {\n  level1: {\n    level2: {\n      level3: 'some data'\n    }\n  }\n};\ndig(data, 'level3'); // 'some data'\ndig(data, 'level4'); // undefined"
         },
@@ -1433,7 +1433,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "f982b4e8e3ec3c8b0c2ef4f19b38dac90df6ebe2dd4daa0126c917ebc07d3e62"
+        "hash": "828a6f2f3b94cc537ef0ee30c5ebda28fff688fea65030e47d5721831bdb48ce"
       }
     },
     {
@@ -1747,7 +1747,7 @@
         "fileName": "factorial.md",
         "text": "Calculates the factorial of a number.\n\nUse recursion.\nIf `n` is less than or equal to `1`, return `1`.\nOtherwise, return the product of `n` and the factorial of `n - 1`.\nThrows an exception if `n` is a negative number.",
         "codeBlocks": {
-          "es6": "const factorial = n =>\n  n < 0\n    ? (() => {\n        throw new TypeError('Negative numbers are not allowed!');\n      })()\n    : n <= 1\n      ? 1\n      : n * factorial(n - 1);",
+          "es6": "const factorial = n =>\n  n < 0\n    ? (() => {\n      throw new TypeError('Negative numbers are not allowed!');\n    })()\n    : n <= 1\n      ? 1\n      : n * factorial(n - 1);",
           "es5": "var factorial = function factorial(n) {\n  return n < 0 ? function () {\n    throw new TypeError('Negative numbers are not allowed!');\n  }() : n <= 1 ? 1 : n * factorial(n - 1);\n};",
           "example": "factorial(6); // 720"
         },
@@ -1759,7 +1759,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "319e1a8fb41490965ee6e28db3e139e65c4ea5b7f43e332bc7216cd790e5d409"
+        "hash": "383ed61e69b8f63ae42d0746a1995057f4f65b4af6ca7778d8f1771144802acd"
       }
     },
     {
