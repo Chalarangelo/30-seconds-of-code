@@ -208,7 +208,7 @@ try {
   <div><button class="social fb"></button><button class="social instagram"></button><button class="social twitter"></button></div>
   </nav><main class="col-centered"><span id="top"><br/><br/></span>`;
   // Loop over tags and snippets to create the list of snippets
-  for (let tag of taggedData) {
+  for (let tag of taggedData){
     let notEmbedded = true;
     let localOutput = output
       .replace(/\$tag/g, util.capitalize(tag))
@@ -217,6 +217,66 @@ try {
     localOutput += md
       .render(`## ${util.capitalize(tag, true)}\n`)
       .replace(/<h2>/g, '<h2 class="category-name">');
+    if (tag === 'array')
+      localOutput += `<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7IVKJ7&placement=30secondsofcodeorg" id="_carbonads_js"></script><style>#carbonads {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#carbonads {
+  display: flex;
+  max-width: 330px;
+  background-color: hsl(0, 0%, 98%);
+  box-shadow: 0 1px 4px 1px hsla(0, 0%, 0%, .1);
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+#carbonads .carbon-wrap {
+  display: flex;
+}
+
+.carbon-img {
+  display: block;
+  margin: 0;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+}
+
+.carbon-text {
+  font-size: 13px;
+  padding: 10px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 10px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}</style>`;
     for (let taggedSnippet of Object.entries(tagDbData).filter(v => v[1][0] === tag)) {
       localOutput += generateSnippetCard(snippets, taggedSnippet, true);
       if (Object.entries(tagDbData).filter(v => v[1][0] === tag).findIndex(v => v[0] === taggedSnippet[0]) >= Object.entries(tagDbData).filter(v => v[1][0] === tag).length * 0.5 && notEmbedded) {
