@@ -228,6 +228,8 @@ try {
   max-width: 330px;
   background-color: hsl(0, 0%, 98%);
   box-shadow: 0 1px 4px 1px hsla(0, 0%, 0%, .1);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #carbonads a {
