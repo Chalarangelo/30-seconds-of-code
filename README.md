@@ -1496,28 +1496,50 @@ Renders a ticker component.
 * Return a `<div>` with two `<button>` elements, each of which calls `tick` and `reset` respectively.
 
 ```jsx
+// https://overreacted.io/making-setinterval-declarative-with-react-hooks/
+function useInterval(callback, delay) {
+  const savedCallback = React.useRef();
+
+  // Remember the latest callback.
+  React.useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  // Set up the interval.
+  React.useEffect(() => {
+    function tick() {
+      savedCallback.current();
+    }
+    if (delay !== null) {
+      let id = setInterval(tick, delay);
+      return () => clearInterval(id);
+    }
+  }, [delay]);
+}
+
 function Ticker(props) {
   const [ticker, setTicker] = React.useState(0);
-  let interval = null;
-
-  const tick = () => {
-    reset();
-    interval = setInterval(() => {
+  const [isRunning, setIsRunning] = React.useState(false);
+  useInterval(
+    () => {
       if (ticker < props.times) setTicker(ticker + 1);
-      else clearInterval(interval);
-    }, props.interval);
-  };
-
-  const reset = () => {
-    setTicker(0);
-    clearInterval(interval);
-  };
+      else setIsRunning(false);
+    },
+    isRunning ? props.interval : null
+  );
 
   return (
     <div>
-      <span style={{ fontSize: 100 }}>{this.state.ticker}</span>
-      <button onClick={this.tick}>Tick!</button>
-      <button onClick={this.reset}>Reset</button>
+      <span style={{ fontSize: 100 }}>{ticker}</span>
+      <button onClick={() => setIsRunning(true)}>Tick!</button>
+      <button
+        onClick={() => {
+          setIsRunning(false);
+          setTicker(0);
+        }}
+      >
+        Reset
+      </button>
     </div>
   );
 }
