@@ -1047,7 +1047,7 @@ function CountDown({ hours = 0, minutes = 0, seconds = 0 }) {
   React.useEffect(() => {
     let timerID = setInterval(() => tick(), 1000);
     return () => clearInterval(timerID);
-  });
+  }, [tick]);
 
   return (
     <div>
