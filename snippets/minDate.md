@@ -2,10 +2,10 @@
 
 Returns the minimum of the given dates.
 
-Use `Math.min.apply()` to find the minimum date value, `new Date()` to convert it to a `Date` object.
+Use the ES6 spread syntax to find the minimum date value, `new Date()` to convert it to a `Date` object.
 
 ```js
-const minDate = (...dates) => new Date(Math.min.apply(null, ...dates));
+const minDate = dates => new Date(Math.min(...dates));
 ```
 
 ```js
