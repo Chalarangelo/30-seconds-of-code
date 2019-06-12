@@ -4,7 +4,7 @@ const {minDate} = require('./_30s.js');
 test('minDate is a Function', () => {
   expect(minDate).toBeInstanceOf(Function);
 });
-test('minDate produces the maximum date', () => {
+test('minDate produces the minimum date', () => {
   const array = [
     new Date(2017, 4, 13),
     new Date(2018, 2, 12),
