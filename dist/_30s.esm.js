@@ -724,7 +724,7 @@ const matchesWith = (obj, source, fn) =>
         : obj[key] == source[key]
   );
 const maxBy = (arr, fn) => Math.max(...arr.map(typeof fn === 'function' ? fn : val => val[fn]));
-const maxDate = (...dates) => new Date(Math.max.apply(null, ...dates));
+const maxDate = dates => new Date(Math.max(...dates));
 const maxN = (arr, n = 1) => [...arr].sort((a, b) => b - a).slice(0, n);
 const median = arr => {
   const mid = Math.floor(arr.length / 2),
@@ -750,7 +750,7 @@ const merge = (...objs) =>
   );
 const midpoint = ([x1, y1], [x2, y2]) => [(x1 + x2) / 2, (y1 + y2) / 2];
 const minBy = (arr, fn) => Math.min(...arr.map(typeof fn === 'function' ? fn : val => val[fn]));
-const minDate = (...dates) => new Date(Math.min.apply(null, ...dates));
+const minDate = dates => new Date(Math.min(...dates));
 const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
 const mostPerformant = (fns, iterations = 10000) => {
   const times = fns.map(fn => {

@@ -1426,14 +1426,8 @@
       return val[fn];
     })));
   };
-  var maxDate = function maxDate() {
-    var _Math$max;
-
-    for (var _len31 = arguments.length, dates = new Array(_len31), _key31 = 0; _key31 < _len31; _key31++) {
-      dates[_key31] = arguments[_key31];
-    }
-
-    return new Date((_Math$max = Math.max).apply.apply(_Math$max, [null].concat(dates)));
+  var maxDate = function maxDate(dates) {
+    return new Date(Math.max.apply(Math, _toConsumableArray(dates)));
   };
   var maxN = function maxN(arr) {
     var n = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
@@ -1460,8 +1454,8 @@
     return cached;
   };
   var merge = function merge() {
-    for (var _len32 = arguments.length, objs = new Array(_len32), _key32 = 0; _key32 < _len32; _key32++) {
-      objs[_key32] = arguments[_key32];
+    for (var _len31 = arguments.length, objs = new Array(_len31), _key31 = 0; _key31 < _len31; _key31++) {
+      objs[_key31] = arguments[_key31];
     }
 
     return objs.concat().reduce(function (acc, obj) {
@@ -1487,14 +1481,8 @@
       return val[fn];
     })));
   };
-  var minDate = function minDate() {
-    var _Math$min;
-
-    for (var _len33 = arguments.length, dates = new Array(_len33), _key33 = 0; _key33 < _len33; _key33++) {
-      dates[_key33] = arguments[_key33];
-    }
-
-    return new Date((_Math$min = Math.min).apply.apply(_Math$min, [null].concat(dates)));
+  var minDate = function minDate(dates) {
+    return new Date(Math.min.apply(Math, _toConsumableArray(dates)));
   };
   var minN = function minN(arr) {
     var n = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
@@ -1540,8 +1528,8 @@
   };
   var nthArg = function nthArg(n) {
     return function () {
-      for (var _len34 = arguments.length, args = new Array(_len34), _key34 = 0; _key34 < _len34; _key34++) {
-        args[_key34] = arguments[_key34];
+      for (var _len32 = arguments.length, args = new Array(_len32), _key32 = 0; _key32 < _len32; _key32++) {
+        args[_key32] = arguments[_key32];
       }
 
       return args.slice(n)[0];
@@ -1633,8 +1621,8 @@
       if (called) return;
       called = true;
 
-      for (var _len35 = arguments.length, args = new Array(_len35), _key35 = 0; _key35 < _len35; _key35++) {
-        args[_key35] = arguments[_key35];
+      for (var _len33 = arguments.length, args = new Array(_len33), _key33 = 0; _key33 < _len33; _key33++) {
+        args[_key33] = arguments[_key33];
       }
 
       return fn.apply(this, args);
@@ -1657,13 +1645,13 @@
     });
   };
   var over = function over() {
-    for (var _len36 = arguments.length, fns = new Array(_len36), _key36 = 0; _key36 < _len36; _key36++) {
-      fns[_key36] = arguments[_key36];
+    for (var _len34 = arguments.length, fns = new Array(_len34), _key34 = 0; _key34 < _len34; _key34++) {
+      fns[_key34] = arguments[_key34];
     }
 
     return function () {
-      for (var _len37 = arguments.length, args = new Array(_len37), _key37 = 0; _key37 < _len37; _key37++) {
-        args[_key37] = arguments[_key37];
+      for (var _len35 = arguments.length, args = new Array(_len35), _key35 = 0; _key35 < _len35; _key35++) {
+        args[_key35] = arguments[_key35];
       }
 
       return fns.map(function (fn) {
@@ -1673,8 +1661,8 @@
   };
   var overArgs = function overArgs(fn, transforms) {
     return function () {
-      for (var _len38 = arguments.length, args = new Array(_len38), _key38 = 0; _key38 < _len38; _key38++) {
-        args[_key38] = arguments[_key38];
+      for (var _len36 = arguments.length, args = new Array(_len36), _key36 = 0; _key36 < _len36; _key36++) {
+        args[_key36] = arguments[_key36];
       }
 
       return fn.apply(void 0, _toConsumableArray(args.map(function (val, i) {
@@ -1699,6 +1687,19 @@
     }, {});
   };
   var partial = function partial(fn) {
+    for (var _len37 = arguments.length, partials = new Array(_len37 > 1 ? _len37 - 1 : 0), _key37 = 1; _key37 < _len37; _key37++) {
+      partials[_key37 - 1] = arguments[_key37];
+    }
+
+    return function () {
+      for (var _len38 = arguments.length, args = new Array(_len38), _key38 = 0; _key38 < _len38; _key38++) {
+        args[_key38] = arguments[_key38];
+      }
+
+      return fn.apply(void 0, partials.concat(args));
+    };
+  };
+  var partialRight = function partialRight(fn) {
     for (var _len39 = arguments.length, partials = new Array(_len39 > 1 ? _len39 - 1 : 0), _key39 = 1; _key39 < _len39; _key39++) {
       partials[_key39 - 1] = arguments[_key39];
     }
@@ -1706,19 +1707,6 @@
     return function () {
       for (var _len40 = arguments.length, args = new Array(_len40), _key40 = 0; _key40 < _len40; _key40++) {
         args[_key40] = arguments[_key40];
-      }
-
-      return fn.apply(void 0, partials.concat(args));
-    };
-  };
-  var partialRight = function partialRight(fn) {
-    for (var _len41 = arguments.length, partials = new Array(_len41 > 1 ? _len41 - 1 : 0), _key41 = 1; _key41 < _len41; _key41++) {
-      partials[_key41 - 1] = arguments[_key41];
-    }
-
-    return function () {
-      for (var _len42 = arguments.length, args = new Array(_len42), _key42 = 0; _key42 < _len42; _key42++) {
-        args[_key42] = arguments[_key42];
       }
 
       return fn.apply(void 0, args.concat(partials));
@@ -1756,8 +1744,8 @@
     }, {});
   };
   var pipeAsyncFunctions = function pipeAsyncFunctions() {
-    for (var _len43 = arguments.length, fns = new Array(_len43), _key43 = 0; _key43 < _len43; _key43++) {
-      fns[_key43] = arguments[_key43];
+    for (var _len41 = arguments.length, fns = new Array(_len41), _key41 = 0; _key41 < _len41; _key41++) {
+      fns[_key41] = arguments[_key41];
     }
 
     return function (arg) {
@@ -1767,8 +1755,8 @@
     };
   };
   var pipeFunctions = function pipeFunctions() {
-    for (var _len44 = arguments.length, fns = new Array(_len44), _key44 = 0; _key44 < _len44; _key44++) {
-      fns[_key44] = arguments[_key44];
+    for (var _len42 = arguments.length, fns = new Array(_len42), _key42 = 0; _key42 < _len42; _key42++) {
+      fns[_key42] = arguments[_key42];
     }
 
     return fns.reduce(function (f, g) {
@@ -1835,8 +1823,8 @@
   };
   var promisify = function promisify(func) {
     return function () {
-      for (var _len45 = arguments.length, args = new Array(_len45), _key45 = 0; _key45 < _len45; _key45++) {
-        args[_key45] = arguments[_key45];
+      for (var _len43 = arguments.length, args = new Array(_len43), _key43 = 0; _key43 < _len43; _key43++) {
+        args[_key43] = arguments[_key43];
       }
 
       return new Promise(function (resolve, reject) {
@@ -1847,8 +1835,8 @@
     };
   };
   var pull = function pull(arr) {
-    for (var _len46 = arguments.length, args = new Array(_len46 > 1 ? _len46 - 1 : 0), _key46 = 1; _key46 < _len46; _key46++) {
-      args[_key46 - 1] = arguments[_key46];
+    for (var _len44 = arguments.length, args = new Array(_len44 > 1 ? _len44 - 1 : 0), _key44 = 1; _key44 < _len44; _key44++) {
+      args[_key44 - 1] = arguments[_key44];
     }
 
     var argState = Array.isArray(args[0]) ? args[0] : args;
@@ -1888,8 +1876,8 @@
     return removed;
   };
   var pullBy = function pullBy(arr) {
-    for (var _len47 = arguments.length, args = new Array(_len47 > 1 ? _len47 - 1 : 0), _key47 = 1; _key47 < _len47; _key47++) {
-      args[_key47 - 1] = arguments[_key47];
+    for (var _len45 = arguments.length, args = new Array(_len45 > 1 ? _len45 - 1 : 0), _key45 = 1; _key45 < _len45; _key45++) {
+      args[_key45 - 1] = arguments[_key45];
     }
 
     var length = args.length;
@@ -1932,8 +1920,8 @@
   };
   var rearg = function rearg(fn, indexes) {
     return function () {
-      for (var _len48 = arguments.length, args = new Array(_len48), _key48 = 0; _key48 < _len48; _key48++) {
-        args[_key48] = arguments[_key48];
+      for (var _len46 = arguments.length, args = new Array(_len46), _key46 = 0; _key46 < _len46; _key46++) {
+        args[_key46] = arguments[_key46];
       }
 
       return fn.apply(void 0, _toConsumableArray(indexes.map(function (i) {
@@ -2091,15 +2079,15 @@
     var index = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
     var delCount = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
 
-    for (var _len49 = arguments.length, elements = new Array(_len49 > 3 ? _len49 - 3 : 0), _key49 = 3; _key49 < _len49; _key49++) {
-      elements[_key49 - 3] = arguments[_key49];
+    for (var _len47 = arguments.length, elements = new Array(_len47 > 3 ? _len47 - 3 : 0), _key47 = 3; _key47 < _len47; _key47++) {
+      elements[_key47 - 3] = arguments[_key47];
     }
 
     return arr.slice(0, index).concat(elements).concat(arr.slice(index + delCount));
   };
   var show = function show() {
-    for (var _len50 = arguments.length, el = new Array(_len50), _key50 = 0; _key50 < _len50; _key50++) {
-      el[_key50] = arguments[_key50];
+    for (var _len48 = arguments.length, el = new Array(_len48), _key48 = 0; _key48 < _len48; _key48++) {
+      el[_key48] = arguments[_key48];
     }
 
     return el.concat().forEach(function (e) {
@@ -2218,8 +2206,8 @@
     return str.replace(/<[^>]*>/g, '');
   };
   var sum = function sum() {
-    for (var _len51 = arguments.length, arr = new Array(_len51), _key51 = 0; _key51 < _len51; _key51++) {
-      arr[_key51] = arguments[_key51];
+    for (var _len49 = arguments.length, arr = new Array(_len49), _key49 = 0; _key49 < _len49; _key49++) {
+      arr[_key49] = arguments[_key49];
     }
 
     return arr.concat().reduce(function (acc, val) {
@@ -2443,8 +2431,8 @@
         };
       };
 
-      for (var _len52 = arguments.length, args = new Array(_len52), _key52 = 0; _key52 < _len52; _key52++) {
-        args[_key52] = arguments[_key52];
+      for (var _len50 = arguments.length, args = new Array(_len50), _key50 = 0; _key50 < _len50; _key50++) {
+        args[_key50] = arguments[_key50];
       }
 
       if (n > args.length) throw new RangeError('Arguments too few!');
@@ -2561,8 +2549,8 @@
     return !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
   };
   var vectorDistance = function vectorDistance() {
-    for (var _len53 = arguments.length, coords = new Array(_len53), _key53 = 0; _key53 < _len53; _key53++) {
-      coords[_key53] = arguments[_key53];
+    for (var _len51 = arguments.length, coords = new Array(_len51), _key51 = 0; _key51 < _len51; _key51++) {
+      coords[_key51] = arguments[_key51];
     }
 
     var pointLength = Math.trunc(coords.length / 2);
@@ -2577,8 +2565,8 @@
     };
   };
   var without = function without(arr) {
-    for (var _len54 = arguments.length, args = new Array(_len54 > 1 ? _len54 - 1 : 0), _key54 = 1; _key54 < _len54; _key54++) {
-      args[_key54 - 1] = arguments[_key54];
+    for (var _len52 = arguments.length, args = new Array(_len52 > 1 ? _len52 - 1 : 0), _key52 = 1; _key52 < _len52; _key52++) {
+      args[_key52 - 1] = arguments[_key52];
     }
 
     return arr.filter(function (v) {
@@ -2601,8 +2589,8 @@
     return /^(y|yes)$/i.test(val) ? true : /^(n|no)$/i.test(val) ? false : def;
   };
   var zip = function zip() {
-    for (var _len55 = arguments.length, arrays = new Array(_len55), _key55 = 0; _key55 < _len55; _key55++) {
-      arrays[_key55] = arguments[_key55];
+    for (var _len53 = arguments.length, arrays = new Array(_len53), _key53 = 0; _key53 < _len53; _key53++) {
+      arrays[_key53] = arguments[_key53];
     }
 
     var maxLength = Math.max.apply(Math, _toConsumableArray(arrays.map(function (x) {
@@ -2624,8 +2612,8 @@
     }, {});
   };
   var zipWith = function zipWith() {
-    for (var _len56 = arguments.length, array = new Array(_len56), _key56 = 0; _key56 < _len56; _key56++) {
-      array[_key56] = arguments[_key56];
+    for (var _len54 = arguments.length, array = new Array(_len54), _key54 = 0; _key54 < _len54; _key54++) {
+      array[_key54] = arguments[_key54];
     }
 
     var fn = typeof array[array.length - 1] === 'function' ? array.pop() : undefined;
