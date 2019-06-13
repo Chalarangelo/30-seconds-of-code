@@ -4503,10 +4503,10 @@ isSameDate(new Date(2010, 10, 20), new Date(2010, 10, 20)); // true
 
 Returns the maximum of the given dates.
 
-Use `Math.max.apply()` to find the maximum date value, `new Date()` to convert it to a `Date` object.
+Use the ES6 spread syntax with `Math.max` to find the maximum date value, `new Date()` to convert it to a `Date` object.
 
 ```js
-const maxDate = (...dates) => new Date(Math.max.apply(null, ...dates));
+const maxDate = dates => new Date(Math.max(...dates));
 ```
 
 <details>
@@ -4530,10 +4530,10 @@ maxDate(array); // 2018-03-11T22:00:00.000Z
 
 Returns the minimum of the given dates.
 
-Use `Math.min.apply()` to find the minimum date value, `new Date()` to convert it to a `Date` object.
+Use the ES6 spread syntax to find the minimum date value, `new Date()` to convert it to a `Date` object.
 
 ```js
-const minDate = (...dates) => new Date(Math.min.apply(null, ...dates));
+const minDate = dates => new Date(Math.min(...dates));
 ```
 
 <details>
@@ -4726,6 +4726,7 @@ const checkProp = (predicate, prop) => obj => !!predicate(obj[prop]);
 <summary>Examples</summary>
 
 ```js
+
 
 const lengthIs4 = checkProp(l => l === 4, 'length');
 lengthIs4([]); // false

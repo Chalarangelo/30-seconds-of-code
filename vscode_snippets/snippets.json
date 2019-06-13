@@ -1862,9 +1862,9 @@
   "maxDate": {
     "prefix": "30s_maxDate",
     "body": [
-      "const maxDate = (...dates) => new Date(Math.max.apply(null, ...dates));"
+      "const maxDate = dates => new Date(Math.max(...dates));"
     ],
-    "description": "Returns the maximum of the given dates.\n\nUse `Math.max.apply()` to find the maximum date value, `new Date()` to convert it to a `Date` object"
+    "description": "Returns the maximum of the given dates.\n\nUse the ES6 spread syntax with `Math.max` to find the maximum date value, `new Date()` to convert it to a `Date` object"
   },
   "maxN": {
     "prefix": "30s_maxN",
@@ -1930,9 +1930,9 @@
   "minDate": {
     "prefix": "30s_minDate",
     "body": [
-      "const minDate = (...dates) => new Date(Math.min.apply(null, ...dates));"
+      "const minDate = dates => new Date(Math.min(...dates));"
     ],
-    "description": "Returns the minimum of the given dates.\n\nUse `Math.min.apply()` to find the minimum date value, `new Date()` to convert it to a `Date` object"
+    "description": "Returns the minimum of the given dates.\n\nUse the ES6 spread syntax to find the minimum date value, `new Date()` to convert it to a `Date` object"
   },
   "minN": {
     "prefix": "30s_minN",
