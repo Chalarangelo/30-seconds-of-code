@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {bindKey} = require('./_30s.js');
 
 test('bindKey is a Function', () => {

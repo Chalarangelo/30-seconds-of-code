@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {reduceSuccessive} = require('./_30s.js');
 
 test('reduceSuccessive is a Function', () => {

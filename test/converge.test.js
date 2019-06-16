@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {converge} = require('./_30s.js');
 
 test('converge is a Function', () => {

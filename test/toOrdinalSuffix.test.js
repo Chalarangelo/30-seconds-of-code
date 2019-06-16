@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {toOrdinalSuffix} = require('./_30s.js');
 
 test('toOrdinalSuffix is a Function', () => {

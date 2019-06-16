@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {spreadOver} = require('./_30s.js');
 
 test('spreadOver is a Function', () => {

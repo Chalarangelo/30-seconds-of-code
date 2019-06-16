@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {randomIntArrayInRange} = require('./_30s.js');
 
 test('randomIntArrayInRange is a Function', () => {

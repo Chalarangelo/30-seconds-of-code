@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {invertKeyValues} = require('./_30s.js');
 
 test('invertKeyValues is a Function', () => {

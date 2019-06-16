@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {palindrome} = require('./_30s.js');
 
 test('palindrome is a Function', () => {

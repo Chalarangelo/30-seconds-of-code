@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {lcm} = require('./_30s.js');
 
 test('lcm is a Function', () => {

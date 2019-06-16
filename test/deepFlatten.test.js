@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {deepFlatten} = require('./_30s.js');
 
 test('deepFlatten is a Function', () => {

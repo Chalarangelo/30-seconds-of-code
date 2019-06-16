@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {chainAsync} = require('./_30s.js');
 
 test('chainAsync is a Function', () => {

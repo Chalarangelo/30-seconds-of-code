@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {initialize2DArray} = require('./_30s.js');
 
 test('initialize2DArray is a Function', () => {

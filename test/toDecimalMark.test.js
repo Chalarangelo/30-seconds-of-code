@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {toDecimalMark} = require('./_30s.js');
 
 test('toDecimalMark is a Function', () => {

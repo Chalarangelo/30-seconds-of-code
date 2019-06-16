@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {isPlainObject} = require('./_30s.js');
 
 test('isPlainObject is a Function', () => {

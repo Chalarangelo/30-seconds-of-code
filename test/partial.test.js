@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {partial} = require('./_30s.js');
 
 test('partial is a Function', () => {

@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {escapeRegExp} = require('./_30s.js');
 
 test('escapeRegExp is a Function', () => {

@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {takeRightWhile} = require('./_30s.js');
 
 test('takeRightWhile is a Function', () => {

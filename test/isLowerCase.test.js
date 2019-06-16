@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {isLowerCase} = require('./_30s.js');
 
 test('isLowerCase is a Function', () => {

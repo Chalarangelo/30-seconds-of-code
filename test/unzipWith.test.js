@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {unzipWith} = require('./_30s.js');
 
 test('unzipWith is a Function', () => {

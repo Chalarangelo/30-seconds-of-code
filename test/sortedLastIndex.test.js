@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {sortedLastIndex} = require('./_30s.js');
 
 test('sortedLastIndex is a Function', () => {

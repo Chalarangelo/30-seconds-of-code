@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {compactWhitespace} = require('./_30s.js');
 
 test('compactWhitespace is a Function', () => {

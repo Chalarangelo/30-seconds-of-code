@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {formToObject} = require('./_30s.js');
 
 test('formToObject is a Function', () => {

@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {filterNonUnique} = require('./_30s.js');
 
 test('filterNonUnique is a Function', () => {

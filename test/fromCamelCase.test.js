@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {fromCamelCase} = require('./_30s.js');
 
 test('fromCamelCase is a Function', () => {

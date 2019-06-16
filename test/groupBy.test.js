@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {groupBy} = require('./_30s.js');
 
 test('groupBy is a Function', () => {

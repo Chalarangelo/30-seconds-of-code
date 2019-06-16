@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {serializeForm} = require('./_30s.js');
 
 test('serializeForm is a Function', () => {

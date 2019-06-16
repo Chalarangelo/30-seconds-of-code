@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {scrollToTop} = require('./_30s.js');
 
 test('scrollToTop is a Function', () => {

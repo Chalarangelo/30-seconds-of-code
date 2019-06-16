@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {permutations} = require('./_30s.js');
 
 test('permutations is a Function', () => {

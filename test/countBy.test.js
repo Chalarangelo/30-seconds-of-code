@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {countBy} = require('./_30s.js');
 
 test('countBy is a Function', () => {

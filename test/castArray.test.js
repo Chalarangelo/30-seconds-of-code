@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {castArray} = require('./_30s.js');
 
 test('castArray is a Function', () => {

@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {uniqueElements} = require('./_30s.js');
 
 test('uniqueElements is a Function', () => {

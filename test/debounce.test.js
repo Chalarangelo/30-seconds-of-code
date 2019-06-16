@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {debounce} = require('./_30s.js');
 
 test('debounce is a Function', () => {

@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {hexToRGB} = require('./_30s.js');
 
 test('hexToRGB is a Function', () => {

@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {isAnagram} = require('./_30s.js');
 
 test('isAnagram is a Function', () => {
