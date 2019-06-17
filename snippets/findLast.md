@@ -2,10 +2,10 @@
 
 Returns the last element for which the provided function returns a truthy value.
 
-Use `Array.prototype.filter()` to remove elements for which `fn` returns falsey values, `Array.prototype.pop()` to get the last one.
+Use `Array.prototype.reverse()` to reverse `arr` and then  `Array.prototype.find()` to return the last element for which `fn` returns a truthy value.
 
 ```js
-const findLast = (arr, fn) => arr.filter(fn).pop();
+const findLast = (arr, fn) => arr.reverse().find(fn);
 ```
 
 ```js
