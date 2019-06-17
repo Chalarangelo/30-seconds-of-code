@@ -2,15 +2,10 @@
 
 Returns the index of the last element for which the provided function returns a truthy value.
 
-Use `Array.prototype.map()` to map each element to an array with its index and value.
-Use `Array.prototype.filter()` to remove elements for which `fn` returns falsey values, `Array.prototype.pop()` to get the last one.
+Use `Array.prototype.reverse()` to reverse `arr` and then  `Array.prototype.findIndex()` to get the index of the reversed array for which `fn` returns a truthy value.  The bitwise not `~` of the index is then taken and if the result is zero the or `||` operator will instead return the bitwise not of the length of the array.  Finally, the above result is added to the length of the array to get the last index of the desired element for the orignal array or -1 if the function did not return a truthy value for any of its elements.
 
 ```js
-const findLastIndex = (arr, fn) =>
-  arr
-    .map((val, i) => [i, val])
-    .filter(([i, val]) => fn(val, i, arr))
-    .pop()[0];
+const findLastIndex = (arr, fn) => arr.length + (~arr.reverse().findIndex(fn) || ~arr.length);
 ```
 
 ```js
