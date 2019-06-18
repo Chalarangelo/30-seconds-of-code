@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {isAbsoluteURL} = require('./_30s.js');
 
 test('isAbsoluteURL is a Function', () => {

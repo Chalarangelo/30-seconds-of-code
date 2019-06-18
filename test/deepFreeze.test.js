@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {deepFreeze} = require('./_30s.js');
 
 test('deepFreeze is a Function', () => {

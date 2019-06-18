@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {hashNode} = require('./_30s.js');
 
 test('hashNode is a Function', () => {

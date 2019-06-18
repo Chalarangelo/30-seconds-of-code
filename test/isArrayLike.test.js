@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {isArrayLike} = require('./_30s.js');
 
 test('isArrayLike is a Function', () => {

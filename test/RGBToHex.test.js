@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {RGBToHex} = require('./_30s.js');
 
 test('RGBToHex is a Function', () => {

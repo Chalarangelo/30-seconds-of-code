@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {speechSynthesis} = require('./_30s.js');
 
 test('speechSynthesis is a Function', () => {

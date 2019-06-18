@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {getURLParameters} = require('./_30s.js');
 
 test('getURLParameters is a Function', () => {

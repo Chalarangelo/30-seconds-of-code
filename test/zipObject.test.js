@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {zipObject} = require('./_30s.js');
 
 test('zipObject is a Function', () => {

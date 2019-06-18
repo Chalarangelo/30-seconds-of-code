@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {filterNonUniqueBy} = require('./_30s.js');
 
 test('filterNonUniqueBy is a Function', () => {

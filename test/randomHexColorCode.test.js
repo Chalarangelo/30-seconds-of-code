@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {randomHexColorCode} = require('./_30s.js');
 
 test('randomHexColorCode is a Function', () => {

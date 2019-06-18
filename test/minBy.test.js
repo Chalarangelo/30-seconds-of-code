@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {minBy} = require('./_30s.js');
 
 test('minBy is a Function', () => {

@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {UUIDGeneratorBrowser} = require('./_30s.js');
 
 test('UUIDGeneratorBrowser is a Function', () => {

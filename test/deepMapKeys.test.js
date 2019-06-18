@@ -1,4 +1,3 @@
-const expect = require('expect');
 const { deepMapKeys, toCamelCase } = require('./_30s.js');
 
 test('deepMapKeys is a Function', () => {

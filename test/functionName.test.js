@@ -1,4 +1,3 @@
-const expect = require('expect');
 const { functionName } = require('./_30s.js');
 let output = '';
 

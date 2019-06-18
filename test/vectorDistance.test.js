@@ -1,4 +1,3 @@
-const expect = require('expect');
 const { vectorDistance } = require('./_30s.js');
 
 test('vectorDistance is a Function', () => {

@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {getDaysDiffBetweenDates} = require('./_30s.js');
 
 test('getDaysDiffBetweenDates is a Function', () => {

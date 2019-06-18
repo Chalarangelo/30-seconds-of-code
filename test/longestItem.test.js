@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {longestItem} = require('./_30s.js');
 
 test('longestItem is a Function', () => {

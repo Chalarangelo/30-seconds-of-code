@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {extendHex} = require('./_30s.js');
 
 test('extendHex is a Function', () => {

@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {mapNumRange} = require('./_30s.js');
 
 test('mapNumRange is a Function', () => {

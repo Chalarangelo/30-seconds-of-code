@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {deepClone} = require('./_30s.js');
 
 test('deepClone is a Function', () => {

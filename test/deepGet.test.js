@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {deepGet} = require('./_30s.js');
 
 let idx = 2

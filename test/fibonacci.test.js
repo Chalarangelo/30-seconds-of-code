@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {fibonacci} = require('./_30s.js');
 
 test('fibonacci is a Function', () => {

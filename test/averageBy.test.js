@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {averageBy} = require('./_30s.js');
 
 test('averageBy is a Function', () => {

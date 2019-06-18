@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {pullAtIndex} = require('./_30s.js');
 
 test('pullAtIndex is a Function', () => {

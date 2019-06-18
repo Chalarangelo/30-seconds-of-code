@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {degreesToRads} = require('./_30s.js');
 
 // const approxeq = (v1,v2, diff = 0.001) => Math.abs(v1 - v2) < diff;

@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {partition} = require('./_30s.js');
 
 test('partition is a Function', () => {

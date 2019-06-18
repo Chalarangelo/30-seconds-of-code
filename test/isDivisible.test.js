@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {isDivisible} = require('./_30s.js');
 
 test('isDivisible is a Function', () => {

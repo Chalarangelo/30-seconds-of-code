@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {escapeHTML} = require('./_30s.js');
 
 test('escapeHTML is a Function', () => {

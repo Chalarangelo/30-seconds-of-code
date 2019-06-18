@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {sortCharactersInString} = require('./_30s.js');
 
 test('sortCharactersInString is a Function', () => {

@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {join} = require('./_30s.js');
 
 test('join is a Function', () => {

@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {celsiusToFahrenheit} = require('./_30s.js');
 
 test('celsiusToFahrenheit is a Function', () => {

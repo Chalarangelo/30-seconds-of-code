@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {standardDeviation} = require('./_30s.js');
 
 test('standardDeviation is a Function', () => {

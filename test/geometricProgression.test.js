@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {geometricProgression} = require('./_30s.js');
 
 test('geometricProgression is a Function', () => {
