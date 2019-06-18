@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {binarySearch} = require('./_30s.js');
 
 test('binarySearch is a Function', () => {

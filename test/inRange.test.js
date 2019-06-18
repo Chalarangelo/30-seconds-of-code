@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {inRange} = require('./_30s.js');
 
 test('inRange is a Function', () => {

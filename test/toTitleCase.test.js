@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {toTitleCase} = require('./_30s.js');
 
 test('toTitleCase is a Function', () => {

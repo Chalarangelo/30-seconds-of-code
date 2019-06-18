@@ -1,4 +1,3 @@
-const expect = require('expect');
 const { byteSize } = require('./_30s.js');
 const Blob = class {
   constructor(s) {

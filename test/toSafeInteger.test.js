@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {toSafeInteger} = require('./_30s.js');
 
 test('toSafeInteger is a Function', () => {

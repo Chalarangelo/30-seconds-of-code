@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {similarity} = require('./_30s.js');
 
 test('similarity is a Function', () => {

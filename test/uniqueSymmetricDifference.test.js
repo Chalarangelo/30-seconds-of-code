@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {uniqueSymmetricDifference} = require('./_30s.js');
 
 test('uniqueSymmetricDifference is a Function', () => {

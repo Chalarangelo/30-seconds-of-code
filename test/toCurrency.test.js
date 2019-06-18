@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {toCurrency} = require('./_30s.js');
 
 test('toCurrency is a Function', () => {

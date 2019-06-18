@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {approximatelyEqual} = require('./_30s.js');
 
 test('approximatelyEqual is a Function', () => {

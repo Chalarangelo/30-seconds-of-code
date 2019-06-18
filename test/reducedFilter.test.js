@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {reducedFilter} = require('./_30s.js');
 
 test('reducedFilter is a Function', () => {

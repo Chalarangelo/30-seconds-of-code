@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {toSnakeCase} = require('./_30s.js');
 
 test('toSnakeCase is a Function', () => {

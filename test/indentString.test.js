@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {indentString} = require('./_30s.js');
 
 test('indentString is a Function', () => {

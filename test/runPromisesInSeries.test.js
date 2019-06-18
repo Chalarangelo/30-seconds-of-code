@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {runPromisesInSeries} = require('./_30s.js');
 
 test('runPromisesInSeries is a Function', () => {

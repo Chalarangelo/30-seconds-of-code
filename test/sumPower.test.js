@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {sumPower} = require('./_30s.js');
 
 test('sumPower is a Function', () => {

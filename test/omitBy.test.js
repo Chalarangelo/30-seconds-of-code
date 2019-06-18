@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {omitBy} = require('./_30s.js');
 
 test('omitBy is a Function', () => {

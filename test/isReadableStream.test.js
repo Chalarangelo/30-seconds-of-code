@@ -1,4 +1,3 @@
-const expect = require('expect');
 const { isReadableStream } = require('./_30s.js');
 const Stream = require('stream');
 

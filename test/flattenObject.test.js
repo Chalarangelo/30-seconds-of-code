@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {flattenObject} = require('./_30s.js');
 
 test('flattenObject is a Function', () => {

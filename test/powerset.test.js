@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {powerset} = require('./_30s.js');
 
 test('powerset is a Function', () => {

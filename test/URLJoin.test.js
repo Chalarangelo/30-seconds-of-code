@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {URLJoin} = require('./_30s.js');
 
 test('URLJoin is a Function', () => {

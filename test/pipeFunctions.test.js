@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {pipeFunctions} = require('./_30s.js');
 
 test('pipeFunctions is a Function', () => {

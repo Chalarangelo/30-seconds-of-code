@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {CSVToJSON} = require('./_30s.js');
 
 test('CSVToJSON is a Function', () => {

@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {findLastKey} = require('./_30s.js');
 
 test('findLastKey is a Function', () => {

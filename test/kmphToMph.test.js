@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {kmphToMph} = require('./_30s.js');
 
 test('kmphToMph is a Function', () => {

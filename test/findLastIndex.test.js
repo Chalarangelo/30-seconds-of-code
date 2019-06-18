@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {findLastIndex} = require('./_30s.js');
 
 test('findLastIndex is a Function', () => {

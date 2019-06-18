@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {rearg} = require('./_30s.js');
 
 test('rearg is a Function', () => {

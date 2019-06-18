@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {binomialCoefficient} = require('./_30s.js');
 
 test('binomialCoefficient is a Function', () => {

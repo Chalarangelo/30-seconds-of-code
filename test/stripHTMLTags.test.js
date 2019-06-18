@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {stripHTMLTags} = require('./_30s.js');
 
 test('stripHTMLTags is a Function', () => {

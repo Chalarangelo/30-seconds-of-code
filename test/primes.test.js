@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {primes} = require('./_30s.js');
 
 test('primes is a Function', () => {

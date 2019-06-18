@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {detectDeviceType} = require('./_30s.js');
 
 test('detectDeviceType is a Function', () => {

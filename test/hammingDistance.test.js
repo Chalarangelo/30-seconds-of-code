@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {hammingDistance} = require('./_30s.js');
 
 test('hammingDistance is a Function', () => {

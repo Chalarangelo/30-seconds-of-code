@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {UUIDGeneratorNode} = require('./_30s.js');
 
 test('UUIDGeneratorNode is a Function', () => {

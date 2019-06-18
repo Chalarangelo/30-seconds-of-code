@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {maxN} = require('./_30s.js');
 
 test('maxN is a Function', () => {

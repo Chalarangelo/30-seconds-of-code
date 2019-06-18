@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {countOccurrences} = require('./_30s.js');
 
 test('countOccurrences is a Function', () => {

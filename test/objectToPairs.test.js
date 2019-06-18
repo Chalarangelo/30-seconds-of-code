@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {objectToPairs} = require('./_30s.js');
 
 test('objectToPairs is a Function', () => {

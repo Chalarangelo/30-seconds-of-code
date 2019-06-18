@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {unionBy} = require('./_30s.js');
 
 test('unionBy is a Function', () => {

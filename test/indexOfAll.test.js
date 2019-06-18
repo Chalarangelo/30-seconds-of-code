@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {indexOfAll} = require('./_30s.js');
 
 test('indexOfAll is a Function', () => {

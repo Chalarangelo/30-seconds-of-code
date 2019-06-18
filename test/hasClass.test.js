@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {hasClass} = require('./_30s.js');
 
 test('hasClass is a Function', () => {

@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {pickBy} = require('./_30s.js');
 
 test('pickBy is a Function', () => {

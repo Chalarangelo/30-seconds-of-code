@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {capitalizeEveryWord} = require('./_30s.js');
 
 test('capitalizeEveryWord is a Function', () => {

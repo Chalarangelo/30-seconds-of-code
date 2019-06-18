@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {truncateString} = require('./_30s.js');
 
 test('truncateString is a Function', () => {

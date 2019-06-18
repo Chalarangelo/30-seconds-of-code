@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {shallowClone} = require('./_30s.js');
 
 test('shallowClone is a Function', () => {

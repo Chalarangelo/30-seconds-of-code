@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {tail} = require('./_30s.js');
 
 test('tail is a Function', () => {

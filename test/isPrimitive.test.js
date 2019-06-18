@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {isPrimitive} = require('./_30s.js');
 
 test('isPrimitive is a Function', () => {

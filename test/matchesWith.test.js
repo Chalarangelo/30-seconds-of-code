@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {matchesWith} = require('./_30s.js');
 
 test('matchesWith is a Function', () => {

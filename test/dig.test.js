@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {dig} = require('./_30s.js');
 
 const data = {

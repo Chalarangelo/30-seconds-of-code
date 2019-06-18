@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {reverseString} = require('./_30s.js');
 
 test('reverseString is a Function', () => {

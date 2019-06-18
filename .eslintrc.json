@@ -2,10 +2,8 @@
   "env": {
     "browser": true,
     "es6": true,
-    "node": true
-  },
-  "globals": {
-    "test": false
+    "node": true,
+    "jest": true
   },
   "extends": "eslint:recommended",
   "parserOptions": {

@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {arrayToCSV} = require('./_30s.js');
 
 test('arrayToCSV is a Function', () => {

@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {capitalize} = require('./_30s.js');
 
 test('capitalize is a Function', () => {

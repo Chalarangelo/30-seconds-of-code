@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {untildify} = require('./_30s.js');
 
 test('untildify is a Function', () => {

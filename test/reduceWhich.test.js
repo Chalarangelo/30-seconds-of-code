@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {reduceWhich} = require('./_30s.js');
 
 test('reduceWhich is a Function', () => {

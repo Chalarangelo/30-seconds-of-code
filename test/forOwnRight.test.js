@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {forOwnRight} = require('./_30s.js');
 
 test('forOwnRight is a Function', () => {

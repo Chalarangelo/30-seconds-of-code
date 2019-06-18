@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {initializeArrayWithRange} = require('./_30s.js');
 
 test('initializeArrayWithRange is a Function', () => {

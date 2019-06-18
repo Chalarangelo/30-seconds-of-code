@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {getImages} = require('./_30s.js');
 const jsdom = require('jsdom');
 const { JSDOM } = jsdom;

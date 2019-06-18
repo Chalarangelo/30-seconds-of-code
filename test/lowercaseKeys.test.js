@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {lowercaseKeys} = require('./_30s.js');
 
 test('lowercaseKeys is a Function', () => {

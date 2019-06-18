@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {intersectionBy} = require('./_30s.js');
 
 test('intersectionBy is a Function', () => {

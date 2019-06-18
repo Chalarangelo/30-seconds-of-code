@@ -1,4 +1,3 @@
-const expect = require('expect');
 const {splitLines} = require('./_30s.js');
 
 test('splitLines is a Function', () => {
