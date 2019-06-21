@@ -18,7 +18,7 @@ Creates a striped list with alternating background colors, which is useful for d
 
 ```css
 li:nth-child(odd) {
-  background-color: #eee;
+  background-color: #ddd;
 }
 ```
 
