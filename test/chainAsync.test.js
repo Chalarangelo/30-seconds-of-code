@@ -5,7 +5,7 @@ test('chainAsync is a Function', () => {
 });
 
 let incrementer = 0;
-test('Calls all functions in an array', () => {
+test('Calls all functions in an array', done => {
   chainAsync([
     next => {
       incrementer += 1;
@@ -17,17 +17,19 @@ test('Calls all functions in an array', () => {
     },
     next => {
       expect(incrementer).toEqual(2);
+      done();
     }
   ]);
 });
 
-test('Last function does not receive "next" argument', () => {
+test('Last function does not receive "next" argument', done => {
   chainAsync([
     next => {
       next();
     },
     next => {
       expect(next).toBe(undefined);
+      done();
     }
   ]);
 });
