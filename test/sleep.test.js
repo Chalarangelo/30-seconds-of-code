@@ -4,8 +4,5 @@ test('sleep is a Function', () => {
   expect(sleep).toBeInstanceOf(Function);
 });
 test('Works as expected', () => {
-  async function sleepyWork() {
-    await sleep(1000);
-    expect(true).toBeTruthy();
-  }
+  return expect(sleep(1000)).resolves.toBe(undefined);
 });
