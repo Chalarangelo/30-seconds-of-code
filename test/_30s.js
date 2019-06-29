@@ -392,14 +392,7 @@ const forOwnRight = (obj, fn) =>
   Object.keys(obj)
     .reverse()
     .forEach(key => fn(obj[key], key, obj));
-const formToObject = form =>
-  Array.from(new FormData(form)).reduce(
-    (acc, [key, value]) => ({
-      ...acc,
-      [key]: value
-    }),
-    {}
-  );
+const formToObject = form => Object.fromEntries(new FormData(form).entries());
 const formatDuration = ms => {
   if (ms < 0) ms = -ms;
   const time = {

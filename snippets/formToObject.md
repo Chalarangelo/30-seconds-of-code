@@ -2,18 +2,10 @@
 
 Encode a set of form elements as an `object`.
 
-Use the `FormData` constructor to convert the HTML `form` to `FormData`, `Array.from()` to convert to an array.
-Collect the object from the array, using `Array.prototype.reduce()`.
+Use the `FormData` constructor to convert the HTML `form` to `FormData`, `FormData.prototype.entries()` to get a 2D-array with `[key, value]`-pairs. Then use `Object.fromEntries()` to get the result as an object.
 
 ```js
-const formToObject = form =>
-  Array.from(new FormData(form)).reduce(
-    (acc, [key, value]) => ({
-      ...acc,
-      [key]: value
-    }),
-    {}
-  );
+const formToObject = form => Object.fromEntries(new FormData(form).entries());
 ```
 
 ```js
