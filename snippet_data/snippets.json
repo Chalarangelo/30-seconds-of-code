@@ -568,7 +568,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "a54a645ae51358e2a652adcd19b465e5da0c39d1ebf7a3a393b92cb2c8762883"
+        "hash": "819c86516df91f29f5900ca172cd5a92ba3f7dde9562b7f4958fd70b914a108e"
       }
     },
     {
@@ -4036,7 +4036,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "mapObject.md",
-        "text": "Maps the values of an array to an object using a function, where the key-value pairs consist of the original value as the key and the mapped value.\n\nUse an anonymous inner function scope to declare an undefined memory space, using closures to store a return value. Use a new `Array` to store the array with a map of the function over its data set and a comma operator to return a second step, without needing to move from one context to another (due to closures and order of operations).",
+        "text": "Maps the values of an array to an object using a function, where the key-value pairs consist of the stringified value as the key and the mapped value.\n\nUse an anonymous inner function scope to declare an undefined memory space, using closures to store a return value. Use a new `Array` to store the array with a map of the function over its data set and a comma operator to return a second step, without needing to move from one context to another (due to closures and order of operations).",
         "codeBlocks": {
           "es6": "const mapObject = (arr, fn) =>\n  (a => (\n    (a = [arr, arr.map(fn)]), a[0].reduce((acc, val, ind) => ((acc[val] = a[1][ind]), acc), {})\n  ))();",
           "es5": "var mapObject = function mapObject(arr, fn) {\n  return function (a) {\n    return a = [arr, arr.map(fn)], a[0].reduce(function (acc, val, ind) {\n      return acc[val] = a[1][ind], acc;\n    }, {});\n  }();\n};",
@@ -4050,7 +4050,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "c7f0f9b6b22590a17c41057c56ea5cf14e74dfbbd4fb7e4bc5c08db3760ef76d"
+        "hash": "94eff16e1bc342c92f429cfd48c9cdd045b117e8228956b190f19fbabcfda89c"
       }
     },
     {
