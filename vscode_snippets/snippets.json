@@ -301,7 +301,7 @@
     "body": [
       "const compact = arr => arr.filter(Boolean);"
     ],
-    "description": "Removes falsey values from an array.\n\nUse `Array.prototype.filter()` to filter out falsey values (`false`, `null`, `0`, `\"\"`, `undefined`, and `NaN`)"
+    "description": "Removes falsy values from an array.\n\nUse `Array.prototype.filter()` to filter out falsy values (`false`, `null`, `0`, `\"\"`, `undefined`, and `NaN`)"
   },
   "compactWhitespace": {
     "prefix": "30s_compactWhitespace",
@@ -849,7 +849,7 @@
     "body": [
       "const findLast = (arr, fn) => arr.filter(fn).pop();"
     ],
-    "description": "Returns the last element for which the provided function returns a truthy value.\n\nUse `Array.prototype.filter()` to remove elements for which `fn` returns falsey values, `Array.prototype.pop()` to get the last one"
+    "description": "Returns the last element for which the provided function returns a truthy value.\n\nUse `Array.prototype.filter()` to remove elements for which `fn` returns falsy values, `Array.prototype.pop()` to get the last one"
   },
   "findLastIndex": {
     "prefix": "30s_findLastIndex",
@@ -860,7 +860,7 @@
       "    .filter(([i, val]) => fn(val, i, arr))",
       "    .pop()[0];"
     ],
-    "description": "Returns the index of the last element for which the provided function returns a truthy value.\n\nUse `Array.prototype.map()` to map each element to an array with its index and value.\nUse `Array.prototype.filter()` to remove elements for which `fn` returns falsey values, `Array.prototype.pop()` to get the last one"
+    "description": "Returns the index of the last element for which the provided function returns a truthy value.\n\nUse `Array.prototype.map()` to map each element to an array with its index and value.\nUse `Array.prototype.filter()` to remove elements for which `fn` returns falsy values, `Array.prototype.pop()` to get the last one"
   },
   "findLastKey": {
     "prefix": "30s_findLastKey",
@@ -2070,7 +2070,7 @@
       "    .filter(k => !fn(obj[k], k))",
       "    .reduce((acc, key) => ((acc[key] = obj[key]), acc), {});"
     ],
-    "description": "Creates an object composed of the properties the given function returns falsey for. The function is invoked with two arguments: (value, key).\n\nUse `Object.keys(obj)` and `Array.prototype.filter()`to remove the keys for which `fn` returns a truthy value.\nUse `Array.prototype.reduce()` to convert the filtered keys back to an object with the corresponding key-value pairs"
+    "description": "Creates an object composed of the properties the given function returns falsy for. The function is invoked with two arguments: (value, key).\n\nUse `Object.keys(obj)` and `Array.prototype.filter()`to remove the keys for which `fn` returns a truthy value.\nUse `Array.prototype.reduce()` to convert the filtered keys back to an object with the corresponding key-value pairs"
   },
   "on": {
     "prefix": "30s_on",
@@ -2247,7 +2247,7 @@
       "    .filter(k => fn(obj[k], k))",
       "    .reduce((acc, key) => ((acc[key] = obj[key]), acc), {});"
     ],
-    "description": "Creates an object composed of the properties the given function returns truthy for. The function is invoked with two arguments: (value, key).\n\nUse `Object.keys(obj)` and `Array.prototype.filter()`to remove the keys for which `fn` returns a falsey value.\nUse `Array.prototype.reduce()` to convert the filtered keys back to an object with the corresponding key-value pairs"
+    "description": "Creates an object composed of the properties the given function returns truthy for. The function is invoked with two arguments: (value, key).\n\nUse `Object.keys(obj)` and `Array.prototype.filter()`to remove the keys for which `fn` returns a falsy value.\nUse `Array.prototype.reduce()` to convert the filtered keys back to an object with the corresponding key-value pairs"
   },
   "pipeAsyncFunctions": {
     "prefix": "30s_pipeAsyncFunctions",

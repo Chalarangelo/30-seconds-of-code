@@ -568,7 +568,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "819c86516df91f29f5900ca172cd5a92ba3f7dde9562b7f4958fd70b914a108e"
+        "hash": "1757665e21f074496ca23fcd89eea262546dbdab526fb6e281501fca8caaa42b"
       }
     },
     {
@@ -728,7 +728,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "compact.md",
-        "text": "Removes falsey values from an array.\n\nUse `Array.prototype.filter()` to filter out falsey values (`false`, `null`, `0`, `\"\"`, `undefined`, and `NaN`).",
+        "text": "Removes falsy values from an array.\n\nUse `Array.prototype.filter()` to filter out falsy values (`false`, `null`, `0`, `\"\"`, `undefined`, and `NaN`).",
         "codeBlocks": {
           "es6": "const compact = arr => arr.filter(Boolean);",
           "es5": "var compact = function compact(arr) {\n  return arr.filter(Boolean);\n};",
@@ -741,7 +741,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "0f631b67b8460ed99917ff1468051e1e075ef02b280838ec14ad3fede2f48c7f"
+        "hash": "5f18ea75907a547630e110bc9a8d31528c87761d276b392e1aa660094745b078"
       }
     },
     {
@@ -1875,7 +1875,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "findLast.md",
-        "text": "Returns the last element for which the provided function returns a truthy value.\n\nUse `Array.prototype.filter()` to remove elements for which `fn` returns falsey values, `Array.prototype.pop()` to get the last one.",
+        "text": "Returns the last element for which the provided function returns a truthy value.\n\nUse `Array.prototype.filter()` to remove elements for which `fn` returns falsy values, `Array.prototype.pop()` to get the last one.",
         "codeBlocks": {
           "es6": "const findLast = (arr, fn) => arr.filter(fn).pop();",
           "es5": "var findLast = function findLast(arr, fn) {\n  return arr.filter(fn).pop();\n};",
@@ -1888,7 +1888,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "d9b9b99af0ced3ae231521d4100dc5779436dbd624a2c3b9aa11a3ef9fb2edb6"
+        "hash": "c12bc2939629a3722f41100035c7aaccae5b970b46071c2ebccecef0d3246462"
       }
     },
     {
@@ -1896,7 +1896,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "findLastIndex.md",
-        "text": "Returns the index of the last element for which the provided function returns a truthy value.\n\nUse `Array.prototype.map()` to map each element to an array with its index and value.\nUse `Array.prototype.filter()` to remove elements for which `fn` returns falsey values, `Array.prototype.pop()` to get the last one.",
+        "text": "Returns the index of the last element for which the provided function returns a truthy value.\n\nUse `Array.prototype.map()` to map each element to an array with its index and value.\nUse `Array.prototype.filter()` to remove elements for which `fn` returns falsy values, `Array.prototype.pop()` to get the last one.",
         "codeBlocks": {
           "es6": "const findLastIndex = (arr, fn) =>\n  arr\n    .map((val, i) => [i, val])\n    .filter(([i, val]) => fn(val, i, arr))\n    .pop()[0];",
           "es5": "function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }\n\nfunction _nonIterableRest() { throw new TypeError(\"Invalid attempt to destructure non-iterable instance\"); }\n\nfunction _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i[\"return\"] != null) _i[\"return\"](); } finally { if (_d) throw _e; } } return _arr; }\n\nfunction _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }\n\nvar findLastIndex = function findLastIndex(arr, fn) {\n  return arr.map(function (val, i) {\n    return [i, val];\n  }).filter(function (_ref) {\n    var _ref2 = _slicedToArray(_ref, 2),\n        i = _ref2[0],\n        val = _ref2[1];\n\n    return fn(val, i, arr);\n  }).pop()[0];\n};",
@@ -1910,7 +1910,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "99268ad91de24fd7c06a35e0e401603da2087fe4b3ec349d6aebe0ae89a579a8"
+        "hash": "579dc87863861d3e586fe7f0c707779fe45704612108c6b0bbed5b643126ab40"
       }
     },
     {
@@ -4674,7 +4674,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "omitBy.md",
-        "text": "Creates an object composed of the properties the given function returns falsey for. The function is invoked with two arguments: (value, key).\n\nUse `Object.keys(obj)` and `Array.prototype.filter()`to remove the keys for which `fn` returns a truthy value.\nUse `Array.prototype.reduce()` to convert the filtered keys back to an object with the corresponding key-value pairs.",
+        "text": "Creates an object composed of the properties the given function returns falsy for. The function is invoked with two arguments: (value, key).\n\nUse `Object.keys(obj)` and `Array.prototype.filter()`to remove the keys for which `fn` returns a truthy value.\nUse `Array.prototype.reduce()` to convert the filtered keys back to an object with the corresponding key-value pairs.",
         "codeBlocks": {
           "es6": "const omitBy = (obj, fn) =>\n  Object.keys(obj)\n    .filter(k => !fn(obj[k], k))\n    .reduce((acc, key) => ((acc[key] = obj[key]), acc), {});",
           "es5": "var omitBy = function omitBy(obj, fn) {\n  return Object.keys(obj).filter(function (k) {\n    return !fn(obj[k], k);\n  }).reduce(function (acc, key) {\n    return acc[key] = obj[key], acc;\n  }, {});\n};",
@@ -4689,7 +4689,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "359fd8eb0861de57213387e715687174cf671e22e9b66e358ac28364ad1b2be2"
+        "hash": "a8a85f1eb2f89c50916c6d0cf31e6f450cf66805e14fd412c94a7da182cd27b7"
       }
     },
     {
@@ -5022,7 +5022,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "pickBy.md",
-        "text": "Creates an object composed of the properties the given function returns truthy for. The function is invoked with two arguments: (value, key).\n\nUse `Object.keys(obj)` and `Array.prototype.filter()`to remove the keys for which `fn` returns a falsey value.\nUse `Array.prototype.reduce()` to convert the filtered keys back to an object with the corresponding key-value pairs.",
+        "text": "Creates an object composed of the properties the given function returns truthy for. The function is invoked with two arguments: (value, key).\n\nUse `Object.keys(obj)` and `Array.prototype.filter()`to remove the keys for which `fn` returns a falsy value.\nUse `Array.prototype.reduce()` to convert the filtered keys back to an object with the corresponding key-value pairs.",
         "codeBlocks": {
           "es6": "const pickBy = (obj, fn) =>\n  Object.keys(obj)\n    .filter(k => fn(obj[k], k))\n    .reduce((acc, key) => ((acc[key] = obj[key]), acc), {});",
           "es5": "var pickBy = function pickBy(obj, fn) {\n  return Object.keys(obj).filter(function (k) {\n    return fn(obj[k], k);\n  }).reduce(function (acc, key) {\n    return acc[key] = obj[key], acc;\n  }, {});\n};",
@@ -5037,7 +5037,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "0842f93bde56f28c9663d341314b7e27b71a686784e7276b34909b0fa5551502"
+        "hash": "3aa7586a3e6019aa38e153e958d5d7966fd257fac6c1a132474a50bd610d6ae5"
       }
     },
     {
