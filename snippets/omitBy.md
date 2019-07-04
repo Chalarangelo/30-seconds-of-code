@@ -1,6 +1,6 @@
 ### omitBy
 
-Creates an object composed of the properties the given function returns falsey for. The function is invoked with two arguments: (value, key).
+Creates an object composed of the properties the given function returns falsy for. The function is invoked with two arguments: (value, key).
 
 Use `Object.keys(obj)` and `Array.prototype.filter()`to remove the keys for which `fn` returns a truthy value.
 Use `Array.prototype.reduce()` to convert the filtered keys back to an object with the corresponding key-value pairs.

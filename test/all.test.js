@@ -3,7 +3,7 @@ const {all} = require('./_30s.js');
 test('all is a Function', () => {
   expect(all).toBeInstanceOf(Function);
 });
-test('Returns true for arrays with no falsey values', () => {
+test('Returns true for arrays with no falsy values', () => {
   expect(all([4, 1, 2, 3])).toBeTruthy();
 });
 test('Returns false for arrays with 0', () => {
