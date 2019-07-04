@@ -18,7 +18,7 @@ test('Dig target success', () => {
   expect(dig(data, 'level3')).toEqual('some data');
 });
 
-test('Dig target with falsey value', () => {
+test('Dig target with falsy value', () => {
   expect(dig(data, 'level3f')).toEqual(false);
 });
 
