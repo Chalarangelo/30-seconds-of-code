@@ -8,11 +8,11 @@ Use a regular expression to count the number of vowels `(A, E, I, O, U)` in a st
 import re
 
 
-def count_vowels(str):
-    return len(re.findall(r'[aeiou]', str, re.IGNORECASE))
-```
+def count_vowels (str):
+    return len (re.findall (r '[aeiou]', str, re.IGNORECASE))
+`` `
 
-``` python
-count_vowels('foobar') # 3
-count_vowels('gym') # 0
+`` `python
+print(count_vowels('foobar')) # 3
+print(count_vowels('gym'))# 0
 ```
