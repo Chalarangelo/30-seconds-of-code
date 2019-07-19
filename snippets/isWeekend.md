@@ -3,11 +3,11 @@
 Results in a boolean representation of a specific date.
 
 Pass the specific date object firstly.
-Use `Date.getDay()` to check weekend then return a boolean.
+Use `Date.getDay()` to check weekend based on the day being returned as 0 - 6 using a modulo operation then return a boolean.
 
 ```js
 const isWeekend = (t = new Date()) => {
-  return t.getDay() === 0 || t.getDay() === 6;
+  return t.getDay() % 6 === 0;
 };
 ```
 
