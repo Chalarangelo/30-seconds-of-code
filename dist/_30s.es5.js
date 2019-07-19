@@ -2588,6 +2588,11 @@
     var def = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
     return /^(y|yes)$/i.test(val) ? true : /^(n|no)$/i.test(val) ? false : def;
   };
+  var yesterday = function yesterday() {
+    var t = new Date();
+    t.setDate(t.getDate() - 1);
+    return t.toISOString().split('T')[0];
+  };
   var zip = function zip() {
     for (var _len53 = arguments.length, arrays = new Array(_len53), _key53 = 0; _key53 < _len53; _key53++) {
       arrays[_key53] = arguments[_key53];
@@ -2974,6 +2979,7 @@
   exports.words = words;
   exports.xProd = xProd;
   exports.yesNo = yesNo;
+  exports.yesterday = yesterday;
   exports.zip = zip;
   exports.zipObject = zipObject;
   exports.zipWith = zipWith;
