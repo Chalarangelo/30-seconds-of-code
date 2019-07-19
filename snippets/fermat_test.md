@@ -2,7 +2,10 @@
 
 Checks if the number is prime or not. Returns True if passed number is prime, and False if not.
 
-The function uses Fermat's theorem. First, it picks the number A in range 1..(n-1), then it checks if A to the power of n-1 modulo n equals 1. If not, the number is not prime, else it's pseudoprime with probability 1/2. Appling this test k times we have probability 1/(2^k). For example, if the number passes the test 10 times, we have probability 0.00098.
+The function uses Fermat's theorem. 
+First, it picks the number `A` in range `1`..`(n-1)`, then it checks if `A` to the power of `n-1` modulo `n` equals `1`. 
+If not, the number is not prime, else it's pseudoprime with probability 1/2. Applying this test `k `times we have probability `1/(2^k)`.
+For example, if the number passes the test `10` times, we have probability `0.00098`.
 
 ``` python
 from random import randint
