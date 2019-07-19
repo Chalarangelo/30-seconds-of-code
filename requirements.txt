@@ -3,7 +3,7 @@ cffi==1.11.4
 click==6.7
 emoji==0.4.5
 flake8==3.6.0
-Flask==0.12.2
+Flask==0.12.3
 Flask-OAuth==0.12
 gunicorn==19.7.1
 httplib2==0.10.3
