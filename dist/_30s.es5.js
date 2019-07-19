@@ -1323,6 +1323,10 @@
       return false;
     }
   };
+  var isWeekday = function isWeekday() {
+    var t = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new Date();
+    return t.getDay() >= 1 && t.getDay() <= 5;
+  };
   var isWritableStream = function isWritableStream(val) {
     return val !== null && _typeof(val) === 'object' && typeof val.pipe === 'function' && typeof val._write === 'function' && _typeof(val._writableState) === 'object';
   };
@@ -2815,6 +2819,7 @@
   exports.isUndefined = isUndefined;
   exports.isUpperCase = isUpperCase;
   exports.isValidJSON = isValidJSON;
+  exports.isWeekday = isWeekday;
   exports.isWritableStream = isWritableStream;
   exports.join = join;
   exports.last = last;
