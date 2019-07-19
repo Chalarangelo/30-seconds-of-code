@@ -342,6 +342,7 @@ without:array,beginner
 words:string,regexp,intermediate
 xProd:array,math,intermediate
 yesNo:utility,regexp,intermediate
+yesterday:uncategorized
 zip:array,intermediate
 zipObject:array,object,intermediate
 zipWith:array,function,advanced
