@@ -173,6 +173,7 @@ isUndefined:type,beginner
 isUpperCase:string,utility,beginner
 isValidJSON:type,json,intermediate
 isWeekday:date,beginner
+isWeekend:uncategorized
 isWritableStream:node,type,intermediate
 join:array,intermediate
 JSONtoCSV:array,string,object,advanced
