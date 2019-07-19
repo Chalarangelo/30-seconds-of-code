@@ -2,7 +2,7 @@
 
 # 30 seconds of code
 
-[![License](https://img.shields.io/badge/license-CC0--1.0-blue.svg)](https://github.com/30-seconds/30-seconds-of-code/blob/master/LICENSE) [![npm Downloads](https://img.shields.io/npm/dt/30-seconds-of-code.svg)](https://www.npmjs.com/package/30-seconds-of-code) [![npm Version](https://img.shields.io/npm/v/30-seconds-of-code.svg)](https://www.npmjs.com/package/30-seconds-of-code) [![Known Vulnerabilities](https://snyk.io/test/github/30-seconds/30-seconds-of-code/badge.svg?targetFile=package.json)](https://snyk.io/test/github/30-seconds/30-seconds-of-code?targetFile=package.json) <br/> 
+[![License](https://img.shields.io/badge/license-CC0--1.0-blue.svg)](https://github.com/30-seconds/30-seconds-of-code/blob/master/LICENSE) [![npm Downloads](https://img.shields.io/npm/dt/30-seconds-of-code.svg)](https://www.npmjs.com/package/30-seconds-of-code) [![npm Version](https://img.shields.io/npm/v/30-seconds-of-code.svg)](https://www.npmjs.com/package/30-seconds-of-code) [![Known Vulnerabilities](https://snyk.io/test/github/30-seconds/30-seconds-of-code/badge.svg?targetFile=package.json)](https://snyk.io/test/github/30-seconds/30-seconds-of-code?targetFile=package.json) <br/>
 [![Travis Build](https://travis-ci.com/30-seconds/30-seconds-of-code.svg?branch=master)](https://travis-ci.com/30-seconds/30-seconds-of-code) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6ab7791fb1ea40b4a576d658fb96807f)](https://www.codacy.com/app/Chalarangelo/30-seconds-of-code?utm_source=github.com&utm_medium=referral&utm_content=30-seconds/30-seconds-of-code&utm_campaign=Badge_Grade) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard) <br/>
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![ProductHunt](https://img.shields.io/badge/producthunt-vote-orange.svg)](https://www.producthunt.com/posts/30-seconds-of-code) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
@@ -20,8 +20,8 @@
 * [30 Seconds of CSS](https://30-seconds.github.io/30-seconds-of-css/)
 * [30 Seconds of Interviews](https://30secondsofinterviews.org/)
 * [30 Seconds of React](https://github.com/30-seconds/30-seconds-of-react)
-* [30 Seconds of Python](https://github.com/kriadmin/30-seconds-of-python-code) _(unofficial)_
-* [30 Seconds of PHP](https://github.com/appzcoder/30-seconds-of-php-code) _(unofficial)_
+* [30 Seconds of Python](https://github.com/30-seconds/30-seconds-of-python-code)
+* [30 Seconds of PHP](https://github.com/30-seconds/30-seconds-of-php-code)
 * [30 Seconds of Kotlin](https://github.com/IvanMwiruki/30-seconds-of-kotlin) _(unofficial)_
 * [30 Seconds of Knowledge](https://chrome.google.com/webstore/detail/30-seconds-of-knowledge/mmgplondnjekobonklacmemikcnhklla) _(unofficial)_
 
@@ -3283,7 +3283,7 @@ bottomVisible(); // true
 
 ⚠️ **NOTICE:** The same functionality can be easily implemented by using the new asynchronous Clipboard API, which is still experimental but should be used in the future instead of this snippet. Find out more about it [here](https://github.com/w3c/clipboard-apis/blob/master/explainer.adoc#writing-to-the-clipboard).
 
-Copy a string to the clipboard. 
+Copy a string to the clipboard.
 Only works as a result of user action (i.e. inside a `click` event listener).
 
 Create a new `<textarea>` element, fill it with the supplied data and add it to the HTML document.
@@ -3360,11 +3360,11 @@ counter('#my-id', 1, 1000, 5, 2000); // Creates a 2-second timer for the element
 
 ### createElement
 
-Creates an element from a string (without appending it to the document). 
+Creates an element from a string (without appending it to the document).
 If the given string contains multiple elements, only the first one will be returned.
 
 Use `document.createElement()` to create a new element.
-Set its `innerHTML` to the string supplied as the argument. 
+Set its `innerHTML` to the string supplied as the argument.
 Use `ParentNode.firstElementChild` to return the element version of the string.
 
 ```js
@@ -3867,7 +3867,7 @@ obs.disconnect(); // Disconnects the observer and stops logging mutations on the
 
 Removes an event listener from an element.
 
-Use `EventTarget.removeEventListener()` to remove an event listener from an element. 
+Use `EventTarget.removeEventListener()` to remove an event listener from an element.
 Omit the fourth argument `opts` to use `false` or specify it based on the options used when the event listener was added.
 
 ```js
@@ -3921,7 +3921,7 @@ on(document.body, 'click', fn, { options: true }); // use capturing instead of b
 
 Run the callback whenever the user input type changes (`mouse` or `touch`). Useful for enabling/disabling code depending on the input device. This process is dynamic and works with hybrid devices (e.g. touchscreen laptops).
 
-Use two event listeners. Assume `mouse` input initially and bind a `touchstart` event listener to the document. 
+Use two event listeners. Assume `mouse` input initially and bind a `touchstart` event listener to the document.
 On `touchstart`, add a `mousemove` event listener to listen for two consecutive `mousemove` events firing within 20ms, using `performance.now()`.
 Run the callback with the input type as an argument in either of these situations.
 
@@ -3988,9 +3988,9 @@ prefix('appearance'); // 'appearance' on a supported browser, otherwise 'webkitA
 
 Invokes the provided callback on each animation frame.
 
-Use recursion. 
-Provided that `running` is `true`, continue invoking `window.requestAnimationFrame()` which invokes the provided callback. 
-Return an object with two methods `start` and `stop` to allow manual control of the recording. 
+Use recursion.
+Provided that `running` is `true`, continue invoking `window.requestAnimationFrame()` which invokes the provided callback.
+Return an object with two methods `start` and `stop` to allow manual control of the recording.
 Omit the second argument, `autoStart`, to implicitly call `start` when the function is invoked.
 
 ```js
@@ -4204,7 +4204,7 @@ show(...document.querySelectorAll('img')); // Shows all <img> elements on the pa
 
 Smoothly scrolls the element on which it's called into the visible area of the browser window.
 
-Use `.scrollIntoView` method to scroll the element. 
+Use `.scrollIntoView` method to scroll the element.
 Pass `{ behavior: 'smooth' }` to `.scrollIntoView` so it scrolls smoothly.
 
 ```js
@@ -4557,7 +4557,7 @@ minDate(array); // 2016-01-08T22:00:00.000Z
 
 Results in a string representation of tomorrow's date.
 
-Use `new Date()` to get the current date, increment by one using `Date.getDate()` and set the value to the result using `Date.setDate()`. 
+Use `new Date()` to get the current date, increment by one using `Date.getDate()` and set the value to the result using `Date.setDate()`.
 Use `Date.prototype.toISOString()` to return a string in `yyyy-mm-dd` format.
 
 ```js
@@ -4975,11 +4975,11 @@ functionName(Math.max); // max (logged in debug channel of console)
 
 ### hz
 
-Returns the number of times a function executed per second. 
+Returns the number of times a function executed per second.
 `hz` is the unit for `hertz`, the unit of frequency defined as one cycle per second.
 
-Use `performance.now()` to get the difference in milliseconds before and after the iteration loop to calculate the time elapsed executing the function `iterations` times. 
-Return the number of cycles per second by converting milliseconds to seconds and dividing it by the time elapsed. 
+Use `performance.now()` to get the difference in milliseconds before and after the iteration loop to calculate the time elapsed executing the function `iterations` times.
+Return the number of cycles per second by converting milliseconds to seconds and dividing it by the time elapsed.
 Omit the second argument, `iterations`, to use the default of 100 iterations.
 
 ```js
@@ -5333,7 +5333,7 @@ unfold(f, 10); // [-10, -20, -30, -40, -50]
 
 ### when
 
-Tests a value, `x`, against a predicate function. If `true`, return `fn(x)`. Else, return `x`. 
+Tests a value, `x`, against a predicate function. If `true`, return `fn(x)`. Else, return `x`.
 
 Return a function expecting a single value, `x`, that returns the appropriate value based on `pred`.
 
@@ -5556,7 +5556,7 @@ The array should be ordered from best performer to worst performer (winner -> lo
 
 Use the exponent `**` operator and math operators to compute the expected score (chance of winning).
 of each opponent and compute the new rating for each.
-Loop through the ratings, using each permutation to compute the post-Elo rating for each player in a pairwise fashion. 
+Loop through the ratings, using each permutation to compute the post-Elo rating for each player in a pairwise fashion.
 Omit the second argument to use the default `kFactor` of 32.
 
 ```js
@@ -6906,7 +6906,7 @@ o[1][0] = 4; // not allowed as well
 Returns the target value in a nested JSON object, based on the `keys` array.
 
 Compare the keys you want in the nested JSON object as an `Array`.
-Use `Array.prototype.reduce()` to get value from nested JSON object one by one. 
+Use `Array.prototype.reduce()` to get value from nested JSON object one by one.
 If the key exists in object, return target value, otherwise, return `null`.
 
 ```js
@@ -6940,7 +6940,7 @@ Deep maps an object keys.
 
 Creates an object with the same values as the provided object and keys generated by running the provided function for each key.
 
-Use `Object.keys(obj)` to iterate over the object's keys. 
+Use `Object.keys(obj)` to iterate over the object's keys.
 Use `Array.prototype.reduce()` to create a new object with the same values and mapped keys using `fn`.
 
 ```js
@@ -7754,7 +7754,7 @@ const b = shallowClone(a); // a !== b
 
 Get size of arrays, objects or strings.
 
-Get type of `val` (`array`, `object` or `string`). 
+Get type of `val` (`array`, `object` or `string`).
 Use `length` property for arrays.
 Use `length` or `size` value if available or number of keys for objects.
 Use `size` of a [`Blob` object](https://developer.mozilla.org/en-US/docs/Web/API/Blob) created from `val` for strings.
@@ -8967,7 +8967,7 @@ isNull(null); // true
 
 Checks if the given argument is a number.
 
-Use `typeof` to check if a value is classified as a number primitive. 
+Use `typeof` to check if a value is classified as a number primitive.
 To safeguard against `NaN`, check if `val === val` (as `NaN` has a `typeof` equal to `number` and is the only value not equal to itself).
 
 ```js
@@ -8991,7 +8991,7 @@ isNumber(NaN); // false
 
 Returns a boolean determining if the passed value is an object or not.
 
-Uses the  `Object` constructor to create an object wrapper for the given value. 
+Uses the  `Object` constructor to create an object wrapper for the given value.
 If the value is `null` or `undefined`, create and return an empty object. Οtherwise, return an object of a type that corresponds to the given value.
 
 ```js
