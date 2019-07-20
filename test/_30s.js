@@ -662,7 +662,7 @@ const isWeekday = (t = new Date()) => {
   return t.getDay() % 6 !== 0;
 };
 const isWeekend = (t = new Date()) => {
-  return t.getDay() === 0 || t.getDay() === 6;
+  return t.getDay() % 6 === 0;
 };
 const isWritableStream = val =>
   val !== null &&
