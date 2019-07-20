@@ -659,7 +659,7 @@ const isValidJSON = str => {
   }
 };
 const isWeekday = (t = new Date()) => {
-  return t.getDay() >= 1 && t.getDay() <= 5;
+  return t.getDay() % 6 !== 0;
 };
 const isWeekend = (t = new Date()) => {
   return t.getDay() === 0 || t.getDay() === 6;
