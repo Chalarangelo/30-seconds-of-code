@@ -1325,7 +1325,11 @@
   };
   var isWeekday = function isWeekday() {
     var t = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new Date();
-    return t.getDay() >= 1 && t.getDay() <= 5;
+    return t.getDay() % 6 !== 0;
+  };
+  var isWeekend = function isWeekend() {
+    var t = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new Date();
+    return t.getDay() % 6 === 0;
   };
   var isWritableStream = function isWritableStream(val) {
     return val !== null && _typeof(val) === 'object' && typeof val.pipe === 'function' && typeof val._write === 'function' && _typeof(val._writableState) === 'object';
@@ -2820,6 +2824,7 @@
   exports.isUpperCase = isUpperCase;
   exports.isValidJSON = isValidJSON;
   exports.isWeekday = isWeekday;
+  exports.isWeekend = isWeekend;
   exports.isWritableStream = isWritableStream;
   exports.join = join;
   exports.last = last;
