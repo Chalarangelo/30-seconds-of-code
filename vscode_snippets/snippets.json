@@ -855,12 +855,12 @@
     "prefix": "30s_findLastIndex",
     "body": [
       "const findLastIndex = (arr, fn) =>",
-      "  arr",
+      "  (arr",
       "    .map((val, i) => [i, val])",
       "    .filter(([i, val]) => fn(val, i, arr))",
-      "    .pop()[0];"
+      "    .pop() || [-1])[0];"
     ],
-    "description": "Returns the index of the last element for which the provided function returns a truthy value.\n\nUse `Array.prototype.map()` to map each element to an array with its index and value.\nUse `Array.prototype.filter()` to remove elements for which `fn` returns falsy values, `Array.prototype.pop()` to get the last one"
+    "description": "Returns the index of the last element for which the provided function returns a truthy value.\n\nUse `Array.prototype.map()` to map each element to an array with its index and value.\nUse `Array.prototype.filter()` to remove elements for which `fn` returns falsy values, `Array.prototype.pop()` to get the last one.\n`-1` is the default value when not found"
   },
   "findLastKey": {
     "prefix": "30s_findLastKey",

@@ -361,10 +361,10 @@ const filterNonUniqueBy = (arr, fn) =>
 const findKey = (obj, fn) => Object.keys(obj).find(key => fn(obj[key], key, obj));
 const findLast = (arr, fn) => arr.filter(fn).pop();
 const findLastIndex = (arr, fn) =>
-  arr
+  (arr
     .map((val, i) => [i, val])
     .filter(([i, val]) => fn(val, i, arr))
-    .pop()[0];
+    .pop() || [-1])[0];
 const findLastKey = (obj, fn) =>
   Object.keys(obj)
     .reverse()

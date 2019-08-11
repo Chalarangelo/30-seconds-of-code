@@ -807,7 +807,7 @@
     return arr.filter(fn).pop();
   };
   var findLastIndex = function findLastIndex(arr, fn) {
-    return arr.map(function (val, i) {
+    return (arr.map(function (val, i) {
       return [i, val];
     }).filter(function (_ref8) {
       var _ref9 = _slicedToArray(_ref8, 2),
@@ -815,7 +815,7 @@
           val = _ref9[1];
 
       return fn(val, i, arr);
-    }).pop()[0];
+    }).pop() || [-1])[0];
   };
   var findLastKey = function findLastKey(obj, fn) {
     return Object.keys(obj).reverse().find(function (key) {
