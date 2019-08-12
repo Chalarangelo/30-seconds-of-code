@@ -568,7 +568,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "8dcc260ee20fc2b7e5a17785db0c0b4ff357cea38a488d5219e47f93805bcade"
+        "hash": "d0eace2a9fcd0b8e056083e8c3e92574d7da0eee62c6897f7d6c5a94e64a3841"
       }
     },
     {
@@ -1896,11 +1896,11 @@
       "type": "snippet",
       "attributes": {
         "fileName": "findLastIndex.md",
-        "text": "Returns the index of the last element for which the provided function returns a truthy value.\n\nUse `Array.prototype.map()` to map each element to an array with its index and value.\nUse `Array.prototype.filter()` to remove elements for which `fn` returns falsy values, `Array.prototype.pop()` to get the last one.",
+        "text": "Returns the index of the last element for which the provided function returns a truthy value.\n\nUse `Array.prototype.map()` to map each element to an array with its index and value.\nUse `Array.prototype.filter()` to remove elements for which `fn` returns falsy values, `Array.prototype.pop()` to get the last one.\n`-1` is the default value when not found.",
         "codeBlocks": {
-          "es6": "const findLastIndex = (arr, fn) =>\n  arr\n    .map((val, i) => [i, val])\n    .filter(([i, val]) => fn(val, i, arr))\n    .pop()[0];",
-          "es5": "function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }\n\nfunction _nonIterableRest() { throw new TypeError(\"Invalid attempt to destructure non-iterable instance\"); }\n\nfunction _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i[\"return\"] != null) _i[\"return\"](); } finally { if (_d) throw _e; } } return _arr; }\n\nfunction _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }\n\nvar findLastIndex = function findLastIndex(arr, fn) {\n  return arr.map(function (val, i) {\n    return [i, val];\n  }).filter(function (_ref) {\n    var _ref2 = _slicedToArray(_ref, 2),\n        i = _ref2[0],\n        val = _ref2[1];\n\n    return fn(val, i, arr);\n  }).pop()[0];\n};",
-          "example": "findLastIndex([1, 2, 3, 4], n => n % 2 === 1); // 2 (index of the value 3)"
+          "es6": "const findLastIndex = (arr, fn) =>\n  (arr\n    .map((val, i) => [i, val])\n    .filter(([i, val]) => fn(val, i, arr))\n    .pop() || [-1])[0];",
+          "es5": "function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }\n\nfunction _nonIterableRest() { throw new TypeError(\"Invalid attempt to destructure non-iterable instance\"); }\n\nfunction _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i[\"return\"] != null) _i[\"return\"](); } finally { if (_d) throw _e; } } return _arr; }\n\nfunction _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }\n\nvar findLastIndex = function findLastIndex(arr, fn) {\n  return (arr.map(function (val, i) {\n    return [i, val];\n  }).filter(function (_ref) {\n    var _ref2 = _slicedToArray(_ref, 2),\n        i = _ref2[0],\n        val = _ref2[1];\n\n    return fn(val, i, arr);\n  }).pop() || [-1])[0];\n};",
+          "example": "findLastIndex([1, 2, 3, 4], n => n % 2 === 1); // 2 (index of the value 3)\nfindLastIndex([1, 2, 3, 4], n => n === 5); // -1 (default value when not found)"
         },
         "tags": [
           "array",
@@ -1910,7 +1910,7 @@
       },
       "meta": {
         "archived": false,
-        "hash": "579dc87863861d3e586fe7f0c707779fe45704612108c6b0bbed5b643126ab40"
+        "hash": "fab98b5b3be137f0421660cba5c6d3b26206def5b80c1782c135a354846ba5db"
       }
     },
     {
