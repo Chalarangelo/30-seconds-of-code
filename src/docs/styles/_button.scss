@@ -1,0 +1,79 @@
+// ===================================================
+// Buttons
+// ===================================================
+.button, a.button {
+  color: var(--button-fore-color);
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.4;
+  transition: 0.3s ease all;
+  padding: 0.625rem 0.875rem;
+  margin-top: 0.75rem;
+  border-radius: 1rem;
+  display: inline-block;
+  box-shadow: 0px 4px 8px var(--button-shadow-color);
+  border: none;
+  cursor: pointer;
+  &:hover, &:focus {
+    box-shadow: 0px 8px 16px var(--button-shadow-color);
+    text-decoration: none;
+    outline: none;
+  }
+  &.button-a {
+    background: var(--button-back-color-a);
+  }
+  &.button-b {
+    background: var(--button-back-color-b);
+  }
+  svg {
+    vertical-align: sub;
+  }
+  @media screen and (min-width: $layout-large-breakpoint) {
+    font-size: 1.375rem;
+    line-height: 1.35;
+  }
+}
+
+// Home button (404 page)
+.button.button-home {
+  @media screen and (min-width: $layout-large-breakpoint) {
+    margin-top: 1.375rem;
+  }
+}
+
+// Copy and share buttons (snippet card)
+.button.button-copy {
+  position: absolute;
+  top: -32px;
+  right: 24px;
+  padding: 0.5rem 0.625rem;
+}
+.button.button-social-sh {
+  position: absolute;
+  top: -32px;
+  right: 80px;
+  padding: 0.5rem 0.625rem;
+}
+
+// Show/hide examples button (snippet card)
+.button.button-example-toggler {
+  margin: -2rem 0px -1rem 0px;
+  background: var(--pre-back-color);
+  border-radius: 0px 0px 0.125rem 0.125rem;
+  width: calc(100%);
+  text-align: left;
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1.35;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: var(--button-example-toggler-fore-color);
+  box-shadow: none;
+  font-family: 'Roboto Mono', Menlo, Consolas, monospace; 
+  &:hover, &:focus {
+    box-shadow: none;
+  }
+  svg {
+    margin-right: 0.125rem;
+  }
+}

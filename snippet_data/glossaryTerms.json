@@ -1389,6 +1389,7 @@
   ],
   "meta": {
     "specification": "http://jsonapi.org/format/",
-    "type": "glossaryTermArray"
+    "type": "glossaryTermArray",
+    "scope": "./glossary"
   }
 }
