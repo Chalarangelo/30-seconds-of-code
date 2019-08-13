@@ -9,7 +9,6 @@ before_install:
 - npm install -g prettier
 - npm install -g eslint
 script:
-- npm run tagger
 - npm run linter
 - npm run packager
 - npm run tester
