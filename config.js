@@ -7,6 +7,7 @@ module.exports = {
   // Path information
   snippetPath: `snippets`,
   snippetArchivePath: `snippets_archive`,
+  glossaryPath: `glossary`,
   snippetDataPath: `snippet_data`,
   assetPath: `assets`,
   pagePath: `src/docs/pages`,
