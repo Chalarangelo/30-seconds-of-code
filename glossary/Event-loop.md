@@ -1,4 +1,7 @@
-### Event loop
+---
+title: Event loop
+tags: Event loop
+---
 
 The event loop handles all asynchronous callbacks. 
 Callbacks are queued in a loop, while other code runs, and will run one by one when the response for each one has been received.
