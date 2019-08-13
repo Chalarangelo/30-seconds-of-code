@@ -1,4 +1,7 @@
-### uniqueSymmetricDifference
+---
+title: uniqueSymmetricDifference
+tags: array,math,intermediate
+---
 
 Returns the unique symmetric difference between two arrays, not containing duplicate values from either array.
 

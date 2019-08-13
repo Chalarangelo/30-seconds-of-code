@@ -1,4 +1,7 @@
-### atob
+---
+title: atob
+tags: node,string,utility,beginner
+---
 
 Decodes a string of data which has been encoded using base-64 encoding.
 

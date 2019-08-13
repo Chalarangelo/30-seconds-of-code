@@ -1,4 +1,7 @@
-### flatten
+---
+title: flatten
+tags: array,intermediate
+---
 
 Flattens an array up to the specified depth.
 

@@ -1,4 +1,7 @@
-### isSimilar
+---
+title: isSimilar
+tags: string,intermediate
+---
 
 Determines if the `pattern` matches with `str`.
 

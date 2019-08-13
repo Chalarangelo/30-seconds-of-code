@@ -1,4 +1,7 @@
-### permutations
+---
+title: permutations
+tags: array,recursion,advanced
+---
 
 ⚠️ **WARNING**: This function's execution time increases exponentially with each array element. Anything more than 8 to 10 entries will cause your browser to hang as it tries to solve all the different combinations.
 

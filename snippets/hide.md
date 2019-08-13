@@ -1,4 +1,7 @@
-### hide
+---
+title: hide
+tags: browser,css,beginner
+---
 
 Hides all the elements specified.
 

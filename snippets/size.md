@@ -1,4 +1,7 @@
-### size
+---
+title: size
+tags: object,array,string,intermediate
+---
 
 Get size of arrays, objects or strings.
 

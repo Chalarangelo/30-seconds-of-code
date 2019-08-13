@@ -1,4 +1,7 @@
-### readFileLines
+---
+title: readFileLines
+tags: node,array,string,beginner
+---
 
 Returns an array of lines from the specified file.
 

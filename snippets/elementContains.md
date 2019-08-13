@@ -1,4 +1,7 @@
-### elementContains
+---
+title: elementContains
+tags: browser,intermediate
+---
 
 Returns `true` if the `parent` element contains the `child` element, `false` otherwise.
 

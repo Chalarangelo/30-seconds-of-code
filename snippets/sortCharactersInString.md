@@ -1,4 +1,7 @@
-### sortCharactersInString
+---
+title: sortCharactersInString
+tags: string,beginner
+---
 
 Alphabetically sorts the characters in a string.
 

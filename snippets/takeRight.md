@@ -1,4 +1,7 @@
-### takeRight
+---
+title: takeRight
+tags: array,intermediate
+---
 
 Returns an array with n elements removed from the end.
 

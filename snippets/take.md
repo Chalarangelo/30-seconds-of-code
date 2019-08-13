@@ -1,4 +1,7 @@
-### take
+---
+title: take
+tags: array,beginner
+---
 
 Returns an array with n elements removed from the beginning.
 

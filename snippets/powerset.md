@@ -1,4 +1,7 @@
-### powerset
+---
+title: powerset
+tags: math,beginner
+---
 
 Returns the powerset of a given array of numbers.
 

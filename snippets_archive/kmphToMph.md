@@ -1,4 +1,7 @@
-### kmphToMph
+---
+title: kmphToMph
+tags: math,beginner
+---
 
 Convert kilometers/hour to miles/hour.
 

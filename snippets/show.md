@@ -1,4 +1,7 @@
-### show
+---
+title: show
+tags: browser,css,beginner
+---
 
 Shows all the elements specified.
 

@@ -1,4 +1,7 @@
-### intersectionBy
+---
+title: intersectionBy
+tags: array,function,intermediate
+---
 
 Returns a list of elements that exist in both arrays, after applying the provided function to each array element of both.
 

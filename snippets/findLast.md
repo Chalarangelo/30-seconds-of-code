@@ -1,4 +1,7 @@
-### findLast
+---
+title: findLast
+tags: array,beginner
+---
 
 Returns the last element for which the provided function returns a truthy value.
 

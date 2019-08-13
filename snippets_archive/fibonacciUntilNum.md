@@ -1,4 +1,7 @@
-### fibonacciUntilNum
+---
+title: fibonacciUntilNum
+tags: math,intermediate
+---
 
 Generates an array, containing the Fibonacci sequence, up until the nth term.
 

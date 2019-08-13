@@ -1,4 +1,7 @@
-### throttle
+---
+title: throttle
+tags: function,advanced
+---
 
 Creates a throttled function that only invokes the provided function at most once per every `wait` milliseconds
 

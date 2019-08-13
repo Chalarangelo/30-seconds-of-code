@@ -1,4 +1,7 @@
-### pullAtValue
+---
+title: pullAtValue
+tags: array,advanced
+---
 
 Mutates the original array to filter out the values specified. Returns the removed elements.
 

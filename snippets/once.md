@@ -1,4 +1,7 @@
-### once
+---
+title: once
+tags: function,intermediate
+---
 
 Ensures a function is called only once.
 

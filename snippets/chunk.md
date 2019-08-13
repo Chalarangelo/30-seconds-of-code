@@ -1,4 +1,7 @@
-### chunk
+---
+title: chunk
+tags: array,intermediate
+---
 
 Chunks an array into smaller arrays of a specified size.
 

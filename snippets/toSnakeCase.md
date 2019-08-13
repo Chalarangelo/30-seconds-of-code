@@ -1,4 +1,7 @@
-### toSnakeCase
+---
+title: toSnakeCase
+tags: string,regexp,intermediate
+---
 
 Converts a string to snake case.
 

@@ -1,4 +1,7 @@
-### hasClass
+---
+title: hasClass
+tags: browser,css,beginner
+---
 
 Returns `true` if the element has the specified class, `false` otherwise.
 

@@ -1,4 +1,7 @@
-### filterFalsy
+---
+title: filterFalsy
+tags: array,beginner
+---
 
 Filters out the falsy values in an array.
 

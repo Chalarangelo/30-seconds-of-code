@@ -1,4 +1,7 @@
-### httpPost
+---
+title: httpPost
+tags: utility,url,browser,intermediate
+---
 
 Makes a `POST` request to the passed URL.
 

@@ -1,4 +1,7 @@
-### uniqueElements
+---
+title: uniqueElements
+tags: array,beginner
+---
 
 Returns all unique values of an array.
 

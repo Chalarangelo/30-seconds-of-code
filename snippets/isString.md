@@ -1,4 +1,7 @@
-### isString
+---
+title: isString
+tags: type,string,beginner
+---
 
 Checks if the given argument is a string. Only works for string primitives.
 

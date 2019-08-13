@@ -1,4 +1,7 @@
-### collatz
+---
+title: collatz
+tags: math,beginner
+---
 
 Applies the Collatz algorithm.
 

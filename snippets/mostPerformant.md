@@ -1,4 +1,7 @@
-### mostPerformant
+---
+title: mostPerformant
+tags: utility,function
+---
 
 Returns the index of the function in an array of functions which executed the fastest.
 

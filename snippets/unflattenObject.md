@@ -1,4 +1,7 @@
-### unflattenObject
+---
+title: unflattenObject
+tags: object,advanced
+---
 
 Unflatten an object with the paths for keys.
 

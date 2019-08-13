@@ -1,4 +1,7 @@
-### formToObject
+---
+title: formToObject
+tags: browser,object,intermediate
+---
 
 Encode a set of form elements as an `object`.
 

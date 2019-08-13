@@ -1,4 +1,7 @@
-### isPrime
+---
+title: isPrime
+tags: math,beginner,intermediate
+---
 
 Checks if the provided integer is a prime number.
 

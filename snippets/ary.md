@@ -1,4 +1,7 @@
-### ary
+---
+title: ary
+tags: adapter,function,intermediate
+---
 
 Creates a function that accepts up to `n` arguments, ignoring any additional arguments.
 

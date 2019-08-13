@@ -1,4 +1,7 @@
-### isEven
+---
+title: isEven
+tags: math,beginner
+---
 
 Returns `true` if the given number is even, `false` otherwise.
 

@@ -1,4 +1,7 @@
-### deepGet
+---
+title: deepGet
+tags: object,intermediate
+---
 
 Returns the target value in a nested JSON object, based on the `keys` array.
 

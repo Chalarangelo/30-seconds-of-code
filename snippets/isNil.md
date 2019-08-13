@@ -1,4 +1,7 @@
-### isNil
+---
+title: isNil
+tags: type,beginner
+---
 
 Returns `true` if the specified value is `null` or `undefined`, `false` otherwise.
 

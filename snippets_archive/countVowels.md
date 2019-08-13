@@ -1,4 +1,7 @@
-### countVowels
+---
+title: countVowels
+tags: string,beginner
+---
 
 Retuns `number` of vowels in provided string.
 

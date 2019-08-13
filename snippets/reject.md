@@ -1,4 +1,7 @@
-### reject
+---
+title: reject
+tags: array,beginner
+---
 
 Takes a predicate and array, like `Array.prototype.filter()`, but only keeps `x` if `pred(x) === false`.
 

@@ -1,4 +1,7 @@
-### squareSum
+---
+title: squareSum
+tags: math,beginner
+---
 
 Squares each number in an array and then sums the results together.
 
@@ -10,5 +13,5 @@ const squareSum = (arr) => arr.reduce((squareSum, number) =>
 ```
 
 ```js
-squareSum([1, 2, 2]); // 9
+squareSum(1, 2, 2); // 9
 ```

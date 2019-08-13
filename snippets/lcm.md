@@ -1,4 +1,7 @@
-### lcm
+---
+title: lcm
+tags: math,recursion,beginner
+---
 
 Returns the least common multiple of two or more numbers.
 

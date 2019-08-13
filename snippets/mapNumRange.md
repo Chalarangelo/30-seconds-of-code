@@ -1,4 +1,7 @@
-### mapNumRange
+---
+title: mapNumRange
+tags: math,beginner
+---
 
 Maps a number from one range to another range.
 

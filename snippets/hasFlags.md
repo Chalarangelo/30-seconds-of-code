@@ -1,4 +1,7 @@
-### hasFlags
+---
+title: hasFlags
+tags: node,intermediate
+---
 
 Check if the current process's arguments contain the specified flags.
 

@@ -1,4 +1,7 @@
-### approximatelyEqual
+---
+title: approximatelyEqual
+tags: math,beginner
+---
 
 Checks if two numbers are approximately equal to each other.
 

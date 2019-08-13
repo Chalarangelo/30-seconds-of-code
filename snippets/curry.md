@@ -1,4 +1,7 @@
-### curry
+---
+title: curry
+tags: function,recursion,intermediate
+---
 
 Curries a function.
 

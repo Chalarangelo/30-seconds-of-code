@@ -1,4 +1,7 @@
-### hashBrowser
+---
+title: hashBrowser
+tags: browser,utility,advanced,promise,advanced
+---
 
 Creates a hash for a value using the [SHA-256](https://en.wikipedia.org/wiki/SHA-2) algorithm. Returns a promise.
 

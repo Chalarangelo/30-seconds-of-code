@@ -1,4 +1,7 @@
-### randomIntegerInRange
+---
+title: randomIntegerInRange
+tags: math,utility,random,beginner
+---
 
 Returns a random integer in the specified range.
 

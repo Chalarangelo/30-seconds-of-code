@@ -1,4 +1,7 @@
-### functions
+---
+title: functions
+tags: object,function,intermediate
+---
 
 Returns an array of function property names from own (and optionally inherited) enumerable properties of an object.
 

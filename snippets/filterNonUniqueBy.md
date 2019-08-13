@@ -1,4 +1,7 @@
-### filterNonUniqueBy
+---
+title: filterNonUniqueBy
+tags: array,function,intermediate
+---
 
 Filters out the non-unique values in an array, based on a provided comparator function.
 

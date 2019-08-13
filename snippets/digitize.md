@@ -1,4 +1,7 @@
-### digitize
+---
+title: digitize
+tags: math,array,beginner
+---
 
 Converts a number to an array of digits.
 

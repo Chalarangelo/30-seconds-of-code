@@ -1,4 +1,7 @@
-### compact
+---
+title: compact
+tags: array,beginner
+---
 
 Removes falsy values from an array.
 

@@ -1,4 +1,7 @@
-### celsiusToFahrenheit
+---
+title: celsiusToFahrenheit
+tags: math,beginner
+---
 
 Celsius to Fahrenheit temperature conversion.
 

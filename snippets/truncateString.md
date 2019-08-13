@@ -1,4 +1,7 @@
-### truncateString
+---
+title: truncateString
+tags: string,beginner
+---
 
 Truncates a string up to a specified length.
 

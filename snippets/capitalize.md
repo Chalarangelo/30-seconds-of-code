@@ -1,4 +1,7 @@
-### capitalize
+---
+title: capitalize
+tags: string,array,intermediate
+---
 
 Capitalizes the first letter of a string.
 

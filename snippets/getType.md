@@ -1,4 +1,7 @@
-### getType
+---
+title: getType
+tags: type,beginner
+---
 
 Returns the native type of a value.
 

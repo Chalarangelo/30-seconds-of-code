@@ -1,4 +1,7 @@
-### partial
+---
+title: partial
+tags: function,intermediate
+---
 
 Creates a function that invokes `fn` with `partials` prepended to the arguments it receives.
 

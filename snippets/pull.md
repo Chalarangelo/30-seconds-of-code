@@ -1,4 +1,7 @@
-### pull
+---
+title: pull
+tags: array,intermediate
+---
 
 Mutates the original array to filter out the values specified.
 

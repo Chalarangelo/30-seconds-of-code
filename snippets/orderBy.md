@@ -1,4 +1,7 @@
-### orderBy
+---
+title: orderBy
+tags: object,array,intermediate
+---
 
 Returns a sorted array of objects ordered by properties and orders.
 

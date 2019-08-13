@@ -1,4 +1,7 @@
-### stableSort
+---
+title: stableSort
+tags: array,sort,advanced,intermediate
+---
 
 Performs stable sorting of an array, preserving the initial indexes of items when their values are the same.
 Does not mutate the original array, but returns a new array instead.

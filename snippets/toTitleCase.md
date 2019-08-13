@@ -1,4 +1,7 @@
-### toTitleCase
+---
+title: toTitleCase
+tags: string,regepx,intermediate
+---
 
 Converts a string to title case.
 

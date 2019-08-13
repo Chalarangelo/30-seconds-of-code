@@ -1,4 +1,7 @@
-### removeNonASCII
+---
+title: removeNonASCII
+tags: string,regexp,intermediate
+---
 
 Removes non-printable ASCII characters.
 

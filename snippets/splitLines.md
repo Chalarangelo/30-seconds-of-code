@@ -1,4 +1,7 @@
-### splitLines
+---
+title: splitLines
+tags: string,beginner
+---
 
 Splits a multiline string into an array of lines.
 

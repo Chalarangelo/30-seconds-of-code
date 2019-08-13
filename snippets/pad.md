@@ -1,4 +1,7 @@
-### pad
+---
+title: pad
+tags: string,beginner
+---
 
 Pads a string on both sides with the specified character, if it's shorter than the specified length.
 

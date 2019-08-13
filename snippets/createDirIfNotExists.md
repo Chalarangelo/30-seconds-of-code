@@ -1,4 +1,7 @@
-### createDirIfNotExists
+---
+title: createDirIfNotExists
+tags: node,beginner
+---
 
 Creates a directory, if it does not exist.
 

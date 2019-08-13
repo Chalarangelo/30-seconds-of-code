@@ -1,4 +1,7 @@
-### JSONToDate
+---
+title: JSONToDate
+tags: object,date,beginner
+---
 
 Converts a JSON object to a date.
 

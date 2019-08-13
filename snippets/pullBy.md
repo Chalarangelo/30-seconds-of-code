@@ -1,4 +1,7 @@
-### pullBy
+---
+title: pullBy
+tags: array,function,advanced
+---
 
 Mutates the original array to filter out the values specified, based on a given iterator function.
 

@@ -1,4 +1,7 @@
-### binarySearch
+---
+title: binarySearch
+tags: algorithm,beginner
+---
 
 Use recursion. Similar to `Array.prototype.indexOf()` that finds the index of a value within an array.
 The difference being this operation only works with sorted arrays which offers a major performance boost due to it's logarithmic nature when compared to a linear search or `Array.prototype.indexOf()`.

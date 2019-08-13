@@ -1,4 +1,7 @@
-### everyNth
+---
+title: everyNth
+tags: array,beginner
+---
 
 Returns every nth element in an array.
 

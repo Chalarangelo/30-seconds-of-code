@@ -1,4 +1,7 @@
-### unzipWith
+---
+title: unzipWith
+tags: array,function,advanced
+---
 
 Creates an array of elements, ungrouping the elements in an array produced by [zip](#zip) and applying the provided function.
 

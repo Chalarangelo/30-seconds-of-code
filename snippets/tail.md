@@ -1,4 +1,7 @@
-### tail
+---
+title: tail
+tags: array,beginner
+---
 
 Returns all elements in an array except for the first one.
 

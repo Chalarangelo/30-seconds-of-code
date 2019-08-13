@@ -1,4 +1,7 @@
-### defer
+---
+title: defer
+tags: function,intermediate
+---
 
 Defers invoking a function until the current call stack has cleared.
 

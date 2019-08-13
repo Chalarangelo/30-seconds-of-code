@@ -1,4 +1,7 @@
-### sumPower
+---
+title: sumPower
+tags: math,intermediate
+---
 
 Returns the sum of the powers of all the numbers from `start` to `end` (both inclusive).
 

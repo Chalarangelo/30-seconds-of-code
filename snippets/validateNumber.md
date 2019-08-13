@@ -1,4 +1,7 @@
-### validateNumber
+---
+title: validateNumber
+tags: utility,math,intermediate
+---
 
 Returns `true` if the given value is a number, `false` otherwise.
 

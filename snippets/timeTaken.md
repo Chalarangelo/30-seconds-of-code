@@ -1,4 +1,7 @@
-### timeTaken
+---
+title: timeTaken
+tags: utility,beginner
+---
 
 Measures the time taken by a function to execute.
 

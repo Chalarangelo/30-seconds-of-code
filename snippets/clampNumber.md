@@ -1,4 +1,7 @@
-### clampNumber
+---
+title: clampNumber
+tags: math,beginner
+---
 
 Clamps `num` within the inclusive range specified by the boundary values `a` and `b`.
 

@@ -1,4 +1,7 @@
-### initialize2DArray
+---
+title: initialize2DArray
+tags: array,intermediate
+---
 
 Initializes a 2D array of given width and height and value.
 

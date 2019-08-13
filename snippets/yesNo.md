@@ -1,4 +1,7 @@
-### yesNo
+---
+title: yesNo
+tags: utility,regexp,intermediate
+---
 
 Returns `true` if the string is `y`/`yes` or `false` if the string is `n`/`no`.
 

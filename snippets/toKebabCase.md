@@ -1,4 +1,7 @@
-### toKebabCase
+---
+title: toKebabCase
+tags: string,regexp,intermediate
+---
 
 Converts a string to kebab case.
 

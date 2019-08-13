@@ -1,4 +1,7 @@
-### average
+---
+title: average
+tags: math,array,beginner
+---
 
 Returns the average of two or more numbers.
 

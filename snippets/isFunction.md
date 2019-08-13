@@ -1,4 +1,7 @@
-### isFunction
+---
+title: isFunction
+tags: type,function,beginner
+---
 
 Checks if the given argument is a function.
 

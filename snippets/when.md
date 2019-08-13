@@ -1,4 +1,7 @@
-### when
+---
+title: when
+tags: function,intermediate
+---
 
 Tests a value, `x`, against a predicate function. If `true`, return `fn(x)`. Else, return `x`. 
 

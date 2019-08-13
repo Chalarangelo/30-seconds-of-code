@@ -1,4 +1,7 @@
-### primes
+---
+title: primes
+tags: math,array,intermediate
+---
 
 Generates primes up to a given number, using the Sieve of Eratosthenes.
 

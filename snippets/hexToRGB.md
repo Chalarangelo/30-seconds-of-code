@@ -1,4 +1,7 @@
-### hexToRGB
+---
+title: hexToRGB
+tags: utility,string,math,advanced
+---
 
 Converts a color code to a `rgb()` or `rgba()` string if alpha value is provided.
 

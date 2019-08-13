@@ -1,4 +1,7 @@
-### CSVToArray
+---
+title: CSVToArray
+tags: string,array,utility,intermediate
+---
 
 Converts a comma-separated values (CSV) string to a 2D array.
 

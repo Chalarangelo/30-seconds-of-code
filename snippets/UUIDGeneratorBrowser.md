@@ -1,4 +1,7 @@
-### UUIDGeneratorBrowser
+---
+title: UUIDGeneratorBrowser
+tags: browser,utility,random,intermediate
+---
 
 Generates a UUID in a browser.
 

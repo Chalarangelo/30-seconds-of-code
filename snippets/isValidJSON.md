@@ -1,4 +1,7 @@
-### isValidJSON
+---
+title: isValidJSON
+tags: type,json,intermediate
+---
 
 Checks if the provided string is a valid JSON.
 

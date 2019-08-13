@@ -1,4 +1,7 @@
-### difference
+---
+title: difference
+tags: array,math,beginner
+---
 
 Returns the difference between two arrays.
 

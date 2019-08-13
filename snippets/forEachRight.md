@@ -1,4 +1,7 @@
-### forEachRight
+---
+title: forEachRight
+tags: array,function,intermediate
+---
 
 Executes a provided function once for each array element, starting from the array's last element.
 

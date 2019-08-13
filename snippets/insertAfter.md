@@ -1,4 +1,7 @@
-### insertAfter
+---
+title: insertAfter
+tags: browser,beginner
+---
 
 Inserts an HTML string after the end of the specified element.
 

@@ -1,4 +1,7 @@
-### insertBefore
+---
+title: insertBefore
+tags: browser,beginner
+---
 
 Inserts an HTML string before the start of the specified element.
 

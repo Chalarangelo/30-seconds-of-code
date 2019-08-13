@@ -1,4 +1,7 @@
-### chainAsync
+---
+title: chainAsync
+tags: function,intermediate
+---
 
 Chains asynchronous functions.
 

@@ -1,4 +1,7 @@
-### mask
+---
+title: mask
+tags: string,utility,regexp,intermediate
+---
 
 Replaces all but the last `num` of characters with the specified mask character.
 

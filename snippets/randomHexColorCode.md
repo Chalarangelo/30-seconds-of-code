@@ -1,4 +1,7 @@
-### randomHexColorCode
+---
+title: randomHexColorCode
+tags: utility,random,beginner
+---
 
 Generates a random hexadecimal color code.
 

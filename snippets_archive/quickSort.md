@@ -1,4 +1,7 @@
-### quickSort
+---
+title: quickSort
+tags: algorithm,recursion,beginner
+---
 
 QuickSort an Array (ascending sort by default).
 

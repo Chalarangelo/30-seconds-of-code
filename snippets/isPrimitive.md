@@ -1,4 +1,7 @@
-### isPrimitive
+---
+title: isPrimitive
+tags: type,function,array,string,intermediate
+---
 
 Returns a boolean determining if the passed value is primitive or not.
 

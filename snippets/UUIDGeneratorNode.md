@@ -1,4 +1,7 @@
-### UUIDGeneratorNode
+---
+title: UUIDGeneratorNode
+tags: node,utility,random,intermediate
+---
 
 Generates a UUID in Node.JS.
 

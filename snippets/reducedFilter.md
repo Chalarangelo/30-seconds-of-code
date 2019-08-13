@@ -1,4 +1,7 @@
-### reducedFilter
+---
+title: reducedFilter
+tags: array,intermediate
+---
 
 Filter an array of objects based on a condition while also filtering out unspecified keys.
 

@@ -1,4 +1,7 @@
-### transform
+---
+title: transform
+tags: object,array,intermediate
+---
 
 Applies a function against an accumulator and each key in the object (from left to right).
 

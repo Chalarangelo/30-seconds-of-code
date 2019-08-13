@@ -1,4 +1,7 @@
-### elo
+---
+title: elo
+tags: math,array,advanced
+---
 
 Computes the new ratings between two or more opponents using the [Elo rating system](https://en.wikipedia.org/wiki/Elo_rating_system). It takes an array
 of pre-ratings and returns an array containing post-ratings.

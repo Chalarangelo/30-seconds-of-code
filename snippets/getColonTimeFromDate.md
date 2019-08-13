@@ -1,4 +1,7 @@
-### getColonTimeFromDate
+---
+title: getColonTimeFromDate
+tags: date,intermediate
+---
 
 Returns a string of the form `HH:MM:SS` from a `Date` object.
 

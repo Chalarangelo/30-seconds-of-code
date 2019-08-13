@@ -1,4 +1,7 @@
-### sample
+---
+title: sample
+tags: array,random,beginner
+---
 
 Returns a random element from an array.
 

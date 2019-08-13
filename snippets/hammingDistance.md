@@ -1,4 +1,7 @@
-### hammingDistance
+---
+title: hammingDistance
+tags: math,beginner
+---
 
 Calculates the Hamming distance between two values.
 

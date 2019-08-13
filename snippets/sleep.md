@@ -1,4 +1,7 @@
-### sleep
+---
+title: sleep
+tags: function,promise,intermediate
+---
 
 Delays the execution of an asynchronous function.
 

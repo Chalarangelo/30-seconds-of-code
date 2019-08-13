@@ -1,4 +1,7 @@
-### removeVowels
+---
+title: removeVowels
+tags: string,beginner
+---
 
 Returns all the vowels in a `str` replaced by `repl`.
 

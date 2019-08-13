@@ -1,4 +1,7 @@
-### matches
+---
+title: matches
+tags: object,type,intermediate
+---
 
 Compares two objects to determine if the first one contains equivalent property values to the second one.
 

@@ -1,4 +1,7 @@
-### isObject
+---
+title: isObject
+tags: type,object,beginner
+---
 
 Returns a boolean determining if the passed value is an object or not.
 

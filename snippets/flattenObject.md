@@ -1,4 +1,7 @@
-### flattenObject
+---
+title: flattenObject
+tags: object,recursion,intermediate
+---
 
 Flatten an object with the paths for keys.
 

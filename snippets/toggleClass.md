@@ -1,4 +1,7 @@
-### toggleClass
+---
+title: toggleClass
+tags: browser,beginner
+---
 
 Toggle a class for an element.
 
