@@ -5537,6 +5537,7 @@
   ],
   "meta": {
     "specification": "http://jsonapi.org/format/",
-    "type": "snippetListingArray"
+    "type": "snippetListingArray",
+    "scope": "./snippets"
   }
 }

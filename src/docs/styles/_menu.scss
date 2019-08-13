@@ -1,0 +1,84 @@
+// ===================================================
+// Menu
+// ===================================================
+.menu {
+  // z-index: 8;
+  transition: 0.3s ease all;
+  // Menu container
+  background: var(--menu-back-color);
+  border-top: 1px solid var(--menu-border-color);
+  @media screen and (max-width: calc(#{$layout-medium-breakpoint} - 1px)) {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    z-index: 1001;
+  }
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    border-top: none;
+    border-right: 1px solid var(--menu-border-color);
+    padding-top: 17vh;
+  }
+  @media screen and (min-width: $layout-large-breakpoint) {
+    padding-top: 23.5vh;
+  }
+  // Menu buttons
+  .menu-button {
+    cursor: pointer;
+    transition: 0.3s ease all;
+    background: transparent;
+    color: var(--menu-fore-color);
+    display: inline-block;
+    width: 25%;
+    height: 61px;
+    margin: 0;
+    text-align: center;
+    margin-top: 0.5rem;
+    border: none;
+    line-height: 61px;
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      height: 12.5vh;
+      width: 100%;
+      margin-top: 1vh;
+      margin-bottom: 4vh;
+    }
+    @media screen and (min-width: $layout-large-breakpoint) {
+      margin-bottom: 1vh;
+    }
+    &:hover, &:focus {
+      outline: 0;
+      color: var(--menu-active-fore-color);
+    }
+    &.active {
+      color: var(--menu-active-fore-color);
+      svg {
+        color: var(--menu-active-fore-color);
+      }
+    }
+    svg {
+      color: var(--menu-fore-color);
+    }
+    &:last-of-type {
+      vertical-align: top;
+    }
+  }
+}
+
+// Animate transition between light and dark mode
+.cross-fade-leave {
+  transform: scale(1);
+}
+.cross-fade-leave.cross-fade-leave-active {
+  transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
+  transform: scale(0.1);
+}
+.cross-fade-enter {
+  transform: scale(0.1);
+}
+.cross-fade-enter.cross-fade-enter-active {
+  transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+  transform: scale(0.95)
+}
+.cross-fade-height {
+  height: 61px;
+  transition: height 0.15s ease-in-out 0.15s;
+}

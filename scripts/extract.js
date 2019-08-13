@@ -62,6 +62,7 @@ const completeData = {
   meta: {
     specification: 'http://jsonapi.org/format/',
     type: 'snippetArray',
+    scope: SNIPPETS_PATH,
   },
 };
 const listingData = {
@@ -80,6 +81,7 @@ const listingData = {
   meta: {
     specification: 'http://jsonapi.org/format/',
     type: 'snippetListingArray',
+    scope: SNIPPETS_PATH,
   },
 };
 
@@ -88,6 +90,7 @@ const archiveCompleteData = {
   meta: {
     specification: 'http://jsonapi.org/format/',
     type: 'snippetArray',
+    scope: SNIPPETS_ARCHIVE_PATH,
   }
 };
 const archiveListingData = {
@@ -106,6 +109,7 @@ const archiveListingData = {
   meta: {
     specification: 'http://jsonapi.org/format/',
     type: 'snippetListingArray',
+    scope: SNIPPETS_ARCHIVE_PATH,
   },
 };
 
@@ -125,6 +129,7 @@ const glossaryData = {
   meta: {
     specification: 'http://jsonapi.org/format/',
     type: 'glossaryTermArray',
+    scope: GLOSSARY_PATH,
   },
 };
 

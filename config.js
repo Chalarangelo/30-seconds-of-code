@@ -1,9 +1,9 @@
 module.exports = {
   // Project metadata
-  name: `30 seconds starter`,
-  description: `Kick off your next, great 30 seconds project with this starter.`,
+  name: `30 seconds of code`,
+  description: `Curated collection of useful JavaScript snippets that you can understand in 30 seconds or less.`,
   shortName: `30s`,
-  repositoryUrl: `https://github.com/30-seconds/30-seconds-starter`,
+  repositoryUrl: `https://github.com/30-seconds/30-seconds-of-code`,
   // Path information
   snippetPath: `snippets`,
   snippetArchivePath: `snippets_archive`,
