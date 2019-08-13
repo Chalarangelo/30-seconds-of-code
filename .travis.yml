@@ -10,19 +10,14 @@ before_install:
 - npm install -g eslint
 script:
 - npm run linter
+- npm run extractor
+- npm run builder
 - npm run packager
 - npm run tester
 - npm run test
-- npm run extractor
 - npm run vscoder
-- npm run glossary:keymaker
 - npm run webber
-- npm run builder
-- npm run glossary:librarian
 after_success:
 - chmod +x .travis/push.sh
 - .travis/push.sh
 group: deprecated-2017Q4
-env:
-  global:
-  - secure: RucoyHikFKD7yQq7FBHxOpwYSHSFYUO7QS/5VEXvU55AMnHwB97aI0DcQSMa+XHaSFVsqd4fR7nAP+5H6GMW/lUhIdeXIGzehgBTfuNeQmng2djGgS1lWY9fEOsn2XEL7JlXMi2P5YdZDpOAfiiLqT3W8EaCWDdV60tkizbSQhig2R3exI/649AjmGkIws+NqoYqrEfNpnTvgxJkp2jNuKfBkr0aaVdYuxdI6Kf2KnipEeuKsKJFds+tTjduEUKTg7I8lNSB+tQ9wIHNTDZffZrzODzE2esAZtnflxhkGQ6q7fW8DEj0rheuer+yD4WBWfph1CIxTL6B3VZgT6XQXCu09XzqgRUack0KIS6SBRKjRYJymH3eKNlxZGPpk4s90bX0Qo0a0vvcT4g/iejyVb917pcn2LjRZmmsFQUfJOcCJgU6EUvqNpfM9SWV8fJhaPOacvUnzDxFav3eRdDHaZYgXf0tzJfLAjsTv7rFbLZEnpqtvyKbHrXYLf9sICyPlHbCy4L5KAfguu735v0YPXko5Aabl6PvGcfafyLxVUb/0Y5ot3pLtGVJflfHeqYz8qbkoqp5RovSvTXntx/vVlx20TSE/rQP2l6JUNt98sGFJ+yOZ3SkMnyMdjE1YqeEngxZdzukec2SM3PtnaWxSbxV8Ue1XnM8D5nzhTf4UI8=

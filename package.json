@@ -6,15 +6,13 @@
   "module": "dist/_30s.esm.js",
   "sideEffects": false,
   "scripts": {
-    "glossary:librarian": "node ./scripts/glossary/library.js",
-    "glossary:keymaker": "node ./scripts/glossary/keyword.js",
-    "builder": "node ./scripts/build.js",
     "linter": "node ./scripts/lint.js",
+    "extractor": "node ./scripts/extract.js",
+    "builder": "node ./scripts/build.js",
     "webber": "gatsby build",
     "webber:dev": "gatsby develop",
     "webber:serve": "gatsby serve",
     "tester": "node ./scripts/tdd.js",
-    "extractor": "node ./scripts/extract.js",
     "vscoder": "node ./scripts/vscodegen.js",
     "packager": "node ./scripts/module.js",
     "test": "jest --verbose --coverage"

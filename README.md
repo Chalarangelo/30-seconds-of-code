@@ -512,6 +512,7 @@ _30s.average(1, 2, 3);
 
 ## 🔌 Adapter
 
+
 ### ary
 
 Creates a function that accepts up to `n` arguments, ignoring any additional arguments.
@@ -529,7 +530,6 @@ const ary = (fn, n) => (...args) => fn(...args.slice(0, n));
 const firstTwoMax = ary(Math.max, 2);
 [[2, 6, 'a'], [8, 4, 6], [10]].map(x => firstTwoMax(...x)); // [6, 8, 10]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -556,7 +556,6 @@ Promise.resolve([1, 2, 3])
   .then(map(x => 2 * x))
   .then(console.log); // [ 2, 4, 6 ]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -581,7 +580,6 @@ let p2 = Promise.resolve(2);
 let p3 = new Promise(resolve => setTimeout(resolve, 2000, 3));
 Pall(p1, p2, p3).then(console.log); // [1, 2, 3] (after about 2 seconds)
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -608,7 +606,6 @@ mergePerson(b); // == b
 b = {};
 Object.assign(b, a); // == b
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -630,7 +627,6 @@ const over = (...fns) => (...args) => fns.map(fn => fn.apply(null, args));
 const minMax = over(Math.min, Math.max);
 minMax(1, 2, 3, 4, 5); // [1,5]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -654,7 +650,6 @@ const double = n => n * 2;
 const fn = overArgs((x, y) => [x, y], [square, double]);
 fn(9, 3); // [81, 6]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -685,7 +680,6 @@ const sum = pipeAsyncFunctions(
   console.log(await sum(5)); // 15 (after one second)
 })();
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -710,7 +704,6 @@ const multiply = (x, y) => x * y;
 const multiplyAndAdd5 = pipeFunctions(multiply, add5);
 multiplyAndAdd5(5, 2); // 15
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -738,7 +731,6 @@ const promisify = func => (...args) =>
 const delay = promisify((d, cb) => setTimeout(cb, d));
 delay(2000).then(() => console.log('Hi!')); // // Promise resolves after 2s
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -765,7 +757,6 @@ var rearged = rearg(
 );
 rearged('b', 'c', 'a'); // ['a', 'b', 'c']
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -787,7 +778,6 @@ const spreadOver = fn => argsArr => fn(...argsArr);
 const arrayMax = spreadOver(Math.max);
 arrayMax([1, 2, 3]); // 3
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -808,15 +798,14 @@ const unary = fn => val => fn(val);
 ```js
 ['6', '8', '10'].map(unary(parseInt)); // [6, 8, 10]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
 
-
 ---
 
 ## 📚 Array
+
 
 ### all
 
@@ -836,7 +825,6 @@ const all = (arr, fn = Boolean) => arr.every(fn);
 all([4, 2, 3], x => x > 1); // true
 all([1, 2, 3]); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -859,7 +847,6 @@ const allEqual = arr => arr.every(val => val === arr[0]);
 allEqual([1, 2, 3, 4, 5, 6]); // false
 allEqual([1, 1, 1, 1]); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -882,7 +869,6 @@ const any = (arr, fn = Boolean) => arr.some(fn);
 any([0, 1, 2, 0], x => x >= 2); // true
 any([0, 0, 1, 0]); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -910,7 +896,6 @@ arrayToCSV([['a', 'b'], ['c', 'd']]); // '"a","b"\n"c","d"'
 arrayToCSV([['a', 'b'], ['c', 'd']], ';'); // '"a";"b"\n"c";"d"'
 arrayToCSV([['a', '"b" great'], ['c', 3.1415]]); // '"a","""b"" great"\n"c",3.1415'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -932,7 +917,6 @@ const bifurcate = (arr, filter) =>
 ```js
 bifurcate(['beep', 'boop', 'foo', 'bar'], [true, true, false, true]); // [ ['beep', 'boop', 'bar'], ['foo'] ]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -954,7 +938,6 @@ const bifurcateBy = (arr, fn) =>
 ```js
 bifurcateBy(['beep', 'boop', 'foo', 'bar'], x => x[0] === 'b'); // [ ['beep', 'boop', 'bar'], ['foo'] ]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -980,7 +963,6 @@ const chunk = (arr, size) =>
 ```js
 chunk([1, 2, 3, 4, 5], 2); // [[1,2],[3,4],[5]]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1001,7 +983,6 @@ const compact = arr => arr.filter(Boolean);
 ```js
 compact([0, 1, false, 2, '', 3, 'a', 'e' * 23, NaN, 's', 34]); // [ 1, 2, 3, 'a', 's', 34 ]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1028,7 +1009,6 @@ const countBy = (arr, fn) =>
 countBy([6.1, 4.2, 6.3], Math.floor); // {4: 1, 6: 2}
 countBy(['one', 'two', 'three'], 'length'); // {3: 2, 5: 1}
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1049,7 +1029,6 @@ const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 :
 ```js
 countOccurrences([1, 1, 2, 1, 2, 3], 1); // 3
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1072,7 +1051,6 @@ const deepFlatten = arr => [].concat(...arr.map(v => (Array.isArray(v) ? deepFla
 ```js
 deepFlatten([1, [2], [[3], 4], 5]); // [1,2,3,4,5]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1096,7 +1074,6 @@ const difference = (a, b) => {
 ```js
 difference([1, 2, 3], [1, 2, 4]); // [3]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1121,7 +1098,6 @@ const differenceBy = (a, b, fn) => {
 differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [1]
 differenceBy([{ x: 2 }, { x: 1 }], [{ x: 1 }], v => v.x); // [2]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1142,7 +1118,6 @@ const differenceWith = (arr, val, comp) => arr.filter(a => val.findIndex(b => co
 ```js
 differenceWith([1, 1.2, 1.5, 3, 0], [1.9, 3, 0], (a, b) => Math.round(a) === Math.round(b)); // [1, 1.2]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1165,7 +1140,6 @@ drop([1, 2, 3]); // [2,3]
 drop([1, 2, 3], 2); // [3]
 drop([1, 2, 3], 42); // []
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1188,7 +1162,6 @@ dropRight([1, 2, 3]); // [1,2]
 dropRight([1, 2, 3], 2); // [1]
 dropRight([1, 2, 3], 42); // []
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1214,7 +1187,6 @@ const dropRightWhile = (arr, func) => {
 ```js
 dropRightWhile([1, 2, 3, 4], n => n < 3); // [1, 2]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1239,7 +1211,6 @@ const dropWhile = (arr, func) => {
 ```js
 dropWhile([1, 2, 3, 4], n => n >= 3); // [3,4]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1260,7 +1231,6 @@ const everyNth = (arr, nth) => arr.filter((e, i) => i % nth === nth - 1);
 ```js
 everyNth([1, 2, 3, 4, 5, 6], 2); // [ 2, 4, 6 ]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1281,7 +1251,6 @@ const filterFalsy = arr => arr.filter(Boolean);
 ```js
 filterFalsy(['', true, {}, false, 'sample', 1, 0]); // [true, {}, 'sample', 1]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1302,7 +1271,6 @@ const filterNonUnique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexO
 ```js
 filterNonUnique([1, 2, 2, 3, 4, 4, 5]); // [1, 3, 5]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1334,7 +1302,6 @@ filterNonUniqueBy(
   (a, b) => a.id == b.id
 ); // [ { id: 2, value: 'c' } ]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1355,7 +1322,6 @@ const findLast = (arr, fn) => arr.filter(fn).pop();
 ```js
 findLast([1, 2, 3, 4], n => n % 2 === 1); // 3
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1383,7 +1349,6 @@ const findLastIndex = (arr, fn) =>
 findLastIndex([1, 2, 3, 4], n => n % 2 === 1); // 2 (index of the value 3)
 findLastIndex([1, 2, 3, 4], n => n === 5); // -1 (default value when not found)
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1409,7 +1374,6 @@ const flatten = (arr, depth = 1) =>
 flatten([1, [2], 3, 4]); // [1, 2, 3, 4]
 flatten([1, [2, [3, [4, 5], 6], 7], 8], 2); // [1, 2, 3, [4, 5], 6, 7, 8]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1434,7 +1398,6 @@ const forEachRight = (arr, callback) =>
 ```js
 forEachRight([1, 2, 3, 4], val => console.log(val)); // '4', '3', '2', '1'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1461,7 +1424,6 @@ const groupBy = (arr, fn) =>
 groupBy([6.1, 4.2, 6.3], Math.floor); // {4: [4.2], 6: [6.1, 6.3]}
 groupBy(['one', 'two', 'three'], 'length'); // {3: ['one', 'two'], 5: ['three']}
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1482,7 +1444,6 @@ const head = arr => arr[0];
 ```js
 head([1, 2, 3]); // 1
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1506,7 +1467,6 @@ const indexOfAll = (arr, val) => arr.reduce((acc, el, i) => (el === val ? [...ac
 indexOfAll([1, 2, 3, 1, 2, 3], 1); // [0,3]
 indexOfAll([1, 2, 3], 4); // []
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1527,7 +1487,6 @@ const initial = arr => arr.slice(0, -1);
 ```js
 initial([1, 2, 3]); // [1,2]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1549,7 +1508,6 @@ const initialize2DArray = (w, h, val = null) =>
 ```js
 initialize2DArray(2, 2, 0); // [[0,0], [0,0]]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1575,7 +1533,6 @@ initializeArrayWithRange(5); // [0,1,2,3,4,5]
 initializeArrayWithRange(7, 3); // [3,4,5,6,7]
 initializeArrayWithRange(9, 0, 2); // [0,2,4,6,8]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1603,7 +1560,6 @@ initializeArrayWithRangeRight(5); // [5,4,3,2,1,0]
 initializeArrayWithRangeRight(7, 3); // [7,6,5,4,3]
 initializeArrayWithRangeRight(9, 0, 2); // [8,6,4,2,0]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1625,7 +1581,6 @@ const initializeArrayWithValues = (n, val = 0) => Array(n).fill(val);
 ```js
 initializeArrayWithValues(5, 2); // [2, 2, 2, 2, 2]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1651,7 +1606,6 @@ const initializeNDArray = (val, ...args) =>
 initializeNDArray(1, 3); // [1,1,1]
 initializeNDArray(5, 2, 2, 2); // [[[5,5],[5,5]],[[5,5],[5,5]]]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1675,7 +1629,6 @@ const intersection = (a, b) => {
 ```js
 intersection([1, 2, 3], [4, 3, 2]); // [2, 3]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1699,7 +1652,6 @@ const intersectionBy = (a, b, fn) => {
 ```js
 intersectionBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [2.1]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1720,7 +1672,6 @@ const intersectionWith = (a, b, comp) => a.filter(x => b.findIndex(y => comp(x, 
 ```js
 intersectionWith([1, 1.2, 1.5, 3, 0], [1.9, 3, 0, 3.9], (a, b) => Math.round(a) === Math.round(b)); // [1.5, 3, 0]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1752,7 +1703,6 @@ isSorted([0, 1, 2, 2]); // 1
 isSorted([4, 3, 2]); // -1
 isSorted([4, 3, 5]); // 0
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1787,7 +1737,6 @@ join(['pen', 'pineapple', 'apple', 'pen'], ',', '&'); // "pen,pineapple,apple&pe
 join(['pen', 'pineapple', 'apple', 'pen'], ','); // "pen,pineapple,apple,pen"
 join(['pen', 'pineapple', 'apple', 'pen']); // "pen,pineapple,apple,pen"
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1821,7 +1770,6 @@ const JSONtoCSV = (arr, columns, delimiter = ',') =>
 JSONtoCSV([{ a: 1, b: 2 }, { a: 3, b: 4, c: 5 }, { a: 6 }, { b: 7 }], ['a', 'b']); // 'a,b\n"1","2"\n"3","4"\n"6",""\n"","7"'
 JSONtoCSV([{ a: 1, b: 2 }, { a: 3, b: 4, c: 5 }, { a: 6 }, { b: 7 }], ['a', 'b'], ';'); // 'a;b\n"1";"2"\n"3";"4"\n"6";""\n"";"7"'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1842,7 +1790,6 @@ const last = arr => arr[arr.length - 1];
 ```js
 last([1, 2, 3]); // 3
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1869,7 +1816,6 @@ longestItem(...['a', 'ab', 'abc'], 'abcd'); // 'abcd'
 longestItem([1, 2, 3], [1, 2], [1, 2, 3, 4, 5]); // [1, 2, 3, 4, 5]
 longestItem([1, 2, 3], 'foobar'); // 'foobar'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1894,7 +1840,6 @@ const mapObject = (arr, fn) =>
 const squareIt = arr => mapObject(arr, a => a * a);
 squareIt([1, 2, 3]); // { 1: 1, 2: 4, 3: 9 }
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1919,7 +1864,6 @@ const maxN = (arr, n = 1) => [...arr].sort((a, b) => b - a).slice(0, n);
 maxN([1, 2, 3]); // [3]
 maxN([1, 2, 3], 2); // [3,2]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1944,7 +1888,6 @@ const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
 minN([1, 2, 3]); // [1]
 minN([1, 2, 3], 2); // [1,2]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1967,7 +1910,6 @@ const none = (arr, fn = Boolean) => !arr.some(fn);
 none([0, 1, 3, 0], x => x == 2); // true
 none([0, 0, 0]); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -1991,7 +1933,6 @@ const nthElement = (arr, n = 0) => (n === -1 ? arr.slice(n) : arr.slice(n, n + 1
 nthElement(['a', 'b', 'c'], 1); // 'b'
 nthElement(['a', 'b', 'b'], -3); // 'a'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2015,7 +1956,6 @@ const offset = (arr, offset) => [...arr.slice(offset), ...arr.slice(0, offset)];
 offset([1, 2, 3, 4, 5], 2); // [3, 4, 5, 1, 2]
 offset([1, 2, 3, 4, 5], -2); // [4, 5, 1, 2, 3]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2045,7 +1985,6 @@ const partition = (arr, fn) =>
 const users = [{ user: 'barney', age: 36, active: false }, { user: 'fred', age: 40, active: true }];
 partition(users, o => o.active); // [[{ 'user': 'fred',    'age': 40, 'active': true }],[{ 'user': 'barney',  'age': 36, 'active': false }]]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2080,7 +2019,6 @@ const permutations = arr => {
 ```js
 permutations([1, 33, 5]); // [ [ 1, 33, 5 ], [ 1, 5, 33 ], [ 33, 1, 5 ], [ 33, 5, 1 ], [ 5, 1, 33 ], [ 5, 33, 1 ] ]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2110,7 +2048,6 @@ const pull = (arr, ...args) => {
 let myArray = ['a', 'b', 'c', 'a', 'b', 'c'];
 pull(myArray, 'a', 'c'); // myArray = [ 'b', 'b' ]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2142,7 +2079,6 @@ const pullAtIndex = (arr, pullArr) => {
 let myArray = ['a', 'b', 'c', 'd'];
 let pulled = pullAtIndex(myArray, [1, 3]); // myArray = [ 'a', 'c' ] , pulled = [ 'b', 'd' ]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2173,7 +2109,6 @@ const pullAtValue = (arr, pullArr) => {
 let myArray = ['a', 'b', 'c', 'd'];
 let pulled = pullAtValue(myArray, ['b', 'd']); // myArray = [ 'a', 'c' ] , pulled = [ 'b', 'd' ]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2206,7 +2141,6 @@ const pullBy = (arr, ...args) => {
 var myArray = [{ x: 1 }, { x: 2 }, { x: 3 }, { x: 1 }];
 pullBy(myArray, [{ x: 1 }, { x: 3 }], o => o.x); // myArray = [{ x: 2 }]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2247,7 +2181,6 @@ const data = [
 
 reducedFilter(data, ['id', 'name'], item => item.age > 24); // [{ id: 2, name: 'mike'}]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2269,7 +2202,6 @@ const reduceSuccessive = (arr, fn, acc) =>
 ```js
 reduceSuccessive([1, 2, 3, 4, 5, 6], (acc, val) => acc + val, 0); // [0, 1, 3, 6, 10, 15, 21]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2297,7 +2229,6 @@ reduceWhich(
   (a, b) => a.age - b.age
 ); // {name: "Lucy", age: 9}
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2317,7 +2248,6 @@ const reject = (pred, array) => array.filter((...args) => !pred(...args));
 reject(x => x % 2 === 0, [1, 2, 3, 4, 5]); // [1, 3, 5]
 reject(word => word.length > 4, ['Apple', 'Pear', 'Kiwi', 'Banana']); // ['Pear', 'Kiwi']
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2345,7 +2275,6 @@ const remove = (arr, func) =>
 ```js
 remove([1, 2, 3, 4], n => n % 2 === 0); // [2, 4]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2367,7 +2296,6 @@ const sample = arr => arr[Math.floor(Math.random() * arr.length)];
 ```js
 sample([3, 7, 9, 11]); // 9
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2398,7 +2326,6 @@ const sampleSize = ([...arr], n = 1) => {
 sampleSize([1, 2, 3], 2); // [3,1]
 sampleSize([1, 2, 3], 4); // [2,3,1]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2429,7 +2356,6 @@ const namesAndDelta = shank(names, 1, 0, 'delta'); // [ 'alpha', 'delta', 'bravo
 const namesNoBravo = shank(names, 1, 1); // [ 'alpha', 'charlie' ]
 console.log(names); // ['alpha', 'bravo', 'charlie']
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2458,7 +2384,6 @@ const shuffle = ([...arr]) => {
 const foo = [1, 2, 3];
 shuffle(foo); // [2, 3, 1], foo = [1, 2, 3]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2479,7 +2404,6 @@ const similarity = (arr, values) => arr.filter(v => values.includes(v));
 ```js
 similarity([1, 2, 3], [1, 2, 4]); // [1, 2]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2506,7 +2430,6 @@ const sortedIndex = (arr, n) => {
 sortedIndex([5, 3, 2, 1], 4); // 1
 sortedIndex([30, 50], 40); // 1
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2533,7 +2456,6 @@ const sortedIndexBy = (arr, n, fn) => {
 ```js
 sortedIndexBy([{ x: 4 }, { x: 5 }], { x: 4 }, o => o.x); // 0
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2559,7 +2481,6 @@ const sortedLastIndex = (arr, n) => {
 ```js
 sortedLastIndex([10, 20, 30, 30, 40], 30); // 4
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2590,7 +2511,6 @@ const sortedLastIndexBy = (arr, n, fn) => {
 ```js
 sortedLastIndexBy([{ x: 4 }, { x: 5 }], { x: 4 }, o => o.x); // 1
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2619,7 +2539,6 @@ const stableSort = (arr, compare) =>
 const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const stable = stableSort(arr, () => 0); // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2645,7 +2564,6 @@ const symmetricDifference = (a, b) => {
 symmetricDifference([1, 2, 3], [1, 2, 4]); // [3, 4]
 symmetricDifference([1, 2, 2], [1, 3, 1]); // [2, 2, 3]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2670,7 +2588,6 @@ const symmetricDifferenceBy = (a, b, fn) => {
 ```js
 symmetricDifferenceBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [ 1.2, 3.4 ]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2698,7 +2615,6 @@ symmetricDifferenceWith(
   (a, b) => Math.round(a) === Math.round(b)
 ); // [1, 1.2, 3.9]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2720,7 +2636,6 @@ const tail = arr => (arr.length > 1 ? arr.slice(1) : arr);
 tail([1, 2, 3]); // [2,3]
 tail([1]); // [1]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2742,7 +2657,6 @@ const take = (arr, n = 1) => arr.slice(0, n);
 take([1, 2, 3], 5); // [1, 2, 3]
 take([1, 2, 3], 0); // []
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2764,7 +2678,6 @@ const takeRight = (arr, n = 1) => arr.slice(arr.length - n, arr.length);
 takeRight([1, 2, 3], 2); // [ 2, 3 ]
 takeRight([1, 2, 3]); // [3]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2786,7 +2699,6 @@ const takeRightWhile = (arr, func) =>
 ```js
 takeRightWhile([1, 2, 3, 4], n => n < 3); // [3, 4]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2811,7 +2723,6 @@ const takeWhile = (arr, func) => {
 ```js
 takeWhile([1, 2, 3, 4], n => n >= 3); // [1, 2]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2849,7 +2760,6 @@ managers.forEach(
 );
 managers; // [ { manager:1, employees: [ { id: 2, first: "Joe" }, { id: 3, first: "Moe" } ] } ]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2870,7 +2780,6 @@ const union = (a, b) => Array.from(new Set([...a, ...b]));
 ```js
 union([1, 2, 3], [4, 3, 2]); // [1,2,3,4]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2896,7 +2805,6 @@ const unionBy = (a, b, fn) => {
 ```js
 unionBy([2.1], [1.2, 2.3], Math.floor); // [2.1, 1.2]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2918,7 +2826,6 @@ const unionWith = (a, b, comp) =>
 ```js
 unionWith([1, 1.2, 1.5, 3, 0], [1.9, 3, 0, 3.9], (a, b) => Math.round(a) === Math.round(b)); // [1, 1.2, 1.5, 3, 0, 3.9]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2939,7 +2846,6 @@ const uniqueElements = arr => [...new Set(arr)];
 ```js
 uniqueElements([1, 2, 2, 3, 4, 4, 5]); // [1, 2, 3, 4, 5]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -2974,7 +2880,6 @@ uniqueElementsBy(
   (a, b) => a.id == b.id
 ); // [ { id: 0, value: 'a' }, { id: 1, value: 'b' }, { id: 2, value: 'c' } ]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3009,7 +2914,6 @@ uniqueElementsByRight(
   (a, b) => a.id == b.id
 ); // [ { id: 0, value: 'e' }, { id: 1, value: 'd' }, { id: 2, value: 'c' } ]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3033,7 +2937,6 @@ const uniqueSymmetricDifference = (a, b) => [
 uniqueSymmetricDifference([1, 2, 3], [1, 2, 4]); // [3, 4]
 uniqueSymmetricDifference([1, 2, 2], [1, 3, 1]); // [2, 3]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3062,7 +2965,6 @@ const unzip = arr =>
 unzip([['a', 1, true], ['b', 2, false]]); // [['a', 'b'], [1, 2], [true, false]]
 unzip([['a', 1, true], ['b', 2]]); // [['a', 'b'], [1, 2], [true]]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3093,7 +2995,6 @@ const unzipWith = (arr, fn) =>
 ```js
 unzipWith([[1, 10, 100], [2, 20, 200]], (...args) => args.reduce((acc, v) => acc + v, 0)); // [3, 30, 300]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3116,7 +3017,6 @@ const without = (arr, ...args) => arr.filter(v => !args.includes(v));
 ```js
 without([2, 1, 2, 3], 1, 2); // [3]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3137,7 +3037,6 @@ const xProd = (a, b) => a.reduce((acc, x) => acc.concat(b.map(y => [x, y])), [])
 ```js
 xProd([1, 2], ['a', 'b']); // [[1, 'a'], [1, 'b'], [2, 'a'], [2, 'b']]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3166,7 +3065,6 @@ const zip = (...arrays) => {
 zip(['a', 'b'], [1, 2], [true, false]); // [['a', 1, true], ['b', 2, false]]
 zip(['a'], [1, 2], [true, false]); // [['a', 1, true], [undefined, 2, false]]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3189,7 +3087,6 @@ const zipObject = (props, values) =>
 zipObject(['a', 'b', 'c'], [1, 2]); // {a: 1, b: 2, c: undefined}
 zipObject(['a', 'b'], [1, 2, 3]); // {a: 1, b: 2}
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3226,15 +3123,14 @@ zipWith(
   (a, b, c) => (a != null ? a : 'a') + (b != null ? b : 'b') + (c != null ? c : 'c')
 ); // [111, 222, '3bc']
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
 
-
 ---
 
 ## 🌐 Browser
+
 
 ### arrayToHtmlList
 
@@ -3256,7 +3152,6 @@ const arrayToHtmlList = (arr, listID) =>
 ```js
 arrayToHtmlList(['item 1', 'item 2'], 'myListID');
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3279,7 +3174,6 @@ const bottomVisible = () =>
 ```js
 bottomVisible(); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3323,7 +3217,6 @@ const copyToClipboard = str => {
 ```js
 copyToClipboard('Lorem ipsum'); // 'Lorem ipsum' copied to clipboard.
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3358,7 +3251,6 @@ const counter = (selector, start, end, step = 1, duration = 2000) => {
 ```js
 counter('#my-id', 1, 1000, 5, 2000); // Creates a 2-second timer for the element with id="my-id"
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3391,7 +3283,6 @@ const el = createElement(
 );
 console.log(el.className); // 'container'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3445,7 +3336,6 @@ hub.emit('increment'); // `increment` variable is now 1
 // Unsubscribe: stop a specific handler from listening to the 'message' event
 hub.off('message', handler);
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3466,7 +3356,6 @@ const currentURL = () => window.location.href;
 ```js
 currentURL(); // 'https://google.com'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3490,7 +3379,6 @@ const detectDeviceType = () =>
 ```js
 detectDeviceType(); // "Mobile" or "Desktop"
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3512,7 +3400,6 @@ const elementContains = (parent, child) => parent !== child && parent.contains(c
 elementContains(document.querySelector('head'), document.querySelector('title')); // true
 elementContains(document.querySelector('body'), document.querySelector('body')); // false
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3545,7 +3432,6 @@ const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
 elementIsVisibleInViewport(el); // false - (not fully visible)
 elementIsVisibleInViewport(el, true); // true - (partially visible)
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3574,7 +3460,6 @@ const formToObject = form =>
 ```js
 formToObject(document.querySelector('#form')); // { email: 'test@email.com', name: 'Test Name' }
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3599,7 +3484,6 @@ const getImages = (el, includeDuplicates = false) => {
 getImages(document, true); // ['image1.jpg', 'image2.png', 'image1.png', '...']
 getImages(document, false); // ['image1.jpg', 'image2.png', '...']
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3624,7 +3508,6 @@ const getScrollPosition = (el = window) => ({
 ```js
 getScrollPosition(); // {x: 0, y: 200}
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3645,7 +3528,6 @@ const getStyle = (el, ruleName) => getComputedStyle(el)[ruleName];
 ```js
 getStyle(document.querySelector('p'), 'font-size'); // '16px'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3666,7 +3548,6 @@ const hasClass = (el, className) => el.classList.contains(className);
 ```js
 hasClass(document.querySelector('p.special'), 'special'); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3694,7 +3575,6 @@ const hashBrowser = val =>
 ```js
 hashBrowser(JSON.stringify({ a: 'a', b: [1, 2, 3, 4], foo: { c: 'bar' } })).then(console.log); // '04aa106279f5977f59f9067fa9712afc4aedc6f5862a8defc34552d8c7206393'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3715,7 +3595,6 @@ const hide = (...el) => [...el].forEach(e => (e.style.display = 'none'));
 ```js
 hide(document.querySelectorAll('img')); // Hides all <img> elements on the page
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3738,7 +3617,6 @@ const httpsRedirect = () => {
 ```js
 httpsRedirect(); // If you are on http://mydomain.com, you are redirected to https://mydomain.com
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3759,7 +3637,6 @@ const insertAfter = (el, htmlString) => el.insertAdjacentHTML('afterend', htmlSt
 ```js
 insertAfter(document.getElementById('myId'), '<p>after</p>'); // <div id="myId">...</div> <p>after</p>
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3780,7 +3657,6 @@ const insertBefore = (el, htmlString) => el.insertAdjacentHTML('beforebegin', ht
 ```js
 insertBefore(document.getElementById('myId'), '<p>before</p>'); // <p>before</p> <div id="myId">...</div>
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3801,7 +3677,6 @@ const isBrowserTabFocused = () => !document.hidden;
 ```js
 isBrowserTabFocused(); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3822,7 +3697,6 @@ const nodeListToArray = nodeList => [...nodeList];
 ```js
 nodeListToArray(document.childNodes); // [ <!DOCTYPE html>, html ]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3863,7 +3737,6 @@ const observeMutations = (element, callback, options) => {
 const obs = observeMutations(document, console.log); // Logs all mutations that happen on the page
 obs.disconnect(); // Disconnects the observer and stops logging mutations on the page
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3887,7 +3760,6 @@ const fn = () => console.log('!');
 document.body.addEventListener('click', fn);
 off(document.body, 'click', fn); // no longer logs '!' upon clicking on the page
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3917,7 +3789,6 @@ on(document.body, 'click', fn); // logs '!' upon clicking the body
 on(document.body, 'click', fn, { target: 'p' }); // logs '!' upon clicking a `p` element child of the body
 on(document.body, 'click', fn, { options: true }); // use capturing instead of bubbling
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3955,7 +3826,6 @@ onUserInputChange(type => {
   console.log('The user is now using', type, 'as an input method.');
 });
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -3984,7 +3854,6 @@ const prefix = prop => {
 ```js
 prefix('appearance'); // 'appearance' on a supported browser, otherwise 'webkitAppearance', 'mozAppearance', 'msAppearance' or 'oAppearance'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4031,7 +3900,6 @@ recorder.stop(); // stops logging
 recorder.start(); // starts again
 const recorder2 = recordAnimationFrames(cb, false); // `start` needs to be explicitly called to begin recording frames
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4054,7 +3922,6 @@ const redirect = (url, asLink = true) =>
 ```js
 redirect('https://google.com');
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4106,7 +3973,6 @@ runAsync(() => 10 ** 3).then(console.log); // 1000
 let outsideVariable = 50;
 runAsync(() => typeof outsideVariable).then(console.log); // 'undefined'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4134,7 +4000,6 @@ const scrollToTop = () => {
 ```js
 scrollToTop();
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4158,7 +4023,6 @@ const serializeForm = form =>
 ```js
 serializeForm(document.querySelector('#form')); // email=test%40email.com&name=Test%20Name
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4179,7 +4043,6 @@ const setStyle = (el, ruleName, val) => (el.style[ruleName] = val);
 ```js
 setStyle(document.querySelector('p'), 'font-size', '20px'); // The first <p> element on the page will have a font-size of 20px
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4200,7 +4063,6 @@ const show = (...el) => [...el].forEach(e => (e.style.display = ''));
 ```js
 show(...document.querySelectorAll('img')); // Shows all <img> elements on the page
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4226,7 +4088,6 @@ const smoothScroll = element =>
 smoothScroll('#fooBar'); // scrolls smoothly to the element with the id fooBar
 smoothScroll('.fooBar'); // scrolls smoothly to the first element with a class of fooBar
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4247,7 +4108,6 @@ const toggleClass = (el, className) => el.classList.toggle(className);
 ```js
 toggleClass(document.querySelector('p.special'), 'special'); // The paragraph will not have the 'special' class anymore
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4272,7 +4132,6 @@ const triggerEvent = (el, eventType, detail) =>
 triggerEvent(document.getElementById('myId'), 'click');
 triggerEvent(document.getElementById('myId'), 'click', { username: 'bob' });
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4296,15 +4155,14 @@ const UUIDGeneratorBrowser = () =>
 ```js
 UUIDGeneratorBrowser(); // '7982fcfe-5721-4632-bede-6000885be57d'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
 
-
 ---
 
 ## ⏱️ Date
+
 
 ### dayOfYear
 
@@ -4324,7 +4182,6 @@ const dayOfYear = date =>
 ```js
 dayOfYear(new Date()); // 272
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4362,7 +4219,6 @@ const formatDuration = ms => {
 formatDuration(1001); // '1 second, 1 millisecond'
 formatDuration(34325055574); // '397 days, 6 hours, 44 minutes, 15 seconds, 574 milliseconds'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4383,7 +4239,6 @@ const getColonTimeFromDate = date => date.toTimeString().slice(0, 8);
 ```js
 getColonTimeFromDate(new Date()); // "08:38:00"
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4405,7 +4260,6 @@ const getDaysDiffBetweenDates = (dateInitial, dateFinal) =>
 ```js
 getDaysDiffBetweenDates(new Date('2017-12-13'), new Date('2017-12-22')); // 9
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4436,7 +4290,6 @@ getMeridiemSuffixOfInteger(11); // "11am"
 getMeridiemSuffixOfInteger(13); // "1pm"
 getMeridiemSuffixOfInteger(25); // "1pm"
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4457,7 +4310,6 @@ const isAfterDate = (dateA, dateB) => dateA > dateB;
 ```js
 isAfterDate(new Date(2010, 10, 21), new Date(2010, 10, 20)); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4478,7 +4330,6 @@ const isBeforeDate = (dateA, dateB) => dateA < dateB;
 ```js
 isBeforeDate(new Date(2010, 10, 20), new Date(2010, 10, 21)); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4499,7 +4350,6 @@ const isSameDate = (dateA, dateB) => dateA.toISOString() === dateB.toISOString()
 ```js
 isSameDate(new Date(2010, 10, 20), new Date(2010, 10, 20)); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4523,7 +4373,6 @@ const isWeekday = (t = new Date()) => {
 ```js
 isWeekday(); // true (if current date is 2019-07-19)
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4547,7 +4396,6 @@ const isWeekend = (t = new Date()) => {
 ```js
 isWeekend(); // 2018-10-19 (if current date is 2018-10-18)
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4574,7 +4422,6 @@ const array = [
 ];
 maxDate(array); // 2018-03-11T22:00:00.000Z
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4601,7 +4448,6 @@ const array = [
 ];
 minDate(array); // 2016-01-08T22:00:00.000Z
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4627,7 +4473,6 @@ const tomorrow = () => {
 ```js
 tomorrow(); // 2018-10-19 (if current date is 2018-10-18)
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4653,15 +4498,14 @@ const yesterday = () => {
 ```js
 yesterday(); // 2018-10-17 (if current date is 2018-10-18)
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
 
-
 ---
 
 ## 🎛️ Function
+
 
 ### attempt
 
@@ -4688,7 +4532,6 @@ var elements = attempt(function(selector) {
 }, '>_>');
 if (elements instanceof Error) elements = []; // elements = []
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4715,7 +4558,6 @@ const freddy = { user: 'fred' };
 const freddyBound = bind(greet, freddy);
 console.log(freddyBound('hi', '!')); // 'hi fred!'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4745,7 +4587,6 @@ const freddy = {
 const freddyBound = bindKey(freddy, 'greet');
 console.log(freddyBound('hi', '!')); // 'hi fred!'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4786,7 +4627,6 @@ chainAsync([
   }
 ]);
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4805,22 +4645,6 @@ const checkProp = (predicate, prop) => obj => !!predicate(obj[prop]);
 <summary>Examples</summary>
 
 ```js
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const lengthIs4 = checkProp(l => l === 4, 'length');
 lengthIs4([]); // false
 lengthIs4([1,2,3,4]); // true
@@ -4839,7 +4663,6 @@ noLength([]); // false
 noLength({}); // true
 noLength(new Set()); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4867,7 +4690,6 @@ const multiplyAndAdd5 = compose(
 );
 multiplyAndAdd5(5, 2); // 15
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4892,7 +4714,6 @@ const square = x => x * x;
 const addAndSquare = composeRight(add, square);
 addAndSquare(1, 2); // 9
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4918,7 +4739,6 @@ const average = converge((a, b) => a / b, [
 ]);
 average([1, 2, 3, 4, 5, 6, 7]); // 4
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4944,7 +4764,6 @@ const curry = (fn, arity = fn.length, ...args) =>
 curry(Math.pow)(2)(10); // 1024
 curry(Math.min, 3)(10)(50)(2); // 2
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -4978,7 +4797,6 @@ window.addEventListener(
   }, 250)
 ); // Will log the window dimensions at most every 250ms
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5005,7 +4823,6 @@ document.querySelector('#someElement').innerHTML = 'Hello';
 longRunningFunction(); // Browser will not update the HTML until this has finished
 defer(longRunningFunction); // Browser will update the HTML then run the function
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5033,7 +4850,6 @@ delay(
   'later'
 ); // Logs 'later' after one second.
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5054,7 +4870,6 @@ const functionName = fn => (console.debug(fn.name), fn);
 ```js
 functionName(Math.max); // max (logged in debug channel of console)
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5097,7 +4912,6 @@ const sumForLoop = () => {
 Math.round(hz(sumReduce)); // 572
 Math.round(hz(sumForLoop)); // 4784
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5131,7 +4945,6 @@ anagramsCached('javascript'); // takes a long time
 anagramsCached('javascript'); // returns virtually instantly since it's now cached
 console.log(anagramsCached.cache); // The cached anagrams map
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5152,7 +4965,6 @@ const negate = func => (...args) => !func(...args);
 ```js
 [1, 2, 3, 4, 5, 6].filter(negate(n => n % 2 === 0)); // [ 1, 3, 5 ]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5184,7 +4996,6 @@ const startApp = function(event) {
 };
 document.body.addEventListener('click', once(startApp)); // only runs `startApp` once upon click
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5207,7 +5018,6 @@ const greet = (greeting, name) => greeting + ' ' + name + '!';
 const greetHello = partial(greet, 'Hello');
 greetHello('John'); // 'Hello John!'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5230,7 +5040,6 @@ const greet = (greeting, name) => greeting + ' ' + name + '!';
 const greetJohn = partialRight(greet, 'John');
 greetJohn('Hello'); // 'Hello John!'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5252,7 +5061,6 @@ const runPromisesInSeries = ps => ps.reduce((p, next) => p.then(next), Promise.r
 const delay = d => new Promise(r => setTimeout(r, d));
 runPromisesInSeries([() => delay(1000), () => delay(2000)]); // Executes each promise sequentially, taking a total of 3 seconds to complete
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5277,7 +5085,6 @@ async function sleepyWork() {
   console.log('I woke up after 1 second.');
 }
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5326,7 +5133,6 @@ window.addEventListener(
   }, 250)
 ); // Will log the window dimensions at most every 250ms
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5353,7 +5159,6 @@ var output = '';
 times(5, i => (output += i));
 console.log(output); // 01234
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5384,7 +5189,6 @@ const add = x => y => z => x + y + z;
 const uncurriedAdd = uncurry(add, 3);
 uncurriedAdd(1, 2, 3); // 6
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5412,7 +5216,6 @@ const unfold = (fn, seed) => {
 var f = n => (n > 50 ? false : [-n, n + 10]);
 unfold(f, 10); // [-10, -20, -30, -40, -50]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5435,15 +5238,14 @@ const doubleEvenNumbers = when(x => x % 2 === 0, x => x * 2);
 doubleEvenNumbers(2); // 4
 doubleEvenNumbers(1); // 1
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
 
-
 ---
 
 ## ➗ Math
+
 
 ### approximatelyEqual
 
@@ -5462,7 +5264,6 @@ const approximatelyEqual = (v1, v2, epsilon = 0.001) => Math.abs(v1 - v2) < epsi
 ```js
 approximatelyEqual(Math.PI / 2.0, 1.5708); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5484,7 +5285,6 @@ const average = (...nums) => nums.reduce((acc, val) => acc + val, 0) / nums.leng
 average(...[1, 2, 3]); // 2
 average(1, 2, 3); // 2
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5508,7 +5308,6 @@ const averageBy = (arr, fn) =>
 averageBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n); // 5
 averageBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n'); // 5
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5542,7 +5341,6 @@ const binomialCoefficient = (n, k) => {
 ```js
 binomialCoefficient(8, 2); // 28
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5565,7 +5363,6 @@ const clampNumber = (num, a, b) => Math.max(Math.min(num, Math.max(a, b)), Math.
 clampNumber(2, 3, 5); // 3
 clampNumber(1, -1, -5); // -1
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5586,7 +5383,6 @@ const degreesToRads = deg => (deg * Math.PI) / 180.0;
 ```js
 degreesToRads(90.0); // ~1.5708
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5608,7 +5404,6 @@ const digitize = n => [...`${n}`].map(i => parseInt(i));
 ```js
 digitize(123); // [1, 2, 3]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5629,7 +5424,6 @@ const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
 ```js
 distance(1, 1, 2, 3); // 2.23606797749979
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5679,7 +5473,6 @@ average rating of opposing team, with the score being added to their
 own individual rating by supplying it as the third argument.
 */
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5710,7 +5503,6 @@ const factorial = n =>
 ```js
 factorial(6); // 720
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5736,7 +5528,6 @@ const fibonacci = n =>
 ```js
 fibonacci(6); // [0, 1, 1, 2, 3, 5]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5763,7 +5554,6 @@ const gcd = (...arr) => {
 gcd(8, 36); // 4
 gcd(...[12, 8, 32]); // 4
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5792,7 +5582,6 @@ geometricProgression(256); // [1, 2, 4, 8, 16, 32, 64, 128, 256]
 geometricProgression(256, 3); // [3, 6, 12, 24, 48, 96, 192]
 geometricProgression(256, 1, 4); // [1, 4, 16, 64, 256]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5814,7 +5603,6 @@ const hammingDistance = (num1, num2) => ((num1 ^ num2).toString(2).match(/1/g) |
 ```js
 hammingDistance(2, 3); // 1
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5842,7 +5630,6 @@ inRange(3, 4); // true
 inRange(2, 3, 5); // false
 inRange(3, 2); // false
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5863,7 +5650,6 @@ const isDivisible = (dividend, divisor) => dividend % divisor === 0;
 ```js
 isDivisible(6, 3); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5885,7 +5671,6 @@ const isEven = num => num % 2 === 0;
 ```js
 isEven(3); // false
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5907,7 +5692,6 @@ const isNegativeZero = val => val === 0 && 1 / val === -Infinity;
 isNegativeZero(-0); // true
 isNegativeZero(0); // false
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5933,7 +5717,6 @@ const isPrime = num => {
 ```js
 isPrime(11); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5960,7 +5743,6 @@ const lcm = (...arr) => {
 lcm(12, 7); // 84
 lcm(...[1, 3, 4, 5]); // 60
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -5973,7 +5755,6 @@ Use `String.prototype.split('')`, `Array.prototype.reverse()` and `Array.prototy
 Use `Array.prototype.splice(0,1)` to obtain the last digit.
 Use `Array.prototype.reduce()` to implement the Luhn Algorithm.
 Return `true` if `sum` is divisible by `10`, `false` otherwise.
-
 
 ```js
 const luhnCheck = num => {
@@ -5996,7 +5777,6 @@ luhnCheck('4485275742308327'); // true
 luhnCheck(6011329933655299); //  false
 luhnCheck(123456789); // false
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6018,7 +5798,6 @@ const mapNumRange = (num, inMin, inMax, outMin, outMax) =>
 ```js
 mapNumRange(5, 0, 10, 0, 100); // 50
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6040,7 +5819,6 @@ const maxBy = (arr, fn) => Math.max(...arr.map(typeof fn === 'function' ? fn : v
 maxBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n); // 8
 maxBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n'); // 8
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6066,7 +5844,6 @@ const median = arr => {
 ```js
 median([5, 6, 50, 1, -5]); // 5
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6089,8 +5866,6 @@ midpoint([2, 2], [4, 4]); // [3, 3]
 midpoint([4, 4], [6, 6]); // [5, 5]
 midpoint([1, 3], [2, 4]); // [1.5, 3.5]
 ```
-
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6112,7 +5887,6 @@ const minBy = (arr, fn) => Math.min(...arr.map(typeof fn === 'function' ? fn : v
 minBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n); // 2
 minBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n'); // 2
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6134,7 +5908,6 @@ const percentile = (arr, val) =>
 ```js
 percentile([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 6); // 55
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6155,7 +5928,6 @@ const powerset = arr => arr.reduce((a, v) => a.concat(a.map(r => [v].concat(r)))
 ```js
 powerset([1, 2]); // [[], [1], [2], [2, 1]]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6182,7 +5954,6 @@ const primes = num => {
 ```js
 primes(10); // [2,3,5,7]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6203,7 +5974,6 @@ const radsToDegrees = rad => (rad * 180.0) / Math.PI;
 ```js
 radsToDegrees(Math.PI / 2); // 90
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6225,7 +5995,6 @@ const randomIntArrayInRange = (min, max, n = 1) =>
 ```js
 randomIntArrayInRange(12, 35, 10); // [ 34, 14, 27, 17, 30, 27, 20, 26, 21, 14 ]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6246,7 +6015,6 @@ const randomIntegerInRange = (min, max) => Math.floor(Math.random() * (max - min
 ```js
 randomIntegerInRange(0, 5); // 2
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6267,7 +6035,6 @@ const randomNumberInRange = (min, max) => Math.random() * (max - min) + min;
 ```js
 randomNumberInRange(2, 10); // 6.0211363285087005
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6289,7 +6056,6 @@ const round = (n, decimals = 0) => Number(`${Math.round(`${n}e${decimals}`)}e-${
 ```js
 round(1.005, 2); // 1.01
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6317,7 +6083,6 @@ const sdbm = str => {
 ```js
 sdbm('name'); // -3521204949
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6347,7 +6112,6 @@ const standardDeviation = (arr, usePopulation = false) => {
 standardDeviation([10, 2, 38, 23, 38, 23, 21]); // 13.284434142114991 (sample)
 standardDeviation([10, 2, 38, 23, 38, 23, 21], true); // 12.29899614287479 (population)
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6369,7 +6133,6 @@ const sum = (...arr) => [...arr].reduce((acc, val) => acc + val, 0);
 sum(1, 2, 3, 4); // 10
 sum(...[1, 2, 3, 4]); // 10
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6392,7 +6155,6 @@ const sumBy = (arr, fn) =>
 sumBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n); // 20
 sumBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n'); // 20
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6421,7 +6183,6 @@ sumPower(10); // 385
 sumPower(10, 3); // 3025
 sumPower(10, 3, 5); // 2925
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6445,7 +6206,6 @@ const toSafeInteger = num =>
 toSafeInteger('3.2'); // 3
 toSafeInteger(Infinity); // 9007199254740991
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6472,15 +6232,14 @@ const vectorDistance = (...coords) => {
 ```js
 vectorDistance(10, 0, 5, 20, 0, 10); // 11.180339887498949
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
 
-
 ---
 
 ## 📦 Node
+
 
 ### atob
 
@@ -6498,7 +6257,6 @@ const atob = str => Buffer.from(str, 'base64').toString('binary');
 ```js
 atob('Zm9vYmFy'); // 'foobar'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6519,7 +6277,6 @@ const btoa = str => Buffer.from(str, 'binary').toString('base64');
 ```js
 btoa('foobar'); // 'Zm9vYmFy'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6560,7 +6317,6 @@ console.log(colorize('foo').red); // 'foo' (red letters)
 console.log(colorize('foo', 'bar').bgBlue); // 'foo bar' (blue background)
 console.log(colorize(colorize('foo').yellow, colorize('foo').green).bgWhite); // 'foo bar' (first word in yellow letters, second word in green letters, white background for both)
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6582,7 +6338,6 @@ const createDirIfNotExists = dir => (!fs.existsSync(dir) ? fs.mkdirSync(dir) : u
 ```js
 createDirIfNotExists('test'); // creates the directory 'test', if it doesn't exist
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6608,7 +6363,6 @@ hasFlags('-s'); // true
 hasFlags('--test', 'cool=true', '-s'); // true
 hasFlags('special'); // false
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6642,7 +6396,6 @@ const hashNode = val =>
 ```js
 hashNode(JSON.stringify({ a: 'a', b: [1, 2, 3, 4], foo: { c: 'bar' } })).then(console.log); // '04aa106279f5977f59f9067fa9712afc4aedc6f5862a8defc34552d8c7206393'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6672,7 +6425,6 @@ const isDuplexStream = val =>
 const Stream = require('stream');
 isDuplexStream(new Stream.Duplex()); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6700,7 +6452,6 @@ const isReadableStream = val =>
 const fs = require('fs');
 isReadableStream(fs.createReadStream('test.txt')); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6722,7 +6473,6 @@ const isStream = val => val !== null && typeof val === 'object' && typeof val.pi
 const fs = require('fs');
 isStream(fs.createReadStream('test.txt')); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6743,7 +6493,6 @@ const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
 ```js
 isTravisCI(); // true (if code is running on Travis CI)
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6771,7 +6520,6 @@ const isWritableStream = val =>
 const fs = require('fs');
 isWritableStream(fs.createWriteStream('test.txt')); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6794,7 +6542,6 @@ const JSONToFile = (obj, filename) =>
 ```js
 JSONToFile({ test: 'is passed' }, 'testJsonFile'); // writes the object to 'testJsonFile.json'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6830,8 +6577,6 @@ contents of test.txt :
 let arr = readFileLines('test.txt');
 console.log(arr); // ['line1', 'line2', 'line3']
 ```
-
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6852,7 +6597,6 @@ const untildify = str => str.replace(/^~($|\/|\\)/, `${require('os').homedir()}$
 ```js
 untildify('~/node'); // '/Users/aUser/node'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6877,15 +6621,14 @@ const UUIDGeneratorNode = () =>
 ```js
 UUIDGeneratorNode(); // '79c7c136-60ee-40a2-beb2-856f1feabefc'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
 
-
 ---
 
 ## 🗃️ Object
+
 
 ### bindAll
 
@@ -6918,7 +6661,6 @@ var view = {
 bindAll(view, 'click');
 jQuery(element).on('click', view.click); // Logs 'clicked docs' when clicked.
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6952,7 +6694,6 @@ const deepClone = obj => {
 const a = { foo: 'bar', obj: { a: 1, b: 2 } };
 const b = deepClone(a); // a !== b, a.obj !== b.obj
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -6982,7 +6723,6 @@ const o = deepFreeze([1, [2, 3]]);
 o[0] = 3; // not allowed
 o[1][0] = 4; // not allowed as well
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7015,7 +6755,6 @@ const data = {
 deepGet(data, ['foo', 'foz', index]); // get 3
 deepGet(data, ['foo', 'bar', 'baz', 8, 'foz']); // null
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7075,7 +6814,6 @@ const upperKeysObj = deepMapKeys(obj, key => key.toUpperCase());
 }
 */
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7096,7 +6834,6 @@ const defaults = (obj, ...defs) => Object.assign({}, obj, ...defs.reverse(), obj
 ```js
 defaults({ a: 1 }, { b: 2 }, { b: 6 }, { a: 3 }); // { a: 1, b: 2 }
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7132,7 +6869,6 @@ const data = {
 dig(data, 'level3'); // 'some data'
 dig(data, 'level4'); // undefined
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7164,7 +6900,6 @@ const equals = (a, b) => {
 ```js
 equals({ a: [2, { e: 3 }], b: [4], c: 'foo' }, { a: [2, { e: 3 }], b: [4], c: 'foo' }); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7192,7 +6927,6 @@ findKey(
   o => o['active']
 ); // 'barney'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7225,7 +6959,6 @@ findLastKey(
   o => o['active']
 ); // 'pebbles'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7256,7 +6989,6 @@ const flattenObject = (obj, prefix = '') =>
 ```js
 flattenObject({ a: { b: { c: 1 } }, d: 1 }); // { 'a.b.c': 1, d: 1 }
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7277,7 +7009,6 @@ const forOwn = (obj, fn) => Object.keys(obj).forEach(key => fn(obj[key], key, ob
 ```js
 forOwn({ foo: 'bar', a: 1 }, v => console.log(v)); // 'bar', 1
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7301,7 +7032,6 @@ const forOwnRight = (obj, fn) =>
 ```js
 forOwnRight({ foo: 'bar', a: 1 }, v => console.log(v)); // 1, 'bar'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7335,7 +7065,6 @@ Foo.prototype.c = () => 3;
 functions(new Foo()); // ['a', 'b']
 functions(new Foo(), true); // ['a', 'b', 'c']
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7364,7 +7093,6 @@ const get = (from, ...selectors) =>
 const obj = { selector: { to: { val: 'val to select' } }, target: [1, 2, { a: 'test' }] };
 get(obj, 'selector.to.val', 'target[0]', 'target[2].a'); // ['val to select', 1, 'test']
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7393,7 +7121,6 @@ const invertKeyValues = (obj, fn) =>
 invertKeyValues({ a: 1, b: 2, c: 1 }); // { 1: [ 'a', 'c' ], 2: [ 'b' ] }
 invertKeyValues({ a: 1, b: 2, c: 1 }, value => 'group' + value); // { group1: [ 'a', 'c' ], group2: [ 'b' ] }
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7420,7 +7147,6 @@ const lowercaseKeys = obj =>
 const myObj = { Name: 'Adam', sUrnAME: 'Smith' };
 const myObjLower = lowercaseKeys(myObj); // {name: 'Adam', surname: 'Smith'};
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7446,7 +7172,6 @@ const mapKeys = (obj, fn) =>
 ```js
 mapKeys({ a: 1, b: 2 }, (val, key) => key + val); // { a1: 1, b2: 2 }
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7476,7 +7201,6 @@ const users = {
 };
 mapValues(users, u => u.age); // { fred: 40, pebbles: 1 }
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7499,7 +7223,6 @@ const matches = (obj, source) =>
 matches({ age: 25, hair: 'long', beard: true }, { hair: 'long', beard: true }); // true
 matches({ hair: 'long', beard: true }, { age: 25, hair: 'long', beard: true }); // false
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7532,7 +7255,6 @@ matchesWith(
   (oV, sV) => isGreeting(oV) && isGreeting(sV)
 ); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7571,7 +7293,6 @@ const other = {
 };
 merge(object, other); // { a: [ { x: 2 }, { y: 4 }, { z: 3 } ], b: [ 1, 2, 3 ], c: 'foo' }
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7607,8 +7328,6 @@ const comments = [
 ];
 const nestedComments = nest(comments); // [{ id: 1, parent_id: null, children: [...] }]
 ```
-
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7629,7 +7348,6 @@ const objectFromPairs = arr => arr.reduce((a, [key, val]) => ((a[key] = val), a)
 ```js
 objectFromPairs([['a', 1], ['b', 2]]); // {a: 1, b: 2}
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7650,7 +7368,6 @@ const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
 ```js
 objectToPairs({ a: 1, b: 2 }); // [ ['a', 1], ['b', 2] ]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7675,7 +7392,6 @@ const omit = (obj, arr) =>
 ```js
 omit({ a: 1, b: '2', c: 3 }, ['b']); // { 'a': 1, 'c': 3 }
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7700,7 +7416,6 @@ const omitBy = (obj, fn) =>
 ```js
 omitBy({ a: 1, b: '2', c: 3 }, x => typeof x === 'number'); // { b: '2' }
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7733,7 +7448,6 @@ const users = [{ name: 'fred', age: 48 }, { name: 'barney', age: 36 }, { name: '
 orderBy(users, ['name', 'age'], ['asc', 'desc']); // [{name: 'barney', age: 36}, {name: 'fred', age: 48}, {name: 'fred', age: 40}]
 orderBy(users, ['name', 'age']); // [{name: 'barney', age: 36}, {name: 'fred', age: 40}, {name: 'fred', age: 48}]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7755,7 +7469,6 @@ const pick = (obj, arr) =>
 ```js
 pick({ a: 1, b: '2', c: 3 }, ['a', 'c']); // { 'a': 1, 'c': 3 }
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7780,7 +7493,6 @@ const pickBy = (obj, fn) =>
 ```js
 pickBy({ a: 1, b: '2', c: 3 }, x => typeof x === 'number'); // { 'a': 1, 'c': 3 }
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7809,7 +7521,6 @@ const renameKeys = (keysMap, obj) =>
 const obj = { name: 'Bobo', job: 'Front-End Master', shoeSize: 100 };
 renameKeys({ name: 'firstName', job: 'passion' }, obj); // { firstName: 'Bobo', passion: 'Front-End Master', shoeSize: 100 }
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7831,7 +7542,6 @@ const shallowClone = obj => Object.assign({}, obj);
 const a = { x: true, y: 1 };
 const b = shallowClone(a); // a !== b
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7866,7 +7576,6 @@ size([1, 2, 3, 4, 5]); // 5
 size('size'); // 4
 size({ one: 1, two: 2, three: 3 }); // 3
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7894,7 +7603,6 @@ transform(
   {}
 ); // { '1': ['a', 'c'], '2': ['b'] }
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7915,7 +7623,6 @@ const truthCheckCollection = (collection, pre) => collection.every(obj => obj[pr
 ```js
 truthCheckCollection([{ user: 'Tinky-Winky', sex: 'male' }, { user: 'Dipsy', sex: 'male' }], 'sex'); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -7953,15 +7660,14 @@ const unflattenObject = obj =>
 ```js
 unflattenObject({ 'a.b.c': 1, d: 1 }); // { a: { b: { c: 1 } }, d: 1 }
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
 
-
 ---
 
 ## 📜 String
+
 
 ### byteSize
 
@@ -7980,7 +7686,6 @@ const byteSize = str => new Blob([str]).size;
 byteSize('😀'); // 4
 byteSize('Hello World'); // 11
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8004,7 +7709,6 @@ const capitalize = ([first, ...rest], lowerRest = false) =>
 capitalize('fooBar'); // 'FooBar'
 capitalize('fooBar', true); // 'Foobar'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8025,7 +7729,6 @@ const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperC
 ```js
 capitalizeEveryWord('hello world!'); // 'Hello World!'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8047,7 +7750,6 @@ const compactWhitespace = str => str.replace(/\s{2,}/g, ' ');
 compactWhitespace('Lorem    Ipsum'); // 'Lorem Ipsum'
 compactWhitespace('Lorem \n Ipsum'); // 'Lorem Ipsum'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8077,7 +7779,6 @@ CSVToArray('a,b\nc,d'); // [['a','b'],['c','d']];
 CSVToArray('a;b\nc;d', ';'); // [['a','b'],['c','d']];
 CSVToArray('col1,col2\na,b\nc,d', ',', true); // [['a','b'],['c','d']];
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8112,7 +7813,6 @@ const CSVToJSON = (data, delimiter = ',') => {
 CSVToJSON('col1,col2\na,b\nc,d'); // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
 CSVToJSON('col1;col2\na;b\nc;d', ';'); // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8136,7 +7836,6 @@ const decapitalize = ([first, ...rest], upperRest = false) =>
 decapitalize('FooBar'); // 'fooBar'
 decapitalize('FooBar', true); // 'fOOBAR'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8168,7 +7867,6 @@ const escapeHTML = str =>
 ```js
 escapeHTML('<a href="#">Me & you</a>'); // '&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8189,7 +7887,6 @@ const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 ```js
 escapeRegExp('(test)'); // \\(test\\)
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8217,7 +7914,6 @@ fromCamelCase('someDatabaseFieldName', ' '); // 'some database field name'
 fromCamelCase('someLabelThatNeedsToBeCamelized', '-'); // 'some-label-that-needs-to-be-camelized'
 fromCamelCase('someJavascriptProperty', '_'); // 'some_javascript_property'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8240,7 +7936,6 @@ const indentString = (str, count, indent = ' ') => str.replace(/^/gm, indent.rep
 indentString('Lorem\nIpsum', 2); // '  Lorem\n  Ipsum'
 indentString('Lorem\nIpsum', 2, '_'); // '__Lorem\n__Ipsum'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8263,7 +7958,6 @@ isAbsoluteURL('https://google.com'); // true
 isAbsoluteURL('ftp://www.myserver.net'); // true
 isAbsoluteURL('/foo/bar'); // false
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8293,7 +7987,6 @@ const isAnagram = (str1, str2) => {
 ```js
 isAnagram('iceman', 'cinema'); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8316,7 +8009,6 @@ isLowerCase('abc'); // true
 isLowerCase('a3@$'); // true
 isLowerCase('Ab4'); // false
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8326,7 +8018,6 @@ isLowerCase('Ab4'); // false
 Checks if a string is upper case.
 
 Convert the given string to upper case, using `String.prototype.toUpperCase()` and compare it to the original.
-
 
 ```js
 const isUpperCase = str => str === str.toUpperCase();
@@ -8340,7 +8031,6 @@ isUpperCase('ABC'); // true
 isLowerCase('A3@$'); // true
 isLowerCase('aB4'); // false
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8367,7 +8057,6 @@ const mapString = (str, fn) =>
 ```js
 mapString('lorem ipsum', c => c.toUpperCase()); // 'LOREM IPSUM'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8392,7 +8081,6 @@ mask(1234567890); // '******7890'
 mask(1234567890, 3); // '*******890'
 mask(1234567890, -4, '$'); // '$$$$567890'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8417,7 +8105,6 @@ pad('cat', 8); // '  cat   '
 pad(String(42), 6, '0'); // '004200'
 pad('foobar', 3); // 'foobar'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8442,7 +8129,6 @@ const palindrome = str => {
 ```js
 palindrome('taco cat'); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8478,7 +8164,6 @@ const PLURALS = {
 const autoPluralize = pluralize(PLURALS);
 autoPluralize(2, 'person'); // 'people'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8499,7 +8184,6 @@ const removeNonASCII = str => str.replace(/[^\x20-\x7E]/g, '');
 ```js
 removeNonASCII('äÄçÇéÉêlorem-ipsumöÖÐþúÚ'); // 'lorem-ipsum'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8521,7 +8205,6 @@ const reverseString = str => [...str].reverse().join('');
 ```js
 reverseString('foobar'); // 'raboof'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8542,7 +8225,6 @@ const sortCharactersInString = str => [...str].sort((a, b) => a.localeCompare(b)
 ```js
 sortCharactersInString('cabbage'); // 'aabbceg'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8563,7 +8245,6 @@ const splitLines = str => str.split(/\r?\n/);
 ```js
 splitLines('This\nis a\nmultiline\nstring.\n'); // ['This', 'is a', 'multiline', 'string.' , '']
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8598,7 +8279,6 @@ const stringPermutations = str => {
 ```js
 stringPermutations('abc'); // ['abc','acb','bac','bca','cab','cba']
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8619,7 +8299,6 @@ const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');
 ```js
 stripHTMLTags('<p><em>lorem</em> <strong>ipsum</strong></p>'); // 'lorem ipsum'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8651,7 +8330,6 @@ toCamelCase('Some label that needs to be camelized'); // 'someLabelThatNeedsToBe
 toCamelCase('some-javascript-property'); // 'someJavascriptProperty'
 toCamelCase('some-mixed_string with spaces_underscores-and-hyphens'); // 'someMixedStringWithSpacesUnderscoresAndHyphens'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8681,7 +8359,6 @@ toKebabCase('some-mixed_string With spaces_underscores-and-hyphens'); // 'some-m
 toKebabCase('AllThe-small Things'); // "all-the-small-things"
 toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'); // "i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-xml-and-html"
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8711,7 +8388,6 @@ toSnakeCase('some-mixed_string With spaces_underscores-and-hyphens'); // 'some_m
 toSnakeCase('AllThe-small Things'); // "all_the_smal_things"
 toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'); // "i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html"
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8739,7 +8415,6 @@ toTitleCase('Some label that needs to be title-cased'); // 'Some Label That Need
 toTitleCase('some-package-name'); // 'Some Package Name'
 toTitleCase('some-mixed_string with spaces_underscores-and-hyphens'); // 'Some Mixed String With Spaces Underscores And Hyphens'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8762,7 +8437,6 @@ const truncateString = (str, num) =>
 ```js
 truncateString('boomerang', 7); // 'boom...'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8794,7 +8468,6 @@ const unescapeHTML = str =>
 ```js
 unescapeHTML('&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;'); // '<a href="#">Me & you</a>'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8823,7 +8496,6 @@ const URLJoin = (...args) =>
 ```js
 URLJoin('http://www.google.com', 'a', '/b/cd', '?foo=123', '?bar=foo'); // 'http://www.google.com/a/b/cd?foo=123&bar=foo'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8846,15 +8518,14 @@ const words = (str, pattern = /[^a-zA-Z-]+/) => str.split(pattern).filter(Boolea
 words('I love javaScript!!'); // ["I", "love", "javaScript"]
 words('python, javaScript & coffee'); // ["python", "javaScript", "coffee"]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
 
-
 ---
 
 ## 📃 Type
+
 
 ### getType
 
@@ -8873,7 +8544,6 @@ const getType = v =>
 ```js
 getType(new Set([1, 2, 3])); // 'set'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8906,7 +8576,6 @@ is(Number, new Number(1)); // true
 is(Boolean, true); // true
 is(Boolean, new Boolean(true)); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8929,7 +8598,6 @@ isArrayLike(document.querySelectorAll('.className')); // true
 isArrayLike('abc'); // true
 isArrayLike(null); // false
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8951,7 +8619,6 @@ const isBoolean = val => typeof val === 'boolean';
 isBoolean(null); // false
 isBoolean(false); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -8979,7 +8646,6 @@ isEmpty('text'); // false
 isEmpty(123); // true - type is not considered a collection
 isEmpty(true); // true - type is not considered a collection
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9001,7 +8667,6 @@ const isFunction = val => typeof val === 'function';
 isFunction('x'); // false
 isFunction(x => x); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9023,7 +8688,6 @@ const isNil = val => val === undefined || val === null;
 isNil(null); // true
 isNil(undefined); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9044,7 +8708,6 @@ const isNull = val => val === null;
 ```js
 isNull(null); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9068,7 +8731,6 @@ isNumber(1); // true
 isNumber('1'); // false
 isNumber(NaN); // false
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9095,7 +8757,6 @@ isObject({ a: 1 }); // true
 isObject({}); // true
 isObject(true); // false
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9119,7 +8780,6 @@ isObjectLike([1, 2, 3]); // true
 isObjectLike(x => x); // false
 isObjectLike(null); // false
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9141,7 +8801,6 @@ const isPlainObject = val => !!val && typeof val === 'object' && val.constructor
 isPlainObject({ a: 1 }); // true
 isPlainObject(new Map()); // false
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9167,7 +8826,6 @@ isPrimitive(false); // true
 isPrimitive(Symbol()); // true
 isPrimitive([]); // false
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9197,7 +8855,6 @@ isPromiseLike({
 isPromiseLike(null); // false
 isPromiseLike({}); // false
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9218,7 +8875,6 @@ const isString = val => typeof val === 'string';
 ```js
 isString('10'); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9239,7 +8895,6 @@ const isSymbol = val => typeof val === 'symbol';
 ```js
 isSymbol(Symbol('x')); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9260,7 +8915,6 @@ const isUndefined = val => val === undefined;
 ```js
 isUndefined(undefined); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9290,15 +8944,14 @@ isValidJSON('{"name":"Adam","age":20}'); // true
 isValidJSON('{"name":"Adam",age:"20"}'); // false
 isValidJSON(null); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
 
-
 ---
 
 ## 🔧 Utility
+
 
 ### castArray
 
@@ -9317,7 +8970,6 @@ const castArray = val => (Array.isArray(val) ? val : [val]);
 castArray('foo'); // ['foo']
 castArray([1]); // [1]
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9339,7 +8991,6 @@ const cloneRegExp = regExp => new RegExp(regExp.source, regExp.flags);
 const regExp = /lorem ipsum/gi;
 const regExp2 = cloneRegExp(regExp); // /lorem ipsum/gi
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9360,7 +9011,6 @@ const coalesce = (...args) => args.find(_ => ![undefined, null].includes(_));
 ```js
 coalesce(null, undefined, '', NaN, 'Waldo'); // ""
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9382,7 +9032,6 @@ const coalesceFactory = valid => (...args) => args.find(valid);
 const customCoalesce = coalesceFactory(_ => ![null, undefined, '', NaN].includes(_));
 customCoalesce(undefined, null, NaN, '', 'Waldo'); // "Waldo"
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9411,7 +9060,6 @@ const extendHex = shortHex =>
 extendHex('#03f'); // '#0033ff'
 extendHex('05a'); // '#0055aa'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9438,7 +9086,6 @@ const getURLParameters = url =>
 getURLParameters('http://url.com/page?name=Adam&surname=Smith'); // {name: 'Adam', surname: 'Smith'}
 getURLParameters('google.com'); // {}
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9479,7 +9126,6 @@ hexToRGB('#27ae60ff'); // 'rgba(39, 174, 96, 255)'
 hexToRGB('27ae60'); // 'rgb(39, 174, 96)'
 hexToRGB('#fff'); // 'rgb(255, 255, 255)'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9519,7 +9165,6 @@ Logs: {
 }
 */
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9579,7 +9224,6 @@ Logs: {
 }
 */
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9603,7 +9247,6 @@ const isBrowser = () => ![typeof window, typeof document].includes('undefined');
 isBrowser(); // true (browser)
 isBrowser(); // false (Node)
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9642,7 +9285,6 @@ mostPerformant([
   }
 ]); // 1
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9667,7 +9309,6 @@ third(1, 2); // undefined
 const last = nthArg(-1);
 last(1, 2, 3, 4, 5); // 5
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9697,7 +9338,6 @@ const parseCookie = str =>
 ```js
 parseCookie('foo=bar; equation=E%3Dmc%5E2'); // { foo: 'bar', equation: 'E=mc^2' }
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9730,7 +9370,6 @@ prettyBytes(1000); // "1 KB"
 prettyBytes(-27145424323.5821, 5); // "-27.145 GB"
 prettyBytes(123456789, 3, false); // "123MB"
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9754,7 +9393,6 @@ const randomHexColorCode = () => {
 ```js
 randomHexColorCode(); // "#e34155"
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9775,7 +9413,6 @@ const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6
 ```js
 RGBToHex(255, 165, 1); // 'ffa501'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9796,7 +9433,6 @@ const serializeCookie = (name, val) => `${encodeURIComponent(name)}=${encodeURIC
 ```js
 serializeCookie('foo', 'bar'); // 'foo=bar'
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9822,7 +9458,6 @@ const timeTaken = callback => {
 ```js
 timeTaken(() => Math.pow(2, 10)); // 1024, (logged): timeTaken: 0.02099609375ms
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9848,7 +9483,6 @@ toCurrency(123456.789, 'USD', 'fa'); // ۱۲۳٬۴۵۶٫۷۹ ؜$ | currency: US 
 toCurrency(322342436423.2435, 'JPY'); // ¥322,342,436,423 | currency: Japanese Yen | currencyLangFormat: Local
 toCurrency(322342436423.2435, 'JPY', 'fi'); // 322 342 436 423 ¥ | currency: Japanese Yen | currencyLangFormat: Finnish
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9857,7 +9491,7 @@ toCurrency(322342436423.2435, 'JPY', 'fi'); // 322 342 436 423 ¥ | currency: Ja
 
 Use `toLocaleString()` to convert a float-point arithmetic to the [Decimal mark](https://en.wikipedia.org/wiki/Decimal_mark) form. It makes a comma separated string from a number.
 
- ```js
+```js
 const toDecimalMark = num => num.toLocaleString('en-US');
 ```
 
@@ -9867,7 +9501,6 @@ const toDecimalMark = num => num.toLocaleString('en-US');
 ```js
 toDecimalMark(12305030388.9087); // "12,305,030,388.909"
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9899,7 +9532,6 @@ const toOrdinalSuffix = num => {
 ```js
 toOrdinalSuffix('123'); // "123rd"
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9922,7 +9554,6 @@ const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) ==
 ```js
 validateNumber('10'); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
@@ -9948,11 +9579,9 @@ yesNo('yes'); // true
 yesNo('No'); // false
 yesNo('Foo', true); // true
 ```
-
 </details>
 
 <br>[⬆ Back to top](#contents)
-
 
 ## Collaborators
 
