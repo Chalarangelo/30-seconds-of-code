@@ -1,4 +1,7 @@
-### Shadow DOM
+---
+title: Shadow DOM
+tags: Shadow DOM
+---
 
 Shadow DOM allows you to attach hidden DOM trees to elements in the normal DOM tree, which are included in the document rendering, but excluded from the main document DOM tree. 
 A shadow DOM tree will start with a shadow root, to which you can attach any elements you want, just like in a regular DOM.

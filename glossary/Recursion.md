@@ -1,4 +1,7 @@
-### Recursion
+---
+title: Recursion
+tags: Recursion
+---
 
 Recursion is the repeated application of a process. 
 In JavaScript, recursion involves functions that call themselves repeatedly until they reach a base condition. 
