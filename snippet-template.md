@@ -1,4 +1,7 @@
-### functionName
+---
+title: functionName
+tags: function,utility,helper,beginner
+---
 
 Explain briefly what the snippet does.
 
