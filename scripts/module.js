@@ -9,35 +9,22 @@ const util = require('./util');
 const { rollup } = require('rollup');
 const babel = require('rollup-plugin-babel');
 const minify = require('rollup-plugin-babel-minify');
+const config = require('../config');
 
-const MODULE_NAME = '_30s';
-const SNIPPETS_PATH = './snippets';
-const SNIPPETS_ARCHIVE_PATH = './snippets_archive';
-const DIST_PATH = './dist';
-const ROLLUP_INPUT_FILE = './imports.temp.js';
-const TEST_MODULE_FILE = './test/_30s.js';
+const MODULE_NAME = `./${config.moduleName}`;
+const SNIPPETS_PATH = `./${config.snippetPath}`;
+const SNIPPETS_ARCHIVE_PATH = `./${config.snippetArchivePath}`;
+const DIST_PATH = `./${config.distPath}`;
+const ROLLUP_INPUT_FILE = `./${config.rollupInputFile}`;
+const TEST_MODULE_FILE = `./${config.testModuleFile}`;
 const CODE_RE = /```\s*js([\s\S]*?)```/;
-
-/**
- * Returns the raw markdown string.
- */
-function getRawSnippetString(snippetPath, snippet) {
-  return fs.readFileSync(path.join(snippetPath, snippet), 'utf8');
-}
-
-/**
- * Returns the JavaScript code from the raw markdown string.
- */
-function getCode(rawSnippetString) {
-  return rawSnippetString.match(CODE_RE)[1].replace('\n', '');
-}
 
 /**
  * Builds the UMD + ESM files to the ./dist directory.
  */
 async function doRollup() {
   // Plugins
-  const es5 = babel({ presets: ['@babel/preset-env'] });
+  const es5 = babel({ presets: ['@babel/preset-env'], plugins: ['transform-object-rest-spread'] });
   const min = minify({ comments: false });
 
   const output = format => file => ({
@@ -83,36 +70,26 @@ async function build() {
     fs.writeFileSync(ROLLUP_INPUT_FILE, '');
     fs.writeFileSync(TEST_MODULE_FILE, '');
 
-    // All the snippets that are Node.js-based and will break in a browser
-    // environment
-    const nodeSnippets = fs
-      .readFileSync('tag_database', 'utf8')
-      .split('\n')
-      .filter(v => v.search(/:.*node/g) !== -1)
-      .map(v => v.slice(0, v.indexOf(':')));
+    // Synchronously read all snippets from snippets folder and sort them as necessary (case-insensitive)
+    snippets = util.readSnippets(SNIPPETS_PATH);
+    snippetsArray = Object.keys(snippets).reduce((acc, key) => {
+      acc.push(snippets[key]);
+      return acc;
+    }, []);
+    archivedSnippets = util.readSnippets(SNIPPETS_ARCHIVE_PATH);
+    archivedSnippetsArray = Object.keys(archivedSnippets).reduce((acc, key) => {
+      acc.push(archivedSnippets[key]);
+      return acc;
+    }, []);
 
-    const snippets = fs.readdirSync(SNIPPETS_PATH);
-    const archivedSnippets = fs
-      .readdirSync(SNIPPETS_ARCHIVE_PATH)
-      .filter(v => v !== 'README.md');
-
-    snippets.forEach(snippet => {
-      const rawSnippetString = getRawSnippetString(SNIPPETS_PATH, snippet);
-      const snippetName = snippet.replace('.md', '');
-      let code = getCode(rawSnippetString);
-      if (nodeSnippets.includes(snippetName)) {
+    [...snippetsArray, ...archivedSnippetsArray].forEach(snippet => {
+      let code = `${snippet.attributes.codeBlocks.es6}\n`;
+      if(snippet.attributes.tags.includes('node')) {
         requires.push(code.match(/const.*=.*require\(([^\)]*)\);/g));
         code = code.replace(/const.*=.*require\(([^\)]*)\);/g, '');
       }
       esmExportString += `export ${code}`;
       cjsExportString += code;
-    });
-    archivedSnippets.forEach(snippet => {
-      const rawSnippetString = getRawSnippetString(
-        SNIPPETS_ARCHIVE_PATH,
-        snippet
-      );
-      cjsExportString += getCode(rawSnippetString);
     });
 
     requires = [
@@ -130,8 +107,8 @@ async function build() {
 
     fs.writeFileSync(ROLLUP_INPUT_FILE, `${requires}\n\n${esmExportString}`);
 
-    const testExports = `module.exports = {${[...snippets, ...archivedSnippets]
-      .map(v => v.replace('.md', ''))
+    const testExports = `module.exports = {${[...snippetsArray, ...archivedSnippetsArray]
+      .map(v => v.id)
       .join(',')}}`;
 
     fs.writeFileSync(

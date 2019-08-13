@@ -12,6 +12,11 @@ module.exports = {
   assetPath: `assets`,
   pagePath: `src/docs/pages`,
   staticPartsPath: `src/static-parts`,
+  distPath: `dist`,
   // General information
   language: `js`,
+  // Module information
+  moduleName: `_30s`,
+  rollupInputFile: `imports.temp.js`,
+  testModuleFile: `test/_30s.js`,
 };
