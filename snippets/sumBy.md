@@ -1,4 +1,7 @@
-### sumBy
+---
+title: sumBy
+tags: math,array,function,intermediate
+---
 
 Returns the sum of an array, after mapping each element to a value using the provided function.
 

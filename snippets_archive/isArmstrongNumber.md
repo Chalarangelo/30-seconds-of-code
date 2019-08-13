@@ -1,4 +1,7 @@
-### isArmstrongNumber
+---
+title: isArmstrongNumber
+tags: math,beginner
+---
 
 Checks if the given number is an Armstrong number or not.
 

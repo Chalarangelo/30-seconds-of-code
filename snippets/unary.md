@@ -1,4 +1,7 @@
-### unary
+---
+title: unary
+tags: adapter,function,intermediate
+---
 
 Creates a function that accepts up to one argument, ignoring any additional arguments.
 

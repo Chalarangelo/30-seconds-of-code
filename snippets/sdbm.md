@@ -1,4 +1,7 @@
-### sdbm
+---
+title: sdbm
+tags: math,utility,intermediate
+---
 
 Hashes the input string into a whole number.
 

@@ -1,4 +1,7 @@
-### cloneRegExp
+---
+title: cloneRegExp
+tags: utility,regexp,intermediate
+---
 
 Clones a regular expression.
 

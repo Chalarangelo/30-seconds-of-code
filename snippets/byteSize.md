@@ -1,4 +1,7 @@
-### byteSize
+---
+title: byteSize
+tags: string,beginner
+---
 
 Returns the length of a string in bytes.
 

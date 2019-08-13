@@ -1,4 +1,7 @@
-### getScrollPosition
+---
+title: getScrollPosition
+tags: browser,intermediate
+---
 
 Returns the scroll position of the current page.
 

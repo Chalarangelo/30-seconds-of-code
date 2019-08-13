@@ -1,4 +1,7 @@
-### compactWhitespace
+---
+title: compactWhitespace
+tags: string,regexp,beginner
+---
 
 Returns a string with whitespaces compacted.
 

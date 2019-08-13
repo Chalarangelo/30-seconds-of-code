@@ -1,4 +1,7 @@
-### sum
+---
+title: sum
+tags: math,array,beginner
+---
 
 Returns the sum of two or more numbers/arrays.
 

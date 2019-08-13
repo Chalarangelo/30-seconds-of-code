@@ -1,4 +1,7 @@
-### matchesWith
+---
+title: matchesWith
+tags: object,type,function,intermediate
+---
 
 Compares two objects to determine if the first one contains equivalent property values to the second one, based on a provided function.
 

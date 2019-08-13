@@ -1,4 +1,7 @@
-### factorial
+---
+title: factorial
+tags: math,recursion,beginner
+---
 
 Calculates the factorial of a number.
 

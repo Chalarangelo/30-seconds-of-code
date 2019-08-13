@@ -1,4 +1,7 @@
-### isUndefined
+---
+title: isUndefined
+tags: type,beginner
+---
 
 Returns `true` if the specified value is `undefined`, `false` otherwise.
 

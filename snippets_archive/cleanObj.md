@@ -1,4 +1,7 @@
-### cleanObj
+---
+title: cleanObj
+tags: object,beginner
+---
 
 Removes any properties except the ones specified from a JSON object.
 

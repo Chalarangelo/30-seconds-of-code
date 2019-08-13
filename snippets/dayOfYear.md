@@ -1,4 +1,7 @@
-### dayOfYear
+---
+title: dayOfYear
+tags: date,beginner
+---
 
 Gets the day of the year from a `Date` object.
 

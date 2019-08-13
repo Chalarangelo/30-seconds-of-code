@@ -1,4 +1,7 @@
-### zip
+---
+title: zip
+tags: array,intermediate
+---
 
 Creates an array of elements, grouped based on the position in the original arrays.
 

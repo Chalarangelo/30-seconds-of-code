@@ -1,4 +1,7 @@
-### RGBToHex
+---
+title: RGBToHex
+tags: utility,intermediate
+---
 
 Converts the values of RGB components to a color code.
 

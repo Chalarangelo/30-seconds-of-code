@@ -1,4 +1,7 @@
-### yesterday
+---
+title: yesterday
+tags: date,intermediate
+---
 
 Results in a string representation of yesterday's date.
 

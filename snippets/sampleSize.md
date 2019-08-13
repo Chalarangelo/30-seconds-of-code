@@ -1,4 +1,7 @@
-### sampleSize
+---
+title: sampleSize
+tags: array,random,intermediate
+---
 
 Gets `n` random elements at unique keys from `array` up to the size of `array`.
 

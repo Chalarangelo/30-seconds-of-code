@@ -1,4 +1,7 @@
-### smoothScroll
+---
+title: smoothScroll
+tags: browser,css,intermediate
+---
 
 Smoothly scrolls the element on which it's called into the visible area of the browser window.
 

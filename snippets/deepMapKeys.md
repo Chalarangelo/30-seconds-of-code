@@ -1,4 +1,7 @@
-### deepMapKeys
+---
+title: deepMapKeys
+tags: object,recursion,advanced
+---
 
 Deep maps an object keys.
 

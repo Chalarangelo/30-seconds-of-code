@@ -1,4 +1,7 @@
-### maxDate
+---
+title: maxDate
+tags: date,math,beginner
+---
 
 Returns the maximum of the given dates.
 

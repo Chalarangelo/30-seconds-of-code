@@ -1,4 +1,7 @@
-### escapeRegExp
+---
+title: escapeRegExp
+tags: string,regexp,intermediate
+---
 
 Escapes a string to use in a regular expression.
 

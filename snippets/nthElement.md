@@ -1,4 +1,7 @@
-### nthElement
+---
+title: nthElement
+tags: array,beginner
+---
 
 Returns the nth element of an array.
 

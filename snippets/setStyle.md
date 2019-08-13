@@ -1,4 +1,7 @@
-### setStyle
+---
+title: setStyle
+tags: browser,beginner
+---
 
 Sets the value of a CSS rule for the specified element.
 

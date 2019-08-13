@@ -1,4 +1,7 @@
-### hz
+---
+title: hz
+tags: function,intermediate
+---
 
 Returns the number of times a function executed per second. 
 `hz` is the unit for `hertz`, the unit of frequency defined as one cycle per second.

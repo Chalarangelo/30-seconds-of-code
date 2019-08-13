@@ -1,4 +1,7 @@
-### stringPermutations
+---
+title: stringPermutations
+tags: string,recursion,advanced
+---
 
 ⚠️ **WARNING**: This function's execution time increases exponentially with each character. Anything more than 8 to 10 characters will cause your browser to hang as it tries to solve all the different combinations.
 

@@ -1,4 +1,7 @@
-### inRange
+---
+title: inRange
+tags: math,beginner
+---
 
 Checks if the given number falls within the given range.
 

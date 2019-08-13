@@ -1,4 +1,7 @@
-### squareSum
+---
+title: squareSum
+tags: math,beginner
+---
 
 Squares each number in an array and then sums the results together.
 

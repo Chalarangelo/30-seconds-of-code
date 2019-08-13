@@ -1,4 +1,7 @@
-### median
+---
+title: median
+tags: math,array,intermediate
+---
 
 Returns the median of an array of numbers.
 

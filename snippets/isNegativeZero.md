@@ -1,4 +1,7 @@
-### isNegativeZero
+---
+title: isNegativeZero
+tags: math,utility,beginner
+---
 
 Checks if the given value is equal to negative zero (`-0`).
 

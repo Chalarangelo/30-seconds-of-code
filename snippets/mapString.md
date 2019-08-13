@@ -1,4 +1,7 @@
-### mapString
+---
+title: mapString
+tags: string,array,function,utility,beginner
+---
 
 Creates a new string with the results of calling a provided function on every character in the calling string.
 

@@ -1,4 +1,7 @@
-### elementIsVisibleInViewport
+---
+title: elementIsVisibleInViewport
+tags: browser,advanced
+---
 
 Returns `true` if the element specified is visible in the viewport, `false` otherwise.
 

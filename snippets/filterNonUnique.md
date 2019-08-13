@@ -1,4 +1,7 @@
-### filterNonUnique
+---
+title: filterNonUnique
+tags: array,beginner
+---
 
 Filters out the non-unique values in an array.
 

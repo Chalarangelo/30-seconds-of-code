@@ -1,4 +1,7 @@
-### delay
+---
+title: delay
+tags: function,intermediate
+---
 
 Invokes the provided function after `wait` milliseconds.
 

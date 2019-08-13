@@ -1,4 +1,7 @@
-### deepFreeze
+---
+title: deepFreeze
+tags: object,recursion,intermediate
+---
 
 Deep freezes an object.
 

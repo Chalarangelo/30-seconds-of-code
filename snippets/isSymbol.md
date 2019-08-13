@@ -1,4 +1,7 @@
-### isSymbol
+---
+title: isSymbol
+tags: type,beginner
+---
 
 Checks if the given argument is a symbol.
 

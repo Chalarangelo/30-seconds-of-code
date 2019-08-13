@@ -10,13 +10,11 @@
     "glossary:keymaker": "node ./scripts/glossary/keyword.js",
     "builder": "node ./scripts/build.js",
     "linter": "node ./scripts/lint.js",
-    "tagger": "node ./scripts/tag.js",
     "webber": "node ./scripts/web.js",
     "tester": "node ./scripts/tdd.js",
     "extractor": "node ./scripts/extract.js",
     "vscoder": "node ./scripts/vscodegen.js",
     "packager": "node ./scripts/module.js",
-    "localizer": "node ./scripts/localize.js",
     "test": "jest --verbose --coverage"
   },
   "repository": {

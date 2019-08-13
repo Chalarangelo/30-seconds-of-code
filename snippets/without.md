@@ -1,4 +1,7 @@
-### without
+---
+title: without
+tags: array,beginner
+---
 
 Filters out the elements of an array, that have one of the specified values.
 

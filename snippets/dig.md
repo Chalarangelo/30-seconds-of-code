@@ -1,4 +1,7 @@
-### dig
+---
+title: dig
+tags: object,recursion,intermediate
+---
 
 Returns the target value in a nested JSON object, based on the given key.
 

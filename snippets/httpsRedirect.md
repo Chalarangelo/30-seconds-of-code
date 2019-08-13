@@ -1,4 +1,7 @@
-### httpsRedirect
+---
+title: httpsRedirect
+tags: browser,url,intermediate
+---
 
 Redirects the page to HTTPS if its currently in HTTP. Also, pressing the back button doesn't take it back to the HTTP page as its replaced in the history.
 

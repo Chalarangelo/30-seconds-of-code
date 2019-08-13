@@ -1,4 +1,7 @@
-### unescapeHTML
+---
+title: unescapeHTML
+tags: string,browser,beginner
+---
 
 Unescapes escaped HTML characters.
 

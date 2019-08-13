@@ -1,4 +1,7 @@
-### isAnagram
+---
+title: isAnagram
+tags: string,regexp,intermediate
+---
 
 Checks if a string is an anagram of another string (case-insensitive, ignores spaces, punctuation and special characters).
 

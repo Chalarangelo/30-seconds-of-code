@@ -1,4 +1,7 @@
-### offset
+---
+title: offset
+tags: array,beginner
+---
 
 Moves the specified amount of elements to the end of the array.
 

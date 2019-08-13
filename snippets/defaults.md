@@ -1,4 +1,7 @@
-### defaults
+---
+title: defaults
+tags: object,intermediate
+---
 
 Assigns default values for all properties in an object that are `undefined`.
 

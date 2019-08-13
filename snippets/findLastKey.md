@@ -1,4 +1,7 @@
-### findLastKey
+---
+title: findLastKey
+tags: object,function,intermediate
+---
 
 Returns the last key that satisfies the provided testing function.
 Otherwise `undefined` is returned.
