@@ -16,7 +16,6 @@ script:
 - npm run tester
 - npm run test
 - npm run vscoder
-- npm run webber
 after_success:
 - chmod +x .travis/push.sh
 - .travis/push.sh
