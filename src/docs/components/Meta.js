@@ -1,7 +1,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
-import '../styles/index.scss';
+require('../styles/index.scss');
+// import '../styles/index.scss';
 
 // ===================================================
 // Page metadata (using Helmet)
