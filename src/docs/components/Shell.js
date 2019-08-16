@@ -97,6 +97,7 @@ const Shell = ({
           transitionEnterTimeout={300}
           transitionLeaveTimeout={300}
           component='button'
+          aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
           className='menu-button'
           childComponent={React.Fragment}
         >

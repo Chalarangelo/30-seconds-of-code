@@ -58,7 +58,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
   background: var(--pre-selected-color);
 }
 
-:not(pre) > code[class*="language-"] {
+:not(pre):not(a) > code[class*="language-"] {
   padding: .1em;
   border-radius: .3em;
   white-space: normal;
