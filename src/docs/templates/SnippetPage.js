@@ -65,12 +65,6 @@ export const pageQuery = graphql`
         }
       }
     }
-    site {
-      siteMetadata {
-        title
-        author
-      }
-    }
     allMarkdownRemark {
       edges {
         node {
