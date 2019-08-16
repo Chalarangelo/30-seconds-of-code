@@ -58,7 +58,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
   background: var(--pre-selected-color);
 }
 
-:not(pre):not(a) > code[class*="language-"] {
+:not(pre) > code[class*="language-"] {
   padding: .1em;
   border-radius: .3em;
   white-space: normal;
@@ -107,7 +107,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
   color: var(--token-color-f);
 }
 
-p > code {
+p > code, a > code {
   &, &[class*="language-"] {
     color: var(--code-fore-color);
     background: var(--code-back-color);
