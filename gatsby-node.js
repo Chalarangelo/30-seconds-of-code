@@ -42,17 +42,12 @@ exports.createPages = ({ graphql, actions }) => {
     const snippets = result.data.allMarkdownRemark.edges;
 
     snippets.forEach((post, index) => {
-      const previous =
-        index === snippets.length - 1 ? null : snippets[index + 1].node;
-      const next = index === 0 ? null : snippets[index - 1].node;
 
       createPage({
         path: post.node.fields.slug,
         component: snippetPage,
         context: {
           slug: post.node.fields.slug,
-          previous,
-          next,
         },
       });
     });
@@ -73,7 +68,6 @@ exports.createPages = ({ graphql, actions }) => {
         component: tagPage,
         context: {
           tag,
-          tagRegex,
         },
       });
     });

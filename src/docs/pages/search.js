@@ -110,13 +110,6 @@ export default connect(
 
 export const searchPageQuery = graphql`
   query searchSnippetList {
-    site {
-      siteMetadata {
-        title
-        description
-        author
-      }
-    }
     snippetDataJson(meta: { type: { eq: "snippetListingArray" }, scope: {eq: "./snippets"} }) {
       data {
         id

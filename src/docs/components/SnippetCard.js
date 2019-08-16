@@ -3,7 +3,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import config from '../../../config';
 
 import { getTextualContent, getCodeBlocks, optimizeAllNodes } from '../util';
-import ClipboardIcon from './SVGs/ClipboardIcon';
+// import ClipboardIcon from './SVGs/ClipboardIcon';
 // import ShareIcon from './SVGs/ShareIcon';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import CollapseOpenIcon from './SVGs/CollapseOpenIcon';
@@ -81,9 +81,7 @@ const FullCard = ({ snippetData, difficulty, isDarkMode }) => {
           <button
             className='button button-a button-copy'
             aria-label='Copy to clipboard'
-          >
-            <ClipboardIcon />
-          </button>
+          />
         </CopyToClipboard>
         {/* <button className="button button-b button-social-sh" aria-label="Share">
           <ShareIcon />
@@ -118,10 +116,17 @@ const FullCard = ({ snippetData, difficulty, isDarkMode }) => {
 // ===================================================
 // Short snippet view (title, description, code*)
 // ===================================================
-const ShortCard = ({ snippetData, difficulty, isDarkMode }) => {
-  let cardCodeHtml = `${optimizeAllNodes(
-    getCodeBlocks(snippetData.html).code,
-  )}`;
+const ShortCard = ({ 
+  snippetData, 
+  withCode = false, 
+  difficulty, 
+  isDarkMode 
+}) => {
+  let cardCodeHtml;
+  if(withCode)
+    cardCodeHtml = `${optimizeAllNodes(
+      getCodeBlocks(snippetData.html).code,
+    )}`;
   return (
     <div className='card short'>
       <CardCorner difficulty={difficulty} />
@@ -137,10 +142,10 @@ const ShortCard = ({ snippetData, difficulty, isDarkMode }) => {
       <div
         className='card-description'
         dangerouslySetInnerHTML={{
-          __html: `${getTextualContent(snippetData.html)}`,
+          __html: `${getTextualContent(snippetData.html, true)}`,
         }}
       />
-      <div className='card-bottom'>
+      { withCode ? <div className='card-bottom'>
         <CopyToClipboard
           text={snippetData.code}
           onCopy={() => {
@@ -159,15 +164,13 @@ const ShortCard = ({ snippetData, difficulty, isDarkMode }) => {
           <button
             className='button button-a button-copy'
             aria-label='Copy to clipboard'
-          >
-            <ClipboardIcon />
-          </button>
+          />
         </CopyToClipboard>
         <pre
           className={`card-code language-${config.language}`}
           dangerouslySetInnerHTML={{ __html: cardCodeHtml }}
         />
-      </div>
+      </div> : ''}
     </div>
   );
 };

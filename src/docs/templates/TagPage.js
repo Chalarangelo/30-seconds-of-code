@@ -58,11 +58,6 @@ export default connect(
 
 export const tagPageQuery = graphql`
   query TagPage($tagRegex: String) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMarkdownRemark(
       limit: 1000
       sort: { fields: [frontmatter___title], order: ASC }
