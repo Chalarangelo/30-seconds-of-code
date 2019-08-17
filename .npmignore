@@ -11,6 +11,8 @@ CODE_OF_CONDUCT.md
 test/*
 glossary/*
 snippets/*
+src/*
+static/*
 static-parts/*
 snippet_data/*
 snippets_archive/*
