@@ -18,6 +18,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `snippets_archive`,
+        path: `${__dirname}/${config.snippetArchivePath}`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `snippet_data`,
         path: `${__dirname}/${config.snippetDataPath}`,
       },

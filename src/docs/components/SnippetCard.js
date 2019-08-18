@@ -119,6 +119,7 @@ const FullCard = ({ snippetData, difficulty, isDarkMode }) => {
 const ShortCard = ({ 
   snippetData, 
   withCode = false, 
+  archived = false,
   difficulty, 
   isDarkMode 
 }) => {
@@ -133,7 +134,7 @@ const ShortCard = ({
       <h4 className='card-title'>
         <AniLink
           paintDrip
-          to={`/${snippetData.id}`}
+          to={archived ? `/snippet_archive/${snippetData.id}` : `/snippet/${snippetData.id}`}
           hex={isDarkMode ? '#434E76' : '#FFFFFF'}
         >
           {snippetData.title}
