@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import { connect } from 'react-redux';
 import { pushNewPage } from '../state/app';
 import { capitalize } from '../util';
+import config from '../../../config';
 
 import Shell from '../components/Shell';
 import Meta from '../components/Meta';
@@ -16,6 +17,7 @@ import SimpleCard from '../components/SimpleCard';
 // Snippet list page
 // ===================================================
 const ListPage = props => {
+  console.log(props);
   const snippets = props.data.snippetDataJson.data.map(snippet => ({
     title: snippet.title,
     html: props.data.allMarkdownRemark.edges.find(
@@ -24,12 +26,34 @@ const ListPage = props => {
     tags: snippet.attributes.tags,
     text: snippet.attributes.text,
     id: snippet.id,
+    archived: props.data.allMarkdownRemark.edges.find(
+      v => v.node.frontmatter.title === snippet.title,
+    ).node.fileAbsolutePath.indexOf(config.snippetArchivePath) !== -1,
     code: getCodeBlocks(
       props.data.allMarkdownRemark.edges.find(
         v => v.node.frontmatter.title === snippet.title,
       ).node.rawMarkdownBody,
     ).code,
   }));
+  const archivedSnippets = props.data.snippetsArchiveDataJson.data.map(snippet => ({
+    title: snippet.title,
+    html: props.data.allMarkdownRemark.edges.find(
+      v => v.node.frontmatter.title === snippet.title,
+    ).node.html,
+    tags: snippet.attributes.tags,
+    text: snippet.attributes.text,
+    id: snippet.id,
+    archived: props.data.allMarkdownRemark.edges.find(
+      v => v.node.frontmatter.title === snippet.title,
+    ).node.fileAbsolutePath.indexOf(config.snippetArchivePath) !== -1,
+    code: getCodeBlocks(
+      props.data.allMarkdownRemark.edges.find(
+        v => v.node.frontmatter.title === snippet.title,
+      ).node.rawMarkdownBody,
+    ).code,
+  }));
+  console.log(snippets);
+  console.log(archivedSnippets);
   const tags = snippets.reduce((acc, snippet) => {
     if (!snippet.tags) return acc;
     const primaryTag = snippet.tags[0];
@@ -57,19 +81,20 @@ const ListPage = props => {
           Click on a snippet’s name to view its code or a tag name to view all
           snippets in that category.
         </p>
-        {tags.map(tag => (
+        {tags.sort((a,b) => a.localeCompare(b)).map(tag => (
           <>
             <h3 className='tag-title' key={`tag_title_${tag}`}>
               <AniLink
                 key={`tag_link_${tag}`}
                 paintDrip
-                to={`/tags/${tag}`}
+                to={`/tag/${tag}`}
                 hex={props.isDarkMode ? '#434E76' : '#FFFFFF'}
               >
                 {capitalize(tag)}
               </AniLink>
             </h3>
             {snippets
+              .filter(snippet => !snippet.archived)
               .filter(snippet => snippet.tags[0] === tag)
               .map(snippet => (
                 <SnippetCard
@@ -81,6 +106,24 @@ const ListPage = props => {
               ))}
           </>
         ))}
+        <h3 className='tag-title'><AniLink
+          paintDrip
+          to={`/archive`}
+          hex={props.isDarkMode ? '#434E76' : '#FFFFFF'}
+        >
+          Archived
+        </AniLink></h3>
+        {archivedSnippets
+          .filter(snippet => snippet.archived)
+          .map(snippet => (
+            <SnippetCard
+              key={`a_snippet_${snippet.id}`}
+              short
+              archived
+              snippetData={snippet}
+              isDarkMode={props.isDarkMode}
+            />
+          ))}
         <br/>
         {staticPages.map(page => (
           <SimpleCard 
@@ -124,6 +167,16 @@ export const listPageQuery = graphql`
         }
       }
     }
+    snippetsArchiveDataJson : snippetDataJson(meta: { type: { eq: "snippetListingArray" }, scope: {eq: "./snippets_archive"} }) {
+      data {
+        id
+        title
+        attributes {
+          tags
+          text
+        }
+      }
+    }
     allMarkdownRemark(
       limit: 1000
       sort: { fields: [frontmatter___title], order: ASC }
@@ -141,6 +194,7 @@ export const listPageQuery = graphql`
             title
             tags
           }
+          fileAbsolutePath
         }
       }
     }

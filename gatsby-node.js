@@ -1,5 +1,6 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
+const config = require('./config');
 
 const toKebabCase = str =>
   str &&
@@ -28,6 +29,7 @@ exports.createPages = ({ graphql, actions }) => {
               frontmatter {
                 tags
               }
+              fileAbsolutePath
             }
           }
         }
@@ -42,14 +44,22 @@ exports.createPages = ({ graphql, actions }) => {
     const snippets = result.data.allMarkdownRemark.edges;
 
     snippets.forEach((post, index) => {
-
-      createPage({
-        path: post.node.fields.slug,
-        component: snippetPage,
-        context: {
-          slug: post.node.fields.slug,
-        },
-      });
+      if (post.node.fileAbsolutePath.indexOf(config.snippetArchivePath) === -1)
+        createPage({
+          path: `/snippet${post.node.fields.slug}`,
+          component: snippetPage,
+          context: {
+            slug: post.node.fields.slug,
+          },
+        });
+      else
+        createPage({
+          path: `/snippet_archive${post.node.fields.slug}`,
+          component: snippetPage,
+          context: {
+            slug: post.node.fields.slug,
+          },
+        });
     });
 
     // Create tag pages.
@@ -61,8 +71,7 @@ exports.createPages = ({ graphql, actions }) => {
     }, []);
 
     tags.forEach(tag => {
-      const tagPath = `/tags/${toKebabCase(tag)}/`;
-      const tagRegex = `/^\\s*${tag}/`;
+      const tagPath = `/tag/${toKebabCase(tag)}/`;
       createPage({
         path: tagPath,
         component: tagPage,
