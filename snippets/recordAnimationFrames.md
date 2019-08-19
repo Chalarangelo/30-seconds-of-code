@@ -1,4 +1,7 @@
-### recordAnimationFrames
+---
+title: recordAnimationFrames
+tags: browser,utility,intermediate
+---
 
 Invokes the provided callback on each animation frame.
 

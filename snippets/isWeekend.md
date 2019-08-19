@@ -1,4 +1,7 @@
-### isWeekend
+---
+title: isWeekend
+tags: date,beginner
+---
 
 Results in a boolean representation of a specific date.
 

@@ -1,4 +1,7 @@
-### howManyTimes
+---
+title: howManyTimes
+tags: math,beginner
+---
 
 Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.
 Works for both negative and positive integers.

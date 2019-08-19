@@ -1,4 +1,7 @@
-### allEqual
+---
+title: allEqual
+tags: array,function,beginner
+---
 
 Check if all elements in an array are equal.
 

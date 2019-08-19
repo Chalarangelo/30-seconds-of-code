@@ -1,4 +1,7 @@
-### off
+---
+title: off
+tags: browser,event,intermediate
+---
 
 Removes an event listener from an element.
 

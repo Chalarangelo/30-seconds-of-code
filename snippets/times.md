@@ -1,4 +1,7 @@
-### times
+---
+title: times
+tags: function,intermediate
+---
 
 Iterates over a callback `n` times
 

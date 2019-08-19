@@ -1,4 +1,7 @@
-### prefix
+---
+title: prefix
+tags: browser,utility,intermediate
+---
 
 Returns the prefixed version (if necessary) of a CSS property that the browser supports.
 

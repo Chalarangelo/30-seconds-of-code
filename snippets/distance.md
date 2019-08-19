@@ -1,4 +1,7 @@
-### distance
+---
+title: distance
+tags: math,beginner
+---
 
 Returns the distance between two points.
 

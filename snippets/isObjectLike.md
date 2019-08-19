@@ -1,4 +1,7 @@
-### isObjectLike
+---
+title: isObjectLike
+tags: type,object,beginner
+---
 
 Checks if a value is object-like.
 

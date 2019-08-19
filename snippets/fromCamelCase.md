@@ -1,4 +1,7 @@
-### fromCamelCase
+---
+title: fromCamelCase
+tags: string,intermediate
+---
 
 Converts a string from camelcase.
 

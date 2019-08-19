@@ -1,4 +1,7 @@
-### solveRPN
+---
+title: solveRPN
+tags: algorithm,advanced
+---
 
 Solves the given mathematical expression in [reverse polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation).
 Throws appropriate errors if there are unrecognized symbols or the expression is wrong. The valid operators are :- `+`,`-`,`*`,`/`,`^`,`**` (`^`&`**` are the exponential symbols and are same). This snippet does not supports any unary operators.

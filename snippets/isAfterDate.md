@@ -1,4 +1,7 @@
-### isAfterDate
+---
+title: isAfterDate
+tags: date,utility,beginner
+---
 
 Check if a date is after another date.
 

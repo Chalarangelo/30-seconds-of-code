@@ -1,4 +1,4 @@
-![contribution guidelines](https://i.imgur.com/FaNNcVH.png)
+# Contribution guidelines
 
 **30 seconds of code** is a community effort, so feel free to contribute in any way you can. Every contribution helps!
 
@@ -7,18 +7,23 @@ Here's what you can do to help:
 - Submit [pull requests](https://github.com/30-seconds/30-seconds-of-code/pulls) with snippets and tests that you have created (see below for guidelines).
 - [Open issues](https://github.com/30-seconds/30-seconds-of-code/issues/new) for things you want to see added or modified.
 - Be part of the discussion by helping out with [existing issues](https://github.com/30-seconds/30-seconds-of-code/issues) or talking on our [gitter channel](https://gitter.im/30-seconds-of-code/Lobby).
-- Tag uncategorized snippets by running `npm run tagger` and adding the appropriate tags next to the script name in `tag_database`.
+- Tag uncategorized snippets, update snippet tags to better categorize snippets.
 - Fix typos in existing snippets, improve snippet descriptions and explanations or provide better examples.
 - Write tests for existing snippets (see below for guidelines).
 
 ### Snippet submission and Pull request guidelines
 
-- **DO NOT MODIFY THE README.md or index.html FILES!** Make changes to individual snippet files. **Travis CI** will automatically build the `README.md` and `index.html` files when your pull request is merged.
-- **Snippet filenames** must correspond to the title of the snippet. For example, if your snippet is titled `### awesomeSnippet` the filename should be `awesomeSnippet.md`.
+- **DO NOT MODIFY ANY OF THE README.md FILES!** Make changes to individual snippet files. **Travis CI** will automatically build the `README.md` files when your pull request is merged.
+- **Snippet filenames** must correspond to the title of the snippet. For example, if your snippet is titled `awesomeSnippet` the filename should be `awesomeSnippet.md`.
   - Use `camelCase`, not `kebab-case` or `snake_case`.
   - Avoid capitalization of words, except if the whole word is capitalized (e.g. `URL` should be capitalized in the filename and the snippet title).
+- **Snippet metadata** must be included in all snippets in the form of frontmatter.
+  - All snippets must contain a title.
+  - All snippets must contain tags, prefixed with `tags:` and separated by commas (optional spaces in-between).
+  - Make sure the first tag in your snippet's tags is one of the main categories, as seen in the `README.md` file or the website.
+  - Snippet tags must include a difficulty setting (`begginer`, `intermediate` or `advanced`), preferrably at the end of the list.
 - **Snippet titles** should be the same as the name of the function that is present in the snippet.
-  - All snippet titles must be prefixed with `###` and be at the very first line of your snippet.
+  - All snippet titles must be prefixed with `title:` and be at the very first line of your snippet's frontmatter.
   - Snippet titles must be unique (although if you cannot find a better title, just add some placeholder at the end of the filename and title and we will figure it out).
   - Follow snippet titles with an empty line.
 - **Snippet descriptions** must be short and to the point. Try to explain *what* the snippet does and *how* the snippet works and what Javascript features are used. Remember to include what functions you are using and why.
@@ -28,7 +33,7 @@ Here's what you can do to help:
   - Use ES6 notation to define your function. For example `const myFunction = ( arg1, arg2 ) => { }`.
   - Please use Javascript [Semi-Standard Style](https://github.com/Flet/semistandard).
   - Try to keep your snippets' code short and to the point. Use modern techniques and features. Make sure to test your code before submitting.
-  - All snippets must be followed by one (more if necessary) test case after the code, in a new block enclosed inside ` ```js ` and ` ``` `. The syntax for this is `myFunction('testInput') // 'testOutput'`. Use multiline examples only if necessary.
+  - All snippets must be followed by one (more if necessary) test case after the code, in a new block enclosed inside ` ```js ` and ` ``` `. The syntax for this is `myFunction('testInput'); // 'testOutput'`. Use multiline examples only if necessary.
   - Try to make your function name unique, so that it does not conflict with existing snippets.
   - Snippet functions do not have to handle errors in input, unless it's necessary (e.g. a mathematical function that cannot be extended to negative numbers should handle negative input appropriately).
 - Snippets should be short (usually below 10 lines). If your snippet is longer than that, you can still submit it, and we can help you shorten it or figure out ways to improve it.

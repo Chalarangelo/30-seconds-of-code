@@ -1,4 +1,7 @@
-### castArray
+---
+title: castArray
+tags: utility,array,type,beginner
+---
 
 Casts the provided value as an array if it's not one.
 

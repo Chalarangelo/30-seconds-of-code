@@ -1,4 +1,7 @@
-### pullAtIndex
+---
+title: pullAtIndex
+tags: array,advanced
+---
 
 Mutates the original array to filter out the values at the specified indexes.
 

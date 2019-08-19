@@ -1,4 +1,7 @@
-### factors
+---
+title: factors
+tags: math,intermediate
+---
 
 Returns the array of factors of the given `num`.
 If the second argument is set to `true` returns only the prime factors of `num`.

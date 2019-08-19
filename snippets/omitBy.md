@@ -1,4 +1,7 @@
-### omitBy
+---
+title: omitBy
+tags: object,array,function,intermediate
+---
 
 Creates an object composed of the properties the given function returns falsy for. The function is invoked with two arguments: (value, key).
 

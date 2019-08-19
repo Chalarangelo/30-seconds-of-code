@@ -1,4 +1,7 @@
-### union
+---
+title: union
+tags: array,math,beginner
+---
 
 Returns every element that exists in any of the two arrays once.
 

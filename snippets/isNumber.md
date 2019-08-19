@@ -1,4 +1,7 @@
-### isNumber
+---
+title: isNumber
+tags: type,math,beginner
+---
 
 Checks if the given argument is a number.
 

@@ -9,10 +9,11 @@ const fs = require('fs-extra'),
 const childProcess = require('child_process');
 const { green, yellow, red } = require('kleur');
 const util = require('./util');
+const config = require('../config');
 // Declare paths
-const SNIPPETS_PATH = './snippets';
-const SNIPPETS_ARCHIVE_PATH = './snippets_archive';
-const TEST_PATH = './test';
+const SNIPPETS_PATH = `./${config.snippetPath}`;
+const SNIPPETS_ARCHIVE_PATH = `./${config.snippetArchivePath}`;
+const TEST_PATH = `./${config.testPath}`;
 
 console.time('Tester');
 try {
@@ -40,7 +41,7 @@ try {
     process.exit(0);
   }
   else {
-    childProcess.execSync('npm test');
+    childProcess.execSync('npm test', { stdio: 'inherit' });
   }
   console.log(`${green('SUCCESS!')} All tests ran successfully!`);
 } catch (err) {

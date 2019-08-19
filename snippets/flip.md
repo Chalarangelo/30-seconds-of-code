@@ -1,4 +1,7 @@
-### flip
+---
+title: flip
+tags: adapter,function,intermediate
+---
 
 Flip takes a function as an argument, then makes the first argument the last.
 

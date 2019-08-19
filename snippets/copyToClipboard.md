@@ -1,4 +1,7 @@
-### copyToClipboard
+---
+title: copyToClipboard
+tags: browser,string,advanced
+---
 
 ⚠️ **NOTICE:** The same functionality can be easily implemented by using the new asynchronous Clipboard API, which is still experimental but should be used in the future instead of this snippet. Find out more about it [here](https://github.com/w3c/clipboard-apis/blob/master/explainer.adoc#writing-to-the-clipboard).
 

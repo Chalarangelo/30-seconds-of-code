@@ -1,4 +1,7 @@
-### redirect
+---
+title: redirect
+tags: browser,url,beginner
+---
 
 Redirects to a specified URL.
 

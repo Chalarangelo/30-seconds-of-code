@@ -1,4 +1,7 @@
-### renameKeys
+---
+title: renameKeys
+tags: object,intermediate
+---
 
 Replaces the names of multiple object keys with the values provided.
 

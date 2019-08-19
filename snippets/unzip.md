@@ -1,4 +1,7 @@
-### unzip
+---
+title: unzip
+tags: array,intermediate
+---
 
 Creates an array of arrays, ungrouping the elements in an array produced by [zip](#zip).
 

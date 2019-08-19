@@ -1,4 +1,7 @@
-### minDate
+---
+title: minDate
+tags: date,math,beginner
+---
 
 Returns the minimum of the given dates.
 

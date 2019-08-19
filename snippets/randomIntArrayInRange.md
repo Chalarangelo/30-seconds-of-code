@@ -1,4 +1,7 @@
-### randomIntArrayInRange
+---
+title: randomIntArrayInRange
+tags: math,utility,random,intermediate
+---
 
 Returns an array of n random integers in the specified range.
 

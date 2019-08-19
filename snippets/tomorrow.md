@@ -1,4 +1,7 @@
-### tomorrow
+---
+title: tomorrow
+tags: date,intermediate
+---
 
 Results in a string representation of tomorrow's date.
 

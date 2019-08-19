@@ -1,11 +1,12 @@
-### pull
+---
+title: pull
+tags: array,intermediate
+---
 
 Mutates the original array to filter out the values specified.
 
 Use `Array.prototype.filter()` and `Array.prototype.includes()` to pull out the values that are not needed.
 Use `Array.prototype.length = 0` to mutate the passed in an array by resetting it's length to zero and `Array.prototype.push()` to re-populate it with only the pulled values.
-
-_(For a snippet that does not mutate the original array see [`without`](#without))_
 
 ```js
 const pull = (arr, ...args) => {

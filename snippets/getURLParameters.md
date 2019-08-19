@@ -1,4 +1,7 @@
-### getURLParameters
+---
+title: getURLParameters
+tags: utility,browser,string,url,intermediate
+---
 
 Returns an object containing the parameters of the current URL.
 

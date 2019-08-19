@@ -1,4 +1,7 @@
-### objectFromPairs
+---
+title: objectFromPairs
+tags: object,array,beginner
+---
 
 Creates an object from the given key-value pairs.
 

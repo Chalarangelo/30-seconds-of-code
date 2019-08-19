@@ -1,7 +1,7 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
   typeof define === 'function' && define.amd ? define(['exports'], factory) :
-  (factory((global._30s = {})));
+  (factory((global[''] = global[''] || {}, global['']['/_30s'] = {})));
 }(this, (function (exports) { 'use strict';
 
   function _typeof(obj) {
@@ -33,20 +33,35 @@
     return obj;
   }
 
-  function _objectSpread(target) {
+  function ownKeys(object, enumerableOnly) {
+    var keys = Object.keys(object);
+
+    if (Object.getOwnPropertySymbols) {
+      var symbols = Object.getOwnPropertySymbols(object);
+      if (enumerableOnly) symbols = symbols.filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+      });
+      keys.push.apply(keys, symbols);
+    }
+
+    return keys;
+  }
+
+  function _objectSpread2(target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i] != null ? arguments[i] : {};
-      var ownKeys = Object.keys(source);
 
-      if (typeof Object.getOwnPropertySymbols === 'function') {
-        ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
-          return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-        }));
+      if (i % 2) {
+        ownKeys(source, true).forEach(function (key) {
+          _defineProperty(target, key, source[key]);
+        });
+      } else if (Object.getOwnPropertyDescriptors) {
+        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+      } else {
+        ownKeys(source).forEach(function (key) {
+          Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+        });
       }
-
-      ownKeys.forEach(function (key) {
-        _defineProperty(target, key, source[key]);
-      });
     }
 
     return target;
@@ -118,54 +133,6 @@
 
   var crypto = typeof require !== "undefined" && require('crypto');
 
-  var CSVToArray = function CSVToArray(data) {
-    var delimiter = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ',';
-    var omitFirstRow = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-    return data.slice(omitFirstRow ? data.indexOf('\n') + 1 : 0).split('\n').map(function (v) {
-      return v.split(delimiter);
-    });
-  };
-  var CSVToJSON = function CSVToJSON(data) {
-    var delimiter = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ',';
-    var titles = data.slice(0, data.indexOf('\n')).split(delimiter);
-    return data.slice(data.indexOf('\n') + 1).split('\n').map(function (v) {
-      var values = v.split(delimiter);
-      return titles.reduce(function (obj, title, index) {
-        return obj[title] = values[index], obj;
-      }, {});
-    });
-  };
-  var JSONToFile = function JSONToFile(obj, filename) {
-    return fs.writeFile("".concat(filename, ".json"), JSON.stringify(obj, null, 2));
-  };
-  var JSONtoCSV = function JSONtoCSV(arr, columns) {
-    var delimiter = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : ',';
-    return [columns.join(delimiter)].concat(_toConsumableArray(arr.map(function (obj) {
-      return columns.reduce(function (acc, key) {
-        return "".concat(acc).concat(!acc.length ? '' : delimiter, "\"").concat(!obj[key] ? '' : obj[key], "\"");
-      }, '');
-    }))).join('\n');
-  };
-  var RGBToHex = function RGBToHex(r, g, b) {
-    return ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
-  };
-  var URLJoin = function URLJoin() {
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return args.join('/').replace(/[\/]+/g, '/').replace(/^(.+):\//, '$1://').replace(/^file:/, 'file:/').replace(/\/(\?|&|#[^!])/g, '$1').replace(/\?/g, '&').replace('&', '?');
-  };
-  var UUIDGeneratorBrowser = function UUIDGeneratorBrowser() {
-    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, function (c) {
-      return (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16);
-    });
-  };
-  var UUIDGeneratorNode = function UUIDGeneratorNode() {
-    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, function (c) {
-      return (c ^ crypto.randomBytes(1)[0] & 15 >> c / 4).toString(16);
-    });
-  };
   var all = function all(arr) {
     var fn = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Boolean;
     return arr.every(fn);
@@ -200,8 +167,8 @@
   };
   var ary = function ary(fn, n) {
     return function () {
-      for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-        args[_key2] = arguments[_key2];
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
       }
 
       return fn.apply(void 0, _toConsumableArray(args.slice(0, n)));
@@ -212,8 +179,8 @@
   };
   var attempt = function attempt(fn) {
     try {
-      for (var _len3 = arguments.length, args = new Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {
-        args[_key3 - 1] = arguments[_key3];
+      for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+        args[_key2 - 1] = arguments[_key2];
       }
 
       return fn.apply(void 0, args);
@@ -222,8 +189,8 @@
     }
   };
   var average = function average() {
-    for (var _len4 = arguments.length, nums = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
-      nums[_key4] = arguments[_key4];
+    for (var _len3 = arguments.length, nums = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+      nums[_key3] = arguments[_key3];
     }
 
     return nums.reduce(function (acc, val) {
@@ -248,21 +215,21 @@
     }, [[], []]);
   };
   var bind = function bind(fn, context) {
-    for (var _len5 = arguments.length, boundArgs = new Array(_len5 > 2 ? _len5 - 2 : 0), _key5 = 2; _key5 < _len5; _key5++) {
-      boundArgs[_key5 - 2] = arguments[_key5];
+    for (var _len4 = arguments.length, boundArgs = new Array(_len4 > 2 ? _len4 - 2 : 0), _key4 = 2; _key4 < _len4; _key4++) {
+      boundArgs[_key4 - 2] = arguments[_key4];
     }
 
     return function () {
-      for (var _len6 = arguments.length, args = new Array(_len6), _key6 = 0; _key6 < _len6; _key6++) {
-        args[_key6] = arguments[_key6];
+      for (var _len5 = arguments.length, args = new Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
+        args[_key5] = arguments[_key5];
       }
 
-      return fn.apply(context, boundArgs.concat(args));
+      return fn.apply(context, [].concat(boundArgs, args));
     };
   };
   var bindAll = function bindAll(obj) {
-    for (var _len7 = arguments.length, fns = new Array(_len7 > 1 ? _len7 - 1 : 0), _key7 = 1; _key7 < _len7; _key7++) {
-      fns[_key7 - 1] = arguments[_key7];
+    for (var _len6 = arguments.length, fns = new Array(_len6 > 1 ? _len6 - 1 : 0), _key6 = 1; _key6 < _len6; _key6++) {
+      fns[_key6 - 1] = arguments[_key6];
     }
 
     return fns.forEach(function (fn) {
@@ -272,16 +239,16 @@
     });
   };
   var bindKey = function bindKey(context, fn) {
-    for (var _len8 = arguments.length, boundArgs = new Array(_len8 > 2 ? _len8 - 2 : 0), _key8 = 2; _key8 < _len8; _key8++) {
-      boundArgs[_key8 - 2] = arguments[_key8];
+    for (var _len7 = arguments.length, boundArgs = new Array(_len7 > 2 ? _len7 - 2 : 0), _key7 = 2; _key7 < _len7; _key7++) {
+      boundArgs[_key7 - 2] = arguments[_key7];
     }
 
     return function () {
-      for (var _len9 = arguments.length, args = new Array(_len9), _key9 = 0; _key9 < _len9; _key9++) {
-        args[_key9] = arguments[_key9];
+      for (var _len8 = arguments.length, args = new Array(_len8), _key8 = 0; _key8 < _len8; _key8++) {
+        args[_key8] = arguments[_key8];
       }
 
-      return context[fn].apply(context, boundArgs.concat(args));
+      return context[fn].apply(context, [].concat(boundArgs, args));
     };
   };
   var binomialCoefficient = function binomialCoefficient(n, k) {
@@ -308,8 +275,8 @@
     return new Blob([str]).size;
   };
   var call = function call(key) {
-    for (var _len10 = arguments.length, args = new Array(_len10 > 1 ? _len10 - 1 : 0), _key10 = 1; _key10 < _len10; _key10++) {
-      args[_key10 - 1] = arguments[_key10];
+    for (var _len9 = arguments.length, args = new Array(_len9 > 1 ? _len9 - 1 : 0), _key9 = 1; _key9 < _len9; _key9++) {
+      args[_key9 - 1] = arguments[_key9];
     }
 
     return function (context) {
@@ -325,8 +292,8 @@
     return first.toUpperCase() + (lowerRest ? rest.join('').toLowerCase() : rest.join(''));
   };
   var capitalizeEveryWord = function capitalizeEveryWord(str) {
-    return str.replace(/\b[a-z]/g, function (char) {
-      return char.toUpperCase();
+    return str.replace(/\b[a-z]/g, function (_char) {
+      return _char.toUpperCase();
     });
   };
   var castArray = function castArray(val) {
@@ -362,8 +329,8 @@
     return new RegExp(regExp.source, regExp.flags);
   };
   var coalesce = function coalesce() {
-    for (var _len11 = arguments.length, args = new Array(_len11), _key11 = 0; _key11 < _len11; _key11++) {
-      args[_key11] = arguments[_key11];
+    for (var _len10 = arguments.length, args = new Array(_len10), _key10 = 0; _key10 < _len10; _key10++) {
+      args[_key10] = arguments[_key10];
     }
 
     return args.find(function (_) {
@@ -372,8 +339,8 @@
   };
   var coalesceFactory = function coalesceFactory(valid) {
     return function () {
-      for (var _len12 = arguments.length, args = new Array(_len12), _key12 = 0; _key12 < _len12; _key12++) {
-        args[_key12] = arguments[_key12];
+      for (var _len11 = arguments.length, args = new Array(_len11), _key11 = 0; _key11 < _len11; _key11++) {
+        args[_key11] = arguments[_key11];
       }
 
       return args.find(valid);
@@ -381,16 +348,16 @@
   };
   var collectInto = function collectInto(fn) {
     return function () {
-      for (var _len13 = arguments.length, args = new Array(_len13), _key13 = 0; _key13 < _len13; _key13++) {
-        args[_key13] = arguments[_key13];
+      for (var _len12 = arguments.length, args = new Array(_len12), _key12 = 0; _key12 < _len12; _key12++) {
+        args[_key12] = arguments[_key12];
       }
 
       return fn(args);
     };
   };
   var colorize = function colorize() {
-    for (var _len14 = arguments.length, args = new Array(_len14), _key14 = 0; _key14 < _len14; _key14++) {
-      args[_key14] = arguments[_key14];
+    for (var _len13 = arguments.length, args = new Array(_len13), _key13 = 0; _key13 < _len13; _key13++) {
+      args[_key13] = arguments[_key13];
     }
 
     return {
@@ -419,8 +386,8 @@
     return str.replace(/\s{2,}/g, ' ');
   };
   var compose = function compose() {
-    for (var _len15 = arguments.length, fns = new Array(_len15), _key15 = 0; _key15 < _len15; _key15++) {
-      fns[_key15] = arguments[_key15];
+    for (var _len14 = arguments.length, fns = new Array(_len14), _key14 = 0; _key14 < _len14; _key14++) {
+      fns[_key14] = arguments[_key14];
     }
 
     return fns.reduce(function (f, g) {
@@ -430,8 +397,8 @@
     });
   };
   var composeRight = function composeRight() {
-    for (var _len16 = arguments.length, fns = new Array(_len16), _key16 = 0; _key16 < _len16; _key16++) {
-      fns[_key16] = arguments[_key16];
+    for (var _len15 = arguments.length, fns = new Array(_len15), _key15 = 0; _key15 < _len15; _key15++) {
+      fns[_key15] = arguments[_key15];
     }
 
     return fns.reduce(function (f, g) {
@@ -442,8 +409,8 @@
   };
   var converge = function converge(converger, fns) {
     return function () {
-      for (var _len17 = arguments.length, args = new Array(_len17), _key17 = 0; _key17 < _len17; _key17++) {
-        args[_key17] = arguments[_key17];
+      for (var _len16 = arguments.length, args = new Array(_len16), _key16 = 0; _key16 < _len16; _key16++) {
+        args[_key16] = arguments[_key16];
       }
 
       return converger.apply(void 0, _toConsumableArray(fns.map(function (fn) {
@@ -476,11 +443,6 @@
       return acc;
     }, {});
   };
-  var countOccurrences = function countOccurrences(arr, val) {
-    return arr.reduce(function (a, v) {
-      return v === val ? a + 1 : a;
-    }, 0);
-  };
   var counter = function counter(selector, start, end) {
     var step = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 1;
     var duration = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 2000;
@@ -495,6 +457,11 @@
     }, Math.abs(Math.floor(duration / (end - start))));
 
     return timer;
+  };
+  var countOccurrences = function countOccurrences(arr, val) {
+    return arr.reduce(function (a, v) {
+      return v === val ? a + 1 : a;
+    }, 0);
   };
   var createDirIfNotExists = function createDirIfNotExists(dir) {
     return !fs.existsSync(dir) ? fs.mkdirSync(dir) : undefined;
@@ -525,14 +492,31 @@
       }
     };
   };
+  var CSVToArray = function CSVToArray(data) {
+    var delimiter = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ',';
+    var omitFirstRow = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+    return data.slice(omitFirstRow ? data.indexOf('\n') + 1 : 0).split('\n').map(function (v) {
+      return v.split(delimiter);
+    });
+  };
+  var CSVToJSON = function CSVToJSON(data) {
+    var delimiter = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ',';
+    var titles = data.slice(0, data.indexOf('\n')).split(delimiter);
+    return data.slice(data.indexOf('\n') + 1).split('\n').map(function (v) {
+      var values = v.split(delimiter);
+      return titles.reduce(function (obj, title, index) {
+        return obj[title] = values[index], obj;
+      }, {});
+    });
+  };
   var currentURL = function currentURL() {
     return window.location.href;
   };
   var curry = function curry(fn) {
     var arity = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : fn.length;
 
-    for (var _len18 = arguments.length, args = new Array(_len18 > 2 ? _len18 - 2 : 0), _key18 = 2; _key18 < _len18; _key18++) {
-      args[_key18 - 2] = arguments[_key18];
+    for (var _len17 = arguments.length, args = new Array(_len17 > 2 ? _len17 - 2 : 0), _key17 = 2; _key17 < _len17; _key17++) {
+      args[_key17 - 2] = arguments[_key17];
     }
 
     return arity <= args.length ? fn.apply(void 0, args) : curry.bind.apply(curry, [null, fn, arity].concat(args));
@@ -546,8 +530,8 @@
     return function () {
       var _this = this;
 
-      for (var _len19 = arguments.length, args = new Array(_len19), _key19 = 0; _key19 < _len19; _key19++) {
-        args[_key19] = arguments[_key19];
+      for (var _len18 = arguments.length, args = new Array(_len18), _key18 = 0; _key18 < _len18; _key18++) {
+        args[_key18] = arguments[_key18];
       }
 
       clearTimeout(timeoutId);
@@ -598,15 +582,15 @@
     }, {}) : obj;
   };
   var defaults = function defaults(obj) {
-    for (var _len20 = arguments.length, defs = new Array(_len20 > 1 ? _len20 - 1 : 0), _key20 = 1; _key20 < _len20; _key20++) {
-      defs[_key20 - 1] = arguments[_key20];
+    for (var _len19 = arguments.length, defs = new Array(_len19 > 1 ? _len19 - 1 : 0), _key19 = 1; _key19 < _len19; _key19++) {
+      defs[_key19 - 1] = arguments[_key19];
     }
 
     return Object.assign.apply(Object, [{}, obj].concat(_toConsumableArray(defs.reverse()), [obj]));
   };
   var defer = function defer(fn) {
-    for (var _len21 = arguments.length, args = new Array(_len21 > 1 ? _len21 - 1 : 0), _key21 = 1; _key21 < _len21; _key21++) {
-      args[_key21 - 1] = arguments[_key21];
+    for (var _len20 = arguments.length, args = new Array(_len20 > 1 ? _len20 - 1 : 0), _key20 = 1; _key20 < _len20; _key20++) {
+      args[_key20 - 1] = arguments[_key20];
     }
 
     return setTimeout.apply(void 0, [fn, 1].concat(args));
@@ -615,8 +599,8 @@
     return deg * Math.PI / 180.0;
   };
   var delay = function delay(fn, wait) {
-    for (var _len22 = arguments.length, args = new Array(_len22 > 2 ? _len22 - 2 : 0), _key22 = 2; _key22 < _len22; _key22++) {
-      args[_key22 - 2] = arguments[_key22];
+    for (var _len21 = arguments.length, args = new Array(_len21 > 2 ? _len21 - 2 : 0), _key21 = 2; _key21 < _len21; _key21++) {
+      args[_key21 - 2] = arguments[_key21];
     }
 
     return setTimeout.apply(void 0, [fn, wait].concat(args));
@@ -838,8 +822,8 @@
   };
   var flip = function flip(fn) {
     return function (first) {
-      for (var _len23 = arguments.length, rest = new Array(_len23 > 1 ? _len23 - 1 : 0), _key23 = 1; _key23 < _len23; _key23++) {
-        rest[_key23 - 1] = arguments[_key23];
+      for (var _len22 = arguments.length, rest = new Array(_len22 > 1 ? _len22 - 1 : 0), _key22 = 1; _key22 < _len22; _key22++) {
+        rest[_key22 - 1] = arguments[_key22];
       }
 
       return fn.apply(void 0, rest.concat([first]));
@@ -847,25 +831,6 @@
   };
   var forEachRight = function forEachRight(arr, callback) {
     return arr.slice(0).reverse().forEach(callback);
-  };
-  var forOwn = function forOwn(obj, fn) {
-    return Object.keys(obj).forEach(function (key) {
-      return fn(obj[key], key, obj);
-    });
-  };
-  var forOwnRight = function forOwnRight(obj, fn) {
-    return Object.keys(obj).reverse().forEach(function (key) {
-      return fn(obj[key], key, obj);
-    });
-  };
-  var formToObject = function formToObject(form) {
-    return Array.from(new FormData(form)).reduce(function (acc, _ref10) {
-      var _ref11 = _slicedToArray(_ref10, 2),
-          key = _ref11[0],
-          value = _ref11[1];
-
-      return _objectSpread({}, acc, _defineProperty({}, key, value));
-    }, {});
   };
   var formatDuration = function formatDuration(ms) {
     if (ms < 0) ms = -ms;
@@ -878,13 +843,32 @@
     };
     return Object.entries(time).filter(function (val) {
       return val[1] !== 0;
-    }).map(function (_ref12) {
-      var _ref13 = _slicedToArray(_ref12, 2),
-          key = _ref13[0],
-          val = _ref13[1];
+    }).map(function (_ref10) {
+      var _ref11 = _slicedToArray(_ref10, 2),
+          key = _ref11[0],
+          val = _ref11[1];
 
       return "".concat(val, " ").concat(key).concat(val !== 1 ? 's' : '');
     }).join(', ');
+  };
+  var formToObject = function formToObject(form) {
+    return Array.from(new FormData(form)).reduce(function (acc, _ref12) {
+      var _ref13 = _slicedToArray(_ref12, 2),
+          key = _ref13[0],
+          value = _ref13[1];
+
+      return _objectSpread2({}, acc, _defineProperty({}, key, value));
+    }, {});
+  };
+  var forOwn = function forOwn(obj, fn) {
+    return Object.keys(obj).forEach(function (key) {
+      return fn(obj[key], key, obj);
+    });
+  };
+  var forOwnRight = function forOwnRight(obj, fn) {
+    return Object.keys(obj).reverse().forEach(function (key) {
+      return fn(obj[key], key, obj);
+    });
   };
   var fromCamelCase = function fromCamelCase(str) {
     var separator = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '_';
@@ -895,7 +879,7 @@
   };
   var functions = function functions(obj) {
     var inherited = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-    return (inherited ? _toConsumableArray(Object.keys(obj)).concat(_toConsumableArray(Object.keys(Object.getPrototypeOf(obj)))) : Object.keys(obj)).filter(function (key) {
+    return (inherited ? [].concat(_toConsumableArray(Object.keys(obj)), _toConsumableArray(Object.keys(Object.getPrototypeOf(obj)))) : Object.keys(obj)).filter(function (key) {
       return typeof obj[key] === 'function';
     });
   };
@@ -904,11 +888,11 @@
       return !y ? x : gcd(y, x % y);
     };
 
-    for (var _len24 = arguments.length, arr = new Array(_len24), _key24 = 0; _key24 < _len24; _key24++) {
-      arr[_key24] = arguments[_key24];
+    for (var _len23 = arguments.length, arr = new Array(_len23), _key23 = 0; _key23 < _len23; _key23++) {
+      arr[_key23] = arguments[_key23];
     }
 
-    return arr.concat().reduce(function (a, b) {
+    return [].concat(arr).reduce(function (a, b) {
       return _gcd(a, b);
     });
   };
@@ -922,11 +906,11 @@
     });
   };
   var get = function get(from) {
-    for (var _len25 = arguments.length, selectors = new Array(_len25 > 1 ? _len25 - 1 : 0), _key25 = 1; _key25 < _len25; _key25++) {
-      selectors[_key25 - 1] = arguments[_key25];
+    for (var _len24 = arguments.length, selectors = new Array(_len24 > 1 ? _len24 - 1 : 0), _key24 = 1; _key24 < _len24; _key24++) {
+      selectors[_key24 - 1] = arguments[_key24];
     }
 
-    return selectors.concat().map(function (s) {
+    return [].concat(selectors).map(function (s) {
       return s.replace(/\[([^\[\]]*)\]/g, '.$1.').split('.').filter(function (t) {
         return t !== '';
       }).reduce(function (prev, cur) {
@@ -985,8 +969,8 @@
     return el.classList.contains(className);
   };
   var hasFlags = function hasFlags() {
-    for (var _len26 = arguments.length, flags = new Array(_len26), _key26 = 0; _key26 < _len26; _key26++) {
-      flags[_key26] = arguments[_key26];
+    for (var _len25 = arguments.length, flags = new Array(_len25), _key25 = 0; _key25 < _len25; _key25++) {
+      flags[_key25] = arguments[_key25];
     }
 
     return flags.every(function (flag) {
@@ -1025,11 +1009,11 @@
     return 'rgb' + (alpha ? 'a' : '') + '(' + (h >>> (alpha ? 24 : 16)) + ', ' + ((h & (alpha ? 0x00ff0000 : 0x00ff00)) >>> (alpha ? 16 : 8)) + ', ' + ((h & (alpha ? 0x0000ff00 : 0x0000ff)) >>> (alpha ? 8 : 0)) + (alpha ? ", ".concat(h & 0x000000ff) : '') + ')';
   };
   var hide = function hide() {
-    for (var _len27 = arguments.length, el = new Array(_len27), _key27 = 0; _key27 < _len27; _key27++) {
-      el[_key27] = arguments[_key27];
+    for (var _len26 = arguments.length, el = new Array(_len26), _key26 = 0; _key26 < _len26; _key26++) {
+      el[_key26] = arguments[_key26];
     }
 
-    return el.concat().forEach(function (e) {
+    return [].concat(el).forEach(function (e) {
       return e.style.display = 'none';
     });
   };
@@ -1077,24 +1061,13 @@
 
     return 1000 * iterations / (performance.now() - before);
   };
-  var inRange = function inRange(n, start) {
-    var end = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
-
-    if (end && start > end) {
-      var _ref14 = [start, end];
-      end = _ref14[0];
-      start = _ref14[1];
-    }
-
-    return end == null ? n >= 0 && n < start : n >= start && n < end;
-  };
   var indentString = function indentString(str, count) {
     var indent = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : ' ';
     return str.replace(/^/gm, indent.repeat(count));
   };
   var indexOfAll = function indexOfAll(arr, val) {
     return arr.reduce(function (acc, el, i) {
-      return el === val ? _toConsumableArray(acc).concat([i]) : acc;
+      return el === val ? [].concat(_toConsumableArray(acc), [i]) : acc;
     }, []);
   };
   var initial = function initial(arr) {
@@ -1133,8 +1106,8 @@
     return Array(n).fill(val);
   };
   var initializeNDArray = function initializeNDArray(val) {
-    for (var _len28 = arguments.length, args = new Array(_len28 > 1 ? _len28 - 1 : 0), _key28 = 1; _key28 < _len28; _key28++) {
-      args[_key28 - 1] = arguments[_key28];
+    for (var _len27 = arguments.length, args = new Array(_len27 > 1 ? _len27 - 1 : 0), _key27 = 1; _key27 < _len27; _key27++) {
+      args[_key27 - 1] = arguments[_key27];
     }
 
     return args.length === 0 ? val : Array.from({
@@ -1142,6 +1115,17 @@
     }).map(function () {
       return initializeNDArray.apply(void 0, [val].concat(_toConsumableArray(args.slice(1))));
     });
+  };
+  var inRange = function inRange(n, start) {
+    var end = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+
+    if (end && start > end) {
+      var _ref14 = [start, end];
+      end = _ref14[0];
+      start = _ref14[1];
+    }
+
+    return end == null ? n >= 0 && n < start : n >= start && n < end;
   };
   var insertAfter = function insertAfter(el, htmlString) {
     return el.insertAdjacentHTML('afterend', htmlString);
@@ -1287,8 +1271,8 @@
       _iteratorError = err;
     } finally {
       try {
-        if (!_iteratorNormalCompletion && _iterator.return != null) {
-          _iterator.return();
+        if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+          _iterator["return"]();
         }
       } finally {
         if (_didIteratorError) {
@@ -1341,6 +1325,17 @@
       return i === arr.length - 2 ? acc + val + end : i === arr.length - 1 ? acc + val : acc + val + separator;
     }, '');
   };
+  var JSONtoCSV = function JSONtoCSV(arr, columns) {
+    var delimiter = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : ',';
+    return [columns.join(delimiter)].concat(_toConsumableArray(arr.map(function (obj) {
+      return columns.reduce(function (acc, key) {
+        return "".concat(acc).concat(!acc.length ? '' : delimiter, "\"").concat(!obj[key] ? '' : obj[key], "\"");
+      }, '');
+    }))).join('\n');
+  };
+  var JSONToFile = function JSONToFile(obj, filename) {
+    return fs.writeFile("".concat(filename, ".json"), JSON.stringify(obj, null, 2));
+  };
   var last = function last(arr) {
     return arr[arr.length - 1];
   };
@@ -1353,17 +1348,17 @@
       return x * y / gcd(x, y);
     };
 
-    for (var _len29 = arguments.length, arr = new Array(_len29), _key29 = 0; _key29 < _len29; _key29++) {
-      arr[_key29] = arguments[_key29];
+    for (var _len28 = arguments.length, arr = new Array(_len28), _key28 = 0; _key28 < _len28; _key28++) {
+      arr[_key28] = arguments[_key28];
     }
 
-    return arr.concat().reduce(function (a, b) {
+    return [].concat(arr).reduce(function (a, b) {
       return _lcm(a, b);
     });
   };
   var longestItem = function longestItem() {
-    for (var _len30 = arguments.length, vals = new Array(_len30), _key30 = 0; _key30 < _len30; _key30++) {
-      vals[_key30] = arguments[_key30];
+    for (var _len29 = arguments.length, vals = new Array(_len29), _key29 = 0; _key29 < _len29; _key29++) {
+      vals[_key29] = arguments[_key29];
     }
 
     return vals.reduce(function (a, x) {
@@ -1462,11 +1457,11 @@
     return cached;
   };
   var merge = function merge() {
-    for (var _len31 = arguments.length, objs = new Array(_len31), _key31 = 0; _key31 < _len31; _key31++) {
-      objs[_key31] = arguments[_key31];
+    for (var _len30 = arguments.length, objs = new Array(_len30), _key30 = 0; _key30 < _len30; _key30++) {
+      objs[_key30] = arguments[_key30];
     }
 
-    return objs.concat().reduce(function (acc, obj) {
+    return [].concat(objs).reduce(function (acc, obj) {
       return Object.keys(obj).reduce(function (a, k) {
         acc[k] = acc.hasOwnProperty(k) ? [].concat(acc[k]).concat(obj[k]) : obj[k];
         return acc;
@@ -1522,7 +1517,7 @@
     return items.filter(function (item) {
       return item[link] === id;
     }).map(function (item) {
-      return _objectSpread({}, item, {
+      return _objectSpread2({}, item, {
         children: nest(items, item.id)
       });
     });
@@ -1536,8 +1531,8 @@
   };
   var nthArg = function nthArg(n) {
     return function () {
-      for (var _len32 = arguments.length, args = new Array(_len32), _key32 = 0; _key32 < _len32; _key32++) {
-        args[_key32] = arguments[_key32];
+      for (var _len31 = arguments.length, args = new Array(_len31), _key31 = 0; _key31 < _len31; _key31++) {
+        args[_key31] = arguments[_key31];
       }
 
       return args.slice(n)[0];
@@ -1582,7 +1577,7 @@
     return el.removeEventListener(evt, fn, opts);
   };
   var offset = function offset(arr, _offset) {
-    return _toConsumableArray(arr.slice(_offset)).concat(_toConsumableArray(arr.slice(0, _offset)));
+    return [].concat(_toConsumableArray(arr.slice(_offset)), _toConsumableArray(arr.slice(0, _offset)));
   };
   var omit = function omit(obj, arr) {
     return Object.keys(obj).filter(function (k) {
@@ -1608,6 +1603,19 @@
     el.addEventListener(evt, opts.target ? delegatorFn : fn, opts.options || false);
     if (opts.target) return delegatorFn;
   };
+  var once = function once(fn) {
+    var called = false;
+    return function () {
+      if (called) return;
+      called = true;
+
+      for (var _len32 = arguments.length, args = new Array(_len32), _key32 = 0; _key32 < _len32; _key32++) {
+        args[_key32] = arguments[_key32];
+      }
+
+      return fn.apply(this, args);
+    };
+  };
   var onUserInputChange = function onUserInputChange(callback) {
     var type = 'mouse',
         lastTime = 0;
@@ -1622,19 +1630,6 @@
       if (type === 'touch') return;
       type = 'touch', callback(type), document.addEventListener('mousemove', mousemoveHandler);
     });
-  };
-  var once = function once(fn) {
-    var called = false;
-    return function () {
-      if (called) return;
-      called = true;
-
-      for (var _len33 = arguments.length, args = new Array(_len33), _key33 = 0; _key33 < _len33; _key33++) {
-        args[_key33] = arguments[_key33];
-      }
-
-      return fn.apply(this, args);
-    };
   };
   var orderBy = function orderBy(arr, props, orders) {
     return _toConsumableArray(arr).sort(function (a, b) {
@@ -1653,13 +1648,13 @@
     });
   };
   var over = function over() {
-    for (var _len34 = arguments.length, fns = new Array(_len34), _key34 = 0; _key34 < _len34; _key34++) {
-      fns[_key34] = arguments[_key34];
+    for (var _len33 = arguments.length, fns = new Array(_len33), _key33 = 0; _key33 < _len33; _key33++) {
+      fns[_key33] = arguments[_key33];
     }
 
     return function () {
-      for (var _len35 = arguments.length, args = new Array(_len35), _key35 = 0; _key35 < _len35; _key35++) {
-        args[_key35] = arguments[_key35];
+      for (var _len34 = arguments.length, args = new Array(_len34), _key34 = 0; _key34 < _len34; _key34++) {
+        args[_key34] = arguments[_key34];
       }
 
       return fns.map(function (fn) {
@@ -1669,8 +1664,8 @@
   };
   var overArgs = function overArgs(fn, transforms) {
     return function () {
-      for (var _len36 = arguments.length, args = new Array(_len36), _key36 = 0; _key36 < _len36; _key36++) {
-        args[_key36] = arguments[_key36];
+      for (var _len35 = arguments.length, args = new Array(_len35), _key35 = 0; _key35 < _len35; _key35++) {
+        args[_key35] = arguments[_key35];
       }
 
       return fn.apply(void 0, _toConsumableArray(args.map(function (val, i) {
@@ -1679,8 +1674,9 @@
     };
   };
   var pad = function pad(str, length) {
-    var char = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : ' ';
-    return str.padStart((str.length + length) / 2, char).padEnd(length, char);
+    var _char2 = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : ' ';
+
+    return str.padStart((str.length + length) / 2, _char2).padEnd(length, _char2);
   };
   var palindrome = function palindrome(str) {
     var s = str.toLowerCase().replace(/[\W_]/g, '');
@@ -1695,26 +1691,26 @@
     }, {});
   };
   var partial = function partial(fn) {
-    for (var _len37 = arguments.length, partials = new Array(_len37 > 1 ? _len37 - 1 : 0), _key37 = 1; _key37 < _len37; _key37++) {
-      partials[_key37 - 1] = arguments[_key37];
+    for (var _len36 = arguments.length, partials = new Array(_len36 > 1 ? _len36 - 1 : 0), _key36 = 1; _key36 < _len36; _key36++) {
+      partials[_key36 - 1] = arguments[_key36];
     }
 
     return function () {
-      for (var _len38 = arguments.length, args = new Array(_len38), _key38 = 0; _key38 < _len38; _key38++) {
-        args[_key38] = arguments[_key38];
+      for (var _len37 = arguments.length, args = new Array(_len37), _key37 = 0; _key37 < _len37; _key37++) {
+        args[_key37] = arguments[_key37];
       }
 
       return fn.apply(void 0, partials.concat(args));
     };
   };
   var partialRight = function partialRight(fn) {
-    for (var _len39 = arguments.length, partials = new Array(_len39 > 1 ? _len39 - 1 : 0), _key39 = 1; _key39 < _len39; _key39++) {
-      partials[_key39 - 1] = arguments[_key39];
+    for (var _len38 = arguments.length, partials = new Array(_len38 > 1 ? _len38 - 1 : 0), _key38 = 1; _key38 < _len38; _key38++) {
+      partials[_key38 - 1] = arguments[_key38];
     }
 
     return function () {
-      for (var _len40 = arguments.length, args = new Array(_len40), _key40 = 0; _key40 < _len40; _key40++) {
-        args[_key40] = arguments[_key40];
+      for (var _len39 = arguments.length, args = new Array(_len39), _key39 = 0; _key39 < _len39; _key39++) {
+        args[_key39] = arguments[_key39];
       }
 
       return fn.apply(void 0, args.concat(partials));
@@ -1734,7 +1730,7 @@
   var permutations = function permutations(arr) {
     if (arr.length <= 2) return arr.length === 2 ? [arr, [arr[1], arr[0]]] : arr;
     return arr.reduce(function (acc, item, i) {
-      return acc.concat(permutations(_toConsumableArray(arr.slice(0, i)).concat(_toConsumableArray(arr.slice(i + 1)))).map(function (val) {
+      return acc.concat(permutations([].concat(_toConsumableArray(arr.slice(0, i)), _toConsumableArray(arr.slice(i + 1)))).map(function (val) {
         return [item].concat(_toConsumableArray(val));
       }));
     }, []);
@@ -1752,8 +1748,8 @@
     }, {});
   };
   var pipeAsyncFunctions = function pipeAsyncFunctions() {
-    for (var _len41 = arguments.length, fns = new Array(_len41), _key41 = 0; _key41 < _len41; _key41++) {
-      fns[_key41] = arguments[_key41];
+    for (var _len40 = arguments.length, fns = new Array(_len40), _key40 = 0; _key40 < _len40; _key40++) {
+      fns[_key40] = arguments[_key40];
     }
 
     return function (arg) {
@@ -1763,8 +1759,8 @@
     };
   };
   var pipeFunctions = function pipeFunctions() {
-    for (var _len42 = arguments.length, fns = new Array(_len42), _key42 = 0; _key42 < _len42; _key42++) {
-      fns[_key42] = arguments[_key42];
+    for (var _len41 = arguments.length, fns = new Array(_len41), _key41 = 0; _key41 < _len41; _key41++) {
+      fns[_key41] = arguments[_key41];
     }
 
     return fns.reduce(function (f, g) {
@@ -1831,8 +1827,8 @@
   };
   var promisify = function promisify(func) {
     return function () {
-      for (var _len43 = arguments.length, args = new Array(_len43), _key43 = 0; _key43 < _len43; _key43++) {
-        args[_key43] = arguments[_key43];
+      for (var _len42 = arguments.length, args = new Array(_len42), _key42 = 0; _key42 < _len42; _key42++) {
+        args[_key42] = arguments[_key42];
       }
 
       return new Promise(function (resolve, reject) {
@@ -1843,8 +1839,8 @@
     };
   };
   var pull = function pull(arr) {
-    for (var _len44 = arguments.length, args = new Array(_len44 > 1 ? _len44 - 1 : 0), _key44 = 1; _key44 < _len44; _key44++) {
-      args[_key44 - 1] = arguments[_key44];
+    for (var _len43 = arguments.length, args = new Array(_len43 > 1 ? _len43 - 1 : 0), _key43 = 1; _key43 < _len43; _key43++) {
+      args[_key43 - 1] = arguments[_key43];
     }
 
     var argState = Array.isArray(args[0]) ? args[0] : args;
@@ -1884,8 +1880,8 @@
     return removed;
   };
   var pullBy = function pullBy(arr) {
-    for (var _len45 = arguments.length, args = new Array(_len45 > 1 ? _len45 - 1 : 0), _key45 = 1; _key45 < _len45; _key45++) {
-      args[_key45 - 1] = arguments[_key45];
+    for (var _len44 = arguments.length, args = new Array(_len44 > 1 ? _len44 - 1 : 0), _key44 = 1; _key44 < _len44; _key44++) {
+      args[_key44 - 1] = arguments[_key44];
     }
 
     var length = args.length;
@@ -1928,8 +1924,8 @@
   };
   var rearg = function rearg(fn, indexes) {
     return function () {
-      for (var _len46 = arguments.length, args = new Array(_len46), _key46 = 0; _key46 < _len46; _key46++) {
-        args[_key46] = arguments[_key46];
+      for (var _len45 = arguments.length, args = new Array(_len45), _key45 = 0; _key45 < _len45; _key45++) {
+        args[_key45] = arguments[_key45];
       }
 
       return fn.apply(void 0, _toConsumableArray(indexes.map(function (i) {
@@ -1969,6 +1965,14 @@
     var asLink = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
     return asLink ? window.location.href = url : window.location.replace(url);
   };
+  var reducedFilter = function reducedFilter(data, keys, fn) {
+    return data.filter(fn).map(function (el) {
+      return keys.reduce(function (acc, key) {
+        acc[key] = el[key];
+        return acc;
+      }, {});
+    });
+  };
   var reduceSuccessive = function reduceSuccessive(arr, fn, acc) {
     return arr.reduce(function (res, val, i, arr) {
       return res.push(fn(res.slice(-1)[0], val, i, arr)), res;
@@ -1980,14 +1984,6 @@
     };
     return arr.reduce(function (a, b) {
       return comparator(a, b) >= 0 ? b : a;
-    });
-  };
-  var reducedFilter = function reducedFilter(data, keys, fn) {
-    return data.filter(fn).map(function (el) {
-      return keys.reduce(function (acc, key) {
-        acc[key] = el[key];
-        return acc;
-      }, {});
     });
   };
   var reject = function reject(pred, array) {
@@ -2006,11 +2002,14 @@
   };
   var renameKeys = function renameKeys(keysMap, obj) {
     return Object.keys(obj).reduce(function (acc, key) {
-      return _objectSpread({}, acc, _defineProperty({}, keysMap[key] || key, obj[key]));
+      return _objectSpread2({}, acc, {}, _defineProperty({}, keysMap[key] || key, obj[key]));
     }, {});
   };
   var reverseString = function reverseString(str) {
     return _toConsumableArray(str).reverse().join('');
+  };
+  var RGBToHex = function RGBToHex(r, g, b) {
+    return ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
   };
   var round = function round(n) {
     var decimals = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
@@ -2087,18 +2086,18 @@
     var index = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
     var delCount = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
 
-    for (var _len47 = arguments.length, elements = new Array(_len47 > 3 ? _len47 - 3 : 0), _key47 = 3; _key47 < _len47; _key47++) {
-      elements[_key47 - 3] = arguments[_key47];
+    for (var _len46 = arguments.length, elements = new Array(_len46 > 3 ? _len46 - 3 : 0), _key46 = 3; _key46 < _len46; _key46++) {
+      elements[_key46 - 3] = arguments[_key46];
     }
 
     return arr.slice(0, index).concat(elements).concat(arr.slice(index + delCount));
   };
   var show = function show() {
-    for (var _len48 = arguments.length, el = new Array(_len48), _key48 = 0; _key48 < _len48; _key48++) {
-      el[_key48] = arguments[_key48];
+    for (var _len47 = arguments.length, el = new Array(_len47), _key47 = 0; _key47 < _len47; _key47++) {
+      el[_key47] = arguments[_key47];
     }
 
-    return el.concat().forEach(function (e) {
+    return [].concat(el).forEach(function (e) {
       return e.style.display = '';
     });
   };
@@ -2214,11 +2213,11 @@
     return str.replace(/<[^>]*>/g, '');
   };
   var sum = function sum() {
-    for (var _len49 = arguments.length, arr = new Array(_len49), _key49 = 0; _key49 < _len49; _key49++) {
-      arr[_key49] = arguments[_key49];
+    for (var _len48 = arguments.length, arr = new Array(_len48), _key48 = 0; _key48 < _len48; _key48++) {
+      arr[_key48] = arguments[_key48];
     }
 
-    return arr.concat().reduce(function (acc, val) {
+    return [].concat(arr).reduce(function (acc, val) {
       return acc + val;
     }, 0);
   };
@@ -2241,9 +2240,9 @@
   var symmetricDifference = function symmetricDifference(a, b) {
     var sA = new Set(a),
         sB = new Set(b);
-    return _toConsumableArray(a.filter(function (x) {
+    return [].concat(_toConsumableArray(a.filter(function (x) {
       return !sB.has(x);
-    })).concat(_toConsumableArray(b.filter(function (x) {
+    })), _toConsumableArray(b.filter(function (x) {
       return !sA.has(x);
     })));
   };
@@ -2254,18 +2253,18 @@
         sB = new Set(b.map(function (v) {
       return fn(v);
     }));
-    return _toConsumableArray(a.filter(function (x) {
+    return [].concat(_toConsumableArray(a.filter(function (x) {
       return !sB.has(fn(x));
-    })).concat(_toConsumableArray(b.filter(function (x) {
+    })), _toConsumableArray(b.filter(function (x) {
       return !sA.has(fn(x));
     })));
   };
   var symmetricDifferenceWith = function symmetricDifferenceWith(arr, val, comp) {
-    return _toConsumableArray(arr.filter(function (a) {
+    return [].concat(_toConsumableArray(arr.filter(function (a) {
       return val.findIndex(function (b) {
         return comp(a, b);
       }) === -1;
-    })).concat(_toConsumableArray(val.filter(function (a) {
+    })), _toConsumableArray(val.filter(function (a) {
       return arr.findIndex(function (b) {
         return comp(a, b);
       }) === -1;
@@ -2305,8 +2304,8 @@
       _iteratorError2 = err;
     } finally {
       try {
-        if (!_iteratorNormalCompletion2 && _iterator2.return != null) {
-          _iterator2.return();
+        if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
+          _iterator2["return"]();
         }
       } finally {
         if (_didIteratorError2) {
@@ -2338,17 +2337,17 @@
       }
     };
   };
-  var timeTaken = function timeTaken(callback) {
-    console.time('timeTaken');
-    var r = callback();
-    console.timeEnd('timeTaken');
-    return r;
-  };
   var times = function times(n, fn) {
     var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : undefined;
     var i = 0;
 
     while (fn.call(context, i) !== false && ++i < n) {}
+  };
+  var timeTaken = function timeTaken(callback) {
+    console.time('timeTaken');
+    var r = callback();
+    console.timeEnd('timeTaken');
+    return r;
   };
   var toCamelCase = function toCamelCase(str) {
     var s = str && str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g).map(function (x) {
@@ -2366,6 +2365,9 @@
   var toDecimalMark = function toDecimalMark(num) {
     return num.toLocaleString('en-US');
   };
+  var toggleClass = function toggleClass(el, className) {
+    return el.classList.toggle(className);
+  };
   var toHash = function toHash(object, key) {
     return Array.prototype.reduce.call(object, function (acc, data, index) {
       return acc[!key ? index : data[key]] = data, acc;
@@ -2376,13 +2378,19 @@
       return x.toLowerCase();
     }).join('-');
   };
+  var tomorrow = function tomorrow() {
+    var t = new Date();
+    t.setDate(t.getDate() + 1);
+    return t.toISOString().split('T')[0];
+  };
   var toOrdinalSuffix = function toOrdinalSuffix(num) {
-    var int = parseInt(num),
-        digits = [int % 10, int % 100],
+    var _int = parseInt(num),
+        digits = [_int % 10, _int % 100],
         ordinals = ['st', 'nd', 'rd', 'th'],
         oPattern = [1, 2, 3, 4],
         tPattern = [11, 12, 13, 14, 15, 16, 17, 18, 19];
-    return oPattern.includes(digits[0]) && !tPattern.includes(digits[1]) ? int + ordinals[digits[0] - 1] : int + ordinals[3];
+
+    return oPattern.includes(digits[0]) && !tPattern.includes(digits[1]) ? _int + ordinals[digits[0] - 1] : _int + ordinals[3];
   };
   var toSafeInteger = function toSafeInteger(num) {
     return Math.round(Math.max(Math.min(num, Number.MAX_SAFE_INTEGER), Number.MIN_SAFE_INTEGER));
@@ -2396,14 +2404,6 @@
     return str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g).map(function (x) {
       return x.charAt(0).toUpperCase() + x.slice(1);
     }).join(' ');
-  };
-  var toggleClass = function toggleClass(el, className) {
-    return el.classList.toggle(className);
-  };
-  var tomorrow = function tomorrow() {
-    var t = new Date();
-    t.setDate(t.getDate() + 1);
-    return t.toISOString().split('T')[0];
   };
   var transform = function transform(obj, fn, acc) {
     return Object.keys(obj).reduce(function (a, k) {
@@ -2439,8 +2439,8 @@
         };
       };
 
-      for (var _len50 = arguments.length, args = new Array(_len50), _key50 = 0; _key50 < _len50; _key50++) {
-        args[_key50] = arguments[_key50];
+      for (var _len49 = arguments.length, args = new Array(_len49), _key49 = 0; _key49 < _len49; _key49++) {
+        args[_key49] = arguments[_key49];
       }
 
       if (n > args.length) throw new RangeError('Arguments too few!');
@@ -2481,16 +2481,16 @@
     return result;
   };
   var union = function union(a, b) {
-    return Array.from(new Set(_toConsumableArray(a).concat(_toConsumableArray(b))));
+    return Array.from(new Set([].concat(_toConsumableArray(a), _toConsumableArray(b))));
   };
   var unionBy = function unionBy(a, b, fn) {
     var s = new Set(a.map(fn));
-    return Array.from(new Set(_toConsumableArray(a).concat(_toConsumableArray(b.filter(function (x) {
+    return Array.from(new Set([].concat(_toConsumableArray(a), _toConsumableArray(b.filter(function (x) {
       return !s.has(fn(x));
     })))));
   };
   var unionWith = function unionWith(a, b, comp) {
-    return Array.from(new Set(_toConsumableArray(a).concat(_toConsumableArray(b.filter(function (x) {
+    return Array.from(new Set([].concat(_toConsumableArray(a), _toConsumableArray(b.filter(function (x) {
       return a.findIndex(function (y) {
         return comp(x, y);
       }) === -1;
@@ -2516,9 +2516,9 @@
     }, []);
   };
   var uniqueSymmetricDifference = function uniqueSymmetricDifference(a, b) {
-    return _toConsumableArray(new Set(_toConsumableArray(a.filter(function (v) {
+    return _toConsumableArray(new Set([].concat(_toConsumableArray(a.filter(function (v) {
       return !b.includes(v);
-    })).concat(_toConsumableArray(b.filter(function (v) {
+    })), _toConsumableArray(b.filter(function (v) {
       return !a.includes(v);
     })))));
   };
@@ -2551,6 +2551,23 @@
       return [];
     })).map(function (val) {
       return fn.apply(void 0, _toConsumableArray(val));
+    });
+  };
+  var URLJoin = function URLJoin() {
+    for (var _len50 = arguments.length, args = new Array(_len50), _key50 = 0; _key50 < _len50; _key50++) {
+      args[_key50] = arguments[_key50];
+    }
+
+    return args.join('/').replace(/[\/]+/g, '/').replace(/^(.+):\//, '$1://').replace(/^file:/, 'file:/').replace(/\/(\?|&|#[^!])/g, '$1').replace(/\?/g, '&').replace('&', '?');
+  };
+  var UUIDGeneratorBrowser = function UUIDGeneratorBrowser() {
+    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, function (c) {
+      return (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16);
+    });
+  };
+  var UUIDGeneratorNode = function UUIDGeneratorNode() {
+    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, function (c) {
+      return (c ^ crypto.randomBytes(1)[0] & 15 >> c / 4).toString(16);
     });
   };
   var validateNumber = function validateNumber(n) {
@@ -2642,15 +2659,240 @@
       });
     });
   };
+  var binarySearch = function binarySearch(arr, val) {
+    var start = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+    var end = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : arr.length - 1;
+    if (start > end) return -1;
+    var mid = Math.floor((start + end) / 2);
+    if (arr[mid] > val) return binarySearch(arr, val, start, mid - 1);
+    if (arr[mid] < val) return binarySearch(arr, val, mid + 1, end);
+    return mid;
+  };
+  var celsiusToFahrenheit = function celsiusToFahrenheit(degrees) {
+    return 1.8 * degrees + 32;
+  };
+  var cleanObj = function cleanObj(obj) {
+    var keysToKeep = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+    var childIndicator = arguments.length > 2 ? arguments[2] : undefined;
+    Object.keys(obj).forEach(function (key) {
+      if (key === childIndicator) {
+        cleanObj(obj[key], keysToKeep, childIndicator);
+      } else if (!keysToKeep.includes(key)) {
+        delete obj[key];
+      }
+    });
+    return obj;
+  };
+  var collatz = function collatz(n) {
+    return n % 2 === 0 ? n / 2 : 3 * n + 1;
+  };
+  var countVowels = function countVowels(str) {
+    return (str.match(/[aeiou]/gi) || []).length;
+  };
+  var factors = function factors(num) {
+    var primes = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
 
-  exports.CSVToArray = CSVToArray;
-  exports.CSVToJSON = CSVToJSON;
-  exports.JSONToFile = JSONToFile;
-  exports.JSONtoCSV = JSONtoCSV;
-  exports.RGBToHex = RGBToHex;
-  exports.URLJoin = URLJoin;
-  exports.UUIDGeneratorBrowser = UUIDGeneratorBrowser;
-  exports.UUIDGeneratorNode = UUIDGeneratorNode;
+    var isPrime = function isPrime(num) {
+      var boundary = Math.floor(Math.sqrt(num));
+
+      for (var i = 2; i <= boundary; i++) {
+        if (num % i === 0) return false;
+      }
+
+      return num >= 2;
+    };
+
+    var isNeg = num < 0;
+    num = isNeg ? -num : num;
+    var array = Array.from({
+      length: num - 1
+    }).map(function (val, i) {
+      return num % (i + 2) === 0 ? i + 2 : false;
+    }).filter(function (val) {
+      return val;
+    });
+    if (isNeg) array = array.reduce(function (acc, val) {
+      acc.push(val);
+      acc.push(-val);
+      return acc;
+    }, []);
+    return primes ? array.filter(isPrime) : array;
+  };
+  var fahrenheitToCelsius = function fahrenheitToCelsius(degrees) {
+    return (degrees - 32) * 5 / 9;
+  };
+  var fibonacciCountUntilNum = function fibonacciCountUntilNum(num) {
+    return Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));
+  };
+  var fibonacciUntilNum = function fibonacciUntilNum(num) {
+    var n = Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));
+    return Array.from({
+      length: n
+    }).reduce(function (acc, val, i) {
+      return acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i);
+    }, []);
+  };
+  var heronArea = function heronArea(side_a, side_b, side_c) {
+    var p = (side_a + side_b + side_c) / 2;
+    return Math.sqrt(p * (p - side_a) * (p - side_b) * (p - side_c));
+  };
+  var howManyTimes = function howManyTimes(num, divisor) {
+    if (divisor === 1 || divisor === -1) return Infinity;
+    if (divisor === 0) return 0;
+    var i = 0;
+
+    while (Number.isInteger(num / divisor)) {
+      i++;
+      num = num / divisor;
+    }
+
+    return i;
+  };
+  var httpDelete = function httpDelete(url, callback) {
+    var err = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : console.error;
+    var request = new XMLHttpRequest();
+    request.open('DELETE', url, true);
+
+    request.onload = function () {
+      return callback(request);
+    };
+
+    request.onerror = function () {
+      return err(request);
+    };
+
+    request.send();
+  };
+  var httpPut = function httpPut(url, data, callback) {
+    var err = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : console.error;
+    var request = new XMLHttpRequest();
+    request.open("PUT", url, true);
+    request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+
+    request.onload = function () {
+      return callback(request);
+    };
+
+    request.onerror = function () {
+      return err(request);
+    };
+
+    request.send(data);
+  };
+  var isArmstrongNumber = function isArmstrongNumber(digits) {
+    return function (arr) {
+      return arr.reduce(function (a, d) {
+        return a + Math.pow(parseInt(d), arr.length);
+      }, 0) == digits;
+    }((digits + '').split(''));
+  };
+  var isSimilar = function isSimilar(pattern, str) {
+    return _toConsumableArray(str).reduce(function (matchIndex, _char3) {
+      return _char3.toLowerCase() === (pattern[matchIndex] || '').toLowerCase() ? matchIndex + 1 : matchIndex;
+    }, 0) === pattern.length;
+  };
+  var JSONToDate = function JSONToDate(arr) {
+    var dt = new Date(parseInt(arr.toString().substr(6)));
+    return "".concat(dt.getDate(), "/").concat(dt.getMonth() + 1, "/").concat(dt.getFullYear());
+  };
+  var kmphToMph = function kmphToMph(kmph) {
+    return 0.621371192 * kmph;
+  };
+  var levenshteinDistance = function levenshteinDistance(string1, string2) {
+    if (string1.length === 0) return string2.length;
+    if (string2.length === 0) return string1.length;
+    var matrix = Array(string2.length + 1).fill(0).map(function (x, i) {
+      return [i];
+    });
+    matrix[0] = Array(string1.length + 1).fill(0).map(function (x, i) {
+      return i;
+    });
+
+    for (var i = 1; i <= string2.length; i++) {
+      for (var j = 1; j <= string1.length; j++) {
+        if (string2[i - 1] === string1[j - 1]) {
+          matrix[i][j] = matrix[i - 1][j - 1];
+        } else {
+          matrix[i][j] = Math.min(matrix[i - 1][j - 1] + 1, matrix[i][j - 1] + 1, matrix[i - 1][j] + 1);
+        }
+      }
+    }
+
+    return matrix[string2.length][string1.length];
+  };
+  var mphToKmph = function mphToKmph(mph) {
+    return 1.6093440006146922 * mph;
+  };
+  var pipeLog = function pipeLog(data) {
+    return console.log(data) || data;
+  };
+  var quickSort = function quickSort(_ref31, desc) {
+    var _ref32 = _toArray(_ref31),
+        n = _ref32[0],
+        nums = _ref32.slice(1);
+
+    return isNaN(n) ? [] : [].concat(_toConsumableArray(quickSort(nums.filter(function (v) {
+      return desc ? v > n : v <= n;
+    }), desc)), [n], _toConsumableArray(quickSort(nums.filter(function (v) {
+      return !desc ? v > n : v <= n;
+    }), desc)));
+  };
+  var removeVowels = function removeVowels(str) {
+    var repl = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+    return str.replace(/[aeiou]/gi, repl);
+  };
+  var solveRPN = function solveRPN(rpn) {
+    var OPERATORS = {
+      '*': function _(a, b) {
+        return a * b;
+      },
+      '+': function _(a, b) {
+        return a + b;
+      },
+      '-': function _(a, b) {
+        return a - b;
+      },
+      '/': function _(a, b) {
+        return a / b;
+      },
+      '**': function _(a, b) {
+        return Math.pow(a, b);
+      }
+    };
+    var _ref33 = [[], rpn.replace(/\^/g, '**').split(/\s+/g).filter(function (el) {
+      return !/\s+/.test(el) && el !== '';
+    })],
+        stack = _ref33[0],
+        solve = _ref33[1];
+    solve.forEach(function (symbol) {
+      if (!isNaN(parseFloat(symbol)) && isFinite(symbol)) {
+        stack.push(symbol);
+      } else if (Object.keys(OPERATORS).includes(symbol)) {
+        var _ref34 = [stack.pop(), stack.pop()],
+            a = _ref34[0],
+            b = _ref34[1];
+        stack.push(OPERATORS[symbol](parseFloat(b), parseFloat(a)));
+      } else {
+        throw "".concat(symbol, " is not a recognized symbol");
+      }
+    });
+    if (stack.length === 1) return stack.pop();else throw "".concat(rpn, " is not a proper RPN. Please check it and try again");
+  };
+  var speechSynthesis = function speechSynthesis(message) {
+    var msg = new SpeechSynthesisUtterance(message);
+    msg.voice = window.speechSynthesis.getVoices()[0];
+    window.speechSynthesis.speak(msg);
+  };
+  var squareSum = function squareSum() {
+    for (var _len55 = arguments.length, args = new Array(_len55), _key55 = 0; _key55 < _len55; _key55++) {
+      args[_key55] = arguments[_key55];
+    }
+
+    return args.reduce(function (squareSum, number) {
+      return squareSum + Math.pow(number, 2);
+    }, 0);
+  };
+
   exports.all = all;
   exports.allEqual = allEqual;
   exports.any = any;
@@ -2691,11 +2933,13 @@
   exports.converge = converge;
   exports.copyToClipboard = copyToClipboard;
   exports.countBy = countBy;
-  exports.countOccurrences = countOccurrences;
   exports.counter = counter;
+  exports.countOccurrences = countOccurrences;
   exports.createDirIfNotExists = createDirIfNotExists;
   exports.createElement = createElement;
   exports.createEventHub = createEventHub;
+  exports.CSVToArray = CSVToArray;
+  exports.CSVToJSON = CSVToJSON;
   exports.currentURL = currentURL;
   exports.curry = curry;
   exports.dayOfYear = dayOfYear;
@@ -2742,10 +2986,10 @@
   exports.flattenObject = flattenObject;
   exports.flip = flip;
   exports.forEachRight = forEachRight;
+  exports.formatDuration = formatDuration;
+  exports.formToObject = formToObject;
   exports.forOwn = forOwn;
   exports.forOwnRight = forOwnRight;
-  exports.formToObject = formToObject;
-  exports.formatDuration = formatDuration;
   exports.fromCamelCase = fromCamelCase;
   exports.functionName = functionName;
   exports.functions = functions;
@@ -2773,7 +3017,6 @@
   exports.httpPost = httpPost;
   exports.httpsRedirect = httpsRedirect;
   exports.hz = hz;
-  exports.inRange = inRange;
   exports.indentString = indentString;
   exports.indexOfAll = indexOfAll;
   exports.initial = initial;
@@ -2782,6 +3025,7 @@
   exports.initializeArrayWithRangeRight = initializeArrayWithRangeRight;
   exports.initializeArrayWithValues = initializeArrayWithValues;
   exports.initializeNDArray = initializeNDArray;
+  exports.inRange = inRange;
   exports.insertAfter = insertAfter;
   exports.insertBefore = insertBefore;
   exports.intersection = intersection;
@@ -2827,6 +3071,8 @@
   exports.isWeekend = isWeekend;
   exports.isWritableStream = isWritableStream;
   exports.join = join;
+  exports.JSONtoCSV = JSONtoCSV;
+  exports.JSONToFile = JSONToFile;
   exports.last = last;
   exports.lcm = lcm;
   exports.longestItem = longestItem;
@@ -2865,8 +3111,8 @@
   exports.omit = omit;
   exports.omitBy = omitBy;
   exports.on = on;
-  exports.onUserInputChange = onUserInputChange;
   exports.once = once;
+  exports.onUserInputChange = onUserInputChange;
   exports.orderBy = orderBy;
   exports.over = over;
   exports.overArgs = overArgs;
@@ -2901,14 +3147,15 @@
   exports.rearg = rearg;
   exports.recordAnimationFrames = recordAnimationFrames;
   exports.redirect = redirect;
+  exports.reducedFilter = reducedFilter;
   exports.reduceSuccessive = reduceSuccessive;
   exports.reduceWhich = reduceWhich;
-  exports.reducedFilter = reducedFilter;
   exports.reject = reject;
   exports.remove = remove;
   exports.removeNonASCII = removeNonASCII;
   exports.renameKeys = renameKeys;
   exports.reverseString = reverseString;
+  exports.RGBToHex = RGBToHex;
   exports.round = round;
   exports.runAsync = runAsync;
   exports.runPromisesInSeries = runPromisesInSeries;
@@ -2950,19 +3197,19 @@
   exports.takeRightWhile = takeRightWhile;
   exports.takeWhile = takeWhile;
   exports.throttle = throttle;
-  exports.timeTaken = timeTaken;
   exports.times = times;
+  exports.timeTaken = timeTaken;
   exports.toCamelCase = toCamelCase;
   exports.toCurrency = toCurrency;
   exports.toDecimalMark = toDecimalMark;
+  exports.toggleClass = toggleClass;
   exports.toHash = toHash;
   exports.toKebabCase = toKebabCase;
+  exports.tomorrow = tomorrow;
   exports.toOrdinalSuffix = toOrdinalSuffix;
   exports.toSafeInteger = toSafeInteger;
   exports.toSnakeCase = toSnakeCase;
   exports.toTitleCase = toTitleCase;
-  exports.toggleClass = toggleClass;
-  exports.tomorrow = tomorrow;
   exports.transform = transform;
   exports.triggerEvent = triggerEvent;
   exports.truncateString = truncateString;
@@ -2982,6 +3229,9 @@
   exports.untildify = untildify;
   exports.unzip = unzip;
   exports.unzipWith = unzipWith;
+  exports.URLJoin = URLJoin;
+  exports.UUIDGeneratorBrowser = UUIDGeneratorBrowser;
+  exports.UUIDGeneratorNode = UUIDGeneratorNode;
   exports.validateNumber = validateNumber;
   exports.vectorDistance = vectorDistance;
   exports.when = when;
@@ -2993,6 +3243,31 @@
   exports.zip = zip;
   exports.zipObject = zipObject;
   exports.zipWith = zipWith;
+  exports.binarySearch = binarySearch;
+  exports.celsiusToFahrenheit = celsiusToFahrenheit;
+  exports.cleanObj = cleanObj;
+  exports.collatz = collatz;
+  exports.countVowels = countVowels;
+  exports.factors = factors;
+  exports.fahrenheitToCelsius = fahrenheitToCelsius;
+  exports.fibonacciCountUntilNum = fibonacciCountUntilNum;
+  exports.fibonacciUntilNum = fibonacciUntilNum;
+  exports.heronArea = heronArea;
+  exports.howManyTimes = howManyTimes;
+  exports.httpDelete = httpDelete;
+  exports.httpPut = httpPut;
+  exports.isArmstrongNumber = isArmstrongNumber;
+  exports.isSimilar = isSimilar;
+  exports.JSONToDate = JSONToDate;
+  exports.kmphToMph = kmphToMph;
+  exports.levenshteinDistance = levenshteinDistance;
+  exports.mphToKmph = mphToKmph;
+  exports.pipeLog = pipeLog;
+  exports.quickSort = quickSort;
+  exports.removeVowels = removeVowels;
+  exports.solveRPN = solveRPN;
+  exports.speechSynthesis = speechSynthesis;
+  exports.squareSum = squareSum;
 
   Object.defineProperty(exports, '__esModule', { value: true });
 

@@ -1,4 +1,7 @@
-### pick
+---
+title: pick
+tags: object,array,intermediate
+---
 
 Picks the key-value pairs corresponding to the given keys from an object.
 

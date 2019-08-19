@@ -1,4 +1,7 @@
-### JSONToFile
+---
+title: JSONToFile
+tags: node,json,intermediate
+---
 
 Writes a JSON object to a file.
 

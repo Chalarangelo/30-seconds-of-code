@@ -1,4 +1,7 @@
-### forOwnRight
+---
+title: forOwnRight
+tags: object,intermediate
+---
 
 Iterates over all own properties of an object in reverse, running a callback for each one.
 

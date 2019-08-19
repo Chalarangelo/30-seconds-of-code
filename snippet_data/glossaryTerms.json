@@ -1,0 +1,1395 @@
+{
+  "data": [
+    {
+      "id": "AJAX",
+      "type": "glossaryTerm",
+      "title": "AJAX",
+      "attributes": {
+        "text": "Asynchronous JavaScript and XML (known as AJAX) is a term that describes a new approach to using multiple technologies together in order to enable web applications to make quick updates to the user interface without reloading the entire browser page.\n",
+        "tags": [
+          "AJAX"
+        ]
+      },
+      "meta": {
+        "hash": "9b1f6402c69f699f46f03c0ddcfb4beec171f27ca95cdded3afab446d03ad706"
+      }
+    },
+    {
+      "id": "API",
+      "type": "glossaryTerm",
+      "title": "API",
+      "attributes": {
+        "text": "API stands for Application Programming Interface and is a set of features and rules provided by a provided by a software to enable third-party software to interact with it.\nThe code features of a web API usually include methods, properties, events or URLs.\n",
+        "tags": [
+          "API"
+        ]
+      },
+      "meta": {
+        "hash": "fff6c876f36872a1e20f0b75e8243a6db0468e0dc3ff1dd92fee2f5721f168e8"
+      }
+    },
+    {
+      "id": "Argument",
+      "type": "glossaryTerm",
+      "title": "Argument",
+      "attributes": {
+        "text": "An argument is a value passed as an input to a function and can be either a primitive or an object.\nIn JavaScript, functions can also be passed as arguments to other functions.\n",
+        "tags": [
+          "Argument"
+        ]
+      },
+      "meta": {
+        "hash": "3df6a7b2e245dbdc839da5e244a9278ff12352ec7674b70915561534275cc88a"
+      }
+    },
+    {
+      "id": "Array",
+      "type": "glossaryTerm",
+      "title": "Array",
+      "attributes": {
+        "text": "Arrays are used to store multiple values in a single variable.\nArrays are ordered and each item in an array has a numeric index associated with it.\nJavaScript arrays are zero-indexed, meaning the first element's index is 0.\n",
+        "tags": [
+          "Array"
+        ]
+      },
+      "meta": {
+        "hash": "fa20b67a6a5e27f8e368ea55a06add52159e0f68d4571278da2164d6d38b7762"
+      }
+    },
+    {
+      "id": "Asynchronous-programming",
+      "type": "glossaryTerm",
+      "title": "Asynchronous programming",
+      "attributes": {
+        "text": "Asynchronous programming is a way to allow multiple events to trigger code without waiting for each other.\nThe main benefits of asynchronous programming are improved application performance and responsiveness.\n",
+        "tags": [
+          "Asynchronous programming"
+        ]
+      },
+      "meta": {
+        "hash": "0ac65b7d22cbeced1c3a9910b144cdec9fc8fa27ea27d8c13604475a865b986b"
+      }
+    },
+    {
+      "id": "Automatic-semicolon-insertion",
+      "type": "glossaryTerm",
+      "title": "Automatic semicolon insertion",
+      "attributes": {
+        "text": "Automatic semicolon insertion (ASI) is a JavaScript feature that allows developers to omit semicolons in their code.\n",
+        "tags": [
+          "Automatic semicolon insertion"
+        ]
+      },
+      "meta": {
+        "hash": "ae6338f6a82155ed3d56875810a5bbd803b07a7e8e67333592185dfb73c4924b"
+      }
+    },
+    {
+      "id": "Boolean",
+      "type": "glossaryTerm",
+      "title": "Boolean",
+      "attributes": {
+        "text": "Booleans are one of the primitive data types in JavaScript. \nThey represent logical data values and can only be `true` or `false`.\n",
+        "tags": [
+          "Boolean"
+        ]
+      },
+      "meta": {
+        "hash": "c4d8d7610c9c97b4933d998afb0ca45c8d0b7a7778a21495c01e3b8079d63a67"
+      }
+    },
+    {
+      "id": "Callback",
+      "type": "glossaryTerm",
+      "title": "Callback",
+      "attributes": {
+        "text": "A callback function, also known as a high-order function, is a function that is passed into another function as an argument, which is then executed inside the outer function.\nCallbacks can be synchronous or asynchronous.\n",
+        "tags": [
+          "Callback"
+        ]
+      },
+      "meta": {
+        "hash": "827a5cd9608b33d3721fe1e61bbc6d729147901e99aea0918e04e1f19117e6d3"
+      }
+    },
+    {
+      "id": "Character-encoding",
+      "type": "glossaryTerm",
+      "title": "Character encoding",
+      "attributes": {
+        "text": "A character encoding defines a mapping between bytes and text, specifying how the sequenece of bytes should be interpreted.\nTwo commonly used character encodings are ASCII and UTF-8.\n",
+        "tags": [
+          "Character encoding"
+        ]
+      },
+      "meta": {
+        "hash": "373c77da130d9876ca5a9fb71889099022cdf88e907432ded542d6a397af318a"
+      }
+    },
+    {
+      "id": "Class",
+      "type": "glossaryTerm",
+      "title": "Class",
+      "attributes": {
+        "text": "In object-oriented programming, a class is a template definition of an object's properties and methods.\n",
+        "tags": [
+          "Class"
+        ]
+      },
+      "meta": {
+        "hash": "22c1e8dae030c219a9e46192c4cc4084136f989a1a2aa819a03035d928362ad0"
+      }
+    },
+    {
+      "id": "Closure",
+      "type": "glossaryTerm",
+      "title": "Closure",
+      "attributes": {
+        "text": "A closure is the combination of a function and the lexical environment within which that function was declared.\nThe closure allows a function to access the contents of that environment.\n",
+        "tags": [
+          "Closure"
+        ]
+      },
+      "meta": {
+        "hash": "68a572858e08d8625b4ea0c655f167e399caefa84c5f082783f0285a9a3736d1"
+      }
+    },
+    {
+      "id": "CoffeeScript",
+      "type": "glossaryTerm",
+      "title": "CoffeeScript",
+      "attributes": {
+        "text": "CoffeeScript is a programming language inspired by Ruby, Python and Haskell that transpiles to JavaScript.\n",
+        "tags": [
+          "CoffeeScript"
+        ]
+      },
+      "meta": {
+        "hash": "afe38f75dd585f7e3ad7ea384b263284b7db20bb293cc0e48cc798b1911c9565"
+      }
+    },
+    {
+      "id": "Constant",
+      "type": "glossaryTerm",
+      "title": "Constant",
+      "attributes": {
+        "text": "A constant is a value, associated with an identifier.\nThe value of a constant can be accessed using the identifier and cannot be altered during execution.\n",
+        "tags": [
+          "Constant"
+        ]
+      },
+      "meta": {
+        "hash": "b05e439bab7b628f7c5af924b35141c8a5fa3c003a125a6584f4772a00040ed4"
+      }
+    },
+    {
+      "id": "Constructor",
+      "type": "glossaryTerm",
+      "title": "Constructor",
+      "attributes": {
+        "text": "In class-based object-oriented programming, a constructor is a special type of function called to instantiate an object.\nConstructors often accept arguments that are commonly used to set member properties.\n",
+        "tags": [
+          "Constructor"
+        ]
+      },
+      "meta": {
+        "hash": "6eb566c2b02c357591c1ebfb633055b5a84a18c94b32305a0b4f12fbe3fa070b"
+      }
+    },
+    {
+      "id": "Continuous-Deployment",
+      "type": "glossaryTerm",
+      "title": "Continuous Deployment",
+      "attributes": {
+        "text": "Continuous Deployment follows the testing that happens during Continuous Integration and pushes changes to a staging or production system. \nContinuous Deployment ensures that a version of the codebase is accessible at all times.",
+        "tags": [
+          "Continuous Deployment"
+        ]
+      },
+      "meta": {
+        "hash": "6c6f09dd2307c988c1d3ddda5be95707777103e6e5786867ab0a4539454cd09a"
+      }
+    },
+    {
+      "id": "Continuous-Integration",
+      "type": "glossaryTerm",
+      "title": "Continuous Integration",
+      "attributes": {
+        "text": "Continuous Integration (CI) is the practice of testing each change done to a codebase automatically and as early as possible.\nTwo popular CI systems that integrate with GitHub are Travis CI and Circle CI.",
+        "tags": [
+          "Continuous Integration"
+        ]
+      },
+      "meta": {
+        "hash": "6b31dddf283b18bfd1ca0a4381bf9c1a2604858a4df0db70ac433718a2818b41"
+      }
+    },
+    {
+      "id": "CORS",
+      "type": "glossaryTerm",
+      "title": "CORS",
+      "attributes": {
+        "text": "Cross-Origin Resource Sharing (known as CORS) is a mechanism that uses extra HTTP headers to tell a browser to let a web application running at one domain have permission to access resources from a server at a different domain.\n",
+        "tags": [
+          "CORS"
+        ]
+      },
+      "meta": {
+        "hash": "c2ecf2dd519743e76c507047954463998f85a12482e286eb908b1b2bce8572f5"
+      }
+    },
+    {
+      "id": "Cross-site-scripting-xss",
+      "type": "glossaryTerm",
+      "title": "Cross-site scripting (XSS)",
+      "attributes": {
+        "text": "XSS refers to client-side code injection where the attacker injects malicious scripts into a legitimate website or web application. \nThis is often achieved when the application does not validate user input and freely injects dynamic HTML content.\n",
+        "tags": [
+          "Cross-site scripting (XSS)"
+        ]
+      },
+      "meta": {
+        "hash": "1fe7dcff3a925aabcfcb6c2ce842ce95838a2695ff0e9b381c5b7ff07a6c0107"
+      }
+    },
+    {
+      "id": "CSS",
+      "type": "glossaryTerm",
+      "title": "CSS",
+      "attributes": {
+        "text": "CSS stands for Cascading Style Sheets and is a language used to style web pages.\nCSS documents are plaintext documents structured with rules, which consist of element selectors and property-value pairs that apply the styles to the specified selectors.\n",
+        "tags": [
+          "CSS"
+        ]
+      },
+      "meta": {
+        "hash": "1b41d1d30012e6c12d81100b9d360af129c219a09307759eaf17e2721a386a66"
+      }
+    },
+    {
+      "id": "CSV",
+      "type": "glossaryTerm",
+      "title": "CSV",
+      "attributes": {
+        "text": "CSV stands for Comma-Separated Values and is a storage format for tabular data.\nCSV documents are plaintext documents where each line represents a table row, with table columns separated by commas or some other delimiter (e.g. semicolons).\nThe first line of a CSV document sometimes consists of the table column headings for the data to follow.\n",
+        "tags": [
+          "CSV"
+        ]
+      },
+      "meta": {
+        "hash": "2008cb370a2144ec0e7d62525d4c79dd99bf6746d2feb1b47ecc31811c72fd6c"
+      }
+    },
+    {
+      "id": "Currying",
+      "type": "glossaryTerm",
+      "title": "Currying",
+      "attributes": {
+        "text": "Currying is a way of constructing functions that allows partial application of a function's arguments.\nPractically, this means that a function is broken down into a series of functions, each one accepting part of the arguments.\n",
+        "tags": [
+          "Currying"
+        ]
+      },
+      "meta": {
+        "hash": "1a0db8645a4171320747cb8e6506711da00cdcf19f75760a5b340c23ddd05112"
+      }
+    },
+    {
+      "id": "Deserialization",
+      "type": "glossaryTerm",
+      "title": "Deserialization",
+      "attributes": {
+        "text": "Deserialization is the process of converting a format that has been transferred over a network and/or used for storage to an object or data structure.\nA common type of deserialization in JavaScript is the conversion of JSON string into an object.\n",
+        "tags": [
+          "Deserialization"
+        ]
+      },
+      "meta": {
+        "hash": "5e1808b84a92cdd774c763a69e20ea65bf4c68e1781cad74fa019cc1097b3977"
+      }
+    },
+    {
+      "id": "DNS",
+      "type": "glossaryTerm",
+      "title": "DNS",
+      "attributes": {
+        "text": "A DNS (Domain Name System) translates domain names to the IP addresses needed to find a particular computer service on a network.\n",
+        "tags": [
+          "DNS"
+        ]
+      },
+      "meta": {
+        "hash": "5111b26c807271210d5d566c973f988515b22d110468d5fefe2853e4c6030262"
+      }
+    },
+    {
+      "id": "DOM",
+      "type": "glossaryTerm",
+      "title": "DOM",
+      "attributes": {
+        "text": "The DOM (Document Object Model) is a cross-platform API that treats HTML and XML documents as a tree structure consisting of nodes. \nThese nodes (such as elements and text nodes) are objects that can be programmatically manipulated and any visible changes made to them are reflected live in the document. \nIn a browser, this API is available to JavaScript where DOM nodes can be manipulated to change their styles, contents, placement in the document, or interacted with through event listeners.\n",
+        "tags": [
+          "DOM"
+        ]
+      },
+      "meta": {
+        "hash": "76e09f629992e786374056340026dea7a5f127036ff4fd448650a1b8ec19cdd3"
+      }
+    },
+    {
+      "id": "Domain-name-registrar",
+      "type": "glossaryTerm",
+      "title": "Domain name registrar",
+      "attributes": {
+        "text": "A domain name registrar is a company that manages the reservation of internet domain names.\nA domain name registrar must be approved by a general top-level domain (gTLD) registry or a country code top-level domain (ccTLD) registry.\n",
+        "tags": [
+          "Domain name registrar"
+        ]
+      },
+      "meta": {
+        "hash": "637d992b13bda9cc95a3960ef85f35930e4b46bb3aa30357fbab74ee67944e23"
+      }
+    },
+    {
+      "id": "Domain-name",
+      "type": "glossaryTerm",
+      "title": "Domain name",
+      "attributes": {
+        "text": "A domain name is a website's address on the Internet, used primarily in URLs to identify the server for each webpage.\nA domain name consists of a hierarchical sequence of names, separated by dots and ending with an extension.\n",
+        "tags": [
+          "Domain name"
+        ]
+      },
+      "meta": {
+        "hash": "9d784c9282d84e522e926a44cff06665ffeda0752d9ad1a4ad0978f4656b809a"
+      }
+    },
+    {
+      "id": "Element",
+      "type": "glossaryTerm",
+      "title": "Element",
+      "attributes": {
+        "text": "A JavaScript representation of a DOM element commonly returned by `document.querySelector()` and `document.createElement()`. \nThey are used when creating content with JavaScript for display in the DOM that needs to be programatically generated.\n",
+        "tags": [
+          "Element"
+        ]
+      },
+      "meta": {
+        "hash": "9a267c3bcb47f6bd54b826697aa1c3b18d80cc0851092c98fdfe8d8c657ab95a"
+      }
+    },
+    {
+      "id": "ES6",
+      "type": "glossaryTerm",
+      "title": "ES6",
+      "attributes": {
+        "text": "ES6 stands for ECMAScript 6 (also known as ECMAScript 2015), a version of the ECMAScript specification that standardizes JavaScript.\nES6 adds a wide variety of new features to the specification, such as classes, promises, generators and arrow functions.\n",
+        "tags": [
+          "ES6"
+        ]
+      },
+      "meta": {
+        "hash": "5e692fc6587ba97bdc8976809982d894daf464f35f080fb8b700125e25ecd91d"
+      }
+    },
+    {
+      "id": "Event-driven-programming",
+      "type": "glossaryTerm",
+      "title": "Event-driven programming",
+      "attributes": {
+        "text": "Event-driven programming is a programming paradigm in which the flow of the program is determined by events (e.g. user actions, thread messages, sensor outputs).\nIn event-driven applications, there is usually a main loop that listens for events and trigger callback functions accordingly when one of these events is detected.\n",
+        "tags": [
+          "Event-driven programming"
+        ]
+      },
+      "meta": {
+        "hash": "2fc2bc7a976fae32837fc7694650f34b632de9219fd162d2190155fd68cfa22d"
+      }
+    },
+    {
+      "id": "Event-loop",
+      "type": "glossaryTerm",
+      "title": "Event loop",
+      "attributes": {
+        "text": "The event loop handles all asynchronous callbacks. \nCallbacks are queued in a loop, while other code runs, and will run one by one when the response for each one has been received.\nThe event loop allows JavaScript to perform non-blocking I/O operations, despite the fact that JavaScript is single-threaded.\n",
+        "tags": [
+          "Event loop"
+        ]
+      },
+      "meta": {
+        "hash": "42c8ba24aa3636cb7d950a6ccff61cf23ca1776d0a55e1211712788a8d7bf930"
+      }
+    },
+    {
+      "id": "Express",
+      "type": "glossaryTerm",
+      "title": "Express",
+      "attributes": {
+        "text": "Express is a backend framework, that provides a layer of fundamental web application features for Node.js.\nSome of its key features are routing, middleware, template engines and error handling.\n",
+        "tags": [
+          "Express"
+        ]
+      },
+      "meta": {
+        "hash": "ffc21d79a333ad55f538e1e6faf521e2b31a36a33ed86cac8a2bdb1749054d98"
+      }
+    },
+    {
+      "id": "Factory-functions",
+      "type": "glossaryTerm",
+      "title": "Factory functions",
+      "attributes": {
+        "text": "In JavaScript, a factory function is any function, which is not a class or constructor, that returns a new object.\nFactory functions don't require the use of the `new` keyword.\n",
+        "tags": [
+          "Factory functions"
+        ]
+      },
+      "meta": {
+        "hash": "ce5d925a57f2112c699fefd8529d2dc438ad4f8b8045f62e0d970a9f38650710"
+      }
+    },
+    {
+      "id": "First-class-function",
+      "type": "glossaryTerm",
+      "title": "First-class function",
+      "attributes": {
+        "text": "A programming language is said to have first-class functions if it treats them as first-class citizens, meaning they can be passed as arguments, be returned as values from other functions, be assigned to variables and stored in data structures.",
+        "tags": [
+          "First-class function"
+        ]
+      },
+      "meta": {
+        "hash": "499e7946c147d07e0a7dfa72334f89a36964f328929ec3b173f830b0bdc9a4da"
+      }
+    },
+    {
+      "id": "Flexbox",
+      "type": "glossaryTerm",
+      "title": "Flexbox",
+      "attributes": {
+        "text": "Flexbox is a one-dimensional layout model used to style websites as a property that could advance space distribution between items and provide powerful alignment capabilities.\n",
+        "tags": [
+          "Flexbox"
+        ]
+      },
+      "meta": {
+        "hash": "082d9bbccade6611576f423ffea5b2d9ee89a9102faded2a44cc90e7f51d78e0"
+      }
+    },
+    {
+      "id": "Function",
+      "type": "glossaryTerm",
+      "title": "Function",
+      "attributes": {
+        "text": "Functions are self-contained blocks of code with their own scope, that can be called by other code and are usually associated with a unique identifier.\nFunctions accept input in the form of arguments and can optionally return an output (if no `return` statement is present, the default value of `undefined` will be returned instead). \nJavaScript functions are also objects.\n",
+        "tags": [
+          "Function"
+        ]
+      },
+      "meta": {
+        "hash": "23ab9254b5e120452adb8cb71030c6d737882bfde7307772c81efd7f653ccf66"
+      }
+    },
+    {
+      "id": "Functional-programming",
+      "type": "glossaryTerm",
+      "title": "Functional programming",
+      "attributes": {
+        "text": "Functional programming is a paradigm in which programs are built in a declarative manner using pure functions that avoid shared state and mutable data. \nFunctions that always return the same value for the same input and don't produce side effects are the pillar of functional programming.\n",
+        "tags": [
+          "Functional programming"
+        ]
+      },
+      "meta": {
+        "hash": "0e5793d0f803ffd63e9ab997c5818e42c3713c88fb720a586e619faa86110abc"
+      }
+    },
+    {
+      "id": "Functor",
+      "type": "glossaryTerm",
+      "title": "Functor",
+      "attributes": {
+        "text": "A Functor is a data type common in functional programming that implements a `map` method. \nThe `map` method takes a function and applies it to the data in the Functor, returning a new instance of the Functor with the result.\nJavaScript `Array`s are an example of the Functor data type.\n",
+        "tags": [
+          "Functor"
+        ]
+      },
+      "meta": {
+        "hash": "78bed830aa9e7733b948e8a242cce639d5bbfdea21254213dba31458bf9057da"
+      }
+    },
+    {
+      "id": "Garbage-collection",
+      "type": "glossaryTerm",
+      "title": "Garbage collection",
+      "attributes": {
+        "text": "Garbage collection is a form of automatic memory management.\nIt attempts to reclaim memory occupied by objects that are no longer used by the program.\n",
+        "tags": [
+          "Garbage collection"
+        ]
+      },
+      "meta": {
+        "hash": "a5ce95634eb0edeaf77d2443a1c18d7152338f85407c32ebb575aada4b28e47c"
+      }
+    },
+    {
+      "id": "Git",
+      "type": "glossaryTerm",
+      "title": "Git",
+      "attributes": {
+        "text": "Git is an open-source version control system, used for source code management.\nGit allows users to copy (clone) and edit code on their local machines, before merging it into the main code base (master repository).\n",
+        "tags": [
+          "Git"
+        ]
+      },
+      "meta": {
+        "hash": "b2f90fbfa2e7800d42044b637b675b40b6fa8494cb0b914f38afdfc5a5775f2c"
+      }
+    },
+    {
+      "id": "Higher-order-function",
+      "type": "glossaryTerm",
+      "title": "Higher-order function",
+      "attributes": {
+        "text": "Higher-order functions are functions that either take other functions as arguments, return a function as a result, or both.\n",
+        "tags": [
+          "Higher-order function"
+        ]
+      },
+      "meta": {
+        "hash": "f03c37ecbe1199bbad2a2f489c8f1115cd696acec93ccdbf367e90b50554289d"
+      }
+    },
+    {
+      "id": "Hoisting",
+      "type": "glossaryTerm",
+      "title": "Hoisting",
+      "attributes": {
+        "text": "Hoisting is JavaScript's default behavior of adding declarations to memory during the compile phase.\nHoisting allows for JavaScript variables to be used before the line they were declared on.\n",
+        "tags": [
+          "Hoisting"
+        ]
+      },
+      "meta": {
+        "hash": "b00cdcaa57db41f761d0e12249ff022fa9df2f5770b48962389c7456f608443a"
+      }
+    },
+    {
+      "id": "HTML",
+      "type": "glossaryTerm",
+      "title": "HTML",
+      "attributes": {
+        "text": "HTML stands for HyperText Markup Language and is a language used to structure web pages.\nHTML documents are plaintext documents structured with elements, which are surrounded by `<>` tags and optionally extended with attributes.\n",
+        "tags": [
+          "HTML"
+        ]
+      },
+      "meta": {
+        "hash": "4c59c39acf39c93a6b5a162634fce945c93df7e9bfcd85ad912e09e91a210286"
+      }
+    },
+    {
+      "id": "HTTP-and-HTTPS",
+      "type": "glossaryTerm",
+      "title": "HTTP and HTTPS",
+      "attributes": {
+        "text": "The HyperText Transfer Protocol (HTTP) is the underlying network protocol that enables transfer of hypermedia documents on the Web, usually between a client and a server.\nThe HyperText Transfer Protocol Secure (HTTPS) is an encrypted version of the HTTP protocol, that uses SSL to encrypt all data transferred between a client and a server.\n",
+        "tags": [
+          "HTTP and HTTPS"
+        ]
+      },
+      "meta": {
+        "hash": "c7892883a0bc941a9287e5adec250d431aa3900373d20ad729908bb634e0397a"
+      }
+    },
+    {
+      "id": "Integer",
+      "type": "glossaryTerm",
+      "title": "Integer",
+      "attributes": {
+        "text": "Integers are one of the primitive data types in Javascript.\nThey represent a numerical value that has no fractional component.\n",
+        "tags": [
+          "Integer"
+        ]
+      },
+      "meta": {
+        "hash": "dde9013ba2e6dc09dcd8a80f6350961b1d7173a856a3909ef10be8bf6b004cd3"
+      }
+    },
+    {
+      "id": "Integration-testing",
+      "type": "glossaryTerm",
+      "title": "Integration testing",
+      "attributes": {
+        "text": "Integration testing is a type of software testing, used to test groups of units/components of a software.\nThe purpose of integration tests are to validate that the units/components interact with each other as expected.\n",
+        "tags": [
+          "Integration testing"
+        ]
+      },
+      "meta": {
+        "hash": "221cced031d7fd8c679f320a95270a97f7dcc364cdc8eaf755ac825dba6efe1e"
+      }
+    },
+    {
+      "id": "IP",
+      "type": "glossaryTerm",
+      "title": "IP",
+      "attributes": {
+        "text": "An IP address is a number assigned to a device connected to a network that uses the Internet protocol.\nTwo IP versions are currently in use - IPv4, the older version of the communication protocol (e.g. 192.168.1.100) and IPv6, the newest version of the communication protocol which allows for many different IP addresses (e.g. 0:0:0:0:ffff:c0a8:164).\n",
+        "tags": [
+          "IP"
+        ]
+      },
+      "meta": {
+        "hash": "5554d7d4eddb70199b7e090612c727240c4f7a054e245db83c796c1d82a3e091"
+      }
+    },
+    {
+      "id": "jQuery",
+      "type": "glossaryTerm",
+      "title": "jQuery",
+      "attributes": {
+        "text": "jQuery is a frontend JavaScript library, that simplifies DOM manipulation, AJAX calls and Event handling.\njQuery uses its globally defined function, `$()`, to select and manipulate DOM elements.\n",
+        "tags": [
+          "jQuery"
+        ]
+      },
+      "meta": {
+        "hash": "0c5fec36360ed400d98e47bf13c82815a6c21b1f9f3acab5e278bb6a6d7fed2d"
+      }
+    },
+    {
+      "id": "JSON",
+      "type": "glossaryTerm",
+      "title": "JSON",
+      "attributes": {
+        "text": "JSON (JavaScript Object Notation) is a format for storing and exchanging data.\nIt closely resembles the JavaScript object syntax, however some data types, such as dates and functions, cannot be natively represented and need to be serialized first.\n",
+        "tags": [
+          "JSON"
+        ]
+      },
+      "meta": {
+        "hash": "bb08424ba323c6a38e4ed558957873507693cebee18522a8ce7c2c217e71a8c3"
+      }
+    },
+    {
+      "id": "MDN",
+      "type": "glossaryTerm",
+      "title": "MDN",
+      "attributes": {
+        "text": "MDN Web Docs, formerly known as Mozilla Developer Network, is the official Mozilla website for development documentation of web standards and Mozilla projects.\n",
+        "tags": [
+          "MDN"
+        ]
+      },
+      "meta": {
+        "hash": "8fd86cbb0d7ee3d9da284c99ea727fe9f4111a1747cc9667897378de3f172274"
+      }
+    },
+    {
+      "id": "Module",
+      "type": "glossaryTerm",
+      "title": "Module",
+      "attributes": {
+        "text": "Modules are independent, self-contained pieces of code that can be incorporated into other pieces of code.\nModules improve maintainability and reusability of the code.\n",
+        "tags": [
+          "Module"
+        ]
+      },
+      "meta": {
+        "hash": "da2b3dfd609ba61bce41033444a24208be967d3889091f715de8d6d0e0acb277"
+      }
+    },
+    {
+      "id": "MongoDB",
+      "type": "glossaryTerm",
+      "title": "MongoDB",
+      "attributes": {
+        "text": "MongoDB is a NoSQL database model that stores data in flexible, JSON-like documents, meaning fields can vary from document to document and data structure can be changed over time\n",
+        "tags": [
+          "MongoDB"
+        ]
+      },
+      "meta": {
+        "hash": "87ed27e2a8dd280ef89cf245371298ae31d485a2c33823e723161443ddb96ac2"
+      }
+    },
+    {
+      "id": "Mutabe-value",
+      "type": "glossaryTerm",
+      "title": "Mutable value",
+      "attributes": {
+        "text": "Mutable value is a type of variable that can be changed once created.\nObjects are mutable as their state can be modified after they are created.\nPrimitive values are not mutable as we perform reassignment once we change them.\n",
+        "tags": [
+          "Mutable value"
+        ]
+      },
+      "meta": {
+        "hash": "3cd0002b13d233dd92910c19c3b4e9b61d1526b38bbfe56631a32c1e84439dcc"
+      }
+    },
+    {
+      "id": "MVC",
+      "type": "glossaryTerm",
+      "title": "MVC",
+      "attributes": {
+        "text": "MVC stands for Model-View-Controller and is a software design pattern, emphasizing separation of concerns (logic and display).\nThe Model part of the MVC pattern refers to the data and business logic, the View handles the layout and display, while the Controller routes commands to the model and view parts. \n",
+        "tags": [
+          "MVC"
+        ]
+      },
+      "meta": {
+        "hash": "e26e25937c399cf118e05073f4b54df8531a5c60bb0103611e998b79024d96f2"
+      }
+    },
+    {
+      "id": "Node-js",
+      "type": "glossaryTerm",
+      "title": "Node.js",
+      "attributes": {
+        "text": "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.\nNode.js can execute JavaScript code outside of the browser and can be used to develop web backends or standalone applications.\n",
+        "tags": [
+          "Node.js"
+        ]
+      },
+      "meta": {
+        "hash": "88c189d901748f9a9ac6bce6478f0d9d0098fef132ecb2aa3d9fec230a0a4d11"
+      }
+    },
+    {
+      "id": "NoSQL",
+      "type": "glossaryTerm",
+      "title": "NoSQL",
+      "attributes": {
+        "text": "NoSQL databases provide a mechanism to create, update, retrieve and calculate data that is stored in models that are non-tabular.",
+        "tags": [
+          "NoSQL"
+        ]
+      },
+      "meta": {
+        "hash": "1f948ede88ba138f4ae41bcb694b2837e59e2427bfadf2a5b62773453db4664a"
+      }
+    },
+    {
+      "id": "Npm",
+      "type": "glossaryTerm",
+      "title": "Npm",
+      "attributes": {
+        "text": "Npm is a package manager for the JavaScript programming language and the default package manager for Node.js.\nIt consists of a command-line client and the npm registry, an online database of packages.\n",
+        "tags": [
+          "Npm"
+        ]
+      },
+      "meta": {
+        "hash": "71ea12e2e02b6de8b5db17ce07226147ce5e5da4d9e2312f114395f28172f6ab"
+      }
+    },
+    {
+      "id": "Object-oriented-programming",
+      "type": "glossaryTerm",
+      "title": "Object-oriented programming",
+      "attributes": {
+        "text": "Object-oriented programming (OOP) is a programming paradigm based on the concept of objects, which may contain both data and procedures which can be use to operate on them.\nJavaScript supports Object-oriented programming both via prototypes and classes.\n",
+        "tags": [
+          "Object-oriented programming"
+        ]
+      },
+      "meta": {
+        "hash": "5123f796bec733207c1f74390053dbf0219694033eb567e105325f8440a1694b"
+      }
+    },
+    {
+      "id": "Object",
+      "type": "glossaryTerm",
+      "title": "Object",
+      "attributes": {
+        "text": "Objects are data structures that contain data and instructions for working with the data.\nObjects consist of key-value pairs, where the keys are alphanumeric identifiers and the values can either be primitives or objects.\nJavaScript functions are also objects.\n",
+        "tags": [
+          "Object"
+        ]
+      },
+      "meta": {
+        "hash": "3a7225d0bf3aead127540ce9d1014e9e75394120d953a7951bd3b037b4accb6f"
+      }
+    },
+    {
+      "id": "Prepared-statements",
+      "type": "glossaryTerm",
+      "title": "Prepared statements",
+      "attributes": {
+        "text": "In databases management systems, prepared statements are templates that can be used to execute queries with the provided values substituting the template's parameters.\nPrepared statements offer many benefits, such as reusability, maintainability and higher security.\n",
+        "tags": [
+          "Prepared statements"
+        ]
+      },
+      "meta": {
+        "hash": "a1e0a08b4abb9397fac9607b9374dfddcae814e6a9ca2f65362acafd9bf6f2f1"
+      }
+    },
+    {
+      "id": "Promise",
+      "type": "glossaryTerm",
+      "title": "Promise",
+      "attributes": {
+        "text": "The Promise object represents the eventual completion (or failure) of an asynchronous operation, and its resulting value.\nA Promise can be in one of these states: pending(initial state, neither fulfilled nor rejected), fulfilled(operation completed successfully), rejected(operation failed).\n",
+        "tags": [
+          "Promise"
+        ]
+      },
+      "meta": {
+        "hash": "39c7f8c2c6c79fe0a30b827dcef4ec8b0a30b4c802a9c7a2c79d78afcb29363e"
+      }
+    },
+    {
+      "id": "Prototype-based-programming",
+      "type": "glossaryTerm",
+      "title": "Prototype-based programming",
+      "attributes": {
+        "text": "Prototype-based programming is a style of object-oriented programming, where inheritance is based on object delegation, reusing objects that serve as prototypes.\nPrototype-based programming allows the creation of objects before defining their classes.\n",
+        "tags": [
+          "Prototype-based programming"
+        ]
+      },
+      "meta": {
+        "hash": "6f9ad765d303fc7139a94ab23086c910650d2b1944bc7d7489a7a2adf2570114"
+      }
+    },
+    {
+      "id": "Pseudo-class",
+      "type": "glossaryTerm",
+      "title": "Pseudo-class",
+      "attributes": {
+        "text": "In CSS, a pseudo-class is used to define a special state of an element and can be used as a selector in combination with an id, element or class selector.\n",
+        "tags": [
+          "Pseudo-class"
+        ]
+      },
+      "meta": {
+        "hash": "6d45cb7bd8b5431f5a28a1c0a0ce04105aed21fb6fe16f594e009e3e359cd547"
+      }
+    },
+    {
+      "id": "Pseudo-element",
+      "type": "glossaryTerm",
+      "title": "Pseudo-element",
+      "attributes": {
+        "text": "In CSS, a pseudo-element is used to style specific parts of an element and can be used as a selector in combination with an id, element or class selector.\n",
+        "tags": [
+          "Pseudo-element"
+        ]
+      },
+      "meta": {
+        "hash": "535cb183fee8810bea09bfb9838b6c0aeddb155b14de6ebbc783169fa7492784"
+      }
+    },
+    {
+      "id": "PWA",
+      "type": "glossaryTerm",
+      "title": "PWA",
+      "attributes": {
+        "text": "Progressive Web App (known as PWA) is a term used to describe web applications that load like regular websites but can offer the user functionality such as working offline, push notifications, and device hardware access that were traditionally available only to native mobile applications.\n",
+        "tags": [
+          "PWA"
+        ]
+      },
+      "meta": {
+        "hash": "9c78eb4661dccc2ac6051731f3e0465f9dc85530b9431ec640ebe0425fc8df6b"
+      }
+    },
+    {
+      "id": "React",
+      "type": "glossaryTerm",
+      "title": "React",
+      "attributes": {
+        "text": "React is a frontend framework, that allows developers to create dynamic, component-based user interfaces.\nReact separates view and state, utilizing a virtual DOM to update the user interface.\n",
+        "tags": [
+          "React"
+        ]
+      },
+      "meta": {
+        "hash": "30ace7009689a46ddffbc398de94ad2df92187d8644722bd7c4db10539099793"
+      }
+    },
+    {
+      "id": "Recursion",
+      "type": "glossaryTerm",
+      "title": "Recursion",
+      "attributes": {
+        "text": "Recursion is the repeated application of a process. \nIn JavaScript, recursion involves functions that call themselves repeatedly until they reach a base condition. \nThe base condition breaks out of the recursion loop because otherwise the function would call itself indefinitely. \nRecursion is very useful when working with nested data, especially when the nesting depth is dynamically defined or unkown.\n",
+        "tags": [
+          "Recursion"
+        ]
+      },
+      "meta": {
+        "hash": "0959371fd7e57beee1a6cba4bd18f0595e53f42a7675346c0f2906bcec550258"
+      }
+    },
+    {
+      "id": "Regular-expressions",
+      "type": "glossaryTerm",
+      "title": "Regular expressions",
+      "attributes": {
+        "text": "Regular expressions (known as regex or regexp) are patterns used to match character combinations in strings.\nJavaScript provides a regular expression implementation through the `RegExp` object.\n",
+        "tags": [
+          "Regular expressions"
+        ]
+      },
+      "meta": {
+        "hash": "ef6bcadbfd0204d07f169b64a41dfca7d04c33c62554107acc2e2393352a1b4b"
+      }
+    },
+    {
+      "id": "Repository",
+      "type": "glossaryTerm",
+      "title": "Repository",
+      "attributes": {
+        "text": "In a version control system, a repository (or repo for short) is a data structure that stores metadata for a set of files (i.e. a project).\n",
+        "tags": [
+          "Repository"
+        ]
+      },
+      "meta": {
+        "hash": "eef416d2a72cc672afa532ce4c09804efc06d97d1a29e92d955f26261f9b303d"
+      }
+    },
+    {
+      "id": "Responsive-web-design",
+      "type": "glossaryTerm",
+      "title": "Responsive web design",
+      "attributes": {
+        "text": "Responsive web design is a web development concept aiming to provide optimal behavior and performance of websites on all web-enabled devices.\nResponsive web design is usually coupled with a mobile-first approach.\n",
+        "tags": [
+          "Responsive web design"
+        ]
+      },
+      "meta": {
+        "hash": "7cf65bea40aa0b145015d5c3ddcbd1237a5eab4f03ee80b681ccf882f8f84358"
+      }
+    },
+    {
+      "id": "Scope",
+      "type": "glossaryTerm",
+      "title": "Scope",
+      "attributes": {
+        "text": "Each function has its own scope, and any variable declared within that function is only accessible from that function and any nested functions.\n",
+        "tags": [
+          "Scope"
+        ]
+      },
+      "meta": {
+        "hash": "4a552f47923d4acfc4463625732f1b30652443484d4e16e234cae302d14c505c"
+      }
+    },
+    {
+      "id": "Selector",
+      "type": "glossaryTerm",
+      "title": "Selector",
+      "attributes": {
+        "text": "A CSS selector is a pattern that is used to select and/or style one or more elements in a document, based on certain rules.\nThe order in which CSS selectors apply styles to elements is based on the rules of CSS specificity.\n",
+        "tags": [
+          "Selector"
+        ]
+      },
+      "meta": {
+        "hash": "c0672ba48a0059421374d26236df1e8000da2716df6466eaa3ab226dd37b0ad2"
+      }
+    },
+    {
+      "id": "SEO",
+      "type": "glossaryTerm",
+      "title": "SEO",
+      "attributes": {
+        "text": "SEO stands for Search Engine Optimization and refers to the process of improving a website's search rankings and visibility.\n",
+        "tags": [
+          "SEO"
+        ]
+      },
+      "meta": {
+        "hash": "a48de7348bbc5c1e588f910cc335e3f7067c74588f4d22b41af2886e17b8f8fa"
+      }
+    },
+    {
+      "id": "Serialization",
+      "type": "glossaryTerm",
+      "title": "Serialization",
+      "attributes": {
+        "text": "Serialization is the process of converting an object or data structure into a format suitable for transfer over a network and/or storage.\nA common type of serialization in JavaScript is the conversion of an object into a JSON string.\n",
+        "tags": [
+          "Serialization"
+        ]
+      },
+      "meta": {
+        "hash": "ff7d283cbe7a0585c2abbbeea24e0ffc7dbd7fdf924f00268b2b00997c911257"
+      }
+    },
+    {
+      "id": "ShadowDOM",
+      "type": "glossaryTerm",
+      "title": "Shadow DOM",
+      "attributes": {
+        "text": "Shadow DOM allows you to attach hidden DOM trees to elements in the normal DOM tree, which are included in the document rendering, but excluded from the main document DOM tree. \nA shadow DOM tree will start with a shadow root, to which you can attach any elements you want, just like in a regular DOM.\nExamples of shadow DOM uses are the `<video>`/`<audio>` elements and the simple `<input type=\"range\">` element.\n",
+        "tags": [
+          "Shadow DOM"
+        ]
+      },
+      "meta": {
+        "hash": "fcd5e8583522b9c05f9cbb69eb21b6a3b54c6bbb91ce8c5e3a383d7bb878e923"
+      }
+    },
+    {
+      "id": "SQL-injection",
+      "type": "glossaryTerm",
+      "title": "SQL injection",
+      "attributes": {
+        "text": "SQL injection is a code injection technique, used to attack data-driven applications.\nSQL injections get their name from the SQL language and mainly target data stored in relational databases.\n",
+        "tags": [
+          "SQL injection"
+        ]
+      },
+      "meta": {
+        "hash": "15726d503491392ff26c090133c0522e8c86f9f92536d4f21c883cd80d938412"
+      }
+    },
+    {
+      "id": "SQL",
+      "type": "glossaryTerm",
+      "title": "SQL",
+      "attributes": {
+        "text": "SQL stands for Structured Query Language and is a language used to create, update, retrieve and calculate data in table-based databases.\nSQL databases use a relational database model and are particularly useful in handlind structured data with relations between different entities.\n",
+        "tags": [
+          "SQL"
+        ]
+      },
+      "meta": {
+        "hash": "455381f23dce0de0e677b7346f2cbee0559a277c7512af4044cd3c9f92eedda8"
+      }
+    },
+    {
+      "id": "SSL",
+      "type": "glossaryTerm",
+      "title": "SSL",
+      "attributes": {
+        "text": "Secure Sockets Layer, commonly known as SSL or TLS, is a set of protocols and standards for transferring private data across the Internet.\nSSL uses a cryptographic system that uses two keys to encrypt data.\n",
+        "tags": [
+          "SSL"
+        ]
+      },
+      "meta": {
+        "hash": "d2ab3f811d41c926d7a43d5860679e38337b3f8a432badf896fdbc85ec76dea2"
+      }
+    },
+    {
+      "id": "Stream",
+      "type": "glossaryTerm",
+      "title": "Stream",
+      "attributes": {
+        "text": "A stream is a sequence of data made available over time, often due to network transmission or storage access times.\n",
+        "tags": [
+          "Stream"
+        ]
+      },
+      "meta": {
+        "hash": "d54979056696062c54a919f4cbc6be16f07fbc834f8601630d68cbc952a7e9c3"
+      }
+    },
+    {
+      "id": "Strict-mode",
+      "type": "glossaryTerm",
+      "title": "Strict mode",
+      "attributes": {
+        "text": "JavaScript's strict mode is a JavaScript feature that allows developers to use a more restrictive variant of JavaScript and it can be enabled by adding `'use strict';` at the very top of their code.\nStrict mode elimiated some silent errors, might improve performance and changes the behavior of `eval` and `arguments` among other things.\n",
+        "tags": [
+          "Strict mode"
+        ]
+      },
+      "meta": {
+        "hash": "4fd57a1c20ad5e16a5a4f1c307cd1711b8c9fb525bcf3f150161304e35573564"
+      }
+    },
+    {
+      "id": "String",
+      "type": "glossaryTerm",
+      "title": "String",
+      "attributes": {
+        "text": "Strings are one of the primitive data types in JavaScript.\nThey are sequences of characters and are used to represent text.\n",
+        "tags": [
+          "String"
+        ]
+      },
+      "meta": {
+        "hash": "ea13f87af462530cf44b451ff3868630c64ddb26e354673204d7915925c92233"
+      }
+    },
+    {
+      "id": "SVG",
+      "type": "glossaryTerm",
+      "title": "SVG",
+      "attributes": {
+        "text": "SVG stands for Scalable Vector Graphics and is a 2D vector image format based on an XML syntax.\nSVG images can scale infinitely and can utilize clipping, masking, filters, animations etc.\n",
+        "tags": [
+          "SVG"
+        ]
+      },
+      "meta": {
+        "hash": "3ad516292b5ff98bc7172199c12c5438b5c62742d1c550cf01342c23dad517e5"
+      }
+    },
+    {
+      "id": "Template-literals",
+      "type": "glossaryTerm",
+      "title": "Template literals",
+      "attributes": {
+        "text": "Template literals are strings that allow embedded expressions.\nThey support multi-line strings, expression interpolation and nesting.\n",
+        "tags": [
+          "Template literals"
+        ]
+      },
+      "meta": {
+        "hash": "3f13e1175381c9c35e191f67e488be119322acb8478e64ab7dee36ba4e08ecf2"
+      }
+    },
+    {
+      "id": "TypeScript",
+      "type": "glossaryTerm",
+      "title": "TypeScript",
+      "attributes": {
+        "text": "TypeScript is a superset of JavaScript, adding optional static typing to the language.\nTypeScript compiles to plain JavaScript.\n",
+        "tags": [
+          "TypeScript"
+        ]
+      },
+      "meta": {
+        "hash": "8f6785ca3685f463fc2e44277e18280c5daead2483b4603877a58735debb0d6f"
+      }
+    },
+    {
+      "id": "Unit-testing",
+      "type": "glossaryTerm",
+      "title": "Unit testing",
+      "attributes": {
+        "text": "Unit testing is a type of software testing, used to test individual units/components of a software.\nThe purpose of unit tests are to validate that each individual unit/component performs as designed.\n",
+        "tags": [
+          "Unit testing"
+        ]
+      },
+      "meta": {
+        "hash": "915bb1c0e77b041992407c60ed219c469fb2db37cb6cbf95bb285a066b314d83"
+      }
+    },
+    {
+      "id": "URI",
+      "type": "glossaryTerm",
+      "title": "URI",
+      "attributes": {
+        "text": "URI stands for Uniform Resource Identifier and is a text string referring to a resource.\nA common type of URI is a URL, which is used for the identification of resources on the Web.\n",
+        "tags": [
+          "URI"
+        ]
+      },
+      "meta": {
+        "hash": "5ec613163d268a55d922aa3d9b94017f5d8c4b66a34767e37f9976e5fa43c984"
+      }
+    },
+    {
+      "id": "URL",
+      "type": "glossaryTerm",
+      "title": "URL",
+      "attributes": {
+        "text": "URL stands for Uniform Resource Locator and is a text string specifying where a resource can be found on the Internet.\nIn the HTTP protocol, URLs are the same as web addresses and hyperlinks.\n",
+        "tags": [
+          "URL"
+        ]
+      },
+      "meta": {
+        "hash": "cb458835f913a64ddedbb48d63a86a33d062a6b40ffc5e5b2cce46282f473a51"
+      }
+    },
+    {
+      "id": "UTF-8",
+      "type": "glossaryTerm",
+      "title": "UTF-8",
+      "attributes": {
+        "text": "UTF-8 stands for UCS Transformation Format 8 and is a commonly used character encoding.\nUTF-8 is backwards compatible with ASCII and can represent any standard Unicode character.\n",
+        "tags": [
+          "UTF-8"
+        ]
+      },
+      "meta": {
+        "hash": "ea3c58a0be87fcaa8016ebaf59949a3071c7cb1bb8ec66a2066b9d6fc7e9b81b"
+      }
+    },
+    {
+      "id": "Value-vs-reference",
+      "type": "glossaryTerm",
+      "title": "Value vs reference",
+      "attributes": {
+        "text": "When passing a variable by value, a copy of the variable is made, meaning that any changes made to the contents of the variable will not be reflected in the original variable.\nWhen passing a variable by reference, the memory address of the actual variable is passed to the function or variable, meaning that modifying the variable's contents will be reflected in the original variable.\nIn JavaScript primitive data types are passed by value while objects are passed by reference.\n",
+        "tags": [
+          "Value vs reference"
+        ]
+      },
+      "meta": {
+        "hash": "d7439719ff10ca1116490998b686fdf98699bdcb68c04c3ac62b648aa3858629"
+      }
+    },
+    {
+      "id": "Variable",
+      "type": "glossaryTerm",
+      "title": "Variable",
+      "attributes": {
+        "text": "A variable is a storage location, associated with an identifier and containing a value.\nThe value of a variable can be referred using the identifier and can be altered during execution.\n",
+        "tags": [
+          "Variable"
+        ]
+      },
+      "meta": {
+        "hash": "e4dabe4cc1e85eeb87345fde8db9a2574ca7893bcef46578b8c23ca4493d6669"
+      }
+    },
+    {
+      "id": "Viewport",
+      "type": "glossaryTerm",
+      "title": "Viewport",
+      "attributes": {
+        "text": "A viewport is a polygonal (usually rectangular) area in computer graphics that is currently being viewed.\nIn web development and design, it refers to the visible part of the document that is being viewed by the user in the browser window.\n",
+        "tags": [
+          "Viewport"
+        ]
+      },
+      "meta": {
+        "hash": "89cecc554d0f36b3a219a1eee645b6933ef6e545374e046504ac53e382a14bc3"
+      }
+    },
+    {
+      "id": "Vue",
+      "type": "glossaryTerm",
+      "title": "Vue",
+      "attributes": {
+        "text": "Vue.js is a progressive frontend framework for building user interfaces.\nVue.js separates view and state, utilizing a virtual DOM to update the user interface.\n",
+        "tags": [
+          "Vue"
+        ]
+      },
+      "meta": {
+        "hash": "063085db5cd5bef6e7b38eef1722be12968fc414fd7869e37cb55811955b0657"
+      }
+    },
+    {
+      "id": "WebAssembly",
+      "type": "glossaryTerm",
+      "title": "WebAssembly",
+      "attributes": {
+        "text": "WebAssembly (WA) is a web standard that defines an assembly-like text format and corresponding binary format for executalbe code in web pages.\nWebAssembly is meant to complement JavaScript and improve its performance to match native code performance.\n",
+        "tags": [
+          "WebAssembly"
+        ]
+      },
+      "meta": {
+        "hash": "16e209d671a3a94a047782f6b95baa525c00245150dbc0a3b338f34bae12170e"
+      }
+    },
+    {
+      "id": "WebComponents",
+      "type": "glossaryTerm",
+      "title": "Web Components",
+      "attributes": {
+        "text": "Web Components are a set of web platform APIs that allow you to create new custom, reusable, encapsulated HTML tags to use on web pages and apps.\nBuilding custom components using these standards means that you can use them across modern browsers regardless of any JavaScript library or framework.\n",
+        "tags": [
+          "Web Components"
+        ]
+      },
+      "meta": {
+        "hash": "2b9101658a89203204d2603ada5fed5973ddcfa6a4e3f61db9eb093cf8315d46"
+      }
+    },
+    {
+      "id": "WebGL",
+      "type": "glossaryTerm",
+      "title": "WebGL",
+      "attributes": {
+        "text": "WebGL stands for Web Graphics Library and is a JavaScript API that can be used for drawing interactive 2D and 3D graphics.\nWebGL is based on OpenGL and can be invoked within HTML `<canvas>` elements, which provide a rendering surface.\n",
+        "tags": [
+          "WebGL"
+        ]
+      },
+      "meta": {
+        "hash": "257f9725411883b26c39c5baa8d068561c9bc4b2fc8c733085703eff555030c7"
+      }
+    },
+    {
+      "id": "WebRTC",
+      "type": "glossaryTerm",
+      "title": "WebRTC",
+      "attributes": {
+        "text": "WebRTC  stands for Web Real-Time Communication and is an API that can be used for video-chat, voice-calling and P2P-file-sharing web apps.\n",
+        "tags": [
+          "WebRTC"
+        ]
+      },
+      "meta": {
+        "hash": "a97822bf80acd8af731ce9c9b859dd60d8be579a8c4b3823d4f97b99dd65f292"
+      }
+    },
+    {
+      "id": "WebSockets",
+      "type": "glossaryTerm",
+      "title": "WebSockets",
+      "attributes": {
+        "text": "WebSockets is a protocol that allows for a persistent client-server TCP connection.\nThe WebSocket protocol uses lower overheads, facilitating real-time data transfer between client and server.\n",
+        "tags": [
+          "WebSockets"
+        ]
+      },
+      "meta": {
+        "hash": "763156f64e0a79c965d4f33b3638fe67889df018f40d558e978c3c213de46491"
+      }
+    },
+    {
+      "id": "XHTML",
+      "type": "glossaryTerm",
+      "title": "XHTML",
+      "attributes": {
+        "text": "XHTML stands for EXtensible HyperText Markup Language and is a language used to structure web pages.\nXHTML is a reformulation of the HTML document structure as an application of XML.\n",
+        "tags": [
+          "XHTML"
+        ]
+      },
+      "meta": {
+        "hash": "df3b150cba515a80eafc75c4917bbf10c8eaf0fe291967cd8d8b7aaf346c8173"
+      }
+    },
+    {
+      "id": "XML",
+      "type": "glossaryTerm",
+      "title": "XML",
+      "attributes": {
+        "text": "XML stands for eXtensible Markup Language and is a generic markup language specified by the W3C. \nXML documents are plaintext documents structured with user-defined tags, surrounded by `<>` and optionally extended with attributes.\n",
+        "tags": [
+          "XML"
+        ]
+      },
+      "meta": {
+        "hash": "f13c288fcb5e90874408d34298b57366a1acc0993b45a4c4fd195fc3fef953e5"
+      }
+    },
+    {
+      "id": "Yarn",
+      "type": "glossaryTerm",
+      "title": "Yarn",
+      "attributes": {
+        "text": "Yarn is a package manager made by Facebook. \nIt can be used as an alternative to the npm package manager and is compatible with the public NPM registry.\n",
+        "tags": [
+          "Yarn"
+        ]
+      },
+      "meta": {
+        "hash": "4dc4b92880663523903693bfdf31026af5f3ca20c9e6b8b3cfa4cadb61c80eb4"
+      }
+    }
+  ],
+  "meta": {
+    "specification": "http://jsonapi.org/format/",
+    "type": "glossaryTermArray",
+    "scope": "./glossary"
+  }
+}

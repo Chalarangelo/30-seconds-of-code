@@ -1,4 +1,7 @@
-### getImages
+---
+title: getImages
+tags: browser,beginner
+---
 
 Fetches all images from within an element and puts them into an array
 

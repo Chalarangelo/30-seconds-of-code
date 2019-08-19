@@ -1,4 +1,7 @@
-### isDivisible
+---
+title: isDivisible
+tags: math,beginner
+---
 
 Checks if the first numeric argument is divisible by the second one.
 

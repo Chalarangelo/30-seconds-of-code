@@ -1,4 +1,7 @@
-### isSameDate
+---
+title: isSameDate
+tags: date,utility,beginner
+---
 
 Check if a date is the same as another date.
 

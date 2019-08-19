@@ -1,4 +1,7 @@
-### bottomVisible
+---
+title: bottomVisible
+tags: browser,intermediate
+---
 
 Returns `true` if the bottom of the page is visible, `false` otherwise.
 

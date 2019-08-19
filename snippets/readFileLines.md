@@ -1,4 +1,7 @@
-### readFileLines
+---
+title: readFileLines
+tags: node,array,string,beginner
+---
 
 Returns an array of lines from the specified file.
 
@@ -26,4 +29,3 @@ contents of test.txt :
 let arr = readFileLines('test.txt');
 console.log(arr); // ['line1', 'line2', 'line3']
 ```
-

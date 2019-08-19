@@ -1,4 +1,7 @@
-### fibonacciCountUntilNum
+---
+title: fibonacciCountUntilNum
+tags: math,beginner
+---
 
 Returns the number of fibonnacci numbers up to `num`(`0` and `num` inclusive).
 

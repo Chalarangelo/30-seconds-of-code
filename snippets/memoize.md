@@ -1,4 +1,7 @@
-### memoize
+---
+title: memoize
+tags: function,advanced
+---
 
 Returns the memoized (cached) function.
 

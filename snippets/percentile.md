@@ -1,4 +1,7 @@
-### percentile
+---
+title: percentile
+tags: math,intermediate
+---
 
 Uses the percentile formula to calculate how many numbers in the given array are less or equal to the given value.
 

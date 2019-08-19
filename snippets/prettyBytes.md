@@ -1,4 +1,7 @@
-### prettyBytes
+---
+title: prettyBytes
+tags: utility,string,math,advanced
+---
 
 Converts a number in bytes to a human-readable string.
 

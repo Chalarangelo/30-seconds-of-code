@@ -1,4 +1,7 @@
-### zipWith
+---
+title: zipWith
+tags: array,function,advanced
+---
 
 Creates an array of elements, grouped based on the position in the original arrays and using function as the last value to specify how grouped values should be combined.
 
@@ -11,9 +14,8 @@ The function is invoked with the elements of each group `(...group)`.
 ```js
 const zipWith = (...array) => {
   const fn = typeof array[array.length - 1] === 'function' ? array.pop() : undefined;
-  return Array.from(
-    { length: Math.max(...array.map(a => a.length)) },
-    (_, i) => (fn ? fn(...array.map(a => a[i])) : array.map(a => a[i]))
+  return Array.from({ length: Math.max(...array.map(a => a.length)) }, (_, i) =>
+    fn ? fn(...array.map(a => a[i])) : array.map(a => a[i])
   );
 };
 ```

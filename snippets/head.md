@@ -1,4 +1,7 @@
-### head
+---
+title: head
+tags: array,beginner
+---
 
 Returns the head of a list.
 

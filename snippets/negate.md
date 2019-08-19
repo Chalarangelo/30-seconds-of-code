@@ -1,4 +1,7 @@
-### negate
+---
+title: negate
+tags: function,beginner
+---
 
 Negates a predicate function.
 

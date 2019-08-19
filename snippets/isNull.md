@@ -1,4 +1,7 @@
-### isNull
+---
+title: isNull
+tags: type,beginner
+---
 
 Returns `true` if the specified value is `null`, `false` otherwise.
 

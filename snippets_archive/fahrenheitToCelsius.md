@@ -1,4 +1,7 @@
-### fahrenheitToCelsius
+---
+title: fahrenheitToCelsius
+tags: math,beginner
+---
 
 Fahrenheit to Celsius temperature conversion.
 

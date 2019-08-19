@@ -1,4 +1,7 @@
-### scrollToTop
+---
+title: scrollToTop
+tags: browser,intermediate
+---
 
 Smooth-scrolls to the top of the page.
 

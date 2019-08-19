@@ -1,4 +1,7 @@
-### speechSynthesis
+---
+title: speechSynthesis
+tags: browser,intermediate
+---
 
 Performs speech synthesis (experimental).
 

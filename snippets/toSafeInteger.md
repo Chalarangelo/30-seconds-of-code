@@ -1,4 +1,7 @@
-### toSafeInteger
+---
+title: toSafeInteger
+tags: math,beginner
+---
 
 Converts a value to a safe integer.
 

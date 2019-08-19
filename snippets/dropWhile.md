@@ -1,4 +1,7 @@
-### dropWhile
+---
+title: dropWhile
+tags: array,function,intermediate
+---
 
 Removes elements in an array until the passed function returns `true`. Returns the remaining elements in the array.
 

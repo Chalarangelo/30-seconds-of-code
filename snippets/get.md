@@ -1,4 +1,7 @@
-### get
+---
+title: get
+tags: object,intermediate
+---
 
 Retrieve a set of properties indicated by the given selectors from an object.
 

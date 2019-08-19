@@ -1,4 +1,7 @@
-### capitalizeEveryWord
+---
+title: capitalizeEveryWord
+tags: string,regexp,intermediate
+---
 
 Capitalizes the first letter of every word in a string.
 

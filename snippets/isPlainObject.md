@@ -1,4 +1,7 @@
-### isPlainObject
+---
+title: isPlainObject
+tags: type,object,intermediate
+---
 
 Checks if the provided value is an object created by the Object constructor.
 

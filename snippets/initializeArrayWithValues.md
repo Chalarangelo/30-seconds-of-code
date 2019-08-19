@@ -1,4 +1,7 @@
-### initializeArrayWithValues
+---
+title: initializeArrayWithValues
+tags: array,math,intermediate
+---
 
 Initializes and fills an array with the specified values.
 
