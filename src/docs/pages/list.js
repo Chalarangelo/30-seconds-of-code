@@ -64,7 +64,12 @@ const ListPage = props => {
     {
       url: 'about',
       title: 'About',
-      description: 'A few word about us, our goals and our projects.'
+      description: 'A few word about us, our goals and our projects.',
+    },
+    {
+      url: 'beginner',
+      title: 'Beginner snippets',
+      description: 'Snippets aimed towards individuals at the start of their web developer journey.',
     }
   ];
 
@@ -111,7 +116,7 @@ const ListPage = props => {
           to={`/archive`}
           hex={props.isDarkMode ? '#434E76' : '#FFFFFF'}
         >
-          Archived
+          Archived snippets
         </AniLink></h3>
         {archivedSnippets
           .filter(snippet => snippet.archived)
