@@ -13,6 +13,7 @@ module.exports = {
   pagePath: `src/docs/pages`,
   staticPartsPath: `src/static-parts`,
   distPath: `dist`,
+  testPath: `test`,
   // General information
   language: `js`,
   // Module information
