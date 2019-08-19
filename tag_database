@@ -28,3 +28,4 @@ has_duplicates:list
 keys_only:object
 values_only:object
 all_unique:object
+fibonacci_until_num:math

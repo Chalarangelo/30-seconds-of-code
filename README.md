@@ -37,6 +37,7 @@ This project contains plenty of useful snippets which can help beginners and new
 
 <details><summary>View contents</summary> <ul><li><a href = "#average"><code>average</code></a></li>
 <li><a href = "#factorial"><code>factorial</code></a></li>
+<li><a href = "#fibonacci_until_num"><code>fibonacci_until_num</code></a></li>
 <li><a href = "#gcd"><code>gcd</code></a></li>
 <li><a href = "#lcm"><code>lcm</code></a></li>
 <li><a href = "#max_n"><code>max_n</code></a></li>
@@ -457,6 +458,31 @@ def factorial(num):
 
 ```py
 factorial(6) # 720
+```
+</details>
+
+<br><a href = "#table-of-contents">:arrow_up: Back to top</a>
+
+### fibonacci_until_num 
+<span style="color:grey">Author:-</span> [Nian Lee](https://www.github.com/scraggard) 
+
+ <span style="color:grey">Contributors:-</span> [Nian Lee](https://www.github.com/scraggard)
+
+Returns the n-th term in a Fibonnaci sequence that starts with 1
+
+A term in a Fibonnaci sequence is the sum of the two previous terms.
+This function recursively calls the function to find the n-th term.
+```py
+def fibonacci_until_num(n):
+  if n < 3:
+    return 1
+  return fibonacci_until_num(n - 2) + fibonacci_until_num(n - 1)
+```
+<details><summary>View Examples</summary>
+
+```py
+fibonnaci_until_num(5) # 5
+fibonnaci_until_num(15) # 610
 ```
 </details>
 
