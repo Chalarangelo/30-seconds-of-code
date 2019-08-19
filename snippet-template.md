@@ -1,6 +1,6 @@
 ---
 title: functionName
-tags: function,utility,helper,beginner
+tags: utility,intermediate
 ---
 
 Explain briefly what the snippet does.
