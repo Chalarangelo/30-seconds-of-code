@@ -10,11 +10,10 @@ If no function is provided, the values will be compared using the equality opera
 
 ```js
 const matchesWith = (obj, source, fn) =>
-  Object.keys(source).every(
-    key =>
-      obj.hasOwnProperty(key) && fn
-        ? fn(obj[key], source[key], key, obj, source)
-        : obj[key] == source[key]
+  Object.keys(source).every(key =>
+    obj.hasOwnProperty(key) && fn
+      ? fn(obj[key], source[key], key, obj, source)
+      : obj[key] == source[key]
   );
 ```
 

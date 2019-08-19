@@ -8,9 +8,9 @@
         "fileName": "binarySearch.md",
         "text": "Use recursion. Similar to `Array.prototype.indexOf()` that finds the index of a value within an array.\nThe difference being this operation only works with sorted arrays which offers a major performance boost due to it's logarithmic nature when compared to a linear search or `Array.prototype.indexOf()`.\n\nSearch a sorted array by repeatedly dividing the search interval in half.\nBegin with an interval covering the whole array.\nIf the value of the search is less than the item in the middle of the interval, recurse into the lower half. Otherwise recurse into the upper half.\nRepeatedly recurse until the value is found which is the mid or you've recursed to a point that is greater than the length which means the value doesn't exist and return `-1`.\n\n",
         "codeBlocks": {
-          "es6": "const binarySearch = (arr, val, start = 0, end = arr.length - 1) => {\n  if (start > end) return -1;\n  const mid = Math.floor((start + end) / 2);\n  if (arr[mid] > val) return binarySearch(arr, val, start, mid - 1);\n  if (arr[mid] < val) return binarySearch(arr, val, mid + 1, end);\n  return mid;\n};",
+          "es6": "const binarySearch = (arr, val, start = 0, end = arr.length - 1) => {\r\n  if (start > end) return -1;\r\n  const mid = Math.floor((start + end) / 2);\r\n  if (arr[mid] > val) return binarySearch(arr, val, start, mid - 1);\r\n  if (arr[mid] < val) return binarySearch(arr, val, mid + 1, end);\r\n  return mid;\r\n};",
           "es5": "var binarySearch = function binarySearch(arr, val) {\n  var start = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;\n  var end = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : arr.length - 1;\n  if (start > end) return -1;\n  var mid = Math.floor((start + end) / 2);\n  if (arr[mid] > val) return binarySearch(arr, val, start, mid - 1);\n  if (arr[mid] < val) return binarySearch(arr, val, mid + 1, end);\n  return mid;\n};",
-          "example": "binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 6); // 2\nbinarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 21); // -1"
+          "example": "binarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 6); // 2\r\nbinarySearch([1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24], 21); // -1"
         },
         "tags": [
           "algorithm",
@@ -18,7 +18,7 @@
         ]
       },
       "meta": {
-        "hash": "48d538bccbc7be7e78b8f6a69004055c4b21324d2c8d7cbc4cba0cd42e4f67fb"
+        "hash": "90bc13657b6f59a1e0014e6672b9b95f925f4948e9324125a79e34d0a21b4468"
       }
     },
     {
@@ -39,7 +39,7 @@
         ]
       },
       "meta": {
-        "hash": "d59410c4fa0ea5173af553068c1e1d4ef931695e084c50cdd8166b0cd0278722"
+        "hash": "07ea927d2724e68224c7f80499159c3795650fe2e18e123e3df1a55e2313f624"
       }
     },
     {
@@ -50,9 +50,9 @@
         "fileName": "cleanObj.md",
         "text": "Removes any properties except the ones specified from a JSON object.\n\nUse `Object.keys()` method to loop over given JSON object and deleting keys that are not included in given array.\nIf you pass a special key,`childIndicator`, it will search deeply apply the function to inner objects, too.\n\n",
         "codeBlocks": {
-          "es6": "const cleanObj = (obj, keysToKeep = [], childIndicator) => {\n  Object.keys(obj).forEach(key => {\n    if (key === childIndicator) {\n      cleanObj(obj[key], keysToKeep, childIndicator);\n    } else if (!keysToKeep.includes(key)) {\n      delete obj[key];\n    }\n  });\n  return obj;\n};",
+          "es6": "const cleanObj = (obj, keysToKeep = [], childIndicator) => {\r\n  Object.keys(obj).forEach(key => {\r\n    if (key === childIndicator) {\r\n      cleanObj(obj[key], keysToKeep, childIndicator);\r\n    } else if (!keysToKeep.includes(key)) {\r\n      delete obj[key];\r\n    }\r\n  });\r\n  return obj;\r\n};",
           "es5": "var cleanObj = function cleanObj(obj) {\n  var keysToKeep = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];\n  var childIndicator = arguments.length > 2 ? arguments[2] : undefined;\n  Object.keys(obj).forEach(function (key) {\n    if (key === childIndicator) {\n      cleanObj(obj[key], keysToKeep, childIndicator);\n    } else if (!keysToKeep.includes(key)) {\n      delete obj[key];\n    }\n  });\n  return obj;\n};",
-          "example": "const testObj = { a: 1, b: 2, children: { a: 1, b: 2 } };\ncleanObj(testObj, ['a'], 'children'); // { a: 1, children : { a: 1}}"
+          "example": "const testObj = { a: 1, b: 2, children: { a: 1, b: 2 } };\r\ncleanObj(testObj, ['a'], 'children'); // { a: 1, children : { a: 1}}"
         },
         "tags": [
           "object",
@@ -60,7 +60,7 @@
         ]
       },
       "meta": {
-        "hash": "aaefc9bd6e9170001fe4754b1bc7bb9808ab97a5bec7fc6ceb1193be2f8009b1"
+        "hash": "23455050bdb213ec6e15eb7ba8bd3fa7ecfc5bd82f73929c6c9754588f8a9e12"
       }
     },
     {
@@ -81,7 +81,7 @@
         ]
       },
       "meta": {
-        "hash": "0280a47e49f505d5f10e0e0bd2c3ab28a6ea2b931fc83f63155f8395f64a1840"
+        "hash": "ab508ec0a9fb3d7a1269ace24e4909152b74ed95e6481323e1fdd66aa1ee19b9"
       }
     },
     {
@@ -94,7 +94,7 @@
         "codeBlocks": {
           "es6": "const countVowels = str => (str.match(/[aeiou]/gi) || []).length;",
           "es5": "var countVowels = function countVowels(str) {\n  return (str.match(/[aeiou]/gi) || []).length;\n};",
-          "example": "countVowels('foobar'); // 3\ncountVowels('gym'); // 0"
+          "example": "countVowels('foobar'); // 3\r\ncountVowels('gym'); // 0"
         },
         "tags": [
           "string",
@@ -102,7 +102,7 @@
         ]
       },
       "meta": {
-        "hash": "961b406dfe98746e3a267532b0703ee7c5c1b1c01a0e04c1f9e13e0fd0aeced1"
+        "hash": "fdd106047031a9cd32d33ebe1d5bb5c992c5ce2675712da378080e46f9ca50a2"
       }
     },
     {
@@ -113,9 +113,9 @@
         "fileName": "factors.md",
         "text": "Returns the array of factors of the given `num`.\nIf the second argument is set to `true` returns only the prime factors of `num`.\nIf `num` is `1` or `0` returns an empty array.\nIf `num` is less than `0` returns all the factors of `-int` together with their additive inverses.\n\nUse `Array.from()`, `Array.prototype.map()` and `Array.prototype.filter()` to find all the factors of `num`.\nIf given `num` is negative, use `Array.prototype.reduce()` to add the additive inverses to the array.\nReturn all results if `primes` is `false`, else determine and return only the prime factors using `isPrime` and `Array.prototype.filter()`.\nOmit the second argument, `primes`, to return prime and non-prime factors by default.\n\n**Note**:- _Negative numbers are not considered prime._\n\n",
         "codeBlocks": {
-          "es6": "const factors = (num, primes = false) => {\n  const isPrime = num => {\n    const boundary = Math.floor(Math.sqrt(num));\n    for (var i = 2; i <= boundary; i++) if (num % i === 0) return false;\n    return num >= 2;\n  };\n  const isNeg = num < 0;\n  num = isNeg ? -num : num;\n  let array = Array.from({ length: num - 1 })\n    .map((val, i) => (num % (i + 2) === 0 ? i + 2 : false))\n    .filter(val => val);\n  if (isNeg)\n    array = array.reduce((acc, val) => {\n      acc.push(val);\n      acc.push(-val);\n      return acc;\n    }, []);\n  return primes ? array.filter(isPrime) : array;\n};",
+          "es6": "const factors = (num, primes = false) => {\r\n  const isPrime = num => {\r\n    const boundary = Math.floor(Math.sqrt(num));\r\n    for (var i = 2; i <= boundary; i++) if (num % i === 0) return false;\r\n    return num >= 2;\r\n  };\r\n  const isNeg = num < 0;\r\n  num = isNeg ? -num : num;\r\n  let array = Array.from({ length: num - 1 })\r\n    .map((val, i) => (num % (i + 2) === 0 ? i + 2 : false))\r\n    .filter(val => val);\r\n  if (isNeg)\r\n    array = array.reduce((acc, val) => {\r\n      acc.push(val);\r\n      acc.push(-val);\r\n      return acc;\r\n    }, []);\r\n  return primes ? array.filter(isPrime) : array;\r\n};",
           "es5": "var factors = function factors(num) {\n  var primes = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;\n\n  var isPrime = function isPrime(num) {\n    var boundary = Math.floor(Math.sqrt(num));\n\n    for (var i = 2; i <= boundary; i++) {\n      if (num % i === 0) return false;\n    }\n\n    return num >= 2;\n  };\n\n  var isNeg = num < 0;\n  num = isNeg ? -num : num;\n  var array = Array.from({\n    length: num - 1\n  }).map(function (val, i) {\n    return num % (i + 2) === 0 ? i + 2 : false;\n  }).filter(function (val) {\n    return val;\n  });\n  if (isNeg) array = array.reduce(function (acc, val) {\n    acc.push(val);\n    acc.push(-val);\n    return acc;\n  }, []);\n  return primes ? array.filter(isPrime) : array;\n};",
-          "example": "factors(12); // [2,3,4,6,12]\nfactors(12, true); // [2,3]\nfactors(-12); // [2, -2, 3, -3, 4, -4, 6, -6, 12, -12]\nfactors(-12, true); // [2,3]"
+          "example": "factors(12); // [2,3,4,6,12]\r\nfactors(12, true); // [2,3]\r\nfactors(-12); // [2, -2, 3, -3, 4, -4, 6, -6, 12, -12]\r\nfactors(-12, true); // [2,3]"
         },
         "tags": [
           "math",
@@ -123,7 +123,7 @@
         ]
       },
       "meta": {
-        "hash": "8eed39b1040d6472e2fd619abf744848d30f12eebffda2711966c616d474524f"
+        "hash": "1e15cb532a03c2b283df16b6ee9079777679940f0032d9ce3e3193988c1f3d6c"
       }
     },
     {
@@ -144,7 +144,7 @@
         ]
       },
       "meta": {
-        "hash": "a39ade2ae05ad86443446b335dbc019e3ac734fe0c1a542d50b929c554040fc0"
+        "hash": "5d91abbc4451394c1fe4290d63a0913e2cf41b1c02ffe8e9276b491c0f3803f1"
       }
     },
     {
@@ -155,7 +155,7 @@
         "fileName": "fibonacciCountUntilNum.md",
         "text": "Returns the number of fibonnacci numbers up to `num`(`0` and `num` inclusive).\n\nUse a mathematical formula to calculate the number of fibonacci numbers until `num`.\n\n",
         "codeBlocks": {
-          "es6": "const fibonacciCountUntilNum = num =>\n  Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));",
+          "es6": "const fibonacciCountUntilNum = num =>\r\n  Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));",
           "es5": "var fibonacciCountUntilNum = function fibonacciCountUntilNum(num) {\n  return Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));\n};",
           "example": "fibonacciCountUntilNum(10); // 7"
         },
@@ -165,7 +165,7 @@
         ]
       },
       "meta": {
-        "hash": "35488eb0f56b59035b56cc67fa0a5e1a970162ede4aafd97ebb2b4009c321c01"
+        "hash": "0b757d87765c3539b1b921ff9b915195a81e0f0653d95ca2382deea1f69a22d8"
       }
     },
     {
@@ -176,7 +176,7 @@
         "fileName": "fibonacciUntilNum.md",
         "text": "Generates an array, containing the Fibonacci sequence, up until the nth term.\n\nCreate an empty array of the specific length, initializing the first two values (`0` and `1`).\nUse `Array.prototype.reduce()` to add values into the array, using the sum of the last two values, except for the first two.\nUses a mathematical formula to calculate the length of the array required.\n\n",
         "codeBlocks": {
-          "es6": "const fibonacciUntilNum = num => {\n  let n = Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));\n  return Array.from({ length: n }).reduce(\n    (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),\n    []\n  );\n};",
+          "es6": "const fibonacciUntilNum = num => {\r\n  let n = Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));\r\n  return Array.from({ length: n }).reduce(\r\n    (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),\r\n    []\r\n  );\r\n};",
           "es5": "var fibonacciUntilNum = function fibonacciUntilNum(num) {\n  var n = Math.ceil(Math.log(num * Math.sqrt(5) + 1 / 2) / Math.log((Math.sqrt(5) + 1) / 2));\n  return Array.from({\n    length: n\n  }).reduce(function (acc, val, i) {\n    return acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i);\n  }, []);\n};",
           "example": "fibonacciUntilNum(10); // [ 0, 1, 1, 2, 3, 5, 8 ]"
         },
@@ -186,7 +186,7 @@
         ]
       },
       "meta": {
-        "hash": "6ff845c13444a06569be548ce9e69900b7001516c44c315795f34b31e9baa833"
+        "hash": "d3d2d3e886ab1aa06315d00020c577884833a2fa2de851c2e736e398ebd21dc2"
       }
     },
     {
@@ -197,7 +197,7 @@
         "fileName": "heronArea.md",
         "text": "Returns the area of a triangle using only the 3 side lengths, Heron's formula. Assumes that the sides define a valid triangle. Does NOT assume it is a right triangle.\n\nMore information on what Heron's formula is and why it works available here: https://en.wikipedia.org/wiki/Heron%27s_formula.\n\nUses `Math.sqrt()` to find the square root of a value.\n\n",
         "codeBlocks": {
-          "es6": "const heronArea = (side_a, side_b, side_c) => {\n    const p = (side_a + side_b + side_c) / 2\n    return Math.sqrt(p * (p-side_a) * (p-side_b) * (p-side_c))\n  };",
+          "es6": "const heronArea = (side_a, side_b, side_c) => {\r\n    const p = (side_a + side_b + side_c) / 2\r\n    return Math.sqrt(p * (p-side_a) * (p-side_b) * (p-side_c))\r\n  };",
           "es5": "var heronArea = function heronArea(side_a, side_b, side_c) {\n  var p = (side_a + side_b + side_c) / 2;\n  return Math.sqrt(p * (p - side_a) * (p - side_b) * (p - side_c));\n};",
           "example": "heronArea(3, 4, 5); // 6"
         },
@@ -207,7 +207,7 @@
         ]
       },
       "meta": {
-        "hash": "d0be594ab377cbeb2910308610af5890b3468c06e7567cd0995a84d11aaccf47"
+        "hash": "9cb879ebfd9ca4a4da57f81f26a512017ece8f57d3892738d249319bfce01cc7"
       }
     },
     {
@@ -218,9 +218,9 @@
         "fileName": "howManyTimes.md",
         "text": "Returns the number of times `num` can be divided by `divisor` (integer or fractional) without getting a fractional answer.\nWorks for both negative and positive integers.\n\nIf `divisor` is `-1` or `1` return `Infinity`.\nIf `divisor` is `-0` or `0` return `0`.\nOtherwise, keep dividing `num` with `divisor` and incrementing `i`, while the result is an integer.\nReturn the number of times the loop was executed, `i`.\n\n",
         "codeBlocks": {
-          "es6": "const howManyTimes = (num, divisor) => {\n  if (divisor === 1 || divisor === -1) return Infinity;\n  if (divisor === 0) return 0;\n  let i = 0;\n  while (Number.isInteger(num / divisor)) {\n    i++;\n    num = num / divisor;\n  }\n  return i;\n};",
+          "es6": "const howManyTimes = (num, divisor) => {\r\n  if (divisor === 1 || divisor === -1) return Infinity;\r\n  if (divisor === 0) return 0;\r\n  let i = 0;\r\n  while (Number.isInteger(num / divisor)) {\r\n    i++;\r\n    num = num / divisor;\r\n  }\r\n  return i;\r\n};",
           "es5": "var howManyTimes = function howManyTimes(num, divisor) {\n  if (divisor === 1 || divisor === -1) return Infinity;\n  if (divisor === 0) return 0;\n  var i = 0;\n\n  while (Number.isInteger(num / divisor)) {\n    i++;\n    num = num / divisor;\n  }\n\n  return i;\n};",
-          "example": "howManyTimes(100, 2); // 2\nhowManyTimes(100, 2.5); // 2\nhowManyTimes(100, 0); // 0\nhowManyTimes(100, -1); // Infinity"
+          "example": "howManyTimes(100, 2); // 2\r\nhowManyTimes(100, 2.5); // 2\r\nhowManyTimes(100, 0); // 0\r\nhowManyTimes(100, -1); // Infinity"
         },
         "tags": [
           "math",
@@ -228,7 +228,7 @@
         ]
       },
       "meta": {
-        "hash": "52ffa251dfc4e2bec7160a9066ef24a8c3047706e1ad2837f9d987cdf4d5f73e"
+        "hash": "80bc7d5ac13bb3efe634dec4beacc3b9d3e72a973359b163bce3ccd7bda4f4b8"
       }
     },
     {
@@ -239,9 +239,9 @@
         "fileName": "httpDelete.md",
         "text": "Makes a `DELETE` request to the passed URL.\n\nUse `XMLHttpRequest` web api to make a `delete` request to the given `url`.\nHandle the `onload` event, by running the provided `callback` function.\nHandle the `onerror` event, by running the provided `err` function.\nOmit the third argument, `err` to log the request to the console's error stream by default.\n\n",
         "codeBlocks": {
-          "es6": "const httpDelete = (url, callback, err = console.error) => {\n  const request = new XMLHttpRequest();\n  request.open('DELETE', url, true);\n  request.onload = () => callback(request);\n  request.onerror = () => err(request);\n  request.send();\n};",
+          "es6": "const httpDelete = (url, callback, err = console.error) => {\r\n  const request = new XMLHttpRequest();\r\n  request.open('DELETE', url, true);\r\n  request.onload = () => callback(request);\r\n  request.onerror = () => err(request);\r\n  request.send();\r\n};",
           "es5": "var httpDelete = function httpDelete(url, callback) {\n  var err = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : console.error;\n  var request = new XMLHttpRequest();\n  request.open('DELETE', url, true);\n\n  request.onload = function () {\n    return callback(request);\n  };\n\n  request.onerror = function () {\n    return err(request);\n  };\n\n  request.send();\n};",
-          "example": "httpDelete('https://website.com/users/123', request => {\n  console.log(request.responseText);\n}); // 'Deletes a user from the database'"
+          "example": "httpDelete('https://website.com/users/123', request => {\r\n  console.log(request.responseText);\r\n}); // 'Deletes a user from the database'"
         },
         "tags": [
           "browser",
@@ -249,7 +249,7 @@
         ]
       },
       "meta": {
-        "hash": "4fccb2abe966313a742d13965ee46cfd1094763a2697591eddb19c1c5af1db7e"
+        "hash": "4f0e17ac776e2d66e0b036a5b4dc080d34917df6a408f792d20440f98daa0273"
       }
     },
     {
@@ -260,9 +260,9 @@
         "fileName": "httpPut.md",
         "text": "Makes a `PUT` request to the passed URL.\n\nUse `XMLHttpRequest` web api to make a `put` request to the given `url`.\nSet the value of an `HTTP` request header with `setRequestHeader` method.\nHandle the `onload` event, by running the provided `callback` function.\nHandle the `onerror` event, by running the provided `err` function.\nOmit the last argument, `err` to log the request to the console's error stream by default.\n\n",
         "codeBlocks": {
-          "es6": "const httpPut = (url, data, callback, err = console.error) => {\n  const request = new XMLHttpRequest();\n  request.open(\"PUT\", url, true);\n  request.setRequestHeader('Content-type','application/json; charset=utf-8');\n  request.onload = () => callback(request);\n  request.onerror = () => err(request);\n  request.send(data);\n};",
+          "es6": "const httpPut = (url, data, callback, err = console.error) => {\r\n  const request = new XMLHttpRequest();\r\n  request.open(\"PUT\", url, true);\r\n  request.setRequestHeader('Content-type','application/json; charset=utf-8');\r\n  request.onload = () => callback(request);\r\n  request.onerror = () => err(request);\r\n  request.send(data);\r\n};",
           "es5": "var httpPut = function httpPut(url, data, callback) {\n  var err = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : console.error;\n  var request = new XMLHttpRequest();\n  request.open(\"PUT\", url, true);\n  request.setRequestHeader('Content-type', 'application/json; charset=utf-8');\n\n  request.onload = function () {\n    return callback(request);\n  };\n\n  request.onerror = function () {\n    return err(request);\n  };\n\n  request.send(data);\n};",
-          "example": "const password = \"fooBaz\";\nconst data = JSON.stringify(password);\nhttpPut('https://website.com/users/123', data, request => {\n  console.log(request.responseText);\n}); // 'Updates a user's password in database'"
+          "example": "const password = \"fooBaz\";\r\nconst data = JSON.stringify(password);\r\nhttpPut('https://website.com/users/123', data, request => {\r\n  console.log(request.responseText);\r\n}); // 'Updates a user's password in database'"
         },
         "tags": [
           "browser",
@@ -270,7 +270,7 @@
         ]
       },
       "meta": {
-        "hash": "7eb4b1ffc1cbe28c10190bb82b7731ade2d79e78a5569bdee62af33a1020f2f5"
+        "hash": "f6dccbcfcf5f64cdfef16c87efac6c58bfb3448b1e35c913475277d39e3aeffa"
       }
     },
     {
@@ -281,9 +281,9 @@
         "fileName": "isArmstrongNumber.md",
         "text": "Checks if the given number is an Armstrong number or not.\n\nConvert the given number into an array of digits. Use the exponent operator (`**`) to get the appropriate power for each digit and sum them up. If the sum is equal to the number itself, return `true` otherwise `false`.\n\n",
         "codeBlocks": {
-          "es6": "const isArmstrongNumber = digits =>\n  (arr => arr.reduce((a, d) => a + parseInt(d) ** arr.length, 0) == digits)(\n    (digits + '').split('')\n  );",
+          "es6": "const isArmstrongNumber = digits =>\r\n  (arr => arr.reduce((a, d) => a + parseInt(d) ** arr.length, 0) == digits)(\r\n    (digits + '').split('')\r\n  );",
           "es5": "var isArmstrongNumber = function isArmstrongNumber(digits) {\n  return function (arr) {\n    return arr.reduce(function (a, d) {\n      return a + Math.pow(parseInt(d), arr.length);\n    }, 0) == digits;\n  }((digits + '').split(''));\n};",
-          "example": "isArmstrongNumber(1634); // true\nisArmstrongNumber(56); // false"
+          "example": "isArmstrongNumber(1634); // true\r\nisArmstrongNumber(56); // false"
         },
         "tags": [
           "math",
@@ -291,7 +291,7 @@
         ]
       },
       "meta": {
-        "hash": "71ebcdb61794d8222fcf447509d206ffb10dc8068072a88c6b587e21e76fc7f2"
+        "hash": "99ea08c72cebd7fc5f46731d47f3f2caaad25c2bf36403fe1d9c9e01699994f0"
       }
     },
     {
@@ -302,9 +302,9 @@
         "fileName": "isSimilar.md",
         "text": "Determines if the `pattern` matches with `str`.\n\nUse `String.toLowerCase()` to convert both strings to lowercase, then loop through `str` and determine if it contains all characters of `pattern` and in the correct order.\nAdapted from [here](https://github.com/forrestthewoods/lib_fts/blob/80f3f8c52db53428247e741b9efe2cde9667050c/code/fts_fuzzy_match.js#L18).\n\n",
         "codeBlocks": {
-          "es6": "const isSimilar = (pattern, str) =>\n  [...str].reduce(\n      (matchIndex, char) =>\n          char.toLowerCase() === (pattern[matchIndex] || '').toLowerCase()\n              ? matchIndex + 1\n              : matchIndex,\n      0\n  ) === pattern.length;",
+          "es6": "const isSimilar = (pattern, str) =>\r\n  [...str].reduce(\r\n      (matchIndex, char) =>\r\n          char.toLowerCase() === (pattern[matchIndex] || '').toLowerCase()\r\n              ? matchIndex + 1\r\n              : matchIndex,\r\n      0\r\n  ) === pattern.length;",
           "es5": "function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }\n\nfunction _nonIterableSpread() { throw new TypeError(\"Invalid attempt to spread non-iterable instance\"); }\n\nfunction _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === \"[object Arguments]\") return Array.from(iter); }\n\nfunction _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }\n\nvar isSimilar = function isSimilar(pattern, str) {\n  return _toConsumableArray(str).reduce(function (matchIndex, _char) {\n    return _char.toLowerCase() === (pattern[matchIndex] || '').toLowerCase() ? matchIndex + 1 : matchIndex;\n  }, 0) === pattern.length;\n};",
-          "example": "isSimilar('rt','Rohit'); // true\nisSimilar('tr','Rohit'); // false"
+          "example": "isSimilar('rt','Rohit'); // true\r\nisSimilar('tr','Rohit'); // false"
         },
         "tags": [
           "string",
@@ -312,7 +312,7 @@
         ]
       },
       "meta": {
-        "hash": "250615cfc281e99014b97d054c722d3ba6aa4190ccf66dd719e530ec80aec3bd"
+        "hash": "e2d9d4521c2abf0fe239ee83e33624f6d23c461f3fcd8f42f3c1bd067033d2b3"
       }
     },
     {
@@ -323,7 +323,7 @@
         "fileName": "JSONToDate.md",
         "text": "Converts a JSON object to a date.\n\nUse `Date()`, to convert dates in JSON format to readable format (`dd/mm/yyyy`).\n\n",
         "codeBlocks": {
-          "es6": "const JSONToDate = arr => {\n  const dt = new Date(parseInt(arr.toString().substr(6)));\n  return `${dt.getDate()}/${dt.getMonth() + 1}/${dt.getFullYear()}`;\n};",
+          "es6": "const JSONToDate = arr => {\r\n  const dt = new Date(parseInt(arr.toString().substr(6)));\r\n  return `${dt.getDate()}/${dt.getMonth() + 1}/${dt.getFullYear()}`;\r\n};",
           "es5": "var JSONToDate = function JSONToDate(arr) {\n  var dt = new Date(parseInt(arr.toString().substr(6)));\n  return \"\".concat(dt.getDate(), \"/\").concat(dt.getMonth() + 1, \"/\").concat(dt.getFullYear());\n};",
           "example": "JSONToDate(/Date(1489525200000)/); // \"14/3/2017\""
         },
@@ -334,7 +334,7 @@
         ]
       },
       "meta": {
-        "hash": "33e1e304fead4088971a60d4da974d0e9380370560f383ddb1ddc14e628df18b"
+        "hash": "33934cf9fb3f740afb520c98f0375de095c8abdc0113728cb71362ba2f1402a0"
       }
     },
     {
@@ -347,7 +347,7 @@
         "codeBlocks": {
           "es6": "const kmphToMph = (kmph) => 0.621371192 * kmph;",
           "es5": "var kmphToMph = function kmphToMph(kmph) {\n  return 0.621371192 * kmph;\n};",
-          "example": "kmphToMph(10); // 16.09344000614692\nkmphToMph(345.4); // 138.24264965280207"
+          "example": "kmphToMph(10); // 16.09344000614692\r\nkmphToMph(345.4); // 138.24264965280207"
         },
         "tags": [
           "math",
@@ -355,7 +355,7 @@
         ]
       },
       "meta": {
-        "hash": "f885a599e1185f8480445e1eb0c4a5cb8bf33948d7893f013dd4e8085478fe7a"
+        "hash": "def6f0c50fd613013b41723b5c0aa86398b567bb196325fd6da4403f91bae8bb"
       }
     },
     {
@@ -366,9 +366,9 @@
         "fileName": "levenshteinDistance.md",
         "text": "Calculates the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) between two strings.\n\nCalculates the number of changes (substitutions, deletions or additions) required to convert `string1` to `string2`. \nCan also be used to compare two strings as shown in the second example.\n\n",
         "codeBlocks": {
-          "es6": "const levenshteinDistance = (string1, string2) => {\n  if (string1.length === 0) return string2.length;\n  if (string2.length === 0) return string1.length;\n  let matrix = Array(string2.length + 1)\n    .fill(0)\n    .map((x, i) => [i]);\n  matrix[0] = Array(string1.length + 1)\n    .fill(0)\n    .map((x, i) => i);\n  for (let i = 1; i <= string2.length; i++) {\n    for (let j = 1; j <= string1.length; j++) {\n      if (string2[i - 1] === string1[j - 1]) {\n        matrix[i][j] = matrix[i - 1][j - 1];\n      } else {\n        matrix[i][j] = Math.min(\n          matrix[i - 1][j - 1] + 1,\n          matrix[i][j - 1] + 1,\n          matrix[i - 1][j] + 1\n        );\n      }\n    }\n  }\n  return matrix[string2.length][string1.length];\n};",
+          "es6": "const levenshteinDistance = (string1, string2) => {\r\n  if (string1.length === 0) return string2.length;\r\n  if (string2.length === 0) return string1.length;\r\n  let matrix = Array(string2.length + 1)\r\n    .fill(0)\r\n    .map((x, i) => [i]);\r\n  matrix[0] = Array(string1.length + 1)\r\n    .fill(0)\r\n    .map((x, i) => i);\r\n  for (let i = 1; i <= string2.length; i++) {\r\n    for (let j = 1; j <= string1.length; j++) {\r\n      if (string2[i - 1] === string1[j - 1]) {\r\n        matrix[i][j] = matrix[i - 1][j - 1];\r\n      } else {\r\n        matrix[i][j] = Math.min(\r\n          matrix[i - 1][j - 1] + 1,\r\n          matrix[i][j - 1] + 1,\r\n          matrix[i - 1][j] + 1\r\n        );\r\n      }\r\n    }\r\n  }\r\n  return matrix[string2.length][string1.length];\r\n};",
           "es5": "var levenshteinDistance = function levenshteinDistance(string1, string2) {\n  if (string1.length === 0) return string2.length;\n  if (string2.length === 0) return string1.length;\n  var matrix = Array(string2.length + 1).fill(0).map(function (x, i) {\n    return [i];\n  });\n  matrix[0] = Array(string1.length + 1).fill(0).map(function (x, i) {\n    return i;\n  });\n\n  for (var i = 1; i <= string2.length; i++) {\n    for (var j = 1; j <= string1.length; j++) {\n      if (string2[i - 1] === string1[j - 1]) {\n        matrix[i][j] = matrix[i - 1][j - 1];\n      } else {\n        matrix[i][j] = Math.min(matrix[i - 1][j - 1] + 1, matrix[i][j - 1] + 1, matrix[i - 1][j] + 1);\n      }\n    }\n  }\n\n  return matrix[string2.length][string1.length];\n};",
-          "example": "levenshteinDistance('30-seconds-of-code','30-seconds-of-python-code'); // 7\nconst compareStrings = (string1,string2) => (100 - levenshteinDistance(string1,string2) / Math.max(string1.length,string2.length));\ncompareStrings('30-seconds-of-code', '30-seconds-of-python-code'); // 99.72 (%)"
+          "example": "levenshteinDistance('30-seconds-of-code','30-seconds-of-python-code'); // 7\r\nconst compareStrings = (string1,string2) => (100 - levenshteinDistance(string1,string2) / Math.max(string1.length,string2.length));\r\ncompareStrings('30-seconds-of-code', '30-seconds-of-python-code'); // 99.72 (%)"
         },
         "tags": [
           "algorithm",
@@ -376,7 +376,7 @@
         ]
       },
       "meta": {
-        "hash": "9f71509c5937cb68b65ef31893b1ad723ce6690e8ecd161707cb222ab67a475b"
+        "hash": "16986950549052514c4d82ec65c555118b3e9c7270ed9efe108d45fab9f26cb4"
       }
     },
     {
@@ -389,7 +389,7 @@
         "codeBlocks": {
           "es6": "const mphToKmph = (mph) => 1.6093440006146922 * mph;",
           "es5": "var mphToKmph = function mphToKmph(mph) {\n  return 1.6093440006146922 * mph;\n};",
-          "example": "mphToKmph(10); // 16.09344000614692\nmphToKmph(85.9); // 138.24264965280207"
+          "example": "mphToKmph(10); // 16.09344000614692\r\nmphToKmph(85.9); // 138.24264965280207"
         },
         "tags": [
           "math",
@@ -397,7 +397,7 @@
         ]
       },
       "meta": {
-        "hash": "d1ec7968c8f8c48642a3f91878db84330231bdf84bf74633dc0754456e951338"
+        "hash": "1d6a2b08234f9b86ffb095bb645b5cc22624d17aa2d06badc177df3bd0a7055f"
       }
     },
     {
@@ -418,7 +418,7 @@
         ]
       },
       "meta": {
-        "hash": "dba6fa36424c23d601c4e463463a5f23d32b51d8b058a6c5020d3b4098a65e51"
+        "hash": "d264febc32505d36187d7cd7aa948766e520c36af21cedd16001af19cda0cd3a"
       }
     },
     {
@@ -429,9 +429,9 @@
         "fileName": "quickSort.md",
         "text": "QuickSort an Array (ascending sort by default).\n\nUse recursion.\nUse `Array.prototype.filter` and spread operator (`...`) to create an array that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it.\nIf the parameter `desc` is truthy, return array sorts in descending order.\n\n",
         "codeBlocks": {
-          "es6": "const quickSort = ([n, ...nums], desc) =>\n  isNaN(n)\n    ? []\n    : [\n        ...quickSort(nums.filter(v => (desc ? v > n : v <= n)), desc),\n        n,\n        ...quickSort(nums.filter(v => (!desc ? v > n : v <= n)), desc)\n      ];",
+          "es6": "const quickSort = ([n, ...nums], desc) =>\r\n  isNaN(n)\r\n    ? []\r\n    : [\r\n        ...quickSort(nums.filter(v => (desc ? v > n : v <= n)), desc),\r\n        n,\r\n        ...quickSort(nums.filter(v => (!desc ? v > n : v <= n)), desc)\r\n      ];",
           "es5": "function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }\n\nfunction _nonIterableSpread() { throw new TypeError(\"Invalid attempt to spread non-iterable instance\"); }\n\nfunction _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }\n\nfunction _toArray(arr) { return _arrayWithHoles(arr) || _iterableToArray(arr) || _nonIterableRest(); }\n\nfunction _nonIterableRest() { throw new TypeError(\"Invalid attempt to destructure non-iterable instance\"); }\n\nfunction _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === \"[object Arguments]\") return Array.from(iter); }\n\nfunction _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }\n\nvar quickSort = function quickSort(_ref, desc) {\n  var _ref2 = _toArray(_ref),\n      n = _ref2[0],\n      nums = _ref2.slice(1);\n\n  return isNaN(n) ? [] : [].concat(_toConsumableArray(quickSort(nums.filter(function (v) {\n    return desc ? v > n : v <= n;\n  }), desc)), [n], _toConsumableArray(quickSort(nums.filter(function (v) {\n    return !desc ? v > n : v <= n;\n  }), desc)));\n};",
-          "example": "quickSort([4, 1, 3, 2]); // [1,2,3,4]\nquickSort([4, 1, 3, 2], true); // [4,3,2,1]"
+          "example": "quickSort([4, 1, 3, 2]); // [1,2,3,4]\r\nquickSort([4, 1, 3, 2], true); // [4,3,2,1]"
         },
         "tags": [
           "algorithm",
@@ -440,7 +440,7 @@
         ]
       },
       "meta": {
-        "hash": "5c26069a02342eadd2c5ba2656a1b211da8f1a94da03c2cc31a5090be556d7b7"
+        "hash": "b0e8729f35e7e7fb2406fe5c194cac83630cffe0d99dd671f08e832436a6e724"
       }
     },
     {
@@ -453,7 +453,7 @@
         "codeBlocks": {
           "es6": "const removeVowels = (str, repl = '') => str.replace(/[aeiou]/gi, repl);",
           "es5": "var removeVowels = function removeVowels(str) {\n  var repl = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';\n  return str.replace(/[aeiou]/gi, repl);\n};",
-          "example": "removeVowels(\"foobAr\"); // \"fbr\"\nremoveVowels(\"foobAr\",\"*\"); // \"f**b*r\""
+          "example": "removeVowels(\"foobAr\"); // \"fbr\"\r\nremoveVowels(\"foobAr\",\"*\"); // \"f**b*r\""
         },
         "tags": [
           "string",
@@ -461,7 +461,7 @@
         ]
       },
       "meta": {
-        "hash": "5c6f8e292db8506568de362aa63890047f9d5a65d35143cfca1e27562642c414"
+        "hash": "45953ff742f8edfb77f0c1dfbcf28f85b81bd4703daecaa9ba59d180fd55aa23"
       }
     },
     {
@@ -472,9 +472,9 @@
         "fileName": "solveRPN.md",
         "text": "Solves the given mathematical expression in [reverse polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation).\nThrows appropriate errors if there are unrecognized symbols or the expression is wrong. The valid operators are :- `+`,`-`,`*`,`/`,`^`,`**` (`^`&`**` are the exponential symbols and are same). This snippet does not supports any unary operators.\n\nUse a dictionary, `OPERATORS` to specify each operator's matching mathematical operation.\nUse `String.prototype.replace()` with a regular expression to replace `^` with `**`, `String.prototype.split()` to tokenize the string and `Array.prototype.filter()` to remove empty tokens.\nUse `Array.prototype.forEach()` to parse each `symbol`, evaluate it as a numeric value or operator and solve the mathematical expression.\nNumeric values are converted to floating point numbers and pushed to a `stack`, while operators are evaluated using the `OPERATORS` dictionary and pop elements from the `stack` to apply operations.\n\n",
         "codeBlocks": {
-          "es6": "const solveRPN = rpn => {\n  const OPERATORS = {\n    '*': (a, b) => a * b,\n    '+': (a, b) => a + b,\n    '-': (a, b) => a - b,\n    '/': (a, b) => a / b,\n    '**': (a, b) => a ** b\n  };\n  const [stack, solve] = [\n    [],\n    rpn\n      .replace(/\\^/g, '**')\n      .split(/\\s+/g)\n      .filter(el => !/\\s+/.test(el) && el !== '')\n  ];\n  solve.forEach(symbol => {\n    if (!isNaN(parseFloat(symbol)) && isFinite(symbol)) {\n      stack.push(symbol);\n    } else if (Object.keys(OPERATORS).includes(symbol)) {\n      const [a, b] = [stack.pop(), stack.pop()];\n      stack.push(OPERATORS[symbol](parseFloat(b), parseFloat(a)));\n    } else {\n      throw `${symbol} is not a recognized symbol`;\n    }\n  });\n  if (stack.length === 1) return stack.pop();\n  else throw `${rpn} is not a proper RPN. Please check it and try again`;\n};",
+          "es6": "const solveRPN = rpn => {\r\n  const OPERATORS = {\r\n    '*': (a, b) => a * b,\r\n    '+': (a, b) => a + b,\r\n    '-': (a, b) => a - b,\r\n    '/': (a, b) => a / b,\r\n    '**': (a, b) => a ** b\r\n  };\r\n  const [stack, solve] = [\r\n    [],\r\n    rpn\r\n      .replace(/\\^/g, '**')\r\n      .split(/\\s+/g)\r\n      .filter(el => !/\\s+/.test(el) && el !== '')\r\n  ];\r\n  solve.forEach(symbol => {\r\n    if (!isNaN(parseFloat(symbol)) && isFinite(symbol)) {\r\n      stack.push(symbol);\r\n    } else if (Object.keys(OPERATORS).includes(symbol)) {\r\n      const [a, b] = [stack.pop(), stack.pop()];\r\n      stack.push(OPERATORS[symbol](parseFloat(b), parseFloat(a)));\r\n    } else {\r\n      throw `${symbol} is not a recognized symbol`;\r\n    }\r\n  });\r\n  if (stack.length === 1) return stack.pop();\r\n  else throw `${rpn} is not a proper RPN. Please check it and try again`;\r\n};",
           "es5": "var solveRPN = function solveRPN(rpn) {\n  var OPERATORS = {\n    '*': function _(a, b) {\n      return a * b;\n    },\n    '+': function _(a, b) {\n      return a + b;\n    },\n    '-': function _(a, b) {\n      return a - b;\n    },\n    '/': function _(a, b) {\n      return a / b;\n    },\n    '**': function _(a, b) {\n      return Math.pow(a, b);\n    }\n  };\n  var _ref = [[], rpn.replace(/\\^/g, '**').split(/\\s+/g).filter(function (el) {\n    return !/\\s+/.test(el) && el !== '';\n  })],\n      stack = _ref[0],\n      solve = _ref[1];\n  solve.forEach(function (symbol) {\n    if (!isNaN(parseFloat(symbol)) && isFinite(symbol)) {\n      stack.push(symbol);\n    } else if (Object.keys(OPERATORS).includes(symbol)) {\n      var _ref2 = [stack.pop(), stack.pop()],\n          a = _ref2[0],\n          b = _ref2[1];\n      stack.push(OPERATORS[symbol](parseFloat(b), parseFloat(a)));\n    } else {\n      throw \"\".concat(symbol, \" is not a recognized symbol\");\n    }\n  });\n  if (stack.length === 1) return stack.pop();else throw \"\".concat(rpn, \" is not a proper RPN. Please check it and try again\");\n};",
-          "example": "solveRPN('15 7 1 1 + - / 3 * 2 1 1 + + -'); // 5\nsolveRPN('2 3 ^'); // 8"
+          "example": "solveRPN('15 7 1 1 + - / 3 * 2 1 1 + + -'); // 5\r\nsolveRPN('2 3 ^'); // 8"
         },
         "tags": [
           "algorithm",
@@ -482,7 +482,7 @@
         ]
       },
       "meta": {
-        "hash": "0c37cf46586652fd20dfa9ca682d3635f01fe61c46864f9773f6b258e8f3b6f6"
+        "hash": "ff1f2f2a5cb5f00cf80322d9af5ce37d9c9b1492c468ea04c112b8a55be71232"
       }
     },
     {
@@ -493,7 +493,7 @@
         "fileName": "speechSynthesis.md",
         "text": "Performs speech synthesis (experimental).\n\nUse `SpeechSynthesisUtterance.voice` and `window.speechSynthesis.getVoices()` to convert a message to speech.\nUse `window.speechSynthesis.speak()` to play the message.\n\nLearn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).\n\n",
         "codeBlocks": {
-          "es6": "const speechSynthesis = message => {\n  const msg = new SpeechSynthesisUtterance(message);\n  msg.voice = window.speechSynthesis.getVoices()[0];\n  window.speechSynthesis.speak(msg);\n};",
+          "es6": "const speechSynthesis = message => {\r\n  const msg = new SpeechSynthesisUtterance(message);\r\n  msg.voice = window.speechSynthesis.getVoices()[0];\r\n  window.speechSynthesis.speak(msg);\r\n};",
           "es5": "var speechSynthesis = function speechSynthesis(message) {\n  var msg = new SpeechSynthesisUtterance(message);\n  msg.voice = window.speechSynthesis.getVoices()[0];\n  window.speechSynthesis.speak(msg);\n};",
           "example": "speechSynthesis('Hello, World'); // // plays the message"
         },
@@ -503,7 +503,7 @@
         ]
       },
       "meta": {
-        "hash": "9859dbef05dc0398e825150b50fccfea370583cf6b807c00c9e83b769d2b51c0"
+        "hash": "fc2ca6d0b44a47a3b0eb638ec47d10964eff3dab91707186cc96dc53d178c135"
       }
     },
     {
@@ -524,7 +524,7 @@
         ]
       },
       "meta": {
-        "hash": "19837ac6714833e9c5fe698811e171cc2598f7b9405a4847b33b8d3b35debf8a"
+        "hash": "f665ac48ee5f707eff3f0a13c9d9e844370765fa083e96126a6d64da8c29275a"
       }
     }
   ],

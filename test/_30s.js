@@ -203,9 +203,8 @@ const deepClone = obj => {
 };
 const deepFlatten = arr => [].concat(...arr.map(v => (Array.isArray(v) ? deepFlatten(v) : v)));
 const deepFreeze = obj =>
-  Object.keys(obj).forEach(
-    prop =>
-      !(obj[prop] instanceof Object) || Object.isFrozen(obj[prop]) ? null : deepFreeze(obj[prop])
+  Object.keys(obj).forEach(prop =>
+    !(obj[prop] instanceof Object) || Object.isFrozen(obj[prop]) ? null : deepFreeze(obj[prop])
   ) || Object.freeze(obj);
 const deepGet = (obj, keys) => keys.reduce((xs, x) => (xs && xs[x] ? xs[x] : null), obj);
 const deepMapKeys = (obj, f) =>
@@ -215,7 +214,7 @@ const deepMapKeys = (obj, f) =>
       ? Object.keys(obj).reduce((acc, current) => {
         const val = obj[current];
         acc[f(current)] =
-            val !== null && typeof val === 'object' ? deepMapKeys(val, f) : (acc[f(current)] = val);
+          val !== null && typeof val === 'object' ? deepMapKeys(val, f) : (acc[f(current)] = val);
         return acc;
       }, {})
       : obj;
@@ -708,11 +707,10 @@ const mask = (cc, num = 4, mask = '*') => `${cc}`.slice(-num).padStart(`${cc}`.l
 const matches = (obj, source) =>
   Object.keys(source).every(key => obj.hasOwnProperty(key) && obj[key] === source[key]);
 const matchesWith = (obj, source, fn) =>
-  Object.keys(source).every(
-    key =>
-      obj.hasOwnProperty(key) && fn
-        ? fn(obj[key], source[key], key, obj, source)
-        : obj[key] == source[key]
+  Object.keys(source).every(key =>
+    obj.hasOwnProperty(key) && fn
+      ? fn(obj[key], source[key], key, obj, source)
+      : obj[key] == source[key]
   );
 const maxBy = (arr, fn) => Math.max(...arr.map(typeof fn === 'function' ? fn : val => val[fn]));
 const maxDate = dates => new Date(Math.max(...dates));
@@ -1376,9 +1374,8 @@ const zipObject = (props, values) =>
   props.reduce((obj, prop, index) => ((obj[prop] = values[index]), obj), {});
 const zipWith = (...array) => {
   const fn = typeof array[array.length - 1] === 'function' ? array.pop() : undefined;
-  return Array.from(
-    { length: Math.max(...array.map(a => a.length)) },
-    (_, i) => (fn ? fn(...array.map(a => a[i])) : array.map(a => a[i]))
+  return Array.from({ length: Math.max(...array.map(a => a.length)) }, (_, i) =>
+    fn ? fn(...array.map(a => a[i])) : array.map(a => a[i])
   );
 };
 const binarySearch = (arr, val, start = 0, end = arr.length - 1) => {

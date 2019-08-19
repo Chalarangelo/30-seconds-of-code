@@ -40,7 +40,7 @@ try {
     process.exit(0);
   }
   else {
-    childProcess.execSync('npm test');
+    childProcess.execSync('npm test', { stdio: 'inherit' });
   }
   console.log(`${green('SUCCESS!')} All tests ran successfully!`);
 } catch (err) {

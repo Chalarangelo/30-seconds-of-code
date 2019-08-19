@@ -67,7 +67,6 @@ export const archivePageQuery = graphql`
       totalCount
       edges {
         node {
-          excerpt(pruneLength: 400)
           id
           html
           rawMarkdownBody

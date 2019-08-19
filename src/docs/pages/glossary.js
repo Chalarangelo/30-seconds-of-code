@@ -12,7 +12,6 @@ import SimpleCard from '../components/SimpleCard';
 // ===================================================
 const GlossaryPage = props => {
   const posts = props.data.snippetDataJson.data;
-  console.log(posts);
 
   React.useEffect(() => {
     props.dispatch(pushNewPage('Glossary', props.path));
