@@ -66,7 +66,6 @@ export const tagPageQuery = graphql`
       totalCount
       edges {
         node {
-          excerpt(pruneLength: 400)
           id
           html
           rawMarkdownBody

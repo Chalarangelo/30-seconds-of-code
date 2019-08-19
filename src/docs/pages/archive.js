@@ -7,7 +7,7 @@ import Meta from '../components/Meta';
 import Shell from '../components/Shell';
 import SnippetCard from '../components/SnippetCard';
 
-import { capitalize, getRawCodeBlocks as getCodeBlocks } from '../util';
+import { getRawCodeBlocks as getCodeBlocks } from '../util';
 
 // ===================================================
 // Individual snippet category/tag page
