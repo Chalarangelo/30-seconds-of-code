@@ -14,7 +14,6 @@ import { getRawCodeBlocks as getCodeBlocks } from '../util';
 // Home page (splash and search)
 // ===================================================
 const IndexPage = props => {
-  console.log(props);
   const snippets = props.data.snippetDataJson.data.map(snippet => ({
     title: snippet.title,
     html: props.data.allMarkdownRemark.edges.find(

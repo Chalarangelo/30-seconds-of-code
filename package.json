@@ -15,7 +15,7 @@
     "tester": "node ./scripts/tdd.js",
     "vscoder": "node ./scripts/vscodegen.js",
     "packager": "node ./scripts/module.js",
-    "test": "jest --verbose --coverage"
+    "test": "jest --verbose --coverage --testPathIgnorePatterns=\".cache\""
   },
   "repository": {
     "type": "git",
@@ -63,7 +63,7 @@
     "gatsby-transformer-remark": "^2.6.6",
     "gatsby-transformer-sharp": "^2.2.3",
     "gsap": "^2.1.3",
-    "jest": "^23.6.0",
+    "jest": "^24.9.0",
     "kleur": "^3.0.3",
     "markdown-builder": "^0.9.0",
     "node-sass": "^4.12.0",

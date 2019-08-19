@@ -17,7 +17,7 @@ const deepMapKeys = (obj, f) =>
       ? Object.keys(obj).reduce((acc, current) => {
         const val = obj[current];
         acc[f(current)] =
-            val !== null && typeof val === 'object' ? deepMapKeys(val, f) : (acc[f(current)] = val);
+          val !== null && typeof val === 'object' ? deepMapKeys(val, f) : (acc[f(current)] = val);
         return acc;
       }, {})
       : obj;

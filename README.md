@@ -2,9 +2,8 @@
 
 # 30 seconds of code
 
-[![License](https://img.shields.io/badge/license-CC0--1.0-blue.svg)](https://github.com/30-seconds/30-seconds-of-code/blob/master/LICENSE) [![npm Downloads](https://img.shields.io/npm/dt/30-seconds-of-code.svg)](https://www.npmjs.com/package/30-seconds-of-code) [![npm Version](https://img.shields.io/npm/v/30-seconds-of-code.svg)](https://www.npmjs.com/package/30-seconds-of-code) [![Known Vulnerabilities](https://snyk.io/test/github/30-seconds/30-seconds-of-code/badge.svg?targetFile=package.json)](https://snyk.io/test/github/30-seconds/30-seconds-of-code?targetFile=package.json) <br/> 
-[![Travis Build](https://travis-ci.com/30-seconds/30-seconds-of-code.svg?branch=master)](https://travis-ci.com/30-seconds/30-seconds-of-code) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6ab7791fb1ea40b4a576d658fb96807f)](https://www.codacy.com/app/Chalarangelo/30-seconds-of-code?utm_source=github.com&utm_medium=referral&utm_content=30-seconds/30-seconds-of-code&utm_campaign=Badge_Grade) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard) <br/>
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![ProductHunt](https://img.shields.io/badge/producthunt-vote-orange.svg)](https://www.producthunt.com/posts/30-seconds-of-code) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+[![License](https://img.shields.io/badge/license-CC0--1.0-blue.svg)](https://github.com/30-seconds/30-seconds-of-code/blob/master/LICENSE) [![npm Downloads](https://img.shields.io/npm/dt/30-seconds-of-code.svg)](https://www.npmjs.com/package/30-seconds-of-code) [![npm Version](https://img.shields.io/npm/v/30-seconds-of-code.svg)](https://www.npmjs.com/package/30-seconds-of-code) [![Known Vulnerabilities](https://snyk.io/test/github/30-seconds/30-seconds-of-code/badge.svg?targetFile=package.json)](https://snyk.io/test/github/30-seconds/30-seconds-of-code?targetFile=package.json) [![Travis Build](https://travis-ci.com/30-seconds/30-seconds-of-code.svg?branch=master)](https://travis-ci.com/30-seconds/30-seconds-of-code) <br/>
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![ProductHunt](https://img.shields.io/badge/producthunt-vote-orange.svg)](https://www.producthunt.com/posts/30-seconds-of-code) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 > Curated collection of useful JavaScript snippets that you can understand in 30 seconds or less.
 
@@ -712,10 +711,10 @@ multiplyAndAdd5(5, 2); // 15
 
 Converts an asynchronous function to return a promise.
 
+*In Node 8+, you can use [`util.promisify`](https://nodejs.org/api/util.html#util_util_promisify_original)*
+
 Use currying to return a function returning a `Promise` that calls the original function.
 Use the `...rest` operator to pass in all the parameters.
-
-*In Node 8+, you can use [`util.promisify`](https://nodejs.org/api/util.html#util_util_promisify_original)*
 
 ```js
 const promisify = func => (...args) =>
@@ -2030,8 +2029,6 @@ Mutates the original array to filter out the values specified.
 Use `Array.prototype.filter()` and `Array.prototype.includes()` to pull out the values that are not needed.
 Use `Array.prototype.length = 0` to mutate the passed in an array by resetting it's length to zero and `Array.prototype.push()` to re-populate it with only the pulled values.
 
-_(For a snippet that does not mutate the original array see [`without`](#without))_
-
 ```js
 const pull = (arr, ...args) => {
   let argState = Array.isArray(args[0]) ? args[0] : args;
@@ -3005,8 +3002,6 @@ Filters out the elements of an array, that have one of the specified values.
 
 Use `Array.prototype.filter()` to create an array excluding(using `!Array.includes()`) all given values.
 
-_(For a snippet that mutates the original array see [`pull`](#pull))_
-
 ```js
 const without = (arr, ...args) => arr.filter(v => !args.includes(v));
 ```
@@ -3104,9 +3099,8 @@ The function is invoked with the elements of each group `(...group)`.
 ```js
 const zipWith = (...array) => {
   const fn = typeof array[array.length - 1] === 'function' ? array.pop() : undefined;
-  return Array.from(
-    { length: Math.max(...array.map(a => a.length)) },
-    (_, i) => (fn ? fn(...array.map(a => a[i])) : array.map(a => a[i]))
+  return Array.from({ length: Math.max(...array.map(a => a.length)) }, (_, i) =>
+    fn ? fn(...array.map(a => a[i])) : array.map(a => a[i])
   );
 };
 ```
@@ -6706,9 +6700,8 @@ Calls `Object.freeze(obj)` recursively on all unfrozen properties of passed obje
 
 ```js
 const deepFreeze = obj =>
-  Object.keys(obj).forEach(
-    prop =>
-      !(obj[prop] instanceof Object) || Object.isFrozen(obj[prop]) ? null : deepFreeze(obj[prop])
+  Object.keys(obj).forEach(prop =>
+    !(obj[prop] instanceof Object) || Object.isFrozen(obj[prop]) ? null : deepFreeze(obj[prop])
   ) || Object.freeze(obj);
 ```
 
@@ -6761,10 +6754,9 @@ deepGet(data, ['foo', 'bar', 'baz', 8, 'foz']); // null
 
 ### deepMapKeys ![advanced](/advanced.svg)
 
-Deep maps an object keys.
+Deep maps an object's keys.
 
 Creates an object with the same values as the provided object and keys generated by running the provided function for each key.
-
 Use `Object.keys(obj)` to iterate over the object's keys. 
 Use `Array.prototype.reduce()` to create a new object with the same values and mapped keys using `fn`.
 
@@ -6776,7 +6768,7 @@ const deepMapKeys = (obj, f) =>
       ? Object.keys(obj).reduce((acc, current) => {
         const val = obj[current];
         acc[f(current)] =
-            val !== null && typeof val === 'object' ? deepMapKeys(val, f) : (acc[f(current)] = val);
+          val !== null && typeof val === 'object' ? deepMapKeys(val, f) : (acc[f(current)] = val);
         return acc;
       }, {})
       : obj;
@@ -7236,11 +7228,10 @@ If no function is provided, the values will be compared using the equality opera
 
 ```js
 const matchesWith = (obj, source, fn) =>
-  Object.keys(source).every(
-    key =>
-      obj.hasOwnProperty(key) && fn
-        ? fn(obj[key], source[key], key, obj, source)
-        : obj[key] == source[key]
+  Object.keys(source).every(key =>
+    obj.hasOwnProperty(key) && fn
+      ? fn(obj[key], source[key], key, obj, source)
+      : obj[key] == source[key]
   );
 ```
 
@@ -7554,7 +7545,6 @@ Get type of `val` (`array`, `object` or `string`).
 Use `length` property for arrays.
 Use `length` or `size` value if available or number of keys for objects.
 Use `size` of a [`Blob` object](https://developer.mozilla.org/en-US/docs/Web/API/Blob) created from `val` for strings.
-
 Split strings into array of characters with `split('')` and return its length.
 
 ```js

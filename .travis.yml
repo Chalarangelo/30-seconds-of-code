@@ -14,7 +14,6 @@ script:
 - npm run builder
 - npm run packager
 - npm run tester
-- npm run test
 - npm run vscoder
 after_success:
 - chmod +x .travis/push.sh

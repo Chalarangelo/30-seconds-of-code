@@ -17,7 +17,6 @@ import SimpleCard from '../components/SimpleCard';
 // Snippet list page
 // ===================================================
 const ListPage = props => {
-  console.log(props);
   const snippets = props.data.snippetDataJson.data.map(snippet => ({
     title: snippet.title,
     html: props.data.allMarkdownRemark.edges.find(
@@ -52,8 +51,6 @@ const ListPage = props => {
       ).node.rawMarkdownBody,
     ).code,
   }));
-  console.log(snippets);
-  console.log(archivedSnippets);
   const tags = snippets.reduce((acc, snippet) => {
     if (!snippet.tags) return acc;
     const primaryTag = snippet.tags[0];
