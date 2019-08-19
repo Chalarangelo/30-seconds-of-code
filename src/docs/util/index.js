@@ -17,7 +17,9 @@ const getTextualContent = (str, noExplain = false) => {
       results.push(match);
     });
   }
-  return results[1].slice(0, results[1].lastIndexOf('<p>'));
+  if (noExplain)
+    return results[1].slice(0, results[1].lastIndexOf('<p>'));
+  return results[1];
 };
 
 // Gets the code blocks in a gatsby page
