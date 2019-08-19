@@ -5,8 +5,7 @@ import React from 'react';
 // ===================================================
 const SimpleCard = ({ 
   title, 
-  children, 
-  isDarkMode 
+  children
 }) => (
   <div className='card short'>
     <h4 className='card-title'>

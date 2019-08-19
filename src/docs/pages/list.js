@@ -62,15 +62,20 @@ const ListPage = props => {
   }, []);
   const staticPages = [
     {
+      url: 'beginner',
+      title: 'Beginner snippets',
+      description: 'Snippets aimed towards individuals at the start of their web developer journey.',
+    },
+    {
+      url: 'glossary',
+      title: 'Glossary',
+      description: 'A handy glossary of web development terminology.',
+    },
+    {
       url: 'about',
       title: 'About',
       description: 'A few word about us, our goals and our projects.',
     },
-    {
-      url: 'beginner',
-      title: 'Beginner snippets',
-      description: 'Snippets aimed towards individuals at the start of their web developer journey.',
-    }
   ];
 
   React.useEffect(() => {
