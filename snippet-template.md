@@ -1,4 +1,7 @@
-### functionName
+---
+title: functionName
+tags: 
+---
 
 Explain briefly what the snippet does.
 
