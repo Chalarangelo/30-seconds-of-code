@@ -61,7 +61,7 @@ export const tagPageQuery = graphql`
     allMarkdownRemark(
       limit: 1000
       sort: { fields: [frontmatter___title], order: ASC }
-      filter: { frontmatter: { tags: { regex: $tagRegex } } }
+      filter: { fileAbsolutePath: { regex: "/snippets(?!_archive)/" }, frontmatter: { tags: { regex: $tagRegex } } }
     ) {
       totalCount
       edges {

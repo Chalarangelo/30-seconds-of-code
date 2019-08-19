@@ -87,6 +87,15 @@ exports.createPages = ({ graphql, actions }) => {
       });
     });
 
+    createPage({
+      path: `/beginner`,
+      component: tagPage,
+      context: {
+        tag: `beginner snippets`,
+        tagRegex: `/beginner/`,
+      },
+    });
+
     return null;
   });
 };
