@@ -56,7 +56,7 @@ export default connect(
 )(SnippetPage);
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query BlogPostBySlug($slug: String!, $scope: String!) {
     logo: file(absolutePath: { regex: "/logo_reverse_md.png/" }) {
       id
       childImageSharp {
@@ -89,7 +89,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    snippetDataJson(meta: { type: { eq: "snippetArray" }, scope: {eq: "./snippets"} }) {
+    snippetDataJson(meta: { type: { eq: "snippetArray" }, scope: {eq: $scope} }) {
       data {
         title
         id

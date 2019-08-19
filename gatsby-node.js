@@ -44,20 +44,24 @@ exports.createPages = ({ graphql, actions }) => {
     const snippets = result.data.allMarkdownRemark.edges;
 
     snippets.forEach((post, index) => {
+      if(post.node.fileAbsolutePath.indexOf('README') !== -1)
+        return;
       if (post.node.fileAbsolutePath.indexOf(config.snippetArchivePath) === -1)
         createPage({
           path: `/snippet${post.node.fields.slug}`,
           component: snippetPage,
           context: {
             slug: post.node.fields.slug,
+            scope: `./snippets`,
           },
         });
       else
         createPage({
-          path: `/snippet_archive${post.node.fields.slug}`,
+          path: `/archive${post.node.fields.slug}`,
           component: snippetPage,
           context: {
             slug: post.node.fields.slug,
+            scope: `./snippets_archive`,
           },
         });
     });
