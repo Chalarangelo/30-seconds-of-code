@@ -1,5 +1,7 @@
-### average
-
+---
+title: average
+tags: math
+---
 :information_source: Already implemented via `statistics.mean`. `statistics.mean` takes an array as an argument whereas this function takes variadic arguments.
 
 Returns the average of two or more numbers.

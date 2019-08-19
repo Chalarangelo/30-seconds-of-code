@@ -1,5 +1,7 @@
-### spread
-
+---
+title: spread
+tags: list
+---
 Implements javascript's `[].concat(...arr)`. Flattens the list(non-deep) and returns an list.
 
 ```python

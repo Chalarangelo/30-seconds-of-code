@@ -1,5 +1,7 @@
-### zip
-
+---
+title: zip
+tags: list
+---
 :information_source: Already implemented via `itertools.zip_longest()`
 
 Creates a list of elements, grouped based on the position in the original lists.

@@ -1,5 +1,7 @@
-### fibonacci
-
+---
+title: fibonacci
+tags: math
+---
 Generates an array, containing the Fibonacci sequence, up until the nth term.
 
 Starting with 0 and 1, adds the sum of the last two numbers of the list to the end of the list using ```list.append()``` until the length of the list reaches n.  If the given nth value is 0 or less, the method will just return a list containing 0.

@@ -1,4 +1,8 @@
-### bubble_sort
+---
+title: bubble_sort
+tags: list
+---
+
 Bubble_sort uses the technique of comparing and swapping
 
 ```python

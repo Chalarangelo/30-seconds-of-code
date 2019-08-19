@@ -1,5 +1,7 @@
-### difference
-
+---
+title: difference
+tags: list
+---
 Returns the difference between two iterables.
 
 Use list comprehension to only keep values not contained in `b`.

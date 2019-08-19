@@ -1,5 +1,7 @@
-### capitalize_every_word
-
+---
+title: capitalize_every_word
+tags: string
+---
 Capitalizes the first letter of every word in a string.
 
 Uses `str.title` to capitalize first letter of every word in the string.

@@ -1,5 +1,7 @@
-### is_upper_case
-
+---
+title: is_upper_case
+tags: string
+---
 Checks if a string is upper case.
 
 Convert the given string to upper case, using `str.upper()` method and compare it to the original.

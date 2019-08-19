@@ -1,5 +1,7 @@
-### is_anagram
-
+---
+title: is_anagram
+tags: string
+---
 Determine if 2 strings are anagrams.
 
 Returns true if 2 strings are anagrams of each other, false otherwise.

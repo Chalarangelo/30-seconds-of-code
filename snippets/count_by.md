@@ -1,5 +1,7 @@
-### count_by
-
+---
+title: count_by
+tags: list
+---
 :information_source: Already implemented via `collections.Counter`
 
 Groups the elements of a list based on the given function and returns the count of elements in each group.
