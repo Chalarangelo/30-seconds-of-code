@@ -1,5 +1,7 @@
-### gcd
-
+---
+title: gcd
+tags: math
+---
 Calculates the greatest common divisor of a list of numbers.
 
 Uses the reduce function from the inbuilt module `functools`. Also uses the `math.gcd` function over a list.

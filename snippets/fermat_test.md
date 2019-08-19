@@ -1,5 +1,7 @@
-### fermat_test
-
+---
+title: fermat_test
+tags: math
+---
 Checks if the number is prime or not. Returns True if passed number is prime, and False if not.
 
 The function uses Fermat's theorem. 

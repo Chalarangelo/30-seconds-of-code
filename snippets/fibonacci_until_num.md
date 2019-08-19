@@ -1,5 +1,7 @@
-### fibonacci_until_num
-
+---
+title: fibonacci_until_num
+tags: math
+---
 Returns the n-th term in a Fibonnaci sequence that starts with 1
 
 A term in a Fibonnaci sequence is the sum of the two previous terms.

@@ -1,5 +1,7 @@
-### count_occurences
-
+---
+title: count_occurences
+tags: list
+---
 :information_source: Already implemented via `list.count()`.
 
 Counts the occurrences of a value in a list.

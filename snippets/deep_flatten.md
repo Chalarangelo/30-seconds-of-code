@@ -1,5 +1,7 @@
-### deep_flatten
-
+---
+title: deep_flatten
+tags: list
+---
 Deep flattens a list.
 
 Use recursion. Use `list.extend()` with an empty list (`result`) and the spread function to flatten a list. Recursively flatten each element that is a list.

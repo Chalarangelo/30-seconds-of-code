@@ -1,15 +1,18 @@
-### function_name
+---
+title: function_name
+tags: 
+---
 
-Describe briefly what the function does
+Explain briefly what the snippet does.
 
-Explain your method and the functions used.
+Explain briefly how the snippet works.
 
 ``` python
 def function_name(args):
-    # code
-    return 0
+  # code
+  return 0
 ```
 
 ``` python
-function_name(val) # result
+functionName(val) # result
 ```

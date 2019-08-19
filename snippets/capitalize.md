@@ -1,5 +1,7 @@
-### capitalize
-
+---
+title: capitalize
+tags: string
+---
 Capitalizes the first letter of a string.
 
 Capitalizes the first letter of the string and then adds it with rest of the string. Omit the `lower_rest` parameter to keep the rest of the string intact, or set it to `true` to convert to lowercase.

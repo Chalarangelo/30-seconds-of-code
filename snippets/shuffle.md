@@ -1,5 +1,7 @@
-### shuffle
-
+---
+title: shuffle
+tags: list
+---
 :information_source: The same algorithm is already implemented via `random.shuffle`.
 
 Randomizes the order of the values of an list, returning a new list.

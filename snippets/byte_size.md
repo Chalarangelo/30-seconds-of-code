@@ -1,5 +1,7 @@
-### byte_size
-
+---
+title: byte_size
+tags: string
+---
 Returns the length of a string in bytes.
 
 `utf-8` encodes a given string, then `len` finds the length of the encoded string.

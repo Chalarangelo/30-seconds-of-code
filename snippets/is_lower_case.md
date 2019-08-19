@@ -1,5 +1,7 @@
-### is_lower_case
-
+---
+title: is_lower_case
+tags: string
+---
 Checks if a string is lower case.
 
 Convert the given string to lower case, using `str.lower()` method and compare it to the original.

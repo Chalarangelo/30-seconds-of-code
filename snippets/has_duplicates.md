@@ -1,5 +1,7 @@
-### has_duplicates
-
+---
+title: has_duplicates
+tags: list
+---
 Checks a flat list for duplicate values. Returns True if duplicate values exist and False if values are all unique.
 
 This function compares the length of the list with length of the set() of the list. set() removes duplicate values from the list.

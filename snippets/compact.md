@@ -1,5 +1,7 @@
-### compact
-
+---
+title: compact
+tags: list
+---
 Removes falsey values from a list.
 
 Use `filter()` to filter out falsey values (False, None, 0, and "").
