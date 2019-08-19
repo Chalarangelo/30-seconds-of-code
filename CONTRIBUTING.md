@@ -8,7 +8,7 @@ Here's what you can do to help:
 - Be part of the discussion by helping out with [existing issues](https://github.com/kriadmin/30-seconds-of-python-code/issues) or talking on our [gitter channel](https://gitter.im/30-seconds-of-python-code/Lobby).
 - Submit [pull requests](https://github.com/kriadmin/30-seconds-of-python-code/pulls) with snippets you have created (see below for guidelines).
 - Fix typos in existing snippets, improve snippet descriptions and explanations or provide better examples.
-- Before submitting a PR for any new snippets go through [this](https://github.com/kriadmin/30-seconds-of-python-code/projects/1) project. If your snippet is not there, then go ahead and submit a PR. Else if it is in the done column, sorry it has been already implemented.If it is in any other column submit a PR and give the card's link in the description section of PR.
+- Before submitting a PR for any new snippets go through [this](https://github.com/kriadmin/30-seconds-of-python-code/projects/1) project. If your snippet is not there, then go ahead and submit a PR. Else if it is in the done column, sorry it has been already implemented. If it is in any other column submit a PR and give the card's link in the description section of PR.
 - **Working on your first Pull Request?** You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
 
 ### Snippet submission and Pull request guidelines
@@ -39,7 +39,7 @@ Here's what you can do to help:
 - You can start creating a new snippet, by using the [snippet template](snippet_template.md) to format your snippets.
 - Updating the README.md file should only be done by altering the scripts in the **scripts** folder or altering their relative static parts in the **static-parts** folder.
 - You may tag your snippet in tag_databse although it is _not_ necessary.
-- You may add your name as `[Name][@github_username]` to the contributor database. If the snippet already exists and you are making changes to it you can add your name at the laste seperated by a comma.
+- You may add your name as `[Name][@github_username]` to the contributor database. If the snippet already exists and you are making changes to it you can add your name at the last seperated by a comma.
 <!--
 ### Additional guidelines and conventions regarding snippets
 

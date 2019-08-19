@@ -2,7 +2,7 @@
 
 Returns the length of a string in bytes.
 
-`utf-8` encodes a given string and find its length.
+`utf-8` encodes a given string, then `len` finds the length of the encoded string.
 
 ```python
 def byte_size(string):
