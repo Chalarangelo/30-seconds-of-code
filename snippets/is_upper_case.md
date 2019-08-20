@@ -1,14 +1,15 @@
 ---
 title: is_upper_case
-tags: string
+tags: string,utility,beginner
 ---
+
 Checks if a string is upper case.
 
-Convert the given string to upper case, using `str.upper()` method and compare it to the original.
+Convert the given string to upper case, using `str.upper()` and compare it to the original.
 
 ```py
 def is_upper_case(string):
-    return string == string.upper()
+  return string == string.upper()
 ```
 
 ```py
