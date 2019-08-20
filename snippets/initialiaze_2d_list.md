@@ -5,7 +5,7 @@ tags: list,intermediate
 
 Initializes a 2D list of given width and height and value.
 
-Use array comprehension and `range()` to generate `h` rows where each is a list with length `h`, initialized with `val`.
+Use list comprehension and `range()` to generate `h` rows where each is a list with length `h`, initialized with `val`.
 If `val` is not provided, default to `None`.
 
 Explain briefly how the snippet works.
