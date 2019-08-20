@@ -5,7 +5,7 @@ tags: list,beginner
 
 Returns the difference between two iterables.
 
-Create a `set` fromn `b`, then use list comprehension on `a` to only keep values not contained in the previously created set, `_b`.
+Create a `set` from `b`, then use list comprehension on `a` to only keep values not contained in the previously created set, `_b`.
 
 ```py
 def difference(a, b):
