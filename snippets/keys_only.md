@@ -1,21 +1,23 @@
 ---
 title: keys_only
-tags: object
+tags: object,list,beginner
 ---
-Function which accepts a dictionary of key value pairs and returns a new flat list of only the keys.
 
-Uses the .keys() method of "dict" objects. dict.keys() returns a view object that displays a list of all the keys. Then, list(dict.keys()) returns a list that stores all the keys of a dict.
+Returns a flat list of all the keys in a flat dictionary.
+
+Use `dict.keys()` to return the keys in the given dictionary.
+Return a `list()` of the previous result.
 
 ```py
 def keys_only(flat_dict):
-    return list(flat_dict.keys())
+  return list(flat_dict.keys())
 ```
 
 ```py
 ages = {
-     "Peter": 10,
-     "Isabel": 11,
-     "Anna": 9,
+  "Peter": 10,
+  "Isabel": 11,
+  "Anna": 9,
 }
 keys_only(ages) # ['Peter', 'Isabel', 'Anna']
 ```
