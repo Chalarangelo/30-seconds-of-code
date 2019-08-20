@@ -1,19 +1,21 @@
 ---
 title: chunk
-tags: list
+tags: list,intermediate
 ---
-Chunks an list into smaller lists of a specified size.
 
-Uses `range` to create a list of desired size. Then use `map` on this list and fill it with splices of `lst`.
+Chunks a list into smaller lists of a specified size.
+
+Use `list()` and `range()` to create a list of the desired `size`.
+Use `map()` on the list and fill it with splices of the given list.
+Finally, return use created list.
 
 ```py
 from math import ceil
 
-
 def chunk(lst, size):
-    return list(
-        map(lambda x: lst[x * size:x * size + size],
-            list(range(0, ceil(len(lst) / size)))))
+  return list(
+    map(lambda x: lst[x * size:x * size + size],
+      list(range(0, ceil(len(lst) / size)))))
 ```
 
 ```py
