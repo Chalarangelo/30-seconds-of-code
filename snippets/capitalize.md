@@ -1,14 +1,16 @@
 ---
 title: capitalize
-tags: string
+tags: string,intermediate
 ---
+
 Capitalizes the first letter of a string.
 
-Capitalizes the first letter of the string and then adds it with rest of the string. Omit the `lower_rest` parameter to keep the rest of the string intact, or set it to `true` to convert to lowercase.
+Capitalize the first letter of the string and then add it with rest of the string. 
+Omit the `lower_rest` parameter to keep the rest of the string intact, or set it to `True` to convert to lowercase.
 
 ```py
 def capitalize(string, lower_rest=False):
-    return string[:1].upper() + (string[1:].lower() if lower_rest else string[1:])
+  return string[:1].upper() + (string[1:].lower() if lower_rest else string[1:])
 ```
 
 ```py
