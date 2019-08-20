@@ -6,7 +6,6 @@ python:
 script:
   - python scripts/lint.py
   - python scripts/readme.py
-  - python scripts/tdd.py
   - python website/main.py
   - python scripts/auto-lint.py
 after_success:

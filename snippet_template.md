@@ -7,12 +7,12 @@ Explain briefly what the snippet does.
 
 Explain briefly how the snippet works.
 
-``` python
+```py
 def function_name(args):
   # code
   return 0
 ```
 
-``` python
+```py
 functionName(val) # result
 ```
