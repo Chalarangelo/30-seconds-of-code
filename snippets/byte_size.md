@@ -1,14 +1,15 @@
 ---
 title: byte_size
-tags: string
+tags: string, beginner
 ---
+
 Returns the length of a string in bytes.
 
-`utf-8` encodes a given string, then `len` finds the length of the encoded string.
+Use `string.encode('utf-8')` to encode the given string and return its length.
 
 ```py
 def byte_size(string):
-    return(len(string.encode('utf-8')))
+  return len(string.encode('utf-8'))
 ```
 
 ```py

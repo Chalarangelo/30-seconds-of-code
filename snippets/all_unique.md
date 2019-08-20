@@ -9,7 +9,7 @@ Use `set()` on the given list to remove duplicates, compare its length with the 
 
 ```py
 def all_unique(lst):
-    return len(lst) == len(set(lst))
+  return len(lst) == len(set(lst))
 ```
 
 ```py
