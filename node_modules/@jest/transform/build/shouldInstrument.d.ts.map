@@ -1,1 +1,0 @@
-{"version":3,"file":"shouldInstrument.d.ts","sourceRoot":"","sources":["../src/shouldInstrument.ts"],"names":[],"mappings":"AAAA;;;;;GAKG;AAGH,OAAO,EAAC,MAAM,EAAC,MAAM,aAAa,CAAC;AAInC,OAAO,EAAC,uBAAuB,EAAC,MAAM,SAAS,CAAC;AAMhD,MAAM,CAAC,OAAO,UAAU,gBAAgB,CACtC,QAAQ,EAAE,MAAM,CAAC,IAAI,EACrB,OAAO,EAAE,uBAAuB,EAChC,MAAM,EAAE,MAAM,CAAC,aAAa,GAC3B,OAAO,CA4ET"}

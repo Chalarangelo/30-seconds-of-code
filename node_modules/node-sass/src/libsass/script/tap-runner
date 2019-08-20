@@ -1,1 +1,0 @@
-$@ $TEST_FLAGS --tap --silent | tapout tap

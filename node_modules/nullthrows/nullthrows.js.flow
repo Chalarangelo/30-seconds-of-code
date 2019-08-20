@@ -1,3 +1,0 @@
-/* @flow strict */
-
-declare module.exports: <T>(x: ?T, message?: string) => T;

@@ -1,9 +1,0 @@
-machine:
-  node:
-    version: 0.10.26
-checkout:
-  post:
-    - echo "_auth = `printf $AUTH`" > npmrc
-dependencies:
-  override:
-    - npm install --userconfig npmrc --registry https://segmentio.registry.nodejitsu.com --no-strict-ssl --always-auth

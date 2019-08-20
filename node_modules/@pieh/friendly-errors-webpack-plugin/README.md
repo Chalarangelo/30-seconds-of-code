@@ -1,1 +1,0 @@
-This is forked version of [`friendly-errors-webpack-plugin`](https://www.npmjs.com/package/friendly-errors-webpack-plugin) with only change being bumped [`chalk`](https://www.npmjs.com/package/chalk) version from `^1.1.3` to `^2.4.2` and using [`strip-ansi`](https://www.npmjs.com/package/strip-ansi) instead of `chalk.stripColor` because it was removed in `chalk@^2`.

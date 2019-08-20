@@ -1,6 +1,0 @@
-component
-build
-node_modules
-test.js
-component.json
-.gitignore

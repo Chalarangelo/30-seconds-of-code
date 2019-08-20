@@ -1,6 +1,0 @@
-node_modules
-.gitignore
-.idea
-.travis.yml
-test
-examples

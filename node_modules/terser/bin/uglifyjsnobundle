@@ -1,4 +1,0 @@
-#!/usr/bin/env node
-/* eslint-env node */
-process.env.TERSER_NO_BUNDLE = "1";
-require("./uglifyjs");

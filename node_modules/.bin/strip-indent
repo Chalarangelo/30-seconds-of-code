@@ -1,1 +1,0 @@
-../strip-indent/cli.js

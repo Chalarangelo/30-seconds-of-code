@@ -1,6 +1,0 @@
-{
-  "root": true,
-  "extends": [
-    "@xotic750/eslint-config-standard-x"
-  ]
-}

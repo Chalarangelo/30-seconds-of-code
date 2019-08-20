@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../src/bootstrap/prefer-default.js"],"names":["module","exports","m","default"],"mappings":";;AAAAA,MAAM,CAACC,OAAP,GAAiBC,CAAC,IAAKA,CAAC,IAAIA,CAAC,CAACC,OAAR,IAAoBD,CAA1C","sourcesContent":["module.exports = m => (m && m.default) || m\n"],"file":"prefer-default.js"}

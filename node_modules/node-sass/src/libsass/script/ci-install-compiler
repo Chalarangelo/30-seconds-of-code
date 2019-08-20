@@ -1,6 +1,0 @@
-#!/bin/bash
-
-gem install minitest
-gem install minitap
-
-pip2 install --user 'requests[security]'

@@ -1,3 +1,0 @@
-declare let SOURCEMAPPING_URL: string;
-declare const SOURCEMAPPING_URL_RE: RegExp;
-export { SOURCEMAPPING_URL, SOURCEMAPPING_URL_RE };

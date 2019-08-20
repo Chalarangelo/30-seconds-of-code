@@ -1,7 +1,0 @@
-{
-  "asi": true,
-  "laxcomma": true,
-  "es5": true,
-  "node": true,
-  "strict": false
-}

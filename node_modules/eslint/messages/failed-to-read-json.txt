@@ -1,3 +1,0 @@
-Failed to read JSON file at <%= path %>:
-
-<%= message %>

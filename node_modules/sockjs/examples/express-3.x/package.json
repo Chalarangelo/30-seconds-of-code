@@ -1,8 +1,0 @@
-{
-        "name": "sockjs-express",
-        "version": "0.0.0-unreleasable",
-        "dependencies": {
-                "express": "~3*",
-                "sockjs": "*"
-        }
-}

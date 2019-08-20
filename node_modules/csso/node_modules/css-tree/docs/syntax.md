@@ -1,3 +1,0 @@
-# Working with syntax
-
-> To be done...

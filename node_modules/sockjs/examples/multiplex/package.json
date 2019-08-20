@@ -1,9 +1,0 @@
-{
-        "name": "sockjs-multiplex",
-        "version": "0.0.0-unreleasable",
-        "dependencies": {
-                "express": "2.5.8",
-                "sockjs": "*",
-                "websocket-multiplex" : "0.1.x"
-        }
-}

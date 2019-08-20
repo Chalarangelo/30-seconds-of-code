@@ -1,7 +1,0 @@
-language: node_js
-node_js:
-  - "node"
-addons:
-  sauce_connect: true
-  hosts:
-    - airtap.local

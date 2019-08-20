@@ -1,7 +1,0 @@
-{
-  "No cache entry for `%s` found in `%s`": "No cache entry for %s found in %s",
-  "Integrity verification failed for %s (%s)": "Integrity verification failed for %s (%s)",
-  "Bad data size: expected inserted data to be %s bytes, but got %s instead": "Bad data size: expected inserted data to be %s bytes, but got %s instead",
-  "Cache input stream was empty": "Cache input stream was empty",
-  "Integrity check failed:\n  Wanted: %s\n   Found: %s": "Integrity check failed:\n  Wanted: %s\n   Found: %s"
-}

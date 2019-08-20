@@ -1,4 +1,0 @@
-dist/*
-build/*
-tests/html/lib/sockjs.js
-tests/html/static/*

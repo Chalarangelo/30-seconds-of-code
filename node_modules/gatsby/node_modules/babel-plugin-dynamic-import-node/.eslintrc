@@ -1,5 +1,0 @@
-{
-  "parser": "babel-eslint",
-  "extends": "airbnb-base",
-  "root": true
-}

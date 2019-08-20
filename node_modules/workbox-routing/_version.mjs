@@ -1,1 +1,0 @@
-try{self.workbox.v['workbox:routing:3.6.3']=1;}catch(e){} // eslint-disable-line

@@ -1,6 +1,0 @@
-{
-  "presets": ["env"],
-  "plugins": [
-    ["transform-replace-object-assign", { "moduleSpecifier": "object.assign" }],
-  ],
-}

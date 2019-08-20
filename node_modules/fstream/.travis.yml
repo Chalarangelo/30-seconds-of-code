@@ -1,9 +1,0 @@
-language: node_js
-node_js:
-  - "6"
-  - "4"
-  - "0.10"
-  - "0.12"
-before_install:
-  - "npm config set spin false"
-  - "npm install -g npm/npm"

@@ -1,8 +1,0 @@
-{
-  "name": "sockjs-koa",
-  "version": "0.0.0-unreleasable",
-  "dependencies": {
-    "koa": "^0.21.0",
-    "sockjs": "*"
-  }
-}
