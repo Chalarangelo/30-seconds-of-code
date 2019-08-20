@@ -1,14 +1,15 @@
 ---
 title: has_duplicates
-tags: list
+tags: list,beginner
 ---
-Checks a flat list for duplicate values. Returns True if duplicate values exist and False if values are all unique.
 
-This function compares the length of the list with length of the set() of the list. set() removes duplicate values from the list.
+Returns `True` if there are duplicate values in a flast list, `False` otherwise.
+
+Use `set()` on the given list to remove duplicates, compare its length with the length of the list.
 
 ```py
 def has_duplicates(lst):
-    return len(lst) != len(set(lst))
+  return len(lst) != len(set(lst))
 ```
 
 ```py
