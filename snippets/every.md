@@ -11,12 +11,12 @@ Omit the seconds argument, `fn`, to check if all elements are `True`.
 ```py
 def every(lst, fn=lambda x: not not x):
   for el in lst:
-    if not fn(x):
+    if not fn(el):
       return False
   return True
 ```
 
 ```py
-every([4, 2, 3], lambda x: x > 1) # true
+every([4, 2, 3], lambda x: x > 1) # True
 every([1, 2, 3]) # True
 ```
