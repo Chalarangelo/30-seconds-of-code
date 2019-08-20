@@ -1,22 +1,24 @@
 ---
 title: zip
-tags: list
+tags: list,math,intermediate
 ---
-:information_source: Already implemented via `itertools.zip_longest()`
 
 Creates a list of elements, grouped based on the position in the original lists.
 
-Use `max` combined with `list comprehension` to get the length of the longest list in the arguments. Loops for `max_length` times grouping elements. If lengths of `lists` vary `fill_value` is used. By default `fill_value` is `None`.
+
+Use `max` combined with `list comprehension` to get the length of the longest list in the arguments. 
+Loop for `max_length` times grouping elements. 
+If lengths of `lists` vary, use `fill_value` (defaults to `None`). 
 
 ```py
 def zip(*args, fillvalue=None):
-    max_length = max([len(lst) for lst in args])
-    result = []
-    for i in range(max_length):
-        result.append([
-            args[k][i] if i < len(args[k]) else fillvalue for k in range(len(args))
-        ])
-    return result
+  max_length = max([len(lst) for lst in args])
+  result = []
+  for i in range(max_length):
+    result.append([
+      args[k][i] if i < len(args[k]) else fillvalue for k in range(len(args))
+    ])
+  return result
 ```
 
 ```py
