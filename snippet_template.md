@@ -1,6 +1,6 @@
 ---
 title: function_name
-tags: 
+tags: utility,intermediate
 ---
 
 Explain briefly what the snippet does.
@@ -14,5 +14,5 @@ def function_name(args):
 ```
 
 ```py
-functionName(val) # result
+function_name(val) # result
 ```
