@@ -1,17 +1,21 @@
 ---
 title: palindrome
-tags: string
+tags: string,intermediate
 ---
+
 Returns `True` if the given string is a palindrome, `False` otherwise.
 
-Convert string `str.lower()` and use `re.sub` to remove non-alphanumeric characters from it. Then compare the new string to the reversed.
+Use `str.lower()` and `re.sub()` to convert to lowercase and  remove non-alphanumeric characters from the given string. 
+Then, compare the new string with its reverse.
 
 ```py
+from re import sub
+
 def palindrome(string):
-    from re import sub
-    s = sub('[\W_]', '', string.lower())
-    return s == s[::-1]
+  s = sub('[\W_]', '', string.lower())
+  return s == s[::-1]
 ```
+
 ```py
 palindrome('taco cat') # True
 ```
