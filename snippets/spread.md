@@ -4,7 +4,7 @@ tags: list
 ---
 Implements javascript's `[].concat(...arr)`. Flattens the list(non-deep) and returns an list.
 
-```python
+```py
 def spread(arg):
     ret = []
     for i in arg:
@@ -16,6 +16,6 @@ def spread(arg):
 ```
 
 
-```python
+```py
 spread([1,2,3,[4,5,6],[7],8,9]) # [1,2,3,4,5,6,7,8,9]
 ```

@@ -8,7 +8,7 @@ Creates a list of elements, grouped based on the position in the original lists.
 
 Use `max` combined with `list comprehension` to get the length of the longest list in the arguments. Loops for `max_length` times grouping elements. If lengths of `lists` vary `fill_value` is used. By default `fill_value` is `None`.
 
-```python
+```py
 def zip(*args, fillvalue=None):
     max_length = max([len(lst) for lst in args])
     result = []
@@ -19,7 +19,7 @@ def zip(*args, fillvalue=None):
     return result
 ```
 
-``` python
+```py
 zip(['a', 'b'], [1, 2], [True, False]) # [['a', 1, True], ['b', 2, False]]
 zip(['a'], [1, 2], [True, False]) # [['a', 1, True], [None, 2, False]]
 zip(['a'], [1, 2], [True, False], fill_value = '_') # [['a', 1, True], ['_', 2, False]]

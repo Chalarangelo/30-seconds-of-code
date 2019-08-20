@@ -9,7 +9,7 @@ First, it picks the number `A` in range `1`..`(n-1)`, then it checks if `A` to t
 If not, the number is not prime, else it's pseudoprime with probability 1/2. Applying this test `k `times we have probability `1/(2^k)`.
 For example, if the number passes the test `10` times, we have probability `0.00098`.
 
-``` python
+```py
 from random import randint
 
 
@@ -24,7 +24,7 @@ def fermat_test(n, k=100):
 
 ```
 
-``` python
+```py
 fermat_test(0)  # False
 fermat_test(1)  # False
 fermat_test(561)  # False

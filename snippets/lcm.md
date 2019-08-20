@@ -8,7 +8,7 @@ Use the `greatest common divisor (GCD)` formula and the fact that `lcm(x,y) = x 
 
 Uses `reduce` function from the inbuilt module `functools`. Also defines a method `spread` for javascript like spreading of lists.
 
-```python
+```py
 from functools import reduce
 
 
@@ -36,7 +36,7 @@ def lcm(*args):
 ```
 
 
-``` python
+```py
 lcm(12, 7) # 84
 lcm([1, 3, 4], 5) # 60
 ```
