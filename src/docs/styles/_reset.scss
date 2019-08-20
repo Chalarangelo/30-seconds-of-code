@@ -1,0 +1,135 @@
+// Set up some basic styling for everything
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+html, * {
+  font-family: 'Noto Sans', Helvetica, sans-serif;
+  line-height: 1.5;
+  // Prevent adjustments of font size after orientation changes in mobile.
+  -webkit-text-size-adjust: 100%;
+}
+* {
+  font-size: 1rem;
+  font-weight: 400;
+}
+// Apply fixes and defaults as necessary for modern browsers only
+a, b, del, em, i, ins, q, span, strong, u {
+  transition: 0.3s ease all;
+  font-size: 1em; // Fix for elements inside headings not displaying properly.
+}
+body {
+  margin: 0;
+  color: var(--fore-color);
+  background: var(--background-color);
+  overflow-x: hidden;
+  &.card-page {
+    background: var(--card-page-color);
+  }
+}
+// Correct display for Edge & Firefox.
+details {
+  display: block;
+}
+// Correct display in all browsers.
+summary {
+  display: list-item;
+}
+// Abbreviations
+abbr[title] {
+  border-bottom: none;           // Remove bottom border in Firefox 39-.
+  text-decoration: underline dotted;  // Opinionated style-fix for all browsers.
+}
+// Show overflow in Edge.
+input {
+  overflow: visible;
+}
+// Correct the cursor style of increment and decrement buttons in Chrome.
+[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+// Correct style in Chrome and Safari.
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+// Correct style in Chrome and Safari.
+[type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+// Make images responsive by default.
+img {
+  max-width: 100%;
+  height: auto;
+}
+// Style headings according to material design guidelines
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin: 0.75rem 0.5rem;
+}
+h1 {
+  font-size: 6rem;
+  &.landing-title {
+    font-size: 3rem;
+    text-align: center;
+    & small {
+      display: block;
+      margin-top: 0.5rem;
+      color: var(--secondary-fore-color);
+    }
+    margin-bottom: 4rem;
+  }
+}
+h2 {
+  font-size: 3.75rem;
+}
+h3 {
+  font-size: 3rem;
+}
+h4 { 
+  font-size: 2.125rem;
+}
+h5 {
+  font-size: 1.5rem;
+}
+h6 {
+  font-size: 1.25rem;
+}
+// Style textual elements
+p {
+  margin: 0.5rem;
+}
+ol, ul {
+  margin: 0.5rem;
+  padding-left: 1rem;
+}
+b, strong {
+  font-weight: 600;
+}
+hr {
+  // Fixes and defaults for styling
+  box-sizing: content-box;
+  border: 0;
+  // Actual styling using variables
+  line-height: 1.25em;
+  margin: 0.5rem;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border-color) 20%, var(--border-color) 80%, transparent);
+}
+sup, sub, code, kbd {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+a {
+  text-decoration: none;
+  &:link{
+    color: var(--a-link-color);
+  }
+  &:visited {
+    color: var(--a-visited-color);
+  }
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
+}
