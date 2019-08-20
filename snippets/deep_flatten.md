@@ -6,7 +6,7 @@ Deep flattens a list.
 
 Use recursion. Use `list.extend()` with an empty list (`result`) and the spread function to flatten a list. Recursively flatten each element that is a list.
 
-```python
+```py
 def spread(arg):
     ret = []
     for i in arg:
@@ -24,6 +24,6 @@ def deep_flatten(lst):
     return result
 ```
 
-```python
+```py
 deep_flatten([1, [2], [[3], 4], 5]) # [1,2,3,4,5]
 ```

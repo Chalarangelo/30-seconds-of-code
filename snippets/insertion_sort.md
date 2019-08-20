@@ -4,7 +4,7 @@ tags: list
 ---
 On a very basic level, an insertion sort algorithm contains the logic of shifting around and inserting elements in order to sort an unordered list of any size. The way that it goes about inserting elements, however, is what makes insertion sort so very interesting!
 
-```python
+```py
 def insertion_sort(lst):
 
     for i in range(1, len(lst)):
@@ -16,7 +16,7 @@ def insertion_sort(lst):
             lst[j + 1] = key
 ```
 
-```python
+```py
 lst = [7,4,9,2,6,3]
 insertionsort(lst)
 print('Sorted %s'  %lst) # sorted [2, 3, 4, 6, 7, 9]

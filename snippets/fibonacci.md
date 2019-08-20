@@ -6,7 +6,7 @@ Generates an array, containing the Fibonacci sequence, up until the nth term.
 
 Starting with 0 and 1, adds the sum of the last two numbers of the list to the end of the list using ```list.append()``` until the length of the list reaches n.  If the given nth value is 0 or less, the method will just return a list containing 0.
 
-``` python
+```py
 def fibonacci(n):
     if n <= 0:
         return [0]
@@ -20,6 +20,6 @@ def fibonacci(n):
     return sequence
 ```
 
-``` python
+```py
 fibonacci(7) # [0, 1, 1, 2, 3, 5, 8, 13]
 ```

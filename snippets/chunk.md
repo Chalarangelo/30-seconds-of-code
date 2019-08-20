@@ -6,7 +6,7 @@ Chunks an list into smaller lists of a specified size.
 
 Uses `range` to create a list of desired size. Then use `map` on this list and fill it with splices of `lst`.
 
-```python
+```py
 from math import ceil
 
 
@@ -16,6 +16,6 @@ def chunk(lst, size):
             list(range(0, ceil(len(lst) / size)))))
 ```
 
-``` python
+```py
 chunk([1,2,3,4,5],2) # [[1,2],[3,4],5]
 ```
