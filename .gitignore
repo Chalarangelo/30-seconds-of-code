@@ -1,5 +1,14 @@
-__pycache__/
+# IDE Specific
 .vscode
-*.iml
 .idea/codeStyles/Project.xml
-*.xml
+
+# dotenv environment variables file
+.env
+
+# gatsby files
+.cache/
+public
+
+# Mac files
+.DS_Store
+
