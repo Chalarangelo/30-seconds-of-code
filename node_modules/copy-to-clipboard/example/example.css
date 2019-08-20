@@ -1,0 +1,35 @@
+html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, dl,
+dt, dd, blockquote, address {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+.container {
+  overflow: hidden;
+}
+.half:first-child {
+  padding-left: 20px;
+}
+.half:last-child {
+  padding-right: 20px;
+}
+@media screen and (max-width: 568px) {
+  .half {
+    width: 100% !important;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.half {
+  width: 50%;
+  float: left;
+  padding: 10px;
+}
+.code {
+  font-size: 18px;
+  min-height: 150px;
+}

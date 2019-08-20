@@ -1,0 +1,124 @@
+#!/usr/bin/env node
+var fs = require('fs');
+var path = require('path');
+
+var command, directory, file;
+
+var yargs = require('yargs')
+    .usage('Usage: $0 <command> [options] <dir> [file]')
+    // .demand(1)
+
+    .command('ancestors', 'Output the ancestors')
+    .command('descendents', 'Output the descendents')
+
+    .example('$0 ancestors -I src src/ src/_footer.scss', 'outputs the ancestors of src/_footer.scss')
+
+    .option('I', {
+      alias: 'load-path',
+      default: [process.cwd()],
+      describe: 'Add directories to the sass load path',
+      type: 'array',
+    })
+
+    .option('e', {
+      alias: 'extensions',
+      default: ['scss', 'css', 'sass'],
+      describe: 'File extensions to include in the graph',
+      type: 'array',
+    })
+
+    .option('f', {
+      alias: 'follow',
+      default: false,
+      describe: 'Follow symbolic links',
+      type: 'bool',
+    })
+
+    .option('j', {
+      alias: 'json',
+      default: false,
+      describe: 'Output the index in json',
+      type: 'bool',
+    })
+
+    .version(function() {
+      return require('../package').version;
+    })
+    .alias('v', 'version')
+
+    .help('h')
+    .alias('h', 'help');
+
+var argv = yargs.argv;
+
+if (argv._.length === 0) {
+  yargs.showHelp();
+  process.exit(1);
+}
+
+if (['ancestors', 'descendents'].indexOf(argv._[0]) !== -1) {
+  command = argv._.shift();
+}
+
+if (argv._ && path.extname(argv._[0]) === '') {
+  directory = argv._.shift();
+}
+
+if (argv._ && path.extname(argv._[0])) {
+  file = argv._.shift();
+}
+
+
+try {
+  if (!directory) {
+    throw new Error('Missing directory');
+  }
+
+  if (!command && !argv.json) {
+    throw new Error('Missing command');
+  }
+
+  if (!file && (command === 'ancestors' || command === 'descendents')) {
+    throw new Error(command + ' command requires a file');
+  }
+
+  var loadPaths = argv.loadPath;
+  if(process.env.SASS_PATH) {
+    loadPaths = loadPaths.concat(process.env.SASS_PATH.split(/:/).map(function(f) {
+      return path.resolve(f);
+    }));
+  }
+
+  var graph = require('../').parseDir(directory, {
+    extensions: argv.extensions,
+    loadPaths: loadPaths,
+    follow: argv.follow,
+  });
+
+  if(argv.json) {
+    console.log(JSON.stringify(graph.index, null, 4));
+    process.exit(0);
+  }
+
+  if (command === 'ancestors') {
+    graph.visitAncestors(path.resolve(file), function(f) {
+      console.log(f);
+    });
+  }
+
+  if (command === 'descendents') {
+    graph.visitDescendents(path.resolve(file), function(f) {
+      console.log(f);
+    });
+  }
+} catch(e) {
+  if (e.code === 'ENOENT') {
+    console.error('Error: no such file or directory "' + e.path + '"');
+  }
+  else {
+    console.log('Error: ' + e.message);
+  }
+
+  // console.log(e.stack);
+  process.exit(1);
+}

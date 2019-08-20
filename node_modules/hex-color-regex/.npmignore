@@ -1,0 +1,56 @@
+# .gitignore <https://github.com/tunnckoCore/dotfiles>
+#
+# Copyright (c) 2015 Charlike Mike Reagent, contributors.
+# Released under the MIT license.
+#
+
+# Always-ignore dirs #
+# ####################
+_gh_pages
+node_modules
+bower_components
+components
+vendor
+build
+dest
+dist
+src
+lib-cov
+coverage
+nbproject
+cache
+temp
+tmp
+hex-color-regex
+
+# Packages #
+# ##########
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# OS, Logs and databases #
+# #########################
+*.pid
+*.dat
+*.log
+*.sql
+*.sqlite
+*~
+~*
+
+# Another files #
+# ###############
+Icon?
+.DS_Store*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+npm-debug.log
+.directory
+._*

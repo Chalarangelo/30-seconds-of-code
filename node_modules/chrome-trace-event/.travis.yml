@@ -1,0 +1,22 @@
+sudo: false
+dist: trusty
+language: node_js
+
+script:
+  - yarn build
+  - yarn test
+  - yarn check_format
+branches:
+  only:
+    - master
+
+cache:
+  yarn: true
+
+matrix:
+  include:
+    - os: linux
+      node_js: "8"
+    - os: linux
+      node_js: "6"
+  fast_finish: true

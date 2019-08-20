@@ -1,0 +1,13 @@
+{
+  "name": "bind",
+  "version": "1.0.0",
+  "description": "function binding utility",
+  "keywords": [
+    "bind",
+    "utility"
+  ],
+  "dependencies": {},
+  "scripts": [
+    "index.js"
+  ]
+}

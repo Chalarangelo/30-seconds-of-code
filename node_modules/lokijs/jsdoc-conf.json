@@ -1,0 +1,19 @@
+{
+	"opts": {
+		"readme": "./OVERVIEW.md",
+		"destination": "./jsdoc",
+		"tutorials": "./tutorials"
+	},
+	"tags": {
+		"allowUnknownTags": true,
+		"dictionaries": ["jsdoc","closure"]
+	},
+	"source": {
+		"include": ["src/lokijs.js", "src/loki-indexed-adapter.js", "src/loki-fs-structured-adapter.js"]
+	},
+	"plugins": ["plugins/markdown"],
+	"templates": {
+		"cleverlinks": false,
+		"monospaceLinks": false
+	}
+}

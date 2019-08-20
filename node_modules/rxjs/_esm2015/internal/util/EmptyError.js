@@ -1,0 +1,9 @@
+function EmptyErrorImpl() {
+    Error.call(this);
+    this.message = 'no elements in sequence';
+    this.name = 'EmptyError';
+    return this;
+}
+EmptyErrorImpl.prototype = Object.create(Error.prototype);
+export const EmptyError = EmptyErrorImpl;
+//# sourceMappingURL=EmptyError.js.map

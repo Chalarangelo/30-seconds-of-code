@@ -1,0 +1,81 @@
+.scheme--white { background: whitesmoke; color: black }
+.scheme--dark { background: blue; color: whitesmoke }
+.scheme--light { background: gainsboro; color: blue }
+:focus { outline-color: blue }
+
+*, :before, :after { box-sizing: border-box }
+html { font: 1em/2 sans-serif; }
+body { width: 100%; margin: auto; padding: 1em }
+a { text-decoration: none }
+a:hover { text-decoration: underline }
+textarea, select { font: inherit }
+textarea { max-width: 100%; margin: 0 }
+header, section { display: block }
+fieldset { padding: 0; border: 0 }
+label { margin: 0; padding: 0 }
+h1, h2 { line-height: 1 }
+
+.border-radius {
+  border-radius: .25em;
+}
+
+.inherit-size {
+  font-size: inherit;
+}
+
+.button {
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: bold;
+  min-height: 2.5em;
+  display: inline-block;
+  border: 0;
+  border-radius: .25em;
+  padding: .33333em .66666em;
+  margin: 0;
+}
+
+.button:focus {
+  text-decoration: underline;
+}
+
+.button:enabled:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.m-b-1 {
+  margin-bottom: .5em;
+}
+
+.m-b-2 {
+  margin-bottom: 1em;
+}
+
+.m-b-3 {
+  margin-bottom: 2em;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.block {
+  display: block;
+}
+
+.area {
+  white-space: pre-wrap;
+  border: 2px solid gainsboro;
+  padding: .25em;
+  display: block;
+  overflow: auto;
+  resize: vertical;
+  width: 100%;
+  height: 7.5em;
+  line-height: 1.1;
+}
+
+.text--uppercase {
+  text-transform: uppercase;
+}

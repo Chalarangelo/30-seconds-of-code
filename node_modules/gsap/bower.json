@@ -1,0 +1,19 @@
+{
+    "name": "gsap",
+    "version": "2.1.3",
+    "description": "The most flexible, high-performance animation library on the planet. Animate any property of any object. Solves browser quirks.",
+    "author": {
+        "name": "Jack Doyle",
+        "url": "https://greensock.com/gsap/"
+    },
+    "main": "./src/uncompressed/TweenMax.js",
+    "dependencies": {
+
+    },
+	"ignore": [],
+  	"license": "Standard 'no charge' license: http://greensock.com/standard-license. Club GreenSock members get more: https://greensock.com/licensing/. Why GreenSock doesn't employ an MIT license: https://greensock.com/why-license/",
+    "repository": {
+       "type": "git",
+       "url": "https://github.com/greensock/GreenSock-JS" 
+    } 
+}

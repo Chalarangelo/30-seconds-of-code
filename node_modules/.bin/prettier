@@ -1,0 +1,1 @@
+../prettier/bin-prettier.js

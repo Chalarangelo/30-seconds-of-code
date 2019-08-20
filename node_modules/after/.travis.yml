@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - 0.6
+  - 0.8
+  - 0.9
+  - 0.10
+  - 0.12
+  - 4.2.4
+  - 5.4.1
+  - iojs-1
+  - iojs-2
+  - iojs-3

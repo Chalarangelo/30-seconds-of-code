@@ -1,0 +1,9 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": ["IE 10"]
+      }
+    }]
+  ]
+}

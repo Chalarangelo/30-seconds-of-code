@@ -1,0 +1,9 @@
+Parts of the code are derived from various open source projects.
+
+For code derived from Socket.IO by Guillermo Rauch see
+https://github.com/LearnBoost/socket.io/tree/0.6.17#readme.
+
+Snippets derived from jQuery-JSONP by Julian Aubourg, generic MIT
+license.
+
+All other code is released on MIT license, see LICENSE.

@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+    - "0.11"
+before_script:
+    - npm install -g grunt-cli
+script:
+    - grunt default --verbose

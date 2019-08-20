@@ -1,0 +1,6 @@
+---
+title: Example with dots document ending
+description: Just an example of using `...`
+...
+
+It shouldn't break with ...

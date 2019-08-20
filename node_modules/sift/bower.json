@@ -1,0 +1,21 @@
+{
+  "name": "sift",
+  "version": "3.2.0",
+  "authors": [
+    "Craig Condon <craig.j.condon@gmail.com>"
+  ],
+  "description": "mongodb query style array filtering",
+  "main": "sift.min.js",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "https://github.com/crcn/sift.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "benchmark",
+    "gulpfile.js",
+    "package.json"
+  ]
+}

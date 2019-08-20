@@ -1,0 +1,6 @@
+--compilers coffee:coffee-script/register
+--recursive
+--reporter mocha-pretty-spec-reporter
+--ui bdd
+--timeout 20000
+--require ./test/mochaHelpers.coffee

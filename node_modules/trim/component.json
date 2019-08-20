@@ -1,0 +1,7 @@
+{
+  "name": "trim",
+  "version": "0.0.1",
+  "description": "Trim string whitespace",
+  "keywords": ["string", "trim"],
+  "scripts": ["index.js"]
+}

@@ -1,0 +1,147 @@
+{
+  "title": "Webpack Assets Manifest options schema",
+  "description": "Webpack Assets Manifest options",
+  "type": "object",
+  "properties": {
+    "assets": {
+      "type": "object",
+      "default": {}
+    },
+    "output": {
+      "type": "string",
+      "default": "manifest.json"
+    },
+    "replacer": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/functionOrNull"
+        },
+        {
+          "type": "array"
+        }
+      ]
+    },
+    "space": {
+      "type": "integer",
+      "multipleOf": 1.0,
+      "minimum": 0,
+      "default": 2
+    },
+    "writeToDisk": {
+      "type": "boolean",
+      "default": false
+    },
+    "fileExtRegex": {
+      "oneOf": [
+        {
+          "instanceof": "RegExp"
+        },
+        {
+          "type": "null"
+        },
+        {
+          "const": false
+        }
+      ]
+    },
+    "sortManifest": {
+      "default": true,
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "instanceof": "Function"
+        }
+      ]
+    },
+    "merge": {
+      "default": false,
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "const": "customize"
+        }
+      ]
+    },
+    "publicPath": {
+      "default": null,
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        },
+        {
+          "instanceof": "Function"
+        }
+      ]
+    },
+    "apply": {
+      "$ref": "#/definitions/functionOrNull"
+    },
+    "customize": {
+      "$ref": "#/definitions/functionOrNull"
+    },
+    "transform": {
+      "$ref": "#/definitions/functionOrNull"
+    },
+    "done": {
+      "$ref": "#/definitions/functionOrNull"
+    },
+    "entrypoints": {
+      "type": "boolean",
+      "default": false
+    },
+    "entrypointsKey": {
+      "default": "entrypoints",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "const": false
+        }
+      ]
+    },
+    "integrity": {
+      "type": "boolean",
+      "default": false
+    },
+    "integrityHashes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "sha256",
+        "sha384",
+        "sha512"
+      ]
+    },
+    "integrityPropertyName": {
+      "type": "string",
+      "minLength": 1,
+      "default": "integrity"
+    }
+  },
+  "definitions": {
+    "functionOrNull": {
+      "default": null,
+      "oneOf": [
+        {
+          "instanceof": "Function"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  }
+}

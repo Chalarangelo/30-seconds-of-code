@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jimp browser example 4</title>
+    </head>
+    <body>
+        
+        <h1> Demonstrates how to write a text over an image </h1>
+        <script src="../lib/jimp.js"></script>
+        <img id="pic" style="float: left; margin: 0px 20px 5px 0px;">
+        <script>
+        function writePic() {
+            Jimp.read("lenna.png")
+                .then(function (lenna) {
+                    var fntName = "FONT_SANS_"+fntSize.value+"_"+txtColor.value;
+                    var x = parseInt(txtX.value);
+                    var y = parseInt(txtY.value);
+                    var w = parseInt(txtW.value);
+                    console.log()
+                    Jimp.loadFont(Jimp[fntName]).then(function (font) {
+                        lenna.print(font, x, y, txtField.value, w)
+                             .getBase64(Jimp.AUTO, function (err, src) {
+                            if (err) {
+                                alert(err.message);
+                                throw err;
+                            }
+                            pic.setAttribute("src", src);
+                        });
+                    }).catch(function (err) { throw err });
+                })
+                .catch(function (err) {
+                    alert("Image load fail.\n"+err.message)
+                    throw err;
+                });
+            return false;
+        }
+        writePic();
+        </script>
+        <textarea rows="4" cols="80" id="txtField">Hi! I'm Lenna.</textarea>
+        <br> <label>Size: <select id="fntSize">
+            <option>8</option>
+            <option>16</option>
+            <option>32</option>
+            <option>64</option>
+            <option>128</option>
+        </select></label>
+        <br> <label>Color: <select id="txtColor">
+            <option>BLACK</option>
+            <option>WHITE</option>
+        </select></label>
+        <br> <label>pos X: <input id="txtX" value="0" size="3">px</label>
+        <br> <label>pos Y: <input id="txtY" value="0" size="3">px</label>
+        <br> <label>max Width: <input id="txtW" value="400" size="3">px</label>
+        <br> <input type="button" id="btWrite" onclick="writePic(); return false" value="Write">
+
+    </body>
+</html>

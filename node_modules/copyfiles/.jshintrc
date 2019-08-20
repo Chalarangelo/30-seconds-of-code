@@ -1,0 +1,15 @@
+{
+  "node": true,
+  "curly": true,
+  "eqeqeq": true,
+  "immed": true,
+  "newcap": true,
+  "noarg": true,
+  "sub": true,
+  "undef": "nofunc",
+  "strict": true,
+  "white": true,
+  "indent": 2,
+  "trailing": true,
+  "quotmark": "single"
+}

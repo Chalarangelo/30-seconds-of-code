@@ -1,0 +1,95 @@
+/// <reference types="node" />
+export declare const enum TypeName {
+    null = "null",
+    boolean = "boolean",
+    undefined = "undefined",
+    string = "string",
+    number = "number",
+    symbol = "symbol",
+    Function = "Function",
+    Array = "Array",
+    Buffer = "Buffer",
+    Object = "Object",
+    RegExp = "RegExp",
+    Date = "Date",
+    Error = "Error",
+    Map = "Map",
+    Set = "Set",
+    WeakMap = "WeakMap",
+    WeakSet = "WeakSet",
+    Int8Array = "Int8Array",
+    Uint8Array = "Uint8Array",
+    Uint8ClampedArray = "Uint8ClampedArray",
+    Int16Array = "Int16Array",
+    Uint16Array = "Uint16Array",
+    Int32Array = "Int32Array",
+    Uint32Array = "Uint32Array",
+    Float32Array = "Float32Array",
+    Float64Array = "Float64Array",
+    ArrayBuffer = "ArrayBuffer",
+    SharedArrayBuffer = "SharedArrayBuffer",
+    DataView = "DataView",
+    Promise = "Promise",
+}
+declare function is(value: any): TypeName;
+declare namespace is {
+    const undefined: (value: any) => boolean;
+    const string: (value: any) => boolean;
+    const number: (value: any) => boolean;
+    const function_: (value: any) => boolean;
+    const null_: (value: any) => boolean;
+    const class_: (value: any) => any;
+    const boolean: (value: any) => boolean;
+    const symbol: (value: any) => boolean;
+    const array: (arg: any) => arg is any[];
+    const buffer: (obj: any) => obj is Buffer;
+    const nullOrUndefined: (value: any) => boolean;
+    const object: (value: any) => boolean;
+    const iterable: (value: any) => boolean;
+    const generator: (value: any) => boolean;
+    const nativePromise: (value: any) => boolean;
+    const promise: (value: any) => boolean;
+    const generatorFunction: (value: any) => boolean;
+    const asyncFunction: (value: any) => boolean;
+    const boundFunction: (value: any) => boolean;
+    const regExp: (value: any) => boolean;
+    const date: (value: any) => boolean;
+    const error: (value: any) => boolean;
+    const map: (value: any) => boolean;
+    const set: (value: any) => boolean;
+    const weakMap: (value: any) => boolean;
+    const weakSet: (value: any) => boolean;
+    const int8Array: (value: any) => boolean;
+    const uint8Array: (value: any) => boolean;
+    const uint8ClampedArray: (value: any) => boolean;
+    const int16Array: (value: any) => boolean;
+    const uint16Array: (value: any) => boolean;
+    const int32Array: (value: any) => boolean;
+    const uint32Array: (value: any) => boolean;
+    const float32Array: (value: any) => boolean;
+    const float64Array: (value: any) => boolean;
+    const arrayBuffer: (value: any) => boolean;
+    const sharedArrayBuffer: (value: any) => boolean;
+    const dataView: (value: any) => boolean;
+    const directInstanceOf: (instance: any, klass: any) => boolean;
+    const truthy: (value: any) => boolean;
+    const falsy: (value: any) => boolean;
+    const nan: (value: any) => boolean;
+    const primitive: (value: any) => boolean;
+    const integer: (value: any) => boolean;
+    const safeInteger: (value: any) => boolean;
+    const plainObject: (value: any) => boolean;
+    const typedArray: (value: any) => boolean;
+    const arrayLike: (value: any) => boolean;
+    const inRange: (value: number, range: number | number[]) => boolean;
+    const domElement: (value: any) => boolean;
+    const nodeStream: (value: any) => boolean;
+    const infinite: (value: any) => boolean;
+    const even: (rem: number) => boolean;
+    const odd: (rem: number) => boolean;
+    const empty: (value: any) => boolean;
+    const emptyOrWhitespace: (value: any) => boolean;
+    function any(...predicate: any[]): any;
+    function all(...predicate: any[]): any;
+}
+export default is;

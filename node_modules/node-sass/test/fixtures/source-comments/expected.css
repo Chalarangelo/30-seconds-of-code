@@ -1,0 +1,15 @@
+/* line 1, stdin */
+#navbar {
+  width: 80%;
+  height: 23px; }
+
+/* line 6, stdin */
+#navbar ul {
+  list-style-type: none; }
+
+/* line 10, stdin */
+#navbar li {
+  float: left; }
+  /* line 13, stdin */
+  #navbar li a {
+    font-weight: bold; }

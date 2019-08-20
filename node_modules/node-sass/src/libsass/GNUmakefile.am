@@ -1,0 +1,74 @@
+ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4 -I script
+
+AM_COPT = -Wall -O2
+AM_COVLDFLAGS =
+
+if ENABLE_COVERAGE
+	AM_COPT = -Wall -O1 -fno-omit-frame-pointer --coverage
+	AM_COVLDFLAGS += -lgcov
+endif
+
+AM_CPPFLAGS = -I$(top_srcdir)/include
+AM_CFLAGS   = $(AM_COPT)
+AM_CXXFLAGS = $(AM_COPT)
+AM_LDFLAGS  = $(AM_COPT) $(AM_COVLDFLAGS)
+
+# only needed to support old source tree
+# we have moved the files to src folder
+AM_CPPFLAGS += -I$(top_srcdir)
+
+RESOURCES =
+if COMPILER_IS_MINGW32
+  RESOURCES += res/libsass.rc
+  AM_CXXFLAGS += -std=gnu++0x
+else
+  AM_CXXFLAGS += -std=c++0x
+endif
+
+TEST_EXTENSIONS = .rb
+
+if ENABLE_TESTS
+
+SASS_SASSC_PATH ?= $(top_srcdir)/sassc
+SASS_SPEC_PATH ?= $(top_srcdir)/sass-spec
+
+noinst_PROGRAMS = tester
+tester_LDADD = src/libsass.la
+tester_LDFLAGS = $(AM_LDFLAGS)
+nodist_tester_SOURCES = $(SASS_SASSC_PATH)/sassc.c
+SASS_SASSC_VERSION ?= `cd "$(SASS_SASSC_PATH)" && ./version.sh`
+tester_CFLAGS = $(AM_CFLAGS) -DSASSC_VERSION="\"$(SASS_SASSC_VERSION)\""
+tester_CXXFLAGS = $(AM_CXXFLAGS) -DSASSC_VERSION="\"$(SASS_SASSC_VERSION)\""
+
+if ENABLE_COVERAGE
+nodist_EXTRA_tester_SOURCES = non-existent-file-to-force-CXX-linking.cxx
+endif
+
+TESTS = $(SASS_SPEC_PATH)/sass-spec.rb
+RB_LOG_COMPILER = ./script/tap-runner
+AM_RB_LOG_FLAGS = $(RUBY)
+
+SASS_TEST_FLAGS = -V 3.5 --impl libsass
+SASS_TEST_FLAGS += -r $(SASS_SPEC_PATH)
+SASS_TEST_FLAGS += -c $(top_srcdir)/tester$(EXEEXT)
+AM_TESTS_ENVIRONMENT = TEST_FLAGS='$(SASS_TEST_FLAGS)'
+
+SASS_TESTER = $(RUBY) $(SASS_SPEC_PATH)/sass-spec.rb
+
+test:
+	$(SASS_TESTER) $(SASS_TEST_FLAGS)
+
+test_build:
+	$(SASS_TESTER) $(SASS_TEST_FLAGS)
+
+test_full:
+	$(SASS_TESTER) --run-todo $(SASS_TEST_FLAGS)
+
+test_probe:
+	$(SASS_TESTER) --probe-todo $(SASS_TEST_FLAGS)
+
+.PHONY: test test_build test_full test_probe
+
+endif
+
+SUBDIRS = src

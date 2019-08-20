@@ -1,0 +1,47 @@
+{
+  "name": "uri-js",
+  "description": "An RFC 3986/3987 compliant, scheme extendable URI/IRI parsing/validating/resolving library for JavaScript.",
+  "main": "dist/es5/uri.all.js",
+  "moduleType": [
+    "globals",
+    "amd",
+    "node",
+    "es6"
+  ],
+  "authors": [
+    "Gary Court <gary.court@gmail.com>"
+  ],
+  "license": "BSD-2-Clause",
+  "keywords": [
+    "URI",
+    "IRI",
+    "IDN",
+    "URN",
+    "HTTP",
+    "HTTPS",
+    "MAILTO",
+    "RFC3986",
+    "RFC3987",
+    "RFC5891",
+    "RFC2616",
+    "RFC2818",
+    "RFC2141",
+    "RFC4122",
+    "RFC6068"
+  ],
+  "homepage": "https://github.com/garycourt/uri-js",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/garycourt/uri-js"
+  },
+  "dependencies": {
+    "punycode": "^2.1.0"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,1 @@
+../envinfo/dist/cli.js

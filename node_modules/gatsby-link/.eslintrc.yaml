@@ -1,0 +1,4 @@
+env:
+  browser: true
+globals:
+  ___loader: false

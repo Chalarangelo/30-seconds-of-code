@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+- '5'
+- '4'
+- '0.12'
+- '0.10'
+- '0.8'
+before_install:
+- 'if [ "${TRAVIS_NODE_VERSION}" == "0.8" ]; then npm install -g npm@2.12.1; fi'

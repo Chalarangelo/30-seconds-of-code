@@ -1,0 +1,19 @@
+{
+  "name": "domready",
+  "repo": "ded/domready",
+  "description": "modern domready",
+  "version": "1.0.3",
+  "homepage": "https://github.com/ded/domready",
+  "author": "Dustin Diaz <dustin@dustindiaz.com> (http://dustindiaz.com)",
+  "keywords": [
+    "domready",
+    "dom"
+  ],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "main": "ready.js",
+  "scripts": [
+    "ready.js"
+  ]
+}

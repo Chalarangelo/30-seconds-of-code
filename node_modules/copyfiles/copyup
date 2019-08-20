@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+'use strict';
+var copyfiles = require('./index');
+var pkg = require('./package.json');
+var program = require('ltcdr');
+program.version(pkg.version)
+  .option('-u, --up [levels]', 'slice a path off the bottom of the paths', parseInt, 1)
+  .option('-a --all', 'include files and directories whose names begin with a dot (.)')
+  .option('-f, --flat', 'flatten the output')
+  .option('-e, --exclude', 'pattern or glob to exclude')
+  .option('-s, --soft', 'do not overwrite destination files if they exist')
+  .usage('[options] inFile [more files ...] outDirectory')
+  .parse(process.argv);
+if (program.flat) {
+  program.up = true;
+}
+copyfiles(program.args, program, function (err) {
+  if (err) {
+    console.error(err);
+    process.exit(1);
+  } else {
+    process.exit(0);
+  }
+});

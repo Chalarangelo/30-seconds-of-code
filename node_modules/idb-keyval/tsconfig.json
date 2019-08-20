@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "alwaysStrict": true,
+    "module": "esnext",
+    "strict": true,
+    "target": "esnext",
+    "declaration": true
+  }
+}

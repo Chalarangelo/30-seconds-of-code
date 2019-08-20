@@ -1,0 +1,9 @@
+{
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "__PATH_PREFIX__": false,
+    "___emitter": false
+  }
+}

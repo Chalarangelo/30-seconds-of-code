@@ -1,0 +1,8 @@
+language: node_js
+before_install:
+  - npm install -g npm
+node_js:
+  - "0.8"
+  - "0.10"
+  - "0.12"
+  - "iojs"

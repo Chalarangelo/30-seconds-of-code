@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`attempting to create a macros with the configName of options throws an error 1`] = `"You cannot use the configName \\"options\\". It is reserved for babel-plugin-macros."`;
+
+exports[`throws error if it is not transpiled 1`] = `"The macro you imported from \\"untranspiled.macro\\" is being executed outside the context of compilation with babel-plugin-macros. This indicates that you don't have the babel plugin \\"babel-plugin-macros\\" configured correctly. Please see the documentation for how to configure babel-plugin-macros properly: https://github.com/kentcdodds/babel-plugin-macros/blob/master/other/docs/user.md"`;

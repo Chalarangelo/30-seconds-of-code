@@ -1,0 +1,10 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"new-cap": [2, { "capIsNewExceptions": ["CheckObjectCoercible", "ToString"] }],
+		"no-invalid-this": [1]
+	}
+}

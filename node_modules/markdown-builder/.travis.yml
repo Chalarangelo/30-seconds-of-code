@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - node
+install:
+  - yarn install
+script:
+  - yarn flow
+  - yarn test
+  - yarn build

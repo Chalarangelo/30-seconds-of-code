@@ -1,0 +1,764 @@
+{
+  "Type selectors": {
+    "syntax": "element",
+    "groups": [
+      "Basic Selectors",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  "Class selectors": {
+    "syntax": ".class",
+    "groups": [
+      "Basic Selectors",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  "ID selectors": {
+    "syntax": "#id",
+    "groups": [
+      "Basic Selectors",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  "Universal selectors": {
+    "syntax": "*",
+    "groups": [
+      "Basic Selectors",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  "Attribute selectors": {
+    "syntax": "[attr=value]",
+    "groups": [
+      "Basic Selectors",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  "Adjacent sibling selectors": {
+    "syntax": "A + B",
+    "groups": [
+      "Combinators",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  "General sibling selectors": {
+    "syntax": "A ~ B",
+    "groups": [
+      "Combinators",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  "Child selectors": {
+    "syntax": "A > B",
+    "groups": [
+      "Combinators",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  "Descendant selectors": {
+    "syntax": "A B",
+    "groups": [
+      "Combinators",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":active": {
+    "syntax": ":active",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":any": {
+    "syntax": ":-moz-any( <selector># )\n:-webkit-any( <selector># )",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "experimental"
+  },
+  ":any-link": {
+    "syntax": ":any-link",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "experimental"
+  },
+  ":checked": {
+    "syntax": ":checked",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":default": {
+    "syntax": ":default",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":defined": {
+    "syntax": ":defined",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "experimental"
+  },
+  ":dir": {
+    "syntax": ":dir( ltr | rtl )",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":disabled": {
+    "syntax": ":disabled",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":empty": {
+    "syntax": ":empty",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":enabled": {
+    "syntax": ":enabled",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":first": {
+    "syntax": ":first",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":first-child": {
+    "syntax": ":first-child",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":first-of-type": {
+    "syntax": ":first-of-type",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":fullscreen": {
+    "syntax": ":fullscreen",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":focus": {
+    "syntax": ":focus",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":focus-visible": {
+    "syntax": ":focus-visible",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "experimental"
+  },
+  ":focus-within": {
+    "syntax": ":focus-within",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "experimental"
+  },
+  ":host": {
+    "syntax": ":host",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "experimental"
+  },
+  ":host()": {
+    "syntax": ":host( <compound-selector-list> )",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "experimental"
+  },
+  ":host-context": {
+    "syntax": ":host-context",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "experimental"
+  },
+  ":host-context()": {
+    "syntax": ":host-context( <compound-selector-list> )",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "experimental"
+  },
+  ":hover": {
+    "syntax": ":hover",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":indeterminate": {
+    "syntax": ":indeterminate",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":in-range": {
+    "syntax": ":in-range",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":invalid": {
+    "syntax": ":invalid",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":lang": {
+    "syntax": ":lang( <language-code> )",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":last-child": {
+    "syntax": ":last-child",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":last-of-type": {
+    "syntax": ":last-of-type",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":left": {
+    "syntax": ":left",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors",
+      "CSS Pages"
+    ],
+    "status": "standard"
+  },
+  ":link": {
+    "syntax": ":link",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":not": {
+    "syntax": ":not( <selector># )",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":nth-child": {
+    "syntax": ":nth-child( <nth> [ of <selector># ]? )",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":nth-last-child": {
+    "syntax": ":nth-last-child( <nth> [ of <selector># ]? )",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":nth-last-of-type": {
+    "syntax": ":nth-last-of-type( <nth> )",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":nth-of-type": {
+    "syntax": ":nth-of-type( <nth> )",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":only-child": {
+    "syntax": ":only-child",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":only-of-type": {
+    "syntax": ":only-of-type",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":optional": {
+    "syntax": ":optional",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":out-of-range": {
+    "syntax": ":out-of-range",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":placeholder-shown": {
+    "syntax": ":placeholder-shown",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "experimental"
+  },
+  ":read-only": {
+    "syntax": ":read-only",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":read-write": {
+    "syntax": ":read-write",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":required": {
+    "syntax": ":required",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":right": {
+    "syntax": ":right",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors",
+      "CSS Pages"
+    ],
+    "status": "standard"
+  },
+  ":root": {
+    "syntax": ":root",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors",
+      "CSS Pages"
+    ],
+    "status": "standard"
+  },
+  ":scope": {
+    "syntax": ":scope",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":target": {
+    "syntax": ":target",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":valid": {
+    "syntax": ":valid",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  ":visited": {
+    "syntax": ":visited",
+    "groups": [
+      "Pseudo-classes",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  "::-moz-progress-bar": {
+    "syntax": "::-moz-progress-bar",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors",
+      "Mozilla Extensions"
+    ],
+    "status": "nonstandard"
+  },
+  "::-moz-range-progress": {
+    "syntax": "::-moz-range-progress",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors",
+      "Mozilla Extensions"
+    ],
+    "status": "nonstandard"
+  },
+  "::-moz-range-thumb": {
+    "syntax": "::-moz-range-thumb",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors",
+      "Mozilla Extensions"
+    ],
+    "status": "nonstandard"
+  },
+  "::-moz-range-track": {
+    "syntax": "::-moz-range-track",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors",
+      "Mozilla Extensions"
+    ],
+    "status": "nonstandard"
+  },
+  "::-ms-browse": {
+    "syntax": "::-ms-browse",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors",
+      "Microsoft Extensions"
+    ],
+    "status": "nonstandard"
+  },
+  "::-ms-check": {
+    "syntax": "::-ms-check",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors",
+      "Microsoft Extensions"
+    ],
+    "status": "nonstandard"
+  },
+  "::-ms-clear": {
+    "syntax": "::-ms-clear",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors",
+      "Microsoft Extensions"
+    ],
+    "status": "nonstandard"
+  },
+  "::-ms-expand": {
+    "syntax": "::-ms-clear",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors",
+      "Microsoft Extensions"
+    ],
+    "status": "nonstandard"
+  },
+  "::-ms-fill": {
+    "syntax": "::-ms-fill",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors",
+      "Microsoft Extensions"
+    ],
+    "status": "nonstandard"
+  },
+  "::-ms-fill-lower": {
+    "syntax": "::-ms-fill-lower",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors",
+      "Microsoft Extensions"
+    ],
+    "status": "nonstandard"
+  },
+  "::-ms-fill-upper": {
+    "syntax": "::-ms-fill-upper",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors",
+      "Microsoft Extensions"
+    ],
+    "status": "nonstandard"
+  },
+  "::-ms-reveal": {
+    "syntax": "::-ms-reveal",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors",
+      "Microsoft Extensions"
+    ],
+    "status": "nonstandard"
+  },
+  "::-ms-thumb": {
+    "syntax": "::-ms-thumb",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors",
+      "Microsoft Extensions"
+    ],
+    "status": "nonstandard"
+  },
+  "::-ms-ticks-after": {
+    "syntax": "::-ms-ticks-after",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors",
+      "Microsoft Extensions"
+    ],
+    "status": "nonstandard"
+  },
+  "::-ms-ticks-before": {
+    "syntax": "::-ms-ticks-before",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors",
+      "Microsoft Extensions"
+    ],
+    "status": "nonstandard"
+  },
+  "::-ms-tooltip": {
+    "syntax": "::-ms-tooltip",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors",
+      "Microsoft Extensions"
+    ],
+    "status": "nonstandard"
+  },
+  "::-ms-track": {
+    "syntax": "::-ms-track",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors",
+      "Microsoft Extensions"
+    ],
+    "status": "nonstandard"
+  },
+  "::-ms-value": {
+    "syntax": "::-ms-value",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors",
+      "Microsoft Extensions"
+    ],
+    "status": "nonstandard"
+  },
+  "::-webkit-progress-bar": {
+    "syntax": "::-webkit-progress-bar",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors",
+      "WebKit Extensions"
+    ],
+    "status": "nonstandard"
+  },
+  "::-webkit-progress-inner-value": {
+    "syntax": "::-webkit-progress-inner-value",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors",
+      "WebKit Extensions"
+    ],
+    "status": "nonstandard"
+  },
+  "::-webkit-progress-value": {
+    "syntax": "::-webkit-progress-value",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors",
+      "WebKit Extensions"
+    ],
+    "status": "nonstandard"
+  },
+  "::-webkit-slider-runnable-track": {
+    "syntax": "::-webkit-slider-runnable-track",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors",
+      "WebKit Extensions"
+    ],
+    "status": "nonstandard"
+  },
+  "::-webkit-slider-thumb": {
+    "syntax": "::-webkit-slider-thumb",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors",
+      "WebKit Extensions"
+    ],
+    "status": "nonstandard"
+  },
+  "::after": {
+    "syntax": "/* CSS3 syntax */\n::after\n\n/* CSS2 syntax */\n:after",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  "::backdrop": {
+    "syntax": "::backdrop",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  "::before": {
+    "syntax": "/* CSS3 syntax */\n::before\n\n/* CSS2 syntax */\n:before",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  "::cue": {
+    "syntax": "::cue | ::cue( <selector> )",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  "::first-letter": {
+    "syntax": "/* CSS3 syntax */\n::first-letter\n\n/* CSS2 syntax */\n:first-letter",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  "::first-line": {
+    "syntax": "/* CSS3 syntax */\n::first-line\n\n/* CSS2 syntax */\n:first-line",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  "::grammar-error": {
+    "syntax": "::grammar-error",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors"
+    ],
+    "status": "experimental"
+  },
+  "::placeholder": {
+    "syntax": "::placeholder",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  "::selection": {
+    "syntax": "::selection",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  "::slotted": {
+    "syntax": "::slotted(<compound-selector-list>)",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  "::spelling-error": {
+    "syntax": "::spelling-error",
+    "groups": [
+      "Pseudo-elements",
+      "Selectors"
+    ],
+    "status": "experimental"
+  }
+}

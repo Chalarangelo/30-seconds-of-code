@@ -1,0 +1,12 @@
+2014-08-31: Version 0.1.2
+  * Change the field ref to matchIndex on the type=refernce node (issue #67)
+
+2014-08-30: Version 0.1.1
+  * Only handled unicode code point escapes if 'u' flag is set (issue #56)
+  * Removed `matchIdx` from the AST
+  * References like /\1/ were broken (issue #57)
+  * Renamed type `ref` to `reference` in the AST
+  * Update regex to match identifier and include script to generate regex
+
+2014-06-29: Version 0.1.0
+  * first tagged release

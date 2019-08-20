@@ -1,0 +1,1 @@
+this.windowStop = this.stop;

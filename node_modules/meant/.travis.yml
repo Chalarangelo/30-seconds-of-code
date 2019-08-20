@@ -1,0 +1,16 @@
+script:
+  - "npm test"
+
+language: node_js
+
+node_js:
+  - "5"
+  - "4"
+  - iojs
+  - "0.12"
+
+sudo: false
+
+cache:
+  directories:
+    - node_modules

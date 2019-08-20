@@ -1,0 +1,57 @@
+Arguments: 
+  /home/nicolo/.nvm/versions/node/v11.14.0/bin/node /usr/share/yarn/bin/yarn.js install --mutex network:42424 --non-interactive --no-lockfile
+
+PATH: 
+  /home/nicolo/Documenti/dev/babel/babel/packages/babel-preset-env/node_modules/.bin:/home/nicolo/Documenti/dev/babel/babel/packages/node_modules/.bin:/home/nicolo/Documenti/dev/babel/babel/node_modules/.bin:/home/nicolo/Documenti/dev/babel/node_modules/.bin:/home/nicolo/Documenti/dev/node_modules/.bin:/home/nicolo/Documenti/node_modules/.bin:/home/nicolo/node_modules/.bin:/home/node_modules/.bin:/node_modules/.bin:/home/nicolo/.nvm/versions/node/v11.14.0/bin:/tmp/yarn--1561643090353-0.782220323203699:/home/nicolo/Documenti/dev/babel/babel/node_modules/.bin:/home/nicolo/.config/yarn/link/node_modules/.bin:/home/nicolo/.yarn/bin:/home/nicolo/.nvm/versions/node/v11.14.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/home/nicolo/.nvm/versions/node/v11.14.0/lib/node_modules/npm/bin/node-gyp-bin:/home/nicolo/.nvm/versions/node/v11.14.0/bin/node_modules/npm/bin/node-gyp-bin:/usr/local/MATLAB/R2019b/bin:/home/nicolo/.jsvu:/home/nicolo/.nvm/versions/node/v11.14.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.16.0
+
+Node version: 
+  11.14.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile '/home/nicolo/.cache/yarn/v4/npm-to-fast-properties-2.0.0-dc5e698cbd079265bc73e0377681a4e4e83f616e/node_modules/to-fast-properties/index.js' -> '/home/nicolo/Documenti/dev/babel/babel/packages/babel-preset-env/node_modules/@babel/types/node_modules/to-fast-properties/index.js'
+
+npm manifest: 
+  {
+  	"name": "@babel/preset-env",
+  	"version": "7.4.5",
+  	"description": "A Babel preset for each environment.",
+  	"author": "Henry Zhu <hi@henryzoo.com>",
+  	"homepage": "https://babeljs.io/",
+  	"license": "MIT",
+  	"publishConfig": {
+  		"access": "public"
+  	},
+  	"repository": "https://github.com/babel/babel/tree/master/packages/babel-preset-env",
+  	"main": "lib/index.js",
+  	"dependencies": {
+  		"@babel/plugin-inject-polyfills": "file:../../../babel-polyfills/packages/babel-plugin-inject-polyfills",
+  		"@babel/polyfill-provider-corejs2": "file:../../../babel-polyfills/packages/babel-polyfill-provider-corejs2",
+  		"@babel/polyfill-provider-corejs3": "file:../../../babel-polyfills/packages/babel-polyfill-provider-corejs3",
+  		"@babel/polyfill-provider-regenerator": "file:../../../babel-polyfills/packages/babel-polyfill-provider-regenerator",
+  		"browserslist": "^4.6.0",
+  		"core-js-compat": "^3.1.1",
+  		"invariant": "^2.2.2",
+  		"js-levenshtein": "^1.1.3",
+  		"semver": "^5.5.0"
+  	},
+  	"peerDependencies": {
+  		"@babel/core": "^7.0.0-0"
+  	},
+  	"devDependencies": {
+  		"caniuse-db": "1.0.30000969",
+  		"compat-table": "kangax/compat-table#45cbb3a3778815c973c5b09d69bf7d1f7ed0c316",
+  		"electron-to-chromium": "1.3.113"
+  	}
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

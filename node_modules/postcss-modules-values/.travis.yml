@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "4"
+  - "6"
+  - "node"
+script: npm run travis
+
+before_install:
+  - '[ "${TRAVIS_NODE_VERSION}" != "0.10" ] || npm install -g npm'

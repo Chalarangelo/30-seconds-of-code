@@ -1,0 +1,35 @@
+#!/usr/bin/env node
+'use strict';
+
+var PNG = require('pngjs').PNG,
+    fs = require('fs'),
+    match = require('../.');
+
+if (process.argv.length < 5) {
+    console.log('Usage: imagematch image1.png image2.png output.png [threshold=0.005] [includeAA=false]');
+    return;
+}
+
+var threshold = isNaN(+process.argv[5]) ? undefined : +process.argv[5],
+    includeAA = process.argv[6] === 'true';
+
+var img1 = fs.createReadStream(process.argv[2]).pipe(new PNG()).on('parsed', doneReading);
+var img2 = fs.createReadStream(process.argv[3]).pipe(new PNG()).on('parsed', doneReading);
+
+function doneReading() {
+    if (!img1.data || !img2.data) return;
+
+    var diff = new PNG({width: img1.width, height: img1.height});
+
+    console.time('match');
+    var diffs = match(img1.data, img2.data, diff.data, diff.width, diff.height, {
+        threshold: threshold,
+        includeAA: includeAA
+    });
+    console.timeEnd('match');
+
+    diff.pack().pipe(fs.createWriteStream(process.argv[4]));
+
+    console.log('different pixels: ' + diffs);
+    console.log('error: ' + (Math.round(100 * 100 * diffs / (diff.width * diff.height)) / 100) + '%');
+}

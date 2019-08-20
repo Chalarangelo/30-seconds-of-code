@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../src/bootstrap/__mocks__/require/module-error.js"],"names":["wat"],"mappings":";;AAAA;AACA;AACAA,GAAG","sourcesContent":["// this will cause errors when importing it - that's fine - that's the point opf this mock\n// eslint-disable-next-line\nwat()\n"],"file":"module-error.js"}

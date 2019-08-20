@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jimp browser example 1</title>
+    </head>
+    <body>
+
+        <h1> Demonstrates loading a local file using Jimp on the main thread </h1>
+        <script src="../lib/jimp.min.js"></script>
+        <script>
+        Jimp.read("https://upload.wikimedia.org/wikipedia/commons/0/01/Bot-Test.jpg").then(function (lenna) {
+            lenna.resize(256, Jimp.AUTO)      // resize
+                 .quality(60)                 // set JPEG quality
+                 .greyscale()                 // set greyscale
+                 .getBase64(Jimp.AUTO, function (err, src) {
+                     var img = document.createElement("img");
+                     img.setAttribute("src", src);
+                     document.body.appendChild(img);
+                 });
+        });
+        </script>
+
+    </body>
+</html>

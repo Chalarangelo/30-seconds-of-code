@@ -1,0 +1,16 @@
+sudo: false
+language: node_js
+node_js:
+  - '0.10'
+  - '0.12'
+  - '4'
+  - '6'
+  - '8'
+  - '9'
+branches:
+  only:
+    - master
+notifications:
+  email:
+    - rod@vagg.org
+    - matteo.collina@gmail.com

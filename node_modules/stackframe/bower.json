@@ -1,0 +1,31 @@
+{
+    "name": "stackframe",
+    "main": "./stackframe.js",
+    "homepage": "https://github.com/stacktracejs/stackframe",
+    "authors": [
+        "Eric Wendelin <me@eriwen.com> (https://www.eriwen.com)",
+        "Victor Homyakov <vkhomyackov@gmail.com> (https://github.com/victor-homyakov)"
+    ],
+    "description": "JS Object representation of a stack frame",
+    "moduleType": [
+        "amd",
+        "globals",
+        "node"
+    ],
+    "keywords": [
+        "stacktrace",
+        "stack-trace",
+        "backtrace",
+        "cross-browser",
+        "framework-agnostic",
+        "error",
+        "debugger"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "spec",
+        "coverage"
+    ]
+}

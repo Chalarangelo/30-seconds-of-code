@@ -1,0 +1,22 @@
+@counter-style my-alpha {
+  system: fixed;
+  symbols: Ⓐ Ⓑ Ⓒ;
+  suffix: " ";
+}
+
+@media (max-width: 400px) {
+
+  @supports (display: flex) {
+    @counter-style my-alpha {
+      system: fixed;
+      symbols: a b c;
+      suffix: " ";
+    }
+  }
+
+  @counter-style my-alpha {
+    system: fixed;
+    symbols: Ⓐ Ⓑ Ⓒ;
+    suffix: " ";
+  }
+}

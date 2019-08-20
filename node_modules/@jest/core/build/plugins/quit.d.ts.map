@@ -1,0 +1,1 @@
+{"version":3,"file":"quit.d.ts","sourceRoot":"","sources":["../../src/plugins/quit.ts"],"names":[],"mappings":"AAAA;;;;;GAKG;;AAEH,OAAO,EAAC,eAAe,EAAC,MAAM,cAAc,CAAC;AAE7C,cAAM,UAAW,SAAQ,eAAe;IACtC,UAAU,EAAE,IAAI,CAAC;gBAEL,OAAO,EAAE;QAAC,KAAK,EAAE,MAAM,CAAC,UAAU,CAAC;QAAC,MAAM,EAAE,MAAM,CAAC,WAAW,CAAA;KAAC;IAKrE,GAAG;IAQT,YAAY;;;;CAMb;AAED,eAAe,UAAU,CAAC"}

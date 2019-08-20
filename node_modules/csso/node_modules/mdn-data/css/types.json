@@ -1,0 +1,165 @@
+{
+  "an-plus-b": {
+    "groups": [
+      "Selectors"
+    ],
+    "status": "standard"
+  },
+  "angle": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard"
+  },
+  "basic-shape": {
+    "groups": [
+      "CSS Shapes",
+      "CSS Types"
+    ],
+    "status": "standard"
+  },
+  "blend-mode": {
+    "groups": [
+      "Compositing and Blending",
+      "CSS Types"
+    ],
+    "status": "standard"
+  },
+  "color": {
+    "groups": [
+      "CSS Color",
+      "CSS Types"
+    ],
+    "status": "standard"
+  },
+  "custom-ident": {
+    "groups": [
+      "CSS Will Change",
+      "CSS Counter Styles",
+      "CSS Lists and Counters",
+      "CSS Animations",
+      "CSS Types"
+    ],
+    "status": "standard"
+  },
+  "filter-function": {
+    "groups": [
+      "Filter Effects"
+    ],
+    "status": "standard"
+  },
+  "flex": {
+    "groups": [
+      "CSS Grid Layout",
+      "CSS Types"
+    ],
+    "status": "standard"
+  },
+  "frequency": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard"
+  },
+  "gradient": {
+    "groups": [
+      "CSS Images",
+      "CSS Types"
+    ],
+    "status": "standard"
+  },
+  "ident": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard"
+  },
+  "image": {
+    "groups": [
+      "CSS Images",
+      "CSS Types"
+    ],
+    "status": "standard"
+  },
+  "integer": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard"
+  },
+  "length": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard"
+  },
+  "number": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard"
+  },
+  "percentage": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard"
+  },
+  "position": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard"
+  },
+  "ratio": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard"
+  },
+  "resolution": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard"
+  },
+  "shape": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard"
+  },
+  "string": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard"
+  },
+  "time": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard"
+  },
+  "timing-function": {
+    "groups": [
+      "CSS Animations",
+      "CSS Transitions",
+      "CSS Types"
+    ],
+    "status": "standard"
+  },
+  "transform-function": {
+    "groups": [
+      "CSS Transforms",
+      "CSS Types"
+    ],
+    "status": "standard"
+  },
+  "url": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard"
+  }
+}

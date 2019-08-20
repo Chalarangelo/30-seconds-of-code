@@ -1,0 +1,12 @@
+{
+  "name": "lokijs",
+  "main": ["src/lokijs.js"],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

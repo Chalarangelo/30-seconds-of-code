@@ -1,0 +1,39 @@
+language: node_js
+os:
+ - linux
+node_js:
+  - "12"
+  - "10"
+  - "8"
+  - "6"
+  - "4"
+  - "0.12"
+  - "0.10"
+cache:
+  directories:
+    - node_modules
+after_success:
+  - npm run coveralls
+before_install:
+  - 'case "${TRAVIS_NODE_VERSION}" in 0.*) export NPM_CONFIG_STRICT_SSL=false ;; esac'
+  - 'nvm install-latest-npm'
+install:
+  - 'if [ "${TRAVIS_NODE_VERSION}" = "0.6" ] || [ "${TRAVIS_NODE_VERSION}" = "0.9" ]; then nvm install --latest-npm 0.8 && npm install && nvm use "${TRAVIS_NODE_VERSION}"; else npm install; fi;'
+script:
+  - 'if [ -n "${PRETEST-}" ]; then npm run pretest ; fi'
+  - 'if [ -n "${TEST-}" ]; then npm run tests-only ; fi'
+sudo: false
+branches:
+  only:
+    - master
+env:
+  - TEST=true
+matrix:
+  fast_finish: true
+  include:
+    - node_js: "lts/*"
+      env: PRETEST=true
+  allow_failures:
+    - os: osx
+    - node_js: "0.12"
+    - node_js: "0.10"

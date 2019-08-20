@@ -1,0 +1,11 @@
+language: node_js
+sudo: false
+node_js:
+  - 8
+  - 6
+  - 4
+notifications:
+  email: false
+cache:
+  directories:
+    - $HOME/.npm

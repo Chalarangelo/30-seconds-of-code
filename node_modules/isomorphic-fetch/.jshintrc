@@ -1,0 +1,5 @@
+{
+  "node": true,
+  "browser": true,
+  "predef": ["describe", "it", "before"]
+}

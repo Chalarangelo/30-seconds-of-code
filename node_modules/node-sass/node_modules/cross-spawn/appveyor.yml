@@ -1,0 +1,29 @@
+# appveyor file
+# http://www.appveyor.com/docs/appveyor-yml
+
+# build version format
+version: "{build}"
+
+# fix lineendings in Windows
+init:
+  - git config --global core.autocrlf input
+
+# what combinations to test
+environment:
+  matrix:
+    - nodejs_version: 0.10
+    - nodejs_version: 0.12
+    - nodejs_version: 4
+    - nodejs_version: 6
+
+# get the latest stable version of Node 0.STABLE.latest
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - npm install
+
+build: off
+
+test_script:
+  - node --version
+  - npm --version
+  - cmd: npm test --no-color

@@ -1,0 +1,9 @@
+sudo: false
+language: node_js
+node_js:
+  - "0.12"
+  - "iojs"
+env:
+  - TEST_SUITE=standard
+  - TEST_SUITE=unit
+script: "npm run-script $TEST_SUITE"

@@ -1,0 +1,31 @@
+// @flow
+import { Component, type Node } from 'react';
+
+type RenderFn<T> = (value: T) => Node;
+
+export type ProviderProps<T> = {
+  value: T,
+  children?: Node
+};
+
+export type ConsumerProps<T> = {
+  children: RenderFn<T> | [RenderFn<T>],
+  observedBits?: number
+};
+
+export type ConsumerState<T> = {
+  value: T
+};
+
+export type Provider<T> = Component<ProviderProps<T>>;
+export type Consumer<T> = Component<ConsumerProps<T>, ConsumerState<T>>;
+
+export type Context<T> = {
+  Provider: Class<Provider<T>>,
+  Consumer: Class<Consumer<T>>
+};
+
+declare export default function createReactContext<T>(
+  defaultValue: T,
+  calculateChangedBits?: (prev: T, next: T) => number
+): Context<T>;

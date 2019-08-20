@@ -1,0 +1,6 @@
+@import "vars";
+@import "struct";
+
+.myvars {
+    content: quote($import_counter);
+}

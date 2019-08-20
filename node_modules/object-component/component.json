@@ -1,0 +1,10 @@
+{
+  "name": "object",
+  "description": "Object keys / values / length",
+  "version": "0.0.3",
+  "keywords": ["object", "keys", "utility"],
+  "dependencies": {},
+  "scripts": [
+    "index.js"
+  ]
+}

@@ -1,0 +1,9 @@
+chat on node.js
+
+working demo: http://hostel6.ru:8002
+
+to start:
+    node server.js 
+
+then visit
+   http://your-hostname:8002

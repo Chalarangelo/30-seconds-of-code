@@ -1,0 +1,8 @@
+<html>
+<head>
+    <title>Standalone manual test bed for loglevel</title>
+</head>
+<body>
+<script src="../lib/loglevel.js"></script>
+</body>
+</html>

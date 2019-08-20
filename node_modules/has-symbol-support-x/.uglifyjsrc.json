@@ -1,0 +1,17 @@
+{
+  "warnings": false,
+  "parse": {},
+  "compress": {
+    "keep_fnames": true
+  },
+  "mangle": false,
+  "output": {
+    "ascii_only": true,
+    "beautify": false,
+    "comments": "some"
+  },
+  "sourceMap": {},
+  "nameCache": null,
+  "toplevel": false,
+  "ie8": true
+}

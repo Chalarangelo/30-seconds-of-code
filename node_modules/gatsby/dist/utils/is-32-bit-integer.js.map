@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/utils/is-32-bit-integer.js"],"names":["module","exports","x"],"mappings":";;AAAAA,MAAM,CAACC,OAAP,GAAiB,UAASC,CAAT,EAAY;AAC3B,SAAO,CAACA,CAAC,GAAG,CAAL,MAAYA,CAAnB;AACD,CAFD","sourcesContent":["module.exports = function(x) {\n  return (x | 0) === x\n}\n"],"file":"is-32-bit-integer.js"}

@@ -1,0 +1,9 @@
+node_modules/
+build/
+coverage/
+spec/
+*.log
+.coveralls.yml
+.editorconfig
+.idea
+.travis.yml

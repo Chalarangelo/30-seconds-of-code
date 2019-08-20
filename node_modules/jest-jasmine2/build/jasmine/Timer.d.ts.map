@@ -1,0 +1,1 @@
+{"version":3,"file":"Timer.d.ts","sourceRoot":"","sources":["../../src/jasmine/Timer.ts"],"names":[],"mappings":"AAAA;;;;;;GAMG;AA+BH,MAAM,CAAC,OAAO,OAAO,KAAK;IACxB,KAAK,EAAE,MAAM,IAAI,CAAC;IAClB,OAAO,EAAE,MAAM,MAAM,CAAC;gBAEV,OAAO,CAAC,EAAE;QAAC,GAAG,CAAC,EAAE,MAAM,MAAM,CAAA;KAAC;CAc3C"}

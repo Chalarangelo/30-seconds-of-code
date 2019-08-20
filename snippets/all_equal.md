@@ -1,5 +1,5 @@
 ---
-title: function_name
+title: all_equal
 tags: list,beginner
 ---
 

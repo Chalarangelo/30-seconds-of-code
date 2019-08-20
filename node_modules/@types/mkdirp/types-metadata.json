@@ -1,0 +1,25 @@
+{
+    "authors": "Bart van der Schoor <https://github.com/Bartvds>",
+    "definitionFilename": "index.d.ts",
+    "libraryDependencies": [],
+    "moduleDependencies": [],
+    "libraryMajorVersion": "0",
+    "libraryMinorVersion": "3",
+    "libraryName": "mkdirp 0.3.0",
+    "typingsPackageName": "mkdirp",
+    "projectName": "http://github.com/substack/node-mkdirp",
+    "sourceRepoURL": "https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+    "sourceBranch": "types-2.0",
+    "kind": "ProperModule",
+    "globals": [
+        "mkdirp"
+    ],
+    "declaredModules": [
+        "mkdirp"
+    ],
+    "files": [
+        "index.d.ts"
+    ],
+    "hasPackageJson": false,
+    "contentHash": "bfa78f6e5a705b8b3c1044f67bdaa969895c8d1fe69b643c2398e8f4c16d04ec"
+}

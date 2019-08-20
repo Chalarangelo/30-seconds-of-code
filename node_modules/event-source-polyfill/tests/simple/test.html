@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>XMLHttpRequest: the LOADING state change may be emitted multiple times</title>
+    <link rel="help" href="https://xhr.spec.whatwg.org/#the-send()-method" data-tested-assertations="following::ol[1]/li[10]/dt[1]">
+</head>
+
+<div id="log"></div>
+
+<script>
+
+window.setTimeout(function () {
+  var client = new XMLHttpRequest();
+  var start = Date.now();
+  client.onprogress = 
+  client.onreadystatechange = function(event) {
+    console.log(event.type + client.readyState, Date.now() - start, client.responseText);
+  };
+  client.open("GET", "http://localhost:801/?count=5&delay=500&contentType=text/event-stream"); // default timeout in trickle.py is 1/2 sec, so this request will take 5 seconds to complete
+  client.send(null);
+}, 1000);
+
+</script>

@@ -1,0 +1,18 @@
+# Installation
+> `npm install --save @types/mkdirp`
+
+# Summary
+This package contains type definitions for mkdirp 0.3.0 (http://github.com/substack/node-mkdirp).
+
+# Details
+Files were exported from https://www.github.com/DefinitelyTyped/DefinitelyTyped/tree/types-2.0/mkdirp
+
+Additional Details
+ * Last updated: Mon, 19 Sep 2016 17:28:59 GMT
+ * File structure: ProperModule
+ * Library Dependencies: none
+ * Module Dependencies: none
+ * Global values: mkdirp
+
+# Credits
+These definitions were written by Bart van der Schoor <https://github.com/Bartvds>.

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Webpack Integration Tests assetNameRegExp-no-source 1`] = `"body{color:red}a{color:blue}body{margin:0;color:red}p{margin:1000px}body{color:red;padding:0;margin:0}p{padding:500px;padding:1000px}"`;
+
+exports[`Webpack Integration Tests duplicate-css-exists-without-plugin 1`] = `"body{color:red}a{color:blue}body{color:red}p{color:green}"`;
+
+exports[`Webpack Integration Tests only-assetNameRegExp-processed 1`] = `
+"body {
+  color: red;
+  padding: 0;
+  margin: 0;
+}
+p {
+  padding: 500px;
+  padding: 1000px;
+}
+"
+`;
+
+exports[`Webpack Integration Tests only-assetNameRegExp-processed 2`] = `"a{color:#00f}body{margin:0;color:red}p{margin:1000px}"`;
+
+exports[`Webpack Integration Tests removes-duplicate-css 1`] = `"a{color:#00f}body{color:red}p{color:green}"`;

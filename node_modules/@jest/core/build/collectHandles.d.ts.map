@@ -1,0 +1,1 @@
+{"version":3,"file":"collectHandles.d.ts","sourceRoot":"","sources":["../src/collectHandles.ts"],"names":[],"mappings":"AAAA;;;;;GAKG;AAEH,OAAO,EAAC,MAAM,EAAC,MAAM,aAAa,CAAC;AA+BnC,MAAM,CAAC,OAAO,UAAU,cAAc,IAAI,MAAM,KAAK,CAAC,KAAK,CAAC,CA0C3D;AAED,wBAAgB,kBAAkB,CAChC,MAAM,EAAE,KAAK,CAAC,KAAK,CAAC,EACpB,MAAM,EAAE,MAAM,CAAC,aAAa,GAC3B,KAAK,CAAC,MAAM,CAAC,CA8Bf"}

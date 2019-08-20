@@ -1,0 +1,41 @@
+longDescription = """
+Removes at-rules which have the same identifier as another; for example two
+instances of `@keyframes one`. As the browser will only count the *last* of
+these declarations, all others can safely be removed.
+"""
+
+inputExample = """
+@keyframes one {
+    0% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes one {
+    0% {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+.box {
+    animation-name: one;
+}
+"""
+
+outputExample = """
+@keyframes one {
+    0% {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+.box {
+    animation-name: one;
+}
+"""

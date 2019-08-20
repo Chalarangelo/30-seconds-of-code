@@ -1,0 +1,30 @@
+language: node_js
+before_install:
+  - nvm install-latest-npm
+matrix:
+  include:
+  - node_js: '0.8'
+    env: TASK=test-node
+  - node_js: '0.10'
+    env: TASK=test-node
+  - node_js: '0.11'
+    env: TASK=test-node
+  - node_js: '0.12'
+    env: TASK=test-node
+  - node_js: 1
+    env: TASK=test-node
+  - node_js: 2
+    env: TASK=test-node
+  - node_js: 3
+    env: TASK=test-node
+  - node_js: 4
+    env: TASK=test-node
+  - node_js: 5
+    env: TASK=test-node
+  - node_js: '0.10'
+    env: TASK=test-browser
+script: "npm run $TASK"
+env:
+  global:
+  - secure: qThuKBZQtkooAvzaYldECGNqvKGPRTnXx62IVyhSbFlsCY1VCmjhLldhyPDiZQ3JqL1XvSkK8OMDupiHqZnNE0nGijoO4M/kaEdjBB+jpjg3f8I6te2SNU935SbkfY9KHAaFXMZwdcq7Fk932AxWEu+FMSDM+080wNKpEATXDe4=
+  - secure: O/scKjHLRcPN5ILV5qsSkksQ7qcZQdHWEUUPItmj/4+vmCc28bHpicoUxXG5A96iHvkBbdmky/nGCg464ZaNLk68m6hfEMDAR3J6mhM2Pf5C4QI/LlFlR1fob9sQ8lztwSGOItwdK8Rfrgb30RRVV71f6FxnaJ6PKMuMNT5S1AQ=

@@ -1,0 +1,37 @@
+
+{
+  "type": "object",
+  "properties": {
+    "hmr": {
+      "type": "boolean"
+    },
+    "base": {
+      "type": "number"
+    },
+    "attrs": {
+      "type": "object"
+    },
+    "insertAt": {
+      "type": ["string", "object"]
+    },
+    "insertInto": {
+      "anyOf": [
+        { "type": "string" },
+        { "instanceof": "Function" }
+      ]
+    },
+    "transform": {
+      "type": "string"
+    },
+    "singleton": {
+      "type": "boolean"
+    },
+    "sourceMap": {
+      "type": "boolean"
+    },
+    "convertToAbsoluteUrls": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

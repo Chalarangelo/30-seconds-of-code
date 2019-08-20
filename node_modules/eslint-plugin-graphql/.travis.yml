@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "8"
+  - "10"
+install:
+  - npm install
+
+script:
+  - npm run lint && npm test
+
+# Allow Travis tests to run in containers.
+sudo: false

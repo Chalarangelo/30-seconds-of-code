@@ -1,0 +1,6 @@
+.editorconfig
+.eslintignore
+.eslintrc
+.travis.yml
+npm-debug.log
+coverage

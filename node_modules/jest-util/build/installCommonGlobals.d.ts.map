@@ -1,0 +1,1 @@
+{"version":3,"file":"installCommonGlobals.d.ts","sourceRoot":"","sources":["../src/installCommonGlobals.ts"],"names":[],"mappings":"AAAA;;;;;GAKG;;AAGH,OAAO,EAAC,MAAM,EAAC,MAAM,aAAa,CAAC;AAMnC,MAAM,CAAC,OAAO,WACZ,YAAY,EAAE,MAAM,CAAC,MAAM,EAC3B,OAAO,EAAE,MAAM,CAAC,aAAa,GAC5B,MAAM,CAAC,MAAM,GAAG,MAAM,CAAC,aAAa,CAqDtC"}

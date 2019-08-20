@@ -1,0 +1,26 @@
+# This file is for unifying the coding style for different editors and IDEs
+# editorconfig.org
+
+# top-most EditorConfig file
+root = true
+
+# every file
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# 4 space indentation
+[*.py]
+indent_style = space
+indent_size = 4
+
+# Tab indentation (no size specified)
+[Makefile]
+indent_style = tab
+
+[*.md]
+trim_trailing_whitespace = false

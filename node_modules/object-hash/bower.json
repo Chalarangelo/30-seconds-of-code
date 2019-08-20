@@ -1,0 +1,15 @@
+{
+  "name": "object-hash",
+  "homepage": "https://github.com/puleos/object-hash",
+  "description": "Generate hashes from javascript objects in node and the browser",
+  "main": "dist/object_hash.js",
+  "author": "Scott Puleo <puleos@gmail.com>",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

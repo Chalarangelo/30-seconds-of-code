@@ -1,0 +1,71 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+var Bunzip = require('../');
+var fs = require('fs');
+
+program
+    .version(Bunzip.version)
+    .usage('[infile]')
+    .option('-m, --multistream',
+	    'Read a multistream bzip2 file');
+program.on('--help', function() {
+    console.log('  If <infile> is omitted, reads from stdin.');
+});
+program.parse(process.argv);
+
+var makeInStream = function(in_fd) {
+    var stat = fs.fstatSync(in_fd);
+    var stream = {
+	buffer: new Buffer(4096),
+	totalPos: 0,
+	pos: 0,
+	end: 0,
+	_fillBuffer: function() {
+	    this.end = fs.readSync(in_fd, this.buffer, 0, this.buffer.length);
+	    this.pos = 0;
+	},
+	readByte: function() {
+	    if (this.pos >= this.end) { this._fillBuffer(); }
+	    if (this.pos < this.end) {
+		this.totalPos++;
+		return this.buffer[this.pos++];
+	    }
+	    return -1;
+	},
+	read: function(buffer, bufOffset, length) {
+	    if (this.pos >= this.end) { this._fillBuffer(); }
+	    var bytesRead = 0;
+	    while (bytesRead < length && this.pos < this.end) {
+		buffer[bufOffset++] = this.buffer[this.pos++];
+		bytesRead++;
+	    }
+	    this.totalPos += bytesRead;
+	    return bytesRead;
+	},
+	eof: function() {
+	  if (this.pos >= this.end) { this._fillBuffer(); }
+	  return !(this.pos < this.end);
+	}
+    };
+    if (stat.size) {
+	stream.size = stat.size;
+    }
+    return stream;
+};
+
+var in_fd = 0, close_in = function(){};
+if (program.args.length > 0) {
+    in_fd = fs.openSync(program.args.shift(), 'r');
+    close_in = function() { fs.closeSync(in_fd); };
+}
+
+var inStream = makeInStream(in_fd);
+
+var report = function(position, blocksize) {
+  console.log(position+'\t'+blocksize);
+};
+
+Bunzip.table(inStream, report, program.multistream);
+close_in();
+return 0;

@@ -1,0 +1,14 @@
+tests/
+dist/
+!dist/sockjs.js
+!dist/sockjs.js.map
+!dist/sockjs.min.js
+!dist/sockjs.min.js.map
+build/
+.travis.yml
+.zuul.yml
+.eslintrc
+.jscsrc
+bower.json
+gulpfile.js
+Makefile

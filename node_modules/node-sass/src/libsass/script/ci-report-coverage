@@ -1,0 +1,42 @@
+#!/bin/bash
+
+if [ "x$COVERAGE" = "xyes" ]; then
+
+  # find / -name "gcovr"
+  # find / -name "coveralls"
+  # this is only needed for mac os x builds!
+  PATH=$PATH:/Users/travis/Library/Python/2.7/bin/
+
+
+  # exclude some directories from profiling (.libs is from autotools)
+  export EXCLUDE_COVERAGE="--exclude plugins
+                           --exclude sassc/sassc.c
+                           --exclude src/sass-spec
+                           --exclude src/.libs
+                           --exclude src/debug.hpp
+                           --exclude src/json.cpp
+                           --exclude src/json.hpp
+                           --exclude src/cencode.c
+                           --exclude src/b64
+                           --exclude src/utf8
+                           --exclude src/utf8_string.hpp
+                           --exclude src/utf8.h
+                           --exclude src/utf8_string.cpp
+                           --exclude src/sass2scss.h
+                           --exclude src/sass2scss.cpp
+                           --exclude src/test
+                           --exclude src/posix
+                           --exclude src/debugger.hpp"
+  # debug used gcov version
+  # option not available on mac
+  if [ "$TRAVIS_OS_NAME" != "osx" ]; then
+    gcov -v
+  fi
+  # create summarized report
+  gcovr -r .
+  # submit report to coveralls.io
+  coveralls $EXCLUDE_COVERAGE --gcov-options '\-lp'
+
+else
+  echo "skip coverage reporting"
+fi

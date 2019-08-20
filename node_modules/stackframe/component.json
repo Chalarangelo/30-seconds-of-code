@@ -1,0 +1,16 @@
+{
+    "name": "stackframe",
+    "repository": "stacktracejs/stackframe",
+    "description": "JS Object representation of a stack frame",
+    "version": "1.0.2",
+    "keywords": [
+        "stacktrace",
+        "error",
+        "debugger",
+        "stack frame"
+    ],
+    "main": "stackframe.js",
+    "scripts": [
+        "stackframe.js"
+    ]
+}

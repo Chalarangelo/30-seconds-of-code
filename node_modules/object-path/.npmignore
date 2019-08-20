@@ -1,0 +1,7 @@
+node_modules
+.settings
+.idea
+npm-debug.log
+generated
+coverage
+.DS_Store

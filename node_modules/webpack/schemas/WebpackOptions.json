@@ -1,0 +1,2159 @@
+{
+  "definitions": {
+    "ArrayOfStringOrStringArrayValues": {
+      "type": "array",
+      "items": {
+        "description": "string or array of strings",
+        "anyOf": [
+          {
+            "type": "string",
+            "minLength": 1
+          },
+          {
+            "type": "array",
+            "items": {
+              "description": "A non-empty string",
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        ]
+      }
+    },
+    "ArrayOfStringValues": {
+      "type": "array",
+      "items": {
+        "description": "A non-empty string",
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "Entry": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/EntryDynamic"
+        },
+        {
+          "$ref": "#/definitions/EntryStatic"
+        }
+      ]
+    },
+    "EntryDynamic": {
+      "description": "A Function returning an entry object, an entry string, an entry array or a promise to these things.",
+      "instanceof": "Function",
+      "tsType": "(() => EntryStatic | Promise<EntryStatic>)"
+    },
+    "EntryItem": {
+      "oneOf": [
+        {
+          "description": "An entry point without name. The string is resolved to a module which is loaded upon startup.",
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "description": "An entry point without name. All modules are loaded upon startup. The last one is exported.",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/NonEmptyArrayOfUniqueStringValues"
+            }
+          ]
+        }
+      ]
+    },
+    "EntryObject": {
+      "description": "Multiple entry bundles are created. The key is the chunk name. The value can be a string or an array.",
+      "type": "object",
+      "additionalProperties": {
+        "description": "An entry point with name",
+        "oneOf": [
+          {
+            "description": "The string is resolved to a module which is loaded upon startup.",
+            "type": "string",
+            "minLength": 1
+          },
+          {
+            "description": "All modules are loaded upon startup. The last one is exported.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/NonEmptyArrayOfUniqueStringValues"
+              }
+            ]
+          }
+        ]
+      },
+      "minProperties": 1
+    },
+    "EntryStatic": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/EntryObject"
+        },
+        {
+          "$ref": "#/definitions/EntryItem"
+        }
+      ]
+    },
+    "ExternalItem": {
+      "anyOf": [
+        {
+          "description": "An exact matched dependency becomes external. The same string is used as external dependency.",
+          "type": "string"
+        },
+        {
+          "description": "If an dependency matches exactly a property of the object, the property value is used as dependency.",
+          "type": "object",
+          "additionalProperties": {
+            "description": "The dependency used for the external",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "object"
+              },
+              {
+                "$ref": "#/definitions/ArrayOfStringValues"
+              },
+              {
+                "type": "boolean"
+              }
+            ]
+          }
+        },
+        {
+          "description": "Every matched dependency becomes external.",
+          "instanceof": "RegExp",
+          "tsType": "RegExp"
+        }
+      ]
+    },
+    "Externals": {
+      "anyOf": [
+        {
+          "description": "`function(context, request, callback(err, result))` The function is called on each dependency.",
+          "instanceof": "Function",
+          "tsType": "((context: string, request: string, callback: (err?: Error, result?: string) => void) => void)"
+        },
+        {
+          "$ref": "#/definitions/ExternalItem"
+        },
+        {
+          "type": "array",
+          "items": {
+            "description": "External configuration",
+            "anyOf": [
+              {
+                "description": "`function(context, request, callback(err, result))` The function is called on each dependency.",
+                "instanceof": "Function",
+                "tsType": "((context: string, request: string, callback: (err?: Error, result?: string) => void) => void)"
+              },
+              {
+                "$ref": "#/definitions/ExternalItem"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "FilterItemTypes": {
+      "anyOf": [
+        {
+          "instanceof": "RegExp",
+          "tsType": "RegExp"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "instanceof": "Function",
+          "tsType": "Function"
+        }
+      ]
+    },
+    "FilterTypes": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/FilterItemTypes"
+        },
+        {
+          "type": "array",
+          "items": {
+            "description": "Rule to filter",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/FilterItemTypes"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "LibraryCustomUmdObject": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "amd": {
+          "description": "Name of the exposed AMD library in the UMD",
+          "type": "string"
+        },
+        "commonjs": {
+          "description": "Name of the exposed commonjs export in the UMD",
+          "type": "string"
+        },
+        "root": {
+          "description": "Name of the property exposed globally by a UMD library",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/definitions/ArrayOfStringValues"
+            }
+          ]
+        }
+      }
+    },
+    "ModuleOptions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "defaultRules": {
+          "description": "An array of rules applied by default for modules.",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleSetRules"
+            }
+          ]
+        },
+        "exprContextCritical": {
+          "description": "Enable warnings for full dynamic dependencies",
+          "type": "boolean"
+        },
+        "exprContextRecursive": {
+          "description": "Enable recursive directory lookup for full dynamic dependencies",
+          "type": "boolean"
+        },
+        "exprContextRegExp": {
+          "description": "Sets the default regular expression for full dynamic dependencies",
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "instanceof": "RegExp",
+              "tsType": "RegExp"
+            }
+          ]
+        },
+        "exprContextRequest": {
+          "description": "Set the default request for full dynamic dependencies",
+          "type": "string"
+        },
+        "noParse": {
+          "description": "Don't parse files matching. It's matched against the full resolved request.",
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "description": "A regular expression, when matched the module is not parsed",
+                "instanceof": "RegExp",
+                "tsType": "RegExp"
+              },
+              "minItems": 1
+            },
+            {
+              "instanceof": "RegExp",
+              "tsType": "RegExp"
+            },
+            {
+              "instanceof": "Function",
+              "tsType": "Function"
+            },
+            {
+              "type": "array",
+              "items": {
+                "description": "An absolute path, when the module starts with this path it is not parsed",
+                "type": "string",
+                "absolutePath": true
+              },
+              "minItems": 1
+            },
+            {
+              "type": "string",
+              "absolutePath": true
+            }
+          ]
+        },
+        "rules": {
+          "description": "An array of rules applied for modules.",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleSetRules"
+            }
+          ]
+        },
+        "strictExportPresence": {
+          "description": "Emit errors instead of warnings when imported names don't exist in imported module",
+          "type": "boolean"
+        },
+        "strictThisContextOnImports": {
+          "description": "Handle the this context correctly according to the spec for namespace objects",
+          "type": "boolean"
+        },
+        "unknownContextCritical": {
+          "description": "Enable warnings when using the require function in a not statically analyse-able way",
+          "type": "boolean"
+        },
+        "unknownContextRecursive": {
+          "description": "Enable recursive directory lookup when using the require function in a not statically analyse-able way",
+          "type": "boolean"
+        },
+        "unknownContextRegExp": {
+          "description": "Sets the regular expression when using the require function in a not statically analyse-able way",
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "instanceof": "RegExp",
+              "tsType": "RegExp"
+            }
+          ]
+        },
+        "unknownContextRequest": {
+          "description": "Sets the request when using the require function in a not statically analyse-able way",
+          "type": "string"
+        },
+        "unsafeCache": {
+          "description": "Cache the resolving of module requests",
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "instanceof": "Function",
+              "tsType": "Function"
+            }
+          ]
+        },
+        "wrappedContextCritical": {
+          "description": "Enable warnings for partial dynamic dependencies",
+          "type": "boolean"
+        },
+        "wrappedContextRecursive": {
+          "description": "Enable recursive directory lookup for partial dynamic dependencies",
+          "type": "boolean"
+        },
+        "wrappedContextRegExp": {
+          "description": "Set the inner regular expression for partial dynamic dependencies",
+          "instanceof": "RegExp",
+          "tsType": "RegExp"
+        }
+      }
+    },
+    "NodeOptions": {
+      "type": "object",
+      "additionalProperties": {
+        "description": "Include a polyfill for the node.js module",
+        "enum": [false, true, "mock", "empty"]
+      },
+      "properties": {
+        "Buffer": {
+          "description": "Include a polyfill for the 'Buffer' variable",
+          "enum": [false, true, "mock"]
+        },
+        "__dirname": {
+          "description": "Include a polyfill for the '__dirname' variable",
+          "enum": [false, true, "mock"]
+        },
+        "__filename": {
+          "description": "Include a polyfill for the '__filename' variable",
+          "enum": [false, true, "mock"]
+        },
+        "console": {
+          "description": "Include a polyfill for the 'console' variable",
+          "enum": [false, true, "mock"]
+        },
+        "global": {
+          "description": "Include a polyfill for the 'global' variable",
+          "type": "boolean"
+        },
+        "process": {
+          "description": "Include a polyfill for the 'process' variable",
+          "enum": [false, true, "mock"]
+        }
+      }
+    },
+    "NonEmptyArrayOfUniqueStringValues": {
+      "type": "array",
+      "items": {
+        "description": "A non-empty string",
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "OptimizationOptions": {
+      "description": "Enables/Disables integrated optimizations",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "checkWasmTypes": {
+          "description": "Check for incompatible wasm types when importing/exporting from/to ESM",
+          "type": "boolean"
+        },
+        "chunkIds": {
+          "description": "Define the algorithm to choose chunk ids (named: readable ids for better debugging, size: numeric ids focused on minimal initial download size, total-size: numeric ids focused on minimal total download size, false: no algorithm used, as custom one can be provided via plugin)",
+          "enum": ["natural", "named", "size", "total-size", false]
+        },
+        "concatenateModules": {
+          "description": "Concatenate modules when possible to generate less modules, more efficient code and enable more optimizations by the minimizer",
+          "type": "boolean"
+        },
+        "flagIncludedChunks": {
+          "description": "Also flag chunks as loaded which contain a subset of the modules",
+          "type": "boolean"
+        },
+        "hashedModuleIds": {
+          "description": "Use hashed module id instead module identifiers for better long term caching (deprecated, used moduleIds: hashed instead)",
+          "type": "boolean"
+        },
+        "mangleWasmImports": {
+          "description": "Reduce size of WASM by changing imports to shorter strings.",
+          "type": "boolean"
+        },
+        "mergeDuplicateChunks": {
+          "description": "Merge chunks which contain the same modules",
+          "type": "boolean"
+        },
+        "minimize": {
+          "description": "Enable minimizing the output. Uses optimization.minimizer.",
+          "type": "boolean"
+        },
+        "minimizer": {
+          "description": "Minimizer(s) to use for minimizing the output",
+          "type": "array",
+          "items": {
+            "description": "Plugin of type object or instanceof Function",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/WebpackPluginInstance"
+              },
+              {
+                "$ref": "#/definitions/WebpackPluginFunction"
+              }
+            ]
+          }
+        },
+        "moduleIds": {
+          "description": "Define the algorithm to choose module ids (natural: numeric ids in order of usage, named: readable ids for better debugging, hashed: short hashes as ids for better long term caching, size: numeric ids focused on minimal initial download size, total-size: numeric ids focused on minimal total download size, false: no algorithm used, as custom one can be provided via plugin)",
+          "enum": ["natural", "named", "hashed", "size", "total-size", false]
+        },
+        "namedChunks": {
+          "description": "Use readable chunk identifiers for better debugging (deprecated, used chunkIds: named instead)",
+          "type": "boolean"
+        },
+        "namedModules": {
+          "description": "Use readable module identifiers for better debugging (deprecated, used moduleIds: named instead)",
+          "type": "boolean"
+        },
+        "noEmitOnErrors": {
+          "description": "Avoid emitting assets when errors occur",
+          "type": "boolean"
+        },
+        "nodeEnv": {
+          "description": "Set process.env.NODE_ENV to a specific value",
+          "anyOf": [
+            {
+              "enum": [false]
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "occurrenceOrder": {
+          "description": "Figure out a order of modules which results in the smallest initial bundle",
+          "type": "boolean"
+        },
+        "portableRecords": {
+          "description": "Generate records with relative paths to be able to move the context folder",
+          "type": "boolean"
+        },
+        "providedExports": {
+          "description": "Figure out which exports are provided by modules to generate more efficient code",
+          "type": "boolean"
+        },
+        "removeAvailableModules": {
+          "description": "Removes modules from chunks when these modules are already included in all parents",
+          "type": "boolean"
+        },
+        "removeEmptyChunks": {
+          "description": "Remove chunks which are empty",
+          "type": "boolean"
+        },
+        "runtimeChunk": {
+          "description": "Create an additional chunk which contains only the webpack runtime and chunk hash maps",
+          "oneOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "enum": ["single", "multiple"]
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "description": "The name or name factory for the runtime chunks",
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "instanceof": "Function",
+                      "tsType": "Function"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "sideEffects": {
+          "description": "Skip over modules which are flagged to contain no side effects when exports are not used",
+          "type": "boolean"
+        },
+        "splitChunks": {
+          "description": "Optimize duplication and caching by splitting chunks by shared modules and cache group",
+          "oneOf": [
+            {
+              "enum": [false]
+            },
+            {
+              "$ref": "#/definitions/OptimizationSplitChunksOptions"
+            }
+          ]
+        },
+        "usedExports": {
+          "description": "Figure out which exports are used by modules to mangle export names, omit unused exports and generate more efficient code",
+          "type": "boolean"
+        }
+      }
+    },
+    "OptimizationSplitChunksOptions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "automaticNameDelimiter": {
+          "description": "Sets the name delimiter for created chunks",
+          "type": "string",
+          "minLength": 1
+        },
+        "cacheGroups": {
+          "description": "Assign modules to a cache group (modules from different cache groups are tried to keep in separate chunks)",
+          "type": "object",
+          "additionalProperties": {
+            "description": "Configuration for a cache group",
+            "anyOf": [
+              {
+                "enum": [false]
+              },
+              {
+                "instanceof": "Function",
+                "tsType": "Function"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "instanceof": "RegExp",
+                "tsType": "RegExp"
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "automaticNameDelimiter": {
+                    "description": "Sets the name delimiter for created chunks",
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "automaticNamePrefix": {
+                    "description": "Sets the name prefix for created chunks",
+                    "type": "string"
+                  },
+                  "chunks": {
+                    "description": "Select chunks for determining cache group content (defaults to \"initial\", \"initial\" and \"all\" requires adding these chunks to the HTML)",
+                    "oneOf": [
+                      {
+                        "enum": ["initial", "async", "all"]
+                      },
+                      {
+                        "instanceof": "Function",
+                        "tsType": "Function"
+                      }
+                    ]
+                  },
+                  "enforce": {
+                    "description": "Ignore minimum size, minimum chunks and maximum requests and always create chunks for this cache group",
+                    "type": "boolean"
+                  },
+                  "filename": {
+                    "description": "Sets the template for the filename for created chunks (Only works for initial chunks)",
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "maxAsyncRequests": {
+                    "description": "Maximum number of requests which are accepted for on-demand loading",
+                    "type": "number",
+                    "minimum": 1
+                  },
+                  "maxInitialRequests": {
+                    "description": "Maximum number of initial chunks which are accepted for an entry point",
+                    "type": "number",
+                    "minimum": 1
+                  },
+                  "maxSize": {
+                    "description": "Maximal size hint for the created chunks",
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "minChunks": {
+                    "description": "Minimum number of times a module has to be duplicated until it's considered for splitting",
+                    "type": "number",
+                    "minimum": 1
+                  },
+                  "minSize": {
+                    "description": "Minimal size for the created chunk",
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "name": {
+                    "description": "Give chunks for this cache group a name (chunks with equal name are merged)",
+                    "oneOf": [
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "instanceof": "Function",
+                        "tsType": "Function"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "priority": {
+                    "description": "Priority of this cache group",
+                    "type": "number"
+                  },
+                  "reuseExistingChunk": {
+                    "description": "Try to reuse existing chunk (with name) when it has matching modules",
+                    "type": "boolean"
+                  },
+                  "test": {
+                    "description": "Assign modules to a cache group",
+                    "oneOf": [
+                      {
+                        "instanceof": "Function",
+                        "tsType": "Function"
+                      },
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "instanceof": "RegExp",
+                        "tsType": "RegExp"
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "chunks": {
+          "description": "Select chunks for determining shared modules (defaults to \"async\", \"initial\" and \"all\" requires adding these chunks to the HTML)",
+          "oneOf": [
+            {
+              "enum": ["initial", "async", "all"]
+            },
+            {
+              "instanceof": "Function",
+              "tsType": "Function"
+            }
+          ]
+        },
+        "fallbackCacheGroup": {
+          "description": "Options for modules not selected by any other cache group",
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "automaticNameDelimiter": {
+              "description": "Sets the name delimiter for created chunks",
+              "type": "string",
+              "minLength": 1
+            },
+            "maxSize": {
+              "description": "Maximal size hint for the created chunks",
+              "type": "number",
+              "minimum": 0
+            },
+            "minSize": {
+              "description": "Minimal size for the created chunk",
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "filename": {
+          "description": "Sets the template for the filename for created chunks (Only works for initial chunks)",
+          "type": "string",
+          "minLength": 1
+        },
+        "hidePathInfo": {
+          "description": "Prevents exposing path info when creating names for parts splitted by maxSize",
+          "type": "boolean"
+        },
+        "maxAsyncRequests": {
+          "description": "Maximum number of requests which are accepted for on-demand loading",
+          "type": "number",
+          "minimum": 1
+        },
+        "maxInitialRequests": {
+          "description": "Maximum number of initial chunks which are accepted for an entry point",
+          "type": "number",
+          "minimum": 1
+        },
+        "maxSize": {
+          "description": "Maximal size hint for the created chunks",
+          "type": "number",
+          "minimum": 0
+        },
+        "minChunks": {
+          "description": "Minimum number of times a module has to be duplicated until it's considered for splitting",
+          "type": "number",
+          "minimum": 1
+        },
+        "minSize": {
+          "description": "Minimal size for the created chunks",
+          "type": "number",
+          "minimum": 0
+        },
+        "name": {
+          "description": "Give chunks created a name (chunks with equal name are merged)",
+          "oneOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "instanceof": "Function",
+              "tsType": "Function"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    "OutputOptions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "auxiliaryComment": {
+          "description": "Add a comment in the UMD wrapper.",
+          "anyOf": [
+            {
+              "description": "Append the same comment above each import style.",
+              "type": "string"
+            },
+            {
+              "description": "Set explicit comments for `commonjs`, `commonjs2`, `amd`, and `root`.",
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "amd": {
+                  "description": "Set comment for `amd` section in UMD",
+                  "type": "string"
+                },
+                "commonjs": {
+                  "description": "Set comment for `commonjs` (exports) section in UMD",
+                  "type": "string"
+                },
+                "commonjs2": {
+                  "description": "Set comment for `commonjs2` (module.exports) section in UMD",
+                  "type": "string"
+                },
+                "root": {
+                  "description": "Set comment for `root` (global variable) section in UMD",
+                  "type": "string"
+                }
+              }
+            }
+          ]
+        },
+        "chunkCallbackName": {
+          "description": "The callback function name used by webpack for loading of chunks in WebWorkers.",
+          "type": "string"
+        },
+        "chunkFilename": {
+          "description": "The filename of non-entry chunks as relative path inside the `output.path` directory.",
+          "type": "string",
+          "absolutePath": false
+        },
+        "chunkLoadTimeout": {
+          "description": "Number of milliseconds before chunk request expires",
+          "type": "number"
+        },
+        "crossOriginLoading": {
+          "description": "This option enables cross-origin loading of chunks.",
+          "enum": [false, "anonymous", "use-credentials"]
+        },
+        "devtoolFallbackModuleFilenameTemplate": {
+          "description": "Similar to `output.devtoolModuleFilenameTemplate`, but used in the case of duplicate module identifiers.",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "instanceof": "Function",
+              "tsType": "Function"
+            }
+          ]
+        },
+        "devtoolLineToLine": {
+          "description": "Enable line to line mapped mode for all/specified modules. Line to line mapped mode uses a simple SourceMap where each line of the generated source is mapped to the same line of the original source. It’s a performance optimization. Only use it if your performance need to be better and you are sure that input lines match which generated lines.",
+          "anyOf": [
+            {
+              "description": "`true` enables it for all modules (not recommended)",
+              "type": "boolean"
+            },
+            {
+              "description": "An object similar to `module.loaders` enables it for specific files.",
+              "type": "object"
+            }
+          ]
+        },
+        "devtoolModuleFilenameTemplate": {
+          "description": "Filename template string of function for the sources array in a generated SourceMap.",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "instanceof": "Function",
+              "tsType": "Function"
+            }
+          ]
+        },
+        "devtoolNamespace": {
+          "description": "Module namespace to use when interpolating filename template string for the sources array in a generated SourceMap. Defaults to `output.library` if not set. It's useful for avoiding runtime collisions in sourcemaps from multiple webpack projects built as libraries.",
+          "type": "string"
+        },
+        "filename": {
+          "description": "Specifies the name of each output file on disk. You must **not** specify an absolute path here! The `output.path` option determines the location on disk the files are written to, filename is used solely for naming the individual files.",
+          "anyOf": [
+            {
+              "type": "string",
+              "absolutePath": false
+            },
+            {
+              "instanceof": "Function",
+              "tsType": "Function"
+            }
+          ]
+        },
+        "globalObject": {
+          "description": "An expression which is used to address the global object/scope in runtime code",
+          "type": "string",
+          "minLength": 1
+        },
+        "hashDigest": {
+          "description": "Digest type used for the hash",
+          "type": "string"
+        },
+        "hashDigestLength": {
+          "description": "Number of chars which are used for the hash",
+          "type": "number",
+          "minimum": 1
+        },
+        "hashFunction": {
+          "description": "Algorithm used for generation the hash (see node.js crypto package)",
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "instanceof": "Function",
+              "tsType": "(new () => import('../lib/util/createHash').Hash)"
+            }
+          ]
+        },
+        "hashSalt": {
+          "description": "Any string which is added to the hash to salt it",
+          "type": "string",
+          "minLength": 1
+        },
+        "hotUpdateChunkFilename": {
+          "description": "The filename of the Hot Update Chunks. They are inside the output.path directory.",
+          "anyOf": [
+            {
+              "type": "string",
+              "absolutePath": false
+            },
+            {
+              "instanceof": "Function",
+              "tsType": "Function"
+            }
+          ]
+        },
+        "hotUpdateFunction": {
+          "description": "The JSONP function used by webpack for async loading of hot update chunks.",
+          "type": "string"
+        },
+        "hotUpdateMainFilename": {
+          "description": "The filename of the Hot Update Main File. It is inside the `output.path` directory.",
+          "anyOf": [
+            {
+              "type": "string",
+              "absolutePath": false
+            },
+            {
+              "instanceof": "Function",
+              "tsType": "Function"
+            }
+          ]
+        },
+        "jsonpFunction": {
+          "description": "The JSONP function used by webpack for async loading of chunks.",
+          "type": "string"
+        },
+        "jsonpScriptType": {
+          "description": "This option enables loading async chunks via a custom script type, such as script type=\"module\"",
+          "enum": [false, "text/javascript", "module"]
+        },
+        "library": {
+          "description": "If set, export the bundle as library. `output.library` is the name.",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "description": "A part of the library name",
+                "type": "string"
+              }
+            },
+            {
+              "$ref": "#/definitions/LibraryCustomUmdObject"
+            }
+          ]
+        },
+        "libraryExport": {
+          "description": "Specify which export should be exposed as library",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/definitions/ArrayOfStringValues"
+            }
+          ]
+        },
+        "libraryTarget": {
+          "description": "Type of library",
+          "enum": [
+            "var",
+            "assign",
+            "this",
+            "window",
+            "self",
+            "global",
+            "commonjs",
+            "commonjs2",
+            "commonjs-module",
+            "amd",
+            "amd-require",
+            "umd",
+            "umd2",
+            "jsonp"
+          ]
+        },
+        "path": {
+          "description": "The output directory as **absolute path** (required).",
+          "type": "string",
+          "absolutePath": true
+        },
+        "pathinfo": {
+          "description": "Include comments with information about the modules.",
+          "type": "boolean"
+        },
+        "publicPath": {
+          "description": "The `publicPath` specifies the public URL address of the output files when referenced in a browser.",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "instanceof": "Function",
+              "tsType": "Function"
+            }
+          ]
+        },
+        "sourceMapFilename": {
+          "description": "The filename of the SourceMaps for the JavaScript files. They are inside the `output.path` directory.",
+          "type": "string",
+          "absolutePath": false
+        },
+        "sourcePrefix": {
+          "description": "Prefixes every line of the source in the bundle with this string.",
+          "type": "string"
+        },
+        "strictModuleExceptionHandling": {
+          "description": "Handles exceptions in module loading correctly at a performance cost.",
+          "type": "boolean"
+        },
+        "umdNamedDefine": {
+          "description": "If `output.libraryTarget` is set to umd and `output.library` is set, setting this to true will name the AMD module.",
+          "type": "boolean"
+        },
+        "webassemblyModuleFilename": {
+          "description": "The filename of WebAssembly modules as relative path inside the `output.path` directory.",
+          "type": "string",
+          "absolutePath": false
+        }
+      }
+    },
+    "PerformanceOptions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "assetFilter": {
+          "description": "Filter function to select assets that are checked",
+          "instanceof": "Function",
+          "tsType": "Function"
+        },
+        "hints": {
+          "description": "Sets the format of the hints: warnings, errors or nothing at all",
+          "enum": [false, "warning", "error"]
+        },
+        "maxAssetSize": {
+          "description": "Filesize limit (in bytes) when exceeded, that webpack will provide performance hints",
+          "type": "number"
+        },
+        "maxEntrypointSize": {
+          "description": "Total size of an entry point (in bytes)",
+          "type": "number"
+        }
+      }
+    },
+    "ResolveOptions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "alias": {
+          "description": "Redirect module requests",
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": {
+                "description": "New request",
+                "type": "string"
+              }
+            },
+            {
+              "type": "array",
+              "items": {
+                "description": "Alias configuration",
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "alias": {
+                    "description": "New request",
+                    "type": "string"
+                  },
+                  "name": {
+                    "description": "Request to be redirected",
+                    "type": "string"
+                  },
+                  "onlyModule": {
+                    "description": "Redirect only exact matching request",
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "aliasFields": {
+          "description": "Fields in the description file (package.json) which are used to redirect requests inside the module",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ArrayOfStringOrStringArrayValues"
+            }
+          ]
+        },
+        "cachePredicate": {
+          "description": "Predicate function to decide which requests should be cached",
+          "instanceof": "Function",
+          "tsType": "Function"
+        },
+        "cacheWithContext": {
+          "description": "Include the context information in the cache identifier when caching",
+          "type": "boolean"
+        },
+        "concord": {
+          "description": "Enable concord resolving extras",
+          "type": "boolean"
+        },
+        "descriptionFiles": {
+          "description": "Filenames used to find a description file",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ArrayOfStringValues"
+            }
+          ]
+        },
+        "enforceExtension": {
+          "description": "Enforce using one of the extensions from the extensions option",
+          "type": "boolean"
+        },
+        "enforceModuleExtension": {
+          "description": "Enforce using one of the module extensions from the moduleExtensions option",
+          "type": "boolean"
+        },
+        "extensions": {
+          "description": "Extensions added to the request when trying to find the file",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ArrayOfStringValues"
+            }
+          ]
+        },
+        "fileSystem": {
+          "description": "Filesystem for the resolver"
+        },
+        "mainFields": {
+          "description": "Field names from the description file (package.json) which are used to find the default entry point",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ArrayOfStringOrStringArrayValues"
+            }
+          ]
+        },
+        "mainFiles": {
+          "description": "Filenames used to find the default entry point if there is no description file or main field",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ArrayOfStringValues"
+            }
+          ]
+        },
+        "moduleExtensions": {
+          "description": "Extensions added to the module request when trying to find the module",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ArrayOfStringValues"
+            }
+          ]
+        },
+        "modules": {
+          "description": "Folder names or directory paths where to find modules",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ArrayOfStringValues"
+            }
+          ]
+        },
+        "plugins": {
+          "description": "Plugins for the resolver",
+          "type": "array",
+          "items": {
+            "description": "Plugin of type object or instanceof Function",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/WebpackPluginInstance"
+              },
+              {
+                "$ref": "#/definitions/WebpackPluginFunction"
+              }
+            ]
+          }
+        },
+        "resolver": {
+          "description": "Custom resolver"
+        },
+        "symlinks": {
+          "description": "Enable resolving symlinks to the original location",
+          "type": "boolean"
+        },
+        "unsafeCache": {
+          "description": "Enable caching of successfully resolved requests",
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "object",
+              "additionalProperties": true
+            }
+          ]
+        },
+        "useSyncFileSystemCalls": {
+          "description": "Use synchronous filesystem calls for the resolver",
+          "type": "boolean"
+        }
+      }
+    },
+    "RuleSetCondition": {
+      "anyOf": [
+        {
+          "instanceof": "RegExp",
+          "tsType": "RegExp"
+        },
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "instanceof": "Function",
+          "tsType": "((value: string) => boolean)"
+        },
+        {
+          "$ref": "#/definitions/RuleSetConditions"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "and": {
+              "description": "Logical AND",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/RuleSetConditions"
+                }
+              ]
+            },
+            "exclude": {
+              "description": "Exclude all modules matching any of these conditions",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/RuleSetConditionOrConditions"
+                }
+              ]
+            },
+            "include": {
+              "description": "Exclude all modules matching not any of these conditions",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/RuleSetConditionOrConditions"
+                }
+              ]
+            },
+            "not": {
+              "description": "Logical NOT",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/RuleSetConditions"
+                }
+              ]
+            },
+            "or": {
+              "description": "Logical OR",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/RuleSetConditions"
+                }
+              ]
+            },
+            "test": {
+              "description": "Exclude all modules matching any of these conditions",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/RuleSetConditionOrConditions"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "RuleSetConditionAbsolute": {
+      "anyOf": [
+        {
+          "instanceof": "RegExp",
+          "tsType": "RegExp"
+        },
+        {
+          "type": "string",
+          "absolutePath": true
+        },
+        {
+          "instanceof": "Function",
+          "tsType": "((value: string) => boolean)"
+        },
+        {
+          "$ref": "#/definitions/RuleSetConditionsAbsolute"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "and": {
+              "description": "Logical AND",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/RuleSetConditionsAbsolute"
+                }
+              ]
+            },
+            "exclude": {
+              "description": "Exclude all modules matching any of these conditions",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/RuleSetConditionOrConditionsAbsolute"
+                }
+              ]
+            },
+            "include": {
+              "description": "Exclude all modules matching not any of these conditions",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/RuleSetConditionOrConditionsAbsolute"
+                }
+              ]
+            },
+            "not": {
+              "description": "Logical NOT",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/RuleSetConditionsAbsolute"
+                }
+              ]
+            },
+            "or": {
+              "description": "Logical OR",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/RuleSetConditionsAbsolute"
+                }
+              ]
+            },
+            "test": {
+              "description": "Exclude all modules matching any of these conditions",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/RuleSetConditionOrConditionsAbsolute"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "RuleSetConditionOrConditions": {
+      "description": "One or multiple rule conditions",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/RuleSetCondition"
+        },
+        {
+          "$ref": "#/definitions/RuleSetConditions"
+        }
+      ]
+    },
+    "RuleSetConditionOrConditionsAbsolute": {
+      "description": "One or multiple rule conditions",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/RuleSetConditionAbsolute"
+        },
+        {
+          "$ref": "#/definitions/RuleSetConditionsAbsolute"
+        }
+      ]
+    },
+    "RuleSetConditions": {
+      "type": "array",
+      "items": {
+        "description": "A rule condition",
+        "anyOf": [
+          {
+            "$ref": "#/definitions/RuleSetCondition"
+          }
+        ]
+      },
+      "tsType": "RuleSetConditionsRecursive"
+    },
+    "RuleSetConditionsAbsolute": {
+      "type": "array",
+      "items": {
+        "description": "A rule condition",
+        "anyOf": [
+          {
+            "$ref": "#/definitions/RuleSetConditionAbsolute"
+          }
+        ]
+      },
+      "tsType": "RuleSetConditionsAbsoluteRecursive"
+    },
+    "RuleSetLoader": {
+      "type": "string",
+      "minLength": 1
+    },
+    "RuleSetQuery": {
+      "anyOf": [
+        {
+          "type": "object"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "RuleSetRule": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "compiler": {
+          "description": "Match the child compiler name",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleSetConditionOrConditions"
+            }
+          ]
+        },
+        "enforce": {
+          "description": "Enforce this rule as pre or post step",
+          "enum": ["pre", "post"]
+        },
+        "exclude": {
+          "description": "Shortcut for resource.exclude",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleSetConditionOrConditionsAbsolute"
+            }
+          ]
+        },
+        "include": {
+          "description": "Shortcut for resource.include",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleSetConditionOrConditionsAbsolute"
+            }
+          ]
+        },
+        "issuer": {
+          "description": "Match the issuer of the module (The module pointing to this module)",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleSetConditionOrConditionsAbsolute"
+            }
+          ]
+        },
+        "loader": {
+          "description": "Shortcut for use.loader",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleSetLoader"
+            },
+            {
+              "$ref": "#/definitions/RuleSetUse"
+            }
+          ]
+        },
+        "loaders": {
+          "description": "Shortcut for use.loader",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleSetUse"
+            }
+          ]
+        },
+        "oneOf": {
+          "description": "Only execute the first matching rule in this array",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleSetRules"
+            }
+          ]
+        },
+        "options": {
+          "description": "Shortcut for use.options",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleSetQuery"
+            }
+          ]
+        },
+        "parser": {
+          "description": "Options for parsing",
+          "type": "object",
+          "additionalProperties": true
+        },
+        "query": {
+          "description": "Shortcut for use.query",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleSetQuery"
+            }
+          ]
+        },
+        "resolve": {
+          "description": "Options for the resolver",
+          "type": "object",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ResolveOptions"
+            }
+          ]
+        },
+        "resource": {
+          "description": "Match the resource path of the module",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleSetConditionOrConditionsAbsolute"
+            }
+          ]
+        },
+        "resourceQuery": {
+          "description": "Match the resource query of the module",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleSetConditionOrConditions"
+            }
+          ]
+        },
+        "rules": {
+          "description": "Match and execute these rules when this rule is matched",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleSetRules"
+            }
+          ]
+        },
+        "sideEffects": {
+          "description": "Flags a module as with or without side effects",
+          "type": "boolean"
+        },
+        "test": {
+          "description": "Shortcut for resource.test",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleSetConditionOrConditionsAbsolute"
+            }
+          ]
+        },
+        "type": {
+          "description": "Module type to use for the module",
+          "enum": [
+            "javascript/auto",
+            "javascript/dynamic",
+            "javascript/esm",
+            "json",
+            "webassembly/experimental"
+          ]
+        },
+        "use": {
+          "description": "Modifiers applied to the module when rule is matched",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleSetUse"
+            }
+          ]
+        }
+      }
+    },
+    "RuleSetRules": {
+      "type": "array",
+      "items": {
+        "description": "A rule",
+        "anyOf": [
+          {
+            "$ref": "#/definitions/RuleSetRule"
+          }
+        ]
+      }
+    },
+    "RuleSetUse": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/RuleSetUseItem"
+        },
+        {
+          "instanceof": "Function",
+          "tsType": "Function"
+        },
+        {
+          "type": "array",
+          "items": {
+            "description": "An use item",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/RuleSetUseItem"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "RuleSetUseItem": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/RuleSetLoader"
+        },
+        {
+          "instanceof": "Function",
+          "tsType": "Function"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "ident": {
+              "description": "Unique loader identifier",
+              "type": "string"
+            },
+            "loader": {
+              "description": "Loader name",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/RuleSetLoader"
+                }
+              ]
+            },
+            "options": {
+              "description": "Loader options",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/RuleSetQuery"
+                }
+              ]
+            },
+            "query": {
+              "description": "Loader query",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/RuleSetQuery"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "StatsOptions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "all": {
+          "description": "fallback value for stats options when an option is not defined (has precedence over local webpack defaults)",
+          "type": "boolean"
+        },
+        "assets": {
+          "description": "add assets information",
+          "type": "boolean"
+        },
+        "assetsSort": {
+          "description": "sort the assets by that field",
+          "type": "string"
+        },
+        "builtAt": {
+          "description": "add built at time information",
+          "type": "boolean"
+        },
+        "cached": {
+          "description": "add also information about cached (not built) modules",
+          "type": "boolean"
+        },
+        "cachedAssets": {
+          "description": "Show cached assets (setting this to `false` only shows emitted files)",
+          "type": "boolean"
+        },
+        "children": {
+          "description": "add children information",
+          "type": "boolean"
+        },
+        "chunkGroups": {
+          "description": "Display all chunk groups with the corresponding bundles",
+          "type": "boolean"
+        },
+        "chunkModules": {
+          "description": "add built modules information to chunk information",
+          "type": "boolean"
+        },
+        "chunkOrigins": {
+          "description": "add the origins of chunks and chunk merging info",
+          "type": "boolean"
+        },
+        "chunks": {
+          "description": "add chunk information",
+          "type": "boolean"
+        },
+        "chunksSort": {
+          "description": "sort the chunks by that field",
+          "type": "string"
+        },
+        "colors": {
+          "description": "Enables/Disables colorful output",
+          "oneOf": [
+            {
+              "description": "`webpack --colors` equivalent",
+              "type": "boolean"
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "bold": {
+                  "description": "Custom color for bold text",
+                  "type": "string"
+                },
+                "cyan": {
+                  "description": "Custom color for cyan text",
+                  "type": "string"
+                },
+                "green": {
+                  "description": "Custom color for green text",
+                  "type": "string"
+                },
+                "magenta": {
+                  "description": "Custom color for magenta text",
+                  "type": "string"
+                },
+                "red": {
+                  "description": "Custom color for red text",
+                  "type": "string"
+                },
+                "yellow": {
+                  "description": "Custom color for yellow text",
+                  "type": "string"
+                }
+              }
+            }
+          ]
+        },
+        "context": {
+          "description": "context directory for request shortening",
+          "type": "string",
+          "absolutePath": true
+        },
+        "depth": {
+          "description": "add module depth in module graph",
+          "type": "boolean"
+        },
+        "entrypoints": {
+          "description": "Display the entry points with the corresponding bundles",
+          "type": "boolean"
+        },
+        "env": {
+          "description": "add --env information",
+          "type": "boolean"
+        },
+        "errorDetails": {
+          "description": "add details to errors (like resolving log)",
+          "type": "boolean"
+        },
+        "errors": {
+          "description": "add errors",
+          "type": "boolean"
+        },
+        "exclude": {
+          "description": "Please use excludeModules instead.",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/FilterTypes"
+            },
+            {
+              "type": "boolean"
+            }
+          ]
+        },
+        "excludeAssets": {
+          "description": "Suppress assets that match the specified filters. Filters can be Strings, RegExps or Functions",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/FilterTypes"
+            }
+          ]
+        },
+        "excludeModules": {
+          "description": "Suppress modules that match the specified filters. Filters can be Strings, RegExps, Booleans or Functions",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/FilterTypes"
+            },
+            {
+              "type": "boolean"
+            }
+          ]
+        },
+        "hash": {
+          "description": "add the hash of the compilation",
+          "type": "boolean"
+        },
+        "maxModules": {
+          "description": "Set the maximum number of modules to be shown",
+          "type": "number"
+        },
+        "moduleAssets": {
+          "description": "add information about assets inside modules",
+          "type": "boolean"
+        },
+        "moduleTrace": {
+          "description": "add dependencies and origin of warnings/errors",
+          "type": "boolean"
+        },
+        "modules": {
+          "description": "add built modules information",
+          "type": "boolean"
+        },
+        "modulesSort": {
+          "description": "sort the modules by that field",
+          "type": "string"
+        },
+        "nestedModules": {
+          "description": "add information about modules nested in other modules (like with module concatenation)",
+          "type": "boolean"
+        },
+        "optimizationBailout": {
+          "description": "show reasons why optimization bailed out for modules",
+          "type": "boolean"
+        },
+        "outputPath": {
+          "description": "Add output path information",
+          "type": "boolean"
+        },
+        "performance": {
+          "description": "add performance hint flags",
+          "type": "boolean"
+        },
+        "providedExports": {
+          "description": "show exports provided by modules",
+          "type": "boolean"
+        },
+        "publicPath": {
+          "description": "Add public path information",
+          "type": "boolean"
+        },
+        "reasons": {
+          "description": "add information about the reasons why modules are included",
+          "type": "boolean"
+        },
+        "source": {
+          "description": "add the source code of modules",
+          "type": "boolean"
+        },
+        "timings": {
+          "description": "add timing information",
+          "type": "boolean"
+        },
+        "usedExports": {
+          "description": "show exports used by modules",
+          "type": "boolean"
+        },
+        "version": {
+          "description": "add webpack version information",
+          "type": "boolean"
+        },
+        "warnings": {
+          "description": "add warnings",
+          "type": "boolean"
+        },
+        "warningsFilter": {
+          "description": "Suppress warnings that match the specified filters. Filters can be Strings, RegExps or Functions",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/FilterTypes"
+            }
+          ]
+        }
+      }
+    },
+    "WebpackPluginFunction": {
+      "description": "Function acting as plugin",
+      "instanceof": "Function",
+      "tsType": "(this: import('../lib/Compiler'), compiler: import('../lib/Compiler')) => void"
+    },
+    "WebpackPluginInstance": {
+      "description": "Plugin instance",
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "apply": {
+          "description": "The run point of the plugin, required method.",
+          "instanceof": "Function",
+          "tsType": "(compiler: import('../lib/Compiler')) => void"
+        }
+      },
+      "required": ["apply"]
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "amd": {
+      "description": "Set the value of `require.amd` and `define.amd`."
+    },
+    "bail": {
+      "description": "Report the first error as a hard error instead of tolerating it.",
+      "type": "boolean"
+    },
+    "cache": {
+      "description": "Cache generated modules and chunks to improve performance for multiple incremental builds.",
+      "anyOf": [
+        {
+          "description": "You can pass `false` to disable it.",
+          "type": "boolean"
+        },
+        {
+          "description": "You can pass an object to enable it and let webpack use the passed object as cache. This way you can share the cache object between multiple compiler calls.",
+          "type": "object"
+        }
+      ]
+    },
+    "context": {
+      "description": "The base directory (absolute path!) for resolving the `entry` option. If `output.pathinfo` is set, the included pathinfo is shortened to this directory.",
+      "type": "string",
+      "absolutePath": true
+    },
+    "dependencies": {
+      "description": "References to other configurations to depend on.",
+      "type": "array",
+      "items": {
+        "description": "References to another configuration to depend on.",
+        "type": "string"
+      }
+    },
+    "devServer": {
+      "description": "Options for the webpack-dev-server",
+      "type": "object"
+    },
+    "devtool": {
+      "description": "A developer tool to enhance debugging.",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "enum": [false]
+        }
+      ]
+    },
+    "entry": {
+      "description": "The entry point(s) of the compilation.",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Entry"
+        }
+      ]
+    },
+    "externals": {
+      "description": "Specify dependencies that shouldn't be resolved by webpack, but should become dependencies of the resulting bundle. The kind of the dependency depends on `output.libraryTarget`.",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Externals"
+        }
+      ]
+    },
+    "loader": {
+      "description": "Custom values available in the loader context.",
+      "type": "object"
+    },
+    "mode": {
+      "description": "Enable production optimizations or development hints.",
+      "enum": ["development", "production", "none"]
+    },
+    "module": {
+      "description": "Options affecting the normal modules (`NormalModuleFactory`).",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ModuleOptions"
+        }
+      ]
+    },
+    "name": {
+      "description": "Name of the configuration. Used when loading multiple configurations.",
+      "type": "string"
+    },
+    "node": {
+      "description": "Include polyfills or mocks for various node stuff.",
+      "anyOf": [
+        {
+          "enum": [false]
+        },
+        {
+          "$ref": "#/definitions/NodeOptions"
+        }
+      ]
+    },
+    "optimization": {
+      "description": "Enables/Disables integrated optimizations",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/OptimizationOptions"
+        }
+      ]
+    },
+    "output": {
+      "description": "Options affecting the output of the compilation. `output` options tell webpack how to write the compiled files to disk.",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/OutputOptions"
+        }
+      ]
+    },
+    "parallelism": {
+      "description": "The number of parallel processed modules in the compilation.",
+      "type": "number",
+      "minimum": 1
+    },
+    "performance": {
+      "description": "Configuration for web performance recommendations.",
+      "anyOf": [
+        {
+          "enum": [false]
+        },
+        {
+          "$ref": "#/definitions/PerformanceOptions"
+        }
+      ]
+    },
+    "plugins": {
+      "description": "Add additional plugins to the compiler.",
+      "type": "array",
+      "items": {
+        "description": "Plugin of type object or instanceof Function",
+        "anyOf": [
+          {
+            "$ref": "#/definitions/WebpackPluginInstance"
+          },
+          {
+            "$ref": "#/definitions/WebpackPluginFunction"
+          }
+        ]
+      }
+    },
+    "profile": {
+      "description": "Capture timing information for each module.",
+      "type": "boolean"
+    },
+    "recordsInputPath": {
+      "description": "Store compiler state to a json file.",
+      "type": "string",
+      "absolutePath": true
+    },
+    "recordsOutputPath": {
+      "description": "Load compiler state from a json file.",
+      "type": "string",
+      "absolutePath": true
+    },
+    "recordsPath": {
+      "description": "Store/Load compiler state from/to a json file. This will result in persistent ids of modules and chunks. An absolute path is expected. `recordsPath` is used for `recordsInputPath` and `recordsOutputPath` if they left undefined.",
+      "type": "string",
+      "absolutePath": true
+    },
+    "resolve": {
+      "description": "Options for the resolver",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ResolveOptions"
+        }
+      ]
+    },
+    "resolveLoader": {
+      "description": "Options for the resolver when resolving loaders",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ResolveOptions"
+        }
+      ]
+    },
+    "serve": {
+      "description": "Options for webpack-serve",
+      "type": "object"
+    },
+    "stats": {
+      "description": "Used by the webpack CLI program to pass stats options.",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/StatsOptions"
+        },
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "none",
+            "errors-only",
+            "minimal",
+            "normal",
+            "detailed",
+            "verbose"
+          ]
+        }
+      ]
+    },
+    "target": {
+      "description": "Environment to build for",
+      "anyOf": [
+        {
+          "enum": [
+            "web",
+            "webworker",
+            "node",
+            "async-node",
+            "node-webkit",
+            "electron-main",
+            "electron-renderer"
+          ]
+        },
+        {
+          "instanceof": "Function",
+          "tsType": "((compiler: import('../lib/Compiler')) => void)"
+        }
+      ]
+    },
+    "watch": {
+      "description": "Enter watch mode, which rebuilds on file change.",
+      "type": "boolean"
+    },
+    "watchOptions": {
+      "description": "Options for the watcher",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "aggregateTimeout": {
+          "description": "Delay the rebuilt after the first change. Value is a time in ms.",
+          "type": "number"
+        },
+        "ignored": {
+          "description": "Ignore some files from watching"
+        },
+        "poll": {
+          "description": "Enable polling mode for watching",
+          "anyOf": [
+            {
+              "description": "`true`: use polling.",
+              "type": "boolean"
+            },
+            {
+              "description": "`number`: use polling with specified interval.",
+              "type": "number"
+            }
+          ]
+        },
+        "stdin": {
+          "description": "Stop watching when stdin stream has ended",
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}
