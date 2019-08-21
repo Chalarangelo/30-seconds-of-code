@@ -6,7 +6,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "Accordion.md",
-        "text": "Renders an accordion menu with multiple collapsible content components.\n\n* Define an `AccordionItem` component, pass it to the `Accordion` and remove unnecessary nodes expect for `AccordionItem` by identifying the function's name in `props.children`.\n* Each `AccordionItem` component renders a `<button>` that is used to update the `Accordion` via the `props.handleClick` callback and the content of the component, passed down via `props.children`, while its appearance is determined by `props.isCollapsed` and based on `style`.\n* In the `Accordion` component, use the `React.useState()` hook to initialize the value of the `bindIndex` state variable to `props.defaultIndex`.\n* Use `Array.prototype.map` on the collected nodes to render the individual collapsiple elements.\n* Define `changeItem`, which will be executed when clicking an `AccordionItem`'s `<button>`.\n`changeItem` executes the passed callback, `onItemClick` and updates `bindIndex` based on the clicked element.\n\n",
+        "text": "Renders an accordion menu with multiple collapsible content components.\n\n- Define an `AccordionItem` component, pass it to the `Accordion` and remove unnecessary nodes expect for `AccordionItem` by identifying the function's name in `props.children`.\n- Each `AccordionItem` component renders a `<button>` that is used to update the `Accordion` via the `props.handleClick` callback and the content of the component, passed down via `props.children`, while its appearance is determined by `props.isCollapsed` and based on `style`.\n- In the `Accordion` component, use the `React.useState()` hook to initialize the value of the `bindIndex` state variable to `props.defaultIndex`.\n- Use `Array.prototype.map` on the collected nodes to render the individual collapsiple elements.\n- Define `changeItem`, which will be executed when clicking an `AccordionItem`'s `<button>`.\n  `changeItem` executes the passed callback, `onItemClick` and updates `bindIndex` based on the clicked element.\n\n",
         "codeBlocks": {
           "style": "",
           "code": "function AccordionItem(props) {\r\n  const style = {\r\n    collapsed: {\r\n      display: 'none'\r\n    },\r\n    expanded: {\r\n      display: 'block'\r\n    },\r\n    buttonStyle: {\r\n      display: 'block',\r\n      width: '100%'\r\n    }\r\n  };\r\n\r\n  return (\r\n    <div>\r\n      <button style={style.buttonStyle} onClick={() => props.handleClick()}>\r\n        {props.label}\r\n      </button>\r\n      <div\r\n        className=\"collapse-content\"\r\n        style={props.isCollapsed ? style.collapsed : style.expanded}\r\n        aria-expanded={props.isCollapsed}\r\n      >\r\n        {props.children}\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n\r\nfunction Accordion(props) {\r\n  const [bindIndex, setBindIndex] = React.useState(props.defaultIndex);\r\n\r\n  const changeItem = itemIndex => {\r\n    if (typeof props.onItemClick === 'function') props.onItemClick(itemIndex);\r\n    if (itemIndex !== bindIndex) setBindIndex(itemIndex);\r\n  };\r\n  const items = props.children.filter(item => item.type.name === 'AccordionItem');\r\n\r\n  return (\r\n    <div className=\"wrapper\">\r\n      {items.map(({ props }) => (\r\n        <AccordionItem\r\n          isCollapsed={bindIndex === props.index}\r\n          label={props.label}\r\n          handleClick={() => changeItem(props.index)}\r\n          children={props.children}\r\n        />\r\n      ))}\r\n    </div>\r\n  );\r\n}",
@@ -20,7 +20,7 @@
         ]
       },
       "meta": {
-        "hash": "7787feea6f6ad8bb1b1a73cf2938673d41fbc0dc8b29d5ebbbafe572784d963e"
+        "hash": "0300c924ea29110f2982ae5564a63ff01519a5d0ffc8ae6dc8d175363fb77534"
       }
     },
     {
@@ -29,7 +29,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "AutoLink.md",
-        "text": "Renders a string as plaintext, with URLs converted to appropriate `<a>` elements.\n\n* Use `String.prototype.split()` and `String.prototype.match()` with a regular expression to find URLs in a string.\n* Return a `<React.Fragment>` with matched URLs rendered as `<a>` elements, dealing with missing protocol prefixes if necessary, and the rest of the string rendered as plaintext.\n\n",
+        "text": "Renders a string as plaintext, with URLs converted to appropriate `<a>` elements.\n\n- Use `String.prototype.split()` and `String.prototype.match()` with a regular expression to find URLs in a string.\n- Return a `<React.Fragment>` with matched URLs rendered as `<a>` elements, dealing with missing protocol prefixes if necessary, and the rest of the string rendered as plaintext.\n\n",
         "codeBlocks": {
           "style": "",
           "code": "function AutoLink({ text }) {\r\n  const delimiter = /((?:https?:\\/\\/)?(?:(?:[a-z0-9]?(?:[a-z0-9\\-]{1,61}[a-z0-9])?\\.[^\\.|\\s])+[a-z\\.]*[a-z]+|(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3})(?::\\d{1,5})*[a-z0-9.,_\\/~#&=;%+?\\-\\\\(\\\\)]*)/gi;\r\n\r\n  return (\r\n    <React.Fragment>\r\n      {text.split(delimiter).map(word => {\r\n        let match = word.match(delimiter);\r\n        if (match) {\r\n          let url = match[0];\r\n          return <a href={url.startsWith('http') ? url : `http://${url}`}>{url}</a>;\r\n        }\r\n        return word;\r\n      })}\r\n    </React.Fragment>\r\n  );\r\n}",
@@ -43,7 +43,7 @@
         ]
       },
       "meta": {
-        "hash": "4ca8f86fe197110cbdc91241f1c93ccb31ebe23f9b8eabe00f23c31f1939db1f"
+        "hash": "8a4373d9d191111ec6644ca315399c78d48c4d1a8c29124e48a88741ef826bea"
       }
     },
     {
@@ -52,7 +52,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "Carousel.md",
-        "text": "Renders a carousel component.\n\n* Use the `React.setState()` hook to create the `active` state variable and give it a value of `0` (index of the first item).\n* Use an object, `style`, to hold the styles for the individual components.\n* Use the `React.setEffect()` hook to update the value of `active` to the index of the next item, using `setTimeout`.\n* Destructure `props`, compute if visibility style should be set to `visible` or not for each carousel item while mapping over and applying the combined style to the carousel item component accordingly.\n* Render the carousel items using `React.cloneElement()` and pass down rest `props` along with the computed styles.\n\n",
+        "text": "Renders a carousel component.\n\n- Use the `React.setState()` hook to create the `active` state variable and give it a value of `0` (index of the first item).\n- Use an object, `style`, to hold the styles for the individual components.\n- Use the `React.setEffect()` hook to update the value of `active` to the index of the next item, using `setTimeout`.\n- Destructure `props`, compute if visibility style should be set to `visible` or not for each carousel item while mapping over and applying the combined style to the carousel item component accordingly.\n- Render the carousel items using `React.cloneElement()` and pass down rest `props` along with the computed styles.\n\n",
         "codeBlocks": {
           "style": "",
           "code": "function Carousel(props) {\r\n  const [active, setActive] = React.useState(0);\r\n  let scrollInterval = null;\r\n  const style = {\r\n    carousel: {\r\n      position: 'relative'\r\n    },\r\n    carouselItem: {\r\n      position: 'absolute',\r\n      visibility: 'hidden'\r\n    },\r\n    visible: {\r\n      visibility: 'visible'\r\n    }\r\n  };\r\n  React.useEffect(() => {\r\n    scrollInterval = setTimeout(() => {\r\n      const { carouselItems } = props;\r\n      setActive((active + 1) % carouselItems.length);\r\n    }, 2000);\r\n  });\r\n  const { carouselItems, ...rest } = props;\r\n  return (\r\n    <div style={style.carousel}>\r\n      {carouselItems.map((item, index) => {\r\n        const activeStyle = active === index ? style.visible : {};\r\n        return React.cloneElement(item, {\r\n          ...rest,\r\n          style: {\r\n            ...style.carouselItem,\r\n            ...activeStyle\r\n          }\r\n        });\r\n      })}\r\n    </div>\r\n  );\r\n}",
@@ -67,20 +67,20 @@
         ]
       },
       "meta": {
-        "hash": "c585316c31ab75c906dd8a9023474bfd68eb37dde735039bcca6067a2acd2894"
+        "hash": "24c0b339ea3131a8bde8081b1f44caac1d5014ecc1ac6d25ebf4b14d053a83a8"
       }
     },
     {
-      "id": "ClickOutAndInside",
-      "title": "ClickInside and ClickOutside",
+      "id": "ClickInside",
+      "title": "ClickInside",
       "type": "snippet",
       "attributes": {
-        "fileName": "ClickOutAndInside.md",
-        "text": "Two handy hooks to handle the click outside and inside event on the wrapped component.\n\n* Create customized hooks that take in a `ref` component(node) and a `callback` function to hanlde the customized `click` event\n* Use the `React.useEffect()` hook to append and clean up the `click` event.\n* Use the `React.useRef()` hook to create a `ref` for your click component and pass it to `useClickInside` and `useClickOutside` hooks.\n\n",
+        "fileName": "ClickInside.md",
+        "text": "A hook that handles the event of clicking inside the wrapped component.\n\n- Create a custom hook that takes a `ref` and a `callback` to handle the `click` event.\n- Use the `React.useEffect()` hook to append and clean up the `click` event.\n- Use the `React.useRef()` hook to create a `ref` for your click component and pass it to the `useClickInside` hook.\n\n",
         "codeBlocks": {
           "style": ".click-box {\r\n  border: 2px dashed orangered;\r\n  height: 200px;\r\n  width: 400px;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\np {\r\n  border: 2px solid blue;\r\n  padding: 16px;\r\n}",
-          "code": "const useClickInside = (ref, callback) => {\r\n  const handleClick = e => {\r\n    //use the node contains to verify if we click inside\r\n    if (ref.current && ref.current.contains(e.target)) {\r\n      callback();\r\n    }\r\n  };\r\n\r\n  //clean up using useEffect\r\n  useEffect(() => {\r\n    document.addEventListener(\"click\", handleClick);\r\n    return () => {\r\n      document.removeEventListener(\"click\", handleClick);\r\n    };\r\n  });\r\n};\r\n\r\nconst useClickOutside = (ref, callback) => {\r\n  const handleClick = e => {\r\n    //use the node contains to verify if we click outside\r\n    if (ref.current && !ref.current.contains(e.target)) {\r\n      callback();\r\n    }\r\n  };\r\n  // clean up using useEffect\r\n  useEffect(() => {\r\n    document.addEventListener(\"click\", handleClick);\r\n    return () => {\r\n      document.removeEventListener(\"click\", handleClick);\r\n    };\r\n  });\r\n};\r\n\r\nfunction ClickBox({onClickOutside,onClickInside}) {\r\n  const clickRef = useRef();\r\n  useClickOutside(clickRef, onClickOutside);\r\n  useClickInside(clickRef, onClickInside);\r\n  return (\r\n    <div className=\"click-box\" ref={clickRef}>\r\n      <p>Hello Click Me Inside!</p>\r\n    </div>\r\n  );\r\n}",
-          "example": "ReactDOM.render(<ClickBox onClickOutside={()=> alert(\"click outside\")} onClickInside={()=> alert(\"click inside\")}/>,document.getElementById('root'))"
+          "code": "const useClickInside = (ref, callback) => {\r\n  const handleClick = e => {\r\n    if (ref.current && ref.current.contains(e.target)) {\r\n      callback();\r\n    }\r\n  };\r\n  useEffect(() => {\r\n    document.addEventListener('click', handleClick);\r\n    return () => {\r\n      document.removeEventListener('click', handleClick);\r\n    };\r\n  });\r\n};\r\n\r\nfunction ClickBox({ onClickInside }) {\r\n  const clickRef = useRef();\r\n  useClickInside(clickRef, onClickInside);\r\n  return (\r\n    <div className=\"click-box\" ref={clickRef}>\r\n      <p>Hello Click Me Inside!</p>\r\n    </div>\r\n  );\r\n}",
+          "example": "ReactDOM.render(\r\n  <ClickBox onClickInside={() => alert('click inside')} />,\r\n  document.getElementById('root')\r\n);"
         },
         "tags": [
           "hooks",
@@ -90,7 +90,30 @@
         ]
       },
       "meta": {
-        "hash": "773cb2ce0e28ff705f350ff82398836268bce65b32a2b93664bd535fbeed61e8"
+        "hash": "16385296d9c0506b9f69f202332e3037d9e4a47d4e04bc68665e26c04e4f7aed"
+      }
+    },
+    {
+      "id": "ClickOutside",
+      "title": "ClickOutside",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "ClickOutside.md",
+        "text": "A hook that handles the event of clicking outside of the wrapped component.\n\n- Create a custom hook that takes a `ref` and a `callback` to handle the `click` event.\n- Use the `React.useEffect()` hook to append and clean up the `click` event.\n- Use the `React.useRef()` hook to create a `ref` for your click component and pass it to the `useClickOutside` hook.\n\n",
+        "codeBlocks": {
+          "style": ".click-box {\r\n  border: 2px dashed orangered;\r\n  height: 200px;\r\n  width: 400px;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\np {\r\n  border: 2px solid blue;\r\n  padding: 16px;\r\n}",
+          "code": "const useClickOutside = (ref, callback) => {\r\n  const handleClick = e => {\r\n    if (ref.current && !ref.current.contains(e.target)) {\r\n      callback();\r\n    }\r\n  };\r\n  useEffect(() => {\r\n    document.addEventListener('click', handleClick);\r\n    return () => {\r\n      document.removeEventListener('click', handleClick);\r\n    };\r\n  });\r\n};\r\n\r\nfunction ClickBox({ onClickOutside }) {\r\n  const clickRef = useRef();\r\n  useClickOutside(clickRef, onClickOutside);\r\n  return (\r\n    <div className=\"click-box\" ref={clickRef}>\r\n      <p>Hello Click Me Inside!</p>\r\n    </div>\r\n  );\r\n}",
+          "example": "ReactDOM.render(\r\n  <ClickBox onClickOutside={() => alert('click outside')} />,\r\n  document.getElementById('root')\r\n);"
+        },
+        "tags": [
+          "hooks",
+          "effect",
+          "event",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "9666c1e1f30173bcc0be31b4158e569339d4e3f4f95bf60286f448c86432e04e"
       }
     },
     {
@@ -99,7 +122,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "Collapse.md",
-        "text": "Renders a component with collapsible content.\n\n* Use the `React.setState()` hook to create the `isCollapsed` state variable with an initial value of `props.collapsed`.\n* Use an object, `style`, to hold the styles for individual components and their states.\n* Use a `<div>` to wrap both the `<button>` that alters the component's `isCollapsed` state and the content of the component, passed down via `props.children`.\n* Determine the appearance of the content, based on `isCollapsed` and apply the appropriate CSS rules from the `style` object.\n* Finally, update the value of the `aria-expanded` attribute based on `isCollapsed` to make the component accessible.\n\n",
+        "text": "Renders a component with collapsible content.\n\n- Use the `React.setState()` hook to create the `isCollapsed` state variable with an initial value of `props.collapsed`.\n- Use an object, `style`, to hold the styles for individual components and their states.\n- Use a `<div>` to wrap both the `<button>` that alters the component's `isCollapsed` state and the content of the component, passed down via `props.children`.\n- Determine the appearance of the content, based on `isCollapsed` and apply the appropriate CSS rules from the `style` object.\n- Finally, update the value of the `aria-expanded` attribute based on `isCollapsed` to make the component accessible.\n\n",
         "codeBlocks": {
           "style": "",
           "code": "function Collapse(props) {\r\n  const [isCollapsed, setIsCollapsed] = React.useState(props.collapsed);\r\n\r\n  const style = {\r\n    collapsed: {\r\n      display: 'none'\r\n    },\r\n    expanded: {\r\n      display: 'block'\r\n    },\r\n    buttonStyle: {\r\n      display: 'block',\r\n      width: '100%'\r\n    }\r\n  };\r\n\r\n  return (\r\n    <div>\r\n      <button style={style.buttonStyle} onClick={() => setIsCollapsed(!isCollapsed)}>\r\n        {isCollapsed ? 'Show' : 'Hide'} content\r\n      </button>\r\n      <div\r\n        className=\"collapse-content\"\r\n        style={isCollapsed ? style.collapsed : style.expanded}\r\n        aria-expanded={isCollapsed}\r\n      >\r\n        {props.children}\r\n      </div>\r\n    </div>\r\n  );\r\n}",
@@ -113,7 +136,7 @@
         ]
       },
       "meta": {
-        "hash": "0fb184a53478714a3eb9d9906f7661d5fa416db6bdb2b2b819add2ffb38f2a22"
+        "hash": "bb14a75971ab3a395e7a7e4458f636b9309f3e9a376494fe10b716be256bd9d2"
       }
     },
     {
@@ -122,7 +145,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "CountDown.md",
-        "text": "Renders a countdown timer that prints a message when it reaches zero.\n\n* Use object destructuring to set defaults for the `hours`, `minutes` and `seconds` props.\n* Use the `React.useState()` hook to create the `time`, `paused` and `over` state variables and set their values to the values of the passed props, `false` and `false` respectively.\n* Create a method `tick`, that updates the value of `time` based on the current value (i.e. decreasing the time by one second).\n* If `paused` or `over` is `true`, `tick` will return immediately.\n* Create a method `reset`, that resets all state variables to their initial states.\n* Use the the `React.useEffect()` hook to call the `tick` method every second via the use of `setInterval()` and use `clearInterval()` to cleanup when the component is unmounted.\n* Use a `<div>` to wrap a `<p>` element with the textual representation of the components `time` state variable, as well as two `<button>` elements that will pause/unpause and restart the timer respectively.\n* If `over` is `true`, the timer will display a message instead of the value of `time`.\n\n",
+        "text": "Renders a countdown timer that prints a message when it reaches zero.\n\n- Use object destructuring to set defaults for the `hours`, `minutes` and `seconds` props.\n- Use the `React.useState()` hook to create the `time`, `paused` and `over` state variables and set their values to the values of the passed props, `false` and `false` respectively.\n- Create a method `tick`, that updates the value of `time` based on the current value (i.e. decreasing the time by one second).\n- If `paused` or `over` is `true`, `tick` will return immediately.\n- Create a method `reset`, that resets all state variables to their initial states.\n- Use the the `React.useEffect()` hook to call the `tick` method every second via the use of `setInterval()` and use `clearInterval()` to cleanup when the component is unmounted.\n- Use a `<div>` to wrap a `<p>` element with the textual representation of the components `time` state variable, as well as two `<button>` elements that will pause/unpause and restart the timer respectively.\n- If `over` is `true`, the timer will display a message instead of the value of `time`.\n\n",
         "codeBlocks": {
           "style": "",
           "code": "function CountDown({ hours = 0, minutes = 0, seconds = 0 }) {\r\n  const [paused, setPaused] = React.useState(false);\r\n  const [over, setOver] = React.useState(false);\r\n  const [time, setTime] = React.useState({\r\n    hours: parseInt(hours),\r\n    minutes: parseInt(minutes),\r\n    seconds: parseInt(seconds)\r\n  });\r\n\r\n  const tick = () => {\r\n    if (paused || over) return;\r\n    if (time.hours == 0 && time.minutes == 0 && time.seconds == 0) setOver(true);\r\n    else if (time.minutes == 0 && time.seconds == 0)\r\n      setTime({\r\n        hours: time.hours - 1,\r\n        minutes: 59,\r\n        seconds: 59\r\n      });\r\n    else if (time.seconds == 0)\r\n      setTime({\r\n        hours: time.hours,\r\n        minutes: time.minutes - 1,\r\n        seconds: 59\r\n      });\r\n    else\r\n      setTime({\r\n        hours: time.hours,\r\n        minutes: time.minutes,\r\n        seconds: time.seconds - 1\r\n      });\r\n  };\r\n\r\n  const reset = () => {\r\n    setTime({\r\n      hours: parseInt(hours),\r\n      minutes: parseInt(minutes),\r\n      seconds: parseInt(seconds)\r\n    });\r\n    setPaused(false);\r\n    setOver(false);\r\n  };\r\n\r\n  React.useEffect(() => {\r\n    let timerID = setInterval(() => tick(), 1000);\r\n    return () => clearInterval(timerID);\r\n  });\r\n\r\n  return (\r\n    <div>\r\n      <p>{`${time.hours.toString().padStart(2, '0')}:${time.minutes\r\n        .toString()\r\n        .padStart(2, '0')}:${time.seconds.toString().padStart(2, '0')}`}</p>\r\n      <div>{over ? \"Time's up!\" : ''}</div>\r\n      <button onClick={() => setPaused(!paused)}>{paused ? 'Resume' : 'Pause'}</button>\r\n      <button onClick={() => reset()}>Restart</button>\r\n    </div>\r\n  );\r\n}",
@@ -135,7 +158,7 @@
         ]
       },
       "meta": {
-        "hash": "cab16a22ce97e7a90a4ca0717b62a185bcbcd37fa55dc6983c79ea5857f76aaf"
+        "hash": "b5ac7580e6a96df21478030c6c2b30fa2e56df2573ab66e2405bdbbdce60aa61"
       }
     },
     {
@@ -144,7 +167,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "DataList.md",
-        "text": "Renders a list of elements from an array of primitives.\n\n* Use the value of the `isOrdered` prop to conditionally render a `<ol>` or `<ul>` list.\n* Use `Array.prototype.map` to render every item in `data` as a `<li>` element, give it a `key` produced from the concatenation of the its index and value.\n* Omit the `isOrdered` prop to render a `<ul>` list by default.\n\n",
+        "text": "Renders a list of elements from an array of primitives.\n\n- Use the value of the `isOrdered` prop to conditionally render a `<ol>` or `<ul>` list.\n- Use `Array.prototype.map` to render every item in `data` as a `<li>` element, give it a `key` produced from the concatenation of the its index and value.\n- Omit the `isOrdered` prop to render a `<ul>` list by default.\n\n",
         "codeBlocks": {
           "style": "",
           "code": "function DataList({ isOrdered, data }) {\r\n  const list = data.map((val, i) => <li key={`${i}_${val}`}>{val}</li>);\r\n  return isOrdered ? <ol>{list}</ol> : <ul>{list}</ul>;\r\n}",
@@ -156,7 +179,7 @@
         ]
       },
       "meta": {
-        "hash": "0280f7d4991a3145a1263342ef5ffa2e845c24c0793a2a06d40ed29a450b1039"
+        "hash": "38eb402c926fbc919a04b55fe8d6fb2fbdd5ba54341783852f909f9181e745da"
       }
     },
     {
@@ -165,7 +188,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "DataTable.md",
-        "text": "Renders a table with rows dynamically created from an array of primitives.\n\n* Render a `<table>` element with two columns (`ID` and `Value`).\n* Use `Array.prototype.map` to render every item in `data` as a `<tr>` element, consisting of its index and value, give it a `key` produced from the concatenation of the two.\n\n",
+        "text": "Renders a table with rows dynamically created from an array of primitives.\n\n- Render a `<table>` element with two columns (`ID` and `Value`).\n- Use `Array.prototype.map` to render every item in `data` as a `<tr>` element, consisting of its index and value, give it a `key` produced from the concatenation of the two.\n\n",
         "codeBlocks": {
           "style": "",
           "code": "function DataTable({ data }) {\r\n  return (\r\n    <table>\r\n      <thead>\r\n        <tr>\r\n          <th>ID</th>\r\n          <th>Value</th>\r\n        </tr>\r\n      </thead>\r\n      <tbody>\r\n        {data.map((val, i) => (\r\n          <tr key={`${i}_${val}`}>\r\n            <td>{i}</td>\r\n            <td>{val}</td>\r\n          </tr>\r\n        ))}\r\n      </tbody>\r\n    </table>\r\n  );\r\n}",
@@ -177,7 +200,7 @@
         ]
       },
       "meta": {
-        "hash": "6da7e808336fe96d699685abb7d93735693f6e8dfba4a84262b9e02a624da617"
+        "hash": "c4aba21d546f519469e8a65101e9cd44b25dae028b48a223b8cb6c19f83b60d4"
       }
     },
     {
@@ -186,7 +209,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "FileDrop.md",
-        "text": "Renders a file drag and drop component for a single file.\n\n* Create a ref called `dropRef` for this component.\n* Use the `React.useState()` hook to create the `drag` and `filename` variables, initialized to `false` and `''` respectively.\nThe variables `dragCounter` and `drag` are used to determine if a file is being dragged, while `filename` is used to store the dropped file's name.\n* Create the `handleDrag`, `handleDragIn`, `handleDragOut` and `handleDrop` methods to handle drag and drop functionality, bind them to the component's context.\n* Each of the methods will handle a specific event, the listeners for which are created and removed in the `React.useEffect()` hook and its attached `cleanup()` method.\n* `handleDrag` prevents the browser from opening the dragged file, `handleDragIn` and `handleDragOut` handle the dragged file entering and exiting the component, while `handleDrop` handles the file being dropped and passes it to `props.handleDrop`.\n* Return an appropriately styled `<div>` and use `drag` and `filename` to determine its contents and style.\n* Finally, bind the `ref` of the created `<div>` to `dropRef`.\n\n",
+        "text": "Renders a file drag and drop component for a single file.\n\n- Create a ref called `dropRef` for this component.\n- Use the `React.useState()` hook to create the `drag` and `filename` variables, initialized to `false` and `''` respectively.\n  The variables `dragCounter` and `drag` are used to determine if a file is being dragged, while `filename` is used to store the dropped file's name.\n- Create the `handleDrag`, `handleDragIn`, `handleDragOut` and `handleDrop` methods to handle drag and drop functionality, bind them to the component's context.\n- Each of the methods will handle a specific event, the listeners for which are created and removed in the `React.useEffect()` hook and its attached `cleanup()` method.\n- `handleDrag` prevents the browser from opening the dragged file, `handleDragIn` and `handleDragOut` handle the dragged file entering and exiting the component, while `handleDrop` handles the file being dropped and passes it to `props.handleDrop`.\n- Return an appropriately styled `<div>` and use `drag` and `filename` to determine its contents and style.\n- Finally, bind the `ref` of the created `<div>` to `dropRef`.\n\n",
         "codeBlocks": {
           "style": ".filedrop {\r\n  min-height: 120px;\r\n  border: 3px solid #d3d3d3;\r\n  text-align: center;\r\n  font-size: 24px;\r\n  padding: 32px;\r\n  border-radius: 4px;\r\n}\r\n\r\n.filedrop.drag {\r\n  border: 3px dashed #1e90ff;\r\n}\r\n\r\n.filedrop.ready {\r\n  border: 3px solid #32cd32;\r\n}",
           "code": "function FileDrop(props) {\r\n  const [drag, setDrag] = React.useState(false);\r\n  const [filename, setFilename] = React.useState('');\r\n  let dropRef = React.createRef();\r\n  let dragCounter = 0;\r\n\r\n  const handleDrag = e => {\r\n    e.preventDefault();\r\n    e.stopPropagation();\r\n  };\r\n\r\n  const handleDragIn = e => {\r\n    e.preventDefault();\r\n    e.stopPropagation();\r\n    dragCounter++;\r\n    if (e.dataTransfer.items && e.dataTransfer.items.length > 0) setDrag(true);\r\n  };\r\n\r\n  const handleDragOut = e => {\r\n    e.preventDefault();\r\n    e.stopPropagation();\r\n    dragCounter--;\r\n    if (dragCounter === 0) setDrag(false);\r\n  };\r\n\r\n  const handleDrop = e => {\r\n    e.preventDefault();\r\n    e.stopPropagation();\r\n    setDrag(false);\r\n    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {\r\n      props.handleDrop(e.dataTransfer.files[0]);\r\n      setFilename(e.dataTransfer.files[0].name);\r\n      e.dataTransfer.clearData();\r\n      dragCounter = 0;\r\n    }\r\n  };\r\n\r\n  React.useEffect(() => {\r\n    let div = dropRef.current;\r\n    div.addEventListener('dragenter', handleDragIn);\r\n    div.addEventListener('dragleave', handleDragOut);\r\n    div.addEventListener('dragover', handleDrag);\r\n    div.addEventListener('drop', handleDrop);\r\n    return function cleanup() {\r\n      div.removeEventListener('dragenter', handleDragIn);\r\n      div.removeEventListener('dragleave', handleDragOut);\r\n      div.removeEventListener('dragover', handleDrag);\r\n      div.removeEventListener('drop', handleDrop);\r\n    };\r\n  });\r\n\r\n  return (\r\n    <div\r\n      ref={dropRef}\r\n      className={drag ? 'filedrop drag' : filename ? 'filedrop ready' : 'filedrop'}\r\n    >\r\n      {filename && !drag ? <div>{filename}</div> : <div>Drop files here!</div>}\r\n    </div>\r\n  );\r\n}",
@@ -202,7 +225,7 @@
         ]
       },
       "meta": {
-        "hash": "79742466c371960a0134df6158931d6468a2767fc0d21e20b6709bb46c737941"
+        "hash": "2e35dd3fa6b4808f03aff6b542b293f8be0fd9aa1cbb7bd85a2729f808cf8888"
       }
     },
     {
@@ -211,7 +234,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "LimitedTextarea.md",
-        "text": "Renders a textarea component with a character limit.\n\n* Use the `React.useState()` hook to create the `content` state variable and set its value to `value`.\nCreate a method `setFormattedContent`, which trims the content of the input if it's longer than `limit`.\n* Use the `React.useEffect()` hook to call the `setFormattedContent` method on the value of the `content` state variable.\n* Use a`<div>` to wrap both the`<textarea>` and the `<p>` element that displays the character count and bind the `onChange` event of the `<textarea>` to call `setFormattedContent` with the value of `event.target.value`.\n\n",
+        "text": "Renders a textarea component with a character limit.\n\n- Use the `React.useState()` hook to create the `content` state variable and set its value to `value`.\n  Create a method `setFormattedContent`, which trims the content of the input if it's longer than `limit`.\n- Use the `React.useEffect()` hook to call the `setFormattedContent` method on the value of the `content` state variable.\n- Use a`<div>` to wrap both the`<textarea>` and the `<p>` element that displays the character count and bind the `onChange` event of the `<textarea>` to call `setFormattedContent` with the value of `event.target.value`.\n\n",
         "codeBlocks": {
           "style": "",
           "code": "function LimitedTextarea({ rows, cols, value, limit }) {\r\n  const [content, setContent] = React.useState(value);\r\n\r\n  const setFormattedContent = text => {\r\n    text.length > limit ? setContent(text.slice(0, limit)) : setContent(text);\r\n  };\r\n\r\n  React.useEffect(() => {\r\n    setFormattedContent(content);\r\n  }, []);\r\n\r\n  return (\r\n    <div>\r\n      <textarea\r\n        rows={rows}\r\n        cols={cols}\r\n        onChange={event => setFormattedContent(event.target.value)}\r\n        value={content}\r\n      />\r\n      <p>\r\n        {content.length}/{limit}\r\n      </p>\r\n    </div>\r\n  );\r\n}",
@@ -226,7 +249,7 @@
         ]
       },
       "meta": {
-        "hash": "a9aa0a8f818ba02a861fca0f91a9a164dedcf7683b5d38391003e1864a79e627"
+        "hash": "eabc464d70da892c84d00925de7c8c22ea3f54d5337e7b2efd6e4043fb447aa8"
       }
     },
     {
@@ -235,7 +258,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "LimitedWordTextarea.md",
-        "text": "Renders a textarea component with a word limit.\n\n* Use the `React.useState()` hook to create the `content` and `wordCount` state variables and set their values to `value` and `0` respectively.\n* Create a method `setFormattedContent`, which uses `String.prototype.split(' ')` to turn the input into an array of words and check if the result of applying `Array.prototype.filter(Boolean)` has a `length` longer than `limit`.\n* If the afforementioned `length` exceeds the `limit`, trim the input, otherwise return the raw input, updating `content` and `wordCount` accordingly in both cases.\n* Use the `React.useEffect()` hook to call the `setFormattedContent` method on the value of the `content` state variable.\n* Use a`<div>` to wrap both the`<textarea>` and the `<p>` element that displays the character count and bind the `onChange` event of the `<textarea>` to call `setFormattedContent` with the value of `event.target.value`.\n\n",
+        "text": "Renders a textarea component with a word limit.\n\n- Use the `React.useState()` hook to create the `content` and `wordCount` state variables and set their values to `value` and `0` respectively.\n- Create a method `setFormattedContent`, which uses `String.prototype.split(' ')` to turn the input into an array of words and check if the result of applying `Array.prototype.filter(Boolean)` has a `length` longer than `limit`.\n- If the afforementioned `length` exceeds the `limit`, trim the input, otherwise return the raw input, updating `content` and `wordCount` accordingly in both cases.\n- Use the `React.useEffect()` hook to call the `setFormattedContent` method on the value of the `content` state variable.\n- Use a`<div>` to wrap both the`<textarea>` and the `<p>` element that displays the character count and bind the `onChange` event of the `<textarea>` to call `setFormattedContent` with the value of `event.target.value`.\n\n",
         "codeBlocks": {
           "style": "",
           "code": "function LimitedWordTextarea({ rows, cols, value, limit }) {\r\n  const [content, setContent] = React.useState(value);\r\n  const [wordCount, setWordCount] = React.useState(0);\r\n\r\n  const setFormattedContent = text => {\r\n    let words = text.split(' ');\r\n    if (words.filter(Boolean).length > limit) {\r\n      setContent(\r\n        text\r\n          .split(' ')\r\n          .slice(0, limit)\r\n          .join(' ')\r\n      );\r\n      setWordCount(limit);\r\n    } else {\r\n      setContent(text);\r\n      setWordCount(words.filter(Boolean).length);\r\n    }\r\n  };\r\n\r\n  React.useEffect(() => {\r\n    setFormattedContent(content);\r\n  }, []);\r\n\r\n  return (\r\n    <div>\r\n      <textarea\r\n        rows={rows}\r\n        cols={cols}\r\n        onChange={event => setFormattedContent(event.target.value)}\r\n        value={content}\r\n      />\r\n      <p>\r\n        {wordCount}/{limit}\r\n      </p>\r\n    </div>\r\n  );\r\n}",
@@ -250,7 +273,7 @@
         ]
       },
       "meta": {
-        "hash": "88c10a294c994103d88ab6793cbf290b707d93f6cd0cf9272186e148c0a739bf"
+        "hash": "8c0f35b8cba144ddf8611fa48659ef9a83bd235a961466ccbf1ca5f43bd6b602"
       }
     },
     {
@@ -259,7 +282,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "Mailto.md",
-        "text": "Renders a link formatted to send an email.\n\n* Destructure the component's props, use `email`, `subject` and `body` to create a `<a>` element with an appropriate `href` attribute.\n* Render the link with `props.children` as its content.\n\n",
+        "text": "Renders a link formatted to send an email.\n\n- Destructure the component's props, use `email`, `subject` and `body` to create a `<a>` element with an appropriate `href` attribute.\n- Render the link with `props.children` as its content.\n\n",
         "codeBlocks": {
           "style": "",
           "code": "function Mailto({ email, subject, body, ...props }) {\r\n  return (\r\n    <a href={`mailto:${email}?subject=${subject || ''}&body=${body || ''}`}>{props.children}</a>\r\n  );\r\n}",
@@ -271,7 +294,7 @@
         ]
       },
       "meta": {
-        "hash": "1af32eb31db03931a3d0ec99311b0404f4f1b34a597b6fdf8a000b5d3348e09f"
+        "hash": "e22d307cb43e589e7bd1ec5caab16c1101aa764102f35cd7295876033b44578e"
       }
     },
     {
@@ -280,7 +303,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "MappedTable.md",
-        "text": "Renders a table with rows dynamically created from an array of objects and a list of property names.\n\n* Use `Object.keys()`, `Array.prototype.filter()`, `Array.prototype.includes()` and `Array.prototype.reduce()` to produce a `filteredData` array, containing all objects with the keys specified in `propertyNames`.\n* Render a `<table>` element with a set of columns equal to the amount of values in `propertyNames`.\n* Use `Array.prototype.map` to render each value in the `propertyNames` array as a `<th>` element.\n* Use `Array.prototype.map` to render each object in the `filteredData` array as a `<tr>` element, containing a `<td>` for each key in the object.\n\n*This component does not work with nested objects and will break if there are nested objects inside any of the properties specified in `propertyNames`*\n\n",
+        "text": "Renders a table with rows dynamically created from an array of objects and a list of property names.\n\n- Use `Object.keys()`, `Array.prototype.filter()`, `Array.prototype.includes()` and `Array.prototype.reduce()` to produce a `filteredData` array, containing all objects with the keys specified in `propertyNames`.\n- Render a `<table>` element with a set of columns equal to the amount of values in `propertyNames`.\n- Use `Array.prototype.map` to render each value in the `propertyNames` array as a `<th>` element.\n- Use `Array.prototype.map` to render each object in the `filteredData` array as a `<tr>` element, containing a `<td>` for each key in the object.\n\n_This component does not work with nested objects and will break if there are nested objects inside any of the properties specified in `propertyNames`_\n\n",
         "codeBlocks": {
           "style": "",
           "code": "function MappedTable({ data, propertyNames }) {\r\n  let filteredData = data.map(v =>\r\n    Object.keys(v)\r\n      .filter(k => propertyNames.includes(k))\r\n      .reduce((acc, key) => ((acc[key] = v[key]), acc), {})\r\n  );\r\n  return (\r\n    <table>\r\n      <thead>\r\n        <tr>\r\n          {propertyNames.map(val => (\r\n            <th key={`h_${val}`}>{val}</th>\r\n          ))}\r\n        </tr>\r\n      </thead>\r\n      <tbody>\r\n        {filteredData.map((val, i) => (\r\n          <tr key={`i_${i}`}>\r\n            {propertyNames.map(p => (\r\n              <td key={`i_${i}_${p}`}>{val[p]}</td>\r\n            ))}\r\n          </tr>\r\n        ))}\r\n      </tbody>\r\n    </table>\r\n  );\r\n}",
@@ -293,7 +316,7 @@
         ]
       },
       "meta": {
-        "hash": "3085683cb2c0aaf15e7449e75a1b2468ae4c570b003165073fa5368b40cb291d"
+        "hash": "9ff4e1580f53ab64c740aee2bfdc85f1cfc46f7cf2f39d6324ec4c2b7d6c7270"
       }
     },
     {
@@ -302,11 +325,11 @@
       "type": "snippet",
       "attributes": {
         "fileName": "Modal.md",
-        "text": "Renders a Modal component, controllable through events.\nTo use the component, import `Modal` only once and then display it by passing a boolean value to the `isVisible` attribute.\n\n* Use object destructuring to set defaults for certain attributes of the modal component.\n* Define `keydownHandler`, a method which handles all keyboard events, which can be used according to your needs to dispatch actions (e.g. close the modal when <kbd>Esc</kbd> is pressed).\n* Use `React.useEffect()` hook to add or remove the `keydown` event listener, which calls `keydownHandler`.\n* Use the `isVisible` prop to determine if the modal should be shown or not.\n* Use CSS to style and position the modal component.\n\n",
+        "text": "Renders a Modal component, controllable through events.\nTo use the component, import `Modal` only once and then display it by passing a boolean value to the `isVisible` attribute.\n\n- Use object destructuring to set defaults for certain attributes of the modal component.\n- Define `keydownHandler`, a method which handles all keyboard events, which can be used according to your needs to dispatch actions (e.g. close the modal when <kbd>Esc</kbd> is pressed).\n- Use `React.useEffect()` hook to add or remove the `keydown` event listener, which calls `keydownHandler`.\n- Use the `isVisible` prop to determine if the modal should be shown or not.\n- Use CSS to style and position the modal component.\n\n",
         "codeBlocks": {
-          "style": ".modal {\r\n  position: fixed;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right:0;\r\n  width: 100%;\r\n  z-index: 9999;  \r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  background-color: rgba(0, 0, 0, 0.25);\r\n  animation-name: appear;\r\n  animation-duration: 300ms;\r\n}\r\n\r\n.modal-dialog{\r\n  width: 100%;\r\n  max-width: 550px;\r\n  background: white;\r\n  position: relative;\r\n  margin: 0 20px;\r\n  max-height: calc(100vh - 40px);\r\n  text-align: left;\r\n  display: flex;\r\n  flex-direction: column;\r\n  overflow:hidden;\r\n  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\r\n  -webkit-animation-name: animatetop;\r\n  -webkit-animation-duration: 0.4s;\r\n  animation-name: slide-in;\r\n  animation-duration: 0.5s;\r\n}\r\n\r\n.modal-header,.modal-footer{\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 1rem;\r\n}\r\n.modal-header{\r\n  border-bottom: 1px solid #dbdbdb;\r\n  justify-content: space-between;\r\n}\r\n.modal-footer{\r\n  border-top: 1px solid #dbdbdb;\r\n  justify-content: flex-end;\r\n}\r\n.modal-close{\r\n  cursor: pointer;\r\n  padding: 1rem;\r\n  margin: -1rem -1rem -1rem auto;\r\n}\r\n.modal-body{\r\n  overflow: auto;\r\n}\r\n.modal-content{\r\n  padding: 1rem;\r\n}\r\n\r\n@keyframes appear {\r\n  from {opacity: 0;}\r\n  to {opacity: 1;}\r\n}\r\n@keyframes slide-in {\r\n  from {transform: translateY(-150px);}\r\n  to { transform: translateY(0);}\r\n}",
-          "code": "function Modal({ isVisible = false, title, content, footer, onClose }){  \r\n  React.useEffect(() => {\r\n    document.addEventListener('keydown', keydownHandler);\r\n    return () => document.removeEventListener('keydown', keydownHandler);\r\n  });\r\n\r\n  function keydownHandler({ key }) {\r\n    switch (key) {\r\n      case 'Escape':  onClose(); break;\r\n      default:\r\n    }\r\n  }\r\n\r\n  return !isVisible ? null : (\r\n    <div className=\"modal\" onClick={onClose}>\r\n        <div className=\"modal-dialog\"  onClick={e => e.stopPropagation()}>\r\n        <div className=\"modal-header\">\r\n          <h3 className=\"modal-title\">{title}</h3>\r\n          <span className=\"modal-close\" onClick={onClose}>&times;</span>\r\n        </div>\r\n        <div className=\"modal-body\">\r\n          <div className=\"modal-content\">{ content }</div>\r\n        </div>\r\n        {footer && <div className=\"modal-footer\">{footer}</div>}\r\n      </div>\r\n    </div>\r\n  )\r\n}",
-          "example": "//Add the component to the render function\r\nfunction App() {\r\n  const [ isModal, setModal] = React.useState(false);\r\n  \r\n  return (\r\n    <React.Fragment>\r\n      <button onClick={()=> setModal(true)}>Click Here</button>\r\n      <Modal \r\n        isVisible={ isModal }\r\n        title= \"Modal Title\"\r\n        content = {<p>Add your content here</p>}\r\n        footer = {<button>Cancel</button>}\r\n        onClose ={()=> setModal(false)}\r\n      />\r\n    </React.Fragment>\r\n  )\r\n}\r\n\r\nReactDOM.render( <App/>, document.getElementById('root'));"
+          "style": ".modal {\r\n  position: fixed;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n  width: 100%;\r\n  z-index: 9999;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  background-color: rgba(0, 0, 0, 0.25);\r\n  animation-name: appear;\r\n  animation-duration: 300ms;\r\n}\r\n\r\n.modal-dialog {\r\n  width: 100%;\r\n  max-width: 550px;\r\n  background: white;\r\n  position: relative;\r\n  margin: 0 20px;\r\n  max-height: calc(100vh - 40px);\r\n  text-align: left;\r\n  display: flex;\r\n  flex-direction: column;\r\n  overflow: hidden;\r\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n  -webkit-animation-name: animatetop;\r\n  -webkit-animation-duration: 0.4s;\r\n  animation-name: slide-in;\r\n  animation-duration: 0.5s;\r\n}\r\n\r\n.modal-header,\r\n.modal-footer {\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 1rem;\r\n}\r\n.modal-header {\r\n  border-bottom: 1px solid #dbdbdb;\r\n  justify-content: space-between;\r\n}\r\n.modal-footer {\r\n  border-top: 1px solid #dbdbdb;\r\n  justify-content: flex-end;\r\n}\r\n.modal-close {\r\n  cursor: pointer;\r\n  padding: 1rem;\r\n  margin: -1rem -1rem -1rem auto;\r\n}\r\n.modal-body {\r\n  overflow: auto;\r\n}\r\n.modal-content {\r\n  padding: 1rem;\r\n}\r\n\r\n@keyframes appear {\r\n  from {\r\n    opacity: 0;\r\n  }\r\n  to {\r\n    opacity: 1;\r\n  }\r\n}\r\n@keyframes slide-in {\r\n  from {\r\n    transform: translateY(-150px);\r\n  }\r\n  to {\r\n    transform: translateY(0);\r\n  }\r\n}",
+          "code": "function Modal({ isVisible = false, title, content, footer, onClose }) {\r\n  React.useEffect(() => {\r\n    document.addEventListener('keydown', keydownHandler);\r\n    return () => document.removeEventListener('keydown', keydownHandler);\r\n  });\r\n\r\n  function keydownHandler({ key }) {\r\n    switch (key) {\r\n      case 'Escape':\r\n        onClose();\r\n        break;\r\n      default:\r\n    }\r\n  }\r\n\r\n  return !isVisible ? null : (\r\n    <div className=\"modal\" onClick={onClose}>\r\n      <div className=\"modal-dialog\" onClick={e => e.stopPropagation()}>\r\n        <div className=\"modal-header\">\r\n          <h3 className=\"modal-title\">{title}</h3>\r\n          <span className=\"modal-close\" onClick={onClose}>\r\n            &times;\r\n          </span>\r\n        </div>\r\n        <div className=\"modal-body\">\r\n          <div className=\"modal-content\">{content}</div>\r\n        </div>\r\n        {footer && <div className=\"modal-footer\">{footer}</div>}\r\n      </div>\r\n    </div>\r\n  );\r\n}",
+          "example": "//Add the component to the render function\r\nfunction App() {\r\n  const [isModal, setModal] = React.useState(false);\r\n\r\n  return (\r\n    <React.Fragment>\r\n      <button onClick={() => setModal(true)}>Click Here</button>\r\n      <Modal\r\n        isVisible={isModal}\r\n        title=\"Modal Title\"\r\n        content={<p>Add your content here</p>}\r\n        footer={<button>Cancel</button>}\r\n        onClose={() => setModal(false)}\r\n      />\r\n    </React.Fragment>\r\n  );\r\n}\r\n\r\nReactDOM.render(<App />, document.getElementById('root'));"
         },
         "tags": [
           "visual",
@@ -315,7 +338,7 @@
         ]
       },
       "meta": {
-        "hash": "0d5247010e291b94e755d31e2cf173c232f6e37fcf1de51e39de5c6bc20c11b9"
+        "hash": "07c392eff204d3fe475cba116d25ca84b48f7f37ae18f0adade7e65c98ec509d"
       }
     },
     {
@@ -324,7 +347,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "MultiselectCheckbox.md",
-        "text": "Renders a checkbox list that uses a callback function to pass its selected value/values to the parent component.\n\n* Use `React.setState()` to create a `data` state variable and set its initial value equal to the `options` prop.\n* Create a function `toggle` that is used to toggle the `checked` to update the `data` state variable and call the `onChange` callback passed via the component's props.\n* Render a `<ul>` element and use `Array.prototype.map()` to map the `data` state variable to individual `<li>` elements with `<input>` elements as their children.\n* Each `<input>` element has the `type='checkbox'` attribute and is marked as `readOnly`, as its click events are handled by the parent `<li>` element's `onClick` handler.\n\n",
+        "text": "Renders a checkbox list that uses a callback function to pass its selected value/values to the parent component.\n\n- Use `React.setState()` to create a `data` state variable and set its initial value equal to the `options` prop.\n- Create a function `toggle` that is used to toggle the `checked` to update the `data` state variable and call the `onChange` callback passed via the component's props.\n- Render a `<ul>` element and use `Array.prototype.map()` to map the `data` state variable to individual `<li>` elements with `<input>` elements as their children.\n- Each `<input>` element has the `type='checkbox'` attribute and is marked as `readOnly`, as its click events are handled by the parent `<li>` element's `onClick` handler.\n\n",
         "codeBlocks": {
           "style": "",
           "code": "const style = {\r\n  listContainer: {\r\n    listStyle: 'none',\r\n    paddingLeft: 0\r\n  },\r\n  itemStyle: {\r\n    cursor: 'pointer',\r\n    padding: 5\r\n  }\r\n};\r\n\r\nfunction MultiselectCheckbox({ options, onChange }) {\r\n  const [data, setData] = React.useState(options);\r\n\r\n  const toggle = item => {\r\n    data.forEach((_, key) => {\r\n      if (data[key].label === item.label) data[key].checked = !item.checked;\r\n    });\r\n    setData([...data]);\r\n    onChange(data);\r\n  };\r\n\r\n  return (\r\n    <ul style={style.listContainer}>\r\n      {data.map(item => {\r\n        return (\r\n          <li key={item.label} style={style.itemStyle} onClick={() => toggle(item)}>\r\n            <input readOnly type=\"checkbox\" checked={item.checked || false} />\r\n            {item.label}\r\n          </li>\r\n        );\r\n      })}\r\n    </ul>\r\n  );\r\n}",
@@ -338,7 +361,7 @@
         ]
       },
       "meta": {
-        "hash": "d99b24f434ac1dc8e9a3e424fc508f333ba95eabf4629f81eb581e8604645460"
+        "hash": "ec2d246e3520208cf67146e9674f576b4d13fd31854892113396409edcb68db6"
       }
     },
     {
@@ -347,7 +370,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "PasswordRevealer.md",
-        "text": "Renders a password input field with a reveal button.\n\n* Use the `React.useState()` hook to create the `shown` state variable and set its value to `false`.\n* Use a`<div>` to wrap both the`<input>` and the `<button>` element that toggles the type of the input field between `\"text\"` and `\"password\"`.\n\n",
+        "text": "Renders a password input field with a reveal button.\n\n- Use the `React.useState()` hook to create the `shown` state variable and set its value to `false`.\n- Use a`<div>` to wrap both the`<input>` and the `<button>` element that toggles the type of the input field between `\"text\"` and `\"password\"`.\n\n",
         "codeBlocks": {
           "style": "",
           "code": "function PasswordRevealer({ value }) {\r\n  const [shown, setShown] = React.useState(false);\r\n\r\n  return (\r\n    <div>\r\n      <input type={shown ? 'text' : 'password'} value={value} onChange={() => {}} />\r\n      <button onClick={() => setShown(!shown)}>Show/Hide</button>\r\n    </div>\r\n  );\r\n}",
@@ -360,7 +383,7 @@
         ]
       },
       "meta": {
-        "hash": "5b4adfdb553deb652a7a16eb6d7a42a4ae9e7f1372dc28dfedfe0b54a0cca6cd"
+        "hash": "7e019374ec668fe2bc3053bbcb3e8a2f3ac419ac0e316d3ee6e94f99a1fb53ee"
       }
     },
     {
@@ -369,7 +392,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "Select.md",
-        "text": "Renders a `<select>` element that uses a callback function to pass its value to the parent component.\n\n* Use object destructuring to set defaults for certain attributes of the `<select>` element.\n* Render a `<select>` element with the appropriate attributes and use the `callback` function in the `onChange` event to pass the value of the textarea to the parent.\n* Use destructuring on the `values` array to pass an array of `value` and `text` elements and the `selected` attribute to define the initial `value` of the `<select>` element.\n\n",
+        "text": "Renders a `<select>` element that uses a callback function to pass its value to the parent component.\n\n- Use object destructuring to set defaults for certain attributes of the `<select>` element.\n- Render a `<select>` element with the appropriate attributes and use the `callback` function in the `onChange` event to pass the value of the textarea to the parent.\n- Use destructuring on the `values` array to pass an array of `value` and `text` elements and the `selected` attribute to define the initial `value` of the `<select>` element.\n\n",
         "codeBlocks": {
           "style": "",
           "code": "function Select({ values, callback, disabled = false, readonly = false, selected }) {\r\n  return (\r\n    <select\r\n      disabled={disabled}\r\n      readOnly={readonly}\r\n      onChange={({ target: { value } }) => callback(value)}\r\n    >\r\n      {values.map(([value, text]) => (\r\n        <option selected={selected === value} value={value}>\r\n          {text}\r\n        </option>\r\n      ))}\r\n    </select>\r\n  );\r\n}",
@@ -381,7 +404,7 @@
         ]
       },
       "meta": {
-        "hash": "078ac3ecaf21e2b8321d038eec31d04164cbc2307bacc6ad852a591cd89acc8d"
+        "hash": "b82ad131475042bd38682aba03964494680fc2dfe3a61b0a1478215f74e993de"
       }
     },
     {
@@ -390,7 +413,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "Slider.md",
-        "text": "Renders a slider element that uses a callback function to pass its value to the parent component.\n\n* Use object destructuring to set defaults for certain attributes of the `<input>` element.\n* Render an `<input>` element of type `\"range\"` and the appropriate attributes, use the `callback` function in the `onChange` event to pass the value of the input to the parent.\n\n",
+        "text": "Renders a slider element that uses a callback function to pass its value to the parent component.\n\n- Use object destructuring to set defaults for certain attributes of the `<input>` element.\n- Render an `<input>` element of type `\"range\"` and the appropriate attributes, use the `callback` function in the `onChange` event to pass the value of the input to the parent.\n\n",
         "codeBlocks": {
           "style": "",
           "code": "function Slider({ callback, disabled = false, readOnly = false }) {\r\n  return (\r\n    <input\r\n      type=\"range\"\r\n      disabled={disabled}\r\n      readOnly={readOnly}\r\n      onChange={({ target: { value } }) => callback(value)}\r\n    />\r\n  );\r\n}",
@@ -402,7 +425,7 @@
         ]
       },
       "meta": {
-        "hash": "ee5e5225156f65a573b0f4c57ae4e81489bd45071bc5ff435a93c79926e3e360"
+        "hash": "db77adcc300072c41b4d096cd385f7c3616601fcace16d7c28032036a6eed7e7"
       }
     },
     {
@@ -411,10 +434,10 @@
       "type": "snippet",
       "attributes": {
         "fileName": "StarRating.md",
-        "text": "Renders a star rating component.\n\n* Define a component, called `Star` that will render each individual star with the appropriate appearance, based on the parent component's state.\n* In the `StarRating` component, use the `React.useState()` hook to define the `rating` and `selection` state variables with the initial values of `props.rating` (or `0` if invalid or not supplied) and `0`.\n* Create a method, `hoverOver`, that updates `selected` and `rating` according to the provided `event`.\n* Create a `<div>` to wrap the `<Star>` components, which are created using `Array.prototype.map` on an array of 5 elements, created using `Array.from`, and handle the `onMouseLeave` event to set `selection` to `0`, the `onClick` event to set the `rating` and the `onMouseOver` event to set `selection` to the `star-id` attribute of the `event.target` respectively.\n* Finally, pass the appropriate values to each `<Star>` component (`starId` and `marked`).\n\n",
+        "text": "Renders a star rating component.\n\n- Define a component, called `Star` that will render each individual star with the appropriate appearance, based on the parent component's state.\n- In the `StarRating` component, use the `React.useState()` hook to define the `rating` and `selection` state variables with the initial values of `props.rating` (or `0` if invalid or not supplied) and `0`.\n- Create a method, `hoverOver`, that updates `selected` and `rating` according to the provided `event`.\n- Create a `<div>` to wrap the `<Star>` components, which are created using `Array.prototype.map` on an array of 5 elements, created using `Array.from`, and handle the `onMouseLeave` event to set `selection` to `0`, the `onClick` event to set the `rating` and the `onMouseOver` event to set `selection` to the `star-id` attribute of the `event.target` respectively.\n- Finally, pass the appropriate values to each `<Star>` component (`starId` and `marked`).\n\n",
         "codeBlocks": {
           "style": "",
-          "code": "function Star({ marked, starId }) {\r\n  return (\r\n    <span star-id={starId} style={{ color: '#ff9933' }} role=\"button\">\r\n      {marked ? '\\u2605' : '\\u2606'}\r\n    </span>\r\n  );\r\n}\r\n\r\nfunction StarRating(props) {\r\n  const [rating, setRating] = React.useState(typeof props.rating == 'number' ? props.rating : 0);\r\n  const [selection, setSelection] = React.useState(0);\r\n  const hoverOver = event => {\r\n    let val = 0;\r\n    if (event && event.target && event.target.getAttribute('star-id'))\r\n      val = event.target.getAttribute('star-id');\r\n    setSelection(val);\r\n  };\r\n  return (\r\n    <div\r\n      onMouseOut={() => hoverOver(null)}\r\n      onClick={(event) => setRating(event.target.getAttribute('star-id') || rating)}\r\n      onMouseOver={hoverOver}\r\n    >\r\n      {Array.from({ length: 5 }, (v, i) => (\r\n        <Star\r\n          starId={i + 1}\r\n          key={`star_${i + 1} `}\r\n          marked={selection ? selection >= i + 1 : rating >= i + 1}\r\n        />\r\n      ))}\r\n    </div>\r\n  );\r\n}",
+          "code": "function Star({ marked, starId }) {\r\n  return (\r\n    <span star-id={starId} style={{ color: '#ff9933' }} role=\"button\">\r\n      {marked ? '\\u2605' : '\\u2606'}\r\n    </span>\r\n  );\r\n}\r\n\r\nfunction StarRating(props) {\r\n  const [rating, setRating] = React.useState(typeof props.rating == 'number' ? props.rating : 0);\r\n  const [selection, setSelection] = React.useState(0);\r\n  const hoverOver = event => {\r\n    let val = 0;\r\n    if (event && event.target && event.target.getAttribute('star-id'))\r\n      val = event.target.getAttribute('star-id');\r\n    setSelection(val);\r\n  };\r\n  return (\r\n    <div\r\n      onMouseOut={() => hoverOver(null)}\r\n      onClick={event => setRating(event.target.getAttribute('star-id') || rating)}\r\n      onMouseOver={hoverOver}\r\n    >\r\n      {Array.from({ length: 5 }, (v, i) => (\r\n        <Star\r\n          starId={i + 1}\r\n          key={`star_${i + 1} `}\r\n          marked={selection ? selection >= i + 1 : rating >= i + 1}\r\n        />\r\n      ))}\r\n    </div>\r\n  );\r\n}",
           "example": "ReactDOM.render(<StarRating />, document.getElementById('root'));\r\nReactDOM.render(<StarRating rating={2} />, document.getElementById('root'));"
         },
         "tags": [
@@ -426,7 +449,7 @@
         ]
       },
       "meta": {
-        "hash": "1d0839c60acd1128737445aefbf3b98c03ba3ca1cd5203bdb585400811e5fa1f"
+        "hash": "a057b14315a578a5c27d6534b965c8a567be6ffd7ba0b32882282e6e99076ebc"
       }
     },
     {
@@ -435,7 +458,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "Tabs.md",
-        "text": "Renders a tabbed menu and view component.\n\n* Define a `TabItem` component, pass it to the `Tab` and remove unnecessary nodes expect for `TabItem` by identifying the function's name in `props.children`.\n* Use the `React.useState()` hook to initialize the value of the `bindIndex` state variable to `props.defaultIndex`.\n* Use `Array.prototype.map` on the collected nodes to render the `tab-menu` and `tab-view`.\n* Define `changeTab`, which will be executed when clicking a `<button>` from the `tab-menu`.\n* `changeTab` executes the passed callback, `onTabClick` and updates `bindIndex`, which in turn causes a re-render, evaluating the `style` and `className` of the `tab-view` items and `tab-menu` buttons according to their `index`.\n\n",
+        "text": "Renders a tabbed menu and view component.\n\n- Define a `TabItem` component, pass it to the `Tab` and remove unnecessary nodes expect for `TabItem` by identifying the function's name in `props.children`.\n- Use the `React.useState()` hook to initialize the value of the `bindIndex` state variable to `props.defaultIndex`.\n- Use `Array.prototype.map` on the collected nodes to render the `tab-menu` and `tab-view`.\n- Define `changeTab`, which will be executed when clicking a `<button>` from the `tab-menu`.\n- `changeTab` executes the passed callback, `onTabClick` and updates `bindIndex`, which in turn causes a re-render, evaluating the `style` and `className` of the `tab-view` items and `tab-menu` buttons according to their `index`.\n\n",
         "codeBlocks": {
           "style": ".tab-menu > button {\r\n  cursor: pointer;\r\n  padding: 8px 16px;\r\n  border: 0;\r\n  border-bottom: 2px solid transparent;\r\n  background: none;\r\n}\r\n.tab-menu > button.focus {\r\n  border-bottom: 2px solid #007bef;\r\n}\r\n.tab-menu > button:hover {\r\n  border-bottom: 2px solid #007bef;\r\n}",
           "code": "function TabItem(props) {\r\n  return <div {...props} />;\r\n}\r\n\r\nfunction Tabs(props) {\r\n  const [bindIndex, setBindIndex] = React.useState(props.defaultIndex);\r\n  const changeTab = newIndex => {\r\n    if (typeof props.onTabClick === 'function') props.onTabClick(newIndex);\r\n    setBindIndex(newIndex);\r\n  };\r\n  const items = props.children.filter(item => item.type.name === 'TabItem');\r\n\r\n  return (\r\n    <div className=\"wrapper\">\r\n      <div className=\"tab-menu\">\r\n        {items.map(({ props: { index, label } }) => (\r\n          <button onClick={() => changeTab(index)} className={bindIndex === index ? 'focus' : ''}>\r\n            {label}\r\n          </button>\r\n        ))}\r\n      </div>\r\n      <div className=\"tab-view\">\r\n        {items.map(({ props }) => (\r\n          <div\r\n            {...props}\r\n            className=\"tab-view_item\"\r\n            key={props.index}\r\n            style={{ display: bindIndex === props.index ? 'block' : 'none' }}\r\n          />\r\n        ))}\r\n      </div>\r\n    </div>\r\n  );\r\n}",
@@ -449,7 +472,7 @@
         ]
       },
       "meta": {
-        "hash": "a342c4f735b7220c902079c6af051df255200e7376a0cd6bd0a58daa7c24a243"
+        "hash": "54a00cb6ac87079622e3806aa55816332e353eb88ba263a5059dd40942955ff7"
       }
     },
     {
@@ -458,7 +481,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "TextArea.md",
-        "text": "Renders a `<textarea>` element that uses a callback function to pass its value to the parent component.\n\n* Use object destructuring to set defaults for certain attributes of the `<textarea>` element.\n* Render a `<textarea>` element with the appropriate attributes and use the `callback` function in the `onChange` event to pass the value of the textarea to the parent.\n\n",
+        "text": "Renders a `<textarea>` element that uses a callback function to pass its value to the parent component.\n\n- Use object destructuring to set defaults for certain attributes of the `<textarea>` element.\n- Render a `<textarea>` element with the appropriate attributes and use the `callback` function in the `onChange` event to pass the value of the textarea to the parent.\n\n",
         "codeBlocks": {
           "style": "",
           "code": "function TextArea({\r\n  callback,\r\n  cols = 20,\r\n  rows = 2,\r\n  disabled = false,\r\n  readOnly = false,\r\n  placeholder = ''\r\n}) {\r\n  return (\r\n    <textarea\r\n      cols={cols}\r\n      rows={rows}\r\n      disabled={disabled}\r\n      readOnly={readOnly}\r\n      placeholder={placeholder}\r\n      onChange={({ target: { value } }) => callback(value)}\r\n    />\r\n  );\r\n}",
@@ -470,7 +493,7 @@
         ]
       },
       "meta": {
-        "hash": "edfcd4ef343323d358233bf14fe3299ef55934c5bcf774246522f82df1776a31"
+        "hash": "4c0c3bcdb3a7a7f858d1e938e7a1926804ceca983f5eeae3edf4b28f36548fb4"
       }
     },
     {
@@ -479,7 +502,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "Ticker.md",
-        "text": "Renders a ticker component.\n\n* Use the `React.useState()` hook to initialize the `ticker` state variable to `0`.\n* Define two methods, `tick` and `reset`, that will periodically increment `timer` based on `interval` and reset `interval` respectively.\n* Return a `<div>` with two `<button>` elements, each of which calls `tick` and `reset` respectively.\n\n",
+        "text": "Renders a ticker component.\n\n- Use the `React.useState()` hook to initialize the `ticker` state variable to `0`.\n- Define two methods, `tick` and `reset`, that will periodically increment `timer` based on `interval` and reset `interval` respectively.\n- Return a `<div>` with two `<button>` elements, each of which calls `tick` and `reset` respectively.\n\n",
         "codeBlocks": {
           "style": "",
           "code": "function Ticker(props) {\r\n  const [ticker, setTicker] = React.useState(0);\r\n  let interval = null;\r\n\r\n  const tick = () => {\r\n    reset();\r\n    interval = setInterval(() => {\r\n      if (ticker < props.times) setTicker(ticker + 1);\r\n      else clearInterval(interval);\r\n    }, props.interval);\r\n  };\r\n\r\n  const reset = () => {\r\n    setTicker(0);\r\n    clearInterval(interval);\r\n  };\r\n\r\n  return (\r\n    <div>\r\n      <span style={{ fontSize: 100 }}>{ticker}</span>\r\n      <button onClick={tick}>Tick!</button>\r\n      <button onClick={reset}>Reset</button>\r\n    </div>\r\n  );\r\n}",
@@ -492,7 +515,7 @@
         ]
       },
       "meta": {
-        "hash": "23266b3e0b4e2ab6d18bdafe0f4558c069e51f7f6480e3b51d46358fe90d4809"
+        "hash": "d64dece795561241f3b0d7b3fa1e87971994bda2fbe406c6ce740af866e3d9a7"
       }
     },
     {
@@ -501,7 +524,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "Toggle.md",
-        "text": "Renders a toggle component.\n\n* Use the `React.useState()` to initialize the `isToggleOn` state variable to `false`.\n* Use an object, `style`, to hold the styles for individual components and their states.\n* Return a `<button>` that alters the component's `isToggledOn` when its `onClick` event is fired and determine the appearance of the content based on `isToggleOn`, applying the appropriate CSS rules from the `style` object.\n\n",
+        "text": "Renders a toggle component.\n\n- Use the `React.useState()` to initialize the `isToggleOn` state variable to `false`.\n- Use an object, `style`, to hold the styles for individual components and their states.\n- Return a `<button>` that alters the component's `isToggledOn` when its `onClick` event is fired and determine the appearance of the content based on `isToggleOn`, applying the appropriate CSS rules from the `style` object.\n\n",
         "codeBlocks": {
           "style": "",
           "code": "function Toggle(props) {\r\n  const [isToggleOn, setIsToggleOn] = React.useState(false);\r\n  style = {\r\n    on: {\r\n      backgroundColor: 'green'\r\n    },\r\n    off: {\r\n      backgroundColor: 'grey'\r\n    }\r\n  };\r\n\r\n  return (\r\n    <button onClick={() => setIsToggleOn(!isToggleOn)} style={isToggleOn ? style.on : style.off}>\r\n      {isToggleOn ? 'ON' : 'OFF'}\r\n    </button>\r\n  );\r\n}",
@@ -514,7 +537,7 @@
         ]
       },
       "meta": {
-        "hash": "a497d9a55df0c12999f08d0cd9c169b5d5c8e4f56d80ab7550ef539dc73f4fcf"
+        "hash": "c921c0adeca337f2cf804acf35e8ab231befdd451d4dcca09a73fecf6ad66836"
       }
     },
     {
@@ -523,7 +546,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "Tooltip.md",
-        "text": "Renders a tooltip component.\n\n* Use the `React.useState()` hook to create the `show` variable and initialize it to `false`.\n* Return a `<div>` element that contains the `<div>` that will be the tooltip and the `children` passed to the component.\n* Handle the `onMouseEnter` and `onMouseLeave` methods, by altering the value of the `show` variable.\n\n",
+        "text": "Renders a tooltip component.\n\n- Use the `React.useState()` hook to create the `show` variable and initialize it to `false`.\n- Return a `<div>` element that contains the `<div>` that will be the tooltip and the `children` passed to the component.\n- Handle the `onMouseEnter` and `onMouseLeave` methods, by altering the value of the `show` variable.\n\n",
         "codeBlocks": {
           "style": ".tooltip {\r\n  position: relative;\r\n  background: rgba(0, 0, 0, 0.7);\r\n  color: white;\r\n  visibility: hidden;\r\n  padding: 5px;\r\n  border-radius: 5px;\r\n}\r\n.tooltip-arrow {\r\n  position: absolute;\r\n  top: 100%;\r\n  left: 50%;\r\n  border-width: 5px;\r\n  border-style: solid;\r\n  border-color: rgba(0, 0, 0, 0.7) transparent transparent;\r\n}",
           "code": "function Tooltip({ children, text, ...rest }) {\r\n  const [show, setShow] = React.useState(false);\r\n\r\n  return (\r\n    <div>\r\n      <div className=\"tooltip\" style={show ? { visibility: 'visible' } : {}}>\r\n        {text}\r\n        <span className=\"tooltip-arrow\" />\r\n      </div>\r\n      <div {...rest} onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>\r\n        {children}\r\n      </div>\r\n    </div>\r\n  );\r\n}",
@@ -537,7 +560,7 @@
         ]
       },
       "meta": {
-        "hash": "fc1cec890de96741cba636008aa04af5f63cb127f4fedec61e31394c02fd4dbf"
+        "hash": "db3b0f49f674b5a64ee1b9a9098aab360331901425faa382c5de5cb8cae33167"
       }
     },
     {
@@ -546,7 +569,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "TreeView.md",
-        "text": "Renders a tree view of a JSON object or array with collapsible content.\n\n* Use object destructuring to set defaults for certain props.\n* Use the value of the `toggled` prop to determine the initial state of the content (collapsed/expanded).\n* Use the `React.setState()` hook to create the `isToggled` state variable and give it the value of the `toggled` prop initially.\n* Return a `<div>` to wrap the contents of the component and the `<span>` element, used to alter the component's `isToggled` state.\n* Determine the appearance of the component, based on `isParentToggled`, `isToggled`, `name` and `Array.isArray()` on `data`.\n* For each child in `data`, determine if it is an object or array and recursively render a sub-tree.\n* Otherwise, render a `<p>` element with the appropriate style.\n\n",
+        "text": "Renders a tree view of a JSON object or array with collapsible content.\n\n- Use object destructuring to set defaults for certain props.\n- Use the value of the `toggled` prop to determine the initial state of the content (collapsed/expanded).\n- Use the `React.setState()` hook to create the `isToggled` state variable and give it the value of the `toggled` prop initially.\n- Return a `<div>` to wrap the contents of the component and the `<span>` element, used to alter the component's `isToggled` state.\n- Determine the appearance of the component, based on `isParentToggled`, `isToggled`, `name` and `Array.isArray()` on `data`.\n- For each child in `data`, determine if it is an object or array and recursively render a sub-tree.\n- Otherwise, render a `<p>` element with the appropriate style.\n\n",
         "codeBlocks": {
           "style": ".tree-element {\r\n  margin: 0;\r\n  position: relative;\r\n}\r\n\r\ndiv.tree-element:before {\r\n  content: '';\r\n  position: absolute;\r\n  top: 24px;\r\n  left: 1px;\r\n  height: calc(100% - 48px);\r\n  border-left: 1px solid gray;\r\n}\r\n\r\n.toggler {\r\n  position: absolute;\r\n  top: 10px;\r\n  left: 0px;\r\n  width: 0;\r\n  height: 0;\r\n  border-top: 4px solid transparent;\r\n  border-bottom: 4px solid transparent;\r\n  border-left: 5px solid gray;\r\n  cursor: pointer;\r\n}\r\n\r\n.toggler.closed {\r\n  transform: rotate(90deg);\r\n}\r\n\r\n.collapsed {\r\n  display: none;\r\n}",
           "code": "function TreeView({\r\n  data,\r\n  toggled = true,\r\n  name = null,\r\n  isLast = true,\r\n  isChildElement = false,\r\n  isParentToggled = true\r\n}) {\r\n  const [isToggled, setIsToggled] = React.useState(toggled);\r\n\r\n  return (\r\n    <div\r\n      style={{ marginLeft: isChildElement ? 16 : 4 + 'px' }}\r\n      className={isParentToggled ? 'tree-element' : 'tree-element collapsed'}\r\n    >\r\n      <span\r\n        className={isToggled ? 'toggler' : 'toggler closed'}\r\n        onClick={() => setIsToggled(!isToggled)}\r\n      />\r\n      {name ? <strong>&nbsp;&nbsp;{name}: </strong> : <span>&nbsp;&nbsp;</span>}\r\n      {Array.isArray(data) ? '[' : '{'}\r\n      {!isToggled && '...'}\r\n      {Object.keys(data).map((v, i, a) =>\r\n        typeof data[v] == 'object' ? (\r\n          <TreeView\r\n            data={data[v]}\r\n            isLast={i === a.length - 1}\r\n            name={Array.isArray(data) ? null : v}\r\n            isChildElement\r\n            isParentToggled={isParentToggled && isToggled}\r\n          />\r\n        ) : (\r\n          <p\r\n            style={{ marginLeft: 16 + 'px' }}\r\n            className={isToggled ? 'tree-element' : 'tree-element collapsed'}\r\n          >\r\n            {Array.isArray(data) ? '' : <strong>{v}: </strong>}\r\n            {data[v]}\r\n            {i === a.length - 1 ? '' : ','}\r\n          </p>\r\n        )\r\n      )}\r\n      {Array.isArray(data) ? ']' : '}'}\r\n      {!isLast ? ',' : ''}\r\n    </div>\r\n  );\r\n}",
@@ -561,7 +584,7 @@
         ]
       },
       "meta": {
-        "hash": "4002acde51d7ecf13830a102da4ca83b702b50c9603834d8902dfba859d955e4"
+        "hash": "305bd408515e5c575411f40b1bb24f75f6c776cd6387bb083818f2feb9175a70"
       }
     },
     {
@@ -570,11 +593,11 @@
       "type": "snippet",
       "attributes": {
         "fileName": "UncontrolledInput.md",
-        "text": "Renders an `<input>` element that uses a callback function to pass its value to the parent component.\n\n* Use object destructuring to set defaults for certain attributes of the `<input>` element.\n* Render an `<input>` element with the appropriate attributes and use the `callback` function in the `onChange` event to pass the value of the input to the parent.\n\n",
+        "text": "Renders an `<input>` element that uses a callback function to pass its value to the parent component.\n\n- Use object destructuring to set defaults for certain attributes of the `<input>` element.\n- Render an `<input>` element with the appropriate attributes and use the `callback` function in the `onChange` event to pass the value of the input to the parent.\n\n",
         "codeBlocks": {
           "style": "",
-          "code": "function UncontrolledInput({ callback, type = 'text', disabled = false, readOnly = false, placeholder = '' }) {\r\n  return (\r\n    <input\r\n      type={type}\r\n      disabled={disabled}\r\n      readOnly={readOnly}\r\n      placeholder={placeholder}\r\n      onChange={({ target: { value } }) => callback(value)}\r\n    />\r\n  );\r\n}",
-          "example": "ReactDOM.render(\r\n  <UncontrolledInput type=\"text\" placeholder=\"Insert some text here...\" callback={val => console.log(val)} />,\r\n  document.getElementById('root')\r\n);"
+          "code": "function UncontrolledInput({\r\n  callback,\r\n  type = 'text',\r\n  disabled = false,\r\n  readOnly = false,\r\n  placeholder = ''\r\n}) {\r\n  return (\r\n    <input\r\n      type={type}\r\n      disabled={disabled}\r\n      readOnly={readOnly}\r\n      placeholder={placeholder}\r\n      onChange={({ target: { value } }) => callback(value)}\r\n    />\r\n  );\r\n}",
+          "example": "ReactDOM.render(\r\n  <UncontrolledInput\r\n    type=\"text\"\r\n    placeholder=\"Insert some text here...\"\r\n    callback={val => console.log(val)}\r\n  />,\r\n  document.getElementById('root')\r\n);"
         },
         "tags": [
           "input",
@@ -582,7 +605,7 @@
         ]
       },
       "meta": {
-        "hash": "7ea3169ca176a8bf0610f34082363a18811d16451519b62776ffae9f0175820c"
+        "hash": "5aff6673123594949dd0d1e72c8fbb586f402b2eb9fdcf8dd9a2b789b4089adb"
       }
     }
   ],

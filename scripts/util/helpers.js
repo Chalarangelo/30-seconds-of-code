@@ -22,8 +22,7 @@ const optimizeNodes = (data, regexp, replacer) => {
 };
 // Capitalizes the first letter of a string
 const capitalize = (str, lowerRest = false) =>
-  str.slice(0, 1).toUpperCase() +
-  (lowerRest ? str.slice(1).toLowerCase() : str.slice(1));
+  str.slice(0, 1).toUpperCase() + (lowerRest ? str.slice(1).toLowerCase() : str.slice(1));
 const prepTaggedData = tagDbData =>
   [...new Set(Object.entries(tagDbData).map(t => t[1][0]))]
     .filter(v => v)
@@ -32,22 +31,17 @@ const prepTaggedData = tagDbData =>
         ? 1
         : capitalize(b, true) === 'Uncategorized'
         ? -1
-        : a.localeCompare(b),
+        : a.localeCompare(b)
     );
 const makeExamples = data => {
   data =
     data.slice(0, data.lastIndexOf(`\`\`\`${config.language}`)).trim() +
     misc.collapsible(
       'Examples',
-      data.slice(
-        data.lastIndexOf(`\`\`\`${config.language}`),
-        data.lastIndexOf('```'),
-      ) + data.slice(data.lastIndexOf('```')),
+      data.slice(data.lastIndexOf(`\`\`\`${config.language}`), data.lastIndexOf('```')) +
+        data.slice(data.lastIndexOf('```'))
     );
-  return `${data}\n<br>${misc.link(
-    '⬆ Back to top',
-    misc.anchor('Contents'),
-  )}\n\n`;
+  return `${data}\n<br>${misc.link('⬆ Back to top', misc.anchor('Contents'))}\n\n`;
 };
 
 module.exports = {
@@ -56,5 +50,5 @@ module.exports = {
   optimizeNodes,
   capitalize,
   prepTaggedData,
-  makeExamples,
+  makeExamples
 };

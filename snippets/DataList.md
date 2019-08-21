@@ -1,13 +1,13 @@
 ---
-title:  DataList
-tags:  array,beginner
+title: DataList
+tags: array,beginner
 ---
 
 Renders a list of elements from an array of primitives.
 
-* Use the value of the `isOrdered` prop to conditionally render a `<ol>` or `<ul>` list.
-* Use `Array.prototype.map` to render every item in `data` as a `<li>` element, give it a `key` produced from the concatenation of the its index and value.
-* Omit the `isOrdered` prop to render a `<ul>` list by default.
+- Use the value of the `isOrdered` prop to conditionally render a `<ol>` or `<ul>` list.
+- Use `Array.prototype.map` to render every item in `data` as a `<li>` element, give it a `key` produced from the concatenation of the its index and value.
+- Omit the `isOrdered` prop to render a `<ul>` list by default.
 
 ```jsx
 function DataList({ isOrdered, data }) {

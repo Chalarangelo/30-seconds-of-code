@@ -12,5 +12,5 @@ module.exports = {
   staticPartsPath: `src/static-parts`,
   // General information
   language: `jsx`,
-  optionalLanguage: `css`,
+  optionalLanguage: `css`
 };

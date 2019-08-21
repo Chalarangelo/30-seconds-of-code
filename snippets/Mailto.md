@@ -1,12 +1,12 @@
 ---
-title:  Mailto
+title: Mailto
 tags: viual,beginner
 ---
 
 Renders a link formatted to send an email.
 
-* Destructure the component's props, use `email`, `subject` and `body` to create a `<a>` element with an appropriate `href` attribute.
-* Render the link with `props.children` as its content.
+- Destructure the component's props, use `email`, `subject` and `body` to create a `<a>` element with an appropriate `href` attribute.
+- Render the link with `props.children` as its content.
 
 ```jsx
 function Mailto({ email, subject, body, ...props }) {
