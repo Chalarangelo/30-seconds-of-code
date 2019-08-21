@@ -20,6 +20,9 @@ const deepClone = obj => {
   Object.keys(clone).forEach(
     key => (clone[key] = typeof obj[key] === 'object' ? deepClone(obj[key]) : obj[key])
   );
+  if (obj) {
+    Object.setPrototypeOf(clone, Object.getPrototypeOf(obj));
+  }
   return Array.isArray(obj) && obj.length
     ? (clone.length = obj.length) && Array.from(clone)
     : Array.isArray(obj)
