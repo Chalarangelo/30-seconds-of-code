@@ -4,11 +4,11 @@
 
 Here's what you can do to help:
 
-- [Open issues](https://github.com/30-seconds/30-seconds-of-python-code/issues/new) for things you want to see added or modified.
-- Be part of the discussion by helping out with [existing issues](https://github.com/30-seconds/30-seconds-of-python-code/issues) or talking on our [gitter channel](https://gitter.im/30-seconds-of-python-code/Lobby).
-- Submit [pull requests](https://github.com/30-seconds/30-seconds-of-python-code/pulls) with snippets you have created (see below for guidelines).
+- [Open issues](https://github.com/30-seconds/30-seconds-of-python/issues/new) for things you want to see added or modified.
+- Be part of the discussion by helping out with [existing issues](https://github.com/30-seconds/30-seconds-of-python/issues) or talking on our [gitter channel](https://gitter.im/30-seconds-of-python/Lobby).
+- Submit [pull requests](https://github.com/30-seconds/30-seconds-of-python/pulls) with snippets you have created (see below for guidelines).
 - Fix typos in existing snippets, improve snippet descriptions and explanations or provide better examples.
-- Before submitting a PR for any new snippets go through [this](https://github.com/30-seconds/30-seconds-of-python-code/projects/1) project. If your snippet is not there, then go ahead and submit a PR. Else if it is in the done column, sorry it has been already implemented. If it is in any other column submit a PR and give the card's link in the description section of PR.
+- Before submitting a PR for any new snippets go through [this](https://github.com/30-seconds/30-seconds-of-python/projects/1) project. If your snippet is not there, then go ahead and submit a PR. Else if it is in the done column, sorry it has been already implemented. If it is in any other column submit a PR and give the card's link in the description section of PR.
 - **Working on your first Pull Request?** You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
 
 ### Snippet submission and Pull request guidelines

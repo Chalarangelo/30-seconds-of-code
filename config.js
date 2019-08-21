@@ -3,7 +3,7 @@ module.exports = {
   name: `30 seconds of python`,
   description: `A curated collection of useful Python snippets that you can understand in 30 seconds or less.`,
   shortName: `30s`,
-  repositoryUrl: `https://github.com/30-seconds/30-seconds-of-python-code`,
+  repositoryUrl: `https://github.com/30-seconds/30-seconds-of-python`,
   // Path information
   snippetPath: `snippets`,
   snippetDataPath: `snippet_data`,

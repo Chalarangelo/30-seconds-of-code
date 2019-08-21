@@ -1,6 +1,6 @@
 ![Logo](/icon.png)
 
-## 30-seconds-of-python-code
+## 30-seconds-of-python
 
 > Curated collection of useful Python snippets that you can understand in 30 seconds or less.
 

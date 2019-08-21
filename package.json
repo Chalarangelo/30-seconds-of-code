@@ -1,5 +1,5 @@
 {
-  "name": "30-seconds-of-python-code",
+  "name": "30-seconds-of-python",
   "version": "1.0.0",
   "description": "A curated collection of useful Python snippets that you can understand in 30 seconds or less.",
   "main": "config.js",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/30-seconds/30-seconds-of-python-code.git"
+    "url": "git+https://github.com/30-seconds/30-seconds-of-python.git"
   },
   "author": "Stefan Fejes (ns.fejes.stefan@gmail.com)",
   "license": "CC0-1.0",
   "bugs": {
     "url": "https://github.com/30-seconds/30-seconds-of-pythong-code/issues"
   },
-  "homepage": "https://github.com/30-seconds/30-seconds-of-python-code",
+  "homepage": "https://github.com/30-seconds/30-seconds-of-python",
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.5.4",
