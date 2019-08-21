@@ -24,6 +24,7 @@
       "attributes": {
         "text": "Renders a string as plaintext, with URLs converted to appropriate `<a>` elements.\n\n- Use `String.prototype.split()` and `String.prototype.match()` with a regular expression to find URLs in a string.\n- Return a `<React.Fragment>` with matched URLs rendered as `<a>` elements, dealing with missing protocol prefixes if necessary, and the rest of the string rendered as plaintext.\n\n",
         "tags": [
+          "utility",
           "string",
           "fragment",
           "regexp",
@@ -403,8 +404,8 @@
       "attributes": {
         "text": "Renders a tree view of a JSON object or array with collapsible content.\n\n- Use object destructuring to set defaults for certain props.\n- Use the value of the `toggled` prop to determine the initial state of the content (collapsed/expanded).\n- Use the `React.setState()` hook to create the `isToggled` state variable and give it the value of the `toggled` prop initially.\n- Return a `<div>` to wrap the contents of the component and the `<span>` element, used to alter the component's `isToggled` state.\n- Determine the appearance of the component, based on `isParentToggled`, `isToggled`, `name` and `Array.isArray()` on `data`.\n- For each child in `data`, determine if it is an object or array and recursively render a sub-tree.\n- Otherwise, render a `<p>` element with the appropriate style.\n\n",
         "tags": [
-          "object",
           "visual",
+          "object",
           "state",
           "recursion",
           "advanced"

@@ -36,6 +36,7 @@
           "example": "ReactDOM.render(\r\n  <AutoLink text=\"foo bar baz http://example.org bar\" />,\r\n  document.getElementById('root')\r\n);"
         },
         "tags": [
+          "utility",
           "string",
           "fragment",
           "regexp",
@@ -553,8 +554,8 @@
           "example": "let data = {\r\n  lorem: {\r\n    ipsum: 'dolor sit',\r\n    amet: {\r\n      consectetur: 'adipiscing',\r\n      elit: [\r\n        'duis',\r\n        'vitae',\r\n        {\r\n          semper: 'orci'\r\n        },\r\n        {\r\n          est: 'sed ornare'\r\n        },\r\n        'etiam',\r\n        ['laoreet', 'tincidunt'],\r\n        ['vestibulum', 'ante']\r\n      ]\r\n    },\r\n    ipsum: 'primis'\r\n  }\r\n};\r\nReactDOM.render(<TreeView data={data} name=\"data\" />, document.getElementById('root'));"
         },
         "tags": [
-          "object",
           "visual",
+          "object",
           "state",
           "recursion",
           "advanced"
