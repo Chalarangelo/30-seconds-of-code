@@ -1,14 +1,14 @@
 ---
-title:  LimitedTextarea
+title: LimitedTextarea
 tags: input,state,effect,event,beginner
 ---
 
 Renders a textarea component with a character limit.
 
-* Use the `React.useState()` hook to create the `content` state variable and set its value to `value`.
-Create a method `setFormattedContent`, which trims the content of the input if it's longer than `limit`.
-* Use the `React.useEffect()` hook to call the `setFormattedContent` method on the value of the `content` state variable.
-* Use a`<div>` to wrap both the`<textarea>` and the `<p>` element that displays the character count and bind the `onChange` event of the `<textarea>` to call `setFormattedContent` with the value of `event.target.value`.
+- Use the `React.useState()` hook to create the `content` state variable and set its value to `value`.
+  Create a method `setFormattedContent`, which trims the content of the input if it's longer than `limit`.
+- Use the `React.useEffect()` hook to call the `setFormattedContent` method on the value of the `content` state variable.
+- Use a`<div>` to wrap both the`<textarea>` and the `<p>` element that displays the character count and bind the `onChange` event of the `<textarea>` to call `setFormattedContent` with the value of `event.target.value`.
 
 ```jsx
 function LimitedTextarea({ rows, cols, value, limit }) {

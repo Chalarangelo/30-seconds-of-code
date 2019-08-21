@@ -1,13 +1,13 @@
 ---
-title:  Ticker
+title: Ticker
 tags: visual,state,beginner
 ---
 
 Renders a ticker component.
 
-* Use the `React.useState()` hook to initialize the `ticker` state variable to `0`.
-* Define two methods, `tick` and `reset`, that will periodically increment `timer` based on `interval` and reset `interval` respectively.
-* Return a `<div>` with two `<button>` elements, each of which calls `tick` and `reset` respectively.
+- Use the `React.useState()` hook to initialize the `ticker` state variable to `0`.
+- Define two methods, `tick` and `reset`, that will periodically increment `timer` based on `interval` and reset `interval` respectively.
+- Return a `<div>` with two `<button>` elements, each of which calls `tick` and `reset` respectively.
 
 ```jsx
 function Ticker(props) {

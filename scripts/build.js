@@ -16,15 +16,8 @@ const SNIPPETS_PATH = `./${config.snippetPath}`;
 const STATIC_PARTS_PATH = `./${config.staticPartsPath}`;
 
 // Terminate if parent commit is a Travis build
-if (
-  util.isTravisCI() &&
-  /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])
-) {
-  console.log(
-    `${green(
-      'NOBUILD',
-    )} README build terminated, parent commit is a Travis build!`,
-  );
+if (util.isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
+  console.log(`${green('NOBUILD')} README build terminated, parent commit is a Travis build!`);
   process.exit(0);
 }
 
@@ -47,14 +40,8 @@ snippetsArray = Object.keys(snippets).reduce((acc, key) => {
 
 // Load static parts for the README file
 try {
-  startPart = fs.readFileSync(
-    path.join(STATIC_PARTS_PATH, 'README-start.md'),
-    'utf8',
-  );
-  endPart = fs.readFileSync(
-    path.join(STATIC_PARTS_PATH, 'README-end.md'),
-    'utf8',
-  );
+  startPart = fs.readFileSync(path.join(STATIC_PARTS_PATH, 'README-start.md'), 'utf8');
+  endPart = fs.readFileSync(path.join(STATIC_PARTS_PATH, 'README-end.md'), 'utf8');
 } catch (err) {
   console.log(`${red('ERROR!')} During static part loading: ${err}`);
   process.exit(1);
@@ -66,7 +53,7 @@ try {
     Object.keys(snippets).reduce((acc, key) => {
       acc[key] = snippets[key].attributes.tags;
       return acc;
-    }, {}),
+    }, {})
   );
 
   output += `${startPart}\n`;
@@ -74,9 +61,7 @@ try {
   // Loop over tags and snippets to create the table of contents
   for (const tag of tags) {
     const capitalizedTag = util.capitalize(tag, true);
-    const taggedSnippets = snippetsArray.filter(
-      snippet => snippet.attributes.tags[0] === tag,
-    );
+    const taggedSnippets = snippetsArray.filter(snippet => snippet.attributes.tags[0] === tag);
     output += headers.h3((EMOJIS[tag] || '') + ' ' + capitalizedTag).trim();
 
     output +=
@@ -87,44 +72,36 @@ try {
             `\`${snippet.title}\``,
             `${misc.anchor(snippet.title)}${
               snippet.attributes.tags.includes('advanced') ? '-' : ''
-            }`,
-          ),
-        ),
+            }`
+          )
+        )
       ) + '\n';
   }
 
   for (const tag of tags) {
     const capitalizedTag = util.capitalize(tag, true);
-    const taggedSnippets = snippetsArray.filter(
-      snippet => snippet.attributes.tags[0] === tag,
-    );
+    const taggedSnippets = snippetsArray.filter(snippet => snippet.attributes.tags[0] === tag);
 
-    output +=
-      misc.hr() + headers.h2((EMOJIS[tag] || '') + ' ' + capitalizedTag) + '\n';
+    output += misc.hr() + headers.h2((EMOJIS[tag] || '') + ' ' + capitalizedTag) + '\n';
 
     for (let snippet of taggedSnippets) {
       if (snippet.attributes.tags.includes('advanced'))
-        output +=
-          headers.h3(
-            snippet.title + ' ' + misc.image('advanced', '/advanced.svg'),
-          ) + '\n';
+        output += headers.h3(snippet.title + ' ' + misc.image('advanced', '/advanced.svg')) + '\n';
       else output += headers.h3(snippet.title) + '\n';
 
       output += snippet.attributes.text;
 
       if (snippet.attributes.codeBlocks.style !== '')
         output += `\`\`\`${config.optionalLanguage}\n${snippet.attributes.codeBlocks.style}\n\`\`\`\n\n`;
-      
 
       output += `\`\`\`${config.language}\n${snippet.attributes.codeBlocks.code}\n\`\`\``;
 
       output += misc.collapsible(
         'Examples',
-        `\`\`\`${config.language}\n${snippet.attributes.codeBlocks.example}\n\`\`\``,
+        `\`\`\`${config.language}\n${snippet.attributes.codeBlocks.example}\n\`\`\``
       );
 
-      output +=
-        '\n<br>' + misc.link('⬆ Back to top', misc.anchor('Contents')) + '\n';
+      output += '\n<br>' + misc.link('⬆ Back to top', misc.anchor('Contents')) + '\n';
     }
   }
 

@@ -1,15 +1,21 @@
 ---
-title:  UncontrolledInput
+title: UncontrolledInput
 tags: input,beginner
 ---
 
 Renders an `<input>` element that uses a callback function to pass its value to the parent component.
 
-* Use object destructuring to set defaults for certain attributes of the `<input>` element.
-* Render an `<input>` element with the appropriate attributes and use the `callback` function in the `onChange` event to pass the value of the input to the parent.
+- Use object destructuring to set defaults for certain attributes of the `<input>` element.
+- Render an `<input>` element with the appropriate attributes and use the `callback` function in the `onChange` event to pass the value of the input to the parent.
 
 ```jsx
-function UncontrolledInput({ callback, type = 'text', disabled = false, readOnly = false, placeholder = '' }) {
+function UncontrolledInput({
+  callback,
+  type = 'text',
+  disabled = false,
+  readOnly = false,
+  placeholder = ''
+}) {
   return (
     <input
       type={type}
@@ -24,7 +30,11 @@ function UncontrolledInput({ callback, type = 'text', disabled = false, readOnly
 
 ```jsx
 ReactDOM.render(
-  <UncontrolledInput type="text" placeholder="Insert some text here..." callback={val => console.log(val)} />,
+  <UncontrolledInput
+    type="text"
+    placeholder="Insert some text here..."
+    callback={val => console.log(val)}
+  />,
   document.getElementById('root')
 );
 ```

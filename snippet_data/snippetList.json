@@ -5,7 +5,7 @@
       "type": "snippetListing",
       "title": "Accordion",
       "attributes": {
-        "text": "Renders an accordion menu with multiple collapsible content components.\n\n* Define an `AccordionItem` component, pass it to the `Accordion` and remove unnecessary nodes expect for `AccordionItem` by identifying the function's name in `props.children`.\n* Each `AccordionItem` component renders a `<button>` that is used to update the `Accordion` via the `props.handleClick` callback and the content of the component, passed down via `props.children`, while its appearance is determined by `props.isCollapsed` and based on `style`.\n* In the `Accordion` component, use the `React.useState()` hook to initialize the value of the `bindIndex` state variable to `props.defaultIndex`.\n* Use `Array.prototype.map` on the collected nodes to render the individual collapsiple elements.\n* Define `changeItem`, which will be executed when clicking an `AccordionItem`'s `<button>`.\n`changeItem` executes the passed callback, `onItemClick` and updates `bindIndex` based on the clicked element.\n\n",
+        "text": "Renders an accordion menu with multiple collapsible content components.\n\n- Define an `AccordionItem` component, pass it to the `Accordion` and remove unnecessary nodes expect for `AccordionItem` by identifying the function's name in `props.children`.\n- Each `AccordionItem` component renders a `<button>` that is used to update the `Accordion` via the `props.handleClick` callback and the content of the component, passed down via `props.children`, while its appearance is determined by `props.isCollapsed` and based on `style`.\n- In the `Accordion` component, use the `React.useState()` hook to initialize the value of the `bindIndex` state variable to `props.defaultIndex`.\n- Use `Array.prototype.map` on the collected nodes to render the individual collapsiple elements.\n- Define `changeItem`, which will be executed when clicking an `AccordionItem`'s `<button>`.\n  `changeItem` executes the passed callback, `onItemClick` and updates `bindIndex` based on the clicked element.\n\n",
         "tags": [
           "visual",
           "children",
@@ -14,7 +14,7 @@
         ]
       },
       "meta": {
-        "hash": "7787feea6f6ad8bb1b1a73cf2938673d41fbc0dc8b29d5ebbbafe572784d963e"
+        "hash": "0300c924ea29110f2982ae5564a63ff01519a5d0ffc8ae6dc8d175363fb77534"
       }
     },
     {
@@ -22,7 +22,7 @@
       "type": "snippetListing",
       "title": "AutoLink",
       "attributes": {
-        "text": "Renders a string as plaintext, with URLs converted to appropriate `<a>` elements.\n\n* Use `String.prototype.split()` and `String.prototype.match()` with a regular expression to find URLs in a string.\n* Return a `<React.Fragment>` with matched URLs rendered as `<a>` elements, dealing with missing protocol prefixes if necessary, and the rest of the string rendered as plaintext.\n\n",
+        "text": "Renders a string as plaintext, with URLs converted to appropriate `<a>` elements.\n\n- Use `String.prototype.split()` and `String.prototype.match()` with a regular expression to find URLs in a string.\n- Return a `<React.Fragment>` with matched URLs rendered as `<a>` elements, dealing with missing protocol prefixes if necessary, and the rest of the string rendered as plaintext.\n\n",
         "tags": [
           "string",
           "fragment",
@@ -31,7 +31,7 @@
         ]
       },
       "meta": {
-        "hash": "4ca8f86fe197110cbdc91241f1c93ccb31ebe23f9b8eabe00f23c31f1939db1f"
+        "hash": "8a4373d9d191111ec6644ca315399c78d48c4d1a8c29124e48a88741ef826bea"
       }
     },
     {
@@ -39,7 +39,7 @@
       "type": "snippetListing",
       "title": "Carousel",
       "attributes": {
-        "text": "Renders a carousel component.\n\n* Use the `React.setState()` hook to create the `active` state variable and give it a value of `0` (index of the first item).\n* Use an object, `style`, to hold the styles for the individual components.\n* Use the `React.setEffect()` hook to update the value of `active` to the index of the next item, using `setTimeout`.\n* Destructure `props`, compute if visibility style should be set to `visible` or not for each carousel item while mapping over and applying the combined style to the carousel item component accordingly.\n* Render the carousel items using `React.cloneElement()` and pass down rest `props` along with the computed styles.\n\n",
+        "text": "Renders a carousel component.\n\n- Use the `React.setState()` hook to create the `active` state variable and give it a value of `0` (index of the first item).\n- Use an object, `style`, to hold the styles for the individual components.\n- Use the `React.setEffect()` hook to update the value of `active` to the index of the next item, using `setTimeout`.\n- Destructure `props`, compute if visibility style should be set to `visible` or not for each carousel item while mapping over and applying the combined style to the carousel item component accordingly.\n- Render the carousel items using `React.cloneElement()` and pass down rest `props` along with the computed styles.\n\n",
         "tags": [
           "visual",
           "children",
@@ -49,15 +49,15 @@
         ]
       },
       "meta": {
-        "hash": "c585316c31ab75c906dd8a9023474bfd68eb37dde735039bcca6067a2acd2894"
+        "hash": "24c0b339ea3131a8bde8081b1f44caac1d5014ecc1ac6d25ebf4b14d053a83a8"
       }
     },
     {
-      "id": "ClickOutAndInside",
+      "id": "ClickInside",
       "type": "snippetListing",
-      "title": "ClickInside and ClickOutside",
+      "title": "ClickInside",
       "attributes": {
-        "text": "Two handy hooks to handle the click outside and inside event on the wrapped component.\n\n* Create customized hooks that take in a `ref` component(node) and a `callback` function to hanlde the customized `click` event\n* Use the `React.useEffect()` hook to append and clean up the `click` event.\n* Use the `React.useRef()` hook to create a `ref` for your click component and pass it to `useClickInside` and `useClickOutside` hooks.\n\n",
+        "text": "A hook that handles the event of clicking inside the wrapped component.\n\n- Create a custom hook that takes a `ref` and a `callback` to handle the `click` event.\n- Use the `React.useEffect()` hook to append and clean up the `click` event.\n- Use the `React.useRef()` hook to create a `ref` for your click component and pass it to the `useClickInside` hook.\n\n",
         "tags": [
           "hooks",
           "effect",
@@ -66,7 +66,24 @@
         ]
       },
       "meta": {
-        "hash": "773cb2ce0e28ff705f350ff82398836268bce65b32a2b93664bd535fbeed61e8"
+        "hash": "16385296d9c0506b9f69f202332e3037d9e4a47d4e04bc68665e26c04e4f7aed"
+      }
+    },
+    {
+      "id": "ClickOutside",
+      "type": "snippetListing",
+      "title": "ClickOutside",
+      "attributes": {
+        "text": "A hook that handles the event of clicking outside of the wrapped component.\n\n- Create a custom hook that takes a `ref` and a `callback` to handle the `click` event.\n- Use the `React.useEffect()` hook to append and clean up the `click` event.\n- Use the `React.useRef()` hook to create a `ref` for your click component and pass it to the `useClickOutside` hook.\n\n",
+        "tags": [
+          "hooks",
+          "effect",
+          "event",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "9666c1e1f30173bcc0be31b4158e569339d4e3f4f95bf60286f448c86432e04e"
       }
     },
     {
@@ -74,7 +91,7 @@
       "type": "snippetListing",
       "title": "Collapse",
       "attributes": {
-        "text": "Renders a component with collapsible content.\n\n* Use the `React.setState()` hook to create the `isCollapsed` state variable with an initial value of `props.collapsed`.\n* Use an object, `style`, to hold the styles for individual components and their states.\n* Use a `<div>` to wrap both the `<button>` that alters the component's `isCollapsed` state and the content of the component, passed down via `props.children`.\n* Determine the appearance of the content, based on `isCollapsed` and apply the appropriate CSS rules from the `style` object.\n* Finally, update the value of the `aria-expanded` attribute based on `isCollapsed` to make the component accessible.\n\n",
+        "text": "Renders a component with collapsible content.\n\n- Use the `React.setState()` hook to create the `isCollapsed` state variable with an initial value of `props.collapsed`.\n- Use an object, `style`, to hold the styles for individual components and their states.\n- Use a `<div>` to wrap both the `<button>` that alters the component's `isCollapsed` state and the content of the component, passed down via `props.children`.\n- Determine the appearance of the content, based on `isCollapsed` and apply the appropriate CSS rules from the `style` object.\n- Finally, update the value of the `aria-expanded` attribute based on `isCollapsed` to make the component accessible.\n\n",
         "tags": [
           "visual",
           "children",
@@ -83,7 +100,7 @@
         ]
       },
       "meta": {
-        "hash": "0fb184a53478714a3eb9d9906f7661d5fa416db6bdb2b2b819add2ffb38f2a22"
+        "hash": "bb14a75971ab3a395e7a7e4458f636b9309f3e9a376494fe10b716be256bd9d2"
       }
     },
     {
@@ -91,7 +108,7 @@
       "type": "snippetListing",
       "title": "CountDown",
       "attributes": {
-        "text": "Renders a countdown timer that prints a message when it reaches zero.\n\n* Use object destructuring to set defaults for the `hours`, `minutes` and `seconds` props.\n* Use the `React.useState()` hook to create the `time`, `paused` and `over` state variables and set their values to the values of the passed props, `false` and `false` respectively.\n* Create a method `tick`, that updates the value of `time` based on the current value (i.e. decreasing the time by one second).\n* If `paused` or `over` is `true`, `tick` will return immediately.\n* Create a method `reset`, that resets all state variables to their initial states.\n* Use the the `React.useEffect()` hook to call the `tick` method every second via the use of `setInterval()` and use `clearInterval()` to cleanup when the component is unmounted.\n* Use a `<div>` to wrap a `<p>` element with the textual representation of the components `time` state variable, as well as two `<button>` elements that will pause/unpause and restart the timer respectively.\n* If `over` is `true`, the timer will display a message instead of the value of `time`.\n\n",
+        "text": "Renders a countdown timer that prints a message when it reaches zero.\n\n- Use object destructuring to set defaults for the `hours`, `minutes` and `seconds` props.\n- Use the `React.useState()` hook to create the `time`, `paused` and `over` state variables and set their values to the values of the passed props, `false` and `false` respectively.\n- Create a method `tick`, that updates the value of `time` based on the current value (i.e. decreasing the time by one second).\n- If `paused` or `over` is `true`, `tick` will return immediately.\n- Create a method `reset`, that resets all state variables to their initial states.\n- Use the the `React.useEffect()` hook to call the `tick` method every second via the use of `setInterval()` and use `clearInterval()` to cleanup when the component is unmounted.\n- Use a `<div>` to wrap a `<p>` element with the textual representation of the components `time` state variable, as well as two `<button>` elements that will pause/unpause and restart the timer respectively.\n- If `over` is `true`, the timer will display a message instead of the value of `time`.\n\n",
         "tags": [
           "visual",
           "state",
@@ -99,7 +116,7 @@
         ]
       },
       "meta": {
-        "hash": "cab16a22ce97e7a90a4ca0717b62a185bcbcd37fa55dc6983c79ea5857f76aaf"
+        "hash": "b5ac7580e6a96df21478030c6c2b30fa2e56df2573ab66e2405bdbbdce60aa61"
       }
     },
     {
@@ -107,14 +124,14 @@
       "type": "snippetListing",
       "title": "DataList",
       "attributes": {
-        "text": "Renders a list of elements from an array of primitives.\n\n* Use the value of the `isOrdered` prop to conditionally render a `<ol>` or `<ul>` list.\n* Use `Array.prototype.map` to render every item in `data` as a `<li>` element, give it a `key` produced from the concatenation of the its index and value.\n* Omit the `isOrdered` prop to render a `<ul>` list by default.\n\n",
+        "text": "Renders a list of elements from an array of primitives.\n\n- Use the value of the `isOrdered` prop to conditionally render a `<ol>` or `<ul>` list.\n- Use `Array.prototype.map` to render every item in `data` as a `<li>` element, give it a `key` produced from the concatenation of the its index and value.\n- Omit the `isOrdered` prop to render a `<ul>` list by default.\n\n",
         "tags": [
           "array",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "0280f7d4991a3145a1263342ef5ffa2e845c24c0793a2a06d40ed29a450b1039"
+        "hash": "38eb402c926fbc919a04b55fe8d6fb2fbdd5ba54341783852f909f9181e745da"
       }
     },
     {
@@ -122,14 +139,14 @@
       "type": "snippetListing",
       "title": "DataTable",
       "attributes": {
-        "text": "Renders a table with rows dynamically created from an array of primitives.\n\n* Render a `<table>` element with two columns (`ID` and `Value`).\n* Use `Array.prototype.map` to render every item in `data` as a `<tr>` element, consisting of its index and value, give it a `key` produced from the concatenation of the two.\n\n",
+        "text": "Renders a table with rows dynamically created from an array of primitives.\n\n- Render a `<table>` element with two columns (`ID` and `Value`).\n- Use `Array.prototype.map` to render every item in `data` as a `<tr>` element, consisting of its index and value, give it a `key` produced from the concatenation of the two.\n\n",
         "tags": [
           "array",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "6da7e808336fe96d699685abb7d93735693f6e8dfba4a84262b9e02a624da617"
+        "hash": "c4aba21d546f519469e8a65101e9cd44b25dae028b48a223b8cb6c19f83b60d4"
       }
     },
     {
@@ -137,7 +154,7 @@
       "type": "snippetListing",
       "title": "FileDrop",
       "attributes": {
-        "text": "Renders a file drag and drop component for a single file.\n\n* Create a ref called `dropRef` for this component.\n* Use the `React.useState()` hook to create the `drag` and `filename` variables, initialized to `false` and `''` respectively.\nThe variables `dragCounter` and `drag` are used to determine if a file is being dragged, while `filename` is used to store the dropped file's name.\n* Create the `handleDrag`, `handleDragIn`, `handleDragOut` and `handleDrop` methods to handle drag and drop functionality, bind them to the component's context.\n* Each of the methods will handle a specific event, the listeners for which are created and removed in the `React.useEffect()` hook and its attached `cleanup()` method.\n* `handleDrag` prevents the browser from opening the dragged file, `handleDragIn` and `handleDragOut` handle the dragged file entering and exiting the component, while `handleDrop` handles the file being dropped and passes it to `props.handleDrop`.\n* Return an appropriately styled `<div>` and use `drag` and `filename` to determine its contents and style.\n* Finally, bind the `ref` of the created `<div>` to `dropRef`.\n\n",
+        "text": "Renders a file drag and drop component for a single file.\n\n- Create a ref called `dropRef` for this component.\n- Use the `React.useState()` hook to create the `drag` and `filename` variables, initialized to `false` and `''` respectively.\n  The variables `dragCounter` and `drag` are used to determine if a file is being dragged, while `filename` is used to store the dropped file's name.\n- Create the `handleDrag`, `handleDragIn`, `handleDragOut` and `handleDrop` methods to handle drag and drop functionality, bind them to the component's context.\n- Each of the methods will handle a specific event, the listeners for which are created and removed in the `React.useEffect()` hook and its attached `cleanup()` method.\n- `handleDrag` prevents the browser from opening the dragged file, `handleDragIn` and `handleDragOut` handle the dragged file entering and exiting the component, while `handleDrop` handles the file being dropped and passes it to `props.handleDrop`.\n- Return an appropriately styled `<div>` and use `drag` and `filename` to determine its contents and style.\n- Finally, bind the `ref` of the created `<div>` to `dropRef`.\n\n",
         "tags": [
           "visual",
           "input",
@@ -148,7 +165,7 @@
         ]
       },
       "meta": {
-        "hash": "79742466c371960a0134df6158931d6468a2767fc0d21e20b6709bb46c737941"
+        "hash": "2e35dd3fa6b4808f03aff6b542b293f8be0fd9aa1cbb7bd85a2729f808cf8888"
       }
     },
     {
@@ -156,7 +173,7 @@
       "type": "snippetListing",
       "title": "LimitedTextarea",
       "attributes": {
-        "text": "Renders a textarea component with a character limit.\n\n* Use the `React.useState()` hook to create the `content` state variable and set its value to `value`.\nCreate a method `setFormattedContent`, which trims the content of the input if it's longer than `limit`.\n* Use the `React.useEffect()` hook to call the `setFormattedContent` method on the value of the `content` state variable.\n* Use a`<div>` to wrap both the`<textarea>` and the `<p>` element that displays the character count and bind the `onChange` event of the `<textarea>` to call `setFormattedContent` with the value of `event.target.value`.\n\n",
+        "text": "Renders a textarea component with a character limit.\n\n- Use the `React.useState()` hook to create the `content` state variable and set its value to `value`.\n  Create a method `setFormattedContent`, which trims the content of the input if it's longer than `limit`.\n- Use the `React.useEffect()` hook to call the `setFormattedContent` method on the value of the `content` state variable.\n- Use a`<div>` to wrap both the`<textarea>` and the `<p>` element that displays the character count and bind the `onChange` event of the `<textarea>` to call `setFormattedContent` with the value of `event.target.value`.\n\n",
         "tags": [
           "input",
           "state",
@@ -166,7 +183,7 @@
         ]
       },
       "meta": {
-        "hash": "a9aa0a8f818ba02a861fca0f91a9a164dedcf7683b5d38391003e1864a79e627"
+        "hash": "eabc464d70da892c84d00925de7c8c22ea3f54d5337e7b2efd6e4043fb447aa8"
       }
     },
     {
@@ -174,7 +191,7 @@
       "type": "snippetListing",
       "title": "LimitedWordTextarea",
       "attributes": {
-        "text": "Renders a textarea component with a word limit.\n\n* Use the `React.useState()` hook to create the `content` and `wordCount` state variables and set their values to `value` and `0` respectively.\n* Create a method `setFormattedContent`, which uses `String.prototype.split(' ')` to turn the input into an array of words and check if the result of applying `Array.prototype.filter(Boolean)` has a `length` longer than `limit`.\n* If the afforementioned `length` exceeds the `limit`, trim the input, otherwise return the raw input, updating `content` and `wordCount` accordingly in both cases.\n* Use the `React.useEffect()` hook to call the `setFormattedContent` method on the value of the `content` state variable.\n* Use a`<div>` to wrap both the`<textarea>` and the `<p>` element that displays the character count and bind the `onChange` event of the `<textarea>` to call `setFormattedContent` with the value of `event.target.value`.\n\n",
+        "text": "Renders a textarea component with a word limit.\n\n- Use the `React.useState()` hook to create the `content` and `wordCount` state variables and set their values to `value` and `0` respectively.\n- Create a method `setFormattedContent`, which uses `String.prototype.split(' ')` to turn the input into an array of words and check if the result of applying `Array.prototype.filter(Boolean)` has a `length` longer than `limit`.\n- If the afforementioned `length` exceeds the `limit`, trim the input, otherwise return the raw input, updating `content` and `wordCount` accordingly in both cases.\n- Use the `React.useEffect()` hook to call the `setFormattedContent` method on the value of the `content` state variable.\n- Use a`<div>` to wrap both the`<textarea>` and the `<p>` element that displays the character count and bind the `onChange` event of the `<textarea>` to call `setFormattedContent` with the value of `event.target.value`.\n\n",
         "tags": [
           "input",
           "state",
@@ -184,7 +201,7 @@
         ]
       },
       "meta": {
-        "hash": "88c10a294c994103d88ab6793cbf290b707d93f6cd0cf9272186e148c0a739bf"
+        "hash": "8c0f35b8cba144ddf8611fa48659ef9a83bd235a961466ccbf1ca5f43bd6b602"
       }
     },
     {
@@ -192,14 +209,14 @@
       "type": "snippetListing",
       "title": "Mailto",
       "attributes": {
-        "text": "Renders a link formatted to send an email.\n\n* Destructure the component's props, use `email`, `subject` and `body` to create a `<a>` element with an appropriate `href` attribute.\n* Render the link with `props.children` as its content.\n\n",
+        "text": "Renders a link formatted to send an email.\n\n- Destructure the component's props, use `email`, `subject` and `body` to create a `<a>` element with an appropriate `href` attribute.\n- Render the link with `props.children` as its content.\n\n",
         "tags": [
           "viual",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "1af32eb31db03931a3d0ec99311b0404f4f1b34a597b6fdf8a000b5d3348e09f"
+        "hash": "e22d307cb43e589e7bd1ec5caab16c1101aa764102f35cd7295876033b44578e"
       }
     },
     {
@@ -207,7 +224,7 @@
       "type": "snippetListing",
       "title": "MappedTable",
       "attributes": {
-        "text": "Renders a table with rows dynamically created from an array of objects and a list of property names.\n\n* Use `Object.keys()`, `Array.prototype.filter()`, `Array.prototype.includes()` and `Array.prototype.reduce()` to produce a `filteredData` array, containing all objects with the keys specified in `propertyNames`.\n* Render a `<table>` element with a set of columns equal to the amount of values in `propertyNames`.\n* Use `Array.prototype.map` to render each value in the `propertyNames` array as a `<th>` element.\n* Use `Array.prototype.map` to render each object in the `filteredData` array as a `<tr>` element, containing a `<td>` for each key in the object.\n\n*This component does not work with nested objects and will break if there are nested objects inside any of the properties specified in `propertyNames`*\n\n",
+        "text": "Renders a table with rows dynamically created from an array of objects and a list of property names.\n\n- Use `Object.keys()`, `Array.prototype.filter()`, `Array.prototype.includes()` and `Array.prototype.reduce()` to produce a `filteredData` array, containing all objects with the keys specified in `propertyNames`.\n- Render a `<table>` element with a set of columns equal to the amount of values in `propertyNames`.\n- Use `Array.prototype.map` to render each value in the `propertyNames` array as a `<th>` element.\n- Use `Array.prototype.map` to render each object in the `filteredData` array as a `<tr>` element, containing a `<td>` for each key in the object.\n\n_This component does not work with nested objects and will break if there are nested objects inside any of the properties specified in `propertyNames`_\n\n",
         "tags": [
           "array",
           "object",
@@ -215,7 +232,7 @@
         ]
       },
       "meta": {
-        "hash": "3085683cb2c0aaf15e7449e75a1b2468ae4c570b003165073fa5368b40cb291d"
+        "hash": "9ff4e1580f53ab64c740aee2bfdc85f1cfc46f7cf2f39d6324ec4c2b7d6c7270"
       }
     },
     {
@@ -223,7 +240,7 @@
       "type": "snippetListing",
       "title": "Modal",
       "attributes": {
-        "text": "Renders a Modal component, controllable through events.\nTo use the component, import `Modal` only once and then display it by passing a boolean value to the `isVisible` attribute.\n\n* Use object destructuring to set defaults for certain attributes of the modal component.\n* Define `keydownHandler`, a method which handles all keyboard events, which can be used according to your needs to dispatch actions (e.g. close the modal when <kbd>Esc</kbd> is pressed).\n* Use `React.useEffect()` hook to add or remove the `keydown` event listener, which calls `keydownHandler`.\n* Use the `isVisible` prop to determine if the modal should be shown or not.\n* Use CSS to style and position the modal component.\n\n",
+        "text": "Renders a Modal component, controllable through events.\nTo use the component, import `Modal` only once and then display it by passing a boolean value to the `isVisible` attribute.\n\n- Use object destructuring to set defaults for certain attributes of the modal component.\n- Define `keydownHandler`, a method which handles all keyboard events, which can be used according to your needs to dispatch actions (e.g. close the modal when <kbd>Esc</kbd> is pressed).\n- Use `React.useEffect()` hook to add or remove the `keydown` event listener, which calls `keydownHandler`.\n- Use the `isVisible` prop to determine if the modal should be shown or not.\n- Use CSS to style and position the modal component.\n\n",
         "tags": [
           "visual",
           "effect",
@@ -231,7 +248,7 @@
         ]
       },
       "meta": {
-        "hash": "0d5247010e291b94e755d31e2cf173c232f6e37fcf1de51e39de5c6bc20c11b9"
+        "hash": "07c392eff204d3fe475cba116d25ca84b48f7f37ae18f0adade7e65c98ec509d"
       }
     },
     {
@@ -239,7 +256,7 @@
       "type": "snippetListing",
       "title": "MultiselectCheckbox",
       "attributes": {
-        "text": "Renders a checkbox list that uses a callback function to pass its selected value/values to the parent component.\n\n* Use `React.setState()` to create a `data` state variable and set its initial value equal to the `options` prop.\n* Create a function `toggle` that is used to toggle the `checked` to update the `data` state variable and call the `onChange` callback passed via the component's props.\n* Render a `<ul>` element and use `Array.prototype.map()` to map the `data` state variable to individual `<li>` elements with `<input>` elements as their children.\n* Each `<input>` element has the `type='checkbox'` attribute and is marked as `readOnly`, as its click events are handled by the parent `<li>` element's `onClick` handler.\n\n",
+        "text": "Renders a checkbox list that uses a callback function to pass its selected value/values to the parent component.\n\n- Use `React.setState()` to create a `data` state variable and set its initial value equal to the `options` prop.\n- Create a function `toggle` that is used to toggle the `checked` to update the `data` state variable and call the `onChange` callback passed via the component's props.\n- Render a `<ul>` element and use `Array.prototype.map()` to map the `data` state variable to individual `<li>` elements with `<input>` elements as their children.\n- Each `<input>` element has the `type='checkbox'` attribute and is marked as `readOnly`, as its click events are handled by the parent `<li>` element's `onClick` handler.\n\n",
         "tags": [
           "input",
           "state",
@@ -248,7 +265,7 @@
         ]
       },
       "meta": {
-        "hash": "d99b24f434ac1dc8e9a3e424fc508f333ba95eabf4629f81eb581e8604645460"
+        "hash": "ec2d246e3520208cf67146e9674f576b4d13fd31854892113396409edcb68db6"
       }
     },
     {
@@ -256,7 +273,7 @@
       "type": "snippetListing",
       "title": "PasswordRevealer",
       "attributes": {
-        "text": "Renders a password input field with a reveal button.\n\n* Use the `React.useState()` hook to create the `shown` state variable and set its value to `false`.\n* Use a`<div>` to wrap both the`<input>` and the `<button>` element that toggles the type of the input field between `\"text\"` and `\"password\"`.\n\n",
+        "text": "Renders a password input field with a reveal button.\n\n- Use the `React.useState()` hook to create the `shown` state variable and set its value to `false`.\n- Use a`<div>` to wrap both the`<input>` and the `<button>` element that toggles the type of the input field between `\"text\"` and `\"password\"`.\n\n",
         "tags": [
           "input",
           "state",
@@ -264,7 +281,7 @@
         ]
       },
       "meta": {
-        "hash": "5b4adfdb553deb652a7a16eb6d7a42a4ae9e7f1372dc28dfedfe0b54a0cca6cd"
+        "hash": "7e019374ec668fe2bc3053bbcb3e8a2f3ac419ac0e316d3ee6e94f99a1fb53ee"
       }
     },
     {
@@ -272,14 +289,14 @@
       "type": "snippetListing",
       "title": "Select",
       "attributes": {
-        "text": "Renders a `<select>` element that uses a callback function to pass its value to the parent component.\n\n* Use object destructuring to set defaults for certain attributes of the `<select>` element.\n* Render a `<select>` element with the appropriate attributes and use the `callback` function in the `onChange` event to pass the value of the textarea to the parent.\n* Use destructuring on the `values` array to pass an array of `value` and `text` elements and the `selected` attribute to define the initial `value` of the `<select>` element.\n\n",
+        "text": "Renders a `<select>` element that uses a callback function to pass its value to the parent component.\n\n- Use object destructuring to set defaults for certain attributes of the `<select>` element.\n- Render a `<select>` element with the appropriate attributes and use the `callback` function in the `onChange` event to pass the value of the textarea to the parent.\n- Use destructuring on the `values` array to pass an array of `value` and `text` elements and the `selected` attribute to define the initial `value` of the `<select>` element.\n\n",
         "tags": [
           "input",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "078ac3ecaf21e2b8321d038eec31d04164cbc2307bacc6ad852a591cd89acc8d"
+        "hash": "b82ad131475042bd38682aba03964494680fc2dfe3a61b0a1478215f74e993de"
       }
     },
     {
@@ -287,14 +304,14 @@
       "type": "snippetListing",
       "title": "Slider",
       "attributes": {
-        "text": "Renders a slider element that uses a callback function to pass its value to the parent component.\n\n* Use object destructuring to set defaults for certain attributes of the `<input>` element.\n* Render an `<input>` element of type `\"range\"` and the appropriate attributes, use the `callback` function in the `onChange` event to pass the value of the input to the parent.\n\n",
+        "text": "Renders a slider element that uses a callback function to pass its value to the parent component.\n\n- Use object destructuring to set defaults for certain attributes of the `<input>` element.\n- Render an `<input>` element of type `\"range\"` and the appropriate attributes, use the `callback` function in the `onChange` event to pass the value of the input to the parent.\n\n",
         "tags": [
           "input",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "ee5e5225156f65a573b0f4c57ae4e81489bd45071bc5ff435a93c79926e3e360"
+        "hash": "db77adcc300072c41b4d096cd385f7c3616601fcace16d7c28032036a6eed7e7"
       }
     },
     {
@@ -302,7 +319,7 @@
       "type": "snippetListing",
       "title": "StarRating",
       "attributes": {
-        "text": "Renders a star rating component.\n\n* Define a component, called `Star` that will render each individual star with the appropriate appearance, based on the parent component's state.\n* In the `StarRating` component, use the `React.useState()` hook to define the `rating` and `selection` state variables with the initial values of `props.rating` (or `0` if invalid or not supplied) and `0`.\n* Create a method, `hoverOver`, that updates `selected` and `rating` according to the provided `event`.\n* Create a `<div>` to wrap the `<Star>` components, which are created using `Array.prototype.map` on an array of 5 elements, created using `Array.from`, and handle the `onMouseLeave` event to set `selection` to `0`, the `onClick` event to set the `rating` and the `onMouseOver` event to set `selection` to the `star-id` attribute of the `event.target` respectively.\n* Finally, pass the appropriate values to each `<Star>` component (`starId` and `marked`).\n\n",
+        "text": "Renders a star rating component.\n\n- Define a component, called `Star` that will render each individual star with the appropriate appearance, based on the parent component's state.\n- In the `StarRating` component, use the `React.useState()` hook to define the `rating` and `selection` state variables with the initial values of `props.rating` (or `0` if invalid or not supplied) and `0`.\n- Create a method, `hoverOver`, that updates `selected` and `rating` according to the provided `event`.\n- Create a `<div>` to wrap the `<Star>` components, which are created using `Array.prototype.map` on an array of 5 elements, created using `Array.from`, and handle the `onMouseLeave` event to set `selection` to `0`, the `onClick` event to set the `rating` and the `onMouseOver` event to set `selection` to the `star-id` attribute of the `event.target` respectively.\n- Finally, pass the appropriate values to each `<Star>` component (`starId` and `marked`).\n\n",
         "tags": [
           "visual",
           "children",
@@ -312,7 +329,7 @@
         ]
       },
       "meta": {
-        "hash": "1d0839c60acd1128737445aefbf3b98c03ba3ca1cd5203bdb585400811e5fa1f"
+        "hash": "a057b14315a578a5c27d6534b965c8a567be6ffd7ba0b32882282e6e99076ebc"
       }
     },
     {
@@ -320,7 +337,7 @@
       "type": "snippetListing",
       "title": "Tabs",
       "attributes": {
-        "text": "Renders a tabbed menu and view component.\n\n* Define a `TabItem` component, pass it to the `Tab` and remove unnecessary nodes expect for `TabItem` by identifying the function's name in `props.children`.\n* Use the `React.useState()` hook to initialize the value of the `bindIndex` state variable to `props.defaultIndex`.\n* Use `Array.prototype.map` on the collected nodes to render the `tab-menu` and `tab-view`.\n* Define `changeTab`, which will be executed when clicking a `<button>` from the `tab-menu`.\n* `changeTab` executes the passed callback, `onTabClick` and updates `bindIndex`, which in turn causes a re-render, evaluating the `style` and `className` of the `tab-view` items and `tab-menu` buttons according to their `index`.\n\n",
+        "text": "Renders a tabbed menu and view component.\n\n- Define a `TabItem` component, pass it to the `Tab` and remove unnecessary nodes expect for `TabItem` by identifying the function's name in `props.children`.\n- Use the `React.useState()` hook to initialize the value of the `bindIndex` state variable to `props.defaultIndex`.\n- Use `Array.prototype.map` on the collected nodes to render the `tab-menu` and `tab-view`.\n- Define `changeTab`, which will be executed when clicking a `<button>` from the `tab-menu`.\n- `changeTab` executes the passed callback, `onTabClick` and updates `bindIndex`, which in turn causes a re-render, evaluating the `style` and `className` of the `tab-view` items and `tab-menu` buttons according to their `index`.\n\n",
         "tags": [
           "visual",
           "state",
@@ -329,7 +346,7 @@
         ]
       },
       "meta": {
-        "hash": "a342c4f735b7220c902079c6af051df255200e7376a0cd6bd0a58daa7c24a243"
+        "hash": "54a00cb6ac87079622e3806aa55816332e353eb88ba263a5059dd40942955ff7"
       }
     },
     {
@@ -337,14 +354,14 @@
       "type": "snippetListing",
       "title": "TextArea",
       "attributes": {
-        "text": "Renders a `<textarea>` element that uses a callback function to pass its value to the parent component.\n\n* Use object destructuring to set defaults for certain attributes of the `<textarea>` element.\n* Render a `<textarea>` element with the appropriate attributes and use the `callback` function in the `onChange` event to pass the value of the textarea to the parent.\n\n",
+        "text": "Renders a `<textarea>` element that uses a callback function to pass its value to the parent component.\n\n- Use object destructuring to set defaults for certain attributes of the `<textarea>` element.\n- Render a `<textarea>` element with the appropriate attributes and use the `callback` function in the `onChange` event to pass the value of the textarea to the parent.\n\n",
         "tags": [
           "input",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "edfcd4ef343323d358233bf14fe3299ef55934c5bcf774246522f82df1776a31"
+        "hash": "4c0c3bcdb3a7a7f858d1e938e7a1926804ceca983f5eeae3edf4b28f36548fb4"
       }
     },
     {
@@ -352,7 +369,7 @@
       "type": "snippetListing",
       "title": "Ticker",
       "attributes": {
-        "text": "Renders a ticker component.\n\n* Use the `React.useState()` hook to initialize the `ticker` state variable to `0`.\n* Define two methods, `tick` and `reset`, that will periodically increment `timer` based on `interval` and reset `interval` respectively.\n* Return a `<div>` with two `<button>` elements, each of which calls `tick` and `reset` respectively.\n\n",
+        "text": "Renders a ticker component.\n\n- Use the `React.useState()` hook to initialize the `ticker` state variable to `0`.\n- Define two methods, `tick` and `reset`, that will periodically increment `timer` based on `interval` and reset `interval` respectively.\n- Return a `<div>` with two `<button>` elements, each of which calls `tick` and `reset` respectively.\n\n",
         "tags": [
           "visual",
           "state",
@@ -360,7 +377,7 @@
         ]
       },
       "meta": {
-        "hash": "23266b3e0b4e2ab6d18bdafe0f4558c069e51f7f6480e3b51d46358fe90d4809"
+        "hash": "d64dece795561241f3b0d7b3fa1e87971994bda2fbe406c6ce740af866e3d9a7"
       }
     },
     {
@@ -368,7 +385,7 @@
       "type": "snippetListing",
       "title": "Toggle",
       "attributes": {
-        "text": "Renders a toggle component.\n\n* Use the `React.useState()` to initialize the `isToggleOn` state variable to `false`.\n* Use an object, `style`, to hold the styles for individual components and their states.\n* Return a `<button>` that alters the component's `isToggledOn` when its `onClick` event is fired and determine the appearance of the content based on `isToggleOn`, applying the appropriate CSS rules from the `style` object.\n\n",
+        "text": "Renders a toggle component.\n\n- Use the `React.useState()` to initialize the `isToggleOn` state variable to `false`.\n- Use an object, `style`, to hold the styles for individual components and their states.\n- Return a `<button>` that alters the component's `isToggledOn` when its `onClick` event is fired and determine the appearance of the content based on `isToggleOn`, applying the appropriate CSS rules from the `style` object.\n\n",
         "tags": [
           "visual",
           "state",
@@ -376,7 +393,7 @@
         ]
       },
       "meta": {
-        "hash": "a497d9a55df0c12999f08d0cd9c169b5d5c8e4f56d80ab7550ef539dc73f4fcf"
+        "hash": "c921c0adeca337f2cf804acf35e8ab231befdd451d4dcca09a73fecf6ad66836"
       }
     },
     {
@@ -384,7 +401,7 @@
       "type": "snippetListing",
       "title": "Tooltip",
       "attributes": {
-        "text": "Renders a tooltip component.\n\n* Use the `React.useState()` hook to create the `show` variable and initialize it to `false`.\n* Return a `<div>` element that contains the `<div>` that will be the tooltip and the `children` passed to the component.\n* Handle the `onMouseEnter` and `onMouseLeave` methods, by altering the value of the `show` variable.\n\n",
+        "text": "Renders a tooltip component.\n\n- Use the `React.useState()` hook to create the `show` variable and initialize it to `false`.\n- Return a `<div>` element that contains the `<div>` that will be the tooltip and the `children` passed to the component.\n- Handle the `onMouseEnter` and `onMouseLeave` methods, by altering the value of the `show` variable.\n\n",
         "tags": [
           "visual",
           "state",
@@ -393,7 +410,7 @@
         ]
       },
       "meta": {
-        "hash": "fc1cec890de96741cba636008aa04af5f63cb127f4fedec61e31394c02fd4dbf"
+        "hash": "db3b0f49f674b5a64ee1b9a9098aab360331901425faa382c5de5cb8cae33167"
       }
     },
     {
@@ -401,7 +418,7 @@
       "type": "snippetListing",
       "title": "TreeView",
       "attributes": {
-        "text": "Renders a tree view of a JSON object or array with collapsible content.\n\n* Use object destructuring to set defaults for certain props.\n* Use the value of the `toggled` prop to determine the initial state of the content (collapsed/expanded).\n* Use the `React.setState()` hook to create the `isToggled` state variable and give it the value of the `toggled` prop initially.\n* Return a `<div>` to wrap the contents of the component and the `<span>` element, used to alter the component's `isToggled` state.\n* Determine the appearance of the component, based on `isParentToggled`, `isToggled`, `name` and `Array.isArray()` on `data`.\n* For each child in `data`, determine if it is an object or array and recursively render a sub-tree.\n* Otherwise, render a `<p>` element with the appropriate style.\n\n",
+        "text": "Renders a tree view of a JSON object or array with collapsible content.\n\n- Use object destructuring to set defaults for certain props.\n- Use the value of the `toggled` prop to determine the initial state of the content (collapsed/expanded).\n- Use the `React.setState()` hook to create the `isToggled` state variable and give it the value of the `toggled` prop initially.\n- Return a `<div>` to wrap the contents of the component and the `<span>` element, used to alter the component's `isToggled` state.\n- Determine the appearance of the component, based on `isParentToggled`, `isToggled`, `name` and `Array.isArray()` on `data`.\n- For each child in `data`, determine if it is an object or array and recursively render a sub-tree.\n- Otherwise, render a `<p>` element with the appropriate style.\n\n",
         "tags": [
           "object",
           "visual",
@@ -411,7 +428,7 @@
         ]
       },
       "meta": {
-        "hash": "4002acde51d7ecf13830a102da4ca83b702b50c9603834d8902dfba859d955e4"
+        "hash": "305bd408515e5c575411f40b1bb24f75f6c776cd6387bb083818f2feb9175a70"
       }
     },
     {
@@ -419,14 +436,14 @@
       "type": "snippetListing",
       "title": "UncontrolledInput",
       "attributes": {
-        "text": "Renders an `<input>` element that uses a callback function to pass its value to the parent component.\n\n* Use object destructuring to set defaults for certain attributes of the `<input>` element.\n* Render an `<input>` element with the appropriate attributes and use the `callback` function in the `onChange` event to pass the value of the input to the parent.\n\n",
+        "text": "Renders an `<input>` element that uses a callback function to pass its value to the parent component.\n\n- Use object destructuring to set defaults for certain attributes of the `<input>` element.\n- Render an `<input>` element with the appropriate attributes and use the `callback` function in the `onChange` event to pass the value of the input to the parent.\n\n",
         "tags": [
           "input",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "7ea3169ca176a8bf0610f34082363a18811d16451519b62776ffae9f0175820c"
+        "hash": "5aff6673123594949dd0d1e72c8fbb586f402b2eb9fdcf8dd9a2b789b4089adb"
       }
     }
   ],
