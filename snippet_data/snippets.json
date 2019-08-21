@@ -632,6 +632,29 @@
       }
     },
     {
+      "id": "useFetch",
+      "title": "useFetch",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "useFetch.md",
+        "text": "A hook that implements `fetch` in a declarative manner.\n\n- Create a custom hook that takes a `url` and `options`.\n- Use the `React.useState()` hook to initialize the `response` and `error` state variables.\n- Use the `React.useEffect()` hook to anychronously call `fetch()` and update the state varaibles accordingly.\n- Return an object containting the `response` and `error` state variables.\n\n",
+        "codeBlocks": {
+          "style": "",
+          "code": "const useFetch = (url, options) => {\r\n  const [response, setResponse] = React.useState(null);\r\n  const [error, setError] = React.useState(null);\r\n\r\n  React.useEffect(() => {\r\n    const fetchData = async () => {\r\n      try {\r\n        const res = await fetch(url, options);\r\n        const json = await res.json();\r\n        setResponse(json);\r\n      } catch (error) {\r\n        setError(error);\r\n      }\r\n    };\r\n    fetchData();\r\n  }, []);\r\n\r\n  return { response, error };\r\n};",
+          "example": "const ImageFetch = props => {\r\n  const res = useFetch('https://dog.ceo/api/breeds/image/random', {});\r\n  if (!res.response) {\r\n    return <div>Loading...</div>;\r\n  }\r\n  const dogName = res.response.status;\r\n  const imageUrl = res.response.message;\r\n  return (\r\n    <div>\r\n      <img src={imageUrl} alt=\"avatar\" width={400} height=\"auto\" />\r\n    </div>\r\n  );\r\n};\r\n\r\nReactDOM.render(<ImageFetch />, document.getElementById('root'));"
+        },
+        "tags": [
+          "hooks",
+          "effect",
+          "state",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "848cb6ba4f8bd5dad012a38e6bd0e7c829a79b3215a23939c30a3f652627da4f"
+      }
+    },
+    {
       "id": "useInterval",
       "title": "useInterval",
       "type": "snippet",
