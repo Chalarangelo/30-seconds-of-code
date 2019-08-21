@@ -1,14 +1,17 @@
-### capitalize_every_word
+---
+title: capitalize_every_word
+tags: string,beginner
+---
 
 Capitalizes the first letter of every word in a string.
 
-Uses `str.title` to capitalize first letter of every word in the string.
+Use `string.title()` to capitalize first letter of every word in the string.
 
-```python
+```py
 def capitalize_every_word(string):
-    return string.title()
+  return string.title()
 ```
 
-```python
+```py
 capitalize_every_word('hello world!') # 'Hello World!'
 ```

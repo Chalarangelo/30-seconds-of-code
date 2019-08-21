@@ -1,15 +1,19 @@
-### decapitalize
+---
+title: decapitalize
+tags: string,intermediate
+---
 
 Decapitalizes the first letter of a string.
 
-Decapitalizes the first letter of the string and then adds it with rest of the string. Omit the `upper_rest` parameter to keep the rest of the string intact, or set it to `true` to convert to uppercase.
+Decapitalize the first letter of the string and then add it with rest of the string. 
+Omit the `upper_rest` parameter to keep the rest of the string intact, or set it to `True` to convert to uppercase.
 
-```python
+```py
 def decapitalize(string, upper_rest=False):
-    return str[:1].lower() + (str[1:].upper() if upper_rest else str[1:])
+  return str[:1].lower() + (str[1:].upper() if upper_rest else str[1:])
 ```
 
-```python
+```py
 decapitalize('FooBar') # 'fooBar'
 decapitalize('FooBar', True) # 'fOOBAR'
 ```

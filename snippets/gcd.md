@@ -1,17 +1,20 @@
-### gcd
+---
+title: gcd
+tags: math,beginner
+---
 
 Calculates the greatest common divisor of a list of numbers.
 
-Uses the reduce function from the inbuilt module `functools`. Also uses the `math.gcd` function over a list.
+Use `reduce()` and `math.gcd` over the given list.
 
-```python
+```py
 from functools import reduce
 import math
 
 def gcd(numbers):
-    return reduce(math.gcd, numbers)
+  return reduce(math.gcd, numbers)
 ```
 
-``` python
+```py
 gcd([8,36,28]) # 4
 ```

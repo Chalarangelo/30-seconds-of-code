@@ -1,14 +1,18 @@
-### difference
+---
+title: difference
+tags: list,beginner
+---
 
 Returns the difference between two iterables.
 
-Use list comprehension to only keep values not contained in `b`.
+Create a `set` from `b`, then use list comprehension on `a` to only keep values not contained in the previously created set, `_b`.
 
-```python
+```py
 def difference(a, b):
-    _b = set(b)
-    return [item for item in a if item not in _b]
+  _b = set(b)
+  return [item for item in a if item not in _b]
 ```
-``` python
+
+```py
 difference([1, 2, 3], [1, 2, 4]) # [3]
 ```

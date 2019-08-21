@@ -1,15 +1,18 @@
-### all_unique
+---
+title: all_unique
+tags: list,beginner
+---
 
-Checks a flat list for all unique values. Returns True if list values are all unique and False if list values aren't all unique.
+Returns `True` if all the values in a flat list are unique, `False` otherwise.
 
-This function compares the length of the list with length of the set() of the list. set() removes duplicate values from the list.
+Use `set()` on the given list to remove duplicates, compare its length with the length of the list.
 
-``` python
+```py
 def all_unique(lst):
-    return len(lst) == len(set(lst))
+  return len(lst) == len(set(lst))
 ```
 
-``` python
+```py
 x = [1,2,3,4,5,6]
 y = [1,2,2,3,4,5]
 all_unique(x) # True

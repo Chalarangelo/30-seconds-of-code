@@ -1,19 +1,23 @@
-### spread
+---
+title: spread
+tags: list,utility,intermediate
+---
 
-Implements javascript's `[].concat(...arr)`. Flattens the list(non-deep) and returns an list.
+Flattens a list, by spreading its elements into a new list.
 
-```python
+Loop over elements, use `list.extend()` if the element is a list, `list.append()` otherwise.
+
+```py
 def spread(arg):
-    ret = []
-    for i in arg:
-        if isinstance(i, list):
-            ret.extend(i)
-        else:
-            ret.append(i)
-    return ret
+  ret = []
+  for i in arg:
+    if isinstance(i, list):
+      ret.extend(i)
+    else:
+      ret.append(i)
+  return ret
 ```
 
-
-```python
+```py
 spread([1,2,3,[4,5,6],[7],8,9]) # [1,2,3,4,5,6,7,8,9]
 ```

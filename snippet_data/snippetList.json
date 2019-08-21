@@ -1,0 +1,1144 @@
+{
+  "data": [
+    {
+      "id": "all_equal",
+      "type": "snippetListing",
+      "title": "all_equal",
+      "attributes": {
+        "text": "Check if all elements in a list are equal.\n\nUse `[1:]` and `[:-1]` to compare all the values in the given list.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "650f05b1f5d4420f6e44546b34fbb1dc381e9500b4c64adf7598651d5c188223"
+      }
+    },
+    {
+      "id": "all_unique",
+      "type": "snippetListing",
+      "title": "all_unique",
+      "attributes": {
+        "text": "Returns `True` if all the values in a flat list are unique, `False` otherwise.\n\nUse `set()` on the given list to remove duplicates, compare its length with the length of the list.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "9b1bdbb130a4fa6301e994359bf162bec262a35fdfd3f00519f7f6a59f1137c0"
+      }
+    },
+    {
+      "id": "average",
+      "type": "snippetListing",
+      "title": "average",
+      "attributes": {
+        "text": "Returns the average of two or more numbers.\n\nUse `sum()` to sum all of the `args` provided, divide by `len(args)`.\n\n",
+        "tags": [
+          "math",
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "ff65e9a114f47afb53e56a54588e418ef886f8bc508ed32543c97bd1d5966aae"
+      }
+    },
+    {
+      "id": "average_by",
+      "type": "snippetListing",
+      "title": "average_by",
+      "attributes": {
+        "text": "Returns the average of a list, after mapping each element to a value using the provided function.\n\nUse `map()` to map each element to the value returned by `fn`.\nUse `sum()` to sum all of the mapped values, divide by `len(lst)`.\n\n",
+        "tags": [
+          "math",
+          "list",
+          "function",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "360d3b11343373558e25575401add239d4ab85154b72bfae347b19a487df35f3"
+      }
+    },
+    {
+      "id": "bifurcate",
+      "type": "snippetListing",
+      "title": "bifurcate",
+      "attributes": {
+        "text": "Splits values into two groups. \nIf an element in `filter` is `True`, the corresponding element in the collection belongs to the first group; otherwise, it belongs to the second group.\n\nUse list comprehension and `enumerate()` to add elements to groups, based on `filter`.\n\n",
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "49c7d4e1f7175d460074d776cfb0b534ddf753001b66d0e3cacc4177c59e994c"
+      }
+    },
+    {
+      "id": "bifurcate_by",
+      "type": "snippetListing",
+      "title": "bifurcate_by",
+      "attributes": {
+        "text": "Splits values into two groups according to a function, which specifies which group an element in the input list belongs to. \nIf the function returns `True`, the element belongs to the first group; otherwise, it belongs to the second group.\n\nUse list comprehension to add elements to groups, based on `fn`.\n\n",
+        "tags": [
+          "list",
+          "function",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "0975a7d514bc4f5c1c13731165b1a43e43b9dc0eff289fffdfdd4d67af92e23b"
+      }
+    },
+    {
+      "id": "byte_size",
+      "type": "snippetListing",
+      "title": "byte_size",
+      "attributes": {
+        "text": "Returns the length of a string in bytes.\n\nUse `string.encode('utf-8')` to encode the given string and return its length.\n\n",
+        "tags": [
+          "string",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "a80c7f1115762fffeaee2b4d75e36ce88dd288bdb4a99ae9c68c038223cbe00e"
+      }
+    },
+    {
+      "id": "camel",
+      "type": "snippetListing",
+      "title": "camel",
+      "attributes": {
+        "text": "Converts a string to camelcase.\n\nBreak the string into words and combine them capitalizing the first letter of each word, using a regexp.\n\n",
+        "tags": [
+          "string",
+          "regexp",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "e003dc4980414b0731c01d4b4bf3f08774c3588de95bf38c17ad0e08bb1bd838"
+      }
+    },
+    {
+      "id": "capitalize",
+      "type": "snippetListing",
+      "title": "capitalize",
+      "attributes": {
+        "text": "Capitalizes the first letter of a string.\n\nCapitalize the first letter of the string and then add it with rest of the string. \nOmit the `lower_rest` parameter to keep the rest of the string intact, or set it to `True` to convert to lowercase.\n\n",
+        "tags": [
+          "string",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "830372b0e6a7a008c1ee9ec4ef11c6063ff14b94b09b4b081d220079fa89e2aa"
+      }
+    },
+    {
+      "id": "capitalize_every_word",
+      "type": "snippetListing",
+      "title": "capitalize_every_word",
+      "attributes": {
+        "text": "Capitalizes the first letter of every word in a string.\n\nUse `string.title()` to capitalize first letter of every word in the string.\n\n",
+        "tags": [
+          "string",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "699eb144ef3a23fbc4375096ac28535f809b4fc5bd4a493dfbf0f7e8df61a446"
+      }
+    },
+    {
+      "id": "cast_list",
+      "type": "snippetListing",
+      "title": "cast_list",
+      "attributes": {
+        "text": "Casts the provided value as an array if it's not one.\n\nUse `isinstance()` to check if the given value is a list and return it as-is or encapsulated in a list accordingly.\n\n",
+        "tags": [
+          "utility",
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "9403a0321a9fcb907a18cadf8283be3ecf89a7a51e8679978e26cfb050918ced"
+      }
+    },
+    {
+      "id": "chunk",
+      "type": "snippetListing",
+      "title": "chunk",
+      "attributes": {
+        "text": "Chunks a list into smaller lists of a specified size.\n\nUse `list()` and `range()` to create a list of the desired `size`.\nUse `map()` on the list and fill it with splices of the given list.\nFinally, return use created list.\n\n",
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "3a27343fc9afa6666e7ab4b015ebe883c083fbd37841058a37bb0e143d11b1ff"
+      }
+    },
+    {
+      "id": "clamp_number",
+      "type": "snippetListing",
+      "title": "clamp_number",
+      "attributes": {
+        "text": "Clamps `num` within the inclusive range specified by the boundary values `a` and `b`.\n\nIf `num` falls within the range, return `num`. \nOtherwise, return the nearest number in the range.\n\n",
+        "tags": [
+          "math",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "20549e07442c96474df3db5824f7ac9eb8f1763234ef4abb0b500845cb71383d"
+      }
+    },
+    {
+      "id": "compact",
+      "type": "snippetListing",
+      "title": "compact",
+      "attributes": {
+        "text": "Removes falsey values from a list.\n\nUse `filter()` to filter out falsey values (`False`, `None`, `0`, and `\"\"`).\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "2cef075bcbeb781fdfd9a2284f04281922c50c79273e90b1d6fa858b06c8fb60"
+      }
+    },
+    {
+      "id": "count_by",
+      "type": "snippetListing",
+      "title": "count_by",
+      "attributes": {
+        "text": "Groups the elements of a list based on the given function and returns the count of elements in each group.\n\nUse `map()` to map the values of the given list using the given function.\nIterate over the map and increase the element count each time it occurs.\n\n",
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "b5b6656857a0c11b88b579c1f91451b78f7f2bd5c9eb209df7f15d4885d6bbc0"
+      }
+    },
+    {
+      "id": "count_occurences",
+      "type": "snippetListing",
+      "title": "count_occurences",
+      "attributes": {
+        "text": "Counts the occurrences of a value in a list.\n\nIncrement a counter for every item in the list that has the given value and is of the same type.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "9bd71bbccb9b18b35856360e4ccc7ae477ec7cd7e8363fc851ec3eac49813334"
+      }
+    },
+    {
+      "id": "decapitalize",
+      "type": "snippetListing",
+      "title": "decapitalize",
+      "attributes": {
+        "text": "Decapitalizes the first letter of a string.\n\nDecapitalize the first letter of the string and then add it with rest of the string. \nOmit the `upper_rest` parameter to keep the rest of the string intact, or set it to `True` to convert to uppercase.\n\n",
+        "tags": [
+          "string",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "05d4132e66af5a615c220781d247b7050445e001e76455343760a85e62edd106"
+      }
+    },
+    {
+      "id": "deep_flatten",
+      "type": "snippetListing",
+      "title": "deep_flatten",
+      "attributes": {
+        "text": "Deep flattens a list.\n\nUse recursion. \nDefine a function, `spread`, that uses either `list.extend()` or `list.append()` on each element in a list to flatten it.\nUse `list.extend()` with an empty list and the `spread` function to flatten a list.\nRecursively flatten each element that is a list.\n\n",
+        "tags": [
+          "list",
+          "recursion",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "3f0192a6f20dd5c0d4635f3e6f736fefbfe433f2cf4f36b3da12f8467f7704c0"
+      }
+    },
+    {
+      "id": "difference",
+      "type": "snippetListing",
+      "title": "difference",
+      "attributes": {
+        "text": "Returns the difference between two iterables.\n\nCreate a `set` from `b`, then use list comprehension on `a` to only keep values not contained in the previously created set, `_b`.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "4b7b9afe16e5ffb48c84f267364ff5041598e59dce5fb7f3f165ad9835fb5175"
+      }
+    },
+    {
+      "id": "difference_by",
+      "type": "snippetListing",
+      "title": "difference_by",
+      "attributes": {
+        "text": "Returns the difference between two lists, after applying the provided function to each list element of both.\n\nCreate a `set` by applying `fn` to each element in `b`, then use list comprehension in combination with `fn` on `a` to only keep values not contained in the previously created set, `_b`.\n\n",
+        "tags": [
+          "list",
+          "function",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "67fcb3f28272e5c105374ce43a42382eba8ddb1c327989c102f82cc441ea0fe1"
+      }
+    },
+    {
+      "id": "digitize",
+      "type": "snippetListing",
+      "title": "digitize",
+      "attributes": {
+        "text": "Converts a number to an array of digits.\n\nUse `map()` combined with `int` on the string representation of `n` and return a list from the result.\n\n",
+        "tags": [
+          "math",
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "be2a8632262614ee14126e69efedbfb6517fdcc5c3453f859d8cd161d44e8b6e"
+      }
+    },
+    {
+      "id": "every",
+      "type": "snippetListing",
+      "title": "every",
+      "attributes": {
+        "text": "Returns `True` if the provided function returns `True` for every element in the list, `False` otherwise.\n\nIterate over the elements of the list to test if every element in the list returns `True` based on `fn`.\nOmit the seconds argument, `fn`, to check if all elements are `True`.\n\n",
+        "tags": [
+          "list",
+          "function",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "1a444727bf46de6441f3ebc87508c8cd2b1280dc1d0659d00e46a012e703d9d6"
+      }
+    },
+    {
+      "id": "every_nth",
+      "type": "snippetListing",
+      "title": "every_nth",
+      "attributes": {
+        "text": "Returns every nth element in a list.\n\nUse `[1::nth]` to create a new list that contains every nth element of the given list.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "b0e4ab30cc730950401ab4291ce404b37132bc32bdeebbac1de871c581a55919"
+      }
+    },
+    {
+      "id": "factorial",
+      "type": "snippetListing",
+      "title": "factorial",
+      "attributes": {
+        "text": "Calculates the factorial of a number.\n\nUse recursion. \nIf `num` is less than or equal to `1`, return `1`. \nOtherwise, return the product of `num` and the factorial of `num - 1`. \nThrows an exception if `num` is a negative or a floating point number.\n\n",
+        "tags": [
+          "math",
+          "recursion",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "e22b08efd49d4bba2cef3f7d2315e55a36223d7c861c19eaa23ca1b2ba72dc5b"
+      }
+    },
+    {
+      "id": "fibonacci",
+      "type": "snippetListing",
+      "title": "fibonacci",
+      "attributes": {
+        "text": "Generates an array, containing the Fibonacci sequence, up until the nth term.\n\nStarting with `0` and `1`, use `list.apoend() to add the sum of the last two numbers of the list to the end of the list, until the length of the list reaches `n`.  \nIf `n` is less or equal to `0`, return a list containing `0`.\n\n",
+        "tags": [
+          "math",
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "cf0354a54a2bdd1d2423ff767f1d568f65c41a3db8863ab027a7536468d602f7"
+      }
+    },
+    {
+      "id": "filter_non_unique",
+      "type": "snippetListing",
+      "title": "filter_non_unique",
+      "attributes": {
+        "text": "Filters out the non-unique values in a list.\n\nUse list comprehension and `list.count()` to create a list containing only the unique values.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "1bbae73c12dc8ee2bf80e93b2328d8f5138e603fa0ea381999fc388a25cdb107"
+      }
+    },
+    {
+      "id": "gcd",
+      "type": "snippetListing",
+      "title": "gcd",
+      "attributes": {
+        "text": "Calculates the greatest common divisor of a list of numbers.\n\nUse `reduce()` and `math.gcd` over the given list.\n\n",
+        "tags": [
+          "math",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "ab1de2550801b4c4c2ab773912ea60553a9ef46d5928c879964432825aa6e7e3"
+      }
+    },
+    {
+      "id": "group_by",
+      "type": "snippetListing",
+      "title": "group_by",
+      "attributes": {
+        "text": "Groups the elements of a list based on the given function.\n\nUse `list()` in combination with `map()` and `fn` to map the values of the list to the keys of an object.\nUse list comprehension to map each element to the appropriate `key`.\n\n",
+        "tags": [
+          "list",
+          "object",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "592f01a019379e6e1eeca55406a923930ab77133a5653febb585847ed387df58"
+      }
+    },
+    {
+      "id": "has_duplicates",
+      "type": "snippetListing",
+      "title": "has_duplicates",
+      "attributes": {
+        "text": "Returns `True` if there are duplicate values in a flast list, `False` otherwise.\n\nUse `set()` on the given list to remove duplicates, compare its length with the length of the list.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "8aa2f1de87b94cb1eb6cdc0c048d051aae9d5561b8e6ca92b66c4543c8e24cd5"
+      }
+    },
+    {
+      "id": "head",
+      "type": "snippetListing",
+      "title": "head",
+      "attributes": {
+        "text": "Returns the head of a list.\n\nuse `lst[0]` to return the first element of the passed list.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "079183a15856f39a61ea1c375a272565e3f70826f2579eaa66683f06aca7205b"
+      }
+    },
+    {
+      "id": "in_range",
+      "type": "snippetListing",
+      "title": "in_range",
+      "attributes": {
+        "text": "Checks if the given number falls within the given range.\n\nUse arithmetic comparison to check if the given number is in the specified range.\nIf the second parameter, `end`, is not specified, the range is considered to be from `0` to `start`.\n\n",
+        "tags": [
+          "math",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "d3d40fb3ff5df9a9bb70b825b91952ca16ed4033fae94a1ea0eac7f64566a989"
+      }
+    },
+    {
+      "id": "initial",
+      "type": "snippetListing",
+      "title": "initial",
+      "attributes": {
+        "text": "Returns all the elements of a list except the last one.\n\nUse `lst[0:-1]` to return all but the last element of the list.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "792086091d9aa9180f447ee3fb0d606f2dbc38c2b917d1c7a610d32071d40cc2"
+      }
+    },
+    {
+      "id": "initialiaze_2d_list",
+      "type": "snippetListing",
+      "title": "initialize_2d_list",
+      "attributes": {
+        "text": "Initializes a 2D list of given width and height and value.\n\nUse list comprehension and `range()` to generate `h` rows where each is a list with length `h`, initialized with `val`.\nIf `val` is not provided, default to `None`.\n\nExplain briefly how the snippet works.\n\n",
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "e141f00ba64f6308c0563ff6132191a798a14fe7783be884ab46bf698892c8cc"
+      }
+    },
+    {
+      "id": "initialize_list_with_range",
+      "type": "snippetListing",
+      "title": "initialize_list_with_range",
+      "attributes": {
+        "text": "Initializes a list containing the numbers in the specified range where `start` and `end` are inclusive with their common difference `step`.\n\nUse list comprehension and `range()` to generate a list of the appropriate length, filled with the desired values in the given range.\nOmit `start` to use the default value of `0`.\nOmit `step` to use the default value of `1`.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "729784a5d236cb13fde71cab421a1487481d34f26e8acc3c923695ff972a965a"
+      }
+    },
+    {
+      "id": "initialize_list_with_values",
+      "type": "snippetListing",
+      "title": "initialize_list_with_values",
+      "attributes": {
+        "text": "Initializes and fills a list with the specified value.\n\nUse list comprehension and `range()` to generate a list of length equal to `n`, filled with the desired values.\nOmit `val` to use the default value of `0`.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "a86132d77e383748415b694deff0f452f1ee22763a47ee8fa95a938faceec926"
+      }
+    },
+    {
+      "id": "intersection",
+      "type": "snippetListing",
+      "title": "intersection",
+      "attributes": {
+        "text": "Returns a list of elements that exist in both lists.\n\nCreate a `set` from `b`, then use list comprehension on `a` to only keep values contained in both lists.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "50509c3103ce76585b558ecd98a8833568795ecb260e5b9bf955245078a49af8"
+      }
+    },
+    {
+      "id": "intersection_by",
+      "type": "snippetListing",
+      "title": "intersection_by",
+      "attributes": {
+        "text": "Returns a list of elements that exist in both lists, after applying the provided function to each list element of both.\n\nCreate a `set` by applying `fn` to each element in `b`, then use list comprehension in combination with `fn` on `a` to only keep values contained in both lists.\n\n",
+        "tags": [
+          "list",
+          "function",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "cde08163638452f63975589a3341c69e4621b364db22f6ab3d205bd895ad8b9a"
+      }
+    },
+    {
+      "id": "is_anagram",
+      "type": "snippetListing",
+      "title": "is_anagram",
+      "attributes": {
+        "text": "Checks if a string is an anagram of another string (case-insensitive, ignores spaces, punctuation and special characters).\n\nUse `str.replace()` to remove spaces from both strings.\nCompare the lengths of the two strings, return `False` if they are not equal.\nUse `sorted()` on both strings and compare the results.\n\n",
+        "tags": [
+          "string",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "47c878d10f937760d9096ccedb10357df3ba1e87333fdc8256c9a6938994eef8"
+      }
+    },
+    {
+      "id": "is_divisible",
+      "type": "snippetListing",
+      "title": "is_divisible",
+      "attributes": {
+        "text": "Checks if the first numeric argument is divisible by the second one.\n\nUse the modulo operator (`%`) to check if the remainder is equal to `0`.\n\n",
+        "tags": [
+          "math",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "0502ded5a0a750f7d4f03940d046a9f41ad0189a79ad7f42d9fe8ce9333b81e8"
+      }
+    },
+    {
+      "id": "is_even",
+      "type": "snippetListing",
+      "title": "is_even",
+      "attributes": {
+        "text": "Returns `True` if the given number is even, `False` otherwise.\n\nChecks whether a number is odd or even using the modulo (`%`) operator. \nReturns `True` if the number is even, `False` if the number is odd.\n\n",
+        "tags": [
+          "math",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "0579f16d399d4ed57a52e6575633fe924d1b269268c2b1afe830f34ff0cf9a09"
+      }
+    },
+    {
+      "id": "is_lower_case",
+      "type": "snippetListing",
+      "title": "is_lower_case",
+      "attributes": {
+        "text": "Checks if a string is lower case.\n\nConvert the given string to lower case, using `str.lower()` and compare it to the original.\n\n",
+        "tags": [
+          "string",
+          "utility",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "d84277f13e3250c2e9d8a6afd693d52a7383f29ea1fdf71bd5dd1f3d8d3a5baf"
+      }
+    },
+    {
+      "id": "is_odd",
+      "type": "snippetListing",
+      "title": "is_odd",
+      "attributes": {
+        "text": "Returns `True` if the given number is odd, `False` otherwise.\n\nChecks whether a number is even or odd using the modulo (`%`) operator. \nReturns `True` if the number is odd, `False` if the number is even.\n\n",
+        "tags": [
+          "math",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "b112c57fecf98765d44027b570c3f9b9fb304d450584bdee477b558861380ab9"
+      }
+    },
+    {
+      "id": "is_upper_case",
+      "type": "snippetListing",
+      "title": "is_upper_case",
+      "attributes": {
+        "text": "Checks if a string is upper case.\n\nConvert the given string to upper case, using `str.upper()` and compare it to the original.\n\n",
+        "tags": [
+          "string",
+          "utility",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "fd01ad582630e68200df9317aa68877d4942412fab8ce123533460f4937203f2"
+      }
+    },
+    {
+      "id": "kebab",
+      "type": "snippetListing",
+      "title": "kebab",
+      "attributes": {
+        "text": "Converts a string to kebab case.\n\nBreak the string into words and combine them adding `-` as a separator, using a regexp.\n\n",
+        "tags": [
+          "string",
+          "regexp",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "35f4a0ae7433cef616f137b696b909d7f5046685e64af70d59934f4d34e6c5d7"
+      }
+    },
+    {
+      "id": "keys_only",
+      "type": "snippetListing",
+      "title": "keys_only",
+      "attributes": {
+        "text": "Returns a flat list of all the keys in a flat dictionary.\n\nUse `dict.keys()` to return the keys in the given dictionary.\nReturn a `list()` of the previous result.\n\n",
+        "tags": [
+          "object",
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "f8cf88c53dd53b702bc504a2d36f9c9bddbe3bfdc0c2946909b9fd6de2370122"
+      }
+    },
+    {
+      "id": "last",
+      "type": "snippetListing",
+      "title": "last",
+      "attributes": {
+        "text": "Returns the last element in a list.\n\nuse `lst[-1]` to return the last element of the passed list.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "7cefc731b24f3979e93354686c1ca91adebd7cfadc8cd903cbb784730fcce0d3"
+      }
+    },
+    {
+      "id": "lcm",
+      "type": "snippetListing",
+      "title": "lcm",
+      "attributes": {
+        "text": "Returns the least common multiple of two or more numbers.\n\nDefine a function, `spread`, that uses either `list.extend()` or `list.append()` on each element in a list to flatten it.\nUse `math.gcd()` and `lcm(x,y) = x * y / gcd(x,y)` to determine the least common multiple.\n\n",
+        "tags": [
+          "math",
+          "list",
+          "recursion",
+          "advanced"
+        ]
+      },
+      "meta": {
+        "hash": "0365d1bab90dcf808af1c31671e3bb712b4fa0a975e95fb97450a1db6eb8e7f2"
+      }
+    },
+    {
+      "id": "longest_item",
+      "type": "snippetListing",
+      "title": "longest_item",
+      "attributes": {
+        "text": "Takes any number of iterable objects or objects with a length property and returns the longest one. \nIf multiple objects have the same length, the first one will be returned.\n\nUse `max()` with `len` as the `key` to return the item with the greatest length.\n\n",
+        "tags": [
+          "list",
+          "string",
+          "utility",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "fea8c001eb0d4a9c2bcd37b3e5fe5b636fec2fe0e937f1195bf1fec357d42e53"
+      }
+    },
+    {
+      "id": "map_values",
+      "type": "snippetListing",
+      "title": "map_values",
+      "attributes": {
+        "text": "Creates an object with the same keys as the provided object and values generated by running the provided function for each value.\n\nUse `dict.keys()` to iterate over the object's keys, assigning the values produced by `fn` to each key of a new object.\n\n",
+        "tags": [
+          "object",
+          "function",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "8478ad6fd73b9c7c15d7243b0be989ada0159c694471a520076f953ebf986258"
+      }
+    },
+    {
+      "id": "max_by",
+      "type": "snippetListing",
+      "title": "max_by",
+      "attributes": {
+        "text": "Returns the maximum value of a list, after mapping each element to a value using the provided function.\n\nUse `map()` with `fn` to map each element to a value using the provided function, convert to a `list` and use `max()` to return the maximum value.\n\n",
+        "tags": [
+          "math",
+          "list",
+          "function",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "3538fe0c61f5ba76adc478a7a03603e227ae49209ff345f1a65e8163844e7024"
+      }
+    },
+    {
+      "id": "max_n",
+      "type": "snippetListing",
+      "title": "max_n",
+      "attributes": {
+        "text": "Returns the `n` maximum elements from the provided list. \nIf `n` is greater than or equal to the provided list's length, then return the original list (sorted in descending order).\n\nUse `sorted() to sort the list, `[:n]` to get the specified number of elements.\nOmit the second argument, `n`, to get a one-element list.\n\n",
+        "tags": [
+          "list",
+          "math",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "779eb91b49e8f15d476fa067c4892bac0c63c962afa82ab42e7ef416c4a3d5a2"
+      }
+    },
+    {
+      "id": "min_by",
+      "type": "snippetListing",
+      "title": "min_by",
+      "attributes": {
+        "text": "Returns the minimum value of a list, after mapping each element to a value using the provided function.\n\nUse `map()` with `fn` to map each element to a value using the provided function, convert to a `list` and use `min()` to return the minimum value.\n\n",
+        "tags": [
+          "math",
+          "list",
+          "function",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "72812142d33c4328a3c69764b1ddde2ba4a64e0a6c10107b38835e1ef9d0655a"
+      }
+    },
+    {
+      "id": "min_n",
+      "type": "snippetListing",
+      "title": "min_n",
+      "attributes": {
+        "text": "Returns the `n` minimum elements from the provided list. \nIf `n` is greater than or equal to the provided list's length, then return the original list (sorted in ascending order).\n\nUse `sorted() to sort the list, `[:n]` to get the specified number of elements.\nOmit the second argument, `n`, to get a one-element list.\n\n",
+        "tags": [
+          "list",
+          "math",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "653535ca2eb51b2f792c529c4e8e96f99dcaceaf63b72c486c9b072fb5ea1a41"
+      }
+    },
+    {
+      "id": "none",
+      "type": "snippetListing",
+      "title": "none",
+      "attributes": {
+        "text": "Returns `False` if the provided function returns `True` for at least one element in the list, `True` otherwise.\n\nIterate over the elements of the list to test if every element in the list returns `False` based on `fn`.\nOmit the seconds argument, `fn`, to check if all elements are `False`.\n\n",
+        "tags": [
+          "list",
+          "function",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "50d683ab59844b8de41fee0fb2ed3267e68c5c3020265b51b2f49f75bc3bd85e"
+      }
+    },
+    {
+      "id": "offset",
+      "type": "snippetListing",
+      "title": "offset",
+      "attributes": {
+        "text": "Moves the specified amount of elements to the end of the list.\n\nUse `lst[offset:]` and `lst[:offset]` to get the two slices of the list and combine them before returning.\n\nExplain briefly how the snippet works.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "e86853e988f5c40cd8ef95ef80da49fe9e40626ea754db4a83f5b68d9713afe9"
+      }
+    },
+    {
+      "id": "palindrome",
+      "type": "snippetListing",
+      "title": "palindrome",
+      "attributes": {
+        "text": "Returns `True` if the given string is a palindrome, `False` otherwise.\n\nUse `str.lower()` and `re.sub()` to convert to lowercase and  remove non-alphanumeric characters from the given string. \nThen, compare the new string with its reverse.\n\n",
+        "tags": [
+          "string",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "2da6734174e371587baeebba432bc0f441f024211e900c4852fca7eeb08f89df"
+      }
+    },
+    {
+      "id": "rads_to_degrees",
+      "type": "snippetListing",
+      "title": "rads_to_degrees",
+      "attributes": {
+        "text": "Converts an angle from radians to degrees.\n\nUse `math.pi` and the radian to degree formula to convert the angle from radians to degrees.\n\n",
+        "tags": [
+          "math",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "b5eac6740b6b78892d5978c26e44dc2747898c179f6d1e2c6f181f716ed4ee97"
+      }
+    },
+    {
+      "id": "sample",
+      "type": "snippetListing",
+      "title": "sample",
+      "attributes": {
+        "text": "Returns a random element from an array.\n\nUse `randint()` to generate a random number that corresponds to an index in the list, return the element at that index.\n\n",
+        "tags": [
+          "list",
+          "random",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "d8cf3ead7fde16fd0886baa5469ef55844848d25629c4fff011d1e27496b75ad"
+      }
+    },
+    {
+      "id": "shuffle",
+      "type": "snippetListing",
+      "title": "shuffle",
+      "attributes": {
+        "text": "Randomizes the order of the values of an list, returning a new list.\n\nUses the [Fisher-Yates algorithm](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle) to reorder the elements of the list.\n\n",
+        "tags": [
+          "list",
+          "random",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "e50c5b8daa558ff5ea7f2516a3e382f4e91bcf8ab5999041376020080dd916c0"
+      }
+    },
+    {
+      "id": "similarity",
+      "type": "snippetListing",
+      "title": "similarity",
+      "attributes": {
+        "text": "Returns a list of elements that exist in both lists.\n\nUse list comprehension on `a` to only keep values contained in both lists.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "54faf1a5edfa2e6c1508635fa2492ad22978ac988b250acedd2cdb64670fc019"
+      }
+    },
+    {
+      "id": "snake",
+      "type": "snippetListing",
+      "title": "snake",
+      "attributes": {
+        "text": "Converts a string to snake case.\n\nBreak the string into words and combine them adding `_-_` as a separator, using a regexp.\n\n",
+        "tags": [
+          "string",
+          "regexp",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "c2a90128c4edf395cf659da0b2ad9ddccbf13eb19c900d4a8734bc98613096d8"
+      }
+    },
+    {
+      "id": "some",
+      "type": "snippetListing",
+      "title": "some",
+      "attributes": {
+        "text": "Returns `True` if the provided function returns `True` for at least one element in the list, `False` otherwise.\n\nIterate over the elements of the list to test if every element in the list returns `True` based on `fn`.\nOmit the seconds argument, `fn`, to check if all elements are `True`.\n\n",
+        "tags": [
+          "list",
+          "function",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "aada6496416fff036ff40ae4a8555d4bc27d56a0ce869d0d4366c410beada2bc"
+      }
+    },
+    {
+      "id": "split_lines",
+      "type": "snippetListing",
+      "title": "split_lines",
+      "attributes": {
+        "text": "Splits a multiline string into a list of lines.\n\nUse `str.split()` and `'\\n'` to match line breaks and create a list.\n\n",
+        "tags": [
+          "string",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "aa12646b6b9629fe38eb7b04bdc5a9fbff64b012d5b65fcac1e8d0a42a14fd05"
+      }
+    },
+    {
+      "id": "spread",
+      "type": "snippetListing",
+      "title": "spread",
+      "attributes": {
+        "text": "Flattens a list, by spreading its elements into a new list.\n\nLoop over elements, use `list.extend()` if the element is a list, `list.append()` otherwise.\n\n",
+        "tags": [
+          "list",
+          "utility",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "5e9cf0033df73310e23800b6d41677a8607342717d23ef661f17f559cae7a8d8"
+      }
+    },
+    {
+      "id": "sum_by",
+      "type": "snippetListing",
+      "title": "sum_by",
+      "attributes": {
+        "text": "Returns the sum of a list, after mapping each element to a value using the provided function.\n\nUse `map()` with `fn` to map each element to a value using the provided function, convert to a `list` and use `sum()` to return the sum of the values.\n\n",
+        "tags": [
+          "math",
+          "list",
+          "function",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "d97b4f2c69fafe781e6a0a72f2e41a2041ae960b2cb078b40a89ebba7464adab"
+      }
+    },
+    {
+      "id": "symmetric_difference",
+      "type": "snippetListing",
+      "title": "symmetric_difference",
+      "attributes": {
+        "text": "Returns the symmetric difference between two iterables, without filtering out duplicate values.\n\nCreate a `set` from each list, then use list comprehension on each one to only keep values not contained in the previously created set of the other.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "b1b608eac070e1c51ded6494ba0a5291e3f2afaced5ea026201dac0a1ebdbe73"
+      }
+    },
+    {
+      "id": "symmetric_difference_by",
+      "type": "snippetListing",
+      "title": "symmetric_difference_by",
+      "attributes": {
+        "text": "Returns the symmetric difference between two lists, after applying the provided function to each list element of both.\n\nCreate a `set` by applying `fn` to each element in every list, then use list comprehension in combination with `fn` on each one to only keep values not contained in the previously created set of the other.\n\n",
+        "tags": [
+          "list",
+          "function",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "d6b4f42c3d08fee38e8674c6059e01deffeb74d943e9d89e0836a39fe19309cc"
+      }
+    },
+    {
+      "id": "tail",
+      "type": "snippetListing",
+      "title": "tail",
+      "attributes": {
+        "text": "Returns all elements in a list except for the first one.\n\nReturn `lst[1:]` if the list's length is more than `1`, otherwise, return the whole list.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "819f20907ca5f906b185988f32e06c1c39e9a39786dac76a3421c55c7f5327b1"
+      }
+    },
+    {
+      "id": "union",
+      "type": "snippetListing",
+      "title": "union",
+      "attributes": {
+        "text": "Returns every element that exists in any of the two lists once.\n\nCreate a `set` with all values of `a` and `b` and convert to a `list`.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "cf3bd4a569cce91769a1e4781a4317d93a023ec04658389532b00572fc3d2b7a"
+      }
+    },
+    {
+      "id": "union_by",
+      "type": "snippetListing",
+      "title": "union_by",
+      "attributes": {
+        "text": "Returns every element that exists in any of the two lists once, after applying the provided function to each element of both.\n\nCreate a `set` by applying `fn` to each element in `a`, then use list comprehension in combination with `fn` on `b` to only keep values not contained in the previously created set, `_a`.\nFinally, create a `set` from the previous result and `a` and transform it into a `list`\n\n",
+        "tags": [
+          "list",
+          "function",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "0da21f57e2c6eb4efedcbcf555b00843c03df3f5c505de421a4b4d226a1f081e"
+      }
+    },
+    {
+      "id": "unique_elements",
+      "type": "snippetListing",
+      "title": "unique_elements",
+      "attributes": {
+        "text": "Returns the unique elements in a given list.\n\nCreate a `set` from the list to discard duplicated values, then return a `list` from it.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "3a1e3b5eb2b223a3b7b8cdcf96b961724d72ddd7d9e276f9fcd730572bd1bba2"
+      }
+    },
+    {
+      "id": "values_only",
+      "type": "snippetListing",
+      "title": "values_only",
+      "attributes": {
+        "text": "Returns a flat list of all the values in a flat dictionary.\n\nUse `dict.values()` to return the values in the given dictionary.\nReturn a `list()` of the previous result.\n\n",
+        "tags": [
+          "object",
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "be7662f58cb7e4a29f719939f58214192107a86d764cd2ef9fbf583ee6dc5f59"
+      }
+    },
+    {
+      "id": "zip",
+      "type": "snippetListing",
+      "title": "zip",
+      "attributes": {
+        "text": "Creates a list of elements, grouped based on the position in the original lists.\n\n\nUse `max` combined with `list comprehension` to get the length of the longest list in the arguments. \nLoop for `max_length` times grouping elements. \nIf lengths of `lists` vary, use `fill_value` (defaults to `None`). \n\n",
+        "tags": [
+          "list",
+          "math",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "44281b36c4ae79373b6266790741f21225e47c989e3bbfe232b939f5b69270c6"
+      }
+    }
+  ],
+  "meta": {
+    "specification": "http://jsonapi.org/format/",
+    "type": "snippetListingArray"
+  }
+}

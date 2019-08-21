@@ -1,14 +1,17 @@
-### compact
+---
+title: compact
+tags: list,beginner
+---
 
 Removes falsey values from a list.
 
-Use `filter()` to filter out falsey values (False, None, 0, and "").
+Use `filter()` to filter out falsey values (`False`, `None`, `0`, and `""`).
 
-```python
+```py
 def compact(lst):
-    return list(filter(bool, lst))
+  return list(filter(bool, lst))
 ```
 
-``` python
+```py
 compact([0, 1, False, 2, '', 3, 'a', 's', 34]) # [ 1, 2, 3, 'a', 's', 34 ]
 ```
