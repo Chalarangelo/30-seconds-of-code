@@ -1,4 +1,7 @@
-### AutoLink
+---
+title:  AutoLink
+tags: string,fragment,regexp,advanced
+---
 
 Renders a string as plaintext, with URLs converted to appropriate `<a>` elements.
 
@@ -30,7 +33,3 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-
-<!-- tags: string,fragment,regexp -->
-
-<!-- expertise: 2 -->

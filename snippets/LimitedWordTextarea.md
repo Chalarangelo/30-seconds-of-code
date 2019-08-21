@@ -1,4 +1,7 @@
-### LimitedWordTextarea
+---
+title:  LimitedWordTextarea
+tags: input,state,effect,event,beginner
+---
 
 Renders a textarea component with a word limit.
 
@@ -55,7 +58,3 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-
-<!-- tags: input,state,effect -->
-
-<!-- expertise: 0 -->

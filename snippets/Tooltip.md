@@ -1,4 +1,7 @@
-### Tooltip
+---
+title:  Tooltip
+tags: visual,state,children,beginner
+---
 
 Renders a tooltip component.
 
@@ -51,7 +54,3 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-
-<!-- tags: visual,state,children -->
-
-<!-- expertise: 1 -->

@@ -1,4 +1,7 @@
-### TreeView
+---
+title:  TreeView
+tags: object,visual,state,recursion,advanced
+---
 
 Renders a tree view of a JSON object or array with collapsible content.
 
@@ -121,7 +124,3 @@ let data = {
 };
 ReactDOM.render(<TreeView data={data} name="data" />, document.getElementById('root'));
 ```
-
-<!-- tags: object,visual,state,recursion -->
-
-<!-- expertise: 2 -->

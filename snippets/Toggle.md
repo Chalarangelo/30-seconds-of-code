@@ -1,4 +1,7 @@
-### Toggle
+---
+title:  Toggle
+tags: visual,state,beginner
+---
 
 Renders a toggle component.
 
@@ -29,7 +32,3 @@ function Toggle(props) {
 ```jsx
 ReactDOM.render(<Toggle />, document.getElementById('root'));
 ```
-
-<!-- tags: visual,state  -->
-
-<!-- expertise: 0 -->

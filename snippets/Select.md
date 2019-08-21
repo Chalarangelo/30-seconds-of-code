@@ -1,4 +1,7 @@
-### Select
+---
+title:  Select
+tags: input,beginner
+---
 
 Renders a `<select>` element that uses a callback function to pass its value to the parent component.
 
@@ -36,7 +39,3 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-
-<!-- tags: input -->
-
-<!-- expertise: 0 -->

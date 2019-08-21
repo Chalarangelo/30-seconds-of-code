@@ -1,4 +1,7 @@
-### Modal
+---
+title:  Modal
+tags: visual,effect,intermediate
+---
 
 Renders a Modal component, controllable through events.
 To use the component, import `Modal` only once and then display it by passing a boolean value to the `isVisible` attribute.
@@ -131,7 +134,3 @@ function App() {
 
 ReactDOM.render( <App/>, document.getElementById('root'));
 ```
-
-<!-- tags: visual,effect -->
-
-<!-- expertise: 2 -->

@@ -1,4 +1,7 @@
-### DataList
+---
+title:  DataList
+tags:  array,beginner
+---
 
 Renders a list of elements from an array of primitives.
 
@@ -18,7 +21,3 @@ const names = ['John', 'Paul', 'Mary'];
 ReactDOM.render(<DataList data={names} />, document.getElementById('root'));
 ReactDOM.render(<DataList data={names} isOrdered />, document.getElementById('root'));
 ```
-
-<!-- tags: array -->
-
-<!-- expertise: 0 -->

@@ -1,4 +1,7 @@
-### StarRating
+---
+title:  StarRating
+tags: visual,children,input,state,intermediate
+---
 
 Renders a star rating component.
 
@@ -48,7 +51,3 @@ function StarRating(props) {
 ReactDOM.render(<StarRating />, document.getElementById('root'));
 ReactDOM.render(<StarRating rating={2} />, document.getElementById('root'));
 ```
-
-<!-- tags: visual,children,input,state -->
-
-<!-- expertise: 2 -->

@@ -1,4 +1,7 @@
-### Collapse
+---
+title:  Collapse
+tags: visual,children,state,intermediate
+---
 
 Renders a component with collapsible content.
 
@@ -51,7 +54,3 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-
-<!-- tags: visual,children,state -->
-
-<!-- expertise: 2 -->

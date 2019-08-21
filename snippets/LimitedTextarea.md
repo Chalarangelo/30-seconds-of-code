@@ -1,4 +1,7 @@
-### LimitedTextarea
+---
+title:  LimitedTextarea
+tags: input,state,effect,event,beginner
+---
 
 Renders a textarea component with a character limit.
 
@@ -38,7 +41,3 @@ function LimitedTextarea({ rows, cols, value, limit }) {
 ```jsx
 ReactDOM.render(<LimitedTextarea limit={32} value="Hello!" />, document.getElementById('root'));
 ```
-
-<!-- tags: input,state,effect -->
-
-<!-- expertise: 0 -->
