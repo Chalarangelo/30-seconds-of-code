@@ -1,13 +1,13 @@
 ---
-title: ClickOutside
+title: useClickInside
 tags: hooks,effect,event,intermediate
 ---
 
-A hook that handles the event of clicking outside of the wrapped component.
+A hook that handles the event of clicking inside the wrapped component.
 
 - Create a custom hook that takes a `ref` and a `callback` to handle the `click` event.
 - Use the `React.useEffect()` hook to append and clean up the `click` event.
-- Use the `React.useRef()` hook to create a `ref` for your click component and pass it to the `useClickOutside` hook.
+- Use the `React.useRef()` hook to create a `ref` for your click component and pass it to the `useClickInside` hook.
 
 ```css
 .click-box {
@@ -26,9 +26,9 @@ p {
 ```
 
 ```jsx
-const useClickOutside = (ref, callback) => {
+const useClickInside = (ref, callback) => {
   const handleClick = e => {
-    if (ref.current && !ref.current.contains(e.target)) {
+    if (ref.current && ref.current.contains(e.target)) {
       callback();
     }
   };
@@ -40,9 +40,9 @@ const useClickOutside = (ref, callback) => {
   });
 };
 
-function ClickBox({ onClickOutside }) {
+function ClickBox({ onClickInside }) {
   const clickRef = useRef();
-  useClickOutside(clickRef, onClickOutside);
+  useClickInside(clickRef, onClickInside);
   return (
     <div className="click-box" ref={clickRef}>
       <p>Hello Click Me Inside!</p>
@@ -53,7 +53,7 @@ function ClickBox({ onClickOutside }) {
 
 ```jsx
 ReactDOM.render(
-  <ClickBox onClickOutside={() => alert('click outside')} />,
+  <ClickBox onClickInside={() => alert('click inside')} />,
   document.getElementById('root')
 );
 ```
