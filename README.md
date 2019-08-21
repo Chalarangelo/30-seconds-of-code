@@ -56,8 +56,10 @@ import ReactDOM from 'react-dom';
 <details>
 <summary>View contents</summary>
 
-* [`ClickInside`](#clickinside)
-* [`ClickOutside`](#clickoutside)
+* [`useClickInside`](#useclickinside)
+* [`useClickOutside`](#useclickoutside)
+* [`useInterval`](#useinterval)
+* [`useTimeout`](#usetimeout)
 
 </details>
 
@@ -66,6 +68,7 @@ import ReactDOM from 'react-dom';
 <details>
 <summary>View contents</summary>
 
+* [`ControlledInput`](#controlledinput)
 * [`LimitedTextarea`](#limitedtextarea)
 * [`LimitedWordTextarea`](#limitedwordtextarea)
 * [`MultiselectCheckbox`](#multiselectcheckbox)
@@ -261,29 +264,13 @@ ReactDOM.render(
 ##  Hooks
 
 
-### ClickInside
+### useClickInside
 
 A hook that handles the event of clicking inside the wrapped component.
 
 - Create a custom hook that takes a `ref` and a `callback` to handle the `click` event.
 - Use the `React.useEffect()` hook to append and clean up the `click` event.
 - Use the `React.useRef()` hook to create a `ref` for your click component and pass it to the `useClickInside` hook.
-
-```css
-.click-box {
-  border: 2px dashed orangered;
-  height: 200px;
-  width: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-p {
-  border: 2px solid blue;
-  padding: 16px;
-}
-```
 
 ```jsx
 const useClickInside = (ref, callback) => {
@@ -292,29 +279,40 @@ const useClickInside = (ref, callback) => {
       callback();
     }
   };
-  useEffect(() => {
+  React.useEffect(() => {
     document.addEventListener('click', handleClick);
     return () => {
       document.removeEventListener('click', handleClick);
     };
   });
 };
-
-function ClickBox({ onClickInside }) {
-  const clickRef = useRef();
-  useClickInside(clickRef, onClickInside);
-  return (
-    <div className="click-box" ref={clickRef}>
-      <p>Hello Click Me Inside!</p>
-    </div>
-  );
-}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```jsx
+const ClickBox = ({ onClickInside }) => {
+  const clickRef = React.useRef();
+  useClickInside(clickRef, onClickInside);
+  return (
+    <div
+      className="click-box"
+      ref={clickRef}
+      style={{
+        border: '2px dashed orangered',
+        height: 200,
+        width: 400,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}
+    >
+      <p>Click inside this element</p>
+    </div>
+  );
+};
+
 ReactDOM.render(
   <ClickBox onClickInside={() => alert('click inside')} />,
   document.getElementById('root')
@@ -324,29 +322,13 @@ ReactDOM.render(
 
 <br>[⬆ Back to top](#contents)
 
-### ClickOutside
+### useClickOutside
 
 A hook that handles the event of clicking outside of the wrapped component.
 
 - Create a custom hook that takes a `ref` and a `callback` to handle the `click` event.
 - Use the `React.useEffect()` hook to append and clean up the `click` event.
 - Use the `React.useRef()` hook to create a `ref` for your click component and pass it to the `useClickOutside` hook.
-
-```css
-.click-box {
-  border: 2px dashed orangered;
-  height: 200px;
-  width: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-p {
-  border: 2px solid blue;
-  padding: 16px;
-}
-```
 
 ```jsx
 const useClickOutside = (ref, callback) => {
@@ -355,29 +337,40 @@ const useClickOutside = (ref, callback) => {
       callback();
     }
   };
-  useEffect(() => {
+  React.useEffect(() => {
     document.addEventListener('click', handleClick);
     return () => {
       document.removeEventListener('click', handleClick);
     };
   });
 };
-
-function ClickBox({ onClickOutside }) {
-  const clickRef = useRef();
-  useClickOutside(clickRef, onClickOutside);
-  return (
-    <div className="click-box" ref={clickRef}>
-      <p>Hello Click Me Inside!</p>
-    </div>
-  );
-}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```jsx
+const ClickBox = ({ onClickOutside }) => {
+  const clickRef = React.useRef();
+  useClickOutside(clickRef, onClickOutside);
+  return (
+    <div
+      className="click-box"
+      ref={clickRef}
+      style={{
+        border: '2px dashed orangered',
+        height: 200,
+        width: 400,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}
+    >
+      <p>Click out of this element</p>
+    </div>
+  );
+};
+
 ReactDOM.render(
   <ClickBox onClickOutside={() => alert('click outside')} />,
   document.getElementById('root')
@@ -387,10 +380,160 @@ ReactDOM.render(
 
 <br>[⬆ Back to top](#contents)
 
+### useInterval
+
+A hook that implements `setInterval` in a declarative manner.
+
+- Create a custom hook that takes a `callback` and a `delay`.
+- Use the `React.useRef()` hook to create a `ref` for the callback function.
+- Use the `React.useEffect()` hook to remember the latest callback.
+- Use the `Rect.useEffect()` hook to set up the interval and clean up.
+
+```jsx
+const useInterval = (callback, delay) => {
+  const savedCallback = React.useRef();
+
+  React.useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  React.useEffect(() => {
+    function tick() {
+      savedCallback.current();
+    }
+    if (delay !== null) {
+      let id = setInterval(tick, delay);
+      return () => clearInterval(id);
+    }
+  }, [delay]);
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```jsx
+const Timer = props => {
+  const [seconds, setSeconds] = React.useState(0);
+  useInterval(() => {
+    setSeconds(seconds + 1);
+  }, 1000);
+
+  return <p>{seconds}</p>;
+};
+
+ReactDOM.render(<Timer />, document.getElementById('root'));
+```
+</details>
+
+<br>[⬆ Back to top](#contents)
+
+### useTimeout
+
+A hook that implements `setTimeout` in a declarative manner.
+
+- Create a custom hook that takes a `callback` and a `delay`.
+- Use the `React.useRef()` hook to create a `ref` for the callback function.
+- Use the `React.useEffect()` hook to remember the latest callback.
+- Use the `Rect.useEffect()` hook to set up the timeout and clean up.
+
+```jsx
+const useTimeout = (callback, delay) => {
+  const savedCallback = React.useRef();
+
+  React.useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  React.useEffect(() => {
+    function tick() {
+      savedCallback.current();
+    }
+    if (delay !== null) {
+      let id = setTimeout(tick, delay);
+      return () => clearTimeout(id);
+    }
+  }, [delay]);
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```jsx
+const OneSecondTimer = props => {
+  const [seconds, setSeconds] = React.useState(0);
+  useTimeout(() => {
+    setSeconds(seconds + 1);
+  }, 1000);
+
+  return <p>{seconds}</p>;
+};
+
+ReactDOM.render(<OneSecondTimer />, document.getElementById('root'));
+```
+</details>
+
+<br>[⬆ Back to top](#contents)
+
 ---
 
 ##  Input
 
+
+### ControlledInput
+
+Renders an `<input>` element with internal state, that uses a callback function to pass its value to the parent component.
+
+- Use object destructuring to set defaults for certain attributes of the `<input>` element.
+- Use the `React.setState()` hook to create the `value` state variable and give it a value of equal to the `defaultValue` prop.
+- Use the `React.useEffect()` hook with a second parameter set to the `value` state variable to call the `callback` function every time `value` is updated.
+- Render an `<input>` element with the appropriate attributes and use the the `onChange` event to upda the `value` state variable.
+
+```jsx
+function ControlledInput({
+  callback,
+  type = 'text',
+  disabled = false,
+  readOnly = false,
+  defaultValue,
+  placeholder = ''
+}) {
+  const [value, setValue] = React.useState(defaultValue);
+
+  React.useEffect(() => {
+    callback(value);
+  }, [value]);
+
+  return (
+    <input
+      defaultValue={defaultValue}
+      type={type}
+      disabled={disabled}
+      readOnly={readOnly}
+      placeholder={placeholder}
+      onChange={({ target: { value } }) => setValue(value)}
+    />
+  );
+}
+```
+
+<details>
+<summary>Examples</summary>
+
+```jsx
+ReactDOM.render(
+  <ControlledInput
+    type="text"
+    placeholder="Insert some text here..."
+    callback={val => console.log(val)}
+  />,
+  document.getElementById('root')
+);
+```
+</details>
+
+<br>[⬆ Back to top](#contents)
 
 ### LimitedTextarea
 

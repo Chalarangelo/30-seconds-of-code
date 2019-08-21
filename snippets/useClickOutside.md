@@ -9,22 +9,6 @@ A hook that handles the event of clicking outside of the wrapped component.
 - Use the `React.useEffect()` hook to append and clean up the `click` event.
 - Use the `React.useRef()` hook to create a `ref` for your click component and pass it to the `useClickOutside` hook.
 
-```css
-.click-box {
-  border: 2px dashed orangered;
-  height: 200px;
-  width: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-p {
-  border: 2px solid blue;
-  padding: 16px;
-}
-```
-
 ```jsx
 const useClickOutside = (ref, callback) => {
   const handleClick = e => {
@@ -32,26 +16,37 @@ const useClickOutside = (ref, callback) => {
       callback();
     }
   };
-  useEffect(() => {
+  React.useEffect(() => {
     document.addEventListener('click', handleClick);
     return () => {
       document.removeEventListener('click', handleClick);
     };
   });
 };
-
-function ClickBox({ onClickOutside }) {
-  const clickRef = useRef();
-  useClickOutside(clickRef, onClickOutside);
-  return (
-    <div className="click-box" ref={clickRef}>
-      <p>Hello Click Me Inside!</p>
-    </div>
-  );
-}
 ```
 
 ```jsx
+const ClickBox = ({ onClickOutside }) => {
+  const clickRef = React.useRef();
+  useClickOutside(clickRef, onClickOutside);
+  return (
+    <div
+      className="click-box"
+      ref={clickRef}
+      style={{
+        border: '2px dashed orangered',
+        height: 200,
+        width: 400,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}
+    >
+      <p>Click out of this element</p>
+    </div>
+  );
+};
+
 ReactDOM.render(
   <ClickBox onClickOutside={() => alert('click outside')} />,
   document.getElementById('root')

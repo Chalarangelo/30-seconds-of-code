@@ -10,7 +10,6 @@ A hook that implements `setTimeout` in a declarative manner.
 - Use the `React.useEffect()` hook to remember the latest callback.
 - Use the `Rect.useEffect()` hook to set up the timeout and clean up.
 
-
 ```jsx
 const useTimeout = (callback, delay) => {
   const savedCallback = React.useRef();
@@ -20,7 +19,7 @@ const useTimeout = (callback, delay) => {
   }, [callback]);
 
   React.useEffect(() => {
-    function tick () {
+    function tick() {
       savedCallback.current();
     }
     if (delay !== null) {
@@ -32,19 +31,14 @@ const useTimeout = (callback, delay) => {
 ```
 
 ```jsx
-const OneSecondTimer = (props) => {
-  const [seconds,setSeconds] = React.useState(0);
+const OneSecondTimer = props => {
+  const [seconds, setSeconds] = React.useState(0);
   useTimeout(() => {
     setSeconds(seconds + 1);
   }, 1000);
 
-  return (
-    <p>{seconds}</p>
-  );
-}
+  return <p>{seconds}</p>;
+};
 
-ReactDOM.render(
-  <OneSecondTimer />,
-  document.getElementById('root')
-);
+ReactDOM.render(<OneSecondTimer />, document.getElementById('root'));
 ```

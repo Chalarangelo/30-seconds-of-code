@@ -10,7 +10,6 @@ A hook that implements `setInterval` in a declarative manner.
 - Use the `React.useEffect()` hook to remember the latest callback.
 - Use the `Rect.useEffect()` hook to set up the interval and clean up.
 
-
 ```jsx
 const useInterval = (callback, delay) => {
   const savedCallback = React.useRef();
@@ -20,7 +19,7 @@ const useInterval = (callback, delay) => {
   }, [callback]);
 
   React.useEffect(() => {
-    function tick () {
+    function tick() {
       savedCallback.current();
     }
     if (delay !== null) {
@@ -32,19 +31,14 @@ const useInterval = (callback, delay) => {
 ```
 
 ```jsx
-const Timer = (props) => {
-  const [seconds,setSeconds] = React.useState(0);
+const Timer = props => {
+  const [seconds, setSeconds] = React.useState(0);
   useInterval(() => {
     setSeconds(seconds + 1);
   }, 1000);
 
-  return (
-    <p>{seconds}</p>
-  );
-}
+  return <p>{seconds}</p>;
+};
 
-ReactDOM.render(
-  <Timer />,
-  document.getElementById('root')
-);
+ReactDOM.render(<Timer />, document.getElementById('root'));
 ```
