@@ -5,7 +5,7 @@ tags: math,list,function,beginner
 
 Returns the maximum value of a list, after mapping each element to a value using the provided function.
 
-use `map()` with `fn` to map each element to a value using the provided function, convert to a `list` and use `max()` to return the maximum value.
+Use `map()` with `fn` to map each element to a value using the provided function, convert to a `list` and use `max()` to return the maximum value.
 
 ```py
 def max_by(lst, fn):
