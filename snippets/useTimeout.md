@@ -1,18 +1,18 @@
 ---
-title: useInterval
+title: useTimeout
 tags: hooks,effect,intermediate
 ---
 
-A hook that implements `setInterval` in a declarative manner.
+A hook that implements `setTimeout` in a declarative manner.
 
 - Create a custom hook that takes a `callback` and a `delay`.
 - Use the `React.useRef()` hook to create a `ref` for the callback function.
 - Use the `React.useEffect()` hook to remember the latest callback.
-- Use the `Rect.useEffect()` hook to set up the interval and clean up.
+- Use the `Rect.useEffect()` hook to set up the timeout and clean up.
 
 
 ```jsx
-const useInterval = (callback, delay) => {
+const useTimeout = (callback, delay) => {
   const savedCallback = React.useRef();
 
   React.useEffect(() => {
@@ -24,17 +24,17 @@ const useInterval = (callback, delay) => {
       savedCallback.current();
     }
     if (delay !== null) {
-      let id = setInterval(tick, delay);
-      return () => clearInterval(id);
+      let id = setTimeout(tick, delay);
+      return () => clearTimeout(id);
     }
   }, [delay]);
 };
 ```
 
 ```jsx
-const Timer = (props) => {
+const OneSecondTimer = (props) => {
   const [seconds,setSeconds] = React.useState(0);
-  useInterval(() => {
+  useTimeout(() => {
     setSeconds(seconds + 1);
   }, 1000);
 
@@ -44,7 +44,7 @@ const Timer = (props) => {
 }
 
 ReactDOM.render(
-  <Timer />,
+  <OneSecondTimer />,
   document.getElementById('root')
 );
 ```
