@@ -36,7 +36,7 @@
           "example": "ReactDOM.render(\r\n  <AutoLink text=\"foo bar baz http://example.org bar\" />,\r\n  document.getElementById('root')\r\n);"
         },
         "tags": [
-          "utility",
+          "visual",
           "string",
           "fragment",
           "regexp",
@@ -267,7 +267,7 @@
           "example": "ReactDOM.render(\r\n  <Mailto email=\"foo@bar.baz\" subject=\"Hello\" body=\"Hello world!\">\r\n    Mail me!\r\n  </Mailto>,\r\n  document.getElementById('root')\r\n);"
         },
         "tags": [
-          "viual",
+          "visual",
           "beginner"
         ]
       },

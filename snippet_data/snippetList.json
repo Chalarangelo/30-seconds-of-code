@@ -24,7 +24,7 @@
       "attributes": {
         "text": "Renders a string as plaintext, with URLs converted to appropriate `<a>` elements.\n\n- Use `String.prototype.split()` and `String.prototype.match()` with a regular expression to find URLs in a string.\n- Return a `<React.Fragment>` with matched URLs rendered as `<a>` elements, dealing with missing protocol prefixes if necessary, and the rest of the string rendered as plaintext.\n\n",
         "tags": [
-          "utility",
+          "visual",
           "string",
           "fragment",
           "regexp",
@@ -195,7 +195,7 @@
       "attributes": {
         "text": "Renders a link formatted to send an email.\n\n- Destructure the component's props, use `email`, `subject` and `body` to create a `<a>` element with an appropriate `href` attribute.\n- Render the link with `props.children` as its content.\n\n",
         "tags": [
-          "viual",
+          "visual",
           "beginner"
         ]
       },

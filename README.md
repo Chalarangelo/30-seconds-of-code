@@ -81,25 +81,18 @@ import ReactDOM from 'react-dom';
 
 </details>
 
-###  Utility
-
-<details>
-<summary>View contents</summary>
-
-* [`AutoLink`](#autolink-)
-
-</details>
-
 ###  Visual
 
 <details>
 <summary>View contents</summary>
 
 * [`Accordion`](#accordion-)
+* [`AutoLink`](#autolink-)
 * [`Carousel`](#carousel)
 * [`Collapse`](#collapse)
 * [`CountDown`](#countdown-)
 * [`FileDrop`](#filedrop)
+* [`Mailto`](#mailto)
 * [`Modal`](#modal)
 * [`StarRating`](#starrating)
 * [`Tabs`](#tabs)
@@ -107,15 +100,6 @@ import ReactDOM from 'react-dom';
 * [`Toggle`](#toggle)
 * [`Tooltip`](#tooltip)
 * [`TreeView`](#treeview-)
-
-</details>
-
-###  Viual
-
-<details>
-<summary>View contents</summary>
-
-* [`Mailto`](#mailto)
 
 </details>
 
@@ -954,50 +938,6 @@ ReactDOM.render(
 
 ---
 
-##  Utility
-
-
-### AutoLink ![advanced](/advanced.svg)
-
-Renders a string as plaintext, with URLs converted to appropriate `<a>` elements.
-
-- Use `String.prototype.split()` and `String.prototype.match()` with a regular expression to find URLs in a string.
-- Return a `<React.Fragment>` with matched URLs rendered as `<a>` elements, dealing with missing protocol prefixes if necessary, and the rest of the string rendered as plaintext.
-
-```jsx
-function AutoLink({ text }) {
-  const delimiter = /((?:https?:\/\/)?(?:(?:[a-z0-9]?(?:[a-z0-9\-]{1,61}[a-z0-9])?\.[^\.|\s])+[a-z\.]*[a-z]+|(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3})(?::\d{1,5})*[a-z0-9.,_\/~#&=;%+?\-\\(\\)]*)/gi;
-
-  return (
-    <React.Fragment>
-      {text.split(delimiter).map(word => {
-        let match = word.match(delimiter);
-        if (match) {
-          let url = match[0];
-          return <a href={url.startsWith('http') ? url : `http://${url}`}>{url}</a>;
-        }
-        return word;
-      })}
-    </React.Fragment>
-  );
-}
-```
-
-<details>
-<summary>Examples</summary>
-
-```jsx
-ReactDOM.render(
-  <AutoLink text="foo bar baz http://example.org bar" />,
-  document.getElementById('root')
-);
-```
-</details>
-
-<br>[⬆ Back to top](#contents)
-
----
-
 ##  Visual
 
 
@@ -1080,6 +1020,45 @@ ReactDOM.render(
       Dolor sit amet
     </AccordionItem>
   </Accordion>,
+  document.getElementById('root')
+);
+```
+</details>
+
+<br>[⬆ Back to top](#contents)
+
+### AutoLink ![advanced](/advanced.svg)
+
+Renders a string as plaintext, with URLs converted to appropriate `<a>` elements.
+
+- Use `String.prototype.split()` and `String.prototype.match()` with a regular expression to find URLs in a string.
+- Return a `<React.Fragment>` with matched URLs rendered as `<a>` elements, dealing with missing protocol prefixes if necessary, and the rest of the string rendered as plaintext.
+
+```jsx
+function AutoLink({ text }) {
+  const delimiter = /((?:https?:\/\/)?(?:(?:[a-z0-9]?(?:[a-z0-9\-]{1,61}[a-z0-9])?\.[^\.|\s])+[a-z\.]*[a-z]+|(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3})(?::\d{1,5})*[a-z0-9.,_\/~#&=;%+?\-\\(\\)]*)/gi;
+
+  return (
+    <React.Fragment>
+      {text.split(delimiter).map(word => {
+        let match = word.match(delimiter);
+        if (match) {
+          let url = match[0];
+          return <a href={url.startsWith('http') ? url : `http://${url}`}>{url}</a>;
+        }
+        return word;
+      })}
+    </React.Fragment>
+  );
+}
+```
+
+<details>
+<summary>Examples</summary>
+
+```jsx
+ReactDOM.render(
+  <AutoLink text="foo bar baz http://example.org bar" />,
   document.getElementById('root')
 );
 ```
@@ -1400,6 +1379,36 @@ function FileDrop(props) {
 
 ```jsx
 ReactDOM.render(<FileDrop handleDrop={console.log} />, document.getElementById('root'));
+```
+</details>
+
+<br>[⬆ Back to top](#contents)
+
+### Mailto
+
+Renders a link formatted to send an email.
+
+- Destructure the component's props, use `email`, `subject` and `body` to create a `<a>` element with an appropriate `href` attribute.
+- Render the link with `props.children` as its content.
+
+```jsx
+function Mailto({ email, subject, body, ...props }) {
+  return (
+    <a href={`mailto:${email}?subject=${subject || ''}&body=${body || ''}`}>{props.children}</a>
+  );
+}
+```
+
+<details>
+<summary>Examples</summary>
+
+```jsx
+ReactDOM.render(
+  <Mailto email="foo@bar.baz" subject="Hello" body="Hello world!">
+    Mail me!
+  </Mailto>,
+  document.getElementById('root')
+);
 ```
 </details>
 
@@ -1967,41 +1976,6 @@ let data = {
   }
 };
 ReactDOM.render(<TreeView data={data} name="data" />, document.getElementById('root'));
-```
-</details>
-
-<br>[⬆ Back to top](#contents)
-
----
-
-##  Viual
-
-
-### Mailto
-
-Renders a link formatted to send an email.
-
-- Destructure the component's props, use `email`, `subject` and `body` to create a `<a>` element with an appropriate `href` attribute.
-- Render the link with `props.children` as its content.
-
-```jsx
-function Mailto({ email, subject, body, ...props }) {
-  return (
-    <a href={`mailto:${email}?subject=${subject || ''}&body=${body || ''}`}>{props.children}</a>
-  );
-}
-```
-
-<details>
-<summary>Examples</summary>
-
-```jsx
-ReactDOM.render(
-  <Mailto email="foo@bar.baz" subject="Hello" body="Hello world!">
-    Mail me!
-  </Mailto>,
-  document.getElementById('root')
-);
 ```
 </details>
 
