@@ -1,4 +1,7 @@
-### Mailto
+---
+title:  Mailto
+tags: viual,beginner
+---
 
 Renders a link formatted to send an email.
 
@@ -21,7 +24,3 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-
-<!-- tags: visual -->
-
-<!-- expertise: 0 -->

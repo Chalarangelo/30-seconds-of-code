@@ -1,4 +1,7 @@
-### FileDrop
+---
+title:  FileDrop
+tags: visual,input,state,effect,event,intermediate
+---
 
 Renders a file drag and drop component for a single file.
 
@@ -96,7 +99,3 @@ function FileDrop(props) {
 ```jsx
 ReactDOM.render(<FileDrop handleDrop={console.log} />, document.getElementById('root'));
 ```
-
-<!-- tags: visual,input,state,effect -->
-
-<!-- expertise: 2 -->

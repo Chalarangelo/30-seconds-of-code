@@ -1,4 +1,7 @@
-### Input
+---
+title:  UncontrolledInput
+tags: input,beginner
+---
 
 Renders an `<input>` element that uses a callback function to pass its value to the parent component.
 
@@ -6,7 +9,7 @@ Renders an `<input>` element that uses a callback function to pass its value to 
 * Render an `<input>` element with the appropriate attributes and use the `callback` function in the `onChange` event to pass the value of the input to the parent.
 
 ```jsx
-function Input({ callback, type = 'text', disabled = false, readOnly = false, placeholder = '' }) {
+function UncontrolledInput({ callback, type = 'text', disabled = false, readOnly = false, placeholder = '' }) {
   return (
     <input
       type={type}
@@ -21,11 +24,7 @@ function Input({ callback, type = 'text', disabled = false, readOnly = false, pl
 
 ```jsx
 ReactDOM.render(
-  <Input type="text" placeholder="Insert some text here..." callback={val => console.log(val)} />,
+  <UncontrolledInput type="text" placeholder="Insert some text here..." callback={val => console.log(val)} />,
   document.getElementById('root')
 );
 ```
-
-<!-- tags: input -->
-
-<!-- expertise: 0 -->

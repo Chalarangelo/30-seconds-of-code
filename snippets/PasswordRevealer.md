@@ -1,4 +1,7 @@
-### PasswordRevealer
+---
+title:  PasswordRevealer
+tags: input,state,beginner
+---
 
 Renders a password input field with a reveal button.
 
@@ -21,7 +24,3 @@ function PasswordRevealer({ value }) {
 ```jsx
 ReactDOM.render(<PasswordRevealer />, document.getElementById('root'));
 ```
-
-<!--tags: input,state -->
-
-<!--expertise: 0 -->

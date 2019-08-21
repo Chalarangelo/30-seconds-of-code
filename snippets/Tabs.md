@@ -1,4 +1,7 @@
-### Tabs
+---
+title:  Tabs
+tags: visual,state,children,intermediate
+---
 
 Renders a tabbed menu and view component.
 
@@ -74,7 +77,3 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-
-<!-- tags: visual,state,children -->
-
-<!-- expertise: 1 -->

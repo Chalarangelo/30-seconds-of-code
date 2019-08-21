@@ -1,4 +1,7 @@
-### ClickInside and ClickOutside
+---
+title:  ClickInside and ClickOutside
+tags: hooks,effect,event,intermediate
+---
 
 Two handy hooks to handle the click outside and inside event on the wrapped component.
 

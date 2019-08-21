@@ -1,4 +1,7 @@
-### Carousel
+---
+title:  Carousel
+tags: visual,children,state,effect,intermediate
+---
 
 Renders a carousel component.
 
@@ -60,7 +63,3 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-
-<!-- tags: visual,children,state,effect -->
-
-<!-- expertise: 2 -->

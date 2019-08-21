@@ -1,4 +1,7 @@
-### DataTable
+---
+title:  DataTable
+tags: array,beginner
+---
 
 Renders a table with rows dynamically created from an array of primitives.
 
@@ -32,7 +35,3 @@ function DataTable({ data }) {
 const people = ['John', 'Jesse'];
 ReactDOM.render(<DataTable data={people} />, document.getElementById('root'));
 ```
-
-<!-- tags: array -->
-
-<!-- expertise: 0 -->

@@ -1,4 +1,7 @@
-### CountDown
+---
+title:  CountDown
+tags: visual,state,advanced
+---
 
 Renders a countdown timer that prints a message when it reaches zero.
 
@@ -75,7 +78,3 @@ function CountDown({ hours = 0, minutes = 0, seconds = 0 }) {
 ```jsx
 ReactDOM.render(<CountDown hours="1" minutes="45" />, document.getElementById('root'));
 ```
-
-<!-- tags: visual,state -->
-
-<!-- expertise: 2 -->
