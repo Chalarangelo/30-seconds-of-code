@@ -40,75 +40,94 @@ import ReactDOM from 'react-dom';
 
 ## Table of Contents
 
-
-### Array
+###  Array
 
 <details>
 <summary>View contents</summary>
 
-* [DataList](#datalist)
-* [DataTable](#datatable)
-* [MappedTable](#mappedtable)
+* [`DataList`](#datalist)
+* [`DataTable`](#datatable)
+* [`MappedTable`](#mappedtable)
+
 </details>
 
-
-### Input
+###  Hooks
 
 <details>
 <summary>View contents</summary>
 
-* [Input](#input)
-* [LimitedTextarea](#limitedtextarea)
-* [LimitedWordTextarea](#limitedwordtextarea)
-* [MultiselectCheckbox](#multiselectcheckbox)
-* [PasswordRevealer](#passwordrevealer)
-* [Select](#select)
-* [Slider](#slider)
-* [TextArea](#textarea)
+* [`ClickInside and ClickOutside`](#clickinside-and-clickoutside)
+
 </details>
 
-
-### Object
+###  Input
 
 <details>
 <summary>View contents</summary>
 
-* [TreeView](#treeview)
+* [`LimitedTextarea`](#limitedtextarea)
+* [`LimitedWordTextarea`](#limitedwordtextarea)
+* [`MultiselectCheckbox`](#multiselectcheckbox)
+* [`PasswordRevealer`](#passwordrevealer)
+* [`Select`](#select)
+* [`Slider`](#slider)
+* [`TextArea`](#textarea)
+* [`UncontrolledInput`](#uncontrolledinput)
+
 </details>
 
-
-### String
+###  Object
 
 <details>
 <summary>View contents</summary>
 
-* [AutoLink](#autolink)
+* [`TreeView`](#treeview-)
+
 </details>
 
-
-### Visual
+###  String
 
 <details>
 <summary>View contents</summary>
 
-* [Accordion](#accordion)
-* [Carousel](#carousel)
-* [Collapse](#collapse)
-* [CountDown](#countdown)
-* [FileDrop](#filedrop)
-* [Mailto](#mailto)
-* [Modal](#modal)
-* [StarRating](#starrating)
-* [Tabs](#tabs)
-* [Ticker](#ticker)
-* [Toggle](#toggle)
-* [Tooltip](#tooltip)
+* [`AutoLink`](#autolink-)
+
+</details>
+
+###  Visual
+
+<details>
+<summary>View contents</summary>
+
+* [`Accordion`](#accordion-)
+* [`Carousel`](#carousel)
+* [`Collapse`](#collapse)
+* [`CountDown`](#countdown-)
+* [`FileDrop`](#filedrop)
+* [`Modal`](#modal)
+* [`StarRating`](#starrating)
+* [`Tabs`](#tabs)
+* [`Ticker`](#ticker)
+* [`Toggle`](#toggle)
+* [`Tooltip`](#tooltip)
+
+</details>
+
+###  Viual
+
+<details>
+<summary>View contents</summary>
+
+* [`Mailto`](#mailto)
+
 </details>
 
 
 ---
 
-## Array
+##  Array
+
+
 ### DataList
 
 Renders a list of elements from an array of primitives.
@@ -134,7 +153,7 @@ ReactDOM.render(<DataList data={names} isOrdered />, document.getElementById('ro
 ```
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### DataTable
 
@@ -175,7 +194,7 @@ ReactDOM.render(<DataTable data={people} />, document.getElementById('root'));
 ```
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### MappedTable
 
@@ -185,6 +204,8 @@ Renders a table with rows dynamically created from an array of objects and a lis
 * Render a `<table>` element with a set of columns equal to the amount of values in `propertyNames`.
 * Use `Array.prototype.map` to render each value in the `propertyNames` array as a `<th>` element.
 * Use `Array.prototype.map` to render each object in the `filteredData` array as a `<tr>` element, containing a `<td>` for each key in the object.
+
+*This component does not work with nested objects and will break if there are nested objects inside any of the properties specified in `propertyNames`*
 
 ```jsx
 function MappedTable({ data, propertyNames }) {
@@ -215,9 +236,6 @@ function MappedTable({ data, propertyNames }) {
   );
 }
 ```
-#### Notes
-
-This component does not work with nested objects and will break if there are nested objects inside any of the properties specified in `propertyNames`.,<!-tags: array,object -->,<!-expertise: 1 -->
 
 <details>
 <summary>Examples</summary>
@@ -235,27 +253,79 @@ ReactDOM.render(
 ```
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
+
+---
+
+##  Hooks
 
 
-## Input
-### Input
+### ClickInside and ClickOutside
 
-Renders an `<input>` element that uses a callback function to pass its value to the parent component.
+Two handy hooks to handle the click outside and inside event on the wrapped component.
 
-* Use object destructuring to set defaults for certain attributes of the `<input>` element.
-* Render an `<input>` element with the appropriate attributes and use the `callback` function in the `onChange` event to pass the value of the input to the parent.
+* Create customized hooks that take in a `ref` component(node) and a `callback` function to hanlde the customized `click` event
+* Use the `React.useEffect()` hook to append and clean up the `click` event.
+* Use the `React.useRef()` hook to create a `ref` for your click component and pass it to `useClickInside` and `useClickOutside` hooks.
+
+```css
+.click-box {
+  border: 2px dashed orangered;
+  height: 200px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  border: 2px solid blue;
+  padding: 16px;
+}
+```
 
 ```jsx
-function Input({ callback, type = 'text', disabled = false, readOnly = false, placeholder = '' }) {
+const useClickInside = (ref, callback) => {
+  const handleClick = e => {
+    //use the node contains to verify if we click inside
+    if (ref.current && ref.current.contains(e.target)) {
+      callback();
+    }
+  };
+
+  //clean up using useEffect
+  useEffect(() => {
+    document.addEventListener("click", handleClick);
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+  });
+};
+
+const useClickOutside = (ref, callback) => {
+  const handleClick = e => {
+    //use the node contains to verify if we click outside
+    if (ref.current && !ref.current.contains(e.target)) {
+      callback();
+    }
+  };
+  // clean up using useEffect
+  useEffect(() => {
+    document.addEventListener("click", handleClick);
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+  });
+};
+
+function ClickBox({onClickOutside,onClickInside}) {
+  const clickRef = useRef();
+  useClickOutside(clickRef, onClickOutside);
+  useClickInside(clickRef, onClickInside);
   return (
-    <input
-      type={type}
-      disabled={disabled}
-      readOnly={readOnly}
-      placeholder={placeholder}
-      onChange={({ target: { value } }) => callback(value)}
-    />
+    <div className="click-box" ref={clickRef}>
+      <p>Hello Click Me Inside!</p>
+    </div>
   );
 }
 ```
@@ -264,14 +334,16 @@ function Input({ callback, type = 'text', disabled = false, readOnly = false, pl
 <summary>Examples</summary>
 
 ```jsx
-ReactDOM.render(
-  <Input type="text" placeholder="Insert some text here..." callback={val => console.log(val)} />,
-  document.getElementById('root')
-);
+ReactDOM.render(<ClickBox onClickOutside={()=> alert("click outside")} onClickInside={()=> alert("click inside")}/>,document.getElementById('root'))
 ```
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
+
+---
+
+##  Input
+
 
 ### LimitedTextarea
 
@@ -318,7 +390,7 @@ ReactDOM.render(<LimitedTextarea limit={32} value="Hello!" />, document.getEleme
 ```
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### LimitedWordTextarea
 
@@ -382,7 +454,7 @@ ReactDOM.render(
 ```
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### MultiselectCheckbox
 
@@ -409,7 +481,7 @@ function MultiselectCheckbox({ options, onChange }) {
   const [data, setData] = React.useState(options);
 
   const toggle = item => {
-    data.map((_, key) => {
+    data.forEach((_, key) => {
       if (data[key].label === item.label) data[key].checked = !item.checked;
     });
     setData([...data]);
@@ -449,7 +521,7 @@ ReactDOM.render(
 ```
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### PasswordRevealer
 
@@ -479,7 +551,7 @@ ReactDOM.render(<PasswordRevealer />, document.getElementById('root'));
 ```
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### Select
 
@@ -524,7 +596,7 @@ ReactDOM.render(
 ```
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### Slider
 
@@ -554,7 +626,7 @@ ReactDOM.render(<Slider callback={val => console.log(val)} />, document.getEleme
 ```
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### TextArea
 
@@ -596,11 +668,48 @@ ReactDOM.render(
 ```
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
+
+### UncontrolledInput
+
+Renders an `<input>` element that uses a callback function to pass its value to the parent component.
+
+* Use object destructuring to set defaults for certain attributes of the `<input>` element.
+* Render an `<input>` element with the appropriate attributes and use the `callback` function in the `onChange` event to pass the value of the input to the parent.
+
+```jsx
+function UncontrolledInput({ callback, type = 'text', disabled = false, readOnly = false, placeholder = '' }) {
+  return (
+    <input
+      type={type}
+      disabled={disabled}
+      readOnly={readOnly}
+      placeholder={placeholder}
+      onChange={({ target: { value } }) => callback(value)}
+    />
+  );
+}
+```
+
+<details>
+<summary>Examples</summary>
+
+```jsx
+ReactDOM.render(
+  <UncontrolledInput type="text" placeholder="Insert some text here..." callback={val => console.log(val)} />,
+  document.getElementById('root')
+);
+```
+</details>
+
+<br>[⬆ Back to top](#contents)
+
+---
+
+##  Object
 
 
-## Object
-### TreeView
+### TreeView ![advanced](/advanced.svg)
 
 Renders a tree view of a JSON object or array with collapsible content.
 
@@ -728,11 +837,14 @@ ReactDOM.render(<TreeView data={data} name="data" />, document.getElementById('r
 ```
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
+
+---
+
+##  String
 
 
-## String
-### AutoLink
+### AutoLink ![advanced](/advanced.svg)
 
 Renders a string as plaintext, with URLs converted to appropriate `<a>` elements.
 
@@ -769,11 +881,14 @@ ReactDOM.render(
 ```
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
+
+---
+
+##  Visual
 
 
-## Visual
-### Accordion
+### Accordion ![advanced](/advanced.svg)
 
 Renders an accordion menu with multiple collapsible content components.
 
@@ -857,7 +972,7 @@ ReactDOM.render(
 ```
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### Carousel
 
@@ -926,7 +1041,7 @@ ReactDOM.render(
 ```
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### Collapse
 
@@ -986,9 +1101,9 @@ ReactDOM.render(
 ```
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
-### CountDown
+### CountDown ![advanced](/advanced.svg)
 
 Renders a countdown timer that prints a message when it reaches zero.
 
@@ -1047,7 +1162,7 @@ function CountDown({ hours = 0, minutes = 0, seconds = 0 }) {
   React.useEffect(() => {
     let timerID = setInterval(() => tick(), 1000);
     return () => clearInterval(timerID);
-  }, [tick]);
+  });
 
   return (
     <div>
@@ -1070,7 +1185,7 @@ ReactDOM.render(<CountDown hours="1" minutes="45" />, document.getElementById('r
 ```
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### FileDrop
 
@@ -1175,37 +1290,7 @@ ReactDOM.render(<FileDrop handleDrop={console.log} />, document.getElementById('
 ```
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
-
-### Mailto
-
-Renders a link formatted to send an email.
-
-* Destructure the component's props, use `email`, `subject` and `body` to create a `<a>` element with an appropriate `href` attribute.
-* Render the link with `props.children` as its content.
-
-```jsx
-function Mailto({ email, subject, body, ...props }) {
-  return (
-    <a href={`mailto:${email}?subject=${subject || ''}&body=${body || ''}`}>{props.children}</a>
-  );
-}
-```
-
-<details>
-<summary>Examples</summary>
-
-```jsx
-ReactDOM.render(
-  <Mailto email="foo@bar.baz" subject="Hello" body="Hello world!">
-    Mail me!
-  </Mailto>,
-  document.getElementById('root')
-);
-```
-</details>
-
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### Modal
 
@@ -1345,7 +1430,7 @@ ReactDOM.render( <App/>, document.getElementById('root'));
 ```
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### StarRating
 
@@ -1402,7 +1487,7 @@ ReactDOM.render(<StarRating rating={2} />, document.getElementById('root'));
 ```
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### Tabs
 
@@ -1485,7 +1570,7 @@ ReactDOM.render(
 ```
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### Ticker
 
@@ -1496,50 +1581,28 @@ Renders a ticker component.
 * Return a `<div>` with two `<button>` elements, each of which calls `tick` and `reset` respectively.
 
 ```jsx
-// https://overreacted.io/making-setinterval-declarative-with-react-hooks/
-function useInterval(callback, delay) {
-  const savedCallback = React.useRef();
-
-  // Remember the latest callback.
-  React.useEffect(() => {
-    savedCallback.current = callback;
-  }, [callback]);
-
-  // Set up the interval.
-  React.useEffect(() => {
-    function tick() {
-      savedCallback.current();
-    }
-    if (delay !== null) {
-      let id = setInterval(tick, delay);
-      return () => clearInterval(id);
-    }
-  }, [delay]);
-}
-
 function Ticker(props) {
   const [ticker, setTicker] = React.useState(0);
-  const [isRunning, setIsRunning] = React.useState(false);
-  useInterval(
-    () => {
+  let interval = null;
+
+  const tick = () => {
+    reset();
+    interval = setInterval(() => {
       if (ticker < props.times) setTicker(ticker + 1);
-      else setIsRunning(false);
-    },
-    isRunning ? props.interval : null
-  );
+      else clearInterval(interval);
+    }, props.interval);
+  };
+
+  const reset = () => {
+    setTicker(0);
+    clearInterval(interval);
+  };
 
   return (
     <div>
       <span style={{ fontSize: 100 }}>{ticker}</span>
-      <button onClick={() => setIsRunning(true)}>Tick!</button>
-      <button
-        onClick={() => {
-          setIsRunning(false);
-          setTicker(0);
-        }}
-      >
-        Reset
-      </button>
+      <button onClick={tick}>Tick!</button>
+      <button onClick={reset}>Reset</button>
     </div>
   );
 }
@@ -1553,7 +1616,7 @@ ReactDOM.render(<Ticker times={5} interval={1000} />, document.getElementById('r
 ```
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### Toggle
 
@@ -1591,7 +1654,7 @@ ReactDOM.render(<Toggle />, document.getElementById('root'));
 ```
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
 ### Tooltip
 
@@ -1651,8 +1714,42 @@ ReactDOM.render(
 ```
 </details>
 
-<br>[⬆ Back to top](#table-of-contents)
+<br>[⬆ Back to top](#contents)
 
+---
+
+##  Viual
+
+
+### Mailto
+
+Renders a link formatted to send an email.
+
+* Destructure the component's props, use `email`, `subject` and `body` to create a `<a>` element with an appropriate `href` attribute.
+* Render the link with `props.children` as its content.
+
+```jsx
+function Mailto({ email, subject, body, ...props }) {
+  return (
+    <a href={`mailto:${email}?subject=${subject || ''}&body=${body || ''}`}>{props.children}</a>
+  );
+}
+```
+
+<details>
+<summary>Examples</summary>
+
+```jsx
+ReactDOM.render(
+  <Mailto email="foo@bar.baz" subject="Hello" body="Hello world!">
+    Mail me!
+  </Mailto>,
+  document.getElementById('root')
+);
+```
+</details>
+
+<br>[⬆ Back to top](#contents)
 
 ---
 
