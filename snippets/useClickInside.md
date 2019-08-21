@@ -9,22 +9,6 @@ A hook that handles the event of clicking inside the wrapped component.
 - Use the `React.useEffect()` hook to append and clean up the `click` event.
 - Use the `React.useRef()` hook to create a `ref` for your click component and pass it to the `useClickInside` hook.
 
-```css
-.click-box {
-  border: 2px dashed orangered;
-  height: 200px;
-  width: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-p {
-  border: 2px solid blue;
-  padding: 16px;
-}
-```
-
 ```jsx
 const useClickInside = (ref, callback) => {
   const handleClick = e => {
@@ -32,26 +16,37 @@ const useClickInside = (ref, callback) => {
       callback();
     }
   };
-  useEffect(() => {
+  React.useEffect(() => {
     document.addEventListener('click', handleClick);
     return () => {
       document.removeEventListener('click', handleClick);
     };
   });
 };
-
-function ClickBox({ onClickInside }) {
-  const clickRef = useRef();
-  useClickInside(clickRef, onClickInside);
-  return (
-    <div className="click-box" ref={clickRef}>
-      <p>Hello Click Me Inside!</p>
-    </div>
-  );
-}
 ```
 
 ```jsx
+const ClickBox = ({ onClickInside }) => {
+  const clickRef = React.useRef();
+  useClickInside(clickRef, onClickInside);
+  return (
+    <div
+      className="click-box"
+      ref={clickRef}
+      style={{
+        border: '2px dashed orangered',
+        height: 200,
+        width: 400,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}
+    >
+      <p>Click inside this element</p>
+    </div>
+  );
+};
+
 ReactDOM.render(
   <ClickBox onClickInside={() => alert('click inside')} />,
   document.getElementById('root')

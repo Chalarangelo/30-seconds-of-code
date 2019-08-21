@@ -71,52 +71,6 @@
       }
     },
     {
-      "id": "ClickInside",
-      "title": "ClickInside",
-      "type": "snippet",
-      "attributes": {
-        "fileName": "ClickInside.md",
-        "text": "A hook that handles the event of clicking inside the wrapped component.\n\n- Create a custom hook that takes a `ref` and a `callback` to handle the `click` event.\n- Use the `React.useEffect()` hook to append and clean up the `click` event.\n- Use the `React.useRef()` hook to create a `ref` for your click component and pass it to the `useClickInside` hook.\n\n",
-        "codeBlocks": {
-          "style": ".click-box {\r\n  border: 2px dashed orangered;\r\n  height: 200px;\r\n  width: 400px;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\np {\r\n  border: 2px solid blue;\r\n  padding: 16px;\r\n}",
-          "code": "const useClickInside = (ref, callback) => {\r\n  const handleClick = e => {\r\n    if (ref.current && ref.current.contains(e.target)) {\r\n      callback();\r\n    }\r\n  };\r\n  useEffect(() => {\r\n    document.addEventListener('click', handleClick);\r\n    return () => {\r\n      document.removeEventListener('click', handleClick);\r\n    };\r\n  });\r\n};\r\n\r\nfunction ClickBox({ onClickInside }) {\r\n  const clickRef = useRef();\r\n  useClickInside(clickRef, onClickInside);\r\n  return (\r\n    <div className=\"click-box\" ref={clickRef}>\r\n      <p>Hello Click Me Inside!</p>\r\n    </div>\r\n  );\r\n}",
-          "example": "ReactDOM.render(\r\n  <ClickBox onClickInside={() => alert('click inside')} />,\r\n  document.getElementById('root')\r\n);"
-        },
-        "tags": [
-          "hooks",
-          "effect",
-          "event",
-          "intermediate"
-        ]
-      },
-      "meta": {
-        "hash": "16385296d9c0506b9f69f202332e3037d9e4a47d4e04bc68665e26c04e4f7aed"
-      }
-    },
-    {
-      "id": "ClickOutside",
-      "title": "ClickOutside",
-      "type": "snippet",
-      "attributes": {
-        "fileName": "ClickOutside.md",
-        "text": "A hook that handles the event of clicking outside of the wrapped component.\n\n- Create a custom hook that takes a `ref` and a `callback` to handle the `click` event.\n- Use the `React.useEffect()` hook to append and clean up the `click` event.\n- Use the `React.useRef()` hook to create a `ref` for your click component and pass it to the `useClickOutside` hook.\n\n",
-        "codeBlocks": {
-          "style": ".click-box {\r\n  border: 2px dashed orangered;\r\n  height: 200px;\r\n  width: 400px;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\np {\r\n  border: 2px solid blue;\r\n  padding: 16px;\r\n}",
-          "code": "const useClickOutside = (ref, callback) => {\r\n  const handleClick = e => {\r\n    if (ref.current && !ref.current.contains(e.target)) {\r\n      callback();\r\n    }\r\n  };\r\n  useEffect(() => {\r\n    document.addEventListener('click', handleClick);\r\n    return () => {\r\n      document.removeEventListener('click', handleClick);\r\n    };\r\n  });\r\n};\r\n\r\nfunction ClickBox({ onClickOutside }) {\r\n  const clickRef = useRef();\r\n  useClickOutside(clickRef, onClickOutside);\r\n  return (\r\n    <div className=\"click-box\" ref={clickRef}>\r\n      <p>Hello Click Me Inside!</p>\r\n    </div>\r\n  );\r\n}",
-          "example": "ReactDOM.render(\r\n  <ClickBox onClickOutside={() => alert('click outside')} />,\r\n  document.getElementById('root')\r\n);"
-        },
-        "tags": [
-          "hooks",
-          "effect",
-          "event",
-          "intermediate"
-        ]
-      },
-      "meta": {
-        "hash": "9666c1e1f30173bcc0be31b4158e569339d4e3f4f95bf60286f448c86432e04e"
-      }
-    },
-    {
       "id": "Collapse",
       "title": "Collapse",
       "type": "snippet",
@@ -137,6 +91,29 @@
       },
       "meta": {
         "hash": "bb14a75971ab3a395e7a7e4458f636b9309f3e9a376494fe10b716be256bd9d2"
+      }
+    },
+    {
+      "id": "ControlledInput",
+      "title": "ControlledInput",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "ControlledInput.md",
+        "text": "Renders an `<input>` element with internal state, that uses a callback function to pass its value to the parent component.\n\n- Use object destructuring to set defaults for certain attributes of the `<input>` element.\n- Use the `React.setState()` hook to create the `value` state variable and give it a value of equal to the `defaultValue` prop.\n- Use the `React.useEffect()` hook with a second parameter set to the `value` state variable to call the `callback` function every time `value` is updated.\n- Render an `<input>` element with the appropriate attributes and use the the `onChange` event to upda the `value` state variable.\n\n",
+        "codeBlocks": {
+          "style": "",
+          "code": "function ControlledInput({\r\n  callback,\r\n  type = 'text',\r\n  disabled = false,\r\n  readOnly = false,\r\n  defaultValue,\r\n  placeholder = ''\r\n}) {\r\n  const [value, setValue] = React.useState(defaultValue);\r\n\r\n  React.useEffect(() => {\r\n    callback(value);\r\n  }, [value]);\r\n\r\n  return (\r\n    <input\r\n      defaultValue={defaultValue}\r\n      type={type}\r\n      disabled={disabled}\r\n      readOnly={readOnly}\r\n      placeholder={placeholder}\r\n      onChange={({ target: { value } }) => setValue(value)}\r\n    />\r\n  );\r\n}",
+          "example": "ReactDOM.render(\r\n  <ControlledInput\r\n    type=\"text\"\r\n    placeholder=\"Insert some text here...\"\r\n    callback={val => console.log(val)}\r\n  />,\r\n  document.getElementById('root')\r\n);"
+        },
+        "tags": [
+          "input",
+          "state",
+          "effect",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "a9c8332455bad3c81dd1dbaf7361b98406ed11eaa35e9be8e72e88d8139eb2d6"
       }
     },
     {
@@ -606,6 +583,96 @@
       },
       "meta": {
         "hash": "5aff6673123594949dd0d1e72c8fbb586f402b2eb9fdcf8dd9a2b789b4089adb"
+      }
+    },
+    {
+      "id": "useClickInside",
+      "title": "useClickInside",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "useClickInside.md",
+        "text": "A hook that handles the event of clicking inside the wrapped component.\n\n- Create a custom hook that takes a `ref` and a `callback` to handle the `click` event.\n- Use the `React.useEffect()` hook to append and clean up the `click` event.\n- Use the `React.useRef()` hook to create a `ref` for your click component and pass it to the `useClickInside` hook.\n\n",
+        "codeBlocks": {
+          "style": "",
+          "code": "const useClickInside = (ref, callback) => {\r\n  const handleClick = e => {\r\n    if (ref.current && ref.current.contains(e.target)) {\r\n      callback();\r\n    }\r\n  };\r\n  React.useEffect(() => {\r\n    document.addEventListener('click', handleClick);\r\n    return () => {\r\n      document.removeEventListener('click', handleClick);\r\n    };\r\n  });\r\n};",
+          "example": "const ClickBox = ({ onClickInside }) => {\r\n  const clickRef = React.useRef();\r\n  useClickInside(clickRef, onClickInside);\r\n  return (\r\n    <div\r\n      className=\"click-box\"\r\n      ref={clickRef}\r\n      style={{\r\n        border: '2px dashed orangered',\r\n        height: 200,\r\n        width: 400,\r\n        display: 'flex',\r\n        justifyContent: 'center',\r\n        alignItems: 'center'\r\n      }}\r\n    >\r\n      <p>Click inside this element</p>\r\n    </div>\r\n  );\r\n};\r\n\r\nReactDOM.render(\r\n  <ClickBox onClickInside={() => alert('click inside')} />,\r\n  document.getElementById('root')\r\n);"
+        },
+        "tags": [
+          "hooks",
+          "effect",
+          "event",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "f2e5c4b9e8c44a5fb9a1f8002cfbeb2d6090cfe97d4d15dcc575ce89611bb599"
+      }
+    },
+    {
+      "id": "useClickOutside",
+      "title": "useClickOutside",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "useClickOutside.md",
+        "text": "A hook that handles the event of clicking outside of the wrapped component.\n\n- Create a custom hook that takes a `ref` and a `callback` to handle the `click` event.\n- Use the `React.useEffect()` hook to append and clean up the `click` event.\n- Use the `React.useRef()` hook to create a `ref` for your click component and pass it to the `useClickOutside` hook.\n\n",
+        "codeBlocks": {
+          "style": "",
+          "code": "const useClickOutside = (ref, callback) => {\r\n  const handleClick = e => {\r\n    if (ref.current && !ref.current.contains(e.target)) {\r\n      callback();\r\n    }\r\n  };\r\n  React.useEffect(() => {\r\n    document.addEventListener('click', handleClick);\r\n    return () => {\r\n      document.removeEventListener('click', handleClick);\r\n    };\r\n  });\r\n};",
+          "example": "const ClickBox = ({ onClickOutside }) => {\r\n  const clickRef = React.useRef();\r\n  useClickOutside(clickRef, onClickOutside);\r\n  return (\r\n    <div\r\n      className=\"click-box\"\r\n      ref={clickRef}\r\n      style={{\r\n        border: '2px dashed orangered',\r\n        height: 200,\r\n        width: 400,\r\n        display: 'flex',\r\n        justifyContent: 'center',\r\n        alignItems: 'center'\r\n      }}\r\n    >\r\n      <p>Click out of this element</p>\r\n    </div>\r\n  );\r\n};\r\n\r\nReactDOM.render(\r\n  <ClickBox onClickOutside={() => alert('click outside')} />,\r\n  document.getElementById('root')\r\n);"
+        },
+        "tags": [
+          "hooks",
+          "effect",
+          "event",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "e8f3e64cd0cf616dd42843328234e37b1b7a77ed51da8956204fdb02e088ce33"
+      }
+    },
+    {
+      "id": "useInterval",
+      "title": "useInterval",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "useInterval.md",
+        "text": "A hook that implements `setInterval` in a declarative manner.\n\n- Create a custom hook that takes a `callback` and a `delay`.\n- Use the `React.useRef()` hook to create a `ref` for the callback function.\n- Use the `React.useEffect()` hook to remember the latest callback.\n- Use the `Rect.useEffect()` hook to set up the interval and clean up.\n\n",
+        "codeBlocks": {
+          "style": "",
+          "code": "const useInterval = (callback, delay) => {\r\n  const savedCallback = React.useRef();\r\n\r\n  React.useEffect(() => {\r\n    savedCallback.current = callback;\r\n  }, [callback]);\r\n\r\n  React.useEffect(() => {\r\n    function tick() {\r\n      savedCallback.current();\r\n    }\r\n    if (delay !== null) {\r\n      let id = setInterval(tick, delay);\r\n      return () => clearInterval(id);\r\n    }\r\n  }, [delay]);\r\n};",
+          "example": "const Timer = props => {\r\n  const [seconds, setSeconds] = React.useState(0);\r\n  useInterval(() => {\r\n    setSeconds(seconds + 1);\r\n  }, 1000);\r\n\r\n  return <p>{seconds}</p>;\r\n};\r\n\r\nReactDOM.render(<Timer />, document.getElementById('root'));"
+        },
+        "tags": [
+          "hooks",
+          "effect",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "04b22b339da3652cd044203a1d9723af542afe13572a38da825bd093ab1c99af"
+      }
+    },
+    {
+      "id": "useTimeout",
+      "title": "useTimeout",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "useTimeout.md",
+        "text": "A hook that implements `setTimeout` in a declarative manner.\n\n- Create a custom hook that takes a `callback` and a `delay`.\n- Use the `React.useRef()` hook to create a `ref` for the callback function.\n- Use the `React.useEffect()` hook to remember the latest callback.\n- Use the `Rect.useEffect()` hook to set up the timeout and clean up.\n\n",
+        "codeBlocks": {
+          "style": "",
+          "code": "const useTimeout = (callback, delay) => {\r\n  const savedCallback = React.useRef();\r\n\r\n  React.useEffect(() => {\r\n    savedCallback.current = callback;\r\n  }, [callback]);\r\n\r\n  React.useEffect(() => {\r\n    function tick() {\r\n      savedCallback.current();\r\n    }\r\n    if (delay !== null) {\r\n      let id = setTimeout(tick, delay);\r\n      return () => clearTimeout(id);\r\n    }\r\n  }, [delay]);\r\n};",
+          "example": "const OneSecondTimer = props => {\r\n  const [seconds, setSeconds] = React.useState(0);\r\n  useTimeout(() => {\r\n    setSeconds(seconds + 1);\r\n  }, 1000);\r\n\r\n  return <p>{seconds}</p>;\r\n};\r\n\r\nReactDOM.render(<OneSecondTimer />, document.getElementById('root'));"
+        },
+        "tags": [
+          "hooks",
+          "effect",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "507c6fc6be62127e00738e39c6b22686a100b8af7252e1bbe589480b126c3d79"
       }
     }
   ],
