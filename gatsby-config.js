@@ -57,7 +57,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-117141635-1`,
         anonymize: true, // Always set this to true, try to comply with GDPR out of the box
         respectDNT: true, // Always set to true, be respectful of people who ask not to be tracked
         cookieExpires: 0, // Always set to 0, minimum tracking for your users
