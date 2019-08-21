@@ -116,7 +116,7 @@ try {
 
       output += misc.collapsible(
         'Examples',
-        `\`\`\`${config.language}\n${snippet.attributes.codeBlocks.examples}\n\`\`\``,
+        `\`\`\`${config.language}\n${snippet.attributes.codeBlocks.example}\n\`\`\``,
       );
 
       output +=
