@@ -1,6 +1,6 @@
 ---
 title: AutoLink
-tags: string,fragment,regexp,advanced
+tags: utility,string,fragment,regexp,advanced
 ---
 
 Renders a string as plaintext, with URLs converted to appropriate `<a>` elements.
