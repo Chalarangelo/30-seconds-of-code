@@ -1,14 +1,17 @@
-### TreeView
+---
+title: TreeView
+tags: visual,object,state,recursion,advanced
+---
 
 Renders a tree view of a JSON object or array with collapsible content.
 
-* Use object destructuring to set defaults for certain props.
-* Use the value of the `toggled` prop to determine the initial state of the content (collapsed/expanded).
-* Use the `React.setState()` hook to create the `isToggled` state variable and give it the value of the `toggled` prop initially.
-* Return a `<div>` to wrap the contents of the component and the `<span>` element, used to alter the component's `isToggled` state.
-* Determine the appearance of the component, based on `isParentToggled`, `isToggled`, `name` and `Array.isArray()` on `data`.
-* For each child in `data`, determine if it is an object or array and recursively render a sub-tree.
-* Otherwise, render a `<p>` element with the appropriate style.
+- Use object destructuring to set defaults for certain props.
+- Use the value of the `toggled` prop to determine the initial state of the content (collapsed/expanded).
+- Use the `React.setState()` hook to create the `isToggled` state variable and give it the value of the `toggled` prop initially.
+- Return a `<div>` to wrap the contents of the component and the `<span>` element, used to alter the component's `isToggled` state.
+- Determine the appearance of the component, based on `isParentToggled`, `isToggled`, `name` and `Array.isArray()` on `data`.
+- For each child in `data`, determine if it is an object or array and recursively render a sub-tree.
+- Otherwise, render a `<p>` element with the appropriate style.
 
 ```css
 .tree-element {
@@ -121,7 +124,3 @@ let data = {
 };
 ReactDOM.render(<TreeView data={data} name="data" />, document.getElementById('root'));
 ```
-
-<!-- tags: object,visual,state,recursion -->
-
-<!-- expertise: 2 -->

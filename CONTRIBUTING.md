@@ -11,12 +11,18 @@ Here's what you can do to help:
 
 ### Snippet submission and Pull request guidelines
 
-- **DO NOT MODIFY THE README.md or index.html FILES!** Make changes to individual snippet files. **Travis CI** will automatically build the `README.md` and `index.html` files when your pull request is merged.
+- **DO NOT MODIFY THE README.md FILE!** Make changes to individual snippet files. **Travis CI** will automatically build the `README.md` file when your pull request is merged.
 - **Snippet filenames** must correspond to the title of the snippet. For example, if your snippet is titled `### AwesomeComponent` the filename should be `AwesomeComponent.md`.
   - Use `TitleCase`, not `camelCase`, `kebab-case` or `snake_case` when naming components.
+  - Use `camelCase`, not `TitleCase`, `kebab-case` or `snake_case` when naming custom hooks.
   - Avoid capitalization of words, except if the whole word is capitalized (e.g. `URL` should be capitalized in the filename and the snippet title).
-- **Snippet titles** should be the same as the name of the component that is present in the snippet.
-  - All snippet titles must be prefixed with `###` and be at the very first line of your snippet.
+- **Snippet metadata** must be included in all snippets in the form of frontmatter.
+  - All snippets must contain a title.
+  - All snippets must contain tags, prefixed with `tags:` and separated by commas (optional spaces in-between).
+  - Make sure the first tag in your snippet's tags is one of the main categories, as seen in the `README.md` file or the website.
+  - Snippet tags must include a difficulty setting (`begginer`, `intermediate` or `advanced`), preferrably at the end of the list.
+- **Snippet titles** should be the same as the name of the component or hook that is present in the snippet.
+  - All snippet titles must be prefixed with `title:` and be at the very first line of your snippet's frontmatter.
   - Snippet titles must be unique (although if you cannot find a better title, just add some placeholder at the end of the filename and title and we will figure it out).
   - Follow snippet titles with an empty line.
 - **Snippet descriptions** must be short and to the point. Try to explain _what_ the snippet does and _how_ the snippet works and what Javascript/React features are used. Remember to include what functions you are using and why.

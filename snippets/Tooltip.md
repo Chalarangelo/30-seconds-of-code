@@ -1,10 +1,13 @@
-### Tooltip
+---
+title: Tooltip
+tags: visual,state,children,beginner
+---
 
 Renders a tooltip component.
 
-* Use the `React.useState()` hook to create the `show` variable and initialize it to `false`.
-* Return a `<div>` element that contains the `<div>` that will be the tooltip and the `children` passed to the component.
-* Handle the `onMouseEnter` and `onMouseLeave` methods, by altering the value of the `show` variable.
+- Use the `React.useState()` hook to create the `show` variable and initialize it to `false`.
+- Return a `<div>` element that contains the `<div>` that will be the tooltip and the `children` passed to the component.
+- Handle the `onMouseEnter` and `onMouseLeave` methods, by altering the value of the `show` variable.
 
 ```css
 .tooltip {
@@ -51,7 +54,3 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-
-<!-- tags: visual,state,children -->
-
-<!-- expertise: 1 -->

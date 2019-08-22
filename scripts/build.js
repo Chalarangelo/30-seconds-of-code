@@ -1,97 +1,118 @@
+/*
+  This is the builder script that generates the README file.
+  Run using `npm run builder`.
+*/
+// Load modules
 const fs = require('fs-extra');
 const path = require('path');
-const chalk = require('chalk');
-const util = require('./util.js');
+const { green, red } = require('kleur');
+const util = require('./util');
 const markdown = require('markdown-builder');
-const snippets = require('../data/snippet_data.json');
-
 const { headers, misc, lists } = markdown;
-const TAG_NAMES = [...new Set(snippets.reduce((acc, v) => [...acc, v.tags[0]], []))].sort((a, b) =>
-  a.localeCompare(b)
-);
-console.log(TAG_NAMES);
+const config = require('../config');
 
-const STATIC_PARTS_PATH = './static-parts';
+// Paths (relative to package.json)
+const SNIPPETS_PATH = `./${config.snippetPath}`;
+const STATIC_PARTS_PATH = `./${config.staticPartsPath}`;
 
-let startPart = '';
-let endPart = '';
-let output = '';
+// Terminate if parent commit is a Travis build
+if (util.isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
+  console.log(`${green('NOBUILD')} README build terminated, parent commit is a Travis build!`);
+  process.exit(0);
+}
 
-const detailsTOC = (title, snippetsArray) =>
-  `\n${misc
-    .collapsible(
-      title,
-      lists
-        .ul(snippetsArray, snippet =>
-          misc.link(
-            snippet.title
-              .replace('\n', '')
-              .split('```')[0]
-              .trim(),
-            misc.anchor(
-              snippet.title
-                .replace('\n', '')
-                .split('```')[0]
-                .trim()
-            )
-          )
-        )
-        .trim()
-    )
-    .trim()}\n\n`;
+// Setup everything
+let snippets = {},
+  snippetsArray = [],
+  startPart = '',
+  endPart = '',
+  output = '';
+const EMOJIS = {};
 
 console.time('Builder');
 
+// Synchronously read all snippets from snippets folder and sort them as necessary (case-insensitive)
+snippets = util.readSnippets(SNIPPETS_PATH);
+snippetsArray = Object.keys(snippets).reduce((acc, key) => {
+  acc.push(snippets[key]);
+  return acc;
+}, []);
+
+// Load static parts for the README file
 try {
   startPart = fs.readFileSync(path.join(STATIC_PARTS_PATH, 'README-start.md'), 'utf8');
   endPart = fs.readFileSync(path.join(STATIC_PARTS_PATH, 'README-end.md'), 'utf8');
 } catch (err) {
-  console.log(`${chalk.red('ERROR!')} During static part loading: ${err}`);
+  console.log(`${red('ERROR!')} During static part loading: ${err}`);
   process.exit(1);
 }
 
+// Create the output for the README file
 try {
-  // add static part for start
+  const tags = util.prepTaggedData(
+    Object.keys(snippets).reduce((acc, key) => {
+      acc[key] = snippets[key].attributes.tags;
+      return acc;
+    }, {})
+  );
+
   output += `${startPart}\n`;
 
-  const snippetsInTag = {};
+  // Loop over tags and snippets to create the table of contents
+  for (const tag of tags) {
+    const capitalizedTag = util.capitalize(tag, true);
+    const taggedSnippets = snippetsArray.filter(snippet => snippet.attributes.tags[0] === tag);
+    output += headers.h3((EMOJIS[tag] || '') + ' ' + capitalizedTag).trim();
 
-  TAG_NAMES.forEach(tag => (snippetsInTag[tag] = snippets.filter(v => v.tags[0] == tag)));
+    output +=
+      misc.collapsible(
+        'View contents',
+        lists.ul(taggedSnippets, snippet =>
+          misc.link(
+            `\`${snippet.title}\``,
+            `${misc.anchor(snippet.title)}${
+              snippet.attributes.tags.includes('advanced') ? '-' : ''
+            }`
+          )
+        )
+      ) + '\n';
+  }
 
-  // write Table of Contents
-  TAG_NAMES.forEach(tag => {
-    const taggedSnippets = snippetsInTag[tag];
-    output += headers.h3(util.capitalize(tag));
-    output += detailsTOC('View contents', taggedSnippets);
-  });
+  for (const tag of tags) {
+    const capitalizedTag = util.capitalize(tag, true);
+    const taggedSnippets = snippetsArray.filter(snippet => snippet.attributes.tags[0] === tag);
 
-  // delimeter after TOC
-  output += misc.hr();
+    output += misc.hr() + headers.h2((EMOJIS[tag] || '') + ' ' + capitalizedTag) + '\n';
 
-  // write actual snippets
-  TAG_NAMES.forEach(tag => {
-    output += headers.h2(util.capitalize(tag));
-    const taggedSnippets = snippetsInTag[tag];
-    taggedSnippets.forEach(snippet => {
-      output += headers.h3(snippet.title).trim();
-      output += `\n\n${snippet.text}${snippet.codeBlocks.slice(0, -1).join('\n\n')}`;
-      if (snippet.notes && snippet.notes.length) {
-        output += headers.h4('Notes');
-        output += `\n${snippet.notes}`;
-      }
-      output += misc.collapsible('Examples', snippet.codeBlocks.slice(-1));
-      output += `\n<br>${misc.link('⬆ Back to top', misc.anchor('Table of Contents'))}\n\n`;
-    });
-  });
+    for (let snippet of taggedSnippets) {
+      if (snippet.attributes.tags.includes('advanced'))
+        output += headers.h3(snippet.title + ' ' + misc.image('advanced', '/advanced.svg')) + '\n';
+      else output += headers.h3(snippet.title) + '\n';
 
-  // add static part for end
+      output += snippet.attributes.text;
+
+      if (snippet.attributes.codeBlocks.style !== '')
+        output += `\`\`\`${config.optionalLanguage}\n${snippet.attributes.codeBlocks.style}\n\`\`\`\n\n`;
+
+      output += `\`\`\`${config.language}\n${snippet.attributes.codeBlocks.code}\n\`\`\``;
+
+      output += misc.collapsible(
+        'Examples',
+        `\`\`\`${config.language}\n${snippet.attributes.codeBlocks.example}\n\`\`\``
+      );
+
+      output += '\n<br>' + misc.link('⬆ Back to top', misc.anchor('Contents')) + '\n';
+    }
+  }
+
+  // Add the ending static part
   output += `\n${endPart}\n`;
-
+  // Write to the README file
   fs.writeFileSync('README.md', output);
 } catch (err) {
-  console.log(`${chalk.red('ERROR!')} During README generation: ${err}`);
+  console.log(`${red('ERROR!')} During README generation: ${err}`);
   process.exit(1);
 }
 
-console.log(`${chalk.green('SUCCESS!')} README file generated!`);
+console.log(`${green('SUCCESS!')} README file generated!`);
 console.timeEnd('Builder');

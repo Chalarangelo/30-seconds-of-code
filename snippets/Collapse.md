@@ -1,12 +1,15 @@
-### Collapse
+---
+title: Collapse
+tags: visual,children,state,intermediate
+---
 
 Renders a component with collapsible content.
 
-* Use the `React.setState()` hook to create the `isCollapsed` state variable with an initial value of `props.collapsed`.
-* Use an object, `style`, to hold the styles for individual components and their states.
-* Use a `<div>` to wrap both the `<button>` that alters the component's `isCollapsed` state and the content of the component, passed down via `props.children`.
-* Determine the appearance of the content, based on `isCollapsed` and apply the appropriate CSS rules from the `style` object.
-* Finally, update the value of the `aria-expanded` attribute based on `isCollapsed` to make the component accessible.
+- Use the `React.setState()` hook to create the `isCollapsed` state variable with an initial value of `props.collapsed`.
+- Use an object, `style`, to hold the styles for individual components and their states.
+- Use a `<div>` to wrap both the `<button>` that alters the component's `isCollapsed` state and the content of the component, passed down via `props.children`.
+- Determine the appearance of the content, based on `isCollapsed` and apply the appropriate CSS rules from the `style` object.
+- Finally, update the value of the `aria-expanded` attribute based on `isCollapsed` to make the component accessible.
 
 ```jsx
 function Collapse(props) {
@@ -51,7 +54,3 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-
-<!-- tags: visual,children,state -->
-
-<!-- expertise: 2 -->

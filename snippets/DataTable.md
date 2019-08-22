@@ -1,9 +1,12 @@
-### DataTable
+---
+title: DataTable
+tags: array,beginner
+---
 
 Renders a table with rows dynamically created from an array of primitives.
 
-* Render a `<table>` element with two columns (`ID` and `Value`).
-* Use `Array.prototype.map` to render every item in `data` as a `<tr>` element, consisting of its index and value, give it a `key` produced from the concatenation of the two.
+- Render a `<table>` element with two columns (`ID` and `Value`).
+- Use `Array.prototype.map` to render every item in `data` as a `<tr>` element, consisting of its index and value, give it a `key` produced from the concatenation of the two.
 
 ```jsx
 function DataTable({ data }) {
@@ -32,7 +35,3 @@ function DataTable({ data }) {
 const people = ['John', 'Jesse'];
 ReactDOM.render(<DataTable data={people} />, document.getElementById('root'));
 ```
-
-<!-- tags: array -->
-
-<!-- expertise: 0 -->
