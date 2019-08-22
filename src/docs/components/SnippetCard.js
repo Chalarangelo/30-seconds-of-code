@@ -102,7 +102,7 @@ const FullCard = ({ snippetData, difficulty, isDarkMode }) => {
         >
           {examplesOpen && (
             <pre
-              className='section card-examples language-js'
+              className='section card-examples language-py'
               dangerouslySetInnerHTML={{ __html: cardExamplesHtml }}
             />
           )}
