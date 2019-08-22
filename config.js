@@ -1,6 +1,6 @@
 module.exports = {
   // Project metadata
-  name: `30 seconds starter`,
+  name: `30 seconds of React`,
   description: `Curated collection of useful React snippets that you can understand in 30 seconds or less.`,
   shortName: `30s`,
   repositoryUrl: `https://github.com/30-seconds/30-seconds-of-react`,
