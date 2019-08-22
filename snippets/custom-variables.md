@@ -5,13 +5,9 @@ tags: other,intermediate
 
 CSS variables that contain specific values to be reused throughout a document.
 
-#### HTML
-
 ```html
 <p class="custom-variables">CSS is awesome!</p>
 ```
-
-#### CSS
 
 ```css
 :root {
@@ -29,8 +25,6 @@ CSS variables that contain specific values to be reused throughout a document.
   text-shadow: var(--some-complex-value);
 }
 ```
-
-#### Demo
 
 #### Explanation
 

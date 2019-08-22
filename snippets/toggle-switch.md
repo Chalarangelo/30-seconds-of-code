@@ -5,13 +5,9 @@ tags: visual, interactivity,intermediate
 
 Creates a toggle switch with CSS only.
 
-#### HTML
-
 ```html
 <input type="checkbox" id="toggle" class="offscreen" /> <label for="toggle" class="switch"></label>
 ```
-
-#### CSS
 
 ```css
 .switch {
@@ -50,8 +46,6 @@ input[type='checkbox']:checked + .switch {
 }
 ```
 
-#### Demo
-
 #### Explanation
 
 This effect is styling only the `<label>` element to look like a toggle switch, and hiding the actual `<input>` checkbox by positioning it offscreen. When clicking the label associated with the `<input>` element, it sets the `<input>` checkbox into the `:checked` state.
@@ -69,7 +63,3 @@ This effect is styling only the `<label>` element to look like a toggle switch, 
 <span class="snippet__support-note">⚠️ Requires prefixes for full support.</span>
 
 - https://caniuse.com/#feat=transforms2d
-
-
-
-<!-- date: 2018-10-03 -->

@@ -5,14 +5,10 @@ tags: layout, visual,intermediate
 
 Changes the fit and position of an image within its container while preserving its aspect ratio. Previously only possible using a background image and the `background-size` property.
 
-#### HTML
-
 ```html
 <img class="image image-contain" src="https://picsum.photos/600/200" />
 <img class="image image-cover" src="https://picsum.photos/600/200" />
 ```
-
-#### CSS
 
 ```css
 .image {
@@ -33,8 +29,6 @@ Changes the fit and position of an image within its container while preserving i
 }
 ```
 
-#### Demo
-
 #### Explanation
 
 - `object-fit: contain` fits the entire image within the container while preserving its aspect ratio.
@@ -44,7 +38,3 @@ Changes the fit and position of an image within its container while preserving i
 #### Browser support
 
 - https://caniuse.com/#feat=object-fit
-
-
-
-<!-- date: 2018-10-31 -->

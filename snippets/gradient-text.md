@@ -5,13 +5,9 @@ tags: visual,intermediate
 
 Gives text a gradient color.
 
-#### HTML
-
 ```html
 <p class="gradient-text">Gradient text</p>
 ```
-
-#### CSS
 
 ```css
 .gradient-text {
@@ -20,8 +16,6 @@ Gives text a gradient color.
   -webkit-background-clip: text;
 }
 ```
-
-#### Demo
 
 #### Explanation
 

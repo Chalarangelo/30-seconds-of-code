@@ -1,0 +1,704 @@
+{
+  "data": [
+    {
+      "id": "bouncing-loader",
+      "type": "snippetListing",
+      "title": "Bouncing loader",
+      "attributes": {
+        "text": "Creates a bouncing loader animation.\n\n",
+        "tags": [
+          "animation",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "5093345481ba16eb2d9b547cc55a2ac1993c39ffe09a4c40255c9e4d9cae4cc7"
+      }
+    },
+    {
+      "id": "box-sizing-reset",
+      "type": "snippetListing",
+      "title": "Box-sizing reset",
+      "attributes": {
+        "text": "Resets the box-model so that `width`s and `height`s are not affected by their `border`s or `padding`.\n\n",
+        "tags": [
+          "layout",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "a67133bc7bf6d831340501643c7efede36b09a7f36516e0cc7fb7d3ff06ee7bd"
+      }
+    },
+    {
+      "id": "button-border-animation",
+      "type": "snippetListing",
+      "title": "Button border animation",
+      "attributes": {
+        "text": "Creates a border animation on hover.\n\n",
+        "tags": [
+          "animation",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "754e9dc4b820bbd2f8650a06df9cf2d2e3755b0da2ae2be787bf77eb79d0e296"
+      }
+    },
+    {
+      "id": "calc",
+      "type": "snippetListing",
+      "title": "Calc()",
+      "attributes": {
+        "text": "The function calc() allows to define CSS values with the use of mathematical expressions, the value adopted for the property is the result of a mathematical expression.\n\n\n\n",
+        "tags": [
+          "other",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "fce405ede3127f068a4598d709484dae8b3991594daf5d54fbac043989d04427"
+      }
+    },
+    {
+      "id": "circle",
+      "type": "snippetListing",
+      "title": "Circle",
+      "attributes": {
+        "text": "Creates a circle shape with pure CSS.\n\n",
+        "tags": [
+          "visual",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "bc4bbf2fdc171fc581c72926d8b383391c1f01ccdb8853a3b4a1a290fddc704e"
+      }
+    },
+    {
+      "id": "clearfix",
+      "type": "snippetListing",
+      "title": "Clearfix",
+      "attributes": {
+        "text": "Ensures that an element self-clears its children.\n\n###### Note: This is only useful if you are still using float to build layouts. Please consider using a modern approach with flexbox layout or grid layout.\n\n",
+        "tags": [
+          "layout",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "1047b62d1a05d21a0d5cd370eca23ca76dc52454b1aefdb4bddd83d78a624458"
+      }
+    },
+    {
+      "id": "constant-width-to-height-ratio",
+      "type": "snippetListing",
+      "title": "Constant width to height ratio",
+      "attributes": {
+        "text": "Given an element of variable width, it will ensure its height remains proportionate in a responsive fashion\n(i.e., its width to height ratio remains constant).\n\n",
+        "tags": [
+          "layout",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "6d9a462223d6c4d2cb83b0b3ffea991d18d5b4c2bf81881515ff07a7c49db1c8"
+      }
+    },
+    {
+      "id": "counter",
+      "type": "snippetListing",
+      "title": "Counter",
+      "attributes": {
+        "text": "Counters are, in essence, variables maintained by CSS whose values may be incremented by CSS rules to track how many times they're used.\n\n",
+        "tags": [
+          "visual",
+          "other",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "99ba7570de689df640c22feb4a36874d4d7bc4bd1310227cedabe55d95b83f5e"
+      }
+    },
+    {
+      "id": "custom-scrollbar",
+      "type": "snippetListing",
+      "title": "Custom scrollbar",
+      "attributes": {
+        "text": "Customizes the scrollbar style for the document and elements with scrollable overflow, on WebKit platforms.\n\n\n\n",
+        "tags": [
+          "visual",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "cd46a337bd537c752499182a18575a921f300cf73b490dea2c1378360e670168"
+      }
+    },
+    {
+      "id": "custom-text-selection",
+      "type": "snippetListing",
+      "title": "Custom text selection",
+      "attributes": {
+        "text": "Changes the styling of text selection.\n\n",
+        "tags": [
+          "visual",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "fa278f7299768bd484a01a9d63c7e8ba684f3870da53388aae5290d5b4dee7bb"
+      }
+    },
+    {
+      "id": "custom-variables",
+      "type": "snippetListing",
+      "title": "Custom variables",
+      "attributes": {
+        "text": "CSS variables that contain specific values to be reused throughout a document.\n\n",
+        "tags": [
+          "other",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "c03b24d37e43d056aa2e5f6eebb8d61a86d4d9f6587270aa8606df771c27f3cc"
+      }
+    },
+    {
+      "id": "disable-selection",
+      "type": "snippetListing",
+      "title": "Disable selection",
+      "attributes": {
+        "text": "Makes the content unselectable.\n\n",
+        "tags": [
+          "interactivity",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "ccae3478e0de1ff02bab055c17e2f877bd39cd4994f6b18d0bf85d16e9912dda"
+      }
+    },
+    {
+      "id": "display-table-centering",
+      "type": "snippetListing",
+      "title": "Display table centering",
+      "attributes": {
+        "text": "Vertically and horizontally centers a child element within its parent element using `display: table` (as an alternative to `flexbox`).\n\n",
+        "tags": [
+          "layout",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "4b2e48224b08521eda138be98210a643ff98733fed8f9dd9d1921a1f56084450"
+      }
+    },
+    {
+      "id": "donut-spinner",
+      "type": "snippetListing",
+      "title": "Donut spinner",
+      "attributes": {
+        "text": "Creates a donut spinner that can be used to indicate the loading of content.\n\n",
+        "tags": [
+          "animation",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "cf2af5a585eecb3c98ee07d02d2e94ebee5efdf01523313b61faa199309bee0d"
+      }
+    },
+    {
+      "id": "dynamic-shadow",
+      "type": "snippetListing",
+      "title": "Dynamic shadow",
+      "attributes": {
+        "text": "Creates a shadow similar to `box-shadow` but based on the colors of the element itself.\n\n",
+        "tags": [
+          "visual",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "125c57e66fac5a5f0f231889d6cc2bbab0c8693070254386140468ec39045556"
+      }
+    },
+    {
+      "id": "easing-variables",
+      "type": "snippetListing",
+      "title": "Easing variables",
+      "attributes": {
+        "text": "Variables that can be reused for `transition-timing-function` properties, more\npowerful than the built-in `ease`, `ease-in`, `ease-out` and `ease-in-out`.\n\n",
+        "tags": [
+          "animation",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "742eec324f2b9eb3a5cf972639069523e1244ee95bc6335192587b8f9352f2da"
+      }
+    },
+    {
+      "id": "etched-text",
+      "type": "snippetListing",
+      "title": "Etched text",
+      "attributes": {
+        "text": "Creates an effect where text appears to be \"etched\" or engraved into the background.\n\n",
+        "tags": [
+          "visual",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "fade4c04ebb8c2e6d680cc803d54738dbb166b6f608f13a94eacfe0b762fb0c4"
+      }
+    },
+    {
+      "id": "evenly-distributed-children",
+      "type": "snippetListing",
+      "title": "Evenly distributed children",
+      "attributes": {
+        "text": "Evenly distributes child elements within a parent element.\n\n",
+        "tags": [
+          "layout",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "3489ccfed45a24c536c275e7a74cc8727fd801baae9c2b5123265bcd75e70a37"
+      }
+    },
+    {
+      "id": "fit-image-in-container",
+      "type": "snippetListing",
+      "title": "Fit image in container",
+      "attributes": {
+        "text": "Changes the fit and position of an image within its container while preserving its aspect ratio. Previously only possible using a background image and the `background-size` property.\n\n",
+        "tags": [
+          "layout",
+          "visual",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "79cb705dc7ae6fbde94fac8dc3b273dda73be7a4739a2cdf9f160ad6f678133a"
+      }
+    },
+    {
+      "id": "flexbox-centering",
+      "type": "snippetListing",
+      "title": "Flexbox centering",
+      "attributes": {
+        "text": "Horizontally and vertically centers a child element within a parent element using `flexbox`.\n\n",
+        "tags": [
+          "layout",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "ec62036188c484a98e832c45535eafbf528020f116a5aac0c853b56f6b91162e"
+      }
+    },
+    {
+      "id": "focus-within",
+      "type": "snippetListing",
+      "title": "Focus Within",
+      "attributes": {
+        "text": "Changes the appearance of a form if any of its children are focused.\n\n",
+        "tags": [
+          "visual",
+          "interactivity",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "db08a880101d0e82dd0263582e7b251d88450df278e7d79a0a544d1575580c55"
+      }
+    },
+    {
+      "id": "fullscreen",
+      "type": "snippetListing",
+      "title": "Fullscreen",
+      "attributes": {
+        "text": "The :fullscreen CSS pseudo-class represents an element that's displayed when the browser is in fullscreen mode.\n\n",
+        "tags": [
+          "visual",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "2bb108851d15d46749ba4f1caa2ba08d4754a2ee988e812280925c637f610d40"
+      }
+    },
+    {
+      "id": "ghost-trick",
+      "type": "snippetListing",
+      "title": "Ghost trick",
+      "attributes": {
+        "text": "Vertically centers an element in another.\n\n",
+        "tags": [
+          "layout",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "622cd2ec51c26b37be3ea38a55d71bbb1b5944f14188b484c4903e23b45086c9"
+      }
+    },
+    {
+      "id": "gradient-text",
+      "type": "snippetListing",
+      "title": "Gradient text",
+      "attributes": {
+        "text": "Gives text a gradient color.\n\n",
+        "tags": [
+          "visual",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "56a606934b50e0c3c53eb4819ee3fcb57344a9bd7dce91ae26c6f98c99a4c386"
+      }
+    },
+    {
+      "id": "grid-centering",
+      "type": "snippetListing",
+      "title": "Grid centering",
+      "attributes": {
+        "text": "Horizontally and vertically centers a child element within a parent element using `grid`.\n\n",
+        "tags": [
+          "layout",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "167267471e09e52f20ed40ffb23b8efa1cfba6434fea5b7c82810c62c8ba5ee0"
+      }
+    },
+    {
+      "id": "hairline-border",
+      "type": "snippetListing",
+      "title": "Hairline border",
+      "attributes": {
+        "text": "Gives an element a border equal to 1 native device pixel in width, which can look\nvery sharp and crisp.\n\n",
+        "tags": [
+          "visual",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "0e45709255d9ca14598c5fa54c2ae5490f81a0ef67c466d6d678da584340428b"
+      }
+    },
+    {
+      "id": "height-transition",
+      "type": "snippetListing",
+      "title": "Height transition",
+      "attributes": {
+        "text": "Transitions an element's height from `0` to `auto` when its height is unknown.\n\n",
+        "tags": [
+          "animation",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "7ee6c8c6027ccbba77e7c02bdb79cf22a0d22d7acece1ea5408da19a7f986d7a"
+      }
+    },
+    {
+      "id": "hover-shadow-box-animation",
+      "type": "snippetListing",
+      "title": "Hover shadow box animation",
+      "attributes": {
+        "text": "Creates a shadow box around the text when it is hovered.\n\n",
+        "tags": [
+          "animation",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "8fc3c2c5fc4248b2ec6bfdbc96cb5912936ccd5865d88da7a3a041a32168968a"
+      }
+    },
+    {
+      "id": "hover-underline-animation",
+      "type": "snippetListing",
+      "title": "Hover underline animation",
+      "attributes": {
+        "text": "Creates an animated underline effect when the text is hovered over.\n\n<small>**Credit:** https://flatuicolors.com/</small>\n\n",
+        "tags": [
+          "animation",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "5ee579737769cd734df27df60b3c0fa296965192f1cdca45d4c43a414c6b9760"
+      }
+    },
+    {
+      "id": "last-item-with-remaining-available-height",
+      "type": "snippetListing",
+      "title": "Last item with remaining available height",
+      "attributes": {
+        "text": "Take advantage of available viewport space by giving the last element the remaining available space in current viewport, even when resizing the window.\n\n",
+        "tags": [
+          "layout",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "522a5e309cea7f772600ca1d5f89ee911f0aec94b157e2adb94ac3f479445c01"
+      }
+    },
+    {
+      "id": "mouse-cursor-gradient-tracking",
+      "type": "snippetListing",
+      "title": "Mouse cursor gradient tracking",
+      "attributes": {
+        "text": "A hover effect where the gradient follows the mouse cursor.\n\n<small class=\"snippet__credit\">**Credit:** [Tobias Reich](https://codepen.io/electerious/pen/MQrRxX)</small>\n\n",
+        "tags": [
+          "visual",
+          "interactivity",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "707e50fd348545fc1f9950ef9cda9e74b28ffe57098cc2849c72358c4bf7bea6"
+      }
+    },
+    {
+      "id": "not-selector",
+      "type": "snippetListing",
+      "title": ":not selector",
+      "attributes": {
+        "text": "The `:not` psuedo selector is useful for styling a group of elements, while leaving the last (or specified) element unstyled.\n\n",
+        "tags": [
+          "visual",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "7d2727a78b8ee2a55a823116fb01099efa227952d8fba8c35a1d3067675985d5"
+      }
+    },
+    {
+      "id": "offscreen",
+      "type": "snippetListing",
+      "title": "Offscreen",
+      "attributes": {
+        "text": "A bulletproof way to completely hide an element visually and positionally in the DOM while still allowing it to be accessed by JavaScript and readable by screen readers. This method is very useful for accessibility ([ADA](https://adata.org/learn-about-ada)) development when more context is needed for visually-impaired users. As an alternative to `display: none` which is not readable by screen readers or `visibility: hidden` which takes up physical space in the DOM.\n\n",
+        "tags": [
+          "layout",
+          "visual",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "000a1fd47f9dafba64a625aefc689e33592adf69c8c5ecffb6de68a83f0218aa"
+      }
+    },
+    {
+      "id": "overflow-scroll-gradient",
+      "type": "snippetListing",
+      "title": "Overflow scroll gradient",
+      "attributes": {
+        "text": "Adds a fading gradient to an overflowing element to better indicate there is more content to be scrolled.\n\n",
+        "tags": [
+          "visual",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "6ce90f10b574780c196faad6a498c8d5b1e5e2d6c3464ded47ceb1056b24baa3"
+      }
+    },
+    {
+      "id": "popout-menu",
+      "type": "snippetListing",
+      "title": "Popout menu",
+      "attributes": {
+        "text": "Reveals an interactive popout menu on hover and focus.\n\n",
+        "tags": [
+          "interactivity",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "8f5c19fb14ee8039e93ff0f3185cb0d27971dd2509f6100fdfd290478211a42b"
+      }
+    },
+    {
+      "id": "pretty-text-underline",
+      "type": "snippetListing",
+      "title": "Pretty text underline",
+      "attributes": {
+        "text": "A nicer alternative to `text-decoration: underline` or `<u></u>` where descenders do not clip the underline.\nNatively implemented as `text-decoration-skip-ink: auto` but it has less control over the underline.\n\n",
+        "tags": [
+          "visual",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "5d0eb22cb50d397c88c5f3a111a6a85d6cfa7d61fb7e88c966fdd55fe9d5b587"
+      }
+    },
+    {
+      "id": "reset-all-styles",
+      "type": "snippetListing",
+      "title": "Reset all styles",
+      "attributes": {
+        "text": "Resets all styles to default values with one property. This will not affect `direction` and `unicode-bidi` properties.\n\n",
+        "tags": [
+          "visual",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "d601816311504b7521c8bba212e2c4b6fb50317ec10df60991a414bae1c82bf9"
+      }
+    },
+    {
+      "id": "shape-separator",
+      "type": "snippetListing",
+      "title": "Shape separator",
+      "attributes": {
+        "text": "Uses an SVG shape to separate two different blocks to create more a interesting visual appearance compared to standard horizontal separation.\n\n",
+        "tags": [
+          "visual",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "1ce90fc518399c775df1af832345729bdde2a3c12bbdd2fd66c40b9c57a65aa1"
+      }
+    },
+    {
+      "id": "sibling-fade",
+      "type": "snippetListing",
+      "title": "Sibling fade",
+      "attributes": {
+        "text": "Fades out the siblings of a hovered item.\n\n",
+        "tags": [
+          "interactivity",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "a1e353f0dc466a24881986bbaf8f2cd9f367fe80d54ac8e1481d82e021236389"
+      }
+    },
+    {
+      "id": "system-font-stack",
+      "type": "snippetListing",
+      "title": "System font stack",
+      "attributes": {
+        "text": "Uses the native font of the operating system to get close to a native app feel.\n\n",
+        "tags": [
+          "visual",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "0a35134bd1fe1da354810ef3228f50a81105997c0e81138c97cc9ace399adbb2"
+      }
+    },
+    {
+      "id": "toggle-switch",
+      "type": "snippetListing",
+      "title": "Toggle switch",
+      "attributes": {
+        "text": "Creates a toggle switch with CSS only.\n\n",
+        "tags": [
+          "visual",
+          "interactivity",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "6af55186736cae8da52a2a92bf7dcf56f6f23ca49ce083ad6653e373fa2d152e"
+      }
+    },
+    {
+      "id": "transform-centering",
+      "type": "snippetListing",
+      "title": "Transform centering",
+      "attributes": {
+        "text": "Vertically and horizontally centers a child element within its parent element using `position: absolute` and `transform: translate()` (as an alternative to `flexbox` or `display: table`). Similar to `flexbox`, this method does not require you to know the height or width of your parent or child so it is ideal for responsive applications.\n\n",
+        "tags": [
+          "layout",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "67b5f73d1e7aa4850b39c461fd93a548e106569554cf6e87f2a9981ecfb77ad1"
+      }
+    },
+    {
+      "id": "triangle",
+      "type": "snippetListing",
+      "title": "Triangle",
+      "attributes": {
+        "text": "Creates a triangle shape with pure CSS.\n\n",
+        "tags": [
+          "visual",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "d585e568bd1b8ca9c8a7d2fa52682c80249bf1e6055316bc3526ee54d8d26fb9"
+      }
+    },
+    {
+      "id": "truncate-text-multiline",
+      "type": "snippetListing",
+      "title": "Truncate text multiline",
+      "attributes": {
+        "text": "If the text is longer than one line, it will be truncated for `n` lines and end with an gradient fade.\n\n",
+        "tags": [
+          "layout",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "487720c3bf69c29c26cd0033d69f7391b634c4d9bf0e72a1da29957b945a9cbf"
+      }
+    },
+    {
+      "id": "truncate-text",
+      "type": "snippetListing",
+      "title": "Truncate text",
+      "attributes": {
+        "text": "If the text is longer than one line, it will be truncated and end with an ellipsis `…`.\n\n",
+        "tags": [
+          "layout",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "db78085f4583d992126b4ceb74cc680300aa67c16d37b68d55c140fe453840d3"
+      }
+    },
+    {
+      "id": "zebra-striped-list",
+      "type": "snippetListing",
+      "title": "Zebra striped list",
+      "attributes": {
+        "text": "Creates a striped list with alternating background colors, which is useful for differentiating siblings that have content spread across a wide row.\n\n",
+        "tags": [
+          "visual",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "2c11f668918ede13c492719a76a5b89173aa4e72ad896cd2d7e45bed9671a2f0"
+      }
+    }
+  ],
+  "meta": {
+    "specification": "http://jsonapi.org/format/",
+    "type": "snippetListingArray"
+  }
+}

@@ -6,13 +6,9 @@ tags: visual,intermediate
 Gives an element a border equal to 1 native device pixel in width, which can look
 very sharp and crisp.
 
-#### HTML
-
 ```html
 <div class="hairline-border">text</div>
 ```
-
-#### CSS
 
 ```css
 .hairline-border {
@@ -37,8 +33,6 @@ very sharp and crisp.
   }
 }
 ```
-
-#### Demo
 
 #### Explanation
 

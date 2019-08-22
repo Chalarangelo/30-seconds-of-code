@@ -5,13 +5,11 @@ tags: other,intermediate
 
 The function calc() allows to define CSS values with the use of mathematical expressions, the value adopted for the property is the result of a mathematical expression.
 
-#### HTML
+
 
 ```html
 <div class="box-example"></div>
 ```
-
-#### CSS
 
 ```css
 .box-example {
@@ -21,7 +19,7 @@ The function calc() allows to define CSS values with the use of mathematical exp
 }
 ```
 
-#### Demo
+
 
 If you want to align a background-image from right and bottom wasn't possible with just straight length values.
 So now it's possible using calc():

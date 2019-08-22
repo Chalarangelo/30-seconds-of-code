@@ -5,8 +5,6 @@ tags: visual, other,intermediate
 
 Counters are, in essence, variables maintained by CSS whose values may be incremented by CSS rules to track how many times they're used.
 
-#### HTML
-
 ```html
 <ul>
   <li>List item</li>
@@ -22,8 +20,6 @@ Counters are, in essence, variables maintained by CSS whose values may be increm
 </ul>
 ```
 
-#### CSS
-
 ```css
 ul {
   counter-reset: counter;
@@ -34,8 +30,6 @@ li::before {
   content: counters(counter, '.') ' ';
 }
 ```
-
-#### Demo
 
 #### Explanation
 

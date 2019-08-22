@@ -1,177 +1,142 @@
-const fs = require('fs')
-const path = require('path')
-const marked = require('marked')
-const pretty = require('pretty')
-const caniuseDb = require('caniuse-db/data.json')
-const sass = require('node-sass')
-const { toKebabCase, createElement, template, dom, getCode } = require('../utils/utils.js')
-const { differenceInDays } = require('date-fns')
+/*
+  This is the builder script that generates the README file.
+  Run using `npm run builder`.
+*/
+// Load modules
+const fs = require('fs-extra');
+const path = require('path');
+const { green, red } = require('kleur');
+const util = require('./util');
+const markdown = require('markdown-builder');
+const { headers, misc, lists } = markdown;
+const config = require('../config');
 
-const SNIPPETS_PATH = './snippets'
-const TAGS = [
-  {
-    name: 'all',
-    icon: 'check'
-  },
-  {
-    name: 'layout',
-    icon: 'layout'
-  },
-  {
-    name: 'visual',
-    icon: 'eye'
-  },
-  {
-    name: 'animation',
-    icon: 'loader'
-  },
-  {
-    name: 'interactivity',
-    icon: 'edit-2'
-  },
-  {
-    name: 'other',
-    icon: 'tag'
-  }
-]
+// Paths (relative to package.json)
+const SNIPPETS_PATH = `./${config.snippetPath}`;
+const STATIC_PARTS_PATH = `./${config.staticPartsPath}`;
 
-const renderer = new marked.Renderer()
-renderer.heading = (text, level) => {
-  if (level === 3) {
-    return `<h${level} id="${toKebabCase(text)}"><span>${text}</span></h${level}>`
-  } else {
-    return ['HTML', 'CSS', 'JavaScript'].includes(text)
-      ? `<h${level} data-type="${text}">${text}</h${level}>`
-      : `<h${level}>${text}</h${level}>`
-  }
-}
-renderer.link = (url, _, text) => `<a href="${url}" target="_blank">${text || url}</a>`
-
-const document = dom('./src/html/index.html')
-const components = {
-  backToTopButton: dom('./src/html/components/back-to-top-button.html'),
-  sidebar: dom('./src/html/components/sidebar.html'),
-  header: dom('./src/html/components/header.html'),
-  main: dom('./src/html/components/main.html'),
-  tags: dom('./src/html/components/tags.html')
+// Terminate if parent commit is a Travis build
+if (
+  util.isTravisCI() &&
+  /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])
+) {
+  console.log(
+    `${green(
+      'NOBUILD',
+    )} README build terminated, parent commit is a Travis build!`,
+  );
+  process.exit(0);
 }
 
-const snippetContainer = components.main.querySelector('.container')
-const sidebarLinkContainer = components.sidebar.querySelector('.sidebar__links')
-TAGS.slice(1).forEach(tag => {
-  sidebarLinkContainer.append(
-    createElement(`
-      <section data-type="${tag.name}" class="sidebar__section">
-        <h4 class="sidebar__section-heading">${tag.name}</h4>
-      </section>
-    `)
-  )
-})
+// Setup everything
+let snippets = {},
+  snippetsArray = [],
+  startPart = '',
+  endPart = '',
+  output = '';
+const EMOJIS = {};
 
-for (const snippetFile of fs.readdirSync(SNIPPETS_PATH)) {
-  const snippetPath = path.join(SNIPPETS_PATH, snippetFile)
-  const snippetData = fs.readFileSync(snippetPath, 'utf8')
+console.time('Builder');
 
-  const html = getCode('html', snippetData).trim()
-  const css = getCode('css', snippetData)
-  const scopedCSS = sass.renderSync({
-    data: `[data-scope="${snippetFile}"] { ${css} }`
-  })
-  const js = getCode('js', snippetData)
+// Synchronously read all snippets from snippets folder and sort them as necessary (case-insensitive)
+snippets = util.readSnippets(SNIPPETS_PATH);
+snippetsArray = Object.keys(snippets).reduce((acc, key) => {
+  acc.push(snippets[key]);
+  return acc;
+}, []);
 
-  const demo =
-    `<div class="snippet-demo" data-scope="${snippetFile}">${html}</div>` +
-    `<style>${scopedCSS.css.toString()}</style>` +
-    `${js ? `<script>(function(){${js}})();</script>` : ''}`
+// Load static parts for the README file
+try {
+  startPart = fs.readFileSync(
+    path.join(STATIC_PARTS_PATH, 'README-start.md'),
+    'utf8',
+  );
+  endPart = fs.readFileSync(
+    path.join(STATIC_PARTS_PATH, 'README-end.md'),
+    'utf8',
+  );
+} catch (err) {
+  console.log(`${red('ERROR!')} During static part loading: ${err}`);
+  process.exit(1);
+}
 
-  const markdown = marked(snippetData, { renderer }).replace(
-    '<h4>Demo</h4>',
-    `<h4>Demo</h4>${demo}`
-  )
-  const snippetEl = createElement(`<div class="snippet">${markdown}</div>`)
-  snippetContainer.append(snippetEl)
+// Create the output for the README file
+try {
+  const tags = util.prepTaggedData(
+    Object.keys(snippets).reduce((acc, key) => {
+      acc[key] = snippets[key].attributes.tags;
+      return acc;
+    }, {}),
+  );
 
-  // browser support usage
-  const featUsageShares = (snippetData.match(/https?:\/\/caniuse\.com\/#feat=.*/g) || []).map(
-    feat => {
-      const featData = caniuseDb.data[feat.match(/#feat=(.*)/)[1]]
-      // caniuse doesn't count "untracked" users, which makes the overall share appear much lower
-      // than it probably is. Most of these untracked browsers probably support these features.
-      // Currently it's around 5.3% untracked, so we'll use 4% as probably supporting the feature.
-      // Also the npm package appears to be show higher usage % than the main website, this shows
-      // about 0.2% lower than the main website when selecting "tracked users" (as of Feb 2019).
-      const UNTRACKED_PERCENT = 4
-      const usage = featData
-        ? Number(featData.usage_perc_y + featData.usage_perc_a) + UNTRACKED_PERCENT
-        : 100
-      return Math.min(100, usage)
+  output += `${startPart}\n`;
+
+  // Loop over tags and snippets to create the table of contents
+  for (const tag of tags) {
+    const capitalizedTag = util.capitalize(tag, true);
+    const taggedSnippets = snippetsArray.filter(
+      snippet => snippet.attributes.tags[0] === tag,
+    );
+    output += headers.h3((EMOJIS[tag] || '') + ' ' + capitalizedTag).trim();
+
+    output +=
+      misc.collapsible(
+        'View contents',
+        lists.ul(taggedSnippets, snippet =>
+          misc.link(
+            `\`${snippet.title}\``,
+            `${misc.anchor(snippet.title)}${
+              snippet.attributes.tags.includes('advanced') ? '-' : ''
+            }`,
+          ),
+        ),
+      ) + '\n';
+  }
+
+  for (const tag of tags) {
+    const capitalizedTag = util.capitalize(tag, true);
+    const taggedSnippets = snippetsArray.filter(
+      snippet => snippet.attributes.tags[0] === tag,
+    );
+
+    output +=
+      misc.hr() + headers.h2((EMOJIS[tag] || '') + ' ' + capitalizedTag) + '\n';
+
+    for (let snippet of taggedSnippets) {
+      if (snippet.attributes.tags.includes('advanced'))
+        output +=
+          headers.h3(
+            snippet.title + ' ' + misc.image('advanced', '/advanced.svg'),
+          ) + '\n';
+      else output += headers.h3(snippet.title) + '\n';
+
+      output += snippet.attributes.text;
+
+      output += `\`\`\`${config.secondLanguage}\n${snippet.attributes.codeBlocks.html}\n\`\`\`\n\n`;
+      output += `\`\`\`${config.language}\n${snippet.attributes.codeBlocks.css}\n\`\`\`\n\n`;
+      if (snippet.attributes.codeBlocks.js)
+        output += `\`\`\`${config.optionalLanguage}\n${snippet.attributes.codeBlocks.js}\n\`\`\`\n\n`;
+
+      output += headers.h4('Explanation');
+      output += snippet.attributes.explanation;
+
+      output += headers.h4('Browser support') + '\n';
+      output += snippet.attributes.browserSupport.supportPercentage.toFixed(1) + '%';
+      output += snippet.attributes.browserSupport.text;
+
+      output +=
+        '\n<br>' + misc.link('⬆ Back to top', misc.anchor('Contents')) + '\n';
     }
-  )
-  const browserSupportHeading = snippetEl.querySelector('h4:last-of-type')
-  browserSupportHeading.after(
-    createElement(`
-      <div>
-        <div class="snippet__browser-support">
-          ${featUsageShares.length ? Math.min(...featUsageShares).toPrecision(3) : 100}%
-        </div>
-      </div>
-    `)
-  )
-
-  // sidebar link
-  const link = createElement(
-    `<a class="sidebar__link" href="#${snippetFile.replace('.md', '')}">${
-      snippetEl.querySelector('h3').innerHTML
-    }</a>`
-  )
-
-  // new icon = less than 31 days old
-  const date = (snippetData.match(/<!--\s*date:\s*(.+?)-->/) || [, ''])[1]
-  if (date && differenceInDays(new Date(), new Date(date)) < 31) {
-    const newIcon = '<img alt="New" draggable="false" class="snippet__new" src="./src/img/new.svg">'
-    snippetEl.prepend(createElement(newIcon))
-    link.prepend(createElement(newIcon))
   }
 
-  // tags
-  const tags = (snippetData.match(/<!--\s*tags:\s*(.+?)-->/) || [, ''])[1]
-    .split(/,\s*/)
-    .forEach(tag => {
-      tag = tag.trim().toLowerCase()
-      snippetEl
-        .querySelector('h3')
-        .append(
-          createElement(
-            `<span class="tags__tag snippet__tag" data-type="${tag}"><i data-feather="${
-              TAGS.find(t => t.name === tag).icon
-            }"></i>${tag}</span>`
-          )
-        )
-
-      sidebarLinkContainer.querySelector(`section[data-type="${tag}"]`).append(link)
-    })
+  // Add the ending static part
+  output += `\n${endPart}\n`;
+  // Write to the README file
+  fs.writeFileSync('README.md', output);
+} catch (err) {
+  console.log(`${red('ERROR!')} During README generation: ${err}`);
+  process.exit(1);
 }
 
-// build dom
-TAGS.forEach(tag =>
-  components.tags.append(
-    createElement(
-      `<button class="tags__tag is-large ${tag.name === 'all' ? 'is-active' : ''}" data-type="${
-        tag.name
-      }"><i data-feather="${tag.icon}"></i>${tag.name}</button>`
-    )
-  )
-)
-const content = document.querySelector('.content-wrapper')
-content.before(components.backToTopButton)
-content.before(components.sidebar)
-content.append(components.header)
-content.append(components.main)
-components.main.querySelector('.container').prepend(components.tags)
-
-// doctype declaration gets stripped, add it back in
-const html = `<!DOCTYPE html>
-${pretty(document.documentElement.outerHTML, { ocd: true })}
-`
-
-fs.writeFileSync('./index.html', html)
+console.log(`${green('SUCCESS!')} README file generated!`);
+console.timeEnd('Builder');

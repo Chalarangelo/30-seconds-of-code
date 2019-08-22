@@ -5,13 +5,9 @@ tags: animation,intermediate
 
 Creates a donut spinner that can be used to indicate the loading of content.
 
-#### HTML
-
 ```html
 <div class="donut"></div>
 ```
-
-#### CSS
 
 ```css
 @keyframes donut-spin {
@@ -32,8 +28,6 @@ Creates a donut spinner that can be used to indicate the loading of content.
   animation: donut-spin 1.2s linear infinite;
 }
 ```
-
-#### Demo
 
 #### Explanation
 

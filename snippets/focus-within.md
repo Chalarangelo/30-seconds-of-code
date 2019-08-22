@@ -5,8 +5,6 @@ tags: visual, interactivity,intermediate
 
 Changes the appearance of a form if any of its children are focused.
 
-#### HTML
-
 ```html
 <div class="focus-within">
   <form>
@@ -15,8 +13,6 @@ Changes the appearance of a form if any of its children are focused.
   </form>
 </div>
 ```
-
-#### CSS
 
 ```css
 form {
@@ -30,8 +26,6 @@ form:focus-within {
   color: #000000;
 }
 ```
-
-#### Demo
 
 <!-- Leave this blank, the build script will generate the demo for you. -->
 

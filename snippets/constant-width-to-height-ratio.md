@@ -6,13 +6,9 @@ tags: layout,intermediate
 Given an element of variable width, it will ensure its height remains proportionate in a responsive fashion
 (i.e., its width to height ratio remains constant).
 
-#### HTML
-
 ```html
 <div class="constant-width-to-height-ratio"></div>
 ```
-
-#### CSS
 
 ```css
 .constant-width-to-height-ratio {
@@ -30,8 +26,6 @@ Given an element of variable width, it will ensure its height remains proportion
   clear: both;
 }
 ```
-
-#### Demo
 
 #### Explanation
 

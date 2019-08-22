@@ -5,13 +5,9 @@ tags: visual,intermediate
 
 Changes the styling of text selection.
 
-#### HTML
-
 ```html
 <p class="custom-text-selection">Select some of this text.</p>
 ```
-
-#### CSS
 
 ```css
 ::selection {
@@ -23,8 +19,6 @@ Changes the styling of text selection.
   color: white;
 }
 ```
-
-#### Demo
 
 #### Explanation
 

@@ -5,13 +5,9 @@ tags: layout,intermediate
 
 If the text is longer than one line, it will be truncated and end with an ellipsis `…`.
 
-#### HTML
-
 ```html
 <p class="truncate-text">If I exceed one line's width, I will be truncated.</p>
 ```
-
-#### CSS
 
 ```css
 .truncate-text {
@@ -21,8 +17,6 @@ If the text is longer than one line, it will be truncated and end with an ellips
   width: 200px;
 }
 ```
-
-#### Demo
 
 #### Explanation
 

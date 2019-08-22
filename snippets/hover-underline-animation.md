@@ -7,13 +7,9 @@ Creates an animated underline effect when the text is hovered over.
 
 <small>**Credit:** https://flatuicolors.com/</small>
 
-#### HTML
-
 ```html
 <p class="hover-underline-animation">Hover this text to see the effect!</p>
 ```
-
-#### CSS
 
 ```css
 .hover-underline-animation {
@@ -38,8 +34,6 @@ Creates an animated underline effect when the text is hovered over.
   transform-origin: bottom left;
 }
 ```
-
-#### Demo
 
 #### Explanation
 

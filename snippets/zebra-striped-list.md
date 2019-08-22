@@ -5,8 +5,6 @@ tags: visual,intermediate
 
 Creates a striped list with alternating background colors, which is useful for differentiating siblings that have content spread across a wide row.
 
-#### HTML
-
 ```html
 <ul>
   <li>Item 01</li>
@@ -17,15 +15,11 @@ Creates a striped list with alternating background colors, which is useful for d
 </ul>
 ```
 
-#### CSS
-
 ```css
 li:nth-child(odd) {
   background-color: #ddd;
 }
 ```
-
-#### Demo
 
 #### Explanation
 
@@ -36,7 +30,3 @@ Note that you can use it to apply different styles to other HTML elements like d
 #### Browser support
 
 https://caniuse.com/#feat=css-sel3
-
-
-
-<!-- date: 2018-10-31 -->

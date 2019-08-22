@@ -5,13 +5,9 @@ tags: animation,intermediate
 
 Creates a shadow box around the text when it is hovered.
 
-#### HTML
-
 ```html
 <p class="hover-shadow-box-animation">Box it!</p>
 ```
-
-#### CSS
 
 ```css
 .hover-shadow-box-animation {
@@ -30,8 +26,6 @@ Creates a shadow box around the text when it is hovered.
   transform: scale(1.2);
 }
 ```
-
-#### Demo
 
 #### Explanation
 
