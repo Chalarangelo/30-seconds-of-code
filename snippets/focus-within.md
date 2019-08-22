@@ -1,4 +1,7 @@
-### Focus Within
+---
+title: Focus Within
+tags: visual, interactivity,intermediate
+---
 
 Changes the appearance of a form if any of its children are focused.
 
@@ -45,4 +48,5 @@ If no link is provided, it defaults to 99+%. -->
 
 - https://caniuse.com/#feat=css-focus-within
 
-<!-- tags: visual, interactivity -->
+
+

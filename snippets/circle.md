@@ -1,4 +1,7 @@
-### Circle
+---
+title: Circle
+tags: visual,intermediate
+---
 
 Creates a circle shape with pure CSS.
 
@@ -32,4 +35,5 @@ values will create an ellipse.
 
 - https://caniuse.com/#feat=border-radius
 
-<!-- tags: visual -->
+
+

@@ -1,4 +1,7 @@
-### Clearfix
+---
+title: Clearfix
+tags: layout,intermediate
+---
 
 Ensures that an element self-clears its children.
 
@@ -41,4 +44,5 @@ Ensures that an element self-clears its children.
 
 <span class="snippet__support-note">⚠️ For this snippet to work properly you need to ensure that there are no non-floating children in the container and that there are no tall floats before the clearfixed container but in the same formatting context (e.g. floated columns).</span>
 
-<!-- tags: layout -->
+
+

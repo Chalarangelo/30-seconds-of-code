@@ -1,4 +1,7 @@
-### Height transition
+---
+title: Height transition
+tags: animation,intermediate
+---
 
 Transitions an element's height from `0` to `auto` when its height is unknown.
 
@@ -62,4 +65,5 @@ el.style.setProperty('--max-height', height + 'px')
 - https://caniuse.com/#feat=css-variables
 - https://caniuse.com/#feat=css-transitions
 
-<!-- tags: animation -->
+
+

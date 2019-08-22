@@ -1,4 +1,7 @@
-### Dynamic shadow
+---
+title: Dynamic shadow
+tags: visual,intermediate
+---
 
 Creates a shadow similar to `box-shadow` but based on the colors of the element itself.
 
@@ -52,4 +55,5 @@ Creates a shadow similar to `box-shadow` but based on the colors of the element 
 
 - https://caniuse.com/#feat=css-filters
 
-<!-- tags: visual -->
+
+

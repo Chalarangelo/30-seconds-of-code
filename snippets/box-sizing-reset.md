@@ -1,4 +1,7 @@
-### Box-sizing reset
+---
+title: Box-sizing reset
+tags: layout,intermediate
+---
 
 Resets the box-model so that `width`s and `height`s are not affected by their `border`s or `padding`.
 
@@ -45,4 +48,5 @@ html {
 
 - https://caniuse.com/#feat=css3-boxsizing
 
-<!-- tags: layout -->
+
+

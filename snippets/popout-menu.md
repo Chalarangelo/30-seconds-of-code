@@ -1,4 +1,7 @@
-### Popout menu
+---
+title: Popout menu
+tags: interactivity,intermediate
+---
 
 Reveals an interactive popout menu on hover and focus.
 
@@ -46,4 +49,5 @@ Reveals an interactive popout menu on hover and focus.
 
 #### Browser support
 
-<!-- tags: interactivity -->
+
+

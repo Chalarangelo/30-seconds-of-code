@@ -1,4 +1,7 @@
-### Bouncing loader
+---
+title: Bouncing loader
+tags: animation,intermediate
+---
 
 Creates a bouncing loader animation.
 
@@ -67,4 +70,5 @@ Note: `1rem` is usually `16px`.
 
 - https://caniuse.com/#feat=css-animation
 
-<!-- tags: animation -->
+
+

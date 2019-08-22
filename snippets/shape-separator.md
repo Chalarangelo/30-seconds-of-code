@@ -1,4 +1,7 @@
-### Shape separator
+---
+title: Shape separator
+tags: visual,intermediate
+---
 
 Uses an SVG shape to separate two different blocks to create more a interesting visual appearance compared to standard horizontal separation.
 
@@ -42,4 +45,5 @@ Uses an SVG shape to separate two different blocks to create more a interesting 
 
 - https://caniuse.com/#feat=svg
 
-<!-- tags: visual -->
+
+

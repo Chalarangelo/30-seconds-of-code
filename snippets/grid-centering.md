@@ -1,4 +1,7 @@
-### Grid centering
+---
+title: Grid centering
+tags: layout,intermediate
+---
 
 Horizontally and vertically centers a child element within a parent element using `grid`.
 
@@ -31,4 +34,5 @@ Horizontally and vertically centers a child element within a parent element usin
 
 - https://caniuse.com/#feat=css-grid
 
-<!-- tags: layout -->
+
+

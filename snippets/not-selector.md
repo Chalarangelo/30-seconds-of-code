@@ -1,4 +1,7 @@
-### :not selector
+---
+title: :not selector
+tags: visual,intermediate
+---
 
 The `:not` psuedo selector is useful for styling a group of elements, while leaving the last (or specified) element unstyled.
 
@@ -46,4 +49,5 @@ the `:last-child`.
 
 - https://caniuse.com/#feat=css-sel3
 
-<!-- tags: visual -->
+
+

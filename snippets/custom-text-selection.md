@@ -1,4 +1,7 @@
-### Custom text selection
+---
+title: Custom text selection
+tags: visual,intermediate
+---
 
 Changes the styling of text selection.
 
@@ -34,4 +37,5 @@ in any specification.</span>
 
 - https://caniuse.com/#feat=css-selection
 
-<!-- tags: visual -->
+
+

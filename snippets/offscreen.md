@@ -1,4 +1,7 @@
-### Offscreen
+---
+title: Offscreen
+tags: layout, visual,intermediate
+---
 
 A bulletproof way to completely hide an element visually and positionally in the DOM while still allowing it to be accessed by JavaScript and readable by screen readers. This method is very useful for accessibility ([ADA](https://adata.org/learn-about-ada)) development when more context is needed for visually-impaired users. As an alternative to `display: none` which is not readable by screen readers or `visibility: hidden` which takes up physical space in the DOM.
 
@@ -43,4 +46,5 @@ A bulletproof way to completely hide an element visually and positionally in the
 
 - https://caniuse.com/#search=clip
 
-<!-- tags: layout, visual -->
+
+

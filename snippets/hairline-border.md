@@ -1,4 +1,7 @@
-### Hairline border
+---
+title: Hairline border
+tags: visual,intermediate
+---
 
 Gives an element a border equal to 1 native device pixel in width, which can look
 very sharp and crisp.
@@ -54,4 +57,5 @@ very sharp and crisp.
 
 \*Chrome does not support subpixel values on `border`. Safari does not support subpixel values on `box-shadow`. Firefox supports subpixel values on both.
 
-<!-- tags: visual -->
+
+

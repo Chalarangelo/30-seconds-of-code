@@ -1,4 +1,7 @@
-### Fit image in container
+---
+title: Fit image in container
+tags: layout, visual,intermediate
+---
 
 Changes the fit and position of an image within its container while preserving its aspect ratio. Previously only possible using a background image and the `background-size` property.
 
@@ -42,5 +45,6 @@ Changes the fit and position of an image within its container while preserving i
 
 - https://caniuse.com/#feat=object-fit
 
-<!-- tags: layout, visual -->
+
+
 <!-- date: 2018-10-31 -->

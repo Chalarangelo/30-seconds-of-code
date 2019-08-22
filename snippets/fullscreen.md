@@ -1,4 +1,7 @@
-### Fullscreen
+---
+title: Fullscreen
+tags: visual,intermediate
+---
 
 The :fullscreen CSS pseudo-class represents an element that's displayed when the browser is in fullscreen mode.
 
@@ -58,4 +61,5 @@ The :fullscreen CSS pseudo-class represents an element that's displayed when the
 - https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen
 - https://caniuse.com/#feat=fullscreen
 
-<!-- tags: visual -->
+
+

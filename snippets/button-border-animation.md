@@ -1,4 +1,7 @@
-### Button border animation
+---
+title: Button border animation
+tags: animation,intermediate
+---
 
 Creates a border animation on hover.
 
@@ -56,5 +59,6 @@ Use the `:before` and `:after` pseduo-elements as borders that animate on hover.
 
 #### Browser support
 
-<!-- tags: animation -->
+
+
 <!-- date: 2018-10-30 -->

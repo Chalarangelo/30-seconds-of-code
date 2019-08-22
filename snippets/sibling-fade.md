@@ -1,4 +1,7 @@
-### Sibling fade
+---
+title: Sibling fade
+tags: interactivity,intermediate
+---
 
 Fades out the siblings of a hovered item.
 
@@ -37,4 +40,5 @@ span {
 - https://caniuse.com/#feat=css-sel3
 - https://caniuse.com/#feat=css-transitions
 
-<!-- tags: interactivity -->
+
+

@@ -1,4 +1,7 @@
-### Etched text
+---
+title: Etched text
+tags: visual,intermediate
+---
 
 Creates an effect where text appears to be "etched" or engraved into the background.
 
@@ -35,4 +38,5 @@ of the background.
 
 - https://caniuse.com/#feat=css-textshadow
 
-<!-- tags: visual -->
+
+

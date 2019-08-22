@@ -1,4 +1,7 @@
-### Toggle switch
+---
+title: Toggle switch
+tags: visual, interactivity,intermediate
+---
 
 Creates a toggle switch with CSS only.
 
@@ -67,5 +70,6 @@ This effect is styling only the `<label>` element to look like a toggle switch, 
 
 - https://caniuse.com/#feat=transforms2d
 
-<!-- tags: visual, interactivity -->
+
+
 <!-- date: 2018-10-03 -->

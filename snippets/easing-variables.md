@@ -1,4 +1,7 @@
-### Easing variables
+---
+title: Easing variables
+tags: animation,intermediate
+---
 
 Variables that can be reused for `transition-timing-function` properties, more
 powerful than the built-in `ease`, `ease-in`, `ease-out` and `ease-in-out`.
@@ -63,4 +66,5 @@ The variables are defined globally within the `:root` CSS pseudo-class which mat
 
 - https://caniuse.com/#feat=css-variables
 
-<!-- tags: animation -->
+
+

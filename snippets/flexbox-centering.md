@@ -1,4 +1,7 @@
-### Flexbox centering
+---
+title: Flexbox centering
+tags: layout,intermediate
+---
 
 Horizontally and vertically centers a child element within a parent element using `flexbox`.
 
@@ -33,4 +36,5 @@ Horizontally and vertically centers a child element within a parent element usin
 
 - https://caniuse.com/#feat=flexbox
 
-<!-- tags: layout -->
+
+

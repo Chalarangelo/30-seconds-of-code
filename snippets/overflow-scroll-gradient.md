@@ -1,4 +1,7 @@
-### Overflow scroll gradient
+---
+title: Overflow scroll gradient
+tags: visual,intermediate
+---
 
 Adds a fading gradient to an overflowing element to better indicate there is more content to be scrolled.
 
@@ -66,4 +69,5 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
 
 - https://caniuse.com/#feat=css-gradients
 
-<!-- tags: visual -->
+
+
