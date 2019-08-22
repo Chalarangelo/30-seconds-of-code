@@ -8,8 +8,8 @@
         "fileName": "all_equal.md",
         "text": "Check if all elements in a list are equal.\n\nUse `[1:]` and `[:-1]` to compare all the values in the given list.\n\n",
         "codeBlocks": {
-          "code": "def all_equal(lst):\r\n  return lst[1:] == lst[:-1]",
-          "example": "all_equal([1, 2, 3, 4, 5, 6]) # False\r\nall_equal([1, 1, 1, 1]) # True"
+          "code": "def all_equal(lst):\n  return lst[1:] == lst[:-1]",
+          "example": "all_equal([1, 2, 3, 4, 5, 6]) # False\nall_equal([1, 1, 1, 1]) # True"
         },
         "tags": [
           "list",
@@ -17,7 +17,7 @@
         ]
       },
       "meta": {
-        "hash": "650f05b1f5d4420f6e44546b34fbb1dc381e9500b4c64adf7598651d5c188223"
+        "hash": "6bf29cb176e4e9ce664ad04c6d262b6848f26639624dbb812eb1074d1c68b82a"
       }
     },
     {
@@ -28,8 +28,8 @@
         "fileName": "all_unique.md",
         "text": "Returns `True` if all the values in a flat list are unique, `False` otherwise.\n\nUse `set()` on the given list to remove duplicates, compare its length with the length of the list.\n\n",
         "codeBlocks": {
-          "code": "def all_unique(lst):\r\n  return len(lst) == len(set(lst))",
-          "example": "x = [1,2,3,4,5,6]\r\ny = [1,2,2,3,4,5]\r\nall_unique(x) # True\r\nall_unique(y) # False"
+          "code": "def all_unique(lst):\n  return len(lst) == len(set(lst))",
+          "example": "x = [1,2,3,4,5,6]\ny = [1,2,2,3,4,5]\nall_unique(x) # True\nall_unique(y) # False"
         },
         "tags": [
           "list",
@@ -37,7 +37,7 @@
         ]
       },
       "meta": {
-        "hash": "9b1bdbb130a4fa6301e994359bf162bec262a35fdfd3f00519f7f6a59f1137c0"
+        "hash": "ca101c9e623105dc857f1484fcea9211dda0dffc224834a5609d125257a7040f"
       }
     },
     {
@@ -48,8 +48,8 @@
         "fileName": "average.md",
         "text": "Returns the average of two or more numbers.\n\nUse `sum()` to sum all of the `args` provided, divide by `len(args)`.\n\n",
         "codeBlocks": {
-          "code": "def average(*args):\r\n  return sum(args, 0.0) / len(args)",
-          "example": "average(*[1, 2, 3]) # 2.0\r\naverage(1, 2, 3) # 2.0"
+          "code": "def average(*args):\n  return sum(args, 0.0) / len(args)",
+          "example": "average(*[1, 2, 3]) # 2.0\naverage(1, 2, 3) # 2.0"
         },
         "tags": [
           "math",
@@ -58,7 +58,7 @@
         ]
       },
       "meta": {
-        "hash": "ff65e9a114f47afb53e56a54588e418ef886f8bc508ed32543c97bd1d5966aae"
+        "hash": "78bfdea5946774504eea1ba100974ad48ce8cb0a1ce1404cee8d885f35bb93a1"
       }
     },
     {
@@ -69,7 +69,7 @@
         "fileName": "average_by.md",
         "text": "Returns the average of a list, after mapping each element to a value using the provided function.\n\nUse `map()` to map each element to the value returned by `fn`.\nUse `sum()` to sum all of the mapped values, divide by `len(lst)`.\n\n",
         "codeBlocks": {
-          "code": "def average_by(lst, fn=lambda x: x):\r\n  return sum(map(fn, lst), 0.0) / len(lst)",
+          "code": "def average_by(lst, fn=lambda x: x):\n  return sum(map(fn, lst), 0.0) / len(lst)",
           "example": "average_by([{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }], lambda x: x['n']) # 5.0"
         },
         "tags": [
@@ -80,7 +80,7 @@
         ]
       },
       "meta": {
-        "hash": "360d3b11343373558e25575401add239d4ab85154b72bfae347b19a487df35f3"
+        "hash": "8de876b55fd8b75ec395a5d70c29d83c7515d3ae2d59b9c7848e66e6cb854af0"
       }
     },
     {
@@ -91,7 +91,7 @@
         "fileName": "bifurcate.md",
         "text": "Splits values into two groups. \nIf an element in `filter` is `True`, the corresponding element in the collection belongs to the first group; otherwise, it belongs to the second group.\n\nUse list comprehension and `enumerate()` to add elements to groups, based on `filter`.\n\n",
         "codeBlocks": {
-          "code": "def bifurcate(lst, filter):\r\n  return [\r\n    [x for i,x in enumerate(lst) if filter[i] == True],\r\n    [x for i,x in enumerate(lst) if filter[i] == False]\r\n  ]",
+          "code": "def bifurcate(lst, filter):\n  return [\n    [x for i,x in enumerate(lst) if filter[i] == True],\n    [x for i,x in enumerate(lst) if filter[i] == False]\n  ]",
           "example": "bifurcate(['beep', 'boop', 'foo', 'bar'], [True, True, False, True]) # [ ['beep', 'boop', 'bar'], ['foo'] ]"
         },
         "tags": [
@@ -100,7 +100,7 @@
         ]
       },
       "meta": {
-        "hash": "49c7d4e1f7175d460074d776cfb0b534ddf753001b66d0e3cacc4177c59e994c"
+        "hash": "22c836b50fafc995904cc69096235ef9fb4c77a6faf38c4c5a4a88b2ed2126a8"
       }
     },
     {
@@ -111,7 +111,7 @@
         "fileName": "bifurcate_by.md",
         "text": "Splits values into two groups according to a function, which specifies which group an element in the input list belongs to. \nIf the function returns `True`, the element belongs to the first group; otherwise, it belongs to the second group.\n\nUse list comprehension to add elements to groups, based on `fn`.\n\n",
         "codeBlocks": {
-          "code": "def bifurcate_by(lst, fn):\r\n  return [\r\n    [x for x in lst if fn(x)],\r\n    [x for x in lst if not fn(x)]\r\n  ]",
+          "code": "def bifurcate_by(lst, fn):\n  return [\n    [x for x in lst if fn(x)],\n    [x for x in lst if not fn(x)]\n  ]",
           "example": "bifurcate_by(['beep', 'boop', 'foo', 'bar'], lambda x: x[0] == 'b') # [ ['beep', 'boop', 'bar'], ['foo'] ]"
         },
         "tags": [
@@ -121,7 +121,7 @@
         ]
       },
       "meta": {
-        "hash": "0975a7d514bc4f5c1c13731165b1a43e43b9dc0eff289fffdfdd4d67af92e23b"
+        "hash": "2e62d552ca03ff9bc39f920f4e24745945729ba35acc8ba75267b315a9b43563"
       }
     },
     {
@@ -132,8 +132,8 @@
         "fileName": "byte_size.md",
         "text": "Returns the length of a string in bytes.\n\nUse `string.encode('utf-8')` to encode the given string and return its length.\n\n",
         "codeBlocks": {
-          "code": "def byte_size(string):\r\n  return len(string.encode('utf-8'))",
-          "example": "byte_size('😀') # 4\r\nbyte_size('Hello World') # 11"
+          "code": "def byte_size(string):\n  return len(string.encode('utf-8'))",
+          "example": "byte_size('😀') # 4\nbyte_size('Hello World') # 11"
         },
         "tags": [
           "string",
@@ -141,7 +141,7 @@
         ]
       },
       "meta": {
-        "hash": "a80c7f1115762fffeaee2b4d75e36ce88dd288bdb4a99ae9c68c038223cbe00e"
+        "hash": "ff655042992e2a6cded2c39439eca6a6542e4d7b4d019c9c8721fa61be6ccdb8"
       }
     },
     {
@@ -152,8 +152,8 @@
         "fileName": "camel.md",
         "text": "Converts a string to camelcase.\n\nBreak the string into words and combine them capitalizing the first letter of each word, using a regexp.\n\n",
         "codeBlocks": {
-          "code": "import re\r\n\r\ndef camel(str):\r\n  s = re.sub(r\"(\\s|_|-)+\",\"\",\r\n    re.sub(r\"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+\",\r\n    lambda mo: mo.group(0)[0].upper() + mo.group(0)[1:].lower(),str)\r\n  )\r\n  return s[0].lower() + s[1:]",
-          "example": "camel('some_database_field_name'); # 'someDatabaseFieldName'\r\ncamel('Some label that needs to be camelized'); # 'someLabelThatNeedsToBeCamelized'\r\ncamel('some-javascript-property'); # 'someJavascriptProperty'\r\ncamel('some-mixed_string with spaces_underscores-and-hyphens'); # 'someMixedStringWithSpacesUnderscoresAndHyphens'"
+          "code": "import re\n\ndef camel(str):\n  s = re.sub(r\"(\\s|_|-)+\",\"\",\n    re.sub(r\"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+\",\n    lambda mo: mo.group(0)[0].upper() + mo.group(0)[1:].lower(),str)\n  )\n  return s[0].lower() + s[1:]",
+          "example": "camel('some_database_field_name'); # 'someDatabaseFieldName'\ncamel('Some label that needs to be camelized'); # 'someLabelThatNeedsToBeCamelized'\ncamel('some-javascript-property'); # 'someJavascriptProperty'\ncamel('some-mixed_string with spaces_underscores-and-hyphens'); # 'someMixedStringWithSpacesUnderscoresAndHyphens'"
         },
         "tags": [
           "string",
@@ -162,7 +162,7 @@
         ]
       },
       "meta": {
-        "hash": "e003dc4980414b0731c01d4b4bf3f08774c3588de95bf38c17ad0e08bb1bd838"
+        "hash": "16822294cd8f146d495471811b20e34f96a201be2613b2b6103c8005d0563b03"
       }
     },
     {
@@ -173,8 +173,8 @@
         "fileName": "capitalize.md",
         "text": "Capitalizes the first letter of a string.\n\nCapitalize the first letter of the string and then add it with rest of the string. \nOmit the `lower_rest` parameter to keep the rest of the string intact, or set it to `True` to convert to lowercase.\n\n",
         "codeBlocks": {
-          "code": "def capitalize(string, lower_rest=False):\r\n  return string[:1].upper() + (string[1:].lower() if lower_rest else string[1:])",
-          "example": "capitalize('fooBar') # 'FooBar'\r\ncapitalize('fooBar', True) # 'Foobar'"
+          "code": "def capitalize(string, lower_rest=False):\n  return string[:1].upper() + (string[1:].lower() if lower_rest else string[1:])",
+          "example": "capitalize('fooBar') # 'FooBar'\ncapitalize('fooBar', True) # 'Foobar'"
         },
         "tags": [
           "string",
@@ -182,7 +182,7 @@
         ]
       },
       "meta": {
-        "hash": "830372b0e6a7a008c1ee9ec4ef11c6063ff14b94b09b4b081d220079fa89e2aa"
+        "hash": "f4b0ecfe5d6eb18a65699fbe706737723c2c0de6a16e07e4c7686e9ecbad29c5"
       }
     },
     {
@@ -193,7 +193,7 @@
         "fileName": "capitalize_every_word.md",
         "text": "Capitalizes the first letter of every word in a string.\n\nUse `string.title()` to capitalize first letter of every word in the string.\n\n",
         "codeBlocks": {
-          "code": "def capitalize_every_word(string):\r\n  return string.title()",
+          "code": "def capitalize_every_word(string):\n  return string.title()",
           "example": "capitalize_every_word('hello world!') # 'Hello World!'"
         },
         "tags": [
@@ -202,7 +202,7 @@
         ]
       },
       "meta": {
-        "hash": "699eb144ef3a23fbc4375096ac28535f809b4fc5bd4a493dfbf0f7e8df61a446"
+        "hash": "ec399b1f2bcb0888956d1ecb40fd509f22ba902cd7f3c53af02729d52f021f86"
       }
     },
     {
@@ -213,8 +213,8 @@
         "fileName": "cast_list.md",
         "text": "Casts the provided value as an array if it's not one.\n\nUse `isinstance()` to check if the given value is a list and return it as-is or encapsulated in a list accordingly.\n\n",
         "codeBlocks": {
-          "code": "def cast_list(val):\r\n  return val if isinstance(val, list) else [val]",
-          "example": "cast_list('foo'); # ['foo']\r\ncast_list([1]); # [1]"
+          "code": "def cast_list(val):\n  return val if isinstance(val, list) else [val]",
+          "example": "cast_list('foo'); # ['foo']\ncast_list([1]); # [1]"
         },
         "tags": [
           "utility",
@@ -223,7 +223,7 @@
         ]
       },
       "meta": {
-        "hash": "9403a0321a9fcb907a18cadf8283be3ecf89a7a51e8679978e26cfb050918ced"
+        "hash": "4a9cb79c384099543163d3b1b7e2fa389a4cc373b2b76b17563a4597ed29a4c7"
       }
     },
     {
@@ -234,7 +234,7 @@
         "fileName": "chunk.md",
         "text": "Chunks a list into smaller lists of a specified size.\n\nUse `list()` and `range()` to create a list of the desired `size`.\nUse `map()` on the list and fill it with splices of the given list.\nFinally, return use created list.\n\n",
         "codeBlocks": {
-          "code": "from math import ceil\r\n\r\ndef chunk(lst, size):\r\n  return list(\r\n    map(lambda x: lst[x * size:x * size + size],\r\n      list(range(0, ceil(len(lst) / size)))))",
+          "code": "from math import ceil\n\ndef chunk(lst, size):\n  return list(\n    map(lambda x: lst[x * size:x * size + size],\n      list(range(0, ceil(len(lst) / size)))))",
           "example": "chunk([1,2,3,4,5],2) # [[1,2],[3,4],5]"
         },
         "tags": [
@@ -243,7 +243,7 @@
         ]
       },
       "meta": {
-        "hash": "3a27343fc9afa6666e7ab4b015ebe883c083fbd37841058a37bb0e143d11b1ff"
+        "hash": "f8c9cdb2261bfe2932bc7d3d11853a3d42d468a88ad515e9f15d9abffe9b30a6"
       }
     },
     {
@@ -254,8 +254,8 @@
         "fileName": "clamp_number.md",
         "text": "Clamps `num` within the inclusive range specified by the boundary values `a` and `b`.\n\nIf `num` falls within the range, return `num`. \nOtherwise, return the nearest number in the range.\n\n",
         "codeBlocks": {
-          "code": "def clamp_number(num,a,b):\r\n  return max(min(num, max(a,b)),min(a,b))",
-          "example": "clamp_number(2, 3, 5) # 3\r\nclamp_number(1, -1, -5) # -1"
+          "code": "def clamp_number(num,a,b):\n  return max(min(num, max(a,b)),min(a,b))",
+          "example": "clamp_number(2, 3, 5) # 3\nclamp_number(1, -1, -5) # -1"
         },
         "tags": [
           "math",
@@ -263,7 +263,7 @@
         ]
       },
       "meta": {
-        "hash": "20549e07442c96474df3db5824f7ac9eb8f1763234ef4abb0b500845cb71383d"
+        "hash": "7e3dc4519a629ec87f72e5b495227733735c9c2262e5f6a89264191967cfad31"
       }
     },
     {
@@ -274,7 +274,7 @@
         "fileName": "compact.md",
         "text": "Removes falsey values from a list.\n\nUse `filter()` to filter out falsey values (`False`, `None`, `0`, and `\"\"`).\n\n",
         "codeBlocks": {
-          "code": "def compact(lst):\r\n  return list(filter(bool, lst))",
+          "code": "def compact(lst):\n  return list(filter(bool, lst))",
           "example": "compact([0, 1, False, 2, '', 3, 'a', 's', 34]) # [ 1, 2, 3, 'a', 's', 34 ]"
         },
         "tags": [
@@ -283,7 +283,7 @@
         ]
       },
       "meta": {
-        "hash": "2cef075bcbeb781fdfd9a2284f04281922c50c79273e90b1d6fa858b06c8fb60"
+        "hash": "6b98c58b6aecf1b58ed36f55a407bf2f2d68938723d37472fe43d9e652d93fe6"
       }
     },
     {
@@ -294,8 +294,8 @@
         "fileName": "count_by.md",
         "text": "Groups the elements of a list based on the given function and returns the count of elements in each group.\n\nUse `map()` to map the values of the given list using the given function.\nIterate over the map and increase the element count each time it occurs.\n\n",
         "codeBlocks": {
-          "code": "def count_by(arr, fn=lambda x: x):\r\n  key = {}\r\n  for el in map(fn, arr):\r\n    key[el] = 0 if el not in key else key[el]\r\n    key[el] += 1\r\n  return key",
-          "example": "from math import floor\r\ncount_by([6.1, 4.2, 6.3], floor) # {4: 1, 6: 2}\r\ncount_by(['one', 'two', 'three'], len) # {3: 2, 5: 1}"
+          "code": "def count_by(arr, fn=lambda x: x):\n  key = {}\n  for el in map(fn, arr):\n    key[el] = 0 if el not in key else key[el]\n    key[el] += 1\n  return key",
+          "example": "from math import floor\ncount_by([6.1, 4.2, 6.3], floor) # {4: 1, 6: 2}\ncount_by(['one', 'two', 'three'], len) # {3: 2, 5: 1}"
         },
         "tags": [
           "list",
@@ -303,7 +303,7 @@
         ]
       },
       "meta": {
-        "hash": "b5b6656857a0c11b88b579c1f91451b78f7f2bd5c9eb209df7f15d4885d6bbc0"
+        "hash": "e78cb9229a2bc4c882fa7d901dbdee6ca9c33bde348650210afb210d3b98e1f6"
       }
     },
     {
@@ -314,7 +314,7 @@
         "fileName": "count_occurences.md",
         "text": "Counts the occurrences of a value in a list.\n\nIncrement a counter for every item in the list that has the given value and is of the same type.\n\n",
         "codeBlocks": {
-          "code": "def count_occurrences(lst, val):\r\n  return len([x for x in lst if x == val and type(x) == type(val)])",
+          "code": "def count_occurrences(lst, val):\n  return len([x for x in lst if x == val and type(x) == type(val)])",
           "example": "count_occurrences([1, 1, 2, 1, 2, 3], 1) # 3"
         },
         "tags": [
@@ -323,7 +323,7 @@
         ]
       },
       "meta": {
-        "hash": "9bd71bbccb9b18b35856360e4ccc7ae477ec7cd7e8363fc851ec3eac49813334"
+        "hash": "eee88217431699369070beb38ca0265d963c78321bfd98de9e3a38533c6ee90e"
       }
     },
     {
@@ -334,8 +334,8 @@
         "fileName": "decapitalize.md",
         "text": "Decapitalizes the first letter of a string.\n\nDecapitalize the first letter of the string and then add it with rest of the string. \nOmit the `upper_rest` parameter to keep the rest of the string intact, or set it to `True` to convert to uppercase.\n\n",
         "codeBlocks": {
-          "code": "def decapitalize(string, upper_rest=False):\r\n  return str[:1].lower() + (str[1:].upper() if upper_rest else str[1:])",
-          "example": "decapitalize('FooBar') # 'fooBar'\r\ndecapitalize('FooBar', True) # 'fOOBAR'"
+          "code": "def decapitalize(string, upper_rest=False):\n  return str[:1].lower() + (str[1:].upper() if upper_rest else str[1:])",
+          "example": "decapitalize('FooBar') # 'fooBar'\ndecapitalize('FooBar', True) # 'fOOBAR'"
         },
         "tags": [
           "string",
@@ -343,7 +343,7 @@
         ]
       },
       "meta": {
-        "hash": "05d4132e66af5a615c220781d247b7050445e001e76455343760a85e62edd106"
+        "hash": "aea9a271d47a5606912e2482b8cc6bfb7b7382c4d0c86545b194cc0ad5f342b5"
       }
     },
     {
@@ -354,7 +354,7 @@
         "fileName": "deep_flatten.md",
         "text": "Deep flattens a list.\n\nUse recursion. \nDefine a function, `spread`, that uses either `list.extend()` or `list.append()` on each element in a list to flatten it.\nUse `list.extend()` with an empty list and the `spread` function to flatten a list.\nRecursively flatten each element that is a list.\n\n",
         "codeBlocks": {
-          "code": "def spread(arg):\r\n  ret = []\r\n  for i in arg:\r\n    if isinstance(i, list):\r\n      ret.extend(i)\r\n    else:\r\n      ret.append(i)\r\n  return ret\r\n\r\ndef deep_flatten(lst):\r\n  result = []\r\n  result.extend(\r\n    spread(list(map(lambda x: deep_flatten(x) if type(x) == list else x, lst))))\r\n  return result",
+          "code": "def spread(arg):\n  ret = []\n  for i in arg:\n    if isinstance(i, list):\n      ret.extend(i)\n    else:\n      ret.append(i)\n  return ret\n\ndef deep_flatten(lst):\n  result = []\n  result.extend(\n    spread(list(map(lambda x: deep_flatten(x) if type(x) == list else x, lst))))\n  return result",
           "example": "deep_flatten([1, [2], [[3], 4], 5]) # [1,2,3,4,5]"
         },
         "tags": [
@@ -364,7 +364,7 @@
         ]
       },
       "meta": {
-        "hash": "3f0192a6f20dd5c0d4635f3e6f736fefbfe433f2cf4f36b3da12f8467f7704c0"
+        "hash": "a100d5704afe48a7dce26871bc50c993670d7388d8e4958c02c07efe07884167"
       }
     },
     {
@@ -375,7 +375,7 @@
         "fileName": "difference.md",
         "text": "Returns the difference between two iterables.\n\nCreate a `set` from `b`, then use list comprehension on `a` to only keep values not contained in the previously created set, `_b`.\n\n",
         "codeBlocks": {
-          "code": "def difference(a, b):\r\n  _b = set(b)\r\n  return [item for item in a if item not in _b]",
+          "code": "def difference(a, b):\n  _b = set(b)\n  return [item for item in a if item not in _b]",
           "example": "difference([1, 2, 3], [1, 2, 4]) # [3]"
         },
         "tags": [
@@ -384,7 +384,7 @@
         ]
       },
       "meta": {
-        "hash": "4b7b9afe16e5ffb48c84f267364ff5041598e59dce5fb7f3f165ad9835fb5175"
+        "hash": "479fcdba73e7429ccb82649a354159ad9008c63f852c960d6733c10ecafceae3"
       }
     },
     {
@@ -395,8 +395,8 @@
         "fileName": "difference_by.md",
         "text": "Returns the difference between two lists, after applying the provided function to each list element of both.\n\nCreate a `set` by applying `fn` to each element in `b`, then use list comprehension in combination with `fn` on `a` to only keep values not contained in the previously created set, `_b`.\n\n",
         "codeBlocks": {
-          "code": "def difference_by(a, b, fn):\r\n  _b = set(map(fn, b))\r\n  return [item for item in a if fn(item) not in _b]",
-          "example": "from math import floor\r\ndifference_by([2.1, 1.2], [2.3, 3.4],floor) # [1.2]\r\ndifference_by([{ 'x': 2 }, { 'x': 1 }], [{ 'x': 1 }], lambda v : v['x']) # [ { x: 2 } ]"
+          "code": "def difference_by(a, b, fn):\n  _b = set(map(fn, b))\n  return [item for item in a if fn(item) not in _b]",
+          "example": "from math import floor\ndifference_by([2.1, 1.2], [2.3, 3.4],floor) # [1.2]\ndifference_by([{ 'x': 2 }, { 'x': 1 }], [{ 'x': 1 }], lambda v : v['x']) # [ { x: 2 } ]"
         },
         "tags": [
           "list",
@@ -405,7 +405,7 @@
         ]
       },
       "meta": {
-        "hash": "67fcb3f28272e5c105374ce43a42382eba8ddb1c327989c102f82cc441ea0fe1"
+        "hash": "a240b4f3152f847cb5f3877ab2fa1f4b75259c5ce11e28a773ad34bdba14f0a8"
       }
     },
     {
@@ -416,7 +416,7 @@
         "fileName": "digitize.md",
         "text": "Converts a number to an array of digits.\n\nUse `map()` combined with `int` on the string representation of `n` and return a list from the result.\n\n",
         "codeBlocks": {
-          "code": "def digitize(n):\r\n  return list(map(int, str(n)))",
+          "code": "def digitize(n):\n  return list(map(int, str(n)))",
           "example": "digitize(123) # [1, 2, 3]"
         },
         "tags": [
@@ -426,7 +426,7 @@
         ]
       },
       "meta": {
-        "hash": "be2a8632262614ee14126e69efedbfb6517fdcc5c3453f859d8cd161d44e8b6e"
+        "hash": "576de2896d2565d44da5d42b4b57b37cf1b2e5fc69103ab48a9ed532040ffaf2"
       }
     },
     {
@@ -437,8 +437,8 @@
         "fileName": "every.md",
         "text": "Returns `True` if the provided function returns `True` for every element in the list, `False` otherwise.\n\nIterate over the elements of the list to test if every element in the list returns `True` based on `fn`.\nOmit the seconds argument, `fn`, to check if all elements are `True`.\n\n",
         "codeBlocks": {
-          "code": "def every(lst, fn=lambda x: not not x):\r\n  for el in lst:\r\n    if not fn(el):\r\n      return False\r\n  return True",
-          "example": "every([4, 2, 3], lambda x: x > 1) # True\r\nevery([1, 2, 3]) # True"
+          "code": "def every(lst, fn=lambda x: not not x):\n  for el in lst:\n    if not fn(el):\n      return False\n  return True",
+          "example": "every([4, 2, 3], lambda x: x > 1) # True\nevery([1, 2, 3]) # True"
         },
         "tags": [
           "list",
@@ -447,7 +447,7 @@
         ]
       },
       "meta": {
-        "hash": "1a444727bf46de6441f3ebc87508c8cd2b1280dc1d0659d00e46a012e703d9d6"
+        "hash": "8356afa6609f21bef9f48c7fb4b82553cae27d67c4bb4e31bfda98ee814cf269"
       }
     },
     {
@@ -458,7 +458,7 @@
         "fileName": "every_nth.md",
         "text": "Returns every nth element in a list.\n\nUse `[1::nth]` to create a new list that contains every nth element of the given list.\n\n",
         "codeBlocks": {
-          "code": "def every_nth(lst, nth):\r\n  return lst[1::nth]",
+          "code": "def every_nth(lst, nth):\n  return lst[1::nth]",
           "example": "every_nth([1, 2, 3, 4, 5, 6], 2) # [ 2, 4, 6 ]"
         },
         "tags": [
@@ -467,7 +467,7 @@
         ]
       },
       "meta": {
-        "hash": "b0e4ab30cc730950401ab4291ce404b37132bc32bdeebbac1de871c581a55919"
+        "hash": "d5c51547b66fcd9d42def2a6d92ba98429a12c6bec56a0dca8e4c0289525d5de"
       }
     },
     {
@@ -478,7 +478,7 @@
         "fileName": "factorial.md",
         "text": "Calculates the factorial of a number.\n\nUse recursion. \nIf `num` is less than or equal to `1`, return `1`. \nOtherwise, return the product of `num` and the factorial of `num - 1`. \nThrows an exception if `num` is a negative or a floating point number.\n\n",
         "codeBlocks": {
-          "code": "def factorial(num):\r\n  if not ((num >= 0) & (num % 1 == 0)):\r\n    raise Exception(\r\n      f\"Number( {num} ) can't be floating point or negative \")\r\n  return 1 if num == 0 else num * factorial(num - 1)",
+          "code": "def factorial(num):\n  if not ((num >= 0) & (num % 1 == 0)):\n    raise Exception(\n      f\"Number( {num} ) can't be floating point or negative \")\n  return 1 if num == 0 else num * factorial(num - 1)",
           "example": "factorial(6) # 720"
         },
         "tags": [
@@ -488,7 +488,7 @@
         ]
       },
       "meta": {
-        "hash": "e22b08efd49d4bba2cef3f7d2315e55a36223d7c861c19eaa23ca1b2ba72dc5b"
+        "hash": "3241103df06912913bbcfb51e03c1d355a7329e367aa9d4f6a770683bc196df8"
       }
     },
     {
@@ -520,7 +520,7 @@
         "fileName": "filter_non_unique.md",
         "text": "Filters out the non-unique values in a list.\n\nUse list comprehension and `list.count()` to create a list containing only the unique values.\n\n",
         "codeBlocks": {
-          "code": "def filter_non_unique(lst):\r\n  return [item for item in lst if lst.count(item) == 1]",
+          "code": "def filter_non_unique(lst):\n  return [item for item in lst if lst.count(item) == 1]",
           "example": "filter_non_unique([1, 2, 2, 3, 4, 4, 5]) # [1, 3, 5]"
         },
         "tags": [
@@ -529,7 +529,7 @@
         ]
       },
       "meta": {
-        "hash": "1bbae73c12dc8ee2bf80e93b2328d8f5138e603fa0ea381999fc388a25cdb107"
+        "hash": "05679ae115d276830ec769a04b0800d92eabc6a09678fc1a9cf6013c813cc650"
       }
     },
     {
@@ -540,7 +540,7 @@
         "fileName": "gcd.md",
         "text": "Calculates the greatest common divisor of a list of numbers.\n\nUse `reduce()` and `math.gcd` over the given list.\n\n",
         "codeBlocks": {
-          "code": "from functools import reduce\r\nimport math\r\n\r\ndef gcd(numbers):\r\n  return reduce(math.gcd, numbers)",
+          "code": "from functools import reduce\nimport math\n\ndef gcd(numbers):\n  return reduce(math.gcd, numbers)",
           "example": "gcd([8,36,28]) # 4"
         },
         "tags": [
@@ -549,7 +549,7 @@
         ]
       },
       "meta": {
-        "hash": "ab1de2550801b4c4c2ab773912ea60553a9ef46d5928c879964432825aa6e7e3"
+        "hash": "dbb01e7253dbb6f3e2f53271fc14fb7b3ee9816fe56266f78a54b4ca21c94cd7"
       }
     },
     {
@@ -560,8 +560,8 @@
         "fileName": "group_by.md",
         "text": "Groups the elements of a list based on the given function.\n\nUse `list()` in combination with `map()` and `fn` to map the values of the list to the keys of an object.\nUse list comprehension to map each element to the appropriate `key`.\n\n",
         "codeBlocks": {
-          "code": "def group_by(lst, fn):\r\n  groups = {}\r\n  for key in list(map(fn,lst)):\r\n    groups[key] = [item for item in lst if fn(item) == key]\r\n  return groups",
-          "example": "import math\r\ngroup_by([6.1, 4.2, 6.3], math.floor); # {4: [4.2], 6: [6.1, 6.3]}\r\ngroup_by(['one', 'two', 'three'], 'length'); # {3: ['one', 'two'], 5: ['three']}"
+          "code": "def group_by(lst, fn):\n  groups = {}\n  for key in list(map(fn,lst)):\n    groups[key] = [item for item in lst if fn(item) == key]\n  return groups",
+          "example": "import math\ngroup_by([6.1, 4.2, 6.3], math.floor); # {4: [4.2], 6: [6.1, 6.3]}\ngroup_by(['one', 'two', 'three'], 'length'); # {3: ['one', 'two'], 5: ['three']}"
         },
         "tags": [
           "list",
@@ -570,7 +570,7 @@
         ]
       },
       "meta": {
-        "hash": "592f01a019379e6e1eeca55406a923930ab77133a5653febb585847ed387df58"
+        "hash": "e103229c295cbfcbf26b5529b068e382bb0a1a04e080311e46302721841bbfe0"
       }
     },
     {
@@ -581,8 +581,8 @@
         "fileName": "has_duplicates.md",
         "text": "Returns `True` if there are duplicate values in a flast list, `False` otherwise.\n\nUse `set()` on the given list to remove duplicates, compare its length with the length of the list.\n\n",
         "codeBlocks": {
-          "code": "def has_duplicates(lst):\r\n  return len(lst) != len(set(lst))",
-          "example": "x = [1,2,3,4,5,5]\r\ny = [1,2,3,4,5]\r\nhas_duplicates(x) # True\r\nhas_duplicates(y) # False"
+          "code": "def has_duplicates(lst):\n  return len(lst) != len(set(lst))",
+          "example": "x = [1,2,3,4,5,5]\ny = [1,2,3,4,5]\nhas_duplicates(x) # True\nhas_duplicates(y) # False"
         },
         "tags": [
           "list",
@@ -590,7 +590,7 @@
         ]
       },
       "meta": {
-        "hash": "8aa2f1de87b94cb1eb6cdc0c048d051aae9d5561b8e6ca92b66c4543c8e24cd5"
+        "hash": "762663e25e978ee96720d6fd977e4ca42b328150fa654d0e600c636284552712"
       }
     },
     {
@@ -601,7 +601,7 @@
         "fileName": "head.md",
         "text": "Returns the head of a list.\n\nuse `lst[0]` to return the first element of the passed list.\n\n",
         "codeBlocks": {
-          "code": "def head(lst):\r\n  return lst[0]",
+          "code": "def head(lst):\n  return lst[0]",
           "example": "head([1, 2, 3]); # 1"
         },
         "tags": [
@@ -610,7 +610,7 @@
         ]
       },
       "meta": {
-        "hash": "079183a15856f39a61ea1c375a272565e3f70826f2579eaa66683f06aca7205b"
+        "hash": "6c86b52c2c7a56a4527114736664a3720b2026d2419b87daf36de6877ad0e4b0"
       }
     },
     {
@@ -621,8 +621,8 @@
         "fileName": "in_range.md",
         "text": "Checks if the given number falls within the given range.\n\nUse arithmetic comparison to check if the given number is in the specified range.\nIf the second parameter, `end`, is not specified, the range is considered to be from `0` to `start`.\n\n",
         "codeBlocks": {
-          "code": "def in_range(n, start, end = 0):\r\n  if (start > end):\r\n    end, start = start, end\r\n  return start <= n <= end",
-          "example": "in_range(3, 2, 5); # True\r\nin_range(3, 4); # True\r\nin_range(2, 3, 5); # False\r\nin_range(3, 2); # False"
+          "code": "def in_range(n, start, end = 0):\n  if (start > end):\n    end, start = start, end\n  return start <= n <= end",
+          "example": "in_range(3, 2, 5); # True\nin_range(3, 4); # True\nin_range(2, 3, 5); # False\nin_range(3, 2); # False"
         },
         "tags": [
           "math",
@@ -630,7 +630,7 @@
         ]
       },
       "meta": {
-        "hash": "d3d40fb3ff5df9a9bb70b825b91952ca16ed4033fae94a1ea0eac7f64566a989"
+        "hash": "f65d098189837551aef365c68bd9389a0c1e84e89233fa5a886e889ce6981f9f"
       }
     },
     {
@@ -641,7 +641,7 @@
         "fileName": "initial.md",
         "text": "Returns all the elements of a list except the last one.\n\nUse `lst[0:-1]` to return all but the last element of the list.\n\n",
         "codeBlocks": {
-          "code": "def initial(lst):\r\n  return lst[0:-1]",
+          "code": "def initial(lst):\n  return lst[0:-1]",
           "example": "initial([1, 2, 3]); # [1,2]"
         },
         "tags": [
@@ -650,7 +650,7 @@
         ]
       },
       "meta": {
-        "hash": "792086091d9aa9180f447ee3fb0d606f2dbc38c2b917d1c7a610d32071d40cc2"
+        "hash": "cf0229dd484711e5847d85952841a13800bb5e0767c1de40e219f63cfed3e0f1"
       }
     },
     {
@@ -661,7 +661,7 @@
         "fileName": "initialiaze_2d_list.md",
         "text": "Initializes a 2D list of given width and height and value.\n\nUse list comprehension and `range()` to generate `h` rows where each is a list with length `h`, initialized with `val`.\nIf `val` is not provided, default to `None`.\n\nExplain briefly how the snippet works.\n\n",
         "codeBlocks": {
-          "code": "def initialize_2d_list(w,h, val = None):\r\n  return [[val for x in range(w)] for y in range(h)]",
+          "code": "def initialize_2d_list(w,h, val = None):\n  return [[val for x in range(w)] for y in range(h)]",
           "example": "initialize_2d_list(2, 2, 0) # [[0,0], [0,0]]"
         },
         "tags": [
@@ -670,7 +670,7 @@
         ]
       },
       "meta": {
-        "hash": "e141f00ba64f6308c0563ff6132191a798a14fe7783be884ab46bf698892c8cc"
+        "hash": "a848fc33363ab533f745e081d885b4c981716ae063867ea9a2b471fd8fc92ac7"
       }
     },
     {
@@ -681,8 +681,8 @@
         "fileName": "initialize_list_with_range.md",
         "text": "Initializes a list containing the numbers in the specified range where `start` and `end` are inclusive with their common difference `step`.\n\nUse list comprehension and `range()` to generate a list of the appropriate length, filled with the desired values in the given range.\nOmit `start` to use the default value of `0`.\nOmit `step` to use the default value of `1`.\n\n",
         "codeBlocks": {
-          "code": "def initialize_list_with_range(end, start = 0, step = 1):\r\n  return [x for x in range(start, end + 1, step)]",
-          "example": "initialize_list_with_range(5) # [0, 1, 2, 3, 4, 5]\r\ninitialize_list_with_range(7,3) # [3, 4, 5, 6, 7]\r\ninitialize_list_with_range(9,0,2) # [0, 2, 4, 6, 8]"
+          "code": "def initialize_list_with_range(end, start = 0, step = 1):\n  return [x for x in range(start, end + 1, step)]",
+          "example": "initialize_list_with_range(5) # [0, 1, 2, 3, 4, 5]\ninitialize_list_with_range(7,3) # [3, 4, 5, 6, 7]\ninitialize_list_with_range(9,0,2) # [0, 2, 4, 6, 8]"
         },
         "tags": [
           "list",
@@ -690,7 +690,7 @@
         ]
       },
       "meta": {
-        "hash": "729784a5d236cb13fde71cab421a1487481d34f26e8acc3c923695ff972a965a"
+        "hash": "b68fef168bb92503e54278a95753fd48b3cb9f5151e17d36ce69c7eae298683c"
       }
     },
     {
@@ -701,7 +701,7 @@
         "fileName": "initialize_list_with_values.md",
         "text": "Initializes and fills a list with the specified value.\n\nUse list comprehension and `range()` to generate a list of length equal to `n`, filled with the desired values.\nOmit `val` to use the default value of `0`.\n\n",
         "codeBlocks": {
-          "code": "def initialize_list_with_values(n, val = 0):\r\n  return [val for x in range(n)]",
+          "code": "def initialize_list_with_values(n, val = 0):\n  return [val for x in range(n)]",
           "example": "initialize_list_with_values(5, 2) # [2, 2, 2, 2, 2]"
         },
         "tags": [
@@ -710,7 +710,7 @@
         ]
       },
       "meta": {
-        "hash": "a86132d77e383748415b694deff0f452f1ee22763a47ee8fa95a938faceec926"
+        "hash": "87604b968fccbc3d60399619b388f5939d646059db467fc2c86f99138f68b952"
       }
     },
     {
@@ -721,7 +721,7 @@
         "fileName": "intersection.md",
         "text": "Returns a list of elements that exist in both lists.\n\nCreate a `set` from `b`, then use list comprehension on `a` to only keep values contained in both lists.\n\n",
         "codeBlocks": {
-          "code": "def intersection(a, b):\r\n  _b = set(b)\r\n  return [item for item in a if item in _b]",
+          "code": "def intersection(a, b):\n  _b = set(b)\n  return [item for item in a if item in _b]",
           "example": "intersection([1, 2, 3], [4, 3, 2]) # [2, 3]"
         },
         "tags": [
@@ -730,7 +730,7 @@
         ]
       },
       "meta": {
-        "hash": "50509c3103ce76585b558ecd98a8833568795ecb260e5b9bf955245078a49af8"
+        "hash": "a332cce7b7d7e303469e8c39c4926bf92ecb12847c3932985cc633e3a85a23bb"
       }
     },
     {
@@ -741,8 +741,8 @@
         "fileName": "intersection_by.md",
         "text": "Returns a list of elements that exist in both lists, after applying the provided function to each list element of both.\n\nCreate a `set` by applying `fn` to each element in `b`, then use list comprehension in combination with `fn` on `a` to only keep values contained in both lists.\n\n",
         "codeBlocks": {
-          "code": "def intersection_by(a, b, fn):\r\n  _b = set(map(fn, b))\r\n  return [item for item in a if fn(item) in _b]",
-          "example": "from math import floor\r\nintersection_by([2.1, 1.2], [2.3, 3.4],floor) # [2.1]"
+          "code": "def intersection_by(a, b, fn):\n  _b = set(map(fn, b))\n  return [item for item in a if fn(item) in _b]",
+          "example": "from math import floor\nintersection_by([2.1, 1.2], [2.3, 3.4],floor) # [2.1]"
         },
         "tags": [
           "list",
@@ -751,7 +751,7 @@
         ]
       },
       "meta": {
-        "hash": "cde08163638452f63975589a3341c69e4621b364db22f6ab3d205bd895ad8b9a"
+        "hash": "eb4bff1a92a7848c8184531fee590e8f060a6d4f6ffe214aec4ccda7a5e18031"
       }
     },
     {
@@ -762,7 +762,7 @@
         "fileName": "is_anagram.md",
         "text": "Checks if a string is an anagram of another string (case-insensitive, ignores spaces, punctuation and special characters).\n\nUse `str.replace()` to remove spaces from both strings.\nCompare the lengths of the two strings, return `False` if they are not equal.\nUse `sorted()` on both strings and compare the results.\n\n",
         "codeBlocks": {
-          "code": "def is_anagram(str1, str2):\r\n  _str1, _str2 = str1.replace(\" \", \"\"), str2.replace(\" \", \"\")\r\n\r\n  if len(_str1) != len(_str2):\r\n    return False\r\n  else:\r\n    return sorted(_str1.lower()) == sorted(_str2.lower())",
+          "code": "def is_anagram(str1, str2):\n  _str1, _str2 = str1.replace(\" \", \"\"), str2.replace(\" \", \"\")\n\n  if len(_str1) != len(_str2):\n    return False\n  else:\n    return sorted(_str1.lower()) == sorted(_str2.lower())",
           "example": "is_anagram(\"anagram\", \"Nag a ram\")  # True"
         },
         "tags": [
@@ -771,7 +771,7 @@
         ]
       },
       "meta": {
-        "hash": "47c878d10f937760d9096ccedb10357df3ba1e87333fdc8256c9a6938994eef8"
+        "hash": "3080e22832c2a393f1546f4cff18b15b701fbe27dc2368fd26700a05f2f109a2"
       }
     },
     {
@@ -782,7 +782,7 @@
         "fileName": "is_divisible.md",
         "text": "Checks if the first numeric argument is divisible by the second one.\n\nUse the modulo operator (`%`) to check if the remainder is equal to `0`.\n\n",
         "codeBlocks": {
-          "code": "def is_divisible(dividend, divisor):\r\n  return dividend % divisor == 0",
+          "code": "def is_divisible(dividend, divisor):\n  return dividend % divisor == 0",
           "example": "is_divisible(6, 3) # True"
         },
         "tags": [
@@ -791,7 +791,7 @@
         ]
       },
       "meta": {
-        "hash": "0502ded5a0a750f7d4f03940d046a9f41ad0189a79ad7f42d9fe8ce9333b81e8"
+        "hash": "e6272becc36195e4b76f62baa61d43d9de5472201d1fb589e18bd5f47d6d57b0"
       }
     },
     {
@@ -802,7 +802,7 @@
         "fileName": "is_even.md",
         "text": "Returns `True` if the given number is even, `False` otherwise.\n\nChecks whether a number is odd or even using the modulo (`%`) operator. \nReturns `True` if the number is even, `False` if the number is odd.\n\n",
         "codeBlocks": {
-          "code": "def is_even(num):\r\n  return num % 2 == 0",
+          "code": "def is_even(num):\n  return num % 2 == 0",
           "example": "is_even(3) # False"
         },
         "tags": [
@@ -811,7 +811,7 @@
         ]
       },
       "meta": {
-        "hash": "0579f16d399d4ed57a52e6575633fe924d1b269268c2b1afe830f34ff0cf9a09"
+        "hash": "354d3fcfa67b5df106c0ff528246bfacd2d7cec4942a7c3a904d87e76d7dae11"
       }
     },
     {
@@ -822,8 +822,8 @@
         "fileName": "is_lower_case.md",
         "text": "Checks if a string is lower case.\n\nConvert the given string to lower case, using `str.lower()` and compare it to the original.\n\n",
         "codeBlocks": {
-          "code": "def is_lower_case(string):\r\n  return string == string.lower()",
-          "example": "is_lower_case('abc') # True\r\nis_lower_case('a3@$') # True\r\nis_lower_case('Ab4') # False"
+          "code": "def is_lower_case(string):\n  return string == string.lower()",
+          "example": "is_lower_case('abc') # True\nis_lower_case('a3@$') # True\nis_lower_case('Ab4') # False"
         },
         "tags": [
           "string",
@@ -832,7 +832,7 @@
         ]
       },
       "meta": {
-        "hash": "d84277f13e3250c2e9d8a6afd693d52a7383f29ea1fdf71bd5dd1f3d8d3a5baf"
+        "hash": "ed6b313aaf87ba7ea9515679eea19f395f7bbd90b9f8b85ef54ca527115fa690"
       }
     },
     {
@@ -843,7 +843,7 @@
         "fileName": "is_odd.md",
         "text": "Returns `True` if the given number is odd, `False` otherwise.\n\nChecks whether a number is even or odd using the modulo (`%`) operator. \nReturns `True` if the number is odd, `False` if the number is even.\n\n",
         "codeBlocks": {
-          "code": "def is_odd(num):\r\n  return num % 2 == `0`",
+          "code": "def is_odd(num):\n  return num % 2 == `0`",
           "example": "is_odd(3) # True"
         },
         "tags": [
@@ -852,7 +852,7 @@
         ]
       },
       "meta": {
-        "hash": "b112c57fecf98765d44027b570c3f9b9fb304d450584bdee477b558861380ab9"
+        "hash": "2670b3500855c72812593fd30692701798be1bb3a7a68c2bb65a273fdee5c95a"
       }
     },
     {
@@ -863,8 +863,8 @@
         "fileName": "is_upper_case.md",
         "text": "Checks if a string is upper case.\n\nConvert the given string to upper case, using `str.upper()` and compare it to the original.\n\n",
         "codeBlocks": {
-          "code": "def is_upper_case(string):\r\n  return string == string.upper()",
-          "example": "is_upper_case('ABC') # True\r\nis_upper_case('a3@$') # False\r\nis_upper_case('aB4') # False"
+          "code": "def is_upper_case(string):\n  return string == string.upper()",
+          "example": "is_upper_case('ABC') # True\nis_upper_case('a3@$') # False\nis_upper_case('aB4') # False"
         },
         "tags": [
           "string",
@@ -873,7 +873,7 @@
         ]
       },
       "meta": {
-        "hash": "fd01ad582630e68200df9317aa68877d4942412fab8ce123533460f4937203f2"
+        "hash": "106225722752b199f974c06aec91721344499e46dbf643e9f2ce990ee8c2d3c1"
       }
     },
     {
@@ -884,8 +884,8 @@
         "fileName": "kebab.md",
         "text": "Converts a string to kebab case.\n\nBreak the string into words and combine them adding `-` as a separator, using a regexp.\n\n",
         "codeBlocks": {
-          "code": "import re\r\n\r\ndef kebab(str):\r\n  return re.sub(r\"(\\s|_|-)+\",\"-\",\r\n    re.sub(r\"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+\",\r\n    lambda mo: mo.group(0).lower(),str)\r\n  )",
-          "example": "kebab('camelCase'); # 'camel-case'\r\nkebab('some text'); # 'some-text'\r\nkebab('some-mixed_string With spaces_underscores-and-hyphens'); # 'some-mixed-string-with-spaces-underscores-and-hyphens'\r\nkebab('AllThe-small Things'); # \"all-the-small-things\""
+          "code": "import re\n\ndef kebab(str):\n  return re.sub(r\"(\\s|_|-)+\",\"-\",\n    re.sub(r\"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+\",\n    lambda mo: mo.group(0).lower(),str)\n  )",
+          "example": "kebab('camelCase'); # 'camel-case'\nkebab('some text'); # 'some-text'\nkebab('some-mixed_string With spaces_underscores-and-hyphens'); # 'some-mixed-string-with-spaces-underscores-and-hyphens'\nkebab('AllThe-small Things'); # \"all-the-small-things\""
         },
         "tags": [
           "string",
@@ -894,7 +894,7 @@
         ]
       },
       "meta": {
-        "hash": "35f4a0ae7433cef616f137b696b909d7f5046685e64af70d59934f4d34e6c5d7"
+        "hash": "374b7c60d87e6fa52b1bb0176f9c762d8061262d0843cf82ad3ab1d4744ab22e"
       }
     },
     {
@@ -905,8 +905,8 @@
         "fileName": "keys_only.md",
         "text": "Returns a flat list of all the keys in a flat dictionary.\n\nUse `dict.keys()` to return the keys in the given dictionary.\nReturn a `list()` of the previous result.\n\n",
         "codeBlocks": {
-          "code": "def keys_only(flat_dict):\r\n  return list(flat_dict.keys())",
-          "example": "ages = {\r\n  \"Peter\": 10,\r\n  \"Isabel\": 11,\r\n  \"Anna\": 9,\r\n}\r\nkeys_only(ages) # ['Peter', 'Isabel', 'Anna']"
+          "code": "def keys_only(flat_dict):\n  return list(flat_dict.keys())",
+          "example": "ages = {\n  \"Peter\": 10,\n  \"Isabel\": 11,\n  \"Anna\": 9,\n}\nkeys_only(ages) # ['Peter', 'Isabel', 'Anna']"
         },
         "tags": [
           "object",
@@ -915,7 +915,7 @@
         ]
       },
       "meta": {
-        "hash": "f8cf88c53dd53b702bc504a2d36f9c9bddbe3bfdc0c2946909b9fd6de2370122"
+        "hash": "4e4a5b4892fcccb2982e7ae352f9d61fa0234c209431c9461ea47d503feaaf49"
       }
     },
     {
@@ -926,7 +926,7 @@
         "fileName": "last.md",
         "text": "Returns the last element in a list.\n\nuse `lst[-1]` to return the last element of the passed list.\n\n",
         "codeBlocks": {
-          "code": "def last(lst):\r\n  return lst[-1]",
+          "code": "def last(lst):\n  return lst[-1]",
           "example": "last([1, 2, 3]) # 3"
         },
         "tags": [
@@ -935,7 +935,7 @@
         ]
       },
       "meta": {
-        "hash": "7cefc731b24f3979e93354686c1ca91adebd7cfadc8cd903cbb784730fcce0d3"
+        "hash": "7fc339fbdb18e993fc93950b307fe2ec792c3f010f5dee0971d02288af16d67b"
       }
     },
     {
@@ -946,8 +946,8 @@
         "fileName": "lcm.md",
         "text": "Returns the least common multiple of two or more numbers.\n\nDefine a function, `spread`, that uses either `list.extend()` or `list.append()` on each element in a list to flatten it.\nUse `math.gcd()` and `lcm(x,y) = x * y / gcd(x,y)` to determine the least common multiple.\n\n",
         "codeBlocks": {
-          "code": "from functools import reduce\r\nimport math\r\n\r\ndef spread(arg):\r\n  ret = []\r\n  for i in arg:\r\n    if isinstance(i, list):\r\n      ret.extend(i)\r\n    else:\r\n      ret.append(i)\r\n  return ret\r\n\r\ndef lcm(*args):\r\n  numbers = []\r\n  numbers.extend(spread(list(args)))\r\n\r\n  def _lcm(x, y):\r\n    return int(x * y / math.gcd(x, y))\r\n\r\n  return reduce((lambda x, y: _lcm(x, y)), numbers)",
-          "example": "lcm(12, 7) # 84\r\nlcm([1, 3, 4], 5) # 60"
+          "code": "from functools import reduce\nimport math\n\ndef spread(arg):\n  ret = []\n  for i in arg:\n    if isinstance(i, list):\n      ret.extend(i)\n    else:\n      ret.append(i)\n  return ret\n\ndef lcm(*args):\n  numbers = []\n  numbers.extend(spread(list(args)))\n\n  def _lcm(x, y):\n    return int(x * y / math.gcd(x, y))\n\n  return reduce((lambda x, y: _lcm(x, y)), numbers)",
+          "example": "lcm(12, 7) # 84\nlcm([1, 3, 4], 5) # 60"
         },
         "tags": [
           "math",
@@ -957,7 +957,7 @@
         ]
       },
       "meta": {
-        "hash": "0365d1bab90dcf808af1c31671e3bb712b4fa0a975e95fb97450a1db6eb8e7f2"
+        "hash": "a0cf166fd37f16c6bcaef46345ff11af0dadb488160168a0915e665550f7a669"
       }
     },
     {
@@ -968,8 +968,8 @@
         "fileName": "longest_item.md",
         "text": "Takes any number of iterable objects or objects with a length property and returns the longest one. \nIf multiple objects have the same length, the first one will be returned.\n\nUse `max()` with `len` as the `key` to return the item with the greatest length.\n\n",
         "codeBlocks": {
-          "code": "def longest_item(*args):\r\n  return max(args, key = len)",
-          "example": "longest_item('this', 'is', 'a', 'testcase') # 'testcase'\r\nlongest_item([1, 2, 3], [1, 2], [1, 2, 3, 4, 5]) # [1, 2, 3, 4, 5]\r\nlongest_item([1, 2, 3], 'foobar') # 'foobar'"
+          "code": "def longest_item(*args):\n  return max(args, key = len)",
+          "example": "longest_item('this', 'is', 'a', 'testcase') # 'testcase'\nlongest_item([1, 2, 3], [1, 2], [1, 2, 3, 4, 5]) # [1, 2, 3, 4, 5]\nlongest_item([1, 2, 3], 'foobar') # 'foobar'"
         },
         "tags": [
           "list",
@@ -979,7 +979,7 @@
         ]
       },
       "meta": {
-        "hash": "fea8c001eb0d4a9c2bcd37b3e5fe5b636fec2fe0e937f1195bf1fec357d42e53"
+        "hash": "dd1a2d1300f23bb8f8618f9ab20dad11062f4476be80081e3cefc535717da818"
       }
     },
     {
@@ -990,8 +990,8 @@
         "fileName": "map_values.md",
         "text": "Creates an object with the same keys as the provided object and values generated by running the provided function for each value.\n\nUse `dict.keys()` to iterate over the object's keys, assigning the values produced by `fn` to each key of a new object.\n\n",
         "codeBlocks": {
-          "code": "def map_values(obj, fn):\r\n  ret = {}\r\n  for key in obj.keys():\r\n    ret[key] = fn(obj[key])\r\n  return ret",
-          "example": "users = {\r\n  'fred': { 'user': 'fred', 'age': 40 },\r\n  'pebbles': { 'user': 'pebbles', 'age': 1 }\r\n}\r\n\r\nmap_values(users, lambda u : u['age']) # {'fred': 40, 'pebbles': 1}"
+          "code": "def map_values(obj, fn):\n  ret = {}\n  for key in obj.keys():\n    ret[key] = fn(obj[key])\n  return ret",
+          "example": "users = {\n  'fred': { 'user': 'fred', 'age': 40 },\n  'pebbles': { 'user': 'pebbles', 'age': 1 }\n}\n\nmap_values(users, lambda u : u['age']) # {'fred': 40, 'pebbles': 1}"
         },
         "tags": [
           "object",
@@ -1000,7 +1000,7 @@
         ]
       },
       "meta": {
-        "hash": "8478ad6fd73b9c7c15d7243b0be989ada0159c694471a520076f953ebf986258"
+        "hash": "91f93e124e2f1fb9d25b62db478f91503330947a7c212dc97215dec8c4b225fe"
       }
     },
     {
@@ -1011,7 +1011,7 @@
         "fileName": "max_by.md",
         "text": "Returns the maximum value of a list, after mapping each element to a value using the provided function.\n\nUse `map()` with `fn` to map each element to a value using the provided function, convert to a `list` and use `max()` to return the maximum value.\n\n",
         "codeBlocks": {
-          "code": "def max_by(lst, fn):\r\n  return max(list(map(fn,lst)))",
+          "code": "def max_by(lst, fn):\n  return max(list(map(fn,lst)))",
           "example": "max_by([{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }], lambda v : v['n']) # 8"
         },
         "tags": [
@@ -1022,7 +1022,7 @@
         ]
       },
       "meta": {
-        "hash": "3538fe0c61f5ba76adc478a7a03603e227ae49209ff345f1a65e8163844e7024"
+        "hash": "2b9a695e5e8982d8bf6739fe682834dc715c4e5d62c00c433a137e6c659847eb"
       }
     },
     {
@@ -1033,8 +1033,8 @@
         "fileName": "max_n.md",
         "text": "Returns the `n` maximum elements from the provided list. \nIf `n` is greater than or equal to the provided list's length, then return the original list (sorted in descending order).\n\nUse `sorted() to sort the list, `[:n]` to get the specified number of elements.\nOmit the second argument, `n`, to get a one-element list.\n\n",
         "codeBlocks": {
-          "code": "def max_n(lst, n=1):\r\n  return sorted(lst, reverse=True)[:n]",
-          "example": "max_n([1, 2, 3]) # [3]\r\nmax_n([1, 2, 3], 2) # [3,2]"
+          "code": "def max_n(lst, n=1):\n  return sorted(lst, reverse=True)[:n]",
+          "example": "max_n([1, 2, 3]) # [3]\nmax_n([1, 2, 3], 2) # [3,2]"
         },
         "tags": [
           "list",
@@ -1043,7 +1043,7 @@
         ]
       },
       "meta": {
-        "hash": "779eb91b49e8f15d476fa067c4892bac0c63c962afa82ab42e7ef416c4a3d5a2"
+        "hash": "572897e2101454c75554f182d31b02182f296be88e10d8b41c15c7ac1e74ce25"
       }
     },
     {
@@ -1054,7 +1054,7 @@
         "fileName": "min_by.md",
         "text": "Returns the minimum value of a list, after mapping each element to a value using the provided function.\n\nUse `map()` with `fn` to map each element to a value using the provided function, convert to a `list` and use `min()` to return the minimum value.\n\n",
         "codeBlocks": {
-          "code": "def min_by(lst, fn):\r\n  return min(list(map(fn,lst)))",
+          "code": "def min_by(lst, fn):\n  return min(list(map(fn,lst)))",
           "example": "min_by([{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }], lambda v : v['n']) # 2"
         },
         "tags": [
@@ -1065,7 +1065,7 @@
         ]
       },
       "meta": {
-        "hash": "72812142d33c4328a3c69764b1ddde2ba4a64e0a6c10107b38835e1ef9d0655a"
+        "hash": "d203738604555c011870d9d43d6030846fd71d5421eb477d349e295f28c32b92"
       }
     },
     {
@@ -1076,8 +1076,8 @@
         "fileName": "min_n.md",
         "text": "Returns the `n` minimum elements from the provided list. \nIf `n` is greater than or equal to the provided list's length, then return the original list (sorted in ascending order).\n\nUse `sorted() to sort the list, `[:n]` to get the specified number of elements.\nOmit the second argument, `n`, to get a one-element list.\n\n",
         "codeBlocks": {
-          "code": "def min_n(lst, n=1):\r\n  return sorted(lst, reverse=False)[:n]",
-          "example": "min_n([1, 2, 3]) # [1]\r\nmin_n([1, 2, 3], 2) # [1,2]"
+          "code": "def min_n(lst, n=1):\n  return sorted(lst, reverse=False)[:n]",
+          "example": "min_n([1, 2, 3]) # [1]\nmin_n([1, 2, 3], 2) # [1,2]"
         },
         "tags": [
           "list",
@@ -1086,7 +1086,7 @@
         ]
       },
       "meta": {
-        "hash": "653535ca2eb51b2f792c529c4e8e96f99dcaceaf63b72c486c9b072fb5ea1a41"
+        "hash": "c920b58f01c63346e65eab83a60c4635d4c104e41767b9d41ad94029e662b902"
       }
     },
     {
@@ -1097,8 +1097,8 @@
         "fileName": "none.md",
         "text": "Returns `False` if the provided function returns `True` for at least one element in the list, `True` otherwise.\n\nIterate over the elements of the list to test if every element in the list returns `False` based on `fn`.\nOmit the seconds argument, `fn`, to check if all elements are `False`.\n\n",
         "codeBlocks": {
-          "code": "def none(lst, fn=lambda x: not not x):\r\n  for el in lst:\r\n    if fn(el):\r\n      return False\r\n  return True",
-          "example": "none([0, 1, 2, 0], lambda x: x >= 2 ) # False\r\nnone([0, 0, 0]) # True"
+          "code": "def none(lst, fn=lambda x: not not x):\n  for el in lst:\n    if fn(el):\n      return False\n  return True",
+          "example": "none([0, 1, 2, 0], lambda x: x >= 2 ) # False\nnone([0, 0, 0]) # True"
         },
         "tags": [
           "list",
@@ -1107,7 +1107,7 @@
         ]
       },
       "meta": {
-        "hash": "50d683ab59844b8de41fee0fb2ed3267e68c5c3020265b51b2f49f75bc3bd85e"
+        "hash": "2f345a768997fb0523dfbb775281ca0338a849032b5d8671d313c08f46f9b26e"
       }
     },
     {
@@ -1118,8 +1118,8 @@
         "fileName": "offset.md",
         "text": "Moves the specified amount of elements to the end of the list.\n\nUse `lst[offset:]` and `lst[:offset]` to get the two slices of the list and combine them before returning.\n\nExplain briefly how the snippet works.\n\n",
         "codeBlocks": {
-          "code": "def offset(lst, offset):\r\n  return lst[offset:] + lst[:offset]",
-          "example": "offset([1, 2, 3, 4, 5], 2) # [3, 4, 5, 1, 2]\r\noffset([1, 2, 3, 4, 5], -2) # [4, 5, 1, 2, 3]"
+          "code": "def offset(lst, offset):\n  return lst[offset:] + lst[:offset]",
+          "example": "offset([1, 2, 3, 4, 5], 2) # [3, 4, 5, 1, 2]\noffset([1, 2, 3, 4, 5], -2) # [4, 5, 1, 2, 3]"
         },
         "tags": [
           "list",
@@ -1127,7 +1127,7 @@
         ]
       },
       "meta": {
-        "hash": "e86853e988f5c40cd8ef95ef80da49fe9e40626ea754db4a83f5b68d9713afe9"
+        "hash": "86c03a0d8ea80a203414f79670fec491b232acd5448108c1858058df68833f42"
       }
     },
     {
@@ -1138,7 +1138,7 @@
         "fileName": "palindrome.md",
         "text": "Returns `True` if the given string is a palindrome, `False` otherwise.\n\nUse `str.lower()` and `re.sub()` to convert to lowercase and  remove non-alphanumeric characters from the given string. \nThen, compare the new string with its reverse.\n\n",
         "codeBlocks": {
-          "code": "from re import sub\r\n\r\ndef palindrome(string):\r\n  s = sub('[\\W_]', '', string.lower())\r\n  return s == s[::-1]",
+          "code": "from re import sub\n\ndef palindrome(string):\n  s = sub('[\\W_]', '', string.lower())\n  return s == s[::-1]",
           "example": "palindrome('taco cat') # True"
         },
         "tags": [
@@ -1147,7 +1147,7 @@
         ]
       },
       "meta": {
-        "hash": "2da6734174e371587baeebba432bc0f441f024211e900c4852fca7eeb08f89df"
+        "hash": "e707d6b2f27bcc3dda322b114199b2b22ea916871b1c657c43648ecb5b21240b"
       }
     },
     {
@@ -1158,8 +1158,8 @@
         "fileName": "rads_to_degrees.md",
         "text": "Converts an angle from radians to degrees.\n\nUse `math.pi` and the radian to degree formula to convert the angle from radians to degrees.\n\n",
         "codeBlocks": {
-          "code": "import math\r\n\r\ndef rads_to_degrees(rad):\r\n  return (rad * 180.0) / math.pi",
-          "example": "import math\r\nrads_to_degrees(math.pi / 2) # 90.0"
+          "code": "import math\n\ndef rads_to_degrees(rad):\n  return (rad * 180.0) / math.pi",
+          "example": "import math\nrads_to_degrees(math.pi / 2) # 90.0"
         },
         "tags": [
           "math",
@@ -1167,7 +1167,7 @@
         ]
       },
       "meta": {
-        "hash": "b5eac6740b6b78892d5978c26e44dc2747898c179f6d1e2c6f181f716ed4ee97"
+        "hash": "c3008a44f2eb31adaca3e4f91c29a56a955e3105f9c187aa055fc55c35874b41"
       }
     },
     {
@@ -1178,7 +1178,7 @@
         "fileName": "sample.md",
         "text": "Returns a random element from an array.\n\nUse `randint()` to generate a random number that corresponds to an index in the list, return the element at that index.\n\n",
         "codeBlocks": {
-          "code": "from random import randint\r\n\r\ndef sample(lst):\r\n  return lst[randint(0, len(lst) - 1)]",
+          "code": "from random import randint\n\ndef sample(lst):\n  return lst[randint(0, len(lst) - 1)]",
           "example": "sample([3, 7, 9, 11]) # 9"
         },
         "tags": [
@@ -1188,7 +1188,7 @@
         ]
       },
       "meta": {
-        "hash": "d8cf3ead7fde16fd0886baa5469ef55844848d25629c4fff011d1e27496b75ad"
+        "hash": "68c3a2f20c4969324199dc6005be573d95ec4d08747586bf26d0bf06b571c94c"
       }
     },
     {
@@ -1199,8 +1199,8 @@
         "fileName": "shuffle.md",
         "text": "Randomizes the order of the values of an list, returning a new list.\n\nUses the [Fisher-Yates algorithm](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle) to reorder the elements of the list.\n\n",
         "codeBlocks": {
-          "code": "from copy import deepcopy\r\nfrom random import randint\r\n\r\ndef shuffle(lst):\r\n  temp_lst = deepcopy(lst)\r\n  m = len(temp_lst)\r\n  while (m):\r\n    m -= 1\r\n    i = randint(0, m)\r\n    temp_lst[m], temp_lst[i] = temp_lst[i], temp_lst[m]\r\n  return temp_lst",
-          "example": "foo = [1,2,3]\r\nshuffle(foo) # [2,3,1] , foo = [1,2,3]"
+          "code": "from copy import deepcopy\nfrom random import randint\n\ndef shuffle(lst):\n  temp_lst = deepcopy(lst)\n  m = len(temp_lst)\n  while (m):\n    m -= 1\n    i = randint(0, m)\n    temp_lst[m], temp_lst[i] = temp_lst[i], temp_lst[m]\n  return temp_lst",
+          "example": "foo = [1,2,3]\nshuffle(foo) # [2,3,1] , foo = [1,2,3]"
         },
         "tags": [
           "list",
@@ -1209,7 +1209,7 @@
         ]
       },
       "meta": {
-        "hash": "e50c5b8daa558ff5ea7f2516a3e382f4e91bcf8ab5999041376020080dd916c0"
+        "hash": "8c6e1dafadd78f04b11d412b7b8db01e1275339adf906e2637129d761117e480"
       }
     },
     {
@@ -1220,7 +1220,7 @@
         "fileName": "similarity.md",
         "text": "Returns a list of elements that exist in both lists.\n\nUse list comprehension on `a` to only keep values contained in both lists.\n\n",
         "codeBlocks": {
-          "code": "def similarity(a, b):\r\n  return [item for item in a if item in b]",
+          "code": "def similarity(a, b):\n  return [item for item in a if item in b]",
           "example": "similarity([1, 2, 3], [1, 2, 4]) # [1, 2]"
         },
         "tags": [
@@ -1229,7 +1229,7 @@
         ]
       },
       "meta": {
-        "hash": "54faf1a5edfa2e6c1508635fa2492ad22978ac988b250acedd2cdb64670fc019"
+        "hash": "51e5a4fc0b3376f24804b51f71c3daed109b1e60535aa39bca44c1918fedaacf"
       }
     },
     {
@@ -1240,8 +1240,8 @@
         "fileName": "snake.md",
         "text": "Converts a string to snake case.\n\nBreak the string into words and combine them adding `_-_` as a separator, using a regexp.\n\n",
         "codeBlocks": {
-          "code": "import re\r\n\r\ndef snake(str):\r\n  return re.sub(r\"(\\s|_|-)+\",\"-\",\r\n    re.sub(r\"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+\",\r\n    lambda mo: mo.group(0).lower(),str)\r\n  )",
-          "example": "snake('camelCase'); # 'camel_case'\r\nsnake('some text'); # 'some_text'\r\nsnake('some-mixed_string With spaces_underscores-and-hyphens'); # 'some_mixed_string_with_spaces_underscores_and_hyphens'\r\nsnake('AllThe-small Things'); # \"all_the_smal_things\""
+          "code": "import re\n\ndef snake(str):\n  return re.sub(r\"(\\s|_|-)+\",\"-\",\n    re.sub(r\"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+\",\n    lambda mo: mo.group(0).lower(),str)\n  )",
+          "example": "snake('camelCase'); # 'camel_case'\nsnake('some text'); # 'some_text'\nsnake('some-mixed_string With spaces_underscores-and-hyphens'); # 'some_mixed_string_with_spaces_underscores_and_hyphens'\nsnake('AllThe-small Things'); # \"all_the_smal_things\""
         },
         "tags": [
           "string",
@@ -1250,7 +1250,7 @@
         ]
       },
       "meta": {
-        "hash": "c2a90128c4edf395cf659da0b2ad9ddccbf13eb19c900d4a8734bc98613096d8"
+        "hash": "feeb43ff081fec564133b44bd6c748bc219756c0178ef0df98a790bbbaf17d78"
       }
     },
     {
@@ -1261,8 +1261,8 @@
         "fileName": "some.md",
         "text": "Returns `True` if the provided function returns `True` for at least one element in the list, `False` otherwise.\n\nIterate over the elements of the list to test if every element in the list returns `True` based on `fn`.\nOmit the seconds argument, `fn`, to check if all elements are `True`.\n\n",
         "codeBlocks": {
-          "code": "def some(lst, fn=lambda x: not not x):\r\n  for el in lst:\r\n    if fn(el):\r\n      return True\r\n  return False",
-          "example": "some([0, 1, 2, 0], lambda x: x >= 2 ) # True\r\nsome([0, 0, 1, 0]) # True"
+          "code": "def some(lst, fn=lambda x: not not x):\n  for el in lst:\n    if fn(el):\n      return True\n  return False",
+          "example": "some([0, 1, 2, 0], lambda x: x >= 2 ) # True\nsome([0, 0, 1, 0]) # True"
         },
         "tags": [
           "list",
@@ -1271,7 +1271,7 @@
         ]
       },
       "meta": {
-        "hash": "aada6496416fff036ff40ae4a8555d4bc27d56a0ce869d0d4366c410beada2bc"
+        "hash": "5052bf5e5a38a8a928ea6b3e42cecda2027d2123dd5e47764b354eafd3310dee"
       }
     },
     {
@@ -1282,7 +1282,7 @@
         "fileName": "split_lines.md",
         "text": "Splits a multiline string into a list of lines.\n\nUse `str.split()` and `'\\n'` to match line breaks and create a list.\n\n",
         "codeBlocks": {
-          "code": "def split_lines(str):\r\n  str.split('\\n')",
+          "code": "def split_lines(str):\n  str.split('\\n')",
           "example": "split_lines('This\\nis a\\nmultiline\\nstring.\\n') # 'This\\nis a\\nmultiline\\nstring.\\n'"
         },
         "tags": [
@@ -1291,7 +1291,7 @@
         ]
       },
       "meta": {
-        "hash": "aa12646b6b9629fe38eb7b04bdc5a9fbff64b012d5b65fcac1e8d0a42a14fd05"
+        "hash": "9c8d9abb223e26561b4278e5b29c373a9196297143a504d353c7fbcd8c5102b2"
       }
     },
     {
@@ -1302,7 +1302,7 @@
         "fileName": "spread.md",
         "text": "Flattens a list, by spreading its elements into a new list.\n\nLoop over elements, use `list.extend()` if the element is a list, `list.append()` otherwise.\n\n",
         "codeBlocks": {
-          "code": "def spread(arg):\r\n  ret = []\r\n  for i in arg:\r\n    if isinstance(i, list):\r\n      ret.extend(i)\r\n    else:\r\n      ret.append(i)\r\n  return ret",
+          "code": "def spread(arg):\n  ret = []\n  for i in arg:\n    if isinstance(i, list):\n      ret.extend(i)\n    else:\n      ret.append(i)\n  return ret",
           "example": "spread([1,2,3,[4,5,6],[7],8,9]) # [1,2,3,4,5,6,7,8,9]"
         },
         "tags": [
@@ -1312,7 +1312,7 @@
         ]
       },
       "meta": {
-        "hash": "5e9cf0033df73310e23800b6d41677a8607342717d23ef661f17f559cae7a8d8"
+        "hash": "db09a105c21df08d2d580e95dd9d3f895a38e2e9b29818f78a671203ab94df38"
       }
     },
     {
@@ -1323,7 +1323,7 @@
         "fileName": "sum_by.md",
         "text": "Returns the sum of a list, after mapping each element to a value using the provided function.\n\nUse `map()` with `fn` to map each element to a value using the provided function, convert to a `list` and use `sum()` to return the sum of the values.\n\n",
         "codeBlocks": {
-          "code": "def sum_by(lst, fn):\r\n  return sum(list(map(fn,lst)))",
+          "code": "def sum_by(lst, fn):\n  return sum(list(map(fn,lst)))",
           "example": "sum_by([{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }], lambda v : v['n']) # 20"
         },
         "tags": [
@@ -1334,7 +1334,7 @@
         ]
       },
       "meta": {
-        "hash": "d97b4f2c69fafe781e6a0a72f2e41a2041ae960b2cb078b40a89ebba7464adab"
+        "hash": "99f5487bf6ed90107254caf6ac90c2f7930266203ae33e9b60de6d8ed1a2ba45"
       }
     },
     {
@@ -1345,7 +1345,7 @@
         "fileName": "symmetric_difference.md",
         "text": "Returns the symmetric difference between two iterables, without filtering out duplicate values.\n\nCreate a `set` from each list, then use list comprehension on each one to only keep values not contained in the previously created set of the other.\n\n",
         "codeBlocks": {
-          "code": "def symmetric_difference(a, b):\r\n  _a, _b = set(a), set(b)\r\n  return [item for item in a if item not in _b] + [item for item in b if item not in _a]",
+          "code": "def symmetric_difference(a, b):\n  _a, _b = set(a), set(b)\n  return [item for item in a if item not in _b] + [item for item in b if item not in _a]",
           "example": "symmetric_difference([1, 2, 3], [1, 2, 4]) # [3, 4]"
         },
         "tags": [
@@ -1354,7 +1354,7 @@
         ]
       },
       "meta": {
-        "hash": "b1b608eac070e1c51ded6494ba0a5291e3f2afaced5ea026201dac0a1ebdbe73"
+        "hash": "e5bb81e529740a7fbb9fe63eed33dc4ef390e7bc8c9c954a22ae3327f3d157ed"
       }
     },
     {
@@ -1365,8 +1365,8 @@
         "fileName": "symmetric_difference_by.md",
         "text": "Returns the symmetric difference between two lists, after applying the provided function to each list element of both.\n\nCreate a `set` by applying `fn` to each element in every list, then use list comprehension in combination with `fn` on each one to only keep values not contained in the previously created set of the other.\n\n",
         "codeBlocks": {
-          "code": "def symmetric_difference_by(a, b, fn):\r\n  _a, _b = set(map(fn, a)), set(map(fn, b))\r\n  return [item for item in a if fn(item) not in _b] + [item for item in b if fn(item) not in _a]",
-          "example": "from math import floor\r\nsymmetric_difference_by([2.1, 1.2], [2.3, 3.4],floor) # [1.2, 3.4]"
+          "code": "def symmetric_difference_by(a, b, fn):\n  _a, _b = set(map(fn, a)), set(map(fn, b))\n  return [item for item in a if fn(item) not in _b] + [item for item in b if fn(item) not in _a]",
+          "example": "from math import floor\nsymmetric_difference_by([2.1, 1.2], [2.3, 3.4],floor) # [1.2, 3.4]"
         },
         "tags": [
           "list",
@@ -1375,7 +1375,7 @@
         ]
       },
       "meta": {
-        "hash": "d6b4f42c3d08fee38e8674c6059e01deffeb74d943e9d89e0836a39fe19309cc"
+        "hash": "a3a978dbb2d7ffd0101b935484439b191fa432831f003faeefc05263eafc35e5"
       }
     },
     {
@@ -1386,8 +1386,8 @@
         "fileName": "tail.md",
         "text": "Returns all elements in a list except for the first one.\n\nReturn `lst[1:]` if the list's length is more than `1`, otherwise, return the whole list.\n\n",
         "codeBlocks": {
-          "code": "def tail(lst):\r\n  return lst[1:] if len(lst) > 1 else lst",
-          "example": "tail([1, 2, 3]); # [2,3]\r\ntail([1]); # [1]"
+          "code": "def tail(lst):\n  return lst[1:] if len(lst) > 1 else lst",
+          "example": "tail([1, 2, 3]); # [2,3]\ntail([1]); # [1]"
         },
         "tags": [
           "list",
@@ -1395,7 +1395,7 @@
         ]
       },
       "meta": {
-        "hash": "819f20907ca5f906b185988f32e06c1c39e9a39786dac76a3421c55c7f5327b1"
+        "hash": "f06acf219bcdfbacb9e86b01f91c7d68f6f8fa8a5a043c37cf33de4969c62eae"
       }
     },
     {
@@ -1406,7 +1406,7 @@
         "fileName": "union.md",
         "text": "Returns every element that exists in any of the two lists once.\n\nCreate a `set` with all values of `a` and `b` and convert to a `list`.\n\n",
         "codeBlocks": {
-          "code": "def union(a,b):\r\n  return list(set(a + b))",
+          "code": "def union(a,b):\n  return list(set(a + b))",
           "example": "union([1, 2, 3], [4, 3, 2]) # [1,2,3,4]"
         },
         "tags": [
@@ -1415,7 +1415,7 @@
         ]
       },
       "meta": {
-        "hash": "cf3bd4a569cce91769a1e4781a4317d93a023ec04658389532b00572fc3d2b7a"
+        "hash": "44b9cb979110c073c48a94d7054c8b17978f38962adbce5aa0aee794418ac7b1"
       }
     },
     {
@@ -1426,8 +1426,8 @@
         "fileName": "union_by.md",
         "text": "Returns every element that exists in any of the two lists once, after applying the provided function to each element of both.\n\nCreate a `set` by applying `fn` to each element in `a`, then use list comprehension in combination with `fn` on `b` to only keep values not contained in the previously created set, `_a`.\nFinally, create a `set` from the previous result and `a` and transform it into a `list`\n\n",
         "codeBlocks": {
-          "code": "def union_by(a,b,fn):\r\n  _a = set(map(fn, a))\r\n  return list(set(a + [item for item in b if fn(item) not in _a]))",
-          "example": "from math import floor\r\nunion_by([2.1], [1.2, 2.3], floor) # [2.1, 1.2]"
+          "code": "def union_by(a,b,fn):\n  _a = set(map(fn, a))\n  return list(set(a + [item for item in b if fn(item) not in _a]))",
+          "example": "from math import floor\nunion_by([2.1], [1.2, 2.3], floor) # [2.1, 1.2]"
         },
         "tags": [
           "list",
@@ -1436,7 +1436,7 @@
         ]
       },
       "meta": {
-        "hash": "0da21f57e2c6eb4efedcbcf555b00843c03df3f5c505de421a4b4d226a1f081e"
+        "hash": "3023e33e4d50e71bef58df25ceac3ed4dcb3f5027bc50868ae470654cdedc99a"
       }
     },
     {
@@ -1447,7 +1447,7 @@
         "fileName": "unique_elements.md",
         "text": "Returns the unique elements in a given list.\n\nCreate a `set` from the list to discard duplicated values, then return a `list` from it.\n\n",
         "codeBlocks": {
-          "code": "def unique_elements(li):\r\n  return list(set(li))",
+          "code": "def unique_elements(li):\n  return list(set(li))",
           "example": "unique_elements([1, 2, 2, 3, 4, 3]) # [1, 2, 3, 4]"
         },
         "tags": [
@@ -1456,7 +1456,7 @@
         ]
       },
       "meta": {
-        "hash": "3a1e3b5eb2b223a3b7b8cdcf96b961724d72ddd7d9e276f9fcd730572bd1bba2"
+        "hash": "1f28461c8bbf4ce0195c756b2f013e519a43fbdef8b6a3640eafab2a6cb20bc9"
       }
     },
     {
@@ -1467,8 +1467,8 @@
         "fileName": "values_only.md",
         "text": "Returns a flat list of all the values in a flat dictionary.\n\nUse `dict.values()` to return the values in the given dictionary.\nReturn a `list()` of the previous result.\n\n",
         "codeBlocks": {
-          "code": "def values_only(dict):\r\n  return list(flat_dict.values())",
-          "example": "ages = {\r\n  \"Peter\": 10,\r\n  \"Isabel\": 11,\r\n  \"Anna\": 9,\r\n}\r\nvalues_only(ages) # [10, 11, 9]"
+          "code": "def values_only(dict):\n  return list(flat_dict.values())",
+          "example": "ages = {\n  \"Peter\": 10,\n  \"Isabel\": 11,\n  \"Anna\": 9,\n}\nvalues_only(ages) # [10, 11, 9]"
         },
         "tags": [
           "object",
@@ -1477,7 +1477,7 @@
         ]
       },
       "meta": {
-        "hash": "be7662f58cb7e4a29f719939f58214192107a86d764cd2ef9fbf583ee6dc5f59"
+        "hash": "15dec93f30e55d25c07f9d5456d5e96f9b6a5a794d9a0874a39be0359a42c10f"
       }
     },
     {
@@ -1488,8 +1488,8 @@
         "fileName": "zip.md",
         "text": "Creates a list of elements, grouped based on the position in the original lists.\n\n\nUse `max` combined with `list comprehension` to get the length of the longest list in the arguments. \nLoop for `max_length` times grouping elements. \nIf lengths of `lists` vary, use `fill_value` (defaults to `None`). \n\n",
         "codeBlocks": {
-          "code": "def zip(*args, fillvalue=None):\r\n  max_length = max([len(lst) for lst in args])\r\n  result = []\r\n  for i in range(max_length):\r\n    result.append([\r\n      args[k][i] if i < len(args[k]) else fillvalue for k in range(len(args))\r\n    ])\r\n  return result",
-          "example": "zip(['a', 'b'], [1, 2], [True, False]) # [['a', 1, True], ['b', 2, False]]\r\nzip(['a'], [1, 2], [True, False]) # [['a', 1, True], [None, 2, False]]\r\nzip(['a'], [1, 2], [True, False], fill_value = '_') # [['a', 1, True], ['_', 2, False]]"
+          "code": "def zip(*args, fillvalue=None):\n  max_length = max([len(lst) for lst in args])\n  result = []\n  for i in range(max_length):\n    result.append([\n      args[k][i] if i < len(args[k]) else fillvalue for k in range(len(args))\n    ])\n  return result",
+          "example": "zip(['a', 'b'], [1, 2], [True, False]) # [['a', 1, True], ['b', 2, False]]\nzip(['a'], [1, 2], [True, False]) # [['a', 1, True], [None, 2, False]]\nzip(['a'], [1, 2], [True, False], fill_value = '_') # [['a', 1, True], ['_', 2, False]]"
         },
         "tags": [
           "list",
@@ -1498,7 +1498,7 @@
         ]
       },
       "meta": {
-        "hash": "44281b36c4ae79373b6266790741f21225e47c989e3bbfe232b939f5b69270c6"
+        "hash": "8c0dea46f260c7edfa363a0a295683d858c2011c9220b2d4fc53025a684388f0"
       }
     }
   ],
