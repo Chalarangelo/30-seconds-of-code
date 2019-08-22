@@ -18,8 +18,13 @@ Here's what you can do to help:
   - Use `snake_case`, not `kebab-case` or `camelCase`.
   - Avoid capitalization of words.
   -  Please follow the (PEP8)[https://www.python.org/dev/peps/pep-0008/] guidelines.
-- **Snippet titles** should have be the same as the name of the function that is present in the snippet.
-  - All snippet titles must be prefixed with `###` and be at the very first line of your snippet.
+- **Snippet metadata** must be included in all snippets in the form of frontmatter.
+  - All snippets must contain a title.
+  - All snippets must contain tags, prefixed with `tags:` and separated by commas (optional spaces in-between).
+  - Make sure the first tag in your snippet's tags is one of the main categories, as seen in the `README.md` file or the website.
+  - Snippet tags must include a difficulty setting (`begginer`, `intermediate` or `advanced`), preferrably at the end of the list.
+- **Snippet titles** should be the same as the name of the component or hook that is present in the snippet.
+  - All snippet titles must be prefixed with `title:` and be at the very first line of your snippet's frontmatter.
   - Snippet titles must be unique (although if you cannot find a better title, just add some placeholder at the end of the filename and title and we will figure it out).
   - Follow snippet titles with an empty line.
 - **Snippet descriptions** must be short and to the point. Try to explain *what* the snippet does and *how* the snippet works and what **inbuilt** features/modules are used. Remember to include what functions you are using and why.
