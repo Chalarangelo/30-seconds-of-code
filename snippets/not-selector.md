@@ -36,8 +36,7 @@ li:not(:last-child) {
 
 #### Explanation
 
-`li:not(:last-child)` specifies that the styles should apply to all `li` elements except
-the `:last-child`.
+- `li:not(:last-child)` specifies that the styles should apply to all `li` elements except the `:last-child`.
 
 #### Browser support
 

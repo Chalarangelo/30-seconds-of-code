@@ -32,7 +32,7 @@ p {
 
 #### Explanation
 
-Use the style of a `:before` pseudo-element to vertically align inline elements without changing their `position` property.
+- Use the style of a `:before` pseudo-element to vertically align inline elements without changing their `position` property.
 
 #### Browser support
 

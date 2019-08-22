@@ -37,8 +37,7 @@ If the text is longer than one line, it will be truncated for `n` lines and end 
 
 #### Explanation
 
-1. `overflow: hidden` prevents the text from overflowing its dimensions
-   (for a block, 100% width and auto height).
+1. `overflow: hidden` prevents the text from overflowing its dimensions (for a block, 100% width and auto height).
 2. `width: 400px` ensures the element has a dimension.
 3. `height: 109.2px` calculated value for height, it equals `font-size * line-height * numberOfLines` (in this case `26 * 1.4 * 3 = 109.2`)
 4. `height: 36.4px` calculated value for gradient container, it equals `font-size * line-height` (in this case `26 * 1.4 = 36.4`)

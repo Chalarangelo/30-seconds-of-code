@@ -159,19 +159,11 @@ Creates a bouncing loader animation.
 Note: `1rem` is usually `16px`.
 
 1. `@keyframes` defines an animation that has two states, where the element changes `opacity` and is translated up on the 2D plane using `transform: translate3d()`. Using a single axis translation on `transform: translate3d()` improves the performance of the animation.
-
-2. `.bouncing-loader` is the parent container of the bouncing circles and uses `display: flex`
-   and `justify-content: center` to position them in the center.
-
+2. `.bouncing-loader` is the parent container of the bouncing circles and uses `display: flex` and `justify-content: center` to position them in the center.
 3. `.bouncing-loader > div`, targets the three child `div`s of the parent to be styled. The `div`s are given a width and height of `1rem`, using `border-radius: 50%` to turn them from squares to circles.
-
-4. `margin: 3rem 0.2rem` specifies that each circle has a top/bottom margin of `3rem` and left/right margin
-   of `0.2rem` so that they do not directly touch each other, giving them some breathing room.
-
+4. `margin: 3rem 0.2rem` specifies that each circle has a top/bottom margin of `3rem` and left/right margin of `0.2rem` so that they do not directly touch each other, giving them some breathing room.
 5. `animation` is a shorthand property for the various animation properties: `animation-name`, `animation-duration`, `animation-iteration-count`, `animation-direction` are used.
-
 6. `nth-child(n)` targets the element which is the nth child of its parent.
-
 7. `animation-delay` is used on the second and third `div` respectively, so that each element does not start the animation at the same time.
 
 
@@ -236,7 +228,7 @@ Creates a border animation on hover.
 #### Explanation
 
 
-Use the `:before` and `:after` pseduo-elements as borders that animate on hover.
+- Use the `:before` and `:after` pseduo-elements as borders that animate on hover.
 
 
 #### Browser support
@@ -277,8 +269,7 @@ Creates a donut spinner that can be used to indicate the loading of content.
 #### Explanation
 
 
-Use a semi-transparent `border` for the whole element, except one side that will
-serve as the loading indicator for the donut. Use `animation` to rotate the element.
+- Use a semi-transparent `border` for the whole element, except one side that will serve as the loading indicator for the donut. Use `animation` to rotate the element.
 
 
 #### Browser support
@@ -350,7 +341,8 @@ powerful than the built-in `ease`, `ease-in`, `ease-out` and `ease-in-out`.
 #### Explanation
 
 
-The variables are defined globally within the `:root` CSS pseudo-class which matches the root element of a tree representing the document. In HTML, `:root` represents the `<html>` element and is identical to the selector `html`, except that its specificity is higher.
+- The variables are defined globally within the `:root` CSS pseudo-class which matches the root element of a tree representing the document. 
+- In HTML, `:root` represents the `<html>` element and is identical to the selector `html`, except that its specificity is higher.
 
 
 #### Browser support
@@ -400,11 +392,9 @@ el.style.setProperty('--max-height', height + 'px')
 1. `transition: max-height: 0.5s cubic-bezier(...)` specifies that changes to `max-height` should be transitioned over 0.5 seconds, using an `ease-out-quint` timing function.
 2. `overflow: hidden` prevents the contents of the hidden element from overflowing its container.
 3. `max-height: 0` specifies that the element has no height initially.
-4. `.target:hover > .el` specifies that when the parent is hovered over, target a child `.el` within
-   it and use the `--max-height` variable which was defined by JavaScript.
+4. `.target:hover > .el` specifies that when the parent is hovered over, target a child `.el` within it and use the `--max-height` variable which was defined by JavaScript.
 ---
-1. `el.scrollHeight` is the height of the element including overflow, which will change dynamically
-   based on the content of the element.
+1. `el.scrollHeight` is the height of the element including overflow, which will change dynamically based on the content of the element.
 2. `el.style.setProperty(...)` sets the `--max-height` CSS variable which is used to specify the `max-height` of the element the target is hovered over, allowing it to transition smoothly from 0 to auto.
 
 
@@ -515,20 +505,16 @@ Creates an animated underline effect when the text is hovered over.
 #### Explanation
 
 
-1. `display: inline-block` makes the block `p` an `inline-block` to prevent the underline from
-   spanning the entire parent width rather than just the content (text).
+1. `display: inline-block` makes the block `p` an `inline-block` to prevent the underline from spanning the entire parent width rather than just the content (text).
 2. `position: relative` on the element establishes a Cartesian positioning context for pseudo-elements.
 3. `::after` defines a pseudo-element.
 4. `position: absolute` takes the pseudo element out of the flow of the document and positions it in relation to the parent.
 5. `width: 100%` ensures the pseudo-element spans the entire width of the text block.
 6. `transform: scaleX(0)` initially scales the pseudo element to 0 so it has no width and is not visible.
 7. `bottom: 0` and `left: 0` position it to the bottom left of the block.
-8. `transition: transform 0.25s ease-out` means changes to `transform` will be transitioned over 0.25 seconds
-   with an `ease-out` timing function.
+8. `transition: transform 0.25s ease-out` means changes to `transform` will be transitioned over 0.25 seconds with an `ease-out` timing function.
 9. `transform-origin: bottom right` means the transform anchor point is positioned at the bottom right of the block.
-10. `:hover::after` then uses `scaleX(1)` to transition the width to 100%, then changes the `transform-origin`
-    to `bottom left` so that the anchor point is reversed, allowing it transition out in the other direction when
-    hovered off.
+10. `:hover::after` then uses `scaleX(1)` to transition the width to 100%, then changes the `transform-origin` to `bottom left` so that the anchor point is reversed, allowing it transition out in the other direction when hovered off.
 
 
 #### Browser support
@@ -567,7 +553,7 @@ Makes the content unselectable.
 #### Explanation
 
 
-`user-select: none` specifies that the text cannot be selected.
+- `user-select: none` specifies that the text cannot be selected.
 
 
 #### Browser support
@@ -664,8 +650,7 @@ span {
 
 
 1. `transition: opacity 0.2s` specifies that changes to opacity will be transitioned over 0.2 seconds.
-2. `.sibling-fade:hover span:not(:hover)` specifies that when the parent is hovered, select any `span` children
-   that are not currently being hovered and change their opacity to `0.5`.
+2. `.sibling-fade:hover span:not(:hover)` specifies that when the parent is hovered, select any `span` children that are not currently being hovered and change their opacity to `0.5`.
 
 
 #### Browser support
@@ -768,8 +753,7 @@ Ensures that an element self-clears its children.
 
 1. `.clearfix::after` defines a pseudo-element.
 2. `content: ''` allows the pseudo-element to affect layout.
-3. `clear: both` indicates that the left, right or both sides of the element cannot be adjacent
-   to earlier floated elements within the same block formatting context.
+3. `clear: both` indicates that the left, right or both sides of the element cannot be adjacent to earlier floated elements within the same block formatting context.
 
 
 #### Browser support
@@ -813,11 +797,8 @@ Given an element of variable width, it will ensure its height remains proportion
 #### Explanation
 
 
-`padding-top` on the `::before` pseudo-element causes the height of the element to equal a percentage of
-its width. `100%` therefore means the element's height will always be `100%` of the width, creating a responsive
-square.
-
-This method also allows content to be placed inside the element normally.
+- `padding-top` on the `::before` pseudo-element causes the height of the element to equal a percentage of its width. `100%` therefore means the element's height will always be `100%` of the width, creating a responsive square.
+- This method also allows content to be placed inside the element normally.
 
 
 #### Browser support
@@ -869,7 +850,7 @@ Vertically and horizontally centers a child element within its parent element us
 4. `text-align: center` on '.center > span' centers the child element horizontally.
 5. `vertical-align: middle` on '.center > span' centers the child element vertically.
 
-The outer parent ('.container' in this case) must have a fixed height and width.
+- The outer parent ('.container' in this case) must have a fixed height and width.
 
 
 #### Browser support
@@ -909,7 +890,7 @@ Evenly distributes child elements within a parent element.
 1. `display: flex` enables flexbox.
 2. `justify-content: space-between` evenly distributes child elements horizontally. The first item is positioned at the left edge, while the last item is positioned at the right edge.
 
-Alternatively, use `justify-content: space-around` to distribute the children with space around them, rather than between them.
+- Alternatively, use `justify-content: space-around` to distribute the children with space around them, rather than between them.
 
 
 #### Browser support
@@ -1042,7 +1023,7 @@ p {
 #### Explanation
 
 
-Use the style of a `:before` pseudo-element to vertically align inline elements without changing their `position` property.
+- Use the style of a `:before` pseudo-element to vertically align inline elements without changing their `position` property.
 
 
 #### Browser support
@@ -1133,7 +1114,7 @@ body {
 3. `flex-direction: column` set the direction of flex items' order from top to down.
 4. `flex-grow: 1` the flexbox will apply remaining available space of container to last child element.
 
-The parent must have a viewport height. `flex-grow: 1` could be applied to the first or second element, which will have all available space.
+- The parent must have a viewport height. `flex-grow: 1` could be applied to the first or second element, which will have all available space.
 
 
 #### Browser support
@@ -1228,7 +1209,7 @@ Vertically and horizontally centers a child element within its parent element us
 2. `left: 50%` and `top: 50%` offsets the child 50% from the left and top edge of its containing block.
 3. `transform: translate(-50%, -50%)` allows the height and width of the child element to be negated so that it is vertically and horizontally centered.
 
-Note: Fixed height and width on parent element is for the demo only.
+- Note: that the fixed height and width on parent element is for the demo only.
 
 
 #### Browser support
@@ -1282,8 +1263,7 @@ If the text is longer than one line, it will be truncated for `n` lines and end 
 #### Explanation
 
 
-1. `overflow: hidden` prevents the text from overflowing its dimensions
-   (for a block, 100% width and auto height).
+1. `overflow: hidden` prevents the text from overflowing its dimensions (for a block, 100% width and auto height).
 2. `width: 400px` ensures the element has a dimension.
 3. `height: 109.2px` calculated value for height, it equals `font-size * line-height * numberOfLines` (in this case `26 * 1.4 * 3 = 109.2`)
 4. `height: 36.4px` calculated value for gradient container, it equals `font-size * line-height` (in this case `26 * 1.4 = 36.4`)
@@ -1322,11 +1302,9 @@ If the text is longer than one line, it will be truncated and end with an ellips
 #### Explanation
 
 
-1. `overflow: hidden` prevents the text from overflowing its dimensions
-   (for a block, 100% width and auto height).
+1. `overflow: hidden` prevents the text from overflowing its dimensions (for a block, 100% width and auto height).
 2. `white-space: nowrap` prevents the text from exceeding one line in height.
-3. `text-overflow: ellipsis` makes it so that if the text exceeds its dimensions, it
-   will end with an ellipsis.
+3. `text-overflow: ellipsis` makes it so that if the text exceeds its dimensions, it will end with an ellipsis.
 4. `width: 200px;` ensures the element has a dimension, to know when to get ellipsis
 
 
@@ -1351,8 +1329,6 @@ If the text is longer than one line, it will be truncated and end with an ellips
 ### Calc()
 
 The function calc() allows to define CSS values with the use of mathematical expressions, the value adopted for the property is the result of a mathematical expression.
-
-
 
 ```html
 <div class="box-example"></div>
@@ -1416,11 +1392,9 @@ CSS variables that contain specific values to be reused throughout a document.
 #### Explanation
 
 
-The variables are defined globally within the `:root` CSS pseudo-class which matches the root element of a tree representing the document. Variables can also be scoped to a selector if defined within the block.
-
-Declare a variable with `--variable-name:`.
-
-Reuse variables throughout the document using the `var(--variable-name)` function.
+- The variables are defined globally within the `:root` CSS pseudo-class which matches the root element of a tree representing the document. Variables can also be scoped to a selector if defined within the block.
+- Declare a variable with `--variable-name:`.
+- Reuse variables throughout the document using the `var(--variable-name)` function.
 
 
 #### Browser support
@@ -1460,10 +1434,8 @@ Creates a circle shape with pure CSS.
 #### Explanation
 
 
-`border-radius: 50%` curves the borders of an element to create a circle.
-
-Since a circle has the same radius at any given point, the `width` and `height` must be the same. Differing
-values will create an ellipse.
+- `border-radius: 50%` curves the borders of an element to create a circle.
+- Since a circle has the same radius at any given point, the `width` and `height` must be the same. Differing values will create an ellipse.
 
 
 #### Browser support
@@ -1511,16 +1483,12 @@ li::before {
 #### Explanation
 
 
-You can create a ordered list using any type of HTML.
+- You can create a ordered list using any type of HTML.
 
 1. `counter-reset` Initializes a counter, the value is the name of the counter. By default, the counter starts at 0. This property can also be used to change its value to any specific number.
-
 2. `counter-increment` Used in element that will be countable. Once `counter-reset` initialized, a counter's value can be increased or decreased.
-
 3. `counter(name, style)` Displays the value of a section counter. Generally used in a `content` property. This function can receive two parameters, the first as the name of the counter and the second one can be `decimal` or `upper-roman` (`decimal` by default).
-
 4. `counters(counter, string, style)` Displays the value of a section counter. Generally used in a `content` property. This function can receive three parameters, the first as the name of the counter, the second one you can include a string which comes after the counter and the third one can be `decimal` or `upper-roman` (`decimal` by default).
-
 5. A CSS counter can be especially useful for making outlined lists, because a new instance of the counter is automatically created in child elements. Using the `counters()` function, separating text can be inserted between different levels of nested counters.
 
 
@@ -1538,8 +1506,6 @@ You can create a ordered list using any type of HTML.
 ### Custom scrollbar
 
 Customizes the scrollbar style for the document and elements with scrollable overflow, on WebKit platforms.
-
-
 
 ```html
 <div class="custom-scrollbar">
@@ -1622,7 +1588,7 @@ Changes the styling of text selection.
 #### Explanation
 
 
-`::selection` defines a pseudo selector on an element to style text within it when selected. Note that if you don't combine any other selector your style will be applied at document root level, to any selectable element.
+- `::selection` defines a pseudo selector on an element to style text within it when selected. Note that if you don't combine any other selector your style will be applied at document root level, to any selectable element.
 
 
 #### Browser support
@@ -1718,13 +1684,9 @@ Creates an effect where text appears to be "etched" or engraved into the backgro
 #### Explanation
 
 
-`text-shadow: 0 2px white` creates a white shadow offset `0px` horizontally and `2px` vertically
-from the origin position.
-
-The background must be darker than the shadow for the effect to work.
-
-The text color should be slightly faded to make it look like it's engraved/carved out
-of the background.
+- `text-shadow: 0 2px white` creates a white shadow offset `0px` horizontally and `2px` vertically from the origin position.
+- The background must be darker than the shadow for the effect to work.
+- The text color should be slightly faded to make it look like it's engraved/carved out of the background.
 
 
 #### Browser support
@@ -1768,7 +1730,7 @@ form:focus-within {
 #### Explanation
 
 
-The psuedo class `:focus-within` applies styles to a parent element if any child element gets focused. For example, an `input` element inside a `form` element.
+- The psuedo class `:focus-within` applies styles to a parent element if any child element gets focused. For example, an `input` element inside a `form` element.
 
 
 #### Browser support
@@ -1873,8 +1835,7 @@ Gives text a gradient color.
 
 1. `background: -webkit-linear-gradient(...)` gives the text element a gradient background.
 2. `webkit-text-fill-color: transparent` fills the text with a transparent color.
-3. `webkit-background-clip: text` clips the background with the text, filling the text with
-   the gradient background as the color.
+3. `webkit-background-clip: text` clips the background with the text, filling the text with the gradient background as the color.
 
 
 #### Browser support
@@ -1928,8 +1889,7 @@ very sharp and crisp.
 
 
 1. `box-shadow`, when only using spread, adds a pseudo-border which can use subpixels\*.
-2. Use `@media (min-resolution: ...)` to check the device pixel ratio (`1dppx` equals 96 DPI),
-   setting the spread of the `box-shadow` equal to `1 / dppx`.
+2. Use `@media (min-resolution: ...)` to check the device pixel ratio (`1dppx` equals 96 DPI), setting the spread of the `box-shadow` equal to `1 / dppx`.
 
 
 #### Browser support
@@ -2065,8 +2025,7 @@ li:not(:last-child) {
 #### Explanation
 
 
-`li:not(:last-child)` specifies that the styles should apply to all `li` elements except
-the `:last-child`.
+- `li:not(:last-child)` specifies that the styles should apply to all `li` elements except the `:last-child`.
 
 
 #### Browser support
@@ -2131,11 +2090,9 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
 
 1. `position: relative` on the parent establishes a Cartesian positioning context for pseudo-elements.
 2. `::after` defines a pseudo element.
-3. `background-image: linear-gradient(...)` adds a linear gradient that fades from transparent to white
-   (top to bottom).
+3. `background-image: linear-gradient(...)` adds a linear gradient that fades from transparent to white (top to bottom).
 4. `position: absolute` takes the pseudo element out of the flow of the document and positions it in relation to the parent.
-5. `width: 240px` matches the size of the scrolling element (which is a child of the parent that has
-   the pseudo element).
+5. `width: 240px` matches the size of the scrolling element (which is a child of the parent that has the pseudo element).
 6. `height: 25px` is the height of the fading gradient pseudo-element, which should be kept relatively small.
 7. `bottom: 0` positions the pseudo-element at the bottom of the parent.
 8. `pointer-events: none` specifies that the pseudo-element cannot be a target of mouse events, allowing text behind it to still be selectable/interactive.
@@ -2184,17 +2141,10 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
 #### Explanation
 
 
-1. `text-shadow` uses 4 values with offsets that cover a 4x4 px area to ensure the underline
-   has a "thick" shadow that covers the line where descenders clip it. Use a color
-   that matches the background. For a larger font, use a larger `px` size. Additional values
-   can create an even thicker shadow, and subpixel values can also be used.
-2. `background-image: linear-gradient(...)` creates a 90deg gradient using the
-   text color (`currentColor`).
-3. The `background-*` properties size the gradient as 100% of the width of the block and 1px
-   in height at the bottom and disables repetition, which creates a 1px underline beneath
-   the text.
-4. The `::selection` pseudo selector rule ensures the text shadow does not interfere with text
-   selection.
+1. `text-shadow` uses 4 values with offsets that cover a 4x4 px area to ensure the underline has a "thick" shadow that covers the line where descenders clip it. Use a color that matches the background. For a larger font, use a larger `px` size. Additional values can create an even thicker shadow, and subpixel values can also be used.
+2. `background-image: linear-gradient(...)` creates a 90deg gradient using the text color (`currentColor`).
+3. The `background-*` properties size the gradient as 100% of the width of the block and 1px in height at the bottom and disables repetition, which creates a 1px underline beneath the text.
+4. The `::selection` pseudo selector rule ensures the text shadow does not interfere with text selection.
 
 
 #### Browser support
@@ -2234,7 +2184,7 @@ Resets all styles to default values with one property. This will not affect `dir
 #### Explanation
 
 
-The `all` property allows you to reset all styles (inherited or not) to default values.
+- The `all` property allows you to reset all styles (inherited or not) to default values.
 
 
 #### Browser support
@@ -2317,8 +2267,7 @@ Uses the native font of the operating system to get close to a native app feel.
 #### Explanation
 
 
-The browser looks for each successive font, preferring the first one if possible, and
-falls back to the next if it cannot find the font (on the system or defined in CSS).
+- The browser looks for each successive font, preferring the first one if possible, and falls back to the next if it cannot find the font (on the system or defined in CSS).
 
 1. `-apple-system` is San Francisco, used on iOS and macOS (not Chrome however)
 2. `BlinkMacSystemFont` is San Francisco, used on macOS Chrome
@@ -2390,7 +2339,7 @@ input[type='checkbox']:checked + .switch {
 #### Explanation
 
 
-This effect is styling only the `<label>` element to look like a toggle switch, and hiding the actual `<input>` checkbox by positioning it offscreen. When clicking the label associated with the `<input>` element, it sets the `<input>` checkbox into the `:checked` state.
+- This effect is styling only the `<label>` element to look like a toggle switch, and hiding the actual `<input>` checkbox by positioning it offscreen. When clicking the label associated with the `<input>` element, it sets the `<input>` checkbox into the `:checked` state.
 
 1. The `for` attribute associates the `<label>` with the appropriate `<input>` checkbox element by its `id`.
 2. `.switch::after` defines a pseudo-element for the `<label>` to create the circular knob.
@@ -2433,13 +2382,9 @@ Creates a triangle shape with pure CSS.
 #### Explanation
 
 
-[View this link for a detailed explanation.](https://stackoverflow.com/q/7073484)
-
-The color of the border is the color of the triangle. The side the triangle tip points
-corresponds to the opposite `border-*` property. For example, a color on `border-top`
-means the arrow points downward.
-
-Experiment with the `px` values to change the proportion of the triangle.
+- [View this link for a detailed explanation.](https://stackoverflow.com/q/7073484)
+- The color of the border is the color of the triangle. The side the triangle tip points corresponds to the opposite `border-*` property. For example, a color on `border-top` means the arrow points downward.
+- Experiment with the `px` values to change the proportion of the triangle.
 
 
 #### Browser support
@@ -2475,9 +2420,8 @@ li:nth-child(odd) {
 #### Explanation
 
 
-1. Use the `:nth-child(odd)` or `:nth-child(even)` pseudo-class to apply a different background color to elements that match based on their position in a group of siblings.
-
-Note that you can use it to apply different styles to other HTML elements like div, tr, p, ol, etc.
+- Use the `:nth-child(odd)` or `:nth-child(even)` pseudo-class to apply a different background color to elements that match based on their position in a group of siblings.
+- Note that you can use it to apply different styles to other HTML elements like div, tr, p, ol, etc.
 
 
 #### Browser support

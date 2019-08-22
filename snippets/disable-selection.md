@@ -18,7 +18,7 @@ Makes the content unselectable.
 
 #### Explanation
 
-`user-select: none` specifies that the text cannot be selected.
+- `user-select: none` specifies that the text cannot be selected.
 
 #### Browser support
 

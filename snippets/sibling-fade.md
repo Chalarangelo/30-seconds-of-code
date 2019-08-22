@@ -26,8 +26,7 @@ span {
 #### Explanation
 
 1. `transition: opacity 0.2s` specifies that changes to opacity will be transitioned over 0.2 seconds.
-2. `.sibling-fade:hover span:not(:hover)` specifies that when the parent is hovered, select any `span` children
-   that are not currently being hovered and change their opacity to `0.5`.
+2. `.sibling-fade:hover span:not(:hover)` specifies that when the parent is hovered, select any `span` children that are not currently being hovered and change their opacity to `0.5`.
 
 #### Browser support
 

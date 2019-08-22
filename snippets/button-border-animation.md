@@ -49,6 +49,6 @@ Creates a border animation on hover.
 
 #### Explanation
 
-Use the `:before` and `:after` pseduo-elements as borders that animate on hover.
+- Use the `:before` and `:after` pseduo-elements as borders that animate on hover.
 
 #### Browser support

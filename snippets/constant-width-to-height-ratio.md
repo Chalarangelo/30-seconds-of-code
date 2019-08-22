@@ -29,11 +29,8 @@ Given an element of variable width, it will ensure its height remains proportion
 
 #### Explanation
 
-`padding-top` on the `::before` pseudo-element causes the height of the element to equal a percentage of
-its width. `100%` therefore means the element's height will always be `100%` of the width, creating a responsive
-square.
-
-This method also allows content to be placed inside the element normally.
+- `padding-top` on the `::before` pseudo-element causes the height of the element to equal a percentage of its width. `100%` therefore means the element's height will always be `100%` of the width, creating a responsive square.
+- This method also allows content to be placed inside the element normally.
 
 #### Browser support
 

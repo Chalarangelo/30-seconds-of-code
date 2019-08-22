@@ -23,9 +23,8 @@ li:nth-child(odd) {
 
 #### Explanation
 
-1. Use the `:nth-child(odd)` or `:nth-child(even)` pseudo-class to apply a different background color to elements that match based on their position in a group of siblings.
-
-Note that you can use it to apply different styles to other HTML elements like div, tr, p, ol, etc.
+- Use the `:nth-child(odd)` or `:nth-child(even)` pseudo-class to apply a different background color to elements that match based on their position in a group of siblings.
+- Note that you can use it to apply different styles to other HTML elements like div, tr, p, ol, etc.
 
 #### Browser support
 

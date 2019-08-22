@@ -24,7 +24,7 @@ Resets all styles to default values with one property. This will not affect `dir
 
 #### Explanation
 
-The `all` property allows you to reset all styles (inherited or not) to default values.
+- The `all` property allows you to reset all styles (inherited or not) to default values.
 
 #### Browser support
 
