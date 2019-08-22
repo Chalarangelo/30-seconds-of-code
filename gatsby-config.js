@@ -5,8 +5,10 @@ module.exports = {
     title: `${config.name}`,
     description: `${config.description}`,
     author: `@30-seconds`,
+    siteUrl: `${config.siteUrl}`,
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-source-filesystem`,
