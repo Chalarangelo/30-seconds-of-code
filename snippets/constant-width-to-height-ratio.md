@@ -1,4 +1,7 @@
-### Constant width to height ratio
+---
+title: Constant width to height ratio
+tags: layout,intermediate
+---
 
 Given an element of variable width, it will ensure its height remains proportionate in a responsive fashion
 (i.e., its width to height ratio remains constant).
@@ -40,4 +43,5 @@ This method also allows content to be placed inside the element normally.
 
 #### Browser support
 
-<!-- tags: layout -->
+
+

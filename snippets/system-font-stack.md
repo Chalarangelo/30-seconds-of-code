@@ -1,4 +1,7 @@
-### System font stack
+---
+title: System font stack
+tags: visual,intermediate
+---
 
 Uses the native font of the operating system to get close to a native app feel.
 
@@ -37,4 +40,5 @@ falls back to the next if it cannot find the font (on the system or defined in C
 
 #### Browser support
 
-<!-- tags: visual -->
+
+

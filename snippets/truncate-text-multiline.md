@@ -1,4 +1,7 @@
-### Truncate text multiline
+---
+title: Truncate text multiline
+tags: layout,intermediate
+---
 
 If the text is longer than one line, it will be truncated for `n` lines and end with an gradient fade.
 
@@ -51,4 +54,5 @@ If the text is longer than one line, it will be truncated for `n` lines and end 
 
 - https://caniuse.com/#feat=css-gradients
 
-<!-- tags: layout -->
+
+

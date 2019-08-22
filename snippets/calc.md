@@ -1,4 +1,7 @@
-### Calc()
+---
+title: Calc()
+tags: other,intermediate
+---
 
 The function calc() allows to define CSS values with the use of mathematical expressions, the value adopted for the property is the result of a mathematical expression.
 
@@ -50,4 +53,5 @@ So now it's possible using calc():
 
 - https://caniuse.com/#feat=calc
 
-<!-- tags: other -->
+
+

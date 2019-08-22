@@ -1,4 +1,7 @@
-### Donut spinner
+---
+title: Donut spinner
+tags: animation,intermediate
+---
 
 Creates a donut spinner that can be used to indicate the loading of content.
 
@@ -44,4 +47,5 @@ serve as the loading indicator for the donut. Use `animation` to rotate the elem
 - https://caniuse.com/#feat=css-animation
 - https://caniuse.com/#feat=transforms2d
 
-<!-- tags: animation -->
+
+

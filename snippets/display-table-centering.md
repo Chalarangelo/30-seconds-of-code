@@ -1,4 +1,7 @@
-### Display table centering
+---
+title: Display table centering
+tags: layout,intermediate
+---
 
 Vertically and horizontally centers a child element within its parent element using `display: table` (as an alternative to `flexbox`).
 
@@ -48,4 +51,5 @@ The outer parent ('.container' in this case) must have a fixed height and width.
 
 - https://caniuse.com/#search=display%3A%20table
 
-<!-- tags: layout -->
+
+

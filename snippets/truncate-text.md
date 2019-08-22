@@ -1,4 +1,7 @@
-### Truncate text
+---
+title: Truncate text
+tags: layout,intermediate
+---
 
 If the text is longer than one line, it will be truncated and end with an ellipsis `…`.
 
@@ -36,4 +39,5 @@ If the text is longer than one line, it will be truncated and end with an ellips
 
 - https://caniuse.com/#feat=text-overflow
 
-<!-- tags: layout -->
+
+

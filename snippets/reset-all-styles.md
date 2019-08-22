@@ -1,4 +1,7 @@
-### Reset all styles
+---
+title: Reset all styles
+tags: visual,intermediate
+---
 
 Resets all styles to default values with one property. This will not affect `direction` and `unicode-bidi` properties.
 
@@ -35,4 +38,5 @@ The `all` property allows you to reset all styles (inherited or not) to default 
 
 - https://caniuse.com/#feat=css-all
 
-<!-- tags: visual -->
+
+

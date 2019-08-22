@@ -1,4 +1,7 @@
-### Counter
+---
+title: Counter
+tags: visual, other,intermediate
+---
 
 Counters are, in essence, variables maintained by CSS whose values may be incremented by CSS rules to track how many times they're used.
 
@@ -52,4 +55,5 @@ You can create a ordered list using any type of HTML.
 
 - https://caniuse.com/#feat=css-counters
 
-<!-- tags: visual, other -->
+
+

@@ -1,4 +1,7 @@
-### Last item with remaining available height
+---
+title: Last item with remaining available height
+tags: layout,intermediate
+---
 
 Take advantage of available viewport space by giving the last element the remaining available space in current viewport, even when resizing the window.
 
@@ -50,5 +53,6 @@ The parent must have a viewport height. `flex-grow: 1` could be applied to the f
 
 - https://caniuse.com/#feat=flexbox
 
-<!-- tags: layout -->
+
+
 <!-- date: 2018-09-30 -->

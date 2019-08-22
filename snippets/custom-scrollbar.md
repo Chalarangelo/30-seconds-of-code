@@ -1,4 +1,7 @@
-### Custom scrollbar
+---
+title: Custom scrollbar
+tags: visual,intermediate
+---
 
 Customizes the scrollbar style for the document and elements with scrollable overflow, on WebKit platforms.
 
@@ -56,4 +59,5 @@ There are many other pseudo-elements that you can use to style scrollbars. For m
 
 - https://caniuse.com/#feat=css-scrollbar
 
-<!-- tags: visual -->
+
+

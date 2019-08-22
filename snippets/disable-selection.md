@@ -1,4 +1,7 @@
-### Disable selection
+---
+title: Disable selection
+tags: interactivity,intermediate
+---
 
 Makes the content unselectable.
 
@@ -31,4 +34,5 @@ Makes the content unselectable.
 
 - https://caniuse.com/#feat=user-select-none
 
-<!-- tags: interactivity -->
+
+

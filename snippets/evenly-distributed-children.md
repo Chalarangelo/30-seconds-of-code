@@ -1,4 +1,7 @@
-### Evenly distributed children
+---
+title: Evenly distributed children
+tags: layout,intermediate
+---
 
 Evenly distributes child elements within a parent element.
 
@@ -36,4 +39,5 @@ Alternatively, use `justify-content: space-around` to distribute the children wi
 
 - https://caniuse.com/#feat=flexbox
 
-<!-- tags: layout -->
+
+

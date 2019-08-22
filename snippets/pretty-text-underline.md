@@ -1,4 +1,7 @@
-### Pretty text underline
+---
+title: Pretty text underline
+tags: visual,intermediate
+---
 
 A nicer alternative to `text-decoration: underline` or `<u></u>` where descenders do not clip the underline.
 Natively implemented as `text-decoration-skip-ink: auto` but it has less control over the underline.
@@ -51,4 +54,5 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
 - https://caniuse.com/#feat=css-textshadow
 - https://caniuse.com/#feat=css-gradients
 
-<!-- tags: visual -->
+
+

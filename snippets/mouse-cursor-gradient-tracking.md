@@ -1,4 +1,7 @@
-### Mouse cursor gradient tracking
+---
+title: Mouse cursor gradient tracking
+tags: visual, interactivity,intermediate
+---
 
 A hover effect where the gradient follows the mouse cursor.
 
@@ -72,4 +75,5 @@ _TODO_
 
 - https://caniuse.com/#feat=css-variables
 
-<!-- tags: visual, interactivity -->
+
+

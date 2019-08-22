@@ -1,4 +1,7 @@
-### Ghost trick
+---
+title: Ghost trick
+tags: layout,intermediate
+---
 
 Vertically centers an element in another.
 
@@ -41,4 +44,5 @@ Use the style of a `:before` pseudo-element to vertically align inline elements 
 
 - https://caniuse.com/#feat=inline-block
 
-<!-- tags: layout -->
+
+

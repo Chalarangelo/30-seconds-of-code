@@ -1,4 +1,7 @@
-### Gradient text
+---
+title: Gradient text
+tags: visual,intermediate
+---
 
 Gives text a gradient color.
 
@@ -33,4 +36,5 @@ Gives text a gradient color.
 
 - https://caniuse.com/#feat=text-stroke
 
-<!-- tags: visual -->
+
+

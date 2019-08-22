@@ -1,4 +1,7 @@
-### Custom variables
+---
+title: Custom variables
+tags: other,intermediate
+---
 
 CSS variables that contain specific values to be reused throughout a document.
 
@@ -41,4 +44,5 @@ Reuse variables throughout the document using the `var(--variable-name)` functio
 
 - https://caniuse.com/#feat=css-variables
 
-<!-- tags: other -->
+
+

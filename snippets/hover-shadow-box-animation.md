@@ -1,4 +1,7 @@
-### Hover shadow box animation
+---
+title: Hover shadow box animation
+tags: animation,intermediate
+---
 
 Creates a shadow box around the text when it is hovered.
 
@@ -45,4 +48,5 @@ Creates a shadow box around the text when it is hovered.
 - https://caniuse.com/#feat=transforms3d
 - https://caniuse.com/#feat=css-transitions
 
-<!-- tags: animation -->
+
+

@@ -1,4 +1,7 @@
-### Triangle
+---
+title: Triangle
+tags: visual,intermediate
+---
 
 Creates a triangle shape with pure CSS.
 
@@ -34,4 +37,5 @@ Experiment with the `px` values to change the proportion of the triangle.
 
 #### Browser support
 
-<!-- tags: visual -->
+
+
