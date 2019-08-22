@@ -107,7 +107,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
   color: var(--token-color-f);
 }
 
-p > code, a > code {
+p > code, a > code, li > code {
   &, &[class*="language-"] {
     color: var(--code-fore-color);
     background: var(--code-back-color);
