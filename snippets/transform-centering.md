@@ -32,7 +32,7 @@ Vertically and horizontally centers a child element within its parent element us
 2. `left: 50%` and `top: 50%` offsets the child 50% from the left and top edge of its containing block.
 3. `transform: translate(-50%, -50%)` allows the height and width of the child element to be negated so that it is vertically and horizontally centered.
 
-Note: Fixed height and width on parent element is for the demo only.
+- Note: that the fixed height and width on parent element is for the demo only.
 
 #### Browser support
 

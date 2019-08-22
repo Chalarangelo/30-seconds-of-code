@@ -5,8 +5,6 @@ tags: visual,intermediate
 
 Customizes the scrollbar style for the document and elements with scrollable overflow, on WebKit platforms.
 
-
-
 ```html
 <div class="custom-scrollbar">
   <p>
@@ -17,8 +15,6 @@ Customizes the scrollbar style for the document and elements with scrollable ove
   </p>
 </div>
 ```
-
-
 
 ```css
 .custom-scrollbar {
@@ -42,8 +38,6 @@ Customizes the scrollbar style for the document and elements with scrollable ove
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
 ```
-
-
 
 #### Explanation
 

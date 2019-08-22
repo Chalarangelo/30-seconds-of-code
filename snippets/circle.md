@@ -20,10 +20,8 @@ Creates a circle shape with pure CSS.
 
 #### Explanation
 
-`border-radius: 50%` curves the borders of an element to create a circle.
-
-Since a circle has the same radius at any given point, the `width` and `height` must be the same. Differing
-values will create an ellipse.
+- `border-radius: 50%` curves the borders of an element to create a circle.
+- Since a circle has the same radius at any given point, the `width` and `height` must be the same. Differing values will create an ellipse.
 
 #### Browser support
 

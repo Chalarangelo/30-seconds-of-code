@@ -31,8 +31,7 @@ Ensures that an element self-clears its children.
 
 1. `.clearfix::after` defines a pseudo-element.
 2. `content: ''` allows the pseudo-element to affect layout.
-3. `clear: both` indicates that the left, right or both sides of the element cannot be adjacent
-   to earlier floated elements within the same block formatting context.
+3. `clear: both` indicates that the left, right or both sides of the element cannot be adjacent to earlier floated elements within the same block formatting context.
 
 #### Browser support
 

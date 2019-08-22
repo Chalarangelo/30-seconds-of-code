@@ -12,7 +12,7 @@
         ]
       },
       "meta": {
-        "hash": "5093345481ba16eb2d9b547cc55a2ac1993c39ffe09a4c40255c9e4d9cae4cc7"
+        "hash": "0c6a234337b2d3d49f4bc097f59d768026ed6afdfe555853cdcbfef1b06665a8"
       }
     },
     {
@@ -42,7 +42,7 @@
         ]
       },
       "meta": {
-        "hash": "754e9dc4b820bbd2f8650a06df9cf2d2e3755b0da2ae2be787bf77eb79d0e296"
+        "hash": "8d6a2be5e5ab8ef0d99640d53841e097c0867e51d069852953327fb680451f87"
       }
     },
     {
@@ -50,14 +50,14 @@
       "type": "snippetListing",
       "title": "Calc()",
       "attributes": {
-        "text": "The function calc() allows to define CSS values with the use of mathematical expressions, the value adopted for the property is the result of a mathematical expression.\n\n\n\n",
+        "text": "The function calc() allows to define CSS values with the use of mathematical expressions, the value adopted for the property is the result of a mathematical expression.\n\n",
         "tags": [
           "other",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "fce405ede3127f068a4598d709484dae8b3991594daf5d54fbac043989d04427"
+        "hash": "cb08d9b461777b0aac912b2ef76eb996881d00f8f95952dbc252cd79c7fb1284"
       }
     },
     {
@@ -72,7 +72,7 @@
         ]
       },
       "meta": {
-        "hash": "bc4bbf2fdc171fc581c72926d8b383391c1f01ccdb8853a3b4a1a290fddc704e"
+        "hash": "cbe2b2d3f3341efcd50d6e0eae249c23f6c267509a17f33341cd09850d316fe6"
       }
     },
     {
@@ -87,7 +87,7 @@
         ]
       },
       "meta": {
-        "hash": "1047b62d1a05d21a0d5cd370eca23ca76dc52454b1aefdb4bddd83d78a624458"
+        "hash": "246d8d9c39d53c0e93a3c6fa6cfaa2b8c09282b37d7dbbe8fef44d5a3c585076"
       }
     },
     {
@@ -102,7 +102,7 @@
         ]
       },
       "meta": {
-        "hash": "6d9a462223d6c4d2cb83b0b3ffea991d18d5b4c2bf81881515ff07a7c49db1c8"
+        "hash": "16ed56f599f8187c3d19e9475a37d567588ddab04bfb430b123a64d792b1f1a9"
       }
     },
     {
@@ -118,7 +118,7 @@
         ]
       },
       "meta": {
-        "hash": "99ba7570de689df640c22feb4a36874d4d7bc4bd1310227cedabe55d95b83f5e"
+        "hash": "16e70353ec2e154408ffb6827c02df34f47289a471337a428cdc68631e45568a"
       }
     },
     {
@@ -126,14 +126,14 @@
       "type": "snippetListing",
       "title": "Custom scrollbar",
       "attributes": {
-        "text": "Customizes the scrollbar style for the document and elements with scrollable overflow, on WebKit platforms.\n\n\n\n",
+        "text": "Customizes the scrollbar style for the document and elements with scrollable overflow, on WebKit platforms.\n\n",
         "tags": [
           "visual",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "cd46a337bd537c752499182a18575a921f300cf73b490dea2c1378360e670168"
+        "hash": "7052930103a4ff5084d310007c05f14a156e90eb0850e816be4db0fd67f5617a"
       }
     },
     {
@@ -148,7 +148,7 @@
         ]
       },
       "meta": {
-        "hash": "fa278f7299768bd484a01a9d63c7e8ba684f3870da53388aae5290d5b4dee7bb"
+        "hash": "20ac12fac7af2490421ed8ea3bef0a8e014d7d9188afffa3ddcc370475fb0ba1"
       }
     },
     {
@@ -163,7 +163,7 @@
         ]
       },
       "meta": {
-        "hash": "c03b24d37e43d056aa2e5f6eebb8d61a86d4d9f6587270aa8606df771c27f3cc"
+        "hash": "2093cf1daa7f3fc21cc66665ad22c33a5de59ed5fbfb849e65890df32b97846b"
       }
     },
     {
@@ -178,7 +178,7 @@
         ]
       },
       "meta": {
-        "hash": "ccae3478e0de1ff02bab055c17e2f877bd39cd4994f6b18d0bf85d16e9912dda"
+        "hash": "496c33ca13c2bf703547c306630d57418c3aad84c281fb48a68da16d080ceb60"
       }
     },
     {
@@ -193,7 +193,7 @@
         ]
       },
       "meta": {
-        "hash": "4b2e48224b08521eda138be98210a643ff98733fed8f9dd9d1921a1f56084450"
+        "hash": "2054a899b88b3cc37a367cac149a20dbd32f8596c96cd67417751327861777b2"
       }
     },
     {
@@ -208,7 +208,7 @@
         ]
       },
       "meta": {
-        "hash": "cf2af5a585eecb3c98ee07d02d2e94ebee5efdf01523313b61faa199309bee0d"
+        "hash": "d8a8e563acca4e4e132b61a13190409b505c8688872bf9db2db1355d110b6195"
       }
     },
     {
@@ -238,7 +238,7 @@
         ]
       },
       "meta": {
-        "hash": "742eec324f2b9eb3a5cf972639069523e1244ee95bc6335192587b8f9352f2da"
+        "hash": "db00cde15c23534842a4a43a274eacc7052e9ad224c0ae3dd62eccbbe74ddb4a"
       }
     },
     {
@@ -253,7 +253,7 @@
         ]
       },
       "meta": {
-        "hash": "fade4c04ebb8c2e6d680cc803d54738dbb166b6f608f13a94eacfe0b762fb0c4"
+        "hash": "2db756cdd03d0512450b58790fc8a73bb103ea5e0aa22a65cd101f7545cab824"
       }
     },
     {
@@ -268,7 +268,7 @@
         ]
       },
       "meta": {
-        "hash": "3489ccfed45a24c536c275e7a74cc8727fd801baae9c2b5123265bcd75e70a37"
+        "hash": "76a06249df2acaee078959fb44d8bfa721c5e0511774c3c60acef5d60305e2d7"
       }
     },
     {
@@ -315,7 +315,7 @@
         ]
       },
       "meta": {
-        "hash": "db08a880101d0e82dd0263582e7b251d88450df278e7d79a0a544d1575580c55"
+        "hash": "54bae820fad9b5c0aee1d88fc696e02e232d7739e6de81a8674f025f22125f3b"
       }
     },
     {
@@ -345,7 +345,7 @@
         ]
       },
       "meta": {
-        "hash": "622cd2ec51c26b37be3ea38a55d71bbb1b5944f14188b484c4903e23b45086c9"
+        "hash": "bf4b9426520f568c95484ddeab7f6d691a7f25420bc895c1788a9ffe6eead33a"
       }
     },
     {
@@ -360,7 +360,7 @@
         ]
       },
       "meta": {
-        "hash": "56a606934b50e0c3c53eb4819ee3fcb57344a9bd7dce91ae26c6f98c99a4c386"
+        "hash": "f29c32b68609dd40c32b6be5afef2ec8ab6b73ef7499ad05e96e1b743caaf100"
       }
     },
     {
@@ -390,7 +390,7 @@
         ]
       },
       "meta": {
-        "hash": "0e45709255d9ca14598c5fa54c2ae5490f81a0ef67c466d6d678da584340428b"
+        "hash": "501822aef899472f65db52bd2c60477fcdc7318027f54d8e3fbd08b5c67f6cda"
       }
     },
     {
@@ -405,7 +405,7 @@
         ]
       },
       "meta": {
-        "hash": "7ee6c8c6027ccbba77e7c02bdb79cf22a0d22d7acece1ea5408da19a7f986d7a"
+        "hash": "edc0f7207e7c9acb83df27d45f55b68197e0a9b9e3d6e59ac25b8551c3797190"
       }
     },
     {
@@ -435,7 +435,7 @@
         ]
       },
       "meta": {
-        "hash": "5ee579737769cd734df27df60b3c0fa296965192f1cdca45d4c43a414c6b9760"
+        "hash": "df7cfeabadd1c3c58a0c14108397ecc645d190be7336835f0fc5ceda88f572af"
       }
     },
     {
@@ -450,7 +450,7 @@
         ]
       },
       "meta": {
-        "hash": "522a5e309cea7f772600ca1d5f89ee911f0aec94b157e2adb94ac3f479445c01"
+        "hash": "e07fc6f0476a46c201812b41c2fa4eb5adef8ab7f5d538db33d0f64cc3efc02d"
       }
     },
     {
@@ -481,7 +481,7 @@
         ]
       },
       "meta": {
-        "hash": "7d2727a78b8ee2a55a823116fb01099efa227952d8fba8c35a1d3067675985d5"
+        "hash": "0a634e271a55ca9480038feab950d33671b0fc07c09615cd39603279bd2cb0d0"
       }
     },
     {
@@ -512,7 +512,7 @@
         ]
       },
       "meta": {
-        "hash": "6ce90f10b574780c196faad6a498c8d5b1e5e2d6c3464ded47ceb1056b24baa3"
+        "hash": "2726e4a58683d1e52e8797d60210b4c528dd9000e88953b13523ee3c57fd0084"
       }
     },
     {
@@ -542,7 +542,7 @@
         ]
       },
       "meta": {
-        "hash": "5d0eb22cb50d397c88c5f3a111a6a85d6cfa7d61fb7e88c966fdd55fe9d5b587"
+        "hash": "e9372af4e851200e9994e6f753502789693fd4d0d6438bf5b89db9d33a25cb18"
       }
     },
     {
@@ -557,7 +557,7 @@
         ]
       },
       "meta": {
-        "hash": "d601816311504b7521c8bba212e2c4b6fb50317ec10df60991a414bae1c82bf9"
+        "hash": "46ba1a8080054a9a5e541a3c5ae2ecdfb6edd124fbfb33de78b9ccd160509b93"
       }
     },
     {
@@ -587,7 +587,7 @@
         ]
       },
       "meta": {
-        "hash": "a1e353f0dc466a24881986bbaf8f2cd9f367fe80d54ac8e1481d82e021236389"
+        "hash": "8bb55371c003c5304cc1689ea4f1e364fa59a58c6edbc46f63c325cfb2b1f820"
       }
     },
     {
@@ -602,7 +602,7 @@
         ]
       },
       "meta": {
-        "hash": "0a35134bd1fe1da354810ef3228f50a81105997c0e81138c97cc9ace399adbb2"
+        "hash": "d32aacb7116aa37895cb5f4f8da6276efa1ce4636b5c892059ff77ccb6218b87"
       }
     },
     {
@@ -618,7 +618,7 @@
         ]
       },
       "meta": {
-        "hash": "6af55186736cae8da52a2a92bf7dcf56f6f23ca49ce083ad6653e373fa2d152e"
+        "hash": "0f67d565434719c7ee63647c5c342a0df9b5835de1850059f4a8ed2f6c19fb4c"
       }
     },
     {
@@ -633,7 +633,7 @@
         ]
       },
       "meta": {
-        "hash": "67b5f73d1e7aa4850b39c461fd93a548e106569554cf6e87f2a9981ecfb77ad1"
+        "hash": "5775ecfc218a8c8c1e31bebba5c53f35af9f9a84d48c626d3ee1df5b9858dfec"
       }
     },
     {
@@ -648,7 +648,7 @@
         ]
       },
       "meta": {
-        "hash": "d585e568bd1b8ca9c8a7d2fa52682c80249bf1e6055316bc3526ee54d8d26fb9"
+        "hash": "93ce75702b921beed512604212061414bbd46c3012cfb5250b19d2a9303cf075"
       }
     },
     {
@@ -663,7 +663,7 @@
         ]
       },
       "meta": {
-        "hash": "487720c3bf69c29c26cd0033d69f7391b634c4d9bf0e72a1da29957b945a9cbf"
+        "hash": "e327691cb68125b87ef38e5b0b997de119a798a9212647bef285caf0d07dc389"
       }
     },
     {
@@ -678,7 +678,7 @@
         ]
       },
       "meta": {
-        "hash": "db78085f4583d992126b4ceb74cc680300aa67c16d37b68d55c140fe453840d3"
+        "hash": "7835da22bad23fadb280dbe0c7d4431407524c89486ad3555e134dcbfd819272"
       }
     },
     {
@@ -693,7 +693,7 @@
         ]
       },
       "meta": {
-        "hash": "2c11f668918ede13c492719a76a5b89173aa4e72ad896cd2d7e45bed9671a2f0"
+        "hash": "7562a49fa58e85a92eac0e931d746975ccc86f7ea249517b8e2809b6681a4a76"
       }
     }
   ],

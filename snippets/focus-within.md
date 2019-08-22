@@ -31,7 +31,7 @@ form:focus-within {
 
 #### Explanation
 
-The psuedo class `:focus-within` applies styles to a parent element if any child element gets focused. For example, an `input` element inside a `form` element.
+- The psuedo class `:focus-within` applies styles to a parent element if any child element gets focused. For example, an `input` element inside a `form` element.
 
 #### Browser support
 

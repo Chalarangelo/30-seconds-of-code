@@ -48,7 +48,7 @@ input[type='checkbox']:checked + .switch {
 
 #### Explanation
 
-This effect is styling only the `<label>` element to look like a toggle switch, and hiding the actual `<input>` checkbox by positioning it offscreen. When clicking the label associated with the `<input>` element, it sets the `<input>` checkbox into the `:checked` state.
+- This effect is styling only the `<label>` element to look like a toggle switch, and hiding the actual `<input>` checkbox by positioning it offscreen. When clicking the label associated with the `<input>` element, it sets the `<input>` checkbox into the `:checked` state.
 
 1. The `for` attribute associates the `<label>` with the appropriate `<input>` checkbox element by its `id`.
 2. `.switch::after` defines a pseudo-element for the `<label>` to create the circular knob.
