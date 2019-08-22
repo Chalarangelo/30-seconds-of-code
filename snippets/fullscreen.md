@@ -5,8 +5,6 @@ tags: visual,intermediate
 
 The :fullscreen CSS pseudo-class represents an element that's displayed when the browser is in fullscreen mode.
 
-#### HTML
-
 ```html
 <div class="container">
   <p><em>Click the button below to enter the element into fullscreen mode. </em></p>
@@ -17,8 +15,6 @@ The :fullscreen CSS pseudo-class represents an element that's displayed when the
   </button>
 </div>
 ```
-
-#### CSS
 
 ```css
 .container {
@@ -49,8 +45,6 @@ The :fullscreen CSS pseudo-class represents an element that's displayed when the
   height: 100vh;
 }
 ```
-
-#### Demo
 
 #### Explanation
 

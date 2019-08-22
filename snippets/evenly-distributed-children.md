@@ -5,8 +5,6 @@ tags: layout,intermediate
 
 Evenly distributes child elements within a parent element.
 
-#### HTML
-
 ```html
 <div class="evenly-distributed-children">
   <p>Item1</p>
@@ -15,16 +13,12 @@ Evenly distributes child elements within a parent element.
 </div>
 ```
 
-#### CSS
-
 ```css
 .evenly-distributed-children {
   display: flex;
   justify-content: space-between;
 }
 ```
-
-#### Demo
 
 #### Explanation
 

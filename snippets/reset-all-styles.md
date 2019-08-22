@@ -5,8 +5,6 @@ tags: visual,intermediate
 
 Resets all styles to default values with one property. This will not affect `direction` and `unicode-bidi` properties.
 
-#### HTML
-
 ```html
 <div class="reset-all-styles">
   <h5>Title</h5>
@@ -18,15 +16,11 @@ Resets all styles to default values with one property. This will not affect `dir
 </div>
 ```
 
-#### CSS
-
 ```css
 .reset-all-styles {
   all: initial;
 }
 ```
-
-#### Demo
 
 #### Explanation
 

@@ -5,16 +5,12 @@ tags: layout,intermediate
 
 If the text is longer than one line, it will be truncated for `n` lines and end with an gradient fade.
 
-#### HTML
-
 ```html
 <p class="truncate-text-multiline">
   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
   labore et.
 </p>
 ```
-
-#### CSS
 
 ```css
 .truncate-text-multiline {
@@ -38,8 +34,6 @@ If the text is longer than one line, it will be truncated for `n` lines and end 
   background: linear-gradient(to right, rgba(0, 0, 0, 0), #f5f6f9 50%);
 }
 ```
-
-#### Demo
 
 #### Explanation
 

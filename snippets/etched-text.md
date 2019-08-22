@@ -5,13 +5,9 @@ tags: visual,intermediate
 
 Creates an effect where text appears to be "etched" or engraved into the background.
 
-#### HTML
-
 ```html
 <p class="etched-text">I appear etched into the background.</p>
 ```
-
-#### CSS
 
 ```css
 .etched-text {
@@ -21,8 +17,6 @@ Creates an effect where text appears to be "etched" or engraved into the backgro
   color: #b8bec5;
 }
 ```
-
-#### Demo
 
 #### Explanation
 

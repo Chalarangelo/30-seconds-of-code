@@ -5,13 +5,9 @@ tags: visual,intermediate
 
 Uses an SVG shape to separate two different blocks to create more a interesting visual appearance compared to standard horizontal separation.
 
-#### HTML
-
 ```html
 <div class="shape-separator"></div>
 ```
-
-#### CSS
 
 ```css
 .shape-separator {
@@ -28,8 +24,6 @@ Uses an SVG shape to separate two different blocks to create more a interesting 
   bottom: 0;
 }
 ```
-
-#### Demo
 
 #### Explanation
 

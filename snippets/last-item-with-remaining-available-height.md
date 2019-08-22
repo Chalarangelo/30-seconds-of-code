@@ -5,8 +5,6 @@ tags: layout,intermediate
 
 Take advantage of available viewport space by giving the last element the remaining available space in current viewport, even when resizing the window.
 
-#### HTML
-
 ```html
 <div class="container">
   <div>Div 1</div>
@@ -14,8 +12,6 @@ Take advantage of available viewport space by giving the last element the remain
   <div>Div 3</div>
 </div>
 ```
-
-#### CSS
 
 ```css
 html,
@@ -36,8 +32,6 @@ body {
 }
 ```
 
-#### Demo
-
 #### Explanation
 
 1. `height: 100%` set the height of container as viewport height.
@@ -52,7 +46,3 @@ The parent must have a viewport height. `flex-grow: 1` could be applied to the f
 <span class="snippet__support-note">⚠️ Needs prefixes for full support.</span>
 
 - https://caniuse.com/#feat=flexbox
-
-
-
-<!-- date: 2018-09-30 -->

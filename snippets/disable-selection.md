@@ -5,22 +5,16 @@ tags: interactivity,intermediate
 
 Makes the content unselectable.
 
-#### HTML
-
 ```html
 <p>You can select me.</p>
 <p class="unselectable">You can't select me!</p>
 ```
-
-#### CSS
 
 ```css
 .unselectable {
   user-select: none;
 }
 ```
-
-#### Demo
 
 #### Explanation
 

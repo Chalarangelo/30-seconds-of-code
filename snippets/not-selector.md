@@ -5,8 +5,6 @@ tags: visual,intermediate
 
 The `:not` psuedo selector is useful for styling a group of elements, while leaving the last (or specified) element unstyled.
 
-#### HTML
-
 ```html
 <ul class="css-not-selector-shortcut">
   <li>One</li>
@@ -15,8 +13,6 @@ The `:not` psuedo selector is useful for styling a group of elements, while leav
   <li>Four</li>
 </ul>
 ```
-
-#### CSS
 
 ```css
 .css-not-selector-shortcut {
@@ -37,8 +33,6 @@ li:not(:last-child) {
   border-right: 2px solid #d2d5e4;
 }
 ```
-
-#### Demo
 
 #### Explanation
 

@@ -5,8 +5,6 @@ tags: visual,intermediate
 
 Adds a fading gradient to an overflowing element to better indicate there is more content to be scrolled.
 
-#### HTML
-
 ```html
 <div class="overflow-scroll-gradient">
   <div class="overflow-scroll-gradient__scroller">
@@ -21,8 +19,6 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
   </div>
 </div>
 ```
-
-#### CSS
 
 ```css
 .overflow-scroll-gradient {
@@ -49,8 +45,6 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
   line-height: 1.2;
 }
 ```
-
-#### Demo
 
 #### Explanation
 

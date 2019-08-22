@@ -5,13 +5,9 @@ tags: visual,intermediate
 
 Creates a circle shape with pure CSS.
 
-#### HTML
-
 ```html
 <div class="circle"></div>
 ```
-
-#### CSS
 
 ```css
 .circle {
@@ -21,8 +17,6 @@ Creates a circle shape with pure CSS.
   background: #333;
 }
 ```
-
-#### Demo
 
 #### Explanation
 

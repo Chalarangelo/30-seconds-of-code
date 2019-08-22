@@ -6,13 +6,9 @@ tags: visual,intermediate
 A nicer alternative to `text-decoration: underline` or `<u></u>` where descenders do not clip the underline.
 Natively implemented as `text-decoration-skip-ink: auto` but it has less control over the underline.
 
-#### HTML
-
 ```html
 <p class="pretty-text-underline">Pretty text underline without clipping descending letters.</p>
 ```
-
-#### CSS
 
 ```css
 .pretty-text-underline {
@@ -32,8 +28,6 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
   text-shadow: none;
 }
 ```
-
-#### Demo
 
 #### Explanation
 

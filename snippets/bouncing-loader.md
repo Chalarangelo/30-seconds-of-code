@@ -5,8 +5,6 @@ tags: animation,intermediate
 
 Creates a bouncing loader animation.
 
-#### HTML
-
 ```html
 <div class="bouncing-loader">
   <div></div>
@@ -14,8 +12,6 @@ Creates a bouncing loader animation.
   <div></div>
 </div>
 ```
-
-#### CSS
 
 ```css
 @keyframes bouncing-loader {
@@ -43,8 +39,6 @@ Creates a bouncing loader animation.
   animation-delay: 0.4s;
 }
 ```
-
-#### Demo
 
 #### Explanation
 

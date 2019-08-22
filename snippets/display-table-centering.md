@@ -5,15 +5,11 @@ tags: layout,intermediate
 
 Vertically and horizontally centers a child element within its parent element using `display: table` (as an alternative to `flexbox`).
 
-#### HTML
-
 ```html
 <div class="container">
   <div class="center"><span>Centered content</span></div>
 </div>
 ```
-
-#### CSS
 
 ```css
 .container {
@@ -34,8 +30,6 @@ Vertically and horizontally centers a child element within its parent element us
   vertical-align: middle;
 }
 ```
-
-#### Demo
 
 #### Explanation
 

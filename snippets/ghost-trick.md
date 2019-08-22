@@ -5,15 +5,11 @@ tags: layout,intermediate
 
 Vertically centers an element in another.
 
-#### HTML
-
 ```html
 <div class="ghost-trick">
   <div class="ghosting"><p>Vertically centered without changing the position property.</p></div>
 </div>
 ```
-
-#### CSS
 
 ```css
 .ghosting {
@@ -33,8 +29,6 @@ p {
   vertical-align: middle;
 }
 ```
-
-#### Demo
 
 #### Explanation
 

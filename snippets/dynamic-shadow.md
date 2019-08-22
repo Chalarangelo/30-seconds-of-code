@@ -5,13 +5,9 @@ tags: visual,intermediate
 
 Creates a shadow similar to `box-shadow` but based on the colors of the element itself.
 
-#### HTML
-
 ```html
 <div class="dynamic-shadow"></div>
 ```
-
-#### CSS
 
 ```css
 .dynamic-shadow {
@@ -33,8 +29,6 @@ Creates a shadow similar to `box-shadow` but based on the colors of the element 
   z-index: -1;
 }
 ```
-
-#### Demo
 
 #### Explanation
 

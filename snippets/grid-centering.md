@@ -5,13 +5,9 @@ tags: layout,intermediate
 
 Horizontally and vertically centers a child element within a parent element using `grid`.
 
-#### HTML
-
 ```html
 <div class="grid-centering"><div class="child">Centered content.</div></div>
 ```
-
-#### CSS
 
 ```css
 .grid-centering {
@@ -21,8 +17,6 @@ Horizontally and vertically centers a child element within a parent element usin
   height: 100px;
 }
 ```
-
-#### Demo
 
 #### Explanation
 

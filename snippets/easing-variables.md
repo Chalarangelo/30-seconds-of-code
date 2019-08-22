@@ -6,13 +6,9 @@ tags: animation,intermediate
 Variables that can be reused for `transition-timing-function` properties, more
 powerful than the built-in `ease`, `ease-in`, `ease-out` and `ease-in-out`.
 
-#### HTML
-
 ```html
 <div class="easing-variables">Hover</div>
 ```
-
-#### CSS
 
 ```css
 :root {
@@ -55,8 +51,6 @@ powerful than the built-in `ease`, `ease-in`, `ease-out` and `ease-in-out`.
   transform: rotate(45deg);
 }
 ```
-
-#### Demo
 
 #### Explanation
 

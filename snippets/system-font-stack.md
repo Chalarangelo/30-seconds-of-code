@@ -5,13 +5,9 @@ tags: visual,intermediate
 
 Uses the native font of the operating system to get close to a native app feel.
 
-#### HTML
-
 ```html
 <p class="system-font-stack">This text uses the system font.</p>
 ```
-
-#### CSS
 
 ```css
 .system-font-stack {
@@ -19,8 +15,6 @@ Uses the native font of the operating system to get close to a native app feel.
     Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 ```
-
-#### Demo
 
 #### Explanation
 

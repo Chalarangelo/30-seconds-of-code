@@ -5,13 +5,9 @@ tags: visual,intermediate
 
 Creates a triangle shape with pure CSS.
 
-#### HTML
-
 ```html
 <div class="triangle"></div>
 ```
-
-#### CSS
 
 ```css
 .triangle {
@@ -22,8 +18,6 @@ Creates a triangle shape with pure CSS.
   border-right: 20px solid transparent;
 }
 ```
-
-#### Demo
 
 #### Explanation
 

@@ -7,8 +7,6 @@ Ensures that an element self-clears its children.
 
 ###### Note: This is only useful if you are still using float to build layouts. Please consider using a modern approach with flexbox layout or grid layout.
 
-#### HTML
-
 ```html
 <div class="clearfix">
   <div class="floated">float a</div>
@@ -16,8 +14,6 @@ Ensures that an element self-clears its children.
   <div class="floated">float c</div>
 </div>
 ```
-
-#### CSS
 
 ```css
 .clearfix::after {
@@ -30,8 +26,6 @@ Ensures that an element self-clears its children.
   float: left;
 }
 ```
-
-#### Demo
 
 #### Explanation
 
