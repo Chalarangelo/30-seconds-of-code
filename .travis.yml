@@ -1,16 +1,12 @@
 language: node_js
-node_js:
-  - node
-install:
-  - npm install
-script:
-  - npm run build
-after_script:
-  - test $TRAVIS_EVENT_TYPE = cron
-    && echo -e "\e[95mDeploying to Repository"
-    && chmod +x .travis/push.sh
-    && ./.travis/push.sh
-  - chmod +x .travis/forcepush.sh && ./.travis/forcepush.sh
 cache:
   directories:
     - node_modules
+node_js:
+- lts/*
+script:
+- npm run extractor
+- npm run builder
+after_success:
+- chmod +x .travis/push.sh
+- .travis/push.sh
