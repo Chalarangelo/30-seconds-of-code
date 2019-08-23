@@ -5,17 +5,17 @@ tags: string,regexp,intermediate
 
 Converts a string to camelcase.
 
-Break the string into words and combine them capitalizing the first letter of each word, using a regexp.
+Break the string into words and combine them capitalizing the first letter of each word, using `title`.
+
+`(\s|_|-)+` matches one or more spaces (`\s`), underscores (`_`) or hyphens (`-`). `re.sub` replaces these matches with single spaces.  
+`title` capitalizes the first letter of each word. `replace(" ", "")` removes the spaces between words.
 
 ```py
 import re
 
-def camel(str):
-  s = re.sub(r"(\s|_|-)+","",
-    re.sub(r"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+",
-    lambda mo: mo.group(0)[0].upper() + mo.group(0)[1:].lower(),str)
-  )
-  return s[0].lower() + s[1:]
+def camel(s):
+  pascal = re.sub(r"(\s|_|-)+", " ", s).title().replace(" ", "")
+  return pascal[0].lower() + pascal[1:]
 ```
 
 ```py
