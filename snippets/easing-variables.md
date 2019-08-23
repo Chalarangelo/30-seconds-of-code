@@ -1,6 +1,6 @@
 ---
 title: Easing variables
-tags: animation,intermediate
+tags: animation
 ---
 
 Variables that can be reused for `transition-timing-function` properties, more

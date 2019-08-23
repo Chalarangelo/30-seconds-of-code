@@ -1,6 +1,6 @@
 ---
 title: Custom scrollbar
-tags: visual,intermediate
+tags: visual
 ---
 
 Customizes the scrollbar style for the document and elements with scrollable overflow, on WebKit platforms.

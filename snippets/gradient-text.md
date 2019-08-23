@@ -1,6 +1,6 @@
 ---
 title: Gradient text
-tags: visual,intermediate
+tags: visual
 ---
 
 Gives text a gradient color.

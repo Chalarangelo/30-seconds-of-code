@@ -1,6 +1,6 @@
 ---
 title: Button border animation
-tags: animation,intermediate
+tags: animation
 ---
 
 Creates a border animation on hover.

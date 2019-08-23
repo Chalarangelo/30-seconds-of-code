@@ -1,6 +1,6 @@
 ---
 title: Popout menu
-tags: interactivity,intermediate
+tags: interactivity
 ---
 
 Reveals an interactive popout menu on hover and focus.

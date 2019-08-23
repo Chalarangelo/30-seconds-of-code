@@ -46,6 +46,8 @@ pre[class*="language-"] {
   overflow: auto;
   margin: 0.5rem 0;
   white-space: pre-wrap;
+  font-size: 1rem;
+  line-height: 2;
 }
 
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
@@ -59,9 +61,10 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 }
 
 :not(pre) > code[class*="language-"] {
-  padding: .1em;
+  padding: .25em .375;
   border-radius: .3em;
   white-space: normal;
+  border: 1px solid var(--code-border-color);
 }
 
 .namespace {
@@ -75,7 +78,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
   &.punctuation {
     color: var(--token-color-b);
   }
-  &.property, &.tag, &.boolean, &.constant, &.symbol, &.deleted, &.function {
+  &.tag, &.boolean, &.constant, &.symbol, &.deleted, &.function {
     color: var(--token-color-c);
   }
   &.number, &.class-name {
@@ -89,6 +92,9 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
   }
   &.regex {
     color: var(--token-color-g);
+  }
+  &.property {
+    color: var(--token-color-i);
   }
   &.important, &.variable {
     color: var(--token-color-h);
@@ -107,7 +113,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
   color: var(--token-color-f);
 }
 
-p > code, a > code {
+p > code, a > code, li > code {
   &, &[class*="language-"] {
     color: var(--code-fore-color);
     background: var(--code-back-color);

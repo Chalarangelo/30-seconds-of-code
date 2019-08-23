@@ -1,6 +1,6 @@
 ---
 title: System font stack
-tags: visual,intermediate
+tags: visual
 ---
 
 Uses the native font of the operating system to get close to a native app feel.

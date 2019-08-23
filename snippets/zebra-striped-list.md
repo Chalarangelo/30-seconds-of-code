@@ -1,6 +1,6 @@
 ---
 title: Zebra striped list
-tags: visual,intermediate
+tags: visual
 ---
 
 Creates a striped list with alternating background colors, which is useful for differentiating siblings that have content spread across a wide row.

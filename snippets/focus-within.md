@@ -1,6 +1,6 @@
 ---
 title: Focus Within
-tags: visual, interactivity,intermediate
+tags: visual, interactivity
 ---
 
 Changes the appearance of a form if any of its children are focused.

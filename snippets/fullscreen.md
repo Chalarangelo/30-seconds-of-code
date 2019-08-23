@@ -1,6 +1,6 @@
 ---
 title: Fullscreen
-tags: visual,intermediate
+tags: visual
 ---
 
 The :fullscreen CSS pseudo-class represents an element that's displayed when the browser is in fullscreen mode.

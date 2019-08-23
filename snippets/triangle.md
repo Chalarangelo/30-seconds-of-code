@@ -1,6 +1,6 @@
 ---
 title: Triangle
-tags: visual,intermediate
+tags: visual
 ---
 
 Creates a triangle shape with pure CSS.

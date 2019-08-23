@@ -1,6 +1,6 @@
 ---
 title: Height transition
-tags: animation,intermediate
+tags: animation
 ---
 
 Transitions an element's height from `0` to `auto` when its height is unknown.

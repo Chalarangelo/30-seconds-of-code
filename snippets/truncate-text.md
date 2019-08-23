@@ -1,6 +1,6 @@
 ---
 title: Truncate text
-tags: layout,intermediate
+tags: layout
 ---
 
 If the text is longer than one line, it will be truncated and end with an ellipsis `…`.

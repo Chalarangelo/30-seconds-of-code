@@ -13,18 +13,17 @@
           "supportPercentage": 100
         },
         "codeBlocks": {
-          "html": "<div class=\"bouncing-loader\">\r\n  <div></div>\r\n  <div></div>\r\n  <div></div>\r\n</div>",
-          "css": "@keyframes bouncing-loader {\r\n  to {\r\n    opacity: 0.1;\r\n    transform: translate3d(0, -1rem, 0);\r\n  }\r\n}\r\n.bouncing-loader {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n.bouncing-loader > div {\r\n  width: 1rem;\r\n  height: 1rem;\r\n  margin: 3rem 0.2rem;\r\n  background: #8385aa;\r\n  border-radius: 50%;\r\n  animation: bouncing-loader 0.6s infinite alternate;\r\n}\r\n.bouncing-loader > div:nth-child(2) {\r\n  animation-delay: 0.2s;\r\n}\r\n.bouncing-loader > div:nth-child(3) {\r\n  animation-delay: 0.4s;\r\n}",
+          "html": "<div class=\"bouncing-loader\">\n  <div></div>\n  <div></div>\n  <div></div>\n</div>",
+          "css": "@keyframes bouncing-loader {\n  to {\n    opacity: 0.1;\n    transform: translate3d(0, -1rem, 0);\n  }\n}\n.bouncing-loader {\n  display: flex;\n  justify-content: center;\n}\n.bouncing-loader > div {\n  width: 1rem;\n  height: 1rem;\n  margin: 3rem 0.2rem;\n  background: #8385aa;\n  border-radius: 50%;\n  animation: bouncing-loader 0.6s infinite alternate;\n}\n.bouncing-loader > div:nth-child(2) {\n  animation-delay: 0.2s;\n}\n.bouncing-loader > div:nth-child(3) {\n  animation-delay: 0.4s;\n}",
           "js": "",
           "scopedCss": "@keyframes bouncing-loader {\n  to {\n    opacity: 0.1;\n    transform: translate3d(0, -1rem, 0); } }\n\n[data-scope=\"bouncing-loader\"] .bouncing-loader {\n  display: flex;\n  justify-content: center; }\n\n[data-scope=\"bouncing-loader\"] .bouncing-loader > div {\n  width: 1rem;\n  height: 1rem;\n  margin: 3rem 0.2rem;\n  background: #8385aa;\n  border-radius: 50%;\n  animation: bouncing-loader 0.6s infinite alternate; }\n\n[data-scope=\"bouncing-loader\"] .bouncing-loader > div:nth-child(2) {\n  animation-delay: 0.2s; }\n\n[data-scope=\"bouncing-loader\"] .bouncing-loader > div:nth-child(3) {\n  animation-delay: 0.4s; }\n"
         },
         "tags": [
-          "animation",
-          "intermediate"
+          "animation"
         ]
       },
       "meta": {
-        "hash": "0c6a234337b2d3d49f4bc097f59d768026ed6afdfe555853cdcbfef1b06665a8"
+        "hash": "9ddb53b4f0d4d889f585ce69e46dc403ccd12f40dff305134bccf8b8a399bb7a"
       }
     },
     {
@@ -40,18 +39,17 @@
           "supportPercentage": 100
         },
         "codeBlocks": {
-          "html": "<div class=\"box\">border-box</div>\r\n<div class=\"box content-box\">content-box</div>",
-          "css": "html {\r\n  box-sizing: border-box;\r\n}\r\n*,\r\n*::before,\r\n*::after {\r\n  box-sizing: inherit;\r\n}\r\n.box {\r\n  display: inline-block;\r\n  width: 150px;\r\n  height: 150px;\r\n  padding: 10px;\r\n  background: tomato;\r\n  color: white;\r\n  border: 10px solid red;\r\n}\r\n.content-box {\r\n  box-sizing: content-box;\r\n}",
+          "html": "<div class=\"box\">border-box</div>\n<div class=\"box content-box\">content-box</div>",
+          "css": "html {\n  box-sizing: border-box;\n}\n*,\n*::before,\n*::after {\n  box-sizing: inherit;\n}\n.box {\n  display: inline-block;\n  width: 150px;\n  height: 150px;\n  padding: 10px;\n  background: tomato;\n  color: white;\n  border: 10px solid red;\n}\n.content-box {\n  box-sizing: content-box;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"box-sizing-reset\"] html {\n  box-sizing: border-box; }\n\n[data-scope=\"box-sizing-reset\"] *,\n[data-scope=\"box-sizing-reset\"] *::before,\n[data-scope=\"box-sizing-reset\"] *::after {\n  box-sizing: inherit; }\n\n[data-scope=\"box-sizing-reset\"] .box {\n  display: inline-block;\n  width: 150px;\n  height: 150px;\n  padding: 10px;\n  background: tomato;\n  color: white;\n  border: 10px solid red; }\n\n[data-scope=\"box-sizing-reset\"] .content-box {\n  box-sizing: content-box; }\n"
         },
         "tags": [
-          "layout",
-          "intermediate"
+          "layout"
         ]
       },
       "meta": {
-        "hash": "a67133bc7bf6d831340501643c7efede36b09a7f36516e0cc7fb7d3ff06ee7bd"
+        "hash": "f435b9fcc289760199b4b4781e608438b866887fa91394e94063b42f3841fab7"
       }
     },
     {
@@ -68,17 +66,16 @@
         },
         "codeBlocks": {
           "html": "<div class=\"button-border\"><button class=\"button\">Submit</button></div>",
-          "css": ".button {\r\n  background-color: #c47135;\r\n  border: none;\r\n  color: #ffffff;\r\n  outline: none;\r\n  padding: 12px 40px 10px;\r\n  position: relative;\r\n}\r\n.button:before,\r\n.button:after {\r\n  border: 0 solid transparent;\r\n  transition: all 0.25s;\r\n  content: '';\r\n  height: 24px;\r\n  position: absolute;\r\n  width: 24px;\r\n}\r\n.button:before {\r\n  border-top: 2px solid #c47135;\r\n  left: 0px;\r\n  top: -5px;\r\n}\r\n.button:after {\r\n  border-bottom: 2px solid #c47135;\r\n  bottom: -5px;\r\n  right: 0px;\r\n}\r\n.button:hover {\r\n  background-color: #c47135;\r\n}\r\n.button:hover:before,\r\n.button:hover:after {\r\n  height: 100%;\r\n  width: 100%;\r\n}",
+          "css": ".button {\n  background-color: #c47135;\n  border: none;\n  color: #ffffff;\n  outline: none;\n  padding: 12px 40px 10px;\n  position: relative;\n}\n.button:before,\n.button:after {\n  border: 0 solid transparent;\n  transition: all 0.25s;\n  content: '';\n  height: 24px;\n  position: absolute;\n  width: 24px;\n}\n.button:before {\n  border-top: 2px solid #c47135;\n  left: 0px;\n  top: -5px;\n}\n.button:after {\n  border-bottom: 2px solid #c47135;\n  bottom: -5px;\n  right: 0px;\n}\n.button:hover {\n  background-color: #c47135;\n}\n.button:hover:before,\n.button:hover:after {\n  height: 100%;\n  width: 100%;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"button-border-animation\"] .button {\n  background-color: #c47135;\n  border: none;\n  color: #ffffff;\n  outline: none;\n  padding: 12px 40px 10px;\n  position: relative; }\n\n[data-scope=\"button-border-animation\"] .button:before,\n[data-scope=\"button-border-animation\"] .button:after {\n  border: 0 solid transparent;\n  transition: all 0.25s;\n  content: '';\n  height: 24px;\n  position: absolute;\n  width: 24px; }\n\n[data-scope=\"button-border-animation\"] .button:before {\n  border-top: 2px solid #c47135;\n  left: 0px;\n  top: -5px; }\n\n[data-scope=\"button-border-animation\"] .button:after {\n  border-bottom: 2px solid #c47135;\n  bottom: -5px;\n  right: 0px; }\n\n[data-scope=\"button-border-animation\"] .button:hover {\n  background-color: #c47135; }\n\n[data-scope=\"button-border-animation\"] .button:hover:before,\n[data-scope=\"button-border-animation\"] .button:hover:after {\n  height: 100%;\n  width: 100%; }\n"
         },
         "tags": [
-          "animation",
-          "intermediate"
+          "animation"
         ]
       },
       "meta": {
-        "hash": "8d6a2be5e5ab8ef0d99640d53841e097c0867e51d069852953327fb680451f87"
+        "hash": "ff6401cc784b92a9672e74968719c029de224c29fcfdc3eaeaa764274108f648"
       }
     },
     {
@@ -95,17 +92,16 @@
         },
         "codeBlocks": {
           "html": "<div class=\"box-example\"></div>",
-          "css": ".box-example {\r\n  height: 280px;\r\n  background: #222 url('https://image.ibb.co/fUL9nS/wolf.png') no-repeat;\r\n  background-position: calc(100% - 20px) calc(100% - 20px);\r\n}",
+          "css": ".box-example {\n  height: 280px;\n  background: #222 url('https://image.ibb.co/fUL9nS/wolf.png') no-repeat;\n  background-position: calc(100% - 20px) calc(100% - 20px);\n}",
           "js": "",
           "scopedCss": "[data-scope=\"calc\"] .box-example {\n  height: 280px;\n  background: #222 url(\"https://image.ibb.co/fUL9nS/wolf.png\") no-repeat;\n  background-position: calc(100% - 20px) calc(100% - 20px); }\n"
         },
         "tags": [
-          "other",
-          "intermediate"
+          "other"
         ]
       },
       "meta": {
-        "hash": "cb08d9b461777b0aac912b2ef76eb996881d00f8f95952dbc252cd79c7fb1284"
+        "hash": "dc3464c5df00866bdea869d2e02f1a3f040f97301259020828df9951de9ada8c"
       }
     },
     {
@@ -122,17 +118,16 @@
         },
         "codeBlocks": {
           "html": "<div class=\"circle\"></div>",
-          "css": ".circle {\r\n  border-radius: 50%;\r\n  width: 2rem;\r\n  height: 2rem;\r\n  background: #333;\r\n}",
+          "css": ".circle {\n  border-radius: 50%;\n  width: 2rem;\n  height: 2rem;\n  background: #333;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"circle\"] .circle {\n  border-radius: 50%;\n  width: 2rem;\n  height: 2rem;\n  background: #333; }\n"
         },
         "tags": [
-          "visual",
-          "intermediate"
+          "visual"
         ]
       },
       "meta": {
-        "hash": "cbe2b2d3f3341efcd50d6e0eae249c23f6c267509a17f33341cd09850d316fe6"
+        "hash": "1a068c6a0209bfd1e7155326fb219f7590193e3b81802dfecc6d705e9705adf8"
       }
     },
     {
@@ -148,18 +143,17 @@
           "supportPercentage": null
         },
         "codeBlocks": {
-          "html": "<div class=\"clearfix\">\r\n  <div class=\"floated\">float a</div>\r\n  <div class=\"floated\">float b</div>\r\n  <div class=\"floated\">float c</div>\r\n</div>",
-          "css": ".clearfix::after {\r\n  content: '';\r\n  display: block;\r\n  clear: both;\r\n}\r\n\r\n.floated {\r\n  float: left;\r\n}",
+          "html": "<div class=\"clearfix\">\n  <div class=\"floated\">float a</div>\n  <div class=\"floated\">float b</div>\n  <div class=\"floated\">float c</div>\n</div>",
+          "css": ".clearfix::after {\n  content: '';\n  display: block;\n  clear: both;\n}\n\n.floated {\n  float: left;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"clearfix\"] .clearfix::after {\n  content: '';\n  display: block;\n  clear: both; }\n\n[data-scope=\"clearfix\"] .floated {\n  float: left; }\n"
         },
         "tags": [
-          "layout",
-          "intermediate"
+          "layout"
         ]
       },
       "meta": {
-        "hash": "246d8d9c39d53c0e93a3c6fa6cfaa2b8c09282b37d7dbbe8fef44d5a3c585076"
+        "hash": "9479dfb4ec61a01045f480c93e21829b08017765585edbc511a653d5791e2f87"
       }
     },
     {
@@ -176,17 +170,16 @@
         },
         "codeBlocks": {
           "html": "<div class=\"constant-width-to-height-ratio\"></div>",
-          "css": ".constant-width-to-height-ratio {\r\n  background: #333;\r\n  width: 50%;\r\n}\r\n.constant-width-to-height-ratio::before {\r\n  content: '';\r\n  padding-top: 100%;\r\n  float: left;\r\n}\r\n.constant-width-to-height-ratio::after {\r\n  content: '';\r\n  display: block;\r\n  clear: both;\r\n}",
+          "css": ".constant-width-to-height-ratio {\n  background: #333;\n  width: 50%;\n}\n.constant-width-to-height-ratio::before {\n  content: '';\n  padding-top: 100%;\n  float: left;\n}\n.constant-width-to-height-ratio::after {\n  content: '';\n  display: block;\n  clear: both;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"constant-width-to-height-ratio\"] .constant-width-to-height-ratio {\n  background: #333;\n  width: 50%; }\n\n[data-scope=\"constant-width-to-height-ratio\"] .constant-width-to-height-ratio::before {\n  content: '';\n  padding-top: 100%;\n  float: left; }\n\n[data-scope=\"constant-width-to-height-ratio\"] .constant-width-to-height-ratio::after {\n  content: '';\n  display: block;\n  clear: both; }\n"
         },
         "tags": [
-          "layout",
-          "intermediate"
+          "layout"
         ]
       },
       "meta": {
-        "hash": "16ed56f599f8187c3d19e9475a37d567588ddab04bfb430b123a64d792b1f1a9"
+        "hash": "f94bb8368d8074d3d00ca449841b16d0fd4c4267a4abf373c43f41f2b9b6bcd1"
       }
     },
     {
@@ -202,19 +195,18 @@
           "supportPercentage": 100
         },
         "codeBlocks": {
-          "html": "<ul>\r\n  <li>List item</li>\r\n  <li>List item</li>\r\n  <li>\r\n    List item\r\n    <ul>\r\n      <li>List item</li>\r\n      <li>List item</li>\r\n      <li>List item</li>\r\n    </ul>\r\n  </li>\r\n</ul>",
-          "css": "ul {\r\n  counter-reset: counter;\r\n}\r\n\r\nli::before {\r\n  counter-increment: counter;\r\n  content: counters(counter, '.') ' ';\r\n}",
+          "html": "<ul>\n  <li>List item</li>\n  <li>List item</li>\n  <li>\n    List item\n    <ul>\n      <li>List item</li>\n      <li>List item</li>\n      <li>List item</li>\n    </ul>\n  </li>\n</ul>",
+          "css": "ul {\n  counter-reset: counter;\n}\n\nli::before {\n  counter-increment: counter;\n  content: counters(counter, '.') ' ';\n}",
           "js": "",
           "scopedCss": "[data-scope=\"counter\"] ul {\n  counter-reset: counter; }\n\n[data-scope=\"counter\"] li::before {\n  counter-increment: counter;\n  content: counters(counter, \".\") \" \"; }\n"
         },
         "tags": [
           "visual",
-          "other",
-          "intermediate"
+          "other"
         ]
       },
       "meta": {
-        "hash": "16e70353ec2e154408ffb6827c02df34f47289a471337a428cdc68631e45568a"
+        "hash": "9d12a06e8dfbe67458098bb9e5fb4041a5ebd7cf5d652940ddbb8ae6f49a58dd"
       }
     },
     {
@@ -230,18 +222,17 @@
           "supportPercentage": 97.69
         },
         "codeBlocks": {
-          "html": "<div class=\"custom-scrollbar\">\r\n  <p>\r\n    Lorem ipsum dolor sit amet consectetur adipisicing elit.<br />\r\n    Iure id exercitationem nulla qui repellat laborum vitae, <br />\r\n    molestias tempora velit natus. Quas, assumenda nisi. <br />\r\n    Quisquam enim qui iure, consequatur velit sit?\r\n  </p>\r\n</div>",
-          "css": ".custom-scrollbar {\r\n  height: 70px;\r\n  overflow-y: scroll;\r\n}\r\n\r\n/* To style the document scrollbar, remove `.custom-scrollbar` */\r\n\r\n.custom-scrollbar::-webkit-scrollbar {\r\n  width: 8px;\r\n}\r\n\r\n.custom-scrollbar::-webkit-scrollbar-track {\r\n  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\r\n  border-radius: 10px;\r\n}\r\n\r\n.custom-scrollbar::-webkit-scrollbar-thumb {\r\n  border-radius: 10px;\r\n  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);\r\n}",
+          "html": "<div class=\"custom-scrollbar\">\n  <p>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit.<br />\n    Iure id exercitationem nulla qui repellat laborum vitae, <br />\n    molestias tempora velit natus. Quas, assumenda nisi. <br />\n    Quisquam enim qui iure, consequatur velit sit?\n  </p>\n</div>",
+          "css": ".custom-scrollbar {\n  height: 70px;\n  overflow-y: scroll;\n}\n\n/* To style the document scrollbar, remove `.custom-scrollbar` */\n\n.custom-scrollbar::-webkit-scrollbar {\n  width: 8px;\n}\n\n.custom-scrollbar::-webkit-scrollbar-track {\n  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  border-radius: 10px;\n}\n\n.custom-scrollbar::-webkit-scrollbar-thumb {\n  border-radius: 10px;\n  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);\n}",
           "js": "",
           "scopedCss": "[data-scope=\"custom-scrollbar\"] {\n  /* To style the document scrollbar, remove `.custom-scrollbar` */ }\n  [data-scope=\"custom-scrollbar\"] .custom-scrollbar {\n    height: 70px;\n    overflow-y: scroll; }\n  [data-scope=\"custom-scrollbar\"] .custom-scrollbar::-webkit-scrollbar {\n    width: 8px; }\n  [data-scope=\"custom-scrollbar\"] .custom-scrollbar::-webkit-scrollbar-track {\n    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n    border-radius: 10px; }\n  [data-scope=\"custom-scrollbar\"] .custom-scrollbar::-webkit-scrollbar-thumb {\n    border-radius: 10px;\n    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5); }\n"
         },
         "tags": [
-          "visual",
-          "intermediate"
+          "visual"
         ]
       },
       "meta": {
-        "hash": "7052930103a4ff5084d310007c05f14a156e90eb0850e816be4db0fd67f5617a"
+        "hash": "bf63836daec92d4b85128faff57480f8297c4005a25c70ee93da97bd54eaa7bf"
       }
     },
     {
@@ -258,17 +249,16 @@
         },
         "codeBlocks": {
           "html": "<p class=\"custom-text-selection\">Select some of this text.</p>",
-          "css": "::selection {\r\n  background: aquamarine;\r\n  color: black;\r\n}\r\n.custom-text-selection::selection {\r\n  background: deeppink;\r\n  color: white;\r\n}",
+          "css": "::selection {\n  background: aquamarine;\n  color: black;\n}\n.custom-text-selection::selection {\n  background: deeppink;\n  color: white;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"custom-text-selection\"] ::selection {\n  background: aquamarine;\n  color: black; }\n\n[data-scope=\"custom-text-selection\"] .custom-text-selection::selection {\n  background: deeppink;\n  color: white; }\n"
         },
         "tags": [
-          "visual",
-          "intermediate"
+          "visual"
         ]
       },
       "meta": {
-        "hash": "20ac12fac7af2490421ed8ea3bef0a8e014d7d9188afffa3ddcc370475fb0ba1"
+        "hash": "7095b8bab3e1b3736bf0b8a8a4e429d905bceaf2aec83983377d6151e9a0f660"
       }
     },
     {
@@ -285,17 +275,16 @@
         },
         "codeBlocks": {
           "html": "<p class=\"custom-variables\">CSS is awesome!</p>",
-          "css": ":root {\r\n  /* Place variables within here to use the variables globally. */\r\n}\r\n\r\n.custom-variables {\r\n  --some-color: #da7800;\r\n  --some-keyword: italic;\r\n  --some-size: 1.25em;\r\n  --some-complex-value: 1px 1px 2px whitesmoke, 0 0 1em slategray, 0 0 0.2em slategray;\r\n  color: var(--some-color);\r\n  font-size: var(--some-size);\r\n  font-style: var(--some-keyword);\r\n  text-shadow: var(--some-complex-value);\r\n}",
+          "css": ":root {\n  /* Place variables within here to use the variables globally. */\n}\n\n.custom-variables {\n  --some-color: #da7800;\n  --some-keyword: italic;\n  --some-size: 1.25em;\n  --some-complex-value: 1px 1px 2px whitesmoke, 0 0 1em slategray, 0 0 0.2em slategray;\n  color: var(--some-color);\n  font-size: var(--some-size);\n  font-style: var(--some-keyword);\n  text-shadow: var(--some-complex-value);\n}",
           "js": "",
           "scopedCss": "[data-scope=\"custom-variables\"] :root {\n  /* Place variables within here to use the variables globally. */ }\n\n[data-scope=\"custom-variables\"] .custom-variables {\n  --some-color: #da7800;\n  --some-keyword: italic;\n  --some-size: 1.25em;\n  --some-complex-value: 1px 1px 2px whitesmoke, 0 0 1em slategray, 0 0 0.2em slategray;\n  color: var(--some-color);\n  font-size: var(--some-size);\n  font-style: var(--some-keyword);\n  text-shadow: var(--some-complex-value); }\n"
         },
         "tags": [
-          "other",
-          "intermediate"
+          "other"
         ]
       },
       "meta": {
-        "hash": "2093cf1daa7f3fc21cc66665ad22c33a5de59ed5fbfb849e65890df32b97846b"
+        "hash": "b07f694e77ae7a8c107c78aa6c4b27d1d1ef0bae5cab96a7a2fe49d48296a8aa"
       }
     },
     {
@@ -311,18 +300,17 @@
           "supportPercentage": 97.51
         },
         "codeBlocks": {
-          "html": "<p>You can select me.</p>\r\n<p class=\"unselectable\">You can't select me!</p>",
-          "css": ".unselectable {\r\n  user-select: none;\r\n}",
+          "html": "<p>You can select me.</p>\n<p class=\"unselectable\">You can't select me!</p>",
+          "css": ".unselectable {\n  user-select: none;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"disable-selection\"] .unselectable {\n  user-select: none; }\n"
         },
         "tags": [
-          "interactivity",
-          "intermediate"
+          "interactivity"
         ]
       },
       "meta": {
-        "hash": "496c33ca13c2bf703547c306630d57418c3aad84c281fb48a68da16d080ceb60"
+        "hash": "6b99a98dfec252430da591aed665c0310b013710546c6c2d7bc4259bd7709a4a"
       }
     },
     {
@@ -338,18 +326,17 @@
           "supportPercentage": null
         },
         "codeBlocks": {
-          "html": "<div class=\"container\">\r\n  <div class=\"center\"><span>Centered content</span></div>\r\n</div>",
-          "css": ".container {\r\n  border: 1px solid #333;\r\n  height: 250px;\r\n  width: 250px;\r\n}\r\n\r\n.center {\r\n  display: table;\r\n  height: 100%;\r\n  width: 100%;\r\n}\r\n\r\n.center > span {\r\n  display: table-cell;\r\n  text-align: center;\r\n  vertical-align: middle;\r\n}",
+          "html": "<div class=\"container\">\n  <div class=\"center\"><span>Centered content</span></div>\n</div>",
+          "css": ".container {\n  border: 1px solid #333;\n  height: 250px;\n  width: 250px;\n}\n\n.center {\n  display: table;\n  height: 100%;\n  width: 100%;\n}\n\n.center > span {\n  display: table-cell;\n  text-align: center;\n  vertical-align: middle;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"display-table-centering\"] .container {\n  border: 1px solid #333;\n  height: 250px;\n  width: 250px; }\n\n[data-scope=\"display-table-centering\"] .center {\n  display: table;\n  height: 100%;\n  width: 100%; }\n\n[data-scope=\"display-table-centering\"] .center > span {\n  display: table-cell;\n  text-align: center;\n  vertical-align: middle; }\n"
         },
         "tags": [
-          "layout",
-          "intermediate"
+          "layout"
         ]
       },
       "meta": {
-        "hash": "2054a899b88b3cc37a367cac149a20dbd32f8596c96cd67417751327861777b2"
+        "hash": "08682925f9ae378097e8b3cc1d2a66f9afdcdd4bd052e2f379e03a124a1a613d"
       }
     },
     {
@@ -366,17 +353,16 @@
         },
         "codeBlocks": {
           "html": "<div class=\"donut\"></div>",
-          "css": "@keyframes donut-spin {\r\n  0% {\r\n    transform: rotate(0deg);\r\n  }\r\n  100% {\r\n    transform: rotate(360deg);\r\n  }\r\n}\r\n.donut {\r\n  display: inline-block;\r\n  border: 4px solid rgba(0, 0, 0, 0.1);\r\n  border-left-color: #7983ff;\r\n  border-radius: 50%;\r\n  width: 30px;\r\n  height: 30px;\r\n  animation: donut-spin 1.2s linear infinite;\r\n}",
+          "css": "@keyframes donut-spin {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n.donut {\n  display: inline-block;\n  border: 4px solid rgba(0, 0, 0, 0.1);\n  border-left-color: #7983ff;\n  border-radius: 50%;\n  width: 30px;\n  height: 30px;\n  animation: donut-spin 1.2s linear infinite;\n}",
           "js": "",
           "scopedCss": "@keyframes donut-spin {\n  0% {\n    transform: rotate(0deg); }\n  100% {\n    transform: rotate(360deg); } }\n\n[data-scope=\"donut-spinner\"] .donut {\n  display: inline-block;\n  border: 4px solid rgba(0, 0, 0, 0.1);\n  border-left-color: #7983ff;\n  border-radius: 50%;\n  width: 30px;\n  height: 30px;\n  animation: donut-spin 1.2s linear infinite; }\n"
         },
         "tags": [
-          "animation",
-          "intermediate"
+          "animation"
         ]
       },
       "meta": {
-        "hash": "d8a8e563acca4e4e132b61a13190409b505c8688872bf9db2db1355d110b6195"
+        "hash": "b7aa7db9756605dfa39631fd05139fb668b910030b71d5046c4149ac2d152b21"
       }
     },
     {
@@ -393,17 +379,16 @@
         },
         "codeBlocks": {
           "html": "<div class=\"dynamic-shadow\"></div>",
-          "css": ".dynamic-shadow {\r\n  position: relative;\r\n  width: 10rem;\r\n  height: 10rem;\r\n  background: linear-gradient(75deg, #6d78ff, #00ffb8);\r\n  z-index: 1;\r\n}\r\n.dynamic-shadow::after {\r\n  content: '';\r\n  width: 100%;\r\n  height: 100%;\r\n  position: absolute;\r\n  background: inherit;\r\n  top: 0.5rem;\r\n  filter: blur(0.4rem);\r\n  opacity: 0.7;\r\n  z-index: -1;\r\n}",
+          "css": ".dynamic-shadow {\n  position: relative;\n  width: 10rem;\n  height: 10rem;\n  background: linear-gradient(75deg, #6d78ff, #00ffb8);\n  z-index: 1;\n}\n.dynamic-shadow::after {\n  content: '';\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  background: inherit;\n  top: 0.5rem;\n  filter: blur(0.4rem);\n  opacity: 0.7;\n  z-index: -1;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"dynamic-shadow\"] .dynamic-shadow {\n  position: relative;\n  width: 10rem;\n  height: 10rem;\n  background: linear-gradient(75deg, #6d78ff, #00ffb8);\n  z-index: 1; }\n\n[data-scope=\"dynamic-shadow\"] .dynamic-shadow::after {\n  content: '';\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  background: inherit;\n  top: 0.5rem;\n  filter: blur(0.4rem);\n  opacity: 0.7;\n  z-index: -1; }\n"
         },
         "tags": [
-          "visual",
-          "intermediate"
+          "visual"
         ]
       },
       "meta": {
-        "hash": "125c57e66fac5a5f0f231889d6cc2bbab0c8693070254386140468ec39045556"
+        "hash": "355f4fabe546f389f59a9cf08b825dca636a471a1413b753d20ea7f1f471428a"
       }
     },
     {
@@ -420,17 +405,16 @@
         },
         "codeBlocks": {
           "html": "<div class=\"easing-variables\">Hover</div>",
-          "css": ":root {\r\n  /* Place variables in here to use globally */\r\n}\r\n\r\n.easing-variables {\r\n  --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);\r\n  --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);\r\n  --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);\r\n  --ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);\r\n  --ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);\r\n  --ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);\r\n\r\n  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);\r\n  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);\r\n  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);\r\n  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);\r\n  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);\r\n  --ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);\r\n\r\n  --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);\r\n  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);\r\n  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);\r\n  --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);\r\n  --ease-in-out-expo: cubic-bezier(1, 0, 0, 1);\r\n  --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);\r\n  display: inline-block;\r\n  width: 75px;\r\n  height: 75px;\r\n  padding: 10px;\r\n  color: white;\r\n  line-height: 50px;\r\n  text-align: center;\r\n  background: #333;\r\n  transition: transform 1s var(--ease-out-quart);\r\n}\r\n\r\n.easing-variables:hover {\r\n  transform: rotate(45deg);\r\n}",
+          "css": ":root {\n  /* Place variables in here to use globally */\n}\n\n.easing-variables {\n  --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);\n  --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n  --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);\n  --ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);\n  --ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);\n  --ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);\n\n  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);\n  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);\n  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);\n  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);\n  --ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);\n\n  --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);\n  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);\n  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);\n  --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);\n  --ease-in-out-expo: cubic-bezier(1, 0, 0, 1);\n  --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);\n  display: inline-block;\n  width: 75px;\n  height: 75px;\n  padding: 10px;\n  color: white;\n  line-height: 50px;\n  text-align: center;\n  background: #333;\n  transition: transform 1s var(--ease-out-quart);\n}\n\n.easing-variables:hover {\n  transform: rotate(45deg);\n}",
           "js": "",
           "scopedCss": "[data-scope=\"easing-variables\"] :root {\n  /* Place variables in here to use globally */ }\n\n[data-scope=\"easing-variables\"] .easing-variables {\n  --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);\n  --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n  --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);\n  --ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);\n  --ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);\n  --ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);\n  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);\n  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);\n  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);\n  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);\n  --ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);\n  --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);\n  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);\n  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);\n  --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);\n  --ease-in-out-expo: cubic-bezier(1, 0, 0, 1);\n  --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);\n  display: inline-block;\n  width: 75px;\n  height: 75px;\n  padding: 10px;\n  color: white;\n  line-height: 50px;\n  text-align: center;\n  background: #333;\n  transition: transform 1s var(--ease-out-quart); }\n\n[data-scope=\"easing-variables\"] .easing-variables:hover {\n  transform: rotate(45deg); }\n"
         },
         "tags": [
-          "animation",
-          "intermediate"
+          "animation"
         ]
       },
       "meta": {
-        "hash": "db00cde15c23534842a4a43a274eacc7052e9ad224c0ae3dd62eccbbe74ddb4a"
+        "hash": "48d8123982a07c883c2b8a844a1d57c0e1efb5b4f6e3e828b982c54ee8d6b6fa"
       }
     },
     {
@@ -447,17 +431,16 @@
         },
         "codeBlocks": {
           "html": "<p class=\"etched-text\">I appear etched into the background.</p>",
-          "css": ".etched-text {\r\n  text-shadow: 0 2px white;\r\n  font-size: 1.5rem;\r\n  font-weight: bold;\r\n  color: #b8bec5;\r\n}",
+          "css": ".etched-text {\n  text-shadow: 0 2px white;\n  font-size: 1.5rem;\n  font-weight: bold;\n  color: #b8bec5;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"etched-text\"] .etched-text {\n  text-shadow: 0 2px white;\n  font-size: 1.5rem;\n  font-weight: bold;\n  color: #b8bec5; }\n"
         },
         "tags": [
-          "visual",
-          "intermediate"
+          "visual"
         ]
       },
       "meta": {
-        "hash": "2db756cdd03d0512450b58790fc8a73bb103ea5e0aa22a65cd101f7545cab824"
+        "hash": "e86bdd1cef913538b157fc7fa052d989d6777be0552d9b6e9ebb474f1629d8fe"
       }
     },
     {
@@ -473,18 +456,17 @@
           "supportPercentage": 100
         },
         "codeBlocks": {
-          "html": "<div class=\"evenly-distributed-children\">\r\n  <p>Item1</p>\r\n  <p>Item2</p>\r\n  <p>Item3</p>\r\n</div>",
-          "css": ".evenly-distributed-children {\r\n  display: flex;\r\n  justify-content: space-between;\r\n}",
+          "html": "<div class=\"evenly-distributed-children\">\n  <p>Item1</p>\n  <p>Item2</p>\n  <p>Item3</p>\n</div>",
+          "css": ".evenly-distributed-children {\n  display: flex;\n  justify-content: space-between;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"evenly-distributed-children\"] .evenly-distributed-children {\n  display: flex;\n  justify-content: space-between; }\n"
         },
         "tags": [
-          "layout",
-          "intermediate"
+          "layout"
         ]
       },
       "meta": {
-        "hash": "76a06249df2acaee078959fb44d8bfa721c5e0511774c3c60acef5d60305e2d7"
+        "hash": "1204bc1df035e1c0d0b3808669a3a3d19201d7bc10500d8242c86fdd68a2a4d9"
       }
     },
     {
@@ -500,19 +482,18 @@
           "supportPercentage": 99.5
         },
         "codeBlocks": {
-          "html": "<img class=\"image image-contain\" src=\"https://picsum.photos/600/200\" />\r\n<img class=\"image image-cover\" src=\"https://picsum.photos/600/200\" />",
-          "css": ".image {\r\n  background: #34495e;\r\n  border: 1px solid #34495e;\r\n  width: 200px;\r\n  height: 200px;\r\n}\r\n\r\n.image-contain {\r\n  object-fit: contain;\r\n  object-position: center;\r\n}\r\n\r\n.image-cover {\r\n  object-fit: cover;\r\n  object-position: right top;\r\n}",
+          "html": "<img class=\"image image-contain\" src=\"https://picsum.photos/600/200\" />\n<img class=\"image image-cover\" src=\"https://picsum.photos/600/200\" />",
+          "css": ".image {\n  background: #34495e;\n  border: 1px solid #34495e;\n  width: 200px;\n  height: 200px;\n}\n\n.image-contain {\n  object-fit: contain;\n  object-position: center;\n}\n\n.image-cover {\n  object-fit: cover;\n  object-position: right top;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"fit-image-in-container\"] .image {\n  background: #34495e;\n  border: 1px solid #34495e;\n  width: 200px;\n  height: 200px; }\n\n[data-scope=\"fit-image-in-container\"] .image-contain {\n  object-fit: contain;\n  object-position: center; }\n\n[data-scope=\"fit-image-in-container\"] .image-cover {\n  object-fit: cover;\n  object-position: right top; }\n"
         },
         "tags": [
           "layout",
-          "visual",
-          "intermediate"
+          "visual"
         ]
       },
       "meta": {
-        "hash": "79cb705dc7ae6fbde94fac8dc3b273dda73be7a4739a2cdf9f160ad6f678133a"
+        "hash": "5d09d5e54b7436f047db61223cff15dce2f17f6cffe5e71e0f9061337de3068e"
       }
     },
     {
@@ -529,17 +510,16 @@
         },
         "codeBlocks": {
           "html": "<div class=\"flexbox-centering\"><div class=\"child\">Centered content.</div></div>",
-          "css": ".flexbox-centering {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  height: 100px;\r\n}",
+          "css": ".flexbox-centering {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100px;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"flexbox-centering\"] .flexbox-centering {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100px; }\n"
         },
         "tags": [
-          "layout",
-          "intermediate"
+          "layout"
         ]
       },
       "meta": {
-        "hash": "ec62036188c484a98e832c45535eafbf528020f116a5aac0c853b56f6b91162e"
+        "hash": "9b17338858339d7bb228e85fc7f8609b4728c9ba2107a636c486779c9c696c0c"
       }
     },
     {
@@ -555,19 +535,18 @@
           "supportPercentage": 85.39
         },
         "codeBlocks": {
-          "html": "<div class=\"focus-within\">\r\n  <form>\r\n    <label for=\"given_name\">Given Name:</label> <input id=\"given_name\" type=\"text\" /> <br />\r\n    <label for=\"family_name\">Family Name:</label> <input id=\"family_name\" type=\"text\" />\r\n  </form>\r\n</div>",
-          "css": "form {\r\n  border: 3px solid #2d98da;\r\n  color: #000000;\r\n  padding: 4px;\r\n}\r\n\r\nform:focus-within {\r\n  background: #f7b731;\r\n  color: #000000;\r\n}",
+          "html": "<div class=\"focus-within\">\n  <form>\n    <label for=\"given_name\">Given Name:</label> <input id=\"given_name\" type=\"text\" /> <br />\n    <label for=\"family_name\">Family Name:</label> <input id=\"family_name\" type=\"text\" />\n  </form>\n</div>",
+          "css": "form {\n  border: 3px solid #2d98da;\n  color: #000000;\n  padding: 4px;\n}\n\nform:focus-within {\n  background: #f7b731;\n  color: #000000;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"focus-within\"] form {\n  border: 3px solid #2d98da;\n  color: #000000;\n  padding: 4px; }\n\n[data-scope=\"focus-within\"] form:focus-within {\n  background: #f7b731;\n  color: #000000; }\n"
         },
         "tags": [
           "visual",
-          "interactivity",
-          "intermediate"
+          "interactivity"
         ]
       },
       "meta": {
-        "hash": "54bae820fad9b5c0aee1d88fc696e02e232d7739e6de81a8674f025f22125f3b"
+        "hash": "6fd9c086b06248408f3934b3d21b513dc751ab023defea1841b03a5a9503fff3"
       }
     },
     {
@@ -583,18 +562,17 @@
           "supportPercentage": 99.11
         },
         "codeBlocks": {
-          "html": "<div class=\"container\">\r\n  <p><em>Click the button below to enter the element into fullscreen mode. </em></p>\r\n  <div class=\"element\" id=\"element\"><p>I change color in fullscreen mode!</p></div>\r\n  <br />\r\n  <button onclick=\"var el = document.getElementById('element'); el.requestFullscreen();\">\r\n    Go Full Screen!\r\n  </button>\r\n</div>",
-          "css": ".container {\r\n  margin: 40px auto;\r\n  max-width: 700px;\r\n}\r\n\r\n.element {\r\n  padding: 20px;\r\n  height: 300px;\r\n  width: 100%;\r\n  background-color: skyblue;\r\n}\r\n\r\n.element p {\r\n  text-align: center;\r\n  color: white;\r\n  font-size: 3em;\r\n}\r\n\r\n.element:-ms-fullscreen p {\r\n  visibility: visible;\r\n}\r\n\r\n.element:fullscreen {\r\n  background-color: #e4708a;\r\n  width: 100vw;\r\n  height: 100vh;\r\n}",
+          "html": "<div class=\"container\">\n  <p><em>Click the button below to enter the element into fullscreen mode. </em></p>\n  <div class=\"element\" id=\"element\"><p>I change color in fullscreen mode!</p></div>\n  <br />\n  <button onclick=\"var el = document.getElementById('element'); el.requestFullscreen();\">\n    Go Full Screen!\n  </button>\n</div>",
+          "css": ".container {\n  margin: 40px auto;\n  max-width: 700px;\n}\n\n.element {\n  padding: 20px;\n  height: 300px;\n  width: 100%;\n  background-color: skyblue;\n}\n\n.element p {\n  text-align: center;\n  color: white;\n  font-size: 3em;\n}\n\n.element:-ms-fullscreen p {\n  visibility: visible;\n}\n\n.element:fullscreen {\n  background-color: #e4708a;\n  width: 100vw;\n  height: 100vh;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"fullscreen\"] .container {\n  margin: 40px auto;\n  max-width: 700px; }\n\n[data-scope=\"fullscreen\"] .element {\n  padding: 20px;\n  height: 300px;\n  width: 100%;\n  background-color: skyblue; }\n\n[data-scope=\"fullscreen\"] .element p {\n  text-align: center;\n  color: white;\n  font-size: 3em; }\n\n[data-scope=\"fullscreen\"] .element:-ms-fullscreen p {\n  visibility: visible; }\n\n[data-scope=\"fullscreen\"] .element:fullscreen {\n  background-color: #e4708a;\n  width: 100vw;\n  height: 100vh; }\n"
         },
         "tags": [
-          "visual",
-          "intermediate"
+          "visual"
         ]
       },
       "meta": {
-        "hash": "2bb108851d15d46749ba4f1caa2ba08d4754a2ee988e812280925c637f610d40"
+        "hash": "bc28c8d11259e58cb448d898b3ed31e8fc5b22e9840eee14c392368685755787"
       }
     },
     {
@@ -610,18 +588,17 @@
           "supportPercentage": 100
         },
         "codeBlocks": {
-          "html": "<div class=\"ghost-trick\">\r\n  <div class=\"ghosting\"><p>Vertically centered without changing the position property.</p></div>\r\n</div>",
-          "css": ".ghosting {\r\n  height: 300px;\r\n  background: #0ff;\r\n}\r\n\r\n.ghosting:before {\r\n  content: '';\r\n  display: inline-block;\r\n  height: 100%;\r\n  vertical-align: middle;\r\n}\r\n\r\np {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n}",
+          "html": "<div class=\"ghost-trick\">\n  <div class=\"ghosting\"><p>Vertically centered without changing the position property.</p></div>\n</div>",
+          "css": ".ghosting {\n  height: 300px;\n  background: #0ff;\n}\n\n.ghosting:before {\n  content: '';\n  display: inline-block;\n  height: 100%;\n  vertical-align: middle;\n}\n\np {\n  display: inline-block;\n  vertical-align: middle;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"ghost-trick\"] .ghosting {\n  height: 300px;\n  background: #0ff; }\n\n[data-scope=\"ghost-trick\"] .ghosting:before {\n  content: '';\n  display: inline-block;\n  height: 100%;\n  vertical-align: middle; }\n\n[data-scope=\"ghost-trick\"] p {\n  display: inline-block;\n  vertical-align: middle; }\n"
         },
         "tags": [
-          "layout",
-          "intermediate"
+          "layout"
         ]
       },
       "meta": {
-        "hash": "bf4b9426520f568c95484ddeab7f6d691a7f25420bc895c1788a9ffe6eead33a"
+        "hash": "1e9448a7a3fdfda03eb9a43715bd508ea0ce84eaebedf147043fba2f586dc8dc"
       }
     },
     {
@@ -638,17 +615,16 @@
         },
         "codeBlocks": {
           "html": "<p class=\"gradient-text\">Gradient text</p>",
-          "css": ".gradient-text {\r\n  background: -webkit-linear-gradient(pink, red);\r\n  -webkit-text-fill-color: transparent;\r\n  -webkit-background-clip: text;\r\n}",
+          "css": ".gradient-text {\n  background: -webkit-linear-gradient(pink, red);\n  -webkit-text-fill-color: transparent;\n  -webkit-background-clip: text;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"gradient-text\"] .gradient-text {\n  background: -webkit-linear-gradient(pink, red);\n  -webkit-text-fill-color: transparent;\n  -webkit-background-clip: text; }\n"
         },
         "tags": [
-          "visual",
-          "intermediate"
+          "visual"
         ]
       },
       "meta": {
-        "hash": "f29c32b68609dd40c32b6be5afef2ec8ab6b73ef7499ad05e96e1b743caaf100"
+        "hash": "974db536cfe1022d46c3a3fbec5f599a961de986a694c21fa9f493c880263f0d"
       }
     },
     {
@@ -665,17 +641,16 @@
         },
         "codeBlocks": {
           "html": "<div class=\"grid-centering\"><div class=\"child\">Centered content.</div></div>",
-          "css": ".grid-centering {\r\n  display: grid;\r\n  justify-content: center;\r\n  align-items: center;\r\n  height: 100px;\r\n}",
+          "css": ".grid-centering {\n  display: grid;\n  justify-content: center;\n  align-items: center;\n  height: 100px;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"grid-centering\"] .grid-centering {\n  display: grid;\n  justify-content: center;\n  align-items: center;\n  height: 100px; }\n"
         },
         "tags": [
-          "layout",
-          "intermediate"
+          "layout"
         ]
       },
       "meta": {
-        "hash": "167267471e09e52f20ed40ffb23b8efa1cfba6434fea5b7c82810c62c8ba5ee0"
+        "hash": "6435b7dc7a403884583c6ed2062dce4e2a43d144578c5d4f6b3ab0882ca959f4"
       }
     },
     {
@@ -692,17 +667,16 @@
         },
         "codeBlocks": {
           "html": "<div class=\"hairline-border\">text</div>",
-          "css": ".hairline-border {\r\n  box-shadow: 0 0 0 1px;\r\n}\r\n\r\n@media (min-resolution: 2dppx) {\r\n  .hairline-border {\r\n    box-shadow: 0 0 0 0.5px;\r\n  }\r\n}\r\n\r\n@media (min-resolution: 3dppx) {\r\n  .hairline-border {\r\n    box-shadow: 0 0 0 0.33333333px;\r\n  }\r\n}\r\n\r\n@media (min-resolution: 4dppx) {\r\n  .hairline-border {\r\n    box-shadow: 0 0 0 0.25px;\r\n  }\r\n}",
+          "css": ".hairline-border {\n  box-shadow: 0 0 0 1px;\n}\n\n@media (min-resolution: 2dppx) {\n  .hairline-border {\n    box-shadow: 0 0 0 0.5px;\n  }\n}\n\n@media (min-resolution: 3dppx) {\n  .hairline-border {\n    box-shadow: 0 0 0 0.33333333px;\n  }\n}\n\n@media (min-resolution: 4dppx) {\n  .hairline-border {\n    box-shadow: 0 0 0 0.25px;\n  }\n}",
           "js": "",
           "scopedCss": "[data-scope=\"hairline-border\"] .hairline-border {\n  box-shadow: 0 0 0 1px; }\n\n@media (min-resolution: 2dppx) {\n  [data-scope=\"hairline-border\"] .hairline-border {\n    box-shadow: 0 0 0 0.5px; } }\n\n@media (min-resolution: 3dppx) {\n  [data-scope=\"hairline-border\"] .hairline-border {\n    box-shadow: 0 0 0 0.33333333px; } }\n\n@media (min-resolution: 4dppx) {\n  [data-scope=\"hairline-border\"] .hairline-border {\n    box-shadow: 0 0 0 0.25px; } }\n"
         },
         "tags": [
-          "visual",
-          "intermediate"
+          "visual"
         ]
       },
       "meta": {
-        "hash": "501822aef899472f65db52bd2c60477fcdc7318027f54d8e3fbd08b5c67f6cda"
+        "hash": "89a7003fb239612b9ce94ebfaff95bc6bf88fec6990ab6256fff7b2ddfa6d42f"
       }
     },
     {
@@ -718,18 +692,17 @@
           "supportPercentage": 96.51
         },
         "codeBlocks": {
-          "html": "<div class=\"trigger\">\r\n  Hover me to see a height transition.\r\n  <div class=\"el\">content</div>\r\n</div>",
-          "css": ".el {\r\n  transition: max-height 0.5s;\r\n  overflow: hidden;\r\n  max-height: 0;\r\n}\r\n\r\n.trigger:hover > .el {\r\n  max-height: var(--max-height);\r\n}",
-          "js": "var el = document.querySelector('.el')\r\nvar height = el.scrollHeight\r\nel.style.setProperty('--max-height', height + 'px')",
+          "html": "<div class=\"trigger\">\n  Hover me to see a height transition.\n  <div class=\"el\">content</div>\n</div>",
+          "css": ".el {\n  transition: max-height 0.5s;\n  overflow: hidden;\n  max-height: 0;\n}\n\n.trigger:hover > .el {\n  max-height: var(--max-height);\n}",
+          "js": "var el = document.querySelector('.el')\nvar height = el.scrollHeight\nel.style.setProperty('--max-height', height + 'px')",
           "scopedCss": "[data-scope=\"height-transition\"] .el {\n  transition: max-height 0.5s;\n  overflow: hidden;\n  max-height: 0; }\n\n[data-scope=\"height-transition\"] .trigger:hover > .el {\n  max-height: var(--max-height); }\n"
         },
         "tags": [
-          "animation",
-          "intermediate"
+          "animation"
         ]
       },
       "meta": {
-        "hash": "edc0f7207e7c9acb83df27d45f55b68197e0a9b9e3d6e59ac25b8551c3797190"
+        "hash": "737b2ca54126cbcb200496d2c61a12ab5e43b9f09a084cfc8cc4f7afa242ad43"
       }
     },
     {
@@ -746,17 +719,16 @@
         },
         "codeBlocks": {
           "html": "<p class=\"hover-shadow-box-animation\">Box it!</p>",
-          "css": ".hover-shadow-box-animation {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  transform: perspective(1px) translateZ(0);\r\n  box-shadow: 0 0 1px transparent;\r\n  margin: 10px;\r\n  transition-duration: 0.3s;\r\n  transition-property: box-shadow, transform;\r\n}\r\n.hover-shadow-box-animation:hover,\r\n.hover-shadow-box-animation:focus,\r\n.hover-shadow-box-animation:active {\r\n  box-shadow: 1px 10px 10px -10px rgba(0, 0, 24, 0.5);\r\n  transform: scale(1.2);\r\n}",
+          "css": ".hover-shadow-box-animation {\n  display: inline-block;\n  vertical-align: middle;\n  transform: perspective(1px) translateZ(0);\n  box-shadow: 0 0 1px transparent;\n  margin: 10px;\n  transition-duration: 0.3s;\n  transition-property: box-shadow, transform;\n}\n.hover-shadow-box-animation:hover,\n.hover-shadow-box-animation:focus,\n.hover-shadow-box-animation:active {\n  box-shadow: 1px 10px 10px -10px rgba(0, 0, 24, 0.5);\n  transform: scale(1.2);\n}",
           "js": "",
           "scopedCss": "[data-scope=\"hover-shadow-box-animation\"] .hover-shadow-box-animation {\n  display: inline-block;\n  vertical-align: middle;\n  transform: perspective(1px) translateZ(0);\n  box-shadow: 0 0 1px transparent;\n  margin: 10px;\n  transition-duration: 0.3s;\n  transition-property: box-shadow, transform; }\n\n[data-scope=\"hover-shadow-box-animation\"] .hover-shadow-box-animation:hover,\n[data-scope=\"hover-shadow-box-animation\"] .hover-shadow-box-animation:focus,\n[data-scope=\"hover-shadow-box-animation\"] .hover-shadow-box-animation:active {\n  box-shadow: 1px 10px 10px -10px rgba(0, 0, 24, 0.5);\n  transform: scale(1.2); }\n"
         },
         "tags": [
-          "animation",
-          "intermediate"
+          "animation"
         ]
       },
       "meta": {
-        "hash": "8fc3c2c5fc4248b2ec6bfdbc96cb5912936ccd5865d88da7a3a041a32168968a"
+        "hash": "b0e6bab9cb552d038d24121cfff46c630e6feeb073b3af6f055e9418c511e63b"
       }
     },
     {
@@ -773,17 +745,16 @@
         },
         "codeBlocks": {
           "html": "<p class=\"hover-underline-animation\">Hover this text to see the effect!</p>",
-          "css": ".hover-underline-animation {\r\n  display: inline-block;\r\n  position: relative;\r\n  color: #0087ca;\r\n}\r\n.hover-underline-animation::after {\r\n  content: '';\r\n  position: absolute;\r\n  width: 100%;\r\n  transform: scaleX(0);\r\n  height: 2px;\r\n  bottom: 0;\r\n  left: 0;\r\n  background-color: #0087ca;\r\n  transform-origin: bottom right;\r\n  transition: transform 0.25s ease-out;\r\n}\r\n.hover-underline-animation:hover::after {\r\n  transform: scaleX(1);\r\n  transform-origin: bottom left;\r\n}",
+          "css": ".hover-underline-animation {\n  display: inline-block;\n  position: relative;\n  color: #0087ca;\n}\n.hover-underline-animation::after {\n  content: '';\n  position: absolute;\n  width: 100%;\n  transform: scaleX(0);\n  height: 2px;\n  bottom: 0;\n  left: 0;\n  background-color: #0087ca;\n  transform-origin: bottom right;\n  transition: transform 0.25s ease-out;\n}\n.hover-underline-animation:hover::after {\n  transform: scaleX(1);\n  transform-origin: bottom left;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"hover-underline-animation\"] .hover-underline-animation {\n  display: inline-block;\n  position: relative;\n  color: #0087ca; }\n\n[data-scope=\"hover-underline-animation\"] .hover-underline-animation::after {\n  content: '';\n  position: absolute;\n  width: 100%;\n  transform: scaleX(0);\n  height: 2px;\n  bottom: 0;\n  left: 0;\n  background-color: #0087ca;\n  transform-origin: bottom right;\n  transition: transform 0.25s ease-out; }\n\n[data-scope=\"hover-underline-animation\"] .hover-underline-animation:hover::after {\n  transform: scaleX(1);\n  transform-origin: bottom left; }\n"
         },
         "tags": [
-          "animation",
-          "intermediate"
+          "animation"
         ]
       },
       "meta": {
-        "hash": "df7cfeabadd1c3c58a0c14108397ecc645d190be7336835f0fc5ceda88f572af"
+        "hash": "9a97ba2c7f2f28ff9047373a3046d95eb7a9ff03de42d23568d669d61f30c6f1"
       }
     },
     {
@@ -799,18 +770,17 @@
           "supportPercentage": 100
         },
         "codeBlocks": {
-          "html": "<div class=\"container\">\r\n  <div>Div 1</div>\r\n  <div>Div 2</div>\r\n  <div>Div 3</div>\r\n</div>",
-          "css": "html,\r\nbody {\r\n  height: 100%;\r\n  margin: 0;\r\n}\r\n\r\n.container {\r\n  height: 100%;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.container > div:last-child {\r\n  background-color: tomato;\r\n  flex: 1;\r\n}",
+          "html": "<div class=\"container\">\n  <div>Div 1</div>\n  <div>Div 2</div>\n  <div>Div 3</div>\n</div>",
+          "css": "html,\nbody {\n  height: 100%;\n  margin: 0;\n}\n\n.container {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n}\n\n.container > div:last-child {\n  background-color: tomato;\n  flex: 1;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"last-item-with-remaining-available-height\"] html,\n[data-scope=\"last-item-with-remaining-available-height\"] body {\n  height: 100%;\n  margin: 0; }\n\n[data-scope=\"last-item-with-remaining-available-height\"] .container {\n  height: 100%;\n  display: flex;\n  flex-direction: column; }\n\n[data-scope=\"last-item-with-remaining-available-height\"] .container > div:last-child {\n  background-color: tomato;\n  flex: 1; }\n"
         },
         "tags": [
-          "layout",
-          "intermediate"
+          "layout"
         ]
       },
       "meta": {
-        "hash": "e07fc6f0476a46c201812b41c2fa4eb5adef8ab7f5d538db33d0f64cc3efc02d"
+        "hash": "2f925cc190a9744532de97bb4add65e53cc0b2f3833760f4e7263f5df17cfad5"
       }
     },
     {
@@ -827,18 +797,17 @@
         },
         "codeBlocks": {
           "html": "<button class=\"mouse-cursor-gradient-tracking\"><span>Hover me</span></button>",
-          "css": ".mouse-cursor-gradient-tracking {\r\n  position: relative;\r\n  background: #7983ff;\r\n  padding: 0.5rem 1rem;\r\n  font-size: 1.2rem;\r\n  border: none;\r\n  color: white;\r\n  cursor: pointer;\r\n  outline: none;\r\n  overflow: hidden;\r\n}\r\n\r\n.mouse-cursor-gradient-tracking span {\r\n  position: relative;\r\n}\r\n\r\n.mouse-cursor-gradient-tracking::before {\r\n  --size: 0;\r\n  content: '';\r\n  position: absolute;\r\n  left: var(--x);\r\n  top: var(--y);\r\n  width: var(--size);\r\n  height: var(--size);\r\n  background: radial-gradient(circle closest-side, pink, transparent);\r\n  transform: translate(-50%, -50%);\r\n  transition: width 0.2s ease, height 0.2s ease;\r\n}\r\n\r\n.mouse-cursor-gradient-tracking:hover::before {\r\n  --size: 200px;\r\n}",
-          "js": "var btn = document.querySelector('.mouse-cursor-gradient-tracking')\r\nbtn.onmousemove = function(e) {\r\n  var x = e.pageX - btn.offsetLeft - btn.offsetParent.offsetLeft\r\n  var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop\r\n  btn.style.setProperty('--x', x + 'px')\r\n  btn.style.setProperty('--y', y + 'px')\r\n}",
+          "css": ".mouse-cursor-gradient-tracking {\n  position: relative;\n  background: #7983ff;\n  padding: 0.5rem 1rem;\n  font-size: 1.2rem;\n  border: none;\n  color: white;\n  cursor: pointer;\n  outline: none;\n  overflow: hidden;\n}\n\n.mouse-cursor-gradient-tracking span {\n  position: relative;\n}\n\n.mouse-cursor-gradient-tracking::before {\n  --size: 0;\n  content: '';\n  position: absolute;\n  left: var(--x);\n  top: var(--y);\n  width: var(--size);\n  height: var(--size);\n  background: radial-gradient(circle closest-side, pink, transparent);\n  transform: translate(-50%, -50%);\n  transition: width 0.2s ease, height 0.2s ease;\n}\n\n.mouse-cursor-gradient-tracking:hover::before {\n  --size: 200px;\n}",
+          "js": "var btn = document.querySelector('.mouse-cursor-gradient-tracking')\nbtn.onmousemove = function(e) {\n  var x = e.pageX - btn.offsetLeft - btn.offsetParent.offsetLeft\n  var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop\n  btn.style.setProperty('--x', x + 'px')\n  btn.style.setProperty('--y', y + 'px')\n}",
           "scopedCss": "[data-scope=\"mouse-cursor-gradient-tracking\"] .mouse-cursor-gradient-tracking {\n  position: relative;\n  background: #7983ff;\n  padding: 0.5rem 1rem;\n  font-size: 1.2rem;\n  border: none;\n  color: white;\n  cursor: pointer;\n  outline: none;\n  overflow: hidden; }\n\n[data-scope=\"mouse-cursor-gradient-tracking\"] .mouse-cursor-gradient-tracking span {\n  position: relative; }\n\n[data-scope=\"mouse-cursor-gradient-tracking\"] .mouse-cursor-gradient-tracking::before {\n  --size: 0;\n  content: '';\n  position: absolute;\n  left: var(--x);\n  top: var(--y);\n  width: var(--size);\n  height: var(--size);\n  background: radial-gradient(circle closest-side, pink, transparent);\n  transform: translate(-50%, -50%);\n  transition: width 0.2s ease, height 0.2s ease; }\n\n[data-scope=\"mouse-cursor-gradient-tracking\"] .mouse-cursor-gradient-tracking:hover::before {\n  --size: 200px; }\n"
         },
         "tags": [
           "visual",
-          "interactivity",
-          "intermediate"
+          "interactivity"
         ]
       },
       "meta": {
-        "hash": "707e50fd348545fc1f9950ef9cda9e74b28ffe57098cc2849c72358c4bf7bea6"
+        "hash": "e4bc55e29230bb5888832fb886187080da35bafb48d150c0ce82c9d846d700ba"
       }
     },
     {
@@ -854,18 +823,17 @@
           "supportPercentage": 100
         },
         "codeBlocks": {
-          "html": "<ul class=\"css-not-selector-shortcut\">\r\n  <li>One</li>\r\n  <li>Two</li>\r\n  <li>Three</li>\r\n  <li>Four</li>\r\n</ul>",
-          "css": ".css-not-selector-shortcut {\r\n  display: flex;\r\n}\r\n\r\nul {\r\n  padding-left: 0;\r\n}\r\n\r\nli {\r\n  list-style-type: none;\r\n  margin: 0;\r\n  padding: 0 0.75rem;\r\n}\r\n\r\nli:not(:last-child) {\r\n  border-right: 2px solid #d2d5e4;\r\n}",
+          "html": "<ul class=\"css-not-selector-shortcut\">\n  <li>One</li>\n  <li>Two</li>\n  <li>Three</li>\n  <li>Four</li>\n</ul>",
+          "css": ".css-not-selector-shortcut {\n  display: flex;\n}\n\nul {\n  padding-left: 0;\n}\n\nli {\n  list-style-type: none;\n  margin: 0;\n  padding: 0 0.75rem;\n}\n\nli:not(:last-child) {\n  border-right: 2px solid #d2d5e4;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"not-selector\"] .css-not-selector-shortcut {\n  display: flex; }\n\n[data-scope=\"not-selector\"] ul {\n  padding-left: 0; }\n\n[data-scope=\"not-selector\"] li {\n  list-style-type: none;\n  margin: 0;\n  padding: 0 0.75rem; }\n\n[data-scope=\"not-selector\"] li:not(:last-child) {\n  border-right: 2px solid #d2d5e4; }\n"
         },
         "tags": [
-          "visual",
-          "intermediate"
+          "visual"
         ]
       },
       "meta": {
-        "hash": "0a634e271a55ca9480038feab950d33671b0fc07c09615cd39603279bd2cb0d0"
+        "hash": "129748a7f6e0ee74a87e4ff4c62df53c40359c57047586c887fad9fc76872c04"
       }
     },
     {
@@ -881,19 +849,18 @@
           "supportPercentage": null
         },
         "codeBlocks": {
-          "html": "<a class=\"button\" href=\"http://pantswebsite.com\">\r\n  Learn More <span class=\"offscreen\"> about pants</span>\r\n</a>",
-          "css": ".offscreen {\r\n  border: 0;\r\n  clip: rect(0 0 0 0);\r\n  height: 1px;\r\n  margin: -1px;\r\n  overflow: hidden;\r\n  padding: 0;\r\n  position: absolute;\r\n  width: 1px;\r\n}",
+          "html": "<a class=\"button\" href=\"http://pantswebsite.com\">\n  Learn More <span class=\"offscreen\"> about pants</span>\n</a>",
+          "css": ".offscreen {\n  border: 0;\n  clip: rect(0 0 0 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"offscreen\"] .offscreen {\n  border: 0;\n  clip: rect(0 0 0 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px; }\n"
         },
         "tags": [
           "layout",
-          "visual",
-          "intermediate"
+          "visual"
         ]
       },
       "meta": {
-        "hash": "000a1fd47f9dafba64a625aefc689e33592adf69c8c5ecffb6de68a83f0218aa"
+        "hash": "233e33b59ef7be00766dd0034ab54c6e788af637d761e71efb5c552153a9d163"
       }
     },
     {
@@ -909,18 +876,17 @@
           "supportPercentage": 100
         },
         "codeBlocks": {
-          "html": "<div class=\"overflow-scroll-gradient\">\r\n  <div class=\"overflow-scroll-gradient__scroller\">\r\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />\r\n    Iure id exercitationem nulla qui repellat laborum vitae, <br />\r\n    molestias tempora velit natus. Quas, assumenda nisi. <br />\r\n    Quisquam enim qui iure, consequatur velit sit? <br />\r\n    Lorem ipsum dolor sit amet consectetur adipisicing elit.<br />\r\n    Iure id exercitationem nulla qui repellat laborum vitae, <br />\r\n    molestias tempora velit natus. Quas, assumenda nisi. <br />\r\n    Quisquam enim qui iure, consequatur velit sit?\r\n  </div>\r\n</div>",
-          "css": ".overflow-scroll-gradient {\r\n  position: relative;\r\n}\r\n.overflow-scroll-gradient::after {\r\n  content: '';\r\n  position: absolute;\r\n  bottom: 0;\r\n  width: 240px;\r\n  height: 25px;\r\n  background: linear-gradient(\r\n    rgba(255, 255, 255, 0.001),\r\n    white\r\n  ); /* transparent keyword is broken in Safari */\r\n  pointer-events: none;\r\n}\r\n.overflow-scroll-gradient__scroller {\r\n  overflow-y: scroll;\r\n  background: white;\r\n  width: 240px;\r\n  height: 200px;\r\n  padding: 15px;\r\n  line-height: 1.2;\r\n}",
+          "html": "<div class=\"overflow-scroll-gradient\">\n  <div class=\"overflow-scroll-gradient__scroller\">\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />\n    Iure id exercitationem nulla qui repellat laborum vitae, <br />\n    molestias tempora velit natus. Quas, assumenda nisi. <br />\n    Quisquam enim qui iure, consequatur velit sit? <br />\n    Lorem ipsum dolor sit amet consectetur adipisicing elit.<br />\n    Iure id exercitationem nulla qui repellat laborum vitae, <br />\n    molestias tempora velit natus. Quas, assumenda nisi. <br />\n    Quisquam enim qui iure, consequatur velit sit?\n  </div>\n</div>",
+          "css": ".overflow-scroll-gradient {\n  position: relative;\n}\n.overflow-scroll-gradient::after {\n  content: '';\n  position: absolute;\n  bottom: 0;\n  width: 240px;\n  height: 25px;\n  background: linear-gradient(\n    rgba(255, 255, 255, 0.001),\n    white\n  ); /* transparent keyword is broken in Safari */\n  pointer-events: none;\n}\n.overflow-scroll-gradient__scroller {\n  overflow-y: scroll;\n  background: white;\n  width: 240px;\n  height: 200px;\n  padding: 15px;\n  line-height: 1.2;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"overflow-scroll-gradient\"] .overflow-scroll-gradient {\n  position: relative; }\n\n[data-scope=\"overflow-scroll-gradient\"] .overflow-scroll-gradient::after {\n  content: '';\n  position: absolute;\n  bottom: 0;\n  width: 240px;\n  height: 25px;\n  background: linear-gradient(rgba(255, 255, 255, 0.001), white);\n  /* transparent keyword is broken in Safari */\n  pointer-events: none; }\n\n[data-scope=\"overflow-scroll-gradient\"] .overflow-scroll-gradient__scroller {\n  overflow-y: scroll;\n  background: white;\n  width: 240px;\n  height: 200px;\n  padding: 15px;\n  line-height: 1.2; }\n"
         },
         "tags": [
-          "visual",
-          "intermediate"
+          "visual"
         ]
       },
       "meta": {
-        "hash": "2726e4a58683d1e52e8797d60210b4c528dd9000e88953b13523ee3c57fd0084"
+        "hash": "938536c0407ce1d5edcf443ec9a51bdb22815662175ffdd372f5a7bc1446c865"
       }
     },
     {
@@ -937,17 +903,16 @@
         },
         "codeBlocks": {
           "html": "<div class=\"reference\" tabindex=\"0\"><div class=\"popout-menu\">Popout menu</div></div>",
-          "css": ".reference {\r\n  position: relative;\r\n  background: tomato;\r\n  width: 100px;\r\n  height: 100px;\r\n}\r\n.popout-menu {\r\n  position: absolute;\r\n  visibility: hidden;\r\n  left: 100%;\r\n  background: #333;\r\n  color: white;\r\n  padding: 15px;\r\n}\r\n.reference:hover > .popout-menu,\r\n.reference:focus > .popout-menu,\r\n.reference:focus-within > .popout-menu {\r\n  visibility: visible;\r\n}",
+          "css": ".reference {\n  position: relative;\n  background: tomato;\n  width: 100px;\n  height: 100px;\n}\n.popout-menu {\n  position: absolute;\n  visibility: hidden;\n  left: 100%;\n  background: #333;\n  color: white;\n  padding: 15px;\n}\n.reference:hover > .popout-menu,\n.reference:focus > .popout-menu,\n.reference:focus-within > .popout-menu {\n  visibility: visible;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"popout-menu\"] .reference {\n  position: relative;\n  background: tomato;\n  width: 100px;\n  height: 100px; }\n\n[data-scope=\"popout-menu\"] .popout-menu {\n  position: absolute;\n  visibility: hidden;\n  left: 100%;\n  background: #333;\n  color: white;\n  padding: 15px; }\n\n[data-scope=\"popout-menu\"] .reference:hover > .popout-menu,\n[data-scope=\"popout-menu\"] .reference:focus > .popout-menu,\n[data-scope=\"popout-menu\"] .reference:focus-within > .popout-menu {\n  visibility: visible; }\n"
         },
         "tags": [
-          "interactivity",
-          "intermediate"
+          "interactivity"
         ]
       },
       "meta": {
-        "hash": "8f5c19fb14ee8039e93ff0f3185cb0d27971dd2509f6100fdfd290478211a42b"
+        "hash": "c4ac484b5e94d0c326d1ac122ba9d9f98b71cd3ab3cce1cd3077fbd6e1afe4ee"
       }
     },
     {
@@ -964,17 +929,16 @@
         },
         "codeBlocks": {
           "html": "<p class=\"pretty-text-underline\">Pretty text underline without clipping descending letters.</p>",
-          "css": ".pretty-text-underline {\r\n  display: inline;\r\n  text-shadow: 1px 1px #f5f6f9, -1px 1px #f5f6f9, -1px -1px #f5f6f9, 1px -1px #f5f6f9;\r\n  background-image: linear-gradient(90deg, currentColor 100%, transparent 100%);\r\n  background-position: bottom;\r\n  background-repeat: no-repeat;\r\n  background-size: 100% 1px;\r\n}\r\n.pretty-text-underline::-moz-selection {\r\n  background-color: rgba(0, 150, 255, 0.3);\r\n  text-shadow: none;\r\n}\r\n.pretty-text-underline::selection {\r\n  background-color: rgba(0, 150, 255, 0.3);\r\n  text-shadow: none;\r\n}",
+          "css": ".pretty-text-underline {\n  display: inline;\n  text-shadow: 1px 1px #f5f6f9, -1px 1px #f5f6f9, -1px -1px #f5f6f9, 1px -1px #f5f6f9;\n  background-image: linear-gradient(90deg, currentColor 100%, transparent 100%);\n  background-position: bottom;\n  background-repeat: no-repeat;\n  background-size: 100% 1px;\n}\n.pretty-text-underline::-moz-selection {\n  background-color: rgba(0, 150, 255, 0.3);\n  text-shadow: none;\n}\n.pretty-text-underline::selection {\n  background-color: rgba(0, 150, 255, 0.3);\n  text-shadow: none;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"pretty-text-underline\"] .pretty-text-underline {\n  display: inline;\n  text-shadow: 1px 1px #f5f6f9, -1px 1px #f5f6f9, -1px -1px #f5f6f9, 1px -1px #f5f6f9;\n  background-image: linear-gradient(90deg, currentColor 100%, transparent 100%);\n  background-position: bottom;\n  background-repeat: no-repeat;\n  background-size: 100% 1px; }\n\n[data-scope=\"pretty-text-underline\"] .pretty-text-underline::-moz-selection {\n  background-color: rgba(0, 150, 255, 0.3);\n  text-shadow: none; }\n\n[data-scope=\"pretty-text-underline\"] .pretty-text-underline::selection {\n  background-color: rgba(0, 150, 255, 0.3);\n  text-shadow: none; }\n"
         },
         "tags": [
-          "visual",
-          "intermediate"
+          "visual"
         ]
       },
       "meta": {
-        "hash": "e9372af4e851200e9994e6f753502789693fd4d0d6438bf5b89db9d33a25cb18"
+        "hash": "f91299fbd8d5233de42e09ef7c381a1cce23a83288f9e619f153af22a1275fd2"
       }
     },
     {
@@ -990,18 +954,17 @@
           "supportPercentage": 95.76
         },
         "codeBlocks": {
-          "html": "<div class=\"reset-all-styles\">\r\n  <h5>Title</h5>\r\n  <p>\r\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui\r\n    repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui\r\n    iure, consequatur velit sit?\r\n  </p>\r\n</div>",
-          "css": ".reset-all-styles {\r\n  all: initial;\r\n}",
+          "html": "<div class=\"reset-all-styles\">\n  <h5>Title</h5>\n  <p>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui\n    repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui\n    iure, consequatur velit sit?\n  </p>\n</div>",
+          "css": ".reset-all-styles {\n  all: initial;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"reset-all-styles\"] .reset-all-styles {\n  all: initial; }\n"
         },
         "tags": [
-          "visual",
-          "intermediate"
+          "visual"
         ]
       },
       "meta": {
-        "hash": "46ba1a8080054a9a5e541a3c5ae2ecdfb6edd124fbfb33de78b9ccd160509b93"
+        "hash": "1e52c4cc2c03669576b53d4be44357e6fea843cffd671419c881b31c927c9170"
       }
     },
     {
@@ -1018,17 +981,16 @@
         },
         "codeBlocks": {
           "html": "<div class=\"shape-separator\"></div>",
-          "css": ".shape-separator {\r\n  position: relative;\r\n  height: 48px;\r\n  background: #333;\r\n}\r\n.shape-separator::after {\r\n  content: '';\r\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 12'%3E%3Cpath d='m12 0l12 12h-24z' fill='%23fff'/%3E%3C/svg%3E\");\r\n  position: absolute;\r\n  width: 100%;\r\n  height: 12px;\r\n  bottom: 0;\r\n}",
+          "css": ".shape-separator {\n  position: relative;\n  height: 48px;\n  background: #333;\n}\n.shape-separator::after {\n  content: '';\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 12'%3E%3Cpath d='m12 0l12 12h-24z' fill='%23fff'/%3E%3C/svg%3E\");\n  position: absolute;\n  width: 100%;\n  height: 12px;\n  bottom: 0;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"shape-separator\"] .shape-separator {\n  position: relative;\n  height: 48px;\n  background: #333; }\n\n[data-scope=\"shape-separator\"] .shape-separator::after {\n  content: '';\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 12'%3E%3Cpath d='m12 0l12 12h-24z' fill='%23fff'/%3E%3C/svg%3E\");\n  position: absolute;\n  width: 100%;\n  height: 12px;\n  bottom: 0; }\n"
         },
         "tags": [
-          "visual",
-          "intermediate"
+          "visual"
         ]
       },
       "meta": {
-        "hash": "1ce90fc518399c775df1af832345729bdde2a3c12bbdd2fd66c40b9c57a65aa1"
+        "hash": "75e712c07e184d8dbf34818ba245f5b1a4273dfb491a21262b88042ef9e42d6c"
       }
     },
     {
@@ -1044,18 +1006,17 @@
           "supportPercentage": 100
         },
         "codeBlocks": {
-          "html": "<div class=\"sibling-fade\">\r\n  <span>Item 1</span> <span>Item 2</span> <span>Item 3</span> <span>Item 4</span>\r\n  <span>Item 5</span> <span>Item 6</span>\r\n</div>",
-          "css": "span {\r\n  padding: 0 1rem;\r\n  transition: opacity 0.2s;\r\n}\r\n\r\n.sibling-fade:hover span:not(:hover) {\r\n  opacity: 0.5;\r\n}",
+          "html": "<div class=\"sibling-fade\">\n  <span>Item 1</span> <span>Item 2</span> <span>Item 3</span> <span>Item 4</span>\n  <span>Item 5</span> <span>Item 6</span>\n</div>",
+          "css": "span {\n  padding: 0 1rem;\n  transition: opacity 0.2s;\n}\n\n.sibling-fade:hover span:not(:hover) {\n  opacity: 0.5;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"sibling-fade\"] span {\n  padding: 0 1rem;\n  transition: opacity 0.2s; }\n\n[data-scope=\"sibling-fade\"] .sibling-fade:hover span:not(:hover) {\n  opacity: 0.5; }\n"
         },
         "tags": [
-          "interactivity",
-          "intermediate"
+          "interactivity"
         ]
       },
       "meta": {
-        "hash": "8bb55371c003c5304cc1689ea4f1e364fa59a58c6edbc46f63c325cfb2b1f820"
+        "hash": "c4b3ad85a5137635283abe843a9f180027bd751c40be9ca465b0b3e3f52b9fe9"
       }
     },
     {
@@ -1072,17 +1033,16 @@
         },
         "codeBlocks": {
           "html": "<p class=\"system-font-stack\">This text uses the system font.</p>",
-          "css": ".system-font-stack {\r\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,\r\n    Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n}",
+          "css": ".system-font-stack {\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,\n    Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}",
           "js": "",
-          "scopedCss": "[data-scope=\"system-font-stack\"] .system-font-stack {\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,\r Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif; }\n"
+          "scopedCss": "[data-scope=\"system-font-stack\"] .system-font-stack {\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif; }\n"
         },
         "tags": [
-          "visual",
-          "intermediate"
+          "visual"
         ]
       },
       "meta": {
-        "hash": "d32aacb7116aa37895cb5f4f8da6276efa1ce4636b5c892059ff77ccb6218b87"
+        "hash": "23cfcc3319fd473b39269b2745abb7f52752a970307fc561159275208d04a554"
       }
     },
     {
@@ -1099,18 +1059,17 @@
         },
         "codeBlocks": {
           "html": "<input type=\"checkbox\" id=\"toggle\" class=\"offscreen\" /> <label for=\"toggle\" class=\"switch\"></label>",
-          "css": ".switch {\r\n  position: relative;\r\n  display: inline-block;\r\n  width: 40px;\r\n  height: 20px;\r\n  background-color: rgba(0, 0, 0, 0.25);\r\n  border-radius: 20px;\r\n  transition: all 0.3s;\r\n}\r\n\r\n.switch::after {\r\n  content: '';\r\n  position: absolute;\r\n  width: 18px;\r\n  height: 18px;\r\n  border-radius: 18px;\r\n  background-color: white;\r\n  top: 1px;\r\n  left: 1px;\r\n  transition: all 0.3s;\r\n}\r\n\r\ninput[type='checkbox']:checked + .switch::after {\r\n  transform: translateX(20px);\r\n}\r\n\r\ninput[type='checkbox']:checked + .switch {\r\n  background-color: #7983ff;\r\n}\r\n\r\n.offscreen {\r\n  position: absolute;\r\n  left: -9999px;\r\n}",
+          "css": ".switch {\n  position: relative;\n  display: inline-block;\n  width: 40px;\n  height: 20px;\n  background-color: rgba(0, 0, 0, 0.25);\n  border-radius: 20px;\n  transition: all 0.3s;\n}\n\n.switch::after {\n  content: '';\n  position: absolute;\n  width: 18px;\n  height: 18px;\n  border-radius: 18px;\n  background-color: white;\n  top: 1px;\n  left: 1px;\n  transition: all 0.3s;\n}\n\ninput[type='checkbox']:checked + .switch::after {\n  transform: translateX(20px);\n}\n\ninput[type='checkbox']:checked + .switch {\n  background-color: #7983ff;\n}\n\n.offscreen {\n  position: absolute;\n  left: -9999px;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"toggle-switch\"] .switch {\n  position: relative;\n  display: inline-block;\n  width: 40px;\n  height: 20px;\n  background-color: rgba(0, 0, 0, 0.25);\n  border-radius: 20px;\n  transition: all 0.3s; }\n\n[data-scope=\"toggle-switch\"] .switch::after {\n  content: '';\n  position: absolute;\n  width: 18px;\n  height: 18px;\n  border-radius: 18px;\n  background-color: white;\n  top: 1px;\n  left: 1px;\n  transition: all 0.3s; }\n\n[data-scope=\"toggle-switch\"] input[type='checkbox']:checked + .switch::after {\n  transform: translateX(20px); }\n\n[data-scope=\"toggle-switch\"] input[type='checkbox']:checked + .switch {\n  background-color: #7983ff; }\n\n[data-scope=\"toggle-switch\"] .offscreen {\n  position: absolute;\n  left: -9999px; }\n"
         },
         "tags": [
           "visual",
-          "interactivity",
-          "intermediate"
+          "interactivity"
         ]
       },
       "meta": {
-        "hash": "0f67d565434719c7ee63647c5c342a0df9b5835de1850059f4a8ed2f6c19fb4c"
+        "hash": "e29182514bd83550705267a43d21eec8886ed011c6259f2b3efec9862541f90e"
       }
     },
     {
@@ -1127,17 +1086,16 @@
         },
         "codeBlocks": {
           "html": "<div class=\"parent\"><div class=\"child\">Centered content</div></div>",
-          "css": ".parent {\r\n  border: 1px solid #333;\r\n  height: 250px;\r\n  position: relative;\r\n  width: 250px;\r\n}\r\n\r\n.child {\r\n  left: 50%;\r\n  position: absolute;\r\n  top: 50%;\r\n  transform: translate(-50%, -50%);\r\n  text-align: center;\r\n}",
+          "css": ".parent {\n  border: 1px solid #333;\n  height: 250px;\n  position: relative;\n  width: 250px;\n}\n\n.child {\n  left: 50%;\n  position: absolute;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  text-align: center;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"transform-centering\"] .parent {\n  border: 1px solid #333;\n  height: 250px;\n  position: relative;\n  width: 250px; }\n\n[data-scope=\"transform-centering\"] .child {\n  left: 50%;\n  position: absolute;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  text-align: center; }\n"
         },
         "tags": [
-          "layout",
-          "intermediate"
+          "layout"
         ]
       },
       "meta": {
-        "hash": "5775ecfc218a8c8c1e31bebba5c53f35af9f9a84d48c626d3ee1df5b9858dfec"
+        "hash": "377d480a141a8890f793ef28212d7ed9d60c9d6831286bcea703ab43daca73ce"
       }
     },
     {
@@ -1154,17 +1112,16 @@
         },
         "codeBlocks": {
           "html": "<div class=\"triangle\"></div>",
-          "css": ".triangle {\r\n  width: 0;\r\n  height: 0;\r\n  border-top: 20px solid #333;\r\n  border-left: 20px solid transparent;\r\n  border-right: 20px solid transparent;\r\n}",
+          "css": ".triangle {\n  width: 0;\n  height: 0;\n  border-top: 20px solid #333;\n  border-left: 20px solid transparent;\n  border-right: 20px solid transparent;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"triangle\"] .triangle {\n  width: 0;\n  height: 0;\n  border-top: 20px solid #333;\n  border-left: 20px solid transparent;\n  border-right: 20px solid transparent; }\n"
         },
         "tags": [
-          "visual",
-          "intermediate"
+          "visual"
         ]
       },
       "meta": {
-        "hash": "93ce75702b921beed512604212061414bbd46c3012cfb5250b19d2a9303cf075"
+        "hash": "08382966ae74825502676c0bcdb77426abbf6202d813f5dfd6679d864fc1292e"
       }
     },
     {
@@ -1180,18 +1137,17 @@
           "supportPercentage": 100
         },
         "codeBlocks": {
-          "html": "<p class=\"truncate-text-multiline\">\r\n  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut\r\n  labore et.\r\n</p>",
-          "css": ".truncate-text-multiline {\r\n  overflow: hidden;\r\n  display: block;\r\n  height: 109.2px;\r\n  margin: 0 auto;\r\n  font-size: 26px;\r\n  line-height: 1.4;\r\n  width: 400px;\r\n  position: relative;\r\n}\r\n\r\n.truncate-text-multiline:after {\r\n  content: '';\r\n  position: absolute;\r\n  bottom: 0;\r\n  right: 0;\r\n  width: 150px;\r\n  height: 36.4px;\r\n  background: linear-gradient(to right, rgba(0, 0, 0, 0), #f5f6f9 50%);\r\n}",
+          "html": "<p class=\"truncate-text-multiline\">\n  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut\n  labore et.\n</p>",
+          "css": ".truncate-text-multiline {\n  overflow: hidden;\n  display: block;\n  height: 109.2px;\n  margin: 0 auto;\n  font-size: 26px;\n  line-height: 1.4;\n  width: 400px;\n  position: relative;\n}\n\n.truncate-text-multiline:after {\n  content: '';\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  width: 150px;\n  height: 36.4px;\n  background: linear-gradient(to right, rgba(0, 0, 0, 0), #f5f6f9 50%);\n}",
           "js": "",
           "scopedCss": "[data-scope=\"truncate-text-multiline\"] .truncate-text-multiline {\n  overflow: hidden;\n  display: block;\n  height: 109.2px;\n  margin: 0 auto;\n  font-size: 26px;\n  line-height: 1.4;\n  width: 400px;\n  position: relative; }\n\n[data-scope=\"truncate-text-multiline\"] .truncate-text-multiline:after {\n  content: '';\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  width: 150px;\n  height: 36.4px;\n  background: linear-gradient(to right, rgba(0, 0, 0, 0), #f5f6f9 50%); }\n"
         },
         "tags": [
-          "layout",
-          "intermediate"
+          "layout"
         ]
       },
       "meta": {
-        "hash": "e327691cb68125b87ef38e5b0b997de119a798a9212647bef285caf0d07dc389"
+        "hash": "ab94193bfb305844badfe15bda3594e75c40ac9660c11c06efd750119a916f8e"
       }
     },
     {
@@ -1208,17 +1164,16 @@
         },
         "codeBlocks": {
           "html": "<p class=\"truncate-text\">If I exceed one line's width, I will be truncated.</p>",
-          "css": ".truncate-text {\r\n  overflow: hidden;\r\n  white-space: nowrap;\r\n  text-overflow: ellipsis;\r\n  width: 200px;\r\n}",
+          "css": ".truncate-text {\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  width: 200px;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"truncate-text\"] .truncate-text {\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  width: 200px; }\n"
         },
         "tags": [
-          "layout",
-          "intermediate"
+          "layout"
         ]
       },
       "meta": {
-        "hash": "7835da22bad23fadb280dbe0c7d4431407524c89486ad3555e134dcbfd819272"
+        "hash": "0fbe2c0df9663735aed522286556ac0383756ab0a1a5f673bb81dcb42f89d4d1"
       }
     },
     {
@@ -1234,18 +1189,17 @@
           "supportPercentage": 100
         },
         "codeBlocks": {
-          "html": "<ul>\r\n  <li>Item 01</li>\r\n  <li>Item 02</li>\r\n  <li>Item 03</li>\r\n  <li>Item 04</li>\r\n  <li>Item 05</li>\r\n</ul>",
-          "css": "li:nth-child(odd) {\r\n  background-color: #ddd;\r\n}",
+          "html": "<ul>\n  <li>Item 01</li>\n  <li>Item 02</li>\n  <li>Item 03</li>\n  <li>Item 04</li>\n  <li>Item 05</li>\n</ul>",
+          "css": "li:nth-child(odd) {\n  background-color: #ddd;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"zebra-striped-list\"] li:nth-child(odd) {\n  background-color: #ddd; }\n"
         },
         "tags": [
-          "visual",
-          "intermediate"
+          "visual"
         ]
       },
       "meta": {
-        "hash": "7562a49fa58e85a92eac0e931d746975ccc86f7ea249517b8e2809b6681a4a76"
+        "hash": "43bc0cd7776468f3b74791017349ef278921c8ded7ba0bd7788d2b01bdb68c7a"
       }
     }
   ],

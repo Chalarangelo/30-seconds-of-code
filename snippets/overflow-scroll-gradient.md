@@ -1,6 +1,6 @@
 ---
 title: Overflow scroll gradient
-tags: visual,intermediate
+tags: visual
 ---
 
 Adds a fading gradient to an overflowing element to better indicate there is more content to be scrolled.

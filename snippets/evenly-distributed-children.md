@@ -1,6 +1,6 @@
 ---
 title: Evenly distributed children
-tags: layout,intermediate
+tags: layout
 ---
 
 Evenly distributes child elements within a parent element.

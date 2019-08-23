@@ -1,6 +1,6 @@
 ---
 title: Constant width to height ratio
-tags: layout,intermediate
+tags: layout
 ---
 
 Given an element of variable width, it will ensure its height remains proportionate in a responsive fashion

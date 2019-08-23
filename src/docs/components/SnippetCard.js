@@ -12,35 +12,18 @@ import ReactCSSTransitionReplace from 'react-css-transition-replace';
 // ===================================================
 // Snippet Card HOC - check components below for more
 // ===================================================
-const SnippetCard = ({ short, snippetData, ...rest }) => {
-  let difficulty = snippetData.tags.includes('advanced')
-    ? 'advanced'
-    : snippetData.tags.includes('beginner')
-    ? 'beginner'
-    : 'intermediate';
-  return short ? (
-    <ShortCard snippetData={snippetData} difficulty={difficulty} {...rest} />
+const SnippetCard = ({ short, snippetData, ...rest }) => 
+  short ? (
+    <ShortCard snippetData={snippetData} {...rest} />
   ) : (
-    <FullCard snippetData={snippetData} difficulty={difficulty} {...rest} />
+    <FullCard snippetData={snippetData} {...rest} />
   );
-};
-
-// ===================================================
-// Simple card corner for difficulty display
-// ===================================================
-const CardCorner = ({ difficulty = 'intermediate' }) => (
-  <div
-    className={`card-corner ${difficulty}`}
-    aria-label={difficulty}
-    title={difficulty}
-  />
-);
 
 // ===================================================
 // Full snippet view (tags, code, title, description)
 // ===================================================
-const FullCard = ({ snippetData, difficulty, isDarkMode }) => {
-  const [examplesOpen, setExamplesOpen] = React.useState(false);
+const FullCard = ({ snippetData, isDarkMode }) => {
+  console.log(snippetData);
   const tags = snippetData.tags;
   let cardCodeHtml = `${optimizeAllNodes(
     getCodeBlocks(snippetData.html).html,
@@ -53,11 +36,13 @@ const FullCard = ({ snippetData, difficulty, isDarkMode }) => {
   )}`;
   return (
     <div className='card'>
-      <CardCorner difficulty={difficulty} />
-      <h4 className='card-title'>{snippetData.title}</h4>
-      {tags.map(tag => (
-        <span className='tag' key={`tag_${tag}`}>{tag}</span>
-      ))}
+      <h4 className='card-title'>
+        {snippetData.title}&nbsp;&nbsp;
+        {tags.map(tag => (
+          <span className={`tag tag-${tag}`} key={`tag_${tag}`}>{tag}</span>
+        ))}
+      </h4>
+      
       <div
         className='card-description'
         dangerouslySetInnerHTML={{
@@ -65,20 +50,32 @@ const FullCard = ({ snippetData, difficulty, isDarkMode }) => {
         }}
       />
       <div className='card-bottom'>
+        <h5 className='card-section-title card-section-html'>HTML</h5>
         <pre
           className={`card-code language-${config.secondLanguage}`}
           dangerouslySetInnerHTML={{ __html: cardCodeHtml }}
         />
+        <h5 className='card-section-title card-section-css'>CSS</h5>
         <pre
           className={`card-code language-${config.language}`}
           dangerouslySetInnerHTML={{ __html: cardCodeCss }}
         />
         {
-          cardCodeJs && <pre
-            className={`card-code language-${config.optionalLanguage}`}
-            dangerouslySetInnerHTML={{ __html: cardCodeJs }}
-          />
+          cardCodeJs && <>
+            <h5 className='card-section-title card-section-js'>JavaScript</h5>
+            <pre
+              className={`card-code language-${config.optionalLanguage}`}
+              dangerouslySetInnerHTML={{ __html: cardCodeJs }}
+            />
+          </>
         }
+        <h5 className='card-section-demo-title'>Demo</h5>
+        <div className='card-snippet-demo' data-scope={snippetData.id}>
+          <style>
+            {snippetData.code.scopedCss}
+          </style>
+          <div dangerouslySetInnerHTML={{__html: snippetData.code.html}} />
+        </div>
         {/* <button
           className='button button-example-toggler'
           onClick={() => setExamplesOpen(!examplesOpen)}
@@ -108,7 +105,6 @@ const FullCard = ({ snippetData, difficulty, isDarkMode }) => {
 const ShortCard = ({
   snippetData,
   withCode = false,
-  difficulty,
   isDarkMode
 }) => {
   let cardCodeHtml;
@@ -118,7 +114,6 @@ const ShortCard = ({
     )}`;
   return (
     <div className='card short'>
-      <CardCorner difficulty={difficulty} />
       <h4 className='card-title'>
         <AniLink
           paintDrip

@@ -1,6 +1,6 @@
 ---
 title: Custom text selection
-tags: visual,intermediate
+tags: visual
 ---
 
 Changes the styling of text selection.
