@@ -101,6 +101,7 @@
 }
 
 .card-section-demo-title, .card-section-explanation-title,.card-section-browser-support-title {
+  transition: 0.3s ease all;
   margin: 0.5rem 1rem .5rem;
   color: var(--card-fore-color-light);
   font-size: 1rem;
@@ -109,6 +110,7 @@
 }
 
 .card-explanation, .card-browser-support {
+  transition: 0.3s ease all;
   margin: 0.5rem;
   p, li {
     line-height: 1.75;
@@ -120,10 +122,12 @@
 }
 
 .card-browser-support {
+  transition: 0.3s ease all;
   margin: 1rem;
 }
 
 .browser-support-data {
+  transition: 0.3s ease all;
   font-size: 1.75rem;
   font-weight: 300;
   color: var(--card-fore-color-light);
@@ -132,9 +136,10 @@
 }
 
 .card-snippet-demo {
+  transition: 0.3s ease all;
   width: calc(100% - 0.25rem);
   margin: 0.5rem 1rem .5rem;
-  background: #f5f6f9;
+  background:var(--back-color);
   border-radius: .25rem;
   padding: .75rem 1.25rem;
 }

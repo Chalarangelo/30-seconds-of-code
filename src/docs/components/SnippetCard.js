@@ -20,6 +20,26 @@ const SnippetCard = ({ short, snippetData, ...rest }) =>
   );
 
 // ===================================================
+// Link to edit snippet on Codepen
+// ===================================================
+const CodepenButton = ({ snippetData }) => (
+  <form action='https://codepen.io/pen/define' method='POST' target='_blank'>
+    <input 
+      type='hidden'
+      name='data'
+      value={
+        JSON.stringify({
+          css: snippetData.code.css,
+          html: snippetData.code.html,
+          js: snippetData.code.js
+        })
+      }
+    />
+    <button className='button button-a button-codepen'>Edit on Codepen</button>
+  </form>
+)
+
+// ===================================================
 // Full snippet view (tags, code, title, description)
 // ===================================================
 const FullCard = ({ snippetData, isDarkMode }) => {
@@ -75,7 +95,14 @@ const FullCard = ({ snippetData, isDarkMode }) => {
             {snippetData.code.scopedCss}
           </style>
           <div dangerouslySetInnerHTML={{__html: snippetData.code.html}} />
+          {
+            cardCodeJs &&
+            <script>
+              {`function()(${snippetData.code.js})();`}
+            </script>
+          }
         </div>
+        <CodepenButton snippetData={snippetData}/>
         <h5 className='card-section-explanation-title'>Explanation</h5>
         <div
           className='card-explanation'
