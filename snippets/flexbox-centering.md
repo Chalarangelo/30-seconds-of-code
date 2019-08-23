@@ -1,6 +1,6 @@
 ---
 title: Flexbox centering
-tags: layout,intermediate
+tags: layout
 ---
 
 Horizontally and vertically centers a child element within a parent element using `flexbox`.

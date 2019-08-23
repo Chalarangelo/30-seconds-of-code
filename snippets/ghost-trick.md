@@ -1,6 +1,6 @@
 ---
 title: Ghost trick
-tags: layout,intermediate
+tags: layout
 ---
 
 Vertically centers an element in another.

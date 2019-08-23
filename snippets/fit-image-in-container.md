@@ -1,6 +1,6 @@
 ---
 title: Fit image in container
-tags: layout, visual,intermediate
+tags: layout, visual
 ---
 
 Changes the fit and position of an image within its container while preserving its aspect ratio. Previously only possible using a background image and the `background-size` property.

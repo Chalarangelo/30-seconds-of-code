@@ -1,6 +1,6 @@
 ---
 title: :not selector
-tags: visual,intermediate
+tags: visual
 ---
 
 The `:not` psuedo selector is useful for styling a group of elements, while leaving the last (or specified) element unstyled.

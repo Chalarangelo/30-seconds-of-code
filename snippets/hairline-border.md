@@ -1,6 +1,6 @@
 ---
 title: Hairline border
-tags: visual,intermediate
+tags: visual
 ---
 
 Gives an element a border equal to 1 native device pixel in width, which can look

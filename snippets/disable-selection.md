@@ -1,6 +1,6 @@
 ---
 title: Disable selection
-tags: interactivity,intermediate
+tags: interactivity
 ---
 
 Makes the content unselectable.

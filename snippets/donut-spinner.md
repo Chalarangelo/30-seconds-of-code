@@ -1,6 +1,6 @@
 ---
 title: Donut spinner
-tags: animation,intermediate
+tags: animation
 ---
 
 Creates a donut spinner that can be used to indicate the loading of content.

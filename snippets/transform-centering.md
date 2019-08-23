@@ -1,6 +1,6 @@
 ---
 title: Transform centering
-tags: layout,intermediate
+tags: layout
 ---
 
 Vertically and horizontally centers a child element within its parent element using `position: absolute` and `transform: translate()` (as an alternative to `flexbox` or `display: table`). Similar to `flexbox`, this method does not require you to know the height or width of your parent or child so it is ideal for responsive applications.

@@ -1,6 +1,6 @@
 ---
 title: Shape separator
-tags: visual,intermediate
+tags: visual
 ---
 
 Uses an SVG shape to separate two different blocks to create more a interesting visual appearance compared to standard horizontal separation.

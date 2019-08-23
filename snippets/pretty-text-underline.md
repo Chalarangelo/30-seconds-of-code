@@ -1,6 +1,6 @@
 ---
 title: Pretty text underline
-tags: visual,intermediate
+tags: visual
 ---
 
 A nicer alternative to `text-decoration: underline` or `<u></u>` where descenders do not clip the underline.

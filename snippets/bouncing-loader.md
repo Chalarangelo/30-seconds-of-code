@@ -1,6 +1,6 @@
 ---
 title: Bouncing loader
-tags: animation,intermediate
+tags: animation
 ---
 
 Creates a bouncing loader animation.

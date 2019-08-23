@@ -1,6 +1,6 @@
 ---
 title: Hover underline animation
-tags: animation,intermediate
+tags: animation
 ---
 
 Creates an animated underline effect when the text is hovered over.

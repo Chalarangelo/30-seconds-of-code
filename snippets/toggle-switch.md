@@ -1,6 +1,6 @@
 ---
 title: Toggle switch
-tags: visual, interactivity,intermediate
+tags: visual, interactivity
 ---
 
 Creates a toggle switch with CSS only.

@@ -1,6 +1,6 @@
 ---
 title: Sibling fade
-tags: interactivity,intermediate
+tags: interactivity
 ---
 
 Fades out the siblings of a hovered item.

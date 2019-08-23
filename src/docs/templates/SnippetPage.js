@@ -33,9 +33,10 @@ const SnippetPage = props => {
         </AniLink>
         <SnippetCard
           snippetData={{
+            id: postData.id,
             title: postData.title,
             html: post.html,
-            code: postData.attributes.codeBlocks.code,
+            code: postData.attributes.codeBlocks,
             tags: postData.attributes.tags,
           }}
           isDarkMode={props.isDarkMode}

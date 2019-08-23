@@ -1,6 +1,6 @@
 ---
 title: Custom variables
-tags: other,intermediate
+tags: other
 ---
 
 CSS variables that contain specific values to be reused throughout a document.

@@ -1,6 +1,6 @@
 ---
 title: Calc()
-tags: other,intermediate
+tags: other
 ---
 
 The function calc() allows to define CSS values with the use of mathematical expressions, the value adopted for the property is the result of a mathematical expression.

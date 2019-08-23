@@ -1,6 +1,6 @@
 ---
 title: Clearfix
-tags: layout,intermediate
+tags: layout
 ---
 
 Ensures that an element self-clears its children.
