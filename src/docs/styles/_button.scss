@@ -83,3 +83,15 @@
     margin-right: 0.125rem;
   }
 }
+
+.button.button-codepen {
+  display: block;
+  margin: 0.25rem calc(50% - 3rem);
+  min-width: 180px;
+  font-size: 1rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-codepen'%3E%3Cpolygon points='12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2'%3E%3C/polygon%3E%3Cline x1='12' y1='22' x2='12' y2='15.5'%3E%3C/line%3E%3Cpolyline points='22 8.5 12 15.5 2 8.5'%3E%3C/polyline%3E%3Cpolyline points='2 15.5 12 8.5 22 15.5'%3E%3C/polyline%3E%3Cline x1='12' y1='2' x2='12' y2='8.5'%3E%3C/line%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 0.5rem;
+  padding-left: 2.5rem
+}

@@ -64,7 +64,6 @@ btn.onmousemove = function(e) {
 
 #### Browser support
 
-<div class="snippet__requires-javascript">Requires JavaScript</div>
 <span class="snippet__support-note">⚠️ Requires JavaScript.</span>
 
 - https://caniuse.com/#feat=css-variables
