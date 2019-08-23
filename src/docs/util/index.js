@@ -22,6 +22,36 @@ const getTextualContent = (str, noExplain = false) => {
   return results[1];
 };
 
+// Gets the explanation for a snippet file.
+const getExplanation = str => {
+  const regex = /<h4>\s*Explanation\s*<\/h4>([\s\S]*)<h4>/g;
+  const results = [];
+  let m = null;
+  while ((m = regex.exec(str)) !== null) {
+    if (m.index === regex.lastIndex) regex.lastIndex += 1;
+
+    m.forEach((match, groupIndex) => {
+      results.push(match);
+    });
+  }
+  return results[1].replace(/\r\n/g, '\n');
+};
+
+// Gets the browser support for a snippet file.
+const getBrowserSupport = str => {
+  const regex = /<h4>\s*Browser [s|S]upport\s*<\/h4>([\s\S]*)/g;
+  const results = [];
+  let m = null;
+  while ((m = regex.exec(str)) !== null) {
+    if (m.index === regex.lastIndex) regex.lastIndex += 1;
+
+    m.forEach((match, groupIndex) => {
+      results.push(match);
+    });
+  }
+  return results[1].replace(/\r\n/g, '\n');
+};
+
 // Gets the code blocks in a gatsby page
 const getCodeBlocks = str => {
   const regex = /<pre[.\S\s]*?<\/pre>/g;
@@ -131,5 +161,7 @@ module.exports = {
   getCodeBlocks,
   optimizeNodes,
   optimizeAllNodes,
+  getExplanation,
   getRawCodeBlocks,
+  getBrowserSupport
 };

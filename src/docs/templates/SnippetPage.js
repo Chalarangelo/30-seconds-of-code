@@ -38,6 +38,7 @@ const SnippetPage = props => {
             html: post.html,
             code: postData.attributes.codeBlocks,
             tags: postData.attributes.tags,
+            supportPercentage: postData.attributes.browserSupport.supportPercentage
           }}
           isDarkMode={props.isDarkMode}
         />
@@ -101,6 +102,9 @@ export const pageQuery = graphql`
             css
             js
             scopedCss
+          }
+          browserSupport {
+            supportPercentage
           }
           tags
         }
