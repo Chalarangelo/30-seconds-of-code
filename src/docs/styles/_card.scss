@@ -100,12 +100,35 @@
   }
 }
 
-.card-section-demo-title {
+.card-section-demo-title, .card-section-explanation-title,.card-section-browser-support-title {
   margin: 0.5rem 1rem .5rem;
   color: var(--card-fore-color-light);
   font-size: 1rem;
   font-weight: 700;
   line-height: 2.25;
+}
+
+.card-explanation, .card-browser-support {
+  margin: 0.5rem;
+  p, li {
+    line-height: 1.75;
+    margin-bottom: 0.5rem;
+  }
+  position: relative;
+  width: calc( 100% + 3rem);
+  display: block;
+}
+
+.card-browser-support {
+  margin: 1rem;
+}
+
+.browser-support-data {
+  font-size: 1.75rem;
+  font-weight: 300;
+  color: var(--card-fore-color-light);
+  line-height: 1;
+  margin: 0.5rem 1rem .5rem;
 }
 
 .card-snippet-demo {

@@ -2,7 +2,7 @@ import React from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import config from '../../../config';
 
-import { getTextualContent, getCodeBlocks, optimizeAllNodes } from '../util';
+import { getTextualContent, getCodeBlocks, optimizeAllNodes, getExplanation, getBrowserSupport } from '../util';
 // import ShareIcon from './SVGs/ShareIcon';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import CollapseOpenIcon from './SVGs/CollapseOpenIcon';
@@ -76,24 +76,21 @@ const FullCard = ({ snippetData, isDarkMode }) => {
           </style>
           <div dangerouslySetInnerHTML={{__html: snippetData.code.html}} />
         </div>
-        {/* <button
-          className='button button-example-toggler'
-          onClick={() => setExamplesOpen(!examplesOpen)}
-        >
-          {examplesOpen ? <CollapseOpenIcon /> : <CollapseClosedIcon />}Examples
-        </button>
-        <ReactCSSTransitionReplace
-          transitionName='roll-up'
-          transitionEnterTimeout={300}
-          transitionLeaveTimeout={300}
-        >
-          {examplesOpen && (
-            <pre
-              className={`section card-examples language-${config.language}`}
-              dangerouslySetInnerHTML={{ __html: cardExamplesHtml }}
-            />
-          )}
-        </ReactCSSTransitionReplace> */}
+        <h5 className='card-section-explanation-title'>Explanation</h5>
+        <div
+          className='card-explanation'
+          dangerouslySetInnerHTML={{
+            __html: `${getExplanation(snippetData.html)}`,
+          }}
+        />
+        <h5 className='card-section-browser-support-title'>Browser support</h5>
+        <p className='browser-support-data'>{snippetData.supportPercentage}%</p>
+        <div
+          className='card-browser-support'
+          dangerouslySetInnerHTML={{
+            __html: `${getBrowserSupport(snippetData.html)}`,
+          }}
+        />
       </div>
     </div>
   );
