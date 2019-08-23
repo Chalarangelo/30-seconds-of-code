@@ -114,7 +114,7 @@
       "type": "snippetListing",
       "title": "camel",
       "attributes": {
-        "text": "Converts a string to camelcase.\n\nBreak the string into words and combine them capitalizing the first letter of each word, using a regexp.\n\n",
+        "text": "Converts a string to camelcase.\n\nBreak the string into words and combine them capitalizing the first letter of each word, using a regexp, `title()` and `lower`.\n\n",
         "tags": [
           "string",
           "regexp",
@@ -122,7 +122,7 @@
         ]
       },
       "meta": {
-        "hash": "16822294cd8f146d495471811b20e34f96a201be2613b2b6103c8005d0563b03"
+        "hash": "60b308cb7f28b676fb122949d04ae07af0d4e0fcb96f037b3aa3c09be9b2e7ab"
       }
     },
     {
@@ -642,7 +642,7 @@
         ]
       },
       "meta": {
-        "hash": "2670b3500855c72812593fd30692701798be1bb3a7a68c2bb65a273fdee5c95a"
+        "hash": "261771aa5fd9c9dcb60dd93c29afce0de3a51c505e474fa7c76789a1e0d8f5c8"
       }
     },
     {
@@ -780,7 +780,7 @@
       "type": "snippetListing",
       "title": "max_n",
       "attributes": {
-        "text": "Returns the `n` maximum elements from the provided list. \nIf `n` is greater than or equal to the provided list's length, then return the original list (sorted in descending order).\n\nUse `sorted() to sort the list, `[:n]` to get the specified number of elements.\nOmit the second argument, `n`, to get a one-element list.\n\n",
+        "text": "Returns the `n` maximum elements from the provided list. \nIf `n` is greater than or equal to the provided list's length, then return the original list (sorted in descending order).\n\nUse `sorted()` to sort the list, `[:n]` to get the specified number of elements.\nOmit the second argument, `n`, to get a one-element list.\n\n",
         "tags": [
           "list",
           "math",
@@ -788,7 +788,7 @@
         ]
       },
       "meta": {
-        "hash": "572897e2101454c75554f182d31b02182f296be88e10d8b41c15c7ac1e74ce25"
+        "hash": "a87775ce6bd1590c7c7b31b7dfce03b00120e4e8183c65cec8fdd3841fa369d7"
       }
     },
     {

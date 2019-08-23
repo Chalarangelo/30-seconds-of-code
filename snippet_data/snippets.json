@@ -150,9 +150,9 @@
       "type": "snippet",
       "attributes": {
         "fileName": "camel.md",
-        "text": "Converts a string to camelcase.\n\nBreak the string into words and combine them capitalizing the first letter of each word, using a regexp.\n\n",
+        "text": "Converts a string to camelcase.\n\nBreak the string into words and combine them capitalizing the first letter of each word, using a regexp, `title()` and `lower`.\n\n",
         "codeBlocks": {
-          "code": "import re\n\ndef camel(str):\n  s = re.sub(r\"(\\s|_|-)+\",\"\",\n    re.sub(r\"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+\",\n    lambda mo: mo.group(0)[0].upper() + mo.group(0)[1:].lower(),str)\n  )\n  return s[0].lower() + s[1:]",
+          "code": "import re\n\ndef camel(s):\n  s = re.sub(r\"(\\s|_|-)+\", \" \", s).title().replace(\" \", \"\")\n  return s[0].lower() + s[1:]",
           "example": "camel('some_database_field_name'); # 'someDatabaseFieldName'\ncamel('Some label that needs to be camelized'); # 'someLabelThatNeedsToBeCamelized'\ncamel('some-javascript-property'); # 'someJavascriptProperty'\ncamel('some-mixed_string with spaces_underscores-and-hyphens'); # 'someMixedStringWithSpacesUnderscoresAndHyphens'"
         },
         "tags": [
@@ -162,7 +162,7 @@
         ]
       },
       "meta": {
-        "hash": "16822294cd8f146d495471811b20e34f96a201be2613b2b6103c8005d0563b03"
+        "hash": "60b308cb7f28b676fb122949d04ae07af0d4e0fcb96f037b3aa3c09be9b2e7ab"
       }
     },
     {
@@ -843,7 +843,7 @@
         "fileName": "is_odd.md",
         "text": "Returns `True` if the given number is odd, `False` otherwise.\n\nChecks whether a number is even or odd using the modulo (`%`) operator. \nReturns `True` if the number is odd, `False` if the number is even.\n\n",
         "codeBlocks": {
-          "code": "def is_odd(num):\n  return num % 2 == `0`",
+          "code": "def is_odd(num):\n  return num % 2 != 0",
           "example": "is_odd(3) # True"
         },
         "tags": [
@@ -852,7 +852,7 @@
         ]
       },
       "meta": {
-        "hash": "2670b3500855c72812593fd30692701798be1bb3a7a68c2bb65a273fdee5c95a"
+        "hash": "261771aa5fd9c9dcb60dd93c29afce0de3a51c505e474fa7c76789a1e0d8f5c8"
       }
     },
     {
@@ -1031,7 +1031,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "max_n.md",
-        "text": "Returns the `n` maximum elements from the provided list. \nIf `n` is greater than or equal to the provided list's length, then return the original list (sorted in descending order).\n\nUse `sorted() to sort the list, `[:n]` to get the specified number of elements.\nOmit the second argument, `n`, to get a one-element list.\n\n",
+        "text": "Returns the `n` maximum elements from the provided list. \nIf `n` is greater than or equal to the provided list's length, then return the original list (sorted in descending order).\n\nUse `sorted()` to sort the list, `[:n]` to get the specified number of elements.\nOmit the second argument, `n`, to get a one-element list.\n\n",
         "codeBlocks": {
           "code": "def max_n(lst, n=1):\n  return sorted(lst, reverse=True)[:n]",
           "example": "max_n([1, 2, 3]) # [3]\nmax_n([1, 2, 3], 2) # [3,2]"
@@ -1043,7 +1043,7 @@
         ]
       },
       "meta": {
-        "hash": "572897e2101454c75554f182d31b02182f296be88e10d8b41c15c7ac1e74ce25"
+        "hash": "a87775ce6bd1590c7c7b31b7dfce03b00120e4e8183c65cec8fdd3841fa369d7"
       }
     },
     {
