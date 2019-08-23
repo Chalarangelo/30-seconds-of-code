@@ -1,0 +1,57 @@
+// ===================================================
+// Search
+// ===================================================
+[type="search"].search-box {
+  transition: 0.3s ease all;
+  margin: 0.25rem 0.875rem;
+  width: calc(100% - 1.75rem);
+  background: var(--search-back-color);
+  box-shadow: 0px 4px 8px var(--search-shadow-color);
+  &:focus {
+    box-shadow: 0px 6px 12px var(--search-shadow-focus-color);
+  }
+  border-radius: 1.125rem;
+  outline: none;
+  box-sizing: border-box;
+  border: none;
+  padding-left: 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 2;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23C5C6CD' stroke-width='1.5' stroke-linecap='round' strokelinejoin='round' className='feather feather-search'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position-x: 10px;
+  background-position-y: 8px;
+  color: var(--search-fore-color);
+  &::placeholder {
+    color: var(--search-placeholder-color);
+  }
+  @media screen and (min-width: $layout-large-breakpoint) {
+    font-size: 1.375rem;
+    line-height: 1.8;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23C5C6CD' stroke-width='1.5' stroke-linecap='round' strokelinejoin='round' className='feather feather-search'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+  }
+}
+// Dark mode
+.page-container.dark [type="search"].search-box {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23999EBD' stroke-width='1.5' stroke-linecap='round' strokelinejoin='round' className='feather feather-search'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+  @media screen and (min-width: $layout-large-breakpoint) {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23999EBD' stroke-width='1.5' stroke-linecap='round' strokelinejoin='round' className='feather feather-search'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+  }
+}
+
+.search-box::-webkit-input-placeholder {
+  font-family: 'Noto Sans', Helvetica, sans-serif;
+}
+
+.search-box:-ms-input-placeholder {
+  font-family: 'Noto Sans', Helvetica, sans-serif;
+}
+
+.search-box:-moz-placeholder {
+  font-family: 'Noto Sans', Helvetica, sans-serif;
+}
+
+.search-box::-moz-placeholder {
+  font-family: 'Noto Sans', Helvetica, sans-serif;
+}
