@@ -128,14 +128,8 @@ const FullCard = ({ snippetData, isDarkMode }) => {
 // ===================================================
 const ShortCard = ({
   snippetData,
-  withCode = false,
   isDarkMode
 }) => {
-  let cardCodeHtml;
-  if (withCode)
-    cardCodeHtml = `${optimizeAllNodes(
-      getCodeBlocks(snippetData.html).code,
-    )}`;
   return (
     <div className='card short'>
       <h4 className='card-title'>
@@ -153,32 +147,24 @@ const ShortCard = ({
           __html: `${getTextualContent(snippetData.html)}`,
         }}
       />
-      {withCode ? <div className='card-bottom'>
-        <CopyToClipboard
-          text={snippetData.code}
-          onCopy={() => {
-            let tst = document.createElement('div');
-            tst.classList = 'toast';
-            tst.innerHTML = 'Snippet copied to clipboard!';
-            document.body.appendChild(tst);
-            setTimeout(function() {
-              tst.style.opacity = 0;
-              setTimeout(function() {
-                document.body.removeChild(tst);
-              }, 300);
-            }, 1700);
-          }}
-        >
-          <button
-            className='button button-a button-copy'
-            aria-label='Copy to clipboard'
-          />
-        </CopyToClipboard>
-        <pre
-          className={`card-code language-${config.language}`}
-          dangerouslySetInnerHTML={{ __html: cardCodeHtml }}
-        />
-      </div> : '' }
+      <div className='card-bottom'>
+        <h5 className='card-section-demo-title'>Demo</h5>
+        <div className='card-snippet-demo' data-scope={snippetData.id}>
+          <style>
+            {snippetData.code.scopedCss}
+          </style>
+          <div dangerouslySetInnerHTML={{ __html: snippetData.code.html }} />
+          {
+            snippetData.code.js &&
+            <script>
+              {`function()(${snippetData.code.js})();`}
+            </script>
+          }
+        </div>
+        <CodepenButton snippetData={snippetData} />
+        <h5 className='card-section-browser-support-title'>Browser support</h5>
+        <p className='browser-support-data'>{snippetData.supportPercentage}%</p>
+      </div>
     </div>
   );
 };
