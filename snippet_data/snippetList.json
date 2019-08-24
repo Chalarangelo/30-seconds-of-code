@@ -513,14 +513,14 @@
       "type": "snippetListing",
       "title": "initialize_list_with_range",
       "attributes": {
-        "text": "Initializes a list containing the numbers in the specified range where `start` and `end` are inclusive with their common difference `step`.\n\nUse list comprehension and `range()` to generate a list of the appropriate length, filled with the desired values in the given range.\nOmit `start` to use the default value of `0`.\nOmit `step` to use the default value of `1`.\n\n",
+        "text": "Initializes a list containing the numbers in the specified range where `start` and `end` are inclusive with their common difference `step`.\n\nUse `list` and `range()` to generate a list of the appropriate length, filled with the desired values in the given range.\nOmit `start` to use the default value of `0`.\nOmit `step` to use the default value of `1`.\n\n",
         "tags": [
           "list",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "b68fef168bb92503e54278a95753fd48b3cb9f5151e17d36ce69c7eae298683c"
+        "hash": "75ce66f70653b918d86f8bb7c2743bced720389c9f8f97072b4ff90b377255e1"
       }
     },
     {
