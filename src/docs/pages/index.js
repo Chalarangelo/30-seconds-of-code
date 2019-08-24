@@ -49,7 +49,7 @@ const ListPage = props => {
     <>
       <Meta 
         title='Snippet List' 
-        meta={[{ name: `google-site-verification`, content: `ADD YOUR VERIFICATION CODE HERE` }]}
+        meta={[{ name: `google-site-verification`, content: `YX9mF-TxoHZGJ9SZ8XwvWgGR_KTcbH1uHul4iDklyr0` }]}
       />
       <Shell withIcon={false} withTitle={false} isList>
         <div className='splash'>
