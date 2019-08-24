@@ -37,6 +37,8 @@ const TagRoute = props => {
                 code: getCodeBlocks(node.rawMarkdownBody).code,
                 tags: node.frontmatter.tags.split(',').map(v => v.trim()),
                 id: node.fields.slug.slice(1),
+                code: props.data.snippetDataJson.data.find(v => v.title == node.frontmatter.title).attributes.codeBlocks,
+                supportPercentage: props.data.snippetDataJson.data.find(v => v.title == node.frontmatter.title).attributes.browserSupport.supportPercentage,
               }}
               isDarkMode={props.isDarkMode}
             />
@@ -58,6 +60,25 @@ export default connect(
 
 export const tagPageQuery = graphql`
   query TagPage($tagRegex: String) {
+    snippetDataJson(meta: { type: { eq: "snippetArray" } }) {
+      data {
+        id
+        title
+        attributes {
+          tags
+          text
+          codeBlocks {
+            html
+            css
+            js
+            scopedCss
+          }
+          browserSupport {
+            supportPercentage
+          }
+        }
+      }
+    }
     allMarkdownRemark(
       limit: 1000
       sort: { fields: [frontmatter___title], order: ASC }

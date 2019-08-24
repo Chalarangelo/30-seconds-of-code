@@ -1,18 +1,21 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { connect } from 'react-redux';
-import { pushNewPage, pushNewQuery } from '../state/app';
+import { pushNewPage } from '../state/app';
+import { capitalize } from '../util';
 
 import Shell from '../components/Shell';
 import Meta from '../components/Meta';
-import Search from '../components/Search';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import SnippetCard from '../components/SnippetCard';
 
+import { getRawCodeBlocks as getCodeBlocks } from '../util';
+import SimpleCard from '../components/SimpleCard';
+
 // ===================================================
-// Home page (splash and search)
+// Snippet list page
 // ===================================================
-const IndexPage = props => {
-  console.log(props);
+const ListPage = props => {
   const snippets = props.data.snippetDataJson.data.map(snippet => ({
     title: snippet.title,
     html: props.data.allMarkdownRemark.edges.find(
@@ -24,33 +27,31 @@ const IndexPage = props => {
     code: snippet.attributes.codeBlocks,
     supportPercentage: snippet.attributes.browserSupport.supportPercentage,
   }));
-
-  const [searchQuery, setSearchQuery] = React.useState(props.searchQuery);
-  const [searchResults, setSearchResults] = React.useState(snippets);
-
-  React.useEffect(() => {
-    props.dispatch(pushNewQuery(searchQuery));
-    let q = searchQuery.toLowerCase();
-    let results = snippets;
-    if (q.trim().length)
-      results = snippets.filter(
-        v =>
-          v.tags.filter(t => t.indexOf(q) !== -1).length ||
-          v.title.toLowerCase().indexOf(q) !== -1,
-      );
-    setSearchResults(results);
-  }, [searchQuery]);
+  const tags = snippets.reduce((acc, snippet) => {
+    if (!snippet.tags) return acc;
+    const primaryTag = snippet.tags[0];
+    if (!acc.includes(primaryTag)) acc.push(primaryTag);
+    return acc;
+  }, []);
+  const staticPages = [
+    {
+      url: 'about',
+      title: 'About',
+      description: 'A few word about us, our goals and our projects.'
+    }
+  ];
 
   React.useEffect(() => {
-    props.dispatch(pushNewPage('Search', '/search'));
+    props.dispatch(pushNewPage('Snippet List', '/'));
   }, []);
 
   return (
     <>
       <Meta 
+        title='Snippet List' 
         meta={[{ name: `google-site-verification`, content: `ADD YOUR VERIFICATION CODE HERE` }]}
       />
-      <Shell withIcon={false} withTitle={false}>
+      <Shell withIcon={false} withTitle={false} isList>
         <div className='splash'>
           <div className='splash-container'>
             <img className='splash-leaves' id='splash-leaves-1' src={props.data.leaves1.childImageSharp.original.src} alt='splash-leaves-1' />
@@ -61,9 +62,9 @@ const IndexPage = props => {
                 src={props.data.file.childImageSharp.original.src} alt='Logo' className='splash-logo'
               />
               <h1 className='splash-title'
-                dangerouslySetInnerHTML={{ 
-                  __html: `${props.data.site.siteMetadata.title.replace('CSS','<strong>CSS</strong>')}`
-                }} 
+                dangerouslySetInnerHTML={{
+                  __html: `${props.data.site.siteMetadata.title.replace('CSS', '<strong>CSS</strong>')}`
+                }}
               />
               <p className='splash-sub-title'>
                 {props.data.site.siteMetadata.description}
@@ -71,35 +72,51 @@ const IndexPage = props => {
             </div>
           </div>
         </div>
-        <Search
-          setSearchQuery={setSearchQuery}
-          defaultValue={props.searchQuery}
-        />
-        {searchQuery.length === 0 ? (
-          <p className='light-sub'>
-            Start typing a keyword to see matching snippets.
-          </p>
-        ) : searchResults.length === 0 ? (
-          <p className='light-sub'>
-            We couldn't find any results for the keyword{' '}
-            <strong>{searchQuery}</strong>.
-          </p>
-        ) : (
+        <h2 className='page-title'>Snippet List</h2>
+        <p className='light-sub'>
+          Click on a snippet’s name to view its code or a tag name to view all
+          snippets in that category.
+        </p>
+        {tags.sort((a,b) => a.localeCompare(b)).map(tag => (
           <>
-            <p className='light-sub'>
-              Click on a snippet's name to view its code.
-            </p>
-            <h2 className='page-sub-title'>Search results</h2>
-            {searchResults.map(snippet => (
-              <SnippetCard
-                short
-                key={`snippet_${snippet.id}`}
-                snippetData={snippet}
-                isDarkMode={props.isDarkMode}
-              />
-            ))}
+            <h3 className='tag-title' key={`tag_title_${tag}`}>
+              <AniLink
+                key={`tag_link_${tag}`}
+                paintDrip
+                to={`/tag/${tag}`}
+                hex={props.isDarkMode ? '#434E76' : '#FFFFFF'}
+              >
+                {capitalize(tag)}
+              </AniLink>
+            </h3>
+            {snippets
+              .filter(snippet => snippet.tags[0] === tag)
+              .map(snippet => (
+                <SnippetCard
+                  key={`snippet_${snippet.id}`}
+                  short
+                  snippetData={snippet}
+                  isDarkMode={props.isDarkMode}
+                />
+              ))}
           </>
-        )}
+        ))}
+        <br/>
+        {staticPages.map(page => (
+          <SimpleCard 
+            title={(
+              <AniLink
+                paintDrip
+                to={`/${page.url}`}
+                hex={props.isDarkMode ? '#434E76' : '#FFFFFF'}
+              >
+                {page.title}
+              </AniLink>
+            )}
+          >
+            <p>{page.description}</p>
+          </SimpleCard>
+        ))}
       </Shell>
     </>
   );
@@ -113,10 +130,10 @@ export default connect(
     searchQuery: state.app.searchQuery,
   }),
   null,
-)(IndexPage);
+)(ListPage);
 
-export const indexPageQuery = graphql`
-  query snippetList {
+export const listPageQuery = graphql`
+  query snippetListing {
     site {
       siteMetadata {
         title
