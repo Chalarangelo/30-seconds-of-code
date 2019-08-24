@@ -233,7 +233,7 @@ Creates a border animation on hover.
 
 #### Browser support
 
-Infinity%
+100.0%
 
 <br>[⬆ Back to top](#contents)
 
@@ -616,7 +616,7 @@ Reveals an interactive popout menu on hover and focus.
 
 #### Browser support
 
-Infinity%
+100.0%
 
 
 
@@ -758,7 +758,7 @@ Ensures that an element self-clears its children.
 
 #### Browser support
 
-Infinity%
+100.0%
 
 <span class="snippet__support-note">⚠️ For this snippet to work properly you need to ensure that there are no non-floating children in the container and that there are no tall floats before the clearfixed container but in the same formatting context (e.g. floated columns).</span>
 
@@ -803,7 +803,7 @@ Given an element of variable width, it will ensure its height remains proportion
 
 #### Browser support
 
-Infinity%
+100.0%
 
 
 
@@ -855,7 +855,7 @@ Vertically and horizontally centers a child element within its parent element us
 
 #### Browser support
 
-Infinity%
+100.0%
 
 - https://caniuse.com/#search=display%3A%20table
 
@@ -1165,7 +1165,7 @@ A bulletproof way to completely hide an element visually and positionally in the
 
 #### Browser support
 
-Infinity%
+100.0%
 
 (Although `clip` technically has been depreciated, the newer `clip-path` currently has very limited browser support.)
 
@@ -1978,7 +1978,6 @@ btn.onmousemove = function(e) {
 
 96.5%
 
-<div class="snippet__requires-javascript">Requires JavaScript</div>
 <span class="snippet__support-note">⚠️ Requires JavaScript.</span>
 
 - https://caniuse.com/#feat=css-variables
@@ -2283,7 +2282,7 @@ Uses the native font of the operating system to get close to a native app feel.
 
 #### Browser support
 
-Infinity%
+100.0%
 
 
 
@@ -2389,7 +2388,7 @@ Creates a triangle shape with pure CSS.
 
 #### Browser support
 
-Infinity%
+100.0%
 
 
 

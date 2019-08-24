@@ -62,7 +62,7 @@
         "explanation": "\n\n- Use the `:before` and `:after` pseduo-elements as borders that animate on hover.\n\n",
         "browserSupport": {
           "text": "\n",
-          "supportPercentage": null
+          "supportPercentage": 100
         },
         "codeBlocks": {
           "html": "<div class=\"button-border\"><button class=\"button\">Submit</button></div>",
@@ -140,7 +140,7 @@
         "explanation": "\n\n1. `.clearfix::after` defines a pseudo-element.\n2. `content: ''` allows the pseudo-element to affect layout.\n3. `clear: both` indicates that the left, right or both sides of the element cannot be adjacent to earlier floated elements within the same block formatting context.\n\n",
         "browserSupport": {
           "text": "\n\n<span class=\"snippet__support-note\">⚠️ For this snippet to work properly you need to ensure that there are no non-floating children in the container and that there are no tall floats before the clearfixed container but in the same formatting context (e.g. floated columns).</span>\n\n\n\n",
-          "supportPercentage": null
+          "supportPercentage": 100
         },
         "codeBlocks": {
           "html": "<div class=\"clearfix\">\n  <div class=\"floated\">float a</div>\n  <div class=\"floated\">float b</div>\n  <div class=\"floated\">float c</div>\n</div>",
@@ -166,7 +166,7 @@
         "explanation": "\n\n- `padding-top` on the `::before` pseudo-element causes the height of the element to equal a percentage of its width. `100%` therefore means the element's height will always be `100%` of the width, creating a responsive square.\n- This method also allows content to be placed inside the element normally.\n\n",
         "browserSupport": {
           "text": "\n\n\n\n",
-          "supportPercentage": null
+          "supportPercentage": 100
         },
         "codeBlocks": {
           "html": "<div class=\"constant-width-to-height-ratio\"></div>",
@@ -323,7 +323,7 @@
         "explanation": "\n\n1. `display: table` on '.center' allows the element to behave like a `<table>` HTML element.\n2. 100% height and width on '.center' allows the element to fill the available space within its parent element.\n3. `display: table-cell` on '.center > span' allows the element to behave like an <td> HTML element.\n4. `text-align: center` on '.center > span' centers the child element horizontally.\n5. `vertical-align: middle` on '.center > span' centers the child element vertically.\n\n- The outer parent ('.container' in this case) must have a fixed height and width.\n\n",
         "browserSupport": {
           "text": "\n\n- https://caniuse.com/#search=display%3A%20table\n\n\n\n",
-          "supportPercentage": null
+          "supportPercentage": 100
         },
         "codeBlocks": {
           "html": "<div class=\"container\">\n  <div class=\"center\"><span>Centered content</span></div>\n</div>",
@@ -792,7 +792,7 @@
         "text": "A hover effect where the gradient follows the mouse cursor.\n\n<small class=\"snippet__credit\">**Credit:** [Tobias Reich](https://codepen.io/electerious/pen/MQrRxX)</small>\n\n",
         "explanation": "\n\n1. `--x` and `--y` are used to track the position of the mouse on the button.\n2. `--size` is used to keep modify of the gradient's dimensions.\n3. `background: radial-gradient(circle closest-side, pink, transparent);` creates the gradient at the correct postion.\n\n",
         "browserSupport": {
-          "text": "\n\n<div class=\"snippet__requires-javascript\">Requires JavaScript</div>\n<span class=\"snippet__support-note\">⚠️ Requires JavaScript.</span>\n\n- https://caniuse.com/#feat=css-variables\n\n\n\n",
+          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Requires JavaScript.</span>\n\n- https://caniuse.com/#feat=css-variables\n\n\n\n",
           "supportPercentage": 96.51
         },
         "codeBlocks": {
@@ -807,7 +807,7 @@
         ]
       },
       "meta": {
-        "hash": "e4bc55e29230bb5888832fb886187080da35bafb48d150c0ce82c9d846d700ba"
+        "hash": "95356deaaa912ba2c168ee418678ad99d1e000163c7b95f725364ba3cbbb5b85"
       }
     },
     {
@@ -846,7 +846,7 @@
         "explanation": "\n\n1. Remove all borders.\n2. Use `clip` to indicate that no part of the element should be shown.\n3. Make the height and width of the element 1px.\n4. Negate the elements height and width using `margin: -1px`.\n5. Hide the element's overflow.\n6. Remove all padding.\n7. Position the element absolutely so that it does not take up space in the DOM.\n\n",
         "browserSupport": {
           "text": "\n\n(Although `clip` technically has been depreciated, the newer `clip-path` currently has very limited browser support.)\n\n- https://caniuse.com/#search=clip\n\n\n\n",
-          "supportPercentage": null
+          "supportPercentage": 100
         },
         "codeBlocks": {
           "html": "<a class=\"button\" href=\"http://pantswebsite.com\">\n  Learn More <span class=\"offscreen\"> about pants</span>\n</a>",
@@ -899,7 +899,7 @@
         "explanation": "\n\n1. `position: relative` on the reference parent establishes a Cartesian positioning context for its child.\n2. `position: absolute` takes the popout menu out of the flow of the document and positions it in relation to the parent.\n3. `left: 100%` moves the the popout menu 100% of its parent's width from the left.\n4. `visibility: hidden` hides the popout menu initially and allows for transitions (unlike `display: none`).\n5. `.reference:hover > .popout-menu` means that when `.reference` is hovered over, select immediate children with a class of `.popout-menu` and change their `visibility` to `visible`, which shows the popout.\n6. `.reference:focus > .popout-menu` means that when `.reference` is focused, the popout would be shown.\n7. `.reference:focus-within > .popout-menu` ensures that the popout is shown when the focus is _within_ the reference.\n\n",
         "browserSupport": {
           "text": "\n\n\n\n",
-          "supportPercentage": null
+          "supportPercentage": 100
         },
         "codeBlocks": {
           "html": "<div class=\"reference\" tabindex=\"0\"><div class=\"popout-menu\">Popout menu</div></div>",
@@ -1029,7 +1029,7 @@
         "explanation": "\n\n- The browser looks for each successive font, preferring the first one if possible, and falls back to the next if it cannot find the font (on the system or defined in CSS).\n\n1. `-apple-system` is San Francisco, used on iOS and macOS (not Chrome however)\n2. `BlinkMacSystemFont` is San Francisco, used on macOS Chrome\n3. `Segoe UI` is used on Windows 10\n4. `Roboto` is used on Android\n5. `Oxygen-Sans` is used on Linux with KDE\n6. `Ubuntu` is used on Ubuntu (all variants)\n7. `Cantarell` is used on Linux with GNOME Shell\n8. `\"Helvetica Neue\"` and `Helvetica` is used on macOS 10.10 and below (wrapped in quotes because it has a space)\n9. `Arial` is a font widely supported by all operating systems\n10. `sans-serif` is the fallback sans-serif font if none of the other fonts are supported\n\n",
         "browserSupport": {
           "text": "\n\n\n\n",
-          "supportPercentage": null
+          "supportPercentage": 100
         },
         "codeBlocks": {
           "html": "<p class=\"system-font-stack\">This text uses the system font.</p>",
@@ -1108,7 +1108,7 @@
         "explanation": "\n\n- [View this link for a detailed explanation.](https://stackoverflow.com/q/7073484)\n- The color of the border is the color of the triangle. The side the triangle tip points corresponds to the opposite `border-*` property. For example, a color on `border-top` means the arrow points downward.\n- Experiment with the `px` values to change the proportion of the triangle.\n\n",
         "browserSupport": {
           "text": "\n\n\n\n",
-          "supportPercentage": null
+          "supportPercentage": 100
         },
         "codeBlocks": {
           "html": "<div class=\"triangle\"></div>",
