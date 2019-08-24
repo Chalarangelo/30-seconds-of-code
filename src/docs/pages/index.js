@@ -8,8 +8,6 @@ import Meta from '../components/Meta';
 import Search from '../components/Search';
 import SnippetCard from '../components/SnippetCard';
 
-import { getRawCodeBlocks as getCodeBlocks } from '../util';
-
 // ===================================================
 // Home page (splash and search)
 // ===================================================

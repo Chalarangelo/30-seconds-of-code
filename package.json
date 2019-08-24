@@ -60,10 +60,5 @@
     "react-helmet": "^5.2.1",
     "react-redux": "^7.1.0",
     "redux": "^4.0.4"
-  },
-  "dependencies": {
-    "feather-icons": "^4.7.0",
-    "focus-visible": "^4.1.0",
-    "jump.js": "^1.0.2"
   }
 }

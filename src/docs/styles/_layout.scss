@@ -163,44 +163,9 @@ img.website-logo {
     font-size: 1.5rem;
   }
 }
-
-// .index-logo {
-//   transition: 0.3s ease all;
-//   display: block;
-//   margin: 1.5rem 1.25rem 0.5rem;
-//   vertical-align: middle;
-//   @media screen and (min-width: 144px) {
-//     max-width: 128px;
-//     margin: 1.5rem auto 0.5rem;
-//   }
-//   @media screen and (min-width: $layout-medium-breakpoint) {
-//     display: inline-block;
-//     margin: 1.5rem 2rem 0.5rem 1.25rem;
-//   }
-// }
-// // Homepage title
-// .index-title {
-//   transition: 0.3s ease all;
-//   font-size: 2rem;
-//   color: var(--fore-color-dark); 
-//   @media screen and (min-width: $layout-medium-breakpoint) {
-//     display: inline-block;
-//   }
-//   margin: 0.75rem 1.25rem;
-//   text-align: center;
-// }
-// // Homepage subtitle
-// .index-sub-title {
-//   transition: 0.3s ease all;
-//   font-size: 0.875rem;
-//   line-height: 1.5;
-//   margin: 1rem 1.25rem 1.25rem;
-//   color: var(--fore-color);
-//   text-align: center;
-//   @media screen and (min-width: $layout-medium-breakpoint) {
-//     font-size: 1rem;
-//   }
-// }
+.splash + input + p {
+  padding-bottom: 3rem;
+}
 
 // Page title
 .page-title {
