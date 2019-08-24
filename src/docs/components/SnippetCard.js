@@ -161,8 +161,6 @@ const ShortCard = ({
             </script>
           }
         </div>
-        <h5 className='card-section-browser-support-title'>Browser support</h5>
-        <p className='browser-support-data'>{snippetData.supportPercentage.toFixed(1)}%</p>
       </div>
     </div>
   );
