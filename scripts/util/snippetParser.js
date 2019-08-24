@@ -146,7 +146,7 @@ const getBrowserSupport = str => {
   )
   return {
     text: browserSupportText,
-    supportPercentage: Math.min(...supportPercentage)
+    supportPercentage: Math.min(...supportPercentage,100)
   }
 };
 
