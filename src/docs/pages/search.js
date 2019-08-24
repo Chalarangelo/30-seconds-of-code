@@ -22,11 +22,8 @@ const SearchPage = props => {
     tags: snippet.attributes.tags,
     text: snippet.attributes.text,
     id: snippet.id,
-    code: getCodeBlocks(
-      props.data.allMarkdownRemark.edges.find(
-        v => v.node.frontmatter.title === snippet.title,
-      ).node.rawMarkdownBody,
-    ).code,
+    code: snippet.attributes.codeBlocks,
+    supportPercentage: snippet.attributes.browserSupport.supportPercentage,
   }));
 
   const [searchQuery, setSearchQuery] = React.useState(props.searchQuery);
@@ -110,13 +107,22 @@ export default connect(
 
 export const searchPageQuery = graphql`
   query searchSnippetList {
-    snippetDataJson(meta: { type: { eq: "snippetListingArray" } }) {
+    snippetDataJson(meta: { type: { eq: "snippetArray" } }) {
       data {
         id
         title
         attributes {
           tags
           text
+          codeBlocks {
+            html
+            css
+            js
+            scopedCss
+          }
+          browserSupport {
+            supportPercentage
+          }
         }
       }
     }

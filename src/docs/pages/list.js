@@ -24,11 +24,8 @@ const ListPage = props => {
     tags: snippet.attributes.tags,
     text: snippet.attributes.text,
     id: snippet.id,
-    code: getCodeBlocks(
-      props.data.allMarkdownRemark.edges.find(
-        v => v.node.frontmatter.title === snippet.title,
-      ).node.rawMarkdownBody,
-    ).code,
+    code: snippet.attributes.codeBlocks,
+    supportPercentage: snippet.attributes.browserSupport.supportPercentage,
   }));
   const tags = snippets.reduce((acc, snippet) => {
     if (!snippet.tags) return acc;
@@ -57,7 +54,7 @@ const ListPage = props => {
           Click on a snippet’s name to view its code or a tag name to view all
           snippets in that category.
         </p>
-        {tags.map(tag => (
+        {tags.sort((a,b) => a.localeCompare(b)).map(tag => (
           <>
             <h3 className='tag-title' key={`tag_title_${tag}`}>
               <AniLink
@@ -114,13 +111,22 @@ export default connect(
 
 export const listPageQuery = graphql`
   query snippetListing {
-    snippetDataJson(meta: { type: { eq: "snippetListingArray" } }) {
+    snippetDataJson(meta: { type: { eq: "snippetArray" } }) {
       data {
         id
         title
         attributes {
           tags
           text
+          codeBlocks {
+            html
+            css
+            js
+            scopedCss
+          }
+          browserSupport {
+            supportPercentage
+          }
         }
       }
     }

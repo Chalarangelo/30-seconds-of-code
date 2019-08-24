@@ -69,14 +69,14 @@
       background: var(--button-example-toggler-fore-color);
     }
   }
-  &.short {
-    .card-bottom {
-      display: none;
-      @media screen and (min-width: $layout-large-breakpoint) {
-        display: block;
-      }
-    }
-  }
+  // &.short {
+  //   .card-bottom {
+  //     display: none;
+  //     @media screen and (min-width: $layout-large-breakpoint) {
+  //       display: block;
+  //     }
+  //   }
+  // }
 }
 
 // Card sections
