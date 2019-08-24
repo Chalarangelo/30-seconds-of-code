@@ -72,7 +72,7 @@ const Shell = ({
           cover
           direction={viewportWidth < 600 ? 'up' : 'right'}
           bg={isDarkMode ? '#434E76' : '#FFFFFF'}
-          to='/list'
+          to='/'
           aria-label='Snippet list'
           className={isList ? 'menu-button active' : 'menu-button'}
         >

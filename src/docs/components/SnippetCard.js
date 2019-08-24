@@ -111,7 +111,7 @@ const FullCard = ({ snippetData, isDarkMode }) => {
           }}
         />
         <h5 className='card-section-browser-support-title'>Browser support</h5>
-        <p className='browser-support-data'>{snippetData.supportPercentage}%</p>
+        <p className='browser-support-data'>{snippetData.supportPercentage.toFixed(1)}%</p>
         <div
           className='card-browser-support'
           dangerouslySetInnerHTML={{
@@ -149,7 +149,7 @@ const ShortCard = ({
       />
       <div className='card-bottom'>
         <h5 className='card-section-demo-title'>Demo</h5>
-        <div className='card-snippet-demo' data-scope={snippetData.id}>
+        <div className='card-snippet-demo' data-scope={snippetData.id.replace(/\//g,'')}>
           <style>
             {snippetData.code.scopedCss}
           </style>
@@ -161,9 +161,8 @@ const ShortCard = ({
             </script>
           }
         </div>
-        <CodepenButton snippetData={snippetData} />
         <h5 className='card-section-browser-support-title'>Browser support</h5>
-        <p className='browser-support-data'>{snippetData.supportPercentage}%</p>
+        <p className='browser-support-data'>{snippetData.supportPercentage.toFixed(1)}%</p>
       </div>
     </div>
   );
