@@ -14,6 +14,7 @@ import { getRawCodeBlocks as getCodeBlocks } from '../util';
 // Home page (splash and search)
 // ===================================================
 const IndexPage = props => {
+  console.log(props);
   const snippets = props.data.snippetDataJson.data.map(snippet => ({
     title: snippet.title,
     html: props.data.allMarkdownRemark.edges.find(
@@ -52,15 +53,26 @@ const IndexPage = props => {
         meta={[{ name: `google-site-verification`, content: `ADD YOUR VERIFICATION CODE HERE` }]}
       />
       <Shell withIcon={false} withTitle={false}>
-        <img
-          src={props.data.file.childImageSharp.original.src}
-          alt='Logo'
-          className='index-logo'
-        />
-        <h1 className='index-title'>{props.data.site.siteMetadata.title}</h1>
-        <p className='index-sub-title'>
-          {props.data.site.siteMetadata.description}
-        </p>
+        <div className='splash'>
+          <div className='splash-container'>
+            <img className='splash-leaves' id='splash-leaves-1' src={props.data.leaves1.childImageSharp.original.src} alt='splash-leaves-1' />
+            <img className='splash-leaves' id='splash-leaves-2' src={props.data.leaves2.childImageSharp.original.src} />
+            <img id='splash-blob' src={props.data.blob.childImageSharp.original.src} alt='splash-blob' />
+            <div className='splash-content'>
+              <img
+                src={props.data.file.childImageSharp.original.src} alt='Logo' className='splash-logo'
+              />
+              <h1 className='splash-title'
+                dangerouslySetInnerHTML={{ 
+                  __html: `${props.data.site.siteMetadata.title.replace('CSS','<strong>CSS</strong>')}`
+                }} 
+              />
+              <p className='splash-sub-title'>
+                {props.data.site.siteMetadata.description}
+              </p>
+            </div>
+          </div>
+        </div>
         <Search
           setSearchQuery={setSearchQuery}
           defaultValue={props.searchQuery}
@@ -115,6 +127,30 @@ export const indexPageQuery = graphql`
       }
     }
     file(relativePath: { eq: "30s-icon.png" }) {
+      id
+      childImageSharp {
+        original {
+          src
+        }
+      }
+    }
+    leaves1 : file(relativePath: { eq: "leaves1.png" }) {
+      id
+      childImageSharp {
+        original {
+          src
+        }
+      }
+    }
+    leaves2 : file(relativePath: { eq: "leaves2.png" }) {
+      id
+      childImageSharp {
+        original {
+          src
+        }
+      }
+    }
+    blob : file(relativePath: { eq: "blob.png" }) {
       id
       childImageSharp {
         original {
