@@ -163,8 +163,8 @@ img.website-logo {
     font-size: 1.5rem;
   }
 }
-.splash + input + p {
-  padding-bottom: 3rem;
+.splash ~ *:last-child {
+  margin-bottom: 3rem;
 }
 
 // Page title
