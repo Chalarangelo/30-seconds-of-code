@@ -498,6 +498,24 @@
       }
     },
     {
+      "id": "useSSR",
+      "type": "snippetListing",
+      "title": "useSSR",
+      "attributes": {
+        "text": "A hook that checks if the code is running on the browser or the server.\n\n- Create a custom hook that returns an appropriate object.\n- Use `typeof window`, `window.document` and `window.document.createElement` to check if the code is running on the browser.\n- Use the `React.useState()` hook to define the `inBrowser` state variable.\n- Use the `React.useEffect()` hook to update the `inBrowser` state variable and clean up at the end.\n- Use the `React.useMemo()` to memoize the return values of the custom hook.\n\n",
+        "tags": [
+          "hooks",
+          "effect",
+          "state",
+          "memo",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "907a0a4dabb96a5e7e418e475e0b17a5d400ce796df768589e08316d3b8a4e88"
+      }
+    },
+    {
       "id": "useTimeout",
       "type": "snippetListing",
       "title": "useTimeout",
