@@ -44,6 +44,3 @@ li::before {
 #### Browser support
 
 - https://caniuse.com/#feat=css-counters
-
-
-

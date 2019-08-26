@@ -41,6 +41,3 @@ html {
 #### Browser support
 
 - https://caniuse.com/#feat=css3-boxsizing
-
-
-

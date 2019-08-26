@@ -27,6 +27,3 @@ The function calc() allows to define CSS values with the use of mathematical exp
 #### Browser support
 
 - https://caniuse.com/#feat=calc
-
-
-

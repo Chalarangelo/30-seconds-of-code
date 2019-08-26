@@ -41,6 +41,3 @@ li:not(:last-child) {
 #### Browser support
 
 - https://caniuse.com/#feat=css-sel3
-
-
-

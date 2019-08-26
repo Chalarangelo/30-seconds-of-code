@@ -18,7 +18,9 @@ Explain briefly what the snippet does.
 ```
 
 ```js
-console.log("This is optional, if your snippet doesn't require JavaScript, be sure to delete this block!")
+console.log(
+  "This is optional, if your snippet doesn't require JavaScript, be sure to delete this block!"
+)
 ```
 
 #### Explanation

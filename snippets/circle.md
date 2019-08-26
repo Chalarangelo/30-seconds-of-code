@@ -26,6 +26,3 @@ Creates a circle shape with pure CSS.
 #### Browser support
 
 - https://caniuse.com/#feat=border-radius
-
-
-

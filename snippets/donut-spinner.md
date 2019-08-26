@@ -39,6 +39,3 @@ Creates a donut spinner that can be used to indicate the loading of content.
 
 - https://caniuse.com/#feat=css-animation
 - https://caniuse.com/#feat=transforms2d
-
-
-

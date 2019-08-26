@@ -173,9 +173,6 @@ Note: `1rem` is usually `16px`.
 
 - https://caniuse.com/#feat=css-animation
 
-
-
-
 <br>[⬆ Back to top](#contents)
 
 ### Button border animation
@@ -281,9 +278,6 @@ Creates a donut spinner that can be used to indicate the loading of content.
 - https://caniuse.com/#feat=css-animation
 - https://caniuse.com/#feat=transforms2d
 
-
-
-
 <br>[⬆ Back to top](#contents)
 
 ### Easing variables
@@ -341,7 +335,7 @@ powerful than the built-in `ease`, `ease-in`, `ease-out` and `ease-in-out`.
 #### Explanation
 
 
-- The variables are defined globally within the `:root` CSS pseudo-class which matches the root element of a tree representing the document. 
+- The variables are defined globally within the `:root` CSS pseudo-class which matches the root element of a tree representing the document.
 - In HTML, `:root` represents the `<html>` element and is identical to the selector `html`, except that its specificity is higher.
 
 
@@ -350,9 +344,6 @@ powerful than the built-in `ease`, `ease-in`, `ease-out` and `ease-in-out`.
 96.5%
 
 - https://caniuse.com/#feat=css-variables
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -393,7 +384,9 @@ el.style.setProperty('--max-height', height + 'px')
 2. `overflow: hidden` prevents the contents of the hidden element from overflowing its container.
 3. `max-height: 0` specifies that the element has no height initially.
 4. `.target:hover > .el` specifies that when the parent is hovered over, target a child `.el` within it and use the `--max-height` variable which was defined by JavaScript.
+
 ---
+
 1. `el.scrollHeight` is the height of the element including overflow, which will change dynamically based on the content of the element.
 2. `el.style.setProperty(...)` sets the `--max-height` CSS variable which is used to specify the `max-height` of the element the target is hovered over, allowing it to transition smoothly from 0 to auto.
 
@@ -410,9 +403,6 @@ el.style.setProperty('--max-height', height + 'px')
 
 - https://caniuse.com/#feat=css-variables
 - https://caniuse.com/#feat=css-transitions
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -461,9 +451,6 @@ Creates a shadow box around the text when it is hovered.
 
 - https://caniuse.com/#feat=transforms3d
 - https://caniuse.com/#feat=css-transitions
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -524,9 +511,6 @@ Creates an animated underline effect when the text is hovered over.
 - https://caniuse.com/#feat=transforms2d
 - https://caniuse.com/#feat=css-transitions
 
-
-
-
 <br>[⬆ Back to top](#contents)
 
 ---
@@ -565,9 +549,6 @@ Makes the content unselectable.
 <span class="snippet__support-note">⚠️ This is not a secure method to prevent users from copying content.</span>
 
 - https://caniuse.com/#feat=user-select-none
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -618,9 +599,6 @@ Reveals an interactive popout menu on hover and focus.
 
 100.0%
 
-
-
-
 <br>[⬆ Back to top](#contents)
 
 ### Sibling fade
@@ -659,9 +637,6 @@ span {
 
 - https://caniuse.com/#feat=css-sel3
 - https://caniuse.com/#feat=css-transitions
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -716,9 +691,6 @@ html {
 
 - https://caniuse.com/#feat=css3-boxsizing
 
-
-
-
 <br>[⬆ Back to top](#contents)
 
 ### Clearfix
@@ -762,9 +734,6 @@ Ensures that an element self-clears its children.
 
 <span class="snippet__support-note">⚠️ For this snippet to work properly you need to ensure that there are no non-floating children in the container and that there are no tall floats before the clearfixed container but in the same formatting context (e.g. floated columns).</span>
 
-
-
-
 <br>[⬆ Back to top](#contents)
 
 ### Constant width to height ratio
@@ -804,9 +773,6 @@ Given an element of variable width, it will ensure its height remains proportion
 #### Browser support
 
 100.0%
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -859,9 +825,6 @@ Vertically and horizontally centers a child element within its parent element us
 
 - https://caniuse.com/#search=display%3A%20table
 
-
-
-
 <br>[⬆ Back to top](#contents)
 
 ### Evenly distributed children
@@ -900,9 +863,6 @@ Evenly distributes child elements within a parent element.
 <span class="snippet__support-note">⚠️ Needs prefixes for full support.</span>
 
 - https://caniuse.com/#feat=flexbox
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -985,9 +945,6 @@ Horizontally and vertically centers a child element within a parent element usin
 
 - https://caniuse.com/#feat=flexbox
 
-
-
-
 <br>[⬆ Back to top](#contents)
 
 ### Ghost trick
@@ -1032,9 +989,6 @@ p {
 
 - https://caniuse.com/#feat=inline-block
 
-
-
-
 <br>[⬆ Back to top](#contents)
 
 ### Grid centering
@@ -1068,9 +1022,6 @@ Horizontally and vertically centers a child element within a parent element usin
 97.3%
 
 - https://caniuse.com/#feat=css-grid
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1171,9 +1122,6 @@ A bulletproof way to completely hide an element visually and positionally in the
 
 - https://caniuse.com/#search=clip
 
-
-
-
 <br>[⬆ Back to top](#contents)
 
 ### Transform centering
@@ -1219,9 +1167,6 @@ Vertically and horizontally centers a child element within its parent element us
 <span class="snippet__support-note">⚠️ Requires prefix for full support.</span>
 
 - https://caniuse.com/#feat=transforms2d
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1276,9 +1221,6 @@ If the text is longer than one line, it will be truncated for `n` lines and end 
 
 - https://caniuse.com/#feat=css-gradients
 
-
-
-
 <br>[⬆ Back to top](#contents)
 
 ### Truncate text
@@ -1315,9 +1257,6 @@ If the text is longer than one line, it will be truncated and end with an ellips
 <span class="snippet__support-note">⚠️ Only works for single line elements.</span>
 
 - https://caniuse.com/#feat=text-overflow
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1357,9 +1296,6 @@ The function calc() allows to define CSS values with the use of mathematical exp
 100.0%
 
 - https://caniuse.com/#feat=calc
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1403,9 +1339,6 @@ CSS variables that contain specific values to be reused throughout a document.
 
 - https://caniuse.com/#feat=css-variables
 
-
-
-
 <br>[⬆ Back to top](#contents)
 
 ---
@@ -1443,9 +1376,6 @@ Creates a circle shape with pure CSS.
 100.0%
 
 - https://caniuse.com/#feat=border-radius
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1497,9 +1427,6 @@ li::before {
 100.0%
 
 - https://caniuse.com/#feat=css-counters
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1560,9 +1487,6 @@ There are many other pseudo-elements that you can use to style scrollbars. For m
 
 - https://caniuse.com/#feat=css-scrollbar
 
-
-
-
 <br>[⬆ Back to top](#contents)
 
 ### Custom text selection
@@ -1599,9 +1523,6 @@ Changes the styling of text selection.
 in any specification.</span>
 
 - https://caniuse.com/#feat=css-selection
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1658,9 +1579,6 @@ Creates a shadow similar to `box-shadow` but based on the colors of the element 
 
 - https://caniuse.com/#feat=css-filters
 
-
-
-
 <br>[⬆ Back to top](#contents)
 
 ### Etched text
@@ -1694,9 +1612,6 @@ Creates an effect where text appears to be "etched" or engraved into the backgro
 100.0%
 
 - https://caniuse.com/#feat=css-textshadow
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1743,9 +1658,6 @@ form:focus-within {
 If no link is provided, it defaults to 99+%. -->
 
 - https://caniuse.com/#feat=css-focus-within
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1808,9 +1720,6 @@ The :fullscreen CSS pseudo-class represents an element that's displayed when the
 - https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen
 - https://caniuse.com/#feat=fullscreen
 
-
-
-
 <br>[⬆ Back to top](#contents)
 
 ### Gradient text
@@ -1845,9 +1754,6 @@ Gives text a gradient color.
 <span class="snippet__support-note">⚠️ Uses non-standard properties.</span>
 
 - https://caniuse.com/#feat=text-stroke
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1904,9 +1810,6 @@ very sharp and crisp.
 <hr>
 
 \*Chrome does not support subpixel values on `border`. Safari does not support subpixel values on `box-shadow`. Firefox supports subpixel values on both.
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1982,9 +1885,6 @@ btn.onmousemove = function(e) {
 
 - https://caniuse.com/#feat=css-variables
 
-
-
-
 <br>[⬆ Back to top](#contents)
 
 ### :not selector
@@ -2032,9 +1932,6 @@ li:not(:last-child) {
 100.0%
 
 - https://caniuse.com/#feat=css-sel3
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -2103,9 +2000,6 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
 
 - https://caniuse.com/#feat=css-gradients
 
-
-
-
 <br>[⬆ Back to top](#contents)
 
 ### Pretty text underline
@@ -2153,9 +2047,6 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
 - https://caniuse.com/#feat=css-textshadow
 - https://caniuse.com/#feat=css-gradients
 
-
-
-
 <br>[⬆ Back to top](#contents)
 
 ### Reset all styles
@@ -2193,9 +2084,6 @@ Resets all styles to default values with one property. This will not affect `dir
 <span class="snippet__support-note">⚠️ MS Edge status is under consideration.</span>
 
 - https://caniuse.com/#feat=css-all
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -2242,9 +2130,6 @@ Uses an SVG shape to separate two different blocks to create more a interesting 
 
 - https://caniuse.com/#feat=svg
 
-
-
-
 <br>[⬆ Back to top](#contents)
 
 ### System font stack
@@ -2283,9 +2168,6 @@ Uses the native font of the operating system to get close to a native app feel.
 #### Browser support
 
 100.0%
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -2389,9 +2271,6 @@ Creates a triangle shape with pure CSS.
 #### Browser support
 
 100.0%
-
-
-
 
 <br>[⬆ Back to top](#contents)
 

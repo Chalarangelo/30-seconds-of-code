@@ -25,7 +25,7 @@ Here's what you can do to help:
   - All snippet titles must be prefixed with `title:` and be at the very first line of your snippet's frontmatter.
   - Snippet titles must be unique (although if you cannot find a better title, just add some placeholder at the end of the filename and title and we will figure it out).
   - Follow snippet titles with an empty line.
-- **Snippet descriptions** must be short and to the point. Try to explain *what* the snippet does and *how* the snippet works and what Javascript features are used. Remember to include what functions you are using and why.
+- **Snippet descriptions** must be short and to the point. Try to explain _what_ the snippet does and _how_ the snippet works and what Javascript features are used. Remember to include what functions you are using and why.
   - Follow snippet descriptions with an empty line.
 - **Snippet code** must be enclosed inside ` ```html `, ` ```css ` or ` ```js ` and ` ``` `.
   - Remember to start your snippet's code on a new line below the opening backticks.
@@ -38,6 +38,6 @@ Here's what you can do to help:
 - **Snippet browser support** should be specified as a list of links to https://www.caniuse.com/ features.
   - Use the `#` next to the feature that you want in the website to get a link to it.
 - Snippets should be short. If your snippet is long, you can still submit it, and we can help you shorten it or figure out ways to improve it.
-- Snippets *should* solve real-world problems, no matter how simple.
-- Snippets *should* be abstract enough to be applied to different scenarios.
+- Snippets _should_ solve real-world problems, no matter how simple.
+- Snippets _should_ be abstract enough to be applied to different scenarios.
 - You can start creating a new snippet, by using the [snippet template](snippet-template.md) to format your snippets.

@@ -27,6 +27,3 @@ Makes the content unselectable.
 <span class="snippet__support-note">⚠️ This is not a secure method to prevent users from copying content.</span>
 
 - https://caniuse.com/#feat=user-select-none
-
-
-

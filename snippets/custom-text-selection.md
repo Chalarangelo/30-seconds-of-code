@@ -30,6 +30,3 @@ Changes the styling of text selection.
 in any specification.</span>
 
 - https://caniuse.com/#feat=css-selection
-
-
-

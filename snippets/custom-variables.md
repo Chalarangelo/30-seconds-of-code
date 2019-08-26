@@ -35,6 +35,3 @@ CSS variables that contain specific values to be reused throughout a document.
 #### Browser support
 
 - https://caniuse.com/#feat=css-variables
-
-
-

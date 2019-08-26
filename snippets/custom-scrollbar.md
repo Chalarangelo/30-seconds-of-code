@@ -52,6 +52,3 @@ There are many other pseudo-elements that you can use to style scrollbars. For m
 <span class="snippet__support-note">⚠️ Scrollbar styling doesn't appear to be on any standards track.</span>
 
 - https://caniuse.com/#feat=css-scrollbar
-
-
-
