@@ -1,15 +1,14 @@
-### Easing variables
+---
+title: Easing variables
+tags: animation
+---
 
 Variables that can be reused for `transition-timing-function` properties, more
 powerful than the built-in `ease`, `ease-in`, `ease-out` and `ease-in-out`.
 
-#### HTML
-
 ```html
 <div class="easing-variables">Hover</div>
 ```
-
-#### CSS
 
 ```css
 :root {
@@ -53,14 +52,14 @@ powerful than the built-in `ease`, `ease-in`, `ease-out` and `ease-in-out`.
 }
 ```
 
-#### Demo
-
 #### Explanation
 
-The variables are defined globally within the `:root` CSS pseudo-class which matches the root element of a tree representing the document. In HTML, `:root` represents the `<html>` element and is identical to the selector `html`, except that its specificity is higher.
+- The variables are defined globally within the `:root` CSS pseudo-class which matches the root element of a tree representing the document. 
+- In HTML, `:root` represents the `<html>` element and is identical to the selector `html`, except that its specificity is higher.
 
 #### Browser support
 
 - https://caniuse.com/#feat=css-variables
 
-<!-- tags: animation -->
+
+

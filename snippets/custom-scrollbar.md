@@ -1,8 +1,9 @@
-### Custom scrollbar
+---
+title: Custom scrollbar
+tags: visual
+---
 
 Customizes the scrollbar style for the document and elements with scrollable overflow, on WebKit platforms.
-
-#### HTML
 
 ```html
 <div class="custom-scrollbar">
@@ -14,8 +15,6 @@ Customizes the scrollbar style for the document and elements with scrollable ove
   </p>
 </div>
 ```
-
-#### CSS
 
 ```css
 .custom-scrollbar {
@@ -40,8 +39,6 @@ Customizes the scrollbar style for the document and elements with scrollable ove
 }
 ```
 
-#### Demo
-
 #### Explanation
 
 1. `::-webkit-scrollbar` targets the whole scrollbar element.
@@ -56,4 +53,5 @@ There are many other pseudo-elements that you can use to style scrollbars. For m
 
 - https://caniuse.com/#feat=css-scrollbar
 
-<!-- tags: visual -->
+
+

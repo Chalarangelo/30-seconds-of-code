@@ -1,16 +1,15 @@
-### Ghost trick
+---
+title: Ghost trick
+tags: layout
+---
 
 Vertically centers an element in another.
-
-#### HTML
 
 ```html
 <div class="ghost-trick">
   <div class="ghosting"><p>Vertically centered without changing the position property.</p></div>
 </div>
 ```
-
-#### CSS
 
 ```css
 .ghosting {
@@ -31,14 +30,13 @@ p {
 }
 ```
 
-#### Demo
-
 #### Explanation
 
-Use the style of a `:before` pseudo-element to vertically align inline elements without changing their `position` property.
+- Use the style of a `:before` pseudo-element to vertically align inline elements without changing their `position` property.
 
 #### Browser support
 
 - https://caniuse.com/#feat=inline-block
 
-<!-- tags: layout -->
+
+

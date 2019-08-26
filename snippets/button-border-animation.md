@@ -1,14 +1,13 @@
-### Button border animation
+---
+title: Button border animation
+tags: animation
+---
 
 Creates a border animation on hover.
-
-#### HTML
 
 ```html
 <div class="button-border"><button class="button">Submit</button></div>
 ```
-
-#### CSS
 
 ```css
 .button {
@@ -48,13 +47,8 @@ Creates a border animation on hover.
 }
 ```
 
-#### Demo
-
 #### Explanation
 
-Use the `:before` and `:after` pseduo-elements as borders that animate on hover.
+- Use the `:before` and `:after` pseduo-elements as borders that animate on hover.
 
 #### Browser support
-
-<!-- tags: animation -->
-<!-- date: 2018-10-30 -->

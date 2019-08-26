@@ -1,15 +1,14 @@
-### Box-sizing reset
+---
+title: Box-sizing reset
+tags: layout
+---
 
 Resets the box-model so that `width`s and `height`s are not affected by their `border`s or `padding`.
-
-#### HTML
 
 ```html
 <div class="box">border-box</div>
 <div class="box content-box">content-box</div>
 ```
-
-#### CSS
 
 ```css
 html {
@@ -34,8 +33,6 @@ html {
 }
 ```
 
-#### Demo
-
 #### Explanation
 
 1. `box-sizing: border-box` makes the addition of `padding` or `border`s not affect an element's `width` or `height`.
@@ -45,4 +42,5 @@ html {
 
 - https://caniuse.com/#feat=css3-boxsizing
 
-<!-- tags: layout -->
+
+

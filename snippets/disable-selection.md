@@ -1,15 +1,14 @@
-### Disable selection
+---
+title: Disable selection
+tags: interactivity
+---
 
 Makes the content unselectable.
-
-#### HTML
 
 ```html
 <p>You can select me.</p>
 <p class="unselectable">You can't select me!</p>
 ```
-
-#### CSS
 
 ```css
 .unselectable {
@@ -17,11 +16,9 @@ Makes the content unselectable.
 }
 ```
 
-#### Demo
-
 #### Explanation
 
-`user-select: none` specifies that the text cannot be selected.
+- `user-select: none` specifies that the text cannot be selected.
 
 #### Browser support
 
@@ -31,4 +28,5 @@ Makes the content unselectable.
 
 - https://caniuse.com/#feat=user-select-none
 
-<!-- tags: interactivity -->
+
+

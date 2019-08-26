@@ -1,14 +1,13 @@
-### Custom text selection
+---
+title: Custom text selection
+tags: visual
+---
 
 Changes the styling of text selection.
-
-#### HTML
 
 ```html
 <p class="custom-text-selection">Select some of this text.</p>
 ```
-
-#### CSS
 
 ```css
 ::selection {
@@ -21,11 +20,9 @@ Changes the styling of text selection.
 }
 ```
 
-#### Demo
-
 #### Explanation
 
-`::selection` defines a pseudo selector on an element to style text within it when selected. Note that if you don't combine any other selector your style will be applied at document root level, to any selectable element.
+- `::selection` defines a pseudo selector on an element to style text within it when selected. Note that if you don't combine any other selector your style will be applied at document root level, to any selectable element.
 
 #### Browser support
 
@@ -34,4 +31,5 @@ in any specification.</span>
 
 - https://caniuse.com/#feat=css-selection
 
-<!-- tags: visual -->
+
+

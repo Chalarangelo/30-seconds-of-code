@@ -1,14 +1,13 @@
-### Custom variables
+---
+title: Custom variables
+tags: other
+---
 
 CSS variables that contain specific values to be reused throughout a document.
-
-#### HTML
 
 ```html
 <p class="custom-variables">CSS is awesome!</p>
 ```
-
-#### CSS
 
 ```css
 :root {
@@ -27,18 +26,15 @@ CSS variables that contain specific values to be reused throughout a document.
 }
 ```
 
-#### Demo
-
 #### Explanation
 
-The variables are defined globally within the `:root` CSS pseudo-class which matches the root element of a tree representing the document. Variables can also be scoped to a selector if defined within the block.
-
-Declare a variable with `--variable-name:`.
-
-Reuse variables throughout the document using the `var(--variable-name)` function.
+- The variables are defined globally within the `:root` CSS pseudo-class which matches the root element of a tree representing the document. Variables can also be scoped to a selector if defined within the block.
+- Declare a variable with `--variable-name:`.
+- Reuse variables throughout the document using the `var(--variable-name)` function.
 
 #### Browser support
 
 - https://caniuse.com/#feat=css-variables
 
-<!-- tags: other -->
+
+

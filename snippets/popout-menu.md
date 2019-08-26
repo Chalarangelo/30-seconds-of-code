@@ -1,14 +1,13 @@
-### Popout menu
+---
+title: Popout menu
+tags: interactivity
+---
 
 Reveals an interactive popout menu on hover and focus.
-
-#### HTML
 
 ```html
 <div class="reference" tabindex="0"><div class="popout-menu">Popout menu</div></div>
 ```
-
-#### CSS
 
 ```css
 .reference {
@@ -32,8 +31,6 @@ Reveals an interactive popout menu on hover and focus.
 }
 ```
 
-#### Demo
-
 #### Explanation
 
 1. `position: relative` on the reference parent establishes a Cartesian positioning context for its child.
@@ -46,4 +43,5 @@ Reveals an interactive popout menu on hover and focus.
 
 #### Browser support
 
-<!-- tags: interactivity -->
+
+

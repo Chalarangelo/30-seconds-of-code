@@ -1,16 +1,15 @@
-### Display table centering
+---
+title: Display table centering
+tags: layout
+---
 
 Vertically and horizontally centers a child element within its parent element using `display: table` (as an alternative to `flexbox`).
-
-#### HTML
 
 ```html
 <div class="container">
   <div class="center"><span>Centered content</span></div>
 </div>
 ```
-
-#### CSS
 
 ```css
 .container {
@@ -32,8 +31,6 @@ Vertically and horizontally centers a child element within its parent element us
 }
 ```
 
-#### Demo
-
 #### Explanation
 
 1. `display: table` on '.center' allows the element to behave like a `<table>` HTML element.
@@ -42,10 +39,11 @@ Vertically and horizontally centers a child element within its parent element us
 4. `text-align: center` on '.center > span' centers the child element horizontally.
 5. `vertical-align: middle` on '.center > span' centers the child element vertically.
 
-The outer parent ('.container' in this case) must have a fixed height and width.
+- The outer parent ('.container' in this case) must have a fixed height and width.
 
 #### Browser support
 
 - https://caniuse.com/#search=display%3A%20table
 
-<!-- tags: layout -->
+
+

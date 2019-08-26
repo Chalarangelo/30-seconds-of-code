@@ -1,14 +1,13 @@
-### Flexbox centering
+---
+title: Flexbox centering
+tags: layout
+---
 
 Horizontally and vertically centers a child element within a parent element using `flexbox`.
-
-#### HTML
 
 ```html
 <div class="flexbox-centering"><div class="child">Centered content.</div></div>
 ```
-
-#### CSS
 
 ```css
 .flexbox-centering {
@@ -18,8 +17,6 @@ Horizontally and vertically centers a child element within a parent element usin
   height: 100px;
 }
 ```
-
-#### Demo
 
 #### Explanation
 
@@ -33,4 +30,5 @@ Horizontally and vertically centers a child element within a parent element usin
 
 - https://caniuse.com/#feat=flexbox
 
-<!-- tags: layout -->
+
+

@@ -1,14 +1,13 @@
-### Hover shadow box animation
+---
+title: Hover shadow box animation
+tags: animation
+---
 
 Creates a shadow box around the text when it is hovered.
-
-#### HTML
 
 ```html
 <p class="hover-shadow-box-animation">Box it!</p>
 ```
-
-#### CSS
 
 ```css
 .hover-shadow-box-animation {
@@ -28,8 +27,6 @@ Creates a shadow box around the text when it is hovered.
 }
 ```
 
-#### Demo
-
 #### Explanation
 
 1. `display: inline-block` to set width and length for `p` element thus making it an `inline-block`.
@@ -45,4 +42,5 @@ Creates a shadow box around the text when it is hovered.
 - https://caniuse.com/#feat=transforms3d
 - https://caniuse.com/#feat=css-transitions
 
-<!-- tags: animation -->
+
+

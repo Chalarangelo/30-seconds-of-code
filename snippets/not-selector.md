@@ -1,8 +1,9 @@
-### :not selector
+---
+title: :not selector
+tags: visual
+---
 
 The `:not` psuedo selector is useful for styling a group of elements, while leaving the last (or specified) element unstyled.
-
-#### HTML
 
 ```html
 <ul class="css-not-selector-shortcut">
@@ -12,8 +13,6 @@ The `:not` psuedo selector is useful for styling a group of elements, while leav
   <li>Four</li>
 </ul>
 ```
-
-#### CSS
 
 ```css
 .css-not-selector-shortcut {
@@ -35,15 +34,13 @@ li:not(:last-child) {
 }
 ```
 
-#### Demo
-
 #### Explanation
 
-`li:not(:last-child)` specifies that the styles should apply to all `li` elements except
-the `:last-child`.
+- `li:not(:last-child)` specifies that the styles should apply to all `li` elements except the `:last-child`.
 
 #### Browser support
 
 - https://caniuse.com/#feat=css-sel3
 
-<!-- tags: visual -->
+
+

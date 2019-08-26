@@ -1,8 +1,9 @@
-### Reset all styles
+---
+title: Reset all styles
+tags: visual
+---
 
 Resets all styles to default values with one property. This will not affect `direction` and `unicode-bidi` properties.
-
-#### HTML
 
 ```html
 <div class="reset-all-styles">
@@ -15,19 +16,15 @@ Resets all styles to default values with one property. This will not affect `dir
 </div>
 ```
 
-#### CSS
-
 ```css
 .reset-all-styles {
   all: initial;
 }
 ```
 
-#### Demo
-
 #### Explanation
 
-The `all` property allows you to reset all styles (inherited or not) to default values.
+- The `all` property allows you to reset all styles (inherited or not) to default values.
 
 #### Browser support
 
@@ -35,4 +32,5 @@ The `all` property allows you to reset all styles (inherited or not) to default 
 
 - https://caniuse.com/#feat=css-all
 
-<!-- tags: visual -->
+
+

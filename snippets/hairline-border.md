@@ -1,15 +1,14 @@
-### Hairline border
+---
+title: Hairline border
+tags: visual
+---
 
 Gives an element a border equal to 1 native device pixel in width, which can look
 very sharp and crisp.
 
-#### HTML
-
 ```html
 <div class="hairline-border">text</div>
 ```
-
-#### CSS
 
 ```css
 .hairline-border {
@@ -35,13 +34,10 @@ very sharp and crisp.
 }
 ```
 
-#### Demo
-
 #### Explanation
 
 1. `box-shadow`, when only using spread, adds a pseudo-border which can use subpixels\*.
-2. Use `@media (min-resolution: ...)` to check the device pixel ratio (`1dppx` equals 96 DPI),
-   setting the spread of the `box-shadow` equal to `1 / dppx`.
+2. Use `@media (min-resolution: ...)` to check the device pixel ratio (`1dppx` equals 96 DPI), setting the spread of the `box-shadow` equal to `1 / dppx`.
 
 #### Browser Support
 
@@ -54,4 +50,5 @@ very sharp and crisp.
 
 \*Chrome does not support subpixel values on `border`. Safari does not support subpixel values on `box-shadow`. Firefox supports subpixel values on both.
 
-<!-- tags: visual -->
+
+

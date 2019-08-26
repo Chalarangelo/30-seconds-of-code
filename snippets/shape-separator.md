@@ -1,14 +1,13 @@
-### Shape separator
+---
+title: Shape separator
+tags: visual
+---
 
 Uses an SVG shape to separate two different blocks to create more a interesting visual appearance compared to standard horizontal separation.
-
-#### HTML
 
 ```html
 <div class="shape-separator"></div>
 ```
-
-#### CSS
 
 ```css
 .shape-separator {
@@ -26,8 +25,6 @@ Uses an SVG shape to separate two different blocks to create more a interesting 
 }
 ```
 
-#### Demo
-
 #### Explanation
 
 1. `position: relative` on the element establishes a Cartesian positioning context for pseudo elements.
@@ -42,4 +39,5 @@ Uses an SVG shape to separate two different blocks to create more a interesting 
 
 - https://caniuse.com/#feat=svg
 
-<!-- tags: visual -->
+
+

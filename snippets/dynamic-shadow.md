@@ -1,14 +1,13 @@
-### Dynamic shadow
+---
+title: Dynamic shadow
+tags: visual
+---
 
 Creates a shadow similar to `box-shadow` but based on the colors of the element itself.
-
-#### HTML
 
 ```html
 <div class="dynamic-shadow"></div>
 ```
-
-#### CSS
 
 ```css
 .dynamic-shadow {
@@ -31,8 +30,6 @@ Creates a shadow similar to `box-shadow` but based on the colors of the element 
 }
 ```
 
-#### Demo
-
 #### Explanation
 
 1. `position: relative` on the element establishes a Cartesian positioning context for psuedo-elements.
@@ -52,4 +49,5 @@ Creates a shadow similar to `box-shadow` but based on the colors of the element 
 
 - https://caniuse.com/#feat=css-filters
 
-<!-- tags: visual -->
+
+

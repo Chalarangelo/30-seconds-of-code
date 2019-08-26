@@ -1,8 +1,9 @@
-### Overflow scroll gradient
+---
+title: Overflow scroll gradient
+tags: visual
+---
 
 Adds a fading gradient to an overflowing element to better indicate there is more content to be scrolled.
-
-#### HTML
 
 ```html
 <div class="overflow-scroll-gradient">
@@ -18,8 +19,6 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
   </div>
 </div>
 ```
-
-#### CSS
 
 ```css
 .overflow-scroll-gradient {
@@ -47,17 +46,13 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
 }
 ```
 
-#### Demo
-
 #### Explanation
 
 1. `position: relative` on the parent establishes a Cartesian positioning context for pseudo-elements.
 2. `::after` defines a pseudo element.
-3. `background-image: linear-gradient(...)` adds a linear gradient that fades from transparent to white
-   (top to bottom).
+3. `background-image: linear-gradient(...)` adds a linear gradient that fades from transparent to white (top to bottom).
 4. `position: absolute` takes the pseudo element out of the flow of the document and positions it in relation to the parent.
-5. `width: 240px` matches the size of the scrolling element (which is a child of the parent that has
-   the pseudo element).
+5. `width: 240px` matches the size of the scrolling element (which is a child of the parent that has the pseudo element).
 6. `height: 25px` is the height of the fading gradient pseudo-element, which should be kept relatively small.
 7. `bottom: 0` positions the pseudo-element at the bottom of the parent.
 8. `pointer-events: none` specifies that the pseudo-element cannot be a target of mouse events, allowing text behind it to still be selectable/interactive.
@@ -66,4 +61,5 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
 
 - https://caniuse.com/#feat=css-gradients
 
-<!-- tags: visual -->
+
+

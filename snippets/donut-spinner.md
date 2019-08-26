@@ -1,14 +1,13 @@
-### Donut spinner
+---
+title: Donut spinner
+tags: animation
+---
 
 Creates a donut spinner that can be used to indicate the loading of content.
-
-#### HTML
 
 ```html
 <div class="donut"></div>
 ```
-
-#### CSS
 
 ```css
 @keyframes donut-spin {
@@ -30,12 +29,9 @@ Creates a donut spinner that can be used to indicate the loading of content.
 }
 ```
 
-#### Demo
-
 #### Explanation
 
-Use a semi-transparent `border` for the whole element, except one side that will
-serve as the loading indicator for the donut. Use `animation` to rotate the element.
+- Use a semi-transparent `border` for the whole element, except one side that will serve as the loading indicator for the donut. Use `animation` to rotate the element.
 
 #### Browser support
 
@@ -44,4 +40,5 @@ serve as the loading indicator for the donut. Use `animation` to rotate the elem
 - https://caniuse.com/#feat=css-animation
 - https://caniuse.com/#feat=transforms2d
 
-<!-- tags: animation -->
+
+
