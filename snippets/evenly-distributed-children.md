@@ -32,6 +32,3 @@ Evenly distributes child elements within a parent element.
 <span class="snippet__support-note">⚠️ Needs prefixes for full support.</span>
 
 - https://caniuse.com/#feat=flexbox
-
-
-

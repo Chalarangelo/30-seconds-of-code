@@ -33,6 +33,3 @@ Given an element of variable width, it will ensure its height remains proportion
 - This method also allows content to be placed inside the element normally.
 
 #### Browser support
-
-
-

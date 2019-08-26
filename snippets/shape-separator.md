@@ -38,6 +38,3 @@ Uses an SVG shape to separate two different blocks to create more a interesting 
 #### Browser support
 
 - https://caniuse.com/#feat=svg
-
-
-

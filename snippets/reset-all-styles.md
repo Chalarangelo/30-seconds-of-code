@@ -31,6 +31,3 @@ Resets all styles to default values with one property. This will not affect `dir
 <span class="snippet__support-note">⚠️ MS Edge status is under consideration.</span>
 
 - https://caniuse.com/#feat=css-all
-
-
-

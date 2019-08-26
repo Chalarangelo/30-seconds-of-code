@@ -14,5 +14,5 @@ module.exports = {
   // General information
   language: `css`,
   secondLanguage: `html`,
-  optionalLanguage: `js`,
-};
+  optionalLanguage: `js`
+}

@@ -29,6 +29,3 @@ Horizontally and vertically centers a child element within a parent element usin
 <span class="snippet__support-note">⚠️ Needs prefixes for full support.</span>
 
 - https://caniuse.com/#feat=flexbox
-
-
-

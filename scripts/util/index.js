@@ -1,23 +1,19 @@
-const {
-  isTravisCI,
-  isTravisCronOrAPI,
-  isNotTravisCronOrAPI,
-} = require('./environmentCheck');
+const { isTravisCI, isTravisCronOrAPI, isNotTravisCronOrAPI } = require('./environmentCheck')
 const {
   getMarkDownAnchor,
   objectFromPairs,
   optimizeNodes,
   capitalize,
   prepTaggedData,
-  makeExamples,
-} = require('./helpers');
+  makeExamples
+} = require('./helpers')
 const {
   getFilesInDir,
   hashData,
   getCodeBlocks,
   getTextualContent,
-  readSnippets,
-} = require('./snippetParser');
+  readSnippets
+} = require('./snippetParser')
 
 module.exports = {
   isTravisCI,
@@ -33,5 +29,5 @@ module.exports = {
   hashData,
   getCodeBlocks,
   getTextualContent,
-  readSnippets,
-};
+  readSnippets
+}

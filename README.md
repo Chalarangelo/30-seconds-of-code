@@ -21,97 +21,95 @@ See CONTRIBUTING.md for the snippet template.
 - [30 Seconds of Interviews](https://30secondsofinterviews.org/)
 - [30 Seconds of React](https://github.com/30-seconds/30-seconds-of-react)
 
-###  Animation
+### Animation
 
 <details>
 <summary>View contents</summary>
 
-* [`Bouncing loader`](#bouncing-loader)
-* [`Button border animation`](#button-border-animation)
-* [`Donut spinner`](#donut-spinner)
-* [`Easing variables`](#easing-variables)
-* [`Height transition`](#height-transition)
-* [`Hover shadow box animation`](#hover-shadow-box-animation)
-* [`Hover underline animation`](#hover-underline-animation)
+- [`Bouncing loader`](#bouncing-loader)
+- [`Button border animation`](#button-border-animation)
+- [`Donut spinner`](#donut-spinner)
+- [`Easing variables`](#easing-variables)
+- [`Height transition`](#height-transition)
+- [`Hover shadow box animation`](#hover-shadow-box-animation)
+- [`Hover underline animation`](#hover-underline-animation)
 
 </details>
 
-###  Interactivity
+### Interactivity
 
 <details>
 <summary>View contents</summary>
 
-* [`Disable selection`](#disable-selection)
-* [`Popout menu`](#popout-menu)
-* [`Sibling fade`](#sibling-fade)
+- [`Disable selection`](#disable-selection)
+- [`Popout menu`](#popout-menu)
+- [`Sibling fade`](#sibling-fade)
 
 </details>
 
-###  Layout
+### Layout
 
 <details>
 <summary>View contents</summary>
 
-* [`Box-sizing reset`](#box-sizing-reset)
-* [`Clearfix`](#clearfix)
-* [`Constant width to height ratio`](#constant-width-to-height-ratio)
-* [`Display table centering`](#display-table-centering)
-* [`Evenly distributed children`](#evenly-distributed-children)
-* [`Fit image in container`](#fit-image-in-container)
-* [`Flexbox centering`](#flexbox-centering)
-* [`Ghost trick`](#ghost-trick)
-* [`Grid centering`](#grid-centering)
-* [`Last item with remaining available height`](#last-item-with-remaining-available-height)
-* [`Offscreen`](#offscreen)
-* [`Transform centering`](#transform-centering)
-* [`Truncate text multiline`](#truncate-text-multiline)
-* [`Truncate text`](#truncate-text)
+- [`Box-sizing reset`](#box-sizing-reset)
+- [`Clearfix`](#clearfix)
+- [`Constant width to height ratio`](#constant-width-to-height-ratio)
+- [`Display table centering`](#display-table-centering)
+- [`Evenly distributed children`](#evenly-distributed-children)
+- [`Fit image in container`](#fit-image-in-container)
+- [`Flexbox centering`](#flexbox-centering)
+- [`Ghost trick`](#ghost-trick)
+- [`Grid centering`](#grid-centering)
+- [`Last item with remaining available height`](#last-item-with-remaining-available-height)
+- [`Offscreen`](#offscreen)
+- [`Transform centering`](#transform-centering)
+- [`Truncate text multiline`](#truncate-text-multiline)
+- [`Truncate text`](#truncate-text)
 
 </details>
 
-###  Other
+### Other
 
 <details>
 <summary>View contents</summary>
 
-* [`Calc()`](#calc)
-* [`Custom variables`](#custom-variables)
+- [`Calc()`](#calc)
+- [`Custom variables`](#custom-variables)
 
 </details>
 
-###  Visual
+### Visual
 
 <details>
 <summary>View contents</summary>
 
-* [`Circle`](#circle)
-* [`Counter`](#counter)
-* [`Custom scrollbar`](#custom-scrollbar)
-* [`Custom text selection`](#custom-text-selection)
-* [`Dynamic shadow`](#dynamic-shadow)
-* [`Etched text`](#etched-text)
-* [`Focus Within`](#focus-within)
-* [`Fullscreen`](#fullscreen)
-* [`Gradient text`](#gradient-text)
-* [`Hairline border`](#hairline-border)
-* [`Mouse cursor gradient tracking`](#mouse-cursor-gradient-tracking)
-* [`:not selector`](#not-selector)
-* [`Overflow scroll gradient`](#overflow-scroll-gradient)
-* [`Pretty text underline`](#pretty-text-underline)
-* [`Reset all styles`](#reset-all-styles)
-* [`Shape separator`](#shape-separator)
-* [`System font stack`](#system-font-stack)
-* [`Toggle switch`](#toggle-switch)
-* [`Triangle`](#triangle)
-* [`Zebra striped list`](#zebra-striped-list)
+- [`Circle`](#circle)
+- [`Counter`](#counter)
+- [`Custom scrollbar`](#custom-scrollbar)
+- [`Custom text selection`](#custom-text-selection)
+- [`Dynamic shadow`](#dynamic-shadow)
+- [`Etched text`](#etched-text)
+- [`Focus Within`](#focus-within)
+- [`Fullscreen`](#fullscreen)
+- [`Gradient text`](#gradient-text)
+- [`Hairline border`](#hairline-border)
+- [`Mouse cursor gradient tracking`](#mouse-cursor-gradient-tracking)
+- [`:not selector`](#not-selector)
+- [`Overflow scroll gradient`](#overflow-scroll-gradient)
+- [`Pretty text underline`](#pretty-text-underline)
+- [`Reset all styles`](#reset-all-styles)
+- [`Shape separator`](#shape-separator)
+- [`System font stack`](#system-font-stack)
+- [`Toggle switch`](#toggle-switch)
+- [`Triangle`](#triangle)
+- [`Zebra striped list`](#zebra-striped-list)
 
 </details>
-
 
 ---
 
-##  Animation
-
+## Animation
 
 ### Bouncing loader
 
@@ -152,9 +150,7 @@ Creates a bouncing loader animation.
 }
 ```
 
-
 #### Explanation
-
 
 Note: `1rem` is usually `16px`.
 
@@ -166,15 +162,11 @@ Note: `1rem` is usually `16px`.
 6. `nth-child(n)` targets the element which is the nth child of its parent.
 7. `animation-delay` is used on the second and third `div` respectively, so that each element does not start the animation at the same time.
 
-
 #### Browser support
 
 100.0%
 
 - https://caniuse.com/#feat=css-animation
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -224,12 +216,9 @@ Creates a border animation on hover.
 }
 ```
 
-
 #### Explanation
 
-
 - Use the `:before` and `:after` pseduo-elements as borders that animate on hover.
-
 
 #### Browser support
 
@@ -265,12 +254,9 @@ Creates a donut spinner that can be used to indicate the loading of content.
 }
 ```
 
-
 #### Explanation
 
-
 - Use a semi-transparent `border` for the whole element, except one side that will serve as the loading indicator for the donut. Use `animation` to rotate the element.
-
 
 #### Browser support
 
@@ -280,9 +266,6 @@ Creates a donut spinner that can be used to indicate the loading of content.
 
 - https://caniuse.com/#feat=css-animation
 - https://caniuse.com/#feat=transforms2d
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -337,22 +320,16 @@ powerful than the built-in `ease`, `ease-in`, `ease-out` and `ease-in-out`.
 }
 ```
 
-
 #### Explanation
 
-
-- The variables are defined globally within the `:root` CSS pseudo-class which matches the root element of a tree representing the document. 
+- The variables are defined globally within the `:root` CSS pseudo-class which matches the root element of a tree representing the document.
 - In HTML, `:root` represents the `<html>` element and is identical to the selector `html`, except that its specificity is higher.
-
 
 #### Browser support
 
 96.5%
 
 - https://caniuse.com/#feat=css-variables
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -385,18 +362,17 @@ var height = el.scrollHeight
 el.style.setProperty('--max-height', height + 'px')
 ```
 
-
 #### Explanation
-
 
 1. `transition: max-height: 0.5s cubic-bezier(...)` specifies that changes to `max-height` should be transitioned over 0.5 seconds, using an `ease-out-quint` timing function.
 2. `overflow: hidden` prevents the contents of the hidden element from overflowing its container.
 3. `max-height: 0` specifies that the element has no height initially.
 4. `.target:hover > .el` specifies that when the parent is hovered over, target a child `.el` within it and use the `--max-height` variable which was defined by JavaScript.
+
 ---
+
 1. `el.scrollHeight` is the height of the element including overflow, which will change dynamically based on the content of the element.
 2. `el.style.setProperty(...)` sets the `--max-height` CSS variable which is used to specify the `max-height` of the element the target is hovered over, allowing it to transition smoothly from 0 to auto.
-
 
 #### Browser support
 
@@ -410,9 +386,6 @@ el.style.setProperty('--max-height', height + 'px')
 
 - https://caniuse.com/#feat=css-variables
 - https://caniuse.com/#feat=css-transitions
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -442,9 +415,7 @@ Creates a shadow box around the text when it is hovered.
 }
 ```
 
-
 #### Explanation
-
 
 1. `display: inline-block` to set width and length for `p` element thus making it an `inline-block`.
 2. Set `transform: perspective(1px)` to give element a 3D space by affecting the distance between the Z plane and the user and `translate(0)` to reposition the `p` element along z-axis in 3D space.
@@ -454,16 +425,12 @@ Creates a shadow box around the text when it is hovered.
 6. `:hover` to activate whole css when hovering is done until `active`.
 7. `transform: scale(1.2)` to change the scale, magnifying the text.
 
-
 #### Browser support
 
 100.0%
 
 - https://caniuse.com/#feat=transforms3d
 - https://caniuse.com/#feat=css-transitions
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -501,9 +468,7 @@ Creates an animated underline effect when the text is hovered over.
 }
 ```
 
-
 #### Explanation
-
 
 1. `display: inline-block` makes the block `p` an `inline-block` to prevent the underline from spanning the entire parent width rather than just the content (text).
 2. `position: relative` on the element establishes a Cartesian positioning context for pseudo-elements.
@@ -516,7 +481,6 @@ Creates an animated underline effect when the text is hovered over.
 9. `transform-origin: bottom right` means the transform anchor point is positioned at the bottom right of the block.
 10. `:hover::after` then uses `scaleX(1)` to transition the width to 100%, then changes the `transform-origin` to `bottom left` so that the anchor point is reversed, allowing it transition out in the other direction when hovered off.
 
-
 #### Browser support
 
 100.0%
@@ -524,15 +488,11 @@ Creates an animated underline effect when the text is hovered over.
 - https://caniuse.com/#feat=transforms2d
 - https://caniuse.com/#feat=css-transitions
 
-
-
-
 <br>[⬆ Back to top](#contents)
 
 ---
 
-##  Interactivity
-
+## Interactivity
 
 ### Disable selection
 
@@ -549,12 +509,9 @@ Makes the content unselectable.
 }
 ```
 
-
 #### Explanation
 
-
 - `user-select: none` specifies that the text cannot be selected.
-
 
 #### Browser support
 
@@ -565,9 +522,6 @@ Makes the content unselectable.
 <span class="snippet__support-note">⚠️ This is not a secure method to prevent users from copying content.</span>
 
 - https://caniuse.com/#feat=user-select-none
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -601,9 +555,7 @@ Reveals an interactive popout menu on hover and focus.
 }
 ```
 
-
 #### Explanation
-
 
 1. `position: relative` on the reference parent establishes a Cartesian positioning context for its child.
 2. `position: absolute` takes the popout menu out of the flow of the document and positions it in relation to the parent.
@@ -613,13 +565,9 @@ Reveals an interactive popout menu on hover and focus.
 6. `.reference:focus > .popout-menu` means that when `.reference` is focused, the popout would be shown.
 7. `.reference:focus-within > .popout-menu` ensures that the popout is shown when the focus is _within_ the reference.
 
-
 #### Browser support
 
 100.0%
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -645,13 +593,10 @@ span {
 }
 ```
 
-
 #### Explanation
-
 
 1. `transition: opacity 0.2s` specifies that changes to opacity will be transitioned over 0.2 seconds.
 2. `.sibling-fade:hover span:not(:hover)` specifies that when the parent is hovered, select any `span` children that are not currently being hovered and change their opacity to `0.5`.
-
 
 #### Browser support
 
@@ -660,15 +605,11 @@ span {
 - https://caniuse.com/#feat=css-sel3
 - https://caniuse.com/#feat=css-transitions
 
-
-
-
 <br>[⬆ Back to top](#contents)
 
 ---
 
-##  Layout
-
+## Layout
 
 ### Box-sizing reset
 
@@ -702,22 +643,16 @@ html {
 }
 ```
 
-
 #### Explanation
-
 
 1. `box-sizing: border-box` makes the addition of `padding` or `border`s not affect an element's `width` or `height`.
 2. `box-sizing: inherit` makes an element respect its parent's `box-sizing` rule.
-
 
 #### Browser support
 
 100.0%
 
 - https://caniuse.com/#feat=css3-boxsizing
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -747,23 +682,17 @@ Ensures that an element self-clears its children.
 }
 ```
 
-
 #### Explanation
-
 
 1. `.clearfix::after` defines a pseudo-element.
 2. `content: ''` allows the pseudo-element to affect layout.
 3. `clear: both` indicates that the left, right or both sides of the element cannot be adjacent to earlier floated elements within the same block formatting context.
-
 
 #### Browser support
 
 100.0%
 
 <span class="snippet__support-note">⚠️ For this snippet to work properly you need to ensure that there are no non-floating children in the container and that there are no tall floats before the clearfixed container but in the same formatting context (e.g. floated columns).</span>
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -793,20 +722,14 @@ Given an element of variable width, it will ensure its height remains proportion
 }
 ```
 
-
 #### Explanation
-
 
 - `padding-top` on the `::before` pseudo-element causes the height of the element to equal a percentage of its width. `100%` therefore means the element's height will always be `100%` of the width, creating a responsive square.
 - This method also allows content to be placed inside the element normally.
 
-
 #### Browser support
 
 100.0%
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -840,9 +763,7 @@ Vertically and horizontally centers a child element within its parent element us
 }
 ```
 
-
 #### Explanation
-
 
 1. `display: table` on '.center' allows the element to behave like a `<table>` HTML element.
 2. 100% height and width on '.center' allows the element to fill the available space within its parent element.
@@ -852,15 +773,11 @@ Vertically and horizontally centers a child element within its parent element us
 
 - The outer parent ('.container' in this case) must have a fixed height and width.
 
-
 #### Browser support
 
 100.0%
 
 - https://caniuse.com/#search=display%3A%20table
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -883,15 +800,12 @@ Evenly distributes child elements within a parent element.
 }
 ```
 
-
 #### Explanation
-
 
 1. `display: flex` enables flexbox.
 2. `justify-content: space-between` evenly distributes child elements horizontally. The first item is positioned at the left edge, while the last item is positioned at the right edge.
 
 - Alternatively, use `justify-content: space-around` to distribute the children with space around them, rather than between them.
-
 
 #### Browser support
 
@@ -900,9 +814,6 @@ Evenly distributes child elements within a parent element.
 <span class="snippet__support-note">⚠️ Needs prefixes for full support.</span>
 
 - https://caniuse.com/#feat=flexbox
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -934,14 +845,11 @@ Changes the fit and position of an image within its container while preserving i
 }
 ```
 
-
 #### Explanation
-
 
 - `object-fit: contain` fits the entire image within the container while preserving its aspect ratio.
 - `object-fit: cover` fills the container with the image while preserving its aspect ratio.
 - `object-position: [x] [y]` positions the image within the container.
-
 
 #### Browser support
 
@@ -968,14 +876,11 @@ Horizontally and vertically centers a child element within a parent element usin
 }
 ```
 
-
 #### Explanation
-
 
 1. `display: flex` enables flexbox.
 2. `justify-content: center` centers the child horizontally.
 3. `align-items: center` centers the child vertically.
-
 
 #### Browser support
 
@@ -984,9 +889,6 @@ Horizontally and vertically centers a child element within a parent element usin
 <span class="snippet__support-note">⚠️ Needs prefixes for full support.</span>
 
 - https://caniuse.com/#feat=flexbox
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1019,21 +921,15 @@ p {
 }
 ```
 
-
 #### Explanation
 
-
 - Use the style of a `:before` pseudo-element to vertically align inline elements without changing their `position` property.
-
 
 #### Browser support
 
 100.0%
 
 - https://caniuse.com/#feat=inline-block
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1054,23 +950,17 @@ Horizontally and vertically centers a child element within a parent element usin
 }
 ```
 
-
 #### Explanation
-
 
 1. `display: grid` enables grid.
 2. `justify-content: center` centers the child horizontally.
 3. `align-items: center` centers the child vertically.
-
 
 #### Browser support
 
 97.3%
 
 - https://caniuse.com/#feat=css-grid
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1105,9 +995,7 @@ body {
 }
 ```
 
-
 #### Explanation
-
 
 1. `height: 100%` set the height of container as viewport height.
 2. `display: flex` enables flexbox.
@@ -1115,7 +1003,6 @@ body {
 4. `flex-grow: 1` the flexbox will apply remaining available space of container to last child element.
 
 - The parent must have a viewport height. `flex-grow: 1` could be applied to the first or second element, which will have all available space.
-
 
 #### Browser support
 
@@ -1150,9 +1037,7 @@ A bulletproof way to completely hide an element visually and positionally in the
 }
 ```
 
-
 #### Explanation
-
 
 1. Remove all borders.
 2. Use `clip` to indicate that no part of the element should be shown.
@@ -1162,7 +1047,6 @@ A bulletproof way to completely hide an element visually and positionally in the
 6. Remove all padding.
 7. Position the element absolutely so that it does not take up space in the DOM.
 
-
 #### Browser support
 
 100.0%
@@ -1170,9 +1054,6 @@ A bulletproof way to completely hide an element visually and positionally in the
 (Although `clip` technically has been depreciated, the newer `clip-path` currently has very limited browser support.)
 
 - https://caniuse.com/#search=clip
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1201,16 +1082,13 @@ Vertically and horizontally centers a child element within its parent element us
 }
 ```
 
-
 #### Explanation
-
 
 1. `position: absolute` on the child element allows it to be positioned based on its containing block.
 2. `left: 50%` and `top: 50%` offsets the child 50% from the left and top edge of its containing block.
 3. `transform: translate(-50%, -50%)` allows the height and width of the child element to be negated so that it is vertically and horizontally centered.
 
 - Note: that the fixed height and width on parent element is for the demo only.
-
 
 #### Browser support
 
@@ -1219,9 +1097,6 @@ Vertically and horizontally centers a child element within its parent element us
 <span class="snippet__support-note">⚠️ Requires prefix for full support.</span>
 
 - https://caniuse.com/#feat=transforms2d
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1259,9 +1134,7 @@ If the text is longer than one line, it will be truncated for `n` lines and end 
 }
 ```
 
-
 #### Explanation
-
 
 1. `overflow: hidden` prevents the text from overflowing its dimensions (for a block, 100% width and auto height).
 2. `width: 400px` ensures the element has a dimension.
@@ -1269,15 +1142,11 @@ If the text is longer than one line, it will be truncated for `n` lines and end 
 4. `height: 36.4px` calculated value for gradient container, it equals `font-size * line-height` (in this case `26 * 1.4 = 36.4`)
 5. `background: linear-gradient(to right, rgba(0, 0, 0, 0), #f5f6f9 50%)` gradient from `transparent` to `#f5f6f9`
 
-
 #### Browser support
 
 100.0%
 
 - https://caniuse.com/#feat=css-gradients
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1298,15 +1167,12 @@ If the text is longer than one line, it will be truncated and end with an ellips
 }
 ```
 
-
 #### Explanation
-
 
 1. `overflow: hidden` prevents the text from overflowing its dimensions (for a block, 100% width and auto height).
 2. `white-space: nowrap` prevents the text from exceeding one line in height.
 3. `text-overflow: ellipsis` makes it so that if the text exceeds its dimensions, it will end with an ellipsis.
 4. `width: 200px;` ensures the element has a dimension, to know when to get ellipsis
-
 
 #### Browser support
 
@@ -1316,15 +1182,11 @@ If the text is longer than one line, it will be truncated and end with an ellips
 
 - https://caniuse.com/#feat=text-overflow
 
-
-
-
 <br>[⬆ Back to top](#contents)
 
 ---
 
-##  Other
-
+## Other
 
 ### Calc()
 
@@ -1342,24 +1204,18 @@ The function calc() allows to define CSS values with the use of mathematical exp
 }
 ```
 
-
 #### Explanation
-
 
 1. It allows addition, subtraction, multiplication and division.
 2. Can use different units (pixel and percent together, for example) for each value in your expression.
 3. It is permitted to nest calc() functions.
 4. It can be used in any property that `<length>`, `<frequency>`, `<angle>`, `<time>`, `<number>`, `<color>`, or `<integer>` is allowed, like width, height, font-size, top, left, etc.
 
-
 #### Browser support
 
 100.0%
 
 - https://caniuse.com/#feat=calc
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1388,14 +1244,11 @@ CSS variables that contain specific values to be reused throughout a document.
 }
 ```
 
-
 #### Explanation
-
 
 - The variables are defined globally within the `:root` CSS pseudo-class which matches the root element of a tree representing the document. Variables can also be scoped to a selector if defined within the block.
 - Declare a variable with `--variable-name:`.
 - Reuse variables throughout the document using the `var(--variable-name)` function.
-
 
 #### Browser support
 
@@ -1403,15 +1256,11 @@ CSS variables that contain specific values to be reused throughout a document.
 
 - https://caniuse.com/#feat=css-variables
 
-
-
-
 <br>[⬆ Back to top](#contents)
 
 ---
 
-##  Visual
-
+## Visual
 
 ### Circle
 
@@ -1430,22 +1279,16 @@ Creates a circle shape with pure CSS.
 }
 ```
 
-
 #### Explanation
-
 
 - `border-radius: 50%` curves the borders of an element to create a circle.
 - Since a circle has the same radius at any given point, the `width` and `height` must be the same. Differing values will create an ellipse.
-
 
 #### Browser support
 
 100.0%
 
 - https://caniuse.com/#feat=border-radius
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1479,9 +1322,7 @@ li::before {
 }
 ```
 
-
 #### Explanation
-
 
 - You can create a ordered list using any type of HTML.
 
@@ -1491,15 +1332,11 @@ li::before {
 4. `counters(counter, string, style)` Displays the value of a section counter. Generally used in a `content` property. This function can receive three parameters, the first as the name of the counter, the second one you can include a string which comes after the counter and the third one can be `decimal` or `upper-roman` (`decimal` by default).
 5. A CSS counter can be especially useful for making outlined lists, because a new instance of the counter is automatically created in child elements. Using the `counters()` function, separating text can be inserted between different levels of nested counters.
 
-
 #### Browser support
 
 100.0%
 
 - https://caniuse.com/#feat=css-counters
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1541,16 +1378,13 @@ Customizes the scrollbar style for the document and elements with scrollable ove
 }
 ```
 
-
 #### Explanation
-
 
 1. `::-webkit-scrollbar` targets the whole scrollbar element.
 2. `::-webkit-scrollbar-track` targets only the scrollbar track.
 3. `::-webkit-scrollbar-thumb` targets the scrollbar thumb.
 
 There are many other pseudo-elements that you can use to style scrollbars. For more info, visit the [WebKit Blog](https://webkit.org/blog/363/styling-scrollbars/).
-
 
 #### Browser support
 
@@ -1559,9 +1393,6 @@ There are many other pseudo-elements that you can use to style scrollbars. For m
 <span class="snippet__support-note">⚠️ Scrollbar styling doesn't appear to be on any standards track.</span>
 
 - https://caniuse.com/#feat=css-scrollbar
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1584,12 +1415,9 @@ Changes the styling of text selection.
 }
 ```
 
-
 #### Explanation
 
-
 - `::selection` defines a pseudo selector on an element to style text within it when selected. Note that if you don't combine any other selector your style will be applied at document root level, to any selectable element.
-
 
 #### Browser support
 
@@ -1599,9 +1427,6 @@ Changes the styling of text selection.
 in any specification.</span>
 
 - https://caniuse.com/#feat=css-selection
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1634,9 +1459,7 @@ Creates a shadow similar to `box-shadow` but based on the colors of the element 
 }
 ```
 
-
 #### Explanation
-
 
 1. `position: relative` on the element establishes a Cartesian positioning context for psuedo-elements.
 2. `z-index: 1` establishes a new stacking context.
@@ -1649,7 +1472,6 @@ Creates a shadow similar to `box-shadow` but based on the colors of the element 
 9. `opacity: 0.7` makes the pseudo-element partially transparent.
 10. `z-index: -1` positions the pseudo-element behind the parent but in front of the background.
 
-
 #### Browser support
 
 98.5%
@@ -1657,9 +1479,6 @@ Creates a shadow similar to `box-shadow` but based on the colors of the element 
 <span class="snippet__support-note">⚠️ Requires prefixes for full support.</span>
 
 - https://caniuse.com/#feat=css-filters
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1680,23 +1499,17 @@ Creates an effect where text appears to be "etched" or engraved into the backgro
 }
 ```
 
-
 #### Explanation
-
 
 - `text-shadow: 0 2px white` creates a white shadow offset `0px` horizontally and `2px` vertically from the origin position.
 - The background must be darker than the shadow for the effect to work.
 - The text color should be slightly faded to make it look like it's engraved/carved out of the background.
-
 
 #### Browser support
 
 100.0%
 
 - https://caniuse.com/#feat=css-textshadow
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1726,12 +1539,9 @@ form:focus-within {
 }
 ```
 
-
 #### Explanation
 
-
 - The psuedo class `:focus-within` applies styles to a parent element if any child element gets focused. For example, an `input` element inside a `form` element.
-
 
 #### Browser support
 
@@ -1743,9 +1553,6 @@ form:focus-within {
 If no link is provided, it defaults to 99+%. -->
 
 - https://caniuse.com/#feat=css-focus-within
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1794,12 +1601,9 @@ The :fullscreen CSS pseudo-class represents an element that's displayed when the
 }
 ```
 
-
 #### Explanation
 
-
 1. `fullscreen` CSS pseudo-class selector is used to select and style an element that is being displayed in fullscreen mode.
-
 
 #### Browser support
 
@@ -1807,9 +1611,6 @@ The :fullscreen CSS pseudo-class represents an element that's displayed when the
 
 - https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen
 - https://caniuse.com/#feat=fullscreen
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1829,14 +1630,11 @@ Gives text a gradient color.
 }
 ```
 
-
 #### Explanation
-
 
 1. `background: -webkit-linear-gradient(...)` gives the text element a gradient background.
 2. `webkit-text-fill-color: transparent` fills the text with a transparent color.
 3. `webkit-background-clip: text` clips the background with the text, filling the text with the gradient background as the color.
-
 
 #### Browser support
 
@@ -1845,9 +1643,6 @@ Gives text a gradient color.
 <span class="snippet__support-note">⚠️ Uses non-standard properties.</span>
 
 - https://caniuse.com/#feat=text-stroke
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1884,13 +1679,10 @@ very sharp and crisp.
 }
 ```
 
-
 #### Explanation
-
 
 1. `box-shadow`, when only using spread, adds a pseudo-border which can use subpixels\*.
 2. Use `@media (min-resolution: ...)` to check the device pixel ratio (`1dppx` equals 96 DPI), setting the spread of the `box-shadow` equal to `1 / dppx`.
-
 
 #### Browser support
 
@@ -1904,9 +1696,6 @@ very sharp and crisp.
 <hr>
 
 \*Chrome does not support subpixel values on `border`. Safari does not support subpixel values on `box-shadow`. Firefox supports subpixel values on both.
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -1965,14 +1754,11 @@ btn.onmousemove = function(e) {
 }
 ```
 
-
 #### Explanation
-
 
 1. `--x` and `--y` are used to track the position of the mouse on the button.
 2. `--size` is used to keep modify of the gradient's dimensions.
 3. `background: radial-gradient(circle closest-side, pink, transparent);` creates the gradient at the correct postion.
-
 
 #### Browser support
 
@@ -1981,9 +1767,6 @@ btn.onmousemove = function(e) {
 <span class="snippet__support-note">⚠️ Requires JavaScript.</span>
 
 - https://caniuse.com/#feat=css-variables
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -2020,21 +1803,15 @@ li:not(:last-child) {
 }
 ```
 
-
 #### Explanation
 
-
 - `li:not(:last-child)` specifies that the styles should apply to all `li` elements except the `:last-child`.
-
 
 #### Browser support
 
 100.0%
 
 - https://caniuse.com/#feat=css-sel3
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -2083,9 +1860,7 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
 }
 ```
 
-
 #### Explanation
-
 
 1. `position: relative` on the parent establishes a Cartesian positioning context for pseudo-elements.
 2. `::after` defines a pseudo element.
@@ -2096,15 +1871,11 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
 7. `bottom: 0` positions the pseudo-element at the bottom of the parent.
 8. `pointer-events: none` specifies that the pseudo-element cannot be a target of mouse events, allowing text behind it to still be selectable/interactive.
 
-
 #### Browser support
 
 100.0%
 
 - https://caniuse.com/#feat=css-gradients
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -2136,15 +1907,12 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
 }
 ```
 
-
 #### Explanation
-
 
 1. `text-shadow` uses 4 values with offsets that cover a 4x4 px area to ensure the underline has a "thick" shadow that covers the line where descenders clip it. Use a color that matches the background. For a larger font, use a larger `px` size. Additional values can create an even thicker shadow, and subpixel values can also be used.
 2. `background-image: linear-gradient(...)` creates a 90deg gradient using the text color (`currentColor`).
 3. The `background-*` properties size the gradient as 100% of the width of the block and 1px in height at the bottom and disables repetition, which creates a 1px underline beneath the text.
 4. The `::selection` pseudo selector rule ensures the text shadow does not interfere with text selection.
-
 
 #### Browser support
 
@@ -2152,9 +1920,6 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
 
 - https://caniuse.com/#feat=css-textshadow
 - https://caniuse.com/#feat=css-gradients
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -2179,12 +1944,9 @@ Resets all styles to default values with one property. This will not affect `dir
 }
 ```
 
-
 #### Explanation
 
-
 - The `all` property allows you to reset all styles (inherited or not) to default values.
-
 
 #### Browser support
 
@@ -2193,9 +1955,6 @@ Resets all styles to default values with one property. This will not affect `dir
 <span class="snippet__support-note">⚠️ MS Edge status is under consideration.</span>
 
 - https://caniuse.com/#feat=css-all
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -2223,9 +1982,7 @@ Uses an SVG shape to separate two different blocks to create more a interesting 
 }
 ```
 
-
 #### Explanation
-
 
 1. `position: relative` on the element establishes a Cartesian positioning context for pseudo elements.
 2. `::after` defines a pseudo element.
@@ -2235,15 +1992,11 @@ Uses an SVG shape to separate two different blocks to create more a interesting 
 6. `height: 12px` is the same height as the shape.
 7. `bottom: 0` positions the pseudo element at the bottom of the parent.
 
-
 #### Browser support
 
 100.0%
 
 - https://caniuse.com/#feat=svg
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -2262,9 +2015,7 @@ Uses the native font of the operating system to get close to a native app feel.
 }
 ```
 
-
 #### Explanation
-
 
 - The browser looks for each successive font, preferring the first one if possible, and falls back to the next if it cannot find the font (on the system or defined in CSS).
 
@@ -2279,13 +2030,9 @@ Uses the native font of the operating system to get close to a native app feel.
 9. `Arial` is a font widely supported by all operating systems
 10. `sans-serif` is the fallback sans-serif font if none of the other fonts are supported
 
-
 #### Browser support
 
 100.0%
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -2334,9 +2081,7 @@ input[type='checkbox']:checked + .switch {
 }
 ```
 
-
 #### Explanation
-
 
 - This effect is styling only the `<label>` element to look like a toggle switch, and hiding the actual `<input>` checkbox by positioning it offscreen. When clicking the label associated with the `<input>` element, it sets the `<input>` checkbox into the `:checked` state.
 
@@ -2347,7 +2092,6 @@ input[type='checkbox']:checked + .switch {
 5. `background-color: #7983ff;` sets the background-color of the switch to a different color when the checkbox is `checked`.
 6. `.offscreen` moves the `<input>` checkbox element, which does not comprise any part of the actual toggle switch, out of the flow of document and positions it far away from the view, but does not hide it so it is accessible via keyboard and screen readers.
 7. `transition: all 0.3s` specifies all property changes will be transitioned over 0.3 seconds, therefore transitioning the `<label>`'s `background-color` and the pseudo-element's `transform` property when the checkbox is checked.
-
 
 #### Browser support
 
@@ -2377,21 +2121,15 @@ Creates a triangle shape with pure CSS.
 }
 ```
 
-
 #### Explanation
-
 
 - [View this link for a detailed explanation.](https://stackoverflow.com/q/7073484)
 - The color of the border is the color of the triangle. The side the triangle tip points corresponds to the opposite `border-*` property. For example, a color on `border-top` means the arrow points downward.
 - Experiment with the `px` values to change the proportion of the triangle.
 
-
 #### Browser support
 
 100.0%
-
-
-
 
 <br>[⬆ Back to top](#contents)
 
@@ -2415,13 +2153,10 @@ li:nth-child(odd) {
 }
 ```
 
-
 #### Explanation
-
 
 - Use the `:nth-child(odd)` or `:nth-child(even)` pseudo-class to apply a different background color to elements that match based on their position in a group of siblings.
 - Note that you can use it to apply different styles to other HTML elements like div, tr, p, ol, etc.
-
 
 #### Browser support
 
@@ -2434,4 +2169,3 @@ https://caniuse.com/#feat=css-sel3
 ---
 
 _This README is built using [markdown-builder](https://github.com/30-seconds/markdown-builder)._
-

@@ -32,6 +32,3 @@ span {
 
 - https://caniuse.com/#feat=css-sel3
 - https://caniuse.com/#feat=css-transitions
-
-
-

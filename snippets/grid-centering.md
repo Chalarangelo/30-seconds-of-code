@@ -27,6 +27,3 @@ Horizontally and vertically centers a child element within a parent element usin
 #### Browser support
 
 - https://caniuse.com/#feat=css-grid
-
-
-

@@ -55,6 +55,3 @@ Note: `1rem` is usually `16px`.
 #### Browser support
 
 - https://caniuse.com/#feat=css-animation
-
-
-

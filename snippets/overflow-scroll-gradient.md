@@ -60,6 +60,3 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
 #### Browser support
 
 - https://caniuse.com/#feat=css-gradients
-
-
-

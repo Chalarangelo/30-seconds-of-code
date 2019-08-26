@@ -48,6 +48,3 @@ Creates a shadow similar to `box-shadow` but based on the colors of the element 
 <span class="snippet__support-note">⚠️ Requires prefixes for full support.</span>
 
 - https://caniuse.com/#feat=css-filters
-
-
-

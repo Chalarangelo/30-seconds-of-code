@@ -32,6 +32,3 @@ Uses the native font of the operating system to get close to a native app feel.
 10. `sans-serif` is the fallback sans-serif font if none of the other fonts are supported
 
 #### Browser support
-
-
-

@@ -37,6 +37,3 @@ p {
 #### Browser support
 
 - https://caniuse.com/#feat=inline-block
-
-
-

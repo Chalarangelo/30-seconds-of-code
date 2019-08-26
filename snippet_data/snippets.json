@@ -9,7 +9,7 @@
         "text": "Creates a bouncing loader animation.\n\n",
         "explanation": "\n\nNote: `1rem` is usually `16px`.\n\n1. `@keyframes` defines an animation that has two states, where the element changes `opacity` and is translated up on the 2D plane using `transform: translate3d()`. Using a single axis translation on `transform: translate3d()` improves the performance of the animation.\n2. `.bouncing-loader` is the parent container of the bouncing circles and uses `display: flex` and `justify-content: center` to position them in the center.\n3. `.bouncing-loader > div`, targets the three child `div`s of the parent to be styled. The `div`s are given a width and height of `1rem`, using `border-radius: 50%` to turn them from squares to circles.\n4. `margin: 3rem 0.2rem` specifies that each circle has a top/bottom margin of `3rem` and left/right margin of `0.2rem` so that they do not directly touch each other, giving them some breathing room.\n5. `animation` is a shorthand property for the various animation properties: `animation-name`, `animation-duration`, `animation-iteration-count`, `animation-direction` are used.\n6. `nth-child(n)` targets the element which is the nth child of its parent.\n7. `animation-delay` is used on the second and third `div` respectively, so that each element does not start the animation at the same time.\n\n",
         "browserSupport": {
-          "text": "\n\n- https://caniuse.com/#feat=css-animation\n\n\n\n",
+          "text": "\n\n- https://caniuse.com/#feat=css-animation\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -18,12 +18,10 @@
           "js": "",
           "scopedCss": "@keyframes bouncing-loader {\n  to {\n    opacity: 0.1;\n    transform: translate3d(0, -1rem, 0); } }\n\n[data-scope=\"bouncing-loader\"] .bouncing-loader {\n  display: flex;\n  justify-content: center; }\n\n[data-scope=\"bouncing-loader\"] .bouncing-loader > div {\n  width: 1rem;\n  height: 1rem;\n  margin: 3rem 0.2rem;\n  background: #8385aa;\n  border-radius: 50%;\n  animation: bouncing-loader 0.6s infinite alternate; }\n\n[data-scope=\"bouncing-loader\"] .bouncing-loader > div:nth-child(2) {\n  animation-delay: 0.2s; }\n\n[data-scope=\"bouncing-loader\"] .bouncing-loader > div:nth-child(3) {\n  animation-delay: 0.4s; }\n"
         },
-        "tags": [
-          "animation"
-        ]
+        "tags": ["animation"]
       },
       "meta": {
-        "hash": "9ddb53b4f0d4d889f585ce69e46dc403ccd12f40dff305134bccf8b8a399bb7a"
+        "hash": "2934b3aa733591f4964a7c8780f3ec7b273e4bd6a38fce6e0da2a5dd2dd9959f"
       }
     },
     {
@@ -35,7 +33,7 @@
         "text": "Resets the box-model so that `width`s and `height`s are not affected by their `border`s or `padding`.\n\n",
         "explanation": "\n\n1. `box-sizing: border-box` makes the addition of `padding` or `border`s not affect an element's `width` or `height`.\n2. `box-sizing: inherit` makes an element respect its parent's `box-sizing` rule.\n\n",
         "browserSupport": {
-          "text": "\n\n- https://caniuse.com/#feat=css3-boxsizing\n\n\n\n",
+          "text": "\n\n- https://caniuse.com/#feat=css3-boxsizing\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -44,12 +42,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"box-sizing-reset\"] html {\n  box-sizing: border-box; }\n\n[data-scope=\"box-sizing-reset\"] *,\n[data-scope=\"box-sizing-reset\"] *::before,\n[data-scope=\"box-sizing-reset\"] *::after {\n  box-sizing: inherit; }\n\n[data-scope=\"box-sizing-reset\"] .box {\n  display: inline-block;\n  width: 150px;\n  height: 150px;\n  padding: 10px;\n  background: tomato;\n  color: white;\n  border: 10px solid red; }\n\n[data-scope=\"box-sizing-reset\"] .content-box {\n  box-sizing: content-box; }\n"
         },
-        "tags": [
-          "layout"
-        ]
+        "tags": ["layout"]
       },
       "meta": {
-        "hash": "f435b9fcc289760199b4b4781e608438b866887fa91394e94063b42f3841fab7"
+        "hash": "d4e635bb76a083266e08723f25c3db981b39001ea5d513ce65570fe0099eb6b0"
       }
     },
     {
@@ -70,9 +66,7 @@
           "js": "",
           "scopedCss": "[data-scope=\"button-border-animation\"] .button {\n  background-color: #c47135;\n  border: none;\n  color: #ffffff;\n  outline: none;\n  padding: 12px 40px 10px;\n  position: relative; }\n\n[data-scope=\"button-border-animation\"] .button:before,\n[data-scope=\"button-border-animation\"] .button:after {\n  border: 0 solid transparent;\n  transition: all 0.25s;\n  content: '';\n  height: 24px;\n  position: absolute;\n  width: 24px; }\n\n[data-scope=\"button-border-animation\"] .button:before {\n  border-top: 2px solid #c47135;\n  left: 0px;\n  top: -5px; }\n\n[data-scope=\"button-border-animation\"] .button:after {\n  border-bottom: 2px solid #c47135;\n  bottom: -5px;\n  right: 0px; }\n\n[data-scope=\"button-border-animation\"] .button:hover {\n  background-color: #c47135; }\n\n[data-scope=\"button-border-animation\"] .button:hover:before,\n[data-scope=\"button-border-animation\"] .button:hover:after {\n  height: 100%;\n  width: 100%; }\n"
         },
-        "tags": [
-          "animation"
-        ]
+        "tags": ["animation"]
       },
       "meta": {
         "hash": "ff6401cc784b92a9672e74968719c029de224c29fcfdc3eaeaa764274108f648"
@@ -87,7 +81,7 @@
         "text": "The function calc() allows to define CSS values with the use of mathematical expressions, the value adopted for the property is the result of a mathematical expression.\n\n",
         "explanation": "\n\n1. It allows addition, subtraction, multiplication and division.\n2. Can use different units (pixel and percent together, for example) for each value in your expression.\n3. It is permitted to nest calc() functions.\n4. It can be used in any property that `<length>`, `<frequency>`, `<angle>`, `<time>`, `<number>`, `<color>`, or `<integer>` is allowed, like width, height, font-size, top, left, etc.\n\n",
         "browserSupport": {
-          "text": "\n\n- https://caniuse.com/#feat=calc\n\n\n\n",
+          "text": "\n\n- https://caniuse.com/#feat=calc\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -96,12 +90,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"calc\"] .box-example {\n  height: 280px;\n  background: #222 url(\"https://image.ibb.co/fUL9nS/wolf.png\") no-repeat;\n  background-position: calc(100% - 20px) calc(100% - 20px); }\n"
         },
-        "tags": [
-          "other"
-        ]
+        "tags": ["other"]
       },
       "meta": {
-        "hash": "dc3464c5df00866bdea869d2e02f1a3f040f97301259020828df9951de9ada8c"
+        "hash": "8165e64d1bca7ae3bb0c990712023720dff55c2f6194b557a131901d528be4b7"
       }
     },
     {
@@ -113,7 +105,7 @@
         "text": "Creates a circle shape with pure CSS.\n\n",
         "explanation": "\n\n- `border-radius: 50%` curves the borders of an element to create a circle.\n- Since a circle has the same radius at any given point, the `width` and `height` must be the same. Differing values will create an ellipse.\n\n",
         "browserSupport": {
-          "text": "\n\n- https://caniuse.com/#feat=border-radius\n\n\n\n",
+          "text": "\n\n- https://caniuse.com/#feat=border-radius\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -122,12 +114,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"circle\"] .circle {\n  border-radius: 50%;\n  width: 2rem;\n  height: 2rem;\n  background: #333; }\n"
         },
-        "tags": [
-          "visual"
-        ]
+        "tags": ["visual"]
       },
       "meta": {
-        "hash": "1a068c6a0209bfd1e7155326fb219f7590193e3b81802dfecc6d705e9705adf8"
+        "hash": "60ac5a7cb7e2c24c936b267ac74d649052c9aaa80810278720b5b5a14fee1562"
       }
     },
     {
@@ -139,7 +129,7 @@
         "text": "Ensures that an element self-clears its children.\n\n###### Note: This is only useful if you are still using float to build layouts. Please consider using a modern approach with flexbox layout or grid layout.\n\n",
         "explanation": "\n\n1. `.clearfix::after` defines a pseudo-element.\n2. `content: ''` allows the pseudo-element to affect layout.\n3. `clear: both` indicates that the left, right or both sides of the element cannot be adjacent to earlier floated elements within the same block formatting context.\n\n",
         "browserSupport": {
-          "text": "\n\n<span class=\"snippet__support-note\">⚠️ For this snippet to work properly you need to ensure that there are no non-floating children in the container and that there are no tall floats before the clearfixed container but in the same formatting context (e.g. floated columns).</span>\n\n\n\n",
+          "text": "\n\n<span class=\"snippet__support-note\">⚠️ For this snippet to work properly you need to ensure that there are no non-floating children in the container and that there are no tall floats before the clearfixed container but in the same formatting context (e.g. floated columns).</span>\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -148,12 +138,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"clearfix\"] .clearfix::after {\n  content: '';\n  display: block;\n  clear: both; }\n\n[data-scope=\"clearfix\"] .floated {\n  float: left; }\n"
         },
-        "tags": [
-          "layout"
-        ]
+        "tags": ["layout"]
       },
       "meta": {
-        "hash": "9479dfb4ec61a01045f480c93e21829b08017765585edbc511a653d5791e2f87"
+        "hash": "55fe4fad743f778816b5923c862484cfa84efd353a4d2a3efe04893db6f5863f"
       }
     },
     {
@@ -165,7 +153,7 @@
         "text": "Given an element of variable width, it will ensure its height remains proportionate in a responsive fashion\n(i.e., its width to height ratio remains constant).\n\n",
         "explanation": "\n\n- `padding-top` on the `::before` pseudo-element causes the height of the element to equal a percentage of its width. `100%` therefore means the element's height will always be `100%` of the width, creating a responsive square.\n- This method also allows content to be placed inside the element normally.\n\n",
         "browserSupport": {
-          "text": "\n\n\n\n",
+          "text": "\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -174,12 +162,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"constant-width-to-height-ratio\"] .constant-width-to-height-ratio {\n  background: #333;\n  width: 50%; }\n\n[data-scope=\"constant-width-to-height-ratio\"] .constant-width-to-height-ratio::before {\n  content: '';\n  padding-top: 100%;\n  float: left; }\n\n[data-scope=\"constant-width-to-height-ratio\"] .constant-width-to-height-ratio::after {\n  content: '';\n  display: block;\n  clear: both; }\n"
         },
-        "tags": [
-          "layout"
-        ]
+        "tags": ["layout"]
       },
       "meta": {
-        "hash": "f94bb8368d8074d3d00ca449841b16d0fd4c4267a4abf373c43f41f2b9b6bcd1"
+        "hash": "931815035291ba0e6de497d7296fc75e207117c9ff0607fd646f01da53793929"
       }
     },
     {
@@ -191,7 +177,7 @@
         "text": "Counters are, in essence, variables maintained by CSS whose values may be incremented by CSS rules to track how many times they're used.\n\n",
         "explanation": "\n\n- You can create a ordered list using any type of HTML.\n\n1. `counter-reset` Initializes a counter, the value is the name of the counter. By default, the counter starts at 0. This property can also be used to change its value to any specific number.\n2. `counter-increment` Used in element that will be countable. Once `counter-reset` initialized, a counter's value can be increased or decreased.\n3. `counter(name, style)` Displays the value of a section counter. Generally used in a `content` property. This function can receive two parameters, the first as the name of the counter and the second one can be `decimal` or `upper-roman` (`decimal` by default).\n4. `counters(counter, string, style)` Displays the value of a section counter. Generally used in a `content` property. This function can receive three parameters, the first as the name of the counter, the second one you can include a string which comes after the counter and the third one can be `decimal` or `upper-roman` (`decimal` by default).\n5. A CSS counter can be especially useful for making outlined lists, because a new instance of the counter is automatically created in child elements. Using the `counters()` function, separating text can be inserted between different levels of nested counters.\n\n",
         "browserSupport": {
-          "text": "\n\n- https://caniuse.com/#feat=css-counters\n\n\n\n",
+          "text": "\n\n- https://caniuse.com/#feat=css-counters\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -200,13 +186,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"counter\"] ul {\n  counter-reset: counter; }\n\n[data-scope=\"counter\"] li::before {\n  counter-increment: counter;\n  content: counters(counter, \".\") \" \"; }\n"
         },
-        "tags": [
-          "visual",
-          "other"
-        ]
+        "tags": ["visual", "other"]
       },
       "meta": {
-        "hash": "9d12a06e8dfbe67458098bb9e5fb4041a5ebd7cf5d652940ddbb8ae6f49a58dd"
+        "hash": "7c572c339c0767840bd0fd6f5daab357a8da070988c621e341bc5ce78d0f798e"
       }
     },
     {
@@ -218,7 +201,7 @@
         "text": "Customizes the scrollbar style for the document and elements with scrollable overflow, on WebKit platforms.\n\n",
         "explanation": "\n\n1. `::-webkit-scrollbar` targets the whole scrollbar element.\n2. `::-webkit-scrollbar-track` targets only the scrollbar track.\n3. `::-webkit-scrollbar-thumb` targets the scrollbar thumb.\n\nThere are many other pseudo-elements that you can use to style scrollbars. For more info, visit the [WebKit Blog](https://webkit.org/blog/363/styling-scrollbars/).\n\n",
         "browserSupport": {
-          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Scrollbar styling doesn't appear to be on any standards track.</span>\n\n- https://caniuse.com/#feat=css-scrollbar\n\n\n\n",
+          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Scrollbar styling doesn't appear to be on any standards track.</span>\n\n- https://caniuse.com/#feat=css-scrollbar\n",
           "supportPercentage": 97.69
         },
         "codeBlocks": {
@@ -227,12 +210,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"custom-scrollbar\"] {\n  /* To style the document scrollbar, remove `.custom-scrollbar` */ }\n  [data-scope=\"custom-scrollbar\"] .custom-scrollbar {\n    height: 70px;\n    overflow-y: scroll; }\n  [data-scope=\"custom-scrollbar\"] .custom-scrollbar::-webkit-scrollbar {\n    width: 8px; }\n  [data-scope=\"custom-scrollbar\"] .custom-scrollbar::-webkit-scrollbar-track {\n    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n    border-radius: 10px; }\n  [data-scope=\"custom-scrollbar\"] .custom-scrollbar::-webkit-scrollbar-thumb {\n    border-radius: 10px;\n    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5); }\n"
         },
-        "tags": [
-          "visual"
-        ]
+        "tags": ["visual"]
       },
       "meta": {
-        "hash": "bf63836daec92d4b85128faff57480f8297c4005a25c70ee93da97bd54eaa7bf"
+        "hash": "e5544c894ee3cd4ce3352d10331e2f321c6d30b4a0a667434286c6d4951c3b0a"
       }
     },
     {
@@ -244,7 +225,7 @@
         "text": "Changes the styling of text selection.\n\n",
         "explanation": "\n\n- `::selection` defines a pseudo selector on an element to style text within it when selected. Note that if you don't combine any other selector your style will be applied at document root level, to any selectable element.\n\n",
         "browserSupport": {
-          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Requires prefixes for full support and is not actually\nin any specification.</span>\n\n- https://caniuse.com/#feat=css-selection\n\n\n\n",
+          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Requires prefixes for full support and is not actually\nin any specification.</span>\n\n- https://caniuse.com/#feat=css-selection\n",
           "supportPercentage": 90.1
         },
         "codeBlocks": {
@@ -253,12 +234,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"custom-text-selection\"] ::selection {\n  background: aquamarine;\n  color: black; }\n\n[data-scope=\"custom-text-selection\"] .custom-text-selection::selection {\n  background: deeppink;\n  color: white; }\n"
         },
-        "tags": [
-          "visual"
-        ]
+        "tags": ["visual"]
       },
       "meta": {
-        "hash": "7095b8bab3e1b3736bf0b8a8a4e429d905bceaf2aec83983377d6151e9a0f660"
+        "hash": "bf835c2f1d038e6b08d221c9fef85933757a80c67de555797c6bc63ff7035ae8"
       }
     },
     {
@@ -270,7 +249,7 @@
         "text": "CSS variables that contain specific values to be reused throughout a document.\n\n",
         "explanation": "\n\n- The variables are defined globally within the `:root` CSS pseudo-class which matches the root element of a tree representing the document. Variables can also be scoped to a selector if defined within the block.\n- Declare a variable with `--variable-name:`.\n- Reuse variables throughout the document using the `var(--variable-name)` function.\n\n",
         "browserSupport": {
-          "text": "\n\n- https://caniuse.com/#feat=css-variables\n\n\n\n",
+          "text": "\n\n- https://caniuse.com/#feat=css-variables\n",
           "supportPercentage": 96.51
         },
         "codeBlocks": {
@@ -279,12 +258,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"custom-variables\"] :root {\n  /* Place variables within here to use the variables globally. */ }\n\n[data-scope=\"custom-variables\"] .custom-variables {\n  --some-color: #da7800;\n  --some-keyword: italic;\n  --some-size: 1.25em;\n  --some-complex-value: 1px 1px 2px whitesmoke, 0 0 1em slategray, 0 0 0.2em slategray;\n  color: var(--some-color);\n  font-size: var(--some-size);\n  font-style: var(--some-keyword);\n  text-shadow: var(--some-complex-value); }\n"
         },
-        "tags": [
-          "other"
-        ]
+        "tags": ["other"]
       },
       "meta": {
-        "hash": "b07f694e77ae7a8c107c78aa6c4b27d1d1ef0bae5cab96a7a2fe49d48296a8aa"
+        "hash": "7a0d1c46beceb336265b2ca27a4f3cf25ad332a5cd2e8c0b692a43ce5b329fef"
       }
     },
     {
@@ -296,7 +273,7 @@
         "text": "Makes the content unselectable.\n\n",
         "explanation": "\n\n- `user-select: none` specifies that the text cannot be selected.\n\n",
         "browserSupport": {
-          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Requires prefixes for full support.</span>\n<br>\n<span class=\"snippet__support-note\">⚠️ This is not a secure method to prevent users from copying content.</span>\n\n- https://caniuse.com/#feat=user-select-none\n\n\n\n",
+          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Requires prefixes for full support.</span>\n<br>\n<span class=\"snippet__support-note\">⚠️ This is not a secure method to prevent users from copying content.</span>\n\n- https://caniuse.com/#feat=user-select-none\n",
           "supportPercentage": 97.51
         },
         "codeBlocks": {
@@ -305,12 +282,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"disable-selection\"] .unselectable {\n  user-select: none; }\n"
         },
-        "tags": [
-          "interactivity"
-        ]
+        "tags": ["interactivity"]
       },
       "meta": {
-        "hash": "6b99a98dfec252430da591aed665c0310b013710546c6c2d7bc4259bd7709a4a"
+        "hash": "02f6472568975f5897a84f8846d97f8561fc5334ddafac53e73adb52ccda5f29"
       }
     },
     {
@@ -322,7 +297,7 @@
         "text": "Vertically and horizontally centers a child element within its parent element using `display: table` (as an alternative to `flexbox`).\n\n",
         "explanation": "\n\n1. `display: table` on '.center' allows the element to behave like a `<table>` HTML element.\n2. 100% height and width on '.center' allows the element to fill the available space within its parent element.\n3. `display: table-cell` on '.center > span' allows the element to behave like an <td> HTML element.\n4. `text-align: center` on '.center > span' centers the child element horizontally.\n5. `vertical-align: middle` on '.center > span' centers the child element vertically.\n\n- The outer parent ('.container' in this case) must have a fixed height and width.\n\n",
         "browserSupport": {
-          "text": "\n\n- https://caniuse.com/#search=display%3A%20table\n\n\n\n",
+          "text": "\n\n- https://caniuse.com/#search=display%3A%20table\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -331,12 +306,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"display-table-centering\"] .container {\n  border: 1px solid #333;\n  height: 250px;\n  width: 250px; }\n\n[data-scope=\"display-table-centering\"] .center {\n  display: table;\n  height: 100%;\n  width: 100%; }\n\n[data-scope=\"display-table-centering\"] .center > span {\n  display: table-cell;\n  text-align: center;\n  vertical-align: middle; }\n"
         },
-        "tags": [
-          "layout"
-        ]
+        "tags": ["layout"]
       },
       "meta": {
-        "hash": "08682925f9ae378097e8b3cc1d2a66f9afdcdd4bd052e2f379e03a124a1a613d"
+        "hash": "83c7806b0be2e50ca34f313912f9cb90682852790e6d0105a635f781212fa5b1"
       }
     },
     {
@@ -348,7 +321,7 @@
         "text": "Creates a donut spinner that can be used to indicate the loading of content.\n\n",
         "explanation": "\n\n- Use a semi-transparent `border` for the whole element, except one side that will serve as the loading indicator for the donut. Use `animation` to rotate the element.\n\n",
         "browserSupport": {
-          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Requires prefixes for full support.</span>\n\n- https://caniuse.com/#feat=css-animation\n- https://caniuse.com/#feat=transforms2d\n\n\n\n",
+          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Requires prefixes for full support.</span>\n\n- https://caniuse.com/#feat=css-animation\n- https://caniuse.com/#feat=transforms2d\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -357,12 +330,10 @@
           "js": "",
           "scopedCss": "@keyframes donut-spin {\n  0% {\n    transform: rotate(0deg); }\n  100% {\n    transform: rotate(360deg); } }\n\n[data-scope=\"donut-spinner\"] .donut {\n  display: inline-block;\n  border: 4px solid rgba(0, 0, 0, 0.1);\n  border-left-color: #7983ff;\n  border-radius: 50%;\n  width: 30px;\n  height: 30px;\n  animation: donut-spin 1.2s linear infinite; }\n"
         },
-        "tags": [
-          "animation"
-        ]
+        "tags": ["animation"]
       },
       "meta": {
-        "hash": "b7aa7db9756605dfa39631fd05139fb668b910030b71d5046c4149ac2d152b21"
+        "hash": "4e7f5ce479955deb9830ca4a72fc8260c8863aa65d6f67f15e88a3f923c10c3a"
       }
     },
     {
@@ -374,7 +345,7 @@
         "text": "Creates a shadow similar to `box-shadow` but based on the colors of the element itself.\n\n",
         "explanation": "\n\n1. `position: relative` on the element establishes a Cartesian positioning context for psuedo-elements.\n2. `z-index: 1` establishes a new stacking context.\n3. `::after` defines a pseudo-element.\n4. `position: absolute` takes the pseudo element out of the flow of the document and positions it in relation to the parent.\n5. `width: 100%` and `height: 100%` sizes the pseudo-element to fill its parent's dimensions, making it equal in size.\n6. `background: inherit` causes the pseudo-element to inherit the linear gradient specified on the element.\n7. `top: 0.5rem` offsets the pseudo-element down slightly from its parent.\n8. `filter: blur(0.4rem)` will blur the pseudo-element to create the appearance of a shadow underneath.\n9. `opacity: 0.7` makes the pseudo-element partially transparent.\n10. `z-index: -1` positions the pseudo-element behind the parent but in front of the background.\n\n",
         "browserSupport": {
-          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Requires prefixes for full support.</span>\n\n- https://caniuse.com/#feat=css-filters\n\n\n\n",
+          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Requires prefixes for full support.</span>\n\n- https://caniuse.com/#feat=css-filters\n",
           "supportPercentage": 98.46
         },
         "codeBlocks": {
@@ -383,12 +354,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"dynamic-shadow\"] .dynamic-shadow {\n  position: relative;\n  width: 10rem;\n  height: 10rem;\n  background: linear-gradient(75deg, #6d78ff, #00ffb8);\n  z-index: 1; }\n\n[data-scope=\"dynamic-shadow\"] .dynamic-shadow::after {\n  content: '';\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  background: inherit;\n  top: 0.5rem;\n  filter: blur(0.4rem);\n  opacity: 0.7;\n  z-index: -1; }\n"
         },
-        "tags": [
-          "visual"
-        ]
+        "tags": ["visual"]
       },
       "meta": {
-        "hash": "355f4fabe546f389f59a9cf08b825dca636a471a1413b753d20ea7f1f471428a"
+        "hash": "738fae9ee6d0a9fe84cdbdd632a93f651f8377ec7e9f647e1031207d99b819a5"
       }
     },
     {
@@ -398,9 +367,9 @@
       "attributes": {
         "fileName": "easing-variables.md",
         "text": "Variables that can be reused for `transition-timing-function` properties, more\npowerful than the built-in `ease`, `ease-in`, `ease-out` and `ease-in-out`.\n\n",
-        "explanation": "\n\n- The variables are defined globally within the `:root` CSS pseudo-class which matches the root element of a tree representing the document. \n- In HTML, `:root` represents the `<html>` element and is identical to the selector `html`, except that its specificity is higher.\n\n",
+        "explanation": "\n\n- The variables are defined globally within the `:root` CSS pseudo-class which matches the root element of a tree representing the document.\n- In HTML, `:root` represents the `<html>` element and is identical to the selector `html`, except that its specificity is higher.\n\n",
         "browserSupport": {
-          "text": "\n\n- https://caniuse.com/#feat=css-variables\n\n\n\n",
+          "text": "\n\n- https://caniuse.com/#feat=css-variables\n",
           "supportPercentage": 96.51
         },
         "codeBlocks": {
@@ -409,12 +378,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"easing-variables\"] :root {\n  /* Place variables in here to use globally */ }\n\n[data-scope=\"easing-variables\"] .easing-variables {\n  --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);\n  --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n  --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);\n  --ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);\n  --ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);\n  --ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);\n  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);\n  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);\n  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);\n  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);\n  --ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);\n  --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);\n  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);\n  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);\n  --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);\n  --ease-in-out-expo: cubic-bezier(1, 0, 0, 1);\n  --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);\n  display: inline-block;\n  width: 75px;\n  height: 75px;\n  padding: 10px;\n  color: white;\n  line-height: 50px;\n  text-align: center;\n  background: #333;\n  transition: transform 1s var(--ease-out-quart); }\n\n[data-scope=\"easing-variables\"] .easing-variables:hover {\n  transform: rotate(45deg); }\n"
         },
-        "tags": [
-          "animation"
-        ]
+        "tags": ["animation"]
       },
       "meta": {
-        "hash": "48d8123982a07c883c2b8a844a1d57c0e1efb5b4f6e3e828b982c54ee8d6b6fa"
+        "hash": "94ec3c4e6b02374b61367e8cf4edcb9532bb7297673a28acaee0ad3264adfa3d"
       }
     },
     {
@@ -426,7 +393,7 @@
         "text": "Creates an effect where text appears to be \"etched\" or engraved into the background.\n\n",
         "explanation": "\n\n- `text-shadow: 0 2px white` creates a white shadow offset `0px` horizontally and `2px` vertically from the origin position.\n- The background must be darker than the shadow for the effect to work.\n- The text color should be slightly faded to make it look like it's engraved/carved out of the background.\n\n",
         "browserSupport": {
-          "text": "\n\n- https://caniuse.com/#feat=css-textshadow\n\n\n\n",
+          "text": "\n\n- https://caniuse.com/#feat=css-textshadow\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -435,12 +402,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"etched-text\"] .etched-text {\n  text-shadow: 0 2px white;\n  font-size: 1.5rem;\n  font-weight: bold;\n  color: #b8bec5; }\n"
         },
-        "tags": [
-          "visual"
-        ]
+        "tags": ["visual"]
       },
       "meta": {
-        "hash": "e86bdd1cef913538b157fc7fa052d989d6777be0552d9b6e9ebb474f1629d8fe"
+        "hash": "68da5c2e7399979db3aeb1022d13b0490fc71d55d068597544954706c7027bef"
       }
     },
     {
@@ -452,7 +417,7 @@
         "text": "Evenly distributes child elements within a parent element.\n\n",
         "explanation": "\n\n1. `display: flex` enables flexbox.\n2. `justify-content: space-between` evenly distributes child elements horizontally. The first item is positioned at the left edge, while the last item is positioned at the right edge.\n\n- Alternatively, use `justify-content: space-around` to distribute the children with space around them, rather than between them.\n\n",
         "browserSupport": {
-          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Needs prefixes for full support.</span>\n\n- https://caniuse.com/#feat=flexbox\n\n\n\n",
+          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Needs prefixes for full support.</span>\n\n- https://caniuse.com/#feat=flexbox\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -461,12 +426,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"evenly-distributed-children\"] .evenly-distributed-children {\n  display: flex;\n  justify-content: space-between; }\n"
         },
-        "tags": [
-          "layout"
-        ]
+        "tags": ["layout"]
       },
       "meta": {
-        "hash": "1204bc1df035e1c0d0b3808669a3a3d19201d7bc10500d8242c86fdd68a2a4d9"
+        "hash": "86c8c53be49e82365f6d6f54a03b55d9a8888ccc85504fe0480499b0e68c7f5b"
       }
     },
     {
@@ -487,10 +450,7 @@
           "js": "",
           "scopedCss": "[data-scope=\"fit-image-in-container\"] .image {\n  background: #34495e;\n  border: 1px solid #34495e;\n  width: 200px;\n  height: 200px; }\n\n[data-scope=\"fit-image-in-container\"] .image-contain {\n  object-fit: contain;\n  object-position: center; }\n\n[data-scope=\"fit-image-in-container\"] .image-cover {\n  object-fit: cover;\n  object-position: right top; }\n"
         },
-        "tags": [
-          "layout",
-          "visual"
-        ]
+        "tags": ["layout", "visual"]
       },
       "meta": {
         "hash": "5d09d5e54b7436f047db61223cff15dce2f17f6cffe5e71e0f9061337de3068e"
@@ -505,7 +465,7 @@
         "text": "Horizontally and vertically centers a child element within a parent element using `flexbox`.\n\n",
         "explanation": "\n\n1. `display: flex` enables flexbox.\n2. `justify-content: center` centers the child horizontally.\n3. `align-items: center` centers the child vertically.\n\n",
         "browserSupport": {
-          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Needs prefixes for full support.</span>\n\n- https://caniuse.com/#feat=flexbox\n\n\n\n",
+          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Needs prefixes for full support.</span>\n\n- https://caniuse.com/#feat=flexbox\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -514,12 +474,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"flexbox-centering\"] .flexbox-centering {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100px; }\n"
         },
-        "tags": [
-          "layout"
-        ]
+        "tags": ["layout"]
       },
       "meta": {
-        "hash": "9b17338858339d7bb228e85fc7f8609b4728c9ba2107a636c486779c9c696c0c"
+        "hash": "a2bf8cfa4de368cfb10d013b6bbb87c598e0cccacfe816972da4ac668c6abc1a"
       }
     },
     {
@@ -531,7 +489,7 @@
         "text": "Changes the appearance of a form if any of its children are focused.\n\n",
         "explanation": "\n\n- The psuedo class `:focus-within` applies styles to a parent element if any child element gets focused. For example, an `input` element inside a `form` element.\n\n",
         "browserSupport": {
-          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Not supported in IE11 or the current version of Edge.</span>\n\n<!-- Whenever possible, link a `caniuse` feature which allows the browser support percentage to be displayed.\nIf no link is provided, it defaults to 99+%. -->\n\n- https://caniuse.com/#feat=css-focus-within\n\n\n\n",
+          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Not supported in IE11 or the current version of Edge.</span>\n\n<!-- Whenever possible, link a `caniuse` feature which allows the browser support percentage to be displayed.\nIf no link is provided, it defaults to 99+%. -->\n\n- https://caniuse.com/#feat=css-focus-within\n",
           "supportPercentage": 85.39
         },
         "codeBlocks": {
@@ -540,13 +498,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"focus-within\"] form {\n  border: 3px solid #2d98da;\n  color: #000000;\n  padding: 4px; }\n\n[data-scope=\"focus-within\"] form:focus-within {\n  background: #f7b731;\n  color: #000000; }\n"
         },
-        "tags": [
-          "visual",
-          "interactivity"
-        ]
+        "tags": ["visual", "interactivity"]
       },
       "meta": {
-        "hash": "6fd9c086b06248408f3934b3d21b513dc751ab023defea1841b03a5a9503fff3"
+        "hash": "a12b394af0b2df2f7fa6bae2cbbe3a8b01ba74510991dcfe3952b8bd9c0a5a41"
       }
     },
     {
@@ -558,7 +513,7 @@
         "text": "The :fullscreen CSS pseudo-class represents an element that's displayed when the browser is in fullscreen mode.\n\n",
         "explanation": "\n\n1. `fullscreen` CSS pseudo-class selector is used to select and style an element that is being displayed in fullscreen mode.\n\n",
         "browserSupport": {
-          "text": "\n\n- https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen\n- https://caniuse.com/#feat=fullscreen\n\n\n\n",
+          "text": "\n\n- https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen\n- https://caniuse.com/#feat=fullscreen\n",
           "supportPercentage": 99.11
         },
         "codeBlocks": {
@@ -567,12 +522,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"fullscreen\"] .container {\n  margin: 40px auto;\n  max-width: 700px; }\n\n[data-scope=\"fullscreen\"] .element {\n  padding: 20px;\n  height: 300px;\n  width: 100%;\n  background-color: skyblue; }\n\n[data-scope=\"fullscreen\"] .element p {\n  text-align: center;\n  color: white;\n  font-size: 3em; }\n\n[data-scope=\"fullscreen\"] .element:-ms-fullscreen p {\n  visibility: visible; }\n\n[data-scope=\"fullscreen\"] .element:fullscreen {\n  background-color: #e4708a;\n  width: 100vw;\n  height: 100vh; }\n"
         },
-        "tags": [
-          "visual"
-        ]
+        "tags": ["visual"]
       },
       "meta": {
-        "hash": "bc28c8d11259e58cb448d898b3ed31e8fc5b22e9840eee14c392368685755787"
+        "hash": "22a95161ff6679ca89c4962ef6fdef0cd31e6ac090a9d6077da9834b0dbd39d1"
       }
     },
     {
@@ -584,7 +537,7 @@
         "text": "Vertically centers an element in another.\n\n",
         "explanation": "\n\n- Use the style of a `:before` pseudo-element to vertically align inline elements without changing their `position` property.\n\n",
         "browserSupport": {
-          "text": "\n\n- https://caniuse.com/#feat=inline-block\n\n\n\n",
+          "text": "\n\n- https://caniuse.com/#feat=inline-block\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -593,12 +546,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"ghost-trick\"] .ghosting {\n  height: 300px;\n  background: #0ff; }\n\n[data-scope=\"ghost-trick\"] .ghosting:before {\n  content: '';\n  display: inline-block;\n  height: 100%;\n  vertical-align: middle; }\n\n[data-scope=\"ghost-trick\"] p {\n  display: inline-block;\n  vertical-align: middle; }\n"
         },
-        "tags": [
-          "layout"
-        ]
+        "tags": ["layout"]
       },
       "meta": {
-        "hash": "1e9448a7a3fdfda03eb9a43715bd508ea0ce84eaebedf147043fba2f586dc8dc"
+        "hash": "0515f03b1505eafa21e0d0d7377facbe4aaa9159996906dd4ed2857ee137073a"
       }
     },
     {
@@ -610,7 +561,7 @@
         "text": "Gives text a gradient color.\n\n",
         "explanation": "\n\n1. `background: -webkit-linear-gradient(...)` gives the text element a gradient background.\n2. `webkit-text-fill-color: transparent` fills the text with a transparent color.\n3. `webkit-background-clip: text` clips the background with the text, filling the text with the gradient background as the color.\n\n",
         "browserSupport": {
-          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Uses non-standard properties.</span>\n\n- https://caniuse.com/#feat=text-stroke\n\n\n\n",
+          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Uses non-standard properties.</span>\n\n- https://caniuse.com/#feat=text-stroke\n",
           "supportPercentage": 98.65
         },
         "codeBlocks": {
@@ -619,12 +570,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"gradient-text\"] .gradient-text {\n  background: -webkit-linear-gradient(pink, red);\n  -webkit-text-fill-color: transparent;\n  -webkit-background-clip: text; }\n"
         },
-        "tags": [
-          "visual"
-        ]
+        "tags": ["visual"]
       },
       "meta": {
-        "hash": "974db536cfe1022d46c3a3fbec5f599a961de986a694c21fa9f493c880263f0d"
+        "hash": "9620da48fb82b48a7c6b681854707b622a18c158f2db88c816e3b9c0d9b04523"
       }
     },
     {
@@ -636,7 +585,7 @@
         "text": "Horizontally and vertically centers a child element within a parent element using `grid`.\n\n",
         "explanation": "\n\n1. `display: grid` enables grid.\n2. `justify-content: center` centers the child horizontally.\n3. `align-items: center` centers the child vertically.\n\n",
         "browserSupport": {
-          "text": "\n\n- https://caniuse.com/#feat=css-grid\n\n\n\n",
+          "text": "\n\n- https://caniuse.com/#feat=css-grid\n",
           "supportPercentage": 97.25999999999999
         },
         "codeBlocks": {
@@ -645,12 +594,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"grid-centering\"] .grid-centering {\n  display: grid;\n  justify-content: center;\n  align-items: center;\n  height: 100px; }\n"
         },
-        "tags": [
-          "layout"
-        ]
+        "tags": ["layout"]
       },
       "meta": {
-        "hash": "6435b7dc7a403884583c6ed2062dce4e2a43d144578c5d4f6b3ab0882ca959f4"
+        "hash": "f6fbb076581e63ab9187ca63d8620f88de19d7a78c46f9ded903271461a445bf"
       }
     },
     {
@@ -662,7 +609,7 @@
         "text": "Gives an element a border equal to 1 native device pixel in width, which can look\nvery sharp and crisp.\n\n",
         "explanation": "\n\n1. `box-shadow`, when only using spread, adds a pseudo-border which can use subpixels\\*.\n2. Use `@media (min-resolution: ...)` to check the device pixel ratio (`1dppx` equals 96 DPI), setting the spread of the `box-shadow` equal to `1 / dppx`.\n\n",
         "browserSupport": {
-          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Needs alternate syntax and JavaScript user agent checking for full support.</span>\n\n- https://caniuse.com/#feat=css-boxshadow\n- https://caniuse.com/#feat=css-media-resolution\n\n<hr>\n\n\\*Chrome does not support subpixel values on `border`. Safari does not support subpixel values on `box-shadow`. Firefox supports subpixel values on both.\n\n\n\n",
+          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Needs alternate syntax and JavaScript user agent checking for full support.</span>\n\n- https://caniuse.com/#feat=css-boxshadow\n- https://caniuse.com/#feat=css-media-resolution\n\n<hr>\n\n\\*Chrome does not support subpixel values on `border`. Safari does not support subpixel values on `box-shadow`. Firefox supports subpixel values on both.\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -671,12 +618,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"hairline-border\"] .hairline-border {\n  box-shadow: 0 0 0 1px; }\n\n@media (min-resolution: 2dppx) {\n  [data-scope=\"hairline-border\"] .hairline-border {\n    box-shadow: 0 0 0 0.5px; } }\n\n@media (min-resolution: 3dppx) {\n  [data-scope=\"hairline-border\"] .hairline-border {\n    box-shadow: 0 0 0 0.33333333px; } }\n\n@media (min-resolution: 4dppx) {\n  [data-scope=\"hairline-border\"] .hairline-border {\n    box-shadow: 0 0 0 0.25px; } }\n"
         },
-        "tags": [
-          "visual"
-        ]
+        "tags": ["visual"]
       },
       "meta": {
-        "hash": "89a7003fb239612b9ce94ebfaff95bc6bf88fec6990ab6256fff7b2ddfa6d42f"
+        "hash": "cd26d0cd1831474afdc784b4459b60062243e2d390975e94cd7d51fa776c603f"
       }
     },
     {
@@ -686,9 +631,9 @@
       "attributes": {
         "fileName": "height-transition.md",
         "text": "Transitions an element's height from `0` to `auto` when its height is unknown.\n\n",
-        "explanation": "\n\n1. `transition: max-height: 0.5s cubic-bezier(...)` specifies that changes to `max-height` should be transitioned over 0.5 seconds, using an `ease-out-quint` timing function.\n2. `overflow: hidden` prevents the contents of the hidden element from overflowing its container.\n3. `max-height: 0` specifies that the element has no height initially.\n4. `.target:hover > .el` specifies that when the parent is hovered over, target a child `.el` within it and use the `--max-height` variable which was defined by JavaScript.\n---\n1. `el.scrollHeight` is the height of the element including overflow, which will change dynamically based on the content of the element.\n2. `el.style.setProperty(...)` sets the `--max-height` CSS variable which is used to specify the `max-height` of the element the target is hovered over, allowing it to transition smoothly from 0 to auto.\n\n",
+        "explanation": "\n\n1. `transition: max-height: 0.5s cubic-bezier(...)` specifies that changes to `max-height` should be transitioned over 0.5 seconds, using an `ease-out-quint` timing function.\n2. `overflow: hidden` prevents the contents of the hidden element from overflowing its container.\n3. `max-height: 0` specifies that the element has no height initially.\n4. `.target:hover > .el` specifies that when the parent is hovered over, target a child `.el` within it and use the `--max-height` variable which was defined by JavaScript.\n\n---\n\n1. `el.scrollHeight` is the height of the element including overflow, which will change dynamically based on the content of the element.\n2. `el.style.setProperty(...)` sets the `--max-height` CSS variable which is used to specify the `max-height` of the element the target is hovered over, allowing it to transition smoothly from 0 to auto.\n\n",
         "browserSupport": {
-          "text": "\n\n<div class=\"snippet__requires-javascript\">Requires JavaScript</div>\n<span class=\"snippet__support-note\">\n  ⚠️ Causes reflow on each animation frame, which will be laggy if there are a large number of elements\n  beneath the element that is transitioning in height.\n</span>\n\n- https://caniuse.com/#feat=css-variables\n- https://caniuse.com/#feat=css-transitions\n\n\n\n",
+          "text": "\n\n<div class=\"snippet__requires-javascript\">Requires JavaScript</div>\n<span class=\"snippet__support-note\">\n  ⚠️ Causes reflow on each animation frame, which will be laggy if there are a large number of elements\n  beneath the element that is transitioning in height.\n</span>\n\n- https://caniuse.com/#feat=css-variables\n- https://caniuse.com/#feat=css-transitions\n",
           "supportPercentage": 96.51
         },
         "codeBlocks": {
@@ -697,12 +642,10 @@
           "js": "var el = document.querySelector('.el')\nvar height = el.scrollHeight\nel.style.setProperty('--max-height', height + 'px')",
           "scopedCss": "[data-scope=\"height-transition\"] .el {\n  transition: max-height 0.5s;\n  overflow: hidden;\n  max-height: 0; }\n\n[data-scope=\"height-transition\"] .trigger:hover > .el {\n  max-height: var(--max-height); }\n"
         },
-        "tags": [
-          "animation"
-        ]
+        "tags": ["animation"]
       },
       "meta": {
-        "hash": "737b2ca54126cbcb200496d2c61a12ab5e43b9f09a084cfc8cc4f7afa242ad43"
+        "hash": "bff0b57d24dac06ae6a6d71a8d0d628ec0b97760be0cfda66791191957075d73"
       }
     },
     {
@@ -714,7 +657,7 @@
         "text": "Creates a shadow box around the text when it is hovered.\n\n",
         "explanation": "\n\n1. `display: inline-block` to set width and length for `p` element thus making it an `inline-block`.\n2. Set `transform: perspective(1px)` to give element a 3D space by affecting the distance between the Z plane and the user and `translate(0)` to reposition the `p` element along z-axis in 3D space.\n3. `box-shadow:` to set up the box.\n4. `transparent` to make box transparent.\n5. `transition-property` to enable transitions for both `box-shadow` and `transform`.\n6. `:hover` to activate whole css when hovering is done until `active`.\n7. `transform: scale(1.2)` to change the scale, magnifying the text.\n\n",
         "browserSupport": {
-          "text": "\n\n- https://caniuse.com/#feat=transforms3d\n- https://caniuse.com/#feat=css-transitions\n\n\n\n",
+          "text": "\n\n- https://caniuse.com/#feat=transforms3d\n- https://caniuse.com/#feat=css-transitions\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -723,12 +666,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"hover-shadow-box-animation\"] .hover-shadow-box-animation {\n  display: inline-block;\n  vertical-align: middle;\n  transform: perspective(1px) translateZ(0);\n  box-shadow: 0 0 1px transparent;\n  margin: 10px;\n  transition-duration: 0.3s;\n  transition-property: box-shadow, transform; }\n\n[data-scope=\"hover-shadow-box-animation\"] .hover-shadow-box-animation:hover,\n[data-scope=\"hover-shadow-box-animation\"] .hover-shadow-box-animation:focus,\n[data-scope=\"hover-shadow-box-animation\"] .hover-shadow-box-animation:active {\n  box-shadow: 1px 10px 10px -10px rgba(0, 0, 24, 0.5);\n  transform: scale(1.2); }\n"
         },
-        "tags": [
-          "animation"
-        ]
+        "tags": ["animation"]
       },
       "meta": {
-        "hash": "b0e6bab9cb552d038d24121cfff46c630e6feeb073b3af6f055e9418c511e63b"
+        "hash": "4136aff34ae1b8bf6b525c08881a12c43e9ce7265e864c09ea25fa40e8d86396"
       }
     },
     {
@@ -740,7 +681,7 @@
         "text": "Creates an animated underline effect when the text is hovered over.\n\n<small>**Credit:** https://flatuicolors.com/</small>\n\n",
         "explanation": "\n\n1. `display: inline-block` makes the block `p` an `inline-block` to prevent the underline from spanning the entire parent width rather than just the content (text).\n2. `position: relative` on the element establishes a Cartesian positioning context for pseudo-elements.\n3. `::after` defines a pseudo-element.\n4. `position: absolute` takes the pseudo element out of the flow of the document and positions it in relation to the parent.\n5. `width: 100%` ensures the pseudo-element spans the entire width of the text block.\n6. `transform: scaleX(0)` initially scales the pseudo element to 0 so it has no width and is not visible.\n7. `bottom: 0` and `left: 0` position it to the bottom left of the block.\n8. `transition: transform 0.25s ease-out` means changes to `transform` will be transitioned over 0.25 seconds with an `ease-out` timing function.\n9. `transform-origin: bottom right` means the transform anchor point is positioned at the bottom right of the block.\n10. `:hover::after` then uses `scaleX(1)` to transition the width to 100%, then changes the `transform-origin` to `bottom left` so that the anchor point is reversed, allowing it transition out in the other direction when hovered off.\n\n",
         "browserSupport": {
-          "text": "\n\n- https://caniuse.com/#feat=transforms2d\n- https://caniuse.com/#feat=css-transitions\n\n\n\n",
+          "text": "\n\n- https://caniuse.com/#feat=transforms2d\n- https://caniuse.com/#feat=css-transitions\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -749,12 +690,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"hover-underline-animation\"] .hover-underline-animation {\n  display: inline-block;\n  position: relative;\n  color: #0087ca; }\n\n[data-scope=\"hover-underline-animation\"] .hover-underline-animation::after {\n  content: '';\n  position: absolute;\n  width: 100%;\n  transform: scaleX(0);\n  height: 2px;\n  bottom: 0;\n  left: 0;\n  background-color: #0087ca;\n  transform-origin: bottom right;\n  transition: transform 0.25s ease-out; }\n\n[data-scope=\"hover-underline-animation\"] .hover-underline-animation:hover::after {\n  transform: scaleX(1);\n  transform-origin: bottom left; }\n"
         },
-        "tags": [
-          "animation"
-        ]
+        "tags": ["animation"]
       },
       "meta": {
-        "hash": "9a97ba2c7f2f28ff9047373a3046d95eb7a9ff03de42d23568d669d61f30c6f1"
+        "hash": "6e8a53b0b69ab05f54c199f42944746c0e3331712f69a8dc72709eda16428424"
       }
     },
     {
@@ -775,9 +714,7 @@
           "js": "",
           "scopedCss": "[data-scope=\"last-item-with-remaining-available-height\"] html,\n[data-scope=\"last-item-with-remaining-available-height\"] body {\n  height: 100%;\n  margin: 0; }\n\n[data-scope=\"last-item-with-remaining-available-height\"] .container {\n  height: 100%;\n  display: flex;\n  flex-direction: column; }\n\n[data-scope=\"last-item-with-remaining-available-height\"] .container > div:last-child {\n  background-color: tomato;\n  flex: 1; }\n"
         },
-        "tags": [
-          "layout"
-        ]
+        "tags": ["layout"]
       },
       "meta": {
         "hash": "2f925cc190a9744532de97bb4add65e53cc0b2f3833760f4e7263f5df17cfad5"
@@ -792,7 +729,7 @@
         "text": "A hover effect where the gradient follows the mouse cursor.\n\n<small class=\"snippet__credit\">**Credit:** [Tobias Reich](https://codepen.io/electerious/pen/MQrRxX)</small>\n\n",
         "explanation": "\n\n1. `--x` and `--y` are used to track the position of the mouse on the button.\n2. `--size` is used to keep modify of the gradient's dimensions.\n3. `background: radial-gradient(circle closest-side, pink, transparent);` creates the gradient at the correct postion.\n\n",
         "browserSupport": {
-          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Requires JavaScript.</span>\n\n- https://caniuse.com/#feat=css-variables\n\n\n\n",
+          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Requires JavaScript.</span>\n\n- https://caniuse.com/#feat=css-variables\n",
           "supportPercentage": 96.51
         },
         "codeBlocks": {
@@ -801,13 +738,10 @@
           "js": "var btn = document.querySelector('.mouse-cursor-gradient-tracking')\nbtn.onmousemove = function(e) {\n  var x = e.pageX - btn.offsetLeft - btn.offsetParent.offsetLeft\n  var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop\n  btn.style.setProperty('--x', x + 'px')\n  btn.style.setProperty('--y', y + 'px')\n}",
           "scopedCss": "[data-scope=\"mouse-cursor-gradient-tracking\"] .mouse-cursor-gradient-tracking {\n  position: relative;\n  background: #7983ff;\n  padding: 0.5rem 1rem;\n  font-size: 1.2rem;\n  border: none;\n  color: white;\n  cursor: pointer;\n  outline: none;\n  overflow: hidden; }\n\n[data-scope=\"mouse-cursor-gradient-tracking\"] .mouse-cursor-gradient-tracking span {\n  position: relative; }\n\n[data-scope=\"mouse-cursor-gradient-tracking\"] .mouse-cursor-gradient-tracking::before {\n  --size: 0;\n  content: '';\n  position: absolute;\n  left: var(--x);\n  top: var(--y);\n  width: var(--size);\n  height: var(--size);\n  background: radial-gradient(circle closest-side, pink, transparent);\n  transform: translate(-50%, -50%);\n  transition: width 0.2s ease, height 0.2s ease; }\n\n[data-scope=\"mouse-cursor-gradient-tracking\"] .mouse-cursor-gradient-tracking:hover::before {\n  --size: 200px; }\n"
         },
-        "tags": [
-          "visual",
-          "interactivity"
-        ]
+        "tags": ["visual", "interactivity"]
       },
       "meta": {
-        "hash": "95356deaaa912ba2c168ee418678ad99d1e000163c7b95f725364ba3cbbb5b85"
+        "hash": "f4545af51a44e98a3774a40243a8299e27922738c0a16d415f4d6b2e100bc495"
       }
     },
     {
@@ -819,7 +753,7 @@
         "text": "The `:not` psuedo selector is useful for styling a group of elements, while leaving the last (or specified) element unstyled.\n\n",
         "explanation": "\n\n- `li:not(:last-child)` specifies that the styles should apply to all `li` elements except the `:last-child`.\n\n",
         "browserSupport": {
-          "text": "\n\n- https://caniuse.com/#feat=css-sel3\n\n\n\n",
+          "text": "\n\n- https://caniuse.com/#feat=css-sel3\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -828,12 +762,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"not-selector\"] .css-not-selector-shortcut {\n  display: flex; }\n\n[data-scope=\"not-selector\"] ul {\n  padding-left: 0; }\n\n[data-scope=\"not-selector\"] li {\n  list-style-type: none;\n  margin: 0;\n  padding: 0 0.75rem; }\n\n[data-scope=\"not-selector\"] li:not(:last-child) {\n  border-right: 2px solid #d2d5e4; }\n"
         },
-        "tags": [
-          "visual"
-        ]
+        "tags": ["visual"]
       },
       "meta": {
-        "hash": "129748a7f6e0ee74a87e4ff4c62df53c40359c57047586c887fad9fc76872c04"
+        "hash": "a5ce598fdef79b1c1a91bc30992bd881e3f1d1f7928c4c4d3ccd5f4eb5817ad9"
       }
     },
     {
@@ -845,7 +777,7 @@
         "text": "A bulletproof way to completely hide an element visually and positionally in the DOM while still allowing it to be accessed by JavaScript and readable by screen readers. This method is very useful for accessibility ([ADA](https://adata.org/learn-about-ada)) development when more context is needed for visually-impaired users. As an alternative to `display: none` which is not readable by screen readers or `visibility: hidden` which takes up physical space in the DOM.\n\n",
         "explanation": "\n\n1. Remove all borders.\n2. Use `clip` to indicate that no part of the element should be shown.\n3. Make the height and width of the element 1px.\n4. Negate the elements height and width using `margin: -1px`.\n5. Hide the element's overflow.\n6. Remove all padding.\n7. Position the element absolutely so that it does not take up space in the DOM.\n\n",
         "browserSupport": {
-          "text": "\n\n(Although `clip` technically has been depreciated, the newer `clip-path` currently has very limited browser support.)\n\n- https://caniuse.com/#search=clip\n\n\n\n",
+          "text": "\n\n(Although `clip` technically has been depreciated, the newer `clip-path` currently has very limited browser support.)\n\n- https://caniuse.com/#search=clip\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -854,13 +786,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"offscreen\"] .offscreen {\n  border: 0;\n  clip: rect(0 0 0 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px; }\n"
         },
-        "tags": [
-          "layout",
-          "visual"
-        ]
+        "tags": ["layout", "visual"]
       },
       "meta": {
-        "hash": "233e33b59ef7be00766dd0034ab54c6e788af637d761e71efb5c552153a9d163"
+        "hash": "08134db9917770420e2e7b479304250d9f0b8b4b285db1c28ee3a79e150b3f47"
       }
     },
     {
@@ -872,7 +801,7 @@
         "text": "Adds a fading gradient to an overflowing element to better indicate there is more content to be scrolled.\n\n",
         "explanation": "\n\n1. `position: relative` on the parent establishes a Cartesian positioning context for pseudo-elements.\n2. `::after` defines a pseudo element.\n3. `background-image: linear-gradient(...)` adds a linear gradient that fades from transparent to white (top to bottom).\n4. `position: absolute` takes the pseudo element out of the flow of the document and positions it in relation to the parent.\n5. `width: 240px` matches the size of the scrolling element (which is a child of the parent that has the pseudo element).\n6. `height: 25px` is the height of the fading gradient pseudo-element, which should be kept relatively small.\n7. `bottom: 0` positions the pseudo-element at the bottom of the parent.\n8. `pointer-events: none` specifies that the pseudo-element cannot be a target of mouse events, allowing text behind it to still be selectable/interactive.\n\n",
         "browserSupport": {
-          "text": "\n\n- https://caniuse.com/#feat=css-gradients\n\n\n\n",
+          "text": "\n\n- https://caniuse.com/#feat=css-gradients\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -881,12 +810,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"overflow-scroll-gradient\"] .overflow-scroll-gradient {\n  position: relative; }\n\n[data-scope=\"overflow-scroll-gradient\"] .overflow-scroll-gradient::after {\n  content: '';\n  position: absolute;\n  bottom: 0;\n  width: 240px;\n  height: 25px;\n  background: linear-gradient(rgba(255, 255, 255, 0.001), white);\n  /* transparent keyword is broken in Safari */\n  pointer-events: none; }\n\n[data-scope=\"overflow-scroll-gradient\"] .overflow-scroll-gradient__scroller {\n  overflow-y: scroll;\n  background: white;\n  width: 240px;\n  height: 200px;\n  padding: 15px;\n  line-height: 1.2; }\n"
         },
-        "tags": [
-          "visual"
-        ]
+        "tags": ["visual"]
       },
       "meta": {
-        "hash": "938536c0407ce1d5edcf443ec9a51bdb22815662175ffdd372f5a7bc1446c865"
+        "hash": "2fb77c0e8a0de42767198b5d74fd7df863628f36f3bf6617ecda5d7773f21ea9"
       }
     },
     {
@@ -898,7 +825,7 @@
         "text": "Reveals an interactive popout menu on hover and focus.\n\n",
         "explanation": "\n\n1. `position: relative` on the reference parent establishes a Cartesian positioning context for its child.\n2. `position: absolute` takes the popout menu out of the flow of the document and positions it in relation to the parent.\n3. `left: 100%` moves the the popout menu 100% of its parent's width from the left.\n4. `visibility: hidden` hides the popout menu initially and allows for transitions (unlike `display: none`).\n5. `.reference:hover > .popout-menu` means that when `.reference` is hovered over, select immediate children with a class of `.popout-menu` and change their `visibility` to `visible`, which shows the popout.\n6. `.reference:focus > .popout-menu` means that when `.reference` is focused, the popout would be shown.\n7. `.reference:focus-within > .popout-menu` ensures that the popout is shown when the focus is _within_ the reference.\n\n",
         "browserSupport": {
-          "text": "\n\n\n\n",
+          "text": "\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -907,12 +834,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"popout-menu\"] .reference {\n  position: relative;\n  background: tomato;\n  width: 100px;\n  height: 100px; }\n\n[data-scope=\"popout-menu\"] .popout-menu {\n  position: absolute;\n  visibility: hidden;\n  left: 100%;\n  background: #333;\n  color: white;\n  padding: 15px; }\n\n[data-scope=\"popout-menu\"] .reference:hover > .popout-menu,\n[data-scope=\"popout-menu\"] .reference:focus > .popout-menu,\n[data-scope=\"popout-menu\"] .reference:focus-within > .popout-menu {\n  visibility: visible; }\n"
         },
-        "tags": [
-          "interactivity"
-        ]
+        "tags": ["interactivity"]
       },
       "meta": {
-        "hash": "c4ac484b5e94d0c326d1ac122ba9d9f98b71cd3ab3cce1cd3077fbd6e1afe4ee"
+        "hash": "46d1f9e1a05328d86ffda0dbea7dc60eae44c319eb430632ef384d2f3e7e6d44"
       }
     },
     {
@@ -924,7 +849,7 @@
         "text": "A nicer alternative to `text-decoration: underline` or `<u></u>` where descenders do not clip the underline.\nNatively implemented as `text-decoration-skip-ink: auto` but it has less control over the underline.\n\n",
         "explanation": "\n\n1. `text-shadow` uses 4 values with offsets that cover a 4x4 px area to ensure the underline has a \"thick\" shadow that covers the line where descenders clip it. Use a color that matches the background. For a larger font, use a larger `px` size. Additional values can create an even thicker shadow, and subpixel values can also be used.\n2. `background-image: linear-gradient(...)` creates a 90deg gradient using the text color (`currentColor`).\n3. The `background-*` properties size the gradient as 100% of the width of the block and 1px in height at the bottom and disables repetition, which creates a 1px underline beneath the text.\n4. The `::selection` pseudo selector rule ensures the text shadow does not interfere with text selection.\n\n",
         "browserSupport": {
-          "text": "\n\n- https://caniuse.com/#feat=css-textshadow\n- https://caniuse.com/#feat=css-gradients\n\n\n\n",
+          "text": "\n\n- https://caniuse.com/#feat=css-textshadow\n- https://caniuse.com/#feat=css-gradients\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -933,12 +858,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"pretty-text-underline\"] .pretty-text-underline {\n  display: inline;\n  text-shadow: 1px 1px #f5f6f9, -1px 1px #f5f6f9, -1px -1px #f5f6f9, 1px -1px #f5f6f9;\n  background-image: linear-gradient(90deg, currentColor 100%, transparent 100%);\n  background-position: bottom;\n  background-repeat: no-repeat;\n  background-size: 100% 1px; }\n\n[data-scope=\"pretty-text-underline\"] .pretty-text-underline::-moz-selection {\n  background-color: rgba(0, 150, 255, 0.3);\n  text-shadow: none; }\n\n[data-scope=\"pretty-text-underline\"] .pretty-text-underline::selection {\n  background-color: rgba(0, 150, 255, 0.3);\n  text-shadow: none; }\n"
         },
-        "tags": [
-          "visual"
-        ]
+        "tags": ["visual"]
       },
       "meta": {
-        "hash": "f91299fbd8d5233de42e09ef7c381a1cce23a83288f9e619f153af22a1275fd2"
+        "hash": "fb3a96cbbb4d59af2566f3d0729c13478a81a572b25a8dd1696e2a67dd8fff79"
       }
     },
     {
@@ -950,7 +873,7 @@
         "text": "Resets all styles to default values with one property. This will not affect `direction` and `unicode-bidi` properties.\n\n",
         "explanation": "\n\n- The `all` property allows you to reset all styles (inherited or not) to default values.\n\n",
         "browserSupport": {
-          "text": "\n\n<span class=\"snippet__support-note\">⚠️ MS Edge status is under consideration.</span>\n\n- https://caniuse.com/#feat=css-all\n\n\n\n",
+          "text": "\n\n<span class=\"snippet__support-note\">⚠️ MS Edge status is under consideration.</span>\n\n- https://caniuse.com/#feat=css-all\n",
           "supportPercentage": 95.76
         },
         "codeBlocks": {
@@ -959,12 +882,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"reset-all-styles\"] .reset-all-styles {\n  all: initial; }\n"
         },
-        "tags": [
-          "visual"
-        ]
+        "tags": ["visual"]
       },
       "meta": {
-        "hash": "1e52c4cc2c03669576b53d4be44357e6fea843cffd671419c881b31c927c9170"
+        "hash": "f9542b2db5cd49f09e53b3af8348c58c973244bdeede87857e49660c6e713d65"
       }
     },
     {
@@ -976,7 +897,7 @@
         "text": "Uses an SVG shape to separate two different blocks to create more a interesting visual appearance compared to standard horizontal separation.\n\n",
         "explanation": "\n\n1. `position: relative` on the element establishes a Cartesian positioning context for pseudo elements.\n2. `::after` defines a pseudo element.\n3. `background-image: url(...)` adds the SVG shape (a 24x12 triangle) as the background image of the pseudo element, which repeats by default. It must be the same color as the block that is being separated. For other shapes, we can use [the URL-encoder for SVG](http://yoksel.github.io/url-encoder/).\n4. `position: absolute` takes the pseudo element out of the flow of the document and positions it in relation to the parent.\n5. `width: 100%` ensures the element stretches the entire width of its parent.\n6. `height: 12px` is the same height as the shape.\n7. `bottom: 0` positions the pseudo element at the bottom of the parent.\n\n",
         "browserSupport": {
-          "text": "\n\n- https://caniuse.com/#feat=svg\n\n\n\n",
+          "text": "\n\n- https://caniuse.com/#feat=svg\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -985,12 +906,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"shape-separator\"] .shape-separator {\n  position: relative;\n  height: 48px;\n  background: #333; }\n\n[data-scope=\"shape-separator\"] .shape-separator::after {\n  content: '';\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 12'%3E%3Cpath d='m12 0l12 12h-24z' fill='%23fff'/%3E%3C/svg%3E\");\n  position: absolute;\n  width: 100%;\n  height: 12px;\n  bottom: 0; }\n"
         },
-        "tags": [
-          "visual"
-        ]
+        "tags": ["visual"]
       },
       "meta": {
-        "hash": "75e712c07e184d8dbf34818ba245f5b1a4273dfb491a21262b88042ef9e42d6c"
+        "hash": "0b86c444f4d15709a99d1e32c651e9530a294258ba32784d998a56c6f14198b1"
       }
     },
     {
@@ -1002,7 +921,7 @@
         "text": "Fades out the siblings of a hovered item.\n\n",
         "explanation": "\n\n1. `transition: opacity 0.2s` specifies that changes to opacity will be transitioned over 0.2 seconds.\n2. `.sibling-fade:hover span:not(:hover)` specifies that when the parent is hovered, select any `span` children that are not currently being hovered and change their opacity to `0.5`.\n\n",
         "browserSupport": {
-          "text": "\n\n- https://caniuse.com/#feat=css-sel3\n- https://caniuse.com/#feat=css-transitions\n\n\n\n",
+          "text": "\n\n- https://caniuse.com/#feat=css-sel3\n- https://caniuse.com/#feat=css-transitions\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -1011,12 +930,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"sibling-fade\"] span {\n  padding: 0 1rem;\n  transition: opacity 0.2s; }\n\n[data-scope=\"sibling-fade\"] .sibling-fade:hover span:not(:hover) {\n  opacity: 0.5; }\n"
         },
-        "tags": [
-          "interactivity"
-        ]
+        "tags": ["interactivity"]
       },
       "meta": {
-        "hash": "c4b3ad85a5137635283abe843a9f180027bd751c40be9ca465b0b3e3f52b9fe9"
+        "hash": "35bfb52929dcbd21c120d555c9d3382154f47b661d31722ffb3d21281021bba3"
       }
     },
     {
@@ -1028,7 +945,7 @@
         "text": "Uses the native font of the operating system to get close to a native app feel.\n\n",
         "explanation": "\n\n- The browser looks for each successive font, preferring the first one if possible, and falls back to the next if it cannot find the font (on the system or defined in CSS).\n\n1. `-apple-system` is San Francisco, used on iOS and macOS (not Chrome however)\n2. `BlinkMacSystemFont` is San Francisco, used on macOS Chrome\n3. `Segoe UI` is used on Windows 10\n4. `Roboto` is used on Android\n5. `Oxygen-Sans` is used on Linux with KDE\n6. `Ubuntu` is used on Ubuntu (all variants)\n7. `Cantarell` is used on Linux with GNOME Shell\n8. `\"Helvetica Neue\"` and `Helvetica` is used on macOS 10.10 and below (wrapped in quotes because it has a space)\n9. `Arial` is a font widely supported by all operating systems\n10. `sans-serif` is the fallback sans-serif font if none of the other fonts are supported\n\n",
         "browserSupport": {
-          "text": "\n\n\n\n",
+          "text": "\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -1037,12 +954,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"system-font-stack\"] .system-font-stack {\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif; }\n"
         },
-        "tags": [
-          "visual"
-        ]
+        "tags": ["visual"]
       },
       "meta": {
-        "hash": "23cfcc3319fd473b39269b2745abb7f52752a970307fc561159275208d04a554"
+        "hash": "97b037f3f463b8cf7de0cc12a607c540ffe8a4869323a4cc17c66eebbc92d612"
       }
     },
     {
@@ -1063,10 +978,7 @@
           "js": "",
           "scopedCss": "[data-scope=\"toggle-switch\"] .switch {\n  position: relative;\n  display: inline-block;\n  width: 40px;\n  height: 20px;\n  background-color: rgba(0, 0, 0, 0.25);\n  border-radius: 20px;\n  transition: all 0.3s; }\n\n[data-scope=\"toggle-switch\"] .switch::after {\n  content: '';\n  position: absolute;\n  width: 18px;\n  height: 18px;\n  border-radius: 18px;\n  background-color: white;\n  top: 1px;\n  left: 1px;\n  transition: all 0.3s; }\n\n[data-scope=\"toggle-switch\"] input[type='checkbox']:checked + .switch::after {\n  transform: translateX(20px); }\n\n[data-scope=\"toggle-switch\"] input[type='checkbox']:checked + .switch {\n  background-color: #7983ff; }\n\n[data-scope=\"toggle-switch\"] .offscreen {\n  position: absolute;\n  left: -9999px; }\n"
         },
-        "tags": [
-          "visual",
-          "interactivity"
-        ]
+        "tags": ["visual", "interactivity"]
       },
       "meta": {
         "hash": "e29182514bd83550705267a43d21eec8886ed011c6259f2b3efec9862541f90e"
@@ -1081,7 +993,7 @@
         "text": "Vertically and horizontally centers a child element within its parent element using `position: absolute` and `transform: translate()` (as an alternative to `flexbox` or `display: table`). Similar to `flexbox`, this method does not require you to know the height or width of your parent or child so it is ideal for responsive applications.\n\n",
         "explanation": "\n\n1. `position: absolute` on the child element allows it to be positioned based on its containing block.\n2. `left: 50%` and `top: 50%` offsets the child 50% from the left and top edge of its containing block.\n3. `transform: translate(-50%, -50%)` allows the height and width of the child element to be negated so that it is vertically and horizontally centered.\n\n- Note: that the fixed height and width on parent element is for the demo only.\n\n",
         "browserSupport": {
-          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Requires prefix for full support.</span>\n\n- https://caniuse.com/#feat=transforms2d\n\n\n\n",
+          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Requires prefix for full support.</span>\n\n- https://caniuse.com/#feat=transforms2d\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -1090,12 +1002,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"transform-centering\"] .parent {\n  border: 1px solid #333;\n  height: 250px;\n  position: relative;\n  width: 250px; }\n\n[data-scope=\"transform-centering\"] .child {\n  left: 50%;\n  position: absolute;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  text-align: center; }\n"
         },
-        "tags": [
-          "layout"
-        ]
+        "tags": ["layout"]
       },
       "meta": {
-        "hash": "377d480a141a8890f793ef28212d7ed9d60c9d6831286bcea703ab43daca73ce"
+        "hash": "9ee4bb8713d24b9e6f5367eb05645c6e41d205b120b4d06a9a949984c7cd73b0"
       }
     },
     {
@@ -1107,7 +1017,7 @@
         "text": "Creates a triangle shape with pure CSS.\n\n",
         "explanation": "\n\n- [View this link for a detailed explanation.](https://stackoverflow.com/q/7073484)\n- The color of the border is the color of the triangle. The side the triangle tip points corresponds to the opposite `border-*` property. For example, a color on `border-top` means the arrow points downward.\n- Experiment with the `px` values to change the proportion of the triangle.\n\n",
         "browserSupport": {
-          "text": "\n\n\n\n",
+          "text": "\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -1116,12 +1026,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"triangle\"] .triangle {\n  width: 0;\n  height: 0;\n  border-top: 20px solid #333;\n  border-left: 20px solid transparent;\n  border-right: 20px solid transparent; }\n"
         },
-        "tags": [
-          "visual"
-        ]
+        "tags": ["visual"]
       },
       "meta": {
-        "hash": "08382966ae74825502676c0bcdb77426abbf6202d813f5dfd6679d864fc1292e"
+        "hash": "357daaf44bab240518a3c9bdd34a1e8702fab3358171e30f633b7a7f423b9884"
       }
     },
     {
@@ -1133,7 +1041,7 @@
         "text": "If the text is longer than one line, it will be truncated for `n` lines and end with an gradient fade.\n\n",
         "explanation": "\n\n1. `overflow: hidden` prevents the text from overflowing its dimensions (for a block, 100% width and auto height).\n2. `width: 400px` ensures the element has a dimension.\n3. `height: 109.2px` calculated value for height, it equals `font-size * line-height * numberOfLines` (in this case `26 * 1.4 * 3 = 109.2`)\n4. `height: 36.4px` calculated value for gradient container, it equals `font-size * line-height` (in this case `26 * 1.4 = 36.4`)\n5. `background: linear-gradient(to right, rgba(0, 0, 0, 0), #f5f6f9 50%)` gradient from `transparent` to `#f5f6f9`\n\n",
         "browserSupport": {
-          "text": "\n\n- https://caniuse.com/#feat=css-gradients\n\n\n\n",
+          "text": "\n\n- https://caniuse.com/#feat=css-gradients\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -1142,12 +1050,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"truncate-text-multiline\"] .truncate-text-multiline {\n  overflow: hidden;\n  display: block;\n  height: 109.2px;\n  margin: 0 auto;\n  font-size: 26px;\n  line-height: 1.4;\n  width: 400px;\n  position: relative; }\n\n[data-scope=\"truncate-text-multiline\"] .truncate-text-multiline:after {\n  content: '';\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  width: 150px;\n  height: 36.4px;\n  background: linear-gradient(to right, rgba(0, 0, 0, 0), #f5f6f9 50%); }\n"
         },
-        "tags": [
-          "layout"
-        ]
+        "tags": ["layout"]
       },
       "meta": {
-        "hash": "ab94193bfb305844badfe15bda3594e75c40ac9660c11c06efd750119a916f8e"
+        "hash": "a30287149e833b454deea446359d51554640ad3a57cd2460d8519c376077b8b4"
       }
     },
     {
@@ -1159,7 +1065,7 @@
         "text": "If the text is longer than one line, it will be truncated and end with an ellipsis `…`.\n\n",
         "explanation": "\n\n1. `overflow: hidden` prevents the text from overflowing its dimensions (for a block, 100% width and auto height).\n2. `white-space: nowrap` prevents the text from exceeding one line in height.\n3. `text-overflow: ellipsis` makes it so that if the text exceeds its dimensions, it will end with an ellipsis.\n4. `width: 200px;` ensures the element has a dimension, to know when to get ellipsis\n\n",
         "browserSupport": {
-          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Only works for single line elements.</span>\n\n- https://caniuse.com/#feat=text-overflow\n\n\n\n",
+          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Only works for single line elements.</span>\n\n- https://caniuse.com/#feat=text-overflow\n",
           "supportPercentage": 100
         },
         "codeBlocks": {
@@ -1168,12 +1074,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"truncate-text\"] .truncate-text {\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  width: 200px; }\n"
         },
-        "tags": [
-          "layout"
-        ]
+        "tags": ["layout"]
       },
       "meta": {
-        "hash": "0fbe2c0df9663735aed522286556ac0383756ab0a1a5f673bb81dcb42f89d4d1"
+        "hash": "4ce872446c7950c9450e56ab2251c7cfcd473a1c9b2a64baa7c9d6b029264796"
       }
     },
     {
@@ -1194,9 +1098,7 @@
           "js": "",
           "scopedCss": "[data-scope=\"zebra-striped-list\"] li:nth-child(odd) {\n  background-color: #ddd; }\n"
         },
-        "tags": [
-          "visual"
-        ]
+        "tags": ["visual"]
       },
       "meta": {
         "hash": "43bc0cd7776468f3b74791017349ef278921c8ded7ba0bd7788d2b01bdb68c7a"

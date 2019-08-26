@@ -44,6 +44,3 @@ Vertically and horizontally centers a child element within its parent element us
 #### Browser support
 
 - https://caniuse.com/#search=display%3A%20table
-
-
-

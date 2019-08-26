@@ -26,6 +26,3 @@ Creates a triangle shape with pure CSS.
 - Experiment with the `px` values to change the proportion of the triangle.
 
 #### Browser support
-
-
-

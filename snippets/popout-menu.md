@@ -42,6 +42,3 @@ Reveals an interactive popout menu on hover and focus.
 7. `.reference:focus-within > .popout-menu` ensures that the popout is shown when the focus is _within_ the reference.
 
 #### Browser support
-
-
-
