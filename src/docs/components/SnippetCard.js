@@ -1,14 +1,14 @@
 import React from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import config from '../../../config';
+import { Link } from 'gatsby';
 
 import { getTextualContent, getCodeBlocks, optimizeAllNodes } from '../util';
 // import ClipboardIcon from './SVGs/ClipboardIcon';
 // import ShareIcon from './SVGs/ShareIcon';
-import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import CollapseOpenIcon from './SVGs/CollapseOpenIcon';
 import CollapseClosedIcon from './SVGs/CollapseClosedIcon';
-import ReactCSSTransitionReplace from 'react-css-transition-replace';
+// import ReactCSSTransitionReplace from 'react-css-transition-replace';
 
 // ===================================================
 // Snippet Card HOC - check components below for more
@@ -96,18 +96,18 @@ const FullCard = ({ snippetData, difficulty, isDarkMode }) => {
         >
           {examplesOpen ? <CollapseOpenIcon /> : <CollapseClosedIcon />}Examples
         </button>
-        <ReactCSSTransitionReplace
+        {/* <ReactCSSTransitionReplace
           transitionName='roll-up'
           transitionEnterTimeout={300}
           transitionLeaveTimeout={300}
-        >
+        > */}
           {examplesOpen && (
             <pre
               className='section card-examples language-js'
               dangerouslySetInnerHTML={{ __html: cardExamplesHtml }}
             />
           )}
-        </ReactCSSTransitionReplace>
+        {/* </ReactCSSTransitionReplace> */}
       </div>
     </div>
   );
@@ -118,27 +118,18 @@ const FullCard = ({ snippetData, difficulty, isDarkMode }) => {
 // ===================================================
 const ShortCard = ({ 
   snippetData, 
-  withCode = false, 
   archived = false,
   difficulty, 
-  isDarkMode 
 }) => {
-  let cardCodeHtml;
-  if(withCode)
-    cardCodeHtml = `${optimizeAllNodes(
-      getCodeBlocks(snippetData.html).code,
-    )}`;
   return (
     <div className='card short'>
       <CardCorner difficulty={difficulty} />
       <h4 className='card-title'>
-        <AniLink
-          paintDrip
+        <Link
           to={archived ? `/archive/${snippetData.id}` : `/snippet/${snippetData.id}`}
-          hex={isDarkMode ? '#434E76' : '#FFFFFF'}
         >
           {snippetData.title}
-        </AniLink>
+        </Link>
       </h4>
       <div
         className='card-description'
@@ -146,32 +137,6 @@ const ShortCard = ({
           __html: `${getTextualContent(snippetData.html, true)}`,
         }}
       />
-      { withCode ? <div className='card-bottom'>
-        <CopyToClipboard
-          text={snippetData.code}
-          onCopy={() => {
-            let tst = document.createElement('div');
-            tst.classList = 'toast';
-            tst.innerHTML = 'Snippet copied to clipboard!';
-            document.body.appendChild(tst);
-            setTimeout(function() {
-              tst.style.opacity = 0;
-              setTimeout(function() {
-                document.body.removeChild(tst);
-              }, 300);
-            }, 1700);
-          }}
-        >
-          <button
-            className='button button-a button-copy'
-            aria-label='Copy to clipboard'
-          />
-        </CopyToClipboard>
-        <pre
-          className={`card-code language-${config.language}`}
-          dangerouslySetInnerHTML={{ __html: cardCodeHtml }}
-        />
-      </div> : ''}
     </div>
   );
 };

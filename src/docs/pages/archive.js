@@ -5,9 +5,7 @@ import { pushNewPage } from '../state/app';
 
 import Meta from '../components/Meta';
 import Shell from '../components/Shell';
-import SnippetCard from '../components/SnippetCard';
-
-import { getRawCodeBlocks as getCodeBlocks } from '../util';
+import SnippetCard from '../components/SnippetCard'
 
 // ===================================================
 // Individual snippet category/tag page
@@ -35,7 +33,6 @@ const ArchivePage = props => {
               snippetData={{
                 title: node.frontmatter.title,
                 html: node.html,
-                code: getCodeBlocks(node.rawMarkdownBody).code,
                 tags: node.frontmatter.tags.split(',').map(v => v.trim()),
                 id: node.fields.slug.slice(1),
               }}

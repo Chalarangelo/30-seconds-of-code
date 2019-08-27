@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import AniLink from 'gatsby-plugin-transition-link/AniLink';
+import { Link } from 'gatsby';
 
 import Shell from '../components/Shell';
 import Meta from '../components/Meta';
@@ -21,10 +21,8 @@ const NotFoundPage = ({ isDarkMode }) => (
         <p className='empty-page-subtext'>
           Seems like you have reached a page that does not exist.
         </p>
-        <AniLink
-          paintDrip
+        <Link
           to='/'
-          hex={isDarkMode ? '#434E76' : '#FFFFFF'}
           className='button button-a button-home'
         >
           <svg
@@ -43,7 +41,7 @@ const NotFoundPage = ({ isDarkMode }) => (
             <polyline points='9 22 9 12 15 12 15 22'></polyline>
           </svg>
           &nbsp;&nbsp;Go home
-        </AniLink>
+        </Link>
       </div>
     </Shell>
   </>
