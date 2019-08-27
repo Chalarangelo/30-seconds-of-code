@@ -9,7 +9,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

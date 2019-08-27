@@ -2,6 +2,8 @@
 // Cards
 // ===================================================
 .card {
+  backface-visibility: hidden;
+  will-change: transform;
   position: relative;
   transition: all 0.3s ease;
   margin: 1rem 1.25rem;
@@ -203,8 +205,13 @@
   }
 }
 
-
-// Animation for card example
-.roll-up-height {
-  transition: height 0.3s ease-in-out;
+.clickable-card-wrapper {
+  &:link, &:visited {
+    &:hover, &:focus {
+      text-decoration: none;
+      .card {
+        transform: scale(1.025);
+      }
+    }
+  }
 }
