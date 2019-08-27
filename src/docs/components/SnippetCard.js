@@ -118,6 +118,7 @@ const ShortCard = ({
   return (
     <Link
       className='clickable-card-wrapper'
+      rel='canonical'
       to={archived ? `/archive/${snippetData.id}` : `/snippet/${snippetData.id}`}
     >
     <div className='card short'>
