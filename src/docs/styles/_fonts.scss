@@ -28,7 +28,7 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: local('Noto Sans Light'), local('NotoSans-Light'), url(../../../assets/NotoSans-Light.ttf) format('truetype');
+  src: local('Noto Sans Light'), local('NotoSans-Light'), url(../../../assets/NotoSans-Light.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
@@ -36,7 +36,7 @@
   font-style: italic;
   font-weight: 300;
   font-display: swap;
-  src: local('Noto Sans LightItalic'), local('NotoSans-LightItalic'), url(../../../assets/NotoSans-LightItalic.ttf) format('truetype');
+  src: local('Noto Sans LightItalic'), local('NotoSans-LightItalic'), url(../../../assets/NotoSans-LightItalic.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
@@ -44,7 +44,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local('Noto Sans'), local('NotoSans-Regular'), url(../../../assets/NotoSans-Regular.ttf) format('truetype');
+  src: local('Noto Sans'), local('NotoSans-Regular'), url(../../../assets/NotoSans-Regular.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
@@ -52,7 +52,7 @@
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: local('Noto Sans Italic'), local('NotoSans-Italic'), url(../../../assets/NotoSans-Italic.ttf) format('truetype');
+  src: local('Noto Sans Italic'), local('NotoSans-Italic'), url(../../../assets/NotoSans-Italic.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
@@ -60,7 +60,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: local('Noto Sans Medium'), local('NotoSans-Medium'), url(../../../assets/NotoSans-Medium.ttf) format('truetype');
+  src: local('Noto Sans Medium'), local('NotoSans-Medium'), url(../../../assets/NotoSans-Medium.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
@@ -68,7 +68,7 @@
   font-style: italic;
   font-weight: 500;
   font-display: swap;
-  src: local('Noto Sans Medium Italic'), local('NotoSans-MediumItalic'), url(../../../assets/NotoSans-MediumItalic.ttf) format('truetype');
+  src: local('Noto Sans Medium Italic'), local('NotoSans-MediumItalic'), url(../../../assets/NotoSans-MediumItalic.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
@@ -76,7 +76,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: local('Noto Sans SemiBold'), local('NotoSans-SemiBold'), url(../../../assets/NotoSans-SemiBold.ttf) format('truetype');
+  src: local('Noto Sans SemiBold'), local('NotoSans-SemiBold'), url(../../../assets/NotoSans-SemiBold.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
@@ -84,6 +84,6 @@
   font-style: italic;
   font-weight: 600;
   font-display: swap;
-  src: local('Noto Sans SemiBold Italic'), local('NotoSans-SemiBoldItalic'), url(../../../assets/NotoSans-SemiBoldItalic.ttf) format('truetype');
+  src: local('Noto Sans SemiBold Italic'), local('NotoSans-SemiBoldItalic'), url(../../../assets/NotoSans-SemiBoldItalic.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
