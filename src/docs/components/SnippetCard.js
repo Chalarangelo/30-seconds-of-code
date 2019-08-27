@@ -96,18 +96,12 @@ const FullCard = ({ snippetData, difficulty, isDarkMode }) => {
         >
           {examplesOpen ? <CollapseOpenIcon /> : <CollapseClosedIcon />}Examples
         </button>
-        {/* <ReactCSSTransitionReplace
-          transitionName='roll-up'
-          transitionEnterTimeout={300}
-          transitionLeaveTimeout={300}
-        > */}
           {examplesOpen && (
             <pre
               className='section card-examples language-js'
               dangerouslySetInnerHTML={{ __html: cardExamplesHtml }}
             />
           )}
-        {/* </ReactCSSTransitionReplace> */}
       </div>
     </div>
   );
@@ -122,14 +116,15 @@ const ShortCard = ({
   difficulty, 
 }) => {
   return (
+    <Link
+      className='clickable-card-wrapper'
+      to={archived ? `/archive/${snippetData.id}` : `/snippet/${snippetData.id}`}
+    >
     <div className='card short'>
       <CardCorner difficulty={difficulty} />
       <h4 className='card-title'>
-        <Link
-          to={archived ? `/archive/${snippetData.id}` : `/snippet/${snippetData.id}`}
-        >
+        
           {snippetData.title}
-        </Link>
       </h4>
       <div
         className='card-description'
@@ -137,7 +132,8 @@ const ShortCard = ({
           __html: `${getTextualContent(snippetData.html, true)}`,
         }}
       />
-    </div>
+      </div>
+    </Link>
   );
 };
 

@@ -65,7 +65,7 @@ const ListPage = props => {
       <Shell withIcon={true} isList>
         <h2 className='page-title'>Snippet List</h2>
         <p className='light-sub'>
-          Click on a snippet’s name to view its code or a tag name to view all
+          Click on a snippet card to view the snippet or a tag name to view all
           snippets in that category.
         </p>
         {tags.sort((a,b) => a.localeCompare(b)).map(tag => (
