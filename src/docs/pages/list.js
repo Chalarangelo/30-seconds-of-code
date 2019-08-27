@@ -1,12 +1,11 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { connect } from 'react-redux';
 import { pushNewPage } from '../state/app';
 import { capitalize } from '../util';
 
 import Shell from '../components/Shell';
 import Meta from '../components/Meta';
-import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import SnippetCard from '../components/SnippetCard';
 
 import { getRawCodeBlocks as getCodeBlocks } from '../util';
@@ -60,14 +59,12 @@ const ListPage = props => {
         {tags.map(tag => (
           <>
             <h3 className='tag-title' key={`tag_title_${tag}`}>
-              <AniLink
+              <Link
                 key={`tag_link_${tag}`}
-                paintDrip
                 to={`/tag/${tag}`}
-                hex={props.isDarkMode ? '#434E76' : '#FFFFFF'}
               >
                 {capitalize(tag)}
-              </AniLink>
+              </Link>
             </h3>
             {snippets
               .filter(snippet => snippet.tags[0] === tag)
@@ -85,13 +82,11 @@ const ListPage = props => {
         {staticPages.map(page => (
           <SimpleCard 
             title={(
-              <AniLink
-                paintDrip
+              <Link
                 to={`/${page.url}`}
-                hex={props.isDarkMode ? '#434E76' : '#FFFFFF'}
               >
                 {page.title}
-              </AniLink>
+              </Link>
             )}
           >
             <p>{page.description}</p>
