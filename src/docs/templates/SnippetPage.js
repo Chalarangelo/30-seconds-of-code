@@ -1,12 +1,11 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { connect } from 'react-redux';
 
 import Meta from '../components/Meta';
 import Shell from '../components/Shell';
 import SnippetCard from '../components/SnippetCard';
 import BackArrowIcon from '../components/SVGs/BackArrowIcon';
-import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
 // ===================================================
 // Individual snippet page template
@@ -21,16 +20,13 @@ const SnippetPage = props => {
     <>
       <Meta title={post.frontmatter.title} description={post.excerpt} />
       <Shell>
-        <AniLink
+        <Link
           className='link-back'
           to={`${props.lastPageUrl}`}
-          cover
-          direction='right'
-          bg={props.isDarkMode ? '#434E76' : '#FFFFFF'}
         >
           <BackArrowIcon />
           &nbsp;&nbsp;Back to {props.lastPageTitle}
-        </AniLink>
+        </Link>
         <SnippetCard
           snippetData={{
             title: postData.title,

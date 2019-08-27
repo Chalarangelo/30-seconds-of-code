@@ -34,7 +34,6 @@ const TagRoute = props => {
               snippetData={{
                 title: node.frontmatter.title,
                 html: node.html,
-                code: getCodeBlocks(node.rawMarkdownBody).code,
                 tags: node.frontmatter.tags.split(',').map(v => v.trim()),
                 id: node.fields.slug.slice(1),
               }}
@@ -68,7 +67,6 @@ export const tagPageQuery = graphql`
         node {
           id
           html
-          rawMarkdownBody
           fields {
             slug
           }

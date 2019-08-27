@@ -7,19 +7,10 @@ const capitalize = (str, lowerRest = false) =>
 
 // Get the textual content in a gatsby page
 const getTextualContent = (str, noExplain = false) => {
-  const regex = /([\s\S]*?)<div class="gatsby-highlight"/g;
-  const results = [];
-  let m = null;
-  while ((m = regex.exec(str)) !== null) {
-    if (m.index === regex.lastIndex) regex.lastIndex += 1;
-
-    m.forEach((match, groupIndex) => {
-      results.push(match);
-    });
-  }
+  const result = str.slice(0, str.indexOf('<div class="gatsby-highlight"'));
   if (noExplain)
-    return results[1].slice(0, results[1].lastIndexOf('<p>'));
-  return results[1];
+    return result.slice(0, result.lastIndexOf('<p>'));
+  return result;
 };
 
 // Gets the code blocks in a gatsby page

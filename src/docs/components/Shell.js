@@ -1,8 +1,6 @@
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery, Link } from 'gatsby';
 import { connect } from 'react-redux';
-import AniLink from 'gatsby-plugin-transition-link/AniLink';
-import ReactCSSTransitionReplace from 'react-css-transition-replace';
 import config from '../../../config';
 
 import { toggleDarkMode } from '../state/app';
@@ -52,67 +50,50 @@ const Shell = ({
       }
     }
   `);
-  let viewportWidth = typeof window !== 'undefined' && window.innerWidth;
 
   return (
     <div className={isDarkMode ? 'page-container dark' : 'page-container'}>
       {/* Menu */}
       <header className='menu'>
-        <AniLink
-          cover
-          direction={viewportWidth < 600 ? 'up' : 'right'}
-          bg={isDarkMode ? '#434E76' : '#FFFFFF'}
+        <Link
           to='/search'
-          aria-label='Search'
+          aria-label='Search'title='Search'
           className={isSearch ? 'menu-button active' : 'menu-button'}
         >
           <SearchIcon />
-        </AniLink>
-        <AniLink
-          cover
-          direction={viewportWidth < 600 ? 'up' : 'right'}
-          bg={isDarkMode ? '#434E76' : '#FFFFFF'}
+        </Link>
+        <Link
           to='/list'
-          aria-label='Snippet list'
+          aria-label='Snippet list' title='Snippet list'
           className={isList ? 'menu-button active' : 'menu-button'}
         >
           <ListIcon />
-        </AniLink>
+        </Link>
         {/* eslint-disable-next-line */}
         <a target='_blank'
           rel='noopener'
           href={config.repositoryUrl}
-          aria-label='View on GitHub'
+          aria-label='View on GitHub' title='View on GitHub'
           className='menu-button'
         >
           <GithubIcon />
         </a>
-        {/* 
-          The use of React.Fragment here will cause a lot of errors to show up in webber:dev.
-          Truth is, this is the only decent way I found to deal with this module's odd behavior.
-          Keep as is, unless you can provide a better solution, in which case please send a PR.
-         */}
-        <ReactCSSTransitionReplace
-          transitionName='cross-fade'
-          transitionEnterTimeout={300}
-          transitionLeaveTimeout={300}
-          component='button'
+        <button 
           aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
-          className='menu-button'
-          childComponent={React.Fragment}
-        >
+          title={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+          className='menu-button'>
           {isDarkMode ? (
             <LightModeIcon
               key='lmit'
               onClick={() => dispatch(toggleDarkMode(!isDarkMode))}
             />
           ) : (
-            <DarkModeIcon
-              key='dmit'
-              onClick={() => dispatch(toggleDarkMode(!isDarkMode))}
-            />
-          )}
-        </ReactCSSTransitionReplace>
+              <DarkModeIcon
+                key='dmit'
+                onClick={() => dispatch(toggleDarkMode(!isDarkMode))}
+              />
+            )}
+        </button>
       </header>
       {/* Content */}
       <div className='content'>

@@ -8,8 +8,6 @@ import Meta from '../components/Meta';
 import Search from '../components/Search';
 import SnippetCard from '../components/SnippetCard';
 
-import { getRawCodeBlocks as getCodeBlocks } from '../util';
-
 // ===================================================
 // Home page (splash and search)
 // ===================================================
@@ -20,13 +18,7 @@ const IndexPage = props => {
       v => v.node.frontmatter.title === snippet.title,
     ).node.html,
     tags: snippet.attributes.tags,
-    text: snippet.attributes.text,
-    id: snippet.id,
-    code: getCodeBlocks(
-      props.data.allMarkdownRemark.edges.find(
-        v => v.node.frontmatter.title === snippet.title,
-      ).node.rawMarkdownBody,
-    ).code,
+    id: snippet.id
   }));
 
   const [searchQuery, setSearchQuery] = React.useState(props.searchQuery);
@@ -129,26 +121,15 @@ export const indexPageQuery = graphql`
         title
         attributes {
           tags
-          text
         }
       }
     }
-    allMarkdownRemark(
-      limit: 1000
-      sort: { fields: [frontmatter___title], order: ASC }
-    ) {
-      totalCount
+    allMarkdownRemark {
       edges {
         node {
-          id
           html
-          rawMarkdownBody
-          fields {
-            slug
-          }
           frontmatter {
             title
-            tags
           }
         }
       }
