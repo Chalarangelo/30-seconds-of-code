@@ -70,7 +70,7 @@ const IndexPage = props => {
         ) : (
           <>
             <p className='light-sub'>
-              Click on a snippet's name to view its code.
+              Click on a snippet card to view the snippet.
             </p>
             <h2 className='page-sub-title'>Search results</h2>
             {searchResults.map(snippet => (

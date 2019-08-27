@@ -49,7 +49,7 @@ const SearchPage = props => {
           setSearchQuery={setSearchQuery}
           defaultValue={props.searchQuery}
         />
-        <p className='light-sub'>Click on a snippet's name to view its code.</p>
+        <p className='light-sub'>Click on a snippet card to view the snippet.</p>
         {/* Display page background or results depending on state */}
         {searchQuery.length === 0 ? (
           <>

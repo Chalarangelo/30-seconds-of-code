@@ -25,7 +25,7 @@ const TagRoute = props => {
       <Meta title={capitalize(tag)} />
       <Shell>
         <h2 className='page-title'>{capitalize(tag)}</h2>
-        <p className='light-sub'>Click on a snippet's name to view its code.</p>
+        <p className='light-sub'>Click on a snippet card to view the snippet.</p>
         {posts &&
           posts.map(({ node }) => (
             <SnippetCard

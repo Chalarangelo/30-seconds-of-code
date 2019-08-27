@@ -23,7 +23,7 @@ const ArchivePage = props => {
       <Shell>
         <h2 className='page-title'>Archived snippets</h2>
         <p className='page-sub-title'>These snippets, while useful and interesting, didn't quite make it into the repository due to either having very specific use-cases or being outdated. However we felt like they might still be useful to some readers, so here they are.</p>
-        <p className='light-sub'>Click on a snippet's name to view its code.</p>
+        <p className='light-sub'>Click on a snippet card to view the snippet.</p>
         {posts &&
           posts.map(({ node }) => (
             <SnippetCard
