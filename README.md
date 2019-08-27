@@ -16,7 +16,7 @@
 
 #### Related projects
 
-* [30 Seconds of CSS](https://30-seconds.github.io/30-seconds-of-css/)
+* [30 Seconds of CSS](https://css.30secondsofcode.org/)
 * [30 Seconds of Interviews](https://30secondsofinterviews.org/)
 * [30 Seconds of React](https://github.com/30-seconds/30-seconds-of-react)
 * [30 Seconds of Python](https://github.com/30-seconds/30-seconds-of-python-code)
