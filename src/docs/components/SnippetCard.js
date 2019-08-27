@@ -1,13 +1,11 @@
 import React from 'react';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { Link } from 'gatsby';
 import config from '../../../config';
 
 import { getTextualContent, getCodeBlocks, optimizeAllNodes, getExplanation, getBrowserSupport } from '../util';
 // import ShareIcon from './SVGs/ShareIcon';
-import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import CollapseOpenIcon from './SVGs/CollapseOpenIcon';
 import CollapseClosedIcon from './SVGs/CollapseClosedIcon';
-import ReactCSSTransitionReplace from 'react-css-transition-replace';
 
 // ===================================================
 // Snippet Card HOC - check components below for more
@@ -131,38 +129,34 @@ const ShortCard = ({
   isDarkMode
 }) => {
   return (
-    <div className='card short'>
-      <h4 className='card-title'>
-        <AniLink
-          paintDrip
-          to={`/snippet/${snippetData.id}`}
-          hex={isDarkMode ? '#434E76' : '#FFFFFF'}
-        >
+    <Link to={`/snippet/${snippetData.id}`} className='clickable-card-wrapper' rel='canonical'>
+      <div className='card short'>
+        <h4 className='card-title'>
           {snippetData.title}
-        </AniLink>
-      </h4>
-      <div
-        className='card-description'
-        dangerouslySetInnerHTML={{
-          __html: `${getTextualContent(snippetData.html)}`,
-        }}
-      />
-      <div className='card-bottom'>
-        <h5 className='card-section-demo-title'>Demo</h5>
-        <div className='card-snippet-demo' data-scope={snippetData.id.replace(/\//g,'')}>
-          <style>
-            {snippetData.code.scopedCss}
-          </style>
-          <div dangerouslySetInnerHTML={{ __html: snippetData.code.html }} />
-          {
-            snippetData.code.js &&
-            <script>
-              {`function()(${snippetData.code.js})();`}
-            </script>
-          }
+        </h4>
+        <div
+          className='card-description'
+          dangerouslySetInnerHTML={{
+            __html: `${getTextualContent(snippetData.html)}`,
+          }}
+        />
+        <div className='card-bottom'>
+          <h5 className='card-section-demo-title'>Demo</h5>
+          <div className='card-snippet-demo' data-scope={snippetData.id.replace(/\//g,'')}>
+            <style>
+              {snippetData.code.scopedCss}
+            </style>
+            <div dangerouslySetInnerHTML={{ __html: snippetData.code.html }} />
+            {
+              snippetData.code.js &&
+              <script>
+                {`function()(${snippetData.code.js})();`}
+              </script>
+            }
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
