@@ -18,7 +18,9 @@
           "js": "",
           "scopedCss": "@keyframes bouncing-loader {\n  to {\n    opacity: 0.1;\n    transform: translate3d(0, -1rem, 0); } }\n\n[data-scope=\"bouncing-loader\"] .bouncing-loader {\n  display: flex;\n  justify-content: center; }\n\n[data-scope=\"bouncing-loader\"] .bouncing-loader > div {\n  width: 1rem;\n  height: 1rem;\n  margin: 3rem 0.2rem;\n  background: #8385aa;\n  border-radius: 50%;\n  animation: bouncing-loader 0.6s infinite alternate; }\n\n[data-scope=\"bouncing-loader\"] .bouncing-loader > div:nth-child(2) {\n  animation-delay: 0.2s; }\n\n[data-scope=\"bouncing-loader\"] .bouncing-loader > div:nth-child(3) {\n  animation-delay: 0.4s; }\n"
         },
-        "tags": ["animation"]
+        "tags": [
+          "animation"
+        ]
       },
       "meta": {
         "hash": "2934b3aa733591f4964a7c8780f3ec7b273e4bd6a38fce6e0da2a5dd2dd9959f"
@@ -42,7 +44,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"box-sizing-reset\"] html {\n  box-sizing: border-box; }\n\n[data-scope=\"box-sizing-reset\"] *,\n[data-scope=\"box-sizing-reset\"] *::before,\n[data-scope=\"box-sizing-reset\"] *::after {\n  box-sizing: inherit; }\n\n[data-scope=\"box-sizing-reset\"] .box {\n  display: inline-block;\n  width: 150px;\n  height: 150px;\n  padding: 10px;\n  background: tomato;\n  color: white;\n  border: 10px solid red; }\n\n[data-scope=\"box-sizing-reset\"] .content-box {\n  box-sizing: content-box; }\n"
         },
-        "tags": ["layout"]
+        "tags": [
+          "layout"
+        ]
       },
       "meta": {
         "hash": "d4e635bb76a083266e08723f25c3db981b39001ea5d513ce65570fe0099eb6b0"
@@ -66,7 +70,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"button-border-animation\"] .button {\n  background-color: #c47135;\n  border: none;\n  color: #ffffff;\n  outline: none;\n  padding: 12px 40px 10px;\n  position: relative; }\n\n[data-scope=\"button-border-animation\"] .button:before,\n[data-scope=\"button-border-animation\"] .button:after {\n  border: 0 solid transparent;\n  transition: all 0.25s;\n  content: '';\n  height: 24px;\n  position: absolute;\n  width: 24px; }\n\n[data-scope=\"button-border-animation\"] .button:before {\n  border-top: 2px solid #c47135;\n  left: 0px;\n  top: -5px; }\n\n[data-scope=\"button-border-animation\"] .button:after {\n  border-bottom: 2px solid #c47135;\n  bottom: -5px;\n  right: 0px; }\n\n[data-scope=\"button-border-animation\"] .button:hover {\n  background-color: #c47135; }\n\n[data-scope=\"button-border-animation\"] .button:hover:before,\n[data-scope=\"button-border-animation\"] .button:hover:after {\n  height: 100%;\n  width: 100%; }\n"
         },
-        "tags": ["animation"]
+        "tags": [
+          "animation"
+        ]
       },
       "meta": {
         "hash": "ff6401cc784b92a9672e74968719c029de224c29fcfdc3eaeaa764274108f648"
@@ -90,7 +96,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"calc\"] .box-example {\n  height: 280px;\n  background: #222 url(\"https://image.ibb.co/fUL9nS/wolf.png\") no-repeat;\n  background-position: calc(100% - 20px) calc(100% - 20px); }\n"
         },
-        "tags": ["other"]
+        "tags": [
+          "other"
+        ]
       },
       "meta": {
         "hash": "8165e64d1bca7ae3bb0c990712023720dff55c2f6194b557a131901d528be4b7"
@@ -114,7 +122,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"circle\"] .circle {\n  border-radius: 50%;\n  width: 2rem;\n  height: 2rem;\n  background: #333; }\n"
         },
-        "tags": ["visual"]
+        "tags": [
+          "visual"
+        ]
       },
       "meta": {
         "hash": "60ac5a7cb7e2c24c936b267ac74d649052c9aaa80810278720b5b5a14fee1562"
@@ -138,7 +148,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"clearfix\"] .clearfix::after {\n  content: '';\n  display: block;\n  clear: both; }\n\n[data-scope=\"clearfix\"] .floated {\n  float: left; }\n"
         },
-        "tags": ["layout"]
+        "tags": [
+          "layout"
+        ]
       },
       "meta": {
         "hash": "55fe4fad743f778816b5923c862484cfa84efd353a4d2a3efe04893db6f5863f"
@@ -162,7 +174,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"constant-width-to-height-ratio\"] .constant-width-to-height-ratio {\n  background: #333;\n  width: 50%; }\n\n[data-scope=\"constant-width-to-height-ratio\"] .constant-width-to-height-ratio::before {\n  content: '';\n  padding-top: 100%;\n  float: left; }\n\n[data-scope=\"constant-width-to-height-ratio\"] .constant-width-to-height-ratio::after {\n  content: '';\n  display: block;\n  clear: both; }\n"
         },
-        "tags": ["layout"]
+        "tags": [
+          "layout"
+        ]
       },
       "meta": {
         "hash": "931815035291ba0e6de497d7296fc75e207117c9ff0607fd646f01da53793929"
@@ -186,7 +200,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"counter\"] ul {\n  counter-reset: counter; }\n\n[data-scope=\"counter\"] li::before {\n  counter-increment: counter;\n  content: counters(counter, \".\") \" \"; }\n"
         },
-        "tags": ["visual", "other"]
+        "tags": [
+          "visual",
+          "other"
+        ]
       },
       "meta": {
         "hash": "7c572c339c0767840bd0fd6f5daab357a8da070988c621e341bc5ce78d0f798e"
@@ -210,7 +227,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"custom-scrollbar\"] {\n  /* To style the document scrollbar, remove `.custom-scrollbar` */ }\n  [data-scope=\"custom-scrollbar\"] .custom-scrollbar {\n    height: 70px;\n    overflow-y: scroll; }\n  [data-scope=\"custom-scrollbar\"] .custom-scrollbar::-webkit-scrollbar {\n    width: 8px; }\n  [data-scope=\"custom-scrollbar\"] .custom-scrollbar::-webkit-scrollbar-track {\n    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n    border-radius: 10px; }\n  [data-scope=\"custom-scrollbar\"] .custom-scrollbar::-webkit-scrollbar-thumb {\n    border-radius: 10px;\n    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5); }\n"
         },
-        "tags": ["visual"]
+        "tags": [
+          "visual"
+        ]
       },
       "meta": {
         "hash": "e5544c894ee3cd4ce3352d10331e2f321c6d30b4a0a667434286c6d4951c3b0a"
@@ -234,7 +253,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"custom-text-selection\"] ::selection {\n  background: aquamarine;\n  color: black; }\n\n[data-scope=\"custom-text-selection\"] .custom-text-selection::selection {\n  background: deeppink;\n  color: white; }\n"
         },
-        "tags": ["visual"]
+        "tags": [
+          "visual"
+        ]
       },
       "meta": {
         "hash": "bf835c2f1d038e6b08d221c9fef85933757a80c67de555797c6bc63ff7035ae8"
@@ -258,7 +279,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"custom-variables\"] :root {\n  /* Place variables within here to use the variables globally. */ }\n\n[data-scope=\"custom-variables\"] .custom-variables {\n  --some-color: #da7800;\n  --some-keyword: italic;\n  --some-size: 1.25em;\n  --some-complex-value: 1px 1px 2px whitesmoke, 0 0 1em slategray, 0 0 0.2em slategray;\n  color: var(--some-color);\n  font-size: var(--some-size);\n  font-style: var(--some-keyword);\n  text-shadow: var(--some-complex-value); }\n"
         },
-        "tags": ["other"]
+        "tags": [
+          "other"
+        ]
       },
       "meta": {
         "hash": "7a0d1c46beceb336265b2ca27a4f3cf25ad332a5cd2e8c0b692a43ce5b329fef"
@@ -282,7 +305,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"disable-selection\"] .unselectable {\n  user-select: none; }\n"
         },
-        "tags": ["interactivity"]
+        "tags": [
+          "interactivity"
+        ]
       },
       "meta": {
         "hash": "02f6472568975f5897a84f8846d97f8561fc5334ddafac53e73adb52ccda5f29"
@@ -306,7 +331,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"display-table-centering\"] .container {\n  border: 1px solid #333;\n  height: 250px;\n  width: 250px; }\n\n[data-scope=\"display-table-centering\"] .center {\n  display: table;\n  height: 100%;\n  width: 100%; }\n\n[data-scope=\"display-table-centering\"] .center > span {\n  display: table-cell;\n  text-align: center;\n  vertical-align: middle; }\n"
         },
-        "tags": ["layout"]
+        "tags": [
+          "layout"
+        ]
       },
       "meta": {
         "hash": "83c7806b0be2e50ca34f313912f9cb90682852790e6d0105a635f781212fa5b1"
@@ -330,7 +357,9 @@
           "js": "",
           "scopedCss": "@keyframes donut-spin {\n  0% {\n    transform: rotate(0deg); }\n  100% {\n    transform: rotate(360deg); } }\n\n[data-scope=\"donut-spinner\"] .donut {\n  display: inline-block;\n  border: 4px solid rgba(0, 0, 0, 0.1);\n  border-left-color: #7983ff;\n  border-radius: 50%;\n  width: 30px;\n  height: 30px;\n  animation: donut-spin 1.2s linear infinite; }\n"
         },
-        "tags": ["animation"]
+        "tags": [
+          "animation"
+        ]
       },
       "meta": {
         "hash": "4e7f5ce479955deb9830ca4a72fc8260c8863aa65d6f67f15e88a3f923c10c3a"
@@ -354,7 +383,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"dynamic-shadow\"] .dynamic-shadow {\n  position: relative;\n  width: 10rem;\n  height: 10rem;\n  background: linear-gradient(75deg, #6d78ff, #00ffb8);\n  z-index: 1; }\n\n[data-scope=\"dynamic-shadow\"] .dynamic-shadow::after {\n  content: '';\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  background: inherit;\n  top: 0.5rem;\n  filter: blur(0.4rem);\n  opacity: 0.7;\n  z-index: -1; }\n"
         },
-        "tags": ["visual"]
+        "tags": [
+          "visual"
+        ]
       },
       "meta": {
         "hash": "738fae9ee6d0a9fe84cdbdd632a93f651f8377ec7e9f647e1031207d99b819a5"
@@ -378,7 +409,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"easing-variables\"] :root {\n  /* Place variables in here to use globally */ }\n\n[data-scope=\"easing-variables\"] .easing-variables {\n  --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);\n  --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n  --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);\n  --ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);\n  --ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);\n  --ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);\n  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);\n  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);\n  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);\n  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);\n  --ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);\n  --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);\n  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);\n  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);\n  --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);\n  --ease-in-out-expo: cubic-bezier(1, 0, 0, 1);\n  --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);\n  display: inline-block;\n  width: 75px;\n  height: 75px;\n  padding: 10px;\n  color: white;\n  line-height: 50px;\n  text-align: center;\n  background: #333;\n  transition: transform 1s var(--ease-out-quart); }\n\n[data-scope=\"easing-variables\"] .easing-variables:hover {\n  transform: rotate(45deg); }\n"
         },
-        "tags": ["animation"]
+        "tags": [
+          "animation"
+        ]
       },
       "meta": {
         "hash": "94ec3c4e6b02374b61367e8cf4edcb9532bb7297673a28acaee0ad3264adfa3d"
@@ -402,7 +435,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"etched-text\"] .etched-text {\n  text-shadow: 0 2px white;\n  font-size: 1.5rem;\n  font-weight: bold;\n  color: #b8bec5; }\n"
         },
-        "tags": ["visual"]
+        "tags": [
+          "visual"
+        ]
       },
       "meta": {
         "hash": "68da5c2e7399979db3aeb1022d13b0490fc71d55d068597544954706c7027bef"
@@ -426,7 +461,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"evenly-distributed-children\"] .evenly-distributed-children {\n  display: flex;\n  justify-content: space-between; }\n"
         },
-        "tags": ["layout"]
+        "tags": [
+          "layout"
+        ]
       },
       "meta": {
         "hash": "86c8c53be49e82365f6d6f54a03b55d9a8888ccc85504fe0480499b0e68c7f5b"
@@ -450,7 +487,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"fit-image-in-container\"] .image {\n  background: #34495e;\n  border: 1px solid #34495e;\n  width: 200px;\n  height: 200px; }\n\n[data-scope=\"fit-image-in-container\"] .image-contain {\n  object-fit: contain;\n  object-position: center; }\n\n[data-scope=\"fit-image-in-container\"] .image-cover {\n  object-fit: cover;\n  object-position: right top; }\n"
         },
-        "tags": ["layout", "visual"]
+        "tags": [
+          "layout",
+          "visual"
+        ]
       },
       "meta": {
         "hash": "5d09d5e54b7436f047db61223cff15dce2f17f6cffe5e71e0f9061337de3068e"
@@ -474,7 +514,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"flexbox-centering\"] .flexbox-centering {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100px; }\n"
         },
-        "tags": ["layout"]
+        "tags": [
+          "layout"
+        ]
       },
       "meta": {
         "hash": "a2bf8cfa4de368cfb10d013b6bbb87c598e0cccacfe816972da4ac668c6abc1a"
@@ -498,7 +540,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"focus-within\"] form {\n  border: 3px solid #2d98da;\n  color: #000000;\n  padding: 4px; }\n\n[data-scope=\"focus-within\"] form:focus-within {\n  background: #f7b731;\n  color: #000000; }\n"
         },
-        "tags": ["visual", "interactivity"]
+        "tags": [
+          "visual",
+          "interactivity"
+        ]
       },
       "meta": {
         "hash": "a12b394af0b2df2f7fa6bae2cbbe3a8b01ba74510991dcfe3952b8bd9c0a5a41"
@@ -522,7 +567,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"fullscreen\"] .container {\n  margin: 40px auto;\n  max-width: 700px; }\n\n[data-scope=\"fullscreen\"] .element {\n  padding: 20px;\n  height: 300px;\n  width: 100%;\n  background-color: skyblue; }\n\n[data-scope=\"fullscreen\"] .element p {\n  text-align: center;\n  color: white;\n  font-size: 3em; }\n\n[data-scope=\"fullscreen\"] .element:-ms-fullscreen p {\n  visibility: visible; }\n\n[data-scope=\"fullscreen\"] .element:fullscreen {\n  background-color: #e4708a;\n  width: 100vw;\n  height: 100vh; }\n"
         },
-        "tags": ["visual"]
+        "tags": [
+          "visual"
+        ]
       },
       "meta": {
         "hash": "22a95161ff6679ca89c4962ef6fdef0cd31e6ac090a9d6077da9834b0dbd39d1"
@@ -546,7 +593,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"ghost-trick\"] .ghosting {\n  height: 300px;\n  background: #0ff; }\n\n[data-scope=\"ghost-trick\"] .ghosting:before {\n  content: '';\n  display: inline-block;\n  height: 100%;\n  vertical-align: middle; }\n\n[data-scope=\"ghost-trick\"] p {\n  display: inline-block;\n  vertical-align: middle; }\n"
         },
-        "tags": ["layout"]
+        "tags": [
+          "layout"
+        ]
       },
       "meta": {
         "hash": "0515f03b1505eafa21e0d0d7377facbe4aaa9159996906dd4ed2857ee137073a"
@@ -570,7 +619,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"gradient-text\"] .gradient-text {\n  background: -webkit-linear-gradient(pink, red);\n  -webkit-text-fill-color: transparent;\n  -webkit-background-clip: text; }\n"
         },
-        "tags": ["visual"]
+        "tags": [
+          "visual"
+        ]
       },
       "meta": {
         "hash": "9620da48fb82b48a7c6b681854707b622a18c158f2db88c816e3b9c0d9b04523"
@@ -594,7 +645,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"grid-centering\"] .grid-centering {\n  display: grid;\n  justify-content: center;\n  align-items: center;\n  height: 100px; }\n"
         },
-        "tags": ["layout"]
+        "tags": [
+          "layout"
+        ]
       },
       "meta": {
         "hash": "f6fbb076581e63ab9187ca63d8620f88de19d7a78c46f9ded903271461a445bf"
@@ -618,7 +671,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"hairline-border\"] .hairline-border {\n  box-shadow: 0 0 0 1px; }\n\n@media (min-resolution: 2dppx) {\n  [data-scope=\"hairline-border\"] .hairline-border {\n    box-shadow: 0 0 0 0.5px; } }\n\n@media (min-resolution: 3dppx) {\n  [data-scope=\"hairline-border\"] .hairline-border {\n    box-shadow: 0 0 0 0.33333333px; } }\n\n@media (min-resolution: 4dppx) {\n  [data-scope=\"hairline-border\"] .hairline-border {\n    box-shadow: 0 0 0 0.25px; } }\n"
         },
-        "tags": ["visual"]
+        "tags": [
+          "visual"
+        ]
       },
       "meta": {
         "hash": "cd26d0cd1831474afdc784b4459b60062243e2d390975e94cd7d51fa776c603f"
@@ -642,7 +697,9 @@
           "js": "var el = document.querySelector('.el')\nvar height = el.scrollHeight\nel.style.setProperty('--max-height', height + 'px')",
           "scopedCss": "[data-scope=\"height-transition\"] .el {\n  transition: max-height 0.5s;\n  overflow: hidden;\n  max-height: 0; }\n\n[data-scope=\"height-transition\"] .trigger:hover > .el {\n  max-height: var(--max-height); }\n"
         },
-        "tags": ["animation"]
+        "tags": [
+          "animation"
+        ]
       },
       "meta": {
         "hash": "bff0b57d24dac06ae6a6d71a8d0d628ec0b97760be0cfda66791191957075d73"
@@ -666,7 +723,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"hover-shadow-box-animation\"] .hover-shadow-box-animation {\n  display: inline-block;\n  vertical-align: middle;\n  transform: perspective(1px) translateZ(0);\n  box-shadow: 0 0 1px transparent;\n  margin: 10px;\n  transition-duration: 0.3s;\n  transition-property: box-shadow, transform; }\n\n[data-scope=\"hover-shadow-box-animation\"] .hover-shadow-box-animation:hover,\n[data-scope=\"hover-shadow-box-animation\"] .hover-shadow-box-animation:focus,\n[data-scope=\"hover-shadow-box-animation\"] .hover-shadow-box-animation:active {\n  box-shadow: 1px 10px 10px -10px rgba(0, 0, 24, 0.5);\n  transform: scale(1.2); }\n"
         },
-        "tags": ["animation"]
+        "tags": [
+          "animation"
+        ]
       },
       "meta": {
         "hash": "4136aff34ae1b8bf6b525c08881a12c43e9ce7265e864c09ea25fa40e8d86396"
@@ -690,7 +749,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"hover-underline-animation\"] .hover-underline-animation {\n  display: inline-block;\n  position: relative;\n  color: #0087ca; }\n\n[data-scope=\"hover-underline-animation\"] .hover-underline-animation::after {\n  content: '';\n  position: absolute;\n  width: 100%;\n  transform: scaleX(0);\n  height: 2px;\n  bottom: 0;\n  left: 0;\n  background-color: #0087ca;\n  transform-origin: bottom right;\n  transition: transform 0.25s ease-out; }\n\n[data-scope=\"hover-underline-animation\"] .hover-underline-animation:hover::after {\n  transform: scaleX(1);\n  transform-origin: bottom left; }\n"
         },
-        "tags": ["animation"]
+        "tags": [
+          "animation"
+        ]
       },
       "meta": {
         "hash": "6e8a53b0b69ab05f54c199f42944746c0e3331712f69a8dc72709eda16428424"
@@ -714,7 +775,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"last-item-with-remaining-available-height\"] html,\n[data-scope=\"last-item-with-remaining-available-height\"] body {\n  height: 100%;\n  margin: 0; }\n\n[data-scope=\"last-item-with-remaining-available-height\"] .container {\n  height: 100%;\n  display: flex;\n  flex-direction: column; }\n\n[data-scope=\"last-item-with-remaining-available-height\"] .container > div:last-child {\n  background-color: tomato;\n  flex: 1; }\n"
         },
-        "tags": ["layout"]
+        "tags": [
+          "layout"
+        ]
       },
       "meta": {
         "hash": "2f925cc190a9744532de97bb4add65e53cc0b2f3833760f4e7263f5df17cfad5"
@@ -738,7 +801,10 @@
           "js": "var btn = document.querySelector('.mouse-cursor-gradient-tracking')\nbtn.onmousemove = function(e) {\n  var x = e.pageX - btn.offsetLeft - btn.offsetParent.offsetLeft\n  var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop\n  btn.style.setProperty('--x', x + 'px')\n  btn.style.setProperty('--y', y + 'px')\n}",
           "scopedCss": "[data-scope=\"mouse-cursor-gradient-tracking\"] .mouse-cursor-gradient-tracking {\n  position: relative;\n  background: #7983ff;\n  padding: 0.5rem 1rem;\n  font-size: 1.2rem;\n  border: none;\n  color: white;\n  cursor: pointer;\n  outline: none;\n  overflow: hidden; }\n\n[data-scope=\"mouse-cursor-gradient-tracking\"] .mouse-cursor-gradient-tracking span {\n  position: relative; }\n\n[data-scope=\"mouse-cursor-gradient-tracking\"] .mouse-cursor-gradient-tracking::before {\n  --size: 0;\n  content: '';\n  position: absolute;\n  left: var(--x);\n  top: var(--y);\n  width: var(--size);\n  height: var(--size);\n  background: radial-gradient(circle closest-side, pink, transparent);\n  transform: translate(-50%, -50%);\n  transition: width 0.2s ease, height 0.2s ease; }\n\n[data-scope=\"mouse-cursor-gradient-tracking\"] .mouse-cursor-gradient-tracking:hover::before {\n  --size: 200px; }\n"
         },
-        "tags": ["visual", "interactivity"]
+        "tags": [
+          "visual",
+          "interactivity"
+        ]
       },
       "meta": {
         "hash": "f4545af51a44e98a3774a40243a8299e27922738c0a16d415f4d6b2e100bc495"
@@ -762,7 +828,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"not-selector\"] .css-not-selector-shortcut {\n  display: flex; }\n\n[data-scope=\"not-selector\"] ul {\n  padding-left: 0; }\n\n[data-scope=\"not-selector\"] li {\n  list-style-type: none;\n  margin: 0;\n  padding: 0 0.75rem; }\n\n[data-scope=\"not-selector\"] li:not(:last-child) {\n  border-right: 2px solid #d2d5e4; }\n"
         },
-        "tags": ["visual"]
+        "tags": [
+          "visual"
+        ]
       },
       "meta": {
         "hash": "a5ce598fdef79b1c1a91bc30992bd881e3f1d1f7928c4c4d3ccd5f4eb5817ad9"
@@ -786,7 +854,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"offscreen\"] .offscreen {\n  border: 0;\n  clip: rect(0 0 0 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px; }\n"
         },
-        "tags": ["layout", "visual"]
+        "tags": [
+          "layout",
+          "visual"
+        ]
       },
       "meta": {
         "hash": "08134db9917770420e2e7b479304250d9f0b8b4b285db1c28ee3a79e150b3f47"
@@ -810,7 +881,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"overflow-scroll-gradient\"] .overflow-scroll-gradient {\n  position: relative; }\n\n[data-scope=\"overflow-scroll-gradient\"] .overflow-scroll-gradient::after {\n  content: '';\n  position: absolute;\n  bottom: 0;\n  width: 240px;\n  height: 25px;\n  background: linear-gradient(rgba(255, 255, 255, 0.001), white);\n  /* transparent keyword is broken in Safari */\n  pointer-events: none; }\n\n[data-scope=\"overflow-scroll-gradient\"] .overflow-scroll-gradient__scroller {\n  overflow-y: scroll;\n  background: white;\n  width: 240px;\n  height: 200px;\n  padding: 15px;\n  line-height: 1.2; }\n"
         },
-        "tags": ["visual"]
+        "tags": [
+          "visual"
+        ]
       },
       "meta": {
         "hash": "2fb77c0e8a0de42767198b5d74fd7df863628f36f3bf6617ecda5d7773f21ea9"
@@ -834,7 +907,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"popout-menu\"] .reference {\n  position: relative;\n  background: tomato;\n  width: 100px;\n  height: 100px; }\n\n[data-scope=\"popout-menu\"] .popout-menu {\n  position: absolute;\n  visibility: hidden;\n  left: 100%;\n  background: #333;\n  color: white;\n  padding: 15px; }\n\n[data-scope=\"popout-menu\"] .reference:hover > .popout-menu,\n[data-scope=\"popout-menu\"] .reference:focus > .popout-menu,\n[data-scope=\"popout-menu\"] .reference:focus-within > .popout-menu {\n  visibility: visible; }\n"
         },
-        "tags": ["interactivity"]
+        "tags": [
+          "interactivity"
+        ]
       },
       "meta": {
         "hash": "46d1f9e1a05328d86ffda0dbea7dc60eae44c319eb430632ef384d2f3e7e6d44"
@@ -858,7 +933,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"pretty-text-underline\"] .pretty-text-underline {\n  display: inline;\n  text-shadow: 1px 1px #f5f6f9, -1px 1px #f5f6f9, -1px -1px #f5f6f9, 1px -1px #f5f6f9;\n  background-image: linear-gradient(90deg, currentColor 100%, transparent 100%);\n  background-position: bottom;\n  background-repeat: no-repeat;\n  background-size: 100% 1px; }\n\n[data-scope=\"pretty-text-underline\"] .pretty-text-underline::-moz-selection {\n  background-color: rgba(0, 150, 255, 0.3);\n  text-shadow: none; }\n\n[data-scope=\"pretty-text-underline\"] .pretty-text-underline::selection {\n  background-color: rgba(0, 150, 255, 0.3);\n  text-shadow: none; }\n"
         },
-        "tags": ["visual"]
+        "tags": [
+          "visual"
+        ]
       },
       "meta": {
         "hash": "fb3a96cbbb4d59af2566f3d0729c13478a81a572b25a8dd1696e2a67dd8fff79"
@@ -882,7 +959,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"reset-all-styles\"] .reset-all-styles {\n  all: initial; }\n"
         },
-        "tags": ["visual"]
+        "tags": [
+          "visual"
+        ]
       },
       "meta": {
         "hash": "f9542b2db5cd49f09e53b3af8348c58c973244bdeede87857e49660c6e713d65"
@@ -906,7 +985,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"shape-separator\"] .shape-separator {\n  position: relative;\n  height: 48px;\n  background: #333; }\n\n[data-scope=\"shape-separator\"] .shape-separator::after {\n  content: '';\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 12'%3E%3Cpath d='m12 0l12 12h-24z' fill='%23fff'/%3E%3C/svg%3E\");\n  position: absolute;\n  width: 100%;\n  height: 12px;\n  bottom: 0; }\n"
         },
-        "tags": ["visual"]
+        "tags": [
+          "visual"
+        ]
       },
       "meta": {
         "hash": "0b86c444f4d15709a99d1e32c651e9530a294258ba32784d998a56c6f14198b1"
@@ -930,7 +1011,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"sibling-fade\"] span {\n  padding: 0 1rem;\n  transition: opacity 0.2s; }\n\n[data-scope=\"sibling-fade\"] .sibling-fade:hover span:not(:hover) {\n  opacity: 0.5; }\n"
         },
-        "tags": ["interactivity"]
+        "tags": [
+          "interactivity"
+        ]
       },
       "meta": {
         "hash": "35bfb52929dcbd21c120d555c9d3382154f47b661d31722ffb3d21281021bba3"
@@ -954,7 +1037,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"system-font-stack\"] .system-font-stack {\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif; }\n"
         },
-        "tags": ["visual"]
+        "tags": [
+          "visual"
+        ]
       },
       "meta": {
         "hash": "97b037f3f463b8cf7de0cc12a607c540ffe8a4869323a4cc17c66eebbc92d612"
@@ -978,7 +1063,10 @@
           "js": "",
           "scopedCss": "[data-scope=\"toggle-switch\"] .switch {\n  position: relative;\n  display: inline-block;\n  width: 40px;\n  height: 20px;\n  background-color: rgba(0, 0, 0, 0.25);\n  border-radius: 20px;\n  transition: all 0.3s; }\n\n[data-scope=\"toggle-switch\"] .switch::after {\n  content: '';\n  position: absolute;\n  width: 18px;\n  height: 18px;\n  border-radius: 18px;\n  background-color: white;\n  top: 1px;\n  left: 1px;\n  transition: all 0.3s; }\n\n[data-scope=\"toggle-switch\"] input[type='checkbox']:checked + .switch::after {\n  transform: translateX(20px); }\n\n[data-scope=\"toggle-switch\"] input[type='checkbox']:checked + .switch {\n  background-color: #7983ff; }\n\n[data-scope=\"toggle-switch\"] .offscreen {\n  position: absolute;\n  left: -9999px; }\n"
         },
-        "tags": ["visual", "interactivity"]
+        "tags": [
+          "visual",
+          "interactivity"
+        ]
       },
       "meta": {
         "hash": "e29182514bd83550705267a43d21eec8886ed011c6259f2b3efec9862541f90e"
@@ -1002,7 +1090,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"transform-centering\"] .parent {\n  border: 1px solid #333;\n  height: 250px;\n  position: relative;\n  width: 250px; }\n\n[data-scope=\"transform-centering\"] .child {\n  left: 50%;\n  position: absolute;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  text-align: center; }\n"
         },
-        "tags": ["layout"]
+        "tags": [
+          "layout"
+        ]
       },
       "meta": {
         "hash": "9ee4bb8713d24b9e6f5367eb05645c6e41d205b120b4d06a9a949984c7cd73b0"
@@ -1026,7 +1116,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"triangle\"] .triangle {\n  width: 0;\n  height: 0;\n  border-top: 20px solid #333;\n  border-left: 20px solid transparent;\n  border-right: 20px solid transparent; }\n"
         },
-        "tags": ["visual"]
+        "tags": [
+          "visual"
+        ]
       },
       "meta": {
         "hash": "357daaf44bab240518a3c9bdd34a1e8702fab3358171e30f633b7a7f423b9884"
@@ -1050,7 +1142,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"truncate-text-multiline\"] .truncate-text-multiline {\n  overflow: hidden;\n  display: block;\n  height: 109.2px;\n  margin: 0 auto;\n  font-size: 26px;\n  line-height: 1.4;\n  width: 400px;\n  position: relative; }\n\n[data-scope=\"truncate-text-multiline\"] .truncate-text-multiline:after {\n  content: '';\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  width: 150px;\n  height: 36.4px;\n  background: linear-gradient(to right, rgba(0, 0, 0, 0), #f5f6f9 50%); }\n"
         },
-        "tags": ["layout"]
+        "tags": [
+          "layout"
+        ]
       },
       "meta": {
         "hash": "a30287149e833b454deea446359d51554640ad3a57cd2460d8519c376077b8b4"
@@ -1074,7 +1168,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"truncate-text\"] .truncate-text {\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  width: 200px; }\n"
         },
-        "tags": ["layout"]
+        "tags": [
+          "layout"
+        ]
       },
       "meta": {
         "hash": "4ce872446c7950c9450e56ab2251c7cfcd473a1c9b2a64baa7c9d6b029264796"
@@ -1098,7 +1194,9 @@
           "js": "",
           "scopedCss": "[data-scope=\"zebra-striped-list\"] li:nth-child(odd) {\n  background-color: #ddd; }\n"
         },
-        "tags": ["visual"]
+        "tags": [
+          "visual"
+        ]
       },
       "meta": {
         "hash": "43bc0cd7776468f3b74791017349ef278921c8ded7ba0bd7788d2b01bdb68c7a"
