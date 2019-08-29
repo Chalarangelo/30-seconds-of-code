@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { connect } from 'react-redux';
 import { pushNewPage, pushNewQuery } from '../state/app';
 
@@ -7,6 +7,7 @@ import Shell from '../components/Shell';
 import Meta from '../components/Meta';
 import Search from '../components/Search';
 import SnippetCard from '../components/SnippetCard';
+import SimpleCard from '../components/SimpleCard';
 
 // ===================================================
 // Home page (splash and search)
@@ -59,14 +60,20 @@ const IndexPage = props => {
           defaultValue={props.searchQuery}
         />
         {searchQuery.length === 0 ? (
-          <p className='light-sub'>
-            Start typing a keyword to see matching snippets.
-          </p>
+          <>
+            <p className='index-light-sub'>
+              Start typing a keyword to see matching snippets or <Link to='/list'>click to view the whole list</Link>.
+            </p>
+            <div className='index-spacer' />
+          </>
         ) : searchResults.length === 0 ? (
-          <p className='light-sub'>
-            We couldn't find any results for the keyword{' '}
-            <strong>{searchQuery}</strong>.
-          </p>
+          <>
+            <p className='index-light-sub'>
+              We couldn't find any results for the keyword{' '}
+              <strong>{searchQuery}</strong>.
+            </p>
+            <div className='index-spacer' />
+          </>
         ) : (
           <>
             <p className='light-sub'>
@@ -83,6 +90,23 @@ const IndexPage = props => {
             ))}
           </>
         )}
+        <SimpleCard title='About us'>
+          <p style={{ textAlign: 'justify' }}><strong>30 seconds</strong> provides high quality learning resources for beginner and advanced developers in the form of snippet collections in various programming languages, since its inception in 2017. Today, <strong>30 seconds</strong> consists of a community of over 250 contributors and  more than 10 maintainers, dedicated to creating the best short-form learning resources for software developers. Our goal is to lower the barrier of entry to software development and help the open source community grow, by helping people learn to code for free.<br/><br/><Link to='/about'>Read more...</Link></p>
+        </SimpleCard>
+        <SimpleCard title='Our other projects'>
+          <ul>
+            {
+              [
+                { name: '30 seconds of CSS', url: 'https://css.30secondsofcode.org/' },
+                { name: '30 seconds of Python', url: 'https://python.30secondsofcode.org/' },
+                { name: '30 seconds of React', url: 'https://react.30secondsofcode.org/' },
+                { name: '30 seconds of PHP', url: 'https://php.30secondsofcode.org/' },
+                { name: '30 seconds of Interviews', url: 'https://30secondsofinterviews.org/' },
+                { name: '30 seconds of Knowledge', url: 'https://30secondsofknowledge.org/' },
+              ].map(v => (<li><a href={v.url} key={`link_${v.name}`} target='_blank' rel='noopener noreferrer'>{v.name}</a></li>))
+            }
+          </ul>
+        </SimpleCard>
       </Shell>
     </>
   );
