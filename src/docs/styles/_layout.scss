@@ -112,6 +112,21 @@ img.website-logo {
     font-size: 1rem;
   }
 }
+.index-spacer {
+  height: 2.5vh;
+}
+.index-light-sub {
+  color: var(--fore-color-darker);
+  font-size: 1rem;
+  text-align: center;
+  transition: 0.3s ease all;
+  line-height: 2;
+  margin: 0.125rem 1.25rem 0px;
+  a, a:link, a:visited {
+    color: inherit;
+    font-weight: 600;
+  }
+}
 
 // Page title
 .page-title {
