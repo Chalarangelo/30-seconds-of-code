@@ -91,7 +91,7 @@ const IndexPage = props => {
           </>
         )}
         <SimpleCard title='About us'>
-          <p style={{ textAlign: 'justify' }}><strong>30 seconds</strong> provides high quality learning resources for beginner and advanced developers in the form of snippet collections in various programming languages, since its inception in 2017. Today, <strong>30 seconds</strong> consists of a community of over 250 contributors and  more than 10 maintainers, dedicated to creating the best short-form learning resources for software developers. Our goal is to lower the barrier of entry to software development and help the open source community grow, by helping people learn to code for free.<br/><br/><Link to='/about'>Read more...</Link></p>
+          <p style={{ textAlign: 'justify' }}><strong>30 seconds</strong> provides high-quality learning resources for developers of all skill levels in the form of snippet collections in various programming languages since its inception in 2017. Today, <strong>30 seconds</strong> consists of a community of over 250 contributors and  more than 10 maintainers, dedicated to creating the best short-form learning resources for software developers. Our goal is to make software development more accessible and help the open-source community grow by helping people learn to code for free.<br/><br/><Link to='/about'>Read more...</Link></p>
         </SimpleCard>
         <SimpleCard title='Our other projects'>
           <ul>
