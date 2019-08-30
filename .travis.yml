@@ -5,7 +5,6 @@ cache:
 node_js:
 - lts/*
 script:
-- npm run linter
 - npm run extractor
 - npm run builder
 after_success:
