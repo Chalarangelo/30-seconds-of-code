@@ -151,34 +151,35 @@ const ShortCard = ({
   }, []);
 
   return (
-    <Link to={`/snippet/${snippetData.id}`} className='clickable-card-wrapper' rel='canonical'>
-      <div className='card short'>
-        <h4 className='card-title'>
-          {snippetData.title}
-        </h4>
-        <div
-          className='card-description'
-          dangerouslySetInnerHTML={{
-            __html: `${getTextualContent(snippetData.html)}`,
-          }}
-        />
-        <div className='card-bottom'>
-          <h5 className='card-section-demo-title'>Demo</h5>
-          <div className='card-snippet-demo' data-scope={snippetData.id.replace(/\//g,'')}>
-            <style>
-              {snippetData.code.scopedCss}
-            </style>
-            <div dangerouslySetInnerHTML={{ __html: snippetData.code.html }} />
-            {
-              snippetData.code.js &&
-              <script>
-                {`function()(${snippetData.code.js})();`}
-              </script>
-            }
-          </div>
+    <div className='card short'>
+      <h4 className='card-title'>
+      <Link to={`/snippet/${snippetData.id}`} className='clickable-card-wrapper' rel='canonical'>
+        {snippetData.title}
+      </Link>
+      </h4>
+      <div
+        className='card-description'
+        dangerouslySetInnerHTML={{
+          __html: `${getTextualContent(snippetData.html)}`,
+        }}
+      />
+      <div className='card-bottom'>
+        <h5 className='card-section-demo-title'>Demo</h5>
+        <div className='card-snippet-demo' data-scope={snippetData.id.replace(/\//g,'')}>
+          <style>
+            {snippetData.code.scopedCss}
+          </style>
+          <div dangerouslySetInnerHTML={{ __html: snippetData.code.html }} />
+          {
+            snippetData.code.js &&
+            <script>
+              {`function()(${snippetData.code.js})();`}
+            </script>
+          }
         </div>
+        <p className='snippet-view'><Link to={`/snippet/${snippetData.id}`} className='button button-b button-view' rel='canonical'>View snippet</Link></p>
       </div>
-    </Link>
+    </div>
   );
 };
 
