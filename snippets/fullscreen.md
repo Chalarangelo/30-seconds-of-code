@@ -27,6 +27,7 @@ The :fullscreen CSS pseudo-class represents an element that's displayed when the
   height: 300px;
   width: 100%;
   background-color: skyblue;
+  box-sizing: border-box;
 }
 
 .element p {
