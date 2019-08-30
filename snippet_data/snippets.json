@@ -13,8 +13,8 @@
           "supportPercentage": 100
         },
         "codeBlocks": {
-          "html": "<div class=\"bouncing-loader\">\r\n  <div></div>\r\n  <div></div>\r\n  <div></div>\r\n</div>",
-          "css": "@keyframes bouncing-loader {\r\n  to {\r\n    opacity: 0.1;\r\n    transform: translate3d(0, -1rem, 0);\r\n  }\r\n}\r\n.bouncing-loader {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n.bouncing-loader > div {\r\n  width: 1rem;\r\n  height: 1rem;\r\n  margin: 3rem 0.2rem;\r\n  background: #8385aa;\r\n  border-radius: 50%;\r\n  animation: bouncing-loader 0.6s infinite alternate;\r\n}\r\n.bouncing-loader > div:nth-child(2) {\r\n  animation-delay: 0.2s;\r\n}\r\n.bouncing-loader > div:nth-child(3) {\r\n  animation-delay: 0.4s;\r\n}",
+          "html": "<div class=\"bouncing-loader\">\n  <div></div>\n  <div></div>\n  <div></div>\n</div>",
+          "css": "@keyframes bouncing-loader {\n  to {\n    opacity: 0.1;\n    transform: translate3d(0, -1rem, 0);\n  }\n}\n.bouncing-loader {\n  display: flex;\n  justify-content: center;\n}\n.bouncing-loader > div {\n  width: 1rem;\n  height: 1rem;\n  margin: 3rem 0.2rem;\n  background: #8385aa;\n  border-radius: 50%;\n  animation: bouncing-loader 0.6s infinite alternate;\n}\n.bouncing-loader > div:nth-child(2) {\n  animation-delay: 0.2s;\n}\n.bouncing-loader > div:nth-child(3) {\n  animation-delay: 0.4s;\n}",
           "js": "",
           "scopedCss": "@keyframes bouncing-loader {\n  to {\n    opacity: 0.1;\n    transform: translate3d(0, -1rem, 0); } }\n\n[data-scope=\"bouncing-loader\"] .bouncing-loader {\n  display: flex;\n  justify-content: center; }\n\n[data-scope=\"bouncing-loader\"] .bouncing-loader > div {\n  width: 1rem;\n  height: 1rem;\n  margin: 3rem 0.2rem;\n  background: #8385aa;\n  border-radius: 50%;\n  animation: bouncing-loader 0.6s infinite alternate; }\n\n[data-scope=\"bouncing-loader\"] .bouncing-loader > div:nth-child(2) {\n  animation-delay: 0.2s; }\n\n[data-scope=\"bouncing-loader\"] .bouncing-loader > div:nth-child(3) {\n  animation-delay: 0.4s; }\n"
         },
@@ -23,7 +23,7 @@
         ]
       },
       "meta": {
-        "hash": "65f7407b91b81d2090f0ca5c9f54b811972cae007ca30ae950ae1498931552a6"
+        "hash": "2934b3aa733591f4964a7c8780f3ec7b273e4bd6a38fce6e0da2a5dd2dd9959f"
       }
     },
     {
@@ -39,8 +39,8 @@
           "supportPercentage": 100
         },
         "codeBlocks": {
-          "html": "<div class=\"box\">border-box</div>\r\n<div class=\"box content-box\">content-box</div>",
-          "css": "html {\r\n  box-sizing: border-box;\r\n}\r\n*,\r\n*::before,\r\n*::after {\r\n  box-sizing: inherit;\r\n}\r\n.box {\r\n  display: inline-block;\r\n  width: 150px;\r\n  height: 150px;\r\n  padding: 10px;\r\n  background: tomato;\r\n  color: white;\r\n  border: 10px solid red;\r\n}\r\n.content-box {\r\n  box-sizing: content-box;\r\n}",
+          "html": "<div class=\"box\">border-box</div>\n<div class=\"box content-box\">content-box</div>",
+          "css": "html {\n  box-sizing: border-box;\n}\n*,\n*::before,\n*::after {\n  box-sizing: inherit;\n}\n.box {\n  display: inline-block;\n  width: 150px;\n  height: 150px;\n  padding: 10px;\n  background: tomato;\n  color: white;\n  border: 10px solid red;\n}\n.content-box {\n  box-sizing: content-box;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"box-sizing-reset\"] html {\n  box-sizing: border-box; }\n\n[data-scope=\"box-sizing-reset\"] *,\n[data-scope=\"box-sizing-reset\"] *::before,\n[data-scope=\"box-sizing-reset\"] *::after {\n  box-sizing: inherit; }\n\n[data-scope=\"box-sizing-reset\"] .box {\n  display: inline-block;\n  width: 150px;\n  height: 150px;\n  padding: 10px;\n  background: tomato;\n  color: white;\n  border: 10px solid red; }\n\n[data-scope=\"box-sizing-reset\"] .content-box {\n  box-sizing: content-box; }\n"
         },
@@ -49,7 +49,7 @@
         ]
       },
       "meta": {
-        "hash": "9ef861a4dde64e2c3565d46a0b8c654c9d7264bcfaf3e1cebfc66b0155c185b1"
+        "hash": "d4e635bb76a083266e08723f25c3db981b39001ea5d513ce65570fe0099eb6b0"
       }
     },
     {
@@ -66,7 +66,7 @@
         },
         "codeBlocks": {
           "html": "<div class=\"button-border\"><button class=\"button\">Submit</button></div>",
-          "css": ".button {\r\n  background-color: #c47135;\r\n  border: none;\r\n  color: #ffffff;\r\n  outline: none;\r\n  padding: 12px 40px 10px;\r\n  position: relative;\r\n}\r\n.button:before,\r\n.button:after {\r\n  border: 0 solid transparent;\r\n  transition: all 0.25s;\r\n  content: '';\r\n  height: 24px;\r\n  position: absolute;\r\n  width: 24px;\r\n}\r\n.button:before {\r\n  border-top: 2px solid #c47135;\r\n  left: 0px;\r\n  top: -5px;\r\n}\r\n.button:after {\r\n  border-bottom: 2px solid #c47135;\r\n  bottom: -5px;\r\n  right: 0px;\r\n}\r\n.button:hover {\r\n  background-color: #c47135;\r\n}\r\n.button:hover:before,\r\n.button:hover:after {\r\n  height: 100%;\r\n  width: 100%;\r\n}",
+          "css": ".button {\n  background-color: #c47135;\n  border: none;\n  color: #ffffff;\n  outline: none;\n  padding: 12px 40px 10px;\n  position: relative;\n}\n.button:before,\n.button:after {\n  border: 0 solid transparent;\n  transition: all 0.25s;\n  content: '';\n  height: 24px;\n  position: absolute;\n  width: 24px;\n}\n.button:before {\n  border-top: 2px solid #c47135;\n  left: 0px;\n  top: -5px;\n}\n.button:after {\n  border-bottom: 2px solid #c47135;\n  bottom: -5px;\n  right: 0px;\n}\n.button:hover {\n  background-color: #c47135;\n}\n.button:hover:before,\n.button:hover:after {\n  height: 100%;\n  width: 100%;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"button-border-animation\"] .button {\n  background-color: #c47135;\n  border: none;\n  color: #ffffff;\n  outline: none;\n  padding: 12px 40px 10px;\n  position: relative; }\n\n[data-scope=\"button-border-animation\"] .button:before,\n[data-scope=\"button-border-animation\"] .button:after {\n  border: 0 solid transparent;\n  transition: all 0.25s;\n  content: '';\n  height: 24px;\n  position: absolute;\n  width: 24px; }\n\n[data-scope=\"button-border-animation\"] .button:before {\n  border-top: 2px solid #c47135;\n  left: 0px;\n  top: -5px; }\n\n[data-scope=\"button-border-animation\"] .button:after {\n  border-bottom: 2px solid #c47135;\n  bottom: -5px;\n  right: 0px; }\n\n[data-scope=\"button-border-animation\"] .button:hover {\n  background-color: #c47135; }\n\n[data-scope=\"button-border-animation\"] .button:hover:before,\n[data-scope=\"button-border-animation\"] .button:hover:after {\n  height: 100%;\n  width: 100%; }\n"
         },
@@ -75,7 +75,7 @@
         ]
       },
       "meta": {
-        "hash": "8d6a2be5e5ab8ef0d99640d53841e097c0867e51d069852953327fb680451f87"
+        "hash": "ff6401cc784b92a9672e74968719c029de224c29fcfdc3eaeaa764274108f648"
       }
     },
     {
@@ -92,7 +92,7 @@
         },
         "codeBlocks": {
           "html": "<div class=\"box-example\"></div>",
-          "css": ".box-example {\r\n  height: 280px;\r\n  background: #222 url('https://image.ibb.co/fUL9nS/wolf.png') no-repeat;\r\n  background-position: calc(100% - 20px) calc(100% - 20px);\r\n}",
+          "css": ".box-example {\n  height: 280px;\n  background: #222 url('https://image.ibb.co/fUL9nS/wolf.png') no-repeat;\n  background-position: calc(100% - 20px) calc(100% - 20px);\n}",
           "js": "",
           "scopedCss": "[data-scope=\"calc\"] .box-example {\n  height: 280px;\n  background: #222 url(\"https://image.ibb.co/fUL9nS/wolf.png\") no-repeat;\n  background-position: calc(100% - 20px) calc(100% - 20px); }\n"
         },
@@ -101,7 +101,7 @@
         ]
       },
       "meta": {
-        "hash": "f9be7ff53e2fbeb5eed2d430c5bf3f94719ec29d16a7a5335fd002d4e273a56f"
+        "hash": "8165e64d1bca7ae3bb0c990712023720dff55c2f6194b557a131901d528be4b7"
       }
     },
     {
@@ -118,7 +118,7 @@
         },
         "codeBlocks": {
           "html": "<div class=\"circle\"></div>",
-          "css": ".circle {\r\n  border-radius: 50%;\r\n  width: 2rem;\r\n  height: 2rem;\r\n  background: #333;\r\n}",
+          "css": ".circle {\n  border-radius: 50%;\n  width: 2rem;\n  height: 2rem;\n  background: #333;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"circle\"] .circle {\n  border-radius: 50%;\n  width: 2rem;\n  height: 2rem;\n  background: #333; }\n"
         },
@@ -127,7 +127,7 @@
         ]
       },
       "meta": {
-        "hash": "27d5b158d8e211128584eb594f821e2a960401d1ef8ff4e840c2b63f398958e5"
+        "hash": "60ac5a7cb7e2c24c936b267ac74d649052c9aaa80810278720b5b5a14fee1562"
       }
     },
     {
@@ -143,8 +143,8 @@
           "supportPercentage": 100
         },
         "codeBlocks": {
-          "html": "<div class=\"clearfix\">\r\n  <div class=\"floated\">float a</div>\r\n  <div class=\"floated\">float b</div>\r\n  <div class=\"floated\">float c</div>\r\n</div>",
-          "css": ".clearfix::after {\r\n  content: '';\r\n  display: block;\r\n  clear: both;\r\n}\r\n\r\n.floated {\r\n  float: left;\r\n}",
+          "html": "<div class=\"clearfix\">\n  <div class=\"floated\">float a</div>\n  <div class=\"floated\">float b</div>\n  <div class=\"floated\">float c</div>\n</div>",
+          "css": ".clearfix::after {\n  content: '';\n  display: block;\n  clear: both;\n}\n\n.floated {\n  float: left;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"clearfix\"] .clearfix::after {\n  content: '';\n  display: block;\n  clear: both; }\n\n[data-scope=\"clearfix\"] .floated {\n  float: left; }\n"
         },
@@ -153,7 +153,7 @@
         ]
       },
       "meta": {
-        "hash": "ce6aa7f328e1aee328b12a4d5bcf265eb53f6d3b740b2a599bd46437ca4438f1"
+        "hash": "55fe4fad743f778816b5923c862484cfa84efd353a4d2a3efe04893db6f5863f"
       }
     },
     {
@@ -170,7 +170,7 @@
         },
         "codeBlocks": {
           "html": "<div class=\"constant-width-to-height-ratio\"></div>",
-          "css": ".constant-width-to-height-ratio {\r\n  background: #333;\r\n  width: 50%;\r\n}\r\n.constant-width-to-height-ratio::before {\r\n  content: '';\r\n  padding-top: 100%;\r\n  float: left;\r\n}\r\n.constant-width-to-height-ratio::after {\r\n  content: '';\r\n  display: block;\r\n  clear: both;\r\n}",
+          "css": ".constant-width-to-height-ratio {\n  background: #333;\n  width: 50%;\n}\n.constant-width-to-height-ratio::before {\n  content: '';\n  padding-top: 100%;\n  float: left;\n}\n.constant-width-to-height-ratio::after {\n  content: '';\n  display: block;\n  clear: both;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"constant-width-to-height-ratio\"] .constant-width-to-height-ratio {\n  background: #333;\n  width: 50%; }\n\n[data-scope=\"constant-width-to-height-ratio\"] .constant-width-to-height-ratio::before {\n  content: '';\n  padding-top: 100%;\n  float: left; }\n\n[data-scope=\"constant-width-to-height-ratio\"] .constant-width-to-height-ratio::after {\n  content: '';\n  display: block;\n  clear: both; }\n"
         },
@@ -179,7 +179,7 @@
         ]
       },
       "meta": {
-        "hash": "d954cb0ba64951c3512cf658f1de1853eb31847804ea95d6c512b3b2c504806a"
+        "hash": "931815035291ba0e6de497d7296fc75e207117c9ff0607fd646f01da53793929"
       }
     },
     {
@@ -195,8 +195,8 @@
           "supportPercentage": 100
         },
         "codeBlocks": {
-          "html": "<ul>\r\n  <li>List item</li>\r\n  <li>List item</li>\r\n  <li>\r\n    List item\r\n    <ul>\r\n      <li>List item</li>\r\n      <li>List item</li>\r\n      <li>List item</li>\r\n    </ul>\r\n  </li>\r\n</ul>",
-          "css": "ul {\r\n  counter-reset: counter;\r\n}\r\n\r\nli::before {\r\n  counter-increment: counter;\r\n  content: counters(counter, '.') ' ';\r\n}",
+          "html": "<ul>\n  <li>List item</li>\n  <li>List item</li>\n  <li>\n    List item\n    <ul>\n      <li>List item</li>\n      <li>List item</li>\n      <li>List item</li>\n    </ul>\n  </li>\n</ul>",
+          "css": "ul {\n  counter-reset: counter;\n}\n\nli::before {\n  counter-increment: counter;\n  content: counters(counter, '.') ' ';\n}",
           "js": "",
           "scopedCss": "[data-scope=\"counter\"] ul {\n  counter-reset: counter; }\n\n[data-scope=\"counter\"] li::before {\n  counter-increment: counter;\n  content: counters(counter, \".\") \" \"; }\n"
         },
@@ -206,7 +206,7 @@
         ]
       },
       "meta": {
-        "hash": "1b6f1b604d2f593bcce75607e25c2131492d9c4a37616c667a0cc2c0c8f1b364"
+        "hash": "7c572c339c0767840bd0fd6f5daab357a8da070988c621e341bc5ce78d0f798e"
       }
     },
     {
@@ -222,8 +222,8 @@
           "supportPercentage": 97.69
         },
         "codeBlocks": {
-          "html": "<div class=\"custom-scrollbar\">\r\n  <p>\r\n    Lorem ipsum dolor sit amet consectetur adipisicing elit.<br />\r\n    Iure id exercitationem nulla qui repellat laborum vitae, <br />\r\n    molestias tempora velit natus. Quas, assumenda nisi. <br />\r\n    Quisquam enim qui iure, consequatur velit sit?\r\n  </p>\r\n</div>",
-          "css": ".custom-scrollbar {\r\n  height: 70px;\r\n  overflow-y: scroll;\r\n}\r\n\r\n/* To style the document scrollbar, remove `.custom-scrollbar` */\r\n\r\n.custom-scrollbar::-webkit-scrollbar {\r\n  width: 8px;\r\n}\r\n\r\n.custom-scrollbar::-webkit-scrollbar-track {\r\n  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\r\n  border-radius: 10px;\r\n}\r\n\r\n.custom-scrollbar::-webkit-scrollbar-thumb {\r\n  border-radius: 10px;\r\n  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);\r\n}",
+          "html": "<div class=\"custom-scrollbar\">\n  <p>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit.<br />\n    Iure id exercitationem nulla qui repellat laborum vitae, <br />\n    molestias tempora velit natus. Quas, assumenda nisi. <br />\n    Quisquam enim qui iure, consequatur velit sit?\n  </p>\n</div>",
+          "css": ".custom-scrollbar {\n  height: 70px;\n  overflow-y: scroll;\n}\n\n/* To style the document scrollbar, remove `.custom-scrollbar` */\n\n.custom-scrollbar::-webkit-scrollbar {\n  width: 8px;\n}\n\n.custom-scrollbar::-webkit-scrollbar-track {\n  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  border-radius: 10px;\n}\n\n.custom-scrollbar::-webkit-scrollbar-thumb {\n  border-radius: 10px;\n  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);\n}",
           "js": "",
           "scopedCss": "[data-scope=\"custom-scrollbar\"] {\n  /* To style the document scrollbar, remove `.custom-scrollbar` */ }\n  [data-scope=\"custom-scrollbar\"] .custom-scrollbar {\n    height: 70px;\n    overflow-y: scroll; }\n  [data-scope=\"custom-scrollbar\"] .custom-scrollbar::-webkit-scrollbar {\n    width: 8px; }\n  [data-scope=\"custom-scrollbar\"] .custom-scrollbar::-webkit-scrollbar-track {\n    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n    border-radius: 10px; }\n  [data-scope=\"custom-scrollbar\"] .custom-scrollbar::-webkit-scrollbar-thumb {\n    border-radius: 10px;\n    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5); }\n"
         },
@@ -232,7 +232,7 @@
         ]
       },
       "meta": {
-        "hash": "160af0edd0f0678c94b1da406d39753cd459be8d913dbbb34296d4e9052798dd"
+        "hash": "e5544c894ee3cd4ce3352d10331e2f321c6d30b4a0a667434286c6d4951c3b0a"
       }
     },
     {
@@ -249,7 +249,7 @@
         },
         "codeBlocks": {
           "html": "<p class=\"custom-text-selection\">Select some of this text.</p>",
-          "css": "::selection {\r\n  background: aquamarine;\r\n  color: black;\r\n}\r\n.custom-text-selection::selection {\r\n  background: deeppink;\r\n  color: white;\r\n}",
+          "css": "::selection {\n  background: aquamarine;\n  color: black;\n}\n.custom-text-selection::selection {\n  background: deeppink;\n  color: white;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"custom-text-selection\"] ::selection {\n  background: aquamarine;\n  color: black; }\n\n[data-scope=\"custom-text-selection\"] .custom-text-selection::selection {\n  background: deeppink;\n  color: white; }\n"
         },
@@ -258,7 +258,7 @@
         ]
       },
       "meta": {
-        "hash": "fdfdbf3a3eb3647c368e5959a4f68b54530bb2080955f613ecf286cf38e4274f"
+        "hash": "bf835c2f1d038e6b08d221c9fef85933757a80c67de555797c6bc63ff7035ae8"
       }
     },
     {
@@ -275,7 +275,7 @@
         },
         "codeBlocks": {
           "html": "<p class=\"custom-variables\">CSS is awesome!</p>",
-          "css": ":root {\r\n  /* Place variables within here to use the variables globally. */\r\n}\r\n\r\n.custom-variables {\r\n  --some-color: #da7800;\r\n  --some-keyword: italic;\r\n  --some-size: 1.25em;\r\n  --some-complex-value: 1px 1px 2px whitesmoke, 0 0 1em slategray, 0 0 0.2em slategray;\r\n  color: var(--some-color);\r\n  font-size: var(--some-size);\r\n  font-style: var(--some-keyword);\r\n  text-shadow: var(--some-complex-value);\r\n}",
+          "css": ":root {\n  /* Place variables within here to use the variables globally. */\n}\n\n.custom-variables {\n  --some-color: #da7800;\n  --some-keyword: italic;\n  --some-size: 1.25em;\n  --some-complex-value: 1px 1px 2px whitesmoke, 0 0 1em slategray, 0 0 0.2em slategray;\n  color: var(--some-color);\n  font-size: var(--some-size);\n  font-style: var(--some-keyword);\n  text-shadow: var(--some-complex-value);\n}",
           "js": "",
           "scopedCss": "[data-scope=\"custom-variables\"] :root {\n  /* Place variables within here to use the variables globally. */ }\n\n[data-scope=\"custom-variables\"] .custom-variables {\n  --some-color: #da7800;\n  --some-keyword: italic;\n  --some-size: 1.25em;\n  --some-complex-value: 1px 1px 2px whitesmoke, 0 0 1em slategray, 0 0 0.2em slategray;\n  color: var(--some-color);\n  font-size: var(--some-size);\n  font-style: var(--some-keyword);\n  text-shadow: var(--some-complex-value); }\n"
         },
@@ -284,7 +284,7 @@
         ]
       },
       "meta": {
-        "hash": "528f83fdf13409f0861a4511351354713cebeeadf8a268d45bbe2a69100366fe"
+        "hash": "7a0d1c46beceb336265b2ca27a4f3cf25ad332a5cd2e8c0b692a43ce5b329fef"
       }
     },
     {
@@ -300,8 +300,8 @@
           "supportPercentage": 97.51
         },
         "codeBlocks": {
-          "html": "<p>You can select me.</p>\r\n<p class=\"unselectable\">You can't select me!</p>",
-          "css": ".unselectable {\r\n  user-select: none;\r\n}",
+          "html": "<p>You can select me.</p>\n<p class=\"unselectable\">You can't select me!</p>",
+          "css": ".unselectable {\n  user-select: none;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"disable-selection\"] .unselectable {\n  user-select: none; }\n"
         },
@@ -310,7 +310,7 @@
         ]
       },
       "meta": {
-        "hash": "cbd664da07b024aac4de3886660747912a5ec0df6d2ff3496f9faf963bd1bee9"
+        "hash": "02f6472568975f5897a84f8846d97f8561fc5334ddafac53e73adb52ccda5f29"
       }
     },
     {
@@ -326,8 +326,8 @@
           "supportPercentage": 100
         },
         "codeBlocks": {
-          "html": "<div class=\"container\">\r\n  <div class=\"center\"><span>Centered content</span></div>\r\n</div>",
-          "css": ".container {\r\n  border: 1px solid #333;\r\n  height: 250px;\r\n  width: 250px;\r\n}\r\n\r\n.center {\r\n  display: table;\r\n  height: 100%;\r\n  width: 100%;\r\n}\r\n\r\n.center > span {\r\n  display: table-cell;\r\n  text-align: center;\r\n  vertical-align: middle;\r\n}",
+          "html": "<div class=\"container\">\n  <div class=\"center\"><span>Centered content</span></div>\n</div>",
+          "css": ".container {\n  border: 1px solid #333;\n  height: 250px;\n  width: 250px;\n}\n\n.center {\n  display: table;\n  height: 100%;\n  width: 100%;\n}\n\n.center > span {\n  display: table-cell;\n  text-align: center;\n  vertical-align: middle;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"display-table-centering\"] .container {\n  border: 1px solid #333;\n  height: 250px;\n  width: 250px; }\n\n[data-scope=\"display-table-centering\"] .center {\n  display: table;\n  height: 100%;\n  width: 100%; }\n\n[data-scope=\"display-table-centering\"] .center > span {\n  display: table-cell;\n  text-align: center;\n  vertical-align: middle; }\n"
         },
@@ -336,7 +336,7 @@
         ]
       },
       "meta": {
-        "hash": "fceb956ae8ee6a1b3b58cc79d321420153f382e0125155a2cee59d994d6a51ce"
+        "hash": "83c7806b0be2e50ca34f313912f9cb90682852790e6d0105a635f781212fa5b1"
       }
     },
     {
@@ -353,7 +353,7 @@
         },
         "codeBlocks": {
           "html": "<div class=\"donut\"></div>",
-          "css": "@keyframes donut-spin {\r\n  0% {\r\n    transform: rotate(0deg);\r\n  }\r\n  100% {\r\n    transform: rotate(360deg);\r\n  }\r\n}\r\n.donut {\r\n  display: inline-block;\r\n  border: 4px solid rgba(0, 0, 0, 0.1);\r\n  border-left-color: #7983ff;\r\n  border-radius: 50%;\r\n  width: 30px;\r\n  height: 30px;\r\n  animation: donut-spin 1.2s linear infinite;\r\n}",
+          "css": "@keyframes donut-spin {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n.donut {\n  display: inline-block;\n  border: 4px solid rgba(0, 0, 0, 0.1);\n  border-left-color: #7983ff;\n  border-radius: 50%;\n  width: 30px;\n  height: 30px;\n  animation: donut-spin 1.2s linear infinite;\n}",
           "js": "",
           "scopedCss": "@keyframes donut-spin {\n  0% {\n    transform: rotate(0deg); }\n  100% {\n    transform: rotate(360deg); } }\n\n[data-scope=\"donut-spinner\"] .donut {\n  display: inline-block;\n  border: 4px solid rgba(0, 0, 0, 0.1);\n  border-left-color: #7983ff;\n  border-radius: 50%;\n  width: 30px;\n  height: 30px;\n  animation: donut-spin 1.2s linear infinite; }\n"
         },
@@ -362,7 +362,7 @@
         ]
       },
       "meta": {
-        "hash": "7fcdd37a60787827f95d5a3c17d0a3e9f881e0fbbbc3cb0221e4efe79bb47345"
+        "hash": "4e7f5ce479955deb9830ca4a72fc8260c8863aa65d6f67f15e88a3f923c10c3a"
       }
     },
     {
@@ -379,7 +379,7 @@
         },
         "codeBlocks": {
           "html": "<div class=\"dynamic-shadow\"></div>",
-          "css": ".dynamic-shadow {\r\n  position: relative;\r\n  width: 10rem;\r\n  height: 10rem;\r\n  background: linear-gradient(75deg, #6d78ff, #00ffb8);\r\n  z-index: 1;\r\n}\r\n.dynamic-shadow::after {\r\n  content: '';\r\n  width: 100%;\r\n  height: 100%;\r\n  position: absolute;\r\n  background: inherit;\r\n  top: 0.5rem;\r\n  filter: blur(0.4rem);\r\n  opacity: 0.7;\r\n  z-index: -1;\r\n}",
+          "css": ".dynamic-shadow {\n  position: relative;\n  width: 10rem;\n  height: 10rem;\n  background: linear-gradient(75deg, #6d78ff, #00ffb8);\n  z-index: 1;\n}\n.dynamic-shadow::after {\n  content: '';\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  background: inherit;\n  top: 0.5rem;\n  filter: blur(0.4rem);\n  opacity: 0.7;\n  z-index: -1;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"dynamic-shadow\"] .dynamic-shadow {\n  position: relative;\n  width: 10rem;\n  height: 10rem;\n  background: linear-gradient(75deg, #6d78ff, #00ffb8);\n  z-index: 1; }\n\n[data-scope=\"dynamic-shadow\"] .dynamic-shadow::after {\n  content: '';\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  background: inherit;\n  top: 0.5rem;\n  filter: blur(0.4rem);\n  opacity: 0.7;\n  z-index: -1; }\n"
         },
@@ -388,7 +388,7 @@
         ]
       },
       "meta": {
-        "hash": "1f2e392118cf85ee6f227413fbc80f32ed5b6fa7dd2298030363d5ea09f6c805"
+        "hash": "738fae9ee6d0a9fe84cdbdd632a93f651f8377ec7e9f647e1031207d99b819a5"
       }
     },
     {
@@ -405,7 +405,7 @@
         },
         "codeBlocks": {
           "html": "<div class=\"easing-variables\">Hover</div>",
-          "css": ":root {\r\n  /* Place variables in here to use globally */\r\n}\r\n\r\n.easing-variables {\r\n  --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);\r\n  --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);\r\n  --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);\r\n  --ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);\r\n  --ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);\r\n  --ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);\r\n\r\n  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);\r\n  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);\r\n  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);\r\n  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);\r\n  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);\r\n  --ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);\r\n\r\n  --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);\r\n  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);\r\n  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);\r\n  --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);\r\n  --ease-in-out-expo: cubic-bezier(1, 0, 0, 1);\r\n  --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);\r\n  display: inline-block;\r\n  width: 75px;\r\n  height: 75px;\r\n  padding: 10px;\r\n  color: white;\r\n  line-height: 50px;\r\n  text-align: center;\r\n  background: #333;\r\n  transition: transform 1s var(--ease-out-quart);\r\n}\r\n\r\n.easing-variables:hover {\r\n  transform: rotate(45deg);\r\n}",
+          "css": ":root {\n  /* Place variables in here to use globally */\n}\n\n.easing-variables {\n  --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);\n  --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n  --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);\n  --ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);\n  --ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);\n  --ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);\n\n  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);\n  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);\n  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);\n  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);\n  --ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);\n\n  --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);\n  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);\n  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);\n  --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);\n  --ease-in-out-expo: cubic-bezier(1, 0, 0, 1);\n  --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);\n  display: inline-block;\n  width: 75px;\n  height: 75px;\n  padding: 10px;\n  color: white;\n  line-height: 50px;\n  text-align: center;\n  background: #333;\n  transition: transform 1s var(--ease-out-quart);\n}\n\n.easing-variables:hover {\n  transform: rotate(45deg);\n}",
           "js": "",
           "scopedCss": "[data-scope=\"easing-variables\"] :root {\n  /* Place variables in here to use globally */ }\n\n[data-scope=\"easing-variables\"] .easing-variables {\n  --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);\n  --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n  --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);\n  --ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);\n  --ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);\n  --ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);\n  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);\n  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);\n  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);\n  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);\n  --ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);\n  --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);\n  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);\n  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);\n  --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);\n  --ease-in-out-expo: cubic-bezier(1, 0, 0, 1);\n  --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);\n  display: inline-block;\n  width: 75px;\n  height: 75px;\n  padding: 10px;\n  color: white;\n  line-height: 50px;\n  text-align: center;\n  background: #333;\n  transition: transform 1s var(--ease-out-quart); }\n\n[data-scope=\"easing-variables\"] .easing-variables:hover {\n  transform: rotate(45deg); }\n"
         },
@@ -414,7 +414,7 @@
         ]
       },
       "meta": {
-        "hash": "b87d480546bb11c1cf907a34460f0af2595b689b80fdcd671fd96eed3290be1e"
+        "hash": "94ec3c4e6b02374b61367e8cf4edcb9532bb7297673a28acaee0ad3264adfa3d"
       }
     },
     {
@@ -431,7 +431,7 @@
         },
         "codeBlocks": {
           "html": "<p class=\"etched-text\">I appear etched into the background.</p>",
-          "css": ".etched-text {\r\n  text-shadow: 0 2px white;\r\n  font-size: 1.5rem;\r\n  font-weight: bold;\r\n  color: #b8bec5;\r\n}",
+          "css": ".etched-text {\n  text-shadow: 0 2px white;\n  font-size: 1.5rem;\n  font-weight: bold;\n  color: #b8bec5;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"etched-text\"] .etched-text {\n  text-shadow: 0 2px white;\n  font-size: 1.5rem;\n  font-weight: bold;\n  color: #b8bec5; }\n"
         },
@@ -440,7 +440,7 @@
         ]
       },
       "meta": {
-        "hash": "ee34614edd7abfefbda6f677117e211f1573fe32535307a5a65cd32714d42769"
+        "hash": "68da5c2e7399979db3aeb1022d13b0490fc71d55d068597544954706c7027bef"
       }
     },
     {
@@ -456,8 +456,8 @@
           "supportPercentage": 100
         },
         "codeBlocks": {
-          "html": "<div class=\"evenly-distributed-children\">\r\n  <p>Item1</p>\r\n  <p>Item2</p>\r\n  <p>Item3</p>\r\n</div>",
-          "css": ".evenly-distributed-children {\r\n  display: flex;\r\n  justify-content: space-between;\r\n}",
+          "html": "<div class=\"evenly-distributed-children\">\n  <p>Item1</p>\n  <p>Item2</p>\n  <p>Item3</p>\n</div>",
+          "css": ".evenly-distributed-children {\n  display: flex;\n  justify-content: space-between;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"evenly-distributed-children\"] .evenly-distributed-children {\n  display: flex;\n  justify-content: space-between; }\n"
         },
@@ -466,7 +466,7 @@
         ]
       },
       "meta": {
-        "hash": "45cbfde9855dbddfaca5c7eeaed9094eb82ee9e9bcd6795ad5b34487aac0ecae"
+        "hash": "86c8c53be49e82365f6d6f54a03b55d9a8888ccc85504fe0480499b0e68c7f5b"
       }
     },
     {
@@ -482,8 +482,8 @@
           "supportPercentage": 99.5
         },
         "codeBlocks": {
-          "html": "<img class=\"image image-contain\" src=\"https://picsum.photos/600/200\" />\r\n<img class=\"image image-cover\" src=\"https://picsum.photos/600/200\" />",
-          "css": ".image {\r\n  background: #34495e;\r\n  border: 1px solid #34495e;\r\n  width: 200px;\r\n  height: 200px;\r\n}\r\n\r\n.image-contain {\r\n  object-fit: contain;\r\n  object-position: center;\r\n}\r\n\r\n.image-cover {\r\n  object-fit: cover;\r\n  object-position: right top;\r\n}",
+          "html": "<img class=\"image image-contain\" src=\"https://picsum.photos/600/200\" />\n<img class=\"image image-cover\" src=\"https://picsum.photos/600/200\" />",
+          "css": ".image {\n  background: #34495e;\n  border: 1px solid #34495e;\n  width: 200px;\n  height: 200px;\n}\n\n.image-contain {\n  object-fit: contain;\n  object-position: center;\n}\n\n.image-cover {\n  object-fit: cover;\n  object-position: right top;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"fit-image-in-container\"] .image {\n  background: #34495e;\n  border: 1px solid #34495e;\n  width: 200px;\n  height: 200px; }\n\n[data-scope=\"fit-image-in-container\"] .image-contain {\n  object-fit: contain;\n  object-position: center; }\n\n[data-scope=\"fit-image-in-container\"] .image-cover {\n  object-fit: cover;\n  object-position: right top; }\n"
         },
@@ -493,7 +493,7 @@
         ]
       },
       "meta": {
-        "hash": "79cb705dc7ae6fbde94fac8dc3b273dda73be7a4739a2cdf9f160ad6f678133a"
+        "hash": "5d09d5e54b7436f047db61223cff15dce2f17f6cffe5e71e0f9061337de3068e"
       }
     },
     {
@@ -510,7 +510,7 @@
         },
         "codeBlocks": {
           "html": "<div class=\"flexbox-centering\"><div class=\"child\">Centered content.</div></div>",
-          "css": ".flexbox-centering {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  height: 100px;\r\n}",
+          "css": ".flexbox-centering {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100px;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"flexbox-centering\"] .flexbox-centering {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100px; }\n"
         },
@@ -519,7 +519,7 @@
         ]
       },
       "meta": {
-        "hash": "8820ec3b11ce1a963dc07b1d572f6c8d49f38be7e35c724495ca4f7cafd2dc40"
+        "hash": "a2bf8cfa4de368cfb10d013b6bbb87c598e0cccacfe816972da4ac668c6abc1a"
       }
     },
     {
@@ -535,8 +535,8 @@
           "supportPercentage": 85.39
         },
         "codeBlocks": {
-          "html": "<div class=\"focus-within\">\r\n  <form>\r\n    <label for=\"given_name\">Given Name:</label> <input id=\"given_name\" type=\"text\" /> <br />\r\n    <label for=\"family_name\">Family Name:</label> <input id=\"family_name\" type=\"text\" />\r\n  </form>\r\n</div>",
-          "css": "form {\r\n  border: 3px solid #2d98da;\r\n  color: #000000;\r\n  padding: 4px;\r\n}\r\n\r\nform:focus-within {\r\n  background: #f7b731;\r\n  color: #000000;\r\n}",
+          "html": "<div class=\"focus-within\">\n  <form>\n    <label for=\"given_name\">Given Name:</label> <input id=\"given_name\" type=\"text\" /> <br />\n    <label for=\"family_name\">Family Name:</label> <input id=\"family_name\" type=\"text\" />\n  </form>\n</div>",
+          "css": "form {\n  border: 3px solid #2d98da;\n  color: #000000;\n  padding: 4px;\n}\n\nform:focus-within {\n  background: #f7b731;\n  color: #000000;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"focus-within\"] form {\n  border: 3px solid #2d98da;\n  color: #000000;\n  padding: 4px; }\n\n[data-scope=\"focus-within\"] form:focus-within {\n  background: #f7b731;\n  color: #000000; }\n"
         },
@@ -546,7 +546,7 @@
         ]
       },
       "meta": {
-        "hash": "11e0ab773786e630ff4ea34511c33b168f2532ee0e8ca9877d10d3f520d41bdd"
+        "hash": "a12b394af0b2df2f7fa6bae2cbbe3a8b01ba74510991dcfe3952b8bd9c0a5a41"
       }
     },
     {
@@ -562,8 +562,8 @@
           "supportPercentage": 99.11
         },
         "codeBlocks": {
-          "html": "<div class=\"container\">\r\n  <p><em>Click the button below to enter the element into fullscreen mode. </em></p>\r\n  <div class=\"element\" id=\"element\"><p>I change color in fullscreen mode!</p></div>\r\n  <br />\r\n  <button onclick=\"var el = document.getElementById('element'); el.requestFullscreen();\">\r\n    Go Full Screen!\r\n  </button>\r\n</div>",
-          "css": ".container {\r\n  margin: 40px auto;\r\n  max-width: 700px;\r\n}\r\n\r\n.element {\r\n  padding: 20px;\r\n  height: 300px;\r\n  width: 100%;\r\n  background-color: skyblue;\r\n  box-sizing: border-box;\r\n}\r\n\r\n.element p {\r\n  text-align: center;\r\n  color: white;\r\n  font-size: 3em;\r\n}\r\n\r\n.element:-ms-fullscreen p {\r\n  visibility: visible;\r\n}\r\n\r\n.element:fullscreen {\r\n  background-color: #e4708a;\r\n  width: 100vw;\r\n  height: 100vh;\r\n}",
+          "html": "<div class=\"container\">\n  <p><em>Click the button below to enter the element into fullscreen mode. </em></p>\n  <div class=\"element\" id=\"element\"><p>I change color in fullscreen mode!</p></div>\n  <br />\n  <button onclick=\"var el = document.getElementById('element'); el.requestFullscreen();\">\n    Go Full Screen!\n  </button>\n</div>",
+          "css": ".container {\n  margin: 40px auto;\n  max-width: 700px;\n}\n\n.element {\n  padding: 20px;\n  height: 300px;\n  width: 100%;\n  background-color: skyblue;\n  box-sizing: border-box;\n}\n\n.element p {\n  text-align: center;\n  color: white;\n  font-size: 3em;\n}\n\n.element:-ms-fullscreen p {\n  visibility: visible;\n}\n\n.element:fullscreen {\n  background-color: #e4708a;\n  width: 100vw;\n  height: 100vh;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"fullscreen\"] .container {\n  margin: 40px auto;\n  max-width: 700px; }\n\n[data-scope=\"fullscreen\"] .element {\n  padding: 20px;\n  height: 300px;\n  width: 100%;\n  background-color: skyblue;\n  box-sizing: border-box; }\n\n[data-scope=\"fullscreen\"] .element p {\n  text-align: center;\n  color: white;\n  font-size: 3em; }\n\n[data-scope=\"fullscreen\"] .element:-ms-fullscreen p {\n  visibility: visible; }\n\n[data-scope=\"fullscreen\"] .element:fullscreen {\n  background-color: #e4708a;\n  width: 100vw;\n  height: 100vh; }\n"
         },
@@ -572,7 +572,7 @@
         ]
       },
       "meta": {
-        "hash": "ab740ed224c15a4208ba10b1bb84b2759067df437f29790bfd275a74aba21258"
+        "hash": "23cab923692f5e3250be38b3c970dc11f3bab34159812aaf979ea09bce441c30"
       }
     },
     {
@@ -588,8 +588,8 @@
           "supportPercentage": 100
         },
         "codeBlocks": {
-          "html": "<div class=\"ghost-trick\">\r\n  <div class=\"ghosting\"><p>Vertically centered without changing the position property.</p></div>\r\n</div>",
-          "css": ".ghosting {\r\n  height: 300px;\r\n  background: #0ff;\r\n}\r\n\r\n.ghosting:before {\r\n  content: '';\r\n  display: inline-block;\r\n  height: 100%;\r\n  vertical-align: middle;\r\n}\r\n\r\np {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n}",
+          "html": "<div class=\"ghost-trick\">\n  <div class=\"ghosting\"><p>Vertically centered without changing the position property.</p></div>\n</div>",
+          "css": ".ghosting {\n  height: 300px;\n  background: #0ff;\n}\n\n.ghosting:before {\n  content: '';\n  display: inline-block;\n  height: 100%;\n  vertical-align: middle;\n}\n\np {\n  display: inline-block;\n  vertical-align: middle;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"ghost-trick\"] .ghosting {\n  height: 300px;\n  background: #0ff; }\n\n[data-scope=\"ghost-trick\"] .ghosting:before {\n  content: '';\n  display: inline-block;\n  height: 100%;\n  vertical-align: middle; }\n\n[data-scope=\"ghost-trick\"] p {\n  display: inline-block;\n  vertical-align: middle; }\n"
         },
@@ -598,7 +598,7 @@
         ]
       },
       "meta": {
-        "hash": "e54cc858faa07d8f045e2f623afd3c91dae04d734f53e5a42e1dcaf827f8e81c"
+        "hash": "0515f03b1505eafa21e0d0d7377facbe4aaa9159996906dd4ed2857ee137073a"
       }
     },
     {
@@ -615,7 +615,7 @@
         },
         "codeBlocks": {
           "html": "<p class=\"gradient-text\">Gradient text</p>",
-          "css": ".gradient-text {\r\n  background: -webkit-linear-gradient(pink, red);\r\n  -webkit-text-fill-color: transparent;\r\n  -webkit-background-clip: text;\r\n}",
+          "css": ".gradient-text {\n  background: -webkit-linear-gradient(pink, red);\n  -webkit-text-fill-color: transparent;\n  -webkit-background-clip: text;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"gradient-text\"] .gradient-text {\n  background: -webkit-linear-gradient(pink, red);\n  -webkit-text-fill-color: transparent;\n  -webkit-background-clip: text; }\n"
         },
@@ -624,7 +624,7 @@
         ]
       },
       "meta": {
-        "hash": "f744ba7858c7dd444bf818aa3830b819b7b1fb45db7962532eac4721f7d9f8cc"
+        "hash": "9620da48fb82b48a7c6b681854707b622a18c158f2db88c816e3b9c0d9b04523"
       }
     },
     {
@@ -641,7 +641,7 @@
         },
         "codeBlocks": {
           "html": "<div class=\"grid-centering\"><div class=\"child\">Centered content.</div></div>",
-          "css": ".grid-centering {\r\n  display: grid;\r\n  justify-content: center;\r\n  align-items: center;\r\n  height: 100px;\r\n}",
+          "css": ".grid-centering {\n  display: grid;\n  justify-content: center;\n  align-items: center;\n  height: 100px;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"grid-centering\"] .grid-centering {\n  display: grid;\n  justify-content: center;\n  align-items: center;\n  height: 100px; }\n"
         },
@@ -650,7 +650,7 @@
         ]
       },
       "meta": {
-        "hash": "2b27b1f7d93dfab11c829c95d82b39ead7c0dc517a4016a1647358c286195cdf"
+        "hash": "f6fbb076581e63ab9187ca63d8620f88de19d7a78c46f9ded903271461a445bf"
       }
     },
     {
@@ -667,7 +667,7 @@
         },
         "codeBlocks": {
           "html": "<div class=\"hairline-border\">text</div>",
-          "css": ".hairline-border {\r\n  box-shadow: 0 0 0 1px;\r\n}\r\n\r\n@media (min-resolution: 2dppx) {\r\n  .hairline-border {\r\n    box-shadow: 0 0 0 0.5px;\r\n  }\r\n}\r\n\r\n@media (min-resolution: 3dppx) {\r\n  .hairline-border {\r\n    box-shadow: 0 0 0 0.33333333px;\r\n  }\r\n}\r\n\r\n@media (min-resolution: 4dppx) {\r\n  .hairline-border {\r\n    box-shadow: 0 0 0 0.25px;\r\n  }\r\n}",
+          "css": ".hairline-border {\n  box-shadow: 0 0 0 1px;\n}\n\n@media (min-resolution: 2dppx) {\n  .hairline-border {\n    box-shadow: 0 0 0 0.5px;\n  }\n}\n\n@media (min-resolution: 3dppx) {\n  .hairline-border {\n    box-shadow: 0 0 0 0.33333333px;\n  }\n}\n\n@media (min-resolution: 4dppx) {\n  .hairline-border {\n    box-shadow: 0 0 0 0.25px;\n  }\n}",
           "js": "",
           "scopedCss": "[data-scope=\"hairline-border\"] .hairline-border {\n  box-shadow: 0 0 0 1px; }\n\n@media (min-resolution: 2dppx) {\n  [data-scope=\"hairline-border\"] .hairline-border {\n    box-shadow: 0 0 0 0.5px; } }\n\n@media (min-resolution: 3dppx) {\n  [data-scope=\"hairline-border\"] .hairline-border {\n    box-shadow: 0 0 0 0.33333333px; } }\n\n@media (min-resolution: 4dppx) {\n  [data-scope=\"hairline-border\"] .hairline-border {\n    box-shadow: 0 0 0 0.25px; } }\n"
         },
@@ -676,7 +676,7 @@
         ]
       },
       "meta": {
-        "hash": "9e93a04f611ba681d3b0c04355e360202fd83249c232bd022ab0d463f4b116aa"
+        "hash": "cd26d0cd1831474afdc784b4459b60062243e2d390975e94cd7d51fa776c603f"
       }
     },
     {
@@ -692,9 +692,9 @@
           "supportPercentage": 96.51
         },
         "codeBlocks": {
-          "html": "<div class=\"trigger\">\r\n  Hover me to see a height transition.\r\n  <div class=\"el\">content</div>\r\n</div>",
-          "css": ".el {\r\n  transition: max-height 0.5s;\r\n  overflow: hidden;\r\n  max-height: 0;\r\n}\r\n\r\n.trigger:hover > .el {\r\n  max-height: var(--max-height);\r\n}",
-          "js": "var el = document.querySelector('.el')\r\nvar height = el.scrollHeight\r\nel.style.setProperty('--max-height', height + 'px')",
+          "html": "<div class=\"trigger\">\n  Hover me to see a height transition.\n  <div class=\"el\">content</div>\n</div>",
+          "css": ".el {\n  transition: max-height 0.5s;\n  overflow: hidden;\n  max-height: 0;\n}\n\n.trigger:hover > .el {\n  max-height: var(--max-height);\n}",
+          "js": "var el = document.querySelector('.el')\nvar height = el.scrollHeight\nel.style.setProperty('--max-height', height + 'px')",
           "scopedCss": "[data-scope=\"height-transition\"] .el {\n  transition: max-height 0.5s;\n  overflow: hidden;\n  max-height: 0; }\n\n[data-scope=\"height-transition\"] .trigger:hover > .el {\n  max-height: var(--max-height); }\n"
         },
         "tags": [
@@ -702,7 +702,7 @@
         ]
       },
       "meta": {
-        "hash": "db9bb66c4cee6f6e91a3928eb322250610e02574249031cdbf67c5b8fdc7855a"
+        "hash": "bff0b57d24dac06ae6a6d71a8d0d628ec0b97760be0cfda66791191957075d73"
       }
     },
     {
@@ -719,7 +719,7 @@
         },
         "codeBlocks": {
           "html": "<p class=\"hover-shadow-box-animation\">Box it!</p>",
-          "css": ".hover-shadow-box-animation {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  transform: perspective(1px) translateZ(0);\r\n  box-shadow: 0 0 1px transparent;\r\n  margin: 10px;\r\n  transition-duration: 0.3s;\r\n  transition-property: box-shadow, transform;\r\n}\r\n.hover-shadow-box-animation:hover,\r\n.hover-shadow-box-animation:focus,\r\n.hover-shadow-box-animation:active {\r\n  box-shadow: 1px 10px 10px -10px rgba(0, 0, 24, 0.5);\r\n  transform: scale(1.2);\r\n}",
+          "css": ".hover-shadow-box-animation {\n  display: inline-block;\n  vertical-align: middle;\n  transform: perspective(1px) translateZ(0);\n  box-shadow: 0 0 1px transparent;\n  margin: 10px;\n  transition-duration: 0.3s;\n  transition-property: box-shadow, transform;\n}\n.hover-shadow-box-animation:hover,\n.hover-shadow-box-animation:focus,\n.hover-shadow-box-animation:active {\n  box-shadow: 1px 10px 10px -10px rgba(0, 0, 24, 0.5);\n  transform: scale(1.2);\n}",
           "js": "",
           "scopedCss": "[data-scope=\"hover-shadow-box-animation\"] .hover-shadow-box-animation {\n  display: inline-block;\n  vertical-align: middle;\n  transform: perspective(1px) translateZ(0);\n  box-shadow: 0 0 1px transparent;\n  margin: 10px;\n  transition-duration: 0.3s;\n  transition-property: box-shadow, transform; }\n\n[data-scope=\"hover-shadow-box-animation\"] .hover-shadow-box-animation:hover,\n[data-scope=\"hover-shadow-box-animation\"] .hover-shadow-box-animation:focus,\n[data-scope=\"hover-shadow-box-animation\"] .hover-shadow-box-animation:active {\n  box-shadow: 1px 10px 10px -10px rgba(0, 0, 24, 0.5);\n  transform: scale(1.2); }\n"
         },
@@ -728,7 +728,7 @@
         ]
       },
       "meta": {
-        "hash": "6b44c5bfa958fbaf7c0aed2051344ae6404625ae8b37c71c482d619fe93f5e10"
+        "hash": "4136aff34ae1b8bf6b525c08881a12c43e9ce7265e864c09ea25fa40e8d86396"
       }
     },
     {
@@ -745,7 +745,7 @@
         },
         "codeBlocks": {
           "html": "<p class=\"hover-underline-animation\">Hover this text to see the effect!</p>",
-          "css": ".hover-underline-animation {\r\n  display: inline-block;\r\n  position: relative;\r\n  color: #0087ca;\r\n}\r\n.hover-underline-animation::after {\r\n  content: '';\r\n  position: absolute;\r\n  width: 100%;\r\n  transform: scaleX(0);\r\n  height: 2px;\r\n  bottom: 0;\r\n  left: 0;\r\n  background-color: #0087ca;\r\n  transform-origin: bottom right;\r\n  transition: transform 0.25s ease-out;\r\n}\r\n.hover-underline-animation:hover::after {\r\n  transform: scaleX(1);\r\n  transform-origin: bottom left;\r\n}",
+          "css": ".hover-underline-animation {\n  display: inline-block;\n  position: relative;\n  color: #0087ca;\n}\n.hover-underline-animation::after {\n  content: '';\n  position: absolute;\n  width: 100%;\n  transform: scaleX(0);\n  height: 2px;\n  bottom: 0;\n  left: 0;\n  background-color: #0087ca;\n  transform-origin: bottom right;\n  transition: transform 0.25s ease-out;\n}\n.hover-underline-animation:hover::after {\n  transform: scaleX(1);\n  transform-origin: bottom left;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"hover-underline-animation\"] .hover-underline-animation {\n  display: inline-block;\n  position: relative;\n  color: #0087ca; }\n\n[data-scope=\"hover-underline-animation\"] .hover-underline-animation::after {\n  content: '';\n  position: absolute;\n  width: 100%;\n  transform: scaleX(0);\n  height: 2px;\n  bottom: 0;\n  left: 0;\n  background-color: #0087ca;\n  transform-origin: bottom right;\n  transition: transform 0.25s ease-out; }\n\n[data-scope=\"hover-underline-animation\"] .hover-underline-animation:hover::after {\n  transform: scaleX(1);\n  transform-origin: bottom left; }\n"
         },
@@ -754,7 +754,7 @@
         ]
       },
       "meta": {
-        "hash": "0f68a04cd1667a3047a8af2d8555f084c8b998d056ec5b20960f8a354673f213"
+        "hash": "6e8a53b0b69ab05f54c199f42944746c0e3331712f69a8dc72709eda16428424"
       }
     },
     {
@@ -770,8 +770,8 @@
           "supportPercentage": 100
         },
         "codeBlocks": {
-          "html": "<div class=\"container\">\r\n  <div>Div 1</div>\r\n  <div>Div 2</div>\r\n  <div>Div 3</div>\r\n</div>",
-          "css": "html,\r\nbody {\r\n  height: 100%;\r\n  margin: 0;\r\n}\r\n\r\n.container {\r\n  height: 100%;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.container > div:last-child {\r\n  background-color: tomato;\r\n  flex: 1;\r\n}",
+          "html": "<div class=\"container\">\n  <div>Div 1</div>\n  <div>Div 2</div>\n  <div>Div 3</div>\n</div>",
+          "css": "html,\nbody {\n  height: 100%;\n  margin: 0;\n}\n\n.container {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n}\n\n.container > div:last-child {\n  background-color: tomato;\n  flex: 1;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"last-item-with-remaining-available-height\"] html,\n[data-scope=\"last-item-with-remaining-available-height\"] body {\n  height: 100%;\n  margin: 0; }\n\n[data-scope=\"last-item-with-remaining-available-height\"] .container {\n  height: 100%;\n  display: flex;\n  flex-direction: column; }\n\n[data-scope=\"last-item-with-remaining-available-height\"] .container > div:last-child {\n  background-color: tomato;\n  flex: 1; }\n"
         },
@@ -780,7 +780,7 @@
         ]
       },
       "meta": {
-        "hash": "e07fc6f0476a46c201812b41c2fa4eb5adef8ab7f5d538db33d0f64cc3efc02d"
+        "hash": "2f925cc190a9744532de97bb4add65e53cc0b2f3833760f4e7263f5df17cfad5"
       }
     },
     {
@@ -797,8 +797,8 @@
         },
         "codeBlocks": {
           "html": "<button class=\"mouse-cursor-gradient-tracking\"><span>Hover me</span></button>",
-          "css": ".mouse-cursor-gradient-tracking {\r\n  position: relative;\r\n  background: #7983ff;\r\n  padding: 0.5rem 1rem;\r\n  font-size: 1.2rem;\r\n  border: none;\r\n  color: white;\r\n  cursor: pointer;\r\n  outline: none;\r\n  overflow: hidden;\r\n}\r\n\r\n.mouse-cursor-gradient-tracking span {\r\n  position: relative;\r\n}\r\n\r\n.mouse-cursor-gradient-tracking::before {\r\n  --size: 0;\r\n  content: '';\r\n  position: absolute;\r\n  left: var(--x);\r\n  top: var(--y);\r\n  width: var(--size);\r\n  height: var(--size);\r\n  background: radial-gradient(circle closest-side, pink, transparent);\r\n  transform: translate(-50%, -50%);\r\n  transition: width 0.2s ease, height 0.2s ease;\r\n}\r\n\r\n.mouse-cursor-gradient-tracking:hover::before {\r\n  --size: 200px;\r\n}",
-          "js": "var btn = document.querySelector('.mouse-cursor-gradient-tracking')\r\nbtn.onmousemove = function(e) {\r\n  var rect = e.target.getBoundingClientRect()\r\n  var x = e.clientX - rect.left\r\n  var y = e.clientY - rect.top\r\n  btn.style.setProperty('--x', x + 'px')\r\n  btn.style.setProperty('--y', y + 'px')\r\n}",
+          "css": ".mouse-cursor-gradient-tracking {\n  position: relative;\n  background: #7983ff;\n  padding: 0.5rem 1rem;\n  font-size: 1.2rem;\n  border: none;\n  color: white;\n  cursor: pointer;\n  outline: none;\n  overflow: hidden;\n}\n\n.mouse-cursor-gradient-tracking span {\n  position: relative;\n}\n\n.mouse-cursor-gradient-tracking::before {\n  --size: 0;\n  content: '';\n  position: absolute;\n  left: var(--x);\n  top: var(--y);\n  width: var(--size);\n  height: var(--size);\n  background: radial-gradient(circle closest-side, pink, transparent);\n  transform: translate(-50%, -50%);\n  transition: width 0.2s ease, height 0.2s ease;\n}\n\n.mouse-cursor-gradient-tracking:hover::before {\n  --size: 200px;\n}",
+          "js": "var btn = document.querySelector('.mouse-cursor-gradient-tracking')\nbtn.onmousemove = function(e) {\n  var rect = e.target.getBoundingClientRect()\n  var x = e.clientX - rect.left\n  var y = e.clientY - rect.top\n  btn.style.setProperty('--x', x + 'px')\n  btn.style.setProperty('--y', y + 'px')\n}",
           "scopedCss": "[data-scope=\"mouse-cursor-gradient-tracking\"] .mouse-cursor-gradient-tracking {\n  position: relative;\n  background: #7983ff;\n  padding: 0.5rem 1rem;\n  font-size: 1.2rem;\n  border: none;\n  color: white;\n  cursor: pointer;\n  outline: none;\n  overflow: hidden; }\n\n[data-scope=\"mouse-cursor-gradient-tracking\"] .mouse-cursor-gradient-tracking span {\n  position: relative; }\n\n[data-scope=\"mouse-cursor-gradient-tracking\"] .mouse-cursor-gradient-tracking::before {\n  --size: 0;\n  content: '';\n  position: absolute;\n  left: var(--x);\n  top: var(--y);\n  width: var(--size);\n  height: var(--size);\n  background: radial-gradient(circle closest-side, pink, transparent);\n  transform: translate(-50%, -50%);\n  transition: width 0.2s ease, height 0.2s ease; }\n\n[data-scope=\"mouse-cursor-gradient-tracking\"] .mouse-cursor-gradient-tracking:hover::before {\n  --size: 200px; }\n"
         },
         "tags": [
@@ -807,7 +807,7 @@
         ]
       },
       "meta": {
-        "hash": "bfa1e4fe855d14c7182a1a4ebb2e2263b5bb06d0646fff18a8d6a253754b93c3"
+        "hash": "97fbac82b526cafe6e48233dda46d0bb87fde7a52027774048b90c9c14818395"
       }
     },
     {
@@ -823,8 +823,8 @@
           "supportPercentage": 100
         },
         "codeBlocks": {
-          "html": "<ul class=\"css-not-selector-shortcut\">\r\n  <li>One</li>\r\n  <li>Two</li>\r\n  <li>Three</li>\r\n  <li>Four</li>\r\n</ul>",
-          "css": ".css-not-selector-shortcut {\r\n  display: flex;\r\n}\r\n\r\nul {\r\n  padding-left: 0;\r\n}\r\n\r\nli {\r\n  list-style-type: none;\r\n  margin: 0;\r\n  padding: 0 0.75rem;\r\n}\r\n\r\nli:not(:last-child) {\r\n  border-right: 2px solid #d2d5e4;\r\n}",
+          "html": "<ul class=\"css-not-selector-shortcut\">\n  <li>One</li>\n  <li>Two</li>\n  <li>Three</li>\n  <li>Four</li>\n</ul>",
+          "css": ".css-not-selector-shortcut {\n  display: flex;\n}\n\nul {\n  padding-left: 0;\n}\n\nli {\n  list-style-type: none;\n  margin: 0;\n  padding: 0 0.75rem;\n}\n\nli:not(:last-child) {\n  border-right: 2px solid #d2d5e4;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"not-selector\"] .css-not-selector-shortcut {\n  display: flex; }\n\n[data-scope=\"not-selector\"] ul {\n  padding-left: 0; }\n\n[data-scope=\"not-selector\"] li {\n  list-style-type: none;\n  margin: 0;\n  padding: 0 0.75rem; }\n\n[data-scope=\"not-selector\"] li:not(:last-child) {\n  border-right: 2px solid #d2d5e4; }\n"
         },
@@ -833,7 +833,7 @@
         ]
       },
       "meta": {
-        "hash": "cd616ef456cd7628984c5bc953f4f0a9f08d75186917592603741fb599d0b437"
+        "hash": "a5ce598fdef79b1c1a91bc30992bd881e3f1d1f7928c4c4d3ccd5f4eb5817ad9"
       }
     },
     {
@@ -849,8 +849,8 @@
           "supportPercentage": 100
         },
         "codeBlocks": {
-          "html": "<a class=\"button\" href=\"http://pantswebsite.com\">\r\n  Learn More <span class=\"offscreen\"> about pants</span>\r\n</a>",
-          "css": ".offscreen {\r\n  border: 0;\r\n  clip: rect(0 0 0 0);\r\n  height: 1px;\r\n  margin: -1px;\r\n  overflow: hidden;\r\n  padding: 0;\r\n  position: absolute;\r\n  width: 1px;\r\n}",
+          "html": "<a class=\"button\" href=\"http://pantswebsite.com\">\n  Learn More <span class=\"offscreen\"> about pants</span>\n</a>",
+          "css": ".offscreen {\n  border: 0;\n  clip: rect(0 0 0 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"offscreen\"] .offscreen {\n  border: 0;\n  clip: rect(0 0 0 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px; }\n"
         },
@@ -860,7 +860,7 @@
         ]
       },
       "meta": {
-        "hash": "e39752738eff09bb0c2e4ec0c925836ffce49429fb3b50654f1f730fc567a62b"
+        "hash": "08134db9917770420e2e7b479304250d9f0b8b4b285db1c28ee3a79e150b3f47"
       }
     },
     {
@@ -876,17 +876,17 @@
           "supportPercentage": 100
         },
         "codeBlocks": {
-          "html": "<div class=\"overflow-scroll-gradient\">\r\n  <div class=\"overflow-scroll-gradient__scroller\">\r\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />\r\n    Iure id exercitationem nulla qui repellat laborum vitae, <br />\r\n    molestias tempora velit natus. Quas, assumenda nisi. <br />\r\n    Quisquam enim qui iure, consequatur velit sit? <br />\r\n    Lorem ipsum dolor sit amet consectetur adipisicing elit.<br />\r\n    Iure id exercitationem nulla qui repellat laborum vitae, <br />\r\n    molestias tempora velit natus. Quas, assumenda nisi. <br />\r\n    Quisquam enim qui iure, consequatur velit sit?\r\n  </div>\r\n</div>",
-          "css": ".overflow-scroll-gradient {\r\n  position: relative;\r\n}\r\n.overflow-scroll-gradient::after {\r\n  content: '';\r\n  position: absolute;\r\n  bottom: 0;\r\n  width: 240px;\r\n  height: 25px;\r\n  background: linear-gradient(\r\n    rgba(255, 255, 255, 0.001),\r\n    white\r\n  ); /* transparent keyword is broken in Safari */\r\n  pointer-events: none;\r\n}\r\n.overflow-scroll-gradient__scroller {\r\n  overflow-y: scroll;\r\n  background: white;\r\n  width: 240px;\r\n  height: 200px;\r\n  padding: 15px;\r\n  line-height: 1.2;\r\n}",
+          "html": "<div class=\"overflow-scroll-gradient\">\n  <div class=\"overflow-scroll-gradient__scroller\">\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />\n    Iure id exercitationem nulla qui repellat laborum vitae, <br />\n    molestias tempora velit natus. Quas, assumenda nisi. <br />\n    Quisquam enim qui iure, consequatur velit sit? <br />\n    Lorem ipsum dolor sit amet consectetur adipisicing elit.<br />\n    Iure id exercitationem nulla qui repellat laborum vitae, <br />\n    molestias tempora velit natus. Quas, assumenda nisi. <br />\n    Quisquam enim qui iure, consequatur velit sit?\n  </div>\n</div>",
+          "css": ".overflow-scroll-gradient {\n  position: relative;\n}\n.overflow-scroll-gradient::after {\n  content: '';\n  position: absolute;\n  bottom: 0;\n  width: 250px;\n  height: 25px;\n  background: linear-gradient(\n    rgba(255, 255, 255, 0.001),\n    white\n  ); /* transparent keyword is broken in Safari */\n  pointer-events: none;\n}\n.overflow-scroll-gradient__scroller {\n  overflow-y: scroll;\n  background: white;\n  width: 240px;\n  height: 200px;\n  padding: 15px;\n  line-height: 1.2;\n}",
           "js": "",
-          "scopedCss": "[data-scope=\"overflow-scroll-gradient\"] .overflow-scroll-gradient {\n  position: relative; }\n\n[data-scope=\"overflow-scroll-gradient\"] .overflow-scroll-gradient::after {\n  content: '';\n  position: absolute;\n  bottom: 0;\n  width: 240px;\n  height: 25px;\n  background: linear-gradient(rgba(255, 255, 255, 0.001), white);\n  /* transparent keyword is broken in Safari */\n  pointer-events: none; }\n\n[data-scope=\"overflow-scroll-gradient\"] .overflow-scroll-gradient__scroller {\n  overflow-y: scroll;\n  background: white;\n  width: 240px;\n  height: 200px;\n  padding: 15px;\n  line-height: 1.2; }\n"
+          "scopedCss": "[data-scope=\"overflow-scroll-gradient\"] .overflow-scroll-gradient {\n  position: relative; }\n\n[data-scope=\"overflow-scroll-gradient\"] .overflow-scroll-gradient::after {\n  content: '';\n  position: absolute;\n  bottom: 0;\n  width: 250px;\n  height: 25px;\n  background: linear-gradient(rgba(255, 255, 255, 0.001), white);\n  /* transparent keyword is broken in Safari */\n  pointer-events: none; }\n\n[data-scope=\"overflow-scroll-gradient\"] .overflow-scroll-gradient__scroller {\n  overflow-y: scroll;\n  background: white;\n  width: 240px;\n  height: 200px;\n  padding: 15px;\n  line-height: 1.2; }\n"
         },
         "tags": [
           "visual"
         ]
       },
       "meta": {
-        "hash": "7cbc1cb3003e2c5eaa2faf0dd9ff2626e79eba40e3d08f8858ec4eb97387fe45"
+        "hash": "e25bdb353dc5da5c1c359f91769d85d0b3b0a58ff7085041603e4e685b380ef7"
       }
     },
     {
@@ -903,7 +903,7 @@
         },
         "codeBlocks": {
           "html": "<div class=\"reference\" tabindex=\"0\"><div class=\"popout-menu\">Popout menu</div></div>",
-          "css": ".reference {\r\n  position: relative;\r\n  background: tomato;\r\n  width: 100px;\r\n  height: 100px;\r\n}\r\n.popout-menu {\r\n  position: absolute;\r\n  visibility: hidden;\r\n  left: 100%;\r\n  background: #333;\r\n  color: white;\r\n  padding: 15px;\r\n}\r\n.reference:hover > .popout-menu,\r\n.reference:focus > .popout-menu,\r\n.reference:focus-within > .popout-menu {\r\n  visibility: visible;\r\n}",
+          "css": ".reference {\n  position: relative;\n  background: tomato;\n  width: 100px;\n  height: 100px;\n}\n.popout-menu {\n  position: absolute;\n  visibility: hidden;\n  left: 100%;\n  background: #333;\n  color: white;\n  padding: 15px;\n}\n.reference:hover > .popout-menu,\n.reference:focus > .popout-menu,\n.reference:focus-within > .popout-menu {\n  visibility: visible;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"popout-menu\"] .reference {\n  position: relative;\n  background: tomato;\n  width: 100px;\n  height: 100px; }\n\n[data-scope=\"popout-menu\"] .popout-menu {\n  position: absolute;\n  visibility: hidden;\n  left: 100%;\n  background: #333;\n  color: white;\n  padding: 15px; }\n\n[data-scope=\"popout-menu\"] .reference:hover > .popout-menu,\n[data-scope=\"popout-menu\"] .reference:focus > .popout-menu,\n[data-scope=\"popout-menu\"] .reference:focus-within > .popout-menu {\n  visibility: visible; }\n"
         },
@@ -912,7 +912,7 @@
         ]
       },
       "meta": {
-        "hash": "50e2f327107e84327b2e3a9ae637718f74b1aba2e01ae1bdbc7e42cf683f8710"
+        "hash": "46d1f9e1a05328d86ffda0dbea7dc60eae44c319eb430632ef384d2f3e7e6d44"
       }
     },
     {
@@ -929,7 +929,7 @@
         },
         "codeBlocks": {
           "html": "<p class=\"pretty-text-underline\">Pretty text underline without clipping descending letters.</p>",
-          "css": ".pretty-text-underline {\r\n  display: inline;\r\n  text-shadow: 1px 1px #f5f6f9, -1px 1px #f5f6f9, -1px -1px #f5f6f9, 1px -1px #f5f6f9;\r\n  background-image: linear-gradient(90deg, currentColor 100%, transparent 100%);\r\n  background-position: bottom;\r\n  background-repeat: no-repeat;\r\n  background-size: 100% 1px;\r\n}\r\n.pretty-text-underline::-moz-selection {\r\n  background-color: rgba(0, 150, 255, 0.3);\r\n  text-shadow: none;\r\n}\r\n.pretty-text-underline::selection {\r\n  background-color: rgba(0, 150, 255, 0.3);\r\n  text-shadow: none;\r\n}",
+          "css": ".pretty-text-underline {\n  display: inline;\n  text-shadow: 1px 1px #f5f6f9, -1px 1px #f5f6f9, -1px -1px #f5f6f9, 1px -1px #f5f6f9;\n  background-image: linear-gradient(90deg, currentColor 100%, transparent 100%);\n  background-position: bottom;\n  background-repeat: no-repeat;\n  background-size: 100% 1px;\n}\n.pretty-text-underline::-moz-selection {\n  background-color: rgba(0, 150, 255, 0.3);\n  text-shadow: none;\n}\n.pretty-text-underline::selection {\n  background-color: rgba(0, 150, 255, 0.3);\n  text-shadow: none;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"pretty-text-underline\"] .pretty-text-underline {\n  display: inline;\n  text-shadow: 1px 1px #f5f6f9, -1px 1px #f5f6f9, -1px -1px #f5f6f9, 1px -1px #f5f6f9;\n  background-image: linear-gradient(90deg, currentColor 100%, transparent 100%);\n  background-position: bottom;\n  background-repeat: no-repeat;\n  background-size: 100% 1px; }\n\n[data-scope=\"pretty-text-underline\"] .pretty-text-underline::-moz-selection {\n  background-color: rgba(0, 150, 255, 0.3);\n  text-shadow: none; }\n\n[data-scope=\"pretty-text-underline\"] .pretty-text-underline::selection {\n  background-color: rgba(0, 150, 255, 0.3);\n  text-shadow: none; }\n"
         },
@@ -938,7 +938,7 @@
         ]
       },
       "meta": {
-        "hash": "1cdfe90dea30803c030d10bde8932a2256a3752857e890ed92bf933e98ea800d"
+        "hash": "fb3a96cbbb4d59af2566f3d0729c13478a81a572b25a8dd1696e2a67dd8fff79"
       }
     },
     {
@@ -954,8 +954,8 @@
           "supportPercentage": 95.76
         },
         "codeBlocks": {
-          "html": "<div class=\"reset-all-styles\">\r\n  <h5>Title</h5>\r\n  <p>\r\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui\r\n    repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui\r\n    iure, consequatur velit sit?\r\n  </p>\r\n</div>",
-          "css": ".reset-all-styles {\r\n  all: initial;\r\n}",
+          "html": "<div class=\"reset-all-styles\">\n  <h5>Title</h5>\n  <p>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui\n    repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui\n    iure, consequatur velit sit?\n  </p>\n</div>",
+          "css": ".reset-all-styles {\n  all: initial;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"reset-all-styles\"] .reset-all-styles {\n  all: initial; }\n"
         },
@@ -964,7 +964,7 @@
         ]
       },
       "meta": {
-        "hash": "4509d93ac6d1669c61598476910b9903ce9f7ada86906a4562564f31967fa538"
+        "hash": "f9542b2db5cd49f09e53b3af8348c58c973244bdeede87857e49660c6e713d65"
       }
     },
     {
@@ -981,7 +981,7 @@
         },
         "codeBlocks": {
           "html": "<div class=\"shape-separator\"></div>",
-          "css": ".shape-separator {\r\n  position: relative;\r\n  height: 48px;\r\n  background: #333;\r\n}\r\n.shape-separator::after {\r\n  content: '';\r\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 12'%3E%3Cpath d='m12 0l12 12h-24z' fill='%23fff'/%3E%3C/svg%3E\");\r\n  position: absolute;\r\n  width: 100%;\r\n  height: 12px;\r\n  bottom: 0;\r\n}",
+          "css": ".shape-separator {\n  position: relative;\n  height: 48px;\n  background: #333;\n}\n.shape-separator::after {\n  content: '';\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 12'%3E%3Cpath d='m12 0l12 12h-24z' fill='%23fff'/%3E%3C/svg%3E\");\n  position: absolute;\n  width: 100%;\n  height: 12px;\n  bottom: 0;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"shape-separator\"] .shape-separator {\n  position: relative;\n  height: 48px;\n  background: #333; }\n\n[data-scope=\"shape-separator\"] .shape-separator::after {\n  content: '';\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 12'%3E%3Cpath d='m12 0l12 12h-24z' fill='%23fff'/%3E%3C/svg%3E\");\n  position: absolute;\n  width: 100%;\n  height: 12px;\n  bottom: 0; }\n"
         },
@@ -990,7 +990,7 @@
         ]
       },
       "meta": {
-        "hash": "a5dfbf6afbfbf5939443d850d9db81e8f4ae9f442d875e13572409df3b3e6853"
+        "hash": "0b86c444f4d15709a99d1e32c651e9530a294258ba32784d998a56c6f14198b1"
       }
     },
     {
@@ -1006,8 +1006,8 @@
           "supportPercentage": 100
         },
         "codeBlocks": {
-          "html": "<div class=\"sibling-fade\">\r\n  <span>Item 1</span> <span>Item 2</span> <span>Item 3</span> <span>Item 4</span>\r\n  <span>Item 5</span> <span>Item 6</span>\r\n</div>",
-          "css": "span {\r\n  padding: 0 1rem;\r\n  transition: opacity 0.2s;\r\n}\r\n\r\n.sibling-fade:hover span:not(:hover) {\r\n  opacity: 0.5;\r\n}",
+          "html": "<div class=\"sibling-fade\">\n  <span>Item 1</span> <span>Item 2</span> <span>Item 3</span> <span>Item 4</span>\n  <span>Item 5</span> <span>Item 6</span>\n</div>",
+          "css": "span {\n  padding: 0 1rem;\n  transition: opacity 0.2s;\n}\n\n.sibling-fade:hover span:not(:hover) {\n  opacity: 0.5;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"sibling-fade\"] span {\n  padding: 0 1rem;\n  transition: opacity 0.2s; }\n\n[data-scope=\"sibling-fade\"] .sibling-fade:hover span:not(:hover) {\n  opacity: 0.5; }\n"
         },
@@ -1016,7 +1016,7 @@
         ]
       },
       "meta": {
-        "hash": "f880a6def28a11a56ad7ee3b9b396b855d2ae61c5370715df0018d80aa012eb3"
+        "hash": "35bfb52929dcbd21c120d555c9d3382154f47b661d31722ffb3d21281021bba3"
       }
     },
     {
@@ -1033,16 +1033,16 @@
         },
         "codeBlocks": {
           "html": "<p class=\"system-font-stack\">This text uses the system font.</p>",
-          "css": ".system-font-stack {\r\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,\r\n    Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n}",
+          "css": ".system-font-stack {\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,\n    Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}",
           "js": "",
-          "scopedCss": "[data-scope=\"system-font-stack\"] .system-font-stack {\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,\r Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif; }\n"
+          "scopedCss": "[data-scope=\"system-font-stack\"] .system-font-stack {\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif; }\n"
         },
         "tags": [
           "visual"
         ]
       },
       "meta": {
-        "hash": "57388d08b84a05d228af6e387925c848404029bb63292f9d897c923312d59fe3"
+        "hash": "97b037f3f463b8cf7de0cc12a607c540ffe8a4869323a4cc17c66eebbc92d612"
       }
     },
     {
@@ -1059,7 +1059,7 @@
         },
         "codeBlocks": {
           "html": "<input type=\"checkbox\" id=\"toggle\" class=\"offscreen\" /> <label for=\"toggle\" class=\"switch\"></label>",
-          "css": ".switch {\r\n  position: relative;\r\n  display: inline-block;\r\n  width: 40px;\r\n  height: 20px;\r\n  background-color: rgba(0, 0, 0, 0.25);\r\n  border-radius: 20px;\r\n  transition: all 0.3s;\r\n}\r\n\r\n.switch::after {\r\n  content: '';\r\n  position: absolute;\r\n  width: 18px;\r\n  height: 18px;\r\n  border-radius: 18px;\r\n  background-color: white;\r\n  top: 1px;\r\n  left: 1px;\r\n  transition: all 0.3s;\r\n}\r\n\r\ninput[type='checkbox']:checked + .switch::after {\r\n  transform: translateX(20px);\r\n}\r\n\r\ninput[type='checkbox']:checked + .switch {\r\n  background-color: #7983ff;\r\n}\r\n\r\n.offscreen {\r\n  position: absolute;\r\n  left: -9999px;\r\n}",
+          "css": ".switch {\n  position: relative;\n  display: inline-block;\n  width: 40px;\n  height: 20px;\n  background-color: rgba(0, 0, 0, 0.25);\n  border-radius: 20px;\n  transition: all 0.3s;\n}\n\n.switch::after {\n  content: '';\n  position: absolute;\n  width: 18px;\n  height: 18px;\n  border-radius: 18px;\n  background-color: white;\n  top: 1px;\n  left: 1px;\n  transition: all 0.3s;\n}\n\ninput[type='checkbox']:checked + .switch::after {\n  transform: translateX(20px);\n}\n\ninput[type='checkbox']:checked + .switch {\n  background-color: #7983ff;\n}\n\n.offscreen {\n  position: absolute;\n  left: -9999px;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"toggle-switch\"] .switch {\n  position: relative;\n  display: inline-block;\n  width: 40px;\n  height: 20px;\n  background-color: rgba(0, 0, 0, 0.25);\n  border-radius: 20px;\n  transition: all 0.3s; }\n\n[data-scope=\"toggle-switch\"] .switch::after {\n  content: '';\n  position: absolute;\n  width: 18px;\n  height: 18px;\n  border-radius: 18px;\n  background-color: white;\n  top: 1px;\n  left: 1px;\n  transition: all 0.3s; }\n\n[data-scope=\"toggle-switch\"] input[type='checkbox']:checked + .switch::after {\n  transform: translateX(20px); }\n\n[data-scope=\"toggle-switch\"] input[type='checkbox']:checked + .switch {\n  background-color: #7983ff; }\n\n[data-scope=\"toggle-switch\"] .offscreen {\n  position: absolute;\n  left: -9999px; }\n"
         },
@@ -1069,7 +1069,7 @@
         ]
       },
       "meta": {
-        "hash": "0f67d565434719c7ee63647c5c342a0df9b5835de1850059f4a8ed2f6c19fb4c"
+        "hash": "e29182514bd83550705267a43d21eec8886ed011c6259f2b3efec9862541f90e"
       }
     },
     {
@@ -1086,7 +1086,7 @@
         },
         "codeBlocks": {
           "html": "<div class=\"parent\"><div class=\"child\">Centered content</div></div>",
-          "css": ".parent {\r\n  border: 1px solid #333;\r\n  height: 250px;\r\n  position: relative;\r\n  width: 250px;\r\n}\r\n\r\n.child {\r\n  left: 50%;\r\n  position: absolute;\r\n  top: 50%;\r\n  transform: translate(-50%, -50%);\r\n  text-align: center;\r\n}",
+          "css": ".parent {\n  border: 1px solid #333;\n  height: 250px;\n  position: relative;\n  width: 250px;\n}\n\n.child {\n  left: 50%;\n  position: absolute;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  text-align: center;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"transform-centering\"] .parent {\n  border: 1px solid #333;\n  height: 250px;\n  position: relative;\n  width: 250px; }\n\n[data-scope=\"transform-centering\"] .child {\n  left: 50%;\n  position: absolute;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  text-align: center; }\n"
         },
@@ -1095,7 +1095,7 @@
         ]
       },
       "meta": {
-        "hash": "f857b4924f7fa583407f5ca5703b095e2aa123028ffdb6473bdeaac1c99aa501"
+        "hash": "9ee4bb8713d24b9e6f5367eb05645c6e41d205b120b4d06a9a949984c7cd73b0"
       }
     },
     {
@@ -1112,7 +1112,7 @@
         },
         "codeBlocks": {
           "html": "<div class=\"triangle\"></div>",
-          "css": ".triangle {\r\n  width: 0;\r\n  height: 0;\r\n  border-top: 20px solid #333;\r\n  border-left: 20px solid transparent;\r\n  border-right: 20px solid transparent;\r\n}",
+          "css": ".triangle {\n  width: 0;\n  height: 0;\n  border-top: 20px solid #333;\n  border-left: 20px solid transparent;\n  border-right: 20px solid transparent;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"triangle\"] .triangle {\n  width: 0;\n  height: 0;\n  border-top: 20px solid #333;\n  border-left: 20px solid transparent;\n  border-right: 20px solid transparent; }\n"
         },
@@ -1121,7 +1121,7 @@
         ]
       },
       "meta": {
-        "hash": "51288cd3d31ae557cf2829489efa9dbbd0d3c8e83432db794bb96c9ccf1e3ec8"
+        "hash": "357daaf44bab240518a3c9bdd34a1e8702fab3358171e30f633b7a7f423b9884"
       }
     },
     {
@@ -1137,8 +1137,8 @@
           "supportPercentage": 100
         },
         "codeBlocks": {
-          "html": "<p class=\"truncate-text-multiline\">\r\n  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut\r\n  labore et.\r\n</p>",
-          "css": ".truncate-text-multiline {\r\n  overflow: hidden;\r\n  display: block;\r\n  height: 109.2px;\r\n  margin: 0 auto;\r\n  font-size: 26px;\r\n  line-height: 1.4;\r\n  width: 400px;\r\n  position: relative;\r\n}\r\n\r\n.truncate-text-multiline:after {\r\n  content: '';\r\n  position: absolute;\r\n  bottom: 0;\r\n  right: 0;\r\n  width: 150px;\r\n  height: 36.4px;\r\n  background: linear-gradient(to right, rgba(0, 0, 0, 0), #f5f6f9 50%);\r\n}",
+          "html": "<p class=\"truncate-text-multiline\">\n  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut\n  labore et.\n</p>",
+          "css": ".truncate-text-multiline {\n  overflow: hidden;\n  display: block;\n  height: 109.2px;\n  margin: 0 auto;\n  font-size: 26px;\n  line-height: 1.4;\n  width: 400px;\n  position: relative;\n}\n\n.truncate-text-multiline:after {\n  content: '';\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  width: 150px;\n  height: 36.4px;\n  background: linear-gradient(to right, rgba(0, 0, 0, 0), #f5f6f9 50%);\n}",
           "js": "",
           "scopedCss": "[data-scope=\"truncate-text-multiline\"] .truncate-text-multiline {\n  overflow: hidden;\n  display: block;\n  height: 109.2px;\n  margin: 0 auto;\n  font-size: 26px;\n  line-height: 1.4;\n  width: 400px;\n  position: relative; }\n\n[data-scope=\"truncate-text-multiline\"] .truncate-text-multiline:after {\n  content: '';\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  width: 150px;\n  height: 36.4px;\n  background: linear-gradient(to right, rgba(0, 0, 0, 0), #f5f6f9 50%); }\n"
         },
@@ -1147,7 +1147,7 @@
         ]
       },
       "meta": {
-        "hash": "2d9473e267dec78456b551753d150702c5d4473f719a043f44ae3d50344fd2d4"
+        "hash": "a30287149e833b454deea446359d51554640ad3a57cd2460d8519c376077b8b4"
       }
     },
     {
@@ -1164,7 +1164,7 @@
         },
         "codeBlocks": {
           "html": "<p class=\"truncate-text\">If I exceed one line's width, I will be truncated.</p>",
-          "css": ".truncate-text {\r\n  overflow: hidden;\r\n  white-space: nowrap;\r\n  text-overflow: ellipsis;\r\n  width: 200px;\r\n}",
+          "css": ".truncate-text {\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  width: 200px;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"truncate-text\"] .truncate-text {\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  width: 200px; }\n"
         },
@@ -1173,7 +1173,7 @@
         ]
       },
       "meta": {
-        "hash": "c808aa7ac046c9f6159590c5cc02bb8ab43c009460afa2ae8b8fd7c188ca9b18"
+        "hash": "4ce872446c7950c9450e56ab2251c7cfcd473a1c9b2a64baa7c9d6b029264796"
       }
     },
     {
@@ -1189,8 +1189,8 @@
           "supportPercentage": 100
         },
         "codeBlocks": {
-          "html": "<ul>\r\n  <li>Item 01</li>\r\n  <li>Item 02</li>\r\n  <li>Item 03</li>\r\n  <li>Item 04</li>\r\n  <li>Item 05</li>\r\n</ul>",
-          "css": "li:nth-child(odd) {\r\n  background-color: #ddd;\r\n}",
+          "html": "<ul>\n  <li>Item 01</li>\n  <li>Item 02</li>\n  <li>Item 03</li>\n  <li>Item 04</li>\n  <li>Item 05</li>\n</ul>",
+          "css": "li:nth-child(odd) {\n  background-color: #ddd;\n}",
           "js": "",
           "scopedCss": "[data-scope=\"zebra-striped-list\"] li:nth-child(odd) {\n  background-color: #ddd; }\n"
         },
@@ -1199,7 +1199,7 @@
         ]
       },
       "meta": {
-        "hash": "7562a49fa58e85a92eac0e931d746975ccc86f7ea249517b8e2809b6681a4a76"
+        "hash": "43bc0cd7776468f3b74791017349ef278921c8ded7ba0bd7788d2b01bdb68c7a"
       }
     }
   ],
