@@ -111,6 +111,10 @@ img.website-logo {
     bottom: -7px;
     z-index: 3;
   }
+  @media screen and (min-width: $layout-large-breakpoint)  {
+    left: calc(0rem - (100vw - 768px) / 2 + 62px);
+    width: calc(100vw - 62px);
+  }
 }
 .splash-container {
   max-width: 64rem;
