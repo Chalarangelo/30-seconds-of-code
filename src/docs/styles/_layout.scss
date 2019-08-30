@@ -104,6 +104,7 @@ img.website-logo {
     z-index: -1;
   }
   &::after {
+    transition: 0.3s ease all;
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 12'%3E%3Cpath d='M12 0l12 12H0z' fill='%23f2f3f8'/%3E%3C/svg%3E");
     background-size: 24px 24px;
     width: 100%;
@@ -114,6 +115,11 @@ img.website-logo {
   @media screen and (min-width: $layout-large-breakpoint)  {
     left: calc(1px - (100vw - 768px) / 2 + 62px -1px);
     width: calc(100vw - 62px);
+  }
+}
+.page-container.dark { 
+  .splash::after {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 12'%3E%3Cpath d='M12 0l12 12H0z' fill='%232A314C'/%3E%3C/svg%3E");
   }
 }
 .splash-container {
