@@ -33,7 +33,7 @@ const CodepenButton = ({ snippetData }) => (
         })
       }
     />
-    <button className='button button-a button-codepen'>Edit on Codepen</button>
+    <button className='button button-b button-codepen'>Edit on Codepen</button>
   </form>
 )
 
