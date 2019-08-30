@@ -112,7 +112,7 @@ img.website-logo {
     z-index: 3;
   }
   @media screen and (min-width: $layout-large-breakpoint)  {
-    left: calc(0rem - (100vw - 768px) / 2 + 62px);
+    left: calc(1px - (100vw - 768px) / 2 + 62px -1px);
     width: calc(100vw - 62px);
   }
 }
