@@ -28,7 +28,7 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
   content: '';
   position: absolute;
   bottom: 0;
-  width: 240px;
+  width: 250px;
   height: 25px;
   background: linear-gradient(
     rgba(255, 255, 255, 0.001),

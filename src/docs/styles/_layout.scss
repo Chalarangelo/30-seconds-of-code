@@ -215,9 +215,10 @@ p.light-sub {
 // Category/tag title
 .tag-title {
   transition: 0.3s ease all;
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   color: var(-fore-color-dark);
   line-height: 1.375;
+  text-align: center;
   a {
     &, &:link, &:visited {
       color: var(--fore-color-dark);
