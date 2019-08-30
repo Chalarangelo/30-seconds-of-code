@@ -11,7 +11,7 @@
   color: var(--card-fore-color);
   box-shadow: 0px 0px 1px var(--card-shadow-color-a), 0px 6px 12px var(--card-shadow-color-b);
   border-radius: 0.125rem;
-  padding: 1rem;
+  padding: 1rem 1rem 3rem;
   .card-title {
     font-size: 1.5rem;
     line-height: 1.375;
@@ -216,6 +216,5 @@
   width: calc(100% + 2.75rem);
   position: absolute;
   margin-left: 0.75rem;
-  bottom: -3.5rem;
-
+  bottom: -3.375rem;
 }

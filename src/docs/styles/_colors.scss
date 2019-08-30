@@ -32,7 +32,7 @@
 
   // Button color palette
   --button-back-color-a: #3B3EFC;
-  --button-back-color-b: #DC325F;
+  --button-back-color-b: #5d79ff;
   --button-fore-color: #FFFFFF;
   --button-shadow-color: rgba(0, 0, 0, 0.25);
   --button-shadow-focus-color: rgba(0, 0, 0, 0.29);
@@ -87,11 +87,11 @@
   // Interface color palette
   --back-color: #2A314C;
   --back-color-dark: #8993BE;
-  --fore-color: #ABAFBF;
-  --fore-color-light: #858CA8;
-  --fore-color-lighter: #707899;
-  --fore-color-dark: #B4BCD9;
-  --fore-color-darker: #FCFCFD;
+  --fore-color: #a4afd4;
+  --fore-color-light: #bfc5de;
+  --fore-color-lighter: #c4cbe2;
+  --fore-color-dark: #d1d6ea;
+  --fore-color-darker: #dee1f1;
 
   // Scrollbar
   --scrollbar-back-color: #434E76;
@@ -100,7 +100,7 @@
   // Menu color palette
   --menu-back-color: #434E76;
   --menu-border-color: #13151B;
-  --menu-fore-color: #959AAC;
+  --menu-fore-color: #e0e3f2;
   --menu-active-fore-color: #CDD4EF;
 
   // Card corner palette remains unchanged for consistency
@@ -115,10 +115,10 @@
   // Button color palette remains unchanged for consistency
 
   // Card color palette
-  --card-back-color: hsl(227, 28%, 36%);
-  --card-fore-color: #F0F0F0;
+  --card-back-color: #424d75;
+  --card-fore-color: #f0f2f8;
   --card-border-color: #13151B;
-  --card-fore-color-light: #D6D6D6; // previously C0C0C0, careful
+  --card-fore-color-light: #e0e3f2; // previously C0C0C0, careful
   --card-shadow-color-b: rgba(1, 8, 30, 0.24);
 
   // Pre & Code color palette remains unchanged for consistency
