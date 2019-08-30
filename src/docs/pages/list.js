@@ -105,17 +105,14 @@ const ListPage = props => {
           ))}
         <br/>
         {staticPages.map(page => (
-          <SimpleCard 
-            title={(
-              <Link
-                to={`/${page.url}`}
-              >
-                {page.title}
-              </Link>
-            )}
+          <Link
+            to={`/${page.url}`}
+            className='clickable-card-wrapper'
           >
-            <p>{page.description}</p>
-          </SimpleCard>
+            <SimpleCard title={page.title}>
+              <p>{page.description}</p>
+            </SimpleCard>
+          </Link>
         ))}
       </Shell>
     </>
