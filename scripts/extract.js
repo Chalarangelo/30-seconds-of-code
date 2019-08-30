@@ -15,16 +15,15 @@ const SNIPPETS_ARCHIVE_PATH = `./${config.snippetArchivePath}`;
 const GLOSSARY_PATH = `./${config.glossaryPath}`;
 const OUTPUT_PATH = `./${config.snippetDataPath}`;
 
-// Check if running on Travis, only build for cron jobs and custom builds
+// Terminate if parent commit is a Travis build
 if (
   util.isTravisCI() &&
-  process.env['TRAVIS_EVENT_TYPE'] !== 'cron' &&
-  process.env['TRAVIS_EVENT_TYPE'] !== 'api'
+  /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])
 ) {
   console.log(
     `${green(
-      'NOBUILD',
-    )} snippet extraction terminated, not a cron or api build!`,
+      'NOEXTRACT',
+    )} Snippet extraction terminated, parent commit is a Travis build!`,
   );
   process.exit(0);
 }
