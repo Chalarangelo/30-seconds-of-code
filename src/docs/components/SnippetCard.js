@@ -170,12 +170,6 @@ const ShortCard = ({
             {snippetData.code.scopedCss}
           </style>
           <div dangerouslySetInnerHTML={{ __html: snippetData.code.html }} />
-          {
-            snippetData.code.js &&
-            <script>
-              {`function()(${snippetData.code.js})();`}
-            </script>
-          }
         </div>
         <p className='snippet-view'><Link to={`/snippet/${snippetData.id}`} className='button button-b button-view' rel='canonical'>View snippet</Link></p>
       </div>
