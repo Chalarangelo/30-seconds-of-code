@@ -71,14 +71,9 @@
       background: var(--button-example-toggler-fore-color);
     }
   }
-  // &.short {
-  //   .card-bottom {
-  //     display: none;
-  //     @media screen and (min-width: $layout-large-breakpoint) {
-  //       display: block;
-  //     }
-  //   }
-  // }
+  &.short {
+    margin-bottom: 2rem;
+  }
 }
 
 // Card sections
@@ -214,4 +209,13 @@
       }
     }
   }
+}
+
+.snippet-view {
+  text-align: center;
+  width: calc(100% + 2.75rem);
+  position: absolute;
+  margin-left: 0.75rem;
+  bottom: -3.5rem;
+
 }
