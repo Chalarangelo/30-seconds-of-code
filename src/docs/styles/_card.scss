@@ -11,7 +11,7 @@
   color: var(--card-fore-color);
   box-shadow: 0px 0px 1px var(--card-shadow-color-a), 0px 6px 12px var(--card-shadow-color-b);
   border-radius: 0.125rem;
-  padding: 1rem 1rem 3rem;
+  padding: 1rem 1rem 3.25rem;
   .card-title {
     font-size: 1.5rem;
     line-height: 1.375;
@@ -48,7 +48,7 @@
     width: 100%;
     border-radius: 0.25rem;
     line-height: 1.15;
-    padding: 2.25rem 1.125rem 2.25rem;
+    padding: 1rem;
   }
   .card-examples {
     transition: all 0.3s ease;
@@ -87,12 +87,15 @@
   margin: 1.25rem 1rem 0.125rem 1rem;
   font-weight: 700;
   &.card-section-html {
+    color: white;
     background-image: linear-gradient(135deg,#ff4c9f,#ff7b74);
   }
   &.card-section-css {
+    color: white;
     background-image: linear-gradient(135deg,#7983ff,#5f9de9);
   }
   &.card-section-js {
+    color: white;
     background-image: linear-gradient(135deg,#ffb000,#f58818);
   }
 }
