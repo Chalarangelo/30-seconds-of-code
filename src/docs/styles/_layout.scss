@@ -32,8 +32,8 @@ header.menu {
 .content {
   transition: 0.3s ease all;
   grid-area: content;
-  overflow-x: hidden;
   overflow: auto;
+  overflow-x: hidden;
   background: var(--back-color);
   &::-webkit-scrollbar-track {
     background-color: var(--scrollbar-back-color);
