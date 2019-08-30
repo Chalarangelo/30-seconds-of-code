@@ -41,7 +41,6 @@ const CodepenButton = ({ snippetData }) => (
 // Full snippet view (tags, code, title, description)
 // ===================================================
 const FullCard = ({ snippetData, isDarkMode }) => {
-  console.log(snippetData);
   const tags = snippetData.tags;
   let cardCodeHtml = `${optimizeAllNodes(
     getCodeBlocks(snippetData.html).html,
@@ -52,6 +51,18 @@ const FullCard = ({ snippetData, isDarkMode }) => {
   let cardCodeJs = `${optimizeAllNodes(
     getCodeBlocks(snippetData.html).js,
   )}`;
+
+  React.useEffect(() => {
+    if (!cardCodeJs) return;
+    let jsTitle = `${snippetData.title.toLowerCase().replace(/[\s-]/g, '')}_js`;
+    const s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.innerHTML = `function ${jsTitle}(){${snippetData.code.js}};`;
+    document.body.appendChild(s);
+    try { window[`${jsTitle}`](); } catch (e) { }
+  }, []);
+
   return (
     <div className='card'>
       <h4 className='card-title'>
@@ -96,7 +107,7 @@ const FullCard = ({ snippetData, isDarkMode }) => {
           {
             cardCodeJs &&
             <script>
-              {`function()(${snippetData.code.js})();`}
+              {`function jsTitle(){${snippetData.code.js}};`}
             </script>
           }
         </div>
@@ -128,6 +139,17 @@ const ShortCard = ({
   snippetData,
   isDarkMode
 }) => {
+  React.useEffect(() => {
+    if (!snippetData.code.js) return;
+    let jsTitle = `${snippetData.title.toLowerCase().replace(/[\s-]/g, '')}_js`;
+    const s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.innerHTML = `function ${jsTitle}(){${snippetData.code.js}};`;
+    document.body.appendChild(s);
+    try { window[`${jsTitle}`](); } catch (e) { }
+  }, []);
+
   return (
     <Link to={`/snippet/${snippetData.id}`} className='clickable-card-wrapper' rel='canonical'>
       <div className='card short'>
