@@ -798,7 +798,7 @@
         "codeBlocks": {
           "html": "<button class=\"mouse-cursor-gradient-tracking\"><span>Hover me</span></button>",
           "css": ".mouse-cursor-gradient-tracking {\r\n  position: relative;\r\n  background: #7983ff;\r\n  padding: 0.5rem 1rem;\r\n  font-size: 1.2rem;\r\n  border: none;\r\n  color: white;\r\n  cursor: pointer;\r\n  outline: none;\r\n  overflow: hidden;\r\n}\r\n\r\n.mouse-cursor-gradient-tracking span {\r\n  position: relative;\r\n}\r\n\r\n.mouse-cursor-gradient-tracking::before {\r\n  --size: 0;\r\n  content: '';\r\n  position: absolute;\r\n  left: var(--x);\r\n  top: var(--y);\r\n  width: var(--size);\r\n  height: var(--size);\r\n  background: radial-gradient(circle closest-side, pink, transparent);\r\n  transform: translate(-50%, -50%);\r\n  transition: width 0.2s ease, height 0.2s ease;\r\n}\r\n\r\n.mouse-cursor-gradient-tracking:hover::before {\r\n  --size: 200px;\r\n}",
-          "js": "var btn = document.querySelector('.mouse-cursor-gradient-tracking')\r\nbtn.onmousemove = function(e) {\r\n  var x = e.pageX - btn.offsetLeft - btn.offsetParent.offsetLeft\r\n  var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop\r\n  btn.style.setProperty('--x', x + 'px')\r\n  btn.style.setProperty('--y', y + 'px')\r\n}",
+          "js": "var btn = document.querySelector('.mouse-cursor-gradient-tracking')\r\nbtn.onmousemove = function(e) {\r\n  var rect = e.target.getBoundingClientRect()\r\n  var x = e.clientX - rect.left\r\n  var y = e.clientY - rect.top\r\n  btn.style.setProperty('--x', x + 'px')\r\n  btn.style.setProperty('--y', y + 'px')\r\n}",
           "scopedCss": "[data-scope=\"mouse-cursor-gradient-tracking\"] .mouse-cursor-gradient-tracking {\n  position: relative;\n  background: #7983ff;\n  padding: 0.5rem 1rem;\n  font-size: 1.2rem;\n  border: none;\n  color: white;\n  cursor: pointer;\n  outline: none;\n  overflow: hidden; }\n\n[data-scope=\"mouse-cursor-gradient-tracking\"] .mouse-cursor-gradient-tracking span {\n  position: relative; }\n\n[data-scope=\"mouse-cursor-gradient-tracking\"] .mouse-cursor-gradient-tracking::before {\n  --size: 0;\n  content: '';\n  position: absolute;\n  left: var(--x);\n  top: var(--y);\n  width: var(--size);\n  height: var(--size);\n  background: radial-gradient(circle closest-side, pink, transparent);\n  transform: translate(-50%, -50%);\n  transition: width 0.2s ease, height 0.2s ease; }\n\n[data-scope=\"mouse-cursor-gradient-tracking\"] .mouse-cursor-gradient-tracking:hover::before {\n  --size: 200px; }\n"
         },
         "tags": [
@@ -807,7 +807,7 @@
         ]
       },
       "meta": {
-        "hash": "f05295bd3fd79ff3f95c8eef9210b4a154daeeae1dc392601d103bd31713c30a"
+        "hash": "bfa1e4fe855d14c7182a1a4ebb2e2263b5bb06d0646fff18a8d6a253754b93c3"
       }
     },
     {
