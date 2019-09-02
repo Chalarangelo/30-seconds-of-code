@@ -13,6 +13,6 @@ const isUpperCase = str => str === str.toUpperCase();
 
 ```js
 isUpperCase('ABC'); // true
-isLowerCase('A3@$'); // true
-isLowerCase('aB4'); // false
+isUpperCase('A3@$'); // true
+isUpperCase('aB4'); // false
 ```
