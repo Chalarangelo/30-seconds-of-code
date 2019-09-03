@@ -34,7 +34,7 @@ const AboutPage = ({ isDarkMode }) => (
       </SimpleCard>
       <SimpleCard title='Our story'>
         <p style={{ textAlign: 'justify' }}>
-          The <strong>30 seconds</strong> movement started back in December, 2017, with the release of <a href='https://github.com/30-seconds/30-seconds-of-code' target='_blank' rel='noopener noreferrer'>30 seconds of code</a> by <a href='https://github.com/Chalarangelo' target='_blank' rel='noopener noreferrer'>Angelos Chalaris</a>. Since then, hundreds of developers have contributed snippets to over 6 repositories, creating a thriving community of people willing to help each other write better code. 
+          The <strong>30 seconds</strong> movement started back in December, 2017, with the release of <a href='https://github.com/30-seconds/30-seconds-of-code' target='_blank' rel='noopener noreferrer'>30 seconds of code</a> by <a href='https://github.com/Chalarangelo' target='_blank' rel='noopener noreferrer'>Angelos Chalaris</a>. Since then, hundreds of developers have contributed snippets to over 6 repositories, creating a thriving community of people willing to help each other write better code.
         </p>
         <p style={{ textAlign: 'justify' }}>
           In late 2018, the <a href='https://github.com/30-seconds'>30 seconds organization</a> was formed on GitHub, in order to expand upon existing projects and ensure that they will remain high-quality resources in the future.
