@@ -5,5 +5,5 @@ test('ary is a Function', () => {
 });
 const firstTwoMax = ary(Math.max, 2);
 test('Discards arguments with index >=n', () => {
-  expect([[2, 6, 'a'], [8, 4, 6], [10]].map(x => firstTwoMax(...x))).toEqual([6, 8, 10]);
+  expect([[2, 6, 'a'], [6, 4, 8], [10]].map(x => firstTwoMax(...x))).toEqual([6, 6, 10]);
 });
