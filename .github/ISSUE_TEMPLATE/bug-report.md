@@ -18,3 +18,12 @@ about: Create a report to help us improve
 
 ## Environment
 <!-- Provide some information about your OS, Browser or mobile device (if applicable). -->
+
+
+---
+name: BUG report
+about: Create a report to help us improve!
+
+---
+  
+  ## BUG desciption
