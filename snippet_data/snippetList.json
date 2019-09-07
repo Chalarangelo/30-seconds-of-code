@@ -486,7 +486,7 @@
       "type": "snippetListing",
       "title": "useInterval",
       "attributes": {
-        "text": "A hook that implements `setInterval` in a declarative manner.\n\n- Create a custom hook that takes a `callback` and a `delay`.\n- Use the `React.useRef()` hook to create a `ref` for the callback function.\n- Use the `React.useEffect()` hook to remember the latest callback.\n- Use the `Rect.useEffect()` hook to set up the interval and clean up.\n\n",
+        "text": "A hook that implements `setInterval` in a declarative manner.\n\n- Create a custom hook that takes a `callback` and a `delay`.\n- Use the `React.useRef()` hook to create a `ref` for the callback function.\n- Use the `React.useEffect()` hook to remember the latest callback.\n- Use the `React.useEffect()` hook to set up the interval and clean up.\n\n",
         "tags": [
           "hooks",
           "effect",
@@ -494,7 +494,7 @@
         ]
       },
       "meta": {
-        "hash": "2a5dbbdb2da60c42a738211e43997f45fe416f4cb069fbb53b1369549f446319"
+        "hash": "2146f00ffd55bd78f63e0543922b73cdc339acf728067bf96f20c05eca5306ab"
       }
     },
     {
@@ -520,7 +520,7 @@
       "type": "snippetListing",
       "title": "useTimeout",
       "attributes": {
-        "text": "A hook that implements `setTimeout` in a declarative manner.\n\n- Create a custom hook that takes a `callback` and a `delay`.\n- Use the `React.useRef()` hook to create a `ref` for the callback function.\n- Use the `React.useEffect()` hook to remember the latest callback.\n- Use the `Rect.useEffect()` hook to set up the timeout and clean up.\n\n",
+        "text": "A hook that implements `setTimeout` in a declarative manner.\n\n- Create a custom hook that takes a `callback` and a `delay`.\n- Use the `React.useRef()` hook to create a `ref` for the callback function.\n- Use the `React.useEffect()` hook to remember the latest callback.\n- Use the `React.useEffect()` hook to set up the timeout and clean up.\n\n",
         "tags": [
           "hooks",
           "effect",
@@ -528,7 +528,7 @@
         ]
       },
       "meta": {
-        "hash": "c07ecd818ad2e330d5bf4010da4464ac1aa76f1dcafec4cb7d9a8168313b68e9"
+        "hash": "83e13b09dccd6fa310703dfa7cc61e446fc10f1757125f2a6ad86833a4772c82"
       }
     }
   ],
