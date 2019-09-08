@@ -263,8 +263,8 @@
         "text": "Renders a link formatted to send an email.\n\n- Destructure the component's props, use `email`, `subject` and `body` to create a `<a>` element with an appropriate `href` attribute.\n- Render the link with `props.children` as its content.\n\n",
         "codeBlocks": {
           "style": "",
-          "code": "function Mailto({ email, subject, body, ...props }) {\n  return (\n    <a href={`mailto:${email}?subject=${subject || ''}&body=${body || ''}`}>{props.children}</a>\n  );\n}",
-          "example": "ReactDOM.render(\n  <Mailto email=\"foo@bar.baz\" subject=\"Hello\" body=\"Hello world!\">\n    Mail me!\n  </Mailto>,\n  document.getElementById('root')\n);"
+          "code": "function Mailto({ email, subject, body, ...props }) {\n  return (\n    <a href={`mailto:${email}?subject=${encodeURIComponent(subject) || ''}&body=${encodeURIComponent(body) || ''}`}>{props.children}</a>\n  );\n}",
+          "example": "ReactDOM.render(\n  <Mailto email=\"foo@bar.baz\" subject=\"Hello & Welcome\" body=\"Hello world!\">\n    Mail me!\n  </Mailto>,\n  document.getElementById('root')\n);"
         },
         "tags": [
           "visual",
@@ -272,7 +272,7 @@
         ]
       },
       "meta": {
-        "hash": "e59782e34529471198a8ec1f471368e5128743ab0d50ca1dfae488dd38ae9378"
+        "hash": "f4186bc638098d4d510a26dac586a5196ffb2e0d41e3325a0e53756f26896c4c"
       }
     },
     {
