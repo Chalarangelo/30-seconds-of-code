@@ -1456,7 +1456,7 @@ Renders a link formatted to send an email.
 ```jsx
 function Mailto({ email, subject, body, ...props }) {
   return (
-    <a href={`mailto:${email}?subject=${subject || ''}&body=${body || ''}`}>{props.children}</a>
+    <a href={`mailto:${email}?subject=${encodeURIComponent(subject) || ''}&body=${encodeURIComponent(body) || ''}`}>{props.children}</a>
   );
 }
 ```
@@ -1466,7 +1466,7 @@ function Mailto({ email, subject, body, ...props }) {
 
 ```jsx
 ReactDOM.render(
-  <Mailto email="foo@bar.baz" subject="Hello" body="Hello world!">
+  <Mailto email="foo@bar.baz" subject="Hello & Welcome" body="Hello world!">
     Mail me!
   </Mailto>,
   document.getElementById('root')
