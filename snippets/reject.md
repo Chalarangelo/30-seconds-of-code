@@ -3,7 +3,9 @@ title: reject
 tags: array,beginner
 ---
 
-Takes a predicate and array, like `Array.prototype.filter()`, but only keeps `x` if `pred(x) === false`.
+Filters an array's values based on a predicate function, returning only values for which the predicate function returns `true`.
+
+Use `Array.prototype.filter()` in combination with the predicate function, `pred`, to return only the values for which `pred()` returns `true`.
 
 ```js
 const reject = (pred, array) => array.filter((...args) => !pred(...args));
