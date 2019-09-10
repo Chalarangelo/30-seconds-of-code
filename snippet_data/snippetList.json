@@ -269,6 +269,23 @@
       }
     },
     {
+      "id": "RippleButton",
+      "type": "snippetListing",
+      "title": "RippleButton",
+      "attributes": {
+        "text": "### RippleButton\n\nRenders a button that animates a ripple effect when clicked.\n\n- Define some appropriate CSS styles and an animation for the ripple effect.\n- Use the `React.useState()` hook to create appropriate variables and setters for the pointer's coordinates and for the animation state of the button.\n- Use the `React.useEffect()` hook to change the state every time the `coords` state variable changes, starting the animation.\n- Use `setTimeout()` in the previous hook to clear the animation after it's done playing.\n- Use the `React.useEffect()` hook a second time to reset `coords` whenever the `isRippling` state variable is `false.`\n- Handle the `onClick` event by updating the `coords` state variable and calling the passed callback.\n- Finally, render a `<button>` with one or two `<span>` elements, setting the position of the `.ripple` element based on the `coords` state variable.\n\n",
+        "tags": [
+          "visual",
+          "state",
+          "effect",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "95d8e2f6113d2d38c90c3f6d0f765cc48cbc85a14cc77613b0c9b09156684116"
+      }
+    },
+    {
       "id": "Select",
       "type": "snippetListing",
       "title": "Select",
