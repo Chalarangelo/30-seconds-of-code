@@ -3,8 +3,6 @@ title: ComponentName
 tags: visual,state,effect,intermediate
 ---
 
-### ComponentName
-
 Explain briefly what the snippet does.
 
 - Explain briefly how the snippet works.
