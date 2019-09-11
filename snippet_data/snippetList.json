@@ -189,6 +189,21 @@
       }
     },
     {
+      "id": "Loader",
+      "type": "snippetListing",
+      "title": "Loader",
+      "attributes": {
+        "text": "Creates a spinning loader component.\n\n- Define appropriate CSS styles and animations for the component's elements.\n- Define the component, which returns a simple SVG, whose size is determined by the `size` prop.\n\n",
+        "tags": [
+          "visual",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "c64381d332ae68b271f644add7cdc15c6027c7ee6945c3d1f507bd7eeebf253d"
+      }
+    },
+    {
       "id": "Mailto",
       "type": "snippetListing",
       "title": "Mailto",
