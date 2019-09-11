@@ -3,8 +3,6 @@ title: RippleButton
 tags: visual,state,effect,intermediate
 ---
 
-### RippleButton
-
 Renders a button that animates a ripple effect when clicked.
 
 - Define some appropriate CSS styles and an animation for the ripple effect.
