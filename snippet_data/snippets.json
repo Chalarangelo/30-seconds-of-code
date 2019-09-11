@@ -255,6 +255,27 @@
       }
     },
     {
+      "id": "Loader",
+      "title": "Loader",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "Loader.md",
+        "text": "Creates a spinning loader component.\n\n- Define appropriate CSS styles and animations for the component's elements.\n- Define the component, which returns a simple SVG, whose size is determined by the `size` prop.\n\n",
+        "codeBlocks": {
+          "style": ".loader {\n  animation: rotate 2s linear infinite;\n}\n\n@keyframes rotate {\n  100% {\n    transform: rotate(360deg);\n  }\n}\n\n.loader circle {\n  animation: dash 1.5s ease-in-out infinite;\n}\n\n@keyframes dash {\n  0% {\n    stroke-dasharray: 1, 150;\n    stroke-dashoffset: 0;\n  }\n  50% {\n    stroke-dasharray: 90, 150;\n    stroke-dashoffset: -35;\n  }\n  100% {\n    stroke-dasharray: 90, 150;\n    stroke-dashoffset: -124;\n  }\n}",
+          "code": "function Loader({ size }) {\n  return (\n    <svg\n      className=\"loader\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      width={size}\n      height={size}\n      viewBox=\"0 0 24 24\"\n      fill=\"none\"\n      stroke=\"currentColor\"\n      strokeWidth=\"2\"\n      strokeLinecap=\"round\"\n      strokeLinejoin=\"round\"\n    >\n      <circle cx=\"12\" cy=\"12\" r=\"10\" />\n    </svg>\n  );\n}",
+          "example": "ReactDOM.render(<Loader size={24} />, document.getElementById('root'));"
+        },
+        "tags": [
+          "visual",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "c64381d332ae68b271f644add7cdc15c6027c7ee6945c3d1f507bd7eeebf253d"
+      }
+    },
+    {
       "id": "Mailto",
       "title": "Mailto",
       "type": "snippet",
