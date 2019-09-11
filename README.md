@@ -60,6 +60,7 @@ import ReactDOM from 'react-dom';
 * [`useClickOutside`](#useclickoutside)
 * [`useFetch`](#usefetch)
 * [`useInterval`](#useinterval)
+* [`useNavigatorOnLine`](#usenavigatoronline)
 * [`useSSR`](#usessr)
 * [`useTimeout`](#usetimeout)
 
@@ -457,6 +458,57 @@ const Timer = props => {
 };
 
 ReactDOM.render(<Timer />, document.getElementById('root'));
+```
+</details>
+
+<br>[⬆ Back to top](#contents)
+
+### useNavigatorOnLine
+
+A hook that returns if the client is online or offline.
+
+- Create a function, `getOnLineStatus`, that uses the `NavigatorOnLine` web API to get the online status of the client.
+- Use the `React.useState()` hook to create an appropriate state variable, `status`, and setter.
+- Use the `React.useEffect()` hook to add listeners for appropriate events, updating state, and cleanup those listeners when unmounting.
+- Finally return the `status` state variable.
+
+```jsx
+const getOnLineStatus = () =>
+  typeof navigator !== "undefined" && typeof navigator.onLine === "boolean"
+    ? navigator.onLine
+    : true;
+
+const useNavigatorOnLine = () => {
+  const [status, setStatus] = React.useState(getOnLineStatus());
+
+  const setOnline = () => setStatus(true);
+  const setOffline = () => setStatus(false);
+
+  React.useEffect(() => {
+    window.addEventListener("online", setOnline);
+    window.addEventListener("offline", setOffline);
+
+    return () => {
+      window.removeEventListener("online", setOnline);
+      window.removeEventListener("offline", setOffline);
+    };
+  }, []);
+
+  return status;
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```jsx
+const StatusIndicator = () => {
+  const isOnline = useNavigatorOnLine();
+
+  return <span>You are {isOnline ? "online" : "offline"}.</span>;
+};
+
+ReactDOM.render(<StatusIndicator />, document.getElementById("root"));
 ```
 </details>
 
@@ -1629,8 +1681,6 @@ ReactDOM.render(<App />, document.getElementById('root'));
 </details>
 
 <br>[⬆ Back to top](#contents)
-
-### RippleButton
 
 ### RippleButton
 

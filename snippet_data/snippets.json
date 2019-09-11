@@ -370,7 +370,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "RippleButton.md",
-        "text": "### RippleButton\n\nRenders a button that animates a ripple effect when clicked.\n\n- Define some appropriate CSS styles and an animation for the ripple effect.\n- Use the `React.useState()` hook to create appropriate variables and setters for the pointer's coordinates and for the animation state of the button.\n- Use the `React.useEffect()` hook to change the state every time the `coords` state variable changes, starting the animation.\n- Use `setTimeout()` in the previous hook to clear the animation after it's done playing.\n- Use the `React.useEffect()` hook a second time to reset `coords` whenever the `isRippling` state variable is `false.`\n- Handle the `onClick` event by updating the `coords` state variable and calling the passed callback.\n- Finally, render a `<button>` with one or two `<span>` elements, setting the position of the `.ripple` element based on the `coords` state variable.\n\n",
+        "text": "Renders a button that animates a ripple effect when clicked.\n\n- Define some appropriate CSS styles and an animation for the ripple effect.\n- Use the `React.useState()` hook to create appropriate variables and setters for the pointer's coordinates and for the animation state of the button.\n- Use the `React.useEffect()` hook to change the state every time the `coords` state variable changes, starting the animation.\n- Use `setTimeout()` in the previous hook to clear the animation after it's done playing.\n- Use the `React.useEffect()` hook a second time to reset `coords` whenever the `isRippling` state variable is `false.`\n- Handle the `onClick` event by updating the `coords` state variable and calling the passed callback.\n- Finally, render a `<button>` with one or two `<span>` elements, setting the position of the `.ripple` element based on the `coords` state variable.\n\n",
         "codeBlocks": {
           "style": ".ripple-button {\n  border-radius: 4px;\n  border: none;\n  margin: 8px;\n  padding: 14px 24px;\n  background: #1976d2;\n  color: #fff;\n  overflow: hidden;\n  position: relative;\n  cursor: pointer;\n}\n\n.ripple-button > .ripple {\n  width: 20px;\n  height: 20px;\n  position: absolute;\n  background: #63a4ff;\n  display: block;\n  content: \"\";\n  border-radius: 9999px;\n  opacity: 1;\n  animation: 1.2s ease 1 forwards ripple-effect;\n}\n\n@keyframes ripple-effect {\n  0% {\n    transform: scale(1);\n    opacity: 1;\n  }\n  50% {\n    transform: scale(10);\n    opacity: 0.375;\n  }\n  100% {\n    transform: scale(35);\n    opacity: 0;\n  }\n}\n\n.ripple-button > .content {\n  position: relative;\n  z-index: 2;\n}",
           "code": "function RippleButton({ children, onClick }) {\n  const [coords, setCoords] = React.useState({ x: -1, y: -1 });\n  const [isRippling, setIsRippling] = React.useState(false);\n\n  React.useEffect(\n    () => {\n      if (coords.x !== -1 && coords.y !== -1) {\n        setIsRippling(true);\n        setTimeout(() => setIsRippling(false), 1200);\n      } else setIsRippling(false);\n    },\n    [coords]\n  );\n\n  React.useEffect(\n    () => {\n      if (!isRippling) setCoords({ x: -1, y: -1 });\n    },\n    [isRippling]\n  );\n\n  return (\n    <button\n      className=\"ripple-button\"\n      onClick={e => {\n        var rect = e.target.getBoundingClientRect();\n        var x = e.clientX - rect.left;\n        var y = e.clientY - rect.top;\n        setCoords({ x, y });\n        onClick && onClick(e);\n      }}\n    >\n      {isRippling ? (\n        <span\n          className=\"ripple\"\n          style={{\n            left: coords.x + 10,\n            top: coords.y\n          }}\n        />\n      ) : (\n        \"\"\n      )}\n      <span className=\"content\">{children}</span>\n    </button>\n  );\n}",
@@ -384,7 +384,7 @@
         ]
       },
       "meta": {
-        "hash": "95d8e2f6113d2d38c90c3f6d0f765cc48cbc85a14cc77613b0c9b09156684116"
+        "hash": "a2238ea3abedb5a38d836a57966006cc43f905b375836d138bd69671a8731d84"
       }
     },
     {
@@ -698,6 +698,29 @@
       },
       "meta": {
         "hash": "2146f00ffd55bd78f63e0543922b73cdc339acf728067bf96f20c05eca5306ab"
+      }
+    },
+    {
+      "id": "useNavigatorOnLine",
+      "title": "useNavigatorOnLine",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "useNavigatorOnLine.md",
+        "text": "A hook that returns if the client is online or offline.\n\n- Create a function, `getOnLineStatus`, that uses the `NavigatorOnLine` web API to get the online status of the client.\n- Use the `React.useState()` hook to create an appropriate state variable, `status`, and setter.\n- Use the `React.useEffect()` hook to add listeners for appropriate events, updating state, and cleanup those listeners when unmounting.\n- Finally return the `status` state variable.\n\n",
+        "codeBlocks": {
+          "style": "",
+          "code": "const getOnLineStatus = () =>\n  typeof navigator !== \"undefined\" && typeof navigator.onLine === \"boolean\"\n    ? navigator.onLine\n    : true;\n\nconst useNavigatorOnLine = () => {\n  const [status, setStatus] = React.useState(getOnLineStatus());\n\n  const setOnline = () => setStatus(true);\n  const setOffline = () => setStatus(false);\n\n  React.useEffect(() => {\n    window.addEventListener(\"online\", setOnline);\n    window.addEventListener(\"offline\", setOffline);\n\n    return () => {\n      window.removeEventListener(\"online\", setOnline);\n      window.removeEventListener(\"offline\", setOffline);\n    };\n  }, []);\n\n  return status;\n};",
+          "example": "const StatusIndicator = () => {\n  const isOnline = useNavigatorOnLine();\n\n  return <span>You are {isOnline ? \"online\" : \"offline\"}.</span>;\n};\n\nReactDOM.render(<StatusIndicator />, document.getElementById(\"root\"));"
+        },
+        "tags": [
+          "hooks",
+          "state",
+          "effect",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "c9a0c97f92439438fd49c5ef50742524aae8a162e144342956bcf92cf1ebf470"
       }
     },
     {

@@ -273,7 +273,7 @@
       "type": "snippetListing",
       "title": "RippleButton",
       "attributes": {
-        "text": "### RippleButton\n\nRenders a button that animates a ripple effect when clicked.\n\n- Define some appropriate CSS styles and an animation for the ripple effect.\n- Use the `React.useState()` hook to create appropriate variables and setters for the pointer's coordinates and for the animation state of the button.\n- Use the `React.useEffect()` hook to change the state every time the `coords` state variable changes, starting the animation.\n- Use `setTimeout()` in the previous hook to clear the animation after it's done playing.\n- Use the `React.useEffect()` hook a second time to reset `coords` whenever the `isRippling` state variable is `false.`\n- Handle the `onClick` event by updating the `coords` state variable and calling the passed callback.\n- Finally, render a `<button>` with one or two `<span>` elements, setting the position of the `.ripple` element based on the `coords` state variable.\n\n",
+        "text": "Renders a button that animates a ripple effect when clicked.\n\n- Define some appropriate CSS styles and an animation for the ripple effect.\n- Use the `React.useState()` hook to create appropriate variables and setters for the pointer's coordinates and for the animation state of the button.\n- Use the `React.useEffect()` hook to change the state every time the `coords` state variable changes, starting the animation.\n- Use `setTimeout()` in the previous hook to clear the animation after it's done playing.\n- Use the `React.useEffect()` hook a second time to reset `coords` whenever the `isRippling` state variable is `false.`\n- Handle the `onClick` event by updating the `coords` state variable and calling the passed callback.\n- Finally, render a `<button>` with one or two `<span>` elements, setting the position of the `.ripple` element based on the `coords` state variable.\n\n",
         "tags": [
           "visual",
           "state",
@@ -282,7 +282,7 @@
         ]
       },
       "meta": {
-        "hash": "95d8e2f6113d2d38c90c3f6d0f765cc48cbc85a14cc77613b0c9b09156684116"
+        "hash": "a2238ea3abedb5a38d836a57966006cc43f905b375836d138bd69671a8731d84"
       }
     },
     {
@@ -512,6 +512,23 @@
       },
       "meta": {
         "hash": "2146f00ffd55bd78f63e0543922b73cdc339acf728067bf96f20c05eca5306ab"
+      }
+    },
+    {
+      "id": "useNavigatorOnLine",
+      "type": "snippetListing",
+      "title": "useNavigatorOnLine",
+      "attributes": {
+        "text": "A hook that returns if the client is online or offline.\n\n- Create a function, `getOnLineStatus`, that uses the `NavigatorOnLine` web API to get the online status of the client.\n- Use the `React.useState()` hook to create an appropriate state variable, `status`, and setter.\n- Use the `React.useEffect()` hook to add listeners for appropriate events, updating state, and cleanup those listeners when unmounting.\n- Finally return the `status` state variable.\n\n",
+        "tags": [
+          "hooks",
+          "state",
+          "effect",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "c9a0c97f92439438fd49c5ef50742524aae8a162e144342956bcf92cf1ebf470"
       }
     },
     {
