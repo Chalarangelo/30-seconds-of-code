@@ -21,7 +21,7 @@ const AboutPage = ({ isDarkMode }) => (
           The core goal of <strong>30 seconds</strong> is to provide a quality resource for beginner and advanced developers alike. We want to help improve the software development ecosystem, by lowering the barrier of entry for newcomers and help seasoned veterans pick up new tricks and remember old ones.
         </p>
         <p style={{ textAlign: 'justify' }}>
-          We believe that coding has to be easily accesible and this is why we provide all of our resources for free. Meanwhile, we try to constantly engage the open source community both as a means to understand the needs of our fellow developers and as an opportunity for people to actively participate in open source software.
+          We believe that coding has to be easily accessible, and this is why we provide all of our resources for free. Meanwhile, we try to constantly engage the open source community both as a means to understand the needs of our fellow developers and as an opportunity for people to actively participate in open source software.
         </p>
       </SimpleCard>
       <SimpleCard title='Our work'>
