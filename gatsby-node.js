@@ -8,7 +8,7 @@ const toKebabCase = str =>
     .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
     .map(x => x.toLowerCase())
     .join('-');
-
+/*
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
 
@@ -99,9 +99,9 @@ exports.createPages = ({ graphql, actions }) => {
     return null;
   });
 };
-
+*/
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions;
+  const { createNodeField, createNode } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode });
@@ -111,4 +111,56 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value,
     });
   }
+
 };
+
+exports.sourceNodes = ({ actions, createNodeId, createContentDigest, getNodesByType }) => {
+  const { createTypes, createNode } = actions;
+  const typeDefs = `
+    type Snippet implements Node {
+      html: String
+      tags: [String]
+      title: String
+      code: String
+      id: String
+    }
+  `;
+  createTypes(typeDefs);
+
+  const markdownNodes = getNodesByType('MarkdownRemark');
+  const snippetDataNodes = getNodesByType('SnippetDataJson');
+
+  markdownNodes.forEach(mnode => {
+    let nodeContent = {
+      html: mnode.html,
+      tags: (mnode.frontmatter.tags || '').split(','),
+      title: mnode.frontmatter.title,
+    };
+    createNode({
+      id: createNodeId(`snippet-${mnode.id}`),
+      parent: null,
+      children: [],
+      internal: {
+        type: 'Snippet',
+        content: JSON.stringify(nodeContent),
+        contentDigest: createContentDigest(nodeContent)
+      },
+      ...nodeContent
+    });
+  });
+
+};
+
+exports.createResolvers = ({ createResolvers }) => createResolvers({
+  Snippet: {
+    html: {
+      resolve: async (source, _, context, info) => {
+        const resolver = info.schema.getType("MarkdownRemark").getFields()["html"].resolve;
+        const node = await context.nodeModel.nodeStore.getNodesByType('MarkdownRemark').filter(v => v.frontmatter.title === source.title)[0];
+        const args = {}; // arguments passed to the resolver
+        const html = await resolver(node, args);
+        return html;
+      }
+    }
+  }
+});
