@@ -2,6 +2,8 @@ const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const config = require('./config');
 
+const { getTextualContent, getCodeBlocks, optimizeAllNodes  } = require(`./src/docs/util`);
+
 const requirables = [];
 
 config.requirables.forEach(fileName => {
@@ -124,11 +126,18 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest, getNodesByT
   const { createTypes, createNode } = actions;
   const typeDefs = `
     type Snippet implements Node {
-      html: String
+      html: HtmlData
       tags: [String]
       title: String
       code: String
       id: String
+    }
+
+    type HtmlData @infer {
+      full: String
+      text: String
+      code: String
+      example: String
     }
   `;
   createTypes(typeDefs);
@@ -152,7 +161,6 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest, getNodesByT
     let mNode = markdownNodes.find(mN => mN.frontmatter.title === id);
     let nodeContent = {
       id,
-      html: mNode.html,
       tags: sNode.attributes.tags,
       title: mNode.frontmatter.title,
       code: sNode.attributes.codeBlocks.es6
@@ -180,7 +188,12 @@ exports.createResolvers = ({ createResolvers }) => createResolvers({
         const node = await context.nodeModel.nodeStore.getNodesByType('MarkdownRemark').filter(v => v.frontmatter.title === source.title)[0];
         const args = {}; // arguments passed to the resolver
         const html = await resolver(node, args);
-        return html;
+        return {
+          full: `${html}`,
+          text: `${getTextualContent(html)}`,
+          code: `${optimizeAllNodes(getCodeBlocks(html).code)}`,
+          example: `${optimizeAllNodes(getCodeBlocks(html).example)}`
+        };
       }
     }
   }
