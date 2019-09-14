@@ -2,6 +2,12 @@ const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const config = require('./config');
 
+const requirables = [];
+
+config.requirables.forEach(fileName => {
+  requirables.push(require(`./snippet_data/${fileName}`));
+})
+
 const toKebabCase = str =>
   str &&
   str
@@ -128,16 +134,31 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest, getNodesByT
   createTypes(typeDefs);
 
   const markdownNodes = getNodesByType('MarkdownRemark');
-  const snippetDataNodes = getNodesByType('SnippetDataJson');
 
-  markdownNodes.forEach(mnode => {
+  const snippetNodes = requirables
+    .reduce((acc, sArr) => {
+      return ({
+        ...acc,
+        ...sArr.data.reduce((snippets, snippet) => {
+          return ({
+            ...snippets,
+            [snippet.id]: snippet
+          });
+        }, {})
+      });
+    }, {});
+
+  Object.entries(snippetNodes).forEach(([id, sNode]) => {
+    let mNode = markdownNodes.find(mN => mN.frontmatter.title === id);
     let nodeContent = {
-      html: mnode.html,
-      tags: (mnode.frontmatter.tags || '').split(','),
-      title: mnode.frontmatter.title,
+      id,
+      html: mNode.html,
+      tags: sNode.attributes.tags,
+      title: mNode.frontmatter.title,
+      code: sNode.attributes.codeBlocks.es6
     };
     createNode({
-      id: createNodeId(`snippet-${mnode.id}`),
+      id: createNodeId(`snippet-${sNode.meta.hash}`),
       parent: null,
       children: [],
       internal: {

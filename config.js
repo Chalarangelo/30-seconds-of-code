@@ -21,4 +21,9 @@ module.exports = {
   moduleName: `_30s`,
   rollupInputFile: `imports.temp.js`,
   testModuleFile: `test/_30s.js`,
+  // Requirable JSONs
+  requirables: [
+    `snippets.json`,
+    `archivedSnippets.json`
+  ]
 };
