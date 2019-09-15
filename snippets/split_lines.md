@@ -9,7 +9,7 @@ Use `str.split()` and `'\n'` to match line breaks and create a list.
 
 ```py
 def split_lines(str):
-  str.split('\n')
+  return str.split('\n')
 ```
 
 ```py
