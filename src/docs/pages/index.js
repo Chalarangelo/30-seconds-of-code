@@ -13,14 +13,7 @@ import SimpleCard from '../components/SimpleCard';
 // Home page (splash and search)
 // ===================================================
 const IndexPage = props => {
-  const snippets = props.data.snippetDataJson.data.map(snippet => ({
-    title: snippet.title,
-    html: props.data.allMarkdownRemark.edges.find(
-      v => v.node.frontmatter.title === snippet.title,
-    ).node.html,
-    tags: snippet.attributes.tags,
-    id: snippet.id
-  }));
+  const snippets = props.data.allSnippet.edges;
 
   const [searchQuery, setSearchQuery] = React.useState(props.searchQuery);
   const [searchResults, setSearchResults] = React.useState(snippets);
@@ -31,9 +24,9 @@ const IndexPage = props => {
     let results = snippets;
     if (q.trim().length)
       results = snippets.filter(
-        v =>
-          v.tags.filter(t => t.indexOf(q) !== -1).length ||
-          v.title.toLowerCase().indexOf(q) !== -1,
+        ({node}) =>
+          node.tags.all.filter(t => t.indexOf(q) !== -1).length ||
+          node.title.toLowerCase().indexOf(q) !== -1,
       );
     setSearchResults(results);
   }, [searchQuery]);
@@ -80,11 +73,16 @@ const IndexPage = props => {
               Click on a snippet card to view the snippet.
             </p>
             <h2 className='page-sub-title'>Search results</h2>
-            {searchResults.map(snippet => (
+            {searchResults.map(({node}) => (
               <SnippetCard
                 short
-                key={`snippet_${snippet.id}`}
-                snippetData={snippet}
+                key={`snippet_${node.id}`}
+                snippetData={{
+                  title: node.title,
+                  html: node.html.text,
+                  tags: node.tags.all,
+                  id: node.id
+                }}
                 isDarkMode={props.isDarkMode}
               />
             ))}
@@ -139,22 +137,17 @@ export const indexPageQuery = graphql`
         }
       }
     }
-    snippetDataJson(meta: { type: { eq: "snippetListingArray" }, scope: {eq: "./snippets"} }) {
-      data {
-        id
-        title
-        attributes {
-          tags
-        }
-      }
-    }
-    allMarkdownRemark {
+    allSnippet {
       edges {
         node {
-          html
-          frontmatter {
-            title
+          title
+          html {
+            text
           }
+          tags {
+            all
+          }
+          id
         }
       }
     }
