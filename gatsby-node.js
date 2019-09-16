@@ -225,7 +225,6 @@ exports.createPages = ({ graphql, actions }) => {
           tags: node.tags.all,
           id: node.slug.slice(1)
         }));
-      const tagRegex = `/^\\s*${tag}/`;
       createPage({
         path: tagPath,
         component: tagPage,
@@ -236,12 +235,22 @@ exports.createPages = ({ graphql, actions }) => {
       });
     });
 
+    const beginnerSnippets = snippets
+      .filter(({ node }) => node.tags.all.includes('beginner'))
+      .filter(snippet => !snippet.node.archived)
+      .map(({ node }) => ({
+        title: node.title,
+        html: node.html.text,
+        tags: node.tags.all,
+        id: node.slug.slice(1)
+      }));
+
     createPage({
       path: `/beginner`,
       component: tagPage,
       context: {
         tag: `beginner snippets`,
-        tagRegex: `/beginner/`,
+        snippets: beginnerSnippets
       },
     });
 

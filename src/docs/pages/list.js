@@ -15,28 +15,15 @@ import SimpleCard from '../components/SimpleCard';
 // Snippet list page
 // ===================================================
 const ListPage = props => {
-  const snippets = props.data.snippetDataJson.data.map(snippet => ({
-    title: snippet.title,
-    html: props.data.allMarkdownRemark.edges.find(
-      v => v.node.frontmatter.title === snippet.title,
-    ).node.html,
-    tags: snippet.attributes.tags,
-    id: snippet.id,
-  }));
-  const archivedSnippets = props.data.snippetsArchiveDataJson.data.map(snippet => ({
-    title: snippet.title,
-    html: props.data.allMarkdownRemark.edges.find(
-      v => v.node.frontmatter.title === snippet.title,
-    ).node.html,
-    tags: snippet.attributes.tags,
-    id: snippet.id,
-  }));
-  const tags = snippets.reduce((acc, snippet) => {
-    if (!snippet.tags) return acc;
-    const primaryTag = snippet.tags[0];
-    if (!acc.includes(primaryTag)) acc.push(primaryTag);
-    return acc;
-  }, []);
+  const snippets = props.data.allSnippet.edges;
+  const archivedSnippets = props.data.allArchivedSnippet.edges;
+
+  const tags = [...new Set(
+    snippets.map(snippet => (snippet.node.tags || { primary: null }).primary)
+  )]
+    .filter(Boolean)
+    .sort((a, b) => a.localeCompare(b));
+  
   const staticPages = [
     {
       url: 'beginner',
@@ -79,12 +66,17 @@ const ListPage = props => {
               </Link>
             </h3>
             {snippets
-              .filter(snippet => snippet.tags[0] === tag)
-              .map(snippet => (
+              .filter(({node}) => node.tags.primary === tag)
+              .map(({node}) => (
                 <SnippetCard
-                  key={`snippet_${snippet.id}`}
+                  key={`snippet_${node.id}`}
                   short
-                  snippetData={snippet}
+                  snippetData={{
+                    title: node.title,
+                    html: node.html.text,
+                    tags: node.tags.all,
+                    id: node.id
+                  }}
                 />
               ))}
           </>
@@ -95,12 +87,17 @@ const ListPage = props => {
           Archived snippets
         </Link></h3>
         {archivedSnippets
-          .map(snippet => (
+          .map(({node}) => (
             <SnippetCard
-              key={`a_snippet_${snippet.id}`}
+              key={`a_snippet_${node.id}`}
               short
               archived
-              snippetData={snippet}
+              snippetData={{
+                title: node.title,
+                html: node.html.text,
+                tags: node.tags.all,
+                id: node.id
+              }}
             />
           ))}
         <br/>
@@ -131,31 +128,32 @@ export default connect(
 
 export const listPageQuery = graphql`
   query snippetListing {
-    snippetDataJson(meta: { type: { eq: "snippetListingArray" }, scope: {eq: "./snippets"} }) {
-      data {
-        id
-        title
-        attributes {
-          tags
-        }
-      }
-    }
-    snippetsArchiveDataJson : snippetDataJson(meta: { type: { eq: "snippetListingArray" }, scope: {eq: "./snippets_archive"} }) {
-      data {
-        id
-        title
-        attributes {
-          tags
-        }
-      }
-    }
-    allMarkdownRemark {
+    allSnippet(filter: {archived: {eq: false}}) {
       edges {
         node {
-          html
-          frontmatter {
-            title
+          title
+          html {
+            text
           }
+          tags {
+            all
+            primary
+          }
+          id
+        }
+      }
+    }
+    allArchivedSnippet: allSnippet(filter: {archived: {eq: true}}) {
+      edges {
+        node {
+          title
+          html {
+            text
+          }
+          tags {
+            all
+          }
+          id
         }
       }
     }
