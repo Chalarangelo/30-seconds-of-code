@@ -1112,7 +1112,7 @@ function Accordion(props) {
     <div className="wrapper">
       {items.map(({ props }) => (
         <AccordionItem
-          isCollapsed={bindIndex === props.index}
+          isCollapsed={bindIndex !== props.index}
           label={props.label}
           handleClick={() => changeItem(props.index)}
           children={props.children}
