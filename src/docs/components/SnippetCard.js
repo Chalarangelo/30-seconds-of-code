@@ -42,24 +42,18 @@ const CardCorner = ({ difficulty = 'intermediate' }) => (
 // ===================================================
 const FullCard = ({ snippetData, difficulty, isDarkMode }) => {
   const [examplesOpen, setExamplesOpen] = React.useState(false);
-  const tags = snippetData.tags;
-  let cardCodeHtml = `${optimizeAllNodes(
-    getCodeBlocks(snippetData.html).code,
-  )}`;
-  let cardExamplesHtml = `${optimizeAllNodes(
-    getCodeBlocks(snippetData.html).example,
-  )}`;
+
   return (
     <div className='card'>
       <CardCorner difficulty={difficulty} />
       <h4 className='card-title'>{snippetData.title}</h4>
-      {tags.map(tag => (
+      {snippetData.tags.map(tag => (
         <span className='tag' key={`tag_${tag}`}>{tag}</span>
       ))}
       <div
         className='card-description'
         dangerouslySetInnerHTML={{
-          __html: `${getTextualContent(snippetData.html)}`,
+          __html: snippetData.textHtml,
         }}
       />
       <div className='card-bottom'>
@@ -83,12 +77,9 @@ const FullCard = ({ snippetData, difficulty, isDarkMode }) => {
             aria-label='Copy to clipboard'
           />
         </CopyToClipboard>
-        {/* <button className="button button-b button-social-sh" aria-label="Share">
-          <ShareIcon />
-        </button> */}
         <pre
           className={`card-code language-${config.language}`}
-          dangerouslySetInnerHTML={{ __html: cardCodeHtml }}
+          dangerouslySetInnerHTML={{ __html: snippetData.codeHtml }}
         />
         <button
           className='button button-example-toggler'
@@ -99,7 +90,7 @@ const FullCard = ({ snippetData, difficulty, isDarkMode }) => {
           {examplesOpen && (
             <pre
               className='section card-examples language-js'
-              dangerouslySetInnerHTML={{ __html: cardExamplesHtml }}
+              dangerouslySetInnerHTML={{ __html: snippetData.exampleHtml }}
             />
           )}
       </div>

@@ -11,14 +11,11 @@ import BackArrowIcon from '../components/SVGs/BackArrowIcon';
 // Individual snippet page template
 // ===================================================
 const SnippetPage = props => {
-  const post = props.data.markdownRemark;
-  const postData = props.data.snippetDataJson.data.find(
-    v => v.title === post.frontmatter.title,
-  );
+  const snippet = props.data.snippet;
 
   return (
     <>
-      <Meta title={post.frontmatter.title} description={post.excerpt} />
+      <Meta title={snippet.title} description={snippet.text.short} />
       <Shell>
         <Link
           className='link-back'
@@ -29,10 +26,13 @@ const SnippetPage = props => {
         </Link>
         <SnippetCard
           snippetData={{
-            title: postData.title,
-            html: post.html,
-            code: postData.attributes.codeBlocks.code,
-            tags: postData.attributes.tags,
+            title: snippet.title,
+            html: snippet.html.full,
+            codeHtml: snippet.html.code,
+            exampleHtml: snippet.html.example,
+            textHtml: snippet.html.text,
+            code: snippet.code.src,
+            tags: snippet.tags.all,
           }}
           isDarkMode={props.isDarkMode}
         />
@@ -52,7 +52,7 @@ export default connect(
 )(SnippetPage);
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!, $scope: String!) {
+  query SnippetBySlug($slug: String!) {
     logo: file(absolutePath: { regex: "/logo_reverse_md.png/" }) {
       id
       childImageSharp {
@@ -61,42 +61,23 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          fileAbsolutePath
-          frontmatter {
-            title
-          }
-        }
+    snippet (slug: {eq: $slug }) {
+      title
+      html {
+        full
+        code
+        example
+        text
       }
-    }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      fields {
-        slug
+      code {
+        src
       }
-      excerpt(pruneLength: 160)
-      html
-      frontmatter {
-        title
+      tags {
+        all
       }
-    }
-    snippetDataJson(meta: { type: { eq: "snippetArray" }, scope: {eq: $scope} }) {
-      data {
-        title
-        id
-        attributes {
-          text
-          codeBlocks {
-            es6
-            example
-          }
-          tags
-        }
+      title
+      text {
+        short
       }
     }
   }

@@ -188,7 +188,7 @@ exports.createPages = ({ graphql, actions }) => {
     const snippets = result.data.allSnippet.edges;
 
     snippets.forEach(snippet => {
-      if(!snippet.archived) {
+      if (!snippet.node.archived) {
         createPage({
           path: `/snippet${snippet.node.slug}`,
           component: snippetPage,
@@ -210,7 +210,11 @@ exports.createPages = ({ graphql, actions }) => {
     });
 
     // Create tag pages.
-    const tags = [...new Set(snippets.map(snippet => snippet.tags.primary))].sort((a,b) => a.localeCompare(b));
+    const tags = [...new Set(
+      snippets.map(snippet => (snippet.tags || {primary: null}).primary)
+    )]
+      .filter(Boolean)
+      .sort((a, b) => a.localeCompare(b));
 
     tags.forEach(tag => {
       const tagPath = `/tag/${toKebabCase(tag)}/`;
