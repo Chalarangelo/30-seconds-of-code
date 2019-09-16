@@ -11,7 +11,7 @@ import BackArrowIcon from '../components/SVGs/BackArrowIcon';
 // Individual snippet page template
 // ===================================================
 const SnippetPage = props => {
-  const snippet = props.data.snippet;
+  const snippet = props.pageContext.snippet;
 
   return (
     <>
@@ -50,35 +50,3 @@ export default connect(
   }),
   null,
 )(SnippetPage);
-
-export const pageQuery = graphql`
-  query SnippetBySlug($slug: String!) {
-    logo: file(absolutePath: { regex: "/logo_reverse_md.png/" }) {
-      id
-      childImageSharp {
-        fixed(height: 45, width: 45) {
-          src
-        }
-      }
-    }
-    snippet (slug: {eq: $slug }) {
-      title
-      html {
-        full
-        code
-        example
-        text
-      }
-      code {
-        src
-      }
-      tags {
-        all
-      }
-      title
-      text {
-        short
-      }
-    }
-  }
-`;

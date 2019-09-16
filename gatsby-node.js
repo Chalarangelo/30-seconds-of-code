@@ -193,8 +193,7 @@ exports.createPages = ({ graphql, actions }) => {
           path: `/snippet${snippet.node.slug}`,
           component: snippetPage,
           context: {
-            slug: snippet.node.slug,
-            scope: `./snippets`
+            snippet: snippet.node
           }
         });
       } else {
@@ -202,8 +201,7 @@ exports.createPages = ({ graphql, actions }) => {
           path: `/archive${snippet.node.slug}`,
           component: snippetPage,
           context: {
-            slug: snippet.node.slug,
-            scope: `./snippets_archive`
+            snippet: snippet.node
           }
         });
       }
