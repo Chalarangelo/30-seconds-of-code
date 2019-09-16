@@ -127,10 +127,13 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest, getNodesByT
   const typeDefs = `
     type Snippet implements Node {
       html: HtmlData
-      tags: [String]
+      tags: TagData
       title: String
-      code: String
+      code: CodeData
       id: String
+      slug: String
+      path: String
+      text: TextData
     }
 
     type HtmlData @infer {
@@ -138,6 +141,21 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest, getNodesByT
       text: String
       code: String
       example: String
+    }
+
+    type CodeData @infer {
+      src: String
+      example: String
+    }
+
+    type TextData @infer {
+      full: String
+      short: String
+    }
+
+    type TagData @infer {
+      primary: String
+      all: [String]
     }
   `;
   createTypes(typeDefs);
@@ -161,9 +179,21 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest, getNodesByT
     let mNode = markdownNodes.find(mN => mN.frontmatter.title === id);
     let nodeContent = {
       id,
-      tags: sNode.attributes.tags,
+      tags: {
+        all: sNode.attributes.tags,
+        primary: sNode.attributes.tags[0]
+      },
       title: mNode.frontmatter.title,
-      code: sNode.attributes.codeBlocks.es6
+      code: {
+        src: sNode.attributes.codeBlocks.es6,
+        example: sNode.attributes.codeBlocks.example
+      },
+      slug: mNode.fields.slug,
+      path: mNode.fileAbsolutePath,
+      text: {
+        full: sNode.attributes.text,
+        short: sNode.attributes.text.slice(0, sNode.attributes.text.indexOf('\n\n'))
+      }
     };
     createNode({
       id: createNodeId(`snippet-${sNode.meta.hash}`),
