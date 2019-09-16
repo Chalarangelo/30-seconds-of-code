@@ -1282,7 +1282,7 @@
         "fileName": "split_lines.md",
         "text": "Splits a multiline string into a list of lines.\n\nUse `str.split()` and `'\\n'` to match line breaks and create a list.\n\n",
         "codeBlocks": {
-          "code": "def split_lines(str):\n  str.split('\\n')",
+          "code": "def split_lines(str):\n  return str.split('\\n')",
           "example": "split_lines('This\\nis a\\nmultiline\\nstring.\\n') # 'This\\nis a\\nmultiline\\nstring.\\n'"
         },
         "tags": [
@@ -1291,7 +1291,7 @@
         ]
       },
       "meta": {
-        "hash": "9c8d9abb223e26561b4278e5b29c373a9196297143a504d353c7fbcd8c5102b2"
+        "hash": "db5b597fccad7226629e99e4f41eaa56a7783dd611952b3e2b6711fb85b12c25"
       }
     },
     {
