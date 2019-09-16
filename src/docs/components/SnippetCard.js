@@ -115,13 +115,12 @@ const ShortCard = ({
     <div className='card short'>
       <CardCorner difficulty={difficulty} />
       <h4 className='card-title'>
-        
           {snippetData.title}
       </h4>
       <div
         className='card-description'
         dangerouslySetInnerHTML={{
-          __html: `${getTextualContent(snippetData.html, true)}`,
+          __html: snippetData.html,
         }}
       />
       </div>

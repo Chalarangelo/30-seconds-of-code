@@ -131,7 +131,7 @@ exports.createResolvers = ({ createResolvers }) => createResolvers({
         const html = await resolver(node, args);
         return {
           full: `${html}`,
-          text: `${getTextualContent(html)}`,
+          text: `${getTextualContent(html, true)}`,
           code: `${optimizeAllNodes(getCodeBlocks(html).code)}`,
           example: `${optimizeAllNodes(getCodeBlocks(html).example)}`
         };
@@ -209,20 +209,29 @@ exports.createPages = ({ graphql, actions }) => {
 
     // Create tag pages.
     const tags = [...new Set(
-      snippets.map(snippet => (snippet.tags || {primary: null}).primary)
+      snippets.map(snippet => (snippet.node.tags || {primary: null}).primary)
     )]
       .filter(Boolean)
       .sort((a, b) => a.localeCompare(b));
-
+    
     tags.forEach(tag => {
       const tagPath = `/tag/${toKebabCase(tag)}/`;
+      const taggedSnippets = snippets
+        .filter(snippet => snippet.node.tags.primary === tag)
+        .filter(snippet => !snippet.node.archived)
+        .map(({node}) => ({
+          title: node.title,
+          html: node.html.text,
+          tags: node.tags.all,
+          id: node.slug.slice(1)
+        }));
       const tagRegex = `/^\\s*${tag}/`;
       createPage({
         path: tagPath,
         component: tagPage,
         context: {
           tag,
-          tagRegex,
+          snippets: taggedSnippets
         },
       });
     });
