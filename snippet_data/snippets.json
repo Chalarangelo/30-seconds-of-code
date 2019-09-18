@@ -456,9 +456,9 @@
       "type": "snippet",
       "attributes": {
         "fileName": "every_nth.md",
-        "text": "Returns every nth element in a list.\n\nUse `[1::nth]` to create a new list that contains every nth element of the given list.\n\n",
+        "text": "Returns every nth element in a list.\n\nUse `[nth-1::nth]` to create a new list that contains every nth element of the given list.\n\n",
         "codeBlocks": {
-          "code": "def every_nth(lst, nth):\n  return lst[1::nth]",
+          "code": "def every_nth(lst, nth):\n  return lst[nth-1::nth]",
           "example": "every_nth([1, 2, 3, 4, 5, 6], 2) # [ 2, 4, 6 ]"
         },
         "tags": [
@@ -467,7 +467,7 @@
         ]
       },
       "meta": {
-        "hash": "d5c51547b66fcd9d42def2a6d92ba98429a12c6bec56a0dca8e4c0289525d5de"
+        "hash": "038e0fd0752bbd88c73ea9059e10768bbf31fd3178113738064405e010aa8aa7"
       }
     },
     {
