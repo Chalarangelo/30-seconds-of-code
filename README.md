@@ -1591,7 +1591,7 @@ Return a `list()` of the previous result.
 
 ```py
 def values_only(dict):
-  return list(flat_dict.values())
+  return list(dict.values())
 ```
 
 <details>
