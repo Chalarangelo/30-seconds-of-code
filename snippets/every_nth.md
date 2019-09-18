@@ -5,11 +5,11 @@ tags: list,beginner
 
 Returns every nth element in a list.
 
-Use `[1::nth]` to create a new list that contains every nth element of the given list.
+Use `[nth-1::nth]` to create a new list that contains every nth element of the given list.
 
 ```py
 def every_nth(lst, nth):
-  return lst[1::nth]
+  return lst[nth-1::nth]
 ```
 
 ```py
