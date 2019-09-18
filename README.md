@@ -503,7 +503,7 @@ def group_by(lst, fn):
 ```py
 import math
 group_by([6.1, 4.2, 6.3], math.floor); # {4: [4.2], 6: [6.1, 6.3]}
-group_by(['one', 'two', 'three'], 'length'); # {3: ['one', 'two'], 5: ['three']}
+group_by(['one', 'two', 'three'], len); # {3: ['one', 'two'], 5: ['three']}
 ```
 </details>
 

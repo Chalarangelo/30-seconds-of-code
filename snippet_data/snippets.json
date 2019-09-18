@@ -561,7 +561,7 @@
         "text": "Groups the elements of a list based on the given function.\n\nUse `list()` in combination with `map()` and `fn` to map the values of the list to the keys of an object.\nUse list comprehension to map each element to the appropriate `key`.\n\n",
         "codeBlocks": {
           "code": "def group_by(lst, fn):\n  groups = {}\n  for key in list(map(fn,lst)):\n    groups[key] = [item for item in lst if fn(item) == key]\n  return groups",
-          "example": "import math\ngroup_by([6.1, 4.2, 6.3], math.floor); # {4: [4.2], 6: [6.1, 6.3]}\ngroup_by(['one', 'two', 'three'], 'length'); # {3: ['one', 'two'], 5: ['three']}"
+          "example": "import math\ngroup_by([6.1, 4.2, 6.3], math.floor); # {4: [4.2], 6: [6.1, 6.3]}\ngroup_by(['one', 'two', 'three'], len); # {3: ['one', 'two'], 5: ['three']}"
         },
         "tags": [
           "list",
@@ -570,7 +570,7 @@
         ]
       },
       "meta": {
-        "hash": "e103229c295cbfcbf26b5529b068e382bb0a1a04e080311e46302721841bbfe0"
+        "hash": "8e552ea1be04303164bd9c480ebd7392bcc79ef620ce18ee6436dc1dc41c1e42"
       }
     },
     {
