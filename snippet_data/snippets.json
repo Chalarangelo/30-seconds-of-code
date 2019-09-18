@@ -1467,7 +1467,7 @@
         "fileName": "values_only.md",
         "text": "Returns a flat list of all the values in a flat dictionary.\n\nUse `dict.values()` to return the values in the given dictionary.\nReturn a `list()` of the previous result.\n\n",
         "codeBlocks": {
-          "code": "def values_only(dict):\n  return list(flat_dict.values())",
+          "code": "def values_only(dict):\n  return list(dict.values())",
           "example": "ages = {\n  \"Peter\": 10,\n  \"Isabel\": 11,\n  \"Anna\": 9,\n}\nvalues_only(ages) # [10, 11, 9]"
         },
         "tags": [
@@ -1477,7 +1477,7 @@
         ]
       },
       "meta": {
-        "hash": "15dec93f30e55d25c07f9d5456d5e96f9b6a5a794d9a0874a39be0359a42c10f"
+        "hash": "d6942bb96124e6cb484b2b9a6d407d761adbbe8df37339674e02a344c7bdda28"
       }
     },
     {
