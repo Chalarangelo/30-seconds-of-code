@@ -40,7 +40,7 @@
       "type": "snippetListing",
       "title": "Carousel",
       "attributes": {
-        "text": "Renders a carousel component.\n\n- Use the `React.setState()` hook to create the `active` state variable and give it a value of `0` (index of the first item).\n- Use an object, `style`, to hold the styles for the individual components.\n- Use the `React.setEffect()` hook to update the value of `active` to the index of the next item, using `setTimeout`.\n- Destructure `props`, compute if visibility style should be set to `visible` or not for each carousel item while mapping over and applying the combined style to the carousel item component accordingly.\n- Render the carousel items using `React.cloneElement()` and pass down rest `props` along with the computed styles.\n\n",
+        "text": "Renders a carousel component.\n\n- Use the `React.setState()` hook to create the `active` state variable and give it a value of `0` (index of the first item).\n- Use an object, `style`, to hold the styles for the individual components.\n- Use the `React.useEffect()` hook to update the value of `active` to the index of the next item, using `setTimeout`.\n- Destructure `props`, compute if visibility style should be set to `visible` or not for each carousel item while mapping over and applying the combined style to the carousel item component accordingly.\n- Render the carousel items using `React.cloneElement()` and pass down rest `props` along with the computed styles.\n\n",
         "tags": [
           "visual",
           "children",
@@ -50,7 +50,7 @@
         ]
       },
       "meta": {
-        "hash": "0810223a6248d03b4adb32586b919c28979fe06bbff209fe8e18d890532a094a"
+        "hash": "4e224ce57a85a9061c065603496ae2a80db43d2ab7908d1c08c7dcbe5779a2d6"
       }
     },
     {
