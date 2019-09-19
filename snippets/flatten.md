@@ -3,7 +3,7 @@ title: flatten
 tags: list,intermediate
 ---
 
-Flattens a list of lists.
+Flattens a list of lists once.
 
 Use nested list comprehension to extract each value from sub-lists in order.
 
