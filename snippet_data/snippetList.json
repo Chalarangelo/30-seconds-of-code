@@ -403,6 +403,21 @@
       }
     },
     {
+      "id": "flatten",
+      "type": "snippetListing",
+      "title": "flatten",
+      "attributes": {
+        "text": "Flattens a list of lists once.\n\nUse nested list comprehension to extract each value from sub-lists in order.\n\n",
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "49b4f976c9050c9cb6fe038653fc3dbc88135086255c06c4f46b746b21bfb544"
+      }
+    },
+    {
       "id": "gcd",
       "type": "snippetListing",
       "title": "gcd",

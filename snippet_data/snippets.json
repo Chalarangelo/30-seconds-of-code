@@ -533,6 +533,26 @@
       }
     },
     {
+      "id": "flatten",
+      "title": "flatten",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "flatten.md",
+        "text": "Flattens a list of lists once.\n\nUse nested list comprehension to extract each value from sub-lists in order.\n\n",
+        "codeBlocks": {
+          "code": "def flatten(lst):\n  return [x for y in lst for x in y]",
+          "example": "flatten([[1,2,3,4],[5,6,7,8]]) # [1, 2, 3, 4, 5, 6, 7, 8]"
+        },
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "49b4f976c9050c9cb6fe038653fc3dbc88135086255c06c4f46b746b21bfb544"
+      }
+    },
+    {
       "id": "gcd",
       "title": "gcd",
       "type": "snippet",
