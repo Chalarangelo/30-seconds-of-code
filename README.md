@@ -39,6 +39,7 @@
 * [`every`](#every)
 * [`every_nth`](#every_nth)
 * [`filter_non_unique`](#filter_non_unique)
+* [`flatten`](#flatten)
 * [`group_by`](#group_by)
 * [`has_duplicates`](#has_duplicates)
 * [`head`](#head)
@@ -477,6 +478,27 @@ def filter_non_unique(lst):
 
 ```py
 filter_non_unique([1, 2, 2, 3, 4, 4, 5]) # [1, 3, 5]
+```
+</details>
+
+<br>[⬆ Back to top](#contents)
+
+### flatten
+
+Flattens a list of lists once.
+
+Use nested list comprehension to extract each value from sub-lists in order.
+
+```py
+def flatten(lst):
+  return [x for y in lst for x in y]
+```
+
+<details>
+<summary>Examples</summary>
+
+```py
+flatten([[1,2,3,4],[5,6,7,8]]) # [1, 2, 3, 4, 5, 6, 7, 8]
 ```
 </details>
 
