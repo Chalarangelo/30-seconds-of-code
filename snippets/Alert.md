@@ -10,7 +10,7 @@ Creates an alert component with `type` prop.
 - Define `timeoutId` to keep the timer instance for clearing on component unmount.
 - Use the `React.setEffect()` hook to update the value of `isShown` to `true` and clear interval by using `timeoutId` when component is unmounted.
 - Define `closeNotification` function to set the component is removed from DOM by displaying fading out animation and set `isShown` to `false` via `setTimeout()`. 
-- Define the component, which renders alert component with user defined `message` and a close button to remove the component from DOM.
+- Define the component, which renders the alert component with user defined `message` and a close button to remove the component from DOM.
 
 ```css
 @keyframes leave {
@@ -28,25 +28,13 @@ Creates an alert component with `type` prop.
   position: relative;
 }
 
-.alert.success {
-  color: #155724;
-  background-color: #d4edda;
-  border-color: #c3e6cb;
-}
-
-.alert.info{
-  color: #004085;
-  background-color: #cce5ff;
-  border-color: #b8daff;
-}
-
 .alert.warning{
   color: #856404;
   background-color: #fff3cd;
   border-color: #ffeeba;
 }
 
-.alert.danger{
+.alert.error{
   color: #721c24;
   background-color: #f8d7da;
   border-color: #f5c6cb;
@@ -68,6 +56,10 @@ Creates an alert component with `type` prop.
   background: none;
   font-weight: 600;
   font-size: 16px;
+}
+
+.alert .close:after{
+  content: 'x';
 }
 ```
 
@@ -95,7 +87,7 @@ function Notification(props) {
 
     return isShown && (
       <div className={`alert ${props.type}${isLeaving ? ' leaving' : ''}`}>
-        <button className="close" onClick={closeNotification}>x</button>
+        <button className="close" onClick={closeNotification} />
         {props.message}
       </div>
     )
