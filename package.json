@@ -6,10 +6,17 @@
   "main": "index.js",
   "author": "30-seconds",
   "devDependencies": {
+    "@babel/core": "^7.6.0",
     "@babel/plugin-proposal-class-properties": "^7.5.0",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.5.4",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-docs": "^5.2.1",
+    "@storybook/addon-knobs": "^5.2.1",
+    "@storybook/addon-viewport": "^5.2.1",
+    "@storybook/addons": "^5.2.1",
+    "@storybook/react": "^5.2.1",
+    "babel-loader": "^8.0.6",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "front-matter": "^3.0.2",
     "fs-extra": "^8.1.0",
@@ -41,7 +48,8 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-redux": "^7.1.0",
-    "redux": "^4.0.4"
+    "redux": "^4.0.4",
+    "storybook-addon-designs": "^5.1.1"
   },
   "keywords": [
     "gatsby",
@@ -52,7 +60,8 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "storybook": "start-storybook -p 6006"
   },
   "repository": {
     "type": "git",
@@ -60,5 +69,6 @@
   },
   "bugs": {
     "url": "https://github.com/30-seconds/30-seconds-web/issues"
-  }
+  },
+  "dependencies": {}
 }
