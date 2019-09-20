@@ -18,6 +18,8 @@
     "@storybook/react": "^5.2.1",
     "babel-loader": "^8.0.6",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "cross-env": "^6.0.0",
+    "css-loader": "^3.2.0",
     "front-matter": "^3.0.2",
     "fs-extra": "^8.1.0",
     "gatsby": "^2.12.0",
@@ -49,7 +51,9 @@
     "react-helmet": "^5.2.1",
     "react-redux": "^7.1.0",
     "redux": "^4.0.4",
-    "storybook-addon-designs": "^5.1.1"
+    "sass-loader": "^8.0.0",
+    "storybook-addon-designs": "^5.1.1",
+    "style-loader": "^1.0.0"
   },
   "keywords": [
     "gatsby",
@@ -58,10 +62,10 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
+    "build": "cross-env NODE_PATH=src gatsby build",
+    "develop": "cross-env NODE_PATH=src gatsby develop",
     "serve": "gatsby serve",
-    "storybook": "start-storybook -p 6006"
+    "storybook": "cross-env NODE_PATH=src start-storybook -p 6006"
   },
   "repository": {
     "type": "git",
