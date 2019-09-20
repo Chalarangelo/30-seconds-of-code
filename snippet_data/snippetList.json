@@ -18,6 +18,23 @@
       }
     },
     {
+      "id": "Alert",
+      "type": "snippetListing",
+      "title": "Alert",
+      "attributes": {
+        "text": "Creates an alert component with `type` prop.\n\n- Define appropriate CSS styles and animations for the component's elements.\n- Use the `React.setState()` hook to create the `isShown` and `isLeaving` state variables and set their values to `false`.\n- Define `timeoutId` to keep the timer instance for clearing on component unmount.\n- Use the `React.setEffect()` hook to update the value of `isShown` to `true` and clear interval by using `timeoutId` when component is unmounted.\n- Define `closeNotification` function to set the component is removed from DOM by displaying fading out animation and set `isShown` to `false` via `setTimeout()`. \n- Define the component, which renders the alert component with user defined `message` and a close button to remove the component from DOM.\n\n",
+        "tags": [
+          "visual",
+          "beginner",
+          "state",
+          "effect"
+        ]
+      },
+      "meta": {
+        "hash": "6a9a1148d22c55f24865ce2672a84222409769910a5e472ab80e353c61914ab8"
+      }
+    },
+    {
       "id": "AutoLink",
       "type": "snippetListing",
       "title": "AutoLink",
