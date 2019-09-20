@@ -1,0 +1,26 @@
+{
+  "name": "30-seconds-web",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Website for 30-seconds projects.",
+  "main": "index.js",
+  "author": "30-seconds",
+  "keywords": [
+    "gatsby",
+    "30-seconds",
+    "snippets"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "serve": "gatsby serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/30-seconds/30-seconds-web"
+  },
+  "bugs": {
+    "url": "https://github.com/30-seconds/30-seconds-web/issues"
+  }
+}
