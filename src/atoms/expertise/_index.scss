@@ -1,0 +1,57 @@
+// Colors
+:root {
+  --expertise-beginner: #7CB342;
+  --expertise-intermediate: #FFB300;
+  --expertise-advanced: #D66361;
+}
+
+.expertise {
+  box-sizing: border-box;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 0.5rem;
+  background: var(--expertise-color);
+  position: absolute;
+  // top: 24px;
+  // right: 16px;
+
+  &.beginner {
+    --expertise-color: var(--expertise-beginner);
+  }
+
+  &.intermediate {
+    --expertise-color: var(--expertise-intermediate);
+  }
+
+  &.advanced {
+    --expertise-color: var(--expertise-advanced);
+  }
+
+  &.intermediate, &.advanced {
+    &::before {
+      display: block;
+      position: absolute;
+      content: '';
+      top: 0px;
+      right: 12px;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 0.5rem;
+      background: var(--expertise-color);
+    }
+  }
+
+  &.advanced {
+    &::after {
+      display: block;
+      position: absolute;
+      content: '';
+      top: 0px;
+      right: 24px;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 0.5rem;
+      background: var(--expertise-color);
+    }
+  }
+}
