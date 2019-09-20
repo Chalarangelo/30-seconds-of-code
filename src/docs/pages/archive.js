@@ -11,7 +11,7 @@ import SnippetCard from '../components/SnippetCard'
 // Individual snippet category/tag page
 // ===================================================
 const ArchivePage = props => {
-  const posts = props.data.allMarkdownRemark.edges;
+  const snippets = props.data.allSnippet.edges;
 
   React.useEffect(() => {
     props.dispatch(pushNewPage('Archived', props.path));
@@ -24,17 +24,17 @@ const ArchivePage = props => {
         <h2 className='page-title'>Archived snippets</h2>
         <p className='page-sub-title'>These snippets, while useful and interesting, didn't quite make it into the repository due to either having very specific use-cases or being outdated. However we felt like they might still be useful to some readers, so here they are.</p>
         <p className='light-sub'>Click on a snippet card to view the snippet.</p>
-        {posts &&
-          posts.map(({ node }) => (
+        {snippets &&
+          snippets.map(({ node }) => (
             <SnippetCard
               key={`snippet_${node.id}`}
               short
               archived
               snippetData={{
-                title: node.frontmatter.title,
-                html: node.html,
-                tags: node.frontmatter.tags.split(',').map(v => v.trim()),
-                id: node.fields.slug.slice(1),
+                title: node.title,
+                html: node.html.text,
+                tags: node.tags.all,
+                id: node.id
               }}
               isDarkMode={props.isDarkMode}
             />
@@ -55,25 +55,19 @@ export default connect(
 )(ArchivePage);
 
 export const archivePageQuery = graphql`
-  query ArchivePage {
-    allMarkdownRemark(
-      limit: 1000
-      sort: { fields: [frontmatter___title], order: ASC }
-      filter: { fileAbsolutePath: { regex: "/snippets_archive/" }, frontmatter: {title: { ne: "" } } }
-    ) {
-      totalCount
+  query archiveListing {
+    allSnippet(filter: {archived: {eq: true}}) {
       edges {
         node {
+          title
+          html {
+            text
+          }
+          tags {
+            all
+            primary
+          }
           id
-          html
-          rawMarkdownBody
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            tags
-          }
         }
       }
     }
