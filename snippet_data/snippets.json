@@ -24,6 +24,29 @@
       }
     },
     {
+      "id": "Alert",
+      "title": "Alert",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "Alert.md",
+        "text": "Creates an alert component with `type` prop.\n\n- Define appropriate CSS styles and animations for the component's elements.\n- Use the `React.setState()` hook to create the `isShown` and `isLeaving` state variables and set their values to `false`.\n- Define `timeoutId` to keep the timer instance for clearing on component unmount.\n- Use the `React.setEffect()` hook to update the value of `isShown` to `true` and clear interval by using `timeoutId` when component is unmounted.\n- Define `closeNotification` function to set the component is removed from DOM by displaying fading out animation and set `isShown` to `false` via `setTimeout()`. \n- Define the component, which renders the alert component with user defined `message` and a close button to remove the component from DOM.\n\n",
+        "codeBlocks": {
+          "style": "@keyframes leave {\n  0% { opacity: 1 }\n  100% { opacity: 0 }\n}\n\n.alert {\n  padding: 0.75rem 0.5rem;\n  margin-bottom: 0.5rem;\n  text-align: left;\n  padding-right: 40px;\n  border-radius: 4px;\n  font-size: 16px;\n  position: relative;\n}\n\n.alert.warning{\n  color: #856404;\n  background-color: #fff3cd;\n  border-color: #ffeeba;\n}\n\n.alert.error{\n  color: #721c24;\n  background-color: #f8d7da;\n  border-color: #f5c6cb;\n}\n\n.alert.leaving{\n  animation: leave 0.5s forwards;\n}\n\n.alert .close {\n  position: absolute;\n  top: 0;\n  right: 0;\n  padding: 0 0.75rem;\n  color: #333;\n  border: 0;\n  height: 100%;\n  cursor: pointer;\n  background: none;\n  font-weight: 600;\n  font-size: 16px;\n}\n\n.alert .close:after{\n  content: 'x';\n}",
+          "code": "function Notification(props) {\n    const [isShown, setIsShown] = React.useState(false);\n    const [isLeaving, setIsLeaving] = React.useState(false);\n\n    let timeoutId = null;\n\n    React.useEffect(() => {\n      setIsShown(true);\n      return () => {\n        clearTimeout(timeoutId);\n      }\n    }, [props.isShown, props.timeout, timeoutId]);\n\n    const closeNotification = () => {\n      setIsLeaving(true);\n      timeoutId = setTimeout(() => {\n        setIsLeaving(false);\n        setIsShown(false);\n      }, 250)\n    }\n\n    return isShown && (\n      <div className={`alert ${props.type}${isLeaving ? ' leaving' : ''}`} role=\"alert\">\n        <button className=\"close\" onClick={closeNotification} />\n        {props.message}\n      </div>\n    )\n}",
+          "example": "ReactDOM.render(<Notification type=\"info\" message=\"This is info\" />, document.getElementById('root'));"
+        },
+        "tags": [
+          "visual",
+          "beginner",
+          "state",
+          "effect"
+        ]
+      },
+      "meta": {
+        "hash": "6a9a1148d22c55f24865ce2672a84222409769910a5e472ab80e353c61914ab8"
+      }
+    },
+    {
       "id": "AutoLink",
       "title": "AutoLink",
       "type": "snippet",
