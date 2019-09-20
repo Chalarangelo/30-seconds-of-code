@@ -86,7 +86,7 @@ function Notification(props) {
     }
 
     return isShown && (
-      <div className={`alert ${props.type}${isLeaving ? ' leaving' : ''}`}>
+      <div className={`alert ${props.type}${isLeaving ? ' leaving' : ''}`} role="alert">
         <button className="close" onClick={closeNotification} />
         {props.message}
       </div>
