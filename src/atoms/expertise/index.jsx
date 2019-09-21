@@ -11,6 +11,7 @@ const Expertise = ({
 );
 
 Expertise.propTypes = {
+  /** Snippet expertise rating */
   level: PropTypes.oneOf(EXPERTISE_LEVELS),
 };
 
