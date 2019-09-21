@@ -1,6 +1,6 @@
 import React from 'react';
 import Expertise, { EXPERTISE_LEVELS } from 'atoms/expertise';
-import { radio } from '@storybook/addon-knobs';
+import { radios } from '@storybook/addon-knobs';
 import { withDesign } from 'storybook-addon-designs';
 
 export default {
@@ -15,11 +15,14 @@ export default {
       type: 'figma',
       url: 'https://www.figma.com/file/oY0oRyqDxQZMeMqG4BSwrf/30-seconds-web?node-id=80%3A10',
     },
+    jest: [
+      'expertise',
+    ],
   },
 };
 
 export const component = () => {
-  const level = radio('level', EXPERTISE_LEVELS, 'intermediate');
+  const level = radios('level', EXPERTISE_LEVELS, 'intermediate');
 
   return (
     <Expertise level={ level } />
