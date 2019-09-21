@@ -7,16 +7,21 @@ import { withKnobs } from '@storybook/addon-knobs';
 import contexts from './contexts';
 import viewports from './viewports';
 import results from './jest-test-results.json';
+import theme from './theme';
 import 'index.scss';
 
 addDecorator(withContexts(contexts));
-
-addDecorator(withKnobs);
 addDecorator(withTests({ results }));
+addDecorator(withKnobs);
 addParameters({
   viewport: {
     viewports: viewports
   }
+});
+addParameters({
+  options: {
+    theme
+  },
 });
 
 // automatically import all files ending in *.stories.js
