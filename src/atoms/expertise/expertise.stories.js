@@ -1,6 +1,6 @@
 import React from 'react';
 import Expertise, { EXPERTISE_LEVELS } from 'atoms/expertise';
-import { select } from '@storybook/addon-knobs';
+import { radio } from '@storybook/addon-knobs';
 import { withDesign } from 'storybook-addon-designs';
 
 export default {
@@ -19,9 +19,9 @@ export default {
 };
 
 export const component = () => {
-  const level = select('level', EXPERTISE_LEVELS, 'intermediate');
+  const level = radio('level', EXPERTISE_LEVELS, 'intermediate');
 
   return (
-    <Expertise level={level} />
+    <Expertise level={ level } />
   );
 };

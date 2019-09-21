@@ -21,6 +21,8 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "cross-env": "^6.0.0",
     "css-loader": "^3.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^6.4.0",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^2.0.1",
@@ -44,6 +46,9 @@
     "gatsby-transformer-json": "^2.2.2",
     "gatsby-transformer-remark": "^2.6.6",
     "gatsby-transformer-sharp": "^2.2.3",
+    "jest": "^24.9.0",
+    "jest-environment-enzyme": "^7.1.1",
+    "jest-enzyme": "^7.1.1",
     "kleur": "^3.0.3",
     "node-sass": "^4.12.0",
     "prettier": "^1.18.2",
@@ -70,7 +75,8 @@
     "develop": "cross-env NODE_PATH=src gatsby develop",
     "serve": "gatsby serve",
     "storybook": "cross-env NODE_PATH=src start-storybook -p 6006",
-    "lint": "eslint src/**/*.js src/**/*.jsx"
+    "lint": "eslint src/**/*.js src/**/*.jsx",
+    "test": "cross-env NODE_PATH=src NODE_ENV=test jest",
   },
   "repository": {
     "type": "git",
@@ -79,5 +85,15 @@
   "bugs": {
     "url": "https://github.com/30-seconds/30-seconds-web/issues"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "jest": {
+    "setupFilesAfterEnv": [
+      "jest-enzyme"
+    ],
+    "testEnvironment": "enzyme",
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ]
+  }
 }
