@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {trimWhiteSpace} from 'helpers/trimWhiteSpace';
+import { trimWhiteSpace } from 'helpers/trimWhiteSpace';
+
+export const EXPERTISE_LEVELS = ['beginner', 'intermediate', 'advanced'];
 
 const Expertise = ({
-  level = 'intermediate'
+  level = 'intermediate',
 }) => (
-  <div className={trimWhiteSpace`expertise ${level}`} />
+  <div className={ trimWhiteSpace`expertise ${level}` } />
 );
 
 Expertise.propTypes = {
-  level: PropTypes.oneOf(EXPERTISE_LEVELS)
+  level: PropTypes.oneOf(EXPERTISE_LEVELS),
 };
 
 export default Expertise;
-export const EXPERTISE_LEVELS = ['beginner', 'intermediate', 'advanced'];
