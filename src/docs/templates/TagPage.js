@@ -13,8 +13,8 @@ import { capitalize, getRawCodeBlocks as getCodeBlocks } from '../util';
 // Individual snippet category/tag page
 // ===================================================
 const TagRoute = props => {
-  const posts = props.data.allMarkdownRemark.edges;
   const tag = props.pageContext.tag;
+  const snippets = props.pageContext.snippets;
 
   React.useEffect(() => {
     props.dispatch(pushNewPage(capitalize(tag), props.path));
@@ -26,16 +26,16 @@ const TagRoute = props => {
       <Shell>
         <h2 className='page-title'>{capitalize(tag)}</h2>
         <p className='light-sub'>Click on a snippet card to view the snippet.</p>
-        {posts &&
-          posts.map(({ node }) => (
+        {snippets &&
+          snippets.map(snippet => (
             <SnippetCard
-              key={`snippet_${node.id}`}
+              key={`snippet_${snippet.id}`}
               short
               snippetData={{
-                title: node.frontmatter.title,
-                html: node.html,
-                tags: node.frontmatter.tags.split(',').map(v => v.trim()),
-                id: node.fields.slug.slice(1),
+                title: snippet.title,
+                html: snippet.html,
+                tags: snippet.tags,
+                id: snippet.id,
               }}
               isDarkMode={props.isDarkMode}
             />
@@ -54,28 +54,3 @@ export default connect(
   }),
   null,
 )(TagRoute);
-
-export const tagPageQuery = graphql`
-  query TagPage($tagRegex: String) {
-    allMarkdownRemark(
-      limit: 1000
-      sort: { fields: [frontmatter___title], order: ASC }
-      filter: { fileAbsolutePath: { regex: "/snippets(?!_archive)/" }, frontmatter: { tags: { regex: $tagRegex } } }
-    ) {
-      totalCount
-      edges {
-        node {
-          id
-          html
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            tags
-          }
-        }
-      }
-    }
-  }
-`;

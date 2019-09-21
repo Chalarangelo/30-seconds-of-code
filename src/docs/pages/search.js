@@ -12,14 +12,7 @@ import SnippetCard from '../components/SnippetCard';
 // Search page
 // ===================================================
 const SearchPage = props => {
-  const snippets = props.data.snippetDataJson.data.map(snippet => ({
-    title: snippet.title,
-    html: props.data.allMarkdownRemark.edges.find(
-      v => v.node.frontmatter.title === snippet.title,
-    ).node.html,
-    tags: snippet.attributes.tags,
-    id: snippet.id,
-  }));
+  const snippets = props.data.allSnippet.edges;
 
   const [searchQuery, setSearchQuery] = React.useState(props.searchQuery);
   const [searchResults, setSearchResults] = React.useState(snippets);
@@ -30,9 +23,9 @@ const SearchPage = props => {
     let results = snippets;
     if (q.trim().length)
       results = snippets.filter(
-        v =>
-          v.tags.filter(t => t.indexOf(q) !== -1).length ||
-          v.title.toLowerCase().indexOf(q) !== -1,
+        ({ node }) =>
+          node.tags.all.filter(t => t.indexOf(q) !== -1).length ||
+          node.title.toLowerCase().indexOf(q) !== -1,
       );
     setSearchResults(results);
   }, [searchQuery]);
@@ -75,11 +68,16 @@ const SearchPage = props => {
         ) : (
           <>
             <h2 className='page-sub-title'>Search results</h2>
-            {searchResults.map(snippet => (
+            {searchResults.map(({node}) => (
               <SnippetCard
-                key={`snippet_${snippet.id}`}
+                key={`snippet_${node.id}`}
                 short
-                snippetData={snippet}
+                snippetData={{
+                  title: node.title,
+                  html: node.html.text,
+                  tags: node.tags.all,
+                  id: node.id
+                }}
                 isDarkMode={props.isDarkMode}
               />
             ))}
@@ -102,22 +100,17 @@ export default connect(
 
 export const searchPageQuery = graphql`
   query searchSnippetList {
-    snippetDataJson(meta: { type: { eq: "snippetListingArray" }, scope: {eq: "./snippets"} }) {
-      data {
-        id
-        title
-        attributes {
-          tags
-        }
-      }
-    }
-    allMarkdownRemark { 
+    allSnippet {
       edges {
-        node { 
-          html
-          frontmatter {
-            title
+        node {
+          title
+          html {
+            text
           }
+          tags {
+            all
+          }
+          id
         }
       }
     }
