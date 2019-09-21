@@ -21,6 +21,9 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "cross-env": "^6.0.0",
     "css-loader": "^3.2.0",
+    "eslint": "^6.4.0",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1",
     "front-matter": "^3.0.2",
     "fs-extra": "^8.1.0",
     "gatsby": "^2.12.0",
@@ -66,7 +69,8 @@
     "build": "cross-env NODE_PATH=src gatsby build",
     "develop": "cross-env NODE_PATH=src gatsby develop",
     "serve": "gatsby serve",
-    "storybook": "cross-env NODE_PATH=src start-storybook -p 6006"
+    "storybook": "cross-env NODE_PATH=src start-storybook -p 6006",
+    "lint": "eslint src/**/*.js src/**/*.jsx"
   },
   "repository": {
     "type": "git",
