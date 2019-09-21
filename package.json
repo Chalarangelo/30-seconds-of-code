@@ -11,6 +11,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.5.4",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-contexts": "^5.2.1",
     "@storybook/addon-docs": "^5.2.1",
     "@storybook/addon-knobs": "^5.2.1",
     "@storybook/addon-viewport": "^5.2.1",
