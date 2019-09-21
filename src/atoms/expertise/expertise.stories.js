@@ -1,13 +1,12 @@
 import React from 'react';
-import Expertise from 'atoms/expertise';
-import { select, withKnobs } from '@storybook/addon-knobs';
+import Expertise, { EXPERTISE_LEVELS } from 'atoms/expertise';
+import { select } from '@storybook/addon-knobs';
 import { withDesign } from 'storybook-addon-designs';
 
 export default {
   title: 'Atoms|Expertise',
   component: Expertise,
   decorators: [
-    withKnobs,
     withDesign
   ],
   parameters: {
@@ -20,7 +19,7 @@ export default {
 }
 
 export const component = () => {
-  const level = select('level', ['beginner', 'intermediate', 'advanced'], 'intermediate');
+  const level = select('level', EXPERTISE_LEVELS, 'intermediate');
 
   return (
     <Expertise level={level} />

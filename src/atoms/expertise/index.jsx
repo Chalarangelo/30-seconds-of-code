@@ -9,7 +9,8 @@ const Expertise = ({
 );
 
 Expertise.propTypes = {
-  level: PropTypes.oneOf(['beginner', 'intermediate', 'advanced'])
+  level: PropTypes.oneOf(EXPERTISE_LEVELS)
 };
 
 export default Expertise;
+export const EXPERTISE_LEVELS = ['beginner', 'intermediate', 'advanced'];
