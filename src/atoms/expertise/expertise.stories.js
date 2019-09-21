@@ -2,6 +2,7 @@ import React from 'react';
 import Expertise, { EXPERTISE_LEVELS } from 'atoms/expertise';
 import { radios } from '@storybook/addon-knobs';
 import { withDesign } from 'storybook-addon-designs';
+import mdx from './expertise.mdx';
 
 export default {
   title: 'Atoms|Expertise',
@@ -10,6 +11,9 @@ export default {
     withDesign,
   ],
   parameters: {
+    docs: {
+      page: mdx,
+    },
     design: {
       name: 'beginner',
       type: 'figma',
