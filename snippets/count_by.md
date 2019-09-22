@@ -12,13 +12,12 @@ Iterate over the map and increase the element count each time it occurs.
 def count_by(arr, fn=lambda x: x):
   key = {}
   for el in map(fn, arr):
-    key[el] = 0 if el not in key else key[el]
-    key[el] += 1
+    key[el] = 1 if el not in key else key[el] + 1
   return key
 ```
 
 ```py
 from math import floor
-count_by([6.1, 4.2, 6.3], floor) # {4: 1, 6: 2}
+count_by([6.1, 4.2, 6.3], floor) # {6: 2, 4: 1}
 count_by(['one', 'two', 'three'], len) # {3: 2, 5: 1}
 ```

@@ -5,15 +5,11 @@ tags: list,function,intermediate
 
 Returns `True` if the provided function returns `True` for every element in the list, `False` otherwise.
 
-Iterate over the elements of the list to test if every element in the list returns `True` based on `fn`.
-Omit the seconds argument, `fn`, to check if all elements are `True`.
+Use `all()` in combination with `map` and `fn` to check if `fn` returns `True` for all elements in the list.
 
 ```py
-def every(lst, fn=lambda x: not not x):
-  for el in lst:
-    if not fn(el):
-      return False
-  return True
+def every(lst, fn=lambda x: x):
+  return all(map(fn, lst))
 ```
 
 ```py
