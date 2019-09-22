@@ -5,7 +5,7 @@ tags: list,object,beginner
 
 Groups the elements of a list based on the given function.
 
-Use `list()` in combination with `map()` and `fn` to map the values of the list to the keys of an object.
+Use `map()` and `fn` to map the values of the list to the keys of an object.
 Use list comprehension to map each element to the appropriate `key`.
 
 ```py
