@@ -228,7 +228,7 @@
         ]
       },
       "meta": {
-        "hash": "e78cb9229a2bc4c882fa7d901dbdee6ca9c33bde348650210afb210d3b98e1f6"
+        "hash": "bcbf6bf4eea87d50914f20640482d6e25198357ac3ec5155276664905ac1e5e0"
       }
     },
     {
@@ -329,7 +329,7 @@
       "type": "snippetListing",
       "title": "every",
       "attributes": {
-        "text": "Returns `True` if the provided function returns `True` for every element in the list, `False` otherwise.\n\nIterate over the elements of the list to test if every element in the list returns `True` based on `fn`.\nOmit the seconds argument, `fn`, to check if all elements are `True`.\n\n",
+        "text": "Returns `True` if the provided function returns `True` for every element in the list, `False` otherwise.\n\nUse `all()` in combination with `map` and `fn` to check if `fn` returns `True` for all elements in the list.\n\n",
         "tags": [
           "list",
           "function",
@@ -337,7 +337,7 @@
         ]
       },
       "meta": {
-        "hash": "8356afa6609f21bef9f48c7fb4b82553cae27d67c4bb4e31bfda98ee814cf269"
+        "hash": "40b8ce30ab95e515b6814e602a7f0755124b792d6f9c664f58e0ee61c27148c1"
       }
     },
     {
@@ -437,7 +437,7 @@
       "type": "snippetListing",
       "title": "group_by",
       "attributes": {
-        "text": "Groups the elements of a list based on the given function.\n\nUse `list()` in combination with `map()` and `fn` to map the values of the list to the keys of an object.\nUse list comprehension to map each element to the appropriate `key`.\n\n",
+        "text": "Groups the elements of a list based on the given function.\n\nUse `map()` and `fn` to map the values of the list to the keys of an object.\nUse list comprehension to map each element to the appropriate `key`.\n\n",
         "tags": [
           "list",
           "object",
@@ -445,7 +445,7 @@
         ]
       },
       "meta": {
-        "hash": "b3d1a5b7cd2f3b25f9d89efeba7f4eb7f9e4e6d81e108d57f94770c8f979428e"
+        "hash": "51e158e03a090b891d6d1646644bff5163751b25a7ee3e72280c04570bff2429"
       }
     },
     {
@@ -778,7 +778,7 @@
       "type": "snippetListing",
       "title": "max_by",
       "attributes": {
-        "text": "Returns the maximum value of a list, after mapping each element to a value using the provided function.\n\nUse `map()` with `fn` to map each element to a value using the provided function, convert to a `list` and use `max()` to return the maximum value.\n\n",
+        "text": "Returns the maximum value of a list, after mapping each element to a value using the provided function.\n\nUse `map()` with `fn` to map each element to a value using the provided function, use `max()` to return the maximum value.\n\n",
         "tags": [
           "math",
           "list",
@@ -787,7 +787,7 @@
         ]
       },
       "meta": {
-        "hash": "2b9a695e5e8982d8bf6739fe682834dc715c4e5d62c00c433a137e6c659847eb"
+        "hash": "aca578491d9c055c793cf782db88f7e0c1de093c3e9ad09a72a59e75055b7581"
       }
     },
     {
@@ -811,7 +811,7 @@
       "type": "snippetListing",
       "title": "min_by",
       "attributes": {
-        "text": "Returns the minimum value of a list, after mapping each element to a value using the provided function.\n\nUse `map()` with `fn` to map each element to a value using the provided function, convert to a `list` and use `min()` to return the minimum value.\n\n",
+        "text": "Returns the minimum value of a list, after mapping each element to a value using the provided function.\n\nUse `map()` with `fn` to map each element to a value using the provided function, use `min()` to return the minimum value.\n\n",
         "tags": [
           "math",
           "list",
@@ -820,7 +820,7 @@
         ]
       },
       "meta": {
-        "hash": "d203738604555c011870d9d43d6030846fd71d5421eb477d349e295f28c32b92"
+        "hash": "fb061014007b8c476b42e8c7f8619a6a203f89e6141960a80292dc362ad05f80"
       }
     },
     {
@@ -844,7 +844,7 @@
       "type": "snippetListing",
       "title": "none",
       "attributes": {
-        "text": "Returns `False` if the provided function returns `True` for at least one element in the list, `True` otherwise.\n\nIterate over the elements of the list to test if every element in the list returns `False` based on `fn`.\nOmit the seconds argument, `fn`, to check if all elements are `False`.\n\n",
+        "text": "Returns `False` if the provided function returns `True` for at least one element in the list, `True` otherwise.\n\nUse `all()` in combination with `map()` and `fn` to check if `fn` returns `False` for all the elements in the list.\n\n",
         "tags": [
           "list",
           "function",
@@ -852,7 +852,7 @@
         ]
       },
       "meta": {
-        "hash": "2f345a768997fb0523dfbb775281ca0338a849032b5d8671d313c08f46f9b26e"
+        "hash": "5d0682964ee65801c79ed3f165c5c699d61176928fb5bb59e0b02717293b5253"
       }
     },
     {
@@ -968,7 +968,7 @@
       "type": "snippetListing",
       "title": "some",
       "attributes": {
-        "text": "Returns `True` if the provided function returns `True` for at least one element in the list, `False` otherwise.\n\nIterate over the elements of the list to test if every element in the list returns `True` based on `fn`.\nOmit the seconds argument, `fn`, to check if all elements are `True`.\n\n",
+        "text": "Returns `True` if the provided function returns `True` for at least one element in the list, `False` otherwise.\n\nUse `any()` in combination with `map()` and `fn` to check if `fn` returns `True` for any element in the list.\n\n",
         "tags": [
           "list",
           "function",
@@ -976,7 +976,7 @@
         ]
       },
       "meta": {
-        "hash": "5052bf5e5a38a8a928ea6b3e42cecda2027d2123dd5e47764b354eafd3310dee"
+        "hash": "b104995e92213cbfeac2dce438e9d6f8fd13e18b8fb106789efa06f9285da2bb"
       }
     },
     {
@@ -1015,7 +1015,7 @@
       "type": "snippetListing",
       "title": "sum_by",
       "attributes": {
-        "text": "Returns the sum of a list, after mapping each element to a value using the provided function.\n\nUse `map()` with `fn` to map each element to a value using the provided function, convert to a `list` and use `sum()` to return the sum of the values.\n\n",
+        "text": "Returns the sum of a list, after mapping each element to a value using the provided function.\n\nUse `map()` with `fn` to map each element to a value using the provided function, use `sum()` to return the sum of the values.\n\n",
         "tags": [
           "math",
           "list",
@@ -1024,7 +1024,7 @@
         ]
       },
       "meta": {
-        "hash": "99f5487bf6ed90107254caf6ac90c2f7930266203ae33e9b60de6d8ed1a2ba45"
+        "hash": "aa4e4a8d9b99ed0e2d04af5430613f1155329592f3d4f7c2bf76a659a6df7c17"
       }
     },
     {
