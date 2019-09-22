@@ -679,7 +679,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "initialiaze_2d_list.md",
-        "text": "Initializes a 2D list of given width and height and value.\n\nUse list comprehension and `range()` to generate `h` rows where each is a list with length `h`, initialized with `val`.\nIf `val` is not provided, default to `None`.\n\nExplain briefly how the snippet works.\n\n",
+        "text": "Initializes a 2D list of given width and height and value.\n\nUse list comprehension and `range()` to generate `h` rows where each is a list with length `h`, initialized with `val`.\nIf `val` is not provided, default to `None`.\n\n",
         "codeBlocks": {
           "code": "def initialize_2d_list(w,h, val = None):\n  return [[val for x in range(w)] for y in range(h)]",
           "example": "initialize_2d_list(2, 2, 0) # [[0,0], [0,0]]"
@@ -690,7 +690,7 @@
         ]
       },
       "meta": {
-        "hash": "a848fc33363ab533f745e081d885b4c981716ae063867ea9a2b471fd8fc92ac7"
+        "hash": "0dea8eb7639aa7d0b2748ecfaeb80b1a93408340b6f697f604451b8e9442f477"
       }
     },
     {
@@ -1136,7 +1136,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "offset.md",
-        "text": "Moves the specified amount of elements to the end of the list.\n\nUse `lst[offset:]` and `lst[:offset]` to get the two slices of the list and combine them before returning.\n\nExplain briefly how the snippet works.\n\n",
+        "text": "Moves the specified amount of elements to the end of the list.\n\nUse `lst[offset:]` and `lst[:offset]` to get the two slices of the list and combine them before returning.\n\n",
         "codeBlocks": {
           "code": "def offset(lst, offset):\n  return lst[offset:] + lst[:offset]",
           "example": "offset([1, 2, 3, 4, 5], 2) # [3, 4, 5, 1, 2]\noffset([1, 2, 3, 4, 5], -2) # [4, 5, 1, 2, 3]"
@@ -1147,7 +1147,7 @@
         ]
       },
       "meta": {
-        "hash": "86c03a0d8ea80a203414f79670fec491b232acd5448108c1858058df68833f42"
+        "hash": "1be5e82e22a183c88351baa1cc14cab498e20dd17d6096de7915f6dcb16c76b9"
       }
     },
     {
