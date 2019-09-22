@@ -295,8 +295,7 @@ Iterate over the map and increase the element count each time it occurs.
 def count_by(arr, fn=lambda x: x):
   key = {}
   for el in map(fn, arr):
-    key[el] = 0 if el not in key else key[el]
-    key[el] += 1
+    key[el] = 1 if el not in key else key[el] + 1
   return key
 ```
 
@@ -305,7 +304,7 @@ def count_by(arr, fn=lambda x: x):
 
 ```py
 from math import floor
-count_by([6.1, 4.2, 6.3], floor) # {4: 1, 6: 2}
+count_by([6.1, 4.2, 6.3], floor) # {6: 2, 4: 1}
 count_by(['one', 'two', 'three'], len) # {3: 2, 5: 1}
 ```
 </details>
@@ -419,15 +418,11 @@ difference_by([{ 'x': 2 }, { 'x': 1 }], [{ 'x': 1 }], lambda v : v['x']) # [ { x
 
 Returns `True` if the provided function returns `True` for every element in the list, `False` otherwise.
 
-Iterate over the elements of the list to test if every element in the list returns `True` based on `fn`.
-Omit the seconds argument, `fn`, to check if all elements are `True`.
+Use `all()` in combination with `map` and `fn` to check if `fn` returns `True` for all elements in the list.
 
 ```py
-def every(lst, fn=lambda x: not not x):
-  for el in lst:
-    if not fn(el):
-      return False
-  return True
+def every(lst, fn=lambda x: x):
+  return all(map(fn, lst))
 ```
 
 <details>
@@ -508,7 +503,7 @@ flatten([[1,2,3,4],[5,6,7,8]]) # [1, 2, 3, 4, 5, 6, 7, 8]
 
 Groups the elements of a list based on the given function.
 
-Use `list()` in combination with `map()` and `fn` to map the values of the list to the keys of an object.
+Use `map()` and `fn` to map the values of the list to the keys of an object.
 Use list comprehension to map each element to the appropriate `key`.
 
 ```py
@@ -805,15 +800,11 @@ min_n([1, 2, 3], 2) # [1,2]
 
 Returns `False` if the provided function returns `True` for at least one element in the list, `True` otherwise.
 
-Iterate over the elements of the list to test if every element in the list returns `False` based on `fn`.
-Omit the seconds argument, `fn`, to check if all elements are `False`.
+Use `all()` in combination with `map()` and `fn` to check if `fn` returns `False` for all the elements in the list.
 
 ```py
-def none(lst, fn=lambda x: not not x):
-  for el in lst:
-    if fn(el):
-      return False
-  return True
+def none(lst, fn=lambda x: x):
+  return all(map(lambda x: not fn(x), lst))
 ```
 
 <details>
@@ -928,15 +919,11 @@ similarity([1, 2, 3], [1, 2, 4]) # [1, 2]
 
 Returns `True` if the provided function returns `True` for at least one element in the list, `False` otherwise.
 
-Iterate over the elements of the list to test if every element in the list returns `True` based on `fn`.
-Omit the seconds argument, `fn`, to check if all elements are `True`.
+Use `any()` in combination with `map()` and `fn` to check if `fn` returns `True` for any element in the list.
 
 ```py
-def some(lst, fn=lambda x: not not x):
-  for el in lst:
-    if fn(el):
-      return True
-  return False
+def some(lst, fn=lambda x: x):
+  return any(map(fn, lst))
 ```
 
 <details>
@@ -1453,11 +1440,11 @@ lcm([1, 3, 4], 5) # 60
 
 Returns the maximum value of a list, after mapping each element to a value using the provided function.
 
-Use `map()` with `fn` to map each element to a value using the provided function, convert to a `list` and use `max()` to return the maximum value.
+Use `map()` with `fn` to map each element to a value using the provided function, use `max()` to return the maximum value.
 
 ```py
 def max_by(lst, fn):
-  return max(list(map(fn,lst)))
+  return max(map(fn,lst))
 ```
 
 <details>
@@ -1474,11 +1461,11 @@ max_by([{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }], lambda v : v['n']) # 8
 
 Returns the minimum value of a list, after mapping each element to a value using the provided function.
 
-Use `map()` with `fn` to map each element to a value using the provided function, convert to a `list` and use `min()` to return the minimum value.
+Use `map()` with `fn` to map each element to a value using the provided function, use `min()` to return the minimum value.
 
 ```py
 def min_by(lst, fn):
-  return min(list(map(fn,lst)))
+  return min(map(fn,lst))
 ```
 
 <details>
@@ -1519,11 +1506,11 @@ rads_to_degrees(math.pi / 2) # 90.0
 
 Returns the sum of a list, after mapping each element to a value using the provided function.
 
-Use `map()` with `fn` to map each element to a value using the provided function, convert to a `list` and use `sum()` to return the sum of the values.
+Use `map()` with `fn` to map each element to a value using the provided function, use `sum()` to return the sum of the values.
 
 ```py
 def sum_by(lst, fn):
-  return sum(list(map(fn,lst)))
+  return sum(map(fn,lst))
 ```
 
 <details>
