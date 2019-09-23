@@ -478,7 +478,7 @@
         "fileName": "factorial.md",
         "text": "Calculates the factorial of a number.\n\nUse recursion. \nIf `num` is less than or equal to `1`, return `1`. \nOtherwise, return the product of `num` and the factorial of `num - 1`. \nThrows an exception if `num` is a negative or a floating point number.\n\n",
         "codeBlocks": {
-          "code": "def factorial(num):\n  if not ((num >= 0) & (num % 1 == 0)):\n    raise Exception(\n      f\"Number( {num} ) can't be floating point or negative \")\n  return 1 if num == 0 else num * factorial(num - 1)",
+          "code": "def factorial(num):\n  if not ((num >= 0) and (num % 1 == 0)):\n    raise Exception(\n      f\"Number( {num} ) can't be floating point or negative \")\n  return 1 if num == 0 else num * factorial(num - 1)",
           "example": "factorial(6) # 720"
         },
         "tags": [
@@ -488,7 +488,7 @@
         ]
       },
       "meta": {
-        "hash": "3241103df06912913bbcfb51e03c1d355a7329e367aa9d4f6a770683bc196df8"
+        "hash": "948d8f496825413a0047464055ab9166016ad526d26d83f3ceacd3dc5a1926ba"
       }
     },
     {
