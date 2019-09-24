@@ -263,7 +263,7 @@
         "codeBlocks": {
           "style": "",
           "code": "function LimitedWordTextarea({ rows, cols, value, limit }) {\n  const [content, setContent] = React.useState(value);\n  const [wordCount, setWordCount] = React.useState(0);\n\n  const setFormattedContent = text => {\n    let words = text.split(' ');\n    if (words.filter(Boolean).length > limit) {\n      setContent(\n        text\n          .split(' ')\n          .slice(0, limit)\n          .join(' ')\n      );\n      setWordCount(limit);\n    } else {\n      setContent(text);\n      setWordCount(words.filter(Boolean).length);\n    }\n  };\n\n  React.useEffect(() => {\n    setFormattedContent(content);\n  }, []);\n\n  return (\n    <div>\n      <textarea\n        rows={rows}\n        cols={cols}\n        onChange={event => setFormattedContent(event.target.value)}\n        value={content}\n      />\n      <p>\n        {wordCount}/{limit}\n      </p>\n    </div>\n  );\n}",
-          "example": "ReactDOM.render(\n  <LimitedWordTextArea limit={5} value=\"Hello there!\" />,\n  document.getElementById('root')\n);"
+          "example": "ReactDOM.render(\n  <LimitedWordTextarea limit={5} value=\"Hello there!\" />,\n  document.getElementById('root')\n);"
         },
         "tags": [
           "input",
@@ -274,7 +274,7 @@
         ]
       },
       "meta": {
-        "hash": "daebbd819d3a73beb3a82ba3c9682b619fc1f663edaad8c60fab3e1b4b44c30c"
+        "hash": "ac22f33a0084fb444ce9e3cd7aebec507d6d785d1bc6e0a9cc5656f5ee0cb92f"
       }
     },
     {
