@@ -32,10 +32,3 @@ export const component = () => {
     <Expertise level={ level } />
   );
 };
-
-export const beginner = () =>
-  <Expertise level="beginner" />;
-export const intemediate = () =>
-  <Expertise level="intemediate" />;
-export const advanced = () =>
-  <Expertise level="advanced" />;
