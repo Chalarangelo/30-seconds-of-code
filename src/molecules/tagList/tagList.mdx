@@ -1,0 +1,31 @@
+import {
+  Story,
+  Preview,
+  Props,
+  Source,
+  Description,
+  ColorPalette,
+  ColorItem,
+  Meta,
+} from '@storybook/addon-docs/blocks';
+import TagList from 'molecules/tagList';
+
+# TagList
+
+Displays a list of snippet tags.
+
+## Props
+
+<Props of={TagList} />
+
+## Source
+
+```jsx
+const tags = [ 'array', 'adapter', 'function' ];
+
+<TagList tags={tags} />
+```
+
+## See also
+
+- [Tag](./?path=/story/atoms-tag--component)
