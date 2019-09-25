@@ -15,7 +15,7 @@ export default {
       page: mdx,
     },
     design: {
-      name: 'beginner',
+      name: 'expertise',
       type: 'figma',
       url: 'https://www.figma.com/file/oY0oRyqDxQZMeMqG4BSwrf/30-seconds-web?node-id=80%3A10',
     },
