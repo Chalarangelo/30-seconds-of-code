@@ -816,7 +816,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "not-selector.md",
-        "text": "The `:not` psuedo selector is useful for styling a group of elements, while leaving the last (or specified) element unstyled.\n\n",
+        "text": "The `:not` pseudo selector is useful for styling a group of elements, while leaving the last (or specified) element unstyled.\n\n",
         "explanation": "\n\n- `li:not(:last-child)` specifies that the styles should apply to all `li` elements except the `:last-child`.\n\n",
         "browserSupport": {
           "text": "\n\n- https://caniuse.com/#feat=css-sel3\n",
@@ -833,7 +833,7 @@
         ]
       },
       "meta": {
-        "hash": "a5ce598fdef79b1c1a91bc30992bd881e3f1d1f7928c4c4d3ccd5f4eb5817ad9"
+        "hash": "847dbaae8802781fa073cc92c6891ea0a0c39752f95266fcb4db7812dc78640e"
       }
     },
     {
