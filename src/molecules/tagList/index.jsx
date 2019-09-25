@@ -4,13 +4,18 @@ import Tag from 'atoms/tag';
 
 const TagList = ({
   tags,
-}) => (
-  <div className="tag-list">
-    { tags.map(tag => (
-      <Tag name={ tag } key={ `tl_${tag}` }/>
-    )) }
-  </div>
-);
+}) => {
+  // Deduplicate tags
+  const _tags = [...new Set(tags)];
+
+  return (
+    <div className="tag-list">
+      { _tags.map(tag => (
+        <Tag name={ tag } key={ `t_${tag}` }/>
+      )) }
+    </div>
+  );
+};
 
 TagList.propTypes = {
   /** List of tag names */

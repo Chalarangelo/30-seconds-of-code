@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Tag = ({
   name,
 }) => (
-  <span className="tag" key={ `t_${name}` }>
+  <span className="tag">
     { name }
   </span>
 );
