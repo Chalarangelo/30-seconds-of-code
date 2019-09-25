@@ -59,6 +59,11 @@ typings/
 # Output of 'npm pack'
 *.tgz
 
+# Yarn
+yarn-error.log
+.pnp/
+.pnp.js
+
 # Yarn Integrity file
 .yarn-integrity
 
@@ -89,3 +94,16 @@ typings/
 
 # Force NPM
 yarn.lock
+
+# gatsby files
+.cache/
+public
+
+# Mac files
+<<<<<<< HEAD
+.DS_Store
+=======
+.DS_Store
+
+# Jest test results
+.storybook/jest-test-results.json
