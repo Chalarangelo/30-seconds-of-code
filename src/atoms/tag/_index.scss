@@ -1,0 +1,27 @@
+// Colors
+:root {
+  --tag-border-color: #D7DDF3;
+  --tag-fore-color: #616B8F;
+}
+
+// Dark mode colors
+.page-container.dark {
+  --tag-border-color: #2A3765;
+  --tag-fore-color: #BEC1CB;
+}
+
+// Use the :not(.token) rule to avoid conflicts with the .token.tag in prism
+:not(.token).tag {
+  display: inline-block;
+  border: 2px solid var(--tag-border-color);
+  border-radius: 0.25rem;
+  color: var(--tag-fore-color);
+  padding: 0.125rem 0.25rem;
+  margin: 0;
+  font-size: 0.625rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-transform: uppercase; 
+  letter-spacing: 0.25px;
+  transition: 0.3s ease all;
+}
