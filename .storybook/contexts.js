@@ -15,7 +15,7 @@ const PageWrapper = ({
     flexDirection: 'column'
   }
   return (
-    <div className={`page-container${theme==='dark' ? ' theme' : ''}`} style={style}>
+    <div className={`page-container${theme==='dark' ? ` ${theme}` : ''}`} style={style}>
       {children}
     </div>
   )
