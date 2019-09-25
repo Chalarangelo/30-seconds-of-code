@@ -5,7 +5,7 @@ tags: list,function,intermediate
 
 Returns `False` if the provided function returns `True` for at least one element in the list, `True` otherwise.
 
-Use `all()` and run `fn` to check if `fn` returns `False` for all the elements in the list.
+Use `all()` and `fn` to check if `fn` returns `False` for all the elements in the list.
 
 ```py
 def none(lst, fn=lambda x: x):
