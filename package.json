@@ -79,7 +79,7 @@
     "develop": "gatsby develop",
     "serve": "gatsby serve",
     "storybook": "cross-env NODE_PATH=src start-storybook -p 6006",
-    "storybook:with-tests": "concurrently --kill-others \"npm run storybook\" \"npm run test:generate-output --watch\"",
+    "storybook:with-tests": "concurrently --kill-others \"npm run storybook\" \"npm run test:generate-output -- --watch\"",
     "lint": "eslint src/**/*.js src/**/*.jsx",
     "test": "cross-env NODE_PATH=src NODE_ENV=test jest",
     "test:generate-output": "cross-env NODE_PATH=src NODE_ENV=test jest --json --outputFile=.storybook/jest-test-results.json"
@@ -100,6 +100,9 @@
     "moduleDirectories": [
       "node_modules",
       "src"
+    ],
+    "testPathIgnorePatterns": [
+      ".cache"
     ]
   }
 }
