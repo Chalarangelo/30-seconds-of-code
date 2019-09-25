@@ -1115,9 +1115,9 @@
       "type": "snippet",
       "attributes": {
         "fileName": "none.md",
-        "text": "Returns `False` if the provided function returns `True` for at least one element in the list, `True` otherwise.\n\nUse `all()` in combination with `map()` and `fn` to check if `fn` returns `False` for all the elements in the list.\n\n",
+        "text": "Returns `False` if the provided function returns `True` for at least one element in the list, `True` otherwise.\n\nUse `all()` and `fn` to check if `fn` returns `False` for all the elements in the list.\n\n",
         "codeBlocks": {
-          "code": "def none(lst, fn=lambda x: x):\n  return all(map(lambda x: not fn(x), lst))",
+          "code": "def none(lst, fn=lambda x: x):\n  return all(not fn(x) for x in lst)",
           "example": "none([0, 1, 2, 0], lambda x: x >= 2 ) # False\nnone([0, 0, 0]) # True"
         },
         "tags": [
@@ -1127,7 +1127,7 @@
         ]
       },
       "meta": {
-        "hash": "5d0682964ee65801c79ed3f165c5c699d61176928fb5bb59e0b02717293b5253"
+        "hash": "0dd3614b71e7a0b646a084e991eb6b4b2940492a14e6b8159d5d8a60a5abe04d"
       }
     },
     {
