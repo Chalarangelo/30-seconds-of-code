@@ -12,7 +12,8 @@ const PageWrapper = ({
     margin: 0,
     width: '100vw',
     height: '100vh',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    background: 'var(--back-color)'
   }
   return (
     <div className={`page-container${theme==='dark' ? ` ${theme}` : ''}`} style={style}>
