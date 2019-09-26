@@ -630,22 +630,6 @@
       }
     },
     {
-      "id": "is_lower_case",
-      "type": "snippetListing",
-      "title": "is_lower_case",
-      "attributes": {
-        "text": "Checks if a string is lower case.\n\nConvert the given string to lower case, using `str.lower()` and compare it to the original.\n\n",
-        "tags": [
-          "string",
-          "utility",
-          "beginner"
-        ]
-      },
-      "meta": {
-        "hash": "ed6b313aaf87ba7ea9515679eea19f395f7bbd90b9f8b85ef54ca527115fa690"
-      }
-    },
-    {
       "id": "is_odd",
       "type": "snippetListing",
       "title": "is_odd",
@@ -658,22 +642,6 @@
       },
       "meta": {
         "hash": "261771aa5fd9c9dcb60dd93c29afce0de3a51c505e474fa7c76789a1e0d8f5c8"
-      }
-    },
-    {
-      "id": "is_upper_case",
-      "type": "snippetListing",
-      "title": "is_upper_case",
-      "attributes": {
-        "text": "Checks if a string is upper case.\n\nConvert the given string to upper case, using `str.upper()` and compare it to the original.\n\n",
-        "tags": [
-          "string",
-          "utility",
-          "beginner"
-        ]
-      },
-      "meta": {
-        "hash": "106225722752b199f974c06aec91721344499e46dbf643e9f2ce990ee8c2d3c1"
       }
     },
     {
