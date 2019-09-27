@@ -1068,6 +1068,26 @@
       }
     },
     {
+      "id": "n_times_string",
+      "title": "n_times_string",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "n_times_string.md",
+        "text": "Prints out the same string a defined number of times.\n\nUse this method to print out the same string n number of times.\n\n\n",
+        "codeBlocks": {
+          "code": "def n_times_string(string,n):\r\n  return (string * n)",
+          "example": "n_times_string('py', 4) #'pypypypy'"
+        },
+        "tags": [
+          "string",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "2d7a8e4505e3ad18e72464fa91c6bfe78592a5873c6202c0758b00f6daf11f8a"
+      }
+    },
+    {
       "id": "none",
       "title": "none",
       "type": "snippet",

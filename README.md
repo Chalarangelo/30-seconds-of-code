@@ -117,6 +117,7 @@
 * [`decapitalize`](#decapitalize)
 * [`is_anagram`](#is_anagram)
 * [`kebab`](#kebab)
+* [`n_times_string`](#n_times_string)
 * [`palindrome`](#palindrome)
 * [`snake`](#snake)
 * [`split_lines`](#split_lines)
@@ -1782,6 +1783,28 @@ kebab('camelCase'); # 'camel-case'
 kebab('some text'); # 'some-text'
 kebab('some-mixed_string With spaces_underscores-and-hyphens'); # 'some-mixed-string-with-spaces-underscores-and-hyphens'
 kebab('AllThe-small Things'); # "all-the-small-things"
+```
+</details>
+
+<br>[⬆ Back to top](#contents)
+
+### n_times_string
+
+Prints out the same string a defined number of times.
+
+Use this method to print out the same string n number of times.
+
+
+```py
+def n_times_string(string,n):
+  return (string * n)
+```
+
+<details>
+<summary>Examples</summary>
+
+```py
+n_times_string('py', 4) #'pypypypy'
 ```
 </details>
 
