@@ -1075,7 +1075,7 @@
         "fileName": "n_times_string.md",
         "text": "Prints out the same string a defined number of times.\n\nUse this method to print out the same string n number of times.\n\n\n",
         "codeBlocks": {
-          "code": "def n_times_string(string,n):\r\n  return (string * n)",
+          "code": "def n_times_string(str,n):\r\n  return (str * n)",
           "example": "n_times_string('py', 4) #'pypypypy'"
         },
         "tags": [
@@ -1084,7 +1084,7 @@
         ]
       },
       "meta": {
-        "hash": "2d7a8e4505e3ad18e72464fa91c6bfe78592a5873c6202c0758b00f6daf11f8a"
+        "hash": "b8ba27a04a5c2dcd91f6643eb02b61b9df9a58bedea26ceb2042cb535c0c1eb1"
       }
     },
     {

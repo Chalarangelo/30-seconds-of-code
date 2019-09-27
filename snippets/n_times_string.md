@@ -9,8 +9,8 @@ Use this method to print out the same string n number of times.
 
 
 ```py
-def n_times_string(string,n):
-  return (string * n)
+def n_times_string(str,n):
+  return (str * n)
 ```
 
 ```py
