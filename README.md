@@ -1792,8 +1792,7 @@ kebab('AllThe-small Things'); # "all-the-small-things"
 
 Prints out the same string a defined number of times.
 
-Use this method to print out the same string n number of times.
-
+Repeat the string `n` times, using the `*` operator.
 
 ```py
 def n_times_string(str,n):
