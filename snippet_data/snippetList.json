@@ -808,6 +808,21 @@
       }
     },
     {
+      "id": "n_times_string",
+      "type": "snippetListing",
+      "title": "n_times_string",
+      "attributes": {
+        "text": "Prints out the same string a defined number of times.\n\nUse this method to print out the same string n number of times.\n\n\n",
+        "tags": [
+          "string",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "2d7a8e4505e3ad18e72464fa91c6bfe78592a5873c6202c0758b00f6daf11f8a"
+      }
+    },
+    {
       "id": "none",
       "type": "snippetListing",
       "title": "none",
