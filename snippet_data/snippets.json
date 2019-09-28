@@ -1,6 +1,33 @@
 {
   "data": [
     {
+      "id": "border-with-top-triangle",
+      "title": "Border with top triangle",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "border-with-top-triangle.md",
+        "text": "Creates a text container with a triangle at the top.\n\n#### HTML\n\n",
+        "explanation": "\n\n- Use the `:before` and `:after` pseudo-elements to create two triangles. \n- The color of the `:before` triangle should be the same as the container's border color. \n- The color of the `:after` triangle should be the same as the container background color.\n- The border width of the `:before` triangle should be `1px` wider than the `:after` triangle, in order to act as the border.\n- The `:after` triangle should be `1px` to the right of the `:before` triangle to allow for its left border to be shown.\n\n",
+        "browserSupport": {
+          "text": "\n",
+          "supportPercentage": 100
+        },
+        "codeBlocks": {
+          "html": "<div class=\"container\">\n  Border with top triangle\n</div>",
+          "css": ".container {\n  position: relative;\n  background: #ffffff;\n  padding: 15px;\n  border: 1px solid #dddddd;\n  margin-top: 20px;\n}\n\n.container:before, .container:after {\n  content: '';\n  position: absolute;\n  bottom: 100%;\n  left: 19px;\n  border: 11px solid transparent;\n  border-bottom-color: #dddddd;\n}\n\n.container:after {\n  left: 20px;\n  border: 10px solid transparent;\n  border-bottom-color: #ffffff;\n}",
+          "js": "",
+          "scopedCss": "[data-scope=\"border-with-top-triangle\"] .container {\n  position: relative;\n  background: #ffffff;\n  padding: 15px;\n  border: 1px solid #dddddd;\n  margin-top: 20px; }\n\n[data-scope=\"border-with-top-triangle\"] .container:before, [data-scope=\"border-with-top-triangle\"] .container:after {\n  content: '';\n  position: absolute;\n  bottom: 100%;\n  left: 19px;\n  border: 11px solid transparent;\n  border-bottom-color: #dddddd; }\n\n[data-scope=\"border-with-top-triangle\"] .container:after {\n  left: 20px;\n  border: 10px solid transparent;\n  border-bottom-color: #ffffff; }\n"
+        },
+        "tags": [
+          "visual",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "4fed80c83d37457d5ce111ee5c3272945c203319ccc4f5fe4355c359840f8628"
+      }
+    },
+    {
       "id": "bouncing-loader",
       "title": "Bouncing loader",
       "type": "snippet",

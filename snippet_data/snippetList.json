@@ -1,6 +1,21 @@
 {
   "data": [
     {
+      "id": "border-with-top-triangle",
+      "type": "snippetListing",
+      "title": "Border with top triangle",
+      "attributes": {
+        "text": "Creates a text container with a triangle at the top.\n\n#### HTML\n\n",
+        "tags": [
+          "visual",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "4fed80c83d37457d5ce111ee5c3272945c203319ccc4f5fe4355c359840f8628"
+      }
+    },
+    {
       "id": "bouncing-loader",
       "type": "snippetListing",
       "title": "Bouncing loader",
