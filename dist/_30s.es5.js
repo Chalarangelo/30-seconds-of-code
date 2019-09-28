@@ -1227,6 +1227,9 @@
   var isObjectLike = function isObjectLike(val) {
     return val !== null && _typeof(val) === 'object';
   };
+  var isOdd = function isOdd(num) {
+    return num % 2 === 1;
+  };
   var isPlainObject = function isPlainObject(val) {
     return !!val && _typeof(val) === 'object' && val.constructor === Object;
   };
@@ -3053,6 +3056,7 @@
   exports.isNumber = isNumber;
   exports.isObject = isObject;
   exports.isObjectLike = isObjectLike;
+  exports.isOdd = isOdd;
   exports.isPlainObject = isPlainObject;
   exports.isPrime = isPrime;
   exports.isPrimitive = isPrimitive;
