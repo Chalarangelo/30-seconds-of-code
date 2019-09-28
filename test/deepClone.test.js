@@ -10,7 +10,8 @@ const data = {
   d: {},
   e: { a: 'a', b: 'b', c: 'c', d: ['a', 'b', 'c'] },
   f: 1,
-  g: true
+  g: true,
+  h: null
 };
 const dupe = deepClone(data);
 test('Shallow cloning works', () => {
@@ -32,4 +33,7 @@ test('Deep cloning works', () => {
 test('Cloning primitives works', () => {
   expect(data.f).toBe(dupe.f);
   expect(data.g).toBe(dupe.g);
+});
+test('Cloning null works', () => {
+  expect(data.h).toBe(dupe.h);
 });
