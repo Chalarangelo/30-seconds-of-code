@@ -589,6 +589,7 @@
   const isNumber = val => typeof val === 'number' && val === val;
   const isObject = obj => obj === Object(obj);
   const isObjectLike = val => val !== null && typeof val === 'object';
+  const isOdd = num => num % 2 === 1;
   const isPlainObject = val => !!val && typeof val === 'object' && val.constructor === Object;
   const isPrime = num => {
     const boundary = Math.floor(Math.sqrt(num));
@@ -1704,6 +1705,7 @@
   exports.isNumber = isNumber;
   exports.isObject = isObject;
   exports.isObjectLike = isObjectLike;
+  exports.isOdd = isOdd;
   exports.isPlainObject = isPlainObject;
   exports.isPrime = isPrime;
   exports.isPrimitive = isPrimitive;
