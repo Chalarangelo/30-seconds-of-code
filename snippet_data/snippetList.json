@@ -213,6 +213,21 @@
       }
     },
     {
+      "id": "drop-cap",
+      "type": "snippetListing",
+      "title": "Drop cap",
+      "attributes": {
+        "text": "Makes the first letter in the first paragraph bigger than the rest of the text - often used to signify the beginning of a new section.\n\n",
+        "tags": [
+          "visual",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "e7859bc139713ffe59a05904f6175e9578ad111ebe3405d58599846c44801606"
+      }
+    },
+    {
       "id": "dynamic-shadow",
       "type": "snippetListing",
       "title": "Dynamic shadow",
