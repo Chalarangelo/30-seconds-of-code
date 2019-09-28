@@ -549,6 +549,7 @@
     return first.toLowerCase() + (upperRest ? rest.join('').toUpperCase() : rest.join(''));
   };
   var deepClone = function deepClone(obj) {
+    if (obj === null) return null;
     var clone = Object.assign({}, obj);
     Object.keys(clone).forEach(function (key) {
       return clone[key] = _typeof(obj[key]) === 'object' ? deepClone(obj[key]) : obj[key];
