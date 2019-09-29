@@ -2,7 +2,7 @@ import React from 'react';
 import TagList from 'molecules/tagList';
 import { array } from '@storybook/addon-knobs';
 import { withDesign } from 'storybook-addon-designs';
-import mdx from './tagList.mdx';
+import mdx from './docs.mdx';
 
 export default {
   title: 'Atoms|TagList',

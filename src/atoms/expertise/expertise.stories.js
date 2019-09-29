@@ -2,7 +2,7 @@ import React from 'react';
 import Expertise, { EXPERTISE_LEVELS } from 'atoms/expertise';
 import { radios } from '@storybook/addon-knobs';
 import { withDesign } from 'storybook-addon-designs';
-import mdx from './expertise.mdx';
+import mdx from './docs.mdx';
 
 export default {
   title: 'Atoms|Expertise',

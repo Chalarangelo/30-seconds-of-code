@@ -2,7 +2,7 @@ import React from 'react';
 import Tag from 'atoms/tag';
 import { text } from '@storybook/addon-knobs';
 import { withDesign } from 'storybook-addon-designs';
-import mdx from './tag.mdx';
+import mdx from './docs.mdx';
 
 export default {
   title: 'Atoms|Tag',
