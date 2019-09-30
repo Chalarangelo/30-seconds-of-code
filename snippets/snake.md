@@ -16,8 +16,8 @@ def snake(str):
 ```
 
 ```py
-snake('camelCase'); # 'camel-case'
-snake('some text'); # 'some-text'
-snake('some-mixed_string With spaces_underscores-and-hyphens'); # 'some-mixed-string-with-spaces-underscores-and-hyphens'
-snake('AllThe-small Things'); # "all-the-smal-things"
+snake('camelCase'); # 'camel_case'
+snake('some text'); # 'some_text'
+snake('some-mixed_string With spaces_underscores-and-hyphens'); # 'some_mixed_string_with_spaces_underscores_and_hyphens'
+snake('AllThe-small Things'); # "all_the_smal_things"
 ```
