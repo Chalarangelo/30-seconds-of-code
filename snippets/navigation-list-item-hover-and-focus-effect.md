@@ -52,7 +52,6 @@ li a::before {
 li a:hover::before, li a:focus::before {
   transform: scale(1);
 }
-
 ```
 
 #### Explanation
