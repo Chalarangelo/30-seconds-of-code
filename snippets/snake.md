@@ -5,14 +5,14 @@ tags: string,regexp,intermediate
 
 Converts a string to snake case.
 
-Break the string into words and combine them adding `_-_` as a separator, using a regexp.
+Break the string into words and combine them adding underscore `_` as a separator, using a regexp.
 
 ```py
 import re
 
 def snake(str):
-    return '-'.join(re.sub('([A-Z][a-z]+)', r' \1',
-                      re.sub('([A-Z]+)', r' \1', str)).split()).lower()
+    return '_'.join(re.sub('([A-Z][a-z]+)', r' \1',
+                    re.sub('([A-Z]+)', r' \1', str)).split()).lower()
 ```
 
 ```py
