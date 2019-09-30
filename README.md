@@ -97,6 +97,7 @@ See CONTRIBUTING.md for the snippet template.
 * [`Gradient text`](#gradient-text)
 * [`Hairline border`](#hairline-border)
 * [`Mouse cursor gradient tracking`](#mouse-cursor-gradient-tracking)
+* [`Navigation list item hover and focus effect`](#navigation-list-item-hover-and-focus-effect)
 * [`:not selector`](#not-selector)
 * [`Overflow scroll gradient`](#overflow-scroll-gradient)
 * [`Pretty text underline`](#pretty-text-underline)
@@ -1977,6 +1978,77 @@ btn.onmousemove = function(e) {
 <span class="snippet__support-note">⚠️ Requires JavaScript.</span>
 
 - https://caniuse.com/#feat=css-variables
+
+<br>[⬆ Back to top](#contents)
+
+### Navigation list item hover and focus effect
+
+Fancy hover and focus effect at navigation items using transform CSS property.
+
+```html
+<nav>
+  <ul>
+    <li><a href="#/">Home</a></li>
+    <li><a href="#/">About</a></li>
+    <li><a href="#/">Contact</a></li>
+  </ul>
+</nav>
+```
+
+```css
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  position: relative;
+  display: block;
+  color: #222;
+  text-align: center;
+  padding: 8px 12px;
+  text-decoration: none;
+}
+
+li a::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: #f6c126;
+  z-index: -1;
+  transform: scale(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+li a:hover::before, li a:focus::before {
+  transform: scale(1);
+}
+```
+
+
+#### Explanation
+
+
+- Use the `::before` pseudo-element at the list item anchor to create a hover effect, hide it using `transform: scale(0)`.
+- Use the `:hover` and `:focus` pseudo-selectors to transition to `transform: scale(1)` and show the pseudo-element with its colored background.
+- Prevent the pseudo-element from covering the anchor element by using `z-index: -1`.
+
+
+#### Browser support
+
+100.0%
+
+- https://caniuse.com/#feat=transforms2d
+- https://caniuse.com/#feat=css-transitions
 
 <br>[⬆ Back to top](#contents)
 

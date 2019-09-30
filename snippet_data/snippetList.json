@@ -469,6 +469,21 @@
       }
     },
     {
+      "id": "navigation-list-item-hover-and-focus-effect",
+      "type": "snippetListing",
+      "title": "Navigation list item hover and focus effect",
+      "attributes": {
+        "text": "Fancy hover and focus effect at navigation items using transform CSS property.\n\n",
+        "tags": [
+          "visual",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "9e2cbf0541001ebaaa5584e8d4e7f68e5f436e79574ec9c62facd20962bfa87a"
+      }
+    },
+    {
       "id": "not-selector",
       "type": "snippetListing",
       "title": ":not selector",
