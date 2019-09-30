@@ -11,13 +11,15 @@ Break the string into words and combine them adding underscore `_` as a separato
 import re
 
 def snake(str):
-    return '_'.join(re.sub('([A-Z][a-z]+)', r' \1',
-                    re.sub('([A-Z]+)', r' \1', str)).split()).lower()
+  return re.sub(r"(\s|_|-)+","_",
+    re.sub(r"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+",
+    lambda mo: mo.group(0).lower(),str)
+  )
 ```
 
 ```py
-snake('camelCase'); # 'camel_case'
-snake('some text'); # 'some_text'
-snake('some-mixed_string With spaces_underscores-and-hyphens'); # 'some_mixed_string_with_spaces_underscores_and_hyphens'
-snake('AllThe-small Things'); # "all_the_smal_things"
+snake('camelCase') # 'camel_case'
+snake('some text') # 'some_text'
+snake('some-mixed_string With spaces_underscores-and-hyphens') # 'some_mixed_string_with_spaces_underscores_and_hyphens'
+snake('AllThe-small Things') # "all_the_smal_things"
 ```
