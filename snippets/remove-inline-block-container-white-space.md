@@ -40,8 +40,6 @@ Creates a bouncing loader animation.
 
 #### Explanation
 
-Note: `1rem` is usually `16px`.
-
 1. `tiles` is the container of the tile component
 2. `tile` is the item that we need to display inline
 3. `width: calc((900px / 3) - 10px)` divides the width of the tile evenly
