@@ -12,7 +12,8 @@ import re
 
 def snake(str):
     return '_'.join(re.sub('([A-Z][a-z]+)', r' \1',
-                    re.sub('([A-Z]+)', r' \1', str)).split()).lower()
+                    re.sub('([A-Z]+)', r' \1',
+                    str.replace('-', ' '))).split()).lower()
 ```
 
 ```py
