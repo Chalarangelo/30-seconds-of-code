@@ -1,9 +1,9 @@
 ---
-title: Remove inline-block container whitespace
-tags: layout, beginner
+title: 3-tile layout
+tags: layout,beginner
 ---
 
-Creates a bouncing loader animation.
+Align items horizontally using `display: inline-block` to create a 3-tile layout.
 
 ```html
 <div class="tiles">
@@ -24,13 +24,13 @@ Creates a bouncing loader animation.
 
 ```css
 .tiles {
-    width: 900px;
-    font-size: 0;
+  width: 900px;
+  font-size: 0;
 }
 
 .tile {
-    width: calc(900px / 3);
-    display: inline-block;
+  width: calc(900px / 3);
+  display: inline-block;
 }
 
 .tile h2 {
@@ -40,11 +40,11 @@ Creates a bouncing loader animation.
 
 #### Explanation
 
-1. `tiles` is the container of the tile component
-2. `tile` is the item that we need to display inline
-3. `width: calc((900px / 3) - 10px)` divides the width of the tile evenly
-4. Set `font-size: 0;` on `.tiles` to avoid whitespace 
-5. Set `font-size: 20px` to `h2` in order to display the text
+- Use `display: inline-block` to create a tiled layout, without using `float`, `flex` or `grid`.
+- `.tiles` is the container component, `.tile` is an item that needs to be displayed inline.
+- Use `width: calc((900px / 3))` to divide the width of the container evenly into 3 columns.
+- Set `font-size: 0;` on `.tiles` to avoid whitespace.
+- Set `font-size: 20px` to `h2` in order to display the text.
 
 #### Browser support
 
