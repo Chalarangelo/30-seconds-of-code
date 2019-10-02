@@ -11,9 +11,9 @@ Break the string into words and combine them adding `_` as a separator, using a 
 import re
 
 def snake(str):
-    return '_'.join(re.sub('([A-Z][a-z]+)', r' \1',
-                    re.sub('([A-Z]+)', r' \1',
-                    str.replace('-', ' '))).split()).lower()
+  return '_'.join(re.sub('([A-Z][a-z]+)', r' \1',
+    re.sub('([A-Z]+)', r' \1',
+    str.replace('-', ' '))).split()).lower()
 ```
 
 ```py
