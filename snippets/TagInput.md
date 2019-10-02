@@ -1,5 +1,5 @@
 ---
-title: Tag Input
+title: TagInput
 tags: visual,input,intermediate
 ---
 
