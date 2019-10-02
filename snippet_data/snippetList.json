@@ -454,6 +454,21 @@
       }
     },
     {
+      "id": "lobotomizedOwlSelector",
+      "type": "snippetListing",
+      "title": "Lobotomized Owl Selector",
+      "attributes": {
+        "text": "Sets an automatically inherited margin for all elements that follow other elements in the document.\n\n",
+        "tags": [
+          "layout",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "e0cd9ededcfb68d085f6a1fbdc63fba65cee9adc13c08a458f73b0fbaf0f5949"
+      }
+    },
+    {
       "id": "mouse-cursor-gradient-tracking",
       "type": "snippetListing",
       "title": "Mouse cursor gradient tracking",

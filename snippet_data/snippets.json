@@ -838,6 +838,33 @@
       }
     },
     {
+      "id": "lobotomizedOwlSelector",
+      "title": "Lobotomized Owl Selector",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "lobotomizedOwlSelector.md",
+        "text": "Sets an automatically inherited margin for all elements that follow other elements in the document.\n\n",
+        "explanation": "\n\n- [View this link for a detailed explanation.](https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/)\n- In this example, all elements in the flow of the document that follow other elements will receive `margin-top: 1.5em`.\n- This example assumes that the paragraphs' `font-size` is 1em and its `line-height` is 1.5.\n\n",
+        "browserSupport": {
+          "text": "\n",
+          "supportPercentage": 100
+        },
+        "codeBlocks": {
+          "html": "<div>\n  <div>Parent 01</div>\n  <div>Parent 02\n    <div>Child 01</div>\n    <div>Child 02</div>\n  </div>\n  <div>Parent 03</div>\n</div>",
+          "css": "* + * {\n  margin-top: 1.5em;\n}",
+          "js": "",
+          "scopedCss": "[data-scope=\"lobotomizedOwlSelector\"] * + * {\n  margin-top: 1.5em; }\n"
+        },
+        "tags": [
+          "layout",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "e0cd9ededcfb68d085f6a1fbdc63fba65cee9adc13c08a458f73b0fbaf0f5949"
+      }
+    },
+    {
       "id": "mouse-cursor-gradient-tracking",
       "title": "Mouse cursor gradient tracking",
       "type": "snippet",
