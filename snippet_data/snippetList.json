@@ -626,6 +626,21 @@
       }
     },
     {
+      "id": "tile-layout-using-inline-block",
+      "type": "snippetListing",
+      "title": "3-tile layout",
+      "attributes": {
+        "text": "Align items horizontally using `display: inline-block` to create a 3-tile layout.\n\n",
+        "tags": [
+          "layout",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "ba4688945c309db9b6255f4555299034a67ea583e4e8db2806085c1c257b736f"
+      }
+    },
+    {
       "id": "toggle-switch",
       "type": "snippetListing",
       "title": "Toggle switch",

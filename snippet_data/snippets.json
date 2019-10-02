@@ -1154,6 +1154,33 @@
       }
     },
     {
+      "id": "tile-layout-using-inline-block",
+      "title": "3-tile layout",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "tile-layout-using-inline-block.md",
+        "text": "Align items horizontally using `display: inline-block` to create a 3-tile layout.\n\n",
+        "explanation": "\n\n- Use `display: inline-block` to create a tiled layout, without using `float`, `flex` or `grid`.\n- `.tiles` is the container component, `.tile` is an item that needs to be displayed inline.\n- Use `width: calc((900px / 3))` to divide the width of the container evenly into 3 columns.\n- Set `font-size: 0;` on `.tiles` to avoid whitespace.\n- Set `font-size: 20px` to `h2` in order to display the text.\n\n",
+        "browserSupport": {
+          "text": "\n\n- https://www.caniuse.com/#search=inline-block\n",
+          "supportPercentage": 100
+        },
+        "codeBlocks": {
+          "html": "<div class=\"tiles\">\n  <div class=\"tile\">\n    <img class=\"tile_image\" src=\"https://via.placeholder.com/250x150\" alt=\"placeholder\" >\n    <h2 class=\"tile_title\">30 Seconds of CSS</h2>\n  </div>\n  <div class=\"tile\">\n    <img class=\"tile_image\" src=\"https://via.placeholder.com/250x150\" alt=\"placeholder\" >\n    <h2 class=\"tile_title\">30 Seconds of CSS</h2>\n  </div>\n  <div class=\"tile\">\n    <img class=\"tile_image\" src=\"https://via.placeholder.com/250x150\" alt=\"placeholder\" >\n    <h2 class=\"tile_title\">30 Seconds of CSS</h2>\n  </div>\n</div>",
+          "css": ".tiles {\n  width: 900px;\n  font-size: 0;\n}\n\n.tile {\n  width: calc(900px / 3);\n  display: inline-block;\n}\n\n.tile h2 {\n  font-size: 20px;\n}",
+          "js": "",
+          "scopedCss": "[data-scope=\"tile-layout-using-inline-block\"] .tiles {\n  width: 900px;\n  font-size: 0; }\n\n[data-scope=\"tile-layout-using-inline-block\"] .tile {\n  width: calc(900px / 3);\n  display: inline-block; }\n\n[data-scope=\"tile-layout-using-inline-block\"] .tile h2 {\n  font-size: 20px; }\n"
+        },
+        "tags": [
+          "layout",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "ba4688945c309db9b6255f4555299034a67ea583e4e8db2806085c1c257b736f"
+      }
+    },
+    {
       "id": "toggle-switch",
       "title": "Toggle switch",
       "type": "snippet",
