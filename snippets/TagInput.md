@@ -5,12 +5,12 @@ tags: visual,input,intermediate
 
 Renders an input field to add tags.
 
-- Define a `TagInput` component and use `React.useState()` hook to initialize an empty array of tags.
-- Use `Array.prototype.map` on collected nodes to render the list of tags.
-- Define `addTab`, which will be executed on pressing `Enter` key.
-- `addTab` uses the `setTabs` to add the new tag using the `spread` operator to prepend the existing tags and adds the new tag at the end of the tags array.
-- Define `removeTab`, which will executed on clicking the delete icon in the tag.
-- Use the `Array.prototyp.filter` in `removeTab` to remove the tag using the `index` of the tag to filter it out from tags array.
+- Define a `TagInput` component and use `React.useState()` hook to initialize an array with tags passed as `props`.
+- Use `Array.prototype.map()` on collected nodes to render the list of tags.
+- Define the `addTab` method, which will be executed on pressing the `Enter` key.
+- `addTab` method uses the `setTabs` method to add the new tag using the spread (`...`) operator to prepend the existing tags and adds the new tag at the end of the tags array.
+- Define the `removeTab` method, which will be executed on clicking the delete icon in the tag.
+- Use `Array.prototype.filter()` in `removeTab` method to remove the tag using the `index` of the tag to filter it out from tags array.
 
 ```css
 .tag-input {
@@ -57,11 +57,12 @@ Renders an input field to add tags.
   background: #0052cc;
 }
 
-.tag span {
+.tag-title {
   margin-top: 3px;
 }
 
-.tag i {
+.tag-close-icon {
+  display: block;
   width: 16px;
   height: 16px;
   line-height: 16px;
@@ -73,32 +74,31 @@ Renders an input field to add tags.
   background: #fff;
   cursor: pointer;
 }
-
 ```
 
 ```jsx
-function TagInput() {
-  const [tags, setTags] = React.useState(['NodeJs', 'MongoDB'])
+function TagInput(props) {
+  const [tags, setTags] = React.useState(props.tags);
   const removeTags = indexToRemove => {
-    setTags([...tags.filter((_, index) => index !== indexToRemove)])
+    setTags([...tags.filter((_, index) => index !== indexToRemove)]);
   }
   const addTags = event => {
     if (event.target.value !== '') {
-      setTags([...tags, event.target.value])
-      event.target.value = ''
+      setTags([...tags, event.target.value]);
+      event.target.value = '';
     }
   }
   return (
-    <div className='tags-input'>
-      <ul id='tags'
+    <div className='tag-input'>
+      <ul id='tags'>
         {tags.map((tag, index) => (
-          <li key={index} className='tag'
-            <span>{tag}</span>
-            <i
+          <li key={index} className='tag'>
+            <span className='tag-title'>{tag}</span>
+            <span className='tag-close-icon'
               onClick={() => removeTags(index)}
             >
               x
-            </i>
+            </span>
           </li>
         ))}
       </ul>
@@ -115,5 +115,5 @@ function TagInput() {
 ```
 
 ```jsx
-ReactDOM.render(<TagInput />, document.getElementById('root');
+ReactDOM.render(<TagInput tags={['Nodejs', 'MongoDB']}/>, document.getElementById('root'));
 ```
