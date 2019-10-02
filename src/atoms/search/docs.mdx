@@ -1,0 +1,25 @@
+import {
+  Story,
+  Preview,
+  Props,
+  Source,
+  Description,
+  ColorPalette,
+  ColorItem,
+  Meta,
+} from '@storybook/addon-docs/blocks';
+import Search from 'atoms/search';
+
+# Search
+
+A search bar component, that fires a callback on `keyUp` events.
+
+## Props
+
+<Props of={Search} />
+
+## Source
+
+```jsx
+<Search setSearchQuery={(e) => console.log(e)} defaultValue="Recursion" />
+```

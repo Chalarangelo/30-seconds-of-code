@@ -40,7 +40,7 @@ $toast-back-color: #05A864;
     width: 28px;
     background: var(--toast-fore-color);
     border-radius: 100%;
-    background-image: generate-icon-background("check",#{$toast-back-color});
+    background-image: generate-icon-background("check",$toast-back-color);
     background-position: center;
   }
 }
