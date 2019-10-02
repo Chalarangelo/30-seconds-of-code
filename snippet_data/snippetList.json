@@ -935,7 +935,7 @@
       "type": "snippetListing",
       "title": "snake",
       "attributes": {
-        "text": "Converts a string to snake case.\n\nBreak the string into words and combine them adding `_-_` as a separator, using a regexp.\n\n",
+        "text": "Converts a string to snake case.\n\nBreak the string into words and combine them adding `_` as a separator, using a regexp.\n\n",
         "tags": [
           "string",
           "regexp",
@@ -943,7 +943,7 @@
         ]
       },
       "meta": {
-        "hash": "4217b274beb495919f1aa33afe8e910d04776c35685f01ba4b3fcdd0b176e6e1"
+        "hash": "50ee46a9c0ed48161f20e555da66c06561abe3d9188b5a84d9eda25de594f87f"
       }
     },
     {
