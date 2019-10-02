@@ -1,7 +1,6 @@
 ---
 title: filter_unique
 tags: list,beginner
-
 ---
 
 Filters out the unique values in a list.
