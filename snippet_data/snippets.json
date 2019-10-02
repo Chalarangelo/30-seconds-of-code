@@ -334,7 +334,7 @@
         "fileName": "decapitalize.md",
         "text": "Decapitalizes the first letter of a string.\n\nDecapitalize the first letter of the string and then add it with rest of the string. \nOmit the `upper_rest` parameter to keep the rest of the string intact, or set it to `True` to convert to uppercase.\n\n",
         "codeBlocks": {
-          "code": "def decapitalize(string, upper_rest=False):\n  return str[:1].lower() + (str[1:].upper() if upper_rest else str[1:])",
+          "code": "def decapitalize(str, upper_rest=False):\n  return str[:1].lower() + (str[1:].upper() if upper_rest else str[1:])",
           "example": "decapitalize('FooBar') # 'fooBar'\ndecapitalize('FooBar', True) # 'fOOBAR'"
         },
         "tags": [
@@ -343,7 +343,7 @@
         ]
       },
       "meta": {
-        "hash": "aea9a271d47a5606912e2482b8cc6bfb7b7382c4d0c86545b194cc0ad5f342b5"
+        "hash": "cda547088309d800b31f6319c276ed1dbc4a0f4d87c734cd1366ec081041b66e"
       }
     },
     {
