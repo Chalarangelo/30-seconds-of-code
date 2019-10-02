@@ -62,6 +62,7 @@ See CONTRIBUTING.md for the snippet template.
 * [`Ghost trick`](#ghost-trick)
 * [`Grid centering`](#grid-centering)
 * [`Last item with remaining available height`](#last-item-with-remaining-available-height)
+* [`Lobotomized Owl Selector`](#lobotomized-owl-selector)
 * [`Offscreen`](#offscreen)
 * [`Transform centering`](#transform-centering)
 * [`Truncate text multiline`](#truncate-text-multiline)
@@ -1078,6 +1079,42 @@ body {
 <span class="snippet__support-note">⚠️ Needs prefixes for full support.</span>
 
 - https://caniuse.com/#feat=flexbox
+
+<br>[⬆ Back to top](#contents)
+
+### Lobotomized Owl Selector
+
+Sets an automatically inherited margin for all elements that follow other elements in the document.
+
+```html
+<div>
+  <div>Parent 01</div>
+  <div>Parent 02
+    <div>Child 01</div>
+    <div>Child 02</div>
+  </div>
+  <div>Parent 03</div>
+</div>
+```
+
+```css
+* + * {
+  margin-top: 1.5em;
+}
+```
+
+
+#### Explanation
+
+
+- [View this link for a detailed explanation.](https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/)
+- In this example, all elements in the flow of the document that follow other elements will receive `margin-top: 1.5em`.
+- This example assumes that the paragraphs' `font-size` is 1em and its `line-height` is 1.5.
+
+
+#### Browser support
+
+100.0%
 
 <br>[⬆ Back to top](#contents)
 
