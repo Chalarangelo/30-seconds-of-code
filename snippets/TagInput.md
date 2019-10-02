@@ -72,7 +72,7 @@ Renders an input field to add tags.
 ```
 
 ```jsx
-function TagInput(props) {
+function TagInput() {
 	const [tags, setTags] = React.useState(['NodeJs', 'MongoDB'])
 	const removeTags = indexToRemove => {
 		setTags([...tags.filter((_, index) => index !== indexToRemove)])
@@ -84,26 +84,25 @@ function TagInput(props) {
 		}
 	}
 	return (
-		<div className="tags-input">
-			<ul id="tags">
+		<div className='tags-input'>
+			<ul id='tags'
 				{tags.map((tag, index) => (
-					<li key={index} className="tag">
+					<li key={index} className='tag'
 						<span>{tag}</span>
 						<i
-							className="material-icons"
 							onClick={() => removeTags(index)}
 						>
-							close
+							x
 						</i>
 					</li>
 				))}
 			</ul>
 			<input
-				type="text"
+				type='text'
 				onKeyUp={event =>
 					event.key === 'Enter' ? addTags(event) : null
 				}
-				placeholder="Press enter to add tags"
+				placeholder='Press enter to add tags'
 			/>
 		</div>
 	)
@@ -111,5 +110,5 @@ function TagInput(props) {
 ```
 
 ```jsx
-ReactDOM.render(<TagInput />, document.getElementById("root"));
+ReactDOM.render(<TagInput />, document.getElementById('root');
 ```
