@@ -62,6 +62,10 @@ Renders an input field to add tags.
 }
 
 .tag i {
+	width: 16px;
+	height: 16px;
+	line-height: 16px;
+	text-align: center;
 	font-size: 14px;
 	margin-left: 8px;
 	color: #0052cc;
