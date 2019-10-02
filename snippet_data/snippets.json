@@ -1236,9 +1236,9 @@
       "type": "snippet",
       "attributes": {
         "fileName": "snake.md",
-        "text": "Converts a string to snake case.\n\nBreak the string into words and combine them adding `_-_` as a separator, using a regexp.\n\n",
+        "text": "Converts a string to snake case.\n\nBreak the string into words and combine them adding `_` as a separator, using a regexp.\n\n",
         "codeBlocks": {
-          "code": "import re\n\ndef snake(str):\n  return re.sub(r\"(\\s|_|-)+\",\"_\",\n    re.sub(r\"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+\",\n    lambda mo: mo.group(0).lower(),str)\n  )",
+          "code": "import re\n\ndef snake(str):\n  return '_'.join(re.sub('([A-Z][a-z]+)', r' \\1',\n    re.sub('([A-Z]+)', r' \\1',\n    str.replace('-', ' '))).split()).lower()",
           "example": "snake('camelCase') # 'camel_case'\nsnake('some text') # 'some_text'\nsnake('some-mixed_string With spaces_underscores-and-hyphens') # 'some_mixed_string_with_spaces_underscores_and_hyphens'\nsnake('AllThe-small Things') # \"all_the_smal_things\""
         },
         "tags": [
@@ -1248,7 +1248,7 @@
         ]
       },
       "meta": {
-        "hash": "4217b274beb495919f1aa33afe8e910d04776c35685f01ba4b3fcdd0b176e6e1"
+        "hash": "50ee46a9c0ed48161f20e555da66c06561abe3d9188b5a84d9eda25de594f87f"
       }
     },
     {
