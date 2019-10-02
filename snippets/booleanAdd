@@ -1,0 +1,19 @@
+---
+title: booleanAdd
+tags: logical,beginner
+---
+
+Returns `true` if both arguments are true, `false` otherwise.
+
+Returns the result of boolean operation 'AND'
+
+```js
+const booleanAdd = (a,b) => a && b === true;
+```
+
+```js
+booleanAdd(true,false); // false
+booleanAdd(true,true); // true
+booleanAdd(false,false); // false
+booleanAdd(false,true); // false
+```
