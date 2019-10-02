@@ -1,0 +1,78 @@
+// SCSS variables - used to color the icon
+$search-placeholder-color-light: #C5C6CD;
+$search-placeholder-color-dark: #999EBD;
+
+// Colors
+:root {
+  --search-back-color: #FFFFFF;
+  --search-fore-color: #0D0E17;
+  --search-placeholder-color: #{$search-placeholder-color-light};
+  --search-shadow-color: rgba(0, 32, 128, 0.1);
+  --search-shadow-focus-color: rgba(0, 32, 128, 0.17);
+}
+
+// Dark mode colors
+.page-container.dark {
+  --search-back-color: #434E76;
+  --search-fore-color: #E8E9F2;
+  --search-placeholder-color: #{$search-placeholder-color-dark};
+  --search-shadow-color: rgba(1, 8, 30, 0.24);
+  --search-shadow-focus-color: rgba(1, 8, 30, 0.31);
+}
+
+// Style for placeholder text
+@mixin placeholder-styles {
+  font-family: 'Noto Sans', Helvetica, sans-serif;
+}
+.search-box::-webkit-input-placeholder {
+  @include placeholder-styles;
+}
+.search-box:-ms-input-placeholder {
+  @include placeholder-styles;
+}
+.search-box:-moz-placeholder {
+  @include placeholder-styles;
+}
+.search-box::-moz-placeholder {
+  @include placeholder-styles;
+}
+
+[type="search"].search-box {
+  transition: 0.3s ease all;
+  margin: 0.25rem 0.875rem;
+  width: calc(100% - 1.75rem);
+  background: var(--search-back-color);
+  box-shadow: 0px 4px 8px var(--search-shadow-color);
+  &:focus {
+    box-shadow: 0px 6px 12px var(--search-shadow-focus-color);
+  }
+  border-radius: 1.125rem;
+  outline: none;
+  box-sizing: border-box;
+  border: none;
+  padding-left: 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 2;
+  background-image: generate-icon-background("search", $search-placeholder-color-light, 'none', 1.5, 20);
+  background-repeat: no-repeat;
+  background-position-x: 10px;
+  background-position-y: 8px;
+  color: var(--search-fore-color);
+  &::placeholder {
+    color: var(--search-placeholder-color);
+  }
+  @media screen and (min-width: $layout-large-breakpoint) {
+    font-size: 1.375rem;
+    line-height: 1.8;
+    background-image: generate-icon-background("search", $search-placeholder-color-light, 'none', 1.5, 24);
+  }
+}
+// Dark mode
+.page-container.dark [type="search"].search-box {
+  background-image: generate-icon-background("search", $search-placeholder-color-dark, 'none', 1.5, 20);
+  @media screen and (min-width: $layout-large-breakpoint) {
+    background-image: generate-icon-background("search", $search-placeholder-color-dark, 'none', 1.5, 24);
+  }
+}
+

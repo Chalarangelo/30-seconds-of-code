@@ -5,7 +5,7 @@ import _ from 'lang';
 
 const Button = ({
   onClick,
-  className,
+  className = '',
   children,
   ...rest // Needs props to be a link, have accessible name if only icon etc.
 }) => (

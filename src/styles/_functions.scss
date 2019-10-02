@@ -1,11 +1,21 @@
 // Convert a color from hex to url friendly format - for background SVGs
-@function url-friendly-colour($colour) {
-  @return '%23' + str-slice('#{$colour}', 2, -1);
+@function url-friendly-color($color) {
+  @if $color == "none" {
+    @return $color;
+  }
+  @return '%23' + str-slice('#{$color}', 2, -1);
 }
 
 // Generate the background-image value from an icon name and a stroke
-@function generate-icon-background($icon-name, $stroke-color) {
+@function generate-icon-background($icon-name, $stroke-color, $fill-color: 'none', $stroke-width: 2, $size: 24) {
+  $stroke: url-friendly-color($stroke-color);
+  $fill: url-friendly-color($fill-color);
+
   @if $icon-name == "check" {
-    @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='"+url-friendly-colour($stroke-color)+"' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='"+$size+"' height='"+$size+"' viewBox='0 0 24 24' fill='"+$fill+"' stroke='"+$stroke+"' stroke-width='"+$stroke-width+"' stroke-linecap='round' stroke-linejoin='round' %3E%3Cpolyline points='20 6 9 17 4 12' %3E%3C/polyline%3E%3C/svg%3E");
+  }
+
+  @if $icon-name == "search" {
+    @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='"+$size+"' height='"+$size+"' viewBox='0 0 24 24' fill='"+$fill+"' %3E%3Cpath d='M10 17.5a7.5 7.5 0 100-15 7.5 7.5 0 000 15zM21 20.65l-4.5-4.5' stroke='"+$stroke+"' stroke-width='"+$stroke-width+"' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   }
 }
