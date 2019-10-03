@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from 'atoms/button';
+import { Button } from 'atoms/button';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import _ from 'lang';
 const _l = _('en');
