@@ -661,12 +661,12 @@ initialize_list_with_values(5, 2) # [2, 2, 2, 2, 2]
 
 Returns a list of elements that exist in both lists.
 
-Create a `set` from `b`, then use list comprehension on `a` to only keep values contained in both lists.
+Create a `set` from `a` and `b`, then use the built-in set operator `&` to only keep values contained in both sets, then transform the `set` back into a `list`.
 
 ```py
 def intersection(a, b):
-  _b = set(b)
-  return [item for item in a if item in _b]
+  _a, _b = set(a), set(b)
+  return list(_a & _b)
 ```
 
 <details>

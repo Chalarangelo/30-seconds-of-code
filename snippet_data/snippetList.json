@@ -558,14 +558,14 @@
       "type": "snippetListing",
       "title": "intersection",
       "attributes": {
-        "text": "Returns a list of elements that exist in both lists.\n\nCreate a `set` from `b`, then use list comprehension on `a` to only keep values contained in both lists.\n\n",
+        "text": "Returns a list of elements that exist in both lists.\n\nCreate a `set` from `a` and `b`, then use the built-in set operator `&` to only keep values contained in both sets, then transform the `set` back into a `list`.\n\n",
         "tags": [
           "list",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "a332cce7b7d7e303469e8c39c4926bf92ecb12847c3932985cc633e3a85a23bb"
+        "hash": "d20f757b18d4368324bfa74bb907f5dc2df9262886ea3722edd5015418ce282d"
       }
     },
     {
