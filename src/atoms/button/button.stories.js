@@ -1,23 +1,34 @@
 import React from 'react';
-import Button from 'atoms/button';
+import { Button, CopyButton } from 'atoms/button';
 import { text } from '@storybook/addon-knobs';
 import { withDesign } from 'storybook-addon-designs';
-import mdx from './docs.mdx';
+import regularButtonMdx from './regularButton/docs.mdx';
+import copyButtonMdx from './copyButton/docs.mdx';
 
 export default {
   title: 'Atoms|Button',
+};
+
+export const button = () => {
+  const children = text('children (string-only)', 'Click me!');
+  const className = text('className', '');
+  return (
+    <Button className={ className }>{ children }</Button>
+  );
+};
+button.story = {
   component: Button,
   decorators: [
     withDesign,
   ],
   parameters: {
     docs: {
-      page: mdx,
+      page: regularButtonMdx,
     },
     design: {
       name: 'button',
       type: 'figma',
-      url: 'https://www.figma.com/file/oY0oRyqDxQZMeMqG4BSwrf/30-seconds-web?node-id=228%3A0',
+      url: 'https://www.figma.com/file/oY0oRyqDxQZMeMqG4BSwrf/30-seconds-web?node-id=271%3A0',
     },
     jest: [
       'button',
@@ -25,10 +36,28 @@ export default {
   },
 };
 
-export const component = () => {
-  const children = text('children (string-only)', 'Click me!');
-  const className = text('className', '');
+export const copyButton = () => {
+  const textData = text('text', 'Lorem Ipsum dolor sit amet.');
   return (
-    <Button className={ className }>{ children }</Button>
+    <CopyButton text={ textData } />
   );
+};
+copyButton.story = {
+  component: CopyButton,
+  decorators: [
+    withDesign,
+  ],
+  parameters: {
+    docs: {
+      page: copyButtonMdx,
+    },
+    design: {
+      name: 'copyButton',
+      type: 'figma',
+      url: 'https://www.figma.com/file/oY0oRyqDxQZMeMqG4BSwrf/30-seconds-web?node-id=253%3A0',
+    },
+    jest: [
+      'copyButton',
+    ],
+  },
 };
