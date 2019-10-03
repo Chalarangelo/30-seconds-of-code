@@ -4,7 +4,7 @@ tags: math,median,beginner
 ---
 Find the median of a list of numbers
 
-Sort the numbers of the list using the sort function and find the median, which is the middlemost element of the list.
+Sort the numbers of the list using `list.sort()` and find the median, which is either the middle element of the list if the list length is odd or the average of the two middle elements if the list length is even..
 
 ```py
 def median(list):
