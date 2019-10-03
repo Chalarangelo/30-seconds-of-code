@@ -1,7 +1,10 @@
+// SCSS variables - used to color the icon
+$button-fore-color: #FFFFFF;
+
 // Colors
 :root {
   --button-back-color: #3B3EFC;
-  --button-fore-color: #FFFFFF;
+  --button-fore-color: #{$button-fore-color};
   --button-shadow-color: rgba(0, 0, 0, 0.25);
   --button-shadow-focus-color: rgba(0, 0, 0, 0.29);
   --button-back-color-secondary: #DC325F;

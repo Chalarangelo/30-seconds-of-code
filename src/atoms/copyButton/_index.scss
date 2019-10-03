@@ -1,0 +1,12 @@
+// Colors
+:root {
+}
+
+.btn.copy-btn {
+  background-image: generate-icon-background("clipboard", $button-fore-color);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 44px;
+  height: 44px;
+  z-index: 10;
+}
