@@ -1,9 +1,10 @@
 import React from 'react';
-import { Button, CopyButton } from 'atoms/button';
-import { text } from '@storybook/addon-knobs';
+import { Button, CopyButton, AnchorButton } from 'atoms/button';
+import { text, boolean } from '@storybook/addon-knobs';
 import { withDesign } from 'storybook-addon-designs';
 import regularButtonMdx from './regularButton/docs.mdx';
 import copyButtonMdx from './copyButton/docs.mdx';
+import anchorButtonMdx from './anchorButton/docs.mdx';
 
 export default {
   title: 'Atoms|Button',
@@ -58,6 +59,32 @@ copyButton.story = {
     },
     jest: [
       'copyButton',
+    ],
+  },
+};
+
+export const anchorButton = () => {
+  const children = text('children (string-only)', 'Click me!');
+  const className = text('className', '');
+  const internal = boolean('link.internal', false);
+  const url = text('link.url', '#');
+  return (
+    <AnchorButton
+      className={ className }
+      link={ { url, internal } }
+    >
+      { children }
+    </AnchorButton>
+  );
+};
+anchorButton.story = {
+  component: AnchorButton,
+  parameters: {
+    docs: {
+      page: anchorButtonMdx,
+    },
+    jest: [
+      'anchorButton',
     ],
   },
 };
