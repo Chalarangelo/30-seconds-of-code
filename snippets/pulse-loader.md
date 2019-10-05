@@ -1,50 +1,49 @@
 ---
 title: Pulse loader
-tags: animation
+tags: animation, beginner
 ---
 
 Creates a pulse effect loader animation using `animation-delay` property.
 
 ```html
 <div class="ripple-loader">
-    <div></div>
-    <div></div>
+  <div></div>
+  <div></div>
 </div>
 ```
 
 ```css
-    .ripple-loader {
-        position: relative;
-        width: 64px;
-        height: 64px;
-    }
-    .ripple-loader div {
-        position: absolute;
-        border: 4px solid #76ff03;
-        border-radius: 50%;
-        animation: ripple-loader 1s ease-out infinite;
-    }
-    .ripple-loader div:nth-child(2) {
-        animation-delay: -0.5s;
-    }
-    @keyframes ripple-loader {
-        0% {
-            top: 32px;
-            left: 32px;
-            width: 0;
-            height: 0;
-            opacity: 1;
-        }
-        100% {
-            top: 0;
-            left: 0;
-            width: 64px;
-            height: 64px;
-            opacity: 0;
-        }
-    }
+.ripple-loader {
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.ripple-loader div {
+  position: absolute;
+  border: 4px solid #76ff03;
+  border-radius: 50%;
+  animation: ripple-loader 1s ease-out infinite;
+}
+.ripple-loader div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes ripple-loader {
+  0% {
+    top: 32px;
+    left: 32px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0;
+    left: 0;
+    width: 64px;
+    height: 64px;
+    opacity: 0;
+  }
+}
 ```
-
 
 #### Explanation
 
