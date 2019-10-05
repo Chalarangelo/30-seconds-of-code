@@ -1,0 +1,34 @@
+import {
+  Story,
+  Preview,
+  Props,
+  Source,
+  Description,
+  ColorPalette,
+  ColorItem,
+  Meta,
+} from '@storybook/addon-docs/blocks';
+import { AnchorButton } from 'atoms/button';
+
+# AnchorButton
+
+An anchor, used for linking pages, styled as a button component.
+
+## Props
+
+<Props of={AnchorButton} />
+
+## Source
+
+```jsx
+<AnchorButton
+  link={
+    internal: false,
+    url: 'https://google.com',
+    rel: 'noopener noreferrer',
+    target: '_blank'
+  }
+>
+  Click me!
+</AnchorButton>
+```
