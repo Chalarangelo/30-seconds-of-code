@@ -51,11 +51,15 @@
     @return url("data:image/svg+xml,%3Csvg width='"+$size+"' height='"+$size+"' viewBox='0 0 24 24' fill='"+$fill+"' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 17a5 5 0 100-10 5 5 0 000 10zM12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42' stroke='"+$stroke+"' stroke-width='"+$stroke-width+"' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   }
 
-  @if icon-name == "moon" {
+  @if $icon-name == "moon" {
     @return url("data:image/svg+xml,%3Csvg width='"+$size+"' height='"+$size+"' viewBox='0 0 24 24' fill='"+$fill+"' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z' stroke='"+$stroke+"' stroke-width='"+$stroke-width+"' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   }
 
-  @if icon-name == "share" {
+  @if $icon-name == "share" {
     @return url("data:image/svg+xml,%3Csvg width='"+$size+"' height='"+$size+"' viewBox='0 0 24 24' fill='"+$fill+"' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18 8a3 3 0 100-6 3 3 0 000 6zM6 15a3 3 0 100-6 3 3 0 000 6zM18 22a3 3 0 100-6 3 3 0 000 6zM8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98' stroke='"+$stroke+"' stroke-width='"+$stroke-width+"' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+
+  @if $icon-name == "list" {
+    @return url("data:image/svg+xml,%3Csvg width='"+$size+"' height='"+$size+"' viewBox='0 0 24 24' fill='"+$fill+"' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 6h13M7 12h13M7 18h13M3 6h.01M3 12h.01M3 18h.01' stroke='"+$stroke+"' stroke-width='"+$stroke-width+"' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   }
 }

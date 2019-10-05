@@ -1,0 +1,69 @@
+// SCSS variables - used to color the icons
+$nav-button-fore-color-light: #53586A;
+$nav-button-active-fore-color-light: #2747C7;
+$nav-button-fore-color-dark: #959AAC;
+$nav-button-active-fore-color-dark: #CDD4EF;
+
+// Colors
+:root {
+  --nav-button-fore-color: #{$nav-button-fore-color-light};
+  --nav-button-active-fore-color: #{$nav-button-active-fore-color-light};
+}
+
+// Dark mode colors
+.page-container.dark {
+  --nav-button-fore-color: #{$nav-button-fore-color-dark};
+  --nav-button-active-fore-color: #{$nav-button-active-fore-color-dark};
+}
+
+.nav-btn {
+  display: inline-block;
+  width: 25%;
+  height: 61px;
+  margin: 0;
+  margin-top: 0.5rem;
+  background: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  text-align: center;
+  line-height: 61px;
+  cursor: pointer;
+  transition: 0.3s ease all;
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    height: 12.5vh;
+    width: 100%;
+    margin-top: 1vh;
+    margin-bottom: 4vh;
+    line-height: 12.5vh;
+  }
+  @media screen and (min-width: $layout-large-breakpoint) {
+    margin-bottom: 1vh;
+  }
+  &:hover, &:focus {
+    outline: 0;
+  }
+  &:last-of-type {
+    vertical-align: top;
+  }
+}
+
+// Specific navigation button icon backgrounds
+$icons: "search", "list", "github", "sun", "moon";
+
+@each $icon in $icons {
+  .nav-btn.#{$icon} {
+    background-image: generate-icon-background($icon, $nav-button-fore-color-light, 'none', 2, 24);
+    &:hover, &:focus, &.active {
+      background-image: generate-icon-background($icon, $nav-button-active-fore-color-light, 'none', 2, 24);
+    }
+  }
+  .page-container.dark {
+    .nav-btn.#{$icon} {
+      background-image: generate-icon-background($icon, $nav-button-fore-color-dark, 'none', 2, 24);
+      &:hover, &:focus, &.active {
+        background-image: generate-icon-background($icon, $nav-button-active-fore-color-dark, 'none', 2, 24);
+      }
+    }
+  }
+}
