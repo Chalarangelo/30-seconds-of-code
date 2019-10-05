@@ -117,16 +117,3 @@ sup, sub, code, kbd {
   position: relative;
   vertical-align: baseline;
 }
-// TODO: Extract this as a component later on
-a {
-  text-decoration: none;
-  &:link{
-    color: var(--a-link-color);
-  }
-  &:visited {
-    color: var(--a-visited-color);
-  }
-  &:hover, &:focus {
-    text-decoration: underline;
-  }
-}
