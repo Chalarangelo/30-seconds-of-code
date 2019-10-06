@@ -1,29 +1,26 @@
 ---
 title: TagInput
-tags: visual,input,intermediate
+tags: input,visual,state,intermediate
 ---
 
-Renders an input field to add tags.
+Renders a tag input field.
 
 - Define a `TagInput` component and use `React.useState()` hook to initialize an array with tags passed as `props`.
 - Use `Array.prototype.map()` on collected nodes to render the list of tags.
-- Define the `addTab` method, which will be executed on pressing the `Enter` key.
-- `addTab` method uses the `setTabs` method to add the new tag using the spread (`...`) operator to prepend the existing tags and adds the new tag at the end of the tags array.
-- Define the `removeTab` method, which will be executed on clicking the delete icon in the tag.
-- Use `Array.prototype.filter()` in `removeTab` method to remove the tag using the `index` of the tag to filter it out from tags array.
+- Define the `addTags` method, which will be executed on pressing the `Enter` key.
+- The `addTags` method uses the `setTabs` method to add the new tag using the spread (`...`) operator to prepend the existing tags and adds the new tag at the end of the `tags` array.
+- Define the `removeTags` method, which will be executed on clicking the delete icon in the tag.
+- Use `Array.prototype.filter()` in `removeTags` method to remove the tag using the `index` of the tag to filter it out from `tags` array.
 
 ```css
 .tag-input {
   display: flex;
-  align-items: flex-start;
   flex-wrap: wrap;
   min-height: 48px;
-  width: 480px;
   padding: 0 8px;
-  border: 1px solid rgb(214, 216, 218);
+  border: 1px solid #d6d8da;
   border-radius: 6px;
 }
-
 .tag-input input {
   flex: 1;
   border: none;
@@ -31,17 +28,15 @@ Renders an input field to add tags.
   font-size: 14px;
   padding: 4px 0 0;
   &:focus {
-      outline: transparent;
+    outline: transparent;
   }
 }
-
 #tags {
   display: flex;
   flex-wrap: wrap;
   padding: 0;
   margin: 8px 0 0;
 }
-
 .tag {
   width: auto;
   height: 32px;
@@ -56,11 +51,9 @@ Renders an input field to add tags.
   margin: 0 8px 8px 0;
   background: #0052cc;
 }
-
 .tag-title {
   margin-top: 3px;
 }
-
 .tag-close-icon {
   display: block;
   width: 16px;
@@ -81,36 +74,32 @@ function TagInput(props) {
   const [tags, setTags] = React.useState(props.tags);
   const removeTags = indexToRemove => {
     setTags([...tags.filter((_, index) => index !== indexToRemove)]);
-  }
+  };
   const addTags = event => {
-    if (event.target.value !== '') {
+    if (event.target.value !== "") {
       setTags([...tags, event.target.value]);
-      event.target.value = '';
+      event.target.value = "";
     }
-  }
+  };
   return (
-    <div className='tag-input'>
-      <ul id='tags'>
+    <div className="tag-input">
+      <ul id="tags">
         {tags.map((tag, index) => (
-          <li key={index} className='tag'>
-            <span className='tag-title'>{tag}</span>
-            <span className='tag-close-icon'
-              onClick={() => removeTags(index)}
-            >
+          <li key={index} className="tag">
+            <span className="tag-title">{tag}</span>
+            <span className="tag-close-icon" onClick={() => removeTags(index)}>
               x
             </span>
           </li>
         ))}
       </ul>
       <input
-        type='text'
-        onKeyUp={event =>
-          event.key === 'Enter' ? addTags(event) : null
-        }
-        placeholder='Press enter to add tags'
+        type="text"
+        onKeyUp={event => (event.key === "Enter" ? addTags(event) : null)}
+        placeholder="Press enter to add tags"
       />
     </div>
-  )
+  );
 }
 ```
 
