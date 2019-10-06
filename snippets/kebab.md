@@ -10,10 +10,10 @@ Break the string into words and combine them adding `-` as a separator, using a 
 ```py
 import re
 
-def kebab(str):
+def kebab(input_string):
   return re.sub(r"(\s|_|-)+","-",
     re.sub(r"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+",
-    lambda mo: mo.group(0).lower(),str)
+    lambda mo: mo.group(0).lower(), input_string)
   )
 ```
 
