@@ -10,10 +10,10 @@ Break the string into words and combine them adding `_` as a separator, using a 
 ```py
 import re
 
-def snake(str):
+def snake(input_string):
   return '_'.join(re.sub('([A-Z][a-z]+)', r' \1',
     re.sub('([A-Z]+)', r' \1',
-    str.replace('-', ' '))).split()).lower()
+    input_string.replace('-', ' '))).split()).lower()
 ```
 
 ```py

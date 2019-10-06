@@ -10,9 +10,9 @@ Break the string into words and combine them capitalizing the first letter of ea
 ```py
 import re
 
-def camel(s):
-  s = re.sub(r"(\s|_|-)+", " ", s).title().replace(" ", "")
-  return s[0].lower() + s[1:]
+def camel(input_string):
+  input_string = re.sub(r"(\s|_|-)+", " ", input_string).title().replace(" ", "")
+  return input_string[0].lower() + s[1:]
 ```
 
 ```py
