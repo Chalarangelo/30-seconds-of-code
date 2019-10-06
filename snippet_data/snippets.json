@@ -521,6 +521,29 @@
       }
     },
     {
+      "id": "TagInput",
+      "title": "TagInput",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "TagInput.md",
+        "text": "Renders a tag input field.\n\n- Define a `TagInput` component and use `React.useState()` hook to initialize an array with tags passed as `props`.\n- Use `Array.prototype.map()` on collected nodes to render the list of tags.\n- Define the `addTags` method, which will be executed on pressing the `Enter` key.\n- The `addTags` method uses the `setTabs` method to add the new tag using the spread (`...`) operator to prepend the existing tags and adds the new tag at the end of the `tags` array.\n- Define the `removeTags` method, which will be executed on clicking the delete icon in the tag.\n- Use `Array.prototype.filter()` in `removeTags` method to remove the tag using the `index` of the tag to filter it out from `tags` array.\n\n",
+        "codeBlocks": {
+          "style": ".tag-input {\n  display: flex;\n  flex-wrap: wrap;\n  min-height: 48px;\n  padding: 0 8px;\n  border: 1px solid #d6d8da;\n  border-radius: 6px;\n}\n.tag-input input {\n  flex: 1;\n  border: none;\n  height: 46px;\n  font-size: 14px;\n  padding: 4px 0 0;\n  &:focus {\n    outline: transparent;\n  }\n}\n#tags {\n  display: flex;\n  flex-wrap: wrap;\n  padding: 0;\n  margin: 8px 0 0;\n}\n.tag {\n  width: auto;\n  height: 32px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: #fff;\n  padding: 0 8px;\n  font-size: 14px;\n  list-style: none;\n  border-radius: 6px;\n  margin: 0 8px 8px 0;\n  background: #0052cc;\n}\n.tag-title {\n  margin-top: 3px;\n}\n.tag-close-icon {\n  display: block;\n  width: 16px;\n  height: 16px;\n  line-height: 16px;\n  text-align: center;\n  font-size: 14px;\n  margin-left: 8px;\n  color: #0052cc;\n  border-radius: 50%;\n  background: #fff;\n  cursor: pointer;\n}",
+          "code": "function TagInput(props) {\n  const [tags, setTags] = React.useState(props.tags);\n  const removeTags = indexToRemove => {\n    setTags([...tags.filter((_, index) => index !== indexToRemove)]);\n  };\n  const addTags = event => {\n    if (event.target.value !== \"\") {\n      setTags([...tags, event.target.value]);\n      event.target.value = \"\";\n    }\n  };\n  return (\n    <div className=\"tag-input\">\n      <ul id=\"tags\">\n        {tags.map((tag, index) => (\n          <li key={index} className=\"tag\">\n            <span className=\"tag-title\">{tag}</span>\n            <span className=\"tag-close-icon\" onClick={() => removeTags(index)}>\n              x\n            </span>\n          </li>\n        ))}\n      </ul>\n      <input\n        type=\"text\"\n        onKeyUp={event => (event.key === \"Enter\" ? addTags(event) : null)}\n        placeholder=\"Press enter to add tags\"\n      />\n    </div>\n  );\n}",
+          "example": "ReactDOM.render(<TagInput tags={['Nodejs', 'MongoDB']}/>, document.getElementById('root'));"
+        },
+        "tags": [
+          "input",
+          "visual",
+          "state",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "d2ebdb53ce2a517e3dc74045ab7dff50f348b10b8eb2cc588b8fc86d8745c141"
+      }
+    },
+    {
       "id": "TextArea",
       "title": "TextArea",
       "type": "snippet",
