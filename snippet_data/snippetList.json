@@ -383,6 +383,23 @@
       }
     },
     {
+      "id": "TagInput",
+      "type": "snippetListing",
+      "title": "TagInput",
+      "attributes": {
+        "text": "Renders a tag input field.\n\n- Define a `TagInput` component and use `React.useState()` hook to initialize an array with tags passed as `props`.\n- Use `Array.prototype.map()` on collected nodes to render the list of tags.\n- Define the `addTags` method, which will be executed on pressing the `Enter` key.\n- The `addTags` method uses the `setTabs` method to add the new tag using the spread (`...`) operator to prepend the existing tags and adds the new tag at the end of the `tags` array.\n- Define the `removeTags` method, which will be executed on clicking the delete icon in the tag.\n- Use `Array.prototype.filter()` in `removeTags` method to remove the tag using the `index` of the tag to filter it out from `tags` array.\n\n",
+        "tags": [
+          "input",
+          "visual",
+          "state",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "d2ebdb53ce2a517e3dc74045ab7dff50f348b10b8eb2cc588b8fc86d8745c141"
+      }
+    },
+    {
       "id": "TextArea",
       "type": "snippetListing",
       "title": "TextArea",
