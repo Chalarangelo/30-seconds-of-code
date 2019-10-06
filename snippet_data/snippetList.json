@@ -570,6 +570,21 @@
       }
     },
     {
+      "id": "pulse-loader",
+      "type": "snippetListing",
+      "title": "Pulse loader",
+      "attributes": {
+        "text": "Creates a pulse effect loader animation using the `animation-delay` property.\n\n",
+        "tags": [
+          "animation",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "11f0b0631cb97ab53a144c263648c155527e570e0ceefaea59201c39de73b57b"
+      }
+    },
+    {
       "id": "reset-all-styles",
       "type": "snippetListing",
       "title": "Reset all styles",
