@@ -15,12 +15,12 @@ export default {
       page: mdx,
     },
     design: {
-      name: 'tag',
+      name: 'navButton',
       type: 'figma',
       url: 'https://www.figma.com/file/oY0oRyqDxQZMeMqG4BSwrf/30-seconds-web?node-id=302%3A51',
     },
     jest: [
-      'tag',
+      'navButton',
     ],
   },
 };
