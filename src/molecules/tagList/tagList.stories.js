@@ -5,7 +5,7 @@ import { withDesign } from 'storybook-addon-designs';
 import mdx from './docs.mdx';
 
 export default {
-  title: 'Atoms|TagList',
+  title: 'Molecules|TagList',
   component: TagList,
   decorators: [
     withDesign,

@@ -1,0 +1,61 @@
+import {
+  Story,
+  Preview,
+  Props,
+  Source,
+  Description,
+  ColorPalette,
+  ColorItem,
+  Meta,
+} from '@storybook/addon-docs/blocks';
+import NavBar from 'molecules/navBar';
+
+# NavBar
+
+Navigation bar for website's main menu.
+
+## Props
+
+<Props of={NavBar} />
+
+## Source
+
+```jsx
+<NavBar buttons={[
+  {
+    icon: 'search',
+    link: {
+      internal: true,
+      url: '/search',
+      title: 'Search',
+    },
+  },
+  {
+    icon: 'list',
+    link: {
+      internal: true,
+      url: '/list',
+      title: 'Snippet list',
+    },
+  },
+  {
+    icon: 'github',
+    link: {
+      internal: false,
+      url: 'https://github.com/',
+      title: 'Snippet list',
+      rel: 'noopener',
+      target: '_blank',
+    },
+  },
+  {
+    icon: 'moon',
+    link: {
+      internal: false,
+      url: '#',
+      title: 'Switch to dark mode',
+    },
+    onClick: e => { e.preventDefault();alert('Switch mode'); },
+  },
+]}/>
+```

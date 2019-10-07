@@ -1,0 +1,35 @@
+// Colors
+:root {
+  --nav-bar-back-color: #FFFFFF;
+  --nav-bar-border-color: #E4E6EC;
+}
+
+// Dark mode colors
+.page-container.dark {
+  --nav-bar-back-color: #434E76;
+  --nav-bar-border-color: #13151B;
+}
+.nav-bar {
+  transition: 0.3s ease all;
+  background: var(--nav-bar-back-color);
+  line-height: 0;
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 1001;
+  @media screen and (max-width: calc(#{$layout-medium-breakpoint} - 1px)) {
+    border-top: 1px solid var(--nav-bar-border-color);
+    height: 61px;
+    bottom: 0;
+    width: 100vw;
+  }
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    border-right: 1px solid var(--nav-bar-border-color);
+    padding-top: 17vh;
+    height: 100vh;
+    left: 0;
+    width: 61px;
+  }
+  @media screen and (min-width: $layout-large-breakpoint) {
+    padding-top: 23.5vh;
+  }
+}
