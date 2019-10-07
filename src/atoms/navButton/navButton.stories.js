@@ -17,7 +17,7 @@ export default {
     design: {
       name: 'tag',
       type: 'figma',
-      url: 'https://www.figma.com/file/oY0oRyqDxQZMeMqG4BSwrf/30-seconds-web?node-id=193%3A0',
+      url: 'https://www.figma.com/file/oY0oRyqDxQZMeMqG4BSwrf/30-seconds-web?node-id=302%3A51',
     },
     jest: [
       'tag',
