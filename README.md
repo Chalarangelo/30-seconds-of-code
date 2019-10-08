@@ -1647,11 +1647,11 @@ values_only(ages) # [10, 11, 9]
 
 Returns the length of a string in bytes.
 
-Use `string.encode('utf-8')` to encode the given string and return its length.
+Use `s.encode('utf-8')` to encode the given string and return its length.
 
 ```py
-def byte_size(string):
-  return len(string.encode('utf-8'))
+def byte_size(s):
+  return len(s.encode('utf-8'))
 ```
 
 <details>
@@ -1700,8 +1700,8 @@ Capitalize the first letter of the string and then add it with rest of the strin
 Omit the `lower_rest` parameter to keep the rest of the string intact, or set it to `True` to convert to lowercase.
 
 ```py
-def capitalize(string, lower_rest=False):
-  return string[:1].upper() + (string[1:].lower() if lower_rest else string[1:])
+def capitalize(s, lower_rest=False):
+  return s[:1].upper() + (s[1:].lower() if lower_rest else s[1:])
 ```
 
 <details>
@@ -1719,11 +1719,11 @@ capitalize('fooBar', True) # 'Foobar'
 
 Capitalizes the first letter of every word in a string.
 
-Use `string.title()` to capitalize first letter of every word in the string.
+Use `s.title()` to capitalize first letter of every word in the string.
 
 ```py
-def capitalize_every_word(string):
-  return string.title()
+def capitalize_every_word(s):
+  return s.title()
 ```
 
 <details>
@@ -1744,8 +1744,8 @@ Decapitalize the first letter of the string and then add it with rest of the str
 Omit the `upper_rest` parameter to keep the rest of the string intact, or set it to `True` to convert to uppercase.
 
 ```py
-def decapitalize(str, upper_rest=False):
-  return str[:1].lower() + (str[1:].upper() if upper_rest else str[1:])
+def decapitalize(s, upper_rest=False):
+  return s[:1].lower() + (s[1:].upper() if upper_rest else s[1:])
 ```
 
 <details>
@@ -1763,13 +1763,13 @@ decapitalize('FooBar', True) # 'fOOBAR'
 
 Checks if a string is an anagram of another string (case-insensitive, ignores spaces, punctuation and special characters).
 
-Use `str.replace()` to remove spaces from both strings.
+Use `s.replace()` to remove spaces from both strings.
 Compare the lengths of the two strings, return `False` if they are not equal.
 Use `sorted()` on both strings and compare the results.
 
 ```py
-def is_anagram(str1, str2):
-  _str1, _str2 = str1.replace(" ", ""), str2.replace(" ", "")
+def is_anagram(s1, s2):
+  _str1, _str2 = s1.replace(" ", ""), s2.replace(" ", "")
 
   if len(_str1) != len(_str2):
     return False
@@ -1796,10 +1796,10 @@ Break the string into words and combine them adding `-` as a separator, using a 
 ```py
 import re
 
-def kebab(str):
+def kebab(s):
   return re.sub(r"(\s|_|-)+","-",
     re.sub(r"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+",
-    lambda mo: mo.group(0).lower(),str)
+    lambda mo: mo.group(0).lower(), s)
   )
 ```
 
@@ -1823,8 +1823,8 @@ Prints out the same string a defined number of times.
 Repeat the string `n` times, using the `*` operator.
 
 ```py
-def n_times_string(str,n):
-  return (str * n)
+def n_times_string(s, n):
+  return (s * n)
 ```
 
 <details>
@@ -1841,14 +1841,14 @@ n_times_string('py', 4) #'pypypypy'
 
 Returns `True` if the given string is a palindrome, `False` otherwise.
 
-Use `str.lower()` and `re.sub()` to convert to lowercase and  remove non-alphanumeric characters from the given string. 
+Use `s.lower()` and `re.sub()` to convert to lowercase and  remove non-alphanumeric characters from the given string. 
 Then, compare the new string with its reverse.
 
 ```py
 from re import sub
 
-def palindrome(string):
-  s = sub('[\W_]', '', string.lower())
+def palindrome(s):
+  s = sub('[\W_]', '', s.lower())
   return s == s[::-1]
 ```
 
@@ -1871,10 +1871,10 @@ Break the string into words and combine them adding `_` as a separator, using a 
 ```py
 import re
 
-def snake(str):
+def snake(s):
   return '_'.join(re.sub('([A-Z][a-z]+)', r' \1',
     re.sub('([A-Z]+)', r' \1',
-    str.replace('-', ' '))).split()).lower()
+    s.replace('-', ' '))).split()).lower()
 ```
 
 <details>
@@ -1894,11 +1894,11 @@ snake('AllThe-small Things') # "all_the_smal_things"
 
 Splits a multiline string into a list of lines.
 
-Use `str.split()` and `'\n'` to match line breaks and create a list.
+Use `s.split()` and `'\n'` to match line breaks and create a list.
 
 ```py
-def split_lines(str):
-  return str.split('\n')
+def split_lines(s):
+  return s.split('\n')
 ```
 
 <details>

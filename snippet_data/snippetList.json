@@ -99,14 +99,14 @@
       "type": "snippetListing",
       "title": "byte_size",
       "attributes": {
-        "text": "Returns the length of a string in bytes.\n\nUse `string.encode('utf-8')` to encode the given string and return its length.\n\n",
+        "text": "Returns the length of a string in bytes.\n\nUse `s.encode('utf-8')` to encode the given string and return its length.\n\n",
         "tags": [
           "string",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "ff655042992e2a6cded2c39439eca6a6542e4d7b4d019c9c8721fa61be6ccdb8"
+        "hash": "2fc0a269966270d98c8f1721dde96e027e8b6146c3b84c0ac68ff2a6fe75c84a"
       }
     },
     {
@@ -137,7 +137,7 @@
         ]
       },
       "meta": {
-        "hash": "f4b0ecfe5d6eb18a65699fbe706737723c2c0de6a16e07e4c7686e9ecbad29c5"
+        "hash": "f33a94899dfa72134171367526a2e0068dc0a8fc3c0504d42740aec1110e494b"
       }
     },
     {
@@ -145,14 +145,14 @@
       "type": "snippetListing",
       "title": "capitalize_every_word",
       "attributes": {
-        "text": "Capitalizes the first letter of every word in a string.\n\nUse `string.title()` to capitalize first letter of every word in the string.\n\n",
+        "text": "Capitalizes the first letter of every word in a string.\n\nUse `s.title()` to capitalize first letter of every word in the string.\n\n",
         "tags": [
           "string",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "ec399b1f2bcb0888956d1ecb40fd509f22ba902cd7f3c53af02729d52f021f86"
+        "hash": "4fc1e5869d50178ba135d6b30d3add0d3f5031ab8e24c07959f0321c2f2d7d6a"
       }
     },
     {
@@ -258,7 +258,7 @@
         ]
       },
       "meta": {
-        "hash": "cda547088309d800b31f6319c276ed1dbc4a0f4d87c734cd1366ec081041b66e"
+        "hash": "3bb7b5142417d0d14ba76f2221802ff72824243f7dd4331a2bbe20d20c24f6cf"
       }
     },
     {
@@ -589,14 +589,14 @@
       "type": "snippetListing",
       "title": "is_anagram",
       "attributes": {
-        "text": "Checks if a string is an anagram of another string (case-insensitive, ignores spaces, punctuation and special characters).\n\nUse `str.replace()` to remove spaces from both strings.\nCompare the lengths of the two strings, return `False` if they are not equal.\nUse `sorted()` on both strings and compare the results.\n\n",
+        "text": "Checks if a string is an anagram of another string (case-insensitive, ignores spaces, punctuation and special characters).\n\nUse `s.replace()` to remove spaces from both strings.\nCompare the lengths of the two strings, return `False` if they are not equal.\nUse `sorted()` on both strings and compare the results.\n\n",
         "tags": [
           "string",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "3080e22832c2a393f1546f4cff18b15b701fbe27dc2368fd26700a05f2f109a2"
+        "hash": "58303cd7a175fea41b2fdf5ede26c329d43b442accd09472e171f5b8c4bc64e3"
       }
     },
     {
@@ -657,7 +657,7 @@
         ]
       },
       "meta": {
-        "hash": "374b7c60d87e6fa52b1bb0176f9c762d8061262d0843cf82ad3ab1d4744ab22e"
+        "hash": "a89555ac50b3243a1134fd31919edfc9fbe3029778c3178033fd0e15ce2e3760"
       }
     },
     {
@@ -834,7 +834,7 @@
         ]
       },
       "meta": {
-        "hash": "5f815cfc58d3339f19b865433b2965a08e64f336e1747009e915883096deb26b"
+        "hash": "c4911d051ab7d5e4803eb5e3786181d7026e2fcf95e7ac1d67fe98bcbf326696"
       }
     },
     {
@@ -873,14 +873,14 @@
       "type": "snippetListing",
       "title": "palindrome",
       "attributes": {
-        "text": "Returns `True` if the given string is a palindrome, `False` otherwise.\n\nUse `str.lower()` and `re.sub()` to convert to lowercase and  remove non-alphanumeric characters from the given string. \nThen, compare the new string with its reverse.\n\n",
+        "text": "Returns `True` if the given string is a palindrome, `False` otherwise.\n\nUse `s.lower()` and `re.sub()` to convert to lowercase and  remove non-alphanumeric characters from the given string. \nThen, compare the new string with its reverse.\n\n",
         "tags": [
           "string",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "e707d6b2f27bcc3dda322b114199b2b22ea916871b1c657c43648ecb5b21240b"
+        "hash": "e288ab1f10bef9dc735acdb5b6b6bf7f11dbe4381dea9a4710a797ffe15cf29a"
       }
     },
     {
@@ -958,7 +958,7 @@
         ]
       },
       "meta": {
-        "hash": "50ee46a9c0ed48161f20e555da66c06561abe3d9188b5a84d9eda25de594f87f"
+        "hash": "e388dcf225060a6943fa501a169df52c337bcafc21082f4ffb31f8aa086e97b1"
       }
     },
     {
@@ -982,14 +982,14 @@
       "type": "snippetListing",
       "title": "split_lines",
       "attributes": {
-        "text": "Splits a multiline string into a list of lines.\n\nUse `str.split()` and `'\\n'` to match line breaks and create a list.\n\n",
+        "text": "Splits a multiline string into a list of lines.\n\nUse `s.split()` and `'\\n'` to match line breaks and create a list.\n\n",
         "tags": [
           "string",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "db5b597fccad7226629e99e4f41eaa56a7783dd611952b3e2b6711fb85b12c25"
+        "hash": "48a3b8088d5537954312dd41a8bbdbf56f6d04c9a2f7f594bbb93822efc3a0aa"
       }
     },
     {
