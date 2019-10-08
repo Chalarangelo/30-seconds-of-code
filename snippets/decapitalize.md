@@ -9,8 +9,8 @@ Decapitalize the first letter of the string and then add it with rest of the str
 Omit the `upper_rest` parameter to keep the rest of the string intact, or set it to `True` to convert to uppercase.
 
 ```py
-def decapitalize(input_string, upper_rest=False):
-  return input_string[:1].lower() + (input_string[1:].upper() if upper_rest else input_string[1:])
+def decapitalize(s, upper_rest=False):
+  return s[:1].lower() + (s[1:].upper() if upper_rest else s[1:])
 ```
 
 ```py
