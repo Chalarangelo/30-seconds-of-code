@@ -1087,6 +1087,21 @@
       }
     },
     {
+      "id": "transpose",
+      "type": "snippetListing",
+      "title": "transpose",
+      "attributes": {
+        "text": "Returns the transpose of a two-dimensional list.\n\nUse `*lst` to get the passed list as tuples.\nUse `zip()` in combination with `list()` to create the transpose of the given two-dimensional list.\n\n",
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "e5768f5c6d605587cf01697dd8e06c5dc7c91e60818871691730600c6fba4ec6"
+      }
+    },
+    {
       "id": "union",
       "type": "snippetListing",
       "title": "union",
