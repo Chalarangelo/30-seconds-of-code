@@ -5,11 +5,11 @@ tags: string,beginner
 
 Splits a multiline string into a list of lines.
 
-Use `str.split()` and `'\n'` to match line breaks and create a list.
+Use `s.split()` and `'\n'` to match line breaks and create a list.
 
 ```py
-def split_lines(str):
-  return str.split('\n')
+def split_lines(s):
+  return s.split('\n')
 ```
 
 ```py
