@@ -533,6 +533,26 @@
       }
     },
     {
+      "id": "filter_unique",
+      "title": "filter_unique",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "filter_unique.md",
+        "text": "Filters out the unique values in a list.\n\nUse list comprehension and `list.count()` to create a list containing only the non-unique values.\n\n",
+        "codeBlocks": {
+          "code": "def filter_unique(lst):\n  return [x for x in set(item for item in lst if lst.count(item) > 1)]",
+          "example": "filter_unique([1, 2, 2, 3, 4, 4, 5]) # [2, 4]"
+        },
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "174c62134c81e139aa9d0b31f46c684b5edd4c52e721136d586d435058e19288"
+      }
+    },
+    {
       "id": "flatten",
       "title": "flatten",
       "type": "snippet",
