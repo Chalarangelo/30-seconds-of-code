@@ -5,11 +5,11 @@ tags: string, beginner
 
 Returns the length of a string in bytes.
 
-Use `input_string.encode('utf-8')` to encode the given string and return its length.
+Use `s.encode('utf-8')` to encode the given string and return its length.
 
 ```py
-def byte_size(input_string):
-  return len(input_string.encode('utf-8'))
+def byte_size(s):
+  return len(s.encode('utf-8'))
 ```
 
 ```py
