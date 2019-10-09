@@ -5,17 +5,15 @@ tags: utility,list,beginner
 
 Casts the provided value as an array if it's not one.
 
-Use `isinstance()` to check if the given value is a list and return it as-is or encapsulated in a list accordingly.
+Use `isinstance()` to check if the given value is enumerable and return it by using `list()` or encapsulated in a list accordingly.
 
 ```py
 def cast_list(val):
-  if isinstance(val, (tuple, list, set, dict)): return list(val)
-  elif val: return [val]
-  else: return []
+  return list(val) if isinstance(val, (tuple, list, set, dict)) else [val]
 ```
 
 ```py
-cast_list('foo'); # ['foo']
-cast_list([1]); # [1]
-cast_list(('foo', 'bar')); # ['foo', 'bar']
+cast_list('foo') # ['foo']
+cast_list([1]) # [1]
+cast_list(('foo', 'bar')) # ['foo', 'bar']
 ```
