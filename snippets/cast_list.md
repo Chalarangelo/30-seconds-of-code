@@ -9,8 +9,8 @@ Use `isinstance()` to check if the given value is a list and return it as-is or 
 
 ```py
 def cast_list(val):
-  if isinstance(data, (tuple, list, set, dict)): return list(data)
-  elif data: return [data]
+  if isinstance(val, (tuple, list, set, dict)): return list(val)
+  elif val: return [val]
   else: return []
 ```
 
