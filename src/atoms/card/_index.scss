@@ -1,0 +1,33 @@
+// Colors
+:root {
+  --card-back-color: #FFFFFF;
+  --card-fore-color: #212121;
+  --card-fore-color-light: #424242;
+  --card-shadow-color-a: rgba(240, 242, 247, 0.1);
+  --card-shadow-color-b: rgba(0, 32, 128, 0.1);
+}
+
+// Dark mode colors
+.page-container.dark {
+  --card-back-color: #434E76;
+  --card-fore-color: #F0F0F0;
+  --card-fore-color-light: #D6D6D6;
+  --card-shadow-color-b: rgba(1, 8, 30, 0.24);
+}
+
+.card {
+  position: relative;
+  transition: all 0.3s ease;
+  margin: 1rem 1.25rem;
+  background: var(--card-back-color);
+  color: var(--card-fore-color);
+  box-shadow: 0px 0px 1px var(--card-shadow-color-a), 0px 6px 12px var(--card-shadow-color-b);
+  border-radius: 0.25rem;
+  padding: 1rem;
+  // Specific to the animation when wrapped in a link
+  backface-visibility: hidden;
+  will-change: transform;
+  * {
+    transition: inherit;
+  }
+}
