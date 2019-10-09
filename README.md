@@ -1965,19 +1965,20 @@ split_lines('This\nis a\nmultiline\nstring.\n') # 'This\nis a\nmultiline\nstring
 
 Casts the provided value as an array if it's not one.
 
-Use `isinstance()` to check if the given value is a list and return it as-is or encapsulated in a list accordingly.
+Use `isinstance()` to check if the given value is enumerable and return it by using `list()` or encapsulated in a list accordingly.
 
 ```py
 def cast_list(val):
-  return val if isinstance(val, list) else [val]
+  return list(val) if isinstance(val, (tuple, list, set, dict)) else [val]
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```py
-cast_list('foo'); # ['foo']
-cast_list([1]); # [1]
+cast_list('foo') # ['foo']
+cast_list([1]) # [1]
+cast_list(('foo', 'bar')) # ['foo', 'bar']
 ```
 </details>
 

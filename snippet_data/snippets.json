@@ -211,10 +211,10 @@
       "type": "snippet",
       "attributes": {
         "fileName": "cast_list.md",
-        "text": "Casts the provided value as an array if it's not one.\n\nUse `isinstance()` to check if the given value is a list and return it as-is or encapsulated in a list accordingly.\n\n",
+        "text": "Casts the provided value as an array if it's not one.\n\nUse `isinstance()` to check if the given value is enumerable and return it by using `list()` or encapsulated in a list accordingly.\n\n",
         "codeBlocks": {
-          "code": "def cast_list(val):\n  return val if isinstance(val, list) else [val]",
-          "example": "cast_list('foo'); # ['foo']\ncast_list([1]); # [1]"
+          "code": "def cast_list(val):\n  return list(val) if isinstance(val, (tuple, list, set, dict)) else [val]",
+          "example": "cast_list('foo') # ['foo']\ncast_list([1]) # [1]\ncast_list(('foo', 'bar')) # ['foo', 'bar']"
         },
         "tags": [
           "utility",
@@ -223,7 +223,7 @@
         ]
       },
       "meta": {
-        "hash": "4a9cb79c384099543163d3b1b7e2fa389a4cc373b2b76b17563a4597ed29a4c7"
+        "hash": "776892dc64825137f40f9fe45a1113b94761f7a7f187ce11ea1fa9d4de3787ee"
       }
     },
     {
