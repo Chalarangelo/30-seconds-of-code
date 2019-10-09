@@ -1,0 +1,75 @@
+// Colors
+:root {
+  --pre-fore-color: #e57373;
+  --pre-back-color: #1e253d;
+  --pre-selected-color: #041248;
+
+  --token-color-a: #7f99a5;   // Comments
+  --token-color-b: #bdbdbd;   // Punctuation
+  --token-color-c: #64b5f6;   // Functions
+  --token-color-d: #ff8f00;   // Numbers
+  --token-color-e: #c5e1a5;   // Strings
+  --token-color-f: #ce93d8;   // Keywords
+  --token-color-g: #26c6da;   // Regular expressions
+  --token-color-h: #e57373;   // Variables
+}
+
+pre {
+  overflow: auto; // Responsiveness
+  background: var(--pre-back-color);
+  color: var(--pre-fore-color);
+  padding: 0.375rem;
+  margin: 0.5rem;
+  border: 0;
+}
+
+pre[class*="language-"] {
+  color: var(--pre-fore-color);
+  padding: 1rem;
+  overflow: auto;
+  margin: 0.5rem 0;
+  white-space: pre-wrap;
+}
+
+.namespace {
+  opacity: .7;
+}
+
+.token {
+  &.comment, &.prolog, &.doctype, &.cdata {
+    color: var(--token-color-a);
+  }
+  &.punctuation {
+    color: var(--token-color-b);
+  }
+  &.property, &.tag, &.boolean, &.constant, &.symbol, &.deleted, &.function {
+    color: var(--token-color-c);
+  }
+  &.number, &.class-name {
+    color: var(--token-color-d);
+  }
+  &.selector, &.attr-name, &.string, &.char, &.builtin, &.inserted {
+    color: var(--token-color-e);
+  }
+  &.operator, &.entity, &.url, &.atrule, &.attr-value, &.keyword, &.interpolation-punctuation {
+    color: var(--token-color-f);
+  }
+  &.regex {
+    color: var(--token-color-g);
+  }
+  &.important, &.variable {
+    color: var(--token-color-h);
+  }
+  &.italic, &.comment {
+    font-style: italic;
+  }
+  &.important, &.bold {
+    font-weight: 500;
+  }
+  &.entity {
+    cursor: help;
+  }
+}
+.language-css .token.string, .style .token.string {
+  color: var(--token-color-f);
+}
