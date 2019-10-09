@@ -1,0 +1,36 @@
+import {
+  Story,
+  Preview,
+  Props,
+  Source,
+  Description,
+  ColorPalette,
+  ColorItem,
+  Meta,
+} from '@storybook/addon-docs/blocks';
+import SnippetCard from 'organisms/snippetCard';
+
+# SnippetCard
+
+A card with a snippet's information.
+
+## Props
+
+<Props of={SnippetCard} />
+
+## Source
+
+```jsx
+const snippet = {
+  title: 'compose',
+  tags: ['function', 'intermediate'],
+  expertise: 'intermediate',
+  descriptionHtml: '<p>Performs right-to-left function composition.</p>',
+};
+
+<SnippetCard snippet={snippet} />
+```
+
+## See also
+
+- [Card](./?path=/story/atoms-card--component)
