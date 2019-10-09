@@ -9,10 +9,13 @@ Use `isinstance()` to check if the given value is a list and return it as-is or 
 
 ```py
 def cast_list(val):
-  return val if isinstance(val, list) else [val]
+  if isinstance(data, (tuple, list, set, dict)): return list(data)
+  elif data: return [data]
+  else: return []
 ```
 
 ```py
 cast_list('foo'); # ['foo']
 cast_list([1]); # [1]
+cast_list(('foo', 'bar')); # ['foo', 'bar']
 ```
