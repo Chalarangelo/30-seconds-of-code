@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/license-CC0--1.0-blue.svg)](https://github.com/30-seconds/30-seconds-of-code/blob/master/LICENSE) [![npm Downloads](https://img.shields.io/npm/dt/30-seconds-of-code.svg)](https://www.npmjs.com/package/30-seconds-of-code) [![npm Version](https://img.shields.io/npm/v/30-seconds-of-code.svg)](https://www.npmjs.com/package/30-seconds-of-code) [![Known Vulnerabilities](https://snyk.io/test/github/30-seconds/30-seconds-of-code/badge.svg?targetFile=package.json)](https://snyk.io/test/github/30-seconds/30-seconds-of-code?targetFile=package.json) [![Travis Build](https://travis-ci.com/30-seconds/30-seconds-of-code.svg?branch=master)](https://travis-ci.com/30-seconds/30-seconds-of-code) <br/>
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![ProductHunt](https://img.shields.io/badge/producthunt-vote-orange.svg)](https://www.producthunt.com/posts/30-seconds-of-code) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
-> Curated collection of useful JavaScript snippets that you can understand in 30 seconds or less.
+> Information collection of useful JavaScript snippets that you can understand in 30 seconds or less.
 
 * Use <kbd>Ctrl</kbd> + <kbd>F</kbd> or <kbd>command</kbd> + <kbd>F</kbd> to search for a snippet.
 * Contributions welcome, please read the [contribution guide](CONTRIBUTING.md).
@@ -515,7 +515,7 @@ _30s.average(1, 2, 3);
 
 ### ary
 
-Creates a function that accepts up to `n` arguments, ignoring any additional arguments.
+Creates a function that can accepts up to `n` arguments, ignoring any additional arguments.
 
 Call the provided function, `fn`, with up to `n` arguments, using `Array.prototype.slice(0,n)` and the spread operator (`...`).
 
@@ -536,7 +536,7 @@ const firstTwoMax = ary(Math.max, 2);
 
 ### call
 
-Given a key and a set of arguments, call them when given a context. Primarily useful in composition.
+Given a key and a set of arguments, call them when given a content. Primarily useful in composition.
 
 Use a closure to call a stored key with stored arguments.
 
@@ -588,7 +588,7 @@ Pall(p1, p2, p3).then(console.log); // [1, 2, 3] (after about 2 seconds)
 
 Flip takes a function as an argument, then makes the first argument the last.
 
-Return a closure that takes variadic inputs, and splices the last argument to make it the first argument before applying the rest.
+Return a closure that takes variadic inputs, and splices the last argument to make it the first argument before applying the others or the rest ones.
 
 ```js
 const flip = fn => (first, ...rest) => fn(...rest, first);
@@ -656,7 +656,7 @@ fn(9, 3); // [81, 6]
 
 ### pipeAsyncFunctions
 
-Performs left-to-right function composition for asynchronous functions.
+Performs left-to-right function composition for asynchronous(non existing or occuring at the same time) functions.
 
 Use `Array.prototype.reduce()` with the spread operator (`...`) to perform left-to-right function composition using `Promise.then()`.
 The functions can return a combination of: simple values, `Promise`'s, or they can be defined as `async` ones returning through `await`.
