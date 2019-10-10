@@ -6,59 +6,60 @@ tags: interactivity,beginner
 This is a way to build simple hamburger button for menu bar.
 
 ```html
-<div class="hb-container">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
+<button class="hb"></button>
 ```
 
 ```css
-.hb-container {
-  width: 30px;
-  height: 30px;
+.hb,
+.hb:before,
+.hb:after {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: 30px;
+  height: 5px;
+  padding: 2px;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  transition: 0.5s;
   cursor: pointer;
 }
 
-.hb-container span {
-  width: 30px;
-  height: 5px;
-  border-radius: 3px;
-  margin: 2px 0;
-  background-color: #333;
-  transition: 0.5s;
+.hb:before,
+.hb:after {
+  content: '';
+  position: absolute;
+  top: -7.5px;
+  left: 0;
 }
 
-.hb-container:hover span {
-  margin: 0;
+.hb:after {
+  top: 7.5px;
 }
-.hb-container:hover :nth-child(2) {
-  opacity: 0;
+
+.hb:hover {
+  background-color: transparent;
 }
-.hb-container:hover :first-child {
-  position: absolute;
-  transform: rotate(-45deg);
+
+.hb:hover:before,
+.hb:hover:after {
+  top: 0;
 }
-.hb-container:hover :last-child {
-  position: absolute;
+
+.hb:hover::before {
   transform: rotate(45deg);
+}
+
+.hb:hover::after {
+  transform: rotate(-45deg);
 }
 ```
 
 #### Explanation
 
-- You need of two ou three `:span` to stack.
-- Keep them in rows using `:display-flex`.
-- Use `:hover` for rotate first `:span` for `-45deg` and last `45deg`.
-- If you use three `:span`, use `:opacity` for hide the middle child of container.
+- You need one button to middle bar.
+- Use the pseudo-elements `:before` and `:after` to create bar top and bottom.
+- Keep them in rows using position `:relative` in the `:button` and position `:aboslute` in `:before` and `:after`.
+- Use `:hover` for rotate `:before` for `45deg`, `:after` to `-45deg` and hide bar center using `:background-color` transparent.
 - Bonus: You can use JavaScript to manipulate CSS and keep `:X`.
 
 #### Browser support
-
-- https://caniuse.com/#search=transform
-- https://caniuse.com/#search=display%20flex
