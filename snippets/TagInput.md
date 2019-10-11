@@ -8,7 +8,7 @@ Renders a tag input field.
 - Define a `TagInput` component and use `React.useState()` hook to initialize an array with tags passed as `props`.
 - Use `Array.prototype.map()` on collected nodes to render the list of tags.
 - Define the `addTags` method, which will be executed on pressing the `Enter` key.
-- The `addTags` method uses the `setTabs` method to add the new tag using the spread (`...`) operator to prepend the existing tags and adds the new tag at the end of the `tags` array.
+- The `addTags` method uses the `setTags` method to add the new tag using the spread (`...`) operator to prepend the existing tags and adds the new tag at the end of the `tags` array.
 - Define the `removeTags` method, which will be executed on clicking the delete icon in the tag.
 - Use `Array.prototype.filter()` in `removeTags` method to remove the tag using the `index` of the tag to filter it out from `tags` array.
 
