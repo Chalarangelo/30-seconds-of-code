@@ -398,6 +398,21 @@
       }
     },
     {
+      "id": "hamburger-button",
+      "type": "snippetListing",
+      "title": "Hamburguer Button",
+      "attributes": {
+        "text": "This is a way to build simple hamburger button for menu bar.\n\n",
+        "tags": [
+          "interactivity",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "952fe17aa1f9856b3976d74578db84e409a7439d0ded80195b7d5420ea95d5ae"
+      }
+    },
+    {
       "id": "height-transition",
       "type": "snippetListing",
       "title": "Height transition",

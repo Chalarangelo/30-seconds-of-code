@@ -734,6 +734,33 @@
       }
     },
     {
+      "id": "hamburger-button",
+      "title": "Hamburguer Button",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "hamburger-button.md",
+        "text": "This is a way to build simple hamburger button for menu bar.\n\n",
+        "explanation": "\n\n- Use a `<button>` element for the middle bar of the hamburger icon.\n- Use the `::before` and `::after` pseudo-elements to create the top and bottom bars of the icon.\n- Use `position: relative` on the `<button>` and `position: absolute` on the pseudo-elements to place them appropriately.\n- Use the `:hover` pseudo-selector to rotate `:before` to `45deg` and `:after` to `-45deg` and hide the center bar using`:background-color` transparent.\n\n",
+        "browserSupport": {
+          "text": "\n",
+          "supportPercentage": 100
+        },
+        "codeBlocks": {
+          "html": "<button class=\"hb\"></button>",
+          "css": ".hb,\n.hb:before,\n.hb:after {\n  position: relative;\n  width: 30px;\n  height: 5px;\n  border: none;\n  outline: none;\n  background-color: #333;\n  border-radius: 3px;\n  transition: 0.5s;\n  cursor: pointer;\n}\n\n.hb:before,\n.hb:after {\n  content: '';\n  position: absolute;\n  top: -7.5px;\n  left: 0;\n}\n\n.hb:after {\n  top: 7.5px;\n}\n\n.hb:hover {\n  background-color: transparent;\n}\n\n.hb:hover:before,\n.hb:hover:after {\n  top: 0;\n}\n\n.hb:hover::before {\n  transform: rotate(45deg);\n}\n\n.hb:hover::after {\n  transform: rotate(-45deg);\n}",
+          "js": "",
+          "scopedCss": "[data-scope=\"hamburger-button\"] .hb,\n[data-scope=\"hamburger-button\"] .hb:before,\n[data-scope=\"hamburger-button\"] .hb:after {\n  position: relative;\n  width: 30px;\n  height: 5px;\n  border: none;\n  outline: none;\n  background-color: #333;\n  border-radius: 3px;\n  transition: 0.5s;\n  cursor: pointer; }\n\n[data-scope=\"hamburger-button\"] .hb:before,\n[data-scope=\"hamburger-button\"] .hb:after {\n  content: '';\n  position: absolute;\n  top: -7.5px;\n  left: 0; }\n\n[data-scope=\"hamburger-button\"] .hb:after {\n  top: 7.5px; }\n\n[data-scope=\"hamburger-button\"] .hb:hover {\n  background-color: transparent; }\n\n[data-scope=\"hamburger-button\"] .hb:hover:before,\n[data-scope=\"hamburger-button\"] .hb:hover:after {\n  top: 0; }\n\n[data-scope=\"hamburger-button\"] .hb:hover::before {\n  transform: rotate(45deg); }\n\n[data-scope=\"hamburger-button\"] .hb:hover::after {\n  transform: rotate(-45deg); }\n"
+        },
+        "tags": [
+          "interactivity",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "952fe17aa1f9856b3976d74578db84e409a7439d0ded80195b7d5420ea95d5ae"
+      }
+    },
+    {
       "id": "height-transition",
       "title": "Height transition",
       "type": "snippet",
