@@ -16,9 +16,9 @@ This is a way to build simple hamburger button for menu bar.
   position: relative;
   width: 30px;
   height: 5px;
-  padding: 2px;
   border: none;
   outline: none;
+  background-color: #333;
   border-radius: 3px;
   transition: 0.5s;
   cursor: pointer;
