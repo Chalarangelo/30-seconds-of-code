@@ -56,10 +56,9 @@ This is a way to build simple hamburger button for menu bar.
 
 #### Explanation
 
-- You need one button to middle bar.
-- Use the pseudo-elements `:before` and `:after` to create bar top and bottom.
-- Keep them in rows using position `:relative` in the `:button` and position `:aboslute` in `:before` and `:after`.
-- Use `:hover` for rotate `:before` for `45deg`, `:after` to `-45deg` and hide bar center using `:background-color` transparent.
-- Bonus: You can use JavaScript to manipulate CSS and keep `:X`.
+- Use a `<button>` element for the middle bar of the hamburger icon.
+- Use the `::before` and `::after` pseudo-elements to create the top and bottom bars of the icon.
+- Use `position: relative` on the `<button>` and `position: absolute` on the pseudo-elements to place them appropriately.
+- Use the `:hover` pseudo-selector to rotate `:before` to `45deg` and `:after` to `-45deg` and hide the center bar using`:background-color` transparent.
 
 #### Browser support
