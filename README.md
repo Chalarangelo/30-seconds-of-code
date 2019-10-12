@@ -54,6 +54,7 @@
 * [`longest_item`](#longest_item)
 * [`max_n`](#max_n)
 * [`min_n`](#min_n)
+* [`most_frequent`](#most_frequent)
 * [`none`](#none)
 * [`offset`](#offset)
 * [`sample`](#sample)
@@ -814,6 +815,27 @@ def min_n(lst, n=1):
 ```py
 min_n([1, 2, 3]) # [1]
 min_n([1, 2, 3], 2) # [1,2]
+```
+</details>
+
+<br>[⬆ Back to top](#contents)
+
+### most_frequent
+
+Returns the most frequent element in a list.
+
+Use `set(list)` to get the unique values in the `list` combined with `max()` to find the element that has the most appearances.
+
+```py
+def most_frequent(list):
+  return max(set(list), key = list.count)
+```
+
+<details>
+<summary>Examples</summary>
+
+```py
+most_frequent([1,2,1,2,3,2,1,4,2]) #2
 ```
 </details>
 

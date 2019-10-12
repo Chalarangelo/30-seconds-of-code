@@ -838,6 +838,21 @@
       }
     },
     {
+      "id": "most_frequent",
+      "type": "snippetListing",
+      "title": "most_frequent",
+      "attributes": {
+        "text": "Returns the most frequent element in a list.\n\nUse `set(list)` to get the unique values in the `list` combined with `max()` to find the element that has the most appearances.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "8f90ba8698b866c434ad0345df4753c46e1b19f01e339b00043a541d0e241db8"
+      }
+    },
+    {
       "id": "n_times_string",
       "type": "snippetListing",
       "title": "n_times_string",

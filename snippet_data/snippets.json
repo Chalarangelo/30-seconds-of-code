@@ -1108,6 +1108,26 @@
       }
     },
     {
+      "id": "most_frequent",
+      "title": "most_frequent",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "most_frequent.md",
+        "text": "Returns the most frequent element in a list.\n\nUse `set(list)` to get the unique values in the `list` combined with `max()` to find the element that has the most appearances.\n\n",
+        "codeBlocks": {
+          "code": "def most_frequent(list):\n  return max(set(list), key = list.count)",
+          "example": "most_frequent([1,2,1,2,3,2,1,4,2]) #2"
+        },
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "8f90ba8698b866c434ad0345df4753c46e1b19f01e339b00043a541d0e241db8"
+      }
+    },
+    {
       "id": "n_times_string",
       "title": "n_times_string",
       "type": "snippet",
