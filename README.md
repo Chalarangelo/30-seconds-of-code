@@ -123,6 +123,7 @@
 * [`kebab`](#kebab)
 * [`n_times_string`](#n_times_string)
 * [`palindrome`](#palindrome)
+* [`reverse_string`](#reverse_string)
 * [`snake`](#snake)
 * [`split_lines`](#split_lines)
 
@@ -1924,6 +1925,27 @@ def palindrome(s):
 
 ```py
 palindrome('taco cat') # True
+```
+</details>
+
+<br>[⬆ Back to top](#contents)
+
+### reverse_string
+
+Returns the reverse of a string.
+
+Use string slicing to reverse the string.
+
+```py
+def reverse_string(string):
+  return string[::-1]
+```
+
+<details>
+<summary>Examples</summary>
+
+```py
+reverse_string("snippet") #"teppins"
 ```
 </details>
 

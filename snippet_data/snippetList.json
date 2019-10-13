@@ -929,6 +929,21 @@
       }
     },
     {
+      "id": "reverse_string",
+      "type": "snippetListing",
+      "title": "reverse_string",
+      "attributes": {
+        "text": "Returns the reverse of a string.\n\nUse string slicing to reverse the string.\n\n",
+        "tags": [
+          "string",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "530fb0bc1bfaf1b56910aee3137be644986727e2f15b7e7ac2010f8797d86258"
+      }
+    },
+    {
       "id": "sample",
       "type": "snippetListing",
       "title": "sample",

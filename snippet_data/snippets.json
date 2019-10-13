@@ -1229,6 +1229,26 @@
       }
     },
     {
+      "id": "reverse_string",
+      "title": "reverse_string",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "reverse_string.md",
+        "text": "Returns the reverse of a string.\n\nUse string slicing to reverse the string.\n\n",
+        "codeBlocks": {
+          "code": "def reverse_string(string):\n  return string[::-1]",
+          "example": "reverse_string(\"snippet\") #\"teppins\""
+        },
+        "tags": [
+          "string",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "530fb0bc1bfaf1b56910aee3137be644986727e2f15b7e7ac2010f8797d86258"
+      }
+    },
+    {
       "id": "sample",
       "title": "sample",
       "type": "snippet",
