@@ -3,7 +3,7 @@ title: reverse_string
 tags: string,beginner
 ---
 
-Returns the string after reversing it.
+Returns the reverse of a string.
 
 Use string slicing to reverse the string.
 
