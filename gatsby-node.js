@@ -48,6 +48,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest, getNodesByT
     type HtmlData @infer {
       full: String
       text: String
+      fullText: String
       code: String
       example: String
     }
@@ -132,6 +133,7 @@ exports.createResolvers = ({ createResolvers }) => createResolvers({
         return {
           full: `${html}`,
           text: `${getTextualContent(html, true)}`,
+          fullText: `${getTextualContent(html, false)}`,
           code: `${optimizeAllNodes(getCodeBlocks(html).code)}`,
           example: `${optimizeAllNodes(getCodeBlocks(html).example)}`
         };
@@ -168,6 +170,7 @@ exports.createPages = ({ graphql, actions }) => {
                 example
                 full
                 text
+                fullText
               }
               code {
                 src

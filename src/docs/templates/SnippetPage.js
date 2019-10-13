@@ -30,7 +30,7 @@ const SnippetPage = props => {
             html: snippet.html.full,
             codeHtml: snippet.html.code,
             exampleHtml: snippet.html.example,
-            textHtml: snippet.html.text,
+            textHtml: snippet.html.fullText,
             code: snippet.code.src,
             tags: snippet.tags.all,
           }}
