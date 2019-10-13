@@ -5,7 +5,7 @@ tags: string,beginner
 
 Returns the string after reversing it.
 
-Use string slicing to rotate the string.
+Use string slicing to reverse the string.
 
 ```py
 def reverse_string(string):
