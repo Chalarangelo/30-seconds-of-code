@@ -1,6 +1,5 @@
 ---
 title: reverse_string
-
 tags: string,beginner
 ---
 
