@@ -1,0 +1,37 @@
+import {
+  Story,
+  Preview,
+  Props,
+  Source,
+  Description,
+  ColorPalette,
+  ColorItem,
+  Meta,
+} from '@storybook/addon-docs/blocks';
+import PreviewCard from 'molecules/previewCard';
+
+# PreviewCard
+
+A card with the preview of a snippet's information.
+
+## Props
+
+<Props of={PreviewCard} />
+
+## Source
+
+```jsx
+const snippet = {
+  title: 'compose',
+  tags: ['function', 'intermediate'],
+  expertise: 'intermediate',
+  descriptionHtml: '<p>Performs right-to-left function composition.</p>',
+  url: 'snippets/compose'
+};
+
+<PreviewCard snippet={snippet} />
+```
+
+## See also
+
+- [Card](./?path=/story/atoms-card--component)
