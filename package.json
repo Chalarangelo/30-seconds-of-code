@@ -66,7 +66,6 @@
     "react-redux": "^7.1.0",
     "redux": "^4.0.4",
     "sass-loader": "^8.0.0",
-    "storybook-addon-designs": "^5.1.1",
     "style-loader": "^1.0.0"
   },
   "keywords": [
