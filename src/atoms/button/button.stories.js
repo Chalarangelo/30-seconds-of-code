@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button, CopyButton, AnchorButton } from 'atoms/button';
 import { text, boolean } from '@storybook/addon-knobs';
-import { withDesign } from 'storybook-addon-designs';
 import regularButtonMdx from './regularButton/docs.mdx';
 import copyButtonMdx from './copyButton/docs.mdx';
 import anchorButtonMdx from './anchorButton/docs.mdx';
@@ -19,17 +18,9 @@ export const button = () => {
 };
 button.story = {
   component: Button,
-  decorators: [
-    withDesign,
-  ],
   parameters: {
     docs: {
       page: regularButtonMdx,
-    },
-    design: {
-      name: 'button',
-      type: 'figma',
-      url: 'https://www.figma.com/file/oY0oRyqDxQZMeMqG4BSwrf/30-seconds-web?node-id=271%3A0',
     },
     jest: [
       'button',
@@ -45,17 +36,9 @@ export const copyButton = () => {
 };
 copyButton.story = {
   component: CopyButton,
-  decorators: [
-    withDesign,
-  ],
   parameters: {
     docs: {
       page: copyButtonMdx,
-    },
-    design: {
-      name: 'copyButton',
-      type: 'figma',
-      url: 'https://www.figma.com/file/oY0oRyqDxQZMeMqG4BSwrf/30-seconds-web?node-id=253%3A0',
     },
     jest: [
       'copyButton',
