@@ -1,0 +1,17 @@
+.preview-card-wrapper {
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+}
+
+.card {
+  &.preview-card {
+    padding-bottom: 2rem;
+    overflow: hidden;
+    &:hover, &:focus {
+      .card-title {
+        text-decoration: underline;
+      }
+    }
+  }
+}
