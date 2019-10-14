@@ -1,23 +1,14 @@
 import React from 'react';
 import NavButton, { NAV_ICONS } from 'atoms/navButton';
 import { text, radios, boolean } from '@storybook/addon-knobs';
-import { withDesign } from 'storybook-addon-designs';
 import mdx from './docs.mdx';
 
 export default {
   title: 'Atoms|NavButton',
   component: NavButton,
-  decorators: [
-    withDesign,
-  ],
   parameters: {
     docs: {
       page: mdx,
-    },
-    design: {
-      name: 'navButton',
-      type: 'figma',
-      url: 'https://www.figma.com/file/oY0oRyqDxQZMeMqG4BSwrf/30-seconds-web?node-id=302%3A51',
     },
     jest: [
       'navButton',
