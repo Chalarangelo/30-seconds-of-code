@@ -278,6 +278,21 @@
       }
     },
     {
+      "id": "degrees_to_rads",
+      "type": "snippetListing",
+      "title": "degrees_to_rads",
+      "attributes": {
+        "text": "Converts an angle from degrees to radians.\n\nUse `math.pi` and the degrees to radians formula to convert the angle from degrees to radians.\n\n",
+        "tags": [
+          "math",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "8bb6f1b7cde2b4602449ee30a7c7e402d25e6bb6a7841472d87b7fcbe5eab7f3"
+      }
+    },
+    {
       "id": "difference",
       "type": "snippetListing",
       "title": "difference",
