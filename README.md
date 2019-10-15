@@ -81,6 +81,7 @@
 * [`average`](#average)
 * [`average_by`](#average_by)
 * [`clamp_number`](#clamp_number)
+* [`degrees_to_rads`](#degrees_to_rads)
 * [`digitize`](#digitize)
 * [`factorial`](#factorial)
 * [`fibonacci`](#fibonacci)
@@ -1264,6 +1265,29 @@ def clamp_number(num,a,b):
 ```py
 clamp_number(2, 3, 5) # 3
 clamp_number(1, -1, -5) # -1
+```
+</details>
+
+<br>[⬆ Back to top](#contents)
+
+### degrees_to_rads
+
+Converts an angle from degrees to radians.
+
+Use `math.pi` and the degrees to radians formula to convert the angle from degrees to radians.
+
+```py
+import math
+
+def degrees_to_rads(deg):
+  return (deg * math.pi) / 180.0
+```
+
+<details>
+<summary>Examples</summary>
+
+```py
+degrees_to_rads(180) # 3.141592653589793
 ```
 </details>
 
