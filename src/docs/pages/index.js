@@ -100,7 +100,7 @@ const IndexPage = props => {
                 { name: '30 seconds of React', url: 'https://react.30secondsofcode.org/' },
                 { name: '30 seconds of PHP', url: 'https://php.30secondsofcode.org/' },
                 { name: '30 seconds of Interviews', url: 'https://30secondsofinterviews.org/' },
-                { name: '30 seconds of Knowledge', url: 'https://30secondsofknowledge.org/' },
+                { name: '30 seconds of Knowledge', url: 'https://chrome.google.com/webstore/detail/30-seconds-of-knowledge/mmgplondnjekobonklacmemikcnhklla' },
               ].map(v => (<li><a href={v.url} key={`link_${v.name}`} target='_blank' rel='noopener noreferrer'>{v.name}</a></li>))
             }
           </ul>
