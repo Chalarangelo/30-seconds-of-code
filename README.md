@@ -384,6 +384,7 @@ _30s.average(1, 2, 3);
 * [`forOwnRight`](#forownright)
 * [`functions`](#functions)
 * [`get`](#get)
+* [`hasKey`](#haskey)
 * [`invertKeyValues`](#invertkeyvalues)
 * [`lowercaseKeys`](#lowercasekeys)
 * [`mapKeys`](#mapkeys)
@@ -676,7 +677,7 @@ const sum = pipeAsyncFunctions(
   x => x + 3,
   async x => (await x) + 4
 );
-(async() => {
+(async () => {
   console.log(await sum(5)); // 15 (after one second)
 })();
 ```
@@ -1723,8 +1724,8 @@ const join = (arr, separator = ',', end = separator) =>
       i === arr.length - 2
         ? acc + val + end
         : i === arr.length - 1
-        ? acc + val
-        : acc + val + separator,
+          ? acc + val
+          : acc + val + separator,
     ''
   );
 ```
@@ -4272,10 +4273,10 @@ const getMeridiemSuffixOfInteger = num =>
   num === 0 || num === 24
     ? 12 + 'am'
     : num === 12
-    ? 12 + 'pm'
-    : num < 12
-    ? (num % 12) + 'am'
-    : (num % 12) + 'pm';
+      ? 12 + 'pm'
+      : num < 12
+        ? (num % 12) + 'am'
+        : (num % 12) + 'pm';
 ```
 
 <details>
@@ -5504,11 +5505,11 @@ Throws an exception if `n` is a negative number.
 const factorial = n =>
   n < 0
     ? (() => {
-        throw new TypeError('Negative numbers are not allowed!');
-      })()
+      throw new TypeError('Negative numbers are not allowed!');
+    })()
     : n <= 1
-    ? 1
-    : n * factorial(n - 1);
+      ? 1
+      : n * factorial(n - 1);
 ```
 
 <details>
@@ -6719,8 +6720,8 @@ const deepClone = obj => {
   return Array.isArray(obj) && obj.length
     ? (clone.length = obj.length) && Array.from(clone)
     : Array.isArray(obj)
-    ? Array.from(obj)
-    : clone;
+      ? Array.from(obj)
+      : clone;
 };
 ```
 
@@ -6808,13 +6809,13 @@ const deepMapKeys = (obj, f) =>
   Array.isArray(obj)
     ? obj.map(val => deepMapKeys(val, f))
     : typeof obj === 'object'
-    ? Object.keys(obj).reduce((acc, current) => {
+      ? Object.keys(obj).reduce((acc, current) => {
         const val = obj[current];
         acc[f(current)] =
           val !== null && typeof val === 'object' ? deepMapKeys(val, f) : (acc[f(current)] = val);
         return acc;
       }, {})
-    : obj;
+      : obj;
 ```
 
 <details>
@@ -6885,9 +6886,9 @@ const dig = (obj, target) =>
   target in obj
     ? obj[target]
     : Object.values(obj).reduce((acc, val) => {
-        if (acc !== undefined) return acc;
-        if (typeof val === 'object') return dig(val, target);
-      }, undefined);
+      if (acc !== undefined) return acc;
+      if (typeof val === 'object') return dig(val, target);
+    }, undefined);
 ```
 
 <details>
@@ -7126,6 +7127,43 @@ const get = (from, ...selectors) =>
 ```js
 const obj = { selector: { to: { val: 'val to select' } }, target: [1, 2, { a: 'test' }] };
 get(obj, 'selector.to.val', 'target[0]', 'target[2].a'); // ['val to select', 1, 'test']
+```
+</details>
+
+<br>[⬆ Back to top](#contents)
+
+### hasKey
+
+Returns `true` if the target value exists in a JSON object, `false` otherwise.
+
+Check if the key contains `.`, use `String.prototype.split('.')[0]` to get the first part and store as `_key`.
+Use `typeof` to check if the contents of `obj[key]` are an `object` and, if so, call `hasKey` with that object and the remainder of the `key`.
+Otherwise, use `Object.keys(obj)` in combination with `Array.prototype.includes()` to check if the given `key` exists.
+
+```js
+const hasKey = (obj, key) => {
+  if (key.includes('.')) {
+    let _key = key.split('.')[0];
+    if (typeof obj[_key] === 'object')
+      return hasKey(obj[_key], key.slice(key.indexOf('.') + 1));
+  }
+  return Object.keys(obj).includes(key);
+};
+```
+
+<details>
+<summary>Examples</summary>
+
+```js
+let obj = {
+  a: 1, b: { c: 4 }, 'd.e': 5
+};
+hasKey(obj, 'a'); // true
+hasKey(obj, 'b'); // true
+hasKey(obj, 'b.c'); // true
+hasKey(obj, 'd.e'); // true
+hasKey(obj, 'd'); // false
+hasKey(obj, 'f'); // false
 ```
 </details>
 

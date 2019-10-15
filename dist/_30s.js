@@ -470,6 +470,14 @@
         0
       )
     );
+  const hasKey = (obj, key) => {
+    if (key.includes('.')) {
+      let _key = key.split('.')[0];
+      if (typeof obj[_key] === 'object')
+        return hasKey(obj[_key], key.slice(key.indexOf('.') + 1));
+    }
+    return Object.keys(obj).includes(key);
+  };
   const head = arr => arr[0];
   const hexToRGB = hex => {
     let alpha = false,
@@ -1662,6 +1670,7 @@
   exports.hasFlags = hasFlags;
   exports.hashBrowser = hashBrowser;
   exports.hashNode = hashNode;
+  exports.hasKey = hasKey;
   exports.head = head;
   exports.hexToRGB = hexToRGB;
   exports.hide = hide;
