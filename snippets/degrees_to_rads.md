@@ -11,10 +11,9 @@ Use `math.pi` and the degrees to radians formula to convert the angle from degre
 import math
 
 def degrees_to_rads(deg):
-     return (deg * math.pi)/180.0
+  return (deg * math.pi) / 180.0
 ```
 
 ```py
-import math
 degrees_to_rads(180) # 3.141592653589793
 ```
