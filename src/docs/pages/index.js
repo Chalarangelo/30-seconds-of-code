@@ -1,13 +1,13 @@
-import React from "react";
-import { graphql, Link } from "gatsby";
-import { connect } from "react-redux";
-import { pushNewPage, pushNewQuery } from "../state/app";
+import React from 'react';
+import { graphql, Link } from 'gatsby';
+import { connect } from 'react-redux';
+import { pushNewPage, pushNewQuery } from '../state/app';
 
-import Shell from "../components/Shell";
-import Meta from "../components/Meta";
-import Search from "../components/Search";
-import SnippetCard from "../components/SnippetCard";
-import SimpleCard from "../components/SimpleCard";
+import Shell from '../components/Shell';
+import Meta from '../components/Meta';
+import Search from '../components/Search';
+import SnippetCard from '../components/SnippetCard';
+import SimpleCard from '../components/SimpleCard';
 
 // ===================================================
 // Home page (splash and search)
@@ -24,35 +24,28 @@ const IndexPage = props => {
     let results = snippets;
     if (q.trim().length)
       results = snippets.filter(
-        ({ node }) =>
+        ({node}) =>
           node.tags.all.filter(t => t.indexOf(q) !== -1).length ||
-          node.title.toLowerCase().indexOf(q) !== -1
+          node.title.toLowerCase().indexOf(q) !== -1,
       );
     setSearchResults(results);
   }, [searchQuery]);
 
   React.useEffect(() => {
-    props.dispatch(pushNewPage("Search", "/search"));
+    props.dispatch(pushNewPage('Search', '/search'));
   }, []);
 
   return (
     <>
-      <Meta
-        meta={[
-          {
-            name: `google-site-verification`,
-            content: `YX9mF-TxoHZGJ9SZ8XwvWgGR_KTcbH1uHul4iDklyr0`
-          }
-        ]}
-      />
+      <Meta meta={[{ name: `google-site-verification`, content: `YX9mF-TxoHZGJ9SZ8XwvWgGR_KTcbH1uHul4iDklyr0`}]}/>
       <Shell withIcon={false} withTitle={false}>
         <img
           src={props.data.file.childImageSharp.original.src}
-          alt="Logo"
-          className="index-logo"
+          alt='Logo'
+          className='index-logo'
         />
-        <h1 className="index-title">{props.data.site.siteMetadata.title}</h1>
-        <p className="index-sub-title">
+        <h1 className='index-title'>{props.data.site.siteMetadata.title}</h1>
+        <p className='index-sub-title'>
           {props.data.site.siteMetadata.description}
         </p>
         <Search
@@ -61,27 +54,26 @@ const IndexPage = props => {
         />
         {searchQuery.length === 0 ? (
           <>
-            <p className="index-light-sub">
-              Start typing a keyword to see matching snippets or{" "}
-              <Link to="/list">click to view the whole list</Link>.
+            <p className='index-light-sub'>
+              Start typing a keyword to see matching snippets or <Link to='/list'>click to view the whole list</Link>.
             </p>
-            <div className="index-spacer" />
+            <div className='index-spacer' />
           </>
         ) : searchResults.length === 0 ? (
           <>
-            <p className="index-light-sub">
-              We couldn't find any results for the keyword{" "}
+            <p className='index-light-sub'>
+              We couldn't find any results for the keyword{' '}
               <strong>{searchQuery}</strong>.
             </p>
-            <div className="index-spacer" />
+            <div className='index-spacer' />
           </>
         ) : (
           <>
-            <p className="light-sub">
+            <p className='light-sub'>
               Click on a snippet card to view the snippet.
             </p>
-            <h2 className="page-sub-title">Search results</h2>
-            {searchResults.map(({ node }) => (
+            <h2 className='page-sub-title'>Search results</h2>
+            {searchResults.map(({node}) => (
               <SnippetCard
                 short
                 key={`snippet_${node.id}`}
@@ -96,62 +88,21 @@ const IndexPage = props => {
             ))}
           </>
         )}
-        <SimpleCard title="About us">
-          <p style={{ textAlign: "justify" }}>
-            <strong>30 seconds</strong> provides high-quality learning resources
-            for developers of all skill levels in the form of snippet
-            collections in various programming languages since its inception in
-            2017. Today, <strong>30 seconds</strong> consists of a community of
-            over 250 contributors and more than 10 maintainers, dedicated to
-            creating the best short-form learning resources for software
-            developers. Our goal is to make software development more accessible
-            and help the open-source community grow by helping people learn to
-            code for free.
-            <br />
-            <br />
-            <Link to="/about">Read more...</Link>
-          </p>
+        <SimpleCard title='About us'>
+          <p style={{ textAlign: 'justify' }}><strong>30 seconds</strong> provides high-quality learning resources for developers of all skill levels in the form of snippet collections in various programming languages since its inception in 2017. Today, <strong>30 seconds</strong> consists of a community of over 250 contributors and  more than 10 maintainers, dedicated to creating the best short-form learning resources for software developers. Our goal is to make software development more accessible and help the open-source community grow by helping people learn to code for free.<br/><br/><Link to='/about'>Read more...</Link></p>
         </SimpleCard>
-        <SimpleCard title="Our other projects">
+        <SimpleCard title='Our other projects'>
           <ul>
-            {[
-              {
-                name: "30 seconds of CSS",
-                url: "https://css.30secondsofcode.org/"
-              },
-              {
-                name: "30 seconds of Python",
-                url: "https://python.30secondsofcode.org/"
-              },
-              {
-                name: "30 seconds of React",
-                url: "https://react.30secondsofcode.org/"
-              },
-              {
-                name: "30 seconds of PHP",
-                url: "https://php.30secondsofcode.org/"
-              },
-              {
-                name: "30 seconds of Interviews",
-                url: "https://30secondsofinterviews.org/"
-              },
-              {
-                name: "30 seconds of Knowledge",
-                url:
-                  "https://chrome.google.com/webstore/detail/30-seconds-of-knowledge/mmgplondnjekobonklacmemikcnhklla"
-              }
-            ].map(v => (
-              <li>
-                <a
-                  href={v.url}
-                  key={`link_${v.name}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {v.name}
-                </a>
-              </li>
-            ))}
+            {
+              [
+                { name: '30 seconds of CSS', url: 'https://css.30secondsofcode.org/' },
+                { name: '30 seconds of Python', url: 'https://python.30secondsofcode.org/' },
+                { name: '30 seconds of React', url: 'https://react.30secondsofcode.org/' },
+                { name: '30 seconds of PHP', url: 'https://php.30secondsofcode.org/' },
+                { name: '30 seconds of Interviews', url: 'https://30secondsofinterviews.org/' },
+                { name: '30 seconds of Knowledge', url: 'https://30secondsofknowledge.org/' },
+              ].map(v => (<li><a href={v.url} key={`link_${v.name}`} target='_blank' rel='noopener noreferrer'>{v.name}</a></li>))
+            }
           </ul>
         </SimpleCard>
       </Shell>
@@ -164,9 +115,9 @@ export default connect(
     isDarkMode: state.app.isDarkMode,
     lastPageTitle: state.app.lastPageTitle,
     lastPageUrl: state.app.lastPageUrl,
-    searchQuery: state.app.searchQuery
+    searchQuery: state.app.searchQuery,
   }),
-  null
+  null,
 )(IndexPage);
 
 export const indexPageQuery = graphql`
