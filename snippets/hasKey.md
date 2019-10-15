@@ -10,20 +10,22 @@ Use `typeof` to check if the contents of `obj[key]` are an `object` and, if so, 
 Otherwise, use `Object.keys(obj)` in combination with `Array.prototype.includes()` to check if the given `key` exists.
 
 ```js
+
 const hasKey = (obj, key) => {
   if (key.includes('.')) {
     let _key = key.split('.')[0];
     if (typeof obj[_key] === 'object')
-      return hasKey(obj[_key], key.slice(key.indexOf('.') + 1))
+      return hasKey(obj[_key], key.slice(key.indexOf('.') + 1));
   }
   return Object.keys(obj).includes(key);
-}
+};
 ```
 
 ```js
+
 let obj = {
   a: 1, b: { c: 4 }, 'd.e': 5
-}
+};
 hasKey(obj, 'a'); // true
 hasKey(obj, 'b'); // true
 hasKey(obj, 'b.c'); // true
