@@ -3,15 +3,19 @@ import PropTypes from 'prop-types';
 import Card from 'atoms/card';
 import TagList from 'molecules/tagList';
 import Expertise from 'atoms/expertise';
+import CodeBlock from 'atoms/codeBlock';
+import {CopyButton} from 'atoms/button';
 import { Snippet as SnippetPropType } from 'proptypes';
 import { trimWhiteSpace } from 'functions/utils';
+import _ from 'lang';
+const _l = _('en');
 
 const SnippetCard = ({
   snippet,
   className,
   ...rest
 }) => (
-  <Card className={ className } { ...rest } >
+  <Card className={ trimWhiteSpace`snippet-card ${className}` } { ...rest } >
     <h4 className='card-title'>{ snippet.title }</h4>
     <Expertise level={ snippet.expertise } />
     <TagList tags={ [snippet.language, ...snippet.tags] } />
@@ -19,6 +23,22 @@ const SnippetCard = ({
       className='card-description'
       dangerouslySetInnerHTML={ { __html: `${snippet.descriptionHtml} ${snippet.explanationHtml}` } }
     />
+    <div className='card-source-content'>
+      <CopyButton
+        text={ snippet.code }
+      />
+      <CodeBlock
+        language={ snippet.language }
+        htmlContent={ snippet.codeHtml }
+        className='card-code'
+      />
+      <h5 className='card-example-title'>{ _l('Examples') }</h5>
+      <CodeBlock
+        language={ snippet.language }
+        htmlContent={ snippet.exampleHtml }
+        className='card-example'
+      />
+    </div>
   </Card>
 );
 
