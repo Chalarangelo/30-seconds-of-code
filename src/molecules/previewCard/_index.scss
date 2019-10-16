@@ -4,14 +4,12 @@
   }
 }
 
-.card {
-  &.preview-card {
-    padding-bottom: 2rem;
-    overflow: hidden;
-    &:hover, &:focus {
-      .card-title {
-        text-decoration: underline;
-      }
+.preview-card {
+  padding-bottom: 2rem;
+  overflow: hidden;
+  &:hover, &:focus {
+    .card-title {
+      text-decoration: underline;
     }
   }
 }
