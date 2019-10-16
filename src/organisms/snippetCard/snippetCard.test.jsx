@@ -1,6 +1,8 @@
 import React from 'react';
 import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import _ from 'lang';
+const _l = _('en');
 
 import SnippetCard from './index';
 
@@ -18,7 +20,7 @@ describe('<SnippetCard />', () => {
     exampleHtml: '<span class="token keyword">const</span> <span class="token function-variable function">add5</span> <span class="token operator">=</span> <span class="token parameter">x</span> <span class="token operator">=></span> x <span class="token operator">+</span> <span class="token number">5</span><span class="token punctuation">;</span>\n<span class= "token keyword" >const</span> <span class="token function-variable function">multiply</span> <span class="token operator">=</span> <span class="token punctuation">(</span> <span class="token parameter">x<span class="token punctuation">,</span> y</span> <span class="token punctuation">)</span> <span class="token operator">=></span> x <span class="token operator">*</span> y <span class="token punctuation" >;</span >\n<span class="token keyword">const</span> multiplyAndAdd5 <span class="token operator" >=</span > <span class="token function">compose</span> <span class="token punctuation">(</span>add5 <span class="token punctuation" >,</span >multiply<span class="token punctuation" >);</span >\n<span class="token function">multiplyAndAdd5</span> <span class="token punctuation">(</span> <span class="token number">5</span> <span class="token punctuation">,</span> <span class="token number">2</span> <span class="token punctuation">);</span> <span class="token comment">// 15</span>',
     code: 'const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));',
   };
-  let wrapper, card, expertise, tagList;
+  let wrapper, card, expertise, tagList, codeBlocks;
 
   beforeEach(() => {
     wrapper = mount(
@@ -27,6 +29,7 @@ describe('<SnippetCard />', () => {
     card = wrapper.find('Card');
     expertise = wrapper.find('Expertise');
     tagList = wrapper.find('TagList');
+    codeBlocks = wrapper.find('CodeBlock');
   });
 
   describe('should render', () => {
@@ -48,6 +51,26 @@ describe('<SnippetCard />', () => {
 
     it('the card description', () => {
       expect(card).toContainMatchingElement('.card-description');
+    });
+
+    it('the card source content', () => {
+      expect(card).toContainMatchingElement('.card-source-content');
+    });
+
+    it('the card examples title', () => {
+      expect(card).toContainMatchingElement('h5.card-example-title');
+    });
+
+    it('two CodeBlock components', () => {
+      expect(card).toContainMatchingElements(2, 'CodeBlock');
+    });
+
+    it('the card code', () => {
+      expect(card).toContainMatchingElement('.card-code');
+    });
+
+    it('the card examples', () => {
+      expect(card).toContainMatchingElement('.card-example');
     });
   });
 
@@ -73,6 +96,18 @@ describe('<SnippetCard />', () => {
 
   it('should render the correct explanation', () => {
     expect(card.find('.card-description').html()).toContain(snippet.explanationHtml);
+  });
+
+  it('should have the appropriate examples title', () => {
+    expect(card.find('.card-example-title').text()).toBe(_l('Examples'));
+  });
+
+  it('should pass the code data to the first CodeBlock component', () => {
+    expect(codeBlocks.at(0).prop('htmlContent')).toBe(snippet.codeHtml);
+  });
+
+  it('should pass the example data to the seconds CodeBlock component', () => {
+    expect(codeBlocks.at(1).prop('htmlContent')).toBe(snippet.exampleHtml);
   });
 });
 

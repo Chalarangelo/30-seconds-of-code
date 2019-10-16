@@ -5,4 +5,5 @@ export default {
   'Search snippets': 'Search snippets',
   'Search...': 'Search...',
   'Copy to clipboard': 'Copy to clipboard',
+  'Examples': 'Examples',
 };
