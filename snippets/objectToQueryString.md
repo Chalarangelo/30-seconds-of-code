@@ -3,12 +3,11 @@ title: objectToQueryString
 tags: utility,object,function,intermediate
 ---
 
-Generates a query string from key values pairs from given object.
+Returns a query string generated from the key-value pairs of the given object.
 
-Attaches `?` in front of query string and ignores any non-string
-values and their corresponding keys from given object. The function
-returns empty string as a result if there is no single valid
-key-value pair in given object, else returns generated query string.
+Use `Array.prototype.reduce()` on `Object.entries(queryParameters)` to create the query string.
+Determine the `symbol` to be either `?` or `&` based on the `index` and concatenate `val` to `queryString` only if it's a string.
+Return the `queryString` or an empty string when the `queryParameters` are falsy.
 
 ```js
 const objectToQueryString = (queryParameters) => {
