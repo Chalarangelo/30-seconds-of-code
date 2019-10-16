@@ -1567,6 +1567,17 @@
       return [k, obj[k]];
     });
   };
+  var objectToQueryString = function objectToQueryString(queryParameters) {
+    return queryParameters ? Object.entries(queryParameters).reduce(function (queryString, _ref21, index) {
+      var _ref22 = _slicedToArray(_ref21, 2),
+          key = _ref22[0],
+          val = _ref22[1];
+
+      var symbol = index === 0 ? '?' : '&';
+      queryString += typeof val === 'string' ? "".concat(symbol).concat(key, "=").concat(val) : '';
+      return queryString;
+    }, '') : '';
+  };
   var observeMutations = function observeMutations(element, callback, options) {
     var observer = new MutationObserver(function (mutations) {
       return mutations.forEach(function (m) {
@@ -1646,10 +1657,10 @@
     return _toConsumableArray(arr).sort(function (a, b) {
       return props.reduce(function (acc, prop, i) {
         if (acc === 0) {
-          var _ref21 = orders && orders[i] === 'desc' ? [b[prop], a[prop]] : [a[prop], b[prop]],
-              _ref22 = _slicedToArray(_ref21, 2),
-              p1 = _ref22[0],
-              p2 = _ref22[1];
+          var _ref23 = orders && orders[i] === 'desc' ? [b[prop], a[prop]] : [a[prop], b[prop]],
+              _ref24 = _slicedToArray(_ref23, 2),
+              p1 = _ref24[0],
+              p2 = _ref24[1];
 
           acc = p1 > p2 ? 1 : p1 < p2 ? -1 : 0;
         }
@@ -2031,8 +2042,8 @@
       type: 'application/javascript; charset=utf-8'
     }));
     return new Promise(function (res, rej) {
-      worker.onmessage = function (_ref23) {
-        var data = _ref23.data;
+      worker.onmessage = function (_ref25) {
+        var data = _ref25.data;
         res(data), worker.terminate();
       };
 
@@ -2049,18 +2060,18 @@
   var sample = function sample(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
   };
-  var sampleSize = function sampleSize(_ref24) {
-    var _ref25 = _toArray(_ref24),
-        arr = _ref25.slice(0);
+  var sampleSize = function sampleSize(_ref26) {
+    var _ref27 = _toArray(_ref26),
+        arr = _ref27.slice(0);
 
     var n = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
     var m = arr.length;
 
     while (m) {
       var i = Math.floor(Math.random() * m--);
-      var _ref26 = [arr[i], arr[m]];
-      arr[m] = _ref26[0];
-      arr[i] = _ref26[1];
+      var _ref28 = [arr[i], arr[m]];
+      arr[m] = _ref28[0];
+      arr[i] = _ref28[1];
     }
 
     return arr.slice(0, n);
@@ -2112,17 +2123,17 @@
       return e.style.display = '';
     });
   };
-  var shuffle = function shuffle(_ref27) {
-    var _ref28 = _toArray(_ref27),
-        arr = _ref28.slice(0);
+  var shuffle = function shuffle(_ref29) {
+    var _ref30 = _toArray(_ref29),
+        arr = _ref30.slice(0);
 
     var m = arr.length;
 
     while (m) {
       var i = Math.floor(Math.random() * m--);
-      var _ref29 = [arr[i], arr[m]];
-      arr[m] = _ref29[0];
-      arr[i] = _ref29[1];
+      var _ref31 = [arr[i], arr[m]];
+      arr[m] = _ref31[0];
+      arr[i] = _ref31[1];
     }
 
     return arr;
@@ -2196,8 +2207,8 @@
       };
     }).sort(function (a, b) {
       return compare(a.item, b.item) || a.index - b.index;
-    }).map(function (_ref30) {
-      var item = _ref30.item;
+    }).map(function (_ref32) {
+      var item = _ref32.item;
       return item;
     });
   };
@@ -2837,10 +2848,10 @@
   var pipeLog = function pipeLog(data) {
     return console.log(data) || data;
   };
-  var quickSort = function quickSort(_ref31, desc) {
-    var _ref32 = _toArray(_ref31),
-        n = _ref32[0],
-        nums = _ref32.slice(1);
+  var quickSort = function quickSort(_ref33, desc) {
+    var _ref34 = _toArray(_ref33),
+        n = _ref34[0],
+        nums = _ref34.slice(1);
 
     return isNaN(n) ? [] : [].concat(_toConsumableArray(quickSort(nums.filter(function (v) {
       return desc ? v > n : v <= n;
@@ -2870,18 +2881,18 @@
         return Math.pow(a, b);
       }
     };
-    var _ref33 = [[], rpn.replace(/\^/g, '**').split(/\s+/g).filter(function (el) {
+    var _ref35 = [[], rpn.replace(/\^/g, '**').split(/\s+/g).filter(function (el) {
       return !/\s+/.test(el) && el !== '';
     })],
-        stack = _ref33[0],
-        solve = _ref33[1];
+        stack = _ref35[0],
+        solve = _ref35[1];
     solve.forEach(function (symbol) {
       if (!isNaN(parseFloat(symbol)) && isFinite(symbol)) {
         stack.push(symbol);
       } else if (Object.keys(OPERATORS).includes(symbol)) {
-        var _ref34 = [stack.pop(), stack.pop()],
-            a = _ref34[0],
-            b = _ref34[1];
+        var _ref36 = [stack.pop(), stack.pop()],
+            a = _ref36[0],
+            b = _ref36[1];
         stack.push(OPERATORS[symbol](parseFloat(b), parseFloat(a)));
       } else {
         throw "".concat(symbol, " is not a recognized symbol");
@@ -3118,6 +3129,7 @@
   exports.nthElement = nthElement;
   exports.objectFromPairs = objectFromPairs;
   exports.objectToPairs = objectToPairs;
+  exports.objectToQueryString = objectToQueryString;
   exports.observeMutations = observeMutations;
   exports.off = off;
   exports.offset = offset;
