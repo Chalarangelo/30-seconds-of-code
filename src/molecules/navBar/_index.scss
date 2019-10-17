@@ -16,20 +16,20 @@
   box-sizing: border-box;
   position: fixed;
   z-index: 1001;
-  @media screen and (max-width: calc(#{$layout-medium-breakpoint} - 1px)) {
+  @media screen {
     border-top: 1px solid var(--nav-bar-border-color);
     height: 61px;
     bottom: 0;
     width: 100vw;
   }
-  @media screen and (min-width: $layout-medium-breakpoint) {
+  @media screen and (min-width: $layout-medium-breakpoint) and (orientation: landscape) {
     border-right: 1px solid var(--nav-bar-border-color);
     padding-top: 17vh;
     height: 100vh;
     left: 0;
     width: 61px;
   }
-  @media screen and (min-width: $layout-large-breakpoint) {
+  @media screen and (min-width: $layout-large-breakpoint) and (orientation: landscape) {
     padding-top: 23.5vh;
   }
 }
