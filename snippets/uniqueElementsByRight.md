@@ -9,11 +9,7 @@ Use `Array.prototype.reduceRight()` and `Array.prototype.some()` for an array co
 The comparator function takes two arguments: the values of the two elements being compared.
 
 ```js
-const uniqueElementsByRight = (arr, fn) =>
-  arr.reduceRight((acc, v) => {
-    if (!acc.some(x => fn(v, x))) acc.push(v);
-    return acc;
-  }, []);
+const uniqueElementsByRight = (arr, fn) => arr.reduceRight((acc, v) => acc.concat(acc.some(x => fn(v, x)) ? [] : v), []);
 ```
 
 ```js
