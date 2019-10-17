@@ -517,7 +517,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "fibonacci.md",
-        "text": "Generates an array, containing the Fibonacci sequence, up until the nth term.\n\nStarting with `0` and `1`, use `list.apoend() to add the sum of the last two numbers of the list to the end of the list, until the length of the list reaches `n`.  \nIf `n` is less or equal to `0`, return a list containing `0`.\n\n",
+        "text": "Generates an array, containing the Fibonacci sequence, up until the nth term.\n\nStarting with `0` and `1`, use `list.append() to add the sum of the last two numbers of the list to the end of the list, until the length of the list reaches `n`.  \nIf `n` is less or equal to `0`, return a list containing `0`.\n\n",
         "codeBlocks": {
           "code": "def fibonacci(n):\r\n  if n <= 0:\r\n    return [0]\r\n\r\n  sequence = [0, 1]\r\n  while len(sequence) <= n:\r\n    next_value = sequence[len(sequence) - 1] + sequence[len(sequence) - 2]\r\n    sequence.append(next_value)\r\n\r\n  return sequence",
           "example": "fibonacci(7) # [0, 1, 1, 2, 3, 5, 8, 13]"
