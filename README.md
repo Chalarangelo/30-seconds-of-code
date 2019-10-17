@@ -1345,7 +1345,7 @@ factorial(6) # 720
 
 Generates an array, containing the Fibonacci sequence, up until the nth term.
 
-Starting with `0` and `1`, use `list.apoend() to add the sum of the last two numbers of the list to the end of the list, until the length of the list reaches `n`.  
+Starting with `0` and `1`, use `list.append() to add the sum of the last two numbers of the list to the end of the list, until the length of the list reaches `n`.  
 If `n` is less or equal to `0`, return a list containing `0`.
 
 ```py
