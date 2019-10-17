@@ -11,7 +11,7 @@ configure({ adapter: new Adapter() });
 describe('<SnippetCard />', () => {
   const snippet = {
     title: 'compose',
-    language: 'JavaScript',
+    language: { short: 'js', long: 'JavaScript' },
     tags: ['function', 'recursion'],
     expertise: 'intermediate',
     descriptionHtml: '<p>Performs right-to-left function composition.</p>',
@@ -87,7 +87,7 @@ describe('<SnippetCard />', () => {
   });
 
   it('should pass the language data to the TagList component', () => {
-    expect(tagList.prop('tags')).toContain(snippet.language);
+    expect(tagList.prop('tags')).toContain(snippet.language.long);
   });
 
   it('should render the correct description', () => {

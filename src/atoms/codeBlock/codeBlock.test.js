@@ -9,7 +9,7 @@ configure({ adapter: new Adapter() });
 describe('<CodeBlock />', () => {
   let wrapper;
   const htmlContent = '<span class="token keyword">const</span> <span class="token function-variable function">compose</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>fns</span><span class="token punctuation">)</span> <span class="token operator">=></span> fns<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">((</span><span class="token parameter">f<span class="token punctuation">,</span> g</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token function">g</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">)));</span>';
-  const language = 'js';
+  const language = {short: 'js', long: 'javascript'};
 
   beforeEach(() => {
     wrapper = mount(<CodeBlock language={ language } htmlContent={ htmlContent } className='special'/>);
@@ -20,7 +20,7 @@ describe('<CodeBlock />', () => {
   });
 
   it('should append language class', () => {
-    expect(wrapper).toContainMatchingElement(`pre.language-${language}`);
+    expect(wrapper).toContainMatchingElement(`pre.language-${language.short}`);
   });
 
   it('should append passed classes', () => {
