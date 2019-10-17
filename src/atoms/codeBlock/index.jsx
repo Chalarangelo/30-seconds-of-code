@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Language as LanguagePropType } from 'proptypes';
 import { trimWhiteSpace } from 'functions/utils';
 
 const CodeBlock = ({
@@ -9,7 +10,7 @@ const CodeBlock = ({
   ...rest
 }) => (
   <pre
-    className={ trimWhiteSpace`${`language-${language}`} ${className}` }
+    className={ trimWhiteSpace`${`language-${language.short}`} ${className}` }
     dangerouslySetInnerHTML={ { __html: htmlContent } }
     { ...rest }
   />
@@ -17,7 +18,7 @@ const CodeBlock = ({
 
 CodeBlock.propTypes = {
   /** The language name of the code block's class */
-  language: PropTypes.string,
+  language: LanguagePropType,
   /** Additional classes for the code block */
   className: PropTypes.string,
   /** The code block's inner HTML */

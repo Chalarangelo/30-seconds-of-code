@@ -17,7 +17,8 @@ export default {
 };
 
 export const component = () => {
-  const language = text('language', 'js');
+  const long = text('language.long', 'javascript'), short = text('language.short', 'js');
+  const language = { short, long };
 
   return (
     <CodeBlock

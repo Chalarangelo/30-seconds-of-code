@@ -18,7 +18,7 @@ export default {
 export const component = () => {
   const snippet = {
     title: 'compose',
-    language: 'JavaScript',
+    language: {short: 'js', long: 'JavaScript'},
     tags: ['function', 'recursion'],
     expertise: 'intermediate',
     descriptionHtml: '<p>Performs right-to-left function composition.</p>',
