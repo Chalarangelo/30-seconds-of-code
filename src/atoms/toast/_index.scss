@@ -28,6 +28,7 @@ $toast-back-color: #05A864;
   box-shadow: 0px 4px 8px var(--toast-shadow-color);
   transform: translate(-50%, -50%);
   transition: all 0.3s ease;
+  animation: toast-hide 2s ease;
 
   // Check icon
   &::before {
@@ -43,4 +44,10 @@ $toast-back-color: #05A864;
     background-image: generate-icon-background("check",$toast-back-color);
     background-position: center;
   }
+}
+
+@keyframes toast-hide {
+  0% { opacity: 1}
+  85% { opacity: 1}
+  100% { opacity: 0}
 }
