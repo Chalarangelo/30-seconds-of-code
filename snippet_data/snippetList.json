@@ -700,6 +700,21 @@
       }
     },
     {
+      "id": "transform-detransform",
+      "type": "snippetListing",
+      "title": "Transform - Detransform",
+      "attributes": {
+        "text": "Sets a transform on the parent element and de-transforms the child elements, so they are not affected by the transform.\nThis allows for some neat effects such as skewed buttons.\n\n",
+        "tags": [
+          "visual",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "3d669f655ec92a355b355d2d35e6e9262ad582671abac860d7170893ac68e467"
+      }
+    },
+    {
       "id": "triangle",
       "type": "snippetListing",
       "title": "Triangle",

@@ -1288,6 +1288,33 @@
       }
     },
     {
+      "id": "transform-detransform",
+      "title": "Transform - Detransform",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "transform-detransform.md",
+        "text": "Sets a transform on the parent element and de-transforms the child elements, so they are not affected by the transform.\nThis allows for some neat effects such as skewed buttons.\n\n",
+        "explanation": "\n\n- `--transform: 10deg` sets a CSS variable we can later use to prevent duplicate code.\n- `calc(-1 * var(--transform))` on the child element negates the transform from the parent.\n\n- Note: the `display` property of the child element may not be `inline`, otherwise the transform will be ignored ([see also](https://drafts.csswg.org/css-transforms-1/#terminology)).\n\n",
+        "browserSupport": {
+          "text": "\n\n<span class=\"snippet__support-note\">⚠️ Requires prefix for full support.</span>\n\n- https://caniuse.com/#feat=transforms2d\n",
+          "supportPercentage": 100
+        },
+        "codeBlocks": {
+          "html": "<div class=\"parent\"><div class=\"child\">Child content</div></div>",
+          "css": ":root {\n  --transform: 10deg;\n}\n\n.parent {\n  transform: skewX(var(--transform));\n  padding: 1rem;\n  border: 1px solid;\n  display: inline-block;\n}\n\n.child {\n  transform: skewX(calc(-1 * var(--transform)));\n}",
+          "js": "",
+          "scopedCss": "[data-scope=\"transform-detransform\"] :root {\n  --transform: 10deg; }\n\n[data-scope=\"transform-detransform\"] .parent {\n  transform: skewX(var(--transform));\n  padding: 1rem;\n  border: 1px solid;\n  display: inline-block; }\n\n[data-scope=\"transform-detransform\"] .child {\n  transform: skewX(calc(-1 * var(--transform))); }\n"
+        },
+        "tags": [
+          "visual",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "3d669f655ec92a355b355d2d35e6e9262ad582671abac860d7170893ac68e467"
+      }
+    },
+    {
       "id": "triangle",
       "title": "Triangle",
       "type": "snippet",
