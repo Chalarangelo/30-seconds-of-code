@@ -1,21 +1,25 @@
 ---
 title: hasKey
-tags: object,recursion,intermediate
+tags: object,intermediate
 ---
 
 Returns `true` if the target value exists in a JSON object, `false` otherwise.
+Accepts target object as first parameter and list of string keys as second parameter.
 
-Check if the key contains `.`, use `String.prototype.split('.')[0]` to get the first part and store as `_key`.
-Use `typeof` to check if the contents of `obj[key]` are an `object` and, if so, call `hasKey` with that object and the remainder of the `key`.
-Otherwise, use `Object.keys(obj)` in combination with `Array.prototype.includes()` to check if the given `key` exists.
+Check if the list of keys is non-empty and use `Array.prototype.every()` to sequentially check
+keys from given key list to internal depth of the object. Use `Object.prototype.hasOwnProperty()` to check if current object does not have
+current key or is not an object at all then stop propagation and return `false`, else assign inner
+value as the new object to `obj` to use it next time. Return `true` on completion.
+
+Return `false` beforehand if given key list is empty.
 
 ```js
-const hasKey = (obj, key) => {
-  if (key.includes('.')) {
-    let _key = key.split('.')[0];
-    if (typeof obj[_key] === 'object') return hasKey(obj[_key], key.slice(key.indexOf('.') + 1));
-  }
-  return Object.keys(obj).includes(key);
+const hasKey = (obj, keys) => {
+  return (keys.length > 0) && keys.every((key) => {
+    if (typeof obj !== 'object' || !obj.hasOwnProperty(key)) return false;
+    obj = obj[key];
+    return true;
+  });
 };
 ```
 
@@ -23,12 +27,13 @@ const hasKey = (obj, key) => {
 let obj = {
   a: 1,
   b: { c: 4 },
-  'd.e': 5
+  'b.d': 5,
 };
-hasKey(obj, 'a'); // true
-hasKey(obj, 'b'); // true
-hasKey(obj, 'b.c'); // true
-hasKey(obj, 'd.e'); // true
-hasKey(obj, 'd'); // false
-hasKey(obj, 'f'); // false
+hasKey(obj, ['a']); // true
+hasKey(obj, ['b']); // true
+hasKey(obj, ['b', 'c']); // true
+hasKey(obj, ['b.d']); // true
+hasKey(obj, ['d']); // false
+hasKey(obj, ['c']); // false
+hasKey(obj, ['b', 'f']); // false
 ```
