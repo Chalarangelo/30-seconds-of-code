@@ -391,7 +391,7 @@
       "type": "snippetListing",
       "title": "fibonacci",
       "attributes": {
-        "text": "Generates an array, containing the Fibonacci sequence, up until the nth term.\n\nStarting with `0` and `1`, use `list.apoend() to add the sum of the last two numbers of the list to the end of the list, until the length of the list reaches `n`.  \nIf `n` is less or equal to `0`, return a list containing `0`.\n\n",
+        "text": "Generates an array, containing the Fibonacci sequence, up until the nth term.\n\nStarting with `0` and `1`, use `list.append() to add the sum of the last two numbers of the list to the end of the list, until the length of the list reaches `n`.  \nIf `n` is less or equal to `0`, return a list containing `0`.\n\n",
         "tags": [
           "math",
           "list",
