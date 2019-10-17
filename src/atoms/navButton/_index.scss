@@ -29,14 +29,14 @@ $nav-button-active-fore-color-dark: #CDD4EF;
   line-height: 61px;
   cursor: pointer;
   transition: 0.3s ease all;
-  @media screen and (min-width: $layout-medium-breakpoint) {
+  @media screen and (min-width: $layout-medium-breakpoint) and (orientation: landscape) {
     height: 12.5vh;
     width: 100%;
     margin-top: 1vh;
     margin-bottom: 4vh;
     line-height: 12.5vh;
   }
-  @media screen and (min-width: $layout-large-breakpoint) {
+  @media screen and (min-width: $layout-large-breakpoint) and (orientation: landscape) {
     margin-bottom: 1vh;
   }
   &:hover, &:focus {
