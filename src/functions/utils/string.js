@@ -1,10 +1,20 @@
 /** Removes unnecessary whitespace from template literals parsed as classNames */
 export const trimWhiteSpace = (...args) => {
-  const plainText = args[0][0];
-  const interpolations = args
+  const plainTexts = args[0]
+    .join(' ')
+    .split(' ')
+    .map(v => v.trim())
+    .filter(Boolean);
+  const interpolations = (args || [])
     .slice(1)
-    .reduce((str, cur) => `${str + cur} `, '');
-  return (`${plainText} ${interpolations}`).replace(/\s+/gm, ' ').trim() || null;
+    .filter(Boolean)
+    .reduce((acc, v) => [...acc, ...v.split(' ')], [])
+    .map(v => v.trim())
+    .filter(Boolean);
+  return [...new Set([...plainTexts, ...interpolations])]
+    .join(' ')
+    .replace(/\s+/gm, ' ')
+    .trim() || undefined;
 };
 
 /** Capitalizes the first letter of a string */
