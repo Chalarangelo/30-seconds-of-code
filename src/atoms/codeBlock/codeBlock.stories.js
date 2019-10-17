@@ -1,6 +1,6 @@
 import React from 'react';
 import CodeBlock from 'atoms/codeBlock';
-import { text } from '@storybook/addon-knobs';
+import { object } from '@storybook/addon-knobs';
 import mdx from './docs.mdx';
 
 export default {
@@ -17,8 +17,7 @@ export default {
 };
 
 export const component = () => {
-  const long = text('language.long', 'javascript'), short = text('language.short', 'js');
-  const language = { short, long };
+  const language = object('language', { long: 'javascript', short: 'js'});
 
   return (
     <CodeBlock
