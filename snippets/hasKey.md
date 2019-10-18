@@ -4,12 +4,10 @@ tags: object,intermediate
 ---
 
 Returns `true` if the target value exists in a JSON object, `false` otherwise.
-Accepts target object as first parameter and list of string keys as second parameter.
 
-Check if the list of keys is non-empty and use `Array.prototype.every()` to sequentially check
-keys from given key list to internal depth of the object. Use `Object.prototype.hasOwnProperty()` to check if current object does not have
-current key or is not an object at all then stop propagation and return `false`, else assign inner
-value as the new object to `obj` to use it next time. Return `true` on completion.
+Check if `keys` is non-empty and use `Array.prototype.every()` to sequentially check its keys to internal depth of the object, `obj`. 
+Use `Object.prototype.hasOwnProperty()` to check if `obj` does not have the current key or is not an object, stop propagation and return `false`.
+Otherwise assign the key's value to `obj` to use on the next iteration.
 
 Return `false` beforehand if given key list is empty.
 
