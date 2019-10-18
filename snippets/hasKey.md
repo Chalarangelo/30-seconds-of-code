@@ -12,8 +12,9 @@ Otherwise assign the key's value to `obj` to use on the next iteration.
 Return `false` beforehand if given key list is empty.
 
 ```js
+
 const hasKey = (obj, keys) => {
-  return (keys.length > 0) && keys.every((key) => {
+  return (keys.length > 0) && keys.every(key => {
     if (typeof obj !== 'object' || !obj.hasOwnProperty(key)) return false;
     obj = obj[key];
     return true;
@@ -25,7 +26,7 @@ const hasKey = (obj, keys) => {
 let obj = {
   a: 1,
   b: { c: 4 },
-  'b.d': 5,
+  'b.d': 5
 };
 hasKey(obj, ['a']); // true
 hasKey(obj, ['b']); // true
