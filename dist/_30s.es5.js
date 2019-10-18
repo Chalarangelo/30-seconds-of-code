@@ -167,8 +167,8 @@
   };
   var ary = function ary(fn, n) {
     return function () {
-      for (var _len = arguments.length, args = new Array(_len), _key2 = 0; _key2 < _len; _key2++) {
-        args[_key2] = arguments[_key2];
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
       }
 
       return fn.apply(void 0, _toConsumableArray(args.slice(0, n)));
@@ -179,8 +179,8 @@
   };
   var attempt = function attempt(fn) {
     try {
-      for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key3 = 1; _key3 < _len2; _key3++) {
-        args[_key3 - 1] = arguments[_key3];
+      for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+        args[_key2 - 1] = arguments[_key2];
       }
 
       return fn.apply(void 0, args);
@@ -189,8 +189,8 @@
     }
   };
   var average = function average() {
-    for (var _len3 = arguments.length, nums = new Array(_len3), _key4 = 0; _key4 < _len3; _key4++) {
-      nums[_key4] = arguments[_key4];
+    for (var _len3 = arguments.length, nums = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+      nums[_key3] = arguments[_key3];
     }
 
     return nums.reduce(function (acc, val) {
@@ -215,21 +215,21 @@
     }, [[], []]);
   };
   var bind = function bind(fn, context) {
-    for (var _len4 = arguments.length, boundArgs = new Array(_len4 > 2 ? _len4 - 2 : 0), _key5 = 2; _key5 < _len4; _key5++) {
-      boundArgs[_key5 - 2] = arguments[_key5];
+    for (var _len4 = arguments.length, boundArgs = new Array(_len4 > 2 ? _len4 - 2 : 0), _key4 = 2; _key4 < _len4; _key4++) {
+      boundArgs[_key4 - 2] = arguments[_key4];
     }
 
     return function () {
-      for (var _len5 = arguments.length, args = new Array(_len5), _key6 = 0; _key6 < _len5; _key6++) {
-        args[_key6] = arguments[_key6];
+      for (var _len5 = arguments.length, args = new Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
+        args[_key5] = arguments[_key5];
       }
 
       return fn.apply(context, [].concat(boundArgs, args));
     };
   };
   var bindAll = function bindAll(obj) {
-    for (var _len6 = arguments.length, fns = new Array(_len6 > 1 ? _len6 - 1 : 0), _key7 = 1; _key7 < _len6; _key7++) {
-      fns[_key7 - 1] = arguments[_key7];
+    for (var _len6 = arguments.length, fns = new Array(_len6 > 1 ? _len6 - 1 : 0), _key6 = 1; _key6 < _len6; _key6++) {
+      fns[_key6 - 1] = arguments[_key6];
     }
 
     return fns.forEach(function (fn) {
@@ -239,13 +239,13 @@
     });
   };
   var bindKey = function bindKey(context, fn) {
-    for (var _len7 = arguments.length, boundArgs = new Array(_len7 > 2 ? _len7 - 2 : 0), _key8 = 2; _key8 < _len7; _key8++) {
-      boundArgs[_key8 - 2] = arguments[_key8];
+    for (var _len7 = arguments.length, boundArgs = new Array(_len7 > 2 ? _len7 - 2 : 0), _key7 = 2; _key7 < _len7; _key7++) {
+      boundArgs[_key7 - 2] = arguments[_key7];
     }
 
     return function () {
-      for (var _len8 = arguments.length, args = new Array(_len8), _key9 = 0; _key9 < _len8; _key9++) {
-        args[_key9] = arguments[_key9];
+      for (var _len8 = arguments.length, args = new Array(_len8), _key8 = 0; _key8 < _len8; _key8++) {
+        args[_key8] = arguments[_key8];
       }
 
       return context[fn].apply(context, [].concat(boundArgs, args));
@@ -275,8 +275,8 @@
     return new Blob([str]).size;
   };
   var call = function call(key) {
-    for (var _len9 = arguments.length, args = new Array(_len9 > 1 ? _len9 - 1 : 0), _key10 = 1; _key10 < _len9; _key10++) {
-      args[_key10 - 1] = arguments[_key10];
+    for (var _len9 = arguments.length, args = new Array(_len9 > 1 ? _len9 - 1 : 0), _key9 = 1; _key9 < _len9; _key9++) {
+      args[_key9 - 1] = arguments[_key9];
     }
 
     return function (context) {
@@ -329,8 +329,8 @@
     return new RegExp(regExp.source, regExp.flags);
   };
   var coalesce = function coalesce() {
-    for (var _len10 = arguments.length, args = new Array(_len10), _key11 = 0; _key11 < _len10; _key11++) {
-      args[_key11] = arguments[_key11];
+    for (var _len10 = arguments.length, args = new Array(_len10), _key10 = 0; _key10 < _len10; _key10++) {
+      args[_key10] = arguments[_key10];
     }
 
     return args.find(function (_) {
@@ -339,8 +339,8 @@
   };
   var coalesceFactory = function coalesceFactory(valid) {
     return function () {
-      for (var _len11 = arguments.length, args = new Array(_len11), _key12 = 0; _key12 < _len11; _key12++) {
-        args[_key12] = arguments[_key12];
+      for (var _len11 = arguments.length, args = new Array(_len11), _key11 = 0; _key11 < _len11; _key11++) {
+        args[_key11] = arguments[_key11];
       }
 
       return args.find(valid);
@@ -348,16 +348,16 @@
   };
   var collectInto = function collectInto(fn) {
     return function () {
-      for (var _len12 = arguments.length, args = new Array(_len12), _key13 = 0; _key13 < _len12; _key13++) {
-        args[_key13] = arguments[_key13];
+      for (var _len12 = arguments.length, args = new Array(_len12), _key12 = 0; _key12 < _len12; _key12++) {
+        args[_key12] = arguments[_key12];
       }
 
       return fn(args);
     };
   };
   var colorize = function colorize() {
-    for (var _len13 = arguments.length, args = new Array(_len13), _key14 = 0; _key14 < _len13; _key14++) {
-      args[_key14] = arguments[_key14];
+    for (var _len13 = arguments.length, args = new Array(_len13), _key13 = 0; _key13 < _len13; _key13++) {
+      args[_key13] = arguments[_key13];
     }
 
     return {
@@ -386,8 +386,8 @@
     return str.replace(/\s{2,}/g, ' ');
   };
   var compose = function compose() {
-    for (var _len14 = arguments.length, fns = new Array(_len14), _key15 = 0; _key15 < _len14; _key15++) {
-      fns[_key15] = arguments[_key15];
+    for (var _len14 = arguments.length, fns = new Array(_len14), _key14 = 0; _key14 < _len14; _key14++) {
+      fns[_key14] = arguments[_key14];
     }
 
     return fns.reduce(function (f, g) {
@@ -397,8 +397,8 @@
     });
   };
   var composeRight = function composeRight() {
-    for (var _len15 = arguments.length, fns = new Array(_len15), _key16 = 0; _key16 < _len15; _key16++) {
-      fns[_key16] = arguments[_key16];
+    for (var _len15 = arguments.length, fns = new Array(_len15), _key15 = 0; _key15 < _len15; _key15++) {
+      fns[_key15] = arguments[_key15];
     }
 
     return fns.reduce(function (f, g) {
@@ -409,8 +409,8 @@
   };
   var converge = function converge(converger, fns) {
     return function () {
-      for (var _len16 = arguments.length, args = new Array(_len16), _key17 = 0; _key17 < _len16; _key17++) {
-        args[_key17] = arguments[_key17];
+      for (var _len16 = arguments.length, args = new Array(_len16), _key16 = 0; _key16 < _len16; _key16++) {
+        args[_key16] = arguments[_key16];
       }
 
       return converger.apply(void 0, _toConsumableArray(fns.map(function (fn) {
@@ -515,8 +515,8 @@
   var curry = function curry(fn) {
     var arity = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : fn.length;
 
-    for (var _len17 = arguments.length, args = new Array(_len17 > 2 ? _len17 - 2 : 0), _key18 = 2; _key18 < _len17; _key18++) {
-      args[_key18 - 2] = arguments[_key18];
+    for (var _len17 = arguments.length, args = new Array(_len17 > 2 ? _len17 - 2 : 0), _key17 = 2; _key17 < _len17; _key17++) {
+      args[_key17 - 2] = arguments[_key17];
     }
 
     return arity <= args.length ? fn.apply(void 0, args) : curry.bind.apply(curry, [null, fn, arity].concat(args));
@@ -530,8 +530,8 @@
     return function () {
       var _this = this;
 
-      for (var _len18 = arguments.length, args = new Array(_len18), _key19 = 0; _key19 < _len18; _key19++) {
-        args[_key19] = arguments[_key19];
+      for (var _len18 = arguments.length, args = new Array(_len18), _key18 = 0; _key18 < _len18; _key18++) {
+        args[_key18] = arguments[_key18];
       }
 
       clearTimeout(timeoutId);
@@ -583,15 +583,15 @@
     }, {}) : obj;
   };
   var defaults = function defaults(obj) {
-    for (var _len19 = arguments.length, defs = new Array(_len19 > 1 ? _len19 - 1 : 0), _key20 = 1; _key20 < _len19; _key20++) {
-      defs[_key20 - 1] = arguments[_key20];
+    for (var _len19 = arguments.length, defs = new Array(_len19 > 1 ? _len19 - 1 : 0), _key19 = 1; _key19 < _len19; _key19++) {
+      defs[_key19 - 1] = arguments[_key19];
     }
 
     return Object.assign.apply(Object, [{}, obj].concat(_toConsumableArray(defs.reverse()), [obj]));
   };
   var defer = function defer(fn) {
-    for (var _len20 = arguments.length, args = new Array(_len20 > 1 ? _len20 - 1 : 0), _key21 = 1; _key21 < _len20; _key21++) {
-      args[_key21 - 1] = arguments[_key21];
+    for (var _len20 = arguments.length, args = new Array(_len20 > 1 ? _len20 - 1 : 0), _key20 = 1; _key20 < _len20; _key20++) {
+      args[_key20 - 1] = arguments[_key20];
     }
 
     return setTimeout.apply(void 0, [fn, 1].concat(args));
@@ -600,8 +600,8 @@
     return deg * Math.PI / 180.0;
   };
   var delay = function delay(fn, wait) {
-    for (var _len21 = arguments.length, args = new Array(_len21 > 2 ? _len21 - 2 : 0), _key22 = 2; _key22 < _len21; _key22++) {
-      args[_key22 - 2] = arguments[_key22];
+    for (var _len21 = arguments.length, args = new Array(_len21 > 2 ? _len21 - 2 : 0), _key21 = 2; _key21 < _len21; _key21++) {
+      args[_key21 - 2] = arguments[_key21];
     }
 
     return setTimeout.apply(void 0, [fn, wait].concat(args));
@@ -822,8 +822,8 @@
   };
   var flip = function flip(fn) {
     return function (first) {
-      for (var _len22 = arguments.length, rest = new Array(_len22 > 1 ? _len22 - 1 : 0), _key23 = 1; _key23 < _len22; _key23++) {
-        rest[_key23 - 1] = arguments[_key23];
+      for (var _len22 = arguments.length, rest = new Array(_len22 > 1 ? _len22 - 1 : 0), _key22 = 1; _key22 < _len22; _key22++) {
+        rest[_key22 - 1] = arguments[_key22];
       }
 
       return fn.apply(void 0, rest.concat([first]));
@@ -888,8 +888,8 @@
       return !y ? x : gcd(y, x % y);
     };
 
-    for (var _len23 = arguments.length, arr = new Array(_len23), _key24 = 0; _key24 < _len23; _key24++) {
-      arr[_key24] = arguments[_key24];
+    for (var _len23 = arguments.length, arr = new Array(_len23), _key23 = 0; _key23 < _len23; _key23++) {
+      arr[_key23] = arguments[_key23];
     }
 
     return [].concat(arr).reduce(function (a, b) {
@@ -906,8 +906,8 @@
     });
   };
   var get = function get(from) {
-    for (var _len24 = arguments.length, selectors = new Array(_len24 > 1 ? _len24 - 1 : 0), _key25 = 1; _key25 < _len24; _key25++) {
-      selectors[_key25 - 1] = arguments[_key25];
+    for (var _len24 = arguments.length, selectors = new Array(_len24 > 1 ? _len24 - 1 : 0), _key24 = 1; _key24 < _len24; _key24++) {
+      selectors[_key24 - 1] = arguments[_key24];
     }
 
     return [].concat(selectors).map(function (s) {
@@ -969,8 +969,8 @@
     return el.classList.contains(className);
   };
   var hasFlags = function hasFlags() {
-    for (var _len25 = arguments.length, flags = new Array(_len25), _key26 = 0; _key26 < _len25; _key26++) {
-      flags[_key26] = arguments[_key26];
+    for (var _len25 = arguments.length, flags = new Array(_len25), _key25 = 0; _key25 < _len25; _key25++) {
+      flags[_key25] = arguments[_key25];
     }
 
     return flags.every(function (flag) {
@@ -996,13 +996,12 @@
       }, 0);
     });
   };
-  var hasKey = function hasKey(obj, key) {
-    if (key.includes('.')) {
-      var _key = key.split('.')[0];
-      if (_typeof(obj[_key]) === 'object') return hasKey(obj[_key], key.slice(key.indexOf('.') + 1));
-    }
-
-    return Object.keys(obj).includes(key);
+  var hasKey = function hasKey(obj, keys) {
+    return keys.length > 0 && keys.every(function (key) {
+      if (_typeof(obj) !== 'object' || !obj.hasOwnProperty(key)) return false;
+      obj = obj[key];
+      return true;
+    });
   };
   var head = function head(arr) {
     return arr[0];
@@ -1017,8 +1016,8 @@
     return 'rgb' + (alpha ? 'a' : '') + '(' + (h >>> (alpha ? 24 : 16)) + ', ' + ((h & (alpha ? 0x00ff0000 : 0x00ff00)) >>> (alpha ? 16 : 8)) + ', ' + ((h & (alpha ? 0x0000ff00 : 0x0000ff)) >>> (alpha ? 8 : 0)) + (alpha ? ", ".concat(h & 0x000000ff) : '') + ')';
   };
   var hide = function hide() {
-    for (var _len26 = arguments.length, el = new Array(_len26), _key27 = 0; _key27 < _len26; _key27++) {
-      el[_key27] = arguments[_key27];
+    for (var _len26 = arguments.length, el = new Array(_len26), _key26 = 0; _key26 < _len26; _key26++) {
+      el[_key26] = arguments[_key26];
     }
 
     return [].concat(el).forEach(function (e) {
@@ -1114,8 +1113,8 @@
     return Array(n).fill(val);
   };
   var initializeNDArray = function initializeNDArray(val) {
-    for (var _len27 = arguments.length, args = new Array(_len27 > 1 ? _len27 - 1 : 0), _key28 = 1; _key28 < _len27; _key28++) {
-      args[_key28 - 1] = arguments[_key28];
+    for (var _len27 = arguments.length, args = new Array(_len27 > 1 ? _len27 - 1 : 0), _key27 = 1; _key27 < _len27; _key27++) {
+      args[_key27 - 1] = arguments[_key27];
     }
 
     return args.length === 0 ? val : Array.from({
@@ -1359,8 +1358,8 @@
       return x * y / gcd(x, y);
     };
 
-    for (var _len28 = arguments.length, arr = new Array(_len28), _key29 = 0; _key29 < _len28; _key29++) {
-      arr[_key29] = arguments[_key29];
+    for (var _len28 = arguments.length, arr = new Array(_len28), _key28 = 0; _key28 < _len28; _key28++) {
+      arr[_key28] = arguments[_key28];
     }
 
     return [].concat(arr).reduce(function (a, b) {
@@ -1368,8 +1367,8 @@
     });
   };
   var longestItem = function longestItem() {
-    for (var _len29 = arguments.length, vals = new Array(_len29), _key30 = 0; _key30 < _len29; _key30++) {
-      vals[_key30] = arguments[_key30];
+    for (var _len29 = arguments.length, vals = new Array(_len29), _key29 = 0; _key29 < _len29; _key29++) {
+      vals[_key29] = arguments[_key29];
     }
 
     return vals.reduce(function (a, x) {
@@ -1468,8 +1467,8 @@
     return cached;
   };
   var merge = function merge() {
-    for (var _len30 = arguments.length, objs = new Array(_len30), _key31 = 0; _key31 < _len30; _key31++) {
-      objs[_key31] = arguments[_key31];
+    for (var _len30 = arguments.length, objs = new Array(_len30), _key30 = 0; _key30 < _len30; _key30++) {
+      objs[_key30] = arguments[_key30];
     }
 
     return [].concat(objs).reduce(function (acc, obj) {
@@ -1542,8 +1541,8 @@
   };
   var nthArg = function nthArg(n) {
     return function () {
-      for (var _len31 = arguments.length, args = new Array(_len31), _key32 = 0; _key32 < _len31; _key32++) {
-        args[_key32] = arguments[_key32];
+      for (var _len31 = arguments.length, args = new Array(_len31), _key31 = 0; _key31 < _len31; _key31++) {
+        args[_key31] = arguments[_key31];
       }
 
       return args.slice(n)[0];
@@ -1631,8 +1630,8 @@
       if (called) return;
       called = true;
 
-      for (var _len32 = arguments.length, args = new Array(_len32), _key33 = 0; _key33 < _len32; _key33++) {
-        args[_key33] = arguments[_key33];
+      for (var _len32 = arguments.length, args = new Array(_len32), _key32 = 0; _key32 < _len32; _key32++) {
+        args[_key32] = arguments[_key32];
       }
 
       return fn.apply(this, args);
@@ -1670,13 +1669,13 @@
     });
   };
   var over = function over() {
-    for (var _len33 = arguments.length, fns = new Array(_len33), _key34 = 0; _key34 < _len33; _key34++) {
-      fns[_key34] = arguments[_key34];
+    for (var _len33 = arguments.length, fns = new Array(_len33), _key33 = 0; _key33 < _len33; _key33++) {
+      fns[_key33] = arguments[_key33];
     }
 
     return function () {
-      for (var _len34 = arguments.length, args = new Array(_len34), _key35 = 0; _key35 < _len34; _key35++) {
-        args[_key35] = arguments[_key35];
+      for (var _len34 = arguments.length, args = new Array(_len34), _key34 = 0; _key34 < _len34; _key34++) {
+        args[_key34] = arguments[_key34];
       }
 
       return fns.map(function (fn) {
@@ -1686,8 +1685,8 @@
   };
   var overArgs = function overArgs(fn, transforms) {
     return function () {
-      for (var _len35 = arguments.length, args = new Array(_len35), _key36 = 0; _key36 < _len35; _key36++) {
-        args[_key36] = arguments[_key36];
+      for (var _len35 = arguments.length, args = new Array(_len35), _key35 = 0; _key35 < _len35; _key35++) {
+        args[_key35] = arguments[_key35];
       }
 
       return fn.apply(void 0, _toConsumableArray(args.map(function (val, i) {
@@ -1713,26 +1712,26 @@
     }, {});
   };
   var partial = function partial(fn) {
-    for (var _len36 = arguments.length, partials = new Array(_len36 > 1 ? _len36 - 1 : 0), _key37 = 1; _key37 < _len36; _key37++) {
-      partials[_key37 - 1] = arguments[_key37];
+    for (var _len36 = arguments.length, partials = new Array(_len36 > 1 ? _len36 - 1 : 0), _key36 = 1; _key36 < _len36; _key36++) {
+      partials[_key36 - 1] = arguments[_key36];
     }
 
     return function () {
-      for (var _len37 = arguments.length, args = new Array(_len37), _key38 = 0; _key38 < _len37; _key38++) {
-        args[_key38] = arguments[_key38];
+      for (var _len37 = arguments.length, args = new Array(_len37), _key37 = 0; _key37 < _len37; _key37++) {
+        args[_key37] = arguments[_key37];
       }
 
       return fn.apply(void 0, partials.concat(args));
     };
   };
   var partialRight = function partialRight(fn) {
-    for (var _len38 = arguments.length, partials = new Array(_len38 > 1 ? _len38 - 1 : 0), _key39 = 1; _key39 < _len38; _key39++) {
-      partials[_key39 - 1] = arguments[_key39];
+    for (var _len38 = arguments.length, partials = new Array(_len38 > 1 ? _len38 - 1 : 0), _key38 = 1; _key38 < _len38; _key38++) {
+      partials[_key38 - 1] = arguments[_key38];
     }
 
     return function () {
-      for (var _len39 = arguments.length, args = new Array(_len39), _key40 = 0; _key40 < _len39; _key40++) {
-        args[_key40] = arguments[_key40];
+      for (var _len39 = arguments.length, args = new Array(_len39), _key39 = 0; _key39 < _len39; _key39++) {
+        args[_key39] = arguments[_key39];
       }
 
       return fn.apply(void 0, args.concat(partials));
@@ -1770,8 +1769,8 @@
     }, {});
   };
   var pipeAsyncFunctions = function pipeAsyncFunctions() {
-    for (var _len40 = arguments.length, fns = new Array(_len40), _key41 = 0; _key41 < _len40; _key41++) {
-      fns[_key41] = arguments[_key41];
+    for (var _len40 = arguments.length, fns = new Array(_len40), _key40 = 0; _key40 < _len40; _key40++) {
+      fns[_key40] = arguments[_key40];
     }
 
     return function (arg) {
@@ -1781,8 +1780,8 @@
     };
   };
   var pipeFunctions = function pipeFunctions() {
-    for (var _len41 = arguments.length, fns = new Array(_len41), _key42 = 0; _key42 < _len41; _key42++) {
-      fns[_key42] = arguments[_key42];
+    for (var _len41 = arguments.length, fns = new Array(_len41), _key41 = 0; _key41 < _len41; _key41++) {
+      fns[_key41] = arguments[_key41];
     }
 
     return fns.reduce(function (f, g) {
@@ -1849,8 +1848,8 @@
   };
   var promisify = function promisify(func) {
     return function () {
-      for (var _len42 = arguments.length, args = new Array(_len42), _key43 = 0; _key43 < _len42; _key43++) {
-        args[_key43] = arguments[_key43];
+      for (var _len42 = arguments.length, args = new Array(_len42), _key42 = 0; _key42 < _len42; _key42++) {
+        args[_key42] = arguments[_key42];
       }
 
       return new Promise(function (resolve, reject) {
@@ -1861,8 +1860,8 @@
     };
   };
   var pull = function pull(arr) {
-    for (var _len43 = arguments.length, args = new Array(_len43 > 1 ? _len43 - 1 : 0), _key44 = 1; _key44 < _len43; _key44++) {
-      args[_key44 - 1] = arguments[_key44];
+    for (var _len43 = arguments.length, args = new Array(_len43 > 1 ? _len43 - 1 : 0), _key43 = 1; _key43 < _len43; _key43++) {
+      args[_key43 - 1] = arguments[_key43];
     }
 
     var argState = Array.isArray(args[0]) ? args[0] : args;
@@ -1902,8 +1901,8 @@
     return removed;
   };
   var pullBy = function pullBy(arr) {
-    for (var _len44 = arguments.length, args = new Array(_len44 > 1 ? _len44 - 1 : 0), _key45 = 1; _key45 < _len44; _key45++) {
-      args[_key45 - 1] = arguments[_key45];
+    for (var _len44 = arguments.length, args = new Array(_len44 > 1 ? _len44 - 1 : 0), _key44 = 1; _key44 < _len44; _key44++) {
+      args[_key44 - 1] = arguments[_key44];
     }
 
     var length = args.length;
@@ -1946,8 +1945,8 @@
   };
   var rearg = function rearg(fn, indexes) {
     return function () {
-      for (var _len45 = arguments.length, args = new Array(_len45), _key46 = 0; _key46 < _len45; _key46++) {
-        args[_key46] = arguments[_key46];
+      for (var _len45 = arguments.length, args = new Array(_len45), _key45 = 0; _key45 < _len45; _key45++) {
+        args[_key45] = arguments[_key45];
       }
 
       return fn.apply(void 0, _toConsumableArray(indexes.map(function (i) {
@@ -2108,15 +2107,15 @@
     var index = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
     var delCount = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
 
-    for (var _len46 = arguments.length, elements = new Array(_len46 > 3 ? _len46 - 3 : 0), _key47 = 3; _key47 < _len46; _key47++) {
-      elements[_key47 - 3] = arguments[_key47];
+    for (var _len46 = arguments.length, elements = new Array(_len46 > 3 ? _len46 - 3 : 0), _key46 = 3; _key46 < _len46; _key46++) {
+      elements[_key46 - 3] = arguments[_key46];
     }
 
     return arr.slice(0, index).concat(elements).concat(arr.slice(index + delCount));
   };
   var show = function show() {
-    for (var _len47 = arguments.length, el = new Array(_len47), _key48 = 0; _key48 < _len47; _key48++) {
-      el[_key48] = arguments[_key48];
+    for (var _len47 = arguments.length, el = new Array(_len47), _key47 = 0; _key47 < _len47; _key47++) {
+      el[_key47] = arguments[_key47];
     }
 
     return [].concat(el).forEach(function (e) {
@@ -2235,8 +2234,8 @@
     return str.replace(/<[^>]*>/g, '');
   };
   var sum = function sum() {
-    for (var _len48 = arguments.length, arr = new Array(_len48), _key49 = 0; _key49 < _len48; _key49++) {
-      arr[_key49] = arguments[_key49];
+    for (var _len48 = arguments.length, arr = new Array(_len48), _key48 = 0; _key48 < _len48; _key48++) {
+      arr[_key48] = arguments[_key48];
     }
 
     return [].concat(arr).reduce(function (acc, val) {
@@ -2461,8 +2460,8 @@
         };
       };
 
-      for (var _len49 = arguments.length, args = new Array(_len49), _key50 = 0; _key50 < _len49; _key50++) {
-        args[_key50] = arguments[_key50];
+      for (var _len49 = arguments.length, args = new Array(_len49), _key49 = 0; _key49 < _len49; _key49++) {
+        args[_key49] = arguments[_key49];
       }
 
       if (n > args.length) throw new RangeError('Arguments too few!');
@@ -2576,8 +2575,8 @@
     });
   };
   var URLJoin = function URLJoin() {
-    for (var _len50 = arguments.length, args = new Array(_len50), _key51 = 0; _key51 < _len50; _key51++) {
-      args[_key51] = arguments[_key51];
+    for (var _len50 = arguments.length, args = new Array(_len50), _key50 = 0; _key50 < _len50; _key50++) {
+      args[_key50] = arguments[_key50];
     }
 
     return args.join('/').replace(/[\/]+/g, '/').replace(/^(.+):\//, '$1://').replace(/^file:/, 'file:/').replace(/\/(\?|&|#[^!])/g, '$1').replace(/\?/g, '&').replace('&', '?');
@@ -2596,8 +2595,8 @@
     return !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
   };
   var vectorDistance = function vectorDistance() {
-    for (var _len51 = arguments.length, coords = new Array(_len51), _key52 = 0; _key52 < _len51; _key52++) {
-      coords[_key52] = arguments[_key52];
+    for (var _len51 = arguments.length, coords = new Array(_len51), _key51 = 0; _key51 < _len51; _key51++) {
+      coords[_key51] = arguments[_key51];
     }
 
     var pointLength = Math.trunc(coords.length / 2);
@@ -2612,8 +2611,8 @@
     };
   };
   var without = function without(arr) {
-    for (var _len52 = arguments.length, args = new Array(_len52 > 1 ? _len52 - 1 : 0), _key53 = 1; _key53 < _len52; _key53++) {
-      args[_key53 - 1] = arguments[_key53];
+    for (var _len52 = arguments.length, args = new Array(_len52 > 1 ? _len52 - 1 : 0), _key52 = 1; _key52 < _len52; _key52++) {
+      args[_key52 - 1] = arguments[_key52];
     }
 
     return arr.filter(function (v) {
@@ -2641,8 +2640,8 @@
     return t.toISOString().split('T')[0];
   };
   var zip = function zip() {
-    for (var _len53 = arguments.length, arrays = new Array(_len53), _key54 = 0; _key54 < _len53; _key54++) {
-      arrays[_key54] = arguments[_key54];
+    for (var _len53 = arguments.length, arrays = new Array(_len53), _key53 = 0; _key53 < _len53; _key53++) {
+      arrays[_key53] = arguments[_key53];
     }
 
     var maxLength = Math.max.apply(Math, _toConsumableArray(arrays.map(function (x) {
@@ -2664,8 +2663,8 @@
     }, {});
   };
   var zipWith = function zipWith() {
-    for (var _len54 = arguments.length, array = new Array(_len54), _key55 = 0; _key55 < _len54; _key55++) {
-      array[_key55] = arguments[_key55];
+    for (var _len54 = arguments.length, array = new Array(_len54), _key54 = 0; _key54 < _len54; _key54++) {
+      array[_key54] = arguments[_key54];
     }
 
     var fn = typeof array[array.length - 1] === 'function' ? array.pop() : undefined;
@@ -2906,8 +2905,8 @@
     window.speechSynthesis.speak(msg);
   };
   var squareSum = function squareSum() {
-    for (var _len55 = arguments.length, args = new Array(_len55), _key56 = 0; _key56 < _len55; _key56++) {
-      args[_key56] = arguments[_key56];
+    for (var _len55 = arguments.length, args = new Array(_len55), _key55 = 0; _key55 < _len55; _key55++) {
+      args[_key55] = arguments[_key55];
     }
 
     return args.reduce(function (squareSum, number) {
