@@ -95,7 +95,8 @@
   "dependencies": {},
   "jest": {
     "transform": {
-      "^.+\\.jsx?$": "./.jest/jest-preprocess.js"
+      "^.+\\.jsx?$": "./.jest/jest-preprocess.js",
+      "^.+\\.(css|less|scss)$": "./.jest/style-mock.js"
     },
     "setupFilesAfterEnv": [
       "jest-enzyme"
