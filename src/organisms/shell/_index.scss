@@ -1,0 +1,120 @@
+:root {
+  // Interface color palette
+  --back-color: #F5F6FA;
+  --back-color-dark: #D7DDF3;
+  --fore-color: #404454;
+  --fore-color-light: #575E7A;
+  --fore-color-lighter: #666E8F;
+  --fore-color-dark: #1F253D;
+  --fore-color-darker: #060709;
+
+  // Scrollbar
+  --scrollbar-back-color: #D7DDF3;
+  --scrollbar-fore-color: #666E8F;
+}
+
+// Dark mode colors
+.page-container.dark {
+  --back-color: #2A314C;
+  --back-color-dark: #8993BE;
+  --fore-color: #ABAFBF;
+  --fore-color-light: #858CA8;
+  --fore-color-lighter: #707899;
+  --fore-color-dark: #B4BCD9;
+  --fore-color-darker: #FCFCFD;
+
+  // Scrollbar
+  --scrollbar-back-color: #434E76;
+  --scrollbar-fore-color: #707899;
+}
+
+.page-container {
+  overflow: hidden;
+  transition: 0.3s ease all;
+  background: var(--back-color);
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-areas: "content" "menu";
+  grid-template-columns: 100%;
+  grid-template-rows: calc(100vh - 62px) 62px;
+
+  // Medium screen size (mobile landscape, tablet)
+  @media screen and (min-width: $layout-medium-breakpoint) and(orientation: landscape) {
+    grid-template-areas: "menu content";
+    grid-template-columns: 62px calc(100vw - 62px);
+    grid-template-rows: 100%;
+  }
+}
+
+// Menu container
+.nav-bar {
+  grid-area: menu;
+}
+
+// Content container
+.content {
+  transition: 0.3s ease all;
+  grid-area: content;
+  overflow: auto;
+  background: var(--back-color);
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-back-color);
+    margin: 0.25rem 0;
+    border-radius: 0.1875rem;
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-fore-color);
+    border: 1px solid var(--scrollbar-fore-color-lighter);
+    border-radius: 0.1875rem;
+  }
+
+  @media screen and (min-width: calc(768px)) and (orientation: portrait) {
+    padding-left: calc((100% - 768px) / 2);
+    padding-right: calc((100% - 768px) / 2);
+  }
+
+  @media screen and (min-width: calc(768px + 62px)) and (orientation: landscape) {
+    padding-left: calc((100% - 768px - 62px) / 2);
+    padding-right: calc((100% - 768px - 62px) / 2);
+  }
+}
+
+// Website title
+h1.website-title {
+  transition: 0.3s ease all;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--fore-color-lighter);
+  line-height: 1.5;
+  position: relative;
+  top: 4px;
+  margin: 1.5rem 1.25rem 0.125rem;
+
+  @media screen and (min-width: $layout-large-breakpoint) {
+    font-size: 1rem;
+    line-height: 1.375;
+  }
+}
+
+// Website logo
+img.website-logo {
+  transition: 0.3s ease all;
+  position: absolute;
+  top: 8px;
+  right: 0px;
+  width: 48px;
+  height: 48px;
+}
+
+// TODO: Homepage title, logo and sub-title have to go to the homepage page component
+// TODO: Page title, sub-title, light-sub and tag-title have to go to their related pages
+// TODO: Styles for the page maintainers card will go to the specific page
+// TODO: Extract page backdrop component, copy styles from old starter
