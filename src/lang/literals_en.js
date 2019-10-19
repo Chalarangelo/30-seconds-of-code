@@ -11,4 +11,5 @@ export default {
   'Search...': 'Search...',
   'Copy to clipboard': 'Copy to clipboard',
   'Examples': 'Examples',
+  'Back to': pageTitle => `Back to ${capitalize(pageTitle, true)}`,
 };
