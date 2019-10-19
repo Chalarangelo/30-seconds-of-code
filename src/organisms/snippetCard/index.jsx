@@ -30,12 +30,13 @@ const SnippetCard = ({
       <CopyButton
         text={ snippet.code }
         onCopy={ () => {
+          const _toastContainer = document.getElementById(toastContainer);
           ReactDOM.render(
             <Toast message='Snippet copied to clipboard!'/>,
-            toastContainer
+            _toastContainer
           );
           setTimeout(() => {
-            ReactDOM.unmountComponentAtNode(toastContainer);
+            ReactDOM.unmountComponentAtNode(_toastContainer);
           }, 2000);
         } }
       />
@@ -59,7 +60,7 @@ SnippetCard.propTypes = {
   snippet: SnippetPropType,
   /** Additional classes for the card */
   className: PropTypes.string,
-  /** A DOMNode used to render the toast when copying the snippet */
+  /** The id of a DOM node used to render the toast when copying the snippet */
   toastContainer: PropTypes.node,
   /** Any other arguments to be passed to the card */
   rest: PropTypes.any,
