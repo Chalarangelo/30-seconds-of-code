@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link as LinkPropType } from 'proptypes';
-import Anchor from 'atoms/anchor';
+import {Anchor} from 'atoms/anchor';
 import { trimWhiteSpace } from 'functions/utils';
 
 const AnchorButton = ({
