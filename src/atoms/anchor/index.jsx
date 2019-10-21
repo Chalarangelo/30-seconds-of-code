@@ -1,7 +1,7 @@
 import Anchor from './regularAnchor';
-import { Link } from 'gatsby';
+import LinkBackAnchor from './linkBackAnchor';
 
 export {
   Anchor,
-  link,
+  LinkBackAnchor,
 };

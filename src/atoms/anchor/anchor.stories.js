@@ -2,6 +2,7 @@ import React from 'react';
 import { Anchor, LinkBackAnchor} from 'atoms/anchor';
 import { text, boolean } from '@storybook/addon-knobs';
 import regularAnchorMdx from './regularAnchor/docs.mdx';
+import linkBackAnchorMdx from './linkBackAnchor/docs.mdx';
 
 export default {
   title: 'Atoms|Anchor',
@@ -32,16 +33,28 @@ anchor.story = {
   },
 };
 
-export const component = () => {
-  const children = text('children (string-only)', 'Click me!');
+export const linkBackAnchor = () => {
+  const children = text('children (string-only)', 'Back to Home');
   const internal = boolean('link.internal', false);
   const url = text('link.url', '#');
 
   return (
-    <Anchor
+    <LinkBackAnchor
       link={ { url, internal } }
     >
       { children }
-    </Anchor>
+    </LinkBackAnchor>
   );
+};
+
+linkBackAnchor.story = {
+  component: LinkBackAnchor,
+  parameters: {
+    docs: {
+      page: linkBackAnchorMdx,
+    },
+    jest: [
+      'linkBackAnchor',
+    ],
+  },
 };
