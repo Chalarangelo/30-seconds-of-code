@@ -1,0 +1,22 @@
+// Return to previous page link
+a.link-back {
+  transition: 0.3s ease all;
+  font-size: 1.125rem;
+  line-height: 1.35;
+  display: block;
+  margin: 1rem 1.25rem 1.5rem;
+  font-weight: 500;
+  padding-left: 24px;
+  background-image: generate-icon-background("arrow-left", $fore-color-dark-light, 'none', 2, 20);
+  background-position: 0 center;
+  background-repeat: no-repeat;
+  &, &:link, &:visited {
+    color: var(--fore-color-dark);
+  }
+}
+
+.page-container.dark {
+  a.link-back {
+    background-image: generate-icon-background("arrow-left", $fore-color-dark-dark, 'none', 2, 20);
+  }
+}

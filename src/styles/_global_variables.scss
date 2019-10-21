@@ -1,3 +1,7 @@
+// Variables for the link-back icon
+$fore-color-dark-light: #1F253D;
+$fore-color-dark-dark: #B4BCD9;
+
 :root {
   // Interface color palette
   --back-color: #F5F6FA;
@@ -5,20 +9,27 @@
   --fore-color: #404454;
   --fore-color-light: #575E7A;
   --fore-color-lighter: #666E8F;
-  --fore-color-dark: #1F253D;
+  --fore-color-dark: #{$fore-color-dark-light};
   --fore-color-darker: #060709;
+
+  // Scrollbar
+  --scrollbar-back-color: #D7DDF3;
+  --scrollbar-fore-color: #666E8F;
 }
 
 // Dark mode colors
 .page-container.dark {
-  // Interface color palette
   --back-color: #2A314C;
   --back-color-dark: #8993BE;
   --fore-color: #ABAFBF;
   --fore-color-light: #858CA8;
   --fore-color-lighter: #707899;
-  --fore-color-dark: #B4BCD9;
+  --fore-color-dark: #{$fore-color-dark-dark};
   --fore-color-darker: #FCFCFD;
+
+  // Scrollbar
+  --scrollbar-back-color: #434E76;
+  --scrollbar-fore-color: #707899;
 }
 
 // Layout breakpoints

@@ -1,0 +1,38 @@
+import {
+  Story,
+  Preview,
+  Props,
+  Source,
+  Description,
+  ColorPalette,
+  ColorItem,
+  Meta,
+} from '@storybook/addon-docs/blocks';
+import { Anchor } from 'atoms/anchor';
+
+# Anchor
+
+Anchor component for linking pages.
+
+## Props
+
+<Props of={Anchor} />
+
+## Source
+
+```jsx
+<Anchor 
+  link={
+    internal: false,
+    url: 'https://google.com',
+    rel: 'noopener noreferrer',
+    target: '_blank'
+  }
+>
+  Click me!
+</Anchor>
+```
+
+## Notes
+
+Internal links use Gatsby's [`<Link/>` component](https://www.gatsbyjs.org/docs/gatsby-link/).
