@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from 'atoms/card';
-import Anchor from 'atoms/anchor';
+import {Anchor} from 'atoms/anchor';
 import Expertise from 'atoms/expertise';
 import { Snippet as SnippetPropType } from 'proptypes';
 import { trimWhiteSpace } from 'functions/utils';

@@ -1,24 +1,2 @@
-// Colors
-:root {
-  --a-link-color: #0277bd;
-  --a-visited-color: #01579b;
-}
-
-// Dark mode colors
-.page-container.dark {
-  --a-link-color: #6DC7FD;
-  --a-visited-color: #5DB7FE;
-}
-
-a {
-  text-decoration: none;
-  &:link{
-    color: var(--a-link-color);
-  }
-  &:visited {
-    color: var(--a-visited-color);
-  }
-  &:hover, &:focus {
-    text-decoration: underline;
-  }
-}
+@import './regularAnchor';
+@import './linkBackAnchor';
