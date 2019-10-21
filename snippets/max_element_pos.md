@@ -12,6 +12,6 @@ def max_element_pos(arr):
   return arr.index(max(arr)) + 1
 ```
 
-```py
+```python
 max_element_pos([5, 8, 9, 7, 10, 3, 0]) # 5
 ```
