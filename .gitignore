@@ -100,10 +100,10 @@ yarn.lock
 public
 
 # Mac files
-<<<<<<< HEAD
-.DS_Store
-=======
 .DS_Store
 
 # Jest test results
 .storybook/jest-test-results.json
+
+# Overmind files
+.overmind.sock
