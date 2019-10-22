@@ -13,4 +13,8 @@ module.exports = {
   staticPartsPath: `src/static-parts`,
   // General information
   language: `js`,
+  // Requirable JSONs
+  requirables: [
+    `snippets.json`,
+  ],
 };
