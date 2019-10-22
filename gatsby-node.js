@@ -1,4 +1,6 @@
+
 const path = require(`path`);
+const {onCreateNode} = require(`./src/functions/build`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
 const toKebabCase = str =>
@@ -79,15 +81,4 @@ exports.createPages = ({ graphql, actions }) => {
   });
 };
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions;
-
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode });
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    });
-  }
-};
+exports.onCreateNode = onCreateNode;
