@@ -2,6 +2,7 @@ const path = require(`path`);
 const {
   onCreateNode,
   sourceNodes,
+  createResolvers,
 } = require(`./src/functions/build`);
 const config = require('./config');
 
@@ -92,3 +93,5 @@ exports.createPages = ({ graphql, actions }) => {
 exports.onCreateNode = onCreateNode;
 
 exports.sourceNodes = sourceNodes(requirables);
+
+exports.createResolvers = createResolvers;
