@@ -1,6 +1,8 @@
-
 const path = require(`path`);
-const {onCreateNode} = require(`./src/functions/build`);
+const {
+  onCreateNode,
+  sourceNodes,
+} = require(`./src/functions/build`);
 const config = require('./config');
 
 const requirables = [];
@@ -88,3 +90,5 @@ exports.createPages = ({ graphql, actions }) => {
 };
 
 exports.onCreateNode = onCreateNode;
+
+exports.sourceNodes = sourceNodes(requirables);
