@@ -1,7 +1,13 @@
 
 const path = require(`path`);
 const {onCreateNode} = require(`./src/functions/build`);
-const { createFilePath } = require(`gatsby-source-filesystem`);
+const config = require('./config');
+
+const requirables = [];
+
+config.requirables.forEach(fileName => {
+  requirables.push(require(`./snippet_data/${fileName}`));
+});
 
 const toKebabCase = str =>
   str &&
