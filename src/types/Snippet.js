@@ -10,6 +10,7 @@ export default `
     text: TextData
     archived: Boolean
     language: LanguageData
+    expertise: String
   }
 
   type HtmlData @infer {

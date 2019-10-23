@@ -1,5 +1,16 @@
 
 import { Snippet } from 'types';
+import { EXPERTISE_LEVELS } from 'shared';
+
+/**
+ * Given an array of tags, determine the expertise level.
+ */
+const determineExpertiseFromTags = tags =>
+  tags.reduce((expertise, tag) =>
+    EXPERTISE_LEVELS.includes(tag) ? tag : expertise,
+  EXPERTISE_LEVELS[1]
+  );
+
 /**
  * Extension point to tell plugins to source nodes.
  * Defines the custom Snippet type.
@@ -35,6 +46,7 @@ const sourceNodes = requirables => ({ actions, createNodeId, createContentDigest
         all: sNode.attributes.tags,
         primary: sNode.attributes.tags[0],
       },
+      expertise: determineExpertiseFromTags(sNode.attributes.tags),
       title: mNode.frontmatter.title,
       code: {
         src: sNode.attributes.codeBlocks.code,
