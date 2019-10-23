@@ -1,5 +1,6 @@
 import React from 'react';
-import Expertise, { EXPERTISE_LEVELS } from 'atoms/expertise';
+import { EXPERTISE_LEVELS } from 'shared';
+import Expertise from 'atoms/expertise';
 import { radios } from '@storybook/addon-knobs';
 import mdx from './docs.mdx';
 
