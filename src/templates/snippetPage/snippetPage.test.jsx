@@ -19,7 +19,10 @@ describe('<SnippetPage />', () => {
   const snippet = {
     title: 'compose',
     language: { short: 'js', long: 'JavaScript' },
-    tags: ['function', 'recursion'],
+    tags: {
+      primary: 'function',
+      all: ['function', 'recursion'],
+    },
     expertise: 'intermediate',
     descriptionHtml: '<p>Performs right-to-left function composition.</p>',
     explanationHtml: '<p> Use <code class="language-text"> Array.prototype.reduce()</code> to perform right-to-left function composition.\nThe last(rightmost) function can accept one or more arguments; the remaining functions must be unary.</p>',

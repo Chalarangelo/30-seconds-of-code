@@ -12,7 +12,10 @@ describe('<SnippetCard />', () => {
   const snippet = {
     title: 'compose',
     language: { short: 'js', long: 'JavaScript' },
-    tags: ['function', 'recursion'],
+    tags: {
+      primary: 'function',
+      all: ['function', 'recursion'],
+    },
     expertise: 'intermediate',
     descriptionHtml: '<p>Performs right-to-left function composition.</p>',
     explanationHtml: '<p> Use <code class="language-text"> Array.prototype.reduce()</code> to perform right-to-left function composition.\nThe last(rightmost) function can accept one or more arguments; the remaining functions must be unary.</p>',
@@ -83,7 +86,7 @@ describe('<SnippetCard />', () => {
   });
 
   it('should pass the tags data to the TagList component', () => {
-    expect(tagList.prop('tags')).toContain(...snippet.tags);
+    expect(tagList.prop('tags')).toContain(...snippet.tags.all);
   });
 
   it('should pass the language data to the TagList component', () => {

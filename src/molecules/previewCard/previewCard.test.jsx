@@ -11,7 +11,10 @@ describe('<PreviewCard />', () => {
   const snippet = {
     title: 'compose',
     language: 'JavaScript',
-    tags: ['function', 'recursion'],
+    tags: {
+      primary: 'function',
+      all: ['function', 'recursion'],
+    },
     expertise: 'intermediate',
     descriptionHtml: '<p>Performs right-to-left function composition.</p>',
     url: 'snippets/compose',
