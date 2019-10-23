@@ -21,7 +21,7 @@ const SnippetCard = ({
   <Card className={ trimWhiteSpace`snippet-card ${className}` } { ...rest } >
     <h4 className='card-title'>{ snippet.title }</h4>
     <Expertise level={ snippet.expertise } />
-    <TagList tags={ [snippet.language.long, ...snippet.tags] } />
+    <TagList tags={ [snippet.language.long, ...snippet.tags.all] } />
     <div
       className='card-description'
       dangerouslySetInnerHTML={ { __html: `${snippet.descriptionHtml} ${snippet.explanationHtml}` } }

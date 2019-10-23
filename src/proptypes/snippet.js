@@ -1,11 +1,12 @@
-import { shape, string, bool, arrayOf, oneOf } from 'prop-types';
+import { shape, string, bool, arrayOf, oneOf, checkPropTypes } from 'prop-types';
 import { EXPERTISE_LEVELS } from 'shared';
 import LanguagePropType from './language';
+import TagsPropType from './tags';
 
 export default shape({
   title: string,
   expertise: oneOf(EXPERTISE_LEVELS),
-  tags: arrayOf(string),
+  tags: TagsPropType,
   languge: LanguagePropType,
   descriptionHtml: string,
   explanationHtml: string,

@@ -32,7 +32,10 @@ export const component = () => {
     title: 'compose',
     description: 'Performs right-to-left function composition',
     language: {short: 'js', long: 'JavaScript'},
-    tags: ['function', 'recursion'],
+    tags: {
+      primary: 'function',
+      all: ['function', 'recursion'],
+    },
     expertise: 'intermediate',
     code: 'const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));',
   });

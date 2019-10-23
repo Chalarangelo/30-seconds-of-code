@@ -26,7 +26,10 @@ export const component = () => {
   const snippet = object('snippet', {
     title: 'compose',
     language: {short: 'js', long: 'JavaScript'},
-    tags: ['function', 'recursion'],
+    tags: {
+      primary: 'function',
+      all: ['function', 'recursion'],
+    },
     expertise: 'intermediate',
     code: 'const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));',
   });
