@@ -1,5 +1,5 @@
 import { shape, string, bool, arrayOf, oneOf } from 'prop-types';
-import { EXPERTISE_LEVELS } from 'atoms/expertise';
+import { EXPERTISE_LEVELS } from 'shared';
 import LanguagePropType from './language';
 
 export default shape({
