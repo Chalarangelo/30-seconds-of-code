@@ -1,22 +1,22 @@
 export default `
   type Snippet implements Node {
-    html: HtmlData
-    tags: TagData
-    title: String
-    code: CodeData
     id: String
     slug: String
     path: String
-    text: TextData
     archived: Boolean
-    language: LanguageData
+    title: String
+    tags: TagData
     expertise: String
+    html: HtmlData
+    code: CodeData
+    text: TextData
+    language: LanguageData
   }
 
   type HtmlData @infer {
     full: String
-    text: String
-    fullText: String
+    description: String
+    fullDescription: String
     code: String
     example: String
   }

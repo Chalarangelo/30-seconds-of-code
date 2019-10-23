@@ -16,7 +16,9 @@ describe('<PreviewCard />', () => {
       all: ['function', 'recursion'],
     },
     expertise: 'intermediate',
-    descriptionHtml: '<p>Performs right-to-left function composition.</p>',
+    html: {
+      description: '<p>Performs right-to-left function composition.</p>',
+    },
     url: 'snippets/compose',
   };
   let wrapper, card, expertise, anchor;
@@ -61,7 +63,7 @@ describe('<PreviewCard />', () => {
   });
 
   it('should render the correct description', () => {
-    expect(card.find('.card-description').html()).toContain(snippet.descriptionHtml);
+    expect(card.find('.card-description').html()).toContain(snippet.html.description);
   });
 
   it('should link to the correct url', () => {

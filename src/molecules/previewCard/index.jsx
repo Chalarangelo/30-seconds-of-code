@@ -23,7 +23,7 @@ const PreviewCard = ({
       <Expertise level={ snippet.expertise } />
       <div
         className='card-description'
-        dangerouslySetInnerHTML={ { __html: `${snippet.descriptionHtml}` } }
+        dangerouslySetInnerHTML={ { __html: `${snippet.html.description}` } }
       />
     </Card>
   </Anchor>
