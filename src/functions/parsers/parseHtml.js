@@ -73,12 +73,12 @@ const parseHtml = (
     language,
   }
 ) => {
-  const text = getTextualContent(str, true);
-  const fullText = getTextualContent(str, false);
+  const description = getTextualContent(str, true);
+  const fullDescription = getTextualContent(str, false);
   const codeBlocks = getCodeBlocks(str, language);
   return {
-    text,
-    fullText,
+    description,
+    fullDescription,
     code: `${optimizeAllNodes(codeBlocks.code)}`,
     example: `${optimizeAllNodes(codeBlocks.example)}`,
   };

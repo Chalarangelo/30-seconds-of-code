@@ -8,7 +8,6 @@ import Expertise from 'atoms/expertise';
 import CodeBlock from 'atoms/codeBlock';
 import { CopyButton } from 'atoms/button';
 import Toast from 'atoms/toast';
-import { Snippet as SnippetPropType } from 'proptypes';
 import { trimWhiteSpace } from 'functions/utils';
 import _ from 'lang';
 import { toggleDarkMode } from 'state/app';

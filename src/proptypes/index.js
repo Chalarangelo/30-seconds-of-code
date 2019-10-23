@@ -4,6 +4,7 @@ import Language from './language';
 import Meta from './meta';
 import Tags from './tags';
 import Code from './code';
+import Html from './html';
 
 export {
   Link,
@@ -11,5 +12,6 @@ export {
   Language,
   Meta,
   Tags,
-  Code
+  Code,
+  Html
 };

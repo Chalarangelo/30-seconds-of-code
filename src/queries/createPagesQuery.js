@@ -17,9 +17,8 @@ export default `
           html {
             code
             example
-            full
-            text
-            fullText
+            description
+            fullDescription
           }
           code {
             src

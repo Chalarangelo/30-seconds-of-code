@@ -24,7 +24,7 @@ const SnippetCard = ({
     <TagList tags={ [snippet.language.long, ...snippet.tags.all] } />
     <div
       className='card-description'
-      dangerouslySetInnerHTML={ { __html: `${snippet.descriptionHtml} ${snippet.explanationHtml}` } }
+      dangerouslySetInnerHTML={ { __html: `${snippet.html.fullDescription}` } }
     />
     <div className='card-source-content'>
       <CopyButton
@@ -42,13 +42,13 @@ const SnippetCard = ({
       />
       <CodeBlock
         language={ snippet.language }
-        htmlContent={ snippet.codeHtml }
+        htmlContent={ snippet.html.code }
         className='card-code'
       />
       <h5 className='card-example-title'>{ _l('Examples') }</h5>
       <CodeBlock
         language={ snippet.language }
-        htmlContent={ snippet.exampleHtml }
+        htmlContent={ snippet.html.example }
         className='card-example'
       />
     </div>
