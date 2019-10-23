@@ -5,7 +5,11 @@ const {
   createResolvers,
   createPages,
 } = require(`./src/functions/build`);
-const {createPagesQuery} = require(`./src/queries`);
+const {
+  createPagesQuery,
+  getLogoSrc,
+} = require(`./src/queries`);
+const { parseQueries } = require(`./src/functions/parsers`);
 const config = require('./config');
 
 const requirables = [];
@@ -19,7 +23,9 @@ const templates = {
   'TagPage': path.resolve(`./src/templates/tagPage/index.jsx`),
 };
 
-exports.createPages = createPages(createPagesQuery, templates);
+const pagesQuery = parseQueries(getLogoSrc, createPagesQuery);
+
+exports.createPages = createPages(pagesQuery, templates);
 
 exports.onCreateNode = onCreateNode;
 

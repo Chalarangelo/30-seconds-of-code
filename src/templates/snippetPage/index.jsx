@@ -13,10 +13,10 @@ const _l = _('en');
 const SnippetPage = ({
   pageContext: {
     snippet,
+    logoSrc,
   },
   lastPageTitle = 'Home',
   lastPageUrl = '/',
-  logoSrc = '',
   ...rest
 }) => {
   return (
@@ -55,13 +55,13 @@ SnippetPage.propTypes = {
   pageContext: PropTypes.shape({
     /** Snippet data for the card */
     snippet: SnippetPropType.isRequired,
+    /** URI for the logo image */
+    logoSrc: PropTypes.string.isRequired,
   }),
   /** Title of the last page */
   lastPageTitle: PropTypes.string.isRequired,
   /** URL of the last page */
   lastPageUrl: PropTypes.string.isRequired,
-  /** URI for the logo image */
-  logoSrc: PropTypes.string.isRequired,
 };
 
 export default connect(

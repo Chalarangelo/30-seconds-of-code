@@ -40,7 +40,7 @@ describe('<SnippetPage />', () => {
   beforeEach(() => {
     wrapper = mount(
       <Provider store={ createStore() }>
-        <SnippetPage pageContext={ { snippet } } logoSrc={ logoSrc } />
+        <SnippetPage pageContext={ { snippet, logoSrc } }/>
       </Provider>
     );
     shell = wrapper.find('Shell');
