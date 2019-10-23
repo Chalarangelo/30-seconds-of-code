@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { trimWhiteSpace } from 'functions/utils';
+import { EXPERTISE_LEVELS } from 'shared';
 import _ from 'lang';
 const _l = _('en');
-
-export const EXPERTISE_LEVELS = ['beginner', 'intermediate', 'advanced'];
 
 const Expertise = ({
   level = 'intermediate',

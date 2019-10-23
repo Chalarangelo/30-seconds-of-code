@@ -4,7 +4,8 @@ import Adapter from 'enzyme-adapter-react-16';
 import _ from 'lang';
 const _l = _('en');
 
-import Expertise, {EXPERTISE_LEVELS} from './index';
+import { EXPERTISE_LEVELS } from 'shared';
+import Expertise from './index';
 
 configure({ adapter: new Adapter() });
 
