@@ -11,42 +11,51 @@ import _ from 'lang';
 const _l = _('en');
 
 const SnippetPage = ({
-  snippet,
+  pageContext: {
+    snippet,
+  },
   lastPageTitle = 'Home',
   lastPageUrl = '/',
   logoSrc = '',
-}) => (
-  <>
-    <Meta
-      title={ snippet.title }
-      description={ snippet.description }
-      logoSrc={ logoSrc }
-    />
-    <Shell
-      logoSrc={ logoSrc }
-      isSearch={ false }
-      isList={ false }
-    >
-      <LinkBackAnchor
-        link={ {
-          url: lastPageUrl,
-          internal: true,
-        } }
-      >
-        { _l`Back to${lastPageTitle}` }
-      </LinkBackAnchor>
-      <SnippetCard
-        snippet={ snippet }
-        toastContainer='toast-container'
+  ...rest
+}) => {
+  return (
+    <>
+      <Meta
+        title={ snippet.title }
+        description={ snippet.description }
+        logoSrc={ logoSrc }
       />
-      <div id="toast-container"/>
-    </Shell>
-  </>
-);
+      <Shell
+        logoSrc={ logoSrc }
+        isSearch={ false }
+        isList={ false }
+      >
+        <LinkBackAnchor
+          link={ {
+            url: lastPageUrl,
+            internal: true,
+          } }
+        >
+          { _l`Back to${lastPageTitle}` }
+        </LinkBackAnchor>
+        <SnippetCard
+          snippet={ snippet }
+          toastContainer='toast-container'
+        />
+        <div id="toast-container"/>
+      </Shell>
+    </>
+  )
+  ;
+};
 
 SnippetPage.propTypes = {
-  /** Snippet data for the card */
-  snippet: SnippetPropType.isRequired,
+  /** pageContext is passed from Gatsby to the page */
+  pageContext: PropTypes.shape({
+    /** Snippet data for the card */
+    snippet: SnippetPropType.isRequired,
+  }),
   /** Title of the last page */
   lastPageTitle: PropTypes.string.isRequired,
   /** URL of the last page */
