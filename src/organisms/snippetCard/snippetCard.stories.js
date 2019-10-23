@@ -31,7 +31,10 @@ export const component = () => {
       all: ['function', 'recursion'],
     },
     expertise: 'intermediate',
-    code: 'const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));',
+    code: {
+      src: 'const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));',
+      example: '',
+    },
   });
 
   return (

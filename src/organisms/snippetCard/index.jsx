@@ -28,7 +28,7 @@ const SnippetCard = ({
     />
     <div className='card-source-content'>
       <CopyButton
-        text={ snippet.code }
+        text={ snippet.code.src }
         onCopy={ () => {
           const _toastContainer = document.getElementById(toastContainer);
           ReactDOM.render(
