@@ -7,7 +7,7 @@ const getTextualContent = (str, noExplain = false) => {
 };
 
 /** Gets the code blocks in a gatsby page */
-const getCodeBlocks = (str, language) => {
+const getCodeBlocks = str => {
   const regex = /<pre[.\S\s]*?<\/pre>/g;
   let results = [];
   let m = null;
@@ -19,7 +19,7 @@ const getCodeBlocks = (str, language) => {
     });
   }
   const replacer = new RegExp(
-    `<pre class="language-${language}"><code class="language-${language}">([\\s\\S]*?)</code></pre>`,
+    `<pre class="language-[^"]+"><code class="language-[^"]+">([\\s\\S]*?)</code></pre>`,
     'g'
   );
   results = results.map(v => v.replace(replacer, '$1').trim());
@@ -67,15 +67,10 @@ const optimizeAllNodes = html => {
   return output;
 };
 
-const parseHtml = (
-  str,
-  {
-    language,
-  }
-) => {
+const parseHtml = str => {
   const description = getTextualContent(str, true);
   const fullDescription = getTextualContent(str, false);
-  const codeBlocks = getCodeBlocks(str, language);
+  const codeBlocks = getCodeBlocks(str);
   return {
     description,
     fullDescription,

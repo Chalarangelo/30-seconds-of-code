@@ -16,7 +16,7 @@ const createResolvers = ({ createResolvers }) =>
           const html = await resolver(node, args);
           return {
             full: `${html}`,
-            ...parseHtml(html, 'js'),
+            ...parseHtml(html),
           };
         },
       },
