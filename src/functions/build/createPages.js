@@ -1,7 +1,7 @@
 /**
  * Creates individual snippet pages.
  */
-const createSnippetPages = (snippets, snippetPage, createPage) => {
+const createSnippetPages = (snippets, snippetPage, createPage, commonContext) => {
   snippets.forEach(snippet => {
     if (!snippet.node.archived) {
       createPage({
@@ -9,6 +9,7 @@ const createSnippetPages = (snippets, snippetPage, createPage) => {
         component: snippetPage,
         context: {
           snippet: snippet.node,
+          ...commonContext,
         },
       });
     } else {
@@ -17,6 +18,7 @@ const createSnippetPages = (snippets, snippetPage, createPage) => {
         component: snippetPage,
         context: {
           snippet: snippet.node,
+          ...commonContext,
         },
       });
     }
@@ -35,10 +37,15 @@ const createPages = (query, templates) => ({ graphql, actions }) => {
     .then(result => {
       if (result.errors) throw result.errors;
 
+      const commonContext = {
+        logoSrc: result.data.file.childImageSharp.original.src,
+      };
+
       createSnippetPages(
         result.data.allSnippet.edges,
         templates['SnippetPage'],
-        createPage
+        createPage,
+        commonContext
       );
 
       return null;
