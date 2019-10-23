@@ -28,6 +28,10 @@ const snippet = {
     primary: 'function',
     all: ['function', 'recursion']
   },
+  code: {
+    src: 'const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));',
+    example: '',
+  },
   expertise: 'intermediate',
   descriptionHtml: '<p>Performs right-to-left function composition.</p>',
   url: 'snippets/compose'
