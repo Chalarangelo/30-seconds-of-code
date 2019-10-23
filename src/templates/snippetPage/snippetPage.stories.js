@@ -40,7 +40,7 @@ export const component = () => {
   return (
     <Provider store={ createStore() }>
       <SnippetPage
-        snippet={ { ...snippet, ...snippetHTMLs } }
+        pageContext={ { snippet: { ...snippet, ...snippetHTMLs } } }
         logoSrc='/30s-icon.png'
       />
     </Provider>
