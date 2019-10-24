@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
-import { Meta as MetaPropType } from 'proptypes';
+import { Meta as MetaPropType } from 'typedefs';
 import _ from 'lang';
 
 require('index.scss'); // Do not change this to `import`, it's not going to work, no clue why

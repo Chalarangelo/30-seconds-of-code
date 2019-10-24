@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import { Link as LinkPropType } from 'proptypes';
+import { Link as LinkPropType } from 'typedefs';
 
 const Anchor = ({
   children,

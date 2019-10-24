@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import SnippetCard from 'organisms/snippetCard';
 import { LinkBackAnchor } from 'atoms/anchor';
 import Meta from 'atoms/meta';
-import { Snippet as SnippetPropType } from 'proptypes';
+import { Snippet as SnippetPropType } from 'typedefs';
 import PropTypes from 'prop-types';
 import 'index.scss';
 import Shell from 'organisms/shell';

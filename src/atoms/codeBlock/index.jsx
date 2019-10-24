@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Language as LanguagePropType } from 'proptypes';
+import { Language as LanguagePropType } from 'typedefs';
 import { trimWhiteSpace } from 'functions/utils';
 
 const CodeBlock = ({

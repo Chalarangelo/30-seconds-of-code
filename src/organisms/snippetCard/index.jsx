@@ -7,7 +7,7 @@ import Expertise from 'atoms/expertise';
 import CodeBlock from 'atoms/codeBlock';
 import { CopyButton } from 'atoms/button';
 import Toast from 'atoms/toast';
-import { Snippet as SnippetPropType } from 'proptypes';
+import { Snippet as SnippetPropType } from 'typedefs';
 import { trimWhiteSpace } from 'functions/utils';
 import _ from 'lang';
 const _l = _('en');
