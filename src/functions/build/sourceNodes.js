@@ -1,5 +1,5 @@
 
-import { Snippet } from 'types';
+import { Snippet } from 'typedefs';
 import { EXPERTISE_LEVELS } from 'shared';
 
 /**
@@ -19,7 +19,7 @@ const determineExpertiseFromTags = tags =>
 const sourceNodes = requirables => ({ actions, createNodeId, createContentDigest, getNodesByType }) => {
   const { createTypes, createNode } = actions;
 
-  const typeDefs = Snippet;
+  const typeDefs = `${Snippet}`;
   createTypes(typeDefs);
 
   const markdownNodes = getNodesByType('MarkdownRemark');

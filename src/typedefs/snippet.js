@@ -1,16 +1,49 @@
-import { shape, string, bool, arrayOf, oneOf, checkPropTypes } from 'prop-types';
+import { shape, string, oneOf } from 'prop-types';
 import { EXPERTISE_LEVELS } from 'shared';
-import LanguagePropType from './language';
-import TagsPropType from './tags';
-import CodePropType from './code';
-import HtmlPropType from './html';
+import {
+  Html,
+  Code,
+  Tags,
+  Language
+} from './index';
 
-export default shape({
+const Snippet = shape({
   title: string,
   expertise: oneOf(EXPERTISE_LEVELS),
-  tags: TagsPropType,
-  languge: LanguagePropType,
-  code: CodePropType,
-  html: HtmlPropType,
+  tags: Tags,
+  languge: Language,
+  code: Code,
+  html: Html,
   url: string,
 });
+
+Snippet.toString = () => `
+  type Snippet implements Node {
+    title: String
+    expertise: String
+    tags: TagData
+    language: LanguageData
+    code: CodeData
+    html: HtmlData
+    slug: String
+    id: String
+    path: String
+    archived: Boolean
+    text: TextData
+  }
+
+  ${Html}
+
+  ${Code}
+
+  type TextData @infer {
+    full: String
+    short: String
+  }
+
+  ${Tags}
+
+  ${Language}
+`;
+
+export default Snippet;

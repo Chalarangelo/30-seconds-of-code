@@ -1,6 +1,15 @@
 import { shape, string, arrayOf } from 'prop-types';
 
-export default shape({
+const Tags = shape({
   primary: string,
   all: arrayOf(string),
 });
+
+Tags.toString = () => `
+type TagData @infer {
+  primary: String
+  all: [String]
+}
+`;
+
+export default Tags;
