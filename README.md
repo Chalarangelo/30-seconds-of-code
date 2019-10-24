@@ -7519,7 +7519,7 @@ Use `Array.prototype.reduce()` to convert the filtered/picked keys back to an ob
 
 ```js
 const pick = (obj, arr) =>
-  arr.reduce((acc, curr) => (curr in obj && (acc[curr] = obj[curr]), acc), {});
+  arr.reduce((acc, curr) => (curr in obj && obj.hasOwnProperty(curr) && (acc[curr] = obj[curr]), acc), {});
 ```
 
 <details>
