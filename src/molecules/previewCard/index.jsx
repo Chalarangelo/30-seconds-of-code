@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Card from 'atoms/card';
 import {Anchor} from 'atoms/anchor';
 import Expertise from 'atoms/expertise';
-import { Snippet as SnippetPropType } from 'proptypes';
+import { Snippet as SnippetPropType } from 'typedefs';
 import { trimWhiteSpace } from 'functions/utils';
 
 const PreviewCard = ({
