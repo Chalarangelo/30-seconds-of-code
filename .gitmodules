@@ -1,0 +1,3 @@
+[submodule "content/sources/30python"]
+	path = content/sources/30python
+	url = https://github.com/30-seconds/30-seconds-of-python
