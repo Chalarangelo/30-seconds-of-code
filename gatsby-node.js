@@ -15,7 +15,7 @@ const config = require('./config');
 const requirables = [];
 
 config.requirables.forEach(fileName => {
-  requirables.push(require(`./snippet_data/${fileName}`));
+  requirables.push(require(`./content/sources/30python/snippet_data/${fileName}`));
 });
 
 const templates = {

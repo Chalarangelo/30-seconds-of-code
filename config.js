@@ -6,13 +6,13 @@ module.exports = {
   repositoryUrl: `https://github.com/30-seconds/30-seconds-starter`,
   siteUrl: `https://30secondsofcode.org`,
   // Path information
-  snippetPath: `snippets`,
-  snippetDataPath: `snippet_data`,
+  snippetPath: `content/sources/30python/snippets`,
+  snippetDataPath: `content/sources/30python/snippet_data`,
   assetPath: `assets`,
   pagePath: `src/docs/pages`,
   staticPartsPath: `src/static-parts`,
   // General information
-  language: `js`,
+  language: `py`,
   // Requirable JSONs
   requirables: [
     `snippets.json`,
