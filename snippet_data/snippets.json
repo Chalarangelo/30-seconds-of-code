@@ -714,11 +714,11 @@
       }
     },
     {
-      "id": "initialiaze_2d_list",
+      "id": "initialize_2d_list",
       "title": "initialize_2d_list",
       "type": "snippet",
       "attributes": {
-        "fileName": "initialiaze_2d_list.md",
+        "fileName": "initialize_2d_list.md",
         "text": "Initializes a 2D list of given width and height and value.\n\nUse list comprehension and `range()` to generate `h` rows where each is a list with length `h`, initialized with `val`.\nIf `val` is not provided, default to `None`.\n\n",
         "codeBlocks": {
           "code": "def initialize_2d_list(w,h, val = None):\n  return [[val for x in range(w)] for y in range(h)]",
