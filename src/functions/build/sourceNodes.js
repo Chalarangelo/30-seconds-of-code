@@ -26,13 +26,19 @@ const sourceNodes = requirables => ({ actions, createNodeId, createContentDigest
 
   const snippetNodes = requirables
     .reduce((acc, sArr) => {
-      const archivedScope = false;
+      const commonData = {
+        archived: false,
+        language: sArr.meta.language,
+      };
       return ({
         ...acc,
         ...sArr.data.reduce((snippets, snippet) => {
           return ({
             ...snippets,
-            [snippet.id]: { ...snippet, archived: archivedScope },
+            [snippet.id]: {
+              ...snippet,
+              ...commonData,
+            },
           });
         }, {}),
       });
@@ -59,10 +65,7 @@ const sourceNodes = requirables => ({ actions, createNodeId, createContentDigest
         short: sNode.attributes.text.slice(0, sNode.attributes.text.indexOf('\n\n')),
       },
       archived: sNode.archived,
-      language: {
-        long: 'JavaScript', // TODO
-        short: 'js',
-      },
+      language: sNode.language,
     };
     createNode({
       id: createNodeId(`snippet-${sNode.meta.hash}`),
