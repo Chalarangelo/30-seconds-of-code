@@ -9,14 +9,10 @@ const {
   createPagesQuery,
   getLogoSrc,
 } = require(`./src/queries`);
-const { parseQueries } = require(`./src/functions/parsers`);
+const { parseQueries, parseRequirables } = require(`./src/functions/parsers`);
 const config = require('./config');
 
-const requirables = [];
-
-config.requirables.forEach(fileName => {
-  requirables.push(require(`./content/sources/30python/snippet_data/${fileName}`));
-});
+const requirables = parseRequirables(`${__dirname}/content`);
 
 const templates = {
   'SnippetPage': path.resolve(`./src/templates/snippetPage/index.jsx`),
