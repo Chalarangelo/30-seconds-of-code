@@ -23,6 +23,7 @@ export default `
           src
           example
         }
+        expertise
         language {
           long
           short
