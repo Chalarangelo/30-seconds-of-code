@@ -1,4 +1,6 @@
 /* eslint-disable */
+const { parseConfigs } = require('functions/parsers');
+
 const config = require('./config');
 
 module.exports = {
@@ -11,20 +13,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-resolve-src`,
     `gatsby-plugin-sitemap`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `snippets`,
-        path: `${__dirname}/${config.snippetPath}`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `snippet_data`,
-        path: `${__dirname}/${config.snippetDataPath}`,
-      },
-    },
+    ...parseConfigs(`${__dirname}/content`),
     {
       resolve: `gatsby-source-filesystem`,
       options: {

@@ -52,6 +52,7 @@
     "gatsby-transformer-json": "^2.2.2",
     "gatsby-transformer-remark": "^2.6.6",
     "gatsby-transformer-sharp": "^2.2.3",
+    "glob": "^7.1.5",
     "jest": "^24.9.0",
     "jest-environment-enzyme": "^7.1.1",
     "jest-enzyme": "^7.1.1",
