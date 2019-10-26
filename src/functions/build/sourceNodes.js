@@ -29,13 +29,15 @@ const sourceNodes = requirables => ({ actions, createNodeId, createContentDigest
       const commonData = {
         archived: false,
         language: sArr.meta.language,
+        sourceDir: sArr.meta.sourceDir,
+        slugPrefix: sArr.meta.slugPrefix,
       };
       return ({
         ...acc,
         ...sArr.data.reduce((snippets, snippet) => {
           return ({
             ...snippets,
-            [snippet.id]: {
+            [`${commonData.sourceDir}/${snippet.id}`]: {
               ...snippet,
               ...commonData,
             },
@@ -45,7 +47,7 @@ const sourceNodes = requirables => ({ actions, createNodeId, createContentDigest
     }, {});
 
   Object.entries(snippetNodes).forEach(([id, sNode]) => {
-    let mNode = markdownNodes.find(mN => mN.frontmatter.title === id);
+    let mNode = markdownNodes.find(mN => mN.fileAbsolutePath.includes(id));
     let nodeContent = {
       id,
       tags: {
@@ -58,7 +60,7 @@ const sourceNodes = requirables => ({ actions, createNodeId, createContentDigest
         src: sNode.attributes.codeBlocks.code,
         example: sNode.attributes.codeBlocks.example,
       },
-      slug: mNode.fields.slug,
+      slug: `/${sNode.slugPrefix}${mNode.fields.slug}`,
       path: mNode.fileAbsolutePath,
       text: {
         full: sNode.attributes.text,
