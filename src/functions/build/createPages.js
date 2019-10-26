@@ -3,25 +3,14 @@
  */
 const createSnippetPages = (snippets, snippetPage, createPage, commonContext) => {
   snippets.forEach(snippet => {
-    if (!snippet.node.archived) {
-      createPage({
-        path: `/snippet${snippet.node.slug}`,
-        component: snippetPage,
-        context: {
-          snippet: snippet.node,
-          ...commonContext,
-        },
-      });
-    } else {
-      createPage({
-        path: `/archive${snippet.node.slug}`,
-        component: snippetPage,
-        context: {
-          snippet: snippet.node,
-          ...commonContext,
-        },
-      });
-    }
+    createPage({
+      path: `${snippet.node.slug}`,
+      component: snippetPage,
+      context: {
+        snippet: snippet.node,
+        ...commonContext,
+      },
+    });
   });
 };
 
