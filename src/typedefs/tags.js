@@ -12,4 +12,6 @@ type TagData @infer {
 }
 `;
 
+Tags.typeName = `TagData`;
+
 export default Tags;

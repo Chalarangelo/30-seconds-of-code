@@ -19,6 +19,7 @@ const sourceNodes = (requirables, reducers) => ({ actions, createNodeId, createC
       const commonData = {
         archived: sArr.meta.isArchived,
         language: sArr.meta.language,
+        otherLanguages: sArr.meta.otherLanguages,
         sourceDir: sArr.meta.sourceDir,
         slugPrefix: sArr.meta.slugPrefix,
         reducer: sArr.meta.reducer,
