@@ -21,10 +21,10 @@ Snippet.toString = () => `
   type Snippet implements Node {
     title: String
     expertise: String
-    tags: TagData
-    language: LanguageData
-    code: CodeData
-    html: HtmlData
+    tags: ${Tags.typeName}
+    language: ${Language.typeName}
+    code: ${Code.typeName}
+    html: ${Html.typeName}
     slug: String
     id: String
     path: String
