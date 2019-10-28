@@ -9,10 +9,15 @@ const {
   createPagesQuery,
   getLogoSrc,
 } = require(`./src/queries`);
-const { parseQueries, parseRequirables } = require(`./src/functions/parsers`);
+const {
+  parseQueries,
+  parseRequirables,
+  parseReducers,
+} = require(`./src/functions/parsers`);
 const config = require('./config');
 
 const requirables = parseRequirables(`${__dirname}/content`);
+const reducers = parseReducers(`${__dirname}/content`);
 
 const templates = {
   'SnippetPage': path.resolve(`./src/templates/snippetPage/index.jsx`),
@@ -25,6 +30,6 @@ exports.createPages = createPages(pagesQuery, templates);
 
 exports.onCreateNode = onCreateNode;
 
-exports.sourceNodes = sourceNodes(requirables);
+exports.sourceNodes = sourceNodes(requirables, reducers);
 
 exports.createResolvers = createResolvers;
