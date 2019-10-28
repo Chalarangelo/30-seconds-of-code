@@ -7,3 +7,6 @@
 [submodule "content/sources/30code"]
 	path = content/sources/30code
 	url = https://github.com/30-seconds/30-seconds-of-code
+[submodule "content/sources/30css"]
+	path = content/sources/30css
+	url = https://github.com/30-seconds/30-seconds-of-css
