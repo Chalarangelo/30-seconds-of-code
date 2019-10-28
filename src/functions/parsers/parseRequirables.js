@@ -20,8 +20,16 @@ const parseRequirables = contentDirPath => {
     cfg.requirables.forEach(req => {
       glob.sync(`${contentDirPath}/sources/${cfg.dirName}/${req}`).forEach( file => {
         let reqJson = require( path.resolve( file ) );
+
+        const rdc = cfg.reducer ? cfg.reducer : 'stdReducer';
+        reqJson.meta.reducer = `${rdc}`;
+
+        const archived = !!cfg.isArchived;
+        reqJson.meta.archived = archived;
+        reqJson.meta.slugPrefix = archived ? `${cfg.slug}/a` : `${cfg.slug}/s`;
+
         reqJson.meta.sourceDir = `${cfg.dirName}/${cfg.snippetPath}`;
-        reqJson.meta.slugPrefix = `${cfg.slug}/s`;
+
         requirables.push( reqJson );
       });
     });
