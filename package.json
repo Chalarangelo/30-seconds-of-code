@@ -108,6 +108,7 @@
       "src"
     ],
     "testPathIgnorePatterns": [
+      "content/sources",
       ".cache",
       "public"
     ],

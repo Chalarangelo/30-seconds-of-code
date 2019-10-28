@@ -4,3 +4,6 @@
 [submodule "content/sources/30php"]
 	path = content/sources/30php
 	url = https://github.com/30-seconds/30-seconds-of-php
+[submodule "content/sources/30code"]
+	path = content/sources/30code
+	url = https://github.com/30-seconds/30-seconds-of-code
