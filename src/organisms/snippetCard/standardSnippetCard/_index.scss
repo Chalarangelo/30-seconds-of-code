@@ -1,0 +1,52 @@
+:root {
+  --example-title-color: #d3d3d3;
+}
+
+.snippet-card {
+
+  .expertise {
+    right: 2rem;
+  }
+
+  .tag-list {
+    margin: 0 0.125rem 0.5rem;
+  }
+
+  .card-source-content {
+    position: relative;
+    margin: 1.5rem -1rem 0;
+
+    .copy-btn {
+      position: absolute;
+      top: -2rem;
+      right: 1.5rem;
+    }
+
+    pre {
+      margin: 0;
+
+      &:first-of-type {
+        border-radius: 1.375rem 0 0 0;
+        padding-top: 2rem;
+      }
+
+      &:last-child {
+        border-radius: 0 0 0.25rem 0.25rem;
+        margin-bottom: -1rem;
+      }
+    }
+
+    .card-example-title {
+      padding: 0rem 1.5rem 0;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      background: var(--pre-back-color);
+      margin: 0;
+      color: var(--example-title-color);
+
+      + pre {
+        padding-top: 0.25rem;
+      }
+    }
+  }
+}
