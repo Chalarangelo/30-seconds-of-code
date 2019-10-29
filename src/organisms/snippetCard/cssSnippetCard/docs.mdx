@@ -1,0 +1,74 @@
+import {
+  Story,
+  Preview,
+  Props,
+  Source,
+  Description,
+  ColorPalette,
+  ColorItem,
+  Meta,
+} from '@storybook/addon-docs/blocks';
+import {CssSnippetCard} from 'organisms/snippetCard';
+
+# CssSnippetCard
+
+A card with a CSS snippet's information.
+
+## Props
+
+<Props of={CssSnippetCard} />
+
+## Source
+
+```jsx
+const snippet = {
+  id: 'snippet/compose',
+  title: 'compose',
+  language: { short: 'css', long: 'CSS' },
+  tags: {
+    primary: 'function',
+    all: ['function', 'recursion']
+  },
+  browserSupport: {
+    supportPercentage: 96.51,
+  },
+  code: {
+    src: 'const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));',
+    example: '',
+  },
+  expertise: 'intermediate',
+  url: 'snippets/compose'
+  html: {
+    description: '<p>Performs right-to-left function composition.</p>',
+    fullDescription: '<p>Performs right-to-left function composition.</p>\n<p> Use <code class="language-text"> Array.prototype.reduce()</code> to perform right-to-left function composition.\nThe last(rightmost) function can accept one or more arguments; the remaining functions must be unary.</p>',
+    htmlCode: '<span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">="</span>my-special-snippet<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Hi!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>',
+    cssCode: `<span class="token selector">.my-special-snippet</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>`,
+    jsCode: 'console.log("hello");',
+    browserSupport: '<ul><li><a href="https://caniuse.com/#feat=css-animation">https://caniuse.com/#feat=css-animation</a></li></ul>'
+  },
+  code: {
+    html: '<p class="my-special-snippet">Hi</p>',
+    css: `.my-special-snippet {
+      background: red;
+      color: white;
+    }`,
+    js: 'console.log("hello");',
+    scopedCss: `[data-scope="my-special-snippet"] .my-special-snippet {
+      background: red;
+      color: white;
+    }`,
+  },
+};
+
+<CssSnippetCard 
+  template="css" 
+  snippet={snippet} 
+/>
+```
+
+## See also
+
+- [Card](./?path=/story/atoms-card--component)
