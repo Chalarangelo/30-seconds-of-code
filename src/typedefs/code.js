@@ -9,7 +9,7 @@ const Code = oneOfType([
     html: string,
     css: string,
     js: string,
-    scopedCSS: string,
+    scopedCss: string,
   }),
 ]);
 
