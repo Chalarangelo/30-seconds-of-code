@@ -27,14 +27,27 @@ const createPages = (query, templates) => ({ graphql, actions }) => {
       if (result.errors) throw result.errors;
 
       const commonContext = {
-        logoSrc: result.data.file.childImageSharp.original.src,
+        logoSrc: result.data.logoSrc.childImageSharp.original.src,
       };
 
       createSnippetPages(
-        result.data.allSnippet.edges,
+        result.data.simpleSnippets.edges,
         templates['SnippetPage'],
         createPage,
-        commonContext
+        {
+          ...commonContext,
+          cardTemplate: 'standard',
+        }
+      );
+
+      createSnippetPages(
+        result.data.cssSnippets.edges,
+        templates['SnippetPage'],
+        createPage,
+        {
+          ...commonContext,
+          cardTemplate: 'css',
+        }
       );
 
       return null;
