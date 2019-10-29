@@ -1,6 +1,8 @@
 import {
   capitalize,
-  trimWhiteSpace
+  trimWhiteSpace,
+  optimizeNodes,
+  optimizeAllNodes
 } from './string';
 
 import {
@@ -10,5 +12,7 @@ import {
 export {
   capitalize,
   trimWhiteSpace,
+  optimizeNodes,
+  optimizeAllNodes,
   determineExpertiseFromTags
 };
