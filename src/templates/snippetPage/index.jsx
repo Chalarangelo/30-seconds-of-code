@@ -14,6 +14,7 @@ const SnippetPage = ({
   pageContext: {
     snippet,
     logoSrc,
+    cardTemplate,
   },
   lastPageTitle = 'Home',
   lastPageUrl = '/',
@@ -40,6 +41,7 @@ const SnippetPage = ({
           { _l`Back to${lastPageTitle}` }
         </LinkBackAnchor>
         <SnippetCard
+          cardTemplate={ cardTemplate }
           snippet={ snippet }
           toastContainer='toast-container'
         />
@@ -57,6 +59,8 @@ SnippetPage.propTypes = {
     snippet: SnippetPropType.isRequired,
     /** URI for the logo image */
     logoSrc: PropTypes.string.isRequired,
+    /** Card template for the snippet card of this page */
+    cardTemplate: PropTypes.string,
   }),
   /** Title of the last page */
   lastPageTitle: PropTypes.string.isRequired,

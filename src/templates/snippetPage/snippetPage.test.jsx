@@ -16,6 +16,7 @@ const createStore = () => reduxCreateStore(rootReducer);
 
 describe('<SnippetPage />', () => {
   const logoSrc = '/assets/logo.png';
+  const cardTemplate = 'standard';
   const snippet = {
     title: 'compose',
     language: { short: 'js', long: 'JavaScript' },
@@ -40,13 +41,13 @@ describe('<SnippetPage />', () => {
   beforeEach(() => {
     wrapper = mount(
       <Provider store={ createStore() }>
-        <SnippetPage pageContext={ { snippet, logoSrc } }/>
+        <SnippetPage pageContext={ { snippet, logoSrc, cardTemplate } }/>
       </Provider>
     );
     shell = wrapper.find('Shell');
     meta = wrapper.find('Meta');
     linkBack = wrapper.find('LinkBackAnchor');
-    snippetCard = wrapper.find('SnippetCard');
+    snippetCard = wrapper.find('SnippetCardWrapper');
   });
 
   describe('should render', () => {
@@ -85,6 +86,10 @@ describe('<SnippetPage />', () => {
 
   it('should pass a link to the LinkBackAnchor component', () => {
     expect(linkBack.prop('link')).not.toBe(undefined);
+  });
+
+  it('should pass the card template data to the SnippetCard component', () => {
+    expect(snippetCard.prop('cardTemplate')).toEqual(cardTemplate);
   });
 
   it('should pass the snippet data to the SnippetCard component', () => {
