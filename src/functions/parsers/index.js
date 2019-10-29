@@ -1,13 +1,13 @@
-import parseHtml from './parseHtml';
 import parseQueries from './parseQueries';
 import parseConfigs from './parseConfigs';
 import parseRequirables from './parseRequirables';
 import parseReducers from './parseReducers';
+import parseResolvers from './parseResolvers';
 
 export {
-  parseHtml,
   parseQueries,
   parseConfigs,
   parseRequirables,
-  parseReducers
+  parseReducers,
+  parseResolvers
 };

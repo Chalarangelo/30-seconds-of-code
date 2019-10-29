@@ -23,6 +23,7 @@ const sourceNodes = (requirables, reducers) => ({ actions, createNodeId, createC
         sourceDir: sArr.meta.sourceDir,
         slugPrefix: sArr.meta.slugPrefix,
         reducer: sArr.meta.reducer,
+        resolver: sArr.meta.resolver,
       };
       return ({
         ...acc,
@@ -42,6 +43,7 @@ const sourceNodes = (requirables, reducers) => ({ actions, createNodeId, createC
     let mNode = markdownNodes.find(mN => mN.fileAbsolutePath.includes(id));
     let reducer = reducers[sNode.reducer];
     let nodeContent = reducer(id, sNode, mNode);
+    nodeContent.resolver = sNode.resolver;
 
     createNode({
       id: createNodeId(`snippet-${sNode.meta.hash}`),
