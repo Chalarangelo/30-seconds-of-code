@@ -13,11 +13,13 @@ const {
   parseQueries,
   parseRequirables,
   parseReducers,
+  parseResolvers,
 } = require(`./src/functions/parsers`);
 const config = require('./config');
 
 const requirables = parseRequirables(`${__dirname}/content`);
 const reducers = parseReducers(`${__dirname}/content`);
+const resolvers = parseResolvers(`${__dirname}/content`);
 
 const templates = {
   'SnippetPage': path.resolve(`./src/templates/snippetPage/index.jsx`),
@@ -32,4 +34,4 @@ exports.onCreateNode = onCreateNode;
 
 exports.sourceNodes = sourceNodes(requirables, reducers);
 
-exports.createResolvers = createResolvers;
+exports.createResolvers = createResolvers(resolvers);

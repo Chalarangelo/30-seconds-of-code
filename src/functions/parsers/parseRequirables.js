@@ -24,6 +24,9 @@ const parseRequirables = contentDirPath => {
         const rdc = cfg.reducer ? cfg.reducer : 'stdReducer';
         reqJson.meta.reducer = `${rdc}`;
 
+        const rsv = cfg.resolver ? cfg.resolver : 'stdResolver';
+        reqJson.meta.resolver = `${rsv}`;
+
         const archived = !!cfg.isArchived;
         reqJson.meta.archived = archived;
         reqJson.meta.slugPrefix = archived ? `${cfg.slug}/a` : `${cfg.slug}/s`;

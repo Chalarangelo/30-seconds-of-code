@@ -1,11 +1,9 @@
-import { parseHtml } from 'functions/parsers';
-
 /**
  * Add custom field resolvers to the GraphQL schema.
  * Used to resolve the HTML parts of the Snippet nodes
  * asynchronously from the MarkdownRemark nodes.
  */
-const createResolvers = ({ createResolvers }) =>
+const createResolvers = resolvers => ({ createResolvers }) =>
   createResolvers({
     Snippet: {
       html: {
@@ -16,7 +14,7 @@ const createResolvers = ({ createResolvers }) =>
           const html = await resolver(node, args);
           return {
             full: `${html}`,
-            ...parseHtml(html),
+            ...resolvers[source.resolver](html),
           };
         },
       },
