@@ -16,7 +16,7 @@
     position: relative;
     margin: 1.5rem -1rem 0;
 
-    .copy-btn {
+    .copy-btn, .codepen-btn {
       position: absolute;
       top: -2rem;
       right: 1.5rem;
@@ -27,13 +27,16 @@
 
       &:first-of-type {
         border-radius: 1.375rem 0 0 0;
-        padding-top: 2rem;
       }
 
       &:last-child {
         border-radius: 0 0 0.25rem 0.25rem;
         margin-bottom: -1rem;
       }
+    }
+
+    .card-code + .card-code {
+      border-top: 1px solid var(--pre-decorator-color);
     }
 
     .card-example-title {
@@ -46,6 +49,13 @@
 
       + pre {
         padding-top: 0.25rem;
+      }
+    }
+
+    .card-example {
+
+      &::before {
+        display: none;
       }
     }
   }
