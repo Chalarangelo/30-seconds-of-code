@@ -5,10 +5,11 @@ import Card from 'atoms/card';
 import TagList from 'molecules/tagList';
 import Expertise from 'atoms/expertise';
 import CodeBlock from 'atoms/codeBlock';
-import { CopyButton } from 'atoms/button';
+import { CopyButton, CodepenButton } from 'atoms/button';
 import Toast from 'atoms/toast';
 import { Snippet as SnippetPropType } from 'typedefs';
 import { trimWhiteSpace } from 'functions/utils';
+import { JSX_SNIPPET_PRESETS } from 'shared';
 import _ from 'lang';
 const _l = _('en');
 
@@ -27,19 +28,42 @@ const SnippetCard = ({
       dangerouslySetInnerHTML={ { __html: `${snippet.html.fullDescription}` } }
     />
     <div className='card-source-content'>
-      <CopyButton
-        text={ snippet.code.src }
-        onCopy={ () => {
-          const _toastContainer = document.getElementById(toastContainer);
-          ReactDOM.render(
-            <Toast message='Snippet copied to clipboard!'/>,
-            _toastContainer
-          );
-          setTimeout(() => {
-            ReactDOM.unmountComponentAtNode(_toastContainer);
-          }, 2000);
-        } }
-      />
+      {
+        snippet.language.otherLanguages
+          ? (
+            <CodepenButton
+              jsCode={ `${snippet.code.src}\n\n${snippet.code.example}` }
+              htmlCode={ JSX_SNIPPET_PRESETS.envHtml }
+              cssCode={ snippet.code.style }
+              jsPreProcessor={ JSX_SNIPPET_PRESETS.jsPreProcessor }
+              jsExternal={ JSX_SNIPPET_PRESETS.jsImports }
+            />
+          )
+          : (
+            <CopyButton
+              text={ snippet.code.src }
+              onCopy={ () => {
+                const _toastContainer = document.getElementById(toastContainer);
+                ReactDOM.render(
+                  <Toast message='Snippet copied to clipboard!'/>,
+                  _toastContainer
+                );
+                setTimeout(() => {
+                  ReactDOM.unmountComponentAtNode(_toastContainer);
+                }, 2000);
+              } }
+            />
+          )
+      }
+      {
+        snippet.code.style ? (
+          <CodeBlock
+            language={ snippet.language.otherLanguages[0] }
+            htmlContent={ snippet.html.style }
+            className='card-code'
+          />
+        ) : null
+      }
       <CodeBlock
         language={ snippet.language }
         htmlContent={ snippet.html.code }
