@@ -1,0 +1,31 @@
+import {
+  Story,
+  Preview,
+  Props,
+  Source,
+  Description,
+  ColorPalette,
+  ColorItem,
+  Meta,
+} from '@storybook/addon-docs/blocks';
+import { CodepenButton } from 'atoms/button';
+
+# CodepenButton
+
+A button that opens an editable CodePen with the supplied content.
+
+## Props
+
+<Props of={CodepenButton} />
+
+## Source
+
+```jsx
+<CodepenButton 
+  htmlCode='<p class="my-special-snippet">Hello, this is white on red.</p>'
+  cssCode={`.my-special-snippet {
+    background: red;
+    color: white;
+  }`}
+/>
+```

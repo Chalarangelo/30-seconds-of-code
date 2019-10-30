@@ -62,4 +62,8 @@
   @if $icon-name == "list" {
     @return url("data:image/svg+xml,%3Csvg width='"+$size+"' height='"+$size+"' viewBox='0 0 24 24' fill='"+$fill+"' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 6h13M7 12h13M7 18h13M3 6h.01M3 12h.01M3 18h.01' stroke='"+$stroke+"' stroke-width='"+$stroke-width+"' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   }
+
+  @if $icon-name == "codepen" {
+    @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='"+$size+"' height='"+$size+"' viewBox='0 0 24 24' fill='"+$fill+"' stroke='"+$stroke+"' stroke-width='"+$stroke-width+"' stroke-linecap='round' stroke-linejoin='round' class='feather feather-codepen'%3E%3Cpath d='M12 2l10 6.5v7L12 22 2 15.5v-7L12 2zM12 22v-6.5'/%3E%3Cpath d='M22 8.5l-10 7-10-7'/%3E%3Cpath d='M2 15.5l10-7 10 7M12 2v6.5'/%3E%3C/svg%3E");
+  }
 }

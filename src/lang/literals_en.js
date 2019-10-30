@@ -13,4 +13,5 @@ export default {
   'Examples': 'Examples',
   'Back to': pageTitle => `Back to ${capitalize(pageTitle, true)}`,
   'Browser support': 'Browser support',
+  'Edit on CodePen': 'Edit on CodePen',
 };
