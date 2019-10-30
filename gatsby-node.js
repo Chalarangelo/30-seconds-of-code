@@ -1,4 +1,3 @@
-const path = require(`path`);
 const {
   onCreateNode,
   sourceNodes,
@@ -14,18 +13,14 @@ const {
   parseRequirables,
   parseReducers,
   parseResolvers,
+  parseTemplates,
 } = require(`./src/functions/parsers`);
 const config = require('./config');
 
 const requirables = parseRequirables(config.contentPath);
 const reducers = parseReducers(config.contentPath);
 const resolvers = parseResolvers(config.contentPath);
-
-const templates = {
-  'SnippetPage': path.resolve(`./src/templates/snippetPage/index.jsx`),
-  'TagPage': path.resolve(`./src/templates/tagPage/index.jsx`),
-};
-
+const templates = parseTemplates(config.templates, config.templatesPath);
 const pagesQuery = parseQueries(getLogoSrc, createPagesQuery);
 
 exports.createPages = createPages(pagesQuery, templates);
