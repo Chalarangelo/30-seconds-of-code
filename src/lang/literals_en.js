@@ -12,4 +12,5 @@ export default {
   'Copy to clipboard': 'Copy to clipboard',
   'Examples': 'Examples',
   'Back to': pageTitle => `Back to ${capitalize(pageTitle, true)}`,
+  'Browser support': 'Browser support',
 };
