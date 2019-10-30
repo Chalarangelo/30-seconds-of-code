@@ -1,0 +1,14 @@
+.snippet-preview-title {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 2.25;
+  margin: 0.5rem;
+  color: var(--card-fore-color-light);
+}
+
+.snippet-preview {
+  transition: 0.3s ease all;
+  background:var(--back-color);
+  border-radius: .25rem;
+  padding: 1.375rem 1.25rem .75rem;
+}
