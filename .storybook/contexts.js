@@ -4,7 +4,6 @@ const PageWrapper = ({
   theme,
   children
 }) => {
-  // TODO: Move these styles to an organism(?) later down the line, just use the class here
   const style = {
     display: 'flex',
     justifyContent: 'center',

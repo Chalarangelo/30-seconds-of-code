@@ -12,7 +12,7 @@ const Button = ({
   <button
     className={ trimWhiteSpace`btn ${className}` }
     onClick={ onClick }
-    { ...rest } // TODO: Clean this up
+    { ...rest }
   >
     { children }
   </button>
