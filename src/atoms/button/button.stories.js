@@ -1,9 +1,15 @@
 import React from 'react';
-import { Button, CopyButton, AnchorButton } from 'atoms/button';
+import {
+  Button,
+  CopyButton,
+  AnchorButton,
+  CodepenButton
+} from 'atoms/button';
 import { text, boolean } from '@storybook/addon-knobs';
 import regularButtonMdx from './regularButton/docs.mdx';
 import copyButtonMdx from './copyButton/docs.mdx';
 import anchorButtonMdx from './anchorButton/docs.mdx';
+import codepenButtonMdx from './codepenButton/docs.mdx';
 
 export default {
   title: 'Atoms|Button',
@@ -42,6 +48,28 @@ copyButton.story = {
     },
     jest: [
       'copyButton',
+    ],
+  },
+};
+
+export const codepenButton = () => {
+  return (
+    <CodepenButton
+      htmlCode='<p class="my-special-snippet">Hello, this is white on red.</p>'
+      cssCode={ `.my-special-snippet {
+      background: red;
+      color: white;
+    }` } />
+  );
+};
+codepenButton.story = {
+  component: CodepenButton,
+  parameters: {
+    docs: {
+      page: codepenButtonMdx,
+    },
+    jest: [
+      'codepenButton',
     ],
   },
 };

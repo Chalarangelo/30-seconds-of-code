@@ -1,0 +1,13 @@
+// Colors
+:root {
+}
+
+.btn.codepen-btn {
+  background-image: generate-icon-background("codepen", $button-fore-color);
+  background-color: var(--button-back-color-tertiary);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 44px;
+  height: 44px;
+  z-index: 10;
+}
