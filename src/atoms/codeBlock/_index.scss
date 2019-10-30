@@ -3,6 +3,7 @@
   --pre-fore-color: #e57373;
   --pre-back-color: #1e253d;
   --pre-selected-color: #041248;
+  --pre-decorator-color: #607d8b;
 
   --token-color-a: #7f99a5;   // Comments
   --token-color-b: #bdbdbd;   // Punctuation
@@ -15,6 +16,7 @@
 }
 
 pre {
+  position: relative;
   overflow: auto; // Responsiveness
   background: var(--pre-back-color);
   color: var(--pre-fore-color);
@@ -29,6 +31,20 @@ pre[class*="language-"] {
   overflow: auto;
   margin: 0.5rem 0;
   white-space: pre-wrap;
+}
+
+pre[data-code-language] {
+  padding-top: 2.375rem;
+  
+  &::before {
+    font-size: 0.875rem;
+    color: var(--pre-decorator-color);
+    position: absolute;
+    top: .625rem;
+    left: 1.5rem;
+    display: block;
+    content: attr(data-code-language);
+  }
 }
 
 .namespace {
