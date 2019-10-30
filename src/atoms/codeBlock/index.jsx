@@ -10,6 +10,7 @@ const CodeBlock = ({
   ...rest
 }) => (
   <pre
+    data-code-language={ language.long }
     className={ trimWhiteSpace`${`language-${language.short}`} ${className}` }
     dangerouslySetInnerHTML={ { __html: htmlContent } }
     { ...rest }
