@@ -1,0 +1,28 @@
+import {
+  Story,
+  Preview,
+  Props,
+  Source,
+  Description,
+  ColorPalette,
+  ColorItem,
+  Meta,
+} from '@storybook/addon-docs/blocks';
+import BrowserSupport from 'atoms/browserSupport';
+
+# BrowserSupport
+
+Renders the browser suppot of a snippet, along with any passed information.
+
+## Props
+
+<Props of={BrowserSupport} />
+
+## Source
+
+```jsx
+<BrowserSupport 
+  supportPercentage={96.51}
+  browserSupportHtml='<ul><li><a href="https://caniuse.com/#feat=css-animation">https://caniuse.com/#feat=css-animation</a></li></ul>'
+/>
+```
