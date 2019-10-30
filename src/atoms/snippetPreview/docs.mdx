@@ -1,0 +1,34 @@
+import {
+  Story,
+  Preview,
+  Props,
+  Source,
+  Description,
+  ColorPalette,
+  ColorItem,
+  Meta,
+} from '@storybook/addon-docs/blocks';
+import SnippetPreview from 'atoms/snippetPreview';
+
+# SnippetPreview
+
+A component that renders a live preview of a snippet with HTML, CSS and (optional) JS.
+
+## Props
+
+<Props of={SnippetPreview} />
+
+## Source
+
+```jsx
+<SnippetPreview 
+  scopeId='my-special-snippet'
+  scopedCss={`[data-scope="my-special-snippet"] { 
+    .my-special-snippet {
+      background: red;
+      color: white;
+    }
+  }`}
+  htmlCode='<p class="my-special-snippet">Hello, this is white on red.</p>'
+/>
+```
