@@ -6,6 +6,7 @@ const Html = oneOfType([
     description: string,
     fullDescription: string,
     code: string,
+    style: string,
     example: string,
   }),
   shape({
@@ -25,6 +26,7 @@ type HtmlData @infer {
   description: String
   fullDescription: String
   code: String
+  style: String
   example: String
   browserSupport: String
   htmlCode: String

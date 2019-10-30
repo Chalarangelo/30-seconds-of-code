@@ -4,6 +4,7 @@ const Code = oneOfType([
   shape({
     src: string,
     example: string,
+    style: string,
   }),
   shape({
     html: string,
@@ -17,6 +18,7 @@ Code.toString = () => `
 type CodeData @infer {
   src: String
   example: String
+  style: String
   html: String
   css: String
   js: String
