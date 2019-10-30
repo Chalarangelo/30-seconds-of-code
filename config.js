@@ -1,20 +1,23 @@
 module.exports = {
   // Project metadata
-  name: `30 seconds starter`,
-  description: `Kick off your next, great 30 seconds project with this starter.`,
+  name: `30 seconds of code`,
+  description: `Learn to code 30 seconds at a time.`,
   shortName: `30s`,
   repositoryUrl: `https://github.com/30-seconds/30-seconds-starter`,
   siteUrl: `https://30secondsofcode.org`,
   // Path information
-  snippetPath: `content/sources/30python/snippets`,
-  snippetDataPath: `content/sources/30python/snippet_data`,
   assetPath: `assets`,
   pagePath: `src/docs/pages`,
-  staticPartsPath: `src/static-parts`,
-  // General information
-  language: `py`,
-  // Requirable JSONs
-  requirables: [
-    `snippets.json`,
+  contentPath: `${__dirname}/content`,
+  templatesPath: `./src/templates`,
+  templates: [
+    {
+      name: `SnippetPage`,
+      path: `snippetPage/index.jsx`,
+    },
+    {
+      name: `TagPage`,
+      path: `tagPage/index.jsx`,
+    },
   ],
 };
