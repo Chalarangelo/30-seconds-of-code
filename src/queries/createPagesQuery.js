@@ -19,17 +19,23 @@ export default `
         html {
           code
           example
+          style
           description
           fullDescription
         }
         code {
           src
           example
+          style
         }
         expertise
         language {
           long
           short
+          otherLanguages {
+            short
+            long
+          }
         }
         archived
       }
