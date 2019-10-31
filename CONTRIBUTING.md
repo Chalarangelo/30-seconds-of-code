@@ -17,7 +17,7 @@ Here's what you can do to help:
 - **Snippet filenames** must correspond to the title of the snippet and to the function name. For example, if your snippet is titled `### awesome_snippet` the filename should be `awesome_snippet.md` and the function name should be `awesome_snippet`.
   - Use `snake_case`, not `kebab-case` or `camelCase`.
   - Avoid capitalization of words.
-  -  Please follow the (PEP8)[https://www.python.org/dev/peps/pep-0008/] guidelines.
+  -  Please follow the [PEP8](https://www.python.org/dev/peps/pep-0008/) guidelines.
 - **Snippet metadata** must be included in all snippets in the form of frontmatter.
   - All snippets must contain a title.
   - All snippets must contain tags, prefixed with `tags:` and separated by commas (optional spaces in-between).
