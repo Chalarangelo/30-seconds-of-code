@@ -161,7 +161,7 @@
     "no-proto": "error",
     "complexity": [
       "warn",
-      5
+      50
     ],
     "wrap-iife": [
       "error",

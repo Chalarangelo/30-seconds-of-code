@@ -9,7 +9,7 @@ const createResolvers = resolvers => ({ createResolvers }) =>
       html: {
         resolve: async(source, _, context, info) => {
           const resolver = info.schema.getType('MarkdownRemark').getFields()['html'].resolve;
-          const node = await context.nodeModel.nodeModel.nodeStore.getNodesByType('MarkdownRemark').filter(v => v.fileAbsolutePath.includes(source.id))[0];
+          const node = await context.nodeModel.getAllNodes({ type: 'MarkdownRemark' }).filter(v => v.fileAbsolutePath.includes(source.id))[0];
           const args = {}; // arguments passed to the resolver
           const html = await resolver(node, args);
           return {

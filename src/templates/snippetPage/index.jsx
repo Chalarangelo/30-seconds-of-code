@@ -5,7 +5,6 @@ import { LinkBackAnchor } from 'atoms/anchor';
 import Meta from 'atoms/meta';
 import { Snippet as SnippetPropType } from 'typedefs';
 import PropTypes from 'prop-types';
-import 'index.scss';
 import Shell from 'organisms/shell';
 import _ from 'lang';
 const _l = _('en');
@@ -18,7 +17,6 @@ const SnippetPage = ({
   },
   lastPageTitle = 'Home',
   lastPageUrl = '/',
-  ...rest
 }) => {
   return (
     <>
