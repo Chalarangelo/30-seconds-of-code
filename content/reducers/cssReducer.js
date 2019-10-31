@@ -16,6 +16,7 @@ export default (id, snippetNode, markdownNode) => {
       scopedCss: snippetNode.attributes.codeBlocks.scopedCss,
     },
     slug: `/${snippetNode.slugPrefix}${markdownNode.fields.slug}`,
+    url: `${snippetNode.repoUrlPrefix}${markdownNode.fields.slug.slice(0, -1)}.md`,
     path: markdownNode.fileAbsolutePath,
     text: {
       full: snippetNode.attributes.text,

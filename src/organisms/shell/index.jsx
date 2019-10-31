@@ -13,6 +13,7 @@ import { useMedia } from 'functions/hooks';
 import _ from 'lang';
 import { toggleDarkMode } from 'state/app';
 const _l = _('en');
+import config from '../../../config';
 
 // TODO: Handle special classNames for the search and list buttons
 // TODO: Handle default mode via media query
@@ -25,6 +26,7 @@ const Shell = ({
   withIcon = true,
   withTitle = true,
   logoSrc,
+  externalUrl = config.repositoryUrl,
   children,
 }) => {
   const darkModeEnabledInitially = useMedia(
@@ -63,7 +65,7 @@ const Shell = ({
           icon: 'github',
           link: {
             internal: false,
-            url: 'https://github.com/',
+            url: externalUrl,
             title: 'Snippet list',
             rel: 'noopener',
             target: '_blank',
@@ -121,6 +123,8 @@ Shell.propTypes = {
   withTitle: PropTypes.bool,
   /** URI for the logo image */
   logoSrc: PropTypes.string,
+  /** URL of the external resource to link to */
+  externalUrl: PropTypes.string,
 };
 
 export default connect(

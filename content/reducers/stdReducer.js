@@ -14,6 +14,7 @@ export default (id, snippetNode, markdownNode) => {
       example: snippetNode.attributes.codeBlocks.example,
     },
     slug: `/${snippetNode.slugPrefix}${markdownNode.fields.slug}`,
+    url: `${snippetNode.repoUrlPrefix}${markdownNode.fields.slug.slice(0, -1)}.md`,
     path: markdownNode.fileAbsolutePath,
     text: {
       full: snippetNode.attributes.text,
