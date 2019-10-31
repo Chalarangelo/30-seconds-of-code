@@ -16,6 +16,16 @@ const createSnippetPages = (snippets, snippetPage, createPage, commonContext) =>
   });
 };
 
+const createHomePage = (homePage, createPage, context) => {
+  createPage({
+    path: '/',
+    component: homePage,
+    context: {
+      ...context,
+    },
+  });
+};
+
 /**
  * Tell plugins to add pages.
  * Takes a query string and a templates object.
@@ -31,6 +41,14 @@ const createPages = (query, templates) => ({ graphql, actions }) => {
       const commonContext = {
         logoSrc: result.data.logoSrc.childImageSharp.original.src,
       };
+
+      createHomePage(
+        templates['HomePage'],
+        createPage,
+        {
+          ...commonContext,
+        }
+      );
 
       createSnippetPages(
         result.data.simpleSnippets.edges,
