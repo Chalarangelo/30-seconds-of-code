@@ -150,9 +150,9 @@
       "type": "snippet",
       "attributes": {
         "fileName": "camel.md",
-        "text": "Converts a string to camelcase.\n\nBreak the string into words and combine them capitalizing the first letter of each word, using a regexp, `title()` and `lower`.\n\n",
+        "text": "Converts a string to camelcase.\n\nUse `re.sub()` to replace any `-`,`_` or ` ` (space) with a space, using the regexp `r\"(_|-)+\"`.\nUse `title()` to capitalize the first letter of each word convert the rest to lowercase.\nFinally, use `replace()` to remove spaces between words.\n\n",
         "codeBlocks": {
-          "code": "import re\n\ndef camel(s):\n  s = re.sub(r\"(\\s|_|-)+\", \" \", s).title().replace(\" \", \"\")\n  return s[0].lower() + s[1:]",
+          "code": "import re\n\ndef camel(s):\n  s = re.sub(r\"(_|-)+\", \" \", s).title().replace(\" \", \"\")\n  return s[0].lower() + s[1:]",
           "example": "camel('some_database_field_name'); # 'someDatabaseFieldName'\ncamel('Some label that needs to be camelized'); # 'someLabelThatNeedsToBeCamelized'\ncamel('some-javascript-property'); # 'someJavascriptProperty'\ncamel('some-mixed_string with spaces_underscores-and-hyphens'); # 'someMixedStringWithSpacesUnderscoresAndHyphens'"
         },
         "tags": [
@@ -162,7 +162,7 @@
         ]
       },
       "meta": {
-        "hash": "60b308cb7f28b676fb122949d04ae07af0d4e0fcb96f037b3aa3c09be9b2e7ab"
+        "hash": "9df97be0166e2a4a90859e878f986c0adb539ac41b85aac9c05e4dd0999155b5"
       }
     },
     {
