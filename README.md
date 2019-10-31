@@ -52,6 +52,7 @@
 * [`intersection_by`](#intersection_by)
 * [`last`](#last)
 * [`longest_item`](#longest_item)
+* [`max_element_index`](#max_element_index)
 * [`max_n`](#max_n)
 * [`min_n`](#min_n)
 * [`most_frequent`](#most_frequent)
@@ -769,6 +770,28 @@ def longest_item(*args):
 longest_item('this', 'is', 'a', 'testcase') # 'testcase'
 longest_item([1, 2, 3], [1, 2], [1, 2, 3, 4, 5]) # [1, 2, 3, 4, 5]
 longest_item([1, 2, 3], 'foobar') # 'foobar'
+```
+</details>
+
+<br>[⬆ Back to top](#contents)
+
+### max_element_index
+
+Returns the pindex of the element with the maximum value in a list.
+
+Use `max()` and `list.index()` to get the maximum value in the list and return its index.
+
+```py
+def max_element_index(arr):
+  return arr.index(max(arr))
+```
+
+<details>
+<summary>Examples</summary>
+
+```py
+thon
+max_element_index([5, 8, 9, 7, 10, 3, 0]) # 4
 ```
 </details>
 
