@@ -31,6 +31,11 @@ const literals = {
   'Preview': 'Preview',
   'About us': 'About us',
   'Read more about us...': 'Read more about us...',
+  'Start typing a keyword to see matching snippets or ': 'Start typing a keyword to see matching snippets or ',
+  'click to view the whole list': 'click to view the whole list',
+  '.': '.',
+  'Click on a snippet card to view the snippet': 'Click on a snippet card to view the snippet',
+  'Start typing a keyword to see matching snippets.': 'Start typing a keyword to see matching snippets.',
 };
 
 export default literals;
