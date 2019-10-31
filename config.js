@@ -1,7 +1,8 @@
 module.exports = {
   // Project metadata
   name: `30 seconds of code`,
-  description: `Learn to code 30 seconds at a time.`,
+  description: `Short code snippets for all your development needs`,
+  author: '30-seconds',
   shortName: `30s`,
   repositoryUrl: `https://github.com/30-seconds/30-seconds-of-code`,
   siteUrl: `https://30secondsofcode.org`,
