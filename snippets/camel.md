@@ -5,7 +5,9 @@ tags: string,regexp,intermediate
 
 Converts a string to camelcase.
 
-Identify one or more groups containing the pattern with `-` or `_` using regexp `r"(_|-)+"` and replace the pattern with a `" "` (space literal) using `re.sub` method. Apply `title()` method on the obtained string to Capitalize the starting letter and lower the other letters of every word in the string. Finally, remove the spaces in the string using `replace()` method
+Use `re.sub()` to replace any `-`,`_` or ` ` (space) with a space, using the regexp `r"(_|-)+"`.
+Use `title()` to capitalize the first letter of each word convert the rest to lowercase.
+Finally, use `replace()` to remove spaces between words.
 
 ```py
 import re
