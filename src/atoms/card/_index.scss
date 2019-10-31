@@ -28,10 +28,6 @@
   backface-visibility: hidden;
   will-change: transform;
 
-  * {
-    transition: inherit;
-  }
-
   .card-title {
     font-size: 1.125rem;
     line-height: 1.375;

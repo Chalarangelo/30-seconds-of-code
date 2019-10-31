@@ -64,7 +64,7 @@ const Meta = ({
 
 Meta.propTypes = {
   /** Page title */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   /** Page description */
   description: PropTypes.string,
   /** Page locale (language) */
@@ -72,7 +72,7 @@ Meta.propTypes = {
   /** Metadata array */
   meta: PropTypes.arrayOf(MetaPropType),
   /** Page logo URI */
-  logoSrc: PropTypes.string.isRequired,
+  logoSrc: PropTypes.string,
 };
 
 export default Meta;

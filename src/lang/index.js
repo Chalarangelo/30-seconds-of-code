@@ -10,6 +10,7 @@ export default (lang = 'en') => {
     const key = Array.isArray(literalKey) ? literalKey.join('') : literalKey;
     if (typeof literals[key] === 'string') return literals[key];
     if (typeof literals[key] === 'function') return literals[key](...params);
+    if(typeof module !== 'undefined') console.warn(`Missing string literal: ${key}`);
     return key;
   };
 };

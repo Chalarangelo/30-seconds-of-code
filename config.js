@@ -3,7 +3,7 @@ module.exports = {
   name: `30 seconds of code`,
   description: `Learn to code 30 seconds at a time.`,
   shortName: `30s`,
-  repositoryUrl: `https://github.com/30-seconds/30-seconds-starter`,
+  repositoryUrl: `https://github.com/30-seconds/30-seconds-of-code`,
   siteUrl: `https://30secondsofcode.org`,
   // Path information
   assetPath: `assets`,
