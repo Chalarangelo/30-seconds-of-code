@@ -11,7 +11,7 @@ Loop for `max_length` times grouping elements.
 If lengths of `lists` vary, use `fill_value` (defaults to `None`). 
 
 ```py
-def zip(*args, fillvalue=None):
+def zip(*args, fill_value=None):
   max_length = max([len(lst) for lst in args])
   result = []
   for i in range(max_length):
