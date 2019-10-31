@@ -29,6 +29,7 @@ const SnippetPage = ({
         logoSrc={ logoSrc }
         isSearch={ false }
         isList={ false }
+        externalUrl={ snippet.url }
       >
         <LinkBackAnchor
           link={ {

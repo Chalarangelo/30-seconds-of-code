@@ -22,6 +22,7 @@ const sourceNodes = (requirables, reducers) => ({ actions, createNodeId, createC
         otherLanguages: sArr.meta.otherLanguages,
         sourceDir: sArr.meta.sourceDir,
         slugPrefix: sArr.meta.slugPrefix,
+        repoUrlPrefix: sArr.meta.repoUrlPrefix,
         reducer: sArr.meta.reducer,
         resolver: sArr.meta.resolver,
       };

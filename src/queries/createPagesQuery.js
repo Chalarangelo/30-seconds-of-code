@@ -7,6 +7,7 @@ export default `
       node {
         id
         slug
+        url
         tags {
           all
           primary
