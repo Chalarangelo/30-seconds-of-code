@@ -8,10 +8,13 @@ module.exports = {
   siteUrl: `https://30secondsofcode.org`,
   // Path information
   assetPath: `assets`,
-  pagePath: `src/docs/pages`,
   contentPath: `${__dirname}/content`,
   templatesPath: `./src/templates`,
   templates: [
+    {
+      name: `HomePage`,
+      path: `homePage/index.jsx`,
+    },
     {
       name: `SnippetPage`,
       path: `snippetPage/index.jsx`,
