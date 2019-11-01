@@ -1,6 +1,8 @@
 import React from 'react';
 import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import _ from 'lang';
+const _l = _('en');
 
 import NavButton from './index';
 
@@ -22,6 +24,10 @@ describe('<NavButton />', () => {
 
   it('should render with the correct icon class', () => {
     expect(wrapper).toContainMatchingElement(`a.nav-btn.${icon}`);
+  });
+
+  it('should render with the correct icon string literal', () => {
+    expect(wrapper.text()).toEqual(_l(`nav.${icon}`));
   });
 
   it('should link to the passed URL', () => {

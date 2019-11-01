@@ -9,10 +9,16 @@ const multiline = {
 const literals = {
   // Multiline literals
   'm': key => multiline[key],
-  // Site metadata - TODO: Use config
+  // Site metadata
   'site.title': config.name,
   'site.description': config.description,
   'site.author': config.author,
+  // Site navigation
+  'nav.search': 'Search',
+  'nav.list': 'List',
+  'nav.github': 'GitHub',
+  'nav.moon': 'Dark mode',
+  'nav.sun': 'Light mode',
   // Literals
   'Expertise': level => `Expertise: ${capitalize(level, true)}`,
   'Search snippets': 'Search snippets',
