@@ -1,3 +1,5 @@
+import { parseSnippetContext } from 'functions/parsers';
+
 /**
  * Creates individual snippet pages.
  */
@@ -7,7 +9,7 @@ const createSnippetPages = (snippets, snippetPage, createPage, commonContext) =>
       path: `${snippet.node.slug}`,
       component: snippetPage,
       context: {
-        snippet: snippet.node,
+        snippet: parseSnippetContext(snippet.node, commonContext.cardTemplate),
         ...commonContext,
       },
     });
