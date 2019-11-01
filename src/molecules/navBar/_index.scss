@@ -24,12 +24,11 @@
   }
   @media screen and (min-width: $layout-medium-breakpoint) and (orientation: landscape) {
     border-right: 1px solid var(--nav-bar-border-color);
-    padding-top: 17vh;
     height: 100vh;
     left: 0;
     width: 61px;
-  }
-  @media screen and (min-width: $layout-large-breakpoint) and (orientation: landscape) {
-    padding-top: 23.5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
