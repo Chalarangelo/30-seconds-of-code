@@ -2,7 +2,8 @@ import {
   capitalize,
   trimWhiteSpace,
   optimizeNodes,
-  optimizeAllNodes
+  optimizeAllNodes,
+  getURLParameters
 } from './string';
 
 import {
@@ -14,5 +15,6 @@ export {
   trimWhiteSpace,
   optimizeNodes,
   optimizeAllNodes,
-  determineExpertiseFromTags
+  determineExpertiseFromTags,
+  getURLParameters
 };
