@@ -46,6 +46,16 @@ const create404Page = (notFoundPage, createPage, context) => {
   });
 };
 
+const createSearchIndexPage = (searchPage, createPage, context) => {
+  createPage({
+    path: '/search_index',
+    component: searchPage,
+    context: {
+      ...context,
+    },
+  });
+};
+
 /**
  * Tell plugins to add pages.
  * Takes a query string and a templates object.
@@ -61,6 +71,8 @@ const createPages = (query, templates) => ({ graphql, actions }) => {
       const commonContext = {
         logoSrc: result.data.logoSrc.childImageSharp.original.src,
       };
+
+      const searchIndex = result.data.searchIndex;
 
       createHomePage(
         templates['HomePage'],
@@ -105,6 +117,14 @@ const createPages = (query, templates) => ({ graphql, actions }) => {
           cardTemplate: 'css',
         }
       );
+
+      createSearchIndexPage(
+        templates['SearchPage'],
+        createPage,
+        {
+          ...commonContext,
+          searchIndex,
+        });
 
       return null;
     });
