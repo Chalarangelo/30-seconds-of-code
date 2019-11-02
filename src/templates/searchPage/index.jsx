@@ -5,42 +5,23 @@ import Shell from 'organisms/shell';
 import { Anchor } from 'atoms/anchor';
 import PageBackdrop from 'molecules/pageBackdrop';
 import Search from 'atoms/search';
-import SimpleCard from 'molecules/simpleCard';
 import PropTypes from 'prop-types';
 import _ from 'lang';
 import PageSubtitle from 'atoms/pageSubtitle';
-import { startIndexFetch, finishIndexFetch, pushNewQuery } from 'state/search';
-import { getURLParameters } from 'functions/utils';
+import PreviewCard from 'molecules/previewCard';
+import { pushNewPage } from 'state/navigation';
 const _l = _('en');
 
 const SearchPage = ({
   pageContext: {
     logoSrc,
   },
-  dispatch,
-  searchIndex,
   searchQuery,
+  searchResults,
+  dispatch,
 }) => {
   React.useEffect(() => {
-    if(typeof window !== 'undefined' && typeof fetch !== 'undefined') {
-      dispatch(startIndexFetch());
-      fetch('/page-data/search_index/page-data.json')
-        .then(response => response.json())
-        .then(json => {
-          const searchIndex = json.result.pageContext.searchIndex.edges
-            .map(edge => edge.node)
-            .map(node => ({
-              title: node.title,
-              expertise: node.expertise,
-              primaryTag: node.tags.primary,
-              language: node.language,
-              html: node.html,
-              url: node.slug,
-            }));
-          dispatch(finishIndexFetch(searchIndex));
-        });
-    }
-    console.log(getURLParameters(window.location.href));
+    dispatch(pushNewPage('Search', '/search'));
   }, []);
 
   return (
@@ -57,18 +38,41 @@ const SearchPage = ({
         withIcon={ false }
         withTitle={ true }
       >
-        <Search
-          // setSearchQuery={ setSearchQuery }
-          // defaultValue={ props.searchQuery }
-        />
+        <Search />
         <PageSubtitle isLight>
           { _l('Click on a snippet card to view the snippet') }
         </PageSubtitle>
-        <PageBackdrop
-          graphicName='search-empty'
-          mainText={ _l('Start typing a keyword to see matching snippets.') }
-          mainTextClassName='search-page-text'
-        />
+        {
+          searchQuery.length === 0 ?
+            <PageBackdrop
+              graphicName='search-empty'
+              mainText={ _l('Start typing a keyword to see matching snippets.') }
+              mainTextClassName='search-page-text'
+            />
+            : searchResults.length === 0 ? (
+              <PageBackdrop
+                graphicName='search-no-results'
+                mainText={ (
+                  <>
+                    { _l('We couldn\'t find any results for the keyword ') }<strong>{ searchQuery }</strong>
+                  </>
+                ) }
+                mainTextClassName='search-page-text'
+              />
+            ) : (
+              <>
+                <PageSubtitle>
+                  { _l('Search results') }
+                </PageSubtitle>
+                { searchResults.map(snippet => (
+                  <PreviewCard
+                    key={ `snippet_${snippet.id}` }
+                    snippet={ snippet }
+                  />
+                )) }
+              </>
+            )
+        }
       </Shell>
     </>
   );
@@ -80,14 +84,18 @@ SearchPage.propTypes = {
     /** URI for the logo image */
     logoSrc: PropTypes.string.isRequired,
   }),
+  /** Search query */
+  searchQuery: PropTypes.string,
+  /** Search results */
+  searchResults: PropTypes.arrayOf(PropTypes.shape({})),
   /** Dispatch function of the Redux stotre */
   dispatch: PropTypes.func,
 };
 
 export default connect(
   state => ({
-    searchIndex: state.search.searchIndex,
     searchQuery: state.search.searchQuery,
+    searchResults: state.search.searchResults,
   }),
   null
 )(SearchPage);
