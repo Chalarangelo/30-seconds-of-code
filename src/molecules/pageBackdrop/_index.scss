@@ -1,0 +1,36 @@
+// Empty page text
+.page-backdrop-text {
+  transition: color 0.3s ease, background 0.3s ease;
+  text-align: center;
+  margin: 2.25rem auto 0.75rem;
+  max-width: 200px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--fore-color-darker);
+  font-weight: 400;
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    max-width: 400px;
+  }
+  @media screen and (min-width: $layout-large-breakpoint) {
+    font-size: 1.75rem;
+    line-height: 1.35;
+    margin: 2.25rem auto 1.375rem 1.25rem;
+  }
+}
+.page-backdrop-subtext {
+  transition: all 0.3s ease;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 200px;
+  color: var(--fore-color-darker);
+  margin: 0.5rem auto;
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    max-width: 256px;
+  }
+  @media screen and (min-width: $layout-large-breakpoint) {
+    font-size: 1.125rem;
+    line-height: 1.375;
+  }
+}
