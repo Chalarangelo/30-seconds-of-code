@@ -24,6 +24,10 @@ module.exports = {
       path: `searchPage/index.jsx`,
     },
     {
+      name: `NotFoundPage`,
+      path: `notFoundPage/index.jsx`,
+    },
+    {
       name: `TagPage`,
       path: `tagPage/index.jsx`,
     },
