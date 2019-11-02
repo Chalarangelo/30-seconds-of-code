@@ -15,8 +15,8 @@ const SnippetPage = ({
     logoSrc,
     cardTemplate,
   },
-  lastPageTitle = 'Home',
-  lastPageUrl = '/',
+  lastPageTitle,
+  lastPageUrl,
 }) => {
   return (
     <>
@@ -69,10 +69,8 @@ SnippetPage.propTypes = {
 
 export default connect(
   state => ({
-    isDarkMode: state.app.isDarkMode,
-    lastPageTitle: state.app.lastPageTitle,
-    lastPageUrl: state.app.lastPageUrl,
-    searchQuery: state.app.searchQuery,
+    lastPageTitle: state.navigation.lastPageTitle,
+    lastPageUrl: state.navigation.lastPageUrl,
   }),
   null
 )(SnippetPage);

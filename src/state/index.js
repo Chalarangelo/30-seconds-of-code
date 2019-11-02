@@ -1,4 +1,10 @@
 import { combineReducers } from 'redux';
-import app from './app';
+import shell from './shell';
+import search from './search';
+import navigation from './navigation';
 
-export default combineReducers({ app });
+export default combineReducers({
+  shell,
+  search,
+  navigation,
+});

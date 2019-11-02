@@ -11,7 +11,7 @@ import Toast from 'atoms/toast';
 import { trimWhiteSpace } from 'functions/utils';
 import { useMedia } from 'functions/hooks';
 import _ from 'lang';
-import { toggleDarkMode } from 'state/app';
+import { toggleDarkMode } from 'state/shell';
 const _l = _('en');
 import config from '../../../config';
 
@@ -129,10 +129,7 @@ Shell.propTypes = {
 
 export default connect(
   state => ({
-    isDarkMode: state.app.isDarkMode,
-    lastPageTitle: state.app.lastPageTitle,
-    lastPageUrl: state.app.lastPageUrl,
-    searchQuery: state.app.searchQuery,
+    isDarkMode: state.shell.isDarkMode,
   }),
   null
 )(Shell);
