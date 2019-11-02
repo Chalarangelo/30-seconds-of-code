@@ -26,6 +26,16 @@ const createHomePage = (homePage, createPage, context) => {
   });
 };
 
+const createSearchPage = (searchPage, createPage, context) => {
+  createPage({
+    path: '/search',
+    component: searchPage,
+    context: {
+      ...context,
+    },
+  });
+};
+
 /**
  * Tell plugins to add pages.
  * Takes a query string and a templates object.
@@ -44,6 +54,14 @@ const createPages = (query, templates) => ({ graphql, actions }) => {
 
       createHomePage(
         templates['HomePage'],
+        createPage,
+        {
+          ...commonContext,
+        }
+      );
+
+      createSearchPage(
+        templates['SearchPage'],
         createPage,
         {
           ...commonContext,
