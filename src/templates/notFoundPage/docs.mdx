@@ -1,0 +1,29 @@
+import {
+  Story,
+  Preview,
+  Props,
+  Source,
+  Description,
+  ColorPalette,
+  ColorItem,
+  Meta,
+} from '@storybook/addon-docs/blocks';
+import NotFoundPage from 'templates/notFoundPage';
+
+# NotFoundPage
+
+The template for the 404 page.
+
+## Props
+
+<Props of={NotFoundPage} />
+
+## Source
+
+```jsx
+const pageContext = {
+  logoSrc: '/30s-icon.png'
+}
+
+<NotFoundPage pageContext={pageContext} />
+```

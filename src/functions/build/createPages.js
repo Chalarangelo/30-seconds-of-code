@@ -36,6 +36,16 @@ const createSearchPage = (searchPage, createPage, context) => {
   });
 };
 
+const create404Page = (notFoundPage, createPage, context) => {
+  createPage({
+    path: '/404',
+    component: notFoundPage,
+    context: {
+      ...context,
+    },
+  });
+};
+
 /**
  * Tell plugins to add pages.
  * Takes a query string and a templates object.
@@ -62,6 +72,14 @@ const createPages = (query, templates) => ({ graphql, actions }) => {
 
       createSearchPage(
         templates['SearchPage'],
+        createPage,
+        {
+          ...commonContext,
+        }
+      );
+
+      create404Page(
+        templates['NotFoundPage'],
         createPage,
         {
           ...commonContext,

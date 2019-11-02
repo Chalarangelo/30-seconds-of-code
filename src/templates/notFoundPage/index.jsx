@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import Meta from 'atoms/meta';
 import Shell from 'organisms/shell';
 import { AnchorButton } from 'atoms/button';
@@ -18,7 +17,7 @@ const NotFoundPage = ({
     <>
       <Meta
         logoSrc={ logoSrc }
-        title='Page not found'
+        title={ _l('Page not found') }
       />
       <Shell
         logoSrc={ logoSrc }
@@ -27,7 +26,7 @@ const NotFoundPage = ({
         withIcon={ true }
         withTitle={ true }
       >
-        <PageTitle>404</PageTitle>
+        <PageTitle>{ _l('404') }</PageTitle>
         <PageBackdrop
           graphicName='page-not-found'
           mainText={ (
@@ -40,7 +39,7 @@ const NotFoundPage = ({
         >
           <AnchorButton
             link={ {
-              to: '/',
+              url: '/',
               internal: true,
             } }
             className='btn-home'
@@ -61,12 +60,4 @@ NotFoundPage.propTypes = {
   }),
 };
 
-export default connect(
-  state => ({
-    isDarkMode: state.app.isDarkMode,
-    lastPageTitle: state.app.lastPageTitle,
-    lastPageUrl: state.app.lastPageUrl,
-    searchQuery: state.app.searchQuery,
-  }),
-  null
-)(NotFoundPage);
+export default NotFoundPage;
