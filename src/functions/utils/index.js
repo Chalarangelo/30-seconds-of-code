@@ -10,11 +10,16 @@ import {
   determineExpertiseFromTags
 } from './array';
 
+import {
+  throttle
+} from './function';
+
 export {
   capitalize,
   trimWhiteSpace,
   optimizeNodes,
   optimizeAllNodes,
   determineExpertiseFromTags,
-  getURLParameters
+  getURLParameters,
+  throttle
 };
