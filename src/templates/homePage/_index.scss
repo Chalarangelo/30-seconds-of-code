@@ -50,21 +50,3 @@
     font-size: 1rem;
   }
 }
-
-.home-light-sub {
-  color: var(--fore-color-darker);
-  font-size: 1rem;
-  text-align: center;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
-  line-height: 2;
-  margin: .125rem 1.25rem 0;
-  
-  a {
-
-    &, &:link, &:visited {
-      color: inherit;
-      font-weight: 600;
-    }
-  }
-}
