@@ -1,7 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { createStore as reduxCreateStore } from 'redux';
-import rootReducer from 'state';
+import createStore from 'state';
 import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import _ from 'lang';
@@ -12,7 +11,7 @@ import SnippetPage from './index';
 configure({ adapter: new Adapter() });
 console.warn = jest.fn();
 
-const createStore = () => reduxCreateStore(rootReducer);
+const { store } = createStore();
 
 describe('<SnippetPage />', () => {
   const logoSrc = '/assets/logo.png';
@@ -40,7 +39,7 @@ describe('<SnippetPage />', () => {
 
   beforeEach(() => {
     wrapper = mount(
-      <Provider store={ createStore() }>
+      <Provider store={ store }>
         <SnippetPage pageContext={ { snippet, logoSrc, cardTemplate } }/>
       </Provider>
     );
