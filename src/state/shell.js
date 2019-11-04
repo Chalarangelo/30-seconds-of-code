@@ -1,6 +1,9 @@
+import cacheKey from '../../build/cacheKey';
+
 // Defalt state
 const initialState = {
   isDarkMode: undefined,
+  cacheKey,
 };
 
 // Actions

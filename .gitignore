@@ -107,3 +107,6 @@ public
 
 # Overmind files
 .overmind.sock
+
+# Build-time parameters
+build

@@ -67,6 +67,7 @@
     "react-helmet": "^5.2.1",
     "react-redux": "^7.1.0",
     "redux": "^4.0.4",
+    "redux-persist": "^6.0.0",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0"
   },
@@ -77,6 +78,8 @@
   ],
   "license": "MIT",
   "scripts": {
+    "prebuild": "./src/jobs/prepare_cache_key.sh",
+    "predevelop": "./src/jobs/prepare_cache_key.sh",
     "build": "NODE_PATH=src npx --node-arg '-r esm' gatsby build",
     "develop": "NODE_PATH=src npx --node-arg '-r esm' gatsby develop",
     "debug": "NODE_PATH=src npx --node-arg '-r esm --nolazy --inspect-brk' node_modules/.bin/gatsby develop",
