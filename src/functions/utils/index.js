@@ -3,7 +3,8 @@ import {
   trimWhiteSpace,
   optimizeNodes,
   optimizeAllNodes,
-  getURLParameters
+  getURLParameters,
+  getBaseURL
 } from './string';
 
 import {
@@ -21,5 +22,6 @@ export {
   optimizeAllNodes,
   determineExpertiseFromTags,
   getURLParameters,
+  getBaseURL,
   throttle
 };
