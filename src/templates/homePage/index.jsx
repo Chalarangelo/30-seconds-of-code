@@ -1,10 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import Meta from 'atoms/meta';
 import Shell from 'organisms/shell';
 import { Anchor } from 'atoms/anchor';
 import Search from 'atoms/search';
 import SimpleCard from 'molecules/simpleCard';
+import SearchResults from 'organisms/searchResults';
 import PropTypes from 'prop-types';
 import _ from 'lang';
 const _l = _('en');
@@ -13,8 +13,6 @@ const HomePage = ({
   pageContext: {
     logoSrc,
   },
-  searchIndex,
-  searchQuery,
 }) => {
   return (
     <>
@@ -42,19 +40,8 @@ const HomePage = ({
         <p className='home-sub-title'>
           { _l('site.description') }
         </p>
-        <Search />
-        <p className='home-light-sub'>
-          { _l('Start typing a keyword to see matching snippets or ') }
-          <Anchor
-            link={ {
-              internal: true,
-              url: '/list',
-            } }
-          >
-            { _l('click to view the whole list') }
-          </Anchor>
-          { _l('.') }
-        </p>
+        <Search shouldUpdateHistory={ false } />
+        <SearchResults isCompact />
         <SimpleCard title={ _l('About us') }>
           <p
             style={ {textAlign: 'justify'} }
@@ -84,10 +71,4 @@ HomePage.propTypes = {
   }),
 };
 
-export default connect(
-  state => ({
-    searchIndex: state.search.searchIndex,
-    searchQuery: state.search.searchQuery,
-  }),
-  null
-)(HomePage);
+export default HomePage;
