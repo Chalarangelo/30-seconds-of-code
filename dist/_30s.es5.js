@@ -1068,6 +1068,11 @@
 
     return 1000 * iterations / (performance.now() - before);
   };
+  var includesAny = function includesAny(arr, values) {
+    return values.some(function (v) {
+      return arr.includes(v);
+    });
+  };
   var indentString = function indentString(str, count) {
     var indent = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : ' ';
     return str.replace(/^/gm, indent.repeat(count));
@@ -3039,6 +3044,7 @@
   exports.httpPost = httpPost;
   exports.httpsRedirect = httpsRedirect;
   exports.hz = hz;
+  exports.includesAny = includesAny;
   exports.indentString = indentString;
   exports.indexOfAll = indexOfAll;
   exports.initial = initial;
