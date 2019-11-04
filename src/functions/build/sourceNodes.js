@@ -40,7 +40,7 @@ const sourceNodes = (requirables, reducers) => ({ actions, createNodeId, createC
     }, {});
 
   Object.entries(snippetNodes).forEach(([id, sNode]) => {
-    let mNode = markdownNodes.find(mN => mN.fileAbsolutePath.includes(id));
+    let mNode = markdownNodes.find(mN => mN.fileAbsolutePath.includes(`${id}.md`));
     let reducer = reducers[sNode.reducer];
     let nodeContent = reducer(id, sNode, mNode);
     nodeContent.resolver = sNode.resolver;
