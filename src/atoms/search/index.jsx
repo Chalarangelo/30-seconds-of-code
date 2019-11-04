@@ -1,16 +1,39 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { trimWhiteSpace, getURLParameters } from 'functions/utils';
+import { trimWhiteSpace, getURLParameters, throttle, getBaseURL } from 'functions/utils';
 import { startIndexFetch, finishIndexFetch, pushNewQuery, searchByKeyphrase } from 'state/search';
 import _ from 'lang';
 const _l = _('en');
+
+const handleHistoryUpdate = value => {
+  if (typeof window !== 'undefined' && typeof window.location !== 'undefined' && typeof window.history !== 'undefined') {
+    const encodedValue = encodeURIComponent(value);
+    const params = getURLParameters(window.location.href);
+    const baseURL = getBaseURL(window.location.href);
+    if (value && params && params.keyphrase &&
+      (encodedValue.includes(params.keyphrase) || params.keyphrase.includes(encodedValue))) {
+      window.history.replaceState(
+        { keyphrase: value },
+        `Search results for ${value}`,
+        `${baseURL}${value ? `?keyphrase=${encodedValue}` : ''}`
+      );
+    } else {
+      window.history.pushState(
+        { keyphrase: value },
+        `Search results for ${value}`,
+        `${baseURL}${value ? `?keyphrase=${encodedValue}` : ''}`
+      );
+    }
+  }
+};
 
 const Search = ({
   className = '',
   id = '',
   searchIndex,
   searchQuery,
+  shouldUpdateHistory = false,
   dispatch,
 }) => {
   const [value, setValue] = React.useState(searchQuery);
@@ -34,13 +57,19 @@ const Search = ({
           dispatch(finishIndexFetch(searchIndex));
         });
     }
-    console.log(getURLParameters(window.location.href));
+    const params = getURLParameters(window.location.href);
+    if (shouldUpdateHistory) {
+      if (params && (params.keyphrase || params.keyphrase === '') && params.keyphrase !== encodeURIComponent(searchQuery))
+        setValue(decodeURIComponent(params.keyphrase));
+    }
   }, []);
 
-  React.useEffect(() => {
+  React.useEffect(throttle(() => {
     dispatch(pushNewQuery(value));
     dispatch(searchByKeyphrase(value, searchIndex));
-  }, [value]);
+    if(shouldUpdateHistory)
+      handleHistoryUpdate(value);
+  }, 500), [value]);
 
   return (
     <input
@@ -52,7 +81,6 @@ const Search = ({
       aria-label={ _l('Search snippets') }
       onKeyUp={ e => {
         setValue(e.target.value);
-
       } }
     />
   );
@@ -69,6 +97,8 @@ Search.propTypes = {
   id: PropTypes.string,
   /** Dispatch function of the Redux stotre */
   dispatch: PropTypes.func,
+  /** Should this component handle history updates? */
+  shouldUpdateHistory: PropTypes.bool,
 };
 
 export default connect(
