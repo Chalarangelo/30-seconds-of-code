@@ -1068,6 +1068,11 @@
 
     return 1000 * iterations / (performance.now() - before);
   };
+  var includesAll = function includesAll(arr, values) {
+    return values.every(function (v) {
+      return arr.includes(v);
+    });
+  };
   var includesAny = function includesAny(arr, values) {
     return values.some(function (v) {
       return arr.includes(v);
@@ -3044,6 +3049,7 @@
   exports.httpPost = httpPost;
   exports.httpsRedirect = httpsRedirect;
   exports.hz = hz;
+  exports.includesAll = includesAll;
   exports.includesAny = includesAny;
   exports.indentString = indentString;
   exports.indexOfAll = indexOfAll;
