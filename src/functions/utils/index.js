@@ -8,7 +8,8 @@ import {
 } from './string';
 
 import {
-  determineExpertiseFromTags
+  determineExpertiseFromTags,
+  chunk
 } from './array';
 
 import {
@@ -23,5 +24,6 @@ export {
   determineExpertiseFromTags,
   getURLParameters,
   getBaseURL,
-  throttle
+  throttle,
+  chunk
 };
