@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { trimWhiteSpace, getURLParameters, throttle, getBaseURL } from 'functions/utils';
 import { startIndexFetch, finishIndexFetch, pushNewQuery, searchByKeyphrase } from 'state/search';
 import _ from 'lang';
+import { useFetchSearchIndex } from 'functions/hooks';
 const _l = _('en');
 
 const handleHistoryUpdate = value => {
@@ -38,27 +39,11 @@ const Search = ({
 }) => {
   const [value, setValue] = React.useState(searchQuery);
 
+  useFetchSearchIndex(dispatch);
+
   React.useEffect(() => {
-    if(typeof window !== 'undefined' && typeof fetch !== 'undefined') {
-      dispatch(startIndexFetch());
-      fetch('/page-data/search_index/page-data.json')
-        .then(response => response.json())
-        .then(json => {
-          const searchIndex = json.result.pageContext.searchIndex.edges
-            .map(edge => edge.node)
-            .map(node => ({
-              title: node.title,
-              expertise: node.expertise,
-              primaryTag: node.tags.primary,
-              language: node.language,
-              html: node.html,
-              url: node.slug,
-            }));
-          dispatch(finishIndexFetch(searchIndex));
-        });
-    }
-    const params = getURLParameters(window.location.href);
     if (shouldUpdateHistory) {
+      const params = getURLParameters(window.location.href);
       if (params && (params.keyphrase || params.keyphrase === '') && params.keyphrase !== encodeURIComponent(searchQuery))
         setValue(decodeURIComponent(params.keyphrase));
     }
