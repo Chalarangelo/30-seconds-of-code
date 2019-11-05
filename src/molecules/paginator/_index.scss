@@ -1,0 +1,142 @@
+// Variables for the link-back icon
+$paginator-selected-color-light: #434EC7;
+$paginator-selected-color-dark: #B0C3E3;
+
+// Colors
+:root {
+  --paginator-selected-color: #{$paginator-selected-color-light};
+}
+
+// Dark mode colors
+.page-container.dark {
+  --paginator-selected-color: #{$paginator-selected-color-dark};
+}
+
+.paginator {
+  margin: 1.75rem 1.25rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  padding: 0 0.25rem;
+
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    padding: 0 0.75rem;
+  }
+
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    padding: 0 1.5rem;
+  }
+
+  .btn, a.btn {
+    transition: 0.3s ease all;
+    flex: 1;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    margin: 0.25rem 0;
+    padding: 0.625rem 1.125rem;
+    box-sizing: border-box;
+    line-height: 1.25;
+    height: 44px;
+    min-width: 44px;
+    text-align: center;
+
+    border-radius: 0;
+    border-bottom: 1px solid var(--back-color-dark);  
+    box-shadow: none;
+    background: transparent;
+    font-size: 1.125rem;
+    
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      margin: 0.5rem 0;
+      padding: 0.625rem 1.375rem;
+    }
+
+    &:not(.current-page) {
+      color: var(--fore-color);
+      &:hover, &:focus {
+        color: var(--paginator-selected-color);
+        border-bottom: 1px solid var(--paginator-selected-color);  
+      }
+    }
+    
+    &.current-page {
+      cursor: default;
+      color: var(--paginator-selected-color);
+      line-height: 0.875;
+    }
+
+    &.previous-page, &.next-page {
+      flex: 2;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 44px;
+      box-sizing: border-box;
+    
+      @media screen and (min-width: $layout-medium-breakpoint) {
+        width: auto;
+      }
+    }
+
+    &.previous-page {
+      background-image: generate-icon-background('chevron-left', $fore-color-light, 'none', 2, 24);
+
+      &:hover, &:focus {
+        background-image: generate-icon-background('chevron-left', $paginator-selected-color-light, 'none', 2, 24);
+      }
+    
+      @media screen and (min-width: $layout-medium-breakpoint) {
+        background-position-x: 6px;
+        padding-left: 32px;
+      }
+    }
+
+    &.next-page {
+      background-image: generate-icon-background('chevron-right', $fore-color-light, 'none', 2, 24);
+
+      &:hover, &:focus {
+        background-image: generate-icon-background('chevron-right', $paginator-selected-color-light, 'none', 2, 24);   
+      }
+      
+      @media screen and (min-width: $layout-medium-breakpoint) {
+        background-position-x: calc(100% - 6px);
+        padding-right: 32px;
+      }
+    }
+  }
+
+  .paginator-separator {
+    display: none;
+    color: var(--fore-color-lighter);
+    letter-spacing: 2px;
+    line-height: 2.675;
+    border-bottom: 1px solid var(--back-color-dark); 
+    
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      display: block;
+    }
+  }
+}
+
+.page-container.dark {
+  .paginator {
+    .btn, a.btn {
+
+      &.previous-page {
+        background-image: generate-icon-background('chevron-left', $fore-color-dark, 'none', 2, 24);
+      
+        &:hover, &:focus {
+          background-image: generate-icon-background('chevron-left', $paginator-selected-color-dark, 'none', 2, 24);
+        }
+
+      }
+      &.next-page {
+        background-image: generate-icon-background('chevron-right', $fore-color-dark, 'none', 2, 24);
+
+        &:hover, &:focus {
+          background-image: generate-icon-background('chevron-right', $paginator-selected-color-dark, 'none', 2, 24);   
+        }
+
+      }
+    }
+  }
+}

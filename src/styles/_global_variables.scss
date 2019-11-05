@@ -2,11 +2,15 @@
 $fore-color-dark-light: #1F253D;
 $fore-color-dark-dark: #B4BCD9;
 
+// Variables for the paginator
+$fore-color-light: #404454;
+$fore-color-dark: #ABAFBF;
+
 :root {
   // Interface color palette
   --back-color: #F5F6FA;
   --back-color-dark: #D7DDF3;
-  --fore-color: #404454;
+  --fore-color: #{$fore-color-light};
   --fore-color-light: #575E7A;
   --fore-color-lighter: #666E8F;
   --fore-color-dark: #{$fore-color-dark-light};
@@ -21,7 +25,7 @@ $fore-color-dark-dark: #B4BCD9;
 .page-container.dark {
   --back-color: #2A314C;
   --back-color-dark: #8993BE;
-  --fore-color: #ABAFBF;
+  --fore-color: #{$fore-color-dark};
   --fore-color-light: #858CA8;
   --fore-color-lighter: #707899;
   --fore-color-dark: #{$fore-color-dark-dark};
