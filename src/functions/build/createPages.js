@@ -1,4 +1,5 @@
 import { parseSnippetContext } from 'functions/parsers';
+import { chunk, transformSnippetIndex } from 'functions/utils';
 
 /**
  * Creates individual snippet pages.
@@ -33,6 +34,24 @@ const createSearchPage = (searchPage, createPage, context) => {
     context: {
       ...context,
     },
+  });
+};
+
+const createListingPages = (indexedChunks, listingPage, createPage, context, baseUrl) => {
+  indexedChunks.forEach((chunk, i, chunks) => {
+    createPage({
+      path: `${baseUrl}/p/${i + 1}`,
+      component: listingPage,
+      context: {
+        snippetList: chunk,
+        paginator: {
+          pageNumber: i + 1,
+          totalPages: chunks.length,
+          baseUrl,
+        },
+        ...context,
+      },
+    });
   });
 };
 
@@ -73,6 +92,7 @@ const createPages = (query, templates) => ({ graphql, actions }) => {
       };
 
       const searchIndex = result.data.searchIndex;
+      const searchIndexChunks = chunk(transformSnippetIndex(searchIndex.edges), 20);
 
       createHomePage(
         templates['HomePage'],
@@ -96,6 +116,16 @@ const createPages = (query, templates) => ({ graphql, actions }) => {
         {
           ...commonContext,
         }
+      );
+
+      createListingPages(
+        searchIndexChunks,
+        templates['ListingPage'],
+        createPage,
+        {
+          ...commonContext,
+        },
+        '/list'
       );
 
       createSnippetPages(
