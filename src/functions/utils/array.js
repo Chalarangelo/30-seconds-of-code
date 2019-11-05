@@ -14,3 +14,16 @@ export const chunk = (arr, size) =>
   Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
     arr.slice(i * size, i * size + size)
   );
+
+/** Transform the indexed snippets to appropriate format */
+export const transformSnippetIndex = edges =>
+  edges
+    .map(edge => edge.node)
+    .map(node => ({
+      title: node.title,
+      expertise: node.expertise,
+      primaryTag: node.tags.primary,
+      language: node.language,
+      html: node.html,
+      url: node.slug,
+    }));

@@ -9,6 +9,7 @@ import {
 
 import {
   determineExpertiseFromTags,
+  transformSnippetIndex,
   chunk
 } from './array';
 
@@ -25,5 +26,6 @@ export {
   getURLParameters,
   getBaseURL,
   throttle,
+  transformSnippetIndex,
   chunk
 };
