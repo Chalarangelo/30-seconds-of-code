@@ -57,7 +57,7 @@ const Shell = ({
           icon: 'list',
           link: {
             internal: true,
-            url: '/list',
+            url: '/list/p/1',
             title: 'Snippet list',
           },
         },

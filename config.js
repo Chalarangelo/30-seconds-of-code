@@ -24,6 +24,10 @@ module.exports = {
       path: `searchPage/index.jsx`,
     },
     {
+      name: `ListingPage`,
+      path: `listingPage/index.jsx`,
+    },
+    {
       name: `NotFoundPage`,
       path: `notFoundPage/index.jsx`,
     },
