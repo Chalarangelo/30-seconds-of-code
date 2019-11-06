@@ -617,6 +617,16 @@
   ],
   "meta": {
     "specification": "http://jsonapi.org/format/",
-    "type": "snippetListingArray"
+    "type": "snippetListingArray",
+    "language": {
+      "short": "jsx",
+      "long": "JSX (React)"
+    },
+    "otherLanguages": [
+      {
+        "short": "css",
+        "long": "CSS"
+      }
+    ]
   }
 }
