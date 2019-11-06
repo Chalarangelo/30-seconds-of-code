@@ -81,19 +81,19 @@ const FullCard = ({ snippetData, isDarkMode }) => {
       <div className='card-bottom'>
         <h5 className='card-section-title card-section-html'>HTML</h5>
         <pre
-          className={`card-code language-${config.secondLanguage}`}
+          className={`card-code language-${config.secondLanguage.short}`}
           dangerouslySetInnerHTML={{ __html: cardCodeHtml }}
         />
         <h5 className='card-section-title card-section-css'>CSS</h5>
         <pre
-          className={`card-code language-${config.language}`}
+          className={`card-code language-${config.language.short}`}
           dangerouslySetInnerHTML={{ __html: cardCodeCss }}
         />
         {
           cardCodeJs && <>
             <h5 className='card-section-title card-section-js'>JavaScript</h5>
             <pre
-              className={`card-code language-${config.optionalLanguage}`}
+              className={`card-code language-${config.optionalLanguage.short}`}
               dangerouslySetInnerHTML={{ __html: cardCodeJs }}
             />
           </>

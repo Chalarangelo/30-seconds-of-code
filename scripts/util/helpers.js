@@ -35,10 +35,10 @@ const prepTaggedData = tagDbData =>
     )
 const makeExamples = data => {
   data =
-    data.slice(0, data.lastIndexOf(`\`\`\`${config.language}`)).trim() +
+    data.slice(0, data.lastIndexOf(`\`\`\`${config.language.short}`)).trim() +
     misc.collapsible(
       'Examples',
-      data.slice(data.lastIndexOf(`\`\`\`${config.language}`), data.lastIndexOf('```')) +
+      data.slice(data.lastIndexOf(`\`\`\`${config.language.short}`), data.lastIndexOf('```')) +
         data.slice(data.lastIndexOf('```'))
     )
   return `${data}\n<br>${misc.link('⬆ Back to top', misc.anchor('Contents'))}\n\n`

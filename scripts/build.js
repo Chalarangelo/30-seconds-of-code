@@ -91,10 +91,10 @@ try {
 
       output += snippet.attributes.text
 
-      output += `\`\`\`${config.secondLanguage}\n${snippet.attributes.codeBlocks.html}\n\`\`\`\n\n`
-      output += `\`\`\`${config.language}\n${snippet.attributes.codeBlocks.css}\n\`\`\`\n\n`
+      output += `\`\`\`${config.secondLanguage.short}\n${snippet.attributes.codeBlocks.html}\n\`\`\`\n\n`
+      output += `\`\`\`${config.language.short}\n${snippet.attributes.codeBlocks.css}\n\`\`\`\n\n`
       if (snippet.attributes.codeBlocks.js)
-        output += `\`\`\`${config.optionalLanguage}\n${snippet.attributes.codeBlocks.js}\n\`\`\`\n\n`
+        output += `\`\`\`${config.optionalLanguage.short}\n${snippet.attributes.codeBlocks.js}\n\`\`\`\n\n`
 
       output += headers.h4('Explanation')
       output += snippet.attributes.explanation

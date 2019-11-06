@@ -12,7 +12,16 @@ module.exports = {
   pagePath: `src/docs/pages`,
   staticPartsPath: `src/static-parts`,
   // General information
-  language: `css`,
-  secondLanguage: `html`,
-  optionalLanguage: `js`
+  language: {
+    short: `css`,
+    long: `CSS`,
+  },
+  secondLanguage: {
+    short: `html`,
+    long: `HTML`
+  },
+  optionalLanguage:{ 
+    short: `js`,
+    long: `JavaScript`
+  }
 }
