@@ -78,7 +78,7 @@ const FullCard = ({ snippetData, difficulty, isDarkMode }) => {
           />
         </CopyToClipboard>
         <pre
-          className={`card-code language-${config.language}`}
+          className={`card-code language-${config.language.short}`}
           dangerouslySetInnerHTML={{ __html: snippetData.codeHtml }}
         />
         <button
