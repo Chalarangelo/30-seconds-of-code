@@ -381,6 +381,10 @@
   "meta": {
     "specification": "http://jsonapi.org/format/",
     "type": "snippetListingArray",
-    "scope": "./snippets_archive"
+    "scope": "./snippets_archive",
+    "language": {
+      "short": "js",
+      "long": "JavaScript"
+    }
   }
 }
