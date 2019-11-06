@@ -773,6 +773,20 @@
   ],
   "meta": {
     "specification": "http://jsonapi.org/format/",
-    "type": "snippetListingArray"
+    "type": "snippetListingArray",
+    "language": {
+      "short": "css",
+      "long": "CSS"
+    },
+    "otherLanguages": [
+      {
+        "short": "html",
+        "long": "HTML"
+      },
+      {
+        "short": "js",
+        "long": "JavaScript"
+      }
+    ]
   }
 }
