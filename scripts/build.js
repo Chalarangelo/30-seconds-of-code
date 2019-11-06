@@ -92,13 +92,13 @@ try {
       output += snippet.attributes.text;
 
       if (snippet.attributes.codeBlocks.style !== '')
-        output += `\`\`\`${config.optionalLanguage}\n${snippet.attributes.codeBlocks.style}\n\`\`\`\n\n`;
+        output += `\`\`\`${config.optionalLanguage.short}\n${snippet.attributes.codeBlocks.style}\n\`\`\`\n\n`;
 
-      output += `\`\`\`${config.language}\n${snippet.attributes.codeBlocks.code}\n\`\`\``;
+      output += `\`\`\`${config.language.short}\n${snippet.attributes.codeBlocks.code}\n\`\`\``;
 
       output += misc.collapsible(
         'Examples',
-        `\`\`\`${config.language}\n${snippet.attributes.codeBlocks.example}\n\`\`\``
+        `\`\`\`${config.language.short}\n${snippet.attributes.codeBlocks.example}\n\`\`\``
       );
 
       output += '\n<br>' + misc.link('⬆ Back to top', misc.anchor('Contents')) + '\n';
