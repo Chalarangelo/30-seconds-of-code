@@ -49,8 +49,8 @@ const getCodeBlocks = str => {
       results.push(match);
     });
   }
-  const replacer = new RegExp(`\`\`\`${config.language}([\\s\\S]*?)\`\`\``, 'g');
-  const optionalReplacer = new RegExp(`\`\`\`${config.optionalLanguage}([\\s\\S]*?)\`\`\``, 'g');
+  const replacer = new RegExp(`\`\`\`${config.language.short}([\\s\\S]*?)\`\`\``, 'g');
+  const optionalReplacer = new RegExp(`\`\`\`${config.optionalLanguage.short}([\\s\\S]*?)\`\`\``, 'g');
   results = results.map(v =>
     v
       .replace(replacer, '$1')
@@ -103,7 +103,10 @@ const readSnippets = snippetsPath => {
           tags: data.attributes.tags.split(',').map(t => t.trim())
         },
         meta: {
-          hash: hashData(data.body)
+          hash: hashData(data.body),
+          firstSeen: execSync(`git log --diff-filter=A --pretty=format:%at -- snippets/${snippet}`).toString(),
+          lastUpdated: execSync(`git log -n 1 --pretty=format:%at -- snippets/${snippet}`).toString(),
+          updateCount: execSync(`git log --pretty=%H -- snippets/${snippet}`).toString().split('\n').length
         }
       };
     }

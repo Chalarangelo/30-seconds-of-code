@@ -89,12 +89,12 @@ const FullCard = ({ snippetData, difficulty, isDarkMode }) => {
         </button> */}
         {
           cardStyleHtml && <pre
-            className={`card-code language-${config.optionalLanguage}`}
+            className={`card-code language-${config.optionalLanguage.short}`}
             dangerouslySetInnerHTML={{ __html: cardStyleHtml }}
           />
         }
         <pre
-          className={`card-code language-${config.language}`}
+          className={`card-code language-${config.language.short}`}
           dangerouslySetInnerHTML={{ __html: cardCodeHtml }}
         />
         <button
@@ -163,7 +163,7 @@ const ShortCard = ({
             />
           </CopyToClipboard>
           <pre
-            className={`card-code language-${config.language}`}
+            className={`card-code language-${config.language.short}`}
             dangerouslySetInnerHTML={{ __html: cardCodeHtml }}
           />
         </div> : '' }
