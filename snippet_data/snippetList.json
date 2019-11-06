@@ -1242,6 +1242,10 @@
   ],
   "meta": {
     "specification": "http://jsonapi.org/format/",
-    "type": "snippetListingArray"
+    "type": "snippetListingArray",
+    "language": {
+      "short": "py",
+      "long": "Python"
+    }
   }
 }
