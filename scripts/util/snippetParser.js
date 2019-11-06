@@ -4,6 +4,7 @@ const fs = require('fs-extra'),
   crypto = require('crypto'),
   frontmatter = require('front-matter');
 const config = require('../../config');
+const execSync = require('child_process').execSync;
 
 // Reade all files in a directory
 const getFilesInDir = (directoryPath, withPath, exclude = null) => {
