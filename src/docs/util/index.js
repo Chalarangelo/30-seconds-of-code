@@ -26,7 +26,7 @@ const getCodeBlocks = str => {
     });
   }
   const replacer = new RegExp(
-    `<pre class="language-${config.language}"><code class="language-${config.language}">([\\s\\S]*?)</code></pre>`,
+    `<pre class="language-${config.language.short}"><code class="language-${config.language.short}">([\\s\\S]*?)</code></pre>`,
     'g',
   );
   results = results.map(v => v.replace(replacer, '$1').trim());
@@ -85,7 +85,7 @@ const getRawCodeBlocks = str => {
     });
   }
   const replacer = new RegExp(
-    `\`\`\`${config.language}([\\s\\S]*?)\`\`\``,
+    `\`\`\`${config.language.short}([\\s\\S]*?)\`\`\``,
     'g',
   );
   results = results.map(v => v.replace(replacer, '$1').trim());

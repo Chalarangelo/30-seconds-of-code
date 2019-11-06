@@ -62,6 +62,7 @@ const completeData = {
     specification: 'http://jsonapi.org/format/',
     type: 'snippetArray',
     scope: SNIPPETS_PATH,
+    language: config.language
   },
 };
 const listingData = {
@@ -81,6 +82,7 @@ const listingData = {
     specification: 'http://jsonapi.org/format/',
     type: 'snippetListingArray',
     scope: SNIPPETS_PATH,
+    language: config.language
   },
 };
 
@@ -90,6 +92,7 @@ const archiveCompleteData = {
     specification: 'http://jsonapi.org/format/',
     type: 'snippetArray',
     scope: SNIPPETS_ARCHIVE_PATH,
+    language: config.language
   }
 };
 const archiveListingData = {
@@ -109,6 +112,7 @@ const archiveListingData = {
     specification: 'http://jsonapi.org/format/',
     type: 'snippetListingArray',
     scope: SNIPPETS_ARCHIVE_PATH,
+    language: config.language
   },
 };
 
