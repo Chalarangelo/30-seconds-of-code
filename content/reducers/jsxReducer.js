@@ -1,3 +1,4 @@
+import { rankingEngine as rankSnippet } from 'engines';
 import { determineExpertiseFromTags } from 'functions/utils';
 
 export default (id, snippetNode, markdownNode) => {
@@ -26,6 +27,6 @@ export default (id, snippetNode, markdownNode) => {
       ...snippetNode.language,
       otherLanguages: snippetNode.otherLanguages,
     },
-    browserSupport: snippetNode.attributes.browserSupport,
+    ranking: rankSnippet(snippetNode),
   };
 };
