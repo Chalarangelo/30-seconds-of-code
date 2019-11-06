@@ -9,4 +9,9 @@ export default {
   slug: 'js',
   reducer: 'es6Reducer',
   isArchived: true,
+  biasPenaltyMultiplier: -1.0,
+  tagScores: {
+  },
+  keywordScores: {
+  },
 };
