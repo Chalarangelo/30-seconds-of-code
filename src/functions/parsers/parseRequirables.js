@@ -34,6 +34,10 @@ const parseRequirables = contentDirPath => {
         reqJson.meta.sourceDir = `${cfg.dirName}/${cfg.snippetPath}`;
         reqJson.meta.repoUrlPrefix = `${cfg.repoUrl}/blob/master/${cfg.snippetPath}`;
 
+        reqJson.meta.biasPenaltyMultiplier = cfg.biasPenaltyMultiplier;
+        reqJson.meta.tagScores = cfg.tagScores;
+        reqJson.meta.keywordScores = cfg.keywordScores;
+
         requirables.push( reqJson );
       });
     });
