@@ -6,6 +6,7 @@ const fs = require('fs-extra'),
 const sass = require('node-sass')
 const caniuseDb = require('caniuse-db/data.json')
 const config = require('../../config')
+const execSync = require('child_process').execSync
 
 // Reade all files in a directory
 const getFilesInDir = (directoryPath, withPath, exclude = null) => {
