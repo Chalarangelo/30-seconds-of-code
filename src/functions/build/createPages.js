@@ -153,7 +153,7 @@ const createPages = (query, templates) => ({ graphql, actions }) => {
         createPage,
         {
           ...commonContext,
-          searchIndex,
+          searchIndex: transformSnippetIndex(searchIndex.edges),
         });
 
       return null;
