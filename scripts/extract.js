@@ -42,7 +42,9 @@ const completeData = {
   data: [...snippetsArray],
   meta: {
     specification: 'http://jsonapi.org/format/',
-    type: 'snippetArray'
+    type: 'snippetArray',
+    language: config.language,
+    otherLanguages: [config.secondLanguage, config.optionalLanguage]
   }
 }
 let listingData = {
@@ -60,7 +62,9 @@ let listingData = {
   })),
   meta: {
     specification: 'http://jsonapi.org/format/',
-    type: 'snippetListingArray'
+    type: 'snippetListingArray',
+    language: config.language,
+    otherLanguages: [config.secondLanguage, config.optionalLanguage]
   }
 }
 // Write files
