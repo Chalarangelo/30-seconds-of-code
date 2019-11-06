@@ -12,6 +12,12 @@ module.exports = {
   pagePath: `src/docs/pages`,
   staticPartsPath: `src/static-parts`,
   // General information
-  language: `jsx`,
-  optionalLanguage: `css`
+  language: {
+    short: `jsx`,
+    long: `JSX (React)`
+  },
+  optionalLanguage: {
+    short: `css`,
+    long: `CSS`
+  }
 };
