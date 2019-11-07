@@ -1,3 +1,5 @@
+import { searchIndexingEngine as tokenize } from 'engines';
+
 // Defalt state
 const initialState = {
   initialized: false,
@@ -11,6 +13,7 @@ const PUSH_NEW_QUERY = 'PUSH_NEW_QUERY';
 const START_INDEX_FETCH = 'START_INDEX_FETCH';
 const FINISH_INDEX_FETCH = 'FINISH_INDEX_FETCH';
 const SEARCH_BY_KEYPHRASE = 'SEARCH_BY_KEYPHRASE';
+const KEYPHRASE_TOO_SHORT = 'KEYPHRASE_TOO_SHORT';
 
 export const pushNewQuery = query => ({
   type: PUSH_NEW_QUERY,
@@ -27,14 +30,22 @@ export const finishIndexFetch = index => ({
 });
 // TODO: Use a better search strategy
 export const searchByKeyphrase = (keyphrase, searchIndex) => {
-  let q = keyphrase.toLowerCase();
-  let results = searchIndex;
-  if (q.trim().length) {
-    results = searchIndex.filter(
-      snippet =>
-        snippet.primaryTag.toLowerCase().indexOf(q) !== -1 ||
-        snippet.title.toLowerCase().indexOf(q) !== -1
-    );
+  let q = keyphrase.toLowerCase().trim();
+  if (q.length <= 1) {
+    return {
+      type: KEYPHRASE_TOO_SHORT,
+    };
+  }
+  let results = [];
+  if (q.length) {
+    let t = tokenize(q);
+    if(t.length) {
+      const l = t.length;
+      results = searchIndex.map(snippet => ({
+        ...snippet,
+        score: t.reduce((acc, tkn) => snippet.searchTokens.indexOf(tkn) !== -1 ? acc + 1 : acc, 0) / l,
+      })).filter(snippet => snippet.score > 0.3).sort((a, b) => b.score - a.score).slice(0, 50);
+    }
   }
   return {
     type: SEARCH_BY_KEYPHRASE,
@@ -66,6 +77,8 @@ export default (state = initialState, action) => {
       ...state,
       searchResults: action.results,
     };
+  case KEYPHRASE_TOO_SHORT:
+    return state;
   default:
     return state;
   }

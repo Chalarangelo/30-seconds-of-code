@@ -15,7 +15,7 @@ const SearchResults = ({
   isCompact = false,
 }) => {
   if(isCompact) {
-    return searchQuery.length === 0 ? (
+    return searchQuery.trim().length <= 1 ? (
       <PageSubtitle className='search-compact-sub'>
         { _l('Start typing a keyphrase to see matching snippets or ') }
         <Anchor
@@ -61,7 +61,7 @@ const SearchResults = ({
       </>
     );
   } else {
-    return searchQuery.length === 0 ? (
+    return searchQuery.trim().length <= 1 ? (
       <PageBackdrop
         graphicName='search-empty'
         mainText={ _l('Start typing a keyphrase to see matching snippets.') }

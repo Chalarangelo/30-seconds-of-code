@@ -18,6 +18,7 @@ export default `
           short
           long
         }
+        searchTokens
       }
     }
   }
