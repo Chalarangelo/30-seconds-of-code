@@ -32,6 +32,7 @@ export const transformSnippetIndex = edges =>
       language: node.language,
       html: node.html,
       url: node.slug,
+      searchTokens: node.searchTokens,
     }));
 
 /** Returns all unique values of an array. */
