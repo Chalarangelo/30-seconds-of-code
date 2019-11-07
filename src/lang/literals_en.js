@@ -7,6 +7,8 @@ const multiline = {
 };
 
 const literals = {
+  'codelang.': lang => lang,
+  'codelang_tag.': (lang, tag) => `${lang} ${capitalize(tag)}`,
   // Multiline literals
   'm': key => multiline[key],
   // Site metadata
@@ -49,6 +51,7 @@ const literals = {
   'Page not found': 'Page not found',
   'Seems like you have reached a page that does not exist.': 'Seems like you have reached a page that does not exist.',
   'Go home': 'Go home',
+  'Snippet List': 'Snippet List',
 };
 
 export default literals;

@@ -1,5 +1,7 @@
 import { parseSnippetContext } from 'functions/parsers';
 import { chunk, transformSnippetIndex } from 'functions/utils';
+import _ from 'lang';
+const _l = _('en');
 
 /**
  * Creates individual snippet pages.
@@ -55,6 +57,68 @@ const createListingPages = (indexedChunks, listingPage, createPage, context, bas
   });
 };
 
+const createAllListingPages = (searchIndex, listingPage, createPage, context) => {
+  const searchIndexChunks = chunk(transformSnippetIndex(searchIndex.edges), 20);
+  const searchIndexSlugPrefixes = [
+    ...new Set(
+      searchIndex.edges
+        .map(v => v.node.slug.slice(1)).map(v => v.slice(0, v.indexOf('/')))
+    ),
+  ];
+
+  createListingPages(
+    searchIndexChunks,
+    listingPage,
+    createPage,
+    {
+      ...context,
+      listingName: _l('Snippet List'),
+    },
+    '/list'
+  );
+
+  searchIndexSlugPrefixes.forEach(slugPrefix => {
+    const searchIndexSlugData = searchIndex.edges.filter(s => s.node.slug.startsWith(`/${slugPrefix}`));
+    const searchIndexSlugChunks = chunk(transformSnippetIndex(searchIndexSlugData), 20);
+    const searchIndexName = searchIndexSlugData[0].node.language.long;
+
+    createListingPages(
+      searchIndexSlugChunks,
+      listingPage,
+      createPage,
+      {
+        ...context,
+        listingName: _l`codelang.${searchIndexName}`,
+      },
+      `/${slugPrefix}`
+    );
+
+    const searchIndexTagPrefixes = [
+      ...new Set(
+        searchIndexSlugData
+          .map(v => v.node.tags.primary)
+      ),
+    ];
+
+    searchIndexTagPrefixes.forEach(tagPrefix => {
+      const searchIndexTagData = searchIndex.edges.filter(s => s.node.tags.primary === tagPrefix && s.node.slug.startsWith(`/${slugPrefix}`));
+      const searchIndexTagChunks = chunk(transformSnippetIndex(searchIndexTagData), 20);
+
+      createListingPages(
+        searchIndexTagChunks,
+        listingPage,
+        createPage,
+        {
+          ...context,
+          listingName: _l`codelang_tag.${searchIndexName}${tagPrefix}`,
+        },
+        `/${slugPrefix}/t/${tagPrefix}`
+      );
+    });
+
+  });
+};
+
 const create404Page = (notFoundPage, createPage, context) => {
   createPage({
     path: '/404',
@@ -92,7 +156,6 @@ const createPages = (query, templates) => ({ graphql, actions }) => {
       };
 
       const searchIndex = result.data.searchIndex;
-      const searchIndexChunks = chunk(transformSnippetIndex(searchIndex.edges), 20);
 
       createHomePage(
         templates['HomePage'],
@@ -118,8 +181,8 @@ const createPages = (query, templates) => ({ graphql, actions }) => {
         }
       );
 
-      createListingPages(
-        searchIndexChunks,
+      createAllListingPages(
+        searchIndex,
         templates['ListingPage'],
         createPage,
         {

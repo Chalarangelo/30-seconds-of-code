@@ -17,18 +17,19 @@ const ListingPage = ({
     logoSrc,
     paginator,
     snippetList,
+    listingName,
   },
   dispatch,
 }) => {
   React.useEffect(() => {
-    dispatch(pushNewPage('Snippet List', `${paginator.baseUrl}/p/${paginator.pageNumber}`));
+    dispatch(pushNewPage(listingName, `${paginator.baseUrl}/p/${paginator.pageNumber}`));
   }, []);
 
   return (
     <>
       <Meta
         logoSrc={ logoSrc }
-        title={ _l('Snippet list') }
+        title={ listingName }
       />
       <Shell
         logoSrc={ logoSrc }
@@ -38,6 +39,7 @@ const ListingPage = ({
         withTitle={ true }
       >
         <SnippetList
+          listingName={ listingName }
           snippetList={ snippetList }
           paginator={ paginator }
         />
@@ -55,6 +57,8 @@ ListingPage.propTypes = {
     paginator: PaginatorPropType,
     /** List of snippets to be displayed */
     snippetList: PropTypes.arrayOf(SnippetPropType),
+    /** Name of this listing page */
+    listingName: PropTypes.string,
   }),
   /** Dispatch function of the Redux stotre */
   dispatch: PropTypes.func,

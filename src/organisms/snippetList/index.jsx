@@ -15,13 +15,12 @@ const _l = _('en');
 const SnippetList = ({
   snippetList,
   paginator,
+  listingName,
 }) => {
-  // TODO: Expect a title for the page so that you can render tag pages etc.
-  // TODO: Consider adding a linkback here?
   return snippetList.length ? (
     <>
       <PageTitle isLight>
-        { _l('Snippet List') }
+        { listingName }
       </PageTitle>
       <PageSubtitle isLight>
         { _l('Click on a snippet card to view the snippet.') }
@@ -42,6 +41,8 @@ SnippetList.propTypes = {
   snippetList: PropTypes.arrayOf(SnippetPropType),
   /** Paginator component data */
   paginator: PaginatorPropType,
+  /** Name of this snippet list */
+  listingName: PropTypes.string,
 };
 
 export default SnippetList;
