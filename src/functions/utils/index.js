@@ -9,6 +9,7 @@ import {
 
 import {
   determineExpertiseFromTags,
+  stripExpertiseFromTags,
   transformSnippetIndex,
   uniqueElements,
   chunk
@@ -24,6 +25,7 @@ export {
   optimizeNodes,
   optimizeAllNodes,
   determineExpertiseFromTags,
+  stripExpertiseFromTags,
   getURLParameters,
   getBaseURL,
   throttle,
