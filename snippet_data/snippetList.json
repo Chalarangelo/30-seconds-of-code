@@ -620,7 +620,7 @@
     "type": "snippetListingArray",
     "language": {
       "short": "jsx",
-      "long": "JSX (React)"
+      "long": "React"
     },
     "otherLanguages": [
       {
