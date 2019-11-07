@@ -14,7 +14,7 @@ module.exports = {
   // General information
   language: {
     short: `jsx`,
-    long: `JSX (React)`
+    long: `React`
   },
   optionalLanguage: {
     short: `css`,
