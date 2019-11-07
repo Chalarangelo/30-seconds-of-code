@@ -27,3 +27,6 @@ export const transformSnippetIndex = edges =>
       html: node.html,
       url: node.slug,
     }));
+
+/** Returns all unique values of an array. */
+export const uniqueElements = arr => [...new Set(arr)];
