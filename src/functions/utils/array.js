@@ -9,6 +9,12 @@ export const determineExpertiseFromTags = tags =>
   EXPERTISE_LEVELS[1]
   );
 
+/**
+ * Given an array of tags, strip the expertise level.
+ */
+export const stripExpertiseFromTags = tags =>
+  tags.filter(tag => !EXPERTISE_LEVELS.includes(tag));
+
 /** Chunks an array into smaller arrays of a specified size. */
 export const chunk = (arr, size) =>
   Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
