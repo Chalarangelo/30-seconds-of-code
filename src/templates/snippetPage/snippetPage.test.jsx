@@ -74,13 +74,12 @@ describe('<SnippetPage />', () => {
   it('should pass the correct data to the Shell component', () => {
     expect(shell.prop('logoSrc')).toBe(logoSrc);
     expect(shell.prop('isSearch')).toBe(false);
-    expect(shell.prop('isList')).toBe(false);
+    expect(shell.prop('isListing')).toBe(false);
   });
 
   it('should pass the correct data to the Meta component', () => {
     expect(meta.prop('logoSrc')).toBe(logoSrc);
     expect(meta.prop('title')).toBe(snippet.title);
-    expect(meta.prop('description')).toBe(snippet.description);
   });
 
   it('should pass a link to the LinkBackAnchor component', () => {

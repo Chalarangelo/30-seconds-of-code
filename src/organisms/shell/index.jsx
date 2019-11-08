@@ -16,12 +16,11 @@ const _l = _('en');
 import config from '../../../config';
 
 // TODO: Handle special classNames for the search and list buttons
-// TODO: Handle default mode via media query
 // eslint-disable-next-line complexity
 const Shell = ({
   isDarkMode,
   isSearch,
-  isList,
+  isListing,
   dispatch,
   withIcon = true,
   withTitle = true,
@@ -47,6 +46,7 @@ const Shell = ({
       <NavBar buttons={ [
         {
           icon: 'search',
+          className: isSearch ? 'active' : '',
           link: {
             internal: true,
             url: '/search',
@@ -55,6 +55,7 @@ const Shell = ({
         },
         {
           icon: 'list',
+          className: isListing ? 'active' : '',
           link: {
             internal: true,
             url: '/list/p/1',
@@ -114,7 +115,7 @@ Shell.propTypes = {
   /** Is this a search page? */
   isSearch: PropTypes.bool,
   /** Is this a list page? */
-  isList: PropTypes.bool,
+  isListing: PropTypes.bool,
   /** Dispatch function of the Redux stotre */
   dispatch: PropTypes.func,
   /** Should render an icon? */

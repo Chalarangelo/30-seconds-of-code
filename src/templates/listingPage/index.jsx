@@ -44,7 +44,7 @@ const ListingPage = ({
       <Shell
         logoSrc={ logoSrc }
         isSearch={ false }
-        isList={ true }
+        isListing
         withIcon={ true }
         withTitle={ true }
       >

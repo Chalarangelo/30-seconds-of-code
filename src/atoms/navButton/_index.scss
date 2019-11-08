@@ -45,7 +45,7 @@ $nav-button-active-fore-color-dark: #CDD4EF;
   &, &:link, &:visited {
     color: var(--nav-button-fore-color);
 
-    &:hover, &:focus {
+    &:hover, &:focus, &.active {
       color: var(--nav-button-active-fore-color);
     }
   }

@@ -22,7 +22,7 @@ const NotFoundPage = ({
       <Shell
         logoSrc={ logoSrc }
         isSearch={ false }
-        isList={ false }
+        isListing={ false }
         withIcon={ true }
         withTitle={ true }
       >
