@@ -29,7 +29,7 @@ const HomePage = ({
       <Shell
         logoSrc={ logoSrc }
         isSearch={ false }
-        isList={ false }
+        isListing={ false }
         withIcon={ false }
         withTitle={ false }
       >

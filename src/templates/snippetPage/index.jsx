@@ -33,7 +33,7 @@ const SnippetPage = ({
       <Shell
         logoSrc={ logoSrc }
         isSearch={ false }
-        isList={ false }
+        isListing={ false }
         externalUrl={ snippet.url }
       >
         <LinkBackAnchor

@@ -36,7 +36,7 @@ const SearchPage = ({
       <Shell
         logoSrc={ logoSrc }
         isSearch
-        isList={ false }
+        isListing={ false }
         withIcon={ false }
         withTitle={ true }
       >

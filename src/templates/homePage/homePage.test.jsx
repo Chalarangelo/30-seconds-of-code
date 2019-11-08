@@ -57,7 +57,7 @@ describe('<HomePage />', () => {
   it('should pass the correct data to the Shell component', () => {
     expect(shell.prop('logoSrc')).toBe(logoSrc);
     expect(shell.prop('isSearch')).toBe(false);
-    expect(shell.prop('isList')).toBe(false);
+    expect(shell.prop('isListing')).toBe(false);
   });
 
   it('should pass the correct data to the Meta component', () => {

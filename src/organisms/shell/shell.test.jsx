@@ -31,7 +31,7 @@ describe('<Shell />', () => {
     wrapper = mount(
       <Provider store={ store }>
         <Shell
-          isList={ false }
+          isListing={ false }
           isSearch={ false }
           logoSrc={ logoSrc }
         >
