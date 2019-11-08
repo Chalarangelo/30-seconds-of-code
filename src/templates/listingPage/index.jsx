@@ -12,12 +12,21 @@ import { pushNewPage } from 'state/navigation';
 import _ from 'lang';
 const _l = _('en');
 
+// Used to produce a description
+const templateData = {
+  pageType: 'listing',
+};
+
 const ListingPage = ({
   pageContext: {
     logoSrc,
     paginator,
     snippetList,
     listingName,
+    snippetCount,
+    listingType,
+    listingLanguage,
+    listingTag,
   },
   dispatch,
 }) => {
@@ -30,6 +39,7 @@ const ListingPage = ({
       <Meta
         logoSrc={ logoSrc }
         title={ listingName }
+        description={ _l`site.pageDescription${{...templateData, snippetCount, listingType, listingLanguage, listingTag }}` }
       />
       <Shell
         logoSrc={ logoSrc }
@@ -59,6 +69,14 @@ ListingPage.propTypes = {
     snippetList: PropTypes.arrayOf(SnippetPropType),
     /** Name of this listing page */
     listingName: PropTypes.string,
+    /**  Number of indexed snippets */
+    snippetCount: PropTypes.number,
+    /** Type metadata for the listing description */
+    listingType: PropTypes.string,
+    /** Language metadata for the listing description */
+    listingLanguage: PropTypes.string,
+    /** Tag metadata for the listing description */
+    listingTag: PropTypes.string,
   }),
   /** Dispatch function of the Redux stotre */
   dispatch: PropTypes.func,

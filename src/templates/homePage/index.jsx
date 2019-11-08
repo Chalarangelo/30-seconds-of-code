@@ -9,6 +9,11 @@ import PropTypes from 'prop-types';
 import _ from 'lang';
 const _l = _('en');
 
+// Used to produce a description
+const templateData = {
+  pageType: 'home',
+};
+
 const HomePage = ({
   pageContext: {
     logoSrc,
@@ -18,6 +23,7 @@ const HomePage = ({
     <>
       <Meta
         logoSrc={ logoSrc }
+        description={ _l`site.pageDescription${templateData}` }
         meta={ [{ name: `google-site-verification`, content: `YX9mF-TxoHZGJ9SZ8XwvWgGR_KTcbH1uHul4iDklyr0`}] }
       />
       <Shell
