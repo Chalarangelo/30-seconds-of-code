@@ -73,6 +73,7 @@ const createAllListingPages = (searchIndex, listingPage, createPage, context) =>
     {
       ...context,
       listingName: _l('Snippet List'),
+      listingType: 'main',
     },
     '/list'
   );
@@ -89,6 +90,9 @@ const createAllListingPages = (searchIndex, listingPage, createPage, context) =>
       {
         ...context,
         listingName: _l`codelang.${searchIndexName}`,
+        snippetCount: searchIndexSlugData.length,
+        listingType: 'language',
+        listingLanguage: searchIndexName,
       },
       `/${slugPrefix}`
     );
@@ -111,6 +115,10 @@ const createAllListingPages = (searchIndex, listingPage, createPage, context) =>
         {
           ...context,
           listingName: _l`codelang_tag.${searchIndexName}${tagPrefix}`,
+          snippetCount: searchIndexTagData.length,
+          listingType: 'tag',
+          listingLanguage: searchIndexName,
+          listingTag: tagPrefix,
         },
         `/${slugPrefix}/t/${tagPrefix}`
       );
@@ -151,11 +159,12 @@ const createPages = (query, templates) => ({ graphql, actions }) => {
     .then(result => {
       if (result.errors) throw result.errors;
 
+      const searchIndex = result.data.searchIndex;
+
       const commonContext = {
         logoSrc: result.data.logoSrc.childImageSharp.original.src,
+        snippetCount: searchIndex.edges.length,
       };
-
-      const searchIndex = result.data.searchIndex;
 
       createHomePage(
         templates['HomePage'],

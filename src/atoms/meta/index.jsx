@@ -14,7 +14,7 @@ const Meta = ({
   logoSrc,
 }) => {
   const _l = _(locale); // TODO: Pass this to all components below or use it in Redux store to be able to localize the website in the future
-  const metaDescription = description || _l('site.description');
+  const metaDescription = description || _l('site.pageDescription');
 
   return (
     <Helmet

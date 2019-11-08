@@ -9,9 +9,15 @@ import SearchResults from 'organisms/searchResults';
 import { pushNewPage } from 'state/navigation';
 const _l = _('en');
 
+// Used to produce a description
+const templateData = {
+  pageType: 'search',
+};
+
 const SearchPage = ({
   pageContext: {
     logoSrc,
+    snippetCount,
   },
   searchQuery,
   dispatch,
@@ -24,6 +30,7 @@ const SearchPage = ({
     <>
       <Meta
         logoSrc={ logoSrc }
+        description={ _l`site.pageDescription${{...templateData, snippetCount }}` }
         title={ searchQuery.length === 0 ? _l('Search') : _l`Search results for${searchQuery}` }
       />
       <Shell
@@ -45,6 +52,8 @@ SearchPage.propTypes = {
   pageContext: PropTypes.shape({
     /** URI for the logo image */
     logoSrc: PropTypes.string.isRequired,
+    /** Number of indexed snippets */
+    snippetCount: PropTypes.number,
   }),
   /** Search query */
   searchQuery: PropTypes.string,

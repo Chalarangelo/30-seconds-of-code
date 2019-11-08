@@ -9,6 +9,11 @@ import Shell from 'organisms/shell';
 import _ from 'lang';
 const _l = _('en');
 
+// Used to produce a description
+const templateData = {
+  pageType: 'snippet',
+};
+
 const SnippetPage = ({
   pageContext: {
     snippet,
@@ -22,7 +27,7 @@ const SnippetPage = ({
     <>
       <Meta
         title={ snippet.title }
-        description={ snippet.description }
+        description={ _l`site.pageDescription${{...templateData, snippetName: snippet.title, snippetLanguage: snippet.language.long }}` }
         logoSrc={ logoSrc }
       />
       <Shell
