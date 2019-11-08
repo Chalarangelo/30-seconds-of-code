@@ -33,7 +33,7 @@ const SnippetList = ({
       )) }
       <Paginator paginator={ paginator } />
     </>
-  ) : null; // TODO: Show loader
+  ) : null; // IDEA: Show a loader or a message
 };
 
 SnippetList.propTypes = {

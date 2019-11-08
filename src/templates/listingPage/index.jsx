@@ -83,6 +83,7 @@ ListingPage.propTypes = {
 };
 
 export default connect(
+  // eslint-disable-next-line
   state => ({}),
   null
 )(ListingPage);

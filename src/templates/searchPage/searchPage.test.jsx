@@ -3,8 +3,6 @@ import { Provider } from 'react-redux';
 import createStore from 'state';
 import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import _ from 'lang';
-const _l = _('en');
 
 import SearchPage from './index';
 

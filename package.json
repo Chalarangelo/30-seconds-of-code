@@ -85,7 +85,7 @@
     "debug": "NODE_PATH=src npx --node-arg '-r esm --nolazy --inspect-brk' node_modules/.bin/gatsby develop",
     "serve": "NODE_PATH=src npx --node-arg '-r esm' gatsby serve",
     "storybook": "cross-env NODE_PATH=src start-storybook -s ./assets -p 6006",
-    "lint": "eslint src/**/*.js src/**/*.jsx",
+    "lint": "eslint './src/**/*.js' './src/**/*.jsx'",
     "test": "cross-env NODE_PATH=src NODE_ENV=test jest --coverage",
     "test:generate-output": "cross-env NODE_PATH=src NODE_ENV=test jest --json --outputFile=.storybook/jest-test-results.json",
     "test:watch": "cross-env NODE_PATH=src NODE_ENV=test jest --json --outputFile=.storybook/jest-test-results.json --watch"

@@ -28,7 +28,6 @@ export const finishIndexFetch = index => ({
   type: FINISH_INDEX_FETCH,
   index,
 });
-// TODO: Use a better search strategy
 export const searchByKeyphrase = (keyphrase, searchIndex) => {
   let q = keyphrase.toLowerCase().trim();
   if (q.length <= 1) {

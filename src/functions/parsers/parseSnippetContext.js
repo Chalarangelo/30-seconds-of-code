@@ -19,7 +19,6 @@ const parseSnippetContext = (snippet, cardTemplate) => {
   return {
     id: snippet.id,
     title: snippet.title,
-    // TODO: Figure out a better solution for the description
     description: snippet.text.short,
     url: snippet.url,
     expertise: snippet.expertise,

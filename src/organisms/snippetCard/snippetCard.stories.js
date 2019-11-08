@@ -91,7 +91,7 @@ btn<span class="token punctuation">.</span><span class="token function-variable 
   btn<span class="token punctuation">.</span>style<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">'--x'</span><span class="token punctuation">,</span> x <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">)</span>
   btn<span class="token punctuation">.</span>style<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">'--y'</span><span class="token punctuation">,</span> y <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">)
 }</span></pre>`,
-    browserSupport: '\n<p><span class=\"snippet__support-note\">⚠️ Requires JavaScript.</span></p>\n<ul>\n<li><a href=\"https://caniuse.com/#feat=css-variables\">https://caniuse.com/#feat=css-variables</a></li>\n</ul>',
+    browserSupport: '\n<p><span class="snippet__support-note">⚠️ Requires JavaScript.</span></p>\n<ul>\n<li><a href="https://caniuse.com/#feat=css-variables">https://caniuse.com/#feat=css-variables</a></li>\n</ul>',
   };
   const snippet = object('snippet', {
     title: 'Mouse cursor gradient tracking',
