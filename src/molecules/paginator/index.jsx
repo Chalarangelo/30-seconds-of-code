@@ -117,8 +117,6 @@ const Paginator = ({
 Paginator.propTypes = {
   /** Additional classes for the paginator */
   className: PropTypes.string,
-  /** Is a compact paginator */
-  isCompact: PropTypes.bool,
   /** Paginator component data */
   paginator: PaginatorPropType,
 };

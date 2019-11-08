@@ -1,21 +1,13 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import Card from 'atoms/card';
 import NavBar from 'molecules/navBar';
-import Expertise from 'atoms/expertise';
-import CodeBlock from 'atoms/codeBlock';
-import { CopyButton } from 'atoms/button';
-import Toast from 'atoms/toast';
-import { trimWhiteSpace } from 'functions/utils';
 import { useMedia } from 'functions/hooks';
 import _ from 'lang';
 import { toggleDarkMode } from 'state/shell';
 const _l = _('en');
 import config from '../../../config';
 
-// TODO: Handle special classNames for the search and list buttons
 // eslint-disable-next-line complexity
 const Shell = ({
   isDarkMode,

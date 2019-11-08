@@ -3,8 +3,6 @@ import { Provider } from 'react-redux';
 import createStore from 'state';
 import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import _ from 'lang';
-const _l = _('en');
 
 import Shell from './index';
 
@@ -24,8 +22,6 @@ describe('<Shell />', () => {
   const logoSrc = '/assets/logo.png';
   let wrapper, pageContainer, navBar, content, title, logo;
   const innerText = 'Hi there!';
-  const modes = ['.moon', '.sun'];
-  let selectedModeIndex = 0;
 
   beforeEach(() => {
     wrapper = mount(

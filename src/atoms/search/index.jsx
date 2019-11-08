@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { trimWhiteSpace, getURLParameters, throttle, getBaseURL } from 'functions/utils';
-import { startIndexFetch, finishIndexFetch, pushNewQuery, searchByKeyphrase } from 'state/search';
+import { pushNewQuery, searchByKeyphrase } from 'state/search';
 import _ from 'lang';
 import { useFetchSearchIndex } from 'functions/hooks';
 const _l = _('en');

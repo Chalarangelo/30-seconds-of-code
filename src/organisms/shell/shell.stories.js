@@ -3,7 +3,6 @@ import { Provider } from 'react-redux';
 import { createStore as reduxCreateStore } from 'redux';
 import rootReducer from 'state';
 import Shell from 'organisms/shell';
-import { object } from '@storybook/addon-knobs';
 import mdx from './docs.mdx';
 
 const createStore = () => reduxCreateStore(rootReducer);

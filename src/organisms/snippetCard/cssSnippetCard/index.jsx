@@ -9,8 +9,6 @@ import SnippetPreview from 'atoms/snippetPreview';
 import BrowserSupport from 'atoms/browserSupport';
 import { Snippet as SnippetPropType } from 'typedefs';
 import { trimWhiteSpace } from 'functions/utils';
-import _ from 'lang';
-const _l = _('en');
 
 const SnippetCard = ({
   snippet,

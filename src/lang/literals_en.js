@@ -1,5 +1,4 @@
 import { capitalize } from 'functions/utils';
-// TODO: Is this the best option available to us path-wise?
 import config from '../../config';
 
 const multiline = {

@@ -1,6 +1,5 @@
 import React from 'react';
 import SnippetPreview from 'atoms/snippetPreview';
-import { text } from '@storybook/addon-knobs';
 import mdx from './docs.mdx';
 
 export default {

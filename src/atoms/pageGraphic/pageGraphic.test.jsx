@@ -9,7 +9,6 @@ configure({ adapter: new Adapter() });
 describe('<PageGraphic />', () => {
   let wrapper;
   const innerText = 'This is a page';
-  const title = 'Simple card';
 
   beforeEach(() => {
     wrapper = mount(<PageGraphic className='search-empty'>{ innerText }</PageGraphic>);

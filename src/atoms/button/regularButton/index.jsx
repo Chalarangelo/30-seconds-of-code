@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { trimWhiteSpace } from 'functions/utils';
-import _ from 'lang';
 
 const Button = ({
   onClick,
