@@ -17,7 +17,7 @@ const sourceNodes = (requirables, reducers) => ({ actions, createNodeId, createC
   const snippetNodes = requirables
     .reduce((acc, sArr) => {
       const commonData = {
-        archived: sArr.meta.isArchived,
+        archived: sArr.meta.archived,
         language: sArr.meta.language,
         otherLanguages: sArr.meta.otherLanguages,
         sourceDir: sArr.meta.sourceDir,
