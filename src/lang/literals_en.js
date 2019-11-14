@@ -11,6 +11,7 @@ const multiline = {
 const literals = {
   'codelang.': lang => lang,
   'codelang_tag.': (lang, tag) => `${lang} ${capitalize(tag)}`,
+  'snippetCount.': count => `(${count} snippets)`,
   // Multiline literals
   'm': key => multiline[key],
   // Site metadata
