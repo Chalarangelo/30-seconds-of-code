@@ -38,6 +38,9 @@ const parseRequirables = contentDirPath => {
         reqJson.meta.tagScores = cfg.tagScores;
         reqJson.meta.keywordScores = cfg.keywordScores;
 
+        reqJson.meta.featured = cfg.featured ? cfg.featured : 0;
+        reqJson.meta.theme = cfg.theme;
+
         requirables.push( reqJson );
       });
     });

@@ -9,6 +9,11 @@ export default {
   slug: 'react',
   reducer: 'jsxReducer',
   resolver: 'jsxResolver',
+  featured: 4,
+  theme: {
+    backColor: '#282c34',
+    foreColor: '#61dafb',
+  },
   biasPenaltyMultiplier: 1.08,
   tagScores: {
     'hooks': 5,

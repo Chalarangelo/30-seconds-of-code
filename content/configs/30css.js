@@ -9,6 +9,11 @@ export default {
   slug: 'css',
   reducer: 'cssReducer',
   resolver: 'cssResolver',
+  featured: 2,
+  theme: {
+    backColor: '#3f4de4',
+    foreColor: '#ffffff',
+  },
   biasPenaltyMultiplier: 1.02,
   tagScores: {
     'animation': 5,
