@@ -43,7 +43,7 @@ See CONTRIBUTING.md for the snippet template.
 <summary>View contents</summary>
 
 * [`Disable selection`](#disable-selection)
-* [`Hamburguer Button`](#hamburguer-button)
+* [`Hamburger Button`](#hamburger-button)
 * [`Popout menu`](#popout-menu)
 * [`Sibling fade`](#sibling-fade)
 
@@ -625,7 +625,7 @@ Makes the content unselectable.
 
 <br>[⬆ Back to top](#contents)
 
-### Hamburguer Button
+### Hamburger Button
 
 This is a way to build simple hamburger button for menu bar.
 
