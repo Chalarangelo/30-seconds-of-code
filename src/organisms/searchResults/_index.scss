@@ -6,14 +6,6 @@
   transition: all .3s ease;
   line-height: 2;
   margin: .125rem 1.25rem 0;
-  
-  a {
-
-    &, &:link, &:visited {
-      color: inherit;
-      font-weight: 600;
-    }
-  }
 }
 
 .search-results-title {
@@ -26,6 +18,8 @@
 
 a.search-compact-view-more {
   &, &:link, &:visited {
+    color: var(--fore-color-dark);
+    font-weight: 600;
     display: block;
     text-align: center;
     margin: .125rem 0 2rem;
