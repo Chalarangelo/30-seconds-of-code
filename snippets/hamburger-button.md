@@ -1,5 +1,5 @@
 ---
-title: Hamburguer Button
+title: Hamburger Button
 tags: interactivity,beginner
 ---
 
