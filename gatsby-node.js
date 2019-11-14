@@ -35,7 +35,7 @@ console.log(`${green('success')} parse templates`);
 const pagesQuery = parseQueries(getLogoSrc, createPagesQuery, getSearchIndex);
 console.log(`${green('success')} parse queries`);
 
-exports.createPages = createPages(pagesQuery, templates);
+exports.createPages = createPages(pagesQuery, templates, requirables);
 
 exports.onCreateNode = onCreateNode;
 
