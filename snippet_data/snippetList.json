@@ -400,7 +400,7 @@
     {
       "id": "hamburger-button",
       "type": "snippetListing",
-      "title": "Hamburguer Button",
+      "title": "Hamburger Button",
       "attributes": {
         "text": "This is a way to build simple hamburger button for menu bar.\n\n",
         "tags": [
