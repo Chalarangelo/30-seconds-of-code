@@ -39,6 +39,16 @@ const createSearchPage = (searchPage, createPage, context) => {
   });
 };
 
+const createAboutPage = (aboutPage, createPage, context) => {
+  createPage({
+    path: '/about',
+    component: aboutPage,
+    context: {
+      ...context,
+    },
+  });
+};
+
 const createListingPages = (indexedChunks, listingPage, createPage, context, baseUrl) => {
   indexedChunks.forEach((chunk, i, chunks) => {
     createPage({
@@ -184,6 +194,14 @@ const createPages = (query, templates) => ({ graphql, actions }) => {
 
       create404Page(
         templates['NotFoundPage'],
+        createPage,
+        {
+          ...commonContext,
+        }
+      );
+
+      createAboutPage(
+        templates['AboutPage'],
         createPage,
         {
           ...commonContext,

@@ -32,8 +32,8 @@ module.exports = {
       path: `notFoundPage/index.jsx`,
     },
     {
-      name: `TagPage`,
-      path: `tagPage/index.jsx`,
+      name: `AboutPage`,
+      path: `aboutPage/index.jsx`,
     },
   ],
   // Snippet ranking engine parameters

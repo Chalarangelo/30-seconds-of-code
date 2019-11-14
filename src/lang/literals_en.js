@@ -3,6 +3,9 @@ import config from '../../config';
 
 const multiline = {
   'About us': `30 seconds provides high-quality learning resources for developers of all skill levels in the form of snippet collections in various programming languages since its inception in 2017. Today, 30 seconds consists of a community of over 250 contributors and more than 10 maintainers, dedicated to creating the best short-form learning resources for software developers. Our goal is to make software development more accessible and help the open-source community grow by helping people learn to code for free.`,
+  'License.code': `In order for the code provided via the 30 seconds projects to be as accessible and useful as possible, all of the snippets in these collections are licensed under the CC0-1.0 License meaning they are absolutely free to use in any project you like. If you like what we do, you can always credit us, but that is not mandatory.`,
+  'License.logo': `Logos, names and trademarks are not to be used without the explicit consent of the maintainers or owners of the 30 seconds GitHub organization. The only exception to this is the usage of the 30-seconds-of- name in open source projects, licensed under the CC0-1.0 License and hosted on GitHub, if their README and website clearly state that they are unofficial projects and in no way affiliated with the organization.`,
+  'Who we are': `The 30 seconds movement and, to some extent, the associated GitHub organization consists of all the people who have invested time and ideas to be part of this amazing community. Meanwhile, these fine folks are currently responsible for maintaining the codebases and dealing with organizational matters:`,
 };
 
 const literals = {
@@ -33,6 +36,8 @@ const literals = {
       return `Search for answers to your development problems among ${pageData.snippetCount} code snippets on ${config.name}.`;
     case 'snippet':
       return `Learn how to code a ${pageData.snippetName} snippet in ${pageData.snippetLanguage} on ${config.name}.`;
+    case 'about':
+      return `Learn more about the team behind ${config.name}.`;
     case 'home':
     default:
       return defaultDescription;
@@ -56,6 +61,7 @@ const literals = {
   'Browser support': 'Browser support',
   'Edit on CodePen': 'Edit on CodePen',
   'Preview': 'Preview',
+  'About': 'About',
   'About us': 'About us',
   'Read more about us...': 'Read more about us...',
   'Start typing a keyphrase to see matching snippets or ': 'Start typing a keyphrase to see matching snippets or ',
@@ -75,6 +81,9 @@ const literals = {
   'Seems like you have reached a page that does not exist.': 'Seems like you have reached a page that does not exist.',
   'Go home': 'Go home',
   'Snippet List': 'Snippet List',
+  'A few word about us, our goals and our projects.': 'A few word about us, our goals and our projects.',
+  'License': 'License',
+  'Who we are': 'Who we are',
 };
 
 export default literals;
