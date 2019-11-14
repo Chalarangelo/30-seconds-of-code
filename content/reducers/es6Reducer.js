@@ -1,4 +1,8 @@
-import { determineExpertiseFromTags } from 'functions/utils';
+import {
+  rankingEngine as rankSnippet,
+  searchIndexingEngine as tokenizeSnippet
+} from 'engines';
+import { determineExpertiseFromTags, stripExpertiseFromTags, uniqueElements } from 'functions/utils';
 
 export default (id, snippetNode, markdownNode) => {
   return {
@@ -14,6 +18,7 @@ export default (id, snippetNode, markdownNode) => {
       example: snippetNode.attributes.codeBlocks.example,
     },
     slug: `/${snippetNode.slugPrefix}${markdownNode.fields.slug}`,
+    url: `${snippetNode.repoUrlPrefix}${markdownNode.fields.slug.slice(0, -1)}.md`,
     path: markdownNode.fileAbsolutePath,
     text: {
       full: snippetNode.attributes.text,
@@ -21,5 +26,15 @@ export default (id, snippetNode, markdownNode) => {
     },
     archived: snippetNode.archived,
     language: snippetNode.language,
+    ranking: rankSnippet(snippetNode),
+    searchTokens: uniqueElements([
+      snippetNode.language.short,
+      snippetNode.language.long,
+      snippetNode.title,
+      ...snippetNode.attributes.tags.filter(tag => tag !== 'beginner' && tag !== 'intermediate' && tag !== 'advanced'),
+      ...tokenizeSnippet(
+        snippetNode.attributes.text.slice(0, snippetNode.attributes.text.indexOf('\n\n'))
+      ),
+    ]).join(' ').toLowerCase(),
   };
 };

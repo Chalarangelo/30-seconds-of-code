@@ -5,6 +5,7 @@ import Meta from './meta';
 import Tags from './tags';
 import Code from './code';
 import Html from './html';
+import Paginator from './paginator';
 
 export {
   Link,
@@ -13,5 +14,6 @@ export {
   Meta,
   Tags,
   Code,
-  Html
+  Html,
+  Paginator
 };

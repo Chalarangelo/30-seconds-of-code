@@ -27,7 +27,7 @@ configure({ adapter: new Adapter() });
 
 describe('<CodepenButton />', () => {
   let wrapper;
-  let button, form, input;
+  let button, input;
   const htmlCode = '<p class="my-special-snippet">Hello, this is white on red.</p>';
   const cssCode = `.my-special-snippet {
     background: red;
@@ -37,7 +37,6 @@ describe('<CodepenButton />', () => {
   beforeEach(() => {
     wrapper = mount(<CodepenButton htmlCode={ htmlCode } cssCode={ cssCode } />);
     button = wrapper.find('button');
-    form = wrapper.find('form');
     input = wrapper.find('input');
   });
 

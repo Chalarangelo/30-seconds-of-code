@@ -2,17 +2,34 @@ import {
   capitalize,
   trimWhiteSpace,
   optimizeNodes,
-  optimizeAllNodes
+  optimizeAllNodes,
+  getURLParameters,
+  getBaseURL
 } from './string';
 
 import {
-  determineExpertiseFromTags
+  determineExpertiseFromTags,
+  stripExpertiseFromTags,
+  transformSnippetIndex,
+  uniqueElements,
+  chunk
 } from './array';
+
+import {
+  throttle
+} from './function';
 
 export {
   capitalize,
   trimWhiteSpace,
   optimizeNodes,
   optimizeAllNodes,
-  determineExpertiseFromTags
+  determineExpertiseFromTags,
+  stripExpertiseFromTags,
+  getURLParameters,
+  getBaseURL,
+  throttle,
+  transformSnippetIndex,
+  uniqueElements,
+  chunk
 };

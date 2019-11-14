@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { Link as LinkPropType } from 'typedefs';
 import {Anchor} from 'atoms/anchor';
 import { trimWhiteSpace } from 'functions/utils';
+import _ from 'lang';
+const _l = _('en');
 
 export const NAV_ICONS = [
   'search',
@@ -22,7 +24,9 @@ const NavButton = ({
     className={ trimWhiteSpace`nav-btn ${icon} ${className}` }
     link={ link }
     { ...rest }
-  />
+  >
+    { _l(`nav.${icon}`) }
+  </Anchor>
 );
 
 NavButton.propTypes = {

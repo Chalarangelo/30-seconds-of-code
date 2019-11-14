@@ -1,0 +1,48 @@
+import {
+  Story,
+  Preview,
+  Props,
+  Source,
+  Description,
+  ColorPalette,
+  ColorItem,
+  Meta,
+} from '@storybook/addon-docs/blocks';
+import ListingPage from 'templates/listingPage';
+
+# ListingPage
+
+The template for the listing page.
+
+## Props
+
+<Props of={ListingPage} />
+
+## Source
+
+```jsx
+const logoSrc = '/assets/logo.png';
+const paginator = {
+  totalPages: 7,
+  pageNumber: 4,
+  baseUrl: '/list',
+};
+const snippetList = [
+  {
+    title: 'compose',
+    language: 'JavaScript',
+    tags: {
+      primary: 'function',
+      all: ['function', 'recursion'],
+    },
+    expertise: 'intermediate',
+    html: {
+      description: '<p>Performs right-to-left function composition.</p>',
+    },
+    url: 'snippets/compose',
+  },
+];
+const listingName = 'Snippet list';
+
+<ListingPage pageContext={ { logoSrc, snippetList, paginator, listingName } } />
+```

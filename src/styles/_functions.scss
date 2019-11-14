@@ -40,7 +40,7 @@
   }
 
   @if $icon-name == "home" {
-    @return url("data:image/svg+xml,%3Csvg width='"+$size+"' height='"+$size+"' viewBox='0 0 24 24' fill='"+$fill+"' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 9v11a2 2 0 002 2h14a2 2 0 002-2V9' stroke="+$stroke+"' stroke-width='"+$stroke-width+"' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 22V12h6v10M1 10l11-9 11 9' stroke='"+$stroke+"' stroke-width='"+$stroke-width+"' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    @return url("data:image/svg+xml,%3Csvg width='"+$size+"' height='"+$size+"' viewBox='0 0 24 24' fill='"+$fill+"' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 9v11a2 2 0 002 2h14a2 2 0 002-2V9' stroke='"+$stroke+"' stroke-width='"+$stroke-width+"' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 22V12h6v10M1 10l11-9 11 9' stroke='"+$stroke+"' stroke-width='"+$stroke-width+"' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   }
 
   @if $icon-name == "github" {
@@ -65,5 +65,13 @@
 
   @if $icon-name == "codepen" {
     @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='"+$size+"' height='"+$size+"' viewBox='0 0 24 24' fill='"+$fill+"' stroke='"+$stroke+"' stroke-width='"+$stroke-width+"' stroke-linecap='round' stroke-linejoin='round' class='feather feather-codepen'%3E%3Cpath d='M12 2l10 6.5v7L12 22 2 15.5v-7L12 2zM12 22v-6.5'/%3E%3Cpath d='M22 8.5l-10 7-10-7'/%3E%3Cpath d='M2 15.5l10-7 10 7M12 2v6.5'/%3E%3C/svg%3E");
+  }
+
+  @if $icon-name == "chevron-left" {
+    @return url("data:image/svg+xml,%3Csvg width='"+$size+"' height='"+$size+"' viewBox='0 0 24 24' fill='"+$fill+"' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 18l-6-6 6-6' stroke='"+$stroke+"' stroke-width='"+$stroke-width+"' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+
+  @if $icon-name == "chevron-right" {
+    @return url("data:image/svg+xml,%3Csvg width='"+$size+"' height='"+$size+"' viewBox='0 0 24 24' fill='"+$fill+"' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 18l6-6-6-6' stroke='"+$stroke+"' stroke-width='"+$stroke-width+"' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   }
 }

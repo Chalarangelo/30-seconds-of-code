@@ -23,24 +23,35 @@ $nav-button-active-fore-color-dark: #CDD4EF;
   margin: 0;
   background: transparent;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center 8px;
+  font-size: 14px;
+  padding-top: 14px;
   border: none;
   text-align: center;
   line-height: 61px;
   cursor: pointer;
   transition: 0.3s ease all;
   @media screen and (min-width: $layout-medium-breakpoint) and (orientation: landscape) {
-    height: 12.5vh;
+    max-height: 12.5vh;
     width: 100%;
     margin-top: 1vh;
     margin-bottom: 4vh;
-    line-height: 12.5vh;
+    padding-top: 44px;
+    line-height: 1.5;
   }
   @media screen and (min-width: $layout-large-breakpoint) and (orientation: landscape) {
     margin-bottom: 1vh;
   }
+  &, &:link, &:visited {
+    color: var(--nav-button-fore-color);
+
+    &:hover, &:focus, &.active {
+      color: var(--nav-button-active-fore-color);
+    }
+  }
   &:hover, &:focus {
     outline: 0;
+    text-decoration: none;
   }
   &:last-of-type {
     vertical-align: top;
@@ -52,16 +63,16 @@ $icons: "search", "list", "github", "sun", "moon";
 
 @each $icon in $icons {
   .nav-btn.#{$icon} {
-    background-image: generate-icon-background($icon, $nav-button-fore-color-light, 'none', 2, 24);
+    background-image: generate-icon-background($icon, $nav-button-fore-color-light, 'none', 2, 20);
     &:hover, &:focus, &.active {
-      background-image: generate-icon-background($icon, $nav-button-active-fore-color-light, 'none', 2, 24);
+      background-image: generate-icon-background($icon, $nav-button-active-fore-color-light, 'none', 2, 20);
     }
   }
   .page-container.dark {
     .nav-btn.#{$icon} {
-      background-image: generate-icon-background($icon, $nav-button-fore-color-dark, 'none', 2, 24);
+      background-image: generate-icon-background($icon, $nav-button-fore-color-dark, 'none', 2, 20);
       &:hover, &:focus, &.active {
-        background-image: generate-icon-background($icon, $nav-button-active-fore-color-dark, 'none', 2, 24);
+        background-image: generate-icon-background($icon, $nav-button-active-fore-color-dark, 'none', 2, 20);
       }
     }
   }

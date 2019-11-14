@@ -17,13 +17,17 @@ const sourceNodes = (requirables, reducers) => ({ actions, createNodeId, createC
   const snippetNodes = requirables
     .reduce((acc, sArr) => {
       const commonData = {
-        archived: sArr.meta.isArchived,
+        archived: sArr.meta.archived,
         language: sArr.meta.language,
         otherLanguages: sArr.meta.otherLanguages,
         sourceDir: sArr.meta.sourceDir,
         slugPrefix: sArr.meta.slugPrefix,
+        repoUrlPrefix: sArr.meta.repoUrlPrefix,
         reducer: sArr.meta.reducer,
         resolver: sArr.meta.resolver,
+        biasPenaltyMultiplier: sArr.meta.biasPenaltyMultiplier,
+        tagScores: sArr.meta.tagScores,
+        keywordScores: sArr.meta.keywordScores,
       };
       return ({
         ...acc,
@@ -40,7 +44,7 @@ const sourceNodes = (requirables, reducers) => ({ actions, createNodeId, createC
     }, {});
 
   Object.entries(snippetNodes).forEach(([id, sNode]) => {
-    let mNode = markdownNodes.find(mN => mN.fileAbsolutePath.includes(id));
+    let mNode = markdownNodes.find(mN => mN.fileAbsolutePath.includes(`${id}.md`));
     let reducer = reducers[sNode.reducer];
     let nodeContent = reducer(id, sNode, mNode);
     nodeContent.resolver = sNode.resolver;

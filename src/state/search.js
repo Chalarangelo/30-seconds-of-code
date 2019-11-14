@@ -1,0 +1,84 @@
+import { searchIndexingEngine as tokenize } from 'engines';
+
+// Defalt state
+const initialState = {
+  initialized: false,
+  searchQuery: '',
+  searchIndex: [],
+  searchResults: [],
+};
+
+// Actions
+const PUSH_NEW_QUERY = 'PUSH_NEW_QUERY';
+const START_INDEX_FETCH = 'START_INDEX_FETCH';
+const FINISH_INDEX_FETCH = 'FINISH_INDEX_FETCH';
+const SEARCH_BY_KEYPHRASE = 'SEARCH_BY_KEYPHRASE';
+const KEYPHRASE_TOO_SHORT = 'KEYPHRASE_TOO_SHORT';
+
+export const pushNewQuery = query => ({
+  type: PUSH_NEW_QUERY,
+  query,
+});
+
+export const startIndexFetch = () => ({
+  type: START_INDEX_FETCH,
+});
+
+export const finishIndexFetch = index => ({
+  type: FINISH_INDEX_FETCH,
+  index,
+});
+export const searchByKeyphrase = (keyphrase, searchIndex) => {
+  let q = keyphrase.toLowerCase().trim();
+  if (q.length <= 1) {
+    return {
+      type: KEYPHRASE_TOO_SHORT,
+    };
+  }
+  let results = [];
+  if (q.length) {
+    let t = tokenize(q);
+    if(t.length) {
+      const l = t.length;
+      results = searchIndex.map(snippet => ({
+        ...snippet,
+        score: t.reduce((acc, tkn) => snippet.searchTokens.indexOf(tkn) !== -1 ? acc + 1 : acc, 0) / l,
+      })).filter(snippet => snippet.score > 0.3).sort((a, b) => b.score - a.score).slice(0, 50);
+    }
+  }
+  return {
+    type: SEARCH_BY_KEYPHRASE,
+    results,
+  };
+};
+
+// Reducer
+export default (state = initialState, action) => {
+  switch (action.type) {
+  case PUSH_NEW_QUERY:
+    return {
+      ...state,
+      searchQuery: action.query,
+    };
+  case START_INDEX_FETCH:
+    return {
+      ...state,
+      initialized: false,
+    };
+  case FINISH_INDEX_FETCH:
+    return {
+      ...state,
+      searchIndex: action.index,
+      initialized: true,
+    };
+  case SEARCH_BY_KEYPHRASE:
+    return {
+      ...state,
+      searchResults: action.results,
+    };
+  case KEYPHRASE_TOO_SHORT:
+    return state;
+  default:
+    return state;
+  }
+};

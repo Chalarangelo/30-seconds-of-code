@@ -1,18 +1,15 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { createStore as reduxCreateStore } from 'redux';
-import rootReducer from 'state';
+import createStore from 'state';
 import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import _ from 'lang';
-const _l = _('en');
 
 import SnippetPage from './index';
 
 configure({ adapter: new Adapter() });
 console.warn = jest.fn();
 
-const createStore = () => reduxCreateStore(rootReducer);
+const { store } = createStore();
 
 describe('<SnippetPage />', () => {
   const logoSrc = '/assets/logo.png';
@@ -40,7 +37,7 @@ describe('<SnippetPage />', () => {
 
   beforeEach(() => {
     wrapper = mount(
-      <Provider store={ createStore() }>
+      <Provider store={ store }>
         <SnippetPage pageContext={ { snippet, logoSrc, cardTemplate } }/>
       </Provider>
     );
@@ -75,13 +72,12 @@ describe('<SnippetPage />', () => {
   it('should pass the correct data to the Shell component', () => {
     expect(shell.prop('logoSrc')).toBe(logoSrc);
     expect(shell.prop('isSearch')).toBe(false);
-    expect(shell.prop('isList')).toBe(false);
+    expect(shell.prop('isListing')).toBe(false);
   });
 
   it('should pass the correct data to the Meta component', () => {
     expect(meta.prop('logoSrc')).toBe(logoSrc);
     expect(meta.prop('title')).toBe(snippet.title);
-    expect(meta.prop('description')).toBe(snippet.description);
   });
 
   it('should pass a link to the LinkBackAnchor component', () => {

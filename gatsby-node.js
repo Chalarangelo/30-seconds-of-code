@@ -1,3 +1,5 @@
+const { green } = require('kleur');
+
 const {
   onCreateNode,
   sourceNodes,
@@ -7,6 +9,7 @@ const {
 const {
   createPagesQuery,
   getLogoSrc,
+  getSearchIndex,
 } = require(`./src/queries`);
 const {
   parseQueries,
@@ -18,10 +21,19 @@ const {
 const config = require('./config');
 
 const requirables = parseRequirables(config.contentPath);
+console.log(`${green('success')} parse requirables`);
+
 const reducers = parseReducers(config.contentPath);
+console.log(`${green('success')} parse reducers`);
+
 const resolvers = parseResolvers(config.contentPath);
+console.log(`${green('success')} parse resolvers`);
+
 const templates = parseTemplates(config.templates, config.templatesPath);
-const pagesQuery = parseQueries(getLogoSrc, createPagesQuery);
+console.log(`${green('success')} parse templates`);
+
+const pagesQuery = parseQueries(getLogoSrc, createPagesQuery, getSearchIndex);
+console.log(`${green('success')} parse queries`);
 
 exports.createPages = createPages(pagesQuery, templates);
 

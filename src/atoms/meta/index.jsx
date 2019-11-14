@@ -13,8 +13,8 @@ const Meta = ({
   meta = [],
   logoSrc,
 }) => {
-  const _l = _(locale); // TODO: Pass this to all components below or use it in Redux store to be able to localize the website in the future
-  const metaDescription = description || _l('site.description');
+  const _l = _(locale); // IDEA: Pass this to all components below or use it in Redux store to be able to localize the website in the future
+  const metaDescription = description || _l('site.pageDescription');
 
   return (
     <Helmet
@@ -23,7 +23,7 @@ const Meta = ({
       } }
       title={ title ? title : _l('site.title') }
       titleTemplate={ title ? `%s - ${_l('site.title')}` : '%s' }
-      // TODO: generalize the meta, extract a constant or config somewhere
+      // IDEA: generalize the meta, extract a constant or config somewhere
       meta={ [
         {
           name: `description`,
@@ -54,7 +54,7 @@ const Meta = ({
           content: logoSrc,
         },
       ].concat(meta) }
-      // TODO: See if we need to deal with this later
+      // IDEA: See if we need to deal with this later
       // bodyAttributes={{
       //   class: ''
       // }}
@@ -64,7 +64,7 @@ const Meta = ({
 
 Meta.propTypes = {
   /** Page title */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   /** Page description */
   description: PropTypes.string,
   /** Page locale (language) */
@@ -72,7 +72,7 @@ Meta.propTypes = {
   /** Metadata array */
   meta: PropTypes.arrayOf(MetaPropType),
   /** Page logo URI */
-  logoSrc: PropTypes.string.isRequired,
+  logoSrc: PropTypes.string,
 };
 
 export default Meta;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Button } from 'atoms/button';
 import _ from 'lang';
 const _l = _('en');
-
+/* eslint-disable camelcase */
 const CodepenButton = ({
   jsCode,
   htmlCode,

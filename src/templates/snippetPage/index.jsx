@@ -5,10 +5,14 @@ import { LinkBackAnchor } from 'atoms/anchor';
 import Meta from 'atoms/meta';
 import { Snippet as SnippetPropType } from 'typedefs';
 import PropTypes from 'prop-types';
-import 'index.scss';
 import Shell from 'organisms/shell';
 import _ from 'lang';
 const _l = _('en');
+
+// Used to produce a description
+const templateData = {
+  pageType: 'snippet',
+};
 
 const SnippetPage = ({
   pageContext: {
@@ -16,21 +20,21 @@ const SnippetPage = ({
     logoSrc,
     cardTemplate,
   },
-  lastPageTitle = 'Home',
-  lastPageUrl = '/',
-  ...rest
+  lastPageTitle,
+  lastPageUrl,
 }) => {
   return (
     <>
       <Meta
         title={ snippet.title }
-        description={ snippet.description }
+        description={ _l`site.pageDescription${{...templateData, snippetName: snippet.title, snippetLanguage: snippet.language.long }}` }
         logoSrc={ logoSrc }
       />
       <Shell
         logoSrc={ logoSrc }
         isSearch={ false }
-        isList={ false }
+        isListing={ false }
+        externalUrl={ snippet.url }
       >
         <LinkBackAnchor
           link={ {
@@ -70,10 +74,8 @@ SnippetPage.propTypes = {
 
 export default connect(
   state => ({
-    isDarkMode: state.app.isDarkMode,
-    lastPageTitle: state.app.lastPageTitle,
-    lastPageUrl: state.app.lastPageUrl,
-    searchQuery: state.app.searchQuery,
+    lastPageTitle: state.navigation.lastPageTitle,
+    lastPageUrl: state.navigation.lastPageUrl,
   }),
   null
 )(SnippetPage);

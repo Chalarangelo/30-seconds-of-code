@@ -21,12 +21,6 @@ module.exports = {
         path: `${__dirname}/${config.assetPath}`,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-page-creator`,
-    //   options: {
-    //     path: `${__dirname}/${config.pagePath}`,
-    //   },
-    // },
     {
       resolve: `gatsby-transformer-remark`,
       options: {

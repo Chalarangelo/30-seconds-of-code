@@ -1,17 +1,14 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { createStore as reduxCreateStore } from 'redux';
-import rootReducer from 'state';
+import createStore from 'state';
 import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import _ from 'lang';
-const _l = _('en');
 
 import Shell from './index';
 
 configure({ adapter: new Adapter() });
 
-const createStore = () => reduxCreateStore(rootReducer);
+const { store } = createStore();
 
 const expectArrayToContainMatchingObject = (arr, obj) => {
   return expect(arr).toEqual(
@@ -28,9 +25,9 @@ describe('<Shell />', () => {
 
   beforeEach(() => {
     wrapper = mount(
-      <Provider store={ createStore() }>
+      <Provider store={ store }>
         <Shell
-          isList={ false }
+          isListing={ false }
           isSearch={ false }
           logoSrc={ logoSrc }
         >
@@ -87,7 +84,7 @@ describe('<Shell />', () => {
   describe('with title and icon', () => {
     beforeEach(() => {
       wrapper = mount(
-        <Provider store={ createStore() }>
+        <Provider store={ store }>
           <Shell
             isList={ false }
             isSearch={ false }
@@ -121,7 +118,7 @@ describe('<Shell />', () => {
   describe('without title or icon', () => {
     beforeEach(() => {
       wrapper = mount(
-        <Provider store={ createStore() }>
+        <Provider store={ store }>
           <Shell
             isList={ false }
             isSearch={ false }
@@ -144,10 +141,21 @@ describe('<Shell />', () => {
 
   describe('when the mode toggle is clicked', () => {
     beforeEach(() => {
-      wrapper.find('.moon').at(0).simulate('click');
+      wrapper = mount(
+        <Provider store={ store }>
+          <Shell
+            isList={ false }
+            isSearch={ false }
+            logoSrc={ logoSrc }
+            withTitle
+            withIcon
+          />
+        </Provider>
+      );
     });
 
     it('should change the mode', () => {
+      wrapper.find('.moon').at(0).simulate('click');
       expect(wrapper).toContainMatchingElement('.nav-btn.sun');
       expect(wrapper).not.toContainMatchingElement('.nav-btn.moon');
     });
