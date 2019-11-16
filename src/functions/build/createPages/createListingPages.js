@@ -20,15 +20,9 @@ const createListingPages = (indexedChunks, listingPage, createPage, context, bas
   });
 };
 
-const createAllListingPages = (searchIndex, listingPage, createPage, context) => {
+const createAllListingPages = (searchIndex, listingMetas, listingPage, createPage, context) => {
+  // Create listing pages for the main listing
   const searchIndexChunks = chunk(transformSnippetIndex(searchIndex.edges), 20);
-  const searchIndexSlugPrefixes = [
-    ...new Set(
-      searchIndex.edges
-        .map(v => v.node.slug.slice(1)).map(v => v.slice(0, v.indexOf('/')))
-    ),
-  ];
-
   createListingPages(
     searchIndexChunks,
     listingPage,
@@ -41,10 +35,12 @@ const createAllListingPages = (searchIndex, listingPage, createPage, context) =>
     '/list'
   );
 
-  searchIndexSlugPrefixes.forEach(slugPrefix => {
-    const searchIndexSlugData = searchIndex.edges.filter(s => s.node.slug.startsWith(`/${slugPrefix}`));
+  listingMetas.forEach(listingMeta => {
+    const slugPrefix = listingMeta.slugPrefix;
+    const searchIndexSlugData = searchIndex.edges.filter(s => s.node.slug.startsWith(`${slugPrefix}`));
     const searchIndexSlugChunks = chunk(transformSnippetIndex(searchIndexSlugData), 20);
     const searchIndexName = searchIndexSlugData[0].node.language.long;
+    const searchIndexTagPrefixes = listingMeta.tags;
 
     createListingPages(
       searchIndexSlugChunks,
@@ -57,18 +53,11 @@ const createAllListingPages = (searchIndex, listingPage, createPage, context) =>
         listingType: 'language',
         listingLanguage: searchIndexName,
       },
-      `/${slugPrefix}`
+      `${slugPrefix}`
     );
 
-    const searchIndexTagPrefixes = [
-      ...new Set(
-        searchIndexSlugData
-          .map(v => v.node.tags.primary)
-      ),
-    ];
-
     searchIndexTagPrefixes.forEach(tagPrefix => {
-      const searchIndexTagData = searchIndex.edges.filter(s => s.node.tags.primary === tagPrefix && s.node.slug.startsWith(`/${slugPrefix}`));
+      const searchIndexTagData = searchIndex.edges.filter(s => s.node.tags.primary === tagPrefix && s.node.slug.startsWith(`${slugPrefix}`));
       const searchIndexTagChunks = chunk(transformSnippetIndex(searchIndexTagData), 20);
 
       createListingPages(
@@ -83,7 +72,7 @@ const createAllListingPages = (searchIndex, listingPage, createPage, context) =>
           listingLanguage: searchIndexName,
           listingTag: tagPrefix,
         },
-        `/${slugPrefix}/t/${tagPrefix}`
+        `${slugPrefix}/t/${tagPrefix}`
       );
     });
 

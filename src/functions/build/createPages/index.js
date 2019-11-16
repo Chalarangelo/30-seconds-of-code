@@ -6,8 +6,7 @@ import createSearchIndexPage from './createSearchIndexPage';
 import createSearchPage from './createSearchPage';
 import createSnippetPages from './createSnippetPages';
 import { transformSnippetIndex } from 'functions/utils';
-import _ from 'lang';
-const _l = _('en');
+import { parseListingMetas } from 'functions/parsers';
 
 /**
  * Tell plugins to add pages.
@@ -29,28 +28,14 @@ const createPages = (query, templates, requirables) => ({ graphql, actions }) =>
         snippetCount: searchIndex.edges.length,
       };
 
-      const featuredSources = requirables
-        .filter(rq => rq.meta.featured > 0)
-        .sort((a, b) => a.meta.featured - b.meta.featured)
-        .map(rq => ({
-          link: {
-            internal: true,
-            url: `/${rq.meta.slugPrefix.slice(0, rq.meta.slugPrefix.indexOf('/'))}/p/1`,
-          },
-          name: _l`codelang.${rq.meta.language.long}`,
-          style: {
-            background: rq.meta.theme.backColor,
-            color: rq.meta.theme.foreColor,
-          },
-          count: _l`snippetCount.${rq.data.length}`,
-        }));
+      const listingMetas = parseListingMetas(requirables);
 
       createHomePage(
+        listingMetas,
         templates['HomePage'],
         createPage,
         {
           ...commonContext,
-          listLinks: featuredSources,
         }
       );
 
@@ -80,6 +65,7 @@ const createPages = (query, templates, requirables) => ({ graphql, actions }) =>
 
       createListingPages(
         searchIndex,
+        listingMetas,
         templates['ListingPage'],
         createPage,
         {
