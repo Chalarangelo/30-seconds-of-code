@@ -109,4 +109,4 @@ public
 .overmind.sock
 
 # Build-time parameters
-build
+.build
