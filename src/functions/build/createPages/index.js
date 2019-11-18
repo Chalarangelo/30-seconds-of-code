@@ -22,7 +22,6 @@ const createPages = (query, templates, requirables) => ({ graphql, actions }) =>
       if (result.errors) throw result.errors;
 
       const searchIndex = result.data.searchIndex;
-
       const commonContext = {
         logoSrc: result.data.logoSrc.childImageSharp.original.src,
         snippetCount: searchIndex.edges.length,
@@ -31,6 +30,7 @@ const createPages = (query, templates, requirables) => ({ graphql, actions }) =>
       const listingMetas = parseListingMetas(requirables);
 
       createHomePage(
+        searchIndex,
         listingMetas,
         templates['HomePage'],
         createPage,
