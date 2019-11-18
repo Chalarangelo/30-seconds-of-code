@@ -27,6 +27,7 @@ export default (id, snippetNode, markdownNode) => {
     archived: snippetNode.archived,
     language: snippetNode.language,
     ranking: rankSnippet(snippetNode),
+    recommendationRanking: snippetNode.recommendationRanking,
     searchTokens: uniqueElements([
       snippetNode.language.short,
       snippetNode.language.long,
