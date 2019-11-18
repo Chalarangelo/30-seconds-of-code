@@ -5,6 +5,8 @@ import Search from 'atoms/search';
 import SearchResults from 'organisms/searchResults';
 import ListingAnchors from 'molecules/listingAnchors';
 import PropTypes from 'prop-types';
+import { Snippet as SnippetPropType } from 'typedefs';
+import RecommendationList from 'organisms/recommendationList';
 import _ from 'lang';
 const _l = _('en');
 
@@ -17,6 +19,7 @@ const HomePage = ({
   pageContext: {
     logoSrc,
     listingAnchors,
+    recommendedSnippets,
   },
 }) => {
   return (
@@ -49,6 +52,7 @@ const HomePage = ({
         <Search shouldUpdateHistory={ false } />
         <SearchResults isCompact />
         <ListingAnchors items={ listingAnchors } />
+        <RecommendationList snippetList={ recommendedSnippets } />
       </Shell>
     </>
   );
@@ -61,6 +65,8 @@ HomePage.propTypes = {
     logoSrc: PropTypes.string.isRequired,
     /** Links to list pages to be displayed on the page */
     listingAnchors: PropTypes.arrayOf(PropTypes.shape({})),
+    /** List of recommended snippets */
+    recommendedSnippets: PropTypes.arrayOf(SnippetPropType),
   }),
 };
 
