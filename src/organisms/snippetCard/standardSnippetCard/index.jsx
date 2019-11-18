@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import Card from 'atoms/card';
 import TagList from 'molecules/tagList';
-import Expertise from 'atoms/expertise';
 import CodeBlock from 'atoms/codeBlock';
 import { CopyButton, CodepenButton } from 'atoms/button';
 import Toast from 'atoms/toast';
@@ -21,7 +20,6 @@ const SnippetCard = ({
 }) => (
   <Card className={ trimWhiteSpace`snippet-card ${className}` } { ...rest } >
     <h4 className='card-title'>{ snippet.title }</h4>
-    <Expertise level={ snippet.expertise } />
     <TagList tags={ [snippet.language.long, ...snippet.tags.all] } />
     <div
       className='card-description'

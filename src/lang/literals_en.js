@@ -55,7 +55,7 @@ const literals = {
   'footer.github': 'GitHub',
   'footer.twitter': 'Twitter',
   // Literals
-  'Expertise': level => `Expertise: ${capitalize(level, true)}`,
+  'Expertise': level => `${capitalize(level, true)}`,
   'Search snippets': 'Search snippets',
   'Search...': 'Search...',
   'Search': 'Search',

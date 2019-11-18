@@ -6,12 +6,18 @@
 }
 
 .expertise {
-  box-sizing: border-box;
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 0.5rem;
-  background: var(--expertise-color);
-  position: absolute;
+  position: relative;
+  display: inline-block;
+  border: 2px solid var(--tag-border-color);
+  border-radius: 0.375rem;
+  color: var(--tag-fore-color);
+  padding: 0.125rem 0.625rem 0.125rem 1.125rem;
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.25px;
+  transition: 0.3s ease all;
 
   &.beginner {
     --expertise-color: var(--expertise-beginner);
@@ -25,31 +31,15 @@
     --expertise-color: var(--expertise-advanced);
   }
 
-  &.intermediate, &.advanced {
-    &::before {
-      display: block;
-      position: absolute;
-      content: '';
-      top: 0px;
-      right: 12px;
-      width: 0.5rem;
-      height: 0.5rem;
-      border-radius: 0.5rem;
-      background: var(--expertise-color);
-    }
-  }
-
-  &.advanced {
-    &::after {
-      display: block;
-      position: absolute;
-      content: '';
-      top: 0px;
-      right: 24px;
-      width: 0.5rem;
-      height: 0.5rem;
-      border-radius: 0.5rem;
-      background: var(--expertise-color);
-    }
+  &::before {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 6px;
+    left: 6px;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 0.5rem;
+    background: var(--expertise-color);
   }
 }
