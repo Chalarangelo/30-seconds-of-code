@@ -8,7 +8,10 @@ const _l = _('en');
 const Expertise = ({
   level = 'intermediate',
 }) => (
-  <div className={ trimWhiteSpace`expertise ${level}` } title={ _l`Expertise${level}` }/>
+  <span className={ trimWhiteSpace`expertise ${level}` }>
+    { _l`Expertise${level}` }
+  </span>
+  // <div className={ trimWhiteSpace`expertise ${level}` } title={ _l`Expertise${level}` }/>
 );
 
 Expertise.propTypes = {

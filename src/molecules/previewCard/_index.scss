@@ -7,6 +7,11 @@
 .preview-card {
   padding-bottom: 2rem;
   overflow: hidden;
+
+  .card-title, .tag-list {
+    display: inline-block
+  }
+
   &:hover, &:focus {
     .card-title {
       text-decoration: underline;
