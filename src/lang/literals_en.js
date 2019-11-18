@@ -11,6 +11,7 @@ const multiline = {
 const literals = {
   'codelang.': lang => lang,
   'codelang_tag.': (lang, tag) => `${lang} ${capitalize(tag)}`,
+  'tag.': tag => `${capitalize(tag)}`,
   'snippetCount.': count => `${count} snippets`,
   // Multiline literals
   'm': key => multiline[key],
@@ -70,6 +71,7 @@ const literals = {
   '.': '.',
   'Click on a snippet card to view the snippet': 'Click on a snippet card to view the snippet',
   'Click on a snippet card to view the snippet.': 'Click on a snippet card to view the snippet.',
+  'Click on a snippet card to view the snippet or choose a keyword from the above list to only see matching snippets.': 'Click on a snippet card to view the snippet or choose a keyword from the above list to only see matching snippets.',
   'Start typing a keyphrase to see matching snippets.': 'Start typing a keyphrase to see matching snippets.',
   'Switch to dark mode': 'Switch to dark mode',
   'Switch to light mode': 'Switch to light mode',
