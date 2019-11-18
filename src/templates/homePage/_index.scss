@@ -36,6 +36,10 @@
       font-size: 1.75rem;
     }
   }
+
+  & ~ .listing-anchors-title {
+    margin-top: 10vh;
+  }
 }
 
 // Homepage subtitle
