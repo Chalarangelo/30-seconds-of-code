@@ -16,6 +16,7 @@ import {
   stripExpertiseFromTags,
   transformSnippetIndex,
   uniqueElements,
+  similarity,
   chunk
 } from './array';
 
@@ -36,5 +37,6 @@ export {
   throttle,
   transformSnippetIndex,
   uniqueElements,
+  similarity,
   chunk
 };
