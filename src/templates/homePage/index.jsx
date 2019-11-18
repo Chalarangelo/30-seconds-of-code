@@ -1,10 +1,9 @@
 import React from 'react';
 import Meta from 'atoms/meta';
 import Shell from 'organisms/shell';
-import { Anchor } from 'atoms/anchor';
 import Search from 'atoms/search';
-import SimpleCard from 'molecules/simpleCard';
 import SearchResults from 'organisms/searchResults';
+import ListingAnchors from 'molecules/listingAnchors';
 import PropTypes from 'prop-types';
 import _ from 'lang';
 const _l = _('en');
@@ -17,6 +16,7 @@ const templateData = {
 const HomePage = ({
   pageContext: {
     logoSrc,
+    listingAnchors,
   },
 }) => {
   return (
@@ -48,22 +48,7 @@ const HomePage = ({
         </p>
         <Search shouldUpdateHistory={ false } />
         <SearchResults isCompact />
-        <SimpleCard title={ _l('About us') }>
-          <p
-            style={ {textAlign: 'justify'} }
-          >
-            { _l`m${'About us'}` }
-            <br /><br />
-            <Anchor
-              link={ {
-                internal: true,
-                url: '/about',
-              } }
-            >
-              { _l('Read more about us...') }
-            </Anchor>
-          </p>
-        </SimpleCard>
+        <ListingAnchors items={ listingAnchors } />
       </Shell>
     </>
   );
@@ -74,6 +59,8 @@ HomePage.propTypes = {
   pageContext: PropTypes.shape({
     /** URI for the logo image */
     logoSrc: PropTypes.string.isRequired,
+    /** Links to list pages to be displayed on the page */
+    listingAnchors: PropTypes.arrayOf(PropTypes.shape({})),
   }),
 };
 

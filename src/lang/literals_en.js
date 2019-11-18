@@ -11,7 +11,7 @@ const multiline = {
 const literals = {
   'codelang.': lang => lang,
   'codelang_tag.': (lang, tag) => `${lang} ${capitalize(tag)}`,
-  'snippetCount.': count => `(${count} snippets)`,
+  'snippetCount.': count => `${count} snippets`,
   // Multiline literals
   'm': key => multiline[key],
   // Site metadata
@@ -85,7 +85,7 @@ const literals = {
   'A few word about us, our goals and our projects.': 'A few word about us, our goals and our projects.',
   'License': 'License',
   'Who we are': 'Who we are',
-  'Featured lists': 'Featured lists',
+  'Top collections': 'Top collections',
 };
 
 export default literals;
