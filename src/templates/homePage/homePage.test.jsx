@@ -15,7 +15,7 @@ const { store } = createStore();
 
 describe('<HomePage />', () => {
   const logoSrc = '/assets/logo.png';
-  let wrapper, shell, meta, simpleCard;
+  let wrapper, shell, meta;
 
   beforeEach(() => {
     wrapper = mount(
@@ -25,7 +25,6 @@ describe('<HomePage />', () => {
     );
     shell = wrapper.find('Shell');
     meta = wrapper.find('Meta');
-    simpleCard = wrapper.find('SimpleCard');
   });
 
   describe('should render', () => {
@@ -49,8 +48,8 @@ describe('<HomePage />', () => {
       expect(wrapper).toContainMatchingElement('Search');
     });
 
-    it('an SimpleCard component', () => {
-      expect(wrapper).toContainMatchingElement('SimpleCard');
+    it('a ListingAnchors component', () => {
+      expect(wrapper).toContainMatchingElement('ListingAnchors');
     });
   });
 
@@ -63,11 +62,6 @@ describe('<HomePage />', () => {
   it('should pass the correct data to the Meta component', () => {
     expect(meta.prop('logoSrc')).toBe(logoSrc);
     expect(meta.prop('title')).toBe(undefined);
-  });
-
-  it('should pass the correct data to the Meta component', () => {
-    expect(simpleCard.prop('title')).toBe(_l('About us'));
-    expect(simpleCard.text()).toContain(_l`m${'About us'}`);
   });
 });
 
