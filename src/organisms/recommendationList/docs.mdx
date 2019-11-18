@@ -1,0 +1,28 @@
+import {
+  Story,
+  Preview,
+  Props,
+  Source,
+  Description,
+  ColorPalette,
+  ColorItem,
+  Meta,
+} from '@storybook/addon-docs/blocks';
+import RecommendationList from 'organisms/recommendationList';
+
+# RecommendationList
+
+A component that display a list of recommended snippets on a page.
+
+## Props
+
+<Props of={RecommendationList} />
+
+## Source
+
+```jsx
+const snippets = [...];
+
+<RecommendationList 
+  snippetList={snippets} 
+/>
