@@ -62,7 +62,15 @@ h1.website-title {
   transition: 0.3s ease all;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--fore-color-lighter);
+  > a {
+    &, &:link, &:visited {
+      color: var(--fore-color-lighter);
+
+      &:hover, &:focus {
+        text-decoration: none;
+      }
+    }
+  }
   line-height: 1.5;
   position: relative;
   top: 4px;

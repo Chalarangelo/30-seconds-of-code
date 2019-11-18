@@ -8,6 +8,7 @@ import _ from 'lang';
 import { toggleDarkMode } from 'state/shell';
 const _l = _('en');
 import config from '../../../config';
+import { Anchor } from 'atoms/anchor';
 
 // eslint-disable-next-line complexity
 const Shell = ({
@@ -60,7 +61,7 @@ const Shell = ({
           link: {
             internal: false,
             url: externalUrl,
-            title: 'Snippet list',
+            title: 'GitHub',
             rel: 'noopener',
             target: '_blank',
           },
@@ -81,14 +82,21 @@ const Shell = ({
       <div className='content'>
         { withTitle ? (
           <h1 className='website-title'>
-            { _l('site.title') }
-            { withIcon ? (
-              <img
-                src={ logoSrc }
-                alt={ _l('Logo') }
-                className='website-logo'
-              />
-            ) : ( '' ) }
+            <Anchor
+              link={ {
+                internal: true,
+                to: '/',
+              } }
+            >
+              { _l('site.title') }
+              { withIcon ? (
+                <img
+                  src={ logoSrc }
+                  alt={ _l('Logo') }
+                  className='website-logo'
+                />
+              ) : ( '' ) }
+            </Anchor>
           </h1>
         ) : ( '' ) }
         { children }
