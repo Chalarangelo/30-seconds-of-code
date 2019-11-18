@@ -37,3 +37,6 @@ export const transformSnippetIndex = edges =>
 
 /** Returns all unique values of an array. */
 export const uniqueElements = arr => [...new Set(arr)];
+
+/** Returns an array of elements that appear in both arrays. */
+export const similarity = (arr, values) => arr.filter(v => values.includes(v));
