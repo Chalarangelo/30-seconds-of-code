@@ -27,6 +27,7 @@ const ListingPage = ({
     listingType,
     listingLanguage,
     listingTag,
+    listingSublinks = [],
   },
   dispatch,
 }) => {
@@ -52,6 +53,7 @@ const ListingPage = ({
           listingName={ listingName }
           snippetList={ snippetList }
           paginator={ paginator }
+          listingSublinks={ listingSublinks }
         />
       </Shell>
     </>

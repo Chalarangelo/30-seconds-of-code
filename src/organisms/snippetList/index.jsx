@@ -4,6 +4,7 @@ import Paginator from 'molecules/paginator';
 import PageTitle from 'atoms/pageTitle';
 import PageSubtitle from 'atoms/pageSubtitle';
 import PreviewCard from 'molecules/previewCard';
+import ListingAnchors from 'molecules/listingAnchors';
 import {
   Snippet as SnippetPropType,
   Paginator as PaginatorPropType
@@ -16,14 +17,23 @@ const SnippetList = ({
   snippetList,
   paginator,
   listingName,
+  listingSublinks,
 }) => {
   return snippetList.length ? (
     <>
       <PageTitle isLight>
         { listingName }
       </PageTitle>
-      <PageSubtitle isLight>
-        { _l('Click on a snippet card to view the snippet.') }
+      {
+        listingSublinks.length
+          ? <ListingAnchors isCompact items={ listingSublinks } />
+          : null
+      }
+      <PageSubtitle isLight className='list-top-subtitle'>
+        { listingSublinks.length
+          ? _l('Click on a snippet card to view the snippet or choose a keyword from the above list to only see matching snippets.')
+          : _l('Click on a snippet card to view the snippet.')
+        }
       </PageSubtitle>
       { snippetList.map(snippet => (
         <PreviewCard
