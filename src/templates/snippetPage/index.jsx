@@ -6,6 +6,7 @@ import Meta from 'atoms/meta';
 import { Snippet as SnippetPropType } from 'typedefs';
 import PropTypes from 'prop-types';
 import Shell from 'organisms/shell';
+import RecommendationList from 'organisms/recommendationList';
 import _ from 'lang';
 const _l = _('en');
 
@@ -19,6 +20,7 @@ const SnippetPage = ({
     snippet,
     logoSrc,
     cardTemplate,
+    recommendedSnippets,
   },
   lastPageTitle,
   lastPageUrl,
@@ -49,6 +51,7 @@ const SnippetPage = ({
           snippet={ snippet }
           toastContainer='toast-container'
         />
+        <RecommendationList snippetList={ recommendedSnippets } />
         <div id="toast-container"/>
       </Shell>
     </>
@@ -65,6 +68,8 @@ SnippetPage.propTypes = {
     logoSrc: PropTypes.string.isRequired,
     /** Card template for the snippet card of this page */
     cardTemplate: PropTypes.string,
+    /** List of recommended snippets */
+    recommendedSnippets: PropTypes.arrayOf(SnippetPropType),
   }),
   /** Title of the last page */
   lastPageTitle: PropTypes.string.isRequired,
