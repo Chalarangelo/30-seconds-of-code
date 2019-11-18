@@ -8,6 +8,10 @@ import {
 } from './string';
 
 import {
+  mapNumRange
+} from './math';
+
+import {
   determineExpertiseFromTags,
   stripExpertiseFromTags,
   transformSnippetIndex,
@@ -26,6 +30,7 @@ export {
   optimizeAllNodes,
   determineExpertiseFromTags,
   stripExpertiseFromTags,
+  mapNumRange,
   getURLParameters,
   getBaseURL,
   throttle,
