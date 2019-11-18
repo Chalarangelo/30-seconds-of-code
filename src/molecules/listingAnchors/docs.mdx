@@ -1,0 +1,37 @@
+import {
+  Story,
+  Preview,
+  Props,
+  Source,
+  Description,
+  ColorPalette,
+  ColorItem,
+  Meta,
+} from '@storybook/addon-docs/blocks';
+import ListingAnchors from 'molecules/listingAnchors';
+
+# ListingAnchors
+
+A navigational component that is used to link to other listing pages.
+
+## Props
+
+<Props of={ListingAnchors} />
+
+## Source
+
+```jsx
+const items = [
+  {
+    name: 'My list',
+    link: { internal: true, url: '/my-list'},
+    count: '200 snippets'
+  },
+  {
+    name: 'My other list',
+    link: { internal: true, url: '/my-other-list'},
+    count: '34 snippets'
+  }
+];
+
+<ListingAnchors items={items} />

@@ -85,6 +85,7 @@ const literals = {
   'A few word about us, our goals and our projects.': 'A few word about us, our goals and our projects.',
   'License': 'License',
   'Who we are': 'Who we are',
+  'Featured lists': 'Featured lists',
 };
 
 export default literals;
