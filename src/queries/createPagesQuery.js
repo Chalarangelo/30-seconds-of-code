@@ -30,6 +30,7 @@ export default `
           style
         }
         expertise
+        ranking
         language {
           long
           short
@@ -75,6 +76,7 @@ export default `
           scopedCss
         }
         expertise
+        ranking
         browserSupport {
           supportPercentage
         }
