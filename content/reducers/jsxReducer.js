@@ -31,6 +31,7 @@ export default (id, snippetNode, markdownNode) => {
       otherLanguages: snippetNode.otherLanguages,
     },
     ranking: rankSnippet(snippetNode),
+    recommendationRanking: snippetNode.recommendationRanking,
     searchTokens: uniqueElements([
       snippetNode.language.short,
       snippetNode.language.long,
