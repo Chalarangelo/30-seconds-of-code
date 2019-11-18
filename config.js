@@ -5,6 +5,9 @@ module.exports = {
   author: '30-seconds',
   shortName: `30s`,
   repositoryUrl: `https://github.com/30-seconds/30-seconds-of-code`,
+  githubOrgUrl: `https://github.com/30-seconds`,
+  twitterUrl: `https://twitter.com/30secondsofcode`,
+  licenseUrl: `https://creativecommons.org/publicdomain/zero/1.0/`,
   siteUrl: `https://30secondsofcode.org`,
   // Path information
   assetPath: `assets`,

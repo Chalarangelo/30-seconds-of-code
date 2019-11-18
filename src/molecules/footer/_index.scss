@@ -1,0 +1,16 @@
+footer {
+  margin: 2.5rem 1rem 0.75rem;
+  color: var(--fore-color);
+
+  > p {
+    font-size: 0.75rem;
+    line-height: 1.625;
+  }
+
+  .footer-link {
+    
+    + .footer-link {
+      margin-left: 1rem;
+    }
+  }
+}
