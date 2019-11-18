@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import NavBar from 'molecules/navBar';
+import Footer from 'molecules/footer';
 import { useMedia } from 'functions/hooks';
 import _ from 'lang';
 import { toggleDarkMode } from 'state/shell';
@@ -91,6 +92,7 @@ const Shell = ({
           </h1>
         ) : ( '' ) }
         { children }
+        <Footer />
       </div>
     </div>
   );
