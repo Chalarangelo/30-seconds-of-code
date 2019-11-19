@@ -19,16 +19,16 @@ $nav-button-active-fore-color-dark: #CDD4EF;
 .nav-btn {
   display: inline-block;
   width: 25%;
-  height: 61px;
+  height: 56px;
   margin: 0;
   background: transparent;
   background-repeat: no-repeat;
-  background-position: center 8px;
+  background-position: center 6px;
   font-size: 14px;
-  padding-top: 14px;
+  padding-top: 12px;
   border: none;
   text-align: center;
-  line-height: 61px;
+  line-height: 56px;
   cursor: pointer;
   transition: 0.3s ease all;
   @media screen and (min-width: $layout-medium-breakpoint) and (orientation: landscape) {

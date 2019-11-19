@@ -7,12 +7,12 @@
   height: 100vh;
   grid-template-areas: "content" "menu";
   grid-template-columns: 100%;
-  grid-template-rows: calc(100vh - 62px) 62px;
+  grid-template-rows: calc(100vh - 56px) 56px;
 
   // Medium screen size (mobile landscape, tablet)
   @media screen and (min-width: $layout-medium-breakpoint) and(orientation: landscape) {
     grid-template-areas: "menu content";
-    grid-template-columns: 62px calc(100vw - 62px);
+    grid-template-columns: 56px calc(100vw - 56px);
     grid-template-rows: 100%;
   }
 }
@@ -51,9 +51,9 @@
     padding-right: calc((100% - 768px) / 2);
   }
 
-  @media screen and (min-width: calc(768px + 62px)) and (orientation: landscape) {
-    padding-left: calc((100% - 768px - 62px) / 2);
-    padding-right: calc((100% - 768px - 62px) / 2);
+  @media screen and (min-width: calc(768px + 56px)) and (orientation: landscape) {
+    padding-left: calc((100% - 768px - 56px) / 2);
+    padding-right: calc((100% - 768px - 56px) / 2);
   }
 }
 
