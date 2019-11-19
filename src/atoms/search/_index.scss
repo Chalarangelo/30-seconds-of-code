@@ -62,6 +62,12 @@ $search-placeholder-color-dark: #999EBD;
   &::placeholder {
     color: var(--search-placeholder-color);
   }
+
+  @media screen and (max-width: calc(#{$layout-medium-breakpoint} - 1px)) {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+  }
+
   @media screen and (min-width: $layout-large-breakpoint) {
     font-size: 1.375rem;
     line-height: 2.125rem;
