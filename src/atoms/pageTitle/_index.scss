@@ -6,6 +6,12 @@
   letter-spacing: 0.03em;
   color: var(--fore-color-darker);
   margin: 0 1.25rem;
+
+  @media screen and (max-width: calc(#{$layout-medium-breakpoint} - 1px)) {
+    margin-left: 0.875rem;
+    margin-right: 0.875rem;
+  }
+
   @media screen and (min-width: $layout-large-breakpoint) {
     font-size: 2.5rem;
     line-height: 1.4;

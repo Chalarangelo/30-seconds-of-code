@@ -28,6 +28,11 @@
   backface-visibility: hidden;
   will-change: transform;
 
+  @media screen and (max-width: calc(#{$layout-medium-breakpoint} - 1px)) {
+    margin-left: 0.875rem;
+    margin-right: 0.875rem;
+  }
+
   .card-title {
     font-size: 1.25rem;
     line-height: 1.75rem;

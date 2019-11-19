@@ -75,6 +75,11 @@ h1.website-title {
   position: relative;
   top: 6px;
   margin: 1.5rem 1.25rem 0.125rem;
+
+  @media screen and (max-width: calc(#{$layout-medium-breakpoint} - 1px)) {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 }
 
 // Website logo
