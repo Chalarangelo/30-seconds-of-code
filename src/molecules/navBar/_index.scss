@@ -18,7 +18,7 @@
   z-index: 1001;
   @media screen {
     border-top: 1px solid var(--nav-bar-border-color);
-    height: 61px;
+    height: 56px;
     bottom: 0;
     width: 100vw;
   }
@@ -26,7 +26,7 @@
     border-right: 1px solid var(--nav-bar-border-color);
     height: 100vh;
     left: 0;
-    width: 61px;
+    width: 56px;
     display: flex;
     flex-direction: column;
     justify-content: center;
