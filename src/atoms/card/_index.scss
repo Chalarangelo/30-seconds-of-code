@@ -18,7 +18,7 @@
 .card {
   position: relative;
   transition: all 0.3s ease;
-  margin: 1rem 1.25rem;
+  margin: 1.75rem 1.25rem 1rem;
   background: var(--card-back-color);
   color: var(--card-fore-color);
   box-shadow: 0px 0px 1px var(--card-shadow-color-a), 0px 6px 12px var(--card-shadow-color-b);
@@ -29,19 +29,32 @@
   will-change: transform;
 
   .card-title {
-    font-size: 1.125rem;
-    line-height: 1.375;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
     font-weight: 500;
-    margin: 0.25rem 0.5rem 0.125rem;
+    margin: 0.625rem 0.5rem 0.125rem;
     transition: 0.3s ease all;
     color: var(--card-fore-color);
   }
   
   .card-description {
-    margin: 0.125rem 0;
+    margin: 0;
     font-size: 0.875rem;
     color: var(--card-fore-color-light);
     line-height: 1.35;
     font-weight: 500;
+    
+    > p {
+      margin: 0.8125rem 0.5rem 1.5rem;
+      line-height: 2;
+
+      &:last-child {
+        margin-bottom: 1.375rem;
+      }
+    }
+
+    li {
+      line-height: 2;
+    }
   }
 }

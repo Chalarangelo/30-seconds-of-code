@@ -5,6 +5,11 @@ footer {
   > p {
     font-size: 0.75rem;
     line-height: 1.625;
+
+    + p {
+      margin-top: -0.3125rem;
+      line-height: 1.5rem;
+    }
   }
 
   .footer-link {

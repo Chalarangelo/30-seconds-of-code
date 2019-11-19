@@ -1,3 +1,8 @@
 .list-top-subtitle {
   text-align: justify;
+  margin-top: 0.3125rem;
+}
+
+.listing-anchors + .list-top-subtitle {
+  margin-top: -0.0625rem;
 }

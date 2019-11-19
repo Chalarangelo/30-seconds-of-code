@@ -39,7 +39,7 @@ $search-placeholder-color-dark: #999EBD;
 
 [type="search"].search-box {
   transition: 0.3s ease all;
-  margin: 0.25rem 0.875rem;
+  margin: 0.375rem 0.875rem 0.25rem;
   width: calc(100% - 1.75rem);
   background: var(--search-back-color);
   box-shadow: 0px 4px 8px var(--search-shadow-color);
@@ -53,7 +53,7 @@ $search-placeholder-color-dark: #999EBD;
   padding-left: 2.5rem;
   font-size: 1.125rem;
   font-weight: 300;
-  line-height: 2;
+  line-height: 1.9;
   background-image: generate-icon-background("search", $search-placeholder-color-light, 'none', 1.5, 20);
   background-repeat: no-repeat;
   background-position-x: 10px;
@@ -64,7 +64,7 @@ $search-placeholder-color-dark: #999EBD;
   }
   @media screen and (min-width: $layout-large-breakpoint) {
     font-size: 1.375rem;
-    line-height: 1.8;
+    line-height: 2.125rem;
     background-image: generate-icon-background("search", $search-placeholder-color-light, 'none', 1.5, 24);
   }
 }

@@ -23,6 +23,7 @@
     width: 100vw;
   }
   @media screen and (min-width: $layout-medium-breakpoint) and (orientation: landscape) {
+    border-top: none;
     border-right: 1px solid var(--nav-bar-border-color);
     height: 100vh;
     left: 0;
