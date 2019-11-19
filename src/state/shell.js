@@ -1,4 +1,4 @@
-import cacheKey from '../../build/cacheKey';
+import cacheKey from '../../.build/cacheKey';
 
 // Defalt state
 const initialState = {

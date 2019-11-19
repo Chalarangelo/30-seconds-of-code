@@ -5,6 +5,7 @@ import parseReducers from './parseReducers';
 import parseResolvers from './parseResolvers';
 import parseTemplates from './parseTemplates';
 import parseSnippetContext from './parseSnippetContext';
+import parseListingMetas from './parseListingMetas';
 
 export {
   parseQueries,
@@ -13,5 +14,6 @@ export {
   parseReducers,
   parseResolvers,
   parseTemplates,
-  parseSnippetContext
+  parseSnippetContext,
+  parseListingMetas
 };

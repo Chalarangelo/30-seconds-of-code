@@ -1,5 +1,6 @@
 
 import { Snippet } from 'typedefs';
+import { recommendationEngine } from 'engines';
 
 /**
  * Extension point to tell plugins to source nodes.
@@ -14,7 +15,7 @@ const sourceNodes = (requirables, reducers) => ({ actions, createNodeId, createC
 
   const markdownNodes = getNodesByType('MarkdownRemark');
 
-  const snippetNodes = requirables
+  let snippetNodes = requirables
     .reduce((acc, sArr) => {
       const commonData = {
         archived: sArr.meta.archived,
@@ -28,6 +29,7 @@ const sourceNodes = (requirables, reducers) => ({ actions, createNodeId, createC
         biasPenaltyMultiplier: sArr.meta.biasPenaltyMultiplier,
         tagScores: sArr.meta.tagScores,
         keywordScores: sArr.meta.keywordScores,
+        recommendationRanking: 0,
       };
       return ({
         ...acc,
@@ -42,6 +44,14 @@ const sourceNodes = (requirables, reducers) => ({ actions, createNodeId, createC
         }, {}),
       });
     }, {});
+
+  const recommendedSnippets = recommendationEngine(snippetNodes);
+
+  recommendedSnippets.forEach(rec => {
+    snippetNodes[rec.snippetKey].recommendationRanking = rec.recommendationRanking;
+  });
+
+  // debugger;
 
   Object.entries(snippetNodes).forEach(([id, sNode]) => {
     let mNode = markdownNodes.find(mN => mN.fileAbsolutePath.includes(`${id}.md`));

@@ -11,6 +11,8 @@ const multiline = {
 const literals = {
   'codelang.': lang => lang,
   'codelang_tag.': (lang, tag) => `${lang} ${capitalize(tag)}`,
+  'tag.': tag => `${capitalize(tag)}`,
+  'snippetCount.': count => `${count} snippets`,
   // Multiline literals
   'm': key => multiline[key],
   // Site metadata
@@ -49,8 +51,11 @@ const literals = {
   'nav.github': 'GitHub',
   'nav.moon': 'Dark mode',
   'nav.sun': 'Light mode',
+  'footer.about': 'About',
+  'footer.github': 'GitHub',
+  'footer.twitter': 'Twitter',
   // Literals
-  'Expertise': level => `Expertise: ${capitalize(level, true)}`,
+  'Expertise': level => `${capitalize(level, true)}`,
   'Search snippets': 'Search snippets',
   'Search...': 'Search...',
   'Search': 'Search',
@@ -67,8 +72,11 @@ const literals = {
   'Start typing a keyphrase to see matching snippets or ': 'Start typing a keyphrase to see matching snippets or ',
   'click to view the whole list': 'click to view the whole list',
   '.': '.',
+  ',': ', ',
+  ' & ': ' & ',
   'Click on a snippet card to view the snippet': 'Click on a snippet card to view the snippet',
   'Click on a snippet card to view the snippet.': 'Click on a snippet card to view the snippet.',
+  'Click on a snippet card to view the snippet or choose a keyword from the above list to only see matching snippets.': 'Click on a snippet card to view the snippet or choose a keyword from the above list to only see matching snippets.',
   'Start typing a keyphrase to see matching snippets.': 'Start typing a keyphrase to see matching snippets.',
   'Switch to dark mode': 'Switch to dark mode',
   'Switch to light mode': 'Switch to light mode',
@@ -84,6 +92,16 @@ const literals = {
   'A few word about us, our goals and our projects.': 'A few word about us, our goals and our projects.',
   'License': 'License',
   'Who we are': 'Who we are',
+  'Top collections': 'Top collections',
+  'Website, name & logo © 2017-2019 ': 'Website, name & logo © 2017-2019 ',
+  '30-seconds': '30-seconds',
+  'Individual snippets licensed under ': 'Individual snippets licensed under ',
+  'CC0-1.0': 'CC0-1.0',
+  'Powered by GitHub, Gatsby, Travis CI & Netlify': 'Powered by GitHub, Gatsby, Travis CI & Netlify',
+  'GitHub': 'GitHub',
+  'Travis CI': 'Travis CI',
+  'Gatsby': 'Gatsby',
+  'Netlify': 'Netlify',
 };
 
 export default literals;

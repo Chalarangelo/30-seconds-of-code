@@ -1,0 +1,88 @@
+.listing-anchors {
+  margin: 0.1875rem 1.25rem 1rem;
+  display: flex;
+  flex-flow: row nowrap;
+  overflow-x: auto;
+
+  @media screen and (max-width: calc(#{$layout-medium-breakpoint} - 1px)) {
+    margin-left: 0.875rem;
+    margin-right: 0.875rem;
+  }
+
+  .btn {
+    box-sizing: border-box;
+    font-size: 0.875rem;
+    border-radius: 0;
+    min-width: 25%;
+    padding: 0.375rem 0.25rem;
+    height: 84px;
+    line-height: 2.125;
+    border: none;
+    box-shadow: none;
+    text-align: center;
+
+    &:first-child {
+      border-radius: 0.5rem 0 0 0.5rem;
+    }
+
+    &:last-child {
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+
+    .count {
+      display: block;
+      opacity: 0.8;
+      line-height: 1.25rem;
+    }
+
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      padding: 0.625rem 0.875rem;
+    }
+  }
+
+  &.compact {
+    .btn {
+      padding: 0.625rem 0.25rem;
+      height: 47px;
+
+      @media screen and (min-width: $layout-medium-breakpoint) {
+        height: 55px;
+      }
+    }
+  }
+
+  &.with-scrollbar {
+    .btn:first-child {
+      border-radius: 0.5rem 0 0 0;
+    }
+
+    .btn:last-child {
+      border-radius: 0 0.5rem 0 0;
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-back-color);
+    margin: 0;
+    border-radius: 0 0 0.1875rem 0.1875rem;
+  }
+
+  &::-webkit-scrollbar {
+    height: 8px;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-fore-color);
+    border: 1px solid var(--scrollbar-fore-color-lighter);
+    border-radius: 0 0 0.1875rem 0.1875rem;
+  }
+}
+
+.listing-anchors-title {
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 1.375;
+  font-weight: 400;
+  margin: 1.5rem 1.25rem .5rem;
+}

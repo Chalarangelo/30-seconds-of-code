@@ -17,14 +17,14 @@ $paginator-selected-color-dark: #B0C3E3;
   display: flex;
   justify-content: center;
   align-items: baseline;
-  padding: 0 0.25rem;
+  padding: 0.0625rem 0.25rem;
 
   @media screen and (min-width: $layout-medium-breakpoint) {
-    padding: 0 0.75rem;
+    padding: 0.0625rem 0.75rem;
   }
 
   @media screen and (min-width: $layout-medium-breakpoint) {
-    padding: 0 1.5rem;
+    padding: 0.0625rem 1.5rem;
   }
 
   .btn, a.btn {
@@ -57,12 +57,6 @@ $paginator-selected-color-dark: #B0C3E3;
         color: var(--paginator-selected-color);
         border-bottom: 1px solid var(--paginator-selected-color);  
       }
-    }
-    
-    &.current-page {
-      cursor: default;
-      color: var(--paginator-selected-color);
-      line-height: 0.875;
     }
 
     &.previous-page, &.next-page {
@@ -104,11 +98,17 @@ $paginator-selected-color-dark: #B0C3E3;
     }
   }
 
+  .btn.current-page {
+    cursor: default;
+    color: var(--paginator-selected-color);
+    line-height: 1px;
+  }
+
   .paginator-separator {
     display: none;
     color: var(--fore-color-lighter);
     letter-spacing: 2px;
-    line-height: 2.675;
+    line-height: 2.625rem;
     border-bottom: 1px solid var(--back-color-dark); 
     
     @media screen and (min-width: $layout-medium-breakpoint) {

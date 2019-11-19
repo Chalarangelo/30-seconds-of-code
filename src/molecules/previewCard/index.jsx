@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from 'atoms/card';
 import {Anchor} from 'atoms/anchor';
-import Expertise from 'atoms/expertise';
 import { Snippet as SnippetPropType } from 'typedefs';
 import { trimWhiteSpace } from 'functions/utils';
+import TagList from 'molecules/tagList';
 
 const PreviewCard = ({
   snippet,
@@ -20,7 +20,7 @@ const PreviewCard = ({
   >
     <Card className={ trimWhiteSpace`preview-card ${className}` } { ...rest } >
       <h4 className='card-title'>{ snippet.title }</h4>
-      <Expertise level={ snippet.expertise } />
+      <TagList tags={ [snippet.language.long, snippet.primaryTag, snippet.expertise] } />
       <div
         className='card-description'
         dangerouslySetInnerHTML={ { __html: `${snippet.html.description}` } }

@@ -8,10 +8,15 @@ import {
 } from './string';
 
 import {
+  mapNumRange
+} from './math';
+
+import {
   determineExpertiseFromTags,
   stripExpertiseFromTags,
   transformSnippetIndex,
   uniqueElements,
+  similarity,
   chunk
 } from './array';
 
@@ -26,10 +31,12 @@ export {
   optimizeAllNodes,
   determineExpertiseFromTags,
   stripExpertiseFromTags,
+  mapNumRange,
   getURLParameters,
   getBaseURL,
   throttle,
   transformSnippetIndex,
   uniqueElements,
+  similarity,
   chunk
 };

@@ -17,16 +17,7 @@ const SearchResults = ({
   if(isCompact) {
     return searchQuery.trim().length <= 1 ? (
       <PageSubtitle className='search-compact-sub'>
-        { _l('Start typing a keyphrase to see matching snippets or ') }
-        <Anchor
-          link={ {
-            internal: true,
-            url: '/list',
-          } }
-        >
-          { _l('click to view the whole list') }
-        </Anchor>
-        { _l('.') }
+        { _l('Start typing a keyphrase to see matching snippets.') }
       </PageSubtitle>
     ) : searchResults.length === 0 ? (
       <PageSubtitle className='search-compact-sub'>

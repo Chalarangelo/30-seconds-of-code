@@ -30,6 +30,9 @@ export default `
           style
         }
         expertise
+        ranking
+        firstSeen
+        lastUpdated
         language {
           long
           short
@@ -51,6 +54,7 @@ export default `
       node {
         id
         slug
+        url
         tags {
           all
           primary
@@ -75,6 +79,9 @@ export default `
           scopedCss
         }
         expertise
+        ranking
+        firstSeen
+        lastUpdated
         browserSupport {
           supportPercentage
         }

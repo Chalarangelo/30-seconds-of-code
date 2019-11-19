@@ -19,6 +19,7 @@ export default `
           long
         }
         searchTokens
+        recommendationRanking
       }
     }
   }
