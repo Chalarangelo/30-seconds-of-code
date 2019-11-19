@@ -60,7 +60,8 @@
 // Website title
 h1.website-title {
   transition: 0.3s ease all;
-  font-size: 0.875rem;
+  font-size: 1rem;
+  line-height: 1.375;
   font-weight: 500;
   > a {
     &, &:link, &:visited {
@@ -71,22 +72,16 @@ h1.website-title {
       }
     }
   }
-  line-height: 1.5;
   position: relative;
-  top: 4px;
+  top: 6px;
   margin: 1.5rem 1.25rem 0.125rem;
-
-  @media screen and (min-width: $layout-large-breakpoint) {
-    font-size: 1rem;
-    line-height: 1.375;
-  }
 }
 
 // Website logo
 img.website-logo {
   transition: 0.3s ease all;
   position: absolute;
-  top: 8px;
+  top: 2px;
   right: 0px;
   width: 48px;
   height: 48px;

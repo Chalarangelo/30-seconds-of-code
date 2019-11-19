@@ -4,9 +4,9 @@
   justify-content: center;
   align-items: center;
   color: var(--fore-color-dark); 
-  margin: 0.75rem 1rem 0.5rem;
+  margin: 0.5625rem 1rem 0.5rem;
   @media screen and (min-width: 390px) {
-    margin: 0.75rem 1.25rem 0.5rem;
+    margin: 0.5625rem 1.25rem 0.5rem;
   }
 
   // Homepage logo
@@ -30,15 +30,34 @@
     height: 24px;
     @media screen and (min-width: 360px) {
       font-size: 1.625rem;
-      height: 32px;
+      height: 24px;
     }
     @media screen and (min-width: 390px) {
       font-size: 1.75rem;
+      height: 28px;
     }
   }
 
   & ~ .listing-anchors-title {
-    margin-top: 10vh;
+    margin: 3.5rem 1.25rem 0.8125rem;
+  }
+
+  & ~ .listing-anchors {
+    margin-top: 1px;
+    .btn {
+      line-height: 1.75rem;
+      margin-top: 0.8125rem;
+      margin-bottom: 0.1875rem;
+      height: 80px;
+
+      @media screen and (min-width: 480px) {
+        line-height: 1.875rem;
+
+        .count {
+          line-height: 2.125rem;
+        }
+      }
+    }
   }
 }
 
@@ -46,8 +65,8 @@
 .home-sub-title {
   transition: 0.3s ease all;
   font-size: 0.875rem;
-  line-height: 1.5;
-  margin: 0 1.25rem 1.25rem;
+  line-height: 1.5rem;
+  margin: 0.8125rem 1.25rem 1.5rem;
   color: var(--fore-color);
   text-align: center;
   @media screen and (min-width: $layout-medium-breakpoint) {

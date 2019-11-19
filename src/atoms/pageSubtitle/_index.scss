@@ -14,10 +14,9 @@
   transition: 0.3s ease all;
   color: var(--fore-color-light);
   font-size: 0.875rem;
-  line-height: 1.5;
-  margin: 0.125rem 1.25rem 0px;
+  line-height: 1.5rem;
+  margin: -0.0625rem 1.25rem 0;
   @media screen and (min-width: $layout-large-breakpoint) {
     font-size: 1rem;
-    line-height: 1.375;
   }
 }
