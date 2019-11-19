@@ -11,12 +11,13 @@ const _l = _('en');
 const NotFoundPage = ({
   pageContext: {
     logoSrc,
+    splashLogoSrc,
   },
 }) => {
   return (
     <>
       <Meta
-        logoSrc={ logoSrc }
+        logoSrc={ splashLogoSrc }
         title={ _l('Page not found') }
       />
       <Shell
@@ -57,6 +58,8 @@ NotFoundPage.propTypes = {
   pageContext: PropTypes.shape({
     /** URI for the logo image */
     logoSrc: PropTypes.string.isRequired,
+    /** URI for the splash logo image */
+    splashLogoSrc: PropTypes.string.isRequired,
   }),
 };
 

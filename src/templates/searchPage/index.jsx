@@ -17,6 +17,7 @@ const templateData = {
 const SearchPage = ({
   pageContext: {
     logoSrc,
+    splashLogoSrc,
     snippetCount,
   },
   searchQuery,
@@ -29,7 +30,7 @@ const SearchPage = ({
   return (
     <>
       <Meta
-        logoSrc={ logoSrc }
+        logoSrc={ splashLogoSrc }
         description={ _l`site.pageDescription${{...templateData, snippetCount }}` }
         title={ searchQuery.length === 0 ? _l('Search') : _l`Search results for${searchQuery}` }
       />
@@ -52,6 +53,8 @@ SearchPage.propTypes = {
   pageContext: PropTypes.shape({
     /** URI for the logo image */
     logoSrc: PropTypes.string.isRequired,
+    /** URI for the splash logo image */
+    splashLogoSrc: PropTypes.string.isRequired,
     /** Number of indexed snippets */
     snippetCount: PropTypes.number,
   }),
