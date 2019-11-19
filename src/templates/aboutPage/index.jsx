@@ -17,13 +17,14 @@ const templateData = {
 const AboutPage = ({
   pageContext: {
     logoSrc,
+    splashLogoSrc,
   },
 }) => {
   return (
     <>
       <Meta
         title={ _l('About') }
-        logoSrc={ logoSrc }
+        logoSrc={ splashLogoSrc }
         description={ _l`site.pageDescription${templateData}` }
         meta={ [{ name: `google-site-verification`, content: `YX9mF-TxoHZGJ9SZ8XwvWgGR_KTcbH1uHul4iDklyr0`}] }
       />
@@ -113,6 +114,8 @@ AboutPage.propTypes = {
   pageContext: PropTypes.shape({
     /** URI for the logo image */
     logoSrc: PropTypes.string.isRequired,
+    /** URI for the splash logo image */
+    splashLogoSrc: PropTypes.string.isRequired,
   }),
 };
 

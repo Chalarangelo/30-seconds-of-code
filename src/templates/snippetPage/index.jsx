@@ -19,6 +19,7 @@ const SnippetPage = ({
   pageContext: {
     snippet,
     logoSrc,
+    splashLogoSrc,
     cardTemplate,
     recommendedSnippets,
   },
@@ -30,7 +31,7 @@ const SnippetPage = ({
       <Meta
         title={ snippet.title }
         description={ _l`site.pageDescription${{...templateData, snippetName: snippet.title, snippetLanguage: snippet.language.long }}` }
-        logoSrc={ logoSrc }
+        logoSrc={ splashLogoSrc }
       />
       <Shell
         logoSrc={ logoSrc }
@@ -66,6 +67,8 @@ SnippetPage.propTypes = {
     snippet: SnippetPropType.isRequired,
     /** URI for the logo image */
     logoSrc: PropTypes.string.isRequired,
+    /** URI for the splash logo image */
+    splashLogoSrc: PropTypes.string.isRequired,
     /** Card template for the snippet card of this page */
     cardTemplate: PropTypes.string,
     /** List of recommended snippets */

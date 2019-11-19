@@ -30,16 +30,12 @@ const Meta = ({
           content: metaDescription,
         },
         {
-          name: `author`,
-          content: _l('site.author'),
-        },
-        {
           name: `viewport`,
           content: `width=device-width, initial-scale=1`,
         },
         {
           name: `og:title`,
-          content: _l('site.title'),
+          content: title ? `${title} - ${_l('site.title')}` : _l('site.title'),
         },
         {
           name: `og:description`,

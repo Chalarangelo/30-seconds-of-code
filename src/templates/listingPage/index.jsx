@@ -20,6 +20,7 @@ const templateData = {
 const ListingPage = ({
   pageContext: {
     logoSrc,
+    splashLogoSrc,
     paginator,
     snippetList,
     listingName,
@@ -38,7 +39,7 @@ const ListingPage = ({
   return (
     <>
       <Meta
-        logoSrc={ logoSrc }
+        logoSrc={ splashLogoSrc }
         title={ listingName }
         description={ _l`site.pageDescription${{...templateData, snippetCount, listingType, listingLanguage, listingTag }}` }
       />
@@ -65,6 +66,8 @@ ListingPage.propTypes = {
   pageContext: PropTypes.shape({
     /** URI for the logo image */
     logoSrc: PropTypes.string.isRequired,
+    /** URI for the splash logo image */
+    splashLogoSrc: PropTypes.string.isRequired,
     /** Paginator component data */
     paginator: PaginatorPropType,
     /** List of snippets to be displayed */

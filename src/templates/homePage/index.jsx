@@ -18,6 +18,7 @@ const templateData = {
 const HomePage = ({
   pageContext: {
     logoSrc,
+    splashLogoSrc,
     listingAnchors,
     recommendedSnippets,
   },
@@ -25,7 +26,7 @@ const HomePage = ({
   return (
     <>
       <Meta
-        logoSrc={ logoSrc }
+        logoSrc={ splashLogoSrc }
         description={ _l`site.pageDescription${templateData}` }
         meta={ [{ name: `google-site-verification`, content: `YX9mF-TxoHZGJ9SZ8XwvWgGR_KTcbH1uHul4iDklyr0`}] }
       />
@@ -63,6 +64,8 @@ HomePage.propTypes = {
   pageContext: PropTypes.shape({
     /** URI for the logo image */
     logoSrc: PropTypes.string.isRequired,
+    /** URI for the splash logo image */
+    splashLogoSrc: PropTypes.string.isRequired,
     /** Links to list pages to be displayed on the page */
     listingAnchors: PropTypes.arrayOf(PropTypes.shape({})),
     /** List of recommended snippets */

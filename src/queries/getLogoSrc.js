@@ -7,4 +7,13 @@ export default `
       }
     }
   }
+
+  splashLogoSrc: file(relativePath: { eq: "logo.png" }) {
+    id
+    childImageSharp {
+      original {
+        src
+      }
+    }
+  }
 `;
