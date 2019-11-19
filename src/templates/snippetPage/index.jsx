@@ -25,6 +25,7 @@ const SnippetPage = ({
   },
   lastPageTitle,
   lastPageUrl,
+  uri,
 }) => {
   return (
     <>
@@ -32,6 +33,14 @@ const SnippetPage = ({
         title={ snippet.title }
         description={ _l`site.pageDescription${{...templateData, snippetName: snippet.title, snippetLanguage: snippet.language.long }}` }
         logoSrc={ splashLogoSrc }
+        structuredData={ {
+          title: snippet.title,
+          description: snippet.description,
+          slug: snippet.slug,
+          orgLogoSrc: logoSrc,
+          firstSeen: snippet.firstSeen,
+          lastUpdated: snippet.lastUpdated,
+        } }
       />
       <Shell
         logoSrc={ logoSrc }
@@ -78,6 +87,8 @@ SnippetPage.propTypes = {
   lastPageTitle: PropTypes.string.isRequired,
   /** URL of the last page */
   lastPageUrl: PropTypes.string.isRequired,
+  /** URL of the current page */
+  uri: PropTypes.string.isRequired,
 };
 
 export default connect(

@@ -31,6 +31,8 @@ export default `
         }
         expertise
         ranking
+        firstSeen
+        lastUpdated
         language {
           long
           short
@@ -52,6 +54,7 @@ export default `
       node {
         id
         slug
+        url
         tags {
           all
           primary
@@ -77,6 +80,8 @@ export default `
         }
         expertise
         ranking
+        firstSeen
+        lastUpdated
         browserSupport {
           supportPercentage
         }

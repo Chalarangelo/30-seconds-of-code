@@ -32,6 +32,8 @@ export default (id, snippetNode, markdownNode) => {
     },
     ranking: rankSnippet(snippetNode),
     recommendationRanking: snippetNode.recommendationRanking,
+    firstSeen: new Date(+`${snippetNode.meta.firstSeen}000`),
+    lastUpdated: new Date(+`${snippetNode.meta.lastUpdated}000`),
     searchTokens: uniqueElements([
       snippetNode.language.short,
       snippetNode.language.long,
