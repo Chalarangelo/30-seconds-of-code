@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import { Meta as MetaPropType } from 'typedefs';
@@ -11,12 +12,83 @@ const Meta = ({
   title,
   description = '',
   locale = 'en',
+  acceptsCookies,
   meta = [],
   logoSrc,
   structuredData,
 }) => {
   const _l = _(locale); // IDEA: Pass this to all components below or use it in Redux store to be able to localize the website in the future
   const metaDescription = description || _l('site.pageDescription');
+
+  // Load scripts
+  const scripts = [];
+  if (structuredData) {
+    scripts.push({
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        'mainEntityOfPage': {
+          '@type': 'WebPage',
+          '@id': `${config.siteUrl}${structuredData.slug}`,
+        },
+        'headline': structuredData.title,
+        'image': [
+          `${config.siteUrl}${logoSrc}`,
+        ],
+        'datePublished': structuredData.firstSeen,
+        'dateModified': structuredData.lastUpdated,
+        'author': {
+          '@type': 'Organization',
+          'name': config.author,
+          'logo': {
+            '@type': 'ImageObject',
+            'url': `${config.siteUrl}${structuredData.orgLogoSrc}`,
+          },
+        },
+        'publisher': {
+          '@type': 'Organization',
+          'name': config.author,
+          'logo': {
+            '@type': 'ImageObject',
+            'url': `${config.siteUrl}${structuredData.orgLogoSrc}`,
+          },
+        },
+        'description': structuredData.description,
+      }),
+    });
+  }
+
+  if(typeof window !== 'undefined' && acceptsCookies) {
+    scripts.push({
+      async: '',
+      src: `https://www.googletagmanager.com/gtag/js?id=${config.googleAnalytics.id}`,
+    });
+
+    scripts.push({
+      innerHTML: `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag(
+        'config', 
+        '${config.googleAnalytics.id}', 
+        ${JSON.stringify(config.googleAnalytics.config)}
+      );
+      `,
+    });
+    // Send a pageview only the first time that gtag is added (is this safe?)
+    if(typeof gtag === 'undefined') {
+      scripts.push({
+        innerHTML: `
+        var hasFired = false; 
+        if(!hasFired){
+          window.gtag('event', 'page_view', { page_path: '${window.location.href}' });
+          hasFired = true;
+        }`,
+      });
+    }
+  }
 
   return (
     <Helmet
@@ -52,47 +124,18 @@ const Meta = ({
           content: logoSrc,
         },
       ].concat(meta) }
-      script={ structuredData ? [
-        {
-          type: 'application/ld+json',
-          innerHTML: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'TechArticle',
-            'mainEntityOfPage': {
-              '@type': 'WebPage',
-              '@id': `${config.siteUrl}${structuredData.slug}`,
-            },
-            'headline': structuredData.title,
-            'image': [
-              `${config.siteUrl}${logoSrc}`,
-            ],
-            'datePublished': structuredData.firstSeen,
-            'dateModified': structuredData.lastUpdated,
-            'author': {
-              '@type': 'Organization',
-              'name': config.author,
-              'logo': {
-                '@type': 'ImageObject',
-                'url': `${config.siteUrl}${structuredData.orgLogoSrc}`,
-              },
-            },
-            'publisher': {
-              '@type': 'Organization',
-              'name': config.author,
-              'logo': {
-                '@type': 'ImageObject',
-                'url': `${config.siteUrl}${structuredData.orgLogoSrc}`,
-              },
-            },
-            'description': structuredData.description,
-          }),
-        },
-      ] : [] }
+      script={ scripts }
       // IDEA: See if we need to deal with this later
       // bodyAttributes={{
       //   class: ''
       // }}
-    />
+    >
+      <link
+        rel="preconnect dns-prefetch"
+        key="preconnect-google-analytics"
+        href="https://www.google-analytics.com"
+      />
+    </Helmet>
   );
 };
 
@@ -103,6 +146,8 @@ Meta.propTypes = {
   description: PropTypes.string,
   /** Page locale (language) */
   locale: PropTypes.string,
+  /** Does the user accept cookies? */
+  acceptsCookies: PropTypes.bool,
   /** Metadata array */
   meta: PropTypes.arrayOf(MetaPropType),
   /** Page logo URI */
@@ -118,4 +163,9 @@ Meta.propTypes = {
   }),
 };
 
-export default Meta;
+export default connect(
+  state => ({
+    acceptsCookies: state.shell.acceptsCookies,
+  }),
+  null
+)(Meta);
