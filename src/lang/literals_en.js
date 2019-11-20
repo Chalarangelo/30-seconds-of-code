@@ -122,6 +122,12 @@ const literals = {
   'Third party cookies': 'Third party cookies',
   'For more information on Google Analytics cookies, see the official Google Analytics page.': 'For more information on Google Analytics cookies, see the official Google Analytics page.',
   'More information': 'More information',
+  'Our website uses tools such as cookies to provide a high quality personalized experience and gather anonymized data for statistical analisis of the website\'s traffic.': `${config.name} uses cookies to provide a high quality user experience and gather anonymized data for statistical analysis of the website\'s traffic.`,
+  'By clicking "Accept" you accept their installation.': 'By clicking "Accept" you accept their installation.',
+  'Accept': 'Accept',
+  'Decline': 'Decline',
+  'You can learn more by reading our ': ' You can learn more by reading our ',
+  'cookie policy': 'cookie policy',
 };
 
 export default literals;
