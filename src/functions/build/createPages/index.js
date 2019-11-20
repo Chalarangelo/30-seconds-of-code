@@ -1,5 +1,6 @@
 import create404Page from './create404Page';
 import createAboutPage from './createAboutPage';
+import createCookiePage from './createCookiePage';
 import createHomePage from './createHomePage';
 import createListingPages from './createListingPages';
 import createSearchIndexPage from './createSearchIndexPage';
@@ -58,6 +59,14 @@ const createPages = (query, templates, requirables) => ({ graphql, actions }) =>
 
       createAboutPage(
         templates['AboutPage'],
+        createPage,
+        {
+          ...commonContext,
+        }
+      );
+
+      createCookiePage(
+        templates['CookiePage'],
         createPage,
         {
           ...commonContext,
