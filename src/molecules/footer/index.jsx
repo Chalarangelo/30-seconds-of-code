@@ -21,6 +21,15 @@ const Footer = ({
       </Anchor>
       <Anchor
         link={ {
+          internal: true,
+          url: '/cookies',
+        } }
+        className='footer-link'
+      >
+        { _l('footer.cookies') }
+      </Anchor>
+      <Anchor
+        link={ {
           internal: false,
           url: config.githubOrgUrl,
           rel: 'noopener',
