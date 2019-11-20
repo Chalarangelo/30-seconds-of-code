@@ -34,8 +34,6 @@
     "front-matter": "^3.0.2",
     "fs-extra": "^8.1.0",
     "gatsby": "^2.12.0",
-    "gatsby-image": "^2.2.6",
-    "gatsby-plugin-google-analytics": "^2.1.6",
     "gatsby-plugin-manifest": "^2.2.3",
     "gatsby-plugin-netlify": "^2.1.3",
     "gatsby-plugin-offline": "^2.2.4",
