@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 module.exports = {
   // Project metadata
   name: `30 seconds of code`,
@@ -9,6 +10,14 @@ module.exports = {
   twitterUrl: `https://twitter.com/30secondsofcode`,
   licenseUrl: `https://creativecommons.org/publicdomain/zero/1.0/`,
   siteUrl: `https://30secondsofcode.org`,
+  googleAnalytics: {
+    id: `UA-117141635-1`,
+    config: {
+      anonymize_ip: true,     // Track as little as possible
+      cookie_expires: 0,      // Track as little as possible
+      send_page_view: false,  // Prevent duplicate page views
+    },
+  },
   // Path information
   assetPath: `assets`,
   contentPath: `${__dirname}/content`,
