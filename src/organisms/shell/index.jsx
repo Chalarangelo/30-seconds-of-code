@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import NavBar from 'molecules/navBar';
 import Footer from 'molecules/footer';
+import CookieConsentPopup from 'molecules/cookieConsentPopup';
 import { useMedia } from 'functions/hooks';
 import _ from 'lang';
-import { toggleDarkMode } from 'state/shell';
+import { toggleDarkMode, decideCookies } from 'state/shell';
 const _l = _('en');
 import config from '../../../config';
 import { Anchor } from 'atoms/anchor';
@@ -13,6 +14,7 @@ import { Anchor } from 'atoms/anchor';
 // eslint-disable-next-line complexity
 const Shell = ({
   isDarkMode,
+  acceptsCookies,
   isSearch,
   isListing,
   dispatch,
@@ -37,6 +39,20 @@ const Shell = ({
     <div className={
       isDarkMode === true || (darkModeEnabledInitially && isDarkMode === undefined) ? 'page-container dark' : 'page-container'
     }>
+      {
+        typeof acceptsCookies === 'undefined' ?
+          <CookieConsentPopup
+            onAccept={ e => {
+              e.preventDefault();
+              dispatch(decideCookies(true));
+            } }
+            onDecline={ e => {
+              e.preventDefault();
+              dispatch(decideCookies(false));
+            } }
+          />
+          : null
+      }
       <NavBar buttons={ [
         {
           icon: 'search',
@@ -114,6 +130,8 @@ Shell.propTypes = {
   ]),
   /** Should dark mode be applied? */
   isDarkMode: PropTypes.bool,
+  /** Does the user accept cookies? */
+  acceptsCookies: PropTypes.bool,
   /** Is this a search page? */
   isSearch: PropTypes.bool,
   /** Is this a list page? */
@@ -133,6 +151,7 @@ Shell.propTypes = {
 export default connect(
   state => ({
     isDarkMode: state.shell.isDarkMode,
+    acceptsCookies: state.shell.acceptsCookies,
   }),
   null
 )(Shell);
