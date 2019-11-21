@@ -32,7 +32,7 @@ const Footer = ({
         link={ {
           internal: false,
           url: config.githubOrgUrl,
-          rel: 'noopener',
+          rel: 'noopener nofollow',
           target: '_blank',
         } }
         className='footer-link'
@@ -43,12 +43,23 @@ const Footer = ({
         link={ {
           internal: false,
           url: config.twitterUrl,
-          rel: 'noopener',
+          rel: 'noopener nofollow',
           target: '_blank',
         } }
         className='footer-link'
       >
         { _l('footer.twitter') }
+      </Anchor>
+      <Anchor
+        link={ {
+          internal: false,
+          url: config.discordUrl,
+          rel: 'noopener nofollow',
+          target: '_blank',
+        } }
+        className='footer-link'
+      >
+        { _l('footer.discord') }
       </Anchor>
     </p>
     <p>
@@ -80,12 +91,12 @@ const Footer = ({
       <Anchor
         link={ {
           internal: false,
-          url: 'https://github.com/',
+          url: 'https://www.netlify.com/',
           rel: 'noopener',
           target: '_blank',
         } }
       >
-        { _l('GitHub') }
+        { _l('Netlify') }
       </Anchor>
       { _l(', ') }
       <Anchor
@@ -113,12 +124,12 @@ const Footer = ({
       <Anchor
         link={ {
           internal: false,
-          url: 'https://www.netlify.com/',
+          url: 'https://github.com/',
           rel: 'noopener',
           target: '_blank',
         } }
       >
-        { _l('Netlify') }
+        { _l('GitHub') }
       </Anchor>
     </p>
   </footer>

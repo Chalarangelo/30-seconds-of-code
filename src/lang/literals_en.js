@@ -64,6 +64,7 @@ const literals = {
   'footer.github': 'GitHub',
   'footer.twitter': 'Twitter',
   'footer.cookies': 'Cookies',
+  'footer.discord': 'Discord',
   // Literals
   'Expertise': level => `${capitalize(level, true)}`,
   'Search snippets': 'Search snippets',
