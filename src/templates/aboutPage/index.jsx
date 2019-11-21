@@ -26,7 +26,6 @@ const AboutPage = ({
         title={ _l('About') }
         logoSrc={ splashLogoSrc }
         description={ _l`site.pageDescription${templateData}` }
-        meta={ [{ name: `google-site-verification`, content: `YX9mF-TxoHZGJ9SZ8XwvWgGR_KTcbH1uHul4iDklyr0`}] }
       />
       <Shell
         logoSrc={ logoSrc }
