@@ -1,0 +1,10 @@
+# Redirect lists to page 1
+/list                     /list/p/1                 301!
+/js                       /js/p/1                   301!
+/javascript               /js/p/1                   301!
+/python                   /python/p/1               301!
+/py                       /python/p/1               301!
+/css                      /css/p/1                  301!
+/react                    /react/p/1                301!
+/php                      /php/p/1                  301!
+# Redirect old js routes to new pages - TODO: Generate this list from 30code
