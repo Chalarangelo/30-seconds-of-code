@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Meta from 'atoms/meta';
 import Shell from 'organisms/shell';
 import Search from 'atoms/search';
@@ -7,6 +8,7 @@ import ListingAnchors from 'molecules/listingAnchors';
 import PropTypes from 'prop-types';
 import { Snippet as SnippetPropType } from 'typedefs';
 import RecommendationList from 'organisms/recommendationList';
+import { pushNewPage } from 'state/navigation';
 import config from '../../../config';
 import _ from 'lang';
 const _l = _('en');
@@ -23,7 +25,12 @@ const HomePage = ({
     listingAnchors,
     recommendedSnippets,
   },
+  dispatch,
 }) => {
+  React.useEffect(() => {
+    dispatch(pushNewPage(_l('Home'), `/`));
+  }, []);
+
   return (
     <>
       <Meta
@@ -72,6 +79,12 @@ HomePage.propTypes = {
     /** List of recommended snippets */
     recommendedSnippets: PropTypes.arrayOf(SnippetPropType),
   }),
+  /** Dispatch function of the Redux stotre */
+  dispatch: PropTypes.func,
 };
 
-export default HomePage;
+export default connect(
+  // eslint-disable-next-line
+  state => ({}),
+  null
+)(HomePage);
