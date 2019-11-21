@@ -9,6 +9,13 @@
 
 let locationScrollTops = [];
 
+const sendPageView = () => {
+  const pagePath = location
+    ? location.pathname + location.search + location.hash
+    : undefined
+  window.gtag(`event`, `page_view`, { page_path: pagePath })
+};
+
 const onPreRouteUpdate = ({ location, prevLocation }) => {
   try {
     let scrollTop = document.querySelector('.content').scrollTop;
@@ -22,6 +29,17 @@ const onRouteUpdate = ({ location, prevLocation }) => {
       document.querySelector('.content').scrollTop = locationScrollTops[location.pathname];
 
   } catch (e) { return; }
+
+  if (process.env.NODE_ENV === `production` && typeof gtag === `function`) {
+    if (`requestAnimationFrame` in window) {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(sendPageView)
+      })
+    } else {
+      // simulate 2 requestAnimationFrame calls
+      setTimeout(sendPageView, 32)
+    }
+  }
 };
 
 export { default as wrapRootElement } from 'state/ReduxWrapper';

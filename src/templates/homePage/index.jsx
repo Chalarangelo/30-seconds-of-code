@@ -7,6 +7,7 @@ import ListingAnchors from 'molecules/listingAnchors';
 import PropTypes from 'prop-types';
 import { Snippet as SnippetPropType } from 'typedefs';
 import RecommendationList from 'organisms/recommendationList';
+import config from '../../../config';
 import _ from 'lang';
 const _l = _('en');
 
@@ -28,7 +29,7 @@ const HomePage = ({
       <Meta
         logoSrc={ splashLogoSrc }
         description={ _l`site.pageDescription${templateData}` }
-        meta={ [{ name: `google-site-verification`, content: `YX9mF-TxoHZGJ9SZ8XwvWgGR_KTcbH1uHul4iDklyr0`}] }
+        meta={ [{ name: `google-site-verification`, content: config.googleSiteVerification}] }
       />
       <Shell
         logoSrc={ logoSrc }
