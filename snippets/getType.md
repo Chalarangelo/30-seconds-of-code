@@ -8,8 +8,7 @@ Returns the native type of a value.
 Returns lowercased constructor name of value, `"undefined"` or `"null"` if value is `undefined` or `null`.
 
 ```js
-const getType = v =>
-  v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name.toLowerCase();
+const getType = el => Object.prototype.toString.call(el).slice(8, -1).toLowerCase();
 ```
 
 ```js
