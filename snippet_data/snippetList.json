@@ -5,14 +5,14 @@
       "type": "snippetListing",
       "title": "Border with top triangle",
       "attributes": {
-        "text": "Creates a text container with a triangle at the top.\n\n#### HTML\n\n",
+        "text": "Creates a text container with a triangle at the top.\n\n",
         "tags": [
           "visual",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "4fed80c83d37457d5ce111ee5c3272945c203319ccc4f5fe4355c359840f8628"
+        "hash": "f052c85dc45dcf8bf4d38c714acece6c6c7ffbd483b3ba76815564da79313fa4"
       }
     },
     {
@@ -90,13 +90,13 @@
       "type": "snippetListing",
       "title": "Clearfix",
       "attributes": {
-        "text": "Ensures that an element self-clears its children.\n\n###### Note: This is only useful if you are still using float to build layouts. Please consider using a modern approach with flexbox layout or grid layout.\n\n",
+        "text": "Ensures that an element self-clears its children.\n\n",
         "tags": [
           "layout"
         ]
       },
       "meta": {
-        "hash": "55fe4fad743f778816b5923c862484cfa84efd353a4d2a3efe04893db6f5863f"
+        "hash": "8a1beb75b1efe89f11f1bac944a836feac26604d5bc06bdb026dd0bd6650ad95"
       }
     },
     {
