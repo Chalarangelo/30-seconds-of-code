@@ -428,8 +428,7 @@ const getScrollPosition = (el = window) => ({
   y: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop
 });
 const getStyle = (el, ruleName) => getComputedStyle(el)[ruleName];
-const getType = v =>
-  v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name.toLowerCase();
+const getType = el => Object.prototype.toString.call(el).slice(8, -1).toLowerCase();
 const getURLParameters = url =>
   (url.match(/([^?=&]+)(=([^&]*))/g) || []).reduce(
     (a, v) => ((a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a),
