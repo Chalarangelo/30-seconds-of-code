@@ -20,6 +20,7 @@ module.exports = {
       send_page_view: false,  // Prevent duplicate page views
     },
   },
+  stateName: `30-sec-app`,
   // Path information
   assetPath: `assets`,
   contentPath: `${__dirname}/content`,
