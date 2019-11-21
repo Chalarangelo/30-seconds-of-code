@@ -5,16 +5,9 @@ import {
 /** Get the textual content in a gatsby page */
 const getTextualContent = (str, noExplain = false) => {
   const result = str.slice(0, str.indexOf('<div class="gatsby-highlight"'));
-  if (noExplain) {
-    if (result.lastIndexOf('<p>') !== result.indexOf('<p>'))
-      return result.slice(0, result.lastIndexOf('<p>'));
-    else if (result.lastIndexOf('<ul>') !== -1)
-      return result.slice(0, result.lastIndexOf('<ul>'));
-    else if (result.lastIndexOf('<ol>') !== -1)
-      return result.slice(0, result.lastIndexOf('<ol>'));
-    else
-      return result;
-  }
+  if (noExplain)
+    return result.slice(0, result.indexOf('</p>\n'));
+
   return result;
 };
 
