@@ -3,9 +3,9 @@ title: permutations
 tags: array,recursion,advanced
 ---
 
-⚠️ **WARNING**: This function's execution time increases exponentially with each array element. Anything more than 8 to 10 entries will cause your browser to hang as it tries to solve all the different combinations.
-
 Generates all permutations of an array's elements (contains duplicates).
+
+⚠️ **WARNING**: This function's execution time increases exponentially with each array element. Anything more than 8 to 10 entries will cause your browser to hang as it tries to solve all the different combinations.
 
 Use recursion.
 For each element in the given array, create all the partial permutations for the rest of its elements.
