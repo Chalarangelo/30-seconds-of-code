@@ -4,6 +4,7 @@ import cacheKey from '../../.build/cacheKey';
 const initialState = {
   isDarkMode: undefined,
   cacheKey,
+  newCacheKey: cacheKey,
   acceptsCookies: undefined,
 };
 
