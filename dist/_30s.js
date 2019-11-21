@@ -204,8 +204,8 @@
     return Array.isArray(obj) && obj.length
       ? (clone.length = obj.length) && Array.from(clone)
       : Array.isArray(obj)
-      ? Array.from(obj)
-      : clone;
+        ? Array.from(obj)
+        : clone;
   };
   const deepFlatten = arr => [].concat(...arr.map(v => (Array.isArray(v) ? deepFlatten(v) : v)));
   const deepFreeze = obj =>
@@ -217,13 +217,13 @@
     Array.isArray(obj)
       ? obj.map(val => deepMapKeys(val, f))
       : typeof obj === 'object'
-      ? Object.keys(obj).reduce((acc, current) => {
+        ? Object.keys(obj).reduce((acc, current) => {
           const val = obj[current];
           acc[f(current)] =
             val !== null && typeof val === 'object' ? deepMapKeys(val, f) : (acc[f(current)] = val);
           return acc;
         }, {})
-      : obj;
+        : obj;
   const defaults = (obj, ...defs) => Object.assign({}, obj, ...defs.reverse(), obj);
   const defer = (fn, ...args) => setTimeout(fn, 1, ...args);
   const degreesToRads = deg => (deg * Math.PI) / 180.0;
@@ -245,9 +245,9 @@
     target in obj
       ? obj[target]
       : Object.values(obj).reduce((acc, val) => {
-          if (acc !== undefined) return acc;
-          if (typeof val === 'object') return dig(val, target);
-        }, undefined);
+        if (acc !== undefined) return acc;
+        if (typeof val === 'object') return dig(val, target);
+      }, undefined);
   const digitize = n => [...`${n}`].map(i => parseInt(i));
   const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
   const drop = (arr, n = 1) => arr.slice(n);
@@ -319,11 +319,11 @@
   const factorial = n =>
     n < 0
       ? (() => {
-          throw new TypeError('Negative numbers are not allowed!');
-        })()
+        throw new TypeError('Negative numbers are not allowed!');
+      })()
       : n <= 1
-      ? 1
-      : n * factorial(n - 1);
+        ? 1
+        : n * factorial(n - 1);
   const fibonacci = n =>
     Array.from({ length: n }).reduce(
       (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),
@@ -424,10 +424,10 @@
     num === 0 || num === 24
       ? 12 + 'am'
       : num === 12
-      ? 12 + 'pm'
-      : num < 12
-      ? (num % 12) + 'am'
-      : (num % 12) + 'pm';
+        ? 12 + 'pm'
+        : num < 12
+          ? (num % 12) + 'am'
+          : (num % 12) + 'pm';
   const getScrollPosition = (el = window) => ({
     x: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,
     y: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop
@@ -660,8 +660,8 @@
         i === arr.length - 2
           ? acc + val + end
           : i === arr.length - 1
-          ? acc + val
-          : acc + val + separator,
+            ? acc + val
+            : acc + val + separator,
       ''
     );
   const JSONtoCSV = (arr, columns, delimiter = ',') =>
@@ -779,10 +779,10 @@
   const objectToQueryString = queryParameters => {
     return queryParameters
       ? Object.entries(queryParameters).reduce((queryString, [key, val], index) => {
-        const symbol = index === 0 ? '?' : '&';
-        queryString += typeof val === 'string' ? `${symbol}${key}=${val}` : '';
-        return queryString;
-      }, '')
+          const symbol = index === 0 ? '?' : '&';
+          queryString += typeof val === 'string' ? `${symbol}${key}=${val}` : '';
+          return queryString;
+        }, '')
       : '';
   };
   const observeMutations = (element, callback, options) => {

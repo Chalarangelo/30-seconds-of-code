@@ -412,7 +412,7 @@
         ]
       },
       "meta": {
-        "hash": "a20006623e4d5cfea091da77d56e43d0b7727cfbe45bf996818edd2bdbebad2b"
+        "hash": "2d594dd3e909e594ec77d7b2fcd95ea85a47587503192e46e33330046f4331ac"
       }
     },
     {
@@ -606,7 +606,7 @@
       "type": "snippetListing",
       "title": "copyToClipboard",
       "attributes": {
-        "text": "⚠️ **NOTICE:** The same functionality can be easily implemented by using the new asynchronous Clipboard API, which is still experimental but should be used in the future instead of this snippet. Find out more about it [here](https://github.com/w3c/clipboard-apis/blob/master/explainer.adoc#writing-to-the-clipboard).\n\nCopy a string to the clipboard. \nOnly works as a result of user action (i.e. inside a `click` event listener).\n\nCreate a new `<textarea>` element, fill it with the supplied data and add it to the HTML document.\nUse `Selection.getRangeAt()`to store the selected range (if any).\nUse `document.execCommand('copy')` to copy to the clipboard.\nRemove the `<textarea>` element from the HTML document.\nFinally, use `Selection().addRange()` to recover the original selected range (if any).\n\n",
+        "text": "Copy a string to the clipboard. \nOnly works as a result of user action (i.e. inside a `click` event listener).\n\n⚠️ **NOTICE:** The same functionality can be easily implemented by using the new asynchronous Clipboard API, which is still experimental but should be used in the future instead of this snippet. Find out more about it [here](https://github.com/w3c/clipboard-apis/blob/master/explainer.adoc#writing-to-the-clipboard).\n\nCreate a new `<textarea>` element, fill it with the supplied data and add it to the HTML document.\nUse `Selection.getRangeAt()`to store the selected range (if any).\nUse `document.execCommand('copy')` to copy to the clipboard.\nRemove the `<textarea>` element from the HTML document.\nFinally, use `Selection().addRange()` to recover the original selected range (if any).\n\n",
         "tags": [
           "browser",
           "string",
@@ -614,7 +614,7 @@
         ]
       },
       "meta": {
-        "hash": "b16e20cca806e64e7d4d81d774e21e9fd6554f55121a53db8b74907ff148ee2f"
+        "hash": "33014c31be5dadcdb16c56726db905ff10b9878a5f4e85f23d9ee303e71f0039"
       }
     },
     {
@@ -835,7 +835,7 @@
         ]
       },
       "meta": {
-        "hash": "0a4684d6fc79bdbbac31df3af6c493ba7c881936ada5bc52824b4f26ca177459"
+        "hash": "5ab25ab96afd4f1f481fc318b5b290ba8c57a468ef6bca0ca200cfb7fcf3ba9f"
       }
     },
     {
@@ -898,7 +898,7 @@
         ]
       },
       "meta": {
-        "hash": "a4e1e33c0688dbf1ca231d9d8ea315ffed93b7f83f5d8cbf0714f10fdfeda8cf"
+        "hash": "7a228b650ff668f697e524e0d27ebeff1bfa35e04333b6cd5e742ff63bfea25d"
       }
     },
     {
@@ -1037,7 +1037,7 @@
         ]
       },
       "meta": {
-        "hash": "484bd222e636e8a8409c30ddb1fe6e3fe72ab7a43f2edf089b2758d5e9bee528"
+        "hash": "5f38360819f9225b887a94221bfee1a80f1bcc224a364440b3388f60491b03ba"
       }
     },
     {
@@ -1273,7 +1273,7 @@
         ]
       },
       "meta": {
-        "hash": "0eac852db7a7add352b0d36677b22718b342ed9dc12f11780cac87e3b8260a05"
+        "hash": "55b1ce0a892110d792a9487e40331774015525479faa2b8961f6c2ea6291c27b"
       }
     },
     {
@@ -1678,7 +1678,7 @@
         ]
       },
       "meta": {
-        "hash": "9e39c6a3a8ec5b51c5e16f69107fc9e90b2697b2cf2689850872071bb968723e"
+        "hash": "16c3b724b653dcb31f3e59f1664a59951abb15a93eb3697cade4d3ae0e63c532"
       }
     },
     {
@@ -1847,14 +1847,14 @@
       "type": "snippetListing",
       "title": "hasKey",
       "attributes": {
-        "text": "Returns `true` if the target value exists in a JSON object, `false` otherwise.\n\nCheck if `keys` is non-empty and use `Array.prototype.every()` to sequentially check its keys to internal depth of the object, `obj`. \nUse `Object.prototype.hasOwnProperty()` to check if `obj` does not have the current key or is not an object, stop propagation and return `false`.\nOtherwise assign the key's value to `obj` to use on the next iteration.\n\nReturn `false` beforehand if given key list is empty.\n\n",
+        "text": "Returns `true` if the target value exists in a JSON object, `false` otherwise.\n\nCheck if `keys` is non-empty and use `Array.prototype.every()` to sequentially check its keys to internal depth of the object, `obj`. \nUse `Object.prototype.hasOwnProperty()` to check if `obj` does not have the current key or is not an object, stop propagation and return `false`.\nOtherwise assign the key's value to `obj` to use on the next iteration.\nReturn `false` beforehand if given key list is empty.\n\n",
         "tags": [
           "object",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "a9b621f9cec178bc95756a18036042c4d4b884abecfd5599ba6df0f70759cded"
+        "hash": "09664f8ede4cc568302d52fe37d3a29dc6c4b052e76834e761a02c391178f33a"
       }
     },
     {
@@ -2865,7 +2865,7 @@
         ]
       },
       "meta": {
-        "hash": "3db3faac666ee61ab86c70766d2ab5d1293ffd818da87edb971bfff7a366364a"
+        "hash": "362fddaa6244404741e84bca6fc442a101fdb642af53b299e8b9994d0d7162d8"
       }
     },
     {
@@ -3426,7 +3426,7 @@
         ]
       },
       "meta": {
-        "hash": "23ded1eef634ad88b34431b187b5f9eca4432daf09e89980fb0661fb56d8dcb0"
+        "hash": "012ebca6a90c50ec89278af2632d7d0d90eeb423f2bcf902ed015f6fce6d4f5a"
       }
     },
     {
@@ -3717,7 +3717,7 @@
       "type": "snippetListing",
       "title": "permutations",
       "attributes": {
-        "text": "⚠️ **WARNING**: This function's execution time increases exponentially with each array element. Anything more than 8 to 10 entries will cause your browser to hang as it tries to solve all the different combinations.\n\nGenerates all permutations of an array's elements (contains duplicates).\n\nUse recursion.\nFor each element in the given array, create all the partial permutations for the rest of its elements.\nUse `Array.prototype.map()` to combine the element with each partial permutation, then `Array.prototype.reduce()` to combine all permutations in one array.\nBase cases are for array `length` equal to `2` or `1`.\n\n",
+        "text": "Generates all permutations of an array's elements (contains duplicates).\n\n⚠️ **WARNING**: This function's execution time increases exponentially with each array element. Anything more than 8 to 10 entries will cause your browser to hang as it tries to solve all the different combinations.\n\nUse recursion.\nFor each element in the given array, create all the partial permutations for the rest of its elements.\nUse `Array.prototype.map()` to combine the element with each partial permutation, then `Array.prototype.reduce()` to combine all permutations in one array.\nBase cases are for array `length` equal to `2` or `1`.\n\n",
         "tags": [
           "array",
           "recursion",
@@ -3725,7 +3725,7 @@
         ]
       },
       "meta": {
-        "hash": "11c74727c481c0067421afa2864b55b2a40291916ff92529542f572da0e8b8b5"
+        "hash": "821e55db97be7e29b6a969cafbaf06da5ad72d5677eb9e275fb43d536052655b"
       }
     },
     {
@@ -3775,7 +3775,7 @@
         ]
       },
       "meta": {
-        "hash": "17bcf3f13980b7f804d9f0fe274324b2a35ab7d479c03d77322dabba81e1a34a"
+        "hash": "7ccbf66d8d55c60bcf12baa980cf32d67a4ba567894d59e2d798c9af792424ff"
       }
     },
     {
@@ -4672,7 +4672,7 @@
       "type": "snippetListing",
       "title": "stringPermutations",
       "attributes": {
-        "text": "⚠️ **WARNING**: This function's execution time increases exponentially with each character. Anything more than 8 to 10 characters will cause your browser to hang as it tries to solve all the different combinations.\n\nGenerates all permutations of a string (contains duplicates).\n\nUse recursion.\nFor each letter in the given string, create all the partial permutations for the rest of its letters.\nUse `Array.prototype.map()` to combine the letter with each partial permutation, then `Array.prototype.reduce()` to combine all permutations in one array.\nBase cases are for string `length` equal to `2` or `1`.\n\n",
+        "text": "Generates all permutations of a string (contains duplicates).\n\n⚠️ **WARNING**: This function's execution time increases exponentially with each character. Anything more than 8 to 10 characters will cause your browser to hang as it tries to solve all the different combinations.\n\nUse recursion.\nFor each letter in the given string, create all the partial permutations for the rest of its letters.\nUse `Array.prototype.map()` to combine the letter with each partial permutation, then `Array.prototype.reduce()` to combine all permutations in one array.\nBase cases are for string `length` equal to `2` or `1`.\n\n",
         "tags": [
           "string",
           "recursion",
@@ -4680,7 +4680,7 @@
         ]
       },
       "meta": {
-        "hash": "f3072433cbe87501a6a466eb07faad4e739a8a3ccb6c05cc177176642a57bacd"
+        "hash": "1a4c3427df70f2633c0d1a2c47b9ef7452664e1b6ea58525ce4067e1ea6a51a8"
       }
     },
     {
