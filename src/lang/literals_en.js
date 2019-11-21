@@ -82,7 +82,7 @@ const literals = {
   'Start typing a keyphrase to see matching snippets or ': 'Start typing a keyphrase to see matching snippets or ',
   'click to view the whole list': 'click to view the whole list',
   '.': '.',
-  ',': ', ',
+  ', ': ', ',
   ' & ': ' & ',
   'Click on a snippet card to view the snippet': 'Click on a snippet card to view the snippet',
   'Click on a snippet card to view the snippet.': 'Click on a snippet card to view the snippet.',
@@ -107,7 +107,7 @@ const literals = {
   '30-seconds': '30-seconds',
   'Individual snippets licensed under ': 'Individual snippets licensed under ',
   'CC0-1.0': 'CC0-1.0',
-  'Powered by GitHub, Gatsby, Travis CI & Netlify': 'Powered by GitHub, Gatsby, Travis CI & Netlify',
+  'Powered by ': 'This site is powered by ',
   'GitHub': 'GitHub',
   'Travis CI': 'Travis CI',
   'Gatsby': 'Gatsby',
@@ -128,6 +128,7 @@ const literals = {
   'Decline': 'Decline',
   'You can learn more by reading our ': ' You can learn more by reading our ',
   'cookie policy': 'cookie policy',
+  'Recommended snippets': 'Recommended snippets',
 };
 
 export default literals;
