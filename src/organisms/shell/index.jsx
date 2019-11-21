@@ -101,7 +101,7 @@ const Shell = ({
             <Anchor
               link={ {
                 internal: true,
-                to: '/',
+                url: '/',
               } }
             >
               { _l('site.title') }
