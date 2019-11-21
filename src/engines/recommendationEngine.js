@@ -1,5 +1,6 @@
 /* eslint-disable brace-style */
 import config from '../../config';
+const { recomendationEngine } = config;
 import { mapNumRange, similarity } from 'functions/utils';
 
 const determineRecommendedSnippetsWithoutContext = snippetNodes => {
@@ -12,7 +13,7 @@ const determineRecommendedSnippetsWithoutContext = snippetNodes => {
   const freshnessMaxDifference = freshnessMaxValue - Math.min(...freshNodes.map(v => +v[1].meta.lastUpdated));
 
   return freshNodes.map(node => {
-    const freshnessValue = mapNumRange(freshnessMaxValue - node[1].meta.lastUpdated, freshnessMaxDifference, 0, 0.0, 0.45).toFixed(4);
+    const freshnessValue = mapNumRange(freshnessMaxValue - node[1].meta.lastUpdated, freshnessMaxDifference, 0, 0.0, recomendationEngine.noContextFreshnessMultiplier).toFixed(4);
     const indexableContent = [
       node[1].title,
       node[1].attributes.codeBlocks.src,
@@ -31,7 +32,7 @@ const determineRecommendedSnippetsWithoutContext = snippetNodes => {
       if (indexableContent.indexOf(k) !== -1) keywordValue += node[1].keywordScores[k];
     });
 
-    keywordValue = mapNumRange(keywordValue, 0, keywordMaxValue, 0.0, 0.55).toFixed(4);
+    keywordValue = mapNumRange(keywordValue, 0, keywordMaxValue, 0.0, recomendationEngine.noContextKeywordMultiplier).toFixed(4);
 
     return {
       recommendationRanking: +freshnessValue + +keywordValue,

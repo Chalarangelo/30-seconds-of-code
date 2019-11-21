@@ -94,4 +94,9 @@ module.exports = {
     updateRank0Multiplier: 0.2,
     minimumRating: 0.0001,
   },
+  // Snippet recommendation engine parameters
+  recomendationEngine: {
+    noContextFreshnessMultiplier: 0.45,
+    noContextKeywordMultiplier: 0.55,
+  },
 };
