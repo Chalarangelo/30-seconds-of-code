@@ -44,3 +44,8 @@ export default (state = initialState, action) => {
     return state;
   }
 };
+
+export const persistConfig = {
+  key: 'shell',
+  blacklist: ['newCacheKey'],
+};
