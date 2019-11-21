@@ -1,20 +1,25 @@
 import { combineReducers, createStore } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
+import createPersistConfig from './createPersistConfig';
 import storage from 'redux-persist/lib/storage';
-import shell from './shell';
-import search from './search';
-import navigation from './navigation';
+import shell, { persistConfig as shellConfig } from './shell';
+import search, { persistConfig as searchConfig } from './search';
+import navigation, {persistConfig as navigationConfig} from './navigation';
+
+const persistConfig = createPersistConfig({
+  key: 'root',
+  whitelist: [''],
+}, storage);
+
+const shellPersistConfig = createPersistConfig(shellConfig, storage);
+const searchPersistConfig = createPersistConfig(searchConfig, storage);
+const navigationPersistConfig = createPersistConfig(navigationConfig, storage);
 
 const rootReducer = combineReducers({
-  shell,
-  search,
-  navigation,
+  shell: persistReducer(shellPersistConfig, shell),
+  search: persistReducer(searchPersistConfig, search),
+  navigation: persistReducer(navigationPersistConfig, navigation),
 });
-
-const persistConfig = {
-  key: `30-seconds-app`,
-  storage,
-};
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 

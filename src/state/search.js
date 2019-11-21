@@ -82,3 +82,8 @@ export default (state = initialState, action) => {
     return state;
   }
 };
+
+export const persistConfig = {
+  key: 'search',
+  blacklist: ['initialized'],
+};
