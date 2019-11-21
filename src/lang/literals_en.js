@@ -99,6 +99,7 @@ const literals = {
   'Page not found': 'Page not found',
   'Seems like you have reached a page that does not exist.': 'Seems like you have reached a page that does not exist.',
   'Go home': 'Go home',
+  'Home': 'Home',
   'Snippet List': 'Snippet List',
   'A few word about us, our goals and our projects.': 'A few word about us, our goals and our projects.',
   'License': 'License',
