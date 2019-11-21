@@ -5,8 +5,6 @@ tags: visual,beginner
 
 Creates a text container with a triangle at the top.
 
-#### HTML
-
 ```html
 <div class="container">
   Border with top triangle
