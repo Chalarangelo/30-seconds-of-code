@@ -1,3 +1,4 @@
+import { stripMarkdownFormat } from 'functions/utils';
 /**
  * Given a snippet object with key-value pairs, removes all
  * unnecessary information that should not be sent to the JSX
@@ -19,7 +20,7 @@ const parseSnippetContext = (snippet, cardTemplate) => {
   return {
     id: snippet.id,
     title: snippet.title,
-    description: snippet.text.short,
+    description: stripMarkdownFormat(snippet.text.short),
     url: snippet.url,
     slug: snippet.slug,
     firstSeen: snippet.firstSeen,
