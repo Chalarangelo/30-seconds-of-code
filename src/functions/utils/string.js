@@ -69,3 +69,13 @@ export const getURLParameters = url =>
 /** Returns the URL without any parameters. */
 export const getBaseURL = url =>
   url.indexOf('?') > 0 ? url.slice(0, url.indexOf('?')) : url;
+
+
+/** Strips markdown format from a string */
+export const stripMarkdownFormat = str => {
+  return str
+    .replace(/[`*]/g, '')
+    .replace(/\n/g, '')
+    .replace(/\[(.*)\]\(.*\)/g, '$1')
+    .replace(/_(.*?)_/g, '$1');
+};

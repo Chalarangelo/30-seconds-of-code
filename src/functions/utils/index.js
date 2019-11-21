@@ -1,5 +1,6 @@
 import {
   capitalize,
+  stripMarkdownFormat,
   trimWhiteSpace,
   optimizeNodes,
   optimizeAllNodes,
@@ -27,6 +28,7 @@ import {
 export {
   capitalize,
   trimWhiteSpace,
+  stripMarkdownFormat,
   optimizeNodes,
   optimizeAllNodes,
   determineExpertiseFromTags,
