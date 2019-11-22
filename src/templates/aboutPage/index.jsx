@@ -1,7 +1,6 @@
 import React from 'react';
 import Meta from 'atoms/meta';
 import Shell from 'organisms/shell';
-import { Anchor } from 'atoms/anchor';
 import SimpleCard from 'molecules/simpleCard';
 import PageTitle from 'atoms/pageTitle';
 import PageSubtitle from 'atoms/pageSubtitle';

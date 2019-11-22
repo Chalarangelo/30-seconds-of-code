@@ -16,7 +16,7 @@ const { store } = createStore();
 describe('<AboutPage />', () => {
   const logoSrc = '/assets/logo.png';
   const splashLogoSrc = '/assets/splash.png';
-  let wrapper, shell, meta, simpleCard;
+  let wrapper, shell, meta;
 
   beforeEach(() => {
     wrapper = mount(
@@ -26,7 +26,6 @@ describe('<AboutPage />', () => {
     );
     shell = wrapper.find('Shell');
     meta = wrapper.find('Meta');
-    simpleCard = wrapper.find('SimpleCard');
   });
 
   describe('should render', () => {
