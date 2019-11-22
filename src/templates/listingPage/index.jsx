@@ -82,6 +82,8 @@ ListingPage.propTypes = {
     listingLanguage: PropTypes.string,
     /** Tag metadata for the listing description */
     listingTag: PropTypes.string,
+    /** Links to sublists */
+    listingSublinks: PropTypes.arrayOf(PropTypes.shape({})),
   }),
   /** Dispatch function of the Redux stotre */
   dispatch: PropTypes.func,
