@@ -15,12 +15,13 @@ const { store } = createStore();
 
 describe('<NotFoundPage />', () => {
   const logoSrc = '/assets/logo.png';
+  const splashLogoSrc = '/assets/splash.png';
   let wrapper, shell, meta, pageBackdrop, anchorButton;
 
   beforeEach(() => {
     wrapper = mount(
       <Provider store={ store }>
-        <NotFoundPage pageContext={ { logoSrc } } />
+        <NotFoundPage pageContext={ { logoSrc, splashLogoSrc } } />
       </Provider>
     );
     shell = wrapper.find('Shell');
@@ -54,7 +55,7 @@ describe('<NotFoundPage />', () => {
   });
 
   it('should pass the correct data to the Meta component', () => {
-    expect(meta.prop('logoSrc')).toBe(logoSrc);
+    expect(meta.prop('logoSrc')).toBe(splashLogoSrc);
     expect(meta.prop('title')).toBe(_l('Page not found'));
   });
 

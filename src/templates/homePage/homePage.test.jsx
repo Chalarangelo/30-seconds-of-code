@@ -15,12 +15,13 @@ const { store } = createStore();
 
 describe('<HomePage />', () => {
   const logoSrc = '/assets/logo.png';
+  const splashLogoSrc = '/assets/splash.png';
   let wrapper, shell, meta;
 
   beforeEach(() => {
     wrapper = mount(
       <Provider store={ store }>
-        <HomePage pageContext={ { logoSrc } } />
+        <HomePage pageContext={ { logoSrc, splashLogoSrc } } />
       </Provider>
     );
     shell = wrapper.find('Shell');
@@ -60,7 +61,7 @@ describe('<HomePage />', () => {
   });
 
   it('should pass the correct data to the Meta component', () => {
-    expect(meta.prop('logoSrc')).toBe(logoSrc);
+    expect(meta.prop('logoSrc')).toBe(splashLogoSrc);
     expect(meta.prop('title')).toBe(undefined);
   });
 });
