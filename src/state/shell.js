@@ -1,6 +1,6 @@
 import cacheKey from '../../.build/cacheKey';
 
-// Defalt state
+// Default state
 const initialState = {
   isDarkMode: undefined,
   cacheKey,
@@ -45,6 +45,7 @@ export default (state = initialState, action) => {
   }
 };
 
+// Persistence configuration
 export const persistConfig = {
   key: 'shell',
   blacklist: ['newCacheKey'],
