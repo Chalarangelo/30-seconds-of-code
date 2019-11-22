@@ -10,6 +10,7 @@ import { toggleDarkMode, decideCookies } from 'state/shell';
 const _l = _('en');
 import config from '../../../config';
 import { Anchor } from 'atoms/anchor';
+import env from '../../../.build/env';
 
 // eslint-disable-next-line complexity
 const Shell = ({
@@ -40,7 +41,7 @@ const Shell = ({
       isDarkMode === true || (darkModeEnabledInitially && isDarkMode === undefined) ? 'page-container dark' : 'page-container'
     }>
       {
-        typeof acceptsCookies === 'undefined' ?
+        typeof acceptsCookies === 'undefined' && env === 'PRODUCTION' ?
           <CookieConsentPopup
             onAccept={ e => {
               e.preventDefault();
