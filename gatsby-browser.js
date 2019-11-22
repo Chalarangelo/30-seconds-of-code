@@ -1,19 +1,13 @@
-/* eslint-disable */
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
-
-// You can delete this file if you're not using it
-
+/*
+  Gatsby Browser API
+*/
 let locationScrollTops = [];
 
 const sendPageView = () => {
   const pagePath = location
     ? location.pathname + location.search + location.hash
-    : undefined
-  window.gtag(`event`, `page_view`, { page_path: pagePath })
+    : undefined;
+  window.gtag(`event`, `page_view`, { page_path: pagePath });
 };
 
 const onPreRouteUpdate = ({ location, prevLocation }) => {
@@ -33,11 +27,11 @@ const onRouteUpdate = ({ location, prevLocation }) => {
   if (process.env.NODE_ENV === `production` && typeof gtag === `function`) {
     if (`requestAnimationFrame` in window) {
       requestAnimationFrame(() => {
-        requestAnimationFrame(sendPageView)
-      })
+        requestAnimationFrame(sendPageView);
+      });
     } else {
       // simulate 2 requestAnimationFrame calls
-      setTimeout(sendPageView, 32)
+      setTimeout(sendPageView, 32);
     }
   }
 };

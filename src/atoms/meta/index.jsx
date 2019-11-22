@@ -17,7 +17,7 @@ const Meta = ({
   logoSrc,
   structuredData,
 }) => {
-  const _l = _(locale); // IDEA: Pass this to all components below or use it in Redux store to be able to localize the website in the future
+  const _l = _(locale);
   const metaDescription = description || _l('site.pageDescription');
 
   // Load scripts
@@ -97,7 +97,6 @@ const Meta = ({
       } }
       title={ title ? title : _l('site.title') }
       titleTemplate={ title ? `%s - ${_l('site.title')}` : '%s' }
-      // IDEA: generalize the meta, extract a constant or config somewhere
       meta={ [
         {
           name: `description`,
@@ -125,10 +124,6 @@ const Meta = ({
         },
       ].concat(meta) }
       script={ scripts }
-      // IDEA: See if we need to deal with this later
-      // bodyAttributes={{
-      //   class: ''
-      // }}
     >
       <link
         rel="preconnect dns-prefetch"

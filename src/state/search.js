@@ -1,6 +1,6 @@
 import { searchIndexingEngine as tokenize } from 'engines';
 
-// Defalt state
+// Default state
 const initialState = {
   initialized: false,
   searchQuery: '',
@@ -83,6 +83,7 @@ export default (state = initialState, action) => {
   }
 };
 
+// Persistence configuration
 export const persistConfig = {
   key: 'search',
   blacklist: ['initialized'],
