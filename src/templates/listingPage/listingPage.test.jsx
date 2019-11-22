@@ -13,6 +13,7 @@ const { store } = createStore();
 
 describe('<ListingPage />', () => {
   const logoSrc = '/assets/logo.png';
+  const splashLogoSrc = '/assets/splash.png';
   const paginator = {
     totalPages: 7,
     pageNumber: 4,
@@ -21,11 +22,11 @@ describe('<ListingPage />', () => {
   const snippetList = [
     {
       title: 'compose',
-      language: 'JavaScript',
-      tags: {
-        primary: 'function',
-        all: ['function', 'recursion'],
+      language: {
+        long: 'JavaScript',
+        short: 'js',
       },
+      primaryTag: 'function',
       expertise: 'intermediate',
       html: {
         description: '<p>Performs right-to-left function composition.</p>',
@@ -39,7 +40,7 @@ describe('<ListingPage />', () => {
   beforeEach(() => {
     wrapper = mount(
       <Provider store={ store }>
-        <ListingPage pageContext={ { logoSrc, snippetList, paginator, listingName } } />
+        <ListingPage pageContext={ { logoSrc, splashLogoSrc, snippetList, paginator, listingName } } />
       </Provider>
     );
     shell = wrapper.find('Shell');
@@ -68,7 +69,7 @@ describe('<ListingPage />', () => {
   });
 
   it('should pass the correct data to the Meta component', () => {
-    expect(meta.prop('logoSrc')).toBe(logoSrc);
+    expect(meta.prop('logoSrc')).toBe(splashLogoSrc);
   });
 
   it('should pass the correct data to the SnippetList component', () => {

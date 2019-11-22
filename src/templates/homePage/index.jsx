@@ -22,8 +22,8 @@ const HomePage = ({
   pageContext: {
     logoSrc,
     splashLogoSrc,
-    listingAnchors,
-    recommendedSnippets,
+    listingAnchors = [],
+    recommendedSnippets = [],
   },
   dispatch,
 }) => {

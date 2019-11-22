@@ -14,7 +14,7 @@ describe('<SnippetCard />', () => {
     language: { short: 'js', long: 'JavaScript' },
     tags: {
       primary: 'function',
-      all: ['function', 'recursion'],
+      all: ['function', 'recursion', 'intermediate'],
     },
     expertise: 'intermediate',
     html: {
@@ -28,14 +28,13 @@ describe('<SnippetCard />', () => {
       example: '',
     },
   };
-  let wrapper, card, expertise, tagList, codeBlocks;
+  let wrapper, card, tagList, codeBlocks;
 
   beforeEach(() => {
     wrapper = mount(
       <SnippetCard snippet={ snippet } />
     );
     card = wrapper.find('Card');
-    expertise = wrapper.find('Expertise');
     tagList = wrapper.find('TagList');
     codeBlocks = wrapper.find('CodeBlock');
   });
@@ -47,10 +46,6 @@ describe('<SnippetCard />', () => {
 
     it('the card title', () => {
       expect(card).toContainMatchingElement('h4.card-title');
-    });
-
-    it('an Expertise component', () => {
-      expect(card).toContainMatchingElement('Expertise');
     });
 
     it('a TagList component', () => {
@@ -86,8 +81,8 @@ describe('<SnippetCard />', () => {
     expect(card.find('h4.card-title').text()).toBe(snippet.title);
   });
 
-  it('should pass the expertise data to the Expertise component', () => {
-    expect(expertise.prop('level')).toBe(snippet.expertise);
+  it('should pass the expertise data to the TagList component', () => {
+    expect(tagList.prop('tags')).toContain(snippet.expertise);
   });
 
   it('should pass the tags data to the TagList component', () => {

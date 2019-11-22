@@ -21,11 +21,10 @@ const SnippetPage = ({
     logoSrc,
     splashLogoSrc,
     cardTemplate,
-    recommendedSnippets,
+    recommendedSnippets = [],
   },
   lastPageTitle,
   lastPageUrl,
-  uri,
 }) => {
   return (
     <>
@@ -87,8 +86,6 @@ SnippetPage.propTypes = {
   lastPageTitle: PropTypes.string.isRequired,
   /** URL of the last page */
   lastPageUrl: PropTypes.string.isRequired,
-  /** URL of the current page */
-  uri: PropTypes.string.isRequired,
 };
 
 export default connect(

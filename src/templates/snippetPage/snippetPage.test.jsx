@@ -13,6 +13,7 @@ const { store } = createStore();
 
 describe('<SnippetPage />', () => {
   const logoSrc = '/assets/logo.png';
+  const splashLogoSrc = '/assets/splash.png';
   const cardTemplate = 'standard';
   const snippet = {
     title: 'compose',
@@ -38,7 +39,7 @@ describe('<SnippetPage />', () => {
   beforeEach(() => {
     wrapper = mount(
       <Provider store={ store }>
-        <SnippetPage pageContext={ { snippet, logoSrc, cardTemplate } }/>
+        <SnippetPage pageContext={ { snippet, splashLogoSrc, logoSrc, cardTemplate } }/>
       </Provider>
     );
     shell = wrapper.find('Shell');
@@ -76,7 +77,7 @@ describe('<SnippetPage />', () => {
   });
 
   it('should pass the correct data to the Meta component', () => {
-    expect(meta.prop('logoSrc')).toBe(logoSrc);
+    expect(meta.prop('logoSrc')).toBe(splashLogoSrc);
     expect(meta.prop('title')).toBe(snippet.title);
   });
 

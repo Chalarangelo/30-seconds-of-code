@@ -10,11 +10,11 @@ console.warn = jest.fn();
 describe('<PreviewCard />', () => {
   const snippet = {
     title: 'compose',
-    language: 'JavaScript',
-    tags: {
-      primary: 'function',
-      all: ['function', 'recursion'],
+    language: {
+      long: 'JavaScript',
+      short: 'js',
     },
+    primaryTag: 'function',
     expertise: 'intermediate',
     html: {
       description: '<p>Performs right-to-left function composition.</p>',

@@ -17,7 +17,7 @@ const SnippetList = ({
   snippetList,
   paginator,
   listingName,
-  listingSublinks,
+  listingSublinks = [],
 }) => {
   return snippetList.length ? (
     <>
@@ -53,6 +53,8 @@ SnippetList.propTypes = {
   paginator: PaginatorPropType,
   /** Name of this snippet list */
   listingName: PropTypes.string,
+  /** Links to sublists */
+  listingSublinks: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
 export default SnippetList;
