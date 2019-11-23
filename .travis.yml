@@ -1,0 +1,17 @@
+language: node_js
+cache:
+  directories:
+    - node_modules
+node_js:
+- lts/*
+before_install:
+- chmod +x ./src/jobs/prepare_cache_key.sh
+- chmod +x ./src/jobs/prepare_env.sh
+- ./src/jobs/prepare_cache_key.sh
+- ./src/jobs/prepare_env.sh
+script:
+- npm run test
+after_success:
+- chmod +x ./src/jobs/travis.sh
+- chmod +x ./src/jobs/deploy.sh
+- ./src/jobs/travis.sh
