@@ -1,4 +1,7 @@
 language: node_js
+branches:
+  except:
+  - production
 cache:
   directories:
     - node_modules
