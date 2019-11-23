@@ -13,12 +13,13 @@ const { store } = createStore();
 
 describe('<SearchPage />', () => {
   const logoSrc = '/assets/logo.png';
+  const splashLogoSrc = '/assets/splash.png';
   let wrapper, shell, meta, search;
 
   beforeEach(() => {
     wrapper = mount(
       <Provider store={ store }>
-        <SearchPage pageContext={ { logoSrc } } />
+        <SearchPage pageContext={ { logoSrc, splashLogoSrc } } />
       </Provider>
     );
     shell = wrapper.find('Shell');
@@ -51,7 +52,7 @@ describe('<SearchPage />', () => {
   });
 
   it('should pass the correct data to the Meta component', () => {
-    expect(meta.prop('logoSrc')).toBe(logoSrc);
+    expect(meta.prop('logoSrc')).toBe(splashLogoSrc);
     expect(meta.prop('title')).not.toBe(undefined);
   });
 

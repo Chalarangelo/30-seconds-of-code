@@ -1,4 +1,4 @@
-// Defalt state
+// Default state
 const initialState = {
   lastPageTitle: 'Home',
   lastPageUrl: '/',
@@ -24,4 +24,10 @@ export default (state = initialState, action) => {
   default:
     return state;
   }
+};
+
+// Persistence configuration
+export const persistConfig = {
+  key: 'navigation',
+  blacklist: [''],
 };

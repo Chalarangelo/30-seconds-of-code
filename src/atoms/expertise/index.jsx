@@ -11,7 +11,6 @@ const Expertise = ({
   <span className={ trimWhiteSpace`expertise ${level}` }>
     { _l`Expertise${level}` }
   </span>
-  // <div className={ trimWhiteSpace`expertise ${level}` } title={ _l`Expertise${level}` }/>
 );
 
 Expertise.propTypes = {

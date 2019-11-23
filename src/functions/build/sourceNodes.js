@@ -51,8 +51,6 @@ const sourceNodes = (requirables, reducers) => ({ actions, createNodeId, createC
     snippetNodes[rec.snippetKey].recommendationRanking = rec.recommendationRanking;
   });
 
-  // debugger;
-
   Object.entries(snippetNodes).forEach(([id, sNode]) => {
     let mNode = markdownNodes.find(mN => mN.fileAbsolutePath.includes(`${id}.md`));
     let reducer = reducers[sNode.reducer];

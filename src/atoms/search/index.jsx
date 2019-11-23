@@ -67,6 +67,16 @@ const Search = ({
       onKeyUp={ e => {
         setValue(e.target.value);
       } }
+      onKeyPress={ e => {
+        if (
+          e.charCode === 13 &&
+          typeof document !== 'undefined' &&
+          document.activeElement &&
+          document.activeElement.blur &&
+          typeof document.activeElement.blur === 'function'
+        )
+          document.activeElement.blur();
+      } }
     />
   );
 };

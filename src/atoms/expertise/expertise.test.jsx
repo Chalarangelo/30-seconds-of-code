@@ -18,12 +18,15 @@ describe('<Expertise />', () => {
   });
 
   it('should render correctly', () => {
-    expect(wrapper).toContainMatchingElement('div.expertise');
+    expect(wrapper).toContainMatchingElement('span.expertise');
   });
 
-  it('should have an appropriate title attribute', () => {
-    expect(wrapper).toContainMatchingElement('div.expertise[title]');
-    expect(wrapper.find('.expertise').prop('title')).toBe(_l`Expertise${level}`);
+  it('should render the correct text', () => {
+    expect(wrapper.text()).toBe(_l`Expertise${level}`);
+  });
+
+  it('should get the appropriate class from expertise level', () => {
+    expect(wrapper).toContainMatchingElement(`.expertise.${level}`);
   });
 
 });

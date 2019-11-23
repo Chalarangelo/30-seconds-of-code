@@ -17,7 +17,7 @@ const SnippetList = ({
   snippetList,
   paginator,
   listingName,
-  listingSublinks,
+  listingSublinks = [],
 }) => {
   return snippetList.length ? (
     <>
@@ -43,7 +43,7 @@ const SnippetList = ({
       )) }
       <Paginator paginator={ paginator } />
     </>
-  ) : null; // IDEA: Show a loader or a message
+  ) : null;
 };
 
 SnippetList.propTypes = {
@@ -53,6 +53,8 @@ SnippetList.propTypes = {
   paginator: PaginatorPropType,
   /** Name of this snippet list */
   listingName: PropTypes.string,
+  /** Links to sublists */
+  listingSublinks: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
 export default SnippetList;

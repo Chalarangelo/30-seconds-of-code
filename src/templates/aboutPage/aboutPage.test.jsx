@@ -15,17 +15,17 @@ const { store } = createStore();
 
 describe('<AboutPage />', () => {
   const logoSrc = '/assets/logo.png';
-  let wrapper, shell, meta, simpleCard;
+  const splashLogoSrc = '/assets/splash.png';
+  let wrapper, shell, meta;
 
   beforeEach(() => {
     wrapper = mount(
       <Provider store={ store }>
-        <AboutPage pageContext={ { logoSrc } } />
+        <AboutPage pageContext={ { logoSrc, splashLogoSrc } } />
       </Provider>
     );
     shell = wrapper.find('Shell');
     meta = wrapper.find('Meta');
-    simpleCard = wrapper.find('SimpleCard');
   });
 
   describe('should render', () => {
@@ -57,7 +57,7 @@ describe('<AboutPage />', () => {
   });
 
   it('should pass the correct data to the Meta component', () => {
-    expect(meta.prop('logoSrc')).toBe(logoSrc);
+    expect(meta.prop('logoSrc')).toBe(splashLogoSrc);
     expect(meta.prop('title')).toBe(_l('About'));
   });
 });

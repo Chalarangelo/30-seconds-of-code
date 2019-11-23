@@ -6,7 +6,7 @@ import {
 const getTextualContent = (str, noExplain = false) => {
   const result = str.slice(0, str.indexOf('<div class="gatsby-highlight"'));
   if (noExplain)
-    return result.slice(0, result.lastIndexOf('<p>'));
+    return result.slice(0, result.indexOf('</p>\n'));
   return result;
 };
 

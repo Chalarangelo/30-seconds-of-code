@@ -6,7 +6,7 @@
 }
 
 .cookie-consent-popup {
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 1.625rem;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -30,9 +30,6 @@
   .btn {
     font-size: 0.875rem;
     padding: 0.625rem 1.375rem;
-    &.cookie-accept {
-
-    }
 
     &.cookie-decline {
       margin-left: 1rem;
@@ -44,6 +41,6 @@
 
   // Handle left side margin on landscape
   @media screen and (min-width: $layout-medium-breakpoint) and (orientation: landscape) {
-    padding-left: calc(56px + 0.75rem);
+    padding-left: calc(56px + 1.625rem);
   }
 }
