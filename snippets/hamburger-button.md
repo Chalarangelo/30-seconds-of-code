@@ -6,59 +6,59 @@ tags: interactivity,beginner
 This is a way to build simple hamburger button for menu bar.
 
 ```html
-<button class="hb"></button>
+<div class="hamburger-menu">
+  <div class="top"></div>
+  <div class="middle"></div>
+  <div class="bottom"></div>
+</div>
 ```
 
 ```css
-.hb,
-.hb:before,
-.hb:after {
-  position: relative;
-  width: 30px;
-  height: 5px;
-  border: none;
-  outline: none;
-  background-color: #333;
-  border-radius: 3px;
-  transition: 0.5s;
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 2.5rem;
+  width: 2.5rem;
   cursor: pointer;
-}
 
-.hb:before,
-.hb:after {
-  content: '';
-  position: absolute;
-  top: -7.5px;
-  left: 0;
-}
+  .bar {
+    height: 5px;
+    background: black;
+    border-radius: 5px;
+    margin: 3px 0px;
+    transform-origin: left;
+    transition: all 0.5s;
+  }
 
-.hb:after {
-  top: 7.5px;
-}
+  &:hover {
+    .top {
+      transform: rotate(45deg);
+    }
 
-.hb:hover {
-  background-color: transparent;
-}
+    .middle {
+      opacity: 0;
+    }
 
-.hb:hover:before,
-.hb:hover:after {
-  top: 0;
-}
-
-.hb:hover::before {
-  transform: rotate(45deg);
-}
-
-.hb:hover::after {
-  transform: rotate(-45deg);
+    .bottom {
+      transform: rotate(-45deg);
+    }
+  }
 }
 ```
 
 #### Explanation
 
-- Use a `<button>` element for the middle bar of the hamburger icon.
-- Use the `::before` and `::after` pseudo-elements to create the top and bottom bars of the icon.
-- Use `position: relative` on the `<button>` and `position: absolute` on the pseudo-elements to place them appropriately.
-- Use the `:hover` pseudo-selector to rotate `:before` to `45deg` and `:after` to `-45deg` and hide the center bar using`:background-color` transparent.
+- Use a `hamburger-menu` container div to which contanins the top, bottom and middle bars.
+- The container is set to be a flex container (`display: flex`) with `flex-direction` to be `column` and `flex-wrap` to be `wrap`.
+  Alternatively, you can set both properties by a shorthand `flex-flow: column wrap`
+- We add distance between the bars using `justify-content: space-between`
+- The animation has 3 parts, top and bottom bars transforming to 45 degree angles (`rotate(45deg)`) and the middle bar fading away by setting the `opacity: 0`
+- The `transform-origin` is set to `left` so the rotation point of origin is left
+- We set `transition all 0.5s` so that both `transform` and `opacity` are properties are animated for half a second
 
 #### Browser support
+
+- Flexbox - https://caniuse.com/#feat=flexbox
+- CSS Transitions - https://caniuse.com/#feat=css-transitions
