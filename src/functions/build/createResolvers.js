@@ -7,6 +7,7 @@ const createResolvers = resolvers => ({ createResolvers }) =>
   createResolvers({
     Snippet: {
       html: {
+        type: `HtmlData`,
         resolve: async(source, _, context, info) => {
           const resolver = info.schema.getType('MarkdownRemark').getFields()['html'].resolve;
           const node = await context.nodeModel.getAllNodes({ type: 'MarkdownRemark' }).filter(v => v.fileAbsolutePath.includes(`${source.id}.md`))[0];
