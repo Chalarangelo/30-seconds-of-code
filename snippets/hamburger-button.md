@@ -3,7 +3,7 @@ title: Hamburger Button
 tags: interactivity,beginner
 ---
 
-This is a way to build simple hamburger button for menu bar.
+Displays a hamburger menu which transitions to a cross on hover.
 
 ```html
 <div class="hamburger-menu">
@@ -50,13 +50,12 @@ This is a way to build simple hamburger button for menu bar.
 
 #### Explanation
 
-- Use a `hamburger-menu` container div to which contanins the top, bottom and middle bars.
-- The container is set to be a flex container (`display: flex`) with `flex-direction` to be `column` and `flex-wrap` to be `wrap`.
-  Alternatively, you can set both properties by a shorthand `flex-flow: column wrap`
-- We add distance between the bars using `justify-content: space-between`
-- The animation has 3 parts, top and bottom bars transforming to 45 degree angles (`rotate(45deg)`) and the middle bar fading away by setting the `opacity: 0`
-- The `transform-origin` is set to `left` so the rotation point of origin is left
-- We set `transition all 0.5s` so that both `transform` and `opacity` are properties are animated for half a second
+- Use a `hamburger-menu` container div which contains the top, bottom, and middle bars.
+- The container is set to be a flex container (`display: flex`) with `flex-direction` to be `column` and `flex-wrap` to be `wrap` (alternatively, you can set both properties by a shorthand `flex-flow: column wrap`).
+- Add distance between the bars using `justify-content: space-between`.
+- The animation has 3 parts: top and bottom bars transforming to 45 degree angles (`rotate(45deg)`), and the middle bar fading away by setting the `opacity: 0`.
+- The `transform-origin` is set to `left` so the bars rotate around the left point.
+- Set `transition all 0.5s` so that both `transform` and `opacity` are properties are animated for half a second.
 
 #### Browser support
 
