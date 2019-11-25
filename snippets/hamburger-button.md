@@ -7,9 +7,9 @@ This is a way to build simple hamburger button for menu bar.
 
 ```html
 <div class="hamburger-menu">
-  <div class="top"></div>
-  <div class="middle"></div>
-  <div class="bottom"></div>
+  <div class="bar top"></div>
+  <div class="bar middle"></div>
+  <div class="bar bottom"></div>
 </div>
 ```
 
