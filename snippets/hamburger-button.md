@@ -22,29 +22,27 @@ Displays a hamburger menu which transitions to a cross on hover.
   height: 2.5rem;
   width: 2.5rem;
   cursor: pointer;
+}
 
-  .bar {
-    height: 5px;
-    background: black;
-    border-radius: 5px;
-    margin: 3px 0px;
-    transform-origin: left;
-    transition: all 0.5s;
-  }
+.hamburger-menu .bar {
+  height: 5px;
+  background: black;
+  border-radius: 5px;
+  margin: 3px 0px;
+  transform-origin: left;
+  transition: all 0.5s;
+}
 
-  &:hover {
-    .top {
-      transform: rotate(45deg);
-    }
+.hamburger-menu:hover .top {
+  transform: rotate(45deg);
+}
 
-    .middle {
-      opacity: 0;
-    }
+.hamburger-menu:hover .middle {
+  opacity: 0;
+}
 
-    .bottom {
-      transform: rotate(-45deg);
-    }
-  }
+.hamburger-menu:hover .bottom {
+  transform: rotate(-45deg);
 }
 ```
 
