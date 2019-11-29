@@ -38,7 +38,6 @@ const ImageFetch = props => {
   if (!res.response) {
     return <div>Loading...</div>;
   }
-  const dogName = res.response.status;
   const imageUrl = res.response.message;
   return (
     <div>
