@@ -11,7 +11,6 @@ Use `Object.assign()` and an empty object (`{}`) to create a shallow clone of th
 Use `Object.keys()` and `Array.prototype.forEach()` to determine which key-value pairs need to be deep cloned.
 
 ```js
-
 const deepClone = obj => {
   if (obj === null) return null;
   let clone = Object.assign({}, obj);
@@ -21,8 +20,8 @@ const deepClone = obj => {
   return Array.isArray(obj) && obj.length
     ? (clone.length = obj.length) && Array.from(clone)
     : Array.isArray(obj)
-      ? Array.from(obj)
-      : clone;
+    ? Array.from(obj)
+    : clone;
 };
 ```
 
