@@ -101,7 +101,7 @@
       "type": "snippetListing",
       "title": "ary",
       "attributes": {
-        "text": "Creates a function that accepts up to `n` arguments, ignoring any additional arguments.\n\nCall the provided function, `fn`, with up to `n` arguments, using `Array.prototype.slice(0,n)` and the spread operator (`...`).\n\n",
+        "text": "Creates a function that accepts up to `n` arguments, ignoring any additional arguments.\n\nCall the provided function, `fn`, with up to `n` arguments, using `Array.prototype.slice(0, n)` and the spread operator (`...`).\n\n",
         "tags": [
           "adapter",
           "function",
@@ -109,7 +109,7 @@
         ]
       },
       "meta": {
-        "hash": "57689352bb9f04442813775a9f9c40d5c2a711c6397b8b03947f83c29fc9ab78"
+        "hash": "533ab7f8259624322b5911b076d8e6fcd08f2fd396e9e0bec85449fc42769d9b"
       }
     },
     {
@@ -412,7 +412,7 @@
         ]
       },
       "meta": {
-        "hash": "2d594dd3e909e594ec77d7b2fcd95ea85a47587503192e46e33330046f4331ac"
+        "hash": "cc22283b6c9d1b9665c5c678f30551f0db170d4db13f2ddffb22728a8689f5be"
       }
     },
     {
@@ -835,7 +835,7 @@
         ]
       },
       "meta": {
-        "hash": "5ab25ab96afd4f1f481fc318b5b290ba8c57a468ef6bca0ca200cfb7fcf3ba9f"
+        "hash": "0a4684d6fc79bdbbac31df3af6c493ba7c881936ada5bc52824b4f26ca177459"
       }
     },
     {
@@ -898,7 +898,7 @@
         ]
       },
       "meta": {
-        "hash": "7a228b650ff668f697e524e0d27ebeff1bfa35e04333b6cd5e742ff63bfea25d"
+        "hash": "a4e1e33c0688dbf1ca231d9d8ea315ffed93b7f83f5d8cbf0714f10fdfeda8cf"
       }
     },
     {
@@ -1037,7 +1037,7 @@
         ]
       },
       "meta": {
-        "hash": "5f38360819f9225b887a94221bfee1a80f1bcc224a364440b3388f60491b03ba"
+        "hash": "484bd222e636e8a8409c30ddb1fe6e3fe72ab7a43f2edf089b2758d5e9bee528"
       }
     },
     {
@@ -1273,7 +1273,7 @@
         ]
       },
       "meta": {
-        "hash": "55b1ce0a892110d792a9487e40331774015525479faa2b8961f6c2ea6291c27b"
+        "hash": "0eac852db7a7add352b0d36677b22718b342ed9dc12f11780cac87e3b8260a05"
       }
     },
     {
@@ -1678,7 +1678,7 @@
         ]
       },
       "meta": {
-        "hash": "16c3b724b653dcb31f3e59f1664a59951abb15a93eb3697cade4d3ae0e63c532"
+        "hash": "9e39c6a3a8ec5b51c5e16f69107fc9e90b2697b2cf2689850872071bb968723e"
       }
     },
     {
@@ -2865,7 +2865,7 @@
         ]
       },
       "meta": {
-        "hash": "362fddaa6244404741e84bca6fc442a101fdb642af53b299e8b9994d0d7162d8"
+        "hash": "3db3faac666ee61ab86c70766d2ab5d1293ffd818da87edb971bfff7a366364a"
       }
     },
     {
@@ -3426,7 +3426,7 @@
         ]
       },
       "meta": {
-        "hash": "012ebca6a90c50ec89278af2632d7d0d90eeb423f2bcf902ed015f6fce6d4f5a"
+        "hash": "23ded1eef634ad88b34431b187b5f9eca4432daf09e89980fb0661fb56d8dcb0"
       }
     },
     {
@@ -3775,7 +3775,7 @@
         ]
       },
       "meta": {
-        "hash": "7ccbf66d8d55c60bcf12baa980cf32d67a4ba567894d59e2d798c9af792424ff"
+        "hash": "17bcf3f13980b7f804d9f0fe274324b2a35ab7d479c03d77322dabba81e1a34a"
       }
     },
     {
