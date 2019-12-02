@@ -8,11 +8,6 @@
   "scripts": {
     "linter": "node ./scripts/lint.js",
     "extractor": "extract-snippet-data config.js",
-    "builder": "node ./scripts/build.js",
-    "webber": "gatsby build",
-    "webber:dev": "gatsby develop",
-    "webber:serve": "gatsby serve",
-    "tester": "node ./scripts/tdd.js",
     "vscoder": "node ./scripts/vscodegen.js",
     "packager": "node ./scripts/module.js",
     "test": "jest --verbose --coverage --testPathIgnorePatterns=\".cache\""
