@@ -7,7 +7,7 @@
   "sideEffects": false,
   "scripts": {
     "linter": "node ./scripts/lint.js",
-    "extractor": "node ./scripts/extract.js",
+    "extractor": "extract-snippet-data config.js",
     "builder": "node ./scripts/build.js",
     "webber": "gatsby build",
     "webber:dev": "gatsby develop",
@@ -34,6 +34,7 @@
   "homepage": "https://30secondsofcode.org/",
   "dependencies": {},
   "devDependencies": {
+    "@30-seconds/integration-tools": "file:../integration-tools",
     "@babel/core": "^7.5.4",
     "@babel/plugin-proposal-class-properties": "^7.5.0",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
