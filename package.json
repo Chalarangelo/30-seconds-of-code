@@ -29,7 +29,7 @@
   "homepage": "https://30secondsofcode.org/",
   "dependencies": {},
   "devDependencies": {
-    "@30-seconds/integration-tools": "file:../integration-tools",
+    "@30-seconds/integration-tools": "^1.0.0",
     "@babel/core": "^7.5.4",
     "@babel/plugin-proposal-class-properties": "^7.5.0",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
