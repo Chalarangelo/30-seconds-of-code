@@ -37,6 +37,7 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "eslint": "^5.16.0",
+    "front-matter": "^3.0.2",
     "fs-extra": "^8.1.0",
     "jest": "^24.9.0",
     "kleur": "^3.0.3",
