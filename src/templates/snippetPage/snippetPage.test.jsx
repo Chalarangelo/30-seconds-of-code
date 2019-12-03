@@ -16,6 +16,7 @@ describe('<SnippetPage />', () => {
   const splashLogoSrc = '/assets/splash.png';
   const cardTemplate = 'standard';
   const snippet = {
+    url: 'https://github.com/30-seconds/30-seconds-of-code/blob/master/snippets/compose.md',
     title: 'compose',
     language: { short: 'js', long: 'JavaScript' },
     tags: {
