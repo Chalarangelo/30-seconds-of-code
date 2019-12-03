@@ -80,7 +80,7 @@ const Footer = ({
         link={ {
           internal: false,
           url: config.licenseUrl,
-          rel: 'noopener',
+          rel: 'noopener nofollow',
           target: '_blank',
         } }
       >
@@ -92,7 +92,7 @@ const Footer = ({
         link={ {
           internal: false,
           url: 'https://www.netlify.com/',
-          rel: 'noopener',
+          rel: 'noopener nofollow',
           target: '_blank',
         } }
       >
@@ -103,7 +103,7 @@ const Footer = ({
         link={ {
           internal: false,
           url: 'https://www.gatsbyjs.org/',
-          rel: 'noopener',
+          rel: 'noopener nofollow',
           target: '_blank',
         } }
       >
@@ -114,7 +114,7 @@ const Footer = ({
         link={ {
           internal: false,
           url: 'https://travis-ci.com/',
-          rel: 'noopener',
+          rel: 'noopener nofollow',
           target: '_blank',
         } }
       >
@@ -125,7 +125,7 @@ const Footer = ({
         link={ {
           internal: false,
           url: 'https://github.com/',
-          rel: 'noopener',
+          rel: 'noopener nofollow',
           target: '_blank',
         } }
       >
