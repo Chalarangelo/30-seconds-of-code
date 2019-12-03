@@ -27,6 +27,7 @@ const SnippetPage = ({
   },
   lastPageTitle,
   lastPageUrl,
+  acceptsCookies,
 }) => {
   return (
     <>
@@ -79,6 +80,13 @@ const SnippetPage = ({
               target: '_blank',
             } }
             className='btn-star'
+            onClick={ e => {
+              if (acceptsCookies && typeof window !== 'undefined' && typeof gtag === `function`) {
+                e.preventDefault();
+                window.gtag('event', 'click', { event_category: 'cta-github', event_label: e.target.href, value: 1});
+                window.open(e.target.href, '_blank');
+              }
+            } }
           >
             { _l('Star it on GitHub') }
           </AnchorButton>
@@ -109,12 +117,15 @@ SnippetPage.propTypes = {
   lastPageTitle: PropTypes.string.isRequired,
   /** URL of the last page */
   lastPageUrl: PropTypes.string.isRequired,
+  /** Does the user accept cookies? */
+  acceptsCookies: PropTypes.bool,
 };
 
 export default connect(
   state => ({
     lastPageTitle: state.navigation.lastPageTitle,
     lastPageUrl: state.navigation.lastPageUrl,
+    acceptsCookies: state.shell.acceptsCookies,
   }),
   null
 )(SnippetPage);
