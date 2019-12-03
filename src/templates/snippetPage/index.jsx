@@ -7,6 +7,8 @@ import { Snippet as SnippetPropType } from 'typedefs';
 import PropTypes from 'prop-types';
 import Shell from 'organisms/shell';
 import RecommendationList from 'organisms/recommendationList';
+import PageBackdrop from 'molecules/pageBackdrop';
+import { AnchorButton } from 'atoms/button';
 import _ from 'lang';
 const _l = _('en');
 
@@ -60,6 +62,27 @@ const SnippetPage = ({
           snippet={ snippet }
           toastContainer='toast-container'
         />
+        <PageBackdrop
+          graphicName='github-cta'
+          mainText={ (
+            <>
+              { _l('Like 30 seconds of code?') }
+              <br />
+            </>
+          ) }
+        >
+          <AnchorButton
+            link={ {
+              url: snippet.url.split('/').slice(0, 5).join('/'),
+              internal: false,
+              rel: 'noopener',
+              target: '_blank',
+            } }
+            className='btn-star'
+          >
+            { _l('Star it on GitHub') }
+          </AnchorButton>
+        </PageBackdrop>
         <RecommendationList snippetList={ recommendedSnippets } />
         <div id="toast-container"/>
       </Shell>
