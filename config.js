@@ -23,5 +23,6 @@ module.exports = {
   optionalLanguage:{ 
     short: `js`,
     long: `JavaScript`
-  }
+  },
+  parser: '_30cssParser'
 }
