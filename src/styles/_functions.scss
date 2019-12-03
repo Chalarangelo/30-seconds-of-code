@@ -74,4 +74,8 @@
   @if $icon-name == "chevron-right" {
     @return url("data:image/svg+xml,%3Csvg width='"+$size+"' height='"+$size+"' viewBox='0 0 24 24' fill='"+$fill+"' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 18l6-6-6-6' stroke='"+$stroke+"' stroke-width='"+$stroke-width+"' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   }
+
+  @if $icon-name == "star" {
+    @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='"+$size+"' height='"+$size+"' viewBox='0 0 24 24' fill='"+$fill+"' stroke='"+$stroke+"' stroke-width='"+$stroke-width+"' stroke-linecap='round' stroke-linejoin='round' class='feather feather-star'%3E%3Cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'%3E%3C/polygon%3E%3C/svg%3E");
+  }
 }
