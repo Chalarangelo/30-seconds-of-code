@@ -16,6 +16,7 @@ const Meta = ({
   meta = [],
   logoSrc,
   structuredData,
+  canonical = '',
 }) => {
   const _l = _(locale);
   const metaDescription = description || _l('site.pageDescription');
@@ -130,6 +131,14 @@ const Meta = ({
         key="preconnect-google-analytics"
         href="https://www.google-analytics.com"
       />
+      {
+        canonical ?
+          <link
+            rel="canonical"
+            href={ `${config.siteUrl}${canonical}` }
+          />
+          : null
+      }
     </Helmet>
   );
 };
@@ -156,6 +165,8 @@ Meta.propTypes = {
     firstSeen: PropTypes.string,
     lastUpdated: PropTypes.string,
   }),
+  /** Canonical slug (not full URL) of this page, if canonical */
+  canonical: PropTypes.string,
 };
 
 export default connect(

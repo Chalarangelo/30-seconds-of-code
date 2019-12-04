@@ -43,6 +43,7 @@ const SnippetPage = ({
           firstSeen: snippet.firstSeen,
           lastUpdated: snippet.lastUpdated,
         } }
+        canonical={ snippet.slug }
       />
       <Shell
         logoSrc={ logoSrc }
