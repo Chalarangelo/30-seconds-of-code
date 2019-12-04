@@ -1,5 +1,7 @@
 import {
   capitalize,
+  toKebabCase,
+  convertToSeoSlug,
   stripMarkdownFormat,
   trimWhiteSpace,
   optimizeNodes,
@@ -27,6 +29,8 @@ import {
 
 export {
   capitalize,
+  toKebabCase,
+  convertToSeoSlug,
   trimWhiteSpace,
   stripMarkdownFormat,
   optimizeNodes,
