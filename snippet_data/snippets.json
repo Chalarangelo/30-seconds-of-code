@@ -27,7 +27,8 @@
         "hash": "f052c85dc45dcf8bf4d38c714acece6c6c7ffbd483b3ba76815564da79313fa4",
         "firstSeen": "1547806723",
         "lastUpdated": "1574366685",
-        "updateCount": 4
+        "updateCount": 4,
+        "authorCount": 3
       }
     },
     {
@@ -54,9 +55,10 @@
       },
       "meta": {
         "hash": "2934b3aa733591f4964a7c8780f3ec7b273e4bd6a38fce6e0da2a5dd2dd9959f",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -83,9 +85,10 @@
       },
       "meta": {
         "hash": "d4e635bb76a083266e08723f25c3db981b39001ea5d513ce65570fe0099eb6b0",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -112,9 +115,10 @@
       },
       "meta": {
         "hash": "ff6401cc784b92a9672e74968719c029de224c29fcfdc3eaeaa764274108f648",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -141,9 +145,10 @@
       },
       "meta": {
         "hash": "8165e64d1bca7ae3bb0c990712023720dff55c2f6194b557a131901d528be4b7",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -170,9 +175,10 @@
       },
       "meta": {
         "hash": "60ac5a7cb7e2c24c936b267ac74d649052c9aaa80810278720b5b5a14fee1562",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -199,9 +205,10 @@
       },
       "meta": {
         "hash": "8a1beb75b1efe89f11f1bac944a836feac26604d5bc06bdb026dd0bd6650ad95",
-        "firstSeen": "1567099321",
+        "firstSeen": "1567120231",
         "lastUpdated": "1574366733",
-        "updateCount": 3
+        "updateCount": 3,
+        "authorCount": 3
       }
     },
     {
@@ -228,9 +235,10 @@
       },
       "meta": {
         "hash": "931815035291ba0e6de497d7296fc75e207117c9ff0607fd646f01da53793929",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -258,9 +266,10 @@
       },
       "meta": {
         "hash": "7c572c339c0767840bd0fd6f5daab357a8da070988c621e341bc5ce78d0f798e",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -273,7 +282,7 @@
         "explanation": "\n\n1. `::-webkit-scrollbar` targets the whole scrollbar element.\n2. `::-webkit-scrollbar-track` targets only the scrollbar track.\n3. `::-webkit-scrollbar-thumb` targets the scrollbar thumb.\n\nThere are many other pseudo-elements that you can use to style scrollbars. For more info, visit the [WebKit Blog](https://webkit.org/blog/363/styling-scrollbars/).\n\n",
         "browserSupport": {
           "text": "\n\n<span class=\"snippet__support-note\">⚠️ Scrollbar styling doesn't appear to be on any standards track.</span>\n\n- https://caniuse.com/#feat=css-scrollbar\n",
-          "supportPercentage": 97.69
+          "supportPercentage": 98.63
         },
         "codeBlocks": {
           "html": "<div class=\"custom-scrollbar\">\n  <p>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit.<br />\n    Iure id exercitationem nulla qui repellat laborum vitae, <br />\n    molestias tempora velit natus. Quas, assumenda nisi. <br />\n    Quisquam enim qui iure, consequatur velit sit?\n  </p>\n</div>",
@@ -287,9 +296,10 @@
       },
       "meta": {
         "hash": "e5544c894ee3cd4ce3352d10331e2f321c6d30b4a0a667434286c6d4951c3b0a",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -302,7 +312,7 @@
         "explanation": "\n\n- `::selection` defines a pseudo selector on an element to style text within it when selected. Note that if you don't combine any other selector your style will be applied at document root level, to any selectable element.\n\n",
         "browserSupport": {
           "text": "\n\n<span class=\"snippet__support-note\">⚠️ Requires prefixes for full support and is not actually\nin any specification.</span>\n\n- https://caniuse.com/#feat=css-selection\n",
-          "supportPercentage": 90.1
+          "supportPercentage": 90.77
         },
         "codeBlocks": {
           "html": "<p class=\"custom-text-selection\">Select some of this text.</p>",
@@ -316,9 +326,10 @@
       },
       "meta": {
         "hash": "bf835c2f1d038e6b08d221c9fef85933757a80c67de555797c6bc63ff7035ae8",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -331,7 +342,7 @@
         "explanation": "\n\n- The variables are defined globally within the `:root` CSS pseudo-class which matches the root element of a tree representing the document. Variables can also be scoped to a selector if defined within the block.\n- Declare a variable with `--variable-name:`.\n- Reuse variables throughout the document using the `var(--variable-name)` function.\n\n",
         "browserSupport": {
           "text": "\n\n- https://caniuse.com/#feat=css-variables\n",
-          "supportPercentage": 96.51
+          "supportPercentage": 97.16
         },
         "codeBlocks": {
           "html": "<p class=\"custom-variables\">CSS is awesome!</p>",
@@ -345,9 +356,10 @@
       },
       "meta": {
         "hash": "7a0d1c46beceb336265b2ca27a4f3cf25ad332a5cd2e8c0b692a43ce5b329fef",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -360,7 +372,7 @@
         "explanation": "\n\n- `user-select: none` specifies that the text cannot be selected.\n\n",
         "browserSupport": {
           "text": "\n\n<span class=\"snippet__support-note\">⚠️ Requires prefixes for full support.</span>\n<br>\n<span class=\"snippet__support-note\">⚠️ This is not a secure method to prevent users from copying content.</span>\n\n- https://caniuse.com/#feat=user-select-none\n",
-          "supportPercentage": 97.51
+          "supportPercentage": 98.82
         },
         "codeBlocks": {
           "html": "<p>You can select me.</p>\n<p class=\"unselectable\">You can't select me!</p>",
@@ -374,9 +386,10 @@
       },
       "meta": {
         "hash": "02f6472568975f5897a84f8846d97f8561fc5334ddafac53e73adb52ccda5f29",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -403,9 +416,10 @@
       },
       "meta": {
         "hash": "83c7806b0be2e50ca34f313912f9cb90682852790e6d0105a635f781212fa5b1",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -432,9 +446,10 @@
       },
       "meta": {
         "hash": "4e7f5ce479955deb9830ca4a72fc8260c8863aa65d6f67f15e88a3f923c10c3a",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -464,7 +479,8 @@
         "hash": "e7859bc139713ffe59a05904f6175e9578ad111ebe3405d58599846c44801606",
         "firstSeen": "1539406050",
         "lastUpdated": "1569669005",
-        "updateCount": 4
+        "updateCount": 4,
+        "authorCount": 3
       }
     },
     {
@@ -477,7 +493,7 @@
         "explanation": "\n\n1. `position: relative` on the element establishes a Cartesian positioning context for psuedo-elements.\n2. `z-index: 1` establishes a new stacking context.\n3. `::after` defines a pseudo-element.\n4. `position: absolute` takes the pseudo element out of the flow of the document and positions it in relation to the parent.\n5. `width: 100%` and `height: 100%` sizes the pseudo-element to fill its parent's dimensions, making it equal in size.\n6. `background: inherit` causes the pseudo-element to inherit the linear gradient specified on the element.\n7. `top: 0.5rem` offsets the pseudo-element down slightly from its parent.\n8. `filter: blur(0.4rem)` will blur the pseudo-element to create the appearance of a shadow underneath.\n9. `opacity: 0.7` makes the pseudo-element partially transparent.\n10. `z-index: -1` positions the pseudo-element behind the parent but in front of the background.\n\n",
         "browserSupport": {
           "text": "\n\n<span class=\"snippet__support-note\">⚠️ Requires prefixes for full support.</span>\n\n- https://caniuse.com/#feat=css-filters\n",
-          "supportPercentage": 98.46
+          "supportPercentage": 98.67999999999999
         },
         "codeBlocks": {
           "html": "<div class=\"dynamic-shadow\"></div>",
@@ -491,9 +507,10 @@
       },
       "meta": {
         "hash": "738fae9ee6d0a9fe84cdbdd632a93f651f8377ec7e9f647e1031207d99b819a5",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -506,7 +523,7 @@
         "explanation": "\n\n- The variables are defined globally within the `:root` CSS pseudo-class which matches the root element of a tree representing the document.\n- In HTML, `:root` represents the `<html>` element and is identical to the selector `html`, except that its specificity is higher.\n\n",
         "browserSupport": {
           "text": "\n\n- https://caniuse.com/#feat=css-variables\n",
-          "supportPercentage": 96.51
+          "supportPercentage": 97.16
         },
         "codeBlocks": {
           "html": "<div class=\"easing-variables\">Hover</div>",
@@ -520,9 +537,10 @@
       },
       "meta": {
         "hash": "94ec3c4e6b02374b61367e8cf4edcb9532bb7297673a28acaee0ad3264adfa3d",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -549,9 +567,10 @@
       },
       "meta": {
         "hash": "68da5c2e7399979db3aeb1022d13b0490fc71d55d068597544954706c7027bef",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -578,9 +597,10 @@
       },
       "meta": {
         "hash": "86c8c53be49e82365f6d6f54a03b55d9a8888ccc85504fe0480499b0e68c7f5b",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -593,7 +613,7 @@
         "explanation": "\n\n- `object-fit: contain` fits the entire image within the container while preserving its aspect ratio.\n- `object-fit: cover` fills the container with the image while preserving its aspect ratio.\n- `object-position: [x] [y]` positions the image within the container.\n\n",
         "browserSupport": {
           "text": "\n\n- https://caniuse.com/#feat=object-fit\n",
-          "supportPercentage": 99.5
+          "supportPercentage": 99.61999999999999
         },
         "codeBlocks": {
           "html": "<img class=\"image image-contain\" src=\"https://picsum.photos/600/200\" />\n<img class=\"image image-cover\" src=\"https://picsum.photos/600/200\" />",
@@ -608,9 +628,10 @@
       },
       "meta": {
         "hash": "5d09d5e54b7436f047db61223cff15dce2f17f6cffe5e71e0f9061337de3068e",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -637,9 +658,10 @@
       },
       "meta": {
         "hash": "a2bf8cfa4de368cfb10d013b6bbb87c598e0cccacfe816972da4ac668c6abc1a",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -652,7 +674,7 @@
         "explanation": "\n\n- The psuedo class `:focus-within` applies styles to a parent element if any child element gets focused. For example, an `input` element inside a `form` element.\n\n",
         "browserSupport": {
           "text": "\n\n<span class=\"snippet__support-note\">⚠️ Not supported in IE11 or the current version of Edge.</span>\n\n<!-- Whenever possible, link a `caniuse` feature which allows the browser support percentage to be displayed.\nIf no link is provided, it defaults to 99+%. -->\n\n- https://caniuse.com/#feat=css-focus-within\n",
-          "supportPercentage": 85.39
+          "supportPercentage": 87.59
         },
         "codeBlocks": {
           "html": "<div class=\"focus-within\">\n  <form>\n    <label for=\"given_name\">Given Name:</label> <input id=\"given_name\" type=\"text\" /> <br />\n    <label for=\"family_name\">Family Name:</label> <input id=\"family_name\" type=\"text\" />\n  </form>\n</div>",
@@ -667,9 +689,10 @@
       },
       "meta": {
         "hash": "a12b394af0b2df2f7fa6bae2cbbe3a8b01ba74510991dcfe3952b8bd9c0a5a41",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -682,7 +705,7 @@
         "explanation": "\n\n1. `fullscreen` CSS pseudo-class selector is used to select and style an element that is being displayed in fullscreen mode.\n\n",
         "browserSupport": {
           "text": "\n\n- https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen\n- https://caniuse.com/#feat=fullscreen\n",
-          "supportPercentage": 99.11
+          "supportPercentage": 100
         },
         "codeBlocks": {
           "html": "<div class=\"container\">\n  <p><em>Click the button below to enter the element into fullscreen mode. </em></p>\n  <div class=\"element\" id=\"element\"><p>I change color in fullscreen mode!</p></div>\n  <br />\n  <button onclick=\"var el = document.getElementById('element'); el.requestFullscreen();\">\n    Go Full Screen!\n  </button>\n</div>",
@@ -696,9 +719,10 @@
       },
       "meta": {
         "hash": "23cab923692f5e3250be38b3c970dc11f3bab34159812aaf979ea09bce441c30",
-        "firstSeen": "1567099321",
+        "firstSeen": "1567120231",
         "lastUpdated": "1567144393",
-        "updateCount": 3
+        "updateCount": 3,
+        "authorCount": 3
       }
     },
     {
@@ -725,9 +749,10 @@
       },
       "meta": {
         "hash": "0515f03b1505eafa21e0d0d7377facbe4aaa9159996906dd4ed2857ee137073a",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -740,7 +765,7 @@
         "explanation": "\n\n1. `background: -webkit-linear-gradient(...)` gives the text element a gradient background.\n2. `webkit-text-fill-color: transparent` fills the text with a transparent color.\n3. `webkit-background-clip: text` clips the background with the text, filling the text with the gradient background as the color.\n\n",
         "browserSupport": {
           "text": "\n\n<span class=\"snippet__support-note\">⚠️ Uses non-standard properties.</span>\n\n- https://caniuse.com/#feat=text-stroke\n",
-          "supportPercentage": 98.65
+          "supportPercentage": 99.4
         },
         "codeBlocks": {
           "html": "<p class=\"gradient-text\">Gradient text</p>",
@@ -754,9 +779,10 @@
       },
       "meta": {
         "hash": "9620da48fb82b48a7c6b681854707b622a18c158f2db88c816e3b9c0d9b04523",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -769,7 +795,7 @@
         "explanation": "\n\n1. `display: grid` enables grid.\n2. `justify-content: center` centers the child horizontally.\n3. `align-items: center` centers the child vertically.\n\n",
         "browserSupport": {
           "text": "\n\n- https://caniuse.com/#feat=css-grid\n",
-          "supportPercentage": 97.25999999999999
+          "supportPercentage": 97.91
         },
         "codeBlocks": {
           "html": "<div class=\"grid-centering\"><div class=\"child\">Centered content.</div></div>",
@@ -783,9 +809,10 @@
       },
       "meta": {
         "hash": "f6fbb076581e63ab9187ca63d8620f88de19d7a78c46f9ded903271461a445bf",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -812,9 +839,10 @@
       },
       "meta": {
         "hash": "cd26d0cd1831474afdc784b4459b60062243e2d390975e94cd7d51fa776c603f",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -844,7 +872,8 @@
         "hash": "06f323835f89d7e055e932ee67c23a9c5d2edeb7e62c1029c0528238e17a08f8",
         "firstSeen": "1570668578",
         "lastUpdated": "1574679180",
-        "updateCount": 11
+        "updateCount": 11,
+        "authorCount": 7
       }
     },
     {
@@ -857,7 +886,7 @@
         "explanation": "\n\n1. `transition: max-height: 0.5s cubic-bezier(...)` specifies that changes to `max-height` should be transitioned over 0.5 seconds, using an `ease-out-quint` timing function.\n2. `overflow: hidden` prevents the contents of the hidden element from overflowing its container.\n3. `max-height: 0` specifies that the element has no height initially.\n4. `.target:hover > .el` specifies that when the parent is hovered over, target a child `.el` within it and use the `--max-height` variable which was defined by JavaScript.\n\n---\n\n1. `el.scrollHeight` is the height of the element including overflow, which will change dynamically based on the content of the element.\n2. `el.style.setProperty(...)` sets the `--max-height` CSS variable which is used to specify the `max-height` of the element the target is hovered over, allowing it to transition smoothly from 0 to auto.\n\n",
         "browserSupport": {
           "text": "\n\n<div class=\"snippet__requires-javascript\">Requires JavaScript</div>\n<span class=\"snippet__support-note\">\n  ⚠️ Causes reflow on each animation frame, which will be laggy if there are a large number of elements\n  beneath the element that is transitioning in height.\n</span>\n\n- https://caniuse.com/#feat=css-variables\n- https://caniuse.com/#feat=css-transitions\n",
-          "supportPercentage": 96.51
+          "supportPercentage": 97.16
         },
         "codeBlocks": {
           "html": "<div class=\"trigger\">\n  Hover me to see a height transition.\n  <div class=\"el\">content</div>\n</div>",
@@ -871,9 +900,10 @@
       },
       "meta": {
         "hash": "bff0b57d24dac06ae6a6d71a8d0d628ec0b97760be0cfda66791191957075d73",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -900,9 +930,10 @@
       },
       "meta": {
         "hash": "4136aff34ae1b8bf6b525c08881a12c43e9ce7265e864c09ea25fa40e8d86396",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -929,9 +960,10 @@
       },
       "meta": {
         "hash": "6e8a53b0b69ab05f54c199f42944746c0e3331712f69a8dc72709eda16428424",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -958,9 +990,10 @@
       },
       "meta": {
         "hash": "2f925cc190a9744532de97bb4add65e53cc0b2f3833760f4e7263f5df17cfad5",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -990,7 +1023,8 @@
         "hash": "e0cd9ededcfb68d085f6a1fbdc63fba65cee9adc13c08a458f73b0fbaf0f5949",
         "firstSeen": "1569946901",
         "lastUpdated": "1569946901",
-        "updateCount": 2
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -1003,7 +1037,7 @@
         "explanation": "\n\n1. `--x` and `--y` are used to track the position of the mouse on the button.\n2. `--size` is used to keep modify of the gradient's dimensions.\n3. `background: radial-gradient(circle closest-side, pink, transparent);` creates the gradient at the correct postion.\n\n",
         "browserSupport": {
           "text": "\n\n<span class=\"snippet__support-note\">⚠️ Requires JavaScript.</span>\n\n- https://caniuse.com/#feat=css-variables\n",
-          "supportPercentage": 96.51
+          "supportPercentage": 97.16
         },
         "codeBlocks": {
           "html": "<button class=\"mouse-cursor-gradient-tracking\"><span>Hover me</span></button>",
@@ -1018,9 +1052,10 @@
       },
       "meta": {
         "hash": "97fbac82b526cafe6e48233dda46d0bb87fde7a52027774048b90c9c14818395",
-        "firstSeen": "1567099321",
+        "firstSeen": "1567120231",
         "lastUpdated": "1567151937",
-        "updateCount": 3
+        "updateCount": 3,
+        "authorCount": 3
       }
     },
     {
@@ -1050,7 +1085,8 @@
         "hash": "9e2cbf0541001ebaaa5584e8d4e7f68e5f436e79574ec9c62facd20962bfa87a",
         "firstSeen": "1568922537",
         "lastUpdated": "1569825639",
-        "updateCount": 4
+        "updateCount": 4,
+        "authorCount": 3
       }
     },
     {
@@ -1077,9 +1113,10 @@
       },
       "meta": {
         "hash": "847dbaae8802781fa073cc92c6891ea0a0c39752f95266fcb4db7812dc78640e",
-        "firstSeen": "1567099321",
+        "firstSeen": "1567120231",
         "lastUpdated": "1569415890",
-        "updateCount": 3
+        "updateCount": 3,
+        "authorCount": 3
       }
     },
     {
@@ -1107,9 +1144,10 @@
       },
       "meta": {
         "hash": "a718446c91f49c73e68bc4f317911ff03f898ac8efe0e832ca1f803709107820",
-        "firstSeen": "1567099321",
+        "firstSeen": "1567120231",
         "lastUpdated": "1571634867",
-        "updateCount": 3
+        "updateCount": 3,
+        "authorCount": 3
       }
     },
     {
@@ -1136,9 +1174,10 @@
       },
       "meta": {
         "hash": "e25bdb353dc5da5c1c359f91769d85d0b3b0a58ff7085041603e4e685b380ef7",
-        "firstSeen": "1567099321",
+        "firstSeen": "1567120231",
         "lastUpdated": "1567155517",
-        "updateCount": 3
+        "updateCount": 3,
+        "authorCount": 3
       }
     },
     {
@@ -1165,9 +1204,10 @@
       },
       "meta": {
         "hash": "46d1f9e1a05328d86ffda0dbea7dc60eae44c319eb430632ef384d2f3e7e6d44",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -1194,9 +1234,10 @@
       },
       "meta": {
         "hash": "fb3a96cbbb4d59af2566f3d0729c13478a81a572b25a8dd1696e2a67dd8fff79",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -1226,7 +1267,8 @@
         "hash": "11f0b0631cb97ab53a144c263648c155527e570e0ceefaea59201c39de73b57b",
         "firstSeen": "1570274976",
         "lastUpdated": "1570335973",
-        "updateCount": 4
+        "updateCount": 4,
+        "authorCount": 3
       }
     },
     {
@@ -1239,7 +1281,7 @@
         "explanation": "\n\n- The `all` property allows you to reset all styles (inherited or not) to default values.\n\n",
         "browserSupport": {
           "text": "\n\n<span class=\"snippet__support-note\">⚠️ MS Edge status is under consideration.</span>\n\n- https://caniuse.com/#feat=css-all\n",
-          "supportPercentage": 95.76
+          "supportPercentage": 96.2
         },
         "codeBlocks": {
           "html": "<div class=\"reset-all-styles\">\n  <h5>Title</h5>\n  <p>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui\n    repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui\n    iure, consequatur velit sit?\n  </p>\n</div>",
@@ -1253,9 +1295,10 @@
       },
       "meta": {
         "hash": "f9542b2db5cd49f09e53b3af8348c58c973244bdeede87857e49660c6e713d65",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -1282,9 +1325,10 @@
       },
       "meta": {
         "hash": "0b86c444f4d15709a99d1e32c651e9530a294258ba32784d998a56c6f14198b1",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -1311,9 +1355,10 @@
       },
       "meta": {
         "hash": "35bfb52929dcbd21c120d555c9d3382154f47b661d31722ffb3d21281021bba3",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -1340,9 +1385,10 @@
       },
       "meta": {
         "hash": "97b037f3f463b8cf7de0cc12a607c540ffe8a4869323a4cc17c66eebbc92d612",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -1372,7 +1418,8 @@
         "hash": "ba4688945c309db9b6255f4555299034a67ea583e4e8db2806085c1c257b736f",
         "firstSeen": "1569999119",
         "lastUpdated": "1569999119",
-        "updateCount": 2
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -1400,9 +1447,10 @@
       },
       "meta": {
         "hash": "e29182514bd83550705267a43d21eec8886ed011c6259f2b3efec9862541f90e",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -1429,9 +1477,10 @@
       },
       "meta": {
         "hash": "9ee4bb8713d24b9e6f5367eb05645c6e41d205b120b4d06a9a949984c7cd73b0",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -1461,7 +1510,8 @@
         "hash": "3d669f655ec92a355b355d2d35e6e9262ad582671abac860d7170893ac68e467",
         "firstSeen": "1571344652",
         "lastUpdated": "1571344652",
-        "updateCount": 2
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -1488,9 +1538,10 @@
       },
       "meta": {
         "hash": "357daaf44bab240518a3c9bdd34a1e8702fab3358171e30f633b7a7f423b9884",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -1517,9 +1568,10 @@
       },
       "meta": {
         "hash": "a30287149e833b454deea446359d51554640ad3a57cd2460d8519c376077b8b4",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -1546,9 +1598,10 @@
       },
       "meta": {
         "hash": "4ce872446c7950c9450e56ab2251c7cfcd473a1c9b2a64baa7c9d6b029264796",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -1575,9 +1628,10 @@
       },
       "meta": {
         "hash": "43bc0cd7776468f3b74791017349ef278921c8ded7ba0bd7788d2b01bdb68c7a",
-        "firstSeen": "1567099321",
-        "lastUpdated": "1567099321",
-        "updateCount": 2
+        "firstSeen": "1567120231",
+        "lastUpdated": "1567120231",
+        "updateCount": 2,
+        "authorCount": 2
       }
     }
   ],
