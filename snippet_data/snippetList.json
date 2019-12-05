@@ -412,7 +412,7 @@
         ]
       },
       "meta": {
-        "hash": "cc22283b6c9d1b9665c5c678f30551f0db170d4db13f2ddffb22728a8689f5be"
+        "hash": "e8e0c10c38e3a2dfe2f7b965d1bc96e85083414a9ed1ec21b95c4a08dc2442e9"
       }
     },
     {
@@ -835,7 +835,7 @@
         ]
       },
       "meta": {
-        "hash": "0a4684d6fc79bdbbac31df3af6c493ba7c881936ada5bc52824b4f26ca177459"
+        "hash": "77a01af8797ecbe71b9c9412d21c144c03a46a49dd3d0e7d869c3df38b39b2b4"
       }
     },
     {
@@ -898,7 +898,7 @@
         ]
       },
       "meta": {
-        "hash": "a4e1e33c0688dbf1ca231d9d8ea315ffed93b7f83f5d8cbf0714f10fdfeda8cf"
+        "hash": "6fa14364405f7b99aa49c2157bdc08c02b4ce2f288db29a4348a6983460933c7"
       }
     },
     {
@@ -1037,7 +1037,7 @@
         ]
       },
       "meta": {
-        "hash": "484bd222e636e8a8409c30ddb1fe6e3fe72ab7a43f2edf089b2758d5e9bee528"
+        "hash": "5f38360819f9225b887a94221bfee1a80f1bcc224a364440b3388f60491b03ba"
       }
     },
     {
@@ -1273,7 +1273,7 @@
         ]
       },
       "meta": {
-        "hash": "0eac852db7a7add352b0d36677b22718b342ed9dc12f11780cac87e3b8260a05"
+        "hash": "55b1ce0a892110d792a9487e40331774015525479faa2b8961f6c2ea6291c27b"
       }
     },
     {
@@ -1678,7 +1678,7 @@
         ]
       },
       "meta": {
-        "hash": "9e39c6a3a8ec5b51c5e16f69107fc9e90b2697b2cf2689850872071bb968723e"
+        "hash": "16c3b724b653dcb31f3e59f1664a59951abb15a93eb3697cade4d3ae0e63c532"
       }
     },
     {
@@ -1817,8 +1817,7 @@
           "browser",
           "utility",
           "advanced",
-          "promise",
-          "advanced"
+          "promise"
         ]
       },
       "meta": {
@@ -2865,7 +2864,7 @@
         ]
       },
       "meta": {
-        "hash": "3db3faac666ee61ab86c70766d2ab5d1293ffd818da87edb971bfff7a366364a"
+        "hash": "362fddaa6244404741e84bca6fc442a101fdb642af53b299e8b9994d0d7162d8"
       }
     },
     {
@@ -3426,7 +3425,7 @@
         ]
       },
       "meta": {
-        "hash": "23ded1eef634ad88b34431b187b5f9eca4432daf09e89980fb0661fb56d8dcb0"
+        "hash": "012ebca6a90c50ec89278af2632d7d0d90eeb423f2bcf902ed015f6fce6d4f5a"
       }
     },
     {
@@ -3775,7 +3774,7 @@
         ]
       },
       "meta": {
-        "hash": "17bcf3f13980b7f804d9f0fe274324b2a35ab7d479c03d77322dabba81e1a34a"
+        "hash": "7ccbf66d8d55c60bcf12baa980cf32d67a4ba567894d59e2d798c9af792424ff"
       }
     },
     {
@@ -4172,7 +4171,7 @@
         ]
       },
       "meta": {
-        "hash": "069472d018c3102412dafc2ae8ec6e9396e53c01d0073079f2e3f1ac3c99b6e9"
+        "hash": "c1542907e6295eb81df918174c247a65d73c8daccc56769f2eb32d609b7846fc"
       }
     },
     {
@@ -4488,7 +4487,7 @@
         ]
       },
       "meta": {
-        "hash": "fc085a3110ffbbfa36c63ce282a3ab59e96d101eb4f489a59b68c1fda1814c14"
+        "hash": "532a39b77c025041de48f14122ac229a675d0af3e0a990d55a26c5f971ec3725"
       }
     },
     {
@@ -5615,7 +5614,6 @@
   "meta": {
     "specification": "http://jsonapi.org/format/",
     "type": "snippetListingArray",
-    "scope": "./snippets",
     "language": {
       "short": "js",
       "long": "JavaScript"
