@@ -695,8 +695,3 @@
 # * No redirecting /archive - content is migrated, but unlisted for now
 # * No redirecting /beginner - content is migrated without dedicated listing
 # -----------------------------------------------------------------------------
-
-# -----------------------------------------------------------------------------
-#  DEMO REDIRECT TO SEE IF WE CAN SEND TRAFFIC TO ANOTHER DOMAIN?
-# -----------------------------------------------------------------------------
-/demo                                  https://30secondsofcode.org              301!

@@ -1,4 +1,4 @@
-[![Logo](/assets/logo.png)](https://30secondsofcode.org/)
+[![Logo](/assets/logo.png)](https://www.30secondsofcode.org/)
 
 # 30 seconds website platform
 
