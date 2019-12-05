@@ -4,7 +4,7 @@ deploy_from_master() {
     echo "'master' branch detected, starting deployment step"
     ./src/jobs/deploy.sh production
   else
-    echo "'$TRAVIS_BRANCH' branch detected, skipping deploment step"
+    echo "'$TRAVIS_BRANCH' branch detected, skipping deployment step"
   fi
 }
 
