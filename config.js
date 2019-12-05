@@ -10,7 +10,7 @@ module.exports = {
   twitterUrl: `https://twitter.com/30secondsofcode`,
   discordUrl: `https://discordapp.com/invite/SajZAJc`,
   licenseUrl: `https://creativecommons.org/publicdomain/zero/1.0/`,
-  siteUrl: `https://30secondsofcode.org`,
+  siteUrl: `https://www.30secondsofcode.org`,
   googleSiteVerification: `YX9mF-TxoHZGJ9SZ8XwvWgGR_KTcbH1uHul4iDklyr0`,
   googleAnalytics: {
     id: `UA-117141635-1`,

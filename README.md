@@ -1,4 +1,4 @@
-[![Logo](/logo.png)](https://30secondsofcode.org/js/p/1)
+[![Logo](/assets/logo.png)](https://www.30secondsofcode.org/)
 
 # 30 seconds of code
 
