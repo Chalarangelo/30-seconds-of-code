@@ -88,6 +88,7 @@ const Shell = ({
           link: {
             internal: false,
             url: '#',
+            rel: 'nofollow',
             title: isDarkMode ? _l('Switch to light mode') : _l('Switch to dark mode'),
           },
           onClick: e => {

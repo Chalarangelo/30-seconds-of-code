@@ -7,6 +7,10 @@ export default {
     'snippet_data/snippets.json',
   ],
   slug: 'php',
+  theme: {
+    backColor: '#8b9bd6',
+    foreColor: '#2a2843',
+  },
   biasPenaltyMultiplier: 1.06,
   tagScores: {
     'array': 5,

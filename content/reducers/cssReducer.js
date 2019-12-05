@@ -2,7 +2,7 @@ import {
   rankingEngine as rankSnippet,
   searchIndexingEngine as tokenizeSnippet
 } from 'engines';
-import { determineExpertiseFromTags, stripExpertiseFromTags, uniqueElements } from 'functions/utils';
+import { determineExpertiseFromTags, convertToSeoSlug, uniqueElements } from 'functions/utils';
 
 export default (id, snippetNode, markdownNode) => {
   return {
@@ -19,7 +19,7 @@ export default (id, snippetNode, markdownNode) => {
       js: snippetNode.attributes.codeBlocks.js,
       scopedCss: snippetNode.attributes.codeBlocks.scopedCss,
     },
-    slug: `/${snippetNode.slugPrefix}${markdownNode.fields.slug}`,
+    slug: `/${snippetNode.slugPrefix}${convertToSeoSlug(markdownNode.fields.slug)}`,
     url: `${snippetNode.repoUrlPrefix}${markdownNode.fields.slug.slice(0, -1)}.md`,
     path: markdownNode.fileAbsolutePath,
     text: {

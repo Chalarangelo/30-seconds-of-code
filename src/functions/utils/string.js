@@ -79,3 +79,19 @@ export const stripMarkdownFormat = str => {
     .replace(/\[(.*)\]\(.*\)/g, '$1')
     .replace(/_(.*?)_/g, '$1');
 };
+
+/** Converts a given string to kebab-case */
+export const toKebabCase = str =>
+  str &&
+  str
+    .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+    .map(x => x.toLowerCase())
+    .join('-');
+
+/**
+ * Converts a slug to a SEO-friendly representation.
+ * Steps:
+ *  - Kebab-case
+ *  - Add a '/' in the front
+ */
+export const convertToSeoSlug = str => `/${toKebabCase(str)}`;

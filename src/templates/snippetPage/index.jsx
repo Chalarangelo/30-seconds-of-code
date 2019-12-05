@@ -7,6 +7,8 @@ import { Snippet as SnippetPropType } from 'typedefs';
 import PropTypes from 'prop-types';
 import Shell from 'organisms/shell';
 import RecommendationList from 'organisms/recommendationList';
+import PageBackdrop from 'molecules/pageBackdrop';
+import { AnchorButton } from 'atoms/button';
 import _ from 'lang';
 const _l = _('en');
 
@@ -25,6 +27,7 @@ const SnippetPage = ({
   },
   lastPageTitle,
   lastPageUrl,
+  acceptsCookies,
 }) => {
   return (
     <>
@@ -40,6 +43,7 @@ const SnippetPage = ({
           firstSeen: snippet.firstSeen,
           lastUpdated: snippet.lastUpdated,
         } }
+        canonical={ snippet.slug }
       />
       <Shell
         logoSrc={ logoSrc }
@@ -60,6 +64,34 @@ const SnippetPage = ({
           snippet={ snippet }
           toastContainer='toast-container'
         />
+        <PageBackdrop
+          graphicName='github-cta'
+          mainText={ (
+            <>
+              { _l('Like 30 seconds of code?') }
+              <br />
+            </>
+          ) }
+        >
+          <AnchorButton
+            link={ {
+              url: snippet.url.split('/').slice(0, 5).join('/'),
+              internal: false,
+              rel: 'noopener',
+              target: '_blank',
+            } }
+            className='btn-star'
+            onClick={ e => {
+              if (acceptsCookies && typeof window !== 'undefined' && typeof gtag === `function`) {
+                e.preventDefault();
+                window.gtag('event', 'click', { event_category: 'cta-github', event_label: e.target.href, value: 1});
+                window.open(e.target.href, '_blank');
+              }
+            } }
+          >
+            { _l('Star it on GitHub') }
+          </AnchorButton>
+        </PageBackdrop>
         <RecommendationList snippetList={ recommendedSnippets } />
         <div id="toast-container"/>
       </Shell>
@@ -86,12 +118,15 @@ SnippetPage.propTypes = {
   lastPageTitle: PropTypes.string.isRequired,
   /** URL of the last page */
   lastPageUrl: PropTypes.string.isRequired,
+  /** Does the user accept cookies? */
+  acceptsCookies: PropTypes.bool,
 };
 
 export default connect(
   state => ({
     lastPageTitle: state.navigation.lastPageTitle,
     lastPageUrl: state.navigation.lastPageUrl,
+    acceptsCookies: state.shell.acceptsCookies,
   }),
   null
 )(SnippetPage);

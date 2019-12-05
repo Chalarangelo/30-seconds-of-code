@@ -2,7 +2,6 @@
   margin: 0.1875rem 1.25rem 1rem;
   display: flex;
   flex-flow: row nowrap;
-  overflow-x: auto;
 
   @media screen and (max-width: calc(#{$layout-medium-breakpoint} - 1px)) {
     margin-left: 0.875rem;
@@ -52,6 +51,7 @@
   }
 
   &.with-scrollbar {
+    overflow-x: auto;
     .btn:first-child {
       border-radius: 0.5rem 0 0 0;
     }
