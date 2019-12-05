@@ -6,7 +6,6 @@ node_js:
 - lts/*
 script:
 - npm run extractor
-- npm run builder
 after_success:
 - chmod +x .travis/push.sh
 - .travis/push.sh
