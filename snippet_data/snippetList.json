@@ -2718,7 +2718,7 @@
       "type": "snippetListing",
       "title": "isString",
       "attributes": {
-        "text": "Checks if the given argument is a string. Only works for string primitives.\n\nUse `typeof` to check if a value is classified as a string primitive.\n\n",
+        "text": "Checks if the given argument is a string. Only works for string primitives.\n\nUse `typeof` to check if a value's data type as a string primitive.\n\n",
         "tags": [
           "type",
           "string",
