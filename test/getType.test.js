@@ -12,7 +12,7 @@ test('Returns null for null', () => {
 test('Returns undefined for undefined', () => {
   expect(getType(undefined)).toBe('undefined');
 });
-class DummyClass{}
 test('Returns custom classes', () => {
+  class DummyClass{};
   expect(getType(new DummyClass())).toBe('dummyclass');
 });
