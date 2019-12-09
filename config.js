@@ -16,7 +16,7 @@ module.exports = {
   distPath: `dist`,
   testPath: `test`,
   // General information
-  language:{
+  language: {
     short: `js`,
     long: `JavaScript`
   },
@@ -28,5 +28,6 @@ module.exports = {
   requirables: [
     `snippets.json`,
     `archivedSnippets.json`
-  ]
+  ],
+  parser: '_30codeParser',
 };
