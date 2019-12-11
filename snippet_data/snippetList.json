@@ -484,6 +484,21 @@
       }
     },
     {
+      "id": "masonry-layout",
+      "type": "snippetListing",
+      "title": "Masonry Layout",
+      "attributes": {
+        "text": "Creates a vertical Masonry layout using pure HTML and CSS.\n\n",
+        "tags": [
+          "layout",
+          "advanced"
+        ]
+      },
+      "meta": {
+        "hash": "5782a8e3e8295f8b5a3887450d22b30d38d49f83a4d1664de52b1fab177e830f"
+      }
+    },
+    {
       "id": "mouse-cursor-gradient-tracking",
       "type": "snippetListing",
       "title": "Mouse cursor gradient tracking",
