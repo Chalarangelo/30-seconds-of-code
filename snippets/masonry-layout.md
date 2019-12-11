@@ -1,84 +1,73 @@
 ---
 title: Masonry Layout
-tags: layout,intermediate
+tags: layout,advanced
 ---
 
-This snippet creates a vertical Masonry layout using pure HTML and CSS.
+Creates a vertical Masonry layout using pure HTML and CSS.
 
 ```html
 <div class="masonry-container">
   <div class="masonry-columns">
-    <img class="masonry-brick" src="https://picsum.photos/id/1016/384/256" alt="An image as brick">
-    <img class="masonry-brick" src="https://picsum.photos/id/1025/495/330" alt="And another one">
-    <img class="masonry-brick" src="https://picsum.photos/id/1024/192/128" alt="And another one">
-      <img class="masonry-brick" src="https://picsum.photos/id/1028/518/345" alt="And another one...">
-    <img class="masonry-brick" src="https://picsum.photos/id/1035/585/390" alt="Keep in mind that it is important to use display block">
-    <img class="masonry-brick" src="https://picsum.photos/id/104/384/216" alt="to be able to use inline elements like these">
+    <img class="masonry-brick" src="https://picsum.photos/id/1016/384/256" alt="An image">
+    <img class="masonry-brick" src="https://picsum.photos/id/1025/495/330" alt="Another image">
+    <img class="masonry-brick" src="https://picsum.photos/id/1024/192/128" alt="Another image">
+    <img class="masonry-brick" src="https://picsum.photos/id/1028/518/345" alt="One more image">
+    <img class="masonry-brick" src="https://picsum.photos/id/1035/585/390" alt="And another one">
+    <img class="masonry-brick" src="https://picsum.photos/id/1074/384/216" alt="Last one">
   </div>
 </div>
 ```
 
 ```css
 /* Container */
-
 .masonry-container {
   --column-count-small: 1;
   --column-count-medium: 2;
   --column-count-large: 3;
-  --column-gap: 0; /* Try 1rem or 2rem */
-
+  --column-gap: 0.125rem;
   padding: var(--column-gap);
 }
 
 /* Columns */
-
-.masonry-container .masonry-columns {
+.masonry-columns {
   column-gap: var(--column-gap);
+  column-count: var(--column-count-small);
+  column-width: calc(1 / var(--column-count-small) * 100%);
 }
 
-@media only screen and (min-width: 800px) {
-  .masonry-container .masonry-columns {
-    column-count: var(--column-count-large);
-    column-width: calc(1 / var(--column-count-large) * 100%);
-  }
-}
-
-@media only screen and (min-width: 640px) and (max-width: 799px) {
-  .masonry-container .masonry-columns {
+@media only screen and (min-width: 640px) {
+  .masonry-columns {
     column-count: var(--column-count-medium);
     column-width: calc(1 / var(--column-count-medium) * 100%);
   }
 }
 
-@media only screen and (max-width: 639px) {
-  .masonry-container .masonry-columns {
-    column-count: var(--column-count-small);
-    column-width: calc(1 / var(--column-count-small) * 100%);
+@media only screen and (min-width: 800px) {
+  .masonry-columns {
+    column-count: var(--column-count-large);
+    column-width: calc(1 / var(--column-count-large) * 100%);
   }
 }
 
 /* Bricks */
-.masonry-container .masonry-columns .masonry-brick {
+.masonry-brick {
   width: 100%;
   height: auto;
   margin: var(--column-gap) 0;
   display: block;
 }
 
-.masonry-container .masonry-columns .masonry-brick:first-child {
+.masonry-brick:first-child {
   margin: 0 0 var(--column-gap);
 }
 ```
 
 #### Explanation
 
-- This snippet creates a Masonry style layout using pure HTML and CSS. Not only is this lightweight, it prevents render blocking as the browser will directly place all contents at the right places.
-- A Masonry layout consists of "bricks" that fall into each other, with either a fixed width (vertical layout) or a fixed height (horizontal layout), forming a perfect fit. It looks the best when working with images.
-- Masonry is not the same as a CSS grid or Flexbox &mdash; they usually have both fixed width and height, a Masonry-layout has one variable dimension (width or height), and forms a perfect fit.
-- `.masonry-container` is the container for the Masonry layout. Within that container, there's a div `.masonry-columns`, which will automatically put each child element `.masonry-brick` into a Masonry layout. There's some CSS that ensures that `.masonry-brick` is a block-level element and that the first one will have no margin on top.
-- You can change the CSS3 variables to fine-tune it.
-- Older browsers might need vendor prefixes.
-- An interactive example with more images: https://jsfiddle.net/ellipticcurv3/q8Ljcfam/
+- Create a masonry-style layout that consists of "bricks" that fall into each other with either a fidex `width` (vertical layout) or a fixed `height` (horizontal layout), forming a perfect fit. Especially useful when working with images.
+- `.masonry-container` is the container for the masonry layout. Within that container, there's a `div.masonry-columns`, which will automatically put each child element, `.masonry-brick`, into the layout. 
+- `.masonry-brick` must be have `display: block` to allow the layout to flow properly, while the `:first-child` of this class should have a different `margin` to account for its positioning.
+- CSS variables are used to allow for greater flexibility for the layout, while media queries ensure that the layout flows responsively in different viewport sizes.
 
 #### Browser support
 
@@ -87,4 +76,3 @@ This snippet creates a vertical Masonry layout using pure HTML and CSS.
 - https://www.caniuse.com/#feat=mdn-css_properties_column-count
 - https://www.caniuse.com/#feat=mdn-css_properties_column-width
 - https://www.caniuse.com/#feat=mdn-css_properties_column-gap_multicol_context
-- https://www.caniuse.com/#feat=css-mediaqueries
