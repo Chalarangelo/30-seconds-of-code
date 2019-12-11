@@ -1,7 +1,7 @@
 name: Deploy production
 on:
   schedule:
-    - cron: "05 1,13 * * *"
+    - cron: "20 1,13 * * *"
 jobs:
   build:
     runs-on: ubuntu-latest
