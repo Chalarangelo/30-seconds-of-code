@@ -15,20 +15,14 @@ test('last({ 0: false}) returns undefined', () => {
 test('last(String) returns g', () => {
   expect(last('String')).toBe('g');
 });
-test('last(null) throws an Error', () => {
-  expect(() => {
-    last(null);
-  }).toThrow();
+test('last(null) returns undefined', () => {
+  expect(last(null)).toBe(undefined);
 });
-test('last(undefined) throws an Error', () => {
-  expect(() => {
-    last(undefined);
-  }).toThrow();
+test('last(undefined) returns undefined', () => {
+  expect(last(undefined)).toBe(undefined);
 });
-test('last() throws an Error', () => {
-  expect(() => {
-    last();
-  }).toThrow();
+test('last() returns undefined', () => {
+  expect(last()).toBe(undefined);
 });
 let start = new Date().getTime();
 last([1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 1122, 32124, 23232]);
