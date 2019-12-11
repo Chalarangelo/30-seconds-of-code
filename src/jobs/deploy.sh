@@ -4,7 +4,7 @@ deploy_branch() {
   git config --global user.name "30secondsofcode"
   git checkout -b $1
   git reset --hard origin/master
-  git commit -m "Deployment from Travis build $TRAVIS_BUILD_NUMBER" --allow-empty
+  git commit -m "Deployment - $(date +%Y.%m.%d_%H:%M)" --allow-empty
   git push --force --quiet "https://${GH_TOKEN}@github.com/30-seconds/30-seconds-web.git" $1 > /dev/null 2>&1
 }
 
