@@ -1,0 +1,13 @@
+name: Deploy production
+on:
+  schedule:
+    - cron: "05 1,13 * * *"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run deployment script
+      run: |
+        chmod +x ./src/jobs/deploy.sh
+        ./src/jobs/deploy.sh production
