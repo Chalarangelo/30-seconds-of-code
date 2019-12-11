@@ -87,3 +87,4 @@ This snippet creates a vertical Masonry layout using pure HTML and CSS.
 - https://www.caniuse.com/#feat=mdn-css_properties_column-count
 - https://www.caniuse.com/#feat=mdn-css_properties_column-width
 - https://www.caniuse.com/#feat=mdn-css_properties_column-gap_multicol_context
+- https://www.caniuse.com/#feat=css-mediaqueries
