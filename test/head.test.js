@@ -15,20 +15,14 @@ test('head({ 0: false}) returns false', () => {
 test('head(String) returns S', () => {
   expect(head('String')).toBe('S');
 });
-test('head(null) throws an Error', () => {
-  expect(() => {
-    head(null);
-  }).toThrow();
+test('head(null) returns undefined', () => {
+  expect(head(null)).toBe(undefined);
 });
-test('head(undefined) throws an Error', () => {
-  expect(() => {
-    head(undefined);
-  }).toThrow();
+test('head(undefined) returns undefined', () => {
+  expect(head(undefined)).toBe(undefined);
 });
-test('head() throws an Error', () => {
-  expect(() => {
-    head();
-  }).toThrow();
+test('head() returns undefined', () => {
+  expect(head()).toBe(undefined);
 });
 let start = new Date().getTime();
 head([1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 1122, 32124, 23232]);
