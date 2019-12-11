@@ -11,7 +11,6 @@ Omit the second argument, `separator`, to use a default separator of `','`.
 Omit the third argument, `end`, to use the same value as `separator` by default.
 
 ```js
-
 const join = (arr, separator = ',', end = separator) =>
   arr.reduce(
     (acc, val, i) =>
