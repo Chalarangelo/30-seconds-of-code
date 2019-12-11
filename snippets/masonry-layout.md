@@ -19,6 +19,8 @@ This snippet creates a vertical Masonry layout using pure HTML and CSS.
 ```
 
 ```css
+/* Container */
+
 .masonry-container {
   --column-count-small: 1;
   --column-count-medium: 2;
@@ -32,54 +34,26 @@ This snippet creates a vertical Masonry layout using pure HTML and CSS.
 
 .masonry-container .masonry-columns {
   column-gap: var(--column-gap);
-  -webkit-column-gap: var(--column-gap);
-  -moz-column-gap: var(--column-gap);
-  -ms-column-gap: var(--column-gap);
-  -o-column-gap: var(--column-gap);
 }
 
 @media only screen and (min-width: 800px) {
   .masonry-container .masonry-columns {
     column-count: var(--column-count-large);
-    -webkit-column-count: var(--column-count-large);
-    -moz-column-count: var(--column-count-large);
-    -ms-column-count: var(--column-count-large);
-    -o-column-count: var(--column-count-large);
     column-width: calc(1 / var(--column-count-large) * 100%);
-    -webkit-column-width: calc(1 / var(--column-count-large) * 100%);
-    -moz-column-width: calc(1 / var(--column-count-large) * 100%);
-    -ms-column-width: calc(1 / var(--column-count-large) * 100%);
-    -o-column-width: calc(1 / var(--column-count-large) * 100%);
   }
 }
 
 @media only screen and (min-width: 640px) and (max-width: 799px) {
   .masonry-container .masonry-columns {
     column-count: var(--column-count-medium);
-    -webkit-column-count: var(--column-count-medium);
-    -moz-column-count: var(--column-count-medium);
-    -ms-column-count: var(--column-count-medium);
-    -o-column-count: var(--column-count-medium);
     column-width: calc(1 / var(--column-count-medium) * 100%);
-    -webkit-column-width: calc(1 / var(--column-count-medium) * 100%);
-    -moz-column-width: calc(1 / var(--column-count-medium) * 100%);
-    -ms-column-width: calc(1 / var(--column-count-medium) * 100%);
-    -o-column-width: calc(1 / var(--column-count-medium) * 100%);
   }
 }
 
 @media only screen and (max-width: 639px) {
   .masonry-container .masonry-columns {
     column-count: var(--column-count-small);
-    -webkit-column-count: var(--column-count-small);
-    -moz-column-count: var(--column-count-small);
-    -ms-column-count: var(--column-count-small);
-    -o-column-count: var(--column-count-small);
     column-width: calc(1 / var(--column-count-small) * 100%);
-    -webkit-column-width: calc(1 / var(--column-count-small) * 100%);
-    -moz-column-width: calc(1 / var(--column-count-small) * 100%);
-    -ms-column-width: calc(1 / var(--column-count-small) * 100%);
-    -o-column-width: calc(1 / var(--column-count-small) * 100%);
   }
 }
 
@@ -103,6 +77,7 @@ This snippet creates a vertical Masonry layout using pure HTML and CSS.
 - Masonry is not the same as a CSS grid or Flexbox &mdash; they usually have both fixed width and height, a Masonry-layout has one variable dimension (width or height), and forms a perfect fit.
 - `.masonry-container` is the container for the Masonry layout. Within that container, there's a div `.masonry-columns`, which will automatically put each child element `.masonry-brick` into a Masonry layout. There's some CSS that ensures that `.masonry-brick` is a block-level element and that the first one will have no margin on top.
 - You can change the CSS3 variables to fine-tune it.
+- Older browsers might need vendor prefixes.
 - An interactive example with more images: https://jsfiddle.net/ellipticcurv3/q8Ljcfam/
 
 #### Browser support
