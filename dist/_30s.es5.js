@@ -1004,7 +1004,7 @@
     });
   };
   var head = function head(arr) {
-    return arr[0];
+    return arr && arr.length ? arr[0] : undefined;
   };
   var hexToRGB = function hexToRGB(hex) {
     var alpha = false,
@@ -1357,7 +1357,7 @@
     return fs.writeFile("".concat(filename, ".json"), JSON.stringify(obj, null, 2));
   };
   var last = function last(arr) {
-    return arr[arr.length - 1];
+    return arr && arr.length ? arr[arr.length - 1] : undefined;
   };
   var lcm = function lcm() {
     var gcd = function gcd(x, y) {

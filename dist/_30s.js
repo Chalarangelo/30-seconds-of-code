@@ -217,13 +217,13 @@
     Array.isArray(obj)
       ? obj.map(val => deepMapKeys(val, f))
       : typeof obj === 'object'
-      ? Object.keys(obj).reduce((acc, current) => {
+        ? Object.keys(obj).reduce((acc, current) => {
           const val = obj[current];
           acc[f(current)] =
             val !== null && typeof val === 'object' ? deepMapKeys(val, f) : (acc[f(current)] = val);
           return acc;
         }, {})
-      : obj;
+        : obj;
   const defaults = (obj, ...defs) => Object.assign({}, obj, ...defs.reverse(), obj);
   const defer = (fn, ...args) => setTimeout(fn, 1, ...args);
   const degreesToRads = deg => (deg * Math.PI) / 180.0;
@@ -245,9 +245,9 @@
     target in obj
       ? obj[target]
       : Object.values(obj).reduce((acc, val) => {
-          if (acc !== undefined) return acc;
-          if (typeof val === 'object') return dig(val, target);
-        }, undefined);
+        if (acc !== undefined) return acc;
+        if (typeof val === 'object') return dig(val, target);
+      }, undefined);
   const digitize = n => [...`${n}`].map(i => parseInt(i));
   const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
   const drop = (arr, n = 1) => arr.slice(n);
@@ -319,11 +319,11 @@
   const factorial = n =>
     n < 0
       ? (() => {
-          throw new TypeError('Negative numbers are not allowed!');
-        })()
+        throw new TypeError('Negative numbers are not allowed!');
+      })()
       : n <= 1
-      ? 1
-      : n * factorial(n - 1);
+        ? 1
+        : n * factorial(n - 1);
   const fibonacci = n =>
     Array.from({ length: n }).reduce(
       (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),
@@ -480,7 +480,7 @@
       })
     );
   };
-  const head = arr => arr[0];
+  const head = arr => (arr && arr.length ? arr[0] : undefined);
   const hexToRGB = hex => {
     let alpha = false,
       h = hex.slice(hex.startsWith('#') ? 1 : 0);
@@ -676,7 +676,7 @@
     ].join('\n');
   const JSONToFile = (obj, filename) =>
     fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2));
-  const last = arr => arr[arr.length - 1];
+  const last = arr => (arr && arr.length ? arr[arr.length - 1] : undefined);
   const lcm = (...arr) => {
     const gcd = (x, y) => (!y ? x : gcd(y, x % y));
     const _lcm = (x, y) => (x * y) / gcd(x, y);
@@ -779,10 +779,10 @@
   const objectToQueryString = queryParameters => {
     return queryParameters
       ? Object.entries(queryParameters).reduce((queryString, [key, val], index) => {
-          const symbol = index === 0 ? '?' : '&';
-          queryString += typeof val === 'string' ? `${symbol}${key}=${val}` : '';
-          return queryString;
-        }, '')
+        const symbol = index === 0 ? '?' : '&';
+        queryString += typeof val === 'string' ? `${symbol}${key}=${val}` : '';
+        return queryString;
+      }, '')
       : '';
   };
   const observeMutations = (element, callback, options) => {
@@ -1013,9 +1013,9 @@
   const remove = (arr, func) =>
     Array.isArray(arr)
       ? arr.filter(func).reduce((acc, val) => {
-        arr.splice(arr.indexOf(val), 1);
-        return acc.concat(val);
-      }, [])
+          arr.splice(arr.indexOf(val), 1);
+          return acc.concat(val);
+        }, [])
       : [];
   const removeNonASCII = str => str.replace(/[^\x20-\x7E]/g, '');
   const renameKeys = (keysMap, obj) =>
@@ -1093,10 +1093,10 @@
     Array.isArray(val)
       ? val.length
       : val && typeof val === 'object'
-        ? val.size || val.length || Object.keys(val).length
-        : typeof val === 'string'
-          ? new Blob([val]).size
-          : 0;
+      ? val.size || val.length || Object.keys(val).length
+      : typeof val === 'string'
+      ? new Blob([val]).size
+      : 0;
   const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
   const smoothScroll = element =>
     document.querySelector(element).scrollIntoView({
