@@ -1582,7 +1582,7 @@
           key = _ref22[0],
           val = _ref22[1];
 
-      var symbol = index === 0 ? '?' : '&';
+      var symbol = queryString.length === 0 ? '?' : '&';
       queryString += typeof val === 'string' ? "".concat(symbol).concat(key, "=").concat(val) : '';
       return queryString;
     }, '') : '';
