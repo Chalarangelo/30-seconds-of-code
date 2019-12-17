@@ -72,7 +72,6 @@ const literals = {
   'Search': 'Search',
   'Search results for': keyphrase => `Search results for ${keyphrase}`,
   'Search results': 'Search results',
-  'We couldn\'t find any results for the keyphrase ': keyphrase => `We couldn't find any results for the keyphrase ${keyphrase}`,
   'Click to view more results': 'Click to view more results',
   'Copy to clipboard': 'Copy to clipboard',
   'Examples': 'Examples',
@@ -136,6 +135,7 @@ const literals = {
   'Recommended snippets': 'Recommended snippets',
   'Like 30 seconds of code?': 'Like 30 seconds of code?',
   'Star it on GitHub': 'Star it on GitHub',
+  'We couldn\'t find any results for the keyphrase ': 'We couldn\'t find any results for the keyphrase ',
 };
 
 export default literals;
