@@ -58,7 +58,7 @@ const HomePage = ({
         <p className='home-sub-title'>
           { _l('site.description') }
         </p>
-        <Search shouldUpdateHistory={ false } />
+        <Search shouldUpdateHistory />
         <SearchResults isCompact />
         <ListingAnchors items={ listingAnchors } />
         <RecommendationList snippetList={ recommendedSnippets } />
