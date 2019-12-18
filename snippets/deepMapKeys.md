@@ -10,6 +10,7 @@ Use `Object.keys(obj)` to iterate over the object's keys.
 Use `Array.prototype.reduce()` to create a new object with the same values and mapped keys using `fn`.
 
 ```js
+
 const deepMapKeys = (obj, f) =>
   Array.isArray(obj)
     ? obj.map(val => deepMapKeys(val, f))
