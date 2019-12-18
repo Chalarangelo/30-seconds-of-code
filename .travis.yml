@@ -4,6 +4,8 @@ cache:
     - node_modules
 node_js:
 - lts/*
+before_install:
+- git fetch --unshallow
 script:
 - npm run extractor
 after_success:
