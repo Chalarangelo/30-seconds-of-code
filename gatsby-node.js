@@ -5,6 +5,7 @@ const {
   sourceNodes,
   createResolvers,
   createPages,
+  onCreateWebpackConfig,
 } = require(`./src/functions/build`);
 const {
   createPagesQuery,
@@ -42,3 +43,5 @@ exports.onCreateNode = onCreateNode;
 exports.sourceNodes = sourceNodes(requirables, reducers);
 
 exports.createResolvers = createResolvers(resolvers);
+
+exports.onCreateWebpackConfig = onCreateWebpackConfig;
