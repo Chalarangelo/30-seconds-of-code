@@ -15,7 +15,6 @@ export default `
         }
         expertise
         language {
-          short
           long
         }
         searchTokens

@@ -20,10 +20,10 @@ const PreviewCard = ({
   >
     <Card className={ trimWhiteSpace`preview-card ${className}` } { ...rest } >
       <h4 className='card-title'>{ snippet.title }</h4>
-      <TagList tags={ [snippet.language.long, snippet.primaryTag, snippet.expertise] } />
+      <TagList tags={ [snippet.language, snippet.primaryTag, snippet.expertise] } />
       <div
         className='card-description'
-        dangerouslySetInnerHTML={ { __html: `${snippet.html.description}` } }
+        dangerouslySetInnerHTML={ { __html: `${snippet.description}` } }
       />
     </Card>
   </Anchor>

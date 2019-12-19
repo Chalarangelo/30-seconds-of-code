@@ -11,10 +11,11 @@ const Snippet = shape({
   title: string,
   expertise: oneOf(EXPERTISE_LEVELS),
   tags: Tags,
-  languge: Language,
+  language: Language,
   code: Code,
   html: Html,
   url: string,
+  description: string,
 });
 
 Snippet.toString = () => `
