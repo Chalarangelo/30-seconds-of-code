@@ -11,15 +11,10 @@ describe('<RecommendationList />', () => {
   const snippetList = [
     {
       title: 'compose',
-      language: {
-        long: 'JavaScript',
-        short: 'js',
-      },
+      language: 'JavaScript',
       primaryTag: 'function',
       expertise: 'intermediate',
-      html: {
-        description: '<p>Performs right-to-left function composition.</p>',
-      },
+      description: '<p>Performs right-to-left function composition.</p>',
       url: 'snippets/compose',
     },
   ];

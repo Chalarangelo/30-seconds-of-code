@@ -10,15 +10,10 @@ console.warn = jest.fn();
 describe('<PreviewCard />', () => {
   const snippet = {
     title: 'compose',
-    language: {
-      long: 'JavaScript',
-      short: 'js',
-    },
+    language: 'JavaScript',
     primaryTag: 'function',
     expertise: 'intermediate',
-    html: {
-      description: '<p>Performs right-to-left function composition.</p>',
-    },
+    description: '<p>Performs right-to-left function composition.</p>',
     url: 'snippets/compose',
   };
   let wrapper, card, expertise, anchor;
@@ -63,7 +58,7 @@ describe('<PreviewCard />', () => {
   });
 
   it('should render the correct description', () => {
-    expect(card.find('.card-description').html()).toContain(snippet.html.description);
+    expect(card.find('.card-description').html()).toContain(snippet.description);
   });
 
   it('should link to the correct url', () => {
