@@ -1,16 +1,19 @@
-import { shape, string, arrayOf } from 'prop-types';
+import { shape, string, arrayOf, oneOfType } from 'prop-types';
 
 const langShape = {
   short: string,
   long: string,
 };
 
-const Language = shape({
-  ...langShape,
-  otherLanguages: arrayOf(
-    shape({...langShape})
-  ),
-});
+const Language = oneOfType([
+  string,
+  shape({
+    ...langShape,
+    otherLanguages: arrayOf(
+      shape({...langShape})
+    ),
+  }),
+]);
 
 Language.toString = () => `
 type SimpleLanguageData @infer {
