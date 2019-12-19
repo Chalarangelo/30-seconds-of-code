@@ -37,7 +37,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-sass`,
-    `gatsby-transformer-json`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

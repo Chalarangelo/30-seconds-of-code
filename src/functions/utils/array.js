@@ -29,8 +29,8 @@ export const transformSnippetIndex = edges =>
       title: node.title,
       expertise: node.expertise,
       primaryTag: node.tags.primary,
-      language: node.language,
-      html: node.html,
+      language: node.language.long,
+      description: node.html.description.trim(),
       url: node.slug,
       searchTokens: node.searchTokens,
     }));
