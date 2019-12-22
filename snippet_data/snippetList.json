@@ -498,14 +498,14 @@
       "type": "snippetListing",
       "title": "head",
       "attributes": {
-        "text": "Returns the head of a list.\n\nuse `lst[0]` to return the first element of the passed list.\n\n",
+        "text": "Returns the head of a list.\n\nUse `lst[0]` to return the first element of the passed list.\n\n",
         "tags": [
           "list",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "6c86b52c2c7a56a4527114736664a3720b2026d2419b87daf36de6877ad0e4b0"
+        "hash": "1fb7995d9f0e0be9dc0a5bf68a65141922a52f682bcda6883afee98041a4e623"
       }
     },
     {
