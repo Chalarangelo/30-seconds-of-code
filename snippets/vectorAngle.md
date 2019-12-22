@@ -1,36 +1,27 @@
 ---
 title: vectorAngle
-tags: math,intermediate
+tags: math,beginner
 ---
 
 Returns the angle (theta) value between two vectors.
 
-Use `Math.trunc()` to pick the integer value of length. Use `slice()` slice the incoming array into individual vectors. 
-Use `forEach()`, `Math.pow()` and `Math.sqrt()` to iterate over the vectors and calculate the magnitude of each vector and the scalar product.
+Use `Math.trunc()` to convert the half of `length` to integer. 
+Use `Array.prototype.slice()` slice the incoming array into two vectors. 
+Use `Array.prototype.reduce()`, `Math.pow()` and `Math.sqrt()` to calculate the magnitude of each vector and the scalar product of the two vectors.
 Use `Math.acos()` to calculate arccos and get the theta.
 
 
 ```js
-const theta = ((...x) =>{ 
+const vectorAngle = (...x) =>{ 
   let half = Math.trunc(x.length / 2);
-  let a = x.slice(0 , half);
-  let b = x.slice(half);  
-
-  let magnitudeOfA = 0;
-  a.forEach((a) => magnitudeOfA += Math.pow(a , 2));
-  magnitudeOfA = Math.sqrt(magnitudeOfA);
-  
-  let magnitudeOfB = 0;
-  b.forEach((b) => magnitudeOfB += Math.pow(b , 2));
-  magnitudeOfB = Math.sqrt(magnitudeOfB);
-  
-  let scalar = 0;
-  a.forEach((a , i) => scalar += a * b[i]);
-  
-  return Math.acos(scalar / (magnitudeOfA*magnitudeOfB));
-});
+  let [a, b] = [x.slice(0, half), x.slice(half)];  
+  let magnitudeOfA = Math.sqrt(a.reduce((total, num) => {return total + Math.pow(num, 2);}, 0));
+  let magnitudeOfB = Math.sqrt(b.reduce((total, num) => {return total + Math.pow(num, 2);}, 0));
+  let scalar = a.reduce((total, num, i)=>{return total + (num * b[i])}, 0);
+  return Math.acos(scalar / (magnitudeOfA * magnitudeOfB));
+};
 ```
 
 ```js
-theta(3,4,4,3); // 0.283794109208328
+vectorAngle(3,4,4,3); // 0.283794109208328
 ```
