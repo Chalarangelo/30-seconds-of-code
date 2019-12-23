@@ -1,0 +1,36 @@
+export default {
+  name: '30 seconds Blog',
+  dirName: '30blog',
+  repoUrl: 'https://github.com/30-seconds/30-seconds-blog',
+  snippetPath: 'blog_posts',
+  requirables: [
+    'blog_data/snippets.json',
+    // 'blog_data/blog_authors.json',
+  ],
+  slug: 'blog',
+  reducer: 'blogReducer',
+  resolver: 'blogResolver',
+  isBlog: true,
+  theme: {
+    backColor: '#1f253d',
+    foreColor: '#edf0fc',
+  },
+  biasPenaltyMultiplier: 1.01,
+  images: {
+    name: 'blog_images',
+    path: 'blog_images',
+  },
+  tagScores: {
+    'javascript': 5,
+    'react': 4,
+    'css': 4,
+    'array': 4,
+    'list': 4,
+    'object': 4,
+    'python': 3,
+    'webdev': 3,
+    'devtools': 2,
+    'csharp': 2,
+    'php': 1,
+  },
+};
