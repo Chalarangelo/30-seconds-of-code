@@ -4,4 +4,5 @@ module.exports = {
   "repositoryUrl": "https://github.com/30-seconds/30-seconds-blog",
   "snippetPath": "blog_posts",
   "snippetDataPath": "blog_data",
+  "parser": "_30blogParser",
 };
