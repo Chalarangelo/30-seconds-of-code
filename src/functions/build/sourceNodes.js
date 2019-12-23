@@ -19,6 +19,7 @@ const sourceNodes = (requirables, reducers) => ({ actions, createNodeId, createC
     .reduce((acc, sArr) => {
       const commonData = {
         archived: sArr.meta.archived,
+        blog: sArr.meta.blog,
         language: sArr.meta.language,
         otherLanguages: sArr.meta.otherLanguages,
         sourceDir: sArr.meta.sourceDir,
@@ -27,8 +28,8 @@ const sourceNodes = (requirables, reducers) => ({ actions, createNodeId, createC
         reducer: sArr.meta.reducer,
         resolver: sArr.meta.resolver,
         biasPenaltyMultiplier: sArr.meta.biasPenaltyMultiplier,
-        tagScores: sArr.meta.tagScores,
-        keywordScores: sArr.meta.keywordScores,
+        tagScores: sArr.meta.tagScores || [],
+        keywordScores: sArr.meta.keywordScores || [],
         recommendationRanking: 0,
       };
       return ({
