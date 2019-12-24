@@ -1875,7 +1875,7 @@
     }
 
     var argState = Array.isArray(args[0]) ? args[0] : args;
-    var pulled = arr.filter(function (v, i) {
+    var pulled = arr.filter(function (v) {
       return !argState.includes(v);
     });
     arr.length = 0;
