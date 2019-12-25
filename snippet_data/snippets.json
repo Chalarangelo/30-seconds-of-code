@@ -1673,7 +1673,7 @@
         "text": "Splits a multiline string into a list of lines.\n\nUse `s.split()` and `'\\n'` to match line breaks and create a list.\n\n",
         "codeBlocks": {
           "code": "def split_lines(s):\n  return s.split('\\n')",
-          "example": "split_lines('This\\nis a\\nmultiline\\nstring.\\n') # 'This\\nis a\\nmultiline\\nstring.\\n'"
+          "example": "split_lines('This\\nis a\\nmultiline\\nstring.\\n') # ['This', 'is a', 'multiline', 'string.' , '']"
         },
         "tags": [
           "string",
@@ -1681,10 +1681,10 @@
         ]
       },
       "meta": {
-        "hash": "48a3b8088d5537954312dd41a8bbdbf56f6d04c9a2f7f594bbb93822efc3a0aa",
+        "hash": "1131fdad586899d61d591900e8d5308727834ed332384c7b7f90726ee8cdb1c5",
         "firstSeen": "1566306915",
-        "lastUpdated": "1570502638",
-        "updateCount": 5,
+        "lastUpdated": "1577297977",
+        "updateCount": 6,
         "authorCount": 4
       }
     },
