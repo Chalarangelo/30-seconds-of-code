@@ -13,5 +13,5 @@ def split_lines(s):
 ```
 
 ```py
-split_lines('This\nis a\nmultiline\nstring.\n') # 'This\nis a\nmultiline\nstring.\n'
+split_lines('This\nis a\nmultiline\nstring.\n') # ['This', 'is a', 'multiline', 'string.' , '']
 ```
