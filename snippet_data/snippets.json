@@ -1304,7 +1304,7 @@
         "fileName": "median.md",
         "text": "Finds the median of a list of numbers.\n\nSort the numbers of the list using `list.sort()` and find the median, which is either the middle element of the list if the list length is odd or the average of the two middle elements if the list length is even.\n\n",
         "codeBlocks": {
-          "code": "def median(list):\n  list.sort()\n  list_length = len(list)\n    if list_length%2==0:\n  return (list[int(list_length/2)-1] + list[int(list_length/2)])/2\n  else:\n    return list[int(list_length/2)]",
+          "code": "def median(list):\n  list.sort()\n  list_length = len(list)\n  if list_length % 2 == 0:\n    return (list[int(list_length / 2) - 1] + list[int(list_length / 2)]) / 2\n  return list[int(list_length / 2)]",
           "example": "median([1,2,3]) # 2\nmedian([1,2,3,4]) # 2.5"
         },
         "tags": [
@@ -1313,11 +1313,11 @@
         ]
       },
       "meta": {
-        "hash": "a2f09e1423bde7161422814e3ecdb2ce77dac812df719ea60c37f55c06a06705",
+        "hash": "b271bd6034b0b38ee3e998f52e2512dea24266952f632987d77a916abc7597f3",
         "firstSeen": "1570093337",
-        "lastUpdated": "1570169630",
-        "updateCount": 7,
-        "authorCount": 4
+        "lastUpdated": "1577363941",
+        "updateCount": 8,
+        "authorCount": 5
       }
     },
     {
