@@ -7,7 +7,7 @@ Chunks a list into smaller lists of a specified size.
 
 Use `list()` and `range()` to create a list of the desired `size`.
 Use `map()` on the list and fill it with splices of the given list.
-Finally, return use created list.
+Finally, return the created list.
 
 ```py
 from math import ceil
