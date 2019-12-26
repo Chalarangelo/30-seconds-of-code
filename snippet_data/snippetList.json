@@ -176,14 +176,14 @@
       "type": "snippetListing",
       "title": "chunk",
       "attributes": {
-        "text": "Chunks a list into smaller lists of a specified size.\n\nUse `list()` and `range()` to create a list of the desired `size`.\nUse `map()` on the list and fill it with splices of the given list.\nFinally, return use created list.\n\n",
+        "text": "Chunks a list into smaller lists of a specified size.\n\nUse `list()` and `range()` to create a list of the desired `size`.\nUse `map()` on the list and fill it with splices of the given list.\nFinally, return the created list.\n\n",
         "tags": [
           "list",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "f8c9cdb2261bfe2932bc7d3d11853a3d42d468a88ad515e9f15d9abffe9b30a6"
+        "hash": "0084a25a57f89e81891e4096e1c6a9efef50b50c1dbd8f837bf7c6a9a12bfadf"
       }
     },
     {

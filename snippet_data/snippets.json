@@ -276,7 +276,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "chunk.md",
-        "text": "Chunks a list into smaller lists of a specified size.\n\nUse `list()` and `range()` to create a list of the desired `size`.\nUse `map()` on the list and fill it with splices of the given list.\nFinally, return use created list.\n\n",
+        "text": "Chunks a list into smaller lists of a specified size.\n\nUse `list()` and `range()` to create a list of the desired `size`.\nUse `map()` on the list and fill it with splices of the given list.\nFinally, return the created list.\n\n",
         "codeBlocks": {
           "code": "from math import ceil\n\ndef chunk(lst, size):\n  return list(\n    map(lambda x: lst[x * size:x * size + size],\n      list(range(0, ceil(len(lst) / size)))))",
           "example": "chunk([1,2,3,4,5],2) # [[1,2],[3,4],5]"
@@ -287,10 +287,10 @@
         ]
       },
       "meta": {
-        "hash": "f8c9cdb2261bfe2932bc7d3d11853a3d42d468a88ad515e9f15d9abffe9b30a6",
+        "hash": "0084a25a57f89e81891e4096e1c6a9efef50b50c1dbd8f837bf7c6a9a12bfadf",
         "firstSeen": "1515472782",
-        "lastUpdated": "1566285856",
-        "updateCount": 13,
+        "lastUpdated": "1577380361",
+        "updateCount": 14,
         "authorCount": 4
       }
     },
