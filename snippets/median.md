@@ -11,10 +11,9 @@ Sort the numbers of the list using `list.sort()` and find the median, which is e
 def median(list):
   list.sort()
   list_length = len(list)
-    if list_length%2==0:
-  return (list[int(list_length/2)-1] + list[int(list_length/2)])/2
-  else:
-    return list[int(list_length/2)]
+  if list_length % 2 == 0:
+    return (list[int(list_length / 2) - 1] + list[int(list_length / 2)]) / 2
+  return list[int(list_length / 2)]
 ```
 
 ```py
