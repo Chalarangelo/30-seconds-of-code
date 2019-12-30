@@ -104,6 +104,17 @@ const createPages = (query, templates, requirables) => ({ graphql, actions }) =>
         }
       );
 
+      createSnippetPages(
+        result.data.blogSnippets.edges,
+        templates['SnippetPage'],
+        createPage,
+        {
+          ...commonContext,
+          cardTemplate: 'blog',
+        },
+        result.data.images.edges
+      );
+
       createSearchIndexPage(
         templates['SearchPage'],
         createPage,
