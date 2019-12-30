@@ -6,12 +6,14 @@ export default `
     edges {
       node {
         slug
+        blog
         title
         html {
           description
         }
         tags {
           primary
+          all
         }
         expertise
         language {
