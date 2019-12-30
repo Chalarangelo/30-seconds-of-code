@@ -617,7 +617,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "fibonacci.md",
-        "text": "Generates an array, containing the Fibonacci sequence, up until the nth term.\n\nStarting with `0` and `1`, use `list.append() to add the sum of the last two numbers of the list to the end of the list, until the length of the list reaches `n`.  \nIf `n` is less or equal to `0`, return a list containing `0`.\n\n",
+        "text": "Generates an array, containing the Fibonacci sequence, up until the nth term.\n\nStarting with `0` and `1`, use `list.append()` to add the sum of the last two numbers of the list to the end of the list, until the length of the list reaches `n`.  \nIf `n` is less or equal to `0`, return a list containing `0`.\n\n",
         "codeBlocks": {
           "code": "def fibonacci(n):\r\n  if n <= 0:\r\n    return [0]\r\n\r\n  sequence = [0, 1]\r\n  while len(sequence) <= n:\r\n    next_value = sequence[len(sequence) - 1] + sequence[len(sequence) - 2]\r\n    sequence.append(next_value)\r\n\r\n  return sequence",
           "example": "fibonacci(7) # [0, 1, 1, 2, 3, 5, 8, 13]"
@@ -629,10 +629,10 @@
         ]
       },
       "meta": {
-        "hash": "7d93f4ef6ec2a6a9c782dde422fe0b02dc382167d51ddb53b644cdfab65a6e75",
+        "hash": "e1d19bb17ed3623d36c380b86b8ab675eb6d01e4a7a80e23c4531c29b2efdd02",
         "firstSeen": "1538795193",
-        "lastUpdated": "1571316263",
-        "updateCount": 8,
+        "lastUpdated": "1577709298",
+        "updateCount": 9,
         "authorCount": 5
       }
     },
