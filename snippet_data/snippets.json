@@ -658,7 +658,7 @@
         "codeBlocks": {
           "es6": "const checkProp = (predicate, prop) => obj => !!predicate(obj[prop]);",
           "es5": "var checkProp = function checkProp(predicate, prop) {\n  return function (obj) {\n    return !!predicate(obj[prop]);\n  };\n};",
-          "example": "const lengthIs4 = checkProp(l => l === 4, 'length');\nlengthIs4([]); // false\nlengthIs4([1, 2, 3, 4]); // true\nlengthIs4(new Set([1, 2, 3, 4])); // false (Set uses Size, not length)\n\nconst session = { user: {} };\nconst validUserSession = checkProps(u => u.active && !u.disabled, 'user');\n\nvalidUserSession(session); // false\n\nsession.user.active = true;\nvalidUserSession(session); // true\n\nconst noLength = checkProp(l => l === undefined, 'length');\nnoLength([]); // false\nnoLength({}); // true\nnoLength(new Set()); // true"
+          "example": "const lengthIs4 = checkProp(l => l === 4, 'length');\nlengthIs4([]); // false\nlengthIs4([1, 2, 3, 4]); // true\nlengthIs4(new Set([1, 2, 3, 4])); // false (Set uses Size, not length)\n\nconst session = { user: {} };\nconst validUserSession = checkProp(u => u.active && !u.disabled, 'user');\n\nvalidUserSession(session); // false\n\nsession.user.active = true;\nvalidUserSession(session); // true\n\nconst noLength = checkProp(l => l === undefined, 'length');\nnoLength([]); // false\nnoLength({}); // true\nnoLength(new Set()); // true"
         },
         "tags": [
           "function",
@@ -668,11 +668,11 @@
         ]
       },
       "meta": {
-        "hash": "8ebea84d2f15aca4284f61f861396e36492b8c292aaf4abd68afb58eea1b6422",
+        "hash": "52eca7b91d4205abe619c672895a773fc7ed7c2e151fd37e83ceda54ee74ad71",
         "firstSeen": "1552787580",
-        "lastUpdated": "1575888980",
-        "updateCount": 76,
-        "authorCount": 6
+        "lastUpdated": "1577784150",
+        "updateCount": 77,
+        "authorCount": 7
       }
     },
     {
@@ -1361,10 +1361,10 @@
         ]
       },
       "meta": {
-        "hash": "5ab25ab96afd4f1f481fc318b5b290ba8c57a468ef6bca0ca200cfb7fcf3ba9f",
+        "hash": "77a01af8797ecbe71b9c9412d21c144c03a46a49dd3d0e7d869c3df38b39b2b4",
         "firstSeen": "1516733326",
-        "lastUpdated": "1577431401",
-        "updateCount": 54,
+        "lastUpdated": "1577785133",
+        "updateCount": 55,
         "authorCount": 9
       }
     },
@@ -1464,10 +1464,10 @@
         ]
       },
       "meta": {
-        "hash": "7a228b650ff668f697e524e0d27ebeff1bfa35e04333b6cd5e742ff63bfea25d",
+        "hash": "6fa14364405f7b99aa49c2157bdc08c02b4ce2f288db29a4348a6983460933c7",
         "firstSeen": "1544374334\n1543497773",
-        "lastUpdated": "1577431401",
-        "updateCount": 68,
+        "lastUpdated": "1577785133",
+        "updateCount": 69,
         "authorCount": 4
       }
     },
@@ -1682,7 +1682,7 @@
         "fileName": "dig.md",
         "text": "Returns the target value in a nested JSON object, based on the given key.\n\nUse the `in` operator to check if `target` exists in `obj`.\nIf found, return the value of `obj[target]`, otherwise use `Object.values(obj)` and `Array.prototype.reduce()` to recursively call `dig` on each nested object until the first matching key/value pair is found.\n\n",
         "codeBlocks": {
-          "es6": "const dig = (obj, target) =>\n  target in obj\n    ? obj[target]\n    : Object.values(obj).reduce((acc, val) => {\n      if (acc !== undefined) return acc;\n      if (typeof val === 'object') return dig(val, target);\n    }, undefined);",
+          "es6": "const dig = (obj, target) =>\n  target in obj\n    ? obj[target]\n    : Object.values(obj).reduce((acc, val) => {\n        if (acc !== undefined) return acc;\n        if (typeof val === 'object') return dig(val, target);\n      }, undefined);",
           "es5": "function _typeof(obj) { if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }; } return _typeof(obj); }\n\nvar dig = function dig(obj, target) {\n  return target in obj ? obj[target] : Object.values(obj).reduce(function (acc, val) {\n    if (acc !== undefined) return acc;\n    if (_typeof(val) === 'object') return dig(val, target);\n  }, undefined);\n};",
           "example": "const data = {\n  level1: {\n    level2: {\n      level3: 'some data'\n    }\n  }\n};\ndig(data, 'level3'); // 'some data'\ndig(data, 'level4'); // undefined"
         },
@@ -1693,10 +1693,10 @@
         ]
       },
       "meta": {
-        "hash": "5f38360819f9225b887a94221bfee1a80f1bcc224a364440b3388f60491b03ba",
+        "hash": "484bd222e636e8a8409c30ddb1fe6e3fe72ab7a43f2edf089b2758d5e9bee528",
         "firstSeen": "1531080384",
-        "lastUpdated": "1577431401",
-        "updateCount": 88,
+        "lastUpdated": "1577785133",
+        "updateCount": 89,
         "authorCount": 5
       }
     },
@@ -2068,7 +2068,7 @@
         "fileName": "factorial.md",
         "text": "Calculates the factorial of a number.\n\nUse recursion.\nIf `n` is less than or equal to `1`, return `1`.\nOtherwise, return the product of `n` and the factorial of `n - 1`.\nThrows an exception if `n` is a negative number.\n\n",
         "codeBlocks": {
-          "es6": "const factorial = n =>\n  n < 0\n    ? (() => {\n      throw new TypeError('Negative numbers are not allowed!');\n    })()\n    : n <= 1\n      ? 1\n      : n * factorial(n - 1);",
+          "es6": "const factorial = n =>\n  n < 0\n    ? (() => {\n        throw new TypeError('Negative numbers are not allowed!');\n      })()\n    : n <= 1\n    ? 1\n    : n * factorial(n - 1);",
           "es5": "var factorial = function factorial(n) {\n  return n < 0 ? function () {\n    throw new TypeError('Negative numbers are not allowed!');\n  }() : n <= 1 ? 1 : n * factorial(n - 1);\n};",
           "example": "factorial(6); // 720"
         },
@@ -2079,10 +2079,10 @@
         ]
       },
       "meta": {
-        "hash": "55b1ce0a892110d792a9487e40331774015525479faa2b8961f6c2ea6291c27b",
+        "hash": "0eac852db7a7add352b0d36677b22718b342ed9dc12f11780cac87e3b8260a05",
         "firstSeen": "1512650493",
-        "lastUpdated": "1577431401",
-        "updateCount": 93,
+        "lastUpdated": "1577785133",
+        "updateCount": 94,
         "authorCount": 6
       }
     },
@@ -2734,7 +2734,7 @@
         "fileName": "getMeridiemSuffixOfInteger.md",
         "text": "Converts an integer to a suffixed string, adding `am` or `pm` based on its value.\n\nUse the modulo operator (`%`) and conditional checks to transform an integer to a stringified 12-hour format with meridiem suffix.\n\n",
         "codeBlocks": {
-          "es6": "const getMeridiemSuffixOfInteger = num =>\n  num === 0 || num === 24\n    ? 12 + 'am'\n    : num === 12\n      ? 12 + 'pm'\n      : num < 12\n        ? (num % 12) + 'am'\n        : (num % 12) + 'pm';",
+          "es6": "const getMeridiemSuffixOfInteger = num =>\n  num === 0 || num === 24\n    ? 12 + 'am'\n    : num === 12\n    ? 12 + 'pm'\n    : num < 12\n    ? (num % 12) + 'am'\n    : (num % 12) + 'pm';",
           "es5": "var getMeridiemSuffixOfInteger = function getMeridiemSuffixOfInteger(num) {\n  return num === 0 || num === 24 ? 12 + 'am' : num === 12 ? 12 + 'pm' : num < 12 ? num % 12 + 'am' : num % 12 + 'pm';\n};",
           "example": "getMeridiemSuffixOfInteger(0); // \"12am\"\ngetMeridiemSuffixOfInteger(11); // \"11am\"\ngetMeridiemSuffixOfInteger(13); // \"1pm\"\ngetMeridiemSuffixOfInteger(25); // \"1pm\""
         },
@@ -2744,10 +2744,10 @@
         ]
       },
       "meta": {
-        "hash": "16c3b724b653dcb31f3e59f1664a59951abb15a93eb3697cade4d3ae0e63c532",
+        "hash": "9e39c6a3a8ec5b51c5e16f69107fc9e90b2697b2cf2689850872071bb968723e",
         "firstSeen": "1515856488",
-        "lastUpdated": "1577431401",
-        "updateCount": 50,
+        "lastUpdated": "1577785133",
+        "updateCount": 51,
         "authorCount": 4
       }
     },
@@ -4682,8 +4682,8 @@
       "meta": {
         "hash": "362fddaa6244404741e84bca6fc442a101fdb642af53b299e8b9994d0d7162d8",
         "firstSeen": "1514801920",
-        "lastUpdated": "1577431401",
-        "updateCount": 56,
+        "lastUpdated": "1577785133",
+        "updateCount": 57,
         "authorCount": 7
       }
     },
@@ -5593,8 +5593,8 @@
       "meta": {
         "hash": "b031c3387ef66411ab5d295788eac4247ada5b4b068dda90603d3c973890bc26",
         "firstSeen": "1570824965",
-        "lastUpdated": "1577431401",
-        "updateCount": 23,
+        "lastUpdated": "1577785133",
+        "updateCount": 24,
         "authorCount": 4
       }
     },
@@ -6162,8 +6162,8 @@
       "meta": {
         "hash": "17bcf3f13980b7f804d9f0fe274324b2a35ab7d479c03d77322dabba81e1a34a",
         "firstSeen": "1517069864",
-        "lastUpdated": "1577431401",
-        "updateCount": 80,
+        "lastUpdated": "1577785133",
+        "updateCount": 81,
         "authorCount": 5
       }
     },
@@ -6809,8 +6809,8 @@
       "meta": {
         "hash": "069472d018c3102412dafc2ae8ec6e9396e53c01d0073079f2e3f1ac3c99b6e9",
         "firstSeen": "1513521691",
-        "lastUpdated": "1577431401",
-        "updateCount": 77,
+        "lastUpdated": "1577785133",
+        "updateCount": 78,
         "authorCount": 6
       }
     },
@@ -7325,8 +7325,8 @@
       "meta": {
         "hash": "24b93b68a59b49f245590930fed6fb82e286ce09f90e292466cde63c1784c347",
         "firstSeen": "1514645161",
-        "lastUpdated": "1577431401",
-        "updateCount": 22,
+        "lastUpdated": "1577785133",
+        "updateCount": 23,
         "authorCount": 5
       }
     },
@@ -8938,7 +8938,7 @@
         "fileName": "weightedSample.md",
         "text": "Returns a random element from an array, using the provided `weights` as the probabilities for each element.\n\nUse `Array.prototype.reduce()` to create an array of partial sums for each value in `weights`.\nUse `Math.random()` to generate a random number and `Array.prototype.findIndex()` to find the correct index based on the array previously produced.\nFinally, return the element of `arr` with the produced index.\n\n\n",
         "codeBlocks": {
-          "es6": "const weightedSample = (arr, weights) => {\n  let roll = Math.random();\n  return arr[\n    weights\n      .reduce((acc, w, i) =>\n        i === 0 ? [w] : [...acc, acc[acc.length - 1] + w],\n        []\n      )\n      .findIndex((v, i, s) =>\n        roll >= (i === 0 ? 0 : s[i - 1]) && roll < v\n      )\n  ];\n}",
+          "es6": "const weightedSample = (arr, weights) => {\n  let roll = Math.random();\n  return arr[\n    weights\n      .reduce((acc, w, i) => (i === 0 ? [w] : [...acc, acc[acc.length - 1] + w]), [])\n      .findIndex((v, i, s) => roll >= (i === 0 ? 0 : s[i - 1]) && roll < v)\n  ];\n};",
           "es5": "function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }\n\nfunction _nonIterableSpread() { throw new TypeError(\"Invalid attempt to spread non-iterable instance\"); }\n\nfunction _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === \"[object Arguments]\") return Array.from(iter); }\n\nfunction _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }\n\nvar weightedSample = function weightedSample(arr, weights) {\n  var roll = Math.random();\n  return arr[weights.reduce(function (acc, w, i) {\n    return i === 0 ? [w] : [].concat(_toConsumableArray(acc), [acc[acc.length - 1] + w]);\n  }, []).findIndex(function (v, i, s) {\n    return roll >= (i === 0 ? 0 : s[i - 1]) && roll < v;\n  })];\n};",
           "example": "weightedSample([3, 7, 9, 11], [0.1, 0.2, 0.6, 0.1]); // 9"
         },
@@ -8949,11 +8949,11 @@
         ]
       },
       "meta": {
-        "hash": "6bba5ca7427489cdf18476542772743ae2d5f4eccb42ff93ee61b9f8ba1f55d6",
-        "firstSeen": "",
-        "lastUpdated": "",
-        "updateCount": 1,
-        "authorCount": 1
+        "hash": "94d3b2ea296a94907be873c19381a525eeb96676cd52cb1baf1bd76bc22971a6",
+        "firstSeen": "1577784866",
+        "lastUpdated": "1577785133",
+        "updateCount": 3,
+        "authorCount": 3
       }
     },
     {
