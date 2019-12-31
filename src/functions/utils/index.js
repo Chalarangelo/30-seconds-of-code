@@ -20,6 +20,7 @@ import {
   transformSnippetIndex,
   uniqueElements,
   similarity,
+  weightedSample,
   chunk
 } from './array';
 
@@ -44,5 +45,6 @@ export {
   transformSnippetIndex,
   uniqueElements,
   similarity,
+  weightedSample,
   chunk
 };
