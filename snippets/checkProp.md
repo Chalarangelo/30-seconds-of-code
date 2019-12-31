@@ -50,7 +50,7 @@ lengthIs4([1, 2, 3, 4]); // true
 lengthIs4(new Set([1, 2, 3, 4])); // false (Set uses Size, not length)
 
 const session = { user: {} };
-const validUserSession = checkProps(u => u.active && !u.disabled, 'user');
+const validUserSession = checkProp(u => u.active && !u.disabled, 'user');
 
 validUserSession(session); // false
 
