@@ -603,7 +603,7 @@
   const isObjectLike = val => val !== null && typeof val === 'object';
   const isOdd = num => num % 2 === 1;
   const isPlainObject = val => !!val && typeof val === 'object' && val.constructor === Object;
-  const isPowerOfTwo = n => !!n && ((n & (n - 1)) == 0);
+  const isPowerOfTwo = n => !!n && (n & (n - 1)) == 0;
   const isPrime = num => {
     const boundary = Math.floor(Math.sqrt(num));
     for (var i = 2; i <= boundary; i++) if (num % i === 0) return false;
@@ -661,8 +661,8 @@
         i === arr.length - 2
           ? acc + val + end
           : i === arr.length - 1
-            ? acc + val
-            : acc + val + separator,
+          ? acc + val
+          : acc + val + separator,
       ''
     );
   const JSONtoCSV = (arr, columns, delimiter = ',') =>
@@ -780,10 +780,10 @@
   const objectToQueryString = queryParameters => {
     return queryParameters
       ? Object.entries(queryParameters).reduce((queryString, [key, val], index) => {
-        const symbol = queryString.length === 0 ? '?' : '&';
-        queryString += typeof val === 'string' ? `${symbol}${key}=${val}` : '';
-        return queryString;
-      }, '')
+          const symbol = queryString.length === 0 ? '?' : '&';
+          queryString += typeof val === 'string' ? `${symbol}${key}=${val}` : '';
+          return queryString;
+        }, '')
       : '';
   };
   const observeMutations = (element, callback, options) => {
@@ -1014,9 +1014,9 @@
   const remove = (arr, func) =>
     Array.isArray(arr)
       ? arr.filter(func).reduce((acc, val) => {
-          arr.splice(arr.indexOf(val), 1);
-          return acc.concat(val);
-        }, [])
+        arr.splice(arr.indexOf(val), 1);
+        return acc.concat(val);
+      }, [])
       : [];
   const removeNonASCII = str => str.replace(/[^\x20-\x7E]/g, '');
   const renameKeys = (keysMap, obj) =>
@@ -1094,10 +1094,10 @@
     Array.isArray(val)
       ? val.length
       : val && typeof val === 'object'
-        ? val.size || val.length || Object.keys(val).length
-        : typeof val === 'string'
-          ? new Blob([val]).size
-          : 0;
+      ? val.size || val.length || Object.keys(val).length
+      : typeof val === 'string'
+      ? new Blob([val]).size
+      : 0;
   const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
   const smoothScroll = element =>
     document.querySelector(element).scrollIntoView({
@@ -1381,13 +1381,8 @@
     let roll = Math.random();
     return arr[
       weights
-        .reduce((acc, w, i) =>
-          i === 0 ? [w] : [...acc, acc[acc.length - 1] + w],
-          []
-        )
-        .findIndex((v, i, s) =>
-          roll >= (i === 0 ? 0 : s[i - 1]) && roll < v
-        )
+        .reduce((acc, w, i) => (i === 0 ? [w] : [...acc, acc[acc.length - 1] + w]), [])
+        .findIndex((v, i, s) => roll >= (i === 0 ? 0 : s[i - 1]) && roll < v)
     ];
   };
   const when = (pred, whenTrue) => x => (pred(x) ? whenTrue(x) : x);

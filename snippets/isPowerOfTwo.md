@@ -9,7 +9,7 @@ Use the bitwise binary AND operator (`&`) to determine if `n is a power of `2.
 Additionally, check that `n` is not falsy.
 
 ```js
-const isPowerOfTwo = n => !!n && ((n & (n - 1)) == 0);
+const isPowerOfTwo = n => !!n && (n & (n - 1)) == 0;
 ```
 
 ```js

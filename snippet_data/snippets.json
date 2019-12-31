@@ -658,7 +658,7 @@
         "codeBlocks": {
           "es6": "const checkProp = (predicate, prop) => obj => !!predicate(obj[prop]);",
           "es5": "var checkProp = function checkProp(predicate, prop) {\n  return function (obj) {\n    return !!predicate(obj[prop]);\n  };\n};",
-          "example": "const lengthIs4 = checkProp(l => l === 4, 'length');\nlengthIs4([]); // false\nlengthIs4([1, 2, 3, 4]); // true\nlengthIs4(new Set([1, 2, 3, 4])); // false (Set uses Size, not length)\n\nconst session = { user: {} };\nconst validUserSession = checkProps(u => u.active && !u.disabled, 'user');\n\nvalidUserSession(session); // false\n\nsession.user.active = true;\nvalidUserSession(session); // true\n\nconst noLength = checkProp(l => l === undefined, 'length');\nnoLength([]); // false\nnoLength({}); // true\nnoLength(new Set()); // true"
+          "example": "const lengthIs4 = checkProp(l => l === 4, 'length');\nlengthIs4([]); // false\nlengthIs4([1, 2, 3, 4]); // true\nlengthIs4(new Set([1, 2, 3, 4])); // false (Set uses Size, not length)\n\nconst session = { user: {} };\nconst validUserSession = checkProp(u => u.active && !u.disabled, 'user');\n\nvalidUserSession(session); // false\n\nsession.user.active = true;\nvalidUserSession(session); // true\n\nconst noLength = checkProp(l => l === undefined, 'length');\nnoLength([]); // false\nnoLength({}); // true\nnoLength(new Set()); // true"
         },
         "tags": [
           "function",
@@ -668,11 +668,11 @@
         ]
       },
       "meta": {
-        "hash": "8ebea84d2f15aca4284f61f861396e36492b8c292aaf4abd68afb58eea1b6422",
+        "hash": "52eca7b91d4205abe619c672895a773fc7ed7c2e151fd37e83ceda54ee74ad71",
         "firstSeen": "1552787580",
-        "lastUpdated": "1575888980",
-        "updateCount": 76,
-        "authorCount": 6
+        "lastUpdated": "1577784150",
+        "updateCount": 77,
+        "authorCount": 7
       }
     },
     {
@@ -1363,8 +1363,8 @@
       "meta": {
         "hash": "77a01af8797ecbe71b9c9412d21c144c03a46a49dd3d0e7d869c3df38b39b2b4",
         "firstSeen": "1516733326",
-        "lastUpdated": "1577431401",
-        "updateCount": 54,
+        "lastUpdated": "1577785133",
+        "updateCount": 55,
         "authorCount": 9
       }
     },
@@ -1466,8 +1466,8 @@
       "meta": {
         "hash": "6fa14364405f7b99aa49c2157bdc08c02b4ce2f288db29a4348a6983460933c7",
         "firstSeen": "1544374334\n1543497773",
-        "lastUpdated": "1577431401",
-        "updateCount": 68,
+        "lastUpdated": "1577785133",
+        "updateCount": 69,
         "authorCount": 4
       }
     },
@@ -1695,8 +1695,8 @@
       "meta": {
         "hash": "bdc202436bee09f06a353d31841c6cfff33e8efead34c6c56ae1a1413284976d",
         "firstSeen": "1531080384",
-        "lastUpdated": "1577431401",
-        "updateCount": 88,
+        "lastUpdated": "1577785478",
+        "updateCount": 90,
         "authorCount": 5
       }
     },
@@ -2081,8 +2081,8 @@
       "meta": {
         "hash": "6e9710c9117f500e74e65c0ee36b39fb80bd55537fa5ff9c4b1136b2667096f2",
         "firstSeen": "1512650493",
-        "lastUpdated": "1577431401",
-        "updateCount": 93,
+        "lastUpdated": "1577785478",
+        "updateCount": 95,
         "authorCount": 6
       }
     },
@@ -2746,8 +2746,8 @@
       "meta": {
         "hash": "f9e6687cc28cd80e68f7a6776f893c7478aaa942710e0eb7144f105eba574a54",
         "firstSeen": "1515856488",
-        "lastUpdated": "1577431401",
-        "updateCount": 50,
+        "lastUpdated": "1577785478",
+        "updateCount": 52,
         "authorCount": 4
       }
     },
@@ -4247,6 +4247,31 @@
         "lastUpdated": "1565681352",
         "updateCount": 5,
         "authorCount": 4
+      }
+    },
+    {
+      "id": "isPowerOfTwo",
+      "title": "isPowerOfTwo",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "isPowerOfTwo.md",
+        "text": "Returns `true` if the given number is a power of `2`, `false` otherwise.\n\nUse the bitwise binary AND operator (`&`) to determine if `n is a power of `2. \nAdditionally, check that `n` is not falsy.\n\n",
+        "codeBlocks": {
+          "es6": "const isPowerOfTwo = n => !!n && (n & (n - 1)) == 0;",
+          "es5": "var isPowerOfTwo = function isPowerOfTwo(n) {\n  return !!n && (n & n - 1) == 0;\n};",
+          "example": "isPowerOfTwo(0); // false\nisPowerOfTwo(1); // true\nisPowerOfTwo(8); // true"
+        },
+        "tags": [
+          "math",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "93dcd24b208880ba16d9aa32e59e718187cb4178cadb5876a4bc7c588ddcdebd",
+        "firstSeen": "1577791032",
+        "lastUpdated": "1577791032",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -8951,9 +8976,9 @@
       "meta": {
         "hash": "94d3b2ea296a94907be873c19381a525eeb96676cd52cb1baf1bd76bc22971a6",
         "firstSeen": "1577784866",
-        "lastUpdated": "1577784866",
-        "updateCount": 2,
-        "authorCount": 2
+        "lastUpdated": "1577785133",
+        "updateCount": 3,
+        "authorCount": 3
       }
     },
     {

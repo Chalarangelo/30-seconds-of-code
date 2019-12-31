@@ -412,7 +412,7 @@
         ]
       },
       "meta": {
-        "hash": "8ebea84d2f15aca4284f61f861396e36492b8c292aaf4abd68afb58eea1b6422"
+        "hash": "52eca7b91d4205abe619c672895a773fc7ed7c2e151fd37e83ceda54ee74ad71"
       }
     },
     {
@@ -2597,6 +2597,21 @@
       },
       "meta": {
         "hash": "8a9ef17eda1a977bdd1149a4a782d7d0e7addd8c6db8d4bd3734c9269863b12c"
+      }
+    },
+    {
+      "id": "isPowerOfTwo",
+      "type": "snippetListing",
+      "title": "isPowerOfTwo",
+      "attributes": {
+        "text": "Returns `true` if the given number is a power of `2`, `false` otherwise.\n\nUse the bitwise binary AND operator (`&`) to determine if `n is a power of `2. \nAdditionally, check that `n` is not falsy.\n\n",
+        "tags": [
+          "math",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "93dcd24b208880ba16d9aa32e59e718187cb4178cadb5876a4bc7c588ddcdebd"
       }
     },
     {
