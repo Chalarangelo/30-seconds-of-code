@@ -1363,8 +1363,8 @@
       "meta": {
         "hash": "5ab25ab96afd4f1f481fc318b5b290ba8c57a468ef6bca0ca200cfb7fcf3ba9f",
         "firstSeen": "1516733326",
-        "lastUpdated": "1577167952",
-        "updateCount": 53,
+        "lastUpdated": "1577431401",
+        "updateCount": 54,
         "authorCount": 9
       }
     },
@@ -1466,8 +1466,8 @@
       "meta": {
         "hash": "7a228b650ff668f697e524e0d27ebeff1bfa35e04333b6cd5e742ff63bfea25d",
         "firstSeen": "1544374334\n1543497773",
-        "lastUpdated": "1577167952",
-        "updateCount": 67,
+        "lastUpdated": "1577431401",
+        "updateCount": 68,
         "authorCount": 4
       }
     },
@@ -1695,8 +1695,8 @@
       "meta": {
         "hash": "5f38360819f9225b887a94221bfee1a80f1bcc224a364440b3388f60491b03ba",
         "firstSeen": "1531080384",
-        "lastUpdated": "1577167952",
-        "updateCount": 87,
+        "lastUpdated": "1577431401",
+        "updateCount": 88,
         "authorCount": 5
       }
     },
@@ -2081,8 +2081,8 @@
       "meta": {
         "hash": "55b1ce0a892110d792a9487e40331774015525479faa2b8961f6c2ea6291c27b",
         "firstSeen": "1512650493",
-        "lastUpdated": "1577167952",
-        "updateCount": 92,
+        "lastUpdated": "1577431401",
+        "updateCount": 93,
         "authorCount": 6
       }
     },
@@ -2746,8 +2746,8 @@
       "meta": {
         "hash": "16c3b724b653dcb31f3e59f1664a59951abb15a93eb3697cade4d3ae0e63c532",
         "firstSeen": "1515856488",
-        "lastUpdated": "1577167952",
-        "updateCount": 49,
+        "lastUpdated": "1577431401",
+        "updateCount": 50,
         "authorCount": 4
       }
     },
@@ -4682,8 +4682,8 @@
       "meta": {
         "hash": "362fddaa6244404741e84bca6fc442a101fdb642af53b299e8b9994d0d7162d8",
         "firstSeen": "1514801920",
-        "lastUpdated": "1577167952",
-        "updateCount": 55,
+        "lastUpdated": "1577431401",
+        "updateCount": 56,
         "authorCount": 7
       }
     },
@@ -5593,8 +5593,8 @@
       "meta": {
         "hash": "b031c3387ef66411ab5d295788eac4247ada5b4b068dda90603d3c973890bc26",
         "firstSeen": "1570824965",
-        "lastUpdated": "1577167952",
-        "updateCount": 22,
+        "lastUpdated": "1577431401",
+        "updateCount": 23,
         "authorCount": 4
       }
     },
@@ -6162,8 +6162,8 @@
       "meta": {
         "hash": "17bcf3f13980b7f804d9f0fe274324b2a35ab7d479c03d77322dabba81e1a34a",
         "firstSeen": "1517069864",
-        "lastUpdated": "1577167952",
-        "updateCount": 79,
+        "lastUpdated": "1577431401",
+        "updateCount": 80,
         "authorCount": 5
       }
     },
@@ -6809,8 +6809,8 @@
       "meta": {
         "hash": "069472d018c3102412dafc2ae8ec6e9396e53c01d0073079f2e3f1ac3c99b6e9",
         "firstSeen": "1513521691",
-        "lastUpdated": "1577167952",
-        "updateCount": 76,
+        "lastUpdated": "1577431401",
+        "updateCount": 77,
         "authorCount": 6
       }
     },
@@ -7325,8 +7325,8 @@
       "meta": {
         "hash": "24b93b68a59b49f245590930fed6fb82e286ce09f90e292466cde63c1784c347",
         "firstSeen": "1514645161",
-        "lastUpdated": "1577167952",
-        "updateCount": 21,
+        "lastUpdated": "1577431401",
+        "updateCount": 22,
         "authorCount": 5
       }
     },
@@ -8928,6 +8928,32 @@
         "lastUpdated": "1565681352",
         "updateCount": 6,
         "authorCount": 4
+      }
+    },
+    {
+      "id": "weightedSample",
+      "title": "weightedSample",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "weightedSample.md",
+        "text": "Returns a random element from an array, using the provided `weights` as the probabilities for each element.\n\nUse `Array.prototype.reduce()` to create an array of partial sums for each value in `weights`.\nUse `Math.random()` to generate a random number and `Array.prototype.findIndex()` to find the correct index based on the array previously produced.\nFinally, return the element of `arr` with the produced index.\n\n\n",
+        "codeBlocks": {
+          "es6": "const weightedSample = (arr, weights) => {\n  let roll = Math.random();\n  return arr[\n    weights\n      .reduce((acc, w, i) =>\n        i === 0 ? [w] : [...acc, acc[acc.length - 1] + w],\n        []\n      )\n      .findIndex((v, i, s) =>\n        roll >= (i === 0 ? 0 : s[i - 1]) && roll < v\n      )\n  ];\n}",
+          "es5": "function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }\n\nfunction _nonIterableSpread() { throw new TypeError(\"Invalid attempt to spread non-iterable instance\"); }\n\nfunction _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === \"[object Arguments]\") return Array.from(iter); }\n\nfunction _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }\n\nvar weightedSample = function weightedSample(arr, weights) {\n  var roll = Math.random();\n  return arr[weights.reduce(function (acc, w, i) {\n    return i === 0 ? [w] : [].concat(_toConsumableArray(acc), [acc[acc.length - 1] + w]);\n  }, []).findIndex(function (v, i, s) {\n    return roll >= (i === 0 ? 0 : s[i - 1]) && roll < v;\n  })];\n};",
+          "example": "weightedSample([3, 7, 9, 11], [0.1, 0.2, 0.6, 0.1]); // 9"
+        },
+        "tags": [
+          "array",
+          "random",
+          "advanced"
+        ]
+      },
+      "meta": {
+        "hash": "6bba5ca7427489cdf18476542772743ae2d5f4eccb42ff93ee61b9f8ba1f55d6",
+        "firstSeen": "",
+        "lastUpdated": "",
+        "updateCount": 1,
+        "authorCount": 1
       }
     },
     {

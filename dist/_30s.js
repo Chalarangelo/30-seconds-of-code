@@ -1376,6 +1376,19 @@
       .reduce((acc, val, i) => acc + Math.pow(val - coords[pointLength + i], 2), 0);
     return Math.sqrt(sum);
   };
+  const weightedSample = (arr, weights) => {
+    let roll = Math.random();
+    return arr[
+      weights
+        .reduce((acc, w, i) =>
+          i === 0 ? [w] : [...acc, acc[acc.length - 1] + w],
+          []
+        )
+        .findIndex((v, i, s) =>
+          roll >= (i === 0 ? 0 : s[i - 1]) && roll < v
+        )
+    ];
+  };
   const when = (pred, whenTrue) => x => (pred(x) ? whenTrue(x) : x);
   const without = (arr, ...args) => arr.filter(v => !args.includes(v));
   const words = (str, pattern = /[^a-zA-Z-]+/) => str.split(pattern).filter(Boolean);
@@ -1912,6 +1925,7 @@
   exports.UUIDGeneratorNode = UUIDGeneratorNode;
   exports.validateNumber = validateNumber;
   exports.vectorDistance = vectorDistance;
+  exports.weightedSample = weightedSample;
   exports.when = when;
   exports.without = without;
   exports.words = words;
