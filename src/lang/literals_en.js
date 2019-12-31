@@ -20,6 +20,16 @@ const literals = {
   'codelang_tag.': (lang, tag) => `${lang} ${capitalize(tag)}`,
   'tag.': tag => `${capitalize(tag)}`,
   'snippetCount.': count => `${count} snippets`,
+  'cta.': ctaId => {
+    switch (ctaId) {
+    case 'github':
+      return 'Star it on GitHub';
+    case 'twitter':
+      return 'Follow on Twitter';
+    default:
+      return '';
+    }
+  },
   // Multiline literals
   'm': key => multiline[key],
   // Site metadata
@@ -134,7 +144,6 @@ const literals = {
   'cookie policy': 'cookie policy',
   'Recommended snippets': 'Recommended snippets',
   'Like 30 seconds of code?': 'Like 30 seconds of code?',
-  'Star it on GitHub': 'Star it on GitHub',
   'We couldn\'t find any results for the keyphrase ': 'We couldn\'t find any results for the keyphrase ',
 };
 

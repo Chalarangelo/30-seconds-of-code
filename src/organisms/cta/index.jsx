@@ -2,16 +2,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PageBackdrop from 'molecules/pageBackdrop';
 import { AnchorButton } from 'atoms/button';
+import { weightedSample } from 'functions/utils';
 import _ from 'lang';
 const _l = _('en');
+const config = require('../../../config');
+
+const AVAILABLE_CTAS = [
+  'github',
+  'twitter',
+];
+const AVAILABLE_CTA_PROBABILITIES = [
+  0.4,
+  0.6,
+];
 
 const CTA = ({
   snippetUrl,
   acceptsCookies,
 }) => {
+  const [ctaId, setCtaId] = React.useState(
+    weightedSample(AVAILABLE_CTAS, AVAILABLE_CTA_PROBABILITIES)
+  );
+
   return (
     <PageBackdrop
-      graphicName='github-cta'
+      graphicName={ `graphic-cta ${ctaId}-cta` }
       mainText={ (
         <>
           { _l('Like 30 seconds of code?') }
@@ -21,21 +36,21 @@ const CTA = ({
     >
       <AnchorButton
         link={ {
-          url: snippetUrl,
+          url: ctaId === 'github' ? snippetUrl : config.twitterUrl,
           internal: false,
           rel: 'noopener',
           target: '_blank',
         } }
-        className='btn-star'
+        className={ `btn-cta btn-${ctaId}` }
         onClick={ e => {
           if (acceptsCookies && typeof window !== 'undefined' && typeof gtag === `function`) {
             e.preventDefault();
-            window.gtag('event', 'click', { event_category: 'cta-github', event_label: e.target.href, value: 1});
+            window.gtag('event', 'click', { event_category: `cta-${ctaId}`, event_label: e.target.href, value: 1});
             window.open(e.target.href, '_blank');
           }
         } }
       >
-        { _l('Star it on GitHub') }
+        { _l`cta.${ctaId}` }
       </AnchorButton>
     </PageBackdrop>
   );
