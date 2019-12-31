@@ -1,0 +1,31 @@
+import {
+  Story,
+  Preview,
+  Props,
+  Source,
+  Description,
+  ColorPalette,
+  ColorItem,
+  Meta,
+} from '@storybook/addon-docs/blocks';
+import CTA from 'organisms/cta';
+
+# CTA
+
+A component that display a call to action.
+
+## Props
+
+<Props of={CTA} />
+
+## Source
+
+```jsx
+const snippetUrl = 'https://google.com';
+const acceptsCookies = false;
+
+<CTA 
+  snippetUrl={snippetUrl} 
+  acceptsCookies={acceptsCookies} 
+/>
+```
