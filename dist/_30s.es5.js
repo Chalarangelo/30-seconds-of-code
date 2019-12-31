@@ -2615,6 +2615,14 @@
     }, 0);
     return Math.sqrt(sum);
   };
+  var weightedSample = function weightedSample(arr, weights) {
+    var roll = Math.random();
+    return arr[weights.reduce(function (acc, w, i) {
+      return i === 0 ? [w] : [].concat(_toConsumableArray(acc), [acc[acc.length - 1] + w]);
+    }, []).findIndex(function (v, i, s) {
+      return roll >= (i === 0 ? 0 : s[i - 1]) && roll < v;
+    })];
+  };
   var when = function when(pred, whenTrue) {
     return function (x) {
       return pred(x) ? whenTrue(x) : x;
@@ -3270,6 +3278,7 @@
   exports.UUIDGeneratorNode = UUIDGeneratorNode;
   exports.validateNumber = validateNumber;
   exports.vectorDistance = vectorDistance;
+  exports.weightedSample = weightedSample;
   exports.when = when;
   exports.without = without;
   exports.words = words;

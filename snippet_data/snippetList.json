@@ -5471,6 +5471,22 @@
       }
     },
     {
+      "id": "weightedSample",
+      "type": "snippetListing",
+      "title": "weightedSample",
+      "attributes": {
+        "text": "Returns a random element from an array, using the provided `weights` as the probabilities for each element.\n\nUse `Array.prototype.reduce()` to create an array of partial sums for each value in `weights`.\nUse `Math.random()` to generate a random number and `Array.prototype.findIndex()` to find the correct index based on the array previously produced.\nFinally, return the element of `arr` with the produced index.\n\n\n",
+        "tags": [
+          "array",
+          "random",
+          "advanced"
+        ]
+      },
+      "meta": {
+        "hash": "6bba5ca7427489cdf18476542772743ae2d5f4eccb42ff93ee61b9f8ba1f55d6"
+      }
+    },
+    {
       "id": "when",
       "type": "snippetListing",
       "title": "when",
