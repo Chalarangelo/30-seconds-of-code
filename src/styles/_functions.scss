@@ -78,4 +78,7 @@
   @if $icon-name == "star" {
     @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='"+$size+"' height='"+$size+"' viewBox='0 0 24 24' fill='"+$fill+"' stroke='"+$stroke+"' stroke-width='"+$stroke-width+"' stroke-linecap='round' stroke-linejoin='round' class='feather feather-star'%3E%3Cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'%3E%3C/polygon%3E%3C/svg%3E");
   }
+  @if $icon-name == "twitter" {
+    @return url("data:image/svg+xml,%0A%3Csvg width='"+$size+"' height='"+$size+"' viewBox='0 0 24 21' fill='"+$fill+"' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22.972 2.246a1 1 0 00-1.548-1.054 8.91 8.91 0 01-2.011 1.063A5.073 5.073 0 0011 6.007a8.691 8.691 0 01-6.363-3.663 1 1 0 00-1.733.168l.914.406-.914-.405v.001l-.002.003-.003.008-.011.025-.035.086a11.984 11.984 0 00-.443 1.368c-.23.887-.449 2.127-.386 3.505.063 1.383.41 2.925 1.333 4.382.667 1.054 1.616 2.031 2.919 2.862a9.582 9.582 0 01-4.236.802 1 1 0 00-.526 1.874c4.368 2.426 9.273 2.45 13.115.406 3.866-2.058 6.553-6.158 6.553-11.735v-.003a5.05 5.05 0 00-.018-.41 8.018 8.018 0 001.808-3.441z' stroke='"+$stroke+"' stroke-width='"+$stroke-width+"' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
 }
