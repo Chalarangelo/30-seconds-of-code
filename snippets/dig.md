@@ -9,7 +9,6 @@ Use the `in` operator to check if `target` exists in `obj`.
 If found, return the value of `obj[target]`, otherwise use `Object.values(obj)` and `Array.prototype.reduce()` to recursively call `dig` on each nested object until the first matching key/value pair is found.
 
 ```js
-
 const dig = (obj, target) =>
   target in obj
     ? obj[target]

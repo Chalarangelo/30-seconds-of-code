@@ -1743,8 +1743,8 @@
       "      i === arr.length - 2",
       "        ? acc + val + end",
       "        : i === arr.length - 1",
-      "          ? acc + val",
-      "          : acc + val + separator,",
+      "        ? acc + val",
+      "        : acc + val + separator,",
       "    ''",
       "  );"
     ],
@@ -2073,10 +2073,10 @@
       "const objectToQueryString = queryParameters => {",
       "  return queryParameters",
       "    ? Object.entries(queryParameters).reduce((queryString, [key, val], index) => {",
-      "      const symbol = queryString.length === 0 ? '?' : '&';",
-      "      queryString += typeof val === 'string' ? `${symbol}${key}=${val}` : '';",
-      "      return queryString;",
-      "    }, '')",
+      "        const symbol = queryString.length === 0 ? '?' : '&';",
+      "        queryString += typeof val === 'string' ? `${symbol}${key}=${val}` : '';",
+      "        return queryString;",
+      "      }, '')",
       "    : '';",
       "};"
     ],
@@ -2590,9 +2590,9 @@
       "const remove = (arr, func) =>",
       "  Array.isArray(arr)",
       "    ? arr.filter(func).reduce((acc, val) => {",
-      "        arr.splice(arr.indexOf(val), 1);",
-      "        return acc.concat(val);",
-      "      }, [])",
+      "      arr.splice(arr.indexOf(val), 1);",
+      "      return acc.concat(val);",
+      "    }, [])",
       "    : [];"
     ],
     "description": "Removes elements from an array for which the given function returns `false`.\n\nUse `Array.prototype.filter()` to find array elements that return truthy values and `Array.prototype.reduce()` to remove elements using `Array.prototype.splice()`.\nThe `func` is invoked with three arguments (`value, index, array`).\n"
@@ -2790,10 +2790,10 @@
       "  Array.isArray(val)",
       "    ? val.length",
       "    : val && typeof val === 'object'",
-      "      ? val.size || val.length || Object.keys(val).length",
-      "      : typeof val === 'string'",
-      "        ? new Blob([val]).size",
-      "        : 0;"
+      "    ? val.size || val.length || Object.keys(val).length",
+      "    : typeof val === 'string'",
+      "    ? new Blob([val]).size",
+      "    : 0;"
     ],
     "description": "Gets the size of an array, object or string.\n\nGet type of `val` (`array`, `object` or `string`). \nUse `length` property for arrays.\nUse `length` or `size` value if available or number of keys for objects.\nUse `size` of a [`Blob` object](https://developer.mozilla.org/en-US/docs/Web/API/Blob) created from `val` for strings.\nSplit strings into array of characters with `split('')` and return its length.\n"
   },
@@ -3448,6 +3448,20 @@
       "};"
     ],
     "description": "Returns the distance between two vectors.\n\nUse `Array.prototype.reduce()`, `Math.pow()` and `Math.sqrt()` to calculate the Euclidean distance between two vectors.\n"
+  },
+  "weightedSample": {
+    "prefix": "30s_weightedSample",
+    "body": [
+      "const weightedSample = (arr, weights) => {",
+      "  let roll = Math.random();",
+      "  return arr[",
+      "    weights",
+      "      .reduce((acc, w, i) => (i === 0 ? [w] : [...acc, acc[acc.length - 1] + w]), [])",
+      "      .findIndex((v, i, s) => roll >= (i === 0 ? 0 : s[i - 1]) && roll < v)",
+      "  ];",
+      "};"
+    ],
+    "description": "Returns a random element from an array, using the provided `weights` as the probabilities for each element.\n\nUse `Array.prototype.reduce()` to create an array of partial sums for each value in `weights`.\nUse `Math.random()` to generate a random number and `Array.prototype.findIndex()` to find the correct index based on the array previously produced.\nFinally, return the element of `arr` with the produced index.\n\n"
   },
   "when": {
     "prefix": "30s_when",
