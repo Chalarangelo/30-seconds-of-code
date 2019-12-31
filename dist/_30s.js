@@ -603,6 +603,7 @@
   const isObjectLike = val => val !== null && typeof val === 'object';
   const isOdd = num => num % 2 === 1;
   const isPlainObject = val => !!val && typeof val === 'object' && val.constructor === Object;
+  const isPowerOfTwo = n => !!n && ((n & (n - 1)) == 0);
   const isPrime = num => {
     const boundary = Math.floor(Math.sqrt(num));
     for (var i = 2; i <= boundary; i++) if (num % i === 0) return false;
@@ -1744,6 +1745,7 @@
   exports.isObjectLike = isObjectLike;
   exports.isOdd = isOdd;
   exports.isPlainObject = isPlainObject;
+  exports.isPowerOfTwo = isPowerOfTwo;
   exports.isPrime = isPrime;
   exports.isPrimitive = isPrimitive;
   exports.isPromiseLike = isPromiseLike;

@@ -1250,6 +1250,9 @@
   var isPlainObject = function isPlainObject(val) {
     return !!val && _typeof(val) === 'object' && val.constructor === Object;
   };
+  var isPowerOfTwo = function isPowerOfTwo(n) {
+    return !!n && (n & n - 1) == 0;
+  };
   var isPrime = function isPrime(num) {
     var boundary = Math.floor(Math.sqrt(num));
 
@@ -3097,6 +3100,7 @@
   exports.isObjectLike = isObjectLike;
   exports.isOdd = isOdd;
   exports.isPlainObject = isPlainObject;
+  exports.isPowerOfTwo = isPowerOfTwo;
   exports.isPrime = isPrime;
   exports.isPrimitive = isPrimitive;
   exports.isPromiseLike = isPromiseLike;
