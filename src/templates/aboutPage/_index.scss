@@ -8,9 +8,9 @@
     max-width: calc(50% - 24px);
     flex-basis: calc(50% - 24px);
     margin: 12px;
-    @media screen and (min-width: $layout-large-breakpoint) {
-      max-width: calc(25% - 24px);
-      flex-basis: calc(25% - 24px);
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      max-width: calc(33% - 24px);
+      flex-basis: calc(33% - 24px);
     }
     .media-section {
       max-width: 100%;

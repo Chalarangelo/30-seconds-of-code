@@ -62,30 +62,20 @@ const AboutPage = ({
               <a href='https://github.com/fejes713' className='button-section' target='_blank' rel='noopener noreferrer'>Stefan Fejes</a>
             </div>
             <div className="flex-item">
-              <img className='media-section' src='https://github.com/flxwu.png' alt='flxwu' />
-              <a href='https://github.com/flxwu' className='button-section' target='_blank' rel='noopener noreferrer'>Felix Wu</a>
-            </div>
-            <div className="flex-item">
               <img className='media-section' src='https://github.com/atomiks.png' alt='atomiks' />
               <a href='https://github.com/atomiks' className='button-section' target='_blank' rel='noopener noreferrer'>atomiks</a>
             </div>
-          </div>
-          <div className='flex-row'>
             <div className="flex-item">
               <img className='media-section' src='https://github.com/skatcat31.png' alt='skatcat31' />
               <a href='https://github.com/skatcat31' className='button-section' target='_blank' rel='noopener noreferrer'>Robert Mennell</a>
             </div>
             <div className="flex-item">
-              <img className='media-section' src='https://github.com/petrovicstefanrs.png' alt='petrovicstefanrs' />
-              <a href='https://github.com/petrovicstefanrs' className='button-section' target='_blank' rel='noopener noreferrer'>Stefan Petrovic</a>
+              <img className='media-section' src='https://github.com/Trinityyi.png' alt='Trinityyi' />
+              <a href='https://github.com/Trinityyi' className='button-section' target='_blank' rel='noopener noreferrer'>Isabelle Viktoria Maciohsek</a>
             </div>
             <div className="flex-item">
-              <img className='media-section' src='https://github.com/kirjs.png' alt='kirjs' />
-              <a href='https://github.com/kirjs' className='button-section' target='_blank' rel='noopener noreferrer'>Kirill Cherkashin</a>
-            </div>
-            <div className="flex-item">
-              <img className='media-section' src='https://github.com/sohelamin.png' alt='sohelamin' />
-              <a href='https://github.com/sohelamin' className='button-section' target='_blank' rel='noopener noreferrer'>Sohel Amin</a>
+              <img className='media-section' src='https://github.com/flxwu.png' alt='flxwu' />
+              <a href='https://github.com/flxwu' className='button-section' target='_blank' rel='noopener noreferrer'>Felix Wu</a>
             </div>
           </div>
         </SimpleCard>
