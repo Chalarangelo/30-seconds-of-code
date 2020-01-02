@@ -29,7 +29,7 @@ const parseRequirables = contentDirPath => {
 
         const archived = !!cfg.isArchived;
         reqJson.meta.archived = archived;
-        reqJson.meta.slugPrefix = archived ? `${cfg.slug}/a` : `${cfg.slug}/s`;
+        reqJson.meta.slugPrefix = archived ? `${cfg.slug}/v` : `${cfg.slug}/s`;
 
         reqJson.meta.sourceDir = `${cfg.dirName}/${cfg.snippetPath}`;
         reqJson.meta.repoUrlPrefix = `${cfg.repoUrl}/blob/master/${cfg.snippetPath}`;
