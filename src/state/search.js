@@ -6,6 +6,7 @@ const initialState = {
   searchQuery: '',
   searchIndex: [],
   searchResults: [],
+  searchTimestamp: `${new Date()}`,
 };
 
 // Actions
@@ -58,6 +59,7 @@ export default (state = initialState, action) => {
   case PUSH_NEW_QUERY:
     return {
       ...state,
+      searchTimestamp: `${new Date()}`,
       searchQuery: action.query,
     };
   case START_INDEX_FETCH:
