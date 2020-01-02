@@ -35,17 +35,22 @@ const Search = ({
   searchIndex,
   searchQuery,
   shouldUpdateHistory = false,
+  searchTimestamp,
   dispatch,
 }) => {
-  const [value, setValue] = React.useState(searchQuery);
+  const [value, setValue] = React.useState('');
 
   useFetchSearchIndex(dispatch);
 
   React.useEffect(() => {
     if (shouldUpdateHistory) {
       const params = getURLParameters(window.location.href);
-      if (params && (params.keyphrase || params.keyphrase === '') && params.keyphrase !== encodeURIComponent(searchQuery))
-        setValue(decodeURIComponent(params.keyphrase));
+      let initValue = searchQuery;
+      if (params && (params.keyphrase) && params.keyphrase !== encodeURIComponent(searchQuery))
+        initValue = decodeURIComponent(params.keyphrase);
+      else if(searchTimestamp && new Date() - new Date(searchTimestamp || null) >= 1200000)
+        initValue = '';
+      setValue(initValue);
     }
   }, []);
 
@@ -58,7 +63,7 @@ const Search = ({
 
   return (
     <input
-      defaultValue={ searchQuery }
+      defaultValue={ value }
       className={ trimWhiteSpace`search-box ${className}` }
       type='search'
       id={ id }
@@ -86,6 +91,8 @@ Search.propTypes = {
   searchQuery: PropTypes.string,
   /** Index of the searchable data */
   searchIndex: PropTypes.arrayOf(PropTypes.shape({})),
+  /** Timestamp of the last search history update */
+  searchTimestamp: PropTypes.string,
   /** Additional classname(s) for the search bar */
   className: PropTypes.string,
   /** Element id */
@@ -100,6 +107,7 @@ export default connect(
   state => ({
     searchIndex: state.search.searchIndex,
     searchQuery: state.search.searchQuery,
+    searchTimestamp: state.search.searchTimestamp,
   }),
   null
 )(Search);
