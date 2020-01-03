@@ -9,12 +9,10 @@ Use `Array.prototype.reduce()` to map unique values to an object's keys, adding 
 
 ```js
 const frequencies = arr =>
-  arr.reduce(
-    (a, v) => {
-      a[v] = a[v] ? a[v] + 1 : 1;
-      return a;
-    }, {}
-  );
+  arr.reduce((a, v) => {
+    a[v] = a[v] ? a[v] + 1 : 1;
+    return a;
+  }, {});
 ```
 
 ```js
