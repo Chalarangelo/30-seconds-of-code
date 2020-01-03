@@ -14,5 +14,4 @@ def n_times_string(s, n):
 
 ```py
 n_times_string('py', 4) #'pypypypy'
-
 ```

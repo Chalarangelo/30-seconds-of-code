@@ -9,7 +9,7 @@ Create a `set` by applying `fn` to each element in `a`, then use list comprehens
 Finally, create a `set` from the previous result and `a` and transform it into a `list`
 
 ```py
-def union_by(a,b,fn):
+def union_by(a, b, fn):
   _a = set(map(fn, a))
   return list(set(a + [item for item in b if fn(item) not in _a]))
 ```

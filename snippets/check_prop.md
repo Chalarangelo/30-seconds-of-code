@@ -14,10 +14,7 @@ def check_prop(fn, prop):
 
 ```py
 check_age = check_prop(lambda x: x >= 18, 'age')
-user = {
-  'name': 'Mark',
-  'age': 18
-}
+user = {'name': 'Mark', 'age': 18}
 
 check_age(user) # True
 ```

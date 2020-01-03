@@ -17,5 +17,8 @@ def bifurcate_by(lst, fn):
 ```
 
 ```py
-bifurcate_by(['beep', 'boop', 'foo', 'bar'], lambda x: x[0] == 'b') # [ ['beep', 'boop', 'bar'], ['foo'] ]
+bifurcate_by(
+  ['beep', 'boop', 'foo', 'bar'], 
+  lambda x: x[0] == 'b'
+) # [ ['beep', 'boop', 'bar'], ['foo'] ]
 ```

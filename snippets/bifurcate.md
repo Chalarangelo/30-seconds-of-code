@@ -11,8 +11,8 @@ Use list comprehension and `enumerate()` to add elements to groups, based on `fi
 ```py
 def bifurcate(lst, filter):
   return [
-    [x for i,x in enumerate(lst) if filter[i] == True],
-    [x for i,x in enumerate(lst) if filter[i] == False]
+    [x for i, x in enumerate(lst) if filter[i] == True],
+    [x for i, x in enumerate(lst) if filter[i] == False]
   ]
 ```
 

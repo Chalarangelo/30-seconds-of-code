@@ -9,7 +9,7 @@ Use `map()` with `fn` to map each element to a value using the provided function
 
 ```py
 def min_by(lst, fn):
-  return min(map(fn,lst))
+  return min(map(fn, lst))
 ```
 
 ```py

@@ -9,7 +9,7 @@ Use `[nth-1::nth]` to create a new list that contains every nth element of the g
 
 ```py
 def every_nth(lst, nth):
-  return lst[nth-1::nth]
+  return lst[nth - 1::nth]
 ```
 
 ```py
