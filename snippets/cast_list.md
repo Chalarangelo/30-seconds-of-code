@@ -3,7 +3,7 @@ title: cast_list
 tags: utility,list,beginner
 ---
 
-Casts the provided value as an array if it's not one.
+Casts the provided value as a list if it's not one.
 
 Use `isinstance()` to check if the given value is enumerable and return it by using `list()` or encapsulated in a list accordingly.
 
