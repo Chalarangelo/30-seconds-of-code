@@ -3,35 +3,19 @@ title: lcm
 tags: math,list,recursion,advanced 
 ---
 
-Returns the least common multiple of two or more numbers.
+Returns the least common multiple of a list of numbers.
 
-Define a function, `spread`, that uses either `list.extend()` or `list.append()` on each element in a list to flatten it.
-Use `math.gcd()` and `lcm(x,y) = x * y / gcd(x,y)` to determine the least common multiple.
+Use `functools.reduce()`, `math.gcd()` and `lcm(x,y) = x * y / gcd(x,y)` over the given list.
 
 ```py
 from functools import reduce
-import math
+from math import gcd
 
-def spread(arg):
-  ret = []
-  for i in arg:
-    if isinstance(i, list):
-      ret.extend(i)
-    else:
-      ret.append(i)
-  return ret
-
-def lcm(*args):
-  numbers = []
-  numbers.extend(spread(list(args)))
-
-  def _lcm(x, y):
-    return int(x * y / math.gcd(x, y))
-
-  return reduce((lambda x, y: _lcm(x, y)), numbers)
+def lcm(numbers):
+  return reduce((lambda x, y: int(x * y / gcd(x, y))), numbers)
 ```
 
 ```py
-lcm(12, 7) # 84
-lcm([1, 3, 4], 5) # 60
+lcm([12, 7]) # 84
+lcm([1, 3, 4, 5]) # 60
 ```
