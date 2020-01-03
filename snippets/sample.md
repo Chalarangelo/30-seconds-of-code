@@ -3,9 +3,9 @@ title: sample
 tags: list,random,beginner
 ---
 
-Returns a random element from an array.
+Returns a random element from a list.
 
-Use `randint()` to generate a random number that corresponds to an index in the list, return the element at that index.
+Use `random.randint()` to generate a random number that corresponds to an index in the list, return the element at that index.
 
 ```py
 from random import randint

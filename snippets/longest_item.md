@@ -10,7 +10,7 @@ Use `max()` with `len` as the `key` to return the item with the greatest length.
 
 ```py
 def longest_item(*args):
-  return max(args, key = len)
+  return max(args, key=len)
 ```
 
 ```py

@@ -3,7 +3,7 @@ title: digitize
 tags: math,list,beginner
 ---
 
-Converts a number to an array of digits.
+Converts a number to a list of digits.
 
 Use `map()` combined with `int` on the string representation of `n` and return a list from the result.
 
