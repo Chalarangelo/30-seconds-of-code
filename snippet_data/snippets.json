@@ -931,6 +931,33 @@
       }
     },
     {
+      "id": "usePrevious",
+      "title": "usePrevious",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "usePrevious.md",
+        "text": "A hook that stores the previous state or props.\n\n- Create a custom hook that takes a `value`.\n- Use the `React.useRef()` hook to create a `ref` for the `value`.\n- Use the `React.useEffect()` hook to remember the latest `value`.\n\n",
+        "codeBlocks": {
+          "style": "",
+          "code": "const usePrevious = value => {\n  const ref = React.useRef();\n  React.useEffect(() => {\n    ref.current = value;\n  });\n  return ref.current;\n}",
+          "example": "const Counter = () => {\n  const [value, setValue] = React.useState(0);\n  const lastValue = usePrevious(value);\n  \n  return (\n    <div>\n      <p>Current: {value} - Previous: {lastValue}</p>\n      <button onClick={() => setValue(value + 1)}>Increment</button>\n    </div>\n  );\n};\n\nReactDOM.render(<Counter />, document.getElementById('root'));"
+        },
+        "tags": [
+          "hooks",
+          "state",
+          "effect",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "df9f5b8fd3c06d02bfedcaa55d0b86a2b93b0d4c027726e056aefc1940a3c63b",
+        "firstSeen": "1578037822",
+        "lastUpdated": "1578037822",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "useSSR",
       "title": "useSSR",
       "type": "snippet",
