@@ -904,6 +904,33 @@
       }
     },
     {
+      "id": "useMediaQuery",
+      "title": "useMediaQuery",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "useMediaQuery.md",
+        "text": "A hook that returns a value based on a media query.\n\n- Check if `window` and `window.matchMedia` exist, return `whenFalse` if not.\n- Use `window.matchMedia()` to match the given `query`, cast its `matches` property to a boolean and store in a state variable, `match`, using `React.useState()`.\n- Use `React.useEffect()` to add a listener for changes and to clean up the listeners after the hook is destroyed.\n- Return either `whenTrue` or `whenFalse` based on the value of `match`.\n\n",
+        "codeBlocks": {
+          "style": "",
+          "code": "const useMediaQuery = (query, whenTrue, whenFalse) => {\n  if (typeof window === 'undefined' || typeof window.matchMedia === 'undefined') return whenFalse;\n  \n  const mediaQuery = window.matchMedia(query);\n  const [match, setMatch] = React.useState(!!mediaQuery.matches);\n\n  React.useEffect(() => {    \n    const handler = () => setMatch(!!mediaQuery.matches);\n    mediaQuery.addListener(handler);\n    return () => mediaQuery.removeListener(handler);\n  }, []);\n\n  return match ? whenTrue : whenFalse;\n};",
+          "example": "const ResponsiveText = () => {\n  const text = useMediaQuery(\n    '(max-width: 400px)', 'Less than 400px wide', 'More than 400px wide'\n  );\n  \n  return <span>{text}</span>;\n}\n\nReactDOM.render(<ResponsiveText />, document.getElementById('root'));"
+        },
+        "tags": [
+          "hooks",
+          "state",
+          "effect",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "e1df67f6c744bdc52d523b50beb91ddc2ecb5469741f27140596a3b8e2dcfe18",
+        "firstSeen": "1578055186",
+        "lastUpdated": "1578055186",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "useNavigatorOnLine",
       "title": "useNavigatorOnLine",
       "type": "snippet",
@@ -926,6 +953,33 @@
         "hash": "c9a0c97f92439438fd49c5ef50742524aae8a162e144342956bcf92cf1ebf470",
         "firstSeen": "1568182646",
         "lastUpdated": "1568182646",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
+      "id": "usePrevious",
+      "title": "usePrevious",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "usePrevious.md",
+        "text": "A hook that stores the previous state or props.\n\n- Create a custom hook that takes a `value`.\n- Use the `React.useRef()` hook to create a `ref` for the `value`.\n- Use the `React.useEffect()` hook to remember the latest `value`.\n\n",
+        "codeBlocks": {
+          "style": "",
+          "code": "const usePrevious = value => {\n  const ref = React.useRef();\n  React.useEffect(() => {\n    ref.current = value;\n  });\n  return ref.current;\n}",
+          "example": "const Counter = () => {\n  const [value, setValue] = React.useState(0);\n  const lastValue = usePrevious(value);\n  \n  return (\n    <div>\n      <p>Current: {value} - Previous: {lastValue}</p>\n      <button onClick={() => setValue(value + 1)}>Increment</button>\n    </div>\n  );\n};\n\nReactDOM.render(<Counter />, document.getElementById('root'));"
+        },
+        "tags": [
+          "hooks",
+          "state",
+          "effect",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "df9f5b8fd3c06d02bfedcaa55d0b86a2b93b0d4c027726e056aefc1940a3c63b",
+        "firstSeen": "1578037822",
+        "lastUpdated": "1578037822",
         "updateCount": 2,
         "authorCount": 2
       }

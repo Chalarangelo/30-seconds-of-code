@@ -564,6 +564,23 @@
       }
     },
     {
+      "id": "useMediaQuery",
+      "type": "snippetListing",
+      "title": "useMediaQuery",
+      "attributes": {
+        "text": "A hook that returns a value based on a media query.\n\n- Check if `window` and `window.matchMedia` exist, return `whenFalse` if not.\n- Use `window.matchMedia()` to match the given `query`, cast its `matches` property to a boolean and store in a state variable, `match`, using `React.useState()`.\n- Use `React.useEffect()` to add a listener for changes and to clean up the listeners after the hook is destroyed.\n- Return either `whenTrue` or `whenFalse` based on the value of `match`.\n\n",
+        "tags": [
+          "hooks",
+          "state",
+          "effect",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "e1df67f6c744bdc52d523b50beb91ddc2ecb5469741f27140596a3b8e2dcfe18"
+      }
+    },
+    {
       "id": "useNavigatorOnLine",
       "type": "snippetListing",
       "title": "useNavigatorOnLine",
@@ -578,6 +595,23 @@
       },
       "meta": {
         "hash": "c9a0c97f92439438fd49c5ef50742524aae8a162e144342956bcf92cf1ebf470"
+      }
+    },
+    {
+      "id": "usePrevious",
+      "type": "snippetListing",
+      "title": "usePrevious",
+      "attributes": {
+        "text": "A hook that stores the previous state or props.\n\n- Create a custom hook that takes a `value`.\n- Use the `React.useRef()` hook to create a `ref` for the `value`.\n- Use the `React.useEffect()` hook to remember the latest `value`.\n\n",
+        "tags": [
+          "hooks",
+          "state",
+          "effect",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "df9f5b8fd3c06d02bfedcaa55d0b86a2b93b0d4c027726e056aefc1940a3c63b"
       }
     },
     {
