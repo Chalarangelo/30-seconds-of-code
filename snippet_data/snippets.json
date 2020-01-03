@@ -271,6 +271,30 @@
       }
     },
     {
+      "id": "check_prop",
+      "title": "function_name",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "check_prop.md",
+        "text": "Given a predicate function, `fn`, and a `prop` string, this curried function will then take an object to inspect by calling the property and passing it to the predicate.\n\nReturn a `lambda` function that takes an object and applies the predicate function, `fn` to the specified property.\n\n",
+        "codeBlocks": {
+          "code": "def check_prop(fn, prop):\r\n  return lambda obj: fn(obj[prop])",
+          "example": "check_age = check_prop(lambda x: x >= 18, 'age')\r\nuser = {\r\n  'name': 'Mark',\r\n  'age': 18\r\n}\r\n\r\ncheck_age(user) # True"
+        },
+        "tags": [
+          "utility",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "dfab14066fcab3a7ac08a0a4edf9512babc398c82710067800f1d5974e777335",
+        "firstSeen": "1577976565",
+        "lastUpdated": "1577976565",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "chunk",
       "title": "chunk",
       "type": "snippet",
@@ -343,6 +367,54 @@
       }
     },
     {
+      "id": "compose",
+      "title": "compose",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "compose.md",
+        "text": "Performs right-to-left function composition.\n\nUse `reduce()` to perform right-to-left function composition. \nThe last (rightmost) function can accept one or more arguments; the remaining functions must be unary.\n\n",
+        "codeBlocks": {
+          "code": "from functools import reduce\r\n\r\ndef compose(*fns):\r\n  return reduce(lambda f, g: lambda *args: f(g(*args)), fns)",
+          "example": "add5 = lambda x: x + 5\r\nmultiply = lambda x, y: x * y\r\nmultiply_and_add_5 = compose(add5, multiply)\r\n\r\nmultiply_and_add_5(5, 2) # 15"
+        },
+        "tags": [
+          "function",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "8be5bb671257ee45d10384859c89e826606c3241261a0adb62c2e3c86aed4064",
+        "firstSeen": "1577973080",
+        "lastUpdated": "1577973080",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
+      "id": "compose_right",
+      "title": "compose_right",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "compose_right.md",
+        "text": "Performs left-to-right function composition.\n\nUse `reduce()` to perform left-to-right function composition. \nThe first (leftmost) function can accept one or more arguments; the remaining functions must be unary.\n\n",
+        "codeBlocks": {
+          "code": "from functools import reduce\r\n\r\ndef compose_right(*fns):\r\n  return reduce(lambda f, g: lambda *args: g(f(*args)), fns)",
+          "example": "add = lambda x, y: x + y\r\nsquare = lambda x: x * x\r\nadd_and_square = compose_right(add,square)\r\n\r\nadd_and_square(1, 2) # 9"
+        },
+        "tags": [
+          "function",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "d4f75bad32eba20b2c3d122a8b2f78163244202472ca28d18db04cd56d97f409",
+        "firstSeen": "1577973086",
+        "lastUpdated": "1577973086",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "count_by",
       "title": "count_by",
       "type": "snippet",
@@ -388,6 +460,30 @@
         "lastUpdated": "1566286689",
         "updateCount": 15,
         "authorCount": 5
+      }
+    },
+    {
+      "id": "curry",
+      "title": "curry",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "curry.md",
+        "text": "Curries a function.\n\nUse `partial()` to return a new partial object which behaves like `fn` with the given arguments, `args`, partially applied.\n\n",
+        "codeBlocks": {
+          "code": "from functools import partial\r\n\r\ndef curry(fn, *args):\r\n  return partial(fn,*args)",
+          "example": "add = lambda x, y: x + y\r\nadd10 = curry(sum, 10)\r\n\r\nadd10(20) # 30"
+        },
+        "tags": [
+          "function",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "c5c6e1d9adce6fdd3f97499e2368a5aa3073f4089427e5d43482bdb7c0e8600b",
+        "firstSeen": "1577974490",
+        "lastUpdated": "1577974490",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -461,6 +557,30 @@
         "lastUpdated": "1571141808",
         "updateCount": 3,
         "authorCount": 3
+      }
+    },
+    {
+      "id": "delay",
+      "title": "delay",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "delay.md",
+        "text": "Invokes the provided function after `ms` milliseconds.\n\nUse `sleep()` to delay the execution of `fn` by `ms / 1000` seconds.\n\n",
+        "codeBlocks": {
+          "code": "from time import sleep\r\n\r\ndef delay(fn, ms, *args):\r\n  sleep(ms / 1000)\r\n  return fn(*args)",
+          "example": "delay(\r\n  lambda x: print(x),\r\n  1000,\r\n  'later'\r\n) # prints 'later' after one second"
+        },
+        "tags": [
+          "function",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "ec9d6f5efc8d2f3a5beedfa4d3e10ecd3627baf0d3022e5ab3f3e9e3b0820757",
+        "firstSeen": "1577975091",
+        "lastUpdated": "1577975091",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -1837,6 +1957,31 @@
       }
     },
     {
+      "id": "unfold",
+      "title": "unfold",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "unfold.md",
+        "text": "Builds a list, using an iterator function and an initial seed value.\n\nThe iterator function accepts one argument (`seed`) and must always return a list with two elements ([`value`, `nextSeed`]) or `False` to terminate.\nUse a generator function, `fn_generator`, that uses a `while` loop to call the iterator function and `yield` the `value` until it returns `False`.\nUse list comprehension to return the list that is produced by the generator, using the iterator function.\n\n",
+        "codeBlocks": {
+          "code": "def unfold(fn, seed):\n  def fn_generator(val):\n    while True: \n      val = fn(val[1])\n      if val == False: break\n      yield val[0]\n  return [i for i in fn_generator([None, seed])]",
+          "example": "f = lambda n: False if n > 50 else [-n, n + 10]\nunfold(f, 10) # [-10, -20, -30, -40, -50]"
+        },
+        "tags": [
+          "function",
+          "list",
+          "advanced"
+        ]
+      },
+      "meta": {
+        "hash": "e9d027a02786f51db720328d695b20113c33fc8c96bbabb7d5d0fdcdf4993f9c",
+        "firstSeen": "1577989071",
+        "lastUpdated": "1577989071",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "union",
       "title": "union",
       "type": "snippet",
@@ -1932,6 +2077,30 @@
         "lastUpdated": "1572538031",
         "updateCount": 8,
         "authorCount": 4
+      }
+    },
+    {
+      "id": "when",
+      "title": "when",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "when.md",
+        "text": "Tests a value, `x`, against a `predicate` function, conditionally applying a function. \n\nCheck if the value of `predicate(x)` is `True` and if so return `when_true(x)`, otherwise return `x`.\n\n",
+        "codeBlocks": {
+          "code": "def when(predicate, when_true):\n  return lambda x: when_true(x) if predicate(x) else x",
+          "example": "double_even_numbers = when(lambda x: x % 2 == 0, lambda x : x * 2)\ndouble_even_numbers(2) # 4\ndouble_even_numbers(1) # 1"
+        },
+        "tags": [
+          "function",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "8f04bf926446b8c1c73fe0127d3d9a59141d7287ea9e72e8fe4f71b1762f6049",
+        "firstSeen": "1577989545",
+        "lastUpdated": "1577989545",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
