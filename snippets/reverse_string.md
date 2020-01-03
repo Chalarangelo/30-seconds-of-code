@@ -8,8 +8,8 @@ Returns the reverse of a string.
 Use string slicing to reverse the string.
 
 ```py
-def reverse_string(string):
-  return string[::-1]
+def reverse_string(s):
+  return s[::-1]
 ```
 
 ```py
