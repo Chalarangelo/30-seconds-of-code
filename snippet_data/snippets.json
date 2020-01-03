@@ -851,6 +851,32 @@
       }
     },
     {
+      "id": "useComponentDidMount",
+      "title": "useComponentDidMount",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "useComponentDidMount.md",
+        "text": "A hook that executes a callback immediately after a component is mounted.\n\n- Use `React.useEffect()` with an empty array as the second argument to execute the provided callback only once when the component is mounted.\n\n",
+        "codeBlocks": {
+          "style": "",
+          "code": "const useComponentDidMount = onMountHandler => {\n  React.useEffect(() => {\n    onMountHandler()\n  }, []);\n}",
+          "example": "const Mounter = () => {\n  useComponentDidMount(() => console.log('Component did mount'));\n\n  return <div>Check the console!</div>;\n}\n\nReactDOM.render(<Mounter />, document.getElementById('root'));"
+        },
+        "tags": [
+          "hooks",
+          "effect",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "82ef558fad661a522f5e897014b3898ad56ab6603a342c477f09edaa6281a0c9",
+        "firstSeen": "1578059814",
+        "lastUpdated": "1578059814",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "useFetch",
       "title": "useFetch",
       "type": "snippet",
