@@ -9,7 +9,7 @@ Use `map()` with `fn` to map each element to a value using the provided function
 
 ```py
 def max_by(lst, fn):
-  return max(map(fn,lst))
+  return max(map(fn, lst))
 ```
 
 ```py

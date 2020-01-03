@@ -10,7 +10,7 @@ Use `zip()` in combination with `list()` to create the transpose of the given tw
 
 ```py
 def transpose(lst):
-    return list(zip(*lst))
+  return list(zip(*lst))
 ```
 
 ```py

@@ -9,7 +9,7 @@ Use `map()` with `fn` to map each element to a value using the provided function
 
 ```py
 def sum_by(lst, fn):
-  return sum(map(fn,lst))
+  return sum(map(fn, lst))
 ```
 
 ```py

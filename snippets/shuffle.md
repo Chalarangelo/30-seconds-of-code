@@ -23,5 +23,5 @@ def shuffle(lst):
 
 ```py
 foo = [1,2,3]
-shuffle(foo) # [2,3,1] , foo = [1,2,3]
+shuffle(foo) # [2,3,1], foo = [1,2,3]
 ```

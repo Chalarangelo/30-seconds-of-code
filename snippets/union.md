@@ -8,7 +8,7 @@ Returns every element that exists in any of the two lists once.
 Create a `set` with all values of `a` and `b` and convert to a `list`.
 
 ```py
-def union(a,b):
+def union(a, b):
   return list(set(a + b))
 ```
 
