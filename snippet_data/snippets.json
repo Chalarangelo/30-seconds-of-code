@@ -6,7 +6,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "all_equal.md",
-        "text": "Check if all elements in a list are equal.\n\nUse `[1:]` and `[:-1]` to compare all the values in the given list.\n\n",
+        "text": "Checks if all elements in a list are equal.\n\nUse `[1:]` and `[:-1]` to compare all the values in the given list.\n\n",
         "codeBlocks": {
           "code": "def all_equal(lst):\n  return lst[1:] == lst[:-1]",
           "example": "all_equal([1, 2, 3, 4, 5, 6]) # False\nall_equal([1, 1, 1, 1]) # True"
@@ -17,10 +17,10 @@
         ]
       },
       "meta": {
-        "hash": "6bf29cb176e4e9ce664ad04c6d262b6848f26639624dbb812eb1074d1c68b82a",
+        "hash": "a284d604fca0eba2637f80ff4612a08e114be8df54e9ad3d5c9978fa6b96f757",
         "firstSeen": "1566290358",
-        "lastUpdated": "1566309125",
-        "updateCount": 3,
+        "lastUpdated": "1578048956",
+        "updateCount": 4,
         "authorCount": 3
       }
     },
@@ -30,10 +30,10 @@
       "type": "snippet",
       "attributes": {
         "fileName": "all_unique.md",
-        "text": "Returns `True` if all the values in a flat list are unique, `False` otherwise.\n\nUse `set()` on the given list to remove duplicates, compare its length with the length of the list.\n\n",
+        "text": "Returns `True` if all the values in a list are unique, `False` otherwise.\n\nUse `set()` on the given list to remove duplicates, use `len()` to compare its length with the length of the list.\n\n",
         "codeBlocks": {
           "code": "def all_unique(lst):\n  return len(lst) == len(set(lst))",
-          "example": "x = [1,2,3,4,5,6]\ny = [1,2,2,3,4,5]\nall_unique(x) # True\nall_unique(y) # False"
+          "example": "x = [1, 2, 3, 4, 5, 6]\ny = [1, 2, 2, 3, 4, 5]\nall_unique(x) # True\nall_unique(y) # False"
         },
         "tags": [
           "list",
@@ -41,10 +41,10 @@
         ]
       },
       "meta": {
-        "hash": "ca101c9e623105dc857f1484fcea9211dda0dffc224834a5609d125257a7040f",
+        "hash": "85a0536056d343fefcc2e27f43e0de4c09df66c425827dd0bcfdc2331283f9d2",
         "firstSeen": "1522569789",
-        "lastUpdated": "1566285234",
-        "updateCount": 6,
+        "lastUpdated": "1578048997",
+        "updateCount": 7,
         "authorCount": 3
       }
     },
@@ -107,7 +107,7 @@
         "fileName": "bifurcate.md",
         "text": "Splits values into two groups. \nIf an element in `filter` is `True`, the corresponding element in the collection belongs to the first group; otherwise, it belongs to the second group.\n\nUse list comprehension and `enumerate()` to add elements to groups, based on `filter`.\n\n",
         "codeBlocks": {
-          "code": "def bifurcate(lst, filter):\n  return [\n    [x for i,x in enumerate(lst) if filter[i] == True],\n    [x for i,x in enumerate(lst) if filter[i] == False]\n  ]",
+          "code": "def bifurcate(lst, filter):\n  return [\n    [x for i, x in enumerate(lst) if filter[i] == True],\n    [x for i, x in enumerate(lst) if filter[i] == False]\n  ]",
           "example": "bifurcate(['beep', 'boop', 'foo', 'bar'], [True, True, False, True]) # [ ['beep', 'boop', 'bar'], ['foo'] ]"
         },
         "tags": [
@@ -116,10 +116,10 @@
         ]
       },
       "meta": {
-        "hash": "22c836b50fafc995904cc69096235ef9fb4c77a6faf38c4c5a4a88b2ed2126a8",
+        "hash": "1d1f03106bae33aabbb4956f0553a29d942b0bafeb9d14d0db787262d114a116",
         "firstSeen": "1566293826",
-        "lastUpdated": "1566293826",
-        "updateCount": 2,
+        "lastUpdated": "1578048759",
+        "updateCount": 3,
         "authorCount": 2
       }
     },
@@ -132,7 +132,7 @@
         "text": "Splits values into two groups according to a function, which specifies which group an element in the input list belongs to. \nIf the function returns `True`, the element belongs to the first group; otherwise, it belongs to the second group.\n\nUse list comprehension to add elements to groups, based on `fn`.\n\n",
         "codeBlocks": {
           "code": "def bifurcate_by(lst, fn):\n  return [\n    [x for x in lst if fn(x)],\n    [x for x in lst if not fn(x)]\n  ]",
-          "example": "bifurcate_by(['beep', 'boop', 'foo', 'bar'], lambda x: x[0] == 'b') # [ ['beep', 'boop', 'bar'], ['foo'] ]"
+          "example": "bifurcate_by(\n  ['beep', 'boop', 'foo', 'bar'], \n  lambda x: x[0] == 'b'\n) # [ ['beep', 'boop', 'bar'], ['foo'] ]"
         },
         "tags": [
           "list",
@@ -141,10 +141,10 @@
         ]
       },
       "meta": {
-        "hash": "2e62d552ca03ff9bc39f920f4e24745945729ba35acc8ba75267b315a9b43563",
+        "hash": "91c7bf77e761cdd1e5ab4832e3a394bb5c85426df375e5ff4ea45450aae6cdfc",
         "firstSeen": "1566294081",
-        "lastUpdated": "1566294081",
-        "updateCount": 2,
+        "lastUpdated": "1578048759",
+        "updateCount": 3,
         "authorCount": 2
       }
     },
@@ -180,8 +180,8 @@
         "fileName": "camel.md",
         "text": "Converts a string to camelcase.\n\nUse `re.sub()` to replace any `-` or `_` with a space, using the regexp `r\"(_|-)+\"`.\nUse `title()` to capitalize the first letter of each word convert the rest to lowercase.\nFinally, use `replace()` to remove spaces between words.\n\n",
         "codeBlocks": {
-          "code": "import re\n\ndef camel(s):\n  s = re.sub(r\"(_|-)+\", \" \", s).title().replace(\" \", \"\")\n  return s[0].lower() + s[1:]",
-          "example": "camel('some_database_field_name'); # 'someDatabaseFieldName'\ncamel('Some label that needs to be camelized'); # 'someLabelThatNeedsToBeCamelized'\ncamel('some-javascript-property'); # 'someJavascriptProperty'\ncamel('some-mixed_string with spaces_underscores-and-hyphens'); # 'someMixedStringWithSpacesUnderscoresAndHyphens'"
+          "code": "from re import sub\n\ndef camel(s):\n  s = sub(r\"(_|-)+\", \" \", s).title().replace(\" \", \"\")\n  return s[0].lower() + s[1:]",
+          "example": "camel('some_database_field_name') # 'someDatabaseFieldName'\ncamel('Some label that needs to be camelized') # 'someLabelThatNeedsToBeCamelized'\ncamel('some-javascript-property') # 'someJavascriptProperty'\ncamel('some-mixed_string with spaces_underscores-and-hyphens') # 'someMixedStringWithSpacesUnderscoresAndHyphens'"
         },
         "tags": [
           "string",
@@ -190,10 +190,10 @@
         ]
       },
       "meta": {
-        "hash": "190d14b2ccad05dde990bb29617f7464a0e37f6c2523f1fb2c47fe18d45973fc",
+        "hash": "b9a88311529b43189ddf945f9c86b0f05cdb4c2894e7f3a4305bdb6aa22171d5",
         "firstSeen": "1566367194",
-        "lastUpdated": "1572680512",
-        "updateCount": 7,
+        "lastUpdated": "1578048970",
+        "updateCount": 8,
         "authorCount": 4
       }
     },
@@ -251,7 +251,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "cast_list.md",
-        "text": "Casts the provided value as an array if it's not one.\n\nUse `isinstance()` to check if the given value is enumerable and return it by using `list()` or encapsulated in a list accordingly.\n\n",
+        "text": "Casts the provided value as a list if it's not one.\n\nUse `isinstance()` to check if the given value is enumerable and return it by using `list()` or encapsulated in a list accordingly.\n\n",
         "codeBlocks": {
           "code": "def cast_list(val):\n  return list(val) if isinstance(val, (tuple, list, set, dict)) else [val]",
           "example": "cast_list('foo') # ['foo']\ncast_list([1]) # [1]\ncast_list(('foo', 'bar')) # ['foo', 'bar']"
@@ -263,10 +263,10 @@
         ]
       },
       "meta": {
-        "hash": "776892dc64825137f40f9fe45a1113b94761f7a7f187ce11ea1fa9d4de3787ee",
+        "hash": "0765b0134c5da933915f4c6a7c43dc50b004fd799514e66133e0cfe438af9171",
         "firstSeen": "1566294463",
-        "lastUpdated": "1570616072",
-        "updateCount": 5,
+        "lastUpdated": "1578048956",
+        "updateCount": 6,
         "authorCount": 3
       }
     },
@@ -279,7 +279,7 @@
         "text": "Given a predicate function, `fn`, and a `prop` string, this curried function will then take an object to inspect by calling the property and passing it to the predicate.\n\nReturn a `lambda` function that takes an object and applies the predicate function, `fn` to the specified property.\n\n",
         "codeBlocks": {
           "code": "def check_prop(fn, prop):\r\n  return lambda obj: fn(obj[prop])",
-          "example": "check_age = check_prop(lambda x: x >= 18, 'age')\r\nuser = {\r\n  'name': 'Mark',\r\n  'age': 18\r\n}\r\n\r\ncheck_age(user) # True"
+          "example": "check_age = check_prop(lambda x: x >= 18, 'age')\r\nuser = {'name': 'Mark', 'age': 18}\r\n\r\ncheck_age(user) # True"
         },
         "tags": [
           "utility",
@@ -287,10 +287,10 @@
         ]
       },
       "meta": {
-        "hash": "dfab14066fcab3a7ac08a0a4edf9512babc398c82710067800f1d5974e777335",
+        "hash": "ceb7dcb63cc7ec14237807b05a7cc47e7298969bd90fa1bd1ca96426a3cfa34f",
         "firstSeen": "1577976565",
-        "lastUpdated": "1577976565",
-        "updateCount": 2,
+        "lastUpdated": "1578048759",
+        "updateCount": 3,
         "authorCount": 2
       }
     },
@@ -303,7 +303,7 @@
         "text": "Chunks a list into smaller lists of a specified size.\n\nUse `list()` and `range()` to create a list of the desired `size`.\nUse `map()` on the list and fill it with splices of the given list.\nFinally, return the created list.\n\n",
         "codeBlocks": {
           "code": "from math import ceil\n\ndef chunk(lst, size):\n  return list(\n    map(lambda x: lst[x * size:x * size + size],\n      list(range(0, ceil(len(lst) / size)))))",
-          "example": "chunk([1,2,3,4,5],2) # [[1,2],[3,4],5]"
+          "example": "chunk([1, 2, 3, 4, 5], 2) # [[1,2],[3,4],5]"
         },
         "tags": [
           "list",
@@ -311,10 +311,10 @@
         ]
       },
       "meta": {
-        "hash": "0084a25a57f89e81891e4096e1c6a9efef50b50c1dbd8f837bf7c6a9a12bfadf",
+        "hash": "04539dabc7eda5659177d2c3170343646ba5e4575b5f0127a348eb5d7b4e359c",
         "firstSeen": "1515472782",
-        "lastUpdated": "1577380361",
-        "updateCount": 14,
+        "lastUpdated": "1578048759",
+        "updateCount": 15,
         "authorCount": 4
       }
     },
@@ -326,7 +326,7 @@
         "fileName": "clamp_number.md",
         "text": "Clamps `num` within the inclusive range specified by the boundary values `a` and `b`.\n\nIf `num` falls within the range, return `num`. \nOtherwise, return the nearest number in the range.\n\n",
         "codeBlocks": {
-          "code": "def clamp_number(num,a,b):\n  return max(min(num, max(a,b)),min(a,b))",
+          "code": "def clamp_number(num,a,b):\n  return max(min(num, max(a, b)), min(a, b))",
           "example": "clamp_number(2, 3, 5) # 3\nclamp_number(1, -1, -5) # -1"
         },
         "tags": [
@@ -335,10 +335,10 @@
         ]
       },
       "meta": {
-        "hash": "7e3dc4519a629ec87f72e5b495227733735c9c2262e5f6a89264191967cfad31",
+        "hash": "4abb40db52960635289aa0c16e94763fccc89bba5f79dedee5332bdfd6df30c7",
         "firstSeen": "1566294638",
-        "lastUpdated": "1566294638",
-        "updateCount": 2,
+        "lastUpdated": "1578048759",
+        "updateCount": 3,
         "authorCount": 2
       }
     },
@@ -372,7 +372,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "compose.md",
-        "text": "Performs right-to-left function composition.\n\nUse `reduce()` to perform right-to-left function composition. \nThe last (rightmost) function can accept one or more arguments; the remaining functions must be unary.\n\n",
+        "text": "Performs right-to-left function composition.\n\nUse `functools.reduce()` to perform right-to-left function composition. \nThe last (rightmost) function can accept one or more arguments; the remaining functions must be unary.\n\n",
         "codeBlocks": {
           "code": "from functools import reduce\r\n\r\ndef compose(*fns):\r\n  return reduce(lambda f, g: lambda *args: f(g(*args)), fns)",
           "example": "add5 = lambda x: x + 5\r\nmultiply = lambda x, y: x * y\r\nmultiply_and_add_5 = compose(add5, multiply)\r\n\r\nmultiply_and_add_5(5, 2) # 15"
@@ -383,10 +383,10 @@
         ]
       },
       "meta": {
-        "hash": "8be5bb671257ee45d10384859c89e826606c3241261a0adb62c2e3c86aed4064",
+        "hash": "a70d6ec0dc67eb97bcc951e4d0a9489065bf2bb861f993026b0b1ed8517c6c00",
         "firstSeen": "1577973080",
-        "lastUpdated": "1577973080",
-        "updateCount": 2,
+        "lastUpdated": "1578048908",
+        "updateCount": 3,
         "authorCount": 2
       }
     },
@@ -396,7 +396,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "compose_right.md",
-        "text": "Performs left-to-right function composition.\n\nUse `reduce()` to perform left-to-right function composition. \nThe first (leftmost) function can accept one or more arguments; the remaining functions must be unary.\n\n",
+        "text": "Performs left-to-right function composition.\n\nUse `functools.reduce()` to perform left-to-right function composition. \nThe first (leftmost) function can accept one or more arguments; the remaining functions must be unary.\n\n",
         "codeBlocks": {
           "code": "from functools import reduce\r\n\r\ndef compose_right(*fns):\r\n  return reduce(lambda f, g: lambda *args: g(f(*args)), fns)",
           "example": "add = lambda x, y: x + y\r\nsquare = lambda x: x * x\r\nadd_and_square = compose_right(add,square)\r\n\r\nadd_and_square(1, 2) # 9"
@@ -407,10 +407,10 @@
         ]
       },
       "meta": {
-        "hash": "d4f75bad32eba20b2c3d122a8b2f78163244202472ca28d18db04cd56d97f409",
+        "hash": "7c16b51fea79fb9301d9e46cd512069bba1b332e0e1dad493249603ce0a50db4",
         "firstSeen": "1577973086",
-        "lastUpdated": "1577973086",
-        "updateCount": 2,
+        "lastUpdated": "1578048908",
+        "updateCount": 3,
         "authorCount": 2
       }
     },
@@ -468,10 +468,10 @@
       "type": "snippet",
       "attributes": {
         "fileName": "curry.md",
-        "text": "Curries a function.\n\nUse `partial()` to return a new partial object which behaves like `fn` with the given arguments, `args`, partially applied.\n\n",
+        "text": "Curries a function.\n\nUse `functools.partial()` to return a new partial object which behaves like `fn` with the given arguments, `args`, partially applied.\n\n",
         "codeBlocks": {
           "code": "from functools import partial\r\n\r\ndef curry(fn, *args):\r\n  return partial(fn,*args)",
-          "example": "add = lambda x, y: x + y\r\nadd10 = curry(sum, 10)\r\n\r\nadd10(20) # 30"
+          "example": "add = lambda x, y: x + y\r\nadd10 = curry(add, 10)\r\n\r\nadd10(20) # 30"
         },
         "tags": [
           "function",
@@ -479,10 +479,10 @@
         ]
       },
       "meta": {
-        "hash": "c5c6e1d9adce6fdd3f97499e2368a5aa3073f4089427e5d43482bdb7c0e8600b",
+        "hash": "8b4d1654ec3fb0041fe2762ddf2834488e5161a3843bd3a6c659f1426385182f",
         "firstSeen": "1577974490",
-        "lastUpdated": "1577974490",
-        "updateCount": 2,
+        "lastUpdated": "1578048908",
+        "updateCount": 3,
         "authorCount": 2
       }
     },
@@ -516,9 +516,9 @@
       "type": "snippet",
       "attributes": {
         "fileName": "deep_flatten.md",
-        "text": "Deep flattens a list.\n\nUse recursion. \nDefine a function, `spread`, that uses either `list.extend()` or `list.append()` on each element in a list to flatten it.\nUse `list.extend()` with an empty list and the `spread` function to flatten a list.\nRecursively flatten each element that is a list.\n\n",
+        "text": "Deep flattens a list.\n\nUse recursion. \nUse `isinstance()` with `collections.abc.Iterable` to check if an element is iterable.\nIf it is, apply `deep_flatten()` recursively, otherwise return `[lst]`.\n\n",
         "codeBlocks": {
-          "code": "def spread(arg):\n  ret = []\n  for i in arg:\n    if isinstance(i, list):\n      ret.extend(i)\n    else:\n      ret.append(i)\n  return ret\n\ndef deep_flatten(lst):\n  result = []\n  result.extend(\n    spread(list(map(lambda x: deep_flatten(x) if type(x) == list else x, lst))))\n  return result",
+          "code": "from collections.abc import Iterable\n\ndef deep_flatten(lst): \n  return [a for i in lst for a in deep_flatten(i)] if isinstance(lst, Iterable) else [lst]",
           "example": "deep_flatten([1, [2], [[3], 4], 5]) # [1,2,3,4,5]"
         },
         "tags": [
@@ -528,10 +528,10 @@
         ]
       },
       "meta": {
-        "hash": "a100d5704afe48a7dce26871bc50c993670d7388d8e4958c02c07efe07884167",
+        "hash": "2988946e5ef7486404d962bb5a19e6a8f5b845775688966e3133e3b33b86334a",
         "firstSeen": "1516114454",
-        "lastUpdated": "1566286689",
-        "updateCount": 776,
+        "lastUpdated": "1578049156",
+        "updateCount": 777,
         "authorCount": 4
       }
     },
@@ -543,7 +543,7 @@
         "fileName": "degrees_to_rads.md",
         "text": "Converts an angle from degrees to radians.\n\nUse `math.pi` and the degrees to radians formula to convert the angle from degrees to radians.\n\n",
         "codeBlocks": {
-          "code": "import math\n\ndef degrees_to_rads(deg):\n  return (deg * math.pi) / 180.0",
+          "code": "from math import pi\n\ndef degrees_to_rads(deg):\n  return (deg * pi) / 180.0",
           "example": "degrees_to_rads(180) # 3.141592653589793"
         },
         "tags": [
@@ -552,10 +552,10 @@
         ]
       },
       "meta": {
-        "hash": "8bb6f1b7cde2b4602449ee30a7c7e402d25e6bb6a7841472d87b7fcbe5eab7f3",
+        "hash": "16bf7a5b40622e18047609f198cbd4f584c184c2c65a06e7765fac1ff10f9a50",
         "firstSeen": "1571139071",
-        "lastUpdated": "1571141808",
-        "updateCount": 3,
+        "lastUpdated": "1578048779",
+        "updateCount": 4,
         "authorCount": 3
       }
     },
@@ -565,7 +565,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "delay.md",
-        "text": "Invokes the provided function after `ms` milliseconds.\n\nUse `sleep()` to delay the execution of `fn` by `ms / 1000` seconds.\n\n",
+        "text": "Invokes the provided function after `ms` milliseconds.\n\nUse `time.sleep()` to delay the execution of `fn` by `ms / 1000` seconds.\n\n",
         "codeBlocks": {
           "code": "from time import sleep\r\n\r\ndef delay(fn, ms, *args):\r\n  sleep(ms / 1000)\r\n  return fn(*args)",
           "example": "delay(\r\n  lambda x: print(x),\r\n  1000,\r\n  'later'\r\n) # prints 'later' after one second"
@@ -576,10 +576,10 @@
         ]
       },
       "meta": {
-        "hash": "ec9d6f5efc8d2f3a5beedfa4d3e10ecd3627baf0d3022e5ab3f3e9e3b0820757",
+        "hash": "4b6091531fe0add9456f887dd4c90b7f7839f0a63edea7439be3e7f051c97556",
         "firstSeen": "1577975091",
-        "lastUpdated": "1577975091",
-        "updateCount": 2,
+        "lastUpdated": "1578048908",
+        "updateCount": 3,
         "authorCount": 2
       }
     },
@@ -616,7 +616,7 @@
         "text": "Returns the difference between two lists, after applying the provided function to each list element of both.\n\nCreate a `set` by applying `fn` to each element in `b`, then use list comprehension in combination with `fn` on `a` to only keep values not contained in the previously created set, `_b`.\n\n",
         "codeBlocks": {
           "code": "def difference_by(a, b, fn):\n  _b = set(map(fn, b))\n  return [item for item in a if fn(item) not in _b]",
-          "example": "from math import floor\ndifference_by([2.1, 1.2], [2.3, 3.4],floor) # [1.2]\ndifference_by([{ 'x': 2 }, { 'x': 1 }], [{ 'x': 1 }], lambda v : v['x']) # [ { x: 2 } ]"
+          "example": "from math import floor\ndifference_by([2.1, 1.2], [2.3, 3.4], floor) # [1.2]\ndifference_by([{ 'x': 2 }, { 'x': 1 }], [{ 'x': 1 }], lambda v : v['x']) # [ { x: 2 } ]"
         },
         "tags": [
           "list",
@@ -625,10 +625,10 @@
         ]
       },
       "meta": {
-        "hash": "a240b4f3152f847cb5f3877ab2fa1f4b75259c5ce11e28a773ad34bdba14f0a8",
+        "hash": "5044c943260d7d4e162b60000d2a8dc2f689a43af6be7946b05fefc616c51425",
         "firstSeen": "1518098367",
-        "lastUpdated": "1566286689",
-        "updateCount": 9,
+        "lastUpdated": "1578048759",
+        "updateCount": 10,
         "authorCount": 3
       }
     },
@@ -638,7 +638,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "digitize.md",
-        "text": "Converts a number to an array of digits.\n\nUse `map()` combined with `int` on the string representation of `n` and return a list from the result.\n\n",
+        "text": "Converts a number to a list of digits.\n\nUse `map()` combined with `int` on the string representation of `n` and return a list from the result.\n\n",
         "codeBlocks": {
           "code": "def digitize(n):\n  return list(map(int, str(n)))",
           "example": "digitize(123) # [1, 2, 3]"
@@ -650,10 +650,10 @@
         ]
       },
       "meta": {
-        "hash": "576de2896d2565d44da5d42b4b57b37cf1b2e5fc69103ab48a9ed532040ffaf2",
+        "hash": "90beb85f77896593c9d5a0fa23954d7bf0ea69edf769bc55f5125002e717f2f3",
         "firstSeen": "1566295227",
-        "lastUpdated": "1566295227",
-        "updateCount": 2,
+        "lastUpdated": "1578048908",
+        "updateCount": 3,
         "authorCount": 2
       }
     },
@@ -690,7 +690,7 @@
         "fileName": "every_nth.md",
         "text": "Returns every nth element in a list.\n\nUse `[nth-1::nth]` to create a new list that contains every nth element of the given list.\n\n",
         "codeBlocks": {
-          "code": "def every_nth(lst, nth):\n  return lst[nth-1::nth]",
+          "code": "def every_nth(lst, nth):\n  return lst[nth - 1::nth]",
           "example": "every_nth([1, 2, 3, 4, 5, 6], 2) # [ 2, 4, 6 ]"
         },
         "tags": [
@@ -699,10 +699,10 @@
         ]
       },
       "meta": {
-        "hash": "038e0fd0752bbd88c73ea9059e10768bbf31fd3178113738064405e010aa8aa7",
+        "hash": "043215573487367b96603083e9803521e4c30e4aa30b762da95307328dd485b1",
         "firstSeen": "1566295812",
-        "lastUpdated": "1568786710",
-        "updateCount": 3,
+        "lastUpdated": "1578048759",
+        "updateCount": 4,
         "authorCount": 2
       }
     },
@@ -714,7 +714,7 @@
         "fileName": "factorial.md",
         "text": "Calculates the factorial of a number.\n\nUse recursion. \nIf `num` is less than or equal to `1`, return `1`. \nOtherwise, return the product of `num` and the factorial of `num - 1`. \nThrows an exception if `num` is a negative or a floating point number.\n\n",
         "codeBlocks": {
-          "code": "def factorial(num):\n  if not ((num >= 0) and (num % 1 == 0)):\n    raise Exception(\n      f\"Number( {num} ) can't be floating point or negative \")\n  return 1 if num == 0 else num * factorial(num - 1)",
+          "code": "def factorial(num):\n  if not ((num >= 0) and (num % 1 == 0)):\n    raise Exception(\"Number can't be floating point or negative.\")\n  return 1 if num == 0 else num * factorial(num - 1)",
           "example": "factorial(6) # 720"
         },
         "tags": [
@@ -724,10 +724,10 @@
         ]
       },
       "meta": {
-        "hash": "948d8f496825413a0047464055ab9166016ad526d26d83f3ceacd3dc5a1926ba",
+        "hash": "c13c145eb46403345b747fb7ca9c378a0e7f00dcd9f033f0e414279fcb4fdb88",
         "firstSeen": "1517030996",
-        "lastUpdated": "1569180771",
-        "updateCount": 11,
+        "lastUpdated": "1578049233",
+        "updateCount": 12,
         "authorCount": 4
       }
     },
@@ -737,7 +737,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "fibonacci.md",
-        "text": "Generates an array, containing the Fibonacci sequence, up until the nth term.\n\nStarting with `0` and `1`, use `list.append()` to add the sum of the last two numbers of the list to the end of the list, until the length of the list reaches `n`.  \nIf `n` is less or equal to `0`, return a list containing `0`.\n\n",
+        "text": "Generates a list, containing the Fibonacci sequence, up until the nth term.\n\nStarting with `0` and `1`, use `list.append()` to add the sum of the last two numbers of the list to the end of the list, until the length of the list reaches `n`.  \nIf `n` is less or equal to `0`, return a list containing `0`.\n\n",
         "codeBlocks": {
           "code": "def fibonacci(n):\r\n  if n <= 0:\r\n    return [0]\r\n\r\n  sequence = [0, 1]\r\n  while len(sequence) <= n:\r\n    next_value = sequence[len(sequence) - 1] + sequence[len(sequence) - 2]\r\n    sequence.append(next_value)\r\n\r\n  return sequence",
           "example": "fibonacci(7) # [0, 1, 1, 2, 3, 5, 8, 13]"
@@ -749,10 +749,10 @@
         ]
       },
       "meta": {
-        "hash": "e1d19bb17ed3623d36c380b86b8ab675eb6d01e4a7a80e23c4531c29b2efdd02",
+        "hash": "16760105f8db2ebeb984b63a9830d5b0293392e2f55fc13851b364f50e180f5b",
         "firstSeen": "1538795193",
-        "lastUpdated": "1577709298",
-        "updateCount": 9,
+        "lastUpdated": "1578048956",
+        "updateCount": 10,
         "authorCount": 5
       }
     },
@@ -834,10 +834,10 @@
       "type": "snippet",
       "attributes": {
         "fileName": "gcd.md",
-        "text": "Calculates the greatest common divisor of a list of numbers.\n\nUse `reduce()` and `math.gcd` over the given list.\n\n",
+        "text": "Calculates the greatest common divisor of a list of numbers.\n\nUse `functools.reduce()` and `math.gcd()` over the given list.\n\n",
         "codeBlocks": {
-          "code": "from functools import reduce\nimport math\n\ndef gcd(numbers):\n  return reduce(math.gcd, numbers)",
-          "example": "gcd([8,36,28]) # 4"
+          "code": "from functools import reduce\nfrom math import gcd\n\ndef gcd(numbers):\n  return reduce(gcd, numbers)",
+          "example": "gcd([8, 36, 28]) # 4"
         },
         "tags": [
           "math",
@@ -845,10 +845,10 @@
         ]
       },
       "meta": {
-        "hash": "dbb01e7253dbb6f3e2f53271fc14fb7b3ee9816fe56266f78a54b4ca21c94cd7",
+        "hash": "fc9dfc759e41dc0d26ed4e339d7210e13c4cec8ed10b148d481a2d84fe0f63b8",
         "firstSeen": "1515421595",
-        "lastUpdated": "1566287153",
-        "updateCount": 16,
+        "lastUpdated": "1578048779",
+        "updateCount": 17,
         "authorCount": 4
       }
     },
@@ -860,8 +860,8 @@
         "fileName": "group_by.md",
         "text": "Groups the elements of a list based on the given function.\n\nUse `map()` and `fn` to map the values of the list to the keys of an object.\nUse list comprehension to map each element to the appropriate `key`.\n\n",
         "codeBlocks": {
-          "code": "def group_by(lst, fn):\n    return {key : [el for el in lst if fn(el) == key] for key in map(fn,lst)}",
-          "example": "import math\ngroup_by([6.1, 4.2, 6.3], math.floor) # {4: [4.2], 6: [6.1, 6.3]}\ngroup_by(['one', 'two', 'three'], len) # {3: ['one', 'two'], 5: ['three']}"
+          "code": "def group_by(lst, fn):\n  return {key : [el for el in lst if fn(el) == key] for key in map(fn, lst)}",
+          "example": "from math import floor\ngroup_by([6.1, 4.2, 6.3], floor) # {4: [4.2], 6: [6.1, 6.3]}\ngroup_by(['one', 'two', 'three'], len) # {3: ['one', 'two'], 5: ['three']}"
         },
         "tags": [
           "list",
@@ -870,10 +870,10 @@
         ]
       },
       "meta": {
-        "hash": "51e158e03a090b891d6d1646644bff5163751b25a7ee3e72280c04570bff2429",
+        "hash": "d558526c1ec2887f13bb16fd5184a9b98f2a7a76907b191278f5e58e8703846e",
         "firstSeen": "1566296940",
-        "lastUpdated": "1569155079",
-        "updateCount": 5,
+        "lastUpdated": "1578048759",
+        "updateCount": 6,
         "authorCount": 2
       }
     },
@@ -886,7 +886,7 @@
         "text": "Returns `True` if there are duplicate values in a flast list, `False` otherwise.\n\nUse `set()` on the given list to remove duplicates, compare its length with the length of the list.\n\n",
         "codeBlocks": {
           "code": "def has_duplicates(lst):\n  return len(lst) != len(set(lst))",
-          "example": "x = [1,2,3,4,5,5]\ny = [1,2,3,4,5]\nhas_duplicates(x) # True\nhas_duplicates(y) # False"
+          "example": "x = [1, 2, 3, 4, 5, 5]\ny = [1, 2, 3, 4, 5]\nhas_duplicates(x) # True\nhas_duplicates(y) # False"
         },
         "tags": [
           "list",
@@ -894,10 +894,10 @@
         ]
       },
       "meta": {
-        "hash": "762663e25e978ee96720d6fd977e4ca42b328150fa654d0e600c636284552712",
+        "hash": "498b0cc49b4a1ad7f98addb9c7bbc84320d91a5558eaf681352086c5ad6edb44",
         "firstSeen": "1522569789",
-        "lastUpdated": "1566287153",
-        "updateCount": 6,
+        "lastUpdated": "1578048759",
+        "updateCount": 7,
         "authorCount": 3
       }
     },
@@ -910,7 +910,7 @@
         "text": "Returns the head of a list.\n\nUse `lst[0]` to return the first element of the passed list.\n\n",
         "codeBlocks": {
           "code": "def head(lst):\n  return lst[0]",
-          "example": "head([1, 2, 3]); # 1"
+          "example": "head([1, 2, 3]) # 1"
         },
         "tags": [
           "list",
@@ -918,10 +918,10 @@
         ]
       },
       "meta": {
-        "hash": "1fb7995d9f0e0be9dc0a5bf68a65141922a52f682bcda6883afee98041a4e623",
+        "hash": "967333852bd5578d4cb6bf8bfe20781b9137d5809320a6a000828456e32a1efe",
         "firstSeen": "1566299332",
-        "lastUpdated": "1577042472",
-        "updateCount": 3,
+        "lastUpdated": "1578048873",
+        "updateCount": 4,
         "authorCount": 3
       }
     },
@@ -933,8 +933,8 @@
         "fileName": "in_range.md",
         "text": "Checks if the given number falls within the given range.\n\nUse arithmetic comparison to check if the given number is in the specified range.\nIf the second parameter, `end`, is not specified, the range is considered to be from `0` to `start`.\n\n",
         "codeBlocks": {
-          "code": "def in_range(n, start, end = 0):\n  if (start > end):\n    end, start = start, end\n  return start <= n <= end",
-          "example": "in_range(3, 2, 5); # True\nin_range(3, 4); # True\nin_range(2, 3, 5); # False\nin_range(3, 2); # False"
+          "code": "def in_range(n, start, end = 0):\n  return start <= n <= end if end >= start else end <= n <= start",
+          "example": "in_range(3, 2, 5) # True\nin_range(3, 4) # True\nin_range(2, 3, 5) # False\nin_range(3, 2) # False"
         },
         "tags": [
           "math",
@@ -942,10 +942,10 @@
         ]
       },
       "meta": {
-        "hash": "f65d098189837551aef365c68bd9389a0c1e84e89233fa5a886e889ce6981f9f",
+        "hash": "dd49fd3dc6b7590a2607ded9b2f4b879ea56b93573e92376f669a1957ad9945b",
         "firstSeen": "1566297700",
-        "lastUpdated": "1566297700",
-        "updateCount": 2,
+        "lastUpdated": "1578049196",
+        "updateCount": 3,
         "authorCount": 2
       }
     },
@@ -958,7 +958,7 @@
         "text": "Returns all the elements of a list except the last one.\n\nUse `lst[0:-1]` to return all but the last element of the list.\n\n",
         "codeBlocks": {
           "code": "def initial(lst):\n  return lst[0:-1]",
-          "example": "initial([1, 2, 3]); # [1,2]"
+          "example": "initial([1, 2, 3]) # [1,2]"
         },
         "tags": [
           "list",
@@ -966,10 +966,10 @@
         ]
       },
       "meta": {
-        "hash": "cf0229dd484711e5847d85952841a13800bb5e0767c1de40e219f63cfed3e0f1",
+        "hash": "a55c33e2511216427f6b6f80d743f3fe4cd40a28f775c027d73352a04f531269",
         "firstSeen": "1566299332",
-        "lastUpdated": "1566299332",
-        "updateCount": 2,
+        "lastUpdated": "1578048873",
+        "updateCount": 3,
         "authorCount": 2
       }
     },
@@ -1005,8 +1005,8 @@
         "fileName": "initialize_list_with_range.md",
         "text": "Initializes a list containing the numbers in the specified range where `start` and `end` are inclusive with their common difference `step`.\n\nUse `list` and `range()` to generate a list of the appropriate length, filled with the desired values in the given range.\nOmit `start` to use the default value of `0`.\nOmit `step` to use the default value of `1`.\n\n",
         "codeBlocks": {
-          "code": "def initialize_list_with_range(end, start = 0, step = 1):\n  return list(range(start, end + 1, step))",
-          "example": "initialize_list_with_range(5) # [0, 1, 2, 3, 4, 5]\ninitialize_list_with_range(7,3) # [3, 4, 5, 6, 7]\ninitialize_list_with_range(9,0,2) # [0, 2, 4, 6, 8]"
+          "code": "def initialize_list_with_range(end, start=0, step=1):\n  return list(range(start, end + 1, step))",
+          "example": "initialize_list_with_range(5) # [0, 1, 2, 3, 4, 5]\ninitialize_list_with_range(7, 3) # [3, 4, 5, 6, 7]\ninitialize_list_with_range(9, 0, 2) # [0, 2, 4, 6, 8]"
         },
         "tags": [
           "list",
@@ -1014,10 +1014,10 @@
         ]
       },
       "meta": {
-        "hash": "75ce66f70653b918d86f8bb7c2743bced720389c9f8f97072b4ff90b377255e1",
+        "hash": "b7fa8130ef5c85aacb645b1e194073167f29a5ce234b5e13549dbb728ba09ca9",
         "firstSeen": "1566303701",
-        "lastUpdated": "1566544998",
-        "updateCount": 3,
+        "lastUpdated": "1578048759",
+        "updateCount": 4,
         "authorCount": 3
       }
     },
@@ -1102,7 +1102,7 @@
         "fileName": "is_anagram.md",
         "text": "Checks if a string is an anagram of another string (case-insensitive, ignores spaces, punctuation and special characters).\n\nUse `s.replace()` to remove spaces from both strings.\nCompare the lengths of the two strings, return `False` if they are not equal.\nUse `sorted()` on both strings and compare the results.\n\n",
         "codeBlocks": {
-          "code": "def is_anagram(s1, s2):\n  _str1, _str2 = s1.replace(\" \", \"\"), s2.replace(\" \", \"\")\n\n  if len(_str1) != len(_str2):\n    return False\n  else:\n    return sorted(_str1.lower()) == sorted(_str2.lower())",
+          "code": "def is_anagram(s1, s2):\n  _str1, _str2 = s1.replace(\" \", \"\"), s2.replace(\" \", \"\")\n  return False if len(_str1) != len(_str2) else sorted(_str1.lower()) == sorted(_str2.lower())",
           "example": "is_anagram(\"anagram\", \"Nag a ram\")  # True"
         },
         "tags": [
@@ -1111,10 +1111,10 @@
         ]
       },
       "meta": {
-        "hash": "58303cd7a175fea41b2fdf5ede26c329d43b442accd09472e171f5b8c4bc64e3",
+        "hash": "efdcecce589a3812218ede260f156888eb8544ccf85eab35d1885689668292e8",
         "firstSeen": "1538389049",
-        "lastUpdated": "1570502638",
-        "updateCount": 7,
+        "lastUpdated": "1578049045",
+        "updateCount": 8,
         "authorCount": 4
       }
     },
@@ -1198,8 +1198,8 @@
         "fileName": "kebab.md",
         "text": "Converts a string to kebab case.\n\nBreak the string into words and combine them adding `-` as a separator, using a regexp.\n\n",
         "codeBlocks": {
-          "code": "import re\n\ndef kebab(s):\n  return re.sub(r\"(\\s|_|-)+\",\"-\",\n    re.sub(r\"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+\",\n    lambda mo: mo.group(0).lower(), s)\n  )",
-          "example": "kebab('camelCase'); # 'camel-case'\nkebab('some text'); # 'some-text'\nkebab('some-mixed_string With spaces_underscores-and-hyphens'); # 'some-mixed-string-with-spaces-underscores-and-hyphens'\nkebab('AllThe-small Things'); # \"all-the-small-things\""
+          "code": "from re import sub\n\ndef kebab(s):\n  return sub(\n    r\"(\\s|_|-)+\",\"-\",\n    sub(\n      r\"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+\",\n      lambda mo: mo.group(0).lower(), s))",
+          "example": "kebab('camelCase') # 'camel-case'\nkebab('some text') # 'some-text'\nkebab('some-mixed_string With spaces_underscores-and-hyphens') # 'some-mixed-string-with-spaces-underscores-and-hyphens'\nkebab('AllThe-small Things') # \"all-the-small-things\""
         },
         "tags": [
           "string",
@@ -1208,10 +1208,10 @@
         ]
       },
       "meta": {
-        "hash": "a89555ac50b3243a1134fd31919edfc9fbe3029778c3178033fd0e15ce2e3760",
+        "hash": "db8a145f1dc53a254a9572fa47f76968b4381964b2291c5883c78f9337b7dbc9",
         "firstSeen": "1566367194",
-        "lastUpdated": "1570502638",
-        "updateCount": 4,
+        "lastUpdated": "1578048970",
+        "updateCount": 5,
         "authorCount": 3
       }
     },
@@ -1270,10 +1270,10 @@
       "type": "snippet",
       "attributes": {
         "fileName": "lcm.md",
-        "text": "Returns the least common multiple of two or more numbers.\n\nDefine a function, `spread`, that uses either `list.extend()` or `list.append()` on each element in a list to flatten it.\nUse `math.gcd()` and `lcm(x,y) = x * y / gcd(x,y)` to determine the least common multiple.\n\n",
+        "text": "Returns the least common multiple of a list of numbers.\n\nUse `functools.reduce()`, `math.gcd()` and `lcm(x,y) = x * y / gcd(x,y)` over the given list.\n\n",
         "codeBlocks": {
-          "code": "from functools import reduce\nimport math\n\ndef spread(arg):\n  ret = []\n  for i in arg:\n    if isinstance(i, list):\n      ret.extend(i)\n    else:\n      ret.append(i)\n  return ret\n\ndef lcm(*args):\n  numbers = []\n  numbers.extend(spread(list(args)))\n\n  def _lcm(x, y):\n    return int(x * y / math.gcd(x, y))\n\n  return reduce((lambda x, y: _lcm(x, y)), numbers)",
-          "example": "lcm(12, 7) # 84\nlcm([1, 3, 4], 5) # 60"
+          "code": "from functools import reduce\nfrom math import gcd\n\ndef lcm(numbers):\n  return reduce((lambda x, y: int(x * y / gcd(x, y))), numbers)",
+          "example": "lcm([12, 7]) # 84\nlcm([1, 3, 4, 5]) # 60"
         },
         "tags": [
           "math",
@@ -1283,10 +1283,10 @@
         ]
       },
       "meta": {
-        "hash": "a0cf166fd37f16c6bcaef46345ff11af0dadb488160168a0915e665550f7a669",
+        "hash": "030af844c409419551f3ce340666ad7b59949b54814fe50f3a474c2a06a211a5",
         "firstSeen": "1515443417",
-        "lastUpdated": "1566288481",
-        "updateCount": 15,
+        "lastUpdated": "1578049163",
+        "updateCount": 16,
         "authorCount": 3
       }
     },
@@ -1298,7 +1298,7 @@
         "fileName": "longest_item.md",
         "text": "Takes any number of iterable objects or objects with a length property and returns the longest one. \nIf multiple objects have the same length, the first one will be returned.\n\nUse `max()` with `len` as the `key` to return the item with the greatest length.\n\n",
         "codeBlocks": {
-          "code": "def longest_item(*args):\n  return max(args, key = len)",
+          "code": "def longest_item(*args):\n  return max(args, key=len)",
           "example": "longest_item('this', 'is', 'a', 'testcase') # 'testcase'\nlongest_item([1, 2, 3], [1, 2], [1, 2, 3, 4, 5]) # [1, 2, 3, 4, 5]\nlongest_item([1, 2, 3], 'foobar') # 'foobar'"
         },
         "tags": [
@@ -1309,10 +1309,10 @@
         ]
       },
       "meta": {
-        "hash": "dd1a2d1300f23bb8f8618f9ab20dad11062f4476be80081e3cefc535717da818",
+        "hash": "af50f2096fef9a18346e3c220ff1957ab4218075e6c02ae05d8c3f6e3d269549",
         "firstSeen": "1566304069",
-        "lastUpdated": "1566304069",
-        "updateCount": 2,
+        "lastUpdated": "1578048759",
+        "updateCount": 3,
         "authorCount": 2
       }
     },
@@ -1349,7 +1349,7 @@
         "fileName": "max_by.md",
         "text": "Returns the maximum value of a list, after mapping each element to a value using the provided function.\n\nUse `map()` with `fn` to map each element to a value using the provided function, use `max()` to return the maximum value.\n\n",
         "codeBlocks": {
-          "code": "def max_by(lst, fn):\n  return max(map(fn,lst))",
+          "code": "def max_by(lst, fn):\n  return max(map(fn, lst))",
           "example": "max_by([{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }], lambda v : v['n']) # 8"
         },
         "tags": [
@@ -1360,10 +1360,10 @@
         ]
       },
       "meta": {
-        "hash": "aca578491d9c055c793cf782db88f7e0c1de093c3e9ad09a72a59e75055b7581",
+        "hash": "53b802a4eb47675a404933430e2b7aa061d879d612607b79793080a47243d205",
         "firstSeen": "1566304961",
-        "lastUpdated": "1569155710",
-        "updateCount": 4,
+        "lastUpdated": "1578048759",
+        "updateCount": 5,
         "authorCount": 2
       }
     },
@@ -1448,7 +1448,7 @@
         "fileName": "min_by.md",
         "text": "Returns the minimum value of a list, after mapping each element to a value using the provided function.\n\nUse `map()` with `fn` to map each element to a value using the provided function, use `min()` to return the minimum value.\n\n",
         "codeBlocks": {
-          "code": "def min_by(lst, fn):\n  return min(map(fn,lst))",
+          "code": "def min_by(lst, fn):\n  return min(map(fn, lst))",
           "example": "min_by([{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }], lambda v : v['n']) # 2"
         },
         "tags": [
@@ -1459,10 +1459,10 @@
         ]
       },
       "meta": {
-        "hash": "fb061014007b8c476b42e8c7f8619a6a203f89e6141960a80292dc362ad05f80",
+        "hash": "2a913d7608234d8988d44fa71e0477cdb2185f3d32f4cc22860ea2807255e585",
         "firstSeen": "1566304961",
-        "lastUpdated": "1569155692",
-        "updateCount": 4,
+        "lastUpdated": "1578048759",
+        "updateCount": 5,
         "authorCount": 2
       }
     },
@@ -1499,8 +1499,8 @@
         "fileName": "most_frequent.md",
         "text": "Returns the most frequent element in a list.\n\nUse `set(list)` to get the unique values in the `list` combined with `max()` to find the element that has the most appearances.\n\n",
         "codeBlocks": {
-          "code": "def most_frequent(list):\n  return max(set(list), key = list.count)",
-          "example": "most_frequent([1,2,1,2,3,2,1,4,2]) #2"
+          "code": "def most_frequent(list):\n  return max(set(list), key=list.count)",
+          "example": "most_frequent([1, 2, 1, 2, 3, 2, 1, 4, 2]) #2"
         },
         "tags": [
           "list",
@@ -1508,10 +1508,10 @@
         ]
       },
       "meta": {
-        "hash": "8f90ba8698b866c434ad0345df4753c46e1b19f01e339b00043a541d0e241db8",
+        "hash": "e63217dfdd3ea87db1448e4178dffcf59ae3cff4138062c6e623896076d802db",
         "firstSeen": "1570830049",
-        "lastUpdated": "1570875257",
-        "updateCount": 4,
+        "lastUpdated": "1578048759",
+        "updateCount": 5,
         "authorCount": 3
       }
     },
@@ -1532,11 +1532,11 @@
         ]
       },
       "meta": {
-        "hash": "c4911d051ab7d5e4803eb5e3786181d7026e2fcf95e7ac1d67fe98bcbf326696",
+        "hash": "8ecad31184e8b4e54f16a4107286d1d43cbc84608f19ccf472143a85c3a23908",
         "firstSeen": "1569568045",
-        "lastUpdated": "1570502638",
-        "updateCount": 6,
-        "authorCount": 3
+        "lastUpdated": "1578048759",
+        "updateCount": 7,
+        "authorCount": 4
       }
     },
     {
@@ -1620,8 +1620,8 @@
         "fileName": "rads_to_degrees.md",
         "text": "Converts an angle from radians to degrees.\n\nUse `math.pi` and the radian to degree formula to convert the angle from radians to degrees.\n\n",
         "codeBlocks": {
-          "code": "import math\n\ndef rads_to_degrees(rad):\n  return (rad * 180.0) / math.pi",
-          "example": "import math\nrads_to_degrees(math.pi / 2) # 90.0"
+          "code": "from math import pi\n\ndef rads_to_degrees(rad):\n  return (rad * 180.0) / math.pi",
+          "example": "from math import pi\nrads_to_degrees(math.pi / 2) # 90.0"
         },
         "tags": [
           "math",
@@ -1629,10 +1629,10 @@
         ]
       },
       "meta": {
-        "hash": "c3008a44f2eb31adaca3e4f91c29a56a955e3105f9c187aa055fc55c35874b41",
+        "hash": "b8397e39c3e1187f47c39402afb90f5d6108894ffddaac37e435803ee1274d3a",
         "firstSeen": "1566305937",
-        "lastUpdated": "1566305937",
-        "updateCount": 2,
+        "lastUpdated": "1578048779",
+        "updateCount": 3,
         "authorCount": 2
       }
     },
@@ -1644,7 +1644,7 @@
         "fileName": "reverse_string.md",
         "text": "Returns the reverse of a string.\n\nUse string slicing to reverse the string.\n\n",
         "codeBlocks": {
-          "code": "def reverse_string(string):\n  return string[::-1]",
+          "code": "def reverse_string(s):\n  return s[::-1]",
           "example": "reverse_string(\"snippet\") #\"teppins\""
         },
         "tags": [
@@ -1653,11 +1653,11 @@
         ]
       },
       "meta": {
-        "hash": "530fb0bc1bfaf1b56910aee3137be644986727e2f15b7e7ac2010f8797d86258",
+        "hash": "beba9501ba22c14d92d1ea1c0be4686ad8e2e659b0945e066c1eb2a05d323d6c",
         "firstSeen": "1570942024",
-        "lastUpdated": "1570958941",
-        "updateCount": 5,
-        "authorCount": 3
+        "lastUpdated": "1578048827",
+        "updateCount": 6,
+        "authorCount": 4
       }
     },
     {
@@ -1666,7 +1666,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "sample.md",
-        "text": "Returns a random element from an array.\n\nUse `randint()` to generate a random number that corresponds to an index in the list, return the element at that index.\n\n",
+        "text": "Returns a random element from a list.\n\nUse `random.randint()` to generate a random number that corresponds to an index in the list, return the element at that index.\n\n",
         "codeBlocks": {
           "code": "from random import randint\n\ndef sample(lst):\n  return lst[randint(0, len(lst) - 1)]",
           "example": "sample([3, 7, 9, 11]) # 9"
@@ -1678,10 +1678,10 @@
         ]
       },
       "meta": {
-        "hash": "68c3a2f20c4969324199dc6005be573d95ec4d08747586bf26d0bf06b571c94c",
+        "hash": "83552913c0e8c32835639ce5393de8b975bca4fd61a3bc5e2145cdb2573c6787",
         "firstSeen": "1566306157",
-        "lastUpdated": "1566306157",
-        "updateCount": 2,
+        "lastUpdated": "1578048814",
+        "updateCount": 3,
         "authorCount": 2
       }
     },
@@ -1694,7 +1694,7 @@
         "text": "Randomizes the order of the values of an list, returning a new list.\n\nUses the [Fisher-Yates algorithm](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle) to reorder the elements of the list.\n\n",
         "codeBlocks": {
           "code": "from copy import deepcopy\nfrom random import randint\n\ndef shuffle(lst):\n  temp_lst = deepcopy(lst)\n  m = len(temp_lst)\n  while (m):\n    m -= 1\n    i = randint(0, m)\n    temp_lst[m], temp_lst[i] = temp_lst[i], temp_lst[m]\n  return temp_lst",
-          "example": "foo = [1,2,3]\nshuffle(foo) # [2,3,1] , foo = [1,2,3]"
+          "example": "foo = [1,2,3]\nshuffle(foo) # [2,3,1], foo = [1,2,3]"
         },
         "tags": [
           "list",
@@ -1703,10 +1703,10 @@
         ]
       },
       "meta": {
-        "hash": "8c6e1dafadd78f04b11d412b7b8db01e1275339adf906e2637129d761117e480",
+        "hash": "232f0b9b19a01863a336f9aae733a50c6f516d2dc663e47b2948f5702b3a99ff",
         "firstSeen": "1516355973",
-        "lastUpdated": "1566289135",
-        "updateCount": 13,
+        "lastUpdated": "1578048759",
+        "updateCount": 14,
         "authorCount": 4
       }
     },
@@ -1742,7 +1742,7 @@
         "fileName": "snake.md",
         "text": "Converts a string to snake case.\n\nBreak the string into words and combine them adding `_` as a separator, using a regexp.\n\n",
         "codeBlocks": {
-          "code": "import re\n\ndef snake(s):\n  return '_'.join(re.sub('([A-Z][a-z]+)', r' \\1',\n    re.sub('([A-Z]+)', r' \\1',\n    s.replace('-', ' '))).split()).lower()",
+          "code": "from re import sub\n\ndef snake(s):\n  return '_'.join(\n    sub('([A-Z][a-z]+)', r' \\1',\n    sub('([A-Z]+)', r' \\1',\n    s.replace('-', ' '))).split()).lower()",
           "example": "snake('camelCase') # 'camel_case'\nsnake('some text') # 'some_text'\nsnake('some-mixed_string With spaces_underscores-and-hyphens') # 'some_mixed_string_with_spaces_underscores_and_hyphens'\nsnake('AllThe-small Things') # \"all_the_smal_things\""
         },
         "tags": [
@@ -1752,10 +1752,10 @@
         ]
       },
       "meta": {
-        "hash": "e388dcf225060a6943fa501a169df52c337bcafc21082f4ffb31f8aa086e97b1",
+        "hash": "61b8664377ec94ef7957b572119bc6508f582e304a5a276becaa1e4020a1c791",
         "firstSeen": "1566367194",
-        "lastUpdated": "1570502638",
-        "updateCount": 12,
+        "lastUpdated": "1578048779",
+        "updateCount": 13,
         "authorCount": 6
       }
     },
@@ -1816,8 +1816,8 @@
         "fileName": "spread.md",
         "text": "Flattens a list, by spreading its elements into a new list.\n\nLoop over elements, use `list.extend()` if the element is a list, `list.append()` otherwise.\n\n",
         "codeBlocks": {
-          "code": "def spread(arg):\n  ret = []\n  for i in arg:\n    if isinstance(i, list):\n      ret.extend(i)\n    else:\n      ret.append(i)\n  return ret",
-          "example": "spread([1,2,3,[4,5,6],[7],8,9]) # [1,2,3,4,5,6,7,8,9]"
+          "code": "def spread(arg):\n  ret = []\n  for i in arg:\n    ret.extend(i) if isinstance(i, list) else ret.append(i)\n  return ret",
+          "example": "spread([1, 2, 3, [4, 5, 6], [7], 8, 9]) # [1, 2, 3, 4, 5, 6, 7, 8, 9]"
         },
         "tags": [
           "list",
@@ -1826,10 +1826,10 @@
         ]
       },
       "meta": {
-        "hash": "db09a105c21df08d2d580e95dd9d3f895a38e2e9b29818f78a671203ab94df38",
+        "hash": "a483a7203d0ea1ceebbcbe05d50ad724798ebdb8c9786b4be46d671b03daebc8",
         "firstSeen": "1515443885",
-        "lastUpdated": "1566289135",
-        "updateCount": 12,
+        "lastUpdated": "1578049108",
+        "updateCount": 13,
         "authorCount": 3
       }
     },
@@ -1841,7 +1841,7 @@
         "fileName": "sum_by.md",
         "text": "Returns the sum of a list, after mapping each element to a value using the provided function.\n\nUse `map()` with `fn` to map each element to a value using the provided function, use `sum()` to return the sum of the values.\n\n",
         "codeBlocks": {
-          "code": "def sum_by(lst, fn):\n  return sum(map(fn,lst))",
+          "code": "def sum_by(lst, fn):\n  return sum(map(fn, lst))",
           "example": "sum_by([{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }], lambda v : v['n']) # 20"
         },
         "tags": [
@@ -1852,10 +1852,10 @@
         ]
       },
       "meta": {
-        "hash": "aa4e4a8d9b99ed0e2d04af5430613f1155329592f3d4f7c2bf76a659a6df7c17",
+        "hash": "2051bc61e1359b1fd9fb14defaac6e8014e8633a09de634f44172a6ac52568f5",
         "firstSeen": "1566365404",
-        "lastUpdated": "1569155766",
-        "updateCount": 3,
+        "lastUpdated": "1578048759",
+        "updateCount": 4,
         "authorCount": 2
       }
     },
@@ -1917,7 +1917,7 @@
         "text": "Returns all elements in a list except for the first one.\n\nReturn `lst[1:]` if the list's length is more than `1`, otherwise, return the whole list.\n\n",
         "codeBlocks": {
           "code": "def tail(lst):\n  return lst[1:] if len(lst) > 1 else lst",
-          "example": "tail([1, 2, 3]); # [2,3]\ntail([1]); # [1]"
+          "example": "tail([1, 2, 3]) # [2,3]\ntail([1]) # [1]"
         },
         "tags": [
           "list",
@@ -1925,10 +1925,10 @@
         ]
       },
       "meta": {
-        "hash": "f06acf219bcdfbacb9e86b01f91c7d68f6f8fa8a5a043c37cf33de4969c62eae",
+        "hash": "d53c8932c4c9deebcd2f578b62b2a5f09a081885f848a2ea97721c15f2e7ded2",
         "firstSeen": "1566299332",
-        "lastUpdated": "1566299332",
-        "updateCount": 2,
+        "lastUpdated": "1578048873",
+        "updateCount": 3,
         "authorCount": 2
       }
     },
@@ -1940,7 +1940,7 @@
         "fileName": "transpose.md",
         "text": "Returns the transpose of a two-dimensional list.\n\nUse `*lst` to get the passed list as tuples.\nUse `zip()` in combination with `list()` to create the transpose of the given two-dimensional list.\n\n",
         "codeBlocks": {
-          "code": "def transpose(lst):\n    return list(zip(*lst))",
+          "code": "def transpose(lst):\n  return list(zip(*lst))",
           "example": "transpose([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]) # [(1, 4, 7, 10), (2, 5, 8, 11), (3, 6, 9, 12)]"
         },
         "tags": [
@@ -1949,10 +1949,10 @@
         ]
       },
       "meta": {
-        "hash": "e5768f5c6d605587cf01697dd8e06c5dc7c91e60818871691730600c6fba4ec6",
+        "hash": "d6148455c7451e290ad1edf5ac25bf79f8f20c56c829105322b3c4007d5ad20b",
         "firstSeen": "1570517588\n1569989000",
-        "lastUpdated": "1570517588",
-        "updateCount": 4,
+        "lastUpdated": "1578048759",
+        "updateCount": 5,
         "authorCount": 3
       }
     },
@@ -1989,7 +1989,7 @@
         "fileName": "union.md",
         "text": "Returns every element that exists in any of the two lists once.\n\nCreate a `set` with all values of `a` and `b` and convert to a `list`.\n\n",
         "codeBlocks": {
-          "code": "def union(a,b):\n  return list(set(a + b))",
+          "code": "def union(a, b):\n  return list(set(a + b))",
           "example": "union([1, 2, 3], [4, 3, 2]) # [1,2,3,4]"
         },
         "tags": [
@@ -1998,10 +1998,10 @@
         ]
       },
       "meta": {
-        "hash": "44b9cb979110c073c48a94d7054c8b17978f38962adbce5aa0aee794418ac7b1",
+        "hash": "0402c6758ffea9463ef552eecdec587039543f67f74bf2c7208beca85be2ee81",
         "firstSeen": "1566367839",
-        "lastUpdated": "1566367839",
-        "updateCount": 2,
+        "lastUpdated": "1578048759",
+        "updateCount": 3,
         "authorCount": 2
       }
     },
@@ -2013,7 +2013,7 @@
         "fileName": "union_by.md",
         "text": "Returns every element that exists in any of the two lists once, after applying the provided function to each element of both.\n\nCreate a `set` by applying `fn` to each element in `a`, then use list comprehension in combination with `fn` on `b` to only keep values not contained in the previously created set, `_a`.\nFinally, create a `set` from the previous result and `a` and transform it into a `list`\n\n",
         "codeBlocks": {
-          "code": "def union_by(a,b,fn):\n  _a = set(map(fn, a))\n  return list(set(a + [item for item in b if fn(item) not in _a]))",
+          "code": "def union_by(a, b, fn):\n  _a = set(map(fn, a))\n  return list(set(a + [item for item in b if fn(item) not in _a]))",
           "example": "from math import floor\nunion_by([2.1], [1.2, 2.3], floor) # [2.1, 1.2]"
         },
         "tags": [
@@ -2023,10 +2023,10 @@
         ]
       },
       "meta": {
-        "hash": "3023e33e4d50e71bef58df25ceac3ed4dcb3f5027bc50868ae470654cdedc99a",
+        "hash": "fe68011222e43bc49339c4b6204b14c9c61c2d16014ed3a5d007cd7629192ffa",
         "firstSeen": "1566367839",
-        "lastUpdated": "1566367839",
-        "updateCount": 2,
+        "lastUpdated": "1578048759",
+        "updateCount": 3,
         "authorCount": 2
       }
     },
@@ -2109,7 +2109,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "zip.md",
-        "text": "Creates a list of elements, grouped based on the position in the original lists.\n\n\nUse `max` combined with `list comprehension` to get the length of the longest list in the arguments. \nLoop for `max_length` times grouping elements. \nIf lengths of `lists` vary, use `fill_value` (defaults to `None`). \n\n",
+        "text": "Creates a list of elements, grouped based on the position in the original lists.\n\nUse `max` combined with `list comprehension` to get the length of the longest list in the arguments. \nLoop for `max_length` times grouping elements. \nIf lengths of `lists` vary, use `fill_value` (defaults to `None`). \n\n",
         "codeBlocks": {
           "code": "def zip(*args, fill_value=None):\n  max_length = max([len(lst) for lst in args])\n  result = []\n  for i in range(max_length):\n    result.append([\n      args[k][i] if i < len(args[k]) else fillvalue for k in range(len(args))\n    ])\n  return result",
           "example": "zip(['a', 'b'], [1, 2], [True, False]) # [['a', 1, True], ['b', 2, False]]\nzip(['a'], [1, 2], [True, False]) # [['a', 1, True], [None, 2, False]]\nzip(['a'], [1, 2], [True, False], fill_value = '_') # [['a', 1, True], ['_', 2, False]]"
@@ -2121,10 +2121,10 @@
         ]
       },
       "meta": {
-        "hash": "7741a05775275c2b463f0a110d70b130393857f2c391e571ecc1dcd4c0e94809",
+        "hash": "3550d2be65c651be8a94321e55b6fb70115209f77f344371f29e11943c7e757f",
         "firstSeen": "1516462266",
-        "lastUpdated": "1572507241",
-        "updateCount": 16,
+        "lastUpdated": "1578048759",
+        "updateCount": 17,
         "authorCount": 5
       }
     }

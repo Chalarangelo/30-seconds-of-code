@@ -5,14 +5,14 @@
       "type": "snippetListing",
       "title": "all_equal",
       "attributes": {
-        "text": "Check if all elements in a list are equal.\n\nUse `[1:]` and `[:-1]` to compare all the values in the given list.\n\n",
+        "text": "Checks if all elements in a list are equal.\n\nUse `[1:]` and `[:-1]` to compare all the values in the given list.\n\n",
         "tags": [
           "list",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "6bf29cb176e4e9ce664ad04c6d262b6848f26639624dbb812eb1074d1c68b82a"
+        "hash": "a284d604fca0eba2637f80ff4612a08e114be8df54e9ad3d5c9978fa6b96f757"
       }
     },
     {
@@ -20,14 +20,14 @@
       "type": "snippetListing",
       "title": "all_unique",
       "attributes": {
-        "text": "Returns `True` if all the values in a flat list are unique, `False` otherwise.\n\nUse `set()` on the given list to remove duplicates, compare its length with the length of the list.\n\n",
+        "text": "Returns `True` if all the values in a list are unique, `False` otherwise.\n\nUse `set()` on the given list to remove duplicates, use `len()` to compare its length with the length of the list.\n\n",
         "tags": [
           "list",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "ca101c9e623105dc857f1484fcea9211dda0dffc224834a5609d125257a7040f"
+        "hash": "85a0536056d343fefcc2e27f43e0de4c09df66c425827dd0bcfdc2331283f9d2"
       }
     },
     {
@@ -75,7 +75,7 @@
         ]
       },
       "meta": {
-        "hash": "22c836b50fafc995904cc69096235ef9fb4c77a6faf38c4c5a4a88b2ed2126a8"
+        "hash": "1d1f03106bae33aabbb4956f0553a29d942b0bafeb9d14d0db787262d114a116"
       }
     },
     {
@@ -91,7 +91,7 @@
         ]
       },
       "meta": {
-        "hash": "2e62d552ca03ff9bc39f920f4e24745945729ba35acc8ba75267b315a9b43563"
+        "hash": "91c7bf77e761cdd1e5ab4832e3a394bb5c85426df375e5ff4ea45450aae6cdfc"
       }
     },
     {
@@ -122,7 +122,7 @@
         ]
       },
       "meta": {
-        "hash": "190d14b2ccad05dde990bb29617f7464a0e37f6c2523f1fb2c47fe18d45973fc"
+        "hash": "b9a88311529b43189ddf945f9c86b0f05cdb4c2894e7f3a4305bdb6aa22171d5"
       }
     },
     {
@@ -160,7 +160,7 @@
       "type": "snippetListing",
       "title": "cast_list",
       "attributes": {
-        "text": "Casts the provided value as an array if it's not one.\n\nUse `isinstance()` to check if the given value is enumerable and return it by using `list()` or encapsulated in a list accordingly.\n\n",
+        "text": "Casts the provided value as a list if it's not one.\n\nUse `isinstance()` to check if the given value is enumerable and return it by using `list()` or encapsulated in a list accordingly.\n\n",
         "tags": [
           "utility",
           "list",
@@ -168,7 +168,7 @@
         ]
       },
       "meta": {
-        "hash": "776892dc64825137f40f9fe45a1113b94761f7a7f187ce11ea1fa9d4de3787ee"
+        "hash": "0765b0134c5da933915f4c6a7c43dc50b004fd799514e66133e0cfe438af9171"
       }
     },
     {
@@ -183,7 +183,7 @@
         ]
       },
       "meta": {
-        "hash": "dfab14066fcab3a7ac08a0a4edf9512babc398c82710067800f1d5974e777335"
+        "hash": "ceb7dcb63cc7ec14237807b05a7cc47e7298969bd90fa1bd1ca96426a3cfa34f"
       }
     },
     {
@@ -198,7 +198,7 @@
         ]
       },
       "meta": {
-        "hash": "0084a25a57f89e81891e4096e1c6a9efef50b50c1dbd8f837bf7c6a9a12bfadf"
+        "hash": "04539dabc7eda5659177d2c3170343646ba5e4575b5f0127a348eb5d7b4e359c"
       }
     },
     {
@@ -213,7 +213,7 @@
         ]
       },
       "meta": {
-        "hash": "7e3dc4519a629ec87f72e5b495227733735c9c2262e5f6a89264191967cfad31"
+        "hash": "4abb40db52960635289aa0c16e94763fccc89bba5f79dedee5332bdfd6df30c7"
       }
     },
     {
@@ -236,14 +236,14 @@
       "type": "snippetListing",
       "title": "compose",
       "attributes": {
-        "text": "Performs right-to-left function composition.\n\nUse `reduce()` to perform right-to-left function composition. \nThe last (rightmost) function can accept one or more arguments; the remaining functions must be unary.\n\n",
+        "text": "Performs right-to-left function composition.\n\nUse `functools.reduce()` to perform right-to-left function composition. \nThe last (rightmost) function can accept one or more arguments; the remaining functions must be unary.\n\n",
         "tags": [
           "function",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "8be5bb671257ee45d10384859c89e826606c3241261a0adb62c2e3c86aed4064"
+        "hash": "a70d6ec0dc67eb97bcc951e4d0a9489065bf2bb861f993026b0b1ed8517c6c00"
       }
     },
     {
@@ -251,14 +251,14 @@
       "type": "snippetListing",
       "title": "compose_right",
       "attributes": {
-        "text": "Performs left-to-right function composition.\n\nUse `reduce()` to perform left-to-right function composition. \nThe first (leftmost) function can accept one or more arguments; the remaining functions must be unary.\n\n",
+        "text": "Performs left-to-right function composition.\n\nUse `functools.reduce()` to perform left-to-right function composition. \nThe first (leftmost) function can accept one or more arguments; the remaining functions must be unary.\n\n",
         "tags": [
           "function",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "d4f75bad32eba20b2c3d122a8b2f78163244202472ca28d18db04cd56d97f409"
+        "hash": "7c16b51fea79fb9301d9e46cd512069bba1b332e0e1dad493249603ce0a50db4"
       }
     },
     {
@@ -296,14 +296,14 @@
       "type": "snippetListing",
       "title": "curry",
       "attributes": {
-        "text": "Curries a function.\n\nUse `partial()` to return a new partial object which behaves like `fn` with the given arguments, `args`, partially applied.\n\n",
+        "text": "Curries a function.\n\nUse `functools.partial()` to return a new partial object which behaves like `fn` with the given arguments, `args`, partially applied.\n\n",
         "tags": [
           "function",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "c5c6e1d9adce6fdd3f97499e2368a5aa3073f4089427e5d43482bdb7c0e8600b"
+        "hash": "8b4d1654ec3fb0041fe2762ddf2834488e5161a3843bd3a6c659f1426385182f"
       }
     },
     {
@@ -326,7 +326,7 @@
       "type": "snippetListing",
       "title": "deep_flatten",
       "attributes": {
-        "text": "Deep flattens a list.\n\nUse recursion. \nDefine a function, `spread`, that uses either `list.extend()` or `list.append()` on each element in a list to flatten it.\nUse `list.extend()` with an empty list and the `spread` function to flatten a list.\nRecursively flatten each element that is a list.\n\n",
+        "text": "Deep flattens a list.\n\nUse recursion. \nUse `isinstance()` with `collections.abc.Iterable` to check if an element is iterable.\nIf it is, apply `deep_flatten()` recursively, otherwise return `[lst]`.\n\n",
         "tags": [
           "list",
           "recursion",
@@ -334,7 +334,7 @@
         ]
       },
       "meta": {
-        "hash": "a100d5704afe48a7dce26871bc50c993670d7388d8e4958c02c07efe07884167"
+        "hash": "2988946e5ef7486404d962bb5a19e6a8f5b845775688966e3133e3b33b86334a"
       }
     },
     {
@@ -349,7 +349,7 @@
         ]
       },
       "meta": {
-        "hash": "8bb6f1b7cde2b4602449ee30a7c7e402d25e6bb6a7841472d87b7fcbe5eab7f3"
+        "hash": "16bf7a5b40622e18047609f198cbd4f584c184c2c65a06e7765fac1ff10f9a50"
       }
     },
     {
@@ -357,14 +357,14 @@
       "type": "snippetListing",
       "title": "delay",
       "attributes": {
-        "text": "Invokes the provided function after `ms` milliseconds.\n\nUse `sleep()` to delay the execution of `fn` by `ms / 1000` seconds.\n\n",
+        "text": "Invokes the provided function after `ms` milliseconds.\n\nUse `time.sleep()` to delay the execution of `fn` by `ms / 1000` seconds.\n\n",
         "tags": [
           "function",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "ec9d6f5efc8d2f3a5beedfa4d3e10ecd3627baf0d3022e5ab3f3e9e3b0820757"
+        "hash": "4b6091531fe0add9456f887dd4c90b7f7839f0a63edea7439be3e7f051c97556"
       }
     },
     {
@@ -395,7 +395,7 @@
         ]
       },
       "meta": {
-        "hash": "a240b4f3152f847cb5f3877ab2fa1f4b75259c5ce11e28a773ad34bdba14f0a8"
+        "hash": "5044c943260d7d4e162b60000d2a8dc2f689a43af6be7946b05fefc616c51425"
       }
     },
     {
@@ -403,7 +403,7 @@
       "type": "snippetListing",
       "title": "digitize",
       "attributes": {
-        "text": "Converts a number to an array of digits.\n\nUse `map()` combined with `int` on the string representation of `n` and return a list from the result.\n\n",
+        "text": "Converts a number to a list of digits.\n\nUse `map()` combined with `int` on the string representation of `n` and return a list from the result.\n\n",
         "tags": [
           "math",
           "list",
@@ -411,7 +411,7 @@
         ]
       },
       "meta": {
-        "hash": "576de2896d2565d44da5d42b4b57b37cf1b2e5fc69103ab48a9ed532040ffaf2"
+        "hash": "90beb85f77896593c9d5a0fa23954d7bf0ea69edf769bc55f5125002e717f2f3"
       }
     },
     {
@@ -442,7 +442,7 @@
         ]
       },
       "meta": {
-        "hash": "038e0fd0752bbd88c73ea9059e10768bbf31fd3178113738064405e010aa8aa7"
+        "hash": "043215573487367b96603083e9803521e4c30e4aa30b762da95307328dd485b1"
       }
     },
     {
@@ -458,7 +458,7 @@
         ]
       },
       "meta": {
-        "hash": "948d8f496825413a0047464055ab9166016ad526d26d83f3ceacd3dc5a1926ba"
+        "hash": "c13c145eb46403345b747fb7ca9c378a0e7f00dcd9f033f0e414279fcb4fdb88"
       }
     },
     {
@@ -466,7 +466,7 @@
       "type": "snippetListing",
       "title": "fibonacci",
       "attributes": {
-        "text": "Generates an array, containing the Fibonacci sequence, up until the nth term.\n\nStarting with `0` and `1`, use `list.append()` to add the sum of the last two numbers of the list to the end of the list, until the length of the list reaches `n`.  \nIf `n` is less or equal to `0`, return a list containing `0`.\n\n",
+        "text": "Generates a list, containing the Fibonacci sequence, up until the nth term.\n\nStarting with `0` and `1`, use `list.append()` to add the sum of the last two numbers of the list to the end of the list, until the length of the list reaches `n`.  \nIf `n` is less or equal to `0`, return a list containing `0`.\n\n",
         "tags": [
           "math",
           "list",
@@ -474,7 +474,7 @@
         ]
       },
       "meta": {
-        "hash": "e1d19bb17ed3623d36c380b86b8ab675eb6d01e4a7a80e23c4531c29b2efdd02"
+        "hash": "16760105f8db2ebeb984b63a9830d5b0293392e2f55fc13851b364f50e180f5b"
       }
     },
     {
@@ -527,14 +527,14 @@
       "type": "snippetListing",
       "title": "gcd",
       "attributes": {
-        "text": "Calculates the greatest common divisor of a list of numbers.\n\nUse `reduce()` and `math.gcd` over the given list.\n\n",
+        "text": "Calculates the greatest common divisor of a list of numbers.\n\nUse `functools.reduce()` and `math.gcd()` over the given list.\n\n",
         "tags": [
           "math",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "dbb01e7253dbb6f3e2f53271fc14fb7b3ee9816fe56266f78a54b4ca21c94cd7"
+        "hash": "fc9dfc759e41dc0d26ed4e339d7210e13c4cec8ed10b148d481a2d84fe0f63b8"
       }
     },
     {
@@ -550,7 +550,7 @@
         ]
       },
       "meta": {
-        "hash": "51e158e03a090b891d6d1646644bff5163751b25a7ee3e72280c04570bff2429"
+        "hash": "d558526c1ec2887f13bb16fd5184a9b98f2a7a76907b191278f5e58e8703846e"
       }
     },
     {
@@ -565,7 +565,7 @@
         ]
       },
       "meta": {
-        "hash": "762663e25e978ee96720d6fd977e4ca42b328150fa654d0e600c636284552712"
+        "hash": "498b0cc49b4a1ad7f98addb9c7bbc84320d91a5558eaf681352086c5ad6edb44"
       }
     },
     {
@@ -580,7 +580,7 @@
         ]
       },
       "meta": {
-        "hash": "1fb7995d9f0e0be9dc0a5bf68a65141922a52f682bcda6883afee98041a4e623"
+        "hash": "967333852bd5578d4cb6bf8bfe20781b9137d5809320a6a000828456e32a1efe"
       }
     },
     {
@@ -595,7 +595,7 @@
         ]
       },
       "meta": {
-        "hash": "f65d098189837551aef365c68bd9389a0c1e84e89233fa5a886e889ce6981f9f"
+        "hash": "dd49fd3dc6b7590a2607ded9b2f4b879ea56b93573e92376f669a1957ad9945b"
       }
     },
     {
@@ -610,7 +610,7 @@
         ]
       },
       "meta": {
-        "hash": "cf0229dd484711e5847d85952841a13800bb5e0767c1de40e219f63cfed3e0f1"
+        "hash": "a55c33e2511216427f6b6f80d743f3fe4cd40a28f775c027d73352a04f531269"
       }
     },
     {
@@ -640,7 +640,7 @@
         ]
       },
       "meta": {
-        "hash": "75ce66f70653b918d86f8bb7c2743bced720389c9f8f97072b4ff90b377255e1"
+        "hash": "b7fa8130ef5c85aacb645b1e194073167f29a5ce234b5e13549dbb728ba09ca9"
       }
     },
     {
@@ -701,7 +701,7 @@
         ]
       },
       "meta": {
-        "hash": "58303cd7a175fea41b2fdf5ede26c329d43b442accd09472e171f5b8c4bc64e3"
+        "hash": "efdcecce589a3812218ede260f156888eb8544ccf85eab35d1885689668292e8"
       }
     },
     {
@@ -762,7 +762,7 @@
         ]
       },
       "meta": {
-        "hash": "a89555ac50b3243a1134fd31919edfc9fbe3029778c3178033fd0e15ce2e3760"
+        "hash": "db8a145f1dc53a254a9572fa47f76968b4381964b2291c5883c78f9337b7dbc9"
       }
     },
     {
@@ -801,7 +801,7 @@
       "type": "snippetListing",
       "title": "lcm",
       "attributes": {
-        "text": "Returns the least common multiple of two or more numbers.\n\nDefine a function, `spread`, that uses either `list.extend()` or `list.append()` on each element in a list to flatten it.\nUse `math.gcd()` and `lcm(x,y) = x * y / gcd(x,y)` to determine the least common multiple.\n\n",
+        "text": "Returns the least common multiple of a list of numbers.\n\nUse `functools.reduce()`, `math.gcd()` and `lcm(x,y) = x * y / gcd(x,y)` over the given list.\n\n",
         "tags": [
           "math",
           "list",
@@ -810,7 +810,7 @@
         ]
       },
       "meta": {
-        "hash": "a0cf166fd37f16c6bcaef46345ff11af0dadb488160168a0915e665550f7a669"
+        "hash": "030af844c409419551f3ce340666ad7b59949b54814fe50f3a474c2a06a211a5"
       }
     },
     {
@@ -827,7 +827,7 @@
         ]
       },
       "meta": {
-        "hash": "dd1a2d1300f23bb8f8618f9ab20dad11062f4476be80081e3cefc535717da818"
+        "hash": "af50f2096fef9a18346e3c220ff1957ab4218075e6c02ae05d8c3f6e3d269549"
       }
     },
     {
@@ -860,7 +860,7 @@
         ]
       },
       "meta": {
-        "hash": "aca578491d9c055c793cf782db88f7e0c1de093c3e9ad09a72a59e75055b7581"
+        "hash": "53b802a4eb47675a404933430e2b7aa061d879d612607b79793080a47243d205"
       }
     },
     {
@@ -923,7 +923,7 @@
         ]
       },
       "meta": {
-        "hash": "fb061014007b8c476b42e8c7f8619a6a203f89e6141960a80292dc362ad05f80"
+        "hash": "2a913d7608234d8988d44fa71e0477cdb2185f3d32f4cc22860ea2807255e585"
       }
     },
     {
@@ -954,7 +954,7 @@
         ]
       },
       "meta": {
-        "hash": "8f90ba8698b866c434ad0345df4753c46e1b19f01e339b00043a541d0e241db8"
+        "hash": "e63217dfdd3ea87db1448e4178dffcf59ae3cff4138062c6e623896076d802db"
       }
     },
     {
@@ -969,7 +969,7 @@
         ]
       },
       "meta": {
-        "hash": "c4911d051ab7d5e4803eb5e3786181d7026e2fcf95e7ac1d67fe98bcbf326696"
+        "hash": "8ecad31184e8b4e54f16a4107286d1d43cbc84608f19ccf472143a85c3a23908"
       }
     },
     {
@@ -1030,7 +1030,7 @@
         ]
       },
       "meta": {
-        "hash": "c3008a44f2eb31adaca3e4f91c29a56a955e3105f9c187aa055fc55c35874b41"
+        "hash": "b8397e39c3e1187f47c39402afb90f5d6108894ffddaac37e435803ee1274d3a"
       }
     },
     {
@@ -1045,7 +1045,7 @@
         ]
       },
       "meta": {
-        "hash": "530fb0bc1bfaf1b56910aee3137be644986727e2f15b7e7ac2010f8797d86258"
+        "hash": "beba9501ba22c14d92d1ea1c0be4686ad8e2e659b0945e066c1eb2a05d323d6c"
       }
     },
     {
@@ -1053,7 +1053,7 @@
       "type": "snippetListing",
       "title": "sample",
       "attributes": {
-        "text": "Returns a random element from an array.\n\nUse `randint()` to generate a random number that corresponds to an index in the list, return the element at that index.\n\n",
+        "text": "Returns a random element from a list.\n\nUse `random.randint()` to generate a random number that corresponds to an index in the list, return the element at that index.\n\n",
         "tags": [
           "list",
           "random",
@@ -1061,7 +1061,7 @@
         ]
       },
       "meta": {
-        "hash": "68c3a2f20c4969324199dc6005be573d95ec4d08747586bf26d0bf06b571c94c"
+        "hash": "83552913c0e8c32835639ce5393de8b975bca4fd61a3bc5e2145cdb2573c6787"
       }
     },
     {
@@ -1077,7 +1077,7 @@
         ]
       },
       "meta": {
-        "hash": "8c6e1dafadd78f04b11d412b7b8db01e1275339adf906e2637129d761117e480"
+        "hash": "232f0b9b19a01863a336f9aae733a50c6f516d2dc663e47b2948f5702b3a99ff"
       }
     },
     {
@@ -1108,7 +1108,7 @@
         ]
       },
       "meta": {
-        "hash": "e388dcf225060a6943fa501a169df52c337bcafc21082f4ffb31f8aa086e97b1"
+        "hash": "61b8664377ec94ef7957b572119bc6508f582e304a5a276becaa1e4020a1c791"
       }
     },
     {
@@ -1155,7 +1155,7 @@
         ]
       },
       "meta": {
-        "hash": "db09a105c21df08d2d580e95dd9d3f895a38e2e9b29818f78a671203ab94df38"
+        "hash": "a483a7203d0ea1ceebbcbe05d50ad724798ebdb8c9786b4be46d671b03daebc8"
       }
     },
     {
@@ -1172,7 +1172,7 @@
         ]
       },
       "meta": {
-        "hash": "aa4e4a8d9b99ed0e2d04af5430613f1155329592f3d4f7c2bf76a659a6df7c17"
+        "hash": "2051bc61e1359b1fd9fb14defaac6e8014e8633a09de634f44172a6ac52568f5"
       }
     },
     {
@@ -1218,7 +1218,7 @@
         ]
       },
       "meta": {
-        "hash": "f06acf219bcdfbacb9e86b01f91c7d68f6f8fa8a5a043c37cf33de4969c62eae"
+        "hash": "d53c8932c4c9deebcd2f578b62b2a5f09a081885f848a2ea97721c15f2e7ded2"
       }
     },
     {
@@ -1233,7 +1233,7 @@
         ]
       },
       "meta": {
-        "hash": "e5768f5c6d605587cf01697dd8e06c5dc7c91e60818871691730600c6fba4ec6"
+        "hash": "d6148455c7451e290ad1edf5ac25bf79f8f20c56c829105322b3c4007d5ad20b"
       }
     },
     {
@@ -1264,7 +1264,7 @@
         ]
       },
       "meta": {
-        "hash": "44b9cb979110c073c48a94d7054c8b17978f38962adbce5aa0aee794418ac7b1"
+        "hash": "0402c6758ffea9463ef552eecdec587039543f67f74bf2c7208beca85be2ee81"
       }
     },
     {
@@ -1280,7 +1280,7 @@
         ]
       },
       "meta": {
-        "hash": "3023e33e4d50e71bef58df25ceac3ed4dcb3f5027bc50868ae470654cdedc99a"
+        "hash": "fe68011222e43bc49339c4b6204b14c9c61c2d16014ed3a5d007cd7629192ffa"
       }
     },
     {
@@ -1334,7 +1334,7 @@
       "type": "snippetListing",
       "title": "zip",
       "attributes": {
-        "text": "Creates a list of elements, grouped based on the position in the original lists.\n\n\nUse `max` combined with `list comprehension` to get the length of the longest list in the arguments. \nLoop for `max_length` times grouping elements. \nIf lengths of `lists` vary, use `fill_value` (defaults to `None`). \n\n",
+        "text": "Creates a list of elements, grouped based on the position in the original lists.\n\nUse `max` combined with `list comprehension` to get the length of the longest list in the arguments. \nLoop for `max_length` times grouping elements. \nIf lengths of `lists` vary, use `fill_value` (defaults to `None`). \n\n",
         "tags": [
           "list",
           "math",
@@ -1342,7 +1342,7 @@
         ]
       },
       "meta": {
-        "hash": "7741a05775275c2b463f0a110d70b130393857f2c391e571ecc1dcd4c0e94809"
+        "hash": "3550d2be65c651be8a94321e55b6fb70115209f77f344371f29e11943c7e757f"
       }
     }
   ],
