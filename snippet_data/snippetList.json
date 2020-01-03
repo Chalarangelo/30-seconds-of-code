@@ -1529,6 +1529,21 @@
       }
     },
     {
+      "id": "frequencies",
+      "type": "snippetListing",
+      "title": "frequencies",
+      "attributes": {
+        "text": "Returns an object with the unique values of an array as keys and their frequencies as the values.\n\nUse `Array.prototype.reduce()` to map unique values to an object's keys, adding to existing keys every time the same value is encountered.\n\n",
+        "tags": [
+          "array",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "227fc1043f5a7850c32f4ecce686a97de0b8badf4d487462a1c25e8312465124"
+      }
+    },
+    {
       "id": "fromCamelCase",
       "type": "snippetListing",
       "title": "fromCamelCase",
@@ -1854,6 +1869,21 @@
       },
       "meta": {
         "hash": "09664f8ede4cc568302d52fe37d3a29dc6c4b052e76834e761a02c391178f33a"
+      }
+    },
+    {
+      "id": "haveSameContents",
+      "type": "snippetListing",
+      "title": "haveSameContents",
+      "attributes": {
+        "text": "Returns `true` if two arrays contain the same elements regardless of order, `false` otherwise.\n\nUse a `for...of` loop over a `Set` created from the values of both arrays.\nUse `Array.prototype.filter()` to compare the amount of occurences of each distinct value in both arrays.\nReturn `false` if the counts do not match for any element, `true` otherwise.\n\n",
+        "tags": [
+          "array",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "917079b8a868588894ebbd8d76a1bf5359d91d09dce294d7bb2cc0185900a2ae"
       }
     },
     {
@@ -2376,6 +2406,21 @@
       },
       "meta": {
         "hash": "3aab66b09df0070568e0ff69717ac0d5c62d88727262419d07b0f50e1a6677e4"
+      }
+    },
+    {
+      "id": "isContainedIn",
+      "type": "snippetListing",
+      "title": "isContainedIn",
+      "attributes": {
+        "text": "Returns `true` if the elements of the first array are contained in the second one regardless of order, `false` otherwise.\n\nUse a `for...of` loop over a `Set` created from the first array.\nUse `Array.prototype.some()` to check if all distinct values are contained in the second array, use `Array.prototype.filter()` to compare the amount of occurences of each distinct value in both arrays.\nReturn `false` if the count of any element is greater in the first array than the second one, `true` otherwise.\n\n",
+        "tags": [
+          "array",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "b89ab73ffc7dd9b7650e80eb41a20194dfee6f93740876349b6af91dccc6ecd3"
       }
     },
     {
@@ -3284,6 +3329,21 @@
       },
       "meta": {
         "hash": "65bcfbbf3937f35f591285306ec3bfbee46a1738a6a8f097c99bf07150aec198"
+      }
+    },
+    {
+      "id": "mostFrequent",
+      "type": "snippetListing",
+      "title": "mostFrequent",
+      "attributes": {
+        "text": "Returns the most frequent element in an array.\n\nUse `Array.prototype.reduce()` to map unique values to an object's keys, adding to existing keys every time the same value is encountered.\nUse `Object.entries()` on the result in combination with `Array.prototype.reduce()` to get the most frequent value in the array.\n\n",
+        "tags": [
+          "array",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "0c04c74cdbb51195f740a163776cb5c4e21a57a59099a1740211cf0764c6c9cc"
       }
     },
     {

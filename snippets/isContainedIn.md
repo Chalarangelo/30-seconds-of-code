@@ -10,15 +10,17 @@ Use `Array.prototype.some()` to check if all distinct values are contained in th
 Return `false` if the count of any element is greater in the first array than the second one, `true` otherwise.
 
 ```js
+
 const isContainedIn = (a, b) => {
-  for (const v of new Set(a))
+  for (const v of new Set(a)) {
     if (
-      !b.some(e => e === v) || 
+      !b.some(e => e === v) ||
       a.filter(e => e === v).length > b.filter(e => e === v).length
     )
       return false;
+  }
   return true;
-}
+};
 ```
 
 ```js

@@ -1695,8 +1695,8 @@
       "meta": {
         "hash": "bdc202436bee09f06a353d31841c6cfff33e8efead34c6c56ae1a1413284976d",
         "firstSeen": "1531080384",
-        "lastUpdated": "1577785478",
-        "updateCount": 90,
+        "lastUpdated": "1577791301",
+        "updateCount": 91,
         "authorCount": 5
       }
     },
@@ -2081,8 +2081,8 @@
       "meta": {
         "hash": "6e9710c9117f500e74e65c0ee36b39fb80bd55537fa5ff9c4b1136b2667096f2",
         "firstSeen": "1512650493",
-        "lastUpdated": "1577785478",
-        "updateCount": 95,
+        "lastUpdated": "1577791301",
+        "updateCount": 96,
         "authorCount": 6
       }
     },
@@ -2499,6 +2499,31 @@
       }
     },
     {
+      "id": "frequencies",
+      "title": "frequencies",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "frequencies.md",
+        "text": "Returns an object with the unique values of an array as keys and their frequencies as the values.\n\nUse `Array.prototype.reduce()` to map unique values to an object's keys, adding to existing keys every time the same value is encountered.\n\n",
+        "codeBlocks": {
+          "es6": "const frequencies = arr =>\n  arr.reduce((a, v) => {\n    a[v] = a[v] ? a[v] + 1 : 1;\n    return a;\n  }, {});",
+          "es5": "var frequencies = function frequencies(arr) {\n  return arr.reduce(function (a, v) {\n    a[v] = a[v] ? a[v] + 1 : 1;\n    return a;\n  }, {});\n};",
+          "example": "frequencies(['a', 'b', 'a', 'c', 'a', 'a', 'b']); // { a: 4, b: 2, c: 1 }"
+        },
+        "tags": [
+          "array",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "227fc1043f5a7850c32f4ecce686a97de0b8badf4d487462a1c25e8312465124",
+        "firstSeen": "1578058355",
+        "lastUpdated": "1578058637",
+        "updateCount": 3,
+        "authorCount": 3
+      }
+    },
+    {
       "id": "fromCamelCase",
       "title": "fromCamelCase",
       "type": "snippet",
@@ -2746,8 +2771,8 @@
       "meta": {
         "hash": "f9e6687cc28cd80e68f7a6776f893c7478aaa942710e0eb7144f105eba574a54",
         "firstSeen": "1515856488",
-        "lastUpdated": "1577785478",
-        "updateCount": 52,
+        "lastUpdated": "1577791301",
+        "updateCount": 53,
         "authorCount": 4
       }
     },
@@ -3034,6 +3059,31 @@
         "lastUpdated": "1574366548",
         "updateCount": 9,
         "authorCount": 4
+      }
+    },
+    {
+      "id": "haveSameContents",
+      "title": "haveSameContents",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "haveSameContents.md",
+        "text": "Returns `true` if two arrays contain the same elements regardless of order, `false` otherwise.\n\nUse a `for...of` loop over a `Set` created from the values of both arrays.\nUse `Array.prototype.filter()` to compare the amount of occurences of each distinct value in both arrays.\nReturn `false` if the counts do not match for any element, `true` otherwise.\n\n",
+        "codeBlocks": {
+          "es6": "const haveSameContents = (a, b) => {\n  for (const v of new Set([...a, ...b]))\n    if (a.filter(e => e === v).length !== b.filter(e => e === v).length) return false;\n  return true;\n};",
+          "es5": "function _typeof(obj) { if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }; } return _typeof(obj); }\n\nfunction _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }\n\nfunction _nonIterableSpread() { throw new TypeError(\"Invalid attempt to spread non-iterable instance\"); }\n\nfunction _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === \"[object Arguments]\") return Array.from(iter); }\n\nfunction _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }\n\nvar haveSameContents = function haveSameContents(a, b) {\n  var _iteratorNormalCompletion = true;\n  var _didIteratorError = false;\n  var _iteratorError = undefined;\n\n  try {\n    var _loop = function _loop() {\n      var v = _step.value;\n      if (a.filter(function (e) {\n        return e === v;\n      }).length !== b.filter(function (e) {\n        return e === v;\n      }).length) return {\n        v: false\n      };\n    };\n\n    for (var _iterator = new Set([].concat(_toConsumableArray(a), _toConsumableArray(b)))[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {\n      var _ret = _loop();\n\n      if (_typeof(_ret) === \"object\") return _ret.v;\n    }\n  } catch (err) {\n    _didIteratorError = true;\n    _iteratorError = err;\n  } finally {\n    try {\n      if (!_iteratorNormalCompletion && _iterator[\"return\"] != null) {\n        _iterator[\"return\"]();\n      }\n    } finally {\n      if (_didIteratorError) {\n        throw _iteratorError;\n      }\n    }\n  }\n\n  return true;\n};",
+          "example": "haveSameContents([1, 2, 4], [2, 4, 1]); // true"
+        },
+        "tags": [
+          "array",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "917079b8a868588894ebbd8d76a1bf5359d91d09dce294d7bb2cc0185900a2ae",
+        "firstSeen": "1578253239",
+        "lastUpdated": "1578253239",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -3889,6 +3939,31 @@
       }
     },
     {
+      "id": "isContainedIn",
+      "title": "isContainedIn",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "isContainedIn.md",
+        "text": "Returns `true` if the elements of the first array are contained in the second one regardless of order, `false` otherwise.\n\nUse a `for...of` loop over a `Set` created from the first array.\nUse `Array.prototype.some()` to check if all distinct values are contained in the second array, use `Array.prototype.filter()` to compare the amount of occurences of each distinct value in both arrays.\nReturn `false` if the count of any element is greater in the first array than the second one, `true` otherwise.\n\n",
+        "codeBlocks": {
+          "es6": "const isContainedIn = (a, b) => {\n  for (const v of new Set(a)) {\n    if (\n      !b.some(e => e === v) ||\n      a.filter(e => e === v).length > b.filter(e => e === v).length\n    )\n      return false;\n  }\n  return true;\n};",
+          "es5": "function _typeof(obj) { if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }; } return _typeof(obj); }\n\nvar isContainedIn = function isContainedIn(a, b) {\n  var _iteratorNormalCompletion = true;\n  var _didIteratorError = false;\n  var _iteratorError = undefined;\n\n  try {\n    var _loop = function _loop() {\n      var v = _step.value;\n      if (!b.some(function (e) {\n        return e === v;\n      }) || a.filter(function (e) {\n        return e === v;\n      }).length > b.filter(function (e) {\n        return e === v;\n      }).length) return {\n        v: false\n      };\n    };\n\n    for (var _iterator = new Set(a)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {\n      var _ret = _loop();\n\n      if (_typeof(_ret) === \"object\") return _ret.v;\n    }\n  } catch (err) {\n    _didIteratorError = true;\n    _iteratorError = err;\n  } finally {\n    try {\n      if (!_iteratorNormalCompletion && _iterator[\"return\"] != null) {\n        _iterator[\"return\"]();\n      }\n    } finally {\n      if (_didIteratorError) {\n        throw _iteratorError;\n      }\n    }\n  }\n\n  return true;\n};",
+          "example": "isContainedIn([1, 4], [2, 4, 1]); // true"
+        },
+        "tags": [
+          "array",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "b89ab73ffc7dd9b7650e80eb41a20194dfee6f93740876349b6af91dccc6ecd3",
+        "firstSeen": "1578253251",
+        "lastUpdated": "1578253251",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "isDivisible",
       "title": "isDivisible",
       "type": "snippet",
@@ -4269,9 +4344,9 @@
       "meta": {
         "hash": "93dcd24b208880ba16d9aa32e59e718187cb4178cadb5876a4bc7c588ddcdebd",
         "firstSeen": "1577791032",
-        "lastUpdated": "1577791032",
-        "updateCount": 2,
-        "authorCount": 2
+        "lastUpdated": "1577791301",
+        "updateCount": 3,
+        "authorCount": 3
       }
     },
     {
@@ -4707,8 +4782,8 @@
       "meta": {
         "hash": "3db3faac666ee61ab86c70766d2ab5d1293ffd818da87edb971bfff7a366364a",
         "firstSeen": "1514801920",
-        "lastUpdated": "1577431401",
-        "updateCount": 56,
+        "lastUpdated": "1578058637",
+        "updateCount": 58,
         "authorCount": 7
       }
     },
@@ -5367,6 +5442,31 @@
       }
     },
     {
+      "id": "mostFrequent",
+      "title": "mostFrequent",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "mostFrequent.md",
+        "text": "Returns the most frequent element in an array.\n\nUse `Array.prototype.reduce()` to map unique values to an object's keys, adding to existing keys every time the same value is encountered.\nUse `Object.entries()` on the result in combination with `Array.prototype.reduce()` to get the most frequent value in the array.\n\n",
+        "codeBlocks": {
+          "es6": "const mostFrequent = arr =>\n  Object.entries(\n    arr.reduce((a, v) => {\n      a[v] = a[v] ? a[v] + 1 : 1;\n      return a;\n    }, {})\n  ).reduce((a, v) => (v[1] >= a[1] ? v : a), [null, 0])[0];",
+          "es5": "var mostFrequent = function mostFrequent(arr) {\n  return Object.entries(arr.reduce(function (a, v) {\n    a[v] = a[v] ? a[v] + 1 : 1;\n    return a;\n  }, {})).reduce(function (a, v) {\n    return v[1] >= a[1] ? v : a;\n  }, [null, 0])[0];\n};",
+          "example": "mostFrequent(['a', 'b', 'a', 'c', 'a', 'a', 'b']); // 'a'"
+        },
+        "tags": [
+          "array",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "0c04c74cdbb51195f740a163776cb5c4e21a57a59099a1740211cf0764c6c9cc",
+        "firstSeen": "1578058366",
+        "lastUpdated": "1578058637",
+        "updateCount": 3,
+        "authorCount": 3
+      }
+    },
+    {
       "id": "mostPerformant",
       "title": "mostPerformant",
       "type": "snippet",
@@ -5618,8 +5718,8 @@
       "meta": {
         "hash": "e8f820ce6da97eabde082ffb829c9fb700e85efc79bdebe883c67237269e3f52",
         "firstSeen": "1570824965",
-        "lastUpdated": "1577431401",
-        "updateCount": 23,
+        "lastUpdated": "1578058637",
+        "updateCount": 25,
         "authorCount": 4
       }
     },
@@ -6187,8 +6287,8 @@
       "meta": {
         "hash": "7ccbf66d8d55c60bcf12baa980cf32d67a4ba567894d59e2d798c9af792424ff",
         "firstSeen": "1517069864",
-        "lastUpdated": "1577431401",
-        "updateCount": 80,
+        "lastUpdated": "1578058637",
+        "updateCount": 82,
         "authorCount": 5
       }
     },
@@ -6834,8 +6934,8 @@
       "meta": {
         "hash": "c1542907e6295eb81df918174c247a65d73c8daccc56769f2eb32d609b7846fc",
         "firstSeen": "1513521691",
-        "lastUpdated": "1577431401",
-        "updateCount": 77,
+        "lastUpdated": "1578058637",
+        "updateCount": 79,
         "authorCount": 6
       }
     },
@@ -7350,8 +7450,8 @@
       "meta": {
         "hash": "6dd4c6a51d2c80fa4768c95ae01c16a8359c4140bcad28c7fde0cecd72d7d3e2",
         "firstSeen": "1514645161",
-        "lastUpdated": "1577431401",
-        "updateCount": 22,
+        "lastUpdated": "1578058637",
+        "updateCount": 24,
         "authorCount": 5
       }
     },

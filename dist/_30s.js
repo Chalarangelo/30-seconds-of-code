@@ -386,6 +386,11 @@
     Object.keys(obj)
       .reverse()
       .forEach(key => fn(obj[key], key, obj));
+  const frequencies = arr =>
+    arr.reduce((a, v) => {
+      a[v] = a[v] ? a[v] + 1 : 1;
+      return a;
+    }, {});
   const fromCamelCase = (str, separator = '_') =>
     str
       .replace(/([a-z\d])([A-Z])/g, '$1' + separator + '$2')
@@ -479,6 +484,11 @@
         return true;
       })
     );
+  };
+  const haveSameContents = (a, b) => {
+    for (const v of new Set([...a, ...b]))
+      if (a.filter(e => e === v).length !== b.filter(e => e === v).length) return false;
+    return true;
   };
   const head = arr => (arr && arr.length ? arr[0] : undefined);
   const hexToRGB = hex => {
@@ -582,6 +592,16 @@
   const isBoolean = val => typeof val === 'boolean';
   const isBrowser = () => ![typeof window, typeof document].includes('undefined');
   const isBrowserTabFocused = () => !document.hidden;
+  const isContainedIn = (a, b) => {
+    for (const v of new Set(a)) {
+      if (
+        !b.some(e => e === v) ||
+        a.filter(e => e === v).length > b.filter(e => e === v).length
+      )
+        return false;
+    }
+    return true;
+  };
   const isDivisible = (dividend, divisor) => dividend % divisor === 0;
   const isDuplexStream = val =>
     val !== null &&
@@ -758,6 +778,13 @@
   const minBy = (arr, fn) => Math.min(...arr.map(typeof fn === 'function' ? fn : val => val[fn]));
   const minDate = dates => new Date(Math.min(...dates));
   const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
+  const mostFrequent = arr =>
+    Object.entries(
+      arr.reduce((a, v) => {
+        a[v] = a[v] ? a[v] + 1 : 1;
+        return a;
+      }, {})
+    ).reduce((a, v) => (v[1] >= a[1] ? v : a), [null, 0])[0];
   const mostPerformant = (fns, iterations = 10000) => {
     const times = fns.map(fn => {
       const before = performance.now();
@@ -1672,6 +1699,7 @@
   exports.formToObject = formToObject;
   exports.forOwn = forOwn;
   exports.forOwnRight = forOwnRight;
+  exports.frequencies = frequencies;
   exports.fromCamelCase = fromCamelCase;
   exports.functionName = functionName;
   exports.functions = functions;
@@ -1693,6 +1721,7 @@
   exports.hashBrowser = hashBrowser;
   exports.hashNode = hashNode;
   exports.hasKey = hasKey;
+  exports.haveSameContents = haveSameContents;
   exports.head = head;
   exports.hexToRGB = hexToRGB;
   exports.hide = hide;
@@ -1726,6 +1755,7 @@
   exports.isBoolean = isBoolean;
   exports.isBrowser = isBrowser;
   exports.isBrowserTabFocused = isBrowserTabFocused;
+  exports.isContainedIn = isContainedIn;
   exports.isDivisible = isDivisible;
   exports.isDuplexStream = isDuplexStream;
   exports.isEmpty = isEmpty;
@@ -1783,6 +1813,7 @@
   exports.minBy = minBy;
   exports.minDate = minDate;
   exports.minN = minN;
+  exports.mostFrequent = mostFrequent;
   exports.mostPerformant = mostPerformant;
   exports.negate = negate;
   exports.nest = nest;

@@ -961,6 +961,17 @@
     ],
     "description": "Iterates over all own properties of an object in reverse, running a callback for each one.\n\nUse `Object.keys(obj)` to get all the properties of the object, `Array.prototype.reverse()` to reverse their order and `Array.prototype.forEach()` to run the provided function for each key-value pair. The callback receives three arguments - the value, the key and the object.\n"
   },
+  "frequencies": {
+    "prefix": "30s_frequencies",
+    "body": [
+      "const frequencies = arr =>",
+      "  arr.reduce((a, v) => {",
+      "    a[v] = a[v] ? a[v] + 1 : 1;",
+      "    return a;",
+      "  }, {});"
+    ],
+    "description": "Returns an object with the unique values of an array as keys and their frequencies as the values.\n\nUse `Array.prototype.reduce()` to map unique values to an object's keys, adding to existing keys every time the same value is encountered.\n"
+  },
   "fromCamelCase": {
     "prefix": "30s_fromCamelCase",
     "body": [
@@ -1181,6 +1192,17 @@
       "};"
     ],
     "description": "Returns `true` if the target value exists in a JSON object, `false` otherwise.\n\nCheck if `keys` is non-empty and use `Array.prototype.every()` to sequentially check its keys to internal depth of the object, `obj`. \nUse `Object.prototype.hasOwnProperty()` to check if `obj` does not have the current key or is not an object, stop propagation and return `false`.\nOtherwise assign the key's value to `obj` to use on the next iteration.\nReturn `false` beforehand if given key list is empty.\n"
+  },
+  "haveSameContents": {
+    "prefix": "30s_haveSameContents",
+    "body": [
+      "const haveSameContents = (a, b) => {",
+      "  for (const v of new Set([...a, ...b]))",
+      "    if (a.filter(e => e === v).length !== b.filter(e => e === v).length) return false;",
+      "  return true;",
+      "};"
+    ],
+    "description": "Returns `true` if two arrays contain the same elements regardless of order, `false` otherwise.\n\nUse a `for...of` loop over a `Set` created from the values of both arrays.\nUse `Array.prototype.filter()` to compare the amount of occurences of each distinct value in both arrays.\nReturn `false` if the counts do not match for any element, `true` otherwise.\n"
   },
   "head": {
     "prefix": "30s_head",
@@ -1481,6 +1503,22 @@
       "const isBrowserTabFocused = () => !document.hidden;"
     ],
     "description": "Returns `true` if the browser tab of the page is focused, `false` otherwise.\n\nUse the `Document.hidden` property, introduced by the Page Visibility API to check if the browser tab of the page is visible or hidden.\n"
+  },
+  "isContainedIn": {
+    "prefix": "30s_isContainedIn",
+    "body": [
+      "const isContainedIn = (a, b) => {",
+      "  for (const v of new Set(a)) {",
+      "    if (",
+      "      !b.some(e => e === v) ||",
+      "      a.filter(e => e === v).length > b.filter(e => e === v).length",
+      "    )",
+      "      return false;",
+      "  }",
+      "  return true;",
+      "};"
+    ],
+    "description": "Returns `true` if the elements of the first array are contained in the second one regardless of order, `false` otherwise.\n\nUse a `for...of` loop over a `Set` created from the first array.\nUse `Array.prototype.some()` to check if all distinct values are contained in the second array, use `Array.prototype.filter()` to compare the amount of occurences of each distinct value in both arrays.\nReturn `false` if the count of any element is greater in the first array than the second one, `true` otherwise.\n"
   },
   "isDivisible": {
     "prefix": "30s_isDivisible",
@@ -2000,6 +2038,19 @@
       "const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);"
     ],
     "description": "Returns the `n` minimum elements from the provided array.\nIf `n` is greater than or equal to the provided array's length, then return the original array (sorted in ascending order).\n\nUse `Array.prototype.sort()` combined with the spread operator (`...`) to create a shallow clone of the array and sort it in ascending order.\nUse `Array.prototype.slice()` to get the specified number of elements.\nOmit the second argument, `n`, to get a one-element array.\n"
+  },
+  "mostFrequent": {
+    "prefix": "30s_mostFrequent",
+    "body": [
+      "const mostFrequent = arr =>",
+      "  Object.entries(",
+      "    arr.reduce((a, v) => {",
+      "      a[v] = a[v] ? a[v] + 1 : 1;",
+      "      return a;",
+      "    }, {})",
+      "  ).reduce((a, v) => (v[1] >= a[1] ? v : a), [null, 0])[0];"
+    ],
+    "description": "Returns the most frequent element in an array.\n\nUse `Array.prototype.reduce()` to map unique values to an object's keys, adding to existing keys every time the same value is encountered.\nUse `Object.entries()` on the result in combination with `Array.prototype.reduce()` to get the most frequent value in the array.\n"
   },
   "mostPerformant": {
     "prefix": "30s_mostPerformant",
