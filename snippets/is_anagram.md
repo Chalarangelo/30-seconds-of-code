@@ -12,11 +12,7 @@ Use `sorted()` on both strings and compare the results.
 ```py
 def is_anagram(s1, s2):
   _str1, _str2 = s1.replace(" ", ""), s2.replace(" ", "")
-
-  if len(_str1) != len(_str2):
-    return False
-  else:
-    return sorted(_str1.lower()) == sorted(_str2.lower())
+  return False if len(_str1) != len(_str2) else sorted(_str1.lower()) == sorted(_str2.lower())
 ```
 
 ```py
