@@ -13,5 +13,5 @@ def initial(lst):
 ```
 
 ```py
-initial([1, 2, 3]); # [1,2]
+initial([1, 2, 3]) # [1,2]
 ```
