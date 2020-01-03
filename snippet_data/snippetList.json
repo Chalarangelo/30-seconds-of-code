@@ -172,6 +172,21 @@
       }
     },
     {
+      "id": "check_prop",
+      "type": "snippetListing",
+      "title": "function_name",
+      "attributes": {
+        "text": "Given a predicate function, `fn`, and a `prop` string, this curried function will then take an object to inspect by calling the property and passing it to the predicate.\n\nReturn a `lambda` function that takes an object and applies the predicate function, `fn` to the specified property.\n\n",
+        "tags": [
+          "utility",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "dfab14066fcab3a7ac08a0a4edf9512babc398c82710067800f1d5974e777335"
+      }
+    },
+    {
       "id": "chunk",
       "type": "snippetListing",
       "title": "chunk",
@@ -217,6 +232,36 @@
       }
     },
     {
+      "id": "compose",
+      "type": "snippetListing",
+      "title": "compose",
+      "attributes": {
+        "text": "Performs right-to-left function composition.\n\nUse `reduce()` to perform right-to-left function composition. \nThe last (rightmost) function can accept one or more arguments; the remaining functions must be unary.\n\n",
+        "tags": [
+          "function",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "8be5bb671257ee45d10384859c89e826606c3241261a0adb62c2e3c86aed4064"
+      }
+    },
+    {
+      "id": "compose_right",
+      "type": "snippetListing",
+      "title": "compose_right",
+      "attributes": {
+        "text": "Performs left-to-right function composition.\n\nUse `reduce()` to perform left-to-right function composition. \nThe first (leftmost) function can accept one or more arguments; the remaining functions must be unary.\n\n",
+        "tags": [
+          "function",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "d4f75bad32eba20b2c3d122a8b2f78163244202472ca28d18db04cd56d97f409"
+      }
+    },
+    {
       "id": "count_by",
       "type": "snippetListing",
       "title": "count_by",
@@ -244,6 +289,21 @@
       },
       "meta": {
         "hash": "eee88217431699369070beb38ca0265d963c78321bfd98de9e3a38533c6ee90e"
+      }
+    },
+    {
+      "id": "curry",
+      "type": "snippetListing",
+      "title": "curry",
+      "attributes": {
+        "text": "Curries a function.\n\nUse `partial()` to return a new partial object which behaves like `fn` with the given arguments, `args`, partially applied.\n\n",
+        "tags": [
+          "function",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "c5c6e1d9adce6fdd3f97499e2368a5aa3073f4089427e5d43482bdb7c0e8600b"
       }
     },
     {
@@ -290,6 +350,21 @@
       },
       "meta": {
         "hash": "8bb6f1b7cde2b4602449ee30a7c7e402d25e6bb6a7841472d87b7fcbe5eab7f3"
+      }
+    },
+    {
+      "id": "delay",
+      "type": "snippetListing",
+      "title": "delay",
+      "attributes": {
+        "text": "Invokes the provided function after `ms` milliseconds.\n\nUse `sleep()` to delay the execution of `fn` by `ms / 1000` seconds.\n\n",
+        "tags": [
+          "function",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "ec9d6f5efc8d2f3a5beedfa4d3e10ecd3627baf0d3022e5ab3f3e9e3b0820757"
       }
     },
     {
@@ -1162,6 +1237,22 @@
       }
     },
     {
+      "id": "unfold",
+      "type": "snippetListing",
+      "title": "unfold",
+      "attributes": {
+        "text": "Builds a list, using an iterator function and an initial seed value.\n\nThe iterator function accepts one argument (`seed`) and must always return a list with two elements ([`value`, `nextSeed`]) or `False` to terminate.\nUse a generator function, `fn_generator`, that uses a `while` loop to call the iterator function and `yield` the `value` until it returns `False`.\nUse list comprehension to return the list that is produced by the generator, using the iterator function.\n\n",
+        "tags": [
+          "function",
+          "list",
+          "advanced"
+        ]
+      },
+      "meta": {
+        "hash": "e9d027a02786f51db720328d695b20113c33fc8c96bbabb7d5d0fdcdf4993f9c"
+      }
+    },
+    {
       "id": "union",
       "type": "snippetListing",
       "title": "union",
@@ -1221,6 +1312,21 @@
       },
       "meta": {
         "hash": "ea3005a1cc4999d065fcf7141c14fd481f8384bc7d45ecf0eeaf04b6eb8adb66"
+      }
+    },
+    {
+      "id": "when",
+      "type": "snippetListing",
+      "title": "when",
+      "attributes": {
+        "text": "Tests a value, `x`, against a `predicate` function, conditionally applying a function. \n\nCheck if the value of `predicate(x)` is `True` and if so return `when_true(x)`, otherwise return `x`.\n\n",
+        "tags": [
+          "function",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "8f04bf926446b8c1c73fe0127d3d9a59141d7287ea9e72e8fe4f71b1762f6049"
       }
     },
     {
