@@ -581,6 +581,23 @@
       }
     },
     {
+      "id": "usePrevious",
+      "type": "snippetListing",
+      "title": "usePrevious",
+      "attributes": {
+        "text": "A hook that stores the previous state or props.\n\n- Create a custom hook that takes a `value`.\n- Use the `React.useRef()` hook to create a `ref` for the `value`.\n- Use the `React.useEffect()` hook to remember the latest `value`.\n\n",
+        "tags": [
+          "hooks",
+          "state",
+          "effect",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "df9f5b8fd3c06d02bfedcaa55d0b86a2b93b0d4c027726e056aefc1940a3c63b"
+      }
+    },
+    {
       "id": "useSSR",
       "type": "snippetListing",
       "title": "useSSR",
