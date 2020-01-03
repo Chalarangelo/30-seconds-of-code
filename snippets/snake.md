@@ -8,11 +8,12 @@ Converts a string to snake case.
 Break the string into words and combine them adding `_` as a separator, using a regexp.
 
 ```py
-import re
+from re import sub
 
 def snake(s):
-  return '_'.join(re.sub('([A-Z][a-z]+)', r' \1',
-    re.sub('([A-Z]+)', r' \1',
+  return '_'.join(
+    sub('([A-Z][a-z]+)', r' \1',
+    sub('([A-Z]+)', r' \1',
     s.replace('-', ' '))).split()).lower()
 ```
 
