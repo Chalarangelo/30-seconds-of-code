@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 
+/* istanbul ignore next */
 /**
  * Given an array of queries and an array of values to use on each of them
  * matching, this hook runs the media queries and returns the result.
