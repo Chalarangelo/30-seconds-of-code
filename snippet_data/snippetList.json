@@ -531,6 +531,22 @@
       }
     },
     {
+      "id": "useComponentDidMount",
+      "type": "snippetListing",
+      "title": "useComponentDidMount",
+      "attributes": {
+        "text": "A hook that executes a callback immediately after a component is mounted.\n\n- Use `React.useEffect()` with an empty array as the second argument to execute the provided callback only once when the component is mounted.\n\n",
+        "tags": [
+          "hooks",
+          "effect",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "82ef558fad661a522f5e897014b3898ad56ab6603a342c477f09edaa6281a0c9"
+      }
+    },
+    {
       "id": "useFetch",
       "type": "snippetListing",
       "title": "useFetch",
