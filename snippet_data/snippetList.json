@@ -899,14 +899,14 @@
       "type": "snippetListing",
       "title": "median",
       "attributes": {
-        "text": "Finds the median of a list of numbers.\n\nSort the numbers of the list using `list.sort()` and find the median, which is either the middle element of the list if the list length is odd or the average of the two middle elements if the list length is even.\n\n",
+        "text": "Finds the median of a list of numbers.\n\nSort the numbers of the list using `list.sort()` and find the median, which is either the middle element of the list if the list length is odd or the average of the two middle elements if the list length is even.\n\n[`statistics.median()`](https://docs.python.org/3/library/statistics.html#statistics.median) provides similar functionality to this snippet.\n\n",
         "tags": [
           "math",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "b271bd6034b0b38ee3e998f52e2512dea24266952f632987d77a916abc7597f3"
+        "hash": "2cbdc2820f9bd452c3d9d7ec3ea72f449ffc57765145d997ad4b2f108e904bdf"
       }
     },
     {
@@ -1053,7 +1053,7 @@
       "type": "snippetListing",
       "title": "sample",
       "attributes": {
-        "text": "Returns a random element from a list.\n\nUse `random.randint()` to generate a random number that corresponds to an index in the list, return the element at that index.\n\n",
+        "text": "Returns a random element from a list.\n\nUse `random.randint()` to generate a random number that corresponds to an index in the list, return the element at that index.\n\n[`random.sample()`](https://docs.python.org/3/library/random.html#random.sample) provides similar functionality to this snippet.\n\n",
         "tags": [
           "list",
           "random",
@@ -1061,7 +1061,7 @@
         ]
       },
       "meta": {
-        "hash": "83552913c0e8c32835639ce5393de8b975bca4fd61a3bc5e2145cdb2573c6787"
+        "hash": "0e0d74a26dfa80b19c0ba245235997c39cde44ff5385802cecc88f296c108e90"
       }
     },
     {
@@ -1069,7 +1069,7 @@
       "type": "snippetListing",
       "title": "shuffle",
       "attributes": {
-        "text": "Randomizes the order of the values of an list, returning a new list.\n\nUses the [Fisher-Yates algorithm](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle) to reorder the elements of the list.\n\n",
+        "text": "Randomizes the order of the values of an list, returning a new list.\n\nUses the [Fisher-Yates algorithm](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle) to reorder the elements of the list.\n\n[`random.shuffle`](https://docs.python.org/3/library/random.html#random.shuffle) provides similar functionality to this snippet.\n\n",
         "tags": [
           "list",
           "random",
@@ -1077,7 +1077,7 @@
         ]
       },
       "meta": {
-        "hash": "232f0b9b19a01863a336f9aae733a50c6f516d2dc663e47b2948f5702b3a99ff"
+        "hash": "817c98747813310506251815328e697f4032d8bab1ba87d3bfcc642b7b51d0cf"
       }
     },
     {
@@ -1132,14 +1132,14 @@
       "type": "snippetListing",
       "title": "split_lines",
       "attributes": {
-        "text": "Splits a multiline string into a list of lines.\n\nUse `s.split()` and `'\\n'` to match line breaks and create a list.\n\n",
+        "text": "Splits a multiline string into a list of lines.\n\nUse `s.split()` and `'\\n'` to match line breaks and create a list.\n\n[`str.splitlines()`](https://docs.python.org/3/library/stdtypes.html#str.splitlines) provides similar functionality to this snippet.\n\n",
         "tags": [
           "string",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "1131fdad586899d61d591900e8d5308727834ed332384c7b7f90726ee8cdb1c5"
+        "hash": "d3929f4b59663cac5b5f6bae84ee5a849b8ed291ffd80368025ab3c473f6a5b3"
       }
     },
     {
@@ -1334,7 +1334,7 @@
       "type": "snippetListing",
       "title": "zip",
       "attributes": {
-        "text": "Creates a list of elements, grouped based on the position in the original lists.\n\nUse `max` combined with `list comprehension` to get the length of the longest list in the arguments. \nLoop for `max_length` times grouping elements. \nIf lengths of `lists` vary, use `fill_value` (defaults to `None`). \n\n",
+        "text": "Creates a list of elements, grouped based on the position in the original lists.\n\nUse `max` combined with `list comprehension` to get the length of the longest list in the arguments. \nLoop for `max_length` times grouping elements. \nIf lengths of `lists` vary, use `fill_value` (defaults to `None`). \n\n[`zip()`](https://docs.python.org/3/library/functions.html#zip) and [`itertools.zip_longest()`](https://docs.python.org/3/library/itertools.html#itertools.zip_longest) provide similar functionality to this snippet.\n\n",
         "tags": [
           "list",
           "math",
@@ -1342,7 +1342,7 @@
         ]
       },
       "meta": {
-        "hash": "3550d2be65c651be8a94321e55b6fb70115209f77f344371f29e11943c7e757f"
+        "hash": "a42a76e7a962aded1f6f30495095fe3c005be83d37f18e63285a3425184772ec"
       }
     }
   ],
