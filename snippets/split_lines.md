@@ -7,7 +7,7 @@ Splits a multiline string into a list of lines.
 
 Use `s.split()` and `'\n'` to match line breaks and create a list.
 
-[`str.splitlines`](https://docs.python.org/3/library/stdtypes.html#str.splitlines) provides similar functionality to this snippet.
+[`str.splitlines()`](https://docs.python.org/3/library/stdtypes.html#str.splitlines) provides similar functionality to this snippet.
 
 ```py
 def split_lines(s):
