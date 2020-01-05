@@ -11,6 +11,12 @@
 * You can use the button on the right side of a snippet card to copy the code to clipboard.
 * If you like the project, give it a star. It means a lot to the people maintaining it.
 
+
+## Follow us on social media for daily short code snippets
+* [Twitter](https://twitter.com/30secondsofcode)
+* [Instagram](https://www.instagram.com/30secondsofcode/)
+* [Facebook](https://www.facebook.com/30secondsofcode)
+
 ## Want to contribute?
 
 * If you want to help us improve, take a minute to read the [Contribution Guidelines](/CONTRIBUTING.md) first.
