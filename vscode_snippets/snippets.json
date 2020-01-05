@@ -961,6 +961,17 @@
     ],
     "description": "Iterates over all own properties of an object in reverse, running a callback for each one.\n\nUse `Object.keys(obj)` to get all the properties of the object, `Array.prototype.reverse()` to reverse their order and `Array.prototype.forEach()` to run the provided function for each key-value pair. The callback receives three arguments - the value, the key and the object.\n"
   },
+  "frequencies": {
+    "prefix": "30s_frequencies",
+    "body": [
+      "const frequencies = arr =>",
+      "  arr.reduce((a, v) => {",
+      "    a[v] = a[v] ? a[v] + 1 : 1;",
+      "    return a;",
+      "  }, {});"
+    ],
+    "description": "Returns an object with the unique values of an array as keys and their frequencies as the values.\n\nUse `Array.prototype.reduce()` to map unique values to an object's keys, adding to existing keys every time the same value is encountered.\n"
+  },
   "fromCamelCase": {
     "prefix": "30s_fromCamelCase",
     "body": [
@@ -1750,8 +1761,8 @@
       "      i === arr.length - 2",
       "        ? acc + val + end",
       "        : i === arr.length - 1",
-      "        ? acc + val",
-      "        : acc + val + separator,",
+      "          ? acc + val",
+      "          : acc + val + separator,",
       "    ''",
       "  );"
     ],
@@ -2001,6 +2012,19 @@
     ],
     "description": "Returns the `n` minimum elements from the provided array.\nIf `n` is greater than or equal to the provided array's length, then return the original array (sorted in ascending order).\n\nUse `Array.prototype.sort()` combined with the spread operator (`...`) to create a shallow clone of the array and sort it in ascending order.\nUse `Array.prototype.slice()` to get the specified number of elements.\nOmit the second argument, `n`, to get a one-element array.\n"
   },
+  "mostFrequent": {
+    "prefix": "30s_mostFrequent",
+    "body": [
+      "const mostFrequent = arr =>",
+      "  Object.entries(",
+      "    arr.reduce((a, v) => {",
+      "      a[v] = a[v] ? a[v] + 1 : 1;",
+      "      return a;",
+      "    }, {})",
+      "  ).reduce((a, v) => (v[1] >= a[1] ? v : a), [null, 0])[0];"
+    ],
+    "description": "Returns the most frequent element in an array.\n\nUse `Array.prototype.reduce()` to map unique values to an object's keys, adding to existing keys every time the same value is encountered.\nUse `Object.entries()` on the result in combination with `Array.prototype.reduce()` to get the most frequent value in the array.\n"
+  },
   "mostPerformant": {
     "prefix": "30s_mostPerformant",
     "body": [
@@ -2080,10 +2104,10 @@
       "const objectToQueryString = queryParameters => {",
       "  return queryParameters",
       "    ? Object.entries(queryParameters).reduce((queryString, [key, val], index) => {",
-      "        const symbol = queryString.length === 0 ? '?' : '&';",
-      "        queryString += typeof val === 'string' ? `${symbol}${key}=${val}` : '';",
-      "        return queryString;",
-      "      }, '')",
+      "      const symbol = queryString.length === 0 ? '?' : '&';",
+      "      queryString += typeof val === 'string' ? `${symbol}${key}=${val}` : '';",
+      "      return queryString;",
+      "    }, '')",
       "    : '';",
       "};"
     ],
@@ -2597,9 +2621,9 @@
       "const remove = (arr, func) =>",
       "  Array.isArray(arr)",
       "    ? arr.filter(func).reduce((acc, val) => {",
-      "      arr.splice(arr.indexOf(val), 1);",
-      "      return acc.concat(val);",
-      "    }, [])",
+      "        arr.splice(arr.indexOf(val), 1);",
+      "        return acc.concat(val);",
+      "      }, [])",
       "    : [];"
     ],
     "description": "Removes elements from an array for which the given function returns `false`.\n\nUse `Array.prototype.filter()` to find array elements that return truthy values and `Array.prototype.reduce()` to remove elements using `Array.prototype.splice()`.\nThe `func` is invoked with three arguments (`value, index, array`).\n"
@@ -2797,10 +2821,10 @@
       "  Array.isArray(val)",
       "    ? val.length",
       "    : val && typeof val === 'object'",
-      "    ? val.size || val.length || Object.keys(val).length",
-      "    : typeof val === 'string'",
-      "    ? new Blob([val]).size",
-      "    : 0;"
+      "      ? val.size || val.length || Object.keys(val).length",
+      "      : typeof val === 'string'",
+      "        ? new Blob([val]).size",
+      "        : 0;"
     ],
     "description": "Gets the size of an array, object or string.\n\nGet type of `val` (`array`, `object` or `string`). \nUse `length` property for arrays.\nUse `length` or `size` value if available or number of keys for objects.\nUse `size` of a [`Blob` object](https://developer.mozilla.org/en-US/docs/Web/API/Blob) created from `val` for strings.\nSplit strings into array of characters with `split('')` and return its length.\n"
   },

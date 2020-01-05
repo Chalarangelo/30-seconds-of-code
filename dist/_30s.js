@@ -386,6 +386,11 @@
     Object.keys(obj)
       .reverse()
       .forEach(key => fn(obj[key], key, obj));
+  const frequencies = arr =>
+    arr.reduce((a, v) => {
+      a[v] = a[v] ? a[v] + 1 : 1;
+      return a;
+    }, {});
   const fromCamelCase = (str, separator = '_') =>
     str
       .replace(/([a-z\d])([A-Z])/g, '$1' + separator + '$2')
@@ -661,8 +666,8 @@
         i === arr.length - 2
           ? acc + val + end
           : i === arr.length - 1
-          ? acc + val
-          : acc + val + separator,
+            ? acc + val
+            : acc + val + separator,
       ''
     );
   const JSONtoCSV = (arr, columns, delimiter = ',') =>
@@ -758,6 +763,13 @@
   const minBy = (arr, fn) => Math.min(...arr.map(typeof fn === 'function' ? fn : val => val[fn]));
   const minDate = dates => new Date(Math.min(...dates));
   const minN = (arr, n = 1) => [...arr].sort((a, b) => a - b).slice(0, n);
+  const mostFrequent = arr =>
+    Object.entries(
+      arr.reduce((a, v) => {
+        a[v] = a[v] ? a[v] + 1 : 1;
+        return a;
+      }, {})
+    ).reduce((a, v) => (v[1] >= a[1] ? v : a), [null, 0])[0];
   const mostPerformant = (fns, iterations = 10000) => {
     const times = fns.map(fn => {
       const before = performance.now();
@@ -780,10 +792,10 @@
   const objectToQueryString = queryParameters => {
     return queryParameters
       ? Object.entries(queryParameters).reduce((queryString, [key, val], index) => {
-          const symbol = queryString.length === 0 ? '?' : '&';
-          queryString += typeof val === 'string' ? `${symbol}${key}=${val}` : '';
-          return queryString;
-        }, '')
+        const symbol = queryString.length === 0 ? '?' : '&';
+        queryString += typeof val === 'string' ? `${symbol}${key}=${val}` : '';
+        return queryString;
+      }, '')
       : '';
   };
   const observeMutations = (element, callback, options) => {
@@ -1014,9 +1026,9 @@
   const remove = (arr, func) =>
     Array.isArray(arr)
       ? arr.filter(func).reduce((acc, val) => {
-        arr.splice(arr.indexOf(val), 1);
-        return acc.concat(val);
-      }, [])
+          arr.splice(arr.indexOf(val), 1);
+          return acc.concat(val);
+        }, [])
       : [];
   const removeNonASCII = str => str.replace(/[^\x20-\x7E]/g, '');
   const renameKeys = (keysMap, obj) =>
@@ -1094,10 +1106,10 @@
     Array.isArray(val)
       ? val.length
       : val && typeof val === 'object'
-      ? val.size || val.length || Object.keys(val).length
-      : typeof val === 'string'
-      ? new Blob([val]).size
-      : 0;
+        ? val.size || val.length || Object.keys(val).length
+        : typeof val === 'string'
+          ? new Blob([val]).size
+          : 0;
   const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
   const smoothScroll = element =>
     document.querySelector(element).scrollIntoView({
@@ -1672,6 +1684,7 @@
   exports.formToObject = formToObject;
   exports.forOwn = forOwn;
   exports.forOwnRight = forOwnRight;
+  exports.frequencies = frequencies;
   exports.fromCamelCase = fromCamelCase;
   exports.functionName = functionName;
   exports.functions = functions;
@@ -1783,6 +1796,7 @@
   exports.minBy = minBy;
   exports.minDate = minDate;
   exports.minN = minN;
+  exports.mostFrequent = mostFrequent;
   exports.mostPerformant = mostPerformant;
   exports.negate = negate;
   exports.nest = nest;

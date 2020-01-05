@@ -870,6 +870,12 @@
       return fn(obj[key], key, obj);
     });
   };
+  var frequencies = function frequencies(arr) {
+    return arr.reduce(function (a, v) {
+      a[v] = a[v] ? a[v] + 1 : 1;
+      return a;
+    }, {});
+  };
   var fromCamelCase = function fromCamelCase(str) {
     var separator = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '_';
     return str.replace(/([a-z\d])([A-Z])/g, '$1' + separator + '$2').replace(/([A-Z]+)([A-Z][a-z\d]+)/g, '$1' + separator + '$2').toLowerCase();
@@ -1515,6 +1521,14 @@
     return _toConsumableArray(arr).sort(function (a, b) {
       return a - b;
     }).slice(0, n);
+  };
+  var mostFrequent = function mostFrequent(arr) {
+    return Object.entries(arr.reduce(function (a, v) {
+      a[v] = a[v] ? a[v] + 1 : 1;
+      return a;
+    }, {})).reduce(function (a, v) {
+      return v[1] >= a[1] ? v : a;
+    }, [null, 0])[0];
   };
   var mostPerformant = function mostPerformant(fns) {
     var iterations = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 10000;
@@ -3032,6 +3046,7 @@
   exports.formToObject = formToObject;
   exports.forOwn = forOwn;
   exports.forOwnRight = forOwnRight;
+  exports.frequencies = frequencies;
   exports.fromCamelCase = fromCamelCase;
   exports.functionName = functionName;
   exports.functions = functions;
@@ -3143,6 +3158,7 @@
   exports.minBy = minBy;
   exports.minDate = minDate;
   exports.minN = minN;
+  exports.mostFrequent = mostFrequent;
   exports.mostPerformant = mostPerformant;
   exports.negate = negate;
   exports.nest = nest;

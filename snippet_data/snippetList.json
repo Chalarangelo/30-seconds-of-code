@@ -1529,6 +1529,21 @@
       }
     },
     {
+      "id": "frequencies",
+      "type": "snippetListing",
+      "title": "frequencies",
+      "attributes": {
+        "text": "Returns an object with the unique values of an array as keys and their frequencies as the values.\n\nUse `Array.prototype.reduce()` to map unique values to an object's keys, adding to existing keys every time the same value is encountered.\n\n",
+        "tags": [
+          "array",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "227fc1043f5a7850c32f4ecce686a97de0b8badf4d487462a1c25e8312465124"
+      }
+    },
+    {
       "id": "fromCamelCase",
       "type": "snippetListing",
       "title": "fromCamelCase",
@@ -2879,7 +2894,7 @@
         ]
       },
       "meta": {
-        "hash": "3db3faac666ee61ab86c70766d2ab5d1293ffd818da87edb971bfff7a366364a"
+        "hash": "682a6b7cfeb58efe9ed7b6daf467c45397df0acecfc21cab59e5ffedd03503ba"
       }
     },
     {
@@ -3287,6 +3302,21 @@
       }
     },
     {
+      "id": "mostFrequent",
+      "type": "snippetListing",
+      "title": "mostFrequent",
+      "attributes": {
+        "text": "Returns the most frequent element in an array.\n\nUse `Array.prototype.reduce()` to map unique values to an object's keys, adding to existing keys every time the same value is encountered.\nUse `Object.entries()` on the result in combination with `Array.prototype.reduce()` to get the most frequent value in the array.\n\n",
+        "tags": [
+          "array",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "0c04c74cdbb51195f740a163776cb5c4e21a57a59099a1740211cf0764c6c9cc"
+      }
+    },
+    {
       "id": "mostPerformant",
       "type": "snippetListing",
       "title": "mostPerformant",
@@ -3440,7 +3470,7 @@
         ]
       },
       "meta": {
-        "hash": "e8f820ce6da97eabde082ffb829c9fb700e85efc79bdebe883c67237269e3f52"
+        "hash": "b031c3387ef66411ab5d295788eac4247ada5b4b068dda90603d3c973890bc26"
       }
     },
     {
@@ -3789,7 +3819,7 @@
         ]
       },
       "meta": {
-        "hash": "7ccbf66d8d55c60bcf12baa980cf32d67a4ba567894d59e2d798c9af792424ff"
+        "hash": "17bcf3f13980b7f804d9f0fe274324b2a35ab7d479c03d77322dabba81e1a34a"
       }
     },
     {
@@ -4186,7 +4216,7 @@
         ]
       },
       "meta": {
-        "hash": "c1542907e6295eb81df918174c247a65d73c8daccc56769f2eb32d609b7846fc"
+        "hash": "069472d018c3102412dafc2ae8ec6e9396e53c01d0073079f2e3f1ac3c99b6e9"
       }
     },
     {
@@ -4502,7 +4532,7 @@
         ]
       },
       "meta": {
-        "hash": "6dd4c6a51d2c80fa4768c95ae01c16a8359c4140bcad28c7fde0cecd72d7d3e2"
+        "hash": "24b93b68a59b49f245590930fed6fb82e286ce09f90e292466cde63c1784c347"
       }
     },
     {

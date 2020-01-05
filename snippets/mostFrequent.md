@@ -10,12 +10,12 @@ Use `Object.entries()` on the result in combination with `Array.prototype.reduce
 
 ```js
 const mostFrequent = arr =>
-  Object.entries(arr.reduce(
-    (a, v) => {
+  Object.entries(
+    arr.reduce((a, v) => {
       a[v] = a[v] ? a[v] + 1 : 1;
       return a;
-    }, {}
-  )).reduce((a, v) => v[1] >= a[1] ? v : a, [null, 0])[0];
+    }, {})
+  ).reduce((a, v) => (v[1] >= a[1] ? v : a), [null, 0])[0];
 ```
 
 ```js
