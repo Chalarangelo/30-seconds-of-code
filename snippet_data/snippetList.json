@@ -482,14 +482,14 @@
       "type": "snippetListing",
       "title": "filter_non_unique",
       "attributes": {
-        "text": "Filters out the non-unique values in a list.\n\nUse list comprehension and `list.count()` to create a list containing only the unique values.\n\n",
+        "text": "Filters out the non-unique values in a list.\n\nUse a `Counter` to get the count of each value in the list.\nUse list comprehension to create a list containing only the unique values.\n\n",
         "tags": [
           "list",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "05679ae115d276830ec769a04b0800d92eabc6a09678fc1a9cf6013c813cc650"
+        "hash": "cc048906b1a368428244af8202aeb3a60b1b7b7bf52ad744e92d3e21f6be95f2"
       }
     },
     {
@@ -497,14 +497,14 @@
       "type": "snippetListing",
       "title": "filter_unique",
       "attributes": {
-        "text": "Filters out the unique values in a list.\n\nUse list comprehension and `list.count()` to create a list containing only the non-unique values.\n\n",
+        "text": "Filters out the unique values in a list.\n\nUse a `Counter` to get the count of each value in the list.\nUse list comprehension to create a list containing only the non-unique values.\n\n",
         "tags": [
           "list",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "174c62134c81e139aa9d0b31f46c684b5edd4c52e721136d586d435058e19288"
+        "hash": "f3e5cada914ae863ca9cf8fd8780b1634ea526d78f1f542c5c7577f6dd685cfc"
       }
     },
     {
