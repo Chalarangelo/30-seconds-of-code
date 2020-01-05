@@ -1193,6 +1193,17 @@
     ],
     "description": "Returns `true` if the target value exists in a JSON object, `false` otherwise.\n\nCheck if `keys` is non-empty and use `Array.prototype.every()` to sequentially check its keys to internal depth of the object, `obj`. \nUse `Object.prototype.hasOwnProperty()` to check if `obj` does not have the current key or is not an object, stop propagation and return `false`.\nOtherwise assign the key's value to `obj` to use on the next iteration.\nReturn `false` beforehand if given key list is empty.\n"
   },
+  "haveSameContents": {
+    "prefix": "30s_haveSameContents",
+    "body": [
+      "const haveSameContents = (a, b) => {",
+      "  for (const v of new Set([...a, ...b]))",
+      "    if (a.filter(e => e === v).length !== b.filter(e => e === v).length) return false;",
+      "  return true;",
+      "};"
+    ],
+    "description": "Returns `true` if two arrays contain the same elements regardless of order, `false` otherwise.\n\nUse a `for...of` loop over a `Set` created from the values of both arrays.\nUse `Array.prototype.filter()` to compare the amount of occurences of each distinct value in both arrays.\nReturn `false` if the counts do not match for any element, `true` otherwise.\n"
+  },
   "head": {
     "prefix": "30s_head",
     "body": [
@@ -1493,6 +1504,22 @@
     ],
     "description": "Returns `true` if the browser tab of the page is focused, `false` otherwise.\n\nUse the `Document.hidden` property, introduced by the Page Visibility API to check if the browser tab of the page is visible or hidden.\n"
   },
+  "isContainedIn": {
+    "prefix": "30s_isContainedIn",
+    "body": [
+      "const isContainedIn = (a, b) => {",
+      "  for (const v of new Set(a)) {",
+      "    if (",
+      "      !b.some(e => e === v) ||",
+      "      a.filter(e => e === v).length > b.filter(e => e === v).length",
+      "    )",
+      "      return false;",
+      "  }",
+      "  return true;",
+      "};"
+    ],
+    "description": "Returns `true` if the elements of the first array are contained in the second one regardless of order, `false` otherwise.\n\nUse a `for...of` loop over a `Set` created from the first array.\nUse `Array.prototype.some()` to check if all distinct values are contained in the second array, use `Array.prototype.filter()` to compare the amount of occurences of each distinct value in both arrays.\nReturn `false` if the count of any element is greater in the first array than the second one, `true` otherwise.\n"
+  },
   "isDivisible": {
     "prefix": "30s_isDivisible",
     "body": [
@@ -1761,8 +1788,8 @@
       "      i === arr.length - 2",
       "        ? acc + val + end",
       "        : i === arr.length - 1",
-      "          ? acc + val",
-      "          : acc + val + separator,",
+      "        ? acc + val",
+      "        : acc + val + separator,",
       "    ''",
       "  );"
     ],
@@ -2104,10 +2131,10 @@
       "const objectToQueryString = queryParameters => {",
       "  return queryParameters",
       "    ? Object.entries(queryParameters).reduce((queryString, [key, val], index) => {",
-      "      const symbol = queryString.length === 0 ? '?' : '&';",
-      "      queryString += typeof val === 'string' ? `${symbol}${key}=${val}` : '';",
-      "      return queryString;",
-      "    }, '')",
+      "        const symbol = queryString.length === 0 ? '?' : '&';",
+      "        queryString += typeof val === 'string' ? `${symbol}${key}=${val}` : '';",
+      "        return queryString;",
+      "      }, '')",
       "    : '';",
       "};"
     ],
@@ -2621,9 +2648,9 @@
       "const remove = (arr, func) =>",
       "  Array.isArray(arr)",
       "    ? arr.filter(func).reduce((acc, val) => {",
-      "        arr.splice(arr.indexOf(val), 1);",
-      "        return acc.concat(val);",
-      "      }, [])",
+      "      arr.splice(arr.indexOf(val), 1);",
+      "      return acc.concat(val);",
+      "    }, [])",
       "    : [];"
     ],
     "description": "Removes elements from an array for which the given function returns `false`.\n\nUse `Array.prototype.filter()` to find array elements that return truthy values and `Array.prototype.reduce()` to remove elements using `Array.prototype.splice()`.\nThe `func` is invoked with three arguments (`value, index, array`).\n"
@@ -2821,10 +2848,10 @@
       "  Array.isArray(val)",
       "    ? val.length",
       "    : val && typeof val === 'object'",
-      "      ? val.size || val.length || Object.keys(val).length",
-      "      : typeof val === 'string'",
-      "        ? new Blob([val]).size",
-      "        : 0;"
+      "    ? val.size || val.length || Object.keys(val).length",
+      "    : typeof val === 'string'",
+      "    ? new Blob([val]).size",
+      "    : 0;"
     ],
     "description": "Gets the size of an array, object or string.\n\nGet type of `val` (`array`, `object` or `string`). \nUse `length` property for arrays.\nUse `length` or `size` value if available or number of keys for objects.\nUse `size` of a [`Blob` object](https://developer.mozilla.org/en-US/docs/Web/API/Blob) created from `val` for strings.\nSplit strings into array of characters with `split('')` and return its length.\n"
   },
