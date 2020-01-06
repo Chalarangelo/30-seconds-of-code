@@ -1036,13 +1036,7 @@ const reduceSuccessive = (arr, fn, acc) =>
 const reduceWhich = (arr, comparator = (a, b) => a - b) =>
   arr.reduce((a, b) => (comparator(a, b) >= 0 ? b : a));
 const reject = (pred, array) => array.filter((...args) => !pred(...args));
-const remove = (arr, func) =>
-  Array.isArray(arr)
-    ? arr.filter(func).reduce((acc, val) => {
-      arr.splice(arr.indexOf(val), 1);
-      return acc.concat(val);
-    }, [])
-    : [];
+const remove = (arr, func) => Array.isArray(arr) ? arr.filter(func) : [];
 const removeNonASCII = str => str.replace(/[^\x20-\x7E]/g, '');
 const renameKeys = (keysMap, obj) =>
   Object.keys(obj).reduce(
