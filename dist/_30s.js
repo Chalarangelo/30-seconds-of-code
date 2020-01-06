@@ -485,6 +485,11 @@
       })
     );
   };
+  const haveSameContents = (a, b) => {
+    for (const v of new Set([...a, ...b]))
+      if (a.filter(e => e === v).length !== b.filter(e => e === v).length) return false;
+    return true;
+  };
   const head = arr => (arr && arr.length ? arr[0] : undefined);
   const hexToRGB = hex => {
     let alpha = false,
@@ -587,6 +592,16 @@
   const isBoolean = val => typeof val === 'boolean';
   const isBrowser = () => ![typeof window, typeof document].includes('undefined');
   const isBrowserTabFocused = () => !document.hidden;
+  const isContainedIn = (a, b) => {
+    for (const v of new Set(a)) {
+      if (
+        !b.some(e => e === v) ||
+        a.filter(e => e === v).length > b.filter(e => e === v).length
+      )
+        return false;
+    }
+    return true;
+  };
   const isDivisible = (dividend, divisor) => dividend % divisor === 0;
   const isDuplexStream = val =>
     val !== null &&
@@ -666,8 +681,8 @@
         i === arr.length - 2
           ? acc + val + end
           : i === arr.length - 1
-            ? acc + val
-            : acc + val + separator,
+          ? acc + val
+          : acc + val + separator,
       ''
     );
   const JSONtoCSV = (arr, columns, delimiter = ',') =>
@@ -792,10 +807,10 @@
   const objectToQueryString = queryParameters => {
     return queryParameters
       ? Object.entries(queryParameters).reduce((queryString, [key, val], index) => {
-        const symbol = queryString.length === 0 ? '?' : '&';
-        queryString += typeof val === 'string' ? `${symbol}${key}=${val}` : '';
-        return queryString;
-      }, '')
+          const symbol = queryString.length === 0 ? '?' : '&';
+          queryString += typeof val === 'string' ? `${symbol}${key}=${val}` : '';
+          return queryString;
+        }, '')
       : '';
   };
   const observeMutations = (element, callback, options) => {
@@ -1026,9 +1041,9 @@
   const remove = (arr, func) =>
     Array.isArray(arr)
       ? arr.filter(func).reduce((acc, val) => {
-          arr.splice(arr.indexOf(val), 1);
-          return acc.concat(val);
-        }, [])
+        arr.splice(arr.indexOf(val), 1);
+        return acc.concat(val);
+      }, [])
       : [];
   const removeNonASCII = str => str.replace(/[^\x20-\x7E]/g, '');
   const renameKeys = (keysMap, obj) =>
@@ -1106,10 +1121,10 @@
     Array.isArray(val)
       ? val.length
       : val && typeof val === 'object'
-        ? val.size || val.length || Object.keys(val).length
-        : typeof val === 'string'
-          ? new Blob([val]).size
-          : 0;
+      ? val.size || val.length || Object.keys(val).length
+      : typeof val === 'string'
+      ? new Blob([val]).size
+      : 0;
   const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
   const smoothScroll = element =>
     document.querySelector(element).scrollIntoView({
@@ -1706,6 +1721,7 @@
   exports.hashBrowser = hashBrowser;
   exports.hashNode = hashNode;
   exports.hasKey = hasKey;
+  exports.haveSameContents = haveSameContents;
   exports.head = head;
   exports.hexToRGB = hexToRGB;
   exports.hide = hide;
@@ -1739,6 +1755,7 @@
   exports.isBoolean = isBoolean;
   exports.isBrowser = isBrowser;
   exports.isBrowserTabFocused = isBrowserTabFocused;
+  exports.isContainedIn = isContainedIn;
   exports.isDivisible = isDivisible;
   exports.isDuplexStream = isDuplexStream;
   exports.isEmpty = isEmpty;
