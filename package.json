@@ -25,6 +25,7 @@
     "concurrently": "^4.1.2",
     "cross-env": "^6.0.0",
     "css-loader": "^3.2.0",
+    "cypress": "^3.8.1",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^6.4.0",
@@ -66,6 +67,7 @@
     "redux": "^4.0.4",
     "redux-persist": "^6.0.0",
     "sass-loader": "^8.0.0",
+    "start-server-and-test": "^1.10.6",
     "style-loader": "^1.0.0"
   },
   "keywords": [
@@ -85,7 +87,9 @@
     "lint": "eslint './src/**/*.js' './src/**/*.jsx'",
     "test": "cross-env NODE_PATH=src NODE_ENV=test jest --coverage",
     "test:generate-output": "cross-env NODE_PATH=src NODE_ENV=test jest --json --outputFile=.storybook/jest-test-results.json",
-    "test:watch": "cross-env NODE_PATH=src NODE_ENV=test jest --json --outputFile=.storybook/jest-test-results.json --watch"
+    "test:watch": "cross-env NODE_PATH=src NODE_ENV=test jest --json --outputFile=.storybook/jest-test-results.json --watch",
+    "cy:open": "cypress open",
+    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open"
   },
   "repository": {
     "type": "git",
@@ -122,7 +126,8 @@
     "testURL": "https://localhost",
     "setupFiles": [
       "./.jest/loadershim.js"
-    ]
+    ],
+    "testMatch": [ "**/?(*.)+(test).[jt]s?(x)" ]
   },
   "browserslist": [
     "defaults and last 4 versions and not dead and not ie>0 and not ie_mob>0 and not op_mini all and not baidu>0 and not kaios>0 and not and_uc>0 and not and_qq>0 and not <0.2%"
