@@ -5,7 +5,7 @@ tags: list,beginner
 
 Filters out the non-unique values in a list.
 
-Use a `Counter` to get the count of each value in the list.
+Use a `collections.Counter` to get the count of each value in the list.
 Use list comprehension to create a list containing only the unique values.
 
 ```py
