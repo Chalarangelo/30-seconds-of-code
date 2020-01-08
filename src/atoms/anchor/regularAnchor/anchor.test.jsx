@@ -37,8 +37,8 @@ describe('<Anchor />', () => {
       anchor = wrapper.find('a');
     });
 
-    it('should link the appropriate internal URl', () => {
-      expect(anchor.prop('href')).toBe(`/${internalLink.url}`);
+    it('should link the appropriate internal URL', () => {
+      expect(anchor.prop('href')).toBe(`/${internalLink.url}/`);
     });
   });
 
