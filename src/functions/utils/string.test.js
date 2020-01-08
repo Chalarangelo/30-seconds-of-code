@@ -7,7 +7,8 @@ import {
   getBaseURL,
   stripMarkdownFormat,
   toKebabCase,
-  convertToSeoSlug
+  convertToSeoSlug,
+  addTrailingSlashToSlug
 } from './string';
 
 const stringComparator = (str1, str2) => {
@@ -186,5 +187,28 @@ describe('toKebabCase', () => {
 describe('convertToSeoSlug', () => {
   it('returns the SEO-friendly slug', () => {
     expect(convertToSeoSlug('mySnippet')).toBe('/my-snippet');
+  });
+});
+
+describe('addTrailingSlashToSlug', () => {
+  it('returns the slug as-is if it ends with a "/"', () => {
+    const slug = 'https://mysite.com/a-slug/';
+    expect(addTrailingSlashToSlug(slug)).toBe(slug);
+  });
+
+  it('returns the slug with a trailing "/"', () => {
+    const slug = 'https://mysite.com/a-slug';
+    expect(addTrailingSlashToSlug(slug)).toBe(`${slug}/`);
+  });
+
+  it('returns the slug as-is if it has params preceded by "/"', () => {
+    const slug = 'https://mysite.com/a-slug/?keyphrase=something';
+    expect(addTrailingSlashToSlug(slug)).toBe(slug);
+  });
+
+  it('returns the slug with a "/" before the params', () => {
+    const slug = 'https://mysite.com/a-slug';
+    const params = '?keyphrase=something';
+    expect(addTrailingSlashToSlug(`${slug}${params}`)).toBe(`${slug}/${params}`);
   });
 });
