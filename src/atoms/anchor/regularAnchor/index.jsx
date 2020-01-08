@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Link as LinkPropType } from 'typedefs';
+import { addTrailingSlashToSlug } from 'functions/utils';
 
 const Anchor = ({
   children,
@@ -11,7 +12,7 @@ const Anchor = ({
   return link.internal ?
     (
       <Link
-        to={ link.url }
+        to={ addTrailingSlashToSlug(link.url) }
         rel={ link.rel }
         target={ link.target }
         { ...rest }
