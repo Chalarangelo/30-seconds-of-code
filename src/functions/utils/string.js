@@ -95,3 +95,10 @@ export const toKebabCase = str =>
  *  - Add a '/' in the front
  */
 export const convertToSeoSlug = str => `/${toKebabCase(str)}`;
+
+/** Adds a trailing `/` to a slug, if necessary */
+export const addTrailingSlashToSlug = str => {
+  if (str.includes('?'))
+    return str.includes('/?') ? str : str.replace('?', '/?');
+  return str.endsWith('/') ? str : `${str}/`;
+};
