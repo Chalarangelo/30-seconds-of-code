@@ -13,57 +13,61 @@ A hook that handles asynchronous calls.
 
 ```jsx
 const useAsync = (fn, options = {}) => {
-  const [value, setValue] = React.useState(null)
-  const [error, setError] = React.useState(null)
-  const [isLoading, setIsLoading] = React.useState(false)
+  const [value, setValue] = React.useState(null);
+  const [error, setError] = React.useState(null);
+  const [isLoading, setIsLoading] = React.useState(false);
 
-  const autoRun = options.autoRun || false
+  const autoRun = options.autoRun || false;
 
   const run = async (args = null) => {
     try {
-      setIsLoading(true)
-      const value = await fn(args)
-      setIsLoading(false)
-      setError(null)
-      setValue(value)
+      setIsLoading(true);
+      const value = await fn(args);
+      setIsLoading(false);
+      setError(null);
+      setValue(value);
     } catch (error) {
-      setIsLoading(false)
-      setError(error)
-      setValue(null)
+      setIsLoading(false);
+      setError(error);
+      setValue(null);
     }
-  }
+  };
 
   React.useEffect(() => {
     if (autoRun) {
-      run()
+      run();
     }
-  }, [autoRun])
+  }, [autoRun]);
 
   return {
     value,
     error,
     isLoading,
     run,
-  }
-}
+  };
+};
 ```
 
 ```jsx
 const App = () => {
-  const handleSubmit = (args) => { // args { foo: bar }
-    const url = "https://jsonplaceholder.typicode.com/todos"
-    return fetch(url).then(response => response.json())
-  }
+  const handleSubmit = args => {
+    // args { foo: bar }
+    const url = "https://jsonplaceholder.typicode.com/todos";
+    return fetch(url).then(response => response.json());
+  };
 
-  const submission = useAsync(handleSubmit, { autoRun: false })
+  const submission = useAsync(handleSubmit, { autoRun: false });
 
   return (
     <div>
-      <button onClick={() => submission.run({ foo: "bar" })} disabled={submission.isLoading}>
-        {submission.isLoading ? 'Loading...': 'click me'}
+      <button
+        onClick={() => submission.run({ foo: "bar" })}
+        disabled={submission.isLoading}
+      >
+        {submission.isLoading ? "Loading..." : "click me"}
       </button>
       <pre>{JSON.stringify(submission.value, null, 2)}</pre>
     </div>
-  )
-}
+  );
+};
 ```
