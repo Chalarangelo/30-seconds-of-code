@@ -1,35 +1,34 @@
 ---
 title: useAsync
-tags: react,intermediate,hook
+tags: hooks,state,effect,intermediate
 ---
 
+A hook that handle asynchronous calls.
 
-The `useAsync` hook is used to bind asynchronous call and handle different states like loading, error, and value. According to the state of an asynchronous call, we can render different states like loading, error and value state.
+- Create a custom hook that takes a handler `function` and `options`.
+- Use the `React.useState()` hook to initialize the `value`, `error` and `loading` state variables.
+- Use the `React.useEffect()` hook to call `run()` method and update the state variables accordingly if `options.autoRun` set to true.
+- Use the `run` function to manually trigger `handler` function.
+- Return an object containting the `value`, `error` and `isLoading` state variables and `run` function.
 
-**Explanation:**
-In `useAsync` hook we need to pass the handler function and that will be called after calling the `run` method. Once `run` get's called we're changing loading, error and value field according to asynchronous call response.
-
-```js
+```jsx
 const useAsync = (fn, options = {}) => {
+  const [value, setValue] = React.useState(null)
+  const [error, setError] = React.useState(null)
+  const [isLoading, setIsLoading] = React.useState(false)
+
   const autoRun = options.autoRun || false
-
-  const [state, setState] = React.useState({
-    error: null,
-    loading: false,
-    value: null,
-  })
-
-  const handleStateChange = args => {
-    setState({ ...state, ...args })
-  }
 
   const run = async (args = null) => {
     try {
-      handleStateChange({ loading: true, error: null })
+      setIsLoading(true)
       const value = await fn(args)
-      handleStateChange({ loading: false, value: value || null, error: null })
+      setError(null)
+      setValue(value)
     } catch (error) {
-      handleStateChange({ loading: false, value: null, error })
+      setIsLoading(false)
+      setValue(null)
+      setError(error)
     }
   }
 
@@ -40,17 +39,17 @@ const useAsync = (fn, options = {}) => {
   }, [autoRun])
 
   return {
-    state,
-    setState,
+    value,
+    error,
+    isLoading,
     run,
   }
 }
 ```
 
-**Usages**
 ```jsx
 const App = () => {
-  const handleSubmit = () => {
+  const handleSubmit = (args) => { // args {foo: bar}
     const url = "https://jsonplaceholder.typicode.com/todos"
     return fetch(url).then(response => response.json())
   }
@@ -59,13 +58,10 @@ const App = () => {
 
   return (
     <div>
-      {submission.value && <div>{submission.value}</div>}
-      <button
-        onClick={() => submission.run({ foo: "bar" })}
-        disabled={submission.loading}
-      >
-        click me
+      <button onClick={() => submission.run({ foo: "bar" })} disabled={submission.isLoading}>
+        {submission.isLoading ? 'Loading...': 'click me'}
       </button>
+      <pre>{JSON.stringify(submission.value, null, 2)}</pre>
     </div>
   )
 }
