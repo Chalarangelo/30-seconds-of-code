@@ -23,12 +23,13 @@ const useAsync = (fn, options = {}) => {
     try {
       setIsLoading(true)
       const value = await fn(args)
+      setIsLoading(false)
       setError(null)
       setValue(value)
     } catch (error) {
       setIsLoading(false)
-      setValue(null)
       setError(error)
+      setValue(null)
     }
   }
 
