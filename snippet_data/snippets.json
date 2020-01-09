@@ -797,6 +797,33 @@
       }
     },
     {
+      "id": "useAsync",
+      "title": "useAsync",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "useAsync.md",
+        "text": "A hook that handles asynchronous calls.\n\n- Create a custom hook that takes a handler function, `fn`.\n- Define a reducer function and an initial state for the custom hook's state.\n- Use the `React.useReducer()` hook to initialize the `state` variable and the `dispatch` function.\n- Define a `run` function that will run the provided callback, `fn`, while using `dispatch` to update `state` as necessary.\n- Return an object containting the the properties of `state` (`value`, `error` and `loading`) and the `run` function.\n\n",
+        "codeBlocks": {
+          "style": "",
+          "code": "const useAsync = (fn) => {\n  const initialState = { loading: false, error: null, value: null };\n  const stateReducer = (_, action) => {\n    switch (action.type) {\n      case 'start':\n        return { loading: true, error: null, value: null};\n      case 'finish':\n        return { loading: false, error: null, value: action.value};\n      case 'error':\n        return { loading: false, error: action.error, value: null};\n    }\n  }\n\n  const [state, dispatch] = React.useReducer(stateReducer, initialState);\n\n  const run = async (args = null) => {\n    try {\n      dispatch({ type: 'start' });\n      const value = await fn(args);\n      dispatch({ type: 'finish', value });\n    } catch (error) {\n      dispatch({ type: 'error', error });\n    }\n  };\n  \n  return { ...state, run };\n};",
+          "example": "const RandomImage = props => {\n  const imgFetch = useAsync(url => fetch(url).then(response => response.json())); \n  \n  return (\n    <div>\n      <button\n        onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}\n        disabled={ imgFetch.isLoading }\n      >\n        Load image\n      </button>\n      <br/>\n      { imgFetch.loading && <div>Loading...</div> }    \n      { imgFetch.error && <div>Error { imgFetch.error }</div> }\n      { imgFetch.value && <img src={ imgFetch.value.message } alt=\"avatar\" width={400} height=\"auto\" />}\n    </div>\n  );\n};\n\nReactDOM.render(<RandomImage />, document.getElementById('root'));"
+        },
+        "tags": [
+          "hooks",
+          "state",
+          "reducer",
+          "advanced"
+        ]
+      },
+      "meta": {
+        "hash": "e15c637ad5256365c049fdef4529955310e2e71fec1d7d76bf9818a2db789b5c",
+        "firstSeen": "1578594132",
+        "lastUpdated": "1578594132",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "useClickInside",
       "title": "useClickInside",
       "type": "snippet",

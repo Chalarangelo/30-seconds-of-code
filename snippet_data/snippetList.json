@@ -497,6 +497,23 @@
       }
     },
     {
+      "id": "useAsync",
+      "type": "snippetListing",
+      "title": "useAsync",
+      "attributes": {
+        "text": "A hook that handles asynchronous calls.\n\n- Create a custom hook that takes a handler function, `fn`.\n- Define a reducer function and an initial state for the custom hook's state.\n- Use the `React.useReducer()` hook to initialize the `state` variable and the `dispatch` function.\n- Define a `run` function that will run the provided callback, `fn`, while using `dispatch` to update `state` as necessary.\n- Return an object containting the the properties of `state` (`value`, `error` and `loading`) and the `run` function.\n\n",
+        "tags": [
+          "hooks",
+          "state",
+          "reducer",
+          "advanced"
+        ]
+      },
+      "meta": {
+        "hash": "e15c637ad5256365c049fdef4529955310e2e71fec1d7d76bf9818a2db789b5c"
+      }
+    },
+    {
       "id": "useClickInside",
       "type": "snippetListing",
       "title": "useClickInside",
