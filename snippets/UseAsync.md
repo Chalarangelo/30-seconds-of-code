@@ -50,7 +50,7 @@ const useAsync = (fn, options = {}) => {
 
 ```jsx
 const App = () => {
-  const handleSubmit = (args) => { // args {foo: bar}
+  const handleSubmit = (args) => { // args { foo: bar }
     const url = "https://jsonplaceholder.typicode.com/todos"
     return fetch(url).then(response => response.json())
   }
