@@ -3,7 +3,7 @@ title: useAsync
 tags: hooks,state,effect,intermediate
 ---
 
-A hook that handle asynchronous calls.
+A hook that handles asynchronous calls.
 
 - Create a custom hook that takes a handler `function` and `options`.
 - Use the `React.useState()` hook to initialize the `value`, `error` and `loading` state variables.
