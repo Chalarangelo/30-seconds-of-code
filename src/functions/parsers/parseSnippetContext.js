@@ -5,9 +5,19 @@ import { transformTagName } from 'functions/transformers';
  * unnecessary information that should not be sent to the JSX
  * component rendering the snippet.
  */
-const parseSnippetContext = (snippet, cardTemplate) => {
+const parseSnippetContext = (snippet, cardTemplate, imageContext) => {
   let templateProps = {};
   switch (cardTemplate) {
+  case 'blog':
+    templateProps = {
+      authors: snippet.authors,
+      type: snippet.blogType,
+      cover:
+        imageContext.find(
+          v => v.node.absolutePath.includes(snippet.cover)
+        ).node.childImageSharp.fluid,
+    };
+    break;
   case 'css':
     templateProps = {
       browserSupport: snippet.browserSupport,
