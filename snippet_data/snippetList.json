@@ -884,14 +884,14 @@
       "type": "snippetListing",
       "title": "max_element_index",
       "attributes": {
-        "text": "Returns the pindex of the element with the maximum value in a list.\n\nUse `max()` and `list.index()` to get the maximum value in the list and return its index.\n\n",
+        "text": "Returns the index of the element with the maximum value in a list.\n\nUse `max()` and `list.index()` to get the maximum value in the list and return its index.\n\n",
         "tags": [
           "list",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "b482aa65907f5e1516d22e1e1ba88a87234a83e8db220a11e9ea4687cee6376c"
+        "hash": "efccd7f3d8767fa7c7759cab5eec415fdd51bf095dffe197861136b013623fe7"
       }
     },
     {
