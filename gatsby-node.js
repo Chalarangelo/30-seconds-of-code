@@ -10,6 +10,7 @@ const {
 const {
   createPagesQuery,
   getLogoSrc,
+  getImages,
   getSearchIndex,
 } = require(`./src/queries`);
 const {
@@ -33,7 +34,7 @@ console.log(`${green('success')} parse resolvers`);
 const templates = parseTemplates(config.templates, config.templatesPath);
 console.log(`${green('success')} parse templates`);
 
-const pagesQuery = parseQueries(getLogoSrc, createPagesQuery, getSearchIndex);
+const pagesQuery = parseQueries(getLogoSrc, createPagesQuery, getSearchIndex, getImages);
 console.log(`${green('success')} parse queries`);
 
 exports.createPages = createPages(pagesQuery, templates, requirables);
