@@ -3,7 +3,7 @@ title: max_element_index
 tags: list,beginner
 ---
 
-Returns the pindex of the element with the maximum value in a list.
+Returns the index of the element with the maximum value in a list.
 
 Use `max()` and `list.index()` to get the maximum value in the list and return its index.
 
