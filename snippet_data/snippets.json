@@ -1768,7 +1768,7 @@
         "text": "Converts a string to snake case.\n\nBreak the string into words and combine them adding `_` as a separator, using a regexp.\n\n",
         "codeBlocks": {
           "code": "from re import sub\n\ndef snake(s):\n  return '_'.join(\n    sub('([A-Z][a-z]+)', r' \\1',\n    sub('([A-Z]+)', r' \\1',\n    s.replace('-', ' '))).split()).lower()",
-          "example": "snake('camelCase') # 'camel_case'\nsnake('some text') # 'some_text'\nsnake('some-mixed_string With spaces_underscores-and-hyphens') # 'some_mixed_string_with_spaces_underscores_and_hyphens'\nsnake('AllThe-small Things') # \"all_the_smal_things\""
+          "example": "snake('camelCase') # 'camel_case'\nsnake('some text') # 'some_text'\nsnake('some-mixed_string With spaces_underscores-and-hyphens') # 'some_mixed_string_with_spaces_underscores_and_hyphens'\nsnake('AllThe-small Things') # \"all_the_small_things\""
         },
         "tags": [
           "string",
@@ -1777,11 +1777,11 @@
         ]
       },
       "meta": {
-        "hash": "61b8664377ec94ef7957b572119bc6508f582e304a5a276becaa1e4020a1c791",
+        "hash": "706341f0404965144fb066967ff6eda1d691b858decacbd1dfbba6759878b237",
         "firstSeen": "1566367194",
-        "lastUpdated": "1578048779",
-        "updateCount": 13,
-        "authorCount": 6
+        "lastUpdated": "1578655914",
+        "updateCount": 14,
+        "authorCount": 7
       }
     },
     {
