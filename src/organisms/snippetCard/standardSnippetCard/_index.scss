@@ -1,3 +1,5 @@
+@import '../../../atoms/card/mixins';
+
 :root {
   --example-title-color: #d3d3d3;
 }
@@ -9,8 +11,9 @@
   }
 
   .card-source-content {
-    position: relative;
-    margin: 1.375rem -1rem 0;
+    @include card-full-width-section;
+    margin-top: 1.375rem;
+    margin-bottom: 0;
 
     .copy-btn, .codepen-btn {
       position: absolute;
