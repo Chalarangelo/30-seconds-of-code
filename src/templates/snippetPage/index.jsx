@@ -64,6 +64,7 @@ const SnippetPage = ({
           toastContainer='toast-container'
         />
         <CTA
+          onlySocial={ cardTemplate === 'blog' }
           snippetUrl={ snippet.url.split('/').slice(0, 5).join('/') }
           acceptsCookies={ acceptsCookies }
         />
