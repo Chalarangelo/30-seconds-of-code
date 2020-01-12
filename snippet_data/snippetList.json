@@ -22,7 +22,8 @@
       "attributes": {
         "text": "Creates a bouncing loader animation.\n\n",
         "tags": [
-          "animation"
+          "animation",
+          "intermediate"
         ]
       },
       "meta": {
