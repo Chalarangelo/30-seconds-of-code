@@ -1079,14 +1079,15 @@
         },
         "tags": [
           "visual",
-          "interactivity"
+          "interactivity",
+          "advanced"
         ]
       },
       "meta": {
         "hash": "97fbac82b526cafe6e48233dda46d0bb87fde7a52027774048b90c9c14818395",
         "firstSeen": "1519564479",
-        "lastUpdated": "1567151937",
-        "updateCount": 15,
+        "lastUpdated": "1578839478",
+        "updateCount": 16,
         "authorCount": 4
       }
     },
