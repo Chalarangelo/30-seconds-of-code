@@ -50,14 +50,15 @@
           "scopedCss": "@keyframes bouncing-loader {\n  to {\n    opacity: 0.1;\n    transform: translate3d(0, -1rem, 0); } }\n\n[data-scope=\"bouncing-loader\"] .bouncing-loader {\n  display: flex;\n  justify-content: center; }\n\n[data-scope=\"bouncing-loader\"] .bouncing-loader > div {\n  width: 1rem;\n  height: 1rem;\n  margin: 3rem 0.2rem;\n  background: #8385aa;\n  border-radius: 50%;\n  animation: bouncing-loader 0.6s infinite alternate; }\n\n[data-scope=\"bouncing-loader\"] .bouncing-loader > div:nth-child(2) {\n  animation-delay: 0.2s; }\n\n[data-scope=\"bouncing-loader\"] .bouncing-loader > div:nth-child(3) {\n  animation-delay: 0.4s; }\n"
         },
         "tags": [
-          "animation"
+          "animation",
+          "intermediate"
         ]
       },
       "meta": {
         "hash": "2934b3aa733591f4964a7c8780f3ec7b273e4bd6a38fce6e0da2a5dd2dd9959f",
         "firstSeen": "1520137462",
-        "lastUpdated": "1566813829",
-        "updateCount": 12,
+        "lastUpdated": "1578839372",
+        "updateCount": 13,
         "authorCount": 5
       }
     },
