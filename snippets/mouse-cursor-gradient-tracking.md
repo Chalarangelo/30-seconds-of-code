@@ -1,6 +1,6 @@
 ---
 title: Mouse cursor gradient tracking
-tags: visual, interactivity
+tags: visual, interactivity,advanced
 ---
 
 A hover effect where the gradient follows the mouse cursor.
