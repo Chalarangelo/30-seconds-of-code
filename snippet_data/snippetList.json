@@ -507,7 +507,8 @@
         "text": "A hover effect where the gradient follows the mouse cursor.\n\n<small class=\"snippet__credit\">**Credit:** [Tobias Reich](https://codepen.io/electerious/pen/MQrRxX)</small>\n\n",
         "tags": [
           "visual",
-          "interactivity"
+          "interactivity",
+          "advanced"
         ]
       },
       "meta": {
