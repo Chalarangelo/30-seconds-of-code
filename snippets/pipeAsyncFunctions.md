@@ -1,6 +1,6 @@
 ---
 title: pipeAsyncFunctions
-tags: adapter,function,promise,intermediate
+tags: function,promise,intermediate
 ---
 
 Performs left-to-right function composition for asynchronous functions.
