@@ -103,7 +103,6 @@
       "attributes": {
         "text": "Creates a function that accepts up to `n` arguments, ignoring any additional arguments.\n\nCall the provided function, `fn`, with up to `n` arguments, using `Array.prototype.slice(0, n)` and the spread operator (`...`).\n\n",
         "tags": [
-          "adapter",
           "function",
           "intermediate"
         ]
@@ -325,13 +324,12 @@
       "attributes": {
         "text": "Given a key and a set of arguments, call them when given a context. Primarily useful in composition.\n\nUse a closure to call a stored key with stored arguments.\n\n",
         "tags": [
-          "adapter",
           "function",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "0a09f658c6bd2149c2a14528f12e8851e2ba02b9bd04c7df491a89f766b63083"
+        "hash": "8b606a9b76e65d602238eb487d504dda0f1fe8bba9166ae2accbc7984c8d6530"
       }
     },
     {
@@ -498,14 +496,13 @@
       "attributes": {
         "text": "Changes a function that accepts an array into a variadic function.\n\nGiven a function, return a closure that collects all inputs into an array-accepting function.\n\n",
         "tags": [
-          "adapter",
           "function",
           "array",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "952f58128e70180fd6a1406562cac8781c92d258dfa0993cfb9cc6c968b0abfb"
+        "hash": "cbf8e15f8c0f47c8e38f6f070ff90ac694aab206cc57ceef7e457d93d794e69c"
       }
     },
     {
@@ -835,7 +832,7 @@
         ]
       },
       "meta": {
-        "hash": "77a01af8797ecbe71b9c9412d21c144c03a46a49dd3d0e7d869c3df38b39b2b4"
+        "hash": "0a4684d6fc79bdbbac31df3af6c493ba7c881936ada5bc52824b4f26ca177459"
       }
     },
     {
@@ -898,7 +895,7 @@
         ]
       },
       "meta": {
-        "hash": "6fa14364405f7b99aa49c2157bdc08c02b4ce2f288db29a4348a6983460933c7"
+        "hash": "a4e1e33c0688dbf1ca231d9d8ea315ffed93b7f83f5d8cbf0714f10fdfeda8cf"
       }
     },
     {
@@ -1037,7 +1034,7 @@
         ]
       },
       "meta": {
-        "hash": "bdc202436bee09f06a353d31841c6cfff33e8efead34c6c56ae1a1413284976d"
+        "hash": "484bd222e636e8a8409c30ddb1fe6e3fe72ab7a43f2edf089b2758d5e9bee528"
       }
     },
     {
@@ -1273,7 +1270,7 @@
         ]
       },
       "meta": {
-        "hash": "6e9710c9117f500e74e65c0ee36b39fb80bd55537fa5ff9c4b1136b2667096f2"
+        "hash": "0eac852db7a7add352b0d36677b22718b342ed9dc12f11780cac87e3b8260a05"
       }
     },
     {
@@ -1439,13 +1436,12 @@
       "attributes": {
         "text": "Flip takes a function as an argument, then makes the first argument the last.\n\nReturn a closure that takes variadic inputs, and splices the last argument to make it the first argument before applying the rest.\n\n",
         "tags": [
-          "adapter",
           "function",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "cfc08612e65d9dc9a5c634e94a379644fbdd7a858f0cbaf1c2e272d038495be9"
+        "hash": "553f8cccba3bd6339b01a926661a2a3fcca310f02bbb7402d1e0eeca5bf5d729"
       }
     },
     {
@@ -1693,7 +1689,7 @@
         ]
       },
       "meta": {
-        "hash": "f9e6687cc28cd80e68f7a6776f893c7478aaa942710e0eb7144f105eba574a54"
+        "hash": "9e39c6a3a8ec5b51c5e16f69107fc9e90b2697b2cf2689850872071bb968723e"
       }
     },
     {
@@ -2420,7 +2416,7 @@
         ]
       },
       "meta": {
-        "hash": "b89ab73ffc7dd9b7650e80eb41a20194dfee6f93740876349b6af91dccc6ecd3"
+        "hash": "113eed606462730d4b4917d3a3125959303efda47a7c54afb0699a601e3e7fd0"
       }
     },
     {
@@ -2924,7 +2920,7 @@
         ]
       },
       "meta": {
-        "hash": "3db3faac666ee61ab86c70766d2ab5d1293ffd818da87edb971bfff7a366364a"
+        "hash": "362fddaa6244404741e84bca6fc442a101fdb642af53b299e8b9994d0d7162d8"
       }
     },
     {
@@ -3500,7 +3496,7 @@
         ]
       },
       "meta": {
-        "hash": "e8f820ce6da97eabde082ffb829c9fb700e85efc79bdebe883c67237269e3f52"
+        "hash": "b031c3387ef66411ab5d295788eac4247ada5b4b068dda90603d3c973890bc26"
       }
     },
     {
@@ -3653,13 +3649,12 @@
       "attributes": {
         "text": "Creates a function that invokes each provided function with the arguments it receives and returns the results.\n\nUse `Array.prototype.map()` and `Function.prototype.apply()` to apply each function to the given arguments.\n\n",
         "tags": [
-          "adapter",
           "function",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "ac660685eb10f64c7e573d0299936ae0bb562e531b2f3a76b048e3bbe9605bcc"
+        "hash": "d19ede265d140ecd73abb0a471042ab93591ef7b19ba92d3f8a0462661bdc99f"
       }
     },
     {
@@ -3669,13 +3664,12 @@
       "attributes": {
         "text": "Creates a function that invokes the provided function with its arguments transformed.\n\nUse `Array.prototype.map()` to apply `transforms` to `args` in combination with the spread operator (`...`) to pass the transformed arguments to `fn`.\n\n",
         "tags": [
-          "adapter",
           "function",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "8aa05f5b221bb24bb52cf3b75b6087ca664ede628a8cfff2b3193ebe67f6b2e7"
+        "hash": "5a47cd886751568aa2ce0bd8a935d3f4730076c509666b66f7305f3660320847"
       }
     },
     {
@@ -3842,14 +3836,13 @@
       "attributes": {
         "text": "Performs left-to-right function composition for asynchronous functions.\n\nUse `Array.prototype.reduce()` with the spread operator (`...`) to perform left-to-right function composition using `Promise.then()`.\nThe functions can return a combination of: simple values, `Promise`'s, or they can be defined as `async` ones returning through `await`.\nAll functions must be unary.\n\n",
         "tags": [
-          "adapter",
           "function",
           "promise",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "7ccbf66d8d55c60bcf12baa980cf32d67a4ba567894d59e2d798c9af792424ff"
+        "hash": "0eb844801e767edcaa6a882a6dce4b5b1dadecb53a92d6ec259d36c57b6a3dd0"
       }
     },
     {
@@ -3859,13 +3852,12 @@
       "attributes": {
         "text": "Performs left-to-right function composition.\n\nUse `Array.prototype.reduce()` with the spread operator (`...`) to perform left-to-right function composition.\nThe first (leftmost) function can accept one or more arguments; the remaining functions must be unary.\n\n",
         "tags": [
-          "adapter",
           "function",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "dbdae1e05f13477865039be627fcd258943cbf2d7926e160de74a3ab5244dba1"
+        "hash": "6b85e9e5022873b5f6d6e955b383edb46e8c37615d9266fb5ee1af7939f08686"
       }
     },
     {
@@ -3954,14 +3946,13 @@
       "attributes": {
         "text": "Converts an asynchronous function to return a promise.\n\n*In Node 8+, you can use [`util.promisify`](https://nodejs.org/api/util.html#util_util_promisify_original)*\n\nUse currying to return a function returning a `Promise` that calls the original function.\nUse the `...rest` operator to pass in all the parameters.\n\n",
         "tags": [
-          "adapter",
           "function",
           "promise",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "a6fe92925d4c25fccd29ae85d1c2004f88c73222099091ce30824a917a2fcfa2"
+        "hash": "fa80063e1d74810a551c7f01397b126868a1a7f7b306859182b033aa4a2696d4"
       }
     },
     {
@@ -4131,13 +4122,12 @@
       "attributes": {
         "text": "Creates a function that invokes the provided function with its arguments arranged according to the specified indexes.\n\nUse `Array.prototype.map()` to reorder arguments based on `indexes` in combination with the spread operator (`...`) to pass the transformed arguments to `fn`.\n\n",
         "tags": [
-          "adapter",
           "function",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "5f2f2e33d269de787a1aaa245c6324030cc5cbe8345b46352a218f3f2453c220"
+        "hash": "cb2326c19a1292426193785d4cf2c47b5e8d83a99edb7f3415f8c4e057f6a70b"
       }
     },
     {
@@ -4246,7 +4236,7 @@
         ]
       },
       "meta": {
-        "hash": "c1542907e6295eb81df918174c247a65d73c8daccc56769f2eb32d609b7846fc"
+        "hash": "069472d018c3102412dafc2ae8ec6e9396e53c01d0073079f2e3f1ac3c99b6e9"
       }
     },
     {
@@ -4562,7 +4552,7 @@
         ]
       },
       "meta": {
-        "hash": "6dd4c6a51d2c80fa4768c95ae01c16a8359c4140bcad28c7fde0cecd72d7d3e2"
+        "hash": "24b93b68a59b49f245590930fed6fb82e286ce09f90e292466cde63c1784c347"
       }
     },
     {
@@ -4700,12 +4690,12 @@
       "attributes": {
         "text": "Takes a variadic function and returns a closure that accepts an array of arguments to map to the inputs of the function.\n\nUse closures and the spread operator (`...`) to map the array of arguments to the inputs of the function.\n\n",
         "tags": [
-          "adapter",
+          "function",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "53c9bc4c5b6a5131f5dd8591c10e5eac376cfd96715015d783d8466d49ed0058"
+        "hash": "b94cbdec64a2897b1a193d5fd32eeb59b315ea590d609a50b7fe50012b1d4ce4"
       }
     },
     {
@@ -5234,13 +5224,12 @@
       "attributes": {
         "text": "Creates a function that accepts up to one argument, ignoring any additional arguments.\n\nCall the provided function, `fn`, with just the first argument given.\n\n",
         "tags": [
-          "adapter",
           "function",
-          "intermediate"
+          "beginner"
         ]
       },
       "meta": {
-        "hash": "73046804bd1b91d397ee382d19eb59798f17319c1acf74393a550286be8cf087"
+        "hash": "f0eda594028997293121b8afca105772ce002f9fe0d5642ffd41c3167fd6b4f1"
       }
     },
     {
