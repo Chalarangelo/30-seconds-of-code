@@ -504,7 +504,7 @@
       "type": "snippetListing",
       "title": "Mouse cursor gradient tracking",
       "attributes": {
-        "text": "A hover effect where the gradient follows the mouse cursor.\n\n<small class=\"snippet__credit\">**Credit:** [Tobias Reich](https://codepen.io/electerious/pen/MQrRxX)</small>\n\n",
+        "text": "A hover effect where the gradient follows the mouse cursor.\n\n",
         "tags": [
           "visual",
           "interactivity",
@@ -512,7 +512,7 @@
         ]
       },
       "meta": {
-        "hash": "97fbac82b526cafe6e48233dda46d0bb87fde7a52027774048b90c9c14818395"
+        "hash": "eb04cb5aab3c779685a3f485ab31cf0c1d86f5ea9e26996ba468f7ff41806654"
       }
     },
     {

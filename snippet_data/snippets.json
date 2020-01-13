@@ -1065,7 +1065,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "mouse-cursor-gradient-tracking.md",
-        "text": "A hover effect where the gradient follows the mouse cursor.\n\n<small class=\"snippet__credit\">**Credit:** [Tobias Reich](https://codepen.io/electerious/pen/MQrRxX)</small>\n\n",
+        "text": "A hover effect where the gradient follows the mouse cursor.\n\n",
         "explanation": "\n\n1. `--x` and `--y` are used to track the position of the mouse on the button.\n2. `--size` is used to keep modify of the gradient's dimensions.\n3. `background: radial-gradient(circle closest-side, pink, transparent);` creates the gradient at the correct postion.\n\n",
         "browserSupport": {
           "text": "\n\n<span class=\"snippet__support-note\">⚠️ Requires JavaScript.</span>\n\n- https://caniuse.com/#feat=css-variables\n",
@@ -1084,10 +1084,10 @@
         ]
       },
       "meta": {
-        "hash": "97fbac82b526cafe6e48233dda46d0bb87fde7a52027774048b90c9c14818395",
+        "hash": "eb04cb5aab3c779685a3f485ab31cf0c1d86f5ea9e26996ba468f7ff41806654",
         "firstSeen": "1519564479",
-        "lastUpdated": "1578839478",
-        "updateCount": 16,
+        "lastUpdated": "1578908304",
+        "updateCount": 17,
         "authorCount": 4
       }
     },
