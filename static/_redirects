@@ -15,6 +15,13 @@
 /php                                   /php/p/1                                 301!
 
 # -----------------------------------------------------------------------------
+#   UPDATED TAG REDIRECTS:
+#
+# * Redirect JS Adapter to Function after mergin - 13/01/2020
+# -----------------------------------------------------------------------------
+js/t/adapter/p/1/                      /js/t/function/p/1                       301!
+
+# -----------------------------------------------------------------------------
 #   LEGACY REDIRECTS:
 #
 # * Redirect old JS website routes to new pages
