@@ -1,6 +1,6 @@
 ---
 title: pipeFunctions
-tags: adapter,function,intermediate
+tags: function,intermediate
 ---
 
 Performs left-to-right function composition.
