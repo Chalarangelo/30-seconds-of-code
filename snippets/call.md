@@ -1,6 +1,6 @@
 ---
 title: call
-tags: adapter,function,intermediate
+tags: function,intermediate
 ---
 
 Given a key and a set of arguments, call them when given a context. Primarily useful in composition.
