@@ -1,6 +1,6 @@
 ---
 title: promisify
-tags: adapter,function,promise,intermediate
+tags: function,promise,intermediate
 ---
 
 Converts an asynchronous function to return a promise.
