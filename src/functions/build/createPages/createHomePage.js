@@ -9,7 +9,8 @@ const createHomePage = (searchIndex, listingMetas, homePage, createPage, context
       name: meta.name,
       style: meta.style,
       count: meta.count,
-    }));
+    }))
+    .slice(0, 4);
 
   const featuredSnippets = searchIndex.edges
     .filter(s => s.node.recommendationRanking !== 0)
