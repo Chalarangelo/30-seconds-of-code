@@ -5,7 +5,7 @@ cache:
 node_js:
 - lts/*
 before_install:
-- git fetch --unshallow
+- git fetch --depth=10000
 script:
 - npm run extractor
 after_success:
