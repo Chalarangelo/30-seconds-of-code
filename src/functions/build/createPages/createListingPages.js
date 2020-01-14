@@ -24,7 +24,7 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
   // Create listing pages for the main listing
   const searchIndexChunks = chunk(transformSnippetIndex(searchIndex.edges), 20);
   const mainListingSublinks = listingMetas
-    .filter(v => !v.archived)
+    .filter(v => !v.unlisted)
     .map(v => v.featured > 0 ? v : {...v, featured: 500 })
     .sort((a, b) => a.featured - b.featured);
 
