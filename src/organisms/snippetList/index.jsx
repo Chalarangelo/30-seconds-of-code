@@ -17,6 +17,7 @@ const SnippetList = ({
   snippetList,
   paginator,
   listingName,
+  listingType,
   listingSublinks = [],
 }) => {
   return snippetList.length ? (
@@ -39,6 +40,7 @@ const SnippetList = ({
         <PreviewCard
           key={ `snippet_${snippet.url}` }
           snippet={ snippet }
+          context={ listingType }
         />
       )) }
       <Paginator paginator={ paginator } />
@@ -53,6 +55,8 @@ SnippetList.propTypes = {
   paginator: PaginatorPropType,
   /** Name of this snippet list */
   listingName: PropTypes.string,
+  /** Type of this snippet list */
+  listingType: PropTypes.string,
   /** Links to sublists */
   listingSublinks: PropTypes.arrayOf(PropTypes.shape({})),
 };

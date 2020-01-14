@@ -65,11 +65,11 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
         createPage,
         {
           ...context,
-          listingName: _l`codelang.${searchIndexName}`,
+          listingName: listingMeta.blog ? _l('Blog') : _l`codelang.${searchIndexName}`,
           snippetCount: searchIndexSlugData.length,
-          listingType: 'language',
-          listingLanguage: searchIndexName,
-          listingSublinks: languageListingSublinks,
+          listingType: listingMeta.blog ? 'blog' : 'language',
+          listingLanguage: listingMeta.blog ? 'blog' : searchIndexName,
+          listingSublinks: listingMeta.blog ? [] : languageListingSublinks,
         },
         `${slugPrefix}`
       );

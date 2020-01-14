@@ -52,6 +52,7 @@ const ListingPage = ({
       >
         <SnippetList
           listingName={ listingName }
+          listingType={ listingType }
           snippetList={ snippetList }
           paginator={ paginator }
           listingSublinks={ listingSublinks }
