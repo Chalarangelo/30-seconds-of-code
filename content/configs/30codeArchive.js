@@ -6,9 +6,10 @@ export default {
   requirables: [
     'snippet_data/archivedSnippets.json',
   ],
-  slug: 'js',
+  slug: 'js/a',
   reducer: 'es6Reducer',
   isArchived: true,
+  isUnlisted: true,
   biasPenaltyMultiplier: -1.0,
   tagScores: {
   },
