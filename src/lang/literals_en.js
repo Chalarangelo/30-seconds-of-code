@@ -145,6 +145,7 @@ const literals = {
   'Recommended snippets': 'Recommended snippets',
   'Like 30 seconds of code?': 'Like 30 seconds of code?',
   'We couldn\'t find any results for the keyphrase ': 'We couldn\'t find any results for the keyphrase ',
+  'Blog': 'Blog',
 };
 
 export default literals;

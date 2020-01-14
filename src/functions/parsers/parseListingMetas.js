@@ -6,7 +6,7 @@ const parseListingMetas = requirables =>
     .map(rq => ({
       featured: rq.meta.featured,
       archived: rq.meta.archived,
-      unlisted: rq.meta.unlisted,
+      blog: rq.meta.blog,
       link: {
         internal: true,
         url: `/${rq.meta.slugPrefix.slice(0, rq.meta.slugPrefix.indexOf('/'))}/p/1`,
