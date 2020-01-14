@@ -97,9 +97,15 @@ const literals = {
   '.': '.',
   ', ': ', ',
   ' & ': ' & ',
-  'Click on a snippet card to view the snippet': 'Click on a snippet card to view the snippet',
+  'snippet_list.with_sublinks.': listingType =>
+    listingType === 'blog'
+      ? 'Click on a card to view the blog post or choose a keyword from the above list to only see matching blog posts.'
+      : 'Click on a snippet card to view the snippet or choose a keyword from the above list to only see matching snippets.',
+  'snippet_list.': listingType =>
+    listingType === 'blog'
+      ? 'Click on a card to view the blog post.'
+      : 'Click on a snippet card to view the snippet.',
   'Click on a snippet card to view the snippet.': 'Click on a snippet card to view the snippet.',
-  'Click on a snippet card to view the snippet or choose a keyword from the above list to only see matching snippets.': 'Click on a snippet card to view the snippet or choose a keyword from the above list to only see matching snippets.',
   'Start typing a keyphrase to see matching snippets.': 'Start typing a keyphrase to see matching snippets.',
   'Switch to dark mode': 'Switch to dark mode',
   'Switch to light mode': 'Switch to light mode',

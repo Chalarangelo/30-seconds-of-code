@@ -32,8 +32,8 @@ const SnippetList = ({
       }
       <PageSubtitle isLight className='list-top-subtitle'>
         { listingSublinks.length
-          ? _l('Click on a snippet card to view the snippet or choose a keyword from the above list to only see matching snippets.')
-          : _l('Click on a snippet card to view the snippet.')
+          ? _l`snippet_list.with_sublinks.${listingType}`
+          : _l`snippet_list.${listingType}`
         }
       </PageSubtitle>
       { snippetList.map(snippet => (
