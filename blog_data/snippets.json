@@ -6,7 +6,7 @@
       "type": "blog.list",
       "attributes": {
         "fileName": "10-vs-code-extensions-for-js-developers.md",
-        "cover": "../blog_images/10-vs-code-extensions-for-js-developers.png",
+        "cover": "blog_images/10-vs-code-extensions-for-js-developers.png",
         "authors": [
           "chalarangelo"
         ],
@@ -21,8 +21,8 @@
       "meta": {
         "hash": "5c4c8746f4aa253e9e3f53f049e28146152190e9f1ed50cbced7b3ee3561187b",
         "firstSeen": "1577090516",
-        "lastUpdated": "1577090516",
-        "updateCount": 2,
+        "lastUpdated": "1578951745",
+        "updateCount": 3,
         "authorCount": 2
       }
     }
