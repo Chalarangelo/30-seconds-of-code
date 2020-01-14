@@ -9,13 +9,24 @@ configure({ adapter: new Adapter() });
 describe('<Tag />', () => {
   let wrapper;
 
-  beforeEach(() => {
-    wrapper = shallow(<Tag name='array' />);
+  describe('with valid name', () => {
+    beforeEach(() => {
+      wrapper = shallow(<Tag name='array' />);
+    });
+
+    it('should render correctly', () => {
+      expect(wrapper).toContainMatchingElement('span.tag');
+    });
   });
 
-  it('should render correctly', () => {
-    expect(wrapper).toContainMatchingElement('span.tag');
-  });
+  describe('with empty name', () => {
+    beforeEach(() => {
+      wrapper = shallow(<Tag name={ undefined } />);
+    });
 
+    it('should not render anything', () => {
+      expect(wrapper).not.toContainMatchingElement('span.tag');
+    });
+  });
 });
 
