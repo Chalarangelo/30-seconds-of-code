@@ -1,9 +1,9 @@
 ---
 title: 10 must-have VS Code extensions for JavaScript developers
 type: list
-tags: devtools,vscode,extension,javascript
+tags: devtools,vscode,javascript
 authors: chalarangelo
-cover: blog_images/10-vs-code-extensions-for-js-developers.png
+cover: blog_images/10-vs-code-extensions-for-js-developers.jpg
 ---
 
 Developers will most likely argue for the rest of eternity about the most productive code editor and the best extensions. Here are my personal extension preferences for VS Code as a JavaScript developer:
@@ -37,3 +37,5 @@ Developers will most likely argue for the rest of eternity about the most produc
  
 10. Fira Code
 [Fira Code](https://github.com/tonsky/FiraCode) is not a traditional VS Code extension and might take a couple more steps to set up, but it's a superb programming font with ligatures that will help you scan code faster once you get used to it.
+
+**Image credit:** [Fotis Fotopoulos](https://unsplash.com/@ffstop?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
