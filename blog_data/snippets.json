@@ -24,6 +24,31 @@
         "updateCount": 4,
         "authorCount": 2
       }
+    },
+    {
+      "id": "testing-stateful-ui-components",
+      "title": "An approach to testing stateful React components",
+      "type": "blog.post",
+      "attributes": {
+        "fileName": "testing-stateful-ui-components.md",
+        "cover": "blog_images/testing-stateful-ui-components.jpg",
+        "authors": [
+          "chalarangelo"
+        ],
+        "text": "Some time ago, I was tasked with writing tests for a handful of React components, an otherwise mundane and uninspiring task, that somehow ended with a \"Eureka!\" moment for me. The specifics of the project and its components are of little importanc, however the key detail is that I was working with stateful React components that are used daily by a large team and, as such, are refactored and updated quite often.\n\nMy initial approach consisted of writing some simple tests, such as checking if the component is rendered properly and if certain events fire appropriately. In doing so, I was comparing state directly with the result I was expecting, having the component's code right next to my assertions. Of course, this isn't bad by anyone's standards, but for a codebase with many moving parts, it is not the greatest idea. Let me show you an example why:\n\n```js\ncontext('the component is initialized in a collapsed state', function() {\n  let wrapper;\n  beforeEach(function(){\n    wrapper = mount(<StatefulComponent />);\n  });\n\n  it('component state.expanded is false', function() {\n    expect(wrapper.state('expanded')).to.be.false;\n  });\n});\n```\n\nIn this test, we check if the component's state has `expanded` equal to `false`. Our test will pass, as long as this simple condition is true. It's a very simple test that should be easy to understand even for someone completely unfamiliar with the codebase.\n\nHowever, over time the component's implementation might change. What happens if `expanded` in our state ends up meaning something different? Or worse yet, if it isn't reflected the same way in the interface?\n\nEnter my \"Eureka!\" moment:\n\n> The application's UI should always be considered the result of combining the component's props and state.\n\nThe above statement implies that a component's state can be considered a black box while testings, an abstraction layer that should not be accessed unless absolutely necessary. So, instead of the test presented above, we should be doing something more like this:\n\n```js\ncontext('the component is initialized in a collapsed state', function() {\n  let wrapper;\n  beforeEach(function(){\n    wrapper = mount(<StatefulComponent />);\n  });\n\n  it('component does not have the expanded class', function() {\n    expect(wrapper.find('div').hasClass('expanded')).to.be.false;\n  });\n});\n```\n\nOur test is still easy to read and understand, but it's a better test in general. \n\nDirectly checking the DOM instead of the component's state, we directly provide information about the component's output to future code authors, instead of asking them to keep the existing implementation intact. It seems like a better way to document the component and it's easier to track future changes should someone refactor the UI in such a way that the DOM representation of the component is altered.\n\n**Image credit:** [Evan Clark](https://unsplash.com/@evanrclark?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)\n",
+        "tags": [
+          "react",
+          "javascript",
+          "testing"
+        ]
+      },
+      "meta": {
+        "hash": "fbf63d2634248d8339605ab85da3f2ffc90024172db809a189fc1d926a784579",
+        "firstSeen": "1579161498",
+        "lastUpdated": "1579161498",
+        "updateCount": 2,
+        "authorCount": 2
+      }
     }
   ],
   "meta": {
