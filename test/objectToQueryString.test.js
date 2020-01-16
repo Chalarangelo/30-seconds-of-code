@@ -27,3 +27,9 @@ test("{page: 1, size: null, key: undefined} to give ''", () => {
     objectToQueryString({page: 1, size: null, key: undefined})
   ).toEqual('');
 });
+
+test("{page: '4', list: ['3', '2', '1']} to give '?page=4&list[0]=3&list[1]=2&list[2]=1'", () => {
+  expect(
+    objectToQueryString({page: '4', list: ['3', '2', '1']})
+  ).toEqual('?page=4&list[0]=3&list[1]=2&list[2]=1');
+});
