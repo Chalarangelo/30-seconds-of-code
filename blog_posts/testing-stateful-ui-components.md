@@ -1,9 +1,10 @@
 ---
 title: An approach to testing stateful React components
-type: post
-tags: react,javascript,testing
+type: story
+tags: react,testing
 authors: chalarangelo
 cover: blog_images/testing-stateful-ui-components.jpg
+excerpt: Testing stateful React components is by no means a difficult task, but did you know there is an elegant solution that doesn't involve testing state directly?
 ---
 
 Some time ago, I was tasked with writing tests for a handful of React components, an otherwise mundane and uninspiring task, that somehow ended with a "Eureka!" moment for me. The specifics of the project and its components are of little importanc, however the key detail is that I was working with stateful React components that are used daily by a large team and, as such, are refactored and updated quite often.
@@ -48,6 +49,6 @@ context('the component is initialized in a collapsed state', function() {
 
 Our test is still easy to read and understand, but it's a better test in general. 
 
-Directly checking the DOM instead of the component's state, we directly provide information about the component's output to future code authors, instead of asking them to keep the existing implementation intact. It seems like a better way to document the component and it's easier to track future changes should someone refactor the UI in such a way that the DOM representation of the component is altered.
+By directly checking the DOM instead of the component's state, we provide information about the component's output to future code authors, instead of asking them to keep the existing implementation intact. It seems like a better way to document the component and it's easier to track future changes should someone refactor the UI in such a way that the DOM representation of the component is altered.
 
 **Image credit:** [Evan Clark](https://unsplash.com/@evanrclark?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
