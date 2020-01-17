@@ -7,7 +7,7 @@
       "attributes": {
         "fileName": "10-vs-code-extensions-for-js-developers.md",
         "cover": "blog_images/10-vs-code-extensions-for-js-developers.jpg",
-        "excerpt": "As VS Code is steadily gaining popularity, here are my top 10 essential extensions for JavaScript developers that aim to increase productivity.",
+        "excerpt": "VS Code is steadily gaining popularity among developers. Here are 10 essential extensions for JavaScript developers that aim to increase your productivity.",
         "authors": [
           "chalarangelo"
         ],
@@ -20,8 +20,8 @@
       "meta": {
         "hash": "2dd00656f3a19b08dd10877431101751009c00b0658dc5d3acab61e11fea21e3",
         "firstSeen": "1577090516",
-        "lastUpdated": "1579265244",
-        "updateCount": 5,
+        "lastUpdated": "1579272458",
+        "updateCount": 6,
         "authorCount": 2
       }
     },
