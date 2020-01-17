@@ -4,6 +4,7 @@ type: list
 tags: seo,webdev
 authors: chalarangelo
 cover: blog_images/4-seo-tips-for-developers.jpg
+excerpt: As time goes by, SEO is becoming increasingly relevant, but most web developers seem to have little experience with it. Here are 4 actionable SEO tips you can implement today.
 ---
 
 SEO is becoming increasingly relevant as the internet keeps growing. While most web developers usually have little experience with SEO, it is not particularly difficult to handle some of the basics. Here are my top SEO tips for web developers:
