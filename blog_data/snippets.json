@@ -32,6 +32,7 @@
       "attributes": {
         "fileName": "4-seo-tips-for-developers.md",
         "cover": "blog_images/4-seo-tips-for-developers.jpg",
+        "excerpt": "As time goes by, SEO is becoming increasingly relevant, but most web developers seem to have little experience with it. Here are 4 actionable SEO tips you can implement today.",
         "authors": [
           "chalarangelo"
         ],
@@ -44,8 +45,8 @@
       "meta": {
         "hash": "ebc2337246ca7925e763034b8f5718f6276afd9252856cad56eff5f6d6ba25f1",
         "firstSeen": "1579265475",
-        "lastUpdated": "1579265475",
-        "updateCount": 2,
+        "lastUpdated": "1579271771",
+        "updateCount": 3,
         "authorCount": 2
       }
     },
