@@ -1,27 +1,10 @@
 import {
-  determineExpertiseFromTags,
-  stripExpertiseFromTags,
   transformSnippetIndex,
   uniqueElements,
   similarity,
   weightedSample,
   chunk
 } from './array';
-
-describe('determineExpertiseFromTags', () => {
-  it('determines expertise from tags', () => {
-    expect(determineExpertiseFromTags(['array', 'advanced'])).toBe('advanced');
-  });
-  it('returns default expertise if none is found', () => {
-    expect(determineExpertiseFromTags(['array'])).toBe('intermediate');
-  });
-});
-
-describe('stripExpertiseFromTags', () => {
-  it('strips expertise from tags', () => {
-    expect(stripExpertiseFromTags(['array', 'advanced'])).toEqual(['array']);
-  });
-});
 
 describe('transformSnippetIndex', () => {
   it('transforms the snippet index', () => {
