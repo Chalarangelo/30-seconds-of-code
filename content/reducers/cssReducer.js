@@ -2,7 +2,8 @@ import {
   rankingEngine as rankSnippet,
   searchIndexingEngine as tokenizeSnippet
 } from 'engines';
-import { determineExpertiseFromTags, convertToSeoSlug, uniqueElements } from 'functions/utils';
+import { convertToSeoSlug, uniqueElements } from 'functions/utils';
+import { determineExpertiseFromTags } from 'functions/transformers';
 
 export default (id, snippetNode, markdownNode) => {
   return {
