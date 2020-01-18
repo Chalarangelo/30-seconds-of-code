@@ -1,4 +1,5 @@
 import { stripMarkdownFormat } from 'functions/utils';
+import { transformTagName } from 'functions/transformers';
 /**
  * Given a snippet object with key-value pairs, removes all
  * unnecessary information that should not be sent to the JSX
@@ -25,9 +26,12 @@ const parseSnippetContext = (snippet, cardTemplate) => {
     slug: snippet.slug,
     firstSeen: snippet.firstSeen,
     lastUpdated: snippet.lastUpdated,
-    expertise: snippet.expertise,
+    expertise: transformTagName(snippet.expertise),
     language: snippet.language,
-    tags: snippet.tags,
+    tags: {
+      primary: transformTagName(snippet.tags.primary),
+      all: snippet.tags.all.map(transformTagName),
+    },
     html: snippet.html,
     code: snippet.code,
     ...templateProps,
