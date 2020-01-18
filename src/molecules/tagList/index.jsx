@@ -21,7 +21,7 @@ const TagList = ({
       ) }
       {
         typeof _expertise !== 'undefined'
-          ? <Expertise level={ _expertise.toLowerCase() } />
+          ? <Expertise level={ _expertise } />
           : null
       }
     </div>

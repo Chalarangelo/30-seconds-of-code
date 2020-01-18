@@ -8,7 +8,7 @@ const _l = _('en');
 const Expertise = ({
   level = 'intermediate',
 }) => (
-  <span className={ trimWhiteSpace`expertise ${level}` }>
+  <span className={ trimWhiteSpace`expertise ${level.toLowerCase()}` }>
     { _l`Expertise${level}` }
   </span>
 );
