@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 
 import StandardSnippetCard from './standardSnippetCard';
 import CssSnippetCard from './cssSnippetCard';
+import BlogSnippetCard from './blogSnippetCard';
 
 export {
   StandardSnippetCard,
   CssSnippetCard,
+  BlogSnippetCard,
 };
 
 const SnippetCard = ({
@@ -14,6 +16,12 @@ const SnippetCard = ({
   ...rest
 }) => {
   switch (cardTemplate) {
+  case 'blog':
+    return (
+      <BlogSnippetCard
+        { ...rest }
+      />
+    );
   case 'css':
     return (
       <CssSnippetCard
