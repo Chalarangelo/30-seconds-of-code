@@ -1,3 +1,5 @@
+import { transformTagName } from 'functions/transformers';
+
 /** Chunks an array into smaller arrays of a specified size. */
 export const chunk = (arr, size) =>
   Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
@@ -10,8 +12,8 @@ export const transformSnippetIndex = edges =>
     .map(edge => edge.node)
     .map(node => ({
       title: node.title,
-      expertise: node.expertise)
-      primaryTag: node.tags.primary)
+      expertise: transformTagName(node.expertise),
+      primaryTag: transformTagName(node.tags.primary),
       language: node.language.long,
       description: node.html.description.trim(),
       url: node.slug,
