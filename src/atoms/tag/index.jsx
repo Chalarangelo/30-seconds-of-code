@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { capitalize } from 'functions/utils';
 
 const Tag = ({
   name,
@@ -8,7 +7,7 @@ const Tag = ({
   name ?
     (
       <span className="tag">
-        { capitalize(name) }
+        { name }
       </span>
     )
     : null
