@@ -57,6 +57,7 @@
       "attributes": {
         "fileName": "javascript-for-in-for-of-foreach.md",
         "cover": "blog_images/javascript-for-in-for-of-foreach.jpg",
+        "excerpt": "Learn the differences between the three most commonly used iteration methods offered by JavaScript, which often confuse beginners and veterans alike.",
         "authors": [
           "chalarangelo"
         ],
@@ -71,8 +72,8 @@
       "meta": {
         "hash": "d45789425922b9ddcee1e45723bf2f398fc0d7561f1c91f05e356802ea29c06e",
         "firstSeen": "1579507951",
-        "lastUpdated": "1579507951",
-        "updateCount": 2,
+        "lastUpdated": "1579509175",
+        "updateCount": 3,
         "authorCount": 2
       }
     },
