@@ -4,6 +4,7 @@ type: question
 tags: javascript,array,object,iterator
 authors: chalarangelo
 cover: blog_images/javascript-for-in-for-of-foreach.jpg
+excerpt: Learn the differences between the three most commonly used iteration methods offered by JavaScript, which often confuse beginners and veterans alike.
 ---
 
 `for...in` is used to iterate over all enumerable properties of an object, including inherited enumerable properties. 
