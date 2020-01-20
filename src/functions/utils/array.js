@@ -14,7 +14,7 @@ export const transformSnippetIndex = edges =>
       title: node.title,
       expertise: transformTagName(node.expertise),
       primaryTag: transformTagName(node.tags.primary),
-      language: node.language.long,
+      language: node.language && node.language.long ? node.language.long : undefined,
       description: node.html.description.trim(),
       url: node.slug,
       searchTokens: node.searchTokens,
