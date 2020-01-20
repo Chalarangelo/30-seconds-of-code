@@ -1,6 +1,8 @@
 import {
   transformTagName,
   determineExpertiseFromTags,
+  determineLanguageFromTags,
+  stripLanguageFromTags,
   stripExpertiseFromTags
 } from './transformTags';
 
@@ -22,8 +24,27 @@ describe('determineExpertiseFromTags', () => {
   });
 });
 
+describe('determineLanguageFromTags', () => {
+  it('determines language from tags', () => {
+    expect(determineLanguageFromTags(['javascript', 'array', 'advanced'])).toEqual({
+      short: 'js', long: 'javascript',
+    });
+  });
+  it('returns empty language if none is found', () => {
+    expect(determineLanguageFromTags(['array'])).toEqual({
+      short: '', long: '',
+    });
+  });
+});
+
 describe('stripExpertiseFromTags', () => {
   it('strips expertise from tags', () => {
     expect(stripExpertiseFromTags(['array', 'advanced'])).toEqual(['array']);
+  });
+});
+
+describe('stripLanguageFromTags', () => {
+  it('strips language from tags', () => {
+    expect(stripLanguageFromTags(['array', 'javascript'])).toEqual(['array']);
   });
 });
