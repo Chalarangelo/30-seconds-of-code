@@ -5,6 +5,10 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import _ from 'lang';
 const _l = _('en');
 
+/**
+ * Button that copies the given text to clipboard.
+ * Depends on react-copy-to-clipboard.
+ */
 const CopyButton = ({
   onCopy = () => {},
   text,

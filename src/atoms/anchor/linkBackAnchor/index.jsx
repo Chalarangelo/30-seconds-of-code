@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 import { Link as LinkPropType } from 'typedefs';
 import { trimWhiteSpace } from 'functions/utils';
 
+/**
+ * Anchor component for linking back to the previous page.
+ */
 const LinkBackAnchor = ({
   children,
   link,

@@ -4,6 +4,10 @@ import PropTypes from 'prop-types';
 import { Link as LinkPropType } from 'typedefs';
 import { addTrailingSlashToSlug } from 'functions/utils';
 
+/**
+ * Anchor component for linking to a different URL (internal or external).
+ * Depends on Gatsby's Link component for internal linking.
+ */
 const Anchor = ({
   children,
   link,

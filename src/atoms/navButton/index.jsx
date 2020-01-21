@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link as LinkPropType } from 'typedefs';
-import {Anchor} from 'atoms/anchor';
+import { Anchor } from 'atoms/anchor';
 import { trimWhiteSpace } from 'functions/utils';
 import _ from 'lang';
 const _l = _('en');
@@ -14,6 +14,10 @@ export const NAV_ICONS = [
   'moon',
 ];
 
+/**
+ * Navigation button component.
+ * Dependent on the Anchor atom component.
+ */
 const NavButton = ({
   className,
   icon,

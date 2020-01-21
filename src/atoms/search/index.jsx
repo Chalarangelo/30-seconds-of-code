@@ -29,6 +29,10 @@ const handleHistoryUpdate = value => {
   }
 };
 
+/**
+ * Search bar component.
+ * Connected to state.
+ */
 const Search = ({
   className = '',
   id = '',

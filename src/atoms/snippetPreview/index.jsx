@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import _ from 'lang';
 const _l = _('en');
 
+/**
+ * Snippet preview component.
+ * Used in CSS snippet cards.
+ */
 const SnippetPreview = ({
   scopeId,
   scopedCss,
