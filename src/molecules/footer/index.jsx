@@ -5,6 +5,10 @@ import config from '../../../config';
 import _ from 'lang';
 const _l = _('en');
 
+/**
+ * Renders the page Footer.
+ * Depends on the Anchor atom.
+ */
 const Footer = ({
   ...rest
 }) => (
@@ -63,7 +67,7 @@ const Footer = ({
       </Anchor>
     </p>
     <p>
-      { _l('Website, name & logo © 2017-2019 ') }
+      { _l('Website, name & logo © 2017-2020 ') }
       <Anchor
         link={ {
           internal: false,

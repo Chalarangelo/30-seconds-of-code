@@ -5,6 +5,10 @@ import { Button } from 'atoms/button';
 import _ from 'lang';
 const _l = _('en');
 
+/**
+ * Renders the popup for cookie consent.
+ * Depends on the Anchor and Button atoms.
+ */
 const CookieConsentPopup = ({
   onAccept,
   onDecline,

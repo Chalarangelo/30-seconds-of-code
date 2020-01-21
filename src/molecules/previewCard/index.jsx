@@ -6,6 +6,11 @@ import { Snippet as SnippetPropType } from 'typedefs';
 import { trimWhiteSpace } from 'functions/utils';
 import TagList from 'molecules/tagList';
 
+/**
+ * General-purpose snippet preview card.
+ * Used in listing pages and search results.
+ * Depends on Anchor and Card atoms.
+ */
 const PreviewCard = ({
   snippet,
   className,

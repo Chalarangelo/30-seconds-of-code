@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import { Link as LinkPropType } from 'typedefs';
 import NavButton from 'atoms/navButton';
 
+/**
+ * Renders a group of navigational elements.
+ * Used in the application's main navigation menu.
+ * Depends on NavButton atom.
+ */
 const NavBar = ({
   buttons,
   ...rest
