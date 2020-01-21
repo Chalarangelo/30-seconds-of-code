@@ -4,6 +4,11 @@ import Tag from 'atoms/tag';
 import { EXPERTISE_LEVELS } from 'shared';
 import Expertise from 'atoms/expertise';
 
+/**
+ * List of tags.
+ * Used in most pages that render snippet information.
+ * Depends on Tag atom.
+ */
 const TagList = ({
   tags,
 }) => {

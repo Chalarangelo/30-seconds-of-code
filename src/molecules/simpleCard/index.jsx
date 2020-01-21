@@ -2,6 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from 'atoms/card';
 
+/**
+ * Renders a non-snippet card container.
+ * Used in About and Cookie pages.
+ * Depends on Card atom.
+ */
 const SimpleCard = ({
   className,
   title,

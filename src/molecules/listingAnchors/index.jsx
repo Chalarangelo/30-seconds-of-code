@@ -7,6 +7,11 @@ import { trimWhiteSpace } from 'functions/utils';
 import _ from 'lang';
 const _l = _('en');
 
+/**
+ * Renders the set of buttons that link to other listing pages.
+ * Used in Listing pages and Home page.
+ * Depends on Button and PageSubtitle atoms.
+ */
 const ListingAnchors = ({
   items,
   isCompact = false,

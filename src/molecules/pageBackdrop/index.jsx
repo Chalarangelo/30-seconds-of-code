@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import PageGraphic from 'atoms/pageGraphic';
 import { trimWhiteSpace } from 'functions/utils';
 
+/**
+ * Renders the backdrop of a page.
+ * Used in 404 and Search pages.
+ * Depends on PageGraphic atom.
+ */
 const PageBackdrop = ({
   graphicName,
   mainText,

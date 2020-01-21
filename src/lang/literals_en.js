@@ -117,7 +117,7 @@ const literals = {
   'License': 'License',
   'Who we are': 'Who we are',
   'Top collections': 'Top collections',
-  'Website, name & logo © 2017-2019 ': 'Website, name & logo © 2017-2019 ',
+  'Website, name & logo © 2017-2020 ': 'Website, name & logo © 2017-2020 ',
   '30-seconds': '30-seconds',
   'Individual snippets licensed under ': 'Individual snippets licensed under ',
   'CC0-1.0': 'CC0-1.0',
