@@ -13,6 +13,9 @@ const templateData = {
   pageType: 'about',
 };
 
+/**
+ * Renders the /about page.
+ */
 const AboutPage = ({
   pageContext: {
     logoSrc,

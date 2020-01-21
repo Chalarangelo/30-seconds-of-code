@@ -8,6 +8,9 @@ import PropTypes from 'prop-types';
 import _ from 'lang';
 const _l = _('en');
 
+/**
+ * Renders the /404 page.
+ */
 const NotFoundPage = ({
   pageContext: {
     logoSrc,

@@ -17,6 +17,9 @@ const templateData = {
   pageType: 'listing',
 };
 
+/**
+ * Renders the /list/p/1 page and any other listing pages.
+ */
 const ListingPage = ({
   pageContext: {
     logoSrc,

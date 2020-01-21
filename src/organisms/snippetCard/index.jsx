@@ -9,6 +9,10 @@ export {
   CssSnippetCard,
 };
 
+/**
+ * Renders a snippet card.
+ * Used in snippet pages.
+ */
 const SnippetCard = ({
   cardTemplate,
   ...rest

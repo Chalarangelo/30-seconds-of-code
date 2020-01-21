@@ -14,6 +14,9 @@ const templateData = {
   pageType: 'search',
 };
 
+/**
+ * Renders the /search page.
+ */
 const SearchPage = ({
   pageContext: {
     logoSrc,
