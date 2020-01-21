@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import _ from 'lang';
 const _l = _('en');
 
+/**
+ * Browser support component that displays formatted browser support percentage.
+ * Used in CSS snippet cards.
+ */
 const BrowserSupport = ({
   supportPercentage,
   browserSupportHtml,

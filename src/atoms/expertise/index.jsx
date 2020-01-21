@@ -5,6 +5,9 @@ import { EXPERTISE_LEVELS } from 'shared';
 import _ from 'lang';
 const _l = _('en');
 
+/**
+ * Renders an expertise tag.
+ */
 const Expertise = ({
   level = 'intermediate',
 }) => (

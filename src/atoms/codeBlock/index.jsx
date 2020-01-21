@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import { Language as LanguagePropType } from 'typedefs';
 import { trimWhiteSpace } from 'functions/utils';
 
+/**
+ * Renders a code block with the appropriate language tag.
+ */
 const CodeBlock = ({
   language,
   className,

@@ -4,6 +4,10 @@ import { Link as LinkPropType } from 'typedefs';
 import {Anchor} from 'atoms/anchor';
 import { trimWhiteSpace } from 'functions/utils';
 
+/**
+ * Stylized anchor that looks like a button.
+ * Depends on the Anchor atom component.
+ */
 const AnchorButton = ({
   className = '',
   link,
