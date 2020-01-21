@@ -35,6 +35,7 @@
     "front-matter": "^3.0.2",
     "fs-extra": "^8.1.0",
     "gatsby": "^2.12.0",
+    "gatsby-plugin-catch-links": "^2.1.24",
     "gatsby-plugin-manifest": "^2.2.3",
     "gatsby-plugin-netlify": "^2.1.3",
     "gatsby-plugin-offline": "^2.2.4",
@@ -127,7 +128,9 @@
     "setupFiles": [
       "./.jest/loadershim.js"
     ],
-    "testMatch": [ "**/?(*.)+(test).[jt]s?(x)" ]
+    "testMatch": [
+      "**/?(*.)+(test).[jt]s?(x)"
+    ]
   },
   "browserslist": [
     "defaults and last 4 versions and not dead and not ie>0 and not ie_mob>0 and not op_mini all and not baidu>0 and not kaios>0 and not and_uc>0 and not and_qq>0 and not <0.2%"
