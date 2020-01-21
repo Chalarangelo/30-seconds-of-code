@@ -16,6 +16,9 @@ const templateData = {
   pageType: 'snippet',
 };
 
+/**
+ * Renders snippet pages.
+ */
 const SnippetPage = ({
   pageContext: {
     snippet,
