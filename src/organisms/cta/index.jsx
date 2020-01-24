@@ -16,6 +16,10 @@ const AVAILABLE_CTA_PROBABILITIES = [
   0.6,
 ];
 
+/**
+ * Renders a call to action (backdrop, text and button).
+ * Depends on the PageBackdrop molecule and Button Atom.
+ */
 const CTA = ({
   snippetUrl,
   acceptsCookies,

@@ -7,6 +7,11 @@ import { useMedia } from 'functions/hooks';
 import _ from 'lang';
 const _l = _('en');
 
+/**
+ * Renders a pagination component (responsively).
+ * Depends on Button atom.
+ * Utilizes the media hook.
+ */
 const Paginator = ({
   className,
   paginator: {

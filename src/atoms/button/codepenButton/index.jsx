@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import { Button } from 'atoms/button';
 import _ from 'lang';
 const _l = _('en');
+
 /* eslint-disable camelcase */
+/**
+ * Button that links to a generated Codepen from the page data.
+ * See Codepen API: https://blog.codepen.io/documentation/api/prefill/
+ */
 const CodepenButton = ({
   jsCode,
   htmlCode,

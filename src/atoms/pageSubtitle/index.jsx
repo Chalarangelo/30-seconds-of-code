@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {trimWhiteSpace} from 'functions/utils';
 
+/**
+ * Page subtitle component.
+ */
 const PageSubtitle = ({
   className,
   children,

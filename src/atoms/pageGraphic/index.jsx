@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { trimWhiteSpace } from 'functions/utils';
 
+/**
+ * Page graphic component.
+ */
 const PageGraphic = ({
   className,
   children,

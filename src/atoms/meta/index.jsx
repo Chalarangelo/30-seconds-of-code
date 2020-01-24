@@ -8,6 +8,10 @@ import config from '../../../config';
 
 require('index.scss'); // Do not change this to `import`, it's not going to work, no clue why
 
+/**
+ * Creates the <head> metadata content.
+ * Depends on react-helmet.
+ */
 const Meta = ({
   title,
   description = '',

@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { trimWhiteSpace } from 'functions/utils';
 
+/**
+ * Generic button component.
+ */
 const Button = ({
   onClick,
   className = '',

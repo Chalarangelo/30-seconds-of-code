@@ -18,6 +18,9 @@ const templateData = {
   pageType: 'home',
 };
 
+/**
+ * Renders the / page.
+ */
 const HomePage = ({
   pageContext: {
     logoSrc,

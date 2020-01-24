@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { trimWhiteSpace } from 'functions/utils';
 
+/**
+ * Generic card component.
+ */
 const Card = ({
   className,
   children,

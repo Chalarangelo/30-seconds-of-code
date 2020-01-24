@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * Page title component.
+ */
 const PageTitle = ({
   children,
 }) => (

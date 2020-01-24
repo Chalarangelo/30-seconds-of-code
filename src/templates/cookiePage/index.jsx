@@ -13,6 +13,9 @@ const templateData = {
   pageType: 'cookies',
 };
 
+/**
+ * Renders the /cookies page.
+ */
 const CookiePage = ({
   pageContext: {
     logoSrc,
