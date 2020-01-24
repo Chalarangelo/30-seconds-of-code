@@ -7,6 +7,7 @@ export default {
     'snippet_data/snippets.json',
   ],
   slug: 'react',
+  featured: 5,
   reducer: 'jsxReducer',
   resolver: 'jsxResolver',
   theme: {
