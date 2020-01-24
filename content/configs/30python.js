@@ -7,7 +7,7 @@ export default {
     'snippet_data/snippets.json',
   ],
   slug: 'python',
-  featured: 3,
+  featured: 2,
   theme: {
     backColor: '#3c77a9',
     foreColor: '#ffffff',
