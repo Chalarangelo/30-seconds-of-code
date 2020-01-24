@@ -9,7 +9,7 @@ export default {
   slug: 'css',
   reducer: 'cssReducer',
   resolver: 'cssResolver',
-  featured: 2,
+  featured: 3,
   theme: {
     backColor: '#3f4de4',
     foreColor: '#ffffff',
