@@ -17,13 +17,12 @@ $nav-button-active-fore-color-dark: #CDD4EF;
 }
 
 .nav-btn {
+  position: relative;
   display: inline-block;
   width: 25%;
   height: 56px;
   margin: 0;
   background: transparent;
-  background-repeat: no-repeat;
-  background-position: center 6px;
   font-size: 14px;
   padding-top: 12px;
   border: none;
@@ -56,24 +55,13 @@ $nav-button-active-fore-color-dark: #CDD4EF;
   &:last-of-type {
     vertical-align: top;
   }
-}
 
-// Specific navigation button icon backgrounds
-$icons: "search", "list", "github", "sun", "moon";
-
-@each $icon in $icons {
-  .nav-btn.#{$icon} {
-    background-image: generate-icon-background($icon, $nav-button-fore-color-light, 'none', 2, 20);
-    &:hover, &:focus, &.active {
-      background-image: generate-icon-background($icon, $nav-button-active-fore-color-light, 'none', 2, 20);
-    }
-  }
-  .page-container.dark {
-    .nav-btn.#{$icon} {
-      background-image: generate-icon-background($icon, $nav-button-fore-color-dark, 'none', 2, 20);
-      &:hover, &:focus, &.active {
-        background-image: generate-icon-background($icon, $nav-button-active-fore-color-dark, 'none', 2, 20);
-      }
-    }
+  &:before {
+    width: 100%;
+    text-align: center;
+    top: 6px;
+    left: 0;
+    position: absolute;
+    font-size: 20px;
   }
 }

@@ -18,7 +18,7 @@ const CopyButton = ({
     onCopy={ onCopy }
   >
     <Button
-      className='copy-btn'
+      className='copy-btn icon icon-clipboard'
       title={ _l('Copy to clipboard') }
     />
   </CopyToClipboard>

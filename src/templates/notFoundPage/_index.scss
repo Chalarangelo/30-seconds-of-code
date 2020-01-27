@@ -1,9 +1,12 @@
 .btn.btn-home {
-  background-image: generate-icon-background("home", $button-fore-color, 'none', 2, 24);
-  background-repeat: no-repeat;
-  background-position-x: 14px;
-  background-position-y: center;
+  position: relative;
   padding-left: 46px;
+  &:before {
+    position: absolute;
+    font-size: 24px;
+    left: 14px;
+    line-height: 30px;
+  }
 }
 
 .page-graphic.page-not-found::before {

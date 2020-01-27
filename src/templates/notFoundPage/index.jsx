@@ -46,7 +46,7 @@ const NotFoundPage = ({
               url: '/',
               internal: true,
             } }
-            className='btn-home'
+            className='btn-home icon icon-home'
           >
             { _l('Go home') }
           </AnchorButton>

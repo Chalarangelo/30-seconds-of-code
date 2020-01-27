@@ -52,7 +52,7 @@ const CTA = ({
           rel: 'noopener',
           target: '_blank',
         } }
-        className={ `btn-cta btn-${ctaId}` }
+        className={ `btn-cta btn-${ctaId} icon icon-${ctaId === 'github' ? 'star' : ctaId}` }
         onClick={ e => {
           if (acceptsCookies && typeof window !== 'undefined' && typeof gtag === `function`) {
             e.preventDefault();
