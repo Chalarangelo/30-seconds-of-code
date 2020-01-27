@@ -45,9 +45,12 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
     .filter(v => !v.archived)
     .forEach(listingMeta => {
       const slugPrefix = listingMeta.slugPrefix;
-      const searchIndexSlugData = searchIndex.edges.filter(s => s.node.slug.startsWith(`${slugPrefix}`));
+      const searchIndexName = searchIndex.edges.find(s => s.node.slug.startsWith(`${slugPrefix}`)).node.language.long || '';
+      const searchIndexSlugData = searchIndex.edges.filter(s =>
+        s.node.slug.startsWith(`${slugPrefix}`) ||
+        (s.node.blog && s.node.tags.all.find(t => t.toLowerCase() === searchIndexName.toLowerCase()))
+      );
       const searchIndexSlugChunks = chunk(transformSnippetIndex(searchIndexSlugData), 20);
-      const searchIndexName = searchIndexSlugData[0].node.language.long;
       const searchIndexTagPrefixes = listingMeta.tags;
       const languageListingSublinks = listingMeta.tags
         .map(tag => ({
@@ -65,18 +68,24 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
         createPage,
         {
           ...context,
-          listingName: _l`codelang.${searchIndexName}`,
+          listingName: listingMeta.blog ? _l('Blog') : _l`codelang.${searchIndexName}`,
           snippetCount: searchIndexSlugData.length,
-          listingType: 'language',
-          listingLanguage: searchIndexName,
-          listingSublinks: languageListingSublinks,
+          listingType: listingMeta.blog ? 'blog' : 'language',
+          listingLanguage: listingMeta.blog ? 'blog' : searchIndexName,
+          listingSublinks: listingMeta.blog ? [] : languageListingSublinks,
         },
         `${slugPrefix}`
       );
 
       searchIndexTagPrefixes.forEach(tagPrefix => {
         const searchIndexTagData = searchIndex.edges
-          .filter(s => s.node.tags.primary === tagPrefix && s.node.slug.startsWith(`${slugPrefix}`));
+          .filter(s =>
+            s.node.tags.primary === tagPrefix && s.node.slug.startsWith(`${slugPrefix}`) ||
+            ( s.node.blog &&
+              s.node.tags.all.find(t => t.toLowerCase() === searchIndexName.toLowerCase()) &&
+              s.node.tags.all.find(t => t.toLowerCase() === tagPrefix.toLowerCase())
+            )
+          );
         const searchIndexTagChunks = chunk(transformSnippetIndex(searchIndexTagData), 20);
 
         createListingPages(

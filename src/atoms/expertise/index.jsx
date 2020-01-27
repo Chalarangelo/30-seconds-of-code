@@ -9,9 +9,9 @@ const _l = _('en');
  * Renders an expertise tag.
  */
 const Expertise = ({
-  level = 'intermediate',
+  level = 'Intermediate',
 }) => (
-  <span className={ trimWhiteSpace`expertise ${level}` }>
+  <span className={ trimWhiteSpace`expertise ${level.toLowerCase()}` }>
     { _l`Expertise${level}` }
   </span>
 );

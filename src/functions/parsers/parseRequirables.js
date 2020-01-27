@@ -29,6 +29,10 @@ const parseRequirables = contentDirPath => {
 
         const archived = !!cfg.isArchived;
         reqJson.meta.archived = archived;
+
+        const blog = !!cfg.isBlog;
+        reqJson.meta.blog = blog;
+
         reqJson.meta.slugPrefix = archived ? `${cfg.slug}/v` : `${cfg.slug}/s`;
 
         const unlisted = !!cfg.isUnlisted;

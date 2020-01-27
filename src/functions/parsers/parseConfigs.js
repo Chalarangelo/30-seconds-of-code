@@ -15,16 +15,28 @@ const parseConfigs = contentDirPath => {
       );
     });
   // Create the array of resolvers.
-  return configs.reduce((acc, cfg) => [
-    ...acc,
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: `${cfg.dirName}_snippets`,
-        path: `${contentDirPath}/sources/${cfg.dirName}/${cfg.snippetPath}`,
+  return configs.reduce((acc, cfg) => {
+    if (cfg.images && cfg.images.name && cfg.images.path) {
+      acc.push({
+        resolve: 'gatsby-source-filesystem',
+        options: {
+          name: `${cfg.images.name}`,
+          path: `${contentDirPath}/sources/${cfg.dirName}/${cfg.images.path}`,
+        },
+      });
+    }
+    return [
+      ...acc,
+      {
+        resolve: 'gatsby-source-filesystem',
+        options: {
+          name: `${cfg.dirName}_snippets`,
+          path: `${contentDirPath}/sources/${cfg.dirName}/${cfg.snippetPath}`,
+        },
       },
-    },
-  ], []);
+    ]
+    ;
+  }, []);
 };
 
 export default parseConfigs;

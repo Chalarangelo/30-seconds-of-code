@@ -84,6 +84,12 @@ const createPages = (query, templates, requirables) => ({ graphql, actions }) =>
         '/list'
       );
 
+      const allSnippets = [
+        ...result.data.simpleSnippets.edges,
+        ...result.data.cssSnippets.edges,
+        ...result.data.blogSnippets.edges,
+      ];
+
       createSnippetPages(
         result.data.simpleSnippets.edges,
         templates['SnippetPage'],
@@ -91,7 +97,8 @@ const createPages = (query, templates, requirables) => ({ graphql, actions }) =>
         {
           ...commonContext,
           cardTemplate: 'standard',
-        }
+        },
+        allSnippets
       );
 
       createSnippetPages(
@@ -101,7 +108,20 @@ const createPages = (query, templates, requirables) => ({ graphql, actions }) =>
         {
           ...commonContext,
           cardTemplate: 'css',
-        }
+        },
+        allSnippets
+      );
+
+      createSnippetPages(
+        result.data.blogSnippets.edges,
+        templates['SnippetPage'],
+        createPage,
+        {
+          ...commonContext,
+          cardTemplate: 'blog',
+        },
+        allSnippets,
+        result.data.images.edges
       );
 
       createSearchIndexPage(

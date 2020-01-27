@@ -26,7 +26,7 @@ describe('<Expertise />', () => {
   });
 
   it('should get the appropriate class from expertise level', () => {
-    expect(wrapper).toContainMatchingElement(`.expertise.${level}`);
+    expect(wrapper).toContainMatchingElement(`.expertise.${level.toLowerCase()}`);
   });
 
 });

@@ -4,47 +4,45 @@ import {
 } from 'engines';
 import { convertToSeoSlug, uniqueElements } from 'functions/utils';
 import { determineExpertiseFromTags } from 'functions/transformers';
+// TODO: Consider parsing this via a new parser or similar
+// The argument against is that it's a single case and might not extend to other repos in the future
+import authors from '../sources/30blog/blog_data/blog_authors';
 
 export default (id, snippetNode, markdownNode) => {
+  const shortSliceIndex = snippetNode.attributes.text.indexOf('\n\n') <= 180 ? snippetNode.attributes.text.indexOf('\n\n') : snippetNode.attributes.text.indexOf(' ', 160);
   return {
     id,
     tags: {
       all: snippetNode.attributes.tags,
       primary: snippetNode.attributes.tags[0],
     },
-    expertise: determineExpertiseFromTags(snippetNode.attributes.tags),
+    blogType: snippetNode.type,
+    cover: snippetNode.attributes.cover,
+    authors: snippetNode.attributes.authors.map(a => authors[a]),
+    blog: true,
+    expertise: '',
     title: snippetNode.title,
-    code: {
-      html: snippetNode.attributes.codeBlocks.html,
-      css: snippetNode.attributes.codeBlocks.css,
-      js: snippetNode.attributes.codeBlocks.js,
-      scopedCss: snippetNode.attributes.codeBlocks.scopedCss,
-    },
+    code: { },
     slug: `/${snippetNode.slugPrefix}${convertToSeoSlug(markdownNode.fields.slug)}`,
     url: `${snippetNode.repoUrlPrefix}${markdownNode.fields.slug.slice(0, -1)}.md`,
     path: markdownNode.fileAbsolutePath,
     text: {
       full: snippetNode.attributes.text,
-      short: snippetNode.attributes.text.slice(0, snippetNode.attributes.text.indexOf('\n\n')),
+      short: snippetNode.attributes.excerpt && snippetNode.attributes.excerpt.trim().length !== 0
+        ? snippetNode.attributes.excerpt
+        : `${ snippetNode.attributes.text.slice(0, shortSliceIndex)}...`,
     },
     archived: snippetNode.archived,
-    language: {
-      ...snippetNode.language,
-      otherLanguages: snippetNode.otherLanguages,
-    },
-    ranking: rankSnippet(snippetNode),
+    language: {},
+    ranking: rankSnippet(snippetNode, { timeSensitive: true }),
     recommendationRanking: snippetNode.recommendationRanking,
     firstSeen: new Date(+`${snippetNode.meta.firstSeen}000`),
     lastUpdated: new Date(+`${snippetNode.meta.lastUpdated}000`),
     searchTokens: uniqueElements([
-      snippetNode.language.short,
-      snippetNode.language.long,
-      snippetNode.title,
       ...snippetNode.attributes.tags.filter(tag => tag !== 'beginner' && tag !== 'intermediate' && tag !== 'advanced'),
       ...tokenizeSnippet(
-        snippetNode.attributes.text.slice(0, snippetNode.attributes.text.indexOf('\n\n'))
+        `${snippetNode.attributes.excerpt} ${snippetNode.title}`
       ),
     ]).join(' ').toLowerCase(),
-    browserSupport: snippetNode.attributes.browserSupport,
   };
 };

@@ -13,6 +13,7 @@ import TagList from 'molecules/tagList';
  */
 const PreviewCard = ({
   snippet,
+  context,
   className,
   ...rest
 }) => (
@@ -25,7 +26,11 @@ const PreviewCard = ({
   >
     <Card className={ trimWhiteSpace`preview-card ${className}` } { ...rest } >
       <h4 className='card-title'>{ snippet.title }</h4>
-      <TagList tags={ [snippet.language, snippet.primaryTag, snippet.expertise] } />
+      { context === 'blog' ? null :
+        (
+          <TagList tags={ [snippet.language, snippet.primaryTag, snippet.expertise] } />
+        )
+      }
       <div
         className='card-description'
         dangerouslySetInnerHTML={ { __html: `${snippet.description}` } }
@@ -37,6 +42,8 @@ const PreviewCard = ({
 PreviewCard.propTypes = {
   /** Snippet data for the card */
   snippet: SnippetPropType,
+  /** Context in which this card is rendered */
+  context: PropTypes.string,
   /** Additional classes for the card */
   className: PropTypes.string,
   /** Any other arguments to be passed to the card */

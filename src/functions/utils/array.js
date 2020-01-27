@@ -1,19 +1,4 @@
-import { EXPERTISE_LEVELS } from 'shared';
-
-/**
- * Given an array of tags, determine the expertise level.
- */
-export const determineExpertiseFromTags = tags =>
-  tags.reduce((expertise, tag) =>
-    EXPERTISE_LEVELS.includes(tag) ? tag : expertise,
-  EXPERTISE_LEVELS[1]
-  );
-
-/**
- * Given an array of tags, strip the expertise level.
- */
-export const stripExpertiseFromTags = tags =>
-  tags.filter(tag => !EXPERTISE_LEVELS.includes(tag));
+import { transformTagName } from 'functions/transformers';
 
 /** Chunks an array into smaller arrays of a specified size. */
 export const chunk = (arr, size) =>
@@ -27,9 +12,9 @@ export const transformSnippetIndex = edges =>
     .map(edge => edge.node)
     .map(node => ({
       title: node.title,
-      expertise: node.expertise,
-      primaryTag: node.tags.primary,
-      language: node.language.long,
+      expertise: transformTagName(node.expertise),
+      primaryTag: transformTagName(node.tags.primary),
+      language: node.language && node.language.long ? node.language.long : undefined,
       description: node.html.description.trim(),
       url: node.slug,
       searchTokens: node.searchTokens,

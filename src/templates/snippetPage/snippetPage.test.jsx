@@ -23,7 +23,7 @@ describe('<SnippetPage />', () => {
       primary: 'function',
       all: ['function', 'recursion'],
     },
-    expertise: 'intermediate',
+    expertise: 'Intermediate',
     html: {
       description: '<p>Performs right-to-left function composition.</p>',
       fullDescription: '<p>Performs right-to-left function composition.</p>\n<p> Use <code class="language-text"> Array.prototype.reduce()</code> to perform right-to-left function composition.\nThe last(rightmost) function can accept one or more arguments; the remaining functions must be unary.</p>',
