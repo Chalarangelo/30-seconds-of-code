@@ -12,7 +12,7 @@ describe('transformSnippetIndex', () => {
       {
         node: {
           title: 'a',
-          expertise: 'intermediate',
+          expertise: 'Intermediate',
           tags: {
             primary: 'array',
           },

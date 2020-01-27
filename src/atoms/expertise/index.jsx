@@ -6,7 +6,7 @@ import _ from 'lang';
 const _l = _('en');
 
 const Expertise = ({
-  level = 'intermediate',
+  level = 'Intermediate',
 }) => (
   <span className={ trimWhiteSpace`expertise ${level.toLowerCase()}` }>
     { _l`Expertise${level}` }

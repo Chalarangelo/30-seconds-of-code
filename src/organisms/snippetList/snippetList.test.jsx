@@ -18,7 +18,7 @@ describe('<SnippetList />', () => {
       title: 'compose',
       language: 'JavaScript',
       primaryTag: 'function',
-      expertise: 'intermediate',
+      expertise: 'Intermediate',
       description: '<p>Performs right-to-left function composition.</p>',
       url: 'snippets/compose',
     },
