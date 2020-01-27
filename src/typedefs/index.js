@@ -6,6 +6,7 @@ import Tags from './tags';
 import Code from './code';
 import Html from './html';
 import Paginator from './paginator';
+import Authors from './authors';
 
 export {
   Link,
@@ -15,5 +16,6 @@ export {
   Tags,
   Code,
   Html,
+  Authors,
   Paginator
 };
