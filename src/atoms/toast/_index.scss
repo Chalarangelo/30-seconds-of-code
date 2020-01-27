@@ -41,8 +41,10 @@ $toast-back-color: #05A864;
     width: 28px;
     background: var(--toast-fore-color);
     border-radius: 100%;
-    background-image: generate-icon-background("check",$toast-back-color);
-    background-position: center;
+    color: var(--toast-back-color);
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
   }
 }
 

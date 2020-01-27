@@ -1,7 +1,5 @@
 .btn.btn-cta {
-  background-repeat: no-repeat;
-  background-position-x: 14px;
-  background-position-y: center;
+  position: relative;
   padding-left: 46px;
   margin-top: 0;
 
@@ -9,14 +7,11 @@
     font-size: 1.25rem;
     line-height: 1.2;
   }
-}
-
-.btn.btn-github {
-  background-image: generate-icon-background("star", $button-fore-color, $button-fore-color, 2, 24);
-}
-
-.btn.btn-twitter {
-  background-image: generate-icon-background("twitter", $button-fore-color, $button-fore-color, 0, 24);
+  &:before {
+    left: 14px;
+    font-size: 24px;
+    position: absolute;
+  }
 }
 
 .page-graphic.graphic-cta {

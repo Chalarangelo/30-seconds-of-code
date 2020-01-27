@@ -3,11 +3,18 @@
 }
 
 .btn.codepen-btn {
-  background-image: generate-icon-background("codepen", $button-fore-color);
   background-color: var(--button-back-color-tertiary);
-  background-repeat: no-repeat;
-  background-position: center;
   width: 44px;
   height: 44px;
   z-index: 10;
+
+  &:before {
+    font-size: 24px;
+    line-height: 44px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
 }

@@ -25,7 +25,7 @@ const NavButton = ({
   ...rest
 }) => (
   <Anchor
-    className={ trimWhiteSpace`nav-btn ${icon} ${className}` }
+    className={ trimWhiteSpace`nav-btn icon ${`icon-${icon}`} ${className}` }
     link={ link }
     { ...rest }
   >

@@ -60,40 +60,51 @@ $paginator-selected-color-dark: #B0C3E3;
     }
 
     &.previous-page, &.next-page {
+      position: relative;
       flex: 2;
-      background-repeat: no-repeat;
-      background-position: center;
       width: 44px;
       box-sizing: border-box;
+
+      &:before {
+        position: absolute;
+        font-size: 24px;
+        width: 100%;
+        text-align: center;
+      }
     
       @media screen and (min-width: $layout-medium-breakpoint) {
         width: auto;
+
+        &:before {
+          width: auto;
+        }
       }
     }
 
     &.previous-page {
-      background-image: generate-icon-background('chevron-left', $fore-color-light, 'none', 2, 24);
-
-      &:hover, &:focus {
-        background-image: generate-icon-background('chevron-left', $paginator-selected-color-light, 'none', 2, 24);
+      &:before {
+        left: 0;
       }
-    
+
       @media screen and (min-width: $layout-medium-breakpoint) {
-        background-position-x: 6px;
         padding-left: 32px;
+
+        &:before {
+          left: 6px;
+        }
       }
     }
 
     &.next-page {
-      background-image: generate-icon-background('chevron-right', $fore-color-light, 'none', 2, 24);
-
-      &:hover, &:focus {
-        background-image: generate-icon-background('chevron-right', $paginator-selected-color-light, 'none', 2, 24);   
+      &:before {
+        right: 0;
       }
-      
       @media screen and (min-width: $layout-medium-breakpoint) {
-        background-position-x: calc(100% - 6px);
         padding-right: 32px;
+
+        &:before {
+          right: 6px;
+        }
       }
     }
   }
@@ -113,30 +124,6 @@ $paginator-selected-color-dark: #B0C3E3;
     
     @media screen and (min-width: $layout-medium-breakpoint) {
       display: block;
-    }
-  }
-}
-
-.page-container.dark {
-  .paginator {
-    .btn, a.btn {
-
-      &.previous-page {
-        background-image: generate-icon-background('chevron-left', $fore-color-dark, 'none', 2, 24);
-      
-        &:hover, &:focus {
-          background-image: generate-icon-background('chevron-left', $paginator-selected-color-dark, 'none', 2, 24);
-        }
-
-      }
-      &.next-page {
-        background-image: generate-icon-background('chevron-right', $fore-color-dark, 'none', 2, 24);
-
-        &:hover, &:focus {
-          background-image: generate-icon-background('chevron-right', $paginator-selected-color-dark, 'none', 2, 24);   
-        }
-
-      }
     }
   }
 }
