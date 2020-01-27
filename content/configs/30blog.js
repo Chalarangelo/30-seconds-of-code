@@ -11,6 +11,7 @@ export default {
   reducer: 'blogReducer',
   resolver: 'blogResolver',
   isBlog: true,
+  isUnlisted: true,
   theme: {
     backColor: '#1f253d',
     foreColor: '#edf0fc',
