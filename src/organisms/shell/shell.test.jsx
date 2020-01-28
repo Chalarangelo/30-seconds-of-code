@@ -155,15 +155,15 @@ describe('<Shell />', () => {
     });
 
     it('should change the mode', () => {
-      wrapper.find('.moon').at(0).simulate('click');
-      expect(wrapper).toContainMatchingElement('.nav-btn.sun');
-      expect(wrapper).not.toContainMatchingElement('.nav-btn.moon');
+      wrapper.find('.icon-moon').at(0).simulate('click');
+      expect(wrapper).toContainMatchingElement('.nav-btn.icon-sun');
+      expect(wrapper).not.toContainMatchingElement('.nav-btn.icon-moon');
     });
 
     it('should change the mode back when clicked a second time', () => {
-      wrapper.find('.sun').at(0).simulate('click');
-      expect(wrapper).toContainMatchingElement('.nav-btn.moon');
-      expect(wrapper).not.toContainMatchingElement('.nav-btn.sun');
+      wrapper.find('.icon-sun').at(0).simulate('click');
+      expect(wrapper).toContainMatchingElement('.nav-btn.icon-moon');
+      expect(wrapper).not.toContainMatchingElement('.nav-btn.icon-sun');
     });
   });
 

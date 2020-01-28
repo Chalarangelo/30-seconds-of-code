@@ -68,7 +68,7 @@ describe('<NotFoundPage />', () => {
   });
 
   it('should pass the correct class to the AnchorButton component', () => {
-    expect(anchorButton.prop('className')).toBe('btn-home');
+    expect(anchorButton.prop('className').indexOf('btn-home')).not.toBe(-1);
   });
 });
 

@@ -23,7 +23,7 @@ describe('<NavButton />', () => {
   });
 
   it('should render with the correct icon class', () => {
-    expect(wrapper).toContainMatchingElement(`a.nav-btn.${icon}`);
+    expect(wrapper).toContainMatchingElement(`a.nav-btn.icon-${icon}`);
   });
 
   it('should render with the correct icon string literal', () => {
