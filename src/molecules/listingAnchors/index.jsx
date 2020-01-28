@@ -2,10 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link as LinkPropType } from 'typedefs';
 import { AnchorButton } from 'atoms/button';
-import PageSubtitle from 'atoms/pageSubtitle';
 import { trimWhiteSpace } from 'functions/utils';
-import _ from 'lang';
-const _l = _('en');
 
 /**
  * Renders the set of buttons that link to other listing pages.
@@ -16,47 +13,48 @@ const ListingAnchors = ({
   items,
   isCompact = false,
   ...rest
-}) =>
-  isCompact ?
-    <>
-      <div
-        className={ trimWhiteSpace`listing-anchors compact ${items.length > 4 ? 'with-scrollbar' : ''}` }
-        { ...rest }
-      >
-        { items.map(item =>
+}) => {
+  // Scroll the selected tag into view, so that users always know where they are
+  React.useEffect(() => {
+    if(isCompact) {
+      document
+        .querySelector('.listing-anchors .selected')
+        .scrollIntoView(false);
+    }
+  }, []);
+
+  return isCompact ?
+    <ul
+      className='listing-anchors compact'
+      { ...rest }
+    >
+      { items.map(item =>
+        <li key={ item.link.url }>
           <AnchorButton
-            key={ item.link.url }
-            style={ item.style }
             link={ item.link }
+            className={ trimWhiteSpace`${item.selected ? 'selected' : ''}` }
           >
             { item.name }
           </AnchorButton>
-        ) }
-      </div>
-    </>
+        </li>
+      ) }
+    </ul>
     :
-    <>
-      <PageSubtitle isLight className='listing-anchors-title'>
-        { _l('Top collections') }
-      </PageSubtitle>
-      <div
-        className={ trimWhiteSpace`listing-anchors ${items.length > 4 ? 'with-scrollbar' : ''}` }
-        { ...rest }
-      >
-        { items.map(item =>
+    <ul className='listing-anchors'
+      { ...rest }
+    >
+      { items.map(item =>
+        <li key={ item.link.url }>
           <AnchorButton
-            key={ item.link.url }
+            className={ `listing-anchor icon ${`icon-${item.icon}`}` }
             style={ item.style }
             link={ item.link }
-          >
-            { item.name }
-            <span className='count'>
-              { item.count }
-            </span>
-          </AnchorButton>
-        ) }
-      </div>
-    </>;
+            title={ item.name }
+          />
+        </li>
+      ) }
+    </ul>;
+};
 
 ListingAnchors.propTypes = {
   /** Items that compose the listing anchors */
