@@ -62,7 +62,7 @@ describe('<NavBar />', () => {
 
   it('should render the correct children types', () => {
     buttons.forEach((btn, i) =>
-      expect(links[i].hasClass(btn.icon)).toBe(true)
+      expect(links[i].hasClass(`icon-${btn.icon}`)).toBe(true)
     );
   });
 

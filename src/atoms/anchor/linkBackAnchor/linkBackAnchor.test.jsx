@@ -30,7 +30,7 @@ describe('<LinkBackAnchor />', () => {
   });
 
   it('should render passed children', () => {
-    expect(anchor.prop('className')).toBe('link-back');
+    expect(anchor.prop('className').indexOf(('link-back'))).not.toBe(-1);
   });
 });
 
