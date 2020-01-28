@@ -27,7 +27,7 @@ const SnippetList = ({
       </PageTitle>
       {
         listingSublinks.length
-          ? <ListingAnchors isCompact items={ listingSublinks } />
+          ? <ListingAnchors isCompact={ listingType !== 'main' } items={ listingSublinks } />
           : null
       }
       <PageSubtitle isLight className='list-top-subtitle'>
