@@ -11,10 +11,11 @@ export default {
   reducer: 'blogReducer',
   resolver: 'blogResolver',
   isBlog: true,
-  isUnlisted: true,
+  featured: 1,
   theme: {
     backColor: '#1f253d',
     foreColor: '#edf0fc',
+    iconName: 'blog',
   },
   biasPenaltyMultiplier: 1.01,
   images: {
