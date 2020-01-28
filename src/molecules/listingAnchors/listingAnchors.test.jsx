@@ -12,12 +12,10 @@ describe('<ListingAnchors />', () => {
     {
       name: 'My list',
       link: { internal: true, url: '/my-list'},
-      count: '200 snippets',
     },
     {
       name: 'My other list',
       link: { internal: true, url: '/my-other-list'},
-      count: '34 snippets',
     },
   ];
   let wrapper;
@@ -32,25 +30,9 @@ describe('<ListingAnchors />', () => {
       expect(wrapper).toContainMatchingElement('.listing-anchors');
     });
 
-    it('a PageSubtitle component', () => {
-      expect(wrapper).toContainMatchingElement('PageSubtitle');
-    });
-
     it('two AnchorButton components', () => {
       expect(wrapper).toContainMatchingElements(2, 'AnchorButton');
     });
   });
-
-  describe('with compact mode', () => {
-    beforeEach(() => {
-      wrapper = mount(
-        <ListingAnchors items={ items } isCompact />);
-    });
-
-    it('should render with the correct className', () => {
-      expect(wrapper).toContainMatchingElement('.listing-anchors.compact');
-    });
-  });
-
 });
 
