@@ -22,7 +22,7 @@ const createHomePage = (searchIndex, listingMetas, homePage, createPage, context
     context: {
       ...context,
       listingAnchors: featuredSources,
-      recommendedSnippets: transformSnippetIndex(featuredSnippets.slice(0, 10)),
+      recommendedSnippets: transformSnippetIndex(featuredSnippets.slice(0, 25)),
     },
   });
 };

@@ -2,8 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Meta from 'atoms/meta';
 import Shell from 'organisms/shell';
-import Search from 'atoms/search';
-import SearchResults from 'organisms/searchResults';
 import ListingAnchors from 'molecules/listingAnchors';
 import PropTypes from 'prop-types';
 import { Snippet as SnippetPropType } from 'typedefs';
@@ -61,8 +59,6 @@ const HomePage = ({
         <p className='home-sub-title'>
           { _l('site.description') }
         </p>
-        <Search shouldUpdateHistory />
-        <SearchResults isCompact />
         <ListingAnchors items={ listingAnchors } />
         <RecommendationList snippetList={ recommendedSnippets } />
       </Shell>

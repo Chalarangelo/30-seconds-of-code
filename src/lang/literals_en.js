@@ -83,6 +83,7 @@ const literals = {
   'Search results for': keyphrase => `Search results for ${keyphrase}`,
   'Search results': 'Search results',
   'Click to view more results': 'Click to view more results',
+  'Click to view more snippets': 'Click to view more snippets',
   'Copy to clipboard': 'Copy to clipboard',
   'Examples': 'Examples',
   'Back to': pageTitle => `Back to ${capitalize(pageTitle, true)}`,
