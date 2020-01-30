@@ -52,15 +52,24 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
       );
       const searchIndexSlugChunks = chunk(transformSnippetIndex(searchIndexSlugData), 20);
       const searchIndexTagPrefixes = listingMeta.tags;
-      const languageListingSublinks = listingMeta.tags
-        .map(tag => ({
+      const languageListingSublinks = [
+        {
           link: {
             internal: true,
-            url: `${slugPrefix}/t/${tag}/p/1`,
+            url: `${slugPrefix}/p/1`,
           },
-          name: _l`tag.${tag}`,
-          style: listingMeta.style,
-        }));
+          name: _l`tag.${'all'}`,
+          selected: true,
+        },
+        ...listingMeta.tags
+          .map(tag => ({
+            link: {
+              internal: true,
+              url: `${slugPrefix}/t/${tag}/p/1`,
+            },
+            name: _l`tag.${tag}`,
+          })),
+      ];
 
       createListingPages(
         searchIndexSlugChunks,
@@ -87,6 +96,8 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
             )
           );
         const searchIndexTagChunks = chunk(transformSnippetIndex(searchIndexTagData), 20);
+        const tagListingSublinks = languageListingSublinks
+          .map(tag => ({...tag, selected: tag.link.url.indexOf(`/t/${tagPrefix}/`) !== -1}));
 
         createListingPages(
           searchIndexTagChunks,
@@ -99,6 +110,7 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
             listingType: 'tag',
             listingLanguage: searchIndexName,
             listingTag: tagPrefix,
+            listingSublinks: listingMeta.blog ? [] : tagListingSublinks,
           },
           `${slugPrefix}/t/${tagPrefix}`
         );

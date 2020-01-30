@@ -80,7 +80,7 @@
   "license": "MIT",
   "scripts": {
     "prebuild": "./src/jobs/prepare_env.sh PRODUCTION; ./src/jobs/fetch_content_sources.sh; ./src/jobs/prepare_cache_key.sh; npm run make-icons",
-    "predevelop": "./src/jobs/prepare_env.sh DEVELOPMENT;./src/jobs/prepare_cache_key.sh; npm run make-icons",
+    "predevelop": "./src/jobs/prepare_env.sh DEVELOPMENT;./src/jobs/prepare_cache_key.sh",
     "build": "NODE_PATH=src npx --node-arg '-r esm' gatsby build",
     "develop": "NODE_PATH=src npx --node-arg '-r esm' gatsby develop",
     "debug": "NODE_PATH=src npx --node-arg '-r esm --nolazy --inspect-brk' node_modules/.bin/gatsby develop",
