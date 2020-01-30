@@ -21,7 +21,7 @@ Here's what you can do to help:
   - All snippets must contain a title.
   - All snippets must contain tags, prefixed with `tags:` and separated by commas (optional spaces in-between).
   - Make sure the first tag in your snippet's tags is one of the main categories, as seen in the `README.md` file or the website.
-  - Snippet tags must include a difficulty setting (`begginer`, `intermediate` or `advanced`), preferrably at the end of the list.
+  - Snippet tags must include a difficulty setting (`beginner`, `intermediate` or `advanced`), preferrably at the end of the list.
 - **Snippet titles** should be the same as the name of the function that is present in the snippet.
   - All snippet titles must be prefixed with `title:` and be at the very first line of your snippet's frontmatter.
   - Snippet titles must be unique (although if you cannot find a better title, just add some placeholder at the end of the filename and title and we will figure it out).
