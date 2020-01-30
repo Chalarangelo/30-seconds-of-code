@@ -672,8 +672,8 @@ const join = (arr, separator = ',', end = separator) =>
       i === arr.length - 2
         ? acc + val + end
         : i === arr.length - 1
-          ? acc + val
-          : acc + val + separator,
+        ? acc + val
+        : acc + val + separator,
     ''
   );
 const JSONtoCSV = (arr, columns, delimiter = ',') =>
@@ -798,10 +798,10 @@ const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
 const objectToQueryString = queryParameters => {
   return queryParameters
     ? Object.entries(queryParameters).reduce((queryString, [key, val], index) => {
-      const symbol = queryString.length === 0 ? '?' : '&';
-      queryString += typeof val === 'string' ? `${symbol}${key}=${val}` : '';
-      return queryString;
-    }, '')
+        const symbol = queryString.length === 0 ? '?' : '&';
+        queryString += typeof val === 'string' ? `${symbol}${key}=${val}` : '';
+        return queryString;
+      }, '')
     : '';
 };
 const observeMutations = (element, callback, options) => {
@@ -1032,9 +1032,9 @@ const reject = (pred, array) => array.filter((...args) => !pred(...args));
 const remove = (arr, func) =>
   Array.isArray(arr)
     ? arr.filter(func).reduce((acc, val) => {
-        arr.splice(arr.indexOf(val), 1);
-        return acc.concat(val);
-      }, [])
+      arr.splice(arr.indexOf(val), 1);
+      return acc.concat(val);
+    }, [])
     : [];
 const removeNonASCII = str => str.replace(/[^\x20-\x7E]/g, '');
 const renameKeys = (keysMap, obj) =>
@@ -1112,10 +1112,10 @@ const size = val =>
   Array.isArray(val)
     ? val.length
     : val && typeof val === 'object'
-      ? val.size || val.length || Object.keys(val).length
-      : typeof val === 'string'
-        ? new Blob([val]).size
-        : 0;
+    ? val.size || val.length || Object.keys(val).length
+    : typeof val === 'string'
+    ? new Blob([val]).size
+    : 0;
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const smoothScroll = element =>
   document.querySelector(element).scrollIntoView({
