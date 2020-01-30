@@ -43,10 +43,6 @@ describe('<HomePage />', () => {
       expect(wrapper).toContainMatchingElement('p.home-sub-title');
     });
 
-    it('a Search component', () => {
-      expect(wrapper).toContainMatchingElement('Search');
-    });
-
     it('a ListingAnchors component', () => {
       expect(wrapper).toContainMatchingElement('ListingAnchors');
     });
