@@ -1035,7 +1035,7 @@
       "attributes": {
         "fileName": "masonry-layout.md",
         "text": "Creates a vertical Masonry layout using pure HTML and CSS.\n\n",
-        "explanation": "\n\n- Create a masonry-style layout that consists of \"bricks\" that fall into each other with either a fidex `width` (vertical layout) or a fixed `height` (horizontal layout), forming a perfect fit. Especially useful when working with images.\n- `.masonry-container` is the container for the masonry layout. Within that container, there's a `div.masonry-columns`, which will automatically put each child element, `.masonry-brick`, into the layout. \n- `.masonry-brick` must be have `display: block` to allow the layout to flow properly, while the `:first-child` of this class should have a different `margin` to account for its positioning.\n- CSS variables are used to allow for greater flexibility for the layout, while media queries ensure that the layout flows responsively in different viewport sizes.\n\n",
+        "explanation": "\n\n- Create a masonry-style layout that consists of \"bricks\" that fall into each other with either a fixed `width` (vertical layout) or a fixed `height` (horizontal layout), forming a perfect fit. Especially useful when working with images.\n- `.masonry-container` is the container for the masonry layout. Within that container, there's a `div.masonry-columns`, which will automatically put each child element, `.masonry-brick`, into the layout. \n- `.masonry-brick` must be have `display: block` to allow the layout to flow properly, while the `:first-child` of this class should have a different `margin` to account for its positioning.\n- CSS variables are used to allow for greater flexibility for the layout, while media queries ensure that the layout flows responsively in different viewport sizes.\n\n",
         "browserSupport": {
           "text": "\n\n- https://www.caniuse.com/#feat=css-variables\n- https://www.caniuse.com/#feat=calc\n- https://www.caniuse.com/#feat=mdn-css_properties_column-count\n- https://www.caniuse.com/#feat=mdn-css_properties_column-width\n- https://www.caniuse.com/#feat=mdn-css_properties_column-gap_multicol_context\n",
           "supportPercentage": 100
@@ -1052,11 +1052,11 @@
         ]
       },
       "meta": {
-        "hash": "5782a8e3e8295f8b5a3887450d22b30d38d49f83a4d1664de52b1fab177e830f",
+        "hash": "f9fe4bf02b6fd017c8a322e239c4e0b7361bf9a03c6ee4488710d224ae4fb771",
         "firstSeen": "1576023545",
-        "lastUpdated": "1576061075",
-        "updateCount": 5,
-        "authorCount": 3
+        "lastUpdated": "1580454656",
+        "updateCount": 6,
+        "authorCount": 4
       }
     },
     {
