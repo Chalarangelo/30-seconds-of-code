@@ -1,37 +1,53 @@
 # Contribution Guidelines
 
-**30 seconds of blog** is a community effort, so feel free to contribute in any way you can. Every contribution helps!
+**30 seconds of code** is powered by the community, so feel free to contribute in any way you can to help us!
 
-Here's what you can do to help:
+## Tools
 
-- Submit [pull requests](https://github.com/30-seconds/30-seconds-blog/pulls) with snippets that you have created (see below for guidelines).
-- [Open issues](https://github.com/30-seconds/30-seconds-blog/issues/new) for things you want to see added or modified.
-- Be part of the discussion by helping out with [existing issues](https://github.com/30-seconds/30-seconds-blog/issues).
-- Fix typos in existing snippets, improve snippet descriptions and explanations or provide better examples.
+Before you begin contributing, you should install the integration-tools globally on your machine:
 
-### Snippet submission and Pull request guidelines
+```sh
+npm install -g @30-seconds/integration-tools
+```
 
-- **DO NOT MODIFY THE FILES INSIDE THE snippet_data DIRECTORY!** Doing so will result in your Pull Request being closed immediately.
-- **Snippet filenames** must closely resemble the title of the snippet. For example, if your snippet is titled `### My Snippet` the filename should be `my-snippet.md`.
-- **Snippet metadata** must be included in all snippets in the form of frontmatter.
-  - All snippets must contain a title.
-  - All snippets must contain tags, prefixed with `tags:` and separated by commas (optional spaces in-between).
-  - Make sure the first tag in your snippet's tags is one of the main categories, as seen in the website.
-  - Snippet tags must include a difficulty setting (`begginer`, `intermediate` or `advanced`), preferrably at the end of the list.
-- **Snippet titles** should be the same as the name of the main entity that is present in the snippet.
-  - All snippet titles must be prefixed with `title:` and be at the very first line of your snippet's frontmatter.
-  - Snippet titles must be unique (although if you cannot find a better title, just add some placeholder at the end of the filename and title and we will figure it out).
-  - Follow snippet titles with an empty line.
-- **Snippet descriptions** must be short and to the point. Try to explain _what_ the snippet does and _how_ the snippet works and what language features are used. Remember to include what functions/methods/classes you are using and why.
-  - Follow snippet descriptions with an empty line.
-- **Snippet code** must be enclosed inside ` ```blog ` and ` ``` `.
-  - Remember to start your snippet's code on a new line below the opening backticks.
-  - Use standard function notation to define your snippet.
-  - Please indent with 2 spaces per indentation level. This helps keep the format consistent across the website and increases readability.
-  - Try to keep your snippets' code short and to the point. Use modern techniques and features. Make sure to test your code thoroughly before submitting.
-  - All snippets must be followed by one (more if necessary) test case after the code, in a new block enclosed inside ` ```blog ` and ` ``` `. Use multiline examples only if necessary.
-  - Try to make your snippet name unique, so that it does not conflict with existing snippets.
-- Snippets should be as brief as possible, without sacrificing functionality. If your snippet seems longer than most, you can still submit it, and we can help you shorten it or figure out ways to improve it.
-- Snippets _should_ solve real-world problems, no matter how simple.
-- Snippets _should_ be abstract enough to be applied to different scenarios.
-- You can start creating a new snippet, by using the [snippet template](snippet-template.md) to format your snippets.
+This will allow you to use our customized tools for all of our content repositories.
+
+## How you can help
+
+- Submit pull requests with new snippets (see guidelines below) or snippet updates (tags, descriptions, explanations, typos, examples, code improvements).
+- Open issues for things you want to see added, modified, discuss ideas or help out with existing issues. 
+
+## Ground rules
+
+Breaking any of these rules will result in your pull request being closed. Please follow these guidelines above all else:
+
+- **Always be polite and respectful to others** and try to follow the advice of the moderators/collaborators/owners.
+- **Only modify snippet files**, never modify the generated files in the `blog_data` directory, except for the `blog_authors.json` file.
+- **Use the integration tools commands** to generate new snippets, ensuring they have the correct name and are in the correct location.
+- **Follow snippet format exactly**, otherwise your snippets will not be recognized correctly by the tools responsible for publishing them on the website. This includes such things as spacing and empty lines - if you accidentally make a mistake, consult the repository's [snippet template](snippet-template.md).
+- **Snippets should solve real-world problems**, no matter how simple and should be abstract enough to be applied to different scenarios.
+
+## Snippet creation
+
+After installing the integration tools, you can run the following command:
+
+```sh
+create-new-snippet <my-snippet-name>
+```
+
+Replace `<my-snippet-name>` with the name of the snippet you are adding. 
+
+## Snippet guidelines
+
+- Snippets must have all their frontmatter sections (title, tags etc.) filled.
+- Snippet filenames must roughly correspond to the snippet title and be in `kebab-case`.
+- Snippet types must be one of the following: `story`, `list` or `question`.
+- Snippet titles must be short enough and correspond to the type of the snippet. Titles for each type must follow the format of previous snippets (e.g. `The trickiest thing about X` for a story, `X things that are awesome` for a list, `How do I do X in Y?` for a question).
+- Snippet types must be one of the following: `story`, `list` or `question`. 
+- Snippet tags must be comma-separated. You are allowed to specify a single language tag (e.g. `react` or `javascript`), preferrably as the first tag.
+- Snippet authors must be comma-separated and should be added in JSON format as seen in `blog_data/blog_authors.json`.
+- Snippet covers must be added inside the `blog_images` directory and have the exact same name as the snippet filename. Snippet covers must be Unsplash images of appropriate theme and content and must be credited accordingly at the end of the snippet.
+- Snippet excerpts must be a very short description of the snippet's content, up to 180 characters in length. The excerpt must contain some of the main keywords and a general intro to the snippet, as it will be used for social sharing and previewing the snippet iteself.
+- Snippets that are of the `list` type must be written as such, check previously submitted snippets for more details.
+- Snippet code and examples must be enclosed in appropriate, language-tagged blocks, be short and use modern techniques and features. Also make sure to test your code before submitting. Always use soft tabs (2 spaces), never hard tabs.
+- Snippets with code examples should follow the related language repository's guidelines in regards to code formatting and conventions.
