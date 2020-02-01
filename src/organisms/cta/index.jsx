@@ -15,6 +15,10 @@ const AVAILABLE_CTA_PROBABILITIES = [
   0.4,
   0.6,
 ];
+const AVAILABLE_CTA_PROBABILITIES_WHEN_ONLY_SOCIAL = [
+  0.0,
+  1.0,
+];
 
 /**
  * Renders a call to action (backdrop, text and button).
@@ -23,9 +27,12 @@ const AVAILABLE_CTA_PROBABILITIES = [
 const CTA = ({
   snippetUrl,
   acceptsCookies,
+  onlySocial,
 }) => {
   const [ctaId, setCtaId] = React.useState(
-    weightedSample(AVAILABLE_CTAS, AVAILABLE_CTA_PROBABILITIES)
+    weightedSample(
+      AVAILABLE_CTAS,
+      onlySocial ? AVAILABLE_CTA_PROBABILITIES_WHEN_ONLY_SOCIAL : AVAILABLE_CTA_PROBABILITIES )
   );
 
   return (
@@ -45,7 +52,7 @@ const CTA = ({
           rel: 'noopener',
           target: '_blank',
         } }
-        className={ `btn-cta btn-${ctaId}` }
+        className={ `btn-cta btn-${ctaId} icon icon-${ctaId === 'github' ? 'star' : ctaId}` }
         onClick={ e => {
           if (acceptsCookies && typeof window !== 'undefined' && typeof gtag === `function`) {
             e.preventDefault();
@@ -65,6 +72,8 @@ CTA.propTypes = {
   snippetUrl: PropTypes.string,
   /** Does the user accept cookies? */
   acceptsCookies: PropTypes.bool,
+  /** Should this CTA only link to social? */
+  onlySocial: PropTypes.bool,
 };
 
 export default CTA;

@@ -76,13 +76,14 @@ const literals = {
   'footer.cookies': 'Cookies',
   'footer.discord': 'Discord',
   // Literals
-  'Expertise': level => `${capitalize(level, true)}`,
+  'Expertise': level => `${level}`,
   'Search snippets': 'Search snippets',
   'Search...': 'Search...',
   'Search': 'Search',
   'Search results for': keyphrase => `Search results for ${keyphrase}`,
   'Search results': 'Search results',
   'Click to view more results': 'Click to view more results',
+  'Click to view more snippets': 'Click to view more snippets',
   'Copy to clipboard': 'Copy to clipboard',
   'Examples': 'Examples',
   'Back to': pageTitle => `Back to ${capitalize(pageTitle, true)}`,
@@ -97,9 +98,15 @@ const literals = {
   '.': '.',
   ', ': ', ',
   ' & ': ' & ',
-  'Click on a snippet card to view the snippet': 'Click on a snippet card to view the snippet',
+  'snippet_list.with_sublinks.': listingType =>
+    listingType === 'blog'
+      ? 'Click on a card to view the blog post or choose a keyword from the above list to only see matching blog posts.'
+      : 'Click on a snippet card to view the snippet or choose a keyword from the above list to only see matching snippets.',
+  'snippet_list.': listingType =>
+    listingType === 'blog'
+      ? 'Click on a card to view the blog post.'
+      : 'Click on a snippet card to view the snippet.',
   'Click on a snippet card to view the snippet.': 'Click on a snippet card to view the snippet.',
-  'Click on a snippet card to view the snippet or choose a keyword from the above list to only see matching snippets.': 'Click on a snippet card to view the snippet or choose a keyword from the above list to only see matching snippets.',
   'Start typing a keyphrase to see matching snippets.': 'Start typing a keyphrase to see matching snippets.',
   'Switch to dark mode': 'Switch to dark mode',
   'Switch to light mode': 'Switch to light mode',
@@ -145,6 +152,7 @@ const literals = {
   'Recommended snippets': 'Recommended snippets',
   'Like 30 seconds of code?': 'Like 30 seconds of code?',
   'We couldn\'t find any results for the keyphrase ': 'We couldn\'t find any results for the keyphrase ',
+  'Blog': 'Blog',
 };
 
 export default literals;

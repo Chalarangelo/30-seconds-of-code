@@ -7,10 +7,11 @@ export default {
     'snippet_data/snippets.json',
   ],
   slug: 'c-sharp',
-  featured: 4,
+  featured: 6,
   theme: {
     backColor: '#672179',
     foreColor: '#ffffff',
+    iconName: 'csharp',
   },
   biasPenaltyMultiplier: 1.02,
   tagScores: {

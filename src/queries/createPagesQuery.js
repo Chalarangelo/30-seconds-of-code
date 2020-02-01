@@ -93,4 +93,41 @@ export default `
       }
     }
   }
+
+  blogSnippets: allSnippet(
+    sort: {fields: firstSeen, order: DESC}, 
+    filter: {blog: {eq: true}}
+  ) {
+    edges {
+      node {
+        id
+        slug
+        url
+        tags {
+          all
+          primary
+        }
+        text {
+          full
+          short
+        }
+        title
+        html {
+          description
+          fullDescription
+        }
+        expertise
+        ranking
+        firstSeen
+        lastUpdated
+        archived
+        authors {
+          name
+          profile
+        }
+        cover
+        blog
+      }
+    }
+  }
 `;

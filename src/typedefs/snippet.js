@@ -4,18 +4,20 @@ import {
   Html,
   Code,
   Tags,
+  Authors,
   Language
 } from './index';
 
 const Snippet = shape({
   title: string,
-  expertise: oneOf(EXPERTISE_LEVELS),
+  expertise: oneOf([...EXPERTISE_LEVELS, '']),
   tags: Tags,
   language: Language,
   code: Code,
   html: Html,
   url: string,
   description: string,
+  authors: Authors,
 });
 
 Snippet.toString = () => `

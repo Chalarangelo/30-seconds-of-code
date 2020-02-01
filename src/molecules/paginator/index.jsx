@@ -72,7 +72,7 @@ const Paginator = ({
     >
       { pageNumber > 1 &&
       <AnchorButton
-        className='previous-page'
+        className='previous-page icon icon-chevron-left'
         link={ {
           internal: true,
           url: `${baseUrl}/p/${pageNumber - 1}`,
@@ -108,7 +108,7 @@ const Paginator = ({
       }
       { pageNumber < totalPages &&
       <AnchorButton
-        className='next-page'
+        className='next-page icon icon-chevron-right'
         link={ {
           internal: true,
           url: `${baseUrl}/p/${pageNumber + 1}`,

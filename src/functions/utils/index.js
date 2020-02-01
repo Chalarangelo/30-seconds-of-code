@@ -16,8 +16,6 @@ import {
 } from './math';
 
 import {
-  determineExpertiseFromTags,
-  stripExpertiseFromTags,
   transformSnippetIndex,
   uniqueElements,
   similarity,
@@ -38,8 +36,6 @@ export {
   stripMarkdownFormat,
   optimizeNodes,
   optimizeAllNodes,
-  determineExpertiseFromTags,
-  stripExpertiseFromTags,
   mapNumRange,
   getURLParameters,
   getBaseURL,

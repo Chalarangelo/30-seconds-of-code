@@ -57,12 +57,12 @@ module.exports = {
   ],
   // Snippet ranking engine parameters
   rankingEngine: {
-    tagScorelimit: 12,
+    tagScoreLimit: 12,
     expertiseScoreLimit: 8,
     timeScoreLimitMultiplier: 0.6,
-    beginnerExpertiseScore: 6,
+    beginnerExpertiseScore: 3,
     intermediateExpertiseScore: 8,
-    advancedExpertiseScore: 2,
+    advancedExpertiseScore: 5,
     firstSeenScorePercentage: 0.47,
     lastUpdateScorePercentage: 0.36,
     updateCountScorePercentage: 0.17,

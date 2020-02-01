@@ -7,10 +7,11 @@ export default {
     'snippet_data/snippets.json',
   ],
   slug: 'python',
-  featured: 2,
+  featured: 4,
   theme: {
     backColor: '#3c77a9',
     foreColor: '#ffffff',
+    iconName: 'python',
   },
   biasPenaltyMultiplier: 1.02,
   tagScores: {

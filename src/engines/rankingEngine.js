@@ -32,38 +32,46 @@ const dates = [
   +d1Year,
 ];
 
+const DEFAULT_OPTIONS = {
+  timeSensitive: false,
+};
+
 /**
  * Given a raw snippet object produce a ranking between 0 and 1.
  * Negative rankings can be produced due to biasPenaltyMultiplier values.
  */
-const determineSnippetRanking = snippet => {
+const determineSnippetRanking = (snippet, options = DEFAULT_OPTIONS) => {
   // Initialize score
   let score = 0;
 
   // Calculate limits
-  const dataScoreLimit =
-    rankingEngine.tagScorelimit +
+  const dataScoreLimit = options.timeSensitive ? 35 :
+    rankingEngine.tagScoreLimit +
     rankingEngine.expertiseScoreLimit +
     Object.values(snippet.keywordScores).reduce((a, v) => a + v, 0);
-  const timeScoreLimit = Math.floor(dataScoreLimit * rankingEngine.timeScoreLimitMultiplier);
+  const timeScoreLimit = options.timeSensitive ? 65 :
+    Math.floor(dataScoreLimit * rankingEngine.timeScoreLimitMultiplier);
+
 
   // Combine content for indexing
   const indexableContent = [
     snippet.title,
-    snippet.attributes.codeBlocks.src,
-    snippet.attributes.codeBlocks.es6,
-    snippet.attributes.codeBlocks.css,
-    snippet.attributes.codeBlocks.html,
-    snippet.attributes.codeBlocks.js,
-    snippet.attributes.codeBlocks.style,
+    snippet.attributes.codeBlocks && snippet.attributes.codeBlocks.src || '',
+    snippet.attributes.codeBlocks && snippet.attributes.codeBlocks.es6 || '',
+    snippet.attributes.codeBlocks && snippet.attributes.codeBlocks.css || '',
+    snippet.attributes.codeBlocks && snippet.attributes.codeBlocks.html || '',
+    snippet.attributes.codeBlocks && snippet.attributes.codeBlocks.js || '',
+    snippet.attributes.codeBlocks && snippet.attributes.codeBlocks.style || '',
     snippet.attributes.text,
   ].join(' ');
 
   // Add points from tags
-  score += snippet.attributes.tags.reduce((a, v) =>
-    snippet.tagScores[v] ? a + snippet.tagScores[v] : a, 0
-  );
-  score = Math.min(score, rankingEngine.tagScorelimit);
+  score += snippet.attributes.tags.reduce((a, v) => {
+    if(snippet.tagScores && snippet.tagScores[v])
+      return snippet.tagScores[v] ? a + snippet.tagScores[v] : a;
+    return a;
+  }, 0);
+  score = Math.min(score, rankingEngine.tagScoreLimit);
 
   // Add points from expertise
   if (snippet.attributes.tags.includes('beginner'))

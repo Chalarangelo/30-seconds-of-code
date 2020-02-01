@@ -15,7 +15,7 @@ const LinkBackAnchor = ({
 }) =>
   (
     <Anchor
-      className={ trimWhiteSpace`link-back ${className}` }
+      className={ trimWhiteSpace`link-back icon icon-arrow-left${className}` }
       link={ link }
       { ...rest }
     >

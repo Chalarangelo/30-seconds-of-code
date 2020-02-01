@@ -31,7 +31,7 @@ const CodepenButton = ({
       }
     />
     <Button
-      className='codepen-btn'
+      className='codepen-btn icon icon-codepen'
       title={ _l('Edit on CodePen') }
     />
   </form>

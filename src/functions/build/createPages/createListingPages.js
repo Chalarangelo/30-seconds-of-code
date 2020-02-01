@@ -45,19 +45,31 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
     .filter(v => !v.archived)
     .forEach(listingMeta => {
       const slugPrefix = listingMeta.slugPrefix;
-      const searchIndexSlugData = searchIndex.edges.filter(s => s.node.slug.startsWith(`${slugPrefix}`));
+      const searchIndexName = searchIndex.edges.find(s => s.node.slug.startsWith(`${slugPrefix}`)).node.language.long || '';
+      const searchIndexSlugData = searchIndex.edges.filter(s =>
+        s.node.slug.startsWith(`${slugPrefix}`) ||
+        (s.node.blog && s.node.tags.all.find(t => t.toLowerCase() === searchIndexName.toLowerCase()))
+      );
       const searchIndexSlugChunks = chunk(transformSnippetIndex(searchIndexSlugData), 20);
-      const searchIndexName = searchIndexSlugData[0].node.language.long;
       const searchIndexTagPrefixes = listingMeta.tags;
-      const languageListingSublinks = listingMeta.tags
-        .map(tag => ({
+      const languageListingSublinks = [
+        {
           link: {
             internal: true,
-            url: `${slugPrefix}/t/${tag}/p/1`,
+            url: `${slugPrefix}/p/1`,
           },
-          name: _l`tag.${tag}`,
-          style: listingMeta.style,
-        }));
+          name: _l`tag.${'all'}`,
+          selected: true,
+        },
+        ...listingMeta.tags
+          .map(tag => ({
+            link: {
+              internal: true,
+              url: `${slugPrefix}/t/${tag}/p/1`,
+            },
+            name: _l`tag.${tag}`,
+          })),
+      ];
 
       createListingPages(
         searchIndexSlugChunks,
@@ -65,19 +77,27 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
         createPage,
         {
           ...context,
-          listingName: _l`codelang.${searchIndexName}`,
+          listingName: listingMeta.blog ? _l('Blog') : _l`codelang.${searchIndexName}`,
           snippetCount: searchIndexSlugData.length,
-          listingType: 'language',
-          listingLanguage: searchIndexName,
-          listingSublinks: languageListingSublinks,
+          listingType: listingMeta.blog ? 'blog' : 'language',
+          listingLanguage: listingMeta.blog ? 'blog' : searchIndexName,
+          listingSublinks: listingMeta.blog ? [] : languageListingSublinks,
         },
         `${slugPrefix}`
       );
 
       searchIndexTagPrefixes.forEach(tagPrefix => {
         const searchIndexTagData = searchIndex.edges
-          .filter(s => s.node.tags.primary === tagPrefix && s.node.slug.startsWith(`${slugPrefix}`));
+          .filter(s =>
+            s.node.tags.primary === tagPrefix && s.node.slug.startsWith(`${slugPrefix}`) ||
+            ( s.node.blog &&
+              s.node.tags.all.find(t => t.toLowerCase() === searchIndexName.toLowerCase()) &&
+              s.node.tags.all.find(t => t.toLowerCase() === tagPrefix.toLowerCase())
+            )
+          );
         const searchIndexTagChunks = chunk(transformSnippetIndex(searchIndexTagData), 20);
+        const tagListingSublinks = languageListingSublinks
+          .map(tag => ({...tag, selected: tag.link.url.indexOf(`/t/${tagPrefix}/`) !== -1}));
 
         createListingPages(
           searchIndexTagChunks,
@@ -90,6 +110,7 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
             listingType: 'tag',
             listingLanguage: searchIndexName,
             listingTag: tagPrefix,
+            listingSublinks: listingMeta.blog ? [] : tagListingSublinks,
           },
           `${slugPrefix}/t/${tagPrefix}`
         );

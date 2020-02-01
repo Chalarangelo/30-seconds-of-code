@@ -16,6 +16,10 @@ const templateData = {
   pageType: 'snippet',
 };
 
+const determineDescription = (snippet, cardTemplate) =>
+  (cardTemplate === 'blog') ? snippet.description :
+    _l`site.pageDescription${{...templateData, snippetName: snippet.title, snippetLanguage: snippet.language.long }}`;
+
 /**
  * Renders snippet pages.
  */
@@ -35,8 +39,8 @@ const SnippetPage = ({
     <>
       <Meta
         title={ snippet.title }
-        description={ _l`site.pageDescription${{...templateData, snippetName: snippet.title, snippetLanguage: snippet.language.long }}` }
-        logoSrc={ splashLogoSrc }
+        description={ determineDescription(snippet, cardTemplate) }
+        logoSrc={ cardTemplate === 'blog' ? snippet.cover.src : splashLogoSrc }
         structuredData={ {
           title: snippet.title,
           description: snippet.description,
@@ -67,6 +71,7 @@ const SnippetPage = ({
           toastContainer='toast-container'
         />
         <CTA
+          onlySocial={ cardTemplate === 'blog' }
           snippetUrl={ snippet.url.split('/').slice(0, 5).join('/') }
           acceptsCookies={ acceptsCookies }
         />

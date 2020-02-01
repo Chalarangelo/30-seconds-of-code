@@ -2,6 +2,7 @@
 import config from '../../config';
 const { recomendationEngine } = config;
 import { mapNumRange, similarity } from 'functions/utils';
+import { determineLanguageFromTags, stripLanguageFromTags } from 'functions/transformers';
 
 const determineRecommendedSnippetsWithoutContext = snippetNodes => {
   const freshnessSortedNodes = Object.entries(snippetNodes)
@@ -16,23 +17,24 @@ const determineRecommendedSnippetsWithoutContext = snippetNodes => {
     const freshnessValue = mapNumRange(freshnessMaxValue - node[1].meta.lastUpdated, freshnessMaxDifference, 0, 0.0, recomendationEngine.noContextFreshnessMultiplier).toFixed(4);
     const indexableContent = [
       node[1].title,
-      node[1].attributes.codeBlocks.src,
-      node[1].attributes.codeBlocks.es6,
-      node[1].attributes.codeBlocks.css,
-      node[1].attributes.codeBlocks.html,
-      node[1].attributes.codeBlocks.js,
-      node[1].attributes.codeBlocks.style,
+      node[1].attributes.codeBlocks && node[1].attributes.codeBlocks.src || '',
+      node[1].attributes.codeBlocks && node[1].attributes.codeBlocks.es6 || '',
+      node[1].attributes.codeBlocks && node[1].attributes.codeBlocks.css || '',
+      node[1].attributes.codeBlocks && node[1].attributes.codeBlocks.html || '',
+      node[1].attributes.codeBlocks && node[1].attributes.codeBlocks.js || '',
+      node[1].attributes.codeBlocks && node[1].attributes.codeBlocks.style || '',
       node[1].attributes.text,
     ].join(' ');
 
-    const keywordMaxValue = Object.values(node[1].keywordScores).reduce((acc, v) => acc + v, 0);
+    const keywordMaxValue = Object.values(node[1].keywordScores || []).reduce((acc, v) => acc + v, 0);
     let keywordValue = 0;
 
-    Object.keys(node[1].keywordScores).forEach(k => {
+    Object.keys(node[1].keywordScores || []).forEach(k => {
       if (indexableContent.indexOf(k) !== -1) keywordValue += node[1].keywordScores[k];
     });
 
     keywordValue = mapNumRange(keywordValue, 0, keywordMaxValue, 0.0, recomendationEngine.noContextKeywordMultiplier).toFixed(4);
+    keywordValue = isNaN(keywordValue) ? 0 : keywordValue;
 
     return {
       recommendationRanking: +freshnessValue + +keywordValue,
@@ -42,11 +44,48 @@ const determineRecommendedSnippetsWithoutContext = snippetNodes => {
 };
 
 const determineRecommendedSnippetsWithContext = (snippetNodes, snippetContext) => {
+  const _snippetContext = {
+    language: snippetContext.node.blog
+      ? determineLanguageFromTags(snippetContext.node.tags.all)
+      : snippetContext.node.language,
+    primaryTag: snippetContext.node.blog
+      ? stripLanguageFromTags(snippetContext.node.tags.all)[0]
+      : snippetContext.node.tags.primary,
+  };
+
   let relatedSnippets = snippetNodes
     .filter(v =>
-      v.node.language.short === snippetContext.node.language.short
-      && v.node.tags.primary === snippetContext.node.tags.primary
+      (
+        v.node.blog &&
+        v.node.tags.all.find(t => t.toLowerCase() === _snippetContext.language.long.toLowerCase()) &&
+        v.node.tags.all.find(t => t.toLowerCase() === _snippetContext.primaryTag.toLowerCase())
+      ) || (
+        v.node.language &&
+        v.node.language.short === _snippetContext.language.short &&
+        v.node.tags.primary === _snippetContext.primaryTag
+      )
     );
+  // Handle snippets with very few recommendations (use language)
+  if(relatedSnippets.length < 3) {
+    relatedSnippets.push(
+      ...snippetNodes
+        .filter(v =>
+          v.node.language &&
+          v.node.language.long.toLowerCase() === _snippetContext.language.long.toLowerCase()
+        )
+        .sort((a, b) => b.ranking - a.ranking)
+        .slice(0, 3 - relatedSnippets.length + 1)
+    );
+  }
+  // Handle snippets with extremely few recommendations (use ranking)
+  if (relatedSnippets.length < 3) {
+    relatedSnippets.push(
+      ...snippetNodes
+        .sort((a, b) => b.ranking - a.ranking)
+        .slice(0, 3 - relatedSnippets.length + 1)
+    );
+  }
+
   relatedSnippets
     .forEach(snippet =>
       snippet.similarity = similarity(snippet.node.tags.all, snippetContext.node.tags.all).length

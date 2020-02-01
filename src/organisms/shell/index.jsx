@@ -56,21 +56,21 @@ const Shell = ({
       }
       <NavBar buttons={ [
         {
-          icon: 'search',
-          className: isSearch ? 'active' : '',
-          link: {
-            internal: true,
-            url: '/search',
-            title: 'Search',
-          },
-        },
-        {
           icon: 'list',
           className: isListing ? 'active' : '',
           link: {
             internal: true,
             url: '/list/p/1',
             title: 'Snippet list',
+          },
+        },
+        {
+          icon: 'search',
+          className: isSearch ? 'active' : '',
+          link: {
+            internal: true,
+            url: '/search',
+            title: 'Search',
           },
         },
         {

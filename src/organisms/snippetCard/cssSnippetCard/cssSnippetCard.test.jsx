@@ -15,9 +15,9 @@ describe('<CssSnippetCard />', () => {
     language: { short: 'css', long: 'CSS' },
     tags: {
       primary: 'function',
-      all: ['function', 'recursion', 'intermediate'],
+      all: ['function', 'recursion', 'Intermediate'],
     },
-    expertise: 'intermediate',
+    expertise: 'Intermediate',
     browserSupport: {
       supportPercentage: 96.51,
     },

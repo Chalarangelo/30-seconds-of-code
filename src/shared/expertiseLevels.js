@@ -1,1 +1,1 @@
-export default ['beginner', 'intermediate', 'advanced'];
+export default ['Beginner', 'Intermediate', 'Advanced'];

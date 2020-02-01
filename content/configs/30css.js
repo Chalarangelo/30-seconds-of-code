@@ -13,6 +13,7 @@ export default {
   theme: {
     backColor: '#3f4de4',
     foreColor: '#ffffff',
+    iconName: 'css',
   },
   biasPenaltyMultiplier: 1.02,
   tagScores: {

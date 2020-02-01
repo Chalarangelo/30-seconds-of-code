@@ -8,10 +8,11 @@ export default {
   ],
   slug: 'js',
   reducer: 'es6Reducer',
-  featured: 1,
+  featured: 2,
   theme: {
     backColor: '#f6d854',
     foreColor: '#392f31',
+    iconName: 'js',
   },
   biasPenaltyMultiplier: 1.02,
   tagScores: {

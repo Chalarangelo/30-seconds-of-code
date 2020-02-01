@@ -1,6 +1,4 @@
 import {
-  determineExpertiseFromTags,
-  stripExpertiseFromTags,
   transformSnippetIndex,
   uniqueElements,
   similarity,
@@ -8,28 +6,13 @@ import {
   chunk
 } from './array';
 
-describe('determineExpertiseFromTags', () => {
-  it('determines expertise from tags', () => {
-    expect(determineExpertiseFromTags(['array', 'advanced'])).toBe('advanced');
-  });
-  it('returns default expertise if none is found', () => {
-    expect(determineExpertiseFromTags(['array'])).toBe('intermediate');
-  });
-});
-
-describe('stripExpertiseFromTags', () => {
-  it('strips expertise from tags', () => {
-    expect(stripExpertiseFromTags(['array', 'advanced'])).toEqual(['array']);
-  });
-});
-
 describe('transformSnippetIndex', () => {
   it('transforms the snippet index', () => {
     const edges = [
       {
         node: {
           title: 'a',
-          expertise: 'intermediate',
+          expertise: 'Intermediate',
           tags: {
             primary: 'array',
           },
@@ -48,8 +31,8 @@ describe('transformSnippetIndex', () => {
     ];
     const result = transformSnippetIndex(edges);
     expect(result[0].title).toBe(edges[0].node.title);
-    expect(result[0].expertise).toBe(edges[0].node.expertise);
-    expect(result[0].primaryTag).toBe(edges[0].node.tags.primary);
+    expect(result[0].expertise).toBe('Intermediate');
+    expect(result[0].primaryTag).toBe('Array');
     expect(result[0].language).toBe(edges[0].node.language.long);
     expect(result[0].description).toBe(edges[0].node.html.description.trim());
     expect(result[0].url).toBe(edges[0].node.slug);

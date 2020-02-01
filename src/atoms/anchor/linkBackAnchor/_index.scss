@@ -6,21 +6,20 @@ a.link-back {
   display: block;
   margin: 0.8125rem 1.25rem 1.5rem;
   padding-left: 24px;
-  background-image: generate-icon-background("arrow-left", $fore-color-dark-light, 'none', 2, 20);
-  background-position: 0 center;
-  background-repeat: no-repeat;
+  position: relative;
   &, &:link, &:visited {
     color: var(--fore-color-dark);
+  }
+
+  &:before {
+    position: absolute;
+    left: 0;
+    font-size: 20px;
+    line-height: 24px;
   }
 
   @media screen and (max-width: calc(#{$layout-medium-breakpoint} - 1px)) {
     margin-left: 0.875rem;
     margin-right: 0.875rem;
-  }
-}
-
-.page-container.dark {
-  a.link-back {
-    background-image: generate-icon-background("arrow-left", $fore-color-dark-dark, 'none', 2, 20);
   }
 }

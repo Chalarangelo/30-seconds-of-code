@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 const Toast = ({
   message,
 }) => (
-  <div className="toast">
+  <div className="toast icon icon-check">
     { message }
   </div>
 );
