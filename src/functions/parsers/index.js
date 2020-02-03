@@ -4,7 +4,6 @@ import parseRequirables from './parseRequirables';
 import parseReducers from './parseReducers';
 import parseResolvers from './parseResolvers';
 import parseTemplates from './parseTemplates';
-import parseSnippetContext from './parseSnippetContext';
 import parseListingMetas from './parseListingMetas';
 
 export {
@@ -14,6 +13,5 @@ export {
   parseReducers,
   parseResolvers,
   parseTemplates,
-  parseSnippetContext,
   parseListingMetas
 };
