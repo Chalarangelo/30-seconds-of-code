@@ -6,7 +6,7 @@ import createListingPages from './createListingPages';
 import createSearchIndexPage from './createSearchIndexPage';
 import createSearchPage from './createSearchPage';
 import createSnippetPages from './createSnippetPages';
-import { transformSnippetIndex } from 'functions/utils';
+import { transformSnippetIndex } from 'functions/transformers';
 import { parseListingMetas } from 'functions/parsers';
 
 /**

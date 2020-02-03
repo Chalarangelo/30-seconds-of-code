@@ -1,4 +1,4 @@
-import { transformSnippetIndex } from 'functions/utils';
+import { transformSnippetIndex } from 'functions/transformers';
 
 const createHomePage = (searchIndex, listingMetas, homePage, createPage, context) => {
   const featuredSources = listingMetas

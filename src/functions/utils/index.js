@@ -16,7 +16,6 @@ import {
 } from './math';
 
 import {
-  transformSnippetIndex,
   uniqueElements,
   similarity,
   weightedSample,
@@ -40,7 +39,6 @@ export {
   getURLParameters,
   getBaseURL,
   throttle,
-  transformSnippetIndex,
   uniqueElements,
   similarity,
   weightedSample,
