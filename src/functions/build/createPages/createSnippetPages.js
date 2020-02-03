@@ -1,6 +1,6 @@
 import { parseSnippetContext } from 'functions/parsers';
 import { recommendationEngine } from 'engines';
-import { transformSnippetIndex } from 'functions/utils';
+import { transformSnippetIndex } from 'functions/transformers';
 
 /**
  * Creates individual snippet pages.

@@ -1,4 +1,5 @@
-import { chunk, transformSnippetIndex } from 'functions/utils';
+import { chunk } from 'functions/utils';
+import { transformSnippetIndex } from 'functions/transformers';
 import _ from 'lang';
 const _l = _('en');
 
