@@ -35,4 +35,27 @@ describe('transformSnippetIndex', () => {
     expect(result[0].searchTokens).toBe(edges[0].node.searchTokens);
     expect(result[0].irrelevantStuff).toBe(undefined);
   });
+
+  it('handles an empty language appropriately', () => {
+    const edges = [
+      {
+        node: {
+          title: 'a',
+          expertise: 'Intermediate',
+          tags: {
+            primary: 'array',
+          },
+          language: {},
+          html: {
+            description: 'desc ',
+          },
+          slug: '/a',
+          searchTokens: '',
+          irrelevantStuff: 'data',
+        },
+      },
+    ];
+    const result = transformSnippetIndex(edges);
+    expect(result[0].language).toBe(undefined);
+  });
 });
