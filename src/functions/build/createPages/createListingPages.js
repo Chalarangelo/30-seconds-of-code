@@ -21,6 +21,21 @@ const createListingPages = (indexedChunks, listingPage, createPage, context, bas
   });
 };
 
+const createListingPagesWithOrderOptions = (
+  listingPage, createPage, context, baseUrl, orders, chunks, contextCustomizer = () => ({})
+) => {
+  orders.forEach((order, i) => {
+    createListingPages(
+      chunks[i],
+      listingPage,
+      createPage,
+      { ...context, ...contextCustomizer(order, i)},
+      baseUrl,
+      order
+    );
+  });
+};
+
 const createAllListingPages = (searchIndex, listingMetas, listingPage, createPage, context) => {
   // Create listing pages for the main listing
   const searchIndexChunks = chunk(transformSnippetIndex(searchIndex.edges), 20);
