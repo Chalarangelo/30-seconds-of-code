@@ -1,6 +1,5 @@
-import { parseSnippetContext } from 'functions/parsers';
 import { recommendationEngine } from 'engines';
-import { transformSnippetIndex } from 'functions/transformers';
+import { transformSnippetIndex, transformSnippetContext } from 'functions/transformers';
 
 /**
  * Creates individual snippet pages.
@@ -19,7 +18,7 @@ const createSnippetPages = (
       path: `${snippet.node.slug}`,
       component: snippetPage,
       context: {
-        snippet: parseSnippetContext(snippet.node, commonContext.cardTemplate, imageContext),
+        snippet: transformSnippetContext(snippet.node, commonContext.cardTemplate, imageContext),
         ...commonContext,
         recommendedSnippets: transformSnippetIndex(recommendedSnippets.slice(0, 3)),
       },

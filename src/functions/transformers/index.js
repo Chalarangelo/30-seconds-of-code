@@ -7,7 +7,8 @@ import {
 } from './transformTags';
 
 import {
-  transformSnippetIndex
+  transformSnippetIndex,
+  transformSnippetContext
 } from './transformSnippets';
 
 export {
@@ -16,5 +17,6 @@ export {
   determineLanguageFromTags,
   stripLanguageFromTags,
   stripExpertiseFromTags,
-  transformSnippetIndex
+  transformSnippetIndex,
+  transformSnippetContext
 };
