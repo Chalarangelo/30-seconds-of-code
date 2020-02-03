@@ -10,6 +10,7 @@ const _l = _('en');
 // eslint-disable-next-line complexity
 const RecommendationList = ({
   snippetList,
+  hasMore = false,
 }) => {
   return snippetList.length ? (
     <>
@@ -22,16 +23,17 @@ const RecommendationList = ({
           snippet={ snippet }
         />
       )) }
-
-      <Anchor
-        className='recommendation-list-view-more'
-        link={ {
-          internal: true,
-          url: `/list/p/1`,
-        } }
-      >
-        { _l('Click to view more snippets') }
-      </Anchor>
+      { hasMore ?
+        <Anchor
+          className='recommendation-list-view-more'
+          link={ {
+            internal: true,
+            url: `/list/p/1`,
+          } }
+        >
+          { _l('Click to view more snippets') }
+        </Anchor>
+        : null }
     </>
   ) : null;
 };
@@ -39,6 +41,8 @@ const RecommendationList = ({
 RecommendationList.propTypes = {
   /** List of snippets to be displayed */
   snippetList: PropTypes.arrayOf(SnippetPropType),
+  /** Does this list have more recommendations that are not shown? */
+  hasMore: PropTypes.bool,
 };
 
 export default RecommendationList;
