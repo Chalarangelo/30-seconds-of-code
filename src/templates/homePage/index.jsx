@@ -60,7 +60,7 @@ const HomePage = ({
           { _l('site.description') }
         </p>
         <ListingAnchors items={ listingAnchors } />
-        <RecommendationList snippetList={ recommendedSnippets } />
+        <RecommendationList snippetList={ recommendedSnippets } hasMore />
       </Shell>
     </>
   );
