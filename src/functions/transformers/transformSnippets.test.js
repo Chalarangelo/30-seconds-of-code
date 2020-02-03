@@ -1,5 +1,6 @@
 import {
-  transformSnippetIndex
+  transformSnippetIndex,
+  transformSnippetContext
 } from './transformSnippets';
 
 describe('transformSnippetIndex', () => {
@@ -57,5 +58,71 @@ describe('transformSnippetIndex', () => {
     ];
     const result = transformSnippetIndex(edges);
     expect(result[0].language).toBe(undefined);
+  });
+});
+
+describe('transformSnippetContext', () => {
+  const snippet = {
+    id: 'snippet-a',
+    title: 'a',
+    text: {
+      short: 'description',
+    },
+    url: '/a',
+    slug: '/a',
+    firstSeen: 'firstSeen',
+    lastUpdated: 'lastUpdated',
+    expertise: 'intermediate',
+    language: {
+      long: 'lang',
+      short: 'l',
+    },
+    tags: {
+      primary: 'array',
+      all: ['array', 'function', 'intermediate'],
+    },
+    html: {
+      description: 'desc ',
+    },
+    code: {
+      src: 'code',
+    },
+    irrelevantStuff: 'data',
+  };
+
+  it('transforms the snippet context', () => {
+    const result = transformSnippetContext(snippet);
+    expect(result.id).toBe(snippet.id);
+    expect(result.title).toBe(snippet.title);
+    expect(result.description).toBe(snippet.text.short);
+    expect(result.url).toBe(snippet.url);
+    expect(result.slug).toBe(snippet.slug);
+    expect(result.firstSeen).toBe(snippet.firstSeen);
+    expect(result.lastUpdated).toBe(snippet.lastUpdated);
+    expect(result.expertise).toBe('Intermediate');
+    expect(result.language).toEqual(snippet.language);
+    expect(result.tags.primary).toBe('Array');
+    expect(result.tags.all).toEqual(['Array', 'Function', 'Intermediate']);
+    expect(result.html).toEqual(snippet.html);
+    expect(result.code).toEqual(snippet.code);
+    expect(result.irrelevantStuff).toBe(undefined);
+  });
+
+  it('handles the blog template appropriately', () => {
+    const result = transformSnippetContext({
+      ...snippet, authors: ['a', 'b'], blogType: 'blog.story', cover: 'img.png',
+    }, 'blog', [{
+      node: { absolutePath: 'img.png', childImageSharp: { fluid: 'xxx' }},
+    }]);
+    expect(result.authors).toEqual(['a', 'b']);
+    expect(result.type).toBe('blog.story');
+    expect(result.cover).toBe('xxx');
+  });
+
+  it('handles the css template appropriately', () => {
+    const result = transformSnippetContext({
+      ...snippet, browserSupport: 'support',
+    }, 'css');
+    expect(result.browserSupport).toBe('support');
   });
 });
