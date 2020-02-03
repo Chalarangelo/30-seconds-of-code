@@ -3,10 +3,10 @@ import { transformSnippetIndex } from 'functions/transformers';
 import _ from 'lang';
 const _l = _('en');
 
-const createListingPages = (indexedChunks, listingPage, createPage, context, baseUrl) => {
+const createListingPages = (indexedChunks, listingPage, createPage, context, baseUrl, slugOrderingSegment) => {
   indexedChunks.forEach((chunk, i, chunks) => {
     createPage({
-      path: `${baseUrl}/p/${i + 1}`,
+      path: `${baseUrl}/${slugOrderingSegment}/${i + 1}`,
       component: listingPage,
       context: {
         snippetList: chunk,
@@ -14,6 +14,7 @@ const createListingPages = (indexedChunks, listingPage, createPage, context, bas
           pageNumber: i + 1,
           totalPages: chunks.length,
           baseUrl,
+          slugOrderingSegment,
         },
         ...context,
       },
