@@ -1,24 +1,8 @@
-import { transformTagName } from 'functions/transformers';
-
 /** Chunks an array into smaller arrays of a specified size. */
 export const chunk = (arr, size) =>
   Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
     arr.slice(i * size, i * size + size)
   );
-
-/** Transform the indexed snippets to appropriate format */
-export const transformSnippetIndex = edges =>
-  edges
-    .map(edge => edge.node)
-    .map(node => ({
-      title: node.title,
-      expertise: transformTagName(node.expertise),
-      primaryTag: transformTagName(node.tags.primary),
-      language: node.language && node.language.long ? node.language.long : undefined,
-      description: node.html.description.trim(),
-      url: node.slug,
-      searchTokens: node.searchTokens,
-    }));
 
 /** Returns all unique values of an array. */
 export const uniqueElements = arr => [...new Set(arr)];
