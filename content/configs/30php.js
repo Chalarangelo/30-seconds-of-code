@@ -7,7 +7,7 @@ export default {
     'snippet_data/snippets.json',
   ],
   slug: 'php',
-  featured: 7,
+  featured: 8,
   theme: {
     backColor: '#8b9bd6',
     foreColor: '#2a2843',
