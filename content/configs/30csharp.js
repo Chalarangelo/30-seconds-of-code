@@ -7,7 +7,7 @@ export default {
     'snippet_data/snippets.json',
   ],
   slug: 'c-sharp',
-  featured: 6,
+  featured: 7,
   theme: {
     backColor: '#672179',
     foreColor: '#ffffff',
