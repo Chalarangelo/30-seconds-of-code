@@ -70,6 +70,15 @@
       }
     }
   }
+
+  // Custom styles for dart icon
+  .icon-dart:before {
+    content: '';
+    background-image: generate-icon-background("dartlang", '', '', 0, 26);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 
 .listing-anchors.compact {    
