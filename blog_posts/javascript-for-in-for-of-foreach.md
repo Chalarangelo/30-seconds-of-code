@@ -41,7 +41,7 @@ for (let val of new Set(['a', 'b', 'a', 'd']))
   console.log(val);            // a, b, d (Set values)
 ```
 
-Finally, `forEach()` is a method of the `Array` prototype, which allowes you to iterate over the elements of an array.
+Finally, `forEach()` is a method of the `Array` prototype, which allows you to iterate over the elements of an array.
 While `forEach()` only iterates over arrays, it can access both the value and the index of each element while iterating.
 
 ```js
