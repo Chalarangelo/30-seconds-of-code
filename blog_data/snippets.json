@@ -111,7 +111,7 @@
         "authors": [
           "chalarangelo"
         ],
-        "text": "`for...in` is used to iterate over all enumerable properties of an object, including inherited enumerable properties. \nThis iteration statement can be used with arrays strings or plain objects, but not with `Map` or `Set` objects.\n\n```js\nfor (let prop in ['a', 'b', 'c']) \n  console.log(prop);            // 0, 1, 2 (array indexes)\n\nfor (let prop in 'str') \n  console.log(prop);            // 0, 1, 2 (string indexes)\n\nfor (let prop in {a: 1, b: 2, c: 3}) \n  console.log(prop);            // a, b, c (object property names)\n\nfor (let prop in new Set(['a', 'b', 'a', 'd'])) \n  console.log(prop);            // undefined (no enumerable properties)\n```\n\n`for...of` is used to iterate over iterable objects, iterating over their values instead of their properties.\nThis iteration statement can be used with arrays, strings, `Map` or `Set` objects, but not with plain objects.\n\n```js\nfor (let val of ['a', 'b', 'c']) \n  console.log(val);            // a, b, c (array values)\n\nfor (let val of 'str') \n  console.log(val);            // s, t, r (string characters)\n\nfor (let val of {a: 1, b: 2, c: 3}) \n  console.log(prop);           // TypeError (not iterable)\n\nfor (let val of new Set(['a', 'b', 'a', 'd'])) \n  console.log(val);            // a, b, d (Set values)\n```\n\nFinally, `forEach()` is a method of the `Array` prototype, which allowes you to iterate over the elements of an array.\nWhile `forEach()` only iterates over arrays, it can access both the value and the index of each element while iterating.\n\n```js\n['a', 'b', 'c'].forEach(\n  val => console.log(val)     // a, b, c (array values)\n);\n\n['a', 'b', 'c'].forEach(\n  (val, i) => console.log(i)  // 0, 1, 2 (array indexes)\n);\n```\n\n**Image credit:** [Tim Stief](https://unsplash.com/@timstief?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)\n",
+        "text": "`for...in` is used to iterate over all enumerable properties of an object, including inherited enumerable properties. \nThis iteration statement can be used with arrays strings or plain objects, but not with `Map` or `Set` objects.\n\n```js\nfor (let prop in ['a', 'b', 'c']) \n  console.log(prop);            // 0, 1, 2 (array indexes)\n\nfor (let prop in 'str') \n  console.log(prop);            // 0, 1, 2 (string indexes)\n\nfor (let prop in {a: 1, b: 2, c: 3}) \n  console.log(prop);            // a, b, c (object property names)\n\nfor (let prop in new Set(['a', 'b', 'a', 'd'])) \n  console.log(prop);            // undefined (no enumerable properties)\n```\n\n`for...of` is used to iterate over iterable objects, iterating over their values instead of their properties.\nThis iteration statement can be used with arrays, strings, `Map` or `Set` objects, but not with plain objects.\n\n```js\nfor (let val of ['a', 'b', 'c']) \n  console.log(val);            // a, b, c (array values)\n\nfor (let val of 'str') \n  console.log(val);            // s, t, r (string characters)\n\nfor (let val of {a: 1, b: 2, c: 3}) \n  console.log(prop);           // TypeError (not iterable)\n\nfor (let val of new Set(['a', 'b', 'a', 'd'])) \n  console.log(val);            // a, b, d (Set values)\n```\n\nFinally, `forEach()` is a method of the `Array` prototype, which allows you to iterate over the elements of an array.\nWhile `forEach()` only iterates over arrays, it can access both the value and the index of each element while iterating.\n\n```js\n['a', 'b', 'c'].forEach(\n  val => console.log(val)     // a, b, c (array values)\n);\n\n['a', 'b', 'c'].forEach(\n  (val, i) => console.log(i)  // 0, 1, 2 (array indexes)\n);\n```\n\n**Image credit:** [Tim Stief](https://unsplash.com/@timstief?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)\n",
         "tags": [
           "javascript",
           "array",
@@ -120,10 +120,10 @@
         ]
       },
       "meta": {
-        "hash": "d45789425922b9ddcee1e45723bf2f398fc0d7561f1c91f05e356802ea29c06e",
+        "hash": "af1563c13c9cfc4f3ca9ab6c06c0e23579f134f0a4c37220e95d75eb785f943b",
         "firstSeen": "1579507951",
-        "lastUpdated": "1579509175",
-        "updateCount": 3,
+        "lastUpdated": "1580888902",
+        "updateCount": 4,
         "authorCount": 2
       }
     },
