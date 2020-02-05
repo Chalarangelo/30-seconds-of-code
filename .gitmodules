@@ -19,3 +19,6 @@
 [submodule "content/sources/30blog"]
 	path = content/sources/30blog
 	url = https://github.com/30-seconds/30-seconds-blog
+[submodule "content/sources/30dart"]
+	path = content/sources/30dart
+	url = https://github.com/30-seconds/30-seconds-of-dart
