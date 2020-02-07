@@ -1486,7 +1486,7 @@
     });
     var lastDigit = arr.splice(0, 1)[0];
     var sum = arr.reduce(function (acc, val, i) {
-      return i % 2 !== 0 ? acc + val : acc + val * 2 % 9 || 9;
+      return i % 2 !== 0 ? acc + val : acc + (val * 2 > 9 ? val * 2 - 9 : val * 2);
     }, 0);
     sum += lastDigit;
     return sum % 10 === 0;
