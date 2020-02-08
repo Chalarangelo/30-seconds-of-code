@@ -12,9 +12,6 @@ before_install:
 script:
 - npm run linter
 - npm run extractor
-- npm run packager
-- npm run test
-- npm run vscoder
 after_success:
 - chmod +x .travis/push.sh
 - .travis/push.sh
