@@ -574,14 +574,14 @@
       "type": "snippetListing",
       "title": "has_duplicates",
       "attributes": {
-        "text": "Returns `True` if there are duplicate values in a flast list, `False` otherwise.\n\nUse `set()` on the given list to remove duplicates, compare its length with the length of the list.\n\n",
+        "text": "Returns `True` if there are duplicate values in a flat list, `False` otherwise.\n\nUse `set()` on the given list to remove duplicates, compare its length with the length of the list.\n\n",
         "tags": [
           "list",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "498b0cc49b4a1ad7f98addb9c7bbc84320d91a5558eaf681352086c5ad6edb44"
+        "hash": "fb22c3f566fea0468c7331478cb216890de4af6b86b24f1ac41656bae949d99c"
       }
     },
     {
