@@ -1,6 +1,6 @@
 ---
 title: group_by
-tags: list,object,beginner
+tags: list,object,intermediate
 ---
 
 Groups the elements of a list based on the given function.
