@@ -40,12 +40,17 @@ const ListingPage = ({
     dispatch(pushNewPage(listingName, `${paginator.baseUrl}/p/${paginator.pageNumber}`));
   }, []);
 
+  const isFirstListingPage = listingType === 'main' &&
+    paginator.slugOrderingSegment === 'p' &&
+    paginator.pageNumber === 1;
+
   return (
     <>
       <Meta
         logoSrc={ splashLogoSrc }
-        title={ listingName }
+        title={ isFirstListingPage ? '' : listingName }
         description={ _l`site.pageDescription${{...templateData, snippetCount, listingType, listingLanguage, listingTag }}` }
+        canonical={ isFirstListingPage ? '/' : '' }
       />
       <Shell
         logoSrc={ logoSrc }
@@ -54,6 +59,25 @@ const ListingPage = ({
         withIcon={ true }
         withTitle={ true }
       >
+        {
+          isFirstListingPage ? (
+            <>
+              <h1 className='home-title'>
+                <img
+                  src={ logoSrc }
+                  alt={ _l('Logo') }
+                  className='home-logo'
+                />
+                <span className='home-title-text'>
+                  { _l('site.title') }
+                </span>
+              </h1>
+              <p className='home-sub-title'>
+                { _l('site.description') }
+              </p>
+            </>
+          ) : null
+        }
         <SnippetList
           listingName={ listingTitle }
           listingType={ listingType }
