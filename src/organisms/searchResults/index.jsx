@@ -12,89 +12,43 @@ const _l = _('en');
 const SearchResults = ({
   searchQuery,
   searchResults,
-  isCompact = false,
-}) => {
-  if(isCompact) {
-    return searchQuery.trim().length <= 1 ? (
-      <PageSubtitle className='search-compact-sub'>
-        { _l('Start typing a keyphrase to see matching snippets.') }
+}) =>
+  searchQuery.trim().length <= 1 ? (
+    <PageBackdrop
+      graphicName='search-empty'
+      mainText={ _l('Start typing a keyphrase to see matching snippets.') }
+      mainTextClassName='search-page-text'
+    />
+  ) : searchResults.length === 0 ? (
+    <PageBackdrop
+      graphicName='search-no-results'
+      mainText={ (
+        <>
+          { _l('We couldn\'t find any results for the keyphrase ') }<strong>{ searchQuery }</strong>
+          { _l('.') }
+        </>
+      ) }
+      mainTextClassName='search-page-text'
+    />
+  ) : (
+    <>
+      <PageSubtitle isLight className='search-results-title'>
+        { _l('Search results') }
       </PageSubtitle>
-    ) : searchResults.length === 0 ? (
-      <PageSubtitle className='search-compact-sub'>
-        { _l('We couldn\'t find any results for the keyphrase ') }<strong>{ searchQuery }</strong>
-        { _l('.') }
-      </PageSubtitle>
-    ) : (
-      <>
-        <PageSubtitle className='search-compact-sub'>
-          { _l('Click on a snippet card to view the snippet.') }
-        </PageSubtitle>
-        <PageSubtitle isLight className='search-results-title'>
-          { _l('Search results') }
-        </PageSubtitle>
-        { searchResults.slice(0, 10).map(snippet => (
-          <PreviewCard
-            key={ `snippet_${snippet.url}` }
-            snippet={ snippet }
-          />
-        )) }
-        { searchResults.length > 10 ?
-          <Anchor
-            className='search-compact-view-more'
-            link={ {
-              internal: true,
-              url: `/search?keyphrase=${encodeURIComponent(searchQuery)}`,
-            } }
-          >
-            { _l('Click to view more results') }
-          </Anchor>
-          : null }
-      </>
-    );
-  } else {
-    return searchQuery.trim().length <= 1 ? (
-      <PageBackdrop
-        graphicName='search-empty'
-        mainText={ _l('Start typing a keyphrase to see matching snippets.') }
-        mainTextClassName='search-page-text'
-      />
-    ) : searchResults.length === 0 ? (
-      <PageBackdrop
-        graphicName='search-no-results'
-        mainText={ (
-          <>
-            { _l('We couldn\'t find any results for the keyphrase ') }<strong>{ searchQuery }</strong>
-            { _l('.') }
-          </>
-        ) }
-        mainTextClassName='search-page-text'
-      />
-    ) : (
-      <>
-        <PageSubtitle className='search-compact-sub'>
-          { _l('Click on a snippet card to view the snippet.') }
-        </PageSubtitle>
-        <PageSubtitle isLight className='search-results-title'>
-          { _l('Search results') }
-        </PageSubtitle>
-        { searchResults.map(snippet => (
-          <PreviewCard
-            key={ `snippet_${snippet.url}` }
-            snippet={ snippet }
-          />
-        )) }
-      </>
-    );
-  }
-};
+      { searchResults.map(snippet => (
+        <PreviewCard
+          key={ `snippet_${snippet.url}` }
+          snippet={ snippet }
+        />
+      )) }
+    </>
+  );
 
 SearchResults.propTypes = {
   /** Search query */
   searchQuery: PropTypes.string,
   /** Search results */
   searchResults: PropTypes.arrayOf(PropTypes.shape({})),
-  /** Compact or large search */
-  isCompact: PropTypes.bool,
 };
 
 export default connect(
