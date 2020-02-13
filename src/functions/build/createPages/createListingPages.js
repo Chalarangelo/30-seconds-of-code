@@ -21,6 +21,23 @@ const createListingPages = (indexedChunks, listingPage, createPage, context, bas
       },
     });
   });
+  // Create Home page
+  if (context.listingType === 'main' && slugOrderingSegment === 'p') {
+    createPage({
+      path: `/`,
+      component: listingPage,
+      context: {
+        snippetList: indexedChunks[0],
+        paginator: {
+          pageNumber: 1,
+          totalPages: indexedChunks.length,
+          baseUrl,
+          slugOrderingSegment,
+        },
+        ...context,
+      },
+    });
+  }
 };
 
 const createListingPagesWithOrderOptions = (
