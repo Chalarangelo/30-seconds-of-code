@@ -107,7 +107,7 @@ const determineSnippetRanking = (snippet, options = DEFAULT_OPTIONS) => {
       score += Math.round(lastUpdatedLimit * rankingEngine.veryFreshLastUpdateMultiplier);
     // Last updated in the last week - fresh update
     else if (lastUpdated >= dates[1])
-      score += Math.round(lastUpdatedLimit * rankingEngine.fresLastUpdateMultiplier);
+      score += Math.round(lastUpdatedLimit * rankingEngine.freshLastUpdateMultiplier);
     // Last updated in the last 2 weeks - somewhat fresh update
     else if (lastUpdated >= dates[2])
       score += Math.round(lastUpdatedLimit * rankingEngine.somewhatFreshLastUpdateMultiplier);
