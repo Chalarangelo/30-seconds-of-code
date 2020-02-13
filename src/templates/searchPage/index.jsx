@@ -44,7 +44,6 @@ const SearchPage = ({
         withIcon={ false }
         withTitle={ true }
       >
-        <Search shouldUpdateHistory className='main-search'/>
         <SearchResults />
       </Shell>
     </>
