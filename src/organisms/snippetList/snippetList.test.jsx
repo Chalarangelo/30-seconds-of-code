@@ -44,10 +44,6 @@ describe('<SnippetList />', () => {
       expect(wrapper).toContainMatchingElement('PageTitle');
     });
 
-    it('a PageSubtitle component', () => {
-      expect(wrapper).toContainMatchingElement('PageSubtitle');
-    });
-
     it('a Paginator component', () => {
       expect(wrapper).toContainMatchingElement('Paginator');
     });
