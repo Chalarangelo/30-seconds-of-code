@@ -65,7 +65,7 @@ module.exports = {
     newLastUpdateMultiplier: 0.4,
     newFirstSeenMultiplier: 1.0,
     veryFreshLastUpdateMultiplier: 1.0,
-    fresLastUpdateMultiplier: 0.8,
+    freshLastUpdateMultiplier: 0.8,
     somewhatFreshLastUpdateMultiplier: 0.7,
     updatedFreshFirstSeenMultiplier: 0.3,
     updatedFirstSeenMultiplier: 0.7,

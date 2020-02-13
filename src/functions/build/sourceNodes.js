@@ -46,12 +46,6 @@ const sourceNodes = (requirables, reducers) => ({ actions, createNodeId, createC
       });
     }, {});
 
-  const recommendedSnippets = recommendationEngine(snippetNodes);
-
-  recommendedSnippets.forEach(rec => {
-    snippetNodes[rec.snippetKey].recommendationRanking = rec.recommendationRanking;
-  });
-
   Object.entries(snippetNodes).forEach(([id, sNode]) => {
     let mNode = markdownNodes.find(mN => mN.fileAbsolutePath.includes(`${id}.md`));
     let reducer = reducers[sNode.reducer];
