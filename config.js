@@ -27,10 +27,6 @@ module.exports = {
   templatesPath: `./src/templates`,
   templates: [
     {
-      name: `HomePage`,
-      path: `homePage/index.jsx`,
-    },
-    {
       name: `SnippetPage`,
       path: `snippetPage/index.jsx`,
     },
