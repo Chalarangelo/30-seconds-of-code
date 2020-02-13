@@ -57,7 +57,7 @@ describe('<SearchPage />', () => {
   });
 
   it('should pass the correct data to the Search component', () => {
-    expect(search.prop('shouldUpdateHistory')).toBe(true);
+    expect(search.prop('isMainSearch')).toBe(true);
   });
 });
 
