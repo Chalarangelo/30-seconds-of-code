@@ -1,4 +1,6 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import createStore from 'state';
 import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
@@ -6,78 +8,85 @@ import NavBar from './index';
 
 configure({ adapter: new Adapter() });
 
-describe('<NavBar />', () => {
-  let wrapper, links = [];
-  const mockOnClickCallback = jest.fn();
-  const buttons = [
-    {
-      icon: 'search',
-      link: {
-        internal: true,
-        url: '/search',
-        title: 'Search',
-      },
-    },
-    {
-      icon: 'list',
-      link: {
-        internal: true,
-        url: '/list',
-        title: 'Snippet list',
-      },
-    },
-    {
-      icon: 'github',
-      link: {
-        internal: false,
-        url: 'https://github.com/',
-        title: 'Snippet list',
-        rel: 'noopener',
-        target: '_blank',
-      },
-    },
-    {
-      icon: 'moon',
-      link: {
-        internal: false,
-        url: '#',
-        title: 'Switch to dark mode',
-      },
-      onClick: e => { e.preventDefault();mockOnClickCallback(); },
-    },
-  ];
+const { store } = createStore();
 
-  beforeEach(() => {
-    wrapper = mount(<NavBar buttons={ buttons } />);
-    [0, 1, 2, 3].map(i => links[i] = wrapper.find('a.nav-btn').at(i));
+describe('<NavBar />', () => {
+  let wrapper, websiteLogoBtn, searchBar, settingsBtn;
+  const homeLink = {
+    internal: true,
+    url: '/',
+  };
+  const settingsLink = {
+    internal: true,
+    url: '/settings/',
+  };
+  const logoSrc = '/my-logo.png';
+
+  beforeAll(() => {
+    wrapper = mount(
+      <Provider store={ store }>
+        <NavBar
+          logoSrc={ logoSrc }
+          homeLink={ homeLink }
+          settingsLink={ settingsLink }
+        />
+      </Provider>
+    );
+    websiteLogoBtn = wrapper.find('.nav-btn:not(.icon)');
+    searchBar = wrapper.find('.search-box');
+    settingsBtn = wrapper.find('.nav-btn.icon-settings');
   });
 
   it('should render correctly', () => {
     expect(wrapper).toContainMatchingElement('header.nav-bar');
   });
 
-  it('should render the correct amount of children', () => {
-    expect(wrapper.find('a.nav-btn').length).toBe(4);
+  it('should render the website logo', () => {
+    expect(wrapper).toContainMatchingElement('.nav-btn .nav-website-logo');
   });
 
-  it('should render the correct children types', () => {
-    buttons.forEach((btn, i) =>
-      expect(links[i].hasClass(`icon-${btn.icon}`)).toBe(true)
-    );
+  it('should render the search bar', () => {
+    expect(wrapper).toContainMatchingElement('.search-box');
   });
 
-  it('should pass the correct rel and target properties whenever passed', () => {
-    expect(links[2].prop('rel')).toBe(buttons[2].link.rel);
-    expect(links[2].prop('target')).toBe(buttons[2].link.target);
+  it('should render the settings button', () => {
+    expect(wrapper).toContainMatchingElement('.nav-btn.icon-settings');
   });
 
-  it('should pass the correct onClick callback whenever passed', () => {
-    expect(links[3].prop('onClick')).not.toBe(undefined);
+  it('should render the correct website logo', () => {
+    expect(websiteLogoBtn.find('img').prop('src')).toBe(logoSrc);
   });
 
-  it('should call passed callback on click event whenever passed', () => {
-    links[3].simulate('click');
-    expect(mockOnClickCallback.mock.calls.length).toBeGreaterThan(0);
+  it('should link to the correct home URL', () => {
+    expect(websiteLogoBtn.find('a').prop('href')).toBe(homeLink.url);
+  });
+
+  it('should have the correct type of search box', () => {
+    expect(searchBar.prop('isMainSearch')).not.toBe(true);
+  });
+
+  it('should link to the correct settings URL', () => {
+    expect(settingsBtn.find('a').prop('href')).toBe(settingsLink.url);
+  });
+
+  describe('when hasMainSearch is true', () => {
+    beforeAll(() => {
+      wrapper = mount(
+        <Provider store={ store }>
+          <NavBar
+            logoSrc={ logoSrc }
+            homeLink={ homeLink }
+            settingsLink={ settingsLink }
+            hasMainSearch
+          />
+        </Provider>
+      );
+      searchBar = wrapper.find('Search');
+    });
+
+    it('should have the correct type of search box', () => {
+      expect(searchBar.prop('isMainSearch')).toBe(true);
+    });
   });
 });
 
