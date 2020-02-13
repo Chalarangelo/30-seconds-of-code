@@ -8,6 +8,7 @@ import {
   optimizeNodes,
   optimizeAllNodes,
   getURLParameters,
+  getRootURL,
   getBaseURL
 } from './string';
 
@@ -38,6 +39,7 @@ export {
   mapNumRange,
   getURLParameters,
   getBaseURL,
+  getRootURL,
   throttle,
   uniqueElements,
   similarity,
