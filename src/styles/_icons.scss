@@ -1,6 +1,6 @@
 @font-face {
     font-family: "icons";
-    src: url("../assets/icons.woff2?d198945d5d127a799a2dd7cd682d5d73") format("woff2");
+    src: url("../assets/icons.woff2?cc844cb06050406a8d0b05a3f33c8127") format("woff2");
 }
 
 .icon:before {
@@ -77,15 +77,18 @@
 .icon.icon-search:before {
     content: "\f115";
 }
-.icon.icon-share:before {
+.icon.icon-settings:before {
     content: "\f116";
 }
-.icon.icon-star:before {
+.icon.icon-share:before {
     content: "\f117";
 }
-.icon.icon-sun:before {
+.icon.icon-star:before {
     content: "\f118";
 }
-.icon.icon-twitter:before {
+.icon.icon-sun:before {
     content: "\f119";
+}
+.icon.icon-twitter:before {
+    content: "\f11a";
 }
