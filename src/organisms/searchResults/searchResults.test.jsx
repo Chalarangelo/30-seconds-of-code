@@ -24,20 +24,4 @@ describe('<SearchResults />', () => {
   it('should render properly', () => {
     expect(wrapper).toContainMatchingElement('PageBackdrop');
   });
-
-  describe('compact version', () => {
-
-    beforeEach(() => {
-      wrapper = mount(
-        <Provider store={ store }>
-          <SearchResults isCompact/>
-        </Provider>
-      );
-    });
-
-    it('should render properly', () => {
-      expect(wrapper).toContainMatchingElement('PageSubtitle');
-
-    });
-  });
 });
