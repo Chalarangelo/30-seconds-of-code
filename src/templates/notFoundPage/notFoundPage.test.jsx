@@ -27,7 +27,7 @@ describe('<NotFoundPage />', () => {
     shell = wrapper.find('Shell');
     meta = wrapper.find('Meta');
     pageBackdrop = wrapper.find('PageBackdrop');
-    anchorButton = wrapper.find('AnchorButton');
+    anchorButton = wrapper.find('AnchorButton').find({ className: 'btn-home icon icon-home'});
   });
 
   describe('should render', () => {
