@@ -27,6 +27,7 @@ const ListingPage = ({
     paginator,
     snippetList,
     listingName,
+    listingTitle,
     snippetCount,
     listingType,
     listingLanguage,
@@ -54,7 +55,7 @@ const ListingPage = ({
         withTitle={ true }
       >
         <SnippetList
-          listingName={ listingName }
+          listingName={ listingTitle }
           listingType={ listingType }
           snippetList={ snippetList }
           paginator={ paginator }
@@ -78,6 +79,8 @@ ListingPage.propTypes = {
     snippetList: PropTypes.arrayOf(SnippetPropType),
     /** Name of this listing page */
     listingName: PropTypes.string,
+    /** Title of this listing page */
+    listingTitle: PropTypes.string,
     /**  Number of indexed snippets */
     snippetCount: PropTypes.number,
     /** Type metadata for the listing description */

@@ -77,6 +77,7 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
     {
       ...context,
       listingName: _l('Snippet List'),
+      listingTitle: _l('Snippet List'),
       listingType: 'main',
       listingSublinks: mainListingSublinks,
     },
@@ -132,6 +133,7 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
         {
           ...context,
           listingName: listingMeta.blog ? _l('Blog') : _l`codelang.${searchIndexName}`,
+          listingTitle: listingMeta.blog ? _l('Blog') : _l`codelang.${searchIndexName}`,
           snippetCount: searchIndexSlugData.length,
           listingType: listingMeta.blog ? 'blog' : 'language',
           listingLanguage: listingMeta.blog ? 'blog' : searchIndexName,
@@ -188,6 +190,7 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
           {
             ...context,
             listingName: _l`codelang_tag.${searchIndexName}${tagPrefix}`,
+            listingTitle: _l`codelang.${searchIndexName}`,
             snippetCount: searchIndexSlugData.length,
             listingType: 'tag',
             listingLanguage: searchIndexName,
