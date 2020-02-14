@@ -75,6 +75,9 @@ const literals = {
   'footer.twitter': 'Twitter',
   'footer.cookies': 'Cookies',
   'footer.discord': 'Discord',
+  'orders.popularity': 'Popularity',
+  'orders.alphabetical': 'Alphabetical',
+  'orders.expertise': 'Expertise',
   // Literals
   'Expertise': level => `${level}`,
   'Search snippets': 'Search snippets',
