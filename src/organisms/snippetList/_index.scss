@@ -6,3 +6,18 @@
 .listing-anchors + .list-top-subtitle {
   margin-top: -0.0625rem;
 }
+
+.page-title.with-sorter {
+  display: inline-block;
+  width: calc(100% - 146px - 1.75rem);
+
+  + .sorter {
+    display: inline;
+    right: 14px;
+    top: -12px;
+
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      top: -16px;
+    }
+  }
+}
