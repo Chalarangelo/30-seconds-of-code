@@ -4,7 +4,15 @@ import EXPERTISE_LEVELS from 'shared/expertiseLevels';
 import _ from 'lang';
 const _l = _('en');
 
-const createListingPages = (indexedChunks, listingPage, createPage, context, baseUrl, slugOrderingSegment) => {
+const ORDERS_MAP = {
+  'p': _l('orders.popularity'),
+  'a': _l('orders.alphabetical'),
+  'e': _l('orders.expertise'),
+};
+
+const createListingPages = (
+  indexedChunks, listingPage, createPage, context, baseUrl, slugOrderingSegment, ordersList
+) => {
   indexedChunks.forEach((chunk, i, chunks) => {
     createPage({
       path: `${baseUrl}/${slugOrderingSegment}/${i + 1}`,
@@ -16,6 +24,15 @@ const createListingPages = (indexedChunks, listingPage, createPage, context, bas
           totalPages: chunks.length,
           baseUrl,
           slugOrderingSegment,
+        },
+        sorter: {
+          orders: ordersList.map(order => (
+            {
+              url: `${baseUrl}/${order}/1`,
+              title: ORDERS_MAP[order],
+            }
+          )),
+          selectedOrder: ORDERS_MAP[slugOrderingSegment],
         },
         ...context,
       },
@@ -34,6 +51,15 @@ const createListingPages = (indexedChunks, listingPage, createPage, context, bas
           baseUrl,
           slugOrderingSegment,
         },
+        sorter: {
+          orders: ordersList.map(order => (
+            {
+              url: `${baseUrl}/${order}/1`,
+              title: ORDERS_MAP[order],
+            }
+          )),
+          selectedOrder: ORDERS_MAP[slugOrderingSegment],
+        },
         ...context,
       },
     });
@@ -50,7 +76,8 @@ const createListingPagesWithOrderOptions = (
       createPage,
       { ...context, ...contextCustomizer(order, i)},
       baseUrl,
-      order
+      order,
+      orders
     );
   });
 };
