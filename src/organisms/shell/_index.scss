@@ -25,18 +25,18 @@
   &::-webkit-scrollbar-track {
     background-color: var(--scrollbar-back-color);
     margin: 0.25rem 0;
-    border-radius: 0.1875rem;
+    border-radius: 0.375rem;
   }
 
   &::-webkit-scrollbar {
-    width: 6px;
+    width: 12px;
     background: transparent;
   }
 
   &::-webkit-scrollbar-thumb {
     background-color: var(--scrollbar-fore-color);
     border: 1px solid var(--scrollbar-fore-color-lighter);
-    border-radius: 0.1875rem;
+    border-radius: 0.375rem;
   }
 
   @media screen and (min-width: 768px) {
