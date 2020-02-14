@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Paginator from 'molecules/paginator';
+import Sorter from 'molecules/sorter';
 import PageTitle from 'atoms/pageTitle';
 import PageSubtitle from 'atoms/pageSubtitle';
 import PreviewCard from 'molecules/previewCard';
@@ -16,6 +17,7 @@ const _l = _('en');
 const SnippetList = ({
   snippetList,
   paginator,
+  sorter,
   listingName,
   listingType,
   listingSublinks = [],
@@ -27,9 +29,10 @@ const SnippetList = ({
           ? <ListingAnchors isCompact={ listingType !== 'main' } items={ listingSublinks } />
           : null
       }
-      <PageTitle isLight>
+      <PageTitle isLight className='with-sorter'>
         { listingName }
       </PageTitle>
+      <Sorter sorter={ sorter } />
       { snippetList.map(snippet => (
         <PreviewCard
           key={ `snippet_${snippet.url}` }
@@ -47,6 +50,8 @@ SnippetList.propTypes = {
   snippetList: PropTypes.arrayOf(SnippetPropType),
   /** Paginator component data */
   paginator: PaginatorPropType,
+  /** Sorter component data */
+  sorter: PaginatorPropType,
   /** Name of this snippet list */
   listingName: PropTypes.string,
   /** Type of this snippet list */
