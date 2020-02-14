@@ -19,6 +19,13 @@ describe('<ListingPage />', () => {
     pageNumber: 4,
     baseUrl: '/list',
   };
+  const sorter = {
+    orders: [
+      {title: 'Popularity', url: '/list/p/1'},
+      {title: 'Expertise', url: '/list/e/1'},
+    ],
+    selected: 'Popularity',
+  };
   const snippetList = [
     {
       title: 'compose',
@@ -36,7 +43,7 @@ describe('<ListingPage />', () => {
   beforeEach(() => {
     wrapper = mount(
       <Provider store={ store }>
-        <ListingPage pageContext={ { logoSrc, splashLogoSrc, snippetList, paginator, listingName, listingTitle } } />
+        <ListingPage pageContext={ { logoSrc, splashLogoSrc, snippetList, paginator, sorter, listingName, listingTitle } } />
       </Provider>
     );
     shell = wrapper.find('Shell');
