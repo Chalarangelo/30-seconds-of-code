@@ -1,29 +1,35 @@
 .listing-anchors {
-  margin: 0.1875rem 1.25rem 1rem;
-
-  @media screen and (max-width: calc(#{$layout-medium-breakpoint} - 1px)) {
-    margin-left: 0.875rem;
-    margin-right: 0.875rem;
-    width: calc(100% - 1.75rem);
-  }
-
+  margin: 0.1875rem 0.875rem 1.5rem;
   padding: 0;
   list-style: none;
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  width: calc(100% - 2.5rem);
+  width: calc(100% - 1.75rem);
   scroll-snap-type: x mandatory;
   justify-content: space-between;
 
-  &::-webkit-scrollbar { 
-    display: none;
+  &::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-back-color);
+    margin: 0 35%;
+    border-radius: 0.125rem;
+  }
+
+  &::-webkit-scrollbar {
+    height: 4px;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-fore-color);
+    border: 1px solid var(--scrollbar-fore-color-lighter);
+    border-radius: 0.125rem;
   }
 
   li {
     flex: 0 0 64px;
     scroll-snap-align: start;
-    padding-bottom: 1.5rem;
+    padding-bottom: 2rem;
     margin: 0.25rem 0.75rem;
   }
 
@@ -81,7 +87,15 @@
   }
 }
 
-.listing-anchors.compact {    
+.listing-anchors:not(.compact) {
+  margin: 1.1875rem 0.875rem 2.5rem;
+}
+
+.listing-anchors.compact {
+  li {
+    padding-bottom: 0;
+  }
+
   li:first-child {
     margin-left: 0;
   }

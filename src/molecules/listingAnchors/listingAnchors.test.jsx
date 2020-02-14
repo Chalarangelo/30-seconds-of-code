@@ -16,6 +16,7 @@ describe('<ListingAnchors />', () => {
     {
       name: 'My other list',
       link: { internal: true, url: '/my-other-list'},
+      selected: true,
     },
   ];
   let wrapper;
@@ -32,6 +33,27 @@ describe('<ListingAnchors />', () => {
 
     it('two AnchorButton components', () => {
       expect(wrapper).toContainMatchingElements(2, 'AnchorButton');
+    });
+  });
+
+  describe('compact variant', () => {
+    beforeEach(() => {
+      wrapper = mount(
+        <ListingAnchors isCompact items={ items } />);
+    });
+
+    describe('should render', () => {
+      it('a container component', () => {
+        expect(wrapper).toContainMatchingElement('.listing-anchors.compact');
+      });
+
+      it('two AnchorButton components', () => {
+        expect(wrapper).toContainMatchingElements(2, 'AnchorButton');
+      });
+
+      it('a selected anchor', () => {
+        expect(wrapper).toContainMatchingElement('.selected');
+      });
     });
   });
 });
