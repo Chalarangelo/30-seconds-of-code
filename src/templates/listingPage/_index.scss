@@ -55,3 +55,8 @@
     font-size: 1rem;
   }
 }
+
+// Fix for static pages
+:not(.listing-anchors) + .page-title, .page-title:first-child {
+  margin-top: 1rem;
+}

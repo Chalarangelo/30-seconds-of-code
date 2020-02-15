@@ -1,12 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import NavBar from 'molecules/navBar';
 import Footer from 'molecules/footer';
 import CookieConsentPopup from 'molecules/cookieConsentPopup';
-import { useMedia } from 'functions/hooks';
 import { trimWhiteSpace } from 'functions/utils';
-import { toggleDarkMode, decideCookies } from 'state/shell';
+import { decideCookies } from 'state/shell';
 import config from '../../../config';
 import env from '../../../.build/env';
 
@@ -20,17 +19,6 @@ const Shell = ({
   externalUrl = config.repositoryUrl,
   children,
 }) => {
-  const darkModeEnabledInitially = useMedia(
-    ['(prefers-color-scheme: dark)', '(prefers-color-scheme: light)'],
-    [true, false],
-    false
-  );
-
-  useEffect(() => {
-    if (darkModeEnabledInitially && isDarkMode === undefined)
-      dispatch(toggleDarkMode(true));
-  }, []);
-
   return (
     <div
       className={ trimWhiteSpace`page-container ${isDarkMode ? 'dark' : ''}` }
