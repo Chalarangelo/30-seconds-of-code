@@ -50,6 +50,10 @@ module.exports = {
       name: `CookiePage`,
       path: `cookiePage/index.jsx`,
     },
+    {
+      name: `SettingsPage`,
+      path: `settingsPage/index.jsx`,
+    },
   ],
   // Snippet ranking engine parameters
   rankingEngine: {
