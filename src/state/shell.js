@@ -3,6 +3,7 @@ import cacheKey from '../../.build/cacheKey';
 // Default state
 const initialState = {
   isDarkMode: undefined,
+  hasGithubLinksEnabled: undefined,
   cacheKey,
   newCacheKey: cacheKey,
   acceptsCookies: undefined,
@@ -10,12 +11,18 @@ const initialState = {
 
 // Actions
 const TOGGLE_DARKMODE = 'TOGGLE_DARKMODE';
+const TOGGLE_GITHUB_LINKS = 'TOGGLE_GITHUB_LINKS';
 const ACCEPT_COOKIES = 'ACCEPT_COOKIES';
 const DECLINE_COOKIES = 'DECLINE_COOKIES';
 
 export const toggleDarkMode = isDarkMode => ({
   type: TOGGLE_DARKMODE,
   isDarkMode,
+});
+
+export const toggleGithubLinks = hasGithubLinksEnabled => ({
+  type: TOGGLE_GITHUB_LINKS,
+  hasGithubLinksEnabled,
 });
 
 export const decideCookies = cookieConsent => ({
@@ -29,6 +36,11 @@ export default (state = initialState, action) => {
     return {
       ...state,
       isDarkMode: action.isDarkMode,
+    };
+  case TOGGLE_GITHUB_LINKS:
+    return {
+      ...state,
+      hasGithubLinksEnabled: action.hasGithubLinksEnabled,
     };
   case ACCEPT_COOKIES:
     return {

@@ -89,8 +89,7 @@
     "lint": "eslint './src/**/*.js' './src/**/*.jsx'",
     "make-icons": "icon-font-generator src/icons/*.svg -o assets --html=false --json=false --types='woff2' --csspath src/styles/_icons.scss --cssfontsurl='../assets/' --selector='.icon'",
     "test": "cross-env NODE_PATH=src NODE_ENV=test jest --coverage",
-    "test:generate-output": "cross-env NODE_PATH=src NODE_ENV=test jest --json --outputFile=.storybook/jest-test-results.json",
-    "test:watch": "cross-env NODE_PATH=src NODE_ENV=test jest --json --outputFile=.storybook/jest-test-results.json --watch",
+    "test:watch": "cross-env NODE_PATH=src NODE_ENV=test jest --watch",
     "cy:open": "cypress open",
     "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open"
   },

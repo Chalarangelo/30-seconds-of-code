@@ -4,7 +4,15 @@ import EXPERTISE_LEVELS from 'shared/expertiseLevels';
 import _ from 'lang';
 const _l = _('en');
 
-const createListingPages = (indexedChunks, listingPage, createPage, context, baseUrl, slugOrderingSegment) => {
+const ORDERS_MAP = {
+  'p': _l('orders.popularity'),
+  'a': _l('orders.alphabetical'),
+  'e': _l('orders.expertise'),
+};
+
+const createListingPages = (
+  indexedChunks, listingPage, createPage, context, baseUrl, slugOrderingSegment, ordersList
+) => {
   indexedChunks.forEach((chunk, i, chunks) => {
     createPage({
       path: `${baseUrl}/${slugOrderingSegment}/${i + 1}`,
@@ -17,10 +25,45 @@ const createListingPages = (indexedChunks, listingPage, createPage, context, bas
           baseUrl,
           slugOrderingSegment,
         },
+        sorter: {
+          orders: ordersList.map(order => (
+            {
+              url: `${baseUrl}/${order}/1`,
+              title: ORDERS_MAP[order],
+            }
+          )),
+          selectedOrder: ORDERS_MAP[slugOrderingSegment],
+        },
         ...context,
       },
     });
   });
+  // Create Home page
+  if (context.listingType === 'main' && slugOrderingSegment === 'p') {
+    createPage({
+      path: `/`,
+      component: listingPage,
+      context: {
+        snippetList: indexedChunks[0],
+        paginator: {
+          pageNumber: 1,
+          totalPages: indexedChunks.length,
+          baseUrl,
+          slugOrderingSegment,
+        },
+        sorter: {
+          orders: ordersList.map(order => (
+            {
+              url: `${baseUrl}/${order}/1`,
+              title: ORDERS_MAP[order],
+            }
+          )),
+          selectedOrder: ORDERS_MAP[slugOrderingSegment],
+        },
+        ...context,
+      },
+    });
+  }
 };
 
 const createListingPagesWithOrderOptions = (
@@ -33,7 +76,8 @@ const createListingPagesWithOrderOptions = (
       createPage,
       { ...context, ...contextCustomizer(order, i)},
       baseUrl,
-      order
+      order,
+      orders
     );
   });
 };
@@ -60,6 +104,7 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
     {
       ...context,
       listingName: _l('Snippet List'),
+      listingTitle: _l('Snippet List'),
       listingType: 'main',
       listingSublinks: mainListingSublinks,
     },
@@ -115,6 +160,7 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
         {
           ...context,
           listingName: listingMeta.blog ? _l('Blog') : _l`codelang.${searchIndexName}`,
+          listingTitle: listingMeta.blog ? _l('Blog') : _l`codelang.${searchIndexName}`,
           snippetCount: searchIndexSlugData.length,
           listingType: listingMeta.blog ? 'blog' : 'language',
           listingLanguage: listingMeta.blog ? 'blog' : searchIndexName,
@@ -171,6 +217,7 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
           {
             ...context,
             listingName: _l`codelang_tag.${searchIndexName}${tagPrefix}`,
+            listingTitle: _l`codelang.${searchIndexName}`,
             snippetCount: searchIndexSlugData.length,
             listingType: 'tag',
             listingLanguage: searchIndexName,
