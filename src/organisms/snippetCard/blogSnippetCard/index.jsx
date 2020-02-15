@@ -5,12 +5,15 @@ import TagList from 'molecules/tagList';
 import { Snippet as SnippetPropType } from 'typedefs';
 import { trimWhiteSpace } from 'functions/utils';
 import { Anchor } from 'atoms/anchor';
+import _ from 'lang';
+const _l = _('en');
 
 const SnippetCard = ({
   snippet,
   className,
   // eslint-disable-next-line no-unused-vars
   toastContainer, // Keep here to suppress React warnings and not pass to children
+  hasGithubLinksEnabled = false,
   ...rest
 }) => (
   <Card className={ trimWhiteSpace`snippet-card ${className}` } { ...rest } >
@@ -40,6 +43,19 @@ const SnippetCard = ({
         })
       }
     </p>
+    { hasGithubLinksEnabled && (
+      <Anchor
+        className='github-link'
+        link={ {
+          url: snippet.url,
+          internal: false,
+          target: '_blank',
+          rel: 'nofollow noopener noreferrer',
+        } }
+      >
+        { _l('View on GitHub') }
+      </Anchor>
+    ) }
     <TagList tags={ [ ...snippet.tags.all] } />
     { snippet.cover && snippet.cover.src ?
       <img
@@ -59,6 +75,8 @@ SnippetCard.propTypes = {
   snippet: SnippetPropType,
   /** Additional classes for the card */
   className: PropTypes.string,
+  /** Are GitHub links enabled? */
+  hasGithubLinksEnabled: PropTypes.bool,
   /** Any other arguments to be passed to the card */
   rest: PropTypes.any,
   toastContainer: PropTypes.any,
