@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Anchor } from 'atoms/anchor';
 import Card from 'atoms/card';
 import TagList from 'molecules/tagList';
 import CodeBlock from 'atoms/codeBlock';
@@ -8,15 +9,31 @@ import SnippetPreview from 'atoms/snippetPreview';
 import BrowserSupport from 'atoms/browserSupport';
 import { Snippet as SnippetPropType } from 'typedefs';
 import { trimWhiteSpace } from 'functions/utils';
+import _ from 'lang';
+const _l = _('en');
 
 const SnippetCard = ({
   snippet,
   className,
+  hasGithubLinksEnabled = false,
   ...rest
 }) => {
   return (
     <Card className={ trimWhiteSpace`snippet-card ${className}` } { ...rest } >
       <h4 className='card-title'>{ snippet.title }</h4>
+      { hasGithubLinksEnabled && (
+        <Anchor
+          className='github-link'
+          link={ {
+            url: snippet.url,
+            internal: false,
+            target: '_blank',
+            rel: 'nofollow noopener noreferrer',
+          } }
+        >
+          { _l('View on GitHub') }
+        </Anchor>
+      ) }
       <TagList tags={ [snippet.language.long, ...snippet.tags.all] } />
       <div
         className='card-description'
@@ -65,6 +82,8 @@ SnippetCard.propTypes = {
   snippet: SnippetPropType,
   /** Additional classes for the card */
   className: PropTypes.string,
+  /** Are GitHub links enabled? */
+  hasGithubLinksEnabled: PropTypes.bool,
   /** Any other arguments to be passed to the card */
   rest: PropTypes.any,
 };

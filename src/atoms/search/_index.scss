@@ -1,23 +1,25 @@
-// SCSS variables - used to color the icon
-$search-placeholder-color-light: #C5C6CD;
-$search-placeholder-color-dark: #999EBD;
-
 // Colors
 :root {
   --search-back-color: #FFFFFF;
-  --search-fore-color: #0D0E17;
-  --search-placeholder-color: #{$search-placeholder-color-light};
-  --search-shadow-color: rgba(0, 32, 128, 0.1);
-  --search-shadow-focus-color: rgba(0, 32, 128, 0.17);
+  --search-button-back-color: #f4f4f5;
+  --search-button-hover-back-color: #e9eaec;
+  --search-fore-color: #0d0e17;
+  --search-bar-button-fore-color: #53586A;
+  --search-placeholder-color: #9a9ca7;
+  --search-bar-border-color: #e4e6ec;
+  --search-focus-border-color: #91abf8;
 }
 
 // Dark mode colors
 .page-container.dark {
-  --search-back-color: #434E76;
-  --search-fore-color: #E8E9F2;
-  --search-placeholder-color: #{$search-placeholder-color-dark};
-  --search-shadow-color: rgba(1, 8, 30, 0.24);
-  --search-shadow-focus-color: rgba(1, 8, 30, 0.31);
+  --search-back-color: #424d76;
+  --search-button-back-color: #515d90;
+  --search-button-hover-back-color: #4d5884;
+  --search-fore-color: #e8e9f2;
+  --search-bar-button-fore-color: #959AAC;
+  --search-placeholder-color: #999ebd;
+  --search-bar-border-color: #13151b;
+  --search-focus-border-color: #07216e;
 }
 
 // Style for placeholder text
@@ -39,46 +41,62 @@ $search-placeholder-color-dark: #999EBD;
 
 [type="search"].search-box {
   transition: 0.3s ease all;
-  margin: 0.375rem 0.875rem 0.25rem;
-  width: calc(100% - 1.75rem);
+  margin-top: 6px;
+  width: calc(100% - 56px - 56px - 44px);
   background: var(--search-back-color);
-  box-shadow: 0px 4px 8px var(--search-shadow-color);
-  &:focus {
-    box-shadow: 0px 6px 12px var(--search-shadow-focus-color);
-  }
-  border-radius: 1.125rem;
+  vertical-align: top;
+  border: 1px solid var(--search-bar-border-color);
+  border-right-color: transparent;
+  border-radius: 0.25rem 0 0 0.25rem;
   outline: none;
   box-sizing: border-box;
-  border: none;
-  padding-left: 2.5rem;
+  padding: 0.25rem 0.5rem;
   font-size: 1.125rem;
   font-weight: 300;
   line-height: 1.9;
-  background-image: generate-icon-background("search", $search-placeholder-color-light, 'none', 1.5, 20);
-  background-repeat: no-repeat;
-  background-position-x: 10px;
-  background-position-y: 8px;
+  height: 44px;
   color: var(--search-fore-color);
+
   &::placeholder {
     color: var(--search-placeholder-color);
   }
 
-  @media screen and (max-width: calc(#{$layout-medium-breakpoint} - 1px)) {
-    margin-left: 0.75rem;
-    margin-right: 0.75rem;
+  &:focus {
+    border-color: var(--search-focus-border-color);
+
+    + a.search-btn {
+      border-color: var(--search-focus-border-color);
+    }
   }
 
   @media screen and (min-width: $layout-large-breakpoint) {
-    font-size: 1.375rem;
-    line-height: 2.125rem;
-    background-image: generate-icon-background("search", $search-placeholder-color-light, 'none', 1.5, 24);
-  }
-}
-// Dark mode
-.page-container.dark [type="search"].search-box {
-  background-image: generate-icon-background("search", $search-placeholder-color-dark, 'none', 1.5, 20);
-  @media screen and (min-width: $layout-large-breakpoint) {
-    background-image: generate-icon-background("search", $search-placeholder-color-dark, 'none', 1.5, 24);
+    width: calc(768px - 1.75rem - 44px);
   }
 }
 
+a.search-btn {
+  color: var(--search-button-fore-color);
+  background: var(--search-button-back-color);
+  border: 1px solid var(--search-bar-border-color);
+  border-left: none;
+  position: relative;
+  vertical-align: top;
+  width: 44px;
+  height: 44px;
+  margin: 6px 0 0;
+  border-radius: 0 0.25rem 0.25rem 0;
+  box-sizing: border-box;
+  box-shadow: none;
+  
+  &:hover, &:focus {
+    box-shadow: none;
+    background: var(--search-button-hover-back-color);
+  }
+
+  &:before {
+    position: absolute;
+    font-size: 24px;
+    top: 10px;
+    left: 10px;
+  }
+}

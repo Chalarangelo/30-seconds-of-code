@@ -18,6 +18,7 @@ const Paginator = ({
     pageNumber,
     totalPages,
     baseUrl,
+    slugOrderingSegment,
   },
 }) => {
   if (totalPages <= 1) return null;
@@ -75,7 +76,7 @@ const Paginator = ({
         className='previous-page icon icon-chevron-left'
         link={ {
           internal: true,
-          url: `${baseUrl}/p/${pageNumber - 1}`,
+          url: `${baseUrl}/${slugOrderingSegment}/${pageNumber - 1}`,
         } }>
         { buttonTexts[0] }
       </AnchorButton> }
@@ -99,7 +100,7 @@ const Paginator = ({
                 key={ buttonNumber }
                 link={ {
                   internal: true,
-                  url: `${baseUrl}/p/${buttonNumber}`,
+                  url: `${baseUrl}/${slugOrderingSegment}/${buttonNumber}`,
                 } }
               >
                 { buttonNumber }
@@ -111,7 +112,7 @@ const Paginator = ({
         className='next-page icon icon-chevron-right'
         link={ {
           internal: true,
-          url: `${baseUrl}/p/${pageNumber + 1}`,
+          url: `${baseUrl}/${slugOrderingSegment}/${pageNumber + 1}`,
         } }>
         { buttonTexts[1] }
       </AnchorButton> }

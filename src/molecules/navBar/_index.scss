@@ -2,34 +2,71 @@
 :root {
   --nav-bar-back-color: #FFFFFF;
   --nav-bar-border-color: #E4E6EC;
+  --nav-button-fore-color: #53586A;
+  --nav-button-active-fore-color: #2747C7;
 }
 
 // Dark mode colors
 .page-container.dark {
   --nav-bar-back-color: #434E76;
   --nav-bar-border-color: #13151B;
+  --nav-button-fore-color: #959AAC;
+  --nav-button-active-fore-color: #CDD4EF;
 }
+
+// Navigation bar
 .nav-bar {
   transition: 0.3s ease all;
   background: var(--nav-bar-back-color);
   line-height: 0;
   box-sizing: border-box;
-  position: fixed;
   z-index: 1001;
-  @media screen {
-    border-top: 1px solid var(--nav-bar-border-color);
-    height: 56px;
-    bottom: 0;
-    width: 100vw;
+  border-bottom: 1px solid var(--nav-bar-border-color);
+  height: 100%;
+  width: 100vw;
+
+  @media screen and (min-width: $layout-large-breakpoint) {
+    > :first-child {
+      margin-left: calc((100% - 768px) / 2 - 56px);
+      margin-right: 0.75rem;
+    }
   }
-  @media screen and (min-width: $layout-medium-breakpoint) and (orientation: landscape) {
-    border-top: none;
-    border-right: 1px solid var(--nav-bar-border-color);
-    height: 100vh;
-    left: 0;
-    width: 56px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+}
+
+// Navigation buttons
+.nav-btn {
+  position: relative;
+  display: inline-block;
+  height: 56px;
+  width: 56px;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease all;
+
+  &, &:link, &:visited {
+    color: var(--nav-button-fore-color);
+
+    &:hover, &:focus, &.active {
+      outline: 0;
+      text-decoration: none;
+      color: var(--nav-button-active-fore-color);
+    }
   }
+
+  &:before {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
+// Website logo
+img.nav-website-logo {
+  transition: 0.3s ease all;
+  padding: 6px;
+  width: 44px;
+  height: 44px;
 }

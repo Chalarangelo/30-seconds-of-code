@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { trimWhiteSpace, getURLParameters, throttle, getBaseURL } from 'functions/utils';
+import { trimWhiteSpace, getURLParameters, throttle, getBaseURL, getRootURL } from 'functions/utils';
 import { pushNewQuery, searchByKeyphrase } from 'state/search';
 import _ from 'lang';
 import { useFetchSearchIndex } from 'functions/hooks';
+import { AnchorButton } from 'atoms/button';
 const _l = _('en');
 
 const handleHistoryUpdate = value => {
@@ -32,22 +33,26 @@ const handleHistoryUpdate = value => {
 /**
  * Search bar component.
  * Connected to state.
+ * `isSearch` will determine the Search bar behavior.
+ * When true, the bar will update history and handle searching.
+ * Otherwise, it acts as an idle input that expects interaction to provide an entry
+ * point to the search page.
  */
 const Search = ({
   className = '',
   id = '',
   searchIndex,
   searchQuery,
-  shouldUpdateHistory = false,
+  isMainSearch = false,
   searchTimestamp,
   dispatch,
 }) => {
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = React.useState( '');
 
   useFetchSearchIndex(dispatch);
 
   React.useEffect(() => {
-    if (shouldUpdateHistory) {
+    if (isMainSearch) {
       const params = getURLParameters(window.location.href);
       let initValue = searchQuery;
       if (params && (params.keyphrase) && params.keyphrase !== encodeURIComponent(searchQuery))
@@ -59,34 +64,50 @@ const Search = ({
   }, []);
 
   React.useEffect(throttle(() => {
+    if (!isMainSearch && value === '') return;
     dispatch(pushNewQuery(value));
     dispatch(searchByKeyphrase(value, searchIndex));
-    if(shouldUpdateHistory)
-      handleHistoryUpdate(value);
+    if (isMainSearch) handleHistoryUpdate(value);
   }, 500), [value]);
 
   return (
-    <input
-      defaultValue={ value }
-      className={ trimWhiteSpace`search-box ${className}` }
-      type='search'
-      id={ id }
-      placeholder={ _l('Search...') }
-      aria-label={ _l('Search snippets') }
-      onKeyUp={ e => {
-        setValue(e.target.value);
-      } }
-      onKeyPress={ e => {
-        if (
-          e.charCode === 13 &&
-          typeof document !== 'undefined' &&
-          document.activeElement &&
-          document.activeElement.blur &&
-          typeof document.activeElement.blur === 'function'
-        )
-          document.activeElement.blur();
-      } }
-    />
+    <>
+      <input
+        defaultValue={ value }
+        className={ trimWhiteSpace`search-box ${className}` }
+        type='search'
+        id={ id }
+        placeholder={ _l('Search...') }
+        aria-label={ _l('Search snippets') }
+        onKeyUp={ e => {
+          setValue(e.target.value);
+        } }
+        onKeyPress={ e => {
+          if (
+            e.charCode === 13 &&
+            typeof document !== 'undefined' &&
+            document.activeElement &&
+            document.activeElement.blur &&
+            typeof document.activeElement.blur === 'function'
+          ) {
+            document.activeElement.blur();
+            if (!isMainSearch) {
+              const encodedValue = encodeURIComponent(value);
+              const rootURL = getRootURL(window.location.href);
+              window.location.href = `${ rootURL }/search/${ value ? `?keyphrase=${encodedValue}` : '' }`;
+            }
+          }
+        } }
+      />
+      <AnchorButton
+        className='icon icon-search search-btn'
+        link={ {
+          url: `/search/${ value ? `?keyphrase=${encodeURIComponent(value)}` : '' }`,
+          internal: true,
+          rel: 'nofollow',
+        } }
+      />
+    </>
   );
 };
 
@@ -103,8 +124,8 @@ Search.propTypes = {
   id: PropTypes.string,
   /** Dispatch function of the Redux stotre */
   dispatch: PropTypes.func,
-  /** Should this component handle history updates? */
-  shouldUpdateHistory: PropTypes.bool,
+  /** Is this component the main search component? */
+  isMainSearch: PropTypes.bool,
 };
 
 export default connect(

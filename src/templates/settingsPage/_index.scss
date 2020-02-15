@@ -1,0 +1,32 @@
+// About page maintainers card
+.flex-row {
+  display: flex;
+  flex: 0 1 auto;
+  flex-flow: row wrap;
+  .flex-item {
+    flex: 0 0 auto;
+    max-width: calc(50% - 24px);
+    flex-basis: calc(50% - 24px);
+    margin: 12px;
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      max-width: calc(33% - 24px);
+      flex-basis: calc(33% - 24px);
+    }
+    .media-section {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+    }
+    .button-section {
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-align: center;
+      width: 100%;
+      display: block;
+      &, &:link, &:visited {
+      font-weight: 600;
+        color: var(--card-fore-color);
+      }
+    }
+  }
+}

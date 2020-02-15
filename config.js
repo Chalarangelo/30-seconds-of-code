@@ -27,10 +27,6 @@ module.exports = {
   templatesPath: `./src/templates`,
   templates: [
     {
-      name: `HomePage`,
-      path: `homePage/index.jsx`,
-    },
-    {
       name: `SnippetPage`,
       path: `snippetPage/index.jsx`,
     },
@@ -54,6 +50,10 @@ module.exports = {
       name: `CookiePage`,
       path: `cookiePage/index.jsx`,
     },
+    {
+      name: `SettingsPage`,
+      path: `settingsPage/index.jsx`,
+    },
   ],
   // Snippet ranking engine parameters
   rankingEngine: {
@@ -69,7 +69,7 @@ module.exports = {
     newLastUpdateMultiplier: 0.4,
     newFirstSeenMultiplier: 1.0,
     veryFreshLastUpdateMultiplier: 1.0,
-    fresLastUpdateMultiplier: 0.8,
+    freshLastUpdateMultiplier: 0.8,
     somewhatFreshLastUpdateMultiplier: 0.7,
     updatedFreshFirstSeenMultiplier: 0.3,
     updatedFirstSeenMultiplier: 0.7,

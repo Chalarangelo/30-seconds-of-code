@@ -70,6 +70,10 @@ export const getURLParameters = url =>
 export const getBaseURL = url =>
   url.indexOf('?') > 0 ? url.slice(0, url.indexOf('?')) : url;
 
+/** Returns the root URL without any parameters. */
+export const getRootURL = url =>
+  url.split('/').slice(0, 3).join('/');
+
 
 /** Strips markdown format from a string */
 export const stripMarkdownFormat = str => {

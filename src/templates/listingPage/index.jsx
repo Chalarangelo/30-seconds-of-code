@@ -6,6 +6,7 @@ import SnippetList from 'organisms/snippetList';
 import PropTypes from 'prop-types';
 import {
   Paginator as PaginatorPropType,
+  Sorter as SorterPropType,
   Snippet as SnippetPropType
 } from 'typedefs';
 import { pushNewPage } from 'state/navigation';
@@ -25,8 +26,10 @@ const ListingPage = ({
     logoSrc,
     splashLogoSrc,
     paginator,
+    sorter,
     snippetList,
     listingName,
+    listingTitle,
     snippetCount,
     listingType,
     listingLanguage,
@@ -39,12 +42,16 @@ const ListingPage = ({
     dispatch(pushNewPage(listingName, `${paginator.baseUrl}/p/${paginator.pageNumber}`));
   }, []);
 
+  const isFirstListingPage = listingType === 'main' && paginator.pageNumber === 1;
+  const isHomePage = isFirstListingPage && paginator.slugOrderingSegment === 'p';
+
   return (
     <>
       <Meta
         logoSrc={ splashLogoSrc }
-        title={ listingName }
+        title={ isHomePage ? '' : listingName }
         description={ _l`site.pageDescription${{...templateData, snippetCount, listingType, listingLanguage, listingTag }}` }
+        canonical={ isHomePage ? '/' : '' }
       />
       <Shell
         logoSrc={ logoSrc }
@@ -53,11 +60,31 @@ const ListingPage = ({
         withIcon={ true }
         withTitle={ true }
       >
+        {
+          isFirstListingPage ? (
+            <>
+              <h1 className='home-title'>
+                <img
+                  src={ logoSrc }
+                  alt={ _l('Logo') }
+                  className='home-logo'
+                />
+                <span className='home-title-text'>
+                  { _l('site.title') }
+                </span>
+              </h1>
+              <p className='home-sub-title'>
+                { _l('site.description') }
+              </p>
+            </>
+          ) : null
+        }
         <SnippetList
-          listingName={ listingName }
+          listingName={ listingTitle }
           listingType={ listingType }
           snippetList={ snippetList }
           paginator={ paginator }
+          sorter={ sorter }
           listingSublinks={ listingSublinks }
         />
       </Shell>
@@ -74,10 +101,14 @@ ListingPage.propTypes = {
     splashLogoSrc: PropTypes.string.isRequired,
     /** Paginator component data */
     paginator: PaginatorPropType,
+    /** Sorter component data */
+    sorter: SorterPropType,
     /** List of snippets to be displayed */
     snippetList: PropTypes.arrayOf(SnippetPropType),
     /** Name of this listing page */
     listingName: PropTypes.string,
+    /** Title of this listing page */
+    listingTitle: PropTypes.string,
     /**  Number of indexed snippets */
     snippetCount: PropTypes.number,
     /** Type metadata for the listing description */

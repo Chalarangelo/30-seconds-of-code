@@ -19,6 +19,13 @@ describe('<ListingPage />', () => {
     pageNumber: 4,
     baseUrl: '/list',
   };
+  const sorter = {
+    orders: [
+      {title: 'Popularity', url: '/list/p/1'},
+      {title: 'Expertise', url: '/list/e/1'},
+    ],
+    selected: 'Popularity',
+  };
   const snippetList = [
     {
       title: 'compose',
@@ -30,12 +37,13 @@ describe('<ListingPage />', () => {
     },
   ];
   const listingName = 'Snippet list';
+  const listingTitle = 'Snippet list';
   let wrapper, shell, meta, snippetListComponent;
 
   beforeEach(() => {
     wrapper = mount(
       <Provider store={ store }>
-        <ListingPage pageContext={ { logoSrc, splashLogoSrc, snippetList, paginator, listingName } } />
+        <ListingPage pageContext={ { logoSrc, splashLogoSrc, snippetList, paginator, sorter, listingName, listingTitle } } />
       </Provider>
     );
     shell = wrapper.find('Shell');
@@ -69,7 +77,7 @@ describe('<ListingPage />', () => {
 
   it('should pass the correct data to the SnippetList component', () => {
     expect(snippetListComponent.prop('snippetList')).toEqual(snippetList);
-    expect(snippetListComponent.prop('listingName')).toEqual(listingName);
+    expect(snippetListComponent.prop('listingName')).toEqual(listingTitle);
     expect(snippetListComponent.prop('paginator')).toEqual(paginator);
   });
 });

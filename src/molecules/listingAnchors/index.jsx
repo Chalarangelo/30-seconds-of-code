@@ -16,10 +16,15 @@ const ListingAnchors = ({
 }) => {
   // Scroll the selected tag into view, so that users always know where they are
   React.useEffect(() => {
-    if(isCompact) {
-      document
-        .querySelector('.listing-anchors .selected')
-        .scrollIntoView(false);
+    if(isCompact && typeof document !== 'undefined') {
+      // Wrap in try-catch to be able to test in Jest/Enzyme
+      try {
+        document
+          .querySelector('.listing-anchors .selected')
+          .scrollIntoView(false);
+      } catch {
+        return;
+      }
     }
   }, []);
 

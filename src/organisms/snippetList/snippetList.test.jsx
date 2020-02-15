@@ -13,6 +13,13 @@ describe('<SnippetList />', () => {
     pageNumber: 4,
     baseUrl: '/list',
   };
+  const sorter = {
+    orders: [
+      {title: 'Popularity', url: '/list/p/1'},
+      {title: 'Expertise', url: '/list/e/1'},
+    ],
+    selected: 'Popularity',
+  };
   const snippetList = [
     {
       title: 'compose',
@@ -32,6 +39,7 @@ describe('<SnippetList />', () => {
       <SnippetList
         snippetList={ snippetList }
         paginator={ paginator }
+        sorter={ sorter }
         listingName={ listingName }
       />
     );
@@ -42,10 +50,6 @@ describe('<SnippetList />', () => {
   describe('should render', () => {
     it('a PageTitle component', () => {
       expect(wrapper).toContainMatchingElement('PageTitle');
-    });
-
-    it('a PageSubtitle component', () => {
-      expect(wrapper).toContainMatchingElement('PageSubtitle');
     });
 
     it('a Paginator component', () => {

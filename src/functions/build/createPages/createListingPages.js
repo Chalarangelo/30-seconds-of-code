@@ -1,12 +1,21 @@
 import { chunk } from 'functions/utils';
 import { transformSnippetIndex } from 'functions/transformers';
+import EXPERTISE_LEVELS from 'shared/expertiseLevels';
 import _ from 'lang';
 const _l = _('en');
 
-const createListingPages = (indexedChunks, listingPage, createPage, context, baseUrl) => {
+const ORDERS_MAP = {
+  'p': _l('orders.popularity'),
+  'a': _l('orders.alphabetical'),
+  'e': _l('orders.expertise'),
+};
+
+const createListingPages = (
+  indexedChunks, listingPage, createPage, context, baseUrl, slugOrderingSegment, ordersList
+) => {
   indexedChunks.forEach((chunk, i, chunks) => {
     createPage({
-      path: `${baseUrl}/p/${i + 1}`,
+      path: `${baseUrl}/${slugOrderingSegment}/${i + 1}`,
       component: listingPage,
       context: {
         snippetList: chunk,
@@ -14,32 +23,94 @@ const createListingPages = (indexedChunks, listingPage, createPage, context, bas
           pageNumber: i + 1,
           totalPages: chunks.length,
           baseUrl,
+          slugOrderingSegment,
+        },
+        sorter: {
+          orders: ordersList.map(order => (
+            {
+              url: `${baseUrl}/${order}/1`,
+              title: ORDERS_MAP[order],
+            }
+          )),
+          selectedOrder: ORDERS_MAP[slugOrderingSegment],
         },
         ...context,
       },
     });
   });
+  // Create Home page
+  if (context.listingType === 'main' && slugOrderingSegment === 'p') {
+    createPage({
+      path: `/`,
+      component: listingPage,
+      context: {
+        snippetList: indexedChunks[0],
+        paginator: {
+          pageNumber: 1,
+          totalPages: indexedChunks.length,
+          baseUrl,
+          slugOrderingSegment,
+        },
+        sorter: {
+          orders: ordersList.map(order => (
+            {
+              url: `${baseUrl}/${order}/1`,
+              title: ORDERS_MAP[order],
+            }
+          )),
+          selectedOrder: ORDERS_MAP[slugOrderingSegment],
+        },
+        ...context,
+      },
+    });
+  }
 };
 
+const createListingPagesWithOrderOptions = (
+  listingPage, createPage, context, baseUrl, orders, chunks, contextCustomizer = () => ({})
+) => {
+  orders.forEach((order, i) => {
+    createListingPages(
+      chunks[i],
+      listingPage,
+      createPage,
+      { ...context, ...contextCustomizer(order, i)},
+      baseUrl,
+      order,
+      orders
+    );
+  });
+};
+
+/* eslint-disable no-extra-boolean-cast */
 const createAllListingPages = (searchIndex, listingMetas, listingPage, createPage, context) => {
   // Create listing pages for the main listing
-  const searchIndexChunks = chunk(transformSnippetIndex(searchIndex.edges), 20);
+  const transformedIndex = transformSnippetIndex(searchIndex.edges);
+  const popularChunks = chunk(transformedIndex, 20);
+  const alphabeticalChunks = chunk(transformedIndex.sort((a, b) => a.title.localeCompare(b.title)), 20);
+  const expertiseChunks = chunk(transformedIndex.sort((a, b) =>
+    a.expertise === b.expertise ? a.title.localeCompare(b.title) :
+      !a.expertise ? 1 : !b.expertise ? -1 :
+        EXPERTISE_LEVELS.indexOf(a.expertise) - EXPERTISE_LEVELS.indexOf(b.expertise)
+  ), 20);
   const mainListingSublinks = listingMetas
     .filter(v => !v.unlisted)
     .map(v => v.featured > 0 ? v : {...v, featured: 500 })
     .sort((a, b) => a.featured === b.featured ? a.name - b.name : a.featured - b.featured);
 
-  createListingPages(
-    searchIndexChunks,
+  createListingPagesWithOrderOptions(
     listingPage,
     createPage,
     {
       ...context,
       listingName: _l('Snippet List'),
+      listingTitle: _l('Snippet List'),
       listingType: 'main',
       listingSublinks: mainListingSublinks,
     },
-    '/list'
+    '/list',
+    ['p', 'a', 'e'],
+    [popularChunks, alphabeticalChunks, expertiseChunks]
   );
 
   listingMetas
@@ -51,40 +122,53 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
         s.node.slug.startsWith(`${slugPrefix}`) ||
         (s.node.blog && s.node.tags.all.find(t => t.toLowerCase() === searchIndexName.toLowerCase()))
       );
-      const searchIndexSlugChunks = chunk(transformSnippetIndex(searchIndexSlugData), 20);
+      const transformedSlugChunks = transformSnippetIndex(searchIndexSlugData);
+      const popularSlugChunks = chunk(transformedSlugChunks, 20);
+      const alphabeticalSlugChunks = chunk(transformedSlugChunks.sort((a, b) => a.title.localeCompare(b.title)), 20);
+      const expertiseSlugChunks = chunk(transformedSlugChunks.sort((a, b) =>
+        a.expertise === b.expertise ? a.title.localeCompare(b.title) :
+          !a.expertise ? 1 : !b.expertise ? -1 :
+            EXPERTISE_LEVELS.indexOf(a.expertise) - EXPERTISE_LEVELS.indexOf(b.expertise)
+      ), 20);
       const searchIndexTagPrefixes = listingMeta.tags;
-      const languageListingSublinks = [
-        {
-          link: {
-            internal: true,
-            url: `${slugPrefix}/p/1`,
-          },
-          name: _l`tag.${'all'}`,
-          selected: true,
-        },
-        ...listingMeta.tags
-          .map(tag => ({
-            link: {
-              internal: true,
-              url: `${slugPrefix}/t/${tag}/p/1`,
+      const slugContextCustomizer = order => {
+        return {
+          listingSublinks: listingMeta.blog ? [] : [
+            {
+              link: {
+                internal: true,
+                url: `${slugPrefix}/${order}/1`,
+              },
+              name: _l`tag.${'all'}`,
+              selected: true,
             },
-            name: _l`tag.${tag}`,
-          })),
-      ];
+            ...listingMeta.tags
+              .map(tag => ({
+                link: {
+                  internal: true,
+                  url: `${slugPrefix}/t/${tag}/${order}/1`,
+                },
+                name: _l`tag.${tag}`,
+              })),
+          ],
+        };
+      };
 
-      createListingPages(
-        searchIndexSlugChunks,
+      createListingPagesWithOrderOptions(
         listingPage,
         createPage,
         {
           ...context,
           listingName: listingMeta.blog ? _l('Blog') : _l`codelang.${searchIndexName}`,
+          listingTitle: listingMeta.blog ? _l('Blog') : _l`codelang.${searchIndexName}`,
           snippetCount: searchIndexSlugData.length,
           listingType: listingMeta.blog ? 'blog' : 'language',
           listingLanguage: listingMeta.blog ? 'blog' : searchIndexName,
-          listingSublinks: listingMeta.blog ? [] : languageListingSublinks,
         },
-        `${slugPrefix}`
+        `${slugPrefix}`,
+        ['p', 'a', 'e'],
+        [popularSlugChunks, alphabeticalSlugChunks, expertiseSlugChunks],
+        slugContextCustomizer
       );
 
       searchIndexTagPrefixes.forEach(tagPrefix => {
@@ -96,27 +180,55 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
               s.node.tags.all.find(t => t.toLowerCase() === tagPrefix.toLowerCase())
             )
           );
-        const searchIndexTagChunks = chunk(transformSnippetIndex(searchIndexTagData), 20);
-        const tagListingSublinks = languageListingSublinks
-          .map(tag => ({...tag, selected: tag.link.url.indexOf(`/t/${tagPrefix}/`) !== -1}));
+        const transformedTagChunks = transformSnippetIndex(searchIndexTagData);
+        const popularTagChunks = chunk(transformedTagChunks, 20);
+        const alphabeticalTagChunks = chunk(transformedTagChunks.sort((a, b) => a.title.localeCompare(b.title)), 20);
+        const expertiseTagChunks = chunk(transformedTagChunks.sort((a, b) =>
+          a.expertise === b.expertise ? a.title.localeCompare(b.title) :
+            !a.expertise ? 1 : !b.expertise ? -1 :
+              EXPERTISE_LEVELS.indexOf(a.expertise) - EXPERTISE_LEVELS.indexOf(b.expertise)
+        ), 20);
+        const tagContextCustomizer = order => {
+          return {
+            listingSublinks: listingMeta.blog ? [] : [
+              {
+                link: {
+                  internal: true,
+                  url: `${slugPrefix}/${order}/1`,
+                },
+                name: _l`tag.${'all'}`,
+                selected: true,
+              },
+              ...listingMeta.tags
+                .map(tag => ({
+                  link: {
+                    internal: true,
+                    url: `${slugPrefix}/t/${tag}/${order}/1`,
+                  },
+                  name: _l`tag.${tag}`,
+                })),
+            ].map(tag => ({ ...tag, selected: tag.link.url.indexOf(`/t/${tagPrefix}/`) !== -1 })),
+          };
+        };
 
-        createListingPages(
-          searchIndexTagChunks,
+        createListingPagesWithOrderOptions(
           listingPage,
           createPage,
           {
             ...context,
             listingName: _l`codelang_tag.${searchIndexName}${tagPrefix}`,
-            snippetCount: searchIndexTagData.length,
+            listingTitle: _l`codelang.${searchIndexName}`,
+            snippetCount: searchIndexSlugData.length,
             listingType: 'tag',
             listingLanguage: searchIndexName,
             listingTag: tagPrefix,
-            listingSublinks: listingMeta.blog ? [] : tagListingSublinks,
           },
-          `${slugPrefix}/t/${tagPrefix}`
+          `${slugPrefix}/t/${tagPrefix}`,
+          ['p', 'a', 'e'],
+          [popularTagChunks, alphabeticalTagChunks, expertiseTagChunks],
+          tagContextCustomizer
         );
       });
-
     });
 };
 

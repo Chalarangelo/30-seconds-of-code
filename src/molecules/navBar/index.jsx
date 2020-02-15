@@ -1,32 +1,53 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link as LinkPropType } from 'typedefs';
-import NavButton from 'atoms/navButton';
+import { Anchor } from 'atoms/anchor';
+import Search from 'atoms/search';
+import _ from 'lang';
+const _l = _('en');
 
 /**
  * Renders a group of navigational elements.
  * Used in the application's main navigation menu.
- * Depends on NavButton atom.
+ * Depends on Search and Anchor atoms.
  */
 const NavBar = ({
-  buttons,
+  logoSrc,
+  homeLink,
+  settingsLink,
+  hasMainSearch = false,
   ...rest
 }) => (
-  <header className="nav-bar" { ...rest }>
-    { buttons.map(({icon, link, ...btn}, i) => (
-      <NavButton icon={ icon } link={ link } key={ `nav-btn-${i}` } { ...btn } />
-    )) }
+  <header className='nav-bar' { ...rest }>
+    <Anchor
+      className='nav-btn'
+      link={ homeLink }
+    >
+      <img
+        src={ logoSrc }
+        alt={ _l('Logo') }
+        className='nav-website-logo'
+      />
+    </Anchor>
+    <Search
+      isMainSearch={ hasMainSearch }
+    />
+    <Anchor
+      className='nav-btn icon icon-settings'
+      link={ settingsLink }
+    />
   </header>
 );
 
 NavBar.propTypes = {
-  /** Buttons that compose the navigation bar */
-  buttons: PropTypes.arrayOf(PropTypes.shape({
-    link: LinkPropType.isRequired,
-    onClick: PropTypes.func,
-    icon: PropTypes.string,
-    rest: PropTypes.any,
-  })).isRequired,
+  /** URI for the logo image */
+  logoSrc: PropTypes.string.isRequired,
+  /** Link to the home page */
+  homeLink: LinkPropType.isRequired,
+  /** Link to the settings page */
+  settingsLink: LinkPropType.isRequired,
+  /** Should render the search as main? */
+  hasMainSearch: PropTypes.bool,
   /** Any other props to be passed to the component */
   rest: PropTypes.any,
 };

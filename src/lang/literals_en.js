@@ -59,6 +59,8 @@ const literals = {
       return `Learn more about the team behind ${config.name}.`;
     case 'cookies':
       return `Read about the cookie policy of ${config.name}.`;
+    case 'settings':
+      return `Customize your ${config.name} experience.`;
     case 'home':
     default:
       return defaultDescription;
@@ -68,13 +70,17 @@ const literals = {
   'nav.search': 'Search',
   'nav.list': 'List',
   'nav.github': 'GitHub',
-  'nav.moon': 'Dark mode',
   'nav.sun': 'Light mode',
   'footer.about': 'About',
   'footer.github': 'GitHub',
   'footer.twitter': 'Twitter',
   'footer.cookies': 'Cookies',
   'footer.discord': 'Discord',
+  'orders.popularity': 'Popularity',
+  'orders.alphabetical': 'Alphabetical',
+  'orders.expertise': 'Expertise',
+  'settings.dark_mode': 'Dark mode',
+  'settings.github_links': 'GitHub links',
   // Literals
   'Expertise': level => `${level}`,
   'Search snippets': 'Search snippets',
@@ -91,6 +97,7 @@ const literals = {
   'Edit on CodePen': 'Edit on CodePen',
   'Preview': 'Preview',
   'About': 'About',
+  'Settings': 'Settings',
   'About us': 'About us',
   'Read more about us...': 'Read more about us...',
   'Start typing a keyphrase to see matching snippets or ': 'Start typing a keyphrase to see matching snippets or ',
@@ -130,6 +137,7 @@ const literals = {
   'CC0-1.0': 'CC0-1.0',
   'Powered by ': 'This site is powered by ',
   'GitHub': 'GitHub',
+  'View on GitHub': 'View on GitHub',
   'Travis CI': 'Travis CI',
   'Gatsby': 'Gatsby',
   'Netlify': 'Netlify',
