@@ -1,0 +1,95 @@
+---
+title: What are JavaScript Iterators and where can I use them?
+type: question
+tags: javascript,array,object,iterator
+authors: chalarangelo
+cover: blog_images/javascript-iterators.jpg
+excerpt: Learn how the new JavaScript ES6 Iterators work and how you can use them to level up your programming projects by understanding these short code examples.
+---
+
+JavaScript iterators were introduced in ES6 and they are used to loop over a sequence of values, usually some sort of collection. By definition, an iterator must implement a `next()` function, that returns an object in the form of `{ value, done }` where `value` is the next value in the iteration sequence and `done` is a boolean determining if the sequence has already been consumed.
+
+A very simple iterator with practical use in a real-world project could be as follows:
+
+```js
+class LinkedList {
+  constructor(data) {
+    this.data = data;
+  }
+
+  firstItem() {
+    return this.data.find(i => i.head);
+  }
+
+  findById(id) {
+    return this.data.find(i => i.id === id);
+  }
+
+  [Symbol.iterator]() {
+    let item = {next: this.firstItem().id};
+    return {
+      next: () => {
+        item = this.findById(item.next);
+        if(item) {
+          return {value: item.value, done: false};
+        }
+        return {value: undefined, done: true};
+      }
+    };
+  }
+}
+
+const myList = new LinkedList([
+  {id: 'a10', value: 'First', next: 'a13', head: true },
+  {id: 'a11', value: 'Last', next: null, head: false },
+  {id: 'a12', value: 'Third', next: 'a11', head: false },
+  {id: 'a13', value: 'Second', next: 'a12', head: false }
+]);
+
+for(let item of myList) {
+  console.log(item);    // 'First', 'Second', 'Third', 'Last'
+}
+```
+
+In the above example, we implement a `LinkedList` data structure, that internally uses a `data` array where each item has a `value`, alongside some implementation-specific properties used to determine its position in the sequence. Objects constructed from this class are not iterable by default, so we define an iterator via the use of `Symbol.iterator` and set it up so that the returned sequence is in order based on the internal implementation of the class, while the returned items only return their `value`. 
+
+On a related note, iterators are just functions, meaning they can be called like any other function (e.g. to delegate the iteration to an existing iterator), while also not being restricted to the `Symbol.iterator` name, allowing us to define multiple iterators for the same object. Here's an example of these concepts at play:
+
+```js
+class SpecialList {
+  constructor(data) {
+    this.data = data;
+  }
+
+  [Symbol.iterator]() {
+    return this.data[Symbol.iterator]();
+  }
+
+  values() {
+    return this.data
+      .filter(i => i.complete)
+      .map(i => i.value)
+      [Symbol.iterator]();
+  }
+}
+
+const myList = new SpecialList([
+  {complete: true, value: 'Lorem ipsum'},
+  {complete: true, value: 'dolor sit amet'},
+  {complete: false},
+  {complete: true, value: 'adipiscing elit'}
+]);
+
+for(let item of myList) {
+  console.log(item);  // The exact data passed to the SpecialList constructor above
+}
+
+for(let item of myList.values()) {
+  console.log(item);  // 'Lorem ipsum', 'dolor sit amet', 'adipiscing elit'
+}
+```
+
+In this example, we use the native array iterator of the `data` object to make our `SpecialList` iterable, returning the exact values of the `data` array. Meanwhile, we also define a `values` method, which is an iterator itself, using `Array.prototype.filter()` and `Array.prototype.map()` on the `data` array, then finally returning the `Symbol.iterator` of the result, allowing iteration only over non-empty objects in the sequence and returning just the `value` for each one.
+
+
+**Image credit:** [Daniele Levis Pelusi](https://unsplash.com/@yogidan2012?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
