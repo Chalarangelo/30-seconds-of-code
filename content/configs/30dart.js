@@ -9,7 +9,6 @@ export default {
   slug: 'dart',
   reducer: 'stdReducer',
   featured: 6,
-  isUnlisted: true,
   theme: {
     backColor: '#1b2634',
     foreColor: '#ffffff',
