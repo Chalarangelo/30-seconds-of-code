@@ -10,7 +10,7 @@ Create a `Set` by applying `fn` to all elements in `b`, then use `Array.prototyp
 ```js
 const intersectionBy = (a, b, fn) => {
   const s = new Set(b.map(fn));
-  return a.filter(x => s.has(fn(x)));
+  return [...new Set(a)].filter(x => s.has(fn(x)));
 };
 ```
 
