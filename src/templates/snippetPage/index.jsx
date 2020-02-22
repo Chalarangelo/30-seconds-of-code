@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import SnippetCard from 'organisms/snippetCard';
-import { LinkBackAnchor } from 'atoms/anchor';
+import Breadcrumbs from 'atoms/breadcrumbs';
 import Meta from 'atoms/meta';
 import { Snippet as SnippetPropType, Link as LinkPropType } from 'typedefs';
 import PropTypes from 'prop-types';
@@ -56,14 +56,16 @@ const SnippetPage = ({
         isListing={ false }
         externalUrl={ snippet.url }
       >
-        <LinkBackAnchor
-          link={ {
-            url: lastPageUrl,
-            internal: true,
+        <Breadcrumbs
+          lastPage={ {
+            link: {
+              url: lastPageUrl,
+              internal: true,
+            },
+            name: lastPageTitle,
           } }
-        >
-          { _l`Back to${lastPageTitle}` }
-        </LinkBackAnchor>
+          breadcrumbs={ breadcrumbs }
+        />
         <SnippetCard
           cardTemplate={ cardTemplate }
           snippet={ snippet }
