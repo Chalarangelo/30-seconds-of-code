@@ -88,7 +88,7 @@ const Meta = ({
         innerHTML: `
         var hasFired = false; 
         if(!hasFired){
-          window.gtag('event', 'page_view', { page_path: '${window.location.href}' });
+          window.gtag('event', 'page_view', { page_path: '${window.location.pathname}' });
           hasFired = true;
         }`,
       });
