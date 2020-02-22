@@ -7,6 +7,10 @@ import {
 } from './transformTags';
 
 import {
+  transformBreadcrumbs
+} from './transformBreadcrumbs';
+
+import {
   transformSnippetIndex,
   transformSnippetContext
 } from './transformSnippets';
@@ -17,6 +21,7 @@ export {
   determineLanguageFromTags,
   stripLanguageFromTags,
   stripExpertiseFromTags,
+  transformBreadcrumbs,
   transformSnippetIndex,
   transformSnippetContext
 };
