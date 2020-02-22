@@ -39,7 +39,12 @@ const ListingPage = ({
   dispatch,
 }) => {
   React.useEffect(() => {
-    dispatch(pushNewPage(listingName, `${paginator.baseUrl}/p/${paginator.pageNumber}`));
+    dispatch(
+      pushNewPage(
+        listingName,
+        `${paginator.baseUrl}/${paginator.slugOrderingSegment}/${paginator.pageNumber}`
+      )
+    );
   }, []);
 
   const isFirstListingPage = listingType === 'main' && paginator.pageNumber === 1;
