@@ -47,6 +47,7 @@ const SnippetPage = ({
           firstSeen: snippet.firstSeen,
           lastUpdated: snippet.lastUpdated,
         } }
+        breadcrumbsData={ breadcrumbs }
         canonical={ snippet.slug }
       />
       <Shell
