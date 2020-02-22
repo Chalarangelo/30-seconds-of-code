@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import SnippetCard from 'organisms/snippetCard';
 import { LinkBackAnchor } from 'atoms/anchor';
 import Meta from 'atoms/meta';
-import { Snippet as SnippetPropType } from 'typedefs';
+import { Snippet as SnippetPropType, Link as LinkPropType } from 'typedefs';
 import PropTypes from 'prop-types';
 import Shell from 'organisms/shell';
 import RecommendationList from 'organisms/recommendationList';
@@ -30,6 +30,7 @@ const SnippetPage = ({
     splashLogoSrc,
     cardTemplate,
     recommendedSnippets = [],
+    breadcrumbs,
   },
   lastPageTitle,
   lastPageUrl,
@@ -96,6 +97,13 @@ SnippetPage.propTypes = {
     cardTemplate: PropTypes.string,
     /** List of recommended snippets */
     recommendedSnippets: PropTypes.arrayOf(SnippetPropType),
+    /** Breadcrumbs data */
+    breadcrumbs: PropTypes.arrayOf(
+      PropTypes.shape({
+        link: LinkPropType,
+        name: PropTypes.string,
+      })
+    ),
   }),
   /** Title of the last page */
   lastPageTitle: PropTypes.string.isRequired,

@@ -1,5 +1,7 @@
 import { recommendationEngine } from 'engines';
-import { transformSnippetIndex, transformSnippetContext } from 'functions/transformers';
+import {
+  transformSnippetIndex, transformSnippetContext, transformBreadcrumbs
+} from 'functions/transformers';
 
 /**
  * Creates individual snippet pages.
@@ -21,6 +23,7 @@ const createSnippetPages = (
         snippet: transformSnippetContext(snippet.node, commonContext.cardTemplate, imageContext),
         ...commonContext,
         recommendedSnippets: transformSnippetIndex(recommendedSnippets.slice(0, 3)),
+        breadcrumbs: transformBreadcrumbs(snippet.node, commonContext.cardTemplate),
       },
     });
   });
