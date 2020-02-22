@@ -1,0 +1,22 @@
+a.link-back.has-more {
+  display: inline-block;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+a.link-back-more {
+  transition: 0.3s ease all;
+  font-size: 1.125rem;
+  line-height: 1.35;
+  display: inline-block;
+  margin: 0.8125rem 1.25rem 0 0;
+  // padding-left: 24px;
+  position: relative;
+  &, &:link, &:visited {
+    color: var(--fore-color-dark);
+  }
+
+  @media screen and (max-width: calc(#{$layout-medium-breakpoint} - 1px)) {
+    margin-right: 0.875rem;
+  }
+}
