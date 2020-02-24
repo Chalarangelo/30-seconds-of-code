@@ -47,7 +47,8 @@ const Breadcrumbs = ({
   if(
     lastPage.link.url.includes('search') ||
     lastPage.name.toLowerCase() === 'snippet list' ||
-    lastPage.name.toLowerCase() === breadcrumbs[0].name.toLowerCase()
+    lastPage.name.toLowerCase() === breadcrumbs[0].name.toLowerCase() ||
+    (breadcrumbs.length === 1 && breadcrumbs[0].name.toLowerCase() !== lastPage.name.toLowerCase())
   ) {
     return (
       <LinkBackAnchor
@@ -56,7 +57,7 @@ const Breadcrumbs = ({
         { lastPage.name }
       </LinkBackAnchor>
     );
-  } else if (lastPage.name.toLowerCase() === breadcrumbs[1].name.toLowerCase()) {
+  } else if (breadcrumbs.length > 1 && lastPage.name.toLowerCase() === breadcrumbs[1].name.toLowerCase()) {
     const orderingSegment = lastPage.link.url.includes('a')
       ? '/a/' : lastPage.link.url.includes('e')
         ? '/e/' : '/p/';
