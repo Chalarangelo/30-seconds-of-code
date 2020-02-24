@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Anchor } from 'atoms/anchor';
+import Anchor from 'atoms/anchor';
 import { Button } from 'atoms/button';
 import _ from 'lang';
 const _l = _('en');

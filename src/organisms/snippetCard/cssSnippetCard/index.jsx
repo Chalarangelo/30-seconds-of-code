@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Anchor } from 'atoms/anchor';
+import Anchor from 'atoms/anchor';
 import Card from 'atoms/card';
 import TagList from 'molecules/tagList';
 import CodeBlock from 'atoms/codeBlock';
