@@ -81,6 +81,15 @@ describe('<Breadcrumbs />', () => {
       name: 'JavaScript Function',
     },
   };
+  const blogBreadcrumbs = [
+    {
+      link: {
+        url: '/blog/p/1',
+        internal: true,
+      },
+      name: 'Blog',
+    },
+  ];
   let wrapper, linkBack, anchor;
 
   describe('from Search as last page', () => {
@@ -160,6 +169,50 @@ describe('<Breadcrumbs />', () => {
 
     it('renders a second Anchor with the correct link', () => {
       expect(anchor.prop('link')).toEqual({internal: true, url: lastPages.tag.link.url});
+    });
+
+    it('renders a second Anchor with the correct text', () => {
+      expect(anchor.text()).toBe('Function');
+    });
+  });
+
+  describe('blog from language listing', () => {
+    beforeEach(() => {
+      wrapper = mount(<Breadcrumbs breadcrumbs={ blogBreadcrumbs } lastPage={ lastPages.language } />);
+      linkBack = wrapper.find('LinkBackAnchor');
+      anchor = wrapper.find('.link-back-more').first();
+    });
+
+    it('renders a LinkBackAnchor with the correct link', () => {
+      expect(linkBack.prop('link')).toEqual({ internal: true, url: '/javascript/e/1' });
+    });
+
+    it('renders a LinkBackAnchor with the correct text', () => {
+      expect(linkBack.text()).toBe('JavaScript');
+    });
+
+    it('does not render a second Anchor', () => {
+      expect(anchor).toBeFalsy;
+    });
+  });
+
+  describe('blog from tag listing', () => {
+    beforeEach(() => {
+      wrapper = mount(<Breadcrumbs breadcrumbs={ blogBreadcrumbs } lastPage={ lastPages.tag } />);
+      linkBack = wrapper.find('LinkBackAnchor');
+      anchor = wrapper.find('.link-back-more').first();
+    });
+
+    it('renders a LinkBackAnchor with the correct link', () => {
+      expect(linkBack.prop('link')).toEqual({ internal: true, url: '/javascript/a/1' });
+    });
+
+    it('renders a LinkBackAnchor with the correct text', () => {
+      expect(linkBack.text()).toBe('JavaScript');
+    });
+
+    it('renders a second Anchor with the correct link', () => {
+      expect(anchor.prop('link')).toEqual({ internal: true, url: lastPages.tag.link.url });
     });
 
     it('renders a second Anchor with the correct text', () => {

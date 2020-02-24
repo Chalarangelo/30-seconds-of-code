@@ -45,10 +45,50 @@ const Breadcrumbs = ({
   lastPage,
 }) => {
   if(
+    breadcrumbs.length === 1 && lastPage.name.length &&
+    breadcrumbs[0].name.toLowerCase() !== lastPage.name.toLowerCase() &&
+    breadcrumbs[0].name.toLowerCase() === 'blog'
+  ) {
+    if (lastPage.link.url.includes('/t/')) {
+      const orderingSegment = lastPage.link.url.includes('/a/')
+        ? '/a/' : lastPage.link.url.includes('/e/')
+          ? '/e/' : '/p/';
+      const lastPageName = lastPage.name.split(' ').slice(1);
+      const firstPageUrl = `${lastPage.link.url.slice(0, lastPage.link.url.indexOf('/t/'))}/p/1`;
+      const firstPageName = lastPage.name.split(' ').slice(0, 1);
+      return (
+        <>
+          <LinkBackAnchor
+            className='has-more'
+            link={ {
+              ...lastPage.link,
+              url: firstPageUrl.replace('/p/', orderingSegment),
+            } }
+          >
+            { firstPageName }
+          </LinkBackAnchor>
+          { ' / ' }
+          <Anchor
+            className='link-back-more'
+            link={ lastPage.link }
+          >
+            { lastPageName }
+          </Anchor>
+        </>
+      );
+    } else {
+      return (
+        <LinkBackAnchor
+          link={ lastPage.link }
+        >
+          { lastPage.name }
+        </LinkBackAnchor>
+      );
+    }
+  } else if(
     lastPage.link.url.includes('search') ||
     lastPage.name.toLowerCase() === 'snippet list' ||
-    lastPage.name.toLowerCase() === breadcrumbs[0].name.toLowerCase() ||
-    (breadcrumbs.length === 1 && breadcrumbs[0].name.toLowerCase() !== lastPage.name.toLowerCase())
+    lastPage.name.toLowerCase() === breadcrumbs[0].name.toLowerCase()
   ) {
     return (
       <LinkBackAnchor
@@ -58,8 +98,8 @@ const Breadcrumbs = ({
       </LinkBackAnchor>
     );
   } else if (breadcrumbs.length > 1 && lastPage.name.toLowerCase() === breadcrumbs[1].name.toLowerCase()) {
-    const orderingSegment = lastPage.link.url.includes('a')
-      ? '/a/' : lastPage.link.url.includes('e')
+    const orderingSegment = lastPage.link.url.includes('/a/')
+      ? '/a/' : lastPage.link.url.includes('/e/')
         ? '/e/' : '/p/';
     const lastPageName = lastPage.name.includes(breadcrumbs[0].name)
       ? lastPage.name.slice(breadcrumbs[0].name.length + 1) : lastPage.name;
@@ -87,7 +127,7 @@ const Breadcrumbs = ({
     return (
       <>
         <LinkBackAnchor
-          className='has-more'
+          className={ breadcrumbs.length > 1 ? 'has-more' : '' }
           link={ breadcrumbs[0].link }
         >
           { breadcrumbs[0].name }
