@@ -4,7 +4,7 @@ import Card from 'atoms/card';
 import TagList from 'molecules/tagList';
 import { Snippet as SnippetPropType } from 'typedefs';
 import { trimWhiteSpace } from 'functions/utils';
-import { Anchor } from 'atoms/anchor';
+import Anchor from 'atoms/anchor';
 import _ from 'lang';
 const _l = _('en');
 

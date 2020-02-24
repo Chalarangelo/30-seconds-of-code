@@ -20,6 +20,7 @@ const Meta = ({
   meta = [],
   logoSrc,
   structuredData,
+  breadcrumbsData,
   canonical = '',
 }) => {
   const _l = _(locale);
@@ -64,6 +65,24 @@ const Meta = ({
     });
   }
 
+  if (breadcrumbsData) {
+    scripts.push({
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        'itemListElement': breadcrumbsData.map((breadcrumb, i) => ({
+          '@type': 'ListItem',
+          'position': i + 1,
+          'item': {
+            '@id': `${config.siteUrl}${breadcrumb.link.url}`,
+            'name': `${breadcrumb.name}`,
+          },
+        })),
+      }),
+    });
+  }
+
   if(typeof window !== 'undefined' && acceptsCookies) {
     scripts.push({
       async: '',
@@ -88,7 +107,7 @@ const Meta = ({
         innerHTML: `
         var hasFired = false; 
         if(!hasFired){
-          window.gtag('event', 'page_view', { page_path: '${window.location.href}' });
+          window.gtag('event', 'page_view', { page_path: '${window.location.pathname}' });
           hasFired = true;
         }`,
       });
@@ -169,6 +188,15 @@ Meta.propTypes = {
     firstSeen: PropTypes.string,
     lastUpdated: PropTypes.string,
   }),
+  /** Structured data for breadcrumbs (if any) */
+  breadcrumbsData: PropTypes.arrayOf(
+    PropTypes.shape({
+      link: PropTypes.shape({
+        url: PropTypes.string,
+      }),
+      name: PropTypes.string,
+    })
+  ),
   /** Canonical slug (not full URL) of this page, if canonical */
   canonical: PropTypes.string,
 };

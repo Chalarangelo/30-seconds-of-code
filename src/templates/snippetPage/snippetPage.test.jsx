@@ -15,6 +15,22 @@ describe('<SnippetPage />', () => {
   const logoSrc = '/assets/logo.png';
   const splashLogoSrc = '/assets/splash.png';
   const cardTemplate = 'standard';
+  const breadcrumbs = [
+    {
+      link: {
+        url: '/javascript/p/1',
+        internal: true,
+      },
+      name: 'JavaScript',
+    },
+    {
+      link: {
+        url: '/javascript/t/function/p/1',
+        internal: true,
+      },
+      name: 'JavaScript Function',
+    },
+  ];
   const snippet = {
     url: 'https://github.com/30-seconds/30-seconds-of-code/blob/master/snippets/compose.md',
     title: 'compose',
@@ -35,17 +51,17 @@ describe('<SnippetPage />', () => {
       example: '',
     },
   };
-  let wrapper, shell, meta, linkBack, snippetCard;
+  let wrapper, shell, meta, crumbs, snippetCard;
 
   beforeEach(() => {
     wrapper = mount(
       <Provider store={ store }>
-        <SnippetPage pageContext={ { snippet, splashLogoSrc, logoSrc, cardTemplate } }/>
+        <SnippetPage pageContext={ { snippet, splashLogoSrc, logoSrc, cardTemplate, breadcrumbs } }/>
       </Provider>
     );
     shell = wrapper.find('Shell');
     meta = wrapper.find('Meta');
-    linkBack = wrapper.find('LinkBackAnchor');
+    crumbs = wrapper.find('Breadcrumbs');
     snippetCard = wrapper.find('SnippetCardWrapper');
   });
 
@@ -58,8 +74,8 @@ describe('<SnippetPage />', () => {
       expect(wrapper).toContainMatchingElement('Meta');
     });
 
-    it('a LinkBackAnchor component', () => {
-      expect(wrapper).toContainMatchingElement('LinkBackAnchor');
+    it('a Breadcrumbs component', () => {
+      expect(wrapper).toContainMatchingElement('Breadcrumbs');
     });
 
     it('a SnippetCard component', () => {
@@ -82,8 +98,8 @@ describe('<SnippetPage />', () => {
     expect(meta.prop('title')).toBe(snippet.title);
   });
 
-  it('should pass a link to the LinkBackAnchor component', () => {
-    expect(linkBack.prop('link')).not.toBe(undefined);
+  it('should pass the breadcrumbs to the Breadcrumbs component', () => {
+    expect(crumbs.prop('breadcrumbs')).toBe(breadcrumbs);
   });
 
   it('should pass the card template data to the SnippetCard component', () => {

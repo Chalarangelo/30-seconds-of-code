@@ -97,6 +97,18 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
     .filter(v => !v.unlisted)
     .map(v => v.featured > 0 ? v : {...v, featured: 500 })
     .sort((a, b) => a.featured === b.featured ? a.name - b.name : a.featured - b.featured);
+  const mainContextCustomizer = order => {
+    return {
+      listingSublinks: mainListingSublinks
+        .map(l => ({
+          ...l,
+          link: {
+            ...l.link,
+            url: l.link.url.replace('/p/1', `/${order}/1`),
+          },
+        })),
+    };
+  };
 
   createListingPagesWithOrderOptions(
     listingPage,
@@ -110,7 +122,8 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
     },
     '/list',
     ['p', 'a', 'e'],
-    [popularChunks, alphabeticalChunks, expertiseChunks]
+    [popularChunks, alphabeticalChunks, expertiseChunks],
+    mainContextCustomizer
   );
 
   listingMetas
