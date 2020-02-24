@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PreviewCard from 'molecules/previewCard';
 import PageSubtitle from 'atoms/pageSubtitle';
-import { Anchor } from 'atoms/anchor';
+import Anchor from 'atoms/anchor';
 import { Snippet as SnippetPropType } from 'typedefs';
 import _ from 'lang';
 const _l = _('en');

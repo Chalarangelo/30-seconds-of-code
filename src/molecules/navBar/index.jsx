@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link as LinkPropType } from 'typedefs';
-import { Anchor } from 'atoms/anchor';
+import Anchor from 'atoms/anchor';
 import Search from 'atoms/search';
 import _ from 'lang';
 const _l = _('en');

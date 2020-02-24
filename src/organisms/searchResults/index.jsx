@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PageBackdrop from 'molecules/pageBackdrop';
 import PropTypes from 'prop-types';
-import { Anchor } from 'atoms/anchor';
 import _ from 'lang';
 import PageSubtitle from 'atoms/pageSubtitle';
 import PreviewCard from 'molecules/previewCard';
