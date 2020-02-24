@@ -5,9 +5,9 @@ import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import _ from 'lang';
 const _l = _('en');
+import cookieLiterals from 'lang/cookies_en';
 
 import CookiePage from './index';
-
 configure({ adapter: new Adapter() });
 console.warn = jest.fn();
 
@@ -21,7 +21,7 @@ describe('<CookiePage />', () => {
   beforeEach(() => {
     wrapper = mount(
       <Provider store={ store }>
-        <CookiePage pageContext={ { logoSrc, splashLogoSrc } } />
+        <CookiePage pageContext={ { logoSrc, splashLogoSrc, stringLiterals: cookieLiterals } } />
       </Provider>
     );
     shell = wrapper.find('Shell');
@@ -58,7 +58,7 @@ describe('<CookiePage />', () => {
 
   it('should pass the correct data to the Meta component', () => {
     expect(meta.prop('logoSrc')).toBe(splashLogoSrc);
-    expect(meta.prop('title')).toBe(_l('About'));
+    expect(meta.prop('title')).toBe(_l('Cookie policy'));
   });
 });
 

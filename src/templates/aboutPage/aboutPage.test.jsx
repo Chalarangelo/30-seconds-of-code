@@ -5,6 +5,7 @@ import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import _ from 'lang';
 const _l = _('en');
+import aboutLiterals from 'lang/about_en';
 
 import AboutPage from './index';
 
@@ -21,7 +22,7 @@ describe('<AboutPage />', () => {
   beforeEach(() => {
     wrapper = mount(
       <Provider store={ store }>
-        <AboutPage pageContext={ { logoSrc, splashLogoSrc } } />
+        <AboutPage pageContext={ { logoSrc, splashLogoSrc, stringLiterals: aboutLiterals } } />
       </Provider>
     );
     shell = wrapper.find('Shell');

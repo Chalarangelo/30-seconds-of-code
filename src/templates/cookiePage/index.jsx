@@ -20,12 +20,13 @@ const CookiePage = ({
   pageContext: {
     logoSrc,
     splashLogoSrc,
+    stringLiterals,
   },
 }) => {
   return (
     <>
       <Meta
-        title={ _l('About') }
+        title={ _l('Cookie policy') }
         logoSrc={ splashLogoSrc }
         description={ _l`site.pageDescription${templateData}` }
       />
@@ -46,21 +47,21 @@ const CookiePage = ({
           <p
             style={ {textAlign: 'justify'} }
           >
-            { _l`m${'What are cookies'}` }
+            { stringLiterals['What are cookies'] }
           </p>
         </SimpleCard>
         <SimpleCard title={ _l('How we use cookies') }>
           <p
             style={ {textAlign: 'justify'} }
           >
-            { _l`m${'How we use cookies'}` }
+            { stringLiterals['How we use cookies'] }
           </p>
         </SimpleCard>
         <SimpleCard title={ _l('Disabling cookies') }>
           <p
             style={ {textAlign: 'justify'} }
           >
-            { _l`m${'Disabling cookies'}` }
+            { stringLiterals['Disabling cookies'] }
           </p>
         </SimpleCard>
         <SimpleCard title={ _l('The cookies we set') }>
@@ -68,18 +69,18 @@ const CookiePage = ({
           <p
             style={ {textAlign: 'justify'} }
           >
-            { _l`m${'Site preference cookies'}` }
+            { stringLiterals['Site preference cookies'] }
           </p>
           <p><strong>{ _l('Third party cookies') }</strong></p>
           <p
             style={ {textAlign: 'justify'} }
           >
-            { _l`m${'Third party cookies'}` }
+            { stringLiterals['Third party cookies'] }
           </p>
           <p
             style={ {textAlign: 'justify'} }
           >
-            { _l`m${'Google Analytics cookies'}` }
+            { stringLiterals['Google Analytics cookies'] }
           </p>
           <p
             style={ {textAlign: 'justify'} }
@@ -91,7 +92,7 @@ const CookiePage = ({
           <p
             style={ {textAlign: 'justify'} }
           >
-            { _l`m${'More information'}` }
+            { stringLiterals['More information'] }
           </p>
         </SimpleCard>
       </Shell>
@@ -106,6 +107,8 @@ CookiePage.propTypes = {
     logoSrc: PropTypes.string.isRequired,
     /** URI for the splash logo image */
     splashLogoSrc: PropTypes.string.isRequired,
+    /** String literals for the page */
+    stringLiterals: PropTypes.shape({}).isRequired,
   }),
 };
 

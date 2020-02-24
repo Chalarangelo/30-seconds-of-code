@@ -20,6 +20,7 @@ const AboutPage = ({
   pageContext: {
     logoSrc,
     splashLogoSrc,
+    stringLiterals,
   },
 }) => {
   return (
@@ -46,14 +47,14 @@ const AboutPage = ({
           <p
             style={ {textAlign: 'justify'} }
           >
-            { _l`m${'About us'}` }
+            { stringLiterals['About us'] }
           </p>
         </SimpleCard>
         <SimpleCard title={ _l('Who we are') }>
           <p
             style={ {textAlign: 'justify'} }
           >
-            { _l`m${'Who we are'}` }
+            { stringLiterals['Who we are'] }
           </p>
           <div className='flex-row'>
             <div className="flex-item">
@@ -86,13 +87,13 @@ const AboutPage = ({
           <p
             style={ {textAlign: 'justify'} }
           >
-            { _l`m${'License.code'}` }
+            { stringLiterals['License.code'] }
           </p>
           <br/>
           <p
             style={ {textAlign: 'justify'} }
           >
-            { _l`m${'License.logo'}` }
+            { stringLiterals['License.logo'] }
           </p>
         </SimpleCard>
       </Shell>
@@ -107,6 +108,8 @@ AboutPage.propTypes = {
     logoSrc: PropTypes.string.isRequired,
     /** URI for the splash logo image */
     splashLogoSrc: PropTypes.string.isRequired,
+    /** String literals for the page */
+    stringLiterals: PropTypes.shape({}).isRequired,
   }),
 };
 
