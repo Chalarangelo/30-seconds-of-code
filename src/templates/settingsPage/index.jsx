@@ -37,6 +37,7 @@ const SettingsPage = ({
       <Shell
         logoSrc={ logoSrc }
         isSearch={ false }
+        isSettings
         isListing={ false }
         withIcon
         withTitle
