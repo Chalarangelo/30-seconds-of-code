@@ -14,9 +14,11 @@ const Shell = ({
   isDarkMode,
   acceptsCookies,
   isSearch = false,
+  isSettings = false,
   dispatch,
   logoSrc,
   externalUrl = config.repositoryUrl,
+  lastPageUrl,
   children,
 }) => {
   return (
@@ -45,7 +47,7 @@ const Shell = ({
         } }
         settingsLink={ {
           internal: true,
-          url: '/settings',
+          url: isSettings ? lastPageUrl ? lastPageUrl : '/' : '/settings',
           rel: 'nofollow',
         } }
         hasMainSearch={ isSearch }
@@ -71,17 +73,22 @@ Shell.propTypes = {
   acceptsCookies: PropTypes.bool,
   /** Is this a search page? */
   isSearch: PropTypes.bool,
+  /** Is this a search page? */
+  isSettings: PropTypes.bool,
   /** Dispatch function of the Redux stotre */
   dispatch: PropTypes.func,
   /** URI for the logo image */
   logoSrc: PropTypes.string,
   /** URL of the external resource to link to */
   externalUrl: PropTypes.string,
+  /** URL of the last page */
+  lastPageUrl: PropTypes.string.isRequired,
 };
 
 export default connect(
   state => ({
     isDarkMode: state.shell.isDarkMode,
+    lastPageUrl: state.navigation.lastPageUrl,
     acceptsCookies: state.shell.acceptsCookies,
   }),
   null
