@@ -8,16 +8,8 @@
   margin-top: 1.5625rem;
   overflow: hidden;
 
-  .card-title, .tag-list {
-    display: inline-block
-  }
-
-  .tag-list {
-    height: 2.25rem;
-  }
-
-  &:hover, &:focus {
-    .card-title {
+  .card-title {
+    &:hover, &:focus {
       text-decoration: underline;
     }
   }
