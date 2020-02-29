@@ -20,38 +20,40 @@ const PreviewCard = ({
   className,
   ...rest
 }) => (
-  <Anchor
-    link={ {
-      internal: true,
-      url: snippet.url,
-    } }
-    className='preview-card-wrapper'
-  >
-    <Card className={ trimWhiteSpace`preview-card ${className}` } { ...rest } >
-      <div className='card-meta'>
-        <div className={ `card-icon icon icon-${snippet.languageShort}` }>
-          <Expertise level={ snippet.expertise ? snippet.expertise : snippet.languageShort === 'blog' ? 'blog' : null } />
-        </div>
-        <div className='card-data'>
-          <h4 className='card-title'>{ snippet.title }</h4>
-          <TagList
-            tags={
-              [
-                snippet.language ? snippet.language : null,
-                snippet.primaryTag ? snippet.primaryTag : null,
-                snippet.languageShort === 'blog' ? _l('Blog') : null,
-                snippet.expertise ? snippet.expertise : null,
-              ]
-            }
-          />
-        </div>
+  <Card className={ trimWhiteSpace`preview-card ${className}` } { ...rest } >
+    <div className='card-meta'>
+      <div className={ `card-icon icon icon-${snippet.icon}` }>
+        <Expertise level={ snippet.expertise ? snippet.expertise : snippet.languageShort === 'blog' ? 'blog' : null } />
       </div>
-      <div
-        className='card-description'
-        dangerouslySetInnerHTML={ { __html: `${snippet.description}` } }
-      />
-    </Card>
-  </Anchor>
+      <div className='card-data'>
+        <h4 className='card-title'>
+          <Anchor
+            link={ {
+              internal: true,
+              url: snippet.url,
+            } }
+            className='preview-card-wrapper'
+          >
+            { snippet.title }
+          </Anchor>
+        </h4>
+        <TagList
+          tags={
+            [
+              snippet.language ? snippet.language : null,
+              snippet.primaryTag ? snippet.primaryTag : null,
+              snippet.icon === 'blog' ? _l('Blog') : null,
+              snippet.expertise ? snippet.expertise : null,
+            ]
+          }
+        />
+      </div>
+    </div>
+    <div
+      className='card-description'
+      dangerouslySetInnerHTML={ { __html: `${snippet.description}` } }
+    />
+  </Card>
 );
 
 PreviewCard.propTypes = {
