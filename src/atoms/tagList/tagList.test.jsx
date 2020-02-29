@@ -15,23 +15,22 @@ describe('<TagList />', () => {
   });
 
   it('should render correctly', () => {
-    expect(wrapper).toContainMatchingElement('div.tag-list');
+    expect(wrapper).toContainMatchingElement('.tag-list');
   });
 
   it('should render a child for each passed tag name', () => {
-    expect(wrapper.find('span.tag')).toHaveLength(tags.length);
+    expect(wrapper.text()).toBe('array, adapter, function');
   });
 
   describe('with duplicate tag names', () => {
     const dupedTags = ['array', 'adapter', 'array', 'function', 'function'];
-    const uniqueTagLength = new Set(dupedTags).size;
 
     beforeEach(() => {
       wrapper = mount(<TagList tags={ dupedTags } />);
     });
 
     it('should render each tag name only once', () => {
-      expect(wrapper.find('span.tag')).toHaveLength(uniqueTagLength);
+      expect(wrapper.text()).toBe('array, adapter, function');
     });
   });
 });
