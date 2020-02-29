@@ -7,6 +7,11 @@ export default {
     'snippet_data/archivedSnippets.json',
   ],
   slug: 'js/a',
+  theme: {
+    backColor: '#f6d854',
+    foreColor: '#392f31',
+    iconName: 'js',
+  },
   reducer: 'es6Reducer',
   isArchived: true,
   isUnlisted: true,

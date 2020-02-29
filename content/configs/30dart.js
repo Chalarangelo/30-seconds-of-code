@@ -14,7 +14,7 @@ export default {
     foreColor: '#ffffff',
     iconName: 'dart',
   },
-  biasPenaltyMultiplier: 1.02,
+  biasPenaltyMultiplier: 1.32,
   tagScores: {
     'list': 5,
     'object': 4,

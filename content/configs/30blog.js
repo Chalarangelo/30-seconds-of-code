@@ -17,7 +17,7 @@ export default {
     foreColor: '#edf0fc',
     iconName: 'blog',
   },
-  biasPenaltyMultiplier: 1.01,
+  biasPenaltyMultiplier: 1.00,
   images: {
     name: 'blog_images',
     path: 'blog_images',

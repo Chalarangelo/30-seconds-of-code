@@ -15,7 +15,7 @@ export default {
     foreColor: '#61dafb',
     iconName: 'react',
   },
-  biasPenaltyMultiplier: 1.08,
+  biasPenaltyMultiplier: 1.04,
   tagScores: {
     'hooks': 5,
     'visual': 3,

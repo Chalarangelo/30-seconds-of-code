@@ -13,7 +13,7 @@ export default {
     foreColor: '#ffffff',
     iconName: 'python',
   },
-  biasPenaltyMultiplier: 1.02,
+  biasPenaltyMultiplier: 1.04,
   tagScores: {
     'list': 4,
     'string': 3,
