@@ -34,6 +34,7 @@ export default (id, snippetNode, markdownNode) => {
     },
     archived: snippetNode.archived,
     language: {},
+    icon: snippetNode.icon,
     ranking: rankSnippet(snippetNode, { timeSensitive: true }),
     recommendationRanking: snippetNode.recommendationRanking,
     firstSeen: new Date(+`${snippetNode.meta.firstSeen}000`),

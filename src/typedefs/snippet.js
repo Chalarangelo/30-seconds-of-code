@@ -26,6 +26,7 @@ Snippet.toString = () => `
     expertise: String
     tags: ${Tags.typeName}
     language: ${Language.typeName}
+    icon: String
     code: ${Code.typeName}
     html: ${Html.typeName}
     slug: String
