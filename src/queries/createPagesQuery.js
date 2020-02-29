@@ -41,6 +41,7 @@ export default `
             long
           }
         }
+        icon
         archived
       }
     }
@@ -89,6 +90,7 @@ export default `
           long
           short
         }
+        icon
         archived
       }
     }
@@ -125,6 +127,7 @@ export default `
           name
           profile
         }
+        icon
         cover
         blog
       }
