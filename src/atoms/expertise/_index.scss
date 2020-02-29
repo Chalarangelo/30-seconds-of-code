@@ -3,21 +3,19 @@
   --expertise-beginner: #7CB342;
   --expertise-intermediate: #FFB300;
   --expertise-advanced: #D66361;
+  --expertise-blog: #448AFF;
 }
 
 .expertise {
-  position: relative;
-  display: inline-block;
-  border: 2px solid var(--tag-border-color);
-  border-radius: 0.375rem;
-  color: var(--tag-fore-color);
-  padding: 0.125rem 0.625rem 0.125rem 1.125rem;
-  margin: 0;
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 1rem;
-  letter-spacing: 0.25px;
-  transition: 0.3s ease all;
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1rem;
+  background: var(--expertise-color);
+  border: 2px solid var(--card-back-color);
+  box-sizing: border-box;
+  top: -4px;
+  right: -4px;
 
   &.beginner {
     --expertise-color: var(--expertise-beginner);
@@ -31,15 +29,7 @@
     --expertise-color: var(--expertise-advanced);
   }
 
-  &::before {
-    display: block;
-    position: absolute;
-    content: '';
-    top: 6px;
-    left: 6px;
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 0.5rem;
-    background: var(--expertise-color);
+  &.blog {
+    --expertise-color: var(--expertise-blog);
   }
 }

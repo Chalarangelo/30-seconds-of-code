@@ -10,11 +10,9 @@ const _l = _('en');
  */
 const Expertise = ({
   level = 'Intermediate',
-}) => (
-  <span className={ trimWhiteSpace`expertise ${level.toLowerCase()}` }>
-    { _l`Expertise${level}` }
-  </span>
-);
+}) => level ? (
+  <span className={ trimWhiteSpace`expertise ${level.toLowerCase()}` } />
+) : null;
 
 Expertise.propTypes = {
   /** Snippet expertise rating */
