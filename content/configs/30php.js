@@ -13,7 +13,7 @@ export default {
     foreColor: '#2a2843',
     iconName: 'php',
   },
-  biasPenaltyMultiplier: 1.06,
+  biasPenaltyMultiplier: 1.12,
   tagScores: {
     'array': 5,
     'string': 3,

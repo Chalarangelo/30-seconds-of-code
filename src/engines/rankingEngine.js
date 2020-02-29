@@ -45,11 +45,11 @@ const determineSnippetRanking = (snippet, options = DEFAULT_OPTIONS) => {
   let score = 0;
 
   // Calculate limits
-  const dataScoreLimit = options.timeSensitive ? 35 :
+  const dataScoreLimit = options.timeSensitive ? 20 :
     rankingEngine.tagScoreLimit +
     rankingEngine.expertiseScoreLimit +
     Object.values(snippet.keywordScores).reduce((a, v) => a + v, 0);
-  const timeScoreLimit = options.timeSensitive ? 65 :
+  const timeScoreLimit = options.timeSensitive ? 80 :
     Math.floor(dataScoreLimit * rankingEngine.timeScoreLimitMultiplier);
 
 
