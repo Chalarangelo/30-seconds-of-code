@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from 'atoms/card';
-import TagList from 'molecules/tagList';
+import TagList from 'atoms/tagList';
 import { Snippet as SnippetPropType } from 'typedefs';
 import { trimWhiteSpace } from 'functions/utils';
 import Anchor from 'atoms/anchor';
@@ -42,21 +42,25 @@ const SnippetCard = ({
           day: 'numeric', month: 'short', year: 'numeric',
         })
       }
+      { ' · ' }
+      <TagList tags={ [ ...snippet.tags.all] } />
+      { hasGithubLinksEnabled && (
+        <>
+          { ' · ' }
+          <Anchor
+            className='github-link'
+            link={ {
+              url: snippet.url,
+              internal: false,
+              target: '_blank',
+              rel: 'nofollow noopener noreferrer',
+            } }
+          >
+            { _l('View on GitHub') }
+          </Anchor>
+        </>
+      ) }
     </p>
-    { hasGithubLinksEnabled && (
-      <Anchor
-        className='github-link'
-        link={ {
-          url: snippet.url,
-          internal: false,
-          target: '_blank',
-          rel: 'nofollow noopener noreferrer',
-        } }
-      >
-        { _l('View on GitHub') }
-      </Anchor>
-    ) }
-    <TagList tags={ [ ...snippet.tags.all] } />
     { snippet.cover && snippet.cover.src ?
       <img
         className='card-cover-image'

@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Anchor from 'atoms/anchor';
 import Card from 'atoms/card';
-import TagList from 'molecules/tagList';
+import TagList from 'atoms/tagList';
+import Expertise from 'atoms/expertise';
 import CodeBlock from 'atoms/codeBlock';
 import {CodepenButton} from 'atoms/button';
 import SnippetPreview from 'atoms/snippetPreview';
@@ -20,7 +21,21 @@ const SnippetCard = ({
 }) => {
   return (
     <Card className={ trimWhiteSpace`snippet-card ${className}` } { ...rest } >
-      <h4 className='card-title'>{ snippet.title }</h4>
+      <div className='card-meta'>
+        <div className={ `card-icon icon icon-${snippet.icon}` }>
+          <Expertise level={ snippet.expertise ? snippet.expertise : snippet.languageShort === 'blog' ? 'blog' : null } />
+        </div>
+        <div className='card-data'>
+          <h4 className='card-title'>{ snippet.title }</h4>
+          <TagList
+            tags={
+              [
+                snippet.language.long, ...snippet.tags.all,
+              ]
+            }
+          />
+        </div>
+      </div>
       { hasGithubLinksEnabled && (
         <Anchor
           className='github-link'
@@ -34,7 +49,6 @@ const SnippetCard = ({
           { _l('View on GitHub') }
         </Anchor>
       ) }
-      <TagList tags={ [snippet.language.long, ...snippet.tags.all] } />
       <div
         className='card-description'
         dangerouslySetInnerHTML={ { __html: `${snippet.html.fullDescription}` } }

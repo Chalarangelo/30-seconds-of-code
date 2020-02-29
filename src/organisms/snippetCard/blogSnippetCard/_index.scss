@@ -17,6 +17,15 @@
         color: var(--card-fore-color-light);
       }
     }
+
+    .github-link, .tag-list {
+      margin: 0;
+    }
+
+    .tag-list {
+      color: var(--card-fore-color-light);
+    }
+    
   }
 
   .card-cover-image {
