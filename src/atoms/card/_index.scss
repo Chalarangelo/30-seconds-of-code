@@ -31,6 +31,48 @@
     transition: 0.3s ease all;
     color: var(--card-fore-color);
   }
+
+  .card-meta {
+    display: flex;
+    align-items: flex-start;
+  
+    .card-icon {
+      position: relative;
+      display: inline-block;
+      margin: 0.625rem 0.5rem 0.125rem;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 0.75rem;
+  
+      &:before {
+        position: absolute;
+        top: 0.5rem;
+        left: 0.5rem;
+        font-size: 2rem;
+      }
+
+      // Custom styles for dart icon
+      &.icon-dart:before {
+        content: '';
+        background-image: generate-icon-background("dartlang", '', '', 0, 24);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+
+    .card-data {
+      flex: 1
+    }
+
+    .card-title {
+      margin: 0.625rem 0.5rem 0 0.75rem;
+      line-height: 1.5rem;
+    }
+  }
   
   .card-description {
     margin: 0;
