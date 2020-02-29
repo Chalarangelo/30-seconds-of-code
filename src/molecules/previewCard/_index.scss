@@ -9,8 +9,15 @@
   overflow: hidden;
 
   .card-title {
-    &:hover, &:focus {
-      text-decoration: underline;
+    a {
+      &, &:link, &:visited {
+        line-height: 1;
+        color: var(--card-fore-color);
+      }
+
+      &:hover, &:focus {
+        text-decoration: underline;
+      }
     }
   }
 }

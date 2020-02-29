@@ -33,7 +33,7 @@ describe('<PreviewCard />', () => {
     });
 
     it('a Card component', () => {
-      expect(anchor).toContainMatchingElement('Card');
+      expect(wrapper).toContainMatchingElement('Card');
     });
 
     it('the card title', () => {
