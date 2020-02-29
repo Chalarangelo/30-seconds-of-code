@@ -1,0 +1,18 @@
+// Colors
+:root {
+  --tag-fore-color: #616B8F;
+}
+
+// Dark mode colors
+.page-container.dark {
+  --tag-fore-color: #BEC1CB;
+}
+
+.tag-list {
+  margin: 0 0.5rem 0 0.75rem;
+  display: inline-block;
+  color: var(--tag-fore-color);
+  font-size: 0.875rem;
+  line-height: 1rem;
+  transition: 0.3s ease all;
+}
