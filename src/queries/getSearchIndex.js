@@ -17,8 +17,10 @@ export default `
         }
         expertise
         language {
+          short
           long
         }
+        icon
         searchTokens
         recommendationRanking
       }

@@ -21,10 +21,6 @@ describe('<Expertise />', () => {
     expect(wrapper).toContainMatchingElement('span.expertise');
   });
 
-  it('should render the correct text', () => {
-    expect(wrapper.text()).toBe(_l`Expertise${level}`);
-  });
-
   it('should get the appropriate class from expertise level', () => {
     expect(wrapper).toContainMatchingElement(`.expertise.${level.toLowerCase()}`);
   });

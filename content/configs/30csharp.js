@@ -13,7 +13,7 @@ export default {
     foreColor: '#ffffff',
     iconName: 'csharp',
   },
-  biasPenaltyMultiplier: 1.02,
+  biasPenaltyMultiplier: 1.24,
   tagScores: {
     'array': 5,
     'list': 4,

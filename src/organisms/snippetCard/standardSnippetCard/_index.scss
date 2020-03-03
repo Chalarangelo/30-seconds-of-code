@@ -6,10 +6,6 @@
 
 .snippet-card {
 
-  .tag-list {
-    margin: 0 0.125rem 0.5rem;
-  }
-
   .card-source-content {
     @include card-full-width-section;
     margin-top: 1.375rem;
@@ -68,7 +64,7 @@
 a.github-link {
   &, &:link, &:visited {
     font-size: 0.875rem;
-    margin: 0.25rem 0.5rem;
+    margin: 0 0.5rem 0.25rem 4.75rem;
     color: var(--card-fore-color-light);
   }
 }

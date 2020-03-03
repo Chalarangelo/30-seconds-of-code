@@ -31,6 +31,7 @@ export default (id, snippetNode, markdownNode) => {
       ...snippetNode.language,
       otherLanguages: snippetNode.otherLanguages,
     },
+    icon: snippetNode.icon,
     ranking: rankSnippet(snippetNode),
     recommendationRanking: snippetNode.recommendationRanking,
     firstSeen: new Date(+`${snippetNode.meta.firstSeen}000`),

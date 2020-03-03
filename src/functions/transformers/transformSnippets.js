@@ -1,7 +1,6 @@
 import { stripMarkdownFormat } from 'functions/utils';
 import { transformTagName } from './transformTags';
 
-/** Transform the indexed snippets to appropriate format */
 /**
 * Transform the indexed snippets to the appropriate format.
 *
@@ -15,6 +14,7 @@ export const transformSnippetIndex = edges =>
       expertise: transformTagName(node.expertise),
       primaryTag: transformTagName(node.tags.primary),
       language: node.language && node.language.long ? node.language.long : undefined,
+      icon: node.icon,
       description: node.html.description.trim(),
       url: node.slug,
       searchTokens: node.searchTokens,
@@ -59,6 +59,7 @@ export const transformSnippetContext = (snippet, cardTemplate, imageContext) => 
     lastUpdated: snippet.lastUpdated,
     expertise: transformTagName(snippet.expertise),
     language: snippet.language,
+    icon: snippet.icon,
     tags: {
       primary: transformTagName(snippet.tags.primary),
       all: snippet.tags.all.map(transformTagName),

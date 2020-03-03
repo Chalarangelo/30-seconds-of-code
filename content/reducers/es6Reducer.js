@@ -27,6 +27,7 @@ export default (id, snippetNode, markdownNode) => {
     },
     archived: snippetNode.archived,
     language: snippetNode.language,
+    icon: snippetNode.icon,
     ranking: rankSnippet(snippetNode),
     recommendationRanking: snippetNode.recommendationRanking,
     firstSeen: new Date(+`${snippetNode.meta.firstSeen}000`),

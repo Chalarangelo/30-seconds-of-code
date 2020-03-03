@@ -8,17 +8,16 @@
   margin-top: 1.5625rem;
   overflow: hidden;
 
-  .card-title, .tag-list {
-    display: inline-block
-  }
+  .card-title {
+    a {
+      &, &:link, &:visited {
+        line-height: 1;
+        color: var(--card-fore-color);
+      }
 
-  .tag-list {
-    height: 2.25rem;
-  }
-
-  &:hover, &:focus {
-    .card-title {
-      text-decoration: underline;
+      &:hover, &:focus {
+        text-decoration: underline;
+      }
     }
   }
 }

@@ -21,6 +21,7 @@ const sourceNodes = (requirables, reducers) => ({ actions, createNodeId, createC
         archived: sArr.meta.archived,
         blog: sArr.meta.blog,
         language: sArr.meta.language,
+        icon: sArr.meta.theme ? sArr.meta.theme.iconName : null,
         otherLanguages: sArr.meta.otherLanguages,
         sourceDir: sArr.meta.sourceDir,
         slugPrefix: sArr.meta.slugPrefix,
