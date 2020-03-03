@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'atoms/button';
+import { trimWhiteSpace } from 'functions/utils';
 import _ from 'lang';
 const _l = _('en');
 
@@ -15,27 +15,47 @@ const CodepenButton = ({
   cssCode,
   jsPreProcessor = 'none',
   jsExternal = [],
-}) => (
-  <form action='https://codepen.io/pen/define' method='POST' target='_blank'>
-    <input
-      type='hidden'
-      name='data'
-      value={
-        JSON.stringify({
-          js: jsCode,
-          css: cssCode,
-          html: htmlCode,
-          js_pre_processor: jsPreProcessor,
-          js_external: jsExternal.join(';'),
-        })
-      }
-    />
-    <Button
-      className='codepen-btn icon icon-codepen'
-      title={ _l('Edit on CodePen') }
-    />
-  </form>
-);
+}) => {
+  const [active, setActive] = React.useState(false);
+  const [processing, setProcessing] = React.useState(false);
+  const btnRef = React.useRef();
+  return (
+    <form action='https://codepen.io/pen/define' method='POST' target='_blank'>
+      <input
+        type='hidden'
+        name='data'
+        value={
+          JSON.stringify({
+            js: jsCode,
+            css: cssCode,
+            html: htmlCode,
+            js_pre_processor: jsPreProcessor,
+            js_external: jsExternal.join(';'),
+          })
+        }
+      />
+      <button
+        className={ trimWhiteSpace`btn codepen-btn icon ${active ? 'icon-check' : 'icon-codepen'} ${active ? 'active' : ''}` }
+        ref={ btnRef }
+        title={ _l('Edit on CodePen') }
+        onClick={ e => {
+          if(!processing) {
+            e.preventDefault();
+            setTimeout(() => {
+              setActive(true);
+            }, 100);
+            setTimeout(() => {
+              setActive(false);
+              console.log(btnRef);
+              btnRef.current.click();
+            }, 750);
+          }
+          setProcessing(!processing);
+        } }
+      />
+    </form>
+  );
+};
 
 CodepenButton.propTypes = {
   /** JS code to be passed to the CodePen definition */
