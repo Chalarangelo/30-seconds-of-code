@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import Anchor from 'atoms/anchor';
 import Card from 'atoms/card';
@@ -7,7 +6,6 @@ import TagList from 'atoms/tagList';
 import Expertise from 'atoms/expertise';
 import CodeBlock from 'atoms/codeBlock';
 import { CopyButton, CodepenButton } from 'atoms/button';
-import Toast from 'atoms/toast';
 import { Snippet as SnippetPropType } from 'typedefs';
 import { trimWhiteSpace } from 'functions/utils';
 import { JSX_SNIPPET_PRESETS } from 'shared';
@@ -17,7 +15,6 @@ const _l = _('en');
 const SnippetCard = ({
   snippet,
   className,
-  toastContainer,
   hasGithubLinksEnabled = false,
   ...rest
 }) => (
@@ -69,16 +66,6 @@ const SnippetCard = ({
           : (
             <CopyButton
               text={ snippet.code.src }
-              onCopy={ () => {
-                const _toastContainer = document.getElementById(toastContainer);
-                ReactDOM.render(
-                  <Toast message='Snippet copied to clipboard!'/>,
-                  _toastContainer
-                );
-                setTimeout(() => {
-                  ReactDOM.unmountComponentAtNode(_toastContainer);
-                }, 2000);
-              } }
             />
           )
       }
@@ -111,8 +98,6 @@ SnippetCard.propTypes = {
   snippet: SnippetPropType,
   /** Additional classes for the card */
   className: PropTypes.string,
-  /** The id of a DOM node used to render the toast when copying the snippet */
-  toastContainer: PropTypes.node,
   /** Are GitHub links enabled? */
   hasGithubLinksEnabled: PropTypes.bool,
   /** Any other arguments to be passed to the card */

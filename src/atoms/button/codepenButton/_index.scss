@@ -4,6 +4,7 @@
 
 .btn.codepen-btn {
   background-color: var(--button-back-color-tertiary);
+  --button-back-color: var(--button-back-color-tertiary);
   width: 44px;
   height: 44px;
   z-index: 10;
@@ -16,5 +17,6 @@
     top: 0;
     left: 0;
     width: 100%;
+    transition: opacity 0.1s ease;
   }
 }

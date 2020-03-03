@@ -44,26 +44,5 @@ describe('<CopyButton />', () => {
     expect(wrapper).toContainMatchingElement('button.btn.copy-btn[title]');
     expect(button.prop('title')).toBe(_l('Copy to clipboard'));
   });
-
-  describe('when clicked', () => {
-    beforeEach(() => {
-      button.simulate('click');
-    });
-
-    it('should call passed callback on click event', () => {
-      expect(mockOnCopyCallback.mock.calls.length).toBeGreaterThan(0);
-    });
-
-    it('should copy text to clipboard on click event', () => {
-      /*
-        This is a mock, the imported component should handle copying
-        for us. This test will always pass, even if copying doesn't
-        really work. The point is that the given text value gets to
-        the CopyToClipboard component via our component, which in
-        turn should handle the copying.
-      */
-      expect(mockOnCopyCallback.mock.calls[0][0]).toBe(copyText);
-    });
-  });
 });
 

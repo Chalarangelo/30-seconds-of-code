@@ -9,6 +9,7 @@ $button-fore-color: #FFFFFF;
   --button-shadow-focus-color: rgba(0, 0, 0, 0.29);
   --button-back-color-secondary: #DC325F;
   --button-back-color-tertiary: #131418;
+  --button-back-color-active: #05A864;
 }
 
 .btn, a.btn {
@@ -41,5 +42,53 @@ $button-fore-color: #FFFFFF;
 
   &.secondary {
     background: var(--button-back-color-secondary);
+  }
+
+  &.active {
+    animation-name: active;
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier(.4,0,.2,1);
+    transition: background 0.25s ease;
+
+    &:before {
+      opacity: 0;
+      animation-name: active-before;
+      animation-duration: 0.65s;
+      animation-timing-function: ease-in-out;
+    }
+  }
+}
+
+
+@keyframes active {
+  0%, 100% {
+    background: var(--button-back-color);
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.15) rotate(12deg);
+    background: var(--button-back-color-active);
+  }
+  40% {
+    transform: scale(.94);
+  }
+  60% {
+    transform: scale(.98) rotate(-12deg);
+  }
+  80% {
+    background: var(--button-back-color-active);
+    transform: scale(1.08);
+  }
+  99% {
+    background: var(--button-back-color-active);
+  }
+}
+
+@keyframes active-before {
+  0%, 100% {
+    opacity: 0;
+  }
+  30%, 75% {
+    opacity: 1.0;
   }
 }

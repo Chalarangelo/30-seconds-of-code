@@ -72,7 +72,6 @@ const SnippetPage = ({
         <SnippetCard
           cardTemplate={ cardTemplate }
           snippet={ snippet }
-          toastContainer='toast-container'
         />
         <CTA
           onlySocial={ cardTemplate === 'blog' }
@@ -80,7 +79,6 @@ const SnippetPage = ({
           acceptsCookies={ acceptsCookies }
         />
         <RecommendationList snippetList={ recommendedSnippets } />
-        <div id="toast-container"/>
       </Shell>
     </>
   )

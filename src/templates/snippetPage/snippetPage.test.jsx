@@ -81,10 +81,6 @@ describe('<SnippetPage />', () => {
     it('a SnippetCard component', () => {
       expect(wrapper).toContainMatchingElement('SnippetCard');
     });
-
-    it('the toast container', () => {
-      expect(wrapper).toContainMatchingElement('div#toast-container');
-    });
   });
 
   it('should pass the correct data to the Shell component', () => {
@@ -108,10 +104,6 @@ describe('<SnippetPage />', () => {
 
   it('should pass the snippet data to the SnippetCard component', () => {
     expect(snippetCard.prop('snippet')).toEqual(snippet);
-  });
-
-  it('should pass the toast container to the SnippetCard component', () => {
-    expect(snippetCard.prop('toastContainer')).toEqual('toast-container');
   });
 });
 
