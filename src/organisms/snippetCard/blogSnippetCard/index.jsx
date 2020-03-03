@@ -12,7 +12,6 @@ const SnippetCard = ({
   snippet,
   className,
   // eslint-disable-next-line no-unused-vars
-  toastContainer, // Keep here to suppress React warnings and not pass to children
   hasGithubLinksEnabled = false,
   ...rest
 }) => (
@@ -83,7 +82,6 @@ SnippetCard.propTypes = {
   hasGithubLinksEnabled: PropTypes.bool,
   /** Any other arguments to be passed to the card */
   rest: PropTypes.any,
-  toastContainer: PropTypes.any,
 };
 
 export default SnippetCard;
