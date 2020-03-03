@@ -5,7 +5,7 @@ tags: visual,children,state,effect,intermediate
 
 Renders a carousel component.
 
-- Use the `React.setState()` hook to create the `active` state variable and give it a value of `0` (index of the first item).
+- Use the `React.useState()` hook to create the `active` state variable and give it a value of `0` (index of the first item).
 - Use an object, `style`, to hold the styles for the individual components.
 - Use the `React.useEffect()` hook to update the value of `active` to the index of the next item, using `setTimeout`.
 - Destructure `props`, compute if visibility style should be set to `visible` or not for each carousel item while mapping over and applying the combined style to the carousel item component accordingly.
