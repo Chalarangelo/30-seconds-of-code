@@ -5,7 +5,7 @@ tags: type,beginner
 
 Returns `true` if the specified value is `null`, `false` otherwise.
 
-Use the strict equality operator to check if the value and of `val` are equal to `null`.
+Use the strict equality operator to check if the value of `val` is equal to `null`.
 
 ```js
 const isNull = val => val === null;
