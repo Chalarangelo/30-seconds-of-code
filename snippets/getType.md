@@ -5,7 +5,8 @@ tags: type,beginner
 
 Returns the native type of a value.
 
-Returns lowercased constructor name of value, `"undefined"` or `"null"` if value is `undefined` or `null`.
+Return `"undefined"` or `"null"` if the value is `undefined` or `null`.
+Otherwise, use `Object.prototype.constructor.name` to get the name of the constructor, `String.prototype.toLowerCase()` to return it in lowercase.
 
 ```js
 const getType = v =>
