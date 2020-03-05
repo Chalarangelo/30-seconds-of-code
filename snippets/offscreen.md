@@ -1,9 +1,10 @@
 ---
 title: Offscreen
-tags: layout, visual
+tags: layout,visual,intermediate
 ---
 
-A bulletproof way to completely hide an element visually and positionally in the DOM while still allowing it to be accessed by JavaScript and readable by screen readers. This method is very useful for accessibility ([ADA](https://adata.org/learn-about-ada)) development when more context is needed for visually-impaired users. As an alternative to `display: none` which is not readable by screen readers or `visibility: hidden` which takes up physical space in the DOM.
+Completely hides an element visually and positionally in the DOM while still allowing it to be accessible. 
+Provides an alternative to `display: none` (not readable by screen readers) and `visibility: hidden` (takes up physical space in the DOM).
 
 ```html
 <a class="button" href="https://google.com">
@@ -35,7 +36,5 @@ A bulletproof way to completely hide an element visually and positionally in the
 7. Position the element absolutely so that it does not take up space in the DOM.
 
 #### Browser support
-
-(Although `clip` technically has been depreciated, the newer `clip-path` currently has very limited browser support.)
 
 - https://caniuse.com/#search=clip

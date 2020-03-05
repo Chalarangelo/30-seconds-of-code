@@ -1,6 +1,6 @@
 ---
 title: Shape separator
-tags: visual
+tags: visual,intermediate
 ---
 
 Uses an SVG shape to separate two different blocks to create more a interesting visual appearance compared to standard horizontal separation.
@@ -15,6 +15,7 @@ Uses an SVG shape to separate two different blocks to create more a interesting 
   height: 48px;
   background: #333;
 }
+
 .shape-separator::after {
   content: '';
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 12'%3E%3Cpath d='m12 0l12 12h-24z' fill='%23fff'/%3E%3C/svg%3E");

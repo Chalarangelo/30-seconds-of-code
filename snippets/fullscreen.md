@@ -1,9 +1,9 @@
 ---
 title: Fullscreen
-tags: visual
+tags: visual,advanced
 ---
 
-The :fullscreen CSS pseudo-class represents an element that's displayed when the browser is in fullscreen mode.
+The `:fullscreen` CSS pseudo-element represents an element that's displayed when the browser is in fullscreen mode.
 
 ```html
 <div class="container">
@@ -49,7 +49,7 @@ The :fullscreen CSS pseudo-class represents an element that's displayed when the
 
 #### Explanation
 
-1. `fullscreen` CSS pseudo-class selector is used to select and style an element that is being displayed in fullscreen mode.
+- `:fullscreen` CSS pseudo-element selector is used to select and style an element that is being displayed in fullscreen mode.
 
 #### Browser support
 

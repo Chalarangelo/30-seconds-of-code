@@ -1,12 +1,14 @@
 ---
 title: Mouse cursor gradient tracking
-tags: visual, interactivity,advanced
+tags: visual,interactivity,advanced
 ---
 
 A hover effect where the gradient follows the mouse cursor.
 
 ```html
-<button class="mouse-cursor-gradient-tracking"><span>Hover me</span></button>
+<button class="mouse-cursor-gradient-tracking">
+  <span>Hover me</span>
+</button>
 ```
 
 ```css
@@ -62,7 +64,5 @@ btn.onmousemove = function(e) {
 3. `background: radial-gradient(circle closest-side, pink, transparent);` creates the gradient at the correct postion.
 
 #### Browser support
-
-<span class="snippet__support-note">⚠️ Requires JavaScript.</span>
 
 - https://caniuse.com/#feat=css-variables

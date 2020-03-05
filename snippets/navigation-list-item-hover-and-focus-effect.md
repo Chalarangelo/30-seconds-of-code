@@ -49,7 +49,8 @@ li a::before {
   transition: transform 0.5s ease-in-out;
 }
 
-li a:hover::before, li a:focus::before {
+li a:hover::before,
+li a:focus::before {
   transform: scale(1);
 }
 ```

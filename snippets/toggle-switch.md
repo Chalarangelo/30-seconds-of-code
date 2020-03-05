@@ -1,6 +1,6 @@
 ---
 title: Toggle switch
-tags: visual, interactivity
+tags: visual,interactivity,beginner
 ---
 
 Creates a toggle switch with CSS only.
@@ -48,7 +48,7 @@ input[type='checkbox']:checked + .switch {
 
 #### Explanation
 
-- This effect is styling only the `<label>` element to look like a toggle switch, and hiding the actual `<input>` checkbox by positioning it offscreen. When clicking the label associated with the `<input>` element, it sets the `<input>` checkbox into the `:checked` state.
+This effect is styling only the `<label>` element to look like a toggle switch, and hiding the actual `<input>` checkbox by positioning it offscreen. When clicking the label associated with the `<input>` element, it sets the `<input>` checkbox into the `:checked` state.
 
 1. The `for` attribute associates the `<label>` with the appropriate `<input>` checkbox element by its `id`.
 2. `.switch::after` defines a pseudo-element for the `<label>` to create the circular knob.
@@ -59,7 +59,5 @@ input[type='checkbox']:checked + .switch {
 7. `transition: all 0.3s` specifies all property changes will be transitioned over 0.3 seconds, therefore transitioning the `<label>`'s `background-color` and the pseudo-element's `transform` property when the checkbox is checked.
 
 #### Browser support
-
-<span class="snippet__support-note">⚠️ Requires prefixes for full support.</span>
 
 - https://caniuse.com/#feat=transforms2d

@@ -3,8 +3,7 @@ title: Constant width to height ratio
 tags: layout
 ---
 
-Given an element of variable width, it will ensure its height remains proportionate in a responsive fashion
-(i.e., its width to height ratio remains constant).
+Given an element of variable width, it will ensure its height remains proportionate in a responsive fashion (i.e. its width to height ratio remains constant).
 
 ```html
 <div class="constant-width-to-height-ratio"></div>
@@ -15,11 +14,13 @@ Given an element of variable width, it will ensure its height remains proportion
   background: #333;
   width: 50%;
 }
+
 .constant-width-to-height-ratio::before {
   content: '';
   padding-top: 100%;
   float: left;
 }
+
 .constant-width-to-height-ratio::after {
   content: '';
   display: block;

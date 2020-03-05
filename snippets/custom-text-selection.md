@@ -1,6 +1,6 @@
 ---
 title: Custom text selection
-tags: visual
+tags: visual,beginner
 ---
 
 Changes the styling of text selection.
@@ -14,6 +14,7 @@ Changes the styling of text selection.
   background: aquamarine;
   color: black;
 }
+
 .custom-text-selection::selection {
   background: deeppink;
   color: white;
@@ -26,7 +27,6 @@ Changes the styling of text selection.
 
 #### Browser support
 
-<span class="snippet__support-note">⚠️ Requires prefixes for full support and is not actually
-in any specification.</span>
+<span class="snippet__support-note">⚠️ Requires prefixes for full support and is not actually in any specification.</span>
 
 - https://caniuse.com/#feat=css-selection

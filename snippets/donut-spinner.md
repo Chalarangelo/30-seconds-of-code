@@ -1,6 +1,6 @@
 ---
 title: Donut spinner
-tags: animation
+tags: animation,intermediate
 ---
 
 Creates a donut spinner that can be used to indicate the loading of content.
@@ -18,6 +18,7 @@ Creates a donut spinner that can be used to indicate the loading of content.
     transform: rotate(360deg);
   }
 }
+
 .donut {
   display: inline-block;
   border: 4px solid rgba(0, 0, 0, 0.1);
@@ -34,8 +35,6 @@ Creates a donut spinner that can be used to indicate the loading of content.
 - Use a semi-transparent `border` for the whole element, except one side that will serve as the loading indicator for the donut. Use `animation` to rotate the element.
 
 #### Browser support
-
-<span class="snippet__support-note">⚠️ Requires prefixes for full support.</span>
 
 - https://caniuse.com/#feat=css-animation
 - https://caniuse.com/#feat=transforms2d

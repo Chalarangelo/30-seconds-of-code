@@ -36,6 +36,4 @@ Vertically and horizontally centers a child element within its parent element us
 
 #### Browser support
 
-<span class="snippet__support-note">⚠️ Requires prefix for full support.</span>
-
 - https://caniuse.com/#feat=transforms2d
