@@ -13,6 +13,7 @@ import env from '../../../.build/env';
 const Shell = ({
   isDarkMode,
   acceptsCookies,
+  isBot,
   isSearch = false,
   isSettings = false,
   dispatch,
@@ -26,7 +27,7 @@ const Shell = ({
       className={ trimWhiteSpace`page-container ${isDarkMode ? 'dark' : ''}` }
     >
       {
-        typeof acceptsCookies === 'undefined' && env === 'PRODUCTION' ?
+        typeof acceptsCookies === 'undefined' && env === 'PRODUCTION' && !isBot ?
           <CookieConsentPopup
             onAccept={ e => {
               e.preventDefault();
@@ -71,6 +72,8 @@ Shell.propTypes = {
   isDarkMode: PropTypes.bool,
   /** Does the user accept cookies? */
   acceptsCookies: PropTypes.bool,
+  /** Is the client a bot? (Auto-detect) */
+  isBot: PropTypes.bool,
   /** Is this a search page? */
   isSearch: PropTypes.bool,
   /** Is this a search page? */
@@ -90,6 +93,7 @@ export default connect(
     isDarkMode: state.shell.isDarkMode,
     lastPageUrl: state.navigation.lastPageUrl,
     acceptsCookies: state.shell.acceptsCookies,
+    isBot: state.shell.isBot,
   }),
   null
 )(Shell);
