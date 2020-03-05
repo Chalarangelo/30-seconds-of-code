@@ -10,6 +10,8 @@ const ORDERS_MAP = {
   'e': _l('orders.expertise'),
 };
 
+const CARDS_PER_PAGE = 40;
+
 const createListingPages = (
   indexedChunks, listingPage, createPage, context, baseUrl, slugOrderingSegment, ordersList
 ) => {
@@ -86,13 +88,13 @@ const createListingPagesWithOrderOptions = (
 const createAllListingPages = (searchIndex, listingMetas, listingPage, createPage, context) => {
   // Create listing pages for the main listing
   const transformedIndex = transformSnippetIndex(searchIndex.edges);
-  const popularChunks = chunk(transformedIndex, 20);
-  const alphabeticalChunks = chunk(transformedIndex.sort((a, b) => a.title.localeCompare(b.title)), 20);
+  const popularChunks = chunk(transformedIndex, CARDS_PER_PAGE);
+  const alphabeticalChunks = chunk(transformedIndex.sort((a, b) => a.title.localeCompare(b.title)), CARDS_PER_PAGE);
   const expertiseChunks = chunk(transformedIndex.sort((a, b) =>
     a.expertise === b.expertise ? a.title.localeCompare(b.title) :
       !a.expertise ? 1 : !b.expertise ? -1 :
         EXPERTISE_LEVELS.indexOf(a.expertise) - EXPERTISE_LEVELS.indexOf(b.expertise)
-  ), 20);
+  ), CARDS_PER_PAGE);
   const mainListingSublinks = listingMetas
     .filter(v => !v.unlisted)
     .map(v => v.featured > 0 ? v : {...v, featured: 500 })
@@ -136,13 +138,13 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
         (s.node.blog && s.node.tags.all.find(t => t.toLowerCase() === searchIndexName.toLowerCase()))
       );
       const transformedSlugChunks = transformSnippetIndex(searchIndexSlugData);
-      const popularSlugChunks = chunk(transformedSlugChunks, 20);
-      const alphabeticalSlugChunks = chunk(transformedSlugChunks.sort((a, b) => a.title.localeCompare(b.title)), 20);
+      const popularSlugChunks = chunk(transformedSlugChunks, CARDS_PER_PAGE);
+      const alphabeticalSlugChunks = chunk(transformedSlugChunks.sort((a, b) => a.title.localeCompare(b.title)), CARDS_PER_PAGE);
       const expertiseSlugChunks = chunk(transformedSlugChunks.sort((a, b) =>
         a.expertise === b.expertise ? a.title.localeCompare(b.title) :
           !a.expertise ? 1 : !b.expertise ? -1 :
             EXPERTISE_LEVELS.indexOf(a.expertise) - EXPERTISE_LEVELS.indexOf(b.expertise)
-      ), 20);
+      ), CARDS_PER_PAGE);
       const searchIndexTagPrefixes = listingMeta.tags;
       const slugContextCustomizer = order => {
         return {
@@ -194,13 +196,13 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
             )
           );
         const transformedTagChunks = transformSnippetIndex(searchIndexTagData);
-        const popularTagChunks = chunk(transformedTagChunks, 20);
-        const alphabeticalTagChunks = chunk(transformedTagChunks.sort((a, b) => a.title.localeCompare(b.title)), 20);
+        const popularTagChunks = chunk(transformedTagChunks, CARDS_PER_PAGE);
+        const alphabeticalTagChunks = chunk(transformedTagChunks.sort((a, b) => a.title.localeCompare(b.title)), CARDS_PER_PAGE);
         const expertiseTagChunks = chunk(transformedTagChunks.sort((a, b) =>
           a.expertise === b.expertise ? a.title.localeCompare(b.title) :
             !a.expertise ? 1 : !b.expertise ? -1 :
               EXPERTISE_LEVELS.indexOf(a.expertise) - EXPERTISE_LEVELS.indexOf(b.expertise)
-        ), 20);
+        ), CARDS_PER_PAGE);
         const tagContextCustomizer = order => {
           return {
             listingSublinks: listingMeta.blog ? [] : [
