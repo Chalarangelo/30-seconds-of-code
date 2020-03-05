@@ -27,7 +27,7 @@
         ]
       },
       "meta": {
-        "hash": "2934b3aa733591f4964a7c8780f3ec7b273e4bd6a38fce6e0da2a5dd2dd9959f"
+        "hash": "8175388f6fdc96c53c49691c1831a147944955fc1d9a806adb790e3d242d5a86"
       }
     },
     {
@@ -37,11 +37,12 @@
       "attributes": {
         "text": "Resets the box-model so that `width`s and `height`s are not affected by their `border`s or `padding`.\n\n",
         "tags": [
-          "layout"
+          "layout",
+          "beginner"
         ]
       },
       "meta": {
-        "hash": "d4e635bb76a083266e08723f25c3db981b39001ea5d513ce65570fe0099eb6b0"
+        "hash": "d5719ca8b62a21149aa2e34f2d45e76045e2fe5eae5b14093333e9ca15b4a97c"
       }
     },
     {
@@ -51,11 +52,12 @@
       "attributes": {
         "text": "Creates a border animation on hover.\n\n",
         "tags": [
-          "animation"
+          "animation",
+          "intermediate"
         ]
       },
       "meta": {
-        "hash": "ff6401cc784b92a9672e74968719c029de224c29fcfdc3eaeaa764274108f648"
+        "hash": "5454e3c5fb06cc5b7bc36d37ef41be684766aae122214cc34023e225c76fa454"
       }
     },
     {
@@ -79,7 +81,8 @@
       "attributes": {
         "text": "Creates a circle shape with pure CSS.\n\n",
         "tags": [
-          "visual"
+          "visual",
+          "beginner"
         ]
       },
       "meta": {
@@ -93,7 +96,8 @@
       "attributes": {
         "text": "Ensures that an element self-clears its children.\n\n",
         "tags": [
-          "layout"
+          "layout",
+          "beginner"
         ]
       },
       "meta": {
@@ -105,13 +109,13 @@
       "type": "snippetListing",
       "title": "Constant width to height ratio",
       "attributes": {
-        "text": "Given an element of variable width, it will ensure its height remains proportionate in a responsive fashion\n(i.e., its width to height ratio remains constant).\n\n",
+        "text": "Given an element of variable width, it will ensure its height remains proportionate in a responsive fashion (i.e. its width to height ratio remains constant).\n\n",
         "tags": [
           "layout"
         ]
       },
       "meta": {
-        "hash": "931815035291ba0e6de497d7296fc75e207117c9ff0607fd646f01da53793929"
+        "hash": "d040b9f24aa4b6a7c3359c5a6407850aac0910796334192adad4cfb435c4ec26"
       }
     },
     {
@@ -122,11 +126,11 @@
         "text": "Counters are, in essence, variables maintained by CSS whose values may be incremented by CSS rules to track how many times they're used.\n\n",
         "tags": [
           "visual",
-          "other"
+          "advanced"
         ]
       },
       "meta": {
-        "hash": "7c572c339c0767840bd0fd6f5daab357a8da070988c621e341bc5ce78d0f798e"
+        "hash": "6ba5182f3edbbd20e34ac9a7c92608eca4afcc855aa993574c0bcc3e21df8487"
       }
     },
     {
@@ -136,7 +140,8 @@
       "attributes": {
         "text": "Customizes the scrollbar style for the document and elements with scrollable overflow, on WebKit platforms.\n\n",
         "tags": [
-          "visual"
+          "visual",
+          "advanced"
         ]
       },
       "meta": {
@@ -150,11 +155,12 @@
       "attributes": {
         "text": "Changes the styling of text selection.\n\n",
         "tags": [
-          "visual"
+          "visual",
+          "beginner"
         ]
       },
       "meta": {
-        "hash": "bf835c2f1d038e6b08d221c9fef85933757a80c67de555797c6bc63ff7035ae8"
+        "hash": "1c29d55847263d12852dfd752653287237c885cadb369ee3db28701029f8bcc2"
       }
     },
     {
@@ -178,11 +184,12 @@
       "attributes": {
         "text": "Makes the content unselectable.\n\n",
         "tags": [
-          "interactivity"
+          "interactivity",
+          "beginner"
         ]
       },
       "meta": {
-        "hash": "02f6472568975f5897a84f8846d97f8561fc5334ddafac53e73adb52ccda5f29"
+        "hash": "e12b82431230f27651567c0c23dd5f26eca9e4ded24bb6f3175432ab66256096"
       }
     },
     {
@@ -192,7 +199,8 @@
       "attributes": {
         "text": "Vertically and horizontally centers a child element within its parent element using `display: table` (as an alternative to `flexbox`).\n\n",
         "tags": [
-          "layout"
+          "layout",
+          "intermediate"
         ]
       },
       "meta": {
@@ -206,11 +214,12 @@
       "attributes": {
         "text": "Creates a donut spinner that can be used to indicate the loading of content.\n\n",
         "tags": [
-          "animation"
+          "animation",
+          "intermediate"
         ]
       },
       "meta": {
-        "hash": "4e7f5ce479955deb9830ca4a72fc8260c8863aa65d6f67f15e88a3f923c10c3a"
+        "hash": "e9d886bf0718a408e719f978370e4e32e62222322c5641fb62be2968f6f95884"
       }
     },
     {
@@ -235,11 +244,12 @@
       "attributes": {
         "text": "Creates a shadow similar to `box-shadow` but based on the colors of the element itself.\n\n",
         "tags": [
-          "visual"
+          "visual",
+          "intermediate"
         ]
       },
       "meta": {
-        "hash": "738fae9ee6d0a9fe84cdbdd632a93f651f8377ec7e9f647e1031207d99b819a5"
+        "hash": "d22e3c4c20c8c3effbb25e59de03f1153f1d7808b695bef253ea90d657d59012"
       }
     },
     {
@@ -247,13 +257,14 @@
       "type": "snippetListing",
       "title": "Easing variables",
       "attributes": {
-        "text": "Variables that can be reused for `transition-timing-function` properties, more\npowerful than the built-in `ease`, `ease-in`, `ease-out` and `ease-in-out`.\n\n",
+        "text": "Variables that can be reused for `transition-timing-function` properties, more powerful than the built-in `ease`, `ease-in`, `ease-out` and `ease-in-out`.\n\n",
         "tags": [
-          "animation"
+          "animation",
+          "beginner"
         ]
       },
       "meta": {
-        "hash": "94ec3c4e6b02374b61367e8cf4edcb9532bb7297673a28acaee0ad3264adfa3d"
+        "hash": "107cca03431b28d491f871d2267992a7da5b9f62765325bf5f57236574968ac2"
       }
     },
     {
@@ -263,7 +274,8 @@
       "attributes": {
         "text": "Creates an effect where text appears to be \"etched\" or engraved into the background.\n\n",
         "tags": [
-          "visual"
+          "visual",
+          "intermediate"
         ]
       },
       "meta": {
@@ -277,11 +289,12 @@
       "attributes": {
         "text": "Evenly distributes child elements within a parent element.\n\n",
         "tags": [
-          "layout"
+          "layout",
+          "intermediate"
         ]
       },
       "meta": {
-        "hash": "86c8c53be49e82365f6d6f54a03b55d9a8888ccc85504fe0480499b0e68c7f5b"
+        "hash": "5b4505f5052c203bbf0f79410af09801487250b65591fb5113da40b27c6cfb08"
       }
     },
     {
@@ -306,11 +319,12 @@
       "attributes": {
         "text": "Horizontally and vertically centers a child element within a parent element using `flexbox`.\n\n",
         "tags": [
-          "layout"
+          "layout",
+          "beginner"
         ]
       },
       "meta": {
-        "hash": "a2bf8cfa4de368cfb10d013b6bbb87c598e0cccacfe816972da4ac668c6abc1a"
+        "hash": "919f11ed7b3bb10d80c0379103cbd1af620ee93ba760edc57c379063131c474f"
       }
     },
     {
@@ -321,11 +335,12 @@
         "text": "Changes the appearance of a form if any of its children are focused.\n\n",
         "tags": [
           "visual",
-          "interactivity"
+          "interactivity",
+          "intermediate"
         ]
       },
       "meta": {
-        "hash": "a12b394af0b2df2f7fa6bae2cbbe3a8b01ba74510991dcfe3952b8bd9c0a5a41"
+        "hash": "9fa1ed419618b640c286644ceae4235101b0f01014c7d82f944a76c9bbc6e39c"
       }
     },
     {
@@ -333,13 +348,14 @@
       "type": "snippetListing",
       "title": "Fullscreen",
       "attributes": {
-        "text": "The :fullscreen CSS pseudo-class represents an element that's displayed when the browser is in fullscreen mode.\n\n",
+        "text": "The `:fullscreen` CSS pseudo-element represents an element that's displayed when the browser is in fullscreen mode.\n\n",
         "tags": [
-          "visual"
+          "visual",
+          "advanced"
         ]
       },
       "meta": {
-        "hash": "23cab923692f5e3250be38b3c970dc11f3bab34159812aaf979ea09bce441c30"
+        "hash": "a58ee2656271bb14a6a51e91517ca08f5c6ee86f9f3286e977507af49363cd86"
       }
     },
     {
@@ -349,7 +365,8 @@
       "attributes": {
         "text": "Vertically centers an element in another.\n\n",
         "tags": [
-          "layout"
+          "layout",
+          "intermediate"
         ]
       },
       "meta": {
@@ -363,7 +380,8 @@
       "attributes": {
         "text": "Gives text a gradient color.\n\n",
         "tags": [
-          "visual"
+          "visual",
+          "intermediate"
         ]
       },
       "meta": {
@@ -377,11 +395,12 @@
       "attributes": {
         "text": "Horizontally and vertically centers a child element within a parent element using `grid`.\n\n",
         "tags": [
-          "layout"
+          "layout",
+          "beginner"
         ]
       },
       "meta": {
-        "hash": "f6fbb076581e63ab9187ca63d8620f88de19d7a78c46f9ded903271461a445bf"
+        "hash": "c6ce214d8597cc068355174c86c7c3e8be586c68fb7fb18666d644b4458c0a22"
       }
     },
     {
@@ -389,13 +408,14 @@
       "type": "snippetListing",
       "title": "Hairline border",
       "attributes": {
-        "text": "Gives an element a border equal to 1 native device pixel in width, which can look\nvery sharp and crisp.\n\n",
+        "text": "Gives an element a border equal to 1 native device pixel in width, which can look very sharp and crisp.\n\n",
         "tags": [
-          "visual"
+          "visual",
+          "advanced"
         ]
       },
       "meta": {
-        "hash": "cd26d0cd1831474afdc784b4459b60062243e2d390975e94cd7d51fa776c603f"
+        "hash": "3d33020a7ae2dc94aa6cf41803897323068158faff9133ce5d60cb927d647a9f"
       }
     },
     {
@@ -420,11 +440,12 @@
       "attributes": {
         "text": "Transitions an element's height from `0` to `auto` when its height is unknown.\n\n",
         "tags": [
-          "animation"
+          "animation",
+          "intermediate"
         ]
       },
       "meta": {
-        "hash": "bff0b57d24dac06ae6a6d71a8d0d628ec0b97760be0cfda66791191957075d73"
+        "hash": "266740a9a3a65bcfede78868170a741359409690921ef9b57f73593b8b6d6e3f"
       }
     },
     {
@@ -434,11 +455,12 @@
       "attributes": {
         "text": "Creates a shadow box around the text when it is hovered.\n\n",
         "tags": [
-          "animation"
+          "animation",
+          "intermediate"
         ]
       },
       "meta": {
-        "hash": "4136aff34ae1b8bf6b525c08881a12c43e9ce7265e864c09ea25fa40e8d86396"
+        "hash": "b66a2a4c4c80fd0c64aaa15a9139e1273d6854fd75f0550d2625578792df828f"
       }
     },
     {
@@ -446,13 +468,14 @@
       "type": "snippetListing",
       "title": "Hover underline animation",
       "attributes": {
-        "text": "Creates an animated underline effect when the text is hovered over.\n\n<small>**Credit:** https://flatuicolors.com/</small>\n\n",
+        "text": "Creates an animated underline effect when the text is hovered over.\n\n",
         "tags": [
-          "animation"
+          "animation",
+          "advanced"
         ]
       },
       "meta": {
-        "hash": "6e8a53b0b69ab05f54c199f42944746c0e3331712f69a8dc72709eda16428424"
+        "hash": "b67109fcb1f945f671c62fc67c3bff9f32290bbfb0ef739995f1a94fd952dfd5"
       }
     },
     {
@@ -462,11 +485,12 @@
       "attributes": {
         "text": "Take advantage of available viewport space by giving the last element the remaining available space in current viewport, even when resizing the window.\n\n",
         "tags": [
-          "layout"
+          "layout",
+          "intermediate"
         ]
       },
       "meta": {
-        "hash": "2f925cc190a9744532de97bb4add65e53cc0b2f3833760f4e7263f5df17cfad5"
+        "hash": "65a60a1552f0cc9cc1fbb1cfb30bb1a6a0e35f7313cb3d209c540a4483333370"
       }
     },
     {
@@ -481,7 +505,7 @@
         ]
       },
       "meta": {
-        "hash": "e0cd9ededcfb68d085f6a1fbdc63fba65cee9adc13c08a458f73b0fbaf0f5949"
+        "hash": "bf9ee261ea338f5c07c4df24ac6c976d9d0584de01552b0955a205628b947e53"
       }
     },
     {
@@ -489,14 +513,14 @@
       "type": "snippetListing",
       "title": "Masonry Layout",
       "attributes": {
-        "text": "Creates a vertical Masonry layout using pure HTML and CSS.\n\n",
+        "text": "Creates a vertical masonry layout using HTML and CSS.\n\n",
         "tags": [
           "layout",
           "advanced"
         ]
       },
       "meta": {
-        "hash": "f9fe4bf02b6fd017c8a322e239c4e0b7361bf9a03c6ee4488710d224ae4fb771"
+        "hash": "4bff5480f38e265090bed5d84cc8e7dc6d054570f65a168f1ccf381b19ffef48"
       }
     },
     {
@@ -512,7 +536,7 @@
         ]
       },
       "meta": {
-        "hash": "eb04cb5aab3c779685a3f485ab31cf0c1d86f5ea9e26996ba468f7ff41806654"
+        "hash": "159c33e454099f02ef387c5392aec044a5a6d67b0a56cb391d2a7a6f59e1f6d2"
       }
     },
     {
@@ -527,7 +551,7 @@
         ]
       },
       "meta": {
-        "hash": "9e2cbf0541001ebaaa5584e8d4e7f68e5f436e79574ec9c62facd20962bfa87a"
+        "hash": "081120d282bf5041a82e0fd82d1b90afb28591eaaf6c2dfb9194d23db5b8d3a4"
       }
     },
     {
@@ -537,7 +561,8 @@
       "attributes": {
         "text": "The `:not` pseudo selector is useful for styling a group of elements, while leaving the last (or specified) element unstyled.\n\n",
         "tags": [
-          "visual"
+          "visual",
+          "beginner"
         ]
       },
       "meta": {
@@ -549,14 +574,15 @@
       "type": "snippetListing",
       "title": "Offscreen",
       "attributes": {
-        "text": "A bulletproof way to completely hide an element visually and positionally in the DOM while still allowing it to be accessed by JavaScript and readable by screen readers. This method is very useful for accessibility ([ADA](https://adata.org/learn-about-ada)) development when more context is needed for visually-impaired users. As an alternative to `display: none` which is not readable by screen readers or `visibility: hidden` which takes up physical space in the DOM.\n\n",
+        "text": "Completely hides an element visually and positionally in the DOM while still allowing it to be accessible. \nProvides an alternative to `display: none` (not readable by screen readers) and `visibility: hidden` (takes up physical space in the DOM).\n\n",
         "tags": [
           "layout",
-          "visual"
+          "visual",
+          "intermediate"
         ]
       },
       "meta": {
-        "hash": "a718446c91f49c73e68bc4f317911ff03f898ac8efe0e832ca1f803709107820"
+        "hash": "797f492e370c5401e198baf94ce31ecc7bc130f6d609814ec81cb4c70f1a608f"
       }
     },
     {
@@ -566,11 +592,12 @@
       "attributes": {
         "text": "Adds a fading gradient to an overflowing element to better indicate there is more content to be scrolled.\n\n",
         "tags": [
-          "visual"
+          "visual",
+          "intermediate"
         ]
       },
       "meta": {
-        "hash": "e25bdb353dc5da5c1c359f91769d85d0b3b0a58ff7085041603e4e685b380ef7"
+        "hash": "8803e417053172085af754a3a63531c33cbf78f2c1a7c95a6e392be2adf9551a"
       }
     },
     {
@@ -580,11 +607,12 @@
       "attributes": {
         "text": "Reveals an interactive popout menu on hover and focus.\n\n",
         "tags": [
-          "interactivity"
+          "interactivity",
+          "intermediate"
         ]
       },
       "meta": {
-        "hash": "46d1f9e1a05328d86ffda0dbea7dc60eae44c319eb430632ef384d2f3e7e6d44"
+        "hash": "4103e63398b3bc9f646ff4e528ff28aad8b10d666b541254575eb257af43311b"
       }
     },
     {
@@ -592,13 +620,14 @@
       "type": "snippetListing",
       "title": "Pretty text underline",
       "attributes": {
-        "text": "A nicer alternative to `text-decoration: underline` or `<u></u>` where descenders do not clip the underline.\nNatively implemented as `text-decoration-skip-ink: auto` but it has less control over the underline.\n\n",
+        "text": "A nicer alternative to `text-decoration: underline` where descenders do not clip the underline.\nNatively implemented as `text-decoration-skip-ink: auto` but it has less control over the underline.\n\n",
         "tags": [
-          "visual"
+          "visual",
+          "intermediate"
         ]
       },
       "meta": {
-        "hash": "fb3a96cbbb4d59af2566f3d0729c13478a81a572b25a8dd1696e2a67dd8fff79"
+        "hash": "8e513bfd8e3e72d073e2411fd903a978178c5dcf8b5aa8e603dc653dbba293d6"
       }
     },
     {
@@ -623,7 +652,8 @@
       "attributes": {
         "text": "Resets all styles to default values with one property. This will not affect `direction` and `unicode-bidi` properties.\n\n",
         "tags": [
-          "visual"
+          "visual",
+          "beginner"
         ]
       },
       "meta": {
@@ -637,11 +667,12 @@
       "attributes": {
         "text": "Uses an SVG shape to separate two different blocks to create more a interesting visual appearance compared to standard horizontal separation.\n\n",
         "tags": [
-          "visual"
+          "visual",
+          "intermediate"
         ]
       },
       "meta": {
-        "hash": "0b86c444f4d15709a99d1e32c651e9530a294258ba32784d998a56c6f14198b1"
+        "hash": "b14f91e079c09e854ee0579eed3246c792794fb8d1b27deb6bec15df23f24917"
       }
     },
     {
@@ -651,7 +682,8 @@
       "attributes": {
         "text": "Fades out the siblings of a hovered item.\n\n",
         "tags": [
-          "interactivity"
+          "interactivity",
+          "intermediate"
         ]
       },
       "meta": {
@@ -665,11 +697,12 @@
       "attributes": {
         "text": "Uses the native font of the operating system to get close to a native app feel.\n\n",
         "tags": [
-          "visual"
+          "visual",
+          "beginner"
         ]
       },
       "meta": {
-        "hash": "97b037f3f463b8cf7de0cc12a607c540ffe8a4869323a4cc17c66eebbc92d612"
+        "hash": "be5f2dfdc4cd4cafea8fbe197e22b1df40a40e10b61c17ea86af2b4f72bba127"
       }
     },
     {
@@ -695,11 +728,12 @@
         "text": "Creates a toggle switch with CSS only.\n\n",
         "tags": [
           "visual",
-          "interactivity"
+          "interactivity",
+          "beginner"
         ]
       },
       "meta": {
-        "hash": "e29182514bd83550705267a43d21eec8886ed011c6259f2b3efec9862541f90e"
+        "hash": "4fa08671fcaa73e3223af229c5844c3c2fa370593a4af76a9130f45f2c67b6ff"
       }
     },
     {
@@ -713,7 +747,7 @@
         ]
       },
       "meta": {
-        "hash": "9ee4bb8713d24b9e6f5367eb05645c6e41d205b120b4d06a9a949984c7cd73b0"
+        "hash": "4a09dc7c545b1dce1716ed04c0a04344d480958c21fb17ddab1207e05fe52c33"
       }
     },
     {
@@ -728,7 +762,7 @@
         ]
       },
       "meta": {
-        "hash": "3d669f655ec92a355b355d2d35e6e9262ad582671abac860d7170893ac68e467"
+        "hash": "a0aea16855c7976812cf98e523babf29e8a97c567f14e91a6785977ace9f1fc2"
       }
     },
     {
@@ -738,11 +772,12 @@
       "attributes": {
         "text": "Creates a triangle shape with pure CSS.\n\n",
         "tags": [
-          "visual"
+          "visual",
+          "beginner"
         ]
       },
       "meta": {
-        "hash": "357daaf44bab240518a3c9bdd34a1e8702fab3358171e30f633b7a7f423b9884"
+        "hash": "38accddc3c57f22a326ef7ba33bed5cb34340a7ffdc01d3b9e397d08f5b9c017"
       }
     },
     {
@@ -752,7 +787,8 @@
       "attributes": {
         "text": "If the text is longer than one line, it will be truncated for `n` lines and end with an gradient fade.\n\n",
         "tags": [
-          "layout"
+          "layout",
+          "intermediate"
         ]
       },
       "meta": {
@@ -766,7 +802,8 @@
       "attributes": {
         "text": "If the text is longer than one line, it will be truncated and end with an ellipsis `…`.\n\n",
         "tags": [
-          "layout"
+          "layout",
+          "beginner"
         ]
       },
       "meta": {
@@ -780,11 +817,12 @@
       "attributes": {
         "text": "Creates a striped list with alternating background colors, which is useful for differentiating siblings that have content spread across a wide row.\n\n",
         "tags": [
-          "visual"
+          "visual",
+          "beginner"
         ]
       },
       "meta": {
-        "hash": "43bc0cd7776468f3b74791017349ef278921c8ded7ba0bd7788d2b01bdb68c7a"
+        "hash": "0a3b82b164fd41e50e0e258099a5dedd8497206acf19c85738b6dd946ba7389e"
       }
     }
   ],
