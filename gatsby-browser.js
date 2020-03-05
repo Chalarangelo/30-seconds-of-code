@@ -19,8 +19,10 @@ const onPreRouteUpdate = ({ location, prevLocation }) => {
 
 const onRouteUpdate = ({ location, prevLocation }) => {
   try {
-    if (locationScrollTops[location.pathname])
+    if (locationScrollTops[location.pathname] && prevLocation.includes('/s/'))
       document.querySelector('.content').scrollTop = locationScrollTops[location.pathname];
+    else if(location.pathname.match(/\/[ape]\/\d+/) && prevLocation.pathname.match(/\/[ape]\/\d+/))
+      document.querySelector('.content').scrollTop = 0;
 
   } catch (e) { return; }
 
