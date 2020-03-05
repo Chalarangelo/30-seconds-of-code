@@ -10,7 +10,9 @@ Use `Math.round()` to convert to an integer.
 
 ```js
 const toSafeInteger = num =>
-  Math.round(Math.max(Math.min(num, Number.MAX_SAFE_INTEGER), Number.MIN_SAFE_INTEGER));
+  Math.round(
+    Math.max(Math.min(num, Number.MAX_SAFE_INTEGER), Number.MIN_SAFE_INTEGER)
+  );
 ```
 
 ```js
