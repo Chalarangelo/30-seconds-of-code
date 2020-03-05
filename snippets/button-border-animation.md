@@ -1,6 +1,6 @@
 ---
 title: Button border animation
-tags: animation
+tags: animation,intermediate
 ---
 
 Creates a border animation on hover.
@@ -18,6 +18,7 @@ Creates a border animation on hover.
   padding: 12px 40px 10px;
   position: relative;
 }
+
 .button:before,
 .button:after {
   border: 0 solid transparent;
@@ -27,19 +28,23 @@ Creates a border animation on hover.
   position: absolute;
   width: 24px;
 }
+
 .button:before {
   border-top: 2px solid #c47135;
   left: 0px;
   top: -5px;
 }
+
 .button:after {
   border-bottom: 2px solid #c47135;
   bottom: -5px;
   right: 0px;
 }
+
 .button:hover {
   background-color: #c47135;
 }
+
 .button:hover:before,
 .button:hover:after {
   height: 100%;
@@ -49,6 +54,6 @@ Creates a border animation on hover.
 
 #### Explanation
 
-- Use the `:before` and `:after` pseduo-elements as borders that animate on hover.
+- Use the `:before` and `:after` pseudo-elements as borders that animate on hover.
 
 #### Browser support

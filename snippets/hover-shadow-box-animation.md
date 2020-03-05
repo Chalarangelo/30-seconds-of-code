@@ -1,6 +1,6 @@
 ---
 title: Hover shadow box animation
-tags: animation
+tags: animation,intermediate
 ---
 
 Creates a shadow box around the text when it is hovered.
@@ -19,6 +19,7 @@ Creates a shadow box around the text when it is hovered.
   transition-duration: 0.3s;
   transition-property: box-shadow, transform;
 }
+
 .hover-shadow-box-animation:hover,
 .hover-shadow-box-animation:focus,
 .hover-shadow-box-animation:active {

@@ -1,6 +1,6 @@
 ---
 title: Reset all styles
-tags: visual
+tags: visual,beginner
 ---
 
 Resets all styles to default values with one property. This will not affect `direction` and `unicode-bidi` properties.

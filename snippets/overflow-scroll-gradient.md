@@ -1,13 +1,13 @@
 ---
 title: Overflow scroll gradient
-tags: visual
+tags: visual,intermediate
 ---
 
 Adds a fading gradient to an overflowing element to better indicate there is more content to be scrolled.
 
 ```html
 <div class="overflow-scroll-gradient">
-  <div class="overflow-scroll-gradient__scroller">
+  <div class="overflow-scroll-gradient-scroller">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />
     Iure id exercitationem nulla qui repellat laborum vitae, <br />
     molestias tempora velit natus. Quas, assumenda nisi. <br />
@@ -24,19 +24,18 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
 .overflow-scroll-gradient {
   position: relative;
 }
+
 .overflow-scroll-gradient::after {
   content: '';
   position: absolute;
   bottom: 0;
   width: 250px;
   height: 25px;
-  background: linear-gradient(
-    rgba(255, 255, 255, 0.001),
-    white
-  ); /* transparent keyword is broken in Safari */
+  background: linear-gradient(transparent, white); 
   pointer-events: none;
 }
-.overflow-scroll-gradient__scroller {
+
+.overflow-scroll-gradient-scroller {
   overflow-y: scroll;
   background: white;
   width: 240px;

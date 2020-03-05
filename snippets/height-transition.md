@@ -1,6 +1,6 @@
 ---
 title: Height transition
-tags: animation
+tags: animation,intermediate
 ---
 
 Transitions an element's height from `0` to `auto` when its height is unknown.
@@ -37,7 +37,7 @@ el.style.setProperty('--max-height', height + 'px')
 3. `max-height: 0` specifies that the element has no height initially.
 4. `.target:hover > .el` specifies that when the parent is hovered over, target a child `.el` within it and use the `--max-height` variable which was defined by JavaScript.
 
----
+<br>
 
 1. `el.scrollHeight` is the height of the element including overflow, which will change dynamically based on the content of the element.
 2. `el.style.setProperty(...)` sets the `--max-height` CSS variable which is used to specify the `max-height` of the element the target is hovered over, allowing it to transition smoothly from 0 to auto.
@@ -45,10 +45,7 @@ el.style.setProperty('--max-height', height + 'px')
 #### Browser Support
 
 <div class="snippet__requires-javascript">Requires JavaScript</div>
-<span class="snippet__support-note">
-  ⚠️ Causes reflow on each animation frame, which will be laggy if there are a large number of elements
-  beneath the element that is transitioning in height.
-</span>
+<span class="snippet__support-note">⚠️ Causes reflow on each animation frame, which will be laggy if there are a large number of elements beneath the element that is transitioning in height.</span>
 
 - https://caniuse.com/#feat=css-variables
 - https://caniuse.com/#feat=css-transitions

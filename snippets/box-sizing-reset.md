@@ -1,6 +1,6 @@
 ---
 title: Box-sizing reset
-tags: layout
+tags: layout,beginner
 ---
 
 Resets the box-model so that `width`s and `height`s are not affected by their `border`s or `padding`.
@@ -14,11 +14,13 @@ Resets the box-model so that `width`s and `height`s are not affected by their `b
 html {
   box-sizing: border-box;
 }
+
 *,
 *::before,
 *::after {
   box-sizing: inherit;
 }
+
 .box {
   display: inline-block;
   width: 150px;
@@ -28,6 +30,7 @@ html {
   color: white;
   border: 10px solid red;
 }
+
 .content-box {
   box-sizing: content-box;
 }

@@ -1,9 +1,9 @@
 ---
 title: Pretty text underline
-tags: visual
+tags: visual,intermediate
 ---
 
-A nicer alternative to `text-decoration: underline` or `<u></u>` where descenders do not clip the underline.
+A nicer alternative to `text-decoration: underline` where descenders do not clip the underline.
 Natively implemented as `text-decoration-skip-ink: auto` but it has less control over the underline.
 
 ```html
@@ -19,10 +19,12 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
   background-repeat: no-repeat;
   background-size: 100% 1px;
 }
+
 .pretty-text-underline::-moz-selection {
   background-color: rgba(0, 150, 255, 0.3);
   text-shadow: none;
 }
+
 .pretty-text-underline::selection {
   background-color: rgba(0, 150, 255, 0.3);
   text-shadow: none;

@@ -1,6 +1,6 @@
 ---
 title: Circle
-tags: visual
+tags: visual,beginner
 ---
 
 Creates a circle shape with pure CSS.

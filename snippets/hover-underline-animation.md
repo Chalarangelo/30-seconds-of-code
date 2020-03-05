@@ -1,11 +1,9 @@
 ---
 title: Hover underline animation
-tags: animation
+tags: animation,advanced
 ---
 
 Creates an animated underline effect when the text is hovered over.
-
-<small>**Credit:** https://flatuicolors.com/</small>
 
 ```html
 <p class="hover-underline-animation">Hover this text to see the effect!</p>
@@ -17,6 +15,7 @@ Creates an animated underline effect when the text is hovered over.
   position: relative;
   color: #0087ca;
 }
+
 .hover-underline-animation::after {
   content: '';
   position: absolute;
@@ -29,6 +28,7 @@ Creates an animated underline effect when the text is hovered over.
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
+
 .hover-underline-animation:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;

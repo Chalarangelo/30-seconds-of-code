@@ -1,6 +1,6 @@
 ---
 title: Truncate text multiline
-tags: layout
+tags: layout,intermediate
 ---
 
 If the text is longer than one line, it will be truncated for `n` lines and end with an gradient fade.

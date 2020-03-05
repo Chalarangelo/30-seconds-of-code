@@ -1,6 +1,6 @@
 ---
 title: Transform - Detransform
-tags: visual, beginner
+tags: visual,beginner
 ---
 
 Sets a transform on the parent element and de-transforms the child elements, so they are not affected by the transform.
@@ -32,10 +32,8 @@ This allows for some neat effects such as skewed buttons.
 - `--transform: 10deg` sets a CSS variable we can later use to prevent duplicate code.
 - `calc(-1 * var(--transform))` on the child element negates the transform from the parent.
 
-- Note: the `display` property of the child element may not be `inline`, otherwise the transform will be ignored ([see also](https://drafts.csswg.org/css-transforms-1/#terminology)).
+_Note: the `display` property of the child element may not be `inline`, otherwise the transform will be ignored - ([see also](https://drafts.csswg.org/css-transforms-1/#terminology))._
 
 #### Browser support
-
-<span class="snippet__support-note">⚠️ Requires prefix for full support.</span>
 
 - https://caniuse.com/#feat=transforms2d

@@ -1,6 +1,6 @@
 ---
 title: Etched text
-tags: visual
+tags: visual,intermediate
 ---
 
 Creates an effect where text appears to be "etched" or engraved into the background.

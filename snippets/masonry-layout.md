@@ -3,7 +3,7 @@ title: Masonry Layout
 tags: layout,advanced
 ---
 
-Creates a vertical Masonry layout using pure HTML and CSS.
+Creates a vertical masonry layout using HTML and CSS.
 
 ```html
 <div class="masonry-container">

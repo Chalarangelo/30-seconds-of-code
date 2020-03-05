@@ -1,6 +1,6 @@
 ---
 title: Focus Within
-tags: visual, interactivity
+tags: visual,interactivity,intermediate
 ---
 
 Changes the appearance of a form if any of its children are focused.
@@ -27,8 +27,6 @@ form:focus-within {
 }
 ```
 
-<!-- Leave this blank, the build script will generate the demo for you. -->
-
 #### Explanation
 
 - The psuedo class `:focus-within` applies styles to a parent element if any child element gets focused. For example, an `input` element inside a `form` element.
@@ -36,8 +34,5 @@ form:focus-within {
 #### Browser support
 
 <span class="snippet__support-note">⚠️ Not supported in IE11 or the current version of Edge.</span>
-
-<!-- Whenever possible, link a `caniuse` feature which allows the browser support percentage to be displayed.
-If no link is provided, it defaults to 99+%. -->
 
 - https://caniuse.com/#feat=css-focus-within

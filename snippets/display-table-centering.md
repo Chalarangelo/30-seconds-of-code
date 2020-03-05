@@ -1,6 +1,6 @@
 ---
 title: Display table centering
-tags: layout
+tags: layout,intermediate
 ---
 
 Vertically and horizontally centers a child element within its parent element using `display: table` (as an alternative to `flexbox`).

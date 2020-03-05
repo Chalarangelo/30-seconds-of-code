@@ -1,6 +1,6 @@
 ---
 title: Dynamic shadow
-tags: visual
+tags: visual,intermediate
 ---
 
 Creates a shadow similar to `box-shadow` but based on the colors of the element itself.
@@ -17,6 +17,7 @@ Creates a shadow similar to `box-shadow` but based on the colors of the element 
   background: linear-gradient(75deg, #6d78ff, #00ffb8);
   z-index: 1;
 }
+
 .dynamic-shadow::after {
   content: '';
   width: 100%;
@@ -44,7 +45,5 @@ Creates a shadow similar to `box-shadow` but based on the colors of the element 
 10. `z-index: -1` positions the pseudo-element behind the parent but in front of the background.
 
 #### Browser support
-
-<span class="snippet__support-note">⚠️ Requires prefixes for full support.</span>
 
 - https://caniuse.com/#feat=css-filters

@@ -1,6 +1,6 @@
 ---
 title: Popout menu
-tags: interactivity
+tags: interactivity,intermediate
 ---
 
 Reveals an interactive popout menu on hover and focus.
@@ -16,6 +16,7 @@ Reveals an interactive popout menu on hover and focus.
   width: 100px;
   height: 100px;
 }
+
 .popout-menu {
   position: absolute;
   visibility: hidden;
@@ -24,6 +25,7 @@ Reveals an interactive popout menu on hover and focus.
   color: white;
   padding: 15px;
 }
+
 .reference:hover > .popout-menu,
 .reference:focus > .popout-menu,
 .reference:focus-within > .popout-menu {

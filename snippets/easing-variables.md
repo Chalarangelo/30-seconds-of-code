@@ -1,10 +1,9 @@
 ---
 title: Easing variables
-tags: animation
+tags: animation,beginner
 ---
 
-Variables that can be reused for `transition-timing-function` properties, more
-powerful than the built-in `ease`, `ease-in`, `ease-out` and `ease-in-out`.
+Variables that can be reused for `transition-timing-function` properties, more powerful than the built-in `ease`, `ease-in`, `ease-out` and `ease-in-out`.
 
 ```html
 <div class="easing-variables">Hover</div>
