@@ -25,6 +25,7 @@
     background-size: 120px, 120px;
     width: 120px;
     left: 1.25rem;
+    height: 120px;
     background-position-x: left;
 
     @media screen and (max-width: calc(#{$layout-medium-breakpoint} - 1px)) {
