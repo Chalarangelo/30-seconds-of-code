@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 import { trimWhiteSpace } from 'functions/utils';
 import { AnchorButton, Button } from 'atoms/button';
 import { Paginator as PaginatorPropType } from 'typedefs';
-import { useMedia } from 'functions/hooks';
-import _ from 'lang';
-const _l = _('en');
 
 /**
  * Renders a pagination component (responsively).
@@ -23,49 +20,26 @@ const Paginator = ({
 }) => {
   if (totalPages <= 1) return null;
 
-  const buttonTexts = useMedia(
-    ['(max-width: 600px'],
-    [['\u200b', '\u200b']],
-    [_l('Previous'), _l('Next')]
-  );
-
-  const showAllButtons = useMedia(
-    ['(max-width: 420px'],
-    [false],
-    true
-  );
-
   /*
-    Up to 5 buttons (apart from next and previous):
-    - page 1: 1,2,3,4,...{totalPages}
-    - page 2: 1,2,3,4....{totalPages}
-    - page 3: 1...3,4,5....{totalPages}
-    - page X: 1,... X-1,X,X+1,...{totalPages}
-    - page {totalPages-2}: 1,...{totalPages-5},{totalPages-4},{totalPages-3}...{totalPages}
-    - page {totalPages-1}: 1,...{totalPages-3},{totalPages-2},{totalPages-1},{totalPages}
-    - page {totalPages}: 1,...{totalPages-3},{totalPages-2},{totalPages-1},{totalPages}
-    - totalPages < 5: all
+    Up to 3 buttons (apart from next and previous):
+    - page 1: 1,2,...{totalPages}
+    - page 2: 1,2....{totalPages}
+    - page 3: 1...3....{totalPages}
+    - page X: 1,... X...{totalPages}
+    - page {totalPages-2}: 1,...{totalPages-2}...{totalPages}
+    - page {totalPages-1}: 1,...{totalPages-1},{totalPages}
+    - page {totalPages}: 1,...{totalPages-1},{totalPages}
+    - totalPages < 3: all
   */
   let buttons = [];
-  if (showAllButtons) {
-    if (totalPages <= 5)
-      buttons = Array.from({ length: totalPages }, (v, i) => i + 1);
-    else if (pageNumber <= 2)
-      buttons = [1, 2, 3, 4, '...', totalPages];
-    else if (totalPages - pageNumber <= 2)
-      buttons = [1, '...', totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
-    else
-      buttons = [1, '...', pageNumber - 1, pageNumber, pageNumber + 1, '...', totalPages];
-  } else {
-    if (totalPages <= 3)
-      buttons = Array.from({ length: totalPages }, (v, i) => i + 1);
-    else if (pageNumber <= 2)
-      buttons = [1, 2, totalPages];
-    else if (totalPages - pageNumber <= 2)
-      buttons = [1, totalPages - 1, totalPages];
-    else
-      buttons = [1, pageNumber, totalPages];
-  }
+  if (totalPages <= 3)
+    buttons = Array.from({ length: totalPages }, (v, i) => i + 1);
+  else if (pageNumber <= 2)
+    buttons = [1, 2, '...', totalPages];
+  else if (totalPages - pageNumber <= 2)
+    buttons = [1, '...', totalPages - 1, totalPages];
+  else
+    buttons = [1, '...', pageNumber, '...', totalPages];
 
   return (
     <div
@@ -78,7 +52,7 @@ const Paginator = ({
           internal: true,
           url: `${baseUrl}/${slugOrderingSegment}/${pageNumber - 1}`,
         } }>
-        { buttonTexts[0] }
+        { '\u200b' }
       </AnchorButton> }
       {
         buttons.map((buttonNumber, i) => (
@@ -87,7 +61,7 @@ const Paginator = ({
               className='paginator-separator'
               key={ `sep-${i}` }
             >
-              { _l('...') }
+              { buttonNumber }
             </span> :
             buttonNumber === pageNumber ?
               <Button
@@ -114,7 +88,7 @@ const Paginator = ({
           internal: true,
           url: `${baseUrl}/${slugOrderingSegment}/${pageNumber + 1}`,
         } }>
-        { buttonTexts[1] }
+        { '\u200b' }
       </AnchorButton> }
     </div>
   );

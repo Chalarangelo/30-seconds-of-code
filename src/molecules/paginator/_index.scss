@@ -29,101 +29,56 @@ $paginator-selected-color-dark: #B0C3E3;
 
   .btn, a.btn {
     transition: 0.3s ease all;
-    flex: 1;
-    border-radius: 0.5rem;
-    font-size: 0.875rem;
+    font-size: 1.125rem;
     margin: 0.25rem 0;
-    padding: 0.625rem 1.125rem;
+    padding: 0.625rem 0;
     box-sizing: border-box;
-    line-height: 1.25;
+    line-height: 24px;
     height: 44px;
     min-width: 44px;
     text-align: center;
-
-    border-radius: 0;
-    border-bottom: 1px solid var(--back-color-dark);  
     box-shadow: none;
     background: transparent;
     font-size: 1.125rem;
-    
-    @media screen and (min-width: $layout-medium-breakpoint) {
-      margin: 0.5rem 0;
-      padding: 0.625rem 1.375rem;
-    }
+    color: var(--fore-color);
 
     &:not(.current-page) {
-      color: var(--fore-color);
+
       &:hover, &:focus {
         color: var(--paginator-selected-color);
-        border-bottom: 1px solid var(--paginator-selected-color);  
       }
     }
 
+    &.current-page {
+      cursor: default;
+      font-size: 1.5rem;
+    }
+
     &.previous-page, &.next-page {
+      color: var(--paginator-selected-color);
       position: relative;
-      flex: 2;
-      width: 44px;
+      width: 52px;
       box-sizing: border-box;
 
       &:before {
         position: absolute;
-        font-size: 24px;
+        font-size: 28px;
         width: 100%;
         text-align: center;
-      }
-    
-      @media screen and (min-width: $layout-medium-breakpoint) {
-        width: auto;
-
-        &:before {
-          width: auto;
-        }
-      }
-    }
-
-    &.previous-page {
-      &:before {
         left: 0;
-      }
-
-      @media screen and (min-width: $layout-medium-breakpoint) {
-        padding-left: 32px;
-
-        &:before {
-          left: 6px;
-        }
+        top: 0;
+        line-height: 44px;
       }
     }
 
-    &.next-page {
-      &:before {
-        right: 0;
-      }
-      @media screen and (min-width: $layout-medium-breakpoint) {
-        padding-right: 32px;
-
-        &:before {
-          right: 6px;
-        }
-      }
-    }
-  }
-
-  .btn.current-page {
-    cursor: default;
-    color: var(--paginator-selected-color);
-    line-height: 1px;
   }
 
   .paginator-separator {
-    display: none;
+    display: block;
     color: var(--fore-color-lighter);
+    opacity: 0.45;
     letter-spacing: 2px;
-    line-height: 2.625rem;
-    border-bottom: 1px solid var(--back-color-dark); 
-    
-    @media screen and (min-width: $layout-medium-breakpoint) {
-      display: block;
-    }
+    line-height: 24px;
+    font-size: 1.5rem;
   }
 }

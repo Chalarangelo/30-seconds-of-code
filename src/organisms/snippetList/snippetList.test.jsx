@@ -1,4 +1,6 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import createStore from 'state';
 import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
@@ -6,6 +8,8 @@ import SnippetList from './index';
 
 configure({ adapter: new Adapter() });
 console.warn = jest.fn();
+
+const { store } = createStore();
 
 describe('<SnippetList />', () => {
   const paginator = {
@@ -36,12 +40,14 @@ describe('<SnippetList />', () => {
 
   beforeEach(() => {
     wrapper = mount(
-      <SnippetList
-        snippetList={ snippetList }
-        paginator={ paginator }
-        sorter={ sorter }
-        listingName={ listingName }
-      />
+      <Provider store={ store }>
+        <SnippetList
+          snippetList={ snippetList }
+          paginator={ paginator }
+          sorter={ sorter }
+          listingName={ listingName }
+        />
+      </Provider>
     );
     pageTitle = wrapper.find('PageTitle');
     paginate = wrapper.find('Paginator');

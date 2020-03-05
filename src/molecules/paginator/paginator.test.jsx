@@ -34,21 +34,6 @@ describe('<Paginator />', () => {
     });
   });
 
-  describe('with fewer than 5 pages', () => {
-    beforeEach(() => {
-      wrapper = mount(
-        <Paginator paginator={ {
-          pageNumber,
-          totalPages: 4,
-          baseUrl,
-        } } />);
-    });
-
-    it('should render the correct amount of buttons', () => {
-      expect(wrapper).toContainMatchingElements(5, 'a.btn');
-    });
-  });
-
   describe('with first page as current', () => {
     beforeEach(() => {
       wrapper = mount(
@@ -65,7 +50,7 @@ describe('<Paginator />', () => {
       });
 
       it('appropriate buttons for next and other pages', () => {
-        expect(wrapper).toContainMatchingElements(5, 'a.btn');
+        expect(wrapper).toContainMatchingElements(3, 'a.btn');
       });
     });
   });
@@ -86,7 +71,7 @@ describe('<Paginator />', () => {
       });
 
       it('appropriate buttons for next and other pages', () => {
-        expect(wrapper).toContainMatchingElements(5, 'a.btn');
+        expect(wrapper).toContainMatchingElements(3, 'a.btn');
       });
     });
   });

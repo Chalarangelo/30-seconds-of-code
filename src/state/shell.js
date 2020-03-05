@@ -1,11 +1,18 @@
 import cacheKey from '../../.build/cacheKey';
 
+/** Checks if the client is a bot */
+const isBot = () =>
+  typeof navigator !== 'undefined' &&
+  typeof navigator.userAgent !== 'undefined' &&
+  /bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex/i.test(navigator.userAgent);
+
 // Default state
 const initialState = {
   isDarkMode: undefined,
   hasGithubLinksEnabled: undefined,
   cacheKey,
   newCacheKey: cacheKey,
+  isBot: isBot(),
   acceptsCookies: undefined,
 };
 
@@ -60,5 +67,5 @@ export default (state = initialState, action) => {
 // Persistence configuration
 export const persistConfig = {
   key: 'shell',
-  blacklist: ['newCacheKey'],
+  blacklist: ['newCacheKey', 'isBot'],
 };
