@@ -12,5 +12,6 @@ const insertAfter = (el, htmlString) => el.insertAdjacentHTML('afterend', htmlSt
 ```
 
 ```js
-insertAfter(document.getElementById('myId'), '<p>after</p>'); // <div id="myId">...</div> <p>after</p>
+insertAfter(document.getElementById('myId'), '<p>after</p>');
+// <div id="myId">...</div> <p>after</p>
 ```
