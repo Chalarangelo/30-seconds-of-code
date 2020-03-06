@@ -746,7 +746,7 @@
       "type": "snippetListing",
       "title": "currentURL",
       "attributes": {
-        "text": "Returns the current URL.\n\nUse `window.location.href` to get current URL.\n\n",
+        "text": "Returns the current URL.\n\nUse `window.location.href` to get the current URL.\n\n",
         "tags": [
           "browser",
           "url",
@@ -754,7 +754,7 @@
         ]
       },
       "meta": {
-        "hash": "f51d4d8679fadabe84e72547013537a5fcb7bcedd7907f79934fba06405097c7"
+        "hash": "a28cd0828b50d589cda564a36076a297c0181598d7400aefe5184412682485e3"
       }
     },
     {
@@ -832,7 +832,7 @@
         ]
       },
       "meta": {
-        "hash": "77a01af8797ecbe71b9c9412d21c144c03a46a49dd3d0e7d869c3df38b39b2b4"
+        "hash": "0a4684d6fc79bdbbac31df3af6c493ba7c881936ada5bc52824b4f26ca177459"
       }
     },
     {
@@ -895,7 +895,7 @@
         ]
       },
       "meta": {
-        "hash": "6fa14364405f7b99aa49c2157bdc08c02b4ce2f288db29a4348a6983460933c7"
+        "hash": "a4e1e33c0688dbf1ca231d9d8ea315ffed93b7f83f5d8cbf0714f10fdfeda8cf"
       }
     },
     {
@@ -1034,7 +1034,7 @@
         ]
       },
       "meta": {
-        "hash": "484bd222e636e8a8409c30ddb1fe6e3fe72ab7a43f2edf089b2758d5e9bee528"
+        "hash": "5f38360819f9225b887a94221bfee1a80f1bcc224a364440b3388f60491b03ba"
       }
     },
     {
@@ -1270,7 +1270,7 @@
         ]
       },
       "meta": {
-        "hash": "0eac852db7a7add352b0d36677b22718b342ed9dc12f11780cac87e3b8260a05"
+        "hash": "55b1ce0a892110d792a9487e40331774015525479faa2b8961f6c2ea6291c27b"
       }
     },
     {
@@ -1689,7 +1689,7 @@
         ]
       },
       "meta": {
-        "hash": "9e39c6a3a8ec5b51c5e16f69107fc9e90b2697b2cf2689850872071bb968723e"
+        "hash": "16c3b724b653dcb31f3e59f1664a59951abb15a93eb3697cade4d3ae0e63c532"
       }
     },
     {
@@ -2178,7 +2178,7 @@
         ]
       },
       "meta": {
-        "hash": "9a2e1d5c50b955f8be4e0ee6b63894525be4904905a62c483789dd4e3d4bb11e"
+        "hash": "ed0aaf8c5ebaa3b1e75a60af42c56ad19d3b99c6ba7257e1cfd4b245546b528f"
       }
     },
     {
@@ -2193,7 +2193,7 @@
         ]
       },
       "meta": {
-        "hash": "72db2aadee9327a4e794727fd39a254cc9cfcaa4f0819b2d03ad3c39c950264b"
+        "hash": "bf4e5f5e31ce7057a18c2b54dd516ec647819b5a5246a93e883ade756ff39fd9"
       }
     },
     {
@@ -2921,7 +2921,7 @@
         ]
       },
       "meta": {
-        "hash": "362fddaa6244404741e84bca6fc442a101fdb642af53b299e8b9994d0d7162d8"
+        "hash": "3db3faac666ee61ab86c70766d2ab5d1293ffd818da87edb971bfff7a366364a"
       }
     },
     {
@@ -3496,7 +3496,7 @@
         ]
       },
       "meta": {
-        "hash": "b031c3387ef66411ab5d295788eac4247ada5b4b068dda90603d3c973890bc26"
+        "hash": "e8f820ce6da97eabde082ffb829c9fb700e85efc79bdebe883c67237269e3f52"
       }
     },
     {
@@ -3677,14 +3677,14 @@
       "type": "snippetListing",
       "title": "pad",
       "attributes": {
-        "text": "Pads a string on both sides with the specified character, if it's shorter than the specified length.\n\nUse `String.padStart()` and `String.padEnd()` to pad both sides of the given string.\nOmit the third argument, `char`, to use the whitespace character as the default padding character.\n\n",
+        "text": "Pads a string on both sides with the specified character, if it's shorter than the specified length.\n\nUse `String.prototype.padStart()` and `String.prototype.padEnd()` to pad both sides of the given string.\nOmit the third argument, `char`, to use the whitespace character as the default padding character.\n\n",
         "tags": [
           "string",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "04a1e9e83ff8bb138a86e7bb060a19de2593bc4054ce48cfef511eec1052edbe"
+        "hash": "d330cea0a63c1e50ca7f0203024ab7a7994e15cdaa04361e8a99feaf71ffb42f"
       }
     },
     {
@@ -3842,7 +3842,7 @@
         ]
       },
       "meta": {
-        "hash": "0eb844801e767edcaa6a882a6dce4b5b1dadecb53a92d6ec259d36c57b6a3dd0"
+        "hash": "a2b9ac4f1209c3791caa6f40f0d041acd75514e9ee8909f2e3833635f357c0bd"
       }
     },
     {
@@ -4236,7 +4236,7 @@
         ]
       },
       "meta": {
-        "hash": "069472d018c3102412dafc2ae8ec6e9396e53c01d0073079f2e3f1ac3c99b6e9"
+        "hash": "c1542907e6295eb81df918174c247a65d73c8daccc56769f2eb32d609b7846fc"
       }
     },
     {
@@ -4450,14 +4450,14 @@
       "type": "snippetListing",
       "title": "setStyle",
       "attributes": {
-        "text": "Sets the value of a CSS rule for the specified element.\n\nUse `element.style` to set the value of the CSS rule for the specified element to `val`.\n\n",
+        "text": "Sets the value of a CSS rule for the specified HTML element.\n\nUse `element.style` to set the value of the CSS rule for the specified element to `val`.\n\n",
         "tags": [
           "browser",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "8f531d87240d659970223c06c464bb1434fb3096e365d48dccb5c386a39e1ac4"
+        "hash": "3af57aa88e446dcfa4f1a7a8a434b541445e91cb366f0c56184c5e09f7c961cb"
       }
     },
     {
@@ -4552,7 +4552,7 @@
         ]
       },
       "meta": {
-        "hash": "24b93b68a59b49f245590930fed6fb82e286ce09f90e292466cde63c1784c347"
+        "hash": "6dd4c6a51d2c80fa4768c95ae01c16a8359c4140bcad28c7fde0cecd72d7d3e2"
       }
     },
     {
@@ -5018,7 +5018,7 @@
       "type": "snippetListing",
       "title": "toDecimalMark",
       "attributes": {
-        "text": "Use `toLocaleString()` to convert a float-point arithmetic to the [Decimal mark](https://en.wikipedia.org/wiki/Decimal_mark) form. It makes a comma separated string from a number.\n\n",
+        "text": "Converts a number to a decimal mark formatted string.\n\nUse `Number.prototype.toLocaleString()` to convert the numbre to decimal mark format.\n\n",
         "tags": [
           "utility",
           "math",
@@ -5026,7 +5026,7 @@
         ]
       },
       "meta": {
-        "hash": "426eb2319298548df80de3db701eb3c130abd4ff9613a87bd2ae55f76aae7039"
+        "hash": "22c2a4835f37334d3b5fa5f83bbaaddc642feb71c1868f514928c656e250abe6"
       }
     },
     {
@@ -5034,14 +5034,14 @@
       "type": "snippetListing",
       "title": "toggleClass",
       "attributes": {
-        "text": "Toggle a class for an element.\n\nUse `element.classList.toggle()` to toggle the specified class for the element.\n\n",
+        "text": "Toggles a class for an HTML element.\n\nUse `element.classList.toggle()` to toggle the specified class for the element.\n\n",
         "tags": [
           "browser",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "994b3e4bd75982d26fef1b3812890b90118c8d89aec6e8a666ce7e132c382081"
+        "hash": "34abfb52d68cbd59aa575d0a1620312798264526dfa006f3bf52883e92e41105"
       }
     },
     {
