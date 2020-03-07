@@ -1527,7 +1527,7 @@ const JSONToDate = arr => {
   const dt = new Date(parseInt(arr.toString().substr(6)));
   return `${dt.getDate()}/${dt.getMonth() + 1}/${dt.getFullYear()}`;
 };
-const kmphToMph = (kmph) => 0.621371192 * kmph;
+const kmphToMph = kmph => 0.621371192 * kmph;
 const levenshteinDistance = (string1, string2) => {
   if (string1.length === 0) return string2.length;
   if (string2.length === 0) return string1.length;
@@ -1579,14 +1579,11 @@ const solveRPN = rpn => {
       .filter(el => !/\s+/.test(el) && el !== '')
   ];
   solve.forEach(symbol => {
-    if (!isNaN(parseFloat(symbol)) && isFinite(symbol)) {
-      stack.push(symbol);
-    } else if (Object.keys(OPERATORS).includes(symbol)) {
+    if (!isNaN(parseFloat(symbol)) && isFinite(symbol)) stack.push(symbol);
+    else if (Object.keys(OPERATORS).includes(symbol)) {
       const [a, b] = [stack.pop(), stack.pop()];
       stack.push(OPERATORS[symbol](parseFloat(b), parseFloat(a)));
-    } else {
-      throw `${symbol} is not a recognized symbol`;
-    }
+    } else throw `${symbol} is not a recognized symbol`;
   });
   if (stack.length === 1) return stack.pop();
   else throw `${rpn} is not a proper RPN. Please check it and try again`;
