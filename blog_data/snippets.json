@@ -101,6 +101,32 @@
       }
     },
     {
+      "id": "css-variables",
+      "title": "What are CSS variables and where can I use them?",
+      "type": "blog.question",
+      "attributes": {
+        "fileName": "css-variables.md",
+        "cover": "blog_images/css-variables.jpg",
+        "excerpt": "Learn how CSS custom properties (CSS variables) work and what you can use them for in your code and designs.",
+        "authors": [
+          "chalarangelo"
+        ],
+        "text": "CSS variables (officially called CSS custom properties) behave much like variables in other languages, allowing you to define named variables that contain specific values to be reused within the CSS document. They are defined using the custom property notation, which always start with two dashes (e.g. `--my-color: black;`) and are accessed using the `var()` function (e.g. `color: var(--my-color);`). Custom properties are exceptionally useful for sharing styles between different elements and components (e.g. vertical rhythm, typography variables, color palettes etc.).\n\nOne of the most common examples of CSS variable usage is theming and dark mode, where CSS variables are used to create a shared palette across the whole website, then easily swap it out for a different one by applying a class to a common ancestor (e.g. the `<body>` element or a top-level container). This example helps demonstrate global variables defined in the `:root` element and cascading, as the top-level ancestor inherits values from the `:root` element:\n\n```css\n/* Global variables are defined in the :root element. */\n:root {\n  --bg-color: #fff;\n  --main-color: #000;\n  --secondary-color: #222;\n}\n/* Elements inherit variables from their parents. */\nbody {\n  background-color: var(--bg-color);\n  color: var(--main-color);\n}\nsmall {\n  color: var(--secondary-color);\n}\n/* Elements can define their own values and variables, overriding inherited ones.*/\nbody.dark {\n  --bg-color: #080808;\n  --main-color: #fff;\n  --secondary-color: #ccc;\n}\n```\n\nAnother rather useful example is defining shared customized styles for certain variants of an element, allowing the customization of whole trees of components without having to repeat styles over and over. This example demonstrates cascading even better than the previous one and also introduces the idea of sharing styles between different elements:\n\n```css\n.btn {\n  --bg-color: #002299;\n  --text-color: #fff;\n  --highlight-color: #669900;\n\n  background-color: var(--bg-color);\n  color: var(--text-color);\n}\n/* --highlight-color is also available to the children of .btn */\n.btn .highlight {\n  color: var(--highlight-color);\n}\n/* .btn.danger .highlight will use the --highlight-color defined in .btn-danger */\n.btn-danger {\n  --bg-color: #dd4a68;\n  --text-color: #000;\n  --highlight-color: #990055;\n}\n```\n\nFinally, keep in mind the following useful tips for working with CSS variables:\n\n- You can define fallback values, by providing a second argument to the `var()` function (e.g. `var(--text-color, black);` will default to `black` if `--text-color` is not defined).\n- CSS variables are case sensitive, so mind your capitalization. They can also be inlined in HTML like any other style (e.g. `<div style=\"--text-color: red\">`).\n- You can nest `var()` calls, using another variable as fallback (e.g. `var(--main-color, var(--other-color))`), pass them to other functions such as `calc()` or even assign one variable to another (e.g. `--text-color: var(--main-color);`).\n\n**Image credit:** [Pankaj Patel](https://unsplash.com/@pankajpatel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)\n",
+        "tags": [
+          "css",
+          "visual",
+          "layout"
+        ]
+      },
+      "meta": {
+        "hash": "f4cc0d29901e6a9fd75b94396db60740431bde26adc6342455f22eaf212350c8",
+        "firstSeen": "1583775570",
+        "lastUpdated": "1583775570",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "javascript-for-in-for-of-foreach",
       "title": "What is the difference between JavaScript's for...in, for...of and forEach?",
       "type": "blog.question",
