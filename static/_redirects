@@ -17,9 +17,20 @@
 # -----------------------------------------------------------------------------
 #   UPDATED TAG REDIRECTS:
 #
-# * Redirect JS Adapter to Function after mergin - 13/01/2020
+# * Redirect JS Adapter to Function after merging - 13/01/2020
+# * Redirect CSS Other to CSS after removing tag  - 09/03/2020
 # -----------------------------------------------------------------------------
 js/t/adapter/p/1/                      /js/t/function/p/1                       301!
+css/t/other/p/1/                       /css/p/1                                 301!
+
+# -----------------------------------------------------------------------------
+#   SNIPPET REDIRECTS:
+#
+# * Redirect an old CSS snippet to a new blog (CSS variables)
+# * Redirect an old CSS snippet to the CSS listing (CSS calc)
+# -----------------------------------------------------------------------------
+css/s/custom-variables/                /blog/s/css-variables                    301!
+css/s/calc/                            /css/p/1                                 301!
 
 # -----------------------------------------------------------------------------
 #   LEGACY REDIRECTS:
