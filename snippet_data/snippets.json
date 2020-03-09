@@ -125,36 +125,6 @@
       }
     },
     {
-      "id": "calc",
-      "title": "Calc()",
-      "type": "snippet",
-      "attributes": {
-        "fileName": "calc.md",
-        "text": "The function calc() allows to define CSS values with the use of mathematical expressions, the value adopted for the property is the result of a mathematical expression.\n\n",
-        "explanation": "\n\n1. It allows addition, subtraction, multiplication and division.\n2. Can use different units (pixel and percent together, for example) for each value in your expression.\n3. It is permitted to nest calc() functions.\n4. It can be used in any property that `<length>`, `<frequency>`, `<angle>`, `<time>`, `<number>`, `<color>`, or `<integer>` is allowed, like width, height, font-size, top, left, etc.\n\n",
-        "browserSupport": {
-          "text": "\n\n- https://caniuse.com/#feat=calc\n",
-          "supportPercentage": 100
-        },
-        "codeBlocks": {
-          "html": "<div class=\"box-example\"></div>",
-          "css": ".box-example {\n  height: 280px;\n  background: #222 url('https://image.ibb.co/fUL9nS/wolf.png') no-repeat;\n  background-position: calc(100% - 20px) calc(100% - 20px);\n}",
-          "js": "",
-          "scopedCss": "[data-scope=\"calc\"] .box-example {\n  height: 280px;\n  background: #222 url(\"https://image.ibb.co/fUL9nS/wolf.png\") no-repeat;\n  background-position: calc(100% - 20px) calc(100% - 20px); }\n"
-        },
-        "tags": [
-          "other"
-        ]
-      },
-      "meta": {
-        "hash": "8165e64d1bca7ae3bb0c990712023720dff55c2f6194b557a131901d528be4b7",
-        "firstSeen": "1523406541",
-        "lastUpdated": "1566813829",
-        "updateCount": 10,
-        "authorCount": 5
-      }
-    },
-    {
       "id": "circle",
       "title": "Circle",
       "type": "snippet",
@@ -337,36 +307,6 @@
         "lastUpdated": "1583441571",
         "updateCount": 16,
         "authorCount": 6
-      }
-    },
-    {
-      "id": "custom-variables",
-      "title": "Custom variables",
-      "type": "snippet",
-      "attributes": {
-        "fileName": "custom-variables.md",
-        "text": "CSS variables that contain specific values to be reused throughout a document.\n\n",
-        "explanation": "\n\n- The variables are defined globally within the `:root` CSS pseudo-class which matches the root element of a tree representing the document. Variables can also be scoped to a selector if defined within the block.\n- Declare a variable with `--variable-name:`.\n- Reuse variables throughout the document using the `var(--variable-name)` function.\n\n",
-        "browserSupport": {
-          "text": "\n\n- https://caniuse.com/#feat=css-variables\n",
-          "supportPercentage": 97.16
-        },
-        "codeBlocks": {
-          "html": "<p class=\"custom-variables\">CSS is awesome!</p>",
-          "css": ":root {\n  /* Place variables within here to use the variables globally. */\n}\n\n.custom-variables {\n  --some-color: #da7800;\n  --some-keyword: italic;\n  --some-size: 1.25em;\n  --some-complex-value: 1px 1px 2px whitesmoke, 0 0 1em slategray, 0 0 0.2em slategray;\n  color: var(--some-color);\n  font-size: var(--some-size);\n  font-style: var(--some-keyword);\n  text-shadow: var(--some-complex-value);\n}",
-          "js": "",
-          "scopedCss": "[data-scope=\"custom-variables\"] :root {\n  /* Place variables within here to use the variables globally. */ }\n\n[data-scope=\"custom-variables\"] .custom-variables {\n  --some-color: #da7800;\n  --some-keyword: italic;\n  --some-size: 1.25em;\n  --some-complex-value: 1px 1px 2px whitesmoke, 0 0 1em slategray, 0 0 0.2em slategray;\n  color: var(--some-color);\n  font-size: var(--some-size);\n  font-style: var(--some-keyword);\n  text-shadow: var(--some-complex-value); }\n"
-        },
-        "tags": [
-          "other"
-        ]
-      },
-      "meta": {
-        "hash": "7a0d1c46beceb336265b2ca27a4f3cf25ad332a5cd2e8c0b692a43ce5b329fef",
-        "firstSeen": "1520023750",
-        "lastUpdated": "1566813829",
-        "updateCount": 13,
-        "authorCount": 5
       }
     },
     {
