@@ -61,20 +61,6 @@
       }
     },
     {
-      "id": "calc",
-      "type": "snippetListing",
-      "title": "Calc()",
-      "attributes": {
-        "text": "The function calc() allows to define CSS values with the use of mathematical expressions, the value adopted for the property is the result of a mathematical expression.\n\n",
-        "tags": [
-          "other"
-        ]
-      },
-      "meta": {
-        "hash": "8165e64d1bca7ae3bb0c990712023720dff55c2f6194b557a131901d528be4b7"
-      }
-    },
-    {
       "id": "circle",
       "type": "snippetListing",
       "title": "Circle",
@@ -161,20 +147,6 @@
       },
       "meta": {
         "hash": "1c29d55847263d12852dfd752653287237c885cadb369ee3db28701029f8bcc2"
-      }
-    },
-    {
-      "id": "custom-variables",
-      "type": "snippetListing",
-      "title": "Custom variables",
-      "attributes": {
-        "text": "CSS variables that contain specific values to be reused throughout a document.\n\n",
-        "tags": [
-          "other"
-        ]
-      },
-      "meta": {
-        "hash": "7a0d1c46beceb336265b2ca27a4f3cf25ad332a5cd2e8c0b692a43ce5b329fef"
       }
     },
     {
