@@ -1,8 +1,6 @@
 import React from 'react';
 import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import _ from 'lang';
-const _l = _('en');
 
 import { EXPERTISE_LEVELS } from 'shared';
 import Expertise from './index';

@@ -1,6 +1,5 @@
 
 import { Snippet } from 'typedefs';
-import { recommendationEngine } from 'engines';
 
 /**
  * Extension point to tell plugins to source nodes.

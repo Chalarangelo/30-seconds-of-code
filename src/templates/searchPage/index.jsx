@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Meta from 'atoms/meta';
 import Shell from 'organisms/shell';
-import Search from 'atoms/search';
 import PropTypes from 'prop-types';
 import _ from 'lang';
 import SearchResults from 'organisms/searchResults';

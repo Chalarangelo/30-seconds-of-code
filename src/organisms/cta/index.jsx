@@ -29,6 +29,7 @@ const CTA = ({
   acceptsCookies,
   onlySocial,
 }) => {
+  // eslint-disable-next-line no-unused-vars
   const [ctaId, setCtaId] = React.useState(
     weightedSample(
       AVAILABLE_CTAS,
@@ -56,6 +57,7 @@ const CTA = ({
         onClick={ e => {
           if (acceptsCookies && typeof window !== 'undefined' && typeof gtag === `function`) {
             e.preventDefault();
+            // eslint-disable-next-line camelcase
             window.gtag('event', 'click', { event_category: `cta-${ctaId}`, event_label: e.target.href, value: 1});
             window.open(e.target.href, '_blank');
           }
