@@ -350,7 +350,7 @@
         "fileName": "compact.md",
         "text": "Removes falsey values from a list.\n\nUse `filter()` to filter out falsey values (`False`, `None`, `0`, and `\"\"`).\n\n",
         "codeBlocks": {
-          "code": "def compact(lst):\n  return list(filter(bool, lst))",
+          "code": "def compact(lst):\n  return list(filter(None, lst))",
           "example": "compact([0, 1, False, 2, '', 3, 'a', 's', 34]) # [ 1, 2, 3, 'a', 's', 34 ]"
         },
         "tags": [
@@ -359,10 +359,10 @@
         ]
       },
       "meta": {
-        "hash": "6b98c58b6aecf1b58ed36f55a407bf2f2d68938723d37472fe43d9e652d93fe6",
+        "hash": "49af477281165f9623eb1ad399be5f43705940587ba70ee5d4ac697fcb29c6cd",
         "firstSeen": "1516357026",
-        "lastUpdated": "1566285856",
-        "updateCount": 13,
+        "lastUpdated": "1583870374",
+        "updateCount": 14,
         "authorCount": 5
       }
     },
@@ -654,6 +654,54 @@
         "firstSeen": "1566295227",
         "lastUpdated": "1578048908",
         "updateCount": 3,
+        "authorCount": 2
+      }
+    },
+    {
+      "id": "drop",
+      "title": "drop",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "drop.md",
+        "text": "Returns a list with `n` elements removed from the left.\n\nUse slice notation to remove the specified number of elements from the left.\n\n",
+        "codeBlocks": {
+          "code": "def drop(a, n = 1):\r\n  return a[n:]",
+          "example": "drop([1, 2, 3]) # [2, 3]\r\ndrop([1, 2, 3], 2) # [3]\r\ndrop([1, 2, 3], 42) # []"
+        },
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "39a98596a5f94242a3bed40282ed2785f6e7254148bcb5410c5028dcbf352095",
+        "firstSeen": "1583870381",
+        "lastUpdated": "1583870381",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
+      "id": "drop_right",
+      "title": "drop_right",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "drop_right.md",
+        "text": "Returns a list with `n` elements removed from the right.\n\nUse slice notation to remove the specified number of elements from the right.\n\n",
+        "codeBlocks": {
+          "code": "def drop_right(a, n = 1):\r\n  return a[:-n]",
+          "example": "drop_right([1, 2, 3]) # [1, 2]\r\ndrop_right([1, 2, 3], 2) # [1]\r\ndrop_right([1, 2, 3], 42) # []"
+        },
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "b8166585e68a5b2b74af067029d1d8895edef94f745816c7e8d3b04a7bdc9792",
+        "firstSeen": "1583870381",
+        "lastUpdated": "1583870381",
+        "updateCount": 2,
         "authorCount": 2
       }
     },

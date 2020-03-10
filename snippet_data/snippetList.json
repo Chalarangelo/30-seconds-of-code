@@ -228,7 +228,7 @@
         ]
       },
       "meta": {
-        "hash": "6b98c58b6aecf1b58ed36f55a407bf2f2d68938723d37472fe43d9e652d93fe6"
+        "hash": "49af477281165f9623eb1ad399be5f43705940587ba70ee5d4ac697fcb29c6cd"
       }
     },
     {
@@ -412,6 +412,36 @@
       },
       "meta": {
         "hash": "90beb85f77896593c9d5a0fa23954d7bf0ea69edf769bc55f5125002e717f2f3"
+      }
+    },
+    {
+      "id": "drop",
+      "type": "snippetListing",
+      "title": "drop",
+      "attributes": {
+        "text": "Returns a list with `n` elements removed from the left.\n\nUse slice notation to remove the specified number of elements from the left.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "39a98596a5f94242a3bed40282ed2785f6e7254148bcb5410c5028dcbf352095"
+      }
+    },
+    {
+      "id": "drop_right",
+      "type": "snippetListing",
+      "title": "drop_right",
+      "attributes": {
+        "text": "Returns a list with `n` elements removed from the right.\n\nUse slice notation to remove the specified number of elements from the right.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "b8166585e68a5b2b74af067029d1d8895edef94f745816c7e8d3b04a7bdc9792"
       }
     },
     {
