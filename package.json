@@ -10,7 +10,7 @@
     "linter": "prettier **/*.{js,json,css,md} --write"
   },
   "devDependencies": {
-    "@30-seconds/integration-tools": "^1.0.0"
+    "@30-seconds/integration-tools": "^1.3.2"
   },
   "prettier": {
     "singleQuote": true,
