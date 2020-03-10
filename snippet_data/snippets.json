@@ -1360,8 +1360,8 @@
       "meta": {
         "hash": "5ab25ab96afd4f1f481fc318b5b290ba8c57a468ef6bca0ca200cfb7fcf3ba9f",
         "firstSeen": "1516733326",
-        "lastUpdated": "1583481673",
-        "updateCount": 67,
+        "lastUpdated": "1583828732",
+        "updateCount": 68,
         "authorCount": 9
       }
     },
@@ -1462,9 +1462,9 @@
       },
       "meta": {
         "hash": "7a228b650ff668f697e524e0d27ebeff1bfa35e04333b6cd5e742ff63bfea25d",
-        "firstSeen": "1544374334\n",
-        "lastUpdated": "1583481673",
-        "updateCount": 79,
+        "firstSeen": "1544374334",
+        "lastUpdated": "1583828732",
+        "updateCount": 80,
         "authorCount": 4
       }
     },
@@ -1692,8 +1692,8 @@
       "meta": {
         "hash": "484bd222e636e8a8409c30ddb1fe6e3fe72ab7a43f2edf089b2758d5e9bee528",
         "firstSeen": "1531080384",
-        "lastUpdated": "1583481673",
-        "updateCount": 104,
+        "lastUpdated": "1583828732",
+        "updateCount": 105,
         "authorCount": 5
       }
     },
@@ -2078,8 +2078,8 @@
       "meta": {
         "hash": "0eac852db7a7add352b0d36677b22718b342ed9dc12f11780cac87e3b8260a05",
         "firstSeen": "1512650493",
-        "lastUpdated": "1583481673",
-        "updateCount": 109,
+        "lastUpdated": "1583828732",
+        "updateCount": 110,
         "authorCount": 6
       }
     },
@@ -2767,8 +2767,8 @@
       "meta": {
         "hash": "9e39c6a3a8ec5b51c5e16f69107fc9e90b2697b2cf2689850872071bb968723e",
         "firstSeen": "1515856488",
-        "lastUpdated": "1583481673",
-        "updateCount": 68,
+        "lastUpdated": "1583828732",
+        "updateCount": 69,
         "authorCount": 4
       }
     },
@@ -4779,8 +4779,8 @@
       "meta": {
         "hash": "362fddaa6244404741e84bca6fc442a101fdb642af53b299e8b9994d0d7162d8",
         "firstSeen": "1514801920",
-        "lastUpdated": "1583481673",
-        "updateCount": 75,
+        "lastUpdated": "1583828732",
+        "updateCount": 76,
         "authorCount": 7
       }
     },
@@ -5714,8 +5714,8 @@
       "meta": {
         "hash": "b031c3387ef66411ab5d295788eac4247ada5b4b068dda90603d3c973890bc26",
         "firstSeen": "1570824965",
-        "lastUpdated": "1583481673",
-        "updateCount": 42,
+        "lastUpdated": "1583828732",
+        "updateCount": 43,
         "authorCount": 4
       }
     },
@@ -6280,8 +6280,8 @@
       "meta": {
         "hash": "0eb844801e767edcaa6a882a6dce4b5b1dadecb53a92d6ec259d36c57b6a3dd0",
         "firstSeen": "1517069864",
-        "lastUpdated": "1583481673",
-        "updateCount": 100,
+        "lastUpdated": "1583828732",
+        "updateCount": 101,
         "authorCount": 5
       }
     },
@@ -6611,7 +6611,7 @@
       },
       "meta": {
         "hash": "42788f8392f5511db3641dbe2ab92b2c043b3b5209e95c386c73e5d96eaa63af",
-        "firstSeen": "1514383576\n",
+        "firstSeen": "1514383576",
         "lastUpdated": "1565681352",
         "updateCount": 22,
         "authorCount": 10
@@ -6924,8 +6924,8 @@
       "meta": {
         "hash": "069472d018c3102412dafc2ae8ec6e9396e53c01d0073079f2e3f1ac3c99b6e9",
         "firstSeen": "1513521691",
-        "lastUpdated": "1583481673",
-        "updateCount": 96,
+        "lastUpdated": "1583828732",
+        "updateCount": 97,
         "authorCount": 6
       }
     },
@@ -7440,8 +7440,8 @@
       "meta": {
         "hash": "24b93b68a59b49f245590930fed6fb82e286ce09f90e292466cde63c1784c347",
         "firstSeen": "1514645161",
-        "lastUpdated": "1583481673",
-        "updateCount": 41,
+        "lastUpdated": "1583828732",
+        "updateCount": 42,
         "authorCount": 5
       }
     },
@@ -8009,7 +8009,7 @@
       },
       "meta": {
         "hash": "4c83bc03b1146f6a9f49f12855a4118dd32367b6b6d46e64e94959404411e823",
-        "firstSeen": "1513526151\n",
+        "firstSeen": "1513526151",
         "lastUpdated": "1565681352",
         "updateCount": 9,
         "authorCount": 6
@@ -8289,7 +8289,7 @@
       },
       "meta": {
         "hash": "0981cb8583c317d56894840bb31fd83e820b56fd7eef18d96db1edcb0a222860",
-        "firstSeen": "1514034916\n",
+        "firstSeen": "1514034916",
         "lastUpdated": "1565681352",
         "updateCount": 15,
         "authorCount": 8
@@ -9114,7 +9114,7 @@
       },
       "meta": {
         "hash": "54f15178f6196172218aeffd14defe4e9af475ee3e29f0857ada823f618d3c8f",
-        "firstSeen": "1513521691\n",
+        "firstSeen": "1513521691",
         "lastUpdated": "1565952466",
         "updateCount": 12,
         "authorCount": 7
