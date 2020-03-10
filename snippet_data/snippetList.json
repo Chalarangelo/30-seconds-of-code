@@ -57,7 +57,7 @@
       "type": "snippetListing",
       "title": "Carousel",
       "attributes": {
-        "text": "Renders a carousel component.\n\n- Use the `React.setState()` hook to create the `active` state variable and give it a value of `0` (index of the first item).\n- Use an object, `style`, to hold the styles for the individual components.\n- Use the `React.useEffect()` hook to update the value of `active` to the index of the next item, using `setTimeout`.\n- Destructure `props`, compute if visibility style should be set to `visible` or not for each carousel item while mapping over and applying the combined style to the carousel item component accordingly.\n- Render the carousel items using `React.cloneElement()` and pass down rest `props` along with the computed styles.\n\n",
+        "text": "Renders a carousel component.\n\n- Use the `React.useState()` hook to create the `active` state variable and give it a value of `0` (index of the first item).\n- Use an object, `style`, to hold the styles for the individual components.\n- Use the `React.useEffect()` hook to update the value of `active` to the index of the next item, using `setTimeout`.\n- Destructure `props`, compute if visibility style should be set to `visible` or not for each carousel item while mapping over and applying the combined style to the carousel item component accordingly.\n- Render the carousel items using `React.cloneElement()` and pass down rest `props` along with the computed styles.\n\n",
         "tags": [
           "visual",
           "children",
@@ -67,7 +67,7 @@
         ]
       },
       "meta": {
-        "hash": "4e224ce57a85a9061c065603496ae2a80db43d2ab7908d1c08c7dcbe5779a2d6"
+        "hash": "18bc23f64d46aa17912ec9f854cde7ebff2395ef3936da2e7e60870221e9f47b"
       }
     },
     {
@@ -494,6 +494,23 @@
       },
       "meta": {
         "hash": "11581e3b40209c7152833aa421c7d18c889b16067c5cc1557b1bb7f604f18982"
+      }
+    },
+    {
+      "id": "useAsync",
+      "type": "snippetListing",
+      "title": "useAsync",
+      "attributes": {
+        "text": "A hook that handles asynchronous calls.\n\n- Create a custom hook that takes a handler function, `fn`.\n- Define a reducer function and an initial state for the custom hook's state.\n- Use the `React.useReducer()` hook to initialize the `state` variable and the `dispatch` function.\n- Define a `run` function that will run the provided callback, `fn`, while using `dispatch` to update `state` as necessary.\n- Return an object containting the the properties of `state` (`value`, `error` and `loading`) and the `run` function.\n\n",
+        "tags": [
+          "hooks",
+          "state",
+          "reducer",
+          "advanced"
+        ]
+      },
+      "meta": {
+        "hash": "e15c637ad5256365c049fdef4529955310e2e71fec1d7d76bf9818a2db789b5c"
       }
     },
     {
