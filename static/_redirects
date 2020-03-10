@@ -28,9 +28,11 @@ css/t/other/p/1/                       /css/p/1                                 
 #
 # * Redirect an old CSS snippet to a new blog (CSS variables)
 # * Redirect an old CSS snippet to the CSS listing (CSS calc)
+# * Redirect an old JS snippet to its duplicate
 # -----------------------------------------------------------------------------
 css/s/custom-variables/                /blog/s/css-variables                    301!
 css/s/calc/                            /css/p/1                                 301!
+js/s/filter-falsy/                     /js/s/compact                            301!
 
 # -----------------------------------------------------------------------------
 #   LEGACY REDIRECTS:
