@@ -564,6 +564,22 @@
       }
     },
     {
+      "id": "useComponentWillUnmount",
+      "type": "snippetListing",
+      "title": "useComponentWillUnmount",
+      "attributes": {
+        "text": "A hook that executes a callback immediately before a component is unmounted and destroyed.\n\n- Use `React.useEffect()` with an empty array as the second argument and return the provided callback to be executed only once before cleanup.\n\n",
+        "tags": [
+          "hooks",
+          "effect",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "dd2769c603f226996de8baf90af511fc788543dcb194a3b600f83fd2916699a6"
+      }
+    },
+    {
       "id": "useFetch",
       "type": "snippetListing",
       "title": "useFetch",

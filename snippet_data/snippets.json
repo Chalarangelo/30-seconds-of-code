@@ -904,6 +904,32 @@
       }
     },
     {
+      "id": "useComponentWillUnmount",
+      "title": "useComponentWillUnmount",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "useComponentWillUnmount.md",
+        "text": "A hook that executes a callback immediately before a component is unmounted and destroyed.\n\n- Use `React.useEffect()` with an empty array as the second argument and return the provided callback to be executed only once before cleanup.\n\n",
+        "codeBlocks": {
+          "style": "",
+          "code": "const useComponentWillUnmount = onUnmountHandler => {\n  React.useEffect(() => () => {\n    onUnmountHandler()\n  }, []);\n}",
+          "example": "const Unmounter = () => {\n  useComponentWillUnmount(() => console.log('Component will unmount'));\n\n  return <div>Check the console!</div>;\n}\n\nReactDOM.render(<Unmounter />, document.getElementById('root'));"
+        },
+        "tags": [
+          "hooks",
+          "effect",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "dd2769c603f226996de8baf90af511fc788543dcb194a3b600f83fd2916699a6",
+        "firstSeen": "1578060056",
+        "lastUpdated": "1578060056",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "useFetch",
       "title": "useFetch",
       "type": "snippet",
