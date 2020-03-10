@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import Paginator from 'molecules/paginator';
 import Sorter from 'molecules/sorter';
 import PageTitle from 'atoms/pageTitle';
-import PageSubtitle from 'atoms/pageSubtitle';
 import PreviewCard from 'molecules/previewCard';
 import CTA from 'organisms/cta';
 import ListingAnchors from 'molecules/listingAnchors';
@@ -12,8 +11,6 @@ import {
   Snippet as SnippetPropType,
   Paginator as PaginatorPropType
 } from 'typedefs';
-import _ from 'lang';
-const _l = _('en');
 
 // eslint-disable-next-line complexity
 const SnippetList = ({

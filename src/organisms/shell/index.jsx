@@ -6,7 +6,6 @@ import Footer from 'molecules/footer';
 import CookieConsentPopup from 'molecules/cookieConsentPopup';
 import { trimWhiteSpace } from 'functions/utils';
 import { decideCookies } from 'state/shell';
-import config from '../../../config';
 import env from '../../../.build/env';
 
 // eslint-disable-next-line complexity
@@ -18,7 +17,6 @@ const Shell = ({
   isSettings = false,
   dispatch,
   logoSrc,
-  externalUrl = config.repositoryUrl,
   lastPageUrl,
   children,
 }) => {
@@ -82,8 +80,6 @@ Shell.propTypes = {
   dispatch: PropTypes.func,
   /** URI for the logo image */
   logoSrc: PropTypes.string,
-  /** URL of the external resource to link to */
-  externalUrl: PropTypes.string,
   /** URL of the last page */
   lastPageUrl: PropTypes.string.isRequired,
 };

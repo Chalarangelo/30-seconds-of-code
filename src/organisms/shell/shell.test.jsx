@@ -10,6 +10,7 @@ configure({ adapter: new Adapter() });
 
 const { store } = createStore();
 
+// eslint-disable-next-line no-unused-vars
 const expectArrayToContainMatchingObject = (arr, obj) => {
   return expect(arr).toEqual(
     expect.arrayContaining([

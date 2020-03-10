@@ -3,7 +3,8 @@
     "browser": true,
     "es6": true,
     "node": true,
-    "jest": true
+    "jest": true,
+    "cypress/globals": true
   },
   "extends": [
     "eslint:recommended",
@@ -20,7 +21,8 @@
   },
   "plugins": [
     "react",
-    "react-hooks"
+    "react-hooks",
+    "cypress"
   ],
   "settings": {
     "react": {
@@ -218,6 +220,11 @@
       2
     ],
     "react/jsx-no-duplicate-props": "error",
-    "react/no-deprecated": "error"
+    "react/no-deprecated": "error",
+    "react/prop-types": "warn",
+    "cypress/no-assigning-return-values": "error",
+    "cypress/no-unnecessary-waiting": "error",
+    "cypress/assertion-before-screenshot": "warn",
+    "cypress/no-force": "warn"
   }
 }

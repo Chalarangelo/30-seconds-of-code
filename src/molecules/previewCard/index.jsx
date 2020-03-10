@@ -16,7 +16,6 @@ const _l = _('en');
  */
 const PreviewCard = ({
   snippet,
-  context,
   className,
   ...rest
 }) => (
