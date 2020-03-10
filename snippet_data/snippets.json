@@ -853,6 +853,102 @@
       }
     },
     {
+      "id": "find",
+      "title": "find",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "find.md",
+        "text": "Returns the value of the first element in the provided list that satisfies the provided testing function.\n\nUse list comprehension and `next()` to return the first element in `lst` for which `fn` returns `True`.\n\n",
+        "codeBlocks": {
+          "code": "def find(lst, fn):\r\n  return next(x for x in lst if fn(x))",
+          "example": "find([1, 2, 3, 4], lambda n: n % 2 == 1) # 1"
+        },
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "3e879def3995b7bd2062230bdc8b87269eeb5dc9eb6ce9eb3f297d84dc5beb5e",
+        "firstSeen": "1583872728",
+        "lastUpdated": "1583872728",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
+      "id": "find_index",
+      "title": "find_index",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "find_index.md",
+        "text": "Returns the index of the first element in the provided list that satisfies the provided testing function.\n\nUse list comprehension, `enumerate()` and `next()` to return the index of the first element in `lst` for which `fn` returns `True`.\n\n",
+        "codeBlocks": {
+          "code": "def find_index(lst, fn):\r\n  return next(i for i, x in enumerate(lst) if fn(x))",
+          "example": "find_index([1, 2, 3, 4], lambda n: n % 2 == 1) # 0"
+        },
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "2270fdbf382af07bdc47d0dba84eec939885734cb17f015186547a1b9a26ecce",
+        "firstSeen": "1583872728",
+        "lastUpdated": "1583872728",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
+      "id": "find_last",
+      "title": "find_last",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "find_last.md",
+        "text": "Returns the value of the last element in the provided list that satisfies the provided testing function.\n\nUse list comprehension and `next()` to return the last element in `lst` for which `fn` returns `True`.\n\n",
+        "codeBlocks": {
+          "code": "def find_last(lst, fn):\r\n  return next(x for x in lst[::-1] if fn(x))",
+          "example": "find_last([1, 2, 3, 4], lambda n: n % 2 == 1) # 3"
+        },
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "5a4ad2eca4edba75e139f8979bdb9eba7ab116e0c1f80d054261764d54e16957",
+        "firstSeen": "1583872728",
+        "lastUpdated": "1583872728",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
+      "id": "find_last_index",
+      "title": "find_last_index",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "find_last_index.md",
+        "text": "Returns the index of the last element in the provided list that satisfies the provided testing function.\n\nUse list comprehension, `enumerate()` and `next()` to return the index of the last element in `lst` for which `fn` returns `True`.\n\n",
+        "codeBlocks": {
+          "code": "def find_last_index(lst, fn):\r\n  return len(lst) - 1 - next(i for i, x in enumerate(lst[::-1]) if fn(x))",
+          "example": "find_last_index([1, 2, 3, 4], lambda n: n % 2 == 1) # 2"
+        },
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "de25fa799e8392834d484b1609eb02a68a46dd9833086e4fdf9690fe2516a858",
+        "firstSeen": "1583872728",
+        "lastUpdated": "1583872728",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "find_parity_outliers",
       "title": "find_parity_outliers",
       "type": "snippet",
