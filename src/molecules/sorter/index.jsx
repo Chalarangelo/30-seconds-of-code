@@ -4,8 +4,6 @@ import { trimWhiteSpace } from 'functions/utils';
 import { AnchorButton } from 'atoms/button';
 import { Sorter as SorterPropType } from 'typedefs';
 import { useClickOutside } from 'functions/hooks';
-import _ from 'lang';
-const _l = _('en');
 
 /**
  * Renders a pagination component (responsively).
@@ -35,7 +33,7 @@ const Sorter = ({
   return (
     <div
       className={ trimWhiteSpace`sorter
-        ${className} 
+        ${className}
         ${toggled ? 'open' : ''}
       ` }
       ref={ sorterRef }
@@ -47,7 +45,7 @@ const Sorter = ({
             .map(order => (
               <AnchorButton
                 key={ `${order.url}` }
-                className={ trimWhiteSpace`order-btn 
+                className={ trimWhiteSpace`order-btn
                 ${order.title === selectedOrder ? `selected icon ${toggled ? 'icon-chevron-up' : 'icon-chevron-down'}` : ''}
               ` }
                 onClick={ e => handleSorterClick(e) }
