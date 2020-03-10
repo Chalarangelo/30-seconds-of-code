@@ -538,6 +538,66 @@
       }
     },
     {
+      "id": "find",
+      "type": "snippetListing",
+      "title": "find",
+      "attributes": {
+        "text": "Returns the value of the first element in the provided list that satisfies the provided testing function.\n\nUse list comprehension and `next()` to return the first element in `lst` for which `fn` returns `True`.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "3e879def3995b7bd2062230bdc8b87269eeb5dc9eb6ce9eb3f297d84dc5beb5e"
+      }
+    },
+    {
+      "id": "find_index",
+      "type": "snippetListing",
+      "title": "find_index",
+      "attributes": {
+        "text": "Returns the index of the first element in the provided list that satisfies the provided testing function.\n\nUse list comprehension, `enumerate()` and `next()` to return the index of the first element in `lst` for which `fn` returns `True`.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "2270fdbf382af07bdc47d0dba84eec939885734cb17f015186547a1b9a26ecce"
+      }
+    },
+    {
+      "id": "find_last",
+      "type": "snippetListing",
+      "title": "find_last",
+      "attributes": {
+        "text": "Returns the value of the last element in the provided list that satisfies the provided testing function.\n\nUse list comprehension and `next()` to return the last element in `lst` for which `fn` returns `True`.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "5a4ad2eca4edba75e139f8979bdb9eba7ab116e0c1f80d054261764d54e16957"
+      }
+    },
+    {
+      "id": "find_last_index",
+      "type": "snippetListing",
+      "title": "find_last_index",
+      "attributes": {
+        "text": "Returns the index of the last element in the provided list that satisfies the provided testing function.\n\nUse list comprehension, `enumerate()` and `next()` to return the index of the last element in `lst` for which `fn` returns `True`.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "de25fa799e8392834d484b1609eb02a68a46dd9833086e4fdf9690fe2516a858"
+      }
+    },
+    {
       "id": "find_parity_outliers",
       "type": "snippetListing",
       "title": "find_parity_outliers",
