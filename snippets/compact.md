@@ -9,7 +9,7 @@ Use `filter()` to filter out falsey values (`False`, `None`, `0`, and `""`).
 
 ```py
 def compact(lst):
-  return list(filter(bool, lst))
+  return list(filter(None, lst))
 ```
 
 ```py
