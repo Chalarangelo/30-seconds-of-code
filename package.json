@@ -18,6 +18,6 @@
   "homepage": "https://github.com/30-seconds/30-seconds-of-python",
   "dependencies": {},
   "devDependencies": {
-    "@30-seconds/integration-tools": "^1.3.3"
+    "@30-seconds/integration-tools": "^1.3.4"
   }
 }
