@@ -9,13 +9,14 @@ Use the `in` operator to check if `target` exists in `obj`.
 If found, return the value of `obj[target]`, otherwise use `Object.values(obj)` and `Array.prototype.reduce()` to recursively call `dig` on each nested object until the first matching key/value pair is found.
 
 ```js
+
 const dig = (obj, target) =>
   target in obj
     ? obj[target]
     : Object.values(obj).reduce((acc, val) => {
-        if (acc !== undefined) return acc;
-        if (typeof val === 'object') return dig(val, target);
-      }, undefined);
+      if (acc !== undefined) return acc;
+      if (typeof val === 'object') return dig(val, target);
+    }, undefined);
 ```
 
 ```js
