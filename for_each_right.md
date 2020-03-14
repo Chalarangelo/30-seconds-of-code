@@ -14,5 +14,5 @@ def for_each_right(itr, fn):
 ```
 
 ```py
-for_each_right([1, 2, 3], print)  # 3 2 1
+for_each_right([1, 2, 3], print) # 3 2 1
 ```
