@@ -998,6 +998,78 @@
       }
     },
     {
+      "id": "for_each",
+      "title": "for_each",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "for_each.md",
+        "text": "Executes the provided function once for each list element.\n\nUse a `for` loop to execute `fn` for each element in `itr`.\n\n",
+        "codeBlocks": {
+          "code": "def for_each(itr, fn):\r\n  for el in itr:\r\n    fn(el)",
+          "example": "for_each([1, 2, 3], print) # 1 2 3"
+        },
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "bbd13f90d710c3fa85d297d668f2db9de6e20ae87b5b85977126de92c9d2a508",
+        "firstSeen": "1584269648",
+        "lastUpdated": "1584269648",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
+      "id": "for_each_right",
+      "title": "for_each_right",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "for_each_right.md",
+        "text": "Executes the provided function once for each list element, starting from the list's last element.\n\nUse a `for` loop in combination with slice notation to execute `fn` for each element in `itr`, starting from the last one.\n\n",
+        "codeBlocks": {
+          "code": "def for_each_right(itr, fn):\r\n  for el in itr[::-1]:\r\n    fn(el)",
+          "example": "for_each_right([1, 2, 3], print) # 3 2 1"
+        },
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "96f4508f15d58e10c82959ab9aa5ec37860e051b5d211912f2b17ad968e10464",
+        "firstSeen": "1584269648",
+        "lastUpdated": "1584269648",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
+      "id": "frequencies",
+      "title": "frequencies",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "frequencies.md",
+        "text": "Returns a dictionary with the unique values of a list as keys and their frequencies as the values.\n\nUse a `for` loop to populate a dictionary, `f`, with the unique values in `lst` as keys, adding to existing keys every time the same value is encountered.\n\n",
+        "codeBlocks": {
+          "code": "from functools import reduce\r\n\r\ndef frequencies(lst):\r\n  f = {}\r\n  for x in lst:\r\n    f[x] = f[x] + 1 if x in f else 1\r\n  return f",
+          "example": "frequencies(['a', 'b', 'a', 'c', 'a', 'a', 'b']) # { 'a': 4, 'b': 2, 'c': 1 }"
+        },
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "e39e557aa6a70400a5e7b7a7ab5291e1937d93c0016c8fd0897cce32af315be6",
+        "firstSeen": "1584269648",
+        "lastUpdated": "1584269648",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "gcd",
       "title": "gcd",
       "type": "snippet",
@@ -1071,6 +1143,30 @@
       }
     },
     {
+      "id": "have_same_contents",
+      "title": "have_same_contents",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "have_same_contents.md",
+        "text": "Returns `True` if two lists contain the same elements regardless of order, `False` otherwise.\n\nUse `set()` on the combination of both lists to find the unique values.\nIterate over them with a `for` loop comparing the `count()` of each unique value in each list.\nReturn `False` if the counts do not match for any element, `True` otherwise.\n\n",
+        "codeBlocks": {
+          "code": "def have_same_contents(a, b):\r\n  for v in set(a + b):\r\n    if a.count(v) != b.count(v):\r\n      return False\r\n  return True",
+          "example": "have_same_contents([1, 2, 4], [2, 4, 1]) # True"
+        },
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "3eb3a7c4b95e18bcd181965b01d6f46189735e0ada4a7e3e787026d9643792ed",
+        "firstSeen": "1584269648",
+        "lastUpdated": "1584269648",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "head",
       "title": "head",
       "type": "snippet",
@@ -1115,6 +1211,54 @@
         "firstSeen": "1566297700",
         "lastUpdated": "1578049196",
         "updateCount": 3,
+        "authorCount": 2
+      }
+    },
+    {
+      "id": "includes_all",
+      "title": "includes_all",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "includes_all.md",
+        "text": "Returns `True` if all the elements in `values` are included in `lst`, `False` otherwise.\n\nCheck if every value in `values` is contained in `lst` using a `for` loop, returning `False` if any one value is not found, `True` otherwise.\n\n",
+        "codeBlocks": {
+          "code": "def includes_all(lst, values):\r\n  for v in values:\r\n    if v not in lst:\r\n      return False\r\n  return True",
+          "example": "includes_all([1, 2, 3, 4], [1, 4]) # True\r\nincludes_all([1, 2, 3, 4], [1, 5]) # False"
+        },
+        "tags": [
+          "utility",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "dd6fe881dce1046713ff6fe1a9ee70cb3ff580b5b4f40a83f1cded8f1b2fc471",
+        "firstSeen": "1584269648",
+        "lastUpdated": "1584269648",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
+      "id": "includes_any",
+      "title": "includes_any",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "includes_any.md",
+        "text": "Returns `True` if any element in `values` is included in `lst`, `False` otherwise.\n\nCheck if any value in `values` is contained in `lst` using a `for` loop, returning `True` if any one value is found, `False` otherwise.\n\n",
+        "codeBlocks": {
+          "code": "def includes_any(lst, values):\r\n  for v in values:\r\n    if v in lst:\r\n      return True\r\n  return False",
+          "example": "includes_any([1, 2, 3, 4], [2, 9]) # True\r\nincludes_any([1, 2, 3, 4], [8, 9]) # False"
+        },
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "0207394cbc28148c73703db1298673049f9fe66936a59057955d3da180f3a0c4",
+        "firstSeen": "1584269648",
+        "lastUpdated": "1584269648",
+        "updateCount": 2,
         "authorCount": 2
       }
     },
