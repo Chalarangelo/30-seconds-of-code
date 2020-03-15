@@ -62,6 +62,22 @@
       }
     },
     {
+      "id": "code-anatomy-performant-python",
+      "type": "snippetListing",
+      "title": "Code Anatomy - Writing high performance Python code",
+      "attributes": {
+        "text": "Writing short and efficient Python code is not always easy or straightforward. However, it's often that we see a piece of code and we don't realize the thought process behind the way it was written. We will be taking a look at the [difference](/python/s/difference) snippet, which returns the difference between two iterables, in order to understand its structure.\n\nBased on the description of the snippet's functionality, we can naively write it like this:\n\n```py\ndef difference(a, b):\n  return [item for item in a if item not in b]\n```\n\nThe above implementation may work well enough, but doesn't account for duplicates in `b`, making the code take more time than necessary in cases with many duplicates in the second list. To solve this issue, we can make use of the `set()` method, which will only keep the unique values in the list:\n\n```py\ndef difference(a, b):\n  return [item for item in a if item not in set(b)]\n```\n\nThis version, while it seems like an improvement, may actually be slower than the previous one. If you look closely, you will see that `set()` is called for every `item` in `a` causing the result of `set(b)` to be evaluated every time. Here's an example where we wrap `set()` with another method to better showcase the problem:\n\n```py\ndef difference(a, b):\n  return [item for item in a if item not in make_set(b)]\n\ndef make_set(itr):\n  print('Making set...')\n  return set(itr)\n\nprint(difference([1, 2, 3], [1, 2, 4]))\n# Making set...\n# Making set...\n# Making set...\n# [3]\n```\n\nThe solution to this issue is to call `set()` once before the list comprehension and store the result to speed up the process:\n\n```py\ndef difference(a, b):\n  _b = set(b)\n  return [item for item in a if item not in _b]\n```\n\nAnother option worth mentioning when analyzing performance for this snippet is the use of a list comprehension versus using something like `filter()` and `list()`. Implementing the same code using the latter option would result in something like this:\n\n```py\ndef difference(a, b):\n  _b = set(b)\n  return list(filter(lambda item: item not in _b, a))\n```\n\nUsing `timeit` to analyze the performance of the last two code examples, it's pretty clear that using list comprehension can be up to ten times faster than the alternative, as it's a native language feature that works very similar to a simple `for` loop without the overhead of the extra function calls. This explains why we prefer it, apart from readability.\n\nThis pretty much applies to most mathematical list operation snippets, such as [difference](/python/s/difference), [symmetric_difference](/python/s/symmetric-difference) and [intersection](/python/s/intersection).\n\n**Image credit:** [Kalen Emsley](https://unsplash.com/@kalenemsley?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)\n",
+        "tags": [
+          "python",
+          "list",
+          "performance"
+        ]
+      },
+      "meta": {
+        "hash": "40d3da7677547b9f7a7e8dd25fa0217658ecccabc9f794a8b2da416b60a122a0"
+      }
+    },
+    {
       "id": "copy-text-to-clipboard-with-javascript",
       "type": "snippetListing",
       "title": "How can I copy text to clipboard with JavaScript?",
