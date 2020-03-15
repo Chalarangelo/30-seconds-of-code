@@ -629,6 +629,51 @@
       }
     },
     {
+      "id": "for_each",
+      "type": "snippetListing",
+      "title": "for_each",
+      "attributes": {
+        "text": "Executes the provided function once for each list element.\n\nUse a `for` loop to execute `fn` for each element in `itr`.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "bbd13f90d710c3fa85d297d668f2db9de6e20ae87b5b85977126de92c9d2a508"
+      }
+    },
+    {
+      "id": "for_each_right",
+      "type": "snippetListing",
+      "title": "for_each_right",
+      "attributes": {
+        "text": "Executes the provided function once for each list element, starting from the list's last element.\n\nUse a `for` loop in combination with slice notation to execute `fn` for each element in `itr`, starting from the last one.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "96f4508f15d58e10c82959ab9aa5ec37860e051b5d211912f2b17ad968e10464"
+      }
+    },
+    {
+      "id": "frequencies",
+      "type": "snippetListing",
+      "title": "frequencies",
+      "attributes": {
+        "text": "Returns a dictionary with the unique values of a list as keys and their frequencies as the values.\n\nUse a `for` loop to populate a dictionary, `f`, with the unique values in `lst` as keys, adding to existing keys every time the same value is encountered.\n\n",
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "e39e557aa6a70400a5e7b7a7ab5291e1937d93c0016c8fd0897cce32af315be6"
+      }
+    },
+    {
       "id": "gcd",
       "type": "snippetListing",
       "title": "gcd",
@@ -675,6 +720,21 @@
       }
     },
     {
+      "id": "have_same_contents",
+      "type": "snippetListing",
+      "title": "have_same_contents",
+      "attributes": {
+        "text": "Returns `True` if two lists contain the same elements regardless of order, `False` otherwise.\n\nUse `set()` on the combination of both lists to find the unique values.\nIterate over them with a `for` loop comparing the `count()` of each unique value in each list.\nReturn `False` if the counts do not match for any element, `True` otherwise.\n\n",
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "3eb3a7c4b95e18bcd181965b01d6f46189735e0ada4a7e3e787026d9643792ed"
+      }
+    },
+    {
       "id": "head",
       "type": "snippetListing",
       "title": "head",
@@ -702,6 +762,36 @@
       },
       "meta": {
         "hash": "dd49fd3dc6b7590a2607ded9b2f4b879ea56b93573e92376f669a1957ad9945b"
+      }
+    },
+    {
+      "id": "includes_all",
+      "type": "snippetListing",
+      "title": "includes_all",
+      "attributes": {
+        "text": "Returns `True` if all the elements in `values` are included in `lst`, `False` otherwise.\n\nCheck if every value in `values` is contained in `lst` using a `for` loop, returning `False` if any one value is not found, `True` otherwise.\n\n",
+        "tags": [
+          "utility",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "dd6fe881dce1046713ff6fe1a9ee70cb3ff580b5b4f40a83f1cded8f1b2fc471"
+      }
+    },
+    {
+      "id": "includes_any",
+      "type": "snippetListing",
+      "title": "includes_any",
+      "attributes": {
+        "text": "Returns `True` if any element in `values` is included in `lst`, `False` otherwise.\n\nCheck if any value in `values` is contained in `lst` using a `for` loop, returning `True` if any one value is found, `False` otherwise.\n\n",
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "0207394cbc28148c73703db1298673049f9fe66936a59057955d3da180f3a0c4"
       }
     },
     {
