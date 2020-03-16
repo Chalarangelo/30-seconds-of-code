@@ -1,6 +1,6 @@
 ---
 title: TreeView
-tags: visual,object,state,recursion,advanced
+tags: components,object,state,recursion,advanced
 ---
 
 Renders a tree view of a JSON object or array with collapsible content.

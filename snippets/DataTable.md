@@ -1,6 +1,6 @@
 ---
 title: DataTable
-tags: array,beginner
+tags: components,array,beginner
 ---
 
 Renders a table with rows dynamically created from an array of primitives.

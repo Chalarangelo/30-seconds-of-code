@@ -1,6 +1,6 @@
 ---
 title: MultiselectCheckbox
-tags: input,state,array,intermediate
+tags: components,input,state,array,intermediate
 ---
 
 Renders a checkbox list that uses a callback function to pass its selected value/values to the parent component.

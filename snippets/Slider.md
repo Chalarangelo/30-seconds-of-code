@@ -1,6 +1,6 @@
 ---
 title: Slider
-tags: input,beginner
+tags: components,input,beginner
 ---
 
 Renders a slider element that uses a callback function to pass its value to the parent component.

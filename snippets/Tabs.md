@@ -1,6 +1,6 @@
 ---
 title: Tabs
-tags: visual,state,children,intermediate
+tags: components,state,children,intermediate
 ---
 
 Renders a tabbed menu and view component.

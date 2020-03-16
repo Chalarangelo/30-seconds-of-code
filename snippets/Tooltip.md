@@ -1,6 +1,6 @@
 ---
 title: Tooltip
-tags: visual,state,children,beginner
+tags: components,state,children,beginner
 ---
 
 Renders a tooltip component.
