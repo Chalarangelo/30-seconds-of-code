@@ -1,6 +1,6 @@
 ---
 title: includes_all
-tags: utility,intermediate
+tags: list,intermediate
 ---
 
 Returns `True` if all the elements in `values` are included in `lst`, `False` otherwise.
