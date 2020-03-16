@@ -1226,15 +1226,15 @@
           "example": "includes_all([1, 2, 3, 4], [1, 4]) # True\r\nincludes_all([1, 2, 3, 4], [1, 5]) # False"
         },
         "tags": [
-          "utility",
+          "list",
           "intermediate"
         ]
       },
       "meta": {
         "hash": "dd6fe881dce1046713ff6fe1a9ee70cb3ff580b5b4f40a83f1cded8f1b2fc471",
         "firstSeen": "1584269648",
-        "lastUpdated": "1584269648",
-        "updateCount": 2,
+        "lastUpdated": "1584380100",
+        "updateCount": 3,
         "authorCount": 2
       }
     },

@@ -771,7 +771,7 @@
       "attributes": {
         "text": "Returns `True` if all the elements in `values` are included in `lst`, `False` otherwise.\n\nCheck if every value in `values` is contained in `lst` using a `for` loop, returning `False` if any one value is not found, `True` otherwise.\n\n",
         "tags": [
-          "utility",
+          "list",
           "intermediate"
         ]
       },
