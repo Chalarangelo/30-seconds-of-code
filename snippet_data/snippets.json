@@ -1367,6 +1367,37 @@
       }
     },
     {
+      "id": "staggered-animation",
+      "title": "Staggered animation",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "staggered-animation.md",
+        "text": "Creates a staggered animation for the elements of a list.\n\n",
+        "explanation": "\n\n- Set the `opacity` to `0` and `transform` to `translateX(100%)` to make list elements transparent and move them all the way to the right.\n- Specify the appropriate `transition` properties for list elements, except `transition-delay` which is specified relative to the `--i` custom property.\n- Use inline styles to specify a value for `--i` for each list element, which will in turn be used for `transition-delay` to create the stagger effect.\n- Use the `:checked` selector for the checkbox to appropriately style list elements, setting `opacity` to `1` and `transform` to `translateX(0)` to make them appear and slide into view.\n\n",
+        "browserSupport": {
+          "text": "\n\n- https://caniuse.com/#feat=css-variables\n- https://caniuse.com/#feat=css-transitions\n",
+          "supportPercentage": 98.68
+        },
+        "codeBlocks": {
+          "html": "<div class=\"container\">\n  <input type=\"checkbox\" name=\"menu\" id=\"menu\" class=\"menu-toggler\">\n  <label for=\"menu\" class=\"menu-toggler-label\">Menu</label>\n  <ul class=\"stagger-menu\">\n    <li style=\"--i: 0\">Home</li>\n    <li style=\"--i: 1\">Pricing</li>\n    <li style=\"--i: 2\">Account</li>\n    <li style=\"--i: 3\">Support</li>\n    <li style=\"--i: 4\">About</li>\n  </ul>\n</div>",
+          "css": ".container {\n  overflow-x: hidden;\n  width: 100%;\n}\n\n.menu-toggler {\n  display: none;\n}\n\n.menu-toggler-label {\n  cursor: pointer;\n  font-size: 20px;\n  font-weight: bold;\n}\n\n.stagger-menu {\n  list-style-type: none;\n  margin: 16px 0;\n  padding: 0;\n}\n\n.stagger-menu li {\n  margin-bottom: 8px;\n  font-size: 18px;\n  opacity: 0;\n  transform: translateX(100%);\n  transition-property: opacity, transform;\n  transition-duration: 0.3s;\n  transition-timing-function: cubic-bezier(0.750, -0.015, 0.565, 1.055);\n}\n\n.menu-toggler:checked ~ .stagger-menu li {\n  opacity: 1;\n  transform: translateX(0);\n  transition-delay: calc(0.055s * var(--i));\n}",
+          "js": "",
+          "scopedCss": "[data-scope=\"staggered-animation\"] .container {\n  overflow-x: hidden;\n  width: 100%; }\n\n[data-scope=\"staggered-animation\"] .menu-toggler {\n  display: none; }\n\n[data-scope=\"staggered-animation\"] .menu-toggler-label {\n  cursor: pointer;\n  font-size: 20px;\n  font-weight: bold; }\n\n[data-scope=\"staggered-animation\"] .stagger-menu {\n  list-style-type: none;\n  margin: 16px 0;\n  padding: 0; }\n\n[data-scope=\"staggered-animation\"] .stagger-menu li {\n  margin-bottom: 8px;\n  font-size: 18px;\n  opacity: 0;\n  transform: translateX(100%);\n  transition-property: opacity, transform;\n  transition-duration: 0.3s;\n  transition-timing-function: cubic-bezier(0.75, -0.015, 0.565, 1.055); }\n\n[data-scope=\"staggered-animation\"] .menu-toggler:checked ~ .stagger-menu li {\n  opacity: 1;\n  transform: translateX(0);\n  transition-delay: calc(0.055s * var(--i)); }\n"
+        },
+        "tags": [
+          "animation",
+          "advanced"
+        ]
+      },
+      "meta": {
+        "hash": "b1dc6f9fcc5cc91b59e89864b568048040e1879b2fc165d580cd21bc3fb73e50",
+        "firstSeen": "1584353945",
+        "lastUpdated": "1584353945",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "system-font-stack",
       "title": "System font stack",
       "type": "snippet",

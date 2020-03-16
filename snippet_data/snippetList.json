@@ -663,6 +663,21 @@
       }
     },
     {
+      "id": "staggered-animation",
+      "type": "snippetListing",
+      "title": "Staggered animation",
+      "attributes": {
+        "text": "Creates a staggered animation for the elements of a list.\n\n",
+        "tags": [
+          "animation",
+          "advanced"
+        ]
+      },
+      "meta": {
+        "hash": "b1dc6f9fcc5cc91b59e89864b568048040e1879b2fc165d580cd21bc3fb73e50"
+      }
+    },
+    {
       "id": "system-font-stack",
       "type": "snippetListing",
       "title": "System font stack",
