@@ -1,6 +1,6 @@
 ---
 title: TagInput
-tags: input,visual,state,intermediate
+tags: components,input,state,intermediate
 ---
 
 Renders a tag input field.

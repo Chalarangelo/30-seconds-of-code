@@ -1,6 +1,6 @@
 ---
 title: DataList
-tags: array,beginner
+tags: components,array,beginner
 ---
 
 Renders a list of elements from an array of primitives.

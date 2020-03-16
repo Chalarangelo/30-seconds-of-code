@@ -1,6 +1,6 @@
 ---
 title: UncontrolledInput
-tags: input,beginner
+tags: components,input,beginner
 ---
 
 Renders an `<input>` element that uses a callback function to pass its value to the parent component.

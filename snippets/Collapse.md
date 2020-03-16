@@ -1,6 +1,6 @@
 ---
 title: Collapse
-tags: visual,children,state,intermediate
+tags: components,children,state,intermediate
 ---
 
 Renders a component with collapsible content.

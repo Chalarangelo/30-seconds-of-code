@@ -1,6 +1,6 @@
 ---
 title: MappedTable
-tags: array,object,intermediate
+tags: components,array,object,intermediate
 ---
 
 Renders a table with rows dynamically created from an array of objects and a list of property names.

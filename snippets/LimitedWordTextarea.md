@@ -1,6 +1,6 @@
 ---
 title: LimitedWordTextarea
-tags: input,state,effect,event,beginner
+tags: components,input,state,effect,event,beginner
 ---
 
 Renders a textarea component with a word limit.

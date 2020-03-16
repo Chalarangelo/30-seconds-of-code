@@ -1,6 +1,6 @@
 ---
 title: Loader
-tags: visual,beginner
+tags: components,beginner
 ---
 
 Creates a spinning loader component.

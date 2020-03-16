@@ -1,6 +1,6 @@
 ---
 title: Ticker
-tags: visual,state,beginner
+tags: components,state,beginner
 ---
 
 Renders a ticker component.

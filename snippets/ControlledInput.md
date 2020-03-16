@@ -1,6 +1,6 @@
 ---
 title: ControlledInput
-tags: input,state,effect,intermediate
+tags: components,state,effect,intermediate
 ---
 
 Renders an `<input>` element with internal state, that uses a callback function to pass its value to the parent component.
