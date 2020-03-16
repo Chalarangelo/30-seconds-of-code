@@ -13,7 +13,7 @@
           "example": "ReactDOM.render(\n  <Accordion defaultIndex=\"1\" onItemClick={console.log}>\n    <AccordionItem label=\"A\" index=\"1\">\n      Lorem ipsum\n    </AccordionItem>\n    <AccordionItem label=\"B\" index=\"2\">\n      Dolor sit amet\n    </AccordionItem>\n  </Accordion>,\n  document.getElementById('root')\n);"
         },
         "tags": [
-          "visual",
+          "components",
           "children",
           "state",
           "advanced"
@@ -22,8 +22,8 @@
       "meta": {
         "hash": "b83c2546a50390dcda27afa3bd654fc6b70474e624cdd80ef6862f7d14c2c7c6",
         "firstSeen": "1551516394",
-        "lastUpdated": "1568614478",
-        "updateCount": 6,
+        "lastUpdated": "1584355844",
+        "updateCount": 7,
         "authorCount": 2
       }
     },
@@ -33,25 +33,25 @@
       "type": "snippet",
       "attributes": {
         "fileName": "Alert.md",
-        "text": "Creates an alert component with `type` prop.\n\n- Define appropriate CSS styles and animations for the component's elements.\n- Use the `React.setState()` hook to create the `isShown` and `isLeaving` state variables and set their values to `false`.\n- Define `timeoutId` to keep the timer instance for clearing on component unmount.\n- Use the `React.setEffect()` hook to update the value of `isShown` to `true` and clear interval by using `timeoutId` when component is unmounted.\n- Define `closeNotification` function to set the component is removed from DOM by displaying fading out animation and set `isShown` to `false` via `setTimeout()`. \n- Define the component, which renders the alert component with user defined `message` and a close button to remove the component from DOM.\n\n",
+        "text": "Creates an alert component with `type` prop.\n\n- Define appropriate CSS styles and animations for the component's elements.\n- Use the `React.setState()` hook to create the `isShown` and `isLeaving` state variables and set their values to `false`.\n- Define `timeoutId` to keep the timer instance for clearing on component unmount.\n- Use the `React.setEffect()` hook to update the value of `isShown` to `true` and clear interval by using `timeoutId` when component is unmounted.\n- Define `closeNotification` function to set the component is removed from DOM by displaying fading out animation and set `isShown` to `false` via `setTimeout()`.\n- Define the component, which renders the alert component with user defined `message` and a close button to remove the component from DOM.\n\n",
         "codeBlocks": {
           "style": "@keyframes leave {\n  0% { opacity: 1 }\n  100% { opacity: 0 }\n}\n\n.alert {\n  padding: 0.75rem 0.5rem;\n  margin-bottom: 0.5rem;\n  text-align: left;\n  padding-right: 40px;\n  border-radius: 4px;\n  font-size: 16px;\n  position: relative;\n}\n\n.alert.warning{\n  color: #856404;\n  background-color: #fff3cd;\n  border-color: #ffeeba;\n}\n\n.alert.error{\n  color: #721c24;\n  background-color: #f8d7da;\n  border-color: #f5c6cb;\n}\n\n.alert.leaving{\n  animation: leave 0.5s forwards;\n}\n\n.alert .close {\n  position: absolute;\n  top: 0;\n  right: 0;\n  padding: 0 0.75rem;\n  color: #333;\n  border: 0;\n  height: 100%;\n  cursor: pointer;\n  background: none;\n  font-weight: 600;\n  font-size: 16px;\n}\n\n.alert .close:after{\n  content: 'x';\n}",
           "code": "function Notification(props) {\n    const [isShown, setIsShown] = React.useState(false);\n    const [isLeaving, setIsLeaving] = React.useState(false);\n\n    let timeoutId = null;\n\n    React.useEffect(() => {\n      setIsShown(true);\n      return () => {\n        clearTimeout(timeoutId);\n      }\n    }, [props.isShown, props.timeout, timeoutId]);\n\n    const closeNotification = () => {\n      setIsLeaving(true);\n      timeoutId = setTimeout(() => {\n        setIsLeaving(false);\n        setIsShown(false);\n      }, 250)\n    }\n\n    return isShown && (\n      <div className={`alert ${props.type}${isLeaving ? ' leaving' : ''}`} role=\"alert\">\n        <button className=\"close\" onClick={closeNotification} />\n        {props.message}\n      </div>\n    )\n}",
           "example": "ReactDOM.render(<Notification type=\"info\" message=\"This is info\" />, document.getElementById('root'));"
         },
         "tags": [
-          "visual",
+          "components",
           "beginner",
           "state",
           "effect"
         ]
       },
       "meta": {
-        "hash": "6a9a1148d22c55f24865ce2672a84222409769910a5e472ab80e353c61914ab8",
+        "hash": "0a62f9c029b8dbb943566f1e9b8ea38d21bd1d97e3acbd8ded3273547f452d49",
         "firstSeen": "1568715570",
-        "lastUpdated": "1568951771",
-        "updateCount": 4,
-        "authorCount": 3
+        "lastUpdated": "1584355844",
+        "updateCount": 5,
+        "authorCount": 4
       }
     },
     {
@@ -67,7 +67,7 @@
           "example": "ReactDOM.render(\n  <AutoLink text=\"foo bar baz http://example.org bar\" />,\n  document.getElementById('root')\n);"
         },
         "tags": [
-          "visual",
+          "components",
           "string",
           "fragment",
           "regexp",
@@ -77,8 +77,8 @@
       "meta": {
         "hash": "922aeac82b3a5a51e05d84e1795a84eab79106d8052edb857a7cd7db6bf41917",
         "firstSeen": "1544015089",
-        "lastUpdated": "1566387134",
-        "updateCount": 9,
+        "lastUpdated": "1584355844",
+        "updateCount": 10,
         "authorCount": 2
       }
     },
@@ -95,7 +95,7 @@
           "example": "ReactDOM.render(\n  <Carousel\n    carouselItems={[\n      <div>carousel item 1</div>,\n      <div>carousel item 2</div>,\n      <div>carousel item 3</div>\n    ]}\n  />,\n  document.getElementById('root')\n);"
         },
         "tags": [
-          "visual",
+          "components",
           "children",
           "state",
           "effect",
@@ -105,8 +105,8 @@
       "meta": {
         "hash": "18bc23f64d46aa17912ec9f854cde7ebff2395ef3936da2e7e60870221e9f47b",
         "firstSeen": "1542137095",
-        "lastUpdated": "1583265260",
-        "updateCount": 13,
+        "lastUpdated": "1584355844",
+        "updateCount": 14,
         "authorCount": 3
       }
     },
@@ -123,7 +123,7 @@
           "example": "ReactDOM.render(\n  <Collapse>\n    <h1>This is a collapse</h1>\n    <p>Hello world!</p>\n  </Collapse>,\n  document.getElementById('root')\n);"
         },
         "tags": [
-          "visual",
+          "components",
           "children",
           "state",
           "intermediate"
@@ -132,8 +132,8 @@
       "meta": {
         "hash": "d6efbb46da30a701cc691ad94b860fb6f0b34459e88caa8d744411734503af8f",
         "firstSeen": "1539798143",
-        "lastUpdated": "1566381653",
-        "updateCount": 17,
+        "lastUpdated": "1584355844",
+        "updateCount": 18,
         "authorCount": 5
       }
     },
@@ -150,7 +150,7 @@
           "example": "ReactDOM.render(\n  <ControlledInput\n    type=\"text\"\n    placeholder=\"Insert some text here...\"\n    callback={val => console.log(val)}\n  />,\n  document.getElementById('root')\n);"
         },
         "tags": [
-          "input",
+          "components",
           "state",
           "effect",
           "intermediate"
@@ -159,8 +159,8 @@
       "meta": {
         "hash": "25ac64175964945e36212d776ef5192d54628e1d08561489a022765c45368692",
         "firstSeen": "1566382150",
-        "lastUpdated": "1566382150",
-        "updateCount": 2,
+        "lastUpdated": "1584355844",
+        "updateCount": 3,
         "authorCount": 2
       }
     },
@@ -177,7 +177,7 @@
           "example": "ReactDOM.render(<CountDown hours=\"1\" minutes=\"45\" />, document.getElementById('root'));"
         },
         "tags": [
-          "visual",
+          "components",
           "state",
           "advanced"
         ]
@@ -185,8 +185,8 @@
       "meta": {
         "hash": "fb5aeef0abd03d44daaff0bd027c7633fe4b079f07c13f2cb3166a56363453ef",
         "firstSeen": "1549456771",
-        "lastUpdated": "1566381653",
-        "updateCount": 8,
+        "lastUpdated": "1584355844",
+        "updateCount": 9,
         "authorCount": 3
       }
     },
@@ -203,6 +203,7 @@
           "example": "const names = ['John', 'Paul', 'Mary'];\nReactDOM.render(<DataList data={names} />, document.getElementById('root'));\nReactDOM.render(<DataList data={names} isOrdered />, document.getElementById('root'));"
         },
         "tags": [
+          "components",
           "array",
           "beginner"
         ]
@@ -210,8 +211,8 @@
       "meta": {
         "hash": "9c5d1b4aee999583a6f01ef38b0060a2eedcb27e215246e0cf31a5e43e53c0f5",
         "firstSeen": "1543486344",
-        "lastUpdated": "1566381653",
-        "updateCount": 7,
+        "lastUpdated": "1584355844",
+        "updateCount": 8,
         "authorCount": 2
       }
     },
@@ -228,6 +229,7 @@
           "example": "const people = ['John', 'Jesse'];\nReactDOM.render(<DataTable data={people} />, document.getElementById('root'));"
         },
         "tags": [
+          "components",
           "array",
           "beginner"
         ]
@@ -235,8 +237,8 @@
       "meta": {
         "hash": "1ad27574cfe29f8cce5410e7dd243d66edeea801037e3cd0ed1d24ecdbd5526e",
         "firstSeen": "1543482839",
-        "lastUpdated": "1566381653",
-        "updateCount": 8,
+        "lastUpdated": "1584355844",
+        "updateCount": 9,
         "authorCount": 2
       }
     },
@@ -253,7 +255,7 @@
           "example": "ReactDOM.render(<FileDrop handleDrop={console.log} />, document.getElementById('root'));"
         },
         "tags": [
-          "visual",
+          "components",
           "input",
           "state",
           "effect",
@@ -264,8 +266,8 @@
       "meta": {
         "hash": "083b5e03f65112796bebc1fb5b8db99c7cd7ff16a11cca192ad18ea5db5c7e30",
         "firstSeen": "1549102647",
-        "lastUpdated": "1566381653",
-        "updateCount": 8,
+        "lastUpdated": "1584355844",
+        "updateCount": 9,
         "authorCount": 2
       }
     },
@@ -282,7 +284,7 @@
           "example": "ReactDOM.render(<LimitedTextarea limit={32} value=\"Hello!\" />, document.getElementById('root'));"
         },
         "tags": [
-          "input",
+          "components",
           "state",
           "effect",
           "event",
@@ -292,8 +294,8 @@
       "meta": {
         "hash": "b4b4fbf568331843e4734aa58831dd0c94afc5aeb7d987c8afcf9e9b24f0aeea",
         "firstSeen": "1539929519",
-        "lastUpdated": "1566381653",
-        "updateCount": 11,
+        "lastUpdated": "1584355844",
+        "updateCount": 12,
         "authorCount": 3
       }
     },
@@ -310,6 +312,7 @@
           "example": "ReactDOM.render(\n  <LimitedWordTextarea limit={5} value=\"Hello there!\" />,\n  document.getElementById('root')\n);"
         },
         "tags": [
+          "components",
           "input",
           "state",
           "effect",
@@ -320,8 +323,8 @@
       "meta": {
         "hash": "ac22f33a0084fb444ce9e3cd7aebec507d6d785d1bc6e0a9cc5656f5ee0cb92f",
         "firstSeen": "1550679742",
-        "lastUpdated": "1569328773",
-        "updateCount": 7,
+        "lastUpdated": "1584355844",
+        "updateCount": 8,
         "authorCount": 3
       }
     },
@@ -338,15 +341,15 @@
           "example": "ReactDOM.render(<Loader size={24} />, document.getElementById('root'));"
         },
         "tags": [
-          "visual",
+          "components",
           "beginner"
         ]
       },
       "meta": {
         "hash": "c64381d332ae68b271f644add7cdc15c6027c7ee6945c3d1f507bd7eeebf253d",
         "firstSeen": "1568228352",
-        "lastUpdated": "1568228352",
-        "updateCount": 2,
+        "lastUpdated": "1584355844",
+        "updateCount": 3,
         "authorCount": 2
       }
     },
@@ -363,15 +366,15 @@
           "example": "ReactDOM.render(\n  <Mailto email=\"foo@bar.baz\" subject=\"Hello & Welcome\" body=\"Hello world!\">\n    Mail me!\n  </Mailto>,\n  document.getElementById('root')\n);"
         },
         "tags": [
-          "visual",
+          "components",
           "beginner"
         ]
       },
       "meta": {
         "hash": "f4186bc638098d4d510a26dac586a5196ffb2e0d41e3325a0e53756f26896c4c",
         "firstSeen": "1548699051",
-        "lastUpdated": "1567859238",
-        "updateCount": 10,
+        "lastUpdated": "1584355844",
+        "updateCount": 11,
         "authorCount": 3
       }
     },
@@ -388,6 +391,7 @@
           "example": "const people = [\n  { name: 'John', surname: 'Smith', age: 42 },\n  { name: 'Adam', surname: 'Smith', gender: 'male' }\n];\nconst propertyNames = ['name', 'surname', 'age'];\nReactDOM.render(\n  <MappedTable data={people} propertyNames={propertyNames} />,\n  document.getElementById('root')\n);"
         },
         "tags": [
+          "components",
           "array",
           "object",
           "intermediate"
@@ -396,8 +400,8 @@
       "meta": {
         "hash": "fce03ceb446e80f63f4b1423c70dc854f4dbf38bb54a68302c2e09d9a2c8d402",
         "firstSeen": "1543485010",
-        "lastUpdated": "1566381653",
-        "updateCount": 8,
+        "lastUpdated": "1584355844",
+        "updateCount": 9,
         "authorCount": 2
       }
     },
@@ -414,7 +418,7 @@
           "example": "//Add the component to the render function\nfunction App() {\n  const [isModal, setModal] = React.useState(false);\n\n  return (\n    <React.Fragment>\n      <button onClick={() => setModal(true)}>Click Here</button>\n      <Modal\n        isVisible={isModal}\n        title=\"Modal Title\"\n        content={<p>Add your content here</p>}\n        footer={<button>Cancel</button>}\n        onClose={() => setModal(false)}\n      />\n    </React.Fragment>\n  );\n}\n\nReactDOM.render(<App />, document.getElementById('root'));"
         },
         "tags": [
-          "visual",
+          "components",
           "effect",
           "intermediate"
         ]
@@ -422,8 +426,8 @@
       "meta": {
         "hash": "bbe8b37ec2d9ee322d89b28d0ac290efd7f5b1e501cad63bbf0674cbea9e2abc",
         "firstSeen": "1552296306",
-        "lastUpdated": "1566381653",
-        "updateCount": 8,
+        "lastUpdated": "1584355844",
+        "updateCount": 9,
         "authorCount": 3
       }
     },
@@ -440,6 +444,7 @@
           "example": "const options = [{ label: 'Item One' }, { label: 'Item Two' }];\n\nReactDOM.render(\n  <MultiselectCheckbox\n    options={options}\n    onChange={data => {\n      console.log(data);\n    }}\n  />,\n  document.getElementById('root')\n);"
         },
         "tags": [
+          "components",
           "input",
           "state",
           "array",
@@ -449,8 +454,8 @@
       "meta": {
         "hash": "723cc4aeb42bc0234045688334e01ec89b66782a54862d2b2236ae12e1f87881",
         "firstSeen": "1548573957",
-        "lastUpdated": "1566381653",
-        "updateCount": 19,
+        "lastUpdated": "1584355844",
+        "updateCount": 20,
         "authorCount": 5
       }
     },
@@ -467,6 +472,7 @@
           "example": "ReactDOM.render(<PasswordRevealer />, document.getElementById('root'));"
         },
         "tags": [
+          "components",
           "input",
           "state",
           "beginner"
@@ -475,8 +481,8 @@
       "meta": {
         "hash": "b9d1d5a6b61d2ab8e73943da1dcf86bfa872821c9584715a2cee303a052334ea",
         "firstSeen": "1539882262",
-        "lastUpdated": "1566381653",
-        "updateCount": 12,
+        "lastUpdated": "1584355844",
+        "updateCount": 13,
         "authorCount": 4
       }
     },
@@ -493,7 +499,7 @@
           "example": "ReactDOM.render(\n  <RippleButton onClick={e => console.log(e)}>Click me</RippleButton>,\n  document.getElementById('root')\n);"
         },
         "tags": [
-          "visual",
+          "components",
           "state",
           "effect",
           "intermediate"
@@ -502,8 +508,8 @@
       "meta": {
         "hash": "a2238ea3abedb5a38d836a57966006cc43f905b375836d138bd69671a8731d84",
         "firstSeen": "1568095649",
-        "lastUpdated": "1568182395",
-        "updateCount": 3,
+        "lastUpdated": "1584355844",
+        "updateCount": 4,
         "authorCount": 2
       }
     },
@@ -520,6 +526,7 @@
           "example": "let choices = [\n  ['grapefruit', 'Grapefruit'],\n  ['lime', 'Lime'],\n  ['coconut', 'Coconut'],\n  ['mango', 'Mango']\n];\nReactDOM.render(\n  <Select values={choices} selected=\"lime\" callback={val => console.log(val)} />,\n  document.getElementById('root')\n);"
         },
         "tags": [
+          "components",
           "input",
           "beginner"
         ]
@@ -527,8 +534,8 @@
       "meta": {
         "hash": "82ec17f203f168e42206f2a56a5954e01fd639599f26cc1c8bafb77fb5b5fb5b",
         "firstSeen": "1544431683",
-        "lastUpdated": "1566381653",
-        "updateCount": 10,
+        "lastUpdated": "1584355844",
+        "updateCount": 11,
         "authorCount": 3
       }
     },
@@ -545,6 +552,7 @@
           "example": "ReactDOM.render(<Slider callback={val => console.log(val)} />, document.getElementById('root'));"
         },
         "tags": [
+          "components",
           "input",
           "beginner"
         ]
@@ -552,8 +560,8 @@
       "meta": {
         "hash": "bf2bc45d4c4781f54cee33599c17b35bd4ce6a90e70dd5305401e2b4bafa21bf",
         "firstSeen": "1551514855",
-        "lastUpdated": "1566381653",
-        "updateCount": 5,
+        "lastUpdated": "1584355844",
+        "updateCount": 6,
         "authorCount": 2
       }
     },
@@ -570,7 +578,7 @@
           "example": "ReactDOM.render(<StarRating />, document.getElementById('root'));\nReactDOM.render(<StarRating rating={2} />, document.getElementById('root'));"
         },
         "tags": [
-          "visual",
+          "components",
           "children",
           "input",
           "state",
@@ -580,8 +588,8 @@
       "meta": {
         "hash": "1925a397f77ea80ee9dc9d82acee6dc279a3e82abac815b32109ce930de20a1f",
         "firstSeen": "1539862425",
-        "lastUpdated": "1566381653",
-        "updateCount": 22,
+        "lastUpdated": "1584355844",
+        "updateCount": 23,
         "authorCount": 5
       }
     },
@@ -598,7 +606,7 @@
           "example": "ReactDOM.render(\n  <Tabs defaultIndex=\"1\" onTabClick={console.log}>\n    <TabItem label=\"A\" index=\"1\">\n      Lorem ipsum\n    </TabItem>\n    <TabItem label=\"B\" index=\"2\">\n      Dolor sit amet\n    </TabItem>\n  </Tabs>,\n  document.getElementById('root')\n);"
         },
         "tags": [
-          "visual",
+          "components",
           "state",
           "children",
           "intermediate"
@@ -607,8 +615,8 @@
       "meta": {
         "hash": "9f8634ca4a5f49134cb88e00c0f193c6c6c5cf8ee60482a16782c04f48595176",
         "firstSeen": "1548583192",
-        "lastUpdated": "1566381653",
-        "updateCount": 10,
+        "lastUpdated": "1584355844",
+        "updateCount": 11,
         "authorCount": 3
       }
     },
@@ -625,8 +633,8 @@
           "example": "ReactDOM.render(<TagInput tags={['Nodejs', 'MongoDB']}/>, document.getElementById('root'));"
         },
         "tags": [
+          "components",
           "input",
-          "visual",
           "state",
           "intermediate"
         ]
@@ -634,8 +642,8 @@
       "meta": {
         "hash": "495a9ac0a38fd1cf16c5873d4533c1084f35cbd2a61c8c3b123e14e85c50c764",
         "firstSeen": "1569999971",
-        "lastUpdated": "1570792845",
-        "updateCount": 9,
+        "lastUpdated": "1584355844",
+        "updateCount": 10,
         "authorCount": 3
       }
     },
@@ -652,6 +660,7 @@
           "example": "ReactDOM.render(\n  <TextArea placeholder=\"Insert some text here...\" callback={val => console.log(val)} />,\n  document.getElementById('root')\n);"
         },
         "tags": [
+          "components",
           "input",
           "beginner"
         ]
@@ -659,8 +668,8 @@
       "meta": {
         "hash": "a6ed5da811b5f42c139e0d0d868a0b49881203467ffcb464b707a0d9bbe7660f",
         "firstSeen": "1544431551",
-        "lastUpdated": "1566381653",
-        "updateCount": 8,
+        "lastUpdated": "1584355844",
+        "updateCount": 9,
         "authorCount": 3
       }
     },
@@ -677,7 +686,7 @@
           "example": "ReactDOM.render(<Ticker times={5} interval={1000} />, document.getElementById('root'));"
         },
         "tags": [
-          "visual",
+          "components",
           "state",
           "beginner"
         ]
@@ -685,8 +694,8 @@
       "meta": {
         "hash": "eb29bbedf8f0aed903abf2b12ce90b5d02a8b3fdae15b4c8810b5841aeca9e4b",
         "firstSeen": "1546234512",
-        "lastUpdated": "1566381653",
-        "updateCount": 12,
+        "lastUpdated": "1584355844",
+        "updateCount": 13,
         "authorCount": 5
       }
     },
@@ -703,7 +712,7 @@
           "example": "ReactDOM.render(<Toggle />, document.getElementById('root'));"
         },
         "tags": [
-          "visual",
+          "components",
           "state",
           "beginner"
         ]
@@ -711,8 +720,8 @@
       "meta": {
         "hash": "9a7a1630d12ccf86f0712a7ca7444698933f3f3d946957ef1b6202637c44d531",
         "firstSeen": "1540661737",
-        "lastUpdated": "1566381653",
-        "updateCount": 9,
+        "lastUpdated": "1584355844",
+        "updateCount": 10,
         "authorCount": 3
       }
     },
@@ -729,7 +738,7 @@
           "example": "ReactDOM.render(\n  <Tooltip text=\"Simple tooltip\">\n    <button>Hover me!</button>\n  </Tooltip>,\n  document.getElementById('root')\n);"
         },
         "tags": [
-          "visual",
+          "components",
           "state",
           "children",
           "beginner"
@@ -738,8 +747,8 @@
       "meta": {
         "hash": "1d29be55adf50919e115f5fa83d7446bd11688f4d3a50c19bf357675cd7fdfd4",
         "firstSeen": "1542133284",
-        "lastUpdated": "1566381653",
-        "updateCount": 12,
+        "lastUpdated": "1584355844",
+        "updateCount": 13,
         "authorCount": 4
       }
     },
@@ -756,7 +765,7 @@
           "example": "let data = {\n  lorem: {\n    ipsum: 'dolor sit',\n    amet: {\n      consectetur: 'adipiscing',\n      elit: [\n        'duis',\n        'vitae',\n        {\n          semper: 'orci'\n        },\n        {\n          est: 'sed ornare'\n        },\n        'etiam',\n        ['laoreet', 'tincidunt'],\n        ['vestibulum', 'ante']\n      ]\n    },\n    ipsum: 'primis'\n  }\n};\nReactDOM.render(<TreeView data={data} name=\"data\" />, document.getElementById('root'));"
         },
         "tags": [
-          "visual",
+          "components",
           "object",
           "state",
           "recursion",
@@ -766,8 +775,8 @@
       "meta": {
         "hash": "63922e84d527dc7783025495ebab1df55452b595d0a5e54981d8ea891e055736",
         "firstSeen": "1549484223",
-        "lastUpdated": "1566387025",
-        "updateCount": 13,
+        "lastUpdated": "1584355844",
+        "updateCount": 14,
         "authorCount": 2
       }
     },
@@ -784,6 +793,7 @@
           "example": "ReactDOM.render(\n  <UncontrolledInput\n    type=\"text\"\n    placeholder=\"Insert some text here...\"\n    callback={val => console.log(val)}\n  />,\n  document.getElementById('root')\n);"
         },
         "tags": [
+          "components",
           "input",
           "beginner"
         ]
@@ -791,8 +801,8 @@
       "meta": {
         "hash": "11581e3b40209c7152833aa421c7d18c889b16067c5cc1557b1bb7f604f18982",
         "firstSeen": "1566379730",
-        "lastUpdated": "1566381653",
-        "updateCount": 3,
+        "lastUpdated": "1584355844",
+        "updateCount": 4,
         "authorCount": 2
       }
     },
