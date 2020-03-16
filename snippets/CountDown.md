@@ -1,6 +1,6 @@
 ---
 title: CountDown
-tags: visual,state,advanced
+tags: components,state,advanced
 ---
 
 Renders a countdown timer that prints a message when it reaches zero.

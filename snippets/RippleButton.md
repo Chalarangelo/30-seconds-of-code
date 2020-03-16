@@ -1,6 +1,6 @@
 ---
 title: RippleButton
-tags: visual,state,effect,intermediate
+tags: components,state,effect,intermediate
 ---
 
 Renders a button that animates a ripple effect when clicked.

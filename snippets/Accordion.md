@@ -1,6 +1,6 @@
 ---
 title: Accordion
-tags: visual,children,state,advanced
+tags: components,children,state,advanced
 ---
 
 Renders an accordion menu with multiple collapsible content components.

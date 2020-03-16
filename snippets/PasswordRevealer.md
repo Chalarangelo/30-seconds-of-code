@@ -1,6 +1,6 @@
 ---
 title: PasswordRevealer
-tags: input,state,beginner
+tags: components,input,state,beginner
 ---
 
 Renders a password input field with a reveal button.

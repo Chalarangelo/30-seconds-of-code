@@ -1,6 +1,6 @@
 ---
 title: FileDrop
-tags: visual,input,state,effect,event,intermediate
+tags: components,input,state,effect,event,intermediate
 ---
 
 Renders a file drag and drop component for a single file.

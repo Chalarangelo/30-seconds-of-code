@@ -1,6 +1,6 @@
 ---
 title: Modal
-tags: visual,effect,intermediate
+tags: components,effect,intermediate
 ---
 
 Renders a Modal component, controllable through events.

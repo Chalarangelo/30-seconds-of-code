@@ -1,6 +1,6 @@
 ---
 title: Mailto
-tags: visual,beginner
+tags: components,beginner
 ---
 
 Renders a link formatted to send an email.

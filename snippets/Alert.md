@@ -1,6 +1,6 @@
 ---
 title: Alert
-tags: visual,beginner,state,effect
+tags: components,beginner,state,effect
 ---
 
 Creates an alert component with `type` prop.
@@ -9,7 +9,7 @@ Creates an alert component with `type` prop.
 - Use the `React.setState()` hook to create the `isShown` and `isLeaving` state variables and set their values to `false`.
 - Define `timeoutId` to keep the timer instance for clearing on component unmount.
 - Use the `React.setEffect()` hook to update the value of `isShown` to `true` and clear interval by using `timeoutId` when component is unmounted.
-- Define `closeNotification` function to set the component is removed from DOM by displaying fading out animation and set `isShown` to `false` via `setTimeout()`. 
+- Define `closeNotification` function to set the component is removed from DOM by displaying fading out animation and set `isShown` to `false` via `setTimeout()`.
 - Define the component, which renders the alert component with user defined `message` and a close button to remove the component from DOM.
 
 ```css

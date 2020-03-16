@@ -1,6 +1,6 @@
 ---
 title: Carousel
-tags: visual,children,state,effect,intermediate
+tags: components,children,state,effect,intermediate
 ---
 
 Renders a carousel component.

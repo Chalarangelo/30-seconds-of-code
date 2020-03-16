@@ -1,6 +1,6 @@
 ---
 title: StarRating
-tags: visual,children,input,state,intermediate
+tags: components,children,input,state,intermediate
 ---
 
 Renders a star rating component.

@@ -1,6 +1,6 @@
 ---
 title: Toggle
-tags: visual,state,beginner
+tags: components,state,beginner
 ---
 
 Renders a toggle component.
