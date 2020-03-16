@@ -3,9 +3,11 @@ title: is_contained_in
 tags: list,intermediate
 ---
 
-Returns `True` if the elements of the first λιστ are contained in the second one regardless of order, `False` otherwise.
+Returns `True` if the elements of the first list are contained in the second one regardless of order, `False` otherwise.
 
-Use `count()` to check if any value in `a` has more occurences than it has in `b`, returing `False` if any such value is found, `True` otherwise.
+
+Use `count()` to check if any value in `a` has more occurences than it has in `b`, returning `False` if any such value is found, `True` otherwise.
+
 
 ```py
 def is_contained_in(a, b):

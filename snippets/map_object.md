@@ -3,7 +3,8 @@ title: map_object
 tags: list,intermediate
 ---
 
-Maps the values of a list to a dictionary using a function, where the key-value pairs consist of the value as the key and the mapped value.
+Maps the values of a list to a dictionary using a function, where the key-value pairs consist of the original value as the key and the result of the function as the value.
+
 
 Use a `for` loop to iterate over the list's values, assigning the values produced by `fn` to each key of the dictionary.
 
