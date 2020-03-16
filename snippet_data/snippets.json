@@ -1432,6 +1432,30 @@
       }
     },
     {
+      "id": "is_contained_in",
+      "title": "is_contained_in",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "is_contained_in.md",
+        "text": "Returns `True` if the elements of the first list are contained in the second one regardless of order, `False` otherwise.\n\n\nUse `count()` to check if any value in `a` has more occurences than it has in `b`, returning `False` if any such value is found, `True` otherwise.\n\n\n",
+        "codeBlocks": {
+          "code": "def is_contained_in(a, b):\r\n  for v in set(a):\r\n    if a.count(v) > b.count(v):\r\n      return False\r\n  return True",
+          "example": "is_contained_in([1, 4], [2, 4, 1]) # True"
+        },
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "8fa2c19d9202502df8d26e461e9b02c4c47525dc79a91f4616b61d650cfb23ce",
+        "firstSeen": "1584380895",
+        "lastUpdated": "1584388846",
+        "updateCount": 3,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "is_divisible",
       "title": "is_divisible",
       "type": "snippet",
@@ -1625,6 +1649,30 @@
         "hash": "af50f2096fef9a18346e3c220ff1957ab4218075e6c02ae05d8c3f6e3d269549",
         "firstSeen": "1566304069",
         "lastUpdated": "1578048759",
+        "updateCount": 3,
+        "authorCount": 2
+      }
+    },
+    {
+      "id": "map_object",
+      "title": "map_object",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "map_object.md",
+        "text": "Maps the values of a list to a dictionary using a function, where the key-value pairs consist of the original value as the key and the result of the function as the value.\n\n\nUse a `for` loop to iterate over the list's values, assigning the values produced by `fn` to each key of the dictionary.\n\n",
+        "codeBlocks": {
+          "code": "def map_object(itr, fn):\r\n  ret = {}\r\n  for x in itr:\r\n    ret[x] = fn(x)\r\n  return ret",
+          "example": "map_object([1,2,3], lambda x: x * x) # { 1: 1, 2: 4, 3: 9 }"
+        },
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "704d9dfb490d983b2be8465e241cf61360f574a22230974a38f55554b3a8e044",
+        "firstSeen": "1584381063",
+        "lastUpdated": "1584388846",
         "updateCount": 3,
         "authorCount": 2
       }
@@ -2242,6 +2290,54 @@
         "firstSeen": "1566299332",
         "lastUpdated": "1578048873",
         "updateCount": 3,
+        "authorCount": 2
+      }
+    },
+    {
+      "id": "take",
+      "title": "take",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "take.md",
+        "text": "Returns a list with `n` elements removed from the beginning.\n\nUse slice notation to create a slice of the list with `n` elements taken from the beginning.\n\n",
+        "codeBlocks": {
+          "code": "def take(itr, n = 1):\r\n  return itr[:n]",
+          "example": "take([1, 2, 3], 5) # [1, 2, 3]\r\ntake([1, 2, 3], 0) # []"
+        },
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "ee77775f6d662576e60f839273bc23a1200d2e58d5f681ab8fc5a686b647bd81",
+        "firstSeen": "1584381164",
+        "lastUpdated": "1584381164",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
+      "id": "take_right",
+      "title": "take_right",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "take_right.md",
+        "text": "Returns a list with `n` elements removed from the end.\n\nUse slice notation to create a slice of the list with `n` elements taken from the end.\n\n",
+        "codeBlocks": {
+          "code": "def take_right(itr, n = 1):\r\n  return itr[-n:]",
+          "example": "take_right([1, 2, 3], 2) # [2, 3]\r\ntake_right([1, 2, 3]) # [3]"
+        },
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "5221a664a891ded456017072033baeb1bc25ee10e9556f64f09f6ebf0b5bf07b",
+        "firstSeen": "1584381164",
+        "lastUpdated": "1584381164",
+        "updateCount": 2,
         "authorCount": 2
       }
     },

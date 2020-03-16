@@ -901,6 +901,21 @@
       }
     },
     {
+      "id": "is_contained_in",
+      "type": "snippetListing",
+      "title": "is_contained_in",
+      "attributes": {
+        "text": "Returns `True` if the elements of the first list are contained in the second one regardless of order, `False` otherwise.\n\n\nUse `count()` to check if any value in `a` has more occurences than it has in `b`, returning `False` if any such value is found, `True` otherwise.\n\n\n",
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "8fa2c19d9202502df8d26e461e9b02c4c47525dc79a91f4616b61d650cfb23ce"
+      }
+    },
+    {
       "id": "is_divisible",
       "type": "snippetListing",
       "title": "is_divisible",
@@ -1024,6 +1039,21 @@
       },
       "meta": {
         "hash": "af50f2096fef9a18346e3c220ff1957ab4218075e6c02ae05d8c3f6e3d269549"
+      }
+    },
+    {
+      "id": "map_object",
+      "type": "snippetListing",
+      "title": "map_object",
+      "attributes": {
+        "text": "Maps the values of a list to a dictionary using a function, where the key-value pairs consist of the original value as the key and the result of the function as the value.\n\n\nUse a `for` loop to iterate over the list's values, assigning the values produced by `fn` to each key of the dictionary.\n\n",
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "704d9dfb490d983b2be8465e241cf61360f574a22230974a38f55554b3a8e044"
       }
     },
     {
@@ -1415,6 +1445,36 @@
       },
       "meta": {
         "hash": "d53c8932c4c9deebcd2f578b62b2a5f09a081885f848a2ea97721c15f2e7ded2"
+      }
+    },
+    {
+      "id": "take",
+      "type": "snippetListing",
+      "title": "take",
+      "attributes": {
+        "text": "Returns a list with `n` elements removed from the beginning.\n\nUse slice notation to create a slice of the list with `n` elements taken from the beginning.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "ee77775f6d662576e60f839273bc23a1200d2e58d5f681ab8fc5a686b647bd81"
+      }
+    },
+    {
+      "id": "take_right",
+      "type": "snippetListing",
+      "title": "take_right",
+      "attributes": {
+        "text": "Returns a list with `n` elements removed from the end.\n\nUse slice notation to create a slice of the list with `n` elements taken from the end.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "5221a664a891ded456017072033baeb1bc25ee10e9556f64f09f6ebf0b5bf07b"
       }
     },
     {
