@@ -5,13 +5,17 @@ tags: object,recursion,intermediate
 
 Deep freezes an object.
 
-Calls `Object.freeze(obj)` recursively on all unfrozen properties of passed object that are `instanceof` object.
+Use `Object.keys()` to get all the properties of the passed object, `Array.prototype.forEach()` to iterate over them.
+Call `Object.freeze(obj)` recursively on all properties, checking if each one is frozen using `Object.isFrozen()` and applying `deepFreeze()` as necessary.
+Finally, use `Object.freeze()` to freeze the given object.
 
 ```js
-const deepFreeze = obj =>
+const deepFreeze = obj => {
   Object.keys(obj).forEach(prop =>
-    !(obj[prop] instanceof Object) || Object.isFrozen(obj[prop]) ? null : deepFreeze(obj[prop])
-  ) || Object.freeze(obj);
+    obj[prop] = typeof obj[prop] === 'object' && !Object.isFrozen(obj[prop]) ? deepFreeze(obj[prop]) : obj[prop]
+  );
+  return Object.freeze(obj);
+}
 ```
 
 ```js
