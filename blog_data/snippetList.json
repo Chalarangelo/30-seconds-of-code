@@ -109,6 +109,21 @@
       }
     },
     {
+      "id": "javascript-deep-freeze-object",
+      "type": "snippetListing",
+      "title": "How can I deep freeze an object in JavaScript?",
+      "attributes": {
+        "text": "Objects in JavaScript are mutable, regardless if you define them as `const` variables or not. In fact, using `const` when defining an object only prevents the variable from being reassigned. However, you can reassign the properties of a `const` object or array, like this:\n\n```js\nconst myObj = { a: 10, b: 20, c: 30 };\nmyObj.a = 12;     // { a: 12, b: 20, c: 30 };\n\nconst myArr = [15, 25, 35];\nmyArr[1] = 28;    // [15, 28, 35];\n```\n\nTo make an object immutable, we can utilize `Object.freeze()`, which will prevent the addition of new properties and prevent deletion and changes to existing properties to some extent. However, while `Object.freeze()` provides somewhat of a solution, it only mitigates the problem to the next nesting level, as in reality it performs a shallow freeze. This means that properties that are objects or arrays can still be mutated:\n\n```js\nconst myObj = {\n  a: 1,\n  b: 'hello',\n  c: [0, 1, 2],\n  d: { e: 1, f: 2 }\n};\nObject.freeze(myObj);\n\nmyObj.a = 10;\nmyObj.b = 'hi';\nmyObj.c[1] = 4;\nmyObj.d.e = 0;\n/*\nmyObj = {\n  a: 1,\n  b: 'hello',\n  c: [0, 4, 2],\n  d: { e: 0, f: 2 }\n}\n*/\n```\n\nAs you can see, `Object.freeze()` is a step in the right direction, but only shallow freezes the object. To solve the issue we can use recursion, checking if each property is itself an object and, if `Object.isFrozen()` is `false`, apply `Object.freeze()` to it:\n\n```js\nconst myObj = {\n  a: 1,\n  b: 'hello',\n  c: [0, 1, 2],\n  d: { e: 1, f: 2 }\n};\n\nconst deepFreeze = obj => {\n  Object.keys(obj).forEach(prop => {\n    if (obj[prop] === 'object' && !Object.isFrozen(obj[prop])) deepFreeze(v[prop]);\n  });\n  return Object.freeze(obj);\n};\ndeepFreeze(myObj);\n\nmyObj.a = 10;\nmyObj.b = 'hi';\nmyObj.c[1] = 4;\nmyObj.d.e = 0;\n\n/*\nmyObj = {\n  a: 1,\n  b: 'hello',\n  c: [0, 1, 2],\n  d: { e: 1, f: 2 }\n}\n*/\n```\n\nIn the above example, we apply the techniques we described previously to ensure that the given object is deeply frozen. You can view the complete code, along with more examples in the [deepFreeze](/js/s/deep-freeze) snippet.\n\n**Image credit:** [Aaron Burden](https://unsplash.com/@aaronburden?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)\n",
+        "tags": [
+          "javascript",
+          "object"
+        ]
+      },
+      "meta": {
+        "hash": "499c16b65845aa9dd2e4758e11051975db1d3e1ddc7a38e5ce3cb6e7073f7d06"
+      }
+    },
+    {
       "id": "javascript-for-in-for-of-foreach",
       "type": "snippetListing",
       "title": "What is the difference between JavaScript's for...in, for...of and forEach?",
