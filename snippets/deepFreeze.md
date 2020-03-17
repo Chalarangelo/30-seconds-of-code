@@ -11,11 +11,15 @@ Finally, use `Object.freeze()` to freeze the given object.
 
 ```js
 const deepFreeze = obj => {
-  Object.keys(obj).forEach(prop =>
-    obj[prop] = typeof obj[prop] === 'object' && !Object.isFrozen(obj[prop]) ? deepFreeze(obj[prop]) : obj[prop]
+  Object.keys(obj).forEach(
+    prop =>
+      (obj[prop] =
+        typeof obj[prop] === 'object' && !Object.isFrozen(obj[prop])
+          ? deepFreeze(obj[prop])
+          : obj[prop])
   );
   return Object.freeze(obj);
-}
+};
 ```
 
 ```js

@@ -832,7 +832,7 @@
         ]
       },
       "meta": {
-        "hash": "0a4684d6fc79bdbbac31df3af6c493ba7c881936ada5bc52824b4f26ca177459"
+        "hash": "5ab25ab96afd4f1f481fc318b5b290ba8c57a468ef6bca0ca200cfb7fcf3ba9f"
       }
     },
     {
@@ -856,7 +856,7 @@
       "type": "snippetListing",
       "title": "deepFreeze",
       "attributes": {
-        "text": "Deep freezes an object.\n\nCalls `Object.freeze(obj)` recursively on all unfrozen properties of passed object that are `instanceof` object.\n\n",
+        "text": "Deep freezes an object.\n\nUse `Object.keys()` to get all the properties of the passed object, `Array.prototype.forEach()` to iterate over them.\nCall `Object.freeze(obj)` recursively on all properties, checking if each one is frozen using `Object.isFrozen()` and applying `deepFreeze()` as necessary.\nFinally, use `Object.freeze()` to freeze the given object.\n\n",
         "tags": [
           "object",
           "recursion",
@@ -864,7 +864,7 @@
         ]
       },
       "meta": {
-        "hash": "a96d773dc1d2d54b91ccabf3eb4acaf0964d080fc75dcbf74fc032fd40702e9e"
+        "hash": "2efa5522cb391da3fd62d787bf5853d91d180cda5b141063c370a3b0c8fe1110"
       }
     },
     {
@@ -895,7 +895,7 @@
         ]
       },
       "meta": {
-        "hash": "a4e1e33c0688dbf1ca231d9d8ea315ffed93b7f83f5d8cbf0714f10fdfeda8cf"
+        "hash": "6fa14364405f7b99aa49c2157bdc08c02b4ce2f288db29a4348a6983460933c7"
       }
     },
     {
@@ -1034,7 +1034,7 @@
         ]
       },
       "meta": {
-        "hash": "5f38360819f9225b887a94221bfee1a80f1bcc224a364440b3388f60491b03ba"
+        "hash": "bdc202436bee09f06a353d31841c6cfff33e8efead34c6c56ae1a1413284976d"
       }
     },
     {
@@ -1270,7 +1270,7 @@
         ]
       },
       "meta": {
-        "hash": "55b1ce0a892110d792a9487e40331774015525479faa2b8961f6c2ea6291c27b"
+        "hash": "6e9710c9117f500e74e65c0ee36b39fb80bd55537fa5ff9c4b1136b2667096f2"
       }
     },
     {
@@ -1674,7 +1674,7 @@
         ]
       },
       "meta": {
-        "hash": "16c3b724b653dcb31f3e59f1664a59951abb15a93eb3697cade4d3ae0e63c532"
+        "hash": "9e39c6a3a8ec5b51c5e16f69107fc9e90b2697b2cf2689850872071bb968723e"
       }
     },
     {
@@ -2906,7 +2906,7 @@
         ]
       },
       "meta": {
-        "hash": "3db3faac666ee61ab86c70766d2ab5d1293ffd818da87edb971bfff7a366364a"
+        "hash": "362fddaa6244404741e84bca6fc442a101fdb642af53b299e8b9994d0d7162d8"
       }
     },
     {
@@ -3481,7 +3481,7 @@
         ]
       },
       "meta": {
-        "hash": "e8f820ce6da97eabde082ffb829c9fb700e85efc79bdebe883c67237269e3f52"
+        "hash": "b031c3387ef66411ab5d295788eac4247ada5b4b068dda90603d3c973890bc26"
       }
     },
     {
@@ -3827,7 +3827,7 @@
         ]
       },
       "meta": {
-        "hash": "a2b9ac4f1209c3791caa6f40f0d041acd75514e9ee8909f2e3833635f357c0bd"
+        "hash": "0eb844801e767edcaa6a882a6dce4b5b1dadecb53a92d6ec259d36c57b6a3dd0"
       }
     },
     {
@@ -4221,7 +4221,7 @@
         ]
       },
       "meta": {
-        "hash": "be8ec39c092128ba679a3f0421b6abc34ad891dec85354caa419dc4104687a05"
+        "hash": "ffb9c0d1d09aeb989789286efb91cc237b89ce13f44ad9510a014f9ab150df71"
       }
     },
     {
@@ -4537,7 +4537,7 @@
         ]
       },
       "meta": {
-        "hash": "24b93b68a59b49f245590930fed6fb82e286ce09f90e292466cde63c1784c347"
+        "hash": "6dd4c6a51d2c80fa4768c95ae01c16a8359c4140bcad28c7fde0cecd72d7d3e2"
       }
     },
     {
