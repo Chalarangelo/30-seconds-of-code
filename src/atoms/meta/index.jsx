@@ -146,6 +146,14 @@ const Meta = ({
           property: `og:image`,
           content: `${config.siteUrl}${logoSrc}`,
         },
+        {
+          name: `twitter:card`,
+          content: `summary`,
+        },
+        {
+          name: `twitter:site`,
+          content: `@30secondsofcode`,
+        },
       ].concat(meta) }
       script={ scripts }
     >
