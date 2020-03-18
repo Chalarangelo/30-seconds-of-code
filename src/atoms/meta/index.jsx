@@ -95,8 +95,8 @@ const Meta = ({
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag(
-        'config', 
-        '${config.googleAnalytics.id}', 
+        'config',
+        '${config.googleAnalytics.id}',
         ${JSON.stringify(config.googleAnalytics.config)}
       );
       `,
@@ -105,7 +105,7 @@ const Meta = ({
     if(typeof gtag === 'undefined') {
       scripts.push({
         innerHTML: `
-        var hasFired = false; 
+        var hasFired = false;
         if(!hasFired){
           window.gtag('event', 'page_view', { page_path: '${window.location.pathname}' });
           hasFired = true;
@@ -131,20 +131,20 @@ const Meta = ({
           content: `width=device-width, initial-scale=1`,
         },
         {
-          name: `og:title`,
+          property: `og:title`,
           content: title ? `${title} - ${_l('site.title')}` : _l('site.title'),
         },
         {
-          name: `og:description`,
+          property: `og:description`,
           content: metaDescription,
         },
         {
-          name: `og:type`,
+          property: `og:type`,
           content: `website`,
         },
         {
-          name: `og:image`,
-          content: logoSrc,
+          property: `og:image`,
+          content: `${config.siteUrl}${logoSrc}`,
         },
       ].concat(meta) }
       script={ scripts }
