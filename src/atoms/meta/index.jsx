@@ -147,12 +147,24 @@ const Meta = ({
           content: `${config.siteUrl}${logoSrc}`,
         },
         {
+          name: `twitter:site`,
+          content: `@30secondsofcode`,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
         {
-          name: `twitter:site`,
-          content: `@30secondsofcode`,
+          name: `twitter:title`,
+          content: title ? `${title}` : _l('site.title'),
+        },
+        {
+          name: `twitter:description`,
+          content: metaDescription,
+        },
+        {
+          name: `twitter:image`,
+          content: `${config.siteUrl}${logoSrc}`,
         },
       ].concat(meta) }
       script={ scripts }
