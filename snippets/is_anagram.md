@@ -5,16 +5,20 @@ tags: string,intermediate
 
 Checks if a string is an anagram of another string (case-insensitive, ignores spaces, punctuation and special characters).
 
-Use `s.replace()` to remove spaces from both strings.
-Compare the lengths of the two strings, return `False` if they are not equal.
-Use `sorted()` on both strings and compare the results.
+Filter out non-alphanumeric characters and transform each character to its lowercase version.
+Use a `collections.Counter` to count the resulting characters and compare the results.
 
 ```py
+from collections import Counter
+
 def is_anagram(s1, s2):
-  _str1, _str2 = s1.replace(" ", ""), s2.replace(" ", "")
-  return False if len(_str1) != len(_str2) else sorted(_str1.lower()) == sorted(_str2.lower())
+  return Counter(
+    c.lower() for c in s1 if c.isalnum()
+  ) == Counter(
+    c.lower() for c in s2 if c.isalnum()
+  )
 ```
 
 ```py
-is_anagram("anagram", "Nag a ram")  # True
+is_anagram("#anagram", "Nag a ram!")  # True
 ```
