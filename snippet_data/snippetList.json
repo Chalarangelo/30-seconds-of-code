@@ -890,14 +890,14 @@
       "type": "snippetListing",
       "title": "is_anagram",
       "attributes": {
-        "text": "Checks if a string is an anagram of another string (case-insensitive, ignores spaces, punctuation and special characters).\n\nUse `s.replace()` to remove spaces from both strings.\nCompare the lengths of the two strings, return `False` if they are not equal.\nUse `sorted()` on both strings and compare the results.\n\n",
+        "text": "Checks if a string is an anagram of another string (case-insensitive, ignores spaces, punctuation and special characters).\n\nUse `isalnum()` to filter out non-alphanumeric characters, `lower()` to transform each character to lowercase.\nUse `collections.Counter` to count the resulting characters for each string and compare the results.\n\n",
         "tags": [
           "string",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "efdcecce589a3812218ede260f156888eb8544ccf85eab35d1885689668292e8"
+        "hash": "15833b3a98e905cf4cbac346028c5e6b5560d3b968800b94548e77a77098b7cc"
       }
     },
     {
