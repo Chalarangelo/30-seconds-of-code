@@ -5,13 +5,3 @@
   font-weight: 400;
   margin: 3.9375rem 1.25rem .5rem;
 }
-
-a.recommendation-list-view-more {
-  &, &:link, &:visited {
-    color: var(--fore-color-dark);
-    font-weight: 600;
-    display: block;
-    text-align: center;
-    margin: -0.0625rem 0 2rem;
-  }
-}

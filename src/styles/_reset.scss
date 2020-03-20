@@ -23,19 +23,6 @@ body {
   color: var(--fore-color);
   overflow-x: hidden;
 }
-// Correct display for Edge & Firefox.
-details {
-  display: block;
-}
-// Correct display in all browsers.
-summary {
-  display: list-item;
-}
-// Abbreviations
-abbr[title] {
-  border-bottom: none;           // Remove bottom border in Firefox 39-.
-  text-decoration: underline dotted;  // Opinionated style-fix for all browsers.
-}
 // Show overflow in Edge.
 input {
   overflow: visible;
@@ -65,16 +52,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1 {
   font-size: 6rem;
-  &.landing-title {
-    font-size: 3rem;
-    text-align: center;
-    & small {
-      display: block;
-      margin-top: 0.5rem;
-      color: var(--secondary-fore-color);
-    }
-    margin-bottom: 4rem;
-  }
 }
 h2 {
   font-size: 3.75rem;
@@ -82,7 +59,7 @@ h2 {
 h3 {
   font-size: 3rem;
 }
-h4 { 
+h4 {
   font-size: 2.125rem;
 }
 h5 {

@@ -7,7 +7,6 @@ $button-fore-color: #FFFFFF;
   --button-fore-color: #{$button-fore-color};
   --button-shadow-color: rgba(0, 0, 0, 0.25);
   --button-shadow-focus-color: rgba(0, 0, 0, 0.29);
-  --button-back-color-secondary: #DC325F;
   --button-back-color-tertiary: #131418;
   --button-back-color-active: #05A864;
 }
@@ -38,10 +37,6 @@ $button-fore-color: #FFFFFF;
   @media screen and (min-width: $layout-large-breakpoint) {
     font-size: 1.375rem;
     line-height: 1.35;
-  }
-
-  &.secondary {
-    background: var(--button-back-color-secondary);
   }
 
   &.active {
