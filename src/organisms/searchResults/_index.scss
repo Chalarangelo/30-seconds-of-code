@@ -1,27 +1,7 @@
-.search-compact-sub {
-  // color: var(--fore-color-darker);
-  font-size: 1rem;
-  text-align: center;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
-  line-height: 1.5;
-  margin: .125rem 1.25rem 0;
-}
-
 .search-results-title {
   font-size: 1.5rem;
   text-align: center;
   line-height: 1.375;
   font-weight: 400;
   margin: 1.5rem 1.25rem .5rem;
-}
-
-a.search-compact-view-more {
-  &, &:link, &:visited {
-    color: var(--fore-color-dark);
-    font-weight: 600;
-    display: block;
-    text-align: center;
-    margin: -0.0625rem 0 2rem;
-  }
 }
