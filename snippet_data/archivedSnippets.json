@@ -106,7 +106,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "countVowels.md",
-        "text": "Retuns `number` of vowels in provided string.\n\nUse a regular expression to count the number of vowels `(A, E, I, O, U)` in a `string`.\n\n",
+        "text": "Returns `number` of vowels in provided string.\n\nUse a regular expression to count the number of vowels `(A, E, I, O, U)` in a `string`.\n\n",
         "codeBlocks": {
           "es6": "const countVowels = str => (str.match(/[aeiou]/gi) || []).length;",
           "es5": "var countVowels = function countVowels(str) {\n  return (str.match(/[aeiou]/gi) || []).length;\n};",

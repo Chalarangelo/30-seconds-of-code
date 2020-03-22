@@ -1202,7 +1202,7 @@
       "  return true;",
       "};"
     ],
-    "description": "Returns `true` if two arrays contain the same elements regardless of order, `false` otherwise.\n\nUse a `for...of` loop over a `Set` created from the values of both arrays.\nUse `Array.prototype.filter()` to compare the amount of occurences of each distinct value in both arrays.\nReturn `false` if the counts do not match for any element, `true` otherwise.\n"
+    "description": "Returns `true` if two arrays contain the same elements regardless of order, `false` otherwise.\n\nUse a `for...of` loop over a `Set` created from the values of both arrays.\nUse `Array.prototype.filter()` to compare the amount of occurrences of each distinct value in both arrays.\nReturn `false` if the counts do not match for any element, `true` otherwise.\n"
   },
   "head": {
     "prefix": "30s_head",
