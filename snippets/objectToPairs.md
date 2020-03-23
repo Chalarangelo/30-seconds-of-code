@@ -5,10 +5,10 @@ tags: object,array,beginner
 
 Creates an array of key-value pair arrays from an object.
 
-Use `Object.keys()` and `Array.prototype.map()` to iterate over the object's keys and produce an array with key-value pairs.
+Use `Object.entries()` to get an array of key-value pair arrays from the given object.
 
 ```js
-const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
+const objectToPairs = obj => Object.entries(obj);
 ```
 
 ```js
