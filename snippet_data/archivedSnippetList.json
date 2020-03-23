@@ -287,6 +287,22 @@
       }
     },
     {
+      "id": "objectToEntries",
+      "type": "snippetListing",
+      "title": "objectToEntries",
+      "attributes": {
+        "text": "Creates an array of key-value pair arrays from an object.\n\nUse `Object.keys()` and `Array.prototype.map()` to iterate over the object's keys and produce an array with key-value pairs.\n\n",
+        "tags": [
+          "object",
+          "array",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "da5ab6a4f794f33d985d8a82794414b80913e63214a80d78c87bbda9638faa4f"
+      }
+    },
+    {
       "id": "pipeLog",
       "type": "snippetListing",
       "title": "pipeLog",
