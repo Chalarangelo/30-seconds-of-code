@@ -3,13 +3,13 @@
   position: relative;
   box-sizing: border-box;
   transition: all 0.3s ease;
-  margin-top: 100px;
+  margin-top: 80px;
   margin-bottom: 40vh;
   width: 100%;
   height: calc(50vmin);
   &::before {
     top: 0;
-    right: 27.5vmin;
+    left: calc(50% - 22.5vmin);
     position: absolute;
     content: '';
     width: 45vmin;
@@ -21,29 +21,4 @@
   }
   padding-top: 46vmin;
   text-align: center;
-  @media screen and (orientation: landscape) and (max-height: calc(#{$layout-medium-breakpoint} - 1px)) {
-    margin-top: 2rem;
-    padding-top: 38vmin;
-    margin-bottom: 50vh;
-    height: 40vmin;
-    &::before {
-      right: calc(50vw - 45vmin / 2 - 31px);
-    }
-  }
-  @media screen and (min-width: $layout-medium-breakpoint) {
-    margin-bottom: 30vh;
-  }
-  @media screen and (min-width: $layout-large-breakpoint) {
-    padding-top: 2vmin;
-    padding-right: 400px;
-    margin-bottom: 20vh;
-    &::before {
-      background-size: 395px, 393px;
-      height: 400px;
-      width: 400px;
-      right: 1.125rem;
-      margin-top: -2vmin;
-      background-position-x: 95.5%, 93%;
-    }
-  }
 }
