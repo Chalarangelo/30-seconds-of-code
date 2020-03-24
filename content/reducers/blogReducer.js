@@ -44,6 +44,6 @@ export default (id, snippetNode, markdownNode) => {
       ...tokenizeSnippet(
         `${snippetNode.attributes.excerpt} ${snippetNode.title}`
       ),
-    ]).join(' ').toLowerCase(),
+    ].map(v => `${v}`.toLowerCase())).join(' '),
   };
 };
