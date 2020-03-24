@@ -1,6 +1,6 @@
-const createSearchPage = (searchPage, createPage, context) => {
+const createSearchPage = (searchPage, createPage, context, path = '/search') => {
   createPage({
-    path: '/search',
+    path,
     component: searchPage,
     context: {
       ...context,
