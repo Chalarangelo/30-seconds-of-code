@@ -3,7 +3,6 @@ import createAboutPage from './createAboutPage';
 import createCookiePage from './createCookiePage';
 import createSettingsPage from './createSettingsPage';
 import createListingPages from './createListingPages';
-import createSearchIndexPage from './createSearchIndexPage';
 import createSearchPage from './createSearchPage';
 import createSnippetPages from './createSnippetPages';
 import { transformSnippetIndex } from 'functions/transformers';
@@ -30,14 +29,6 @@ const createPages = (query, templates, requirables) => ({ graphql, actions }) =>
       };
 
       const listingMetas = parseListingMetas(requirables);
-
-      createSearchPage(
-        templates['SearchPage'],
-        createPage,
-        {
-          ...commonContext,
-        }
-      );
 
       create404Page(
         templates['NotFoundPage'],
@@ -122,13 +113,24 @@ const createPages = (query, templates, requirables) => ({ graphql, actions }) =>
         result.data.images.edges
       );
 
-      createSearchIndexPage(
+      createSearchPage(
         templates['SearchPage'],
         createPage,
         {
           ...commonContext,
           searchIndex: transformSnippetIndex(searchIndex.edges),
-        });
+        },
+        '/search_index'
+      );
+
+      createSearchPage(
+        templates['SearchPage'],
+        createPage,
+        {
+          ...commonContext,
+          recommendedSnippets: transformSnippetIndex(searchIndex.edges.slice(0, 3)),
+        }
+      );
 
       return null;
     });
