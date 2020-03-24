@@ -39,12 +39,16 @@ export const searchByKeyphrase = (keyphrase, searchIndex) => {
   let results = [];
   if (q.length) {
     let t = tokenize(q);
-    if(t.length) {
-      const l = t.length;
-      results = searchIndex.map(snippet => ({
-        ...snippet,
-        score: t.reduce((acc, tkn) => snippet.searchTokens.indexOf(tkn) !== -1 ? acc + 1 : acc, 0) / l,
-      })).filter(snippet => snippet.score > 0.3).sort((a, b) => b.score - a.score).slice(0, 50);
+    if (t.length) {
+      results = searchIndex
+        .map(snippet => {
+          snippet.score = snippet.title.toLowerCase().trim() === q
+            ? 1.01
+            : t.reduce((acc, tkn) => snippet.searchTokens.indexOf(tkn) !== -1 ? acc + 1 : acc, 0) / t.length;
+          return snippet;
+        })
+        .filter(snippet => snippet.score > 0.3)
+        .sort((a, b) => b.score - a.score).slice(0, 50);
     }
   }
   return {
