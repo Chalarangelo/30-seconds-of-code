@@ -4,7 +4,9 @@ import {
 
 /** Get the textual content in a gatsby page */
 const getTextualContent = (str, noExplain = false) => {
-  const result = str.slice(0, str.indexOf('<div class="gatsby-highlight"'));
+  const result = str
+    .slice(0, str.indexOf('<div class="gatsby-highlight"'))
+    .replace(/(href="https?:\/\/)/g, 'target="_blank" rel="nofollow noopener noreferrer" $1');
   if (noExplain)
     return result.slice(0, result.indexOf('</p>\n') + 4);
   return result;

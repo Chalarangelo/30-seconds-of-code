@@ -19,7 +19,9 @@ const getExplanation = str => {
 
 /** Get the textual content in a gatsby page */
 const getTextualContent = (str, noExplain = false) => {
-  const description = str.slice(0, str.indexOf('<div class="gatsby-highlight"'));
+  const description = str
+    .slice(0, str.indexOf('<div class="gatsby-highlight"'))
+    .replace(/(href="https?:\/\/)/g, 'target="_blank" rel="nofollow noopener noreferrer" $1');
   if (noExplain)
     return description;
   else
@@ -38,7 +40,9 @@ const getBrowserSupport = str => {
       results.push(match);
     });
   }
-  return results[1].replace(/\r\n/g, '\n');
+  return results[1]
+    .replace(/\r\n/g, '\n')
+    .replace(/(href="https?:\/\/)/g, 'target="_blank" rel="nofollow noopener noreferrer" $1');
 };
 
 /** Get the code blocks in a gatsby page */
