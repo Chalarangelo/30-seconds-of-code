@@ -21,6 +21,7 @@ const SearchPage = ({
     logoSrc,
     splashLogoSrc,
     snippetCount,
+    recommendedSnippets,
   },
   searchQuery,
   dispatch,
@@ -43,7 +44,7 @@ const SearchPage = ({
         withIcon={ false }
         withTitle={ true }
       >
-        <SearchResults />
+        <SearchResults recommendedSnippets={ recommendedSnippets }/>
       </Shell>
     </>
   );
@@ -58,6 +59,8 @@ SearchPage.propTypes = {
     splashLogoSrc: PropTypes.string.isRequired,
     /** Number of indexed snippets */
     snippetCount: PropTypes.number,
+    /** List of recommended snippets */
+    recommendedSnippets: PropTypes.arrayOf(PropTypes.shape({})),
   }),
   /** Search query */
   searchQuery: PropTypes.string,
