@@ -1,6 +1,6 @@
 ---
 title: logArgsAndResult
-tags: beginner, utility, debugging
+tags: utility, debugging, beginner
 ---
 
 Wrapper function that logs arguments that were passed into a function and the result.
@@ -10,8 +10,7 @@ Inside any non-arrow function, we can access arguments through the variable: arg
 ```js
 const wrapLog = (funcName, func) => {
   return function() {
-    const listArgs = Object.values(arguments);
-    console.log(`${funcName}(${listArgs}) => ${func(...listArgs)}`);
+    console.log(`${funcName}(${listArgs}) => ${func(...Object.values(arguments))}`);
   };
 };
 
