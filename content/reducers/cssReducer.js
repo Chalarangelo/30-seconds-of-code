@@ -38,9 +38,9 @@ export default (id, snippetNode, markdownNode) => {
     firstSeen: new Date(+`${snippetNode.meta.firstSeen}000`),
     lastUpdated: new Date(+`${snippetNode.meta.lastUpdated}000`),
     searchTokens: uniqueElements([
+      snippetNode.title,
       snippetNode.language.short,
       snippetNode.language.long,
-      snippetNode.title,
       ...snippetNode.attributes.tags.filter(tag => tag !== 'beginner' && tag !== 'intermediate' && tag !== 'advanced'),
       ...tokenizeSnippet(
         snippetNode.attributes.text.slice(0, snippetNode.attributes.text.indexOf('\n\n'))
