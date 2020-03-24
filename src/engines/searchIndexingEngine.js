@@ -120,7 +120,7 @@ const parseTokens = str =>
   deduplicateTokens(
     cleanStopWords(tokenize(str)).map(tkn => stem(tkn))
   ).filter(tkn =>
-    !!tkn && !/^-?\d+$/i.test(tkn) && !/^[()[\]$^.;:|\\/%&*#@!%,"'~`\-+=]+$/i.test(tkn)
+    !!tkn && tkn.length > 1 && !/^-?\d+$/i.test(tkn) && !/^[()[\]$^.;:|\\/%&*#@!%,"'~`\-+=]+$/i.test(tkn)
   );
 
 export default parseTokens;
