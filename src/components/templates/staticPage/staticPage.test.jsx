@@ -5,16 +5,16 @@ import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import _ from 'lang';
 const _l = _('en');
-import aboutLiterals from 'lang/about_en';
+import aboutLiterals from 'lang/en/about';
 
-import AboutPage from './index';
+import StaticPage from './index';
 
 configure({ adapter: new Adapter() });
 console.warn = jest.fn();
 
 const { store } = createStore();
 
-describe('<AboutPage />', () => {
+describe('<StaticPage />', () => {
   const logoSrc = '/assets/logo.png';
   const splashLogoSrc = '/assets/splash.png';
   let wrapper, shell, meta;
@@ -22,7 +22,7 @@ describe('<AboutPage />', () => {
   beforeEach(() => {
     wrapper = mount(
       <Provider store={ store }>
-        <AboutPage pageContext={ { logoSrc, splashLogoSrc, stringLiterals: aboutLiterals } } />
+        <StaticPage pageContext={ { logoSrc, splashLogoSrc, stringLiterals: aboutLiterals } } />
       </Provider>
     );
     shell = wrapper.find('Shell');
