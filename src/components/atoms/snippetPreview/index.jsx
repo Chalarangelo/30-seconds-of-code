@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lang';
-const _l = _('en');
+import literals from 'lang/en/client/common';
 
 /**
  * Snippet preview component.
@@ -30,7 +29,7 @@ const SnippetPreview = ({
 
   return (
     <>
-      <h5 className='snippet-preview-title'>{ _l('Preview') }</h5>
+      <h5 className='snippet-preview-title'>{ literals.preview }</h5>
       <div
         className='snippet-preview'
         data-scope={ scopeId }

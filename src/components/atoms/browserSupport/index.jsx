@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lang';
-const _l = _('en');
+import literals from 'lang/en/client/common';
 
 /**
  * Browser support component that displays formatted browser support percentage.
@@ -12,10 +11,8 @@ const BrowserSupport = ({
   browserSupportHtml,
 }) => (
   <>
-    <h5 className='browser-support-title'>{ _l('Browser support') }</h5>
-    <p className='browser-support-percentage'>
-      { supportPercentage.toFixed(1) }%
-    </p>
+    <h5 className='browser-support-title'>{ literals.BrowserSupport }</h5>
+    <p className='browser-support-percentage'>{ supportPercentage.toFixed(1) }%</p>
     <div
       className='browser-support-text'
       dangerouslySetInnerHTML={ {

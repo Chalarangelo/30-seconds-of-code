@@ -1,8 +1,7 @@
 import React from 'react';
 import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import _ from 'lang';
-const _l = _('en');
+import literals from 'lang/en/client/common';
 
 import CodepenButton from './index';
 /* eslint-disable */
@@ -48,7 +47,7 @@ describe('<CodepenButton />', () => {
 
   it('should have an appropriate title attribute', () => {
     expect(wrapper).toContainMatchingElement('button.btn.codepen-btn[title]');
-    expect(button.prop('title')).toBe(_l('Edit on CodePen'));
+    expect(button.prop('title')).toBe(literals.codepen);
   });
 
   it('should pass data to the input field', () => {

@@ -1,8 +1,7 @@
 import React from 'react';
 import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import _ from 'lang';
-const _l = _('en');
+import literals from 'lang/en/client/common';
 
 import CopyButton from './index';
 /* eslint-disable */
@@ -42,7 +41,7 @@ describe('<CopyButton />', () => {
 
   it('should have an appropriate title attribute', () => {
     expect(wrapper).toContainMatchingElement('button.btn.copy-btn[title]');
-    expect(button.prop('title')).toBe(_l('Copy to clipboard'));
+    expect(button.prop('title')).toBe(literals.copyToClipboard);
   });
 });
 

@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import { Button } from 'components/atoms/button';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { trimWhiteSpace } from 'functions/utils';
-import _ from 'lang';
-const _l = _('en');
+import literals from 'lang/en/client/common';
 
 /**
  * Button that copies the given text to clipboard.
@@ -18,17 +17,13 @@ const CopyButton = ({
     <CopyToClipboard
       text={ text }
       onCopy={ () => {
-        setTimeout(() => {
-          setActive(true);
-        }, 100);
-        setTimeout(() => {
-          setActive(false);
-        }, 750);
+        setTimeout(() => setActive(true), 100);
+        setTimeout(() => setActive(false), 750);
       } }
     >
       <Button
         className={ trimWhiteSpace`copy-btn icon ${active ? 'icon-check' : 'icon-clipboard'} ${active ? 'active' : ''}` }
-        title={ _l('Copy to clipboard') }
+        title={ literals.copyToClipboard }
       />
     </CopyToClipboard>
   );

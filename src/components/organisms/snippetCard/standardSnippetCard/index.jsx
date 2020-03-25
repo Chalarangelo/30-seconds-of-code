@@ -9,8 +9,7 @@ import { CopyButton, CodepenButton } from 'components/atoms/button';
 import { Snippet as SnippetPropType } from 'typedefs';
 import { trimWhiteSpace } from 'functions/utils';
 import { JSX_SNIPPET_PRESETS } from 'shared';
-import _ from 'lang';
-const _l = _('en');
+import literals from 'lang/en/client/common';
 
 const SnippetCard = ({
   snippet,
@@ -44,7 +43,7 @@ const SnippetCard = ({
           rel: 'nofollow noopener noreferrer',
         } }
       >
-        { _l('View on GitHub') }
+        { literals.viewOnGitHub }
       </Anchor>
     ) }
     <div
@@ -83,7 +82,7 @@ const SnippetCard = ({
         htmlContent={ snippet.html.code }
         className='card-code'
       />
-      <h5 className='card-example-title'>{ _l('Examples') }</h5>
+      <h5 className='card-example-title'>{ literals.examples }</h5>
       <CodeBlock
         language={ snippet.language }
         htmlContent={ snippet.html.example }
