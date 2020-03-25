@@ -1,12 +1,12 @@
 import create404Page from './create404Page';
-import createAboutPage from './createAboutPage';
-import createCookiePage from './createCookiePage';
+import createStaticPage from './createStaticPage';
 import createSettingsPage from './createSettingsPage';
 import createListingPages from './createListingPages';
 import createSearchPage from './createSearchPage';
 import createSnippetPages from './createSnippetPages';
 import { transformSnippetIndex } from 'functions/transformers';
 import { parseListingMetas } from 'functions/parsers';
+import literals from 'lang/en';
 
 /**
  * Tell plugins to add pages.
@@ -38,20 +38,24 @@ const createPages = (query, templates, requirables) => ({ graphql, actions }) =>
         }
       );
 
-      createAboutPage(
-        templates['AboutPage'],
+      createStaticPage(
+        templates['StaticPage'],
         createPage,
         {
           ...commonContext,
-        }
+          stringLiterals: literals.about,
+        },
+        '/about'
       );
 
-      createCookiePage(
-        templates['CookiePage'],
+      createStaticPage(
+        templates['StaticPage'],
         createPage,
         {
           ...commonContext,
-        }
+          stringLiterals: literals.cookies,
+        },
+        '/cookies'
       );
 
       createSettingsPage(
