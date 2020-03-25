@@ -1,5 +1,4 @@
-import _ from 'lang';
-const _l = _('en');
+import literals from 'lang/en/listing';
 
 const parseListingMetas = requirables =>
   requirables
@@ -12,14 +11,14 @@ const parseListingMetas = requirables =>
         internal: true,
         url: `/${rq.meta.slugPrefix.slice(0, rq.meta.slugPrefix.indexOf('/'))}/p/1`,
       },
-      name: rq.meta.blog ? _l('Blog') : _l`codelang.${rq.meta.language.long}`,
+      name: rq.meta.blog ? literals.blog : literals.codelang(rq.meta.language.long),
       style: {
         background: rq.meta.theme && rq.meta.theme.backColor,
         color: rq.meta.theme && rq.meta.theme.foreColor,
       },
       icon: rq.meta.theme && rq.meta.theme.iconName,
       slugPrefix: `/${rq.meta.slugPrefix.slice(0, rq.meta.slugPrefix.indexOf('/'))}`,
-      count: _l`snippetCount.${rq.data.length}`,
+      count: literals.snippetCount(rq.data.length),
       tags: [...new Set(rq.data.map(snippet => snippet.attributes.tags[0]))].sort((a, b) => a.localeCompare(b)),
     }));
 
