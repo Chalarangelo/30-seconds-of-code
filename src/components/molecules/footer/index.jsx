@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Anchor from 'components/atoms/anchor';
-import config from '../../../../config';
-import _ from 'lang';
-const _l = _('en');
+import literals from 'lang/en/client/footer';
+import config from 'config/client';
 
 /**
  * Renders the page Footer.
@@ -21,7 +20,7 @@ const Footer = ({
         } }
         className='footer-link'
       >
-        { _l('footer.about') }
+        { literals.about }
       </Anchor>
       <Anchor
         link={ {
@@ -30,7 +29,7 @@ const Footer = ({
         } }
         className='footer-link'
       >
-        { _l('footer.cookies') }
+        { literals.cookies }
       </Anchor>
       <Anchor
         link={ {
@@ -41,7 +40,7 @@ const Footer = ({
         } }
         className='footer-link'
       >
-        { _l('footer.github') }
+        { literals.github }
       </Anchor>
       <Anchor
         link={ {
@@ -52,7 +51,7 @@ const Footer = ({
         } }
         className='footer-link'
       >
-        { _l('footer.twitter') }
+        { literals.twitter }
       </Anchor>
       <Anchor
         link={ {
@@ -63,11 +62,11 @@ const Footer = ({
         } }
         className='footer-link'
       >
-        { _l('footer.discord') }
+        { literals.discord }
       </Anchor>
     </p>
     <p>
-      { _l('Website, name & logo © 2017-2020 ') }
+      { literals.copyright }
       <Anchor
         link={ {
           internal: false,
@@ -76,10 +75,10 @@ const Footer = ({
           target: '_blank',
         } }
       >
-        { _l('30-seconds') }
+        { config.orgName }
       </Anchor>
       <br/>
-      { _l('Individual snippets licensed under ') }
+      { literals.snippetLicense }
       <Anchor
         link={ {
           internal: false,
@@ -88,10 +87,10 @@ const Footer = ({
           target: '_blank',
         } }
       >
-        { _l('CC0-1.0') }
+        { literals.ccLicense }
       </Anchor>
       <br/>
-      { _l('Powered by ') }
+      { literals.poweredBy }
       <Anchor
         link={ {
           internal: false,
@@ -100,9 +99,9 @@ const Footer = ({
           target: '_blank',
         } }
       >
-        { _l('Netlify') }
+        { literals.netlify }
       </Anchor>
-      { _l(', ') }
+      { ', ' }
       <Anchor
         link={ {
           internal: false,
@@ -111,9 +110,9 @@ const Footer = ({
           target: '_blank',
         } }
       >
-        { _l('Gatsby') }
+        { literals.gatsby }
       </Anchor>
-      { _l(', ') }
+      { ', ' }
       <Anchor
         link={ {
           internal: false,
@@ -122,9 +121,9 @@ const Footer = ({
           target: '_blank',
         } }
       >
-        { _l('Travis CI') }
+        { literals.travis }
       </Anchor>
-      { _l(' & ') }
+      { ' & ' }
       <Anchor
         link={ {
           internal: false,
@@ -133,7 +132,7 @@ const Footer = ({
           target: '_blank',
         } }
       >
-        { _l('GitHub') }
+        { literals.github }
       </Anchor>
     </p>
   </footer>
