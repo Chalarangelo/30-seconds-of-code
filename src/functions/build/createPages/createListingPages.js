@@ -1,13 +1,12 @@
 import { chunk } from 'functions/utils';
 import { transformSnippetIndex } from 'functions/transformers';
 import EXPERTISE_LEVELS from 'shared/expertiseLevels';
-import _ from 'lang';
-const _l = _('en');
+import literals from 'lang/en/listing';
 
 const ORDERS_MAP = {
-  'p': _l('orders.popularity'),
-  'a': _l('orders.alphabetical'),
-  'e': _l('orders.expertise'),
+  'p': literals.orders.popularity,
+  'a': literals.orders.alphabetical,
+  'e': literals.orders.expertise,
 };
 
 const CARDS_PER_PAGE = 40;
@@ -117,8 +116,8 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
     createPage,
     {
       ...context,
-      listingName: _l('Snippet List'),
-      listingTitle: _l('Snippet List'),
+      listingName: literals.snippetList,
+      listingTitle: literals.snippetList,
       listingType: 'main',
       listingSublinks: mainListingSublinks,
     },
@@ -154,7 +153,7 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
                 internal: true,
                 url: `${slugPrefix}/${order}/1`,
               },
-              name: _l`tag.${'all'}`,
+              name: literals.tag('all'),
               selected: true,
             },
             ...listingMeta.tags
@@ -163,7 +162,7 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
                   internal: true,
                   url: `${slugPrefix}/t/${tag}/${order}/1`,
                 },
-                name: _l`tag.${tag}`,
+                name: literals.tag(tag),
               })),
           ],
         };
@@ -174,8 +173,8 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
         createPage,
         {
           ...context,
-          listingName: listingMeta.blog ? _l('Blog') : _l`codelang.${searchIndexName}`,
-          listingTitle: listingMeta.blog ? _l('Blog') : _l`codelang.${searchIndexName}`,
+          listingName: listingMeta.blog ? literals.blog : literals.codelang(searchIndexName),
+          listingTitle: listingMeta.blog ? literals.blog : literals.codelang(searchIndexName),
           snippetCount: searchIndexSlugData.length,
           listingType: listingMeta.blog ? 'blog' : 'language',
           listingLanguage: listingMeta.blog ? 'blog' : searchIndexName,
@@ -211,7 +210,7 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
                   internal: true,
                   url: `${slugPrefix}/${order}/1`,
                 },
-                name: _l`tag.${'all'}`,
+                name: literals.tag('all'),
                 selected: true,
               },
               ...listingMeta.tags
@@ -220,7 +219,7 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
                     internal: true,
                     url: `${slugPrefix}/t/${tag}/${order}/1`,
                   },
-                  name: _l`tag.${tag}`,
+                  name: literals.tag(tag),
                 })),
             ].map(tag => ({ ...tag, selected: tag.link.url.indexOf(`/t/${tagPrefix}/`) !== -1 })),
           };
@@ -231,8 +230,8 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
           createPage,
           {
             ...context,
-            listingName: _l`codelang_tag.${searchIndexName}${tagPrefix}`,
-            listingTitle: _l`codelang.${searchIndexName}`,
+            listingName: literals.codelangTag(searchIndexName, tagPrefix),
+            listingTitle: literals.codelang(searchIndexName),
             snippetCount: searchIndexSlugData.length,
             listingType: 'tag',
             listingLanguage: searchIndexName,
