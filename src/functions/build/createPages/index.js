@@ -63,6 +63,7 @@ const createPages = (query, templates, requirables) => ({ graphql, actions }) =>
         createPage,
         {
           ...commonContext,
+          stringLiterals: literals.settings,
         }
       );
 
