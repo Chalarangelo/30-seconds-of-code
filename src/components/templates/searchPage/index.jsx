@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Meta from 'components/atoms/meta';
 import Shell from 'components/organisms/shell';
+import SearchResults from 'components/organisms/searchResults';
 import PropTypes from 'prop-types';
 import _ from 'lang';
-import SearchResults from 'components/organisms/searchResults';
 import { pushNewPage } from 'state/navigation';
 const _l = _('en');
 

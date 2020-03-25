@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Meta from 'components/atoms/meta';
-import Shell from 'components/organisms/shell';
-import SimpleCard from 'components/molecules/simpleCard';
 import PageTitle from 'components/atoms/pageTitle';
-import PropTypes from 'prop-types';
 import Toggle from 'components/atoms/toggle/index';
+import SimpleCard from 'components/molecules/simpleCard';
+import Shell from 'components/organisms/shell';
+import PropTypes from 'prop-types';
 import { toggleDarkMode, toggleGithubLinks } from 'state/shell';
 import _ from 'lang';
 const _l = _('en');
@@ -16,7 +16,7 @@ const templateData = {
 };
 
 /**
- * Renders the /about page.
+ * Renders the /settings page.
  */
 const SettingsPage = ({
   pageContext: {
