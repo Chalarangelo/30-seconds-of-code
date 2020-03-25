@@ -13,15 +13,20 @@ const StaticPage = ({
   pageContext: {
     logoSrc,
     splashLogoSrc,
-    stringLiterals,
+    stringLiterals: {
+      title,
+      subtitle,
+      pageDescription,
+      cards,
+    },
   },
 }) => {
   return (
     <>
       <Meta
-        title={ stringLiterals.title }
+        title={ title }
         logoSrc={ splashLogoSrc }
-        description={ stringLiterals.pageDescription }
+        description={ pageDescription }
       />
       <Shell
         logoSrc={ logoSrc }
@@ -31,13 +36,13 @@ const StaticPage = ({
         withTitle
       >
         <PageTitle>
-          { stringLiterals.title }
+          { title }
         </PageTitle>
         <PageSubtitle isLight>
-          { stringLiterals.subtitle }
+          { subtitle }
         </PageSubtitle>
         {
-          stringLiterals.cards.map(({title, html}, i) => (
+          cards.map(({ title, html }, i) => (
             <SimpleCard
               key={ i }
               title={ title }

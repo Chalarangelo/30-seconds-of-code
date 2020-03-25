@@ -1,8 +1,7 @@
 import React from 'react';
 import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import _ from 'lang';
-const _l = _('en');
+import literals from 'lang/en/client/common';
 
 import SnippetCard from './index';
 
@@ -98,7 +97,7 @@ describe('<SnippetCard />', () => {
   });
 
   it('should have the appropriate examples title', () => {
-    expect(card.find('.card-example-title').text()).toBe(_l('Examples'));
+    expect(card.find('.card-example-title').text()).toBe(literals.examples);
   });
 
   it('should pass the code data to the first CodeBlock component', () => {

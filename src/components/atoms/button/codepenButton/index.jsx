@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { trimWhiteSpace } from 'functions/utils';
-import _ from 'lang';
-const _l = _('en');
+import literals from 'lang/en/client/common';
 
 /* eslint-disable camelcase */
 /**
@@ -37,16 +36,13 @@ const CodepenButton = ({
       <button
         className={ trimWhiteSpace`btn codepen-btn icon ${active ? 'icon-check' : 'icon-codepen'} ${active ? 'active' : ''}` }
         ref={ btnRef }
-        title={ _l('Edit on CodePen') }
+        title={ literals.codepen }
         onClick={ e => {
           if(!processing) {
             e.preventDefault();
-            setTimeout(() => {
-              setActive(true);
-            }, 100);
+            setTimeout(() => setActive(true), 100);
             setTimeout(() => {
               setActive(false);
-              console.log(btnRef);
               btnRef.current.click();
             }, 750);
           }

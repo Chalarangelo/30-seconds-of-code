@@ -5,8 +5,7 @@ import TagList from 'components/atoms/tagList';
 import { Snippet as SnippetPropType } from 'typedefs';
 import { trimWhiteSpace } from 'functions/utils';
 import Anchor from 'components/atoms/anchor';
-import _ from 'lang';
-const _l = _('en');
+import literals from 'lang/en/client/common';
 
 const SnippetCard = ({
   snippet,
@@ -55,7 +54,7 @@ const SnippetCard = ({
               rel: 'nofollow noopener noreferrer',
             } }
           >
-            { _l('View on GitHub') }
+            { literals.viewOnGitHub }
           </Anchor>
         </>
       ) }
