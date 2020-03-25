@@ -39,12 +39,6 @@ const literals = {
       return `Search for answers to your development problems among ${pageData.snippetCount} code snippets on ${config.name}.`;
     case 'snippet':
       return `Learn how to code a ${pageData.snippetName} snippet in ${pageData.snippetLanguage} on ${config.name}.`;
-    case 'about':
-      return `Learn more about the team behind ${config.name}.`;
-    case 'cookies':
-      return `Read about the cookie policy of ${config.name}.`;
-    case 'settings':
-      return `Customize your ${config.name} experience.`;
     case 'home':
     default:
       return defaultDescription;
@@ -59,8 +53,6 @@ const literals = {
   'orders.popularity': 'Popularity',
   'orders.alphabetical': 'Alphabetical',
   'orders.expertise': 'Expertise',
-  'settings.dark_mode': 'Dark mode',
-  'settings.github_links': 'GitHub links',
   // Literals
   'Expertise': level => `${level}`,
   'Search snippets': 'Search snippets',

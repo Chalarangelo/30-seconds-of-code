@@ -7,13 +7,6 @@ import SimpleCard from 'components/molecules/simpleCard';
 import Shell from 'components/organisms/shell';
 import PropTypes from 'prop-types';
 import { toggleDarkMode, toggleGithubLinks } from 'state/shell';
-import _ from 'lang';
-const _l = _('en');
-
-// Used to produce a description
-const templateData = {
-  pageType: 'settings',
-};
 
 /**
  * Renders the /settings page.
@@ -22,6 +15,11 @@ const SettingsPage = ({
   pageContext: {
     logoSrc,
     splashLogoSrc,
+    stringLiterals: {
+      title,
+      pageDescription,
+      settings,
+    },
   },
   dispatch,
   isDarkMode,
@@ -30,9 +28,9 @@ const SettingsPage = ({
   return (
     <>
       <Meta
-        title={ _l('Settings') }
+        title={ title }
         logoSrc={ splashLogoSrc }
-        description={ _l`site.pageDescription${templateData}` }
+        description={ pageDescription }
       />
       <Shell
         logoSrc={ logoSrc }
@@ -43,7 +41,7 @@ const SettingsPage = ({
         withTitle
       >
         <PageTitle>
-          { _l('Settings') }
+          { title }
         </PageTitle>
         <SimpleCard>
           <Toggle
@@ -52,7 +50,7 @@ const SettingsPage = ({
               dispatch(toggleDarkMode(!isDarkMode));
             } }
           >
-            { _l('settings.dark_mode') }
+            { settings.darkMode }
           </Toggle>
           <Toggle
             checked={ !!hasGithubLinksEnabled }
@@ -60,7 +58,7 @@ const SettingsPage = ({
               dispatch(toggleGithubLinks(!hasGithubLinksEnabled));
             } }
           >
-            { _l('settings.github_links') }
+            { settings.githubLinks }
           </Toggle>
         </SimpleCard>
 

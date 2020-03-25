@@ -3,8 +3,7 @@ import { Provider } from 'react-redux';
 import createStore from 'state';
 import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import _ from 'lang';
-const _l = _('en');
+import literals from 'lang/en/settings';
 
 import SettingsPage from './index';
 
@@ -21,7 +20,7 @@ describe('<SettingsPage />', () => {
   beforeEach(() => {
     wrapper = mount(
       <Provider store={ store }>
-        <SettingsPage pageContext={ { logoSrc, splashLogoSrc } } />
+        <SettingsPage pageContext={ { logoSrc, splashLogoSrc, stringLiterals: literals } } />
       </Provider>
     );
     shell = wrapper.find('Shell');
@@ -52,7 +51,7 @@ describe('<SettingsPage />', () => {
 
   it('should pass the correct data to the Meta component', () => {
     expect(meta.prop('logoSrc')).toBe(splashLogoSrc);
-    expect(meta.prop('title')).toBe(_l('Settings'));
+    expect(meta.prop('title')).toBe(literals.title);
   });
 });
 
