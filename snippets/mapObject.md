@@ -5,13 +5,12 @@ tags: array,object,advanced
 
 Maps the values of an array to an object using a function, where the key-value pairs consist of the stringified value as the key and the mapped value.
 
-Use an anonymous inner function scope to declare an undefined memory space, using closures to store a return value. Use a new `Array` to store the array with a map of the function over its data set and a comma operator to return a second step, without needing to move from one context to another (due to closures and order of operations).
+Use `Array.prototype.map()` to convert each element in `arr` to an `Object` literal with one property.
+Use `el` as the property's name (`el.toString()` will be called internally), and call the passed `fn` with `el` to derive the property's value.
+Use the `spread` operator (`...`) to call `Object.assign()` with the elements of the mapped array.
 
 ```js
-const mapObject = (arr, fn) =>
-  (a => (
-    (a = [arr, arr.map(fn)]), a[0].reduce((acc, val, ind) => ((acc[val] = a[1][ind]), acc), {})
-  ))();
+const mapObject = (arr, fn) => Object.assign(...arr.map(el => ({ [el]: fn(el) })));
 ```
 
 ```js
