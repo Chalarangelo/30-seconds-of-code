@@ -43,12 +43,8 @@ module.exports = {
       path: `notFoundPage/index.jsx`,
     },
     {
-      name: `AboutPage`,
-      path: `aboutPage/index.jsx`,
-    },
-    {
-      name: `CookiePage`,
-      path: `cookiePage/index.jsx`,
+      name: `StaticPage`,
+      path: `staticPage/index.jsx`,
     },
     {
       name: `SettingsPage`,
