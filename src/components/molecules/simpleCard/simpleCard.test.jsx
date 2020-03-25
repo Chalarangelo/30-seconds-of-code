@@ -9,10 +9,11 @@ configure({ adapter: new Adapter() });
 describe('<SimpleCard />', () => {
   let wrapper;
   const innerText = 'This is a card';
+  const innerHTML = {__html: '<p>This is a card</p>'};
   const title = 'Simple card';
 
   beforeEach(() => {
-    wrapper = mount(<SimpleCard title={ title } className='special'>{ innerText }</SimpleCard>);
+    wrapper = mount(<SimpleCard title={ title } className='special' />);
   });
 
   it('should render correctly', () => {
@@ -28,9 +29,26 @@ describe('<SimpleCard />', () => {
     expect(wrapper.text()).toContain(title);
   });
 
-  it('should render passed children', () => {
-    expect(wrapper.text()).toContain(innerText);
+  describe('with children', () => {
+    beforeEach(() => {
+      wrapper = mount(<SimpleCard title={ title } className='special' >{ innerText }</SimpleCard>);
+    });
+
+    it('should render passed children', () => {
+      expect(wrapper.text()).toContain(innerText);
+    });
   });
+
+  describe('with inner HTML', () => {
+    beforeEach(() => {
+      wrapper = mount(<SimpleCard title={ title } className='special' dangerouslySetInnerHTML={ innerHTML }/>);
+    });
+
+    it('should render passed children', () => {
+      expect(wrapper.html()).toContain(innerHTML.__html);
+    });
+  });
+
 
 });
 
