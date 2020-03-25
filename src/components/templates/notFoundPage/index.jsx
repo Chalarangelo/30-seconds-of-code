@@ -1,9 +1,9 @@
 import React from 'react';
 import Meta from 'components/atoms/meta';
-import Shell from 'components/organisms/shell';
+import PageTitle from 'components/atoms/pageTitle';
 import { AnchorButton } from 'components/atoms/button';
 import PageBackdrop from 'components/molecules/pageBackdrop';
-import PageTitle from 'components/atoms/pageTitle';
+import Shell from 'components/organisms/shell';
 import PropTypes from 'prop-types';
 import _ from 'lang';
 const _l = _('en');

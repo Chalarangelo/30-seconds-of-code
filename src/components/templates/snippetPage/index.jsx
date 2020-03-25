@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import SnippetCard from 'components/organisms/snippetCard';
-import Breadcrumbs from 'components/atoms/breadcrumbs';
 import Meta from 'components/atoms/meta';
-import { Snippet as SnippetPropType, Link as LinkPropType } from 'typedefs';
-import PropTypes from 'prop-types';
+import Breadcrumbs from 'components/atoms/breadcrumbs';
 import Shell from 'components/organisms/shell';
+import SnippetCard from 'components/organisms/snippetCard';
 import RecommendationList from 'components/organisms/recommendationList';
 import CTA from 'components/organisms/cta';
+import { Snippet as SnippetPropType, Link as LinkPropType } from 'typedefs';
+import PropTypes from 'prop-types';
 import _ from 'lang';
 const _l = _('en');
 
