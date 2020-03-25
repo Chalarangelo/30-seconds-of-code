@@ -24,7 +24,7 @@ module.exports = {
   // Path information
   assetPath: `assets`,
   contentPath: `${__dirname}/content`,
-  templatesPath: `./src/templates`,
+  templatesPath: `./src/components/templates`,
   templates: [
     {
       name: `SnippetPage`,
