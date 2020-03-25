@@ -8,17 +8,13 @@ configure({ adapter: new Adapter() });
 console.warn = jest.fn();
 
 describe('<CTA />', () => {
-  const snippetUrl = 'https://google.com';
   const acceptsCookies = false;
 
   let wrapper;
 
   beforeEach(() => {
     wrapper = mount(
-      <CTA
-        snippetUrl={ snippetUrl }
-        acceptsCookies={ acceptsCookies }
-      />
+      <CTA acceptsCookies={ acceptsCookies } />
     );
   });
 

@@ -45,10 +45,7 @@ const SnippetList = ({
           />
           {
             i === ctaIndex ?
-              <CTA
-                onlySocial
-                acceptsCookies={ acceptsCookies }
-              />
+              <CTA acceptsCookies={ acceptsCookies } />
               : null
           }
         </>
