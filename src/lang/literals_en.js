@@ -2,16 +2,6 @@ import { capitalize } from 'functions/utils';
 import config from '../../config';
 
 const literals = {
-  'cta.': ctaId => {
-    switch (ctaId) {
-    case 'github':
-      return 'Star it on GitHub';
-    case 'twitter':
-      return 'Follow on Twitter';
-    default:
-      return '';
-    }
-  },
   // Site metadata
   'site.title': config.name,
   'site.description': config.description,
@@ -87,7 +77,6 @@ const literals = {
   'You can learn more by reading our ': ' You can learn more by reading our ',
   'cookie policy': 'cookie policy',
   'Recommended snippets': 'Recommended snippets',
-  'Like 30 seconds of code?': 'Like 30 seconds of code?',
   'We couldn\'t find any results for the keyphrase ': 'We couldn\'t find any results for the keyphrase ',
   'Blog': 'Blog',
 };

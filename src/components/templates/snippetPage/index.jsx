@@ -70,11 +70,7 @@ const SnippetPage = ({
           cardTemplate={ cardTemplate }
           snippet={ snippet }
         />
-        <CTA
-          onlySocial={ cardTemplate === 'blog' }
-          snippetUrl={ snippet.url.split('/').slice(0, 5).join('/') }
-          acceptsCookies={ acceptsCookies }
-        />
+        <CTA acceptsCookies={ acceptsCookies } />
         <RecommendationList snippetList={ recommendedSnippets } />
       </Shell>
     </>
