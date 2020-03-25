@@ -11,6 +11,7 @@ const SimpleCard = ({
   className,
   title,
   children,
+  dangerouslySetInnerHTML,
   ...rest
 }) => (
   <Card
@@ -20,9 +21,17 @@ const SimpleCard = ({
     <h4 className='card-title'>
       { title }
     </h4>
-    <div className='card-description'>
-      { children }
-    </div>
+    {
+      dangerouslySetInnerHTML ? (
+        <div
+          className='card-description'
+          dangerouslySetInnerHTML={ dangerouslySetInnerHTML } />
+      ) : (
+        <div className='card-description'>
+          { children }
+        </div>
+      )
+    }
   </Card>
 );
 
@@ -36,6 +45,10 @@ SimpleCard.propTypes = {
     PropTypes.node,
     PropTypes.arrayOf(PropTypes.node),
   ]),
+  /** The card's inner HTML, if provided */
+  dangerouslySetInnerHTML: PropTypes.shape({
+    __html: PropTypes.string,
+  }),
   /** Any other arguments to be passed to the card */
   rest: PropTypes.any,
 };
