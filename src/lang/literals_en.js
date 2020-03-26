@@ -5,17 +5,6 @@ const literals = {
   'site.title': config.name,
   'site.description': config.description,
   'site.author': config.author,
-  // Site metadata description generation
-  'site.pageDescription': (pageData = { pageType: ''}) => {
-    const defaultDescription = `Find ${config.description.toLowerCase()} on ${config.name}.`;
-    switch (pageData.pageType) {
-    case 'snippet':
-      return `Learn how to code a ${pageData.snippetName} snippet in ${pageData.snippetLanguage} on ${config.name}.`;
-    case 'home':
-    default:
-      return defaultDescription;
-    }
-  },
   // Literals
   'Expertise': level => `${level}`,
   'Search snippets': 'Search snippets',

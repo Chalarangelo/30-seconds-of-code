@@ -1,5 +1,6 @@
 import { stripMarkdownFormat } from 'functions/utils';
 import { transformTagName } from './transformTags';
+import literals from 'lang/en/snippet';
 
 /**
 * Transform the indexed snippets to the appropriate format.
@@ -19,6 +20,16 @@ export const transformSnippetIndex = edges =>
       url: node.slug,
       searchTokens: node.searchTokens,
     }));
+
+/**
+* Given a snippet object with key-value pairs, creates an appropriate description.
+*
+* Used in snippet pages to render the page description.
+*/
+export const transformSnippetDescription = (snippet, cardTemplate) =>
+  cardTemplate === 'blog'
+    ? stripMarkdownFormat(snippet.text.short)
+    : literals.pageDescription(snippet.title, snippet.language.long);
 
 /**
 * Given a snippet object with key-value pairs, removes all unnecessary
