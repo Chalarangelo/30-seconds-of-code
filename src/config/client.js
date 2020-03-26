@@ -4,4 +4,5 @@ export default {
   discordUrl: 'https://discordapp.com/invite/SajZAJc',
   licenseUrl: 'https://creativecommons.org/publicdomain/zero/1.0/',
   orgName: '30-seconds',
+  websiteName: '30 seconds of code',
 };

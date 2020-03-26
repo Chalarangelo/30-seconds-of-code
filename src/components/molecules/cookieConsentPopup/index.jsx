@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Anchor from 'components/atoms/anchor';
 import { Button } from 'components/atoms/button';
-import _ from 'lang';
-const _l = _('en');
+import literals from 'lang/en/client/cookieConsent';
 
 /**
  * Renders the popup for cookie consent.
@@ -16,8 +15,8 @@ const CookieConsentPopup = ({
 }) => (
   <div className='cookie-consent-popup' { ...rest }>
     <p>
-      { _l('Our website uses tools such as cookies to provide a high quality personalized experience and gather anonymized data for statistical analisis of the website\'s traffic.') }
-      { _l('You can learn more by reading our ') }
+      { literals.cookieDisclaimer }
+      { literals.learnMore }
       <Anchor
         link={ {
           internal: true,
@@ -25,18 +24,18 @@ const CookieConsentPopup = ({
         } }
         className='footer-link'
       >
-        { _l('cookie policy') }
+        { literals.cookiePolicy }
       </Anchor>
-      { _l('.') }
+      { '.' }
       <br/>
-      { _l('By clicking "Accept" you accept their installation.') }
+      { literals.whatYouAccept }
     </p>
     <div className='cookie-consent-buttons'>
       <Button className='cookie-accept' onClick={ onAccept }>
-        { _l('Accept') }
+        { literals.accept }
       </Button>
       <Button className='cookie-decline' onClick={ onDecline }>
-        { _l('Decline') }
+        { literals.decline }
       </Button>
     </div>
   </div>
