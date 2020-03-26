@@ -8,11 +8,6 @@ import _ from 'lang';
 import { pushNewPage } from 'state/navigation';
 const _l = _('en');
 
-// Used to produce a description
-const templateData = {
-  pageType: 'search',
-};
-
 /**
  * Renders the /search page.
  */
@@ -20,8 +15,8 @@ const SearchPage = ({
   pageContext: {
     logoSrc,
     splashLogoSrc,
-    snippetCount,
     recommendedSnippets,
+    pageDescription,
   },
   searchQuery,
   dispatch,
@@ -34,7 +29,7 @@ const SearchPage = ({
     <>
       <Meta
         logoSrc={ splashLogoSrc }
-        description={ _l`site.pageDescription${{...templateData, snippetCount }}` }
+        description={ pageDescription }
         title={ searchQuery.length === 0 ? _l('Search') : _l`Search results for${searchQuery}` }
       />
       <Shell
@@ -57,8 +52,8 @@ SearchPage.propTypes = {
     logoSrc: PropTypes.string.isRequired,
     /** URI for the splash logo image */
     splashLogoSrc: PropTypes.string.isRequired,
-    /** Number of indexed snippets */
-    snippetCount: PropTypes.number,
+    /** Page description */
+    pageDescription: PropTypes.string.isRequired,
     /** List of recommended snippets */
     recommendedSnippets: PropTypes.arrayOf(PropTypes.shape({})),
   }),
