@@ -10,17 +10,6 @@ const literals = {
   'site.pageDescription': (pageData = { pageType: ''}) => {
     const defaultDescription = `Find ${config.description.toLowerCase()} on ${config.name}.`;
     switch (pageData.pageType) {
-    case 'listing':
-      switch (pageData.listingType) {
-      case 'language':
-        return `Browse ${pageData.snippetCount} ${pageData.listingLanguage} code snippets for all your development needs on ${config.name}.`;
-      case 'tag':
-        return `Browse ${pageData.snippetCount} ${pageData.listingLanguage} ${capitalize(pageData.listingTag)} code snippets for all your development needs on ${config.name}.`;
-      case 'main':
-        return `Browse ${pageData.snippetCount} ${config.description.toLowerCase()} on ${config.name}.`;
-      default:
-        return defaultDescription;
-      }
     case 'search':
       return `Search for answers to your development problems among ${pageData.snippetCount} code snippets on ${config.name}.`;
     case 'snippet':

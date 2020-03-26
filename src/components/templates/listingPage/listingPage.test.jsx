@@ -38,12 +38,15 @@ describe('<ListingPage />', () => {
   ];
   const listingName = 'Snippet list';
   const listingTitle = 'Snippet list';
+  const pageDescription = 'Browse 100 snippets on 30 seconds of code';
   let wrapper, shell, meta, snippetListComponent;
 
   beforeEach(() => {
     wrapper = mount(
       <Provider store={ store }>
-        <ListingPage pageContext={ { logoSrc, splashLogoSrc, snippetList, paginator, sorter, listingName, listingTitle } } />
+        <ListingPage pageContext={ {
+          logoSrc, splashLogoSrc, snippetList, paginator, sorter, listingName, listingTitle, pageDescription,
+        } } />
       </Provider>
     );
     shell = wrapper.find('Shell');
