@@ -10,8 +10,7 @@ import {
   Snippet as SnippetPropType
 } from 'typedefs';
 import { pushNewPage } from 'state/navigation';
-import _ from 'lang';
-const _l = _('en');
+import literals from 'lang/en/client/common';
 
 /**
  * Renders the /list/p/1 page and any other listing pages.
@@ -64,15 +63,15 @@ const ListingPage = ({
               <h1 className='home-title'>
                 <img
                   src={ logoSrc }
-                  alt={ _l('Logo') }
+                  alt={ literals.siteName }
                   className='home-logo'
                 />
                 <span className='home-title-text'>
-                  { _l('site.title') }
+                  { literals.siteName }
                 </span>
               </h1>
               <p className='home-sub-title'>
-                { _l('site.description') }
+                { literals.siteDescription }
               </p>
             </>
           ) : null

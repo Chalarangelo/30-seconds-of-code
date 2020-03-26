@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import { Meta as MetaPropType } from 'typedefs';
-import _ from 'lang';
 import config from '../../../../config';
+import literals from 'lang/en/client/common';
 
 require('styles/index.scss'); // Do not change this to `import`, it's not going to work, no clue why
 
@@ -23,8 +23,7 @@ const Meta = ({
   breadcrumbsData,
   canonical = '',
 }) => {
-  const _l = _(locale);
-  const metaDescription = description || _l('site.pageDescription');
+  const metaDescription = description || literals.siteDescription;
 
   // Load scripts
   const scripts = [];
@@ -119,8 +118,8 @@ const Meta = ({
       htmlAttributes={ {
         lang: locale,
       } }
-      title={ title ? title : _l('site.title') }
-      titleTemplate={ title ? `%s - ${_l('site.title')}` : '%s' }
+      title={ title ? title : literals.siteName }
+      titleTemplate={ title ? `%s - ${literals.siteName}` : '%s' }
       meta={ [
         {
           name: `description`,
@@ -132,7 +131,7 @@ const Meta = ({
         },
         {
           property: `og:title`,
-          content: title ? `${title} - ${_l('site.title')}` : _l('site.title'),
+          content: title ? `${title} - ${literals.siteName}` : literals.siteName,
         },
         {
           property: `og:description`,
@@ -156,7 +155,7 @@ const Meta = ({
         },
         {
           name: `twitter:title`,
-          content: title ? `${title}` : _l('site.title'),
+          content: title ? `${title}` : literals.siteName,
         },
         {
           name: `twitter:description`,
