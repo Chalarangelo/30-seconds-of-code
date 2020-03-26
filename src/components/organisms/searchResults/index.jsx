@@ -3,11 +3,10 @@ import { connect } from 'react-redux';
 import PageBackdrop from 'components/molecules/pageBackdrop';
 import PropTypes from 'prop-types';
 import { Snippet as SnippetPropType } from 'typedefs';
-import _ from 'lang';
 import PageTitle from 'components/atoms/pageTitle';
 import PreviewCard from 'components/molecules/previewCard';
 import RecommendationList from 'components/organisms/recommendationList';
-const _l = _('en');
+import literals from 'lang/en/client/search';
 
 // eslint-disable-next-line complexity
 const SearchResults = ({
@@ -19,7 +18,7 @@ const SearchResults = ({
   return hasResults ? (
     <>
       <PageTitle isLight>
-        { _l('Search results') }
+        { literals.results }
       </PageTitle>
       { searchResults.map(snippet => (
         <PreviewCard
@@ -33,13 +32,8 @@ const SearchResults = ({
       <PageBackdrop
         graphicName={ searchQuery.trim().length <= 1 ? 'search-empty' : 'search-no-results' }
         mainText={ searchQuery.trim().length <= 1
-          ? _l('Start typing a keyphrase to see matching snippets.')
-          : (
-            <>
-              { _l('We couldn\'t find any results for the keyphrase ') }<strong>{ searchQuery }</strong>
-              { _l('.') }
-            </>
-          )
+          ? literals.searchPrompt
+          : ( <>{ literals.noResults }<strong>{ searchQuery }</strong>{ '.' }</> )
         }
         mainTextClassName='search-page-text'
       />

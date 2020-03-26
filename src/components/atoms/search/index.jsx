@@ -3,10 +3,9 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { trimWhiteSpace, getURLParameters, throttle, getBaseURL, getRootURL } from 'functions/utils';
 import { pushNewQuery, searchByKeyphrase } from 'state/search';
-import _ from 'lang';
 import { useFetchSearchIndex } from 'functions/hooks';
 import { AnchorButton } from 'components/atoms/button';
-const _l = _('en');
+import literals from 'lang/en/client/search';
 
 const handleHistoryUpdate = value => {
   if (typeof window !== 'undefined' && typeof window.location !== 'undefined' && typeof window.history !== 'undefined') {
@@ -17,13 +16,13 @@ const handleHistoryUpdate = value => {
       (encodedValue.includes(params.keyphrase) || params.keyphrase.includes(encodedValue))) {
       window.history.replaceState(
         { keyphrase: value },
-        `Search results for ${value}`,
+        literals.resultsFor(value),
         `${baseURL}${value ? `?keyphrase=${encodedValue}` : ''}`
       );
     } else {
       window.history.pushState(
         { keyphrase: value },
-        `Search results for ${value}`,
+        literals.resultsFor(value),
         `${baseURL}${value ? `?keyphrase=${encodedValue}` : ''}`
       );
     }
@@ -77,8 +76,8 @@ const Search = ({
         className={ trimWhiteSpace`search-box ${className}` }
         type='search'
         id={ id }
-        placeholder={ _l('Search...') }
-        aria-label={ _l('Search snippets') }
+        placeholder={ literals.searchPlaceholder }
+        aria-label={ literals.searchSnippets }
         onKeyUp={ e => {
           setValue(e.target.value);
         } }

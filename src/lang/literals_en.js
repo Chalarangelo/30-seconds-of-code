@@ -7,13 +7,7 @@ const literals = {
   'site.author': config.author,
   // Literals
   'Expertise': level => `${level}`,
-  'Search snippets': 'Search snippets',
-  'Search...': 'Search...',
-  'Search': 'Search',
-  'Search results for': keyphrase => `Search results for ${keyphrase}`,
-  'Search results': 'Search results',
   'Click to view more snippets': 'Click to view more snippets',
-  'Start typing a keyphrase to see matching snippets.': 'Start typing a keyphrase to see matching snippets.',
   'Logo': 'Logo',
   '...': '...',
   '404': '404',
@@ -28,7 +22,6 @@ const literals = {
   'You can learn more by reading our ': ' You can learn more by reading our ',
   'cookie policy': 'cookie policy',
   'Recommended snippets': 'Recommended snippets',
-  'We couldn\'t find any results for the keyphrase ': 'We couldn\'t find any results for the keyphrase ',
   'Blog': 'Blog',
 };
 
