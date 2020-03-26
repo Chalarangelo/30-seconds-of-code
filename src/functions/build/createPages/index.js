@@ -124,6 +124,7 @@ const createPages = (query, templates, requirables) => ({ graphql, actions }) =>
         {
           ...commonContext,
           searchIndex: transformSnippetIndex(searchIndex.edges),
+          pageDescription: literals.search.pageDescription(searchIndex.edges.length),
         },
         '/search_index'
       );
@@ -134,6 +135,7 @@ const createPages = (query, templates, requirables) => ({ graphql, actions }) =>
         {
           ...commonContext,
           recommendedSnippets: transformSnippetIndex(searchIndex.edges.slice(0, 3)),
+          pageDescription: literals.search.pageDescription(searchIndex.edges.length),
         }
       );
 

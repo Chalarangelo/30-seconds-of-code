@@ -1,4 +1,3 @@
-import { capitalize } from 'functions/utils';
 import config from '../../config';
 
 const literals = {
@@ -10,8 +9,6 @@ const literals = {
   'site.pageDescription': (pageData = { pageType: ''}) => {
     const defaultDescription = `Find ${config.description.toLowerCase()} on ${config.name}.`;
     switch (pageData.pageType) {
-    case 'search':
-      return `Search for answers to your development problems among ${pageData.snippetCount} code snippets on ${config.name}.`;
     case 'snippet':
       return `Learn how to code a ${pageData.snippetName} snippet in ${pageData.snippetLanguage} on ${config.name}.`;
     case 'home':
