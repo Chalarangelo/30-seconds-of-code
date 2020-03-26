@@ -4,9 +4,8 @@ import Meta from 'components/atoms/meta';
 import Shell from 'components/organisms/shell';
 import SearchResults from 'components/organisms/searchResults';
 import PropTypes from 'prop-types';
-import _ from 'lang';
 import { pushNewPage } from 'state/navigation';
-const _l = _('en');
+import literals from 'lang/en/client/search';
 
 /**
  * Renders the /search page.
@@ -22,7 +21,7 @@ const SearchPage = ({
   dispatch,
 }) => {
   React.useEffect(() => {
-    dispatch(pushNewPage('Search', '/search'));
+    dispatch(pushNewPage(literals.search, '/search'));
   }, []);
 
   return (
@@ -30,7 +29,7 @@ const SearchPage = ({
       <Meta
         logoSrc={ splashLogoSrc }
         description={ pageDescription }
-        title={ searchQuery.length === 0 ? _l('Search') : _l`Search results for${searchQuery}` }
+        title={ searchQuery.length === 0 ? literals.search : literals.resultsFor(searchQuery) }
       />
       <Shell
         logoSrc={ logoSrc }
