@@ -6,6 +6,7 @@ import Expertise from 'components/atoms/expertise';
 import { Snippet as SnippetPropType } from 'typedefs';
 import { trimWhiteSpace } from 'functions/utils';
 import TagList from 'components/atoms/tagList';
+import literals from 'lang/en/client/common';
 import _ from 'lang';
 const _l = _('en');
 
@@ -41,7 +42,7 @@ const PreviewCard = ({
             [
               snippet.language ? snippet.language : null,
               snippet.primaryTag ? snippet.primaryTag : null,
-              snippet.icon === 'blog' ? _l('Blog') : null,
+              snippet.icon === 'blog' ? literals.blog : null,
               snippet.expertise ? snippet.expertise : null,
             ]
           }

@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import PreviewCard from 'components/molecules/previewCard';
 import PageSubtitle from 'components/atoms/pageSubtitle';
 import { Snippet as SnippetPropType } from 'typedefs';
-import _ from 'lang';
-const _l = _('en');
+import literals from 'lang/en/client/common';
 
 const RecommendationList = ({
   snippetList,
@@ -12,7 +11,7 @@ const RecommendationList = ({
   return snippetList.length ? (
     <>
       <PageSubtitle isLight className='recommendation-list-title'>
-        { _l('Recommended snippets') }
+        { literals.recommendedSnippets }
       </PageSubtitle>
       { snippetList.map(snippet => (
         <PreviewCard

@@ -5,6 +5,9 @@ const literals = {
   examples: 'Examples',
   preview: 'Preview',
   viewOnGitHub: 'View on GitHub',
+  home: 'Home',
+  recommendedSnippets: 'Recommended snippets',
+  blog: 'Blog',
 };
 
 export default literals;
