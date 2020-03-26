@@ -1,6 +1,9 @@
 import { recommendationEngine } from 'engines';
 import {
-  transformSnippetIndex, transformSnippetContext, transformBreadcrumbs
+  transformSnippetIndex,
+  transformSnippetContext,
+  transformSnippetDescription,
+  transformBreadcrumbs
 } from 'functions/transformers';
 
 /**
@@ -24,6 +27,7 @@ const createSnippetPages = (
         ...commonContext,
         recommendedSnippets: transformSnippetIndex(recommendedSnippets.slice(0, 3)),
         breadcrumbs: transformBreadcrumbs(snippet.node, commonContext.cardTemplate),
+        pageDescription: transformSnippetDescription(snippet.node, commonContext.cardTemplate),
       },
     });
   });

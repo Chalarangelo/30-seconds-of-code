@@ -12,6 +12,7 @@ import {
 
 import {
   transformSnippetIndex,
+  transformSnippetDescription,
   transformSnippetContext
 } from './transformSnippets';
 
@@ -23,5 +24,6 @@ export {
   stripExpertiseFromTags,
   transformBreadcrumbs,
   transformSnippetIndex,
+  transformSnippetDescription,
   transformSnippetContext
 };

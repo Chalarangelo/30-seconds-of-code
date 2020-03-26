@@ -8,17 +8,6 @@ import RecommendationList from 'components/organisms/recommendationList';
 import CTA from 'components/organisms/cta';
 import { Snippet as SnippetPropType, Link as LinkPropType } from 'typedefs';
 import PropTypes from 'prop-types';
-import _ from 'lang';
-const _l = _('en');
-
-// Used to produce a description
-const templateData = {
-  pageType: 'snippet',
-};
-
-const determineDescription = (snippet, cardTemplate) =>
-  (cardTemplate === 'blog') ? snippet.description :
-    _l`site.pageDescription${{...templateData, snippetName: snippet.title, snippetLanguage: snippet.language.long }}`;
 
 const SnippetPage = ({
   pageContext: {
@@ -28,6 +17,7 @@ const SnippetPage = ({
     cardTemplate,
     recommendedSnippets = [],
     breadcrumbs,
+    pageDescription,
   },
   lastPageTitle,
   lastPageUrl,
@@ -37,7 +27,7 @@ const SnippetPage = ({
     <>
       <Meta
         title={ snippet.title }
-        description={ determineDescription(snippet, cardTemplate) }
+        description={ pageDescription }
         logoSrc={ cardTemplate === 'blog' ? snippet.cover.src : splashLogoSrc }
         structuredData={ {
           title: snippet.title,
@@ -91,6 +81,8 @@ SnippetPage.propTypes = {
     cardTemplate: PropTypes.string,
     /** List of recommended snippets */
     recommendedSnippets: PropTypes.arrayOf(SnippetPropType),
+    /** Page description */
+    pageDescription: PropTypes.string.isRequired,
     /** Breadcrumbs data */
     breadcrumbs: PropTypes.arrayOf(
       PropTypes.shape({

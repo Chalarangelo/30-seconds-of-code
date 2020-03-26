@@ -4,6 +4,7 @@ import cookies from './cookies';
 import settings from './settings';
 import listing from './listing';
 import search from './search';
+import snippet from './snippet';
 
 export default {
   site,
@@ -12,4 +13,5 @@ export default {
   settings,
   listing,
   search,
+  snippet,
 };
