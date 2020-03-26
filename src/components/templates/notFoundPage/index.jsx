@@ -5,8 +5,7 @@ import { AnchorButton } from 'components/atoms/button';
 import PageBackdrop from 'components/molecules/pageBackdrop';
 import Shell from 'components/organisms/shell';
 import PropTypes from 'prop-types';
-import _ from 'lang';
-const _l = _('en');
+import literals from 'lang/en/client/notFound';
 
 /**
  * Renders the /404 page.
@@ -21,7 +20,7 @@ const NotFoundPage = ({
     <>
       <Meta
         logoSrc={ splashLogoSrc }
-        title={ _l('Page not found') }
+        title={ literals.pageNotFound }
       />
       <Shell
         logoSrc={ logoSrc }
@@ -30,16 +29,16 @@ const NotFoundPage = ({
         withIcon={ true }
         withTitle={ true }
       >
-        <PageTitle>{ _l('404') }</PageTitle>
+        <PageTitle>{ literals.fourOhFour }</PageTitle>
         <PageBackdrop
           graphicName='page-not-found'
           mainText={ (
             <>
-              <strong>{ _l('Page not found') }</strong>
+              <strong>{ literals.pageNotFound }</strong>
               <br />
             </>
           ) }
-          subText={ _l('Seems like you have reached a page that does not exist.') }
+          subText={ literals.notFoundDescription }
         >
           <AnchorButton
             link={ {
@@ -48,7 +47,7 @@ const NotFoundPage = ({
             } }
             className='btn-home icon icon-home'
           >
-            { _l('Go home') }
+            { literals.goHome }
           </AnchorButton>
         </PageBackdrop>
       </Shell>
