@@ -13,11 +13,6 @@ import { pushNewPage } from 'state/navigation';
 import _ from 'lang';
 const _l = _('en');
 
-// Used to produce a description
-const templateData = {
-  pageType: 'listing',
-};
-
 /**
  * Renders the /list/p/1 page and any other listing pages.
  */
@@ -30,11 +25,9 @@ const ListingPage = ({
     snippetList,
     listingName,
     listingTitle,
-    snippetCount,
     listingType,
-    listingLanguage,
-    listingTag,
     listingSublinks = [],
+    pageDescription,
   },
   dispatch,
 }) => {
@@ -55,7 +48,7 @@ const ListingPage = ({
       <Meta
         logoSrc={ splashLogoSrc }
         title={ isHomePage ? '' : listingName }
-        description={ _l`site.pageDescription${{...templateData, snippetCount, listingType, listingLanguage, listingTag }}` }
+        description={ pageDescription }
         canonical={ isHomePage ? '/' : '' }
       />
       <Shell
@@ -114,16 +107,12 @@ ListingPage.propTypes = {
     listingName: PropTypes.string,
     /** Title of this listing page */
     listingTitle: PropTypes.string,
-    /**  Number of indexed snippets */
-    snippetCount: PropTypes.number,
     /** Type metadata for the listing description */
     listingType: PropTypes.string,
-    /** Language metadata for the listing description */
-    listingLanguage: PropTypes.string,
-    /** Tag metadata for the listing description */
-    listingTag: PropTypes.string,
     /** Links to sublists */
     listingSublinks: PropTypes.arrayOf(PropTypes.shape({})),
+    /** Page description */
+    pageDescription: PropTypes.string.isRequired,
   }),
   /** Dispatch function of the Redux stotre */
   dispatch: PropTypes.func,
