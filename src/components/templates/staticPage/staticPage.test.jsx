@@ -3,8 +3,6 @@ import { Provider } from 'react-redux';
 import createStore from 'state';
 import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import _ from 'lang';
-const _l = _('en');
 import aboutLiterals from 'lang/en/about';
 
 import StaticPage from './index';
@@ -59,7 +57,7 @@ describe('<StaticPage />', () => {
 
   it('should pass the correct data to the Meta component', () => {
     expect(meta.prop('logoSrc')).toBe(splashLogoSrc);
-    expect(meta.prop('title')).toBe(_l('About'));
+    expect(meta.prop('title')).toBe(aboutLiterals.title);
   });
 });
 

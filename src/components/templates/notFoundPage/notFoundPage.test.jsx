@@ -3,8 +3,7 @@ import { Provider } from 'react-redux';
 import createStore from 'state';
 import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import _ from 'lang';
-const _l = _('en');
+import literals from 'lang/en/client/notFound';
 
 import NotFoundPage from './index';
 
@@ -56,7 +55,7 @@ describe('<NotFoundPage />', () => {
 
   it('should pass the correct data to the Meta component', () => {
     expect(meta.prop('logoSrc')).toBe(splashLogoSrc);
-    expect(meta.prop('title')).toBe(_l('Page not found'));
+    expect(meta.prop('title')).toBe(literals.pageNotFound);
   });
 
   it('should pass the correct graphic name to the PageBackdrop component', () => {

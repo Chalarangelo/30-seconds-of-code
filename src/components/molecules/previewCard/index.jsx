@@ -7,8 +7,6 @@ import { Snippet as SnippetPropType } from 'typedefs';
 import { trimWhiteSpace } from 'functions/utils';
 import TagList from 'components/atoms/tagList';
 import literals from 'lang/en/client/common';
-import _ from 'lang';
-const _l = _('en');
 
 /**
  * General-purpose snippet preview card.
