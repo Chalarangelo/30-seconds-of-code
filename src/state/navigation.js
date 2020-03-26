@@ -1,6 +1,8 @@
+import literals from 'lang/en/client/common';
+
 // Default state
 const initialState = {
-  lastPageTitle: 'Home',
+  lastPageTitle: literals.home,
   lastPageUrl: '/',
 };
 
