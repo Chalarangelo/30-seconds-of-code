@@ -20,18 +20,19 @@ const {
   parseResolvers,
   parseTemplates,
 } = require(`./src/functions/parsers`);
-const config = require('./config');
+const paths = require(`./src/config/paths`);
 
-const requirables = parseRequirables(config.contentPath);
+const requirables = parseRequirables(paths.contentPath);
 console.log(`${green('success')} parse requirables`);
+console.log(requirables);
 
-const reducers = parseReducers(config.contentPath);
+const reducers = parseReducers(paths.contentPath);
 console.log(`${green('success')} parse reducers`);
 
-const resolvers = parseResolvers(config.contentPath);
+const resolvers = parseResolvers(paths.contentPath);
 console.log(`${green('success')} parse resolvers`);
 
-const templates = parseTemplates(config.templates, config.templatesPath);
+const templates = parseTemplates(paths.templates, paths.templatesPath);
 console.log(`${green('success')} parse templates`);
 
 const pagesQuery = parseQueries(getLogoSrc, createPagesQuery, getSearchIndex, getImages);

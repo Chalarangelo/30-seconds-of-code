@@ -1,7 +1,7 @@
 import glob from 'glob';
 import path from 'path';
 import fs from 'fs-extra';
-import config from '../../config';
+const paths = require('config/paths');
 
 /**
  * Read content configs, generating the SCSS code for their preview card icons.
@@ -27,4 +27,4 @@ const parseConfigs = contentDirPath => {
   fs.writeFileSync(`${__dirname}/../../src/styles/_icon_colors.scss`, scss);
 };
 
-parseConfigs(config.contentPath);
+parseConfigs(paths.contentPath);

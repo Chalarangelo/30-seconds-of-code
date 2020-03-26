@@ -2,6 +2,7 @@
 const { parseConfigs } = require('functions/parsers');
 
 const config = require('./config');
+const paths = require('config/paths');
 
 module.exports = {
   siteMetadata: {
@@ -18,7 +19,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `assets`,
-        path: `${__dirname}/${config.assetPath}`,
+        path: `${__dirname}/${paths.assetPath}`,
       },
     },
     {
