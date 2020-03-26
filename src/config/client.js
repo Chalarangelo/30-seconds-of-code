@@ -5,4 +5,5 @@ export default {
   licenseUrl: 'https://creativecommons.org/publicdomain/zero/1.0/',
   orgName: '30-seconds',
   websiteName: '30 seconds of code',
+  websiteDescription: 'Short code snippets for all your development needs',
 };

@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import { Link as LinkPropType } from 'typedefs';
 import Anchor from 'components/atoms/anchor';
 import Search from 'components/atoms/search';
-import _ from 'lang';
-const _l = _('en');
+import literals from 'lang/en/client/common';
 
 /**
  * Renders a group of navigational elements.
@@ -25,7 +24,7 @@ const NavBar = ({
     >
       <img
         src={ logoSrc }
-        alt={ _l('Logo') }
+        alt={ literals.home }
         className='nav-website-logo'
       />
     </Anchor>

@@ -1,3 +1,5 @@
+import config from 'config/client';
+
 const literals = {
   copyToClipboard: 'Copy to clipboard',
   browserSupport: 'Browser support',
@@ -8,6 +10,9 @@ const literals = {
   home: 'Home',
   recommendedSnippets: 'Recommended snippets',
   blog: 'Blog',
+  siteName: config.websiteName,
+  siteAuthor: config.orgName,
+  siteDescription: config.websiteDescription,
 };
 
 export default literals;
