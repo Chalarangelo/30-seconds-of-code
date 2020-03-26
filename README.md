@@ -23,4 +23,4 @@
 * This repository is maintained by the [30-seconds organization on GitHub](https://github.com/30-seconds).
 * All snippets are licensed under the CC0-1.0 License, unless explicitly stated otherwise.
 * Logos, names and trademarks are not to be used without the explicit consent of the maintainers or owners of the 30 seconds GitHub organization.
-* Our website is powered by [Netlify](https://www.netlify.com/), [Gatsby](https://www.gatsbyjs.org/), [Travis CI](https://travis-ci.com/) & [GitHub](https://github.com/
+* Our website is powered by [Netlify](https://www.netlify.com/), [Gatsby](https://www.gatsbyjs.org/), [Travis CI](https://travis-ci.com/) & [GitHub](https://github.com/)
