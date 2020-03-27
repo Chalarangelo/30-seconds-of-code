@@ -37,7 +37,7 @@ const nextURL = 'https://my-website.com/page_b';
 // This will create a new entry in the browser's history, reloading afterwards
 window.location.href = nextURL;
 
-// This will  replace the current entry in the browser's history, reloading afterwards
+// This will replace the current entry in the browser's history, reloading afterwards
 window.location.assign(nextURL);
 
 // This will replace the current entry in the browser's history, reloading afterwards
