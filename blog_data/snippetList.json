@@ -189,6 +189,21 @@
       }
     },
     {
+      "id": "javascript-modify-url-without-reload",
+      "type": "snippetListing",
+      "title": "How do I use JavaScript to modify the URL without reloading the page?",
+      "attributes": {
+        "text": "**Using the History API**\n\nThe HTML5 [History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API) is definitely the way to go for modern websites, as it accomplishes the task at hand, while also providing additional functionality. You can use either `history.pushState()` or `history.replaceState()` to modify the URL in the browser, depending on your needs:\n\n```js\n// Current URL: https://my-website.com/page_a\nconst nextURL = 'https://my-websiste.com/page_b';\nconst nextTitle = 'My new page title';\nconst nextState = { additionalInformation: 'Updated the URL with JS' };\n\n// This will create a new entry in the browser's history, without reloading\nwindow.history.pushState(nextState, nextTitle, nextURL);\n\n// This will replace the current entry in the browser's history, without reloading\nwindow.history.replaceState(nextState, nextTitle, nextURL);\n```\n\nThe arguments for both methods are the same, allowing you to pass a customized serializable `state` object as the first argument, a customized `title` (although most browsers will ignore this parameter) and the `URL` you want to add/replace in the browser's history. Bear in mind that the History API only allows same-origin URLs, so you cannot navigate to an entirely different website.\n\n**Using the Location API**\n\nThe older [Location API](https://developer.mozilla.org/en-US/docs/Web/API/Location) is not the best tool for the job, as it reloads the page, however it still allows you to modify the current URL and might be useful when working with legacy browsers. You can modify the URL, using either `window.location.href`, `location.assign()` or `location.replace()`:\n\n```js\n// Current URL: https://my-website.com/page_a\nconst nextURL = 'https://my-websiste.com/page_b';\n\n// This will create a new entry in the browser's history, reloading afterwards\nwindow.location.href = nextURL;\n\n// This will  replace the current entry in the browser's history, reloading afterwards\nwindow.location.assign(nextURL);\n\n// This will replace the current entry in the browser's history, reloading afterwards\nwindow.location.replace(nextURL);\n```\n\nAs you can see, all three options will cause a page reload, which can be undesirable. Additionally, you can only set the URL, without any additional arguments, unlike using the History API. Finally, the Location API doesn't restrict you to same-origin URLs, which can be the cause of security issues if you are not careful.\n\n**Image credit:** [Alexander Andrews](https://unsplash.com/@alex_andrews?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)\n",
+        "tags": [
+          "javascript",
+          "browser"
+        ]
+      },
+      "meta": {
+        "hash": "3c0a8a713b29786a0a0ed49b16b09248920369ef6de33df2620b1f0060bc656a"
+      }
+    },
+    {
       "id": "javascript-singleton-proxy",
       "type": "snippetListing",
       "title": "How can I implement a singleton in JavaScript?",
