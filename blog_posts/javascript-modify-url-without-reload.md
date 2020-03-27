@@ -13,7 +13,7 @@ The HTML5 [History API](https://developer.mozilla.org/en-US/docs/Web/API/History
 
 ```js
 // Current URL: https://my-website.com/page_a
-const nextURL = 'https://my-websiste.com/page_b';
+const nextURL = 'https://my-website.com/page_b';
 const nextTitle = 'My new page title';
 const nextState = { additionalInformation: 'Updated the URL with JS' };
 
@@ -32,7 +32,7 @@ The older [Location API](https://developer.mozilla.org/en-US/docs/Web/API/Locati
 
 ```js
 // Current URL: https://my-website.com/page_a
-const nextURL = 'https://my-websiste.com/page_b';
+const nextURL = 'https://my-website.com/page_b';
 
 // This will create a new entry in the browser's history, reloading afterwards
 window.location.href = nextURL;
