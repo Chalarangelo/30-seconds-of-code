@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { trimWhiteSpace, getURLParameters, throttle, getBaseURL, getRootURL } from 'functions/utils';
 import { pushNewQuery, searchByKeyphrase } from 'state/search';
-import { useFetchSearchIndex } from 'functions/hooks';
+import { useFetchSearchIndex } from 'components/hooks';
 import { AnchorButton } from 'components/atoms/button';
 import literals from 'lang/en/client/search';
 
