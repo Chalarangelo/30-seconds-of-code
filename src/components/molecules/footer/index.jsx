@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Anchor from 'components/atoms/anchor';
 import literals from 'lang/en/client/footer';
-import config from 'config/client';
+import config from 'config/global';
 
 /**
  * Renders the page Footer.

@@ -1,4 +1,4 @@
-import config from 'config/client';
+import config from 'config/global';
 
 const literals = {
   copyToClipboard: 'Copy to clipboard',

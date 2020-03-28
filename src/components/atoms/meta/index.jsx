@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import { Meta as MetaPropType } from 'typedefs';
-import config from '../../../../config';
+import config from 'config/global';
 import literals from 'lang/en/client/common';
 
 require('styles/index.scss'); // Do not change this to `import`, it's not going to work, no clue why
@@ -35,28 +35,28 @@ const Meta = ({
         '@type': 'TechArticle',
         'mainEntityOfPage': {
           '@type': 'WebPage',
-          '@id': `${config.siteUrl}${structuredData.slug}`,
+          '@id': `${config.websiteUrl}${structuredData.slug}`,
         },
         'headline': structuredData.title,
         'image': [
-          `${config.siteUrl}${logoSrc}`,
+          `${config.websiteUrl}${logoSrc}`,
         ],
         'datePublished': structuredData.firstSeen,
         'dateModified': structuredData.lastUpdated,
         'author': {
           '@type': 'Organization',
-          'name': config.author,
+          'name': config.orgName,
           'logo': {
             '@type': 'ImageObject',
-            'url': `${config.siteUrl}${structuredData.orgLogoSrc}`,
+            'url': `${config.websiteUrl}${structuredData.orgLogoSrc}`,
           },
         },
         'publisher': {
           '@type': 'Organization',
-          'name': config.author,
+          'name': config.orgName,
           'logo': {
             '@type': 'ImageObject',
-            'url': `${config.siteUrl}${structuredData.orgLogoSrc}`,
+            'url': `${config.websiteUrl}${structuredData.orgLogoSrc}`,
           },
         },
         'description': structuredData.description,
@@ -74,7 +74,7 @@ const Meta = ({
           '@type': 'ListItem',
           'position': i + 1,
           'item': {
-            '@id': `${config.siteUrl}${breadcrumb.link.url}`,
+            '@id': `${config.websiteUrl}${breadcrumb.link.url}`,
             'name': `${breadcrumb.name}`,
           },
         })),
@@ -143,7 +143,7 @@ const Meta = ({
         },
         {
           property: `og:image`,
-          content: `${config.siteUrl}${logoSrc}`,
+          content: `${config.websiteUrl}${logoSrc}`,
         },
         {
           name: `twitter:site`,
@@ -163,7 +163,7 @@ const Meta = ({
         },
         {
           name: `twitter:image`,
-          content: `${config.siteUrl}${logoSrc}`,
+          content: `${config.websiteUrl}${logoSrc}`,
         },
       ].concat(meta) }
       script={ scripts }
@@ -177,7 +177,7 @@ const Meta = ({
         canonical ?
           <link
             rel="canonical"
-            href={ `${config.siteUrl}${canonical}` }
+            href={ `${config.websiteUrl}${canonical}` }
           />
           : null
       }
