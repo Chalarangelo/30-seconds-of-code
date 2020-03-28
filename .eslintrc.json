@@ -197,8 +197,6 @@
       "error",
       "always"
     ],
-    "react/prop-types": "error",
-    "react/no-unused-prop-types": "error",
     "react/jsx-curly-spacing": [
       "error",
       {
@@ -222,6 +220,7 @@
     "react/jsx-no-duplicate-props": "error",
     "react/no-deprecated": "error",
     "react/prop-types": "warn",
+    "react/no-unused-prop-types": "error",
     "cypress/no-assigning-return-values": "error",
     "cypress/no-unnecessary-waiting": "error",
     "cypress/assertion-before-screenshot": "warn",
