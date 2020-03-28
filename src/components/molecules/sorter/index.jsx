@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { trimWhiteSpace } from 'functions/utils';
 import { AnchorButton } from 'components/atoms/button';
 import { Sorter as SorterPropType } from 'typedefs';
-import { useClickOutside } from 'functions/hooks';
+import { useClickOutside } from 'components/hooks';
 
 /**
  * Renders a pagination component (responsively).
