@@ -90,8 +90,8 @@
     "lint": "eslint './src/**/*.js' './src/**/*.jsx'",
     "make-icons": "icon-font-generator src/icons/*.svg -o assets --html=false --json=false --types='woff2' --csspath src/styles/_icons.scss --cssfontsurl='../../assets/' --selector='.icon'",
     "make-lang-bgs": "NODE_PATH=src npx --node-arg '-r esm' ./src/jobs/make_lang_bgs.js",
-    "test": "cross-env NODE_PATH=src NODE_ENV=test jest --coverage",
-    "test:watch": "cross-env NODE_PATH=src NODE_ENV=test jest --watch",
+    "test": "cross-env NODE_PATH=src NODE_ENV=test jest --config src/config/jest.json --coverage",
+    "test:watch": "cross-env NODE_PATH=src NODE_ENV=test jest --config src/config/jest.json --watch",
     "cy:open": "cypress open",
     "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open"
   },
@@ -103,38 +103,6 @@
     "url": "https://github.com/30-seconds/30-seconds-web/issues"
   },
   "dependencies": {},
-  "jest": {
-    "transform": {
-      "^.+\\.jsx?$": "./.jest/jest-preprocess.js",
-      "^.+\\.(css|less|scss)$": "./.jest/style-mock.js"
-    },
-    "setupFilesAfterEnv": [
-      "jest-enzyme"
-    ],
-    "testEnvironment": "enzyme",
-    "moduleDirectories": [
-      "node_modules",
-      "src"
-    ],
-    "testPathIgnorePatterns": [
-      "content/sources",
-      ".cache",
-      "public"
-    ],
-    "transformIgnorePatterns": [
-      "node_modules/(?!(gatsby)/)"
-    ],
-    "globals": {
-      "__PATH_PREFIX__": ""
-    },
-    "testURL": "https://localhost",
-    "setupFiles": [
-      "./.jest/loadershim.js"
-    ],
-    "testMatch": [
-      "**/?(*.)+(test).[jt]s?(x)"
-    ]
-  },
   "browserslist": [
     "defaults and last 4 versions and not dead and not ie>0 and not ie_mob>0 and not op_mini all and not baidu>0 and not kaios>0 and not and_uc>0 and not and_qq>0 and not <0.2%"
   ]
