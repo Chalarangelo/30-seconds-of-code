@@ -1,11 +1,11 @@
 import fs from 'fs-extra';
 import path from 'path';
-import config from '../../../../config';
+import config from 'config/global';
 
 const literals = {
   title: 'Cookie policy',
   subtitle: 'Understand how we use cookies.',
-  pageDescription: `Read about the cookie policy of ${config.name}.`,
+  pageDescription: `Read about the cookie policy of ${config.websiteName}.`,
   cards: [
     {
       title: 'What are cookies',

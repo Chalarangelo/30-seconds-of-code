@@ -1,4 +1,4 @@
-import config from 'config/client';
+import config from 'config/global';
 
 const literals = {
   cookieDisclaimer: `${config.websiteName} uses cookies to provide a high quality user experience and gather anonymized data for statistical analysis of the website's traffic.`,

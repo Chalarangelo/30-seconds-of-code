@@ -1,11 +1,11 @@
 import fs from 'fs-extra';
 import path from 'path';
-import config from '../../../../config';
+import config from 'config/global';
 
 const literals = {
   title: 'About',
   subtitle: 'A few word about us, our goals and our projects.',
-  pageDescription: `Learn more about the team behind ${config.name}.`,
+  pageDescription: `Learn more about the team behind ${config.websiteName}.`,
   cards: [
     {
       title: 'About us',

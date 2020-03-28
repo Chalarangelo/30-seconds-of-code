@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import PageBackdrop from 'components/molecules/pageBackdrop';
 import { AnchorButton } from 'components/atoms/button';
 import literals from 'lang/en/client/cta';
-import config from 'config/client';
+import config from 'config/global';
 
 /**
  * Renders a call to action (backdrop, text and button).
