@@ -4,16 +4,17 @@ import Adapter from 'enzyme-adapter-react-16';
 
 import Anchor from './index';
 
+import { internalLink, externalLink, externalLinkWithAttributes } from 'fixtures/links';
+
 configure({ adapter: new Adapter() });
 console.warn = jest.fn();
 
 describe('<Anchor />', () => {
   const innerText = 'Click me!';
-  let link = { url: '#', internal: false };
   let wrapper, anchor;
 
   beforeEach(() => {
-    wrapper = mount(<Anchor link={ link } >{ innerText }</Anchor>);
+    wrapper = mount(<Anchor link={ externalLink } >{ innerText }</Anchor>);
     anchor = wrapper.find('a');
   });
 
@@ -22,7 +23,7 @@ describe('<Anchor />', () => {
   });
 
   it('should link to the passed URL', () => {
-    expect(anchor.prop('href')).toBe(link.url);
+    expect(anchor.prop('href')).toBe(externalLink.url);
   });
 
   it('should render passed children', () => {
@@ -30,8 +31,6 @@ describe('<Anchor />', () => {
   });
 
   describe('with internal link', () => {
-    let internalLink = { url: 'home', internal: true };
-
     beforeEach(() => {
       wrapper = mount(<Anchor link={ internalLink } >{ innerText }</Anchor>);
       anchor = wrapper.find('a');
@@ -43,24 +42,17 @@ describe('<Anchor />', () => {
   });
 
   describe('with custom attributes', () => {
-    let linkWithAttributes = {
-      url: 'https://google.com',
-      internal: false,
-      rel: 'noopener noreferrer',
-      target: '_blank',
-    };
-
     beforeEach(() => {
-      wrapper = mount(<Anchor link={ linkWithAttributes } >{ innerText }</Anchor>);
+      wrapper = mount(<Anchor link={ externalLinkWithAttributes } >{ innerText }</Anchor>);
       anchor = wrapper.find('a');
     });
 
     it('should contain the passed "rel" attributes', () => {
-      expect(anchor.prop('rel')).toBe(linkWithAttributes.rel);
+      expect(anchor.prop('rel')).toBe(externalLinkWithAttributes.rel);
     });
 
     it('should contain the passed "target" attributes', () => {
-      expect(anchor.prop('target')).toBe(linkWithAttributes.target);
+      expect(anchor.prop('target')).toBe(externalLinkWithAttributes.target);
     });
   });
 });
