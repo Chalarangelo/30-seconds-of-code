@@ -8,7 +8,7 @@ import CodeBlock from 'components/atoms/codeBlock';
 import { CopyButton, CodepenButton } from 'components/atoms/button';
 import { Snippet as SnippetPropType } from 'typedefs';
 import { trimWhiteSpace } from 'functions/utils';
-import { JSX_SNIPPET_PRESETS } from 'shared';
+import JSX_SNIPPET_PRESETS from 'config/jsxSnippetPresets';
 import literals from 'lang/en/client/common';
 
 const SnippetCard = ({
