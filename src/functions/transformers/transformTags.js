@@ -1,4 +1,4 @@
-import { EXPERTISE_LEVELS } from 'shared';
+import EXPERTISE_LEVELS from 'config/expertise';
 import { capitalize } from 'functions/utils';
 
 const specialTagsDictionary = {

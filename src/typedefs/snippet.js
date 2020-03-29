@@ -1,5 +1,5 @@
 import { shape, string, oneOf } from 'prop-types';
-import { EXPERTISE_LEVELS } from 'shared';
+import EXPERTISE_LEVELS from 'config/expertise';
 import {
   Html,
   Code,
