@@ -26,5 +26,15 @@ describe('<PageGraphic />', () => {
     expect(wrapper.text()).toContain(innerText);
   });
 
+  describe('without additional classNames', () => {
+    beforeEach(() => {
+      wrapper = mount(<PageGraphic>{ innerText }</PageGraphic>);
+    });
+
+    it('should render with the default className', () => {
+      expect(wrapper.find('div').prop('className')).toBe('page-graphic');
+    });
+  });
+
 });
 

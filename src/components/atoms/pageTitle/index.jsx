@@ -2,8 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { trimWhiteSpace } from 'functions/utils';
 
+const propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
+  ]),
+};
+
 /**
- * Page title component.
+ * Page title component. Renders a simple `<h2>` element with a base class
+ * and passes children to the element.
  */
 const PageTitle = ({
   className,
@@ -14,14 +23,6 @@ const PageTitle = ({
   </h2>
 );
 
-PageTitle.propTypes = {
-  /** Additional classes for the title */
-  className: PropTypes.string,
-  /** The title's children */
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node),
-  ]),
-};
+PageTitle.propTypes = propTypes;
 
 export default PageTitle;

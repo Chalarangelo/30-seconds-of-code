@@ -8,7 +8,7 @@ configure({ adapter: new Adapter() });
 
 describe('<PageSubtitle />', () => {
   let wrapper;
-  const innerText = 'This is a title';
+  const innerText = 'This is a subtitle';
 
   beforeEach(() => {
     wrapper = mount(<PageSubtitle>{ innerText }</PageSubtitle>);
@@ -23,7 +23,6 @@ describe('<PageSubtitle />', () => {
   });
 
   describe('light variation', () => {
-
     beforeEach(() => {
       wrapper = mount(<PageSubtitle isLight>{ innerText }</PageSubtitle>);
     });

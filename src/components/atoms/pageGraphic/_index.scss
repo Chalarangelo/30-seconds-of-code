@@ -7,6 +7,9 @@
   margin-bottom: 40vh;
   width: 100%;
   height: calc(50vmin);
+  padding-top: 46vmin;
+  text-align: center;
+
   &::before {
     top: 0;
     left: calc(50% - 22.5vmin);
@@ -19,6 +22,4 @@
     background-repeat: no-repeat;
     background-size: 45vmin, 44vmin;
   }
-  padding-top: 46vmin;
-  text-align: center;
 }
