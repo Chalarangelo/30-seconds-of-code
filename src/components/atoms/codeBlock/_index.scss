@@ -35,7 +35,7 @@ pre[class*="language-"] {
 
 pre[data-code-language] {
   padding-top: 2.375rem;
-  
+
   &::before {
     font-size: 0.875rem;
     color: var(--pre-decorator-color);
@@ -86,6 +86,7 @@ pre[data-code-language] {
     cursor: help;
   }
 }
+
 .language-css .token.string, .style .token.string {
   color: var(--token-color-f);
 }
