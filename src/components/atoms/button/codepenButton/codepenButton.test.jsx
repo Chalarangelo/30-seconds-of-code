@@ -4,23 +4,6 @@ import Adapter from 'enzyme-adapter-react-16';
 import literals from 'lang/en/client/common';
 
 import CodepenButton from './index';
-/* eslint-disable */
-jest.mock('react-copy-to-clipboard', () => {
-  const React = require('react');
-  return {
-    CopyToClipboard: ({ onCopy, text, children }) => {
-      return(
-        <>
-          {
-            (Array.isArray(children) ? children : [children]).map((child, id) =>
-              React.cloneElement(child, { onClick: () => onCopy(text), key: id }))
-          }
-        </>
-      );
-    },
-  };
-});
-/* eslint-enable */
 
 configure({ adapter: new Adapter() });
 
