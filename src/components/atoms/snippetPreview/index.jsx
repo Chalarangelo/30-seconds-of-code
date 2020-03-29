@@ -2,9 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import literals from 'lang/en/client/common';
 
+const propTypes = {
+  scopeId: PropTypes.string,
+  scopedCss: PropTypes.string,
+  htmlCode: PropTypes.string,
+  jsCode: PropTypes.string,
+};
+
 /**
  * Snippet preview component.
  * Used in CSS snippet cards.
+ * @param {string} scopeId - Scope id for the snippet preview
+ * @param {string} scopedCss - Scoped CSS code for the snippet preview
+ * @param {string} htmlCode - HTML code for the snippet preview
+ * @param {string} jsCode - JS code for the snippet preview
  */
 const SnippetPreview = ({
   scopeId,
@@ -14,15 +25,15 @@ const SnippetPreview = ({
 }) => {
   React.useEffect(() => {
     if (!jsCode) return;
-    let jsTitle = `${scopeId.toLowerCase().replace(/[\s-]/g, '')}_js`;
     const s = document.createElement('script');
     s.type = 'text/javascript';
     s.async = true;
-    s.innerHTML = `function ${jsTitle}(){${jsCode}};`;
+    s.innerHTML = `function snippet_preview_js(){${jsCode}};`;
     document.body.appendChild(s);
     try {
-      window[`${jsTitle}`]();
+      window['snippet_preview_js']();
     } catch (e) {
+      /* istanbul ignore next */
       console.warn('There is an issue with JavaScript execution on the snippet preview of this page.');
     }
   }, []);
@@ -38,26 +49,11 @@ const SnippetPreview = ({
           { scopedCss }
         </style>
         <div dangerouslySetInnerHTML={ {__html: htmlCode} } />
-        {
-          jsCode &&
-          <script>
-            { `function jsTitle(){${jsCode}};` }
-          </script>
-        }
       </div>
     </>
   );
 };
 
-SnippetPreview.propTypes = {
-  /** Scope id for the snippet preview */
-  scopeId: PropTypes.string,
-  /** Scoped CSS code for the snippet preview */
-  scopedCss: PropTypes.string,
-  /** HTML code for the snippet preview */
-  htmlCode: PropTypes.string,
-  /** JS code for the snippet preview */
-  jsCode: PropTypes.string,
-};
+SnippetPreview.propTypes = propTypes;
 
 export default SnippetPreview;
