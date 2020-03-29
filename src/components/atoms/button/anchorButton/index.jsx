@@ -4,9 +4,19 @@ import { Link as LinkPropType } from 'typedefs';
 import Anchor from 'components/atoms/anchor';
 import { trimWhiteSpace } from 'functions/utils';
 
+const propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
+  ]),
+  link: LinkPropType.isRequired,
+  rest: PropTypes.any,
+};
+
 /**
  * Stylized anchor that looks like a button.
- * Depends on the Anchor atom component.
+ * Dependent on the `Anchor` component.
  */
 const AnchorButton = ({
   className = '',
@@ -23,18 +33,6 @@ const AnchorButton = ({
   </Anchor>
 );
 
-AnchorButton.propTypes = {
-  /** Additional classname(s) for the link button */
-  className: PropTypes.string,
-  /** Children elements */
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node),
-  ]),
-  /** Anchor link data */
-  link: LinkPropType.isRequired,
-  /** Any other props to be passed to the component */
-  rest: PropTypes.any,
-};
+AnchorButton.propTypes = propTypes;
 
 export default AnchorButton;
