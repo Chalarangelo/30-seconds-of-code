@@ -24,6 +24,7 @@ $button-fore-color: #FFFFFF;
   line-height: 1.4;
   transition: 0.3s ease all;
   box-shadow:  0px 4px 8px var(--button-shadow-color);
+
   &:hover, &:focus {
     box-shadow: 0px 8px 16px var(--button-shadow-color);
     text-decoration: none;
@@ -53,7 +54,6 @@ $button-fore-color: #FFFFFF;
     }
   }
 }
-
 
 @keyframes active {
   0%, 100% {

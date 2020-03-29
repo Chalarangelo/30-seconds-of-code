@@ -2,6 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { trimWhiteSpace } from 'functions/utils';
 
+const propTypes = {
+  onClick: PropTypes.func,
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
+  ]),
+  rest: PropTypes.any,
+};
+
 /**
  * Generic button component.
  */
@@ -20,18 +30,6 @@ const Button = ({
   </button>
 );
 
-Button.propTypes = {
-  /** Button onclick event handler */
-  onClick: PropTypes.func,
-  /** Additional classname(s) for the button */
-  className: PropTypes.string,
-  /** Children elements */
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node),
-  ]),
-  /** Any other props to be passed to the component */
-  rest: PropTypes.any,
-};
+Button.propTypes = propTypes;
 
 export default Button;

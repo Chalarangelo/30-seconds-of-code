@@ -18,12 +18,22 @@ describe('<Button />', () => {
     expect(wrapper).toContainMatchingElement('button.btn');
   });
 
-  it('should append passed classes', () => {
+  it('should append passed classNames', () => {
     expect(wrapper).toContainMatchingElement('.btn.secondary');
   });
 
   it('should render passed children', () => {
     expect(wrapper.text()).toBe(innerText);
+  });
+
+  describe('without additional classNames', () => {
+    beforeEach(() => {
+      wrapper = mount(<Button>{ innerText }</Button>);
+    });
+
+    it('should render with the default className', () => {
+      expect(wrapper.find('button').prop('className')).toBe('btn');
+    });
   });
 });
 
