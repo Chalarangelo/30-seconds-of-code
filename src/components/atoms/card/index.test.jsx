@@ -26,5 +26,15 @@ describe('<Card />', () => {
     expect(wrapper.text()).toBe(innerText);
   });
 
+  describe('without additional classNames', () => {
+    beforeEach(() => {
+      wrapper = mount(<Card>{ innerText }</Card>);
+    });
+
+    it('should render with the default className', () => {
+      expect(wrapper.find('div').prop('className')).toBe('card');
+    });
+  });
+
 });
 
