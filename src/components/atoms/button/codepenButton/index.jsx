@@ -4,9 +4,29 @@ import { trimWhiteSpace } from 'functions/utils';
 import literals from 'lang/en/client/common';
 
 /* eslint-disable camelcase */
+
+const propTypes = {
+  /** JS code to be passed to the CodePen definition */
+  jsCode: PropTypes.string,
+  /** HTML code to be passed to the CodePen definition */
+  htmlCode: PropTypes.string,
+  /** CSS code to be passed to the CodePen definition */
+  cssCode: PropTypes.string,
+  /** JS preprocessor ("none" || "coffeescript" || "babel" || "livescript" || "typescript") */
+  jsPreProcessor: PropTypes.string,
+  /** External JS files to be included */
+  jsExternal: PropTypes.arrayOf(PropTypes.string),
+};
+
 /**
  * Button that links to a generated Codepen from the page data.
- * See Codepen API: https://blog.codepen.io/documentation/api/prefill/
+ * Uses the CodePen API: https://blog.codepen.io/documentation/api/prefill/
+ * @param {string} jsCode - JavaScript code to be sent to the CodePen API
+ * @param {string} htmlCode - HTML code to be sent to the CodePen API
+ * @param {string} cssCode - CSS code to be sent to the CodePen API
+ * @param {string} jsPreProcessor - JS preprocessor, sent to the CodePen API.
+ *   One of the following: "none", "coffeescript", "babel", "livescript", "typescript"
+ * @param {string} jsExternal - External JS files to be included, sent to the CodePen API
  */
 const CodepenButton = ({
   jsCode,
@@ -34,7 +54,7 @@ const CodepenButton = ({
         }
       />
       <button
-        className={ trimWhiteSpace`btn codepen-btn icon ${active ? 'icon-check' : 'icon-codepen'} ${active ? 'active' : ''}` }
+        className={ trimWhiteSpace`btn codepen-btn icon ${active ? 'icon-check active' : 'icon-codepen'}` }
         ref={ btnRef }
         title={ literals.codepen }
         onClick={ e => {
@@ -53,17 +73,6 @@ const CodepenButton = ({
   );
 };
 
-CodepenButton.propTypes = {
-  /** JS code to be passed to the CodePen definition */
-  jsCode: PropTypes.string,
-  /** HTML code to be passed to the CodePen definition */
-  htmlCode: PropTypes.string,
-  /** CSS code to be passed to the CodePen definition */
-  cssCode: PropTypes.string,
-  /** JS preprocessor ("none" || "coffeescript" || "babel" || "livescript" || "typescript") */
-  jsPreProcessor: PropTypes.string,
-  /** External JS files to be included */
-  jsExternal: PropTypes.arrayOf(PropTypes.string),
-};
+CodepenButton.propTypes = propTypes;
 
 export default CodepenButton;
