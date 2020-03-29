@@ -4,41 +4,54 @@ import PropTypes from 'prop-types';
 import { Link as LinkPropType } from 'typedefs';
 import { trimWhiteSpace } from 'functions/utils';
 
+const linkBackPropTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
+  ]),
+  link: LinkPropType.isRequired,
+  className: PropTypes.string,
+  rest: PropTypes.any,
+};
+
 /**
  * Anchor component for linking back to the previous page.
+ * Just a decorated wrapper around the `Anchor` component.
  */
 export const LinkBackAnchor = ({
   children,
   link,
   className,
   ...rest
-}) =>
-  (
-    <Anchor
-      className={ trimWhiteSpace`link-back icon icon-arrow-left${className}` }
-      link={ link }
-      { ...rest }
-    >
-      { children }
-    </Anchor>
-  );
+}) => (
+  <Anchor
+    className={ trimWhiteSpace`link-back icon icon-arrow-left${className}` }
+    link={ link }
+    { ...rest }
+  >
+    { children }
+  </Anchor>
+);
 
-LinkBackAnchor.propTypes = {
-  /** Children elements */
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node),
-  ]),
-  /** Anchor link data */
-  link: LinkPropType.isRequired,
-  /** Additional class names for the anchor */
-  className: PropTypes.string,
-  /** Any other props to be passed to the component */
-  rest: PropTypes.any,
+LinkBackAnchor.propTypes = linkBackPropTypes;
+
+const breadcrumbPropTypes = {
+  breadcrumbs: PropTypes.arrayOf(
+    PropTypes.shape({
+      link: LinkPropType,
+      name: PropTypes.string,
+    })
+  ),
+  lastPage: PropTypes.shape({
+    link: LinkPropType,
+    name: PropTypes.string,
+  }),
 };
 
 /**
  * Breadcrumbs component for linking back to the previous page.
+ * Uses own `LinkBackAnchor` component to abstract some of its functionality.
+ * Dependent on the `Anchor` component for implementing actual links to pages.
  */
 const Breadcrumbs = ({
   breadcrumbs,
@@ -149,19 +162,6 @@ const Breadcrumbs = ({
   }
 };
 
-Breadcrumbs.propTypes = {
-  /** Breadcrumbs data */
-  breadcrumbs: PropTypes.arrayOf(
-    PropTypes.shape({
-      link: LinkPropType,
-      name: PropTypes.string,
-    })
-  ),
-  /** Last page data */
-  lastPage: PropTypes.shape({
-    link: LinkPropType,
-    name: PropTypes.string,
-  }),
-};
+Breadcrumbs.propTypes = breadcrumbPropTypes;
 
 export default Breadcrumbs;

@@ -4,16 +4,18 @@ import Adapter from 'enzyme-adapter-react-16';
 
 import Breadcrumbs, { LinkBackAnchor } from './index';
 
+import { internalLink } from 'fixtures/links';
+import { breadcrumbs, lastPages, blogBreadcrumbs } from 'fixtures/breadcrumbs';
+
 configure({ adapter: new Adapter() });
 console.warn = jest.fn();
 
 describe('<LinkBackAnchor />', () => {
   const innerText = 'Click me!';
-  let link = { url: '#', internal: false };
   let wrapper, anchor;
 
   beforeEach(() => {
-    wrapper = mount(<LinkBackAnchor link={ link } >{ innerText }</LinkBackAnchor>);
+    wrapper = mount(<LinkBackAnchor link={ internalLink } >{ innerText }</LinkBackAnchor>);
     anchor = wrapper.find('Anchor');
   });
 
@@ -22,7 +24,7 @@ describe('<LinkBackAnchor />', () => {
   });
 
   it('should pass the link to the wrapped Anchor', () => {
-    expect(anchor.prop('link')).toEqual(link);
+    expect(anchor.prop('link')).toEqual(internalLink);
   });
 
   it('should render passed children', () => {
@@ -35,61 +37,6 @@ describe('<LinkBackAnchor />', () => {
 });
 
 describe('<Breadcrumbs />', () => {
-  const breadcrumbs = [
-    {
-      link: {
-        url: '/javascript/p/1',
-        internal: true,
-      },
-      name: 'JavaScript',
-    },
-    {
-      link: {
-        url: '/javascript/t/function/p/1',
-        internal: true,
-      },
-      name: 'JavaScript Function',
-    },
-  ];
-  const lastPages = {
-    search: {
-      link: {
-        url: '/search',
-        internal: true,
-      },
-      name: 'Search',
-    },
-    mainListing: {
-      link: {
-        url: '/',
-        internal: true,
-      },
-      name: 'Snippet List',
-    },
-    language: {
-      link: {
-        url: '/javascript/e/1',
-        internal: true,
-      },
-      name: 'JavaScript',
-    },
-    tag: {
-      link: {
-        url: '/javascript/t/function/a/1',
-        internal: true,
-      },
-      name: 'JavaScript Function',
-    },
-  };
-  const blogBreadcrumbs = [
-    {
-      link: {
-        url: '/blog/p/1',
-        internal: true,
-      },
-      name: 'Blog',
-    },
-  ];
   let wrapper, linkBack, anchor;
 
   describe('from Search as last page', () => {
