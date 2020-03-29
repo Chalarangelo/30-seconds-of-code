@@ -1,10 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { trimWhiteSpace } from 'functions/utils';
-import { EXPERTISE_LEVELS } from 'shared';
+
+const propTypes = {
+  level: PropTypes.string,
+};
 
 /**
  * Renders an expertise tag.
+ * @param {string} level - One of the appropriate expertise levels:
+ *   "Beginner", "Intermediate" (default), "Advanced", "Blog"
  */
 const Expertise = ({
   level = 'Intermediate',
@@ -12,9 +17,6 @@ const Expertise = ({
   <span className={ trimWhiteSpace`expertise ${level.toLowerCase()}` } />
 ) : null;
 
-Expertise.propTypes = {
-  /** Snippet expertise rating */
-  level: PropTypes.oneOf(EXPERTISE_LEVELS),
-};
+Expertise.propTypes = propTypes;
 
 export default Expertise;
