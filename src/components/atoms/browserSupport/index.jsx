@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import literals from 'lang/en/client/common';
 
+const propTypes = {
+  supportPercentage: PropTypes.string,
+  browserSupportHtml: PropTypes.string,
+};
 /**
  * Browser support component that displays formatted browser support percentage.
  * Used in CSS snippet cards.
@@ -11,8 +15,8 @@ const BrowserSupport = ({
   browserSupportHtml,
 }) => (
   <>
-    <h5 className='browser-support-title'>{ literals.BrowserSupport }</h5>
-    <p className='browser-support-percentage'>{ supportPercentage.toFixed(1) }%</p>
+    <h5 className='browser-support-title'>{ literals.browserSupport }</h5>
+    <p className='browser-support-percentage'>{ supportPercentage }</p>
     <div
       className='browser-support-text'
       dangerouslySetInnerHTML={ {
@@ -22,11 +26,6 @@ const BrowserSupport = ({
   </>
 );
 
-BrowserSupport.propTypes = {
-  /** Numeric representation of the browser support percentage*/
-  supportPercentage: PropTypes.number,
-  /** Html for the browser support text */
-  browserSupportHtml: PropTypes.string,
-};
+BrowserSupport.propTypes = propTypes;
 
 export default BrowserSupport;
