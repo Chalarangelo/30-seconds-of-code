@@ -1,8 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const propTypes = {
+  onChange: PropTypes.func,
+  checked: PropTypes.bool,
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
+  ]),
+  rest: PropTypes.any,
+};
+
 /**
- * Toggle component.
+ * Simple toggle input component.
+ * Uses an `<input>` element wrapped in a `<label>`.
  */
 const Toggle = ({
   onChange,
@@ -22,18 +33,6 @@ const Toggle = ({
   </label>
 );
 
-Toggle.propTypes = {
-  /** The callaback to be executed when the toggle changes state */
-  onChange: PropTypes.func,
-  /** Is this toggle checked by default? */
-  checked: PropTypes.bool,
-  /** The card's children */
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node),
-  ]),
-  /** Any other arguments to be passed to the card */
-  rest: PropTypes.any,
-};
+Toggle.propTypes = propTypes;
 
 export default Toggle;
