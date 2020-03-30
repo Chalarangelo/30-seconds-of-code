@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const propTypes = {
+  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
+
 /**
  * List of tags.
  * Used in most pages that render snippet information.
- * Depends on Tag atom.
  */
 const TagList = ({
   tags,
@@ -17,9 +20,6 @@ const TagList = ({
   </p>
 );
 
-TagList.propTypes = {
-  /** List of tag names */
-  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
+TagList.propTypes = propTypes;
 
 export default TagList;

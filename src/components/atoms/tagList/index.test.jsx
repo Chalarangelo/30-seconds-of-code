@@ -4,10 +4,11 @@ import Adapter from 'enzyme-adapter-react-16';
 
 import TagList from './index';
 
+import { tags, dupedTags } from 'fixtures/tags';
+
 configure({ adapter: new Adapter() });
 
 describe('<TagList />', () => {
-  const tags = ['array', 'adapter', 'function'];
   let wrapper;
 
   beforeEach(() => {
@@ -23,7 +24,6 @@ describe('<TagList />', () => {
   });
 
   describe('with duplicate tag names', () => {
-    const dupedTags = ['array', 'adapter', 'array', 'function', 'function'];
 
     beforeEach(() => {
       wrapper = mount(<TagList tags={ dupedTags } />);
