@@ -10,15 +10,21 @@ console.warn = jest.fn();
 describe('<Footer />', () => {
   let wrapper;
 
-  beforeEach(() => {
+  beforeAll(() => {
     wrapper = mount(
       <Footer />);
   });
-
 
   it('renders the appropriate component', () => {
     expect(wrapper).toContainMatchingElement('footer');
   });
 
+  it('renders two sections', () => {
+    expect(wrapper).toContainMatchingElements(2, 'p');
+  });
+
+  it('renders the links section', () => {
+    expect(wrapper).toContainMatchingElements(5, 'footer > p:first-child a');
+  });
 });
 

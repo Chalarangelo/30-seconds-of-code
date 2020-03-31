@@ -4,9 +4,13 @@ import Anchor from 'components/atoms/anchor';
 import literals from 'lang/en/client/footer';
 import config from 'config/global';
 
+const propTypes = {
+  rest: PropTypes.any,
+};
+
 /**
- * Renders the page Footer.
- * Depends on the Anchor atom.
+ * Static component that renders the page footer.
+ * Dependent on the `Anchor` atom.
  */
 const Footer = ({
   ...rest
@@ -138,9 +142,6 @@ const Footer = ({
   </footer>
 );
 
-Footer.propTypes = {
-  /** Any other props to be passed to the component */
-  rest: PropTypes.any,
-};
+Footer.propTypes = propTypes;
 
 export default Footer;
