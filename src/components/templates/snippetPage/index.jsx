@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Meta from 'components/atoms/meta';
+import Meta from 'components/organisms/meta';
 import Breadcrumbs from 'components/molecules/breadcrumbs';
 import Shell from 'components/organisms/shell';
 import SnippetCard from 'components/organisms/snippetCard';

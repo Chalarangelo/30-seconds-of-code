@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Meta from 'components/atoms/meta';
+import Meta from 'components/organisms/meta';
 import PageTitle from 'components/atoms/pageTitle';
 import Toggle from 'components/atoms/toggle/index';
 import SimpleCard from 'components/molecules/simpleCard';

@@ -8,6 +8,7 @@ module.exports = {
   orgName: '30-seconds',
   websiteUrl: 'https://www.30secondsofcode.org',
   twitterUrl: 'https://twitter.com/30secondsofcode',
+  twitterAccount: '@30secondsofcode',
   githubOrgUrl: 'https://github.com/30-seconds',
   discordUrl: 'https://discordapp.com/invite/SajZAJc',
   licenseUrl: 'https://creativecommons.org/publicdomain/zero/1.0/',

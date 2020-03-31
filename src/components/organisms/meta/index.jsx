@@ -8,14 +8,46 @@ import literals from 'lang/en/client/common';
 
 require('styles/index.scss'); // Do not change this to `import`, it's not going to work, no clue why
 
+const propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  acceptsCookies: PropTypes.bool,
+  meta: PropTypes.arrayOf(MetaPropType),
+  logoSrc: PropTypes.string,
+  structuredData: PropTypes.shape({
+    title: PropTypes.string,
+    description: PropTypes.string,
+    slug: PropTypes.string,
+    orgLogoSrc: PropTypes.string,
+    firstSeen: PropTypes.string,
+    lastUpdated: PropTypes.string,
+  }),
+  breadcrumbsData: PropTypes.arrayOf(
+    PropTypes.shape({
+      link: PropTypes.shape({
+        url: PropTypes.string,
+      }),
+      name: PropTypes.string,
+    })
+  ),
+  canonical: PropTypes.string,
+};
+
 /**
- * Creates the <head> metadata content.
- * Depends on react-helmet.
+ * Creates the `<head>` metadata content.
+ * Dependent on `react-helmet` external module.
+ * @param {string} title - Page title (leave empty to use the website title)
+ * @param {string} description - Page description (leave empty to use the website title)
+ * @param {bool} acceptsCookies - Does the user accept cookies? (Redux-connected)
+ * @param {*} meta - Array of metadata objects (if any)
+ * @param {string} logoSrc - Page logo URI
+ * @param {object} structuredData - Structured data for the page (if any)
+ * @param {object} breadcrumbsData - Structured data for breadcrumbs (if any)
+ * @param {string} canonical - Canonical slug (not full URL) of this page, if canonical
  */
 const Meta = ({
   title,
   description = '',
-  locale = 'en',
   acceptsCookies,
   meta = [],
   logoSrc,
@@ -115,9 +147,7 @@ const Meta = ({
 
   return (
     <Helmet
-      htmlAttributes={ {
-        lang: locale,
-      } }
+      htmlAttributes={ { lang: 'en' } }
       title={ title ? title : literals.siteName }
       titleTemplate={ title ? `%s - ${literals.siteName}` : '%s' }
       meta={ [
@@ -147,7 +177,7 @@ const Meta = ({
         },
         {
           name: `twitter:site`,
-          content: `@30secondsofcode`,
+          content: config.twitterAccount,
         },
         {
           name: `twitter:card`,
@@ -185,40 +215,7 @@ const Meta = ({
   );
 };
 
-Meta.propTypes = {
-  /** Page title */
-  title: PropTypes.string,
-  /** Page description */
-  description: PropTypes.string,
-  /** Page locale (language) */
-  locale: PropTypes.string,
-  /** Does the user accept cookies? */
-  acceptsCookies: PropTypes.bool,
-  /** Metadata array */
-  meta: PropTypes.arrayOf(MetaPropType),
-  /** Page logo URI */
-  logoSrc: PropTypes.string,
-  /** Structured data for the page (if any) */
-  structuredData: PropTypes.shape({
-    title: PropTypes.string,
-    description: PropTypes.string,
-    slug: PropTypes.string,
-    orgLogoSrc: PropTypes.string,
-    firstSeen: PropTypes.string,
-    lastUpdated: PropTypes.string,
-  }),
-  /** Structured data for breadcrumbs (if any) */
-  breadcrumbsData: PropTypes.arrayOf(
-    PropTypes.shape({
-      link: PropTypes.shape({
-        url: PropTypes.string,
-      }),
-      name: PropTypes.string,
-    })
-  ),
-  /** Canonical slug (not full URL) of this page, if canonical */
-  canonical: PropTypes.string,
-};
+Meta.propTypes = propTypes;
 
 export default connect(
   state => ({
