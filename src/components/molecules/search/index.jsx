@@ -7,6 +7,10 @@ import { useFetchSearchIndex } from 'components/hooks';
 import { AnchorButton } from 'components/atoms/button';
 import literals from 'lang/en/client/search';
 
+/**
+ * Handles browser history updates as necessary, depending on the given value.
+ * @param {string} value - The keyphrase used to update the history.
+ */
 const handleHistoryUpdate = value => {
   if (typeof window !== 'undefined' && typeof window.location !== 'undefined' && typeof window.history !== 'undefined') {
     const encodedValue = encodeURIComponent(value);
@@ -29,13 +33,33 @@ const handleHistoryUpdate = value => {
   }
 };
 
+const propTypes = {
+  /** Additional classname(s) for the search bar */
+  className: PropTypes.string,
+  /** Element id */
+  id: PropTypes.string,
+  /** Is this component the main search component? */
+  isMainSearch: PropTypes.bool,
+  /** Initial value for the search bar */
+  searchQuery: PropTypes.string,
+  /** Index of the searchable data */
+  searchIndex: PropTypes.arrayOf(PropTypes.shape({})),
+  /** Timestamp of the last search history update */
+  searchTimestamp: PropTypes.string,
+  /** Dispatch function of the Redux stotre */
+  dispatch: PropTypes.func,
+};
+
 /**
- * Search bar component.
- * Connected to state.
- * `isSearch` will determine the Search bar behavior.
- * When true, the bar will update history and handle searching.
- * Otherwise, it acts as an idle input that expects interaction to provide an entry
- * point to the search page.
+ * Search bar component. (Redux-connected)
+ * Dependent on the `Anchor` component.
+ * @param {bool} isMainSearch - Is this the main search? Determines the input's
+ *   behavior, as it will update history and handle searching if `true`, otherwise
+ *   it will act as an idle input that expects interaction to provide an entry
+ *   point to the search page.
+ * @param {string} searchQuery - Initial value for the input (Redux-connected)
+ * @param {*} searchIndex - Search index data, fetched from state (Redux-connected)
+ * @param {string} searchTimestamp - Last search timestamp (Redux-connected)
  */
 const Search = ({
   className = '',
@@ -46,7 +70,7 @@ const Search = ({
   searchTimestamp,
   dispatch,
 }) => {
-  const [value, setValue] = React.useState( '');
+  const [value, setValue] = React.useState('');
 
   useFetchSearchIndex(dispatch);
 
@@ -110,22 +134,7 @@ const Search = ({
   );
 };
 
-Search.propTypes = {
-  /** Initial value for the search bar */
-  searchQuery: PropTypes.string,
-  /** Index of the searchable data */
-  searchIndex: PropTypes.arrayOf(PropTypes.shape({})),
-  /** Timestamp of the last search history update */
-  searchTimestamp: PropTypes.string,
-  /** Additional classname(s) for the search bar */
-  className: PropTypes.string,
-  /** Element id */
-  id: PropTypes.string,
-  /** Dispatch function of the Redux stotre */
-  dispatch: PropTypes.func,
-  /** Is this component the main search component? */
-  isMainSearch: PropTypes.bool,
-};
+Search.propTypes = propTypes;
 
 export default connect(
   state => ({

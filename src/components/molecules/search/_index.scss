@@ -70,7 +70,7 @@
   }
 
   @media screen and (min-width: $layout-large-breakpoint) {
-    width: calc(768px - 1.75rem - 44px);
+    width: calc(768px - 1.75rem - 52px);
   }
 }
 
@@ -87,7 +87,7 @@ a.search-btn {
   border-radius: 0 0.25rem 0.25rem 0;
   box-sizing: border-box;
   box-shadow: none;
-  
+
   &:hover, &:focus {
     box-shadow: none;
     background: var(--search-button-hover-back-color);

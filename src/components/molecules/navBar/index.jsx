@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link as LinkPropType } from 'typedefs';
 import Anchor from 'components/atoms/anchor';
-import Search from 'components/atoms/search';
+import Search from 'components/molecules/search';
 import literals from 'lang/en/client/common';
 
 /**
