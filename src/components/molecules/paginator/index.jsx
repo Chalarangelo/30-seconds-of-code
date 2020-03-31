@@ -4,10 +4,15 @@ import { trimWhiteSpace } from 'functions/utils';
 import { AnchorButton, Button } from 'components/atoms/button';
 import { Paginator as PaginatorPropType } from 'typedefs';
 
+const propTypes = {
+  className: PropTypes.string,
+  paginator: PaginatorPropType,
+};
+
 /**
- * Renders a pagination component (responsively).
- * Depends on Button atom.
- * Utilizes the media hook.
+ * Renders a pagination component.
+ * Dependent on the `Button` and `AnchorButton` components.
+ * @param {object} paginator - Pagination data fo the component.
  */
 const Paginator = ({
   className,
@@ -94,11 +99,6 @@ const Paginator = ({
   );
 };
 
-Paginator.propTypes = {
-  /** Additional classes for the paginator */
-  className: PropTypes.string,
-  /** Paginator component data */
-  paginator: PaginatorPropType,
-};
+Paginator.propTypes = propTypes;
 
 export default Paginator;

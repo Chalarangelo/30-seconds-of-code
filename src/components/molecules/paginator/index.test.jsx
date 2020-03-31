@@ -76,5 +76,34 @@ describe('<Paginator />', () => {
     });
   });
 
+  describe('with three or fewer buttons', () => {
+    beforeEach(() => {
+      wrapper = mount(
+        <Paginator paginator={ {
+          pageNumber: 1,
+          totalPages: 2,
+          baseUrl,
+        } } />);
+    });
+
+    it('should render the correct buttons', () => {
+      expect(wrapper).toContainMatchingElements(2, 'a.btn');
+    });
+  });
+
+  describe('with only one button', () => {
+    beforeEach(() => {
+      wrapper = mount(
+        <Paginator paginator={ {
+          pageNumber: 1,
+          totalPages: 1,
+          baseUrl,
+        } } />);
+    });
+
+    it('should not render', () => {
+      expect(wrapper).not.toContainMatchingElement('a.btn');
+    });
+  });
 });
 
