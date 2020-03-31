@@ -1,5 +1,5 @@
 import React from 'react';
-import Meta from 'components/atoms/meta';
+import Meta from 'components/organisms/meta';
 import PageTitle from 'components/atoms/pageTitle';
 import PageSubtitle from 'components/atoms/pageSubtitle';
 import SimpleCard from 'components/molecules/simpleCard';

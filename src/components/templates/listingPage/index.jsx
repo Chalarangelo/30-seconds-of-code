@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Meta from 'components/atoms/meta';
+import Meta from 'components/organisms/meta';
 import Shell from 'components/organisms/shell';
 import SnippetList from 'components/organisms/snippetList';
 import PropTypes from 'prop-types';

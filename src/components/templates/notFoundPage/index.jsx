@@ -1,5 +1,5 @@
 import React from 'react';
-import Meta from 'components/atoms/meta';
+import Meta from 'components/organisms/meta';
 import PageTitle from 'components/atoms/pageTitle';
 import { AnchorButton } from 'components/atoms/button';
 import PageBackdrop from 'components/molecules/pageBackdrop';
