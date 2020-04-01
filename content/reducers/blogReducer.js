@@ -20,7 +20,7 @@ export default (id, snippetNode, markdownNode) => {
     cover: snippetNode.attributes.cover,
     authors: snippetNode.attributes.authors.map(a => authors[a]),
     blog: true,
-    expertise: '',
+    expertise: 'blog',
     title: snippetNode.title,
     code: { },
     slug: `/${snippetNode.slugPrefix}${convertToSeoSlug(markdownNode.fields.slug)}`,
