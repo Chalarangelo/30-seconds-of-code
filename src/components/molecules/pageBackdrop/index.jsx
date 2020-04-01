@@ -3,10 +3,34 @@ import PropTypes from 'prop-types';
 import PageGraphic from 'components/atoms/pageGraphic';
 import { trimWhiteSpace } from 'functions/utils';
 
+const propTypes = {
+  graphicName: PropTypes.string,
+  mainText: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
+  ]),
+  mainTextClassName: PropTypes.string,
+  subText: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
+  ]),
+  subTextClassName: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
+  ]),
+  rest: PropTypes.any,
+};
+
 /**
  * Renders the backdrop of a page.
  * Used in 404 and Search pages.
- * Depends on PageGraphic atom.
+ * Dependent on `PageGraphic` component.
+ * @param {*} graphicName - The name of the graphic for the backdrop
+ * @param {*} mainText - Main text for the backdrop
+ * @param {*} mainTextClassName - Additional classΝames to be passed to the main text
+ * @param {*} subText - Secondary text for the backdrop
+ * @param {*} subTextClassName - Additional classΝames to be passed to the secondary text
  */
 const PageBackdrop = ({
   graphicName,
@@ -34,30 +58,6 @@ const PageBackdrop = ({
   </PageGraphic>
 );
 
-PageBackdrop.propTypes = {
-  /** The name of the graphic for the backdrop */
-  graphicName: PropTypes.string,
-  /** Main text for the backdrop */
-  mainText: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node),
-  ]),
-  /** Additional classnames to be passed to the main text */
-  mainTextClassName: PropTypes.string,
-  /** Secondary text for the backdrop */
-  subText: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node),
-  ]),
-  /** Additional classnames to be passed to the secondary text */
-  subTextClassName: PropTypes.string,
-  /** Additional children elements for the backdrop */
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node),
-  ]),
-  /** Any other arguments to be passed to the backdrop */
-  rest: PropTypes.any,
-};
+PageBackdrop.propTypes = propTypes;
 
 export default PageBackdrop;
