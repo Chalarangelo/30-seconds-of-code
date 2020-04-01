@@ -4,14 +4,12 @@ import Adapter from 'enzyme-adapter-react-16';
 
 import Sorter from './index';
 
+import { orders } from 'fixtures/sorter';
+
 configure({ adapter: new Adapter() });
 console.warn = jest.fn();
 
 describe('<Sorter />', () => {
-  const orders = [
-    {title: 'Popularity', url: '/list/p/1'},
-    {title: 'Expertise', url: '/list/e/1'},
-  ];
   const selectedOrder = 'Popularity';
   let wrapper;
   let clickableEl;
@@ -22,7 +20,6 @@ describe('<Sorter />', () => {
         orders,
         selectedOrder,
       } } />);
-    clickableEl = wrapper.find('.order-btn.selected');
   });
 
   describe('should render', () => {
@@ -45,6 +42,7 @@ describe('<Sorter />', () => {
 
   describe('when clicked', () => {
     beforeEach(() => {
+      clickableEl = wrapper.find('.order-btn.selected');
       clickableEl.at(0).simulate('click');
     });
 
@@ -60,7 +58,6 @@ describe('<Sorter />', () => {
       it('should close the sorter', () => {
         expect(wrapper).not.toContainMatchingElement('.sorter.open');
       });
-
     });
   });
 });

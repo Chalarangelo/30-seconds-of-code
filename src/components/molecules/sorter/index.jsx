@@ -5,10 +5,14 @@ import { AnchorButton } from 'components/atoms/button';
 import { Sorter as SorterPropType } from 'typedefs';
 import { useClickOutside } from 'components/hooks';
 
+const propTypes = {
+  className: PropTypes.string,
+  sorter: SorterPropType,
+};
+
 /**
- * Renders a pagination component (responsively).
- * Depends on Button atom.
- * Utilizes the media hook.
+ * Renders a sorter component.
+ * Dependent on the `Button` component.
  */
 const Sorter = ({
   className,
@@ -62,11 +66,6 @@ const Sorter = ({
   );
 };
 
-Sorter.propTypes = {
-  /** Additional classes for the paginator */
-  className: PropTypes.string,
-  /** Paginator component data */
-  sorter: SorterPropType,
-};
+Sorter.propTypes = propTypes;
 
 export default Sorter;
