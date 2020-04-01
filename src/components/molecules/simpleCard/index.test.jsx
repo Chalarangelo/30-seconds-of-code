@@ -49,6 +49,5 @@ describe('<SimpleCard />', () => {
     });
   });
 
-
 });
 
