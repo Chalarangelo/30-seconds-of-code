@@ -4,26 +4,17 @@ import Adapter from 'enzyme-adapter-react-16';
 
 import ListingAnchors from './index';
 
+import { anchorItems } from 'fixtures/listingAnchors';
+
 configure({ adapter: new Adapter() });
 console.warn = jest.fn();
 
 describe('<ListingAnchors />', () => {
-  const items = [
-    {
-      name: 'My list',
-      link: { internal: true, url: '/my-list'},
-    },
-    {
-      name: 'My other list',
-      link: { internal: true, url: '/my-other-list'},
-      selected: true,
-    },
-  ];
   let wrapper;
 
   beforeEach(() => {
     wrapper = mount(
-      <ListingAnchors items={ items } />);
+      <ListingAnchors items={ anchorItems } />);
   });
 
   describe('should render', () => {
@@ -32,14 +23,14 @@ describe('<ListingAnchors />', () => {
     });
 
     it('two AnchorButton components', () => {
-      expect(wrapper).toContainMatchingElements(2, 'AnchorButton');
+      expect(wrapper).toContainMatchingElements(anchorItems.length, 'AnchorButton');
     });
   });
 
   describe('compact variant', () => {
     beforeEach(() => {
       wrapper = mount(
-        <ListingAnchors isCompact items={ items } />);
+        <ListingAnchors isCompact items={ anchorItems } />);
     });
 
     describe('should render', () => {
@@ -48,7 +39,7 @@ describe('<ListingAnchors />', () => {
       });
 
       it('two AnchorButton components', () => {
-        expect(wrapper).toContainMatchingElements(2, 'AnchorButton');
+        expect(wrapper).toContainMatchingElements(anchorItems.length, 'AnchorButton');
       });
 
       it('a selected anchor', () => {
