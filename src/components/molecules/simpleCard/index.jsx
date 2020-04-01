@@ -2,10 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from 'components/atoms/card';
 
+const propTypes = {
+  className: PropTypes.string,
+  title: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
+  ]),
+  dangerouslySetInnerHTML: PropTypes.shape({
+    __html: PropTypes.string,
+  }),
+  rest: PropTypes.any,
+};
+
 /**
  * Renders a non-snippet card container.
  * Used in About and Cookie pages.
- * Depends on Card atom.
+ * Dependent on `Card` component.
+ * @param {*} children - Children for the card, will only render if  `dangerouslySetInnerHTML` is `undefined`.
+ * @param {*} dangerouslySetInnerHTML - Inner html object for the card, will take precedence over `children` if both are present.
  */
 const SimpleCard = ({
   className,
@@ -35,22 +50,6 @@ const SimpleCard = ({
   </Card>
 );
 
-SimpleCard.propTypes = {
-  /** Additional classes for the card */
-  className: PropTypes.string,
-  /** The card's title */
-  title: PropTypes.string,
-  /** The card's children */
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node),
-  ]),
-  /** The card's inner HTML, if provided */
-  dangerouslySetInnerHTML: PropTypes.shape({
-    __html: PropTypes.string,
-  }),
-  /** Any other arguments to be passed to the card */
-  rest: PropTypes.any,
-};
+SimpleCard.propTypes = propTypes;
 
 export default SimpleCard;
