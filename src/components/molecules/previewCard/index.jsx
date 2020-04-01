@@ -8,10 +8,17 @@ import { trimWhiteSpace } from 'functions/utils';
 import TagList from 'components/atoms/tagList';
 import literals from 'lang/en/client/common';
 
+const propTypes = {
+  snippet: SnippetPropType,
+  className: PropTypes.string,
+  rest: PropTypes.any,
+};
+
 /**
  * General-purpose snippet preview card.
  * Used in listing pages and search results.
- * Depends on Anchor and Card atoms.
+ * Dependent on the `Anchor`, `Card` and `TagList` components.
+ * @param {object} snippet - Snippet object for the card.
  */
 const PreviewCard = ({
   snippet,
@@ -21,7 +28,7 @@ const PreviewCard = ({
   <Card className={ trimWhiteSpace`preview-card ${className}` } { ...rest } >
     <div className='card-meta'>
       <div className={ `card-icon icon icon-${snippet.icon}` }>
-        <Expertise level={ snippet.expertise ? snippet.expertise : snippet.languageShort === 'blog' ? 'blog' : null } />
+        <Expertise level={ snippet.expertise } />
       </div>
       <div className='card-data'>
         <h4 className='card-title'>
@@ -39,9 +46,9 @@ const PreviewCard = ({
           tags={
             [
               snippet.language ? snippet.language : null,
-              snippet.primaryTag ? snippet.primaryTag : null,
+              snippet.primaryTag,
               snippet.icon === 'blog' ? literals.blog : null,
-              snippet.expertise ? snippet.expertise : null,
+              snippet.expertise,
             ]
           }
         />
@@ -54,15 +61,6 @@ const PreviewCard = ({
   </Card>
 );
 
-PreviewCard.propTypes = {
-  /** Snippet data for the card */
-  snippet: SnippetPropType,
-  /** Context in which this card is rendered */
-  context: PropTypes.string,
-  /** Additional classes for the card */
-  className: PropTypes.string,
-  /** Any other arguments to be passed to the card */
-  rest: PropTypes.any,
-};
+PreviewCard.propTypes = propTypes;
 
 export default PreviewCard;
