@@ -4,10 +4,19 @@ import { Link as LinkPropType } from 'typedefs';
 import { AnchorButton } from 'components/atoms/button';
 import { trimWhiteSpace } from 'functions/utils';
 
+const propTypes = {
+  items: PropTypes.arrayOf(PropTypes.shape({
+    link: LinkPropType.isRequired,
+    name: PropTypes.string,
+  })).isRequired,
+  isCompact: PropTypes.bool,
+  rest: PropTypes.any,
+};
+
 /**
  * Renders the set of buttons that link to other listing pages.
  * Used in Listing pages and Home page.
- * Depends on Button and PageSubtitle atoms.
+ * Dependent on `Button` and `PageSubtitle` components.
  */
 const ListingAnchors = ({
   items,
@@ -61,16 +70,6 @@ const ListingAnchors = ({
     </ul>;
 };
 
-ListingAnchors.propTypes = {
-  /** Items that compose the listing anchors */
-  items: PropTypes.arrayOf(PropTypes.shape({
-    link: LinkPropType.isRequired,
-    name: PropTypes.string,
-  })).isRequired,
-  /** Compact or large listing anchors */
-  isCompact: PropTypes.bool,
-  /** Any other props to be passed to the component */
-  rest: PropTypes.any,
-};
+ListingAnchors.propTypes = propTypes;
 
 export default ListingAnchors;
