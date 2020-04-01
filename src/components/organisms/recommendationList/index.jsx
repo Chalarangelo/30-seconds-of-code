@@ -5,6 +5,14 @@ import PageSubtitle from 'components/atoms/pageSubtitle';
 import { Snippet as SnippetPropType } from 'typedefs';
 import literals from 'lang/en/client/common';
 
+const propTypes = {
+  snippetList: PropTypes.arrayOf(SnippetPropType),
+};
+
+/**
+ * Renders a list of recommended snippets.
+ * Dependent on the `PageSubtitle` and `PreviewCard` components.
+ */
 const RecommendationList = ({
   snippetList,
 }) => {
@@ -23,9 +31,6 @@ const RecommendationList = ({
   ) : null;
 };
 
-RecommendationList.propTypes = {
-  /** List of snippets to be displayed */
-  snippetList: PropTypes.arrayOf(SnippetPropType),
-};
+RecommendationList.propTypes = propTypes;
 
 export default RecommendationList;
