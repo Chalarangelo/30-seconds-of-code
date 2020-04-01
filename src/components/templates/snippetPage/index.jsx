@@ -60,7 +60,7 @@ const SnippetPage = ({
           cardTemplate={ cardTemplate }
           snippet={ snippet }
         />
-        <CTA acceptsCookies={ acceptsCookies } />
+        <CTA/>
         <RecommendationList snippetList={ recommendedSnippets } />
       </Shell>
     </>
