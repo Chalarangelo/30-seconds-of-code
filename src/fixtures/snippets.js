@@ -18,3 +18,14 @@ export const previewBlogSnippet = {
   url: '/blog/s/css-variables',
   searchTokens: 'css visual layout learn custom properti variabl work can us code design',
 };
+
+export const searchResultSnippet = {
+  title: 'compose',
+  expertise: 'Intermediate',
+  primaryTag: 'Function',
+  language: 'JavaScript',
+  icon: 'js',
+  description: '<p>Performs right-to-left function composition.</p>', 'url': '/js/s/compose',
+  searchTokens: 'compose js javascript function perform right-to-left composit',
+  score: 1.01,
+};
