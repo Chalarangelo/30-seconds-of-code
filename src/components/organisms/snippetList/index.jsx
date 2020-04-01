@@ -1,5 +1,4 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Paginator from 'components/molecules/paginator';
 import Sorter from 'components/molecules/sorter';
@@ -12,7 +11,20 @@ import {
   Paginator as PaginatorPropType
 } from 'typedefs';
 
-// eslint-disable-next-line complexity
+const propTypes = {
+  snippetList: PropTypes.arrayOf(SnippetPropType),
+  paginator: PaginatorPropType,
+  sorter: PaginatorPropType,
+  listingName: PropTypes.string,
+  listingType: PropTypes.string,
+  listingSublinks: PropTypes.arrayOf(PropTypes.shape({})),
+};
+
+/**
+ * Renders a list of snippets along with necessary controls.
+ * Used in listing page.
+ * Dependent on multiple components.
+ */
 const SnippetList = ({
   snippetList,
   paginator,
@@ -20,8 +32,8 @@ const SnippetList = ({
   listingName,
   listingType,
   listingSublinks = [],
-  acceptsCookies,
 }) => {
+  /* istanbul ignore next */
   const ctaIndex = snippetList.length > 20
     ? Math.floor(snippetList.length * 0.55)
     : snippetList.length - 1;
@@ -37,44 +49,19 @@ const SnippetList = ({
       </PageTitle>
       <Sorter sorter={ sorter } />
       { snippetList.map((snippet, i) => (
-        <>
+        <Fragment key={ `snippet_${snippet.url}` }>
           <PreviewCard
-            key={ `snippet_${snippet.url}` }
             snippet={ snippet }
             context={ listingType }
           />
-          {
-            i === ctaIndex ?
-              <CTA />
-              : null
-          }
-        </>
+          { i === ctaIndex ? <CTA /> : null }
+        </Fragment>
       )) }
       <Paginator paginator={ paginator } />
     </>
   ) : null;
 };
 
-SnippetList.propTypes = {
-  /** List of snippets to be displayed */
-  snippetList: PropTypes.arrayOf(SnippetPropType),
-  /** Paginator component data */
-  paginator: PaginatorPropType,
-  /** Sorter component data */
-  sorter: PaginatorPropType,
-  /** Name of this snippet list */
-  listingName: PropTypes.string,
-  /** Type of this snippet list */
-  listingType: PropTypes.string,
-  /** Links to sublists */
-  listingSublinks: PropTypes.arrayOf(PropTypes.shape({})),
-  /** Does the user accept cookies? */
-  acceptsCookies: PropTypes.bool,
-};
+SnippetList.propTypes = propTypes;
 
-export default connect(
-  state => ({
-    acceptsCookies: state.shell.acceptsCookies,
-  }),
-  null
-)(SnippetList);
+export default SnippetList;
