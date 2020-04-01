@@ -33,14 +33,6 @@
 
     &.cookie-decline {
       margin-left: 1rem;
-      background: transparent;
-      border: 1px solid var(--a-link-color);
-      color: var(--a-link-color);
     }
-  }
-
-  // Handle left side margin on landscape
-  @media screen and (min-width: $layout-medium-breakpoint) and (orientation: landscape) {
-    padding-left: calc(56px + 1.625rem);
   }
 }
