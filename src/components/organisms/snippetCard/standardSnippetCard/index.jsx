@@ -11,6 +11,18 @@ import { trimWhiteSpace } from 'functions/utils';
 import JSX_SNIPPET_PRESETS from 'config/jsxSnippetPresets';
 import literals from 'lang/en/client/common';
 
+const propTypes = {
+  snippet: SnippetPropType,
+  className: PropTypes.string,
+  hasGithubLinksEnabled: PropTypes.bool,
+  rest: PropTypes.any,
+};
+
+/**
+ * Standard snippet card.
+ * Used for simple languages (JS, Dart, Python), as well as React/JSX.
+ * @param {bool} hasGithubLinksEnabled - Not mapped to state, has to be passed.
+ */
 const SnippetCard = ({
   snippet,
   className,
@@ -20,17 +32,11 @@ const SnippetCard = ({
   <Card className={ trimWhiteSpace`snippet-card ${className}` } { ...rest } >
     <div className='card-meta'>
       <div className={ `card-icon icon icon-${snippet.icon}` }>
-        <Expertise level={ snippet.expertise ? snippet.expertise : snippet.languageShort === 'blog' ? 'blog' : null } />
+        <Expertise level={ snippet.expertise } />
       </div>
       <div className='card-data'>
         <h4 className='card-title'>{ snippet.title }</h4>
-        <TagList
-          tags={
-            [
-              snippet.language.long, ...snippet.tags.all,
-            ]
-          }
-        />
+        <TagList tags={ [ snippet.language.long, ...snippet.tags.all] }/>
       </div>
     </div>
     { hasGithubLinksEnabled && (
@@ -62,11 +68,7 @@ const SnippetCard = ({
               jsExternal={ JSX_SNIPPET_PRESETS.jsImports }
             />
           )
-          : (
-            <CopyButton
-              text={ snippet.code.src }
-            />
-          )
+          : ( <CopyButton text={ snippet.code.src } /> )
       }
       {
         snippet.code.style ? (
@@ -92,15 +94,6 @@ const SnippetCard = ({
   </Card>
 );
 
-SnippetCard.propTypes = {
-  /** Snippet data for the card */
-  snippet: SnippetPropType,
-  /** Additional classes for the card */
-  className: PropTypes.string,
-  /** Are GitHub links enabled? */
-  hasGithubLinksEnabled: PropTypes.bool,
-  /** Any other arguments to be passed to the card */
-  rest: PropTypes.any,
-};
+SnippetCard.propTypes = propTypes;
 
 export default SnippetCard;
