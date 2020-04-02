@@ -4,8 +4,8 @@ tags: math,intermediate
 ---
 Calculates exponential of a value of a number raised to another number
 
-Uses iterations:
-if input is a^b%c then value of b is divided into powers of 2 by using it in binary form.<br>
+Uses iterations:<br>
+If input is a^b%c then value of b is divided into powers of 2 by using it in binary form.<br>
 Now we calculate mod c of the powers of two <= b.<br>
 Use the modular multiplication properties to combine the calculated mod c values.<br>
 _Example_:
@@ -42,11 +42,11 @@ const fastModularExponentiation = (base, exponent, modulus) => {
 	let result = 1;
 	base = base % modulus;
 	while(exponent > 0) {
-		if(exponent % 2 === 1) {
+		if(exponent % 2 === 1) { // odd number
 			result = (result * base) % modulus;
 		}
 		base = (base * base) % modulus;
-		exponent = exponent >> 1;
+		exponent = exponent >> 1; // divide by two
 	}
 	return result;
 }
