@@ -8,7 +8,17 @@ import PreviewCard from 'components/molecules/previewCard';
 import RecommendationList from 'components/organisms/recommendationList';
 import literals from 'lang/en/client/search';
 
-// eslint-disable-next-line complexity
+const propTypes = {
+  searchQuery: PropTypes.string,
+  searchResults: PropTypes.arrayOf(PropTypes.shape({})),
+  recommendedSnippets: PropTypes.arrayOf(SnippetPropType),
+};
+
+/**
+ * Displays the search results area. (Redux-connected)
+ * Used in the Search page.
+ * Dependent on multiple components.
+ */
 const SearchResults = ({
   searchQuery,
   searchResults,
@@ -44,14 +54,7 @@ const SearchResults = ({
   );
 };
 
-SearchResults.propTypes = {
-  /** Search query */
-  searchQuery: PropTypes.string,
-  /** Search results */
-  searchResults: PropTypes.arrayOf(PropTypes.shape({})),
-  /** List of recommended snippets */
-  recommendedSnippets: PropTypes.arrayOf(SnippetPropType),
-};
+SearchResults.propTypes = propTypes;
 
 export default connect(
   state => ({
