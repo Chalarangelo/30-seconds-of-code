@@ -34,7 +34,7 @@
       border-top: 1px solid var(--pre-decorator-color);
       padding-top: 2.4375rem;
 
-      &:before { 
+      &:before {
         top: .9375rem;
       }
     }
@@ -62,6 +62,7 @@
 }
 
 a.github-link {
+
   &, &:link, &:visited {
     font-size: 0.875rem;
     margin: 0 0.5rem 0.25rem 4.75rem;
