@@ -14,33 +14,32 @@ Let a = 5, b = 117 and c = 19<br>
 Step 1 - Divide b into powers of 2
 
 ```
-		117 = 1110101 in binary
+  117 = 1110101 in binary
 ```
 
 Step 2 - Calculate mod c of the powers of two <= b
 
 ```
-		5 ^ 1 % 19 = 5
-		5 ^ 2 % 19 = (5^1 * 5^1) % 19
-				   = (5^1%19 * 5^1%19) % 19
-				   = 25 % 19 = 6
-
-		Continue this step for all values
-		5 ^ 4 % 19 = 17
-		5 ^ 8 % 19 = 4
-		5 ^ 16 % 19 = 16
-		5 ^ 32 % 19 = 9
-		5 ^ 64 % 19 = 5
+    5 ^ 1 % 19 = 5
+    5 ^ 2 % 19 = (5^1 * 5^1) % 19
+           = (5^1%19 * 5^1%19) % 19
+           = 25 % 19 = 6
+    Continue this step for all values
+    5 ^ 4 % 19 = 17
+    5 ^ 8 % 19 = 4
+    5 ^ 16 % 19 = 16
+    5 ^ 32 % 19 = 9
+    5 ^ 64 % 19 = 5
 ```
 
 Step 3 - Use the modular multiplication properties to combine the calculated mods.
 
 ```
-		5 ^ 117 % 19 = (5^1 * 5^4 * 5^16 * 5^32 * 5^64) % 19
-		5 ^ 117 % 19 = (5^1%19 * 5^4%19 * 5^16%19 * 5^32%19 * 5^64%19) % 19
-		Substituting values acquired from step 2
-		5 ^ 117 % 19 = (5 * 17 * 16 * 9 * 5) % 19
-		5 ^ 117 % 19 = 1
+    5 ^ 117 % 19 = (5^1 * 5^4 * 5^16 * 5^32 * 5^64) % 19
+    5 ^ 117 % 19 = (5^1%19 * 5^4%19 * 5^16%19 * 5^32%19 * 5^64%19) % 19
+    Substituting values acquired from step 2
+    5 ^ 117 % 19 = (5 * 17 * 16 * 9 * 5) % 19
+    5 ^ 117 % 19 = 1
 ```
 
 Snippet does the same thing as explained above
