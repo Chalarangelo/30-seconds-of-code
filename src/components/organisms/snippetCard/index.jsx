@@ -12,13 +12,24 @@ export {
   BlogSnippetCard,
 };
 
+const propTypes = {
+  cardTemplate: PropTypes.string,
+  hasGithubLinksEnabled: PropTypes.bool,
+  dispatch: PropTypes.func,
+  rest: PropTypes.any,
+};
+
 /**
- * Renders a snippet card.
+ * Renders a snippet card. (Redux-connected)
  * Used in snippet pages.
+ * Dependent on its internal components to implement the desired functionality.
  */
 const SnippetCard = ({
   cardTemplate,
   hasGithubLinksEnabled,
+  // Keep dispatch here, as to not pass it down the component tree and get errors.
+  // eslint-disable-next-line no-unused-vars
+  dispatch,
   ...rest
 }) => {
   switch (cardTemplate) {
@@ -49,14 +60,7 @@ const SnippetCard = ({
 
 SnippetCard.displayName = 'SnippetCardWrapper';
 
-SnippetCard.propTypes = {
-  /** Card template name */
-  cardTemplate: PropTypes.string,
-  /** Are GitHub links enabled? */
-  hasGithubLinksEnabled: PropTypes.bool,
-  /** Any other arguments to be passed to the card */
-  rest: PropTypes.any,
-};
+SnippetCard.propTypes = propTypes;
 
 export default connect(
   state => ({
