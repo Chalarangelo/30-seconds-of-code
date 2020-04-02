@@ -6,8 +6,29 @@ import SimpleCard from 'components/molecules/simpleCard';
 import Shell from 'components/organisms/shell';
 import PropTypes from 'prop-types';
 
+const propTypes = {
+  pageContext: PropTypes.shape({
+    /** URI for the logo image */
+    logoSrc: PropTypes.string.isRequired,
+    splashLogoSrc: PropTypes.string.isRequired,
+    stringLiterals: PropTypes.shape({
+      title: PropTypes.string,
+      pageDescription: PropTypes.string,
+      subtitle: PropTypes.string,
+      cards: PropTypes.arrayOf(PropTypes.shape({
+        title: PropTypes.string,
+        html: PropTypes.string,
+      })),
+    }).isRequired,
+  }),
+};
+
 /**
- * Renders the /about and /cookies pages.
+ * Renders a static page from the given data.
+ * Responsible for rendering the /about and /cookies pages.
+ * @param {object} stringLiterals - An object with all the necessary information
+ *   for rendering this page. The `cards` array will hold title+html pairs for
+ *   each `SimpleCard` rendered.
  */
 const StaticPage = ({
   pageContext: {
@@ -20,59 +41,33 @@ const StaticPage = ({
       cards,
     },
   },
-}) => {
-  return (
-    <>
-      <Meta
-        title={ title }
-        logoSrc={ splashLogoSrc }
-        description={ pageDescription }
-      />
-      <Shell
-        logoSrc={ logoSrc }
-        isSearch={ false }
-        isListing={ false }
-        withIcon
-        withTitle
-      >
-        <PageTitle>
-          { title }
-        </PageTitle>
-        <PageSubtitle isLight>
-          { subtitle }
-        </PageSubtitle>
-        {
-          cards.map(({ title, html }, i) => (
-            <SimpleCard
-              key={ i }
-              title={ title }
-              dangerouslySetInnerHTML={ {__html: html} }
-            />
-          ))
-        }
-      </Shell>
-    </>
-  );
-};
+}) => (
+  <>
+    <Meta
+      title={ title }
+      logoSrc={ splashLogoSrc }
+      description={ pageDescription }
+    />
+    <Shell logoSrc={ logoSrc } >
+      <PageTitle>
+        { title }
+      </PageTitle>
+      <PageSubtitle isLight>
+        { subtitle }
+      </PageSubtitle>
+      {
+        cards.map(({ title, html }, i) => (
+          <SimpleCard
+            key={ i }
+            title={ title }
+            dangerouslySetInnerHTML={ {__html: html} }
+          />
+        ))
+      }
+    </Shell>
+  </>
+);
 
-StaticPage.propTypes = {
-  /** pageContext is passed from Gatsby to the page */
-  pageContext: PropTypes.shape({
-    /** URI for the logo image */
-    logoSrc: PropTypes.string.isRequired,
-    /** URI for the splash logo image */
-    splashLogoSrc: PropTypes.string.isRequired,
-    /** String literals for the page */
-    stringLiterals: PropTypes.shape({
-      title: PropTypes.string,
-      pageDescription: PropTypes.string,
-      subtitle: PropTypes.string,
-      cards: PropTypes.arrayOf(PropTypes.shape({
-        title: PropTypes.string,
-        html: PropTypes.string,
-      })),
-    }).isRequired,
-  }),
-};
+StaticPage.propTypes = propTypes;
 
 export default StaticPage;
