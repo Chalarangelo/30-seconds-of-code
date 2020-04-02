@@ -6,13 +6,14 @@
 }
 
 .snippet-card {
-  
+
   .card-meta-info {
     font-size: 0.875rem;
-    margin-top: 0;
-    margin-bottom: 1.25rem;
+    margin: 0 0.5rem 1.25rem;
     color: var(--card-fore-color-light);
+
     a {
+
       &, &:link, &:visited {
         color: var(--card-fore-color-light);
       }
@@ -25,7 +26,7 @@
     .tag-list {
       color: var(--card-fore-color-light);
     }
-    
+
   }
 
   .card-cover-image {
@@ -96,5 +97,4 @@
     padding: 1rem 1rem 1rem 1.5rem;
     border-radius: 0 0 0.25rem 0.25rem;
   }
-
 }

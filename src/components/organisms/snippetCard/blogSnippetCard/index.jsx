@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import Card from 'components/atoms/card';
 import TagList from 'components/atoms/tagList';
@@ -7,20 +7,29 @@ import { trimWhiteSpace } from 'functions/utils';
 import Anchor from 'components/atoms/anchor';
 import literals from 'lang/en/client/common';
 
+const propTypes = {
+  snippet: SnippetPropType,
+  className: PropTypes.string,
+  hasGithubLinksEnabled: PropTypes.bool,
+  rest: PropTypes.any,
+};
+
+/**
+ * Blog snippet card.
+ * Used for blog posts.
+ * @param {bool} hasGithubLinksEnabled - Not mapped to state, has to be passed.
+ */
 const SnippetCard = ({
   snippet,
   className,
-  // eslint-disable-next-line no-unused-vars
   hasGithubLinksEnabled = false,
   ...rest
 }) => (
   <Card className={ trimWhiteSpace`snippet-card ${className}` } { ...rest } >
     <h4 className='card-title'>{ snippet.title }</h4>
-    <p className="card-meta-info">
+    <div className="card-meta-info">
       { snippet.authors.map((a, i, arr) => (
-        <React.Fragment
-          key={ `author-fragment-${i}` }
-        >
+        <Fragment key={ `author-fragment-${i}` } >
           <Anchor
             key={ `author-anchor${i}` }
             link={ {
@@ -32,7 +41,7 @@ const SnippetCard = ({
             { a.name }
           </Anchor>
           { i !== arr.length - 1 ? ', ' : '' }
-        </React.Fragment>
+        </Fragment>
       )) }
       { ' · ' }
       {
@@ -41,7 +50,7 @@ const SnippetCard = ({
         })
       }
       { ' · ' }
-      <TagList tags={ [ ...snippet.tags.all] } />
+      <TagList tags={ [ ...snippet.tags.all ] } />
       { hasGithubLinksEnabled && (
         <>
           { ' · ' }
@@ -58,13 +67,11 @@ const SnippetCard = ({
           </Anchor>
         </>
       ) }
-    </p>
-    { snippet.cover && snippet.cover.src ?
-      <img
-        className='card-cover-image'
-        src={ snippet.cover.src }
-      />
-      : null }
+    </div>
+    { snippet.cover && snippet.cover.src
+      ? <img className='card-cover-image' src={ snippet.cover.src } />
+      : null
+    }
     <div
       className='card-description'
       dangerouslySetInnerHTML={ { __html: `${snippet.html.fullDescription}` } }
@@ -72,15 +79,6 @@ const SnippetCard = ({
   </Card>
 );
 
-SnippetCard.propTypes = {
-  /** Snippet data for the card */
-  snippet: SnippetPropType,
-  /** Additional classes for the card */
-  className: PropTypes.string,
-  /** Are GitHub links enabled? */
-  hasGithubLinksEnabled: PropTypes.bool,
-  /** Any other arguments to be passed to the card */
-  rest: PropTypes.any,
-};
+SnippetCard.propTypes = propTypes;
 
 export default SnippetCard;
