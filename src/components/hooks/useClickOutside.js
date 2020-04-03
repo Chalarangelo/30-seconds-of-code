@@ -1,15 +1,15 @@
 import { useEffect } from 'react';
 
-/* istanbul ignore next */
 /**
  * A hook that handles the event of clicking outside of the wrapped component.
  */
 const useClickOutside = (ref, callback) => {
   const handleClick = e => {
+    /* istanbul ignore else */
     if (ref.current && !ref.current.contains(e.target))
       callback();
-
   };
+
   useEffect(() => {
     document.addEventListener('click', handleClick);
     return () => {
