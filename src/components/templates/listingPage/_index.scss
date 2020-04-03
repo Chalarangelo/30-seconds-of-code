@@ -3,8 +3,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--fore-color-dark); 
+  color: var(--fore-color-dark);
   margin: 0.5625rem 1rem 0.5rem;
+
   @media screen and (min-width: 390px) {
     margin: 0.5625rem 1.25rem 0.5rem;
   }
@@ -16,6 +17,7 @@
     margin: 1rem 1.25rem 0.5rem 0;
     transition: 0.3s ease all;
     max-width: 48px;
+
     @media screen and (min-width: 390px) {
       max-width: 64px;
     }
@@ -28,10 +30,12 @@
     display: inline-block;
     font-size: 1.25rem;
     height: 24px;
+
     @media screen and (min-width: 360px) {
       font-size: 1.625rem;
       height: 24px;
     }
+
     @media screen and (min-width: 390px) {
       font-size: 1.75rem;
       height: 28px;
@@ -51,6 +55,7 @@
   margin: 0.8125rem 1.25rem 1.5rem;
   color: var(--fore-color);
   text-align: center;
+
   @media screen and (min-width: $layout-medium-breakpoint) {
     font-size: 1rem;
   }
