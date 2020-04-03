@@ -7,62 +7,54 @@ import Shell from 'components/organisms/shell';
 import PropTypes from 'prop-types';
 import literals from 'lang/en/client/notFound';
 
+const propTypes = {
+  pageContext: PropTypes.shape({
+    logoSrc: PropTypes.string.isRequired,
+    splashLogoSrc: PropTypes.string.isRequired,
+  }),
+};
+
 /**
- * Renders the /404 page.
+ * Renders a not found page.
+ * Responsible for rendering the /404 page.
  */
 const NotFoundPage = ({
   pageContext: {
     logoSrc,
     splashLogoSrc,
   },
-}) => {
-  return (
-    <>
-      <Meta
-        logoSrc={ splashLogoSrc }
-        title={ literals.pageNotFound }
-      />
-      <Shell
-        logoSrc={ logoSrc }
-        isSearch={ false }
-        isListing={ false }
-        withIcon={ true }
-        withTitle={ true }
+}) => (
+  <>
+    <Meta
+      logoSrc={ splashLogoSrc }
+      title={ literals.pageNotFound }
+    />
+    <Shell logoSrc={ logoSrc } >
+      <PageTitle>{ literals.fourOhFour }</PageTitle>
+      <PageBackdrop
+        graphicName='page-not-found'
+        mainText={ (
+          <>
+            <strong>{ literals.pageNotFound }</strong>
+            <br />
+          </>
+        ) }
+        subText={ literals.notFoundDescription }
       >
-        <PageTitle>{ literals.fourOhFour }</PageTitle>
-        <PageBackdrop
-          graphicName='page-not-found'
-          mainText={ (
-            <>
-              <strong>{ literals.pageNotFound }</strong>
-              <br />
-            </>
-          ) }
-          subText={ literals.notFoundDescription }
+        <AnchorButton
+          link={ {
+            url: '/',
+            internal: true,
+          } }
+          className='btn-home icon icon-home'
         >
-          <AnchorButton
-            link={ {
-              url: '/',
-              internal: true,
-            } }
-            className='btn-home icon icon-home'
-          >
-            { literals.goHome }
-          </AnchorButton>
-        </PageBackdrop>
-      </Shell>
-    </>
-  );
-};
+          { literals.goHome }
+        </AnchorButton>
+      </PageBackdrop>
+    </Shell>
+  </>
+);
 
-NotFoundPage.propTypes = {
-  /** pageContext is passed from Gatsby to the page */
-  pageContext: PropTypes.shape({
-    /** URI for the logo image */
-    logoSrc: PropTypes.string.isRequired,
-    /** URI for the splash logo image */
-    splashLogoSrc: PropTypes.string.isRequired,
-  }),
-};
+NotFoundPage.propTypes = propTypes;
 
 export default NotFoundPage;
