@@ -12,8 +12,25 @@ import {
 import { pushNewPage } from 'state/navigation';
 import literals from 'lang/en/client/common';
 
+const propTypes = {
+  pageContext: PropTypes.shape({
+    logoSrc: PropTypes.string.isRequired,
+    splashLogoSrc: PropTypes.string.isRequired,
+    paginator: PaginatorPropType,
+    sorter: SorterPropType,
+    snippetList: PropTypes.arrayOf(SnippetPropType),
+    listingName: PropTypes.string,
+    listingTitle: PropTypes.string,
+    listingType: PropTypes.string,
+    listingSublinks: PropTypes.arrayOf(PropTypes.shape({})),
+    pageDescription: PropTypes.string.isRequired,
+  }),
+  dispatch: PropTypes.func,
+};
+
 /**
- * Renders the /list/p/1 page and any other listing pages.
+ * Renders a listing page.
+ * Used to render the /list/p/1 page and any other listing pages.
  */
 const ListingPage = ({
   pageContext: {
@@ -50,13 +67,7 @@ const ListingPage = ({
         description={ pageDescription }
         canonical={ isHomePage ? '/' : '' }
       />
-      <Shell
-        logoSrc={ logoSrc }
-        isSearch={ false }
-        isListing
-        withIcon={ true }
-        withTitle={ true }
-      >
+      <Shell logoSrc={ logoSrc } >
         {
           isFirstListingPage ? (
             <>
@@ -89,36 +100,9 @@ const ListingPage = ({
   );
 };
 
-ListingPage.propTypes = {
-  /** pageContext is passed from Gatsby to the page */
-  pageContext: PropTypes.shape({
-    /** URI for the logo image */
-    logoSrc: PropTypes.string.isRequired,
-    /** URI for the splash logo image */
-    splashLogoSrc: PropTypes.string.isRequired,
-    /** Paginator component data */
-    paginator: PaginatorPropType,
-    /** Sorter component data */
-    sorter: SorterPropType,
-    /** List of snippets to be displayed */
-    snippetList: PropTypes.arrayOf(SnippetPropType),
-    /** Name of this listing page */
-    listingName: PropTypes.string,
-    /** Title of this listing page */
-    listingTitle: PropTypes.string,
-    /** Type metadata for the listing description */
-    listingType: PropTypes.string,
-    /** Links to sublists */
-    listingSublinks: PropTypes.arrayOf(PropTypes.shape({})),
-    /** Page description */
-    pageDescription: PropTypes.string.isRequired,
-  }),
-  /** Dispatch function of the Redux stotre */
-  dispatch: PropTypes.func,
-};
+ListingPage.propTypes = propTypes;
 
 export default connect(
-  // eslint-disable-next-line
-  state => ({}),
+  () => ({}),
   null
 )(ListingPage);
