@@ -3,8 +3,10 @@ import { Provider } from 'react-redux';
 import createStore from 'state';
 import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import literals from 'lang/en/client/search';
 
 import SearchPage from './index';
+import { pushNewQuery } from 'state/search';
 
 configure({ adapter: new Adapter() });
 console.warn = jest.fn();
@@ -48,16 +50,32 @@ describe('<SearchPage />', () => {
   it('should pass the correct data to the Shell component', () => {
     expect(shell.prop('logoSrc')).toBe(logoSrc);
     expect(shell.prop('isSearch')).toBe(true);
-    expect(shell.prop('isListing')).toBe(false);
   });
 
   it('should pass the correct data to the Meta component', () => {
     expect(meta.prop('logoSrc')).toBe(splashLogoSrc);
-    expect(meta.prop('title')).not.toBe(undefined);
+    expect(meta.prop('title').indexOf(literals.search)).not.toBe(-1);
   });
 
   it('should pass the correct data to the Search component', () => {
     expect(search.prop('isMainSearch')).toBe(true);
+  });
+
+  describe('with a given search query', () => {
+
+    beforeEach(() => {
+      store.dispatch(pushNewQuery('test'));
+      wrapper = mount(
+        <Provider store={ store }>
+          <SearchPage pageContext={ { logoSrc, splashLogoSrc } } />
+        </Provider>
+      );
+      meta = wrapper.find('Meta');
+    });
+
+    it('should pass the correct title to the Meta component', () => {
+      expect(meta.prop('title').indexOf(literals.resultsFor('test'))).not.toBe(-1);
+    });
   });
 });
 
