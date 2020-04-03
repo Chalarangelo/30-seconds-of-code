@@ -8,8 +8,24 @@ import Shell from 'components/organisms/shell';
 import PropTypes from 'prop-types';
 import { toggleDarkMode, toggleGithubLinks } from 'state/shell';
 
+const propTypes = {
+  pageContext: PropTypes.shape({
+    logoSrc: PropTypes.string.isRequired,
+    splashLogoSrc: PropTypes.string.isRequired,
+    stringLiterals: PropTypes.shape({
+      title: PropTypes.string,
+      pageDescription: PropTypes.string,
+      settings: PropTypes.arrayOf(PropTypes.string),
+    }),
+  }),
+  dispatch: PropTypes.func,
+  isDarkMode: PropTypes.bool,
+  hasGithubLinksEnabled: PropTypes.bool,
+};
+
 /**
- * Renders the /settings page.
+ * Renders a settings page
+ * Used to render the /settings page.
  */
 const SettingsPage = ({
   pageContext: {
@@ -24,64 +40,34 @@ const SettingsPage = ({
   dispatch,
   isDarkMode,
   hasGithubLinksEnabled,
-}) => {
-  return (
-    <>
-      <Meta
-        title={ title }
-        logoSrc={ splashLogoSrc }
-        description={ pageDescription }
-      />
-      <Shell
-        logoSrc={ logoSrc }
-        isSearch={ false }
-        isSettings
-        isListing={ false }
-        withIcon
-        withTitle
-      >
-        <PageTitle>
-          { title }
-        </PageTitle>
-        <SimpleCard>
-          <Toggle
-            checked={ !!isDarkMode }
-            onChange={ () => {
-              dispatch(toggleDarkMode(!isDarkMode));
-            } }
-          >
-            { settings.darkMode }
-          </Toggle>
-          <Toggle
-            checked={ !!hasGithubLinksEnabled }
-            onChange={ () => {
-              dispatch(toggleGithubLinks(!hasGithubLinksEnabled));
-            } }
-          >
-            { settings.githubLinks }
-          </Toggle>
-        </SimpleCard>
+}) => (
+  <>
+    <Meta
+      title={ title }
+      logoSrc={ splashLogoSrc }
+      description={ pageDescription }
+    />
+    <Shell logoSrc={ logoSrc } isSettings >
+      <PageTitle>{ title }</PageTitle>
+      <SimpleCard>
+        <Toggle
+          checked={ !!isDarkMode }
+          onChange={ () => dispatch(toggleDarkMode(!isDarkMode)) }
+        >
+          { settings.darkMode }
+        </Toggle>
+        <Toggle
+          checked={ !!hasGithubLinksEnabled }
+          onChange={ () => dispatch(toggleGithubLinks(!hasGithubLinksEnabled)) }
+        >
+          { settings.githubLinks }
+        </Toggle>
+      </SimpleCard>
+    </Shell>
+  </>
+);
 
-      </Shell>
-    </>
-  );
-};
-
-SettingsPage.propTypes = {
-  /** pageContext is passed from Gatsby to the page */
-  pageContext: PropTypes.shape({
-    /** URI for the logo image */
-    logoSrc: PropTypes.string.isRequired,
-    /** URI for the splash logo image */
-    splashLogoSrc: PropTypes.string.isRequired,
-  }),
-  /** Dispatch function of the Redux stotre */
-  dispatch: PropTypes.func,
-  /** Should dark mode be applied? */
-  isDarkMode: PropTypes.bool,
-  /** Are GitHub links enabled? */
-  hasGithubLinksEnabled: PropTypes.bool,
-};
+SettingsPage.propTypes = propTypes;
 
 export default connect(
   state => ({

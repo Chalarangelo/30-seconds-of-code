@@ -1,4 +1,5 @@
 import React from 'react';
+import { act } from 'react-dom/test-utils';
 import { Provider } from 'react-redux';
 import createStore from 'state';
 import { mount, configure } from 'enzyme';
@@ -47,11 +48,30 @@ describe('<SettingsPage />', () => {
 
   it('should pass the correct data to the Shell component', () => {
     expect(shell.prop('logoSrc')).toBe(logoSrc);
+    expect(shell.prop('isSettings')).toBe(true);
   });
 
   it('should pass the correct data to the Meta component', () => {
     expect(meta.prop('logoSrc')).toBe(splashLogoSrc);
     expect(meta.prop('title')).toBe(literals.title);
+  });
+
+  describe('when the dark mode toggle is clicked', () => {
+    it('changes the dark mode setting', () => {
+      act(() => {
+        wrapper.find(`Toggle[children="${literals.settings.darkMode}"]`).prop('onChange')();
+      });
+      expect(store.getState().shell.isDarkMode).toBe(true);
+    });
+  });
+
+  describe('when the github links is clicked', () => {
+    it('changes the dark mode setting', () => {
+      act(() => {
+        wrapper.find(`Toggle[children="${literals.settings.githubLinks}"]`).prop('onChange')();
+      });
+      expect(store.getState().shell.hasGithubLinksEnabled).toBe(true);
+    });
   });
 });
 
