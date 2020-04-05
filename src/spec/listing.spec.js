@@ -4,7 +4,7 @@ import literals from 'lang/en/listing';
 
 describe('Listing', () => {
   before(() => {
-    cy.visit('http://localhost:8000/list/p/1');
+    cy.visit('http://localhost:9000/list/p/1');
   });
 
   it('should display the correct title', () => {

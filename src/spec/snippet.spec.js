@@ -2,7 +2,7 @@ describe('Snippet', () => {
 
   describe('Simple', () => {
     before(() => {
-      cy.visit('http://localhost:8000/js/s/shuffle/');
+      cy.visit('http://localhost:9000/js/s/shuffle/');
     });
 
     it('should display a snippet card', () => {
@@ -28,7 +28,7 @@ describe('Snippet', () => {
 
   describe('React', () => {
     before(() => {
-      cy.visit('http://localhost:8000/react/s/tabs');
+      cy.visit('http://localhost:9000/react/s/tabs');
     });
 
     it('should display a snippet card', () => {
@@ -54,7 +54,7 @@ describe('Snippet', () => {
 
   describe('CSS', () => {
     before(() => {
-      cy.visit('http://localhost:8000/css/s/mouse-cursor-gradient-tracking');
+      cy.visit('http://localhost:9000/css/s/mouse-cursor-gradient-tracking');
     });
 
     it('should display a snippet card', () => {

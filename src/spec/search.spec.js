@@ -2,7 +2,7 @@ import literals from 'lang/en/client/search';
 
 describe('Search', () => {
   before(() => {
-    cy.visit('http://localhost:8000');
+    cy.visit('http://localhost:9000');
     cy.get('input[type="search"]').type('difference{enter}');
   });
 
