@@ -172,6 +172,21 @@
       }
     },
     {
+      "id": "celsius_to_fahrenheit",
+      "type": "snippetListing",
+      "title": "celsius_to_fahrenheit",
+      "attributes": {
+        "text": "Converts Celsius to Fahrenheit.\n\nUse the formula `fahrenheit = (celsius * 1.8) + 32` to convert from Celsius to Fahrenheit.\n\n",
+        "tags": [
+          "math",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "e6ff3f171475a484b9345c4ec64bc50de7ae8dada2a12d5222a357923d7d874e"
+      }
+    },
+    {
       "id": "check_prop",
       "type": "snippetListing",
       "title": "function_name",
@@ -489,6 +504,21 @@
       },
       "meta": {
         "hash": "c13c145eb46403345b747fb7ca9c378a0e7f00dcd9f033f0e414279fcb4fdb88"
+      }
+    },
+    {
+      "id": "fahrenheit_to_celsius",
+      "type": "snippetListing",
+      "title": "fahrenheit_to_celsius",
+      "attributes": {
+        "text": "Converts Fahrenheit to Celsius.\n\nUse the formula `celsius = (fahrenheit - 32) / 1.8` to convert from Fahrenheit to Celsius.\n\n",
+        "tags": [
+          "math",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "98e114e9302c0aa91880059dbae94141965386a1f464286d3e598d3972663ff2"
       }
     },
     {
