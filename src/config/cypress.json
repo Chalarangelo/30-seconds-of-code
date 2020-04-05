@@ -4,5 +4,6 @@
   "testFiles": "**/?(*.)+(spec).[jt]s?(x)",
   "fixturesFolder": ".cypress/fixtures",
   "pluginsFile": ".cypress/plugins/index.js",
-  "supportFile": false
+  "supportFile": false,
+  "video": false
 }
