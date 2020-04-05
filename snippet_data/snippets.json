@@ -271,6 +271,30 @@
       }
     },
     {
+      "id": "celsius_to_fahrenheit",
+      "title": "celsius_to_fahrenheit",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "celsius_to_fahrenheit.md",
+        "text": "Converts Celsius to Fahrenheit.\n\nUse the formula `fahrenheit = (celsius * 1.8) + 32` to convert from Celsius to Fahrenheit.\n\n",
+        "codeBlocks": {
+          "code": "def celsius_to_fahrenheit(celsius):\r\n  return ((celsius * 1.8) + 32)",
+          "example": "celsius_to_fahrenheit(180) # 356.0"
+        },
+        "tags": [
+          "math",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "e6ff3f171475a484b9345c4ec64bc50de7ae8dada2a12d5222a357923d7d874e",
+        "firstSeen": "1586078943",
+        "lastUpdated": "1586078943",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "check_prop",
       "title": "function_name",
       "type": "snippet",
@@ -777,6 +801,30 @@
         "lastUpdated": "1578049233",
         "updateCount": 12,
         "authorCount": 4
+      }
+    },
+    {
+      "id": "fahrenheit_to_celsius",
+      "title": "fahrenheit_to_celsius",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "fahrenheit_to_celsius.md",
+        "text": "Converts Fahrenheit to Celsius.\n\nUse the formula `celsius = (fahrenheit - 32) / 1.8` to convert from Fahrenheit to Celsius.\n\n",
+        "codeBlocks": {
+          "code": "def fahrenheit_to_celsius(fahrenheit):\r\n  return ((fahrenheit - 32) / 1.8)",
+          "example": "fahrenheit_to_celsius(77) # 25.0"
+        },
+        "tags": [
+          "math",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "98e114e9302c0aa91880059dbae94141965386a1f464286d3e598d3972663ff2",
+        "firstSeen": "1586078943",
+        "lastUpdated": "1586078943",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
