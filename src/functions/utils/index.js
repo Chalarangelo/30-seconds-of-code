@@ -13,13 +13,8 @@ import {
 } from './string';
 
 import {
-  mapNumRange
-} from './math';
-
-import {
   uniqueElements,
   similarity,
-  weightedSample,
   chunk
 } from './array';
 
@@ -36,13 +31,11 @@ export {
   stripMarkdownFormat,
   optimizeNodes,
   optimizeAllNodes,
-  mapNumRange,
   getURLParameters,
   getBaseURL,
   getRootURL,
   throttle,
   uniqueElements,
   similarity,
-  weightedSample,
   chunk
 };
