@@ -22,7 +22,15 @@ describe('<SnippetPage />', () => {
   beforeEach(() => {
     wrapper = mount(
       <Provider store={ store }>
-        <SnippetPage pageContext={ { snippet: fullSnippet, splashLogoSrc, logoSrc, cardTemplate, breadcrumbs } }/>
+        <SnippetPage pageContext={ {
+          snippet:
+          fullSnippet,
+          splashLogoSrc,
+          logoSrc,
+          cardTemplate,
+          breadcrumbs,
+          pageDescription: '',
+        } }/>
       </Provider>
     );
     shell = wrapper.find('Shell');
@@ -74,7 +82,14 @@ describe('<SnippetPage />', () => {
     beforeEach(() => {
       wrapper = mount(
         <Provider store={ store }>
-          <SnippetPage pageContext={ { snippet: fullBlogSnippet, splashLogoSrc, logoSrc, cardTemplate: 'blog', breadcrumbs } }/>
+          <SnippetPage pageContext={ {
+            snippet: fullBlogSnippet,
+            splashLogoSrc,
+            logoSrc,
+            cardTemplate: 'blog',
+            pageDescription: '',
+            breadcrumbs,
+          } }/>
         </Provider>
       );
       shell = wrapper.find('Shell');

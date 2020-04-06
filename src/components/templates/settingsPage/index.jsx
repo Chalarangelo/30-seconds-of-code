@@ -15,7 +15,10 @@ const propTypes = {
     stringLiterals: PropTypes.shape({
       title: PropTypes.string,
       pageDescription: PropTypes.string,
-      settings: PropTypes.arrayOf(PropTypes.string),
+      settings: PropTypes.shape({
+        darkMode: PropTypes.string,
+        githubLinks: PropTypes.string,
+      }),
     }),
   }),
   dispatch: PropTypes.func,

@@ -21,7 +21,7 @@ describe('<SearchPage />', () => {
   beforeEach(() => {
     wrapper = mount(
       <Provider store={ store }>
-        <SearchPage pageContext={ { logoSrc, splashLogoSrc } } />
+        <SearchPage pageContext={ { logoSrc, splashLogoSrc, pageDescription: '' } } />
       </Provider>
     );
     shell = wrapper.find('Shell');
@@ -67,7 +67,7 @@ describe('<SearchPage />', () => {
       store.dispatch(pushNewQuery('test'));
       wrapper = mount(
         <Provider store={ store }>
-          <SearchPage pageContext={ { logoSrc, splashLogoSrc } } />
+          <SearchPage pageContext={ { logoSrc, splashLogoSrc, pageDescription: '' } } />
         </Provider>
       );
       meta = wrapper.find('Meta');

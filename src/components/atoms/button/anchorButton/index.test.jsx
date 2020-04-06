@@ -7,6 +7,7 @@ import AnchorButton from './index';
 import { internalLink } from 'fixtures/links';
 
 configure({ adapter: new Adapter() });
+console.warn = jest.fn();
 
 describe('<AnchorButton />', () => {
   let wrapper, button, anchor;
