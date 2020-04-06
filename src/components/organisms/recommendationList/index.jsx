@@ -1,12 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'typedefs/proptypes';
 import PreviewCard from 'components/molecules/previewCard';
 import PageSubtitle from 'components/atoms/pageSubtitle';
-import { Snippet as SnippetPropType } from 'typedefs';
 import literals from 'lang/en/client/common';
 
 const propTypes = {
-  snippetList: PropTypes.arrayOf(SnippetPropType),
+  snippetList: PropTypes.arrayOf(PropTypes.snippet),
 };
 
 /**

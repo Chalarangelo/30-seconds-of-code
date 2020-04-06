@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'typedefs/proptypes';
 import Anchor from 'components/atoms/anchor';
 import literals from 'lang/en/client/footer';
 import config from 'config/global';

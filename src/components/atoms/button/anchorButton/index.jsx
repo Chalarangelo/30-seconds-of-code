@@ -1,6 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Link as LinkPropType } from 'typedefs';
+import PropTypes from 'typedefs/proptypes';
 import Anchor from 'components/atoms/anchor';
 import { trimWhiteSpace } from 'functions/utils';
 
@@ -10,7 +9,7 @@ const propTypes = {
     PropTypes.node,
     PropTypes.arrayOf(PropTypes.node),
   ]),
-  link: LinkPropType.isRequired,
+  link: PropTypes.link,
   rest: PropTypes.any,
 };
 

@@ -1,9 +1,9 @@
 import React from 'react';
+import PropTypes from 'typedefs/proptypes';
 import { connect } from 'react-redux';
 import Meta from 'components/organisms/meta';
 import Shell from 'components/organisms/shell';
 import SearchResults from 'components/organisms/searchResults';
-import PropTypes from 'prop-types';
 import { pushNewPage } from 'state/navigation';
 import literals from 'lang/en/client/search';
 

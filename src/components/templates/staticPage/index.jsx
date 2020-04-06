@@ -1,10 +1,10 @@
 import React from 'react';
+import PropTypes from 'typedefs/proptypes';
 import Meta from 'components/organisms/meta';
 import PageTitle from 'components/atoms/pageTitle';
 import PageSubtitle from 'components/atoms/pageSubtitle';
 import SimpleCard from 'components/molecules/simpleCard';
 import Shell from 'components/organisms/shell';
-import PropTypes from 'prop-types';
 
 const propTypes = {
   pageContext: PropTypes.shape({

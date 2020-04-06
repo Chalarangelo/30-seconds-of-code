@@ -1,24 +1,6 @@
-import { shape, string, oneOfType } from 'prop-types';
-
-const Html = oneOfType([
-  shape({
-    full: string,
-    description: string,
-    fullDescription: string,
-    code: string,
-    style: string,
-    example: string,
-  }),
-  shape({
-    full: string,
-    description: string,
-    fullDescription: string,
-    browserSupport: string,
-    htmlCode: string,
-    cssCode: string,
-    jsCode: string,
-  }),
-]);
+const Html = {
+  typeName: `HtmlData`,
+};
 
 Html.toString = () => `
 type HtmlData @infer {
@@ -34,7 +16,5 @@ type HtmlData @infer {
   jsCode: String
 }
 `;
-
-Html.typeName = `HtmlData`;
 
 export default Html;

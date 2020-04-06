@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'typedefs/proptypes';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 
 import StandardSnippetCard from './standardSnippetCard';
 import CssSnippetCard from './cssSnippetCard';

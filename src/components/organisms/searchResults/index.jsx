@@ -1,8 +1,7 @@
 import React from 'react';
+import PropTypes from 'typedefs/proptypes';
 import { connect } from 'react-redux';
 import PageBackdrop from 'components/molecules/pageBackdrop';
-import PropTypes from 'prop-types';
-import { Snippet as SnippetPropType } from 'typedefs';
 import PageTitle from 'components/atoms/pageTitle';
 import PreviewCard from 'components/molecules/previewCard';
 import RecommendationList from 'components/organisms/recommendationList';
@@ -11,7 +10,7 @@ import literals from 'lang/en/client/search';
 const propTypes = {
   searchQuery: PropTypes.string,
   searchResults: PropTypes.arrayOf(PropTypes.shape({})),
-  recommendedSnippets: PropTypes.arrayOf(SnippetPropType),
+  recommendedSnippets: PropTypes.arrayOf(PropTypes.snippet),
 };
 
 /**

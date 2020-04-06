@@ -1,24 +1,13 @@
-import { shape, string, oneOf } from 'prop-types';
-import EXPERTISE_LEVELS from 'config/expertise';
 import {
   Html,
   Code,
   Tags,
-  Authors,
   Language
 } from './index';
 
-const Snippet = shape({
-  title: string,
-  expertise: oneOf([...EXPERTISE_LEVELS, '']),
-  tags: Tags,
-  language: Language,
-  code: Code,
-  html: Html,
-  url: string,
-  description: string,
-  authors: Authors,
-});
+const Snippet = {
+  typeName: `SnippetData`,
+};
 
 Snippet.toString = () => `
   type Snippet implements Node {

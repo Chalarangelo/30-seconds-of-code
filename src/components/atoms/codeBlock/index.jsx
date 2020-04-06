@@ -1,10 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Language as LanguagePropType } from 'typedefs';
+import PropTypes from 'typedefs/proptypes';
 import { trimWhiteSpace } from 'functions/utils';
 
 const propTypes = {
-  language: LanguagePropType,
+  language: PropTypes.language,
   className: PropTypes.string,
   htmlContent: PropTypes.string.isRequired,
   rest: PropTypes.any,

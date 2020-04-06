@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'typedefs/proptypes';
 import copyToClipboard from 'copy-to-clipboard';
 import { Button } from 'components/atoms/button';
 import { trimWhiteSpace } from 'functions/utils';

@@ -1,10 +1,10 @@
 import React from 'react';
+import PropTypes from 'typedefs/proptypes';
 import Meta from 'components/organisms/meta';
 import PageTitle from 'components/atoms/pageTitle';
 import { AnchorButton } from 'components/atoms/button';
 import PageBackdrop from 'components/molecules/pageBackdrop';
 import Shell from 'components/organisms/shell';
-import PropTypes from 'prop-types';
 import literals from 'lang/en/client/notFound';
 
 const propTypes = {

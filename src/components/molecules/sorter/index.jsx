@@ -1,13 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'typedefs/proptypes';
 import { trimWhiteSpace } from 'functions/utils';
 import { AnchorButton } from 'components/atoms/button';
-import { Sorter as SorterPropType } from 'typedefs';
 import { useClickOutside } from 'components/hooks';
 
 const propTypes = {
   className: PropTypes.string,
-  sorter: SorterPropType,
+  sorter: PropTypes.sorter,
 };
 
 /**

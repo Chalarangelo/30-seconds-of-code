@@ -1,8 +1,7 @@
 import React from 'react';
+import PropTypes from 'typedefs/proptypes';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
-import PropTypes from 'prop-types';
-import { Meta as MetaPropType } from 'typedefs';
 import config from 'config/global';
 import literals from 'lang/en/client/common';
 
@@ -12,7 +11,7 @@ const propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   acceptsCookies: PropTypes.bool,
-  meta: PropTypes.arrayOf(MetaPropType),
+  meta: PropTypes.arrayOf(PropTypes.meta),
   logoSrc: PropTypes.string,
   structuredData: PropTypes.shape({
     title: PropTypes.string,

@@ -1,7 +1,6 @@
 import React from 'react';
+import PropTypes from 'typedefs/proptypes';
 import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
-import { Link as LinkPropType } from 'typedefs';
 import { addTrailingSlashToSlug } from 'functions/utils';
 
 const propTypes = {
@@ -9,7 +8,7 @@ const propTypes = {
     PropTypes.node,
     PropTypes.arrayOf(PropTypes.node),
   ]),
-  link: LinkPropType.isRequired,
+  link: PropTypes.link.isRequired,
   rest: PropTypes.any,
 };
 
