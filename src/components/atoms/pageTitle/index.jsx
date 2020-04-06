@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'typedefs/proptypes';
 import { trimWhiteSpace } from 'functions/utils';
 
 const propTypes = {

@@ -1,14 +1,9 @@
 import React from 'react';
+import PropTypes from 'typedefs/proptypes';
 import { connect } from 'react-redux';
 import Meta from 'components/organisms/meta';
 import Shell from 'components/organisms/shell';
 import SnippetList from 'components/organisms/snippetList';
-import PropTypes from 'prop-types';
-import {
-  Paginator as PaginatorPropType,
-  Sorter as SorterPropType,
-  Snippet as SnippetPropType
-} from 'typedefs';
 import { pushNewPage } from 'state/navigation';
 import literals from 'lang/en/client/common';
 
@@ -16,9 +11,9 @@ const propTypes = {
   pageContext: PropTypes.shape({
     logoSrc: PropTypes.string.isRequired,
     splashLogoSrc: PropTypes.string.isRequired,
-    paginator: PaginatorPropType,
-    sorter: SorterPropType,
-    snippetList: PropTypes.arrayOf(SnippetPropType),
+    paginator: PropTypes.paginator,
+    sorter: PropTypes.sorter,
+    snippetList: PropTypes.arrayOf(PropTypes.snippet),
     listingName: PropTypes.string,
     listingTitle: PropTypes.string,
     listingType: PropTypes.string,

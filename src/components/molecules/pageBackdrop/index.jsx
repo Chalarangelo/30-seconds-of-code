@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'typedefs/proptypes';
 import PageGraphic from 'components/atoms/pageGraphic';
 import { trimWhiteSpace } from 'functions/utils';
 

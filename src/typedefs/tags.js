@@ -1,9 +1,6 @@
-import { shape, string, arrayOf } from 'prop-types';
-
-const Tags = shape({
-  primary: string,
-  all: arrayOf(string),
-});
+const Tags = {
+  typeName: `TagData`,
+};
 
 Tags.toString = () => `
 type TagData @infer {
@@ -11,7 +8,5 @@ type TagData @infer {
   all: [String]
 }
 `;
-
-Tags.typeName = `TagData`;
 
 export default Tags;

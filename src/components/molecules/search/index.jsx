@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'typedefs/proptypes';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { trimWhiteSpace, getURLParameters, throttle, getBaseURL, getRootURL } from 'functions/utils';
 import { pushNewQuery, searchByKeyphrase } from 'state/search';
 import { useFetchSearchIndex } from 'components/hooks';

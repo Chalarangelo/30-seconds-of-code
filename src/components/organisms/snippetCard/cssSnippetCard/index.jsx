@@ -1,19 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'typedefs/proptypes';
 import Anchor from 'components/atoms/anchor';
 import Card from 'components/atoms/card';
 import TagList from 'components/atoms/tagList';
 import Expertise from 'components/atoms/expertise';
 import CodeBlock from 'components/atoms/codeBlock';
-import {CodepenButton} from 'components/atoms/button';
+import { CodepenButton } from 'components/atoms/button';
 import SnippetPreview from 'components/atoms/snippetPreview';
 import BrowserSupport from 'components/atoms/browserSupport';
-import { Snippet as SnippetPropType } from 'typedefs';
 import { trimWhiteSpace } from 'functions/utils';
 import literals from 'lang/en/client/common';
 
 const propTypes = {
-  snippet: SnippetPropType,
+  snippet: PropTypes.snippet,
   className: PropTypes.string,
   hasGithubLinksEnabled: PropTypes.bool,
   rest: PropTypes.any,

@@ -1,18 +1,6 @@
-import { shape, string, oneOfType } from 'prop-types';
-
-const Code = oneOfType([
-  shape({
-    src: string,
-    example: string,
-    style: string,
-  }),
-  shape({
-    html: string,
-    css: string,
-    js: string,
-    scopedCss: string,
-  }),
-]);
+const Code = {
+  typeName: `CodeData`,
+};
 
 Code.toString = () => `
 type CodeData @infer {
@@ -25,7 +13,5 @@ type CodeData @infer {
   scopedCss: String
 }
 `;
-
-Code.typeName = `CodeData`;
 
 export default Code;

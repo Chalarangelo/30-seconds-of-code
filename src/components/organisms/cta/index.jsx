@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import PropTypes from 'typedefs/proptypes';
 import PageBackdrop from 'components/molecules/pageBackdrop';
 import { AnchorButton } from 'components/atoms/button';
 import literals from 'lang/en/client/cta';

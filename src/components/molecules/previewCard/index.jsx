@@ -1,15 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'typedefs/proptypes';
 import Card from 'components/atoms/card';
 import Anchor from 'components/atoms/anchor';
 import Expertise from 'components/atoms/expertise';
-import { Snippet as SnippetPropType } from 'typedefs';
 import { trimWhiteSpace } from 'functions/utils';
 import TagList from 'components/atoms/tagList';
 import literals from 'lang/en/client/common';
 
 const propTypes = {
-  snippet: SnippetPropType,
+  snippet: PropTypes.snippet,
   className: PropTypes.string,
   rest: PropTypes.any,
 };

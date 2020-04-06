@@ -1,12 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Link as LinkPropType } from 'typedefs';
+import PropTypes from 'typedefs/proptypes';
 import { AnchorButton } from 'components/atoms/button';
 import { trimWhiteSpace } from 'functions/utils';
 
 const propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
-    link: LinkPropType.isRequired,
+    link: PropTypes.link.isRequired,
     name: PropTypes.string,
   })).isRequired,
   isCompact: PropTypes.bool,

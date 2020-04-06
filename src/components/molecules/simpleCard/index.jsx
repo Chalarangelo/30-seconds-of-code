@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'typedefs/proptypes';
 import Card from 'components/atoms/card';
 
 const propTypes = {

@@ -1,11 +1,11 @@
 import React from 'react';
+import PropTypes from 'typedefs/proptypes';
 import { connect } from 'react-redux';
 import Meta from 'components/organisms/meta';
 import PageTitle from 'components/atoms/pageTitle';
 import Toggle from 'components/atoms/toggle/index';
 import SimpleCard from 'components/molecules/simpleCard';
 import Shell from 'components/organisms/shell';
-import PropTypes from 'prop-types';
 import { toggleDarkMode, toggleGithubLinks } from 'state/shell';
 
 const propTypes = {

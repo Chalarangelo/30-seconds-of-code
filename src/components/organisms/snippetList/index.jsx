@@ -1,20 +1,16 @@
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'typedefs/proptypes';
 import Paginator from 'components/molecules/paginator';
 import Sorter from 'components/molecules/sorter';
 import PageTitle from 'components/atoms/pageTitle';
 import PreviewCard from 'components/molecules/previewCard';
 import CTA from 'components/organisms/cta';
 import ListingAnchors from 'components/molecules/listingAnchors';
-import {
-  Snippet as SnippetPropType,
-  Paginator as PaginatorPropType
-} from 'typedefs';
 
 const propTypes = {
-  snippetList: PropTypes.arrayOf(SnippetPropType),
-  paginator: PaginatorPropType,
-  sorter: PaginatorPropType,
+  snippetList: PropTypes.arrayOf(PropTypes.snippet),
+  paginator: PropTypes.paginator,
+  sorter: PropTypes.sorter,
   listingName: PropTypes.string,
   listingType: PropTypes.string,
   listingSublinks: PropTypes.arrayOf(PropTypes.shape({})),

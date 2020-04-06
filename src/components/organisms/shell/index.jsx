@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'typedefs/proptypes';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import Anchor from 'components/atoms/anchor';
 import Search from 'components/molecules/search';
 import Footer from 'components/molecules/footer';
