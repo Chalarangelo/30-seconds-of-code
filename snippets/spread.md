@@ -1,6 +1,6 @@
 ---
 title: spread
-tags: list,utility,intermediate
+tags: list,intermediate
 ---
 
 Flattens a list, by spreading its elements into a new list.
