@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import copyToClipboard from 'copy-to-clipboard';
 import { Button } from 'components/atoms/button';
-import { trimWhiteSpace } from 'functions/utils';
+import { combineClassNames } from 'functions/utils';
 import literals from 'lang/en/client/common';
 
 const propTypes = {
@@ -37,7 +37,7 @@ const CopyButton = ({
 
   return (
     <Button
-      className={ trimWhiteSpace`copy-btn icon ${active ? 'icon-check active' : 'icon-clipboard'}` }
+      className={ combineClassNames`copy-btn icon ${active ? 'icon-check active' : 'icon-clipboard'}` }
       title={ literals.copyToClipboard }
       onClick={ () => setCopying(true) }
     />

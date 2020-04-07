@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import { trimWhiteSpace } from 'functions/utils';
+import { combineClassNames } from 'functions/utils';
 
 const propTypes = {
   language: PropTypes.language,
@@ -21,7 +21,7 @@ const CodeBlock = ({
 }) => (
   <pre
     data-code-language={ language.long }
-    className={ trimWhiteSpace`${`language-${language.short}`} ${className}` }
+    className={ combineClassNames`${`language-${language.short}`} ${className}` }
     dangerouslySetInnerHTML={ { __html: htmlContent } }
     { ...rest }
   />

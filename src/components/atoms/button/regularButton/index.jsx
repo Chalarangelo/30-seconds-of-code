@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import { trimWhiteSpace } from 'functions/utils';
+import { combineClassNames } from 'functions/utils';
 
 const propTypes = {
   onClick: PropTypes.func,
@@ -22,7 +22,7 @@ const Button = ({
   ...rest // Needs props to be a link, have accessible name if only icon etc.
 }) => (
   <button
-    className={ trimWhiteSpace`btn ${className}` }
+    className={ combineClassNames`btn ${className}` }
     onClick={ onClick }
     { ...rest }
   >

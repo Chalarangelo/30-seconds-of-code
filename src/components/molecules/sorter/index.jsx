@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import { trimWhiteSpace } from 'functions/utils';
+import { combineClassNames } from 'functions/utils';
 import { AnchorButton } from 'components/atoms/button';
 import { useClickOutside } from 'components/hooks';
 
@@ -35,7 +35,7 @@ const Sorter = ({
 
   return (
     <div
-      className={ trimWhiteSpace`sorter
+      className={ combineClassNames`sorter
         ${className}
         ${toggled ? 'open' : ''}
       ` }
@@ -48,7 +48,7 @@ const Sorter = ({
             .map(order => (
               <AnchorButton
                 key={ `${order.url}` }
-                className={ trimWhiteSpace`order-btn
+                className={ combineClassNames`order-btn
                 ${order.title === selectedOrder ? `selected icon ${toggled ? 'icon-chevron-up' : 'icon-chevron-down'}` : ''}
               ` }
                 onClick={ e => handleSorterClick(e) }

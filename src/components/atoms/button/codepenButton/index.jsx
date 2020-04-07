@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import { trimWhiteSpace } from 'functions/utils';
+import { combineClassNames } from 'functions/utils';
 import literals from 'lang/en/client/common';
 
 /* eslint-disable camelcase */
@@ -54,7 +54,7 @@ const CodepenButton = ({
         }
       />
       <button
-        className={ trimWhiteSpace`btn codepen-btn icon ${active ? 'icon-check active' : 'icon-codepen'}` }
+        className={ combineClassNames`btn codepen-btn icon ${active ? 'icon-check active' : 'icon-codepen'}` }
         ref={ btnRef }
         title={ literals.codepen }
         onClick={ e => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import Anchor from 'components/atoms/anchor';
-import { trimWhiteSpace } from 'functions/utils';
+import { combineClassNames } from 'functions/utils';
 
 const propTypes = {
   className: PropTypes.string,
@@ -24,7 +24,7 @@ const AnchorButton = ({
   ...rest
 }) => (
   <Anchor
-    className={ trimWhiteSpace`btn ${className}` }
+    className={ combineClassNames`btn ${className}` }
     link={ link }
     { ...rest }
   >
