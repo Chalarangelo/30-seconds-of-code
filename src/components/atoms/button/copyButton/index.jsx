@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import copyToClipboard from 'copy-to-clipboard';
 import { Button } from 'components/atoms/button';
-import { combineClassNames } from 'functions/utils';
+import { combineClassNames } from 'utils';
 import literals from 'lang/en/client/common';
 
 const propTypes = {

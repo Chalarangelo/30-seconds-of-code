@@ -1,4 +1,7 @@
-/** Removes unnecessary whitespace from template literals parsed as classNames */
+/**
+ * Removes unnecessary whitespace from template literals parsed as classNames.
+ * Use with a template literal only.
+ */
 export const combineClassNames = (t, ...i) => {
   const plainTexts = t
     .join(' ')
@@ -13,11 +16,20 @@ export const combineClassNames = (t, ...i) => {
     .join(' ') || undefined;
 };
 
-/** Capitalizes the first letter of a string */
+/**
+ * Capitalizes the first letter of a string.
+ * @param {string} str - The string to be capitalized.
+ * @param {bool} lowerRest - Should the rest of the characters be lowercased?
+ */
 export const capitalize = ([first, ...rest], lowerRest = false) =>
   first.toUpperCase() + (lowerRest ? rest.join('').toLowerCase() : rest.join(''));
 
-/** Optimizes nodes in an HTML string */
+/**
+ * Optimizes nodes in an HTML string.
+ * @param {string} data - The HTML string to be optimized.
+ * @param {RegExp} regexp - The matcher for the optimization.
+ * @param {string} replacer - The replacement for the matches.
+ */
 export const optimizeNodes = (data, regexp, replacer) => {
   let count = 0;
   let output = data;
@@ -29,7 +41,9 @@ export const optimizeNodes = (data, regexp, replacer) => {
   return output;
 };
 
-/** Optimizes all nodes in an HTML string */
+/** Optimizes all nodes in an HTML string.
+ * @param {string} html - The HTML string to be optimized.
+ */
 export const optimizeAllNodes = html => {
   let output = html;
   // Optimize punctuation nodes
@@ -55,23 +69,34 @@ export const optimizeAllNodes = html => {
   return output;
 };
 
-/** Returns an object containing the parameters of the current URL. */
+/**
+ * Returns an object containing the parameters of the current URL.
+ * @param {string} url - The URL to be parsed.
+ */
 export const getURLParameters = url =>
   (url.match(/([^?=&]+)(=([^&]*))/g) || []).reduce(
     (a, v) => ((a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a),
     {}
   );
 
-/** Returns the URL without any parameters. */
+/**
+ * Returns the URL without any parameters.
+ * @param {string} url - The URL to be parsed.
+ */
 export const getBaseURL = url =>
   url.indexOf('?') > 0 ? url.slice(0, url.indexOf('?')) : url;
 
-/** Returns the root URL without any parameters. */
+/**
+ * Returns the root URL without any parameters..
+ * @param {string} url - The URL to be parsed.
+ */
 export const getRootURL = url =>
   url.split('/').slice(0, 3).join('/');
 
-
-/** Strips markdown format from a string */
+/**
+ * Strips markdown format from a string.
+ * @param {string} str - The markdown string to be stripped.
+ */
 export const stripMarkdownFormat = str => {
   return str
     .replace(/[`*]/g, '')
@@ -80,7 +105,10 @@ export const stripMarkdownFormat = str => {
     .replace(/_(.*?)_/g, '$1');
 };
 
-/** Converts a given string to kebab-case */
+/**
+ * Converts a given string to kebab-case.
+ * @param {string} str - The string to be converted.
+ */
 export const toKebabCase = str =>
   str &&
   str
@@ -93,10 +121,14 @@ export const toKebabCase = str =>
  * Steps:
  *  - Kebab-case
  *  - Add a '/' in the front
+ * @param {string} str - The string to be converted.
  */
 export const convertToSeoSlug = str => `/${toKebabCase(str)}`;
 
-/** Adds a trailing `/` to a slug, if necessary */
+/**
+ * Adds a trailing `/` to a slug, if necessary.
+ * @param {string} str - The string to be converted.
+ * */
 export const addTrailingSlashToSlug = str => {
   if (str.includes('?'))
     return str.includes('/?') ? str : str.replace('?', '/?');

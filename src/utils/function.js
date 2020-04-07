@@ -1,6 +1,8 @@
 /* istanbul ignore next */
 /** Creates a throttled function that only invokes the provided function at
- * most once per every wait milliseconds
+ * most once per every `wait` milliseconds.
+ * @param {function} fn - The function to be throttled.
+ * @param {number} wait - The number of ms to wait.
  */
 export const throttle = (fn, wait) => {
   let inThrottle, lastFn, lastTime;

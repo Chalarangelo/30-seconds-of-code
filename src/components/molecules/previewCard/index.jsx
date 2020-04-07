@@ -3,7 +3,7 @@ import PropTypes from 'typedefs/proptypes';
 import Card from 'components/atoms/card';
 import Anchor from 'components/atoms/anchor';
 import Expertise from 'components/atoms/expertise';
-import { combineClassNames } from 'functions/utils';
+import { combineClassNames } from 'utils';
 import TagList from 'components/atoms/tagList';
 import literals from 'lang/en/client/common';
 

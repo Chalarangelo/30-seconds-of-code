@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import { combineClassNames } from 'functions/utils';
+import { combineClassNames } from 'utils';
 
 const propTypes = {
   level: PropTypes.string,

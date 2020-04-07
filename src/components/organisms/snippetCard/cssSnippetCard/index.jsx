@@ -8,7 +8,7 @@ import CodeBlock from 'components/atoms/codeBlock';
 import { CodepenButton } from 'components/atoms/button';
 import SnippetPreview from 'components/atoms/snippetPreview';
 import BrowserSupport from 'components/atoms/browserSupport';
-import { combineClassNames } from 'functions/utils';
+import { combineClassNames } from 'utils';
 import literals from 'lang/en/client/common';
 
 const propTypes = {

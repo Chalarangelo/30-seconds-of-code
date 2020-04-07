@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import { AnchorButton } from 'components/atoms/button';
-import { combineClassNames } from 'functions/utils';
+import { combineClassNames } from 'utils';
 
 const propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({

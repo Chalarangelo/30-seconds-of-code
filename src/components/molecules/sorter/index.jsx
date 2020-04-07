@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import { combineClassNames } from 'functions/utils';
+import { combineClassNames } from 'utils';
 import { AnchorButton } from 'components/atoms/button';
 import { useClickOutside } from 'components/hooks';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import { Link } from 'gatsby';
-import { addTrailingSlashToSlug } from 'functions/utils';
+import { addTrailingSlashToSlug } from 'utils';
 
 const propTypes = {
   children: PropTypes.oneOfType([
