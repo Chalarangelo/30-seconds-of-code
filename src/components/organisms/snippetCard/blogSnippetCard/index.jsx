@@ -2,7 +2,7 @@ import React, {Fragment} from 'react';
 import PropTypes from 'typedefs/proptypes';
 import Card from 'components/atoms/card';
 import TagList from 'components/atoms/tagList';
-import { trimWhiteSpace } from 'functions/utils';
+import { combineClassNames } from 'functions/utils';
 import Anchor from 'components/atoms/anchor';
 import literals from 'lang/en/client/common';
 
@@ -24,7 +24,7 @@ const SnippetCard = ({
   hasGithubLinksEnabled = false,
   ...rest
 }) => (
-  <Card className={ trimWhiteSpace`snippet-card ${className}` } { ...rest } >
+  <Card className={ combineClassNames`snippet-card ${className}` } { ...rest } >
     <h4 className='card-title'>{ snippet.title }</h4>
     <div className="card-meta-info">
       { snippet.authors.map((a, i, arr) => (

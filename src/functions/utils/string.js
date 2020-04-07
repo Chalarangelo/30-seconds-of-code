@@ -1,20 +1,16 @@
 /** Removes unnecessary whitespace from template literals parsed as classNames */
-export const trimWhiteSpace = (...args) => {
-  const plainTexts = args[0]
+export const combineClassNames = (t, ...i) => {
+  const plainTexts = t
     .join(' ')
     .split(' ')
-    .map(v => v.trim())
-    .filter(Boolean);
-  const interpolations = (args || [])
-    .slice(1)
+    .map(v => v.trim());
+  const interpolations = i
     .filter(Boolean)
     .reduce((acc, v) => [...acc, ...v.split(' ')], [])
-    .map(v => v.trim())
-    .filter(Boolean);
+    .map(v => v.trim());
   return [...new Set([...plainTexts, ...interpolations])]
-    .join(' ')
-    .replace(/\s+/gm, ' ')
-    .trim() || undefined;
+    .filter(Boolean)
+    .join(' ') || undefined;
 };
 
 /** Capitalizes the first letter of a string */

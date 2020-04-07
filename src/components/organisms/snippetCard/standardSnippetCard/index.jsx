@@ -6,7 +6,7 @@ import TagList from 'components/atoms/tagList';
 import Expertise from 'components/atoms/expertise';
 import CodeBlock from 'components/atoms/codeBlock';
 import { CopyButton, CodepenButton } from 'components/atoms/button';
-import { trimWhiteSpace } from 'functions/utils';
+import { combineClassNames } from 'functions/utils';
 import JSX_SNIPPET_PRESETS from 'config/jsxSnippetPresets';
 import literals from 'lang/en/client/common';
 
@@ -28,7 +28,7 @@ const SnippetCard = ({
   hasGithubLinksEnabled = false,
   ...rest
 }) => (
-  <Card className={ trimWhiteSpace`snippet-card ${className}` } { ...rest } >
+  <Card className={ combineClassNames`snippet-card ${className}` } { ...rest } >
     <div className='card-meta'>
       <div className={ `card-icon icon icon-${snippet.icon}` }>
         <Expertise level={ snippet.expertise } />

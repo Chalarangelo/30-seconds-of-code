@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import { trimWhiteSpace } from 'functions/utils';
+import { combineClassNames } from 'functions/utils';
 
 const propTypes = {
   className: PropTypes.string,
@@ -16,7 +16,7 @@ const Card = ({
   ...rest
 }) => (
   <div
-    className={ trimWhiteSpace`card ${className}` }
+    className={ combineClassNames`card ${className}` }
     { ...rest }
   />
 );

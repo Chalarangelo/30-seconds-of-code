@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import { trimWhiteSpace } from 'functions/utils';
+import { combineClassNames } from 'functions/utils';
 
 const propTypes = {
   className: PropTypes.string,
@@ -18,7 +18,7 @@ const PageTitle = ({
   className,
   children,
 }) => (
-  <h2 className={ trimWhiteSpace`page-title ${className}` }>
+  <h2 className={ combineClassNames`page-title ${className}` }>
     { children }
   </h2>
 );

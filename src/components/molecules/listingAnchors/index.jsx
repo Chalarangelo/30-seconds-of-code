@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import { AnchorButton } from 'components/atoms/button';
-import { trimWhiteSpace } from 'functions/utils';
+import { combineClassNames } from 'functions/utils';
 
 const propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
@@ -45,7 +45,7 @@ const ListingAnchors = ({
         <li key={ item.link.url }>
           <AnchorButton
             link={ item.link }
-            className={ trimWhiteSpace`${item.selected ? 'selected' : ''}` }
+            className={ combineClassNames`${item.selected ? 'selected' : ''}` }
           >
             { item.name }
           </AnchorButton>

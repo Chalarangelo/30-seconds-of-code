@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import { trimWhiteSpace } from 'functions/utils';
+import { combineClassNames } from 'functions/utils';
 
 const propTypes = {
   className: PropTypes.string,
@@ -22,7 +22,7 @@ const PageSubtitle = ({
   isLight,
 }) => (
   <p
-    className={ trimWhiteSpace`${isLight ? 'page-light-sub' : 'page-sub-title'}${className}` }
+    className={ combineClassNames`${isLight ? 'page-light-sub' : 'page-sub-title'}${className}` }
   >
     { children }
   </p>

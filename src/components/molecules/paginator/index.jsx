@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import { trimWhiteSpace } from 'functions/utils';
+import { combineClassNames } from 'functions/utils';
 import { AnchorButton, Button } from 'components/atoms/button';
 
 const propTypes = {
@@ -47,7 +47,7 @@ const Paginator = ({
 
   return (
     <div
-      className={ trimWhiteSpace`paginator ${className}` }
+      className={ combineClassNames`paginator ${className}` }
     >
       { pageNumber > 1 &&
       <AnchorButton

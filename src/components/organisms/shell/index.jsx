@@ -6,7 +6,7 @@ import Search from 'components/molecules/search';
 import Footer from 'components/molecules/footer';
 import CookieConsentPopup from 'components/molecules/cookieConsentPopup';
 import literals from 'lang/en/client/common';
-import { trimWhiteSpace } from 'functions/utils';
+import { combineClassNames } from 'functions/utils';
 import env from '../../../../.build/env';
 
 const propTypes = {
@@ -41,7 +41,7 @@ const Shell = ({
   lastPageUrl,
   children,
 }) => (
-  <div className={ trimWhiteSpace`page-container ${isDarkMode ? 'dark' : ''}` }>
+  <div className={ combineClassNames`page-container ${isDarkMode ? 'dark' : ''}` }>
     {
       typeof acceptsCookies === 'undefined' && env === 'PRODUCTION' && !isBot ?
         <CookieConsentPopup /> : null

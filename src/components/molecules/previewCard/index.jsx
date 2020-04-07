@@ -3,7 +3,7 @@ import PropTypes from 'typedefs/proptypes';
 import Card from 'components/atoms/card';
 import Anchor from 'components/atoms/anchor';
 import Expertise from 'components/atoms/expertise';
-import { trimWhiteSpace } from 'functions/utils';
+import { combineClassNames } from 'functions/utils';
 import TagList from 'components/atoms/tagList';
 import literals from 'lang/en/client/common';
 
@@ -24,7 +24,7 @@ const PreviewCard = ({
   className,
   ...rest
 }) => (
-  <Card className={ trimWhiteSpace`preview-card ${className}` } { ...rest } >
+  <Card className={ combineClassNames`preview-card ${className}` } { ...rest } >
     <div className='card-meta'>
       <div className={ `card-icon icon icon-${snippet.icon}` }>
         <Expertise level={ snippet.expertise } />

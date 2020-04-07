@@ -8,7 +8,7 @@ import CodeBlock from 'components/atoms/codeBlock';
 import { CodepenButton } from 'components/atoms/button';
 import SnippetPreview from 'components/atoms/snippetPreview';
 import BrowserSupport from 'components/atoms/browserSupport';
-import { trimWhiteSpace } from 'functions/utils';
+import { combineClassNames } from 'functions/utils';
 import literals from 'lang/en/client/common';
 
 const propTypes = {
@@ -30,7 +30,7 @@ const SnippetCard = ({
   ...rest
 }) => {
   return (
-    <Card className={ trimWhiteSpace`snippet-card ${className}` } { ...rest } >
+    <Card className={ combineClassNames`snippet-card ${className}` } { ...rest } >
       <div className='card-meta'>
         <div className={ `card-icon icon icon-${snippet.icon}` }>
           <Expertise level={ snippet.expertise } />

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import PageGraphic from 'components/atoms/pageGraphic';
-import { trimWhiteSpace } from 'functions/utils';
+import { combineClassNames } from 'functions/utils';
 
 const propTypes = {
   graphicName: PropTypes.string,
@@ -45,11 +45,11 @@ const PageBackdrop = ({
     className={ graphicName }
     { ...rest }
   >
-    <p className={ trimWhiteSpace`page-backdrop-text ${mainTextClassName}` }>
+    <p className={ combineClassNames`page-backdrop-text ${mainTextClassName}` }>
       { mainText }
     </p>
     { subText ?
-      <p className={ trimWhiteSpace`page-backdrop-subtext ${subTextClassName}` }>
+      <p className={ combineClassNames`page-backdrop-subtext ${subTextClassName}` }>
         { subText }
       </p>
       : null
