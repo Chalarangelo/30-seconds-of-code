@@ -19,9 +19,17 @@
 #
 # * Redirect JS Adapter to Function after merging - 13/01/2020
 # * Redirect CSS Other to CSS after removing tag  - 09/03/2020
+# * Redirect Python Utility to Python after removing tag - 07/04/2020
+# * Redirect Python Object to Dictionary after removing tag - 07/04/2020
 # -----------------------------------------------------------------------------
 js/t/adapter/p/1/                      /js/t/function/p/1                       301!
 css/t/other/p/1/                       /css/p/1                                 301!
+python/t/utility/p/1/                  /python/p/1                              301!
+python/t/utility/a/1/                  /python/a/1                              301!
+python/t/utility/e/1/                  /python/e/1                              301!
+python/t/object/p/1/                   /python/t/dictionary/p/1                 301!
+python/t/object/a/1/                   /python/t/dictionary/a/1                 301!
+python/t/object/e/1/                   /python/t/dictionary/e/1                 301!
 
 # -----------------------------------------------------------------------------
 #   SNIPPET REDIRECTS:
@@ -29,10 +37,13 @@ css/t/other/p/1/                       /css/p/1                                 
 # * Redirect an old CSS snippet to a new blog (CSS variables)
 # * Redirect an old CSS snippet to the CSS listing (CSS calc)
 # * Redirect an old JS snippet to its duplicate
+# * Redirect a couple of Python snippets to their new URLs
 # -----------------------------------------------------------------------------
 css/s/custom-variables/                /blog/s/css-variables                    301!
 css/s/calc/                            /css/p/1                                 301!
 js/s/filter-falsy/                     /js/s/compact                            301!
+python/s/function-name/                /python/s/check-prop                     301!
+python/s/map-object/                   /python/s/map-dictionary                 301!
 
 # -----------------------------------------------------------------------------
 #   LEGACY REDIRECTS:
