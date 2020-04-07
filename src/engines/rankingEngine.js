@@ -1,5 +1,5 @@
 /* eslint-disable brace-style */
-import { rankingEngine } from 'config/rankingEngine';
+import rankingEngine from 'config/rankingEngine';
 
 const d = new Date(),
   d1Day = new Date(),
