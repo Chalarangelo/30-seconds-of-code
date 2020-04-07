@@ -1,6 +1,6 @@
 ---
 title: cast_list
-tags: utility,list,beginner
+tags: list,beginner
 ---
 
 Casts the provided value as a list if it's not one.
