@@ -1,6 +1,6 @@
 ---
-title: function_name
-tags: utility,intermediate
+title: check_prop
+tags: function,intermediate
 ---
 
 Given a predicate function, `fn`, and a `prop` string, this curried function will then take an object to inspect by calling the property and passing it to the predicate.
