@@ -1,4 +1,4 @@
-import { stripMarkdownFormat } from 'functions/utils';
+import { stripMarkdownFormat } from 'utils';
 import { transformTagName } from './transformTags';
 import literals from 'lang/en/snippet';
 

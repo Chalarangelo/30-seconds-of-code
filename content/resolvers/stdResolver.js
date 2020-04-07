@@ -1,6 +1,6 @@
 import {
   optimizeAllNodes
-} from 'functions/utils';
+} from 'utils';
 
 /** Get the textual content in a gatsby page */
 const getTextualContent = (str, noExplain = false) => {

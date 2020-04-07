@@ -1,5 +1,5 @@
 import EXPERTISE_LEVELS from 'config/expertise';
-import { capitalize } from 'functions/utils';
+import { capitalize } from 'utils';
 
 const specialTagsDictionary = {
   'css': 'CSS',

@@ -6,7 +6,7 @@ import TagList from 'components/atoms/tagList';
 import Expertise from 'components/atoms/expertise';
 import CodeBlock from 'components/atoms/codeBlock';
 import { CopyButton, CodepenButton } from 'components/atoms/button';
-import { combineClassNames } from 'functions/utils';
+import { combineClassNames } from 'utils';
 import JSX_SNIPPET_PRESETS from 'config/jsxSnippetPresets';
 import literals from 'lang/en/client/common';
 

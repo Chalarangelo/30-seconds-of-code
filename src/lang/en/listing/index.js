@@ -1,4 +1,4 @@
-import { capitalize } from 'functions/utils';
+import { capitalize } from 'utils';
 import config from 'config/global';
 
 const literals = {

@@ -1,5 +1,5 @@
 /* eslint-disable brace-style */
-import { similarity } from 'functions/utils';
+import { similarity } from 'utils';
 import { determineLanguageFromTags, stripLanguageFromTags } from 'functions/transformers';
 
 const determineRecommendedSnippets = (snippetNodes, snippetContext) => {

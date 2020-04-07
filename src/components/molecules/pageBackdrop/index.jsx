@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import PageGraphic from 'components/atoms/pageGraphic';
-import { combineClassNames } from 'functions/utils';
+import { combineClassNames } from 'utils';
 
 const propTypes = {
   graphicName: PropTypes.string,

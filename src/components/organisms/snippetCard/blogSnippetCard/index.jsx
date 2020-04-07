@@ -2,7 +2,7 @@ import React, {Fragment} from 'react';
 import PropTypes from 'typedefs/proptypes';
 import Card from 'components/atoms/card';
 import TagList from 'components/atoms/tagList';
-import { combineClassNames } from 'functions/utils';
+import { combineClassNames } from 'utils';
 import Anchor from 'components/atoms/anchor';
 import literals from 'lang/en/client/common';
 

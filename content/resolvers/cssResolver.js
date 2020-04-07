@@ -1,6 +1,6 @@
 import {
   optimizeAllNodes
-} from 'functions/utils';
+} from 'utils';
 
 /** Get the explanation for the snippet in the page. */
 const getExplanation = str => {

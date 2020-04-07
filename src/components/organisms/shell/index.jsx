@@ -6,7 +6,7 @@ import Search from 'components/molecules/search';
 import Footer from 'components/molecules/footer';
 import CookieConsentPopup from 'components/molecules/cookieConsentPopup';
 import literals from 'lang/en/client/common';
-import { combineClassNames } from 'functions/utils';
+import { combineClassNames } from 'utils';
 import env from '../../../../.build/env';
 
 const propTypes = {

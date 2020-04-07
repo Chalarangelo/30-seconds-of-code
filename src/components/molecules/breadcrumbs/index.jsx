@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import Anchor from 'components/atoms/anchor';
-import { combineClassNames } from 'functions/utils';
+import { combineClassNames } from 'utils';
 
 const linkBackPropTypes = {
   children: PropTypes.oneOfType([
