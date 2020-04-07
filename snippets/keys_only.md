@@ -1,6 +1,6 @@
 ---
 title: keys_only
-tags: object,list,beginner
+tags: dictionary,list,beginner
 ---
 
 Returns a flat list of all the keys in a flat dictionary.

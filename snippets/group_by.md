@@ -1,11 +1,11 @@
 ---
 title: group_by
-tags: list,object,intermediate
+tags: list,dictionary,intermediate
 ---
 
 Groups the elements of a list based on the given function.
 
-Use `map()` and `fn` to map the values of the list to the keys of an object.
+Use `map()` and `fn` to map the values of the list to the keys of a dictionary.
 Use list comprehension to map each element to the appropriate `key`.
 
 ```py

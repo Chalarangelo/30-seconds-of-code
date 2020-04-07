@@ -1,6 +1,6 @@
 ---
 title: values_only
-tags: object,list,beginner
+tags: dictionary,list,beginner
 ---
 
 Returns a flat list of all the values in a flat dictionary.
