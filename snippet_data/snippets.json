@@ -257,7 +257,6 @@
           "example": "cast_list('foo') # ['foo']\ncast_list([1]) # [1]\ncast_list(('foo', 'bar')) # ['foo', 'bar']"
         },
         "tags": [
-          "utility",
           "list",
           "beginner"
         ]
@@ -265,9 +264,9 @@
       "meta": {
         "hash": "0765b0134c5da933915f4c6a7c43dc50b004fd799514e66133e0cfe438af9171",
         "firstSeen": "1566294463",
-        "lastUpdated": "1578048956",
-        "updateCount": 6,
-        "authorCount": 3
+        "lastUpdated": "1586278480",
+        "updateCount": 7,
+        "authorCount": 4
       }
     },
     {
@@ -296,7 +295,7 @@
     },
     {
       "id": "check_prop",
-      "title": "function_name",
+      "title": "check_prop",
       "type": "snippet",
       "attributes": {
         "fileName": "check_prop.md",
@@ -306,16 +305,16 @@
           "example": "check_age = check_prop(lambda x: x >= 18, 'age')\r\nuser = {'name': 'Mark', 'age': 18}\r\n\r\ncheck_age(user) # True"
         },
         "tags": [
-          "utility",
+          "function",
           "intermediate"
         ]
       },
       "meta": {
         "hash": "ceb7dcb63cc7ec14237807b05a7cc47e7298969bd90fa1bd1ca96426a3cfa34f",
         "firstSeen": "1577976565",
-        "lastUpdated": "1578048759",
-        "updateCount": 3,
-        "authorCount": 2
+        "lastUpdated": "1586278449",
+        "updateCount": 4,
+        "authorCount": 3
       }
     },
     {
@@ -1147,22 +1146,22 @@
       "type": "snippet",
       "attributes": {
         "fileName": "group_by.md",
-        "text": "Groups the elements of a list based on the given function.\n\nUse `map()` and `fn` to map the values of the list to the keys of an object.\nUse list comprehension to map each element to the appropriate `key`.\n\n",
+        "text": "Groups the elements of a list based on the given function.\n\nUse `map()` and `fn` to map the values of the list to the keys of a dictionary.\nUse list comprehension to map each element to the appropriate `key`.\n\n",
         "codeBlocks": {
           "code": "def group_by(lst, fn):\n  return {key : [el for el in lst if fn(el) == key] for key in map(fn, lst)}",
           "example": "from math import floor\ngroup_by([6.1, 4.2, 6.3], floor) # {4: [4.2], 6: [6.1, 6.3]}\ngroup_by(['one', 'two', 'three'], len) # {3: ['one', 'two'], 5: ['three']}"
         },
         "tags": [
           "list",
-          "object",
+          "dictionary",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "d558526c1ec2887f13bb16fd5184a9b98f2a7a76907b191278f5e58e8703846e",
+        "hash": "024b31b493db85088428a449af3124901063e8507d76c7b36c898d5cd09bb9d6",
         "firstSeen": "1566296940",
-        "lastUpdated": "1581360726",
-        "updateCount": 7,
+        "lastUpdated": "1586278519",
+        "updateCount": 8,
         "authorCount": 3
       }
     },
@@ -1612,7 +1611,7 @@
           "example": "ages = {\n  \"Peter\": 10,\n  \"Isabel\": 11,\n  \"Anna\": 9,\n}\nkeys_only(ages) # ['Peter', 'Isabel', 'Anna']"
         },
         "tags": [
-          "object",
+          "dictionary",
           "list",
           "beginner"
         ]
@@ -1620,9 +1619,9 @@
       "meta": {
         "hash": "4e4a5b4892fcccb2982e7ae352f9d61fa0234c209431c9461ea47d503feaaf49",
         "firstSeen": "1522616191",
-        "lastUpdated": "1566287465",
-        "updateCount": 8,
-        "authorCount": 4
+        "lastUpdated": "1586278519",
+        "updateCount": 9,
+        "authorCount": 5
       }
     },
     {
@@ -1689,28 +1688,27 @@
         "tags": [
           "list",
           "string",
-          "utility",
           "intermediate"
         ]
       },
       "meta": {
         "hash": "af50f2096fef9a18346e3c220ff1957ab4218075e6c02ae05d8c3f6e3d269549",
         "firstSeen": "1566304069",
-        "lastUpdated": "1578048759",
-        "updateCount": 3,
-        "authorCount": 2
+        "lastUpdated": "1586278551",
+        "updateCount": 4,
+        "authorCount": 3
       }
     },
     {
-      "id": "map_object",
-      "title": "map_object",
+      "id": "map_dictionary",
+      "title": "map_dictionary",
       "type": "snippet",
       "attributes": {
-        "fileName": "map_object.md",
-        "text": "Maps the values of a list to a dictionary using a function, where the key-value pairs consist of the original value as the key and the result of the function as the value.\n\n\nUse a `for` loop to iterate over the list's values, assigning the values produced by `fn` to each key of the dictionary.\n\n",
+        "fileName": "map_dictionary.md",
+        "text": "Maps the values of a list to a dictionary using a function, where the key-value pairs consist of the original value as the key and the result of the function as the value.\n\nUse a `for` loop to iterate over the list's values, assigning the values produced by `fn` to each key of the dictionary.\n\n",
         "codeBlocks": {
-          "code": "def map_object(itr, fn):\r\n  ret = {}\r\n  for x in itr:\r\n    ret[x] = fn(x)\r\n  return ret",
-          "example": "map_object([1,2,3], lambda x: x * x) # { 1: 1, 2: 4, 3: 9 }"
+          "code": "def map_dictionary(itr, fn):\n  ret = {}\n  for x in itr:\n    ret[x] = fn(x)\n  return ret",
+          "example": "map_dictionary([1,2,3], lambda x: x * x) # { 1: 1, 2: 4, 3: 9 }"
         },
         "tags": [
           "list",
@@ -1718,10 +1716,10 @@
         ]
       },
       "meta": {
-        "hash": "704d9dfb490d983b2be8465e241cf61360f574a22230974a38f55554b3a8e044",
-        "firstSeen": "1584381063",
-        "lastUpdated": "1584388846",
-        "updateCount": 3,
+        "hash": "16139240bec2937cb771f0c63d0172d15e3d776efe32c8c52a03f6c8fa1db689",
+        "firstSeen": "1586278428",
+        "lastUpdated": "1586278428",
+        "updateCount": 2,
         "authorCount": 2
       }
     },
@@ -1731,23 +1729,23 @@
       "type": "snippet",
       "attributes": {
         "fileName": "map_values.md",
-        "text": "Creates an object with the same keys as the provided object and values generated by running the provided function for each value.\n\nUse `dict.keys()` to iterate over the object's keys, assigning the values produced by `fn` to each key of a new object.\n\n",
+        "text": "Creates a dictionary with the same keys as the provided dictionary and values generated by running the provided function for each value.\n\nUse `dict.keys()` to iterate over the dictionary's keys, assigning the values produced by `fn` to each key of a new dictionary.\n\n",
         "codeBlocks": {
           "code": "def map_values(obj, fn):\n  ret = {}\n  for key in obj.keys():\n    ret[key] = fn(obj[key])\n  return ret",
           "example": "users = {\n  'fred': { 'user': 'fred', 'age': 40 },\n  'pebbles': { 'user': 'pebbles', 'age': 1 }\n}\n\nmap_values(users, lambda u : u['age']) # {'fred': 40, 'pebbles': 1}"
         },
         "tags": [
-          "object",
+          "dictionary",
           "function",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "91f93e124e2f1fb9d25b62db478f91503330947a7c212dc97215dec8c4b225fe",
+        "hash": "bb8b57173fdb7084667db5aa6b608316b4ccf7ad8aed6a14f7bae9c5cf7e0dea",
         "firstSeen": "1566304470",
-        "lastUpdated": "1566304470",
-        "updateCount": 2,
-        "authorCount": 2
+        "lastUpdated": "1586278519",
+        "updateCount": 3,
+        "authorCount": 3
       }
     },
     {
@@ -2230,16 +2228,15 @@
         },
         "tags": [
           "list",
-          "utility",
           "intermediate"
         ]
       },
       "meta": {
         "hash": "a483a7203d0ea1ceebbcbe05d50ad724798ebdb8c9786b4be46d671b03daebc8",
         "firstSeen": "1515443885",
-        "lastUpdated": "1578049108",
-        "updateCount": 13,
-        "authorCount": 3
+        "lastUpdated": "1586278551",
+        "updateCount": 14,
+        "authorCount": 4
       }
     },
     {
@@ -2523,7 +2520,7 @@
           "example": "ages = {\n  \"Peter\": 10,\n  \"Isabel\": 11,\n  \"Anna\": 9,\n}\nvalues_only(ages) # [10, 11, 9]"
         },
         "tags": [
-          "object",
+          "dictionary",
           "list",
           "beginner"
         ]
@@ -2531,9 +2528,9 @@
       "meta": {
         "hash": "ea3005a1cc4999d065fcf7141c14fd481f8384bc7d45ecf0eeaf04b6eb8adb66",
         "firstSeen": "1522616191",
-        "lastUpdated": "1572538031",
-        "updateCount": 8,
-        "authorCount": 4
+        "lastUpdated": "1586278519",
+        "updateCount": 9,
+        "authorCount": 5
       }
     },
     {
