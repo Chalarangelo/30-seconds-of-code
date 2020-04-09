@@ -1,7 +1,6 @@
 export default `
   searchIndex: allSnippet(
-    sort: {fields: ranking, order: DESC}, 
-    filter: {archived: {ne: true}}
+    sort: {fields: ranking, order: DESC}
   ) {
     edges {
       node {

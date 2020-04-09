@@ -32,7 +32,6 @@ export default (id, snippetNode, markdownNode) => {
         ? snippetNode.attributes.excerpt
         : `${ snippetNode.attributes.text.slice(0, shortSliceIndex)}...`,
     },
-    archived: snippetNode.archived,
     language: {},
     icon: snippetNode.icon,
     ranking: rankSnippet(snippetNode, { timeSensitive: true }),

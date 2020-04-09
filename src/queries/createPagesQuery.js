@@ -1,6 +1,6 @@
 export default `
   simpleSnippets: allSnippet(
-    sort: {fields: id}, 
+    sort: {fields: id},
     filter: {code: {src: {ne: null}}}
   ) {
     edges {
@@ -42,7 +42,6 @@ export default `
           }
         }
         icon
-        archived
       }
     }
   }
@@ -91,13 +90,12 @@ export default `
           short
         }
         icon
-        archived
       }
     }
   }
 
   blogSnippets: allSnippet(
-    sort: {fields: firstSeen, order: DESC}, 
+    sort: {fields: firstSeen, order: DESC},
     filter: {blog: {eq: true}}
   ) {
     edges {
@@ -122,7 +120,6 @@ export default `
         ranking
         firstSeen
         lastUpdated
-        archived
         authors {
           name
           profile
