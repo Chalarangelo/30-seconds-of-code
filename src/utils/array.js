@@ -13,10 +13,3 @@ export const chunk = (arr, size) =>
  * @param {array} arr - The array to be deduplicated.
  */
 export const uniqueElements = arr => [...new Set(arr)];
-
-/**
- * Returns an array of elements that appear in both arrays.
- * @param {array} arr - The array to compare for similiar elements.
- * @param {array} values - The values to compare against.
- */
-export const similarity = (arr, values) => arr.filter(v => values.includes(v));
