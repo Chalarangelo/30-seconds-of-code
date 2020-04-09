@@ -131,7 +131,6 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
   );
 
   listingMetas
-    .filter(v => !v.archived)
     .forEach(listingMeta => {
       const slugPrefix = listingMeta.slugPrefix;
       const searchIndexName = searchIndex.edges.find(s => s.node.slug.startsWith(`${slugPrefix}`)).node.language.long || '';

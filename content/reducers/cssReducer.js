@@ -27,7 +27,6 @@ export default (id, snippetNode, markdownNode) => {
       full: snippetNode.attributes.text,
       short: snippetNode.attributes.text.slice(0, snippetNode.attributes.text.indexOf('\n\n')),
     },
-    archived: snippetNode.archived,
     language: {
       ...snippetNode.language,
       otherLanguages: snippetNode.otherLanguages,

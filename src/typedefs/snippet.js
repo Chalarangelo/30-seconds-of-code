@@ -21,7 +21,6 @@ Snippet.toString = () => `
     slug: String
     id: String
     path: String
-    archived: Boolean
     text: TextData
   }
 
