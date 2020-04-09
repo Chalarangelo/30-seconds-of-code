@@ -8,10 +8,10 @@ import path from 'path';
 const parseRequirables = contentDirPath => {
   // Load configurations
   let configs = [];
-  glob.sync(`${contentDirPath}/configs/*.js`)
+  glob.sync(`${contentDirPath}/configs/*.json`)
     .forEach( file => {
       configs.push(
-        require( path.resolve( file ) ).default
+        require( path.resolve( file ) )
       );
     });
   // Create the array of requirables.
