@@ -1,0 +1,6 @@
+{
+  "languageScoreLimit": 45,
+  "primaryTagScoreLimit": 15,
+  "searchTokenScoreLimit": 40,
+  "recommendationCount": 3
+}
