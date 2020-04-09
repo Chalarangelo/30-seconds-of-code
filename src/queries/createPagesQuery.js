@@ -42,6 +42,7 @@ export default `
           }
         }
         icon
+        searchTokens
       }
     }
   }
@@ -90,6 +91,7 @@ export default `
           short
         }
         icon
+        searchTokens
       }
     }
   }
@@ -127,6 +129,7 @@ export default `
         icon
         cover
         blog
+        searchTokens
       }
     }
   }

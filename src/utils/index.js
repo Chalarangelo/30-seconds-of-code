@@ -14,7 +14,6 @@ import {
 
 import {
   uniqueElements,
-  similarity,
   chunk
 } from './array';
 
@@ -36,6 +35,5 @@ export {
   getRootURL,
   throttle,
   uniqueElements,
-  similarity,
   chunk
 };
