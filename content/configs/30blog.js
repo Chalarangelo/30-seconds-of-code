@@ -5,7 +5,6 @@ export default {
   snippetPath: 'blog_posts',
   requirables: [
     'blog_data/snippets.json',
-    // 'blog_data/blog_authors.json',
   ],
   slug: 'blog',
   reducer: 'blogReducer',
@@ -21,18 +20,5 @@ export default {
   images: {
     name: 'blog_images',
     path: 'blog_images',
-  },
-  tagScores: {
-    'javascript': 5,
-    'react': 4,
-    'css': 4,
-    'array': 4,
-    'list': 4,
-    'object': 4,
-    'python': 3,
-    'webdev': 3,
-    'devtools': 2,
-    'csharp': 2,
-    'php': 1,
   },
 };
