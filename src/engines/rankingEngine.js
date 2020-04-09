@@ -68,7 +68,7 @@ const determineSnippetRanking = snippet => {
   score += updateCount > 25 ? updateCountLimit : Math.round(((2 * updateCount - 2) / (23 + updateCount)) * updateCountLimit);
 
   // Divide by limit, applying the bias multiplier, and return ranking
-  return Math.max(0.0001, score / (totalScoreLimit * snippet.biasPenaltyMultiplier)).toFixed(4);
+  return +Math.max(0.0001, score / (totalScoreLimit * snippet.biasPenaltyMultiplier)).toFixed(4);
 };
 
 export default determineSnippetRanking;
