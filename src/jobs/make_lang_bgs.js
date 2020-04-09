@@ -9,10 +9,10 @@ const paths = require('config/paths');
 const parseConfigs = contentDirPath => {
   // Load configurations
   let configs = [];
-  glob.sync(`${contentDirPath}/configs/*.js`)
+  glob.sync(`${contentDirPath}/configs/*.json`)
     .forEach( file => {
       configs.push(
-        require( path.resolve( file ) ).default
+        require( path.resolve( file ) )
       );
     });
   const scss = configs
