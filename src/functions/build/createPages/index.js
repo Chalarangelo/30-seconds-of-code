@@ -1,4 +1,3 @@
-import create404Page from './create404Page';
 import createStaticPage from './createStaticPage';
 import createSettingsPage from './createSettingsPage';
 import createListingPages from './createListingPages';
@@ -30,12 +29,13 @@ const createPages = (query, templates, requirables) => ({ graphql, actions }) =>
 
       const listingMetas = parseListingMetas(requirables);
 
-      create404Page(
+      createStaticPage(
         templates['NotFoundPage'],
         createPage,
         {
           ...commonContext,
-        }
+        },
+        '/404'
       );
 
       createStaticPage(
