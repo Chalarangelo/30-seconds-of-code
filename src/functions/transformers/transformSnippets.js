@@ -7,7 +7,7 @@ import literals from 'lang/en/snippet';
 *
 * Used in listing pages to render snippet previews.
 */
-export const transformSnippetIndex = edges =>
+export const transformSnippetIndex = (edges, withSearchTokens = false) =>
   edges
     .map(edge => edge.node)
     .map(node => ({
@@ -18,7 +18,7 @@ export const transformSnippetIndex = edges =>
       icon: node.icon,
       description: node.html.description.trim(),
       url: node.slug,
-      searchTokens: node.searchTokens,
+      ...(withSearchTokens ? { searchTokens: node.searchTokens } : {}),
     }));
 
 /**
