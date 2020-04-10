@@ -1,4 +1,4 @@
-export default `
+query {
   images: allFile(filter: {relativePath: {regex: "/.(png|jpg)$/"}}) {
     edges {
       node {
@@ -12,4 +12,4 @@ export default `
       }
     }
   }
-`;
+}

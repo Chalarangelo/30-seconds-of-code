@@ -1,4 +1,4 @@
-export default `
+query {
   simpleSnippets: allSnippet(
     sort: {fields: id},
     filter: {code: {src: {ne: null}}}
@@ -133,4 +133,4 @@ export default `
       }
     }
   }
-`;
+}

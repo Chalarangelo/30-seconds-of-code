@@ -1,4 +1,4 @@
-export default `
+query {
   searchIndex: allSnippet(
     sort: {fields: ranking, order: DESC}
   ) {
@@ -24,4 +24,4 @@ export default `
       }
     }
   }
-`;
+}

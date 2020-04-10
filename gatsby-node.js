@@ -8,12 +8,6 @@ const {
   onCreateWebpackConfig,
 } = require(`./src/build`);
 const {
-  createPagesQuery,
-  getLogoSrc,
-  getImages,
-  getSearchIndex,
-} = require(`./src/queries`);
-const {
   parseQueries,
   parseRequirables,
   parseTemplates,
@@ -29,7 +23,7 @@ console.log(`${green('success')} parse requirables`);
 const templates = parseTemplates(paths.templates, paths.templatesPath);
 console.log(`${green('success')} parse templates`);
 
-const pagesQuery = parseQueries(getLogoSrc, createPagesQuery, getSearchIndex, getImages);
+const pagesQuery = parseQueries(paths.queryPath);
 console.log(`${green('success')} parse queries`);
 
 exports.createPages = createPages(pagesQuery, templates, requirables);
