@@ -1,4 +1,4 @@
-import { determineLanguageFromTags, stripLanguageFromTags } from 'functions/transformers';
+import { determineLanguageFromTags, stripLanguageFromTags } from 'build/transformers';
 import recommendationEngine from 'config/recommendationEngine';
 
 // Get data from configuration

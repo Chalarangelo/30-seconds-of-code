@@ -4,7 +4,7 @@ import {
   transformSnippetContext,
   transformSnippetDescription,
   transformBreadcrumbs
-} from 'functions/transformers';
+} from 'build/transformers';
 
 /**
  * Creates individual snippet pages.

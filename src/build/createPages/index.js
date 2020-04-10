@@ -1,8 +1,8 @@
 import createStaticPage from './createStaticPage';
 import createListingPages from './createListingPages';
 import createSnippetPages from './createSnippetPages';
-import { transformSnippetIndex } from 'functions/transformers';
-import { parseListingMetas } from 'functions/parsers';
+import { transformSnippetIndex } from 'build/transformers';
+import { parseListingMetas } from 'build/parsers';
 import literals from 'lang/en';
 
 /**

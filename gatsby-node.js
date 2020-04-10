@@ -6,7 +6,7 @@ const {
   createResolvers,
   createPages,
   onCreateWebpackConfig,
-} = require(`./src/functions/build`);
+} = require(`./src/build`);
 const {
   createPagesQuery,
   getLogoSrc,
@@ -19,7 +19,7 @@ const {
   parseReducers,
   parseResolvers,
   parseTemplates,
-} = require(`./src/functions/parsers`);
+} = require(`./src/build/parsers`);
 const paths = require(`./src/config/paths`);
 
 const requirables = parseRequirables(paths.contentPath);
