@@ -95,7 +95,6 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
         EXPERTISE_LEVELS.indexOf(a.expertise) - EXPERTISE_LEVELS.indexOf(b.expertise)
   ), CARDS_PER_PAGE);
   const mainListingSublinks = listingMetas
-    .filter(v => !v.unlisted)
     .map(v => v.featured > 0 ? v : {...v, featured: 500 })
     .sort((a, b) => a.featured === b.featured ? a.name - b.name : a.featured - b.featured);
   const mainContextCustomizer = order => {

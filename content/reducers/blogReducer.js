@@ -33,7 +33,6 @@ export default (id, snippetNode, markdownNode) => {
     language: {},
     icon: snippetNode.icon,
     ranking: rankSnippet(snippetNode, { timeSensitive: true }),
-    recommendationRanking: snippetNode.recommendationRanking,
     firstSeen: new Date(+`${snippetNode.meta.firstSeen}000`),
     lastUpdated: new Date(+`${snippetNode.meta.lastUpdated}000`),
     searchTokens: uniqueElements([

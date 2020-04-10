@@ -27,20 +27,14 @@ const parseRequirables = contentDirPath => {
         const rsv = cfg.resolver ? cfg.resolver : 'stdResolver';
         reqJson.meta.resolver = `${rsv}`;
 
-        const blog = !!cfg.isBlog;
-        reqJson.meta.blog = blog;
+        reqJson.meta.blog = !!cfg.isBlog;
 
         reqJson.meta.slugPrefix = `${cfg.slug}/s`;
-
-        const unlisted = !!cfg.isUnlisted;
-        reqJson.meta.unlisted = unlisted;
 
         reqJson.meta.sourceDir = `${cfg.dirName}/${cfg.snippetPath}`;
         reqJson.meta.repoUrlPrefix = `${cfg.repoUrl}/blob/master/${cfg.snippetPath}`;
 
         reqJson.meta.biasPenaltyMultiplier = cfg.biasPenaltyMultiplier;
-        reqJson.meta.tagScores = cfg.tagScores;
-        reqJson.meta.keywordScores = cfg.keywordScores;
 
         reqJson.meta.featured = cfg.featured ? cfg.featured : 0;
         reqJson.meta.theme = cfg.theme;
