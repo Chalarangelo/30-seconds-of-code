@@ -30,9 +30,7 @@ const createPages = (query, templates, requirables) => ({ graphql, actions }) =>
       createStaticPage(
         templates['NotFoundPage'],
         createPage,
-        {
-          ...commonContext,
-        },
+        commonContext,
         '/404'
       );
 
@@ -71,9 +69,7 @@ const createPages = (query, templates, requirables) => ({ graphql, actions }) =>
         listingMetas,
         templates['ListingPage'],
         createPage,
-        {
-          ...commonContext,
-        },
+        commonContext,
         '/list'
       );
 

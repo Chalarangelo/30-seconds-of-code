@@ -25,7 +25,7 @@ const createSnippetPages = (
       context: {
         snippet: transformSnippetContext(snippet.node, commonContext.cardTemplate, imageContext),
         ...commonContext,
-        recommendedSnippets: transformSnippetIndex(recommendedSnippets.slice(0, 3)),
+        recommendedSnippets: transformSnippetIndex(recommendedSnippets),
         breadcrumbs: transformBreadcrumbs(snippet.node, commonContext.cardTemplate),
         pageDescription: transformSnippetDescription(snippet.node, commonContext.cardTemplate),
       },

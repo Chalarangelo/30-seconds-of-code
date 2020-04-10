@@ -8,18 +8,16 @@ import literals from 'lang/en/snippet';
 * Used in listing pages to render snippet previews.
 */
 export const transformSnippetIndex = (edges, withSearchTokens = false) =>
-  edges
-    .map(edge => edge.node)
-    .map(node => ({
-      title: node.title,
-      expertise: transformTagName(node.expertise),
-      primaryTag: transformTagName(node.tags.primary),
-      language: node.language && node.language.long ? node.language.long : undefined,
-      icon: node.icon,
-      description: node.html.description.trim(),
-      url: node.slug,
-      ...(withSearchTokens ? { searchTokens: node.searchTokens } : {}),
-    }));
+  edges.map(({ node }) => ({
+    title: node.title,
+    expertise: transformTagName(node.expertise),
+    primaryTag: transformTagName(node.tags.primary),
+    language: node.language && node.language.long ? node.language.long : undefined,
+    icon: node.icon,
+    description: node.html.description.trim(),
+    url: node.slug,
+    ...(withSearchTokens ? { searchTokens: node.searchTokens } : {}),
+  }));
 
 /**
 * Given a snippet object with key-value pairs, creates an appropriate description.
