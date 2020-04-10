@@ -1,4 +1,4 @@
-import { searchIndexingEngine as tokenize } from 'engines';
+import tokenize from 'engines/searchIndexingEngine';
 
 // Default state
 const initialState = {
