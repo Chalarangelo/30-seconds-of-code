@@ -33,7 +33,7 @@ describe('transformSnippetIndex', () => {
     expect(result[0].language).toBe(edges[0].node.language.long);
     expect(result[0].description).toBe(edges[0].node.html.description.trim());
     expect(result[0].url).toBe(edges[0].node.slug);
-    expect(result[0].searchTokens).toBe(edges[0].node.searchTokens);
+    expect(result[0].searchTokens).toBe(undefined);
     expect(result[0].irrelevantStuff).toBe(undefined);
   });
 
@@ -58,6 +58,29 @@ describe('transformSnippetIndex', () => {
     ];
     const result = transformSnippetIndex(edges);
     expect(result[0].language).toBe(undefined);
+  });
+
+  it('returns search tokens when explicitly told to do so', () => {
+    const edges = [
+      {
+        node: {
+          title: 'a',
+          expertise: 'Intermediate',
+          tags: {
+            primary: 'array',
+          },
+          language: {},
+          html: {
+            description: 'desc ',
+          },
+          slug: '/a',
+          searchTokens: 'my tokens',
+          irrelevantStuff: 'data',
+        },
+      },
+    ];
+    const result = transformSnippetIndex(edges);
+    expect(result[0].searchTokens).toBe(edges[0].searchTokens);
   });
 });
 
