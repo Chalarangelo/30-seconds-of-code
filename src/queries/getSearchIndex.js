@@ -21,7 +21,6 @@ export default `
         }
         icon
         searchTokens
-        recommendationRanking
       }
     }
   }
