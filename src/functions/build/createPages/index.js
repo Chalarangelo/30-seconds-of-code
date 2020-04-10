@@ -1,6 +1,5 @@
 import createStaticPage from './createStaticPage';
 import createListingPages from './createListingPages';
-import createSearchPage from './createSearchPage';
 import createSnippetPages from './createSnippetPages';
 import { transformSnippetIndex } from 'functions/transformers';
 import { parseListingMetas } from 'functions/parsers';
@@ -118,25 +117,16 @@ const createPages = (query, templates, requirables) => ({ graphql, actions }) =>
         result.data.images.edges
       );
 
-      createSearchPage(
+      createStaticPage(
         templates['SearchPage'],
         createPage,
         {
           ...commonContext,
           searchIndex: transformSnippetIndex(searchIndex.edges),
-          pageDescription: literals.search.pageDescription(searchIndex.edges.length),
-        },
-        '/search_index'
-      );
-
-      createSearchPage(
-        templates['SearchPage'],
-        createPage,
-        {
-          ...commonContext,
           recommendedSnippets: transformSnippetIndex(searchIndex.edges.slice(0, 3)),
           pageDescription: literals.search.pageDescription(searchIndex.edges.length),
-        }
+        },
+        '/search'
       );
 
       return null;
