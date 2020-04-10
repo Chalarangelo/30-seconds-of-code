@@ -1,11 +1,15 @@
 import EXPERTISE_LEVELS from 'config/expertise';
 import { capitalize } from 'utils';
 
+const lowerCaseExpertiseLevels = EXPERTISE_LEVELS.map(v => v.toLowerCase());
+
 const specialTagsDictionary = {
   'css': 'CSS',
   'javascript': 'JavaScript',
   'php': 'PHP',
 };
+
+const specialTags = Object.keys(specialTagsDictionary);
 
 const languageTags = {
   'javascript': {
@@ -22,12 +26,14 @@ const languageTags = {
   },
 };
 
+const languageTagNames = Object.keys(languageTags);
+
 /**
  * Given a tag name, transform it to the appropriate format for JSX.
  * Capitalize or use the special dictionary for tags.
  */
 export const transformTagName = tag =>
-  !Object.keys(specialTagsDictionary).includes(tag.toLowerCase())
+  !specialTags.includes(tag.toLowerCase())
     ? tag.length ? capitalize(tag) : ''
     : specialTagsDictionary[tag.toLowerCase()];
 
@@ -37,11 +43,7 @@ export const transformTagName = tag =>
  */
 export const determineExpertiseFromTags = tags =>
   tags.reduce((expertise, tag) =>
-    EXPERTISE_LEVELS.map(
-      v => v.toLowerCase()
-    ).includes(
-      tag.toLowerCase()
-    )
+    lowerCaseExpertiseLevels.includes(tag.toLowerCase())
       ? tag
       : expertise,
   EXPERTISE_LEVELS[1]
@@ -53,7 +55,7 @@ export const determineExpertiseFromTags = tags =>
 */
 export const determineLanguageFromTags = tags =>
   languageTags[
-    tags.find(v => Object.keys(languageTags).includes(v.toLowerCase()))
+    tags.find(v => languageTagNames.includes(v.toLowerCase()))
   ] || {short: '', long: ''};
 
 /**
@@ -62,11 +64,7 @@ export const determineLanguageFromTags = tags =>
  */
 export const stripExpertiseFromTags = tags =>
   tags.filter(
-    tag => !EXPERTISE_LEVELS.map(
-      v => v.toLowerCase()
-    ).includes(
-      tag.toLowerCase()
-    )
+    tag => !lowerCaseExpertiseLevels.includes(tag.toLowerCase())
   );
 
 /**
@@ -75,5 +73,5 @@ export const stripExpertiseFromTags = tags =>
  */
 export const stripLanguageFromTags = tags =>
   tags.filter(
-    tag => !Object.keys(languageTags).includes(tag.toLowerCase())
+    tag => !languageTagNames.includes(tag.toLowerCase())
   );
