@@ -4,7 +4,7 @@ import { convertToSeoSlug, uniqueElements } from 'utils';
 import { determineExpertiseFromTags } from 'build/transformers';
 // TODO: Consider parsing this via a new parser or similar
 // The argument against is that it's a single case and might not extend to other repos in the future
-import authors from '../sources/30blog/blog_data/blog_authors';
+import authors from '../../../content/sources/30blog/blog_data/blog_authors';
 
 export default (id, snippetNode, markdownNode) => {
   const shortSliceIndex = snippetNode.attributes.text.indexOf('\n\n') <= 180 ? snippetNode.attributes.text.indexOf('\n\n') : snippetNode.attributes.text.indexOf(' ', 160);
