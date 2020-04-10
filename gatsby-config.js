@@ -1,5 +1,5 @@
 /* eslint-disable */
-const { parseConfigs } = require('functions/parsers');
+const { parseConfigs } = require('build/parsers');
 
 const config = require('config/global');
 const paths = require('config/paths');

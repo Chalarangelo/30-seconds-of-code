@@ -1,5 +1,5 @@
 import { chunk } from 'utils';
-import { transformSnippetIndex } from 'functions/transformers';
+import { transformSnippetIndex } from 'build/transformers';
 import EXPERTISE_LEVELS from 'config/expertise';
 import literals from 'lang/en/listing';
 
